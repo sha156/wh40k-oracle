@@ -25,6 +25,7 @@ data/
 
 # Logs and temporary files
 *.log
+temp.pdf
 version.out
 version.err
 streamlit_test.out.log
@@ -39,3 +40,6 @@ bg_streamlit_8501.err.log
 # OS/editor noise
 .DS_Store
 Thumbs.db
+
+# Local assistant config
+.claude/
