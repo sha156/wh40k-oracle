@@ -1,0 +1,41 @@
+# Secrets
+.env
+.env.*
+!.env.example
+.streamlit/secrets.toml
+
+# Virtual environments
+.venv/
+venv/
+
+# Python caches
+__pycache__/
+*.py[cod]
+*.pyo
+
+# Build and tool caches
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# Local models and indexes
+opt/
+local_vector_store/
+data/
+
+# Logs and temporary files
+*.log
+version.out
+version.err
+streamlit_test.out.log
+streamlit_test.err.log
+streamlit_live.out.log
+streamlit_live.err.log
+bg_streamlit.out.log
+bg_streamlit.err.log
+bg_streamlit_8501.out.log
+bg_streamlit_8501.err.log
+
+# OS/editor noise
+.DS_Store
+Thumbs.db

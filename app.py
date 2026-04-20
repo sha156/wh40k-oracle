@@ -1,0 +1,594 @@
+"""
+app.py — 战锤40K规则书 RAG 问答系统
+=====================================
+架构：
+  检索层：FAISS 向量检索 + BM25 关键词检索 → Reciprocal Rank Fusion 融合
+  重排层：FlashRank（ms-marco-MiniLM-L-12-v2，轻量快速）
+  生成层：DeepSeek / ZhipuAI（可在侧边栏切换）
+  界面层：Streamlit 聊天 UI + 元数据过滤 + 来源引用
+
+运行：
+  .\.venv\Scripts\streamlit.exe run app.py
+"""
+
+from __future__ import annotations
+
+import os
+import time
+import json
+import sys
+from pathlib import Path
+
+# ── 镜像设置（必须在 HuggingFace 相关导入前）──
+os.environ["HF_ENDPOINT"] = "https://hf-mirror.com"
+os.environ["TOKENIZERS_PARALLELISM"] = "false"
+
+try:
+    import streamlit as st
+    from langchain_community.document_loaders import PyMuPDFLoader
+    from langchain_community.vectorstores import FAISS
+    from langchain_community.retrievers import BM25Retriever
+    from langchain_core.documents import Document
+    from langchain_openai import ChatOpenAI
+    from langchain_core.prompts import ChatPromptTemplate
+    from langchain_core.output_parsers import StrOutputParser
+    from flashrank import Ranker, RerankRequest
+    from hf_embeddings_compat import build_huggingface_embeddings
+except ModuleNotFoundError as exc:
+    missing_pkg = exc.name or "required package"
+    raise ModuleNotFoundError(
+        f"Current Python environment is missing `{missing_pkg}`: {sys.executable}\n"
+        "Start Streamlit with the project virtualenv instead:\n"
+        r"  .\.venv\Scripts\python.exe -m streamlit run app.py"
+    ) from exc
+
+# ══════════════════════════════════════════════
+#  全局配置
+# ══════════════════════════════════════════════
+VECTOR_STORE_PATH = Path("local_vector_store")
+DATA_DIR          = Path("data")
+EMBED_MODEL_NAME  = "BAAI/bge-m3"
+EMBED_MODEL_CACHE = "./opt"
+RERANKER_MODEL    = "ms-marco-MiniLM-L-12-v2"   # FlashRank 本地模型名
+
+# 检索参数
+FAISS_TOP_K   = 15   # 向量召回数量
+BM25_TOP_K    = 10   # BM25 召回数量
+RERANK_TOP_N  = 5    # Rerank 后保留数量
+
+
+def resolve_flashrank_cache_dir(base_cache_dir: str, model_name: str) -> str:
+    """
+    兼容手工解压导致的嵌套目录：
+      正常期望：opt/model_name/<model files>
+      实际常见：opt/model_name/model_name/<model files>
+    """
+    base_dir = Path(base_cache_dir)
+    model_dir = base_dir / model_name
+
+    if not model_dir.exists():
+        return str(base_dir)
+
+    if list(model_dir.glob("*.onnx")):
+        return str(base_dir)
+
+    nested_model_dir = model_dir / model_name
+    if list(nested_model_dir.glob("*.onnx")):
+        return str(model_dir)
+
+    for onnx_file in model_dir.rglob("*.onnx"):
+        if onnx_file.parent.name == model_name:
+            return str(onnx_file.parent.parent)
+
+    return str(base_dir)
+
+# ══════════════════════════════════════════════
+#  Streamlit 页面配置（必须第一个 st 调用）
+# ══════════════════════════════════════════════
+st.set_page_config(
+    page_title="战锤40K 战术参谋部",
+    layout="wide",
+    page_icon="⚔️",
+    initial_sidebar_state="expanded",
+)
+
+
+# ══════════════════════════════════════════════
+#  辅助函数：Reciprocal Rank Fusion (RRF)
+# ══════════════════════════════════════════════
+def reciprocal_rank_fusion(
+    faiss_docs: list[Document],
+    bm25_docs: list[Document],
+    k: int = 60,
+) -> list[Document]:
+    """
+    将 FAISS 和 BM25 的结果通过 RRF 算法融合。
+    RRF 得分 = Σ 1/(k + rank_i)，k=60 是经验值。
+    返回去重后按分数降序排列的 Document 列表。
+    """
+    scores: dict[str, float] = {}
+    doc_map: dict[str, Document] = {}
+
+    def _doc_id(doc: Document) -> str:
+        # 用 source + page + 内容前50字符 作为唯一键
+        return f"{doc.metadata.get('source','')}_{doc.metadata.get('page',0)}_{doc.page_content[:50]}"
+
+    for rank, doc in enumerate(faiss_docs, start=1):
+        did = _doc_id(doc)
+        scores[did] = scores.get(did, 0.0) + 1.0 / (k + rank)
+        doc_map[did] = doc
+
+    for rank, doc in enumerate(bm25_docs, start=1):
+        did = _doc_id(doc)
+        scores[did] = scores.get(did, 0.0) + 1.0 / (k + rank)
+        doc_map[did] = doc
+
+    sorted_ids = sorted(scores, key=lambda x: scores[x], reverse=True)
+    return [doc_map[did] for did in sorted_ids]
+
+
+# ══════════════════════════════════════════════
+#  资源加载（缓存，只初始化一次）
+# ══════════════════════════════════════════════
+@st.cache_resource(show_spinner="⚙️ 正在启动机械神教数据核心...")
+def load_resources():
+    """加载嵌入模型、FAISS 向量库、Reranker。"""
+    # 1. 嵌入模型
+    embeddings = build_huggingface_embeddings(
+        model_name=EMBED_MODEL_NAME,
+        cache_folder=EMBED_MODEL_CACHE,
+        model_kwargs={"device": "cpu"},
+        encode_kwargs={"normalize_embeddings": True, "batch_size": 16},
+    )
+
+    # 2. 向量库
+    vectorstore = None
+    if (VECTOR_STORE_PATH / "index.faiss").exists():
+        vectorstore = FAISS.load_local(
+            str(VECTOR_STORE_PATH),
+            embeddings,
+            allow_dangerous_deserialization=True,
+        )
+
+    # 3. Reranker（FlashRank，纯本地，无需联网）
+    reranker = None
+    reranker_warning = None
+    try:
+        reranker_cache_dir = resolve_flashrank_cache_dir(
+            EMBED_MODEL_CACHE,
+            RERANKER_MODEL,
+        )
+        reranker = Ranker(
+            model_name=RERANKER_MODEL,
+            cache_dir=reranker_cache_dir,
+        )
+    except Exception as e:
+        reranker_warning = f"FlashRank 加载失败，将退化为 RRF 排序：{e}"
+
+    return embeddings, vectorstore, reranker, reranker_warning
+
+
+# ══════════════════════════════════════════════
+#  BM25 索引构建（从 FAISS docstore 提取 docs）
+# ══════════════════════════════════════════════
+@st.cache_resource(show_spinner="📚 构建关键词索引...")
+def build_bm25(_vectorstore):
+    """
+    从 FAISS docstore 提取所有 Document，构建 BM25 索引。
+    注意：_vectorstore 前加下划线告诉 Streamlit 不要对其做哈希。
+    """
+    if _vectorstore is None:
+        return None
+    try:
+        # 从 FAISS docstore 提取所有文档
+        all_docs = list(_vectorstore.docstore._dict.values())
+        if not all_docs:
+            return None
+        retriever = BM25Retriever.from_documents(all_docs, k=BM25_TOP_K)
+        return retriever
+    except Exception as e:
+        st.warning(f"BM25 索引构建失败（将只使用向量检索）: {e}")
+        return None
+
+
+# ══════════════════════════════════════════════
+#  混合检索核心函数
+# ══════════════════════════════════════════════
+def hybrid_retrieve(
+    query: str,
+    vectorstore,
+    bm25_retriever,
+    reranker,
+    filter_books: list[str] | None = None,
+) -> list[dict]:
+    """
+    混合检索流程：
+      1. FAISS 向量召回（可带元数据过滤）
+      2. BM25 关键词召回
+      3. RRF 融合去重
+      4. FlashRank 精排
+    返回格式化的 passage 列表，每项含 text / book / source / page。
+    """
+    # ── FAISS 检索（支持按 book 过滤）──
+    faiss_docs: list[Document] = []
+    try:
+        search_kwargs: dict = {"k": FAISS_TOP_K}
+        if filter_books:
+            # FAISS filter 用 lambda 过滤元数据
+            search_kwargs["filter"] = {
+                "book": {"$in": filter_books}
+            }
+        retriever = vectorstore.as_retriever(search_kwargs=search_kwargs)
+        faiss_docs = retriever.invoke(query)
+    except Exception as e:
+        st.warning(f"FAISS 检索出错: {e}")
+
+    # ── BM25 检索 ──
+    bm25_docs: list[Document] = []
+    if bm25_retriever:
+        try:
+            bm25_docs = bm25_retriever.invoke(query)
+            # 若开启了过滤，手动过滤 BM25 结果
+            if filter_books:
+                bm25_docs = [
+                    d for d in bm25_docs
+                    if d.metadata.get("book") in filter_books
+                ]
+        except Exception as e:
+            st.warning(f"BM25 检索出错: {e}")
+
+    # ── RRF 融合 ──
+    merged = reciprocal_rank_fusion(faiss_docs, bm25_docs)
+
+    if not merged:
+        return []
+
+    # ── FlashRank 精排 ──
+    passages = [
+        {
+            "id": str(i),
+            "text": doc.page_content,
+            "meta": doc.metadata,
+        }
+        for i, doc in enumerate(merged)
+    ]
+    if reranker is None:
+        top_passages = passages[:RERANK_TOP_N]
+    else:
+        try:
+            rerank_req = RerankRequest(query=query, passages=passages)
+            ranked = reranker.rank(rerank_req)
+            top_passages = ranked[:RERANK_TOP_N]
+        except Exception as e:
+            st.warning(f"Rerank 出错，使用 RRF 结果: {e}")
+            top_passages = passages[:RERANK_TOP_N]
+
+    # ── 组装返回结果 ──
+    results = []
+    for p in top_passages:
+        meta = p.get("meta", {})
+        results.append({
+            "text":   p["text"],
+            "book":   meta.get("book", "未知"),
+            "source": meta.get("source", ""),
+            "page":   meta.get("page", "?"),
+        })
+    return results
+
+
+# ══════════════════════════════════════════════
+#  LLM 工厂
+# ══════════════════════════════════════════════
+def get_llm(provider: str, api_key: str, temperature: float):
+    """根据选择的 provider 返回对应 LLM 实例。"""
+    if provider == "DeepSeek":
+        return ChatOpenAI(
+            model="deepseek-chat",
+            api_key=api_key,
+            base_url="https://api.deepseek.com",
+            temperature=temperature,
+            streaming=True,
+        )
+    elif provider == "ZhipuAI (GLM-4)":
+        # ZhipuAI 兼容 OpenAI 接口
+        return ChatOpenAI(
+            model="glm-4-flash",
+            api_key=api_key,
+            base_url="https://open.bigmodel.cn/api/paas/v4/",
+            temperature=temperature,
+            streaming=True,
+        )
+    else:
+        raise ValueError(f"未知 provider: {provider}")
+
+
+# ══════════════════════════════════════════════
+#  Prompt 模板
+# ══════════════════════════════════════════════
+SYSTEM_PROMPT = """\
+你是一名专业的战锤40K第十版规则顾问，代号「铁幕」。
+你的任务是根据下方【规则档案】回答指挥官的问题。
+
+━━ 强制执行规则 ━━
+① **必须引用来源**：每条核心信息后标注 [《书名》第X页]，例如 [《黑暗天使》第14页]。
+② **数据优先展示**：兵种属性（M/T/SV/W/LD/OC）、攻击属性（A/BS/S/AP/D）必须用表格或粗体展示。
+③ **不得编造**：若档案中无相关信息，直接回复"档案缺失，建议查阅原始规则书"。
+④ **语言风格**：中文回答，冷静专业，允许偶尔使用40K术语（如"黄金宝座"、"机械教义"）。
+⑤ **格式规范**：使用 Markdown，关键词加粗，列表整齐。
+
+━━ 规则档案 ━━
+{context}
+"""
+
+HUMAN_PROMPT = "{question}"
+
+
+def build_prompt_template() -> ChatPromptTemplate:
+    return ChatPromptTemplate.from_messages([
+        ("system", SYSTEM_PROMPT),
+        ("human",  HUMAN_PROMPT),
+    ])
+
+
+def format_context(passages: list[dict]) -> str:
+    """将 passages 格式化为提示词中的 context 字符串。"""
+    parts = []
+    for i, p in enumerate(passages, 1):
+        page_info = f"第{p['page']}页" if p["page"] != "?" else ""
+        header = f"【档案 {i}】《{p['book']}》{page_info}"
+        parts.append(f"{header}\n{p['text']}")
+    return "\n\n{'─'*40}\n\n".join(parts)
+
+
+# ══════════════════════════════════════════════
+#  侧边栏 UI
+# ══════════════════════════════════════════════
+def render_sidebar(vectorstore) -> tuple[str, str, float, list[str] | None]:
+    """渲染侧边栏，返回 (provider, api_key, temperature, filter_books)。"""
+    with st.sidebar:
+        st.markdown("## ⚔️ 战术终端设置")
+        st.divider()
+
+        # ── API 配置 ──
+        st.markdown("### 🔑 LLM 配置")
+        provider = st.selectbox(
+            "选择 LLM",
+            ["DeepSeek", "ZhipuAI (GLM-4)"],
+            help="DeepSeek 性价比高；ZhipuAI GLM-4 对中文更友好",
+        )
+
+        # 从 secrets 或环境变量读取默认 key
+        default_key = ""
+        try:
+            default_key = st.secrets.get("OPENAI_API_KEY", "") or ""
+        except Exception:
+            default_key = os.getenv("OPENAI_API_KEY", "")
+
+        api_key = st.text_input(
+            "API Key",
+            value=default_key,
+            type="password",
+            help="DeepSeek: sk-xxx | ZhipuAI: 在 bigmodel.cn 获取",
+        )
+        temperature = st.slider(
+            "Temperature（创造性）",
+            min_value=0.0, max_value=1.0, value=0.1, step=0.05,
+            help="越低越精准，越高越发散。规则查询建议 0.0~0.1",
+        )
+
+        st.divider()
+
+        # ── 书目过滤 ──
+        st.markdown("### 📚 规则书过滤")
+        filter_books = None
+
+        if vectorstore is not None:
+            # 从 FAISS docstore 提取所有 book 名
+            try:
+                all_docs = list(vectorstore.docstore._dict.values())
+                book_names = sorted(set(
+                    d.metadata.get("book", "未知")
+                    for d in all_docs
+                    if d.metadata.get("book")
+                ))
+            except Exception:
+                book_names = []
+
+            if book_names:
+                selected = st.multiselect(
+                    "仅搜索选定规则书（留空=全部）",
+                    options=book_names,
+                    default=[],
+                    help="选择后只从指定规则书中检索，精度更高",
+                )
+                filter_books = selected if selected else None
+            else:
+                st.info("无法读取书目列表")
+        else:
+            st.warning("知识库尚未构建")
+
+        st.divider()
+
+        # ── 检索参数 ──
+        st.markdown("### ⚙️ 检索参数")
+        col1, col2 = st.columns(2)
+        with col1:
+            st.metric("FAISS 召回", FAISS_TOP_K)
+            st.metric("BM25 召回", BM25_TOP_K)
+        with col2:
+            st.metric("Rerank 保留", RERANK_TOP_N)
+            st.metric("融合算法", "RRF")
+
+        st.divider()
+
+        # ── 知识库管理 ──
+        st.markdown("### 🗄️ 知识库管理")
+        st.info(
+            f"📂 PDF 数量：{len(list(DATA_DIR.glob('*.pdf')))}\n\n"
+            f"🧠 索引状态：{'✅ 已构建' if vectorstore else '❌ 未构建'}"
+        )
+        if st.button("🔄 重建知识库（运行 ingest.py）", use_container_width=True):
+            st.code("python ingest.py --rebuild", language="bash")
+            st.warning("请在终端中手动执行以上命令，完成后刷新页面。")
+
+        st.divider()
+        st.caption("⚔️ 为皇帝而战，在数据中寻找真理。")
+
+    return provider, api_key, temperature, filter_books
+
+
+# ══════════════════════════════════════════════
+#  主界面
+# ══════════════════════════════════════════════
+def main():
+    # ── 标题 ──
+    st.markdown(
+        "<h1 style='text-align:center'>⚔️ 战锤40K 战术参谋部</h1>"
+        "<p style='text-align:center;color:gray'>Hybrid RAG · BGE-M3 · FlashRank Reranker</p>",
+        unsafe_allow_html=True,
+    )
+    st.divider()
+
+    # ── 加载资源 ──
+    try:
+        embeddings, vectorstore, reranker, reranker_warning = load_resources()
+    except Exception as e:
+        st.error(f"❌ 资源加载失败：{e}")
+        st.stop()
+
+    if reranker_warning:
+        st.warning(reranker_warning)
+
+    # ── BM25 索引 ──
+    bm25_retriever = build_bm25(vectorstore)
+
+    # ── 侧边栏 ──
+    provider, api_key, temperature, filter_books = render_sidebar(vectorstore)
+
+    # ── 知识库未就绪 ──
+    if vectorstore is None:
+        st.warning(
+            "📭 知识库尚未构建。\n\n"
+            "请先在终端运行：\n```\npython ingest.py\n```\n"
+            "完成后刷新此页面。"
+        )
+        st.stop()
+
+    # ── API Key 检查 ──
+    if not api_key:
+        st.warning("⚠️ 请在侧边栏填写 API Key。")
+        st.stop()
+
+    # ── 聊天历史 ──
+    if "messages" not in st.session_state:
+        st.session_state.messages = [
+            {
+                "role": "assistant",
+                "content": (
+                    "指挥官，战术参谋部已就绪。\n\n"
+                    "您可以询问任何战锤40K第十版规则问题，例如：\n"
+                    "- 「黑暗天使的信仰天使数据卡是什么？」\n"
+                    "- 「混沌星际战士的混乱符文规则是什么？」\n"
+                    "- 「黄金宝座护卫队的拯救掷骰如何计算？」"
+                ),
+            }
+        ]
+
+    # ── 渲染历史消息 ──
+    for msg in st.session_state.messages:
+        with st.chat_message(msg["role"]):
+            st.markdown(msg["content"])
+            # 渲染历史消息的来源引用
+            if msg.get("sources"):
+                with st.expander("📎 引用来源", expanded=False):
+                    for src in msg["sources"]:
+                        st.markdown(
+                            f"- **《{src['book']}》** 第{src['page']}页 "
+                            f"`{Path(src['source']).name}`"
+                        )
+
+    # ── 用户输入 ──
+    if user_input := st.chat_input("询问规则、数据卡、战术技巧..."):
+        # 显示用户消息
+        st.session_state.messages.append({"role": "user", "content": user_input})
+        with st.chat_message("user"):
+            st.markdown(user_input)
+
+        # ── 生成回答 ──
+        with st.chat_message("assistant"):
+            # 进度显示
+            status = st.status("🔍 正在检索规则档案...", expanded=False)
+
+            with status:
+                # Step 1: 混合检索
+                st.write("📡 FAISS 向量召回 + BM25 关键词召回...")
+                t0 = time.time()
+                passages = hybrid_retrieve(
+                    query=user_input,
+                    vectorstore=vectorstore,
+                    bm25_retriever=bm25_retriever,
+                    reranker=reranker,
+                    filter_books=filter_books,
+                )
+                t_retrieve = time.time() - t0
+                st.write(f"✅ 检索完成，获取 {len(passages)} 条档案 ({t_retrieve:.2f}s)")
+
+                if not passages:
+                    status.update(label="⚠️ 未找到相关档案", state="error")
+                    st.warning("未在知识库中找到相关规则，请检查知识库是否构建完整。")
+                    st.stop()
+
+                # Step 2: 构建 LLM
+                st.write(f"🤖 调用 {provider}...")
+                try:
+                    llm = get_llm(provider, api_key, temperature)
+                except Exception as e:
+                    status.update(label="❌ LLM 初始化失败", state="error")
+                    st.error(f"LLM 初始化失败: {e}")
+                    st.stop()
+
+                status.update(label="✅ 档案就绪，正在生成回答...", state="complete")
+
+            # Step 3: 流式生成
+            context_text = format_context(passages)
+            prompt_template = build_prompt_template()
+            chain = prompt_template | llm | StrOutputParser()
+
+            response_text = st.write_stream(
+                chain.stream({
+                    "context":  context_text,
+                    "question": user_input,
+                })
+            )
+
+            # Step 4: 显示来源
+            source_list = [
+                {"book": p["book"], "source": p["source"], "page": p["page"]}
+                for p in passages
+            ]
+            # 去重（同书同页）
+            seen = set()
+            unique_sources = []
+            for s in source_list:
+                key = (s["book"], s["page"])
+                if key not in seen:
+                    seen.add(key)
+                    unique_sources.append(s)
+
+            with st.expander(f"📎 引用来源（{len(unique_sources)} 处）", expanded=True):
+                for src in unique_sources:
+                    st.markdown(
+                        f"- **《{src['book']}》** 第{src['page']}页 "
+                        f"— `{Path(src['source']).name}`"
+                    )
+
+        # ── 保存到历史 ──
+        st.session_state.messages.append({
+            "role":    "assistant",
+            "content": response_text,
+            "sources": unique_sources,
+        })
+
+
+if __name__ == "__main__":
+    main()

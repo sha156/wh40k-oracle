@@ -1,0 +1,21 @@
+#!/bin/sh
+set -eu
+
+repo_root=$(git rev-parse --show-toplevel)
+cd "$repo_root"
+
+if git diff --cached --name-only | grep -Eq '(^|/)\.env($|\.|/)|(^|/)\.streamlit/secrets\.toml$'; then
+  echo "Blocked: do not commit .env or .streamlit/secrets.toml" >&2
+  exit 1
+fi
+
+python_cmd=""
+if [ -x "./.venv/Scripts/python.exe" ]; then
+  python_cmd="./.venv/Scripts/python.exe"
+elif command -v python >/dev/null 2>&1; then
+  python_cmd="python"
+fi
+
+if [ -n "$python_cmd" ]; then
+  "$python_cmd" -m py_compile app.py ingest.py hf_embeddings_compat.py
+fi

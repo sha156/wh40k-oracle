@@ -1,0 +1,17 @@
+#!/bin/sh
+set -eu
+
+repo_root=$(git rev-parse --show-toplevel)
+cd "$repo_root"
+
+for path in .venv opt local_vector_store data; do
+  if git diff --cached --name-only | grep -Eq "^${path}(/|$)"; then
+    echo "Blocked: ${path} should not be pushed. Remove it from git tracking first." >&2
+    exit 1
+  fi
+done
+
+if git diff --cached --name-only | grep -Eq '(^|/)\.env($|\.|/)|(^|/)\.streamlit/secrets\.toml$'; then
+  echo "Blocked: secrets detected in staged changes." >&2
+  exit 1
+fi

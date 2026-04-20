@@ -1,0 +1,33 @@
+# 核心框架
+langchain>=0.3.0
+langchain-community>=0.3.0
+langchain-core>=0.3.0
+langchain-openai>=0.2.0
+langchain-experimental>=0.3.0
+langchain-text-splitters>=0.3.0
+langchain-huggingface>=0.1.0
+
+# 向量库
+faiss-cpu
+
+# 嵌入 & Rerank
+sentence-transformers
+flashrank
+
+# PyTorch 1.11 不兼容 NumPy 2.x
+numpy<2
+
+# BM25 关键词检索
+rank-bm25
+
+# PDF 处理
+pymupdf
+
+# LLM 提供商
+zhipuai
+
+# 界面
+streamlit>=1.35.0
+
+# 工具
+python-dotenv
