@@ -1,7 +1,10 @@
+import sys
+
 import pytest
 from pathlib import Path
 
 from llm_refine import extract_pages, is_cached, page_paths, save_page, verify_numbers, refine_page
+from tests.conftest import make_pdf
 
 
 def test_extract_pages_returns_text_and_hash(tiny_pdf):
@@ -150,3 +153,60 @@ def test_process_book_fallback_on_llm_failure(tmp_path, tiny_pdf, monkeypatch):
     meta = _json.loads((tmp_path / "book" / "page_001.meta.json")
                        .read_text(encoding="utf-8"))
     assert meta["fallback"] is True
+
+
+def test_process_book_writes_skipped_pages_json(tmp_path, monkeypatch):
+    """第二页文本过短（< MIN_TEXT_CHARS），应计入 skipped 并落盘 skipped_pages.json。"""
+    pdf_path = make_pdf(
+        tmp_path / "book2.pdf",
+        ["UNIT ALPHA M 6 T 4 SV 3+ W 5", "x"],
+    )
+    monkeypatch.setattr(llm_refine, "refine_page",
+                        lambda client, text, tail: "## E\n" + text.strip())
+    summary = process_book(client=None, pdf_path=pdf_path, out_root=tmp_path)
+
+    assert summary["total"] == 2
+    assert summary["skipped"] == 1
+    assert summary["done"] == 1
+
+    book_dir = tmp_path / "book2"
+    skipped_path = book_dir / "skipped_pages.json"
+    assert skipped_path.exists()
+    skipped_pages = _json.loads(skipped_path.read_text(encoding="utf-8"))
+    assert skipped_pages == [2]
+    # 短页不应被当作正常任务处理，不产出 page_002.md
+    assert not (book_dir / "page_002.md").exists()
+
+
+class _StubOpenAIClient:
+    """占位客户端：只验证 main() 会用 api_key/base_url 构造它，不发起任何网络请求。"""
+    def __init__(self, **kwargs):
+        self.kwargs = kwargs
+
+
+def test_main_exits_1_when_api_key_missing(monkeypatch, tmp_path, capsys):
+    monkeypatch.delenv("DEEPSEEK_API_KEY", raising=False)
+    # 即便不小心构造了真实客户端也不应发生网络调用；这里额外兜底防御
+    monkeypatch.setattr("openai.OpenAI", _StubOpenAIClient)
+    monkeypatch.setattr(sys, "argv",
+                        ["llm_refine.py", "--all", "--data-dir", str(tmp_path)])
+
+    with pytest.raises(SystemExit) as exc_info:
+        llm_refine.main()
+
+    assert exc_info.value.code == 1
+    assert "DEEPSEEK_API_KEY" in capsys.readouterr().out
+
+
+def test_main_exits_1_when_book_substring_matches_nothing(monkeypatch, tmp_path, capsys):
+    monkeypatch.setenv("DEEPSEEK_API_KEY", "test-key")
+    monkeypatch.setattr("openai.OpenAI", _StubOpenAIClient)
+    monkeypatch.setattr(sys, "argv",
+                        ["llm_refine.py", "--book", "NO_SUCH_BOOK_XYZ",
+                         "--data-dir", str(tmp_path)])
+
+    with pytest.raises(SystemExit) as exc_info:
+        llm_refine.main()
+
+    assert exc_info.value.code == 1
+    assert "NO_SUCH_BOOK_XYZ" in capsys.readouterr().out
