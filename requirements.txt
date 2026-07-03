@@ -31,3 +31,4 @@ streamlit>=1.35.0
 
 # 工具
 python-dotenv
+pytest

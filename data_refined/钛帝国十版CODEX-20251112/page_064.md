@@ -1,0 +1,2 @@
+## (XV8)危机战斗服小队 CRISIS BATTLESUIT TEAM
+| M | T |
