@@ -9,6 +9,8 @@ llm_refine.py — 用 LLM 将 PDF 页文本重构为结构化 Markdown
 """
 import hashlib
 import json
+import re
+from collections import Counter
 from pathlib import Path
 from typing import List, Tuple
 
@@ -56,3 +58,13 @@ def is_cached(book_dir: Path, page_no: int, sha256: str, prompt_version: str) ->
     return (meta.get("sha256") == sha256
             and meta.get("prompt_version") == prompt_version
             and not meta.get("fallback", False))
+
+
+def verify_numbers(source: str, markdown: str) -> List[str]:
+    """校验生成 Markdown 的数字多重集合 ⊆ 原文，返回超出的 token。"""
+    src_counts = Counter(re.findall(r"\d+", source))
+    bad = []
+    for tok, cnt in Counter(re.findall(r"\d+", markdown)).items():
+        if cnt > src_counts.get(tok, 0):
+            bad.append(tok)
+    return sorted(bad)

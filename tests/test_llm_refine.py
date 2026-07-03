@@ -1,6 +1,6 @@
 from pathlib import Path
 
-from llm_refine import extract_pages, is_cached, page_paths, save_page
+from llm_refine import extract_pages, is_cached, page_paths, save_page, verify_numbers
 
 
 def test_extract_pages_returns_text_and_hash(tiny_pdf):
@@ -33,3 +33,21 @@ def test_cache_invalidated_by_sha_or_prompt_or_fallback(tmp_path):
     save_page(tmp_path, 2, "raw", _meta("abc", fallback=True))
     assert not is_cached(tmp_path, 2, "abc", "v1")       # 兜底页需重试
     assert not is_cached(tmp_path, 9, "abc", "v1")       # 不存在
+
+
+def test_verify_numbers_pass_when_subset():
+    src = "箭弹发射器 18 5 2+ 3 0 1"
+    md = "| 箭弹发射器 | 18 | 5 | 2+ | 3 | 0 | 1 |"
+    assert verify_numbers(src, md) == []
+
+
+def test_verify_numbers_flags_invented_tokens():
+    src = "M 10 T 4"
+    md = "| M | T |\n| 10 | 7 |"          # 7 是原文没有的
+    assert verify_numbers(src, md) == ["7"]
+
+
+def test_verify_numbers_flags_excess_count():
+    src = "W 5"
+    md = "5 5 5"                            # 5 出现次数超过原文
+    assert verify_numbers(src, md) == ["5"]
