@@ -107,3 +107,46 @@ def test_refine_page_raises_after_max_retries(monkeypatch):
     client = _FakeClient([RuntimeError("a"), RuntimeError("b"), RuntimeError("c")])
     with pytest.raises(RuntimeError):
         refine_page(client, "原文", "")
+
+
+import json as _json
+
+import llm_refine
+from llm_refine import process_book
+
+
+def test_process_book_writes_pages_and_summary(tmp_path, tiny_pdf, monkeypatch):
+    monkeypatch.setattr(llm_refine, "refine_page",
+                        lambda client, text, tail: "## E\n" + text.strip())
+    summary = process_book(client=None, pdf_path=tiny_pdf, out_root=tmp_path)
+    assert summary["total"] == 2
+    assert summary["done"] == 2
+    assert summary["failed"] == 0
+    book_dir = tmp_path / "book"
+    assert (book_dir / "page_001.md").exists()
+    meta = _json.loads((book_dir / "page_001.meta.json").read_text(encoding="utf-8"))
+    assert meta["fallback"] is False and meta["verify_ok"] is True
+
+
+def test_process_book_uses_cache_on_second_run(tmp_path, tiny_pdf, monkeypatch):
+    monkeypatch.setattr(llm_refine, "refine_page",
+                        lambda client, text, tail: "## E\nok " + text.strip())
+    process_book(client=None, pdf_path=tiny_pdf, out_root=tmp_path)
+    calls = []
+    monkeypatch.setattr(llm_refine, "refine_page",
+                        lambda client, text, tail: calls.append(1) or "## X")
+    summary = process_book(client=None, pdf_path=tiny_pdf, out_root=tmp_path)
+    assert summary["cached"] == 2 and calls == []
+
+
+def test_process_book_fallback_on_llm_failure(tmp_path, tiny_pdf, monkeypatch):
+    def boom(client, text, tail):
+        raise RuntimeError("LLM down")
+    monkeypatch.setattr(llm_refine, "refine_page", boom)
+    summary = process_book(client=None, pdf_path=tiny_pdf, out_root=tmp_path)
+    assert summary["failed"] == 2
+    md = (tmp_path / "book" / "page_001.md").read_text(encoding="utf-8")
+    assert "UNIT ALPHA" in md            # 兜底写入原始文本
+    meta = _json.loads((tmp_path / "book" / "page_001.meta.json")
+                       .read_text(encoding="utf-8"))
+    assert meta["fallback"] is True
