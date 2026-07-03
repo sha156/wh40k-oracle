@@ -21,6 +21,7 @@ import json
 import shutil
 import argparse
 import time
+import hashlib
 import multiprocessing
 from pathlib import Path
 
@@ -59,6 +60,7 @@ from langchain_community.vectorstores import FAISS
 from langchain_experimental.text_splitter import SemanticChunker
 from langchain_core.documents import Document
 from hf_embeddings_compat import build_huggingface_embeddings
+from md_chunker import load_refined_book
 
 # ══════════════════════════════════════════════
 #  配置区（按需修改）
@@ -66,6 +68,7 @@ from hf_embeddings_compat import build_huggingface_embeddings
 DATA_DIR          = Path("data")                    # PDF 存放目录
 VECTOR_STORE_PATH = Path("local_vector_store")      # FAISS 输出目录
 PROCESSED_LOG     = Path("local_vector_store/processed_files.json")  # 增量记录
+REFINED_DIR       = Path("data_refined")            # llm_refine.py 输出目录，存在则优先使用
 
 # 嵌入模型：bge-m3 中英文混合最强，本地加载
 EMBED_MODEL_NAME  = "BAAI/bge-m3"
@@ -117,6 +120,18 @@ def get_book_name(filepath: Path) -> str:
         if ch.isdigit():
             return stem[:i].strip()
     return stem
+
+
+def refined_fingerprint(pdf_path: Path) -> str:
+    """重构目录指纹：data_refined/<书名>/ 下所有 *.md 的 (文件名, mtime) 哈希；无目录/无文件返回 'none'。"""
+    book_dir = REFINED_DIR / pdf_path.stem
+    md_files = sorted(book_dir.glob("*.md"))
+    if not md_files:
+        return "none"
+    h = hashlib.sha256()
+    for f in md_files:
+        h.update("{}:{}".format(f.name, os.path.getmtime(f)).encode("utf-8"))
+    return h.hexdigest()[:16]
 
 
 def load_pdf(pdf_path: Path) -> list[Document]:
@@ -248,7 +263,7 @@ def main():
     processed_log = {} if args.rebuild else load_processed_log()
     to_process = []
     for pdf in pdf_files:
-        mtime = str(os.path.getmtime(pdf))
+        mtime = "{}|{}".format(os.path.getmtime(pdf), refined_fingerprint(pdf))
         if processed_log.get(str(pdf)) == mtime:
             print(f"  ⏭️  跳过（已处理）: {pdf.name}")
         else:
@@ -273,21 +288,30 @@ def main():
         t0 = time.time()
 
         try:
-            pages = load_pdf(pdf_path)
-            pages = [p for p in pages if len(p.page_content.strip()) > 20]
+            base_meta = {"source": str(pdf_path), "book": get_book_name(pdf_path)}
+            refined = load_refined_book(pdf_path, REFINED_DIR, base_meta)
 
-            if not pages:
-                tqdm.write(f"  ⚠️  {pdf_path.name}: 无可提取文本（扫描版），已跳过")
-                failed_files.append((pdf_path.name, "无文本层"))
-                continue
+            if refined is not None:
+                chunks = refined
+                tqdm.write(f"  🧩 {pdf_path.name}: 使用 LLM 重构结果，"
+                           f"{len(chunks)} 个条目 chunk")
+            else:
+                pages = load_pdf(pdf_path)
+                pages = [p for p in pages if len(p.page_content.strip()) > 20]
 
-            tqdm.write(f"  📄 {pdf_path.name}: {len(pages)} 页")
+                if not pages:
+                    tqdm.write(f"  ⚠️  {pdf_path.name}: 无可提取文本（扫描版），已跳过")
+                    failed_files.append((pdf_path.name, "无文本层"))
+                    continue
 
-            chunks = semantic_chunk(pages, embeddings)
-            tqdm.write(f"  ✂️  分块完成: {len(chunks)} chunks  ({time.time()-t0:.1f}s)")
+                tqdm.write(f"  📄 {pdf_path.name}: {len(pages)} 页")
+
+                chunks = semantic_chunk(pages, embeddings)
+                tqdm.write(f"  ✂️  分块完成: {len(chunks)} chunks  ({time.time()-t0:.1f}s)")
 
             all_new_chunks.extend(chunks)
-            processed_log[str(pdf_path)] = str(os.path.getmtime(pdf_path))
+            processed_log[str(pdf_path)] = "{}|{}".format(
+                os.path.getmtime(pdf_path), refined_fingerprint(pdf_path))
 
         except Exception as e:
             tqdm.write(f"  ❌ {pdf_path.name} 处理失败: {e}")
