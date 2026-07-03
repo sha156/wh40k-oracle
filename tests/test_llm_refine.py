@@ -1,6 +1,7 @@
+import pytest
 from pathlib import Path
 
-from llm_refine import extract_pages, is_cached, page_paths, save_page, verify_numbers
+from llm_refine import extract_pages, is_cached, page_paths, save_page, verify_numbers, refine_page
 
 
 def test_extract_pages_returns_text_and_hash(tiny_pdf):
@@ -51,3 +52,58 @@ def test_verify_numbers_flags_excess_count():
     src = "W 5"
     md = "5 5 5"                            # 5 出现次数超过原文
     assert verify_numbers(src, md) == ["5"]
+
+
+class _FakeChoice:
+    def __init__(self, content):
+        class _Msg:
+            pass
+        self.message = _Msg()
+        self.message.content = content
+
+
+class _FakeClient:
+    """openai.OpenAI 形状的假客户端：按脚本依次返回/抛错。"""
+    def __init__(self, script):
+        self._script = list(script)
+        self.calls = 0
+
+        class _Completions:
+            def create(_self, **kwargs):
+                self.calls += 1
+                item = self._script.pop(0)
+                if isinstance(item, Exception):
+                    raise item
+
+                class _Resp:
+                    choices = [_FakeChoice(item)]
+                return _Resp()
+
+        class _Chat:
+            completions = _Completions()
+
+        self.chat = _Chat()
+
+
+def test_refine_page_returns_content():
+    client = _FakeClient(["## 单位A\n| M |"])
+    assert refine_page(client, "原文", "") == "## 单位A\n| M |"
+
+
+def test_refine_page_strips_code_fence():
+    client = _FakeClient(["```markdown\n## 单位A\n```"])
+    assert refine_page(client, "原文", "") == "## 单位A"
+
+
+def test_refine_page_retries_then_succeeds(monkeypatch):
+    monkeypatch.setattr("llm_refine.time.sleep", lambda s: None)
+    client = _FakeClient([RuntimeError("boom"), "## OK"])
+    assert refine_page(client, "原文", "") == "## OK"
+    assert client.calls == 2
+
+
+def test_refine_page_raises_after_max_retries(monkeypatch):
+    monkeypatch.setattr("llm_refine.time.sleep", lambda s: None)
+    client = _FakeClient([RuntimeError("a"), RuntimeError("b"), RuntimeError("c")])
+    with pytest.raises(RuntimeError):
+        refine_page(client, "原文", "")

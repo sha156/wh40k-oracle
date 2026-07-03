@@ -10,11 +10,14 @@ llm_refine.py — 用 LLM 将 PDF 页文本重构为结构化 Markdown
 import hashlib
 import json
 import re
+import time
 from collections import Counter
 from pathlib import Path
 from typing import List, Tuple
 
 import fitz
+
+from refine_prompt import PROMPT_VERSION, SYSTEM_PROMPT, build_user_prompt
 
 MIN_TEXT_CHARS = 20
 
@@ -68,3 +71,40 @@ def verify_numbers(source: str, markdown: str) -> List[str]:
         if cnt > src_counts.get(tok, 0):
             bad.append(tok)
     return sorted(bad)
+
+
+MODEL = "deepseek-chat"
+BASE_URL = "https://api.deepseek.com"
+MAX_RETRIES = 3
+
+
+def _strip_code_fence(content: str) -> str:
+    content = content.strip()
+    if content.startswith("```"):
+        content = re.sub(r"^```[a-zA-Z]*\s*\n", "", content)
+        content = re.sub(r"\n```\s*$", "", content)
+    return content.strip()
+
+
+def refine_page(client, page_text: str, prev_tail: str) -> str:
+    """调用 LLM 重构单页文本，重试 MAX_RETRIES 次，指数退避。"""
+    last_err = None
+    for attempt in range(MAX_RETRIES):
+        try:
+            resp = client.chat.completions.create(
+                model=MODEL,
+                messages=[
+                    {"role": "system", "content": SYSTEM_PROMPT},
+                    {"role": "user", "content": build_user_prompt(page_text, prev_tail)},
+                ],
+                temperature=0.0,
+                max_tokens=4096,
+            )
+            content = _strip_code_fence(resp.choices[0].message.content or "")
+            if content:
+                return content
+            raise ValueError("LLM 返回空内容")
+        except Exception as e:  # noqa: BLE001 — 网络/限流/空响应统一重试
+            last_err = e
+            time.sleep(2 ** attempt)
+    raise RuntimeError("LLM 处理失败（重试{}次）: {}".format(MAX_RETRIES, last_err))
