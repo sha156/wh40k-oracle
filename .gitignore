@@ -25,17 +25,13 @@ data/
 
 # Logs and temporary files
 *.log
+*.err
+*.out
 temp.pdf
-version.out
-version.err
-streamlit_test.out.log
-streamlit_test.err.log
-streamlit_live.out.log
-streamlit_live.err.log
-bg_streamlit.out.log
-bg_streamlit.err.log
-bg_streamlit_8501.out.log
-bg_streamlit_8501.err.log
+basher.txt
+
+# LLM refined output (generated; pilot committed intentionally in data_refined/)
+# Un-ignore when running --all to avoid dirtying the working tree
 
 # OS/editor noise
 .DS_Store
