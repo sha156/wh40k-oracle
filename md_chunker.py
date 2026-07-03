@@ -11,9 +11,21 @@ from langchain_core.documents import Document
 CONT_MARKER = "<!--CONT-->"
 
 
+# 武器表子标题：属性表 + 这些段落必须与单位名永远同块，见
+# docs/superpowers/specs/2026-07-02-llm-pdf-refine-design.md:77-78
+_WEAPON_SEGMENT_PREFIXES = ("### 远程武器", "### 近战武器")
+
+
 def _split_oversize(heading: str, body_lines: List[str],
                     max_chunk_chars: int) -> List[str]:
-    """超长条目按 ### 边界二次切分，后续段落标题加（续）。"""
+    """超长条目按 ### 边界二次切分，后续段落标题加（续）。
+
+    硬性不变量：属性表（首个 ### 边界前的内容）与 ### 远程武器/### 近战武器
+    段永远与单位名同块（chunk 0），即便因此超出 max_chunk_chars 也不拆分——
+    这是覆盖体积预算的强约束。其余段落（如 ### 技能、单位构成等）仍按原有的
+    体积装箱逻辑放入后续（续）chunk。若条目中不存在武器子段（非兵牌条目，如
+    战略技能/升级），则完全等同于原实现：仅首段受保护，其余段落纯按体积装箱。
+    """
     text = "\n".join(body_lines)
     if len(text) <= max_chunk_chars or "\n### " not in "\n" + text:
         return ["## {}\n{}".format(heading, text) if text else "## " + heading]
@@ -28,15 +40,36 @@ def _split_oversize(heading: str, body_lines: List[str],
     if current:
         segments.append("\n".join(current))
 
-    parts, buf = [], ""
-    for seg in segments:
-        if buf and len(buf) + len(seg) > max_chunk_chars:
+    weapon_indices = [i for i, seg in enumerate(segments)
+                       if i > 0 and seg.startswith(_WEAPON_SEGMENT_PREFIXES)]
+
+    if not weapon_indices:
+        # 无武器段：等同于原实现，仅首段（属性表）受保护，其余纯按体积装箱
+        parts, buf = [], ""
+        for seg in segments:
+            if buf and len(buf) + len(seg) > max_chunk_chars:
+                parts.append(buf)
+                buf = seg
+            else:
+                buf = buf + "\n" + seg if buf else seg
+        if buf:
             parts.append(buf)
-            buf = seg
-        else:
-            buf = buf + "\n" + seg if buf else seg
-    if buf:
-        parts.append(buf)
+    else:
+        # 有武器段：属性表 + 全部武器段强制同块，忽略体积预算；
+        # 其余段落按体积装箱进入后续（续）chunk
+        protected = [segments[0]] + [segments[i] for i in weapon_indices]
+        rest = [seg for i, seg in enumerate(segments)
+                if i != 0 and i not in weapon_indices]
+
+        parts, buf = ["\n".join(protected)], ""
+        for seg in rest:
+            if buf and len(buf) + len(seg) > max_chunk_chars:
+                parts.append(buf)
+                buf = seg
+            else:
+                buf = buf + "\n" + seg if buf else seg
+        if buf:
+            parts.append(buf)
 
     out = []
     for i, part in enumerate(parts):
