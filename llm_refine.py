@@ -8,8 +8,9 @@ llm_refine.py — 用 LLM 将 PDF 页文本重构为结构化 Markdown
 按页文本哈希 + prompt 版本增量，可断点续跑。
 """
 import hashlib
+import json
 from pathlib import Path
-from typing import List
+from typing import List, Tuple
 
 import fitz
 
@@ -29,3 +30,29 @@ def extract_pages(pdf_path: Path) -> List[dict]:
         })
     doc.close()
     return pages
+
+
+def page_paths(book_dir: Path, page_no: int) -> Tuple[Path, Path]:
+    stem = "page_{:03d}".format(page_no)
+    return book_dir / (stem + ".md"), book_dir / (stem + ".meta.json")
+
+
+def save_page(book_dir: Path, page_no: int, markdown: str, meta: dict) -> None:
+    book_dir.mkdir(parents=True, exist_ok=True)
+    md_path, meta_path = page_paths(book_dir, page_no)
+    md_path.write_text(markdown, encoding="utf-8")
+    meta_path.write_text(json.dumps(meta, ensure_ascii=False, indent=2),
+                         encoding="utf-8")
+
+
+def is_cached(book_dir: Path, page_no: int, sha256: str, prompt_version: str) -> bool:
+    md_path, meta_path = page_paths(book_dir, page_no)
+    if not (md_path.exists() and meta_path.exists()):
+        return False
+    try:
+        meta = json.loads(meta_path.read_text(encoding="utf-8"))
+    except (json.JSONDecodeError, OSError):
+        return False
+    return (meta.get("sha256") == sha256
+            and meta.get("prompt_version") == prompt_version
+            and not meta.get("fallback", False))
