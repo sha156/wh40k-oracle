@@ -1,0 +1,7 @@
+{
+  "sha256": "50231d7a034f45db4232b8cf436d1e192bfab7beb8519d340e5859645c1a7893",
+  "prompt_version": "v1",
+  "model": "deepseek-v4-pro",
+  "verify_ok": true,
+  "fallback": false
+}
