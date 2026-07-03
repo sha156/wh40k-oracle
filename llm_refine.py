@@ -78,7 +78,7 @@ def verify_numbers(source: str, markdown: str) -> List[str]:
     return sorted(bad)
 
 
-MODEL = "deepseek-chat"
+MODEL = "deepseek-v4-pro"
 BASE_URL = "https://api.deepseek.com"
 MAX_RETRIES = 3
 
