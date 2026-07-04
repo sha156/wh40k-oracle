@@ -60,6 +60,19 @@ class TestExtractBook:
         assert fw.pages == [1, 2, 3]      # 首页 + CONT续页 + 详解页
         assert cands[1].pages == [3]
 
+    def test_cont_page_starting_with_new_heading_not_merged(self, tmp_path):
+        # CONT 标记后第一条实际内容就是新 ## 标题 → 该页不是前一实体的续页
+        book = tmp_path / "c"
+        book.mkdir()
+        _write(book / "page_001.md",
+               "## 火战士队 FIRE WARRIORS\n| M | T |\n...")
+        _write(book / "page_002.md",
+               "<!--CONT-->\n\n## 迅捷突袭 RAPID ASSAULT\n...")
+        cands = extract_book(book)
+        assert [c.name_zh for c in cands] == ["火战士队", "迅捷突袭"]
+        assert cands[0].pages == [1]      # 页2不并入前一实体
+        assert cands[1].pages == [2]
+
     def test_pure_noise_heading_skipped(self, tmp_path):
         book = tmp_path / "b"
         book.mkdir()

@@ -36,6 +36,15 @@ def parse_heading(heading: str) -> Tuple[Optional[str], Optional[str]]:
     return (text or None), None
 
 
+def _cont_page_continues(lines: List[str]) -> bool:
+    """CONT 页是否真的续接前一实体：标记后第一条非空内容若直接是 ## 新标题则不算续页。"""
+    for line in lines[1:]:
+        if not line.strip():
+            continue
+        return not line.startswith("## ")
+    return True  # 标记后无任何内容/无 ## 标题 → 视为续页
+
+
 def extract_book(book_dir: Path) -> List[EntityCandidate]:
     """单本书：扫 page_*.md 的 ## 标题；CONT 续页与'详解'页并入实体页码。"""
     out: List[EntityCandidate] = []
@@ -45,7 +54,7 @@ def extract_book(book_dir: Path) -> List[EntityCandidate]:
         page_no = int(md.stem.split("_")[1])
         lines = md.read_text(encoding="utf-8").splitlines()
         if lines and lines[0].strip() == CONT_MARKER and current is not None \
-                and page_no not in current.pages:
+                and page_no not in current.pages and _cont_page_continues(lines):
             current.pages.append(page_no)
         for line in lines:
             if not line.startswith("## "):
