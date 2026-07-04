@@ -113,12 +113,18 @@ def get_book_name(filepath: Path) -> str:
     """
     从文件名提取「书名」元数据。
     例：'黑暗天使10版中文老湿腐版1.12.pdf' → '黑暗天使'
-    策略：取第一个数字/英文版本号之前的中文部分。
+    策略：跳过开头的数字/英文前缀（如 '10E官方中文核心规则'），
+    再取第一个数字之前的部分；结果为空则回退到完整文件名，
+    避免出现 book="" 导致引用和书目过滤失效。
     """
     stem = filepath.stem  # 去掉 .pdf
-    for i, ch in enumerate(stem):
-        if ch.isdigit():
-            return stem[:i].strip()
+    start = 0
+    while start < len(stem) and (stem[start].isdigit() or stem[start].isascii()):
+        start += 1
+    for i in range(start, len(stem)):
+        if stem[i].isdigit():
+            name = stem[:i].strip()
+            return name if name else stem
     return stem
 
 
