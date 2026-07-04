@@ -10,7 +10,9 @@ from typing import Dict, List, Optional
 from wiki_compile.canonical import CanonicalEntry
 from wiki_compile.extract import EntityCandidate
 
-_PUNCT_MAP = str.maketrans({"'": "'", "'": "'", "–": "-", "—": "-"})
+# ’‘ 弯引号、–— 长短横线（PDF 提取常见）→ 归一到 ASCII
+_PUNCT_MAP = str.maketrans(
+    {"\u2019": "'", "\u2018": "'", "\u2013": "-", "\u2014": "-"})
 FUZZY_CUTOFF = 0.85
 
 

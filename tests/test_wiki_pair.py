@@ -19,7 +19,7 @@ def _cand(zh, en, book="钛书"):
 class TestNormalize:
     def test_case_and_typographic_apostrophe(self):
         # 弯引号（PDF提取常见）与直引号归一
-        assert normalize_name("TA'UNAR SUPREMACY ARMOUR") == \
+        assert normalize_name("TA\u2019UNAR SUPREMACY ARMOUR") == \
                normalize_name("Ta'unar Supremacy Armour")
 
     def test_extra_spaces_collapsed(self):
