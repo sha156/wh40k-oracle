@@ -169,7 +169,9 @@ units(id, faction, name_zh, name_en, points_json, keywords_json, version)
 models(unit_id, name, M, T, SV, INVULN, W, LD, OC, count_options_json)
 weapons(id, unit_id, name_zh, name_en, range, A, BS_WS, S, AP, D, keywords_json)
    -- keywords_json: ["RAPID FIRE 1","LETHAL HITS"] 武器词条直接机器可读
-abilities(id, owner_id, name_zh, name_en, text_zh, effect_dsl_json, dsl_status)
+abilities(id, owner_id, scope, condition_json, name_zh, name_en, text_zh, effect_dsl_json, dsl_status)
+   -- scope: weapon/unit/attached/army/detachment/stratagem ← 上下文组装器按此挂载
+   -- condition_json: 生效条件（"仅对MONSTER"/"仅被引导时"），组装器转成开关
    -- dsl_status: encoded / partial / not_modeled   ← 模拟覆盖度的诚实标记
 stratagems(id, faction, detachment, name_zh, name_en, cp_cost, phase, text_zh, effect_dsl_json, dsl_status)
 detachments(id, faction, name_zh, name_en, rule_text, enhancements_json)
@@ -210,10 +212,37 @@ one_shot、psychic、precision、extra_attacks、lance、assault、pistol、indi
 
 ## 五、L4-1 蒙特卡洛模拟引擎（engines/simulator/）
 
+### 上下文组装器（context_builder.py）——模拟的前置难点
+
+一次对战的生效规则来自五层，归属逻辑各不相同：
+
+| 层 | 来源 | 挂载方式 |
+|---|------|---------|
+| ① 面板层 | 单位属性/武器词条/自带技能 | 实体解析后自动 |
+| ② 军队规则层 | 阵营 army rule（如钛帝国引导） | `unit.faction` 外键自动 join |
+| ③ 分队层 | 分队规则+强化（组军选择，单位推不出） | 用户指定才挂载，否则列为可选开关 |
+| ④ CP技能层 | 玩家主动开销 | 永远是可选开关 |
+| ⑤ 总规则层 | USR 语义/SvT查表/修正上限 | 引擎内置 |
+
+```
+build_context(attacker, defender, options) → SimContext
+  ① 实体解析 → 双方单位+武器 DSL
+  ② faction join → 军队规则效果（含条件，如"被引导时"）
+  ③ options 里给了分队/强化/CP技能/首领 → 挂载；没给 → 汇入开关列表
+  ④ 态势开关：冲锋/掩体/半血/距离档
+  ⑤ 产出：双方效果包 + toggles（渲染成面板开关）+ not_modeled 清单
+```
+
+实现依赖：effects 表带 `scope`（weapon/unit/attached/army/detachment/stratagem）
+和 `condition` 字段，②③步是纯 SQL join，零 LLM。
+
+聊天端默认档 = 面板+军队规则，回答附敏感性提示（"若在X分队命中再+1"），
+用户点名分队/CP技能则全量挂载；面板端 toggles 全部可视化调参。
+
 ### 攻击序列流水线（十版标准流程逐骰模拟）
 
 ```
-build_context（双方单位+武器+生效技能+CP技能叠加+距离/掩体/光环开关）
+build_context（见上，产出 SimContext）
   → attacks 数量（解析 D6+3 等随机骰）
   → hit_roll（修正上限±1、重骰、暴击词条 lethal/sustained）
   → wound_roll（S vs T 查表、anti-X、devastating wounds）
