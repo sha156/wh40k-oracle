@@ -13,8 +13,8 @@ class TestParseHeading:
             "炮击战斗服小队", "BROADSIDE BATTLESUITS")
 
     def test_pure_english_heading(self):
-        assert parse_heading("TA'UNAR SUPREMACY ARMOUR") == (
-            None, "TA'UNAR SUPREMACY ARMOUR")
+        assert parse_heading("TA’UNAR SUPREMACY ARMOUR") == (
+            None, "TA’UNAR SUPREMACY ARMOUR")
 
     def test_pure_chinese_heading(self):
         assert parse_heading("冲锋阶段") == ("冲锋阶段", None)
