@@ -1,5 +1,11 @@
 """标题解析与实体抽取测试。样本取自 data_refined 实测格式。"""
-from wiki_compile.extract import parse_heading
+from pathlib import Path
+
+from wiki_compile.extract import extract_book, extract_entities, parse_heading
+
+
+def _write(p: Path, text: str) -> None:
+    p.write_text(text, encoding="utf-8")
 
 
 class TestParseHeading:
@@ -28,3 +34,43 @@ class TestParseHeading:
         # 结尾孤立大写字母不算英文名（长度<3）
         zh, en = parse_heading("战术目标 A")
         assert en is None
+
+
+class TestExtractBook:
+    def _make_book(self, tmp_path: Path) -> Path:
+        book = tmp_path / "测试书"
+        book.mkdir()
+        _write(book / "page_001.md",
+               "## 火战士队 FIRE WARRIORS\n| M | T |\n### 远程武器\n...")
+        # 续页：CONT 标记 → 页码并入前一实体
+        _write(book / "page_002.md",
+               "<!--CONT-->\n### 技能\n...")
+        # 解说标题 → 并入同名实体，不新建
+        _write(book / "page_003.md",
+               "## 火战士队 FIRE WARRIORS 能力详解\n...\n## 冷言 COLDSTAR\n...")
+        # meta 文件不应干扰扫描
+        _write(book / "page_001.meta.json", "{}")
+        return book
+
+    def test_extracts_and_merges(self, tmp_path):
+        cands = extract_book(self._make_book(tmp_path))
+        assert [c.name_zh for c in cands] == ["火战士队", "冷言"]
+        fw = cands[0]
+        assert fw.name_en == "FIRE WARRIORS"
+        assert fw.pages == [1, 2, 3]      # 首页 + CONT续页 + 详解页
+        assert cands[1].pages == [3]
+
+    def test_pure_noise_heading_skipped(self, tmp_path):
+        book = tmp_path / "b"
+        book.mkdir()
+        _write(book / "page_001.md", "## 能力详解\n...")
+        assert extract_book(book) == []
+
+    def test_extract_entities_walks_all_books(self, tmp_path):
+        b1 = tmp_path / "书一"; b1.mkdir()
+        _write(b1 / "page_001.md", "## 单位甲 UNIT ALPHA\n...")
+        b2 = tmp_path / "书二"; b2.mkdir()
+        _write(b2 / "page_001.md", "## 单位乙 UNIT BETA\n...")
+        cands = extract_entities(tmp_path)
+        assert {(c.book, c.name_zh) for c in cands} == {
+            ("书一", "单位甲"), ("书二", "单位乙")}
