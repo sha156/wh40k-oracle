@@ -50,3 +50,61 @@ class TestPairEntities:
     def test_no_close_match_goes_unmatched(self):
         r = pair_entities([_cand("完全无关", "TOTALLY UNRELATED THING")], CANONICAL)
         assert r.unmatched != []
+
+
+import json
+
+from wiki_compile.pair_llm import llm_pair_book
+
+
+class FakeCompletion:
+    def __init__(self, content):
+        class _Msg:  # 模拟 openai 响应结构 choices[0].message.content
+            pass
+        m = _Msg(); m.content = content
+        class _Choice: pass
+        ch = _Choice(); ch.message = m
+        self.choices = [ch]
+
+
+class FakeClient:
+    """记录调用次数；返回固定 JSON。"""
+    def __init__(self, mapping):
+        self.calls = 0
+        self._content = json.dumps(
+            {"配对": [{"zh": k, "en": v} for k, v in mapping.items()]},
+            ensure_ascii=False)
+        class _Completions:
+            def __init__(self, outer): self._o = outer
+            def create(self, **kw):
+                self._o.calls += 1
+                return FakeCompletion(self._o._content)
+        class _Chat:
+            def __init__(self, outer): self.completions = _Completions(outer)
+        self.chat = _Chat(self)
+
+
+class TestLlmPairBook:
+    def test_pairs_from_llm_json(self, tmp_path):
+        client = FakeClient({"死亡之雨战机": "Sun Shark Bomber"})
+        pairs = llm_pair_book(
+            "钛书", [_cand("死亡之雨战机", None)],
+            [CanonicalEntry("9", "Sun Shark Bomber", "TAU")],
+            cache_dir=tmp_path, client=client)
+        assert pairs[0].en == "Sun Shark Bomber"
+        assert pairs[0].confidence == "llm"
+
+    def test_null_answer_skipped(self, tmp_path):
+        client = FakeClient({"神秘单位": None})
+        pairs = llm_pair_book("钛书", [_cand("神秘单位", None)],
+                              [CanonicalEntry("9", "Sun Shark Bomber", "TAU")],
+                              cache_dir=tmp_path, client=client)
+        assert pairs == []
+
+    def test_cache_hit_skips_second_call(self, tmp_path):
+        client = FakeClient({"死亡之雨战机": "Sun Shark Bomber"})
+        args = ("钛书", [_cand("死亡之雨战机", None)],
+                [CanonicalEntry("9", "Sun Shark Bomber", "TAU")])
+        llm_pair_book(*args, cache_dir=tmp_path, client=client)
+        llm_pair_book(*args, cache_dir=tmp_path, client=client)
+        assert client.calls == 1
