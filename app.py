@@ -51,6 +51,21 @@ VECTOR_STORE_PATH = Path("local_vector_store")
 DATA_DIR          = Path("data")
 EMBED_MODEL_NAME  = "BAAI/bge-m3"
 EMBED_MODEL_CACHE = "./opt"
+
+
+def resolve_embed_model() -> str:
+    """优先返回本地完整快照的绝对路径，避免 sentence-transformers 联网核对模型。
+
+    代理不稳时（Clash 抽风），HF 会对 hf-mirror 发 HEAD 请求核对模型并重试到超时，
+    导致嵌入初始化失败。模型已缓存时直接传本地快照目录（含 modules.json 的完整 ST 模型）
+    即走离线加载；找不到本地快照才回退到线上名（首次下载）。
+    """
+    snapshots = Path(EMBED_MODEL_CACHE) / "models--BAAI--bge-m3" / "snapshots"
+    if snapshots.is_dir():
+        for snap in sorted(snapshots.iterdir()):
+            if (snap / "modules.json").exists():
+                return str(snap.resolve())
+    return EMBED_MODEL_NAME
 RERANKER_MODEL    = "ms-marco-MiniLM-L-12-v2"   # FlashRank 本地模型名
 # 实测（2026-07-04，16 个失败案例基准）：ms-marco 系列（含 MultiBERT 多语言版）
 # 对中文查询的重排效果差于 RRF 融合顺序（命中@8：RRF 13/14 vs MultiBERT 12/14），
@@ -206,7 +221,7 @@ def load_resources():
     """加载嵌入模型、FAISS 向量库、Reranker。"""
     # 1. 嵌入模型
     embeddings = build_huggingface_embeddings(
-        model_name=EMBED_MODEL_NAME,
+        model_name=resolve_embed_model(),
         cache_folder=EMBED_MODEL_CACHE,
         model_kwargs={"device": "cpu"},
         encode_kwargs={"normalize_embeddings": True, "batch_size": 16},
