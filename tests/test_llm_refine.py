@@ -210,3 +210,36 @@ def test_main_exits_1_when_book_substring_matches_nothing(monkeypatch, tmp_path,
 
     assert exc_info.value.code == 1
     assert "NO_SUCH_BOOK_XYZ" in capsys.readouterr().out
+
+
+# ── --chinese-only 覆盖率过滤 ──
+
+def test_pdf_page_count(tiny_pdf):
+    assert llm_refine._pdf_page_count(tiny_pdf) == 2
+
+
+def test_filter_chinese_pending_skips_fully_refined(tmp_path):
+    pdf_done = make_pdf(tmp_path / "钛帝国.pdf", ["page one", "page two"])
+    pdf_todo = make_pdf(tmp_path / "吞世者.pdf", ["page one", "page two"])
+    out_root = tmp_path / "refined"
+    done_dir = out_root / "钛帝国"
+    done_dir.mkdir(parents=True)
+    (done_dir / "page_001.md").write_text("x", encoding="utf-8")
+    (done_dir / "page_002.md").write_text("x", encoding="utf-8")
+
+    kept = llm_refine._filter_chinese_pending(
+        [pdf_done, pdf_todo], out_root, min_coverage=0.9)
+
+    assert kept == [pdf_todo]
+
+
+def test_filter_chinese_pending_keeps_partial(tmp_path):
+    pdf = make_pdf(tmp_path / "死亡守卫.pdf", ["p1", "p2", "p3", "p4"])
+    out_root = tmp_path / "refined"
+    part_dir = out_root / "死亡守卫"
+    part_dir.mkdir(parents=True)
+    (part_dir / "page_001.md").write_text("x", encoding="utf-8")
+
+    kept = llm_refine._filter_chinese_pending([pdf], out_root, min_coverage=0.9)
+
+    assert kept == [pdf]
