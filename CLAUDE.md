@@ -9,6 +9,11 @@
 .\.venv\Scripts\python.exe ingest.py            # 增量构建索引
 .\.venv\Scripts\python.exe ingest.py --rebuild  # 清空重建
 .\run_streamlit.ps1                             # 启动 Web 界面（app.py）
+
+.\.venv\Scripts\python.exe -m wiki_compile extract          # 扫描实体清单
+.\.venv\Scripts\python.exe -m wiki_compile fetch-canonical  # 下载 Wahapedia CSV（需代理）
+.\.venv\Scripts\python.exe -m wiki_compile pair --llm       # 中英配对（LLM兜底需 DEEPSEEK_API_KEY）
+.\.venv\Scripts\python.exe -m wiki_compile terms            # 生成 wiki/terms.*
 ```
 
 ## 架构与技术栈
