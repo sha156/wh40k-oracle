@@ -25,15 +25,15 @@ raw:
 ## 远程武器
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| Aiolos missile launcher | 48" | D6+3 | 3+ | 5 | 0 | 1 | [[爆炸]] |
-| Anvilus autocannon battery | 48" | 4 | 3+ | 9 | -1 | 3 | [[双联]] |
+| Aiolos missile launcher | 48" | D6+3 | 3+ | 5 | 0 | 1 | [[core-rules/blast.md|爆炸]] |
+| Anvilus autocannon battery | 48" | 4 | 3+ | 9 | -1 | 3 | [[core-rules/twin-linked.md|双联]] |
 | Arachnus heavy lascannon battery | 48" | 2 | 3+ | 12 | -3 | D6+1 | - |
-| Boreas air defence missiles | 48" | 1 | 3+ | 12 | -3 | D6+1 | [[防空 2+]] |
+| Boreas air defence missiles | 48" | 1 | 3+ | 12 | -3 | D6+1 | [[core-rules/anti.md|防空 2+]] |
 | Hellfire plasma cannonade – standard | 36" | 6 | 3+ | 7 | -2 | 2 | * |
-| Hellfire plasma cannonade – supercharge | 36" | 6 | 3+ | 8 | -3 | 3 | [[危险]]* |
-| Twin heavy bolter | 36" | 3 | 3+ | 5 | -1 | 2 | [[ sustained hits 1]], [[双联]] |
-| Twin heavy flamer | 12" | D6 | N/A | 5 | -1 | 1 | [[忽视掩体]], [[洪流]], [[双联]] |
-| Volkite falconet battery | 30" | 6 | 3+ | 9 | 0 | 2 | [[毁灭创伤]] |
+| Hellfire plasma cannonade – supercharge | 36" | 6 | 3+ | 8 | -3 | 3 | [[core-rules/hazardous.md|危险]]* |
+| Twin heavy bolter | 36" | 3 | 3+ | 5 | -1 | 2 | [[core-rules/sustained-hits.md|sustained hits 1]], [[core-rules/twin-linked.md|双联]] |
+| Twin heavy flamer | 12" | D6 | N/A | 5 | -1 | 1 | [[core-rules/ignores-cover.md|忽视掩体]], [[core-rules/torrent.md|洪流]], [[core-rules/twin-linked.md|双联]] |
+| Volkite falconet battery | 30" | 6 | 3+ | 9 | 0 | 2 | [[core-rules/devastating-wounds.md|毁灭创伤]] |
 
 *使用此武器选择目标前，选择其中一个属性进行攻击。
 

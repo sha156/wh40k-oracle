@@ -24,24 +24,24 @@ verify_warn: true
 ## 远程武器
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| Ectoplasma destructor | 36" | D6 | 3+ | 12 | -3 | 3 | [[Blast]], [[Lethal Hits]] |
-| Excruciator cannon | 36" | 6 | 3+ | 6 | -1 | 2 | [[Lethal Hits]] |
-| Hades battle cannon | 48" | D6+3 | 3+ | 10 | -1 | 3 | [[Blast]], [[Lethal Hits]] |
-| Hades lascannon | 48" | 2 | 3+ | 12 | -3 | D6+1 | [[Lethal Hits]] |
-| Heavy baleflamer | 12" | D6+3 | N/A | 7 | -2 | 2 | [[Ignores Cover]], [[Torrent]] |
-| Heavy missile launcher – krak | 48" | 2 | 3+ | 10 | -2 | D6+1 | [[Lethal Hits]] |
-| Heavy missile launcher – frag | 48" | 2D6 | 3+ | 5 | -1 | 1 | [[Blast]], [[Lethal Hits]] |
-| Heavy reaper autocannon | 48" | 4 | 3+ | 9 | -1 | 3 | [[Devastating Wounds]], [[Lethal Hits]], [[Sustained Hits 1]] |
-| Magma cutters | 12" | 2 | 3+ | 9 | -4 | D6 | [[Lethal Hits]], [[Melta 2]] |
+| Ectoplasma destructor | 36" | D6 | 3+ | 12 | -3 | 3 | [[core-rules/blast.md|Blast]], [[core-rules/lethal-hits.md|Lethal Hits]] |
+| Excruciator cannon | 36" | 6 | 3+ | 6 | -1 | 2 | [[core-rules/lethal-hits.md|Lethal Hits]] |
+| Hades battle cannon | 48" | D6+3 | 3+ | 10 | -1 | 3 | [[core-rules/blast.md|Blast]], [[core-rules/lethal-hits.md|Lethal Hits]] |
+| Hades lascannon | 48" | 2 | 3+ | 12 | -3 | D6+1 | [[core-rules/lethal-hits.md|Lethal Hits]] |
+| Heavy baleflamer | 12" | D6+3 | N/A | 7 | -2 | 2 | [[core-rules/ignores-cover.md|Ignores Cover]], [[core-rules/torrent.md|Torrent]] |
+| Heavy missile launcher – krak | 48" | 2 | 3+ | 10 | -2 | D6+1 | [[core-rules/lethal-hits.md|Lethal Hits]] |
+| Heavy missile launcher – frag | 48" | 2D6 | 3+ | 5 | -1 | 1 | [[core-rules/blast.md|Blast]], [[core-rules/lethal-hits.md|Lethal Hits]] |
+| Heavy reaper autocannon | 48" | 4 | 3+ | 9 | -1 | 3 | [[core-rules/devastating-wounds.md|Devastating Wounds]], [[core-rules/lethal-hits.md|Lethal Hits]], [[core-rules/sustained-hits.md|Sustained Hits 1]] |
+| Magma cutters | 12" | 2 | 3+ | 9 | -4 | D6 | [[core-rules/lethal-hits.md|Lethal Hits]], [[core-rules/melta.md|Melta 2]] |
 
 *重型导弹发射器注释：选择该武器的攻击目标前，必须先选择其中一个属性进行攻击。*
 
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| Electroscourge | 近战 | 5 | 3+ | 12 | -2 | 2 | [[Extra Attacks]], [[Sustained Hits 2]] |
-| Shearing claws – strike | 近战 | 5 | 3+ | 16 | -3 | D6+1 | [[Lethal Hits]] |
-| Shearing claws – sweep | 近战 | 10 | 3+ | 6 | -2 | 1 | [[Lethal Hits]] |
+| Electroscourge | 近战 | 5 | 3+ | 12 | -2 | 2 | [[core-rules/extra-attacks.md|Extra Attacks]], [[core-rules/sustained-hits.md|Sustained Hits 2]] |
+| Shearing claws – strike | 近战 | 5 | 3+ | 16 | -3 | D6+1 | [[core-rules/lethal-hits.md|Lethal Hits]] |
+| Shearing claws – sweep | 近战 | 10 | 3+ | 6 | -2 | 1 | [[core-rules/lethal-hits.md|Lethal Hits]] |
 
 ## 技能
 - **Deadly Demise D6（核心）**

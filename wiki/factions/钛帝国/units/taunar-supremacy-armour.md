@@ -27,14 +27,14 @@ verify_warn: true
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
 | Burst cannon | 18" | 4 | 4+ | 5 | 0 | 1 | - |
-| Fragmentation cluster shell launcher | 24" | 2D6+6 | 4+ | 6 | -1 | 1 | [[BLAST]] |
-| Fusion eradicator | 24" | 5 | 4+ | 10 | -4 | D6 | [[MELTA 3]] |
-| Heavy rail cannon array | 120" | 2 | 4+ | 26 | -5 | 16 | [[DEVASTATING WOUNDS]], [[HEAVY]] |
+| Fragmentation cluster shell launcher | 24" | 2D6+6 | 4+ | 6 | -1 | 1 | [[core-rules/blast.md|BLAST]] |
+| Fusion eradicator | 24" | 5 | 4+ | 10 | -4 | D6 | [[core-rules/melta.md|MELTA 3]] |
+| Heavy rail cannon array | 120" | 2 | 4+ | 26 | -5 | 16 | [[core-rules/devastating-wounds.md|DEVASTATING WOUNDS]], [[core-rules/heavy.md|HEAVY]] |
 | Nexus missile launcher | 36" | 8 | 4+ | 8 | -3 | 2 | - |
-| Pulse ordnance driver | 60" | 8 | 4+ | 5 | -1 | 3 | [[ANTI-INFANTRY 2+]] |
-| Smart missile system | 30" | 3 | 4+ | 5 | 0 | 1 | [[INDIRECT FIRE]] |
-| Tri-axis ion cannon – standard | 36" | D6+3 | 4+ | 8 | -2 | 2 | [[BLAST]] |
-| Tri-axis ion cannon – supercharge | 36" | D6+3 | 4+ | 9 | -3 | 3 | [[BLAST]], [[HAZARDOUS]] |
+| Pulse ordnance driver | 60" | 8 | 4+ | 5 | -1 | 3 | [[core-rules/anti.md|ANTI-INFANTRY 2+]] |
+| Smart missile system | 30" | 3 | 4+ | 5 | 0 | 1 | [[core-rules/indirect-fire.md|INDIRECT FIRE]] |
+| Tri-axis ion cannon – standard | 36" | D6+3 | 4+ | 8 | -2 | 2 | [[core-rules/blast.md|BLAST]] |
+| Tri-axis ion cannon – supercharge | 36" | D6+3 | 4+ | 9 | -3 | 3 | [[core-rules/blast.md|BLAST]], [[core-rules/hazardous.md|HAZARDOUS]] |
 
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |
@@ -43,7 +43,7 @@ verify_warn: true
 
 ## 技能
 - **核心技能**：
-  - **[[致命爆退]] (Deadly Demise) D6+3**
+  - **[[core-rules/deadly-demise.md|致命爆退]] (Deadly Demise) D6+3**
   - **Super-heavy Walker**
 - **阵营技能**：
   - **For the Greater Good**

@@ -1,6 +1,6 @@
 # WH40K Wiki Index
 
-_Last updated: 2026-07-05 16:03 UTC_
+_Last updated: 2026-07-05 16:47 UTC_
 
 ## 目录
 
@@ -15,6 +15,41 @@ _Last updated: 2026-07-05 16:03 UTC_
 | unit | [Flesh Hounds](factions/吞世者/units/flesh-hounds.md) | 头领装备：燃烧咆哮、浸血之牙、恐虐项圈。 每只血肉猎犬装备：浸血之牙、恐虐项圈。 | - |
 | unit | [Land Raider Achilles](factions/吞世者/units/land-raider-achilles.md) |  | - |
 | unit | [Sicaran Punisher](factions/吞世者/units/sicaran-punisher.md) |  | - |
+
+### 未分类
+
+| 类型 | 名称 | 摘要 | Updated |
+|------|------|------|---------|
+| core-rule | [一次性](core-rules/one-shot.md) | > 不同汉化版本将本技能译作"一次性/单次射击/单次使用"，均为 One Shot 的同一技能。 | 2026-07-06 |
+| core-rule | [不知疼痛](core-rules/feel-no-pain.md) | 每当本模型失去一点W 值时，投D6，结果大于等于要求数值则不会失去这点W。 | 2026-07-06 |
+| core-rule | [危险](core-rules/hazardous.md) |  | 2026-07-06 |
+| core-rule | [双联](core-rules/twin-linked.md) | 本武器可以重投攻击的造伤投掷结果。 | 2026-07-06 |
+| core-rule | [喷射](core-rules/torrent.md) | 本武器自动命中目标，无需投掷。 | 2026-07-06 |
+| core-rule | [忽视掩体](core-rules/ignores-cover.md) | 本武器的攻击忽视目标的【掩体效果】。 | 2026-07-06 |
+| core-rule | [手枪](core-rules/pistol.md) |  | 2026-07-06 |
+| core-rule | [斥候](core-rules/scouts.md) | > 数据卡上常标注具体数值，例如"斥候7〞"，均为本技能的参数化写法。 | 2026-07-06 |
+| core-rule | [曲射](core-rules/indirect-fire.md) | 本武器攻击不需要视线，并且可以消灭视线外的敌方模型。 | 2026-07-06 |
+| core-rule | [毁灭伤害](core-rules/devastating-wounds.md) | > 不同汉化版本将本技能译作"毁灭伤害/毁灭创伤/毁灭之伤/毁灭伤损"，均为 Devastating Wounds 的同一技能。 | 2026-07-06 |
+| core-rule | [深入打击](core-rules/deep-strike.md) |  | 2026-07-06 |
+| core-rule | [渗透](core-rules/infiltrators.md) | 部署军队时，如果你的某个单位全体模型都拥有此技能，则可以将此单位部署于任意敌方模型以及敌方部署区水平9 寸外的战场任意位置。 | 2026-07-06 |
+| core-rule | [灵能攻击](core-rules/psychic-attacks.md) | 拥有【灵能】技能的武器叫做灵能武器，造成的伤害（或[[core-rules/mortal-wounds.md|致命伤害]]）算作灵能攻击。 | 2026-07-06 |
+| core-rule | [热熔](core-rules/melta.md) | 本武器攻击半射程内目标时，攻击的破坏力增加显示的数值，例如"热熔2"就是让武器破坏力增加2 点。 | 2026-07-06 |
+| core-rule | [爆炸](core-rules/blast.md) | 本武器的攻击目标中每有5 个模型，攻击次数就+1。 | 2026-07-06 |
+| core-rule | [特殊保护](core-rules/invulnerable-save.md) | > 不同汉化版本将本规则译作"特殊保护"或"无敌豁免"，均指 Invulnerable Save。 | 2026-07-06 |
+| core-rule | [独行特工](core-rules/lone-operative.md) | 除非作为联合单位的一部分（详见[[core-rules/leader|领袖]]技能），本单位只能被12 寸内的模型选为射击攻击的目标。 | 2026-07-06 |
+| core-rule | [突击](core-rules/assault.md) | 装备者所在单位进行过加速后，拥有【突击】技能的武器的单位在本回合的射击阶段中依然算作【可射击单位】，但此时只能使用突击武器进行射击。 | 2026-07-06 |
+| core-rule | [精准](core-rules/precision.md) |  | 2026-07-06 |
+| core-rule | [致命一击](core-rules/lethal-hits.md) | 本武器攻击时，命中暴击对目标自动造伤。 | 2026-07-06 |
+| core-rule | [致命伤](core-rules/mortal-wounds.md) |  | 2026-07-06 |
+| core-rule | [致命破灭](core-rules/deadly-demise.md) | 当本模型被消灭时，在移除模型之前投D6，（如果是运输工具要在乘客脱离之前投掷）当结果为6 时，此模型6 寸内的每个单位（不分敌我）遭受其标注数值的[[core-... | 2026-07-06 |
+| core-rule | [迅猛冲锋](core-rules/lance.md) | 如果装备者本回合进行过冲锋移动，则本武器造伤结果+1。 | 2026-07-06 |
+| core-rule | [连击](core-rules/sustained-hits.md) | 本武器攻击出现命中暴击时，会造成额外数量命中，例如"连击2"就会额外造成2 下命中（造成命中就是已经命中，无需投掷）。 | 2026-07-06 |
+| core-rule | [速射](core-rules/rapid-fire.md) | 如果目标单位位于此武器半射程内，则此武器的攻击次数增加标注的次数，例如"速射1"就是增加1 下。 | 2026-07-06 |
+| core-rule | [重型](core-rules/heavy.md) | 装备者所在单位如果本回合【保持静止】，则此武器的命中结果+1。 | 2026-07-06 |
+| core-rule | [针对性攻击](core-rules/anti.md) | > 数据卡上常见"反步兵X+""反载具X+""反泰坦X+""防空X+""针对载具X+""ANTI-INFANTRY X+""ANTI-FLY X+"等写法，均为... | 2026-07-06 |
+| core-rule | [隐蔽](core-rules/stealth.md) | 如果你的某个单位全体模型都拥有此技能，则对本单位的射击攻击命中结果减1。 | 2026-07-06 |
+| core-rule | [领袖](core-rules/leader.md) |  | 2026-07-06 |
+| core-rule | [额外攻击](core-rules/extra-attacks.md) |  | 2026-07-06 |
 
 ### 钛帝国
 
@@ -58,7 +93,7 @@ _Last updated: 2026-07-05 16:03 UTC_
 | unit | [影阳指挥官](factions/钛帝国/units/commander-shadowsun.md) | 本模型拥有 5+ 特殊保护。 | - |
 | unit | [战术兵蜂](factions/钛帝国/units/tactical-drones.md) |  | - |
 | unit | [打击小队](factions/钛帝国/units/strike-team.md) | 每个模型装备着：1把脉冲步枪；1把脉冲手枪；格斗武器。 | - |
-| unit | [暗行者](factions/钛帝国/units/darkstrider.md) | 本模型装备着：1把暗影，格斗武器。 装备选项：无。 领袖：本模型可与[[factions/钛帝国/units/pathfinder-team.md|寻路者小队]... | - |
+| unit | [暗行者](factions/钛帝国/units/darkstrider.md) |  | - |
 | unit | [梭鱼](factions/钛帝国/units/barracuda.md) |  | - |
 | unit | [水虎鱼](factions/钛帝国/units/piranhas.md) |  | - |
 | unit | [潜行战斗服小队](factions/钛帝国/units/stealth-battlesuits.md) | **每个模型装备着**：1把爆裂速射炮；战斗服铁拳。 | - |
@@ -88,6 +123,7 @@ _Last updated: 2026-07-05 16:03 UTC_
 
 ## 统计
 
-- **总实体数**: 70
+- **总实体数**: 100
+- **core-rule**: 30
 - **unit**: 70
 

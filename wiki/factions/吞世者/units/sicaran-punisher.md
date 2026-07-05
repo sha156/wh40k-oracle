@@ -26,11 +26,11 @@ verify_warn: true
 ## 远程武器
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| Heavy bolter | 36" | 3 | 3+ | 5 | -1 | 2 | [[持续命中 1]] |
-| Hunter-killer missile | 48" | 1 | 2+ | 14 | -3 | D6 | [[单次射击]] |
+| Heavy bolter | 36" | 3 | 3+ | 5 | -1 | 2 | [[core-rules/sustained-hits.md|持续命中 1]] |
+| Hunter-killer missile | 48" | 1 | 2+ | 14 | -3 | D6 | [[core-rules/one-shot.md|单次射击]] |
 | Lascannon | 48" | 1 | 3+ | 12 | -3 | D6+1 | - |
-| Punisher rotary cannon | 36" | 18 | 4+ | 6 | 0 | 1 | [[毁灭创伤]] |
-| Storm bolter | 24" | 2 | 3+ | 4 | 0 | 1 | [[速射 2]] |
+| Punisher rotary cannon | 36" | 18 | 4+ | 6 | 0 | 1 | [[core-rules/devastating-wounds.md|毁灭创伤]] |
+| Storm bolter | 24" | 2 | 3+ | 4 | 0 | 1 | [[core-rules/rapid-fire.md|速射 2]] |
 
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |
@@ -40,7 +40,7 @@ verify_warn: true
 ## 技能
 - **核心：[[死战不退]] D3**
 - **阵营：[[忠诚誓言]]**
-- **旋转杀戮（Rotating Death）：** 当此模型的惩罚者转管炮以步兵单位为目标时，该武器具有[[持续命中 1]]技能。
+- **旋转杀戮（Rotating Death）：** 当此模型的惩罚者转管炮以步兵单位为目标时，该武器具有[[core-rules/sustained-hits.md|持续命中 1]]技能。
 - **受损：剩余1-5点生命值（DAMAGED: 1-5 WOUNDS REMAINING）：** 当此模型剩余1-5点生命值时，每次此模型进行攻击时，命中掷骰结果减1。
 
 ## 单位构成

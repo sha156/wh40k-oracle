@@ -25,10 +25,10 @@ raw:
 ## 远程武器
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| Neutron blaster | 18" | 2 | 4+ | 5 | -2 | 2 | [[突击]] |
-| Neutron grenade launcher | 18" | D6 | 4+ | 4 | -1 | 2 | [[反步兵 3+]]、[[爆炸]] |
-| Neutron rail rifle | 30" | 1 | 4+ | 10 | -4 | 3 | [[毁灭创伤]] |
-| T’au flamer | 12" | D6 | N/A | 4 | 0 | 1 | [[无视掩体]]、[[洪流]] |
+| Neutron blaster | 18" | 2 | 4+ | 5 | -2 | 2 | [[core-rules/assault.md|突击]] |
+| Neutron grenade launcher | 18" | D6 | 4+ | 4 | -1 | 2 | [[core-rules/anti.md|反步兵 3+]]、[[core-rules/blast.md|爆炸]] |
+| Neutron rail rifle | 30" | 1 | 4+ | 10 | -4 | 3 | [[core-rules/devastating-wounds.md|毁灭创伤]] |
+| T’au flamer | 12" | D6 | N/A | 4 | 0 | 1 | [[core-rules/ignores-cover.md|无视掩体]]、[[core-rules/torrent.md|洪流]] |
 
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |
@@ -37,14 +37,14 @@ raw:
 
 ## 技能
 ### 核心技能
-- **深入打击（Deep Strike）**：拥有此技能的单位可在部署阶段结束时以[[深入打击]]方式进行部署。
+- **深入打击（Deep Strike）**：拥有此技能的单位可在部署阶段结束时以[[core-rules/deep-strike.md|深入打击]]方式进行部署。
 
 ### 阵营技能
 （无）
 
 ### 普通技能
 - **空中敏捷（Airborne Agility）**：在你的对手的[[回合]]结束时，如果本单位未位于任何敌方单位的[[交战范围]]内，你可以将其从战场上移除并将其置入[[战略预备队]]。
-- **装备技能：监视无人机（Oversight Drone）**：每场战斗限一次，当装备者的单位被选中进行射击时，直到该阶段结束，该单位模型装备的远程武器获得[[无视掩体]]能力。（设计者注：在装备者旁边放置一个监视无人机标记，使用过此能力后移除该标记。）
+- **装备技能：监视无人机（Oversight Drone）**：每场战斗限一次，当装备者的单位被选中进行射击时，直到该阶段结束，该单位模型装备的远程武器获得[[core-rules/ignores-cover.md|无视掩体]]能力。（设计者注：在装备者旁边放置一个监视无人机标记，使用过此能力后移除该标记。）
 
 ## 单位构成
 - **1 个 Vespid Strain Leader**

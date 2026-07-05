@@ -1,6 +1,6 @@
 # 钛帝国
 
-_Last updated: 2026-07-05 16:03 UTC_
+_Last updated: 2026-07-05 16:47 UTC_
 
 ## 单位
 
@@ -42,7 +42,8 @@ _Last updated: 2026-07-05 16:03 UTC_
 - [[factions/钛帝国/units/commander-shadowsun|影阳指挥官]] — 本模型拥有 5+ 特殊保护。
 - [[factions/钛帝国/units/tactical-drones|战术兵蜂]] — 
 - [[factions/钛帝国/units/strike-team|打击小队]] — 每个模型装备着：1把脉冲步枪；1把脉冲手枪；格斗武器。
-- [[factions/钛帝国/units/darkstrider|暗行者]] — 本模型装备着：1把暗影，格斗武器。 装备选项：无。 领袖：本模型可与[[factions/钛帝国/units/barracuda|梭鱼]] — 
+- [[factions/钛帝国/units/darkstrider|暗行者]] — 
+- [[factions/钛帝国/units/barracuda|梭鱼]] — 
 - [[factions/钛帝国/units/piranhas|水虎鱼]] — 
 - [[factions/钛帝国/units/stealth-battlesuits|潜行战斗服小队]] — **每个模型装备着**：1把爆裂速射炮；战斗服铁拳。
 - [[factions/钛帝国/units/tidewall-droneport|潮汐兵蜂平台]] — · 那个敌方单位依旧可以被选择成为射击目标，但除非使用手枪，否则对那个敌方单位攻击骰结果-1。 · 那个敌方单位中的模型...

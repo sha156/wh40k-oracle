@@ -27,8 +27,8 @@ raw:
 |---|---|---|---|---|---|---|---|
 | Burst cannon | 18" | 4 | 4+ | 5 | 0 | 1 | - |
 | Cyclic ion blaster – standard | 18" | 3 | 4+ | 7 | -1 | 1 | - |
-| Cyclic ion blaster – overcharge | 18" | 3 | 4+ | 8 | -2 | 2 | [[危险]] |
-| Ion cannon – standard | 60" | D6+3 | 4+ | 7 | -1 | 2 | [[爆炸]] |
+| Cyclic ion blaster – overcharge | 18" | 3 | 4+ | 8 | -2 | 2 | [[core-rules/hazardous.md|危险]] |
+| Ion cannon – standard | 60" | D6+3 | 4+ | 7 | -1 | 2 | [[core-rules/blast.md|爆炸]] |
 
 ## 单位构成
 - **模型数量**：1个 Tiger Shark

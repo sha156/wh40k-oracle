@@ -55,7 +55,7 @@ verify_warn: true
 - **For the Greater Good**
 
 ### 普通技能
-- **Exemplars of Mont'ka**：每次本单位的模型进行远程攻击且目标为最近合法目标时，该攻击获得[[SUSTAINED HITS 1]]和[[IGNORES COVER]]能力。
+- **Exemplars of Mont'ka**：每次本单位的模型进行远程攻击且目标为最近合法目标时，该攻击获得[[core-rules/sustained-hits.md|SUSTAINED HITS 1]]和[[core-rules/ignores-cover.md|IGNORES COVER]]能力。
 - **Neocapacitor Shields**：在你的对手的[[冲锋阶段]]开始时，你可以选择本单位12"内的一个敌方单位（怪物和载具单位除外）。该单位必须进行一次[[战斗震惊测试]]，且直到回合结束，该单位的冲锋掷骰结果减1。
 - **Retro-thrusters**：在[[近战阶段]]结束时，如果本回合本单位有资格进行近战，本单位可以进行一次最多6"的[[普通移动]]或一次[[撤退移动]]。
 - **MV15 Gun Drone**：持有者装备1个双联脉冲爆裂枪。

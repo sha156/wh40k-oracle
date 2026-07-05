@@ -25,10 +25,10 @@ raw:
 ## 远程武器
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| Fusion blaster | 12" | 1 | 4+ | 9 | -4 | D6 | [[Melta 2]] |
+| Fusion blaster | 12" | 1 | 4+ | 9 | -4 | D6 | [[core-rules/melta.md|Melta 2]] |
 | Missile pod | 30" | 2 | 4+ | 7 | -1 | 2 | - |
 | Plasma rifle | 24" | 1 | 4+ | 8 | -3 | 3 | - |
-| Rail rifle | 30" | 1 | 4+ | 10 | -4 | 3 | [[Devastating Wounds]] |
+| Rail rifle | 30" | 1 | 4+ | 10 | -4 | 3 | [[core-rules/devastating-wounds.md|Devastating Wounds]] |
 
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |

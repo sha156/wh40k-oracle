@@ -26,9 +26,9 @@ raw:
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
 | Flechette pod | 12" | 5 | 4+ | 3 | 0 | 1 | - |
-| Ionic discharge cannon – standard | 18" | D6+1 | 4+ | 7 | -1 | 2 | [[爆炸]] |
-| Ionic discharge cannon – overcharge | 18" | D6+1 | 4+ | 8 | -2 | 3 | [[爆炸]], [[危险]] |
-| Phased plasma-flamer | 12" | 10 | N/A | 6 | -1 | 1 | [[无视掩体]], [[急流]] |
+| Ionic discharge cannon – standard | 18" | D6+1 | 4+ | 7 | -1 | 2 | [[core-rules/blast.md|爆炸]] |
+| Ionic discharge cannon – overcharge | 18" | D6+1 | 4+ | 8 | -2 | 3 | [[core-rules/blast.md|爆炸]], [[core-rules/hazardous.md|危险]] |
+| Phased plasma-flamer | 12" | 10 | N/A | 6 | -1 | 1 | [[core-rules/ignores-cover.md|无视掩体]], [[急流]] |
 
 在为此武器选择目标前，选择其中一个模式进行攻击。
 
@@ -38,7 +38,7 @@ raw:
 | Battlesuit fists | 近战 | 6 | 5+ | 6 | 0 | 2 | - |
 
 ## 技能
-- **核心技能**：[[致命终局]] D6
+- **核心技能**：[[core-rules/deadly-demise.md|致命终局]] D6
 - **阵营技能**：[[为了上上善道]]
 
 - **Battlesuit Support System**：该模型在同一回合中进行过[[撤退]]后仍具备射击资格。
