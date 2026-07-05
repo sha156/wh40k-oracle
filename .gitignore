@@ -23,6 +23,10 @@ opt/
 local_vector_store/
 data/
 
+# wiki_compile 流水线中间产物（产出物 wiki/terms.* 是提交的）
+wiki_build/
+db_sources/
+
 # Logs and temporary files
 *.log
 *.err

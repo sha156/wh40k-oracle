@@ -1,0 +1,1520 @@
+# 待人工校对（未配对实体）
+
+- 《10E官方中文核心规则》 p1：核心规则
+- 《10E官方中文核心规则》 p3：简介
+- 《Core Rules - New 40K Core Rules》 p1：CORE RULES
+- 《Core Rules - New 40K Core Rules》 p2,4：INTRODUCTION
+- 《Core Rules - New 40K Core Rules》 p2：BASIC RULES
+- 《Core Rules - New 40K Core Rules》 p2,28：THE BATTLE ROUND
+- 《Core Rules - New 40K Core Rules》 p2,45：BATTLEFIELDS AND TACTICS
+- 《Core Rules - New 40K Core Rules》 p2：ADVANCED RULES
+- 《Core Rules - New 40K Core Rules》 p2：REFERENCE
+- 《Core Rules - New 40K Core Rules》 p5：WARHAMMER 40,000: THE APP
+- 《Core Rules - New 40K Core Rules》 p5：Core Rules Preparation
+- 《Core Rules - New 40K Core Rules》 p8：CORE CONCEPTS
+- 《Core Rules - New 40K Core Rules》 p9：MEASURING DISTANCES 01.04
+- 《Core Rules - New 40K Core Rules》 p9：DICE 01.05
+- 《Core Rules - New 40K Core Rules》 p9：LEADERSHIP ROLLS 01.06
+- 《Core Rules - New 40K Core Rules》 p9：BATTLE-SHOCK ROLLS 01.07
+- 《Core Rules - New 40K Core Rules》 p9：BATTLEFIELD MORALE
+- 《Core Rules - New 40K Core Rules》 p10：DATASHEETS
+- 《Core Rules - New 40K Core Rules》 p11：Boyz
+- 《Core Rules - New 40K Core Rules》 p12,13：MOVING
+- 《Core Rules - New 40K Core Rules》 p14：SET UP 03.02
+- 《Core Rules - New 40K Core Rules》 p14：COHERENCY 03.03
+- 《Core Rules - New 40K Core Rules》 p14,15：ENGAGEMENT 03.04
+- 《Core Rules - New 40K Core Rules》 p16：04
+- 《Core Rules - New 40K Core Rules》 p17：3. RESOLVE ATTACKS 04.03
+- 《Core Rules - New 40K Core Rules》 p18,19：ATTACK SEQUENCE
+- 《Core Rules - New 40K Core Rules》 p20,21：05 ATTACK SEQUENCE EXAMPLES
+- 《Core Rules - New 40K Core Rules》 p22：ATTACK SEQUENCE EXAMPLES 05
+- 《Core Rules - New 40K Core Rules》 p24,25：06
+- 《Core Rules - New 40K Core Rules》 p29：START OF TURN STEP
+- 《Core Rules - New 40K Core Rules》 p29,30：COMMAND PHASE
+- 《Core Rules - New 40K Core Rules》 p29,32：MOVEMENT PHASE
+- 《Core Rules - New 40K Core Rules》 p29,36：CHARGE PHASE
+- 《Core Rules - New 40K Core Rules》 p29,40,41：FIGHT PHASE
+- 《Core Rules - New 40K Core Rules》 p29：END OF TURN STEP
+- 《Core Rules - New 40K Core Rules》 p29,34,35：SHOOTING PHASE
+- 《Core Rules - New 40K Core Rules》 p31：BATTLE-SHOCK EXAMPLES
+- 《Core Rules - New 40K Core Rules》 p33：REMAIN STATIONARY 09.04
+- 《Core Rules - New 40K Core Rules》 p33：NORMAL MOVE 09.05
+- 《Core Rules - New 40K Core Rules》 p33：ADVANCE MOVE 09.06
+- 《Core Rules - New 40K Core Rules》 p33：FALL-BACK MOVE 09.07
+- 《Core Rules - New 40K Core Rules》 p37：CHARGE MOVE 11.04
+- 《Core Rules - New 40K Core Rules》 p38：Fight Phase
+- 《Core Rules - New 40K Core Rules》 p39：PILE-IN MOVES
+- 《Core Rules - New 40K Core Rules》 p42,43：FIGHT PHASE 12
+- 《Core Rules - New 40K Core Rules》 p46：TERRAIN
+- 《Core Rules - New 40K Core Rules》 p47：TERRAIN PLACED ON A MAT
+- 《Core Rules - New 40K Core Rules》 p47：TERRAIN PLACED ON THE BATTLEFIELD
+- 《Core Rules - New 40K Core Rules》 p48：TERRAIN AND MOVEMENT 13.06
+- 《Core Rules - New 40K Core Rules》 p49：TERRAIN AND MOVEMENT
+- 《Core Rules - New 40K Core Rules》 p50：TERRAIN AND VISIBILITY 13.07
+- 《Core Rules - New 40K Core Rules》 p50：BENEFIT OF COVER 13.08
+- 《Core Rules - New 40K Core Rules》 p50：HIDDEN 13.09
+- 《Core Rules - New 40K Core Rules》 p50：OBSCURING 13.10
+- 《Core Rules - New 40K Core Rules》 p50：SOLID 13.11
+- 《Core Rules - New 40K Core Rules》 p51：HIDDEN AND OBSCURING
+- 《Core Rules - New 40K Core Rules》 p52,53：OBJECTIVES (14)
+- 《Core Rules - New 40K Core Rules》 p54：USING STRATAGEMS 15.01
+- 《Core Rules - New 40K Core Rules》 p55：HEROIC INTERVENTION 15.11 (1CP)
+- 《Core Rules - New 40K Core Rules》 p55：COUNTEROFFENSIVE 151 (2CP)
+- 《Core Rules - New 40K Core Rules》 p56：COMMAND RE-ROLL 15.02 (1CP)
+- 《Core Rules - New 40K Core Rules》 p56：EPIC CHALLENGE 15.03 (1CP)
+- 《Core Rules - New 40K Core Rules》 p56：INSANE BRAVERY 15.04 (1CP)
+- 《Core Rules - New 40K Core Rules》 p56：EXPLOSIVES 15.05 (1CP)
+- 《Core Rules - New 40K Core Rules》 p56：CRUSHING IMPACT 15.06 (1CP)
+- 《Core Rules - New 40K Core Rules》 p57：RAPID INGRESS (1CP)
+- 《Core Rules - New 40K Core Rules》 p57：FIRE OVERWATCH (1CP)
+- 《Core Rules - New 40K Core Rules》 p57：SNAP SHOOTING
+- 《Core Rules - New 40K Core Rules》 p57：SMOKESCREEN (1CP)
+- 《Core Rules - New 40K Core Rules》 p57：HEROIC INTERVENTION (1CP)
+- 《Core Rules - New 40K Core Rules》 p57：COUNTEROFFENSIVE (2CP)
+- 《Core Rules - New 40K Core Rules》 p58：ACTIONS
+- 《Core Rules - New 40K Core Rules》 p62：MONSTERS AND VEHICLES
+- 《Core Rules - New 40K Core Rules》 p63：ENGAGED MONSTERS/VEHICLES – SHOOTING
+- 《Core Rules - New 40K Core Rules》 p64：TRANSPORTS
+- 《Core Rules - New 40K Core Rules》 p65：DISEMBARK MOVE 18.04
+- 《Core Rules - New 40K Core Rules》 p65：EMERGENCY DISEMBARK MOVE 18.05
+- 《Core Rules - New 40K Core Rules》 p66：19 ATTACHED UNITS
+- 《Core Rules - New 40K Core Rules》 p67：KEYWORDS IN ATTACHED UNITS 19.03
+- 《Core Rules - New 40K Core Rules》 p67：ABILITIES IN ATTACHED UNITS 19.04
+- 《Core Rules - New 40K Core Rules》 p68：STRATEGIC RESERVES
+- 《Core Rules - New 40K Core Rules》 p69：ARRIVING FROM STRATEGIC RESERVES (20.03)
+- 《Core Rules - New 40K Core Rules》 p69：INGRESS MOVE (20.04)
+- 《Core Rules - New 40K Core Rules》 p70：21 SURGE MOVES 21.01
+- 《Core Rules - New 40K Core Rules》 p71：FLYING MODELS 21.03
+- 《Core Rules - New 40K Core Rules》 p72：OTHER RULES AND ABILITIES
+- 《Core Rules - New 40K Core Rules》 p73：PLUNGING FIRE 22.05
+- 《Core Rules - New 40K Core Rules》 p74：AIRCRAFT
+- 《Core Rules - New 40K Core Rules》 p78,79：CORE ABILITIES
+- 《Core Rules - New 40K Core Rules》 p80：[CLOSE‑QUARTERS] 24.07
+- 《Core Rules - New 40K Core Rules》 p80：DEADLY DEMISE 24.08
+- 《Core Rules - New 40K Core Rules》 p80：DEEP STRIKE 24.09
+- 《Core Rules - New 40K Core Rules》 p80：[DEVASTATING WOUNDS] 24.10
+- 《Core Rules - New 40K Core Rules》 p81：[EXTRA ATTACKS] 24.11
+- 《Core Rules - New 40K Core Rules》 p81：FEEL NO PAIN 24.12
+- 《Core Rules - New 40K Core Rules》 p81：FIGHTS FIRST 24.13
+- 《Core Rules - New 40K Core Rules》 p81：FIRING DECK 24.14
+- 《Core Rules - New 40K Core Rules》 p81,82：[HAZARDOUS] 24.15
+- 《Core Rules - New 40K Core Rules》 p83：LONE OPERATIVE 24.24
+- 《Core Rules - New 40K Core Rules》 p83：[MELTA] 24.25
+- 《Core Rules - New 40K Core Rules》 p83：[ONE SHOT] 24.26
+- 《Core Rules - New 40K Core Rules》 p83,84：[PISTOL] 24.27
+- 《Core Rules - New 40K Core Rules》 p85：STEALTH 24.33
+- 《Core Rules - New 40K Core Rules》 p85：SUPPORT 24.34
+- 《Core Rules - New 40K Core Rules》 p85：SUPER-HEAVY WALKER 24.35
+- 《Core Rules - New 40K Core Rules》 p85：[SUSTAINED HITS] 24.36
+- 《Core Rules - New 40K Core Rules》 p85：[TORRENT] 24.37
+- 《Core Rules - New 40K Core Rules》 p85：[TWIN‑LINKED] 24.38
+- 《Core Rules - New 40K Core Rules》 p86,88：RULES APPENDIX
+- 《Core Rules - New 40K Core Rules》 p87：ADDING A NEW UNIT TO YOUR ARMY
+- 《Core Rules - New 40K Core Rules》 p87：DESTROYED
+- 《Core Rules - New 40K Core Rules》 p87：DIFFERENT MOVE CHARACTERISTICS
+- 《Core Rules - New 40K Core Rules》 p87：ELIGIBLE TO FIGHT, BUT UNABLE TO FIGHT
+- 《Core Rules - New 40K Core Rules》 p87：MIXED KEYWORDS IN UNITS
+- 《Core Rules - New 40K Core Rules》 p87：SEE ALSO
+- 《Event Companion》 p1：INTRODUCTION
+- 《Event Companion》 p1,2：WARHAMMER EVENT MISSION SEQUENCE
+- 《Event Companion》 p3：‘CUMULATIVE’ AND ‘OR’ CONDITIONS
+- 《Event Companion》 p3：LEAVES THE BATTELEFIELD
+- 《Event Companion》 p3：ONE
+- 《Event Companion》 p3：VP UP TO A LIMIT
+- 《Event Companion》 p3：WHEN DRAWN
+- 《Event Companion》 p3：DESIGNER’S NOTES
+- 《Event Companion》 p4：CHAPTER APPROVED MISSION DECK ERRATA AND FAQS
+- 《Event Companion》 p5：PAIRINGS AND RANKINGS
+- 《Event Companion》 p6：AFTERWORD
+- 《Event Companion》 p8,9：LAYOUTS KEY
+- 《Event Companion》 p10,11,12,13,14,15,16,17,18,19：MISSION LAYOUT B
+- 《Event Companion》 p20,21,22,23,24,25,26,28,29,30,31,32,34,35,36,37,38,39,40,41：LAYOUT C
+- 《Event Companion》 p43,44：FORCE DISPOSITION
+- 《Event Companion》 p45：LAYOUT A
+- 《Event Companion》 p46,47,48,49,52,53：LAYOUT B
+- 《Event Companion》 p54：BASE SIZE GUIDE
+- 《Event Companion》 p55：Adepta Sororitas
+- 《Event Companion》 p56：ADEPTUS CUSTODES
+- 《Event Companion》 p57：ADEPTUS MECHANICUS
+- 《Event Companion》 p58：ADEPTUS TITANICUS
+- 《Event Companion》 p59,60：AELDARI
+- 《Event Companion》 p61,62：ASTRA MILITARUM
+- 《Event Companion》 p63：BLACK TEMPLARS
+- 《Event Companion》 p64：BLOOD ANGELS
+- 《Event Companion》 p65,66：CHAOS DAEMONS
+- 《Event Companion》 p67：CHAOS KNIGHTS
+- 《Event Companion》 p68,69：Chaos Space Marines
+- 《Event Companion》 p70：DARK ANGELS
+- 《Event Companion》 p71：DEATH GUARD
+- 《Event Companion》 p71：DAEMONS
+- 《Event Companion》 p72：DEATHWATCH
+- 《Event Companion》 p73：Drukhari
+- 《Event Companion》 p74：Emperor’s Children
+- 《Event Companion》 p74,90：Daemons
+- 《Event Companion》 p75：GENESTEALER CULTS
+- 《Event Companion》 p76：GREY KNIGHTS
+- 《Event Companion》 p77：IMPERIAL AGENTS
+- 《Event Companion》 p78：Imperial Knights
+- 《Event Companion》 p78：Imperial Armour
+- 《Event Companion》 p79：LEAGUES OF VOTANN
+- 《Event Companion》 p80,81：NECRONS
+- 《Event Companion》 p82,83：ORKS
+- 《Event Companion》 p84,85,86：SPACE MARINES
+- 《Event Companion》 p87：SPACE WOLVES
+- 《Event Companion》 p88,89：T’AU EMPIRE
+- 《Event Companion》 p90：Thousand Sons
+- 《Event Companion》 p91,92：TYRANIDS
+- 《Event Companion》 p93：WORLD EATERS
+- 《Event Companion - Dominatus》 p1：INTRODUCTION
+- 《Event Companion - Dominatus》 p1：WARHAMMER DOMINATUS EVENT COMPANION
+- 《Event Companion - Dominatus》 p1：WARHAMMER DOMINATUS EVENT GUIDANCE
+- 《Event Companion - Dominatus》 p2：2 WARHAMMER DOMINATUS EVENT MISSION SEQUENCE
+- 《Event Companion - Dominatus》 p4：‘CUMULATIVE’ AND ‘OR’ CONDITIONS
+- 《Event Companion - Dominatus》 p4：LEAVES THE BATTELEFIELD
+- 《Event Companion - Dominatus》 p4：ONE
+- 《Event Companion - Dominatus》 p4：VP UP TO A LIMIT
+- 《Event Companion - Dominatus》 p4：WHEN DRAWN
+- 《Event Companion - Dominatus》 p5：PAIRING PLAYERS
+- 《Event Companion - Dominatus》 p5：PAIRINGS
+- 《Event Companion - Doubles》 p1：INTRODUCTION
+- 《Event Companion - Doubles》 p1：WARHAMMER DOUBLES EVENT COMPANION VERSION 1.0
+- 《Event Companion - Doubles》 p1,2,3：WARHAMMER DOUBLES EVENT MISSION SEQUENCE
+- 《Event Companion - Doubles》 p4：WARHAMMER DOUBLES EVENTS
+- 《Event Companion - Teams》 p1：INTRODUCTION
+- 《Event Companion - Teams》 p1：WARHAMMER TEAMS EVENT MISSION SEQUENCE
+- 《Event Companion - Teams》 p2：2 PAIRING SYSTEM
+- 《Event Companion - Teams》 p2：3 CREATE THE BATTLEFIELD
+- 《Event Companion - Teams》 p2：4 DETERMINE ATTACKER AND DEFENDER
+- 《Event Companion - Teams》 p3：5 SELECT SECONDARY MISSIONS
+- 《Event Companion - Teams》 p3：6 DECLARE BATTLE FORMATIONS
+- 《Event Companion - Teams》 p3：7 DEPLOY ARMIES
+- 《Event Companion - Teams》 p3：8 REDEPLOY UNITS
+- 《Event Companion - Teams》 p3：9 DETERMINE FIRST TURN
+- 《Event Companion - Teams》 p3：10 RESOLVE PRE-BATTLE RULES
+- 《Event Companion - Teams》 p3：11 BEGIN THE BATTLE
+- 《Event Companion - Teams》 p3：12 END THE BATTLE
+- 《Event Companion - Teams》 p3：13 DETERMINE VICTOR
+- 《Event Companion - Teams》 p4：TEAM SCORING
+- 《Event Companion - Teams》 p4：CHAPTER APPROVED MISSION DECK: DESIGNER'S NOTES
+- 《Faction Pack Adepta Sororitas》 p1：WHAT’S NEW?
+- 《Faction Pack Adepta Sororitas》 p1：CONTENTS
+- 《Faction Pack Adepta Sororitas》 p2：CHORUS OF CONDEMNATION
+- 《Faction Pack Adepta Sororitas》 p2：INSPIRATIONAL BATTLE CANTICLES (1CP)
+- 《Faction Pack Adepta Sororitas》 p2：HARMONISED EXORCISM (1CP)
+- 《Faction Pack Adepta Sororitas》 p2：DEVASTATING REPRISE (1CP)
+- 《Faction Pack Adepta Sororitas》 p3：SACRED CHAMPIONS
+- 《Faction Pack Adepta Sororitas》 p3：SANCTIFIED BLOWS (1CP)
+- 《Faction Pack Adepta Sororitas》 p3：FAITHFUL FORTITUDE (1CP)
+- 《Faction Pack Adepta Sororitas》 p3：UNFLINCHING DETERMINATION (1CP)
+- 《Faction Pack Adepta Sororitas》 p4：Sanctified Orators – Hymns of Battle
+- 《Faction Pack Adepta Sororitas》 p4：Hagiomnifex  Upgrade
+- 《Faction Pack Adepta Sororitas》 p5：Champions of Faith
+- 《Faction Pack Adepta Sororitas》 p5：Righteous Purpose (Detachment Rule)
+- 《Faction Pack Adepta Sororitas》 p5：Keywords
+- 《Faction Pack Adepta Sororitas》 p5：Triptych of Judgement
+- 《Faction Pack Adepta Sororitas》 p5：Mark of Devotion
+- 《Faction Pack Adepta Sororitas》 p5：Eyes of the Oracle
+- 《Faction Pack Adepta Sororitas》 p5：Sanctified Amulet
+- 《Faction Pack Adepta Sororitas》 p6：SHIELD OF DENIAL (1CP)
+- 《Faction Pack Adepta Sororitas》 p6：SUFFER NOT THE UNFAITHFUL (1CP)
+- 《Faction Pack Adepta Sororitas》 p6：TO THE HEART OF HERESY (1CP)
+- 《Faction Pack Adepta Sororitas》 p6：PATH OF THE RIGHTEOUS (1CP)
+- 《Faction Pack Adepta Sororitas》 p6：BASTION OF FAITH (1CP)
+- 《Faction Pack Adepta Sororitas》 p6：INDEFATIGABLE DEDICATION (1CP)
+- 《Faction Pack Adepta Sororitas》 p7,8：Intranzia Fraye
+- 《Faction Pack Adepta Sororitas》 p9,10：Sanctifiers
+- 《Faction Pack Adepta Sororitas》 p11,12：Celestian Insidiants
+- 《Faction Pack Adepta Sororitas》 p13：ADEPTA SORORITAS
+- 《Faction Pack Adepta Sororitas》 p14：Immolator
+- 《Faction Pack Adepta Sororitas》 p14：Retributor Squad
+- 《Faction Pack Adepta Sororitas》 p14：Triumph of Saint Katherine
+- 《Faction Pack Adepta Sororitas》 p14：Zephyrim Squad
+- 《Faction Pack Adepta Sororitas》 p14：Castigator, Exorcist, Immolator, Sororitas Rhino – Keywords section
+- 《Faction Pack Adepta Sororitas》 p14：FAQ
+- 《Faction Pack Adepta Sororitas》 p17,18：Repressor
+- 《Faction Pack Adepta Sororitas》 p19,20：Battle Sanctum
+- 《Faction Pack Adepta Sororitas》 p23,24：Death Cult Assassins
+- 《Faction Pack Adeptus Custodes》 p1：FACTION PACK: VERSION 1.0
+- 《Faction Pack Adeptus Custodes》 p1：WHAT’S NEW?
+- 《Faction Pack Adeptus Custodes》 p1：CONTENTS
+- 《Faction Pack Adeptus Custodes》 p2：MIGHT OF THE MORITOI
+- 《Faction Pack Adeptus Custodes》 p2：Flawless Construction (1CP)
+- 《Faction Pack Adeptus Custodes》 p2：Unstoppable Advance (1CP)
+- 《Faction Pack Adeptus Custodes》 p2：Prioritised Eradication (1CP)
+- 《Faction Pack Adeptus Custodes》 p3：Silent Hunters
+- 《Faction Pack Adeptus Custodes》 p3：Deathsong Scythes (1CP)
+- 《Faction Pack Adeptus Custodes》 p3：Umbral Prosecution (1CP)
+- 《Faction Pack Adeptus Custodes》 p3：Synchronised Inferno (1CP)
+- 《Faction Pack Adeptus Custodes》 p4：Tharanatoi Hammerblow
+- 《Faction Pack Adeptus Custodes》 p4：Hardened Resolve (1CP)
+- 《Faction Pack Adeptus Custodes》 p4：Unleash the Lions (1CP)
+- 《Faction Pack Adeptus Custodes》 p4：Electroexorcist Saturation (1CP)
+- 《Faction Pack Adeptus Custodes》 p5：LIONS OF THE EMPEROR
+- 《Faction Pack Adeptus Custodes》 p5：DETACHMENT RULE
+- 《Faction Pack Adeptus Custodes》 p5：ENHANCEMENTS
+- 《Faction Pack Adeptus Custodes》 p6：GILDED CHAMPION (1CP)
+- 《Faction Pack Adeptus Custodes》 p6：DEFIANT TO THE LAST (1CP)
+- 《Faction Pack Adeptus Custodes》 p6：PEERLESS WARRIOR (1CP)
+- 《Faction Pack Adeptus Custodes》 p6：UNLEASH THE LIONS (1CP)
+- 《Faction Pack Adeptus Custodes》 p6：MANOEUVRE AND FIRE (1CP)
+- 《Faction Pack Adeptus Custodes》 p6：SWIFT AS THE EAGLE (1CP)
+- 《Faction Pack Adeptus Custodes》 p7：Solar Spearhead
+- 《Faction Pack Adeptus Custodes》 p8：FLAWLESS CONSTRUCTION (1CP)
+- 《Faction Pack Adeptus Custodes》 p8：EMPEROR’S VENGEANCE (1CP)
+- 《Faction Pack Adeptus Custodes》 p8：WRATHFUL ADVANCE (1CP)
+- 《Faction Pack Adeptus Custodes》 p8：UNSTOPPABLE (1CP)
+- 《Faction Pack Adeptus Custodes》 p8：RELENTLESS PERSECUTION (1CP)
+- 《Faction Pack Adeptus Custodes》 p8：PUNISHMENT INESCAPABLE (1CP)
+- 《Faction Pack Adeptus Custodes》 p11,12：Sagittarum Custodians
+- 《Faction Pack Adeptus Custodes》 p13,14：Aquilon Custodians
+- 《Faction Pack Adeptus Custodes》 p17,18：Agamatus Custodians
+- 《Faction Pack Adeptus Custodes》 p19,20：Venatari Custodians
+- 《Faction Pack Adeptus Custodes》 p21,22：Pallas Grav-attack
+- 《Faction Pack Adeptus Custodes》 p23,24：Telemon Heavy Dreadnought
+- 《Faction Pack Adeptus Custodes》 p27,28：Coronus Grav-carrier
+- 《Faction Pack Adeptus Custodes》 p29,30：Orion Assault Dropship
+- 《Faction Pack Adeptus Custodes》 p31,32：Ares Gunship
+- 《Faction Pack Adeptus Custodes》 p33：Contemptor-Galatus Dreadnought
+- 《Faction Pack Adeptus Custodes》 p35：RULES UPDATES
+- 《Faction Pack Adeptus Mechanicus》 p1：WHAT’S NEW?
+- 《Faction Pack Adeptus Mechanicus》 p1：CONTENTS
+- 《Faction Pack Adeptus Mechanicus》 p2：COHORT ACQUISITUS
+- 《Faction Pack Adeptus Mechanicus》 p2：Defect Scrutiny (1CP)
+- 《Faction Pack Adeptus Mechanicus》 p2：Repolarised Augurs (1CP)
+- 《Faction Pack Adeptus Mechanicus》 p2：Clandestine Reposition (1CP)
+- 《Faction Pack Adeptus Mechanicus》 p3：LORDS OF THE FORGE
+- 《Faction Pack Adeptus Mechanicus》 p3：VINGH’S WAFERS OF DYNAMISM
+- 《Faction Pack Adeptus Mechanicus》 p3：TL-4Ø9
+- 《Faction Pack Adeptus Mechanicus》 p3：SCRIPTURAL PROGNOSIS (1CP)
+- 《Faction Pack Adeptus Mechanicus》 p4：LUMINEN AUTO-CHOIR
+- 《Faction Pack Adeptus Mechanicus》 p5：ERADICATION COHORT
+- 《Faction Pack Adeptus Mechanicus》 p6：SERVO‑DRIVEN CHARGE (1CP)
+- 《Faction Pack Adeptus Mechanicus》 p6：UNRELENTING AGGRESSION (1CP)
+- 《Faction Pack Adeptus Mechanicus》 p6：UNSHACKLED WRATH (1CP)
+- 《Faction Pack Adeptus Mechanicus》 p6：THREAT‑COGITATION TARGETERS (1CP)
+- 《Faction Pack Adeptus Mechanicus》 p6：PRECISION ONSLAUGHT (1CP)
+- 《Faction Pack Adeptus Mechanicus》 p6：ANALYTIC REPRISALS (1CP)
+- 《Faction Pack Adeptus Mechanicus》 p7：Haloscreed Battle Clade
+- 《Faction Pack Adeptus Mechanicus》 p8：Eradication Protocols (1CP)
+- 《Faction Pack Adeptus Mechanicus》 p8：Targeting Override (1CP)
+- 《Faction Pack Adeptus Mechanicus》 p8：Neural Overload (1CP)
+- 《Faction Pack Adeptus Mechanicus》 p8：Aggressive Impulse (1CP)
+- 《Faction Pack Adeptus Mechanicus》 p8：Guided Retreat (1CP)
+- 《Faction Pack Adeptus Mechanicus》 p8：Analytical Divination (1CP)
+- 《Faction Pack Adeptus Mechanicus》 p9,10：Thulia Ghuld
+- 《Faction Pack Adeptus Mechanicus》 p11,12：Hastarii Exterminators
+- 《Faction Pack Adeptus Mechanicus》 p15,16：Servitor Battleclade
+- 《Faction Pack Adeptus Mechanicus》 p17：ADEPTUS MECHANICUS RULES UPDATES
+- 《Faction Pack Adeptus Mechanicus》 p18：FAQS
+- 《Faction Pack Adeptus Mechanicus》 p21,22：Secutarii Hoplites
+- 《Faction Pack Adeptus Mechanicus》 p23,24：Secutarii Peltasts
+- 《Faction Pack Adeptus Mechanicus》 p25,26：Terrax-pattern Termite
+- 《Faction Pack Adeptus Titanicus》 p1：Adeptus Titanicus
+- 《Faction Pack Adeptus Titanicus》 p2：Adeptus Titanicus Army Rules
+- 《Faction Pack Adeptus Titanicus》 p5,6：Reaver Titan
+- 《Faction Pack Adeptus Titanicus》 p7,8：Warbringer Nemesis Titan
+- 《Faction Pack Aeldari》 p1：AELDARI FACTION PACK: VERSION 1.0
+- 《Faction Pack Aeldari》 p2：Armoured Warhost
+- 《Faction Pack Aeldari》 p3：Fateful Performance – Detachment Rules
+- 《Faction Pack Aeldari》 p4：PATH OF THE OUTCAST
+- 《Faction Pack Aeldari》 p4：ELDRITCH SUPPRESSION (1CP)
+- 《Faction Pack Aeldari》 p4：CASTING BACK THE VEIL (1CP)
+- 《Faction Pack Aeldari》 p4：NOMADS OF THE HIDDEN WAY (1CP)
+- 《Faction Pack Aeldari》 p5：TWILIGHT FLICKERS
+- 《Faction Pack Aeldari》 p6：Serpent’s Brood
+- 《Faction Pack Aeldari》 p7：FANGS OF THE BROOD (1CP)
+- 《Faction Pack Aeldari》 p7：VENOMOUS WRATH (1CP)
+- 《Faction Pack Aeldari》 p7：STRIKING STRIDE (1CP)
+- 《Faction Pack Aeldari》 p7：WEAVERS’ COILS (1CP)
+- 《Faction Pack Aeldari》 p7：WEAVING STRIDE (1CP)
+- 《Faction Pack Aeldari》 p7：SKYWARD LUNGE (1CP)
+- 《Faction Pack Aeldari》 p8：ELDRITCH RAIDERS
+- 《Faction Pack Aeldari》 p8：CORSAIR ENHANCEMENTS
+- 《Faction Pack Aeldari》 p10：Corsair Coterie
+- 《Faction Pack Aeldari》 p10：Relentless Raiders
+- 《Faction Pack Aeldari》 p10：Veterans of the Void
+- 《Faction Pack Aeldari》 p10：Infamy (Aura)
+- 《Faction Pack Aeldari》 p10：Webway Pathstone
+- 《Faction Pack Aeldari》 p10：Archraider
+- 《Faction Pack Aeldari》 p10：Voidstone
+- 《Faction Pack Aeldari》 p11：PIRATES’ DUE (1CP)
+- 《Faction Pack Aeldari》 p11：LETHAL RUSE (1CP)
+- 《Faction Pack Aeldari》 p11：OUTCAST AMBUSH (1CP)
+- 《Faction Pack Aeldari》 p11：INTO THE BREACH (1CP)
+- 《Faction Pack Aeldari》 p11：CLOAK AND SHADOW (1CP)
+- 《Faction Pack Aeldari》 p11：VENGEFUL SORROW (1CP)
+- 《Faction Pack Aeldari》 p12,13：Prince Yriel
+- 《Faction Pack Aeldari》 p14,15：Kharseth
+- 《Faction Pack Aeldari》 p16,17：Vypers
+- 《Faction Pack Aeldari》 p18,19：Starfangs
+- 《Faction Pack Aeldari》 p20,21：Corsair Skyreavers
+- 《Faction Pack Aeldari》 p22：AELDARI
+- 《Faction Pack Aeldari》 p23：Dark Reapers, Dire Avengers, Fire Dragons, Howling Banshees, Striking Scorpions, Swooping Hawks, Warp Spiders – Aspect Shrine Token ability
+- 《Faction Pack Aeldari》 p23：Asurmen, Hand of Asuryan Ability
+- 《Faction Pack Aeldari》 p23：Baharroth, Cloudstrider Ability
+- 《Faction Pack Aeldari》 p23：Corsair Voidreavers
+- 《Faction Pack Aeldari》 p23：Falcon, Transport Section
+- 《Faction Pack Aeldari》 p23：Farseer, Leader section
+- 《Faction Pack Aeldari》 p23：Rangers, Path of the Outcast Ability
+- 《Faction Pack Aeldari》 p23：Shadowseer, Wargear Options
+- 《Faction Pack Aeldari》 p23：Starweaver, Rapid Embarkation Ability
+- 《Faction Pack Aeldari》 p23：Crimson Hunter, Hemlock Wraithfighter
+- 《Faction Pack Aeldari》 p23：Wave Serpent, Transport Section
+- 《Faction Pack Aeldari》 p23：Warlock Conclave
+- 《Faction Pack Aeldari》 p23：Warlock Skyrunners
+- 《Faction Pack Aeldari》 p23：Yvraine, Herald of Ynnead Ability
+- 《Faction Pack Aeldari》 p23：Ynnari Venom
+- 《Faction Pack Aeldari》 p23：Ynnari Incubi, Melee Weapons, Demiklaives (single blade)
+- 《Faction Pack Aeldari》 p23：Warlock, Core Abilities section
+- 《Faction Pack Aeldari》 p24：FAQS
+- 《Faction Pack Aeldari》 p25,26：Webway Gate
+- 《Faction Pack Aeldari》 p27,28：Karandras
+- 《Faction Pack Aeldari》 p29,30：Illic Nightspear
+- 《Faction Pack Aeldari》 p31,32：Autarch Skyrunner
+- 《Faction Pack Aeldari》 p33,34：Phoenix
+- 《Faction Pack Aeldari》 p35,36：Vampire Raider
+- 《Faction Pack Aeldari》 p37,38：Corsair Cloud Dancer Band
+- 《Faction Pack Aeldari》 p39,40：Vampire Hunter
+- 《Faction Pack Aeldari》 p41,42：Bonesinger
+- 《Faction Pack Aeldari》 p45,46：Firestorm
+- 《Faction Pack Aeldari》 p49,50：Corsair Reaver Band
+- 《Faction Pack Aeldari》 p51：AELDARI LEGENDS ARMOURY
+- 《Faction Pack Aeldari》 p52,53：Cobra
+- 《Faction Pack Aeldari》 p54,55：Hornet
+- 《Faction Pack Aeldari》 p62,63：Skathach Wraithknight
+- 《Faction Pack Aeldari》 p64,65：Shadow Spectres
+- 《Faction Pack Aeldari》 p67：Irillyth
+- 《Faction Pack Aeldari》 p68,69：Warp Hunter
+- 《Faction Pack Astra Militarum》 p1：WHAT’S NEW?
+- 《Faction Pack Astra Militarum》 p1：CONTENTS
+- 《Faction Pack Astra Militarum》 p2：ABHUMAN AUXILIARIES
+- 《Faction Pack Astra Militarum》 p3：BRIDGEHEAD STRIKE
+- 《Faction Pack Astra Militarum》 p3：ON MY POSITION (1CP)
+- 《Faction Pack Astra Militarum》 p3：FIRING HOT (2CP)
+- 《Faction Pack Astra Militarum》 p3：SERVO-DESIGNATORS (1CP)
+- 《Faction Pack Astra Militarum》 p4：DESIGNATION FORCE
+- 《Faction Pack Astra Militarum》 p4：CLOSE-RANGE DETECTION (1CP)
+- 《Faction Pack Astra Militarum》 p4：TRIGGERED ALERTS (1CP)
+- 《Faction Pack Astra Militarum》 p4：SUMP-SMOG SCREEN (1CP)
+- 《Faction Pack Astra Militarum》 p5：STEEL HAMMER
+- 《Faction Pack Astra Militarum》 p6：ENGINE OF WRATH (1CP)
+- 《Faction Pack Astra Militarum》 p6：IMPOSING ARRIVAL (1CP)
+- 《Faction Pack Astra Militarum》 p6：ADAMANTINE BEHEMOTH (1CP)
+- 《Faction Pack Astra Militarum》 p6：SHATTERING SALVO (1CP)
+- 《Faction Pack Astra Militarum》 p6：WITHERING FIREPOWER (1CP)
+- 《Faction Pack Astra Militarum》 p6：ACCURACY UNDER PRESSURE (2CP)
+- 《Faction Pack Astra Militarum》 p7：ARMOURED INFANTRY
+- 《Faction Pack Astra Militarum》 p8：ORDER THE ADVANCE (1CP)
+- 《Faction Pack Astra Militarum》 p8：MOBILE FIREBASE (1CP)
+- 《Faction Pack Astra Militarum》 p8：BURST OF SPEED (1CP)
+- 《Faction Pack Astra Militarum》 p8：SUPPORTING ORDNANCE (1CP)
+- 《Faction Pack Astra Militarum》 p8：COMBINED FIRE (1CP)
+- 《Faction Pack Astra Militarum》 p9：Grizzled Company
+- 《Faction Pack Astra Militarum》 p10：SNAP TO IT (1CP)
+- 《Faction Pack Astra Militarum》 p10：NO RETREAT! (1CP)
+- 《Faction Pack Astra Militarum》 p10：VETERAN SHARPSHOOTERS (1CP)
+- 《Faction Pack Astra Militarum》 p10：PURGING FIRE (1CP)
+- 《Faction Pack Astra Militarum》 p10：MORDIAN MINUTE (1CP)
+- 《Faction Pack Astra Militarum》 p10：ADDITIONAL ARMOUR (1CP)
+- 《Faction Pack Astra Militarum》 p11,12：Cadian Recon Squad
+- 《Faction Pack Astra Militarum》 p13,14：Commissar Yarrick
+- 《Faction Pack Astra Militarum》 p15,16：Commissar Graves
+- 《Faction Pack Astra Militarum》 p17,18：Commissar Graves on Foot
+- 《Faction Pack Astra Militarum》 p19,20：Hippogriff AFV
+- 《Faction Pack Astra Militarum》 p21,22：Centaur RSV
+- 《Faction Pack Astra Militarum》 p23,24：Ratlings
+- 《Faction Pack Astra Militarum》 p25,26,28：Tempestus Aquilons
+- 《Faction Pack Astra Militarum》 p27：ASTRA MILITARUM RULES UPDATES
+- 《Faction Pack Astra Militarum》 p27：UPDATES
+- 《Faction Pack Astra Militarum》 p27：DATASHEETS
+- 《Faction Pack Astra Militarum》 p28：Krieg Combat Engineers, Remote Mine Ability
+- 《Faction Pack Astra Militarum》 p28：Krieg Command Squad
+- 《Faction Pack Astra Militarum》 p28：Krieg Heavy Weapons Squad
+- 《Faction Pack Astra Militarum》 p28：Lord Solar Leontus, Orders Section
+- 《Faction Pack Astra Militarum》 p28：Militarum Tempestus Command Squad
+- 《Faction Pack Astra Militarum》 p28：Ogryn Bodyguard
+- 《Faction Pack Astra Militarum》 p28：Tempestus Scions
+- 《Faction Pack Astra Militarum》 p28：Gaunt’s Ghosts, Covert Stealth Team ability
+- 《Faction Pack Astra Militarum》 p28：FAQS
+- 《Faction Pack Astra Militarum》 p29,30：Avenger Strike Fighter
+- 《Faction Pack Astra Militarum》 p31,32：Cyclops Demolition Vehicle
+- 《Faction Pack Astra Militarum》 p33,34：Hell’s Last
+- 《Faction Pack Astra Militarum》 p35,36：Regimental Attachés
+- 《Faction Pack Astra Militarum》 p37,38：Munitorum Servitors
+- 《Faction Pack Astra Militarum》 p39,40：Sergeant Harker
+- 《Faction Pack Astra Militarum》 p41,42：‘IRON HAND’ STRAKEN
+- 《Faction Pack Astra Militarum》 p43,44：Valkyrie Sky Talon
+- 《Faction Pack Astra Militarum》 p45,46：Aquila Lander
+- 《Faction Pack Astra Militarum》 p47,48：Dominus Armoured Siege Bombard
+- 《Faction Pack Astra Militarum》 p49,50：Gorgon Heavy Transport
+- 《Faction Pack Black Templars》 p1：BLACK TEMPLARS
+- 《Faction Pack Black Templars》 p2：Marshal’s Household
+- 《Faction Pack Black Templars》 p2：Fervent Exemplars – Upgrade
+- 《Faction Pack Black Templars》 p2：Inheritors of Sigismund – Upgrade
+- 《Faction Pack Black Templars》 p2：Slayers of Abominations (1CP)
+- 《Faction Pack Black Templars》 p2：Blade of Detestation (1CP)
+- 《Faction Pack Black Templars》 p2：Unsparing Execution (1CP)
+- 《Faction Pack Black Templars》 p3：THE LIVING MIRACLE
+- 《Faction Pack Black Templars》 p4：WRATHFUL PROCESSION
+- 《Faction Pack Black Templars》 p5：RULES UPDATES
+- 《Faction Pack Black Templars》 p5：UPDATES
+- 《Faction Pack Blood Angels》 p1：FACTION PACK: VERSION 1.0
+- 《Faction Pack Blood Angels》 p2：LEGACY OF GRACE DETACHMENT RULES
+- 《Faction Pack Blood Angels》 p3：ENCARMINE SPEARTIP
+- 《Faction Pack Blood Angels》 p3：JUDGEMENT OF THE GOLDEN HOST (1CP)
+- 《Faction Pack Blood Angels》 p3：INEXORABLE VALOUR (1CP)
+- 《Faction Pack Blood Angels》 p3：BLINDING BLURS OF VENGEANCE (1CP)
+- 《Faction Pack Blood Angels》 p4：WRATH OF THE DOOMED
+- 《Faction Pack Blood Angels》 p5：Angelic Inheritors
+- 《Faction Pack Blood Angels》 p6：ARMOUR OF CONTEMPT (1CP)
+- 《Faction Pack Blood Angels》 p6：FOCUSED FURY (1CP)
+- 《Faction Pack Blood Angels》 p6：INSTANT OF GRACE (1CP)
+- 《Faction Pack Blood Angels》 p6：STRIKE NOW FOR GLORY (1CP)
+- 《Faction Pack Blood Angels》 p6：IN THE SHADOW OF GREAT WINGS (1CP)
+- 《Faction Pack Blood Angels》 p6：UNTO THE BURNING SKIES (1CP)
+- 《Faction Pack Blood Angels》 p7：RAGE-CURSED ONSLAUGHT
+- 《Faction Pack Blood Angels》 p8：A Grim Warning (1CP)
+- 《Faction Pack Blood Angels》 p8：Armour of Contempt (1CP)
+- 《Faction Pack Blood Angels》 p8：Insensate Rampage (1CP)
+- 《Faction Pack Blood Angels》 p8：Limb From Limb (1CP)
+- 《Faction Pack Blood Angels》 p8：Deathless Duty (2CP)
+- 《Faction Pack Blood Angels》 p8：Red Wrath (1CP)
+- 《Faction Pack Blood Angels》 p9：BLOOD ANGELS
+- 《Faction Pack Blood Angels》 p10,11：Brother Corbulo
+- 《Faction Pack Blood Angels》 p12,13：Captain Tycho
+- 《Faction Pack Blood Angels》 p14,15：Death Company Dreadnought with Magna-grapple
+- 《Faction Pack Blood Angels》 p20,21：Furioso Dreadnought
+- 《Faction Pack Blood Angels》 p24,25：Librarian Dreadnought
+- 《Faction Pack Blood Angels》 p26,27：Tycho the Lost
+- 《Faction Pack Chaos Daemons》 p1：Chaos Daemons
+- 《Faction Pack Chaos Daemons》 p2,131：CHAOS DAEMONS
+- 《Faction Pack Chaos Daemons》 p3：CHAOS DAEMONS ARMY RULES
+- 《Faction Pack Chaos Daemons》 p4：Chaos Daemons – Daemonic Incursion Detachment Rules
+- 《Faction Pack Chaos Daemons》 p5：CHAOS DAEMONS – SHADOW LEGION DETACHMENT RULES
+- 《Faction Pack Chaos Daemons》 p5：FIRST PRINCE OF CHAOS
+- 《Faction Pack Chaos Daemons》 p5：DISCIPLES OF BE’LAKOR
+- 《Faction Pack Chaos Daemons》 p6：Thralls of the First Prince
+- 《Faction Pack Chaos Daemons》 p6：Keywords
+- 《Faction Pack Chaos Daemons》 p7：Chaos Daemons – Daemonic Incursion Stratagems
+- 《Faction Pack Chaos Daemons》 p7：Corrupt Realspace (1CP)
+- 《Faction Pack Chaos Daemons》 p7：Warp Surge (1CP)
+- 《Faction Pack Chaos Daemons》 p7：Draught of Terror (1CP)
+- 《Faction Pack Chaos Daemons》 p7：Denizens of the Warp (1CP)
+- 《Faction Pack Chaos Daemons》 p8：CHAOS DAEMONS – DAEMONIC INCURSION STRATAGEMS
+- 《Faction Pack Chaos Daemons》 p8：The Realm of Chaos (1CP)
+- 《Faction Pack Chaos Daemons》 p8：Daemonic Invulnerability (1CP)
+- 《Faction Pack Chaos Daemons》 p9：SPITEFUL DEMISE (1CP)
+- 《Faction Pack Chaos Daemons》 p9：CHANNELLED WRATH (1CP)
+- 《Faction Pack Chaos Daemons》 p9：DEATH DENIED (1CP)
+- 《Faction Pack Chaos Daemons》 p10：Chaos Daemons – Shadow Legion Stratagems
+- 《Faction Pack Chaos Daemons》 p11：A’rgath, The King of Blades
+- 《Faction Pack Chaos Daemons》 p11：The Everstave
+- 《Faction Pack Chaos Daemons》 p11：The Endless Gift
+- 《Faction Pack Chaos Daemons》 p11：Soulstealer
+- 《Faction Pack Chaos Daemons》 p12：LEAPING SHADOWS
+- 《Faction Pack Chaos Daemons》 p12：MANTLE OF GLOOM (AURA)
+- 《Faction Pack Chaos Daemons》 p12：FADE TO DARKNESS
+- 《Faction Pack Chaos Daemons》 p12：MALICE MADE MANIFEST
+- 《Faction Pack Chaos Daemons》 p14,15：Skarbrand
+- 《Faction Pack Chaos Daemons》 p16,17：Bloodthirster
+- 《Faction Pack Chaos Daemons》 p18,19：Skulltaker
+- 《Faction Pack Chaos Daemons》 p20,21：Bloodmaster
+- 《Faction Pack Chaos Daemons》 p22,23：Skullmaster
+- 《Faction Pack Chaos Daemons》 p24,25：Rendmaster on Blood Throne
+- 《Faction Pack Chaos Daemons》 p26,27：Karanak
+- 《Faction Pack Chaos Daemons》 p28,29：Bloodletters
+- 《Faction Pack Chaos Daemons》 p30,31：Bloodcrushers
+- 《Faction Pack Chaos Daemons》 p34,35：Skull Cannon
+- 《Faction Pack Chaos Daemons》 p38,39：Kairos Fateweaver
+- 《Faction Pack Chaos Daemons》 p40,41：Lord of Change
+- 《Faction Pack Chaos Daemons》 p42,43：The Changeling
+- 《Faction Pack Chaos Daemons》 p46,47：Fluxmaster
+- 《Faction Pack Chaos Daemons》 p48,49：The Blue Scribes
+- 《Faction Pack Chaos Daemons》 p50,51：Changecaster
+- 《Faction Pack Chaos Daemons》 p52,53：Blue Horrors
+- 《Faction Pack Chaos Daemons》 p56,57：Flamers
+- 《Faction Pack Chaos Daemons》 p58,59：Exalted Flamer
+- 《Faction Pack Chaos Daemons》 p62,63：Burning Chariot
+- 《Faction Pack Chaos Daemons》 p64,65：Rotigus
+- 《Faction Pack Chaos Daemons》 p66,67：Great Unclean One
+- 《Faction Pack Chaos Daemons》 p68,69：Poxbringer
+- 《Faction Pack Chaos Daemons》 p70,71：Spoilpox Scrivener
+- 《Faction Pack Chaos Daemons》 p72,73：Epidemius
+- 《Faction Pack Chaos Daemons》 p74,75：Sloppity Bilepiper
+- 《Faction Pack Chaos Daemons》 p76,77：Horticulous Slimux
+- 《Faction Pack Chaos Daemons》 p78,79：Plaguebearers
+- 《Faction Pack Chaos Daemons》 p82,83：Beasts of Nurgle
+- 《Faction Pack Chaos Daemons》 p84,85：Plague Drones
+- 《Faction Pack Chaos Daemons》 p86,87：Feculent Gnarlmaw
+- 《Faction Pack Chaos Daemons》 p88,89：Shalaxi Helbane
+- 《Faction Pack Chaos Daemons》 p90,91：Keeper of Secrets
+- 《Faction Pack Chaos Daemons》 p92,93：Infernal Enrapturess
+- 《Faction Pack Chaos Daemons》 p94,95：The Masque of Slaanesh
+- 《Faction Pack Chaos Daemons》 p100,101：Tormentbringer
+- 《Faction Pack Chaos Daemons》 p102,103：Hellflayers
+- 《Faction Pack Chaos Daemons》 p106,107：Daemonettes
+- 《Faction Pack Chaos Daemons》 p110,111：Seekers
+- 《Faction Pack Chaos Daemons》 p114,115：Soul Grinder
+- 《Faction Pack Chaos Daemons》 p116,117：Daemon Prince of Chaos
+- 《Faction Pack Chaos Daemons》 p118,119：Daemon Prince of Chaos with Wings
+- 《Faction Pack Chaos Daemons》 p120：Cavalcade of Chaos
+- 《Faction Pack Chaos Daemons》 p121：LORDS OF THE WARP
+- 《Faction Pack Chaos Daemons》 p121：CARNIVAL OF EXCESS (1CP)
+- 《Faction Pack Chaos Daemons》 p121：CALL TO MURDER (1CP)
+- 《Faction Pack Chaos Daemons》 p121：BILIOUS BLESSING (1CP)
+- 《Faction Pack Chaos Daemons》 p121：SKIRLING MAGICKS (1CP)
+- 《Faction Pack Chaos Daemons》 p122：Warptide Detachment Rules
+- 《Faction Pack Chaos Daemons》 p122,129：Enhancements
+- 《Faction Pack Chaos Daemons》 p122：Daemonic Infestation (1CP)
+- 《Faction Pack Chaos Daemons》 p122：Soulseeing (1CP)
+- 《Faction Pack Chaos Daemons》 p122：Incorporeal Entities (1CP)
+- 《Faction Pack Chaos Daemons》 p123：BLOOD LEGION
+- 《Faction Pack Chaos Daemons》 p123：DETACHMENT RULE: MURDERCALL
+- 《Faction Pack Chaos Daemons》 p123：BLOOD TAINTED
+- 《Faction Pack Chaos Daemons》 p123：ENHANCEMENTS
+- 《Faction Pack Chaos Daemons》 p124：WRATH UNDENIABLE (1CP)
+- 《Faction Pack Chaos Daemons》 p124：GORE‑HUNGRY ONSLAUGHT (1CP)
+- 《Faction Pack Chaos Daemons》 p124：SKULLS BEGET BLOOD (1CP)
+- 《Faction Pack Chaos Daemons》 p124：BLOOD BEGETS SKULLS (1CP)
+- 《Faction Pack Chaos Daemons》 p124：FOOLS’ FLIGHT (2CP)
+- 《Faction Pack Chaos Daemons》 p124：SHEATHED IN BRASS (1CP)
+- 《Faction Pack Chaos Daemons》 p125：Scintillating Legion
+- 《Faction Pack Chaos Daemons》 p126：IMPOSSIBLE ECLIPSE (1CP)
+- 《Faction Pack Chaos Daemons》 p126：PYROGENESIS (1CP)
+- 《Faction Pack Chaos Daemons》 p126：FLICKERING REALITY (1CP)
+- 《Faction Pack Chaos Daemons》 p126：FATEBORNE NIGHTMARES (1CP)
+- 《Faction Pack Chaos Daemons》 p126：FICKLEFIRE (1CP)
+- 《Faction Pack Chaos Daemons》 p126：DELIRIUM UNMADE (1CP)
+- 《Faction Pack Chaos Daemons》 p127：Plague Legion
+- 《Faction Pack Chaos Daemons》 p127：Melancholic Miasma
+- 《Faction Pack Chaos Daemons》 p127：Cankerblight (Aura)
+- 《Faction Pack Chaos Daemons》 p127：Maggot Maws
+- 《Faction Pack Chaos Daemons》 p127：Droning Shroud (Aura)
+- 《Faction Pack Chaos Daemons》 p127：Font of Spores (Aura)
+- 《Faction Pack Chaos Daemons》 p128：SEEPING VIRULENCE (1CP)
+- 《Faction Pack Chaos Daemons》 p128：FEVER VISIONS (1CP)
+- 《Faction Pack Chaos Daemons》 p128：FOETID RESURGENCE (2CP)
+- 《Faction Pack Chaos Daemons》 p128：ROT AND RENEWAL (1CP)
+- 《Faction Pack Chaos Daemons》 p128：MURKSHADOWS (1CP)
+- 《Faction Pack Chaos Daemons》 p128：PLAGUE OF WOES (1CP)
+- 《Faction Pack Chaos Daemons》 p129：Legion of Excess
+- 《Faction Pack Chaos Daemons》 p129：Detachment Rule
+- 《Faction Pack Chaos Daemons》 p130：Thieves of Pain (1CP)
+- 《Faction Pack Chaos Daemons》 p130：Overwhelming Excess (1CP)
+- 《Faction Pack Chaos Daemons》 p130：Archagonists (2CP)
+- 《Faction Pack Chaos Daemons》 p130：Sensory Excruciation (1CP)
+- 《Faction Pack Chaos Daemons》 p130：Phantasmal Longing (1CP)
+- 《Faction Pack Chaos Daemons》 p130：Cavalcade of Blades (1CP)
+- 《Faction Pack Chaos Daemons》 p134,135：Spined Chaos Beast
+- 《Faction Pack Chaos Daemons》 p138,139：Plague Toads
+- 《Faction Pack Chaos Daemons》 p144,145：Scabeiathrax the Bloated
+- 《Faction Pack Chaos Daemons》 p146,147：Zarakynel
+- 《Faction Pack Chaos Daemons》 p148,149：Herald of Slaanesh on Steed of Slaanesh
+- 《Faction Pack Chaos Daemons》 p150,151：Furies
+- 《Faction Pack Chaos Knights》 p1,25：CHAOS KNIGHTS
+- 《Faction Pack Chaos Knights》 p2：ANNIHILATE THE UNWORTHY
+- 《Faction Pack Chaos Knights》 p2：PTERRORSHADE ROOKERY
+- 《Faction Pack Chaos Knights》 p2：HATE-FILLED DOMINION
+- 《Faction Pack Chaos Knights》 p2：RUNE-CURSED STRONGHOLD
+- 《Faction Pack Chaos Knights》 p2：PITILESS FOCUS
+- 《Faction Pack Chaos Knights》 p2：INTIMIDATING REMINDER
+- 《Faction Pack Chaos Knights》 p3：HUNTING WARPACK
+- 《Faction Pack Chaos Knights》 p3：SOUL-SPOOR AUSPICATOR UPGRADE
+- 《Faction Pack Chaos Knights》 p3：SNARLING RIVALRY UPGRADE
+- 《Faction Pack Chaos Knights》 p3：INSENSATE BLOODTHIRST (1CP)
+- 《Faction Pack Chaos Knights》 p3：LEASH OF THE MASTERS (1CP)
+- 《Faction Pack Chaos Knights》 p3：STALKING FOCUS (1CP)
+- 《Faction Pack Chaos Knights》 p4：ICONOCLAST FIEFDOM
+- 《Faction Pack Chaos Knights》 p5：HELHUNT LANCE
+- 《Faction Pack Chaos Knights》 p6：FERAL ARROGANCE (1CP)
+- 《Faction Pack Chaos Knights》 p6：MERCILESS FUSILLADE (1CP)
+- 《Faction Pack Chaos Knights》 p6：BEASTHIDE MANIFESTATION (1CP)
+- 《Faction Pack Chaos Knights》 p6：FLUSH THE QUARRY (1CP)
+- 《Faction Pack Chaos Knights》 p6：CONTEMPTUOUS VOLLEYS (1CP)
+- 《Faction Pack Chaos Knights》 p6：GOADED BEAST (1CP)
+- 《Faction Pack Chaos Knights》 p9,10：Chaos Acastus Knight Porphyrion
+- 《Faction Pack Chaos Knights》 p21,22：Chaos Questoris Knight Styrix
+- 《Faction Pack Chaos Knights》 p23,24：War Dog Moirax
+- 《Faction Pack Chaos Space Marines》 p1：WHAT’S NEW?
+- 《Faction Pack Chaos Space Marines》 p1：CONTENTS
+- 《Faction Pack Chaos Space Marines》 p2：CABAL OF CHAOS
+- 《Faction Pack Chaos Space Marines》 p2：INFERNAL VIGOUR (1CP)
+- 《Faction Pack Chaos Space Marines》 p2：FLESHY CURSE (1CP)
+- 《Faction Pack Chaos Space Marines》 p2：WREATHED IN WARPFLAME (1CP)
+- 《Faction Pack Chaos Space Marines》 p3：Devotees of Destruction
+- 《Faction Pack Chaos Space Marines》 p4：MURDERTALON RAIDERS
+- 《Faction Pack Chaos Space Marines》 p4：PLUNGING TALONS (1CP)
+- 《Faction Pack Chaos Space Marines》 p4：RAKING PASS (1CP)
+- 《Faction Pack Chaos Space Marines》 p4：WARP-TWISTED TERRORS (1CP)
+- 《Faction Pack Chaos Space Marines》 p5：WARPSTRIKE CHAMPIONS
+- 《Faction Pack Chaos Space Marines》 p6：EMPYRIC DISLOCATION (1CP)
+- 《Faction Pack Chaos Space Marines》 p6：ARMOUR OF CORRUPTION (2CP)
+- 《Faction Pack Chaos Space Marines》 p6：WARP FLICKER (1CP)
+- 《Faction Pack Chaos Space Marines》 p6：WARP‑TAINTED (1CP)
+- 《Faction Pack Chaos Space Marines》 p6：SIEGEBREAKER STRIKE (1CP)
+- 《Faction Pack Chaos Space Marines》 p6：PORTAL OF SPITE (1CP)
+- 《Faction Pack Chaos Space Marines》 p7：CULT OF THE ARKIFANE
+- 《Faction Pack Chaos Space Marines》 p7,13：DETACHMENT RULE
+- 《Faction Pack Chaos Space Marines》 p7,13：ENHANCEMENTS
+- 《Faction Pack Chaos Space Marines》 p8：TOUCH OF THE ARKIFANE (1CP)
+- 《Faction Pack Chaos Space Marines》 p8：BALEFIRE BOON (1CP)
+- 《Faction Pack Chaos Space Marines》 p8：SOUL‑TALLY OFFERING (1CP)
+- 《Faction Pack Chaos Space Marines》 p8：BIOMECHANOID REGENERATION (1CP)
+- 《Faction Pack Chaos Space Marines》 p8：FORGE‑FIRE SURGE (1CP)
+- 《Faction Pack Chaos Space Marines》 p8：UNHOLY FORTITUDE (2CP)
+- 《Faction Pack Chaos Space Marines》 p9：CREATIONS OF BILE
+- 《Faction Pack Chaos Space Marines》 p10：MONSTROUS VISAGES (1CP)
+- 《Faction Pack Chaos Space Marines》 p10：MASTERS ARE WATCHING (1CP)
+- 《Faction Pack Chaos Space Marines》 p10：SPECIMENS FOR THE SPIDER (2CP)
+- 《Faction Pack Chaos Space Marines》 p10：DELAYED MUTATIONS (2CP)
+- 《Faction Pack Chaos Space Marines》 p10：DIABOLIC REGENERATION
+- 《Faction Pack Chaos Space Marines》 p11：Nightmare Hunt
+- 《Faction Pack Chaos Space Marines》 p12：TALONS SUNK DEEP (1CP)
+- 《Faction Pack Chaos Space Marines》 p12：PREY ON THE WEAK (1CP)
+- 《Faction Pack Chaos Space Marines》 p12：SADISTIC DISPLAY (1CP)
+- 《Faction Pack Chaos Space Marines》 p12：MALICIOUS SURGE (1CP)
+- 《Faction Pack Chaos Space Marines》 p12：RELENTLESS TERROR (1CP)
+- 《Faction Pack Chaos Space Marines》 p12：HORRIFIC INCURSION (1CP)
+- 《Faction Pack Chaos Space Marines》 p13：HURON’S MARAUDERS
+- 《Faction Pack Chaos Space Marines》 p14：HARDENED KILLERS (1CP)
+- 《Faction Pack Chaos Space Marines》 p14：AT THE TYRANT’S COMMAND (1CP)
+- 《Faction Pack Chaos Space Marines》 p14：SEIZE THE PRIZE (1CP)
+- 《Faction Pack Chaos Space Marines》 p14：REAVERS’ FLURRY (1CP)
+- 《Faction Pack Chaos Space Marines》 p14：TO THE FAVOURED THE SPOILS (1CP)
+- 《Faction Pack Chaos Space Marines》 p14：ENCIRCLING SURGE (1CP)
+- 《Faction Pack Chaos Space Marines》 p15：RENEGADE WARBAND
+- 《Faction Pack Chaos Space Marines》 p16：NEVER OUTGUNNED (1CP)
+- 《Faction Pack Chaos Space Marines》 p16：VENGEFUL DESTRUCTION (1CP)
+- 《Faction Pack Chaos Space Marines》 p16：UNDYING HATRED (1CP)
+- 《Faction Pack Chaos Space Marines》 p16：RENEGADE CLAIM (1CP)
+- 《Faction Pack Chaos Space Marines》 p16：CORRUPTED MUNITIONS (1CP)
+- 《Faction Pack Chaos Space Marines》 p16：REAVERS’ REACTION (1CP)
+- 《Faction Pack Chaos Space Marines》 p17,18：Kravek Morne
+- 《Faction Pack Chaos Space Marines》 p19,20：Mutilators
+- 《Faction Pack Chaos Space Marines》 p21,22：Defiler
+- 《Faction Pack Chaos Space Marines》 p23,24：Huron Blackheart
+- 《Faction Pack Chaos Space Marines》 p25：Masters of the Maelstrom
+- 《Faction Pack Chaos Space Marines》 p29：Red Corsairs Reave-Captain
+- 《Faction Pack Chaos Space Marines》 p31,32：Nemesis Claw
+- 《Faction Pack Chaos Space Marines》 p33,34：Raptors
+- 《Faction Pack Chaos Space Marines》 p35,36,38：Warp Talons
+- 《Faction Pack Chaos Space Marines》 p37：Chaos Space Marines
+- 《Faction Pack Chaos Space Marines》 p38：Abaddon the Despoiler
+- 《Faction Pack Chaos Space Marines》 p38：Accursed Cultists
+- 《Faction Pack Chaos Space Marines》 p38：Cypher
+- 《Faction Pack Chaos Space Marines》 p38：Fabius Bile
+- 《Faction Pack Chaos Space Marines》 p38：Chaos Lord in Terminator Armour
+- 《Faction Pack Chaos Space Marines》 p38：Chaos Rhino
+- 《Faction Pack Chaos Space Marines》 p38：Chaos Predator Annihilator
+- 《Faction Pack Chaos Space Marines》 p38：Chaos Predator Destructor
+- 《Faction Pack Chaos Space Marines》 p38：Heretic Astartes Daemon Prince
+- 《Faction Pack Chaos Space Marines》 p38：Lord Discordant on Helstalker
+- 《Faction Pack Chaos Space Marines》 p38：Obliterators
+- 《Faction Pack Chaos Space Marines》 p38：Vashtorr the Arkifane
+- 《Faction Pack Chaos Space Marines》 p38：Chaos Land Raider
+- 《Faction Pack Chaos Space Marines》 p38：Traitor Guardsmen Squad
+- 《Faction Pack Chaos Space Marines》 p39：FAQS
+- 《Faction Pack Chaos Space Marines》 p42,43：Renegade Enforcer
+- 《Faction Pack Chaos Space Marines》 p44,45：Renegade Heavy Weapons Squad
+- 《Faction Pack Chaos Space Marines》 p48,49：Hell Blade
+- 《Faction Pack Chaos Space Marines》 p50,51：Hell Talon
+- 《Faction Pack Chaos Space Marines》 p52,53：Sorcerer on Steed of Slaanesh
+- 《Faction Pack Chaos Space Marines》 p54,55：Renegade Ogryn Brutes
+- 《Faction Pack Chaos Space Marines》 p56,57：Rogue Psyker
+- 《Faction Pack Chaos Space Marines》 p58,59：Negavolt Cultists
+- 《Faction Pack Chaos Space Marines》 p60,61：Mutoid Vermin
+- 《Faction Pack Chaos Space Marines》 p62,63：Sorcerer on Palanquin of Nurgle
+- 《Faction Pack Chaos Space Marines》 p64,65：Sorcerer on Disc of Tzeentch
+- 《Faction Pack Chaos Space Marines》 p66,67：Sorcerer on Bike
+- 《Faction Pack Chaos Space Marines》 p68,69：Chaos Lord on Steed of Slaanesh
+- 《Faction Pack Chaos Space Marines》 p70,71：Chaos Lord on Palanquin of Nurgle
+- 《Faction Pack Chaos Space Marines》 p72,73：Chaos Lord on Disc of Tzeentch
+- 《Faction Pack Chaos Space Marines》 p74,75：Chaos Lord on Juggernaut
+- 《Faction Pack Chaos Space Marines》 p76,77：Renegade Ogryn Beast Handler
+- 《Faction Pack Chaos Space Marines》 p78,79：Chaos Lord on Bike
+- 《Faction Pack Chaos Space Marines》 p82,83：Exalted Champion
+- 《Faction Pack Chaos Space Marines》 p84,85：Cultist Mob with Firearms
+- 《Faction Pack Chaos Space Marines》 p86,87：Decimator
+- 《Faction Pack Chaos Space Marines》 p88,89：Greater Blight Drone
+- 《Faction Pack Chaos Space Marines》 p90,91：Dreadclaw Drop Pod
+- 《Faction Pack Chaos Space Marines》 p92,93：Blood Slaughterer
+- 《Faction Pack Chaos Space Marines》 p94,95：Greater Brass Scorpion
+- 《Faction Pack Chaos Space Marines》 p96,97：Kytan Ravager
+- 《Faction Pack Chaos Space Marines》 p98,99：Kharybdis Assault Claw
+- 《Faction Pack Chaos Space Marines》 p102：WARHAMMER L E G E N D S: RENEGADES AND TRAITORS
+- 《Faction Pack Dark Angels》 p1：DARK ANGELS FACTION PACK: VERSION 1.0
+- 《Faction Pack Dark Angels》 p1：WHAT’S NEW?
+- 《Faction Pack Dark Angels》 p1：CONTENTS
+- 《Faction Pack Dark Angels》 p2：Dark Age Arsenal
+- 《Faction Pack Dark Angels》 p3：Darkflight Pursuit
+- 《Faction Pack Dark Angels》 p3：Skyborne Surveillance (1CP)
+- 《Faction Pack Dark Angels》 p3：Wings of Shadow (1CP)
+- 《Faction Pack Dark Angels》 p3：We Are Vengeance (1CP)
+- 《Faction Pack Dark Angels》 p4：INTERROGATION CONCLAVE
+- 《Faction Pack Dark Angels》 p5：LION’S BLADE TASK FORCE
+- 《Faction Pack Dark Angels》 p6：OVERPOWERING EXACTION (1CP)
+- 《Faction Pack Dark Angels》 p6,8：ARMOUR OF CONTEMPT (1CP)
+- 《Faction Pack Dark Angels》 p6：STRENGTH IN UNITY (1CP)
+- 《Faction Pack Dark Angels》 p6：KNIGHTS OF IRON (1CP)
+- 《Faction Pack Dark Angels》 p6：ILLUMINATING FIRE (1CP)
+- 《Faction Pack Dark Angels》 p6：INESCAPABLE WRATH (2CP)
+- 《Faction Pack Dark Angels》 p7：Dutiful Tenacity
+- 《Faction Pack Dark Angels》 p7：Tempered in Battle (Aura)
+- 《Faction Pack Dark Angels》 p7：Ancient Weapons
+- 《Faction Pack Dark Angels》 p7：Deathwing Assault
+- 《Faction Pack Dark Angels》 p7：Lord of the Ravenwing
+- 《Faction Pack Dark Angels》 p8：INESCAPABLE JUSTICE (2CP)
+- 《Faction Pack Dark Angels》 p8：LION’S WILL (1CP)
+- 《Faction Pack Dark Angels》 p8：TACTICAL MASTERY (1CP)
+- 《Faction Pack Dark Angels》 p8：RELICS OF THE DARK AGE (1CP)
+- 《Faction Pack Dark Angels》 p8：LEONINE AGGRESSION (1CP)
+- 《Faction Pack Dark Angels》 p9：DARK ANGELS RULES UPDATES
+- 《Faction Pack Dark Angels》 p9：UPDATES
+- 《Faction Pack Dark Angels》 p10：Lion El’Jonson
+- 《Faction Pack Dark Angels》 p10：Ravenwing Black Knights, Ravenwing Command Squad – Black Knight Combat Weapon Profile
+- 《Faction Pack Dark Angels》 p10：Ravenwing Command Squad, Honour or Death Ability
+- 《Faction Pack Dark Angels》 p10：Sammael, Grand Master of the Ravenwing Ability
+- 《Faction Pack Dark Angels》 p10：Land Speeder Vengeance, Ravenwing Darkshroud, Sammael – Keywords Section
+- 《Faction Pack Dark Angels》 p10：FAQs
+- 《Faction Pack Dark Angels》 p11,12：Ravenwing Talonmaster
+- 《Faction Pack Dark Angels》 p13,14：Deathwing Strikemaster
+- 《Faction Pack Death Guard》 p1：DEATH GUARD
+- 《Faction Pack Death Guard》 p1：WHAT’S NEW?
+- 《Faction Pack Death Guard》 p2：Contagion Engines
+- 《Faction Pack Death Guard》 p3：FLYBLOWN HOST
+- 《Faction Pack Death Guard》 p3：ENHANCEMENTS
+- 《Faction Pack Death Guard》 p3：INSECTILE MURMURATION UPGRADE
+- 《Faction Pack Death Guard》 p3：PLAGUEVEIL UPGRADE
+- 《Faction Pack Death Guard》 p3：NAUSEATING PAROXYSMS (1CP)
+- 《Faction Pack Death Guard》 p3：DRONING HORROR (1CP)
+- 《Faction Pack Death Guard》 p3：EYE OF THE SWARM (1CP)
+- 《Faction Pack Death Guard》 p4：Paragons of Putrescence
+- 《Faction Pack Death Guard》 p6：Defiler
+- 《Faction Pack Death Guard》 p7：DEATH GUARD RULES UPDATES
+- 《Faction Pack Death Guard》 p8,9：Death Guard Possessed
+- 《Faction Pack Death Guard》 p10,11：Death Guard Chaos Lord
+- 《Faction Pack Death Guard》 p12,13：Death Guard Chaos Lord in Terminator Armour
+- 《Faction Pack Deathwatch》 p1：FACTION PACK: VERSION 1.0
+- 《Faction Pack Deathwatch》 p1：WHAT’S NEW?
+- 《Faction Pack Deathwatch》 p1：CONTENTS
+- 《Faction Pack Deathwatch》 p2：Deathwatch
+- 《Faction Pack Deathwatch》 p3：DEATHWATCH – BLACK SPEAR TASK FORCE DETACHMENT RULE
+- 《Faction Pack Deathwatch》 p4：ARMOUR OF CONTEMPT (1CP)
+- 《Faction Pack Deathwatch》 p4：ADAPTIVE TACTICS (1CP)
+- 《Faction Pack Deathwatch》 p5：DEATHWATCH – BLACK SPEAR TASK FORCE STRATAGEMS
+- 《Faction Pack Deathwatch》 p5：DRAGONFIRE ROUNDS (1CP)
+- 《Faction Pack Deathwatch》 p5：SITE-TO-SITE TELEPORTATION (1CP)
+- 《Faction Pack Deathwatch》 p6：THIEF OF SECRETS
+- 《Faction Pack Deathwatch》 p6：OSSEUS KEY
+- 《Faction Pack Deathwatch》 p6：BEACON ANGELIS
+- 《Faction Pack Deathwatch》 p6：THE TOME OF ECTOCLADES
+- 《Faction Pack Deathwatch》 p8,9：Watch Master
+- 《Faction Pack Deathwatch》 p10,11：Watch Captain Artemis
+- 《Faction Pack Deathwatch》 p12,13：Deathwatch Veterans
+- 《Faction Pack Deathwatch》 p18,19：Talonstrike Kill Team
+- 《Faction Pack Deathwatch》 p20,21：Fortis Kill Team
+- 《Faction Pack Deathwatch》 p22,23：Indomitor Kill Team
+- 《Faction Pack Deathwatch》 p24,25：Spectrus Kill Team
+- 《Faction Pack Deathwatch》 p26,27：Decimus Kill Team
+- 《Faction Pack Deathwatch》 p28：DEATHWATCH ARMOURY
+- 《Faction Pack Drukhari》 p1：WHAT’S NEW?
+- 《Faction Pack Drukhari》 p1：CONTENTS
+- 《Faction Pack Drukhari》 p2：EXHIBITION OF SLAUGHTER
+- 《Faction Pack Drukhari》 p2：PERIAPT OF TORMENTS
+- 《Faction Pack Drukhari》 p2：HYPERSTIMM TRAFFICKER
+- 《Faction Pack Drukhari》 p2：PLANNED STRIKES (1CP)
+- 《Faction Pack Drukhari》 p2：SCULPTING THE STAGE (1CP)
+- 《Faction Pack Drukhari》 p2：ACROBATIC DISPLAY (1CP)
+- 《Faction Pack Drukhari》 p3：KABALITE AGONYSTS
+- 《Faction Pack Drukhari》 p3：PRIORITISED VICTIM (1CP)
+- 《Faction Pack Drukhari》 p3：SHADOWS’ REACH (1CP)
+- 《Faction Pack Drukhari》 p3：KILLERS FROM THE DARK SPIRES (1CP)
+- 《Faction Pack Drukhari》 p4：Tools of Torment
+- 《Faction Pack Drukhari》 p5：REAPER’S WAGER
+- 《Faction Pack Drukhari》 p6：MALICIOUS FRENZY (1CP)
+- 《Faction Pack Drukhari》 p6：FATEFUL ROLE (1CP)
+- 《Faction Pack Drukhari》 p6：MURDERER’S CIRCUS (1CP)
+- 《Faction Pack Drukhari》 p6：SHORTEN THE ODDS (1CP)
+- 《Faction Pack Drukhari》 p6：SCINTILLATING TEMPO (1CP)
+- 《Faction Pack Drukhari》 p6：DANCE MACABRE (2CP)
+- 《Faction Pack Drukhari》 p7：DRUKHARI RULES UPDATES
+- 《Faction Pack Drukhari》 p10,11：Reaper
+- 《Faction Pack Drukhari》 p12,13：Tantalus
+- 《Faction Pack Drukhari》 p14,15：Beastmaster
+- 《Faction Pack Drukhari》 p16,17：Court of the Archon
+- 《Faction Pack Drukhari》 p18,19：Grotesques
+- 《Faction Pack Drukhari》 p20,21：Urien Rakarth
+- 《Faction Pack Emperor S Children》 p1：What's New?
+- 《Faction Pack Emperor S Children》 p1：Contents
+- 《Faction Pack Emperor S Children》 p2：Elegant Brutes
+- 《Faction Pack Emperor S Children》 p3：FRENZIED HOST
+- 《Faction Pack Emperor S Children》 p3：POSSESSIVE MANIA (1CP)
+- 《Faction Pack Emperor S Children》 p3：AGONISED CACOPHONY (1CP)
+- 《Faction Pack Emperor S Children》 p3：ABSOLUTE SENSORY OVERLOAD (1CP)
+- 《Faction Pack Emperor S Children》 p4：SPECTACLE OF SLAUGHTER
+- 《Faction Pack Emperor S Children》 p4：EAGER PATRONS (UPGRADE)
+- 《Faction Pack Emperor S Children》 p4：BEGUILING GROTESQUERIE (UPGRADE)
+- 《Faction Pack Emperor S Children》 p4：HONOUR IS FOR FOOLS (1CP)
+- 《Faction Pack Emperor S Children》 p4：SINGLE-MINDED STRIKE (1CP)
+- 《Faction Pack Emperor S Children》 p4：INTOXICATED BY TRIUMPH (1CP)
+- 《Faction Pack Emperor S Children》 p5：Court of the Phoenician
+- 《Faction Pack Emperor S Children》 p6：CONTEMPTUOUS DISREGARD (2CP)
+- 《Faction Pack Emperor S Children》 p6：PRIDEFUL SUPERIORITY (1CP)
+- 《Faction Pack Emperor S Children》 p6：SINUOUS BREACH (1CP)
+- 《Faction Pack Emperor S Children》 p6：CLOSE-QUARTERS EXCRUCIATION (1CP)
+- 《Faction Pack Emperor S Children》 p6：EUPHORIC INSPIRATION (1CP)
+- 《Faction Pack Emperor S Children》 p6：CATALYTIC STIMULUS (1CP)
+- 《Faction Pack Emperor S Children》 p7,8：Defiler
+- 《Faction Pack Emperor S Children》 p9：UPDATES
+- 《Faction Pack Emperor S Children》 p9：DATASHEETS
+- 《Faction Pack Emperor S Children》 p10：FAQS
+- 《Faction Pack Genestealer Cults》 p1：WHAT’S NEW?
+- 《Faction Pack Genestealer Cults》 p1：CONTENTS
+- 《Faction Pack Genestealer Cults》 p2：HEROES OF THE UPRISING DETACHMENT RULES
+- 《Faction Pack Genestealer Cults》 p2：LIVING UP TO LEGEND (1CP)
+- 《Faction Pack Genestealer Cults》 p2：SURGING BROODWORSHIP (1CP)
+- 《Faction Pack Genestealer Cults》 p2：LOYAL TO THE END (1CP)
+- 《Faction Pack Genestealer Cults》 p3：PURESTRAIN BROODSWARM
+- 《Faction Pack Genestealer Cults》 p4：Xenocult Masses
+- 《Faction Pack Genestealer Cults》 p5：FINAL DAY
+- 《Faction Pack Genestealer Cults》 p5：DETACHMENT RULE
+- 《Faction Pack Genestealer Cults》 p5：THE STAR CHILDREN’S BLESSINGS
+- 《Faction Pack Genestealer Cults》 p5：ENHANCEMENTS
+- 《Faction Pack Genestealer Cults》 p6：HYPERFEROCITY (1CP)
+- 《Faction Pack Genestealer Cults》 p6：PSI SURGE (1CP)
+- 《Faction Pack Genestealer Cults》 p6：AVENGE THE STAR CHILDREN (1CP)
+- 《Faction Pack Genestealer Cults》 p6：DIVINE IMPERATIVE (1CP)
+- 《Faction Pack Genestealer Cults》 p6：DARTING ATTACKS (1CP)
+- 《Faction Pack Genestealer Cults》 p6：RESISTANCE TUNNELS (1CP)
+- 《Faction Pack Genestealer Cults》 p7：GENESTEALER CULTS
+- 《Faction Pack Genestealer Cults》 p8：Integrated Tactics Detachment Rule, Brood Brothers Section
+- 《Faction Pack Genestealer Cults》 p8：Host of Ascension Detachment
+- 《Faction Pack Genestealer Cults》 p8：Outlander Claw Detachment
+- 《Faction Pack Genestealer Cults》 p8：Xenocreed Congregation Detachment
+- 《Faction Pack Genestealer Cults》 p8：Datasheets
+- 《Faction Pack Genestealer Cults》 p9：Sanctus
+- 《Faction Pack Genestealer Cults》 p9：Goliath Rockgrinder, Goliath Truck – Keywords Section
+- 《Faction Pack Genestealer Cults》 p9：FAQS
+- 《Faction Pack Genestealer Cults》 p10,11：Tectonic Fragdrill
+- 《Faction Pack Grey Knights》 p1：WHAT’S NEW?
+- 《Faction Pack Grey Knights》 p1：CONTENTS
+- 《Faction Pack Grey Knights》 p2：Argent Assault
+- 《Faction Pack Grey Knights》 p2：Truesilver Aegis (1CP)
+- 《Faction Pack Grey Knights》 p2：A Threat Ended (1CP)
+- 《Faction Pack Grey Knights》 p2：Aura of Vengeance (1CP)
+- 《Faction Pack Grey Knights》 p3：FIRES OF PURGATION
+- 《Faction Pack Grey Knights》 p3：SOUL-LOCKED (1CP)
+- 《Faction Pack Grey Knights》 p3：FOCUSED IMMOLATION (1CP)
+- 《Faction Pack Grey Knights》 p3：SPIRITSEAR (1CP)
+- 《Faction Pack Grey Knights》 p4：IMMATERIAL INTERDICTION DETACHMENT RULES
+- 《Faction Pack Grey Knights》 p5：Warpbane Task Force
+- 《Faction Pack Grey Knights》 p6：SANCTIFIED KILL ZONE (1CP)
+- 《Faction Pack Grey Knights》 p6：FLAMES OF SANCTITY (1CP)
+- 《Faction Pack Grey Knights》 p6：HALLOWED BEACON (1CP)
+- 《Faction Pack Grey Knights》 p6：FIRES OF COVENANT (1CP)
+- 《Faction Pack Grey Knights》 p6：AEGIS ETERNAL (1CP)
+- 《Faction Pack Grey Knights》 p6：REPELLING SPHERE (1CP)
+- 《Faction Pack Grey Knights》 p7,8：Grey Knights Thunderhawk Gunship
+- 《Faction Pack Grey Knights》 p9：GREY KNIGHTS
+- 《Faction Pack Grey Knights》 p14,15：Brother-Captain Stern
+- 《Faction Pack Grey Knights》 p16,17：Kaldor Draigo
+- 《Faction Pack Grey Knights》 p18,19：Servitors
+- 《Faction Pack Imperial Agents》 p1：IMPERIAL AGENTS FACTION PACK: VERSION 1.0
+- 《Faction Pack Imperial Agents》 p2：VEILED BLADE ELIMINATION FORCE
+- 《Faction Pack Imperial Agents》 p3：PRIME TARGET (1CP)
+- 《Faction Pack Imperial Agents》 p3：HYPERSTIMMS (2CP)
+- 《Faction Pack Imperial Agents》 p3：WILL‑SAPPING SALVO (1CP)
+- 《Faction Pack Imperial Agents》 p3：ORBITAL OVERSIGHT (1CP)
+- 《Faction Pack Imperial Agents》 p3：BLIND GRENADES (1CP)
+- 《Faction Pack Imperial Agents》 p3：ENSNARING TRAP (1CP)
+- 《Faction Pack Imperial Agents》 p4,5：Inquisitor Kroyle
+- 《Faction Pack Imperial Agents》 p8,9：Sanctifiers
+- 《Faction Pack Imperial Agents》 p10：IMPERIAL AGENTS RULES UPDATES
+- 《Faction Pack Imperial Agents》 p11,12：Inquisitor Ostromandeus
+- 《Faction Pack Imperial Agents》 p15,16：Neyam Shai Murad
+- 《Faction Pack Imperial Agents》 p17,18：Janus Draik
+- 《Faction Pack Imperial Agents》 p21,22：Inquisitor in Terminator Armour
+- 《Faction Pack Imperial Agents》 p23,24：Inquisitor Karamazov
+- 《Faction Pack Imperial Agents》 p25,26：Inquisitor Eisenhorn
+- 《Faction Pack Imperial Agents》 p39,40：Spectrus Kill Team
+- 《Faction Pack Imperial Agents》 p45：DEATHWATCH ARMOURY
+- 《Faction Pack Imperial Knights》 p1：WHAT’S NEW?
+- 《Faction Pack Imperial Knights》 p1：CONTENTS
+- 《Faction Pack Imperial Knights》 p2：Rain of Devastation (Detachment Rule)
+- 《Faction Pack Imperial Knights》 p2：Blessed Plate (Enhancement)
+- 《Faction Pack Imperial Knights》 p2：Archeotech Autoloaders (Enhancement)
+- 《Faction Pack Imperial Knights》 p2：Ground-Shaking Strides (1CP)
+- 《Faction Pack Imperial Knights》 p2：Foebreaker Firestorm (1CP)
+- 《Faction Pack Imperial Knights》 p2：Fire Shocked (1CP)
+- 《Faction Pack Imperial Knights》 p3：QUESTOR FORGEPACT
+- 《Faction Pack Imperial Knights》 p3：MAGOS QUESTORIS
+- 《Faction Pack Imperial Knights》 p3：KNIGHT OF THE OPUS MACHINA (AURA)
+- 《Faction Pack Imperial Knights》 p3：OMNISSIAH’S GRACE (1CP)
+- 《Faction Pack Imperial Knights》 p3：VENGEANCE OF THE MACHINE CULT (1CP)
+- 《Faction Pack Imperial Knights》 p3：IN THE SHADOW OF GIANTS (1CP)
+- 《Faction Pack Imperial Knights》 p4：THRONE-BONDED OUTRIDERS
+- 《Faction Pack Imperial Knights》 p5：FREEBLADE COMPANY
+- 《Faction Pack Imperial Knights》 p6：Noble Sacrifice (1CP)
+- 《Faction Pack Imperial Knights》 p6：Strength From Exile (1CP)
+- 《Faction Pack Imperial Knights》 p6：Full Tilt (1CP)
+- 《Faction Pack Imperial Knights》 p6：Point‑Blank Barrage (1CP)
+- 《Faction Pack Imperial Knights》 p6：Survivor of Strife (1CP)
+- 《Faction Pack Imperial Knights》 p6：Flanking Manoeuvres (1CP)
+- 《Faction Pack Imperial Knights》 p7,8：Knight Destrier
+- 《Faction Pack Imperial Knights》 p9,10：Acastus Knight Asterius
+- 《Faction Pack Imperial Knights》 p13,14：Cerastus Knight Lancer
+- 《Faction Pack Imperial Knights》 p15,16：Cerastus Knight Castigator
+- 《Faction Pack Imperial Knights》 p21,22：Questoris Knight Magaera
+- 《Faction Pack Imperial Knights》 p25,26：Armiger Moirax
+- 《Faction Pack Imperial Knights》 p27：IMPERIAL KNIGHTS
+- 《Faction Pack Imperial Knights》 p27：RULES UPDATES
+- 《Faction Pack Leagues Of Votann》 p1,11：LEAGUES OF VOTANN
+- 《Faction Pack Leagues Of Votann》 p2：ARMOURED TRAILBLAZERS
+- 《Faction Pack Leagues Of Votann》 p2：COORDINATED CROSSFIRE (1CP)
+- 《Faction Pack Leagues Of Votann》 p2：OUTFLANKING ARMOUR (1CP)
+- 《Faction Pack Leagues Of Votann》 p2：BUILT TO LAST (1CP)
+- 《Faction Pack Leagues Of Votann》 p3：FARSEEKERS
+- 《Faction Pack Leagues Of Votann》 p3：SCORNFUL ANALYSIS (1CP)
+- 《Faction Pack Leagues Of Votann》 p3：NO SHOT WASTED (1CP)
+- 《Faction Pack Leagues Of Votann》 p3：ECONOMY OF MOTION (1CP)
+- 《Faction Pack Leagues Of Votann》 p4：HEARTHGUARD COVENANT
+- 《Faction Pack Leagues Of Votann》 p4,6：BRËKKEKNOTS (1CP)
+- 《Faction Pack Leagues Of Votann》 p4,6：FURY OF THE HEARTH (1CP)
+- 《Faction Pack Leagues Of Votann》 p4,6：MATERIALISATION MATRICES (1CP)
+- 《Faction Pack Leagues Of Votann》 p5：HEARTHBAND
+- 《Faction Pack Leagues Of Votann》 p6：SURE OF PURPOSE (1CP)
+- 《Faction Pack Leagues Of Votann》 p6：SUPERIOR CRAFTSMANSHIP (2CP)
+- 《Faction Pack Leagues Of Votann》 p6：UNYIELDING AGGRESSION (1CP)
+- 《Faction Pack Leagues Of Votann》 p7：MERCENARY OATHBAND
+- 《Faction Pack Leagues Of Votann》 p7：DETACHMENT RULE
+- 《Faction Pack Leagues Of Votann》 p7：ENHANCEMENTS
+- 《Faction Pack Leagues Of Votann》 p8：Auxiliary Contract (1CP)
+- 《Faction Pack Leagues Of Votann》 p8：Optimal Expenditure (1CP)
+- 《Faction Pack Leagues Of Votann》 p8：Grand Artifice (1CP)
+- 《Faction Pack Leagues Of Votann》 p8：Privateer Arsenal (1CP)
+- 《Faction Pack Leagues Of Votann》 p9,10：Berehk Stornbröw
+- 《Faction Pack Necrons》 p1：NECRONS
+- 《Faction Pack Necrons》 p1：WHAT’S NEW?
+- 《Faction Pack Necrons》 p1：CONTENTS
+- 《Faction Pack Necrons》 p2：HAND OF THE DYNASTY
+- 《Faction Pack Necrons》 p2：DOMINANCE PROTOCOLS (1CP)
+- 《Faction Pack Necrons》 p2：WILL OF THE CONQUEROR (1CP)
+- 《Faction Pack Necrons》 p2：NANOSATURATION (1CP)
+- 《Faction Pack Necrons》 p3：SKYSHROUD SPEARHEAD
+- 《Faction Pack Necrons》 p4：THE PHAERON’S ARMOURY
+- 《Faction Pack Necrons》 p5：Starshatter Arsenal
+- 《Faction Pack Necrons》 p6：MERCILESS RECLAMATION (2CP)
+- 《Faction Pack Necrons》 p6：UNYIELDING FORMS (2CP)
+- 《Faction Pack Necrons》 p6：CHRONOSHIFT (1CP)
+- 《Faction Pack Necrons》 p6：DIMENSIONAL TUNNEL (1CP)
+- 《Faction Pack Necrons》 p6：ENDLESS SERVITUDE (1CP)
+- 《Faction Pack Necrons》 p6：REACTIVE REPOSITION (1CP)
+- 《Faction Pack Necrons》 p7：CRYPTEK CONCLAVE
+- 《Faction Pack Necrons》 p7：DETACHMENT RULE: TECHNOSORCEROUS AUGMENTATIONS
+- 《Faction Pack Necrons》 p7：ENHANCEMENTS
+- 《Faction Pack Necrons》 p8：MOLECULAR TARGETING (1CP)
+- 《Faction Pack Necrons》 p8：MICROSCARAB SWARM (1CP)
+- 《Faction Pack Necrons》 p8：ANIMUS CURSE (1CP)
+- 《Faction Pack Necrons》 p8：SYNERGISTIC EMPOWERMENT (1CP)
+- 《Faction Pack Necrons》 p8：UNTAPPED POWER (1CP)
+- 《Faction Pack Necrons》 p8：POTENTIALITY SYPHON (1CP)
+- 《Faction Pack Necrons》 p9：Cursed Legion
+- 《Faction Pack Necrons》 p9：Detachment Rule: Cold Fervour
+- 《Faction Pack Necrons》 p9：Destroyer Ankh
+- 《Faction Pack Necrons》 p9：Murdermind
+- 《Faction Pack Necrons》 p9：Mark of the Nekrosor
+- 《Faction Pack Necrons》 p9：Cursed Circlet
+- 《Faction Pack Necrons》 p10：METHODICAL MURDER (1CP)
+- 《Faction Pack Necrons》 p10：IMAGE OF DEATH (1CP)
+- 《Faction Pack Necrons》 p10：MORTIS PROTOCOLS (1CP)
+- 《Faction Pack Necrons》 p10：DRIVEN TO BUTCHERY (1CP)
+- 《Faction Pack Necrons》 p10：SPREADING MADNESS (1CP)
+- 《Faction Pack Necrons》 p10：UNNATURAL AGGRESSION (2CP)
+- 《Faction Pack Necrons》 p11：Pantheon of Woe
+- 《Faction Pack Necrons》 p12：DISHARMONISATION CASCADE (1CP)
+- 《Faction Pack Necrons》 p12：MOLECULAR EROSION (1CP)
+- 《Faction Pack Necrons》 p12：MASS TRANSMOGRIFICATION (1CP)
+- 《Faction Pack Necrons》 p12：ENTROPHASIC AURA TARGETING (1CP)
+- 《Faction Pack Necrons》 p12：CHRONODISTORTION (1CP)
+- 《Faction Pack Necrons》 p12：PHASE MELDING (1CP)
+- 《Faction Pack Necrons》 p21,22：C’tan Shard of the Void Dragon
+- 《Faction Pack Necrons》 p23,24：C’tan Shard of the Deceiver
+- 《Faction Pack Necrons》 p25,26：Transcendent C’tan
+- 《Faction Pack Necrons》 p28：Nekrosor Ammentar
+- 《Faction Pack Necrons》 p29：RULES UPDATES
+- 《Faction Pack Necrons》 p30：FAQS
+- 《Faction Pack Necrons》 p33,34：Gauss Pylon
+- 《Faction Pack Necrons》 p35,36：Sentry Pylon
+- 《Faction Pack Necrons》 p36：WARHAMMER LEGENDS
+- 《Faction Pack Necrons》 p37,38：Night Shroud
+- 《Faction Pack Necrons》 p39,40：Tomb Citadel Walls
+- 《Faction Pack Necrons》 p41,42：Anrakyr the Traveller
+- 《Faction Pack Necrons》 p43,44：Vargard Obyron
+- 《Faction Pack Necrons》 p45,46：Nemesor Zahndrekh
+- 《Faction Pack Necrons》 p47,48：Lord
+- 《Faction Pack Necrons》 p49,50：Canoptek Tomb Stalker
+- 《Faction Pack Necrons》 p51,52：Canoptek Tomb Sentinel
+- 《Faction Pack Necrons》 p53,54：Canoptek Acanthrites
+- 《Faction Pack Necrons》 p55,56：Tesseract Ark
+- 《Faction Pack Orks》 p1：ORKS
+- 《Faction Pack Orks》 p1：WHAT’S NEW?
+- 《Faction Pack Orks》 p1：CONTENTS
+- 《Faction Pack Orks》 p2：ROLLIN’ DEFF
+- 《Faction Pack Orks》 p2：BOARDING RAMPS UPGRADE
+- 《Faction Pack Orks》 p2：TARGETIN’ GIZMOS UPGRADE
+- 《Faction Pack Orks》 p2：BRUTAL BROADSIDE (1CP)
+- 《Faction Pack Orks》 p2：IMPENDING CRUNCH (1CP)
+- 《Faction Pack Orks》 p2：DEVASTATING DRIFT (1CP)
+- 《Faction Pack Orks》 p3：MORE DAKKA! DETACHMENT RULES
+- 《Faction Pack Orks》 p3,5：ENHANCEMENTS
+- 《Faction Pack Orks》 p4：TAKTIKAL BRIGADE
+- 《Faction Pack Orks》 p4：MORK’S KUNNIN’
+- 《Faction Pack Orks》 p4：SLIPPERY GIT
+- 《Faction Pack Orks》 p4：TAKTIKAL RETREAT (1CP)
+- 《Faction Pack Orks》 p4：ON TO DA NEXT (1CP)
+- 《Faction Pack Orks》 p4：DED SNEAKY (1CP)
+- 《Faction Pack Orks》 p5：SPEEDWAAAGH!
+- 《Faction Pack Orks》 p5：DETACHMENT RULE – TURBO BOOSTAS
+- 《Faction Pack Orks》 p6：ON DA MOVE – 1CP
+- 《Faction Pack Orks》 p6：MOBILE DAKKASTORM – 1CP
+- 《Faction Pack Orks》 p6：SPESHUL AMMO – 1CP
+- 《Faction Pack Orks》 p6：DED KILLY CONSTRUCTION – 1CP
+- 《Faction Pack Orks》 p6：DUST TRAILS – 1CP
+- 《Faction Pack Orks》 p6：EVASIVE MANOOVA – 1CP
+- 《Faction Pack Orks》 p7：BLITZ BRIGADE
+- 《Faction Pack Orks》 p8：Mount Up, Ladz (1CP)
+- 《Faction Pack Orks》 p8：Mekanised Brutality (1CP)
+- 《Faction Pack Orks》 p8：Run ’Em Down (1CP)
+- 《Faction Pack Orks》 p8：Armoured Duellists (1CP)
+- 《Faction Pack Orks》 p8：Impervious (1CP)
+- 《Faction Pack Orks》 p8：Yooz In Trouble Now (1CP)
+- 《Faction Pack Orks》 p9：FREEBOOTER KREW
+- 《Faction Pack Orks》 p10：BASH AND GRAB (1CP)
+- 《Faction Pack Orks》 p10：GRAB AND BASH (1CP)
+- 《Faction Pack Orks》 p10：BOARDIN’ RUSH (1CP)
+- 《Faction Pack Orks》 p10：DECK FRAGGERS (1CP)
+- 《Faction Pack Orks》 p10：ROLLING LOOT‑HEAP (1CP)
+- 《Faction Pack Orks》 p10：KRUMP AND RUN (1CP)
+- 《Faction Pack Orks》 p11：Bigboss
+- 《Faction Pack Orks》 p12：Bannernob
+- 《Faction Pack Orks》 p13：Wartrakk
+- 《Faction Pack Orks》 p14：Big Mek Dakkarig
+- 《Faction Pack Orks》 p15,16：Wazdakka Gutsmek
+- 《Faction Pack Orks》 p17,18：Breaka Boyz
+- 《Faction Pack Orks》 p19,20：Tankbustas
+- 《Faction Pack Orks》 p23：RULES UPDATES
+- 《Faction Pack Orks》 p24：Beastboss on Squigosaur, Single-Minded Predator Ability
+- 《Faction Pack Orks》 p24：Big Mek, Shokk-boosta Ability
+- 《Faction Pack Orks》 p24：Blitza-Bommer, Boom Bomb ability
+- 《Faction Pack Orks》 p24：Boss Snikrot
+- 《Faction Pack Orks》 p24：Boyz, Bodyguard Section
+- 《Faction Pack Orks》 p24：Burna-Bommer, Burna Bomb Ability
+- 《Faction Pack Orks》 p24：Deff Dread, Piston-driven Brutality Ability
+- 《Faction Pack Orks》 p24：Ghazghkull Thraka
+- 《Faction Pack Orks》 p24,25：Gretchin, Thievin’ Scavengers ability
+- 《Faction Pack Orks》 p26,27：Ufthak Blackhawk
+- 《Faction Pack Orks》 p31：Da Red Gobbo
+- 《Faction Pack Orks》 p32,33：Painboy on Warbike
+- 《Faction Pack Orks》 p36,37：Warbuggies
+- 《Faction Pack Orks》 p38,39：Big Gunz
+- 《Faction Pack Orks》 p48,49：Fighta-Bommer
+- 《Faction Pack Orks》 p52,53：Lifta Wagon
+- 《Faction Pack Orks》 p56,57：Big Mek on Warbike
+- 《Faction Pack Orks》 p60,61：Mad Dok Grotsnik
+- 《Faction Pack Orks》 p62,63：Mekboy Workshop
+- 《Faction Pack Orks》 p64,65：Big Mek with Kustom Force Field
+- 《Faction Pack Orks》 p68,69：Grot Tanks
+- 《Faction Pack Orks》 p70,71：Grot Mega-Tank
+- 《Faction Pack Orks》 p72,73：Squiggoth
+- 《Faction Pack Orks》 p76,77：Mega Dread
+- 《Faction Pack Orks》 p84,85：Nobz on Warbikes
+- 《Faction Pack Space Wolves》 p1：SPACE WOLVES
+- 《Faction Pack Space Wolves》 p2：Champions of Fenris
+- 《Faction Pack Space Wolves》 p2：Enhancements
+- 《Faction Pack Space Wolves》 p2：Wolf Totems (1CP)
+- 《Faction Pack Space Wolves》 p2：Runes of Claiming (1CP)
+- 《Faction Pack Space Wolves》 p2：Stalk Between Worlds (1CP)
+- 《Faction Pack Space Wolves》 p3：LEGENDS OF SAGA AND SONG
+- 《Faction Pack Space Wolves》 p4：VETERANS OF THE FANG – DETACHMENT RULES
+- 《Faction Pack Space Wolves》 p5：SAGA OF THE GREAT WOLF
+- 《Faction Pack Space Wolves》 p6：THE FOE FORESEEN (1CP)
+- 《Faction Pack Space Wolves》 p6：GRIMNAR’S COMMAND (1CP)
+- 《Faction Pack Space Wolves》 p6：FENRISIAN FEROCITY (1CP)
+- 《Faction Pack Space Wolves》 p6：UNRELENTING HUNTERS (1CP)
+- 《Faction Pack Space Wolves》 p6：EYE OF THE PACK (1CP)
+- 《Faction Pack Space Wolves》 p6：BATTLE INSTINCTS (1CP)
+- 《Faction Pack Space Wolves》 p7,8：Wolf Scouts
+- 《Faction Pack Space Wolves》 p9：SPACE WOLVES RULES UPDATES
+- 《Faction Pack Space Wolves》 p10,11：Canis Wolfborn
+- 《Faction Pack Space Wolves》 p12,13：Cyberwolf
+- 《Faction Pack Space Wolves》 p14,15：Harald Deathwolf
+- 《Faction Pack Space Wolves》 p16,17：Hounds of Morkai
+- 《Faction Pack Space Wolves》 p18,19：Krom Dragongaze
+- 《Faction Pack Space Wolves》 p22,23：Long Fangs
+- 《Faction Pack Space Wolves》 p24,25：Lukas the Trickster
+- 《Faction Pack Space Wolves》 p26,27：Skyclaws
+- 《Faction Pack Space Wolves》 p32,33：Wolf Guard
+- 《Faction Pack Space Wolves》 p34,35：Wolf Guard Battle Leader in Terminator Armour
+- 《Faction Pack Space Wolves》 p36,37：Wolf Guard Battle Leader on Thunderwolf
+- 《Faction Pack Space Wolves》 p38,39：Wolf Guard Pack Leader
+- 《Faction Pack Space Wolves》 p40,41：Wolf Guard Pack Leader in Terminator Armour
+- 《Faction Pack Space Wolves》 p42,43：Wolf Guard Pack Leader with Jump Pack
+- 《Faction Pack Space Wolves》 p44,45：Wolf Lord on Thunderwolf
+- 《Faction Pack Space-Marines》 p1：WHAT’S NEW?
+- 《Faction Pack Space-Marines》 p1：CONTENTS
+- 《Faction Pack Space-Marines》 p2：FULGURIS TASK FORCE
+- 《Faction Pack Space-Marines》 p2：DATA-LINK AUGURY (1CP)
+- 《Faction Pack Space-Marines》 p2：REACTIVE EVASION (1CP)
+- 《Faction Pack Space-Marines》 p2：ANTI-GRAV SURGE (1CP)
+- 《Faction Pack Space-Marines》 p3：LIBRARIUS CONCLAVE DETACHMENT RULES
+- 《Faction Pack Space-Marines》 p4：SUBVERSION ASSETS
+- 《Faction Pack Space-Marines》 p4：ADAPTIVE OPERATIONS (1CP)
+- 《Faction Pack Space-Marines》 p4：STRIKE FROM THE SHADOWS (1CP)
+- 《Faction Pack Space-Marines》 p4：CLOAKED POSITION (1CP)
+- 《Faction Pack Space-Marines》 p5：ARMOURED SPEARTIP
+- 《Faction Pack Space-Marines》 p6：MACHINE WRATH (1CP)
+- 《Faction Pack Space-Marines》 p6,10,12,14,18,20,22：ARMOUR OF CONTEMPT (1CP)
+- 《Faction Pack Space-Marines》 p6：RAPID EMBARKATION (1CP)
+- 《Faction Pack Space-Marines》 p6：CERAMITE SLEDGEHAMMER (1CP)
+- 《Faction Pack Space-Marines》 p6：ADVANCED DEPLOYMENT (1CP)
+- 《Faction Pack Space-Marines》 p6：PURGATION DOCTRINE (1CP)
+- 《Faction Pack Space-Marines》 p7：HEADHUNTER TASK FORCE
+- 《Faction Pack Space-Marines》 p8,16：Armour of Contempt (1CP)
+- 《Faction Pack Space-Marines》 p8：Target Weak Point (1CP)
+- 《Faction Pack Space-Marines》 p8：Kill Shot (1CP)
+- 《Faction Pack Space-Marines》 p8：Rapid Gunnery (1CP)
+- 《Faction Pack Space-Marines》 p8：Reactive Repositioning (1CP)
+- 《Faction Pack Space-Marines》 p8：Machine Vengeance (1CP)
+- 《Faction Pack Space-Marines》 p9：CERAMITE SENTINELS
+- 《Faction Pack Space-Marines》 p10：UNYIELDING MIGHT (1CP)
+- 《Faction Pack Space-Marines》 p10：PRIORITY STRIKE (1CP)
+- 《Faction Pack Space-Marines》 p10：STAND TO THE END (2CP)
+- 《Faction Pack Space-Marines》 p10：AUGMENTED TARGETING (1CP)
+- 《Faction Pack Space-Marines》 p10：EVASIVE REPOSITIONING (1CP)
+- 《Faction Pack Space-Marines》 p11：BLADE OF ULTRAMAR
+- 《Faction Pack Space-Marines》 p12：TACTICAL FORESIGHT (1CP)
+- 《Faction Pack Space-Marines》 p12：COURAGE AND HONOUR! (1CP)
+- 《Faction Pack Space-Marines》 p12：ULTRAMARIAN ADAPTIVITY (1CP)
+- 《Faction Pack Space-Marines》 p12：EXEMPLARY VIGILANCE (1CP)
+- 《Faction Pack Space-Marines》 p12：PRACTICAL TACTICS (1CP)
+- 《Faction Pack Space-Marines》 p13：Hammer of Avernii
+- 《Faction Pack Space-Marines》 p14：RUTHLESS BUTCHERY (1CP)
+- 《Faction Pack Space-Marines》 p14：DOMINATOR BEACON (1CP)
+- 《Faction Pack Space-Marines》 p14：COGITATED FEROCITY (1CP)
+- 《Faction Pack Space-Marines》 p14：AUGMETIC FORTITUDE (1CP)
+- 《Faction Pack Space-Marines》 p14,20：DROPSHIP EXTRACTION (1CP)
+- 《Faction Pack Space-Marines》 p15：Spearpoint Task Force
+- 《Faction Pack Space-Marines》 p16：Spear Thrust and Sabre Swing (1CP)
+- 《Faction Pack Space-Marines》 p16：Mobile Lethality (1CP)
+- 《Faction Pack Space-Marines》 p16：Hunter’s Instincts (1CP)
+- 《Faction Pack Space-Marines》 p16：Evasive Manoeuvres (1CP)
+- 《Faction Pack Space-Marines》 p16：Withdraw and Regroup (1CP)
+- 《Faction Pack Space-Marines》 p17：FORGEFATHER’S SEEKERS
+- 《Faction Pack Space-Marines》 p17,25：DETACHMENT RULE
+- 《Faction Pack Space-Marines》 p17：RESTRICTIONS
+- 《Faction Pack Space-Marines》 p17,25：ENHANCEMENTS
+- 《Faction Pack Space-Marines》 p18：CRUCIBLE OF BATTLE (1CP)
+- 《Faction Pack Space-Marines》 p18：WRATHFUL INFERNO (1CP)
+- 《Faction Pack Space-Marines》 p18：IMMOLATION PROTOCOLS (2CP)
+- 《Faction Pack Space-Marines》 p18：BURNING VENGEANCE (1CP)
+- 《Faction Pack Space-Marines》 p18：BLAZING EARTH (1CP)
+- 《Faction Pack Space-Marines》 p19：EMPEROR’S SHIELD
+- 《Faction Pack Space-Marines》 p20：FURY OF THE FIRST (1CP)
+- 《Faction Pack Space-Marines》 p20：OBDURATE VENGEANCE (1CP)
+- 《Faction Pack Space-Marines》 p20：WRATHFUL CONQUERORS (1CP)
+- 《Faction Pack Space-Marines》 p20：DISCIPLINED EXTERMINATION (1CP)
+- 《Faction Pack Space-Marines》 p21：SHADOWMARK TALON
+- 《Faction Pack Space-Marines》 p22：LAY LOW THE TYRANTS (1CP)
+- 《Faction Pack Space-Marines》 p22：FEINT AND THRUST (1CP)
+- 《Faction Pack Space-Marines》 p22：STUNNING FUSILLADE (1CP)
+- 《Faction Pack Space-Marines》 p22：RAPTORIAL VIGILANCE (1CP)
+- 《Faction Pack Space-Marines》 p22：INTO DARKNESS (1CP)
+- 《Faction Pack Space-Marines》 p23：BASTION TASK FORCE
+- 《Faction Pack Space-Marines》 p23：INTERLOCKING TACTICS
+- 《Faction Pack Space-Marines》 p23：EYE OF THE PRIMARCH
+- 《Faction Pack Space-Marines》 p23：HERO OF THE CHAPTER
+- 《Faction Pack Space-Marines》 p23：BLADES OF VALOUR
+- 《Faction Pack Space-Marines》 p23：BOMBAST OMNIVOX
+- 《Faction Pack Space-Marines》 p24：Codex Discipline (1CP)
+- 《Faction Pack Space-Marines》 p24：Guided Disruption (1CP)
+- 《Faction Pack Space-Marines》 p24：Light of Vengeance (1CP)
+- 《Faction Pack Space-Marines》 p24：Shock Bombardment (1CP)
+- 《Faction Pack Space-Marines》 p24：Angels Defiant (1CP)
+- 《Faction Pack Space-Marines》 p24：Heresy Undone (1CP)
+- 《Faction Pack Space-Marines》 p25：ORBITAL ASSAULT FORCE
+- 《Faction Pack Space-Marines》 p26：SUPPRESSION STRAFING (1CP)
+- 《Faction Pack Space-Marines》 p26：TACTICAL DECAPITATION (1CP)
+- 《Faction Pack Space-Marines》 p26：SHOCK ONSLAUGHT (1CP)
+- 《Faction Pack Space-Marines》 p26：AUTO‑SENSE COORDINATION (1CP)
+- 《Faction Pack Space-Marines》 p26：BLIND SCREEN (1CP)
+- 《Faction Pack Space-Marines》 p26：ONWARD FOR THE EMPEROR (1CP)
+- 《Faction Pack Space-Marines》 p27：RECLAMATION FORCE
+- 《Faction Pack Space-Marines》 p28：CRUSADING CONQUERORS (1CP)
+- 《Faction Pack Space-Marines》 p28：FURIOUS DEDICATION (1CP)
+- 《Faction Pack Space-Marines》 p28：FIGHT TO THE END (1CP)
+- 《Faction Pack Space-Marines》 p28：SCIONS OF GUILLIMAN (1CP)
+- 《Faction Pack Space-Marines》 p28：ULTRAMARIAN DESTINY (1CP)
+- 《Faction Pack Space-Marines》 p28：MARCHING EVER ON (1CP)
+- 《Faction Pack Space-Marines》 p29：Eradicator Squad with Heavy Bolters
+- 《Faction Pack Space-Marines》 p30：Land Speeder
+- 《Faction Pack Space-Marines》 p31,32：Terminator Assault Squad
+- 《Faction Pack Space-Marines》 p35,36：Cato Sicarius
+- 《Faction Pack Space-Marines》 p37,38：Victrix Honour Guard
+- 《Faction Pack Space-Marines》 p39,40：Captain Titus
+- 《Faction Pack Space-Marines》 p41,42：Wardens of Ultramar
+- 《Faction Pack Space-Marines》 p43,44：Caanok Var
+- 《Faction Pack Space-Marines》 p45,46：Suboden Khan
+- 《Faction Pack Space-Marines》 p47,48：Vulkan He’stan
+- 《Faction Pack Space-Marines》 p49,50：Aethon Shaan
+- 《Faction Pack Space-Marines》 p51,52：Darnath Lysander
+- 《Faction Pack Space-Marines》 p55,56：Astraeus
+- 《Faction Pack Space-Marines》 p57,58：Thunderhawk Gunship
+- 《Faction Pack Space-Marines》 p59：SPACE MARINES RULES UPDATES
+- 《Faction Pack Space-Marines》 p60：STORMLANCE TASK FORCE DETACHMENT
+- 《Faction Pack Space-Marines》 p60：VANGUARD SPEARHEAD DETACHMENT
+- 《Faction Pack Space-Marines》 p60：DATASHEETS
+- 《Faction Pack Space-Marines》 p61：Iron Father Feirros
+- 《Faction Pack Space-Marines》 p61：Kayvaan Shrike
+- 《Faction Pack Space-Marines》 p61：Kor’sarro Khan
+- 《Faction Pack Space-Marines》 p61：Land Raider Crusader, Land Raider Redeemer – Keywords Section
+- 《Faction Pack Space-Marines》 p61：Lieutenant in Phobos Armour, Strategic Dispersal Ability
+- 《Faction Pack Space-Marines》 p61：Lieutenant in Reiver Armour, master-crafted special issue bolt pistol
+- 《Faction Pack Space-Marines》 p61：Lieutenant with Combi-Weapon, Evade and Survive Ability
+- 《Faction Pack Space-Marines》 p61：Outrider Squad, Abilities Section
+- 《Faction Pack Space-Marines》 p61：Pedro Kantor
+- 《Faction Pack Space-Marines》 p61：Predator Annihilator, Annihilator Ability
+- 《Faction Pack Space-Marines》 p61：Reiver Squad
+- 《Faction Pack Space-Marines》 p61：Repulsor, Transport Section
+- 《Faction Pack Space-Marines》 p61：Repulsor Executioner, Transport Section
+- 《Faction Pack Space-Marines》 p61：Roboute Guilliman
+- 《Faction Pack Space-Marines》 p61：Sternguard Veteran Squad, Sternguard Focus Ability
+- 《Faction Pack Space-Marines》 p61：Terminator Assault Squad, Teleport Homer Ability
+- 《Faction Pack Space-Marines》 p61：Terminator Squad, Teleport Homer Ability
+- 《Faction Pack Space-Marines》 p61：Uriel Ventris
+- 《Faction Pack Space-Marines》 p61：Captain in Phobos Armour, Lieutenant in Reiver Armour, Reiver Squad, Scout Squad – Combat Knife weapon
+- 《Faction Pack Space-Marines》 p61,62：Incursor Squad, Lieutenant in Phobos Armour, Lieutenant with Combi-weapon – Paired Combat Blades weapon
+- 《Faction Pack Space-Marines》 p62：FAQS
+- 《Faction Pack Space-Marines》 p63,64：Ferren Areios
+- 《Faction Pack Space-Marines》 p65,66：Land Raider Helios
+- 《Faction Pack Space-Marines》 p67,68：Mortis Dreadnought
+- 《Faction Pack Space-Marines》 p69,70：Deimos Predator
+- 《Faction Pack Space-Marines》 p71,72：Chaplain Venerable Dreadnought
+- 《Faction Pack Space-Marines》 p75,76：Carab Culln the Risen
+- 《Faction Pack Space-Marines》 p77,78：Caestus Assault Ram
+- 《Faction Pack Space-Marines》 p79,80：Land Raider Prometheus
+- 《Faction Pack Space-Marines》 p81,82：Venerable Dreadnought
+- 《Faction Pack Space-Marines》 p83,84：Rhino Primaris
+- 《Faction Pack Space-Marines》 p85,86：Land Raider Excelsior
+- 《Faction Pack Space-Marines》 p87,88：Imperial Space Marine
+- 《Faction Pack Space-Marines》 p89,90：Terminus Ultra
+- 《Faction Pack Space-Marines》 p91,92：Relic Razorback
+- 《Faction Pack Space-Marines》 p93,94：Company Veterans on Bikes
+- 《Faction Pack Space-Marines》 p95,96：Company Champion on Bike
+- 《Faction Pack Space-Marines》 p97,98：Ancient on Bike
+- 《Faction Pack Space-Marines》 p99,100：Apothecary on Bike
+- 《Faction Pack Space-Marines》 p101,102：Techmarine on Bike
+- 《Faction Pack Space-Marines》 p103,104：Librarian on Bike
+- 《Faction Pack Space-Marines》 p105,106：Thunderhawk Transporter
+- 《Faction Pack Space-Marines》 p107,108：Tarantula Air Defence Battery
+- 《Faction Pack Space-Marines》 p109,110：Chaplain Cassius
+- 《Faction Pack Space-Marines》 p111,112：Sergeant Chronus
+- 《Faction Pack Space-Marines》 p113,114：Sergeant Telion
+- 《Faction Pack Space-Marines》 p115,116：Captain on Bike
+- 《Faction Pack Space-Marines》 p117,118：Astartes Servitors
+- 《Faction Pack Space-Marines》 p119,120：Vanguard Veteran Squad
+- 《Faction Pack Space-Marines》 p123,124：Assault Squad
+- 《Faction Pack Space-Marines》 p125,126：Assault Squad with Jump Packs
+- 《Faction Pack Space-Marines》 p127,128：Primaris Company Champion
+- 《Faction Pack Space-Marines》 p131,132：Relic Terminator Squad
+- 《Faction Pack Space-Marines》 p133,134：Scout Sniper Squad
+- 《Faction Pack Space-Marines》 p135,136：Tyrannic War Veterans
+- 《Faction Pack Space-Marines》 p137,138：Bike Squad
+- 《Faction Pack Space-Marines》 p139,140：Attack Bike Squad
+- 《Faction Pack Space-Marines》 p141,142：Scout Bike Squad
+- 《Faction Pack Space-Marines》 p143,144：Land Speeder Tornado
+- 《Faction Pack Space-Marines》 p146：Land Speeder Typhoon
+- 《Faction Pack Space-Marines》 p147,148：Librarian with Jump Pack
+- 《Faction Pack Space-Marines》 p149,150：Thunderfire Cannon
+- 《Faction Pack Space-Marines》 p153：Stalker
+- 《Faction Pack Space-Marines》 p155：Land Speeder Storm
+- 《Faction Pack Space-Marines》 p157：ADEPTUS ASTARTES LEGENDS ARMOURY
+- 《Faction Pack Space-Marines》 p158,159：Kratos
+- 《Faction Pack Space-Marines》 p162,163：Relic Contemptor Dreadnought
+- 《Faction Pack Space-Marines》 p164,165：Leviathan Dreadnought
+- 《Faction Pack Space-Marines》 p166,167：Javelin Attack Speeder
+- 《Faction Pack Space-Marines》 p170,171：Land Raider Proteus
+- 《Faction Pack Space-Marines》 p174,175：Sicaran Battle Tank
+- 《Faction Pack Space-Marines》 p178,179：Sicaran Venator
+- 《Faction Pack Space-Marines》 p182,183：Sicaran Omega
+- 《Faction Pack Space-Marines》 p184,185：Rapier Carrier
+- 《Faction Pack Space-Marines》 p186,187：Whirlwind Scorpius
+- 《Faction Pack Space-Marines》 p188,189：Vindicator Laser Destroyer
+- 《Faction Pack Space-Marines》 p190,191：Dreadnought Drop Pod
+- 《Faction Pack Space-Marines》 p192,193：Terrax-Pattern Termite
+- 《Faction Pack Space-Marines》 p194,195：Xiphon Interceptor
+- 《Faction Pack Space-Marines》 p196,197：Storm Eagle Gunship
+- 《Faction Pack Space-Marines》 p198,199：Fire Raptor Gunship
+- 《Faction Pack Space-Marines》 p200,201：Typhon
+- 《Faction Pack Space-Marines》 p202,203：Cerberus
+- 《Faction Pack Space-Marines》 p204,205：Spartan
+- 《Faction Pack Space-Marines》 p206：WARHAMMER LEGENDS
+- 《Faction Pack Space-Marines》 p208,209：Falchion
+- 《Faction Pack Space-Marines》 p210,211：Mastodon
+- 《Faction Pack Space-Marines》 p212,213：Sokar-pattern Stormbird
+- 《Faction Pack Space-Marines》 p214,215：Tarantula Sentry Battery
+- 《Faction Pack Space-Marines》 p216：WARHAMMER L E G E N D S
+- 《Faction Pack Space-Marines》 p217：Renegades and Traitors
+- 《Faction Pack Tau Empire》 p1：T’AU EMPIRE
+- 《Faction Pack Tau Empire》 p1：WHAT’S NEW?
+- 《Faction Pack Tau Empire》 p1：CONTENTS
+- 《Faction Pack Tau Empire》 p2：Advanced Acquisition Cadre
+- 《Faction Pack Tau Empire》 p3：AUXILIARY CADRE
+- 《Faction Pack Tau Empire》 p3：STUDENT OF KAUYON
+- 《Faction Pack Tau Empire》 p3：ADMIRED LEADER
+- 《Faction Pack Tau Empire》 p3：EXPERIMENTAL MODIFICATIONS (1CP)
+- 《Faction Pack Tau Empire》 p3：ALIEN EXPERTISE (1CP)
+- 《Faction Pack Tau Empire》 p3：GUIDED BY UNITY (1CP)
+- 《Faction Pack Tau Empire》 p4：Experimental Prototype Cadre
+- 《Faction Pack Tau Empire》 p7,8：Stealth Battlesuits
+- 《Faction Pack Tau Empire》 p19：RULES UPDATES
+- 《Faction Pack Tau Empire》 p21,22：Orca Dropship
+- 《Faction Pack Tau Empire》 p23,24：Heavy Gun Drones
+- 《Faction Pack Tau Empire》 p25,26：Great Knarloc
+- 《Faction Pack Tau Empire》 p29,30：Knarloc Riders
+- 《Faction Pack Tau Empire》 p33,34：XV9 Hazard Battlesuits
+- 《Faction Pack Tau Empire》 p35,36：Remote Sensor Tower
+- 《Faction Pack Tau Empire》 p37,38：Drone Sentry Turret
+- 《Faction Pack Tau Empire》 p39,40：Commander in Crisis Battlesuit
+- 《Faction Pack Tau Empire》 p43,44：Aun’Shi
+- 《Faction Pack Tau Empire》 p45,46：Longstrike
+- 《Faction Pack Tau Empire》 p47,48：Crisis Battlesuits
+- 《Faction Pack Tau Empire》 p49,50：R’varna Battlesuit
+- 《Faction Pack Tau Empire》 p53,54：Tetras
+- 《Faction Pack Tau Empire》 p55,56：Remora Stealth Drones
+- 《Faction Pack Tau Empire》 p57,58：Barracuda
+- 《Faction Pack Tau Empire》 p59,60：Tactical Drones
+- 《Faction Pack Tau Empire》 p61：DRONES
+- 《Faction Pack Thousand Sons》 p1：Faction Pack: Version 1.0
+- 《Faction Pack Thousand Sons》 p1：What’s New?
+- 《Faction Pack Thousand Sons》 p1：Contents
+- 《Faction Pack Thousand Sons》 p2：Ritual of Regeneration
+- 《Faction Pack Thousand Sons》 p2：Relentless Rebirth (1CP)
+- 《Faction Pack Thousand Sons》 p2：Mutagenic Magicks (1CP)
+- 《Faction Pack Thousand Sons》 p2：Multitudinous Limbs (1CP)
+- 《Faction Pack Thousand Sons》 p3：SEKHETAR COHORT
+- 《Faction Pack Thousand Sons》 p3：ARCANE VENTING (1CP)
+- 《Faction Pack Thousand Sons》 p3：ECTOPLASMIC EXTRUSION (1CP)
+- 《Faction Pack Thousand Sons》 p3：WARP FIELDS (1CP)
+- 《Faction Pack Thousand Sons》 p4：Servants of Change
+- 《Faction Pack Thousand Sons》 p4：PRISMATIC DISPLACEMENT (1CP)
+- 《Faction Pack Thousand Sons》 p4：TEMPORAL INSTABILITY (1CP)
+- 《Faction Pack Thousand Sons》 p4：THE LAND WRITHES (1CP)
+- 《Faction Pack Thousand Sons》 p5：HEXWARP THRALLBAND
+- 《Faction Pack Thousand Sons》 p6：Warding Hex (1CP)
+- 《Faction Pack Thousand Sons》 p6：Wrath of the Doomed (1CP)
+- 《Faction Pack Thousand Sons》 p6：Strands of Time (1CP)
+- 《Faction Pack Thousand Sons》 p6：Through the Veil (1CP)
+- 《Faction Pack Thousand Sons》 p6：Scouring Warpflame (1CP)
+- 《Faction Pack Thousand Sons》 p6：Kaleidoscopic Tempest (1CP)
+- 《Faction Pack Thousand Sons》 p7,8：Defiler
+- 《Faction Pack Thousand Sons》 p9：THOUSAND SONS
+- 《Faction Pack Thousand Sons》 p10：Warpmeld Pact Detachment
+- 《Faction Pack Thousand Sons》 p10：Datasheets
+- 《Faction Pack Thousand Sons》 p11：FAQ
+- 《Faction Pack Tyranids》 p1：WHAT’S NEW?
+- 《Faction Pack Tyranids》 p1：CONTENTS
+- 《Faction Pack Tyranids》 p2：Ambush Predators
+- 《Faction Pack Tyranids》 p2：COUNTERPREDATION (1CP)
+- 《Faction Pack Tyranids》 p2：HYPERSENSORY ADAPTATIONS (1CP)
+- 《Faction Pack Tyranids》 p2：SCANNER GHEIST (1CP)
+- 《Faction Pack Tyranids》 p3：Talons of the Norn Queen
+- 《Faction Pack Tyranids》 p3：CATALYTIC BIOFORTIFICATION (1CP)
+- 《Faction Pack Tyranids》 p3：LESSER PREY (1CP)
+- 《Faction Pack Tyranids》 p3：TANGLESTRIKE ROUNDS (1CP)
+- 《Faction Pack Tyranids》 p4：WARRIOR BIOFORM ONSLAUGHT
+- 《Faction Pack Tyranids》 p4：ALIEN PHYSIOLOGY (1CP)
+- 《Faction Pack Tyranids》 p4：SYNAPTIC MICRONODES (1CP)
+- 《Faction Pack Tyranids》 p4：PARASITIC PAYLOAD (1CP)
+- 《Faction Pack Tyranids》 p5：Subterranean Assault
+- 《Faction Pack Tyranids》 p5：Enhancements
+- 《Faction Pack Tyranids》 p6：ADAPTIVE OPTIMISATION (1CP)
+- 《Faction Pack Tyranids》 p6：REPLENISHING SWARMS (1CP)
+- 《Faction Pack Tyranids》 p6：ENFILADING EMERGENCE (1CP)
+- 《Faction Pack Tyranids》 p6：TUNNEL NETWORK (1CP)
+- 《Faction Pack Tyranids》 p6：SWARMING ASSAULT (1CP)
+- 《Faction Pack Tyranids》 p6：RETREAT BELOW (1CP)
+- 《Faction Pack Tyranids》 p7,8：The Red Terror
+- 《Faction Pack Tyranids》 p9,10：Tyranid Prime with Lash Whip
+- 《Faction Pack Tyranids》 p11,12：Raveners
+- 《Faction Pack Tyranids》 p13,14：Hyperadapted Raveners
+- 《Faction Pack Tyranids》 p15,16：Harridan
+- 《Faction Pack Tyranids》 p17,18：Hierophant
+- 《Faction Pack Tyranids》 p19,20：RULES UPDATES
+- 《Faction Pack Tyranids》 p20,21：FAQS
+- 《Faction Pack Tyranids》 p22,23：Dimachaeron
+- 《Faction Pack Tyranids》 p24,25：Sky-slasher Swarms
+- 《Faction Pack Tyranids》 p26,27：Malanthrope
+- 《Faction Pack Tyranids》 p28,29：Barbed Hierodule
+- 《Faction Pack Tyranids》 p30,31：Scythed Hierodule
+- 《Faction Pack World Eaters》 p1：WHAT’S NEW?
+- 《Faction Pack World Eaters》 p1：CONTENTS
+- 《Faction Pack World Eaters》 p2：BRAZEN ENGINES
+- 《Faction Pack World Eaters》 p3：BUTCHERS OF KHORNE
+- 《Faction Pack World Eaters》 p3：FOCUSED FEROCITY (1CP)
+- 《Faction Pack World Eaters》 p3：A TROPHY FOR THE THRONE (1CP)
+- 《Faction Pack World Eaters》 p3：WRATH BEYOND REASON (2CP)
+- 《Faction Pack World Eaters》 p4：Vessels of Wrath
+- 《Faction Pack World Eaters》 p5,6：Defiler
+- 《Faction Pack World Eaters》 p7：WORLD EATERS
+- 《Faction Pack World Eaters》 p8：Helbrute, Frenzy Ability
+- 《Faction Pack World Eaters》 p8：Maulerfiend, Scent Of Blood Ability
+- 《Faction Pack World Eaters》 p8：Slaughterbound, Melee Weapons,Lacerator and Daemonic Claw
+- 《Faction Pack World Eaters》 p8：Chaos Land Raider, Chaos Predator Annihilator, Chaos Predator Destructor, Chaos Rhino, Khorne Lord of Skulls – Keywords Section
+- 《Faction Pack World Eaters》 p8：FAQ
+- 《钛帝国十版CODEX-20251112》 p1：T'AU EMPIRE
+- 《钛帝国十版CODEX-20251112》 p2：钛帝国 单位分数速查表
+- 《钛帝国十版CODEX-20251112》 p3：钛帝国 单位分数速查表 (IMPERIAL ARMOUR)
+- 《钛帝国十版CODEX-20251112》 p4：钛帝国 阵营规则
+- 《钛帝国十版CODEX-20251112》 p5：耐心猎手
+- 《钛帝国十版CODEX-20251112》 p5：钛帝国 — 空育 分队规则/强化
+- 《钛帝国十版CODEX-20251112》 p6：诱惑陷阱 (1CP)
+- 《钛帝国十版CODEX-20251112》 p6：联携攻击 (1CP)
+- 《钛帝国十版CODEX-20251112》 p6：抵近伏击 (1CP)
+- 《钛帝国十版CODEX-20251112》 p6：幻镜之墙 (1CP)
+- 《钛帝国十版CODEX-20251112》 p6：光子手雷 (1CP)
+- 《钛帝国十版CODEX-20251112》 p6：战术搭载 (1CP)
+- 《钛帝国十版CODEX-20251112》 p7：钛帝国 — 蒙特卡 分队规则/强化
+- 《钛帝国十版CODEX-20251112》 p8：防御反击系统
+- 《钛帝国十版CODEX-20251112》 p8：集中火力
+- 《钛帝国十版CODEX-20251112》 p8：战术下车
+- 《钛帝国十版CODEX-20251112》 p8：脉冲冲击
+- 《钛帝国十版CODEX-20251112》 p8：灵活机动
+- 《钛帝国十版CODEX-20251112》 p9：结义英雄
+- 《钛帝国十版CODEX-20251112》 p9：钛帝国 — 复仇猎核 分队规则/强化
+- 《钛帝国十版CODEX-20251112》 p10：钛帝国 — 复仇猎核 战略能力
+- 《钛帝国十版CODEX-20251112》 p11：钛帝国 — 克鲁特猎群队 分队规则/强化
+- 《钛帝国十版CODEX-20251112》 p12：隐匿猎手
+- 《钛帝国十版CODEX-20251112》 p12：加入狩猎
+- 《钛帝国十版CODEX-20251112》 p12：恐怖盛宴
+- 《钛帝国十版CODEX-20251112》 p12：游击战士
+- 《钛帝国十版CODEX-20251112》 p12：EMP手雷
+- 《钛帝国十版CODEX-20251112》 p12：张机设阱
+- 《钛帝国十版CODEX-20251112》 p13：综合指挥体系
+- 《钛帝国十版CODEX-20251112》 p13：钛帝国 — 辅助猎核 分队规则/强化
+- 《钛帝国十版CODEX-20251112》 p14：异星学识
+- 《钛帝国十版CODEX-20251112》 p14：信息素路标
+- 《钛帝国十版CODEX-20251112》 p14：连锁移动
+- 《钛帝国十版CODEX-20251112》 p14：实验性改装
+- 《钛帝国十版CODEX-20251112》 p14：多感官扫描
+- 《钛帝国十版CODEX-20251112》 p14：引导射击
+- 《钛帝国十版CODEX-20251112》 p15：精湛技艺
+- 《钛帝国十版CODEX-20251112》 p15：钛帝国 — 原型实验猎核 分队规则/强化
+- 《钛帝国十版CODEX-20251112》 p16：战略能力
+- 《钛帝国十版CODEX-20251112》 p16：自动维修兵蜂（1CP）
+- 《钛帝国十版CODEX-20251112》 p16：冲击力场（1CP）
+- 《钛帝国十版CODEX-20251112》 p16：危险分析仪（1CP）
+- 《钛帝国十版CODEX-20251112》 p16：实验性弹药（1CP）
+- 《钛帝国十版CODEX-20251112》 p16：实验性武器（1CP）
+- 《钛帝国十版CODEX-20251112》 p16：神经网络干扰器（1CP）
+- 《钛帝国十版CODEX-20251112》 p56：虎鲨AX-1-0 AX-1-0 TIGER SHARK
+- 《钛帝国十版CODEX-20251112》 p62：夏司’欧 R’ALAI Shas’o R’alai

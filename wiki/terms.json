@@ -1,0 +1,2157 @@
+{
+ "source": "wahapedia wh40k10ed",
+ "pairs": [
+  {
+   "zh": null,
+   "en": "Celestian Sacresant Aveline",
+   "canonical_id": "000003811",
+   "faction_id": "AS",
+   "book": "Faction Pack Adepta Sororitas",
+   "pages": [
+    15,
+    16
+   ],
+   "confidence": "exact"
+  },
+  {
+   "zh": null,
+   "en": "Crusaders",
+   "canonical_id": "000000894",
+   "faction_id": "AS",
+   "book": "Faction Pack Adepta Sororitas",
+   "pages": [
+    21,
+    22
+   ],
+   "confidence": "exact"
+  },
+  {
+   "zh": null,
+   "en": "Custodian Guard With Adrasite And Pyrithite Spears",
+   "canonical_id": "000001559",
+   "faction_id": "AC",
+   "book": "Faction Pack Adeptus Custodes",
+   "pages": [
+    9,
+    10
+   ],
+   "confidence": "exact"
+  },
+  {
+   "zh": null,
+   "en": "Contemptor-achillus Dreadnought",
+   "canonical_id": "000001458",
+   "faction_id": "AC",
+   "book": "Faction Pack Adeptus Custodes",
+   "pages": [
+    15,
+    16
+   ],
+   "confidence": "exact"
+  },
+  {
+   "zh": null,
+   "en": "Caladius Grav-tank",
+   "canonical_id": "000001460",
+   "faction_id": "AC",
+   "book": "Faction Pack Adeptus Custodes",
+   "pages": [
+    25,
+    26
+   ],
+   "confidence": "exact"
+  },
+  {
+   "zh": null,
+   "en": "Contemptor-galatus Dreadnought",
+   "canonical_id": "000001557",
+   "faction_id": "AC",
+   "book": "Faction Pack Adeptus Custodes",
+   "pages": [
+    34
+   ],
+   "confidence": "exact"
+  },
+  {
+   "zh": null,
+   "en": "Hastarii Fusiliers",
+   "canonical_id": "000004212",
+   "faction_id": "AdM",
+   "book": "Faction Pack Adeptus Mechanicus",
+   "pages": [
+    13,
+    14
+   ],
+   "confidence": "exact"
+  },
+  {
+   "zh": null,
+   "en": "X-101",
+   "canonical_id": "000001822",
+   "faction_id": "AdM",
+   "book": "Faction Pack Adeptus Mechanicus",
+   "pages": [
+    19,
+    20
+   ],
+   "confidence": "exact"
+  },
+  {
+   "zh": null,
+   "en": "Warhound Titan",
+   "canonical_id": "000000867",
+   "faction_id": "TL",
+   "book": "Faction Pack Adeptus Titanicus",
+   "pages": [
+    3,
+    4
+   ],
+   "confidence": "exact"
+  },
+  {
+   "zh": null,
+   "en": "Warlord Titan",
+   "canonical_id": "000000869",
+   "faction_id": "TL",
+   "book": "Faction Pack Adeptus Titanicus",
+   "pages": [
+    9,
+    10
+   ],
+   "confidence": "exact"
+  },
+  {
+   "zh": null,
+   "en": "Wasp Assault Walker",
+   "canonical_id": "000000616",
+   "faction_id": "AE",
+   "book": "Faction Pack Aeldari",
+   "pages": [
+    43,
+    44
+   ],
+   "confidence": "exact"
+  },
+  {
+   "zh": null,
+   "en": "Amallyn Shadowguide",
+   "canonical_id": "000001598",
+   "faction_id": "AE",
+   "book": "Faction Pack Aeldari",
+   "pages": [
+    47,
+    48
+   ],
+   "confidence": "exact"
+  },
+  {
+   "zh": null,
+   "en": "Lynx",
+   "canonical_id": "000000620",
+   "faction_id": "AE",
+   "book": "Faction Pack Aeldari",
+   "pages": [
+    56,
+    57
+   ],
+   "confidence": "exact"
+  },
+  {
+   "zh": null,
+   "en": "Nightwing",
+   "canonical_id": "000000623",
+   "faction_id": "AE",
+   "book": "Faction Pack Aeldari",
+   "pages": [
+    58,
+    59
+   ],
+   "confidence": "exact"
+  },
+  {
+   "zh": null,
+   "en": "Scorpion",
+   "canonical_id": "000000621",
+   "faction_id": "AE",
+   "book": "Faction Pack Aeldari",
+   "pages": [
+    60,
+    61
+   ],
+   "confidence": "exact"
+  },
+  {
+   "zh": null,
+   "en": "Irillyth",
+   "canonical_id": "000000630",
+   "faction_id": "AE",
+   "book": "Faction Pack Aeldari",
+   "pages": [
+    66,
+    67
+   ],
+   "confidence": "exact"
+  },
+  {
+   "zh": null,
+   "en": "Wraithseer",
+   "canonical_id": "000000617",
+   "faction_id": "AE",
+   "book": "Faction Pack Aeldari",
+   "pages": [
+    70,
+    71
+   ],
+   "confidence": "exact"
+  },
+  {
+   "zh": null,
+   "en": "Storm Chimera",
+   "canonical_id": "000003954",
+   "faction_id": "GC",
+   "book": "Faction Pack Astra Militarum",
+   "pages": [
+    53
+   ],
+   "confidence": "exact"
+  },
+  {
+   "zh": null,
+   "en": "Death Company Marines with Boltguns",
+   "canonical_id": "000003836",
+   "faction_id": "SM",
+   "book": "Faction Pack Blood Angels",
+   "pages": [
+    16,
+    17
+   ],
+   "confidence": "exact"
+  },
+  {
+   "zh": null,
+   "en": "Death Company Marines with Boltguns and Jump Packs",
+   "canonical_id": "000003837",
+   "faction_id": "SM",
+   "book": "Faction Pack Blood Angels",
+   "pages": [
+    18,
+    19
+   ],
+   "confidence": "exact"
+  },
+  {
+   "zh": null,
+   "en": "Gabriel Seth",
+   "canonical_id": "000000169",
+   "faction_id": "SM",
+   "book": "Faction Pack Blood Angels",
+   "pages": [
+    22,
+    23
+   ],
+   "confidence": "exact"
+  },
+  {
+   "zh": null,
+   "en": "Sanguinary Priest With Jump Pack",
+   "canonical_id": "000002738",
+   "faction_id": "SM",
+   "book": "Faction Pack Blood Angels",
+   "pages": [
+    28,
+    29
+   ],
+   "confidence": "exact"
+  },
+  {
+   "zh": null,
+   "en": "Flesh Hounds",
+   "canonical_id": "000004108",
+   "faction_id": "WE",
+   "book": "Faction Pack Chaos Daemons",
+   "pages": [
+    32,
+    33
+   ],
+   "confidence": "exact"
+  },
+  {
+   "zh": null,
+   "en": "Skull Altar",
+   "canonical_id": "000001588",
+   "faction_id": "CD",
+   "book": "Faction Pack Chaos Daemons",
+   "pages": [
+    36,
+    37
+   ],
+   "confidence": "exact"
+  },
+  {
+   "zh": null,
+   "en": "Fateskimmer",
+   "canonical_id": "000001463",
+   "faction_id": "CD",
+   "book": "Faction Pack Chaos Daemons",
+   "pages": [
+    44,
+    45
+   ],
+   "confidence": "exact"
+  },
+  {
+   "zh": null,
+   "en": "Pink Horrors",
+   "canonical_id": "000004127",
+   "faction_id": "TS",
+   "book": "Faction Pack Chaos Daemons",
+   "pages": [
+    54,
+    55
+   ],
+   "confidence": "exact"
+  },
+  {
+   "zh": null,
+   "en": "Screamers",
+   "canonical_id": "000004126",
+   "faction_id": "TS",
+   "book": "Faction Pack Chaos Daemons",
+   "pages": [
+    60,
+    61
+   ],
+   "confidence": "exact"
+  },
+  {
+   "zh": null,
+   "en": "Nurglings",
+   "canonical_id": "000004116",
+   "faction_id": "DG",
+   "book": "Faction Pack Chaos Daemons",
+   "pages": [
+    80,
+    81
+   ],
+   "confidence": "exact"
+  },
+  {
+   "zh": null,
+   "en": "Syll’esske",
+   "canonical_id": "000001649",
+   "faction_id": "CD",
+   "book": "Faction Pack Chaos Daemons",
+   "pages": [
+    96,
+    97
+   ],
+   "confidence": "exact"
+  },
+  {
+   "zh": null,
+   "en": "Contorted Epitome",
+   "canonical_id": "000001647",
+   "faction_id": "CD",
+   "book": "Faction Pack Chaos Daemons",
+   "pages": [
+    98,
+    99
+   ],
+   "confidence": "exact"
+  },
+  {
+   "zh": null,
+   "en": "Tranceweaver",
+   "canonical_id": "000001138",
+   "faction_id": "CD",
+   "book": "Faction Pack Chaos Daemons",
+   "pages": [
+    104,
+    105
+   ],
+   "confidence": "exact"
+  },
+  {
+   "zh": null,
+   "en": "Fiends",
+   "canonical_id": "000004096",
+   "faction_id": "EC",
+   "book": "Faction Pack Chaos Daemons",
+   "pages": [
+    108,
+    109
+   ],
+   "confidence": "exact"
+  },
+  {
+   "zh": null,
+   "en": "Be’lakor",
+   "canonical_id": "000001148",
+   "faction_id": "CD",
+   "book": "Faction Pack Chaos Daemons",
+   "pages": [
+    112,
+    113
+   ],
+   "confidence": "exact"
+  },
+  {
+   "zh": null,
+   "en": "Giant Chaos Spawn",
+   "canonical_id": "000001339",
+   "faction_id": "CD",
+   "book": "Faction Pack Chaos Daemons",
+   "pages": [
+    132,
+    133
+   ],
+   "confidence": "exact"
+  },
+  {
+   "zh": null,
+   "en": "Pox Riders",
+   "canonical_id": "000001337",
+   "faction_id": "CD",
+   "book": "Faction Pack Chaos Daemons",
+   "pages": [
+    136,
+    137
+   ],
+   "confidence": "exact"
+  },
+  {
+   "zh": null,
+   "en": "An’ggrath the Unbound",
+   "canonical_id": "000001329",
+   "faction_id": "CD",
+   "book": "Faction Pack Chaos Daemons",
+   "pages": [
+    140,
+    141
+   ],
+   "confidence": "exact"
+  },
+  {
+   "zh": null,
+   "en": "Aetaos’rau’keres",
+   "canonical_id": "000001333",
+   "faction_id": "CD",
+   "book": "Faction Pack Chaos Daemons",
+   "pages": [
+    142,
+    143
+   ],
+   "confidence": "exact"
+  },
+  {
+   "zh": null,
+   "en": "Chaos Acastus Knight Asterius",
+   "canonical_id": "000001662",
+   "faction_id": "QT",
+   "book": "Faction Pack Chaos Knights",
+   "pages": [
+    7,
+    8
+   ],
+   "confidence": "exact"
+  },
+  {
+   "zh": null,
+   "en": "Chaos Cerastus Knight Lancer",
+   "canonical_id": "000001095",
+   "faction_id": "QT",
+   "book": "Faction Pack Chaos Knights",
+   "pages": [
+    11,
+    12
+   ],
+   "confidence": "exact"
+  },
+  {
+   "zh": null,
+   "en": "Chaos Cerastus Knight Castigator",
+   "canonical_id": "000001096",
+   "faction_id": "QT",
+   "book": "Faction Pack Chaos Knights",
+   "pages": [
+    13,
+    14
+   ],
+   "confidence": "exact"
+  },
+  {
+   "zh": null,
+   "en": "Chaos Cerastus Knight Acheron",
+   "canonical_id": "000001094",
+   "faction_id": "QT",
+   "book": "Faction Pack Chaos Knights",
+   "pages": [
+    15,
+    16
+   ],
+   "confidence": "exact"
+  },
+  {
+   "zh": null,
+   "en": "Chaos Cerastus Knight Atrapos",
+   "canonical_id": "000001097",
+   "faction_id": "QT",
+   "book": "Faction Pack Chaos Knights",
+   "pages": [
+    17,
+    18
+   ],
+   "confidence": "exact"
+  },
+  {
+   "zh": null,
+   "en": "Chaos Questoris Knight Magaera",
+   "canonical_id": "000001098",
+   "faction_id": "QT",
+   "book": "Faction Pack Chaos Knights",
+   "pages": [
+    19,
+    20
+   ],
+   "confidence": "exact"
+  },
+  {
+   "zh": null,
+   "en": "Masters of the Maelstrom",
+   "canonical_id": "000004190",
+   "faction_id": "CSM",
+   "book": "Faction Pack Chaos Space Marines",
+   "pages": [
+    26
+   ],
+   "confidence": "exact"
+  },
+  {
+   "zh": null,
+   "en": "Red Corsairs Raiders",
+   "canonical_id": "000004191",
+   "faction_id": "CSM",
+   "book": "Faction Pack Chaos Space Marines",
+   "pages": [
+    27,
+    28
+   ],
+   "confidence": "exact"
+  },
+  {
+   "zh": null,
+   "en": "Red Corsairs Reave-Captain",
+   "canonical_id": "000004192",
+   "faction_id": "CSM",
+   "book": "Faction Pack Chaos Space Marines",
+   "pages": [
+    30
+   ],
+   "confidence": "exact"
+  },
+  {
+   "zh": null,
+   "en": "Gellerpox Infected",
+   "canonical_id": "000003854",
+   "faction_id": "QT",
+   "book": "Faction Pack Chaos Space Marines",
+   "pages": [
+    40,
+    41
+   ],
+   "confidence": "exact"
+  },
+  {
+   "zh": null,
+   "en": "Renegade Plague Ogryns",
+   "canonical_id": "000003860",
+   "faction_id": "QT",
+   "book": "Faction Pack Chaos Space Marines",
+   "pages": [
+    46,
+    47
+   ],
+   "confidence": "exact"
+  },
+  {
+   "zh": null,
+   "en": "Chaos Deimos Predator",
+   "canonical_id": "000001302",
+   "faction_id": "CSM",
+   "book": "Faction Pack Chaos Space Marines",
+   "pages": [
+    80,
+    81
+   ],
+   "confidence": "exact"
+  },
+  {
+   "zh": null,
+   "en": "Chaos Thunderhawk",
+   "canonical_id": "000003588",
+   "faction_id": "WE",
+   "book": "Faction Pack Chaos Space Marines",
+   "pages": [
+    100,
+    101
+   ],
+   "confidence": "exact"
+  },
+  {
+   "zh": null,
+   "en": "Deathwing Command Squad",
+   "canonical_id": "000002302",
+   "faction_id": "SM",
+   "book": "Faction Pack Dark Angels",
+   "pages": [
+    15,
+    16
+   ],
+   "confidence": "exact"
+  },
+  {
+   "zh": null,
+   "en": "Defiler",
+   "canonical_id": "000004207",
+   "faction_id": "WE",
+   "book": "Faction Pack Death Guard",
+   "pages": [
+    5
+   ],
+   "confidence": "exact"
+  },
+  {
+   "zh": null,
+   "en": "Death Guard Cultists",
+   "canonical_id": "000001043",
+   "faction_id": "DG",
+   "book": "Faction Pack Death Guard",
+   "pages": [
+    14,
+    15
+   ],
+   "confidence": "exact"
+  },
+  {
+   "zh": null,
+   "en": "Death Guard Sorcerer In Terminator Armour",
+   "canonical_id": "000001041",
+   "faction_id": "DG",
+   "book": "Faction Pack Death Guard",
+   "pages": [
+    16,
+    17
+   ],
+   "confidence": "exact"
+  },
+  {
+   "zh": null,
+   "en": "Deathwatch Terminator Squad",
+   "canonical_id": "000003873",
+   "faction_id": "SM",
+   "book": "Faction Pack Deathwatch",
+   "pages": [
+    14,
+    15
+   ],
+   "confidence": "exact"
+  },
+  {
+   "zh": null,
+   "en": "Corvus Blackstar",
+   "canonical_id": "000000358",
+   "faction_id": "SM",
+   "book": "Faction Pack Deathwatch",
+   "pages": [
+    16,
+    17
+   ],
+   "confidence": "exact"
+  },
+  {
+   "zh": null,
+   "en": "Raven Strike Fighter",
+   "canonical_id": "000001390",
+   "faction_id": "DRU",
+   "book": "Faction Pack Drukhari",
+   "pages": [
+    8,
+    9
+   ],
+   "confidence": "exact"
+  },
+  {
+   "zh": null,
+   "en": "Grey Knights Dreadnought",
+   "canonical_id": "000000390",
+   "faction_id": "GK",
+   "book": "Faction Pack Grey Knights",
+   "pages": [
+    10,
+    11
+   ],
+   "confidence": "exact"
+  },
+  {
+   "zh": null,
+   "en": "Grey Knights Relic Razorback",
+   "canonical_id": "000002768",
+   "faction_id": "GK",
+   "book": "Faction Pack Grey Knights",
+   "pages": [
+    12,
+    13
+   ],
+   "confidence": "exact"
+  },
+  {
+   "zh": null,
+   "en": "Aquila Kill Team",
+   "canonical_id": "000004174",
+   "faction_id": "AoI",
+   "book": "Faction Pack Imperial Agents",
+   "pages": [
+    6,
+    7
+   ],
+   "confidence": "exact"
+  },
+  {
+   "zh": null,
+   "en": "UR-025",
+   "canonical_id": "000002766",
+   "faction_id": "AoI",
+   "book": "Faction Pack Imperial Agents",
+   "pages": [
+    13,
+    14
+   ],
+   "confidence": "exact"
+  },
+  {
+   "zh": null,
+   "en": "Damned Legionnaires",
+   "canonical_id": "000002761",
+   "faction_id": "AoI",
+   "book": "Faction Pack Imperial Agents",
+   "pages": [
+    19,
+    20
+   ],
+   "confidence": "exact"
+  },
+  {
+   "zh": null,
+   "en": "Kill Team Cassius",
+   "canonical_id": "000003875",
+   "faction_id": "SM",
+   "book": "Faction Pack Imperial Agents",
+   "pages": [
+    27,
+    28
+   ],
+   "confidence": "exact"
+  },
+  {
+   "zh": null,
+   "en": "Deathwatch Terminator Squad",
+   "canonical_id": "000003873",
+   "faction_id": "SM",
+   "book": "Faction Pack Imperial Agents",
+   "pages": [
+    29,
+    30
+   ],
+   "confidence": "exact"
+  },
+  {
+   "zh": null,
+   "en": "Veteran Bike Squad",
+   "canonical_id": "000003823",
+   "faction_id": "AoI",
+   "book": "Faction Pack Imperial Agents",
+   "pages": [
+    31,
+    32
+   ],
+   "confidence": "exact"
+  },
+  {
+   "zh": null,
+   "en": "Proteus Kill Team",
+   "canonical_id": "000003824",
+   "faction_id": "AoI",
+   "book": "Faction Pack Imperial Agents",
+   "pages": [
+    33,
+    34
+   ],
+   "confidence": "exact"
+  },
+  {
+   "zh": null,
+   "en": "Fortis Kill Team",
+   "canonical_id": "000002780",
+   "faction_id": "SM",
+   "book": "Faction Pack Imperial Agents",
+   "pages": [
+    35,
+    36
+   ],
+   "confidence": "exact"
+  },
+  {
+   "zh": null,
+   "en": "Indomitor Kill Team",
+   "canonical_id": "000002781",
+   "faction_id": "SM",
+   "book": "Faction Pack Imperial Agents",
+   "pages": [
+    37,
+    38
+   ],
+   "confidence": "exact"
+  },
+  {
+   "zh": null,
+   "en": "Daemonhost",
+   "canonical_id": "000003828",
+   "faction_id": "AoI",
+   "book": "Faction Pack Imperial Agents",
+   "pages": [
+    41,
+    42
+   ],
+   "confidence": "exact"
+  },
+  {
+   "zh": null,
+   "en": "Jokaero Weaponsmith",
+   "canonical_id": "000003829",
+   "faction_id": "AoI",
+   "book": "Faction Pack Imperial Agents",
+   "pages": [
+    43,
+    44
+   ],
+   "confidence": "exact"
+  },
+  {
+   "zh": null,
+   "en": "Acastus Knight Porphyrion",
+   "canonical_id": "000000860",
+   "faction_id": "QI",
+   "book": "Faction Pack Imperial Knights",
+   "pages": [
+    11,
+    12
+   ],
+   "confidence": "exact"
+  },
+  {
+   "zh": null,
+   "en": "Cerastus Knight Acheron",
+   "canonical_id": "000000861",
+   "faction_id": "QI",
+   "book": "Faction Pack Imperial Knights",
+   "pages": [
+    17,
+    18
+   ],
+   "confidence": "exact"
+  },
+  {
+   "zh": null,
+   "en": "Cerastus Knight Atrapos",
+   "canonical_id": "000000862",
+   "faction_id": "QI",
+   "book": "Faction Pack Imperial Knights",
+   "pages": [
+    19,
+    20
+   ],
+   "confidence": "exact"
+  },
+  {
+   "zh": null,
+   "en": "Questoris Knight Styrix",
+   "canonical_id": "000000866",
+   "faction_id": "QI",
+   "book": "Faction Pack Imperial Knights",
+   "pages": [
+    23,
+    24
+   ],
+   "confidence": "exact"
+  },
+  {
+   "zh": null,
+   "en": "Canoptek Macrocytes",
+   "canonical_id": "000004176",
+   "faction_id": "NEC",
+   "book": "Faction Pack Necrons",
+   "pages": [
+    13,
+    14
+   ],
+   "confidence": "exact"
+  },
+  {
+   "zh": null,
+   "en": "Canoptek Tomb Crawlers",
+   "canonical_id": "000004177",
+   "faction_id": "NEC",
+   "book": "Faction Pack Necrons",
+   "pages": [
+    15,
+    16
+   ],
+   "confidence": "exact"
+  },
+  {
+   "zh": null,
+   "en": "Geomancer",
+   "canonical_id": "000004178",
+   "faction_id": "NEC",
+   "book": "Faction Pack Necrons",
+   "pages": [
+    17,
+    18
+   ],
+   "confidence": "exact"
+  },
+  {
+   "zh": null,
+   "en": "C’tan Shard of the Nightbringer",
+   "canonical_id": "000000541",
+   "faction_id": "NEC",
+   "book": "Faction Pack Necrons",
+   "pages": [
+    19,
+    20
+   ],
+   "confidence": "exact"
+  },
+  {
+   "zh": null,
+   "en": "Nekrosor Ammentar",
+   "canonical_id": "000004186",
+   "faction_id": "NEC",
+   "book": "Faction Pack Necrons",
+   "pages": [
+    27
+   ],
+   "confidence": "exact"
+  },
+  {
+   "zh": null,
+   "en": "Seraptek Heavy Construct",
+   "canonical_id": "000001577",
+   "faction_id": "NEC",
+   "book": "Faction Pack Necrons",
+   "pages": [
+    31,
+    32
+   ],
+   "confidence": "exact"
+  },
+  {
+   "zh": null,
+   "en": "Tomb Citadel Walls",
+   "canonical_id": "000002362",
+   "faction_id": "NEC",
+   "book": "Faction Pack Necrons",
+   "pages": [
+    40
+   ],
+   "confidence": "exact"
+  },
+  {
+   "zh": null,
+   "en": "Gargantuan Squiggoth",
+   "canonical_id": "000000059",
+   "faction_id": "ORK",
+   "book": "Faction Pack Orks",
+   "pages": [
+    21,
+    22
+   ],
+   "confidence": "exact"
+  },
+  {
+   "zh": null,
+   "en": "Kannonwagon",
+   "canonical_id": "000000055",
+   "faction_id": "ORK",
+   "book": "Faction Pack Orks",
+   "pages": [
+    28,
+    29
+   ],
+   "confidence": "exact"
+  },
+  {
+   "zh": null,
+   "en": "Da Red Gobbo",
+   "canonical_id": "000001993",
+   "faction_id": "ORK",
+   "book": "Faction Pack Orks",
+   "pages": [
+    30
+   ],
+   "confidence": "exact"
+  },
+  {
+   "zh": null,
+   "en": "Skorchas",
+   "canonical_id": "000000035",
+   "faction_id": "ORK",
+   "book": "Faction Pack Orks",
+   "pages": [
+    34,
+    35
+   ],
+   "confidence": "exact"
+  },
+  {
+   "zh": null,
+   "en": "Deffkoptas With Big Shootas",
+   "canonical_id": "000002736",
+   "faction_id": "ORK",
+   "book": "Faction Pack Orks",
+   "pages": [
+    40,
+    41
+   ],
+   "confidence": "exact"
+  },
+  {
+   "zh": null,
+   "en": "Kill Krusha",
+   "canonical_id": "000001389",
+   "faction_id": "ORK",
+   "book": "Faction Pack Orks",
+   "pages": [
+    42,
+    43
+   ],
+   "confidence": "exact"
+  },
+  {
+   "zh": null,
+   "en": "Deff Rolla Battle Fortress",
+   "canonical_id": "000001388",
+   "faction_id": "ORK",
+   "book": "Faction Pack Orks",
+   "pages": [
+    44,
+    45
+   ],
+   "confidence": "exact"
+  },
+  {
+   "zh": null,
+   "en": "Chinork Warkopta",
+   "canonical_id": "000000057",
+   "faction_id": "ORK",
+   "book": "Faction Pack Orks",
+   "pages": [
+    46,
+    47
+   ],
+   "confidence": "exact"
+  },
+  {
+   "zh": null,
+   "en": "Attack Fighta",
+   "canonical_id": "000001386",
+   "faction_id": "ORK",
+   "book": "Faction Pack Orks",
+   "pages": [
+    50,
+    51
+   ],
+   "confidence": "exact"
+  },
+  {
+   "zh": null,
+   "en": "Grot Bomm Launcha",
+   "canonical_id": "000001385",
+   "faction_id": "ORK",
+   "book": "Faction Pack Orks",
+   "pages": [
+    54,
+    55
+   ],
+   "confidence": "exact"
+  },
+  {
+   "zh": null,
+   "en": "Boss Zagstruk",
+   "canonical_id": "000000010",
+   "faction_id": "ORK",
+   "book": "Faction Pack Orks",
+   "pages": [
+    58,
+    59
+   ],
+   "confidence": "exact"
+  },
+  {
+   "zh": null,
+   "en": "Kaptin Badrukk",
+   "canonical_id": "000000009",
+   "faction_id": "ORK",
+   "book": "Faction Pack Orks",
+   "pages": [
+    66,
+    67
+   ],
+   "confidence": "exact"
+  },
+  {
+   "zh": null,
+   "en": "Kill Tank",
+   "canonical_id": "000000056",
+   "faction_id": "ORK",
+   "book": "Faction Pack Orks",
+   "pages": [
+    74,
+    75
+   ],
+   "confidence": "exact"
+  },
+  {
+   "zh": null,
+   "en": "Meka-dread",
+   "canonical_id": "000000052",
+   "faction_id": "ORK",
+   "book": "Faction Pack Orks",
+   "pages": [
+    78,
+    79
+   ],
+   "confidence": "exact"
+  },
+  {
+   "zh": null,
+   "en": "Big Trakk",
+   "canonical_id": "000000054",
+   "faction_id": "ORK",
+   "book": "Faction Pack Orks",
+   "pages": [
+    80,
+    81
+   ],
+   "confidence": "exact"
+  },
+  {
+   "zh": null,
+   "en": "Warboss On Warbike",
+   "canonical_id": "000000003",
+   "faction_id": "ORK",
+   "book": "Faction Pack Orks",
+   "pages": [
+    82,
+    83
+   ],
+   "confidence": "exact"
+  },
+  {
+   "zh": null,
+   "en": "Logan Grimnar On Stormrider",
+   "canonical_id": "000000283",
+   "faction_id": "SM",
+   "book": "Faction Pack Space Wolves",
+   "pages": [
+    20,
+    21
+   ],
+   "confidence": "exact"
+  },
+  {
+   "zh": null,
+   "en": "Stormfang Gunship",
+   "canonical_id": "000000325",
+   "faction_id": "SM",
+   "book": "Faction Pack Space Wolves",
+   "pages": [
+    28,
+    29
+   ],
+   "confidence": "exact"
+  },
+  {
+   "zh": null,
+   "en": "Stormwolf",
+   "canonical_id": "000000321",
+   "faction_id": "SM",
+   "book": "Faction Pack Space Wolves",
+   "pages": [
+    30,
+    31
+   ],
+   "confidence": "exact"
+  },
+  {
+   "zh": null,
+   "en": "Marneus Calgar in Armour of Antilochus",
+   "canonical_id": "000004183",
+   "faction_id": "SM",
+   "book": "Faction Pack Space-Marines",
+   "pages": [
+    33,
+    34
+   ],
+   "confidence": "exact"
+  },
+  {
+   "zh": null,
+   "en": "Drop Pod",
+   "canonical_id": "000000087",
+   "faction_id": "SM",
+   "book": "Faction Pack Space-Marines",
+   "pages": [
+    53,
+    54
+   ],
+   "confidence": "exact"
+  },
+  {
+   "zh": null,
+   "en": "Land Speeder Tempest",
+   "canonical_id": "000001168",
+   "faction_id": "SM",
+   "book": "Faction Pack Space-Marines",
+   "pages": [
+    73,
+    74
+   ],
+   "confidence": "exact"
+  },
+  {
+   "zh": null,
+   "en": "Ironclad Dreadnought",
+   "canonical_id": "000002706",
+   "faction_id": "SM",
+   "book": "Faction Pack Space-Marines",
+   "pages": [
+    121,
+    122
+   ],
+   "confidence": "exact"
+  },
+  {
+   "zh": null,
+   "en": "Command Squad",
+   "canonical_id": "000002103",
+   "faction_id": "SM",
+   "book": "Faction Pack Space-Marines",
+   "pages": [
+    129,
+    130
+   ],
+   "confidence": "exact"
+  },
+  {
+   "zh": null,
+   "en": "Land Speeder Typhoon",
+   "canonical_id": "000002102",
+   "faction_id": "SM",
+   "book": "Faction Pack Space-Marines",
+   "pages": [
+    145
+   ],
+   "confidence": "exact"
+  },
+  {
+   "zh": null,
+   "en": "Hunter",
+   "canonical_id": "000000146",
+   "faction_id": "SM",
+   "book": "Faction Pack Space-Marines",
+   "pages": [
+    151,
+    152
+   ],
+   "confidence": "exact"
+  },
+  {
+   "zh": null,
+   "en": "Stalker",
+   "canonical_id": "000002258",
+   "faction_id": "SM",
+   "book": "Faction Pack Space-Marines",
+   "pages": [
+    154
+   ],
+   "confidence": "exact"
+  },
+  {
+   "zh": null,
+   "en": "Land Speeder Storm",
+   "canonical_id": "000000132",
+   "faction_id": "SM",
+   "book": "Faction Pack Space-Marines",
+   "pages": [
+    156
+   ],
+   "confidence": "exact"
+  },
+  {
+   "zh": null,
+   "en": "Deredeo Dreadnought",
+   "canonical_id": "000003625",
+   "faction_id": "WE",
+   "book": "Faction Pack Space-Marines",
+   "pages": [
+    160,
+    161
+   ],
+   "confidence": "exact"
+  },
+  {
+   "zh": null,
+   "en": "Deathstorm Drop Pod",
+   "canonical_id": "000002267",
+   "faction_id": "SM",
+   "book": "Faction Pack Space-Marines",
+   "pages": [
+    168,
+    169
+   ],
+   "confidence": "exact"
+  },
+  {
+   "zh": null,
+   "en": "Land Raider Achilles",
+   "canonical_id": "000003609",
+   "faction_id": "WE",
+   "book": "Faction Pack Space-Marines",
+   "pages": [
+    172,
+    173
+   ],
+   "confidence": "exact"
+  },
+  {
+   "zh": null,
+   "en": "Sicaran Arcus",
+   "canonical_id": "000001161",
+   "faction_id": "SM",
+   "book": "Faction Pack Space-Marines",
+   "pages": [
+    176,
+    177
+   ],
+   "confidence": "exact"
+  },
+  {
+   "zh": null,
+   "en": "Sicaran Punisher",
+   "canonical_id": "000003685",
+   "faction_id": "WE",
+   "book": "Faction Pack Space-Marines",
+   "pages": [
+    180,
+    181
+   ],
+   "confidence": "exact"
+  },
+  {
+   "zh": null,
+   "en": "Fellblade",
+   "canonical_id": "000003653",
+   "faction_id": "WE",
+   "book": "Faction Pack Space-Marines",
+   "pages": [
+    206,
+    207
+   ],
+   "confidence": "exact"
+  },
+  {
+   "zh": null,
+   "en": "The Twin Lance",
+   "canonical_id": "000004203",
+   "faction_id": "TAU",
+   "book": "Faction Pack Tau Empire",
+   "pages": [
+    5,
+    6
+   ],
+   "confidence": "exact"
+  },
+  {
+   "zh": null,
+   "en": "Vespid Stingwings",
+   "canonical_id": "000000427",
+   "faction_id": "TAU",
+   "book": "Faction Pack Tau Empire",
+   "pages": [
+    9,
+    10
+   ],
+   "confidence": "exact"
+  },
+  {
+   "zh": null,
+   "en": "Ta’unar Supremacy Armour",
+   "canonical_id": "000000446",
+   "faction_id": "TAU",
+   "book": "Faction Pack Tau Empire",
+   "pages": [
+    11,
+    12
+   ],
+   "confidence": "exact"
+  },
+  {
+   "zh": null,
+   "en": "Tiger Shark",
+   "canonical_id": "000000454",
+   "faction_id": "TAU",
+   "book": "Faction Pack Tau Empire",
+   "pages": [
+    13,
+    14
+   ],
+   "confidence": "exact"
+  },
+  {
+   "zh": null,
+   "en": "AX-1-0 Tiger Shark",
+   "canonical_id": "000000455",
+   "faction_id": "TAU",
+   "book": "Faction Pack Tau Empire",
+   "pages": [
+    15,
+    16
+   ],
+   "confidence": "exact"
+  },
+  {
+   "zh": null,
+   "en": "Manta",
+   "canonical_id": "000000457",
+   "faction_id": "TAU",
+   "book": "Faction Pack Tau Empire",
+   "pages": [
+    17,
+    18
+   ],
+   "confidence": "exact"
+  },
+  {
+   "zh": null,
+   "en": "Tx42 Piranha",
+   "canonical_id": "000000448",
+   "faction_id": "TAU",
+   "book": "Faction Pack Tau Empire",
+   "pages": [
+    27,
+    28
+   ],
+   "confidence": "exact"
+  },
+  {
+   "zh": null,
+   "en": "Shas’o R’alai",
+   "canonical_id": "000000439",
+   "faction_id": "TAU",
+   "book": "Faction Pack Tau Empire",
+   "pages": [
+    31,
+    32
+   ],
+   "confidence": "exact"
+  },
+  {
+   "zh": null,
+   "en": "Aun’va",
+   "canonical_id": "000000409",
+   "faction_id": "TAU",
+   "book": "Faction Pack Tau Empire",
+   "pages": [
+    41,
+    42
+   ],
+   "confidence": "exact"
+  },
+  {
+   "zh": null,
+   "en": "Y’vahra Battlesuit",
+   "canonical_id": "000000444",
+   "faction_id": "TAU",
+   "book": "Faction Pack Tau Empire",
+   "pages": [
+    51,
+    52
+   ],
+   "confidence": "exact"
+  },
+  {
+   "zh": "影阳指挥官",
+   "en": "Commander Shadowsun",
+   "canonical_id": "000000407",
+   "faction_id": "TAU",
+   "book": "钛帝国十版CODEX-20251112",
+   "pages": [
+    17
+   ],
+   "confidence": "exact"
+  },
+  {
+   "zh": "远见指挥官",
+   "en": "Commander Farsight",
+   "canonical_id": "000000406",
+   "faction_id": "TAU",
+   "book": "钛帝国十版CODEX-20251112",
+   "pages": [
+    18
+   ],
+   "confidence": "exact"
+  },
+  {
+   "zh": "强执战斗服指挥官",
+   "en": "Commander In Enforcer Battlesuit",
+   "canonical_id": "000001478",
+   "faction_id": "TAU",
+   "book": "钛帝国十版CODEX-20251112",
+   "pages": [
+    19
+   ],
+   "confidence": "exact"
+  },
+  {
+   "zh": "冷星战斗服指挥官",
+   "en": "Commander In Coldstar Battlesuit",
+   "canonical_id": "000000402",
+   "faction_id": "TAU",
+   "book": "钛帝国十版CODEX-20251112",
+   "pages": [
+    20
+   ],
+   "confidence": "exact"
+  },
+  {
+   "zh": "火刃队长",
+   "en": "Cadre Fireblade",
+   "canonical_id": "000000405",
+   "faction_id": "TAU",
+   "book": "钛帝国十版CODEX-20251112",
+   "pages": [
+    21
+   ],
+   "confidence": "exact"
+  },
+  {
+   "zh": "以太长老",
+   "en": "Ethereal",
+   "canonical_id": "000000404",
+   "faction_id": "TAU",
+   "book": "钛帝国十版CODEX-20251112",
+   "pages": [
+    22
+   ],
+   "confidence": "exact"
+  },
+  {
+   "zh": "暗行者",
+   "en": "Darkstrider",
+   "canonical_id": "000000410",
+   "faction_id": "TAU",
+   "book": "钛帝国十版CODEX-20251112",
+   "pages": [
+    23
+   ],
+   "confidence": "exact"
+  },
+  {
+   "zh": "打击小队",
+   "en": "Strike Team",
+   "canonical_id": "000000411",
+   "faction_id": "TAU",
+   "book": "钛帝国十版CODEX-20251112",
+   "pages": [
+    24
+   ],
+   "confidence": "exact"
+  },
+  {
+   "zh": "破袭小队",
+   "en": "Breacher Team",
+   "canonical_id": "000000412",
+   "faction_id": "TAU",
+   "book": "钛帝国十版CODEX-20251112",
+   "pages": [
+    25
+   ],
+   "confidence": "exact"
+  },
+  {
+   "zh": "潜行战斗服小队",
+   "en": "Stealth Battlesuits",
+   "canonical_id": "000000417",
+   "faction_id": "TAU",
+   "book": "钛帝国十版CODEX-20251112",
+   "pages": [
+    29
+   ],
+   "confidence": "exact"
+  },
+  {
+   "zh": "鬼覆战斗服",
+   "en": "Ghostkeel Battlesuit",
+   "canonical_id": "000000420",
+   "faction_id": "TAU",
+   "book": "钛帝国十版CODEX-20251112",
+   "pages": [
+    30
+   ],
+   "confidence": "exact"
+  },
+  {
+   "zh": "寻路者小队",
+   "en": "Pathfinder Team",
+   "canonical_id": "000000422",
+   "faction_id": "TAU",
+   "book": "钛帝国十版CODEX-20251112",
+   "pages": [
+    31
+   ],
+   "confidence": "exact"
+  },
+  {
+   "zh": "神射手小队",
+   "en": "Firesight Team",
+   "canonical_id": "000000428",
+   "faction_id": "TAU",
+   "book": "钛帝国十版CODEX-20251112",
+   "pages": [
+    32
+   ],
+   "confidence": "exact"
+  },
+  {
+   "zh": "胡蜂人尖翼小队",
+   "en": "Vespid Stingwings",
+   "canonical_id": "000000427",
+   "faction_id": "TAU",
+   "book": "钛帝国十版CODEX-20251112",
+   "pages": [
+    33
+   ],
+   "confidence": "exact"
+  },
+  {
+   "zh": "克鲁特寻迹塑形者",
+   "en": "Kroot Trail Shaper",
+   "canonical_id": "000003702",
+   "faction_id": "TAU",
+   "book": "钛帝国十版CODEX-20251112",
+   "pages": [
+    34
+   ],
+   "confidence": "exact"
+  },
+  {
+   "zh": "克鲁特战争塑形者",
+   "en": "Kroot War Shaper",
+   "canonical_id": "000003703",
+   "faction_id": "TAU",
+   "book": "钛帝国十版CODEX-20251112",
+   "pages": [
+    35
+   ],
+   "confidence": "exact"
+  },
+  {
+   "zh": "克鲁特血肉塑形者",
+   "en": "Kroot Flesh Shaper",
+   "canonical_id": "000003704",
+   "faction_id": "TAU",
+   "book": "钛帝国十版CODEX-20251112",
+   "pages": [
+    36
+   ],
+   "confidence": "exact"
+  },
+  {
+   "zh": "克鲁特独矛",
+   "en": "Kroot Lone-Spear",
+   "canonical_id": "000003705",
+   "faction_id": "TAU",
+   "book": "钛帝国十版CODEX-20251112",
+   "pages": [
+    37
+   ],
+   "confidence": "exact"
+  },
+  {
+   "zh": "克鲁特食肉者小队",
+   "en": "Kroot Carnivores",
+   "canonical_id": "000000413",
+   "faction_id": "TAU",
+   "book": "钛帝国十版CODEX-20251112",
+   "pages": [
+    38
+   ],
+   "confidence": "exact"
+  },
+  {
+   "zh": "克鲁特猿兽骑兵小队",
+   "en": "Krootox Riders",
+   "canonical_id": "000000414",
+   "faction_id": "TAU",
+   "book": "钛帝国十版CODEX-20251112",
+   "pages": [
+    39
+   ],
+   "confidence": "exact"
+  },
+  {
+   "zh": "克鲁特狂兽小队",
+   "en": "Krootox Rampagers",
+   "canonical_id": "000003706",
+   "faction_id": "TAU",
+   "book": "钛帝国十版CODEX-20251112",
+   "pages": [
+    40
+   ],
+   "confidence": "exact"
+  },
+  {
+   "zh": "克鲁特猎犬队",
+   "en": "Kroot Hounds",
+   "canonical_id": "000000415",
+   "faction_id": "TAU",
+   "book": "钛帝国十版CODEX-20251112",
+   "pages": [
+    41
+   ],
+   "confidence": "exact"
+  },
+  {
+   "zh": "克鲁特远猎者小队",
+   "en": "Kroot Farstalkers",
+   "canonical_id": "000002588",
+   "faction_id": "TAU",
+   "book": "钛帝国十版CODEX-20251112",
+   "pages": [
+    42
+   ],
+   "confidence": "exact"
+  },
+  {
+   "zh": "水虎鱼",
+   "en": "Piranhas",
+   "canonical_id": "000000423",
+   "faction_id": "TAU",
+   "book": "钛帝国十版CODEX-20251112",
+   "pages": [
+    43
+   ],
+   "confidence": "exact"
+  },
+  {
+   "zh": "炮击战斗服小队",
+   "en": "Broadside Battlesuits",
+   "canonical_id": "000000433",
+   "faction_id": "TAU",
+   "book": "钛帝国十版CODEX-20251112",
+   "pages": [
+    44
+   ],
+   "confidence": "exact"
+  },
+  {
+   "zh": "激流战斗服",
+   "en": "Riptide Battlesuit",
+   "canonical_id": "000000421",
+   "faction_id": "TAU",
+   "book": "钛帝国十版CODEX-20251112",
+   "pages": [
+    45
+   ],
+   "confidence": "exact"
+  },
+  {
+   "zh": "锤头鲨炮艇",
+   "en": "Hammerhead Gunship",
+   "canonical_id": "000000432",
+   "faction_id": "TAU",
+   "book": "钛帝国十版CODEX-20251112",
+   "pages": [
+    46
+   ],
+   "confidence": "exact"
+  },
+  {
+   "zh": "天魟炮艇",
+   "en": "Sky Ray Gunship",
+   "canonical_id": "000000430",
+   "faction_id": "TAU",
+   "book": "钛帝国十版CODEX-20251112",
+   "pages": [
+    47
+   ],
+   "confidence": "exact"
+  },
+  {
+   "zh": "魔鬼鱼",
+   "en": "Devilfish",
+   "canonical_id": "000000424",
+   "faction_id": "TAU",
+   "book": "钛帝国十版CODEX-20251112",
+   "pages": [
+    48
+   ],
+   "confidence": "exact"
+  },
+  {
+   "zh": "剃刀鲨战斗机",
+   "en": "Razorshark Strike Fighter",
+   "canonical_id": "000000425",
+   "faction_id": "TAU",
+   "book": "钛帝国十版CODEX-20251112",
+   "pages": [
+    49,
+    50
+   ],
+   "confidence": "exact"
+  },
+  {
+   "zh": "阳鲨轰炸机",
+   "en": "Sun Shark Bomber",
+   "canonical_id": "000000426",
+   "faction_id": "TAU",
+   "book": "钛帝国十版CODEX-20251112",
+   "pages": [
+    50
+   ],
+   "confidence": "exact"
+  },
+  {
+   "zh": "雷暴",
+   "en": "Stormsurge",
+   "canonical_id": "000000434",
+   "faction_id": "TAU",
+   "book": "钛帝国十版CODEX-20251112",
+   "pages": [
+    51
+   ],
+   "confidence": "exact"
+  },
+  {
+   "zh": "潮汐护盾墙",
+   "en": "Tidewall Shieldline",
+   "canonical_id": "000000436",
+   "faction_id": "TAU",
+   "book": "钛帝国十版CODEX-20251112",
+   "pages": [
+    52
+   ],
+   "confidence": "exact"
+  },
+  {
+   "zh": "潮汐兵蜂平台",
+   "en": "Tidewall Droneport",
+   "canonical_id": "000000435",
+   "faction_id": "TAU",
+   "book": "钛帝国十版CODEX-20251112",
+   "pages": [
+    53
+   ],
+   "confidence": "exact"
+  },
+  {
+   "zh": "潮汐炮台",
+   "en": "Tidewall Gunrig",
+   "canonical_id": "000000437",
+   "faction_id": "TAU",
+   "book": "钛帝国十版CODEX-20251112",
+   "pages": [
+    54
+   ],
+   "confidence": "exact"
+  },
+  {
+   "zh": "虎鲨",
+   "en": "Tiger Shark",
+   "canonical_id": "000000454",
+   "faction_id": "TAU",
+   "book": "钛帝国十版CODEX-20251112",
+   "pages": [
+    55
+   ],
+   "confidence": "exact"
+  },
+  {
+   "zh": "塔'钨钠至高装甲",
+   "en": "Ta’unar Supremacy Armour",
+   "canonical_id": "000000446",
+   "faction_id": "TAU",
+   "book": "钛帝国十版CODEX-20251112",
+   "pages": [
+    57
+   ],
+   "confidence": "exact"
+  },
+  {
+   "zh": "蝠鲼",
+   "en": "Manta",
+   "canonical_id": "000000457",
+   "faction_id": "TAU",
+   "book": "钛帝国十版CODEX-20251112",
+   "pages": [
+    58
+   ],
+   "confidence": "exact"
+  },
+  {
+   "zh": "安’瓦",
+   "en": "Aun’va",
+   "canonical_id": "000000409",
+   "faction_id": "TAU",
+   "book": "钛帝国十版CODEX-20251112",
+   "pages": [
+    59
+   ],
+   "confidence": "exact"
+  },
+  {
+   "zh": "安’史",
+   "en": "Aun’shi",
+   "canonical_id": "000000408",
+   "faction_id": "TAU",
+   "book": "钛帝国十版CODEX-20251112",
+   "pages": [
+    60
+   ],
+   "confidence": "exact"
+  },
+  {
+   "zh": "遥击",
+   "en": "Longstrike",
+   "canonical_id": "000000431",
+   "faction_id": "TAU",
+   "book": "钛帝国十版CODEX-20251112",
+   "pages": [
+    61
+   ],
+   "confidence": "exact"
+  },
+  {
+   "zh": "危机战斗服指挥官",
+   "en": "Commander In Crisis Battlesuit",
+   "canonical_id": "000001477",
+   "faction_id": "TAU",
+   "book": "钛帝国十版CODEX-20251112",
+   "pages": [
+    63
+   ],
+   "confidence": "exact"
+  },
+  {
+   "zh": "XV9灾害战斗服小队",
+   "en": "Xv9 Hazard Battlesuits",
+   "canonical_id": "000000443",
+   "faction_id": "TAU",
+   "book": "钛帝国十版CODEX-20251112",
+   "pages": [
+    65,
+    66
+   ],
+   "confidence": "exact"
+  },
+  {
+   "zh": "燃雨战斗服",
+   "en": "R’varna Battlesuit",
+   "canonical_id": "000000445",
+   "faction_id": "TAU",
+   "book": "钛帝国十版CODEX-20251112",
+   "pages": [
+    66
+   ],
+   "confidence": "exact"
+  },
+  {
+   "zh": "焰涌战斗服",
+   "en": "Y’vahra Battlesuit",
+   "canonical_id": "000000444",
+   "faction_id": "TAU",
+   "book": "钛帝国十版CODEX-20251112",
+   "pages": [
+    67
+   ],
+   "confidence": "exact"
+  },
+  {
+   "zh": "脂鲤小队",
+   "en": "Tetras",
+   "canonical_id": "000000447",
+   "faction_id": "TAU",
+   "book": "钛帝国十版CODEX-20251112",
+   "pages": [
+    68
+   ],
+   "confidence": "exact"
+  },
+  {
+   "zh": "TX-42水虎鱼",
+   "en": "Tx42 Piranha",
+   "canonical_id": "000000448",
+   "faction_id": "TAU",
+   "book": "钛帝国十版CODEX-20251112",
+   "pages": [
+    69
+   ],
+   "confidence": "exact"
+  },
+  {
+   "zh": "卡纳罗克骑兵队",
+   "en": "Knarloc Riders",
+   "canonical_id": "000001391",
+   "faction_id": "TAU",
+   "book": "钛帝国十版CODEX-20251112",
+   "pages": [
+    70
+   ],
+   "confidence": "exact"
+  },
+  {
+   "zh": "卡纳罗克巨兽",
+   "en": "Great Knarloc",
+   "canonical_id": "000001392",
+   "faction_id": "TAU",
+   "book": "钛帝国十版CODEX-20251112",
+   "pages": [
+    71
+   ],
+   "confidence": "exact"
+  },
+  {
+   "zh": "战术兵蜂",
+   "en": "Tactical Drones",
+   "canonical_id": "000000403",
+   "faction_id": "TAU",
+   "book": "钛帝国十版CODEX-20251112",
+   "pages": [
+    72
+   ],
+   "confidence": "exact"
+  },
+  {
+   "zh": "重型枪蜂小队",
+   "en": "Heavy Gun Drones",
+   "canonical_id": "000000449",
+   "faction_id": "TAU",
+   "book": "钛帝国十版CODEX-20251112",
+   "pages": [
+    73
+   ],
+   "confidence": "exact"
+  },
+  {
+   "zh": "鮣鱼隐形兵蜂机队",
+   "en": "Remora Stealth Drones",
+   "canonical_id": "000000452",
+   "faction_id": "TAU",
+   "book": "钛帝国十版CODEX-20251112",
+   "pages": [
+    74
+   ],
+   "confidence": "exact"
+  },
+  {
+   "zh": "梭鱼",
+   "en": "Barracuda",
+   "canonical_id": "000000453",
+   "faction_id": "TAU",
+   "book": "钛帝国十版CODEX-20251112",
+   "pages": [
+    75
+   ],
+   "confidence": "exact"
+  },
+  {
+   "zh": "逆戟鲸运输机",
+   "en": "Orca Dropship",
+   "canonical_id": "000000456",
+   "faction_id": "TAU",
+   "book": "钛帝国十版CODEX-20251112",
+   "pages": [
+    76
+   ],
+   "confidence": "exact"
+  },
+  {
+   "zh": "遥感哨塔",
+   "en": "Remote Sensor Tower",
+   "canonical_id": "000000458",
+   "faction_id": "TAU",
+   "book": "钛帝国十版CODEX-20251112",
+   "pages": [
+    77
+   ],
+   "confidence": "exact"
+  },
+  {
+   "zh": "兵蜂哨戒炮",
+   "en": "Drone Sentry Turret",
+   "canonical_id": "000000459",
+   "faction_id": "TAU",
+   "book": "钛帝国十版CODEX-20251112",
+   "pages": [
+    78
+   ],
+   "confidence": "exact"
+  },
+  {
+   "zh": "危机日铸战斗服小队",
+   "en": "Crisis Sunforge Battlesuits",
+   "canonical_id": "000003699",
+   "faction_id": "TAU",
+   "book": "钛帝国十版CODEX-20251112",
+   "pages": [
+    26,
+    27
+   ],
+   "confidence": "fuzzy"
+  },
+  {
+   "zh": "危机火刃战斗服小队",
+   "en": "Crisis Fireknife Battlesuits",
+   "canonical_id": "000003700",
+   "faction_id": "TAU",
+   "book": "钛帝国十版CODEX-20251112",
+   "pages": [
+    27
+   ],
+   "confidence": "fuzzy"
+  },
+  {
+   "zh": "危机星镰战斗服小队",
+   "en": "Crisis Starscythe Battlesuits",
+   "canonical_id": "000003701",
+   "faction_id": "TAU",
+   "book": "钛帝国十版CODEX-20251112",
+   "pages": [
+    28
+   ],
+   "confidence": "fuzzy"
+  },
+  {
+   "zh": "危机战斗服小队",
+   "en": "Crisis Battlesuits",
+   "canonical_id": "000000418",
+   "faction_id": "TAU",
+   "book": "钛帝国十版CODEX-20251112",
+   "pages": [
+    64
+   ],
+   "confidence": "fuzzy"
+  }
+ ]
+}
