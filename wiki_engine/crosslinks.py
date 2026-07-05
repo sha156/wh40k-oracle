@@ -21,7 +21,8 @@ from wiki_engine.models import WikiPage, WikiPageFrontmatter
 #
 # 数据来源：
 #   - data/10版40K通用技能速查表1.08.pdf（核心技能 + 武器技能全部条目）
-#   - data/战锤40K总规则10版老湿腐版1.11.pdf（致命伤害 P31、特殊保护 P30）
+#   - data/战锤40K总规则10版老湿腐版1.11.pdf（阶段流程/移动/致命伤害/特殊保护等通用核心规则）
+#   - data/规则注解中文.pdf（术语补充定义：接战范围/领导力测试/远程攻击等）
 # 术语页内容见 wiki/core-rules/<id>.md（由本次迭代人工核对来源后生成）。
 #
 # key 为断链中实际出现的裸关键词字面量（大小写/译名变体），value 为
@@ -66,6 +67,41 @@ _CORE_TERM_EXACT_ALIASES: Dict[str, str] = {
     # 通用核心规则概念（总规则10版）
     "致命伤": "mortal-wounds", "致命伤害": "mortal-wounds",
     "特殊保护": "invulnerable-save", "无敌豁免": "invulnerable-save",
+    "急流": "torrent",
+    # 通用核心规则：阶段/回合结构（总规则10版 + 规则注解中文）
+    "交战范围": "engagement-range", "接战范围": "engagement-range",
+    "移动阶段": "movement-phase",
+    "射击阶段": "shooting-phase",
+    "指挥阶段": "command-phase",
+    "冲锋阶段": "charge-phase",
+    "近战阶段": "fight-phase",
+    "战斗震慑测试": "battle-shock-test", "战斗震撼测试": "battle-shock-test",
+    "战斗震惊测试": "battle-shock-test", "震慑测试": "battle-shock-test",
+    "震慑": "battle-shock-test",
+    "绝望撤退测试": "desperate-escape-test", "绝望脱逃测试": "desperate-escape-test",
+    "战略预备队": "strategic-reserves", "Strategic Reserves": "strategic-reserves",
+    "领导力测试": "leadership-test",
+    "加速移动": "advance", "加速": "advance", "全力冲锋": "advance",
+    "撤退": "fall-back", "撤退移动": "fall-back",
+    "标准移动": "normal-move", "常规移动": "normal-move", "普通移动": "normal-move",
+    "命中掷骰": "hit-roll", "命中骰": "hit-roll",
+    "造伤骰": "wound-roll",
+    "计谋": "stratagem", "战略技能": "stratagem", "战略能力": "stratagem",
+    "巨兽": "monster",
+    "载具": "vehicle",
+    "飞行": "fly",
+    "远程攻击": "ranged-attack",
+    "援军入场子阶段": "reinforcements-step", "增援步骤": "reinforcements-step",
+    "援军": "reinforcements-step", "增援": "reinforcements-step",
+    "水平距离": "horizontal-distance",
+    "坚守射击": "fire-overwatch",
+    "快速部署": "rapid-ingress", "迅速入场": "rapid-ingress",
+    "悬浮": "hover",
+    "掩体效果": "benefit-of-cover", "掩体优势": "benefit-of-cover",
+    "掩体加成": "benefit-of-cover", "掩体奖励": "benefit-of-cover",
+    "回合": "battle-round", "游戏大回合": "battle-round",
+    "部署": "deployment", "部署阶段": "deployment",
+    "冲锋": "charge", "冲锋移动": "charge", "宣言冲锋": "charge",
 }
 
 # 数值/关键词参数化技能（如"速射1""连击2""反载具3+""斥候7〞"）：

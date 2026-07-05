@@ -28,7 +28,7 @@ raw:
 | Flechette pod | 12" | 5 | 4+ | 3 | 0 | 1 | - |
 | Ionic discharge cannon – standard | 18" | D6+1 | 4+ | 7 | -1 | 2 | [[core-rules/blast.md|爆炸]] |
 | Ionic discharge cannon – overcharge | 18" | D6+1 | 4+ | 8 | -2 | 3 | [[core-rules/blast.md|爆炸]], [[core-rules/hazardous.md|危险]] |
-| Phased plasma-flamer | 12" | 10 | N/A | 6 | -1 | 1 | [[core-rules/ignores-cover.md|无视掩体]], [[急流]] |
+| Phased plasma-flamer | 12" | 10 | N/A | 6 | -1 | 1 | [[core-rules/ignores-cover.md|无视掩体]], [[core-rules/torrent.md|急流]] |
 
 在为此武器选择目标前，选择其中一个模式进行攻击。
 
@@ -41,8 +41,8 @@ raw:
 - **核心技能**：[[core-rules/deadly-demise.md|致命终局]] D6
 - **阵营技能**：[[为了上上善道]]
 
-- **Battlesuit Support System**：该模型在同一回合中进行过[[撤退]]后仍具备射击资格。
-- **Nova Burst**：每场战斗限一次，在该模型进行普通、[[全力冲锋]]或[[撤退]]移动前，可以使用该技能。如果使用，则在本阶段结束前，其移动属性变为18"。
+- **Battlesuit Support System**：该模型在同一回合中进行过[[core-rules/fall-back.md|撤退]]后仍具备射击资格。
+- **Nova Burst**：每场战斗限一次，在该模型进行普通、[[core-rules/advance.md|全力冲锋]]或[[core-rules/fall-back.md|撤退]]移动前，可以使用该技能。如果使用，则在本阶段结束前，其移动属性变为18"。
 - **Weapon Support System**：每当该模型进行远程攻击时，你可以忽略所有命中骰的修正（无论是增益还是减益）。
 - **受损：剩余1-5点Wounds**：当该模型的剩余Wounds为1-5点时，每当该模型进行攻击，命中骰结果减1。
 - **Invulnerable Save**：5+

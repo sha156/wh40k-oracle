@@ -42,7 +42,7 @@ raw:
 - **为了上上善道（阵营）**
 - **装甲猎手**：本模型攻击巨兽或载具时命中骰结果+1。
 - **锁定阵列**：本模型每次选择进行射击时，你可以重投1颗命中骰或者重投1颗造伤骰。
-- **XV02驾驶员战斗服**：你的[[指挥阶段]]中，你可以选择1个12寸内的友方[[factions/钛帝国/units/hammerhead-gunship.md|锤头鲨炮艇]]单位，直到你的下个[[指挥阶段]]，那个单位的射击武器获得[[core-rules/lethal-hits.md|致命一击]]。
+- **XV02驾驶员战斗服**：你的[[core-rules/command-phase.md|指挥阶段]]中，你可以选择1个12寸内的友方[[factions/钛帝国/units/hammerhead-gunship.md|锤头鲨炮艇]]单位，直到你的下个[[core-rules/command-phase.md|指挥阶段]]，那个单位的射击武器获得[[core-rules/lethal-hits.md|致命一击]]。
 - **受损：剩余1-5W时**：当本模型剩余1-5W时，每次攻击时命中骰结果-1。
 
 ## 单位构成

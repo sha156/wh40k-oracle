@@ -43,7 +43,7 @@ raw:
 （无）
 
 ### 普通技能
-- **空中敏捷（Airborne Agility）**：在你的对手的[[回合]]结束时，如果本单位未位于任何敌方单位的[[交战范围]]内，你可以将其从战场上移除并将其置入[[战略预备队]]。
+- **空中敏捷（Airborne Agility）**：在你的对手的[[core-rules/battle-round.md|回合]]结束时，如果本单位未位于任何敌方单位的[[core-rules/engagement-range.md|交战范围]]内，你可以将其从战场上移除并将其置入[[core-rules/strategic-reserves.md|战略预备队]]。
 - **装备技能：监视无人机（Oversight Drone）**：每场战斗限一次，当装备者的单位被选中进行射击时，直到该阶段结束，该单位模型装备的远程武器获得[[core-rules/ignores-cover.md|无视掩体]]能力。（设计者注：在装备者旁边放置一个监视无人机标记，使用过此能力后移除该标记。）
 
 ## 单位构成

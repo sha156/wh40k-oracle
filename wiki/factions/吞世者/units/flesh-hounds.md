@@ -38,13 +38,13 @@ raw:
 ## 技能
 
 ### 核心技能
-- **深入打击 (Deep Strike)**：单位可在[[部署阶段]]通过[[core-rules/deep-strike.md|深入打击]]能力部署。
+- **深入打击 (Deep Strike)**：单位可在[[core-rules/deployment.md|部署阶段]]通过[[core-rules/deep-strike.md|深入打击]]能力部署。
 
 ### 阵营技能
 - **混沌之影 (The Shadow of Chaos)**：此单位的[[混沌统帅光环]]和[[暗影之步]]能力适用[[混沌之影]]规则。
 
 ### 单位技能
-- **亚空间猎手 (Hunters from the Warp)**：在对手[[回合]]结束时，若此单位未与任何敌方单位处于[[交战范围]]内，你可以将其从战场上移除并置入[[战略预备队]]。
+- **亚空间猎手 (Hunters from the Warp)**：在对手[[core-rules/battle-round.md|回合]]结束时，若此单位未与任何敌方单位处于[[core-rules/engagement-range.md|交战范围]]内，你可以将其从战场上移除并置入[[core-rules/strategic-reserves.md|战略预备队]]。
 
 ### 装备技能
 - **恐虐项圈 (Collar of Khorne)**：携带者在对抗[[core-rules/psychic-attacks.md|灵能攻击]]时获得[[core-rules/feel-no-pain.md|不怕疼 3+]]能力。

@@ -39,7 +39,7 @@ raw:
 - **Deadly Demise 1**（核心技能）
 - **Scouts 9"**（核心技能）
 - **For the Greater Good**（阵营技能）
-- **Outflank**：当本单位从[[Strategic Reserves]]进场时，它可以部署在对手的部署区内（其他所有限制依然适用）。
+- **Outflank**：当本单位从[[core-rules/strategic-reserves.md|Strategic Reserves]]进场时，它可以部署在对手的部署区内（其他所有限制依然适用）。
 
 ## 单位构成
 - **1个 TX42 Piranha**

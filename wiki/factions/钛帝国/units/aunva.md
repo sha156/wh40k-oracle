@@ -38,7 +38,7 @@ raw:
 
 - **二重性护盾（Duality Shield）**：每场战斗一次，每次有攻击以此单位为目标时，它可以使用此技能。若使用，则直到该阶段结束，此单位中的模型拥有 2+ 无敌豁免。
 - **二重性悖论（Paradox of Duality）**：每次有攻击以此单位为目标时，其命中掷骰结果减 1，致伤掷骰结果减 1。
-- **至高忠诚（光环）[Supreme Loyalty (Aura)]**：当一个友方[[factions/钛帝国/index.md|钛帝国]]单位位于此单位的 6" 内时，每次该单位进行[[震慑测试]]或[[领导力测试]]时，为测试结果加 1。
+- **至高忠诚（光环）[Supreme Loyalty (Aura)]**：当一个友方[[factions/钛帝国/index.md|钛帝国]]单位位于此单位的 6" 内时，每次该单位进行[[core-rules/battle-shock-test.md|震慑测试]]或[[core-rules/leadership-test.md|领导力测试]]时，为测试结果加 1。
 
 ## 单位构成
 - **1 个奥恩瓦（Aun’Va）——史诗英雄**
