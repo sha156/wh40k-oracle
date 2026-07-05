@@ -39,7 +39,7 @@ raw:
 
 ## 技能
 - **核心技能**：[[core-rules/deadly-demise.md|致命终局]] D6
-- **阵营技能**：[[为了上上善道]]
+- **阵营技能**：[[core-rules/for-the-greater-good.md|为了上上善道]]
 
 - **Battlesuit Support System**：该模型在同一回合中进行过[[core-rules/fall-back.md|撤退]]后仍具备射击资格。
 - **Nova Burst**：每场战斗限一次，在该模型进行普通、[[core-rules/advance.md|全力冲锋]]或[[core-rules/fall-back.md|撤退]]移动前，可以使用该技能。如果使用，则在本阶段结束前，其移动属性变为18"。

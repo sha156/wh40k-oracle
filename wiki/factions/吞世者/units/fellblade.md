@@ -49,7 +49,7 @@ verify_warn: true
 
 ## 技能
 - **[[core-rules/deadly-demise.md|致命覆灭]] D6+2 (Deadly Demise D6+2)**：当此模型被击毁时，对应[[core-rules/deadly-demise.md|致命覆灭]]规则的结果为 D6+2。
-- **[[誓言时刻]] (Oath of Moment)**：见星际战士[[誓言时刻]]规则。
+- **[[core-rules/oath-of-moment.md|誓言时刻]] (Oath of Moment)**：见星际战士[[core-rules/oath-of-moment.md|誓言时刻]]规则。
 - **Rolling Fortress**：每当一个远程攻击分配至你军队中的一个模型时，若由于此 Fellblade 模型导致该模型对于攻击单位中的所有模型并非完全可见，则该模型针对该攻击获得 [[core-rules/benefit-of-cover.md|掩体奖励]]。
 - **Damaged: 1-8 Wounds Remaining**：当此模型剩余 1-8 点 Wounds 时，其 OC 属性减少 4，且每次此模型进行攻击时，命中骰结果减 1。
 

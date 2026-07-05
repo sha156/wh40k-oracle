@@ -1,42 +1,19 @@
 # Lint Report
 
-_Generated: 2026-07-05 17:11 UTC_
+_Generated: 2026-07-05 17:24 UTC_
 
 | Severity | Count |
 |----------|-------|
-| error | 27 |
+| error | 4 |
 | warning | 24 |
 | info | 70 |
 
-**Total issues:** 121  |  **Auto-fixed:** 0
+**Total issues:** 98  |  **Auto-fixed:** 0
 
-- ❌ **[broken-links]** `factions/吞世者/units/chaos-thunderhawk.md` — 断链: [[黑暗契约]]
-- ❌ **[broken-links]** `factions/吞世者/units/fellblade.md` — 断链: [[誓言时刻]]
-- ❌ **[broken-links]** `factions/吞世者/units/fellblade.md` — 断链: [[誓言时刻]]
-- ❌ **[broken-links]** `factions/吞世者/units/flesh-hounds.md` — 断链: [[混沌统帅光环]]
-- ❌ **[broken-links]** `factions/吞世者/units/flesh-hounds.md` — 断链: [[暗影之步]]
-- ❌ **[broken-links]** `factions/吞世者/units/flesh-hounds.md` — 断链: [[混沌之影]]
-- ❌ **[broken-links]** `factions/吞世者/units/land-raider-achilles.md` — 断链: [[破敌誓言]]
-- ❌ **[broken-links]** `factions/吞世者/units/sicaran-punisher.md` — 断链: [[死战不退]]
-- ❌ **[broken-links]** `factions/吞世者/units/sicaran-punisher.md` — 断链: [[忠诚誓言]]
 - ❌ **[broken-links]** `factions/钛帝国/units/aunva.md` — 断链: [[近战武器]]
-- ❌ **[broken-links]** `factions/钛帝国/units/aunva.md` — 断链: [[至高荣耀之刃]]
-- ❌ **[broken-links]** `factions/钛帝国/units/ax-1-0-tiger-shark.md` — 断链: [[为了上善之道]]
-- ❌ **[broken-links]** `factions/钛帝国/units/broadside-battlesuits.md` — 断链: [[观察员]]
-- ❌ **[broken-links]** `factions/钛帝国/units/commander-in-enforcer-battlesuit.md` — 断链: [[为了上上善道]]
-- ❌ **[broken-links]** `factions/钛帝国/units/crisis-fireknife-battlesuits.md` — 断链: [[为了上上善道]]
-- ❌ **[broken-links]** `factions/钛帝国/units/crisis-fireknife-battlesuits.md` — 断链: [[标记光]]
-- ❌ **[broken-links]** `factions/钛帝国/units/crisis-starscythe-battlesuits.md` — 断链: [[观察员]]
-- ❌ **[broken-links]** `factions/钛帝国/units/crisis-sunforge-battlesuits.md` — 断链: [[标记光]]
-- ❌ **[broken-links]** `factions/钛帝国/units/crisis-sunforge-battlesuits.md` — 断链: [[观察员]]
-- ❌ **[broken-links]** `factions/钛帝国/units/ethereal.md` — 断链: [[标记光]]
-- ❌ **[broken-links]** `factions/钛帝国/units/ghostkeel-battlesuit.md` — 断链: [[为了上上善道]]
 - ❌ **[broken-links]** `factions/钛帝国/units/kroot-hounds.md` — 断链: [[专用运输工具]]
 - ❌ **[broken-links]** `factions/钛帝国/units/krootox-riders.md` — 断链: [[专用运输工具]]
 - ❌ **[broken-links]** `factions/钛帝国/units/krootox-riders.md` — 断链: [[克鲁特]]
-- ❌ **[broken-links]** `factions/钛帝国/units/manta.md` — 断链: [[为了更伟大的上好]]
-- ❌ **[broken-links]** `factions/钛帝国/units/sky-ray-gunship.md` — 断链: [[为了上上善道]]
-- ❌ **[broken-links]** `factions/钛帝国/units/yvahra-battlesuit.md` — 断链: [[为了上上善道]]
 - ⚠️ **[verify-warn]** `factions/吞世者/units/chaos-thunderhawk.md` — LLM 合成时数字校验发现原文没有的数字，需人工核对
 - ⚠️ **[verify-warn]** `factions/吞世者/units/defiler.md` — LLM 合成时数字校验发现原文没有的数字，需人工核对
 - ⚠️ **[verify-warn]** `factions/吞世者/units/fellblade.md` — LLM 合成时数字校验发现原文没有的数字，需人工核对

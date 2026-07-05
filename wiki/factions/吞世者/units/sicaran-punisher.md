@@ -38,8 +38,8 @@ verify_warn: true
 | Armoured tracks | 近战 | 6 | 4+ | 8 | 0 | 1 | - |
 
 ## 技能
-- **核心：[[死战不退]] D3**
-- **阵营：[[忠诚誓言]]**
+- **核心：[[core-rules/deadly-demise.md|死战不退]] D3**
+- **阵营：[[core-rules/oath-of-moment.md|忠诚誓言]]**
 - **旋转杀戮（Rotating Death）：** 当此模型的惩罚者转管炮以步兵单位为目标时，该武器具有[[core-rules/sustained-hits.md|持续命中 1]]技能。
 - **受损：剩余1-5点生命值（DAMAGED: 1-5 WOUNDS REMAINING）：** 当此模型剩余1-5点生命值时，每次此模型进行攻击时，命中掷骰结果减1。
 

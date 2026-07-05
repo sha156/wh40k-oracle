@@ -46,7 +46,7 @@ verify_warn: true
   - **[[core-rules/deadly-demise.md|致命毁灭]] 3D6**：当此模型被摧毁时，掷3个D6，对范围内的单位造成等量致命伤。
   - **[[core-rules/hover.md|悬浮]]**：此模型具有悬浮能力。
 - **阵营技能**：
-  - **[[为了更伟大的上好]]**：适用军队规则。
+  - **[[core-rules/for-the-greater-good.md|为了更伟大的上好]]**：适用军队规则。
 - **专属技能**：
   - **好斗部署**：在你的[[core-rules/shooting-phase.md|射击阶段]]，此模型射击后，选择一个被这些攻击中一次或多次命中的敌方单位。直到该阶段结束，每当一个本回合从此运输工具上离舰的友方模型对该敌方单位进行攻击时，你可以重掷[[core-rules/wound-roll.md|造伤骰]]。
   - **空军巨像**：每当你以[[core-rules/stratagem.md|计谋]]指定此模型为目标时，你必须支付该计谋所述CP消耗的三倍来这样做。

@@ -39,7 +39,7 @@ raw:
 
 ## 技能
 - **[[core-rules/deadly-demise.md|致命毁灭]] D6+2**（核心技能）
-- **[[为了上善之道]]**（阵营技能）
+- **[[core-rules/for-the-greater-good.md|为了上善之道]]**（阵营技能）
 - **泰坦猎手**：此模型的双联重型磁轨炮和寻的导弹在攻击半射程内的目标时具有[[core-rules/anti.md|反泰坦 3+]]能力。
 - **损伤：剩余1-6点生命**：当此模型剩余1-6点生命时，每次其进行攻击，命中掷骰结果减1。
 - **[[core-rules/invulnerable-save.md|无敌豁免]] 5+**

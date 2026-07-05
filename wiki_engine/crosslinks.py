@@ -40,7 +40,7 @@ _CORE_TERM_EXACT_ALIASES: Dict[str, str] = {
     "致命破灭": "deadly-demise", "致命消亡": "deadly-demise",
     "致命覆灭": "deadly-demise", "致命死亡": "deadly-demise",
     "致命毁灭": "deadly-demise", "致命终局": "deadly-demise",
-    "致命爆退": "deadly-demise",
+    "致命爆退": "deadly-demise", "死战不退": "deadly-demise",
     # 武器技能
     "突击": "assault", "Assault": "assault",
     "忽视掩体": "ignores-cover", "忽略掩体": "ignores-cover",
@@ -102,6 +102,14 @@ _CORE_TERM_EXACT_ALIASES: Dict[str, str] = {
     "回合": "battle-round", "游戏大回合": "battle-round",
     "部署": "deployment", "部署阶段": "deployment",
     "冲锋": "charge", "冲锋移动": "charge", "宣言冲锋": "charge",
+    # 阵营专属军队规则（钛帝国十版CODEX / 混沌星际战士 / 混沌恶魔 codex）
+    "誓言时刻": "oath-of-moment", "忠诚誓言": "oath-of-moment",
+    "破敌誓言": "oath-of-moment",
+    "黑暗契约": "dark-pact",
+    "混沌之影": "shadow-of-chaos",
+    "为了上上善道": "for-the-greater-good", "为了上善之道": "for-the-greater-good",
+    "为了更伟大的上好": "for-the-greater-good", "观察员": "for-the-greater-good",
+    "标记光": "markerlight",
 }
 
 # 数值/关键词参数化技能（如"速射1""连击2""反载具3+""斥候7〞"）：
