@@ -108,3 +108,63 @@ class TestLlmPairBook:
         llm_pair_book(*args, cache_dir=tmp_path, client=client)
         llm_pair_book(*args, cache_dir=tmp_path, client=client)
         assert client.calls == 1
+
+
+class FakeBadClient:
+    """返回非法 JSON 内容，验证响应容错。"""
+    def __init__(self, content="这不是JSON{损坏"):
+        self.calls = 0
+        _self = self
+
+        class _Completions:
+            def create(self, **kw):
+                _self.calls += 1
+                return FakeCompletion(content)
+
+        class _Chat:
+            def __init__(self): self.completions = _Completions()
+        self.chat = _Chat()
+
+
+class TestLlmPairRobustness:
+    def test_malformed_json_returns_empty_and_no_cache(self, tmp_path):
+        client = FakeBadClient()
+        pairs = llm_pair_book(
+            "钛书", [_cand("死亡之雨战机", None)],
+            [CanonicalEntry("9", "Sun Shark Bomber", "TAU")],
+            cache_dir=tmp_path, client=client)
+        assert pairs == []
+        assert client.calls == 1
+        # 坏响应绝不落缓存
+        assert list(tmp_path.glob("*.json")) == []
+
+    def test_duplicate_name_zh_no_entity_lost(self, tmp_path):
+        # 同名 name_zh、不同页码的两个实体：配对后两者都应存活，不被折叠丢失
+        e1 = EntityCandidate(book="钛书", raw_heading="死亡之雨战机",
+                             name_zh="死亡之雨战机", name_en=None, pages=[1])
+        e2 = EntityCandidate(book="钛书", raw_heading="死亡之雨战机",
+                             name_zh="死亡之雨战机", name_en=None, pages=[7])
+        client = FakeClient({"死亡之雨战机": "Sun Shark Bomber"})
+        pairs = llm_pair_book(
+            "钛书", [e1, e2],
+            [CanonicalEntry("9", "Sun Shark Bomber", "TAU")],
+            cache_dir=tmp_path, client=client)
+        assert len(pairs) == 2
+        assert {tuple(p.pages) for p in pairs} == {(1,), (7,)}
+        assert all(p.en == "Sun Shark Bomber" for p in pairs)
+
+
+class TestRunLlmFallback:
+    def test_no_api_key_returns_unchanged(self, tmp_path, monkeypatch):
+        from wiki_compile.pair import Pair, PairingResult
+        from wiki_compile.pair_llm import run_llm_fallback
+
+        monkeypatch.delenv("DEEPSEEK_API_KEY", raising=False)
+        paired = Pair(zh="火战士队", en="Fire Warriors", canonical_id="1",
+                      faction_id="TAU", book="钛书", pages=[1], confidence="exact")
+        leftover = _cand("神秘单位", None)
+        result = PairingResult(pairs=[paired], unmatched=[leftover])
+        out = run_llm_fallback(result, CANONICAL, tmp_path)
+        # 无 key：原样返回，不触网、不动内容
+        assert out.pairs == [paired]
+        assert out.unmatched == [leftover]

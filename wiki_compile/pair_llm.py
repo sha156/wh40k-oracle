@@ -46,31 +46,61 @@ def llm_pair_book(book: str, unmatched: List[EntityCandidate],
     en_names = [c.name for c in candidates]
     cache_dir.mkdir(parents=True, exist_ok=True)
     cache_file = cache_dir / (_cache_key(book, zh_names, en_names) + ".json")
+
+    # 缓存读取容错：损坏/非法JSON/非dict 一律当作未命中，触发重新调用
+    answer: Optional[dict] = None
     if cache_file.exists():
-        answer = json.loads(cache_file.read_text(encoding="utf-8"))
-    else:
+        try:
+            loaded = json.loads(cache_file.read_text(encoding="utf-8"))
+        except (OSError, ValueError):
+            loaded = None
+        if isinstance(loaded, dict):
+            answer = loaded
+
+    if answer is None:
         prompt = _PROMPT.format(book=book, zh_list="\n".join(zh_names),
                                 en_list="\n".join(en_names))
         resp = client.chat.completions.create(
             model=MODEL, temperature=0,
             messages=[{"role": "user", "content": prompt}],
             response_format={"type": "json_object"})
-        answer = json.loads(resp.choices[0].message.content)
+        # LLM 响应容错：非法JSON/结构异常 → 本书跳过，且不写坏缓存
+        try:
+            parsed = json.loads(resp.choices[0].message.content)
+        except (ValueError, AttributeError, TypeError):
+            print(f"[pair_llm] {book} LLM 响应非合法JSON，跳过")
+            return []
+        if not isinstance(parsed, dict):
+            print(f"[pair_llm] {book} LLM 响应非合法JSON，跳过")
+            return []
+        answer = parsed
         cache_file.write_text(json.dumps(answer, ensure_ascii=False),
                               encoding="utf-8")
 
+    raw_pairs = answer.get("配对", [])
+    if not isinstance(raw_pairs, list):
+        return []
+
     by_name = {c.name: c for c in candidates}
-    by_zh = {e.name_zh: e for e in todo}
+    # 按对象聚合：同名 name_zh 的多个实体各自成对，避免 dict 折叠导致实体丢失
+    by_zh: dict = {}
+    for e in todo:
+        by_zh.setdefault(e.name_zh, []).append(e)
     pairs: List[Pair] = []
-    for item in answer.get("配对", []):
+    for item in raw_pairs:
+        if not isinstance(item, dict):
+            continue
+        zh = item.get("zh")
         en = item.get("en")
-        e = by_zh.get(item.get("zh"))
-        if not en or e is None or en not in by_name:
+        ents_for_zh = by_zh.get(zh)
+        if not en or not ents_for_zh or en not in by_name:
             continue
         c = by_name[en]
-        pairs.append(Pair(zh=e.name_zh, en=c.name, canonical_id=c.id,
-                          faction_id=c.faction_id, book=e.book,
-                          pages=list(e.pages), confidence="llm"))
+        for e in ents_for_zh:  # 同名实体全部配对，共享同一 canonical 英文名
+            pairs.append(Pair(zh=e.name_zh, en=c.name, canonical_id=c.id,
+                              faction_id=c.faction_id, book=e.book,
+                              pages=list(e.pages), confidence="llm"))
+        by_zh.pop(zh, None)  # 消费掉，防止答案里重复 zh 导致重复出对
     return pairs
 
 
