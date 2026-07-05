@@ -34,8 +34,12 @@ db_sources/
 temp.pdf
 basher.txt
 
-# LLM refined output (generated; pilot committed intentionally in data_refined/)
-# Un-ignore when running --all to avoid dirtying the working tree
+# LLM refined output：整体为生成物、且属规则书衍生内容，不入库。
+# 试点《钛帝国十版CODEX》此前已显式提交，仍保持跟踪；其余书目本地保留、不推送。
+data_refined/
+
+# QA 基准运行产物（本地保留，不入库）
+qa_100_results.json
 
 # OS/editor noise
 .DS_Store
@@ -43,3 +47,5 @@ Thumbs.db
 
 # Local assistant config
 .claude/
+# 子代理开发流水线（SDD）中间产物
+.superpowers/

@@ -1,286 +1,128 @@
-# 战锤40K 规则书 RAG 问答系统
+# wh40k-oracle · 战锤40K 规则智库
 
-基于本地知识库的战锤40K规则问答项目。系统会把 `data/` 目录中的 PDF 规则书切分、向量化并建立 FAISS 索引，在查询时结合向量检索、BM25 关键词检索、RRF 融合和 FlashRank 重排，再调用 LLM 生成带来源引用的中文回答。
+面向战锤40K（Warhammer 40,000）规则的本地 AI 问答系统。把汉化规则书 PDF 结构化入库，用**混合检索 + 双语术语扩展 + LLM 生成带引用的中文回答**，全程本地嵌入、可切换云端 LLM。
 
-## 功能概览
+> 项目正从「纯 RAG 问答」演进为**战锤宇宙垂类 AI**（规则专家 + 对局模拟 + 军表实验室）。当前仓库已落地检索问答与两条数据结构化流水线，v2 蓝图见 `docs/superpowers/`。
 
-- 本地知识库构建：扫描 `data/` 下的 PDF，提取文本并建立向量索引
-- 混合检索：`FAISS + BM25 + RRF`
-- 本地重排：`FlashRank`
-- Web 界面：基于 Streamlit 的聊天式问答页面
-- 来源引用：回答中展示书名和页码
-- 书目过滤：可只检索指定规则书
+## 它能做什么
+
+- **规则问答**：中文提问 → 检索相关规则页 → LLM 生成回答，附**书名 + 页码**引用
+- **混合检索**：FAISS 向量 + BM25 关键词（jieba 中文分词）+ RRF 融合
+- **查询扩展**：社区译名别名（`UNIT_ALIASES`）+ 双语术语表（`wiki/terms.json`），中文单位名自动补英文官方名，提升召回
+- **书目过滤**：可只在指定规则书内检索
+- **Web 界面**：Streamlit 聊天式问答
+
+## 架构总览
+
+```
+        ┌── data/ 原始 PDF（多汉化组，版式各异）
+        │
+  ingest.py ──► PyMuPDF 提取 ──► 分块 ──► bge-m3 嵌入 ──► FAISS
+        │                                                    │
+        │   （可选前置）llm_refine.py：LLM 按战锤 schema      │
+        │   把兵牌页重排成结构化 Markdown → data_refined/     │
+        │                                                    ▼
+  app.py ── 查询 ─► FAISS + BM25(jieba) + RRF ─► 查询扩展 ─► LLM ─► 带引用回答
+                          ▲
+                          └── wiki/terms.json（wiki_compile 产出的双语术语表）
+```
+
+三条流水线：
+
+| 流水线 | 入口 | 作用 |
+|---|---|---|
+| **检索问答** | `app.py` / `ingest.py` | PDF → 向量库 → 混合检索 → LLM 回答 |
+| **LLM PDF 重构** | `llm_refine.py` | 把被 PyMuPDF 拍扁的兵牌属性表/武器表，用 LLM 重排成结构化条目（一个单位 = 一个 `##`），按页内容哈希缓存 |
+| **双语术语表** | `python -m wiki_compile` | 扫 `data_refined/` 实体 → 以 Wahapedia 官方英文名为锚做中英配对 → `wiki/terms.*`，接入检索查询扩展 |
 
 ## 技术栈
 
 | 模块 | 方案 |
 |---|---|
-| PDF 解析 | `PyMuPDFLoader` |
-| 分块 | `SemanticChunker` |
-| 嵌入模型 | `BAAI/bge-m3` |
-| 向量库 | `FAISS` |
-| 关键词检索 | `BM25` |
-| 融合 | `Reciprocal Rank Fusion` |
-| 重排 | `FlashRank / ms-marco-MiniLM-L-12-v2` |
-| LLM 接口 | `langchain-openai` |
-| 前端 | `Streamlit` |
+| PDF 解析 | PyMuPDF |
+| 分块 | SemanticChunker / 按 `##` 条目分块（重构后） |
+| 嵌入 | `BAAI/bge-m3`（本地 CPU 推理） |
+| 向量库 | FAISS |
+| 关键词检索 | BM25 + jieba 中文分词 |
+| 融合 | Reciprocal Rank Fusion (RRF) |
+| 重排 | FlashRank（**默认关闭**：实测 ms-marco 系列对中文重排差于 RRF 顺序，见 `CLAUDE.md`） |
+| LLM | DeepSeek `deepseek-chat` / 智谱 `glm-4-flash`（OpenAI 兼容接口，可切换） |
+| 术语锚点 | Wahapedia wh40k10ed CSV |
+| 前端 | Streamlit |
+
+## 运行要求
+
+- Windows + PowerShell
+- **Python 3.9**（项目 `.venv` 为 3.9；代码已避免 3.10+ 语法）
+- 首次需联网下载 bge-m3 模型（走 hf-mirror 镜像）
+- 建议 ≥ 16 GB 内存（CPU 嵌入推理）
+
+## 快速开始
+
+```powershell
+# 1. 依赖
+python -m venv .venv
+.\.venv\Scripts\Activate.ps1
+pip install -r requirements.txt
+
+# 2. 配置 API key（走环境变量，不落盘）
+copy .env.example .env    # 填入 DeepSeek / 智谱 key
+
+# 3. 把 PDF 规则书放进 data/，构建索引
+.\.venv\Scripts\python.exe ingest.py            # 增量
+.\.venv\Scripts\python.exe ingest.py --rebuild  # 清空重建
+
+# 4. 启动 Web 界面
+.\run_streamlit.ps1
+```
+
+### 可选：LLM 结构化流水线
+
+```powershell
+# 兵牌页 LLM 重构（需 DEEPSEEK_API_KEY），产出 data_refined/<书名>/
+.\.venv\Scripts\python.exe llm_refine.py
+
+# 双语术语表：扫实体 → 下载 Wahapedia → 中英配对 → 生成 wiki/terms.*
+.\.venv\Scripts\python.exe -m wiki_compile extract
+.\.venv\Scripts\python.exe -m wiki_compile fetch-canonical   # 需代理
+.\.venv\Scripts\python.exe -m wiki_compile pair --llm        # LLM 兜底需 DEEPSEEK_API_KEY
+.\.venv\Scripts\python.exe -m wiki_compile terms
+```
 
 ## 项目结构
 
 ```text
 .
-├── app.py                   # Streamlit Web 应用
-├── ingest.py                # PDF 入库与索引构建脚本
+├── app.py                   # Streamlit 应用：混合检索 + 查询扩展 + LLM 回答
+├── ingest.py                # PDF 入库与索引构建（优先读 data_refined/）
+├── llm_refine.py            # LLM PDF 重构流水线（兵牌页 → 结构化 Markdown）
+├── refine_prompt.py         # 战锤领域重构 prompt
+├── md_chunker.py            # 重构结果按 ## 条目分块
 ├── hf_embeddings_compat.py  # HuggingFaceEmbeddings 兼容层
-├── run_streamlit.ps1        # 使用项目 .venv 启动 Streamlit
-├── requirements.txt         # 依赖列表
-├── data/                    # 放置 PDF 规则书
-├── local_vector_store/      # FAISS 索引与增量处理记录
-├── opt/                     # 模型缓存目录
-├── fix_model.py             # FlashRank 模型下载/修复辅助脚本
-└── download_bge.py          # 旧版辅助脚本，默认流程不依赖
+├── wiki_compile/            # 双语术语表流水线（extract→canonical→pair→terms）
+├── wiki/terms.json|md       # 产出：中英术语表（接入检索）
+├── tests/                   # pytest 测试
+├── docs/superpowers/        # v2 设计蓝图与实现计划
+├── data/                    # 原始 PDF（不入库）
+├── data_refined/            # LLM 重构结果（试点入库，其余本地）
+├── local_vector_store/      # FAISS 索引（不入库）
+├── opt/                     # 模型缓存（不入库）
+├── fix_model.py             # FlashRank 模型下载辅助
+└── download_bge.py          # bge-m3 下载辅助
 ```
 
-## 运行要求
-
-- Windows + PowerShell
-- Python 3.10 及以上
-- 推荐使用项目虚拟环境 `.venv`
-- 首次下载模型需要可用网络
-- 建议至少 16 GB 内存
-
-## 安装依赖
+## 测试
 
 ```powershell
-python -m venv .venv
-.\.venv\Scripts\Activate.ps1
-pip install -r requirements.txt
+.\.venv\Scripts\python.exe -m pytest tests\ -v
 ```
 
-如果你已经有 `.venv`，只需要激活并安装依赖即可。
+## 数据与版权
 
-## 准备 PDF 数据
+规则书 PDF 来自多个汉化组，属受版权保护内容；`data/` 原始 PDF 与绝大部分 `data_refined/` 结构化结果**不纳入仓库**，仅本地使用。仓库内仅保留一本《钛帝国十版 CODEX》试点重构结果用于演示。请勿用于再分发。
 
-把需要入库的规则书 PDF 放到 `data/` 目录，例如：
+## 路线图
 
-```text
-data/
-├── 核心规则.pdf
-├── 黑暗天使.pdf
-├── 混沌星际战士.pdf
-└── 星际战士.pdf
-```
+当前（已完成）：检索问答链、LLM PDF 重构试点、P0 双语术语表并接入检索。
 
-## 构建知识库
-
-增量构建：
-
-```powershell
-.\.venv\Scripts\python.exe ingest.py
-```
-
-全量重建：
-
-```powershell
-.\.venv\Scripts\python.exe ingest.py --rebuild
-```
-
-自定义 PDF 目录：
-
-```powershell
-.\.venv\Scripts\python.exe ingest.py --data-dir D:\path\to\pdfs
-```
-
-构建完成后会在 `local_vector_store/` 生成：
-
-- `index.faiss`
-- `index.pkl`
-- `processed_files.json`
-
-## 启动应用
-
-推荐使用项目内脚本启动，这样不会误用系统 Python 或 Conda 环境：
-
-```powershell
-.\run_streamlit.ps1
-```
-
-等价命令：
-
-```powershell
-.\.venv\Scripts\python.exe -m streamlit run app.py
-```
-
-默认访问地址：
-
-```text
-http://localhost:8501
-```
-
-如果 8501 端口被占用：
-
-```powershell
-.\run_streamlit.ps1 --server.port 8508
-```
-
-## API Key 配置
-
-应用当前会按以下顺序读取 API Key：
-
-1. Streamlit secrets 中的 `OPENAI_API_KEY`
-2. 进程环境变量 `OPENAI_API_KEY`
-3. 侧边栏手动输入
-
-推荐方式是使用 `.streamlit/secrets.toml`：
-
-```toml
-OPENAI_API_KEY = "你的 API Key"
-```
-
-也可以在启动前设置环境变量：
-
-```powershell
-$env:OPENAI_API_KEY = "你的 API Key"
-.\run_streamlit.ps1
-```
-
-注意：当前代码不会自动读取根目录 `.env` 文件。只有你自己先把环境变量导入到当前终端，或改代码引入 `python-dotenv`，`.env` 才会生效。
-
-## 使用说明
-
-启动成功后，你可以：
-
-- 在侧边栏选择 LLM 提供商：`DeepSeek` 或 `ZhipuAI (GLM-4)`
-- 输入 API Key
-- 选择是否只检索部分规则书
-- 在聊天框直接提问规则问题
-
-应用会：
-
-1. 从 FAISS 进行语义召回
-2. 从 BM25 进行关键词召回
-3. 用 RRF 合并结果
-4. 用 FlashRank 做精排
-5. 让 LLM 基于检索片段生成答案
-
-## RAG 的局限性
-
-这个项目能提高查规则的效率，但它并不好用到可以“无脑信任”的程度。对战锤40K这类规则密集、例外很多、措辞很关键的领域，RAG 有几个天然短板：
-
-- 检索不到就答不好。相关段落如果没被召回，后面的 LLM 再强也只能基于不完整上下文作答。
-- 分块会破坏上下文。规则条文、附注、限制条件、例外条款可能被切到不同 chunk，导致回答只抓到一半。
-- PDF 解析不稳定。表格、双栏排版、页眉页脚、勘误页、数据卡格式，都会影响文本提取质量。
-- 关键词很敏感。同一个规则换一种问法，召回结果可能明显变差，尤其是中英混杂、俗称、简称很多时。
-- 多跳推理能力有限。涉及“主规则 + 数据卡 + FAQ/勘误 + 特殊阵营规则”联合判断时，RAG 很容易漏条件。
-- 规则优先级不好处理。战锤规则里常见“一般规则 vs 特例规则”“旧版文本 vs 新版勘误”，RAG 不一定能稳定判断谁优先。
-- 会出现“看起来对，其实不严谨”的答案。LLM 很擅长把话说顺，但顺不代表规则判断正确。
-- 来源引用不等于答案可靠。模型可能引用了对的书和页码，但解释过程仍然有偏差。
-- 知识库会过时。只要 PDF 没更新，FAQ、勘误、平衡补丁、新版数据卡都不会自动反映进去。
-- 延迟和成本都不低。一次问答通常要走检索、融合、重排、生成，速度不如直接全文搜索，稳定性也更依赖模型和网络。
-
-更直接地说，这个项目更适合：
-
-- 快速定位可能相关的规则页
-- 给出一个初步解释
-- 帮你缩小人工核对范围
-
-它不适合：
-
-- 作为比赛裁定依据
-- 代替玩家自己核对原文
-- 在复杂规则冲突场景下直接下最终结论
-
-如果你想把它用得更稳，比较现实的做法是把它当成“规则检索助手”，而不是“规则裁判”。看到答案后，最好始终回到原书页码和勘误文本做最终确认。
-
-## 已处理的兼容性问题
-
-这个仓库当前已经处理了两个常见问题：
-
-### 1. 启动时误用了错误的 Python 环境
-
-如果你直接运行系统里的 `streamlit run app.py`，很容易落到全局 Python / Conda 环境，导致缺少 `langchain-huggingface`，或者 `torch` 版本不对。
-
-当前 `app.py` 已经加了保护提示，但正确做法仍然是：
-
-```powershell
-.\run_streamlit.ps1
-```
-
-### 2. FlashRank 模型目录嵌套
-
-有些压缩包会解压成这种结构：
-
-```text
-opt/
-└── ms-marco-MiniLM-L-12-v2/
-    └── ms-marco-MiniLM-L-12-v2/
-        └── flashrank-MiniLM-L-12-v2_Q.onnx
-```
-
-当前代码已经兼容这种目录结构。即使 FlashRank 加载失败，也会自动降级为仅使用 RRF 排序，页面仍可启动。
-
-## 常见问题
-
-### Q1：启动时报 `ModuleNotFoundError: No module named 'langchain_huggingface'`
-
-你大概率用了错误的解释器。不要用系统 `streamlit`，改用：
-
-```powershell
-.\run_streamlit.ps1
-```
-
-### Q2：启动时报 FlashRank 模型找不到
-
-先尝试直接启动当前版本，代码会自动识别嵌套目录。如果模型确实没下载下来，再运行：
-
-```powershell
-.\.venv\Scripts\python.exe fix_model.py
-```
-
-### Q3：页面提示“知识库尚未构建”
-
-说明 `local_vector_store/` 中没有可用索引。先执行：
-
-```powershell
-.\.venv\Scripts\python.exe ingest.py
-```
-
-### Q4：8501 端口被占用
-
-换一个端口启动：
-
-```powershell
-.\run_streamlit.ps1 --server.port 8508
-```
-
-### Q5：模型下载很慢或失败
-
-代码里已经设置了 `HF_ENDPOINT=https://hf-mirror.com`。如果你的网络环境不适用，需要自行调整镜像、代理或 SSL 设置。
-
-`ingest.py` 当前还硬编码了这两项代理：
-
-```python
-os.environ["HTTPS_PROXY"] = "http://127.0.0.1:7897"
-os.environ["HTTP_PROXY"]  = "http://127.0.0.1:7897"
-```
-
-如果你本机没有这个代理，请先修改 [ingest.py](/D:/Project/py/RAG/ingest.py#L38) 和 [ingest.py](/D:/Project/py/RAG/ingest.py#L39)。
-
-## 开发说明
-
-- `app.py` 中的嵌入模型、检索参数和重排参数都在文件顶部配置
-- `ingest.py` 支持增量构建，依赖 `processed_files.json` 判断文件是否变化
-- `hf_embeddings_compat.py` 用于兼容不同版本的 LangChain/HuggingFace 包结构
-
-## 当前默认命令
-
-```powershell
-# 1. 激活环境
-.\.venv\Scripts\Activate.ps1
-
-# 2. 构建知识库
-.\.venv\Scripts\python.exe ingest.py
-
-# 3. 启动应用
-.\run_streamlit.ps1
-```
+规划中（`docs/superpowers/` v2 蓝图）：技能效果 DSL + 蒙特卡洛对局模拟、军表验表与点评、Karpathy LLM-Wiki 知识组织、FastAPI + 前端网站化。
