@@ -12,6 +12,11 @@ CONT_MARKER = "<!--CONT-->"
 _PREFIX_RE = re.compile(r"^[\(（][^\)）]{1,10}[\)）]\s*")
 # 标题结尾的英文名：大写开头、由大写/数字/常见标点组成、一直到行尾
 _EN_TAIL_RE = re.compile(r"[A-Z][A-Z0-9'’\-\.,&/\(\) ]*$")
+# 混合大小写英文尾：每个词大写开头且含小写字母（如 Shas’o R’alai），
+# 仅在其前有中文时启用，避免误切纯英文标题（Champions of Faith）
+_MIXED_WORD = r"[A-Z](?=[A-Za-z0-9'’\-\.]*[a-z])[A-Za-z0-9'’\-\.]*"
+_EN_MIXED_TAIL_RE = re.compile(r"(?:{w} )*{w}$".format(w=_MIXED_WORD))
+_CJK_RE = re.compile(r"[一-鿿]")
 # 解说性子标题后缀：并入同名实体页码，不单独成实体
 NOISE_SUFFIXES = ("能力详解", "武器详解", "技能详解", "详解")
 
@@ -32,8 +37,31 @@ def parse_heading(heading: str) -> Tuple[Optional[str], Optional[str]]:
     if m and len(m.group(0).strip()) >= 3:
         en = m.group(0).strip()
         zh = text[: m.start()].strip() or None
+        if zh:
+            zh, en = _strip_duplicated_lead_token(text, zh, en)
         return zh, en
+    m = _EN_MIXED_TAIL_RE.search(text)
+    if m and len(m.group(0)) >= 3:
+        zh = text[: m.start()].strip()
+        if _CJK_RE.search(zh):
+            return zh, m.group(0)
     return (text or None), None
+
+
+def _strip_duplicated_lead_token(
+        text: str, zh: str, en: str) -> Tuple[Optional[str], str]:
+    """'虎鲨AX-1-0 AX-1-0 TIGER SHARK'：型号码同现于中文尾与英文头时，
+    重复的首 token 归中文侧 → ('虎鲨AX-1-0', 'AX-1-0 TIGER SHARK')。"""
+    tokens = en.split()
+    while len(tokens) >= 2 and tokens[0] == tokens[1]:
+        tokens = tokens[1:]
+    new_en = " ".join(tokens)
+    if new_en == en:
+        return zh, en
+    idx = text.rfind(new_en)
+    if idx <= 0:
+        return zh, en
+    return (text[:idx].strip() or None), new_en
 
 
 def _cont_page_continues(lines: List[str]) -> bool:

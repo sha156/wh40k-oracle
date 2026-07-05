@@ -35,6 +35,23 @@ class TestParseHeading:
         zh, en = parse_heading("战术目标 A")
         assert en is None
 
+    def test_duplicated_model_code_prefix(self):
+        # 型号码同时出现在中文名尾和英文名头：'虎鲨AX-1-0 AX-1-0 TIGER SHARK'
+        # 重复的首 token 应归中文侧，英文侧与 canonical 'AX-1-0 Tiger Shark' 对齐
+        assert parse_heading("虎鲨AX-1-0 AX-1-0 TIGER SHARK") == (
+            "虎鲨AX-1-0", "AX-1-0 TIGER SHARK")
+
+    def test_mixed_case_english_tail(self):
+        # 混合大小写英文尾（含弯撇号）：'夏司’欧 R’ALAI Shas’o R’alai'
+        # 应切出 en='Shas’o R’alai'，与 canonical 'Shas’o R’alai' 对齐
+        assert parse_heading("夏司’欧 R’ALAI Shas’o R’alai") == (
+            "夏司’欧 R’ALAI", "Shas’o R’alai")
+
+    def test_pure_mixed_case_english_heading_unchanged(self):
+        # 无中文的混合大小写标题保持旧行为（整体归 zh 侧），不误切
+        assert parse_heading("Champions of Faith") == (
+            "Champions of Faith", None)
+
 
 class TestExtractBook:
     def _make_book(self, tmp_path: Path) -> Path:

@@ -127,6 +127,7 @@
 | — | Tx42 Piranha | exact | Faction Pack Tau Empire | 27,28 |
 | — | Vespid Stingwings | exact | Faction Pack Tau Empire | 9,10 |
 | — | Y’vahra Battlesuit | exact | Faction Pack Tau Empire | 51,52 |
+| 虎鲨AX-1-0 | AX-1-0 Tiger Shark | exact | 钛帝国十版CODEX-20251112 | 56 |
 | 安’史 | Aun’shi | exact | 钛帝国十版CODEX-20251112 | 60 |
 | 安’瓦 | Aun’va | exact | 钛帝国十版CODEX-20251112 | 59 |
 | 梭鱼 | Barracuda | exact | 钛帝国十版CODEX-20251112 | 75 |
@@ -171,6 +172,7 @@
 | 遥感哨塔 | Remote Sensor Tower | exact | 钛帝国十版CODEX-20251112 | 77 |
 | 激流战斗服 | Riptide Battlesuit | exact | 钛帝国十版CODEX-20251112 | 45 |
 | 燃雨战斗服 | R’varna Battlesuit | exact | 钛帝国十版CODEX-20251112 | 66 |
+| 夏司’欧 R’ALAI | Shas’o R’alai | exact | 钛帝国十版CODEX-20251112 | 62 |
 | 天魟炮艇 | Sky Ray Gunship | exact | 钛帝国十版CODEX-20251112 | 47 |
 | 潜行战斗服小队 | Stealth Battlesuits | exact | 钛帝国十版CODEX-20251112 | 29 |
 | 雷暴 | Stormsurge | exact | 钛帝国十版CODEX-20251112 | 51 |

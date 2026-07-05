@@ -1888,6 +1888,17 @@
    "confidence": "exact"
   },
   {
+   "zh": "虎鲨AX-1-0",
+   "en": "AX-1-0 Tiger Shark",
+   "canonical_id": "000000455",
+   "faction_id": "TAU",
+   "book": "钛帝国十版CODEX-20251112",
+   "pages": [
+    56
+   ],
+   "confidence": "exact"
+  },
+  {
    "zh": "塔'钨钠至高装甲",
    "en": "Ta’unar Supremacy Armour",
    "canonical_id": "000000446",
@@ -1939,6 +1950,17 @@
    "book": "钛帝国十版CODEX-20251112",
    "pages": [
     61
+   ],
+   "confidence": "exact"
+  },
+  {
+   "zh": "夏司’欧 R’ALAI",
+   "en": "Shas’o R’alai",
+   "canonical_id": "000000439",
+   "faction_id": "TAU",
+   "book": "钛帝国十版CODEX-20251112",
+   "pages": [
+    62
    ],
    "confidence": "exact"
   },
