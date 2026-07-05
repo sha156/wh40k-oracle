@@ -32,3 +32,24 @@ class TestLoadTermAliases:
 
     def test_missing_file_returns_empty(self, tmp_path):
         assert load_term_aliases(tmp_path / "nope.json") == {}
+
+    def test_top_level_list_returns_empty(self, tmp_path):
+        # 合法 JSON 但顶层非 dict（schema 错误）→ 空表，不抛异常
+        f = tmp_path / "terms.json"
+        f.write_text("[1, 2, 3]", encoding="utf-8")
+        assert load_term_aliases(f) == {}
+
+    def test_pairs_not_a_list_returns_empty(self, tmp_path):
+        # pairs 字段类型错误（非列表）→ 空表，不抛异常
+        f = tmp_path / "terms.json"
+        f.write_text(json.dumps({"pairs": "oops"}), encoding="utf-8")
+        assert load_term_aliases(f) == {}
+
+    def test_non_dict_item_in_pairs_skipped(self, tmp_path):
+        # pairs 列表中混入非 dict 元素 → 跳过该项，其余正常项仍被读取
+        f = tmp_path / "terms.json"
+        f.write_text(json.dumps({"pairs": [
+            "not-a-dict",
+            {"zh": "火战士队", "en": "Fire Warriors"},
+        ]}, ensure_ascii=False), encoding="utf-8")
+        assert load_term_aliases(f) == {"火战士队": "Fire Warriors"}

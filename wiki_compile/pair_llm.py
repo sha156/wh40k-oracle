@@ -112,7 +112,15 @@ def run_llm_fallback(result: PairingResult, canonical: List[CanonicalEntry],
         print("未设置 DEEPSEEK_API_KEY，跳过 LLM 兜底；残余留在 review_needed。")
         return result
     from openai import OpenAI
-    client = OpenAI(api_key=api_key, base_url=BASE_URL)
+    import httpx
+    # 与 llm_refine.py 保持一致：走 Clash 代理访问 api.deepseek.com；
+    # 可用 HTTPS_PROXY 覆盖，显式设为空字符串则不走代理。
+    proxy = os.environ.get("HTTPS_PROXY", "http://127.0.0.1:7897")
+    if proxy:
+        http_client = httpx.Client(proxy=proxy)
+        client = OpenAI(api_key=api_key, base_url=BASE_URL, http_client=http_client)
+    else:
+        client = OpenAI(api_key=api_key, base_url=BASE_URL)
 
     votes: dict = {}
     for p in result.pairs:

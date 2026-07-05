@@ -168,3 +168,59 @@ class TestRunLlmFallback:
         # 无 key：原样返回，不触网、不动内容
         assert out.pairs == [paired]
         assert out.unmatched == [leftover]
+
+    def test_client_uses_proxy_from_env(self, tmp_path, monkeypatch):
+        # 验证客户端构造读取 HTTPS_PROXY（默认回退 Clash 端口），不发真实网络请求：
+        # 用假 OpenAI/httpx.Client 记录构造参数，且残余条目无阵营锚点，
+        # 不会走到 llm_pair_book 的真实 create() 调用。
+        import httpx
+        import openai
+
+        from wiki_compile.pair_llm import run_llm_fallback
+
+        monkeypatch.setenv("DEEPSEEK_API_KEY", "fake-key")
+        monkeypatch.setenv("HTTPS_PROXY", "http://proxy.example:1234")
+
+        captured = {}
+
+        class FakeHttpxClient:
+            def __init__(self, proxy=None):
+                captured["proxy"] = proxy
+
+        class FakeOpenAI:
+            def __init__(self, **kwargs):
+                captured["kwargs"] = kwargs
+
+        monkeypatch.setattr(httpx, "Client", FakeHttpxClient)
+        monkeypatch.setattr(openai, "OpenAI", FakeOpenAI)
+
+        leftover = _cand("神秘单位", None)  # book 无精确命中票 → fid 为 None，不会调用 LLM
+        result = PairingResult(pairs=[], unmatched=[leftover])
+        out = run_llm_fallback(result, CANONICAL, tmp_path)
+
+        assert captured["proxy"] == "http://proxy.example:1234"
+        assert captured["kwargs"]["http_client"] is not None
+        assert out.unmatched == [leftover]
+
+    def test_client_no_proxy_when_env_blank(self, tmp_path, monkeypatch):
+        # 显式设为空字符串 → 不传 http_client，走直连
+        import openai
+
+        from wiki_compile.pair_llm import run_llm_fallback
+
+        monkeypatch.setenv("DEEPSEEK_API_KEY", "fake-key")
+        monkeypatch.setenv("HTTPS_PROXY", "")
+
+        captured = {}
+
+        class FakeOpenAI:
+            def __init__(self, **kwargs):
+                captured["kwargs"] = kwargs
+
+        monkeypatch.setattr(openai, "OpenAI", FakeOpenAI)
+
+        leftover = _cand("神秘单位", None)
+        result = PairingResult(pairs=[], unmatched=[leftover])
+        run_llm_fallback(result, CANONICAL, tmp_path)
+
+        assert "http_client" not in captured["kwargs"]

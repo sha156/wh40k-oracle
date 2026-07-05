@@ -41,5 +41,10 @@ def load_term_aliases(path: Path) -> Dict[str, str]:
         data = json.loads(path.read_text(encoding="utf-8"))
     except (OSError, ValueError):
         return {}
-    return {p["zh"]: p["en"] for p in data.get("pairs", [])
-            if p.get("zh") and p.get("en")}
+    if not isinstance(data, dict):
+        return {}
+    try:
+        return {p["zh"]: p["en"] for p in data.get("pairs", [])
+                if isinstance(p, dict) and p.get("zh") and p.get("en")}
+    except (AttributeError, TypeError):
+        return {}

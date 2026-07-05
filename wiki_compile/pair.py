@@ -68,6 +68,8 @@ def pair_entities(entities: List[EntityCandidate],
         if not e.name_en:
             result.unmatched.append(e)
             continue
+        # 当本书无精确命中锚点时 fid 为 None，模糊匹配退化为全阵营范围
+        # （confidence 仍标 "fuzzy"，但非阵营限定）。
         fid = book_faction.get(e.book)
         pool = [n for n, c in by_norm.items()
                 if fid is None or c.faction_id == fid]
