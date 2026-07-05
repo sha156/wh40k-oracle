@@ -108,10 +108,21 @@ for _k, _v in UNIT_ALIASES.items():
     for _w in _v.split():
         jieba.add_word(_w)
 
+# ══════════════════════════════════════════════
+#  wiki/terms.json：P0 双语术语表 → 查询扩展
+#  中文单位名命中时追加英文 canonical 名，让 BM25/向量能召回英文 Faction Pack 页
+# ══════════════════════════════════════════════
+from wiki_compile.terms import load_term_aliases
+
+TERM_ALIASES = load_term_aliases(Path(__file__).parent / "wiki" / "terms.json")
+for _zh in TERM_ALIASES:
+    jieba.add_word(_zh)
+
 
 def expand_query(query: str) -> str:
-    """查询扩展：命中社区译名时，追加库内译名（保留原词）。"""
+    """查询扩展：命中社区译名/术语表时，追加库内译名与英文名（保留原词）。"""
     extras = [v for k, v in UNIT_ALIASES.items() if k in query]
+    extras += [v for k, v in TERM_ALIASES.items() if k in query]
     if not extras:
         return query
     return query + "（" + "，".join(dict.fromkeys(extras)) + "）"
