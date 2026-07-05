@@ -2,8 +2,9 @@
 app.py — 战锤40K规则书 RAG 问答系统
 =====================================
 架构：
-  检索层：FAISS 向量检索 + BM25 关键词检索 → Reciprocal Rank Fusion 融合
-  重排层：FlashRank（ms-marco-MiniLM-L-12-v2，轻量快速）
+  检索层：FAISS 向量检索 + BM25 关键词检索（jieba 中文分词）→ RRF 融合
+          查询扩展：常见社区译名 → 库内规则书译名（UNIT_ALIASES）
+  重排层：默认关闭（实测 ms-marco 系列对中文重排差于 RRF 顺序，见 USE_RERANKER 注释）
   生成层：DeepSeek / ZhipuAI（可在侧边栏切换）
   界面层：Streamlit 聊天 UI + 元数据过滤 + 来源引用
 
@@ -24,6 +25,7 @@ os.environ["HF_ENDPOINT"] = "https://hf-mirror.com"
 os.environ["TOKENIZERS_PARALLELISM"] = "false"
 
 try:
+    import jieba
     import streamlit as st
     from langchain_community.document_loaders import PyMuPDFLoader
     from langchain_community.vectorstores import FAISS
@@ -50,11 +52,80 @@ DATA_DIR          = Path("data")
 EMBED_MODEL_NAME  = "BAAI/bge-m3"
 EMBED_MODEL_CACHE = "./opt"
 RERANKER_MODEL    = "ms-marco-MiniLM-L-12-v2"   # FlashRank 本地模型名
+# 实测（2026-07-04，16 个失败案例基准）：ms-marco 系列（含 MultiBERT 多语言版）
+# 对中文查询的重排效果差于 RRF 融合顺序（命中@8：RRF 13/14 vs MultiBERT 12/14），
+# 且旧代码调用 reranker.rank() 在 flashrank 0.2.x 下从未生效，77% 基线即纯 RRF。
+# 故默认关闭；换用真正的中文重排模型（如 bge-reranker）时再开。
+USE_RERANKER      = False
 
 # 检索参数
-FAISS_TOP_K   = 15   # 向量召回数量
-BM25_TOP_K    = 10   # BM25 召回数量
-RERANK_TOP_N  = 5    # Rerank 后保留数量
+FAISS_TOP_K   = 30   # 向量召回数量
+BM25_TOP_K    = 15   # BM25 召回数量
+RERANK_TOP_N  = 8    # Rerank 后保留数量
+
+
+# ══════════════════════════════════════════════
+#  中文分词（BM25 用）
+# ══════════════════════════════════════════════
+# BM25Retriever 默认按空格分词（text.split()），对中文完全无效——
+# 整句变成一个 token，关键词永远匹配不上。必须用 jieba 分词。
+_BM25_STOPWORDS = frozenset(
+    "的 了 是 和 与 或 在 各 其 该 之 为 有 无 多少 什么 怎么 如何 哪些 请 吗 呢 "
+    "、 。 ， ？ ！ ： ； （ ） 「 」 【 】 | - ? , . ( )".split()
+)
+
+
+def chinese_tokenize(text: str) -> list[str]:
+    """jieba 搜索引擎模式分词 + 去停用词，用于 BM25 建索引和查询。"""
+    return [
+        tok for tok in jieba.cut_for_search(text)
+        if tok.strip() and tok not in _BM25_STOPWORDS
+    ]
+
+
+# ══════════════════════════════════════════════
+#  常见社区译名 → 库内规则书实际译名
+# ══════════════════════════════════════════════
+# 规则书来自不同汉化组，同一单位的译名与社区常用叫法不一致。
+# 检索前把库内译名追加到查询里（扩展而非替换），BM25 和向量都受益。
+# 各映射均已对照 PDF 原文确认（英文原名标注在注释中）。
+UNIT_ALIASES = {
+    "卡巴利特战士": "阴谋团武士",       # Kabalite Warriors（黑暗灵族）
+    "卡巴利特":     "阴谋团",
+    "激素虫":       "刀虫",             # Hormagaunt（泰伦虫族）
+    "铁皮大壮":     "死死无畏机甲",     # Deff Dread（兽人）
+    "重武器小队":   "重武器班",         # Heavy Weapons Squad（星界军）
+    "卫兵小队":     "卡迪安突击队 步兵班",  # Shock Troops / Infantry Squad（星界军）
+    "死亡翼":       "死翼",             # Deathwing（黑暗天使）
+    "虫族武士":     "泰伦武士",         # Tyranid Warriors（泰伦虫族）
+    "赫尔松铁御":   "赫卡顿陆行要塞",   # Hekaton Land Fortress（沃坦联盟）
+    "惩罚者机甲":   "赎罪引擎",         # Penitent Engine（战斗修女）
+}
+
+# 把双侧译名注册进 jieba，避免专有名词被切碎
+for _k, _v in UNIT_ALIASES.items():
+    jieba.add_word(_k)
+    for _w in _v.split():
+        jieba.add_word(_w)
+
+# ══════════════════════════════════════════════
+#  wiki/terms.json：P0 双语术语表 → 查询扩展
+#  中文单位名命中时追加英文 canonical 名，让 BM25/向量能召回英文 Faction Pack 页
+# ══════════════════════════════════════════════
+from wiki_compile.terms import load_term_aliases
+
+TERM_ALIASES = load_term_aliases(Path(__file__).parent / "wiki" / "terms.json")
+for _zh in TERM_ALIASES:
+    jieba.add_word(_zh)
+
+
+def expand_query(query: str) -> str:
+    """查询扩展：命中社区译名/术语表时，追加库内译名与英文名（保留原词）。"""
+    extras = [v for k, v in UNIT_ALIASES.items() if k in query]
+    extras += [v for k, v in TERM_ALIASES.items() if k in query]
+    if not extras:
+        return query
+    return query + "（" + "，".join(dict.fromkeys(extras)) + "）"
 
 
 def resolve_flashrank_cache_dir(base_cache_dir: str, model_name: str) -> str:
@@ -153,6 +224,8 @@ def load_resources():
     # 3. Reranker（FlashRank，纯本地，无需联网）
     reranker = None
     reranker_warning = None
+    if not USE_RERANKER:
+        return embeddings, vectorstore, None, None
     try:
         reranker_cache_dir = resolve_flashrank_cache_dir(
             EMBED_MODEL_CACHE,
@@ -184,7 +257,9 @@ def build_bm25(_vectorstore):
         all_docs = list(_vectorstore.docstore._dict.values())
         if not all_docs:
             return None
-        retriever = BM25Retriever.from_documents(all_docs, k=BM25_TOP_K)
+        retriever = BM25Retriever.from_documents(
+            all_docs, k=BM25_TOP_K, preprocess_func=chinese_tokenize,
+        )
         return retriever
     except Exception as e:
         st.warning(f"BM25 索引构建失败（将只使用向量检索）: {e}")
@@ -209,6 +284,9 @@ def hybrid_retrieve(
       4. FlashRank 精排
     返回格式化的 passage 列表，每项含 text / book / source / page。
     """
+    # ── 查询扩展（社区译名 → 库内译名）──
+    query = expand_query(query)
+
     # ── FAISS 检索（支持按 book 过滤）──
     faiss_docs: list[Document] = []
     try:
@@ -257,7 +335,9 @@ def hybrid_retrieve(
     else:
         try:
             rerank_req = RerankRequest(query=query, passages=passages)
-            ranked = reranker.rank(rerank_req)
+            # flashrank 0.2.x 的方法名是 rerank（旧版为 rank）
+            rank_fn = getattr(reranker, "rerank", None) or reranker.rank
+            ranked = rank_fn(rerank_req)
             top_passages = ranked[:RERANK_TOP_N]
         except Exception as e:
             st.warning(f"Rerank 出错，使用 RRF 结果: {e}")
@@ -337,7 +417,7 @@ def format_context(passages: list[dict]) -> str:
         page_info = f"第{p['page']}页" if p["page"] != "?" else ""
         header = f"【档案 {i}】《{p['book']}》{page_info}"
         parts.append(f"{header}\n{p['text']}")
-    return "\n\n{'─'*40}\n\n".join(parts)
+    return ("\n\n" + "─" * 40 + "\n\n").join(parts)
 
 
 # ══════════════════════════════════════════════
@@ -416,8 +496,8 @@ def render_sidebar(vectorstore) -> tuple[str, str, float, list[str] | None]:
             st.metric("FAISS 召回", FAISS_TOP_K)
             st.metric("BM25 召回", BM25_TOP_K)
         with col2:
-            st.metric("Rerank 保留", RERANK_TOP_N)
-            st.metric("融合算法", "RRF")
+            st.metric("最终保留", RERANK_TOP_N)
+            st.metric("排序", "RRF" if not USE_RERANKER else "FlashRank")
 
         st.divider()
 

@@ -9,12 +9,18 @@
 .\.venv\Scripts\python.exe ingest.py            # 增量构建索引
 .\.venv\Scripts\python.exe ingest.py --rebuild  # 清空重建
 .\run_streamlit.ps1                             # 启动 Web 界面（app.py）
+
+.\.venv\Scripts\python.exe -m wiki_compile extract          # 扫描实体清单
+.\.venv\Scripts\python.exe -m wiki_compile fetch-canonical  # 下载 Wahapedia CSV（需代理）
+.\.venv\Scripts\python.exe -m wiki_compile pair --llm       # 中英配对（LLM兜底需 DEEPSEEK_API_KEY）
+.\.venv\Scripts\python.exe -m wiki_compile terms            # 生成 wiki/terms.*
 ```
 
 ## 架构与技术栈
 
 - `ingest.py`：PDF（`data/`）→ PyMuPDF 提取 → SemanticChunker 分块 → bge-m3 嵌入 → FAISS（`local_vector_store/`）
-- `app.py`：Streamlit 界面；检索链 = FAISS + BM25 + RRF 融合 + FlashRank 重排 → LLM（deepseek-chat / glm-4-flash，OpenAI 兼容接口）
+- `app.py`：Streamlit 界面；检索链 = FAISS + BM25（jieba 中文分词）+ 查询别名扩展（UNIT_ALIASES）+ RRF 融合 → LLM（deepseek-chat / glm-4-flash，OpenAI 兼容接口）。
+  FlashRank 重排默认关闭（`USE_RERANKER=False`）：实测 ms-marco 系列（含 MultiBERT）对中文重排差于 RRF 顺序
 - `hf_embeddings_compat.py`：HuggingFaceEmbeddings 兼容层
 - 模型缓存在 `opt/`（bge-m3、ms-marco-MiniLM-L-12-v2 等），CPU 推理
 - 嵌入走 hf-mirror 镜像 + Clash 代理（127.0.0.1:7897），相关环境变量在 ingest.py 顶部设置

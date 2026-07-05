@@ -22,7 +22,11 @@ from typing import List, Tuple
 import fitz
 from tqdm import tqdm
 
-from refine_prompt import PROMPT_VERSION, SYSTEM_PROMPT, build_user_prompt
+from refine_prompt import (
+    PROMPT_VERSION, PROMPT_VERSION_EN,
+    SYSTEM_PROMPT, SYSTEM_PROMPT_EN,
+    build_user_prompt,
+)
 
 MIN_TEXT_CHARS = 20
 
@@ -91,7 +95,7 @@ def _strip_code_fence(content: str) -> str:
     return content.strip()
 
 
-def refine_page(client, page_text: str, prev_tail: str) -> str:
+def refine_page(client, page_text: str, prev_tail: str, system_prompt: str = SYSTEM_PROMPT) -> str:
     """调用 LLM 重构单页文本，重试 MAX_RETRIES 次，指数退避。"""
     last_err = None
     for attempt in range(MAX_RETRIES):
@@ -99,7 +103,7 @@ def refine_page(client, page_text: str, prev_tail: str) -> str:
             resp = client.chat.completions.create(
                 model=MODEL,
                 messages=[
-                    {"role": "system", "content": SYSTEM_PROMPT},
+                    {"role": "system", "content": system_prompt},
                     {"role": "user", "content": build_user_prompt(page_text, prev_tail)},
                 ],
                 temperature=0.0,
@@ -120,11 +124,15 @@ DATA_DIR = Path("data")
 OUT_DIR = Path("data_refined")
 
 
-def process_book(client, pdf_path: Path, out_root: Path, workers: int = 4) -> dict:
+def process_book(client, pdf_path: Path, out_root: Path, workers: int = 4, lang: str = "zh") -> dict:
     """整本处理：提取→过滤→并发 LLM→缓存落盘。返回统计 summary。"""
     pages = extract_pages(pdf_path)
     book_dir = out_root / pdf_path.stem
     book_dir.mkdir(parents=True, exist_ok=True)
+
+    pv = PROMPT_VERSION_EN if lang == "en" else PROMPT_VERSION
+    sp = SYSTEM_PROMPT_EN if lang == "en" else SYSTEM_PROMPT
+
     summary = {"book": pdf_path.name, "total": len(pages), "done": 0,
                "cached": 0, "skipped": 0, "failed": 0, "verify_warn": 0}
 
@@ -134,7 +142,7 @@ def process_book(client, pdf_path: Path, out_root: Path, workers: int = 4) -> di
         if len(p["text"].strip()) < MIN_TEXT_CHARS:
             summary["skipped"] += 1
             skipped_pages.append(p["page"])
-        elif is_cached(book_dir, p["page"], p["sha256"], PROMPT_VERSION):
+        elif is_cached(book_dir, p["page"], p["sha256"], pv):
             summary["cached"] += 1
         else:
             jobs.append(p)
@@ -146,10 +154,10 @@ def process_book(client, pdf_path: Path, out_root: Path, workers: int = 4) -> di
     def _work(p):
         prev_tail = raw_by_no.get(p["page"] - 1, "")[-PREV_TAIL_CHARS:]
         # 通过模块属性调用，保证测试可 monkeypatch
-        md = globals()["refine_page"](client, p["text"], prev_tail)
+        md = globals()["refine_page"](client, p["text"], prev_tail, sp)
         bad = verify_numbers(p["text"], md)
         save_page(book_dir, p["page"], md, {
-            "sha256": p["sha256"], "prompt_version": PROMPT_VERSION,
+            "sha256": p["sha256"], "prompt_version": pv,
             "model": MODEL, "verify_ok": not bad, "fallback": False,
         })
         return p["page"], bad
@@ -169,7 +177,7 @@ def process_book(client, pdf_path: Path, out_root: Path, workers: int = 4) -> di
                 summary["failed"] += 1
                 tqdm.write("  第{}页失败，写入原始文本兜底: {}".format(p["page"], e))
                 save_page(book_dir, p["page"], p["text"], {
-                    "sha256": p["sha256"], "prompt_version": PROMPT_VERSION,
+                    "sha256": p["sha256"], "prompt_version": pv,
                     "model": MODEL, "verify_ok": True, "fallback": True,
                 })
     return summary
@@ -181,6 +189,8 @@ def main():
     group.add_argument("--book", type=str, help="按文件名子串匹配单本 PDF")
     group.add_argument("--all", action="store_true", help="处理 data 目录全部 PDF")
     parser.add_argument("--workers", type=int, default=4)
+    parser.add_argument("--lang", choices=["en", "zh"], default="zh",
+                        help="PDF 语言（zh=中文汉化版, en=英文官方版）")
     parser.add_argument("--data-dir", type=str, default=str(DATA_DIR))
     parser.add_argument("--out-dir", type=str, default=str(OUT_DIR))
     args = parser.parse_args()
@@ -191,7 +201,9 @@ def main():
         sys.exit(1)
 
     from openai import OpenAI
-    client = OpenAI(api_key=api_key, base_url=BASE_URL)
+    import httpx
+    http_client = httpx.Client(proxy="http://127.0.0.1:7897")
+    client = OpenAI(api_key=api_key, base_url=BASE_URL, http_client=http_client)
 
     pdfs = sorted(Path(args.data_dir).glob("*.pdf"))
     if args.book:
@@ -202,7 +214,7 @@ def main():
 
     out_root = Path(args.out_dir)
     for pdf in pdfs:
-        summary = process_book(client, pdf, out_root, workers=args.workers)
+        summary = process_book(client, pdf, out_root, workers=args.workers, lang=args.lang)
         print("完成 {book}: 新处理{done} 缓存{cached} 跳过{skipped} "
               "失败{failed} 数字警告{verify_warn} / 共{total}页".format(**summary))
 

@@ -17,8 +17,9 @@ flashrank
 # PyTorch 1.11 不兼容 NumPy 2.x
 numpy<2
 
-# BM25 关键词检索
+# BM25 关键词检索（jieba：中文分词，BM25 必需）
 rank-bm25
+jieba
 
 # PDF 处理
 pymupdf
