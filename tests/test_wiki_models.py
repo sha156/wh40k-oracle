@@ -294,3 +294,27 @@ class TestLintResult:
         result = LintResult(issues=[], auto_fixed=0, total=0)
         report = result.to_report()
         assert "没有发现问题" in report
+
+
+class TestFactionNames:
+    """faction_id → 中文阵营名常量表（问题2）。"""
+
+    def test_covers_all_pairing_faction_ids(self):
+        from wiki_engine.models import FACTION_NAMES
+        expected_ids = {"AS", "AC", "AdM", "TL", "AE", "GC", "SM", "WE", "CD",
+                        "TS", "DG", "EC", "QT", "CSM", "DRU", "GK", "AoI",
+                        "QI", "NEC", "ORK", "TAU"}
+        assert expected_ids <= set(FACTION_NAMES)
+
+    def test_known_mappings(self):
+        from wiki_engine.models import FACTION_NAMES
+        assert FACTION_NAMES["TAU"] == "钛帝国"
+        assert FACTION_NAMES["WE"] == "吞世者"
+        assert FACTION_NAMES["ORK"] == "欧克蛮人"
+        assert FACTION_NAMES["NEC"] == "太空死灵"
+
+    def test_values_are_nonempty_chinese(self):
+        from wiki_engine.models import FACTION_NAMES
+        for fid, name in FACTION_NAMES.items():
+            assert name.strip(), fid
+            assert any("一" <= ch <= "鿿" for ch in name), (fid, name)

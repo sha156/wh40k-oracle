@@ -297,6 +297,159 @@ class TestVerifyWarnFlag:
         assert page.fm.verify_warn is False
 
 
+class TestSynthesizeAllJoinByBookPages:
+    """问题1：实体联结键必须是 (book, pages)，不能拿规范名精确匹配原文大写名。"""
+
+    def test_canonical_en_joins_uppercase_heading_via_book_pages(self, tmp_path):
+        """pair.en 是 Wahapedia 规范名，refined 标题是全大写原文 → 仍能联结。"""
+        refined = tmp_path / "data_refined"
+        (refined / "Book A").mkdir(parents=True)
+        (refined / "Book A" / "page_001.md").write_text(
+            "## VESPID STINGWINGS\nTOKEN_VESPID 属性", encoding="utf-8")
+
+        pair = Pair(zh=None, en="Vespid Stingwings",
+                    canonical_id="000000427", faction_id="TAU",
+                    book="Book A", pages=[1], confidence="exact")
+        pairing_path = tmp_path / "wiki_build" / "pairing.json"
+        _write_pairing(pairing_path, [pair])
+
+        record: list = []
+        client = _make_fake_client(record)
+        stats = synthesize_all(
+            pairing_path=pairing_path,
+            refined_root=refined,
+            wiki_root=tmp_path / "wiki",
+            cache_dir=tmp_path / "cache",
+            client=client,
+            max_workers=1,
+        )
+        assert stats["skipped"] == 0
+        assert stats["synthesized"] == 1
+        user_prompts = ["\n".join(m["content"] for m in msgs) for msgs in record]
+        assert any("TOKEN_VESPID" in p for p in user_prompts)
+
+    def test_name_fallback_when_pages_drift(self, tmp_path):
+        """pages 不一致（extract 重跑后漂移）时，归一化名字在同书内兜底匹配。"""
+        refined = tmp_path / "data_refined"
+        (refined / "Book A").mkdir(parents=True)
+        (refined / "Book A" / "page_001.md").write_text(
+            "## 维斯普刺翼蜂 VESPID STINGWINGS\nTOKEN_FALLBACK 属性", encoding="utf-8")
+
+        # pair.pages 记的是旧的 [1, 2]，实际 extract 只有 [1]
+        pair = Pair(zh="维斯普刺翼蜂", en="Vespid Stingwings",
+                    canonical_id="000000427", faction_id="TAU",
+                    book="Book A", pages=[1, 2], confidence="exact")
+        pairing_path = tmp_path / "wiki_build" / "pairing.json"
+        _write_pairing(pairing_path, [pair])
+
+        record: list = []
+        client = _make_fake_client(record)
+        stats = synthesize_all(
+            pairing_path=pairing_path,
+            refined_root=refined,
+            wiki_root=tmp_path / "wiki",
+            cache_dir=tmp_path / "cache",
+            client=client,
+            max_workers=1,
+        )
+        assert stats["synthesized"] == 1
+        assert stats["skipped"] == 0
+
+    def test_name_fallback_does_not_cross_books(self, tmp_path):
+        """兜底名字匹配限定同书：别的书里同名实体不能顶上来。"""
+        refined = tmp_path / "data_refined"
+        (refined / "Book B").mkdir(parents=True)
+        (refined / "Book B" / "page_001.md").write_text(
+            "## VESPID STINGWINGS\n别书内容", encoding="utf-8")
+
+        pair = Pair(zh=None, en="Vespid Stingwings",
+                    canonical_id="000000427", faction_id="TAU",
+                    book="Book A", pages=[1], confidence="exact")
+        pairing_path = tmp_path / "wiki_build" / "pairing.json"
+        _write_pairing(pairing_path, [pair])
+
+        stats = synthesize_all(
+            pairing_path=pairing_path,
+            refined_root=refined,
+            wiki_root=tmp_path / "wiki",
+            cache_dir=tmp_path / "cache",
+            client=_make_fake_client([]),
+            max_workers=1,
+        )
+        assert stats["synthesized"] == 0
+        assert stats["skipped"] == 1
+
+
+class TestFactionResolution:
+    """问题2：fm.faction 应来自 pair.faction_id 的中文阵营名，而非书名 slug。"""
+
+    def _run(self, tmp_path, faction_id, cache_page=None):
+        refined = tmp_path / "data_refined"
+        (refined / "钛帝国十版-20251112").mkdir(parents=True)
+        (refined / "钛帝国十版-20251112" / "page_001.md").write_text(
+            "## 火战士队 FIRE WARRIORS\n属性内容", encoding="utf-8")
+        pair = Pair(zh="火战士队", en="Fire Warriors",
+                    canonical_id="000000401", faction_id=faction_id,
+                    book="钛帝国十版-20251112", pages=[1], confidence="exact")
+        pairing_path = tmp_path / "wiki_build" / "pairing.json"
+        _write_pairing(pairing_path, [pair])
+
+        cache_dir = tmp_path / "cache"
+        client = _make_fake_client([])
+        if cache_page is not None:
+            entity = EntityCandidate(
+                book="钛帝国十版-20251112", raw_heading="火战士队 FIRE WARRIORS",
+                name_zh="火战士队", name_en="FIRE WARRIORS", pages=[1])
+            fragments = collect_source_fragments(entity, refined)
+            key = _cache_key(SYNTH_PROMPT_VERSION, pair.canonical_id, fragments)
+            _save_cache(cache_dir, key, cache_page)
+            client = None  # 只能走缓存
+
+        wiki_root = tmp_path / "wiki"
+        stats = synthesize_all(
+            pairing_path=pairing_path,
+            refined_root=refined,
+            wiki_root=wiki_root,
+            cache_dir=cache_dir,
+            client=client,
+            max_workers=1,
+        )
+        written = list(wiki_root.rglob("*.md"))
+        return stats, written
+
+    def test_faction_id_maps_to_chinese_name(self, tmp_path):
+        stats, written = self._run(tmp_path, faction_id="TAU")
+        assert stats["synthesized"] == 1
+        assert len(written) == 1
+        page = WikiPage.from_markdown(written[0].read_text(encoding="utf-8"))
+        assert page.fm.faction == "钛帝国"
+        assert "钛帝国" in str(written[0])
+        assert "20251112" not in str(written[0])  # 不再是书名 slug 目录
+
+    def test_missing_faction_id_falls_back_to_book_inference(self, tmp_path):
+        stats, written = self._run(tmp_path, faction_id="")
+        assert stats["synthesized"] == 1
+        page = WikiPage.from_markdown(written[0].read_text(encoding="utf-8"))
+        from wiki_engine.synthesize import _infer_faction_id
+        assert page.fm.faction == _infer_faction_id("钛帝国十版-20251112")
+
+    def test_cache_hit_refreshes_faction_and_tags(self, tmp_path):
+        stale_fm = WikiPageFrontmatter(
+            id="stale/old-id", name_zh="火战士队", name_en="FIRE WARRIORS",
+            faction="钛帝国十版-20251112", type="unit")
+        stale_fm.generate_tags()
+        stats, written = self._run(
+            tmp_path, faction_id="TAU",
+            cache_page=WikiPage(fm=stale_fm, body="缓存正文"))
+        assert stats["cached"] == 1
+        assert len(written) == 1
+        page = WikiPage.from_markdown(written[0].read_text(encoding="utf-8"))
+        assert page.fm.faction == "钛帝国"
+        assert "unit/钛帝国" in page.fm.tags
+        assert "钛帝国十版-20251112" not in page.fm.tags
+        assert "钛帝国" in str(written[0])
+
+
 class TestBuildFactionFacts:
     def test_single_faction(self):
         pairs = [

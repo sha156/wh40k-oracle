@@ -13,6 +13,36 @@ from typing import Any, Dict, List, Optional
 import yaml
 
 
+# ── 常量 ──────────────────────────────────────────────────────────────
+
+# faction_id（Wahapedia 缩写，见 db_sources/wahapedia/Factions.csv）→ 中文阵营名。
+# 覆盖 pairing.json 实际出现的 21 个 faction_id；fm.faction / wiki 目录名用它，
+# 缺失时由 synthesize._infer_faction_id 按书名推断兜底。
+FACTION_NAMES: Dict[str, str] = {
+    "AS": "战斗修女",           # Adepta Sororitas
+    "AC": "帝皇卫队",           # Adeptus Custodes
+    "AdM": "机械修会",          # Adeptus Mechanicus
+    "TL": "泰坦军团",           # Adeptus Titanicus
+    "AE": "艾达灵族",           # Aeldari
+    "GC": "基因窃取者教派",     # Genestealer Cults
+    "SM": "星际战士",           # Space Marines
+    "WE": "吞世者",             # World Eaters
+    "CD": "混沌恶魔",           # Chaos Daemons
+    "TS": "千子",               # Thousand Sons
+    "DG": "死亡守卫",           # Death Guard
+    "EC": "帝皇之子",           # Emperor's Children
+    "QT": "混沌骑士",           # Chaos Knights
+    "CSM": "混沌星际战士",      # Chaos Space Marines
+    "DRU": "黑暗灵族",          # Drukhari
+    "GK": "灰骑士",             # Grey Knights
+    "AoI": "帝国特勤",          # Imperial Agents
+    "QI": "帝国骑士",           # Imperial Knights
+    "NEC": "太空死灵",          # Necrons
+    "ORK": "欧克蛮人",          # Orks
+    "TAU": "钛帝国",            # T'au Empire
+}
+
+
 # ── 数据模型 ──────────────────────────────────────────────────────────
 
 @dataclass

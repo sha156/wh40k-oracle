@@ -22,8 +22,9 @@ from typing import Any, Dict, List, Optional, Tuple
 from tqdm import tqdm
 
 from wiki_compile.extract import EntityCandidate, extract_entities
-from wiki_compile.pair import Pair, PairingResult
+from wiki_compile.pair import Pair, PairingResult, normalize_name
 from wiki_engine.models import (
+    FACTION_NAMES,
     WikiPage,
     WikiPageFrontmatter,
     entity_page_path,
@@ -196,6 +197,17 @@ def _infer_faction_id(book_name: str) -> str:
     return slugify(clean)
 
 
+def _resolve_faction(entity: EntityCandidate, pair: Optional[Pair]) -> str:
+    """fm.faction：优先按 pair.faction_id 映射为中文阵营名。
+
+    faction_id 缺失时才退回书名推断；faction_id 存在但不在
+    FACTION_NAMES 中时保留原 id（不误落到书名 slug）。
+    """
+    if pair is not None and pair.faction_id:
+        return FACTION_NAMES.get(pair.faction_id, pair.faction_id)
+    return _infer_faction_id(entity.book)
+
+
 # ── 缓存 ──────────────────────────────────────────────────────────────
 
 def _cache_key(prompt_version: str, canonical_id: str,
@@ -343,7 +355,7 @@ def synthesize_page(
                 id="",  # 由调用方填充
                 name_zh=entity.name_zh,
                 name_en=pair.en if pair else entity.name_en,
-                faction=_infer_faction_id(entity.book),
+                faction=_resolve_faction(entity, pair),
                 type=etype,
                 points=None,  # 后续 lint 标记缺失
                 keywords=[],
@@ -387,10 +399,14 @@ def load_or_synthesize(
 
     cached = _load_cache(cache_dir, key)
     if cached is not None:
-        # 用最新的 entity/pair 信息更新 frontmatter（缓存可能来自旧 prompt）
+        # 用最新的 entity/pair 信息更新 frontmatter（缓存可能来自旧 prompt/旧配对）：
+        # name/id/faction 都以当前配对为准，faction 变了 tags 也要跟着重算，
+        # 否则缓存命中的页面会带着旧书名 slug 落到错误目录。
         cached.fm.name_zh = entity.name_zh
         cached.fm.name_en = pair.en if pair else entity.name_en
         cached.fm.id = canonical_id
+        cached.fm.faction = _resolve_faction(entity, pair)
+        cached.fm.generate_tags()
         return cached
 
     if client is None:
@@ -456,22 +472,29 @@ def synthesize_all(
     faction_facts = build_faction_facts(pairs)
 
     # entities: 从 extract 重新获取以拿到完整的 EntityCandidate（含 pages）。
-    # 键必须含 book——不同书的同名实体（如跨阵营同名单位）不能互相顶掉。
+    # 主键 = (book, pages)：pair.pages 在配对时直接从实体复制，天然对齐；
+    # 不能用名字精确匹配——pair.en 是 Wahapedia 规范名（如 "Vespid Stingwings"），
+    # 而 extract 出的 name_en 是 refined 页原文（全大写），精确匹配必然落空。
+    # 兜底 = (book, normalize_name(name_en))：extract 重跑后 pages 漂移时按
+    # 归一化名字在同书内匹配。
     from wiki_compile.extract import extract_book
     entities_map: Dict[Tuple, EntityCandidate] = {}
+    entities_by_name: Dict[Tuple, EntityCandidate] = {}
     for book_dir in sorted(p for p in refined_root.iterdir() if p.is_dir()):
         for ent in extract_book(book_dir):
-            key = (ent.name_zh, ent.name_en, ent.book)
-            if key not in entities_map:
-                entities_map[key] = ent
+            entities_map.setdefault((ent.book, tuple(ent.pages)), ent)
+            if ent.name_en:
+                entities_by_name.setdefault(
+                    (ent.book, normalize_name(ent.name_en)), ent)
 
     stats = {"pairs": len(pairs), "synthesized": 0, "cached": 0,
              "skipped": 0, "failed": 0, "path_conflicts": 0}
 
     jobs = []
     for pair in pairs:
-        key = (pair.zh, pair.en, pair.book)
-        entity = entities_map.get(key)
+        entity = entities_map.get((pair.book, tuple(pair.pages)))
+        if entity is None and pair.en:
+            entity = entities_by_name.get((pair.book, normalize_name(pair.en)))
         if entity is None:
             stats["skipped"] += 1
             continue
