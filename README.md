@@ -106,9 +106,7 @@ copy .env.example .env    # 填入 DeepSeek / 智谱 key
 ├── data/                    # 原始 PDF（不入库）
 ├── data_refined/            # LLM 重构结果（试点入库，其余本地）
 ├── local_vector_store/      # FAISS 索引（不入库）
-├── opt/                     # 模型缓存（不入库）
-├── fix_model.py             # FlashRank 模型下载辅助
-└── download_bge.py          # bge-m3 下载辅助
+└── opt/                     # 模型缓存（不入库）
 ```
 
 ## 测试

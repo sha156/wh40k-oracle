@@ -27,6 +27,10 @@ data/
 wiki_build/
 db_sources/
 
+# db_compile 产出物：wh40k.sqlite 从 db_sources/ CSV 编译生成，不入库
+db/
+*.sqlite
+
 # Logs and temporary files
 *.log
 *.err
@@ -40,6 +44,7 @@ data_refined/
 
 # QA 基准运行产物（本地保留，不入库）
 qa_100_results.json
+qa_*_results.json
 
 # OS/editor noise
 .DS_Store

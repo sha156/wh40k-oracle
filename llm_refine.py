@@ -122,6 +122,38 @@ def refine_page(client, page_text: str, prev_tail: str, system_prompt: str = SYS
 PREV_TAIL_CHARS = 500
 DATA_DIR = Path("data")
 OUT_DIR = Path("data_refined")
+ARCHIVE_DIR = Path("data/archive")
+
+
+def _has_cjk(stem: str) -> bool:
+    """文件名是否含 CJK 字符。"""
+    for ch in stem:
+        if "一" <= ch <= "鿿" or "㐀" <= ch <= "䶿":
+            return True
+    return False
+
+
+def _refine_coverage(book_dir: Path, total_pages: int) -> float:
+    """已 refine 覆盖率 = page_*.md 数 / 总页数。"""
+    if not book_dir.is_dir():
+        return 0.0
+    if total_pages <= 0:
+        return 0.0
+    md_count = len(list(book_dir.glob("page_*.md")))
+    return md_count / total_pages
+
+
+def _pdf_page_count(pdf_path: Path) -> int:
+    """PDF 实际页数。"""
+    with fitz.open(str(pdf_path)) as doc:
+        return doc.page_count
+
+
+def _filter_chinese_pending(pdfs: List[Path], out_root: Path,
+                            min_coverage: float) -> List[Path]:
+    """按真实页数计算覆盖率，剔除已 refine 完成（覆盖率>=阈值）的 PDF。"""
+    return [p for p in pdfs
+            if _refine_coverage(out_root / p.stem, _pdf_page_count(p)) < min_coverage]
 
 
 def process_book(client, pdf_path: Path, out_root: Path, workers: int = 4, lang: str = "zh") -> dict:
@@ -193,6 +225,12 @@ def main():
                         help="PDF 语言（zh=中文汉化版, en=英文官方版）")
     parser.add_argument("--data-dir", type=str, default=str(DATA_DIR))
     parser.add_argument("--out-dir", type=str, default=str(OUT_DIR))
+    parser.add_argument("--skip-archived", action="store_true",
+                        help="跳过已在 data/archive/ 中的 PDF")
+    parser.add_argument("--chinese-only", action="store_true",
+                        help="只处理文件名含中文的 PDF（跳过已完全 refine 的）")
+    parser.add_argument("--min-coverage", type=float, default=0.9,
+                        help="--chinese-only 时，跳过覆盖率>=此值的 PDF（默认 0.9）")
     args = parser.parse_args()
 
     api_key = os.environ.get("DEEPSEEK_API_KEY")
@@ -211,6 +249,26 @@ def main():
         if not pdfs:
             print("错误：没有文件名包含「{}」的 PDF".format(args.book))
             sys.exit(1)
+
+    # ── 过滤逻辑 ──
+    archive_root = Path(args.data_dir) / "archive"
+    if args.skip_archived:
+        before = len(pdfs)
+        archived_names = {p.name for p in archive_root.glob("*.pdf")} if archive_root.is_dir() else set()
+        pdfs = [p for p in pdfs if p.name not in archived_names]
+        if len(pdfs) < before:
+            print("跳过 {} 本已归档 PDF".format(before - len(pdfs)))
+
+    if args.chinese_only:
+        pdfs = [p for p in pdfs if _has_cjk(p.stem)]
+        if not pdfs:
+            print("没有找到含中文文件名的 PDF")
+            sys.exit(0)
+        out_root = Path(args.out_dir)
+        before = len(pdfs)
+        pdfs = _filter_chinese_pending(pdfs, out_root, args.min_coverage)
+        if len(pdfs) < before:
+            print("跳过 {} 本已完全 refine 的中文 PDF".format(before - len(pdfs)))
 
     out_root = Path(args.out_dir)
     for pdf in pdfs:

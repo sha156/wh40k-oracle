@@ -1,0 +1,1067 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>40K 规则专家 · 方向 D · 战报专栏 Editorial</title>
+<style>
+/* ============================================================
+   方向 D「战报专栏」Editorial — 米白纸色 · 杂志排印 · 红墨水
+   ============================================================ */
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+:root {
+  --paper:      #f7f3ea;
+  --paper-deep: #f0e9da;
+  --paper-card: #fbf8f1;
+  --ink:        #2b241a;
+  --ink-soft:   #5a4f3e;
+  --ink-faint:  #8a7d66;
+  --red:        #b3402a;
+  --red-deep:   #93341f;
+  --red-wash:   rgba(179, 64, 42, .08);
+  --hairline:   #d8cdb6;
+  --hairline-2: #c5b898;
+  --serif: Georgia, "Noto Serif SC", "Source Han Serif SC", "SimSun", serif;
+  --sans:  "Microsoft YaHei", "PingFang SC", "Segoe UI", sans-serif;
+  --mono:  Consolas, "Courier New", monospace;
+}
+
+html { background: var(--paper); }
+
+body {
+  font-family: var(--serif);
+  color: var(--ink);
+  background:
+    radial-gradient(1200px 500px at 50% -100px, rgba(255,255,255,.55), rgba(255,255,255,0) 70%),
+    var(--paper);
+  font-size: 16px;
+  line-height: 1.9;
+  padding-bottom: 190px; /* 给底部固定 composer 留位 */
+  -webkit-font-smoothing: antialiased;
+}
+
+::selection { background: rgba(179,64,42,.18); }
+
+/* ---------- 槽位角标徽章 ---------- */
+.slot {
+  position: absolute;
+  font-family: var(--mono);
+  font-size: 10px;
+  letter-spacing: .08em;
+  color: rgba(179, 64, 42, .55);
+  border: 1px solid rgba(179, 64, 42, .3);
+  border-radius: 2px;
+  padding: 0 5px;
+  line-height: 15px;
+  background: rgba(247, 243, 234, .7);
+  user-select: none;
+  z-index: 5;
+}
+
+/* ============ D1 报头 Masthead ============ */
+.masthead {
+  position: relative;
+  max-width: 1080px;
+  margin: 0 auto;
+  padding: 18px 24px 0;
+}
+.masthead .slot { top: 14px; left: 24px; }
+
+.mast-topline {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  font-family: var(--sans);
+  font-size: 12px;
+  color: var(--ink-faint);
+  border-bottom: 1px solid var(--hairline);
+  padding-bottom: 8px;
+  letter-spacing: .06em;
+}
+.mast-topline .edition { font-family: var(--serif); font-style: italic; }
+.context-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  font-family: var(--sans);
+  font-size: 12px;
+  color: var(--ink-soft);
+  border: 1px solid var(--hairline-2);
+  border-radius: 999px;
+  padding: 2px 12px;
+  background: var(--paper-card);
+}
+.context-tag .dot {
+  width: 7px; height: 7px; border-radius: 50%;
+  background: var(--red);
+  box-shadow: 0 0 0 3px var(--red-wash);
+}
+.context-tag b { color: var(--ink); font-weight: 600; }
+
+.mast-title {
+  text-align: center;
+  padding: 26px 0 6px;
+}
+.mast-title h1 {
+  font-size: 44px;
+  font-weight: 700;
+  letter-spacing: .18em;
+  line-height: 1.15;
+}
+.mast-title h1 .amp { color: var(--red); }
+.mast-title .subtitle {
+  margin-top: 6px;
+  font-family: var(--serif);
+  font-style: italic;
+  font-size: 13px;
+  letter-spacing: .34em;
+  color: var(--ink-faint);
+  text-transform: uppercase;
+}
+
+/* 双细线 + 页签导航 */
+.mast-nav {
+  margin-top: 18px;
+  border-top: 3px solid var(--ink);
+  border-bottom: 1px solid var(--ink);
+  position: relative;
+}
+.mast-nav::before {
+  content: "";
+  position: absolute;
+  top: 2px; left: 0; right: 0;
+  border-top: 1px solid var(--ink);
+}
+.mast-nav ul {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  gap: 0;
+}
+.mast-nav a {
+  display: block;
+  padding: 10px 34px 11px;
+  font-family: var(--sans);
+  font-size: 14.5px;
+  letter-spacing: .12em;
+  color: var(--ink-soft);
+  text-decoration: none;
+  position: relative;
+  transition: color .15s;
+}
+.mast-nav a:hover { color: var(--red-deep); }
+.mast-nav li + li a::before {
+  content: "";
+  position: absolute;
+  left: 0; top: 12px; bottom: 12px;
+  border-left: 1px solid var(--hairline);
+}
+.mast-nav a.active {
+  color: var(--red);
+  font-weight: 700;
+}
+.mast-nav a.active::after {
+  content: "";
+  position: absolute;
+  left: 26px; right: 26px; bottom: -1px;
+  border-bottom: 3px solid var(--red);
+}
+
+/* ============ 文章主体 ============ */
+.article {
+  max-width: 700px;
+  margin: 0 auto;
+  padding: 46px 0 30px;
+}
+
+.kicker {
+  text-align: center;
+  font-family: var(--sans);
+  font-size: 12.5px;
+  letter-spacing: .42em;
+  color: var(--red);
+  font-weight: 700;
+}
+.headline {
+  text-align: center;
+  font-size: 34px;
+  line-height: 1.5;
+  font-weight: 700;
+  margin: 14px 0 8px;
+  letter-spacing: .02em;
+}
+.dek {
+  text-align: center;
+  font-size: 15px;
+  color: var(--ink-soft);
+  font-style: italic;
+}
+.head-rule {
+  width: 72px;
+  border: none;
+  border-top: 1px solid var(--hairline-2);
+  margin: 26px auto 34px;
+  position: relative;
+  overflow: visible;
+}
+.head-rule::after {
+  content: "❦";
+  position: absolute;
+  top: -14px; left: 50%;
+  transform: translateX(-50%);
+  background: var(--paper);
+  padding: 0 12px;
+  color: var(--ink-faint);
+  font-size: 14px;
+}
+
+/* ---------- D2 读者来信（用户提问） ---------- */
+.reader-letter {
+  position: relative;
+  border: 1px solid var(--hairline-2);
+  outline: 1px solid var(--hairline);
+  outline-offset: 3px;
+  background: var(--paper-card);
+  padding: 22px 30px 18px;
+  margin: 0 24px 40px;
+}
+.reader-letter .slot { top: 8px; right: 10px; }
+.reader-letter .letter-label {
+  font-family: var(--sans);
+  font-size: 11.5px;
+  letter-spacing: .3em;
+  color: var(--red);
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+.reader-letter .letter-label span {
+  color: var(--ink-faint);
+  font-weight: 400;
+  letter-spacing: .18em;
+}
+.reader-letter blockquote {
+  font-size: 20px;
+  line-height: 1.85;
+  font-weight: 600;
+}
+.reader-letter blockquote::before { content: "「"; color: var(--red); }
+.reader-letter blockquote::after  { content: "」"; color: var(--red); }
+.reader-letter .letter-meta {
+  margin-top: 10px;
+  text-align: right;
+  font-family: var(--sans);
+  font-size: 12px;
+  color: var(--ink-faint);
+}
+
+/* ---------- 编辑部回应 byline ---------- */
+.byline {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 12px;
+  border-top: 1px solid var(--hairline);
+  border-bottom: 1px solid var(--hairline);
+  padding: 9px 2px;
+  margin: 0 0 26px;
+  font-family: var(--sans);
+  font-size: 13px;
+  color: var(--ink-soft);
+}
+.byline .who b { color: var(--ink); letter-spacing: .05em; }
+.byline .ai-mark {
+  font-family: var(--mono);
+  font-size: 10.5px;
+  letter-spacing: .1em;
+  color: var(--red);
+  border: 1px solid rgba(179,64,42,.35);
+  border-radius: 2px;
+  padding: 1px 6px;
+  margin-left: 10px;
+  vertical-align: 1px;
+}
+.byline time { font-family: var(--mono); font-size: 11.5px; color: var(--ink-faint); }
+
+/* ---------- D3 检索手记（工具轨迹，可折叠） ---------- */
+.tool-notes {
+  position: relative;
+  margin: 0 0 36px;
+  border-left: 3px solid var(--red);
+  background: var(--paper-deep);
+}
+.tool-notes .slot { top: 8px; right: 10px; }
+.tool-notes summary {
+  list-style: none;
+  cursor: pointer;
+  padding: 11px 18px;
+  font-family: var(--sans);
+  font-size: 13px;
+  color: var(--ink-soft);
+  letter-spacing: .05em;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  user-select: none;
+}
+.tool-notes summary::-webkit-details-marker { display: none; }
+.tool-notes summary .caret {
+  display: inline-block;
+  transition: transform .18s;
+  color: var(--red);
+  font-size: 11px;
+}
+.tool-notes[open] summary .caret { transform: rotate(90deg); }
+.tool-notes summary b { color: var(--ink); font-weight: 600; }
+.tool-notes summary .count {
+  font-family: var(--mono);
+  font-size: 11px;
+  color: var(--ink-faint);
+  margin-left: auto;
+}
+.tool-notes ol {
+  list-style: none;
+  padding: 4px 20px 16px 20px;
+  counter-reset: step;
+}
+.tool-notes li {
+  counter-increment: step;
+  font-family: var(--mono);
+  font-size: 12.5px;
+  line-height: 1.7;
+  padding: 6px 0 6px 30px;
+  position: relative;
+  color: var(--ink-soft);
+  border-top: 1px dashed var(--hairline);
+  word-break: break-all;
+}
+.tool-notes li:first-child { border-top: none; }
+.tool-notes li::before {
+  content: counter(step, decimal-leading-zero);
+  position: absolute;
+  left: 0; top: 7px;
+  font-size: 11px;
+  color: var(--red);
+}
+.tool-notes .fn-name { color: var(--ink); font-weight: 600; }
+.tool-notes .ok { color: #4a7a3a; }
+.tool-notes .degraded { color: var(--red-deep); }
+.tool-notes li.step-degraded {
+  background: var(--red-wash);
+  margin: 0 -8px;
+  padding-left: 38px;
+  padding-right: 8px;
+  border-radius: 2px;
+}
+.tool-notes li.step-degraded::before { left: 8px; }
+
+/* ---------- D4 结论 pull-quote ---------- */
+.verdict {
+  position: relative;
+  margin: 0 0 42px;
+  padding: 30px 6px 28px;
+  border-top: 3px solid var(--ink);
+  border-bottom: 1px solid var(--ink);
+}
+.verdict::before {
+  content: "";
+  position: absolute;
+  top: 5px; left: 0; right: 0;
+  border-top: 1px solid var(--ink);
+}
+.verdict .slot { top: 12px; right: 4px; }
+.verdict .verdict-kicker {
+  font-family: var(--sans);
+  font-size: 11.5px;
+  letter-spacing: .38em;
+  color: var(--red);
+  font-weight: 700;
+  margin-bottom: 16px;
+}
+.verdict .seal {
+  float: right;
+  margin: 4px 4px 12px 22px;
+  width: 82px;
+  height: 82px;
+  border: 3px solid rgba(179,64,42,.72);
+  border-radius: 6px;
+  color: rgba(179,64,42,.85);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  writing-mode: vertical-rl;
+  font-size: 22px;
+  font-weight: 700;
+  letter-spacing: .3em;
+  transform: rotate(-7deg);
+  box-shadow: inset 0 0 0 1px rgba(179,64,42,.25);
+  background:
+    radial-gradient(closest-side, rgba(179,64,42,.06), rgba(179,64,42,0));
+}
+.verdict p {
+  font-size: 22.5px;
+  line-height: 2.05;
+  font-weight: 500;
+  text-align: justify;
+}
+.verdict p strong {
+  color: var(--red);
+  font-weight: 700;
+  border-bottom: 3px double rgba(179,64,42,.5);
+  padding-bottom: 1px;
+}
+.verdict .kw { color: var(--red-deep); }
+
+/* ---------- 小节标题 ---------- */
+.section-head {
+  display: flex;
+  align-items: baseline;
+  gap: 14px;
+  margin: 0 0 20px;
+}
+.section-head h3 {
+  font-size: 20px;
+  font-weight: 700;
+  letter-spacing: .1em;
+  white-space: nowrap;
+}
+.section-head .en {
+  font-family: var(--serif);
+  font-style: italic;
+  font-size: 12px;
+  letter-spacing: .24em;
+  color: var(--ink-faint);
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+.section-head::after {
+  content: "";
+  flex: 1;
+  border-top: 1px solid var(--hairline);
+  transform: translateY(-4px);
+}
+
+/* ---------- D5 计算依据（排印编号列表） ---------- */
+.calc {
+  position: relative;
+  margin: 0 0 46px;
+}
+.calc .slot { top: -4px; right: 0; }
+.calc ol {
+  list-style: none;
+  counter-reset: calc;
+}
+.calc li {
+  counter-increment: calc;
+  position: relative;
+  padding: 12px 0 12px 62px;
+  border-top: 1px solid var(--hairline);
+  font-size: 16.5px;
+  line-height: 1.9;
+}
+.calc li:last-child { border-bottom: 1px solid var(--hairline); }
+.calc li::before {
+  content: counter(calc);
+  position: absolute;
+  left: 6px; top: 9px;
+  font-family: var(--serif);
+  font-size: 30px;
+  font-style: italic;
+  color: var(--red);
+  opacity: .85;
+  line-height: 1.4;
+}
+.calc li::after {
+  content: "";
+  position: absolute;
+  left: 40px; top: 16px; bottom: 16px;
+  border-left: 1px solid var(--hairline-2);
+}
+.calc .kw {
+  color: var(--red-deep);
+  font-weight: 600;
+}
+.calc .arrow { color: var(--red); font-family: var(--mono); font-size: 14px; }
+.calc .pct { font-family: var(--mono); font-size: 14px; color: var(--ink-soft); }
+
+/* 脚注上标 */
+sup.fnref {
+  font-family: var(--serif);
+  font-size: .62em;
+  color: var(--red);
+  vertical-align: super;
+  line-height: 0;
+}
+sup.fnref a { color: inherit; text-decoration: none; }
+sup.fnref a:hover { text-decoration: underline; }
+
+/* ---------- D6 单位卡（杂志信息图框表，宽出正文栏） ---------- */
+.unit-card {
+  position: relative;
+  margin: 0 -90px 46px;
+  border: 1px solid var(--ink);
+  outline: 1px solid var(--hairline-2);
+  outline-offset: 4px;
+  background: var(--paper-card);
+  box-shadow: 0 1px 0 rgba(43,36,26,.06), 0 10px 26px -18px rgba(43,36,26,.35);
+}
+.unit-card .slot { top: 8px; right: 10px; }
+.unit-card-head {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 6px 16px;
+  padding: 20px 28px 14px;
+  border-bottom: 3px double var(--hairline-2);
+}
+.unit-card-head .uc-kicker {
+  flex-basis: 100%;
+  font-family: var(--sans);
+  font-size: 11px;
+  letter-spacing: .34em;
+  color: var(--red);
+  font-weight: 700;
+}
+.unit-card-head h4 {
+  font-size: 25px;
+  font-weight: 700;
+  letter-spacing: .03em;
+}
+.unit-card-head .uc-en {
+  font-style: italic;
+  font-size: 15px;
+  color: var(--ink-faint);
+}
+.unit-card-head .uc-meta {
+  margin-left: auto;
+  font-family: var(--sans);
+  font-size: 13.5px;
+  color: var(--ink-soft);
+}
+.unit-card-head .uc-meta b {
+  color: var(--red);
+  font-family: var(--mono);
+  font-size: 14.5px;
+  font-weight: 700;
+}
+
+/* 属性条 */
+.stat-strip {
+  display: flex;
+  border-bottom: 1px solid var(--hairline-2);
+}
+.stat-strip .stat {
+  flex: 1;
+  text-align: center;
+  padding: 12px 4px 10px;
+  border-left: 1px solid var(--hairline);
+}
+.stat-strip .stat:first-child { border-left: none; }
+.stat-strip .stat .label {
+  font-family: var(--sans);
+  font-size: 10.5px;
+  letter-spacing: .28em;
+  color: var(--ink-faint);
+  padding-left: .28em; /* 视觉居中补偿 */
+}
+.stat-strip .stat .value {
+  font-family: var(--mono);
+  font-size: 22px;
+  font-weight: 700;
+  color: var(--ink);
+  margin-top: 2px;
+}
+
+/* 武器表 */
+.weapon-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-family: var(--sans);
+  font-size: 13px;
+}
+.weapon-table th {
+  font-size: 10.5px;
+  letter-spacing: .22em;
+  color: var(--ink-faint);
+  font-weight: 600;
+  text-align: center;
+  padding: 8px 6px 6px;
+  border-bottom: 1px solid var(--hairline-2);
+  white-space: nowrap;
+}
+.weapon-table th:first-child { text-align: left; padding-left: 28px; }
+.weapon-table th:last-child  { text-align: left; }
+.weapon-table td {
+  padding: 8px 6px;
+  border-bottom: 1px solid var(--hairline);
+  text-align: center;
+  font-family: var(--mono);
+  font-size: 13px;
+  color: var(--ink);
+  white-space: nowrap;
+}
+.weapon-table td.wname {
+  text-align: left;
+  padding-left: 28px;
+  font-family: var(--serif);
+  font-size: 15px;
+  font-weight: 700;
+  letter-spacing: .02em;
+}
+.weapon-table td.traits {
+  text-align: left;
+  font-family: var(--sans);
+  font-size: 12px;
+  color: var(--red-deep);
+  white-space: normal;
+}
+.weapon-table tr.group-row td {
+  background: var(--paper-deep);
+  text-align: left;
+  padding: 5px 28px;
+  font-family: var(--sans);
+  font-size: 11px;
+  letter-spacing: .3em;
+  color: var(--ink-soft);
+  font-weight: 700;
+  border-bottom: 1px solid var(--hairline-2);
+}
+.weapon-table tr:hover td { background: rgba(179,64,42,.035); }
+.weapon-table tr.group-row:hover td { background: var(--paper-deep); }
+
+/* 卡片脚部：关键词/技能 */
+.unit-card-foot {
+  padding: 14px 28px 18px;
+  font-family: var(--sans);
+  font-size: 13px;
+  color: var(--ink-soft);
+  border-top: 3px double var(--hairline-2);
+  line-height: 2;
+}
+.unit-card-foot .row b {
+  color: var(--ink-faint);
+  font-weight: 600;
+  font-size: 11.5px;
+  letter-spacing: .18em;
+  margin-right: 8px;
+}
+.unit-card-foot .row .kwd { color: var(--ink); }
+.unit-card-foot .row .faction-ability { color: var(--red-deep); font-weight: 600; }
+.unit-card-foot .ability {
+  margin-top: 6px;
+  padding: 9px 14px;
+  background: var(--paper-deep);
+  border-left: 3px solid var(--hairline-2);
+  font-size: 13px;
+  color: var(--ink);
+}
+.unit-card-foot .ability b { color: var(--red-deep); font-size: 13px; letter-spacing: .04em; margin-right: 6px; }
+.unit-card-foot .ability .roll { font-family: var(--mono); font-weight: 700; }
+
+/* ---------- D8 编者按（敏感性 + CTA） ---------- */
+.editors-note {
+  position: relative;
+  margin: 0 0 50px;
+  padding: 20px 26px 22px;
+  background: var(--red-wash);
+  border: 1px solid rgba(179,64,42,.28);
+}
+.editors-note .slot { top: 8px; right: 10px; }
+.editors-note .en-kicker {
+  font-family: var(--sans);
+  font-size: 11.5px;
+  letter-spacing: .34em;
+  color: var(--red);
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+.editors-note p {
+  font-size: 16px;
+  line-height: 2;
+}
+.editors-note .kw { color: var(--red-deep); font-weight: 600; }
+.editors-note .num { font-family: var(--mono); font-size: 14.5px; }
+.editors-note .cta {
+  display: inline-block;
+  margin-top: 16px;
+  font-family: var(--sans);
+  font-size: 14.5px;
+  font-weight: 700;
+  letter-spacing: .06em;
+  color: var(--paper-card);
+  background: var(--red);
+  border: 1px solid var(--red-deep);
+  border-radius: 3px;
+  padding: 10px 26px;
+  text-decoration: none;
+  box-shadow: 0 2px 0 var(--red-deep);
+  transition: transform .12s, box-shadow .12s, background .12s;
+}
+.editors-note .cta:hover {
+  background: var(--red-deep);
+  transform: translateY(1px);
+  box-shadow: 0 1px 0 var(--red-deep);
+}
+.editors-note .cta .wip {
+  font-weight: 400;
+  font-size: 12.5px;
+  opacity: .8;
+}
+
+/* ---------- D7 脚注 / 引用溯源 ---------- */
+.footnotes {
+  position: relative;
+  margin: 0 0 8px;
+  padding-top: 8px;
+}
+.footnotes .slot { top: 2px; right: 0; }
+.footnotes .asterism {
+  text-align: center;
+  color: var(--ink-faint);
+  font-size: 18px;
+  letter-spacing: .5em;
+  margin-bottom: 18px;
+}
+.footnotes h5 {
+  font-family: var(--sans);
+  font-size: 11.5px;
+  letter-spacing: .34em;
+  color: var(--ink-faint);
+  font-weight: 700;
+  margin-bottom: 14px;
+}
+.footnotes ol { list-style: none; }
+.footnotes li {
+  position: relative;
+  padding: 8px 0 8px 30px;
+  border-top: 1px dotted var(--hairline-2);
+  font-size: 14px;
+  line-height: 1.85;
+  color: var(--ink-soft);
+}
+.footnotes li:last-child { border-bottom: 1px dotted var(--hairline-2); }
+.footnotes li .fn-no {
+  position: absolute;
+  left: 4px; top: 6px;
+  font-family: var(--serif);
+  font-style: italic;
+  color: var(--red);
+  font-size: 15px;
+}
+.footnotes .book { color: var(--ink); font-weight: 600; }
+.footnotes .page { font-family: var(--mono); font-size: 12.5px; color: var(--red-deep); }
+.footnotes .wiki-path {
+  font-family: var(--mono);
+  font-size: 12px;
+  color: var(--ink-faint);
+  text-decoration: none;
+  border-bottom: 1px dotted var(--hairline-2);
+  word-break: break-all;
+}
+.footnotes .wiki-path:hover { color: var(--red); border-bottom-color: var(--red); }
+
+/* ============ D9 底部 composer（固定） ============ */
+.composer-bar {
+  position: fixed;
+  left: 0; right: 0; bottom: 0;
+  background: rgba(247, 243, 234, .97);
+  border-top: 1px solid var(--hairline-2);
+  box-shadow: 0 -10px 30px -18px rgba(43,36,26,.35);
+  z-index: 20;
+}
+.composer-inner {
+  position: relative;
+  max-width: 760px;
+  margin: 0 auto;
+  padding: 12px 24px 10px;
+}
+.composer-inner .slot { top: 10px; right: 24px; }
+.chips {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-bottom: 10px;
+}
+.chips .chips-label {
+  font-family: var(--sans);
+  font-size: 12px;
+  letter-spacing: .2em;
+  color: var(--ink-faint);
+}
+.chip {
+  font-family: var(--sans);
+  font-size: 13px;
+  color: var(--ink-soft);
+  background: var(--paper-card);
+  border: 1px solid var(--hairline-2);
+  border-radius: 999px;
+  padding: 5px 16px;
+  cursor: pointer;
+  transition: all .14s;
+}
+.chip:hover {
+  color: var(--red);
+  border-color: rgba(179,64,42,.5);
+  background: var(--red-wash);
+}
+.composer-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  border: 1px solid var(--hairline-2);
+  background: var(--paper-card);
+  border-radius: 4px;
+  padding: 4px 6px 4px 18px;
+  transition: border-color .15s, box-shadow .15s;
+}
+.composer-row:focus-within {
+  border-color: rgba(179,64,42,.55);
+  box-shadow: 0 0 0 3px var(--red-wash);
+}
+.composer-row input {
+  flex: 1;
+  border: none;
+  outline: none;
+  background: transparent;
+  font-family: var(--serif);
+  font-size: 16px;
+  color: var(--ink);
+  padding: 10px 0;
+}
+.composer-row input::placeholder { color: var(--ink-faint); font-style: italic; }
+.send-btn {
+  flex: none;
+  width: 40px; height: 40px;
+  border-radius: 3px;
+  border: 1px solid var(--red-deep);
+  background: var(--red);
+  color: #fbf8f1;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background .14s;
+}
+.send-btn:hover { background: var(--red-deep); }
+.composer-footer {
+  text-align: center;
+  font-family: var(--sans);
+  font-size: 11px;
+  color: var(--ink-faint);
+  letter-spacing: .08em;
+  padding: 8px 0 2px;
+}
+
+/* ============ 窄屏保护（≥1024 不坏） ============ */
+@media (max-width: 1120px) {
+  .unit-card { margin-left: -56px; margin-right: -56px; }
+  .mast-nav a { padding: 10px 24px 11px; }
+}
+@media (max-width: 860px) {
+  .unit-card { margin-left: 0; margin-right: 0; }
+  .article { padding-left: 20px; padding-right: 20px; }
+}
+</style>
+</head>
+<body>
+
+<!-- ================= D1 报头与导航 ================= -->
+<header class="masthead">
+  <span class="slot">D1</span>
+  <div class="mast-topline">
+    <span class="edition">战术评论 · 第 41 个千年特刊</span>
+    <span>2026 年 7 月 6 日 · 星期一</span>
+    <span class="context-tag"><span class="dot"></span>当前语境：<b>钛帝国</b></span>
+  </div>
+  <div class="mast-title">
+    <h1>40K 规则专家</h1>
+    <div class="subtitle">Warhammer 40K Rules Copilot</div>
+  </div>
+  <nav class="mast-nav">
+    <ul>
+      <li><a href="#" class="active">💬 聊天</a></li>
+      <li><a href="#">⚔️ 模拟器</a></li>
+      <li><a href="#">📋 军表实验室</a></li>
+      <li><a href="#">📖 图鉴</a></li>
+    </ul>
+  </nav>
+</header>
+
+<!-- ================= 文章主体 ================= -->
+<main class="article">
+
+  <div class="kicker">战术专栏 · 对局评估</div>
+  <h2 class="headline">重型磁轨枪对帝国骑士：<br>约三轮见分晓</h2>
+  <p class="dek">炮击战斗服小队 Broadside Battlesuits · 反坦克效率评估</p>
+  <hr class="head-rule">
+
+  <!-- ========== D2 读者来信（用户提问） ========== -->
+  <section class="reader-letter">
+    <span class="slot">D2</span>
+    <div class="letter-label">读者来信 <span>· READER'S QUESTION</span></div>
+    <blockquote>炮击战斗服的重型磁轨枪打帝国骑士能打掉多少血？值得带吗？</blockquote>
+    <div class="letter-meta">提问于今晚 21:47</div>
+  </section>
+
+  <!-- 编辑部回应 byline（回答开始） -->
+  <div class="byline">
+    <span class="who"><b>规则专家</b> · 编辑部回应<span class="ai-mark">AI 生成</span></span>
+    <time>21:48 · 检索 4 步 · 引用 3 条</time>
+  </div>
+
+  <!-- ========== D3 检索手记（工具调用轨迹，可折叠） ========== -->
+  <details class="tool-notes" open>
+    <span class="slot">D3</span>
+    <summary>
+      <span class="caret">▶</span>
+      <b>检索手记</b>&nbsp;— 本文结论基于以下工具调用
+      <span class="count">4 steps · 3 ok · 1 degraded</span>
+    </summary>
+    <ol>
+      <li><span class="fn-name">entity_resolver</span>("炮击战斗服") → broadside-battlesuits (000000433) <span class="ok">✓</span></li>
+      <li><span class="fn-name">get_entity</span>("broadside-battlesuits") → 属性/武器/技能 <span class="ok">✓</span></li>
+      <li><span class="fn-name">get_keyword_definition</span>("毁灭伤害") <span class="ok">✓</span></li>
+      <li class="step-degraded"><span class="fn-name">simulate_combat</span>(...) → <span class="degraded">未建模（P4 建设中），降级为期望值粗算</span></li>
+    </ol>
+  </details>
+
+  <!-- ========== D4 结论 pull-quote ========== -->
+  <section class="verdict">
+    <span class="slot">D4</span>
+    <div class="verdict-kicker">本 期 判 定</div>
+    <div class="seal" aria-hidden="true">值得带</div>
+    <p>单台炮击战斗服（未移动、重型磁轨枪 2 发）对帝国骑士每轮期望约 2.3 伤，其中约 1.0 来自<span class="kw">[毁灭伤害]</span>致命伤；满编 3 台一轮约 7 伤，约 3 轮打掉一台满血骑士（22W）。<strong>值得带</strong>：80 分/台的 S12 AP-4 D6+1，是钛帝国点数效率最高的反坦克平台之一。</p>
+  </section>
+
+  <!-- ========== D5 计算依据 ========== -->
+  <section class="calc">
+    <span class="slot">D5</span>
+    <div class="section-head">
+      <h3>计算依据</h3>
+      <span class="en">The Math</span>
+    </div>
+    <ol>
+      <li><span class="kw">[重型]</span><sup class="fnref"><a href="#fn2">2</a></sup>：未移动 +1 命中 <span class="arrow">→</span> 3+ 命中<span class="pct">（67%）</span></li>
+      <li>S12 对 T12 <span class="arrow">→</span> 4+ 穿防<span class="pct">（50%）</span></li>
+      <li>AP-4 击穿 3+ 甲，骑士只能用 5++ 无效保护 <span class="arrow">→</span> 失防 67%</li>
+      <li>穿防骰 6 触发<span class="kw">[毁灭伤害]</span><sup class="fnref"><a href="#fn3">3</a></sup> <span class="arrow">→</span> 直接致命伤，无视任何保护</li>
+      <li>D6+1 平均 4.5 伤/发；另有寻觅者导弹（一次性，S14 AP-3）可补一发</li>
+    </ol>
+  </section>
+
+  <!-- ========== D6 单位卡（杂志信息图框表） ========== -->
+  <section class="unit-card">
+    <span class="slot">D6</span>
+    <header class="unit-card-head">
+      <div class="uc-kicker">单 位 档 案 · DATASHEET</div>
+      <h4>炮击战斗服小队<sup class="fnref"><a href="#fn1">1</a></sup></h4>
+      <span class="uc-en">Broadside Battlesuits</span>
+      <span class="uc-meta">钛帝国 ｜ <b>80 / 170 / 270 分</b></span>
+    </header>
+
+    <div class="stat-strip">
+      <div class="stat"><div class="label">M</div><div class="value">5"</div></div>
+      <div class="stat"><div class="label">T</div><div class="value">6</div></div>
+      <div class="stat"><div class="label">SV</div><div class="value">2+</div></div>
+      <div class="stat"><div class="label">W</div><div class="value">8</div></div>
+      <div class="stat"><div class="label">LD</div><div class="value">7+</div></div>
+      <div class="stat"><div class="label">OC</div><div class="value">2</div></div>
+    </div>
+
+    <table class="weapon-table">
+      <thead>
+        <tr>
+          <th>武器</th><th>射程</th><th>A</th><th>命中</th><th>S</th><th>AP</th><th>D</th><th>特性</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr class="group-row"><td colspan="8">远 程 武 器</td></tr>
+        <tr>
+          <td class="wname">重型磁轨枪</td>
+          <td>60"</td><td>2</td><td>BS4+</td><td>12</td><td>-4</td><td>D6+1</td>
+          <td class="traits">[重型，毁灭伤害]</td>
+        </tr>
+        <tr>
+          <td class="wname">集束导弹仓</td>
+          <td>30"</td><td>6</td><td>BS4+</td><td>7</td><td>-1</td><td>2</td>
+          <td class="traits">[双联]</td>
+        </tr>
+        <tr>
+          <td class="wname">寻觅者导弹</td>
+          <td>48"</td><td>1</td><td>BS4+</td><td>14</td><td>-3</td><td>D6+1</td>
+          <td class="traits">[一次性]</td>
+        </tr>
+        <tr class="group-row"><td colspan="8">近 战 武 器</td></tr>
+        <tr>
+          <td class="wname">粉碎冲撞</td>
+          <td>近战</td><td>3</td><td>WS5+</td><td>6</td><td>0</td><td>1</td>
+          <td class="traits">—</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <footer class="unit-card-foot">
+      <div class="row"><b>关键词</b><span class="kwd">载具，机甲，战斗服，炮击</span>　｜　<b>阵营技能</b><span class="faction-ability">为了上上善道</span></div>
+      <div class="ability"><b>技能摘录 · 先进装甲</b>——对抗致命伤 <span class="roll">4+</span> 不知疼痛</div>
+    </footer>
+  </section>
+
+  <!-- ========== D8 编者按：敏感性提示 + CTA ========== -->
+  <aside class="editors-note">
+    <span class="slot">D8</span>
+    <div class="en-kicker">编 者 按 · 敏感性提示</div>
+    <p>若有观察员提供<span class="kw">[标记]</span>（为了上上善道），命中提升至 <span class="num">2+</span>，期望伤害 <span class="num">×1.25</span> → 满编约 <span class="num">8.8 伤/轮</span>。</p>
+    <a class="cta" href="#">⚔️ 在模拟器中打开此对局 <span class="wip">（P4 建设中）</span></a>
+  </aside>
+
+  <!-- ========== D7 脚注 / 引用溯源 ========== -->
+  <section class="footnotes">
+    <span class="slot">D7</span>
+    <div class="asterism">⁂</div>
+    <h5>注 释 与 出 处 · SOURCES</h5>
+    <ol>
+      <li id="fn1"><span class="fn-no">1</span><span class="book">《钛帝国十版CODEX-20251112》</span> <span class="page">p.44</span> · <a class="wiki-path" href="#">wiki: factions/钛帝国/units/broadside-battlesuits</a></li>
+      <li id="fn2"><span class="fn-no">2</span><span class="book">《战锤40K总规则10版》</span> 武器技能·重型 · <a class="wiki-path" href="#">wiki: core-rules/heavy</a></li>
+      <li id="fn3"><span class="fn-no">3</span><span class="book">《战锤40K总规则10版》</span> 武器技能·毁灭伤害 · <a class="wiki-path" href="#">wiki: core-rules/devastating-wounds</a></li>
+    </ol>
+  </section>
+
+</main>
+
+<!-- ================= D9 追问 chips + composer + 页脚 ================= -->
+<div class="composer-bar">
+  <div class="composer-inner">
+    <span class="slot">D9</span>
+    <div class="chips">
+      <span class="chips-label">继续追问</span>
+      <button class="chip" type="button">换集束导弹仓打步兵效率？</button>
+      <button class="chip" type="button">对比铁手将军 vs 炮击</button>
+      <button class="chip" type="button">满编三台的点数曲线</button>
+    </div>
+    <div class="composer-row">
+      <input id="composer-input" type="text" placeholder="问规则、查单位、判对局……支持中文/英文/俗名">
+      <button class="send-btn" type="button" aria-label="发送">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="12" y1="19" x2="12" y2="5"></line>
+          <polyline points="5 12 12 5 19 12"></polyline>
+        </svg>
+      </button>
+    </div>
+    <div class="composer-footer">回答由 LLM 基于本地规则库生成 · 引用页码可溯源 · 模拟为期望值/蒙特卡洛估算</div>
+  </div>
+</div>
+
+<script>
+// 追问 chip：点击后填入输入框（设计稿内唯一交互增强，折叠用原生 <details>）
+document.querySelectorAll('.chip').forEach(function (chip) {
+  chip.addEventListener('click', function () {
+    var input = document.getElementById('composer-input');
+    input.value = chip.textContent.trim();
+    input.focus();
+  });
+});
+</script>
+
+</body>
+</html>

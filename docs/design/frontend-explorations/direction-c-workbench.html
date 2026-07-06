@@ -1,0 +1,712 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>40K 规则专家 · 聊天 — 方向 C「数据工作台」</title>
+<style>
+/* ============ 方向 C：数据工作台 Pro Tool（浅色 · 高密度） ============ */
+*{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --bg:#fafafa;            /* 页面底 */
+  --bg-side:#f4f4f5;       /* 侧栏底 */
+  --bg-card:#ffffff;       /* 卡片底 */
+  --bg-sub:#f6f6f7;        /* 卡片内子层 */
+  --border:#e4e4e7;        /* 细边框 */
+  --border-strong:#d4d4d8;
+  --t1:#18181b;            /* 主文字 */
+  --t2:#52525b;            /* 次文字 */
+  --t3:#8e8e96;            /* 弱文字 */
+  --accent:#5661c2;        /* 单一强调色：低饱和靛蓝 */
+  --accent-strong:#4650a8;
+  --accent-bg:#eef0fb;
+  --accent-border:#cdd2f0;
+  --ok:#0f7b4d;            /* 语义色仅用于状态 */
+  --ok-bg:#e6f4ec;
+  --warn:#b45309;
+  --warn-bg:#fdf3e3;
+  --mono:"SF Mono",Consolas,"Cascadia Mono","Courier New",monospace;
+}
+html,body{height:100%}
+body{
+  font-family:-apple-system,"Segoe UI","Microsoft YaHei","PingFang SC","Helvetica Neue",Arial,sans-serif;
+  font-size:13px;line-height:1.65;color:var(--t1);background:var(--bg);
+  -webkit-font-smoothing:antialiased;
+}
+kbd{
+  font-family:var(--mono);font-size:10px;color:var(--t3);
+  border:1px solid var(--border);border-bottom-width:2px;border-radius:4px;
+  padding:0 4px;background:#fff;line-height:1.5;white-space:nowrap;
+}
+.mono{font-family:var(--mono);font-variant-numeric:tabular-nums}
+
+/* ---- 槽位角标徽章 ---- */
+.slot{
+  position:absolute;top:6px;right:8px;z-index:5;
+  font-family:var(--mono);font-size:9.5px;letter-spacing:.4px;
+  color:var(--t3);opacity:.65;background:#fff;
+  border:1px solid var(--border);border-radius:4px;padding:0 4px;line-height:15px;
+  user-select:none;pointer-events:none;
+}
+
+/* ================= 框架 ================= */
+.app{display:flex;min-height:100vh}
+
+/* ---- C1 侧栏 ---- */
+.side{
+  position:fixed;top:0;left:0;bottom:0;width:224px;
+  background:var(--bg-side);border-right:1px solid var(--border);
+  display:flex;flex-direction:column;padding:14px 10px 12px;z-index:20;
+}
+.brand{position:relative;display:flex;gap:9px;align-items:center;padding:2px 6px 12px}
+.brand-logo{
+  width:28px;height:28px;border-radius:7px;flex:none;
+  background:linear-gradient(135deg,var(--accent),var(--accent-strong));
+  color:#fff;font-family:var(--mono);font-size:10.5px;font-weight:700;
+  display:flex;align-items:center;justify-content:center;letter-spacing:.5px;
+}
+.brand-name{font-size:13.5px;font-weight:600;line-height:1.3}
+.brand-sub{font-size:10px;color:var(--t3);line-height:1.3;font-family:var(--mono);letter-spacing:.2px}
+.searchbar{
+  display:flex;align-items:center;gap:7px;width:100%;
+  border:1px solid var(--border);background:#fff;border-radius:7px;
+  padding:5px 8px;margin:2px 0 12px;color:var(--t3);font-size:12px;cursor:pointer;
+  font-family:inherit;
+}
+.searchbar:hover{border-color:var(--border-strong)}
+.searchbar svg{flex:none}
+.searchbar .grow{flex:1;text-align:left}
+.nav{display:flex;flex-direction:column;gap:1px}
+.nav a{
+  display:flex;align-items:center;gap:8px;text-decoration:none;
+  color:var(--t2);font-size:13px;border-radius:6px;padding:6px 8px;
+}
+.nav a:hover{background:#ebebee;color:var(--t1)}
+.nav a.active{background:#fff;color:var(--t1);font-weight:600;box-shadow:inset 0 0 0 1px var(--border)}
+.nav a.active .nav-ico{filter:none}
+.nav .nav-ico{width:16px;text-align:center;font-size:13px}
+.nav .tag{
+  margin-left:auto;font-family:var(--mono);font-size:9.5px;color:var(--t3);
+  border:1px solid var(--border);border-radius:4px;padding:0 4px;line-height:15px;background:#fff;
+}
+.side-label{
+  font-size:10.5px;color:var(--t3);letter-spacing:.8px;font-weight:500;
+  padding:0 8px;margin:16px 0 5px;
+}
+.ctx-pill{
+  display:flex;align-items:center;gap:7px;width:100%;
+  border:1px solid var(--border);background:#fff;border-radius:7px;
+  padding:6px 9px;font-size:12.5px;color:var(--t1);cursor:pointer;font-family:inherit;font-weight:500;
+}
+.ctx-pill:hover{border-color:var(--accent-border)}
+.dot{width:7px;height:7px;border-radius:50%;background:var(--accent);flex:none}
+.ctx-pill .chev{margin-left:auto;color:var(--t3)}
+.ctx-note{font-size:10.5px;color:var(--t3);padding:5px 9px 0;line-height:1.5}
+.sess{
+  display:flex;align-items:center;gap:7px;border-radius:6px;padding:5.5px 8px;
+  font-size:12.5px;color:var(--t1);background:#ebebee;cursor:pointer;
+}
+.sess .sess-dot{width:5px;height:5px;border-radius:50%;background:var(--ok);flex:none}
+.sess span{overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.newchat{
+  display:flex;align-items:center;justify-content:space-between;width:100%;
+  margin-top:5px;border:1px dashed var(--border-strong);background:transparent;
+  border-radius:6px;padding:5px 8px;font-size:12px;color:var(--t3);cursor:pointer;font-family:inherit;
+}
+.newchat:hover{color:var(--t2);border-color:var(--t3)}
+.side-spacer{flex:1}
+.side-foot{
+  border-top:1px solid var(--border);padding:10px 8px 0;
+  font-size:10.5px;color:var(--t3);line-height:1.6;font-family:var(--mono);
+}
+
+/* ================= 主区 ================= */
+.main{flex:1;margin-left:224px;display:flex;flex-direction:column;min-width:0}
+.topbar{
+  position:sticky;top:0;z-index:15;
+  display:flex;align-items:center;gap:10px;
+  background:rgba(250,250,250,.95);border-bottom:1px solid var(--border);
+  padding:9px 28px;
+}
+.crumb{font-size:12.5px;color:var(--t3)}
+.crumb b{color:var(--t1);font-weight:600}
+.crumb .sep{margin:0 6px;color:var(--border-strong)}
+.top-right{margin-left:auto;display:flex;align-items:center;gap:8px}
+.ctx-chip{
+  display:inline-flex;align-items:center;gap:6px;
+  border:1px solid var(--border);background:#fff;border-radius:20px;
+  padding:2.5px 10px;font-size:11.5px;color:var(--t2);
+}
+.icon-btn{
+  border:1px solid transparent;background:transparent;border-radius:6px;
+  color:var(--t3);font-size:14px;line-height:1;padding:4px 6px;cursor:pointer;
+}
+.icon-btn:hover{background:#ebebee;color:var(--t1)}
+
+.stream{width:100%;max-width:880px;margin:0 auto;padding:26px 28px 8px;flex:1}
+
+/* ---- C2 消息流 ---- */
+.msg{position:relative;display:flex;gap:12px;margin-bottom:22px}
+.avatar{
+  width:26px;height:26px;border-radius:7px;flex:none;margin-top:1px;
+  display:flex;align-items:center;justify-content:center;
+  font-size:11px;font-weight:600;
+}
+.avatar.you{background:#e4e4e7;color:var(--t2)}
+.avatar.bot{background:var(--accent);color:#fff;font-family:var(--mono);font-size:9.5px;letter-spacing:.3px}
+.msg-body{flex:1;min-width:0}
+.msg-meta{font-size:11px;color:var(--t3);margin-bottom:3px}
+.msg-meta b{color:var(--t2);font-weight:600;font-size:11.5px}
+.msg-meta .m-sep{margin:0 5px;color:var(--border-strong)}
+.user-text{
+  font-size:14px;font-weight:500;line-height:1.7;color:var(--t1);
+  background:#fff;border:1px solid var(--border);border-radius:8px;
+  padding:10px 14px;display:inline-block;
+}
+.answer{display:flex;flex-direction:column;gap:10px}
+
+/* ---- 通用卡片 ---- */
+.card{
+  position:relative;background:var(--bg-card);
+  border:1px solid var(--border);border-radius:8px;
+}
+.card-label{
+  font-size:11px;color:var(--t3);font-weight:500;letter-spacing:.6px;
+  display:flex;align-items:center;gap:6px;
+}
+
+/* ---- C3 工具轨迹（默认折叠为一行） ---- */
+.trace{overflow:hidden}
+.trace summary{
+  list-style:none;display:flex;align-items:center;gap:8px;
+  padding:7px 12px;cursor:pointer;user-select:none;font-size:12px;color:var(--t2);
+}
+.trace summary::-webkit-details-marker{display:none}
+.trace summary:hover{background:var(--bg-sub)}
+.trace .chev{color:var(--t3);font-size:9px;transition:transform .15s ease;width:10px;text-align:center}
+.trace[open] .chev{transform:rotate(90deg)}
+.trace .t-title{font-weight:600;color:var(--t1)}
+.trace .t-stat{font-family:var(--mono);font-size:11px;color:var(--t3)}
+.trace .t-warn{
+  margin-left:auto;margin-right:34px;font-size:10.5px;color:var(--warn);
+  background:var(--warn-bg);border-radius:4px;padding:1px 7px;font-family:var(--mono);
+}
+.trace-list{border-top:1px solid var(--border);padding:4px 0}
+.trace-row{
+  display:flex;align-items:baseline;gap:10px;
+  padding:5px 14px 5px 16px;font-family:var(--mono);font-size:11.5px;
+}
+.trace-row + .trace-row{border-top:1px dashed #efeff1}
+.trace-row .idx{color:var(--t3);width:12px;flex:none;font-size:10.5px}
+.trace-row .call{color:var(--t1);flex:1;min-width:0;word-break:break-all}
+.trace-row .call .fn{color:var(--accent-strong)}
+.trace-row .call .arg{color:var(--t2)}
+.trace-row .call .ret{color:var(--t3)}
+.trace-row .st{flex:none;font-size:10.5px;border-radius:4px;padding:0 6px;line-height:17px}
+.st-ok{color:var(--ok);background:var(--ok-bg)}
+.st-warn{color:var(--warn);background:var(--warn-bg)}
+
+/* ---- C4 结论区（视觉锚点） ---- */
+.verdict{border-left:3px solid var(--accent);padding:12px 16px 13px}
+.verdict-head{display:flex;align-items:center;gap:10px;margin-bottom:10px}
+.verdict-chip{
+  display:inline-flex;align-items:center;gap:5px;
+  background:var(--ok-bg);color:var(--ok);border-radius:5px;
+  padding:2px 9px;font-size:12.5px;font-weight:700;letter-spacing:.3px;
+}
+.kpis{
+  display:flex;align-items:stretch;gap:0;
+  border:1px solid var(--border);border-radius:7px;background:var(--bg-sub);
+  margin-bottom:11px;overflow:hidden;
+}
+.kpi{flex:1;padding:8px 14px 7px;min-width:0}
+.kpi + .kpi{border-left:1px solid var(--border)}
+.kpi .v{font-family:var(--mono);font-variant-numeric:tabular-nums;font-size:19px;font-weight:700;color:var(--t1);line-height:1.2}
+.kpi .v small{font-size:11px;font-weight:500;color:var(--t2);margin-left:2px}
+.kpi .k{font-size:10.5px;color:var(--t3);margin-top:1px}
+.verdict p{font-size:13.5px;line-height:1.8;color:var(--t1)}
+.verdict p .hl{
+  font-weight:700;color:var(--accent-strong);
+  background:var(--accent-bg);border-radius:4px;padding:0 5px;
+}
+.kw-inline{
+  font-family:var(--mono);font-size:12px;color:var(--accent-strong);
+  background:var(--accent-bg);border-radius:4px;padding:0 3px;white-space:nowrap;
+}
+
+/* ---- 行内引用角标 chip（C7 的行内形态） ---- */
+.cite{
+  position:relative;display:inline-block;vertical-align:2px;
+  font-family:var(--mono);font-size:9.5px;line-height:14px;
+  color:var(--accent-strong);background:var(--accent-bg);
+  border:1px solid var(--accent-border);border-radius:4px;
+  padding:0 4px;margin-left:3px;cursor:default;
+}
+.cite .tip{
+  display:none;position:absolute;bottom:calc(100% + 7px);left:50%;transform:translateX(-50%);
+  background:#26262b;color:#fafafa;font-family:var(--mono);font-size:10.5px;line-height:1.5;
+  padding:6px 10px;border-radius:6px;white-space:nowrap;z-index:30;
+  box-shadow:0 4px 14px rgba(0,0,0,.18);
+}
+.cite .tip::after{
+  content:"";position:absolute;top:100%;left:50%;transform:translateX(-50%);
+  border:5px solid transparent;border-top-color:#26262b;
+}
+.cite:hover .tip{display:block}
+
+/* ---- C5 计算依据 ---- */
+.calc{padding:11px 16px 6px}
+.calc-head{display:flex;align-items:baseline;gap:8px;margin-bottom:7px}
+.calc-head .sub{font-family:var(--mono);font-size:10.5px;color:var(--t3)}
+.calc-row{
+  display:flex;gap:11px;align-items:baseline;
+  padding:6px 0 7px;font-size:13px;color:var(--t1);line-height:1.7;
+}
+.calc-row + .calc-row{border-top:1px solid #f1f1f3}
+.calc-row .no{
+  flex:none;width:18px;height:18px;border-radius:5px;margin-top:2px;align-self:flex-start;
+  background:var(--bg-sub);border:1px solid var(--border);
+  font-family:var(--mono);font-size:10px;color:var(--t2);
+  display:flex;align-items:center;justify-content:center;
+}
+.calc-row .num{font-family:var(--mono);font-variant-numeric:tabular-nums;font-weight:600;font-size:12.5px}
+.calc-row .arr{color:var(--t3);margin:0 2px}
+
+/* ---- C6 单位卡（信息密度最高） ---- */
+.unit{overflow:hidden}
+.unit-head{
+  display:flex;align-items:center;gap:10px;flex-wrap:wrap;
+  padding:11px 16px 10px;border-bottom:1px solid var(--border);background:var(--bg-sub);
+}
+.unit-name{font-size:14.5px;font-weight:700;letter-spacing:.2px}
+.unit-en{font-family:var(--mono);font-size:11px;color:var(--t3)}
+.fchip{
+  display:inline-flex;align-items:center;gap:5px;
+  border:1px solid var(--accent-border);background:var(--accent-bg);color:var(--accent-strong);
+  border-radius:5px;padding:1px 8px;font-size:11px;font-weight:600;
+}
+.unit-head .pts{margin-left:auto;display:flex;align-items:baseline;gap:0;border:1px solid var(--border);border-radius:6px;background:#fff;overflow:hidden}
+.pt{padding:3px 10px 4px;text-align:center}
+.pt + .pt{border-left:1px solid var(--border)}
+.pt .pv{font-family:var(--mono);font-variant-numeric:tabular-nums;font-size:13.5px;font-weight:700;line-height:1.2}
+.pt .pk{font-size:9.5px;color:var(--t3);line-height:1.2}
+.pts-unit{padding:3px 8px;font-size:10.5px;color:var(--t3);align-self:center}
+.unit-wiki{font-family:var(--mono);font-size:10px;color:var(--t3);width:100%;margin-top:2px}
+.unit-wiki a{color:var(--accent-strong);text-decoration:none}
+.unit-wiki a:hover{text-decoration:underline}
+
+.statline{display:flex;border-bottom:1px solid var(--border)}
+.stat{flex:1;text-align:center;padding:7px 0 6px}
+.stat + .stat{border-left:1px solid #f1f1f3}
+.stat .sk{font-size:10px;color:var(--t3);letter-spacing:1px;font-family:var(--mono)}
+.stat .sv{font-family:var(--mono);font-variant-numeric:tabular-nums;font-size:16px;font-weight:700;line-height:1.25}
+
+.wtbl-wrap{overflow-x:auto}
+.wsec{padding:9px 16px 2px;display:flex;align-items:center;gap:7px}
+.wsec .wico{font-size:10px;color:var(--t3)}
+table.wtbl{width:100%;border-collapse:collapse;font-size:12.5px}
+.wtbl th{
+  text-align:left;font-weight:500;color:var(--t3);font-size:10.5px;
+  font-family:var(--mono);letter-spacing:.5px;
+  padding:5px 8px;border-bottom:1px solid var(--border);white-space:nowrap;
+}
+.wtbl td{
+  padding:6px 8px;border-bottom:1px solid #f1f1f3;vertical-align:middle;white-space:nowrap;
+}
+.wtbl td.wname{font-weight:600;color:var(--t1)}
+.wtbl td.n{font-family:var(--mono);font-variant-numeric:tabular-nums;color:var(--t1)}
+.wtbl th:first-child,.wtbl td:first-child{padding-left:16px}
+.wtbl th:last-child,.wtbl td:last-child{padding-right:16px}
+.wtbl tr.focus td{background:var(--accent-bg)}
+.wtbl tr.focus td.wname{color:var(--accent-strong)}
+.wtbl tr:last-child td{border-bottom:none}
+.kwchip{
+  display:inline-block;font-size:10.5px;color:var(--t2);
+  border:1px solid var(--border);background:var(--bg-sub);
+  border-radius:4px;padding:0 6px;line-height:17px;margin-right:4px;
+}
+.kwchip.acc{color:var(--accent-strong);border-color:var(--accent-border);background:var(--accent-bg)}
+.unit-foot{border-top:1px solid var(--border);padding:9px 16px 11px;display:flex;flex-direction:column;gap:6px}
+.unit-foot .rowk{display:flex;align-items:baseline;gap:8px;flex-wrap:wrap;font-size:12px}
+.unit-foot .rk-label{font-size:10.5px;color:var(--t3);flex:none;width:52px;font-family:var(--mono)}
+.ability{font-size:12.5px;color:var(--t1)}
+.ability b{font-weight:700}
+.ability .mono{font-size:12px;font-weight:600}
+
+/* ---- C8 敏感性 + CTA ---- */
+.sens{display:flex;align-items:center;gap:14px;padding:11px 16px;flex-wrap:wrap}
+.sens-ico{
+  flex:none;width:24px;height:24px;border-radius:6px;background:var(--bg-sub);
+  border:1px solid var(--border);display:flex;align-items:center;justify-content:center;
+  font-family:var(--mono);font-size:12px;color:var(--t2);
+}
+.sens-body{flex:1;min-width:260px}
+.sens-body .card-label{margin-bottom:2px}
+.sens-body p{font-size:12.5px;color:var(--t1);line-height:1.7}
+.sens-body p .num{font-family:var(--mono);font-variant-numeric:tabular-nums;font-weight:600}
+.cta{
+  flex:none;display:inline-flex;align-items:center;gap:7px;
+  background:var(--accent);color:#fff;border:1px solid var(--accent-strong);
+  border-radius:7px;padding:7px 14px;font-size:12.5px;font-weight:600;
+  cursor:pointer;font-family:inherit;white-space:nowrap;
+}
+.cta:hover{background:var(--accent-strong)}
+.cta small{font-weight:400;opacity:.75;font-size:10.5px}
+
+/* ---- C7 引用列表 ---- */
+.cites{padding:10px 16px 11px}
+.cites .card-label{margin-bottom:6px}
+.cite-row{
+  display:flex;align-items:baseline;gap:9px;
+  padding:4.5px 0;font-size:12px;
+}
+.cite-row + .cite-row{border-top:1px solid #f1f1f3}
+.cite-row .cno{
+  flex:none;font-family:var(--mono);font-size:10px;color:var(--accent-strong);
+  background:var(--accent-bg);border:1px solid var(--accent-border);
+  border-radius:4px;padding:0 5px;line-height:15px;
+}
+.cite-row .cbook{font-weight:600;color:var(--t1)}
+.cite-row .cloc{color:var(--t2)}
+.cite-row .cdot{color:var(--border-strong)}
+.cite-row .cwiki{font-family:var(--mono);font-size:11px;color:var(--accent-strong);text-decoration:none;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.cite-row .cwiki:hover{text-decoration:underline}
+
+/* ---- C9 追问 + 输入区 ---- */
+.composer{
+  position:sticky;bottom:0;z-index:15;background:var(--bg);
+  border-top:1px solid var(--border);
+  padding:10px 28px 9px;
+}
+.composer-inner{max-width:880px;margin:0 auto;position:relative}
+.chips{display:flex;gap:7px;flex-wrap:wrap;margin-bottom:9px}
+.chip-q{
+  border:1px solid var(--border);background:#fff;color:var(--t2);
+  border-radius:16px;padding:3.5px 12px;font-size:12px;cursor:pointer;font-family:inherit;
+}
+.chip-q:hover{border-color:var(--accent-border);color:var(--accent-strong);background:var(--accent-bg)}
+.inputbox{
+  display:flex;align-items:center;gap:10px;
+  background:#fff;border:1px solid var(--border-strong);border-radius:9px;
+  padding:8px 8px 8px 14px;
+  box-shadow:0 1px 3px rgba(0,0,0,.04);
+}
+.inputbox:focus-within{border-color:var(--accent);box-shadow:0 0 0 3px var(--accent-bg)}
+.inputbox input{
+  flex:1;border:none;outline:none;font-size:13.5px;font-family:inherit;color:var(--t1);
+  background:transparent;min-width:0;
+}
+.inputbox input::placeholder{color:var(--t3)}
+.input-hint{font-size:10.5px;color:var(--t3);white-space:nowrap;display:flex;align-items:center;gap:4px}
+.send{
+  border:none;background:var(--accent);color:#fff;border-radius:7px;
+  padding:6px 16px;font-size:12.5px;font-weight:600;cursor:pointer;font-family:inherit;flex:none;
+}
+.send:hover{background:var(--accent-strong)}
+.page-foot{
+  max-width:880px;margin:0 auto;text-align:center;
+  font-size:10.5px;color:var(--t3);padding-top:7px;
+}
+.page-foot .fdot{margin:0 6px;color:var(--border-strong)}
+
+/* ---- 响应式：1024 不能坏 ---- */
+@media (max-width:1180px){
+  .stream{padding:22px 20px 8px}
+  .composer{padding:10px 20px 9px}
+  .topbar{padding:9px 20px}
+}
+@media (max-width:1080px){
+  .kpi{padding:7px 10px 6px}
+  .kpi .v{font-size:17px}
+  .unit-head .pts{margin-left:0}
+}
+</style>
+</head>
+<body>
+<div class="app">
+
+  <!-- ============ C1 侧栏：全局框架与导航 ============ -->
+  <aside class="side">
+    <div class="brand">
+      <div class="brand-logo">40K</div>
+      <div>
+        <div class="brand-name">40K 规则专家</div>
+        <div class="brand-sub">W40K Rules Copilot</div>
+      </div>
+      <span class="slot">C1</span>
+    </div>
+
+    <button class="searchbar" type="button">
+      <svg width="12" height="12" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="7" cy="7" r="4.4"/><path d="M10.4 10.4 14 14"/></svg>
+      <span class="grow">搜索单位、规则、关键词</span>
+      <kbd>⌘K</kbd>
+    </button>
+
+    <nav class="nav">
+      <a class="active" href="#"><span class="nav-ico">💬</span>聊天</a>
+      <a href="#"><span class="nav-ico">⚔️</span>模拟器<span class="tag">P4</span></a>
+      <a href="#"><span class="nav-ico">📋</span>军表实验室</a>
+      <a href="#"><span class="nav-ico">📖</span>图鉴</a>
+    </nav>
+
+    <div class="side-label">当前语境</div>
+    <button class="ctx-pill" type="button">
+      <span class="dot"></span>钛帝国
+      <svg class="chev" width="10" height="10" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 6.5 8 10.5 12 6.5"/></svg>
+    </button>
+    <div class="ctx-note">检索与别名解析优先命中钛帝国单位</div>
+
+    <div class="side-label">会话</div>
+    <div class="sess"><span class="sess-dot"></span><span>炮击战斗服 vs 帝国骑士</span></div>
+    <button class="newchat" type="button"><span>＋ 新对话</span><kbd>N</kbd></button>
+
+    <div class="side-spacer"></div>
+    <div class="side-foot">本地规则库 · 49 本 PDF 已索引<br>bge-m3 + BM25 + RRF</div>
+  </aside>
+
+  <!-- ============ 主区 ============ -->
+  <main class="main">
+    <header class="topbar">
+      <div class="crumb">聊天<span class="sep">/</span><b>炮击战斗服 vs 帝国骑士</b></div>
+      <div class="top-right">
+        <span class="ctx-chip"><span class="dot"></span>语境：钛帝国</span>
+        <button class="icon-btn" type="button" title="更多">⋯</button>
+      </div>
+    </header>
+
+    <div class="stream">
+
+      <!-- ============ C2 消息流：用户提问 ============ -->
+      <section class="msg">
+        <span class="slot">C2</span>
+        <div class="avatar you">你</div>
+        <div class="msg-body">
+          <div class="msg-meta"><b>你</b><span class="m-sep">·</span>刚刚</div>
+          <div class="user-text">炮击战斗服的重型磁轨枪打帝国骑士能打掉多少血？值得带吗？</div>
+        </div>
+      </section>
+
+      <!-- ============ C2 消息流：AI 回答 ============ -->
+      <section class="msg">
+        <div class="avatar bot">40K</div>
+        <div class="msg-body">
+          <div class="msg-meta"><b>40K 规则专家</b><span class="m-sep">·</span>deepseek-chat<span class="m-sep">·</span>期望值粗算模式</div>
+
+          <div class="answer">
+
+            <!-- ============ C3 工具轨迹：默认折叠为一行 ============ -->
+            <details class="trace card">
+              <span class="slot">C3</span>
+              <summary>
+                <span class="chev">▶</span>
+                <span class="t-title">工具轨迹</span>
+                <span class="t-stat">4 步调用 · 1 步降级</span>
+                <span class="t-warn">⚠ simulate_combat 降级</span>
+              </summary>
+              <div class="trace-list">
+                <div class="trace-row">
+                  <span class="idx">1</span>
+                  <span class="call"><span class="fn">entity_resolver</span><span class="arg">("炮击战斗服")</span> <span class="ret">→ broadside-battlesuits (000000433)</span></span>
+                  <span class="st st-ok">✓</span>
+                </div>
+                <div class="trace-row">
+                  <span class="idx">2</span>
+                  <span class="call"><span class="fn">get_entity</span><span class="arg">("broadside-battlesuits")</span> <span class="ret">→ 属性/武器/技能</span></span>
+                  <span class="st st-ok">✓</span>
+                </div>
+                <div class="trace-row">
+                  <span class="idx">3</span>
+                  <span class="call"><span class="fn">get_keyword_definition</span><span class="arg">("毁灭伤害")</span></span>
+                  <span class="st st-ok">✓</span>
+                </div>
+                <div class="trace-row">
+                  <span class="idx">4</span>
+                  <span class="call"><span class="fn">simulate_combat</span><span class="arg">(...)</span> <span class="ret">→ 未建模（P4 建设中），降级为期望值粗算</span></span>
+                  <span class="st st-warn">⚠ 降级</span>
+                </div>
+              </div>
+            </details>
+
+            <!-- ============ C4 结论区：视觉锚点 ============ -->
+            <div class="verdict card">
+              <span class="slot">C4</span>
+              <div class="verdict-head">
+                <span class="verdict-chip">✓ 值得带</span>
+                <span class="card-label">结论 · 期望值判定</span>
+              </div>
+              <div class="kpis">
+                <div class="kpi"><div class="v">≈2.3<small>伤/轮</small></div><div class="k">单台 · 未移动 · 2 发</div></div>
+                <div class="kpi"><div class="v">≈1.0<small>致命伤</small></div><div class="k">来自[毁灭伤害]</div></div>
+                <div class="kpi"><div class="v">≈7<small>伤/轮</small></div><div class="k">满编 3 台</div></div>
+                <div class="kpi"><div class="v">≈3<small>轮</small></div><div class="k">击毁满血骑士（22W）</div></div>
+              </div>
+              <p>单台炮击战斗服（未移动、重型磁轨枪 2 发）对帝国骑士每轮期望约 2.3 伤，其中约 1.0 来自<span class="kw-inline">[毁灭伤害]</span>致命伤；满编 3 台一轮约 7 伤，约 3 轮打掉一台满血骑士（22W）。<span class="hl">值得带</span>：80 分/台的 S12 AP-4 D6+1，是钛帝国点数效率最高的反坦克平台之一。<span class="cite">1<span class="tip">《钛帝国十版CODEX-20251112》 p.44</span></span></p>
+            </div>
+
+            <!-- ============ C5 计算依据 ============ -->
+            <div class="calc card">
+              <span class="slot">C5</span>
+              <div class="calc-head">
+                <span class="card-label">计算依据</span>
+                <span class="sub">5 步推导 · 期望值粗算</span>
+              </div>
+              <div class="calc-row"><span class="no">1</span><span><span class="kw-inline">[重型]</span>：未移动 +1 命中 <span class="arr">→</span> <span class="num">3+</span> 命中（<span class="num">67%</span>）<span class="cite">2<span class="tip">《战锤40K总规则10版》 武器技能·重型</span></span></span></div>
+              <div class="calc-row"><span class="no">2</span><span><span class="num">S12</span> 对 <span class="num">T12</span> <span class="arr">→</span> <span class="num">4+</span> 穿防（<span class="num">50%</span>）</span></div>
+              <div class="calc-row"><span class="no">3</span><span><span class="num">AP-4</span> 击穿 <span class="num">3+</span> 甲，骑士只能用 <span class="num">5++</span> 无效保护 <span class="arr">→</span> 失防 <span class="num">67%</span></span></div>
+              <div class="calc-row"><span class="no">4</span><span>穿防骰 <span class="num">6</span> 触发<span class="kw-inline">[毁灭伤害]</span> <span class="arr">→</span> 直接致命伤，无视任何保护<span class="cite">3<span class="tip">《战锤40K总规则10版》 武器技能·毁灭伤害</span></span></span></div>
+              <div class="calc-row"><span class="no">5</span><span><span class="num">D6+1</span> 平均 <span class="num">4.5</span> 伤/发；另有寻觅者导弹（一次性，<span class="num">S14 AP-3</span>）可补一发</span></div>
+            </div>
+
+            <!-- ============ C6 单位卡 ============ -->
+            <div class="unit card">
+              <span class="slot">C6</span>
+              <div class="unit-head">
+                <span class="unit-name">炮击战斗服小队</span>
+                <span class="unit-en">Broadside Battlesuits</span>
+                <span class="fchip"><span class="dot"></span>钛帝国</span>
+                <div class="pts">
+                  <div class="pt"><div class="pv">80</div><div class="pk">1 台</div></div>
+                  <div class="pt"><div class="pv">170</div><div class="pk">2 台</div></div>
+                  <div class="pt"><div class="pv">270</div><div class="pk">3 台</div></div>
+                  <div class="pts-unit">分</div>
+                </div>
+                <div class="unit-wiki">wiki: <a href="#">factions/钛帝国/units/broadside-battlesuits</a> · 在图鉴中打开 →</div>
+              </div>
+
+              <div class="statline">
+                <div class="stat"><div class="sk">M</div><div class="sv">5"</div></div>
+                <div class="stat"><div class="sk">T</div><div class="sv">6</div></div>
+                <div class="stat"><div class="sk">SV</div><div class="sv">2+</div></div>
+                <div class="stat"><div class="sk">W</div><div class="sv">8</div></div>
+                <div class="stat"><div class="sk">LD</div><div class="sv">7+</div></div>
+                <div class="stat"><div class="sk">OC</div><div class="sv">2</div></div>
+              </div>
+
+              <div class="wsec"><span class="card-label">远程武器</span><span class="wico">▸</span></div>
+              <div class="wtbl-wrap">
+                <table class="wtbl">
+                  <thead>
+                    <tr><th>武器</th><th>射程</th><th>A</th><th>BS</th><th>S</th><th>AP</th><th>D</th><th>关键词</th></tr>
+                  </thead>
+                  <tbody>
+                    <tr class="focus">
+                      <td class="wname">重型磁轨枪</td><td class="n">60"</td><td class="n">2</td><td class="n">4+</td><td class="n">12</td><td class="n">-4</td><td class="n">D6+1</td>
+                      <td><span class="kwchip acc">重型</span><span class="kwchip acc">毁灭伤害</span></td>
+                    </tr>
+                    <tr>
+                      <td class="wname">集束导弹仓</td><td class="n">30"</td><td class="n">6</td><td class="n">4+</td><td class="n">7</td><td class="n">-1</td><td class="n">2</td>
+                      <td><span class="kwchip">双联</span></td>
+                    </tr>
+                    <tr>
+                      <td class="wname">寻觅者导弹</td><td class="n">48"</td><td class="n">1</td><td class="n">4+</td><td class="n">14</td><td class="n">-3</td><td class="n">D6+1</td>
+                      <td><span class="kwchip">一次性</span></td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+
+              <div class="wsec"><span class="card-label">近战武器</span><span class="wico">▸</span></div>
+              <div class="wtbl-wrap">
+                <table class="wtbl">
+                  <thead>
+                    <tr><th>武器</th><th>射程</th><th>A</th><th>WS</th><th>S</th><th>AP</th><th>D</th><th></th></tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td class="wname">粉碎冲撞</td><td class="n">近战</td><td class="n">3</td><td class="n">5+</td><td class="n">6</td><td class="n">0</td><td class="n">1</td><td></td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+
+              <div class="unit-foot">
+                <div class="rowk">
+                  <span class="rk-label">关键词</span>
+                  <span><span class="kwchip">载具</span><span class="kwchip">机甲</span><span class="kwchip">战斗服</span><span class="kwchip">炮击</span></span>
+                  <span class="rk-label" style="width:auto">阵营技能</span>
+                  <span class="kwchip acc">为了上上善道</span>
+                </div>
+                <div class="rowk">
+                  <span class="rk-label">技能摘录</span>
+                  <span class="ability"><b>先进装甲</b>——对抗致命伤 <span class="mono">4+</span> 不知疼痛</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- ============ C8 敏感性提示 + CTA ============ -->
+            <div class="sens card">
+              <span class="slot">C8</span>
+              <div class="sens-ico">Δ</div>
+              <div class="sens-body">
+                <div class="card-label">敏感性 · 标记加成</div>
+                <p>若有观察员提供<span class="kw-inline">[标记]</span>（为了上上善道），命中提升至 <span class="num">2+</span>，期望伤害 <span class="num">×1.25</span> → 满编约 <span class="num">8.8</span> 伤/轮。</p>
+              </div>
+              <button class="cta" type="button">⚔️ 在模拟器中打开此对局 <small>（P4 建设中）</small></button>
+            </div>
+
+            <!-- ============ C7 引用/溯源 ============ -->
+            <div class="cites card">
+              <span class="slot">C7</span>
+              <div class="card-label">引用来源</div>
+              <div class="cite-row">
+                <span class="cno">1</span>
+                <span class="cbook">《钛帝国十版CODEX-20251112》</span>
+                <span class="cloc">p.44</span>
+                <span class="cdot">·</span>
+                <a class="cwiki" href="#">wiki: factions/钛帝国/units/broadside-battlesuits</a>
+              </div>
+              <div class="cite-row">
+                <span class="cno">2</span>
+                <span class="cbook">《战锤40K总规则10版》</span>
+                <span class="cloc">武器技能·重型</span>
+                <span class="cdot">·</span>
+                <a class="cwiki" href="#">wiki: core-rules/heavy</a>
+              </div>
+              <div class="cite-row">
+                <span class="cno">3</span>
+                <span class="cbook">《战锤40K总规则10版》</span>
+                <span class="cloc">武器技能·毁灭伤害</span>
+                <span class="cdot">·</span>
+                <a class="cwiki" href="#">wiki: core-rules/devastating-wounds</a>
+              </div>
+            </div>
+
+          </div><!-- /.answer -->
+        </div>
+      </section>
+
+    </div><!-- /.stream -->
+
+    <!-- ============ C9 追问 chips + 输入区 + 页脚 ============ -->
+    <div class="composer">
+      <div class="composer-inner">
+        <span class="slot">C9</span>
+        <div class="chips">
+          <button class="chip-q" type="button">换集束导弹仓打步兵效率？</button>
+          <button class="chip-q" type="button">对比铁手将军 vs 炮击</button>
+          <button class="chip-q" type="button">满编三台的点数曲线</button>
+        </div>
+        <div class="inputbox">
+          <input id="chat-input" type="text" placeholder="问规则、查单位、判对局……支持中文/英文/俗名">
+          <span class="input-hint"><kbd>Enter</kbd> 发送 · <kbd>Shift+Enter</kbd> 换行</span>
+          <button class="send" type="button">发送</button>
+        </div>
+        <div class="page-foot">回答由 LLM 基于本地规则库生成<span class="fdot">·</span>引用页码可溯源<span class="fdot">·</span>模拟为期望值/蒙特卡洛估算</div>
+      </div>
+    </div>
+
+  </main>
+</div>
+
+<script>
+// 点击追问 chip → 填入输入框（设计稿级交互）
+document.querySelectorAll('.chip-q').forEach(function(c){
+  c.addEventListener('click',function(){
+    var i=document.getElementById('chat-input');
+    i.value=c.textContent.trim();
+    i.focus();
+  });
+});
+</script>
+</body>
+</html>
