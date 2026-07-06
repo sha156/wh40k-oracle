@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>40K 规则专家 · 前端方向探索（4 选 1 + steal/skip）</title>
+<style>
+  :root {
+    --ink: #26272b; --sub: #6b6d76; --line: #e2e3e8; --bg: #f6f6f8; --card: #fff;
+    --accent: #4f5aae;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { background: var(--bg); color: var(--ink); font: 14px/1.7 "Segoe UI", "Microsoft YaHei", "PingFang SC", sans-serif; padding: 40px 24px 80px; }
+  .wrap { max-width: 1360px; margin: 0 auto; }
+  h1 { font-size: 22px; font-weight: 650; }
+  .lede { color: var(--sub); margin: 6px 0 28px; }
+  .lede code { font-family: Consolas, monospace; background: #ececf1; padding: 1px 5px; border-radius: 4px; font-size: 12.5px; }
+
+  .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 18px; margin-bottom: 40px; }
+  .card { background: var(--card); border: 1px solid var(--line); border-radius: 10px; overflow: hidden; display: flex; flex-direction: column; }
+  .thumb { position: relative; height: 230px; overflow: hidden; background: #ddd; border-bottom: 1px solid var(--line); }
+  .thumb iframe { width: 1320px; height: 1012px; border: 0; transform: scale(0.2273); transform-origin: top left; pointer-events: none; }
+  .thumb a.cover { position: absolute; inset: 0; }
+  .card-body { padding: 14px 16px 16px; flex: 1; display: flex; flex-direction: column; gap: 8px; }
+  .card h2 { font-size: 15.5px; font-weight: 650; }
+  .card h2 .tag { font-family: Consolas, monospace; font-size: 12px; color: #fff; background: var(--ink); border-radius: 4px; padding: 1px 7px; margin-right: 7px; }
+  .card .tagline { color: var(--sub); font-size: 13px; flex: 1; }
+  .card .open { align-self: flex-start; font-size: 13px; color: var(--accent); text-decoration: none; border: 1px solid var(--accent); border-radius: 6px; padding: 4px 14px; }
+  .card .open:hover { background: var(--accent); color: #fff; }
+
+  h3 { font-size: 16px; font-weight: 650; margin: 36px 0 12px; }
+  table { width: 100%; border-collapse: collapse; background: var(--card); border: 1px solid var(--line); font-size: 12.5px; }
+  th, td { border: 1px solid var(--line); padding: 8px 10px; text-align: left; vertical-align: top; }
+  th { background: #eeeef2; font-weight: 600; white-space: nowrap; }
+  td b { font-weight: 600; }
+  .slot { font-family: Consolas, monospace; color: var(--sub); white-space: nowrap; }
+  .tbl-scroll { overflow-x: auto; }
+
+  details { background: var(--card); border: 1px solid var(--line); border-radius: 8px; margin-bottom: 10px; }
+  summary { cursor: pointer; padding: 10px 14px; font-weight: 600; font-size: 14px; }
+  details .inner { padding: 0 16px 14px; }
+  details li { margin: 6px 0 6px 18px; }
+  .steal { color: #1a7f4b; font-weight: 600; }
+  .skip { color: #b3402a; font-weight: 600; }
+  .mono { font-family: Consolas, monospace; font-size: 12px; }
+
+  textarea { width: 100%; height: 460px; font: 13px/1.7 Consolas, "Microsoft YaHei", monospace; padding: 14px; border: 1px solid var(--line); border-radius: 8px; background: var(--card); color: var(--ink); resize: vertical; }
+  .copy-btn { margin-top: 8px; font-size: 13px; border: 0; background: var(--accent); color: #fff; border-radius: 6px; padding: 7px 18px; cursor: pointer; }
+  .copy-btn:hover { filter: brightness(1.1); }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <h1>40K 规则专家 · 聊天主页四方向探索</h1>
+  <p class="lede">同一份数据（炮击战斗服 vs 帝国骑士问答）× 4 种风格。每页关键区块带 <code>A1…A9</code> 角标，四个方向编号相同 = 同一功能槽位，反馈时直接报编号即可。</p>
+
+  <div class="grid">
+    <div class="card" style="border: 2px solid #990000;">
+      <div class="thumb"><iframe src="v2-warhammer.html" loading="lazy" scrolling="no" tabindex="-1"></iframe><a class="cover" href="v2-warhammer.html" target="_blank"></a></div>
+      <div class="card-body">
+        <h2><span class="tag" style="background:#990000;">V2</span>战锤官方风（最新）</h2>
+        <div class="tagline">按 Wahapedia/GW 十版官方 datasheet 设计语言重做：钛青头带、切角属性格、盾形判定章、纯净封蜡引用。已适配手机（另见 _mobile-test.html）。</div>
+        <a class="open" href="v2-warhammer.html" target="_blank">全屏打开 →</a>
+      </div>
+    </div>
+    <div class="card">
+      <div class="thumb"><iframe src="direction-a-codex.html" loading="lazy" scrolling="no" tabindex="-1"></iframe><a class="cover" href="direction-a-codex.html" target="_blank"></a></div>
+      <div class="card-body">
+        <h2><span class="tag">A</span>军典页 · Grimdark Codex</h2>
+        <div class="tagline">暗炭底 + 羊皮纸卡 + 赭金火漆。回答是一页审判庭卷宗，结论是盖章判词。仪式感最强。</div>
+        <a class="open" href="direction-a-codex.html" target="_blank">全屏打开 →</a>
+      </div>
+    </div>
+    <div class="card">
+      <div class="thumb"><iframe src="direction-b-hud.html" loading="lazy" scrolling="no" tabindex="-1"></iframe><a class="cover" href="direction-b-hud.html" target="_blank"></a></div>
+      <div class="card-body">
+        <h2><span class="tag">B</span>作战终端 · Tau HUD</h2>
+        <div class="tagline">近黑蓝底 + 青色切角面板 + 等宽数字。带解算漏斗和终端日志，「AI 在解算对局」的过程感最强。</div>
+        <a class="open" href="direction-b-hud.html" target="_blank">全屏打开 →</a>
+      </div>
+    </div>
+    <div class="card">
+      <div class="thumb"><iframe src="direction-c-workbench.html" loading="lazy" scrolling="no" tabindex="-1"></iframe><a class="cover" href="direction-c-workbench.html" target="_blank"></a></div>
+      <div class="card-body">
+        <h2><span class="tag">C</span>数据工作台 · Pro Tool</h2>
+        <div class="tagline">浅色高密度，Linear/Notion 气质。侧栏导航 + KPI 条 + 行内引用角标。最接近可直接落地的产品形态。</div>
+        <a class="open" href="direction-c-workbench.html" target="_blank">全屏打开 →</a>
+      </div>
+    </div>
+    <div class="card">
+      <div class="thumb"><iframe src="direction-d-editorial.html" loading="lazy" scrolling="no" tabindex="-1"></iframe><a class="cover" href="direction-d-editorial.html" target="_blank"></a></div>
+      <div class="card-body">
+        <h2><span class="tag">D</span>战报专栏 · Editorial</h2>
+        <div class="tagline">米白纸色 + 大衬线 + 红墨水。回答排成杂志战术专栏：读者来信、pull-quote 判定、脚注溯源。阅读体验最优。</div>
+        <a class="open" href="direction-d-editorial.html" target="_blank">全屏打开 →</a>
+      </div>
+    </div>
+  </div>
+
+  <h3>槽位对照表（同编号 = 同功能，四种处理）</h3>
+  <div class="tbl-scroll">
+  <table>
+    <tr><th class="slot">槽位</th><th>A 军典页</th><th>B 作战终端</th><th>C 数据工作台</th><th>D 战报专栏</th></tr>
+    <tr><td class="slot">*1 框架导航</td><td>暗色顶栏，当前页签=羊皮纸书签牌</td><td>双层状态栏（系统状态+页签），页签带 [01] 编号</td><td>224px 左侧栏：⌘K + 页签 + 语境下拉 + 会话列表</td><td>报纸报头 + 粗细双线夹页签</td></tr>
+    <tr><td class="slot">*2 消息流</td><td>提问=皮革腰牌，回答=整张羊皮纸大卡</td><td>呼号式对话（OPERATOR // 指挥官），元信息标检索链</td><td>全部左对齐文档流，回答拆成独立卡片列</td><td>读者来信 → 编辑部回应 + byline 元信息行</td></tr>
+    <tr><td class="slot">*3 工具轨迹</td><td>「思仆记录」深色卷轴条，降级步琥珀标出</td><td>终端日志行（时间戳+函数+✓/⚠ DEGRADED）</td><td>折叠成一行，降级徽标常驻在折叠态外</td><td>「检索手记」边注，降级步整行红底</td></tr>
+    <tr><td class="slot">*4 结论区</td><td>判词 §44 + 旋转火漆印章「值得带」</td><td>KPI 大数字 ×4 + 纯 CSS 四段解算漏斗</td><td>判定胶囊 + 四格 KPI 条 + 原文</td><td>粗细双线夹 pull-quote 大字 + 竖排红印章</td></tr>
+    <tr><td class="slot">*5 计算依据</td><td>汉字数字圆印 + 点线分隔账目</td><td>01–05 台账行，数值全部青色等宽高亮</td><td>方形序号格 + 等宽数值 + 行内引用角标</td><td>悬挂斜体红数字 + 关键词染红挂脚注</td></tr>
+    <tr><td class="slot">*6 单位卡</td><td>黑金头带 + 六块属性玉牌 + 被问武器行描金</td><td>切角属性瓦片 + 武器表青色高亮行</td><td>Wahapedia 式数据表 + 靛蓝高亮行 + overflow 容器</td><td>破栏 880px 杂志档案盒 + 双线框</td></tr>
+    <tr><td class="slot">*7 引用溯源</td><td>火漆圆章引用条，hover 描金</td><td>档案行：左人读（书+页）右机读（wiki 路径）</td><td>行内 [1] 角标 hover tooltip + 底部来源表（双形态）</td><td>上标 ¹²³ 锚跳 + 文末 ⁂ 脚注区</td></tr>
+    <tr><td class="slot">*8 敏感性+CTA</td><td>金框观察员签条 + 黑金出征令牌（内嵌 P4 小字）</td><td>全页唯一琥珀警示舱 + 青边 CTA 并排</td><td>Δ 单行卡 + 实心按钮同行（what-if→验证动线）</td><td>「编者按」红洗底框 + 实心红墨按钮</td></tr>
+    <tr><td class="slot">*9 输入区</td><td>羽笔皮革槽 + sticky 渐隐遮罩</td><td>&gt;_ 提示符 + 闪烁光标 + ▸ 切角 chips</td><td>sticky 组合区 + Enter/Shift+Enter kbd 提示</td><td>fixed 半透明纸色底栏 + 「继续追问」chips</td></tr>
+  </table>
+  </div>
+
+  <h3>各方向 steal / skip 速查</h3>
+  <details open><summary>A · 军典页</summary><div class="inner"><ul>
+    <li><span class="steal">Steal</span>：<b>A6</b> 属性玉牌 + 被问武器整行高亮（任何方向通用）；<b>A4</b> 火漆印章判定（有明确裁决时记忆点极强）；<b>A8</b> 「P4 建设中」小字内嵌 CTA 的诚实写法；<b>A9</b> chips 点击回填 + sticky 渐隐（交互骨架通用）。</li>
+    <li><span class="skip">Skip</span>：<b>A2</b> 每条回答一张重卡片（多轮对话会笨重）；<b>A1</b> 羊皮纸书签牌页签（切换动效难做轻快）；<b>A5</b> 汉字序号圆印（条目上两位数就崩）；装饰整体（角花/双线）若走浅色方向全不可迁移。</li>
+  </ul></div></details>
+  <details open><summary>B · 作战终端</summary><div class="inner"><ul>
+    <li><span class="steal">Steal</span>：<b>B4</b> 解算漏斗（命中→穿防→失防→伤害，全场最值得偷的部件，概率链问答的杀手锏）；<b>B3</b> 终端日志式轨迹的「降级=琥珀警示」语义；<b>B1</b> 状态栏放会话元信息的思路；<b>B7</b> 左人读右机读的引用分栏。</li>
+    <li><span class="skip">Skip</span>：<b>B9</b> 闪烁光标和 &gt;_ 提示符（非极客用户像 bug）；<b>B2</b> 英文呼号行（普通用户是噪音）；满页等宽中文混排（武器名+数字略挤）；1180px 以下 B4 已要降单列，窄屏成本高。</li>
+  </ul></div></details>
+  <details open><summary>C · 数据工作台</summary><div class="inner"><ul>
+    <li><span class="steal">Steal</span>：<b>C3</b> 单行折叠轨迹+降级徽标常驻（透明度与干净的最优平衡）；<b>C7</b> 行内角标+底部来源表双形态引用；<b>C4</b> 判定胶囊+KPI 条；<b>C1</b> 侧栏放语境切换和会话历史；<b>C6</b> overflow-x 容器保窄屏。</li>
+    <li><span class="skip">Skip</span>：<b>C2</b> 完全文档流（对话感/人格感弱，像日志）；<b>C6</b> 纯缩写表头对新手是墙（需 tooltip 补救）；三处 sticky 叠加在 1024px 高度局促；全页无一处「40K 味」，气质上最平。</li>
+  </ul></div></details>
+  <details open><summary>D · 战报专栏</summary><div class="inner"><ul>
+    <li><span class="steal">Steal</span>：<b>D2</b> byline 元信息行（「检索 4 步 · 引用 3 条」一行字交代可信度）；<b>D6</b> 单位卡破栏加宽（密表不被正文栏勒死）；<b>D5</b> 关键词染色挂脚注（推导链和溯源焊在一起）；<b>D4</b> pull-quote 判定的可读性。</li>
+    <li><span class="skip">Skip</span>：<b>D2</b> 读者来信仪式感（多轮对话每轮重复会累赘）；<b>D7</b> 脚注要求来回滚动（边读边核对不友好）；<b>D9</b> 固定底栏 190px 占位（短回答时压阅读区）；报头静态感与「实时工具」定位有张力。</li>
+  </ul></div></details>
+
+  <h3>反馈模板（改完直接发给 Claude）</h3>
+  <textarea id="fb">【前端方向反馈】
+
+基底方向：C 数据工作台   ← 改成你的选择（A/B/C/D）
+
+Steal（合并进基底）：
+- B4 解算漏斗（结论区加一个命中→穿防→失防→伤害的可视链）
+- A6/B6/C6 通用的「被问武器整行高亮」保留
+- C3 单行折叠工具轨迹 + 降级徽标常驻
+- D2 byline 元信息行（检索 N 步 · 引用 N 条）
+- A8 「P4 建设中」小字内嵌 CTA（不做实心大按钮）
+- （继续加：方向+编号+一句为什么）
+
+Skip（明确不要）：
+- B9 闪烁光标 / >_ 提示符
+- D7 文末脚注（引用改 C7 的行内角标+hover）
+- （继续加）
+
+调整：
+- 主题：浅色为主 / 暗色为主 / 双主题跟随系统（选一）
+- 主色：钛帝国赭金 / 靛蓝 / 青色 / 红墨水（选一，或写色值）
+- 信息密度：偏 C 紧凑 / 偏 D 呼吸感（选一）
+- 40K 氛围浓度：0-10 打个分（0=纯工具，10=满屏 grimdark）：__
+- 其他：__
+
+开放问题（可不答）：
+- 工具轨迹默认展开还是折叠？
+- 单位卡默认完整展示还是摘要+展开？
+- 多轮对话时，第二轮以后的回答要不要降级成更轻的样式？
+
+下一步：按以上反馈合成第 5 版（v2-synthesis.html），仍用同一份数据。</textarea>
+  <br><button class="copy-btn" onclick="navigator.clipboard.writeText(document.getElementById('fb').value).then(()=>{this.textContent='已复制 ✓';setTimeout(()=>this.textContent='复制反馈模板',1500)})">复制反馈模板</button>
+</div>
+</body>
+</html>

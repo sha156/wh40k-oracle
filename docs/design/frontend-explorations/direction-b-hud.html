@@ -1,0 +1,596 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>40K 规则专家 · 方向B「作战终端」</title>
+<style>
+/* ============================================================
+   方向 B ·「作战终端」Tau HUD — 近黑蓝底 / 青色细线 / 琥珀警示
+   ============================================================ */
+:root{
+  --bg:        #0a0f14;
+  --bg-deep:   #070b0f;
+  --panel:     #0d151d;
+  --panel-2:   #0b1219;
+  --panel-3:   #101a24;
+  --line:      rgba(89,210,230,.30);
+  --line-dim:  rgba(89,210,230,.13);
+  --cyan:      #59d2e6;
+  --cyan-hi:   #9beaf6;
+  --cyan-dim:  #3a8fa0;
+  --amber:     #e6b45a;
+  --amber-dim: rgba(230,180,90,.16);
+  --text:      #c8d6de;
+  --text-hi:   #e8f4f8;
+  --dim:       #7e929d;
+  --dimmer:    #5a6b75;
+  --mono:      Consolas, 'Courier New', 'SFMono-Regular', monospace;
+  --sans:      'Microsoft YaHei', 'PingFang SC', 'Noto Sans SC', sans-serif;
+  --cp:        polygon(14px 0, 100% 0, 100% calc(100% - 14px), calc(100% - 14px) 100%, 0 100%, 0 14px);
+  --cp-sm:     polygon(8px 0, 100% 0, 100% calc(100% - 8px), calc(100% - 8px) 100%, 0 100%, 0 8px);
+}
+*{margin:0;padding:0;box-sizing:border-box;}
+html{background:var(--bg-deep);}
+body{
+  font-family:var(--sans);
+  font-size:14px; line-height:1.7;
+  color:var(--text);
+  background:
+    radial-gradient(1200px 600px at 50% -10%, rgba(89,210,230,.05), transparent 60%),
+    linear-gradient(rgba(89,210,230,.025) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(89,210,230,.025) 1px, transparent 1px),
+    var(--bg);
+  background-size:auto, 44px 44px, 44px 44px, auto;
+  min-width:1024px;
+}
+/* 全页极淡扫描线（静态） */
+body::before{
+  content:""; position:fixed; inset:0; z-index:999; pointer-events:none;
+  background:repeating-linear-gradient(0deg, rgba(0,0,0,.06) 0 1px, transparent 1px 3px);
+  mix-blend-mode:multiply;
+}
+::selection{background:rgba(89,210,230,.30); color:var(--text-hi);}
+
+/* ---------- 通用：切角面板（双层法保 1px 描边） ---------- */
+.cutwrap{background:var(--line); clip-path:var(--cp); padding:1px; transition:filter .2s, background .2s;}
+.cutwrap>.cutin{background:var(--panel); clip-path:var(--cp); position:relative;}
+.cutwrap:hover{background:rgba(89,210,230,.55); filter:drop-shadow(0 0 7px rgba(89,210,230,.22));}
+.cutwrap.amberwrap{background:rgba(230,180,90,.45);}
+.cutwrap.amberwrap:hover{background:rgba(230,180,90,.7); filter:drop-shadow(0 0 7px rgba(230,180,90,.2));}
+.cutwrap.amberwrap>.cutin{background:#131208;}
+/* hover 扫描线反馈 */
+.cutin::after{
+  content:""; position:absolute; inset:0; pointer-events:none; opacity:0; transition:opacity .25s;
+  background:repeating-linear-gradient(0deg, rgba(89,210,230,.045) 0 2px, transparent 2px 6px);
+}
+.cutwrap:hover>.cutin::after{opacity:1;}
+
+/* ---------- 槽位角标徽章 ---------- */
+.slot{
+  position:absolute; top:5px; right:9px; z-index:5;
+  font:10px/1 var(--mono); letter-spacing:1.5px;
+  color:rgba(89,210,230,.42);
+  border:1px solid rgba(89,210,230,.18);
+  padding:2px 5px 1px; border-radius:1px;
+  user-select:none; pointer-events:none;
+}
+
+/* ---------- 区块小节标题 ---------- */
+.sec{
+  display:flex; align-items:center; gap:10px;
+  font-size:12px; letter-spacing:3px; color:var(--cyan);
+  margin-bottom:12px; white-space:nowrap;
+}
+.sec .en{font:10px var(--mono); letter-spacing:2px; color:var(--cyan-dim);}
+.sec::after{content:""; flex:1; height:1px; background:linear-gradient(90deg, var(--line), transparent);}
+.sec .tick{color:var(--cyan-dim); font-family:var(--mono); font-size:11px;}
+
+/* ============ B1 顶部状态栏 + 导航 ============ */
+.statusbar{
+  position:relative;
+  display:flex; align-items:center; gap:18px;
+  padding:0 28px; height:38px;
+  background:var(--bg-deep);
+  border-bottom:1px solid var(--line-dim);
+  font:11px var(--mono); color:var(--dim); letter-spacing:1px;
+}
+.statusbar .sys-dot{width:6px;height:6px;background:var(--cyan);border-radius:50%;
+  box-shadow:0 0 6px var(--cyan); display:inline-block; margin-right:6px; vertical-align:1px;}
+.statusbar .spacer{flex:1;}
+.statusbar .ctx{
+  color:var(--cyan-hi); border:1px solid var(--line); padding:2px 12px;
+  clip-path:var(--cp-sm); background:rgba(89,210,230,.06); letter-spacing:2px;
+}
+.statusbar .ctx b{color:var(--amber); font-weight:normal;}
+.navbar{
+  position:relative;
+  display:flex; align-items:center; gap:0;
+  padding:0 28px; height:56px;
+  border-bottom:1px solid var(--line);
+  background:linear-gradient(180deg, rgba(89,210,230,.04), transparent);
+}
+.brand{display:flex; align-items:center; gap:12px; margin-right:44px;}
+.brand .sigil{width:30px;height:30px;flex:none;}
+.brand .t1{font-size:17px; font-weight:bold; color:var(--text-hi); letter-spacing:2px; line-height:1.2;}
+.brand .t2{font:9px var(--mono); color:var(--cyan-dim); letter-spacing:2px;}
+.tabs{display:flex; gap:6px; align-items:stretch; height:100%;}
+.tab{
+  display:flex; align-items:center; gap:7px; padding:0 20px;
+  color:var(--dim); font-size:14px; letter-spacing:1px; cursor:pointer;
+  border-bottom:2px solid transparent; position:relative; transition:color .2s;
+}
+.tab:hover{color:var(--cyan-hi);}
+.tab.active{
+  color:var(--cyan-hi);
+  border-bottom-color:var(--cyan);
+  text-shadow:0 0 12px rgba(89,210,230,.5);
+  background:linear-gradient(180deg, transparent 70%, rgba(89,210,230,.10));
+}
+.tab .num{font:9px var(--mono); color:var(--dimmer); letter-spacing:0;}
+.tab.active .num{color:var(--cyan-dim);}
+
+/* ============ 主体 ============ */
+.stage{max-width:1380px; margin:0 auto; padding:26px 28px 40px;}
+.thread{display:flex; flex-direction:column; gap:22px;}
+
+/* ============ B2 消息流 ============ */
+.msg{display:flex; gap:14px; position:relative;}
+.avatar{
+  flex:none; width:38px; height:38px; margin-top:2px;
+  display:flex; align-items:center; justify-content:center;
+  border:1px solid var(--line); clip-path:var(--cp-sm);
+  background:var(--panel-2); font:11px var(--mono); color:var(--cyan);
+}
+.msg .who{font:10px var(--mono); color:var(--dimmer); letter-spacing:2px; margin-bottom:6px;}
+.msg .who b{color:var(--cyan-dim); font-weight:normal;}
+.msg-user{flex-direction:row-reverse;}
+.msg-user .who{text-align:right;}
+.msg-user .avatar{border-color:rgba(230,180,90,.4); color:var(--amber);}
+.bubble-user{
+  max-width:660px;
+  background:rgba(89,210,230,.07);
+  border:1px solid var(--line); clip-path:var(--cp);
+  padding:14px 22px; font-size:15px; color:var(--text-hi);
+}
+.msg-body{flex:1; min-width:0;}
+.ai-stack{display:flex; flex-direction:column; gap:14px;}
+
+/* ============ B3 工具调用轨迹（终端日志） ============ */
+.trace .cutin{background:var(--bg-deep);}
+.trace-head{
+  display:flex; align-items:center; gap:12px; cursor:pointer;
+  padding:9px 40px 9px 16px; user-select:none;
+  font:11px var(--mono); color:var(--cyan-dim); letter-spacing:1px;
+}
+.trace-head:hover{color:var(--cyan);}
+.trace-head .caret{display:inline-block; transition:transform .2s; color:var(--cyan);}
+.trace.closed .caret{transform:rotate(-90deg);}
+.trace-head .sum{color:var(--dim);}
+.trace-head .warn{color:var(--amber);}
+.trace-body{padding:2px 16px 12px; border-top:1px dashed var(--line-dim);}
+.trace.closed .trace-body{display:none;}
+.tline{
+  display:flex; gap:10px; align-items:baseline;
+  font:12px/2.1 var(--mono); white-space:nowrap; overflow-x:auto;
+}
+.tline .ts{color:var(--dimmer); flex:none;}
+.tline .fn{color:var(--cyan);}
+.tline .arg{color:var(--text);}
+.tline .ret{color:var(--dim);}
+.tline .ok{color:#7ee0a3;}
+.tline .deg{color:var(--amber);}
+.tline .idx{color:var(--cyan-dim); flex:none; width:14px; text-align:right;}
+.tline:hover{background:rgba(89,210,230,.05);}
+
+/* ============ B4 结论区 ============ */
+.verdict-grid{display:grid; grid-template-columns:1.25fr 1fr; gap:0;}
+.verdict-main{padding:18px 22px 20px; border-right:1px dashed var(--line-dim);}
+.kpis{display:flex; gap:26px; margin:2px 0 14px; flex-wrap:wrap;}
+.kpi .v{font:26px/1.15 var(--mono); color:var(--cyan-hi); text-shadow:0 0 14px rgba(89,210,230,.35);}
+.kpi .v small{font-size:13px; color:var(--cyan-dim);}
+.kpi .k{font-size:11px; color:var(--dim); letter-spacing:1px; margin-top:3px;}
+.kpi.amber .v{color:var(--amber); text-shadow:0 0 14px rgba(230,180,90,.3);}
+.verdict-text{font-size:14px; color:var(--text); max-width:640px;}
+.verdict-text .kw{color:var(--cyan-hi); font-family:var(--mono); font-size:13px;}
+.stamp{
+  display:inline-block; margin-right:10px; padding:2px 14px; vertical-align:1px;
+  border:1px double var(--cyan); color:var(--cyan-hi); letter-spacing:4px; font-weight:bold;
+  clip-path:var(--cp-sm); background:rgba(89,210,230,.10);
+  text-shadow:0 0 10px rgba(89,210,230,.5);
+}
+/* 阶段漏斗（纯 CSS 条形） */
+.funnel{padding:16px 20px 18px;}
+.funnel .ft{font:10px var(--mono); color:var(--cyan-dim); letter-spacing:2px; margin-bottom:10px;}
+.frow{display:grid; grid-template-columns:96px 1fr 88px; gap:10px; align-items:center; margin:7px 0;}
+.frow .fl{font-size:12px; color:var(--dim); text-align:right; white-space:nowrap;}
+.frow .fv{font:12px var(--mono); color:var(--cyan-hi); white-space:nowrap;}
+.fbar{height:12px; background:rgba(89,210,230,.07); border:1px solid var(--line-dim); position:relative;}
+.fbar i{
+  display:block; height:100%;
+  background:linear-gradient(90deg, rgba(89,210,230,.25), rgba(89,210,230,.75));
+  box-shadow:0 0 8px rgba(89,210,230,.35);
+}
+.fbar.famber i{background:linear-gradient(90deg, rgba(230,180,90,.25), rgba(230,180,90,.8)); box-shadow:0 0 8px rgba(230,180,90,.3);}
+.fnote{font:11px var(--mono); color:var(--dimmer); margin-top:10px; border-top:1px dashed var(--line-dim); padding-top:8px;}
+.fnote b{color:var(--cyan); font-weight:normal;}
+
+/* ============ B5 计算依据 ============ */
+.basis{padding:16px 22px 18px;}
+.brow{
+  display:flex; gap:14px; padding:7px 4px; align-items:baseline;
+  border-bottom:1px solid rgba(89,210,230,.07);
+}
+.brow:last-child{border-bottom:none;}
+.brow:hover{background:rgba(89,210,230,.04);}
+.brow .no{font:11px var(--mono); color:var(--cyan-dim); flex:none; width:24px;}
+.brow .bt{font-size:13.5px;}
+.brow .bt .tag{color:var(--cyan-hi); font-family:var(--mono); font-size:12.5px;}
+.brow .bt .pct{font-family:var(--mono); color:var(--cyan-hi);}
+
+/* ============ B6 单位卡 ============ */
+.unitcard .cutin{background:var(--panel-3);}
+.uc-head{
+  display:flex; align-items:baseline; gap:16px; flex-wrap:wrap;
+  padding:15px 22px 12px; border-bottom:1px solid var(--line-dim);
+  background:linear-gradient(180deg, rgba(89,210,230,.07), transparent);
+}
+.uc-head .cn{font-size:19px; font-weight:bold; color:var(--text-hi); letter-spacing:1px;}
+.uc-head .en{font:12px var(--mono); color:var(--cyan-dim); letter-spacing:1px;}
+.uc-head .fac{
+  font-size:11px; color:var(--cyan-hi); border:1px solid var(--line);
+  padding:1px 10px; clip-path:var(--cp-sm); background:rgba(89,210,230,.07); letter-spacing:2px;
+}
+.uc-head .pts{margin-left:auto; font:15px var(--mono); color:var(--amber); letter-spacing:1px;}
+.uc-head .pts small{font-size:11px; color:var(--dim);}
+.uc-body{padding:14px 22px 16px;}
+/* 属性六联块 */
+.statrow{display:flex; gap:10px; margin-bottom:14px;}
+.stat{
+  flex:1; text-align:center; padding:8px 0 7px;
+  border:1px solid var(--line-dim); background:var(--panel-2);
+  clip-path:var(--cp-sm); transition:border-color .2s;
+}
+.stat:hover{border-color:var(--line); background:rgba(89,210,230,.06);}
+.stat .sk{font:10px var(--mono); color:var(--cyan-dim); letter-spacing:2px;}
+.stat .sv{font:20px/1.3 var(--mono); color:var(--text-hi);}
+/* 武器表 */
+.wtitle{font:10px var(--mono); color:var(--cyan-dim); letter-spacing:3px; margin:12px 0 6px;}
+.wtable{width:100%; border-collapse:collapse; font-size:13px;}
+.wtable th{
+  font:10px var(--mono); color:var(--dim); letter-spacing:1.5px; text-align:left;
+  padding:4px 10px; border-bottom:1px solid var(--line); white-space:nowrap;
+}
+.wtable td{
+  padding:6px 10px; border-bottom:1px solid rgba(89,210,230,.08);
+  font-family:var(--mono); color:var(--text); white-space:nowrap;
+}
+.wtable td.wname{font-family:var(--sans); color:var(--text-hi);}
+.wtable td.wkw{color:var(--cyan); font-size:12px;}
+.wtable tr:hover td{background:rgba(89,210,230,.05);}
+.wtable tr.hot td{background:rgba(89,210,230,.09); border-bottom-color:var(--line);}
+.wtable tr.hot td.wname{color:var(--cyan-hi); text-shadow:0 0 10px rgba(89,210,230,.35);}
+.wtable tr.hot td:first-child{border-left:2px solid var(--cyan); padding-left:8px;}
+.wtable .oneuse{color:var(--amber);}
+.uc-foot{
+  margin-top:13px; padding-top:11px; border-top:1px dashed var(--line-dim);
+  font-size:12.5px; color:var(--dim); display:flex; flex-direction:column; gap:5px;
+}
+.uc-foot .lbl{font:10px var(--mono); color:var(--cyan-dim); letter-spacing:2px; margin-right:8px;}
+.uc-foot .val{color:var(--text);}
+.uc-foot .abil{color:var(--cyan-hi);}
+
+/* ============ B7 引用 ============ */
+.cites{padding:14px 22px 16px;}
+.crow{
+  display:flex; gap:12px; align-items:baseline; padding:6px 4px;
+  border-bottom:1px solid rgba(89,210,230,.07); cursor:pointer;
+}
+.crow:last-child{border-bottom:none;}
+.crow:hover{background:rgba(89,210,230,.05);}
+.crow:hover .wiki{color:var(--cyan-hi);}
+.crow .cno{font:11px var(--mono); color:var(--amber); flex:none;}
+.crow .book{color:var(--text-hi); font-size:13px; white-space:nowrap;}
+.crow .pg{font:12px var(--mono); color:var(--cyan); white-space:nowrap;}
+.crow .wiki{
+  margin-left:auto; font:11px var(--mono); color:var(--dimmer);
+  letter-spacing:.5px; transition:color .2s; white-space:nowrap;
+  overflow:hidden; text-overflow:ellipsis; max-width:46%;
+}
+.crow .wiki::before{content:"wiki: "; color:var(--cyan-dim);}
+
+/* ============ B8 敏感性 + CTA ============ */
+.sens-grid{display:flex; gap:14px; align-items:stretch;}
+.sens{flex:1;}
+.sens .cutin{padding:13px 40px 13px 18px; display:flex; gap:12px; align-items:flex-start;}
+.sens .icon{color:var(--amber); font-size:16px; line-height:1.5; flex:none;}
+.sens .st{font-size:13px; color:#e8dcc0;}
+.sens .st .num{font-family:var(--mono); color:var(--amber);}
+.sens .stl{font:10px var(--mono); color:rgba(230,180,90,.7); letter-spacing:2px; margin-bottom:3px;}
+.cta{
+  flex:none; display:flex; align-items:center; justify-content:center;
+  padding:0 26px; cursor:pointer;
+  border:1px solid var(--cyan); clip-path:var(--cp);
+  background:rgba(89,210,230,.10);
+  color:var(--cyan-hi); font-size:14px; letter-spacing:2px;
+  text-shadow:0 0 8px rgba(89,210,230,.4);
+  transition:background .2s, box-shadow .2s; position:relative;
+}
+.cta:hover{background:rgba(89,210,230,.20);}
+.cta small{font:10px var(--mono); color:var(--cyan-dim); margin-left:8px; letter-spacing:0;}
+
+/* ============ B9 追问 + 输入区 ============ */
+.followup{position:relative; margin-top:6px; padding-top:4px;}
+.chips{display:flex; gap:10px; flex-wrap:wrap; margin-bottom:12px;}
+.chip{
+  font-size:12.5px; color:var(--cyan); cursor:pointer;
+  border:1px solid var(--line); clip-path:var(--cp-sm);
+  padding:5px 16px; background:rgba(89,210,230,.05);
+  transition:all .2s; letter-spacing:.5px;
+}
+.chip:hover{background:rgba(89,210,230,.14); color:var(--cyan-hi); border-color:var(--cyan);}
+.chip::before{content:"▸ "; color:var(--cyan-dim); font-family:var(--mono);}
+.inputbar{display:flex; gap:12px; align-items:stretch;}
+.inputwrap{flex:1;}
+.inputwrap .cutin{display:flex; align-items:center; background:var(--bg-deep);}
+.inputwrap .prompt{font:14px var(--mono); color:var(--cyan); padding:0 4px 0 16px; user-select:none;}
+.inputwrap input{
+  flex:1; background:transparent; border:none; outline:none;
+  color:var(--text-hi); font-size:14px; font-family:var(--sans);
+  padding:13px 16px 13px 4px; letter-spacing:.5px;
+}
+.inputwrap input::placeholder{color:var(--dimmer);}
+.cursorblink{width:8px; height:16px; background:var(--cyan); margin-right:14px;
+  animation:blink 1.2s steps(1) infinite; opacity:.7;}
+@keyframes blink{50%{opacity:0;}}
+.sendbtn{
+  flex:none; padding:0 30px; display:flex; align-items:center;
+  border:1px solid var(--cyan); clip-path:var(--cp);
+  background:rgba(89,210,230,.12); color:var(--cyan-hi);
+  font-size:14px; letter-spacing:6px; cursor:pointer; transition:background .2s;
+}
+.sendbtn:hover{background:rgba(89,210,230,.24);}
+.disclaim{
+  margin-top:14px; text-align:center;
+  font:11px var(--mono); color:var(--dimmer); letter-spacing:1px;
+}
+.disclaim::before{content:"— "; color:var(--cyan-dim);}
+.disclaim::after{content:" —"; color:var(--cyan-dim);}
+
+/* 窄屏兜底 (≥1024) */
+@media (max-width:1180px){
+  .verdict-grid{grid-template-columns:1fr;}
+  .verdict-main{border-right:none; border-bottom:1px dashed var(--line-dim);}
+  .crow .wiki{max-width:38%;}
+}
+</style>
+</head>
+<body>
+
+<!-- ============ B1 全局框架与导航 ============ -->
+<header>
+  <div class="statusbar">
+    <span><span class="sys-dot"></span>SYS.ONLINE</span>
+    <span>RAG-LINK ▮▮▮▮▯ 正常</span>
+    <span>本地规则库已挂载 · 49 卷</span>
+    <span class="spacer"></span>
+    <span class="ctx">当前语境：<b>钛帝国</b> T'AU EMPIRE</span>
+    <span>SESSION 0x2F7A</span>
+    <span>2026-07-06 23:41</span>
+    <span class="slot" style="position:static;">B1</span>
+  </div>
+  <nav class="navbar">
+    <div class="brand">
+      <svg class="sigil" viewBox="0 0 32 32" fill="none">
+        <circle cx="16" cy="13" r="7.5" stroke="#59d2e6" stroke-width="1.5"/>
+        <circle cx="16" cy="13" r="2.6" fill="#59d2e6"/>
+        <path d="M16 22 L16 30 M9.5 17.5 L4 24 M22.5 17.5 L28 24" stroke="#59d2e6" stroke-width="1.5"/>
+      </svg>
+      <div>
+        <div class="t1">40K 规则专家</div>
+        <div class="t2">WARHAMMER 40K RULES COPILOT</div>
+      </div>
+    </div>
+    <div class="tabs">
+      <div class="tab active">💬 聊天 <span class="num">[01]</span></div>
+      <div class="tab">⚔️ 模拟器 <span class="num">[02]</span></div>
+      <div class="tab">📋 军表实验室 <span class="num">[03]</span></div>
+      <div class="tab">📖 图鉴 <span class="num">[04]</span></div>
+    </div>
+  </nav>
+</header>
+
+<main class="stage">
+  <div class="thread">
+
+    <!-- ============ B2 消息流：用户提问 ============ -->
+    <div class="msg msg-user">
+      <span class="slot" style="right:auto;left:9px;">B2</span>
+      <div class="avatar">CMD</div>
+      <div>
+        <div class="who">OPERATOR // 指挥官 <b>23:41:01</b></div>
+        <div class="bubble-user">炮击战斗服的重型磁轨枪打帝国骑士能打掉多少血？值得带吗？</div>
+      </div>
+    </div>
+
+    <!-- ============ AI 回答 ============ -->
+    <div class="msg">
+      <div class="avatar">AI</div>
+      <div class="msg-body">
+        <div class="who"><b>40K 规则专家 // CORE</b> 23:41:03 · 检索链: FAISS+BM25/RRF</div>
+        <div class="ai-stack">
+
+          <!-- ============ B3 工具调用轨迹（终端日志，可折叠） ============ -->
+          <div class="cutwrap trace" id="trace">
+            <div class="cutin">
+              <span class="slot">B3</span>
+              <div class="trace-head" onclick="toggleTrace()">
+                <span class="caret">▾</span>
+                <span>AGENT TRACE</span>
+                <span class="sum">// 4 步工具调用 · 3 成功 · <span class="warn">1 降级</span> · 0.94s</span>
+              </div>
+              <div class="trace-body">
+                <div class="tline"><span class="idx">1</span><span class="ts">[23:41:02.114]</span><span><span class="fn">entity_resolver</span><span class="arg">("炮击战斗服")</span> <span class="ret">→ broadside-battlesuits (000000433)</span> <span class="ok">✓</span></span></div>
+                <div class="tline"><span class="idx">2</span><span class="ts">[23:41:02.389]</span><span><span class="fn">get_entity</span><span class="arg">("broadside-battlesuits")</span> <span class="ret">→ 属性/武器/技能</span> <span class="ok">✓</span></span></div>
+                <div class="tline"><span class="idx">3</span><span class="ts">[23:41:02.671]</span><span><span class="fn">get_keyword_definition</span><span class="arg">("毁灭伤害")</span> <span class="ok">✓</span></span></div>
+                <div class="tline"><span class="idx">4</span><span class="ts">[23:41:03.058]</span><span><span class="fn">simulate_combat</span><span class="arg">(...)</span> <span class="deg">→ 未建模（P4 建设中），降级为期望值粗算 ⚠ DEGRADED</span></span></div>
+              </div>
+            </div>
+          </div>
+
+          <!-- ============ B4 结论区（判定 + 阶段漏斗） ============ -->
+          <div class="cutwrap">
+            <div class="cutin">
+              <span class="slot">B4</span>
+              <div class="verdict-grid">
+                <div class="verdict-main">
+                  <div class="sec"><span class="tick">◤</span>判定<span class="en">VERDICT</span></div>
+                  <div class="kpis">
+                    <div class="kpi"><div class="v">2.3<small> 伤/轮</small></div><div class="k">单台期望 · 未移动 2 发</div></div>
+                    <div class="kpi"><div class="v">≈7<small> 伤/轮</small></div><div class="k">满编 3 台</div></div>
+                    <div class="kpi"><div class="v">≈3<small> 轮</small></div><div class="k">击毁满血骑士 (22W)</div></div>
+                    <div class="kpi amber"><div class="v">1.0<small> 致命</small></div><div class="k">来自[毁灭伤害]</div></div>
+                  </div>
+                  <div class="verdict-text">
+                    <span class="stamp">值得带</span>
+                    单台炮击战斗服（未移动、重型磁轨枪 2 发）对帝国骑士每轮期望约 <span class="kw">2.3</span> 伤，其中约 <span class="kw">1.0</span> 来自<span class="kw">[毁灭伤害]</span>致命伤；满编 3 台一轮约 <span class="kw">7</span> 伤，约 <span class="kw">3</span> 轮打掉一台满血骑士（<span class="kw">22W</span>）。<strong style="color:var(--text-hi);">值得带</strong>：<span class="kw">80 分/台</span>的 <span class="kw">S12 AP-4 D6+1</span>，是钛帝国点数效率最高的反坦克平台之一。
+                  </div>
+                </div>
+                <div class="funnel">
+                  <div class="ft">◢ 攻击解算漏斗 · 重型磁轨枪 单发 vs 帝国骑士</div>
+                  <div class="frow"><span class="fl">命中 3+</span><div class="fbar"><i style="width:67%"></i></div><span class="fv">67%</span></div>
+                  <div class="frow"><span class="fl">穿防 4+</span><div class="fbar"><i style="width:50%"></i></div><span class="fv">50%</span></div>
+                  <div class="frow"><span class="fl">失防 5++</span><div class="fbar"><i style="width:67%"></i></div><span class="fv">67%</span></div>
+                  <div class="frow"><span class="fl">伤害 D6+1</span><div class="fbar famber"><i style="width:64%"></i></div><span class="fv">Ø 4.5</span></div>
+                  <div class="fnote">×<b>2</b> 发/台 ×<b>3</b> 台 → 满编约 <b>7</b> 伤/轮；穿防骰 <b>6</b> 触发[毁灭伤害]绕过漏斗第三段</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- ============ B5 计算依据 ============ -->
+          <div class="cutwrap">
+            <div class="cutin">
+              <span class="slot">B5</span>
+              <div class="basis">
+                <div class="sec"><span class="tick">◤</span>计算依据<span class="en">CALC BASIS · 期望值粗算</span></div>
+                <div class="brow"><span class="no">01</span><span class="bt"><span class="tag">[重型]</span>：未移动 +1 命中 → <span class="pct">3+</span> 命中（<span class="pct">67%</span>）</span></div>
+                <div class="brow"><span class="no">02</span><span class="bt"><span class="tag">S12</span> 对 <span class="tag">T12</span> → <span class="pct">4+</span> 穿防（<span class="pct">50%</span>）</span></div>
+                <div class="brow"><span class="no">03</span><span class="bt"><span class="tag">AP-4</span> 击穿 <span class="pct">3+</span> 甲，骑士只能用 <span class="pct">5++</span> 无效保护 → 失防 <span class="pct">67%</span></span></div>
+                <div class="brow"><span class="no">04</span><span class="bt">穿防骰 <span class="pct">6</span> 触发<span class="tag">[毁灭伤害]</span> → 直接致命伤，无视任何保护</span></div>
+                <div class="brow"><span class="no">05</span><span class="bt"><span class="tag">D6+1</span> 平均 <span class="pct">4.5</span> 伤/发；另有寻觅者导弹（一次性，<span class="tag">S14 AP-3</span>）可补一发</span></div>
+              </div>
+            </div>
+          </div>
+
+          <!-- ============ B6 单位卡 ============ -->
+          <div class="cutwrap unitcard">
+            <div class="cutin">
+              <span class="slot">B6</span>
+              <div class="uc-head">
+                <span class="cn">炮击战斗服小队</span>
+                <span class="en">BROADSIDE BATTLESUITS</span>
+                <span class="fac">钛帝国</span>
+                <span class="pts">80 / 170 / 270 <small>分</small></span>
+              </div>
+              <div class="uc-body">
+                <div class="statrow">
+                  <div class="stat"><div class="sk">M</div><div class="sv">5"</div></div>
+                  <div class="stat"><div class="sk">T</div><div class="sv">6</div></div>
+                  <div class="stat"><div class="sk">SV</div><div class="sv">2+</div></div>
+                  <div class="stat"><div class="sk">W</div><div class="sv">8</div></div>
+                  <div class="stat"><div class="sk">LD</div><div class="sv">7+</div></div>
+                  <div class="stat"><div class="sk">OC</div><div class="sv">2</div></div>
+                </div>
+                <div class="wtitle">◢ 远程武器 RANGED WEAPONS</div>
+                <table class="wtable">
+                  <thead><tr><th>武器</th><th>射程</th><th>A</th><th>BS</th><th>S</th><th>AP</th><th>D</th><th>特性</th></tr></thead>
+                  <tbody>
+                    <tr class="hot"><td class="wname">重型磁轨枪</td><td>60"</td><td>2</td><td>4+</td><td>12</td><td>-4</td><td>D6+1</td><td class="wkw">[重型，毁灭伤害]</td></tr>
+                    <tr><td class="wname">集束导弹仓</td><td>30"</td><td>6</td><td>4+</td><td>7</td><td>-1</td><td>2</td><td class="wkw">[双联]</td></tr>
+                    <tr><td class="wname">寻觅者导弹</td><td>48"</td><td>1</td><td>4+</td><td>14</td><td>-3</td><td>D6+1</td><td class="wkw oneuse">[一次性]</td></tr>
+                  </tbody>
+                </table>
+                <div class="wtitle">◢ 近战武器 MELEE WEAPONS</div>
+                <table class="wtable">
+                  <thead><tr><th>武器</th><th>射程</th><th>A</th><th>WS</th><th>S</th><th>AP</th><th>D</th><th>特性</th></tr></thead>
+                  <tbody>
+                    <tr><td class="wname">粉碎冲撞</td><td>近战</td><td>3</td><td>5+</td><td>6</td><td>0</td><td>1</td><td class="wkw">—</td></tr>
+                  </tbody>
+                </table>
+                <div class="uc-foot">
+                  <div><span class="lbl">关键词</span><span class="val">载具，机甲，战斗服，炮击</span><span class="lbl" style="margin-left:20px;">阵营技能</span><span class="abil">为了上上善道</span></div>
+                  <div><span class="lbl">技能摘录</span><span class="val">先进装甲——对抗致命伤 <span style="font-family:var(--mono);color:var(--cyan-hi);">4+</span> 不知疼痛</span></div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- ============ B7 引用/溯源 ============ -->
+          <div class="cutwrap">
+            <div class="cutin">
+              <span class="slot">B7</span>
+              <div class="cites">
+                <div class="sec"><span class="tick">◤</span>引用溯源<span class="en">SOURCES · 3 REFS</span></div>
+                <div class="crow"><span class="cno">[1]</span><span class="book">《钛帝国十版CODEX-20251112》</span><span class="pg">p.44</span><span class="wiki">factions/钛帝国/units/broadside-battlesuits</span></div>
+                <div class="crow"><span class="cno">[2]</span><span class="book">《战锤40K总规则10版》</span><span class="pg">武器技能·重型</span><span class="wiki">core-rules/heavy</span></div>
+                <div class="crow"><span class="cno">[3]</span><span class="book">《战锤40K总规则10版》</span><span class="pg">武器技能·毁灭伤害</span><span class="wiki">core-rules/devastating-wounds</span></div>
+              </div>
+            </div>
+          </div>
+
+          <!-- ============ B8 敏感性提示 + CTA ============ -->
+          <div class="sens-grid" style="position:relative;">
+            <div class="cutwrap amberwrap sens">
+              <div class="cutin">
+                <span class="slot" style="color:rgba(230,180,90,.5);border-color:rgba(230,180,90,.25);">B8</span>
+                <span class="icon">◭</span>
+                <div>
+                  <div class="stl">SENSITIVITY // 敏感性提示</div>
+                  <div class="st">若有观察员提供<span class="num">[标记]</span>（为了上上善道），命中提升至 <span class="num">2+</span>，期望伤害 <span class="num">×1.25</span> → 满编约 <span class="num">8.8 伤/轮</span>。</div>
+                </div>
+              </div>
+            </div>
+            <div class="cta">⚔️ 在模拟器中打开此对局<small>（P4 建设中）</small></div>
+          </div>
+
+        </div><!-- /ai-stack -->
+      </div>
+    </div>
+
+    <!-- ============ B9 追问 chips + 输入区 + 页脚 ============ -->
+    <div class="followup">
+      <span class="slot">B9</span>
+      <div class="chips">
+        <div class="chip" onclick="fillInput(this)">换集束导弹仓打步兵效率？</div>
+        <div class="chip" onclick="fillInput(this)">对比铁手将军 vs 炮击</div>
+        <div class="chip" onclick="fillInput(this)">满编三台的点数曲线</div>
+      </div>
+      <div class="inputbar">
+        <div class="cutwrap inputwrap">
+          <div class="cutin">
+            <span class="prompt">&gt;_</span>
+            <input id="mainInput" type="text" placeholder="问规则、查单位、判对局……支持中文/英文/俗名">
+            <span class="cursorblink"></span>
+          </div>
+        </div>
+        <div class="sendbtn">发送</div>
+      </div>
+      <div class="disclaim">回答由 LLM 基于本地规则库生成 · 引用页码可溯源 · 模拟为期望值/蒙特卡洛估算</div>
+    </div>
+
+  </div><!-- /thread -->
+</main>
+
+<script>
+function toggleTrace(){
+  document.getElementById('trace').classList.toggle('closed');
+}
+function fillInput(el){
+  var inp = document.getElementById('mainInput');
+  inp.value = el.textContent.trim();
+  inp.focus();
+}
+</script>
+</body>
+</html>

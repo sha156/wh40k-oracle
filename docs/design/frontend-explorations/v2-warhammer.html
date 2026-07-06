@@ -1,0 +1,685 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>40K 规则专家 · 战锤官方风（v2）</title>
+<style>
+/* ============ 设计语言来源 ============
+   配色/切角/盾形均取自 Wahapedia 10ed 实际 CSS（复刻 GW 官方 datasheet）：
+   钛帝国 #175966/#2e5a6a · 暗底 #0b171b · GW红 #990000/#a31317
+   骨白属性格 #e7e9e1 + 官方切角 polygon · 字体 ConduitITC → Bahnschrift 平替
+   ===================================== */
+:root {
+  --dark: #0b171b;          /* wahapedia --dark-bg */
+  --black: #101010;         /* dsBannerWrap */
+  --bone: #e7e9e1;          /* dsCharFrameBack */
+  --bone-dim: #d8dbd2;
+  --zebra: #dfe0da;
+  --tau-ban: #175966;       /* dsColorBanTAU */
+  --tau: #2e5a6a;           /* dsColorTAU */
+  --red: #990000;           /* --faction-header */
+  --redfont: #a31317;       /* --redfont */
+  --first: #cc0000;         /* --first-letter */
+  --gold: #b08d3f;
+  --amber: #c9930a;
+  --ink: #101010;
+  --grey-head: #b2b2b2;     /* --header-bg */
+  --cond: "Bahnschrift SemiCondensed", Bahnschrift, "Arial Narrow", "Microsoft YaHei", sans-serif;
+  --body: "Microsoft YaHei", "PingFang SC", sans-serif;
+  --mono: Consolas, "Courier New", monospace;
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { background: #060a0c; }
+body {
+  font: 14px/1.75 var(--body);
+  color: var(--bone);
+  background:
+    repeating-linear-gradient(115deg, rgba(255,255,255,.012) 0 2px, transparent 2px 7px),
+    radial-gradient(1200px 500px at 50% -10%, #12242b 0%, transparent 70%),
+    #0a1114;
+  min-height: 100vh;
+}
+.badge-slot {
+  position: absolute; top: 4px; right: 6px; z-index: 5;
+  font: 10px/1 var(--mono); color: rgba(231,233,225,.4);
+  border: 1px solid rgba(231,233,225,.22); padding: 1px 4px; border-radius: 2px;
+  pointer-events: none;
+}
+.badge-slot.on-light { color: rgba(16,16,16,.38); border-color: rgba(16,16,16,.2); }
+
+/* ============ E1 顶栏 ============ */
+header {
+  position: relative;
+  background: linear-gradient(#141b1e, var(--black));
+  border-bottom: 2px solid var(--red);
+  box-shadow: 0 0 0 1px #000, 0 6px 24px rgba(0,0,0,.6);
+}
+.masthead {
+  max-width: 1100px; margin: 0 auto; padding: 14px 20px 10px;
+  display: flex; align-items: center; gap: 16px;
+}
+.aquila { flex: 0 0 auto; filter: drop-shadow(0 1px 2px #000); }
+.brand { display: flex; flex-direction: column; }
+.brand .ttl {
+  font-family: var(--cond); font-weight: 700; font-size: 24px; letter-spacing: 3px;
+  color: var(--bone); text-transform: uppercase; line-height: 1.15;
+}
+.brand .ttl em { font-style: normal; color: var(--redfont); }
+.brand .sub {
+  font-family: var(--cond); font-size: 11.5px; letter-spacing: 4px;
+  color: #7d8a86; text-transform: uppercase;
+}
+.ctx-plate {
+  margin-left: auto; display: flex; align-items: center; gap: 8px;
+  background: linear-gradient(100deg, var(--tau-ban), #0e3b44);
+  clip-path: polygon(10px 0, 100% 0, 100% calc(100% - 10px), calc(100% - 10px) 100%, 0 100%, 0 10px);
+  padding: 7px 16px; font-family: var(--cond); letter-spacing: 1px;
+  color: #d9e6e4; font-size: 13px; border: 0;
+}
+.ctx-plate .dot { width: 8px; height: 8px; background: #4fb7c9; border-radius: 50%; box-shadow: 0 0 6px #4fb7c9; }
+nav {
+  max-width: 1100px; margin: 0 auto; padding: 0 20px;
+  display: flex; gap: 4px;
+}
+nav a {
+  font-family: var(--cond); text-transform: uppercase; letter-spacing: 2px; font-size: 14px;
+  color: #97a4a0; text-decoration: none; padding: 8px 22px 9px;
+  clip-path: polygon(8px 0, 100% 0, calc(100% - 8px) 100%, 0 100%);
+  background: #16211f;
+}
+nav a:hover { color: var(--bone); background: #1d2b28; }
+nav a.active {
+  color: #fff; background: linear-gradient(var(--red), #6e0505);
+  text-shadow: 0 1px 2px #000;
+}
+
+/* ============ 主列 ============ */
+main { max-width: 1100px; margin: 0 auto; padding: 26px 20px 150px; }
+
+/* ============ E2 提问 ============ */
+.ask-row { position: relative; display: flex; justify-content: flex-end; margin-bottom: 20px; }
+.ask-card {
+  position: relative; max-width: 640px;
+  background: linear-gradient(#f0f1ea, var(--bone));
+  color: var(--ink); padding: 14px 20px 12px;
+  clip-path: polygon(14px 0, 100% 0, 100% calc(100% - 14px), calc(100% - 14px) 100%, 0 100%, 0 14px);
+  box-shadow: 0 4px 18px rgba(0,0,0,.5);
+}
+.ask-card .who {
+  font-family: var(--cond); font-size: 11.5px; letter-spacing: 2.5px; color: var(--red);
+  text-transform: uppercase; font-weight: 700; margin-bottom: 3px;
+}
+.ask-card .q { font-size: 15.5px; font-weight: 600; }
+
+/* ============ 回答框架 ============ */
+.answer { position: relative; }
+.answer-head {
+  display: flex; align-items: center; gap: 10px; margin-bottom: 12px;
+  font-family: var(--cond); letter-spacing: 2px; text-transform: uppercase;
+  color: #8fa19c; font-size: 12.5px;
+}
+.answer-head .rule { flex: 1; height: 1px; background: linear-gradient(90deg, #33463f, transparent); }
+.answer-head .skull { color: var(--redfont); font-size: 14px; }
+
+/* ============ E3 机魂运转记录 ============ */
+details.trace {
+  position: relative; margin-bottom: 18px;
+  background: #0d1517; border: 1px solid #22332f; border-left: 3px solid var(--tau);
+}
+details.trace summary {
+  cursor: pointer; list-style: none; padding: 8px 14px;
+  display: flex; align-items: center; gap: 10px;
+  font-family: var(--cond); letter-spacing: 1.5px; font-size: 13px; color: #9fb4ae;
+}
+details.trace summary::-webkit-details-marker { display: none; }
+details.trace summary .cog { animation: none; color: var(--tau); font-size: 15px; }
+details.trace summary .warn {
+  margin-left: auto; font-family: var(--mono); font-size: 11px; color: var(--amber);
+  border: 1px solid rgba(201,147,10,.4); padding: 1px 8px;
+}
+details.trace .steps { border-top: 1px dashed #22332f; padding: 10px 14px 12px; }
+.step {
+  display: flex; gap: 10px; align-items: baseline;
+  font-family: var(--mono); font-size: 12.5px; color: #8ea39d; padding: 3px 0;
+}
+.step .no { color: #5a6f69; }
+.step .fn { color: #6fc3d4; }
+.step .ok { color: #59a06b; margin-left: auto; }
+.step.degraded .fn { color: var(--amber); }
+.step.degraded .ok { color: var(--amber); }
+.step .note { color: #b5a27a; }
+
+/* ============ E4 判定 ============ */
+.verdict {
+  position: relative; display: flex; gap: 0; margin-bottom: 18px;
+  background: linear-gradient(#f2f3ec, var(--bone));
+  color: var(--ink);
+  box-shadow: 0 6px 24px rgba(0,0,0,.5);
+  clip-path: polygon(0 0, calc(100% - 18px) 0, 100% 18px, 100% 100%, 18px 100%, 0 calc(100% - 18px));
+}
+.verdict .band {
+  flex: 0 0 10px; background: repeating-linear-gradient(-45deg, var(--red) 0 12px, #5e0404 12px 24px);
+}
+.verdict .vbody { padding: 16px 22px 16px 18px; flex: 1; }
+.verdict h2 {
+  font-family: var(--cond); text-transform: uppercase; letter-spacing: 2.5px;
+  font-size: 14px; color: var(--red); margin-bottom: 6px;
+}
+.verdict .lede { font-size: 15px; line-height: 1.9; }
+.verdict .lede b { color: var(--red); }
+.verdict .num { font-family: var(--cond); font-weight: 700; font-size: 16px; }
+.vshield-wrap {
+  flex: 0 0 128px; display: flex; flex-direction: column; align-items: center;
+  justify-content: center; padding: 14px 16px 14px 0;
+}
+.vshield {
+  width: 92px; height: 104px;
+  clip-path: polygon(0% 0%, 100% 0%, 100% 41.42%, 99.13% 49.08%, 96.48% 58.58%, 90.13% 69.72%, 81.6% 79.45%, 72.02% 87.52%, 50% 100%, 28.68% 87.52%, 18.31% 79.45%, 9.46% 69.72%, 3.65% 58.58%, 1.13% 49.08%, 0% 41.42%);
+  background: linear-gradient(160deg, #c11616, var(--red) 55%, #5c0303);
+  display: flex; flex-direction: column; align-items: center; justify-content: center;
+  padding-bottom: 30px; /* 盾形下 40% 收尖，内容整体上移防裁切 */
+  color: #fff; text-shadow: 0 1px 2px rgba(0,0,0,.55);
+}
+.vshield .vs-big { font-size: 26px; font-weight: 800; font-family: var(--body); letter-spacing: 2px; }
+.vshield .vs-sub { font-family: var(--cond); font-size: 10px; letter-spacing: 3px; text-transform: uppercase; opacity: .85; }
+.vshield-wrap .cap { margin-top: 6px; font-family: var(--cond); font-size: 10.5px; letter-spacing: 2px; color: #6b6f66; text-transform: uppercase; }
+
+/* ============ E5 计算依据 ============ */
+.calc {
+  position: relative; margin-bottom: 18px;
+  background: #0d1517; border: 1px solid #22332f;
+}
+.calc .hd {
+  background: linear-gradient(90deg, #16262b, transparent);
+  border-bottom: 1px solid #22332f;
+  font-family: var(--cond); letter-spacing: 2.5px; text-transform: uppercase;
+  color: #9fb4ae; font-size: 13px; padding: 8px 14px;
+}
+.calc ol { list-style: none; padding: 8px 16px 12px; }
+.calc li {
+  display: flex; gap: 12px; align-items: baseline; padding: 7px 0;
+  border-bottom: 1px dotted #22332f; font-size: 13.5px; color: #c3cdc7;
+}
+.calc li:last-child { border-bottom: 0; }
+.calc .n {
+  flex: 0 0 22px; height: 22px; text-align: center; line-height: 22px;
+  font-family: var(--cond); font-weight: 700; color: #fff; font-size: 13px;
+  background: var(--red);
+  clip-path: polygon(10% 0, 100% 0, 100% 20%, 100% 90%, 90% 100%, 20% 100%, 0 100%, 0 10%);
+}
+.calc .kw { color: #6fc3d4; font-weight: 600; }
+.calc .val { font-family: var(--cond); font-weight: 700; color: var(--bone); font-size: 14.5px; }
+.calc .cite-tag { font-family: var(--mono); font-size: 10.5px; color: #7a8f89; }
+
+/* ============ E6 官方版式兵牌 ============ */
+.datasheet {
+  position: relative; margin-bottom: 18px;
+  background: var(--bone); color: var(--ink);
+  box-shadow: 0 8px 30px rgba(0,0,0,.55);
+  border: 1px solid #000;
+}
+.ds-head {
+  position: relative; overflow: hidden;
+  background: linear-gradient(100deg, var(--tau-ban) 0%, #10424d 55%, var(--dark) 100%);
+  padding: 12px 18px 10px; color: #fefefe;
+}
+.ds-head::after {
+  content: ""; position: absolute; inset: 0;
+  background: repeating-linear-gradient(115deg, rgba(255,255,255,.03) 0 2px, transparent 2px 6px);
+  pointer-events: none;
+}
+.ds-name { display: flex; align-items: baseline; gap: 12px; flex-wrap: wrap; }
+.ds-name .zh {
+  font-family: var(--body); font-weight: 800; font-size: 24px; letter-spacing: 2px;
+  text-shadow: 0 1px 3px rgba(0,0,0,.5);
+}
+.ds-name .en {
+  font-family: var(--cond); text-transform: uppercase; letter-spacing: 2.5px;
+  font-size: 14px; color: #bcd6d4;
+}
+.ds-name .pts {
+  margin-left: auto; font-family: var(--cond); font-weight: 700; font-size: 15px;
+  background: rgba(11,23,27,.65); border: 1px solid rgba(231,233,225,.25);
+  padding: 3px 12px; letter-spacing: 1px;
+}
+.ds-name .pts small { font-weight: 400; letter-spacing: 2px; opacity: .75; margin-right: 6px; }
+.ds-stats { display: flex; gap: 14px; margin-top: 10px; position: relative; z-index: 1; }
+.stat { display: flex; flex-direction: column; align-items: center; gap: 3px; }
+.stat .lab { font-family: var(--cond); font-weight: 700; font-size: 12px; letter-spacing: 1px; color: #d5e4e2; }
+.stat .box {
+  width: 46px; height: 42px; background: var(--bone);
+  clip-path: polygon(10% 0, 100% 0, 100% 20%, 100% 90%, 90% 100%, 20% 100%, 0 100%, 0 10%);
+  display: flex; align-items: center; justify-content: center;
+  font-family: var(--cond); font-weight: 700; font-size: 19px; color: var(--ink);
+  box-shadow: inset 0 0 0 2px #35555d;
+}
+.ds-body { display: grid; grid-template-columns: 1fr 320px; }
+.ds-main { padding: 12px 14px 14px; border-right: 2px solid var(--tau-ban); min-width: 0; }
+.wp-caption {
+  display: flex; align-items: center; gap: 8px;
+  font-family: var(--cond); font-weight: 700; letter-spacing: 2px; text-transform: uppercase;
+  background: var(--dark); color: #fefefe; font-size: 12.5px;
+  padding: 4px 10px; margin-bottom: 0;
+}
+.wp-caption .sig { color: #6fc3d4; font-size: 13px; }
+.tbl-scroll { overflow-x: auto; margin-bottom: 12px; }
+table.wp { width: 100%; border-collapse: collapse; font-size: 13px; min-width: 560px; }
+table.wp th {
+  background: var(--grey-head); color: var(--ink); font-family: var(--cond);
+  font-size: 12px; letter-spacing: 1px; padding: 3px 8px; text-align: center;
+  border-bottom: 1px solid #8f948c;
+}
+table.wp th:first-child { text-align: left; }
+table.wp td { padding: 5px 8px; text-align: center; border-bottom: 1px solid #c9cdc2; }
+table.wp td:first-child { text-align: left; font-weight: 600; }
+table.wp tr:nth-child(even) td { background: var(--zebra); }
+table.wp .kw {
+  display: inline-block; font-size: 11px; color: var(--tau);
+  font-weight: 700; letter-spacing: .5px; margin-left: 6px;
+}
+table.wp .num { font-family: var(--cond); font-weight: 700; font-size: 13.5px; }
+table.wp tr.hot td {
+  background: linear-gradient(90deg, rgba(23,89,102,.18), rgba(23,89,102,.08));
+  border-top: 1px solid var(--tau-ban); border-bottom: 1px solid var(--tau-ban);
+}
+table.wp tr.hot td:first-child { box-shadow: inset 3px 0 0 var(--tau-ban); color: var(--tau-ban); }
+.ds-side { padding: 12px 14px 14px; background: #eef0e8; min-width: 0; }
+.ds-side h4 {
+  font-family: var(--cond); text-transform: uppercase; letter-spacing: 2px;
+  font-size: 12.5px; color: var(--tau-ban); border-bottom: 2px solid var(--tau-ban);
+  padding-bottom: 3px; margin-bottom: 8px;
+}
+.ability { padding: 6px 0; border-bottom: 1px dotted var(--ink); font-size: 12.8px; color: #23261f; }
+.ability:last-child { border-bottom: 0; }
+.ability b { color: var(--ink); }
+.ability .tag {
+  font-family: var(--cond); font-size: 10.5px; letter-spacing: 1.5px; color: var(--red);
+  text-transform: uppercase; font-weight: 700; margin-right: 5px;
+}
+.ds-side .comp { margin-top: 12px; }
+.ds-side .comp p { font-size: 12.5px; color: #3a3e34; padding: 3px 0; }
+.ds-side .comp .num { font-family: var(--cond); font-weight: 700; }
+.ds-kwbar {
+  display: flex; align-items: center; gap: 10px;
+  background: var(--dark); color: #fefefe; padding: 6px 14px;
+  font-size: 12px;
+}
+.ds-kwbar .lab { font-family: var(--cond); letter-spacing: 2px; text-transform: uppercase; color: #8fa8a5; font-size: 11px; }
+.ds-kwbar .fac {
+  margin-left: auto; font-family: var(--cond); letter-spacing: 1.5px;
+  background: var(--tau-ban); padding: 2px 12px;
+  clip-path: polygon(8px 0, 100% 0, calc(100% - 8px) 100%, 0 100%);
+}
+.ds-src {
+  background: #10191c; color: #7a8f89; font-family: var(--mono); font-size: 11px;
+  padding: 4px 14px; display: flex; gap: 14px; flex-wrap: wrap;
+}
+
+/* ============ E7 纯净封蜡引用 ============ */
+.cites { position: relative; margin-bottom: 18px; display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; }
+.cite {
+  position: relative; background: linear-gradient(#efe9d6, #e6dec5);
+  color: var(--ink); padding: 12px 14px 10px 52px; min-height: 74px;
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 78% 96%, 55% 100%, 30% 96%, 0 100%);
+  box-shadow: 0 4px 14px rgba(0,0,0,.45);
+}
+.cite .wax {
+  position: absolute; left: 10px; top: 12px; width: 32px; height: 32px; border-radius: 50%;
+  background: radial-gradient(circle at 35% 30%, #d33a3a, var(--red) 60%, #4d0202);
+  box-shadow: 0 2px 5px rgba(0,0,0,.5), inset 0 0 0 3px rgba(255,255,255,.12);
+  display: flex; align-items: center; justify-content: center;
+  color: #ffd9d9; font-family: var(--cond); font-weight: 700; font-size: 14px;
+}
+.cite .bk { font-weight: 700; font-size: 12.8px; line-height: 1.5; }
+.cite .pg { font-family: var(--cond); color: var(--redfont); font-weight: 700; font-size: 12.5px; }
+.cite .wiki { display: block; font-family: var(--mono); font-size: 10.5px; color: #6b6046; margin-top: 3px; word-break: break-all; text-decoration: underline dotted; }
+
+/* ============ E8 敏感性 + CTA ============ */
+.sens-row { position: relative; display: flex; gap: 14px; margin-bottom: 26px; align-items: stretch; }
+.sens {
+  flex: 1; background: linear-gradient(100deg, rgba(201,147,10,.14), rgba(201,147,10,.05));
+  border: 1px solid rgba(201,147,10,.45); border-left: 4px solid var(--amber);
+  padding: 12px 16px; color: #d8cdb2; font-size: 13.5px;
+}
+.sens .t {
+  font-family: var(--cond); letter-spacing: 2px; text-transform: uppercase;
+  color: var(--amber); font-size: 12px; font-weight: 700; margin-bottom: 4px;
+}
+.sens .num { font-family: var(--cond); font-weight: 700; color: #f0e3bd; font-size: 14.5px; }
+.cta {
+  flex: 0 0 auto; align-self: center; display: flex; flex-direction: column; align-items: center;
+  gap: 4px; text-decoration: none;
+}
+.cta .btn {
+  font-family: var(--cond); text-transform: uppercase; letter-spacing: 2px; font-size: 15px;
+  color: #fff; background: linear-gradient(var(--red), #6e0505);
+  padding: 12px 30px;
+  clip-path: polygon(14px 0, 100% 0, calc(100% - 14px) 100%, 0 100%);
+  box-shadow: 0 4px 14px rgba(153,0,0,.4);
+  transition: filter .15s;
+}
+.cta:hover .btn { filter: brightness(1.2); }
+.cta .mini { font-family: var(--mono); font-size: 10.5px; color: #7a8f89; }
+
+/* ============ E9 输入区 ============ */
+.composer-dock {
+  position: fixed; left: 0; right: 0; bottom: 0; z-index: 20;
+  background: linear-gradient(transparent, rgba(6,10,12,.88) 26%, #060a0c 70%);
+  padding: 26px 20px 12px;
+}
+.composer-inner { max-width: 1100px; margin: 0 auto; position: relative; }
+.chips { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 8px; }
+.chip {
+  cursor: pointer; font-size: 12.5px; color: #a9bcb6;
+  background: #101b1e; border: 1px solid #2b423d;
+  clip-path: polygon(8px 0, 100% 0, calc(100% - 8px) 100%, 0 100%);
+  padding: 4px 16px;
+}
+.chip:hover { color: var(--bone); border-color: var(--tau); background: #14262a; }
+.composer { display: flex; gap: 0; }
+.composer input {
+  flex: 1; background: #0d1517; border: 1px solid #2b423d; border-right: 0;
+  color: var(--bone); font: 14px var(--body); padding: 12px 16px; outline: none;
+}
+.composer input:focus { border-color: var(--tau); box-shadow: 0 0 0 1px var(--tau-ban); }
+.composer input::placeholder { color: #5c6f6a; }
+.composer button {
+  font-family: var(--cond); text-transform: uppercase; letter-spacing: 3px; font-size: 14px;
+  color: #fff; background: linear-gradient(var(--red), #6e0505); border: 0; cursor: pointer;
+  padding: 0 34px; clip-path: polygon(12px 0, 100% 0, 100% 100%, 0 100%);
+}
+.composer button:hover { filter: brightness(1.2); }
+.foot {
+  text-align: center; font-family: var(--mono); font-size: 10.5px; color: #57655f;
+  margin-top: 8px; letter-spacing: .5px;
+}
+.foot .sep { color: var(--redfont); margin: 0 8px; }
+
+@media (max-width: 1080px) {
+  .ds-body { grid-template-columns: 1fr; }
+  .ds-main { border-right: 0; border-bottom: 2px solid var(--tau-ban); }
+  .cites { grid-template-columns: 1fr; }
+  .sens-row { flex-direction: column; }
+  .ds-stats { flex-wrap: wrap; }
+}
+
+/* ============ 手机端 ============ */
+@media (max-width: 680px) {
+  body { font-size: 13.5px; }
+  .masthead { padding: 10px 12px 8px; gap: 10px; flex-wrap: wrap; }
+  .aquila { width: 56px; height: 26px; }
+  .brand .ttl { font-size: 18px; letter-spacing: 2px; }
+  .brand .sub { font-size: 9.5px; letter-spacing: 2.5px; }
+  .ctx-plate { margin-left: 0; width: 100%; justify-content: center; padding: 5px 10px; font-size: 12px; }
+  nav { padding: 0 8px; overflow-x: auto; -webkit-overflow-scrolling: touch; scrollbar-width: none; }
+  nav::-webkit-scrollbar { display: none; }
+  nav a { padding: 8px 14px 9px; font-size: 13px; letter-spacing: 1px; white-space: nowrap; }
+
+  main { padding: 16px 10px 210px; }
+  .ask-card { max-width: 100%; padding: 12px 14px 10px; }
+  .ask-card .q { font-size: 14.5px; }
+  .answer-head { flex-wrap: wrap; font-size: 11px; }
+
+  .verdict { flex-wrap: wrap; }
+  .verdict .vbody { padding: 12px 14px; flex: 1 1 100%; order: 1; }
+  .verdict .band { order: 0; flex: 0 0 8px; }
+  .vshield-wrap { order: 2; flex: 1 1 100%; flex-direction: row; gap: 12px; padding: 0 14px 14px; justify-content: center; }
+  .vshield { width: 76px; height: 86px; }
+  .vshield .vs-big { font-size: 21px; }
+  .verdict .lede { font-size: 14px; }
+
+  .calc ol { padding: 6px 10px 10px; }
+  .calc li { font-size: 12.8px; gap: 8px; }
+
+  .ds-head { padding: 10px 12px 8px; }
+  .ds-name .zh { font-size: 19px; }
+  .ds-name .en { font-size: 12px; letter-spacing: 1.5px; }
+  .ds-name .pts { flex: 1 1 100%; margin-left: 0; text-align: center; margin-top: 4px; }
+  .ds-stats { gap: 8px; justify-content: center; }
+  .stat .box { width: 42px; height: 38px; font-size: 17px; }
+  .ds-main, .ds-side { padding: 10px 10px 12px; }
+  table.wp { font-size: 12px; min-width: 520px; }
+  .ds-kwbar { flex-wrap: wrap; font-size: 11px; padding: 6px 10px; }
+  .ds-kwbar .fac { margin-left: 0; }
+  .ds-src { font-size: 10px; gap: 6px; }
+
+  .cite { min-height: 0; padding: 10px 12px 10px 48px; }
+  .cta { width: 100%; }
+  .cta .btn { width: 100%; text-align: center; font-size: 14px; padding: 12px 16px; }
+
+  .composer-dock { padding: 18px 10px 10px; }
+  .chips { flex-wrap: nowrap; overflow-x: auto; -webkit-overflow-scrolling: touch; scrollbar-width: none; padding-bottom: 2px; }
+  .chips::-webkit-scrollbar { display: none; }
+  .chip { white-space: nowrap; flex: 0 0 auto; }
+  .composer input { padding: 11px 12px; font-size: 16px; } /* ≥16px 防 iOS 聚焦缩放 */
+  .composer button { padding: 0 22px; letter-spacing: 2px; }
+  .foot { font-size: 9.5px; }
+  .badge-slot { display: none; } /* 手机上角标让位内容 */
+}
+</style>
+</head>
+<body>
+
+<!-- ============ E1 顶栏 ============ -->
+<header>
+  <span class="badge-slot">E1</span>
+  <div class="masthead">
+    <svg class="aquila" width="86" height="40" viewBox="0 0 172 80" aria-hidden="true">
+      <g fill="#c7ccc2">
+        <!-- 双头鹰：简化剪影 -->
+        <path d="M86 34 L78 26 L70 30 L62 22 L54 27 L46 18 L38 24 L28 14 L22 21 L10 10 L16 26 L6 24 L18 38 L8 40 L22 48 L14 54 L30 56 L24 64 L40 60 L38 70 L52 62 L54 72 L64 60 L70 68 L76 54 L86 62 Z"/>
+        <path d="M86 34 L94 26 L102 30 L110 22 L118 27 L126 18 L134 24 L144 14 L150 21 L162 10 L156 26 L166 24 L154 38 L164 40 L150 48 L158 54 L142 56 L148 64 L132 60 L134 70 L120 62 L118 72 L108 60 L102 68 L96 54 L86 62 Z"/>
+        <circle cx="79" cy="20" r="6"/>
+        <circle cx="93" cy="20" r="6"/>
+        <path d="M74 16 L66 12 L76 24 Z"/>
+        <path d="M98 16 L106 12 L96 24 Z"/>
+        <path d="M80 28 L92 28 L90 52 L86 58 L82 52 Z" fill="#a31317"/>
+      </g>
+    </svg>
+    <div class="brand">
+      <span class="ttl">40K <em>规则专家</em></span>
+      <span class="sub">Warhammer 40K Rules Copilot</span>
+    </div>
+    <div class="ctx-plate"><span class="dot"></span>当前语境：钛帝国 T'AU EMPIRE</div>
+  </div>
+  <nav>
+    <a class="active" href="#">💬 聊天</a>
+    <a href="#">⚔️ 模拟器</a>
+    <a href="#">📋 军表实验室</a>
+    <a href="#">📖 图鉴</a>
+  </nav>
+</header>
+
+<main>
+
+  <!-- ============ E2 提问 ============ -->
+  <div class="ask-row">
+    <div class="ask-card">
+      <span class="badge-slot on-light">E2</span>
+      <div class="who">指挥官 · 呈问</div>
+      <div class="q">炮击战斗服的重型磁轨枪打帝国骑士能打掉多少血？值得带吗？</div>
+    </div>
+  </div>
+
+  <div class="answer">
+    <div class="answer-head">
+      <span class="skull">☠</span> 规则专家 · 应答 <span class="rule"></span>
+      <span style="font-family:var(--mono); font-size:11px; letter-spacing:0;">检索 4 步 · 引用 3 条 · 期望值粗算</span>
+    </div>
+
+    <!-- ============ E3 机魂运转记录 ============ -->
+    <details class="trace" open>
+      <span class="badge-slot">E3</span>
+      <summary>
+        <span class="cog">⚙</span> 机魂运转记录 · TOOL TRACE
+        <span class="warn">⚠ simulate_combat 降级</span>
+      </summary>
+      <div class="steps">
+        <div class="step"><span class="no">01</span><span class="fn">entity_resolver</span>("炮击战斗服") → broadside-battlesuits (000000433)<span class="ok">✓</span></div>
+        <div class="step"><span class="no">02</span><span class="fn">get_entity</span>("broadside-battlesuits") → 属性/武器/技能<span class="ok">✓</span></div>
+        <div class="step"><span class="no">03</span><span class="fn">get_keyword_definition</span>("毁灭伤害")<span class="ok">✓</span></div>
+        <div class="step degraded"><span class="no">04</span><span class="fn">simulate_combat</span>(...) <span class="note">未建模（P4 建设中），降级为期望值粗算</span><span class="ok">⚠</span></div>
+      </div>
+    </details>
+
+    <!-- ============ E4 判定 ============ -->
+    <div class="verdict">
+      <span class="badge-slot on-light">E4</span>
+      <div class="band"></div>
+      <div class="vbody">
+        <h2>判定 · Verdict</h2>
+        <p class="lede">
+          单台炮击战斗服（未移动、重型磁轨枪 2 发）对帝国骑士每轮期望约 <span class="num">2.3</span> 伤，
+          其中约 <span class="num">1.0</span> 来自[毁灭伤害]致命伤；满编 3 台一轮约 <span class="num">7</span> 伤，
+          约 <span class="num">3</span> 轮打掉一台满血骑士（22W）。<b>值得带</b>：80 分/台的 S12 AP-4 D6+1，
+          是钛帝国点数效率最高的反坦克平台之一。
+        </p>
+      </div>
+      <div class="vshield-wrap">
+        <div class="vshield">
+          <span class="vs-big">值得带</span>
+          <span class="vs-sub">Sanctioned</span>
+        </div>
+        <span class="cap">审定印记</span>
+      </div>
+    </div>
+
+    <!-- ============ E5 计算依据 ============ -->
+    <div class="calc">
+      <span class="badge-slot">E5</span>
+      <div class="hd">计算依据 · Adeptus Calculus</div>
+      <ol>
+        <li><span class="n">1</span><span><span class="kw">[重型]</span>：未移动 +1 命中 → <span class="val">3+</span> 命中（<span class="val">67%</span>）<span class="cite-tag">[2]</span></span></li>
+        <li><span class="n">2</span><span>S12 对 T12 → <span class="val">4+</span> 穿防（<span class="val">50%</span>）</span></li>
+        <li><span class="n">3</span><span>AP-4 击穿 3+ 甲，骑士只能用 <span class="val">5++</span> 无效保护 → 失防 <span class="val">67%</span></span></li>
+        <li><span class="n">4</span><span>穿防骰 6 触发<span class="kw">[毁灭伤害]</span> → 直接致命伤，无视任何保护<span class="cite-tag">[3]</span></span></li>
+        <li><span class="n">5</span><span>D6+1 平均 <span class="val">4.5</span> 伤/发；另有寻觅者导弹（一次性，S14 AP-3）可补一发</span></li>
+      </ol>
+    </div>
+
+    <!-- ============ E6 官方版式兵牌 ============ -->
+    <div class="datasheet">
+      <span class="badge-slot">E6</span>
+      <div class="ds-head">
+        <div class="ds-name">
+          <span class="zh">炮击战斗服小队</span>
+          <span class="en">Broadside Battlesuits</span>
+          <span class="pts"><small>PTS</small>80 / 170 / 270</span>
+        </div>
+        <div class="ds-stats">
+          <div class="stat"><span class="lab">M</span><span class="box">5"</span></div>
+          <div class="stat"><span class="lab">T</span><span class="box">6</span></div>
+          <div class="stat"><span class="lab">SV</span><span class="box">2+</span></div>
+          <div class="stat"><span class="lab">W</span><span class="box">8</span></div>
+          <div class="stat"><span class="lab">LD</span><span class="box">7+</span></div>
+          <div class="stat"><span class="lab">OC</span><span class="box">2</span></div>
+        </div>
+      </div>
+      <div class="ds-body">
+        <div class="ds-main">
+          <div class="wp-caption"><span class="sig">➶</span> 远程武器 · Ranged Weapons</div>
+          <div class="tbl-scroll">
+            <table class="wp">
+              <tr><th>武器</th><th>射程</th><th>A</th><th>BS</th><th>S</th><th>AP</th><th>D</th></tr>
+              <tr class="hot"><td>重型磁轨枪<span class="kw">[重型，毁灭伤害]</span></td><td class="num">60"</td><td class="num">2</td><td class="num">4+</td><td class="num">12</td><td class="num">-4</td><td class="num">D6+1</td></tr>
+              <tr><td>集束导弹仓<span class="kw">[双联]</span></td><td class="num">30"</td><td class="num">6</td><td class="num">4+</td><td class="num">7</td><td class="num">-1</td><td class="num">2</td></tr>
+              <tr><td>寻觅者导弹<span class="kw">[一次性]</span></td><td class="num">48"</td><td class="num">1</td><td class="num">4+</td><td class="num">14</td><td class="num">-3</td><td class="num">D6+1</td></tr>
+            </table>
+          </div>
+          <div class="wp-caption"><span class="sig">⚔</span> 近战武器 · Melee Weapons</div>
+          <div class="tbl-scroll">
+            <table class="wp">
+              <tr><th>武器</th><th>射程</th><th>A</th><th>WS</th><th>S</th><th>AP</th><th>D</th></tr>
+              <tr><td>粉碎冲撞</td><td class="num">近战</td><td class="num">3</td><td class="num">5+</td><td class="num">6</td><td class="num">0</td><td class="num">1</td></tr>
+            </table>
+          </div>
+        </div>
+        <div class="ds-side">
+          <h4>技能 · Abilities</h4>
+          <div class="ability"><span class="tag">Faction:</span><b>为了上上善道</b></div>
+          <div class="ability"><b>先进装甲</b>：对抗致命伤 4+ 不知疼痛。</div>
+          <div class="comp">
+            <h4>单位构成</h4>
+            <p><span class="num">1</span> 个炮击夏司'瓦（<span class="num">80/170/270</span> 分）</p>
+            <p><span class="num">0–2</span> 个炮击夏司'钨</p>
+          </div>
+        </div>
+      </div>
+      <div class="ds-kwbar">
+        <span class="lab">关键词:</span> 载具，机甲，战斗服，炮击
+        <span class="fac">阵营: 钛帝国</span>
+      </div>
+      <div class="ds-src">
+        <span>src: 《钛帝国十版CODEX-20251112》 p.44</span>
+        <span>wiki: factions/钛帝国/units/broadside-battlesuits</span>
+      </div>
+    </div>
+
+    <!-- ============ E7 纯净封蜡引用 ============ -->
+    <div class="cites">
+      <span class="badge-slot" style="top:-16px;">E7</span>
+      <div class="cite">
+        <div class="wax">1</div>
+        <div class="bk">《钛帝国十版CODEX-20251112》 <span class="pg">p.44</span></div>
+        <a class="wiki" href="#">factions/钛帝国/units/broadside-battlesuits</a>
+      </div>
+      <div class="cite">
+        <div class="wax">2</div>
+        <div class="bk">《战锤40K总规则10版》 武器技能 · <span class="pg">重型</span></div>
+        <a class="wiki" href="#">core-rules/heavy</a>
+      </div>
+      <div class="cite">
+        <div class="wax">3</div>
+        <div class="bk">《战锤40K总规则10版》 武器技能 · <span class="pg">毁灭伤害</span></div>
+        <a class="wiki" href="#">core-rules/devastating-wounds</a>
+      </div>
+    </div>
+
+    <!-- ============ E8 敏感性 + CTA ============ -->
+    <div class="sens-row">
+      <span class="badge-slot" style="top:-16px;">E8</span>
+      <div class="sens">
+        <div class="t">◭ 敏感性 · 标记加成</div>
+        若有观察员提供[标记]（为了上上善道），命中提升至 <span class="num">2+</span>，
+        期望伤害 <span class="num">×1.25</span> → 满编约 <span class="num">8.8</span> 伤/轮。
+      </div>
+      <a class="cta" href="#">
+        <span class="btn">⚔ 在模拟器中打开此对局</span>
+        <span class="mini">P4 建设中 · 当前为期望值粗算</span>
+      </a>
+    </div>
+  </div>
+
+</main>
+
+<!-- ============ E9 输入区 ============ -->
+<div class="composer-dock">
+  <div class="composer-inner">
+    <span class="badge-slot" style="top:2px;">E9</span>
+    <div class="chips">
+      <span class="chip">换集束导弹仓打步兵效率？</span>
+      <span class="chip">对比铁手将军 vs 炮击</span>
+      <span class="chip">满编三台的点数曲线</span>
+    </div>
+    <div class="composer">
+      <input id="ask-input" type="text" placeholder="问规则、查单位、判对局……支持中文/英文/俗名">
+      <button>发 送</button>
+    </div>
+    <div class="foot">
+      回答由 LLM 基于本地规则库生成<span class="sep">☠</span>引用页码可溯源<span class="sep">☠</span>模拟为期望值/蒙特卡洛估算
+    </div>
+  </div>
+</div>
+
+<script>
+document.querySelectorAll('.chip').forEach(function (chip) {
+  chip.addEventListener('click', function () {
+    var input = document.getElementById('ask-input');
+    input.value = chip.textContent.trim();
+    input.focus();
+  });
+});
+</script>
+</body>
+</html>

@@ -1,0 +1,963 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>40K 规则专家 · 军典页（方向 A）</title>
+<style>
+/* ============================================================
+   方向 A ·「军典页」Grimdark Codex
+   暖炭近黑底 / 羊皮纸卡片 / 钛帝国赭金强调 / 帝国哥特仪式感
+   ============================================================ */
+:root{
+  --bg:          #1b1510;   /* 暖炭近黑 */
+  --bg-panel:    #241c13;
+  --bg-deep:     #140f0b;
+  --parch:       #f0e6cf;   /* 羊皮纸 */
+  --parch-deep:  #e6d7b6;
+  --parch-edge:  #c9b488;
+  --ink:         #2b2114;   /* 纸上墨色 */
+  --ink-soft:    #5c4930;
+  --ink-mute:    #6b573c;
+  --ochre:       #c8892a;   /* 赭金 */
+  --ochre-deep:  #9a641b;   /* 纸上可读赭金 */
+  --ochre-dark:  #7c4f13;
+  --wax:         #7e3324;   /* 火漆红 */
+  --wax-lit:     #a03e2d;
+  --lit:         #e8dcc2;   /* 暗底浅字 */
+  --lit-mute:    #b9a988;
+  --serif: Georgia, 'Noto Serif SC', 'SimSun', 'Microsoft YaHei', serif;
+  --sans: 'Microsoft YaHei', 'PingFang SC', 'Segoe UI', 'Helvetica Neue', sans-serif;
+  --mono: Consolas, 'Courier New', 'Microsoft YaHei', monospace;
+}
+*{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{
+  background:var(--bg);
+  color:var(--lit);
+  font-family:var(--sans);
+  font-size:15px;
+  line-height:1.75;
+  /* 暗色羊皮/石纹：细密竖纹 + 中央聚光 */
+  background-image:
+    radial-gradient(ellipse 90% 70% at 50% 0%, rgba(200,137,42,.06), transparent 60%),
+    repeating-linear-gradient(90deg, rgba(255,255,255,.012) 0 1px, transparent 1px 3px),
+    repeating-linear-gradient(0deg, rgba(0,0,0,.10) 0 1px, transparent 1px 4px);
+  min-height:100vh;
+}
+::selection{background:var(--ochre);color:var(--bg-deep);}
+
+/* ---------- 槽位角标徽章（A1..A9） ---------- */
+.slot{
+  position:absolute; top:6px; right:8px;
+  font-family:var(--mono); font-style:normal;
+  font-size:10px; letter-spacing:1px;
+  color:var(--ochre); opacity:.42;
+  border:1px solid currentColor; border-radius:2px;
+  padding:0 5px; line-height:15px;
+  pointer-events:none; z-index:30;
+}
+.slot.on-parch{color:var(--ochre-dark);}
+
+/* ============================================================
+   A1 · 顶栏：卷首题名 + 页签 + 语境指示
+   ============================================================ */
+.topbar{
+  position:relative;
+  background:linear-gradient(180deg, #221a11 0%, #1c1610 100%);
+  border-bottom:1px solid #3a2c18;
+  box-shadow:0 1px 0 rgba(200,137,42,.28), 0 8px 24px rgba(0,0,0,.5);
+}
+.topbar-inner{
+  max-width:1180px; margin:0 auto; padding:14px 24px 0;
+  display:flex; align-items:flex-end; gap:28px;
+}
+.brand{display:flex; align-items:center; gap:12px; padding-bottom:14px;}
+.brand svg{display:block; flex:none;}
+.brand-name{
+  font-family:var(--serif); font-size:21px; font-weight:700;
+  color:var(--parch); letter-spacing:2px; line-height:1.2; white-space:nowrap;
+}
+.brand-sub{
+  font-family:var(--serif); font-style:italic; font-size:11px;
+  color:var(--lit-mute); letter-spacing:.5px; white-space:nowrap;
+}
+.tabs{display:flex; gap:6px; align-items:flex-end; flex:1;}
+.tab{
+  font-family:var(--serif); font-size:14.5px; letter-spacing:2px;
+  color:var(--lit-mute); text-decoration:none; cursor:pointer;
+  padding:9px 18px 11px; border:1px solid transparent; border-bottom:none;
+  border-radius:3px 3px 0 0; position:relative; white-space:nowrap;
+  transition:color .15s;
+}
+.tab:hover{color:var(--parch);}
+.tab .em{font-size:13px; margin-right:5px; letter-spacing:0;}
+.tab.active{
+  background:linear-gradient(180deg, var(--parch) 0%, var(--parch-deep) 100%);
+  color:var(--ink); border-color:var(--parch-edge);
+  box-shadow:inset 0 1px 0 #fff8, 0 -3px 10px rgba(200,137,42,.15);
+  font-weight:700;
+}
+.tab.active .now{
+  font-family:var(--mono); font-size:10px; font-weight:400;
+  color:var(--ochre-dark); letter-spacing:0; margin-left:4px; vertical-align:1px;
+}
+.context-chip{
+  display:flex; align-items:center; gap:8px; margin-bottom:12px;
+  border:1px solid #4a3a1e; border-radius:3px;
+  background:rgba(200,137,42,.08);
+  padding:5px 12px; white-space:nowrap;
+}
+.context-chip .ctx-label{font-size:12px; color:var(--lit-mute); letter-spacing:1px;}
+.context-chip .ctx-val{
+  font-family:var(--serif); font-weight:700; font-size:13.5px;
+  color:var(--ochre); letter-spacing:2px;
+}
+.context-chip .ctx-switch{
+  font-size:11px; color:var(--lit-mute); cursor:pointer;
+  border-left:1px solid #4a3a1e; padding-left:8px; margin-left:2px;
+}
+.context-chip .ctx-switch:hover{color:var(--parch);}
+/* 顶栏下方双线镶边 */
+.topbar::after{
+  content:""; display:block; height:5px;
+  background:
+    linear-gradient(90deg, transparent, rgba(200,137,42,.55) 18%, rgba(200,137,42,.55) 82%, transparent),
+    linear-gradient(180deg, transparent 0 2px, #1b1510 2px 3px, transparent 3px);
+  background-size:100% 1px, 100% 100%;
+  background-position:0 0, 0 0;
+  background-repeat:no-repeat;
+  border-bottom:1px solid rgba(200,137,42,.25);
+}
+
+/* ============================================================
+   主卷轴区
+   ============================================================ */
+.scroll{
+  max-width:1080px; margin:0 auto; padding:34px 24px 8px;
+  position:relative;
+}
+.chapter-mark{
+  text-align:center; margin-bottom:26px;
+  font-family:var(--mono); font-size:11px; letter-spacing:4px;
+  color:var(--lit-mute); opacity:.8;
+}
+.chapter-mark b{color:var(--ochre); font-weight:400;}
+
+/* ============================================================
+   A2 · 消息流
+   ============================================================ */
+.msg-flow{position:relative;}
+/* 用户提问：右侧皮革腰牌 */
+.msg-user{
+  display:flex; justify-content:flex-end; margin-bottom:30px; position:relative;
+}
+.user-plaque{
+  max-width:640px;
+  background:linear-gradient(180deg, #33271a 0%, #2a2015 100%);
+  border:1px solid #55411f;
+  border-radius:4px;
+  box-shadow:inset 0 1px 0 rgba(232,220,194,.07), 0 6px 18px rgba(0,0,0,.45);
+  padding:14px 20px 15px;
+  position:relative;
+}
+.user-plaque::before, .user-plaque::after{ /* 左上/右上小铆钉 */
+  content:""; position:absolute; top:7px; width:5px; height:5px;
+  border-radius:50%; background:var(--ochre); opacity:.5;
+}
+.user-plaque::before{left:7px;}
+.user-plaque::after{right:7px;}
+.user-meta{
+  display:flex; align-items:baseline; gap:10px; margin-bottom:5px;
+}
+.user-meta .who{
+  font-family:var(--serif); font-size:12.5px; font-weight:700;
+  letter-spacing:2px; color:var(--ochre);
+}
+.user-meta .when{font-family:var(--mono); font-size:10.5px; color:var(--lit-mute); opacity:.7;}
+.user-q{font-size:16px; color:var(--lit); line-height:1.8;}
+
+/* AI 应答台头 */
+.ai-head{
+  display:flex; align-items:center; gap:10px; margin-bottom:10px;
+}
+.ai-head .sigil{
+  width:30px; height:30px; flex:none; border-radius:50%;
+  border:1px solid var(--ochre);
+  display:flex; align-items:center; justify-content:center;
+  background:radial-gradient(circle at 50% 35%, #322414, #1e160d);
+  box-shadow:0 0 10px rgba(200,137,42,.25);
+}
+.ai-head .who{
+  font-family:var(--serif); font-size:13px; font-weight:700;
+  letter-spacing:2px; color:var(--parch);
+}
+.ai-head .role{
+  font-family:var(--mono); font-size:10.5px; color:var(--lit-mute);
+  border:1px solid #45351b; border-radius:2px; padding:0 6px;
+}
+
+/* ============================================================
+   军典应答卷（羊皮纸大卡）
+   ============================================================ */
+.codex{
+  position:relative;
+  background:
+    radial-gradient(ellipse 120% 60% at 50% -10%, rgba(120,85,30,.10), transparent 55%),
+    repeating-linear-gradient(0deg, rgba(90,60,20,.028) 0 2px, transparent 2px 5px),
+    linear-gradient(180deg, var(--parch) 0%, #ece0c4 55%, var(--parch-deep) 100%);
+  color:var(--ink);
+  border:1px solid #8d7443;
+  border-radius:2px;
+  box-shadow:
+    inset 0 0 0 4px rgba(240,230,207,.9),
+    inset 0 0 0 5px rgba(154,100,27,.45),
+    0 18px 50px rgba(0,0,0,.55);
+  padding:34px 44px 30px;
+  margin-bottom:34px;
+}
+/* 四角角花 */
+.corner{position:absolute; width:24px; height:24px; pointer-events:none;}
+.corner::before{
+  content:""; position:absolute; inset:0;
+  border:2px solid var(--ochre-deep); opacity:.8;
+}
+.corner::after{
+  content:"◆"; position:absolute; font-size:7px; color:var(--ochre-deep); opacity:.9;
+}
+.corner.tl{top:10px; left:10px;} .corner.tl::before{border-right:none; border-bottom:none;} .corner.tl::after{top:-3px; left:-3px;}
+.corner.tr{top:10px; right:10px;} .corner.tr::before{border-left:none; border-bottom:none;} .corner.tr::after{top:-3px; right:-3px;}
+.corner.bl{bottom:10px; left:10px;} .corner.bl::before{border-right:none; border-top:none;} .corner.bl::after{bottom:-3px; left:-3px;}
+.corner.br{bottom:10px; right:10px;} .corner.br::before{border-left:none; border-top:none;} .corner.br::after{bottom:-3px; right:-3px;}
+
+/* 章节头 */
+.sec{position:relative; margin-top:30px;}
+.sec:first-of-type{margin-top:0;}
+.sec-head{
+  display:flex; align-items:baseline; gap:14px; margin-bottom:14px;
+}
+.sec-no{
+  font-family:var(--mono); font-size:10.5px; letter-spacing:2px;
+  color:var(--ochre-dark); border:1px solid rgba(154,100,27,.5);
+  padding:1px 8px; border-radius:1px; white-space:nowrap;
+}
+.sec-head h2{
+  font-family:var(--serif); font-size:19px; font-weight:700;
+  letter-spacing:5px; color:var(--ink);
+}
+.sec-head .tail{
+  flex:1; height:5px; align-self:center;
+  border-top:1px solid rgba(90,60,20,.4);
+  border-bottom:1px solid rgba(90,60,20,.25);
+}
+/* 章间纹样分隔 */
+.divider{
+  display:flex; align-items:center; gap:12px; margin:28px 0 0;
+  color:var(--ochre-dark);
+}
+.divider::before,.divider::after{
+  content:""; flex:1; height:3px;
+  border-top:1px solid rgba(124,79,19,.45);
+  border-bottom:1px solid rgba(124,79,19,.2);
+}
+.divider span{font-size:10px; letter-spacing:6px; opacity:.85;}
+
+/* ============================================================
+   A3 · 思仆记录（工具调用轨迹，可折叠）
+   ============================================================ */
+.servitor{
+  position:relative;
+  background:linear-gradient(180deg, #2a2013 0%, #241b10 100%);
+  border:1px solid #57431f;
+  border-radius:3px;
+  box-shadow:inset 0 1px 0 rgba(232,220,194,.06);
+  margin-bottom:26px;
+  color:var(--lit);
+}
+.servitor summary{
+  list-style:none; cursor:pointer; user-select:none;
+  display:flex; align-items:center; gap:10px;
+  padding:9px 16px;
+  font-family:var(--mono); font-size:12px; letter-spacing:2px;
+  color:var(--lit-mute);
+}
+.servitor summary::-webkit-details-marker{display:none;}
+.servitor summary:hover{color:var(--parch);}
+.servitor summary .cog{
+  color:var(--ochre); font-size:13px;
+  display:inline-block;
+}
+.servitor[open] summary .cog{transform:rotate(30deg);}
+.servitor summary .ttl{color:var(--ochre); font-weight:700;}
+.servitor summary .cnt{
+  border:1px solid #4a3a1e; border-radius:2px; padding:0 6px; font-size:10.5px;
+}
+.servitor summary .chev{margin-left:auto; font-size:10px; transition:transform .15s;}
+.servitor[open] summary .chev{transform:rotate(180deg);}
+.servitor .steps{
+  list-style:none; border-top:1px dashed #4a3a1e;
+  padding:10px 16px 12px; display:flex; flex-direction:column; gap:7px;
+}
+.step{
+  display:flex; align-items:baseline; gap:10px;
+  font-family:var(--mono); font-size:12.5px; line-height:1.7;
+}
+.step .no{
+  flex:none; width:18px; height:18px; line-height:17px; text-align:center;
+  border:1px solid var(--ochre-dark); color:var(--ochre);
+  font-size:10.5px; border-radius:1px; align-self:center;
+}
+.step .call{color:#d8c9a5;}
+.step .call .fn{color:var(--ochre);}
+.step .call .arg{color:#b5cf9e;}
+.step .arrow{color:var(--lit-mute);}
+.step .res{color:var(--lit-mute);}
+.step .ok{color:#9fb96a; margin-left:2px;}
+.step.warn .res{color:#d9a24a;}
+.step.warn .no{border-color:#8a5a17; background:rgba(217,162,74,.08);}
+
+/* ============================================================
+   A4 · 判词（结论区）
+   ============================================================ */
+.verdict-body{
+  position:relative;
+  border-left:3px double var(--ochre-deep);
+  padding:4px 150px 4px 20px;
+}
+.verdict-text{
+  font-family:var(--serif); font-size:17.5px; line-height:2.05; color:var(--ink);
+}
+.verdict-text::first-letter{
+  font-size:2.5em; float:left; line-height:1;
+  padding:4px 10px 0 0; color:var(--ochre-deep); font-weight:700;
+}
+.verdict-text .num{color:var(--ochre-dark); font-weight:700; white-space:nowrap;}
+.verdict-text .kw{
+  font-family:var(--mono); font-size:.82em; color:var(--wax);
+  border:1px solid rgba(126,51,36,.4); border-radius:2px; padding:0 4px;
+  white-space:nowrap; vertical-align:1px;
+}
+.verdict-text strong{
+  color:var(--wax); letter-spacing:2px;
+}
+/* 「值得带」审定印章 */
+.stamp{
+  position:absolute; right:8px; top:50%;
+  transform:translateY(-50%) rotate(-7deg);
+  border:3px double var(--wax-lit); border-radius:4px;
+  color:var(--wax-lit); text-align:center;
+  padding:8px 16px 9px; opacity:.9;
+  background:rgba(160,62,45,.05);
+  pointer-events:none;
+}
+.stamp .s1{
+  font-family:var(--serif); font-size:20px; font-weight:700; letter-spacing:6px;
+  display:block; line-height:1.3;
+}
+.stamp .s2{
+  font-family:var(--mono); font-size:9px; letter-spacing:3px; display:block; opacity:.85;
+}
+
+/* ============================================================
+   A5 · 计算依据
+   ============================================================ */
+.calc-list{list-style:none; display:flex; flex-direction:column; gap:0;}
+.calc-list li{
+  display:flex; gap:14px; align-items:baseline;
+  padding:9px 6px 9px 2px;
+  border-bottom:1px dotted rgba(90,60,20,.35);
+  font-size:14.5px; color:var(--ink);
+}
+.calc-list li:last-child{border-bottom:none;}
+.calc-list .idx{
+  flex:none; width:22px; height:22px; align-self:center;
+  border:1px solid var(--ochre-dark); border-radius:50%;
+  font-family:var(--serif); font-size:12px; font-weight:700;
+  color:var(--ochre-dark); text-align:center; line-height:20px;
+  background:rgba(200,137,42,.07);
+}
+.calc-list .kw{
+  font-family:var(--mono); font-size:.86em; color:var(--ochre-dark);
+  border:1px solid rgba(154,100,27,.45); border-radius:2px; padding:0 4px;
+  white-space:nowrap;
+}
+.calc-list .pct{font-family:var(--mono); font-size:.9em; color:var(--ink-mute);}
+.calc-list b{color:var(--ochre-dark); font-weight:700;}
+
+/* ============================================================
+   A6 · 单位卡（军典 datasheet 仪式化版式）
+   ============================================================ */
+.datasheet{
+  border:1px solid #6d5427;
+  box-shadow:0 0 0 3px rgba(240,230,207,.9), 0 0 0 4px rgba(109,84,39,.55), 0 8px 22px rgba(43,33,20,.18);
+  border-radius:2px; overflow:hidden; position:relative;
+  background:var(--parch);
+}
+.ds-head{
+  background:
+    radial-gradient(ellipse 80% 130% at 100% 50%, rgba(200,137,42,.18), transparent 60%),
+    linear-gradient(180deg, #2e2314 0%, #221a0f 100%);
+  color:var(--parch);
+  display:flex; align-items:center; gap:18px;
+  padding:14px 20px;
+  border-bottom:2px solid var(--ochre-deep);
+}
+.ds-title{flex:1; min-width:0;}
+.ds-title .zh{
+  font-family:var(--serif); font-size:21px; font-weight:700; letter-spacing:3px;
+  line-height:1.3; color:var(--parch);
+}
+.ds-title .en{
+  font-family:var(--serif); font-style:italic; font-size:12.5px;
+  color:var(--lit-mute); letter-spacing:1px;
+}
+.ds-faction{
+  font-family:var(--serif); font-size:12px; letter-spacing:3px;
+  color:var(--ochre); border:1px solid rgba(200,137,42,.5);
+  padding:3px 12px; border-radius:2px; white-space:nowrap;
+}
+.ds-pts{
+  text-align:right; white-space:nowrap;
+  border-left:1px solid rgba(200,137,42,.35); padding-left:18px;
+}
+.ds-pts .v{
+  font-family:var(--serif); font-size:19px; font-weight:700; color:var(--ochre);
+  letter-spacing:1px;
+}
+.ds-pts .l{font-family:var(--mono); font-size:9.5px; letter-spacing:3px; color:var(--lit-mute);}
+/* 属性板 */
+.ds-stats{
+  display:flex; gap:10px; padding:14px 20px 4px; flex-wrap:wrap;
+  background:linear-gradient(180deg, rgba(90,60,20,.06), transparent);
+}
+.stat{
+  flex:1; min-width:74px; text-align:center;
+  border:1px solid #8d7443; border-radius:2px;
+  box-shadow:inset 0 0 0 2px rgba(240,230,207,.8), inset 0 0 0 3px rgba(154,100,27,.25);
+  background:var(--parch-deep);
+  padding:7px 4px 6px;
+}
+.stat .k{
+  font-family:var(--mono); font-size:10px; letter-spacing:2px;
+  color:var(--ink-mute); display:block;
+}
+.stat .v{
+  font-family:var(--serif); font-size:21px; font-weight:700; color:var(--ink);
+  line-height:1.25; display:block;
+}
+/* 武器表 */
+.ds-tables{padding:12px 20px 6px;}
+.wtable{width:100%; border-collapse:collapse; margin-bottom:14px; font-size:13.5px;}
+.wtable caption{
+  text-align:left; font-family:var(--serif); font-size:13px; font-weight:700;
+  letter-spacing:3px; color:var(--parch);
+  background:linear-gradient(90deg, #453317, #2e2314 70%);
+  padding:4px 12px; border-radius:1px;
+  border-left:3px solid var(--ochre);
+  margin-bottom:2px;
+}
+.wtable th{
+  font-family:var(--mono); font-size:10.5px; letter-spacing:1px; font-weight:400;
+  color:var(--ink-mute); text-align:center; padding:5px 6px;
+  border-bottom:1px solid rgba(90,60,20,.5);
+}
+.wtable th:first-child{text-align:left; padding-left:8px;}
+.wtable td{
+  text-align:center; padding:7px 6px;
+  border-bottom:1px dotted rgba(90,60,20,.3);
+  font-family:var(--mono); font-size:13px; color:var(--ink);
+}
+.wtable td:first-child{
+  text-align:left; font-family:var(--sans); padding-left:8px;
+}
+.wtable tr:last-child td{border-bottom:none;}
+.wname{font-weight:700; color:var(--ink);}
+.wtag{
+  font-family:var(--mono); font-size:10.5px; color:var(--ochre-dark);
+  border:1px solid rgba(154,100,27,.45); border-radius:2px;
+  padding:0 5px; margin-left:5px; white-space:nowrap; vertical-align:1px;
+}
+.wtable tr.hl td{
+  background:rgba(200,137,42,.13);
+  border-bottom-color:rgba(154,100,27,.5);
+}
+.wtable tr.hl td:first-child{box-shadow:inset 3px 0 0 var(--ochre);}
+/* 关键词与技能 */
+.ds-foot{
+  border-top:1px solid rgba(90,60,20,.45);
+  background:linear-gradient(180deg, rgba(90,60,20,.05), rgba(90,60,20,.10));
+  padding:10px 20px 12px;
+  display:flex; flex-direction:column; gap:7px;
+}
+.ds-line{display:flex; align-items:baseline; gap:10px; flex-wrap:wrap; font-size:13px;}
+.ds-line .lbl{
+  font-family:var(--mono); font-size:10.5px; letter-spacing:2px;
+  color:var(--ink-mute); white-space:nowrap;
+}
+.kwtag{
+  font-family:var(--serif); font-size:12.5px; letter-spacing:2px; font-weight:700;
+  color:var(--ink-soft); border:1px solid rgba(90,60,20,.4);
+  background:rgba(240,230,207,.6); border-radius:2px; padding:1px 9px;
+}
+.ds-line .fac-abl{
+  font-family:var(--serif); font-weight:700; color:var(--ochre-dark); letter-spacing:1px;
+}
+.ds-abl{
+  border-left:3px double var(--ochre-deep);
+  padding:2px 10px; font-size:13.5px; color:var(--ink);
+}
+.ds-abl b{font-family:var(--serif); letter-spacing:1px; color:var(--ink);}
+
+/* ============================================================
+   A7 · 引用/溯源（火漆脚注）
+   ============================================================ */
+.cites{display:flex; flex-direction:column; gap:9px;}
+.cite{
+  display:flex; align-items:center; gap:14px;
+  border:1px solid rgba(90,60,20,.35); border-radius:2px;
+  background:rgba(240,230,207,.55);
+  padding:8px 14px 8px 8px;
+  transition:border-color .15s, box-shadow .15s;
+}
+.cite:hover{border-color:var(--ochre-deep); box-shadow:0 2px 8px rgba(43,33,20,.12); cursor:pointer;}
+.seal{
+  flex:none; width:32px; height:32px; border-radius:50%;
+  background:radial-gradient(circle at 35% 30%, var(--wax-lit), var(--wax) 70%);
+  box-shadow:inset 0 0 0 2px rgba(240,230,207,.35), inset 2px 3px 5px rgba(255,255,255,.18), 0 2px 5px rgba(43,33,20,.35);
+  color:#f3e2c8; font-family:var(--serif); font-weight:700; font-size:13px;
+  display:flex; align-items:center; justify-content:center;
+}
+.cite .book{
+  font-family:var(--serif); font-weight:700; font-size:14px; color:var(--ink);
+  letter-spacing:.5px;
+}
+.cite .loc{font-size:13px; color:var(--ink-soft); margin-left:6px;}
+.cite .wiki{
+  margin-left:auto; font-family:var(--mono); font-size:11.5px;
+  color:var(--ochre-dark); white-space:nowrap;
+  border-bottom:1px dotted rgba(154,100,27,.6);
+}
+
+/* ============================================================
+   A8 · 敏感性提示 + CTA
+   ============================================================ */
+.sensitivity{
+  position:relative;
+  display:flex; align-items:center; gap:16px;
+  border:1px solid rgba(154,100,27,.55);
+  box-shadow:inset 0 0 0 3px rgba(240,230,207,.9), inset 0 0 0 4px rgba(154,100,27,.22);
+  background:linear-gradient(90deg, rgba(200,137,42,.14), rgba(200,137,42,.05) 55%);
+  border-radius:2px;
+  padding:14px 18px;
+  margin-top:28px;
+}
+.sensitivity .eye{
+  flex:none; width:34px; height:34px; border-radius:50%;
+  border:1px solid var(--ochre-deep);
+  display:flex; align-items:center; justify-content:center;
+  color:var(--ochre-dark); font-size:15px;
+  background:rgba(240,230,207,.7);
+}
+.sensitivity .txt{flex:1; min-width:0;}
+.sensitivity .txt .lbl{
+  font-family:var(--serif); font-size:13px; font-weight:700; letter-spacing:3px;
+  color:var(--ochre-dark); display:block;
+}
+.sensitivity .txt p{font-size:13.5px; color:var(--ink); line-height:1.8;}
+.sensitivity .txt p b{color:var(--ochre-dark);}
+.cta{
+  flex:none; text-decoration:none; cursor:pointer; text-align:center;
+  font-family:var(--serif); font-size:14px; font-weight:700; letter-spacing:2px;
+  color:var(--parch);
+  background:linear-gradient(180deg, #3a2c15 0%, #2a2010 100%);
+  border:1px solid var(--ochre-deep);
+  box-shadow:inset 0 0 0 2px rgba(200,137,42,.25), 0 3px 10px rgba(43,33,20,.3);
+  border-radius:3px; padding:10px 20px; line-height:1.5;
+  transition:box-shadow .15s, transform .1s;
+}
+.cta:hover{box-shadow:inset 0 0 0 2px rgba(200,137,42,.55), 0 4px 14px rgba(43,33,20,.4); transform:translateY(-1px);}
+.cta small{
+  display:block; font-family:var(--mono); font-size:9.5px; font-weight:400;
+  letter-spacing:1px; color:var(--lit-mute);
+}
+
+/* 卷尾纹样 */
+.codex-colophon{
+  margin-top:30px; text-align:center;
+  font-family:var(--mono); font-size:10px; letter-spacing:4px; color:var(--ink-mute);
+  opacity:.75;
+}
+.codex-colophon::before,.codex-colophon::after{content:" ✠ "; color:var(--ochre-dark);}
+
+/* ============================================================
+   A9 · 追问 chips + 输入区 + 页脚
+   ============================================================ */
+.composer-zone{
+  position:sticky; bottom:0; z-index:20;
+  background:linear-gradient(180deg, rgba(27,21,16,0) 0%, var(--bg) 26%);
+  padding:26px 0 14px;
+}
+.composer-inner{max-width:1080px; margin:0 auto; padding:0 24px; position:relative;}
+.chips{display:flex; align-items:center; gap:10px; margin-bottom:12px; flex-wrap:wrap;}
+.chips .chips-lbl{
+  font-family:var(--mono); font-size:10.5px; letter-spacing:2px; color:var(--lit-mute);
+}
+.chip{
+  font-family:var(--sans); font-size:13px; color:var(--lit);
+  background:rgba(200,137,42,.09);
+  border:1px solid #4a3a1e; border-radius:999px;
+  padding:5px 16px; cursor:pointer;
+  transition:border-color .15s, background .15s;
+}
+.chip:hover{border-color:var(--ochre); background:rgba(200,137,42,.18); color:var(--parch);}
+.composer{
+  display:flex; gap:0; align-items:stretch;
+  border:1px solid #57431f; border-radius:4px;
+  background:linear-gradient(180deg, #2a2013, #241b10);
+  box-shadow:inset 0 1px 0 rgba(232,220,194,.06), 0 10px 30px rgba(0,0,0,.5);
+  overflow:hidden;
+}
+.composer .quill{
+  flex:none; display:flex; align-items:center; padding:0 4px 0 16px;
+  color:var(--ochre); opacity:.8; font-size:15px;
+}
+.composer input{
+  flex:1; min-width:0; background:transparent; border:none; outline:none;
+  color:var(--parch); font-family:var(--sans); font-size:15px;
+  padding:15px 14px; letter-spacing:.3px;
+}
+.composer input::placeholder{color:#8a795c; opacity:1;}
+.composer button{
+  flex:none; cursor:pointer; border:none;
+  border-left:1px solid var(--ochre-deep);
+  background:linear-gradient(180deg, var(--ochre) 0%, var(--ochre-deep) 100%);
+  color:#241b10; font-family:var(--serif); font-weight:700;
+  font-size:15px; letter-spacing:4px; padding:0 30px;
+  transition:filter .15s;
+}
+.composer button:hover{filter:brightness(1.08);}
+.page-foot{
+  text-align:center; margin-top:13px;
+  font-family:var(--mono); font-size:10.5px; letter-spacing:1.5px;
+  color:var(--lit-mute); opacity:.75;
+}
+.page-foot::before,.page-foot::after{content:" ─── "; color:#4a3a1e;}
+
+/* ============================================================
+   响应式：1024px 保底
+   ============================================================ */
+@media (max-width:1180px){
+  .brand-sub{display:none;}
+  .tab{padding:9px 12px 11px; letter-spacing:1px;}
+}
+@media (max-width:1080px){
+  .codex{padding:28px 30px 26px;}
+  .verdict-body{padding-right:20px;}
+  .stamp{position:static; transform:rotate(-4deg); display:inline-block; margin:10px 0 0 20px;}
+  .cite .wiki{margin-left:46px; flex-basis:100%;}
+  .cite{flex-wrap:wrap; row-gap:2px;}
+  .sensitivity{flex-wrap:wrap;}
+  .sensitivity .cta{margin-left:50px;}
+}
+</style>
+</head>
+<body>
+
+<!-- ==================== A1 全局框架与导航 ==================== -->
+<header class="topbar">
+  <i class="slot">A1</i>
+  <div class="topbar-inner">
+    <div class="brand">
+      <!-- 哥特齿轮玫瑰纹章（inline SVG） -->
+      <svg width="34" height="34" viewBox="0 0 40 40" aria-hidden="true">
+        <g fill="none" stroke="#c8892a" stroke-width="1.4">
+          <circle cx="20" cy="20" r="15"/>
+          <circle cx="20" cy="20" r="9.5" stroke-width="1"/>
+          <path d="M20 3v6 M20 31v6 M3 20h6 M31 20h6 M8 8l4.2 4.2 M27.8 27.8L32 32 M32 8l-4.2 4.2 M12.2 27.8L8 32" stroke-width="1.6"/>
+        </g>
+        <circle cx="20" cy="20" r="3.2" fill="#c8892a"/>
+      </svg>
+      <div>
+        <div class="brand-name">40K 规则专家</div>
+        <div class="brand-sub">Warhammer 40K Rules Copilot</div>
+      </div>
+    </div>
+    <nav class="tabs">
+      <a class="tab active"><span class="em">💬</span>聊天<span class="now">(当前)</span></a>
+      <a class="tab"><span class="em">⚔️</span>模拟器</a>
+      <a class="tab"><span class="em">📋</span>军表实验室</a>
+      <a class="tab"><span class="em">📖</span>图鉴</a>
+    </nav>
+    <div class="context-chip" title="会话语境决定别名消歧与阵营规则">
+      <!-- 钛帝国印记（inline SVG） -->
+      <svg width="15" height="15" viewBox="0 0 20 20" aria-hidden="true">
+        <circle cx="10" cy="12" r="6.2" fill="none" stroke="#c8892a" stroke-width="1.6"/>
+        <circle cx="10" cy="12" r="2" fill="#c8892a"/>
+        <path d="M10 1.5v4" stroke="#c8892a" stroke-width="1.6"/>
+      </svg>
+      <span class="ctx-label">当前语境：</span><span class="ctx-val">钛帝国</span>
+      <span class="ctx-switch">切换 ▾</span>
+    </div>
+  </div>
+</header>
+
+<main class="scroll">
+  <div class="chapter-mark">— 审判纪录 · <b>M42.026-07-06</b> · 卷 III —</div>
+
+  <!-- ==================== A2 消息流 ==================== -->
+  <div class="msg-flow">
+    <i class="slot" style="top:-22px;">A2</i>
+
+    <!-- 用户提问 -->
+    <div class="msg-user">
+      <div class="user-plaque">
+        <div class="user-meta"><span class="who">指挥官 · 呈问</span><span class="when">21:47</span></div>
+        <div class="user-q">炮击战斗服的重型磁轨枪打帝国骑士能打掉多少血？值得带吗？</div>
+      </div>
+    </div>
+
+    <!-- AI 应答台头 -->
+    <div class="ai-head">
+      <span class="sigil">
+        <svg width="16" height="16" viewBox="0 0 20 20" aria-hidden="true">
+          <path d="M10 2l2 5h5l-4 3.5 1.6 5.5L10 12.8 5.4 16l1.6-5.5L3 7h5z" fill="#c8892a"/>
+        </svg>
+      </span>
+      <span class="who">40K 规则专家</span>
+      <span class="role">军典应答 · deepseek-chat</span>
+    </div>
+
+    <!-- ==================== 军典应答卷 ==================== -->
+    <article class="codex">
+      <span class="corner tl"></span><span class="corner tr"></span>
+      <span class="corner bl"></span><span class="corner br"></span>
+
+      <!-- ==================== A3 思仆记录（工具调用轨迹） ==================== -->
+      <details class="servitor" open>
+        <i class="slot">A3</i>
+        <summary>
+          <span class="cog">⚙</span>
+          <span class="ttl">思仆记录</span>
+          <span>工具调用轨迹</span>
+          <span class="cnt">4 步</span>
+          <span class="chev">▾</span>
+        </summary>
+        <ol class="steps">
+          <li class="step">
+            <span class="no">1</span>
+            <span class="call"><span class="fn">entity_resolver</span>(<span class="arg">"炮击战斗服"</span>)</span>
+            <span class="arrow">→</span>
+            <span class="res">broadside-battlesuits (000000433)</span>
+            <span class="ok">✓</span>
+          </li>
+          <li class="step">
+            <span class="no">2</span>
+            <span class="call"><span class="fn">get_entity</span>(<span class="arg">"broadside-battlesuits"</span>)</span>
+            <span class="arrow">→</span>
+            <span class="res">属性/武器/技能</span>
+            <span class="ok">✓</span>
+          </li>
+          <li class="step">
+            <span class="no">3</span>
+            <span class="call"><span class="fn">get_keyword_definition</span>(<span class="arg">"毁灭伤害"</span>)</span>
+            <span class="ok">✓</span>
+          </li>
+          <li class="step warn">
+            <span class="no">4</span>
+            <span class="call"><span class="fn">simulate_combat</span>(...)</span>
+            <span class="arrow">→</span>
+            <span class="res">未建模（P4 建设中），降级为期望值粗算</span>
+          </li>
+        </ol>
+      </details>
+
+      <!-- ==================== A4 判词（结论区） ==================== -->
+      <section class="sec">
+        <i class="slot on-parch" style="right:0;">A4</i>
+        <header class="sec-head">
+          <span class="sec-no">武装条令 §44</span>
+          <h2>判词</h2>
+          <span class="tail"></span>
+        </header>
+        <div class="verdict-body">
+          <p class="verdict-text">单台炮击战斗服（未移动、重型磁轨枪 2 发）对帝国骑士每轮期望<span class="num">约 2.3 伤</span>，其中<span class="num">约 1.0</span> 来自<span class="kw">[毁灭伤害]</span>致命伤；满编 3 台一轮<span class="num">约 7 伤</span>，<span class="num">约 3 轮</span>打掉一台满血骑士（22W）。<strong>值得带</strong>：80 分/台的 S12 AP-4 D6+1，是钛帝国点数效率最高的反坦克平台之一。</p>
+          <span class="stamp"><span class="s1">值得带</span><span class="s2">AUDITOR · §44</span></span>
+        </div>
+      </section>
+
+      <div class="divider"><span>✦ ✦ ✦</span></div>
+
+      <!-- ==================== A5 计算依据 ==================== -->
+      <section class="sec">
+        <i class="slot on-parch" style="right:0;">A5</i>
+        <header class="sec-head">
+          <span class="sec-no">演算 · 五则</span>
+          <h2>计算依据</h2>
+          <span class="tail"></span>
+        </header>
+        <ol class="calc-list">
+          <li><span class="idx">一</span><span><span class="kw">[重型]</span>：未移动 +1 命中 → <b>3+ 命中</b><span class="pct">（67%）</span></span></li>
+          <li><span class="idx">二</span><span>S12 对 T12 → <b>4+ 穿防</b><span class="pct">（50%）</span></span></li>
+          <li><span class="idx">三</span><span>AP-4 击穿 3+ 甲，骑士只能用 5++ 无效保护 → <b>失防 67%</b></span></li>
+          <li><span class="idx">四</span><span>穿防骰 6 触发<span class="kw">[毁灭伤害]</span> → 直接致命伤，无视任何保护</span></li>
+          <li><span class="idx">五</span><span>D6+1 平均 <b>4.5 伤/发</b>；另有寻觅者导弹（一次性，S14 AP-3）可补一发</span></li>
+        </ol>
+      </section>
+
+      <div class="divider"><span>✦ ✦ ✦</span></div>
+
+      <!-- ==================== A6 单位卡（军典 datasheet） ==================== -->
+      <section class="sec">
+        <i class="slot on-parch" style="right:0;">A6</i>
+        <header class="sec-head">
+          <span class="sec-no">军典档案 000000433</span>
+          <h2>单位卡</h2>
+          <span class="tail"></span>
+        </header>
+
+        <div class="datasheet">
+          <div class="ds-head">
+            <div class="ds-title">
+              <div class="zh">炮击战斗服小队</div>
+              <div class="en">Broadside Battlesuits</div>
+            </div>
+            <span class="ds-faction">钛帝国</span>
+            <div class="ds-pts">
+              <div class="v">80 / 170 / 270 分</div>
+              <div class="l">POINTS · 点数</div>
+            </div>
+          </div>
+
+          <div class="ds-stats">
+            <div class="stat"><span class="k">M</span><span class="v">5"</span></div>
+            <div class="stat"><span class="k">T</span><span class="v">6</span></div>
+            <div class="stat"><span class="k">SV</span><span class="v">2+</span></div>
+            <div class="stat"><span class="k">W</span><span class="v">8</span></div>
+            <div class="stat"><span class="k">LD</span><span class="v">7+</span></div>
+            <div class="stat"><span class="k">OC</span><span class="v">2</span></div>
+          </div>
+
+          <div class="ds-tables">
+            <table class="wtable">
+              <caption>远程武器</caption>
+              <thead>
+                <tr><th>武器</th><th>射程</th><th>A</th><th>BS</th><th>S</th><th>AP</th><th>D</th></tr>
+              </thead>
+              <tbody>
+                <tr class="hl">
+                  <td><span class="wname">重型磁轨枪</span><span class="wtag">重型</span><span class="wtag">毁灭伤害</span></td>
+                  <td>60"</td><td>2</td><td>4+</td><td>12</td><td>-4</td><td>D6+1</td>
+                </tr>
+                <tr>
+                  <td><span class="wname">集束导弹仓</span><span class="wtag">双联</span></td>
+                  <td>30"</td><td>6</td><td>4+</td><td>7</td><td>-1</td><td>2</td>
+                </tr>
+                <tr>
+                  <td><span class="wname">寻觅者导弹</span><span class="wtag">一次性</span></td>
+                  <td>48"</td><td>1</td><td>4+</td><td>14</td><td>-3</td><td>D6+1</td>
+                </tr>
+              </tbody>
+            </table>
+
+            <table class="wtable">
+              <caption>近战武器</caption>
+              <thead>
+                <tr><th>武器</th><th>射程</th><th>A</th><th>WS</th><th>S</th><th>AP</th><th>D</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><span class="wname">粉碎冲撞</span></td>
+                  <td>近战</td><td>3</td><td>5+</td><td>6</td><td>0</td><td>1</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <div class="ds-foot">
+            <div class="ds-line">
+              <span class="lbl">关键词</span>
+              <span class="kwtag">载具</span><span class="kwtag">机甲</span><span class="kwtag">战斗服</span><span class="kwtag">炮击</span>
+              <span class="lbl" style="margin-left:12px;">阵营技能</span>
+              <span class="fac-abl">为了上上善道</span>
+            </div>
+            <div class="ds-abl"><b>技能摘录 · 先进装甲</b>——对抗致命伤 4+ 不知疼痛</div>
+          </div>
+        </div>
+      </section>
+
+      <div class="divider"><span>✦ ✦ ✦</span></div>
+
+      <!-- ==================== A7 引用/溯源 ==================== -->
+      <section class="sec">
+        <i class="slot on-parch" style="right:0;">A7</i>
+        <header class="sec-head">
+          <span class="sec-no">卷宗溯源</span>
+          <h2>引用</h2>
+          <span class="tail"></span>
+        </header>
+        <div class="cites">
+          <div class="cite">
+            <span class="seal">1</span>
+            <span><span class="book">《钛帝国十版CODEX-20251112》</span><span class="loc">p.44</span></span>
+            <span class="wiki">wiki: factions/钛帝国/units/broadside-battlesuits</span>
+          </div>
+          <div class="cite">
+            <span class="seal">2</span>
+            <span><span class="book">《战锤40K总规则10版》</span><span class="loc">武器技能·重型</span></span>
+            <span class="wiki">wiki: core-rules/heavy</span>
+          </div>
+          <div class="cite">
+            <span class="seal">3</span>
+            <span><span class="book">《战锤40K总规则10版》</span><span class="loc">武器技能·毁灭伤害</span></span>
+            <span class="wiki">wiki: core-rules/devastating-wounds</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- ==================== A8 敏感性提示 + CTA ==================== -->
+      <aside class="sensitivity">
+        <i class="slot on-parch">A8</i>
+        <span class="eye">◉</span>
+        <div class="txt">
+          <span class="lbl">敏感性提示</span>
+          <p>若有观察员提供[标记]（为了上上善道），命中提升至 <b>2+</b>，期望伤害 <b>×1.25</b> → 满编约 <b>8.8 伤/轮</b>。</p>
+        </div>
+        <a class="cta">⚔️ 在模拟器中打开此对局<small>（P4 建设中）</small></a>
+      </aside>
+
+      <div class="codex-colophon">CODEX RESPONSUM · 本卷终</div>
+    </article>
+  </div>
+</main>
+
+<!-- ==================== A9 追问 chips + 输入区 + 页脚 ==================== -->
+<div class="composer-zone">
+  <div class="composer-inner">
+    <i class="slot" style="top:-4px;">A9</i>
+    <div class="chips">
+      <span class="chips-lbl">继续追问</span>
+      <button class="chip">换集束导弹仓打步兵效率？</button>
+      <button class="chip">对比铁手将军 vs 炮击</button>
+      <button class="chip">满编三台的点数曲线</button>
+    </div>
+    <div class="composer">
+      <span class="quill">✒</span>
+      <input id="ask" type="text" placeholder="问规则、查单位、判对局……支持中文/英文/俗名">
+      <button type="button">发送</button>
+    </div>
+    <div class="page-foot">回答由 LLM 基于本地规则库生成 · 引用页码可溯源 · 模拟为期望值/蒙特卡洛估算</div>
+  </div>
+</div>
+
+<script>
+// 追问 chip 点击填入输入框（设计稿内唯一交互脚本，折叠用原生 <details>）
+document.querySelectorAll('.chip').forEach(function(chip){
+  chip.addEventListener('click', function(){
+    var input = document.getElementById('ask');
+    input.value = chip.textContent.trim();
+    input.focus();
+  });
+});
+</script>
+</body>
+</html>
