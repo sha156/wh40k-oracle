@@ -438,8 +438,8 @@ def format_context(passages: list[dict]) -> str:
 # ══════════════════════════════════════════════
 #  侧边栏 UI
 # ══════════════════════════════════════════════
-def render_sidebar(vectorstore) -> tuple[str, str, float, list[str] | None]:
-    """渲染侧边栏，返回 (provider, api_key, temperature, filter_books)。"""
+def render_sidebar(vectorstore) -> tuple[str, str, float, list[str] | None, bool]:
+    """渲染侧边栏，返回 (provider, api_key, temperature, filter_books, use_agent)。"""
     with st.sidebar:
         st.markdown("## ⚔️ 战术终端设置")
         st.divider()
@@ -469,6 +469,20 @@ def render_sidebar(vectorstore) -> tuple[str, str, float, list[str] | None]:
             "Temperature（创造性）",
             min_value=0.0, max_value=1.0, value=0.1, step=0.05,
             help="越低越精准，越高越发散。规则查询建议 0.0~0.1",
+        )
+
+        st.divider()
+
+        # ── 实验：Agent 模式（L5 编排层）──
+        st.markdown("### 🧪 实验功能")
+        use_agent = st.checkbox(
+            "Agent 模式",
+            value=False,
+            help=(
+                "开启后走 L5 Agent 编排层：意图分类 → 工具调用（查 wiki/术语/算分）"
+                "→ 合成带引用的答案，工具查不到时静默降级到经典混合检索。"
+                "默认关闭，走现有 FAISS+BM25→RRF→LLM 经典链（流式）。"
+            ),
         )
 
         st.divider()
@@ -529,7 +543,171 @@ def render_sidebar(vectorstore) -> tuple[str, str, float, list[str] | None]:
         st.divider()
         st.caption("⚔️ 为皇帝而战，在数据中寻找真理。")
 
-    return provider, api_key, temperature, filter_books
+    return provider, api_key, temperature, filter_books, use_agent
+
+
+# ══════════════════════════════════════════════
+#  Agent 模式（L5 编排层）接线
+# ══════════════════════════════════════════════
+def build_agent_tools(vectorstore, bm25_retriever, reranker, filter_books):
+    """构造注入了「本进程已加载资源」的工具集。
+
+    用当前已加载的向量库/BM25/reranker 绑定 rag_search，替换 agent.tools 里
+    会 _import_app() 重新 import app.py 的默认实现——后者在 Streamlit 运行时会
+    二次触发 st.set_page_config 而抛异常。其余 10 个工具沿用 agent.tools 默认实现。
+    """
+    from agent.tools import TOOLS as BASE_TOOLS
+
+    def _bound_rag_search(query: str) -> dict:
+        passages = hybrid_retrieve(
+            query=query,
+            vectorstore=vectorstore,
+            bm25_retriever=bm25_retriever,
+            reranker=reranker,
+            filter_books=filter_books,
+        )
+        return {
+            "found": bool(passages),
+            "passages": passages,
+            "note": None if passages else "未检索到相关段落",
+        }
+
+    return {**BASE_TOOLS, "rag_search": _bound_rag_search}
+
+
+def _normalize_agent_sources(sources) -> list[dict]:
+    """归一化 AgentResult.sources 供展示/历史：final 给 {book,page}，
+    rag 兜底给 passages（含 source）。同书同页去重。"""
+    seen: set = set()
+    out: list[dict] = []
+    for s in sources or []:
+        if not isinstance(s, dict):
+            continue
+        book = s.get("book", "未知")
+        page = s.get("page", "?")
+        key = (book, page)
+        if key in seen:
+            continue
+        seen.add(key)
+        out.append({"book": book, "page": page, "source": s.get("source", "")})
+    return out
+
+
+def render_agent_answer(user_input, provider, api_key, temperature, tools):
+    """Agent 分支：跑 AgentLoop（非流式），渲染意图/工具链/降级标记。
+
+    返回 (response_text, unique_sources, degraded)。degraded=True 时不渲染答案，
+    交由调用方转经典链作答（保证 Agent 模式答案质量不劣于经典链）。
+    """
+    from agent.context import SessionContext
+    from agent.llm_client import OpenAICompatLLMClient
+    from agent.loop import AgentLoop
+
+    if "agent_session" not in st.session_state:
+        st.session_state.agent_session = SessionContext()
+
+    with st.status(
+        "🧠 Agent 编排中（意图分类 → 工具调用 → 合成）...", expanded=False
+    ) as status:
+        t0 = time.time()
+        try:
+            llm = OpenAICompatLLMClient(
+                api_key=api_key, provider=provider, temperature=temperature,
+            )
+            result = AgentLoop(llm=llm, tools=tools).run(
+                user_input, session=st.session_state.agent_session,
+            )
+        except Exception as e:
+            status.update(label="❌ Agent 执行失败", state="error")
+            st.error(f"Agent 执行失败：{e}")
+            st.stop()
+        dt = time.time() - t0
+        trace = " → ".join(result.tool_calls) if result.tool_calls else "（无工具调用）"
+        st.write(f"意图：**{result.intent}** ｜ 工具链：{trace} ｜ {dt:.2f}s")
+        status.update(
+            label="↩️ 工具未命中，转经典检索链" if result.degraded else "✅ Agent 作答完成",
+            state="error" if result.degraded else "complete",
+        )
+
+    if result.degraded:
+        st.info("ℹ️ Agent 未能用结构化工具作答，自动转经典混合检索链（结果见下）。")
+        return None, None, True
+
+    st.markdown(result.answer)
+    unique_sources = _normalize_agent_sources(result.sources)
+    if unique_sources:
+        with st.expander(f"📎 引用来源（{len(unique_sources)} 处）", expanded=True):
+            for src in unique_sources:
+                name = Path(src.get("source", "")).name
+                tail = f" — `{name}`" if name else ""
+                st.markdown(
+                    f"- **《{src.get('book', '未知')}》** 第{src.get('page', '?')}页{tail}"
+                )
+    return result.answer, unique_sources, False
+
+
+def render_classic_answer(
+    user_input, provider, api_key, temperature, filter_books,
+    vectorstore, bm25_retriever, reranker,
+):
+    """经典链分支：混合检索 → 流式生成 → 来源。返回 (response_text, unique_sources)。"""
+    status = st.status("🔍 正在检索规则档案...", expanded=False)
+
+    with status:
+        st.write("📡 FAISS 向量召回 + BM25 关键词召回...")
+        t0 = time.time()
+        passages = hybrid_retrieve(
+            query=user_input,
+            vectorstore=vectorstore,
+            bm25_retriever=bm25_retriever,
+            reranker=reranker,
+            filter_books=filter_books,
+        )
+        t_retrieve = time.time() - t0
+        st.write(f"✅ 检索完成，获取 {len(passages)} 条档案 ({t_retrieve:.2f}s)")
+
+        if not passages:
+            status.update(label="⚠️ 未找到相关档案", state="error")
+            st.warning("未在知识库中找到相关规则，请检查知识库是否构建完整。")
+            st.stop()
+
+        st.write(f"🤖 调用 {provider}...")
+        try:
+            llm = get_llm(provider, api_key, temperature)
+        except Exception as e:
+            status.update(label="❌ LLM 初始化失败", state="error")
+            st.error(f"LLM 初始化失败: {e}")
+            st.stop()
+
+        status.update(label="✅ 档案就绪，正在生成回答...", state="complete")
+
+    context_text = format_context(passages)
+    prompt_template = build_prompt_template()
+    chain = prompt_template | llm | StrOutputParser()
+
+    response_text = st.write_stream(
+        chain.stream({"context": context_text, "question": user_input})
+    )
+
+    source_list = [
+        {"book": p["book"], "source": p["source"], "page": p["page"]}
+        for p in passages
+    ]
+    seen = set()
+    unique_sources = []
+    for s in source_list:
+        key = (s["book"], s["page"])
+        if key not in seen:
+            seen.add(key)
+            unique_sources.append(s)
+
+    with st.expander(f"📎 引用来源（{len(unique_sources)} 处）", expanded=True):
+        for src in unique_sources:
+            st.markdown(
+                f"- **《{src['book']}》** 第{src['page']}页 "
+                f"— `{Path(src['source']).name}`"
+            )
+    return response_text, unique_sources
 
 
 # ══════════════════════════════════════════════
@@ -558,7 +736,7 @@ def main():
     bm25_retriever = build_bm25(vectorstore)
 
     # ── 侧边栏 ──
-    provider, api_key, temperature, filter_books = render_sidebar(vectorstore)
+    provider, api_key, temperature, filter_books, use_agent = render_sidebar(vectorstore)
 
     # ── 知识库未就绪 ──
     if vectorstore is None:
@@ -611,71 +789,24 @@ def main():
 
         # ── 生成回答 ──
         with st.chat_message("assistant"):
-            # 进度显示
-            status = st.status("🔍 正在检索规则档案...", expanded=False)
-
-            with status:
-                # Step 1: 混合检索
-                st.write("📡 FAISS 向量召回 + BM25 关键词召回...")
-                t0 = time.time()
-                passages = hybrid_retrieve(
-                    query=user_input,
-                    vectorstore=vectorstore,
-                    bm25_retriever=bm25_retriever,
-                    reranker=reranker,
-                    filter_books=filter_books,
+            if use_agent:
+                agent_tools = build_agent_tools(
+                    vectorstore, bm25_retriever, reranker, filter_books,
                 )
-                t_retrieve = time.time() - t0
-                st.write(f"✅ 检索完成，获取 {len(passages)} 条档案 ({t_retrieve:.2f}s)")
-
-                if not passages:
-                    status.update(label="⚠️ 未找到相关档案", state="error")
-                    st.warning("未在知识库中找到相关规则，请检查知识库是否构建完整。")
-                    st.stop()
-
-                # Step 2: 构建 LLM
-                st.write(f"🤖 调用 {provider}...")
-                try:
-                    llm = get_llm(provider, api_key, temperature)
-                except Exception as e:
-                    status.update(label="❌ LLM 初始化失败", state="error")
-                    st.error(f"LLM 初始化失败: {e}")
-                    st.stop()
-
-                status.update(label="✅ 档案就绪，正在生成回答...", state="complete")
-
-            # Step 3: 流式生成
-            context_text = format_context(passages)
-            prompt_template = build_prompt_template()
-            chain = prompt_template | llm | StrOutputParser()
-
-            response_text = st.write_stream(
-                chain.stream({
-                    "context":  context_text,
-                    "question": user_input,
-                })
-            )
-
-            # Step 4: 显示来源
-            source_list = [
-                {"book": p["book"], "source": p["source"], "page": p["page"]}
-                for p in passages
-            ]
-            # 去重（同书同页）
-            seen = set()
-            unique_sources = []
-            for s in source_list:
-                key = (s["book"], s["page"])
-                if key not in seen:
-                    seen.add(key)
-                    unique_sources.append(s)
-
-            with st.expander(f"📎 引用来源（{len(unique_sources)} 处）", expanded=True):
-                for src in unique_sources:
-                    st.markdown(
-                        f"- **《{src['book']}》** 第{src['page']}页 "
-                        f"— `{Path(src['source']).name}`"
+                response_text, unique_sources, degraded = render_agent_answer(
+                    user_input, provider, api_key, temperature, agent_tools,
+                )
+                if degraded:
+                    # Agent 工具未命中 → 转经典链 LLM 合成，保证不劣于经典
+                    response_text, unique_sources = render_classic_answer(
+                        user_input, provider, api_key, temperature, filter_books,
+                        vectorstore, bm25_retriever, reranker,
                     )
+            else:
+                response_text, unique_sources = render_classic_answer(
+                    user_input, provider, api_key, temperature, filter_books,
+                    vectorstore, bm25_retriever, reranker,
+                )
 
         # ── 保存到历史 ──
         st.session_state.messages.append({

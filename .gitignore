@@ -44,6 +44,7 @@ data_refined/
 
 # QA 基准运行产物（本地保留，不入库）
 qa_100_results.json
+qa_*_results.json
 
 # OS/editor noise
 .DS_Store
