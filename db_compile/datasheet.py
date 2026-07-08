@@ -146,6 +146,8 @@ def find_datasheet(db_path, name: str,
 
     r = resolver or EntityResolver(db_path=Path(db_path))
     resolved = r.resolve(name)
-    if resolved.canonical_id:
+    # 只信 exact（别名表精确命中/UNIT_ALIASES 链）。fuzzy 会返回 confident 错单位
+    # （如 机械教游侠→Tech-priest Dominus），数值权威路径宁可诚实报缺也不给错答案。
+    if resolved.canonical_id and resolved.confidence == "exact":
         return lookup_datasheet(db_path, resolved.canonical_id)
     return None
