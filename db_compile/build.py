@@ -144,21 +144,22 @@ def _insert_weapons(cur, rows: List[dict]) -> int:
     """从 Datasheets_wargear.csv 导入武器数据。
 
     无单独 Wargear.csv 主表，武器名+属性已内联在此 CSV 中。
-    用 {datasheet_id}_w{line} 合成武器 ID。
+    武器 ID 用 {datasheet_id}_w{单位内序号}——不能用 CSV 的 line 列：大量行（如
+    Chaos Lord 等 300 个 datasheet）line 为空，旧代码据此错误跳过 2007 行武器；
+    且同一单位多把武器 line_in_wargear 常全为 1，单用任一列都会 id 冲突被折叠。
     """
     count = 0
+    seq: dict = {}
     for r in rows:
         ds_id = r.get("datasheet_id")
-        line = r.get("line")
-        if not ds_id or not line:
-            continue
         # 将 description 列（武器技能如 "anti-infantry 4+, devastating wounds"）
         # 序列化到 keywords_json
         kw = r.get("description", "").strip()
         name = r.get("name", "").strip()
-        if not name:
+        if not ds_id or not name:
             continue
-        weapon_id = f"{ds_id}_w{line}"
+        seq[ds_id] = seq.get(ds_id, 0) + 1
+        weapon_id = f"{ds_id}_w{seq[ds_id]}"
         cur.execute(
             """INSERT OR REPLACE INTO weapons
                (id, unit_id, name_en, range, a, bs_ws, s, ap, d, keywords_json)
