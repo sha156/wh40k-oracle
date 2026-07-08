@@ -1,4 +1,4 @@
-"""agent/tools.py — L5 Agent 工具箱（spec 第七节，11 个工具）。
+"""agent/tools.py — L5 Agent 工具箱（spec 第七节，12 个工具）。
 
 已具备能力接真实实现（只读调用 wiki_engine / db_compile / app.py 的既有检索链，
 不修改这些模块）；未建模能力（模拟/判定/验表/归档写入）诚实打桩，明确注明计划期数，
@@ -156,6 +156,32 @@ def calc_points(unit_list: List[str], db_path: Optional[Path] = None) -> Dict[st
     }
 
 
+def get_datasheet(
+    name_or_id: str,
+    db_path: Optional[Path] = None,
+    resolver: Optional[EntityResolver] = None,
+) -> Dict[str, Any]:
+    """英文属性块查表：单位名/id → M/T/Sv/W + 武器 A/S/AP/D + 点数（db_compile.datasheet）。
+
+    分层评测证明数值/属性题在 PDF 里检索会被译名/拍扁坑；此工具直接查 L3 结构库拿干净真值，
+    是数值类问题的首选路径。英文为权威真值，中文名可缺。查不到诚实报缺，绝不编造。
+    """
+    from dataclasses import asdict
+
+    from db_compile.datasheet import find_datasheet
+
+    db_path = db_path or DB_PATH
+    if not Path(db_path).exists():
+        return {"found": False, "datasheet": None,
+                "note": "wh40k.sqlite 不存在，需先跑 db_compile build"}
+
+    ds = find_datasheet(db_path, name_or_id,
+                        resolver=resolver or _get_default_resolver())
+    if ds is None:
+        return {"found": False, "datasheet": None, "note": "库中未找到该单位"}
+    return {"found": True, "datasheet": asdict(ds)}
+
+
 # ── ⑩ 兜底：只读包装 app.py 现有混合检索（绝不修改 app.py）──────────
 
 def rag_search(query: str, app_module: Optional[Any] = None) -> Dict[str, Any]:
@@ -227,6 +253,7 @@ TOOL_SPECS: List[Dict[str, str]] = [
     {"name": "validate_roster", "description": "验表（未建模，P6）"},
     {"name": "critique_roster", "description": "验表+模拟点评（未建模，P6）"},
     {"name": "calc_points", "description": "精确算分"},
+    {"name": "get_datasheet", "description": "英文属性块查表：M/T/Sv/W + 武器 A/S/AP/D（数值题首选）"},
     {"name": "archive_answer", "description": "把判定/结论存为 wiki 页（本迭代未接线）"},
     {"name": "rag_search", "description": "现有混合检索（兜底）"},
     {"name": "entity_resolver", "description": "中文名/英文名/社区俗名 → canonical id"},
@@ -241,6 +268,7 @@ TOOLS: Dict[str, Callable[..., Dict[str, Any]]] = {
     "validate_roster": validate_roster,
     "critique_roster": critique_roster,
     "calc_points": calc_points,
+    "get_datasheet": get_datasheet,
     "archive_answer": archive_answer,
     "rag_search": rag_search,
     "entity_resolver": entity_resolver,

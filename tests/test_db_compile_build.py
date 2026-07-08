@@ -28,11 +28,25 @@ TERMS_JSON = json.dumps({
 })
 
 
-def _write_fixture_csv_dir(tmp_path):
+# 复刻真实 Datasheets_wargear.csv 的坑：Chaos Lord 类单位 line 列为空、
+# 多把武器 line_in_wargear 全为 1（旧代码据 line 跳过/撞 id，丢了 2007 行武器）。
+WARGEAR_CSV = (
+    "﻿datasheet_id|line|line_in_wargear|dice|name|description|range|type|"
+    "A|BS_WS|S|AP|D|\n"
+    "000000407||1||Plasma pistol – standard|pistol|12|Ranged|1|2|7|-2|1|\n"
+    "000000407||1||Accursed weapon||Melee|Melee|6|2|5|-2|1|\n"
+    "000000407||1||Power fist||Melee|Melee|5|2|8|-2|2|\n"
+    "000001478|1|1||Fusion blaster|melta 2|12|Ranged|1|4|9|-4|D6|\n"
+)
+
+
+def _write_fixture_csv_dir(tmp_path, with_wargear=False):
     csv_dir = tmp_path / "wahapedia"
     csv_dir.mkdir()
     (csv_dir / "Factions.csv").write_text(FACTIONS_CSV, encoding="utf-8")
     (csv_dir / "Datasheets.csv").write_text(DATASHEETS_CSV, encoding="utf-8")
+    if with_wargear:
+        (csv_dir / "Datasheets_wargear.csv").write_text(WARGEAR_CSV, encoding="utf-8")
     return csv_dir
 
 
@@ -109,6 +123,27 @@ class TestBuildDatabase:
             row2 = conn.execute(
                 "SELECT name_zh FROM units WHERE id = '000001478'").fetchone()
             assert row2[0] is None
+        finally:
+            conn.close()
+
+    def test_imports_weapons_even_when_line_column_empty(self, tmp_path):
+        # 回归：line 列为空的武器行不能被跳过（曾丢 2007 行），
+        # 且同 datasheet 内多把武器（line_in_wargear 全为 1）必须各自成行不撞 id。
+        csv_dir = _write_fixture_csv_dir(tmp_path, with_wargear=True)
+        db_path = tmp_path / "wh40k.sqlite"
+
+        report = build_database(csv_dir, db_path)
+
+        assert report.row_counts["weapons"] == 4  # 3 空line + 1 正常line，一个不丢
+        conn = sqlite3.connect(str(db_path))
+        try:
+            names = {r[0] for r in conn.execute(
+                "SELECT name_en FROM weapons WHERE unit_id = '000000407'")}
+            assert names == {"Plasma pistol – standard", "Accursed weapon", "Power fist"}
+            # id 唯一，未因相同 line 被 INSERT OR REPLACE 折叠
+            n = conn.execute("SELECT COUNT(DISTINCT id) FROM weapons "
+                             "WHERE unit_id = '000000407'").fetchone()[0]
+            assert n == 3
         finally:
             conn.close()
 
