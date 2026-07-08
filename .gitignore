@@ -45,6 +45,11 @@ data_refined/
 # QA 基准运行产物（本地保留，不入库）
 qa_100_results.json
 qa_*_results.json
+qa_*_new.json
+qa_agent_routed*.json
+
+# 黑图书馆抓取数据（10MB+，可由 scripts/fetch_blacklibrary_details.py 重生，不入库）
+data_blacklibrary/
 
 # OS/editor noise
 .DS_Store
@@ -60,3 +65,6 @@ wiki/.obsidian/
 
 # BSData 社区库（40MB，英文交叉校验源，本地保留不入库）
 db_sources/bsdata/
+
+# Fiddler MCP 本地密钥，禁止提交
+.fiddler_key

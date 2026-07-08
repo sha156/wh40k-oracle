@@ -27,6 +27,9 @@ _EMPTY_CHECKS: Dict[str, Callable[[Dict[str, Any]], bool]] = {
     "get_entity": lambda r: not r.get("found"),
     "get_keyword_definition": lambda r: not r.get("found"),
     "entity_resolver": lambda r: not r.get("canonical_id"),
+    # 数值题优先走 get_datasheet；但俗名/集合名解析不到时必须立即降级 classic 兜底，
+    # 否则 LLM 会反复空查后直接宣布「档案缺失」，反而不如老链路（回归 7 题的根因）。
+    "get_datasheet": lambda r: not r.get("found"),
 }
 
 
