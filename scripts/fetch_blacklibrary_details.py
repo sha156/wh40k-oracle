@@ -70,7 +70,7 @@ def fetch_detail(sess, faction_zh, name_en):
 
 def main() -> None:
     ap = argparse.ArgumentParser()
-    ap.add_argument("--out", default="data_blacklibrary/details.json")
+    ap.add_argument("--out", default="db_sources/blacklibrary/details.json")
     args = ap.parse_args()
     out = REPO_ROOT / args.out
     out.parent.mkdir(parents=True, exist_ok=True)
