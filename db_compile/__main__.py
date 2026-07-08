@@ -33,6 +33,20 @@ def main() -> None:
     m.add_argument("--json", default="db_sources/mfm/mfm_points.json")
     m.add_argument("--db", default="db/wh40k.sqlite")
 
+    u = sub.add_parser(
+        "update",
+        help="一键刷新：BSData pull → MFM 抓取 → 重建库 → 应用分数 → 别名 → 交叉校验 → 收敛校验")
+    u.add_argument("--offline", action="store_true",
+                   help="跳过全部联网（git pull + MFM 抓取），复用本地缓存快速重建")
+    u.add_argument("--no-fetch-mfm", action="store_true",
+                   help="git pull BSData 但 MFM 复用缓存（不联网重抓分数）")
+    u.add_argument("--bsdata", default="db_sources/bsdata")
+    u.add_argument("--csv-dir", default="db_sources/wahapedia")
+    u.add_argument("--db", default="db/wh40k.sqlite")
+    u.add_argument("--terms", default="wiki/terms.json")
+    u.add_argument("--mfm-json", default="db_sources/mfm/mfm_points.json")
+    u.add_argument("--refined", default="data_refined")
+
     args = ap.parse_args()
     if args.cmd == "build":
         report = build_database(Path(args.csv_dir), Path(args.db), Path(args.terms))
@@ -122,6 +136,16 @@ def main() -> None:
                           f"库 {d['db']:>4} → MFM {d['mfm']:>4}")
                 if len(rep["diffs"]) > 40:
                     print(f"    …共 {len(rep['diffs'])} 条，其余见 --json 报告")
+    elif args.cmd == "update":
+        from db_compile.update import UpdateConfig, run_update
+
+        cfg = UpdateConfig(
+            bsdata=Path(args.bsdata), csv_dir=Path(args.csv_dir), db=Path(args.db),
+            terms=Path(args.terms), mfm_json=Path(args.mfm_json),
+            refined=Path(args.refined), offline=args.offline,
+            fetch_mfm=not (args.offline or args.no_fetch_mfm))
+        report = run_update(cfg)
+        raise SystemExit(0 if report.ok else 1)
 
 
 if __name__ == "__main__":
