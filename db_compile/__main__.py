@@ -33,6 +33,17 @@ def main() -> None:
     m.add_argument("--json", default="db_sources/mfm/mfm_points.json")
     m.add_argument("--db", default="db/wh40k.sqlite")
 
+    d = sub.add_parser(
+        "downloads",
+        help="官方下载页版本监控：harvest 建基线 / check 比对报改版（需 3.11+scrapling 渲染）")
+    d.add_argument("--harvest", action="store_true",
+                   help="渲染分类页 + HEAD 元数据 → 写 manifest 基线")
+    d.add_argument("--check", action="store_true",
+                   help="重渲染并与 manifest diff，报 新增/改版/下架")
+    d.add_argument("--manifest", default="db_sources/downloads/manifest.json")
+    d.add_argument("--categories", default="warhammer-40000",
+                   help="逗号分隔的游戏系统 slug（默认 warhammer-40000）")
+
     u = sub.add_parser(
         "update",
         help="一键刷新：BSData pull → MFM 抓取 → 重建库 → 应用分数 → 别名 → 交叉校验 → 收敛校验")
@@ -40,6 +51,9 @@ def main() -> None:
                    help="跳过全部联网（git pull + MFM 抓取），复用本地缓存快速重建")
     u.add_argument("--no-fetch-mfm", action="store_true",
                    help="git pull BSData 但 MFM 复用缓存（不联网重抓分数）")
+    u.add_argument("--no-check-downloads", action="store_true",
+                   help="跳过官方下载页版本监控（省去 3.11 渲染的 ~30s）")
+    u.add_argument("--manifest", default="db_sources/downloads/manifest.json")
     u.add_argument("--bsdata", default="db_sources/bsdata")
     u.add_argument("--csv-dir", default="db_sources/wahapedia")
     u.add_argument("--db", default="db/wh40k.sqlite")
@@ -136,14 +150,31 @@ def main() -> None:
                           f"库 {d['db']:>4} → MFM {d['mfm']:>4}")
                 if len(rep["diffs"]) > 40:
                     print(f"    …共 {len(rep['diffs'])} 条，其余见 --json 报告")
+    elif args.cmd == "downloads":
+        from db_compile.downloads import (harvest, write_manifest, check,
+                                          print_diffs)
+
+        cats = tuple(s.strip() for s in args.categories.split(",") if s.strip())
+        if args.harvest:
+            m = harvest(cats)
+            write_manifest(m, args.manifest)
+            n = sum(len(v) for v in m["categories"].values())
+            print(f"基线已建：{len(cats)} 分类 / {n} 文档 → {args.manifest}")
+        if args.check:
+            rep = check(args.manifest, cats)
+            print_diffs(rep)
+        if not (args.harvest or args.check):
+            raise SystemExit("请指定 --harvest（建基线）或 --check（比对）")
     elif args.cmd == "update":
         from db_compile.update import UpdateConfig, run_update
 
         cfg = UpdateConfig(
             bsdata=Path(args.bsdata), csv_dir=Path(args.csv_dir), db=Path(args.db),
             terms=Path(args.terms), mfm_json=Path(args.mfm_json),
-            refined=Path(args.refined), offline=args.offline,
-            fetch_mfm=not (args.offline or args.no_fetch_mfm))
+            refined=Path(args.refined), manifest=Path(args.manifest),
+            offline=args.offline,
+            fetch_mfm=not (args.offline or args.no_fetch_mfm),
+            check_downloads=not (args.offline or args.no_check_downloads))
         report = run_update(cfg)
         raise SystemExit(0 if report.ok else 1)
 

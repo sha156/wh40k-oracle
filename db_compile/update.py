@@ -33,8 +33,11 @@ class UpdateConfig:
     terms: Path = Path("wiki/terms.json")
     mfm_json: Path = Path("db_sources/mfm/mfm_points.json")
     refined: Path = Path("data_refined")
-    offline: bool = False        # 跳过全部联网（git pull + mfm fetch），复用缓存
+    manifest: Path = Path("db_sources/downloads/manifest.json")
+    categories: tuple = ("warhammer-40000",)
+    offline: bool = False        # 跳过全部联网（git pull + mfm fetch + 下载页），复用缓存
     fetch_mfm: bool = True        # 是否联网重抓 MFM（offline 时强制 False）
+    check_downloads: bool = True  # 是否监控官方下载页版本（offline 时强制 False）
 
 
 @dataclass
@@ -205,6 +208,32 @@ def stage_mfm_check(cfg: UpdateConfig) -> StageResult:
         warning=None if ok else f"{len(rep['diffs'])} 条分数未收敛到官方")
 
 
+def stage_downloads_check(cfg: UpdateConfig) -> StageResult:
+    """只读：监控官方下载页 rules PDF 版本变化。缺 3.11/scrapling 优雅降级。"""
+    if cfg.offline or not cfg.check_downloads:
+        return StageResult("downloads_check", True, "离线/关闭：跳过下载页监控")
+    from db_compile.downloads import check, summarize
+    try:
+        rep = check(cfg.manifest, cfg.categories)
+    except RuntimeError as e:  # 无 3.11/scrapling/渲染失败：非关键，告警跳过
+        return StageResult("downloads_check", True, "跳过（渲染环境不可用）",
+                           warning=f"下载页监控需 3.11+scrapling：{e}")
+    if rep.get("no_baseline"):
+        return StageResult("downloads_check", True,
+                           "无基线，跳过（先跑 `downloads --harvest` 建基线）")
+    t = summarize(rep)
+    changes = t["added"] + t["changed"] + t["removed"]
+    ok_fresh = changes == 0
+    return StageResult(
+        "downloads_check", True,
+        (f"官方下载页全部对齐（{t['unchanged']} 文档）"
+         if ok_fresh else
+         f"官方有更新：新增 {t['added']} / 改版 {t['changed']} / 下架 {t['removed']}"),
+        detail=t,
+        warning=None if ok_fresh else
+        "官方 PDF 有变化——跑 `downloads --check` 看详情、`--harvest` 刷基线")
+
+
 # (阶段编号, 标题, 函数, 是否关键——失败即中止)
 _PIPELINE = [
     ("BSData git pull", stage_bsdata_pull, False),
@@ -214,6 +243,7 @@ _PIPELINE = [
     ("重灌中文别名层", stage_aliases, False),
     ("交叉校验 BSData ↔ 库", stage_crosscheck, False),
     ("校验分数收敛", stage_mfm_check, False),
+    ("监控官方下载页版本", stage_downloads_check, False),
 ]
 
 
