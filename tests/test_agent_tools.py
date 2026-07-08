@@ -1,5 +1,5 @@
 # tests/test_agent_tools.py
-"""agent/tools.py：11 个工具——已具备能力接真实实现的行为，未建模能力的诚实占位。"""
+"""agent/tools.py：12 个工具——已具备能力接真实实现的行为，未建模能力的诚实占位。"""
 import json
 
 import pytest
@@ -220,6 +220,47 @@ class TestCalcPoints:
         assert result["units"] == []
 
 
+class TestGetDatasheet:
+    def test_missing_db_reports_note_instead_of_crashing(self, tmp_path):
+        result = agent_tools.get_datasheet("Chaos Lord", db_path=tmp_path / "no_such.sqlite")
+
+        assert result["found"] is False
+        assert result["datasheet"] is None
+        assert "wh40k.sqlite" in result["note"]
+
+    def test_returns_statblock_for_known_unit(self, tmp_path):
+        import json
+        import sqlite3
+
+        db = tmp_path / "wh40k.sqlite"
+        conn = sqlite3.connect(str(db))
+        conn.executescript(
+            "CREATE TABLE factions(id TEXT,name TEXT);"
+            "CREATE TABLE datasheets(id TEXT,name TEXT,faction_id TEXT);"
+            "CREATE TABLE units(id TEXT,faction_id TEXT,name_en TEXT,name_zh TEXT,"
+            "points_json TEXT,keywords_json TEXT,version TEXT);"
+            "CREATE TABLE models(unit_id TEXT,name TEXT,m TEXT,t TEXT,sv TEXT,"
+            "invuln TEXT,w TEXT,ld TEXT,oc TEXT,count_options_json TEXT);"
+            "CREATE TABLE weapons(id TEXT,unit_id TEXT,name_zh TEXT,name_en TEXT,"
+            "range TEXT,a TEXT,bs_ws TEXT,s TEXT,ap TEXT,d TEXT,keywords_json TEXT);"
+        )
+        conn.execute("INSERT INTO factions VALUES('CSM','Chaos Space Marines')")
+        conn.execute("INSERT INTO datasheets VALUES('929','Chaos Lord','CSM')")
+        conn.execute("INSERT INTO units VALUES('929','CSM','Chaos Lord',NULL,?,NULL,NULL)",
+                     (json.dumps({"points": 85, "items": [{"cost": 85}]}),))
+        conn.execute("INSERT INTO models VALUES('929','Chaos Lord','6\"','4','3+','4','4','6+','1',NULL)")
+        conn.commit()
+        conn.close()
+
+        result = agent_tools.get_datasheet("Chaos Lord", db_path=db)
+
+        assert result["found"] is True
+        ds = result["datasheet"]
+        assert ds["name_en"] == "Chaos Lord"
+        assert ds["models"][0]["t"] == "4"
+        assert ds["points_min"] == 85
+
+
 class TestRagSearch:
     def test_wraps_existing_hybrid_retrieve_read_only(self):
         class FakeApp:
@@ -280,15 +321,15 @@ class TestUnmodeledToolsHonestPlaceholders:
 
 
 class TestToolRegistry:
-    def test_registry_has_all_eleven_tools(self):
-        assert len(agent_tools.TOOLS) == 11
-        assert len(agent_tools.TOOL_SPECS) == 11
+    def test_registry_has_all_tools(self):
+        assert len(agent_tools.TOOLS) == 12
+        assert len(agent_tools.TOOL_SPECS) == 12
 
     def test_registry_names_match_spec_signatures(self):
         expected = {
             "search_wiki", "get_entity", "get_keyword_definition",
             "judge_fight_order", "simulate_combat", "validate_roster",
-            "critique_roster", "calc_points", "archive_answer",
+            "critique_roster", "calc_points", "get_datasheet", "archive_answer",
             "rag_search", "entity_resolver",
         }
         assert set(agent_tools.TOOLS) == expected
