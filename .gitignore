@@ -50,6 +50,9 @@ qa_*_results.json
 .DS_Store
 Thumbs.db
 
+# Obsidian 本地库配置（wiki/ 作为 vault 打开时生成，纯本地，见 wiki/CLAUDE.md §1）
+wiki/.obsidian/
+
 # Local assistant config
 .claude/
 # 子代理开发流水线（SDD）中间产物
