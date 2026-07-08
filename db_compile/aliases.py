@@ -71,6 +71,52 @@ def populate_aliases(db_path, data_refined_dir) -> Dict[str, int]:
             "unmatched": len(pairs) - matched}
 
 
+BLACKFORUM_SOURCE = "blackforum"
+
+
+def populate_blackforum_aliases(db_path, pairs: List[Tuple[str, str]]) -> Dict[str, int]:
+    """把黑图书馆小程序的 (中文名, 英文名) 对灌进 aliases 表（source='blackforum'）。
+
+    黑图书馆 /app/manager/forum/unit/list 每单位带 unitName(中文)+unitEnglishName(英文)，
+    是权威中英桥。en 精确匹配 units.name_en（大小写不敏感），匹配不到诚实计数、不硬塞。
+    幂等：先删本源旧行再写。返回 {harvested, matched, unmatched, skipped_no_en}。
+    """
+    conn = sqlite3.connect(str(db_path))
+    try:
+        en2id = {
+            (name or "").strip().lower(): cid
+            for cid, name in conn.execute("SELECT id, name_en FROM units")
+            if name
+        }
+        conn.execute("DELETE FROM aliases WHERE source = ?", (BLACKFORUM_SOURCE,))
+        matched = 0
+        skipped_no_en = 0
+        seen = set()
+        for zh, en in pairs:
+            if not zh or not _CJK.search(zh):
+                continue
+            if not en or not _LATIN.search(en):
+                skipped_no_en += 1
+                continue
+            cid = en2id.get(en.strip().lower())
+            if not cid:
+                continue
+            key = (zh, cid)
+            if key in seen:
+                continue
+            seen.add(key)
+            conn.execute(
+                "INSERT OR REPLACE INTO aliases (alias, canonical_id, lang, source) "
+                "VALUES (?, ?, 'zh', ?)", (zh, cid, BLACKFORUM_SOURCE))
+            matched += 1
+        conn.commit()
+    finally:
+        conn.close()
+    return {"harvested": len(pairs), "matched": matched,
+            "unmatched": len(pairs) - matched - skipped_no_en,
+            "skipped_no_en": skipped_no_en}
+
+
 def load_zh_aliases(db_path) -> Dict[str, str]:
     """从 aliases 表读所有中文别名 → canonical_id（供 entity_resolver 装载）。"""
     if not Path(db_path).exists():

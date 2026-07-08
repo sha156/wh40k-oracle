@@ -33,6 +33,8 @@ class UpdateConfig:
     terms: Path = Path("wiki/terms.json")
     mfm_json: Path = Path("db_sources/mfm/mfm_points.json")
     refined: Path = Path("data_refined")
+    blacklibrary_cache: Path = Path("db_sources/blacklibrary/units.json")
+    blacklibrary_details: Path = Path("db_sources/blacklibrary/details.json")
     manifest: Path = Path("db_sources/downloads/manifest.json")
     categories: tuple = ("warhammer-40000",)
     offline: bool = False        # 跳过全部联网（git pull + mfm fetch + 下载页），复用缓存
@@ -178,6 +180,55 @@ def stage_aliases(cfg: UpdateConfig) -> StageResult:
         detail=rep)
 
 
+def stage_aliases_blackforum(cfg: UpdateConfig) -> StageResult:
+    """从黑图书馆开放 API 补中英别名（build 清库后需重灌）。offline/抓取失败复用缓存。"""
+    from db_compile.aliases import populate_blackforum_aliases
+    from db_compile.blacklibrary import load_or_fetch_units, units_to_pairs
+    units, source = load_or_fetch_units(cfg.blacklibrary_cache, offline=cfg.offline)
+    if not units:
+        return StageResult("aliases_blackforum", True, f"无单位数据（{source}），跳过",
+                           warning="黑图书馆无缓存且离线，本次不补 blackforum 别名")
+    rep = populate_blackforum_aliases(cfg.db, units_to_pairs(units))
+    return StageResult(
+        "aliases_blackforum", True,
+        f"{source}：{len(units)} 单位 → 写入 {rep['matched']} 别名"
+        f"（无英文跳过 {rep['skipped_no_en']}、未匹配 {rep['unmatched']}）",
+        detail={**rep, "source": source})
+
+
+def stage_aliases_community(cfg: UpdateConfig) -> StageResult:
+    """人工策划的社区俗名层（激素虫=刀虫、阿巴顿=大掠夺者阿巴顿），build 清库后重灌。"""
+    from db_compile.community_aliases import populate_community_aliases
+    rep = populate_community_aliases(cfg.db)
+    return StageResult(
+        "aliases_community", True,
+        f"社区俗名 {rep['total']} 条，匹配 {rep['matched']}，未匹配 {rep['unmatched']}",
+        detail=rep)
+
+
+def stage_zh_details(cfg: UpdateConfig) -> StageResult:
+    """黑图书馆中文原生 datasheet 入库（build 清库后重灌）：填 units.name_zh + unit_zh_detail 表。
+
+    从缓存 details.json 灌（detail 抓取慢，不进周更；刷新走 fetch_blacklibrary_details.py）。
+    英文=权威真值不动，本表是叠加的中文内容层。
+    """
+    from db_compile.blacklibrary import (fill_name_zh, load_details,
+                                         load_or_fetch_units, populate_zh_details)
+    units, _ = load_or_fetch_units(cfg.blacklibrary_cache, offline=cfg.offline)
+    name_rep = fill_name_zh(cfg.db, units) if units else {"filled": 0}
+    details = load_details(cfg.blacklibrary_details)
+    if not details:
+        return StageResult("zh_details", True,
+                           f"填 name_zh {name_rep['filled']}；无 details 缓存，跳过中文表",
+                           warning="details.json 缺失，中文 datasheet 层未灌")
+    det_rep = populate_zh_details(cfg.db, details)
+    return StageResult(
+        "zh_details", True,
+        f"填 name_zh {name_rep['filled']}；unit_zh_detail 入库 {det_rep['matched']} "
+        f"（无匹配 {det_rep['unmatched']}）",
+        detail={**det_rep, "name_zh_filled": name_rep["filled"]})
+
+
 def stage_crosscheck(cfg: UpdateConfig) -> StageResult:
     """只读：BSData ↔ Wahapedia 英文属性交叉校验。"""
     from db_compile.crosscheck import run
@@ -241,6 +292,9 @@ _PIPELINE = [
     ("重建整库（Wahapedia CSV → sqlite）", stage_build, True),
     ("应用官方 MFM 分数", stage_mfm_apply, False),
     ("重灌中文别名层", stage_aliases, False),
+    ("补黑图书馆中英别名", stage_aliases_blackforum, False),
+    ("补社区俗名层", stage_aliases_community, False),
+    ("灌黑图书馆中文 datasheet 层", stage_zh_details, False),
     ("交叉校验 BSData ↔ 库", stage_crosscheck, False),
     ("校验分数收敛", stage_mfm_check, False),
     ("监控官方下载页版本", stage_downloads_check, False),

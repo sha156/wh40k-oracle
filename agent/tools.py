@@ -179,7 +179,18 @@ def get_datasheet(
                         resolver=resolver or _get_default_resolver())
     if ds is None:
         return {"found": False, "datasheet": None, "note": "库中未找到该单位"}
-    return {"found": True, "datasheet": asdict(ds)}
+
+    out: Dict[str, Any] = {"found": True, "datasheet": asdict(ds)}
+    # 叠加黑图书馆中文原生 datasheet（属性/能力/武器）——英文仍是权威真值，
+    # 中文层供作答时用母语呈现能力/武器描述。表不存在或无此单位时静默跳过。
+    try:
+        from db_compile.blacklibrary import load_zh_detail
+        zh = load_zh_detail(db_path, ds.unit_id)
+        if zh:
+            out["datasheet_zh"] = zh
+    except Exception:
+        pass
+    return out
 
 
 # ── ⑩ 兜底：只读包装 app.py 现有混合检索（绝不修改 app.py）──────────
