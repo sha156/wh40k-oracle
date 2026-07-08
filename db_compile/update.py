@@ -196,6 +196,16 @@ def stage_aliases_blackforum(cfg: UpdateConfig) -> StageResult:
         detail={**rep, "source": source})
 
 
+def stage_aliases_community(cfg: UpdateConfig) -> StageResult:
+    """人工策划的社区俗名层（激素虫=刀虫、阿巴顿=大掠夺者阿巴顿），build 清库后重灌。"""
+    from db_compile.community_aliases import populate_community_aliases
+    rep = populate_community_aliases(cfg.db)
+    return StageResult(
+        "aliases_community", True,
+        f"社区俗名 {rep['total']} 条，匹配 {rep['matched']}，未匹配 {rep['unmatched']}",
+        detail=rep)
+
+
 def stage_zh_details(cfg: UpdateConfig) -> StageResult:
     """黑图书馆中文原生 datasheet 入库（build 清库后重灌）：填 units.name_zh + unit_zh_detail 表。
 
@@ -283,6 +293,7 @@ _PIPELINE = [
     ("应用官方 MFM 分数", stage_mfm_apply, False),
     ("重灌中文别名层", stage_aliases, False),
     ("补黑图书馆中英别名", stage_aliases_blackforum, False),
+    ("补社区俗名层", stage_aliases_community, False),
     ("灌黑图书馆中文 datasheet 层", stage_zh_details, False),
     ("交叉校验 BSData ↔ 库", stage_crosscheck, False),
     ("校验分数收敛", stage_mfm_check, False),

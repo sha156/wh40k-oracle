@@ -51,6 +51,9 @@ qa_agent_routed*.json
 # 黑图书馆抓取数据（10MB+，可由 scripts/fetch_blacklibrary_details.py 重生，不入库）
 data_blacklibrary/
 
+# 归档的旧版/冗余数据（本地保留，不入库）
+archive/
+
 # OS/editor noise
 .DS_Store
 Thumbs.db
