@@ -77,3 +77,8 @@ class TestFindDatasheet:
 
     def test_find_unknown_returns_none(self, tmp_path):
         assert find_datasheet(_make_db(tmp_path), "No Such Unit") is None
+
+    def test_rejects_fuzzy_match_to_avoid_confident_wrong_answer(self, tmp_path):
+        # "Chaos Lorr"(错别字) 会被 entity_resolver 模糊匹配到 Chaos Lord；
+        # 数值权威路径必须拒绝 fuzzy，返回 None 而非错答案。
+        assert find_datasheet(_make_db(tmp_path), "Chaos Lorr") is None
