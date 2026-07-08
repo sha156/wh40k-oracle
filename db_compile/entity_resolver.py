@@ -78,6 +78,12 @@ class EntityResolver:
             for cid, name in _load_datasheet_names(db_path).items():
                 self._id_to_en.setdefault(cid, name)
                 self._en_to_id.setdefault(name.upper(), cid)
+            # 中文别名层：aliases 表的「中文名 → canonical_id」（data_refined 等来源）。
+            # terms.json 的 zh 优先（先入 _zh_to_id 的不被覆盖）。
+            from db_compile.aliases import load_zh_aliases
+
+            for alias, cid in load_zh_aliases(db_path).items():
+                self._zh_to_id.setdefault(alias, cid)
 
         self._unit_aliases = load_unit_aliases(app_path) if app_path else {}
 

@@ -21,6 +21,10 @@ def main() -> None:
     x.add_argument("--db", default="db/wh40k.sqlite")
     x.add_argument("--out", default=None, help="可选：把完整报告写成 JSON")
 
+    a = sub.add_parser("aliases", help="从 data_refined 双语标题灌中文别名层（中文→canonical_id）")
+    a.add_argument("--refined", default="data_refined")
+    a.add_argument("--db", default="db/wh40k.sqlite")
+
     args = ap.parse_args()
     if args.cmd == "build":
         report = build_database(Path(args.csv_dir), Path(args.db), Path(args.terms))
@@ -54,6 +58,12 @@ def main() -> None:
             Path(args.out).write_text(json.dumps(payload, ensure_ascii=False, indent=2),
                                       encoding="utf-8")
             print(f"\n完整报告写入 {args.out}")
+    elif args.cmd == "aliases":
+        from db_compile.aliases import populate_aliases
+
+        rep = populate_aliases(Path(args.db), Path(args.refined))
+        print(f"中文别名层：提取 {rep['harvested']} 双语对，"
+              f"匹配 canonical {rep['matched']}，未匹配 {rep['unmatched']}")
 
 
 if __name__ == "__main__":
