@@ -33,6 +33,7 @@ class UpdateConfig:
     terms: Path = Path("wiki/terms.json")
     mfm_json: Path = Path("db_sources/mfm/mfm_points.json")
     refined: Path = Path("data_refined")
+    blacklibrary_cache: Path = Path("db_sources/blacklibrary/units.json")
     manifest: Path = Path("db_sources/downloads/manifest.json")
     categories: tuple = ("warhammer-40000",)
     offline: bool = False        # 跳过全部联网（git pull + mfm fetch + 下载页），复用缓存
@@ -178,6 +179,22 @@ def stage_aliases(cfg: UpdateConfig) -> StageResult:
         detail=rep)
 
 
+def stage_aliases_blackforum(cfg: UpdateConfig) -> StageResult:
+    """从黑图书馆开放 API 补中英别名（build 清库后需重灌）。offline/抓取失败复用缓存。"""
+    from db_compile.aliases import populate_blackforum_aliases
+    from db_compile.blacklibrary import load_or_fetch_units, units_to_pairs
+    units, source = load_or_fetch_units(cfg.blacklibrary_cache, offline=cfg.offline)
+    if not units:
+        return StageResult("aliases_blackforum", True, f"无单位数据（{source}），跳过",
+                           warning="黑图书馆无缓存且离线，本次不补 blackforum 别名")
+    rep = populate_blackforum_aliases(cfg.db, units_to_pairs(units))
+    return StageResult(
+        "aliases_blackforum", True,
+        f"{source}：{len(units)} 单位 → 写入 {rep['matched']} 别名"
+        f"（无英文跳过 {rep['skipped_no_en']}、未匹配 {rep['unmatched']}）",
+        detail={**rep, "source": source})
+
+
 def stage_crosscheck(cfg: UpdateConfig) -> StageResult:
     """只读：BSData ↔ Wahapedia 英文属性交叉校验。"""
     from db_compile.crosscheck import run
@@ -241,6 +258,7 @@ _PIPELINE = [
     ("重建整库（Wahapedia CSV → sqlite）", stage_build, True),
     ("应用官方 MFM 分数", stage_mfm_apply, False),
     ("重灌中文别名层", stage_aliases, False),
+    ("补黑图书馆中英别名", stage_aliases_blackforum, False),
     ("交叉校验 BSData ↔ 库", stage_crosscheck, False),
     ("校验分数收敛", stage_mfm_check, False),
     ("监控官方下载页版本", stage_downloads_check, False),
