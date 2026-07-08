@@ -57,3 +57,6 @@ wiki/.obsidian/
 .claude/
 # 子代理开发流水线（SDD）中间产物
 .superpowers/
+
+# BSData 社区库（40MB，英文交叉校验源，本地保留不入库）
+db_sources/bsdata/
