@@ -307,7 +307,7 @@ class TestRagSearch:
 class TestUnmodeledToolsHonestPlaceholders:
     @pytest.mark.parametrize("fn, args", [
         (agent_tools.judge_fight_order, {}),
-        (agent_tools.simulate_combat, {"attacker": "a", "defender": "b"}),
+        # simulate_combat 自 P4-e 起已建模，移出未建模占位清单（见 test_simulator_wiring）
         (agent_tools.validate_roster, {"roster_text": "..."}),
         (agent_tools.critique_roster, {"roster_text": "..."}),
         (agent_tools.archive_answer, {"title": "t", "content": "c"}),

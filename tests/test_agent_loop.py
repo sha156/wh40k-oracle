@@ -168,20 +168,19 @@ class TestDegradesToRagSearch:
         assert result.answer == "兜底检索也没找到相关内容，无法确认。"
 
     def test_unmodeled_tool_call_does_not_trigger_fallback(self):
-        """未建模工具（如 simulate_combat）返回的"未建模"占位不应触发 rag_search 降级——
+        """未建模工具（如 judge_fight_order）返回的"未建模"占位不应触发 rag_search 降级——
         它本身就是诚实答案的一部分，交给 LLM 合成最终回答。"""
-        llm = ScriptedLLM("谋", steps=[
-            {"type": "tool_call", "tool": "simulate_combat",
-             "args": {"attacker": "a", "defender": "b"}},
-            {"type": "final", "content": "模拟功能尚未建模，计划于 P4 提供，暂无法给出数字结论。"},
+        llm = ScriptedLLM("判", steps=[
+            {"type": "tool_call", "tool": "judge_fight_order", "args": {}},
+            {"type": "final", "content": "战斗顺序判定尚未建模，计划于 P5 提供，暂无法给出裁定。"},
         ])
-        from agent.tools import simulate_combat
-        loop = AgentLoop(llm=llm, tools=_fake_tools(simulate_combat=simulate_combat))
+        from agent.tools import judge_fight_order
+        loop = AgentLoop(llm=llm, tools=_fake_tools(judge_fight_order=judge_fight_order))
 
-        result = loop.run("A打B谁赢？")
+        result = loop.run("谁先打？")
 
         assert result.degraded is False
-        assert result.tool_calls == ["simulate_combat"]
+        assert result.tool_calls == ["judge_fight_order"]
         assert "未建模" in result.answer
 
 
@@ -241,17 +240,18 @@ class TestZeroToolAnswerGate:
         assert result.tool_calls == []
         assert result.answer == "你好呀，随便聊。"
 
-    def test_planning_intent_zero_tool_final_not_gated(self):
-        # 谋类的诚实「未建模」回答无需检索，不应被门控降级。
+    def test_scheme_intent_zero_tool_is_gated(self):
+        # 谋类（模拟对战）自 P4-e 起 simulate_combat 已建模：零工具凭直觉估「谁能赢」
+        # 应被门控——纠偏无效则降级 classic，而非放行编造的数字结论。
         llm = ScriptedLLM("谋", steps=[
-            {"type": "final", "content": "模拟功能尚未建模（P4），暂无法给出数字结论。"},
+            {"type": "final", "content": "凭感觉 10 个火战士稳赢，能杀 3 个。"},
+            {"type": "final", "content": "还是这个结论。"},
         ])
         loop = AgentLoop(llm=llm, tools=_fake_tools())
 
         result = loop.run("10个火战士打5个终结者能杀几个？")
 
-        assert result.degraded is False
-        assert "未建模" in result.answer
+        assert result.degraded is True
 
 
 class TestIntentClassificationFailsClosed:

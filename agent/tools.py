@@ -238,10 +238,149 @@ def judge_fight_order(ctx: Optional[Dict[str, Any]] = None) -> Dict[str, Any]:
     return _not_modeled("judge_fight_order", "战斗顺序判定器未建模，计划于 P5 实现")
 
 
+def _resolve_unit(name: str, resolver: Optional[EntityResolver] = None) -> Dict[str, Any]:
+    """单位名 → canonical id，返回统一形态；三失败路径显式区分，绝不静默取第一个。"""
+    r = entity_resolver(name, resolver=resolver)
+    cid, name_en, conf, cands = (r["canonical_id"], r["name_en"],
+                                 r["confidence"], r["candidates"])
+    if conf == "ambiguous":
+        return {"ok": False, "reason": "ambiguous", "input": name,
+                "candidates": cands,
+                "note": f"『{name}』有多个候选，请指明其一：" + "、".join(cands[:8])}
+    if cid is None:
+        return {"ok": False, "reason": "not_found", "input": name,
+                "note": f"未解析到单位『{name}』（译名未收录或拼写不符），请换用更精确的名称"}
+    out = {"ok": True, "canonical_id": cid, "name_en": name_en, "confidence": conf}
+    if conf == "fuzzy":
+        out["warning"] = f"『{name}』为模糊匹配到 {name_en}，若非此单位请用更精确的名称"
+    return out
+
+
+def _report_to_dict(rep) -> Dict[str, Any]:
+    """SimReport → JSON 可序列化 dict（含递归的 reverse）。"""
+    return {
+        "expected_damage": rep.expected_damage,
+        "expected_kills": rep.expected_kills,
+        "wipe_probability": rep.wipe_probability,
+        "distribution": rep.distribution,
+        "funnel": rep.funnel,
+        "efficiency": rep.efficiency,
+        "modeled_effects": rep.modeled_effects,
+        "not_modeled": rep.not_modeled,
+        "bias_notes": rep.bias_notes,
+        "iterations": rep.iterations,
+        "seed": rep.seed,
+        "reverse": _report_to_dict(rep.reverse) if rep.reverse else None,
+    }
+
+
 def simulate_combat(
     attacker: str, defender: str, options: Optional[Dict[str, Any]] = None,
+    db_path: Optional[Path] = None, resolver: Optional[EntityResolver] = None,
 ) -> Dict[str, Any]:
-    return _not_modeled("simulate_combat", "蒙特卡洛模拟引擎未建模，计划于 P4 实现")
+    """P4 蒙特卡洛：attacker 打 defender 一次攻击序列 × N，返回带诚实声明的报告。
+
+    options（全可选）：phase(shooting|melee)、charge、half_range、cover、stationary、
+    long_range、indirect；attacker_models、defender_models；loadout=[[武器名,数量],...]
+    （多模型单位必填，否则返回 ambiguous+武器池）；defender_loadout（给了则串行幸存反打）；
+    fnp(守方无痛X)、damage_reduction；n(默认8000)、seed。
+    """
+    options = options or {}
+    db_path = db_path or DB_PATH
+    if not Path(db_path).exists():
+        return {"ok": False, "modeled": True, "tool": "simulate_combat",
+                "note": "wh40k.sqlite 不存在，需先跑 db_compile build"}
+
+    a = _resolve_unit(attacker, resolver=resolver)
+    if not a["ok"]:
+        return {"ok": False, "modeled": True, "tool": "simulate_combat", **a}
+    d = _resolve_unit(defender, resolver=resolver)
+    if not d["ok"]:
+        return {"ok": False, "modeled": True, "tool": "simulate_combat", **d}
+
+    try:
+        from dataclasses import replace as _replace
+
+        from engines.simulator.assembly import assemble_attacker
+        from engines.simulator.contracts import Effect, Stance
+        from engines.simulator.engine import simulate, simulate_matchup
+        from engines.simulator.profile import load_target
+
+        phase = options.get("phase", "shooting")
+        stance = Stance(
+            phase=phase, charging=bool(options.get("charge")),
+            stationary=bool(options.get("stationary")),
+            half_range=bool(options.get("half_range")),
+            target_in_cover=bool(options.get("cover")),
+            long_range=bool(options.get("long_range")),
+            indirect=bool(options.get("indirect")),
+        )
+
+        loadout = options.get("loadout")
+        loadout = [(str(w), int(c)) for w, c in loadout] if loadout else None
+        asm = assemble_attacker(db_path, a["canonical_id"],
+                                models=options.get("attacker_models"),
+                                loadout=loadout, phase=phase)
+        if asm is None:
+            return {"ok": False, "modeled": True, "tool": "simulate_combat",
+                    "reason": "not_found", "note": f"单位 {attacker} 无法装载"}
+        if asm.ambiguous or asm.attacker is None:
+            return {"ok": False, "modeled": True, "tool": "simulate_combat",
+                    "reason": "loadout_required", "note": asm.note,
+                    "weapon_pool": [w.name_en for w in asm.weapon_pool],
+                    "model_tiers": asm.tiers, "errors": asm.errors}
+
+        target = load_target(db_path, d["canonical_id"],
+                             models=options.get("defender_models"))
+        if target is None:
+            return {"ok": False, "modeled": True, "tool": "simulate_combat",
+                    "reason": "not_found", "note": f"守方 {defender} 无法装载"}
+        # 防守侧手动开关 → Effect
+        def_effects = []
+        if options.get("fnp"):
+            def_effects.append(Effect("fnp", "fnp", (int(options["fnp"]),), (),
+                                      f"feel no pain {options['fnp']}+"))
+        if options.get("damage_reduction"):
+            def_effects.append(Effect("damage", "damage_reduction",
+                                      (int(options["damage_reduction"]),), (),
+                                      "damage reduction"))
+        if def_effects:
+            target = _replace(target, effects=tuple(def_effects))
+
+        n = int(options.get("n", 8000))
+        seed = int(options.get("seed", 1234))
+        pts = _calc_points_impl(db_path, [a["name_en"] or a["canonical_id"]])
+        points_a = pts[0].points if pts and pts[0].points else None
+
+        # 反打：给了 defender_loadout 才做串行幸存反打，否则单向
+        d_loadout = options.get("defender_loadout")
+        if d_loadout:
+            d_asm = assemble_attacker(
+                db_path, d["canonical_id"], models=options.get("defender_models"),
+                loadout=[(str(w), int(c)) for w, c in d_loadout],
+                phase=options.get("reverse_phase", "melee"))
+            a_as_target = load_target(db_path, a["canonical_id"],
+                                      models=options.get("attacker_models"))
+            if d_asm and not d_asm.ambiguous and a_as_target is not None:
+                rep = simulate_matchup(
+                    asm.attacker, target, d_asm.attacker, a_as_target,
+                    stance_forward=stance,
+                    stance_reverse=Stance(phase=options.get("reverse_phase", "melee")),
+                    n=n, seed=seed, points_a=points_a)
+                return {"ok": True, "modeled": True, "tool": "simulate_combat",
+                        "attacker": a["name_en"], "defender": d["name_en"],
+                        "phase": phase, "report": _report_to_dict(rep),
+                        "warning": a.get("warning") or d.get("warning")}
+
+        rep = simulate(asm.attacker, target, stance, n=n, seed=seed, points=points_a)
+        return {"ok": True, "modeled": True, "tool": "simulate_combat",
+                "attacker": a["name_en"], "defender": d["name_en"],
+                "phase": phase, "report": _report_to_dict(rep),
+                "warning": a.get("warning") or d.get("warning")}
+    except Exception as exc:   # noqa: BLE001 — 显式暴露，不静默吞
+        import traceback
+        return {"ok": False, "modeled": True, "tool": "simulate_combat",
+                "note": f"模拟执行异常: {exc}", "trace": traceback.format_exc()[-800:]}
 
 
 def validate_roster(roster_text: str) -> Dict[str, Any]:
@@ -267,7 +406,7 @@ TOOL_SPECS: List[Dict[str, str]] = [
     {"name": "get_entity", "description": "读实体页（自动实体解析）"},
     {"name": "get_keyword_definition", "description": "USR/核心概念定义"},
     {"name": "judge_fight_order", "description": "战斗顺序判定器（未建模，P5）"},
-    {"name": "simulate_combat", "description": "蒙特卡洛模拟引擎（未建模，P4）"},
+    {"name": "simulate_combat", "description": "蒙特卡洛对战模拟：attacker 打 defender 期望伤害/击杀/团灭率+漏斗+性价比（多模型单位需 options.loadout）"},
     {"name": "validate_roster", "description": "验表（未建模，P6）"},
     {"name": "critique_roster", "description": "验表+模拟点评（未建模，P6）"},
     {"name": "calc_points", "description": "精确算分"},
