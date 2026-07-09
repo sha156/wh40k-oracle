@@ -111,6 +111,29 @@ def load_abilities(db_path, unit_id: str) -> Tuple[AbilityRecord, ...]:
                  for r in rows)
 
 
+def load_faction_options(db_path, unit_id: str) -> Dict:
+    """守方所属阵营的分队名清单（P5-c surface-don't-fake）：只列名，不施加任何规则。
+
+    告诉用户"你这支单位的阵营有这些分队/军队规则我没建模"，是诚实披露而非假装计入。
+    """
+    conn = sqlite3.connect(str(db_path))
+    try:
+        u = conn.execute("SELECT faction_id FROM units WHERE id = ?", (unit_id,)).fetchone()
+        if not u or not u[0]:
+            return {"faction_id": None, "faction_name": None, "detachments": []}
+        fid = u[0]
+        fac = conn.execute("SELECT name FROM factions WHERE id = ?", (fid,)).fetchone()
+        dets = conn.execute(
+            "SELECT DISTINCT name_en FROM detachments WHERE faction = ? ORDER BY name_en",
+            (fid,)).fetchall()
+    finally:
+        conn.close()
+    # 'KEYWORDS' 等抓取噪声名剔除
+    names = [d[0] for d in dets if d[0] and d[0].upper() != "KEYWORDS"]
+    return {"faction_id": fid, "faction_name": (fac[0] if fac else fid),
+            "detachments": names}
+
+
 def load_unit_header(db_path, unit_id: str) -> Optional[UnitHeader]:
     conn = sqlite3.connect(str(db_path))
     try:

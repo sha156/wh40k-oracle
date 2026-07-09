@@ -337,8 +337,11 @@ def simulate_combat(
                     "reason": "not_found", "note": f"守方 {defender} 无法装载"}
         # P5-a：守方可 opt-in 的防守开关（名字/说明/是否解析出参数）——供面板预填、不自动施加
         from engines.simulator.context import build_toggles_available
+        from engines.simulator.profile import load_faction_options
         defender_toggles = [{"name": nm, "note": note, "parsed": parsed}
                             for nm, note, parsed in build_toggles_available(target)]
+        # P5-c：守方阵营分队名 surface（只列名不施加，诚实披露未建模的分队/军队规则）
+        faction_options = load_faction_options(db_path, d["canonical_id"])
         # 防守侧手动开关 → Effect
         def_effects = []
         if options.get("fnp"):
@@ -351,6 +354,19 @@ def simulate_combat(
         if options.get("stealth"):    # P5-a：守方 Stealth → 攻方射击命中 -1（仅射击）
             def_effects.append(Effect("hit", "modify", (-1,), ("phase_shooting",),
                                       "stealth"))
+        # P5-c 手工核验通用开关（评审 E1 订正）：
+        #   Go to Ground（1CP）= Benefit of Cover + 6+ 无效保护（不给 Stealth）
+        #   Smokescreen        = Benefit of Cover + Stealth(-1 射击命中)
+        cover_on = bool(options.get("cover"))
+        if options.get("go_to_ground"):
+            cover_on = True
+            target = _replace(target, invuln=min(target.invuln or 7, 6))
+        if options.get("smokescreen"):
+            cover_on = True
+            def_effects.append(Effect("hit", "modify", (-1,), ("phase_shooting",),
+                                      "smokescreen"))
+        if cover_on and not stance.target_in_cover:
+            stance = _replace(stance, target_in_cover=True)
         if def_effects:
             target = _replace(target, effects=tuple(def_effects))
 
@@ -378,6 +394,7 @@ def simulate_combat(
                         "attacker": a["name_en"], "defender": d["name_en"],
                         "phase": phase, "report": _report_to_dict(rep),
                         "defender_toggles": defender_toggles,
+                        "faction_options": faction_options,
                         "warning": a.get("warning") or d.get("warning")}
 
         rep = simulate(asm.attacker, target, stance, n=n, seed=seed, points=points_a)
@@ -385,6 +402,7 @@ def simulate_combat(
                 "attacker": a["name_en"], "defender": d["name_en"],
                 "phase": phase, "report": _report_to_dict(rep),
                 "defender_toggles": defender_toggles,
+                "faction_options": faction_options,
                 "warning": a.get("warning") or d.get("warning")}
     except Exception as exc:   # noqa: BLE001 — 显式暴露，不静默吞
         import traceback

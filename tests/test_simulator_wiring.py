@@ -87,3 +87,40 @@ def test_simulate_combat_multimodel_needs_loadout():
     res = simulate_combat("Boyz", "Intercessor Squad")   # 未给 loadout
     assert res["ok"] is False and res["reason"] == "loadout_required"
     assert res["weapon_pool"]                             # 返回武器池供指定
+
+
+# ---- P5-c：Go to Ground / Smokescreen 手工核验开关（评审 E1）----
+@pytestmark_db
+def test_go_to_ground_is_not_stealth():
+    """E1：Go to Ground = 掩体 + 6+ 无效保护，**不**改命中（不是 Stealth）。"""
+    from agent.tools import simulate_combat
+    opt = lambda **k: {"loadout": [["Shoota", 10]], "phase": "shooting",
+                       "n": 8000, "seed": 9, **k}
+    base = simulate_combat("Boyz", "Intercessor Squad", opt())
+    gtg = simulate_combat("Boyz", "Intercessor Squad", opt(go_to_ground=True))
+    # 命中不受 Go to Ground 影响（它不给命中惩罚）
+    assert gtg["report"]["funnel"]["hits"] == pytest.approx(
+        base["report"]["funnel"]["hits"], rel=0.03)
+
+
+@pytestmark_db
+def test_smokescreen_lowers_hits():
+    """E1：Smokescreen = 掩体 + Stealth → 射击命中下降。"""
+    from agent.tools import simulate_combat
+    opt = lambda **k: {"loadout": [["Shoota", 10]], "phase": "shooting",
+                       "n": 8000, "seed": 9, **k}
+    base = simulate_combat("Boyz", "Intercessor Squad", opt())
+    smk = simulate_combat("Boyz", "Intercessor Squad", opt(smokescreen=True))
+    assert smk["report"]["funnel"]["hits"] < base["report"]["funnel"]["hits"] * 0.8
+
+
+@pytestmark_db
+def test_faction_options_surfaced():
+    """P5-c：守方阵营分队名 surface（诚实披露未建模的分队规则）。"""
+    from agent.tools import simulate_combat
+    res = simulate_combat("Boyz", "Intercessor Squad",
+                          {"loadout": [["Shoota", 10]], "n": 1000})
+    fo = res["faction_options"]
+    assert fo["faction_id"] == "SM"
+    assert isinstance(fo["detachments"], list) and len(fo["detachments"]) > 0
+    assert "KEYWORDS" not in fo["detachments"]           # 噪声名已剔除
