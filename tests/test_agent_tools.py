@@ -211,7 +211,7 @@ class TestCalcPoints:
 
         assert result["found"] is True
         assert result["units"][0]["points"] is None
-        assert "缺" in result["units"][0]["note"]
+        assert "无法计算点数" in result["units"][0]["note"]
 
     def test_missing_db_reports_note_instead_of_crashing(self, tmp_path):
         result = agent_tools.calc_points(["000000407"], db_path=tmp_path / "no_such.sqlite")

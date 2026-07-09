@@ -131,3 +131,40 @@ def load_zh_aliases(db_path) -> Dict[str, str]:
         return {alias: cid for alias, cid in rows}
     finally:
         conn.close()
+
+
+def load_alias_expansions(db_path, min_alias_len: int = 3) -> Dict[str, str]:
+    """{中文别名 → "库内规范中文名 英文名"}，供 classic 检索链 expand_query 用。
+
+    这样 classic 与 agent 共用同一份 1633 条别名（此前 classic 只有 app.py 10 条硬编码，
+    与 sqlite 别名表两套并行、互不同步）。命中别名时把库内规范名追加进查询串，让 BM25/
+    向量召回到正确单位的中文/双语 chunk。
+
+    - 只保留能带来新信息的别名（规范名 != 别名本身；纯自指的跳过）。
+    - 跳过长度 < min_alias_len 的别名：2 字别名子串误匹配风险高，且多为库内规范名自指。
+    - 多个别名指向同一 id 时 setdefault 保留首个，不覆盖。
+    """
+    if not Path(db_path).exists():
+        return {}
+    conn = sqlite3.connect(str(db_path))
+    try:
+        try:
+            rows = conn.execute(
+                "SELECT a.alias, u.name_zh, u.name_en "
+                "FROM aliases a JOIN units u ON a.canonical_id = u.id "
+                "WHERE a.lang = 'zh'"
+            ).fetchall()
+        except sqlite3.OperationalError:
+            return {}
+    finally:
+        conn.close()
+    out: Dict[str, str] = {}
+    for alias, name_zh, name_en in rows:
+        if not alias or len(alias) < min_alias_len:
+            continue
+        parts = [p for p in (name_zh, name_en)
+                 if p and p.strip() and p != alias]
+        if not parts:
+            continue
+        out.setdefault(alias, " ".join(dict.fromkeys(parts)))
+    return out

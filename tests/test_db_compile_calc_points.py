@@ -60,3 +60,26 @@ class TestCalcPoints:
 
         assert result[0].points == 95
         assert result[0].note is None
+
+    def test_uses_min_item_cost_not_top_level_sum(self, tmp_path):
+        """语义统一：有 items 档位时取最小 cost（与 datasheet 一致），
+        不取顶层 points——后者对未被 MFM 覆写的单位是各档累加和的错误语义。"""
+        import json
+        import sqlite3
+
+        db_path = _build_db(tmp_path)
+        conn = sqlite3.connect(str(db_path))
+        conn.execute(
+            "UPDATE units SET points_json = ? WHERE id = '000000407'",
+            (json.dumps({
+                "points": 300,  # 错误的「各档累加和」，必须被忽略
+                "items": [{"desc": "5 models", "cost": 100},
+                          {"desc": "10 models", "cost": 200}],
+            }),))
+        conn.commit()
+        conn.close()
+
+        result = calc_points(db_path, ["000000407"])
+
+        assert result[0].points == 100  # min(100, 200)，而非顶层 300
+        assert result[0].note is None

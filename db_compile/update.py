@@ -20,9 +20,15 @@ from __future__ import annotations
 import json
 import subprocess
 import time
-from dataclasses import dataclass, field
+from dataclasses import dataclass, field, replace
 from pathlib import Path
 from typing import Dict, List, Optional
+
+# unit_zh_detail / data_refined 变动后必须重建 FAISS 才能让 L1 检索层同步的提示。
+_L1_SYNC_HINT = (
+    "提示：库内容有变动后，需跑 `.venv\\Scripts\\python.exe ingest.py --rebuild` 让 FAISS "
+    "L1 检索层同步（黑图书馆 chunk 只在 --rebuild 时注入，例行增量不会刷新）"
+)
 
 
 @dataclass
@@ -301,6 +307,41 @@ _PIPELINE = [
 ]
 
 
+# build 会 unlink 重建整库，清掉官方 MFM 分数/别名/中文层。这些恢复阶段用本地缓存把它们
+# 补回来（离线可跑），是「单独 build 后必须补跑」的那批（_PIPELINE 的 4-8 阶段）。
+_RESTORE_STAGES = [
+    ("应用官方 MFM 分数", stage_mfm_apply),
+    ("重灌中文别名层", stage_aliases),
+    ("补黑图书馆中英别名", stage_aliases_blackforum),
+    ("补社区俗名层", stage_aliases_community),
+    ("灌黑图书馆中文 datasheet 层", stage_zh_details),
+]
+
+
+def restore_authority_layers(cfg: UpdateConfig) -> UpdateReport:
+    """build 清库后用本地缓存补回官方分数/别名/中文层，避免留下降级库（防呆）。
+
+    强制离线：只用本地缓存，不联网。供 `db_compile build` CLI 在重建后自动补跑，
+    杜绝「单独跑 build 静默把官方分回退成 Wahapedia 旧值并清空别名」这一脚枪。
+    """
+    cfg = replace(cfg, offline=True)
+    report = UpdateReport()
+    total = len(_RESTORE_STAGES)
+    for idx, (title, fn) in enumerate(_RESTORE_STAGES, 1):
+        _banner(idx, total, title)
+        try:
+            res = fn(cfg)
+        except Exception as e:
+            res = StageResult(fn.__name__, False, f"未预期异常：{type(e).__name__}: {e}")
+        report.add(res)
+        mark = "✅" if res.ok else "❌"
+        print(f"    {mark} {res.summary}", flush=True)
+        if res.warning:
+            print(f"    ⚠️  {res.warning}", flush=True)
+    print("\n" + _L1_SYNC_HINT, flush=True)
+    return report
+
+
 def run_update(cfg: UpdateConfig) -> UpdateReport:
     """按序执行整条刷新管线，返回结构化报告。关键阶段失败即中止。"""
     report = UpdateReport()
@@ -323,4 +364,6 @@ def run_update(cfg: UpdateConfig) -> UpdateReport:
             break
     print(f"\n耗时 {time.time() - t0:.1f}s"
           + ("  管线全绿 ✅" if report.ok else "  有阶段未通过 ⚠️"), flush=True)
+    if report.ok:
+        print(_L1_SYNC_HINT, flush=True)
     return report

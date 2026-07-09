@@ -42,11 +42,14 @@ basher.txt
 # 试点《钛帝国十版CODEX》此前已显式提交，仍保持跟踪；其余书目本地保留、不推送。
 data_refined/
 
-# QA 基准运行产物（本地保留，不入库）
+# QA 基准运行产物（本地保留，不入库）；唯一入库的是 qa_gold.json（题集+权威答案，基准真源）
 qa_100_results.json
 qa_*_results.json
 qa_*_new.json
 qa_agent_routed*.json
+qa_agent_*.json
+qa_classic_*.json
+qa_layered_*.json
 
 # 黑图书馆抓取数据（10MB+，可由 scripts/fetch_blacklibrary_details.py 重生，不入库）
 data_blacklibrary/

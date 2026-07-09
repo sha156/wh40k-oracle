@@ -2,7 +2,11 @@
 """aliases：从 data_refined 双语标题提取 (中文→canonical_id)，灌进 aliases 表。"""
 import sqlite3
 
-from db_compile.aliases import harvest_bilingual_pairs, populate_aliases
+from db_compile.aliases import (
+    harvest_bilingual_pairs,
+    load_alias_expansions,
+    populate_aliases,
+)
 
 
 def _make_refined(tmp_path):
@@ -78,3 +82,38 @@ class TestPopulate:
         report = populate_aliases(db, tmp_path / "data_refined")
         assert report["harvested"] >= 1
         assert report["matched"] == 0
+
+
+class TestLoadAliasExpansions:
+    """classic 查询扩展用的 {别名 → 库内规范名 英文名} 映射。"""
+
+    def _db_with_aliases(self, tmp_path):
+        db = _make_db(tmp_path)
+        conn = sqlite3.connect(str(db))
+        # 给单位补中文名
+        conn.execute("UPDATE units SET name_zh='刀虫' WHERE id='000000070'")
+        conn.executemany(
+            "INSERT INTO aliases(alias,canonical_id,lang,source) VALUES(?,?,?,?)",
+            [
+                ("激素虫", "000000070", "zh", "community"),   # 别名≠规范名，有用
+                ("刀虫", "000000070", "zh", "blackforum"),     # 自指，应跳过
+                ("小子", "000000071", "zh", "community"),      # 2 字，应按长度过滤
+                ("HORMAGAUNTS", "000000070", "en", "x"),       # 英文别名不进 zh 扩展
+            ],
+        )
+        conn.commit()
+        conn.close()
+        return db
+
+    def test_maps_alias_to_canonical_names(self, tmp_path):
+        exp = load_alias_expansions(self._db_with_aliases(tmp_path))
+        assert exp["激素虫"] == "刀虫 Hormagaunts"
+
+    def test_skips_self_referential_and_short_and_en(self, tmp_path):
+        exp = load_alias_expansions(self._db_with_aliases(tmp_path))
+        assert "刀虫" not in exp    # 自指（== name_zh）跳过
+        assert "小子" not in exp    # 长度 < 3 跳过
+        assert "HORMAGAUNTS" not in exp  # 非 zh
+
+    def test_missing_db_returns_empty(self, tmp_path):
+        assert load_alias_expansions(tmp_path / "nope.sqlite") == {}

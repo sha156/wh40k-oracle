@@ -22,6 +22,9 @@ NICKNAMES: Dict[str, str] = {
     "马格努斯": "Magnus The Red",          # 全名「红魔马格努斯」
     "福格瑞姆": "Fulgrim",                 # 帝皇之子恶魔原体
     "卡巴利特战士": "Kabalite Warriors",   # 音译，规范译名「阴谋团战士」
+    "战争老大": "Warboss",                 # 兽人俗名，库内规范名「战争头目」(#38)
+    "惩罚者机甲": "Penitent Engines",      # 战斗修女，库内规范名「忏悔者机甲」；
+                                           # 勿与「惩罚者坦克」Castigator 混淆 (#100)
 }
 
 

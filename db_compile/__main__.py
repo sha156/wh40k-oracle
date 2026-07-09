@@ -11,10 +11,12 @@ def main() -> None:
     ap = argparse.ArgumentParser(prog="db_compile")
     sub = ap.add_subparsers(dest="cmd", required=True)
 
-    p = sub.add_parser("build", help="db_sources/wahapedia/*.csv → wh40k.sqlite")
+    p = sub.add_parser("build", help="db_sources/wahapedia/*.csv → wh40k.sqlite（默认自动补回官方分/别名/中文层）")
     p.add_argument("--csv-dir", default="db_sources/wahapedia")
     p.add_argument("--db", default="db/wh40k.sqlite")
     p.add_argument("--terms", default="wiki/terms.json")
+    p.add_argument("--no-restore", action="store_true",
+                   help="只重建骨架，不补回官方 MFM 分数/别名/中文层（危险：会留下降级库）")
 
     x = sub.add_parser("crosscheck", help="BSData ↔ Wahapedia 英文属性交叉校验")
     x.add_argument("--bsdata", default="db_sources/bsdata")
@@ -67,6 +69,15 @@ def main() -> None:
         print("行数:", report.row_counts)
         if report.missing_csv:
             print("待下载 CSV：", ", ".join(report.missing_csv))
+        if args.no_restore:
+            print("\n⚠️  已跳过恢复：官方 MFM 分数/别名/中文层未补回，当前为降级库。"
+                  "\n    需手动跑 `python -m db_compile update --offline` 或去掉 --no-restore 重建。")
+        else:
+            # 防呆：build 清库会覆盖官方分/别名/中文层，自动用本地缓存补回，避免留下降级库。
+            print("\n重建完成，自动补回官方分数/别名/中文层（本地缓存，离线）…")
+            from db_compile.update import UpdateConfig, restore_authority_layers
+            restore_authority_layers(UpdateConfig(
+                db=Path(args.db), csv_dir=Path(args.csv_dir), terms=Path(args.terms)))
     elif args.cmd == "crosscheck":
         import json
 

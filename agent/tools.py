@@ -185,9 +185,16 @@ def get_datasheet(
     # 中文层供作答时用母语呈现能力/武器描述。表不存在或无此单位时静默跳过。
     try:
         from db_compile.blacklibrary import load_zh_detail
+        from db_compile.datasheet import diff_core_stats
         zh = load_zh_detail(db_path, ds.unit_id)
         if zh:
             out["datasheet_zh"] = zh
+            # 两源数值不一致时显式标注，防止一次回答内部自相矛盾——官方英文块为准。
+            conflicts = diff_core_stats(ds, zh)
+            if conflicts:
+                out["stat_conflicts"] = conflicts
+                out["note"] = ("黑图书馆中文层与官方源在部分属性上不一致，"
+                               "数值以官方英文属性块(datasheet)为准。")
     except Exception:
         pass
     return out

@@ -194,18 +194,25 @@ def _insert_abilities(cur, master_rows: List[dict],
             (aid, r.get("name", ""), r.get("description", "")))
         count += 1
 
-    # 再写单位链接（owner_id=datasheet_id，补充 scope、可能重载 name/description）
+    # 再写单位链接（owner_id=datasheet_id，补充 scope、可能重载 name/description）。
+    # 关键：链接行的主键必须每(单位,技能)对唯一，否则以 ability_id 为主键会被
+    # INSERT OR REPLACE 折叠——一个技能被多个单位共享时只剩最后一个单位（7158 行→48 行，
+    # 丢失约 3500 条单位→技能关联）。改用「单位内递增序号」做主键（同 weapons 的修法），
+    # 并以 name 为准（不再要求 ability_id 非空，保住 3600+ 条无全局 id 的单位专属技能）。
+    ab_seq: dict = {}
     for r in link_rows:
-        aid = r.get("ability_id")
         ds_id = r.get("datasheet_id")
-        if not aid or not ds_id:
+        name = (r.get("name") or "").strip()
+        if not ds_id or not name:
             continue
+        ab_seq[ds_id] = ab_seq.get(ds_id, 0) + 1
+        row_id = f"{ds_id}_a{ab_seq[ds_id]}"
         scope = r.get("model", "")  # Core / Faction / Leader
         cur.execute(
             """INSERT OR REPLACE INTO abilities
                (id, owner_id, scope, name_en, text_zh, dsl_status)
                VALUES (?, ?, ?, ?, ?, 'not_modeled')""",
-            (aid, ds_id, scope, r.get("name", ""), r.get("description", "")))
+            (row_id, ds_id, scope, name, r.get("description", "")))
         count += 1
     return count
 

@@ -19,6 +19,19 @@ MAX_STEPS = 6
 INTENTS = ("查", "判", "算", "谋", "闲聊")
 DEFAULT_INTENT = "查"
 
+# 必须先查证才能作答的意图：这些问题的答案是确定性事实（规则/属性/点数），
+# 凭 LLM 参数记忆直接回答极易给出过时或编造的数字并伪造书页引用
+# （gold 实测：16 题零工具直答错 9 道，而真正走工具的路径 0 真错）。
+# 谋（模拟/战术）与闲聊不在此列：谋的诚实「未建模」回答本就无需检索，闲聊与规则无关。
+_MUST_VERIFY_INTENTS = ("查", "判", "算")
+
+# 零工具直答被拦下时，先给模型一次纠偏机会，逼它改走工具查证。
+_FORCE_TOOL_NUDGE = (
+    "你还没有调用任何工具就想直接作答。属性/数值/规则/点数类问题必须先用工具查证："
+    "数值属性走 get_datasheet，技能/背景/军表走 get_entity，USR 定义走 get_keyword_definition，"
+    "都查不到再用 rag_search 兜底。不要凭记忆给出任何数字或书页引用，请先输出一个 tool_call。"
+)
+
 # 触发"空结果 → 降级 rag_search"的工具及判空规则。
 # 未建模工具（simulate_combat 等）不在此列——它们的"未建模"提示本身就是诚实答案，
 # rag_search 兜底对模拟/判定类问题没有意义，不应被此机制吞掉。
@@ -103,11 +116,23 @@ class AgentLoop:
     def _run_tool_loop(self, user_input: str, intent: str) -> AgentResult:
         messages: List[Dict[str, Any]] = [{"role": "user", "content": user_input}]
         tool_calls: List[str] = []
+        nudged_for_tools = False
 
         for _ in range(self.max_steps):
             step = self.llm.next_step(messages, TOOL_SPECS)
 
             if step.get("type") == "final":
+                # 零工具直答门控：查/判/算 类问题若一次工具都没调就想给最终答案，
+                # 先强制纠偏一次；仍不查证则视同降级转 classic 兜底，而非放行凭记忆作答。
+                if intent in _MUST_VERIFY_INTENTS and not tool_calls:
+                    if not nudged_for_tools:
+                        nudged_for_tools = True
+                        messages.append({"role": "user", "content": _FORCE_TOOL_NUDGE})
+                        continue
+                    return self._fallback(
+                        user_input, intent, tool_calls,
+                        reason="零工具直答已拒绝（查/判/算 类须先查证）",
+                    )
                 return AgentResult(
                     answer=step.get("content", ""),
                     intent=intent,

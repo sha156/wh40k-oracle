@@ -104,6 +104,9 @@ def chinese_tokenize(text: str) -> list[str]:
 # 规则书来自不同汉化组，同一单位的译名与社区常用叫法不一致。
 # 检索前把库内译名追加到查询里（扩展而非替换），BM25 和向量都受益。
 # 各映射均已对照 PDF 原文确认（英文原名标注在注释中）。
+# 说明：单位级社区俗名已统一进 sqlite aliases 表（DB_ALIASES，见下），classic 与 agent
+# 共用同一份。这里只保留 **武器名/短语级检索提示**——它们不是单位、进不了 units 外键的
+# aliases 表，但对查询召回有用。
 UNIT_ALIASES = {
     "卡巴利特战士": "阴谋团武士",       # Kabalite Warriors（黑暗灵族）
     "卡巴利特":     "阴谋团",
@@ -114,7 +117,8 @@ UNIT_ALIASES = {
     "死亡翼":       "死翼",             # Deathwing（黑暗天使）
     "虫族武士":     "泰伦武士",         # Tyranid Warriors（泰伦虫族）
     "赫尔松铁御":   "赫卡顿陆行要塞",   # Hekaton Land Fortress（沃坦联盟）
-    "惩罚者机甲":   "赎罪引擎",         # Penitent Engine（战斗修女）
+    "弹射器":       "星镖枪 shuriken catapult",  # 星镖枪译名差异（艾达灵族，#48）
+    "离子爆破者":   "Ion blaster",      # 沃坦远行者先锋武器（#83）
 }
 
 # 把双侧译名注册进 jieba，避免专有名词被切碎
@@ -133,11 +137,27 @@ TERM_ALIASES = load_term_aliases(Path(__file__).parent / "wiki" / "terms.json")
 for _zh in TERM_ALIASES:
     jieba.add_word(_zh)
 
+# ══════════════════════════════════════════════
+#  sqlite aliases 表（1633 条）→ 查询扩展
+#  与 agent 的 EntityResolver 共用同一份别名库，消除「两套并行别名体系」漂移。
+#  DB 缺失/无表时静默退化为空 dict，classic 仍可用 UNIT_ALIASES/TERM_ALIASES。
+# ══════════════════════════════════════════════
+from db_compile.aliases import load_alias_expansions
+
+_DB_PATH = Path(__file__).parent / "db" / "wh40k.sqlite"
+try:
+    DB_ALIASES = load_alias_expansions(_DB_PATH)
+except Exception:
+    DB_ALIASES = {}
+for _a in DB_ALIASES:
+    jieba.add_word(_a)
+
 
 def expand_query(query: str) -> str:
-    """查询扩展：命中社区译名/术语表时，追加库内译名与英文名（保留原词）。"""
+    """查询扩展：命中社区译名/术语表/别名库时，追加库内规范名与英文名（保留原词）。"""
     extras = [v for k, v in UNIT_ALIASES.items() if k in query]
     extras += [v for k, v in TERM_ALIASES.items() if k in query]
+    extras += [v for k, v in DB_ALIASES.items() if k in query]
     if not extras:
         return query
     return query + "（" + "，".join(dict.fromkeys(extras)) + "）"
