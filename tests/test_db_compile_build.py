@@ -3,7 +3,40 @@
 import json
 import sqlite3
 
-from db_compile.build import EXPECTED_CSV, build_database
+from db_compile.build import EXPECTED_CSV, build_database, _insert_abilities
+from db_compile.schema import ABILITIES_DDL
+
+
+class TestAbilitiesLinksNotFolded:
+    """回归：一个技能被多个单位共享时，链接行不能被 INSERT OR REPLACE 折叠。
+
+    旧 bug：链接行以 ability_id 为主键，共享技能只剩最后一个单位（7158→48 行）。
+    """
+
+    def test_shared_ability_keeps_all_unit_links(self):
+        conn = sqlite3.connect(":memory:")
+        conn.executescript(ABILITIES_DDL)
+        cur = conn.cursor()
+        master = [{"id": "AB1", "name": "Leader", "description": "def"}]
+        links = [
+            {"ability_id": "AB1", "datasheet_id": "U1", "model": "Faction",
+             "name": "Leader", "description": "x"},
+            {"ability_id": "AB1", "datasheet_id": "U2", "model": "Faction",
+             "name": "Leader", "description": "x"},
+            # 无全局 ability_id 的单位专属技能也要保住（旧代码整条跳过）
+            {"ability_id": "", "datasheet_id": "U1", "model": "",
+             "name": "Inline Ability", "description": "y"},
+        ]
+        _insert_abilities(cur, master, links)
+        conn.commit()
+
+        def n(where):
+            return cur.execute(f"SELECT COUNT(*) FROM abilities WHERE {where}").fetchone()[0]
+
+        assert n("owner_id='U1'") == 2   # Leader + Inline（旧 bug 下会丢 Leader）
+        assert n("owner_id='U2'") == 1
+        assert n("owner_id IS NULL") == 1  # 全局定义行保留
+        conn.close()
 
 FACTIONS_CSV = ("﻿id|name|link|\n"
                  "TAU|T'au Empire|https://wahapedia.ru/.../t-au-empire|\n"

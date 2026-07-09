@@ -26,11 +26,20 @@ class ScriptedLLM:
 
 
 class RaisingClassifyLLM:
+    """分类抛异常 → 回落 DEFAULT_INTENT("查")。next_step 先走一次 rag_search 再 final，
+    以便在零工具门控下仍能正常产出答案（本测试关注分类容错，不测门控）。"""
+
+    def __init__(self):
+        self._steps = [
+            {"type": "tool_call", "tool": "rag_search", "args": {"query": "随便"}},
+            {"type": "final", "content": "闲聊兜底回答"},
+        ]
+
     def classify_intent(self, user_input):
         raise RuntimeError("模拟分类模型挂了")
 
     def next_step(self, messages, tool_specs):
-        return {"type": "final", "content": "闲聊兜底回答"}
+        return self._steps.pop(0)
 
 
 def _fake_tools(**overrides):
@@ -87,7 +96,9 @@ class TestQueryFlowHappyPath:
         assert result.answer == "已找到影阳指挥官实体页。"
 
     def test_session_context_records_conversation_turns(self):
-        llm = ScriptedLLM("查", steps=[{"type": "final", "content": "答案"}])
+        # 用「闲聊」意图：它豁免零工具门控，单步 final 即可被接受，
+        # 让本测试专注于会话记录本身而非门控行为。
+        llm = ScriptedLLM("闲聊", steps=[{"type": "final", "content": "答案"}])
         loop = AgentLoop(llm=llm, tools=_fake_tools())
         session = SessionContext()
 
@@ -157,21 +168,90 @@ class TestDegradesToRagSearch:
         assert result.answer == "兜底检索也没找到相关内容，无法确认。"
 
     def test_unmodeled_tool_call_does_not_trigger_fallback(self):
-        """未建模工具（如 simulate_combat）返回的"未建模"占位不应触发 rag_search 降级——
+        """未建模工具（如 judge_fight_order）返回的"未建模"占位不应触发 rag_search 降级——
         它本身就是诚实答案的一部分，交给 LLM 合成最终回答。"""
-        llm = ScriptedLLM("谋", steps=[
-            {"type": "tool_call", "tool": "simulate_combat",
-             "args": {"attacker": "a", "defender": "b"}},
-            {"type": "final", "content": "模拟功能尚未建模，计划于 P4 提供，暂无法给出数字结论。"},
+        llm = ScriptedLLM("判", steps=[
+            {"type": "tool_call", "tool": "judge_fight_order", "args": {}},
+            {"type": "final", "content": "战斗顺序判定尚未建模，计划于 P5 提供，暂无法给出裁定。"},
         ])
-        from agent.tools import simulate_combat
-        loop = AgentLoop(llm=llm, tools=_fake_tools(simulate_combat=simulate_combat))
+        from agent.tools import judge_fight_order
+        loop = AgentLoop(llm=llm, tools=_fake_tools(judge_fight_order=judge_fight_order))
 
-        result = loop.run("A打B谁赢？")
+        result = loop.run("谁先打？")
 
         assert result.degraded is False
-        assert result.tool_calls == ["simulate_combat"]
+        assert result.tool_calls == ["judge_fight_order"]
         assert "未建模" in result.answer
+
+
+class TestZeroToolAnswerGate:
+    """P0-1 零工具直答门控：查/判/算 类问题不许一次工具都不调就凭记忆作答。"""
+
+    def test_zero_tool_final_is_nudged_then_degrades_to_classic(self):
+        # 模型两次都想零工具直答 → 一次纠偏无效 → 降级 classic 兜底。
+        llm = ScriptedLLM("查", steps=[
+            {"type": "final", "content": "莫塔里安的W为12。", "sources": [{"book": "核心书", "page": 189}]},
+            {"type": "final", "content": "我还是坚持W为12。"},
+        ])
+        loop = AgentLoop(llm=llm, tools=_fake_tools())
+
+        result = loop.run("莫塔里安的W是多少？")
+
+        assert result.degraded is True
+        assert result.tool_calls == ["rag_search"]  # 门控前零工具，降级后补 rag_search
+        assert "测试书" in result.answer  # 来自 classic 兜底段落，而非编造的 W12
+        # 纠偏消息确实注入过（第二次 next_step 能看到）
+        assert any("先输出一个 tool_call" in str(m) for m in llm.next_step_calls[-1])
+
+    def test_nudge_makes_model_use_tool_then_answer_is_grounded(self):
+        # 纠偏后模型改走 get_datasheet 并成功 → 正常作答，不降级。
+        llm = ScriptedLLM("查", steps=[
+            {"type": "final", "content": "凭记忆：W12"},
+            {"type": "tool_call", "tool": "get_datasheet", "args": {"name_or_id": "莫塔里安"}},
+            {"type": "final", "content": "莫塔里安 W16。", "sources": [{"book": "钛帝国", "page": 1}]},
+        ])
+        tools = _fake_tools(get_datasheet=lambda name_or_id: {"found": True, "W": 16})
+        loop = AgentLoop(llm=llm, tools=tools)
+
+        result = loop.run("莫塔里安的W是多少？")
+
+        assert result.degraded is False
+        assert result.tool_calls == ["get_datasheet"]
+        assert "W16" in result.answer
+
+    def test_judge_intent_zero_tool_is_also_gated(self):
+        llm = ScriptedLLM("判", steps=[
+            {"type": "final", "content": "凭记忆判定：可以先手反击。"},
+            {"type": "final", "content": "还是可以。"},
+        ])
+        loop = AgentLoop(llm=llm, tools=_fake_tools())
+
+        result = loop.run("冲锋后对方能否先手反击？")
+
+        assert result.degraded is True
+
+    def test_chitchat_intent_allows_zero_tool_final(self):
+        llm = ScriptedLLM("闲聊", steps=[{"type": "final", "content": "你好呀，随便聊。"}])
+        loop = AgentLoop(llm=llm, tools=_fake_tools())
+
+        result = loop.run("在吗")
+
+        assert result.degraded is False
+        assert result.tool_calls == []
+        assert result.answer == "你好呀，随便聊。"
+
+    def test_scheme_intent_zero_tool_is_gated(self):
+        # 谋类（模拟对战）自 P4-e 起 simulate_combat 已建模：零工具凭直觉估「谁能赢」
+        # 应被门控——纠偏无效则降级 classic，而非放行编造的数字结论。
+        llm = ScriptedLLM("谋", steps=[
+            {"type": "final", "content": "凭感觉 10 个火战士稳赢，能杀 3 个。"},
+            {"type": "final", "content": "还是这个结论。"},
+        ])
+        loop = AgentLoop(llm=llm, tools=_fake_tools())
+
+        result = loop.run("10个火战士打5个终结者能杀几个？")
+
+        assert result.degraded is True
 
 
 class TestIntentClassificationFailsClosed:
@@ -184,7 +264,11 @@ class TestIntentClassificationFailsClosed:
         assert result.answer == "闲聊兜底回答"
 
     def test_unknown_intent_label_falls_back_to_default(self):
-        llm = ScriptedLLM("瞎猜的意图", steps=[{"type": "final", "content": "答案"}])
+        # 归一化到「查」后受零工具门控约束，故先走一次 rag_search 再 final。
+        llm = ScriptedLLM("瞎猜的意图", steps=[
+            {"type": "tool_call", "tool": "rag_search", "args": {"query": "x"}},
+            {"type": "final", "content": "答案"},
+        ])
         loop = AgentLoop(llm=llm, tools=_fake_tools())
 
         result = loop.run("问题")
@@ -194,7 +278,8 @@ class TestIntentClassificationFailsClosed:
 
 class TestUnknownToolName:
     def test_unknown_tool_call_is_reported_back_and_loop_continues(self):
-        llm = ScriptedLLM("查", steps=[
+        # 用「闲聊」意图避开零工具门控，专注验证未知工具被回报后循环继续。
+        llm = ScriptedLLM("闲聊", steps=[
             {"type": "tool_call", "tool": "does_not_exist", "args": {}},
             {"type": "final", "content": "尽管工具名不认识，仍然给出了回答"},
         ])

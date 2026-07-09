@@ -15,6 +15,7 @@ ingest.py — 战锤40K规则书知识库构建脚本
 """
 
 import os
+import re
 import sys
 import ssl
 import json
@@ -111,23 +112,37 @@ def save_processed_log(log: dict):
         json.dump(log, f, ensure_ascii=False, indent=2)
 
 
+# 只从**结尾**剥离的版本/日期/汉化组噪声（顺序不敏感，多轮迭代剥净）。
+# 关键：绝不在文件名**中间**的数字处截断——旧策略「取第一个数字之前」会把
+# 『6月4日分数中文』『6月4日平衡版中午』都截成『6月』、把『钛帝国十版CODEX-20251112』
+# 截成『钛帝国十版CODEX-』，导致不同书并成一个 book 名、引用与书目过滤失真。
+_BOOK_TAIL_PATTERNS = [
+    r"[Vv]?\d+(?:\.\d+)+$",            # 版本号 1.12 / V1.20 / 2.81
+    r"CODEX[-\s]*\d{6,8}$",            # CODEX-20251112
+    r"[-\s]*\d{6,8}$",                # 结尾 8 位日期
+    r"CODEX[-\s]*$",                  # 剥掉版本后残留的 CODEX-
+    r"(?:老湿腐版|DavidZ版|双子星版|双子星|kasa版?|官方版?)$",
+    r"[Vv]\d+$",                      # 单独 V20 之类
+    r"\s+\d+$",                       # 结尾空格+数字（如 '… 1'）
+]
+
+
 def get_book_name(filepath: Path) -> str:
+    """从文件名提取「书名」元数据，只剥结尾的版本/日期/汉化组噪声，保证不同书不撞名。
+
+    例：'黑暗天使10版中文老湿腐版1.12.pdf' → '黑暗天使10版中文'；
+        '钛帝国十版CODEX-20251112.pdf' → '钛帝国十版'；
+        '6月4日分数中文' / '6月4日平衡版中午' → 各自保留（不再并成 '6月'）。
+    结果为空则回退完整文件名，避免 book="" 导致引用/过滤失效。
     """
-    从文件名提取「书名」元数据。
-    例：'黑暗天使10版中文老湿腐版1.12.pdf' → '黑暗天使'
-    策略：跳过开头的数字/英文前缀（如 '10E官方中文核心规则'），
-    再取第一个数字之前的部分；结果为空则回退到完整文件名，
-    避免出现 book="" 导致引用和书目过滤失效。
-    """
-    stem = filepath.stem  # 去掉 .pdf
-    start = 0
-    while start < len(stem) and (stem[start].isdigit() or stem[start].isascii()):
-        start += 1
-    for i in range(start, len(stem)):
-        if stem[i].isdigit():
-            name = stem[:i].strip()
-            return name if name else stem
-    return stem
+    name = filepath.stem
+    for _ in range(4):  # 多轮：版本号 + 汉化组 + 残留 CODEX 可能叠加
+        before = name
+        for pat in _BOOK_TAIL_PATTERNS:
+            name = re.sub(pat, "", name, flags=re.IGNORECASE).strip(" -_")
+        if name == before:
+            break
+    return name if name else filepath.stem
 
 
 def refined_fingerprint(pdf_path: Path) -> str:

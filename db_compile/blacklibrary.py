@@ -233,7 +233,7 @@ def build_blacklibrary_docs(db_path):
     try:
         try:
             rows = conn.execute(
-                "SELECT canonical_id, name_zh, faction_zh, score, stats_json, "
+                "SELECT canonical_id, name_zh, faction_zh, stats_json, "
                 "abilities_json, weapons_json FROM unit_zh_detail "
                 "WHERE source='blackforum'").fetchall()
         except sqlite3.OperationalError:
@@ -242,14 +242,12 @@ def build_blacklibrary_docs(db_path):
         conn.close()
 
     docs = []
-    for cid, name_zh, faction_zh, score, stats_j, ab_j, w_j in rows:
+    for cid, name_zh, faction_zh, stats_j, ab_j, w_j in rows:
         if not name_zh:
             continue
-        lines = [f"## {name_zh}"]
-        meta_line = f"所属：{faction_zh or '未知'}"
-        if score:
-            meta_line += f" ｜ 点数：{score}"
-        lines.append(meta_line)
+        # 不渲染黑图书馆分数：它无版本标记，会成为绕过官方 MFM 权威链的第 4 个点数源，
+        # 经 classic 检索直接流入回答。点数一律走 L3 的 units.points_json(官方 MFM 覆写)。
+        lines = [f"## {name_zh}", f"所属：{faction_zh or '未知'}"]
         # 属性
         stats = json.loads(stats_j) if stats_j else []
         for m in stats:

@@ -1,14 +1,20 @@
 # tests/test_qa_bench.py
-"""scripts/qa_bench.py：judge 输出 → ✅/⚠️/❌ 解析（唯一值得单测的纯函数）。"""
+"""scripts/qa_bench.py：judge 输出解析 + 两段式机械判分纯函数。"""
+import json
 import sys
 from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent / "scripts"))
 
 from qa_bench import (  # noqa: E402
+    asked_fields,
     classify_stage,
+    decide_mechanical,
+    judge_gold_mechanical,
+    parse_gold_fields,
     parse_verdict,
     summarize_layered,
+    _stat_token,
 )
 
 
@@ -82,3 +88,209 @@ class TestSummarizeLayered:
         results = [{"retrieval_verdict": "❌", "generation_verdict": "❌"}]
         s = summarize_layered(results)
         assert s["conditional_gen_accuracy"] is None
+
+
+class TestStatToken:
+    """属性值归一化：去移动单位/多余文字，折叠连续 +，抽出可比对 token。"""
+
+    def test_strips_inch_markers(self):
+        assert _stat_token('10"') == "10"
+        assert _stat_token("10寸") == "10"
+        assert _stat_token("14寸") == "14"
+
+    def test_keeps_save_plus_and_collapses_double_plus(self):
+        assert _stat_token("3+") == "3+"
+        assert _stat_token("5++") == "5+"  # 特殊保护双加号与单加号等价
+
+    def test_keeps_negative_ap(self):
+        assert _stat_token("-4") == "-4"
+        assert _stat_token("0") == "0"
+
+    def test_dice_notation(self):
+        assert _stat_token("D6") == "d6"
+        assert _stat_token("D6+1") == "d6+1"
+        assert _stat_token("2D6") == "2d6"
+
+    def test_extracts_token_from_embedded_prose(self):
+        # gold 里数值后跟解释文字，仍抽出首个规范 token
+        assert _stat_token("2+（10版中WS体现在近战武器上") == "2+"
+        assert _stat_token("1。") == "1"
+
+    def test_none_and_no_digit(self):
+        assert _stat_token(None) is None
+        assert _stat_token("无") == "无"
+
+    def test_bare_dash_equals_none(self):
+        # 裸破折号（各种 dash）= 该项无，与「无」等价（#29 特殊保护：- vs 无）
+        assert _stat_token("-") == "无"
+        assert _stat_token("—") == "无"
+        assert _stat_token("–") == "无"
+        # 有数字的负值不受影响
+        assert _stat_token("-4") == "-4"
+
+
+class TestParseGoldFields:
+    def test_single_entity_latin_fields(self):
+        assert parse_gold_fields('影阳指挥官：M=10" T=4') == {"M": '10"', "T": "4"}
+
+    def test_multichar_keys_not_split(self):
+        got = parse_gold_fields("幽冥骑士：T=12 SV=2+ W=18")
+        assert got == {"T": "12", "SV": "2+", "W": "18"}
+
+    def test_invuln_special_save(self):
+        got = parse_gold_fields("燃雨战斗服：特殊保护=5++ W=15")
+        assert got == {"INV": "5++", "W": "15"}
+
+    def test_weapon_fields(self):
+        assert parse_gold_fields("High-energy fusion blaster S=10 AP=-4 D=D6") == {
+            "S": "10", "AP": "-4", "D": "D6"}
+
+    def test_multi_weapon_returns_none(self):
+        # 同字段重复出现 → 多武器/多模型，机械对齐不了，交 LLM
+        assert parse_gold_fields(
+            "Big choppa S=7 AP=-1 D=2；Choppa S=4 AP=-1 D=1") is None
+
+    def test_empty_gold(self):
+        assert parse_gold_fields("") is None
+        assert parse_gold_fields("纯文字没有数值") is None
+
+
+class TestAskedFields:
+    def test_latin_codes(self):
+        assert asked_fields("影阳指挥官的M和T各是多少？") == {"M", "T"}
+
+    def test_weapon_codes(self):
+        assert asked_fields("高能融合炮的S、AP、D各是多少？") == {"S", "AP", "D"}
+
+    def test_special_save_word(self):
+        assert asked_fields("终结者小队的SV和特殊保护是多少？") == {"SV", "INV"}
+
+    def test_chinese_synonyms(self):
+        got = asked_fields("这个单位的韧性和生命值是多少？")
+        assert "T" in got and "W" in got
+
+
+class TestDecideMechanical:
+    """纯函数：按 token 逐字段比对给 ✅/⚠️/❌。"""
+
+    def test_all_correct(self):
+        v, _ = decide_mechanical({"M": '10"', "T": "4"}, ["M", "T"],
+                                 {"M": "10寸", "T": "4"})
+        assert v == "✅"
+
+    def test_extra_field_in_answer_not_penalized(self):
+        # #81：问 M/SV，答对了还多报没问的 T=5 —— 不扣分
+        v, _ = decide_mechanical({"M": '5"', "SV": "4+"}, ["M", "SV"],
+                                 {"M": "5寸", "SV": "4+"})
+        assert v == "✅"
+
+    def test_missing_field_is_partial_not_wrong(self):
+        v, _ = decide_mechanical({"M": '10"', "T": "4"}, ["M", "T"],
+                                 {"M": "10寸", "T": None})
+        assert v == "⚠️"
+
+    def test_contradiction_is_wrong(self):
+        # #30：gold W=16，答 W=12 → ❌
+        v, reason = decide_mechanical({"W": "16"}, ["W"], {"W": "12"})
+        assert v == "❌"
+        assert "16" in reason
+
+    def test_all_missing_is_wrong(self):
+        v, _ = decide_mechanical({"W": "16"}, ["W"], {"W": None})
+        assert v == "❌"
+
+    def test_invuln_double_plus_matches_single(self):
+        v, _ = decide_mechanical({"INV": "5++"}, ["INV"], {"INV": "5+"})
+        assert v == "✅"
+
+    def test_invuln_none_dash_matches_wu(self):
+        # #29：gold 特殊保护「无」，回答给「-」→ 两者都表示无特殊保护，应 ✅
+        v, _ = decide_mechanical({"INV": "无"}, ["INV"], {"INV": "-"})
+        assert v == "✅"
+
+    # ── 多值抽取（答案覆盖多子单位/多武器，任一匹配 gold 即命中）──────────
+    def test_multi_value_any_match_passes(self):
+        # #95 噪音战士：答案先列爆音炮(S10/AP-2)又列音波枪(S5/AP-1)；gold 要 S5/AP-1
+        v, _ = decide_mechanical(
+            {"S": "5", "AP": "-1"}, ["S", "AP"],
+            {"S": ["10", "5"], "AP": ["-2", "-1"]},
+        )
+        assert v == "✅"
+
+    def test_multi_value_none_match_is_wrong(self):
+        # 多值但没有一个对上标准 → ❌（不是靠罗列蒙混）
+        v, reason = decide_mechanical({"S": "5"}, ["S"], {"S": ["10", "8"]})
+        assert v == "❌"
+        assert "5" in reason
+
+    def test_multi_value_partial_is_partial(self):
+        # #62 型：M 多子单位任一命中，T 漏答 → ⚠️（漏项不判❌）
+        v, _ = decide_mechanical(
+            {"M": '6"', "T": "3"}, ["M", "T"],
+            {"M": ["6", "6"], "T": []},
+        )
+        assert v == "⚠️"
+
+    def test_scalar_backward_compatible(self):
+        # 旧契约：单值标量仍照常比对
+        v, _ = decide_mechanical({"M": '10"'}, ["M"], {"M": "10寸"})
+        assert v == "✅"
+
+    def test_multi_value_end_to_end_extraction(self):
+        # 假 client 返回数组形式的抽取 JSON，机械判分应任一匹配即 ✅
+        client = _FakeExtractClient({"S": ["10", "5"], "AP": ["-2", "-1"]})
+        v, _ = judge_gold_mechanical(
+            "m", client, "噪音战士的S和AP是多少？",
+            "Sonic blaster S=5 AP=-1 D=2", "爆音炮S10 AP-2；音波枪S5 AP-1",
+        )
+        assert v == "✅"
+
+
+class _FakeExtractClient:
+    """假 client：extract_answer_fields 调用它时返回预设的抽取 JSON。"""
+
+    def __init__(self, extracted):
+        self._json = json.dumps(extracted, ensure_ascii=False)
+        self.chat = self  # 让 client.chat.completions.create 可达
+        self.completions = self
+
+    def create(self, **kwargs):
+        payload = self._json
+
+        class _Msg:
+            content = payload
+
+        class _Choice:
+            message = _Msg()
+
+        class _Resp:
+            choices = [_Choice()]
+
+        return _Resp()
+
+
+class TestJudgeGoldMechanicalEndToEnd:
+    """机械判分编排（gold 解析 + 假抽取 + 决策），不触真实 API。"""
+
+    def test_multi_weapon_gold_returns_none_for_llm_fallback(self):
+        client = _FakeExtractClient({})
+        got = judge_gold_mechanical(
+            "m", client, "兽人小子的格斗武器S和AP是多少？",
+            "Big choppa S=7 AP=-1 D=2；Choppa S=4 AP=-1 D=1", "答案",
+        )
+        assert got is None  # 交回 LLM judge
+
+    def test_correct_stat_answer_passes(self):
+        client = _FakeExtractClient({"M": "10寸", "T": "4"})
+        v, _ = judge_gold_mechanical(
+            "m", client, "影阳指挥官的M和T各是多少？",
+            '影阳指挥官：M=10" T=4', "M为10寸，T为4。",
+        )
+        assert v == "✅"
+
+    def test_wrong_stat_answer_fails(self):
+        client = _FakeExtractClient({"W": "12"})
+        v, _ = judge_gold_mechanical(
+            "m", client, "莫塔里安的W是多少？", "莫塔里安：W=16", "W为12",
+        )
+        assert v == "❌"

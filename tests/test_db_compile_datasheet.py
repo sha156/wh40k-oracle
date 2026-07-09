@@ -5,7 +5,52 @@ import sqlite3
 
 import pytest
 
-from db_compile.datasheet import find_datasheet, lookup_datasheet
+from db_compile.datasheet import (
+    Datasheet,
+    ModelProfile,
+    diff_core_stats,
+    find_datasheet,
+    lookup_datasheet,
+)
+
+
+def _ds(models):
+    return Datasheet(unit_id="1", name_en="X", name_zh=None, faction=None,
+                     points_min=None, points_options=[], keywords=[],
+                     models=models, weapons=[])
+
+
+def _model(m="10", t="10", sv="3", w="12"):
+    return ModelProfile(name="X", m=m, t=t, sv=sv, invuln="-", w=w, ld="6", oc="1")
+
+
+class TestDiffCoreStats:
+    """官方(Wahapedia) 与黑图书馆中文层的 M/T/SV/W 冲突检测。"""
+
+    def test_detects_conflict(self):
+        ds = _ds([_model(t="10", w="12")])
+        zh = {"属性": [{"m": "10", "t": "9", "sv": "3", "w": "14"}]}
+        got = {c["field"]: (c["official"], c["blackforum"]) for c in diff_core_stats(ds, zh)}
+        assert got == {"T": ("10", "9"), "W": ("12", "14")}
+
+    def test_no_conflict_when_equal_after_normalization(self):
+        # 官方带寸/加号，黑图不带 —— 归一化后相等，不算冲突
+        ds = _ds([_model(m='10"', sv="3+", t="10", w="12")])
+        zh = {"属性": [{"m": "10", "t": "10", "sv": "3", "w": "12"}]}
+        assert diff_core_stats(ds, zh) == []
+
+    def test_skips_multi_model_units(self):
+        ds = _ds([_model(), _model(t="8")])
+        zh = {"属性": [{"m": "10", "t": "9", "sv": "3", "w": "14"}]}
+        assert diff_core_stats(ds, zh) == []
+
+    def test_skips_missing_blackforum_values(self):
+        ds = _ds([_model(t="10")])
+        zh = {"属性": [{"m": "10", "t": "?", "sv": "", "w": None}]}
+        assert diff_core_stats(ds, zh) == []
+
+    def test_empty_zh_returns_no_conflict(self):
+        assert diff_core_stats(_ds([_model()]), None) == []
 
 
 def _make_db(tmp_path):

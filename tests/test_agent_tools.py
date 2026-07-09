@@ -211,7 +211,7 @@ class TestCalcPoints:
 
         assert result["found"] is True
         assert result["units"][0]["points"] is None
-        assert "缺" in result["units"][0]["note"]
+        assert "无法计算点数" in result["units"][0]["note"]
 
     def test_missing_db_reports_note_instead_of_crashing(self, tmp_path):
         result = agent_tools.calc_points(["000000407"], db_path=tmp_path / "no_such.sqlite")
@@ -306,8 +306,8 @@ class TestRagSearch:
 
 class TestUnmodeledToolsHonestPlaceholders:
     @pytest.mark.parametrize("fn, args", [
-        (agent_tools.judge_fight_order, {}),
-        (agent_tools.simulate_combat, {"attacker": "a", "defender": "b"}),
+        # simulate_combat（P4-e）/ judge_fight_order（P5-e）已建模，移出未建模占位清单
+        # （见 test_simulator_wiring 的 judge_fight_order 真实判定测试）
         (agent_tools.validate_roster, {"roster_text": "..."}),
         (agent_tools.critique_roster, {"roster_text": "..."}),
         (agent_tools.archive_answer, {"title": "t", "content": "c"}),

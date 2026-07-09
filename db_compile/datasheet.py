@@ -129,6 +129,43 @@ def lookup_datasheet(db_path, unit_id: str) -> Optional[Datasheet]:
         conn.close()
 
 
+def _norm_stat(v) -> str:
+    """把属性值归一化到可比对形式：去移动单位/救护 + 号，只留核心 token。"""
+    if v is None:
+        return ""
+    s = str(v).strip().lower()
+    for junk in ('"', "”", "“", "″", "′", "'", "寸", "吋", "+", " "):
+        s = s.replace(junk, "")
+    return s
+
+
+def diff_core_stats(ds: "Datasheet", zh: Optional[dict]) -> List[dict]:
+    """比较 Wahapedia(权威) 与黑图书馆中文层同一单位的 M/T/SV/W，返回冲突字段清单。
+
+    动机：get_datasheet 把官方英文属性块与黑图中文层合并进同一响应，实测约 29/919 个
+    单位两源数值不一致（War Dog Moirax T9≠10、Land Speeder W9≠6 等）。不检测就可能在
+    一次回答里同时给出两个矛盾数值。仅在两边各恰好一个 model 时比较（多 model 对齐易误判）。
+    返回 [{"field","official","blackforum"}, ...]，空列表表示一致或无法比较。
+    """
+    zh_stats = (zh or {}).get("属性") or []
+    if len(ds.models) != 1 or len(zh_stats) != 1:
+        return []
+    wm, zm = ds.models[0], zh_stats[0]
+    if not isinstance(zm, dict):
+        return []
+    conflicts = []
+    for field_name, off_val, zh_key in (
+        ("M", wm.m, "m"), ("T", wm.t, "t"), ("SV", wm.sv, "sv"), ("W", wm.w, "w"),
+    ):
+        zh_val = zm.get(zh_key)
+        if zh_val in (None, "", "?", "-"):
+            continue
+        if _norm_stat(off_val) != _norm_stat(zh_val):
+            conflicts.append({"field": field_name,
+                              "official": off_val, "blackforum": zh_val})
+    return conflicts
+
+
 def find_datasheet(db_path, name: str,
                    resolver=None) -> Optional[Datasheet]:
     """中文/英文/俗名 → 解析 canonical id → 属性块。英文名直查优先，兜底走 entity_resolver。"""

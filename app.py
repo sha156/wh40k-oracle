@@ -104,6 +104,9 @@ def chinese_tokenize(text: str) -> list[str]:
 # 规则书来自不同汉化组，同一单位的译名与社区常用叫法不一致。
 # 检索前把库内译名追加到查询里（扩展而非替换），BM25 和向量都受益。
 # 各映射均已对照 PDF 原文确认（英文原名标注在注释中）。
+# 说明：单位级社区俗名已统一进 sqlite aliases 表（DB_ALIASES，见下），classic 与 agent
+# 共用同一份。这里只保留 **武器名/短语级检索提示**——它们不是单位、进不了 units 外键的
+# aliases 表，但对查询召回有用。
 UNIT_ALIASES = {
     "卡巴利特战士": "阴谋团武士",       # Kabalite Warriors（黑暗灵族）
     "卡巴利特":     "阴谋团",
@@ -114,7 +117,8 @@ UNIT_ALIASES = {
     "死亡翼":       "死翼",             # Deathwing（黑暗天使）
     "虫族武士":     "泰伦武士",         # Tyranid Warriors（泰伦虫族）
     "赫尔松铁御":   "赫卡顿陆行要塞",   # Hekaton Land Fortress（沃坦联盟）
-    "惩罚者机甲":   "赎罪引擎",         # Penitent Engine（战斗修女）
+    "弹射器":       "星镖枪 shuriken catapult",  # 星镖枪译名差异（艾达灵族，#48）
+    "离子爆破者":   "Ion blaster",      # 沃坦远行者先锋武器（#83）
 }
 
 # 把双侧译名注册进 jieba，避免专有名词被切碎
@@ -133,11 +137,27 @@ TERM_ALIASES = load_term_aliases(Path(__file__).parent / "wiki" / "terms.json")
 for _zh in TERM_ALIASES:
     jieba.add_word(_zh)
 
+# ══════════════════════════════════════════════
+#  sqlite aliases 表（1633 条）→ 查询扩展
+#  与 agent 的 EntityResolver 共用同一份别名库，消除「两套并行别名体系」漂移。
+#  DB 缺失/无表时静默退化为空 dict，classic 仍可用 UNIT_ALIASES/TERM_ALIASES。
+# ══════════════════════════════════════════════
+from db_compile.aliases import load_alias_expansions
+
+_DB_PATH = Path(__file__).parent / "db" / "wh40k.sqlite"
+try:
+    DB_ALIASES = load_alias_expansions(_DB_PATH)
+except Exception:
+    DB_ALIASES = {}
+for _a in DB_ALIASES:
+    jieba.add_word(_a)
+
 
 def expand_query(query: str) -> str:
-    """查询扩展：命中社区译名/术语表时，追加库内译名与英文名（保留原词）。"""
+    """查询扩展：命中社区译名/术语表/别名库时，追加库内规范名与英文名（保留原词）。"""
     extras = [v for k, v in UNIT_ALIASES.items() if k in query]
     extras += [v for k, v in TERM_ALIASES.items() if k in query]
+    extras += [v for k, v in DB_ALIASES.items() if k in query]
     if not extras:
         return query
     return query + "（" + "，".join(dict.fromkeys(extras)) + "）"
@@ -473,15 +493,18 @@ def render_sidebar(vectorstore) -> tuple[str, str, float, list[str] | None, bool
 
         st.divider()
 
-        # ── 实验：Agent 模式（L5 编排层）──
-        st.markdown("### 🧪 实验功能")
+        # ── Agent 模式（L5 编排层）：2026-07-09 起默认开启 ──
+        # gold 基准两连跑确认 agent 稳定优于经典链（96.9/99.0 vs 95.8/94.8，且 0 错答
+        # vs 4 错答）：数值/属性题走 get_datasheet 拿结构库干净真值，零工具直答被门控
+        # 拦下（堵九版旧记忆 + 伪造引用），查不到再优雅降级经典链，故风险低。
+        st.markdown("### 🧭 检索模式")
         use_agent = st.checkbox(
             "Agent 模式",
-            value=False,
+            value=True,
             help=(
-                "开启后走 L5 Agent 编排层：意图分类 → 工具调用（查 wiki/术语/算分）"
+                "L5 Agent 编排层：意图分类 → 工具调用（查 datasheet/wiki/术语/算分）"
                 "→ 合成带引用的答案，工具查不到时静默降级到经典混合检索。"
-                "默认关闭，走现有 FAISS+BM25→RRF→LLM 经典链（流式）。"
+                "默认开启（gold 基准优于经典链）；取消勾选则走 FAISS+BM25→RRF→LLM 经典链（流式）。"
             ),
         )
 
@@ -721,6 +744,15 @@ def main():
         unsafe_allow_html=True,
     )
     st.divider()
+
+    # ── 视图切换（P5-d）：聊天 / 模拟器。模拟器只依赖 db/wh40k.sqlite，不需嵌入模型/LLM Key/向量库，
+    #    故放在 load_resources 之前分流，避免为跑模拟白加载 bge-m3。
+    #    （chat_input 必须留在脚本顶层，Streamlit 1.35 不允许其进 st.tabs，故用侧边栏 radio 切视图。）──
+    view = st.sidebar.radio("🧭 视图", ["💬 聊天", "⚔️ 模拟器"], key="view_mode")
+    if view == "⚔️ 模拟器":
+        from ui.simulator_panel import render_simulator_panel
+        render_simulator_panel(st)
+        return
 
     # ── 加载资源 ──
     try:
