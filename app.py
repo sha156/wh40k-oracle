@@ -493,15 +493,18 @@ def render_sidebar(vectorstore) -> tuple[str, str, float, list[str] | None, bool
 
         st.divider()
 
-        # ── 实验：Agent 模式（L5 编排层）──
-        st.markdown("### 🧪 实验功能")
+        # ── Agent 模式（L5 编排层）：2026-07-09 起默认开启 ──
+        # gold 基准两连跑确认 agent 稳定优于经典链（96.9/99.0 vs 95.8/94.8，且 0 错答
+        # vs 4 错答）：数值/属性题走 get_datasheet 拿结构库干净真值，零工具直答被门控
+        # 拦下（堵九版旧记忆 + 伪造引用），查不到再优雅降级经典链，故风险低。
+        st.markdown("### 🧭 检索模式")
         use_agent = st.checkbox(
             "Agent 模式",
-            value=False,
+            value=True,
             help=(
-                "开启后走 L5 Agent 编排层：意图分类 → 工具调用（查 wiki/术语/算分）"
+                "L5 Agent 编排层：意图分类 → 工具调用（查 datasheet/wiki/术语/算分）"
                 "→ 合成带引用的答案，工具查不到时静默降级到经典混合检索。"
-                "默认关闭，走现有 FAISS+BM25→RRF→LLM 经典链（流式）。"
+                "默认开启（gold 基准优于经典链）；取消勾选则走 FAISS+BM25→RRF→LLM 经典链（流式）。"
             ),
         )
 

@@ -120,6 +120,14 @@ class TestStatToken:
         assert _stat_token(None) is None
         assert _stat_token("无") == "无"
 
+    def test_bare_dash_equals_none(self):
+        # 裸破折号（各种 dash）= 该项无，与「无」等价（#29 特殊保护：- vs 无）
+        assert _stat_token("-") == "无"
+        assert _stat_token("—") == "无"
+        assert _stat_token("–") == "无"
+        # 有数字的负值不受影响
+        assert _stat_token("-4") == "-4"
+
 
 class TestParseGoldFields:
     def test_single_entity_latin_fields(self):
@@ -193,6 +201,48 @@ class TestDecideMechanical:
 
     def test_invuln_double_plus_matches_single(self):
         v, _ = decide_mechanical({"INV": "5++"}, ["INV"], {"INV": "5+"})
+        assert v == "✅"
+
+    def test_invuln_none_dash_matches_wu(self):
+        # #29：gold 特殊保护「无」，回答给「-」→ 两者都表示无特殊保护，应 ✅
+        v, _ = decide_mechanical({"INV": "无"}, ["INV"], {"INV": "-"})
+        assert v == "✅"
+
+    # ── 多值抽取（答案覆盖多子单位/多武器，任一匹配 gold 即命中）──────────
+    def test_multi_value_any_match_passes(self):
+        # #95 噪音战士：答案先列爆音炮(S10/AP-2)又列音波枪(S5/AP-1)；gold 要 S5/AP-1
+        v, _ = decide_mechanical(
+            {"S": "5", "AP": "-1"}, ["S", "AP"],
+            {"S": ["10", "5"], "AP": ["-2", "-1"]},
+        )
+        assert v == "✅"
+
+    def test_multi_value_none_match_is_wrong(self):
+        # 多值但没有一个对上标准 → ❌（不是靠罗列蒙混）
+        v, reason = decide_mechanical({"S": "5"}, ["S"], {"S": ["10", "8"]})
+        assert v == "❌"
+        assert "5" in reason
+
+    def test_multi_value_partial_is_partial(self):
+        # #62 型：M 多子单位任一命中，T 漏答 → ⚠️（漏项不判❌）
+        v, _ = decide_mechanical(
+            {"M": '6"', "T": "3"}, ["M", "T"],
+            {"M": ["6", "6"], "T": []},
+        )
+        assert v == "⚠️"
+
+    def test_scalar_backward_compatible(self):
+        # 旧契约：单值标量仍照常比对
+        v, _ = decide_mechanical({"M": '10"'}, ["M"], {"M": "10寸"})
+        assert v == "✅"
+
+    def test_multi_value_end_to_end_extraction(self):
+        # 假 client 返回数组形式的抽取 JSON，机械判分应任一匹配即 ✅
+        client = _FakeExtractClient({"S": ["10", "5"], "AP": ["-2", "-1"]})
+        v, _ = judge_gold_mechanical(
+            "m", client, "噪音战士的S和AP是多少？",
+            "Sonic blaster S=5 AP=-1 D=2", "爆音炮S10 AP-2；音波枪S5 AP-1",
+        )
         assert v == "✅"
 
 

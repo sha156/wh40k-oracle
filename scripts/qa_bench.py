@@ -410,10 +410,16 @@ def _stat_token(value):
     s = str(value).strip().lower()
     for junk in ('"', "”", "“", "″", "′", "'", "寸", "吋", "inch", "英寸"):
         s = s.replace(junk, "")
+    # 各种破折号统一成 ASCII，便于把「无（此项）」的多种写法归一
+    for dash in ("—", "–", "－", "―"):
+        s = s.replace(dash, "-")
     m = re.search(r"\d*d\d+(?:\+\d+)?|-?\d+\+*|无|-", s)
     if not m:
         return None
-    return re.sub(r"\++", "+", m.group(0))
+    tok = re.sub(r"\++", "+", m.group(0))
+    # 裸破折号 = 该项无（如无特殊保护），与「无」等价——统一成「无」避免把
+    # 「特殊保护：-」冤判为与标准「无」不符（#29 瘟疫战士）。
+    return "无" if tok == "-" else tok
 
 
 def parse_gold_fields(gold):
@@ -451,25 +457,38 @@ def asked_fields(question):
     return found
 
 
+def _answer_tokens(value):
+    """把 extracted[field] 归一化成 token 列表。
+
+    值可以是单值（旧契约）或数组（多子单位/多武器）；None→[]、标量→[标量]。
+    抽不出规范数值的元素丢弃。
+    """
+    vals = value if isinstance(value, list) else ([] if value is None else [value])
+    return [t for t in (_stat_token(v) for v in vals) if t is not None]
+
+
 def decide_mechanical(gold_fields, required, extracted):
     """纯函数：按归一化 token 逐字段比对，给出 (verdict, reason)。
 
-    - 任一被问字段的值与标准矛盾 → ❌
-    - 被问字段全部答对且无漏 → ✅
-    - 部分答对、其余漏答（无矛盾）→ ⚠️
+    每个被问字段，extracted 里可以是单值或多值（回答覆盖多个子单位/多把武器）；
+    只要**任一**答案值与标准值一致即算该字段命中——避免机械抽取器在多实体答案里
+    抽错行，把答对的题冤判为错（#62 卡迪安重武器班、#95 噪音战士）。
+
+    - 任一被问字段答了值但无一与标准一致 → ❌
+    - 被问字段全部命中且无漏 → ✅
+    - 部分命中、其余漏答（无矛盾）→ ⚠️
     - 被问字段全部漏答 → ❌（答非所问）
     """
     wrong, matched, missing = [], [], []
     for f in required:
         gold_tok = _stat_token(gold_fields.get(f))
-        ans_raw = extracted.get(f)
-        ans_tok = _stat_token(ans_raw)
-        if ans_tok is None:
+        ans_tokens = _answer_tokens(extracted.get(f))
+        if not ans_tokens:
             missing.append(f)
-        elif ans_tok == gold_tok:
+        elif gold_tok in ans_tokens:
             matched.append(f)
         else:
-            wrong.append((f, ans_raw, gold_fields.get(f)))
+            wrong.append((f, extracted.get(f), gold_fields.get(f)))
     if wrong:
         detail = "；".join(f"{f} 答「{a}」≠标准「{g}」" for f, a, g in wrong)
         return "❌", f"数值不符：{detail}"
@@ -480,22 +499,36 @@ def decide_mechanical(gold_fields, required, extracted):
     return "❌", f"未回答被问字段：{'/'.join(missing)}"
 
 
+def _coerce_value_list(v):
+    """把抽取结果里单个字段的值规整成列表：None→[]、标量→[标量]、列表原样。"""
+    if v is None:
+        return []
+    if isinstance(v, list):
+        return [x for x in v if x is not None]
+    return [v]
+
+
 def extract_answer_fields(model, client, question, answer, fields):
-    """LLM 仅做抽取（不判断）：从回答中抽出各字段的原文数值，缺失返回 null。"""
+    """LLM 仅做抽取（不判断）：从回答中抽出各字段的**全部**原文数值，缺失返回空数组。
+
+    回答可能覆盖多个子单位/多把武器（同一字段出现多个不同数值），因此每个字段抽成数组，
+    交由 decide_mechanical「任一匹配 gold 即算命中」——避免抽取器在多实体答案里抽错行。
+    """
     labels = "、".join(f"{f}={_FIELD_LABEL.get(f, f)}" for f in fields)
     sys_prompt = (
         "你是数据抽取器，只做抽取不做判断。从【回答】中抽取它明确给出的下列字段数值，"
         "字段清单（代码=含义）：" + labels + "。\n"
-        "以 JSON 对象返回，键为字段代码，值为回答中该字段的原文数值"
-        '（如 "10寸"、"2+"、"-4"、"D6"、"无"）；'
-        "若回答没有明确给出某字段，该键返回 null。不要推断或补全，只照抄回答里的数字。"
+        "回答可能涉及多个子单位或多把武器，同一字段可能出现多个不同数值。\n"
+        "以 JSON 对象返回，键为字段代码，值为该字段在回答中出现的**所有**原文数值组成的数组"
+        '（如 {"S": ["10", "5"], "AP": ["-2", "-1"]}，元素形如 "10寸"、"2+"、"-4"、"D6"、"无"）；'
+        "若回答没有明确给出某字段，该键返回空数组 []。不要推断或补全，只照抄回答里的数字。"
     )
     user = f"【问题】{question}\n\n【回答】{answer}\n\n只输出 JSON 对象。"
     kwargs = dict(
         model=model,
         messages=[{"role": "system", "content": sys_prompt},
                   {"role": "user", "content": user}],
-        temperature=0.0, max_tokens=200, stream=False,
+        temperature=0.0, max_tokens=300, stream=False,
     )
     try:
         resp = client.chat.completions.create(
@@ -509,7 +542,8 @@ def extract_answer_fields(model, client, question, answer, fields):
     except Exception:
         m = re.search(r"\{.*\}", text, re.S)
         obj = json.loads(m.group(0)) if m else {}
-    return {f: (obj.get(f) if isinstance(obj, dict) else None) for f in fields}
+    return {f: _coerce_value_list(obj.get(f) if isinstance(obj, dict) else None)
+            for f in fields}
 
 
 def judge_gold_mechanical(model, client, question, gold, answer):

@@ -25,6 +25,13 @@ NICKNAMES: Dict[str, str] = {
     "战争老大": "Warboss",                 # 兽人俗名，库内规范名「战争头目」(#38)
     "惩罚者机甲": "Penitent Engines",      # 战斗修女，库内规范名「忏悔者机甲」；
                                            # 勿与「惩罚者坦克」Castigator 混淆 (#100)
+    "兽人小子": "Boyz",                    # 兽人步兵俗名（兽人=Ork），库内规范名「小子」(#41)；
+                                           # resolver 对「兽人小子」原会 ambiguous(兽霸小子/小子)
+    # 武器 → 唯一携带单位桥：题目只给武器名、系统无按武器名查询能力时，把武器名指到
+    # 携带它的唯一单位，get_datasheet 返回该单位属性块（含该武器）即可作答。
+    # 「Ion blaster」全库仅 Hearthkyn Warriors(炉心战士) 携带；不加会被 fuzzy 错配到
+    # 基因窃取者 Reductus Saboteur 的炸药包（confident 错答）(#83)。
+    "离子爆破者": "Hearthkyn Warriors",
 }
 
 

@@ -125,7 +125,7 @@
       "id": 14,
       "faction": "星际战士",
       "question": "地狱轰击者的等离子焚化枪有多少种射击模式？各是什么？",
-      "gold": "地狱轰击者的等离子焚化枪有两种射击模式：标准模式（S8 AP-3 D2）与过载模式（S9 AP-4 D3，过载会致命过热，命中失败时每个失败造成1点自身伤害）。",
+      "gold": "地狱轰击者的等离子焚化枪有两种射击模式：标准模式（S7 AP-2 D1）与过载模式（S8 AP-3 D2，过载会致命过热，命中失败时每个失败造成1点自身伤害）。原 gold 的 S8/S9 系误取「大型等离子焚化枪 Macro plasma incinerator」（救赎者无畏/处决者坦克）数据，Hellblaster 携带的是普通版。",
       "gold_type": "ability",
       "canonical_id": "000002098",
       "unit": "地狱轰击者小队/Hellblaster Squad"
@@ -719,10 +719,10 @@
       "id": 83,
       "faction": "沃坦联盟",
       "question": "离子爆破者的S和AP是多少？",
-      "gold": "离子爆破者（Ion blaster，沃坦远行者先锋武器）S=5 AP=-2 D=1。",
+      "gold": "离子爆破者（Ion blaster，沃坦炉心战士 Hearthkyn Warriors 携带的武器）S=5 AP=-2 D=1。",
       "gold_type": "weapon",
-      "canonical_id": "000002525",
-      "unit": "还原爆破使/Reductus Saboteur"
+      "canonical_id": "000002598",
+      "unit": "炉心战士/Hearthkyn Warriors"
     },
     {
       "id": 85,
