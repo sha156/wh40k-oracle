@@ -7,6 +7,7 @@ from __future__ import annotations
 
 from typing import List, Sequence, Tuple
 
+from engines.simulator.abilities import AbilityClassification, classify_records
 from engines.simulator.contracts import (
     AttackerProfile,
     SimContext,
@@ -24,8 +25,8 @@ STANDARD_BIAS: Tuple[str, ...] = (
     "交换比按『击杀模型→点数』折算，多耐伤单位被打残未死的部分点损失不计入",
 )
 
-# abilities 表 3677 条全 not_modeled（spec 第三节）
-_ABILITIES_NOTE = "阵营技能/军队规则/分队规则/CP 战略未建模（abilities 全表 not_modeled，P5 主体）"
+# P4 遗留：守方无挂载技能行时的兜底声明（P5-a 起优先用逐条精确分类，见 build_not_modeled）
+_ABILITIES_NOTE = "阵营技能/军队规则/分队规则/CP 战略未建模（abilities 全表 not_modeled）"
 
 
 def collect_effect_reporting(
@@ -53,13 +54,34 @@ def collect_effect_reporting(
     return _dedup(modeled), _dedup(annotated), _dedup(unparsed)
 
 
+def classify_target_abilities(target: TargetProfile) -> AbilityClassification:
+    """守方挂载技能 → 分类（P5-a）。无技能行时返回空分类。"""
+    return classify_records(tuple(target.abilities))
+
+
+def build_toggles_available(target: TargetProfile) -> Tuple[Tuple[str, str, bool], ...]:
+    """守方可 opt-in 的防守开关（名字, 一句话, 是否已解析出参数）——只列名不施加。"""
+    return tuple(classify_target_abilities(target).toggle_summaries())
+
+
 def build_not_modeled(attacker: AttackerProfile, target: TargetProfile) -> List[str]:
-    """本次模拟已知但未计入的机制清单（词条标注 + 低频词条 + abilities + 混编警示）。"""
+    """本次模拟已知但未计入的机制清单（词条标注 + 低频词条 + 精确技能分类 + 混编警示）。"""
     _modeled, annotated, unparsed = collect_effect_reporting(attacker)
     notes: List[str] = list(annotated)
     if unparsed:
         notes.append("未识别低频专属词条（记日志、未建模）：" + "、".join(sorted(set(unparsed))))
-    notes.append(_ABILITIES_NOTE)
+
+    # P5-a：守方技能逐条精确分类披露，取代 P4 那句笼统声明
+    cls = classify_target_abilities(target)
+    if cls.total > 0:
+        notes.extend(cls.not_modeled_by_category())
+        toggles = cls.toggle_summaries()
+        if toggles:
+            names = "、".join(f"{n}（{d}）" for n, d, _ in toggles)
+            notes.append("可开关建模但默认未启用（需 options/面板 opt-in）：" + names)
+    else:
+        notes.append(_ABILITIES_NOTE)
+
     if len(target.model_rows) > 1:
         notes.append(f"守方为混编单位（{len(target.model_rows)} 种模型行），"
                      f"本次按主模型行 T{target.t}/Sv{target.sv}/W{target.w} 近似")
@@ -71,12 +93,12 @@ def build_context(
     target: TargetProfile,
     stance: Stance,
 ) -> SimContext:
-    """组装 SimContext（P4：效果通道 + 诚实清单；faction/detachment 留 P5 空位）。"""
+    """组装 SimContext（P5-a：效果通道 + 精确技能分类 + 可 opt-in 防守开关列名）。"""
     return SimContext(
         attacker=attacker,
         target=target,
         stance=stance,
         effects=(),
-        toggles_available=(),
+        toggles_available=build_toggles_available(target),
         not_modeled=tuple(build_not_modeled(attacker, target)),
     )

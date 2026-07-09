@@ -86,6 +86,8 @@ def _cond_true(condition: Tuple, stance: Stance, target: TargetProfile) -> bool:
         return stance.long_range
     if tag == "indirect":
         return stance.indirect
+    if tag == "phase_shooting":          # P5-a：Stealth 等仅对射击生效
+        return stance.phase == "shooting"
     if tag == "target_has_keyword":
         return len(condition) > 1 and condition[1] in target.keywords
     return False
@@ -147,6 +149,11 @@ def _gather_params(w: WeaponProfile, stance: Stance, target: TargetProfile) -> _
                 p.ignores_cover = True
             elif e.op == "cover" and ok:
                 p.cover = True
+    # P5-a：守方防守 Effect 里改攻方命中的修正（如 Stealth：射击命中 -1）并入，再统一夹取。
+    # 十版修正上限是对【总和】夹 ±1，故必须在 clamp 之前叠加（Stealth -1 与 heavy +1 可抵消为 0）。
+    for e in target.effects:
+        if e.phase == "hit" and e.op == "modify" and _cond_true(e.condition, stance, target):
+            p.hit_mod += int(e.params[0])
     # 命中/致伤修正各自夹到 ±1（十版修正上限）
     p.hit_mod = max(-1, min(1, p.hit_mod))
     p.wound_mod = max(-1, min(1, p.wound_mod))

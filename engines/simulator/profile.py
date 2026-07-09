@@ -11,7 +11,7 @@ from dataclasses import dataclass
 from pathlib import Path
 from typing import Dict, List, Optional, Tuple
 
-from engines.simulator.contracts import TargetProfile, WeaponProfile
+from engines.simulator.contracts import AbilityRecord, TargetProfile, WeaponProfile
 from engines.simulator.parse import (
     expected_dice,
     norm_stat_int,
@@ -94,6 +94,23 @@ def load_weapon_pool(db_path, unit_id: str) -> List[WeaponProfile]:
     return [_row_to_weapon(r) for r in rows]
 
 
+def load_abilities(db_path, unit_id: str) -> Tuple[AbilityRecord, ...]:
+    """单位挂载的技能行（P5-a）：abilities 表 owner_id 命中，正文清洗成纯文本。
+
+    只读，供分类披露；不自动施加任何效果（见 abilities.py 裁决）。
+    """
+    from engines.simulator.abilities import clean_text  # 延迟避免循环
+    conn = sqlite3.connect(str(db_path))
+    try:
+        rows = conn.execute(
+            "SELECT name_en, text_zh FROM abilities WHERE owner_id = ? ORDER BY id",
+            (unit_id,)).fetchall()
+    finally:
+        conn.close()
+    return tuple(AbilityRecord(name_en=(r[0] or ""), text=clean_text(r[1]))
+                 for r in rows)
+
+
 def load_unit_header(db_path, unit_id: str) -> Optional[UnitHeader]:
     conn = sqlite3.connect(str(db_path))
     try:
@@ -137,4 +154,5 @@ def load_target(db_path, unit_id: str, models: Optional[int] = None,
         oc=primary["oc"] or 0,
         keywords=header.keywords,
         model_rows=header.model_rows,
+        abilities=load_abilities(db_path, unit_id),
     )

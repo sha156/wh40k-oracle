@@ -76,7 +76,9 @@ def test_simulate_combat_end_to_end():
     assert rep["funnel"]["attacks"] == 20.0            # 10 Shoota × A2
     assert rep["expected_damage"] >= 0
     assert rep["bias_notes"]                            # 诚实声明非空
-    assert any("abilities" in nm.lower() for nm in rep["not_modeled"])
+    # P5-a：not_modeled 由笼统一行升级为逐条精确分类（"未建模·<类别>：技能名"）
+    assert any("未建模·" in nm for nm in rep["not_modeled"])
+    assert "defender_toggles" in res                     # 守方可 opt-in 开关列名（可为空）
 
 
 @pytestmark_db

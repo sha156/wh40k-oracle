@@ -43,6 +43,16 @@ class Effect:
 
 
 @dataclass(frozen=True)
+class AbilityRecord:
+    """单位挂载的一条技能原料（P5-a）：英文名 + 已清洗正文。
+
+    纯数据，零逻辑——分类语义在 abilities.py（保持 contracts 零依赖）。
+    """
+    name_en: str
+    text: str = ""
+
+
+@dataclass(frozen=True)
 class WeaponProfile:
     """单把武器 profile。同名多 profile（远近双模式）按 range + phase 区分。"""
     name_zh: Optional[str]
@@ -87,7 +97,8 @@ class TargetProfile:
     oc: int
     keywords: frozenset = frozenset()  # 供 anti-X / blast 判定
     model_rows: Tuple = ()           # tuple[dict]：混编单位的多 model 行（单一时为空）
-    effects: Tuple = ()              # options 手动防守开关（FNP/减伤/掩体）→ Effect
+    effects: Tuple = ()              # options 手动防守开关（FNP/减伤/掩体/Stealth）→ Effect
+    abilities: Tuple = ()            # tuple[AbilityRecord]：P5-a 挂载技能原料，供分类披露（不自动施加）
 
 
 @dataclass(frozen=True)

@@ -335,6 +335,10 @@ def simulate_combat(
         if target is None:
             return {"ok": False, "modeled": True, "tool": "simulate_combat",
                     "reason": "not_found", "note": f"守方 {defender} 无法装载"}
+        # P5-a：守方可 opt-in 的防守开关（名字/说明/是否解析出参数）——供面板预填、不自动施加
+        from engines.simulator.context import build_toggles_available
+        defender_toggles = [{"name": nm, "note": note, "parsed": parsed}
+                            for nm, note, parsed in build_toggles_available(target)]
         # 防守侧手动开关 → Effect
         def_effects = []
         if options.get("fnp"):
@@ -344,6 +348,9 @@ def simulate_combat(
             def_effects.append(Effect("damage", "damage_reduction",
                                       (int(options["damage_reduction"]),), (),
                                       "damage reduction"))
+        if options.get("stealth"):    # P5-a：守方 Stealth → 攻方射击命中 -1（仅射击）
+            def_effects.append(Effect("hit", "modify", (-1,), ("phase_shooting",),
+                                      "stealth"))
         if def_effects:
             target = _replace(target, effects=tuple(def_effects))
 
@@ -370,12 +377,14 @@ def simulate_combat(
                 return {"ok": True, "modeled": True, "tool": "simulate_combat",
                         "attacker": a["name_en"], "defender": d["name_en"],
                         "phase": phase, "report": _report_to_dict(rep),
+                        "defender_toggles": defender_toggles,
                         "warning": a.get("warning") or d.get("warning")}
 
         rep = simulate(asm.attacker, target, stance, n=n, seed=seed, points=points_a)
         return {"ok": True, "modeled": True, "tool": "simulate_combat",
                 "attacker": a["name_en"], "defender": d["name_en"],
                 "phase": phase, "report": _report_to_dict(rep),
+                "defender_toggles": defender_toggles,
                 "warning": a.get("warning") or d.get("warning")}
     except Exception as exc:   # noqa: BLE001 — 显式暴露，不静默吞
         import traceback
