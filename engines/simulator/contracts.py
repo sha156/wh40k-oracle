@@ -98,6 +98,8 @@ class Stance:
     stationary: bool = False
     half_range: bool = False         # 距离档：是否在半射程内（rapid fire / melta 触发）
     target_in_cover: bool = False
+    long_range: bool = False         # 目标完全在 12"/24" 外（conversion 暴击命中阈值下调触发）
+    indirect: bool = False           # 以间接火力开火（indirect fire：命中 -1 且目标获掩体）
 
 
 @dataclass(frozen=True)

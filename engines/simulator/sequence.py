@@ -23,6 +23,7 @@ import numpy as np
 from engines.simulator._spike_allocation import allocate_numpy
 from engines.simulator.contracts import (
     AttackerProfile,
+    DiceExpr,
     Stance,
     TargetProfile,
     WeaponProfile,
@@ -68,10 +69,154 @@ def effective_save(sv: int, ap: int, invuln: Optional[int],
 
 
 # ---------------------------------------------------------------------------
-# Effect 读取（P4-b：dev / 防守开关；P4-c 扩展）
+# Effect 读取（P4-c：词条按阶段生效）
 # ---------------------------------------------------------------------------
-def _weapon_has(w: WeaponProfile, phase: str, op: str) -> bool:
-    return any(e.phase == phase and e.op == op for e in w.effects)
+def _cond_true(condition: Tuple, stance: Stance, target: TargetProfile) -> bool:
+    """Effect.condition 是否在本次态势/目标下成立。"""
+    if not condition:
+        return True
+    tag = condition[0]
+    if tag == "half_range":
+        return stance.half_range
+    if tag == "stationary":
+        return stance.stationary
+    if tag == "charging":
+        return stance.charging
+    if tag == "long_range":
+        return stance.long_range
+    if tag == "indirect":
+        return stance.indirect
+    if tag == "target_has_keyword":
+        return len(condition) > 1 and condition[1] in target.keywords
+    return False
+
+
+@dataclass
+class _WeaponParams:
+    """一把武器在当前态势下解算出的生效参数（把 Effect 汇成标量开关）。"""
+    rf_bonus: int = 0
+    blast: bool = False
+    melta_bonus: int = 0
+    crit_hit_thr: int = _FACES
+    sustained: object = None      # DiceExpr | None
+    lethal: bool = False
+    torrent: bool = False
+    hit_mod: int = 0
+    crit_wound_thr: int = _FACES
+    twin: bool = False
+    has_dev: bool = False
+    wound_mod: int = 0
+    ignores_cover: bool = False
+    cover: bool = False
+
+
+def _gather_params(w: WeaponProfile, stance: Stance, target: TargetProfile) -> _WeaponParams:
+    p = _WeaponParams(cover=stance.target_in_cover)
+    for e in w.effects:
+        ok = _cond_true(e.condition, stance, target)
+        if e.phase == "attacks":
+            if e.op == "modify" and ok:
+                p.rf_bonus += int(e.params[0])
+            elif e.op == "blast":
+                p.blast = True
+        elif e.phase == "hit":
+            if e.op == "extra_hits":
+                p.sustained = e.params[0]
+            elif e.op == "auto_wound":
+                p.lethal = True
+            elif e.op == "auto_hit":
+                p.torrent = True
+            elif e.op == "crit_threshold" and ok:
+                p.crit_hit_thr = min(p.crit_hit_thr, int(e.params[0]))
+            elif e.op == "modify" and ok:
+                p.hit_mod += int(e.params[0])
+        elif e.phase == "wound":
+            if e.op == "mortal_pool":
+                p.has_dev = True
+            elif e.op == "crit_threshold" and ok:
+                p.crit_wound_thr = min(p.crit_wound_thr, int(e.params[0]))
+            elif e.op == "reroll":
+                p.twin = True
+            elif e.op == "modify" and ok:
+                p.wound_mod += int(e.params[0])
+        elif e.phase == "damage":
+            if e.op == "modify" and ok:
+                p.melta_bonus += int(e.params[0])
+        elif e.phase == "save":
+            if e.op == "ignores_cover":
+                p.ignores_cover = True
+            elif e.op == "cover" and ok:
+                p.cover = True
+    # 命中/致伤修正各自夹到 ±1（十版修正上限）
+    p.hit_mod = max(-1, min(1, p.hit_mod))
+    p.wound_mod = max(-1, min(1, p.wound_mod))
+    return p
+
+
+def _wound_save_damage(
+    mask: np.ndarray, rng: np.random.Generator, n: int,
+    wt: int, crit_wound_thr: int, wound_mod: int, twin: bool, has_dev: bool,
+    sv_need: int, dmg_expr, melta_bonus: int, dmg_reduction: int,
+) -> Tuple[np.ndarray, np.ndarray, np.ndarray, np.ndarray, np.ndarray]:
+    """给定"进入致伤掷骰"的攻击掩码，产出正常伤害/致命池伤害数组 + 漏斗计数。"""
+    k = mask.shape[1]
+    zc = np.zeros(n, dtype=np.int64)
+    if k == 0:
+        z = np.zeros((n, 0), dtype=np.int64)
+        return z, z, zc, zc, zc
+
+    def _wound_ok(roll):
+        return mask & (roll != 1) & ((roll >= crit_wound_thr) | (roll + wound_mod >= wt))
+
+    roll = rng.integers(1, _FACES + 1, size=(n, k), dtype=np.int64)
+    if twin:                                     # twin-linked：重骰失败的致伤骰（整颗替换）
+        roll2 = rng.integers(1, _FACES + 1, size=(n, k), dtype=np.int64)
+        roll = np.where(mask & ~_wound_ok(roll), roll2, roll)
+
+    crit = mask & (roll >= crit_wound_thr) & (roll != 1)
+    wound_ok = _wound_ok(roll)
+    if has_dev:
+        to_mortal = crit                          # 暴击造伤入致命池（跳保存）
+        normal = wound_ok & ~crit
+    else:
+        to_mortal = np.zeros_like(mask)
+        normal = wound_ok
+
+    save_roll = rng.integers(1, _FACES + 1, size=(n, k), dtype=np.int64)
+    saved = normal & (save_roll != 1) & (save_roll >= sv_need)
+    unsaved = normal & ~saved
+
+    dmg = sample_dice(dmg_expr, rng, (n, k)).astype(np.int64)
+    if melta_bonus:
+        dmg = dmg + melta_bonus
+    dmg = np.maximum(dmg - dmg_reduction, 1) if dmg_reduction > 0 else np.maximum(dmg, 1)
+    normal_dmg = np.where(unsaved, dmg, 0)
+    mortal_dmg = np.where(to_mortal, dmg, 0)
+    return (normal_dmg, mortal_dmg,
+            wound_ok.sum(axis=1).astype(np.int64),
+            unsaved.sum(axis=1).astype(np.int64),
+            to_mortal.sum(axis=1).astype(np.int64))
+
+
+def _autowound_save_damage(
+    mask: np.ndarray, rng: np.random.Generator, n: int,
+    sv_need: int, dmg_expr, melta_bonus: int, dmg_reduction: int,
+) -> Tuple[np.ndarray, np.ndarray, np.ndarray]:
+    """lethal hits 暴击命中 → 自动致伤（跳致伤掷骰、不触发 dev）：直接走保存+伤害。"""
+    k = mask.shape[1]
+    zc = np.zeros(n, dtype=np.int64)
+    if k == 0:
+        return np.zeros((n, 0), dtype=np.int64), zc, zc
+    save_roll = rng.integers(1, _FACES + 1, size=(n, k), dtype=np.int64)
+    saved = mask & (save_roll != 1) & (save_roll >= sv_need)
+    unsaved = mask & ~saved
+    dmg = sample_dice(dmg_expr, rng, (n, k)).astype(np.int64)
+    if melta_bonus:
+        dmg = dmg + melta_bonus
+    dmg = np.maximum(dmg - dmg_reduction, 1) if dmg_reduction > 0 else np.maximum(dmg, 1)
+    return (np.where(unsaved, dmg, 0),
+            mask.sum(axis=1).astype(np.int64),
+            unsaved.sum(axis=1).astype(np.int64))
 
 
 def _target_effect_value(target: TargetProfile, op: str) -> Optional[int]:
@@ -112,63 +257,76 @@ def _resolve_weapon(
     fnp_thresh: Optional[int],
     dmg_reduction: int,
 ) -> Tuple[np.ndarray, np.ndarray, dict]:
+    p = _gather_params(w, stance, target)
     count = max(int(w.count), 1)
-
-    # ① Attacks：每个持武器模型各掷 A，求和为本武器总攻击数
-    atk = sample_dice(w.attacks, rng, (n, count))          # (n, count)
-    n_attacks = atk.sum(axis=1).astype(np.int64)           # (n,)
-    max_a = int(n_attacks.max())
     empty = np.zeros((n, 0), dtype=np.int64)
+    zeros = np.zeros(n, dtype=np.int64)
+
+    # ① Attacks：每模型掷 A，+rapid fire（半射程）+blast（每满 5 目标模型）
+    atk = sample_dice(w.attacks, rng, (n, count)).astype(np.int64)
+    if p.rf_bonus:
+        atk = atk + p.rf_bonus
+    if p.blast:
+        atk = atk + (int(target.models) // 5)
+    n_attacks = atk.sum(axis=1).astype(np.int64)
+    max_a = int(n_attacks.max())
     if max_a == 0:
-        zeros = np.zeros(n, dtype=np.int64)
         return empty, empty, {"attacks": n_attacks, "hits": zeros,
                               "wounds": zeros, "unsaved": zeros, "mortals": zeros}
 
-    slot = np.arange(max_a)[None, :]                        # (1, max_a)
-    active = slot < n_attacks[:, None]                      # (n, max_a) 有效攻击槽
+    active = np.arange(max_a)[None, :] < n_attacks[:, None]      # (n, max_a)
 
-    # ② Hit：torrent/自动命中（bs_ws=None）跳掷；否则自然骰（1 必失、6 必中）
-    if w.bs_ws is None:
+    # ② Hit：torrent/无 BS → 自动命中（不产生暴击命中，故无 sustained/lethal）；
+    #         否则自然骰（1 必失）+ 修正（±1）+ 暴击命中阈值（conversion 可降到 4+）
+    auto_hit = p.torrent or w.bs_ws is None
+    if auto_hit:
         hit = active.copy()
+        crit_hit = np.zeros_like(hit)
     else:
-        hit_roll = rng.integers(1, _FACES + 1, size=(n, max_a), dtype=np.int64)
-        hit = active & (hit_roll != 1) & ((hit_roll == _FACES) | (hit_roll >= w.bs_ws))
+        hr = rng.integers(1, _FACES + 1, size=(n, max_a), dtype=np.int64)
+        hit = active & (hr != 1) & ((hr >= p.crit_hit_thr) | (hr + p.hit_mod >= w.bs_ws))
+        crit_hit = hit & (hr >= p.crit_hit_thr) & (hr != 1)
 
-    # ③ Wound：S-T 查表，自然骰（1 必失、6 恒为暴击造伤且必成功）
+    # sustained hits：每个暴击命中 +X 命中（X 可为骰子）；这些额外命中走正常致伤
+    total_extra = zeros
+    extra_mask = np.zeros((n, 0), dtype=bool)
+    if p.sustained is not None and not auto_hit:
+        xexpr = p.sustained if isinstance(p.sustained, DiceExpr) else DiceExpr(k=int(p.sustained))
+        xper = (np.full((n, max_a), xexpr.k, dtype=np.int64)
+                if xexpr.is_constant else sample_dice(xexpr, rng, (n, max_a)).astype(np.int64))
+        total_extra = np.where(crit_hit, xper, 0).sum(axis=1).astype(np.int64)
+        max_extra = int(total_extra.max())
+        if max_extra:
+            extra_mask = np.arange(max_extra)[None, :] < total_extra[:, None]
+
+    # lethal hits：暴击命中 → 自动致伤（跳致伤掷骰、不触发 dev）
+    if p.lethal:
+        lethal_mask = crit_hit
+        base_to_wound = hit & ~crit_hit
+    else:
+        lethal_mask = np.zeros_like(hit)
+        base_to_wound = hit
+
+    # ③-⑥ Wound / Save / Damage
     wt = wound_target(w.strength, target.t)
-    wound_roll = rng.integers(1, _FACES + 1, size=(n, max_a), dtype=np.int64)
-    crit_wound = hit & (wound_roll == _FACES)
-    wound_ok = hit & (wound_roll != 1) & ((wound_roll == _FACES) | (wound_roll >= wt))
+    sv_need = effective_save(target.sv, w.ap, target.invuln, p.cover, p.ignores_cover)
+    to_wound = np.concatenate([base_to_wound, extra_mask], axis=1)
 
-    has_dev = _weapon_has(w, "wound", "mortal_pool")
-    if has_dev:
-        to_mortal = crit_wound                              # 暴击造伤入致命池（跳保存）
-        normal_wound = wound_ok & ~crit_wound
-    else:
-        to_mortal = np.zeros_like(hit)
-        normal_wound = wound_ok
+    nd1, md1, w1, u1, m1 = _wound_save_damage(
+        to_wound, rng, n, wt, p.crit_wound_thr, p.wound_mod, p.twin, p.has_dev,
+        sv_need, w.damage, p.melta_bonus, dmg_reduction)
+    nd2, w2, u2 = _autowound_save_damage(
+        lethal_mask, rng, n, sv_need, w.damage, p.melta_bonus, dmg_reduction)
 
-    # ④/⑤ Save：仅正常致伤走保存（致命池跳保存/invuln）
-    ignores_cover = _weapon_has(w, "save", "ignores_cover")
-    sv_need = effective_save(target.sv, w.ap, target.invuln,
-                             stance.target_in_cover, ignores_cover)
-    save_roll = rng.integers(1, _FACES + 1, size=(n, max_a), dtype=np.int64)
-    saved = normal_wound & (save_roll != 1) & (save_roll >= sv_need)
-    unsaved = normal_wound & ~saved
-
-    # ⑥ Damage：采样 D；减伤后夹 ≥1（对致命池同样适用）
-    dmg = sample_dice(w.damage, rng, (n, max_a)).astype(np.int64)
-    if dmg_reduction > 0:
-        dmg = np.maximum(dmg - dmg_reduction, 1)
-    normal_dmg = np.where(unsaved, dmg, 0)
-    mortal_dmg = np.where(to_mortal, dmg, 0)
+    normal_dmg = np.concatenate([nd1, nd2], axis=1)
+    mortal_dmg = md1
 
     funnel = {
         "attacks": n_attacks,
-        "hits": hit.sum(axis=1).astype(np.int64),
-        "wounds": (normal_wound | to_mortal).sum(axis=1).astype(np.int64),
-        "unsaved": (unsaved.sum(axis=1) + to_mortal.sum(axis=1)).astype(np.int64),
-        "mortals": to_mortal.sum(axis=1).astype(np.int64),
+        "hits": (hit.sum(axis=1).astype(np.int64) + total_extra),
+        "wounds": (w1 + w2),
+        "unsaved": (u1 + u2 + m1),
+        "mortals": m1,
     }
     return normal_dmg, mortal_dmg, funnel
 

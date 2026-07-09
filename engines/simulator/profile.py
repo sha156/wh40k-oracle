@@ -59,11 +59,14 @@ def _row_to_model(row: sqlite3.Row) -> Dict:
 
 
 def _row_to_weapon(row: sqlite3.Row) -> WeaponProfile:
+    from engines.simulator.keywords import build_weapon_effects  # 延迟避免循环
+
     name_zh, name_en, rng, a, bs_ws, s, ap, d, kj = row
     s_expr = parse_dice(s)
     # 契约 strength:int；3/9307 把武器 S 是骰子（2D6/D6+6），用期望值近似（确定性、有记录）
     strength = s_expr.k if s_expr.is_constant else int(round(expected_dice(s_expr)))
     parsed_kw, _unknown = tokenize_keywords(kj)
+    effects, _modeled, _annotations, _unparsed = build_weapon_effects(tuple(parsed_kw))
     return WeaponProfile(
         name_zh=name_zh,
         name_en=name_en,
@@ -73,6 +76,7 @@ def _row_to_weapon(row: sqlite3.Row) -> WeaponProfile:
         strength=strength,
         ap=parse_ap(ap),
         damage=parse_dice(d),
+        effects=effects,
         raw_keywords=tuple(parsed_kw),
     )
 
