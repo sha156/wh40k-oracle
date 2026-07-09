@@ -36,13 +36,29 @@ def _as_int(param) -> Optional[int]:
     return None
 
 
+def _dice_param(param, default_k: int) -> DiceExpr:
+    """把词条参数统一成 DiceExpr（骰子式如 D3/D6+3 原样保留，供向量化采样）。
+
+    rapid fire / melta / sustained 的 X 都可能是骰子（实测 rapid fire d6+3 等 13 把武器）——
+    不能塌成常量，否则严重低估攻击/伤害。
+    """
+    if isinstance(param, DiceExpr):
+        return param
+    if isinstance(param, int):
+        return DiceExpr(n=0, faces=0, k=param)
+    return DiceExpr(n=0, faces=0, k=default_k)
+
+
+def _dice_label(expr: DiceExpr) -> str:
+    if expr.is_constant:
+        return str(expr.k)
+    core = f"{expr.n if expr.n > 1 else ''}D{expr.faces}"
+    return core + (f"+{expr.k}" if expr.k else "")
+
+
 def _sustained_param(param) -> Tuple:
     """sustained hits X：X 可为整数或骰子（如 d3）。统一存 DiceExpr 供向量化采样。"""
-    if isinstance(param, DiceExpr):
-        return (param,)
-    if isinstance(param, int):
-        return (DiceExpr(n=0, faces=0, k=param),)
-    return (DiceExpr(n=0, faces=0, k=1),)   # 无参 sustained 罕见，兜底 1
+    return (_dice_param(param, 1),)
 
 
 def keyword_to_effects(pk: ParsedKeyword) -> Tuple[List[Effect], List[str], List[str]]:
@@ -55,9 +71,9 @@ def keyword_to_effects(pk: ParsedKeyword) -> Tuple[List[Effect], List[str], List
 
     # ---- 攻击数 ----
     if name == "rapid_fire":
-        x = _as_int(pk.params[0]) if pk.params else 1
-        return ([Effect("attacks", "modify", (x or 1,), ("half_range",), src)],
-                [f"rapid fire {x}"], [])
+        x = _dice_param(pk.params[0] if pk.params else 1, 1)
+        return ([Effect("attacks", "modify", (x,), ("half_range",), src)],
+                [f"rapid fire {_dice_label(x)}"], [])
     if name == "blast":
         return ([Effect("attacks", "blast", (), (), src)], ["blast"], [])
 
@@ -99,9 +115,9 @@ def keyword_to_effects(pk: ParsedKeyword) -> Tuple[List[Effect], List[str], List
 
     # ---- 伤害 ----
     if name == "melta":
-        x = _as_int(pk.params[0]) if pk.params else 0
-        return ([Effect("damage", "modify", (x or 0,), ("half_range",), src)],
-                [f"melta {x}"], [])
+        x = _dice_param(pk.params[0] if pk.params else 0, 0)
+        return ([Effect("damage", "modify", (x,), ("half_range",), src)],
+                [f"melta {_dice_label(x)}"], [])
 
     # ---- 保存 ----
     if name == "ignores_cover":

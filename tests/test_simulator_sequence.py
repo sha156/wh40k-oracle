@@ -206,6 +206,22 @@ def test_cover_denied_for_sv3_ap0_in_sequence():
     assert close(raw_cover.unsaved.mean(), raw_open.unsaved.mean(), rel=0.03)
 
 
+# ---------- 退化输入不静默夹取（审查发现的两个 HIGH/LOW） ----------
+def test_count_zero_weapon_does_not_fire():
+    # 回归：count=0（0 模型持此武器）曾被 max(count,1) 夹成 1 而幽灵开火
+    w = weapon(const(5), 2, 8, -2, const(2), count=0)
+    raw = run_sequence(attacker(w), target(4, 4, 2, 10), stance(), n=5000, seed=1)
+    assert raw.attacks.mean() == 0
+    assert raw.damage.mean() == 0 and raw.kills.mean() == 0
+
+
+def test_degenerate_target_zero_models_zero_kills():
+    # 回归：models=0 曾被 max(models,1) 夹成打一个幽灵模型
+    w = weapon(const(20), 2, 8, -2, const(2))
+    raw = run_sequence(attacker(w), target(4, 4, 1, 0), stance(), n=2000, seed=1)
+    assert raw.kills.mean() == 0 and raw.damage.mean() == 0 and raw.wiped.mean() == 0
+
+
 # ---------- 近战 phase 过滤 ----------
 def test_melee_phase_selects_melee_weapon():
     gun = weapon(const(10), bs_ws=3, strength=4, ap=0, damage=const(1), melee=False)

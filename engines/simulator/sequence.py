@@ -94,9 +94,9 @@ def _cond_true(condition: Tuple, stance: Stance, target: TargetProfile) -> bool:
 @dataclass
 class _WeaponParams:
     """一把武器在当前态势下解算出的生效参数（把 Effect 汇成标量开关）。"""
-    rf_bonus: int = 0
+    rf_expr: object = None         # DiceExpr | None（rapid fire X，X 可为骰子）
     blast: bool = False
-    melta_bonus: int = 0
+    melta_expr: object = None      # DiceExpr | None（melta X，X 可为骰子）
     crit_hit_thr: int = _FACES
     sustained: object = None      # DiceExpr | None
     lethal: bool = False
@@ -116,7 +116,7 @@ def _gather_params(w: WeaponProfile, stance: Stance, target: TargetProfile) -> _
         ok = _cond_true(e.condition, stance, target)
         if e.phase == "attacks":
             if e.op == "modify" and ok:
-                p.rf_bonus += int(e.params[0])
+                p.rf_expr = e.params[0]           # DiceExpr（rapid fire）
             elif e.op == "blast":
                 p.blast = True
         elif e.phase == "hit":
@@ -141,7 +141,7 @@ def _gather_params(w: WeaponProfile, stance: Stance, target: TargetProfile) -> _
                 p.wound_mod += int(e.params[0])
         elif e.phase == "damage":
             if e.op == "modify" and ok:
-                p.melta_bonus += int(e.params[0])
+                p.melta_expr = e.params[0]        # DiceExpr（melta）
         elif e.phase == "save":
             if e.op == "ignores_cover":
                 p.ignores_cover = True
@@ -153,10 +153,19 @@ def _gather_params(w: WeaponProfile, stance: Stance, target: TargetProfile) -> _
     return p
 
 
+def _sample_damage(dmg_expr, melta_expr, rng, n, k, dmg_reduction) -> np.ndarray:
+    """采样伤害 D（+melta，melta 可为骰子）后减伤夹 ≥1。"""
+    dmg = sample_dice(dmg_expr, rng, (n, k)).astype(np.int64)
+    if melta_expr is not None:
+        dmg = dmg + sample_dice(melta_expr, rng, (n, k)).astype(np.int64)
+    return (np.maximum(dmg - dmg_reduction, 1) if dmg_reduction > 0
+            else np.maximum(dmg, 1))
+
+
 def _wound_save_damage(
     mask: np.ndarray, rng: np.random.Generator, n: int,
     wt: int, crit_wound_thr: int, wound_mod: int, twin: bool, has_dev: bool,
-    sv_need: int, dmg_expr, melta_bonus: int, dmg_reduction: int,
+    sv_need: int, dmg_expr, melta_expr, dmg_reduction: int,
 ) -> Tuple[np.ndarray, np.ndarray, np.ndarray, np.ndarray, np.ndarray]:
     """给定"进入致伤掷骰"的攻击掩码，产出正常伤害/致命池伤害数组 + 漏斗计数。"""
     k = mask.shape[1]
@@ -186,10 +195,7 @@ def _wound_save_damage(
     saved = normal & (save_roll != 1) & (save_roll >= sv_need)
     unsaved = normal & ~saved
 
-    dmg = sample_dice(dmg_expr, rng, (n, k)).astype(np.int64)
-    if melta_bonus:
-        dmg = dmg + melta_bonus
-    dmg = np.maximum(dmg - dmg_reduction, 1) if dmg_reduction > 0 else np.maximum(dmg, 1)
+    dmg = _sample_damage(dmg_expr, melta_expr, rng, n, k, dmg_reduction)
     normal_dmg = np.where(unsaved, dmg, 0)
     mortal_dmg = np.where(to_mortal, dmg, 0)
     return (normal_dmg, mortal_dmg,
@@ -200,7 +206,7 @@ def _wound_save_damage(
 
 def _autowound_save_damage(
     mask: np.ndarray, rng: np.random.Generator, n: int,
-    sv_need: int, dmg_expr, melta_bonus: int, dmg_reduction: int,
+    sv_need: int, dmg_expr, melta_expr, dmg_reduction: int,
 ) -> Tuple[np.ndarray, np.ndarray, np.ndarray]:
     """lethal hits 暴击命中 → 自动致伤（跳致伤掷骰、不触发 dev）：直接走保存+伤害。"""
     k = mask.shape[1]
@@ -210,10 +216,7 @@ def _autowound_save_damage(
     save_roll = rng.integers(1, _FACES + 1, size=(n, k), dtype=np.int64)
     saved = mask & (save_roll != 1) & (save_roll >= sv_need)
     unsaved = mask & ~saved
-    dmg = sample_dice(dmg_expr, rng, (n, k)).astype(np.int64)
-    if melta_bonus:
-        dmg = dmg + melta_bonus
-    dmg = np.maximum(dmg - dmg_reduction, 1) if dmg_reduction > 0 else np.maximum(dmg, 1)
+    dmg = _sample_damage(dmg_expr, melta_expr, rng, n, k, dmg_reduction)
     return (np.where(unsaved, dmg, 0),
             mask.sum(axis=1).astype(np.int64),
             unsaved.sum(axis=1).astype(np.int64))
@@ -258,17 +261,20 @@ def _resolve_weapon(
     dmg_reduction: int,
 ) -> Tuple[np.ndarray, np.ndarray, dict]:
     p = _gather_params(w, stance, target)
-    count = max(int(w.count), 1)
+    count = int(w.count)
     empty = np.zeros((n, 0), dtype=np.int64)
     zeros = np.zeros(n, dtype=np.int64)
+    if count <= 0:                       # 0 个模型持此武器 → 不开火（非 max(...,1) 幽灵开火）
+        return empty, empty, {"attacks": zeros, "hits": zeros,
+                              "wounds": zeros, "unsaved": zeros, "mortals": zeros}
 
-    # ① Attacks：每模型掷 A，+rapid fire（半射程）+blast（每满 5 目标模型）
+    # ① Attacks：每模型掷 A，+rapid fire（半射程，X 可为骰子）+blast（每满 5 目标模型）
     atk = sample_dice(w.attacks, rng, (n, count)).astype(np.int64)
-    if p.rf_bonus:
-        atk = atk + p.rf_bonus
+    if p.rf_expr is not None:
+        atk = atk + sample_dice(p.rf_expr, rng, (n, count)).astype(np.int64)
     if p.blast:
         atk = atk + (int(target.models) // 5)
-    n_attacks = atk.sum(axis=1).astype(np.int64)
+    n_attacks = np.maximum(atk.sum(axis=1), 0).astype(np.int64)   # 防御性夹 ≥0（真实武器不会负）
     max_a = int(n_attacks.max())
     if max_a == 0:
         return empty, empty, {"attacks": n_attacks, "hits": zeros,
@@ -314,9 +320,9 @@ def _resolve_weapon(
 
     nd1, md1, w1, u1, m1 = _wound_save_damage(
         to_wound, rng, n, wt, p.crit_wound_thr, p.wound_mod, p.twin, p.has_dev,
-        sv_need, w.damage, p.melta_bonus, dmg_reduction)
+        sv_need, w.damage, p.melta_expr, dmg_reduction)
     nd2, w2, u2 = _autowound_save_damage(
-        lethal_mask, rng, n, sv_need, w.damage, p.melta_bonus, dmg_reduction)
+        lethal_mask, rng, n, sv_need, w.damage, p.melta_expr, dmg_reduction)
 
     normal_dmg = np.concatenate([nd1, nd2], axis=1)
     mortal_dmg = md1
@@ -356,6 +362,13 @@ def run_sequence(
     seed: int = 1234,
 ) -> SimRaw:
     """跑 N 次十版攻击序列，返回逐次原始产出。只依赖 contracts + parse + 分配核。"""
+    # 退化目标（无模型/无生命）→ 全零，不打幽灵模型（非法输入不静默夹成 1）
+    if int(target.models) <= 0 or int(target.w) <= 0:
+        z = np.zeros(n, dtype=np.int64)
+        return SimRaw(kills=z, damage=z, wiped=np.zeros(n, dtype=bool),
+                      attacks=z, hits=z, wounds=z, unsaved=z, mortals=z,
+                      seed=seed, iterations=n)
+
     rng = np.random.default_rng(seed)
     weapons = _select_weapons(attacker.loadout, stance.phase)
 

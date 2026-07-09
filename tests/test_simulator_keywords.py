@@ -71,7 +71,8 @@ def close(got, exp, rel=0.02, absol=0.03):
 # ===================== 映射层单测 =====================
 def test_mapping_basic():
     (e,), mod, ann = keyword_to_effects(tokenize_keywords('["rapid fire 2"]')[0][0])
-    assert e.phase == "attacks" and e.op == "modify" and e.params == (2,)
+    assert e.phase == "attacks" and e.op == "modify"
+    assert e.params[0].is_constant and e.params[0].k == 2   # 常量存 DiceExpr(k=2)
     assert e.condition == ("half_range",)
 
 
@@ -107,6 +108,26 @@ def test_blast_scales_with_target_models():
     w = weapon(const(2), 3, 4, 0, const(1), effects=kw("blast"))
     assert close(run(w, tgt(4, 7, 1, 20), st()).attacks.mean(), 2 + 4)     # +floor(20/5)
     assert close(run(w, tgt(4, 7, 1, 12), st()).attacks.mean(), 2 + 2)     # +floor(12/5)
+
+
+def test_rapid_fire_dice_value_not_collapsed_to_one():
+    # 回归：rapid fire D3 曾被 _as_int 塌成常量 1；应按 D3 采样（半射程 +E[D3]=2）
+    w = weapon(const(2), 3, 4, 0, const(1), effects=kw("rapid fire d3"))
+    t = tgt(4, 7, 1, 500)
+    assert close(run(w, t, st(half=True)).attacks.mean(), 2 + 2, rel=0.02)
+    assert close(run(w, t, st(half=False)).attacks.mean(), 2)          # 远距无加成
+
+
+def test_rapid_fire_d6plus3_full_bonus():
+    # 回归：Rapid-fire battle cannon 'rapid fire d6+3'，曾只加 +1（低估 85%），应 +6.5
+    w = weapon(const(2), 3, 4, 0, const(1), effects=kw("rapid fire d6+3"))
+    assert close(run(w, tgt(4, 7, 1, 500), st(half=True)).attacks.mean(),
+                 2 + 6.5, rel=0.02)
+
+
+def test_rapid_fire_dice_label_readable():
+    e, mod, ann = keyword_to_effects(tokenize_keywords('["rapid fire d6+3"]')[0][0])
+    assert mod == ["rapid fire D6+3"]                                  # 非 'rapid fire None'
 
 
 # ===================== 命中 =====================
