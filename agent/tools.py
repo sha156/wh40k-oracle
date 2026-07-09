@@ -235,7 +235,51 @@ def _not_modeled(tool: str, note: str) -> Dict[str, Any]:
 
 
 def judge_fight_order(ctx: Optional[Dict[str, Any]] = None) -> Dict[str, Any]:
-    return _not_modeled("judge_fight_order", "战斗顺序判定器未建模，计划于 P5 实现")
+    """P5-b/e：十版 Fight phase 先攻判定。
+
+    ctx（全可选，含默认）：
+      attacker / defender：单位名（仅作展示，不解析）。
+      attacker_charged：攻方本回合是否冲锋（默认 True——"我冲上去"语境）。
+      attacker_fights_first / attacker_fights_last / defender_fights_first /
+      defender_fights_last：布尔（Fights First / Fights Last 能力，datasheet 上有则填）。
+      counter_offensive_by："attacker" | "defender"（谁用 Counter-offensive 战略）。
+
+    Fights First 等能力无法从库里可靠自动判定（见 abilities T1），故由调用方显式提供，
+    不猜、不静默默认（除"冲锋"默认按语境 True）。
+    """
+    ctx = ctx or {}
+    try:
+        from engines.simulator.fight_order import FighterState, judge
+    except Exception as exc:  # noqa: BLE001
+        return {"ok": False, "modeled": True, "tool": "judge_fight_order",
+                "note": f"fight_order 导入失败: {exc}"}
+
+    a_name = str(ctx.get("attacker", "攻方"))
+    b_name = str(ctx.get("defender", "守方"))
+    co_raw = ctx.get("counter_offensive_by")
+    co_by = None
+    if co_raw in ("attacker", "a", a_name):
+        co_by = a_name
+    elif co_raw in ("defender", "b", b_name):
+        co_by = b_name
+
+    a = FighterState(a_name, is_active_player=True,
+                     charged=bool(ctx.get("attacker_charged", True)),
+                     fights_first=bool(ctx.get("attacker_fights_first")),
+                     fights_last=bool(ctx.get("attacker_fights_last")))
+    b = FighterState(b_name, is_active_player=False, charged=False,
+                     fights_first=bool(ctx.get("defender_fights_first")),
+                     fights_last=bool(ctx.get("defender_fights_last")))
+    v = judge(a, b, counter_offensive_by=co_by)
+    return {
+        "ok": True, "modeled": True, "tool": "judge_fight_order",
+        "first_striker": v.first_striker,
+        "order": list(v.order),
+        "simultaneous_risk": v.simultaneous_risk,
+        "rationale": v.rationale,
+        "rule_refs": list(v.rule_refs),
+        "counter_offensive_note": v.counter_offensive_note,
+    }
 
 
 def _resolve_unit(name: str, resolver: Optional[EntityResolver] = None) -> Dict[str, Any]:
@@ -389,7 +433,11 @@ def simulate_combat(
                     asm.attacker, target, d_asm.attacker, a_as_target,
                     stance_forward=stance,
                     stance_reverse=Stance(phase=options.get("reverse_phase", "melee")),
-                    n=n, seed=seed, points_a=points_a)
+                    n=n, seed=seed, points_a=points_a,
+                    a_fights_first=bool(options.get("attacker_fights_first")),
+                    a_fights_last=bool(options.get("attacker_fights_last")),
+                    b_fights_first=bool(options.get("defender_fights_first")),
+                    b_fights_last=bool(options.get("defender_fights_last")))
                 return {"ok": True, "modeled": True, "tool": "simulate_combat",
                         "attacker": a["name_en"], "defender": d["name_en"],
                         "phase": phase, "report": _report_to_dict(rep),
@@ -432,7 +480,7 @@ TOOL_SPECS: List[Dict[str, str]] = [
     {"name": "search_wiki", "description": "LLM Wiki Query：先查 index.md 定位，再全文检索"},
     {"name": "get_entity", "description": "读实体页（自动实体解析）"},
     {"name": "get_keyword_definition", "description": "USR/核心概念定义"},
-    {"name": "judge_fight_order", "description": "战斗顺序判定器（未建模，P5）"},
+    {"name": "judge_fight_order", "description": "战斗顺序判定：给定冲锋/Fights First/Fights Last/Counter-offensive，判谁先打 + 依据（十版 Fight phase）"},
     {"name": "simulate_combat", "description": "蒙特卡洛对战模拟：attacker 打 defender 期望伤害/击杀/团灭率+漏斗+性价比（多模型单位需 options.loadout）"},
     {"name": "validate_roster", "description": "验表（未建模，P6）"},
     {"name": "critique_roster", "description": "验表+模拟点评（未建模，P6）"},

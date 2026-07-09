@@ -16,6 +16,39 @@ def test_scheme_intent_now_gated():
         assert i in agent_loop._MUST_VERIFY_INTENTS
 
 
+# ---- P5-e：judge_fight_order 工具接线（替换 P5 桩）----
+def test_judge_fight_order_charger_first():
+    from agent.tools import judge_fight_order
+    r = judge_fight_order({"attacker": "Warboss", "defender": "Terminators",
+                           "attacker_charged": True})
+    assert r["ok"] is True and r["modeled"] is True
+    assert r["first_striker"] == "Warboss"
+    assert r["rationale"] and r["rule_refs"]
+
+
+def test_judge_fight_order_defender_fights_first():
+    from agent.tools import judge_fight_order
+    # 攻方未冲锋 + 守方 Fights First → 守方先打
+    r = judge_fight_order({"attacker": "A", "defender": "B",
+                           "attacker_charged": False, "defender_fights_first": True})
+    assert r["first_striker"] == "B"
+
+
+def test_judge_fight_order_no_longer_a_stub():
+    from agent.tools import judge_fight_order
+    r = judge_fight_order({"attacker": "A", "defender": "B"})
+    # P4 桩返回 modeled=False + "未建模"；P5-e 起必须是真实判定
+    assert r.get("modeled") is True
+    assert "未建模" not in r.get("note", "")
+    assert "first_striker" in r
+
+
+def test_judge_fight_order_in_tool_registry():
+    from agent.tools import TOOL_SPECS
+    spec = next(s for s in TOOL_SPECS if s["name"] == "judge_fight_order")
+    assert "未建模" not in spec["description"]
+
+
 # ---- CLI loadout 解析 ----
 def test_cli_parse_loadout():
     from engines.simulator.cli import _parse_loadout

@@ -67,17 +67,54 @@ def main(argv: Optional[List[str]] = None) -> int:
                    help="守方装配（给了则做串行幸存反打）")
     p.add_argument("--fnp", type=int, help="守方无痛 X+")
     p.add_argument("--damage-reduction", type=int, dest="damage_reduction")
+    p.add_argument("--stealth", action="store_true", help="守方 Stealth（射击命中 -1）")
+    p.add_argument("--go-to-ground", action="store_true", dest="go_to_ground",
+                   help="守方卧倒（掩体 + 6+ 无效保护）")
+    p.add_argument("--smokescreen", action="store_true", help="守方烟幕（掩体 + Stealth）")
+    p.add_argument("--def-fights-first", action="store_true", dest="defender_fights_first")
+    p.add_argument("--def-fights-last", action="store_true", dest="defender_fights_last")
+    p.add_argument("--atk-fights-first", action="store_true", dest="attacker_fights_first")
+    p.add_argument("--atk-fights-last", action="store_true", dest="attacker_fights_last")
+    p.add_argument("--judge-order", action="store_true", dest="judge_order",
+                   help="只判定近战先攻顺序（用 --charge/--*-fights-* 描述状态），不跑模拟")
     p.add_argument("-n", type=int, default=8000, help="迭代次数（默认 8000）")
     p.add_argument("--seed", type=int, default=1234)
     p.add_argument("--json", action="store_true", help="输出原始 JSON")
     args = p.parse_args(argv)
 
-    from agent.tools import simulate_combat
+    from agent.tools import judge_fight_order, simulate_combat
+
+    # --judge-order：只判先攻顺序，不跑模拟
+    if args.judge_order:
+        v = judge_fight_order({
+            "attacker": args.attacker, "defender": args.defender,
+            "attacker_charged": args.charge,
+            "attacker_fights_first": args.attacker_fights_first,
+            "attacker_fights_last": args.attacker_fights_last,
+            "defender_fights_first": args.defender_fights_first,
+            "defender_fights_last": args.defender_fights_last,
+        })
+        if args.json:
+            print(json.dumps(v, ensure_ascii=False, indent=2))
+            return 0
+        print(f"=== 先攻判定：{args.attacker} vs {args.defender} ===")
+        print(f"先打方：{v['first_striker']}｜顺序：{' → '.join(v['order'])}"
+              f"｜同步反打风险：{'是' if v['simultaneous_risk'] else '否'}")
+        print(v["rationale"])
+        print("依据：" + "；".join(v["rule_refs"][:2]))
+        print("Counter-offensive：" + v["counter_offensive_note"])
+        return 0
 
     options = {k: v for k, v in {
         "phase": args.phase, "charge": args.charge, "half_range": args.half_range,
         "cover": args.cover, "stationary": args.stationary,
         "long_range": args.long_range, "indirect": args.indirect,
+        "stealth": args.stealth, "go_to_ground": args.go_to_ground,
+        "smokescreen": args.smokescreen,
+        "attacker_fights_first": args.attacker_fights_first,
+        "attacker_fights_last": args.attacker_fights_last,
+        "defender_fights_first": args.defender_fights_first,
+        "defender_fights_last": args.defender_fights_last,
         "attacker_models": args.attacker_models,
         "defender_models": args.defender_models,
         "loadout": _parse_loadout(args.loadout),
