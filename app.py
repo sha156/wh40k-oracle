@@ -745,6 +745,15 @@ def main():
     )
     st.divider()
 
+    # ── 视图切换（P5-d）：聊天 / 模拟器。模拟器只依赖 db/wh40k.sqlite，不需嵌入模型/LLM Key/向量库，
+    #    故放在 load_resources 之前分流，避免为跑模拟白加载 bge-m3。
+    #    （chat_input 必须留在脚本顶层，Streamlit 1.35 不允许其进 st.tabs，故用侧边栏 radio 切视图。）──
+    view = st.sidebar.radio("🧭 视图", ["💬 聊天", "⚔️ 模拟器"], key="view_mode")
+    if view == "⚔️ 模拟器":
+        from ui.simulator_panel import render_simulator_panel
+        render_simulator_panel(st)
+        return
+
     # ── 加载资源 ──
     try:
         embeddings, vectorstore, reranker, reranker_warning = load_resources()
