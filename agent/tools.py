@@ -274,6 +274,7 @@ def judge_fight_order(ctx: Optional[Dict[str, Any]] = None) -> Dict[str, Any]:
     return {
         "ok": True, "modeled": True, "tool": "judge_fight_order",
         "first_striker": v.first_striker,
+        "first_side": "attacker" if v.first_is_a else "defender",  # 名字可能相同，用侧标识
         "order": list(v.order),
         "simultaneous_risk": v.simultaneous_risk,
         "rationale": v.rationale,
@@ -416,8 +417,12 @@ def simulate_combat(
 
         n = int(options.get("n", 8000))
         seed = int(options.get("seed", 1234))
-        pts = _calc_points_impl(db_path, [a["name_en"] or a["canonical_id"]])
-        points_a = pts[0].points if pts and pts[0].points else None
+        # 点数用 canonical_id 查（calc_points 按 units.id，name_en 查不到——评审 M#6）
+        def _pts(cid):
+            r = _calc_points_impl(db_path, [cid])
+            return r[0].points if r and r[0].points else None
+        points_a = _pts(a["canonical_id"])
+        points_b = _pts(d["canonical_id"])          # 评审 M#7：B 侧点数也算，供反打性价比
 
         # 反打：给了 defender_loadout 才做串行幸存反打，否则单向
         d_loadout = options.get("defender_loadout")
@@ -433,7 +438,7 @@ def simulate_combat(
                     asm.attacker, target, d_asm.attacker, a_as_target,
                     stance_forward=stance,
                     stance_reverse=Stance(phase=options.get("reverse_phase", "melee")),
-                    n=n, seed=seed, points_a=points_a,
+                    n=n, seed=seed, points_a=points_a, points_b=points_b,
                     a_fights_first=bool(options.get("attacker_fights_first")),
                     a_fights_last=bool(options.get("attacker_fights_last")),
                     b_fights_first=bool(options.get("defender_fights_first")),

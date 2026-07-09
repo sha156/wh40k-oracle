@@ -124,6 +124,55 @@ def test_damage_reduction_detected():
     assert ca.effect is not None and ca.effect.op == "damage_reduction"
 
 
+# ── 评审 HIGH#2：伤害减半 ≠ 加法 -1，必须归未建模，不产 damage_reduction Effect ──
+def test_halve_damage_is_not_flat_reduction():
+    ca = classify_ability(_rec(
+        "Molten Form",
+        "Each time an attack is allocated to this model, halve the Damage "
+        "characteristic of that attack."))
+    assert ca.effect is None                         # 绝不塌成 (1,) 的加法减伤
+    assert ca.category != CAT_TOGGLE_DEF
+    assert "减半" in ca.detail
+
+
+# ── 评审 LOW#8：裸 " 1" 不再触发减伤（需显式 by 1/one）──
+def test_damage_reduction_not_triggered_by_bare_space_one():
+    ca = classify_ability(_rec(
+        "Minimum Wound",
+        "This model's Damage is reduced to a minimum of 1 wound remaining."))
+    assert ca.effect is None or ca.effect.op != "damage_reduction"
+
+
+# ── 评审 HIGH#3：进攻型敌方压制（含 enemy）不得误判为本单位 Stealth ──
+def test_offensive_enemy_suppression_not_classified_as_stealth():
+    ca = classify_ability(_rec(
+        "Rivetin' Dakka",
+        "In your Shooting phase, after this model has shot, select one enemy "
+        "unit hit. That enemy unit is suppressed. While a unit is suppressed, "
+        "each time a model in that unit makes a ranged attack, subtract 1 from "
+        "the Hit roll."))
+    # 不能产出让攻方命中 -1 的 Stealth Effect
+    assert not (ca.effect is not None and ca.effect.phase == "hit")
+
+
+def test_core_stealth_defensive_frame_still_detected():
+    ca = classify_ability(_rec(
+        "Stealth",
+        "Each time a ranged attack is made against it, subtract 1 from that "
+        "attack's Hit roll."))
+    assert ca.effect is not None and ca.effect.phase == "hit"
+
+
+# ── 评审 M#4："whilst" 英式变体必须识别为条件式 ──
+def test_whilst_fnp_is_conditional():
+    ca = classify_ability(_rec(
+        "Medicae Medi-packs",
+        "Whilst this unit contains one or more Medicae Servitors, models in "
+        "this unit have the Feel No Pain 5+ ability."))
+    assert ca.category == CAT_TOGGLE_DEF
+    assert ca.conditional is True                     # 不能被当成无条件
+
+
 # ── not_modeled 精确分桶 ──────────────────────────────────────
 @pytest.mark.parametrize("name,text,expect", [
     ("Lone Operative",

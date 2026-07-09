@@ -100,7 +100,7 @@ def simulate_matchup(
                            charged=False, fights_first=b_fights_first,
                            fights_last=b_fights_last)
     verdict = judge(a_state, b_state)
-    a_first = verdict.first_striker == a_state.name
+    a_first = verdict.first_is_a          # 用侧标识，不比名字（镜像对局名字相同，见评审 CRITICAL#1）
 
     if a_first:
         # A 满编先打 B，B 幸存者反打 A（P4 常态）

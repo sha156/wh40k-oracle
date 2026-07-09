@@ -58,7 +58,9 @@ class FighterState:
 @dataclass(frozen=True)
 class FightVerdict:
     order: Tuple[str, ...]              # 先攻→后攻的单位名序列
-    first_striker: str                 # 谁先打
+    first_striker: str                 # 谁先打（单位名，仅展示）
+    first_is_a: bool                   # 先打方是否为入参 a——**名字可能相同（镜像对局），
+                                       #   调用方必须用本布尔判定方向，绝不可比对 first_striker 名字字符串**
     simultaneous_risk: bool            # 双方同一步 → 交替结算，反打即时（近战反伤风险高）
     rationale: str                     # 中文判定说明
     rule_refs: Tuple[str, ...]         # 规则锚点
@@ -131,6 +133,7 @@ def judge(a: FighterState, b: FighterState,
     return FightVerdict(
         order=(first.name, second.name),
         first_striker=first.name,
+        first_is_a=(first is a),
         simultaneous_risk=same_step,
         rationale=rationale,
         rule_refs=_RULE_REFS,

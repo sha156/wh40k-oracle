@@ -110,3 +110,18 @@ def test_counter_offensive_by_second_striker_notes_insert():
 def test_counter_offensive_by_first_striker_is_noop_note():
     v = judge(_act("A", charged=True), _def("B"), counter_offensive_by="A")
     assert "本就先打" in v.counter_offensive_note
+
+
+# ── 评审 CRITICAL#1：镜像对局（同名）必须靠 first_is_a 判方向，不比名字 ──
+def test_first_is_a_flag_disambiguates_same_name_matchup():
+    # 双方同名，B 有 Fights First 而 A 未冲锋 → B 先打；名字都叫 "Intercessor Squad"
+    a = FighterState("Intercessor Squad", is_active_player=True, charged=False)
+    b = FighterState("Intercessor Squad", is_active_player=False, fights_first=True)
+    v = judge(a, b)
+    assert v.first_is_a is False              # B 先打——名字相同，只能靠布尔
+    assert v.first_striker == "Intercessor Squad"
+
+
+def test_first_is_a_true_when_a_charges():
+    v = judge(_act("Same", charged=True), _def("Same"))
+    assert v.first_is_a is True

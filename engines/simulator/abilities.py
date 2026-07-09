@@ -43,8 +43,9 @@ _NM_LABEL = {
 }
 
 # 条件词：命中任一则该防守技能视为"条件式/光环式"，不能无脑全局施加
-_CONDITION_TOKENS = ("while", "against", "aura", "within", "each time",
-                     "if ", "psychic", "mortal", "once per")
+# （"whilst" 是 "while" 的英式变体，不含子串 "while"，必须单列——评审 M#4）
+_CONDITION_TOKENS = ("while", "whilst", "against", "aura", "within", "each time",
+                     "if ", "psychic", "mortal", "once per", "contains")
 
 _HTML_TAG_RE = re.compile(r"<[^>]+>")
 _WS_RE = re.compile(r"\s+")
@@ -106,6 +107,20 @@ def _is_conditional(text_lower: str) -> bool:
     return any(tok in text_lower for tok in _CONDITION_TOKENS)
 
 
+def _condition_hint(low: str) -> str:
+    """把条件式防守技能的条件类型讲清楚（评审 M#5：模拟器只算普通射击/近战，
+    "仅对灵能/致命伤"的 FNP 若被启用会错误地对普通攻击减伤，须明示）。"""
+    if "against" in low and ("psychic" in low or "mortal" in low):
+        return "仅对灵能/致命伤等特定攻击——本模拟为普通攻击，多半不适用"
+    if "against" in low:
+        return "仅对特定攻击类型，需确认适用"
+    if "aura" in low or "within" in low or ("friendly" in low and "within" in low):
+        return "光环/范围授予他人，持有者未必自带"
+    if any(t in low for t in ("whilst", "while", "contains", "once per")):
+        return "限定条件（回合/编成/每场一次），需确认适用"
+    return "条件式，需确认适用"
+
+
 def classify_ability(rec: AbilityRecord) -> ClassifiedAbility:
     name = (rec.name_en or "").strip()
     text = rec.text or ""
@@ -119,17 +134,30 @@ def classify_ability(rec: AbilityRecord) -> ClassifiedAbility:
         cond = _is_conditional(low)
         eff = Effect("fnp", "fnp", (x,), (), f"feel no pain {x}+") if x else None
         detail = (f"无痛 {x}+" if x else "无痛（未解析出阈值）")
-        detail += "（条件式/光环，需确认是否适用本场景）" if cond else "（可开关启用）"
+        detail += f"（{_condition_hint(low)}）" if cond else "（可开关启用）"
         return ClassifiedAbility(name or "Feel No Pain", CAT_TOGGLE_DEF, detail,
                                  effect=eff, conditional=cond,
                                  params=((x,) if x else ()))
 
     # ── ② Stealth / 掩蔽类（守方 → 攻方射击命中 -1，仅射击）──────
-    #   核心 USR「Stealth」（name 精确命中）= 无条件；文本模式命中的 -1 命中（如要塞光环）
-    #   的条件性从文本判定，不硬编码无条件。
+    #   核心 USR「Stealth」（name 精确命中）= 无条件；文本模式必须是【守方防守】框架：
+    #   -1 施加在"对【本单位】发起的攻击"上，而非本单位对敌方施加的压制（评审 HIGH#3：
+    #   "Rivetin' Dakka" 是压制敌方的进攻技能，含 "enemy"，绝不能当成本单位的 Stealth）。
+    #   判别（实测 230 条 "subtract 1" 挂载技能的措辞得来）：
+    #   防守型 = "attack targets this unit/model / that unit" 或 "made against it"（-1 施加在
+    #   打【本单位】的攻击上）；进攻型压制 = "makes an attack, subtract 1"（-1 施加在被压制敌方
+    #   发起的攻击上）——后者不含"targets this/that unit"框架，靠正向措辞即可精确区分。
+    #   进攻型压制签名："…makes an attack, subtract 1 from the Hit roll"（-1 施加在被压制敌方
+    #   身上）——即便同一技能别处出现"targets that unit"（如 Psychological Saboteur 的增益句），
+    #   只要含此签名就不是本单位的防守 Stealth，直接排除。
     _is_core_stealth = nlow == "stealth"
+    _defensive_frame = any(s in low for s in (
+        "targets this unit", "targets this model", "targets that unit",
+        "made against it", "made against this"))
+    _offensive_minus = ("makes an attack, subtract 1" in low
+                        or "makes a ranged attack, subtract 1" in low)
     _text_minus_hit = ("subtract 1 from" in low and "hit roll" in low
-                       and ("ranged" in low or "such an attack" in low))
+                       and _defensive_frame and not _offensive_minus)
     if _is_core_stealth or _text_minus_hit:
         eff = Effect("hit", "modify", (-1,), ("phase_shooting",), "stealth")
         cond = (not _is_core_stealth) and _is_conditional(low)
@@ -139,9 +167,13 @@ def classify_ability(rec: AbilityRecord) -> ClassifiedAbility:
         return ClassifiedAbility(name or "Stealth", CAT_TOGGLE_DEF, detail,
                                  effect=eff, conditional=cond, params=(-1,))
 
-    # ── ③ 伤害削减（reduce … Damage … by 1 / halve damage）──────
-    if (("damage" in low and "reduc" in low and ("by 1" in low or " 1" in low))
-            or ("halve" in low and "damage" in low)):
+    # ── ③a 伤害减半（乘法/向上取整）——引擎的加法减伤无法表示，绝不塌成 -1（评审 HIGH#2）
+    if "halve" in low and "damage" in low:
+        return ClassifiedAbility(name or "Halve Damage", CAT_NM_OTHER,
+                                 "伤害减半（乘法/向上取整，引擎的加法减伤无法表示，未建模）")
+
+    # ── ③b 加法减伤（reduce … Damage … by 1）——收紧到显式 "by 1/one"，不用裸 " 1"（评审 LOW#8）
+    if "damage" in low and "reduc" in low and ("by 1" in low or "by one" in low):
         eff = Effect("damage", "damage_reduction", (1,), (), "damage reduction")
         cond = _is_conditional(low)
         return ClassifiedAbility(name or "Damage Reduction", CAT_TOGGLE_DEF,

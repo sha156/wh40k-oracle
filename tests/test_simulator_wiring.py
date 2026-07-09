@@ -148,6 +148,36 @@ def test_smokescreen_lowers_hits():
 
 
 @pytestmark_db
+def test_efficiency_populated_via_canonical_id():
+    """评审 M#6：点数用 canonical_id 查，efficiency 不再恒空。"""
+    from agent.tools import simulate_combat
+    res = simulate_combat("Boyz", "Intercessor Squad",
+                          {"loadout": [["Shoota", 10]], "n": 2000})
+    assert res["ok"]
+    eff = res["report"]["efficiency"]
+    assert eff and eff.get("points", 0) > 0            # 有点数 → 性价比可算
+    assert eff.get("damage_per_100") is not None
+
+
+@pytestmark_db
+def test_mirror_matchup_respects_fight_order():
+    """评审 CRITICAL#1：同名对局（镜像）+ 守方 Fights First + 攻方未冲锋 → B 先打。
+
+    修复前 a_first 用名字比较恒 True，会错误让 A 先手满编。修复后靠 first_is_a。
+    B 先手时 A 以幸存者出手，bias_notes 必含『B 先手满编反打』。
+    """
+    from agent.tools import simulate_combat
+    res = simulate_combat(
+        "Intercessor Squad", "Intercessor Squad",
+        {"loadout": [["Bolt rifle", 5]], "defender_loadout": [["Bolt rifle", 5]],
+         "phase": "melee", "charge": False, "defender_fights_first": True,
+         "n": 2000})
+    assert res["ok"]
+    notes = res["report"]["bias_notes"]
+    assert any("B 先手满编" in nm for nm in notes)
+
+
+@pytestmark_db
 def test_faction_options_surfaced():
     """P5-c：守方阵营分队名 surface（诚实披露未建模的分队规则）。"""
     from agent.tools import simulate_combat
