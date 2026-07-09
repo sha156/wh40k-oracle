@@ -51,6 +51,23 @@ def _scale_loadout(attacker: AttackerProfile, survivors: int) -> AttackerProfile
     return replace(attacker, models=survivors, loadout=tuple(scaled))
 
 
+def _survivor_retaliation(
+    forward: SimReport, defender_attacker: AttackerProfile, defender_models: int,
+    attacker_as_target: TargetProfile, stance_reverse: Stance,
+    n: int, seed: int, points: Optional[int], label: str,
+) -> None:
+    """把「守方幸存者反打」结果挂到 forward.reverse（就地）。"""
+    survivors = max(0, defender_models - int(round(forward.expected_kills)))
+    forward.bias_notes.append(
+        f"反打基于 {label} 期望幸存 {survivors}/{defender_models} 个模型"
+        f"（先手方期望击杀 {forward.expected_kills:.2f}）")
+    if survivors > 0 and defender_attacker.loadout:
+        surv = _scale_loadout(defender_attacker, survivors)
+        if surv.loadout:
+            forward.reverse = simulate(surv, attacker_as_target, stance_reverse,
+                                       n=n, seed=seed + 1, points=points)
+
+
 def simulate_matchup(
     a_attacker: AttackerProfile,
     b_target: TargetProfile,
@@ -62,22 +79,49 @@ def simulate_matchup(
     seed: int = 1234,
     points_a: Optional[int] = None,
     points_b: Optional[int] = None,
+    a_fights_first: bool = False,
+    a_fights_last: bool = False,
+    b_fights_first: bool = False,
+    b_fights_last: bool = False,
 ) -> SimReport:
-    """『A 冲 B 值不值』：A→B 正打，再让 B 的**幸存模型**反打 A（reverse 字段）。
+    """『A 冲 B 值不值』：用 fight_order 判定先攻方，先手方满编打、后手方幸存者反打。
 
-    spec 第八节：串行幸存反打去偏——守方不满编反打，而是扣掉被 A 击杀数后反打。
+    P5-b：接入战斗顺序判定器（替代 P4 写死"A 先打"）。A 是发起/当前玩家（冲锋由
+    stance_forward.charging 决定，冲锋必属当前玩家）；B 是守方。判定 B 先打时（A 未冲锋
+    且 B 有 Fights First 等），A 以幸存者反打——返回的 forward 恒为「A→B」视角，
+    但 A 的攻击强度按先攻顺序对应满编/幸存。
     """
-    forward = simulate(a_attacker, b_target, stance_forward, n=n, seed=seed,
+    from engines.simulator.fight_order import FighterState, judge
+
+    a_state = FighterState(a_attacker.name_en or "A", is_active_player=True,
+                           charged=stance_forward.charging,
+                           fights_first=a_fights_first, fights_last=a_fights_last)
+    b_state = FighterState(b_attacker.name_en or "B", is_active_player=False,
+                           charged=False, fights_first=b_fights_first,
+                           fights_last=b_fights_last)
+    verdict = judge(a_state, b_state)
+    a_first = verdict.first_striker == a_state.name
+
+    if a_first:
+        # A 满编先打 B，B 幸存者反打 A（P4 常态）
+        forward = simulate(a_attacker, b_target, stance_forward, n=n, seed=seed,
+                           points=points_a)
+        forward.bias_notes.append(f"先攻判定：{verdict.rationale}")
+        _survivor_retaliation(forward, b_attacker, b_target.models, a_target,
+                              stance_reverse, n, seed, points_b, "B")
+        return forward
+
+    # B 先打：B 满编打 A → A 幸存者数 → A(幸存)→B 才是用户要的 forward
+    strike = simulate(b_attacker, a_target, stance_reverse, n=n, seed=seed,
+                      points=points_b)
+    a_surv = max(0, a_target.models - int(round(strike.expected_kills)))
+    a_scaled = _scale_loadout(a_attacker, a_surv) if a_surv > 0 else replace(
+        a_attacker, models=0, loadout=())
+    forward = simulate(a_scaled, b_target, stance_forward, n=n, seed=seed + 2,
                        points=points_a)
-
-    survivors = max(0, b_target.models - int(round(forward.expected_kills)))
+    forward.reverse = strike
+    forward.bias_notes.append(f"先攻判定：{verdict.rationale}")
     forward.bias_notes.append(
-        f"反打基于 B 期望幸存 {survivors}/{b_target.models} 个模型（A 期望击杀 "
-        f"{forward.expected_kills:.2f}）")
-
-    if survivors > 0 and b_attacker.loadout:
-        b_surv = _scale_loadout(b_attacker, survivors)
-        if b_surv.loadout:
-            forward.reverse = simulate(b_surv, a_target, stance_reverse,
-                                       n=n, seed=seed + 1, points=points_b)
+        f"B 先手满编反打，A 以幸存 {a_surv}/{a_target.models} 个模型出手"
+        f"（B 期望击杀 {strike.expected_kills:.2f}）——A 输出已按此缩放")
     return forward

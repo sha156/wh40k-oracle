@@ -20,7 +20,8 @@ from engines.simulator.keywords import build_weapon_effects
 STANDARD_BIAS: Tuple[str, ...] = (
     "守方反打用『期望幸存数』近似（非逐迭代联动），略高估守方反伤",
     "冲锋成功率未建模：默认冲锋必接触，未算 2D6 冲锋距离检定失败 → 高估『冲』的价值",
-    "Fights First / 交替 / interrupt 未建模（P5 战斗顺序判定器）",
+    "先攻方已按 fight_order 判定（冲锋/Fights First/Fights Last 抵消）；但同一步的逐单位交替选取"
+    "与 Counter-offensive 插队仍以『整单位先手→幸存反打』近似",
     "士气/Battle-shock、接战范围/视线/射程可达性、守方最优分配均未建模（守方按掷骰顺序固定分配）",
     "交换比按『击杀模型→点数』折算，多耐伤单位被打残未死的部分点损失不计入",
 )
