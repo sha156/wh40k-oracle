@@ -91,6 +91,8 @@ def parse_args():
                         help="清空旧索引，从头重建")
     parser.add_argument("--data-dir", type=str, default=str(DATA_DIR),
                         help="PDF 文件夹路径")
+    parser.add_argument("--no-blacklibrary", action="store_true",
+                        help="不把黑图书馆中文 datasheet 注入 L1 检索层")
     return parser.parse_args()
 
 
@@ -322,6 +324,21 @@ def main():
         except Exception as e:
             tqdm.write(f"  ❌ {pdf_path.name} 处理失败: {e}")
             failed_files.append((pdf_path.name, str(e)))
+
+    # ── 注入黑图书馆中文原生 datasheet（属性+能力全文+武器）到 L1 检索层 ──
+    # 仅全量重建时注入（增量会重复）；黑图书馆随 db_compile 刷新，靠 --rebuild 同步。
+    if args.rebuild and not args.no_blacklibrary:
+        try:
+            from agent.tools import DB_PATH as _DB
+            from db_compile.blacklibrary import build_blacklibrary_docs
+            hb_docs = build_blacklibrary_docs(_DB)
+            if hb_docs:
+                all_new_chunks.extend(hb_docs)
+                print(f"  🐍 注入黑图书馆检索条目: {len(hb_docs)}")
+            else:
+                print("  ⚠️ 黑图书馆无数据（unit_zh_detail 空），跳过注入")
+        except Exception as e:
+            print(f"  ⚠️ 黑图书馆注入失败（跳过，不影响 PDF 索引）: {e}")
 
     if not all_new_chunks:
         print("\n❌ 没有生成任何有效 chunks，退出。")

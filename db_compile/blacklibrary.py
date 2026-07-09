@@ -185,6 +185,99 @@ def fill_name_zh(db_path, units: List[dict]) -> Dict[str, int]:
         conn.close()
 
 
+def _collect_text(node) -> list:
+    """递归从 content 节点里抠出所有 text（结构有 str/dict/list 多种变体）。"""
+    out = []
+    if isinstance(node, str):
+        out.append(node)
+    elif isinstance(node, dict):
+        if isinstance(node.get("text"), str):
+            out.append(node["text"])
+        if node.get("content") is not None:
+            out += _collect_text(node["content"])
+    elif isinstance(node, list):
+        for x in node:
+            out += _collect_text(x)
+    return out
+
+
+def _flatten_ability(ab: dict) -> str:
+    """能力 JSON → 「名称：正文」纯文本。"""
+    if not isinstance(ab, dict):
+        return ""
+    name = ab.get("name") or ""
+    body = "".join(_collect_text(ab.get("content"))).strip()
+    return f"{name}：{body}" if body else name
+
+
+def _flatten_weapon(w: dict, melee: bool) -> str:
+    """武器 JSON → 一行属性摘要。"""
+    tag = "近战" if melee else "射击"
+    skill = "、".join(w.get("skill") or [])
+    core = (f"攻击{w.get('攻击次数','?')} 命中{w.get('命中','?')} "
+            f"S{w.get('造伤','?')} AP{w.get('破甲','?')} D{w.get('伤害','?')}")
+    rng = "" if melee else f"射程{w.get('射程','?')}\" "
+    tail = f"（{skill}）" if skill else ""
+    return f"- [{tag}] {w.get('name','?')}：{rng}{core}{tail}"
+
+
+def build_blacklibrary_docs(db_path):
+    """把 unit_zh_detail 全表渲染成检索文档（每单位一个 chunk：属性+武器+能力全文）。
+
+    供 ingest.py 注入 L1 索引：黑图书馆中文原生内容进检索层，规则/能力题可召回干净中文，
+    补汉化 PDF 的不全。返回 List[Document]（book='黑图书馆'）。表不存在返回 []。
+    """
+    from langchain_core.documents import Document
+
+    conn = sqlite3.connect(str(db_path))
+    try:
+        try:
+            rows = conn.execute(
+                "SELECT canonical_id, name_zh, faction_zh, score, stats_json, "
+                "abilities_json, weapons_json FROM unit_zh_detail "
+                "WHERE source='blackforum'").fetchall()
+        except sqlite3.OperationalError:
+            return []
+    finally:
+        conn.close()
+
+    docs = []
+    for cid, name_zh, faction_zh, score, stats_j, ab_j, w_j in rows:
+        if not name_zh:
+            continue
+        lines = [f"## {name_zh}"]
+        meta_line = f"所属：{faction_zh or '未知'}"
+        if score:
+            meta_line += f" ｜ 点数：{score}"
+        lines.append(meta_line)
+        # 属性
+        stats = json.loads(stats_j) if stats_j else []
+        for m in stats:
+            lines.append(
+                f"**{m.get('unitName') or name_zh}**：M{m.get('m','?')}\" "
+                f"T{m.get('t','?')} SV{m.get('sv','?')}+ W{m.get('w','?')} "
+                f"LD{m.get('ld','?')} OC{m.get('oc','?')}")
+        # 武器
+        weapons = json.loads(w_j) if w_j else {}
+        wl = [_flatten_weapon(x, False) for x in (weapons.get("射击武器") or [])]
+        wl += [_flatten_weapon(x, True) for x in (weapons.get("近战武器") or [])]
+        if wl:
+            lines.append("**武器**")
+            lines.extend(wl)
+        # 能力全文
+        abilities = json.loads(ab_j) if ab_j else []
+        ab_txt = [_flatten_ability(a) for a in abilities if _flatten_ability(a)]
+        if ab_txt:
+            lines.append("**能力**")
+            lines.extend(f"- {t}" for t in ab_txt)
+
+        docs.append(Document(
+            page_content="\n".join(lines).strip(),
+            metadata={"source": "blacklibrary", "book": "黑图书馆",
+                      "unit": name_zh, "page": 0}))
+    return docs
+
+
 def load_zh_detail(db_path, canonical_id: str) -> Optional[dict]:
     """读某单位的中文原生 datasheet（供 get_datasheet 附加中文层）。表不存在返回 None。"""
     conn = sqlite3.connect(str(db_path))
