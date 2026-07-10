@@ -159,6 +159,27 @@ class TestCheckPoints:
         assert rep["compared"] == 2
         assert rep["agree"] == 2  # 各自阵营价都对——名字级混比会误报
 
+    def test_duplicate_rows_same_faction_all_checked(self, tmp_path):
+        # 同阵营同名两行（Wahapedia 跨战团重复收录，如 SM Impulsor×2）、其中一行
+        # 残留旧值 → 必须报不符。旧 dict 实现 last-write-wins 只看最后一行：
+        # 旧值行在前、新值行在后时恰好漏检（与 apply_points 的 list 结构不对称）。
+        db = _make_db(tmp_path)
+        conn = sqlite3.connect(str(db))
+        conn.execute(
+            "INSERT INTO units VALUES('10','SM','Impulsor',NULL,?,NULL,NULL)",
+            (json.dumps({"points": 90, "items": [
+                {"line": "1", "desc": "1 model", "cost": 90}]}),))  # 旧值（在前）
+        conn.execute(
+            "INSERT INTO units VALUES('11','SM','Impulsor',NULL,?,NULL,NULL)",
+            (json.dumps({"points": 80, "items": [
+                {"line": "1", "desc": "1 model", "cost": 80}]}),))  # 新值（在后）
+        conn.commit(); conn.close()
+        rep = check_points(db, {"space-marines": [
+            ("IMPULSOR", "YOUR UNIT COSTS", "1 model", 80)]})
+        imp_diffs = [d for d in rep["diffs"] if d["unit"] == "Impulsor"]
+        assert len(imp_diffs) == 1  # 旧值行被逮到，不被新值行遮蔽
+        assert (imp_diffs[0]["db"], imp_diffs[0]["mfm"]) == (90, 80)
+
     def test_generic_sm_page_wins_over_chapter_page(self, tmp_path):
         # 战团页（black-templars 85）不覆盖通用页（space-marines 100）
         db = _make_db(tmp_path)
@@ -174,6 +195,31 @@ class TestCheckPoints:
         })
         stern = [d for d in rep["diffs"] if d["unit"] == "Sternguard"]
         assert stern == []  # 通用页 100 与库一致，战团价不参与
+
+
+class TestFetchAll:
+    def test_reuses_fetch_faction_and_records_failures(self, tmp_path, monkeypatch):
+        # fetch_all 的单页抓取已收敛到 fetch_faction（不再有第二份参数不一致的
+        # 内联重试循环）；单阵营抓不下来记入 failed 继续，不炸整轮
+        import db_compile.mfm as mfm
+
+        home = '<a href="/en/orks">o</a><a href="/en/necrons">n</a>'
+
+        def fake_fetch(url, timeout=40):
+            if url.endswith("/en"):
+                return home
+            if "orks" in url:
+                return "<html></html>"  # 成功但 0 行
+            raise OSError("proxy EOF")  # necrons 永远失败
+
+        monkeypatch.setattr(mfm, "_fetch", fake_fetch)
+        monkeypatch.setattr(mfm.time, "sleep", lambda s: None)
+        out = tmp_path / "mfm.json"
+        data = mfm.fetch_all(out, sleep_s=0, max_retries=2)
+        assert data["orks"] == []
+        assert data["necrons"] == []  # 失败降级为空行
+        saved = json.loads(out.read_text(encoding="utf-8"))
+        assert saved["failed"] == ["necrons"]
 
 
 class TestApplyPoints:

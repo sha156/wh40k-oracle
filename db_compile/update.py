@@ -149,11 +149,18 @@ def stage_build(cfg: UpdateConfig) -> StageResult:
         return StageResult("build", False,
                            f"重建 0 行——检查 {cfg.csv_dir} 是否有 CSV",
                            detail={"missing_csv": rep.missing_csv})
+    warnings = []
+    if rep.missing_csv:
+        warnings.append(f"缺 CSV：{', '.join(rep.missing_csv)}")
+    if rep.skipped:
+        warnings.append("缺 id 跳过行数：" + "，".join(
+            f"{k} {v}" for k, v in rep.skipped.items()))
     return StageResult(
         "build", True,
         "重建 " + "，".join(f"{k} {v}" for k, v in rep.row_counts.items()),
-        detail={"row_counts": rep.row_counts, "missing_csv": rep.missing_csv},
-        warning=(f"缺 CSV：{', '.join(rep.missing_csv)}" if rep.missing_csv else None))
+        detail={"row_counts": rep.row_counts, "missing_csv": rep.missing_csv,
+                "skipped": rep.skipped},
+        warning="；".join(warnings) if warnings else None)
 
 
 def _load_mfm_factions(mfm_json: Path):
@@ -182,8 +189,11 @@ def stage_aliases(cfg: UpdateConfig) -> StageResult:
     rep = populate_aliases(cfg.db, cfg.refined)
     return StageResult(
         "aliases", True,
-        f"提取 {rep['harvested']} 双语对，匹配 {rep['matched']}，未匹配 {rep['unmatched']}",
-        detail=rep)
+        f"提取 {rep['harvested']} 双语对，匹配 {rep['matched']}，"
+        f"未匹配 {rep['unmatched']}，碰撞跳过 {rep['collided']}",
+        detail=rep,
+        warning=(f"{rep['collided']} 个中文别名碰撞（同名映射不同单位，保留首个）"
+                 if rep['collided'] else None))
 
 
 def stage_aliases_blackforum(cfg: UpdateConfig) -> StageResult:
@@ -198,8 +208,11 @@ def stage_aliases_blackforum(cfg: UpdateConfig) -> StageResult:
     return StageResult(
         "aliases_blackforum", True,
         f"{source}：{len(units)} 单位 → 写入 {rep['matched']} 别名"
-        f"（无英文跳过 {rep['skipped_no_en']}、未匹配 {rep['unmatched']}）",
-        detail={**rep, "source": source})
+        f"（无英文跳过 {rep['skipped_no_en']}、未匹配 {rep['unmatched']}、"
+        f"碰撞跳过 {rep['collided']}）",
+        detail={**rep, "source": source},
+        warning=(f"{rep['collided']} 个中文别名碰撞（同名映射不同单位，保留首个）"
+                 if rep['collided'] else None))
 
 
 def stage_aliases_community(cfg: UpdateConfig) -> StageResult:
@@ -244,7 +257,12 @@ def stage_crosscheck(cfg: UpdateConfig) -> StageResult:
         f"同名匹配 {rep.matched} ({rep.match_rate}%)，属性一致 {rep.agreed} "
         f"({rep.agreement_rate}%)，真分歧 {len(rep.discrepancies)}",
         detail={"matched": rep.matched, "agreement_rate": rep.agreement_rate,
-                "discrepancies": rep.discrepancies})
+                "discrepancies": rep.discrepancies,
+                "duplicated_names": rep.duplicated_names,
+                "skipped_files": rep.skipped_files},
+        warning=(f"{len(rep.skipped_files)} 个 .cat 解析失败，未进比对池："
+                 + "; ".join(s["path"] for s in rep.skipped_files))
+        if rep.skipped_files else None)
 
 
 def stage_mfm_check(cfg: UpdateConfig) -> StageResult:

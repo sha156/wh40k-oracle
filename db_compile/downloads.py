@@ -112,9 +112,17 @@ def render_category(slug: str, py311: Optional[str] = None,
             raise RuntimeError(f"{py} 未安装 scrapling")
         raise RuntimeError(f"渲染 {slug} 无有效输出：{tail}")
     payload = json.loads(line[len(marker):])
+    items = payload.get("items") or []
+    if not items:
+        # 渲染跑通但 0 个 PDF 链接：官方页不可能一份文档都没有，几乎必是
+        # 反爬拦截/页面结构变化。不能返回空列表——否则 diff_category 会把
+        # 旧 manifest 全部误判为「下架」。抛错走既有优雅降级路径。
+        raise RuntimeError(
+            f"渲染 {slug} 成功但结果为空（status={payload.get('status')}）——"
+            f"疑似被反爬拦截或页面结构已变，不视为全部下架")
     return [DocEntry(title=it["title"] or _filename_of(it["url"]),
                      filename=_filename_of(it["url"]), url=it["url"])
-            for it in payload["items"]]
+            for it in items]
 
 
 def head_meta(url: str, timeout: int = 20) -> Dict[str, Optional[str]]:
@@ -134,20 +142,29 @@ def head_meta(url: str, timeout: int = 20) -> Dict[str, Optional[str]]:
 
 def harvest(categories=DEFAULT_CATEGORIES, py311: Optional[str] = None,
             enrich: bool = True) -> Dict:
-    """渲染各分类页 + HEAD 补元数据 → manifest dict。enrich=False 跳过 HEAD（快，仅文件名）。"""
+    """渲染各分类页 + HEAD 补元数据 → manifest dict。enrich=False 跳过 HEAD（快，仅文件名）。
+
+    HEAD 单个失败不中断（元数据字段留空），但结束时聚合披露失败总数——不静默漏。
+    """
     cats: Dict[str, Dict] = {}
+    head_failed = 0
     for slug in categories:
         entries = render_category(slug, py311)
         docs: Dict[str, Dict] = {}
         for e in entries:
             if enrich:
                 meta = head_meta(e.url)
+                if meta.get("status") != 200:
+                    head_failed += 1
                 e.last_modified, e.size, e.etag = (
                     meta["last_modified"], meta["size"], meta["etag"])
             docs[e.title] = {"filename": e.filename, "url": e.url,
                              "last_modified": e.last_modified,
                              "size": e.size, "etag": e.etag}
         cats[slug] = docs
+    if head_failed:
+        print(f"  ⚠️ {head_failed} 个文档 HEAD 元数据抓取失败"
+              f"（manifest 相应字段为空，文件名 diff 不受影响）", flush=True)
     return {"source": "warhammer-community/downloads",
             "fetched_at": time.strftime("%Y-%m-%d %H:%M"),
             "categories": cats}

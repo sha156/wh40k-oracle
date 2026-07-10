@@ -3,6 +3,8 @@
 import json
 import sqlite3
 
+import pytest
+
 from db_compile.build import EXPECTED_CSV, build_database, _insert_abilities
 from db_compile.schema import ABILITIES_DDL
 
@@ -188,3 +190,77 @@ class TestBuildDatabase:
         report2 = build_database(csv_dir, db_path)
 
         assert report2.row_counts["datasheets"] == 2
+
+
+class TestMissingIdColumn:
+    """缺 id 列/空 id 的 CSV：不崩、行计入 skipped 披露（旧实现 r['id'] 直接 KeyError）。"""
+
+    def test_csv_without_id_column_skipped_and_disclosed(self, tmp_path):
+        csv_dir = tmp_path / "wahapedia"
+        csv_dir.mkdir()
+        # 整列缺 id（模拟 Wahapedia 导出格式漂移）
+        (csv_dir / "Factions.csv").write_text(
+            "﻿name|link|\nT'au Empire|url1|\nOrks|url2|\n", encoding="utf-8")
+        (csv_dir / "Datasheets.csv").write_text(
+            "﻿name|faction_id|\nCommander Shadowsun|TAU|\n", encoding="utf-8")
+        db_path = tmp_path / "wh40k.sqlite"
+
+        report = build_database(csv_dir, db_path)  # 不崩
+
+        assert report.row_counts["factions"] == 0
+        assert report.skipped["factions"] == 2
+        assert report.row_counts["datasheets"] == 0
+        assert report.skipped["datasheets"] == 1
+
+    def test_partial_missing_id_rows_skipped(self, tmp_path):
+        csv_dir = tmp_path / "wahapedia"
+        csv_dir.mkdir()
+        # 一行有 id、一行 id 为空：好行照常入库，坏行计 skipped
+        (csv_dir / "Factions.csv").write_text(
+            "﻿id|name|link|\nTAU|T'au Empire|url|\n|Orks|url|\n", encoding="utf-8")
+        db_path = tmp_path / "wh40k.sqlite"
+
+        report = build_database(csv_dir, db_path)
+
+        assert report.row_counts["factions"] == 1
+        assert report.skipped["factions"] == 1
+
+
+class TestAtomicReplace:
+    """中途失败旧库保持原样；成功后临时库替换正式库（旧实现先 unlink 留残缺 db）。"""
+
+    def test_midway_failure_keeps_old_db_and_cleans_tmp(self, tmp_path, monkeypatch):
+        import db_compile.build as build_mod
+
+        csv_dir = _write_fixture_csv_dir(tmp_path)
+        db_path = tmp_path / "wh40k.sqlite"
+        build_database(csv_dir, db_path)  # 先建好旧库
+
+        # 加 models CSV 并让该阶段中途爆炸
+        (csv_dir / "Datasheets_models.csv").write_text(
+            "﻿datasheet_id|line|name|M|T|Sv|inv_sv|W|Ld|OC|\n"
+            "000000407|1|x|6|4|3+||4|6+|1|\n", encoding="utf-8")
+
+        def boom(cur, rows):
+            raise RuntimeError("中途失败")
+
+        monkeypatch.setattr(build_mod, "_insert_models", boom)
+        with pytest.raises(RuntimeError, match="中途失败"):
+            build_database(csv_dir, db_path)
+
+        # 旧库原样可用（未被 unlink、未被半成品覆盖）
+        conn = sqlite3.connect(str(db_path))
+        try:
+            n = conn.execute("SELECT COUNT(*) FROM datasheets").fetchone()[0]
+        finally:
+            conn.close()
+        assert n == 2
+        # 临时文件已清理
+        assert not (tmp_path / "wh40k.tmp.sqlite").exists()
+
+    def test_success_leaves_no_tmp_file(self, tmp_path):
+        csv_dir = _write_fixture_csv_dir(tmp_path)
+        db_path = tmp_path / "wh40k.sqlite"
+        build_database(csv_dir, db_path)
+        assert db_path.exists()
+        assert not (tmp_path / "wh40k.tmp.sqlite").exists()

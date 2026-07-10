@@ -129,7 +129,8 @@ def _fetch(url: str, timeout: int = 40) -> str:
         return resp.read().decode("utf-8", errors="replace")
 
 
-def fetch_faction(slug: str, max_retries: int = 4) -> List[MfmRow]:
+def fetch_faction(slug: str, max_retries: int = 4,
+                  retry_sleep: float = 3.0) -> List[MfmRow]:
     """抓单个阵营页（带重试——Clash 代理偶发 SSL EOF 抖动）。"""
     last: Optional[Exception] = None
     for attempt in range(max_retries):
@@ -137,13 +138,17 @@ def fetch_faction(slug: str, max_retries: int = 4) -> List[MfmRow]:
             return parse_mfm_html(_fetch(f"{MFM_BASE}/en/{slug}"))
         except Exception as e:  # 网络瞬断/SSL EOF：等一拍重试
             last = e
-            time.sleep(3)
+            time.sleep(retry_sleep)
     raise RuntimeError(f"抓取 {slug} 连续 {max_retries} 次失败: {last}")
 
 
 def fetch_all(out_path: Path, sleep_s: float = 1.0,
               max_retries: int = 3) -> Dict[str, List[MfmRow]]:
-    """抓全部阵营页 → {slug: rows}，写 JSON 到 out_path。需环境代理（HTTPS_PROXY）。"""
+    """抓全部阵营页 → {slug: rows}，写 JSON 到 out_path。需环境代理（HTTPS_PROXY）。
+
+    单页抓取复用 fetch_faction（同一套重试逻辑，不再内联第二份参数不一致的循环）；
+    单阵营抓不下来记入 failed 继续，不拖垮整轮。
+    """
     home = _fetch(MFM_BASE + "/en")
     slugs = list_faction_slugs(home)
     if not slugs:
@@ -151,15 +156,11 @@ def fetch_all(out_path: Path, sleep_s: float = 1.0,
     data: Dict[str, List[MfmRow]] = {}
     failed: List[str] = []
     for slug in slugs:
-        rows: List[MfmRow] = []
-        for attempt in range(max_retries):
-            try:
-                rows = parse_mfm_html(_fetch(f"{MFM_BASE}/en/{slug}"))
-                break
-            except Exception:
-                if attempt == max_retries - 1:
-                    failed.append(slug)
-                time.sleep(2)
+        try:
+            rows = fetch_faction(slug, max_retries=max_retries)
+        except RuntimeError:
+            failed.append(slug)
+            rows = []
         data[slug] = rows
         print(f"  {slug}: {len(rows)} 条", flush=True)
         time.sleep(sleep_s)
@@ -216,14 +217,19 @@ def _rows_by_faction(factions: FactionRows) -> Dict[Tuple[str, str],
     return out
 
 
-def _load_db_units(conn) -> Dict[Tuple[str, str], Tuple[str, str, Optional[str]]]:
-    """{(faction_id, name_lower): (unit_id, name_en, points_json)}"""
-    return {
-        (fid or "", name.strip().lower()): (uid, name, pj)
-        for uid, fid, name, pj in conn.execute(
+def _load_db_units(conn) -> Dict[Tuple[str, str], List[Tuple[str, str, Optional[str]]]]:
+    """{(faction_id, name_lower): [(unit_id, name_en, points_json), ...]}
+
+    list 值保留同阵营同名重复行（Wahapedia 跨战团重复收录，如 SM Impulsor×2），
+    与 apply_points 的 units_map 同构。旧的 dict 推导 last-write-wins 会把重复行
+    折叠掉——apply 更新了全部行而 check 只看最后一行，任何一行残留旧值都漏检。
+    """
+    out: Dict[Tuple[str, str], List[Tuple[str, str, Optional[str]]]] = {}
+    for uid, fid, name, pj in conn.execute(
             "SELECT id, faction_id, name_en, points_json FROM units "
-            "WHERE name_en IS NOT NULL")
-    }
+            "WHERE name_en IS NOT NULL"):
+        out.setdefault((fid or "", name.strip().lower()), []).append((uid, name, pj))
+    return out
 
 
 def check_points(db_path, factions: FactionRows) -> Dict:
@@ -248,29 +254,30 @@ def check_points(db_path, factions: FactionRows) -> Dict:
             if not is_base_tier(tier):
                 tiered_units.add(unit_l.upper())
                 break
-        hit = db_units.get((fid, unit_l))
-        if hit is None:
+        hits = db_units.get((fid, unit_l))
+        if hits is None:
             mfm_only.append(unit_l.upper())
             continue
-        _uid, name, pj_raw = hit
-        try:
-            items = (json.loads(pj_raw) or {}).get("items") or []
-        except (json.JSONDecodeError, TypeError):
-            continue
-        costs = {(it.get("desc") or "").strip().lower(): it.get("cost")
-                 for it in items if isinstance(it.get("cost"), int)}
-        for tier, models, pts in rows:
-            if not is_base_tier(tier):
+        # 遍历同 (阵营, 名字) 的全部重复行逐一比对——任何一行残留旧值都要报
+        for _uid, name, pj_raw in hits:
+            try:
+                items = (json.loads(pj_raw) or {}).get("items") or []
+            except (json.JSONDecodeError, TypeError):
                 continue
-            db_cost = costs.get(models.strip().lower())
-            if db_cost is None:
-                continue  # 模型档位描述不一致，不强行比
-            compared += 1
-            if db_cost == pts:
-                agree += 1
-            else:
-                diffs.append({"unit": name, "models": models,
-                              "db": db_cost, "mfm": pts})
+            costs = {(it.get("desc") or "").strip().lower(): it.get("cost")
+                     for it in items if isinstance(it.get("cost"), int)}
+            for tier, models, pts in rows:
+                if not is_base_tier(tier):
+                    continue
+                db_cost = costs.get(models.strip().lower())
+                if db_cost is None:
+                    continue  # 模型档位描述不一致，不强行比
+                compared += 1
+                if db_cost == pts:
+                    agree += 1
+                else:
+                    diffs.append({"unit": name, "models": models,
+                                  "db": db_cost, "mfm": pts})
     return {"compared": compared, "agree": agree, "diffs": diffs,
             "mfm_only": sorted(set(mfm_only)), "tiered_units": sorted(tiered_units)}
 
