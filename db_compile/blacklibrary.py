@@ -261,13 +261,14 @@ def build_blacklibrary_docs(db_path):
         # 不渲染黑图书馆分数：它无版本标记，会成为绕过官方 MFM 权威链的第 4 个点数源，
         # 经 classic 检索直接流入回答。点数一律走 L3 的 units.points_json(官方 MFM 覆写)。
         lines = [f"## {name_zh}", f"所属：{faction_zh or '未知'}"]
-        # 属性
+        # 属性（unitBase=底盘尺寸——建模/摆位的关键数据，随属性行一并渲染）
         stats = json.loads(stats_j) if stats_j else []
         for m in stats:
+            base = f" 底盘{m.get('unitBase')}" if m.get("unitBase") else ""
             lines.append(
                 f"**{m.get('unitName') or name_zh}**：M{m.get('m','?')}\" "
                 f"T{m.get('t','?')} SV{m.get('sv','?')}+ W{m.get('w','?')} "
-                f"LD{m.get('ld','?')} OC{m.get('oc','?')}")
+                f"LD{m.get('ld','?')} OC{m.get('oc','?')}{base}")
         # 武器
         weapons = json.loads(w_j) if w_j else {}
         wl = [_flatten_weapon(x, False) for x in (weapons.get("射击武器") or [])]

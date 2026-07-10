@@ -25,6 +25,7 @@ class ModelProfile:
     w: str
     ld: str
     oc: str
+    base: Optional[str] = None   # 底盘尺寸（Wahapedia base_size，如 '40mm'；旧库/未知为 None）
 
 
 @dataclass
@@ -108,9 +109,9 @@ def lookup_datasheet(db_path, unit_id: str) -> Optional[Datasheet]:
 
         models = [
             ModelProfile(name=m[0], m=m[1], t=m[2], sv=m[3], invuln=m[4],
-                         w=m[5], ld=m[6], oc=m[7])
+                         w=m[5], ld=m[6], oc=m[7], base=m[8])
             for m in conn.execute(
-                "SELECT name, m, t, sv, invuln, w, ld, oc FROM models "
+                "SELECT name, m, t, sv, invuln, w, ld, oc, base FROM models "
                 "WHERE unit_id = ?", (unit_id,))
         ]
         weapons = [
@@ -156,9 +157,13 @@ def diff_core_stats(ds: "Datasheet", zh: Optional[dict]) -> List[dict]:
     conflicts = []
     for field_name, off_val, zh_key in (
         ("M", wm.m, "m"), ("T", wm.t, "t"), ("SV", wm.sv, "sv"), ("W", wm.w, "w"),
+        ("BASE", wm.base, "unitBase"),   # 底盘尺寸：官方 base_size vs 黑图书馆 unitBase
     ):
         zh_val = zm.get(zh_key)
         if zh_val in (None, "", "?", "-"):
+            continue
+        if off_val in (None, "", "?", "-"):
+            # 任一侧缺值只是数据缺失（如官方 base_size 留空），不算数值矛盾
             continue
         if _norm_stat(off_val) != _norm_stat(zh_val):
             conflicts.append({"field": field_name,

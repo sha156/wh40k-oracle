@@ -21,8 +21,9 @@ def _ds(models):
                      models=models, weapons=[])
 
 
-def _model(m="10", t="10", sv="3", w="12"):
-    return ModelProfile(name="X", m=m, t=t, sv=sv, invuln="-", w=w, ld="6", oc="1")
+def _model(m="10", t="10", sv="3", w="12", base=None):
+    return ModelProfile(name="X", m=m, t=t, sv=sv, invuln="-", w=w, ld="6",
+                        oc="1", base=base)
 
 
 class TestDiffCoreStats:
@@ -65,7 +66,8 @@ def _make_db(tmp_path):
         CREATE TABLE units (id TEXT PRIMARY KEY, faction_id TEXT, name_en TEXT,
                             name_zh TEXT, points_json TEXT, keywords_json TEXT, version TEXT);
         CREATE TABLE models (unit_id TEXT, name TEXT, m TEXT, t TEXT, sv TEXT,
-                            invuln TEXT, w TEXT, ld TEXT, oc TEXT, count_options_json TEXT);
+                            invuln TEXT, w TEXT, ld TEXT, oc TEXT, base TEXT,
+                            count_options_json TEXT);
         CREATE TABLE weapons (id TEXT PRIMARY KEY, unit_id TEXT, name_zh TEXT, name_en TEXT,
                             range TEXT, a TEXT, bs_ws TEXT, s TEXT, ap TEXT, d TEXT, keywords_json TEXT);
         """
@@ -77,7 +79,7 @@ def _make_db(tmp_path):
         (json.dumps({"points": 85, "items": [{"line": "1", "desc": "1 model", "cost": 85}]}),
          json.dumps({"keywords": ["Infantry", "Character"], "faction_keywords": ["Chaos"]})),
     )
-    conn.execute("INSERT INTO models VALUES ('000000929','Chaos Lord','6\"','4','3+','4','4','6+','1',NULL)")
+    conn.execute("INSERT INTO models VALUES ('000000929','Chaos Lord','6\"','4','3+','4','4','6+','1','40mm',NULL)")
     conn.execute(
         "INSERT INTO weapons VALUES ('000000929_w1','000000929',NULL,'Plasma pistol – standard',"
         "'12','1','3+','7','-2','1',?)", (json.dumps(["pistol"]),))
@@ -138,7 +140,7 @@ class TestFindDatasheet:
         conn.execute(
             "INSERT INTO units VALUES ('000002632','WE','Chaos Lord',NULL,NULL,NULL,NULL)")
         conn.execute("INSERT INTO models VALUES ('000002632','Chaos Lord','9\"','4',"
-                     "'3+','4','5','6+','1',NULL)")
+                     "'3+','4','5','6+','1','40mm',NULL)")
         conn.commit()
         conn.close()
         return db

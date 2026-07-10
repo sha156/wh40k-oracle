@@ -299,7 +299,7 @@ class TestGetDatasheet:
             "CREATE TABLE units(id TEXT,faction_id TEXT,name_en TEXT,name_zh TEXT,"
             "points_json TEXT,keywords_json TEXT,version TEXT);"
             "CREATE TABLE models(unit_id TEXT,name TEXT,m TEXT,t TEXT,sv TEXT,"
-            "invuln TEXT,w TEXT,ld TEXT,oc TEXT,count_options_json TEXT);"
+            "invuln TEXT,w TEXT,ld TEXT,oc TEXT,base TEXT,count_options_json TEXT);"
             "CREATE TABLE weapons(id TEXT,unit_id TEXT,name_zh TEXT,name_en TEXT,"
             "range TEXT,a TEXT,bs_ws TEXT,s TEXT,ap TEXT,d TEXT,keywords_json TEXT);"
         )
@@ -307,7 +307,7 @@ class TestGetDatasheet:
         conn.execute("INSERT INTO datasheets VALUES('929','Chaos Lord','CSM')")
         conn.execute("INSERT INTO units VALUES('929','CSM','Chaos Lord',NULL,?,NULL,NULL)",
                      (json.dumps({"points": 85, "items": [{"cost": 85}]}),))
-        conn.execute("INSERT INTO models VALUES('929','Chaos Lord','6\"','4','3+','4','4','6+','1',NULL)")
+        conn.execute("INSERT INTO models VALUES('929','Chaos Lord','6\"','4','3+','4','4','6+','1','40mm',NULL)")
         conn.commit()
         conn.close()
 

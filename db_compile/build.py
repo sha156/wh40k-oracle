@@ -111,11 +111,12 @@ def _insert_datasheets(cur, rows: List[dict],
 def _insert_models(cur, rows: List[dict]) -> int:
     cur.executemany(
         """INSERT OR REPLACE INTO models
-           (unit_id, name, m, t, sv, invuln, w, ld, oc)
-           VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)""",
+           (unit_id, name, m, t, sv, invuln, w, ld, oc, base)
+           VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)""",
         [(r.get("datasheet_id"), r.get("name", ""),
           r.get("M"), r.get("T"), r.get("Sv"),
-          r.get("inv_sv"), r.get("W"), r.get("Ld"), r.get("OC"))
+          r.get("inv_sv"), r.get("W"), r.get("Ld"), r.get("OC"),
+          r.get("base_size"))
          for r in rows])
     return len(rows)
 
