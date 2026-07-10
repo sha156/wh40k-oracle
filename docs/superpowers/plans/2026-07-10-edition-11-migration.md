@@ -12,7 +12,15 @@
 >   改写 + CLI/UI/persona 版本措辞；666 测试绿。S3 剩余：24 章 USR 逐条审计
 > - ✅ S4 先行项（D4）：MFM 官方实时站 2026-07-10 重抓，1224/1224 一致 0 过期；
 >   7 个 MFM-only 单位（含 titan-legions 解析 0 条）待 DB 迁移补数据表
-> - ⏳ 待做：S2 检索版本感知、S3 USR 审计、S4 结构库 11 版源调研、S5 基准 v2、S6 术语复核
+> - ✅ S2 代码侧：edition/layer 标签贯穿 context/来源展示/agent 透传 + 版本仲裁 prompt
+>   （54e09a2a）；检索质量实测待新索引
+> - ✅ S3 审计+实现：USR 审计报告（specs/2026-07-10-edition-11-usr-audit.md）；B 类修正
+>   已落地（22a17905：Stealth 掩体化/间接固定阈值/Heavy 条件/Blast X/Cleave/lethal 披露），
+>   686 测试绿。S3 残留：B6 PSYCHIC 复核、dev×减伤交互复核、smokescreen 11版战略审计
+> - ✅ S4 调研：wahapedia 未迁移（wh40k11ed 系 alias，last_update 2026-06-13）；
+>   黑图书馆无 11 版（gameId=5 是 Kill Team）；**BSData/wh40k-11e 已建仓且当天仍在推送**
+>   （尚无 .cat 落地）——观察项，成熟后走 crosscheck 接入
+> - ⏳ 待做：重建完成后验证（规则问题引用 11 版）、S2 中英跨语检索实测、S5 基准 v2、S6 术语复核
 
 ---
 
