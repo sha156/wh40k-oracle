@@ -16,7 +16,7 @@ from engines.simulator.contracts import (
 )
 from engines.simulator.context import STANDARD_BIAS, build_not_modeled, collect_effect_reporting
 from engines.simulator.report import build_report
-from engines.simulator.sequence import run_sequence
+from engines.simulator.sequence import run_sequence, unconsumed_target_effect_notes
 
 
 def simulate(
@@ -29,9 +29,13 @@ def simulate(
     include_bias: bool = True,
 ) -> SimReport:
     """单向：attacker 打 target 一次攻击序列 × N，返回聚合报告。"""
+    if n <= 0:                           # 评审 H9：n=0 → numpy zero-size 裸错，必须入口拦截
+        raise ValueError("迭代次数 n 必须为正整数，收到 {}".format(n))
     raw = run_sequence(attacker, target, stance, n=n, seed=seed)
     modeled, _annotated, _unparsed = collect_effect_reporting(attacker)
     not_modeled = build_not_modeled(attacker, target)
+    # 评审 M：守方 Effect 要么被引擎消费、要么显式披露，绝不静默丢
+    not_modeled.extend(unconsumed_target_effect_notes(target))
     return build_report(
         raw, points=points, modeled_effects=modeled, not_modeled=not_modeled,
         bias_notes=list(STANDARD_BIAS) if include_bias else [],
@@ -91,6 +95,8 @@ def simulate_matchup(
     且 B 有 Fights First 等），A 以幸存者反打——返回的 forward 恒为「A→B」视角，
     但 A 的攻击强度按先攻顺序对应满编/幸存。
     """
+    if n <= 0:                           # 评审 H9：与 simulate 同口径入口校验
+        raise ValueError("迭代次数 n 必须为正整数，收到 {}".format(n))
     from engines.simulator.fight_order import FighterState, judge
 
     a_state = FighterState(a_attacker.name_en or "A", is_active_player=True,

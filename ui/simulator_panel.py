@@ -80,8 +80,12 @@ def _render_report(st, report: Dict[str, Any], title: str) -> None:
 
 
 def _options_from_inputs(st) -> Dict[str, Any]:
-    """从控件 session_state 读出 simulate_combat 的 options。"""
-    from engines.simulator.cli import _parse_loadout
+    """从控件 session_state 读出 simulate_combat 的 options。
+
+    loadout 畸形时抛 LoadoutParseError（评审 H11）——调用方（render_simulator_panel）
+    捕获后走 st.error 友好提示，不让裸 traceback 冲垮面板。
+    """
+    from engines.simulator.cli import _clean_options, _parse_loadout
 
     opts: Dict[str, Any] = {
         "phase": st.session_state.get("sim_phase", "shooting"),
@@ -109,7 +113,8 @@ def _options_from_inputs(st) -> Dict[str, Any]:
     dlo = _parse_loadout(st.session_state.get("sim_def_loadout", "") or "")
     if dlo:
         opts["defender_loadout"] = dlo
-    return {k: v for k, v in opts.items() if v not in (None, False)}
+    # 评审 H10：只滤 None/False 本身，绝不滤 0（0 == False 会把 seed=0 静默丢回默认 1234）
+    return _clean_options(opts)
 
 
 def render_simulator_panel(st) -> None:
@@ -161,9 +166,17 @@ def render_simulator_panel(st) -> None:
         st.warning("请填写攻方与守方单位名。")
         return
 
+    # 评审 H11：loadout 畸形 → st.error 友好提示并返回，不让裸 traceback 冲垮面板
+    from engines.simulator.cli import LoadoutParseError
+    try:
+        options = _options_from_inputs(st)
+    except LoadoutParseError as exc:
+        st.error(f"装配 loadout 格式错误：{exc}")
+        return
+
     from agent.tools import simulate_combat
     with st.spinner("逐骰模拟中…"):
-        res = simulate_combat(attacker, defender, _options_from_inputs(st))
+        res = simulate_combat(attacker, defender, options)
 
     if not res.get("ok"):
         reason = res.get("reason")
@@ -189,10 +202,12 @@ def render_simulator_panel(st) -> None:
         st.markdown("#### ↩️ 守方幸存者反打")
         _render_report(st, rev, "反打·击杀数分布")
 
-    # surface：守方可 opt-in 的防守技能 + 阵营分队名（诚实披露，未自动施加）
+    # surface：守方防守技能提示 + 阵营分队名（诚实披露，未自动施加）。
+    # 评审 M：这些技能没有自动接线（留待 P7），提示用户在上方手动开关/数值框自行填数。
     toggles = res.get("defender_toggles") or []
     if toggles:
-        st.info("守方可启用的防守技能（默认未计入，勾选上方对应开关重跑）：\n\n"
+        st.info("检测到守方防守技能（仅提示，本次未计入）：如适用，请在上方手动开关/数值框"
+                "自行填入对应数值后重跑（自动接线留待 P7）：\n\n"
                 + "\n".join(f"- **{t['name']}**：{t['note']}" for t in toggles))
     fo = res.get("faction_options") or {}
     if fo.get("detachments"):

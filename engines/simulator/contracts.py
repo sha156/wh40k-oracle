@@ -115,6 +115,8 @@ class Stance:
 
 @dataclass(frozen=True)
 class SimContext:
+    """⚠ 未接入执行链路（P5 遗留占位，P8 FastAPI 预留）；修改此处不影响模拟结果，
+    真实 Effect 通道在 sequence._gather_params。"""
     attacker: AttackerProfile
     target: TargetProfile
     stance: Stance

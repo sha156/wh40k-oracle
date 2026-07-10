@@ -61,7 +61,11 @@ def classify_target_abilities(target: TargetProfile) -> AbilityClassification:
 
 
 def build_toggles_available(target: TargetProfile) -> Tuple[Tuple[str, str, bool], ...]:
-    """守方可 opt-in 的防守开关（名字, 一句话, 是否已解析出参数）——只列名不施加。"""
+    """检测到的守方防守技能提示（名字, 一句话, 是否已解析出参数）——只列名不施加。
+
+    如实说明（评审 M）：这里没有"开关即生效"的接线（留待 P7），用户需在 options/面板
+    的手动开关里自行填数，引擎才会计入。
+    """
     return tuple(classify_target_abilities(target).toggle_summaries())
 
 
@@ -79,7 +83,8 @@ def build_not_modeled(attacker: AttackerProfile, target: TargetProfile) -> List[
         toggles = cls.toggle_summaries()
         if toggles:
             names = "、".join(f"{n}（{d}）" for n, d, _ in toggles)
-            notes.append("可开关建模但默认未启用（需 options/面板 opt-in）：" + names)
+            notes.append("检测到可建模防守技能（仅提示，未计入；需在手动开关自行填数，"
+                         "自动接线留待 P7）：" + names)
     else:
         notes.append(_ABILITIES_NOTE)
 
@@ -94,7 +99,10 @@ def build_context(
     target: TargetProfile,
     stance: Stance,
 ) -> SimContext:
-    """组装 SimContext（P5-a：效果通道 + 精确技能分类 + 可 opt-in 防守开关列名）。"""
+    """⚠ 未接入执行链路（P5 遗留占位，P8 FastAPI 预留）；修改此处不影响模拟结果，
+    真实 Effect 通道在 sequence._gather_params。
+
+    组装 SimContext（P5-a：效果通道 + 精确技能分类 + 防守技能提示列名）。"""
     return SimContext(
         attacker=attacker,
         target=target,

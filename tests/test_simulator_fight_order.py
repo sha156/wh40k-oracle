@@ -99,6 +99,21 @@ def test_rationale_and_refs_nonempty():
     assert v.counter_offensive_note
 
 
+# ── 评审 M：Fights Last 出处核查（data_refined 全库检索 0 命中 → 降级标注）──
+def test_fights_last_provenance_caveat_in_refs_and_rationale():
+    v = judge(_act("A", charged=True), _def("B", fights_last=True))
+    # rule_refs 里明确标注：未找到原文出处、按对称假设实现
+    assert any("未在当前核心规则数据源" in r for r in v.rule_refs)
+    assert any("对称" in r for r in v.rule_refs)
+    # 涉及 Fights Last 的判定，rationale 附谨慎使用提示
+    assert "谨慎使用" in v.rationale
+
+
+def test_no_fights_last_no_caveat_in_rationale():
+    v = judge(_act("A", charged=True), _def("B"))
+    assert "谨慎使用" not in v.rationale       # 不涉及 Fights Last 时不打扰
+
+
 # ── Counter-offensive 说明 ───────────────────────────────────
 def test_counter_offensive_by_second_striker_notes_insert():
     v = judge(_act("A", charged=True), _def("B", fights_first=True),

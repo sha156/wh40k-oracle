@@ -237,6 +237,30 @@ def _target_effect_value(target: TargetProfile, op: str) -> Optional[int]:
     return None
 
 
+# ── 守方 Effect 消费对账（评审 M：target.effects 要么被消费、要么显式披露，绝不静默丢）──
+# 引擎当前的全部消费点：
+#   · op == "fnp" / "damage_reduction" → run_sequence 顶层经 _target_effect_value 读取；
+#   · phase == "hit" 且 op == "modify" → _gather_params 并入攻方命中修正（Stealth/烟幕）。
+# 其余 phase/op（如 wound/save 阶段的防守修正）当前没有消费者——列入报告注解透传。
+def _target_effect_consumed(e) -> bool:
+    if e.op in ("fnp", "damage_reduction"):
+        return True
+    return e.phase == "hit" and e.op == "modify"
+
+
+def unconsumed_target_effect_notes(target: TargetProfile) -> List[str]:
+    """列出守方 effects 中引擎不会消费的条目（供 engine.simulate 透传进 not_modeled）。
+
+    只披露、不改数值——保证「报告里出现 ≠ 结果被影响」这一诚实语义。
+    """
+    return [
+        f"守方 Effect 未消费：phase={e.phase}/op={e.op}"
+        f"（来源 {e.source or '未知'}）——引擎当前只消费 fnp/damage_reduction/"
+        f"命中修正（hit+modify），该效果未计入本次结果"
+        for e in target.effects if not _target_effect_consumed(e)
+    ]
+
+
 # ---------------------------------------------------------------------------
 # 逐迭代结果容器
 # ---------------------------------------------------------------------------

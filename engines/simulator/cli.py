@@ -13,8 +13,12 @@ import sys
 from typing import List, Optional, Tuple
 
 
+class LoadoutParseError(ValueError):
+    """loadout 文本解析失败（评审 H11）：消息里带坏 token + 期望格式示例，供 CLI/面板友好提示。"""
+
+
 def _parse_loadout(text: Optional[str]) -> Optional[List[Tuple[str, int]]]:
-    """'Shoota:9,Slugga:1' → [('Shoota',9),('Slugga',1)]。"""
+    """'Shoota:9,Slugga:1' → [('Shoota',9),('Slugga',1)]。畸形片段抛 LoadoutParseError。"""
     if not text:
         return None
     out: List[Tuple[str, int]] = []
@@ -22,9 +26,40 @@ def _parse_loadout(text: Optional[str]) -> Optional[List[Tuple[str, int]]]:
         part = part.strip()
         if not part:
             continue
-        name, _, cnt = part.rpartition(":")
-        out.append((name.strip(), int(cnt))) if name else out.append((part, 1))
+        name, sep, cnt = part.rpartition(":")
+        if not sep:                       # 无冒号 → 整段是武器名，数量默认 1
+            out.append((part, 1))
+            continue
+        name = name.strip()
+        if not name:
+            raise LoadoutParseError(
+                f"loadout 片段 {part!r} 缺少武器名：期望格式「武器名:数量」，"
+                f"如 'Shoota:9,Slugga:1'")
+        try:
+            count = int(cnt.strip())
+        except ValueError:
+            raise LoadoutParseError(
+                f"loadout 片段 {part!r} 的数量 {cnt.strip()!r} 不是整数："
+                f"期望格式「武器名:数量」，如 'Shoota:9,Slugga:1'")
+        out.append((name, count))
     return out
+
+
+def _positive_int(text: str) -> int:
+    """argparse type：正整数校验（评审 H9——n=0/-5 会让 numpy 裸崩，入口拦截）。"""
+    try:
+        v = int(text)
+    except ValueError:
+        raise argparse.ArgumentTypeError(f"迭代次数必须是正整数，收到 {text!r}")
+    if v <= 0:
+        raise argparse.ArgumentTypeError(f"迭代次数必须是正整数，收到 {v}")
+    return v
+
+
+def _clean_options(raw: dict) -> dict:
+    """滤掉未提供的项：只滤 None 与 False 本身，绝不滤 0（评审 H10——
+    `v not in (None, False)` 会因 0 == False 把 seed=0/n=0 等合法显式值静默丢弃）。"""
+    return {k: v for k, v in raw.items() if v is not None and v is not False}
 
 
 def _fmt_report(rep: dict, indent: str = "") -> List[str]:
@@ -77,10 +112,18 @@ def main(argv: Optional[List[str]] = None) -> int:
     p.add_argument("--atk-fights-last", action="store_true", dest="attacker_fights_last")
     p.add_argument("--judge-order", action="store_true", dest="judge_order",
                    help="只判定近战先攻顺序（用 --charge/--*-fights-* 描述状态），不跑模拟")
-    p.add_argument("-n", type=int, default=8000, help="迭代次数（默认 8000）")
+    p.add_argument("-n", type=_positive_int, default=8000, help="迭代次数（默认 8000，须为正整数）")
     p.add_argument("--seed", type=int, default=1234)
     p.add_argument("--json", action="store_true", help="输出原始 JSON")
     args = p.parse_args(argv)
+
+    # 评审 H11：loadout 解析失败给友好提示 + exit 2，不再裸 traceback
+    try:
+        loadout = _parse_loadout(args.loadout)
+        defender_loadout = _parse_loadout(args.defender_loadout)
+    except LoadoutParseError as exc:
+        print(f"[参数错误] {exc}", file=sys.stderr)
+        return 2
 
     from agent.tools import judge_fight_order, simulate_combat
 
@@ -105,7 +148,7 @@ def main(argv: Optional[List[str]] = None) -> int:
         print("Counter-offensive：" + v["counter_offensive_note"])
         return 0
 
-    options = {k: v for k, v in {
+    options = _clean_options({
         "phase": args.phase, "charge": args.charge, "half_range": args.half_range,
         "cover": args.cover, "stationary": args.stationary,
         "long_range": args.long_range, "indirect": args.indirect,
@@ -117,11 +160,11 @@ def main(argv: Optional[List[str]] = None) -> int:
         "defender_fights_last": args.defender_fights_last,
         "attacker_models": args.attacker_models,
         "defender_models": args.defender_models,
-        "loadout": _parse_loadout(args.loadout),
-        "defender_loadout": _parse_loadout(args.defender_loadout),
+        "loadout": loadout,
+        "defender_loadout": defender_loadout,
         "fnp": args.fnp, "damage_reduction": args.damage_reduction,
         "n": args.n, "seed": args.seed,
-    }.items() if v not in (None, False)}
+    })
 
     result = simulate_combat(args.attacker, args.defender, options)
 

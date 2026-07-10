@@ -8,7 +8,9 @@
 
 据此本模块**不自动施加任何技能**——它把每条技能分到桶里：
   · toggle_defensive：可建模的防守 USR（FNP X / Stealth / 减伤），解析出参数 + 条件标注，
-    产出一个"若启用则施加"的 Effect；**默认不施加**，由 options/面板 opt-in。
+    并产出 Effect 备用。⚠ 如实说明（评审 M）：该 Effect 当前**没有任何消费者**（自动接线
+    留待 P7）——分类结果只是"检测到防守技能 X"的提示，用户需在 options/面板的手动开关里
+    自行填数，引擎才会计入（真实 Effect 通道在 sequence._gather_params）。
   · nm_*：精确的未建模分类（选取/部署/士气/死亡爆炸/光环依附/其它），取代 P4 那句
     笼统的"abilities 全表未建模"。
 
@@ -134,7 +136,8 @@ def classify_ability(rec: AbilityRecord) -> ClassifiedAbility:
         cond = _is_conditional(low)
         eff = Effect("fnp", "fnp", (x,), (), f"feel no pain {x}+") if x else None
         detail = (f"无痛 {x}+" if x else "无痛（未解析出阈值）")
-        detail += f"（{_condition_hint(low)}）" if cond else "（可开关启用）"
+        detail += (f"（{_condition_hint(low)}）" if cond
+                   else "（提示：需在手动开关自行填数，自动接线留待 P7）")
         return ClassifiedAbility(name or "Feel No Pain", CAT_TOGGLE_DEF, detail,
                                  effect=eff, conditional=cond,
                                  params=((x,) if x else ()))
@@ -163,7 +166,9 @@ def classify_ability(rec: AbilityRecord) -> ClassifiedAbility:
         cond = (not _is_core_stealth) and _is_conditional(low)
         detail = ("潜行：守方全员具备时，攻方射击命中 -1（近战不生效）"
                   if _is_core_stealth else
-                  "射击命中 -1（掩蔽/潜行类）" + ("（条件式，需确认适用）" if cond else "（可开关启用）"))
+                  "射击命中 -1（掩蔽/潜行类）"
+                  + ("（条件式，需确认适用）" if cond
+                     else "（提示：需在手动开关自行填数，自动接线留待 P7）"))
         return ClassifiedAbility(name or "Stealth", CAT_TOGGLE_DEF, detail,
                                  effect=eff, conditional=cond, params=(-1,))
 
@@ -177,7 +182,9 @@ def classify_ability(rec: AbilityRecord) -> ClassifiedAbility:
         eff = Effect("damage", "damage_reduction", (1,), (), "damage reduction")
         cond = _is_conditional(low)
         return ClassifiedAbility(name or "Damage Reduction", CAT_TOGGLE_DEF,
-                                 "受到伤害 -1" + ("（条件式，需确认适用）" if cond else "（可开关启用）"),
+                                 "受到伤害 -1"
+                                 + ("（条件式，需确认适用）" if cond
+                                    else "（提示：需在手动开关自行填数，自动接线留待 P7）"),
                                  effect=eff, conditional=cond, params=(1,))
 
     # ── not_modeled 精确分桶（按优先级）─────────────────────────

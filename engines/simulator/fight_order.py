@@ -8,6 +8,9 @@
   「Fights Last」抵消规则（评审 E2）：
      · 单位 fights_last 且【无任何 fights-first 来源】→ 押到全场最后（Step 3）；
      · 单位【同时】有 fights-first 来源 且 fights_last → 两者相互抵消 → 回 Step 2 正常时序。
+     ⚠ 出处存疑（2026-07-10 审查核实）：data_refined 全库检索 "fights last / fight last /
+     strikes last" 0 命中——Fights Last 未在当前核心规则数据源中找到原文出处，上述判定逻辑
+     按与 Fights First 对称的假设实现，涉及 Fights Last 的结论请谨慎使用。
   「Counter-offensive」战略（2CP）：某敌方单位刚结算完毕后，可选己方一个尚未结算的合格单位插队立刻结算。
 
 注意：冲锋只发生在当前玩家的冲锋阶段，故 charged 必然属于 active player 一侧（详见判定说明）。
@@ -25,7 +28,9 @@ _STEP_LAST = 3      # 纯 Fights Last
 
 _RULE_REFS = (
     "核心规则·Fight phase·Fights First（冲锋或 Fights First 能力的单位在第一步先打）",
-    "核心规则·Fights First/Fights Last 抵消（同时具备则相互抵消，回正常时序）",
+    "Fights First/Fights Last 抵消：Fights Last 未在当前核心规则数据源（data_refined 全库"
+    "检索 0 命中）找到原文出处，判定逻辑按与 Fights First 对称的假设实现，"
+    "涉及 Fights Last 的结论请谨慎使用",
     "核心规则·同一步内从当前玩家起交替选取单位结算",
     "核心战略·Counter-offensive（2CP，敌方单位刚结算后插队一个己方单位）",
 )
@@ -115,6 +120,10 @@ def judge(a: FighterState, b: FighterState,
         f"{first.name} 在 {_step_label(first.step)} 先打{tie_reason}，"
         f"{second.name} 后打（其时已承受先手伤亡、以幸存者反打）。"
     )
+    if a.fights_last or b.fights_last:
+        # 出处存疑（评审 M）：Fights Last 在 data_refined 核心规则源 0 命中，按对称假设实现
+        rationale += ("（注意：Fights Last 未在当前核心规则数据源中找到原文出处，"
+                      "其判定按对称假设实现，结果谨慎使用）")
 
     # Counter-offensive：仅当先打方是 counter_offensive_by 的敌人时才有意义（让己方插到敌方之后）
     if counter_offensive_by:
