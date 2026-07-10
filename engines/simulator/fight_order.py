@@ -1,10 +1,16 @@
 """P5-b：十版战斗顺序判定器（纯规则有限状态机，零外部依赖）。
 
-十版 Fight phase 先攻顺序是可枚举的确定规则，故代码化 + 单测即可高置信覆盖。规则（现行核心规则）：
+十版 Fight phase 先攻顺序是可枚举的确定规则，故代码化 + 单测即可高置信覆盖。规则（十版核心规则）：
 
   Step 1「Fights First」：具备 fights-first 来源（本回合冲锋成功 或 拥有 Fights First 能力）的单位先打。
   Step 2「Remaining Combats」：其余单位。
-  两步各自：若两边都有资格，从【当前玩家（active player）】的单位起交替选取结算。
+  两步各自：若两边都有资格，从【非当前回合玩家（守方）】的单位起交替选取结算。
+  ⚠ 版本裁决（2026-07-10）：库内英文《Core Rules - New 40K Core Rules》page_040 写
+  "Starting with the player whose turn it is"（当前玩家先）——该书经查证是【下一版】核心规则
+  （目录含 SURGING/ACTIONS 等非十版章节、12.04 式编号条款），非十版真源。十版原文为
+  "starting with the player whose turn is not currently taking place"，与中文
+  《战锤40K总规则10版》page_033「当前是谁的回合，就从对方玩家开始」一致。本模拟器定位十版
+  （数据库/MFM/中文 codex 全为十版），故按十版方向实现；勿按那本英文书"改回去"。
   「Fights Last」抵消规则（评审 E2）：
      · 单位 fights_last 且【无任何 fights-first 来源】→ 押到全场最后（Step 3）；
      · 单位【同时】有 fights-first 来源 且 fights_last → 两者相互抵消 → 回 Step 2 正常时序。
@@ -13,7 +19,8 @@
      按与 Fights First 对称的假设实现，涉及 Fights Last 的结论请谨慎使用。
   「Counter-offensive」战略（2CP）：某敌方单位刚结算完毕后，可选己方一个尚未结算的合格单位插队立刻结算。
 
-注意：冲锋只发生在当前玩家的冲锋阶段，故 charged 必然属于 active player 一侧（详见判定说明）。
+注意：冲锋只发生在当前玩家的冲锋阶段，故 charged 必然属于 active player 一侧；冲锋方"通常先打"
+是因为它独占 Fights First 步（守方无 fights-first 来源时不同步），而非同步内的选取顺序。
 本模块回答「谁先打」，供 `engine.simulate_matchup` 判定正/反打方向、供 `agent.tools.judge_fight_order` 作答。
 """
 from __future__ import annotations
@@ -31,7 +38,9 @@ _RULE_REFS = (
     "Fights First/Fights Last 抵消：Fights Last 未在当前核心规则数据源（data_refined 全库"
     "检索 0 命中）找到原文出处，判定逻辑按与 Fights First 对称的假设实现，"
     "涉及 Fights Last 的结论请谨慎使用",
-    "核心规则·同一步内从当前玩家起交替选取单位结算",
+    "十版核心规则·同一步内从非当前回合玩家起交替选取单位结算"
+    "（《战锤40K总规则10版》p33「当前是谁的回合，就从对方玩家开始」；"
+    "库内英文《New 40K Core Rules》为下一版规则，方向相反，不适用于十版）",
     "核心战略·Counter-offensive（2CP，敌方单位刚结算后插队一个己方单位）",
 )
 
@@ -105,15 +114,15 @@ def judge(a: FighterState, b: FighterState,
         first, second = (a, b) if sa < sb else (b, a)
         tie_reason = ""
     else:
-        # 同一步 → 从当前玩家起。冲锋只属当前玩家，故当前玩家通常先。
-        if a.is_active_player and not b.is_active_player:
+        # 同一步 → 十版：从非当前回合玩家（守方）起交替选取（版本裁决见模块 docstring）。
+        if b.is_active_player and not a.is_active_player:
             first, second = a, b
-        elif b.is_active_player and not a.is_active_player:
+        elif a.is_active_player and not b.is_active_player:
             first, second = b, a
         else:
             # 两边同为/同非 active（1v1 罕见）：保序取 a，标注歧义
             first, second = a, b
-        tie_reason = "（同处一步，从当前玩家起交替选取）"
+        tie_reason = "（同处一步，十版从非当前回合玩家起交替选取）"
 
     rationale = (
         f"{_why(a)}；{_why(b)}。"

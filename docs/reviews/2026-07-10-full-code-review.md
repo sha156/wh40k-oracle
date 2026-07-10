@@ -105,6 +105,32 @@ PyMuPDFLoader 的 `metadata["page"]` 是 **0 起始**，直传路径从未 +1；
 - `_options_from_inputs`（seed=0 bug 所在）无测试
 - 建议补：别名碰撞、同阵营重名、4 位版本号混格式、"长正文零 ### 标题"等针对性用例
 
+## 续记（2026-07-10 晚，遗留待办处置）
+
+1. **C1 复核**：`--rebuild` 已执行，全部 3940 chunk 页码 1-based ✅
+2. **fight_order 中英矛盾已裁决——是版本差异不是翻译错误**：库内英文《Core Rules - New 40K
+   Core Rules》经查证是**下一版**规则（目录含 SURGING/ACTIONS 章节、12.04 编号条款、全书无
+   "Engagement Range"；Faction Pack 自述 "Legal for matched play from 20th June 2026… this
+   edition"）。十版原文 "starting with the player whose turn is **not** currently taking
+   place" 与中文总规则 p33「从对方玩家开始」一致。模拟器定位十版 → 同步内交替改为**非当前
+   玩家先**；顺带修出 `simulate_matchup` 相位边界（射击正打不适用近战先攻规则，此前被
+   active-first 恰好掩盖）。
+3. **⚠ 新发现：data_refined 英文官方文档整批为下一版**（Core Rules + 全部 Faction Pack，
+   2026-06-20 生效），已进 RAG 索引与十版内容并存——规则类问题可能检到两版矛盾条文。
+   处置（归档 or 标版本元数据）待用户裁决。
+4. **H18 复核（基准重跑）**：判分收严后 gold 基准两道错题追查：
+   - #25 地狱兽答错阵营 → 挖出 **resolver/find_datasheet 跨阵营同名静默取一**（Helbrute×4，
+     `LIMIT 1` 裸取 + `setdefault` 先入为主）。已修：多命中报 ambiguous + `名字 (阵营)` 消歧
+     重查 + 候选属性预览 + 循环合同禁止歧义未消时凭记忆填数。四阵营 Helbrute M 值 6/7/8/9
+     各不同，DB 数据本身无误。**gold 题面同步清洗**：原题不带阵营无唯一正确答案，改为
+     「吞世者的地狱兽」与 canonical_id 对齐；工具 arg 提示补「单位名不带阵营前缀」。
+   - #48 弹射器判 ❌ → 抽取器遇"回答否认所问武器名但列出同武器异译名数据"时拒抽。已修
+     抽取 prompt：名称争议交下游记录匹配，照抄数值（拼凑防线不受影响）。
+5. **最终基准（判分收严后）**：agent 路径 **94✅/2⚠️/0❌ = 97.9**（96 题，全部修复+题面
+   清洗后收官跑）。此前 99.0 是 H18 判分放水时的数字，不可比；新口径下零硬错，2 个 ⚠️ 为
+   LLM 作答风格波动（超范围列举/可选武器覆盖不全），非代码缺陷。全库 655 测试绿
+   （较修复前 +9 回归测试）。
+
 ## 修复优先级建议
 
 - **P0（正确性地基，先修）**：C1 页码、H18 qa_bench 判分（修完重跑 gold 基准验证 99.0）、H1 DB_ALIASES 日志、H2 fetch_k

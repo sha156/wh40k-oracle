@@ -103,6 +103,39 @@ def test_matchup_attaches_survivor_reverse():
     assert any("反打基于 B 期望幸存" in b for b in rep.bias_notes)
 
 
+def test_matchup_shooting_forward_ignores_fight_order():
+    # 相位边界（2026-07-10 十版方向修正暴露）：射击正打时 Fight phase 先攻规则不适用，
+    # 即便守方带 Fights First，也不能"抢先"打掉射击方——恒 A 先手出手。
+    a_gun = weapon(const(40), 3, 5, -1, const(1))
+    a_atk = attacker(a_gun, models=10)
+    b_fist = weapon(const(3), 3, 8, -2, const(2), melee=True, count=20)
+    b_atk = AttackerProfile(canonical_id="B", name_en="B", name_zh=None,
+                            models=20, loadout=(b_fist,), keywords=frozenset())
+    rep = simulate_matchup(
+        a_atk, target(4, 6, 1, 20), b_atk, target(4, 3, 2, 10),
+        stance_forward=Stance(phase="shooting"),
+        stance_reverse=Stance(phase="melee"),
+        n=8000, seed=5, b_fights_first=True)
+    assert rep.expected_kills > 0                       # A 满编先打，未被 B "抢先"清场
+    assert any("不适用" in b for b in rep.bias_notes)
+
+
+def test_matchup_melee_forward_defender_first_when_no_charge():
+    # 十版方向（版本裁决）：近战正打、A 未冲锋、双方同处 Remaining Combats →
+    # 从非当前玩家起 → B 先手满编反打，A 以幸存者出手。
+    a_fist = weapon(const(3), 3, 8, -2, const(2), melee=True, count=10)
+    a_atk = attacker(a_fist, models=10)
+    b_fist = weapon(const(3), 3, 8, -2, const(2), melee=True, count=20)
+    b_atk = AttackerProfile(canonical_id="B", name_en="B", name_zh=None,
+                            models=20, loadout=(b_fist,), keywords=frozenset())
+    rep = simulate_matchup(
+        a_atk, target(4, 6, 1, 20), b_atk, target(4, 3, 2, 10),
+        stance_forward=Stance(phase="melee", charging=False),
+        stance_reverse=Stance(phase="melee"),
+        n=8000, seed=5)
+    assert any("B 先手满编反打" in b for b in rep.bias_notes)
+
+
 def test_matchup_no_reverse_when_wiped():
     # A 火力碾压把 B（少量脆皮）打光 → 无幸存者反打
     a_gun = weapon(const(60), 2, 10, -3, const(3))

@@ -180,15 +180,35 @@ def get_datasheet(
     """
     from dataclasses import asdict
 
-    from db_compile.datasheet import find_datasheet
+    from db_compile.datasheet import AmbiguousUnitName, find_datasheet
 
     db_path = db_path or DB_PATH
     if not Path(db_path).exists():
         return {"found": False, "datasheet": None,
                 "note": "wh40k.sqlite 不存在，需先跑 db_compile build"}
 
-    ds = find_datasheet(db_path, name_or_id,
-                        resolver=resolver or _get_default_resolver())
+    try:
+        ds = find_datasheet(db_path, name_or_id,
+                            resolver=resolver or _get_default_resolver())
+    except AmbiguousUnitName as exc:
+        # 评审 #25：同名单位存在于多个阵营（如 Helbrute×4），静默取一会答错阵营数据。
+        # 附各候选核心属性预览——LLM 可按上下文选定或逐一披露，无需（也不许）凭记忆填数。
+        from db_compile.datasheet import lookup_datasheet
+        preview = []
+        for uid, nm, fac in exc.hits[:6]:
+            ds2 = lookup_datasheet(db_path, uid)
+            if ds2 and ds2.models:
+                m0 = ds2.models[0]
+                preview.append({"candidate": "{} ({})".format(nm, fac or "?"),
+                                "faction": ds2.faction, "m": m0.m, "t": m0.t,
+                                "sv": m0.sv, "w": m0.w})
+        return {"found": False, "datasheet": None, "reason": "ambiguous",
+                "candidates": exc.candidates,
+                "candidates_preview": preview,
+                "note": "同名单位存在于多个阵营，各阵营数值可能不同（见 candidates_preview）。"
+                        "请按问题上下文用候选名（含阵营缩写）重查其一；无法确定阵营时，"
+                        "逐一列出各候选数值作答，绝不要只挑一个当作唯一答案："
+                        + "、".join(exc.candidates)}
     if ds is None:
         return {"found": False, "datasheet": None, "note": "库中未找到该单位"}
 

@@ -223,11 +223,12 @@
     {
       "id": 25,
       "faction": "混沌",
-      "question": "地狱兽的M和T各是多少？",
-      "gold": "地狱兽：M=9\" T=9",
+      "question": "吞世者的地狱兽的M和T各是多少？",
+      "gold": "地狱兽（吞世者 World Eaters）：M=9\" T=9",
       "gold_type": "stat",
       "canonical_id": "000002632",
-      "unit": "地狱兽/Helbrute"
+      "unit": "地狱兽/Helbrute",
+      "note": "题面清洗 2026-07-10：Helbrute 在 CSM/DG/TS/WE 四阵营 M 值各异（6/7/8/9），原题不带阵营无唯一正确答案，补吞世者限定与 canonical_id 000002632 对齐"
     },
     {
       "id": 26,

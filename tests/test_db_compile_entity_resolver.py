@@ -116,6 +116,57 @@ class TestEntityResolverFixture:
         assert result.confidence == "none"
 
 
+class TestCrossFactionSameNameCollision:
+    """评审 #25（基准地狱兽答错阵营）：同一 name_en 存在于多个阵营时，
+    英文名精确命中必须报 ambiguous + 阵营限定候选，绝不静默取先入库的那行。"""
+
+    @staticmethod
+    def _resolver_with_db(tmp_path):
+        import sqlite3
+        db = tmp_path / "mini.sqlite"
+        conn = sqlite3.connect(str(db))
+        conn.execute("CREATE TABLE datasheets (id TEXT, name TEXT, faction_id TEXT)")
+        conn.executemany(
+            "INSERT INTO datasheets VALUES (?,?,?)",
+            [("000000954", "Helbrute", "CSM"),
+             ("000002632", "Helbrute", "WE"),
+             ("000000407", "Commander Shadowsun", "TAU")])
+        conn.execute("CREATE TABLE aliases (alias TEXT, canonical_id TEXT, "
+                     "lang TEXT, source TEXT)")
+        conn.execute("INSERT INTO aliases VALUES ('地狱兽','000002632','zh','test')")
+        conn.commit()
+        conn.close()
+        return EntityResolver(db_path=db)
+
+    def test_exact_en_collision_returns_ambiguous_with_factions(self, tmp_path):
+        r = self._resolver_with_db(tmp_path).resolve("Helbrute")
+        assert r.canonical_id is None
+        assert r.confidence == "ambiguous"
+        assert set(r.candidates) == {"Helbrute (CSM)", "Helbrute (WE)"}
+
+    def test_faction_qualified_candidate_round_trips(self, tmp_path):
+        resolver = self._resolver_with_db(tmp_path)
+        assert resolver.resolve("Helbrute (WE)").canonical_id == "000002632"
+        assert resolver.resolve("Helbrute（CSM）").canonical_id == "000000954"
+        assert resolver.resolve("helbrute (we)").confidence == "exact"
+
+    def test_zh_alias_bypasses_collision(self, tmp_path):
+        # 中文别名指向确定阵营，不受英文名碰撞影响
+        r = self._resolver_with_db(tmp_path).resolve("地狱兽")
+        assert r.canonical_id == "000002632"
+        assert r.confidence == "exact"
+
+    def test_unique_name_unaffected(self, tmp_path):
+        r = self._resolver_with_db(tmp_path).resolve("Commander Shadowsun")
+        assert r.canonical_id == "000000407"
+        assert r.confidence == "exact"
+
+    def test_fuzzy_hit_on_collision_key_also_ambiguous(self, tmp_path):
+        r = self._resolver_with_db(tmp_path).resolve("Helbrutee")  # 拼写多一个字母
+        assert r.confidence == "ambiguous"
+        assert any("(WE)" in c for c in r.candidates)
+
+
 class TestEntityResolverRealData:
     """用真实 wiki/terms.json + app.py 验证：中文单位名能解析到 canonical id
     （gnhf 停止条件③的直接验证）。"""
