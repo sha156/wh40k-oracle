@@ -428,12 +428,12 @@ def simulate_combat(
             def_effects.append(Effect("damage", "damage_reduction",
                                       (int(options["damage_reduction"]),), (),
                                       "damage reduction"))
-        if options.get("stealth"):    # P5-a：守方 Stealth → 攻方射击命中 -1（仅射击）
-            def_effects.append(Effect("hit", "modify", (-1,), ("phase_shooting",),
-                                      "stealth"))
-        # P5-c 手工核验通用开关（评审 E1 订正）：
-        #   Go to Ground（1CP）= Benefit of Cover + 6+ 无效保护（不给 Stealth）
-        #   Smokescreen        = Benefit of Cover + Stealth(-1 射击命中)
+        if options.get("stealth"):    # 11版24.33：守方 Stealth → 被远程攻击选中获掩体收益
+            def_effects.append(Effect("save", "cover", (), ("phase_shooting",),
+                                      "stealth"))    # 仅射击；攻方 [IGNORES COVER] 可抵消
+        # P5-c 手工核验通用开关（评审 E1 订正，十版战略口径、11版战略未审计）：
+        #   Go to Ground（1CP）= Benefit of Cover + 6+ 无效保护（不改命中）
+        #   Smokescreen        = Benefit of Cover + 射击命中 -1（战略自身效果，非 Stealth USR）
         cover_on = bool(options.get("cover"))
         if options.get("go_to_ground"):
             cover_on = True

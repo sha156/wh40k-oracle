@@ -1,4 +1,11 @@
-"""十版逐骰攻击序列 pipeline（向量化核，P4-b 裸序列 + 通用 Effect 接缝）。
+"""逐骰攻击序列 pipeline（向量化核，P4-b 裸序列 + 通用 Effect 接缝）。
+
+版本口径（2026-07-10 起，按 11 版 USR 审计 S3 逐项修正，见
+docs/superpowers/specs/2026-07-10-edition-11-usr-audit.md）：
+  · 已 11 版化：Stealth（24.33 掩体化）/ Indirect Fire（24.19+10.07 固定未修正阈值）/
+    Heavy（24.16 条件放宽，字段沿用 stationary）/ Blast X（24.05）/ Cleave X（24.06）；
+  · 其余词条经审计与 11 版一致（A 类：rapid fire/melta/sustained/dev/anti/…）沿用原实现；
+  · 未审计部分（如 ±1 修正夹紧上限）仍为十版口径，如实标注。
 
 依赖方向：**只 import contracts / parse / _spike_allocation**，绝不碰 sqlite/app/streamlit
 （见 spec 第五节），保证脱库单测、P8 可复用。
@@ -86,8 +93,10 @@ def _cond_true(condition: Tuple, stance: Stance, target: TargetProfile) -> bool:
         return stance.long_range
     if tag == "indirect":
         return stance.indirect
-    if tag == "phase_shooting":          # P5-a：Stealth 等仅对射击生效
+    if tag == "phase_shooting":          # P5-a：Stealth（11版=掩体）等仅对射击生效
         return stance.phase == "shooting"
+    if tag == "phase_melee":             # cleave（11版24.06）等仅对近战生效
+        return stance.phase == "melee"
     if tag == "target_has_keyword":
         return len(condition) > 1 and condition[1] in target.keywords
     return False
@@ -97,12 +106,13 @@ def _cond_true(condition: Tuple, stance: Stance, target: TargetProfile) -> bool:
 class _WeaponParams:
     """一把武器在当前态势下解算出的生效参数（把 Effect 汇成标量开关）。"""
     rf_expr: object = None         # DiceExpr | None（rapid fire X，X 可为骰子）
-    blast: bool = False
+    blast_x: int = 0               # [BLAST X]/[CLEAVE X]：每满 5 目标模型 +X 攻击骰（0=无）
     melta_expr: object = None      # DiceExpr | None（melta X，X 可为骰子）
     crit_hit_thr: int = _FACES
     sustained: object = None      # DiceExpr | None
     lethal: bool = False
     torrent: bool = False
+    indirect_fixed: bool = False   # 11版间接开火：命中改固定未修正阈值（6+；驻停代理 4+）
     hit_mod: int = 0
     crit_wound_thr: int = _FACES
     twin: bool = False
@@ -119,8 +129,10 @@ def _gather_params(w: WeaponProfile, stance: Stance, target: TargetProfile) -> _
         if e.phase == "attacks":
             if e.op == "modify" and ok:
                 p.rf_expr = e.params[0]           # DiceExpr（rapid fire）
-            elif e.op == "blast":
-                p.blast = True
+            elif e.op == "blast" and ok:
+                # blast（无条件）与 cleave（condition=phase_melee）共用本通道；
+                # 无参旧式 Effect（十版 [BLAST]）向后兼容为 X=1
+                p.blast_x = max(p.blast_x, int(e.params[0]) if e.params else 1)
         elif e.phase == "hit":
             if e.op == "extra_hits":
                 p.sustained = e.params[0]
@@ -128,6 +140,8 @@ def _gather_params(w: WeaponProfile, stance: Stance, target: TargetProfile) -> _
                 p.lethal = True
             elif e.op == "auto_hit":
                 p.torrent = True
+            elif e.op == "indirect_fixed" and ok:
+                p.indirect_fixed = True           # 11版24.19+10.07：命中改固定未修正阈值
             elif e.op == "crit_threshold" and ok:
                 p.crit_hit_thr = min(p.crit_hit_thr, int(e.params[0]))
             elif e.op == "modify" and ok:
@@ -149,12 +163,20 @@ def _gather_params(w: WeaponProfile, stance: Stance, target: TargetProfile) -> _
                 p.ignores_cover = True
             elif e.op == "cover" and ok:
                 p.cover = True
-    # P5-a：守方防守 Effect 里改攻方命中的修正（如 Stealth：射击命中 -1）并入，再统一夹取。
-    # 十版修正上限是对【总和】夹 ±1，故必须在 clamp 之前叠加（Stealth -1 与 heavy +1 可抵消为 0）。
+    # P5-a：守方防守 Effect 并入。
+    #   · hit+modify（烟幕等减命中）叠加进攻方命中修正，再统一夹取——修正上限是对
+    #     【总和】夹 ±1（未审计项，沿用十版口径），故必须在 clamp 之前叠加
+    #     （烟幕 -1 与 heavy +1 可抵消为 0）；
+    #   · save+cover（11版 Stealth 24.33：被远程攻击选中获掩体收益）并入掩体开关，
+    #     与武器侧 [IGNORES COVER]（24.18）在 effective_save 里天然抵消。
     for e in target.effects:
-        if e.phase == "hit" and e.op == "modify" and _cond_true(e.condition, stance, target):
+        if not _cond_true(e.condition, stance, target):
+            continue
+        if e.phase == "hit" and e.op == "modify":
             p.hit_mod += int(e.params[0])
-    # 命中/致伤修正各自夹到 ±1（十版修正上限）
+        elif e.phase == "save" and e.op == "cover":
+            p.cover = True
+    # 命中/致伤修正各自夹到 ±1（修正总和上限，未审计项沿用十版口径）
     p.hit_mod = max(-1, min(1, p.hit_mod))
     p.wound_mod = max(-1, min(1, p.wound_mod))
     return p
@@ -240,12 +262,15 @@ def _target_effect_value(target: TargetProfile, op: str) -> Optional[int]:
 # ── 守方 Effect 消费对账（评审 M：target.effects 要么被消费、要么显式披露，绝不静默丢）──
 # 引擎当前的全部消费点：
 #   · op == "fnp" / "damage_reduction" → run_sequence 顶层经 _target_effect_value 读取；
-#   · phase == "hit" 且 op == "modify" → _gather_params 并入攻方命中修正（Stealth/烟幕）。
-# 其余 phase/op（如 wound/save 阶段的防守修正）当前没有消费者——列入报告注解透传。
+#   · phase == "hit" 且 op == "modify" → _gather_params 并入攻方命中修正（烟幕等减命中）；
+#   · phase == "save" 且 op == "cover" → _gather_params 并入掩体开关（11版 Stealth 24.33）。
+# 其余 phase/op（如 wound 阶段的防守修正）当前没有消费者——列入报告注解透传。
 def _target_effect_consumed(e) -> bool:
     if e.op in ("fnp", "damage_reduction"):
         return True
-    return e.phase == "hit" and e.op == "modify"
+    if e.phase == "hit" and e.op == "modify":
+        return True
+    return e.phase == "save" and e.op == "cover"
 
 
 def unconsumed_target_effect_notes(target: TargetProfile) -> List[str]:
@@ -256,7 +281,7 @@ def unconsumed_target_effect_notes(target: TargetProfile) -> List[str]:
     return [
         f"守方 Effect 未消费：phase={e.phase}/op={e.op}"
         f"（来源 {e.source or '未知'}）——引擎当前只消费 fnp/damage_reduction/"
-        f"命中修正（hit+modify），该效果未计入本次结果"
+        f"命中修正（hit+modify）/掩体（save+cover），该效果未计入本次结果"
         for e in target.effects if not _target_effect_consumed(e)
     ]
 
@@ -299,12 +324,13 @@ def _resolve_weapon(
         return empty, empty, {"attacks": zeros, "hits": zeros,
                               "wounds": zeros, "unsaved": zeros, "mortals": zeros}
 
-    # ① Attacks：每模型掷 A，+rapid fire（半射程，X 可为骰子）+blast（每满 5 目标模型）
+    # ① Attacks：每模型掷 A，+rapid fire（半射程，X 可为骰子）
+    #   +blast X / cleave X（每满 5 目标模型 +X，11版24.05/24.06）
     atk = sample_dice(w.attacks, rng, (n, count)).astype(np.int64)
     if p.rf_expr is not None:
         atk = atk + sample_dice(p.rf_expr, rng, (n, count)).astype(np.int64)
-    if p.blast:
-        atk = atk + (int(target.models) // 5)
+    if p.blast_x:
+        atk = atk + p.blast_x * (int(target.models) // 5)
     n_attacks = np.maximum(atk.sum(axis=1), 0).astype(np.int64)   # 防御性夹 ≥0（真实武器不会负）
     max_a = int(n_attacks.max())
     if max_a == 0:
@@ -314,11 +340,21 @@ def _resolve_weapon(
     active = np.arange(max_a)[None, :] < n_attacks[:, None]      # (n, max_a)
 
     # ② Hit：torrent/无 BS → 自动命中（不产生暴击命中，故无 sustained/lethal）；
+    #         间接开火（11版24.19+10.07）→ 命中与 BS 无关的固定未修正阈值；
     #         否则自然骰（1 必失）+ 修正（±1）+ 暴击命中阈值（conversion 可降到 4+）
     auto_hit = p.torrent or w.bs_ws is None
     if auto_hit:
         hit = active.copy()
         crit_hit = np.zeros_like(hit)
+    elif p.indirect_fixed:
+        # 11版间接开火：未修正 1-5 失败（仅 6 命中）；stance.stationary（作为
+        # 「本回合驻停+有友军可见目标」的代理条件）时改善为 1-3 失败（4+ 命中）。
+        # 命中修正与 ±1 夹紧对 indirect 不适用（阈值即最终判定）；
+        # 未修正 6 仍按暴击阈值算暴击命中（sustained/lethal 照常触发）。
+        need = 4 if stance.stationary else 6
+        hr = rng.integers(1, _FACES + 1, size=(n, max_a), dtype=np.int64)
+        hit = active & (hr >= need)
+        crit_hit = hit & (hr >= p.crit_hit_thr) & (hr != 1)
     else:
         hr = rng.integers(1, _FACES + 1, size=(n, max_a), dtype=np.int64)
         hit = active & (hr != 1) & ((hr >= p.crit_hit_thr) | (hr + p.hit_mod >= w.bs_ws))
@@ -392,7 +428,8 @@ def run_sequence(
     n: int = 10000,
     seed: int = 1234,
 ) -> SimRaw:
-    """跑 N 次十版攻击序列，返回逐次原始产出。只依赖 contracts + parse + 分配核。"""
+    """跑 N 次攻击序列（版本口径见模块 docstring），返回逐次原始产出。
+    只依赖 contracts + parse + 分配核。"""
     # 退化目标（无模型/无生命）→ 全零，不打幽灵模型（非法输入不静默夹成 1）
     if int(target.models) <= 0 or int(target.w) <= 0:
         z = np.zeros(n, dtype=np.int64)

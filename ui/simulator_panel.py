@@ -120,7 +120,8 @@ def _options_from_inputs(st) -> Dict[str, Any]:
 def render_simulator_panel(st) -> None:
     """在传入的 Streamlit 命名空间下渲染模拟器面板。app.py 侧边栏切到「模拟器」时调用。"""
     st.markdown("### ⚔️ 蒙特卡洛对战模拟器")
-    st.caption("逐骰模拟（先攻判定按11版；攻击序列词条沿用十版实现，11版审计中）｜"
+    st.caption("逐骰模拟（先攻判定与 Stealth/间接/Heavy/Blast/Cleave 词条按11版；"
+               "其余词条经审计一致或沿用十版口径）｜"
                "攻方打守方 N 次 → 期望伤害/击杀/团灭率 + 阶段漏斗 + 性价比 + 诚实披露。"
                "数字与 CLI 完全一致（共用同一引擎）。")
 
@@ -142,15 +143,19 @@ def render_simulator_panel(st) -> None:
         cols[0].checkbox("冲锋", key="sim_charge")
         cols[1].checkbox("半射程", key="sim_half")
         cols[2].checkbox("目标在掩体", key="sim_cover")
-        cols[3].checkbox("本方静止", key="sim_stationary")
+        cols[3].checkbox('满足 Heavy 条件（移动≤3" 且未交战）', key="sim_stationary",
+                         help='11版24.16：未交战、本回合未上场且全员移动≤3"；'
+                              '亦作间接火力「驻停+有友军可见目标」的代理条件')
         cols2 = st.columns(4)
         cols2[0].checkbox("远距离(12/24\"外)", key="sim_long")
-        cols2[1].checkbox("间接火力", key="sim_indirect")
-        cols2[2].checkbox("守方 Stealth", key="sim_stealth")
+        cols2[1].checkbox("间接火力(6+命中,获掩体)", key="sim_indirect")
+        cols2[2].checkbox("守方 Stealth(获掩体)", key="sim_stealth",
+                          help="11版24.33：被远程攻击选中获掩体收益，"
+                               "攻方 [IGNORES COVER] 可抵消")
         cols2[3].checkbox("守方卧倒(掩体+6++)", key="sim_gtg")
 
         cols3 = st.columns(4)
-        cols3[0].checkbox("守方烟幕(掩体+潜行)", key="sim_smoke")
+        cols3[0].checkbox("守方烟幕(掩体+减命中)", key="sim_smoke")
         cols3[1].number_input("守方 FNP X+（0=关）", 0, 6, 0, key="sim_fnp")
         cols3[2].number_input("守方减伤（0=关）", 0, 3, 0, key="sim_dr")
         cols3[3].number_input("迭代 n", 1000, 50000, 8000, step=1000, key="sim_n")

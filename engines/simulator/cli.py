@@ -86,16 +86,21 @@ def _fmt_report(rep: dict, indent: str = "") -> List[str]:
 def main(argv: Optional[List[str]] = None) -> int:
     p = argparse.ArgumentParser(prog="engines.simulator.cli",
                                 description="战锤40K 蒙特卡洛对战模拟"
-                                            "（先攻判定按11版；攻击序列词条沿用十版实现，11版审计中）")
+                                            "（先攻判定与 Stealth/间接火力/Heavy/Blast/Cleave"
+                                            " 词条按11版；其余词条经审计一致或沿用十版口径）")
     p.add_argument("attacker", help="攻方单位名（中/英/俗名）")
     p.add_argument("defender", help="守方单位名")
     p.add_argument("--phase", default="shooting", choices=["shooting", "melee"])
     p.add_argument("--charge", action="store_true")
     p.add_argument("--half-range", action="store_true", dest="half_range")
     p.add_argument("--cover", action="store_true")
-    p.add_argument("--stationary", action="store_true")
+    p.add_argument("--stationary", action="store_true",
+                   help='满足 Heavy 条件（11版24.16：未交战、本回合未上场且全员移动≤3"）；'
+                        '亦作间接火力「驻停+有友军可见目标」的代理条件')
     p.add_argument("--long-range", action="store_true", dest="long_range")
-    p.add_argument("--indirect", action="store_true")
+    p.add_argument("--indirect", action="store_true",
+                   help="以间接火力开火（11版24.19：目标获掩体，未修正6+命中；"
+                        "配合 --stationary 为4+）")
     p.add_argument("--attacker-models", type=int, dest="attacker_models")
     p.add_argument("--defender-models", type=int, dest="defender_models")
     p.add_argument("--loadout", help='攻方装配 "武器名:数量,..."（多模型单位必填）')
@@ -103,10 +108,13 @@ def main(argv: Optional[List[str]] = None) -> int:
                    help="守方装配（给了则做串行幸存反打）")
     p.add_argument("--fnp", type=int, help="守方无痛 X+")
     p.add_argument("--damage-reduction", type=int, dest="damage_reduction")
-    p.add_argument("--stealth", action="store_true", help="守方 Stealth（射击命中 -1）")
+    p.add_argument("--stealth", action="store_true",
+                   help="守方 Stealth（11版24.33：被远程攻击选中获掩体收益，"
+                        "攻方 [IGNORES COVER] 可抵消）")
     p.add_argument("--go-to-ground", action="store_true", dest="go_to_ground",
                    help="守方卧倒（掩体 + 6+ 无效保护）")
-    p.add_argument("--smokescreen", action="store_true", help="守方烟幕（掩体 + Stealth）")
+    p.add_argument("--smokescreen", action="store_true",
+                   help="守方烟幕（掩体 + 射击命中减值；十版战略口径，11版战略未审计）")
     p.add_argument("--def-fights-first", action="store_true", dest="defender_fights_first")
     p.add_argument("--def-fights-last", action="store_true", dest="defender_fights_last")
     p.add_argument("--atk-fights-first", action="store_true", dest="attacker_fights_first")

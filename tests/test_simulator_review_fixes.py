@@ -173,9 +173,11 @@ def test_unconsumed_defender_effect_surfaces_and_keeps_numbers():
 
 
 def test_consumed_defender_effects_not_flagged():
-    # fnp / damage_reduction / hit+modify 是被消费的三类，不得误报"未消费"
+    # fnp / damage_reduction / hit+modify / save+cover（11版 Stealth）是被消费的
+    # 四类，不得误报"未消费"
     effs = (Effect("fnp", "fnp", (5,), (), "feel no pain 5+"),
             Effect("damage", "damage_reduction", (1,), (), "damage reduction"),
-            Effect("hit", "modify", (-1,), ("phase_shooting",), "stealth"))
+            Effect("hit", "modify", (-1,), ("phase_shooting",), "smokescreen"),
+            Effect("save", "cover", (), ("phase_shooting",), "stealth"))
     rep = simulate(_atk(), _tgt(effects=effs), Stance(), n=500, seed=11)
     assert not any("未消费" in nm for nm in rep.not_modeled + rep.bias_notes)
