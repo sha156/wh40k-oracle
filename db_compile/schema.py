@@ -62,6 +62,7 @@ CREATE TABLE IF NOT EXISTS models (
     w TEXT,
     ld TEXT,
     oc TEXT,
+    base TEXT,
     count_options_json TEXT
 );
 """

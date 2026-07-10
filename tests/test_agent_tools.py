@@ -219,6 +219,65 @@ class TestCalcPoints:
         assert result["found"] is False
         assert result["units"] == []
 
+    def test_string_unit_list_wrapped_not_split_per_char(self, tmp_path):
+        # M#4：LLM 把 unit_list 传成单个字符串时包成 [str]，
+        # 不再被逐字符拆成 9 个"单位"胡乱查询
+        csv_dir = tmp_path / "wahapedia"
+        csv_dir.mkdir()
+        (csv_dir / "Factions.csv").write_text(FACTIONS_CSV, encoding="utf-8")
+        (csv_dir / "Datasheets.csv").write_text(DATASHEETS_CSV, encoding="utf-8")
+        db_path = tmp_path / "wh40k.sqlite"
+        build_database(csv_dir, db_path)
+
+        result = agent_tools.calc_points("000000407", db_path=db_path)
+
+        assert result["found"] is True
+        assert len(result["units"]) == 1  # 一个整体单位名，而非 9 个字符
+        assert result["units"][0]["unit_id"] == "000000407"
+
+    def test_non_list_unit_list_returns_param_error(self, tmp_path):
+        # M#4：非列表也非字符串 → 明确参数错误，不裸崩也不硬查
+        result = agent_tools.calc_points(12345, db_path=tmp_path / "no_such.sqlite")
+
+        assert result["ok"] is False
+        assert result["found"] is False
+        assert result["units"] == []
+        assert "unit_list" in result["note"]
+
+
+class TestDefaultResolverSingletonThreadSafety:
+    """M#7：无锁单例竞态——并发首调只允许构造一次 EntityResolver。"""
+
+    def test_concurrent_first_call_constructs_once(self, monkeypatch):
+        import threading
+        import time
+
+        constructed = []
+
+        class SlowResolver:
+            def __init__(self, **kwargs):
+                constructed.append(1)
+                time.sleep(0.05)  # 拉大竞态窗口
+
+        monkeypatch.setattr(agent_tools, "EntityResolver", SlowResolver)
+        monkeypatch.setattr(agent_tools, "_default_resolver", None)
+
+        barrier = threading.Barrier(6)
+        results = []
+
+        def worker():
+            barrier.wait()
+            results.append(agent_tools._get_default_resolver())
+
+        threads = [threading.Thread(target=worker) for _ in range(6)]
+        for t in threads:
+            t.start()
+        for t in threads:
+            t.join()
+
+        assert len(constructed) == 1  # 双检锁：只构造一次
+        assert all(r is results[0] for r in results)  # 拿到同一实例
+
 
 class TestGetDatasheet:
     def test_missing_db_reports_note_instead_of_crashing(self, tmp_path):
@@ -240,7 +299,7 @@ class TestGetDatasheet:
             "CREATE TABLE units(id TEXT,faction_id TEXT,name_en TEXT,name_zh TEXT,"
             "points_json TEXT,keywords_json TEXT,version TEXT);"
             "CREATE TABLE models(unit_id TEXT,name TEXT,m TEXT,t TEXT,sv TEXT,"
-            "invuln TEXT,w TEXT,ld TEXT,oc TEXT,count_options_json TEXT);"
+            "invuln TEXT,w TEXT,ld TEXT,oc TEXT,base TEXT,count_options_json TEXT);"
             "CREATE TABLE weapons(id TEXT,unit_id TEXT,name_zh TEXT,name_en TEXT,"
             "range TEXT,a TEXT,bs_ws TEXT,s TEXT,ap TEXT,d TEXT,keywords_json TEXT);"
         )
@@ -248,7 +307,7 @@ class TestGetDatasheet:
         conn.execute("INSERT INTO datasheets VALUES('929','Chaos Lord','CSM')")
         conn.execute("INSERT INTO units VALUES('929','CSM','Chaos Lord',NULL,?,NULL,NULL)",
                      (json.dumps({"points": 85, "items": [{"cost": 85}]}),))
-        conn.execute("INSERT INTO models VALUES('929','Chaos Lord','6\"','4','3+','4','4','6+','1',NULL)")
+        conn.execute("INSERT INTO models VALUES('929','Chaos Lord','6\"','4','3+','4','4','6+','1','40mm',NULL)")
         conn.commit()
         conn.close()
 

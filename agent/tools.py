@@ -7,6 +7,7 @@
 from __future__ import annotations
 
 import importlib
+import threading
 from pathlib import Path
 from typing import Any, Callable, Dict, List, Optional
 
@@ -23,15 +24,19 @@ APP_PATH = REPO_ROOT / "app.py"
 DB_PATH = REPO_ROOT / "db" / "wh40k.sqlite"
 
 # entity_resolver 单例缓存（懒加载，避免每次工具调用都重新解析 terms.json/app.py）。
+# 双检锁（评审 M#7）：qa_bench 6 线程并发首调时避免重复构造。
 _default_resolver: Optional[EntityResolver] = None
+_default_resolver_lock = threading.Lock()
 
 
 def _get_default_resolver() -> EntityResolver:
     global _default_resolver
     if _default_resolver is None:
-        _default_resolver = EntityResolver(
-            terms_path=TERMS_PATH, app_path=APP_PATH, db_path=DB_PATH,
-        )
+        with _default_resolver_lock:
+            if _default_resolver is None:
+                _default_resolver = EntityResolver(
+                    terms_path=TERMS_PATH, app_path=APP_PATH, db_path=DB_PATH,
+                )
     return _default_resolver
 
 
@@ -142,6 +147,13 @@ def get_keyword_definition(
 def calc_points(unit_list: List[str], db_path: Optional[Path] = None) -> Dict[str, Any]:
     """精确算分（SQLite，db_compile.calc_points）。P2 阶段点数 CSV 未导入时
     诚实报告缺失原因，不编造数值。"""
+    # 参数防护（评审 M#4）：LLM 可能把 unit_list 传成单个字符串——字符串是可迭代的，
+    # 会被逐字符拆成"单位名"胡乱查询。字符串包成单元素列表；其余非列表类型明确报错。
+    if isinstance(unit_list, str):
+        unit_list = [unit_list]
+    elif not isinstance(unit_list, (list, tuple)):
+        return {"ok": False, "found": False, "units": [],
+                "note": f"参数错误：unit_list 应为单位名列表，收到 {type(unit_list).__name__}"}
     db_path = db_path or DB_PATH
     if not Path(db_path).exists():
         return {"found": False, "units": [], "note": "wh40k.sqlite 不存在，需先跑 db_compile"}
@@ -168,15 +180,35 @@ def get_datasheet(
     """
     from dataclasses import asdict
 
-    from db_compile.datasheet import find_datasheet
+    from db_compile.datasheet import AmbiguousUnitName, find_datasheet
 
     db_path = db_path or DB_PATH
     if not Path(db_path).exists():
         return {"found": False, "datasheet": None,
                 "note": "wh40k.sqlite 不存在，需先跑 db_compile build"}
 
-    ds = find_datasheet(db_path, name_or_id,
-                        resolver=resolver or _get_default_resolver())
+    try:
+        ds = find_datasheet(db_path, name_or_id,
+                            resolver=resolver or _get_default_resolver())
+    except AmbiguousUnitName as exc:
+        # 评审 #25：同名单位存在于多个阵营（如 Helbrute×4），静默取一会答错阵营数据。
+        # 附各候选核心属性预览——LLM 可按上下文选定或逐一披露，无需（也不许）凭记忆填数。
+        from db_compile.datasheet import lookup_datasheet
+        preview = []
+        for uid, nm, fac in exc.hits[:6]:
+            ds2 = lookup_datasheet(db_path, uid)
+            if ds2 and ds2.models:
+                m0 = ds2.models[0]
+                preview.append({"candidate": "{} ({})".format(nm, fac or "?"),
+                                "faction": ds2.faction, "m": m0.m, "t": m0.t,
+                                "sv": m0.sv, "w": m0.w})
+        return {"found": False, "datasheet": None, "reason": "ambiguous",
+                "candidates": exc.candidates,
+                "candidates_preview": preview,
+                "note": "同名单位存在于多个阵营，各阵营数值可能不同（见 candidates_preview）。"
+                        "请按问题上下文用候选名（含阵营缩写）重查其一；无法确定阵营时，"
+                        "逐一列出各候选数值作答，绝不要只挑一个当作唯一答案："
+                        + "、".join(exc.candidates)}
     if ds is None:
         return {"found": False, "datasheet": None, "note": "库中未找到该单位"}
 
@@ -235,7 +267,7 @@ def _not_modeled(tool: str, note: str) -> Dict[str, Any]:
 
 
 def judge_fight_order(ctx: Optional[Dict[str, Any]] = None) -> Dict[str, Any]:
-    """P5-b/e：十版 Fight phase 先攻判定。
+    """P5-b/e：Fight phase 先攻判定（11 版口径）。
 
     ctx（全可选，含默认）：
       attacker / defender：单位名（仅作展示，不解析）。
@@ -396,12 +428,12 @@ def simulate_combat(
             def_effects.append(Effect("damage", "damage_reduction",
                                       (int(options["damage_reduction"]),), (),
                                       "damage reduction"))
-        if options.get("stealth"):    # P5-a：守方 Stealth → 攻方射击命中 -1（仅射击）
-            def_effects.append(Effect("hit", "modify", (-1,), ("phase_shooting",),
-                                      "stealth"))
-        # P5-c 手工核验通用开关（评审 E1 订正）：
-        #   Go to Ground（1CP）= Benefit of Cover + 6+ 无效保护（不给 Stealth）
-        #   Smokescreen        = Benefit of Cover + Stealth(-1 射击命中)
+        if options.get("stealth"):    # 11版24.33：守方 Stealth → 被远程攻击选中获掩体收益
+            def_effects.append(Effect("save", "cover", (), ("phase_shooting",),
+                                      "stealth"))    # 仅射击；攻方 [IGNORES COVER] 可抵消
+        # P5-c 手工核验通用开关（评审 E1 订正，十版战略口径、11版战略未审计）：
+        #   Go to Ground（1CP）= Benefit of Cover + 6+ 无效保护（不改命中）
+        #   Smokescreen        = Benefit of Cover + 射击命中 -1（战略自身效果，非 Stealth USR）
         cover_on = bool(options.get("cover"))
         if options.get("go_to_ground"):
             cover_on = True
@@ -485,7 +517,7 @@ TOOL_SPECS: List[Dict[str, str]] = [
     {"name": "search_wiki", "description": "LLM Wiki Query：先查 index.md 定位，再全文检索"},
     {"name": "get_entity", "description": "读实体页（自动实体解析）"},
     {"name": "get_keyword_definition", "description": "USR/核心概念定义"},
-    {"name": "judge_fight_order", "description": "战斗顺序判定：给定冲锋/Fights First/Fights Last/Counter-offensive，判谁先打 + 依据（十版 Fight phase）"},
+    {"name": "judge_fight_order", "description": "战斗顺序判定：给定冲锋/Fights First/Fights Last/Counteroffensive，判谁先打 + 依据（11版 Fight phase）"},
     {"name": "simulate_combat", "description": "蒙特卡洛对战模拟：attacker 打 defender 期望伤害/击杀/团灭率+漏斗+性价比（多模型单位需 options.loadout）"},
     {"name": "validate_roster", "description": "验表（未建模，P6）"},
     {"name": "critique_roster", "description": "验表+模拟点评（未建模，P6）"},

@@ -1,8 +1,8 @@
-"""P5-b 战斗顺序判定器全分支单测（十版 Fight phase 先攻）。
+"""P5-b 战斗顺序判定器全分支单测（11 版 Fight phase 先攻）。
 
-覆盖：冲锋先打、Fights First 步同层从 active 起、Fights Last 押最后、
-**E2 抵消**（fights-first 来源 + Fights Last → 回正常时序，不押队尾）、
-Counter-offensive 说明、都不冲锋 active 先。
+覆盖：冲锋先打、同步内从【当前玩家】起（11版 12.04；2026-07-10 项目裁决切 11 版，
+十版方向相反且总规则已归档）、Fights Last 押最后、**E2 抵消**（fights-first 来源 +
+Fights Last → 回正常时序，不押队尾）、COUNTEROFFENSIVE 说明、都不冲锋 active 先。
 """
 from __future__ import annotations
 
@@ -58,9 +58,10 @@ def test_charger_strikes_first():
 
 
 def test_both_in_fights_first_active_goes_first():
-    # A 冲锋（active），B 有 Fights First → 同处 Step1 → active(A) 先
+    # A 冲锋（active），B 有 Fights First → 同处 Step1 → 11版 12.04 从当前玩家起 → A 先
     v = judge(_act("A", charged=True), _def("B", fights_first=True))
     assert v.first_striker == "A"
+    assert v.first_is_a is True
     assert v.simultaneous_risk is True           # 同一步，交替，反打即时
 
 
@@ -88,7 +89,8 @@ def test_e2_defender_ff_plus_last_returns_to_normal_not_last():
 
 def test_neither_charges_active_first():
     v = judge(_act("A"), _def("B"))
-    assert v.first_striker == "A"                # 同 Step2，active 先
+    assert v.first_striker == "A"                # 同 Step2，11版从当前玩家起 → active 先
+    assert v.first_is_a is True
     assert v.simultaneous_risk is True
 
 
@@ -99,11 +101,26 @@ def test_rationale_and_refs_nonempty():
     assert v.counter_offensive_note
 
 
-# ── Counter-offensive 说明 ───────────────────────────────────
+# ── 评审 M：Fights Last 出处核查（data_refined 全库检索 0 命中 → 降级标注）──
+def test_fights_last_provenance_caveat_in_refs_and_rationale():
+    v = judge(_act("A", charged=True), _def("B", fights_last=True))
+    # rule_refs 里明确标注：未找到原文出处、按对称假设实现
+    assert any("未在当前核心规则数据源" in r for r in v.rule_refs)
+    assert any("对称" in r for r in v.rule_refs)
+    # 涉及 Fights Last 的判定，rationale 附谨慎使用提示
+    assert "谨慎使用" in v.rationale
+
+
+def test_no_fights_last_no_caveat_in_rationale():
+    v = judge(_act("A", charged=True), _def("B"))
+    assert "谨慎使用" not in v.rationale       # 不涉及 Fights Last 时不打扰
+
+
+# ── COUNTEROFFENSIVE（11版 p57）说明 ─────────────────────────
 def test_counter_offensive_by_second_striker_notes_insert():
     v = judge(_act("A", charged=True), _def("B", fights_first=True),
               counter_offensive_by="B")
-    assert "Counter-offensive" in v.counter_offensive_note
+    assert "COUNTEROFFENSIVE" in v.counter_offensive_note
     assert "B" in v.counter_offensive_note
 
 

@@ -17,7 +17,13 @@ from dataclasses import dataclass, field
 from pathlib import Path
 from typing import Callable, Dict, List, Optional, Set
 
-from wiki_engine.models import LintIssue, LintResult, WikiPage, faction_slug
+from wiki_engine.models import (
+    GENERATED_MD_NAMES,
+    LintIssue,
+    LintResult,
+    WikiPage,
+    faction_slug,
+)
 
 
 def scan_wiki_pages(wiki_root: Path) -> List[WikiPage]:
@@ -27,7 +33,12 @@ def scan_wiki_pages(wiki_root: Path) -> List[WikiPage]:
 
 
 def _all_md_files(wiki_root: Path) -> Set[str]:
-    """返回 wiki/ 下所有 .md 文件的相对路径集合。"""
+    """返回 wiki/ 下所有 .md 文件的相对路径集合（链接目标全集）。
+
+    注意：目标全集**不**排除生成产物——真实存在的文件都是合法链接目标
+    （如 crosslinks 的 [[factions/钛帝国/index.md|钛帝国]]）。排除集只作用
+    在"扫描哪些文件的出链"一侧，见 _iter_source_md_files。
+    """
     files: Set[str] = set()
     for md_file in wiki_root.rglob("*.md"):
         rel = str(md_file.relative_to(wiki_root)).replace("\\", "/")
@@ -35,16 +46,29 @@ def _all_md_files(wiki_root: Path) -> Set[str]:
     return files
 
 
+def _iter_source_md_files(wiki_root: Path):
+    """遍历应作为"出链来源"检查的 .md 文件：排除流水线生成产物。
+
+    排除集与 build_outputs.scan_wiki_pages 对齐（models.GENERATED_MD_NAMES），
+    否则 lint 会扫描自己生成的 lint-report.md，把报告里的 [[断链示例]]
+    当成新断链，假阳性永久自我复现（H15）。
+    """
+    for md_file in sorted(wiki_root.rglob("*.md")):
+        if md_file.name in GENERATED_MD_NAMES:
+            continue
+        yield md_file
+
+
 # ── 各 lint 规则 ──────────────────────────────────────────────────────
 
 def check_broken_links(wiki_root: Path) -> List[LintIssue]:
-    """检查所有 [[wikilink]] 是否指向存在的文件。"""
+    """检查所有 [[wikilink]] 是否指向存在的文件（生成产物不作为出链来源扫描）。"""
     all_files = _all_md_files(wiki_root)
     # 也允许不带 .md 后缀的链接（Obsidian 风格）
     all_targets = all_files | {f.replace(".md", "") for f in all_files}
     issues: List[LintIssue] = []
 
-    for md_file in sorted(wiki_root.rglob("*.md")):
+    for md_file in _iter_source_md_files(wiki_root):
         rel = str(md_file.relative_to(wiki_root)).replace("\\", "/")
         try:
             text = md_file.read_text(encoding="utf-8")
@@ -223,6 +247,40 @@ def check_faction_indexes(wiki_root: Path) -> List[LintIssue]:
     return issues
 
 
+def check_frontmatter_parse(wiki_root: Path) -> List[LintIssue]:
+    """M7：frontmatter 解析失败的页面会被 scan_wiki_pages 静默丢弃，
+    从索引/其余 lint 规则里凭空消失——这里显式报 error，不让页面无声脱队。
+
+    排除生成产物（GENERATED_MD_NAMES）以及 review_needed.md 及其备份
+    （wiki_compile terms 产物，本就没有 frontmatter）。
+    """
+    issues: List[LintIssue] = []
+    for md_file in _iter_source_md_files(wiki_root):
+        if md_file.name.startswith("review_needed."):
+            continue
+        rel = str(md_file.relative_to(wiki_root)).replace("\\", "/")
+        try:
+            text = md_file.read_text(encoding="utf-8")
+        except (OSError, UnicodeDecodeError) as e:
+            issues.append(LintIssue(
+                severity="error",
+                rule="frontmatter-parse",
+                page_path=rel,
+                message="文件读取失败（{}），该页已脱离索引体系".format(e),
+                auto_fixable=False,
+            ))
+            continue
+        if WikiPage.from_markdown(text) is None:
+            issues.append(LintIssue(
+                severity="error",
+                rule="frontmatter-parse",
+                page_path=rel,
+                message="frontmatter 解析失败，该页已脱离索引体系",
+                auto_fixable=False,
+            ))
+    return issues
+
+
 def check_verify_warnings(wiki_root: Path) -> List[LintIssue]:
     """检查 frontmatter verify_warn=True 的页面（LLM 合成时数字校验命中幻觉数字）。"""
     issues: List[LintIssue] = []
@@ -255,6 +313,7 @@ LINT_RULES: List[Callable] = [
     check_faction_indexes,
     check_missing_points,
     check_verify_warnings,
+    check_frontmatter_parse,
     # check_raw_backlinks 需要 refined_root 参数，单独调用
 ]
 

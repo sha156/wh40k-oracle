@@ -150,6 +150,73 @@ class TestInjectAllPreservesFrontmatter:
         assert "[[" in reread.body
 
 
+class TestSelfPathFilter:
+    """H14：候选目标路径 == 当前页自身路径时跳过（terms.json 全局别名自链漏洞）。"""
+
+    def test_alias_pointing_to_self_not_injected(self):
+        # 全局别名"火武士"→ 本页自己的 en 名，不在 fm 名称集里，
+        # 仅靠 self_names 过滤挡不住 → 必须按目标路径过滤
+        page = _make_page(name_zh="火战士队", name_en="Fire Warriors",
+                          body="社区常称其为火武士。")
+        targets = {"Fire Warriors": "factions/tau-empire/units/fire-warriors.md"}
+        term_aliases = {"火武士": "Fire Warriors"}
+        result = inject_wikilinks(
+            page, targets, term_aliases,
+            self_path="factions/tau-empire/units/fire-warriors.md")
+        assert "[[" not in result.body
+
+    def test_alias_to_other_page_still_injected(self):
+        page = _make_page(name_zh="XV8危机战斗服", name_en="XV8 Crisis Battlesuits",
+                          body="可与火武士协同作战。")
+        targets = {"Fire Warriors": "factions/tau-empire/units/fire-warriors.md"}
+        term_aliases = {"火武士": "Fire Warriors"}
+        result = inject_wikilinks(
+            page, targets, term_aliases,
+            self_path="factions/tau-empire/units/crisis.md")
+        assert "[[factions/tau-empire/units/fire-warriors.md|火武士]]" in result.body
+
+    def test_inject_all_no_self_link_via_global_alias(self, tmp_path):
+        import json
+        wiki = tmp_path / "wiki"
+        units = wiki / "factions" / "tau-empire" / "units"
+        units.mkdir(parents=True)
+        fm = WikiPageFrontmatter(
+            id="tau/units/fw", name_zh="火战士队", name_en="Fire Warriors",
+            faction="tau-empire", type="unit")
+        (units / "fire-warriors.md").write_text(
+            WikiPage(fm=fm, body="社区常称其为火武士。").to_markdown(),
+            encoding="utf-8")
+        terms = wiki / "terms.json"
+        terms.write_text(json.dumps(
+            {"pairs": [{"zh": "火武士", "en": "Fire Warriors"}]},
+            ensure_ascii=False), encoding="utf-8")
+
+        modified = inject_all(wiki, terms)
+        assert modified == []  # 唯一候选是自链 → 不注入
+        body = (units / "fire-warriors.md").read_text(encoding="utf-8")
+        assert "[[" not in body.split("---", 2)[2]  # 正文无自链
+
+
+class TestInjectAllTermsRobustness:
+    """M6：inject_all 复用 load_term_aliases，非常规 terms.json 不再崩整个 CLI。"""
+
+    def test_top_level_list_terms_json_survives(self, tmp_path):
+        wiki = tmp_path / "wiki"
+        units = wiki / "factions" / "tau-empire" / "units"
+        units.mkdir(parents=True)
+        fm = WikiPageFrontmatter(
+            id="tau/units/fw", name_zh="火战士队", name_en="Fire Warriors",
+            faction="tau-empire", type="unit")
+        (units / "fire-warriors.md").write_text(
+            WikiPage(fm=fm, body="正文。").to_markdown(), encoding="utf-8")
+        terms = wiki / "terms.json"
+        terms.write_text("[1, 2, 3]", encoding="utf-8")  # 顶层非 dict
+
+        # 旧实现 data.get 直接 AttributeError 崩；现在应安全降级为无别名
+        modified = inject_all(wiki, terms)
+        assert modified == []
+
+
 class TestLoadLinkTargetsFromFixture:
     def test_parses_aliases(self, tmp_path):
         wiki = tmp_path / "wiki"

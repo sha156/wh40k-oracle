@@ -105,3 +105,52 @@ def test_load_refined_book_reads_pages_in_order(tmp_path):
 
 def test_load_refined_book_returns_none_when_missing(tmp_path):
     assert load_refined_book(Path("data/nothere.pdf"), tmp_path, BASE) is None
+
+
+def test_load_refined_book_returns_none_when_pages_all_empty(tmp_path):
+    """H4：目录存在但页文件全空 → 返回 None（让 ingest 回退 PDF 抽取），
+    不得让空 refined 目录被误判"已完成"。"""
+    book_dir = tmp_path / "emptybook"
+    book_dir.mkdir()
+    (book_dir / "page_001.md").write_text("", encoding="utf-8")
+    (book_dir / "page_002.md").write_text("   \n\n", encoding="utf-8")
+    assert load_refined_book(Path("data/emptybook.pdf"), tmp_path, BASE) is None
+
+
+def test_oversize_body_without_h3_hard_splits():
+    """H5：长正文零 ### 标题 → 按字符数硬切（段落边界优先），
+    每块不超过 max_chunk_chars + 标题行开销。"""
+    paras = ["段落{}：".format(i) + "字" * 300 for i in range(12)]
+    body = "## 长章节\n" + "\n\n".join(paras)
+    max_chars = 1000
+    chunks = chunk_markdown([(1, body)], BASE, max_chunk_chars=max_chars)
+
+    assert len(chunks) >= 3
+    assert all(c.metadata["unit"] == "长章节" for c in chunks)
+    assert all(c.metadata["page"] == 1 for c in chunks)
+    assert chunks[0].page_content.startswith("## 长章节")
+    assert "（续）" not in chunks[0].page_content.splitlines()[0]
+    for c in chunks[1:]:
+        assert c.page_content.startswith("## 长章节（续）")
+    # 合理上浮范围 = 标题行开销
+    header_slack = len("## 长章节（续）\n")
+    for c in chunks:
+        assert len(c.page_content) <= max_chars + header_slack
+    # 内容无丢失：所有段落编号都在
+    full = "".join(c.page_content for c in chunks)
+    for i in range(12):
+        assert "段落{}：".format(i) in full
+
+
+def test_oversize_single_line_without_newlines_hard_splits():
+    """H5 极端形态：单行超长无任何换行 → 裸字符硬切，字符零丢失。"""
+    body = "## 巨行\n" + "字" * 3500
+    chunks = chunk_markdown([(1, body)], BASE, max_chunk_chars=1000)
+    assert len(chunks) == 4
+    for c in chunks:
+        assert len(c.page_content) <= 1000 + len("## 巨行（续）\n")
+    rebuilt = "".join(
+        c.page_content.replace("## 巨行（续）\n", "").replace("## 巨行\n", "")
+        for c in chunks
+    )
+    assert rebuilt == "字" * 3500

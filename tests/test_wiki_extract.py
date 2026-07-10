@@ -96,6 +96,24 @@ class TestExtractBook:
         _write(book / "page_001.md", "## 能力详解\n...")
         assert extract_book(book) == []
 
+    def test_orphan_cont_page_warns(self, tmp_path, capsys):
+        # L：无前置实体的真续页（CONT 标记 + 无 ## 标题）不再静默丢弃，打警告
+        book = tmp_path / "孤书"
+        book.mkdir()
+        _write(book / "page_002.md", "<!--CONT-->\n续页内容但没有归属实体\n")
+        assert extract_book(book) == []
+        out = capsys.readouterr().out
+        assert "无归属" in out and "孤书" in out and "2" in out
+
+    def test_orphan_cont_page_with_new_heading_no_warning(self, tmp_path, capsys):
+        # CONT 后第一条内容就是新 ## 标题 → 内容并未丢失，不打警告
+        book = tmp_path / "孤书2"
+        book.mkdir()
+        _write(book / "page_002.md", "<!--CONT-->\n\n## 新单位 NEW UNIT\n...")
+        cands = extract_book(book)
+        assert [c.name_zh for c in cands] == ["新单位"]
+        assert "无归属" not in capsys.readouterr().out
+
     def test_extract_entities_walks_all_books(self, tmp_path):
         b1 = tmp_path / "书一"; b1.mkdir()
         _write(b1 / "page_001.md", "## 单位甲 UNIT ALPHA\n...")

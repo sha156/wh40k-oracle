@@ -67,6 +67,8 @@ def main() -> None:
     if args.cmd == "build":
         report = build_database(Path(args.csv_dir), Path(args.db), Path(args.terms))
         print("行数:", report.row_counts)
+        if report.skipped:
+            print("⚠️  缺 id 跳过行数:", report.skipped)
         if report.missing_csv:
             print("待下载 CSV：", ", ".join(report.missing_csv))
         if args.no_restore:
@@ -87,6 +89,14 @@ def main() -> None:
         print(f"Wahapedia {rep.wahapedia_total} 单位 / BSData {rep.bsdata_total} 单位")
         print(f"同名匹配 {rep.matched} ({rep.match_rate}%)  |  "
               f"属性一致 {rep.agreed} ({rep.agreement_rate}%)  |  真分歧 {len(rep.discrepancies)}")
+        if rep.skipped_files:
+            print(f"\n⚠️  {len(rep.skipped_files)} 个 .cat 解析失败（其中单位未进比对池）：")
+            for s in rep.skipped_files:
+                print(f"    {s['path']}: {s['error']}")
+        if rep.duplicated_names:
+            head = ", ".join(rep.duplicated_names[:8])
+            more = f" …共 {len(rep.duplicated_names)} 组" if len(rep.duplicated_names) > 8 else ""
+            print(f"⚠️  跨阵营同名单位 {len(rep.duplicated_names)} 组（全部参与比对）：{head}{more}")
         print("\n真·不一致清单（需人工对官方）：")
         for d in rep.discrepancies:
             print(f"  {d['name'][:32]:32} {d['field']}: "
@@ -101,6 +111,8 @@ def main() -> None:
                 },
                 "discrepancies": rep.discrepancies,
                 "unmatched_wahapedia": rep.unmatched_wahapedia,
+                "duplicated_names": rep.duplicated_names,
+                "skipped_files": rep.skipped_files,
             }
             Path(args.out).write_text(json.dumps(payload, ensure_ascii=False, indent=2),
                                       encoding="utf-8")
@@ -110,7 +122,8 @@ def main() -> None:
 
         rep = populate_aliases(Path(args.db), Path(args.refined))
         print(f"中文别名层：提取 {rep['harvested']} 双语对，"
-              f"匹配 canonical {rep['matched']}，未匹配 {rep['unmatched']}")
+              f"匹配 canonical {rep['matched']}，未匹配 {rep['unmatched']}，"
+              f"碰撞跳过 {rep['collided']}")
     elif args.cmd == "mfm":
         import json
 

@@ -17,7 +17,6 @@ ingest.py — 战锤40K规则书知识库构建脚本
 import os
 import re
 import sys
-import ssl
 import json
 import shutil
 import argparse
@@ -34,32 +33,47 @@ os.environ.setdefault("OPENBLAS_NUM_THREADS",   _CPU_COUNT)
 os.environ.setdefault("VECLIB_MAXIMUM_THREADS", _CPU_COUNT)
 os.environ.setdefault("NUMEXPR_NUM_THREADS",    _CPU_COUNT)
 
-# ── 镜像 / 代理 / SSL 设置（放在所有 HuggingFace 导入之前）──
+# ── 镜像 / 代理 设置（放在所有 HuggingFace 导入之前）──
 os.environ["HF_ENDPOINT"]            = "https://hf-mirror.com"
 os.environ["TOKENIZERS_PARALLELISM"] = "false"
 os.environ["HTTPS_PROXY"]            = "http://127.0.0.1:7897"
 os.environ["HTTP_PROXY"]             = "http://127.0.0.1:7897"
-os.environ["CURL_CA_BUNDLE"]         = ""
-os.environ["REQUESTS_CA_BUNDLE"]     = ""
 
-# Python ssl 层禁用证书验证
-ssl._create_default_https_context = ssl._create_unverified_context
+# ── TLS 校验收窄（H8）：仅对 hf-mirror.com 关闭证书校验，其余请求保持正常校验 ──
+# 此前是全进程禁用（ssl 默认上下文替换 + CURL_CA_BUNDLE/REQUESTS_CA_BUNDLE 置空 +
+# 全局 verify=False），模型下载全程暴露于中间人攻击；现改为单 host 白名单。
+from urllib.parse import urlparse
 
-# requests 层禁用证书验证（huggingface_hub / XetHub 走此路径）
 import requests
 import urllib3
 urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
 _orig_request = requests.Session.request
-def _no_verify_request(self, method, url, **kwargs):
-    kwargs.setdefault("verify", False)
+
+
+def _is_hf_mirror_url(url: str) -> bool:
+    """目标 host 是否为 hf-mirror.com（或其子域）——只有它才跳过证书校验。"""
+    try:
+        host = urlparse(str(url)).hostname or ""
+    except ValueError:
+        return False
+    return host == "hf-mirror.com" or host.endswith(".hf-mirror.com")
+
+
+def _hf_mirror_request(self, method, url, **kwargs):
+    if _is_hf_mirror_url(url):
+        kwargs.setdefault("verify", False)
     return _orig_request(self, method, url, **kwargs)
-requests.Session.request = _no_verify_request
+
+
+requests.Session.request = _hf_mirror_request
+print("⚠️  已对 hf-mirror.com 关闭 TLS 证书校验（其余请求保持正常校验）")
 
 from tqdm import tqdm
 from langchain_community.document_loaders import PyMuPDFLoader
 from langchain_community.vectorstores import FAISS
 from langchain_experimental.text_splitter import SemanticChunker
 from langchain_core.documents import Document
+from corpus_manifest import classify_book, load_manifest
 from hf_embeddings_compat import build_huggingface_embeddings
 from md_chunker import load_refined_book
 
@@ -70,6 +84,7 @@ DATA_DIR          = Path("data")                    # PDF 存放目录
 VECTOR_STORE_PATH = Path("local_vector_store")      # FAISS 输出目录
 PROCESSED_LOG     = Path("local_vector_store/processed_files.json")  # 增量记录
 REFINED_DIR       = Path("data_refined")            # llm_refine.py 输出目录，存在则优先使用
+MANIFEST_PATH     = Path("corpus_manifest.json")    # 书名→edition/layer 层级清单（11版迁移S1）
 
 # 嵌入模型：bge-m3 中英文混合最强，本地加载
 EMBED_MODEL_NAME  = "BAAI/bge-m3"
@@ -169,6 +184,10 @@ def load_pdf(pdf_path: Path) -> list[Document]:
     for doc in pages:
         doc.metadata["source"] = str(pdf_path)
         doc.metadata["book"]   = book_name
+        # PyMuPDFLoader 的 page 元数据是 0 起始（C1）；统一为 1-based，
+        # 与 llm_refine.py extract_pages 的 "page": i + 1 约定对齐——
+        # 否则未走 refined 管线的书，引用里"第X页"全部比实际少 1。
+        doc.metadata["page"] = int(doc.metadata.get("page", 0)) + 1
 
     return pages
 
@@ -259,6 +278,18 @@ def build_faiss_with_progress(chunks: list[Document], embeddings) -> FAISS:
     return store
 
 
+def delete_stale_chunks(store, sources: set) -> int:
+    """增量合并前，从已有索引删除 metadata['source'] 命中 sources 的旧 chunk（H3）。
+
+    不删的话，文件变化重入库时新旧 chunk 并存、内容互相矛盾。返回删除数。
+    """
+    stale_ids = [doc_id for doc_id, doc in store.docstore._dict.items()
+                 if doc.metadata.get("source") in sources]
+    if stale_ids:
+        store.delete(stale_ids)
+    return len(stale_ids)
+
+
 def main():
     args = parse_args()
     data_dir = Path(args.data_dir)
@@ -301,6 +332,10 @@ def main():
     # ── 加载嵌入模型 ──
     embeddings = build_embeddings()
 
+    # ── 语料层级清单（11版迁移S1）：书名 → edition/layer ──
+    manifest = load_manifest(MANIFEST_PATH)
+    layer_stats: dict[str, int] = {}
+
     # ── 逐文件加载并累积 chunks ──
     all_new_chunks: list[Document] = []
     failed_files = []
@@ -332,6 +367,13 @@ def main():
                 chunks = semantic_chunk(pages, embeddings)
                 tqdm.write(f"  ✂️  分块完成: {len(chunks)} chunks  ({time.time()-t0:.1f}s)")
 
+            tag = classify_book(base_meta["book"], manifest)
+            for c in chunks:
+                c.metadata.update(tag)
+            key = "{}版/{}".format(tag["edition"], tag["layer"])
+            layer_stats[key] = layer_stats.get(key, 0) + len(chunks)
+            tqdm.write(f"  🏷️  {base_meta['book']} → {key}")
+
             all_new_chunks.extend(chunks)
             processed_log[str(pdf_path)] = "{}|{}".format(
                 os.path.getmtime(pdf_path), refined_fingerprint(pdf_path))
@@ -348,6 +390,11 @@ def main():
             from db_compile.blacklibrary import build_blacklibrary_docs
             hb_docs = build_blacklibrary_docs(_DB)
             if hb_docs:
+                hb_tag = classify_book("黑图书馆", manifest)
+                hb_key = "{}版/{}".format(hb_tag["edition"], hb_tag["layer"])
+                for d in hb_docs:
+                    d.metadata.update(hb_tag)
+                layer_stats[hb_key] = layer_stats.get(hb_key, 0) + len(hb_docs)
                 all_new_chunks.extend(hb_docs)
                 print(f"  🐍 注入黑图书馆检索条目: {len(hb_docs)}")
             else:
@@ -360,6 +407,9 @@ def main():
         sys.exit(1)
 
     print(f"\n📊 总计 chunks: {len(all_new_chunks)}")
+    print("📊 分层构成（edition/layer）:")
+    for key in sorted(layer_stats):
+        print(f"    {key}: {layer_stats[key]} chunks")
 
     # ── 构建 / 合并 FAISS（带进度条）──
     faiss_index_file = VECTOR_STORE_PATH / "index.faiss"
@@ -374,6 +424,13 @@ def main():
             embeddings,
             allow_dangerous_deserialization=True,
         )
+        # ── 增量去重（H3）：先按 source 删除本次重新处理文件的旧 chunk 再合并，
+        #    只删「本次已成功产出新 chunk」的来源，处理失败的文件保留旧数据 ──
+        new_sources = {c.metadata.get("source") for c in all_new_chunks}
+        new_sources.discard(None)
+        removed = delete_stale_chunks(existing_store, new_sources)
+        print(f"  🧹 增量去重：删除旧 chunk {removed} 个"
+              f"（覆盖 {len(new_sources)} 个重处理来源）")
         new_store = build_faiss_with_progress(all_new_chunks, embeddings)
 
         # 维度校验：旧索引与新向量维度不一致时自动重建

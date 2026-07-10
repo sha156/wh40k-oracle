@@ -23,6 +23,12 @@ from tqdm import tqdm
 
 from wiki_compile.extract import EntityCandidate, extract_entities
 from wiki_compile.pair import Pair, PairingResult, normalize_name
+from wiki_engine._io import (
+    atomic_write_text,
+    load_gen_hashes,
+    save_gen_hashes,
+    text_sha256,
+)
 from wiki_engine.models import (
     FACTION_NAMES,
     WikiPage,
@@ -487,8 +493,14 @@ def synthesize_all(
                 entities_by_name.setdefault(
                     (ent.book, normalize_name(ent.name_en)), ent)
 
-    stats = {"pairs": len(pairs), "synthesized": 0, "cached": 0,
-             "skipped": 0, "failed": 0, "path_conflicts": 0}
+    stats: Dict[str, Any] = {
+        "pairs": len(pairs), "synthesized": 0, "cached": 0,
+        "skipped": 0, "failed": 0, "path_conflicts": 0,
+        # H16：被人工编辑保护跳过的页面相对路径列表
+        "conflicts": [],
+        # 本次实际写入/更新的页面相对路径列表（供 ingest 日志用）
+        "written": [],
+    }
 
     jobs = []
     for pair in pairs:
@@ -532,6 +544,10 @@ def synthesize_all(
     write_lock = threading.Lock()
     written_paths: set = set()
 
+    # H16：生成内容哈希登记表——目标文件存在且当前内容 ≠ 上次生成登记值，
+    # 说明被人工改过，跳过覆盖并计入冲突列表，绝不静默丢弃人工编辑。
+    gen_hashes = load_gen_hashes(wiki_root)
+
     with ThreadPoolExecutor(max_workers=max_workers) as ex:
         futures = {ex.submit(_work, j): j for j in jobs}
         for fut in tqdm(as_completed(futures), total=len(futures),
@@ -557,13 +573,35 @@ def synthesize_all(
                                 file_path, pair.canonical_id))
                             continue
                         written_paths.add(file_path)
-                    file_path.parent.mkdir(parents=True, exist_ok=True)
-                    file_path.write_text(page.to_markdown(), encoding="utf-8")
+                    rel = str(file_path.relative_to(wiki_root)).replace("\\", "/")
+                    # H16 冲突检测：仅当该路径有登记值时才可判定"人工改过"
+                    # （无登记值 = 登记表启用前的旧文件，保持覆盖旧行为）
+                    if file_path.exists():
+                        registered = gen_hashes.get(rel)
+                        try:
+                            cur_hash = text_sha256(
+                                file_path.read_text(encoding="utf-8"))
+                        except (OSError, UnicodeDecodeError):
+                            cur_hash = None
+                        if (registered is not None and cur_hash is not None
+                                and cur_hash != registered):
+                            stats["conflicts"].append(rel)
+                            tqdm.write(
+                                "  ⚠️ 人工编辑冲突，跳过覆盖: {}（该页在上次生成后"
+                                "被手动修改；如需重新生成请先删除该页或还原修改）"
+                                .format(rel))
+                            continue
+                    new_text = page.to_markdown()
+                    atomic_write_text(file_path, new_text)
+                    gen_hashes[rel] = text_sha256(new_text)
+                    stats["written"].append(rel)
 
             except Exception as e:  # noqa: BLE001
                 stats["failed"] += 1
                 tqdm.write("  合成异常: {}".format(e))
 
+    # 登记表原子落盘（写临时文件 + os.replace）
+    save_gen_hashes(wiki_root, gen_hashes)
     return stats
 
 
@@ -574,6 +612,8 @@ def create_client() -> Any:
     """
     api_key = os.environ.get("DEEPSEEK_API_KEY")
     if not api_key:
+        # 明确区分两种根因（M：不再让"缺依赖包"被误报成"缺 API key"）
+        print("[synthesize] 未设置 DEEPSEEK_API_KEY，无法创建 LLM 客户端。")
         return None
     try:
         from openai import OpenAI
@@ -581,5 +621,6 @@ def create_client() -> Any:
         proxy = os.environ.get("HTTPS_PROXY", "http://127.0.0.1:7897")
         http_client = httpx.Client(proxy=proxy)
         return OpenAI(api_key=api_key, base_url=BASE_URL, http_client=http_client)
-    except ImportError:
+    except ImportError as e:
+        print("[synthesize] 缺依赖包，无法创建 LLM 客户端: {}".format(e))
         return None

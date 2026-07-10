@@ -28,7 +28,13 @@ DEFAULT_DETAILS_CACHE = Path("db_sources/blacklibrary/details.json")
 
 
 def fetch_unit_list() -> List[dict]:
-    """全量翻页拉 40K 单位。按页是否满判结束（不依赖易失的 total 字段，防早停）。"""
+    """全量翻页拉 40K 单位。按页是否满判结束（不依赖易失的 total 字段，防早停）。
+
+    - 「最后一页」= 响应带 data 键且为空列表 → 正常结束；
+      「业务错误载荷」= 响应根本没有 data 键 → 抛 RuntimeError，不能当翻页结束
+      （否则接口报错会被误判为『抓完了』，静默漏抓整库）。
+    - 结束时用接口宣称的 total 对账，不一致打显眼差额警告。
+    """
     sess = requests.Session()
     sess.trust_env = False
     units: List[dict] = []
@@ -41,14 +47,18 @@ def fetch_unit_list() -> List[dict]:
                 j = sess.post(LIST_API, json={"pageNum": page, "pageSize": PAGE_SIZE,
                               "gameId": GAME_ID_40K, "unitName": ""},
                               headers=_HDR, timeout=25).json()
-                data = j.get("data") or []
-                if total is None and j.get("total"):
-                    total = j.get("total")
                 break
             except Exception:
                 if attempt == 2:
                     raise
                 time.sleep(1.5)
+        if "data" not in j:
+            raise RuntimeError(
+                f"黑图书馆接口返回业务错误载荷（第 {page} 页无 data 键）："
+                f"{str(j)[:200]}")
+        data = j["data"] or []
+        if total is None and j.get("total"):
+            total = j.get("total")
         if not data:
             break
         for u in data:
@@ -58,6 +68,9 @@ def fetch_unit_list() -> List[dict]:
         if len(data) < PAGE_SIZE:
             break
         page += 1
+    if total is not None and len(units) != total:
+        print(f"  ⚠️ 黑图书馆抓取对账不符：目标 {total} vs 实际 {len(units)}"
+              f"（差额 {total - len(units)}）", flush=True)
     return units
 
 
@@ -248,13 +261,14 @@ def build_blacklibrary_docs(db_path):
         # 不渲染黑图书馆分数：它无版本标记，会成为绕过官方 MFM 权威链的第 4 个点数源，
         # 经 classic 检索直接流入回答。点数一律走 L3 的 units.points_json(官方 MFM 覆写)。
         lines = [f"## {name_zh}", f"所属：{faction_zh or '未知'}"]
-        # 属性
+        # 属性（unitBase=底盘尺寸——建模/摆位的关键数据，随属性行一并渲染）
         stats = json.loads(stats_j) if stats_j else []
         for m in stats:
+            base = f" 底盘{m.get('unitBase')}" if m.get("unitBase") else ""
             lines.append(
                 f"**{m.get('unitName') or name_zh}**：M{m.get('m','?')}\" "
                 f"T{m.get('t','?')} SV{m.get('sv','?')}+ W{m.get('w','?')} "
-                f"LD{m.get('ld','?')} OC{m.get('oc','?')}")
+                f"LD{m.get('ld','?')} OC{m.get('oc','?')}{base}")
         # 武器
         weapons = json.loads(w_j) if w_j else {}
         wl = [_flatten_weapon(x, False) for x in (weapons.get("射击武器") or [])]

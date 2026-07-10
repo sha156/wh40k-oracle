@@ -8,7 +8,9 @@
 
 据此本模块**不自动施加任何技能**——它把每条技能分到桶里：
   · toggle_defensive：可建模的防守 USR（FNP X / Stealth / 减伤），解析出参数 + 条件标注，
-    产出一个"若启用则施加"的 Effect；**默认不施加**，由 options/面板 opt-in。
+    并产出 Effect 备用。⚠ 如实说明（评审 M）：该 Effect 当前**没有任何消费者**（自动接线
+    留待 P7）——分类结果只是"检测到防守技能 X"的提示，用户需在 options/面板的手动开关里
+    自行填数，引擎才会计入（真实 Effect 通道在 sequence._gather_params）。
   · nm_*：精确的未建模分类（选取/部署/士气/死亡爆炸/光环依附/其它），取代 P4 那句
     笼统的"abilities 全表未建模"。
 
@@ -134,23 +136,34 @@ def classify_ability(rec: AbilityRecord) -> ClassifiedAbility:
         cond = _is_conditional(low)
         eff = Effect("fnp", "fnp", (x,), (), f"feel no pain {x}+") if x else None
         detail = (f"无痛 {x}+" if x else "无痛（未解析出阈值）")
-        detail += f"（{_condition_hint(low)}）" if cond else "（可开关启用）"
+        detail += (f"（{_condition_hint(low)}）" if cond
+                   else "（提示：需在手动开关自行填数，自动接线留待 P7）")
         return ClassifiedAbility(name or "Feel No Pain", CAT_TOGGLE_DEF, detail,
                                  effect=eff, conditional=cond,
                                  params=((x,) if x else ()))
 
-    # ── ② Stealth / 掩蔽类（守方 → 攻方射击命中 -1，仅射击）──────
-    #   核心 USR「Stealth」（name 精确命中）= 无条件；文本模式必须是【守方防守】框架：
-    #   -1 施加在"对【本单位】发起的攻击"上，而非本单位对敌方施加的压制（评审 HIGH#3：
-    #   "Rivetin' Dakka" 是压制敌方的进攻技能，含 "enemy"，绝不能当成本单位的 Stealth）。
-    #   判别（实测 230 条 "subtract 1" 挂载技能的措辞得来）：
-    #   防守型 = "attack targets this unit/model / that unit" 或 "made against it"（-1 施加在
-    #   打【本单位】的攻击上）；进攻型压制 = "makes an attack, subtract 1"（-1 施加在被压制敌方
-    #   发起的攻击上）——后者不含"targets this/that unit"框架，靠正向措辞即可精确区分。
-    #   进攻型压制签名："…makes an attack, subtract 1 from the Hit roll"（-1 施加在被压制敌方
-    #   身上）——即便同一技能别处出现"targets that unit"（如 Psychological Saboteur 的增益句），
-    #   只要含此签名就不是本单位的防守 Stealth，直接排除。
+    # ── ② Stealth / 掩蔽类（守方防守，仅射击）────────────────────
+    #   核心 USR「Stealth」（name 精确命中）：11版 24.33 起机制彻底改变——不再是命中
+    #   减值，而是「被远程攻击选中时该单位获掩体收益」。改走 save+cover 通道
+    #  （sequence._gather_params 消费），可被攻方 [IGNORES COVER]（24.18）抵消，近战不生效。
     _is_core_stealth = nlow == "stealth"
+    if _is_core_stealth:
+        eff = Effect("save", "cover", (), ("phase_shooting",), "stealth")
+        detail = ("潜行（11版24.33）：被远程攻击选中时获掩体收益"
+                  "（近战不生效；攻方 [IGNORES COVER] 可抵消）")
+        return ClassifiedAbility(name or "Stealth", CAT_TOGGLE_DEF, detail,
+                                 effect=eff, conditional=False, params=())
+
+    #   文本模式（单位专属减命中技能，非 Stealth USR）：其原文明说对指向本单位的
+    #   射击命中骰施加减值，按原文保留 hit+modify 通道（不随 24.33 掩体化）。
+    #   判别必须是【守方防守】框架：减值施加在"对【本单位】发起的攻击"上，而非本单位
+    #   对敌方施加的压制（评审 HIGH#3："Rivetin' Dakka" 是压制敌方的进攻技能，含
+    #   "enemy"，绝不能当成本单位的防守技能）。
+    #   判别（实测 230 条 "subtract 1" 挂载技能的措辞得来）：
+    #   防守型 = "attack targets this unit/model / that unit" 或 "made against it"（减值施加在
+    #   打【本单位】的攻击上）；进攻型压制签名 = "…makes an attack, subtract 1 from the
+    #   Hit roll"（减值施加在被压制敌方身上）——即便同一技能别处出现"targets that unit"
+    #  （如 Psychological Saboteur 的增益句），只要含此签名就不是本单位的防守技能，直接排除。
     _defensive_frame = any(s in low for s in (
         "targets this unit", "targets this model", "targets that unit",
         "made against it", "made against this"))
@@ -158,13 +171,15 @@ def classify_ability(rec: AbilityRecord) -> ClassifiedAbility:
                         or "makes a ranged attack, subtract 1" in low)
     _text_minus_hit = ("subtract 1 from" in low and "hit roll" in low
                        and _defensive_frame and not _offensive_minus)
-    if _is_core_stealth or _text_minus_hit:
-        eff = Effect("hit", "modify", (-1,), ("phase_shooting",), "stealth")
-        cond = (not _is_core_stealth) and _is_conditional(low)
-        detail = ("潜行：守方全员具备时，攻方射击命中 -1（近战不生效）"
-                  if _is_core_stealth else
-                  "射击命中 -1（掩蔽/潜行类）" + ("（条件式，需确认适用）" if cond else "（可开关启用）"))
-        return ClassifiedAbility(name or "Stealth", CAT_TOGGLE_DEF, detail,
+    if _text_minus_hit:
+        eff = Effect("hit", "modify", (-1,), ("phase_shooting",),
+                     "hit penalty (ability text)")
+        cond = _is_conditional(low)
+        detail = ("掩蔽/干扰类：按技能原文对指向本单位的射击命中骰施加减值"
+                  "（单位专属技能，非 11版 Stealth USR——USR 版已改为掩体收益）"
+                  + ("（条件式，需确认适用）" if cond
+                     else "（提示：需在手动开关自行填数，自动接线留待 P7）"))
+        return ClassifiedAbility(name or "Hit Penalty", CAT_TOGGLE_DEF, detail,
                                  effect=eff, conditional=cond, params=(-1,))
 
     # ── ③a 伤害减半（乘法/向上取整）——引擎的加法减伤无法表示，绝不塌成 -1（评审 HIGH#2）
@@ -177,7 +192,9 @@ def classify_ability(rec: AbilityRecord) -> ClassifiedAbility:
         eff = Effect("damage", "damage_reduction", (1,), (), "damage reduction")
         cond = _is_conditional(low)
         return ClassifiedAbility(name or "Damage Reduction", CAT_TOGGLE_DEF,
-                                 "受到伤害 -1" + ("（条件式，需确认适用）" if cond else "（可开关启用）"),
+                                 "受到伤害 -1"
+                                 + ("（条件式，需确认适用）" if cond
+                                    else "（提示：需在手动开关自行填数，自动接线留待 P7）"),
                                  effect=eff, conditional=cond, params=(1,))
 
     # ── not_modeled 精确分桶（按优先级）─────────────────────────

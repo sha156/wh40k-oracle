@@ -84,6 +84,53 @@ class TestPopulate:
         assert report["matched"] == 0
 
 
+class TestZhCollision:
+    """同一 zh 别名映射到不同 canonical_id：保留首个、跳过后续、计数披露。
+
+    旧实现 INSERT OR REPLACE 会静默覆盖（表主键 alias+lang+source 相同），
+    且 matched 虚计（计了 2 实际落库 1）。
+    """
+
+    def test_populate_aliases_keeps_first_and_reports(self, tmp_path):
+        db = _make_db(tmp_path)
+        d = tmp_path / "data_refined" / "书"
+        d.mkdir(parents=True)
+        # 两个不同 en 单位提取出同一 zh 名
+        (d / "p.md").write_text(
+            "## 刀虫 HORMAGAUNTS\n正文\n## 刀虫 TYRANID WARRIORS\n正文\n",
+            encoding="utf-8")
+        report = populate_aliases(db, tmp_path / "data_refined")
+        assert report["collided"] == 1
+        assert report["matched"] == 1
+        conn = sqlite3.connect(str(db))
+        rows = conn.execute(
+            "SELECT alias, canonical_id FROM aliases "
+            "WHERE source='data_refined'").fetchall()
+        conn.close()
+        assert rows == [("刀虫", "000000070")]     # 保留首个（HORMAGAUNTS）
+        assert report["matched"] == len(rows)      # matched == 实际落库行数
+
+    def test_blackforum_collision_keeps_first_and_reports(self, tmp_path):
+        from db_compile.aliases import populate_blackforum_aliases
+
+        db = _make_db(tmp_path)
+        report = populate_blackforum_aliases(db, [
+            ("刀虫", "Hormagaunts"),
+            ("刀虫", "Tyranid Warriors"),   # 同 zh 不同单位 → 碰撞跳过
+            ("无名", "Nonexistent Unit"),   # en 匹配不到 → unmatched
+        ])
+        assert report["matched"] == 1
+        assert report["collided"] == 1
+        assert report["unmatched"] == 1
+        conn = sqlite3.connect(str(db))
+        rows = conn.execute(
+            "SELECT alias, canonical_id FROM aliases "
+            "WHERE source='blackforum'").fetchall()
+        conn.close()
+        assert rows == [("刀虫", "000000070")]
+        assert report["matched"] == len(rows)
+
+
 class TestLoadAliasExpansions:
     """classic 查询扩展用的 {别名 → 库内规范名 英文名} 映射。"""
 

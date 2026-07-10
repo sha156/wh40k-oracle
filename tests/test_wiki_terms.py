@@ -53,3 +53,53 @@ class TestLoadTermAliases:
             {"zh": "火战士队", "en": "Fire Warriors"},
         ]}, ensure_ascii=False), encoding="utf-8")
         assert load_term_aliases(f) == {"火战士队": "Fire Warriors"}
+
+    def test_zh_conflict_keeps_first_and_warns(self, tmp_path, capsys):
+        # H13：zh→en 冲突时保留首个并打警告，不再 last-write-wins 静默覆盖
+        f = tmp_path / "terms.json"
+        f.write_text(json.dumps({"pairs": [
+            {"zh": "火战士队", "en": "Fire Warriors"},
+            {"zh": "火战士队", "en": "Breacher Team"},
+        ]}, ensure_ascii=False), encoding="utf-8")
+        assert load_term_aliases(f) == {"火战士队": "Fire Warriors"}
+        assert "别名冲突" in capsys.readouterr().out
+
+    def test_duplicate_identical_pair_no_warning(self, tmp_path, capsys):
+        # 完全相同的重复配对不算冲突，不打警告
+        f = tmp_path / "terms.json"
+        f.write_text(json.dumps({"pairs": [
+            {"zh": "火战士队", "en": "Fire Warriors"},
+            {"zh": "火战士队", "en": "Fire Warriors"},
+        ]}, ensure_ascii=False), encoding="utf-8")
+        assert load_term_aliases(f) == {"火战士队": "Fire Warriors"}
+        assert "别名冲突" not in capsys.readouterr().out
+
+
+class TestReviewNeededBackup:
+    """M：review_needed.md 可能带人工批注，覆盖前必须先备份。"""
+
+    def test_backup_created_when_content_changes(self, tmp_path, capsys):
+        write_terms(RESULT, tmp_path)
+        # 模拟人工批注
+        p = tmp_path / "review_needed.md"
+        annotated = p.read_text(encoding="utf-8") + "\n<!-- 人工批注：已核对 -->\n"
+        p.write_text(annotated, encoding="utf-8")
+
+        write_terms(RESULT, tmp_path)
+        backups = list(tmp_path.glob("review_needed.backup-*.md"))
+        assert len(backups) == 1
+        # 备份内容 = 覆盖前的人工批注版
+        assert backups[0].read_text(encoding="utf-8") == annotated
+        # 主文件被重新生成（批注被替换，但旧版有备份）
+        assert "人工批注" not in p.read_text(encoding="utf-8")
+        assert "备份" in capsys.readouterr().out
+
+    def test_no_backup_when_content_unchanged(self, tmp_path):
+        write_terms(RESULT, tmp_path)
+        write_terms(RESULT, tmp_path)
+        assert list(tmp_path.glob("review_needed.backup-*.md")) == []
+
+    def test_no_tmp_leftover_after_write(self, tmp_path):
+        # L：原子写不留 .tmp 残骸
+        write_terms(RESULT, tmp_path)
+        assert list(tmp_path.glob("*.tmp")) == []

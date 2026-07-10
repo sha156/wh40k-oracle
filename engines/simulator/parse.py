@@ -120,8 +120,9 @@ KNOWN_FLAG = frozenset({
     "pistol", "twin_linked", "devastating_wounds", "ignores_cover", "torrent",
     "heavy", "hazardous", "assault", "psychic", "lethal_hits", "precision",
     "one_shot", "extra_attacks", "indirect_fire", "lance", "conversion",
+    "close_quarters",   # 11版 24.07 [CLOSE-QUARTERS]：pistol 的接替词条（标注型，语义见 keywords.py）
 })
-# P4 建模的带参词条
+# P4 建模的带参词条（blast/cleave 兼容无参写法，默认 X=1——11版 24.05/24.06 带参形态）
 KNOWN_PARAM = frozenset({"rapid_fire", "sustained_hits", "melta", "blast", "anti", "cleave"})
 
 _ANTI_RE = re.compile(r"^anti-(.+?)\s+(\d)\+?$")

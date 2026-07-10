@@ -118,6 +118,8 @@ class AgentLoop:
         messages: List[Dict[str, Any]] = [{"role": "user", "content": user_input}]
         tool_calls: List[str] = []
         nudged_for_tools = False
+        nudged_for_empty = False       # 空 final 只给一次重答机会（评审 M#5）
+        last_exception_tool: Optional[str] = None  # 连续异常检测（评审 M#6）
 
         for _ in range(self.max_steps):
             step = self.llm.next_step(messages, TOOL_SPECS)
@@ -134,8 +136,24 @@ class AgentLoop:
                         user_input, intent, tool_calls,
                         reason="零工具直答已拒绝（查/判/算 类须先查证）",
                     )
+                # 空内容 final 不算成功（评审 M#5）：先写回提示再给模型一次机会，
+                # 仍为空才降级——不把空字符串当作有效回答返回给用户。
+                answer = str(step.get("content") or "")
+                if not answer.strip():
+                    if not nudged_for_empty:
+                        nudged_for_empty = True
+                        messages.append({
+                            "role": "user",
+                            "content": "上一步返回了空内容。请给出实际的中文回答"
+                                       "（final 的 content 不能为空）。",
+                        })
+                        continue
+                    return self._fallback(
+                        user_input, intent, tool_calls,
+                        reason="final 步骤 content 连续为空",
+                    )
                 return AgentResult(
-                    answer=step.get("content", ""),
+                    answer=answer,
                     intent=intent,
                     tool_calls=tool_calls,
                     degraded=False,
@@ -156,11 +174,23 @@ class AgentLoop:
             try:
                 result = tool_fn(**args)
             except Exception as exc:
-                return self._fallback(
-                    user_input, intent, tool_calls + [tool_name],
-                    reason=f"{tool_name} 异常: {exc}",
-                )
+                # 与未知工具的恢复策略一致（评审 M#6）：错误写回 messages 让模型
+                # 修正参数重试或换工具；同一工具**连续第二次**异常才降级 classic
+                # （达到 max_steps 时由循环末尾的兜底降级）。
+                if last_exception_tool == tool_name:
+                    return self._fallback(
+                        user_input, intent, tool_calls + [tool_name],
+                        reason=f"{tool_name} 连续两次异常: {exc}",
+                    )
+                last_exception_tool = tool_name
+                messages.append({
+                    "role": "tool", "name": tool_name,
+                    "content": {"error": f"{tool_name} 执行异常: {exc}。"
+                                         "请修正参数后重试，或改用其他工具。"},
+                })
+                continue
 
+            last_exception_tool = None
             tool_calls.append(tool_name)
 
             if tool_name != "rag_search" and _is_empty_result(tool_name, result):

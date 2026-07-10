@@ -12,6 +12,7 @@ from __future__ import annotations
 import argparse
 import sqlite3
 import sys
+from contextlib import closing
 from pathlib import Path
 
 REPO_ROOT = Path(__file__).resolve().parent.parent
@@ -27,6 +28,11 @@ def main() -> None:
     ap.add_argument("--dry-run", action="store_true", help="只抓取+匹配统计，不写库")
     args = ap.parse_args()
 
+    # 防护（评审 L 项）：sqlite3.connect 对不存在的路径会凭空建出空库文件，
+    # dry-run 也不例外——先确认库真的在，缺库就明确指路，不留空壳。
+    if not DB_PATH.exists():
+        raise SystemExit(f"数据库不存在：{DB_PATH}\n请先跑 db_compile build 再导入别名")
+
     print("=" * 60)
     print("黑图书馆 → aliases 中文别名桥导入")
     print("=" * 60)
@@ -36,10 +42,10 @@ def main() -> None:
     pairs = units_to_pairs(units)
 
     if args.dry_run:
-        conn = sqlite3.connect(str(DB_PATH))
-        en2id = {(n or "").strip().lower(): c
-                 for c, n in conn.execute("SELECT id, name_en FROM units") if n}
-        conn.close()
+        # closing() 确保查询抛异常时连接也被关闭
+        with closing(sqlite3.connect(str(DB_PATH))) as conn:
+            en2id = {(n or "").strip().lower(): c
+                     for c, n in conn.execute("SELECT id, name_en FROM units") if n}
         matched = sum(1 for _zh, en in pairs if en.strip() and en.strip().lower() in en2id)
         print(f"\n[dry-run] 中英对={len(pairs)}  可匹配 units.name_en={matched}  未写库")
         return

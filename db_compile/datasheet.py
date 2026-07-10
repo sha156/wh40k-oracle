@@ -25,6 +25,7 @@ class ModelProfile:
     w: str
     ld: str
     oc: str
+    base: Optional[str] = None   # 底盘尺寸（Wahapedia base_size，如 '40mm'；旧库/未知为 None）
 
 
 @dataclass
@@ -108,9 +109,9 @@ def lookup_datasheet(db_path, unit_id: str) -> Optional[Datasheet]:
 
         models = [
             ModelProfile(name=m[0], m=m[1], t=m[2], sv=m[3], invuln=m[4],
-                         w=m[5], ld=m[6], oc=m[7])
+                         w=m[5], ld=m[6], oc=m[7], base=m[8])
             for m in conn.execute(
-                "SELECT name, m, t, sv, invuln, w, ld, oc FROM models "
+                "SELECT name, m, t, sv, invuln, w, ld, oc, base FROM models "
                 "WHERE unit_id = ?", (unit_id,))
         ]
         weapons = [
@@ -156,9 +157,13 @@ def diff_core_stats(ds: "Datasheet", zh: Optional[dict]) -> List[dict]:
     conflicts = []
     for field_name, off_val, zh_key in (
         ("M", wm.m, "m"), ("T", wm.t, "t"), ("SV", wm.sv, "sv"), ("W", wm.w, "w"),
+        ("BASE", wm.base, "unitBase"),   # 底盘尺寸：官方 base_size vs 黑图书馆 unitBase
     ):
         zh_val = zm.get(zh_key)
         if zh_val in (None, "", "?", "-"):
+            continue
+        if off_val in (None, "", "?", "-"):
+            # 任一侧缺值只是数据缺失（如官方 base_size 留空），不算数值矛盾
             continue
         if _norm_stat(off_val) != _norm_stat(zh_val):
             conflicts.append({"field": field_name,
@@ -166,25 +171,46 @@ def diff_core_stats(ds: "Datasheet", zh: Optional[dict]) -> List[dict]:
     return conflicts
 
 
+class AmbiguousUnitName(LookupError):
+    """同一 name_en 存在于多个阵营（评审 #25：4 个阵营各有 Helbrute，旧 LIMIT 1
+    静默取任意一行）。调用方须把 candidates 抛给用户/LLM 指明阵营，绝不静默取一。
+    candidates 形如 `Helbrute (WE)`，可原样回填 find_datasheet 精确重查。"""
+
+    def __init__(self, name: str, candidates, hits=None):
+        super().__init__(name)
+        self.name = name
+        self.candidates = list(candidates)
+        self.hits = list(hits or [])   # [(unit_id, name_en, faction_id)]，供调用方做候选预览
+
+
 def find_datasheet(db_path, name: str,
                    resolver=None) -> Optional[Datasheet]:
-    """中文/英文/俗名 → 解析 canonical id → 属性块。英文名直查优先，兜底走 entity_resolver。"""
+    """中文/英文/俗名 → 解析 canonical id → 属性块。英文名直查优先，兜底走 entity_resolver。
+
+    同名跨阵营多命中时抛 AmbiguousUnitName（含阵营限定候选），不静默取一。
+    """
     conn = sqlite3.connect(str(db_path))
     try:
-        hit = conn.execute(
-            "SELECT id FROM units WHERE name_en = ? COLLATE NOCASE LIMIT 1", (name,)
-        ).fetchone()
+        hits = conn.execute(
+            "SELECT id, name_en, faction_id FROM units WHERE name_en = ? COLLATE NOCASE",
+            (name,)
+        ).fetchall()
     finally:
         conn.close()
-    if hit:
-        return lookup_datasheet(db_path, hit[0])
+    if len(hits) == 1:
+        return lookup_datasheet(db_path, hits[0][0])
+    if len(hits) > 1:
+        raise AmbiguousUnitName(
+            name, ["{} ({})".format(n, fac or "?") for _, n, fac in hits],
+            hits=hits)
 
     from db_compile.entity_resolver import EntityResolver
 
     r = resolver or EntityResolver(db_path=Path(db_path))
     resolved = r.resolve(name)
-    # 只信 exact（别名表精确命中/UNIT_ALIASES 链）。fuzzy 会返回 confident 错单位
-    # （如 机械教游侠→Tech-priest Dominus），数值权威路径宁可诚实报缺也不给错答案。
+    # 只信 exact（别名表精确命中/UNIT_ALIASES 链/`名字 (阵营)` 消歧串）。fuzzy 会返回
+    # confident 错单位（如 机械教游侠→Tech-priest Dominus），数值权威路径宁可诚实报缺
+    # 也不给错答案。
     if resolved.canonical_id and resolved.confidence == "exact":
         return lookup_datasheet(db_path, resolved.canonical_id)
     return None

@@ -75,6 +75,7 @@ USE_RERANKER      = False
 
 # 检索参数
 FAISS_TOP_K   = 30   # 向量召回数量
+RULES_FLOOR_K = 2    # 11版规则层保底条数（中文查询对英文核心规则跨语排名失利时的兜底）
 BM25_TOP_K    = 15   # BM25 召回数量
 RERANK_TOP_N  = 8    # Rerank 后保留数量
 
@@ -144,11 +145,27 @@ for _zh in TERM_ALIASES:
 # ══════════════════════════════════════════════
 from db_compile.aliases import load_alias_expansions
 
+# 语料层级（11版迁移S2）：chunk 元数据缺 edition/layer 时（旧索引）按书名回退分类
+from corpus_manifest import classify_book, edition_layer_tag, load_manifest
+
+_CORPUS_MANIFEST = load_manifest(Path(__file__).parent / "corpus_manifest.json")
+
 _DB_PATH = Path(__file__).parent / "db" / "wh40k.sqlite"
+# 别名库加载告警（H1）：None=正常。DB 文件不存在属预期（未构建，函数自身返回空 dict
+# 不抛异常）；真抛异常则是故障，必须显式留痕——1633 条别名扩展不允许静默失效
+# （与 flashrank 从未生效同反模式）。侧边栏比照 reranker_warning 展示。
+DB_ALIASES_WARNING = None
 try:
     DB_ALIASES = load_alias_expansions(_DB_PATH)
-except Exception:
+    if not _DB_PATH.exists():
+        DB_ALIASES_WARNING = (
+            "别名库尚未构建（db/wh40k.sqlite 不存在），"
+            "查询扩展仅使用内置 UNIT_ALIASES / TERM_ALIASES"
+        )
+except Exception as e:  # noqa: BLE001 — 别名层故障不拖垮应用，但必须打日志
     DB_ALIASES = {}
+    DB_ALIASES_WARNING = f"别名库加载出错（查询扩展退化为内置表）：{e!r}"
+    print(f"[DB_ALIASES] ⚠️ {DB_ALIASES_WARNING}", file=sys.stderr)
 for _a in DB_ALIASES:
     jieba.add_word(_a)
 
@@ -327,7 +344,10 @@ def hybrid_retrieve(
     try:
         search_kwargs: dict = {"k": FAISS_TOP_K}
         if filter_books:
-            # FAISS filter 用 lambda 过滤元数据
+            # langchain FAISS 的 filter 语义（H2）：先在**全库**取 fetch_k（默认 20）
+            # 个候选，再按元数据过滤——fetch_k 若小于 k，冷门书过滤后可能只剩 0~2 条。
+            # 放大候选池，保证过滤后仍能凑满 FAISS_TOP_K。
+            search_kwargs["fetch_k"] = max(FAISS_TOP_K * 5, 200)
             search_kwargs["filter"] = {
                 "book": {"$in": filter_books}
             }
@@ -349,6 +369,21 @@ def hybrid_retrieve(
                 ]
         except Exception as e:
             st.warning(f"BM25 检索出错: {e}")
+
+    # ── 11版迁移S2：规则层保底检索 ──
+    # 规则条文层（layer=rules，11版核心规则）是版本仲裁的最高真源，但它是英文——
+    # 中文查询的跨语相似度可能排不进 top（实测「Stealth 效果」「深入打击」被反复
+    # 提及该词的十版 codex 页挤掉）。单独按 layer 过滤取最优 RULES_FLOOR_K 条备用；
+    # 用户显式书目过滤时不注入（尊重过滤意图）。
+    rules_docs: list[Document] = []
+    if not filter_books:
+        try:
+            rules_docs = vectorstore.similarity_search(
+                query, k=RULES_FLOOR_K,
+                fetch_k=max(FAISS_TOP_K * 5, 200),
+                filter={"layer": "rules"})
+        except Exception as e:
+            st.warning(f"规则层保底检索出错: {e}")
 
     # ── RRF 融合 ──
     merged = reciprocal_rank_fusion(faiss_docs, bm25_docs)
@@ -378,15 +413,43 @@ def hybrid_retrieve(
             st.warning(f"Rerank 出错，使用 RRF 结果: {e}")
             top_passages = passages[:RERANK_TOP_N]
 
+    # ── 规则层保底注入：最终结果若无任何 layer=rules 段落，用保底结果替换队尾 ──
+    if rules_docs:
+        have_rules = any((p.get("meta") or {}).get("layer") == "rules"
+                         for p in top_passages)
+        if not have_rules:
+            seen_keys = {(str((p.get("meta") or {}).get("source", "")),
+                          (p.get("meta") or {}).get("page"))
+                         for p in top_passages}
+            extra = []
+            for i, d in enumerate(rules_docs):
+                key = (str(d.metadata.get("source", "")), d.metadata.get("page"))
+                if key not in seen_keys:
+                    extra.append({"id": f"rules_floor_{i}",
+                                  "text": d.page_content, "meta": d.metadata})
+            if extra:
+                keep = max(0, RERANK_TOP_N - len(extra))
+                top_passages = list(top_passages)[:keep] + extra
+
     # ── 组装返回结果 ──
     results = []
     for p in top_passages:
         meta = p.get("meta", {})
+        book = meta.get("book", "未知")
+        # 11版迁移S2：edition/layer 优先取 chunk 元数据（新索引），旧索引按书名回退
+        edition = meta.get("edition")
+        layer = meta.get("layer")
+        if not edition or not layer:
+            fallback = classify_book(book, _CORPUS_MANIFEST)
+            edition = edition or fallback["edition"]
+            layer = layer or fallback["layer"]
         results.append({
-            "text":   p["text"],
-            "book":   meta.get("book", "未知"),
-            "source": meta.get("source", ""),
-            "page":   meta.get("page", "?"),
+            "text":    p["text"],
+            "book":    book,
+            "source":  meta.get("source", ""),
+            "page":    meta.get("page", "?"),
+            "edition": edition,
+            "layer":   layer,
         })
     return results
 
@@ -421,15 +484,23 @@ def get_llm(provider: str, api_key: str, temperature: float):
 #  Prompt 模板
 # ══════════════════════════════════════════════
 SYSTEM_PROMPT = """\
-你是一名专业的战锤40K第十版规则顾问，代号「铁幕」。
+你是一名专业的战锤40K规则顾问，代号「铁幕」，按**现行第11版**（2026-06-20 生效）作答。
 你的任务是根据下方【规则档案】回答指挥官的问题。
 
 ━━ 强制执行规则 ━━
-① **必须引用来源**：每条核心信息后标注 [《书名》第X页]，例如 [《黑暗天使》第14页]。
-② **数据优先展示**：兵种属性（M/T/SV/W/LD/OC）、攻击属性（A/BS/S/AP/D）必须用表格或粗体展示。
-③ **不得编造**：若档案中无相关信息，直接回复"档案缺失，建议查阅原始规则书"。
-④ **语言风格**：中文回答，冷静专业，允许偶尔使用40K术语（如"黄金宝座"、"机械教义"）。
-⑤ **格式规范**：使用 Markdown，关键词加粗，列表整齐。
+① **版本仲裁**：每条档案带版本层标签。规则条文以【11版·核心规则】为最高真源；
+   【11版·阵营补丁】（Faction Pack）覆盖同主题的 codex 内容；【十版·codex兵牌基底】
+   是 11 版官方仍然合法的兵牌数据（单位属性/武器/技能），正常引用即可。
+   同一问题两版条文冲突时，按 11 版作答，并注明"十版为…，11版已改为…"。
+② **必须引用来源**：每条核心信息后标注 [《书名》第X页]，例如 [《黑暗天使》第14页]；
+   引用 11 版核心规则时，若档案文本里出现了条款号（如 12.04/24.33）则一并标注——
+   **条款号只允许照抄档案原文，档案未给出编号时只标页码，严禁自行推测编号**。
+③ **严格限于档案**：只陈述档案文本明确写出的规则内容；档案未涉及的交互、例外、
+   术语对比，宁可不写，也不得凭训练记忆补充。
+④ **数据优先展示**：兵种属性（M/T/SV/W/LD/OC）、攻击属性（A/BS/S/AP/D）必须用表格或粗体展示。
+⑤ **不得编造**：若档案中无相关信息，直接回复"档案缺失，建议查阅原始规则书"。
+⑥ **语言风格**：中文回答，冷静专业，允许偶尔使用40K术语（如"黄金宝座"、"机械教义"）。
+⑦ **格式规范**：使用 Markdown，关键词加粗，列表整齐。
 
 ━━ 规则档案 ━━
 {context}
@@ -446,11 +517,14 @@ def build_prompt_template() -> ChatPromptTemplate:
 
 
 def format_context(passages: list[dict]) -> str:
-    """将 passages 格式化为提示词中的 context 字符串。"""
+    """将 passages 格式化为提示词中的 context 字符串（含版本层标签，供版本仲裁）。"""
     parts = []
     for i, p in enumerate(passages, 1):
         page_info = f"第{p['page']}页" if p["page"] != "?" else ""
-        header = f"【档案 {i}】《{p['book']}》{page_info}"
+        tag = ""
+        if p.get("edition") and p.get("layer"):
+            tag = f"·{edition_layer_tag(p['edition'], p['layer'])}"
+        header = f"【档案 {i}{tag}】《{p['book']}》{page_info}"
         parts.append(f"{header}\n{p['text']}")
     return ("\n\n" + "─" * 40 + "\n\n").join(parts)
 
@@ -561,7 +635,13 @@ def render_sidebar(vectorstore) -> tuple[str, str, float, list[str] | None, bool
         )
         if st.button("🔄 重建知识库（运行 ingest.py）", use_container_width=True):
             st.code("python ingest.py --rebuild", language="bash")
-            st.warning("请在终端中手动执行以上命令，完成后刷新页面。")
+            # st.cache_resource 缓存与进程同寿命（H6），仅刷新页面拿到的仍是旧索引
+            st.warning("请在终端中手动执行以上命令，完成后重启 Streamlit 服务，"
+                       "或点击下方「重载索引」按钮。")
+        if st.button("♻️ 重载索引（清空缓存重新加载）", use_container_width=True):
+            load_resources.clear()
+            build_bm25.clear()
+            st.rerun()
 
         st.divider()
         st.caption("⚔️ 为皇帝而战，在数据中寻找真理。")
@@ -612,7 +692,8 @@ def _normalize_agent_sources(sources) -> list[dict]:
         if key in seen:
             continue
         seen.add(key)
-        out.append({"book": book, "page": page, "source": s.get("source", "")})
+        out.append({"book": book, "page": page, "source": s.get("source", ""),
+                    "edition": s.get("edition"), "layer": s.get("layer")})
     return out
 
 
@@ -663,8 +744,10 @@ def render_agent_answer(user_input, provider, api_key, temperature, tools):
             for src in unique_sources:
                 name = Path(src.get("source", "")).name
                 tail = f" — `{name}`" if name else ""
+                tag = (f"〔{edition_layer_tag(src['edition'], src['layer'])}〕"
+                       if src.get("edition") and src.get("layer") else "")
                 st.markdown(
-                    f"- **《{src.get('book', '未知')}》** 第{src.get('page', '?')}页{tail}"
+                    f"- **《{src.get('book', '未知')}》** 第{src.get('page', '?')}页{tag}{tail}"
                 )
     return result.answer, unique_sources, False
 
@@ -713,7 +796,8 @@ def render_classic_answer(
     )
 
     source_list = [
-        {"book": p["book"], "source": p["source"], "page": p["page"]}
+        {"book": p["book"], "source": p["source"], "page": p["page"],
+         "edition": p.get("edition"), "layer": p.get("layer")}
         for p in passages
     ]
     seen = set()
@@ -726,8 +810,10 @@ def render_classic_answer(
 
     with st.expander(f"📎 引用来源（{len(unique_sources)} 处）", expanded=True):
         for src in unique_sources:
+            tag = (f"〔{edition_layer_tag(src['edition'], src['layer'])}〕"
+                   if src.get("edition") and src.get("layer") else "")
             st.markdown(
-                f"- **《{src['book']}》** 第{src['page']}页 "
+                f"- **《{src['book']}》** 第{src['page']}页 {tag}"
                 f"— `{Path(src['source']).name}`"
             )
     return response_text, unique_sources
@@ -763,6 +849,9 @@ def main():
 
     if reranker_warning:
         st.warning(reranker_warning)
+
+    if DB_ALIASES_WARNING:
+        st.warning(DB_ALIASES_WARNING)
 
     # ── BM25 索引 ──
     bm25_retriever = build_bm25(vectorstore)
@@ -807,8 +896,10 @@ def main():
             if msg.get("sources"):
                 with st.expander("📎 引用来源", expanded=False):
                     for src in msg["sources"]:
+                        tag = (f"〔{edition_layer_tag(src['edition'], src['layer'])}〕"
+                               if src.get("edition") and src.get("layer") else "")
                         st.markdown(
-                            f"- **《{src['book']}》** 第{src['page']}页 "
+                            f"- **《{src['book']}》** 第{src['page']}页 {tag}"
                             f"`{Path(src['source']).name}`"
                         )
 

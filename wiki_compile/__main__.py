@@ -54,11 +54,12 @@ def main() -> None:
             result = run_llm_fallback(result, canonical,
                                       Path("wiki_build/llm_cache"))
         out = Path(args.out)
-        out.parent.mkdir(parents=True, exist_ok=True)
-        out.write_text(json.dumps(
+        # 关键产物原子写（写 .tmp + os.replace），中途崩溃不留半截 pairing.json
+        from wiki_engine._io import atomic_write_text
+        atomic_write_text(out, json.dumps(
             {"pairs": [asdict(p) for p in result.pairs],
              "unmatched": [asdict(e) for e in result.unmatched]},
-            ensure_ascii=False, indent=1), encoding="utf-8")
+            ensure_ascii=False, indent=1))
         print("配对:", len(result.pairs), "未配对:", len(result.unmatched))
     elif args.cmd == "terms":
         from wiki_compile.pair import Pair

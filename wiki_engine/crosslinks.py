@@ -259,13 +259,18 @@ def inject_wikilinks(
     page: WikiPage,
     link_targets: Dict[str, str],
     term_aliases: Optional[Dict[str, str]] = None,
+    self_path: Optional[str] = None,
 ) -> WikiPage:
     """在 page.body 中扫描已知实体名，首次出现处注入 [[path|name]]。
 
     规则：
       - 每个实体名在正文中首次出现时加链接
-      - 不链接自身（page.fm 中已有的名称）
+      - 不链接自身（page.fm 中已有的名称；以及 self_path 指向自身的候选——
+        H14：terms.json 全局别名可能不在 fm 名称集里，但目标是本页自己，
+        按目标路径过滤才堵得住这类自链）
       - 用 (?:^|\\s|[(（]) 前缀边界避免子串误匹配
+
+    self_path：当前页面相对 wiki 根的路径（"/"分隔，含 .md），可选。
 
     返回新的 WikiPage（不可变模式——创建新对象）。
     """
@@ -286,8 +291,10 @@ def inject_wikilinks(
                 link_targets[alias] = link_targets[target_en]
 
     # 按名称长度降序排列，优先匹配长的（避免"火战士"在"火战士队"前面误匹配）
+    # 双重自引用过滤：名字命中 self_names，或目标路径就是本页自身（H14）
     candidates = sorted(
-        [(n, p) for n, p in link_targets.items() if n not in self_names],
+        [(n, p) for n, p in link_targets.items()
+         if n not in self_names and (self_path is None or p != self_path)],
         key=lambda x: -len(x[0]),
     )
 
@@ -335,15 +342,17 @@ def inject_all(
         print("未找到可链接的 wiki 页面。")
         return []
 
-    term_aliases: Optional[Dict[str, str]] = None
-    if terms_path and terms_path.exists():
-        import json
-        try:
-            data = json.loads(terms_path.read_text(encoding="utf-8"))
-            term_aliases = {p["zh"]: p["en"] for p in data.get("pairs", [])
-                            if p.get("zh") and p.get("en")}
-        except (json.JSONDecodeError, KeyError):
-            pass
+    # M6：复用 wiki_compile.terms.load_term_aliases（缺失/损坏/结构异常安全降级），
+    # 不再在此处重复实现 terms.json 解析。
+    from wiki_compile.terms import load_term_aliases
+    term_aliases: Optional[Dict[str, str]] = (
+        load_term_aliases(terms_path) if terms_path else None)
+
+    # 链接注入是流水线自动改写：同步刷新 .gen_hashes.json 登记值，
+    # 否则下一次 synthesize 会把注入后的页面误判为"人工编辑"而拒绝更新（配合 H16）。
+    from wiki_engine._io import load_gen_hashes, save_gen_hashes, text_sha256
+    gen_hashes = load_gen_hashes(pages_dir)
+    hashes_dirty = False
 
     modified: List[str] = []
     for md_file in sorted(pages_dir.rglob("*.md")):
@@ -360,13 +369,19 @@ def inject_all(
         if canonical_body != parsed.body:
             parsed = WikiPage(fm=parsed.fm, body=canonical_body)
 
-        result = inject_wikilinks(parsed, dict(targets), term_aliases)
+        rel = str(md_file.relative_to(pages_dir)).replace("\\", "/")
+        result = inject_wikilinks(parsed, dict(targets), term_aliases,
+                                  self_path=rel)
         new_text = result.to_markdown()
         if new_text != text:
             md_file.write_text(new_text, encoding="utf-8")
-            rel = str(md_file.relative_to(pages_dir)).replace("\\", "/")
             modified.append(rel)
+            if rel in gen_hashes:
+                gen_hashes[rel] = text_sha256(new_text)
+                hashes_dirty = True
 
+    if hashes_dirty:
+        save_gen_hashes(pages_dir, gen_hashes)
     print("交叉链接: {} 页已更新".format(len(modified)))
     return modified
 

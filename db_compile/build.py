@@ -14,11 +14,12 @@
 from __future__ import annotations
 
 import json
+import os
 import sqlite3
 from collections import defaultdict
 from dataclasses import dataclass, field
 from pathlib import Path
-from typing import Dict, List, Optional
+from typing import Dict, List, Optional, Tuple
 
 from wiki_compile.canonical import parse_wahapedia_csv
 
@@ -48,6 +49,8 @@ KNOWN_MISSING = {"Wargear.csv"}
 class BuildReport:
     row_counts: Dict[str, int] = field(default_factory=dict)
     missing_csv: List[str] = field(default_factory=list)
+    # 因缺 id 被跳过的行数（按表披露），如 {"factions": 2}——不静默丢
+    skipped: Dict[str, int] = field(default_factory=dict)
 
 
 def _read_csv(path: Path) -> List[dict]:
@@ -68,15 +71,19 @@ def _load_name_zh_by_id(terms_path: Optional[Path]) -> Dict[str, str]:
             if isinstance(p, dict) and p.get("zh") and p.get("canonical_id")}
 
 
-def _insert_factions(cur, rows: List[dict]) -> int:
+def _insert_factions(cur, rows: List[dict]) -> Tuple[int, int]:
+    """→ (写入行数, 缺 id 跳过行数)。缺 id 列/空 id 不崩、计数披露（防御风格同 _insert_abilities）。"""
+    valid = [r for r in rows if r.get("id")]
     cur.executemany(
         "INSERT OR REPLACE INTO factions (id, name, link) VALUES (?, ?, ?)",
-        [(r["id"], r.get("name", ""), r.get("link")) for r in rows])
-    return len(rows)
+        [(r["id"], r.get("name", ""), r.get("link")) for r in valid])
+    return len(valid), len(rows) - len(valid)
 
 
 def _insert_datasheets(cur, rows: List[dict],
-                       name_zh_by_id: Dict[str, str]) -> int:
+                       name_zh_by_id: Dict[str, str]) -> Tuple[int, int]:
+    """→ (写入行数, 缺 id 跳过行数)。"""
+    valid = [r for r in rows if r.get("id")]
     cur.executemany(
         """INSERT OR REPLACE INTO datasheets
            (id, name, faction_id, source_id, legend, role, loadout,
@@ -89,7 +96,7 @@ def _insert_datasheets(cur, rows: List[dict],
           r.get("leader_head"), r.get("leader_footer"),
           r.get("damaged_w"), r.get("damaged_description"),
           r.get("link"))
-         for r in rows])
+         for r in valid])
     # units 表同步
     cur.executemany(
         """INSERT OR REPLACE INTO units
@@ -97,18 +104,19 @@ def _insert_datasheets(cur, rows: List[dict],
            VALUES (?, ?, ?, ?, NULL, NULL, NULL)""",
         [(r["id"], r.get("faction_id"), r.get("name", ""),
           name_zh_by_id.get(r["id"]))
-         for r in rows])
-    return len(rows)
+         for r in valid])
+    return len(valid), len(rows) - len(valid)
 
 
 def _insert_models(cur, rows: List[dict]) -> int:
     cur.executemany(
         """INSERT OR REPLACE INTO models
-           (unit_id, name, m, t, sv, invuln, w, ld, oc)
-           VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)""",
+           (unit_id, name, m, t, sv, invuln, w, ld, oc, base)
+           VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)""",
         [(r.get("datasheet_id"), r.get("name", ""),
           r.get("M"), r.get("T"), r.get("Sv"),
-          r.get("inv_sv"), r.get("W"), r.get("Ld"), r.get("OC"))
+          r.get("inv_sv"), r.get("W"), r.get("Ld"), r.get("OC"),
+          r.get("base_size"))
          for r in rows])
     return len(rows)
 
@@ -272,7 +280,11 @@ def build_database(csv_dir: Path, db_path: Path,
                     terms_path: Optional[Path] = None) -> BuildReport:
     """建表并导入当前已有的 CSV。
 
-    缺失的 CSV（Wargear.csv 除外）计入 missing_csv；已有数据的表如实导入行数。
+    缺失的 CSV（Wargear.csv 除外）计入 missing_csv；已有数据的表如实导入行数；
+    缺 id 被跳过的行计入 skipped 披露。
+
+    原子替换：先写 `<db>.tmp.sqlite`，全部导入成功 commit 后 os.replace 到 db_path；
+    中途任何失败删临时文件、旧库保持原样（旧实现先 unlink 旧库，崩溃留残缺 db）。
     """
     csv_dir = Path(csv_dir)
     report = BuildReport(
@@ -282,78 +294,92 @@ def build_database(csv_dir: Path, db_path: Path,
 
     db_path = Path(db_path)
     db_path.parent.mkdir(parents=True, exist_ok=True)
-    if db_path.exists():
-        db_path.unlink()
+    tmp_path = db_path.with_suffix(".tmp.sqlite")
+    if tmp_path.exists():
+        tmp_path.unlink()
 
-    conn = sqlite3.connect(str(db_path))
     try:
-        cur = conn.cursor()
-        for ddl in ALL_DDL:
-            cur.execute(ddl)
+        conn = sqlite3.connect(str(tmp_path))
+        try:
+            cur = conn.cursor()
+            for ddl in ALL_DDL:
+                cur.execute(ddl)
 
-        name_zh_by_id = _load_name_zh_by_id(terms_path)
+            name_zh_by_id = _load_name_zh_by_id(terms_path)
 
-        # 1. Factions
-        path = csv_dir / "Factions.csv"
-        if path.exists():
-            report.row_counts["factions"] = _insert_factions(
-                cur, _read_csv(path))
+            # 1. Factions
+            path = csv_dir / "Factions.csv"
+            if path.exists():
+                n, skipped = _insert_factions(cur, _read_csv(path))
+                report.row_counts["factions"] = n
+                if skipped:
+                    report.skipped["factions"] = skipped
 
-        # 2. Datasheets + Units
-        path = csv_dir / "Datasheets.csv"
-        if path.exists():
-            report.row_counts["datasheets"] = _insert_datasheets(
-                cur, _read_csv(path), name_zh_by_id)
-            report.row_counts["units"] = report.row_counts.get("datasheets", 0)
+            # 2. Datasheets + Units
+            path = csv_dir / "Datasheets.csv"
+            if path.exists():
+                n, skipped = _insert_datasheets(
+                    cur, _read_csv(path), name_zh_by_id)
+                report.row_counts["datasheets"] = n
+                report.row_counts["units"] = n
+                if skipped:
+                    report.skipped["datasheets"] = skipped
 
-        # 3. Models
-        path = csv_dir / "Datasheets_models.csv"
-        if path.exists():
-            report.row_counts["models"] = _insert_models(
-                cur, _read_csv(path))
+            # 3. Models
+            path = csv_dir / "Datasheets_models.csv"
+            if path.exists():
+                report.row_counts["models"] = _insert_models(
+                    cur, _read_csv(path))
 
-        # 4. Points (回写 units.points_json)
-        path = csv_dir / "Datasheets_models_cost.csv"
-        if path.exists():
-            report.row_counts["points_updated"] = _insert_points(
-                cur, _read_csv(path))
+            # 4. Points (回写 units.points_json)
+            path = csv_dir / "Datasheets_models_cost.csv"
+            if path.exists():
+                report.row_counts["points_updated"] = _insert_points(
+                    cur, _read_csv(path))
 
-        # 5. Weapons
-        path = csv_dir / "Datasheets_wargear.csv"
-        if path.exists():
-            report.row_counts["weapons"] = _insert_weapons(
-                cur, _read_csv(path))
+            # 5. Weapons
+            path = csv_dir / "Datasheets_wargear.csv"
+            if path.exists():
+                report.row_counts["weapons"] = _insert_weapons(
+                    cur, _read_csv(path))
 
-        # 6. Abilities (主表 + 单位链接)
-        n_master = 0
-        n_link = 0
-        path_m = csv_dir / "Abilities.csv"
-        path_l = csv_dir / "Datasheets_abilities.csv"
-        if path_m.exists() or path_l.exists():
-            master_rows = _read_csv(path_m) if path_m.exists() else []
-            link_rows = _read_csv(path_l) if path_l.exists() else []
-            n_total = _insert_abilities(cur, master_rows, link_rows)
-            report.row_counts["abilities"] = n_total
+            # 6. Abilities (主表 + 单位链接)
+            path_m = csv_dir / "Abilities.csv"
+            path_l = csv_dir / "Datasheets_abilities.csv"
+            if path_m.exists() or path_l.exists():
+                master_rows = _read_csv(path_m) if path_m.exists() else []
+                link_rows = _read_csv(path_l) if path_l.exists() else []
+                n_total = _insert_abilities(cur, master_rows, link_rows)
+                report.row_counts["abilities"] = n_total
 
-        # 7. Stratagems
-        path = csv_dir / "Stratagems.csv"
-        if path.exists():
-            report.row_counts["stratagems"] = _insert_stratagems(
-                cur, _read_csv(path))
+            # 7. Stratagems
+            path = csv_dir / "Stratagems.csv"
+            if path.exists():
+                report.row_counts["stratagems"] = _insert_stratagems(
+                    cur, _read_csv(path))
 
-        # 8. Detachments
-        path = csv_dir / "Detachment_abilities.csv"
-        if path.exists():
-            report.row_counts["detachments"] = _insert_detachments(
-                cur, _read_csv(path))
+            # 8. Detachments
+            path = csv_dir / "Detachment_abilities.csv"
+            if path.exists():
+                report.row_counts["detachments"] = _insert_detachments(
+                    cur, _read_csv(path))
 
-        # 9. Keywords (回写 units.keywords_json)
-        path = csv_dir / "Datasheets_keywords.csv"
-        if path.exists():
-            report.row_counts["keywords_updated"] = _insert_keywords(
-                cur, _read_csv(path))
+            # 9. Keywords (回写 units.keywords_json)
+            path = csv_dir / "Datasheets_keywords.csv"
+            if path.exists():
+                report.row_counts["keywords_updated"] = _insert_keywords(
+                    cur, _read_csv(path))
 
-        conn.commit()
-    finally:
-        conn.close()
+            conn.commit()
+        finally:
+            conn.close()
+        # 全部成功才替换正式库（Windows 上 os.replace 同卷原子）
+        os.replace(str(tmp_path), str(db_path))
+    except BaseException:
+        if tmp_path.exists():
+            try:
+                tmp_path.unlink()
+            except OSError:
+                pass  # 临时文件清理失败不掩盖原始异常
+        raise
     return report

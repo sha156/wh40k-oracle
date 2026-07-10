@@ -55,17 +55,27 @@ def fetch_list(sess) -> list:
 
 
 def fetch_detail(sess, faction_zh, name_en):
+    """抓单个单位 detail。返回 (detail, failed)：
+
+    failed=True 表示三次尝试全部异常（网络/解析），区别于服务端正常响应但
+    无 unitDetail 的 (None, False)——main 的熔断只统计前者。
+    异常不再静默吞：打印类型与消息（requests 网络异常 / JSONDecodeError 响应
+    非 JSON / KeyError-TypeError 结构不符，类型名足以区分）。
+    """
     for attempt in range(3):
         try:
             j = sess.post(DETAIL_API, json={"gameId": 2, "topName": faction_zh,
                           "unitName": name_en}, headers=HDR, timeout=25).json()
             data = j.get("data")
             if isinstance(data, dict) and data.get("unitDetail"):
-                return json.loads(data["unitDetail"])
-            return None
-        except Exception:
+                return json.loads(data["unitDetail"]), False
+            return None, False
+        except (requests.RequestException, json.JSONDecodeError,
+                KeyError, TypeError, ValueError) as exc:
+            print(f"  [detail失败 {attempt + 1}/3] {name_en}: "
+                  f"{type(exc).__name__}: {exc}")
             time.sleep(1.0)
-    return None
+    return None, True
 
 
 def main() -> None:
@@ -80,9 +90,12 @@ def main() -> None:
     with_en = [u for u in units if (u.get("unitEnglishName") or "").strip()]
     print(f"有英文名可抓 detail：{len(with_en)}/{len(units)}\n")
 
-    results, ok, empty = [], 0, 0
+    # 熔断（评审 H 项）：连续 N 个单位全部三连失败 → 网络/接口大概率整体故障，
+    # 提前中止并显眼报错，不再吞到底跑完全程假装正常。
+    FAIL_BREAKER = 10
+    results, ok, empty, consecutive_failed = [], 0, 0, 0
     for i, u in enumerate(with_en, 1):
-        detail = fetch_detail(sess, u.get("topName"), u.get("unitEnglishName"))
+        detail, failed = fetch_detail(sess, u.get("topName"), u.get("unitEnglishName"))
         rec = {
             "id": u.get("id"),
             "faction_zh": u.get("topName"),
@@ -96,6 +109,18 @@ def main() -> None:
             ok += 1
         else:
             empty += 1
+        consecutive_failed = consecutive_failed + 1 if failed else 0
+        if consecutive_failed >= FAIL_BREAKER:
+            partial = out.with_suffix(".partial.json")
+            partial.write_text(json.dumps(results, ensure_ascii=False, indent=2),
+                               encoding="utf-8")
+            raise SystemExit(
+                "\n" + "!" * 60 +
+                f"\n熔断中止：连续 {FAIL_BREAKER} 个单位三连失败（进度 {i}/{len(with_en)}），"
+                f"\n网络/接口大概率整体故障，请检查连通性后重跑。"
+                f"\n已抓到的部分结果暂存: {partial}（非完整数据，勿当正式产物用）\n" +
+                "!" * 60
+            )
         if i % 100 == 0:
             print(f"  {i}/{len(with_en)}  有detail={ok} 空={empty}")
         time.sleep(0.15)

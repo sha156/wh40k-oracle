@@ -164,6 +164,8 @@ def test_na_bs_auto_hits():
 
 
 def test_heavy_plus1_when_stationary():
+    # 11版 24.16：数值不变（+1 命中）；stance.stationary 承载放宽后的 Heavy 条件
+    # （未交战+本回合未上场+全员移动≤3"），字段名沿用十版
     w = weapon(const(60), 4, 4, 0, const(1), effects=kw("heavy"))
     t = tgt(4, 7, 1, 800)
     assert close(run(w, t, st(stationary=True)).hits.mean(), 60 * 4 / 6, rel=0.02)   # 3+
@@ -177,13 +179,14 @@ def test_conversion_lowers_crit_hit_at_long_range():
     assert close(run(w, t, st(long_range=False)).hits.mean(), 60 * 2 / 6, rel=0.02)  # 仅5+
 
 
-def test_indirect_minus1_hit_and_grants_cover():
+def test_indirect_fixed_6up_hit_and_grants_cover():
+    # 11版 24.19+10.07：间接开火命中与 BS 无关——未修正仅 6 命中；目标获掩体（保留）
     w = weapon(const(60), 3, 8, 0, const(1), effects=kw("indirect fire"))
     t = tgt(4, 4, 1, 800)
     r_ind = run(w, t, st(indirect=True))
     r_dir = run(w, t, st(indirect=False))
-    assert close(r_ind.hits.mean(), 60 * 3 / 6, rel=0.02)      # -1 → 4+
-    assert close(r_dir.hits.mean(), 60 * 4 / 6, rel=0.02)      # 3+
+    assert close(r_ind.hits.mean(), 60 * 1 / 6, rel=0.03)      # 6+，与 BS3+ 无关
+    assert close(r_dir.hits.mean(), 60 * 4 / 6, rel=0.02)      # 直射按 BS 3+
     # 掩体：indirect 目标获掩体 → 过保率更低
     assert r_ind.unsaved.mean() / r_ind.wounds.mean() < r_dir.unsaved.mean() / r_dir.wounds.mean()
 

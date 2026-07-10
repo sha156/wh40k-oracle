@@ -44,7 +44,10 @@ def harvest_bilingual_pairs(data_refined_dir) -> List[Tuple[str, str]]:
 def populate_aliases(db_path, data_refined_dir) -> Dict[str, int]:
     """把 (中文→canonical_id) 灌进 aliases 表。en 精确匹配 units.name_en（大小写不敏感）。
 
-    幂等：先删本源旧行再写。返回 {harvested, matched, unmatched}。
+    同一 zh 别名映射到不同 canonical_id 时（表主键 alias+lang+source 相同），
+    保留首个、跳过后续并计入 collided——旧实现 INSERT OR REPLACE 会静默覆盖
+    且 matched 虚计。matched 恒等于实际落库行数。
+    幂等：先删本源旧行再写。返回 {harvested, matched, unmatched, collided}。
     """
     pairs = harvest_bilingual_pairs(data_refined_dir)
     conn = sqlite3.connect(str(db_path))
@@ -55,20 +58,30 @@ def populate_aliases(db_path, data_refined_dir) -> Dict[str, int]:
             if name
         }
         conn.execute("DELETE FROM aliases WHERE source = ?", (SOURCE,))
-        matched = 0
+        matched = unmatched = collided = 0
+        zh_first: Dict[str, str] = {}  # zh → 首个 canonical_id
         for zh, en in pairs:
             cid = en2id.get(en.strip().lower())
             if not cid:
+                unmatched += 1
                 continue
+            prev = zh_first.get(zh)
+            if prev is not None:
+                if prev != cid:
+                    collided += 1
+                    print(f"  ⚠️ 别名碰撞：『{zh}』已映射 {prev}，"
+                          f"跳过 {en}→{cid}（保留首个）")
+                continue  # 同 cid 重复对：无信息量，跳过不计
+            zh_first[zh] = cid
             conn.execute(
-                "INSERT OR REPLACE INTO aliases (alias, canonical_id, lang, source) "
+                "INSERT INTO aliases (alias, canonical_id, lang, source) "
                 "VALUES (?, ?, 'zh', ?)", (zh, cid, SOURCE))
             matched += 1
         conn.commit()
     finally:
         conn.close()
     return {"harvested": len(pairs), "matched": matched,
-            "unmatched": len(pairs) - matched}
+            "unmatched": unmatched, "collided": collided}
 
 
 BLACKFORUM_SOURCE = "blackforum"
@@ -79,7 +92,9 @@ def populate_blackforum_aliases(db_path, pairs: List[Tuple[str, str]]) -> Dict[s
 
     黑图书馆 /app/manager/forum/unit/list 每单位带 unitName(中文)+unitEnglishName(英文)，
     是权威中英桥。en 精确匹配 units.name_en（大小写不敏感），匹配不到诚实计数、不硬塞。
-    幂等：先删本源旧行再写。返回 {harvested, matched, unmatched, skipped_no_en}。
+    同一 zh 映射到不同 canonical_id 时保留首个、跳过后续并计入 collided
+    （旧实现 INSERT OR REPLACE 会静默覆盖）。matched 恒等于实际落库行数。
+    幂等：先删本源旧行再写。返回 {harvested, matched, unmatched, skipped_no_en, collided}。
     """
     conn = sqlite3.connect(str(db_path))
     try:
@@ -89,9 +104,8 @@ def populate_blackforum_aliases(db_path, pairs: List[Tuple[str, str]]) -> Dict[s
             if name
         }
         conn.execute("DELETE FROM aliases WHERE source = ?", (BLACKFORUM_SOURCE,))
-        matched = 0
-        skipped_no_en = 0
-        seen = set()
+        matched = unmatched = skipped_no_en = collided = 0
+        zh_first: Dict[str, str] = {}  # zh → 首个 canonical_id
         for zh, en in pairs:
             if not zh or not _CJK.search(zh):
                 continue
@@ -100,21 +114,26 @@ def populate_blackforum_aliases(db_path, pairs: List[Tuple[str, str]]) -> Dict[s
                 continue
             cid = en2id.get(en.strip().lower())
             if not cid:
+                unmatched += 1
                 continue
-            key = (zh, cid)
-            if key in seen:
-                continue
-            seen.add(key)
+            prev = zh_first.get(zh)
+            if prev is not None:
+                if prev != cid:
+                    collided += 1
+                    print(f"  ⚠️ 别名碰撞：『{zh}』已映射 {prev}，"
+                          f"跳过 {en}→{cid}（保留首个）")
+                continue  # 同 cid 重复对：跳过不计
+            zh_first[zh] = cid
             conn.execute(
-                "INSERT OR REPLACE INTO aliases (alias, canonical_id, lang, source) "
+                "INSERT INTO aliases (alias, canonical_id, lang, source) "
                 "VALUES (?, ?, 'zh', ?)", (zh, cid, BLACKFORUM_SOURCE))
             matched += 1
         conn.commit()
     finally:
         conn.close()
     return {"harvested": len(pairs), "matched": matched,
-            "unmatched": len(pairs) - matched - skipped_no_en,
-            "skipped_no_en": skipped_no_en}
+            "unmatched": unmatched,
+            "skipped_no_en": skipped_no_en, "collided": collided}
 
 
 def load_zh_aliases(db_path) -> Dict[str, str]:

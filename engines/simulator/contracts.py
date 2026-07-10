@@ -106,15 +106,19 @@ class Stance:
     """一次对战的态势开关（渲染成面板可调项）。"""
     phase: str = "shooting"          # shooting|melee
     charging: bool = False
-    stationary: bool = False
+    stationary: bool = False         # 满足 Heavy 条件（11版24.16：未交战+本回合未上场+全员移动≤3"）；
+                                     # 亦作间接开火「驻停+有友军可见目标」的代理条件。字段名沿用十版
     half_range: bool = False         # 距离档：是否在半射程内（rapid fire / melta 触发）
     target_in_cover: bool = False
     long_range: bool = False         # 目标完全在 12"/24" 外（conversion 暴击命中阈值下调触发）
-    indirect: bool = False           # 以间接火力开火（indirect fire：命中 -1 且目标获掩体）
+    indirect: bool = False           # 以间接火力开火（11版24.19+10.07：目标获掩体，命中与BS无关——
+                                     # 未修正仅6命中；stationary 代理条件下 4+）
 
 
 @dataclass(frozen=True)
 class SimContext:
+    """⚠ 未接入执行链路（P5 遗留占位，P8 FastAPI 预留）；修改此处不影响模拟结果，
+    真实 Effect 通道在 sequence._gather_params。"""
     attacker: AttackerProfile
     target: TargetProfile
     stance: Stance

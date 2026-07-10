@@ -80,8 +80,12 @@ def _render_report(st, report: Dict[str, Any], title: str) -> None:
 
 
 def _options_from_inputs(st) -> Dict[str, Any]:
-    """从控件 session_state 读出 simulate_combat 的 options。"""
-    from engines.simulator.cli import _parse_loadout
+    """从控件 session_state 读出 simulate_combat 的 options。
+
+    loadout 畸形时抛 LoadoutParseError（评审 H11）——调用方（render_simulator_panel）
+    捕获后走 st.error 友好提示，不让裸 traceback 冲垮面板。
+    """
+    from engines.simulator.cli import _clean_options, _parse_loadout
 
     opts: Dict[str, Any] = {
         "phase": st.session_state.get("sim_phase", "shooting"),
@@ -109,13 +113,16 @@ def _options_from_inputs(st) -> Dict[str, Any]:
     dlo = _parse_loadout(st.session_state.get("sim_def_loadout", "") or "")
     if dlo:
         opts["defender_loadout"] = dlo
-    return {k: v for k, v in opts.items() if v not in (None, False)}
+    # 评审 H10：只滤 None/False 本身，绝不滤 0（0 == False 会把 seed=0 静默丢回默认 1234）
+    return _clean_options(opts)
 
 
 def render_simulator_panel(st) -> None:
     """在传入的 Streamlit 命名空间下渲染模拟器面板。app.py 侧边栏切到「模拟器」时调用。"""
     st.markdown("### ⚔️ 蒙特卡洛对战模拟器")
-    st.caption("十版逐骰模拟｜攻方打守方 N 次 → 期望伤害/击杀/团灭率 + 阶段漏斗 + 性价比 + 诚实披露。"
+    st.caption("逐骰模拟（先攻判定与 Stealth/间接/Heavy/Blast/Cleave 词条按11版；"
+               "其余词条经审计一致或沿用十版口径）｜"
+               "攻方打守方 N 次 → 期望伤害/击杀/团灭率 + 阶段漏斗 + 性价比 + 诚实披露。"
                "数字与 CLI 完全一致（共用同一引擎）。")
 
     with st.form("sim_form"):
@@ -136,15 +143,19 @@ def render_simulator_panel(st) -> None:
         cols[0].checkbox("冲锋", key="sim_charge")
         cols[1].checkbox("半射程", key="sim_half")
         cols[2].checkbox("目标在掩体", key="sim_cover")
-        cols[3].checkbox("本方静止", key="sim_stationary")
+        cols[3].checkbox('满足 Heavy 条件（移动≤3" 且未交战）', key="sim_stationary",
+                         help='11版24.16：未交战、本回合未上场且全员移动≤3"；'
+                              '亦作间接火力「驻停+有友军可见目标」的代理条件')
         cols2 = st.columns(4)
         cols2[0].checkbox("远距离(12/24\"外)", key="sim_long")
-        cols2[1].checkbox("间接火力", key="sim_indirect")
-        cols2[2].checkbox("守方 Stealth", key="sim_stealth")
+        cols2[1].checkbox("间接火力(6+命中,获掩体)", key="sim_indirect")
+        cols2[2].checkbox("守方 Stealth(获掩体)", key="sim_stealth",
+                          help="11版24.33：被远程攻击选中获掩体收益，"
+                               "攻方 [IGNORES COVER] 可抵消")
         cols2[3].checkbox("守方卧倒(掩体+6++)", key="sim_gtg")
 
         cols3 = st.columns(4)
-        cols3[0].checkbox("守方烟幕(掩体+潜行)", key="sim_smoke")
+        cols3[0].checkbox("守方烟幕(掩体+减命中)", key="sim_smoke")
         cols3[1].number_input("守方 FNP X+（0=关）", 0, 6, 0, key="sim_fnp")
         cols3[2].number_input("守方减伤（0=关）", 0, 3, 0, key="sim_dr")
         cols3[3].number_input("迭代 n", 1000, 50000, 8000, step=1000, key="sim_n")
@@ -161,9 +172,17 @@ def render_simulator_panel(st) -> None:
         st.warning("请填写攻方与守方单位名。")
         return
 
+    # 评审 H11：loadout 畸形 → st.error 友好提示并返回，不让裸 traceback 冲垮面板
+    from engines.simulator.cli import LoadoutParseError
+    try:
+        options = _options_from_inputs(st)
+    except LoadoutParseError as exc:
+        st.error(f"装配 loadout 格式错误：{exc}")
+        return
+
     from agent.tools import simulate_combat
     with st.spinner("逐骰模拟中…"):
-        res = simulate_combat(attacker, defender, _options_from_inputs(st))
+        res = simulate_combat(attacker, defender, options)
 
     if not res.get("ok"):
         reason = res.get("reason")
@@ -189,10 +208,12 @@ def render_simulator_panel(st) -> None:
         st.markdown("#### ↩️ 守方幸存者反打")
         _render_report(st, rev, "反打·击杀数分布")
 
-    # surface：守方可 opt-in 的防守技能 + 阵营分队名（诚实披露，未自动施加）
+    # surface：守方防守技能提示 + 阵营分队名（诚实披露，未自动施加）。
+    # 评审 M：这些技能没有自动接线（留待 P7），提示用户在上方手动开关/数值框自行填数。
     toggles = res.get("defender_toggles") or []
     if toggles:
-        st.info("守方可启用的防守技能（默认未计入，勾选上方对应开关重跑）：\n\n"
+        st.info("检测到守方防守技能（仅提示，本次未计入）：如适用，请在上方手动开关/数值框"
+                "自行填入对应数值后重跑（自动接线留待 P7）：\n\n"
                 + "\n".join(f"- **{t['name']}**：{t['note']}" for t in toggles))
     fo = res.get("faction_options") or {}
     if fo.get("detachments"):

@@ -169,7 +169,9 @@ def load_target(db_path, unit_id: str, models: Optional[int] = None,
         canonical_id=header.canonical_id,
         name_en=header.name_en,
         name_zh=header.name_zh,
-        models=resolved_models or 1,
+        # 评审 M：只有解析失败（None）才回退 1；显式 0 保留，走 sequence 退化目标语义
+        # （全零、不打幽灵模型），不得被 `or 1` 静默改写
+        models=(resolved_models if resolved_models is not None else 1),
         t=primary["t"] or 1,
         sv=primary["sv"] or 7,
         invuln=primary["invuln"],

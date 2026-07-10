@@ -6,6 +6,7 @@ import sqlite3
 import pytest
 
 from db_compile.datasheet import (
+    AmbiguousUnitName,
     Datasheet,
     ModelProfile,
     diff_core_stats,
@@ -20,8 +21,9 @@ def _ds(models):
                      models=models, weapons=[])
 
 
-def _model(m="10", t="10", sv="3", w="12"):
-    return ModelProfile(name="X", m=m, t=t, sv=sv, invuln="-", w=w, ld="6", oc="1")
+def _model(m="10", t="10", sv="3", w="12", base=None):
+    return ModelProfile(name="X", m=m, t=t, sv=sv, invuln="-", w=w, ld="6",
+                        oc="1", base=base)
 
 
 class TestDiffCoreStats:
@@ -64,7 +66,8 @@ def _make_db(tmp_path):
         CREATE TABLE units (id TEXT PRIMARY KEY, faction_id TEXT, name_en TEXT,
                             name_zh TEXT, points_json TEXT, keywords_json TEXT, version TEXT);
         CREATE TABLE models (unit_id TEXT, name TEXT, m TEXT, t TEXT, sv TEXT,
-                            invuln TEXT, w TEXT, ld TEXT, oc TEXT, count_options_json TEXT);
+                            invuln TEXT, w TEXT, ld TEXT, oc TEXT, base TEXT,
+                            count_options_json TEXT);
         CREATE TABLE weapons (id TEXT PRIMARY KEY, unit_id TEXT, name_zh TEXT, name_en TEXT,
                             range TEXT, a TEXT, bs_ws TEXT, s TEXT, ap TEXT, d TEXT, keywords_json TEXT);
         """
@@ -76,7 +79,7 @@ def _make_db(tmp_path):
         (json.dumps({"points": 85, "items": [{"line": "1", "desc": "1 model", "cost": 85}]}),
          json.dumps({"keywords": ["Infantry", "Character"], "faction_keywords": ["Chaos"]})),
     )
-    conn.execute("INSERT INTO models VALUES ('000000929','Chaos Lord','6\"','4','3+','4','4','6+','1',NULL)")
+    conn.execute("INSERT INTO models VALUES ('000000929','Chaos Lord','6\"','4','3+','4','4','6+','1','40mm',NULL)")
     conn.execute(
         "INSERT INTO weapons VALUES ('000000929_w1','000000929',NULL,'Plasma pistol – standard',"
         "'12','1','3+','7','-2','1',?)", (json.dumps(["pistol"]),))
@@ -127,3 +130,36 @@ class TestFindDatasheet:
         # "Chaos Lorr"(错别字) 会被 entity_resolver 模糊匹配到 Chaos Lord；
         # 数值权威路径必须拒绝 fuzzy，返回 None 而非错答案。
         assert find_datasheet(_make_db(tmp_path), "Chaos Lorr") is None
+
+    @staticmethod
+    def _add_we_twin(db):
+        """往库里加一个跨阵营同名单位（评审 #25：Helbrute×4 场景的最小复刻）。"""
+        conn = sqlite3.connect(str(db))
+        conn.execute("INSERT INTO factions VALUES ('WE','World Eaters')")
+        conn.execute("INSERT INTO datasheets VALUES ('000002632','Chaos Lord','WE')")
+        conn.execute(
+            "INSERT INTO units VALUES ('000002632','WE','Chaos Lord',NULL,NULL,NULL,NULL)")
+        conn.execute("INSERT INTO models VALUES ('000002632','Chaos Lord','9\"','4',"
+                     "'3+','4','5','6+','1','40mm',NULL)")
+        conn.commit()
+        conn.close()
+        return db
+
+    def test_cross_faction_same_name_raises_ambiguous(self, tmp_path):
+        db = self._add_we_twin(_make_db(tmp_path))
+        with pytest.raises(AmbiguousUnitName) as ei:
+            find_datasheet(db, "Chaos Lord")
+        assert set(ei.value.candidates) == {"Chaos Lord (CSM)", "Chaos Lord (WE)"}
+        # hits 带 (unit_id, name_en, faction_id)，供 get_datasheet 生成候选属性预览
+        assert {(h[0], h[2]) for h in ei.value.hits} == {
+            ("000000929", "CSM"), ("000002632", "WE")}
+
+    def test_faction_qualified_name_resolves_uniquely(self, tmp_path):
+        # 候选串原样回填 → 走 entity_resolver 的 `名字 (阵营)` 消歧 → 精确命中
+        db = self._add_we_twin(_make_db(tmp_path))
+        from db_compile.entity_resolver import EntityResolver
+        resolver = EntityResolver(db_path=db)
+        ds = find_datasheet(db, "Chaos Lord (WE)", resolver=resolver)
+        assert ds is not None and ds.unit_id == "000002632"
+        ds2 = find_datasheet(db, "Chaos Lord (CSM)", resolver=resolver)
+        assert ds2 is not None and ds2.unit_id == "000000929"

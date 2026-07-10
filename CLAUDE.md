@@ -2,6 +2,12 @@
 
 基于本地知识库的战锤40K规则问答：PDF 规则书 → 向量化入库 → 混合检索 → LLM 生成带引用的中文回答。
 
+**版本定位（2026-07-10 裁决）：现行第 11 版**（2026-06-20 生效）。11 版官方沿用十版 codex
+（Faction Pack 原文 "supplement your Codex"），语料按层组织：11版核心规则（rules，规则唯一真源）
++ Faction Pack（overlay 补丁）+ MFM/平衡版（points/balance）+ 十版 codex（codex-base 兵牌基底）。
+层级清单：`corpus_manifest.json`；迁移计划与进度：`docs/superpowers/plans/2026-07-10-edition-11-migration.md`。
+模拟器先攻判定已按 11 版，攻击序列词条沿用十版实现（S3 审计中）。
+
 ## 运行方式
 
 ```powershell
@@ -38,13 +44,16 @@
    元数据含 `book`/`unit`/`page`
 3. 试点：《钛帝国十版CODEX-20251112.pdf》验证通过后再全量跑 49 本
 
-## 数据事实（已验证）
+## 数据事实（2026-07-10 语料重组后）
 
-- `data/` 下 49 个 PDF，47 个有完整文字层；仅《战锤40K总规则10版老湿腐版1.11》和
-  《死亡守卫10版中文老湿腐版1.1》部分页面无文本（计划用 glm-4v-flash 兜底，二期）
+- `data/` 下 61 个 PDF：11 版英文官方（Core Rules + 26 Faction Pack + Event Companion +
+  Terrain）、11 版中文民间译本（6月4日分数=MFM v2.7、6月4日平衡版）、十版 codex 兵牌基底
+  （中文为主 + 死亡守望/帝国骑士英文版）；`总规则.zip`（295MB）是原始来源备份，不入库
+- 被 11 版整体取代的十版规则类 3 本（总规则/技能速查表/规则注解）在 `archive/10th_rules/`；
+  旧版本重复 codex 在 `archive/`（勿回灌）
 - PDF 来自多个汉化组（老湿腐/DavidZ/双子星/kasa/官方），版式各异，勿用固定正则解析
-- 存在新旧版本共存（艾达灵族 1.13/1.2、钛帝国 0115/1112、吞世者×3、混沌恶魔×3 等），
-  计划移入 `data/archive/` 归档，仅最新版入库
+- 官方点数以 mfm.warhammer-community.com 实时站为真源（`db_compile mfm --fetch/--check/--apply`），
+  2026-07-10 校验 1224/1224 一致；7 个 MFM 单位库里无（11 版新单位，待 S4 结构库迁移）
 
 ## 约定
 
