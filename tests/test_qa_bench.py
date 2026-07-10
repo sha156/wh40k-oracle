@@ -236,6 +236,52 @@ class TestDecideMechanical:
         v, _ = decide_mechanical({"M": '10"'}, ["M"], {"M": "10寸"})
         assert v == "✅"
 
+    # ── H18 记录匹配：多值字段按下标对齐成记录，必须同一记录全部命中 ────────
+    def test_cross_field_patchwork_not_pass(self):
+        # H18 回归（审查实测用例）：答案两把武器 (S5,AP-2)/(S10,AP-1)，
+        # gold 要求 (S5,AP-1)——S、AP 各自都出现过标准值，但没有一把武器
+        # 同时满足，绝不能 ✅（旧逻辑各字段独立"任一命中"误判 ✅）。
+        v, reason = decide_mechanical(
+            {"S": "5", "AP": "-1"}, ["S", "AP"],
+            {"S": ["5", "10"], "AP": ["-2", "-1"]},
+        )
+        assert v == "⚠️"
+        assert "拼凑" in reason
+
+    def test_record_aligned_match_passes(self):
+        # 对照组：同样两把武器但第二把 (5,-1) 与 gold 对齐命中 → ✅
+        v, _ = decide_mechanical(
+            {"S": "5", "AP": "-1"}, ["S", "AP"],
+            {"S": ["10", "5"], "AP": ["-2", "-1"]},
+        )
+        assert v == "✅"
+
+    def test_scalar_field_applies_to_all_records(self):
+        # 标量字段视为对所有记录生效（下标越界取标量值的语义）
+        v, _ = decide_mechanical(
+            {"S": "5", "AP": "-1"}, ["S", "AP"],
+            {"S": "5", "AP": ["-2", "-1"]},
+        )
+        assert v == "✅"
+
+    def test_null_placeholder_keeps_alignment(self):
+        # 抽取 prompt 约定缺失字段用 null 占位：第一把武器缺 AP，
+        # 第二把 (5,-1) 仍在同一下标对齐命中 → ✅
+        v, _ = decide_mechanical(
+            {"S": "5", "AP": "-1"}, ["S", "AP"],
+            {"S": ["10", "5"], "AP": [None, "-1"]},
+        )
+        assert v == "✅"
+
+    def test_list_shorter_than_records_treated_missing(self):
+        # AP 只抽到 1 个值（对齐在第 0 把武器），S 的标准值在第 1 把——
+        # 无任何记录同时命中 → 不给 ✅
+        v, _ = decide_mechanical(
+            {"S": "5", "AP": "-1"}, ["S", "AP"],
+            {"S": ["10", "5"], "AP": ["-1"]},
+        )
+        assert v == "⚠️"
+
     def test_multi_value_end_to_end_extraction(self):
         # 假 client 返回数组形式的抽取 JSON，机械判分应任一匹配即 ✅
         client = _FakeExtractClient({"S": ["10", "5"], "AP": ["-2", "-1"]})
@@ -294,3 +340,13 @@ class TestJudgeGoldMechanicalEndToEnd:
             "m", client, "莫塔里安的W是多少？", "莫塔里安：W=16", "W为12",
         )
         assert v == "❌"
+
+    def test_cross_field_patchwork_end_to_end_not_pass(self):
+        # H18 端到端回归：抽取器返回两把武器 (S5,AP-2)/(S10,AP-1)，
+        # gold (S5,AP-1)——旧逻辑判 ✅，新记录匹配必须拦下。
+        client = _FakeExtractClient({"S": ["5", "10"], "AP": ["-2", "-1"]})
+        v, _ = judge_gold_mechanical(
+            "m", client, "这把武器的S和AP是多少？",
+            "Some blaster S=5 AP=-1 D=2", "武器A S5 AP-2；武器B S10 AP-1",
+        )
+        assert v != "✅"

@@ -80,6 +80,37 @@ def test_render_catalog_includes_arg_hints():
     assert "name_or_id" in catalog  # arg 提示表命中
 
 
+def test_render_catalog_judge_fight_order_full_ctx_hint():
+    # H 项修复：ctx 示例须覆盖 agent/tools.py 真实读取的全部键，
+    # 否则 LLM 不知道可以传冲锋/先攻后攻等场景要素
+    catalog = _render_catalog([{"name": "judge_fight_order", "description": "先攻判定"}])
+    for key in ("attacker_charged", "attacker_fights_first", "attacker_fights_last",
+                "defender_fights_first", "defender_fights_last",
+                "counter_offensive_by"):
+        assert key in catalog, f"judge_fight_order 提示缺少 {key}"
+
+
+def test_render_catalog_simulate_combat_full_options_hint():
+    catalog = _render_catalog([{"name": "simulate_combat", "description": "模拟"}])
+    for key in ("phase", "charge", "half_range", "cover", "stationary", "stealth",
+                "loadout", "defender_loadout", "fnp", "damage_reduction",
+                "attacker_models", "defender_models", "seed"):
+        assert key in catalog, f"simulate_combat 提示缺少 {key}"
+
+
+def test_next_step_system_prompt_carries_hints_and_policy():
+    # hints 与「场景要素不得省略」策略必须真的渲染进发给模型的 system prompt
+    fake = FakeOpenAIClient(['{"type": "final", "content": "ok"}'])
+    llm = OpenAICompatLLMClient(client=fake)
+    specs = [{"name": "simulate_combat", "description": "模拟"},
+             {"name": "judge_fight_order", "description": "先攻判定"}]
+    llm.next_step([{"role": "user", "content": "x"}], specs)
+    system = fake.calls[0]["messages"][0]["content"]
+    assert "defender_loadout" in system
+    assert "attacker_fights_last" in system
+    assert "不得省略" in system  # _NEXT_STEP_CONTRACT 新增策略条
+
+
 # ── classify_intent ───────────────────────────────────────────────
 
 class TestClassifyIntent:
@@ -148,20 +179,41 @@ class TestNextStep:
         sent = fake.calls[0]["messages"]
         assert any("影阳指挥官" in m["content"] for m in sent)
 
-    def test_unparseable_output_raises(self):
-        llm = _client(["模型今天不听话，什么都没输出正确"])
+    def test_unparseable_output_raises_after_one_retry(self):
+        # L 项新语义：内容解析失败先重试一次，连续两次不可解析才抛 ValueError
+        fake = FakeOpenAIClient(["模型今天不听话", "还是不听话"])
+        llm = OpenAICompatLLMClient(client=fake)
         with pytest.raises(ValueError):
             llm.next_step([{"role": "user", "content": "x"}], [])
+        assert len(fake.calls) == 2  # 恰好重试了一次，不多打
 
-    def test_falls_back_when_response_format_unsupported(self):
-        # 第一次带 response_format 抛错，第二次普通模式成功
+    def test_json_parse_failure_retries_once_then_succeeds(self):
         fake = FakeOpenAIClient([
-            RuntimeError("response_format not supported"),
+            "这不是 JSON",
+            '{"type": "final", "content": "重试一次拿到了合法 JSON"}',
+        ])
+        llm = OpenAICompatLLMClient(client=fake)
+        step = llm.next_step([{"role": "user", "content": "x"}], [])
+        assert step["content"] == "重试一次拿到了合法 JSON"
+        assert len(fake.calls) == 2
+
+    def test_falls_back_when_response_format_param_rejected(self):
+        # 供应商/SDK 不认 response_format 参数（TypeError/BadRequest）→ 退回普通模式
+        fake = FakeOpenAIClient([
+            TypeError("create() got an unexpected keyword argument 'response_format'"),
             '{"type": "final", "content": "退回普通模式也能答"}',
         ])
         llm = OpenAICompatLLMClient(client=fake)
         step = llm.next_step([{"role": "user", "content": "x"}], [])
         assert step["content"] == "退回普通模式也能答"
+
+    def test_network_error_propagates_without_blind_retry(self):
+        # L 项：网络/API 异常不再无差别重打——直接抛给上层（loop 降级），只调用一次
+        fake = FakeOpenAIClient([RuntimeError("connection reset")])
+        llm = OpenAICompatLLMClient(client=fake)
+        with pytest.raises(RuntimeError):
+            llm.next_step([{"role": "user", "content": "x"}], [])
+        assert len(fake.calls) == 1  # 未盲重试放大调用量
 
 
 # ── 与 AgentLoop 端到端（用假 client 驱动真实 loop）──────────────────
@@ -185,8 +237,9 @@ class TestEndToEndWithAgentLoop:
 
     def test_bad_json_midloop_degrades_to_rag_search(self):
         llm = _client([
-            "查",           # classify_intent
-            "彻底不是 JSON",  # next_step 抛 ValueError → loop.run 降级
+            "查",             # classify_intent
+            "彻底不是 JSON",   # 内容解析失败 → 重试一次
+            "重试还不是 JSON",  # 仍失败 → next_step 抛 ValueError → loop.run 降级
         ])
         tools = {
             "rag_search": lambda query: {

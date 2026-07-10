@@ -125,12 +125,15 @@ class TestDegradesToRagSearch:
         assert result.tool_calls == ["search_wiki", "rag_search"]
         assert "测试书" in result.answer
 
-    def test_tool_exception_triggers_rag_search_fallback(self):
+    def test_tool_exception_twice_consecutively_triggers_rag_search_fallback(self):
+        # M#6 新语义：首次异常→错误写回 messages 给模型重试机会；
+        # 同一工具**连续第二次**异常才降级 classic（旧行为是首次异常即降级）。
         def boom(query):
             raise RuntimeError("工具炸了")
 
         llm = ScriptedLLM("查", steps=[
             {"type": "tool_call", "tool": "search_wiki", "args": {"query": "触发异常"}},
+            {"type": "tool_call", "tool": "search_wiki", "args": {"query": "再试还是炸"}},
         ])
         loop = AgentLoop(llm=llm, tools=_fake_tools(search_wiki=boom))
 
@@ -138,6 +141,31 @@ class TestDegradesToRagSearch:
 
         assert result.degraded is True
         assert "rag_search" in result.tool_calls
+        # 首次异常的错误信息确实写回了 messages（第二次 next_step 能看到）
+        assert any("执行异常" in str(m) for m in llm.next_step_calls[-1])
+
+    def test_tool_exception_once_then_fixed_args_succeeds(self):
+        # M#6：首次异常后模型换参数重试成功 → 不降级，正常作答
+        calls = {"n": 0}
+
+        def flaky(query):
+            calls["n"] += 1
+            if calls["n"] == 1:
+                raise RuntimeError("坏参数炸了")
+            return {"found": True, "page": {"name_zh": "找到了"}, "results": []}
+
+        llm = ScriptedLLM("查", steps=[
+            {"type": "tool_call", "tool": "search_wiki", "args": {"query": "坏参数"}},
+            {"type": "tool_call", "tool": "search_wiki", "args": {"query": "好参数"}},
+            {"type": "final", "content": "换参数后查到了。"},
+        ])
+        loop = AgentLoop(llm=llm, tools=_fake_tools(search_wiki=flaky))
+
+        result = loop.run("会先炸一次的问题")
+
+        assert result.degraded is False
+        assert result.tool_calls == ["search_wiki"]  # 失败的那次不计入
+        assert result.answer == "换参数后查到了。"
 
     def test_max_steps_exceeded_triggers_fallback(self):
         steps = [
@@ -182,6 +210,51 @@ class TestDegradesToRagSearch:
         assert result.degraded is False
         assert result.tool_calls == ["judge_fight_order"]
         assert "未建模" in result.answer
+
+
+class TestEmptyFinalContent:
+    """M#5：final 空内容不算成功——先给一次重答机会，仍空则降级。"""
+
+    def test_empty_final_nudged_then_real_answer(self):
+        # 用「闲聊」意图避开零工具门控，专注验证空内容纠偏
+        llm = ScriptedLLM("闲聊", steps=[
+            {"type": "final", "content": "   "},
+            {"type": "final", "content": "这次有真内容。"},
+        ])
+        loop = AgentLoop(llm=llm, tools=_fake_tools())
+
+        result = loop.run("在吗")
+
+        assert result.degraded is False
+        assert result.answer == "这次有真内容。"
+        # 纠偏消息确实注入过（第二次 next_step 能看到）
+        assert any("空内容" in str(m) for m in llm.next_step_calls[-1])
+
+    def test_empty_final_twice_degrades(self):
+        llm = ScriptedLLM("闲聊", steps=[
+            {"type": "final", "content": ""},
+            {"type": "final", "content": None},
+        ])
+        loop = AgentLoop(llm=llm, tools=_fake_tools())
+
+        result = loop.run("在吗")
+
+        assert result.degraded is True
+        assert "rag_search" in result.tool_calls
+
+    def test_empty_final_after_tool_call_also_gated(self):
+        # 查过工具但 final 仍为空 → 同样先纠偏再放行真实答案
+        llm = ScriptedLLM("查", steps=[
+            {"type": "tool_call", "tool": "rag_search", "args": {"query": "x"}},
+            {"type": "final", "content": ""},
+            {"type": "final", "content": "基于检索段落的回答。"},
+        ])
+        loop = AgentLoop(llm=llm, tools=_fake_tools())
+
+        result = loop.run("问题")
+
+        assert result.degraded is False
+        assert result.answer == "基于检索段落的回答。"
 
 
 class TestZeroToolAnswerGate:

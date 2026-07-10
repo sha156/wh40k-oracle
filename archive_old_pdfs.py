@@ -116,39 +116,53 @@ def _detect_faction_key(stem: str) -> Optional[str]:
     return None
 
 
-def _parse_version_date(stem: str) -> Tuple[int, ...]:
-    """从文件名中提取版本号或日期，用于比较新旧。
+# ── 版本格式优先级（评审 M#8）──────────────────────────────────────
+# 完整 8 位日期 > V 版本号 > 小数版本号 > 4 位数字 > 无版本。
+# 4 位数字（0115/1112/0308）语义歧义（MMDD? YYMM?），不再伪造成年份参与
+# 跨格式比较（"0308"→(2003,8) > "0115"→(2001,15) 纯属巧合）；仅在同为
+# 4 位数字格式时按数值比较，且同组出现多个 4 位数字文件时跳过归档交人工
+# 确认——宁可不归档也不误归档（e67a3676 假归档教训）。
+_FMT_NONE, _FMT_DIGIT4, _FMT_DECIMAL, _FMT_V, _FMT_DATE8 = 0, 1, 2, 3, 4
 
-    识别模式：
-      - 纯日期：20251112, 20250115 → (2025, 11, 12)
-      - 四位年月：0115, 1112 → 视为 20YYMM 格式
-      - 小数版本：1.13, 1.2, 2.81 → (major, minor)
-      - V 前缀：V1.20 → (1, 20)
-      - 其他：返回 (0,)
 
-    返回可比较的 tuple，越大越新。
+def _parse_version_date(stem: str) -> Tuple[int, Tuple[int, ...]]:
+    """从文件名中提取版本号或日期，返回 (格式优先级, 数值元组)。
+
+    识别模式（按优先级从高到低）：
+      - 纯日期：20251112 → (_FMT_DATE8, (2025, 11, 12))
+      - V 前缀：V1.20 → (_FMT_V, (1, 20))
+      - 小数版本：1.13, 2.81 → (_FMT_DECIMAL, (major, minor))
+      - 4 位数字：0115 → (_FMT_DIGIT4, (115,))——不猜语义，仅同格式内比数值
+      - 其他：(_FMT_NONE, (0,))
+
+    元组直接可比：先比格式优先级（高优先级格式视为更可信的"新"判据），
+    同格式再比数值，越大越新。
     """
-    # 8 位日期：YYYYMMDD
     m = re.search(r"(\d{4})(\d{2})(\d{2})", stem)
     if m:
-        return (int(m.group(1)), int(m.group(2)), int(m.group(3)))
-    # 4 位数字：可能是 MMDD 或 YYMM → 作为次级判断
-    m = re.search(r"(?<!\d)(\d{2})(\d{2})(?!\d)", stem)
-    if m:
-        return (2000 + int(m.group(1)), int(m.group(2)))
+        return (_FMT_DATE8, (int(m.group(1)), int(m.group(2)), int(m.group(3))))
     # V 前缀版本号
     m = re.search(r"[Vv](\d+)\.(\d+)", stem)
     if m:
-        return (int(m.group(1)), int(m.group(2)))
+        return (_FMT_V, (int(m.group(1)), int(m.group(2))))
     # 小数版本号（在文件名末尾或空格后）
     m = re.search(r"(?<!\d)(\d+)\.(\d+)(?!\d)", stem)
     if m:
-        return (int(m.group(1)), int(m.group(2)))
-    # 纯数字版本号（如 "1.08"、"2.81"）
-    m = re.search(r"(\d+)\.(\d{2,})", stem)
+        return (_FMT_DECIMAL, (int(m.group(1)), int(m.group(2))))
+    # 4 位数字：MMDD 还是 YYMM 无法确定，保留原始数值，仅供同格式比较
+    m = re.search(r"(?<!\d)(\d{4})(?!\d)", stem)
     if m:
-        return (int(m.group(1)), int(m.group(2)))
-    return (0,)
+        return (_FMT_DIGIT4, (int(m.group(1)),))
+    return (_FMT_NONE, (0,))
+
+
+def _four_digit_ambiguous(pdfs: List[Path]) -> bool:
+    """同语言子组内，版本判据最高只到 4 位数字格式且有 ≥2 个此格式文件时，
+    新旧语义无法确定（MMDD/YYMM 混用可能），返回 True 让调用方跳过归档。"""
+    fmts = [_parse_version_date(p.stem)[0] for p in pdfs]
+    if not fmts:
+        return False
+    return max(fmts) == _FMT_DIGIT4 and fmts.count(_FMT_DIGIT4) >= 2
 
 
 def _has_faction_pack_name(stem: str) -> bool:
@@ -205,6 +219,14 @@ def select_archive_targets(
         # 按语言分组
         en_pdfs = [p for p in pdfs if not _has_chinese(p.stem)]
         zh_pdfs = [p for p in pdfs if _has_chinese(p.stem)]
+
+        # M#8：保留哪本要靠比较多个 4 位数字版本号时，语义歧义无法定新旧，
+        # 整组跳过归档并警告——宁可不归档也不误归档。
+        if _four_digit_ambiguous(zh_pdfs) or _four_digit_ambiguous(en_pdfs):
+            names = "、".join(p.name for p in pdfs)
+            print(f"[skip] [{key}] 命名格式歧义（多个 4 位数字版本号，"
+                  f"无法确定新旧），请人工确认：{names}")
+            continue
 
         keep: Set[Path] = set()
 

@@ -7,6 +7,7 @@
 from __future__ import annotations
 
 import importlib
+import threading
 from pathlib import Path
 from typing import Any, Callable, Dict, List, Optional
 
@@ -23,15 +24,19 @@ APP_PATH = REPO_ROOT / "app.py"
 DB_PATH = REPO_ROOT / "db" / "wh40k.sqlite"
 
 # entity_resolver 单例缓存（懒加载，避免每次工具调用都重新解析 terms.json/app.py）。
+# 双检锁（评审 M#7）：qa_bench 6 线程并发首调时避免重复构造。
 _default_resolver: Optional[EntityResolver] = None
+_default_resolver_lock = threading.Lock()
 
 
 def _get_default_resolver() -> EntityResolver:
     global _default_resolver
     if _default_resolver is None:
-        _default_resolver = EntityResolver(
-            terms_path=TERMS_PATH, app_path=APP_PATH, db_path=DB_PATH,
-        )
+        with _default_resolver_lock:
+            if _default_resolver is None:
+                _default_resolver = EntityResolver(
+                    terms_path=TERMS_PATH, app_path=APP_PATH, db_path=DB_PATH,
+                )
     return _default_resolver
 
 
@@ -142,6 +147,13 @@ def get_keyword_definition(
 def calc_points(unit_list: List[str], db_path: Optional[Path] = None) -> Dict[str, Any]:
     """精确算分（SQLite，db_compile.calc_points）。P2 阶段点数 CSV 未导入时
     诚实报告缺失原因，不编造数值。"""
+    # 参数防护（评审 M#4）：LLM 可能把 unit_list 传成单个字符串——字符串是可迭代的，
+    # 会被逐字符拆成"单位名"胡乱查询。字符串包成单元素列表；其余非列表类型明确报错。
+    if isinstance(unit_list, str):
+        unit_list = [unit_list]
+    elif not isinstance(unit_list, (list, tuple)):
+        return {"ok": False, "found": False, "units": [],
+                "note": f"参数错误：unit_list 应为单位名列表，收到 {type(unit_list).__name__}"}
     db_path = db_path or DB_PATH
     if not Path(db_path).exists():
         return {"found": False, "units": [], "note": "wh40k.sqlite 不存在，需先跑 db_compile"}

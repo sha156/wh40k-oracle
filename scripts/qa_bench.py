@@ -457,32 +457,44 @@ def asked_fields(question):
     return found
 
 
-def _answer_tokens(value):
-    """把 extracted[field] 归一化成 token 列表。
+def _aligned_tokens(value):
+    """返回 (是否多值 list, 逐下标归一化 token 列表)。
 
-    值可以是单值（旧契约）或数组（多子单位/多武器）；None→[]、标量→[标量]。
-    抽不出规范数值的元素丢弃。
+    与 _answer_tokens 不同：**不丢弃**解析不出的元素（保留 None 占位），
+    维持「第 i 个元素属于第 i 把武器/子单位」的下标对齐——记录匹配依赖它。
     """
-    vals = value if isinstance(value, list) else ([] if value is None else [value])
-    return [t for t in (_stat_token(v) for v in vals) if t is not None]
+    if isinstance(value, list):
+        return True, [_stat_token(v) for v in value]
+    return False, [_stat_token(value)]
 
 
 def decide_mechanical(gold_fields, required, extracted):
     """纯函数：按归一化 token 逐字段比对，给出 (verdict, reason)。
 
     每个被问字段，extracted 里可以是单值或多值（回答覆盖多个子单位/多把武器）；
-    只要**任一**答案值与标准值一致即算该字段命中——避免机械抽取器在多实体答案里
+    任一答案值与标准值一致即算该字段命中——避免机械抽取器在多实体答案里
     抽错行，把答对的题冤判为错（#62 卡迪安重武器班、#95 噪音战士）。
 
+    评审 H18 修复——记录匹配：被问字段含多值（list）时，各 list 按下标对齐成
+    「记录」（抽取 prompt 已约定各字段数组按武器/子单位顺序对齐），✅ 额外要求
+    **存在某个下标 i 使所有被问字段在记录 i 上同时命中**。堵住跨字段拼凑假阳性：
+    gold(S=5,AP=-1) vs 答案两把武器 (S5,AP-2)/(S10,AP-1)——S、AP 各自都出现过
+    标准值，但没有一把武器同时满足，不得判 ✅。标量字段视为对所有记录生效；
+    list 下标越界视为该记录缺该字段。全标量情况保持原行为。
+
     - 任一被问字段答了值但无一与标准一致 → ❌
-    - 被问字段全部命中且无漏 → ✅
+    - 被问字段全部命中且存在同时满足的记录 → ✅
+    - 各字段独立命中但无任何记录同时满足 → ⚠️（跨字段拼凑，存疑不给 ✅）
     - 部分命中、其余漏答（无矛盾）→ ⚠️
     - 被问字段全部漏答 → ❌（答非所问）
     """
     wrong, matched, missing = [], [], []
+    per_field = {}  # f -> (is_list, aligned_tokens, gold_tok)
     for f in required:
         gold_tok = _stat_token(gold_fields.get(f))
-        ans_tokens = _answer_tokens(extracted.get(f))
+        is_list, aligned = _aligned_tokens(extracted.get(f))
+        per_field[f] = (is_list, aligned, gold_tok)
+        ans_tokens = [t for t in aligned if t is not None]
         if not ans_tokens:
             missing.append(f)
         elif gold_tok in ans_tokens:
@@ -493,6 +505,19 @@ def decide_mechanical(gold_fields, required, extracted):
         detail = "；".join(f"{f} 答「{a}」≠标准「{g}」" for f, a, g in wrong)
         return "❌", f"数值不符：{detail}"
     if matched and not missing:
+        list_fields = [f for f in required if per_field[f][0]]
+        if list_fields:
+            n_rec = max(len(per_field[f][1]) for f in list_fields)
+
+            def _hit_at(f, i):
+                is_list, aligned, gold_tok = per_field[f]
+                if is_list:
+                    return i < len(aligned) and aligned[i] == gold_tok
+                return aligned[0] == gold_tok  # 标量对所有记录生效
+
+            if not any(all(_hit_at(f, i) for f in required) for i in range(n_rec)):
+                return "⚠️", ("各被问字段虽各自出现过标准值，但没有任何一条武器/"
+                              "子单位记录同时满足全部字段（疑似跨字段拼凑，存疑不判对）")
         return "✅", f"被问字段全部正确：{'/'.join(matched)}"
     if matched and missing:
         return "⚠️", f"正确：{'/'.join(matched)}；漏答：{'/'.join(missing)}"
@@ -500,19 +525,25 @@ def decide_mechanical(gold_fields, required, extracted):
 
 
 def _coerce_value_list(v):
-    """把抽取结果里单个字段的值规整成列表：None→[]、标量→[标量]、列表原样。"""
+    """把抽取结果里单个字段的值规整成列表：None→[]、标量→[标量]、列表原样。
+
+    列表内的 null 占位元素**保留**（不再剔除）：抽取 prompt 约定用 null 占位
+    维持多武器下标对齐，decide_mechanical 的记录匹配（H18）依赖这个对齐。
+    """
     if v is None:
         return []
     if isinstance(v, list):
-        return [x for x in v if x is not None]
+        return list(v)
     return [v]
 
 
 def extract_answer_fields(model, client, question, answer, fields):
     """LLM 仅做抽取（不判断）：从回答中抽出各字段的**全部**原文数值，缺失返回空数组。
 
-    回答可能覆盖多个子单位/多把武器（同一字段出现多个不同数值），因此每个字段抽成数组，
-    交由 decide_mechanical「任一匹配 gold 即算命中」——避免抽取器在多实体答案里抽错行。
+    回答可能覆盖多个子单位/多把武器（同一字段出现多个不同数值），因此每个字段抽成数组。
+    对齐约定（评审 H18，记录匹配的前提）：原 prompt 只要求「抽出全部数值」未约定顺序，
+    现明文要求各字段数组按武器/子单位出现顺序对齐（第 i 个元素属于第 i 把武器，
+    缺失用 null 占位），decide_mechanical 才能按下标把各字段拼回同一条记录整体比对。
     """
     labels = "、".join(f"{f}={_FIELD_LABEL.get(f, f)}" for f in fields)
     sys_prompt = (
@@ -521,7 +552,10 @@ def extract_answer_fields(model, client, question, answer, fields):
         "回答可能涉及多个子单位或多把武器，同一字段可能出现多个不同数值。\n"
         "以 JSON 对象返回，键为字段代码，值为该字段在回答中出现的**所有**原文数值组成的数组"
         '（如 {"S": ["10", "5"], "AP": ["-2", "-1"]}，元素形如 "10寸"、"2+"、"-4"、"D6"、"无"）；'
-        "若回答没有明确给出某字段，该键返回空数组 []。不要推断或补全，只照抄回答里的数字。"
+        "若回答没有明确给出某字段，该键返回空数组 []。不要推断或补全，只照抄回答里的数字。\n"
+        "【对齐要求】回答涉及多把武器/多个子单位时，各字段数组必须按武器/子单位在回答中"
+        "出现的顺序对齐：所有字段数组的第 i 个元素都属于同一把（第 i 把）武器/子单位；"
+        "某把武器没给出某字段时，该位置用 null 占位，保持各数组下标一一对应。"
     )
     user = f"【问题】{question}\n\n【回答】{answer}\n\n只输出 JSON 对象。"
     kwargs = dict(
