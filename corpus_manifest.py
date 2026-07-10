@@ -39,6 +39,23 @@ def load_manifest(path: Path) -> dict:
     return data
 
 
+LAYER_LABELS_ZH = {
+    "rules": "核心规则",
+    "overlay": "阵营补丁",
+    "points": "点数",
+    "balance": "平衡副本",
+    "event": "组织赛",
+    "reference": "参考",
+    "codex-base": "codex兵牌基底",
+}
+
+
+def edition_layer_tag(edition: str, layer: str) -> str:
+    """展示标签：'11版·核心规则'、'十版·codex兵牌基底'。未知层原样透出不吞。"""
+    ed = "十版" if str(edition) == "10" else "{}版".format(edition)
+    return "{}·{}".format(ed, LAYER_LABELS_ZH.get(layer, layer))
+
+
 def classify_book(book_name: str, manifest: dict) -> Dict[str, str]:
     """书名 → {"edition": ..., "layer": ...}。精确名优先，其次前缀规则，最后 defaults。"""
     entry = manifest["books"].get(book_name)

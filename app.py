@@ -144,6 +144,11 @@ for _zh in TERM_ALIASES:
 # ══════════════════════════════════════════════
 from db_compile.aliases import load_alias_expansions
 
+# 语料层级（11版迁移S2）：chunk 元数据缺 edition/layer 时（旧索引）按书名回退分类
+from corpus_manifest import classify_book, edition_layer_tag, load_manifest
+
+_CORPUS_MANIFEST = load_manifest(Path(__file__).parent / "corpus_manifest.json")
+
 _DB_PATH = Path(__file__).parent / "db" / "wh40k.sqlite"
 # 别名库加载告警（H1）：None=正常。DB 文件不存在属预期（未构建，函数自身返回空 dict
 # 不抛异常）；真抛异常则是故障，必须显式留痕——1633 条别名扩展不允许静默失效
@@ -396,11 +401,21 @@ def hybrid_retrieve(
     results = []
     for p in top_passages:
         meta = p.get("meta", {})
+        book = meta.get("book", "未知")
+        # 11版迁移S2：edition/layer 优先取 chunk 元数据（新索引），旧索引按书名回退
+        edition = meta.get("edition")
+        layer = meta.get("layer")
+        if not edition or not layer:
+            fallback = classify_book(book, _CORPUS_MANIFEST)
+            edition = edition or fallback["edition"]
+            layer = layer or fallback["layer"]
         results.append({
-            "text":   p["text"],
-            "book":   meta.get("book", "未知"),
-            "source": meta.get("source", ""),
-            "page":   meta.get("page", "?"),
+            "text":    p["text"],
+            "book":    book,
+            "source":  meta.get("source", ""),
+            "page":    meta.get("page", "?"),
+            "edition": edition,
+            "layer":   layer,
         })
     return results
 
@@ -435,15 +450,20 @@ def get_llm(provider: str, api_key: str, temperature: float):
 #  Prompt 模板
 # ══════════════════════════════════════════════
 SYSTEM_PROMPT = """\
-你是一名专业的战锤40K第十版规则顾问，代号「铁幕」。
+你是一名专业的战锤40K规则顾问，代号「铁幕」，按**现行第11版**（2026-06-20 生效）作答。
 你的任务是根据下方【规则档案】回答指挥官的问题。
 
 ━━ 强制执行规则 ━━
-① **必须引用来源**：每条核心信息后标注 [《书名》第X页]，例如 [《黑暗天使》第14页]。
-② **数据优先展示**：兵种属性（M/T/SV/W/LD/OC）、攻击属性（A/BS/S/AP/D）必须用表格或粗体展示。
-③ **不得编造**：若档案中无相关信息，直接回复"档案缺失，建议查阅原始规则书"。
-④ **语言风格**：中文回答，冷静专业，允许偶尔使用40K术语（如"黄金宝座"、"机械教义"）。
-⑤ **格式规范**：使用 Markdown，关键词加粗，列表整齐。
+① **版本仲裁**：每条档案带版本层标签。规则条文以【11版·核心规则】为最高真源；
+   【11版·阵营补丁】（Faction Pack）覆盖同主题的 codex 内容；【十版·codex兵牌基底】
+   是 11 版官方仍然合法的兵牌数据（单位属性/武器/技能），正常引用即可。
+   同一问题两版条文冲突时，按 11 版作答，并注明"十版为…，11版已改为…"。
+② **必须引用来源**：每条核心信息后标注 [《书名》第X页]，例如 [《黑暗天使》第14页]；
+   引用 11 版核心规则时尽量附条款号，如 [《Core Rules》12.04]。
+③ **数据优先展示**：兵种属性（M/T/SV/W/LD/OC）、攻击属性（A/BS/S/AP/D）必须用表格或粗体展示。
+④ **不得编造**：若档案中无相关信息，直接回复"档案缺失，建议查阅原始规则书"。
+⑤ **语言风格**：中文回答，冷静专业，允许偶尔使用40K术语（如"黄金宝座"、"机械教义"）。
+⑥ **格式规范**：使用 Markdown，关键词加粗，列表整齐。
 
 ━━ 规则档案 ━━
 {context}
@@ -460,11 +480,14 @@ def build_prompt_template() -> ChatPromptTemplate:
 
 
 def format_context(passages: list[dict]) -> str:
-    """将 passages 格式化为提示词中的 context 字符串。"""
+    """将 passages 格式化为提示词中的 context 字符串（含版本层标签，供版本仲裁）。"""
     parts = []
     for i, p in enumerate(passages, 1):
         page_info = f"第{p['page']}页" if p["page"] != "?" else ""
-        header = f"【档案 {i}】《{p['book']}》{page_info}"
+        tag = ""
+        if p.get("edition") and p.get("layer"):
+            tag = f"·{edition_layer_tag(p['edition'], p['layer'])}"
+        header = f"【档案 {i}{tag}】《{p['book']}》{page_info}"
         parts.append(f"{header}\n{p['text']}")
     return ("\n\n" + "─" * 40 + "\n\n").join(parts)
 
@@ -632,7 +655,8 @@ def _normalize_agent_sources(sources) -> list[dict]:
         if key in seen:
             continue
         seen.add(key)
-        out.append({"book": book, "page": page, "source": s.get("source", "")})
+        out.append({"book": book, "page": page, "source": s.get("source", ""),
+                    "edition": s.get("edition"), "layer": s.get("layer")})
     return out
 
 
@@ -683,8 +707,10 @@ def render_agent_answer(user_input, provider, api_key, temperature, tools):
             for src in unique_sources:
                 name = Path(src.get("source", "")).name
                 tail = f" — `{name}`" if name else ""
+                tag = (f"〔{edition_layer_tag(src['edition'], src['layer'])}〕"
+                       if src.get("edition") and src.get("layer") else "")
                 st.markdown(
-                    f"- **《{src.get('book', '未知')}》** 第{src.get('page', '?')}页{tail}"
+                    f"- **《{src.get('book', '未知')}》** 第{src.get('page', '?')}页{tag}{tail}"
                 )
     return result.answer, unique_sources, False
 
@@ -733,7 +759,8 @@ def render_classic_answer(
     )
 
     source_list = [
-        {"book": p["book"], "source": p["source"], "page": p["page"]}
+        {"book": p["book"], "source": p["source"], "page": p["page"],
+         "edition": p.get("edition"), "layer": p.get("layer")}
         for p in passages
     ]
     seen = set()
@@ -746,8 +773,10 @@ def render_classic_answer(
 
     with st.expander(f"📎 引用来源（{len(unique_sources)} 处）", expanded=True):
         for src in unique_sources:
+            tag = (f"〔{edition_layer_tag(src['edition'], src['layer'])}〕"
+                   if src.get("edition") and src.get("layer") else "")
             st.markdown(
-                f"- **《{src['book']}》** 第{src['page']}页 "
+                f"- **《{src['book']}》** 第{src['page']}页 {tag}"
                 f"— `{Path(src['source']).name}`"
             )
     return response_text, unique_sources
@@ -830,8 +859,10 @@ def main():
             if msg.get("sources"):
                 with st.expander("📎 引用来源", expanded=False):
                     for src in msg["sources"]:
+                        tag = (f"〔{edition_layer_tag(src['edition'], src['layer'])}〕"
+                               if src.get("edition") and src.get("layer") else "")
                         st.markdown(
-                            f"- **《{src['book']}》** 第{src['page']}页 "
+                            f"- **《{src['book']}》** 第{src['page']}页 {tag}"
                             f"`{Path(src['source']).name}`"
                         )
 

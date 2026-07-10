@@ -2,7 +2,7 @@
 import json
 from pathlib import Path
 
-from corpus_manifest import classify_book, load_manifest
+from corpus_manifest import classify_book, edition_layer_tag, load_manifest
 
 REPO_ROOT = Path(__file__).parent.parent
 
@@ -68,3 +68,14 @@ class TestRealManifest:
 
     def test_blacklibrary_entry(self):
         assert classify_book("黑图书馆", self.m)["layer"] == "codex-base"
+
+
+class TestEditionLayerTag:
+    def test_edition_11_rules(self):
+        assert edition_layer_tag("11", "rules") == "11版·核心规则"
+
+    def test_edition_10_codex_base(self):
+        assert edition_layer_tag("10", "codex-base") == "十版·codex兵牌基底"
+
+    def test_unknown_layer_passes_through(self):
+        assert edition_layer_tag("11", "misc-x") == "11版·misc-x"
