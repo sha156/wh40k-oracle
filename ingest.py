@@ -17,7 +17,6 @@ ingest.py — 战锤40K规则书知识库构建脚本
 import os
 import re
 import sys
-import ssl
 import json
 import shutil
 import argparse
@@ -34,26 +33,40 @@ os.environ.setdefault("OPENBLAS_NUM_THREADS",   _CPU_COUNT)
 os.environ.setdefault("VECLIB_MAXIMUM_THREADS", _CPU_COUNT)
 os.environ.setdefault("NUMEXPR_NUM_THREADS",    _CPU_COUNT)
 
-# ── 镜像 / 代理 / SSL 设置（放在所有 HuggingFace 导入之前）──
+# ── 镜像 / 代理 设置（放在所有 HuggingFace 导入之前）──
 os.environ["HF_ENDPOINT"]            = "https://hf-mirror.com"
 os.environ["TOKENIZERS_PARALLELISM"] = "false"
 os.environ["HTTPS_PROXY"]            = "http://127.0.0.1:7897"
 os.environ["HTTP_PROXY"]             = "http://127.0.0.1:7897"
-os.environ["CURL_CA_BUNDLE"]         = ""
-os.environ["REQUESTS_CA_BUNDLE"]     = ""
 
-# Python ssl 层禁用证书验证
-ssl._create_default_https_context = ssl._create_unverified_context
+# ── TLS 校验收窄（H8）：仅对 hf-mirror.com 关闭证书校验，其余请求保持正常校验 ──
+# 此前是全进程禁用（ssl 默认上下文替换 + CURL_CA_BUNDLE/REQUESTS_CA_BUNDLE 置空 +
+# 全局 verify=False），模型下载全程暴露于中间人攻击；现改为单 host 白名单。
+from urllib.parse import urlparse
 
-# requests 层禁用证书验证（huggingface_hub / XetHub 走此路径）
 import requests
 import urllib3
 urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
 _orig_request = requests.Session.request
-def _no_verify_request(self, method, url, **kwargs):
-    kwargs.setdefault("verify", False)
+
+
+def _is_hf_mirror_url(url: str) -> bool:
+    """目标 host 是否为 hf-mirror.com（或其子域）——只有它才跳过证书校验。"""
+    try:
+        host = urlparse(str(url)).hostname or ""
+    except ValueError:
+        return False
+    return host == "hf-mirror.com" or host.endswith(".hf-mirror.com")
+
+
+def _hf_mirror_request(self, method, url, **kwargs):
+    if _is_hf_mirror_url(url):
+        kwargs.setdefault("verify", False)
     return _orig_request(self, method, url, **kwargs)
-requests.Session.request = _no_verify_request
+
+
+requests.Session.request = _hf_mirror_request
+print("⚠️  已对 hf-mirror.com 关闭 TLS 证书校验（其余请求保持正常校验）")
 
 from tqdm import tqdm
 from langchain_community.document_loaders import PyMuPDFLoader
@@ -169,6 +182,10 @@ def load_pdf(pdf_path: Path) -> list[Document]:
     for doc in pages:
         doc.metadata["source"] = str(pdf_path)
         doc.metadata["book"]   = book_name
+        # PyMuPDFLoader 的 page 元数据是 0 起始（C1）；统一为 1-based，
+        # 与 llm_refine.py extract_pages 的 "page": i + 1 约定对齐——
+        # 否则未走 refined 管线的书，引用里"第X页"全部比实际少 1。
+        doc.metadata["page"] = int(doc.metadata.get("page", 0)) + 1
 
     return pages
 
@@ -257,6 +274,18 @@ def build_faiss_with_progress(chunks: list[Document], embeddings) -> FAISS:
         metadatas=metas,
     )
     return store
+
+
+def delete_stale_chunks(store, sources: set) -> int:
+    """增量合并前，从已有索引删除 metadata['source'] 命中 sources 的旧 chunk（H3）。
+
+    不删的话，文件变化重入库时新旧 chunk 并存、内容互相矛盾。返回删除数。
+    """
+    stale_ids = [doc_id for doc_id, doc in store.docstore._dict.items()
+                 if doc.metadata.get("source") in sources]
+    if stale_ids:
+        store.delete(stale_ids)
+    return len(stale_ids)
 
 
 def main():
@@ -374,6 +403,13 @@ def main():
             embeddings,
             allow_dangerous_deserialization=True,
         )
+        # ── 增量去重（H3）：先按 source 删除本次重新处理文件的旧 chunk 再合并，
+        #    只删「本次已成功产出新 chunk」的来源，处理失败的文件保留旧数据 ──
+        new_sources = {c.metadata.get("source") for c in all_new_chunks}
+        new_sources.discard(None)
+        removed = delete_stale_chunks(existing_store, new_sources)
+        print(f"  🧹 增量去重：删除旧 chunk {removed} 个"
+              f"（覆盖 {len(new_sources)} 个重处理来源）")
         new_store = build_faiss_with_progress(all_new_chunks, embeddings)
 
         # 维度校验：旧索引与新向量维度不一致时自动重建

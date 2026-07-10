@@ -134,13 +134,41 @@ def _has_cjk(stem: str) -> bool:
 
 
 def _refine_coverage(book_dir: Path, total_pages: int) -> float:
-    """已 refine 覆盖率 = page_*.md 数 / 总页数。"""
+    """已 refine 覆盖率 = 非 fallback 的 page_*.md 数 / 总页数。
+
+    fallback=True 的页是 LLM 失败后写入原始文本的兜底（H7），需要重跑，
+    不计入已覆盖——否则 --chinese-only 会把失败页当完成、永不重试。
+    无 meta.json 的页按旧行为计入（无从判断，且 is_cached 自会重跑它）。"""
     if not book_dir.is_dir():
         return 0.0
     if total_pages <= 0:
         return 0.0
-    md_count = len(list(book_dir.glob("page_*.md")))
+    md_count = 0
+    for md_file in book_dir.glob("page_*.md"):
+        meta_path = md_file.with_name(md_file.stem + ".meta.json")
+        if meta_path.exists():
+            try:
+                meta = json.loads(meta_path.read_text(encoding="utf-8"))
+                if meta.get("fallback", False):
+                    continue
+            except (json.JSONDecodeError, OSError):
+                pass
+        md_count += 1
     return md_count / total_pages
+
+
+def _verify_warn_pages(out_root: Path) -> List[Path]:
+    """扫描输出目录，返回 verify_ok=false（数字校验未过）页对应的 .md 路径列表。"""
+    warn: List[Path] = []
+    for meta_path in sorted(out_root.rglob("page_*.meta.json")):
+        try:
+            meta = json.loads(meta_path.read_text(encoding="utf-8"))
+        except (json.JSONDecodeError, OSError):
+            continue
+        if meta.get("verify_ok") is False:
+            md_name = meta_path.name[:-len(".meta.json")] + ".md"
+            warn.append(meta_path.with_name(md_name))
+    return warn
 
 
 def _pdf_page_count(pdf_path: Path) -> int:
@@ -275,6 +303,16 @@ def main():
         summary = process_book(client, pdf, out_root, workers=args.workers, lang=args.lang)
         print("完成 {book}: 新处理{done} 缓存{cached} 跳过{skipped} "
               "失败{failed} 数字警告{verify_warn} / 共{total}页".format(**summary))
+
+    # ── verify_numbers 汇总：数字校验未过（verify_ok=false）的页需人工复核 ──
+    warn_pages = _verify_warn_pages(out_root)
+    if warn_pages:
+        print("\n⚠️ 待人工复核 {} 页（verify_ok=false，生成 Markdown 含原文没有的数字）：".format(
+            len(warn_pages)))
+        for p in warn_pages:
+            print("  - {}".format(p))
+    else:
+        print("\n数字校验全部通过，无待人工复核页。")
 
 
 if __name__ == "__main__":

@@ -243,3 +243,41 @@ def test_filter_chinese_pending_keeps_partial(tmp_path):
     kept = llm_refine._filter_chinese_pending([pdf], out_root, min_coverage=0.9)
 
     assert kept == [pdf]
+
+
+def test_refine_coverage_excludes_fallback_pages(tmp_path):
+    """H7：fallback=True 的兜底页不计入覆盖率，否则失败页永不重试。"""
+    book_dir = tmp_path / "书"
+    book_dir.mkdir()
+    save_page(book_dir, 1, "## A", _meta("s1"))
+    save_page(book_dir, 2, "原文兜底", _meta("s2", fallback=True))
+    assert llm_refine._refine_coverage(book_dir, 2) == 0.5
+
+
+def test_filter_chinese_pending_keeps_book_with_fallback_pages(tmp_path):
+    """H7 端到端：页文件齐全但含 fallback 页的书，--chinese-only 不得跳过。"""
+    pdf = make_pdf(tmp_path / "帝国卫队.pdf", ["p1", "p2"])
+    out_root = tmp_path / "refined"
+    book_dir = out_root / "帝国卫队"
+    book_dir.mkdir(parents=True)
+    save_page(book_dir, 1, "## A", _meta("s1"))
+    save_page(book_dir, 2, "raw", _meta("s2", fallback=True))
+
+    kept = llm_refine._filter_chinese_pending([pdf], out_root, min_coverage=0.9)
+
+    assert kept == [pdf]
+
+
+def test_verify_warn_pages_lists_only_failed(tmp_path):
+    """verify_ok=false 的页进入待人工复核清单；true/缺 meta 的不进。"""
+    book_dir = tmp_path / "书"
+    book_dir.mkdir()
+    save_page(book_dir, 1, "ok", _meta("s1"))
+    bad_meta = _meta("s2")
+    bad_meta["verify_ok"] = False
+    save_page(book_dir, 2, "bad", bad_meta)
+    (book_dir / "page_003.md").write_text("无meta", encoding="utf-8")
+
+    warn = llm_refine._verify_warn_pages(tmp_path)
+
+    assert warn == [book_dir / "page_002.md"]

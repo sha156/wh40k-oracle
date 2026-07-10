@@ -145,10 +145,21 @@ for _zh in TERM_ALIASES:
 from db_compile.aliases import load_alias_expansions
 
 _DB_PATH = Path(__file__).parent / "db" / "wh40k.sqlite"
+# 别名库加载告警（H1）：None=正常。DB 文件不存在属预期（未构建，函数自身返回空 dict
+# 不抛异常）；真抛异常则是故障，必须显式留痕——1633 条别名扩展不允许静默失效
+# （与 flashrank 从未生效同反模式）。侧边栏比照 reranker_warning 展示。
+DB_ALIASES_WARNING = None
 try:
     DB_ALIASES = load_alias_expansions(_DB_PATH)
-except Exception:
+    if not _DB_PATH.exists():
+        DB_ALIASES_WARNING = (
+            "别名库尚未构建（db/wh40k.sqlite 不存在），"
+            "查询扩展仅使用内置 UNIT_ALIASES / TERM_ALIASES"
+        )
+except Exception as e:  # noqa: BLE001 — 别名层故障不拖垮应用，但必须打日志
     DB_ALIASES = {}
+    DB_ALIASES_WARNING = f"别名库加载出错（查询扩展退化为内置表）：{e!r}"
+    print(f"[DB_ALIASES] ⚠️ {DB_ALIASES_WARNING}", file=sys.stderr)
 for _a in DB_ALIASES:
     jieba.add_word(_a)
 
@@ -327,7 +338,10 @@ def hybrid_retrieve(
     try:
         search_kwargs: dict = {"k": FAISS_TOP_K}
         if filter_books:
-            # FAISS filter 用 lambda 过滤元数据
+            # langchain FAISS 的 filter 语义（H2）：先在**全库**取 fetch_k（默认 20）
+            # 个候选，再按元数据过滤——fetch_k 若小于 k，冷门书过滤后可能只剩 0~2 条。
+            # 放大候选池，保证过滤后仍能凑满 FAISS_TOP_K。
+            search_kwargs["fetch_k"] = max(FAISS_TOP_K * 5, 200)
             search_kwargs["filter"] = {
                 "book": {"$in": filter_books}
             }
@@ -561,7 +575,13 @@ def render_sidebar(vectorstore) -> tuple[str, str, float, list[str] | None, bool
         )
         if st.button("🔄 重建知识库（运行 ingest.py）", use_container_width=True):
             st.code("python ingest.py --rebuild", language="bash")
-            st.warning("请在终端中手动执行以上命令，完成后刷新页面。")
+            # st.cache_resource 缓存与进程同寿命（H6），仅刷新页面拿到的仍是旧索引
+            st.warning("请在终端中手动执行以上命令，完成后重启 Streamlit 服务，"
+                       "或点击下方「重载索引」按钮。")
+        if st.button("♻️ 重载索引（清空缓存重新加载）", use_container_width=True):
+            load_resources.clear()
+            build_bm25.clear()
+            st.rerun()
 
         st.divider()
         st.caption("⚔️ 为皇帝而战，在数据中寻找真理。")
@@ -763,6 +783,9 @@ def main():
 
     if reranker_warning:
         st.warning(reranker_warning)
+
+    if DB_ALIASES_WARNING:
+        st.warning(DB_ALIASES_WARNING)
 
     # ── BM25 索引 ──
     bm25_retriever = build_bm25(vectorstore)
