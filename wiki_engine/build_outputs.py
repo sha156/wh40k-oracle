@@ -10,7 +10,9 @@ from datetime import datetime, timezone
 from pathlib import Path
 from typing import Any, Dict, List, Optional
 
+from wiki_engine._io import atomic_write_text
 from wiki_engine.models import (
+    GENERATED_MD_NAMES,
     LogEntry,
     WikiIndexEntry,
     WikiPage,
@@ -21,12 +23,11 @@ from wiki_engine.models import (
 def scan_wiki_pages(wiki_root: Path) -> List[WikiPage]:
     """遍历 wiki/ 下所有 .md 文件，解析 frontmatter + body。
 
-    跳过特殊文件：index.md, log.md, terms.md, lint-report.md。
+    跳过流水线生成的特殊文件（排除集与 lint 共用，见 models.GENERATED_MD_NAMES）。
     """
-    skip_names = {"index.md", "log.md", "terms.md", "lint-report.md"}
     pages: List[WikiPage] = []
     for md_file in sorted(wiki_root.rglob("*.md")):
-        if md_file.name in skip_names:
+        if md_file.name in GENERATED_MD_NAMES:
             continue
         try:
             text = md_file.read_text(encoding="utf-8")
@@ -220,10 +221,10 @@ def build_all_outputs(
         print("wiki/ 下没有找到实体页，跳过构建。")
         return {"index": "", "faction_indexes": 0, "log_entries": 0}
 
-    # 全局索引
+    # 全局索引（原子写：避免中途崩溃留半截索引）
     index_md = build_global_index(pages, wiki_root)
     index_path = wiki_root / "index.md"
-    index_path.write_text(index_md, encoding="utf-8")
+    atomic_write_text(index_path, index_md)
     print("index.md: {} 个实体".format(len(pages)))
 
     # 阵营索引
@@ -238,8 +239,7 @@ def build_all_outputs(
         if faction_index:
             fs = faction_slug(faction)
             fi_path = wiki_root / "factions" / fs / "index.md"
-            fi_path.parent.mkdir(parents=True, exist_ok=True)
-            fi_path.write_text(faction_index, encoding="utf-8")
+            atomic_write_text(fi_path, faction_index)
             faction_count += 1
             print("  factions/{}/index.md: {} 个实体".format(fs,
                   len([p for p in pages if p.fm.faction == faction])))

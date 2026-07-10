@@ -15,6 +15,12 @@ import yaml
 
 # ── 常量 ──────────────────────────────────────────────────────────────
 
+# wiki/ 下由流水线生成的特殊 .md 文件名（非实体页）。
+# build_outputs.scan_wiki_pages 与 lint 的扫描侧共用本集合，保证两侧排除集一致
+# ——lint 曾扫描自己生成的 lint-report.md，把报告里的 [[断链示例]] 当成新断链，
+# 假阳性永久自我复现（H15）。
+GENERATED_MD_NAMES = frozenset({"index.md", "log.md", "terms.md", "lint-report.md"})
+
 # faction_id（Wahapedia 缩写，见 db_sources/wahapedia/Factions.csv）→ 中文阵营名。
 # 覆盖 pairing.json 实际出现的 21 个 faction_id；fm.faction / wiki 目录名用它，
 # 缺失时由 synthesize._infer_faction_id 按书名推断兜底。

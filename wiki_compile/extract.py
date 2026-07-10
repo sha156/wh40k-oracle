@@ -84,6 +84,11 @@ def extract_book(book_dir: Path) -> List[EntityCandidate]:
         if lines and lines[0].strip() == CONT_MARKER and current is not None \
                 and page_no not in current.pages and _cont_page_continues(lines):
             current.pages.append(page_no)
+        elif lines and lines[0].strip() == CONT_MARKER and current is None \
+                and _cont_page_continues(lines):
+            # 无前置实体的真续页：内容无处归属，显式警告而非静默丢弃
+            print("[extract] 警告：发现无归属的续页标记 《{}》 第 {} 页，"
+                  "内容未入实体".format(book_dir.name, page_no))
         for line in lines:
             if not line.startswith("## "):
                 continue

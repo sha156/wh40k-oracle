@@ -200,6 +200,88 @@ class TestVerifyWarn:
         assert issues == []
 
 
+class TestGeneratedFilesNotScanned:
+    """H15：lint 不得扫描自己生成的报告/索引文件的出链，
+    否则 lint-report.md 里的 [[断链示例]] 会被当成新断链，假阳性自我复现。"""
+
+    def _clean_wiki(self, tmp_path):
+        wiki = tmp_path / "wiki"
+        dir_a = wiki / "factions" / "test" / "units"
+        dir_a.mkdir(parents=True)
+        fm = WikiPageFrontmatter(id="test/units/x", name_zh="X",
+                                 faction="test", type="unit")
+        (dir_a / "x.md").write_text(WikiPage(fm=fm, body="干净页面。").to_markdown(),
+                                    encoding="utf-8")
+        return wiki
+
+    def test_broken_link_text_in_lint_report_not_flagged(self, tmp_path):
+        wiki = self._clean_wiki(tmp_path)
+        (wiki / "lint-report.md").write_text(
+            "# Lint Report\n- ❌ 断链: [[不存在的目标]]\n", encoding="utf-8")
+        issues = check_broken_links(wiki)
+        assert [i for i in issues if i.rule == "broken-links"] == []
+
+    def test_terms_and_log_md_not_scanned(self, tmp_path):
+        wiki = self._clean_wiki(tmp_path)
+        (wiki / "terms.md").write_text("[[另一个不存在目标]]", encoding="utf-8")
+        (wiki / "log.md").write_text("| x | [[第三个不存在目标]] |", encoding="utf-8")
+        issues = check_broken_links(wiki)
+        assert [i for i in issues if i.rule == "broken-links"] == []
+
+    def test_real_page_broken_link_still_flagged(self, tmp_path):
+        # 排除生成产物不能顺带把真实页面的断链也放过
+        wiki = self._clean_wiki(tmp_path)
+        (wiki / "lint-report.md").write_text("[[报告示例]]", encoding="utf-8")
+        dir_a = wiki / "factions" / "test" / "units"
+        fm = WikiPageFrontmatter(id="test/units/y", name_zh="Y",
+                                 faction="test", type="unit")
+        (dir_a / "y.md").write_text(
+            WikiPage(fm=fm, body="引用 [[真的断了]]。").to_markdown(),
+            encoding="utf-8")
+        issues = check_broken_links(wiki)
+        broken = [i for i in issues if i.rule == "broken-links"]
+        assert len(broken) == 1
+        assert "真的断了" in broken[0].message
+
+
+class TestFrontmatterParseCheck:
+    """M7：frontmatter 解析失败的页面不再静默消失，报 error 级 issue。"""
+
+    def test_broken_frontmatter_reported_as_error(self, tmp_path):
+        from wiki_engine.lint import check_frontmatter_parse
+        wiki = tmp_path / "wiki"
+        dir_a = wiki / "factions" / "test" / "units"
+        dir_a.mkdir(parents=True)
+        fm = WikiPageFrontmatter(id="test/units/good", name_zh="好页",
+                                 faction="test", type="unit")
+        (dir_a / "good.md").write_text(WikiPage(fm=fm, body="OK").to_markdown(),
+                                       encoding="utf-8")
+        (dir_a / "bad.md").write_text("没有 frontmatter 的裸正文", encoding="utf-8")
+
+        issues = check_frontmatter_parse(wiki)
+        assert len(issues) == 1
+        assert issues[0].severity == "error"
+        assert issues[0].rule == "frontmatter-parse"
+        assert "bad.md" in issues[0].page_path
+        assert "脱离索引" in issues[0].message
+
+    def test_generated_and_review_files_skipped(self, tmp_path):
+        from wiki_engine.lint import check_frontmatter_parse
+        wiki = tmp_path / "wiki"
+        wiki.mkdir()
+        # 生成产物与 review_needed 系列本就没有 frontmatter，不应误报
+        (wiki / "index.md").write_text("# 索引", encoding="utf-8")
+        (wiki / "lint-report.md").write_text("# 报告", encoding="utf-8")
+        (wiki / "review_needed.md").write_text("# 待人工校对", encoding="utf-8")
+        (wiki / "review_needed.backup-20260710-120000.md").write_text(
+            "# 旧版", encoding="utf-8")
+        assert check_frontmatter_parse(wiki) == []
+
+    def test_registered_in_lint_rules(self):
+        from wiki_engine.lint import LINT_RULES, check_frontmatter_parse
+        assert check_frontmatter_parse in LINT_RULES
+
+
 class TestIndexConsistency:
     def test_index_missing(self, tmp_path):
         wiki = tmp_path / "wiki"

@@ -450,6 +450,106 @@ class TestFactionResolution:
         assert "钛帝国" in str(written[0])
 
 
+class TestManualEditProtection:
+    """H16：重跑合成不得静默覆盖人工编辑过的页面（.gen_hashes.json 登记表）。"""
+
+    def _setup(self, tmp_path, body="缓存正文 v1"):
+        refined = tmp_path / "data_refined"
+        (refined / "Book A").mkdir(parents=True)
+        (refined / "Book A" / "page_001.md").write_text(
+            "## 火战士队 FIRE WARRIORS\n属性内容", encoding="utf-8")
+        pair = Pair(zh="火战士队", en="FIRE WARRIORS",
+                    canonical_id="tau/units/fire-warriors", faction_id="TAU",
+                    book="Book A", pages=[1], confidence="exact")
+        pairing_path = tmp_path / "wiki_build" / "pairing.json"
+        _write_pairing(pairing_path, [pair])
+
+        entity = EntityCandidate(book="Book A",
+                                 raw_heading="火战士队 FIRE WARRIORS",
+                                 name_zh="火战士队", name_en="FIRE WARRIORS",
+                                 pages=[1])
+        fragments = collect_source_fragments(entity, refined)
+        key = _cache_key(SYNTH_PROMPT_VERSION, pair.canonical_id, fragments)
+        cache_dir = tmp_path / "cache"
+        fm = WikiPageFrontmatter(id=pair.canonical_id, name_zh="火战士队",
+                                 name_en="FIRE WARRIORS", faction="钛帝国",
+                                 type="unit")
+        _save_cache(cache_dir, key, WikiPage(fm=fm, body=body))
+        return refined, pairing_path, cache_dir, key, fm
+
+    def _run(self, tmp_path, refined, pairing_path, cache_dir):
+        return synthesize_all(
+            pairing_path=pairing_path, refined_root=refined,
+            wiki_root=tmp_path / "wiki", cache_dir=cache_dir,
+            client=None, max_workers=1)  # 无 LLM，只走缓存
+
+    def test_manual_edit_skipped_and_reported(self, tmp_path):
+        refined, pairing_path, cache_dir, key, fm = self._setup(tmp_path)
+        stats1 = self._run(tmp_path, refined, pairing_path, cache_dir)
+        assert stats1["written"], "首跑必须写出页面"
+        page_file = list((tmp_path / "wiki").rglob("*.md"))[0]
+
+        # 人工修改页面
+        manual = page_file.read_text(encoding="utf-8") + "\n人工补充说明。\n"
+        page_file.write_text(manual, encoding="utf-8")
+
+        stats2 = self._run(tmp_path, refined, pairing_path, cache_dir)
+        assert stats2["conflicts"], "必须报告人工编辑冲突"
+        assert page_file.read_text(encoding="utf-8") == manual, \
+            "人工编辑不得被覆盖"
+        assert stats2["written"] == []
+
+    def test_untouched_page_updated_normally(self, tmp_path):
+        refined, pairing_path, cache_dir, key, fm = self._setup(
+            tmp_path, body="缓存正文 v1")
+        self._run(tmp_path, refined, pairing_path, cache_dir)
+        # 同一缓存键换新内容（模拟缓存更新），页面未被人工动过 → 应正常覆盖
+        _save_cache(cache_dir, key, WikiPage(fm=fm, body="缓存正文 v2"))
+        stats2 = self._run(tmp_path, refined, pairing_path, cache_dir)
+        assert stats2["conflicts"] == []
+        page_file = list((tmp_path / "wiki").rglob("*.md"))[0]
+        assert "缓存正文 v2" in page_file.read_text(encoding="utf-8")
+
+    def test_crosslinks_rewrite_not_treated_as_manual_edit(self, tmp_path):
+        # inject_all 是流水线自动改写，会同步刷新登记哈希——不得误判为人工编辑
+        refined, pairing_path, cache_dir, key, fm = self._setup(
+            tmp_path, body="正文提及贝塔单位。")
+        self._run(tmp_path, refined, pairing_path, cache_dir)
+
+        wiki = tmp_path / "wiki"
+        units = wiki / "factions" / "钛帝国" / "units"
+        fm_b = WikiPageFrontmatter(id="tau/units/beta", name_zh="贝塔单位",
+                                   faction="钛帝国", type="unit")
+        (units / "beta.md").write_text(WikiPage(fm=fm_b, body="B").to_markdown(),
+                                       encoding="utf-8")
+        from wiki_engine.crosslinks import inject_all
+        modified = inject_all(wiki)
+        assert any("fire-warriors" in m for m in modified)
+
+        # 缓存更新后重跑：注入过链接的页面应正常更新，而非误报冲突
+        _save_cache(cache_dir, key, WikiPage(fm=fm, body="更新后的正文 v2"))
+        stats = self._run(tmp_path, refined, pairing_path, cache_dir)
+        assert stats["conflicts"] == []
+        page_file = units / "fire-warriors.md"
+        assert "更新后的正文 v2" in page_file.read_text(encoding="utf-8")
+
+    def test_no_tmp_leftover(self, tmp_path):
+        # L：页面与登记表均原子写，不留 .tmp 残骸
+        refined, pairing_path, cache_dir, key, fm = self._setup(tmp_path)
+        self._run(tmp_path, refined, pairing_path, cache_dir)
+        assert list((tmp_path / "wiki").rglob("*.tmp")) == []
+
+
+class TestCreateClientLogging:
+    """M：create_client 两种失败根因都要有明确日志。"""
+
+    def test_missing_key_prints_reason(self, monkeypatch, capsys):
+        from wiki_engine.synthesize import create_client
+        monkeypatch.delenv("DEEPSEEK_API_KEY", raising=False)
+        assert create_client() is None
+        assert "DEEPSEEK_API_KEY" in capsys.readouterr().out
+
+
 class TestBuildFactionFacts:
     def test_single_faction(self):
         pairs = [

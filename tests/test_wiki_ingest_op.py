@@ -47,3 +47,78 @@ class TestFindAffectedPages:
         affected = find_affected_pages(
             [Path("data_refined/其他书/page_099.md")], wiki)
         assert affected == []
+
+
+class TestIngestPairingPath:
+    """M：pairing_path 参数化 + 找不到时打印实际查找路径 + affected_pages 接线。"""
+
+    def test_missing_pairing_prints_lookup_path(self, tmp_path, monkeypatch, capsys):
+        from wiki_engine.operations.ingest_op import ingest
+        monkeypatch.delenv("DEEPSEEK_API_KEY", raising=False)
+        wiki = tmp_path / "wiki"
+        wiki.mkdir()
+        refined = tmp_path / "data_refined"
+        refined.mkdir()
+        missing = tmp_path / "nope" / "pairing.json"
+
+        result = ingest([], refined, wiki, tmp_path / "cache",
+                        pairing_path=missing)
+        out = capsys.readouterr().out
+        assert "配对文件不存在" in out
+        assert str(missing.resolve()) in out
+        # 后续步骤照常执行（不崩），日志已写
+        assert (wiki / "log.md").exists()
+        assert result["stats"] == {}
+
+    def test_affected_pages_written_to_log(self, tmp_path, monkeypatch):
+        """本次实际写入的页面路径要进 log.md 的 Affected Pages 列。"""
+        import json
+        from dataclasses import asdict
+
+        from wiki_compile.pair import Pair
+        from wiki_engine.operations.ingest_op import ingest
+        from wiki_engine.synthesize import (
+            SYNTH_PROMPT_VERSION,
+            _cache_key,
+            _save_cache,
+            collect_source_fragments,
+        )
+        from wiki_compile.extract import EntityCandidate
+
+        monkeypatch.delenv("DEEPSEEK_API_KEY", raising=False)
+        refined = tmp_path / "data_refined"
+        (refined / "Book A").mkdir(parents=True)
+        (refined / "Book A" / "page_001.md").write_text(
+            "## 火战士队 FIRE WARRIORS\n属性内容", encoding="utf-8")
+
+        pair = Pair(zh="火战士队", en="FIRE WARRIORS",
+                    canonical_id="tau/units/fire-warriors", faction_id="TAU",
+                    book="Book A", pages=[1], confidence="exact")
+        pairing_path = tmp_path / "wiki_build" / "pairing.json"
+        pairing_path.parent.mkdir(parents=True)
+        pairing_path.write_text(json.dumps(
+            {"pairs": [asdict(pair)], "unmatched": []},
+            ensure_ascii=False), encoding="utf-8")
+
+        # 预填缓存 → client=None 也能从缓存写出页面
+        entity = EntityCandidate(book="Book A",
+                                 raw_heading="火战士队 FIRE WARRIORS",
+                                 name_zh="火战士队", name_en="FIRE WARRIORS",
+                                 pages=[1])
+        fragments = collect_source_fragments(entity, refined)
+        key = _cache_key(SYNTH_PROMPT_VERSION, pair.canonical_id, fragments)
+        fm = WikiPageFrontmatter(id=pair.canonical_id, name_zh="火战士队",
+                                 name_en="FIRE WARRIORS", faction="钛帝国",
+                                 type="unit")
+        cache_dir = tmp_path / "cache"
+        _save_cache(cache_dir, key, WikiPage(fm=fm, body="正文。"))
+
+        wiki = tmp_path / "wiki"
+        ingest([Path("data_refined/Book A/page_001.md")],
+               refined, wiki, cache_dir, pairing_path=pairing_path)
+
+        log = (wiki / "log.md").read_text(encoding="utf-8")
+        # 最后一行 ingest 日志的 Affected Pages 列包含写入页面路径
+        ingest_lines = [ln for ln in log.splitlines() if "| ingest |" in ln]
+        assert ingest_lines, "log.md 必须有 ingest 条目"
+        assert "fire-warriors" in ingest_lines[-1]
