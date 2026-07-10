@@ -75,6 +75,7 @@ USE_RERANKER      = False
 
 # 检索参数
 FAISS_TOP_K   = 30   # 向量召回数量
+RULES_FLOOR_K = 2    # 11版规则层保底条数（中文查询对英文核心规则跨语排名失利时的兜底）
 BM25_TOP_K    = 15   # BM25 召回数量
 RERANK_TOP_N  = 8    # Rerank 后保留数量
 
@@ -369,6 +370,21 @@ def hybrid_retrieve(
         except Exception as e:
             st.warning(f"BM25 检索出错: {e}")
 
+    # ── 11版迁移S2：规则层保底检索 ──
+    # 规则条文层（layer=rules，11版核心规则）是版本仲裁的最高真源，但它是英文——
+    # 中文查询的跨语相似度可能排不进 top（实测「Stealth 效果」「深入打击」被反复
+    # 提及该词的十版 codex 页挤掉）。单独按 layer 过滤取最优 RULES_FLOOR_K 条备用；
+    # 用户显式书目过滤时不注入（尊重过滤意图）。
+    rules_docs: list[Document] = []
+    if not filter_books:
+        try:
+            rules_docs = vectorstore.similarity_search(
+                query, k=RULES_FLOOR_K,
+                fetch_k=max(FAISS_TOP_K * 5, 200),
+                filter={"layer": "rules"})
+        except Exception as e:
+            st.warning(f"规则层保底检索出错: {e}")
+
     # ── RRF 融合 ──
     merged = reciprocal_rank_fusion(faiss_docs, bm25_docs)
 
@@ -396,6 +412,24 @@ def hybrid_retrieve(
         except Exception as e:
             st.warning(f"Rerank 出错，使用 RRF 结果: {e}")
             top_passages = passages[:RERANK_TOP_N]
+
+    # ── 规则层保底注入：最终结果若无任何 layer=rules 段落，用保底结果替换队尾 ──
+    if rules_docs:
+        have_rules = any((p.get("meta") or {}).get("layer") == "rules"
+                         for p in top_passages)
+        if not have_rules:
+            seen_keys = {(str((p.get("meta") or {}).get("source", "")),
+                          (p.get("meta") or {}).get("page"))
+                         for p in top_passages}
+            extra = []
+            for i, d in enumerate(rules_docs):
+                key = (str(d.metadata.get("source", "")), d.metadata.get("page"))
+                if key not in seen_keys:
+                    extra.append({"id": f"rules_floor_{i}",
+                                  "text": d.page_content, "meta": d.metadata})
+            if extra:
+                keep = max(0, RERANK_TOP_N - len(extra))
+                top_passages = list(top_passages)[:keep] + extra
 
     # ── 组装返回结果 ──
     results = []
@@ -459,11 +493,14 @@ SYSTEM_PROMPT = """\
    是 11 版官方仍然合法的兵牌数据（单位属性/武器/技能），正常引用即可。
    同一问题两版条文冲突时，按 11 版作答，并注明"十版为…，11版已改为…"。
 ② **必须引用来源**：每条核心信息后标注 [《书名》第X页]，例如 [《黑暗天使》第14页]；
-   引用 11 版核心规则时尽量附条款号，如 [《Core Rules》12.04]。
-③ **数据优先展示**：兵种属性（M/T/SV/W/LD/OC）、攻击属性（A/BS/S/AP/D）必须用表格或粗体展示。
-④ **不得编造**：若档案中无相关信息，直接回复"档案缺失，建议查阅原始规则书"。
-⑤ **语言风格**：中文回答，冷静专业，允许偶尔使用40K术语（如"黄金宝座"、"机械教义"）。
-⑥ **格式规范**：使用 Markdown，关键词加粗，列表整齐。
+   引用 11 版核心规则时，若档案文本里出现了条款号（如 12.04/24.33）则一并标注——
+   **条款号只允许照抄档案原文，档案未给出编号时只标页码，严禁自行推测编号**。
+③ **严格限于档案**：只陈述档案文本明确写出的规则内容；档案未涉及的交互、例外、
+   术语对比，宁可不写，也不得凭训练记忆补充。
+④ **数据优先展示**：兵种属性（M/T/SV/W/LD/OC）、攻击属性（A/BS/S/AP/D）必须用表格或粗体展示。
+⑤ **不得编造**：若档案中无相关信息，直接回复"档案缺失，建议查阅原始规则书"。
+⑥ **语言风格**：中文回答，冷静专业，允许偶尔使用40K术语（如"黄金宝座"、"机械教义"）。
+⑦ **格式规范**：使用 Markdown，关键词加粗，列表整齐。
 
 ━━ 规则档案 ━━
 {context}
