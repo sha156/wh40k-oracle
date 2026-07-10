@@ -3,7 +3,8 @@
 版本口径（2026-07-10 起，按 11 版 USR 审计 S3 逐项修正，见
 docs/superpowers/specs/2026-07-10-edition-11-usr-audit.md）：
   · 已 11 版化：Stealth（24.33 掩体化）/ Indirect Fire（24.19+10.07 固定未修正阈值）/
-    Heavy（24.16 条件放宽，字段沿用 stationary）/ Blast X（24.05）/ Cleave X（24.06）；
+    Heavy（24.16 条件放宽，字段沿用 stationary）/ Blast X（24.05）/ Cleave X（24.06）/
+    Psychic（24.29 无视不利命中修正）/ dev 致命池不吃减伤（24.10+06.02）；
   · 其余词条经审计与 11 版一致（A 类：rapid fire/melta/sustained/dev/anti/…）沿用原实现；
   · 未审计部分（如 ±1 修正夹紧上限）仍为十版口径，如实标注。
 
@@ -114,6 +115,7 @@ class _WeaponParams:
     torrent: bool = False
     indirect_fixed: bool = False   # 11版间接开火：命中改固定未修正阈值（6+；驻停代理 4+）
     hit_mod: int = 0
+    ignore_neg_hit: bool = False   # 11版24.29 [PSYCHIC]：无视不利命中修正（保留有利修正）
     crit_wound_thr: int = _FACES
     twin: bool = False
     has_dev: bool = False
@@ -124,6 +126,7 @@ class _WeaponParams:
 
 def _gather_params(w: WeaponProfile, stance: Stance, target: TargetProfile) -> _WeaponParams:
     p = _WeaponParams(cover=stance.target_in_cover)
+    hit_pos = hit_neg = 0        # 命中修正分正负累计（[PSYCHIC] 只忽略负修正）
     for e in w.effects:
         ok = _cond_true(e.condition, stance, target)
         if e.phase == "attacks":
@@ -144,8 +147,14 @@ def _gather_params(w: WeaponProfile, stance: Stance, target: TargetProfile) -> _
                 p.indirect_fixed = True           # 11版24.19+10.07：命中改固定未修正阈值
             elif e.op == "crit_threshold" and ok:
                 p.crit_hit_thr = min(p.crit_hit_thr, int(e.params[0]))
+            elif e.op == "ignore_hit_mods":
+                p.ignore_neg_hit = True       # 11版24.29 [PSYCHIC]
             elif e.op == "modify" and ok:
-                p.hit_mod += int(e.params[0])
+                v = int(e.params[0])
+                if v >= 0:
+                    hit_pos += v
+                else:
+                    hit_neg += v
         elif e.phase == "wound":
             if e.op == "mortal_pool":
                 p.has_dev = True
@@ -173,11 +182,19 @@ def _gather_params(w: WeaponProfile, stance: Stance, target: TargetProfile) -> _
         if not _cond_true(e.condition, stance, target):
             continue
         if e.phase == "hit" and e.op == "modify":
-            p.hit_mod += int(e.params[0])
+            v = int(e.params[0])
+            if v >= 0:
+                hit_pos += v
+            else:
+                hit_neg += v
         elif e.phase == "save" and e.op == "cover":
             p.cover = True
+    # [PSYCHIC]（11版24.29）：攻方每次攻击可无视 BS/WS 与命中骰的任意修正——按有利
+    # 方向执行：只忽略负修正、保留正修正（heavy +1 照常享受）。
+    if p.ignore_neg_hit:
+        hit_neg = 0
     # 命中/致伤修正各自夹到 ±1（修正总和上限，未审计项沿用十版口径）
-    p.hit_mod = max(-1, min(1, p.hit_mod))
+    p.hit_mod = max(-1, min(1, hit_pos + hit_neg))
     p.wound_mod = max(-1, min(1, p.wound_mod))
     return p
 
@@ -224,9 +241,14 @@ def _wound_save_damage(
     saved = normal & (save_roll != 1) & (save_roll >= sv_need)
     unsaved = normal & ~saved
 
-    dmg = _sample_damage(dmg_expr, melta_expr, rng, n, k, dmg_reduction)
-    normal_dmg = np.where(unsaved, dmg, 0)
-    mortal_dmg = np.where(to_mortal, dmg, 0)
+    # dev 致命池不吃减伤（11版24.10+06.02）：暴击致伤即结束攻击序列、直接对单位施加
+    # 致命伤，从未进入伤害分配步骤——挂在分配上的「受伤-1」类减伤只作用于正常伤害；
+    # melta 属 D 特性修正，两路都计。
+    dmg_raw = _sample_damage(dmg_expr, melta_expr, rng, n, k, 0)
+    dmg_normal = (np.maximum(dmg_raw - dmg_reduction, 1)
+                  if dmg_reduction > 0 else dmg_raw)
+    normal_dmg = np.where(unsaved, dmg_normal, 0)
+    mortal_dmg = np.where(to_mortal, dmg_raw, 0)
     return (normal_dmg, mortal_dmg,
             wound_ok.sum(axis=1).astype(np.int64),
             unsaved.sum(axis=1).astype(np.int64),

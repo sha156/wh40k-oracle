@@ -122,29 +122,35 @@ def test_simulate_combat_multimodel_needs_loadout():
     assert res["weapon_pool"]                             # 返回武器池供指定
 
 
-# ---- P5-c：Go to Ground / Smokescreen 手工核验开关（评审 E1）----
+# ---- P5-c：Smokescreen 手工核验开关（2026-07-11 按 11 版核心战略清单订正）----
 @pytestmark_db
-def test_go_to_ground_is_not_stealth():
-    """E1：Go to Ground = 掩体 + 6+ 无效保护，**不**改命中（不是 Stealth）。"""
+def test_smokescreen_grants_cover_only():
+    """11版核心战略 Smokescreen = 该阶段获掩体收益，**不再**减命中（十版 Stealth 成分已删）。"""
+    from agent.tools import simulate_combat
+    # 用 Boyz 镜像当靶（5+ 甲对 AP0 真正享受掩体；Intercessor 3+ 甲对 AP0 不享受）
+    opt = lambda **k: {"loadout": [["Shoota", 10]], "phase": "shooting",
+                       "defender_models": 10, "n": 8000, "seed": 9, **k}
+    base = simulate_combat("Boyz", "Boyz", opt())
+    smk = simulate_combat("Boyz", "Boyz", opt(smokescreen=True))
+    cov = simulate_combat("Boyz", "Boyz", opt(cover=True))
+    # 命中不受烟幕影响（同种子逐骰一致）
+    assert smk["report"]["funnel"]["hits"] == base["report"]["funnel"]["hits"]
+    # 效果与掩体开关完全等价（同种子）
+    assert smk["report"]["funnel"] == cov["report"]["funnel"]
+    # 掩体真的生效：未过保下降
+    assert smk["report"]["funnel"]["unsaved"] < base["report"]["funnel"]["unsaved"]
+
+
+@pytestmark_db
+def test_go_to_ground_removed_and_disclosed():
+    """Go to Ground 已从 11 版核心战略移除：开关废弃——传入不生效，且经 warning 显式披露。"""
     from agent.tools import simulate_combat
     opt = lambda **k: {"loadout": [["Shoota", 10]], "phase": "shooting",
-                       "n": 8000, "seed": 9, **k}
+                       "n": 4000, "seed": 9, **k}
     base = simulate_combat("Boyz", "Intercessor Squad", opt())
     gtg = simulate_combat("Boyz", "Intercessor Squad", opt(go_to_ground=True))
-    # 命中不受 Go to Ground 影响（它不给命中惩罚）
-    assert gtg["report"]["funnel"]["hits"] == pytest.approx(
-        base["report"]["funnel"]["hits"], rel=0.03)
-
-
-@pytestmark_db
-def test_smokescreen_lowers_hits():
-    """E1：Smokescreen = 掩体 + Stealth → 射击命中下降。"""
-    from agent.tools import simulate_combat
-    opt = lambda **k: {"loadout": [["Shoota", 10]], "phase": "shooting",
-                       "n": 8000, "seed": 9, **k}
-    base = simulate_combat("Boyz", "Intercessor Squad", opt())
-    smk = simulate_combat("Boyz", "Intercessor Squad", opt(smokescreen=True))
-    assert smk["report"]["funnel"]["hits"] < base["report"]["funnel"]["hits"] * 0.8
+    assert gtg["report"]["funnel"] == base["report"]["funnel"]   # 数值完全不变
+    assert gtg["warning"] and "go_to_ground" in gtg["warning"]   # 不静默：显式披露
 
 
 @pytestmark_db
