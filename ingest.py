@@ -73,6 +73,7 @@ from langchain_community.document_loaders import PyMuPDFLoader
 from langchain_community.vectorstores import FAISS
 from langchain_experimental.text_splitter import SemanticChunker
 from langchain_core.documents import Document
+from corpus_manifest import classify_book, load_manifest
 from hf_embeddings_compat import build_huggingface_embeddings
 from md_chunker import load_refined_book
 
@@ -83,6 +84,7 @@ DATA_DIR          = Path("data")                    # PDF 存放目录
 VECTOR_STORE_PATH = Path("local_vector_store")      # FAISS 输出目录
 PROCESSED_LOG     = Path("local_vector_store/processed_files.json")  # 增量记录
 REFINED_DIR       = Path("data_refined")            # llm_refine.py 输出目录，存在则优先使用
+MANIFEST_PATH     = Path("corpus_manifest.json")    # 书名→edition/layer 层级清单（11版迁移S1）
 
 # 嵌入模型：bge-m3 中英文混合最强，本地加载
 EMBED_MODEL_NAME  = "BAAI/bge-m3"
@@ -330,6 +332,10 @@ def main():
     # ── 加载嵌入模型 ──
     embeddings = build_embeddings()
 
+    # ── 语料层级清单（11版迁移S1）：书名 → edition/layer ──
+    manifest = load_manifest(MANIFEST_PATH)
+    layer_stats: dict[str, int] = {}
+
     # ── 逐文件加载并累积 chunks ──
     all_new_chunks: list[Document] = []
     failed_files = []
@@ -361,6 +367,13 @@ def main():
                 chunks = semantic_chunk(pages, embeddings)
                 tqdm.write(f"  ✂️  分块完成: {len(chunks)} chunks  ({time.time()-t0:.1f}s)")
 
+            tag = classify_book(base_meta["book"], manifest)
+            for c in chunks:
+                c.metadata.update(tag)
+            key = "{}版/{}".format(tag["edition"], tag["layer"])
+            layer_stats[key] = layer_stats.get(key, 0) + len(chunks)
+            tqdm.write(f"  🏷️  {base_meta['book']} → {key}")
+
             all_new_chunks.extend(chunks)
             processed_log[str(pdf_path)] = "{}|{}".format(
                 os.path.getmtime(pdf_path), refined_fingerprint(pdf_path))
@@ -377,6 +390,11 @@ def main():
             from db_compile.blacklibrary import build_blacklibrary_docs
             hb_docs = build_blacklibrary_docs(_DB)
             if hb_docs:
+                hb_tag = classify_book("黑图书馆", manifest)
+                hb_key = "{}版/{}".format(hb_tag["edition"], hb_tag["layer"])
+                for d in hb_docs:
+                    d.metadata.update(hb_tag)
+                layer_stats[hb_key] = layer_stats.get(hb_key, 0) + len(hb_docs)
                 all_new_chunks.extend(hb_docs)
                 print(f"  🐍 注入黑图书馆检索条目: {len(hb_docs)}")
             else:
@@ -389,6 +407,9 @@ def main():
         sys.exit(1)
 
     print(f"\n📊 总计 chunks: {len(all_new_chunks)}")
+    print("📊 分层构成（edition/layer）:")
+    for key in sorted(layer_stats):
+        print(f"    {key}: {layer_stats[key]} chunks")
 
     # ── 构建 / 合并 FAISS（带进度条）──
     faiss_index_file = VECTOR_STORE_PATH / "index.faiss"

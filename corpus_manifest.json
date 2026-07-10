@@ -1,0 +1,15 @@
+{
+  "_comment": "语料层级清单（11 版迁移 S1）：键为 ingest.get_book_name() 产出的书名。层语义见 corpus_manifest.py 顶部。未列出的书回退 defaults=十版 codex 兵牌基底（11 版官方仍合法）。",
+  "defaults": { "edition": "10", "layer": "codex-base" },
+  "prefixes": [
+    { "prefix": "Faction Pack", "edition": "11", "layer": "overlay" },
+    { "prefix": "Event Companion", "edition": "11", "layer": "event" }
+  ],
+  "books": {
+    "Core Rules - New 40K Core Rules": { "edition": "11", "layer": "rules" },
+    "6月4日分数中文": { "edition": "11", "layer": "points" },
+    "6月4日平衡版中午": { "edition": "11", "layer": "balance" },
+    "Misc - Terrain Area Footprints": { "edition": "11", "layer": "reference" },
+    "黑图书馆": { "edition": "10", "layer": "codex-base" }
+  }
+}

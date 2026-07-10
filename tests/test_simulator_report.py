@@ -120,9 +120,25 @@ def test_matchup_shooting_forward_ignores_fight_order():
     assert any("不适用" in b for b in rep.bias_notes)
 
 
-def test_matchup_melee_forward_defender_first_when_no_charge():
-    # 十版方向（版本裁决）：近战正打、A 未冲锋、双方同处 Remaining Combats →
-    # 从非当前玩家起 → B 先手满编反打，A 以幸存者出手。
+def test_matchup_melee_forward_defender_ff_strikes_first():
+    # 11版：近战正打、A 未冲锋、B 有 Fights First → B 独占 Step1 → B 先手满编反打，
+    # A 以幸存者出手。（同步 tie-break 已按 11版 12.04 归 active，先攻分歧只剩步差。）
+    a_fist = weapon(const(3), 3, 8, -2, const(2), melee=True, count=10)
+    a_atk = attacker(a_fist, models=10)
+    b_fist = weapon(const(3), 3, 8, -2, const(2), melee=True, count=20)
+    b_atk = AttackerProfile(canonical_id="B", name_en="B", name_zh=None,
+                            models=20, loadout=(b_fist,), keywords=frozenset())
+    rep = simulate_matchup(
+        a_atk, target(4, 6, 1, 20), b_atk, target(4, 3, 2, 10),
+        stance_forward=Stance(phase="melee", charging=False),
+        stance_reverse=Stance(phase="melee"),
+        n=8000, seed=5, b_fights_first=True)
+    assert any("B 先手满编反打" in b for b in rep.bias_notes)
+
+
+def test_matchup_melee_forward_active_first_when_both_plain():
+    # 11版 12.04：近战正打、双方都无先攻修饰 → 同处 Remaining Combats → 从当前玩家起
+    # → A 满编先打（不再出现"B 先手满编反打"）。
     a_fist = weapon(const(3), 3, 8, -2, const(2), melee=True, count=10)
     a_atk = attacker(a_fist, models=10)
     b_fist = weapon(const(3), 3, 8, -2, const(2), melee=True, count=20)
@@ -133,7 +149,8 @@ def test_matchup_melee_forward_defender_first_when_no_charge():
         stance_forward=Stance(phase="melee", charging=False),
         stance_reverse=Stance(phase="melee"),
         n=8000, seed=5)
-    assert any("B 先手满编反打" in b for b in rep.bias_notes)
+    assert rep.expected_kills > 0
+    assert not any("B 先手满编反打" in b for b in rep.bias_notes)
 
 
 def test_matchup_no_reverse_when_wiped():

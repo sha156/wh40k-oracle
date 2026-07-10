@@ -1,9 +1,8 @@
-"""P5-b 战斗顺序判定器全分支单测（十版 Fight phase 先攻）。
+"""P5-b 战斗顺序判定器全分支单测（11 版 Fight phase 先攻）。
 
-覆盖：冲锋先打、Fights First 步同层从【非当前玩家】起（十版方向，2026-07-10 版本裁决：
-中文总规则 p33 为十版真源；英文《New 40K Core Rules》系下一版、方向相反不适用）、
-Fights Last 押最后、**E2 抵消**（fights-first 来源 + Fights Last → 回正常时序，不押队尾）、
-Counter-offensive 说明、都不冲锋守方先。
+覆盖：冲锋先打、同步内从【当前玩家】起（11版 12.04；2026-07-10 项目裁决切 11 版，
+十版方向相反且总规则已归档）、Fights Last 押最后、**E2 抵消**（fights-first 来源 +
+Fights Last → 回正常时序，不押队尾）、COUNTEROFFENSIVE 说明、都不冲锋 active 先。
 """
 from __future__ import annotations
 
@@ -58,11 +57,11 @@ def test_charger_strikes_first():
     assert v.simultaneous_risk is False          # 不同步
 
 
-def test_both_in_fights_first_defender_goes_first():
-    # A 冲锋（active），B 有 Fights First → 同处 Step1 → 十版从非当前玩家起 → B 先
+def test_both_in_fights_first_active_goes_first():
+    # A 冲锋（active），B 有 Fights First → 同处 Step1 → 11版 12.04 从当前玩家起 → A 先
     v = judge(_act("A", charged=True), _def("B", fights_first=True))
-    assert v.first_striker == "B"
-    assert v.first_is_a is False
+    assert v.first_striker == "A"
+    assert v.first_is_a is True
     assert v.simultaneous_risk is True           # 同一步，交替，反打即时
 
 
@@ -88,10 +87,10 @@ def test_e2_defender_ff_plus_last_returns_to_normal_not_last():
     assert v.first_striker == "A"
 
 
-def test_neither_charges_defender_first():
+def test_neither_charges_active_first():
     v = judge(_act("A"), _def("B"))
-    assert v.first_striker == "B"                # 同 Step2，十版从非当前玩家起 → 守方先
-    assert v.first_is_a is False
+    assert v.first_striker == "A"                # 同 Step2，11版从当前玩家起 → active 先
+    assert v.first_is_a is True
     assert v.simultaneous_risk is True
 
 
@@ -117,11 +116,11 @@ def test_no_fights_last_no_caveat_in_rationale():
     assert "谨慎使用" not in v.rationale       # 不涉及 Fights Last 时不打扰
 
 
-# ── Counter-offensive 说明 ───────────────────────────────────
+# ── COUNTEROFFENSIVE（11版 p57）说明 ─────────────────────────
 def test_counter_offensive_by_second_striker_notes_insert():
     v = judge(_act("A", charged=True), _def("B", fights_first=True),
               counter_offensive_by="B")
-    assert "Counter-offensive" in v.counter_offensive_note
+    assert "COUNTEROFFENSIVE" in v.counter_offensive_note
     assert "B" in v.counter_offensive_note
 
 

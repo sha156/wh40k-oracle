@@ -267,7 +267,7 @@ def _not_modeled(tool: str, note: str) -> Dict[str, Any]:
 
 
 def judge_fight_order(ctx: Optional[Dict[str, Any]] = None) -> Dict[str, Any]:
-    """P5-b/e：十版 Fight phase 先攻判定。
+    """P5-b/e：Fight phase 先攻判定（11 版口径）。
 
     ctx（全可选，含默认）：
       attacker / defender：单位名（仅作展示，不解析）。
@@ -517,7 +517,7 @@ TOOL_SPECS: List[Dict[str, str]] = [
     {"name": "search_wiki", "description": "LLM Wiki Query：先查 index.md 定位，再全文检索"},
     {"name": "get_entity", "description": "读实体页（自动实体解析）"},
     {"name": "get_keyword_definition", "description": "USR/核心概念定义"},
-    {"name": "judge_fight_order", "description": "战斗顺序判定：给定冲锋/Fights First/Fights Last/Counter-offensive，判谁先打 + 依据（十版 Fight phase）"},
+    {"name": "judge_fight_order", "description": "战斗顺序判定：给定冲锋/Fights First/Fights Last/Counteroffensive，判谁先打 + 依据（11版 Fight phase）"},
     {"name": "simulate_combat", "description": "蒙特卡洛对战模拟：attacker 打 defender 期望伤害/击杀/团灭率+漏斗+性价比（多模型单位需 options.loadout）"},
     {"name": "validate_roster", "description": "验表（未建模，P6）"},
     {"name": "critique_roster", "description": "验表+模拟点评（未建模，P6）"},

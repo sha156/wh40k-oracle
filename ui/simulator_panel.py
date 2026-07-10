@@ -120,7 +120,8 @@ def _options_from_inputs(st) -> Dict[str, Any]:
 def render_simulator_panel(st) -> None:
     """在传入的 Streamlit 命名空间下渲染模拟器面板。app.py 侧边栏切到「模拟器」时调用。"""
     st.markdown("### ⚔️ 蒙特卡洛对战模拟器")
-    st.caption("十版逐骰模拟｜攻方打守方 N 次 → 期望伤害/击杀/团灭率 + 阶段漏斗 + 性价比 + 诚实披露。"
+    st.caption("逐骰模拟（先攻判定按11版；攻击序列词条沿用十版实现，11版审计中）｜"
+               "攻方打守方 N 次 → 期望伤害/击杀/团灭率 + 阶段漏斗 + 性价比 + 诚实披露。"
                "数字与 CLI 完全一致（共用同一引擎）。")
 
     with st.form("sim_form"):

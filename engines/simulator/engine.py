@@ -90,11 +90,10 @@ def simulate_matchup(
 ) -> SimReport:
     """『A 冲 B 值不值』：用 fight_order 判定先攻方，先手方满编打、后手方幸存者反打。
 
-    P5-b：接入战斗顺序判定器（替代 P4 写死"A 先打"）。A 是发起/当前玩家（冲锋由
-    stance_forward.charging 决定，冲锋必属当前玩家）；B 是守方。判定 B 先打时
-    （A 未冲锋且 B 有 Fights First；或双方同步——十版同步内从非当前玩家起选取），
-    A 以幸存者反打——返回的 forward 恒为「A→B」视角，
-    但 A 的攻击强度按先攻顺序对应满编/幸存。
+    P5-b：接入战斗顺序判定器（替代 P4 写死"A 先打"）——11 版口径。A 是发起/当前玩家
+    （冲锋由 stance_forward.charging 决定，冲锋必属当前玩家）；B 是守方。判定 B 先打时
+    （A 未冲锋且 B 有 Fights First，B 独占 Fights First 步），A 以幸存者反打——
+    返回的 forward 恒为「A→B」视角，但 A 的攻击强度按先攻顺序对应满编/幸存。
     """
     if n <= 0:                           # 评审 H9：与 simulate 同口径入口校验
         raise ValueError("迭代次数 n 必须为正整数，收到 {}".format(n))
@@ -102,7 +101,7 @@ def simulate_matchup(
     if stance_forward.phase != "melee":
         # 射击正打：先攻顺序只属近战阶段（Fight phase 交替选取）。射击发生在己方
         # 射击阶段，守方无从"先打"——B 的反打是后续近战的建模抽象，恒 A 先。
-        # （2026-07-10 十版方向修正前，active-first 恰好掩盖了这条相位边界。）
+        # （守方带 Fights First 时若不设此边界，会被误判成先打射击方；与版本无关。）
         a_first = True
         order_note = "先攻判定：射击正打（非近战阶段），Fight phase 先攻规则不适用，A 先手出手"
     else:

@@ -85,7 +85,8 @@ def _fmt_report(rep: dict, indent: str = "") -> List[str]:
 
 def main(argv: Optional[List[str]] = None) -> int:
     p = argparse.ArgumentParser(prog="engines.simulator.cli",
-                                description="战锤40K 十版蒙特卡洛对战模拟")
+                                description="战锤40K 蒙特卡洛对战模拟"
+                                            "（先攻判定按11版；攻击序列词条沿用十版实现，11版审计中）")
     p.add_argument("attacker", help="攻方单位名（中/英/俗名）")
     p.add_argument("defender", help="守方单位名")
     p.add_argument("--phase", default="shooting", choices=["shooting", "melee"])
