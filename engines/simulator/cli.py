@@ -111,10 +111,9 @@ def main(argv: Optional[List[str]] = None) -> int:
     p.add_argument("--stealth", action="store_true",
                    help="守方 Stealth（11版24.33：被远程攻击选中获掩体收益，"
                         "攻方 [IGNORES COVER] 可抵消）")
-    p.add_argument("--go-to-ground", action="store_true", dest="go_to_ground",
-                   help="守方卧倒（掩体 + 6+ 无效保护）")
     p.add_argument("--smokescreen", action="store_true",
-                   help="守方烟幕（掩体 + 射击命中减值；十版战略口径，11版战略未审计）")
+                   help="守方烟幕战略（11版核心战略：对手射击阶段开始时使用，"
+                        "该阶段获掩体收益；无命中减值。Go to Ground 已从 11 版核心战略移除）")
     p.add_argument("--def-fights-first", action="store_true", dest="defender_fights_first")
     p.add_argument("--def-fights-last", action="store_true", dest="defender_fights_last")
     p.add_argument("--atk-fights-first", action="store_true", dest="attacker_fights_first")
@@ -161,7 +160,7 @@ def main(argv: Optional[List[str]] = None) -> int:
         "phase": args.phase, "charge": args.charge, "half_range": args.half_range,
         "cover": args.cover, "stationary": args.stationary,
         "long_range": args.long_range, "indirect": args.indirect,
-        "stealth": args.stealth, "go_to_ground": args.go_to_ground,
+        "stealth": args.stealth,
         "smokescreen": args.smokescreen,
         "attacker_fights_first": args.attacker_fights_first,
         "attacker_fights_last": args.attacker_fights_last,

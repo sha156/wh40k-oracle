@@ -96,7 +96,6 @@ def _options_from_inputs(st) -> Dict[str, Any]:
         "long_range": st.session_state.get("sim_long", False),
         "indirect": st.session_state.get("sim_indirect", False),
         "stealth": st.session_state.get("sim_stealth", False),
-        "go_to_ground": st.session_state.get("sim_gtg", False),
         "smokescreen": st.session_state.get("sim_smoke", False),
         "n": int(st.session_state.get("sim_n", 8000)),
         "seed": int(st.session_state.get("sim_seed", 1234)),
@@ -120,8 +119,8 @@ def _options_from_inputs(st) -> Dict[str, Any]:
 def render_simulator_panel(st) -> None:
     """在传入的 Streamlit 命名空间下渲染模拟器面板。app.py 侧边栏切到「模拟器」时调用。"""
     st.markdown("### ⚔️ 蒙特卡洛对战模拟器")
-    st.caption("逐骰模拟（先攻判定与 Stealth/间接/Heavy/Blast/Cleave 词条按11版；"
-               "其余词条经审计一致或沿用十版口径）｜"
+    st.caption("逐骰模拟（先攻判定与 Stealth/间接/Heavy/Blast/Cleave/Psychic 词条、"
+               "烟幕战略均按11版；其余词条经审计一致或沿用十版口径）｜"
                "攻方打守方 N 次 → 期望伤害/击杀/团灭率 + 阶段漏斗 + 性价比 + 诚实披露。"
                "数字与 CLI 完全一致（共用同一引擎）。")
 
@@ -152,14 +151,16 @@ def render_simulator_panel(st) -> None:
         cols2[2].checkbox("守方 Stealth(获掩体)", key="sim_stealth",
                           help="11版24.33：被远程攻击选中获掩体收益，"
                                "攻方 [IGNORES COVER] 可抵消")
-        cols2[3].checkbox("守方卧倒(掩体+6++)", key="sim_gtg")
+        cols2[3].checkbox("守方烟幕(获掩体)", key="sim_smoke",
+                          help="11版核心战略 Smokescreen：对手射击阶段开始时使用，"
+                               "该阶段指向本单位的攻击目标获掩体收益；无命中减值"
+                               "（Go to Ground 已从 11 版核心战略移除）")
 
         cols3 = st.columns(4)
-        cols3[0].checkbox("守方烟幕(掩体+减命中)", key="sim_smoke")
-        cols3[1].number_input("守方 FNP X+（0=关）", 0, 6, 0, key="sim_fnp")
-        cols3[2].number_input("守方减伤（0=关）", 0, 3, 0, key="sim_dr")
-        cols3[3].number_input("迭代 n", 1000, 50000, 8000, step=1000, key="sim_n")
-        st.number_input("随机种子", 0, 999999, 1234, key="sim_seed")
+        cols3[0].number_input("守方 FNP X+（0=关）", 0, 6, 0, key="sim_fnp")
+        cols3[1].number_input("守方减伤（0=关）", 0, 3, 0, key="sim_dr")
+        cols3[2].number_input("迭代 n", 1000, 50000, 8000, step=1000, key="sim_n")
+        cols3[3].number_input("随机种子", 0, 999999, 1234, key="sim_seed")
 
         submitted = st.form_submit_button("开始模拟", type="primary")
 

@@ -36,7 +36,7 @@ class Effect:
     op 语义在 keywords.py（P4-c）与 sequence.py（P4-b/c）里解释；本契约只承载数据。
     """
     phase: str                       # attacks|hit|wound|save|damage|fnp
-    op: str                          # modify|reroll|crit_threshold|extra_hits|auto_wound|skip_save|mortal_pool|fnp|damage_reduction|...
+    op: str                          # modify|reroll|crit_threshold|extra_hits|auto_wound|skip_save|mortal_pool|fnp|damage_reduction|ignore_hit_mods|...
     params: Tuple = ()               # 声明式参数（可含 DiceExpr）
     condition: Tuple = ()            # 生效条件（("target_has_keyword","vehicle") / ("half_range",) / ("stationary",) / ("charging",) / ("ap0",) …）
     source: str = ""                 # 来源标签（词条名/开关名），用于报告的 modeled_effects

@@ -431,17 +431,19 @@ def simulate_combat(
         if options.get("stealth"):    # 11版24.33：守方 Stealth → 被远程攻击选中获掩体收益
             def_effects.append(Effect("save", "cover", (), ("phase_shooting",),
                                       "stealth"))    # 仅射击；攻方 [IGNORES COVER] 可抵消
-        # P5-c 手工核验通用开关（评审 E1 订正，十版战略口径、11版战略未审计）：
-        #   Go to Ground（1CP）= Benefit of Cover + 6+ 无效保护（不改命中）
-        #   Smokescreen        = Benefit of Cover + 射击命中 -1（战略自身效果，非 Stealth USR）
+        # P5-c 手工核验通用开关（2026-07-11 按 11 版核心战略清单审计订正）：
+        #   Smokescreen（1CP 核心战略）：对手射击阶段开始时选一友方 SMOKE 单位，该阶段
+        #   指向它的攻击目标获掩体收益（13.08）——无命中减值（十版的 Stealth 成分已删）；
+        #   「遮蔽后方友军」成分超出 1v1 模拟范围，不建模。
+        #   Go to Ground 已不在 11 版核心战略清单中 → 开关废弃；旧调用传入时不静默
+        #   忽略，经 warning 显式披露（近似替代：cover=True + 手动设守方无效保护）。
         cover_on = bool(options.get("cover"))
-        if options.get("go_to_ground"):
-            cover_on = True
-            target = _replace(target, invuln=min(target.invuln or 7, 6))
         if options.get("smokescreen"):
             cover_on = True
-            def_effects.append(Effect("hit", "modify", (-1,), ("phase_shooting",),
-                                      "smokescreen"))
+        gtg_warn = ("go_to_ground 开关已废弃（11 版核心战略无 Go to Ground），本次未生效"
+                    if options.get("go_to_ground") else None)
+        warning = "；".join(
+            x for x in (a.get("warning"), d.get("warning"), gtg_warn) if x) or None
         if cover_on and not stance.target_in_cover:
             stance = _replace(stance, target_in_cover=True)
         if def_effects:
@@ -480,7 +482,7 @@ def simulate_combat(
                         "phase": phase, "report": _report_to_dict(rep),
                         "defender_toggles": defender_toggles,
                         "faction_options": faction_options,
-                        "warning": a.get("warning") or d.get("warning")}
+                        "warning": warning}
 
         rep = simulate(asm.attacker, target, stance, n=n, seed=seed, points=points_a)
         return {"ok": True, "modeled": True, "tool": "simulate_combat",
@@ -488,7 +490,7 @@ def simulate_combat(
                 "phase": phase, "report": _report_to_dict(rep),
                 "defender_toggles": defender_toggles,
                 "faction_options": faction_options,
-                "warning": a.get("warning") or d.get("warning")}
+                "warning": warning}
     except Exception as exc:   # noqa: BLE001 — 显式暴露，不静默吞
         import traceback
         return {"ok": False, "modeled": True, "tool": "simulate_combat",

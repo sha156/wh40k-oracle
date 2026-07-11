@@ -7,7 +7,11 @@
   B5 Blast X（24.05）带参形态 + 无参向后兼容；
   C  Cleave X（24.06）近战版 blast（1v1 单目标前提）；
   B4 Lethal Hits（24.23）改可选——不建模择优，lethal+dev/anti 组合必须披露口径；
-  B7 close_quarters 词库识别 + pistol 注解并入说明。
+  B6 Psychic（24.29）无视不利命中修正——11 版新增（十版原文明言"没有直接的效果"）；
+  B7 close_quarters 词库识别 + pistol 注解并入说明；
+  A 类保留项收口：dev 致命池不吃「受伤-1」减伤（24.10 暴击致伤即结束攻击序列 +
+  06.02 致命伤逐点直接施加，从未进入伤害分配步骤）；
+  核心战略：Smokescreen=纯掩体、Go to Ground 已移除（端到端见 test_simulator_wiring）。
 """
 from __future__ import annotations
 
@@ -191,6 +195,56 @@ def test_simulate_report_carries_lethal_dev_disclosure():
     w = weapon(const(4), 3, 4, 0, const(1), effects=effects, raw_keywords=parsed)
     rep = simulate(atk(w), tgt(4, 4, 1, 5), st(), n=500, seed=1)
     assert any(_LETHAL_NOTE_KEY in s for s in rep.not_modeled)
+
+
+# ===================== B6 Psychic（24.29）=====================
+def test_psychic_mapping_is_ignore_hit_mods():
+    pk = tokenize_keywords('["psychic"]')[0][0]
+    (e,), mod, ann = keyword_to_effects(pk)
+    assert e.phase == "hit" and e.op == "ignore_hit_mods"
+    assert any("24.29" in m for m in mod)
+    assert ann == []                      # 不再是纯注解词条
+
+
+def test_psychic_cancels_negative_hit_modifier():
+    # 守方 -1 减命中：psychic 武器无视之（BS3+ 从 3/6 回到 4/6）
+    minus1 = Effect("hit", "modify", (-1,), ("phase_shooting",), "hit penalty")
+    w_plain = weapon(const(60), 3, 4, 0, const(1))
+    w_psy = weapon(const(60), 3, 4, 0, const(1), effects=kw("psychic"))
+    t = tgt(4, 7, 1, 800, effects=(minus1,))
+    assert close(run(w_plain, t, st()).hits.mean(), 60 * 3 / 6, rel=0.02)
+    assert close(run(w_psy, t, st()).hits.mean(), 60 * 4 / 6, rel=0.02)
+
+
+def test_psychic_keeps_positive_hit_modifier():
+    # 按有利方向：忽略守方 -1、保留 heavy +1 → BS3+ 驻停 = 5/6 命中
+    minus1 = Effect("hit", "modify", (-1,), ("phase_shooting",), "hit penalty")
+    w = weapon(const(60), 3, 4, 0, const(1), effects=kw("psychic, heavy"))
+    t = tgt(4, 7, 1, 800, effects=(minus1,))
+    assert close(run(w, t, st(stationary=True)).hits.mean(), 60 * 5 / 6, rel=0.02)
+
+
+def test_psychic_noop_without_modifiers():
+    # 无任何修正时 psychic 不改变数学（BS3+ 仍 4/6）
+    w = weapon(const(60), 3, 4, 0, const(1), effects=kw("psychic"))
+    assert close(run(w, tgt(4, 7, 1, 800), st()).hits.mean(), 60 * 4 / 6, rel=0.02)
+
+
+# ===================== A 类收口：dev 致命池不吃减伤（24.10 + 06.02）=====================
+def test_dev_mortal_pool_ignores_damage_reduction():
+    # 「受伤-1」只作用于正常伤害（3→2）；dev 暴击致伤的致命伤仍按 D=3
+    #（24.10：暴击致伤即结束攻击序列、直接施加致命伤，从未进入伤害分配步骤）
+    import numpy as np
+
+    from engines.simulator.sequence import _wound_save_damage
+
+    rng = np.random.default_rng(7)
+    mask = np.ones((2000, 8), dtype=bool)
+    normal_dmg, mortal_dmg, *_ = _wound_save_damage(
+        mask, rng, 2000, 4, 6, 0, False, True,   # wt=4, crit=6, has_dev=True
+        7, const(3), None, 1)                    # sv 7=无保存, D=3, 减伤 1
+    assert set(np.unique(normal_dmg[normal_dmg > 0])) == {2}
+    assert set(np.unique(mortal_dmg[mortal_dmg > 0])) == {3}
 
 
 # ===================== B7 close_quarters / pistol 注解（24.07 + 10.06）=====================

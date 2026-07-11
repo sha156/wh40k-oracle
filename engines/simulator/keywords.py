@@ -25,7 +25,6 @@ _ANNOTATE = {
     "one_shot": "one shot（每局一次，单次激活不影响期望）",
     "extra_attacks": "extra attacks（作为 loadout 内独立武器已计入其攻击）",
     "hazardous": "hazardous（用后自伤未计入，会略高估攻方净收益）",
-    "psychic": "psychic（标签透传，供 anti-psyker 交互）",
 }
 
 
@@ -107,6 +106,12 @@ def keyword_to_effects(pk: ParsedKeyword) -> Tuple[List[Effect], List[str], List
     if name == "conversion":
         return ([Effect("hit", "crit_threshold", (4,), ("long_range",), src)],
                 ["conversion"], [])
+    if name == "psychic":
+        # 11版 24.29 [PSYCHIC]：每次攻击可无视 BS/WS 与命中骰的任意修正（十版无直接
+        # 效果，纯标签）。建模按有利方向执行：只忽略负修正、保留正修正；
+        # 「灵能攻击」标签的 anti-psyker 交互仍由守方技能条件式披露（abilities.py）。
+        return ([Effect("hit", "ignore_hit_mods", (), (), src)],
+                ["psychic（11版24.29：无视不利命中修正）"], [])
     if name == "indirect_fire":
         # 11版 24.19 + 10.07：间接开火时目标获掩体（保留）；命中判定与 BS 无关——
         # 未修正 1-5 失败（仅 6 命中），命中修正与 ±1 夹紧均不适用；
