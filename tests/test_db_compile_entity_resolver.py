@@ -116,6 +116,31 @@ class TestEntityResolverFixture:
         assert result.confidence == "none"
 
 
+class TestRealDbCommunityAliasRegression:
+    """真实库回归（v3 基准四缺陷，2026-07-11）：这四个俗名必须解析到唯一本尊。
+    其中混沌教徒/机械教游侠是撞名单位（库内同 name_en 多行），经 canonical id 直取；
+    若重建后丢失（community 层未重灌）本组即红。"""
+    import pytest as _pytest
+    from pathlib import Path as _Path
+    pytestmark = _pytest.mark.skipif(
+        not _Path("db/wh40k.sqlite").exists(), reason="需要 db/wh40k.sqlite")
+
+    EXPECT = {
+        "混沌教徒": ("000000946", "Cultist Mob"),                # #23，CSM 本尊（三行撞名）
+        "复仇者小队": ("000000593", "Dire Avengers"),            # #48，库内名「狂暴复仇者」
+        "机械教游侠": ("000000848", "Skitarii Rangers"),         # #65，AdM 本尊（两行撞名）
+        "死亡连无畏机兵": ("000000166", "Death Company Dreadnought"),  # #76，「机兵」口语形
+    }
+
+    def test_v3_bench_names_resolve_exact(self):
+        resolver = EntityResolver(db_path=Path("db/wh40k.sqlite"))
+        for name, (cid, en) in self.EXPECT.items():
+            r = resolver.resolve(name)
+            assert r.canonical_id == cid, f"{name} → {r.canonical_id}（期望 {cid}）"
+            assert r.name_en == en
+            assert r.confidence == "exact"
+
+
 class TestCrossFactionSameNameCollision:
     """评审 #25（基准地狱兽答错阵营）：同一 name_en 存在于多个阵营时，
     英文名精确命中必须报 ambiguous + 阵营限定候选，绝不静默取先入库的那行。"""

@@ -40,7 +40,10 @@ _TOOL_ARG_HINTS: Dict[str, str] = {
     "get_entity": '{"name_or_id": "用户原文里的中文单位名（工具内部自动解析俗名/译名）"}',
     "get_keyword_definition": '{"keyword": "USR 或核心概念名"}',
     "get_datasheet": ('{"name_or_id": "用户原文里的中文单位名（内部解析别名到 L3 结构库）。'
-                      '只传单位名本身，不要带阵营/所属前缀（「吞世者的地狱兽」→ 传「地狱兽」）；'
+                      '单位称谓必须整串原样传入、禁止截短或改写——「机械教游侠」「死亡连无畏机兵」'
+                      '这类连写限定名是名字的一部分（截成「游侠」会精确命中另一阵营的同名单位并'
+                      ' confident 错答，别名层认识全名）；仅「XX的YY」所属格才拆开传 YY'
+                      '（「吞世者的地狱兽」→ 传「地狱兽」）；'
                       '若返回 ambiguous，再按阵营用候选串重查（如 \\"Helbrute (WE)\\"）"}'),
     "entity_resolver": '{"name": "中文/英文/俗名"}',
     "calc_points": '{"unit_list": ["单位名", ...]}',
