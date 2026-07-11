@@ -1,6 +1,6 @@
 # WH40K Wiki Index
 
-_Last updated: 2026-07-11 07:44 UTC_
+_Last updated: 2026-07-11 10:04 UTC_
 
 ## 目录
 
@@ -20,70 +20,70 @@ _Last updated: 2026-07-11 07:44 UTC_
 
 | 类型 | 名称 | 摘要 | Updated |
 |------|------|------|---------|
-| core-rule | [一次性](core-rules/one-shot.md) | > 不同汉化版本将本技能译作"一次性/单次射击/单次使用"，均为 One Shot 的同一技能。 | 2026-07-06 |
-| core-rule | [不知疼痛](core-rules/feel-no-pain.md) | 每当本模型失去一点W 值时，投D6，结果大于等于要求数值则不会失去这点W。 | 2026-07-06 |
-| core-rule | [为了上上善道](core-rules/for-the-greater-good.md) | 如果你的军表是钛帝国，在你的射击阶段，你可以选择任意数量拥有本技能的单位成为【观察员】。 | 2026-07-06 |
-| core-rule | [冲锋](core-rules/charge.md) | > 部分汉化版本将"宣布冲锋"译作"宣言冲锋"，均指同一动作 Declare a Charge。 | 2026-07-06 |
-| core-rule | [冲锋阶段](core-rules/charge-phase.md) |  | 2026-07-06 |
-| core-rule | [加速移动](core-rules/advance.md) | 本单位投 D6，将其结果加上其 M 值，作为本阶段最大移动距离，不能移动进对方接战范围；本回合中不能进行射击或冲锋。一些规则让玩家加速时无需投掷而是直接增加 M... | 2026-07-06 |
-| core-rule | [危险](core-rules/hazardous.md) |  | 2026-07-06 |
-| core-rule | [双联](core-rules/twin-linked.md) | 本武器可以重投攻击的造伤投掷结果。 | 2026-07-06 |
-| core-rule | [命中掷骰](core-rules/hit-roll.md) | 由攻击者为每一下攻击分别投掷一颗 D6，这就是"命中骰"。如果结果符合武器数据表中的命中需求（BS 或 WS 值），这一下攻击就成功命中，否则结算流程即刻终止。... | 2026-07-06 |
-| core-rule | [喷射](core-rules/torrent.md) | 本武器自动命中目标，无需投掷。 | 2026-07-06 |
-| core-rule | [回合](core-rules/battle-round.md) | 一场战锤 40K 游戏由若干个游戏大回合（Battle Round）组成，每个大回合中双方玩家各进行一次己方回合，己方回合依次经过指挥阶段、移动阶段、射击阶段、... | 2026-07-06 |
-| core-rule | [坚守射击](core-rules/fire-overwatch.md) |  | 2026-07-06 |
-| core-rule | [射击阶段](core-rules/shooting-phase.md) |  | 2026-07-06 |
-| core-rule | [巨兽](core-rules/monster.md) | 拥有【巨兽】关键词的模型是一类体型巨大的模型，具有以下特殊规则： | 2026-07-06 |
-| core-rule | [快速部署](core-rules/rapid-ingress.md) | > 部分汉化版本译作"迅速入场"，与"快速部署"为同一计谋 Rapid Ingress 的不同译名。 | 2026-07-06 |
+| core-rule | [一次性](core-rules/one-shot.md) | 一次性武器整场对战只能开火一次，多为导弹、单发炸弹类装备。 | 2026-07-11 |
+| core-rule | [不知疼痛](core-rules/feel-no-pain.md) | 不知疼痛让模型逐点豁免即将失去的 W 值，是保存之后的最后防线。 | 2026-07-11 |
+| core-rule | [为了上上善道](core-rules/for-the-greater-good.md) | 钛帝国军队规则：观察员标记目标，射击手打标记目标更准。 | 2026-07-11 |
+| core-rule | [冲锋](core-rules/charge.md) | 冲锋移动让单位扑进近战并获得先攻。 | 2026-07-11 |
+| core-rule | [冲锋阶段](core-rules/charge-phase.md) | 冲锋阶段逐个宣布冲锋、掷 2D6 冲锋骰并进行冲锋移动。 | 2026-07-11 |
+| core-rule | [加速移动](core-rules/advance.md) | 加速移动用 D6 加速骰换取额外移动距离，代价是本回合行动受限。 | 2026-07-11 |
+| core-rule | [危险](core-rules/hazardous.md) | 危险武器威力不稳定，开火后要掷危险骰，可能反噬自身单位。 | 2026-07-11 |
+| core-rule | [双联](core-rules/twin-linked.md) | 双联武器共享火控系统，造伤骰可以重掷。 | 2026-07-11 |
+| core-rule | [命中掷骰](core-rules/hit-roll.md) | 命中掷骰是攻击序列第一步，决定每个攻击骰是否命中。 | 2026-07-11 |
+| core-rule | [喷射](core-rules/torrent.md) | 喷射武器喷吐火焰毒雾，无需命中骰、自动命中目标。 | 2026-07-11 |
+| core-rule | [回合](core-rules/battle-round.md) | 游戏大回合是对局的基本时间单位，双方各行动一次。 | 2026-07-11 |
+| core-rule | [坚守射击](core-rules/fire-overwatch.md) | 坚守射击是核心计谋：对手移动阶段结束时打一轮只靠未修正 6 命中的应急射击。 | 2026-07-11 |
+| core-rule | [射击阶段](core-rules/shooting-phase.md) | 射击阶段逐个选择单位并为其选择一种射击类型开火。 | 2026-07-11 |
+| core-rule | [巨兽](core-rules/monster.md) | 巨兽体型庞大，移动可碾过普通模型，交战中仍能开火与被射击。 | 2026-07-11 |
+| core-rule | [快速部署](core-rules/rapid-ingress.md) | 快速部署是核心计谋：在对手移动阶段结束时让战略预备队提前入场。 | 2026-07-11 |
 | core-rule | [忽视掩体](core-rules/ignores-cover.md) | 忽视掩体专治龟缩在工事里的目标。 | 2026-07-11 |
-| core-rule | [悬浮](core-rules/hover.md) | 拥有此能力的飞行器，在宣布战斗阵容时，必须先决定本模型是否启用悬浮模式。如果启用：本场战斗中，该模型 M 值变为 20，失去飞行器关键词及相关规则，不再必须以战... | 2026-07-06 |
-| core-rule | [战斗震慑测试](core-rules/battle-shock-test.md) | > 部分汉化版本译作"战斗震撼测试"或"战斗震惊测试"，与"战斗震慑测试"为同一测试 Battle-shock Test 的不同译名；"震慑测试""震慑"为其简... | 2026-07-06 |
-| core-rule | [战略预备队](core-rules/strategic-reserves.md) |  | 2026-07-06 |
+| core-rule | [悬浮](core-rules/hover.md) | 悬浮单位翱翔时不必支付 2" 的距离代价。 | 2026-07-11 |
+| core-rule | [战斗震慑测试](core-rules/battle-shock-test.md) | 战斗震慑衡量部队士气，失败的单位控场能力与计谋支援尽失。 | 2026-07-11 |
+| core-rule | [战略预备队](core-rules/strategic-reserves.md) | 战略预备队把单位留在场外择机入场，11 版上限放宽到全军一半分数。 | 2026-07-11 |
 | core-rule | [手枪](core-rules/pistol.md) | 手枪类武器可以在肉搏胶着中开火；11 版起与"近身"词条完全等同。 | 2026-07-11 |
-| core-rule | [指挥阶段](core-rules/command-phase.md) |  | 2026-07-06 |
-| core-rule | [接战范围](core-rules/engagement-range.md) | > 部分汉化版本译作"交战范围"，与"接战范围"为同一概念 Engagement Range 的不同译名。 | 2026-07-06 |
-| core-rule | [掩体效果](core-rules/benefit-of-cover.md) | > 部分汉化版本译作"掩体优势""掩体加成"或"掩体奖励"，均指同一效果 Benefit of Cover。 | 2026-07-06 |
-| core-rule | [援军入场子阶段](core-rules/reinforcements-step.md) | > 部分汉化版本简称为"增援步骤""援军"或"增援"，均指同一个游戏子阶段 Reinforcements Step。 | 2026-07-06 |
-| core-rule | [撤退](core-rules/fall-back.md) | 单位若位于任意敌方模型的接战范围内，则移动阶段只能选择保持静止或撤退。撤退移动：单位中的模型最多移动它 M 值的距离，撤退移动不能结束于对方接战范围内，如果做不... | 2026-07-06 |
+| core-rule | [指挥阶段](core-rules/command-phase.md) | 指挥阶段双方获取 CP，随后主动玩家检查部队士气。 | 2026-07-11 |
+| core-rule | [接战范围](core-rules/engagement-range.md) | 接战范围界定近战距离，11 版扩大到水平 2 寸并以"交战中/未交战"行文。 | 2026-07-11 |
+| core-rule | [掩体效果](core-rules/benefit-of-cover.md) | 掩体效果让目标更难被打中，11 版起改为恶化攻击方 BS。 | 2026-07-11 |
+| core-rule | [援军入场子阶段](core-rules/reinforcements-step.md) | 援军入场子阶段是十版术语，11 版已取消——预备队改为在移动单位步做入场移动。 | 2026-07-11 |
+| core-rule | [撤退](core-rules/fall-back.md) | 撤退让交战中的单位脱离近战，11 版分"有序撤退"和"绝望逃脱"两种模式。 | 2026-07-11 |
 | core-rule | [斥候](core-rules/scouts.md) | 斥候是开战前的先遣机动技能，11 版起在战前能力结算步三选一执行。 | 2026-07-11 |
-| core-rule | [曲射](core-rules/indirect-fire.md) | 本武器攻击不需要视线，并且可以消灭视线外的敌方模型。 | 2026-07-06 |
-| core-rule | [标准移动](core-rules/normal-move.md) | 单位中的模型最多移动它 M 值的距离，不能移动进对方接战范围。预备队单位在被部署至战场时，算作在阶段中进行了标准移动（但不算实际进行标准移动，不会触发标准移动时... | 2026-07-06 |
-| core-rule | [标记光](core-rules/markerlight.md) | 【标记光】是钛帝国部分单位/装备（如标记蜂）拥有的关键词： | 2026-07-06 |
-| core-rule | [毁灭伤害](core-rules/devastating-wounds.md) | > 不同汉化版本将本技能译作"毁灭伤害/毁灭创伤/毁灭之伤/毁灭伤损"，均为 Devastating Wounds 的同一技能。 | 2026-07-06 |
-| core-rule | [水平距离](core-rules/horizontal-distance.md) | 预备队单位入场时，要求部署在敌方模型的几寸之外，这个距离永远是水平距离（不考虑高度差）。例如使用【深入打击】技能到达战场的模型，不能被部署在任何敌方模型的水平... | 2026-07-06 |
+| core-rule | [曲射](core-rules/indirect-fire.md) | 曲射武器越过障碍轰击视线外目标，11 版改为固定命中阈值。 | 2026-07-11 |
+| core-rule | [标准移动](core-rules/normal-move.md) | 标准移动是最基本的移动类型：最多移动 M 值，不得进入交战。 | 2026-07-11 |
+| core-rule | [标记光](core-rules/markerlight.md) | 标记光是钛帝国关键词：由它标记的目标会被友军的攻击忽视掩体。 | 2026-07-11 |
+| core-rule | [毁灭伤害](core-rules/devastating-wounds.md) | 毁灭伤害让造伤暴击直接转化为致命伤害，绕过保护与减伤。 | 2026-07-11 |
+| core-rule | [水平距离](core-rules/horizontal-distance.md) | 水平距离只在水平面上度量、无视高度差，是入场类规则的标准量法。 | 2026-07-11 |
 | core-rule | [深入打击](core-rules/deep-strike.md) | 深入打击让单位经隧道、传送等方式空降战场，是最常见的预备队入场技能。 | 2026-07-11 |
-| core-rule | [混沌之影](core-rules/shadow-of-chaos.md) | 如果己方军队阵营是逆理魔军，则战场上的一部分区域将视为被己方军队的混沌之影笼罩，具体如下： | 2026-07-06 |
+| core-rule | [混沌之影](core-rules/shadow-of-chaos.md) | 混沌恶魔军队规则：己方控制的区域被混沌之影笼罩，恶魔获益、敌军受慑。 | 2026-07-11 |
 | core-rule | [渗透](core-rules/infiltrators.md) | 渗透允许侦察部队在部署阶段直接埋伏到战场中立区。 | 2026-07-11 |
-| core-rule | [灵能攻击](core-rules/psychic-attacks.md) | 拥有【灵能】技能的武器叫做灵能武器，造成的伤害（或[[core-rules/mortal-wounds.md|致命伤害]]）算作灵能攻击。 | 2026-07-06 |
+| core-rule | [灵能攻击](core-rules/psychic-attacks.md) | 灵能武器汲取使用者的灵能之力，11 版起可以无视命中修正。 | 2026-07-11 |
 | core-rule | [热熔](core-rules/melta.md) | 热熔武器在近距离威力倍增，是反装甲的招牌词条。 | 2026-07-11 |
-| core-rule | [爆炸](core-rules/blast.md) | 本武器的攻击目标中每有5 个模型，攻击次数就+1。 | 2026-07-06 |
-| core-rule | [特殊保护](core-rules/invulnerable-save.md) | > 不同汉化版本将本规则译作"特殊保护"或"无敌豁免"，均指 Invulnerable Save。 | 2026-07-06 |
+| core-rule | [爆炸](core-rules/blast.md) | 爆炸武器打人堆越打越多，目标每 5 个模型就多一份攻击骰。 | 2026-07-11 |
+| core-rule | [特殊保护](core-rules/invulnerable-save.md) | 特殊保护是无视 AP 的第二道保存线，11 版并入同一次保存骰判定。 | 2026-07-11 |
 | core-rule | [独行特工](core-rules/lone-operative.md) | 独行特工让刺客类单位在远距离上无法被敌人锁定。 | 2026-07-11 |
-| core-rule | [破敌重誓](core-rules/oath-of-moment.md) | 如果你的军队阵营是阿斯塔特修会，并且你使用的是不限定某个特定战团的分队规则，则在你的指挥阶段开始时，从对手的军队中选择一个单位，直到下个你的指挥阶段开始时为止，... | 2026-07-06 |
-| core-rule | [移动阶段](core-rules/movement-phase.md) | 移动单位子阶段：在战场上选择你想要移动的单位，为其选择以下之一： | 2026-07-06 |
-| core-rule | [突击](core-rules/assault.md) | 装备者所在单位进行过加速后，拥有【突击】技能的武器的单位在本回合的射击阶段中依然算作【可射击单位】，但此时只能使用突击武器进行射击。 | 2026-07-06 |
-| core-rule | [精准](core-rules/precision.md) |  | 2026-07-06 |
-| core-rule | [绝望撤退测试](core-rules/desperate-escape-test.md) | 撤退移动可以跨越敌方模型，但这样做的每个模型需要在实际移动前进行本测试（巨型或飞行模型无需进行）：每进行一次就投一次 D6，如果结果为 1 或 2，你选择本单位... | 2026-07-06 |
-| core-rule | [致命一击](core-rules/lethal-hits.md) | 本武器攻击时，命中暴击对目标自动造伤。 | 2026-07-06 |
-| core-rule | [致命伤](core-rules/mortal-wounds.md) |  | 2026-07-06 |
+| core-rule | [破敌重誓](core-rules/oath-of-moment.md) | 破敌重誓是星际战士军队规则：点名一个敌方单位，全军攻击它重投命中。 | 2026-07-11 |
+| core-rule | [移动阶段](core-rules/movement-phase.md) | 移动阶段逐个为每个单位选择一种移动类型，援军也在此入场。 | 2026-07-11 |
+| core-rule | [突击](core-rules/assault.md) | 突击武器让单位加速后仍能开火，机动与火力兼得。 | 2026-07-11 |
+| core-rule | [精准](core-rules/precision.md) | 精准武器能从人堆里点名人物模型，猎杀高价值目标。 | 2026-07-11 |
+| core-rule | [绝望撤退测试](core-rules/desperate-escape-test.md) | 绝望撤退测试是十版术语，11 版已由撤退的"绝望逃脱"模式取代。 | 2026-07-11 |
+| core-rule | [致命一击](core-rules/lethal-hits.md) | 致命一击让暴击命中可以跳过造伤骰直接造伤，11 版起改为可选。 | 2026-07-11 |
+| core-rule | [致命伤](core-rules/mortal-wounds.md) | 致命伤逐点直接扣 W、不经保存骰，11 版新增选模型优先级。 | 2026-07-11 |
 | core-rule | [致命破灭](core-rules/deadly-demise.md) | 致命破灭让载具、巨兽在被摧毁时有几率殉爆波及周围单位。 | 2026-07-11 |
-| core-rule | [计谋](core-rules/stratagem.md) | > 部分汉化版本译作"战略技能"或"战略能力"，与"计谋"为同一概念 Stratagem 的不同译名。 | 2026-07-06 |
-| core-rule | [载具](core-rules/vehicle.md) | 拥有【载具】关键词的模型具有以下特殊规则： | 2026-07-06 |
-| core-rule | [迅猛冲锋](core-rules/lance.md) | 如果装备者本回合进行过冲锋移动，则本武器造伤结果+1。 | 2026-07-06 |
-| core-rule | [近战阶段](core-rules/fight-phase.md) |  | 2026-07-06 |
-| core-rule | [远程攻击](core-rules/ranged-attack.md) | 使用射击武器进行的攻击称为远程攻击（即射击攻击）。在结算远程攻击时，进行攻击的模型/单位为射击单位。单位若陷入近战（位于敌方接战范围内），其模型不能使用手枪以外... | 2026-07-06 |
+| core-rule | [计谋](core-rules/stratagem.md) | 计谋消耗 CP 换取战术优势，11 版收紧为同一单位每阶段只能吃一个计谋。 | 2026-07-11 |
+| core-rule | [载具](core-rules/vehicle.md) | 载具与巨兽共用一套附加规则：碾过普通模型、交战中可开火可被射击。 | 2026-07-11 |
+| core-rule | [迅猛冲锋](core-rules/lance.md) | 迅猛冲锋武器借冲锋之势造伤更狠。 | 2026-07-11 |
+| core-rule | [近战阶段](core-rules/fight-phase.md) | 近战阶段双方统一跟进、轮流战斗、统一重整，11 版结构整体重做。 | 2026-07-11 |
+| core-rule | [远程攻击](core-rules/ranged-attack.md) | 远程攻击是用远程武器进行的攻击，目标须可见、在射程内且未交战。 | 2026-07-11 |
 | core-rule | [连击](core-rules/sustained-hits.md) | 连击让暴击命中滚出额外命中，是提升火力期望的常见词条。 | 2026-07-11 |
-| core-rule | [速射](core-rules/rapid-fire.md) | 如果目标单位位于此武器半射程内，则此武器的攻击次数增加标注的次数，例如"速射1"就是增加1 下。 | 2026-07-06 |
-| core-rule | [造伤骰](core-rules/wound-roll.md) | 由攻击者为每一下成功命中的攻击分别投掷一颗 D6，这就是"造伤骰"。造伤需求由攻击武器的 S 值与目标模型的 T 值对比决定：S 为 T 两倍以上需 2+；S... | 2026-07-06 |
-| core-rule | [部署](core-rules/deployment.md) |  | 2026-07-06 |
-| core-rule | [重型](core-rules/heavy.md) | 装备者所在单位如果本回合【保持静止】，则此武器的命中结果+1。 | 2026-07-06 |
-| core-rule | [针对性攻击](core-rules/anti.md) | > 数据卡上常见"反步兵X+""反载具X+""反泰坦X+""防空X+""针对载具X+""ANTI-INFANTRY X+""ANTI-FLY X+"等写法，均为... | 2026-07-06 |
+| core-rule | [速射](core-rules/rapid-fire.md) | 速射武器抵近射击时火力翻倍，是最常见的步枪类词条。 | 2026-07-11 |
+| core-rule | [造伤骰](core-rules/wound-roll.md) | 造伤骰是攻击序列第二步，用武器 S 值对比目标 T 值判定是否造伤。 | 2026-07-11 |
+| core-rule | [部署](core-rules/deployment.md) | 部署是开战前按任务规定把军队放上战场，核心动作是"放置单位"。 | 2026-07-11 |
+| core-rule | [重型](core-rules/heavy.md) | 重型武器架稳了打更准，11 版起小幅挪动不再取消加成。 | 2026-07-11 |
+| core-rule | [针对性攻击](core-rules/anti.md) | 针对性攻击让武器面对特定关键词的目标更容易打出造伤暴击。 | 2026-07-11 |
 | core-rule | [隐蔽](core-rules/stealth.md) | 隐蔽让单位在远程火力下如同贴地披上掩体，11 版起机制彻底改变。 | 2026-07-11 |
-| core-rule | [领导力测试](core-rules/leadership-test.md) | 当一些规则要求你进行"领导力测试"时，投 2D6，将结果与该单位最佳的 LD 值对比，如果大于等于其要求则测试通过；否则测试失败。 | 2026-07-06 |
+| core-rule | [领导力测试](core-rules/leadership-test.md) | 领导力测试用 2D6 对比单位 LD 值检验部队的意志。 | 2026-07-11 |
 | core-rule | [领袖](core-rules/leader.md) | 领袖技能让英雄单位带领保镖单位组成联合单位，11 版规则集中在第 19 章。 | 2026-07-11 |
-| core-rule | [额外攻击](core-rules/extra-attacks.md) |  | 2026-07-06 |
-| core-rule | [飞行](core-rules/fly.md) | 拥有【飞行】关键词的模型进行标准、加速、撤退移动时可以跨越敌我双方模型，如同不存在一样；这样的移动也可以进入敌方接战范围，但不能在其范围内结束移动。飞行模型移动... | 2026-07-06 |
-| core-rule | [黑暗契约](core-rules/dark-pact.md) | 如果你的军队阵营是阿斯塔特叛军，则当一个拥有此能力的友军单位被选中进行一轮射击或近战攻击时，它可以使用本能力：首先必须通过一次领导力测试，如果失败则本单位遭受... | 2026-07-06 |
+| core-rule | [额外攻击](core-rules/extra-attacks.md) | 额外攻击武器在其他近战武器之外追加出手，坐骑践踏、附肢乱击都属此类。 | 2026-07-11 |
+| core-rule | [飞行](core-rules/fly.md) | 飞行单位可以宣告"翱翔"，牺牲 2" 移动距离换取穿越一切模型与地形。 | 2026-07-11 |
+| core-rule | [黑暗契约](core-rules/dark-pact.md) | 混沌星际战士军队规则：向黑暗神明立约，冒领导力风险换武器增益。 | 2026-07-11 |
 
 ### 钛帝国
 

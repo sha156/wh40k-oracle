@@ -4,12 +4,16 @@ name_zh: 迅猛冲锋
 name_en: Lance
 type: core-rule
 sources:
-- book: 10版40K通用技能速查表1.08
+- book: Core Rules - New 40K Core Rules
   pages:
-  - 3
-updated: '2026-07-06'
+  - 82
+updated: '2026-07-11'
 ---
+
+迅猛冲锋武器借冲锋之势造伤更狠。
 
 ## 迅猛冲锋 LANCE
 
-如果装备者本回合进行过冲锋移动，则本武器造伤结果+1。
+用【迅猛冲锋】（[LANCE]）武器进行攻击时，如果攻击模型所在单位本回合进行过冲锋移动，则该次攻击的造伤骰 +1。
+
+> 11 版语义与十版一致。[11版 Core Rules 24.21]
