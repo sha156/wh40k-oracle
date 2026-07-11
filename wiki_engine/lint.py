@@ -258,6 +258,10 @@ def check_frontmatter_parse(wiki_root: Path) -> List[LintIssue]:
     for md_file in _iter_source_md_files(wiki_root):
         if md_file.name.startswith("review_needed."):
             continue
+        if md_file.name == "CLAUDE.md":
+            # wiki 宪法按其 §11 设计不带 frontmatter（避免被扫进实体索引），
+            # 不是"无声脱队"的实体页——显式跳过
+            continue
         rel = str(md_file.relative_to(wiki_root)).replace("\\", "/")
         try:
             text = md_file.read_text(encoding="utf-8")

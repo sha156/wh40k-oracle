@@ -23,7 +23,13 @@
 > - ✅ S4 调研：wahapedia 未迁移（wh40k11ed 系 alias，last_update 2026-06-13）；
 >   黑图书馆无 11 版（gameId=5 是 Kill Team）；**BSData/wh40k-11e 已建仓且当天仍在推送**
 >   （尚无 .cat 落地）——观察项，成熟后走 crosscheck 接入
-> - ⏳ 待做：S2 中英跨语检索实测、S5 基准 v2、S6 术语复核
+> - ✅ S5 基准迁移（2026-07-11）：十版 97.9 冻结为 v1（benchmarks/v1_10th/）；96 题逐题
+>   审计 11 版漂移——规则类 7 题+#41 更新、stat/weapon 78 题经 29 包勘误扫描零漂移
+>  （specs/2026-07-11-qa-gold-v3-edition11-audit.md）；**11 版基线 v3 = 93.8**
+>  （benchmarks/v3_edition11/）。过程中完成 S6 首批：wiki core-rules 11 个术语页 11 版化
+>  （run1 91.7 → run2 93.8，#86/#88 十版残留答案转绿）
+> - ⏳ 待做：S2 中英跨语检索实测、S6 其余术语页复核（64 页已修 11 页）、
+>   4 个实体解析缺陷修复（v3 稳定复现 #23/#48/#65/#76，见 benchmarks/v3_edition11/README）
 >  （重建后验证已收官——9b799f04 规则层保底检索+引用防编造加固）
 
 ---

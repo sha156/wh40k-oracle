@@ -50,6 +50,8 @@ qa_agent_routed*.json
 qa_agent_*.json
 qa_classic_*.json
 qa_layered_*.json
+# 例外：benchmarks/ 下的基线成绩快照是版本冻结档案，入库
+!benchmarks/**/qa_agent_*.json
 
 # 黑图书馆抓取数据（10MB+，可由 scripts/fetch_blacklibrary_details.py 重生，不入库）
 data_blacklibrary/
