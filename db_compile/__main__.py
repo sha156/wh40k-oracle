@@ -35,6 +35,12 @@ def main() -> None:
     m.add_argument("--json", default="db_sources/mfm/mfm_points.json")
     m.add_argument("--db", default="db/wh40k.sqlite")
 
+    fe = sub.add_parser(
+        "fp-errata",
+        help="应用 Faction Pack 11 版兵牌真漂移补丁（25 飞机移动+3 FW 单位+3 新单位）")
+    fe.add_argument("--patches", default="db_compile/fp_errata_patches.json")
+    fe.add_argument("--db", default="db/wh40k.sqlite")
+
     d = sub.add_parser(
         "downloads",
         help="官方下载页版本监控：harvest 建基线 / check 比对报改版（需 3.11+scrapling 渲染）")
@@ -174,6 +180,26 @@ def main() -> None:
                           f"库 {d['db']:>4} → MFM {d['mfm']:>4}")
                 if len(rep["diffs"]) > 40:
                     print(f"    …共 {len(rep['diffs'])} 条，其余见 --json 报告")
+    elif args.cmd == "fp-errata":
+        from db_compile.fp_errata import apply_from_file
+
+        rep = apply_from_file(Path(args.db), Path(args.patches))
+        print(f"\nFaction Pack 真漂移补丁：")
+        print(f"  属性：应用 {rep['stat_applied']} / 幂等 {rep['stat_already']} / "
+              f"让路 {len(rep['stat_mismatch'])} / 跳过 {len(rep['stat_skipped'])}")
+        print(f"  新单位：插入 {len(rep['units_inserted'])}（{', '.join(rep['units_inserted'])}）"
+              f" / 已存在 {len(rep['units_exist'])}")
+        if rep["stat_changes"]:
+            print("\n  已改动：")
+            for ch in rep["stat_changes"]:
+                print(f"    {ch['faction']:4} {ch['unit'][:32]:32} {ch['field']:3} "
+                      f"{ch['from']!r} → {ch['to']!r}")
+        if rep["stat_mismatch"]:
+            print("\n  ⚠️ 让路未覆盖（库现值既非 from 也非 to）：")
+            for ch in rep["stat_mismatch"]:
+                print(f"    {ch['faction']:4} {ch['unit'][:32]:32} {ch['field']:3} "
+                      f"库现值 {ch['db_now']!r}")
+        print("\n  注意：db_compile build 重建会覆盖，重建后需重跑（已挂进 restore_authority_layers）")
     elif args.cmd == "downloads":
         from db_compile.downloads import (harvest, write_manifest, check,
                                           print_diffs)

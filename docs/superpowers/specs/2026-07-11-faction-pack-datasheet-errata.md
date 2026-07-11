@@ -133,3 +133,43 @@ Secutarii、X-101、Giant Chaos Spawn 等 FW/回归单位）**库里已有同名
   重印表/勘误为唯一真源；两者冲突时以 FP 为准。
 - 新增 4 个 Orks 新单位黑图书馆可能还没有中文名——届时中文名标"（暂无社区译名）"
   并进 review_needed，勿自造译名。
+
+## 6. 落账结论（2026-07-11 实施，前提被推翻后大幅收缩）
+
+**关键更正**：§0 只证明了 395 个单位**行**在库；"会答十版旧值"是当时未验证的外推。
+落账前逐条 A/B 核对库现值，发现**该外推为假**——Wahapedia 原地滚更，7 月初下载的
+CSV（`Datasheets.csv` 2026-07-05）已并入 6 月 Faction Pack 全部数值/武器/技能文本勘误。
+
+**扩大抽样实锤**（`db_compile.fp_errata` 建库前用 scratchpad 脚本跑）：29 包 481 张重印
+数据表 × **17,138 个属性/武器单元格**程序化 A/B 核对（修掉两个测量假阳性：武器 BS/WS
+`2+`vs`2` 记法差、同名武器远/近战侧写错配后）——
+
+| 维度 | 一致率 | 真漂移 |
+|---|---|---|
+| 属性单元格 | **98.68%**（后 99.85%） | 36→**4**（余 4 为解析噪声，非真漂移） |
+| 武器单元格 | **99.9%** | 15，其中 ~11 为包侧精炼噪声（掉负号 `AP 3`实为`-3`） |
+
+⇒ **不建 §4 设想的 26 阵营解析-覆盖引擎**（那会拿解析结果覆盖本已正确的 99% 数据，
+一旦解析有误反把对的改错=假修复红线）。改为**外科手术式补真漂移**，落进
+`db_compile/fp_errata.py` + `db_compile/fp_errata_patches.json`（**手工策划真源，随代码入库**，
+不放 gitignore 的 db_sources/）：
+
+1. **25 台飞机移动值**：库仍是十版 `20+"`（Wahapedia 未套用 11 版飞机固定移动重做），
+   按官方重印表改为固定值（Manta 40"、Orca/Thunderhawk 20"、战机 8-14"）。
+2. **3 台 FW 单位真漂移**：War Dog Moirax(T9/W14/OC6)、Land Speeder(T8/W9/OC3)、
+   Venerable Dreadnought(M6")——均被 BSData 交叉校验佐证，官方重印为裁决方。
+3. **3 个 11 版新单位插入**：Bigboss / Bannernob / Big Mek Dakkarig（Wartrakk=库内
+   Wartrakks 拼写变体、SM Eradicator 变体=装备选项，均非真缺，不插）。
+
+**防误覆盖守卫**：每条 stat_patch 带落账时库现值 `from`；apply 前校验库现值==from 才改，
+已等于 to 幂等跳过，既非 from 也非 to（上游改过）→ 让路告警不盲覆盖。挂进
+`update.restore_authority_layers`，build 重建后自动补回（不留降级库）。CLI：
+`python -m db_compile fp-errata`。测试 `tests/test_db_compile_fp_errata.py`（8 绿，含
+`20+"`≠`20"` 守卫回归）。全库 701 测试绿。
+
+**未落账（documented，不盲改）**：
+- 4 个疑似武器单格漂移进 patches.json 的 `review_needed`（Grot Mega-Tank grotzooka AP、
+  KILL TANK big shoota 射程、Captain Titus bolt pistol BS、Librarian inferno pistol D）
+  ——单格低值、DB误/包误/匹配错侧写难辨，待人工裁，不自动补。
+- FRAME 关键词全库缺失（Wahapedia 不收录该测距关键词）——测量类，兵牌问答几乎不问，跳过。
+- 3 个新单位暂无中文别名（黑图书馆尚无）——英文 find_datasheet 可查，中文桥待黑图更新。

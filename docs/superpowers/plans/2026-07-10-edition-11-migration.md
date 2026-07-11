@@ -35,6 +35,13 @@
 >   武器技能 16 + 核心技能/计谋 5 + 阶段结构 13 + 判定概念 14 + 阵营机制 5（对照 Faction
 >   Pack Rules Updates：破敌重誓/为了上上善道被官方整段重写，黑暗契约/混沌之影沿用）；
 >   发现并勘误 S3 审计 B6 的"灵能与掩体不交互"结论（13.08 掩体=BS 修正，RAW 可被灵能无视）
+> - ✅ S4 落账收官（2026-07-11）：**"395 条会答旧值"前提被 A/B 核对推翻**——29 包 481 张
+>   重印表 × 17138 单元格核对，库已 98.7%/99.9% 与官方 11 版重印一致（Wahapedia 7 月初 CSV
+>   已并入 6 月勘误）。故**不建 26 阵营覆盖引擎**，改外科手术补真漂移：`db_compile/fp_errata.py`
+>   + `db_compile/fp_errata_patches.json` 补 25 飞机移动(`20+"`→固定)+3 FW 单位(War Dog Moirax/
+>   Land Speeder/Venerable Dread)+插 3 个 11 版新单位(Bigboss/Bannernob/Big Mek Dakkarig)；
+>   带 from 守卫防盲覆盖、挂进 restore_authority_layers、CLI `fp-errata`；属性一致率补后 99.85%，
+>   701 测试绿。FRAME 关键词与 4 个疑似武器单格进 documented/review_needed 不盲改
 > - ⏳ 待做：S2 中英跨语检索实测
 >  （重建后验证已收官——9b799f04 规则层保底检索+引用防编造加固）
 
