@@ -164,3 +164,32 @@ class TestLoadAliasExpansions:
 
     def test_missing_db_returns_empty(self, tmp_path):
         assert load_alias_expansions(tmp_path / "nope.sqlite") == {}
+
+
+class TestPopulateCommunityAliases:
+    """community 俗名层：en 精确匹配 + canonical id 直取（撞名单位专用）。"""
+
+    def test_en_bridge_and_direct_canonical_id(self, tmp_path):
+        from db_compile.community_aliases import populate_community_aliases
+
+        db = _make_db(tmp_path)
+        # 撞名场景：两行同 name_en，en 桥非确定性 → id 直取点名第一行
+        conn = sqlite3.connect(str(db))
+        conn.execute("INSERT INTO units VALUES('000000848','AdM','Skitarii Rangers',NULL,NULL,NULL,NULL)")
+        conn.execute("INSERT INTO units VALUES('000003842','QI','Skitarii Rangers',NULL,NULL,NULL,NULL)")
+        conn.commit()
+        conn.close()
+
+        rep = populate_community_aliases(db, {
+            "激素虫": "Hormagaunts",        # en 桥
+            "机械教游侠": "000000848",      # id 直取
+            "查无此id": "000009999",        # id 不存在 → unmatched 诚实计数
+            "查无此名": "Nonexistent Unit",  # en 匹配不到 → unmatched
+        })
+        assert rep == {"total": 4, "matched": 2, "unmatched": 2}
+
+        conn = sqlite3.connect(str(db))
+        rows = dict(conn.execute(
+            "SELECT alias, canonical_id FROM aliases WHERE source='community'").fetchall())
+        conn.close()
+        assert rows == {"激素虫": "000000070", "机械教游侠": "000000848"}
