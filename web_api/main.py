@@ -1,0 +1,152 @@
+"""web_api/main.py — FastAPI 后端（BUILD-PLAN Stage 3/5）。
+
+端点：
+  POST /chat        SSE：先流 trace（逐工具）→ 再逐槽位 → done。
+  GET  /wiki/{path} 只读返回 wiki 页（图鉴页 Stage 4 用）。
+  GET  /healthz     存活探针。
+
+安全（Stage 5 既定）：key 只读 env（DEEPSEEK_API_KEY）；CORS 白名单；会话内存 session。
+LLM 未配置（无 key）时以 Fake 直答降级，端点仍可用于前端联调，绝不因缺 key 崩溃。
+"""
+from __future__ import annotations
+
+import json
+import os
+from typing import Any, Dict, List, Optional
+
+from fastapi import FastAPI, HTTPException
+from fastapi.middleware.cors import CORSMiddleware
+from fastapi.responses import StreamingResponse
+from pydantic import BaseModel
+
+from web_api.contract import Answer
+from web_api.formatter import format_answer
+from web_api.trace import TraceRecorder
+
+# ── 配置（全部从 env 读，不落盘）─────────────────────────────────
+_ALLOWED_ORIGINS = [
+    o.strip() for o in os.environ.get(
+        "WEB_API_CORS", "http://localhost:3000,http://127.0.0.1:3000"
+    ).split(",") if o.strip()
+]
+_PROVIDER = os.environ.get("WEB_API_LLM_PROVIDER", "DeepSeek")
+_API_KEY = os.environ.get("DEEPSEEK_API_KEY", "")
+
+app = FastAPI(title="40K 规则专家 API", version="0.3.0")
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=_ALLOWED_ORIGINS,
+    allow_credentials=False,
+    allow_methods=["GET", "POST"],
+    allow_headers=["*"],
+)
+
+# 会话内存 session：sid → 历史轮（蓝图既定，不引数据库）
+_SESSIONS: Dict[str, List[Dict[str, str]]] = {}
+
+
+class ChatRequest(BaseModel):
+    question: str
+    context: str = "当前语境：通用"
+    session_id: Optional[str] = None
+
+
+def _make_clients():
+    """构造主循环 LLM + 结构化 LLM；无 key 时返回 (None, None) 触发降级。"""
+    if not _API_KEY:
+        return None, None
+    from agent.llm_client import OpenAICompatLLMClient
+    from web_api.structurer import OpenAIStructuringLLM
+    llm = OpenAICompatLLMClient(api_key=_API_KEY, provider=_PROVIDER)
+    structurer = OpenAIStructuringLLM(
+        api_key=_API_KEY, base_url=llm.base_url, model=llm.model)
+    return llm, structurer
+
+
+def _degraded_answer(question: str, note: str) -> Answer:
+    """无 LLM 可用时的诚实降级回答（不编造）。"""
+    from agent.loop import AgentResult
+    from web_api.formatter import format_answer as _ff
+    from web_api.trace import TraceRecorder as _TR
+    rec = _TR({})
+    res = AgentResult(
+        answer="后端未配置 LLM（DEEPSEEK_API_KEY 缺失），暂无法生成回答。" + note,
+        intent="查", tool_calls=[], degraded=True, sources=[])
+    return _ff(question, res, rec, structurer=None)
+
+
+def _run_answer(req: ChatRequest) -> Answer:
+    llm, structurer = _make_clients()
+    if llm is None:
+        return _degraded_answer(req.question, "")
+    from agent.tools import TOOLS
+    recorder = TraceRecorder(TOOLS)
+    from agent.loop import AgentLoop
+    loop = AgentLoop(llm=llm, tools=recorder.wrapped_tools())
+    result = loop.run(req.question)
+    if req.session_id:
+        hist = _SESSIONS.setdefault(req.session_id, [])
+        hist.append({"role": "user", "content": req.question})
+        hist.append({"role": "assistant", "content": result.answer})
+    return format_answer(req.question, result, recorder, structurer)
+
+
+def _sse(event: str, data: Any) -> str:
+    return "event: {}\ndata: {}\n\n".format(
+        event, json.dumps(data, ensure_ascii=False))
+
+
+def _stream_answer(answer: Answer):
+    """先流 trace（逐工具）→ 再逐槽位 → done。"""
+    d = answer.model_dump(by_alias=True)
+    yield _sse("meta", {"summary": d["summary"], "traceWarn": d.get("traceWarn"),
+                        "degraded": d["degraded"]})
+    for step in d["trace"]:
+        yield _sse("trace", step)
+    yield _sse("verdict", d["verdict"])
+    for c in d["calc"]:
+        yield _sse("calc", c)
+    if d.get("entityCard"):
+        yield _sse("entityCard", d["entityCard"])
+    for c in d["cites"]:
+        yield _sse("cite", c)
+    if d.get("sensitivity"):
+        yield _sse("sensitivity", d["sensitivity"])
+    if d.get("cta"):
+        yield _sse("cta", d["cta"])
+    yield _sse("followups", d["followups"])
+    yield _sse("done", {"ok": True})
+
+
+@app.get("/healthz")
+def healthz() -> Dict[str, Any]:
+    return {"ok": True, "llm_configured": bool(_API_KEY)}
+
+
+@app.post("/chat")
+def chat(req: ChatRequest) -> StreamingResponse:
+    """SSE 结构化回答。v1 先跑完 loop 再按序推（trace 已录全）。"""
+    answer = _run_answer(req)
+    return StreamingResponse(
+        _stream_answer(answer),
+        media_type="text/event-stream",
+        headers={"Cache-Control": "no-cache", "X-Accel-Buffering": "no"},
+    )
+
+
+@app.post("/chat/sync", response_model=Answer)
+def chat_sync(req: ChatRequest) -> Answer:
+    """非流式整体返回（便于前端调试/契约测试）。"""
+    return _run_answer(req)
+
+
+@app.get("/wiki/{path:path}")
+def wiki(path: str) -> Dict[str, Any]:
+    """只读返回 wiki 页 markdown（图鉴页 Stage 4 用）。"""
+    from pathlib import Path
+    wiki_root = Path(__file__).resolve().parent.parent / "wiki"
+    # 防目录穿越：解析后必须仍在 wiki_root 内
+    target = (wiki_root / (path + ".md")).resolve()
+    if not str(target).startswith(str(wiki_root.resolve())) or not target.exists():
+        raise HTTPException(status_code=404, detail="wiki 页不存在")
+    return {"path": path, "markdown": target.read_text(encoding="utf-8")}
