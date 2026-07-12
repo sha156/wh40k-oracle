@@ -8,7 +8,10 @@
   1. stat_patches：库仍是十版值的少数格子。最大一类是 25 台飞机的移动值——Wahapedia
      没套用 11 版飞机固定移动重做，库仍是十版 `20+"`；外加 3 台 FW 单位真漂移
      （War Dog Moirax / Land Speeder / Venerable Dreadnought，均被 BSData 交叉校验佐证）。
-  2. new_units：11 版新增、Wahapedia 尚无的单位（3 个兽人：Bigboss/Bannernob/
+  2. weapon_patches：库仍是错值的少数武器单元格。2026-07-12 经 BSData 交叉裁决的 2 格
+     （Grot Mega-Tank 双管格罗炮 AP 0→-1、Captain Titus 爆弹手枪 BS 3→2，均属库沿用了
+     通用武器 profile 的错值，Faction Pack 与 BSData 双源佐证）。
+  3. new_units：11 版新增、Wahapedia 尚无的单位（3 个兽人：Bigboss/Bannernob/
      Big Mek Dakkarig）。纯插入，不动既有行。
 
 **防误覆盖守卫**：每条 stat_patch 带落账时的库现值 `from`。apply 前校验库现值==from
@@ -28,6 +31,8 @@ from typing import Dict, List
 
 # 只允许补这些属性字段（防止 field 名拼进 SQL 造成注入/写错列）
 _STAT_FIELDS = {"m", "t", "sv", "w", "ld", "oc"}
+# 武器补丁允许的字段（weapons 表列白名单，同样防 SQL 注入/写错列）
+_WEAPON_FIELDS = {"range", "a", "bs_ws", "s", "ap", "d"}
 
 
 def _guard_norm(v) -> str:
@@ -77,6 +82,39 @@ def _apply_stat_patches(conn, patches: List[dict], report: Dict) -> None:
         report["stat_applied"] += 1
         report["stat_changes"].append(
             {**_slim(p), "from": cur, "to": p["to"]})
+
+
+def _apply_weapon_patches(conn, patches: List[dict], report: Dict) -> None:
+    """武器级真漂移补丁（weapons 表）。与 stat 补丁同守卫：库现值==from 才改，
+    已是 to 幂等跳过，既非 from 也非 to 则跳过告警；按 unit_id+name_en 精确定位，
+    非唯一一行则不猜、记 skipped（同一单位同名武器多 profile 时须先在 patch 里消歧）。"""
+    for p in patches:
+        field = p.get("field")
+        uid = p.get("unit_id")
+        wname = p.get("weapon")
+        if field not in _WEAPON_FIELDS or not uid or not wname:
+            report["weapon_invalid"].append(p)
+            continue
+        rows = conn.execute(
+            f"SELECT rowid, {field} FROM weapons "
+            "WHERE unit_id = ? AND name_en = ? COLLATE NOCASE", (uid, wname)).fetchall()
+        if len(rows) != 1:
+            report["weapon_skipped"].append(
+                {**_slim(p), "weapon": wname, "reason": f"{len(rows)} weapon rows"})
+            continue
+        rowid, cur = rows[0]
+        gc, gf, gt = _guard_norm(cur), _guard_norm(p.get("from")), _guard_norm(p.get("to"))
+        if gc == gt:
+            report["weapon_already"] += 1
+            continue
+        if gc != gf:
+            report["weapon_mismatch"].append({**_slim(p), "weapon": wname, "db_now": cur})
+            continue
+        conn.execute(
+            f"UPDATE weapons SET {field} = ? WHERE rowid = ?", (p["to"], rowid))
+        report["weapon_applied"] += 1
+        report["weapon_changes"].append(
+            {**_slim(p), "weapon": wname, "from": cur, "to": p["to"]})
 
 
 def _slim(p: dict) -> dict:
@@ -135,11 +173,15 @@ def apply_fp_errata(db_path, patches: dict) -> Dict:
     report = {
         "stat_applied": 0, "stat_already": 0,
         "stat_changes": [], "stat_mismatch": [], "stat_skipped": [], "stat_invalid": [],
+        "weapon_applied": 0, "weapon_already": 0,
+        "weapon_changes": [], "weapon_mismatch": [], "weapon_skipped": [],
+        "weapon_invalid": [],
         "units_inserted": [], "units_exist": [],
     }
     conn = sqlite3.connect(str(db_path))
     try:
         _apply_stat_patches(conn, patches.get("stat_patches", []), report)
+        _apply_weapon_patches(conn, patches.get("weapon_patches", []), report)
         _insert_new_units(conn, patches.get("new_units", []), report)
         conn.commit()
     finally:
