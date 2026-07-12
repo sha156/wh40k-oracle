@@ -86,7 +86,9 @@ export function Datasheet({ card, primaryEn = false }: DatasheetProps) {
   const bigName = primaryEn ? card.nameEn : card.nameZh;
   const smallName = primaryEn ? card.nameZh : card.nameEn;
   return (
-    <div className="relative mb-[18px] border border-black bg-bone text-ink shadow-[0_8px_30px_rgba(0,0,0,.55)]">
+    // @container：内部双栏/单栏按「容器」宽度切换（图鉴详情栏 ~740px 单栏免横滑，
+    // 聊天页 ~1060px 双栏），不看视口
+    <div className="@container relative mb-[18px] border border-black bg-bone text-ink shadow-[0_8px_30px_rgba(0,0,0,.55)]">
       <SlotBadge id="E6" />
       {/* 头部横幅：阵营渐变 + 噪纹 */}
       <div className="relative overflow-hidden bg-[linear-gradient(100deg,var(--color-tau-ban)_0%,#10424d_55%,var(--color-dark)_100%)] px-[18px] pt-3 pb-2.5 text-[#fefefe] after:pointer-events-none after:absolute after:inset-0 after:bg-[repeating-linear-gradient(115deg,rgba(255,255,255,.03)_0_2px,transparent_2px_6px)] after:content-[''] max-tablet:px-3 max-tablet:pt-2.5 max-tablet:pb-2">
@@ -121,8 +123,8 @@ export function Datasheet({ card, primaryEn = false }: DatasheetProps) {
       </div>
 
       {/* 主体：左 = 武器 + 能力；右 = 装备/构成/关键词侧栏 */}
-      <div className="grid grid-cols-[1fr_300px] max-wide:grid-cols-1">
-        <div className="min-w-0 border-r-2 border-tau-ban px-3.5 pt-3 pb-3.5 max-wide:border-r-0 max-wide:border-b-2 max-tablet:px-2.5 max-tablet:pt-2.5 max-tablet:pb-3">
+      <div className="grid grid-cols-[1fr_300px] @max-4xl:grid-cols-1">
+        <div className="min-w-0 border-r-2 border-tau-ban px-3.5 pt-3 pb-3.5 @max-4xl:border-r-0 @max-4xl:border-b-2 max-tablet:px-2.5 max-tablet:pt-2.5 max-tablet:pb-3">
           <WeaponTable caption="远程武器 · Ranged Weapons" sig="➶" skillHead="BS" rows={card.ranged} />
           <WeaponTable caption="近战武器 · Melee Weapons" sig="⚔" skillHead="WS" rows={card.melee} />
 

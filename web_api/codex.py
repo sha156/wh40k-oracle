@@ -120,17 +120,22 @@ def _load_faction_keywords(conn: sqlite3.Connection, unit_id: str) -> List[str]:
     return data.get("faction_keywords") or []
 
 
-def _localize_weapon_names(ds_dict: Dict[str, Any], zh: Optional[Dict[str, Any]]) -> None:
+def _localize_weapon_names(
+    ds_dict: Dict[str, Any], zh: Optional[Dict[str, Any]],
+) -> Dict[str, str]:
     """zh 模式：黑图中文层武器名/关键词覆盖到英文武器行（原地改 ds_dict['weapons']）。
 
     诚实约束：数值永远用英文权威表（黑图数值有漂移，如智能导弹 A=3 vs 官方 4），
     只换 name 与 keywords 显示；按 kind 内位置匹配，且**数量不等则整组不换**——
-    错配的中文名比英文名更糟（自信的错误）。"""
+    错配的中文名比英文名更糟（自信的错误）。
+
+    返回 en→zh 武器名映射（供 loadout 文本翻译复用）。"""
+    name_map: Dict[str, str] = {}
     if not zh:
-        return
+        return name_map
     wj = zh.get("武器") or {}
     if not isinstance(wj, dict):
-        return
+        return name_map
     kind_map = {"ranged": wj.get("射击武器") or [], "melee": wj.get("近战武器") or []}
     weapons = ds_dict.get("weapons") or []
     for kind, zh_rows in kind_map.items():
@@ -140,10 +145,68 @@ def _localize_weapon_names(ds_dict: Dict[str, Any], zh: Optional[Dict[str, Any]]
         for i, zh_row in zip(idx, zh_rows):
             nm = str((zh_row or {}).get("name") or "").strip()
             if nm:
+                en_name = str(weapons[i].get("name") or "").strip()
+                if en_name:
+                    name_map[en_name] = nm
                 weapons[i]["name"] = nm
             kw = (zh_row or {}).get("skill")
             if isinstance(kw, list) and kw:
                 weapons[i]["keywords"] = [str(k) for k in kw]
+    return name_map
+
+
+_LOADOUT_PREFIXES = [
+    ("Every model is equipped with:", "每个模型装备："),
+    ("This model is equipped with:", "本模型装备："),
+    ("This unit is equipped with:", "本单位装备："),
+]
+
+
+def _localize_loadout(loadout: str, name_map: Dict[str, str]) -> str:
+    """zh 模式：装备文本前缀 + 武器名按映射翻译；映射不到的名字保英文（诚实）。"""
+    if not loadout:
+        return loadout
+    from web_api.entity_card import _strip_html
+    out = _strip_html(loadout)  # 原文带 <b> 标签，先剥再翻（否则「：</b> 」清不掉空格）
+    for en, zh_txt in _LOADOUT_PREFIXES:
+        out = re.sub(re.escape(en), zh_txt, out, flags=re.IGNORECASE)
+    # 长名优先替换，避免「gauss cannon」抢先命中「twin gauss cannon」的子串
+    for en in sorted(name_map, key=len, reverse=True):
+        out = re.sub(re.escape(en), name_map[en], out, flags=re.IGNORECASE)
+    out = out.replace("; ", "；").replace(";", "；").replace("： ", "：")
+    if out.rstrip().endswith("."):
+        out = out.rstrip()[:-1] + "。"
+    return out
+
+
+def _load_zh_composition(conn: sqlite3.Connection, unit_id: str) -> List[str]:
+    """intro_json 的「单位构成」区块 → 原生中文构成行（如 '1 艘毁灭炮艇，95分'）。"""
+    try:
+        r = conn.execute(
+            "SELECT intro_json FROM unit_zh_detail WHERE canonical_id = ?", (unit_id,),
+        ).fetchone()
+    except sqlite3.OperationalError:
+        return []
+    if not r or not r[0]:
+        return []
+    try:
+        blocks = json.loads(r[0])
+    except (json.JSONDecodeError, TypeError):
+        return []
+    lines: List[str] = []
+    in_section = False
+    for b in blocks if isinstance(blocks, list) else []:
+        t = b.get("type") if isinstance(b, dict) else None
+        if t == "h3":
+            in_section = str(b.get("content", "")).strip() == "单位构成"
+            continue
+        if in_section and isinstance(b.get("content"), list):
+            txt = " ".join(
+                str(s.get("text", "")) for s in b["content"] if isinstance(s, dict)
+            ).strip()
+            if txt:
+                lines.append(txt)
+    return lines
 
 
 def _localize_composition(ds_dict: Dict[str, Any]) -> None:
@@ -170,17 +233,26 @@ def unit_card(
     try:
         zh = load_zh_detail(db_path, unit_id)
         ds_dict = asdict(ds)
+        meta = _load_meta(conn, unit_id)
+        zh_composition: List[str] = []
         if lang == "zh":
-            _localize_weapon_names(ds_dict, zh)
+            name_map = _localize_weapon_names(ds_dict, zh)
             _localize_composition(ds_dict)
+            if meta.get("loadout"):
+                meta["loadout"] = _localize_loadout(str(meta["loadout"]), name_map)
+            # 背景文案无中文源：zh 模式不硬塞英文抒情段（切 EN 一键可看），诚实不机翻
+            meta["legend"] = None
+            # 原生中文构成（intro_json，含正确量词「1 艘毁灭炮艇，95分」）优先
+            zh_composition = _load_zh_composition(conn, unit_id)
         res = {
             "found": True,
             "datasheet": ds_dict,
             # en 模式不给中文层 → _abilities 走英文表、name_zh 仍由 datasheet 提供
             "datasheet_zh": zh if lang == "zh" else None,
             "abilities": _load_abilities(conn, unit_id),
-            "meta": _load_meta(conn, unit_id),
+            "meta": meta,
             "faction_keywords": _load_faction_keywords(conn, unit_id),
+            "zh_composition": zh_composition,
             "lang": lang,
         }
     finally:

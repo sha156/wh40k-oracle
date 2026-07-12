@@ -172,11 +172,12 @@
 
 /* ============ 官方版式兵牌表格（Wahapedia table.wp） ============ */
 @layer components {
+  /* 桌面不设 min-width：武器名可换行、关键词独立成行，7 列在 ≥600px 容器内全显示
+     （用户验收：不要横滑）；手机端媒体查询里恢复 min-width + 容器横滑 */
   .tbl-wp {
     width: 100%;
     border-collapse: collapse;
     font-size: 13px;
-    min-width: 560px;
   }
   .tbl-wp th {
     background: var(--color-grey-head);
@@ -206,12 +207,11 @@
     background: var(--color-zebra);
   }
   .tbl-wp .kw {
-    display: inline-block;
+    display: block; /* 独立成行：压缩武器名列的最小宽度，桌面免横滑 */
     font-size: 11px;
     color: var(--color-tau);
     font-weight: 700;
     letter-spacing: 0.5px;
-    margin-left: 6px;
   }
   .tbl-wp .num {
     font-family: var(--font-cond);
@@ -234,7 +234,7 @@
   @media (max-width: 679.98px) {
     .tbl-wp {
       font-size: 12px;
-      min-width: 520px;
+      min-width: 480px; /* 手机 7 列挤不下，保留容器横滑 */
     }
   }
 }

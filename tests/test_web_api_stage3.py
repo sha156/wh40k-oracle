@@ -213,7 +213,8 @@ def test_codex_card_has_complete_abilities_and_meta():
     assert len(card.abilities) >= 3
     names = [a.name for a in card.abilities]
     assert any("Advanced Armour" in n for n in names)
-    assert card.loadout and "rail rifle" in card.loadout.lower()
+    # zh 模式装备已翻译（武器名映射自黑图层）
+    assert card.loadout and "重型磁轨枪" in card.loadout
     assert card.faction_keywords  # 阵营关键词非空
     # 无效保护格式化为 N+（Custodes 有 invuln）
     custodes = codex.unit_card(DB_PATH, "000000001")
@@ -239,6 +240,39 @@ def test_codex_card_lang_toggle():
     assert zh.melee[0].range == "近战" and en.melee[0].range == "Melee"
     # en 能力一律英文表
     assert all(not any("一" <= ch <= "鿿" for ch in a.name) for a in en.abilities)
+
+
+@pytest.mark.skipif(not DB_PATH.exists(), reason="wh40k.sqlite 不存在")
+def test_codex_card_zh_loadout_composition_legend():
+    """zh 模式：装备文本翻译（武器名映射）、构成用 intro 原生中文、背景文案隐藏。"""
+    from web_api import codex
+
+    zh = codex.unit_card(DB_PATH, "000000553", lang="zh")   # 毁灭炮艇
+    en = codex.unit_card(DB_PATH, "000000553", lang="en")
+    assert zh and en
+    # 装备：前缀 + 武器名已翻，分号中文化
+    assert zh.loadout.startswith("本模型装备：")
+    assert "高斯炮" in zh.loadout and "；" in zh.loadout
+    assert "gauss" not in zh.loadout.lower()
+    # 构成：intro_json 原生中文（量词正确）
+    comp0 = "".join(getattr(x, "s", "") for x in zh.composition[0])
+    assert "艘" in comp0 and "95" in comp0
+    # 背景：zh 隐藏、en 保留
+    assert zh.legend is None
+    assert en.legend and "Annihilation" in en.legend
+
+
+def test_localize_loadout_unmapped_names_stay_english():
+    """装备翻译：映射不到的武器名保英文（诚实，不猜译名）。"""
+    from web_api.codex import _localize_loadout
+
+    out = _localize_loadout(
+        "This model is equipped with: gauss cannon; mystery gun.",
+        {"gauss cannon": "高斯炮"},
+    )
+    assert out.startswith("本模型装备：")
+    assert "高斯炮" in out and "mystery gun" in out
+    assert out.endswith("。")
 
 
 def test_localize_weapon_names_count_guard():

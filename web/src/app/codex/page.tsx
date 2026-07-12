@@ -119,9 +119,10 @@ export default function CodexPage() {
           </p>
         ) : null}
 
-        {/* 阵营选择 + 语言切换 */}
-        <div className="mb-4 flex items-center gap-2">
-          <div className="flex min-w-0 flex-1 gap-2 overflow-x-auto scrollbar-none pb-1">
+        {/* 阵营选择 + 语言切换：桌面全部换行显示（横滑条藏了滚动条，鼠标点不到后面的阵营）；
+            手机保留横滑（触屏可扫） */}
+        <div className="mb-4 flex items-start gap-2">
+          <div className="flex min-w-0 flex-1 flex-wrap gap-2 max-tablet:flex-nowrap max-tablet:overflow-x-auto max-tablet:scrollbar-none max-tablet:pb-1">
             {factions.map((f) => (
               <button
                 key={f.id}

@@ -234,7 +234,11 @@ def build_entity_card(
         loadout=loadout,
         damaged=damaged,
         leads=leads,
-        composition=_composition(ds, lang),
+        composition=(
+            [to_richtext(line) for line in tool_result["zh_composition"]]
+            if tool_result.get("zh_composition")
+            else _composition(ds, lang)
+        ),
         keywords=keywords,
         factionKeywords=faction_keywords,
         legend=legend,
