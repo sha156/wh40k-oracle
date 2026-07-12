@@ -76,6 +76,11 @@ USE_RERANKER      = False
 # 检索参数
 FAISS_TOP_K   = 30   # 向量召回数量
 RULES_FLOOR_K = 2    # 11版规则层保底条数（中文查询对英文核心规则跨语排名失利时的兜底）
+# 规则层保底专用 fetch_k：langchain FAISS 的 filter 先取 fetch_k 个向量近邻再按元数据过滤，
+# 而规则层（layer=rules，11版核心规则）仅 141 个 chunk。S2 跨语实测证实：某些冷门英文
+# 术语（如 psychic/命中修正上限）与中文查询语义距离大，规则 chunk 排在 200 名候选池外→
+# 过滤后为空、保底失效。取 ≥ 全库规模保证 141 个规则 chunk 全进候选池、取到精确 top-K。
+RULES_FLOOR_FETCH_K = 8000
 BM25_TOP_K    = 15   # BM25 召回数量
 RERANK_TOP_N  = 8    # Rerank 后保留数量
 
@@ -380,7 +385,7 @@ def hybrid_retrieve(
         try:
             rules_docs = vectorstore.similarity_search(
                 query, k=RULES_FLOOR_K,
-                fetch_k=max(FAISS_TOP_K * 5, 200),
+                fetch_k=RULES_FLOOR_FETCH_K,
                 filter={"layer": "rules"})
         except Exception as e:
             st.warning(f"规则层保底检索出错: {e}")
