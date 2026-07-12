@@ -203,6 +203,62 @@ def test_codex_factions_units_card():
 
 
 @pytest.mark.skipif(not DB_PATH.exists(), reason="wh40k.sqlite 不存在")
+def test_codex_card_has_complete_abilities_and_meta():
+    """图鉴兵牌补全：能力从 abilities 表取（完整）+ 装备/阵营关键词。"""
+    from web_api import codex
+
+    # Broadside：黑图中文能力层为空，但 abilities 表有 3 条（旧版会显示 0）
+    card = codex.unit_card(DB_PATH, "000000433")
+    assert card is not None
+    assert len(card.abilities) >= 3
+    names = [a.name for a in card.abilities]
+    assert any("Advanced Armour" in n for n in names)
+    assert card.loadout and "rail rifle" in card.loadout.lower()
+    assert card.faction_keywords  # 阵营关键词非空
+    # 无效保护格式化为 N+（Custodes 有 invuln）
+    custodes = codex.unit_card(DB_PATH, "000000001")
+    if custodes and custodes.invuln:
+        assert custodes.invuln.endswith("+")
+
+
+@pytest.mark.skipif(not DB_PATH.exists(), reason="wh40k.sqlite 不存在")
+def test_codex_card_lang_toggle():
+    """中英切换：zh 模式武器名本地化（黑图层）且数值仍英文权威；en 模式全英文。"""
+    from web_api import codex
+
+    zh = codex.unit_card(DB_PATH, "000000433", lang="zh")
+    en = codex.unit_card(DB_PATH, "000000433", lang="en")
+    assert zh and en
+    # zh：武器名/关键词中文；en：英文
+    assert zh.ranged[0].name == "重型磁轨枪" and "重型" in (zh.ranged[0].kw or "")
+    assert en.ranged[0].name == "Heavy rail rifle"
+    # 数值两种模式完全一致（英文权威表，黑图数值漂移不得渗入）
+    for wz, we in zip(zh.ranged, en.ranged):
+        assert (wz.a, wz.s, wz.ap, wz.d) == (we.a, we.s, we.ap, we.d)
+    # 近战 range 本地化差异
+    assert zh.melee[0].range == "近战" and en.melee[0].range == "Melee"
+    # en 能力一律英文表
+    assert all(not any("一" <= ch <= "鿿" for ch in a.name) for a in en.abilities)
+
+
+def test_localize_weapon_names_count_guard():
+    """位置匹配守卫：中英武器数量不等时整组不换（防错配=自信的错误）。"""
+    from web_api.codex import _localize_weapon_names
+
+    ds = {"weapons": [
+        {"kind": "ranged", "name": "Gun A", "keywords": []},
+        {"kind": "ranged", "name": "Gun B", "keywords": []},
+    ]}
+    zh = {"武器": {"射击武器": [{"name": "只有一把"}]}}  # 1 vs 2 → 不换
+    _localize_weapon_names(ds, zh)
+    assert ds["weapons"][0]["name"] == "Gun A"
+    zh2 = {"武器": {"射击武器": [{"name": "甲枪"}, {"name": "乙枪", "skill": ["双联"]}]}}
+    _localize_weapon_names(ds, zh2)
+    assert ds["weapons"][0]["name"] == "甲枪"
+    assert ds["weapons"][1]["keywords"] == ["双联"]
+
+
+@pytest.mark.skipif(not DB_PATH.exists(), reason="wh40k.sqlite 不存在")
 def test_codex_unit_not_found():
     from web_api import codex
     assert codex.unit_card(DB_PATH, "999999999") is None

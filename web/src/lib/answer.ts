@@ -56,19 +56,32 @@ export interface Ability {
   text?: string;
 }
 
-/** E6 官方版式兵牌（同 wiki frontmatter + 表结构） */
+/** 受损档（载具/巨兽血量降到阈值时的减值） */
+export interface DamagedProfile {
+  w: string; // 触发血量区间，如 "1-5"
+  text: string;
+}
+
+/** E6 官方版式兵牌（Wahapedia datasheet 复刻） */
 export interface EntityCard {
   nameZh: string;
   nameEn: string;
   pts: string; // 如 "80 / 170 / 270"
+  role?: string; // 战场角色
   stats: { lab: string; val: string }[];
+  invuln?: string; // 无效保护值，如 "5+"
   ranged: WeaponRow[];
   melee: WeaponRow[];
-  abilities: Ability[];
+  abilities: Ability[]; // 能力（核心/阵营/兵牌，带规则文本）
+  loadout?: string; // 默认装备
+  damaged?: DamagedProfile; // 受损档
+  leads?: string; // 可依附/带领的单位说明
   composition: RichText[];
-  keywords: string;
+  keywords: string; // 单位关键词
+  factionKeywords?: string; // 阵营关键词
+  legend?: string; // 背景文案
   faction: string;
-  src: string; // 书名 + 页码
+  src: string; // 数据来源
   wiki: string; // wiki 路径
 }
 

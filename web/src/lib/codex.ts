@@ -40,12 +40,15 @@ export function fetchUnits(
   ).then((d) => d.units);
 }
 
+export type CodexLang = "zh" | "en";
+
 export function fetchUnitCard(
   unitId: string,
+  lang: CodexLang = "zh",
   signal?: AbortSignal,
 ): Promise<EntityCard> {
   return getJson<{ card: EntityCard }>(
-    `/codex/units/${encodeURIComponent(unitId)}`,
+    `/codex/units/${encodeURIComponent(unitId)}?lang=${lang}`,
     signal,
   ).then((d) => d.card);
 }

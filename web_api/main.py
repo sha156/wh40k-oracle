@@ -165,12 +165,14 @@ def codex_units(faction_id: str) -> Dict[str, Any]:
 
 
 @app.get("/codex/units/{unit_id}")
-def codex_unit(unit_id: str) -> Dict[str, Any]:
-    """图鉴：单位兵牌（EntityCard）。"""
+def codex_unit(unit_id: str, lang: str = "zh") -> Dict[str, Any]:
+    """图鉴：单位兵牌（EntityCard）。lang=zh 本地化优先 / lang=en 全英文。"""
     from web_api import codex
+    if lang not in ("zh", "en"):
+        raise HTTPException(status_code=422, detail="lang 仅支持 zh/en")
     if not DB_PATH.exists():
         raise HTTPException(status_code=503, detail="结构库未构建")
-    card = codex.unit_card(DB_PATH, unit_id)
+    card = codex.unit_card(DB_PATH, unit_id, lang=lang)
     if card is None:
         raise HTTPException(status_code=404, detail="单位不存在")
     return {"card": card.model_dump(by_alias=True)}
