@@ -179,16 +179,20 @@ def test_conversion_lowers_crit_hit_at_long_range():
     assert close(run(w, t, st(long_range=False)).hits.mean(), 60 * 2 / 6, rel=0.02)  # 仅5+
 
 
-def test_indirect_fixed_6up_hit_and_grants_cover():
-    # 11版 24.19+10.07：间接开火命中与 BS 无关——未修正仅 6 命中；目标获掩体（保留）
+def test_indirect_fixed_6up_hit_bs_independent():
+    # 11版 24.19+10.07：间接开火命中与 BS 无关——未修正仅 6 命中。
+    # 目标虽获掩体收益（13.08），但 11 版掩体=恶化攻方 BS，而固定阈值本就无视 BS 修正，
+    # 故掩体在间接开火下不改变命中/过保数值——其防御价值全部来自 6+ 固定阈值本身
+    # （对比十版：彼时掩体作用于保存骰，间接开火会实打实降低目标过保率）。
     w = weapon(const(60), 3, 8, 0, const(1), effects=kw("indirect fire"))
     t = tgt(4, 4, 1, 800)
     r_ind = run(w, t, st(indirect=True))
     r_dir = run(w, t, st(indirect=False))
     assert close(r_ind.hits.mean(), 60 * 1 / 6, rel=0.03)      # 6+，与 BS3+ 无关
     assert close(r_dir.hits.mean(), 60 * 4 / 6, rel=0.02)      # 直射按 BS 3+
-    # 掩体：indirect 目标获掩体 → 过保率更低
-    assert r_ind.unsaved.mean() / r_ind.wounds.mean() < r_dir.unsaved.mean() / r_dir.wounds.mean()
+    # 掩体（BS 惩罚）对固定阈值无效 → 每发致伤的过保率与直射一致（sv4 AP0 → 4/6）
+    assert close(r_ind.unsaved.mean() / r_ind.wounds.mean(),
+                 r_dir.unsaved.mean() / r_dir.wounds.mean(), rel=0.03)
 
 
 # ===================== 致伤 =====================

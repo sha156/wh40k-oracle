@@ -2,8 +2,8 @@
 
 分类器不自动施加任何效果（见 abilities.py 裁决）——它只分桶 + 为可建模防守 USR
 产出"若启用则施加"的 Effect。这里断言：条件式 FNP 必进 toggle 不误判无条件、
-Stealth（11版24.33=掩体收益）端到端让射击过保变难而命中不变、近战不受影响、
-各桶之和 == 原始条数（不静默丢）。
+Stealth（11版24.33=掩体收益，13.08 掩体=恶化攻方 BS）端到端让射击命中变难、
+近战不受影响、各桶之和 == 原始条数（不静默丢）。
 """
 from __future__ import annotations
 
@@ -252,11 +252,12 @@ def test_stealth_grants_cover_in_shooting():
     atk = _atk("24\"", bs_ws=3)                     # 3+ 命中，AP0
     base = _raw(atk, _tgt(), Stance(phase="shooting"))
     stl = _raw(atk, _tgt((STEALTH,)), Stance(phase="shooting"))
-    # 命中不变（11版 Stealth 不再减命中）
-    assert float(stl.hits.mean()) == pytest.approx(float(base.hits.mean()), abs=0.15)
-    # Sv6+ AP0 → 掩体后有效 5+：过保失败率 5/6 → 4/6（unsaved 约降 20%）
+    # 11版 24.33+13.08：Stealth=掩体收益=恶化攻方 BS 1，命中 3+ → 4+（4/6 → 3/6）
+    hit_ratio = float(stl.hits.mean()) / float(base.hits.mean())
+    assert hit_ratio == pytest.approx(0.75, abs=0.03)
+    # 掩体不再作用于保存骰，unsaved 随命中同比例下降（≈0.75），非十版的保存侧 0.8
     ratio = float(stl.unsaved.mean()) / float(base.unsaved.mean())
-    assert ratio == pytest.approx(0.8, abs=0.05)
+    assert ratio == pytest.approx(0.75, abs=0.04)
 
 
 def test_stealth_cancelled_by_ignores_cover():

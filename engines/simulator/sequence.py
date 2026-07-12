@@ -2,9 +2,11 @@
 
 版本口径（2026-07-10 起，按 11 版 USR 审计 S3 逐项修正，见
 docs/superpowers/specs/2026-07-10-edition-11-usr-audit.md）：
-  · 已 11 版化：Stealth（24.33 掩体化）/ Indirect Fire（24.19+10.07 固定未修正阈值）/
-    Heavy（24.16 条件放宽，字段沿用 stationary）/ Blast X（24.05）/ Cleave X（24.06）/
-    Psychic（24.29 无视不利命中修正）/ dev 致命池不吃减伤（24.10+06.02）；
+  · 已 11 版化：Benefit of Cover（13.08 掩体=恶化攻方 BS 1、非十版护甲+1，且十版"AP0 对
+    3+ 甲无效"例外整体废弃，见 _gather_params）/ Stealth（24.33 掩体化）/ Indirect Fire
+    （24.19+10.07 固定未修正阈值）/ Heavy（24.16 条件放宽，字段沿用 stationary）/
+    Blast X（24.05）/ Cleave X（24.06）/ Psychic（24.29 无视不利命中修正，含无视掩体
+    BS 惩罚）/ 特殊保护（05.04 单次保存骰双重对照）/ dev 致命池不吃减伤（24.10+06.02）；
   · 其余词条经审计与 11 版一致（A 类：rapid fire/melta/sustained/dev/anti/…）沿用原实现；
   · 未审计部分（如 ±1 修正夹紧上限）仍为十版口径，如实标注。
 
@@ -16,8 +18,8 @@ docs/superpowers/specs/2026-07-10-edition-11-usr-audit.md）：
 (N, A) 伤害数组（未命中/未过伤/被保存的槽 = 0）；跨武器沿槽维拼接后，正常伤害在前、
 致命池在后，喂进已 spike 验证的 `allocate_numpy` 做不溢出+已损伤优先+逐点FNP+致命池分配。
 
-P4-b 覆盖：attacks(裸采样) / hit(BS-WS,自然骰) / wound(S-T查表,自然骰) / save(AP+掩体+invuln)
-/ damage(采样+减伤夹≥1) / fnp / dev 致命池 / 防守开关(FNP·减伤·掩体)。
+P4-b 覆盖：attacks(裸采样) / hit(BS-WS,自然骰,含掩体 BS 惩罚) / wound(S-T查表,自然骰)
+/ save(AP+invuln 单次双重对照) / damage(采样+减伤夹≥1) / fnp / dev 致命池 / 防守开关(FNP·减伤·掩体)。
 攻击性词条（rapid fire/sustained/lethal/anti/twin-linked/blast/melta/…）经 Effect 通道在
 P4-c 接入本 pipeline 的对应阶段，届时本文件按 op 扩展分支。
 """
@@ -57,18 +59,18 @@ def wound_target(strength: int, toughness: int) -> int:
     return 6                          # 2S ≤ T
 
 
-def effective_save(sv: int, ap: int, invuln: Optional[int],
-                   cover: bool, ignores_cover: bool) -> int:
-    """有效保存所需骰面（越小越易保）：护甲经 AP/掩体修正后与 invuln 取更优。
+def effective_save(sv: int, ap: int, invuln: Optional[int]) -> int:
+    """有效保存所需骰面（越小越易保）：AP 修正后的护甲与 invuln 单次保存骰双重对照取更优。
 
     - AP 存负值，`sv - ap` = 护甲变差（3+ AP-1 → 4+）。
-    - 掩体 +1（护甲 -1 所需），但【Sv≤3+ 对 AP0 不享受】、ignores_cover 禁掩体。
-    - 护甲夹到 ≥2（自然 1 恒失败，救不到 1+）。invuln 不受 AP/掩体。
+    - 护甲夹到 ≥2（自然 1 恒失败，救不到 1+）。invuln 不受 AP 修正。
+    - 11版起掩体不再作用于保存骰（改为攻方 BS 惩罚，见 _gather_params 的掩体折算），
+      故本函数不涉掩体，十版"AP0 对 3+ 甲无效"的掩体例外条款随之整体废弃。
+    - 11版 05.04 特殊保护"同一颗保存骰同时对照 InSv 与 AP 后 Sv、任一达标即免伤"——一颗骰
+      对照两阈值在数学上等价于取更小阈值 min(invuln, armor)，故此处返回二者更优即精确
+      （自然 1 必失败由调用方 `save_roll != 1` 保证）。
     """
     armor = sv - ap
-    benefit = cover and not ignores_cover and not (sv <= 3 and ap == 0)
-    if benefit:
-        armor -= 1
     if armor < 2:
         armor = 2
     if invuln is not None and invuln < armor:
@@ -177,7 +179,7 @@ def _gather_params(w: WeaponProfile, stance: Stance, target: TargetProfile) -> _
     #     【总和】夹 ±1（未审计项，沿用十版口径），故必须在 clamp 之前叠加
     #     （烟幕 -1 与 heavy +1 可抵消为 0）；
     #   · save+cover（11版 Stealth 24.33：被远程攻击选中获掩体收益）并入掩体开关，
-    #     与武器侧 [IGNORES COVER]（24.18）在 effective_save 里天然抵消。
+    #     于下方折成命中惩罚时被武器侧 [IGNORES COVER]（24.18）整体抵消。
     for e in target.effects:
         if not _cond_true(e.condition, stance, target):
             continue
@@ -189,8 +191,19 @@ def _gather_params(w: WeaponProfile, stance: Stance, target: TargetProfile) -> _
                 hit_neg += v
         elif e.phase == "save" and e.op == "cover":
             p.cover = True
-    # [PSYCHIC]（11版24.29）：攻方每次攻击可无视 BS/WS 与命中骰的任意修正——按有利
-    # 方向执行：只忽略负修正、保留正修正（heavy +1 照常享受）。
+    # ── Benefit of Cover（11版 13.08）：掩体收益 = 恶化该次攻击的 BS 1 点（射击专属），
+    #   十版"护甲保存骰+1、且 AP0 对 3+ 甲无效"整体作废——掩体从保存侧挪到命中侧。
+    #   折进命中负修正 hit_neg（而非 effective_save）后自然获得三条 11 版语义：
+    #     · 武器侧 [IGNORES COVER]（24.18）→ p.ignores_cover 使 cover_active 为假，惩罚不进桶；
+    #     · 攻方 [PSYCHIC]（24.29）→ 紧接的 hit_neg 清零把掩体惩罚一并无视（B6 交互）；
+    #     · 曲射固定阈值 / torrent 自动命中路径在 _resolve_weapon 不读 hit_mod，故掩体对其
+    #       天然无效（与 11 版一致：曲射阈值作用于"未修正"命中骰，掩体这类修正不生效）。
+    #   近战不受掩体影响（13.08 只对远程攻击），故仅射击阶段折算。
+    cover_active = p.cover and not p.ignores_cover
+    if cover_active and stance.phase == "shooting":
+        hit_neg -= 1
+    # [PSYCHIC]（11版24.29）：攻方每次攻击可无视 BS/WS 与命中骰的任意修正（含掩体的 BS
+    # 惩罚）——按有利方向执行：只忽略负修正、保留正修正（heavy +1 照常享受）。
     if p.ignore_neg_hit:
         hit_neg = 0
     # 命中/致伤修正各自夹到 ±1（修正总和上限，未审计项沿用十版口径）
@@ -404,7 +417,7 @@ def _resolve_weapon(
 
     # ③-⑥ Wound / Save / Damage
     wt = wound_target(w.strength, target.t)
-    sv_need = effective_save(target.sv, w.ap, target.invuln, p.cover, p.ignores_cover)
+    sv_need = effective_save(target.sv, w.ap, target.invuln)
     to_wound = np.concatenate([base_to_wound, extra_mask], axis=1)
 
     nd1, md1, w1, u1, m1 = _wound_save_damage(

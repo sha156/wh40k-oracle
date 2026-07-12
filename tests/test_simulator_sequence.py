@@ -1,7 +1,7 @@
-"""P4-b 裸攻击序列黄金用例：S-T 查表 / 保存修正 / dev 致命池 / 掩体订正 / FNP。
+"""P4-b 裸攻击序列黄金用例：S-T 查表 / 保存修正 / dev 致命池 / 掩体（11版BS惩罚）/ FNP。
 
 策略：用**可解析期望**的合成 profile，把 hit/wound/save 三阶段的漏斗均值与解析概率
-对拍（容差 <1%），再对规则订正项（dev 跳 invuln、掩体 Sv3+ 对 AP0 不享受、FNP 对
+对拍（容差 <1%），再对规则订正项（dev 跳 invuln、11版掩体=恶化攻方 BS 而非护甲+1、FNP 对
 致命池生效、不溢出）做定向断言。分配核本身已由 _spike_allocation 精确对拍过。
 """
 from __future__ import annotations
@@ -87,29 +87,23 @@ def test_wound_target_boundaries_exact():
     assert wound_target(2, 5) == 6
 
 
-# ---------- 保存修正 + 掩体订正 ----------
+# ---------- 保存修正（11版：effective_save 只管 AP+invuln，掩体已移出保存侧）----------
 def test_effective_save_ap_worsens():
-    assert effective_save(3, 0, None, cover=False, ignores_cover=False) == 3
-    assert effective_save(3, -1, None, cover=False, ignores_cover=False) == 4
-    assert effective_save(2, -3, None, cover=False, ignores_cover=False) == 5
+    assert effective_save(3, 0, None) == 3
+    assert effective_save(3, -1, None) == 4
+    assert effective_save(2, -3, None) == 5
 
 
 def test_effective_save_invuln_caps():
     # 6+ 甲被 AP-2 打成 8+（救不到），invuln 4++ 兜底
-    assert effective_save(6, -2, 4, cover=False, ignores_cover=False) == 4
+    assert effective_save(6, -2, 4) == 4
 
 
-def test_cover_sv3_ap0_denied_but_ap1_granted():
-    # Sv3+ 对 AP0 不享受掩体（仍 3+）
-    assert effective_save(3, 0, None, cover=True, ignores_cover=False) == 3
-    # Sv3+ 对 AP-1 享受掩体（4+ 经掩体回到 3+）
-    assert effective_save(3, -1, None, cover=True, ignores_cover=False) == 3
-    # Sv4+ 对 AP0 享受掩体（→3+）
-    assert effective_save(4, 0, None, cover=True, ignores_cover=False) == 3
-
-
-def test_cover_ignored_by_ignores_cover():
-    assert effective_save(4, 0, None, cover=True, ignores_cover=True) == 4
+def test_effective_save_double_comparison_takes_favorable():
+    # 11版 05.04：单次保存骰同时对照 InSv 与 AP 后 Sv，取更优（数学=取更小阈值）
+    assert effective_save(2, 0, 4) == 2        # 护甲 2+ 优于 invuln 4+ → 2+
+    assert effective_save(6, -2, 4) == 4        # 护甲 8+ 救不到，invuln 4+ 接管 → 4+
+    assert effective_save(3, -1, 5) == 4        # 护甲 4+ 优于 invuln 5+ → 4+
 
 
 # ---------- 漏斗均值 vs 解析期望（<1%）----------
@@ -187,23 +181,40 @@ def test_fnp_reduces_mortal_damage():
     assert close(ratio, 2 / 3, rel=0.03), ratio
 
 
-# ---------- 掩体在完整序列里的效果 ----------
-def test_cover_affects_unsaved_rate_in_sequence():
-    # Sv4+ AP0：掩体应把过保率降低（4+→3+）
+# ---------- 掩体在完整序列里的效果（11版 13.08：恶化攻方 BS 1，射击专属）----------
+def test_cover_worsens_hit_not_save_in_sequence():
+    # BS2+ 攻方，目标进掩体 → BS3+：命中 5/6→4/6（降 20%）。掩体不再碰保存骰，
+    # 因此每发命中的过保失败率不变，unsaved 与 hits 同比例下降（≈0.8）。
     w = weapon(const(60), bs_ws=2, strength=8, ap=0, damage=const(1))
-    tgt = target(t=4, sv=4, w=1, models=300)
+    tgt = target(t=4, sv=5, w=1, models=300)
     raw_open = run_sequence(attacker(w), tgt, stance(cover=False), n=N, seed=SEED)
     raw_cover = run_sequence(attacker(w), tgt, stance(cover=True), n=N, seed=SEED)
-    assert raw_cover.unsaved.mean() < raw_open.unsaved.mean() * 0.85
+    assert close(raw_cover.hits.mean(), raw_open.hits.mean() * 4 / 5, rel=0.02)
+    # 每发命中的过保失败率不变（掩体不作用于保存）：unsaved/hits 两态一致
+    assert close(raw_cover.unsaved.mean() / raw_cover.hits.mean(),
+                 raw_open.unsaved.mean() / raw_open.hits.mean(), rel=0.02)
 
 
-def test_cover_denied_for_sv3_ap0_in_sequence():
-    # Sv3+ AP0：掩体应被拒，过保率与无掩体一致
+def test_cover_benefit_applies_regardless_of_sv_ap_in_sequence():
+    # 11版取消十版"Sv3+ 对 AP0 不享受掩体"例外：Sv3+ AP0 目标进掩体同样受益，
+    # 命中随 BS 惩罚下降（十版此处 unsaved 与无掩体一致，现应显著下降）。
     w = weapon(const(60), bs_ws=2, strength=8, ap=0, damage=const(1))
     tgt = target(t=4, sv=3, w=1, models=300)
     raw_open = run_sequence(attacker(w), tgt, stance(cover=False), n=N, seed=SEED)
     raw_cover = run_sequence(attacker(w), tgt, stance(cover=True), n=N, seed=SEED)
-    assert close(raw_cover.unsaved.mean(), raw_open.unsaved.mean(), rel=0.03)
+    assert close(raw_cover.hits.mean(), raw_open.hits.mean() * 4 / 5, rel=0.02)
+    assert raw_cover.unsaved.mean() < raw_open.unsaved.mean() * 0.85
+
+
+def test_cover_not_applied_in_melee():
+    # 掩体只对远程攻击生效（13.08）：近战下 cover 开关不改变命中
+    w = weapon(const(60), bs_ws=2, strength=8, ap=0, damage=const(1), melee=True)
+    tgt = target(t=4, sv=5, w=1, models=300)
+    raw_open = run_sequence(attacker(w), tgt,
+                            stance(phase="melee", cover=False), n=N, seed=SEED)
+    raw_cover = run_sequence(attacker(w), tgt,
+                             stance(phase="melee", cover=True), n=N, seed=SEED)
+    assert close(raw_cover.hits.mean(), raw_open.hits.mean(), rel=0.02)
 
 
 # ---------- 退化输入不静默夹取（审查发现的两个 HIGH/LOW） ----------

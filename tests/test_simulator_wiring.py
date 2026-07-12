@@ -125,19 +125,20 @@ def test_simulate_combat_multimodel_needs_loadout():
 # ---- P5-c：Smokescreen 手工核验开关（2026-07-11 按 11 版核心战略清单订正）----
 @pytestmark_db
 def test_smokescreen_grants_cover_only():
-    """11版核心战略 Smokescreen = 该阶段获掩体收益，**不再**减命中（十版 Stealth 成分已删）。"""
+    """11版核心战略 Smokescreen = 该阶段获掩体收益（13.08 掩体=恶化攻方 BS 1），
+    与十版不同：不产生独立的 Stealth 减命中成分，等价于开一次 cover 开关。"""
     from agent.tools import simulate_combat
-    # 用 Boyz 镜像当靶（5+ 甲对 AP0 真正享受掩体；Intercessor 3+ 甲对 AP0 不享受）
+    # Boyz 镜像当靶：11版掩体不看 Sv/AP，直接恶化射手 BS
     opt = lambda **k: {"loadout": [["Shoota", 10]], "phase": "shooting",
                        "defender_models": 10, "n": 8000, "seed": 9, **k}
     base = simulate_combat("Boyz", "Boyz", opt())
     smk = simulate_combat("Boyz", "Boyz", opt(smokescreen=True))
     cov = simulate_combat("Boyz", "Boyz", opt(cover=True))
-    # 命中不受烟幕影响（同种子逐骰一致）
-    assert smk["report"]["funnel"]["hits"] == base["report"]["funnel"]["hits"]
-    # 效果与掩体开关完全等价（同种子）
+    # 11版掩体=BS 惩罚 → 命中下降（十版此处命中不变的口径已作废）
+    assert smk["report"]["funnel"]["hits"] < base["report"]["funnel"]["hits"]
+    # 烟幕与掩体开关完全等价（同种子逐骰一致）
     assert smk["report"]["funnel"] == cov["report"]["funnel"]
-    # 掩体真的生效：未过保下降
+    # 掩体真的生效：未过保随命中同步下降
     assert smk["report"]["funnel"]["unsaved"] < base["report"]["funnel"]["unsaved"]
 
 
