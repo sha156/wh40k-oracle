@@ -30,6 +30,11 @@ zhipuai
 # 界面
 streamlit>=1.35.0
 
+# Web API 后端（BUILD-PLAN Stage 3：结构化回答契约 + SSE）
+fastapi>=0.115
+uvicorn[standard]>=0.30
+sse-starlette>=2.0
+
 # 工具
 python-dotenv
 pytest
