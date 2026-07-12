@@ -180,6 +180,35 @@ def test_contract_json_roundtrip_camelcase():
     # （本例无 entityCard，跳过）
 
 
+@pytest.mark.skipif(not DB_PATH.exists(), reason="wh40k.sqlite 不存在")
+def test_codex_factions_units_card():
+    """图鉴端点：阵营列表 → 单位列表 → 兵牌，真 DB。"""
+    from web_api import codex
+
+    factions = codex.list_factions(DB_PATH)
+    assert len(factions) >= 20  # 25 有单位阵营
+    top = factions[0]
+    assert top["count"] > 0 and top["name"]
+    # curated 中文名正确（不用众数——GC 不该是星界军）
+    gc = next((f for f in factions if f["id"] == "GC"), None)
+    if gc:
+        assert gc["nameZh"] == "基因窃取者教派"
+
+    units = codex.list_units(DB_PATH, top["id"])
+    assert len(units) == top["count"]
+    assert all("id" in u and "nameEn" in u for u in units)
+
+    card = codex.unit_card(DB_PATH, units[0]["id"])
+    assert card is not None and card.name_en
+
+
+@pytest.mark.skipif(not DB_PATH.exists(), reason="wh40k.sqlite 不存在")
+def test_codex_unit_not_found():
+    from web_api import codex
+    assert codex.unit_card(DB_PATH, "999999999") is None
+    assert codex.faction_exists(DB_PATH, "ZZZ") is False
+
+
 def test_run_and_format_with_fake_loop_llm():
     """端到端：Fake 主循环 LLM 直接 final（查意图会先被门控 nudge，这里用闲聊绕过）。"""
 
