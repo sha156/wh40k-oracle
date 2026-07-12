@@ -195,15 +195,17 @@ def stage_fp_errata(cfg: UpdateConfig) -> StageResult:
                            warning="fp_errata 补丁文件缺失，未补 11 版真漂移")
     from db_compile.fp_errata import apply_from_file
     rep = apply_from_file(cfg.db, cfg.fp_errata)
+    mismatches = len(rep["stat_mismatch"]) + len(rep["weapon_mismatch"])
     warn = None
-    if rep["stat_mismatch"]:
-        warn = (f"{len(rep['stat_mismatch'])} 条补丁库现值既非 from 也非 to，已让路未覆盖"
+    if mismatches:
+        warn = (f"{mismatches} 条补丁库现值既非 from 也非 to，已让路未覆盖"
                 "（上游可能已改，核对 patches.json）")
     return StageResult(
         "fp_errata", True,
         f"属性补丁 应用 {rep['stat_applied']} / 幂等 {rep['stat_already']} / "
-        f"让路 {len(rep['stat_mismatch'])}；新单位 插入 {len(rep['units_inserted'])} / "
-        f"已存在 {len(rep['units_exist'])}",
+        f"让路 {len(rep['stat_mismatch'])}；武器补丁 应用 {rep['weapon_applied']} / "
+        f"幂等 {rep['weapon_already']} / 让路 {len(rep['weapon_mismatch'])}；"
+        f"新单位 插入 {len(rep['units_inserted'])} / 已存在 {len(rep['units_exist'])}",
         detail=rep, warning=warn)
 
 

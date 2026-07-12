@@ -141,7 +141,9 @@ def render_simulator_panel(st) -> None:
         cols = st.columns(4)
         cols[0].checkbox("冲锋", key="sim_charge")
         cols[1].checkbox("半射程", key="sim_half")
-        cols[2].checkbox("目标在掩体", key="sim_cover")
+        cols[2].checkbox("目标在掩体", key="sim_cover",
+                         help="11版13.08：掩体收益=恶化攻方 BS 1（射击专属，"
+                              "非十版护甲+1）；攻方 [IGNORES COVER] 抵消、[PSYCHIC] 可无视")
         cols[3].checkbox('满足 Heavy 条件（移动≤3" 且未交战）', key="sim_stationary",
                          help='11版24.16：未交战、本回合未上场且全员移动≤3"；'
                               '亦作间接火力「驻停+有友军可见目标」的代理条件')
@@ -153,7 +155,8 @@ def render_simulator_panel(st) -> None:
                                "攻方 [IGNORES COVER] 可抵消")
         cols2[3].checkbox("守方烟幕(获掩体)", key="sim_smoke",
                           help="11版核心战略 Smokescreen：对手射击阶段开始时使用，"
-                               "该阶段指向本单位的攻击目标获掩体收益；无命中减值"
+                               "该阶段指向本单位的攻击目标获掩体收益（13.08=恶化攻方 BS 1）；"
+                               "不额外附加十版 Stealth 式减命中"
                                "（Go to Ground 已从 11 版核心战略移除）")
 
         cols3 = st.columns(4)

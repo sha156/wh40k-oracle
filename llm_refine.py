@@ -85,6 +85,10 @@ def verify_numbers(source: str, markdown: str) -> List[str]:
 MODEL = "deepseek-v4-pro"
 BASE_URL = "https://api.deepseek.com"
 MAX_RETRIES = 3
+# deepseek-v4-pro 是推理模型：max_tokens 同时覆盖 reasoning + 正文输出。
+# 4096 对推理开销大的长规则页会把正文截断（finish_reason=length，如 Core Rules p19
+# 2655 字源→59 字缓存）。提到 8192 给正文留足预算，显著降低截断复发。
+MAX_TOKENS = 8192
 
 
 def _strip_code_fence(content: str) -> str:
@@ -107,7 +111,7 @@ def refine_page(client, page_text: str, prev_tail: str, system_prompt: str = SYS
                     {"role": "user", "content": build_user_prompt(page_text, prev_tail)},
                 ],
                 temperature=0.0,
-                max_tokens=4096,
+                max_tokens=MAX_TOKENS,
             )
             content = _strip_code_fence(resp.choices[0].message.content or "")
             if content:

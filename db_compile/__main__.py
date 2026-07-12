@@ -187,18 +187,26 @@ def main() -> None:
         print(f"\nFaction Pack 真漂移补丁：")
         print(f"  属性：应用 {rep['stat_applied']} / 幂等 {rep['stat_already']} / "
               f"让路 {len(rep['stat_mismatch'])} / 跳过 {len(rep['stat_skipped'])}")
+        print(f"  武器：应用 {rep['weapon_applied']} / 幂等 {rep['weapon_already']} / "
+              f"让路 {len(rep['weapon_mismatch'])} / 跳过 {len(rep['weapon_skipped'])}")
         print(f"  新单位：插入 {len(rep['units_inserted'])}（{', '.join(rep['units_inserted'])}）"
               f" / 已存在 {len(rep['units_exist'])}")
         if rep["stat_changes"]:
-            print("\n  已改动：")
+            print("\n  属性已改动：")
             for ch in rep["stat_changes"]:
                 print(f"    {ch['faction']:4} {ch['unit'][:32]:32} {ch['field']:3} "
                       f"{ch['from']!r} → {ch['to']!r}")
-        if rep["stat_mismatch"]:
-            print("\n  ⚠️ 让路未覆盖（库现值既非 from 也非 to）：")
-            for ch in rep["stat_mismatch"]:
-                print(f"    {ch['faction']:4} {ch['unit'][:32]:32} {ch['field']:3} "
-                      f"库现值 {ch['db_now']!r}")
+        if rep["weapon_changes"]:
+            print("\n  武器已改动：")
+            for ch in rep["weapon_changes"]:
+                print(f"    {ch['faction']:4} {ch['unit'][:28]:28} {ch['weapon'][:20]:20} "
+                      f"{ch['field']:5} {ch['from']!r} → {ch['to']!r}")
+        for tag, key in (("属性", "stat_mismatch"), ("武器", "weapon_mismatch")):
+            if rep[key]:
+                print(f"\n  ⚠️ {tag}让路未覆盖（库现值既非 from 也非 to）：")
+                for ch in rep[key]:
+                    print(f"    {ch['faction']:4} {ch['unit'][:32]:32} {ch['field']:5} "
+                          f"库现值 {ch['db_now']!r}")
         print("\n  注意：db_compile build 重建会覆盖，重建后需重跑（已挂进 restore_authority_layers）")
     elif args.cmd == "downloads":
         from db_compile.downloads import (harvest, write_manifest, check,

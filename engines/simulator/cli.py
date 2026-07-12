@@ -93,7 +93,9 @@ def main(argv: Optional[List[str]] = None) -> int:
     p.add_argument("--phase", default="shooting", choices=["shooting", "melee"])
     p.add_argument("--charge", action="store_true")
     p.add_argument("--half-range", action="store_true", dest="half_range")
-    p.add_argument("--cover", action="store_true")
+    p.add_argument("--cover", action="store_true",
+                   help="目标享受掩体收益（11版13.08：恶化攻方 BS 1，射击专属，"
+                        "非十版护甲+1）；攻方 [IGNORES COVER] 抵消、[PSYCHIC] 可无视")
     p.add_argument("--stationary", action="store_true",
                    help='满足 Heavy 条件（11版24.16：未交战、本回合未上场且全员移动≤3"）；'
                         '亦作间接火力「驻停+有友军可见目标」的代理条件')
@@ -112,8 +114,9 @@ def main(argv: Optional[List[str]] = None) -> int:
                    help="守方 Stealth（11版24.33：被远程攻击选中获掩体收益，"
                         "攻方 [IGNORES COVER] 可抵消）")
     p.add_argument("--smokescreen", action="store_true",
-                   help="守方烟幕战略（11版核心战略：对手射击阶段开始时使用，"
-                        "该阶段获掩体收益；无命中减值。Go to Ground 已从 11 版核心战略移除）")
+                   help="守方烟幕战略（11版核心战略：对手射击阶段开始时使用，该阶段获掩体"
+                        "收益=恶化攻方 BS 1；不额外附加十版 Stealth 式减命中。"
+                        "Go to Ground 已从 11 版核心战略移除）")
     p.add_argument("--def-fights-first", action="store_true", dest="defender_fights_first")
     p.add_argument("--def-fights-last", action="store_true", dest="defender_fights_last")
     p.add_argument("--atk-fights-first", action="store_true", dest="attacker_fights_first")

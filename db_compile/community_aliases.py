@@ -49,6 +49,15 @@ NICKNAMES: Dict[str, str] = {
                                            # 桥会非确定性选行 → 直接点名 canonical id (#65)
     "死亡连无畏机兵": "Death Company Dreadnought",  # 「机兵」后缀口语形；原 ambiguous 降级
                                            # → RAG 被 FP 磁力勾爪变体抢答（T9≠基础型 T10）(#76)
+    # ── 2026-07-12 fp_errata 三个 11 版新兽人单位的中文别名（⚠️临时值，待黑图更新替换）──
+    # 黑图书馆尚无这三个 11 版新单位的官方中文名（gameId 未出 11 版）。此处按库内既有
+    # 兽人译名惯例手工补：Nob=老大（Nobz=老大队）、Big Mek=大技霸（超重装大技霸）、
+    # Boss=头目（Warboss=战争头目）。黑图更新后应以官方名替换并把这些降级为 alias。
+    "大头目": "Bigboss",                   # Bigboss：比战争头目更大的兽人首领（Boss=头目 + Big=大）
+    "掌旗老大": "Bannernob",               # Bannernob：扛军旗的老大（Banner=旗 + Nob=老大）
+    "旗手老大": "Bannernob",
+    "达卡里格大技霸": "Big Mek Dakkarig",  # Big Mek Dakkarig：具名大技霸（Big Mek=大技霸 + 音译名）
+    "达卡里格": "Big Mek Dakkarig",
 }
 
 

@@ -25,24 +25,27 @@
 ## 架构与技术栈
 
 - `ingest.py`：PDF（`data/`）→ PyMuPDF 提取 → SemanticChunker 分块 → bge-m3 嵌入 → FAISS（`local_vector_store/`）
-- `app.py`：Streamlit 界面；检索链 = FAISS + BM25（jieba 中文分词）+ 查询别名扩展（UNIT_ALIASES）+ RRF 融合 → LLM（deepseek-chat / glm-4-flash，OpenAI 兼容接口）。
+- `app.py`：Streamlit 界面；检索链 = FAISS + BM25（jieba 中文分词）+ 查询别名扩展（sqlite aliases
+  `load_alias_expansions` + 少量硬编码）+ RRF 融合 + **11版规则层保底**（单独按 `layer=rules` 过滤强塞
+  最高真源进上下文，`RULES_FLOOR_FETCH_K` 防冷门英文术语跨语饥饿）→ LLM（deepseek-chat / glm-4-flash）。
   FlashRank 重排默认关闭（`USE_RERANKER=False`）：实测 ms-marco 系列（含 MultiBERT）对中文重排差于 RRF 顺序
 - `hf_embeddings_compat.py`：HuggingFaceEmbeddings 兼容层
 - 模型缓存在 `opt/`（bge-m3、ms-marco-MiniLM-L-12-v2 等），CPU 推理
 - 嵌入走 hf-mirror 镜像 + Clash 代理（127.0.0.1:7897），相关环境变量在 ingest.py 顶部设置
 
-## 当前重点：LLM PDF 重构（2026-07 立项）
+## 当前重点：11 版迁移收尾（2026-07 立项，接近收官）
 
-**问题**：兵牌页（datasheet）的属性表/武器表被 PyMuPDF 拍扁成一维文字流，表头与数值分离，
-且 SemanticChunker 会把单位切成两半，导致属性类问题回答不准。
+未完成任务全景见 `docs/superpowers/plans/2026-07-12-remaining-tasks.md`；迁移计划与进度见
+`docs/superpowers/plans/2026-07-10-edition-11-migration.md`。
 
-**方案**（详见 `docs/superpowers/specs/2026-07-02-llm-pdf-refine-design.md`）：
-
-1. 新增 `llm_refine.py`：deepseek-chat 按战锤领域 schema 把每页文本重排成结构化
-   Markdown（一个单位/战略技能 = 一个 `##` 条目），按页内容哈希缓存到 `data_refined/<书名>/`
-2. `ingest.py` 改为优先读 `data_refined/`，按 `##` 标题分块（一个单位 = 一个完整 chunk），
-   元数据含 `book`/`unit`/`page`
-3. 试点：《钛帝国十版CODEX-20251112.pdf》验证通过后再全量跑 49 本
+- **已收官**：S1 语料重组 / S3 模拟器 USR 审计 / S4 结构库落账（含 fp_errata 武器补丁）/
+  S5 基准 v3=99.0 / S6 术语页 64/64 / **S7 模拟器掩体迁到命中侧（13.08 BS 惩罚 + B6 灵能×掩体）** /
+  **S2 中英跨语检索实测（bge-m3 跨语有效，规则层保底 fetch_k 修复后覆盖 25/25）**
+- **LLM PDF 重构已完成**：`llm_refine.py`（deepseek-chat 按领域 schema 重排每页为结构化 Markdown，
+  哈希缓存 `data_refined/<书>/`）+ `ingest.py` 优先读 refine 缓存按 `##` 分块，已全量铺开。
+  设计见 `docs/superpowers/specs/2026-07-02-llm-pdf-refine-design.md`
+- **剩余小收尾**：refine 缓存补齐对账（Core Rules 缺 12 页等，见 remaining-tasks T2）
+- **往后**：蓝图 P6 军表系统、P8 网站化（前端 BUILD-PLAN Stage 1-5）
 
 ## 数据事实（2026-07-10 语料重组后）
 
@@ -53,7 +56,9 @@
   旧版本重复 codex 在 `archive/`（勿回灌）
 - PDF 来自多个汉化组（老湿腐/DavidZ/双子星/kasa/官方），版式各异，勿用固定正则解析
 - 官方点数以 mfm.warhammer-community.com 实时站为真源（`db_compile mfm --fetch/--check/--apply`），
-  2026-07-10 校验 1224/1224 一致；7 个 MFM 单位库里无（11 版新单位，待 S4 结构库迁移）
+  2026-07-10 校验 1224/1224 一致。S4 已落账：`db/wh40k.sqlite` 已是 11 版数值真源（Wahapedia 滚更并入
+  6 月勘误），`db_compile/fp_errata.py` 外科补真漂移（25 飞机移动 + 3 FW 单位 + 2 武器格 + 插 3 兽人新单位），
+  带 from 守卫、挂 restore_authority_layers 防重建丢；CLI `python -m db_compile fp-errata`
 
 ## 约定
 

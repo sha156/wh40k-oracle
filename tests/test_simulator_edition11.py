@@ -230,6 +230,33 @@ def test_psychic_noop_without_modifiers():
     assert close(run(w, tgt(4, 7, 1, 800), st()).hits.mean(), 60 * 4 / 6, rel=0.02)
 
 
+# ===================== Benefit of Cover（13.08）+ B6 掩体×灵能 =====================
+def test_cover_worsens_bs_by_one():
+    # 11版 13.08：掩体收益 = 恶化攻方 BS 1（射击）。BS3+ 进掩体 → 4+（4/6 → 3/6）
+    w = weapon(const(60), 3, 4, 0, const(1))
+    t = tgt(4, 7, 1, 800)                        # sv=7 无保存，隔离命中效果
+    assert close(run(w, t, st()).hits.mean(), 60 * 4 / 6, rel=0.02)
+    assert close(run(w, t, st(cover=True)).hits.mean(), 60 * 3 / 6, rel=0.02)
+
+
+def test_cover_bs_penalty_ignored_by_ignores_cover():
+    # 武器带 [IGNORES COVER]（24.18）→ 掩体的 BS 惩罚被整体抵消，命中回到 BS3+（4/6）
+    w = weapon(const(60), 3, 4, 0, const(1), effects=kw("ignores cover"))
+    t = tgt(4, 7, 1, 800)
+    assert close(run(w, t, st(cover=True)).hits.mean(), 60 * 4 / 6, rel=0.02)
+
+
+def test_psychic_ignores_cover_bs_penalty():
+    # B6（24.29 × 13.08）：掩体在 11 版是 BS 修正 → [PSYCHIC] 武器可无视该惩罚
+    w_plain = weapon(const(60), 3, 4, 0, const(1))
+    w_psy = weapon(const(60), 3, 4, 0, const(1), effects=kw("psychic"))
+    t = tgt(4, 7, 1, 800)
+    # 普通武器进掩体：BS3+ → 4+（3/6）
+    assert close(run(w_plain, t, st(cover=True)).hits.mean(), 60 * 3 / 6, rel=0.02)
+    # psychic 武器进掩体：无视掩体 BS 惩罚 → 回到 BS3+（4/6）
+    assert close(run(w_psy, t, st(cover=True)).hits.mean(), 60 * 4 / 6, rel=0.02)
+
+
 # ===================== A 类收口：dev 致命池不吃减伤（24.10 + 06.02）=====================
 def test_dev_mortal_pool_ignores_damage_reduction():
     # 「受伤-1」只作用于正常伤害（3→2）；dev 暴击致伤的致命伤仍按 D=3
