@@ -2,18 +2,39 @@
 
 > 依据：11 版迁移计划（2026-07-10）、v2 蓝图 P0-P8 路线图（2026-07-04）、
 > 前端 BUILD-PLAN（2026-07-06）、S4-S6 各 spec，以及对当前代码/分支的实地核对。
->
-> **已完成不再列**：P0-P5 全部、11 版迁移 S1/S3/S4/S5/S6、实体解析修复、
-> 基准 v3=99.0 零硬错、S4 落账（PR #15 已并 main）。
 
-## 现状快照
+## ⏸️ 进度 CHECKPOINT（2026-07-12，让"继续"能无损续接）
 
-- 语料：61 本 PDF 入库，5571 chunks，edition/layer 元数据齐全
-- 数值真源：`db/wh40k.sqlite` 已 11 版化（属性一致率 99.85%），fp_errata 补丁层挂 restore
+**✅ T1 + T2 全部完成并已合并 main（PR #16，merge commit `906c25b9`）——11 版迁移正式收官。**
+本地 main 与 origin 同步、工作树干净、709 测试绿。四提交：
+- `2ad20192` S7 掩体落引擎（save→hit 侧 BS 惩罚 + B6 灵能×掩体）
+- `2c3b8e47` S2 跨语实测 + 规则层保底 `RULES_FLOOR_FETCH_K=8000`（25/25）
+- `f6c367e8` fp_errata 4 武器格 BSData 裁决（2 补丁 2 假警报）+ 3 新单位别名
+- `c4b96cd3` T2 缓存对账（补 Astra 51-156 大缺口 + 14 截断，`MAX_TOKENS=8192`）
+
+**下一步从这里选**（互不依赖，按兴趣挑）：T5 前端 Stage1-2（零后端依赖、正反馈快）
+**或** T3 P6 军表系统（补齐 L4 最后一块）。长期滚动 T4（DSL/wiki/基准）；随手 T6 分支清理。
+
+**遗留非阻塞项**（记得但不急）：
+- 67 个 verify_warn 页（refine 数字校验疑点，内容在库可检索，`scripts/refine_reconcile.py`
+  的 verify_warn 桶可随时拉清单人工比对原文）
+- T1-4 外部源观察项（BSData-11e/.cat、Wahapedia 11 版、黑图 11 版、Titan Legions 7 单位缺兵牌）
+
+**关键产物路径**：模拟器 `engines/simulator/`；检索 `app.py`（规则层保底段）；
+数据补丁 `db_compile/fp_errata.py`+`fp_errata_patches.json`；缓存工具 `scripts/refine_*.py`、
+`scripts/s2_crosslingual_probe.py`；报告 `docs/superpowers/specs/2026-07-12-*.md`；
+索引 `local_vector_store/`（5652 chunks，gitignore）；DB `db/wh40k.sqlite`（gitignore，`python -m db_compile fp-errata` 复现补丁）。
+
+## 现状快照（T1+T2 后）
+
+- 语料：61 本 PDF 入库，**5652 chunks**（Astra 补齐后），edition/layer 元数据齐全
+- 数值真源：`db/wh40k.sqlite` 已 11 版化（属性一致率 99.85%），fp_errata 补丁层（含武器补丁）挂 restore
 - 基准：11 版 gold v3 = **99.0 零硬错**（唯一 ⚠️ #42 多武器列举题）
-- 模拟器：fight_order / USR B 类 / PSYCHIC 等已 11 版化；**但攻击序列核心的
-  掩体与保存骰仍是十版形状**（见 T1-1，这是当前最大正确性缺口）
-- 测试：701 绿；main 干净，S4 落账已并（PR #15）
+- 模拟器：**掩体/保存骰已 11 版化**（S7 完成）；fight_order / USR B 类 / PSYCHIC 均 11 版
+- 检索：中文查询 25/25 命中 11 版规则层（S2 修复后）
+- 测试：**709 绿**；main 干净同步（PR #16 已并）
+
+> **以下 T1/T2 明细已全部完成，保留作实施记录**；未完成的是 T3–T6。
 
 ---
 
