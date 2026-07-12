@@ -1,37 +1,10 @@
-import { AnswerHead } from "@/components/chat/AnswerHead";
-import { AskCard } from "@/components/chat/AskCard";
-import { CalcList } from "@/components/chat/CalcList";
-import { CiteSeals } from "@/components/chat/CiteSeals";
-import { Composer } from "@/components/chat/Composer";
-import { Datasheet } from "@/components/chat/Datasheet";
-import { SensitivityCta } from "@/components/chat/SensitivityCta";
-import { SiteHeader } from "@/components/chat/SiteHeader";
-import { ToolTrace } from "@/components/chat/ToolTrace";
-import { VerdictCard } from "@/components/chat/VerdictCard";
+import { ChatApp } from "@/components/chat/ChatApp";
 import { broadsideVsKnight } from "@/lib/fixtures/broadside-vs-knight";
 
 /**
- * 聊天主页静态版（Stage 2）：数据全部来自 fixture（永久回归样例），
- * Stage 3 接 FastAPI 后同一契约直接替换数据源。
+ * 聊天主页（Stage 3 闭环）：首屏展示 fixture 示例，提问后经 /chat SSE 走真后端逐槽位填充。
+ * 契约唯一真源 web/src/lib/answer.ts；后端 web_api 按同一契约产出。
  */
 export default function ChatPage() {
-  const { question, context, answer } = broadsideVsKnight;
-  return (
-    <>
-      <SiteHeader context={context} />
-      <main className="mx-auto max-w-[1100px] px-5 pt-[26px] pb-[150px] max-tablet:px-2.5 max-tablet:pt-4 max-tablet:pb-[210px]">
-        <AskCard question={question} />
-        <div>
-          <AnswerHead summary={answer.summary} />
-          <ToolTrace steps={answer.trace} warn={answer.traceWarn} />
-          <VerdictCard verdict={answer.verdict} />
-          <CalcList steps={answer.calc} />
-          {answer.entityCard ? <Datasheet card={answer.entityCard} /> : null}
-          <CiteSeals cites={answer.cites} />
-          <SensitivityCta sensitivity={answer.sensitivity} cta={answer.cta} />
-        </div>
-      </main>
-      <Composer followups={answer.followups} />
-    </>
-  );
+  return <ChatApp initial={broadsideVsKnight} />;
 }

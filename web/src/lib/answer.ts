@@ -90,6 +90,12 @@ export interface Cta {
   mini?: string;
 }
 
+/** E8 敏感性 */
+export interface Sensitivity {
+  title: string;
+  text: RichText;
+}
+
 /** 一次完整回答（按槽位映射 E3-E9） */
 export interface Answer {
   summary: string; // 应答头右侧短语，如 "检索 4 步 · 引用 3 条 · 期望值粗算"
@@ -99,7 +105,7 @@ export interface Answer {
   calc: CalcStep[]; // E5
   entityCard?: EntityCard; // E6
   cites: Cite[]; // E7
-  sensitivity?: { title: string; text: RichText }; // E8
+  sensitivity?: Sensitivity; // E8
   cta?: Cta; // E8
   followups: string[]; // E9 chips
   degraded: boolean;
