@@ -41,6 +41,15 @@ def main() -> None:
     fe.add_argument("--patches", default="db_compile/fp_errata_patches.json")
     fe.add_argument("--db", default="db/wh40k.sqlite")
 
+    en = sub.add_parser(
+        "enhancements",
+        help="强化数据（P6 军表验表）：抓取/应用/对账 Enhancements.csv → enhancements 表")
+    en.add_argument("--fetch", action="store_true", help="联网抓 Enhancements.csv（需代理）")
+    en.add_argument("--apply", action="store_true", help="灌进 enhancements 表（增量，不重建）")
+    en.add_argument("--check", action="store_true", help="CSV vs 库对账（行数/分队/缺点数）")
+    en.add_argument("--csv", default="db_sources/wahapedia/Enhancements.csv")
+    en.add_argument("--db", default="db/wh40k.sqlite")
+
     d = sub.add_parser(
         "downloads",
         help="官方下载页版本监控：harvest 建基线 / check 比对报改版（需 3.11+scrapling 渲染）")
@@ -208,6 +217,31 @@ def main() -> None:
                     print(f"    {ch['faction']:4} {ch['unit'][:32]:32} {ch['field']:5} "
                           f"库现值 {ch['db_now']!r}")
         print("\n  注意：db_compile build 重建会覆盖，重建后需重跑（已挂进 restore_authority_layers）")
+    elif args.cmd == "enhancements":
+        from db_compile.enhancements import (apply_enhancements,
+                                             check_enhancements, fetch_csv,
+                                             load_rows)
+
+        csv_path = Path(args.csv)
+        if args.fetch:
+            n = fetch_csv(csv_path)
+            print(f"抓取 Enhancements.csv：{n} 字节 → {csv_path}")
+        if args.apply:
+            if not csv_path.exists():
+                raise SystemExit(f"{csv_path} 不存在，先跑 --fetch")
+            rep = apply_enhancements(Path(args.db), load_rows(csv_path))
+            print(f"\n强化落库：插入 {rep['inserted']} / 表内 {rep['table_total']} 条 / "
+                  f"覆盖 {rep['detachments']} 分队")
+            print("  注意：build 重建会一并重导（已进 build 流程），无需手动 restore")
+        if args.check:
+            rep = check_enhancements(Path(args.db), load_rows(csv_path))
+            flag = "✓" if rep["match"] else "✗"
+            print(f"\n强化对账 {flag}：CSV {rep['csv_rows']} vs 库 {rep['db_rows']} "
+                  f"（{'一致' if rep['match'] else '不一致'}）")
+            print(f"  分队：CSV {rep['csv_detachments']} / 库 {rep['db_detachments']}")
+            if rep["no_cost_count"]:
+                print(f"  ⚠️ {rep['no_cost_count']} 条无点数（cost=NULL 诚实标注）："
+                      f"{'、'.join(rep['no_cost_sample'][:5])}")
     elif args.cmd == "downloads":
         from db_compile.downloads import (harvest, write_manifest, check,
                                           print_diffs)

@@ -248,6 +248,23 @@ def _insert_detachments(cur, rows: List[dict]) -> int:
     return len(rows)
 
 
+def _insert_enhancements(cur, rows: List[dict]) -> int:
+    """Enhancements.csv → enhancements（P6 验表用；表由 ALL_DDL 建好，此处灌数据+索引）。"""
+    from db_compile.enhancements import _cost_to_int
+    cur.execute("CREATE INDEX IF NOT EXISTS idx_enh_detachment "
+                "ON enhancements(detachment_id)")
+    cur.executemany(
+        """INSERT OR REPLACE INTO enhancements
+           (id, faction_id, detachment_id, detachment_name, name, cost,
+            legend, description)
+           VALUES (?, ?, ?, ?, ?, ?, ?, ?)""",
+        [(r.get("id"), r.get("faction_id"), r.get("detachment_id"),
+          r.get("detachment"), r.get("name"), _cost_to_int(r.get("cost", "")),
+          r.get("legend"), r.get("description"))
+         for r in rows if r.get("id")])
+    return len([r for r in rows if r.get("id")])
+
+
 def _insert_keywords(cur, rows: List[dict]) -> int:
     """按 datasheet_id 分组，分别聚合 faction/non-faction keywords 到 JSON。
 
@@ -362,6 +379,12 @@ def build_database(csv_dir: Path, db_path: Path,
             path = csv_dir / "Detachment_abilities.csv"
             if path.exists():
                 report.row_counts["detachments"] = _insert_detachments(
+                    cur, _read_csv(path))
+
+            # 8b. Enhancements（P6 军表验表：按 detachment_id 查合法强化+点数）
+            path = csv_dir / "Enhancements.csv"
+            if path.exists():
+                report.row_counts["enhancements"] = _insert_enhancements(
                     cur, _read_csv(path))
 
             # 9. Keywords (回写 units.keywords_json)
