@@ -9,11 +9,11 @@
 |---|---|---|---|
 | Stage 1-2 | 前端设计系统 + 聊天页静态版（Next.js 16/Tailwind 4，E1-E9 组件化） | 30d53537 | #18 已并 |
 | Stage 3 后端 | `web_api/` FastAPI——response_formatter 散文→结构化槽位契约 | 56cc8ae1 | #20 已并 |
-| Stage 3 前端 | 前端切真调 /chat SSE（渐进渲染闭环） | c5b39467 | #21 待并 |
-| Stage 4 图鉴 | `/codex` 阵营→单位→兵牌浏览（复用 Datasheet） | 226f886d | #21 待并 |
+| Stage 3 前端 | 前端切真调 /chat SSE（渐进渲染闭环） | c5b39467 | #21 已并 |
+| Stage 4 图鉴 | `/codex` 阵营→单位→兵牌浏览（复用 Datasheet） | 226f886d | #21 已并 |
+| Stage 4 模拟器 | `POST /simulate` + `/simulator` 页（选单位→装配→漏斗/分布） | 本分支 | — |
 
-**当前分支**：`feat/stage3-frontend-wiring`（含 Stage3 前端 + Stage4 两提交），已推、树干净。
-**唯一开着的 PR**：#21（→ main，覆盖 Stage3 闭环 + Stage4 图鉴）。**全库 724 测试绿。**
+**当前分支**：`feat/stage4-simulator-tab`。**全库 739 测试绿。**
 
 ## 关键设计（续做前必读）
 
@@ -40,15 +40,26 @@ cd web && npm run dev   # 或 npm start（跑 npm run build 之后）
 访问 http://localhost:3000（聊天）/ http://localhost:3000/codex（图鉴）。
 后端端点：`/chat` SSE、`/chat/sync`、`/codex/factions|.../units|/units/{id}`、`/wiki/{path}`、`/healthz`。
 
-## ⏭️ 下一步（Stage 4 剩两页签）
+## ✅ Stage 4 模拟器页签（2026-07-13 完成）
 
-1. **模拟器页签**（依赖已解锁——P4/P5 引擎就位，后端 `agent/tools.py:simulate_combat` 已有）：
-   - 后端加 `POST /simulate`（或复用 agent）返回 SimReport（期望伤害/击杀/团灭率/分布 p10-90/
-     阶段漏斗/每 100 点性价比 + 诚实未建模清单）。报告结构见 `agent/tools.py:_report_to_dict`。
-   - 前端 `/simulator` 页：攻/守单位选择（可复用 codex 单位列表）+ 姿态开关（掩体/半程/冲锋/
-     防守 opt-in）+ 结果可视化（漏斗/分布条图，用原生 SVG 或已有组件，勿引重库）。
-   - 设计稿的 B 方向「阶段漏斗」在这复活；SiteHeader 把「模拟器」从置灰改真路由。
-2. **军表实验室页签**：严格依赖 T3（P6 军表系统 engines/roster/），未开工——先做 T3 再回来。
+- 后端：`agent/tools.py` 抽出 `simulate_combat_resolved`（canonical id 直调，免名字解析），
+  `web_api/simulate.py`（options 边界白名单，n 钳 [100,20000]）+ `POST /simulate`；契约
+  真源 `web/src/lib/sim.ts`，`contract.py` 的 Sim* 镜像（camelCase）。零 LLM。
+- 前端：`/simulator` 页（`components/sim/UnitPicker|SimResults`）——阵营+单位双面板 →
+  姿态开关（射击：未移动/半程/掩体/间瞄/守方隐身；近战：冲锋；守方 FNP/减伤/模型数）→
+  多武器单位走 loadout_required 装配面板（武器池+点数档位）→ KPI 行 + B 方向阶段漏斗
+  （只画同量纲的 attacks→hits→wounds→unsaved，damage/kills 进 KPI 不混轴）+ 击杀直方图 +
+  建模边界诚实披露（已计入/未建模/偏差/守方未施加开关/阵营分队）。
+- 交互坑：**切 phase 必须清 loadout**——近战/射击武器池不同，跨阶段沿用会被引擎静默滤成
+  空手 0 伤（引擎语义是滤不匹配武器，不报错）。
+- 端到端已浏览器目检：射击/近战/装配流/切换清空全通过；移动端断点复用图鉴页已验收
+  pattern（resize_window 不生效未实机截屏）。
+
+## ⏭️ 下一步
+
+1. **军表实验室页签**：严格依赖 T3（P6 军表系统 engines/roster/），未开工——先做 T3 再回来。
+2. 模拟器页签可选增强：defender_loadout 反打 UI（后端已支持 reverse 报告）、掩体等开关
+   在近战下的语义提示。
 
 ## 其余待办（非本线）
 

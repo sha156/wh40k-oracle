@@ -2,6 +2,7 @@
 
 端点：
   POST /chat        SSE：先流 trace（逐工具）→ 再逐槽位 → done。
+  POST /simulate    模拟器页签：canonical id 直调 P4/P5 蒙特卡洛（零 LLM）。
   GET  /wiki/{path} 只读返回 wiki 页（图鉴页 Stage 4 用）。
   GET  /healthz     存活探针。
 
@@ -18,9 +19,9 @@ from typing import Any, Dict, List, Optional
 from fastapi import FastAPI, HTTPException
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import StreamingResponse
-from pydantic import BaseModel
+from pydantic import BaseModel, ConfigDict, Field
 
-from web_api.contract import Answer
+from web_api.contract import Answer, SimResponse
 from web_api.formatter import format_answer
 from web_api.trace import TraceRecorder
 
@@ -176,6 +177,30 @@ def codex_unit(unit_id: str, lang: str = "zh") -> Dict[str, Any]:
     if card is None:
         raise HTTPException(status_code=404, detail="单位不存在")
     return {"card": card.model_dump(by_alias=True)}
+
+
+class SimulateRequest(BaseModel):
+    attacker_id: str = Field(alias="attackerId")
+    defender_id: str = Field(alias="defenderId")
+    options: Dict[str, Any] = {}
+
+    model_config = ConfigDict(populate_by_name=True)
+
+
+@app.post("/simulate", response_model=SimResponse, response_model_by_alias=True)
+def simulate(req: SimulateRequest) -> SimResponse:
+    """模拟器页签（Stage 4）：图鉴 canonical id 直调 P4/P5 蒙特卡洛核心。
+
+    需 DEEPSEEK_API_KEY？不需要——纯引擎计算零 LLM。失败以 ok=False + reason
+    结构化返回（loadout_required 附武器池），仅未知 id 走 404。
+    """
+    from web_api.simulate import run_simulation
+    if not DB_PATH.exists():
+        raise HTTPException(status_code=503, detail="结构库未构建")
+    resp = run_simulation(DB_PATH, req.attacker_id, req.defender_id, req.options)
+    if resp is None:
+        raise HTTPException(status_code=404, detail="攻方或守方单位不存在")
+    return resp
 
 
 @app.get("/wiki/{path:path}")
