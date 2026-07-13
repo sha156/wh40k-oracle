@@ -6,10 +6,13 @@
 """
 from engines.roster.contracts import (Roster, RosterUnit, ValidationIssue,
                                       ValidationReport)
+from engines.roster.critique import (CritiqueReport, TargetScore,
+                                     UnitAssessment, critique)
 from engines.roster.points import recompute, total_points, unit_cost
 from engines.roster.validate import validate
 
 __all__ = [
     "Roster", "RosterUnit", "ValidationIssue", "ValidationReport",
     "recompute", "total_points", "unit_cost", "validate",
+    "critique", "CritiqueReport", "UnitAssessment", "TargetScore",
 ]
