@@ -22,7 +22,8 @@ from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import StreamingResponse
 from pydantic import BaseModel, ConfigDict, Field
 
-from web_api.contract import Answer, SimResponse
+from web_api.contract import (Answer, CritiqueReportOut, RosterIn, SimResponse,
+                              ValidationReportOut)
 from web_api.formatter import format_answer
 from web_api.trace import TraceRecorder
 
@@ -213,6 +214,61 @@ def simulate(req: SimulateRequest) -> SimResponse:
     if resp is None:
         raise HTTPException(status_code=404, detail="攻方或守方单位不存在")
     return resp
+
+
+@app.get("/roster/detachments")
+def roster_detachments(faction: str) -> Dict[str, Any]:
+    """某阵营的分队目录（从 enhancements 表派生）。"""
+    from web_api.roster import list_detachments
+    if not DB_PATH.exists():
+        raise HTTPException(status_code=503, detail="结构库未构建")
+    return {"detachments": list_detachments(DB_PATH, faction)}
+
+
+@app.get("/roster/enhancements")
+def roster_enhancements(detachment: str) -> Dict[str, Any]:
+    """某分队的合法强化清单（强化下拉用）。"""
+    from web_api.roster import list_enhancements
+    if not DB_PATH.exists():
+        raise HTTPException(status_code=503, detail="结构库未构建")
+    return {"enhancements": list_enhancements(DB_PATH, detachment)}
+
+
+@app.get("/roster/units/{unit_id}/weapons")
+def roster_unit_weapons(unit_id: str) -> Dict[str, Any]:
+    """单位武器选项池（装配面板用）；未知单位 404。"""
+    from web_api.roster import unit_weapon_pool
+    if not DB_PATH.exists():
+        raise HTTPException(status_code=503, detail="结构库未构建")
+    pool = unit_weapon_pool(DB_PATH, unit_id)
+    if pool is None:
+        raise HTTPException(status_code=404, detail="单位不存在")
+    return {"weaponPool": pool}
+
+
+@app.post("/roster/validate", response_model=ValidationReportOut,
+          response_model_by_alias=True)
+def roster_validate(req: RosterIn) -> ValidationReportOut:
+    """军表验表（实时重算：点数+编制合法性，零 LLM 零模拟，可每次编辑即调）。"""
+    from web_api.roster import validate_roster
+    if not DB_PATH.exists():
+        raise HTTPException(status_code=503, detail="结构库未构建")
+    return validate_roster(DB_PATH, req)
+
+
+@app.post("/roster/critique", response_model=CritiqueReportOut,
+          response_model_by_alias=True)
+def roster_critique(req: RosterIn) -> CritiqueReportOut:
+    """军表点评（蒙特卡洛：每单位打典型目标）。并发饱和走 503（复用模拟并发闸）。"""
+    from web_api.roster import critique_roster
+    if not DB_PATH.exists():
+        raise HTTPException(status_code=503, detail="结构库未构建")
+    if not _SIM_SEMAPHORE.acquire(blocking=False):
+        raise HTTPException(status_code=503, detail="点评繁忙，请稍后重试")
+    try:
+        return critique_roster(DB_PATH, req)
+    finally:
+        _SIM_SEMAPHORE.release()
 
 
 @app.get("/wiki/{path:path}")

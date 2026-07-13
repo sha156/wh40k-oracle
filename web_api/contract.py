@@ -211,3 +211,64 @@ class SimResponse(_CamelModel):
     model_tiers: Optional[List[Dict[str, Any]]] = Field(
         default=None, alias="modelTiers")
     errors: List[str] = []
+
+
+# ── 军表实验室页签（Stage 4 / P6，镜像 web/src/lib/roster.ts）─────────
+
+class RosterUnitIn(_CamelModel):
+    """军表单位入参。loadout=[[武器名,数量],...]（点评用；验表可空）。"""
+    canonical_id: str = Field(alias="canonicalId")
+    name_en: str = Field(default="", alias="nameEn")
+    models: int = 1
+    is_warlord: bool = Field(default=False, alias="isWarlord")
+    enhancement: Optional[str] = None
+    loadout: List[List[Any]] = []
+
+
+class RosterIn(_CamelModel):
+    """POST /roster/* 请求体。"""
+    faction_id: str = Field(alias="factionId")
+    detachment_id: Optional[str] = Field(default=None, alias="detachmentId")
+    size: str = "strike_force"
+    units: List[RosterUnitIn] = []
+
+
+class ValidationIssueOut(_CamelModel):
+    code: str
+    severity: str
+    message: str
+    anchor: str = ""
+    surfaced_only: bool = Field(default=False, alias="surfacedOnly")
+
+
+class ValidationReportOut(_CamelModel):
+    """POST /roster/validate 响应（实时重算：点数+编制合法性）。"""
+    total_points: int = Field(alias="totalPoints")
+    limit: int
+    legal: bool
+    issues: List[ValidationIssueOut] = []
+
+
+class TargetScoreOut(_CamelModel):
+    key: str
+    label: str
+    expected_damage: float = Field(alias="expectedDamage")
+    damage_per_100: Optional[float] = Field(default=None, alias="damagePer100")
+
+
+class UnitAssessmentOut(_CamelModel):
+    canonical_id: str = Field(alias="canonicalId")
+    name_en: str = Field(alias="nameEn")
+    points: Optional[int] = None
+    assessed: bool = False
+    phase: Optional[str] = None
+    scores: List[TargetScoreOut] = []
+    note: str = ""
+
+
+class CritiqueReportOut(_CamelModel):
+    """POST /roster/critique 响应（强度点评：每单位打典型目标）。"""
+    total_points: int = Field(alias="totalPoints")
+    assessments: List[UnitAssessmentOut] = []
+    summary: List[str] = []
+    not_modeled: List[str] = Field(default=[], alias="notModeled")
