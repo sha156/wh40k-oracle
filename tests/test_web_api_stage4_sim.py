@@ -54,6 +54,21 @@ def test_sanitize_empty():
     assert sanitize_options({}) == {}
 
 
+def test_sanitize_bool_coercion_no_string_footgun():
+    # 字符串 "false"/"0" 不当真值（避免 bool("false")==True）
+    assert sanitize_options({"charge": "false"})["charge"] is False
+    assert sanitize_options({"cover": "0"})["cover"] is False
+    assert sanitize_options({"stationary": "true"})["stationary"] is True
+    assert sanitize_options({"charge": 1})["charge"] is True
+    assert sanitize_options({"cover": 0})["cover"] is False
+
+
+def test_sanitize_drops_smokescreen():
+    # smokescreen 不在网页白名单（引擎里等同 cover 别名，用 cover 表达）
+    assert "smokescreen" not in sanitize_options({"smokescreen": True})
+    assert sanitize_options({"cover": True})["cover"] is True
+
+
 # ── id → name 查找 ────────────────────────────────────────────────
 
 @needs_db
@@ -156,3 +171,24 @@ def test_endpoint_simulate_ok_and_404():
     r2 = client.post("/simulate", json={
         "attackerId": "999999999", "defenderId": BROADSIDE})
     assert r2.status_code == 404
+
+
+@needs_db
+def test_endpoint_simulate_busy_returns_503():
+    """并发信号量占满 → 繁忙 503（而非 db-missing 503）。"""
+    from fastapi.testclient import TestClient
+    from web_api import main
+
+    client = TestClient(main.app)
+    acquired = [main._SIM_SEMAPHORE.acquire(blocking=False)
+                for _ in range(main._SIM_MAX_CONCURRENCY)]
+    try:
+        r = client.post("/simulate", json={
+            "attackerId": BROADSIDE, "defenderId": BROADSIDE,
+            "options": {"loadout": [["Heavy rail rifle", 1]], "n": 100}})
+        assert r.status_code == 503
+        assert "繁忙" in r.json()["detail"]
+    finally:
+        for ok in acquired:
+            if ok:
+                main._SIM_SEMAPHORE.release()

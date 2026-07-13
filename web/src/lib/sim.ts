@@ -68,7 +68,7 @@ export interface SimReport {
 
 export interface SimResponse {
   ok: boolean;
-  /** ok=false 时：not_found | loadout_required | ambiguous | error */
+  /** ok=false 时：not_found | loadout_required | error（ambiguous 后端归一为 loadout_required） */
   reason?: string | null;
   note?: string | null;
   warning?: string | null;

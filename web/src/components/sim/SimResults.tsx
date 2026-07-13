@@ -166,6 +166,12 @@ function Honesty({ resp }: { resp: SimResponse }) {
           {rep.biasNotes.join("；")}
         </p>
       ) : null}
+      {/* 网页版为单向解算：/simulate 不接收守方装配，无守方幸存反打（reverse 恒空时披露） */}
+      {!rep.reverse ? (
+        <p className="my-1 text-[12.5px] text-[#8fa19b]">
+          单向模拟（攻方 → 守方）：<span className="text-[#6f827c]">守方幸存反打未接入本页</span>
+        </p>
+      ) : null}
       {resp.defenderToggles.length > 0 ? (
         <p className="my-1 text-[12.5px] text-[#8fa19b]">
           守方还有可选防守规则<span className="text-[#6f827c]">（未自动施加，条件满足时用左侧开关近似）</span>：

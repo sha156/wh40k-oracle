@@ -17,7 +17,17 @@ _N_MIN, _N_MAX = 100, 20000
 
 
 def _as_bool(v: Any) -> bool:
-    return bool(v)
+    """JSON 布尔 / 数字 / "true"|"false"（大小写不敏感）→ bool。
+
+    字符串 "false"/"0" 不当真值——直连客户端发字符串布尔时避免 bool("false")==True 陷阱。
+    """
+    if isinstance(v, bool):
+        return v
+    if isinstance(v, (int, float)):
+        return v != 0
+    if isinstance(v, str):
+        return v.strip().lower() in ("true", "1", "yes", "on")
+    return False
 
 
 def _as_pos_int(v: Any) -> Optional[int]:
@@ -50,8 +60,10 @@ def sanitize_options(raw: Optional[Dict[str, Any]]) -> Dict[str, Any]:
     out: Dict[str, Any] = {}
     if raw.get("phase") in ("shooting", "melee"):
         out["phase"] = raw["phase"]
+    # smokescreen 不在白名单：引擎里它只是 cover_on 的别名（smokescreen→cover_on），
+    # 网页用 cover 开关表达即可，不重复暴露；agent 直调路径不过此白名单，仍可用 smokescreen。
     for key in ("charge", "half_range", "cover", "stationary", "long_range",
-                "indirect", "stealth", "smokescreen"):
+                "indirect", "stealth"):
         if key in raw:
             out[key] = _as_bool(raw[key])
     for key in ("attacker_models", "defender_models", "damage_reduction", "seed"):

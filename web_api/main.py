@@ -13,6 +13,7 @@ from __future__ import annotations
 
 import json
 import os
+import threading
 from pathlib import Path
 from typing import Any, Dict, List, Optional
 
@@ -187,17 +188,28 @@ class SimulateRequest(BaseModel):
     model_config = ConfigDict(populate_by_name=True)
 
 
+# 蒙特卡洛重活的并发上限：n 已钳到 ≤20000，再对并发数封顶，防多客户端/多标签
+# 齐发把 FastAPI 同步线程池打满（sync 端点跑在 threadpool，用 threading 原语）。
+_SIM_MAX_CONCURRENCY = 4
+_SIM_SEMAPHORE = threading.Semaphore(_SIM_MAX_CONCURRENCY)
+
+
 @app.post("/simulate", response_model=SimResponse, response_model_by_alias=True)
 def simulate(req: SimulateRequest) -> SimResponse:
     """模拟器页签（Stage 4）：图鉴 canonical id 直调 P4/P5 蒙特卡洛核心。
 
     需 DEEPSEEK_API_KEY？不需要——纯引擎计算零 LLM。失败以 ok=False + reason
-    结构化返回（loadout_required 附武器池），仅未知 id 走 404。
+    结构化返回（loadout_required 附武器池），仅未知 id 走 404；并发饱和走 503。
     """
     from web_api.simulate import run_simulation
     if not DB_PATH.exists():
         raise HTTPException(status_code=503, detail="结构库未构建")
-    resp = run_simulation(DB_PATH, req.attacker_id, req.defender_id, req.options)
+    if not _SIM_SEMAPHORE.acquire(blocking=False):
+        raise HTTPException(status_code=503, detail="模拟器繁忙，请稍后重试")
+    try:
+        resp = run_simulation(DB_PATH, req.attacker_id, req.defender_id, req.options)
+    finally:
+        _SIM_SEMAPHORE.release()
     if resp is None:
         raise HTTPException(status_code=404, detail="攻方或守方单位不存在")
     return resp

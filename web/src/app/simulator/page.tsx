@@ -1,6 +1,6 @@
 "use client";
 
-import { useCallback, useEffect, useState } from "react";
+import { useCallback, useEffect, useRef, useState } from "react";
 
 import { SiteHeader } from "@/components/chat/SiteHeader";
 import { SimResults } from "@/components/sim/SimResults";
@@ -95,6 +95,9 @@ export default function SimulatorPage() {
   const [loadout, setLoadout] = useState<Record<string, number>>({});
   const [resp, setResp] = useState<SimResponse | null>(null);
   const [running, setRunning] = useState(false);
+  const simCtrl = useRef<AbortController | null>(null);
+  // 卸载时中止在途模拟，避免 post-unmount setState
+  useEffect(() => () => simCtrl.current?.abort(), []);
 
   useEffect(() => {
     const ctrl = new AbortController();
@@ -158,16 +161,24 @@ export default function SimulatorPage() {
 
   const run = () => {
     if (!atk.unit || !dfd.unit || running) return;
+    simCtrl.current?.abort(); // 取消上一次在途请求（正常路径下按钮已 disabled，防御性）
+    const ctrl = new AbortController();
+    simCtrl.current = ctrl;
     setRunning(true);
     setError(null);
-    postSimulate(atk.unit.id, dfd.unit.id, buildOptions())
-      .then(setResp)
+    postSimulate(atk.unit.id, dfd.unit.id, buildOptions(), ctrl.signal)
+      .then((r) => {
+        if (!ctrl.signal.aborted) setResp(r);
+      })
       .catch((e) => {
+        if ((e as Error).name === "AbortError") return; // 被取消/卸载，静默
         setError(e instanceof Error && e.message.includes("后端返回")
           ? `模拟失败（${e.message}）`
           : BACKEND_HINT);
       })
-      .finally(() => setRunning(false));
+      .finally(() => {
+        if (!ctrl.signal.aborted) setRunning(false);
+      });
   };
 
   const needLoadout = resp != null && !resp.ok && resp.reason === "loadout_required";
