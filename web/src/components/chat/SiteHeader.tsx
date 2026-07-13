@@ -5,7 +5,7 @@ import { Aquila } from "./Aquila";
 const NAV_ITEMS = [
   { label: "聊天", href: "/", ready: true },
   { label: "模拟器", href: "/simulator", ready: true },
-  { label: "军表实验室", href: "#", ready: false },
+  { label: "军表实验室", href: "/roster", ready: true },
   { label: "图鉴", href: "/codex", ready: true },
 ];
 
