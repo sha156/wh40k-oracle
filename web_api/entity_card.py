@@ -6,20 +6,30 @@
 """
 from __future__ import annotations
 
+import html
 import re
 from typing import Any, Dict, List, Optional
 
-from web_api.contract import Ability, EntityCard, Stat, WeaponRow
+from web_api.contract import Ability, DamagedProfile, EntityCard, Stat, WeaponRow
 from web_api.richtext import to_richtext
 
 
-def _fmt_range(val: str) -> str:
-    """'60' → '60\"'；'Melee' → '近战'；其余原样。"""
+def _strip_html(s: Optional[str]) -> str:
+    """去 HTML 标签 + 反转义实体，压缩空白。官方字段（loadout/能力文本）常带 <b>/<span>。"""
+    if not s:
+        return ""
+    text = re.sub(r"<[^>]+>", "", str(s))
+    text = html.unescape(text)
+    return re.sub(r"\s+", " ", text).strip()
+
+
+def _fmt_range(val: str, lang: str = "zh") -> str:
+    """'60' → '60\"'；'Melee' → zh 模式译「近战」、en 模式原样；其余原样。"""
     v = (val or "").strip()
     if v.isdigit():
         return v + '"'
     if v.lower() == "melee":
-        return "近战"
+        return "近战" if lang == "zh" else "Melee"
     return v
 
 
@@ -44,13 +54,13 @@ def _weapon_kw(keywords: List[str]) -> Optional[str]:
     return "[" + "，".join(flat) + "]"
 
 
-def _weapon_row(w: Dict[str, Any], hot_weapon: Optional[str]) -> WeaponRow:
+def _weapon_row(w: Dict[str, Any], hot_weapon: Optional[str], lang: str = "zh") -> WeaponRow:
     name = str(w.get("name", ""))
     hot = bool(hot_weapon) and hot_weapon.lower() in name.lower()
     return WeaponRow(
         name=name,
         kw=_weapon_kw(w.get("keywords", [])),
-        range=_fmt_range(str(w.get("range", ""))),
+        range=_fmt_range(str(w.get("range", "")), lang),
         a=str(w.get("a", "")),
         skill=_fmt_skill(str(w.get("bs_ws", ""))),
         s=str(w.get("s", "")),
@@ -70,38 +80,91 @@ def _points_str(ds: Dict[str, Any]) -> str:
     return str(pmin) if pmin is not None else "—"
 
 
-def _composition(ds: Dict[str, Any]):
-    """points_options → 每行 RichText（'1 model — 75 分'）。"""
+def _composition(ds: Dict[str, Any], lang: str = "zh"):
+    """points_options → 每行 RichText（'1 个模型 — 75 分' / '1 model — 75 pts'）。"""
+    unit = "分" if lang == "zh" else "pts"
     rows = []
     for o in ds.get("points_options") or []:
         desc = str(o.get("desc", "")).strip()
         cost = o.get("cost")
         line = desc if desc else str(o.get("line", ""))
         if cost is not None:
-            line = "{} — {} 分".format(line, cost)
+            line = "{} — {} {}".format(line, cost, unit)
         rows.append(to_richtext(line))
     return rows
 
 
-def _abilities(zh: Optional[Dict[str, Any]]) -> List[Ability]:
-    """黑图中文层 能力 → Ability 列表；空/缺则 []（诚实不编造）。"""
+def _split_tag(name: str):
+    """『【阵营技能】：破敌重誓』→ (tag='阵营技能', name='破敌重誓')；无标签则 (None, name)。"""
+    m = re.match(r"^【(?P<tag>[^】]+)】[:：]?\s*(?P<rest>.*)$", name.strip())
+    if m:
+        return m.group("tag"), (m.group("rest").strip() or m.group("tag"))
+    return None, name.strip()
+
+
+def _zh_abilities(zh: Optional[Dict[str, Any]]) -> List[Ability]:
+    """黑图中文层 abilities_json → Ability 列表（本地化，含阵营技能）。"""
     if not zh:
         return []
-    raw = zh.get("能力")
-    if not raw:
+    raw = zh.get("能力") or zh.get("abilities")
+    if not isinstance(raw, list):
         return []
     out: List[Ability] = []
-    if isinstance(raw, dict):
-        raw = [{"name": k, "text": v} for k, v in raw.items()]
     for item in raw:
         if isinstance(item, str):
-            out.append(Ability(name=item))
+            tag, nm = _split_tag(item)
+            out.append(Ability(tag=tag, name=nm))
         elif isinstance(item, dict):
-            name = str(item.get("name") or item.get("标题") or item.get("title") or "")
-            text = item.get("text") or item.get("描述") or item.get("desc")
-            if name:
-                out.append(Ability(name=name, text=str(text) if text else None))
+            nm = str(item.get("name") or item.get("标题") or item.get("title") or "")
+            if not nm:
+                continue
+            tag, nm2 = _split_tag(nm)
+            text = _strip_html(item.get("contentHtml")) or _flatten_content(item.get("content"))
+            out.append(Ability(tag=tag, name=nm2, text=text or None))
     return out
+
+
+def _flatten_content(content: Any) -> str:
+    """黑图 content 嵌套结构 → 纯文本（兜底，contentHtml 缺时用）。"""
+    if not isinstance(content, list):
+        return ""
+    parts: List[str] = []
+    for block in content:
+        if isinstance(block, dict):
+            inner = block.get("content")
+            if isinstance(inner, list):
+                for span in inner:
+                    if isinstance(span, dict) and span.get("text"):
+                        parts.append(str(span["text"]))
+    return " ".join(parts).strip()
+
+
+def _eng_abilities(raw: Any) -> List[Ability]:
+    """abilities 表条目 [{name_en/name, text/text_zh}] → Ability 列表（英文，完整覆盖）。"""
+    if not isinstance(raw, list):
+        return []
+    out: List[Ability] = []
+    for item in raw:
+        if not isinstance(item, dict):
+            continue
+        nm = str(item.get("name_en") or item.get("name") or "").strip()
+        if not nm:
+            continue
+        text = _strip_html(item.get("text") or item.get("text_zh"))
+        out.append(Ability(name=nm, text=text or None))
+    return out
+
+
+def _abilities(zh: Optional[Dict[str, Any]], eng: Any) -> List[Ability]:
+    """能力列表：中文层若不比英文表少则用中文（本地化优先），否则用英文表（完整）。
+
+    英文 abilities 表覆盖 1709/1715 单位，是完整权威源；黑图中文层稀疏但已本地化。
+    以「谁更全」二选一，避免跨语言无法可靠去重造成的重复。"""
+    zh_abils = _zh_abilities(zh)
+    eng_abils = _eng_abilities(eng)
+    if zh_abils and len(zh_abils) >= len(eng_abils):
+        return zh_abils
+    return eng_abils
 
 
 _STAT_LABELS = [("m", "M"), ("t", "T"), ("sv", "SV"), ("w", "W"), ("ld", "LD"), ("oc", "OC")]
@@ -132,26 +195,53 @@ def build_entity_card(
     stats = [Stat(lab=lab, val=str(m0.get(key, "—"))) for key, lab in _STAT_LABELS]
     invuln = str(m0.get("invuln", "-")).strip()
     if invuln and invuln not in ("-", "—", ""):
-        stats.append(Stat(lab="INV", val=invuln))
+        invuln_val = invuln + "+" if invuln.isdigit() else invuln
+    else:
+        invuln_val = None
 
+    lang = str(tool_result.get("lang") or "zh")
     weapons = ds.get("weapons") or []
-    ranged = [_weapon_row(w, hot_weapon) for w in weapons if w.get("kind") == "ranged"]
-    melee = [_weapon_row(w, hot_weapon) for w in weapons if w.get("kind") == "melee"]
+    ranged = [_weapon_row(w, hot_weapon, lang) for w in weapons if w.get("kind") == "ranged"]
+    melee = [_weapon_row(w, hot_weapon, lang) for w in weapons if w.get("kind") == "melee"]
 
     faction = ds.get("faction")
     name_zh = ds.get("name_zh") or (zh or {}).get("name_zh") or ds.get("name_en") or ""
     keywords = "，".join(str(k) for k in (ds.get("keywords") or []))
 
+    # 官方元信息（codex 装配时提供；chat 的 get_datasheet 无则留空，向后兼容）
+    meta = tool_result.get("meta") or {}
+    _role_raw = _strip_html(meta.get("role"))
+    role = _role_raw if _role_raw and _role_raw.lower() != "other" else None
+    loadout = _strip_html(meta.get("loadout")) or None
+    legend = _strip_html(meta.get("legend")) or None
+    leads = _strip_html(meta.get("leader_footer")) or None
+    dmg_w = str(meta.get("damaged_w") or "").strip()
+    dmg_text = _strip_html(meta.get("damaged_description"))
+    damaged = DamagedProfile(w=dmg_w, text=dmg_text) if (dmg_w and dmg_text) else None
+    fkw = tool_result.get("faction_keywords") or []
+    faction_keywords = "，".join(str(k) for k in fkw) or None
+
     return EntityCard(
         nameZh=str(name_zh),
         nameEn=str(ds.get("name_en") or ""),
         pts=_points_str(ds),
+        role=role,
         stats=stats,
+        invuln=invuln_val,
         ranged=ranged,
         melee=melee,
-        abilities=_abilities(zh),
-        composition=_composition(ds),
+        abilities=_abilities(zh, tool_result.get("abilities")),
+        loadout=loadout,
+        damaged=damaged,
+        leads=leads,
+        composition=(
+            [to_richtext(line) for line in tool_result["zh_composition"]]
+            if tool_result.get("zh_composition")
+            else _composition(ds, lang)
+        ),
         keywords=keywords,
+        factionKeywords=faction_keywords,
+        legend=legend,
         faction="阵营: " + str(faction) if faction else "阵营: 未知",
         src="L3 结构库 · " + str(faction or "未知阵营"),
         wiki=_wiki_path(faction, str(ds.get("unit_id", "")), str(ds.get("name_en") or "")),

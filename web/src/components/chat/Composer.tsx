@@ -6,19 +6,31 @@ import { SlotBadge } from "../ui/SlotBadge";
 interface ComposerProps {
   followups: string[];
   placeholder?: string;
+  /** 提交回调（提问或点 chip）；未传时退化为静态版仅本地状态。 */
+  onSubmit?: (question: string) => void;
+  disabled?: boolean;
 }
 
-/** E9 输入区：追问 chips + 提问输入 + 发送（静态版仅本地状态，不发请求） */
+/** E9 输入区：追问 chips + 提问输入 + 发送。接 onSubmit 后走真 /chat SSE。 */
 export function Composer({
   followups,
   placeholder = "问规则、查单位、判对局……支持中文/英文/俗名",
+  onSubmit,
+  disabled = false,
 }: ComposerProps) {
   const [value, setValue] = useState("");
   const inputRef = useRef<HTMLInputElement>(null);
 
   const pickChip = (chip: string) => {
     setValue(chip);
-    inputRef.current?.focus();
+    if (onSubmit) onSubmit(chip);
+    else inputRef.current?.focus();
+  };
+
+  const send = () => {
+    const q = value.trim();
+    if (!q || disabled) return;
+    onSubmit?.(q);
   };
 
   return (
@@ -37,21 +49,29 @@ export function Composer({
             </button>
           ))}
         </div>
-        <form className="flex" onSubmit={(e) => e.preventDefault()}>
+        <form
+          className="flex"
+          onSubmit={(e) => {
+            e.preventDefault();
+            send();
+          }}
+        >
           <input
             ref={inputRef}
             type="text"
             value={value}
             onChange={(e) => setValue(e.target.value)}
             placeholder={placeholder}
-            className="flex-1 border border-[#2b423d] border-r-0 bg-panel px-4 py-3 font-body text-[14px] text-bone outline-none placeholder:text-[#5c6f6a] focus:border-tau focus:shadow-[0_0_0_1px_var(--color-tau-ban)] max-tablet:px-3 max-tablet:py-[11px] max-tablet:text-[16px]"
+            disabled={disabled}
+            className="flex-1 border border-[#2b423d] border-r-0 bg-panel px-4 py-3 font-body text-[14px] text-bone outline-none placeholder:text-[#5c6f6a] focus:border-tau focus:shadow-[0_0_0_1px_var(--color-tau-ban)] disabled:opacity-60 max-tablet:px-3 max-tablet:py-[11px] max-tablet:text-[16px]"
           />
           {/* 手机端 16px 防 iOS 聚焦缩放 */}
           <button
             type="submit"
-            className="clip-slant-l-12 cursor-pointer border-0 bg-[linear-gradient(var(--color-gw-red),#6e0505)] px-[34px] font-cond text-[14px] tracking-[3px] text-white uppercase transition-[filter] duration-150 hover:brightness-125 max-tablet:px-[22px] max-tablet:tracking-[2px]"
+            disabled={disabled}
+            className="clip-slant-l-12 cursor-pointer border-0 bg-[linear-gradient(var(--color-gw-red),#6e0505)] px-[34px] font-cond text-[14px] tracking-[3px] text-white uppercase transition-[filter] duration-150 hover:brightness-125 disabled:cursor-not-allowed disabled:brightness-75 max-tablet:px-[22px] max-tablet:tracking-[2px]"
           >
-            发 送
+            {disabled ? "运算" : "发 送"}
           </button>
         </form>
         <div className="mt-2 text-center font-mono text-[10.5px] tracking-[.5px] text-[#57655f] max-tablet:text-[9.5px]">

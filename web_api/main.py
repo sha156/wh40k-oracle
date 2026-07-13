@@ -12,6 +12,7 @@ from __future__ import annotations
 
 import json
 import os
+from pathlib import Path
 from typing import Any, Dict, List, Optional
 
 from fastapi import FastAPI, HTTPException
@@ -138,6 +139,43 @@ def chat(req: ChatRequest) -> StreamingResponse:
 def chat_sync(req: ChatRequest) -> Answer:
     """非流式整体返回（便于前端调试/契约测试）。"""
     return _run_answer(req)
+
+
+DB_PATH = Path(__file__).resolve().parent.parent / "db" / "wh40k.sqlite"
+
+
+@app.get("/codex/factions")
+def codex_factions() -> Dict[str, Any]:
+    """图鉴：有单位的阵营列表（Stage 4）。"""
+    from web_api import codex
+    if not DB_PATH.exists():
+        raise HTTPException(status_code=503, detail="结构库未构建")
+    return {"factions": codex.list_factions(DB_PATH)}
+
+
+@app.get("/codex/factions/{faction_id}/units")
+def codex_units(faction_id: str) -> Dict[str, Any]:
+    """图鉴：某阵营单位列表。"""
+    from web_api import codex
+    if not DB_PATH.exists():
+        raise HTTPException(status_code=503, detail="结构库未构建")
+    if not codex.faction_exists(DB_PATH, faction_id):
+        raise HTTPException(status_code=404, detail="阵营不存在")
+    return {"faction_id": faction_id, "units": codex.list_units(DB_PATH, faction_id)}
+
+
+@app.get("/codex/units/{unit_id}")
+def codex_unit(unit_id: str, lang: str = "zh") -> Dict[str, Any]:
+    """图鉴：单位兵牌（EntityCard）。lang=zh 本地化优先 / lang=en 全英文。"""
+    from web_api import codex
+    if lang not in ("zh", "en"):
+        raise HTTPException(status_code=422, detail="lang 仅支持 zh/en")
+    if not DB_PATH.exists():
+        raise HTTPException(status_code=503, detail="结构库未构建")
+    card = codex.unit_card(DB_PATH, unit_id, lang=lang)
+    if card is None:
+        raise HTTPException(status_code=404, detail="单位不存在")
+    return {"card": card.model_dump(by_alias=True)}
 
 
 @app.get("/wiki/{path:path}")

@@ -154,7 +154,7 @@ def format_answer(
     """把跑完的 AgentResult + 录制的工具证据组装成 Answer 契约。"""
     trace = list(recorder.steps)
     cites = _derive_cites(agent_result, recorder)
-    entity_card = build_entity_card(recorder.get_result("get_datasheet") or {}, hot_weapon)
+    entity_card = _derive_entity_card(recorder, hot_weapon)
     cta = _derive_cta(recorder, agent_result.intent)
     degraded = bool(agent_result.degraded)
     summary = _derive_summary(trace, cites, degraded)
@@ -184,6 +184,27 @@ def format_answer(
         followups=_build_followups(structured),
         degraded=degraded,
     )
+
+
+def _derive_entity_card(recorder: TraceRecorder, hot_weapon: Optional[str]):
+    """E6 兵牌：优先走 codex.unit_card 完整装配（能力表/装备/受损档与图鉴一致）；
+    codex 拿不到（DB 缺/测试注入的假 datasheet）再退回工具结果直映射。"""
+    ds_res = recorder.get_result("get_datasheet") or {}
+    ds = ds_res.get("datasheet") if isinstance(ds_res, dict) else None
+    unit_id = str((ds or {}).get("unit_id") or "")
+    if unit_id:
+        try:
+            from pathlib import Path
+
+            from web_api import codex
+            db_path = Path(__file__).resolve().parent.parent / "db" / "wh40k.sqlite"
+            if db_path.exists():
+                card = codex.unit_card(db_path, unit_id, hot_weapon=hot_weapon)
+                if card is not None:
+                    return card
+        except Exception:
+            pass  # 完整装配失败不挡答案，退回直映射
+    return build_entity_card(ds_res, hot_weapon)
 
 
 def _evidence_digest(recorder: TraceRecorder, limit: int = 2000) -> str:

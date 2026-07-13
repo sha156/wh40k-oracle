@@ -180,6 +180,125 @@ def test_contract_json_roundtrip_camelcase():
     # （本例无 entityCard，跳过）
 
 
+@pytest.mark.skipif(not DB_PATH.exists(), reason="wh40k.sqlite 不存在")
+def test_codex_factions_units_card():
+    """图鉴端点：阵营列表 → 单位列表 → 兵牌，真 DB。"""
+    from web_api import codex
+
+    factions = codex.list_factions(DB_PATH)
+    assert len(factions) >= 20  # 25 有单位阵营
+    top = factions[0]
+    assert top["count"] > 0 and top["name"]
+    # curated 中文名正确（不用众数——GC 不该是星界军）
+    gc = next((f for f in factions if f["id"] == "GC"), None)
+    if gc:
+        assert gc["nameZh"] == "基因窃取者教派"
+
+    units = codex.list_units(DB_PATH, top["id"])
+    assert len(units) == top["count"]
+    assert all("id" in u and "nameEn" in u for u in units)
+
+    card = codex.unit_card(DB_PATH, units[0]["id"])
+    assert card is not None and card.name_en
+
+
+@pytest.mark.skipif(not DB_PATH.exists(), reason="wh40k.sqlite 不存在")
+def test_codex_card_has_complete_abilities_and_meta():
+    """图鉴兵牌补全：能力从 abilities 表取（完整）+ 装备/阵营关键词。"""
+    from web_api import codex
+
+    # Broadside：黑图中文能力层为空，但 abilities 表有 3 条（旧版会显示 0）
+    card = codex.unit_card(DB_PATH, "000000433")
+    assert card is not None
+    assert len(card.abilities) >= 3
+    names = [a.name for a in card.abilities]
+    assert any("Advanced Armour" in n for n in names)
+    # zh 模式装备已翻译（武器名映射自黑图层）
+    assert card.loadout and "重型磁轨枪" in card.loadout
+    assert card.faction_keywords  # 阵营关键词非空
+    # 无效保护格式化为 N+（Custodes 有 invuln）
+    custodes = codex.unit_card(DB_PATH, "000000001")
+    if custodes and custodes.invuln:
+        assert custodes.invuln.endswith("+")
+
+
+@pytest.mark.skipif(not DB_PATH.exists(), reason="wh40k.sqlite 不存在")
+def test_codex_card_lang_toggle():
+    """中英切换：zh 模式武器名本地化（黑图层）且数值仍英文权威；en 模式全英文。"""
+    from web_api import codex
+
+    zh = codex.unit_card(DB_PATH, "000000433", lang="zh")
+    en = codex.unit_card(DB_PATH, "000000433", lang="en")
+    assert zh and en
+    # zh：武器名/关键词中文；en：英文
+    assert zh.ranged[0].name == "重型磁轨枪" and "重型" in (zh.ranged[0].kw or "")
+    assert en.ranged[0].name == "Heavy rail rifle"
+    # 数值两种模式完全一致（英文权威表，黑图数值漂移不得渗入）
+    for wz, we in zip(zh.ranged, en.ranged):
+        assert (wz.a, wz.s, wz.ap, wz.d) == (we.a, we.s, we.ap, we.d)
+    # 近战 range 本地化差异
+    assert zh.melee[0].range == "近战" and en.melee[0].range == "Melee"
+    # en 能力一律英文表
+    assert all(not any("一" <= ch <= "鿿" for ch in a.name) for a in en.abilities)
+
+
+@pytest.mark.skipif(not DB_PATH.exists(), reason="wh40k.sqlite 不存在")
+def test_codex_card_zh_loadout_composition_legend():
+    """zh 模式：装备文本翻译（武器名映射）、构成用 intro 原生中文、背景文案隐藏。"""
+    from web_api import codex
+
+    zh = codex.unit_card(DB_PATH, "000000553", lang="zh")   # 毁灭炮艇
+    en = codex.unit_card(DB_PATH, "000000553", lang="en")
+    assert zh and en
+    # 装备：前缀 + 武器名已翻，分号中文化
+    assert zh.loadout.startswith("本模型装备：")
+    assert "高斯炮" in zh.loadout and "；" in zh.loadout
+    assert "gauss" not in zh.loadout.lower()
+    # 构成：intro_json 原生中文（量词正确）
+    comp0 = "".join(getattr(x, "s", "") for x in zh.composition[0])
+    assert "艘" in comp0 and "95" in comp0
+    # 背景：zh 隐藏、en 保留
+    assert zh.legend is None
+    assert en.legend and "Annihilation" in en.legend
+
+
+def test_localize_loadout_unmapped_names_stay_english():
+    """装备翻译：映射不到的武器名保英文（诚实，不猜译名）。"""
+    from web_api.codex import _localize_loadout
+
+    out = _localize_loadout(
+        "This model is equipped with: gauss cannon; mystery gun.",
+        {"gauss cannon": "高斯炮"},
+    )
+    assert out.startswith("本模型装备：")
+    assert "高斯炮" in out and "mystery gun" in out
+    assert out.endswith("。")
+
+
+def test_localize_weapon_names_count_guard():
+    """位置匹配守卫：中英武器数量不等时整组不换（防错配=自信的错误）。"""
+    from web_api.codex import _localize_weapon_names
+
+    ds = {"weapons": [
+        {"kind": "ranged", "name": "Gun A", "keywords": []},
+        {"kind": "ranged", "name": "Gun B", "keywords": []},
+    ]}
+    zh = {"武器": {"射击武器": [{"name": "只有一把"}]}}  # 1 vs 2 → 不换
+    _localize_weapon_names(ds, zh)
+    assert ds["weapons"][0]["name"] == "Gun A"
+    zh2 = {"武器": {"射击武器": [{"name": "甲枪"}, {"name": "乙枪", "skill": ["双联"]}]}}
+    _localize_weapon_names(ds, zh2)
+    assert ds["weapons"][0]["name"] == "甲枪"
+    assert ds["weapons"][1]["keywords"] == ["双联"]
+
+
+@pytest.mark.skipif(not DB_PATH.exists(), reason="wh40k.sqlite 不存在")
+def test_codex_unit_not_found():
+    from web_api import codex
+    assert codex.unit_card(DB_PATH, "999999999") is None
+    assert codex.faction_exists(DB_PATH, "ZZZ") is False
+
+
 def test_run_and_format_with_fake_loop_llm():
     """端到端：Fake 主循环 LLM 直接 final（查意图会先被门控 nudge，这里用闲聊绕过）。"""
 

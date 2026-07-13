@@ -86,16 +86,28 @@ class Stat(BaseModel):
     val: str
 
 
+class DamagedProfile(BaseModel):
+    w: str
+    text: str
+
+
 class EntityCard(_CamelModel):
     name_zh: str = Field(alias="nameZh")
     name_en: str = Field(alias="nameEn")
     pts: str
+    role: Optional[str] = None
     stats: List[Stat]
+    invuln: Optional[str] = None
     ranged: List[WeaponRow]
     melee: List[WeaponRow]
     abilities: List[Ability]
+    loadout: Optional[str] = None
+    damaged: Optional[DamagedProfile] = None
+    leads: Optional[str] = None
     composition: List[RichText]
     keywords: str
+    faction_keywords: Optional[str] = Field(default=None, alias="factionKeywords")
+    legend: Optional[str] = None
     faction: str
     src: str
     wiki: str
