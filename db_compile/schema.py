@@ -128,6 +128,20 @@ CREATE TABLE IF NOT EXISTS detachments (
 );
 """
 
+# Enhancements.csv → enhancements（P6 军表验表用：按 detachment_id 查合法强化+点数）
+ENHANCEMENTS_DDL = """
+CREATE TABLE IF NOT EXISTS enhancements (
+    id TEXT PRIMARY KEY,
+    faction_id TEXT,
+    detachment_id TEXT,
+    detachment_name TEXT,
+    name TEXT,
+    cost INTEGER,
+    legend TEXT,
+    description TEXT
+);
+"""
+
 # 实体解析查找表：wiki/terms.json（中文名）+ UNIT_ALIASES（社区俗名）汇入
 ALIASES_DDL = """
 CREATE TABLE IF NOT EXISTS aliases (
@@ -141,5 +155,5 @@ CREATE TABLE IF NOT EXISTS aliases (
 
 ALL_DDL = (
     FACTIONS_DDL, DATASHEETS_DDL, UNITS_DDL, MODELS_DDL, WEAPONS_DDL,
-    ABILITIES_DDL, STRATAGEMS_DDL, DETACHMENTS_DDL, ALIASES_DDL,
+    ABILITIES_DDL, STRATAGEMS_DDL, DETACHMENTS_DDL, ENHANCEMENTS_DDL, ALIASES_DDL,
 )
