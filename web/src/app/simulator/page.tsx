@@ -3,6 +3,7 @@
 import { useCallback, useEffect, useRef, useState } from "react";
 
 import { SiteHeader } from "@/components/chat/SiteHeader";
+import { LoadoutPanel } from "@/components/sim/LoadoutPanel";
 import { SimResults } from "@/components/sim/SimResults";
 import { UnitPicker } from "@/components/sim/UnitPicker";
 import {
@@ -91,8 +92,10 @@ export default function SimulatorPage() {
   const [dmgReduction, setDmgReduction] = useState(false);
   const [aModels, setAModels] = useState("");
   const [dModels, setDModels] = useState("");
+  const [reverse, setReverse] = useState(false); // 守方幸存反打（近战）
 
   const [loadout, setLoadout] = useState<Record<string, number>>({});
+  const [defLoadout, setDefLoadout] = useState<Record<string, number>>({});
   const [resp, setResp] = useState<SimResponse | null>(null);
   const [running, setRunning] = useState(false);
   const simCtrl = useRef<AbortController | null>(null);
@@ -125,15 +128,23 @@ export default function SimulatorPage() {
     setLoadout({});
     setResp(null);
   };
-  // 换阶段：装配也作废——近战/射击武器池不同，跨阶段沿用会被引擎静默滤成空手 0 伤
+  // 换阶段：攻方装配作废——近战/射击武器池不同，跨阶段沿用会被引擎静默滤成空手 0 伤
+  // （守方反打恒为近战，defLoadout 不随攻方阶段变，无需清）
   const switchPhase = (p: "shooting" | "melee") => {
     if (p === phase) return;
     setPhase(p);
     setLoadout({});
     setResp(null);
   };
+  // 换守方单位：结果与守方反打装配都作废（守方武器池是单位私有的）
   const pickDefender = (u: UnitRow) => {
     dfd.setUnit(u);
+    setDefLoadout({});
+    setResp(null);
+  };
+  // 切守方反打开关：结果作废（报告含义变了）
+  const toggleReverse = (v: boolean) => {
+    setReverse(v);
     setResp(null);
   };
 
@@ -156,6 +167,12 @@ export default function SimulatorPage() {
     if (dm > 0) opts.defender_models = dm;
     const picked = Object.entries(loadout).filter(([, c]) => c > 0);
     if (picked.length > 0) opts.loadout = picked.map(([w, c]) => [w, c]);
+    if (reverse) {
+      opts.reverse = true;
+      opts.reverse_phase = "melee"; // 反打恒为近战（幸存者出手在 fight phase）
+      const dPicked = Object.entries(defLoadout).filter(([, c]) => c > 0);
+      if (dPicked.length > 0) opts.defender_loadout = dPicked.map(([w, c]) => [w, c]);
+    }
     return opts;
   };
 
@@ -182,7 +199,11 @@ export default function SimulatorPage() {
   };
 
   const needLoadout = resp != null && !resp.ok && resp.reason === "loadout_required";
-  const failedOther = resp != null && !resp.ok && resp.reason !== "loadout_required";
+  const needDefLoadout =
+    resp != null && !resp.ok && resp.reason === "defender_loadout_required";
+  const failedOther =
+    resp != null && !resp.ok &&
+    resp.reason !== "loadout_required" && resp.reason !== "defender_loadout_required";
   const atkLabel = atk.unit ? (atk.unit.nameZh ?? atk.unit.nameEn) : "";
   const dfdLabel = dfd.unit ? (dfd.unit.nameZh ?? dfd.unit.nameEn) : "";
 
@@ -266,6 +287,7 @@ export default function SimulatorPage() {
               </select>
             </label>
             <Toggle label="守方减伤 1" checked={dmgReduction} onChange={setDmgReduction} />
+            <Toggle label="守方反打（近战）" checked={reverse} onChange={toggleReverse} />
             <label className="flex items-center gap-1.5 text-[13px] text-[#a9bcb6]">
               攻方模型数
               <input
@@ -301,42 +323,28 @@ export default function SimulatorPage() {
 
         {/* 多武器单位：先装配（后端不猜默认装备，武器池来自权威表） */}
         {needLoadout ? (
-          <section className="mt-4 border border-gold/40 bg-[#141207] px-4 py-3">
-            <div className="mb-1 font-cond text-[13px] tracking-[2px] text-gold uppercase">
-              需先装配攻方武器
-            </div>
-            <p className="mb-2.5 text-[12.5px] text-[#b8ab88]">
-              {resp?.note || "该单位有多把可选武器，指定每把带几件再模拟（不猜默认装备）。"}
-              {resp?.modelTiers?.length ? (
-                <span className="ml-1 font-mono text-[11.5px] text-[#8a7f60]">
-                  点数档位：
-                  {resp.modelTiers
-                    .map((t) => `${t.models} 模型${t.cost != null ? ` ${t.cost} 分` : ""}`)
-                    .join(" / ")}
-                </span>
-              ) : null}
-            </p>
-            <div className="flex flex-wrap gap-x-5 gap-y-2">
-              {(resp?.weaponPool ?? []).map((w) => (
-                <label key={w} className="flex items-center gap-1.5 text-[13px] text-[#d8cba6]">
-                  <input
-                    type="number"
-                    min={0}
-                    value={loadout[w] ?? ""}
-                    onChange={(e) =>
-                      setLoadout((prev) => ({
-                        ...prev,
-                        [w]: parseInt(e.target.value, 10) || 0,
-                      }))
-                    }
-                    placeholder="0"
-                    className="w-[52px] border border-[#4a4326] bg-dark px-1.5 py-0.5 text-[12.5px] text-bone outline-none placeholder:text-[#5c6f6a]"
-                  />
-                  ×{w}
-                </label>
-              ))}
-            </div>
-          </section>
+          <LoadoutPanel
+            title="需先装配攻方武器"
+            note={resp?.note}
+            weaponPool={resp?.weaponPool ?? []}
+            modelTiers={resp?.modelTiers}
+            loadout={loadout}
+            onChange={(w, c) => setLoadout((prev) => ({ ...prev, [w]: c }))}
+            accent="gold"
+          />
+        ) : null}
+
+        {/* 守方反打：守方多武器时同样要先装配（近战武器池） */}
+        {needDefLoadout ? (
+          <LoadoutPanel
+            title="需装配守方反打武器（近战）"
+            note={resp?.note}
+            weaponPool={resp?.weaponPool ?? []}
+            modelTiers={resp?.modelTiers}
+            loadout={defLoadout}
+            onChange={(w, c) => setDefLoadout((prev) => ({ ...prev, [w]: c }))}
+            accent="cyan"
+          />
         ) : null}
 
         {failedOther ? (

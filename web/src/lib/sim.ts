@@ -22,6 +22,10 @@ export interface SimOptions {
   fnp?: number; // 守方无痛 X+（2-6）
   damage_reduction?: number;
   loadout?: [string, number][]; // [[武器名, 数量], ...]
+  reverse?: boolean; // 守方幸存反打开关（多武器守方未指明 loadout → defender_loadout_required）
+  /** 守方反打装配（近战武器）；reverse 开启且守方多武器时必填 */
+  defender_loadout?: [string, number][];
+  reverse_phase?: "shooting" | "melee"; // 反打阶段，默认 melee
   n?: number;
   seed?: number;
 }
@@ -68,7 +72,8 @@ export interface SimReport {
 
 export interface SimResponse {
   ok: boolean;
-  /** ok=false 时：not_found | loadout_required | error（ambiguous 后端归一为 loadout_required） */
+  /** ok=false 时：not_found | loadout_required | defender_loadout_required | error
+   *  （loadout_required=攻方装配，defender_loadout_required=守方反打装配，都附 weaponPool） */
   reason?: string | null;
   note?: string | null;
   warning?: string | null;

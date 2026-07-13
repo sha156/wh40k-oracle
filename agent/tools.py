@@ -474,31 +474,41 @@ def simulate_combat_resolved(
         points_a = _pts(a["canonical_id"])
         points_b = _pts(d["canonical_id"])          # 评审 M#7：B 侧点数也算，供反打性价比
 
-        # 反打：给了 defender_loadout 才做串行幸存反打，否则单向
+        # 反打：显式 reverse 开关 或 给了 defender_loadout 才做串行幸存反打，否则单向。
+        # 守方多武器且未指明 loadout → 走 defender_loadout_required 让上层要求装配。
         d_loadout = options.get("defender_loadout")
-        if d_loadout:
+        if options.get("reverse") or d_loadout:
+            rev_phase = options.get("reverse_phase", "melee")
             d_asm = assemble_attacker(
                 db_path, d["canonical_id"], models=options.get("defender_models"),
-                loadout=[(str(w), int(c)) for w, c in d_loadout],
-                phase=options.get("reverse_phase", "melee"))
+                loadout=[(str(w), int(c)) for w, c in d_loadout] if d_loadout else None,
+                phase=rev_phase)
             a_as_target = load_target(db_path, a["canonical_id"],
                                       models=options.get("attacker_models"))
-            if d_asm and not d_asm.ambiguous and a_as_target is not None:
-                rep = simulate_matchup(
-                    asm.attacker, target, d_asm.attacker, a_as_target,
-                    stance_forward=stance,
-                    stance_reverse=Stance(phase=options.get("reverse_phase", "melee")),
-                    n=n, seed=seed, points_a=points_a, points_b=points_b,
-                    a_fights_first=bool(options.get("attacker_fights_first")),
-                    a_fights_last=bool(options.get("attacker_fights_last")),
-                    b_fights_first=bool(options.get("defender_fights_first")),
-                    b_fights_last=bool(options.get("defender_fights_last")))
-                return {"ok": True, "modeled": True, "tool": "simulate_combat",
-                        "attacker": a["name_en"], "defender": d["name_en"],
-                        "phase": phase, "report": _report_to_dict(rep),
-                        "defender_toggles": defender_toggles,
-                        "faction_options": faction_options,
-                        "warning": warning}
+            if d_asm is None or a_as_target is None:
+                return {"ok": False, "modeled": True, "tool": "simulate_combat",
+                        "reason": "not_found",
+                        "note": f"守方 {d['name_en']} 反打装载失败"}
+            # 守方多武器且未指明 → 显式要求装配（禁止静默退回单向：违反诚实降级纪律）
+            if d_asm.ambiguous or d_asm.attacker is None:
+                return {"ok": False, "modeled": True, "tool": "simulate_combat",
+                        "reason": "defender_loadout_required", "note": d_asm.note,
+                        "weapon_pool": [w.name_en for w in d_asm.weapon_pool],
+                        "model_tiers": d_asm.tiers, "errors": d_asm.errors}
+            rep = simulate_matchup(
+                asm.attacker, target, d_asm.attacker, a_as_target,
+                stance_forward=stance, stance_reverse=Stance(phase=rev_phase),
+                n=n, seed=seed, points_a=points_a, points_b=points_b,
+                a_fights_first=bool(options.get("attacker_fights_first")),
+                a_fights_last=bool(options.get("attacker_fights_last")),
+                b_fights_first=bool(options.get("defender_fights_first")),
+                b_fights_last=bool(options.get("defender_fights_last")))
+            return {"ok": True, "modeled": True, "tool": "simulate_combat",
+                    "attacker": a["name_en"], "defender": d["name_en"],
+                    "phase": phase, "report": _report_to_dict(rep),
+                    "defender_toggles": defender_toggles,
+                    "faction_options": faction_options,
+                    "warning": warning}
 
         rep = simulate(asm.attacker, target, stance, n=n, seed=seed, points=points_a)
         return {"ok": True, "modeled": True, "tool": "simulate_combat",
