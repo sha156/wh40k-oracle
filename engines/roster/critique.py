@@ -70,21 +70,36 @@ def _has_phase_weapons(attacker, phase: str) -> bool:
     return any(not w.is_melee for w in attacker.loadout)
 
 
-def _assemble_best_phase(db_path, unit):
-    """按 unit.loadout 试装配，返回该阶段真有武器的 (phase, attacker) 或 (None, None)。
+def _assemble_phases(db_path, unit):
+    """装配 unit.loadout，返回每个真有武器的阶段 [(phase, attacker), ...]。
 
-    先射击后近战；某阶段装配成功但无该阶段武器（如纯近战 loadout 试射击）→ 跳过，
-    换下一阶段。避免把纯近战单位误评成射击 0 伤。
+    某阶段装配成功但无该阶段武器（如纯近战 loadout 试射击）→ 剔除，避免 0 攻击误评。
     """
     from engines.simulator.assembly import assemble_attacker
     loadout = [(str(w), int(c)) for w, c in unit.loadout]
+    out = []
     for phase in ("shooting", "melee"):
         asm = assemble_attacker(db_path, unit.canonical_id,
                                 models=unit.models, loadout=loadout, phase=phase)
         if (asm and not asm.ambiguous and asm.attacker is not None
                 and _has_phase_weapons(asm.attacker, phase)):
-            return phase, asm.attacker
-    return None, None
+            out.append((phase, asm.attacker))
+    return out
+
+
+def _score_phase(attacker, phase, points, n, seed):
+    """某阶段对 4 典型目标的 (scores, 总期望伤害)。"""
+    from engines.simulator.contracts import Stance
+    from engines.simulator.engine import simulate
+    scores, total = [], 0.0
+    for key, label, target in _archetypes():
+        rep = simulate(attacker, target, Stance(phase=phase), n=n, seed=seed,
+                       points=points, include_bias=False)
+        dmg = round(rep.expected_damage, 2)
+        total += dmg
+        per100 = round(dmg / points * 100, 2) if points else None
+        scores.append(TargetScore(key, label, dmg, per100))
+    return scores, total
 
 
 def _assess_unit(db_path, unit, n: int, seed: int) -> UnitAssessment:
@@ -92,25 +107,21 @@ def _assess_unit(db_path, unit, n: int, seed: int) -> UnitAssessment:
         return UnitAssessment(
             unit.canonical_id, unit.name_en, unit.points, assessed=False,
             note="需装配（多武器选项池，未指定 loadout → 不评估，不瞎估）")
-    phase, attacker = _assemble_best_phase(db_path, unit)
-    if attacker is None:
+    candidates = _assemble_phases(db_path, unit)
+    if not candidates:
         return UnitAssessment(
             unit.canonical_id, unit.name_en, unit.points, assessed=False,
-            note="装配失败（loadout 与武器池不匹配 / 该阶段无武器）")
+            note="装配失败（loadout 与武器池不匹配 / 无可开火武器）")
 
-    from engines.simulator.contracts import Stance
-    from engines.simulator.engine import simulate
-    scores: List[TargetScore] = []
-    for key, label, target in _archetypes():
-        rep = simulate(attacker, target, Stance(phase=phase), n=n, seed=seed,
-                       points=unit.points, include_bias=False)
-        dmg = round(rep.expected_damage, 2)
-        per100 = (round(dmg / unit.points * 100, 2)
-                  if unit.points else None)
-        scores.append(TargetScore(key, label, dmg, per100))
+    # 攻守双武器单位：评估各阶段，取总输出更高的那个（否则近战主战单位会被手枪拖低）
+    best = None
+    for phase, attacker in candidates:
+        scores, total = _score_phase(attacker, phase, unit.points, n, seed)
+        if best is None or total > best[0]:
+            best = (total, phase, scores)
     return UnitAssessment(
         unit.canonical_id, unit.name_en, unit.points, assessed=True,
-        phase=phase, scores=tuple(scores))
+        phase=best[1], scores=tuple(best[2]))
 
 
 def _build_summary(assessments: Tuple[UnitAssessment, ...]) -> Tuple[str, ...]:

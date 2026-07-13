@@ -77,6 +77,15 @@ export default function RosterPage() {
   const [error, setError] = useState<string | null>(null);
 
   const uidRef = useRef(1);
+  const critiqueCtrl = useRef<AbortController | null>(null);
+  const mountedRef = useRef(true);
+  // 卸载时中止在途点评 + 阻止 post-unmount setState
+  useEffect(() => {
+    return () => {
+      mountedRef.current = false;
+      critiqueCtrl.current?.abort();
+    };
+  }, []);
   const onErr = useCallback((e: unknown) => {
     if ((e as Error).name === "AbortError") return;
     setError(BACKEND_HINT);
@@ -196,18 +205,25 @@ export default function RosterPage() {
     const target = units.find((u) => u.uid === uid);
     if (target && !target.expanded && target.weaponPool === null) {
       fetchUnitWeapons(target.canonicalId)
-        .then((pool) => patch(uid, (u) => ({ ...u, weaponPool: pool })))
-        .catch(onErr);
+        .then((pool) => {
+          if (mountedRef.current) patch(uid, (u) => ({ ...u, weaponPool: pool }));
+        })
+        .catch(onErr); // 失败留 weaponPool=null：错误横幅提示 + 折叠再展开可重试
     }
   };
 
   const runCritique = () => {
     if (!factionId || units.length === 0 || critiquing) return;
+    critiqueCtrl.current?.abort(); // 取消上一次在途点评
+    const ctrl = new AbortController();
+    critiqueCtrl.current = ctrl;
     setCritiquing(true);
     setError(null);
     const sig = critiqueSig;
-    postCritique(toPayload(factionId, detachmentId, size, units))
-      .then((report) => setCritique({ sig, report }))
+    postCritique(toPayload(factionId, detachmentId, size, units), ctrl.signal)
+      .then((report) => {
+        if (!ctrl.signal.aborted) setCritique({ sig, report });
+      })
       .catch((e) => {
         if ((e as Error).name === "AbortError") return;
         setError(
@@ -216,7 +232,9 @@ export default function RosterPage() {
             : BACKEND_HINT,
         );
       })
-      .finally(() => setCritiquing(false));
+      .finally(() => {
+        if (!ctrl.signal.aborted) setCritiquing(false);
+      });
   };
 
   const filtered = useMemo(() => {
