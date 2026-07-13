@@ -60,10 +60,12 @@ def sanitize_options(raw: Optional[Dict[str, Any]]) -> Dict[str, Any]:
     out: Dict[str, Any] = {}
     if raw.get("phase") in ("shooting", "melee"):
         out["phase"] = raw["phase"]
+    if raw.get("reverse_phase") in ("shooting", "melee"):
+        out["reverse_phase"] = raw["reverse_phase"]
     # smokescreen 不在白名单：引擎里它只是 cover_on 的别名（smokescreen→cover_on），
     # 网页用 cover 开关表达即可，不重复暴露；agent 直调路径不过此白名单，仍可用 smokescreen。
     for key in ("charge", "half_range", "cover", "stationary", "long_range",
-                "indirect", "stealth"):
+                "indirect", "stealth", "reverse"):
         if key in raw:
             out[key] = _as_bool(raw[key])
     for key in ("attacker_models", "defender_models", "damage_reduction", "seed"):
@@ -79,6 +81,9 @@ def sanitize_options(raw: Optional[Dict[str, Any]]) -> Dict[str, Any]:
     loadout = _as_loadout(raw.get("loadout"))
     if loadout is not None:
         out["loadout"] = loadout
+    d_loadout = _as_loadout(raw.get("defender_loadout"))
+    if d_loadout is not None:
+        out["defender_loadout"] = d_loadout
     return out
 
 

@@ -69,6 +69,20 @@ def test_sanitize_drops_smokescreen():
     assert sanitize_options({"cover": True})["cover"] is True
 
 
+def test_sanitize_reverse_keys():
+    out = sanitize_options({
+        "reverse": True, "reverse_phase": "melee",
+        "defender_loadout": [["Crushing bulk", 1]],
+    })
+    assert out["reverse"] is True
+    assert out["reverse_phase"] == "melee"
+    assert out["defender_loadout"] == [("Crushing bulk", 1)]
+    # 非法 reverse_phase 丢弃、守方 loadout 半份整体拒收
+    assert "reverse_phase" not in sanitize_options({"reverse_phase": "psychic"})
+    assert "defender_loadout" not in sanitize_options(
+        {"defender_loadout": [["gun", 0]]})
+
+
 # ── id → name 查找 ────────────────────────────────────────────────
 
 @needs_db
@@ -124,6 +138,32 @@ def test_run_simulation_full_report_contract():
     d = resp.model_dump(by_alias=True)
     assert "expectedDamage" in d["report"] and "wipeProbability" in d["report"]
     assert "notModeled" in d["report"] and "factionOptions" in d
+
+
+# ── 守方反打（reverse）流 ─────────────────────────────────────────
+
+@needs_db
+def test_run_simulation_reverse_needs_defender_loadout():
+    """reverse=True + 守方多武器未指明 loadout → defender_loadout_required（不静默退回单向）。"""
+    resp = run_simulation(DB_PATH, BROADSIDE, BROADSIDE, {
+        "loadout": [["Heavy rail rifle", 1]], "reverse": True, "n": 300})
+    assert resp is not None and resp.ok is False
+    assert resp.reason == "defender_loadout_required"
+    assert resp.weapon_pool and "Crushing bulk" in resp.weapon_pool
+
+
+@needs_db
+def test_run_simulation_reverse_full_report():
+    """给齐攻/守 loadout → 串行幸存反打，report.reverse 非空。"""
+    resp = run_simulation(DB_PATH, BROADSIDE, BROADSIDE, {
+        "loadout": [["Heavy rail rifle", 1]], "reverse": True,
+        "defender_loadout": [["Crushing bulk", 1]], "reverse_phase": "melee",
+        "n": 500, "seed": 7})
+    assert resp is not None and resp.ok is True, resp.note
+    assert resp.report is not None and resp.report.reverse is not None
+    # camelCase 契约：reverse 也镜像
+    d = resp.model_dump(by_alias=True)
+    assert d["report"]["reverse"]["expectedDamage"] >= 0
 
 
 @needs_db
