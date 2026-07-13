@@ -1,0 +1,155 @@
+"""tests/test_roster_validate.py — 军表引擎（P6-PR1b）。
+
+纯逻辑（unit_cost/compose_rules/contracts，脱库）+ 集成（validate 逐条规则，真库）。
+"""
+from __future__ import annotations
+
+from pathlib import Path
+
+import pytest
+
+from engines.roster import Roster, RosterUnit, validate
+from engines.roster.compose_rules import (RULE_OF_THREE, datasheet_copy_limit,
+                                          size_limit)
+from engines.roster.contracts import ERROR, WARN, ValidationIssue, ValidationReport
+from engines.roster.points import _tiers_from_points_json, total_points, unit_cost
+
+DB = Path("db/wh40k.sqlite")
+needs_db = pytest.mark.skipif(not DB.exists(), reason="wh40k.sqlite 不存在")
+
+# 稳定 canonical id（真库）
+INTERCESSOR = "000001157"       # SM BATTLELINE：5=80 / 10=150
+APOTHECARY = "000000060"        # SM CHARACTER 非 EPIC HERO
+BROADSIDE = "000000433"         # Tau 非 battleline 非 character：1=75/2=150/3=240
+EPIC_HERO = "000000096"         # SM Carab Culln The Risen（EPIC HERO）
+DET_BASTION = "000001130"       # SM Bastion Task Force
+ENH = "Eye of the Primarch"     # Bastion 合法强化
+
+
+# ── 纯逻辑：点数档位 ───────────────────────────────────────────────
+
+def test_tiers_and_unit_cost():
+    pj = '{"items":[{"desc":"5 models","cost":80},{"desc":"10 models","cost":150}]}'
+    assert _tiers_from_points_json(pj) == {5: 80, 10: 150}
+    assert unit_cost(pj, 5) == 80
+    assert unit_cost(pj, 10) == 150
+    assert unit_cost(pj, 7) is None       # 档位内无 → 无法定价
+    assert unit_cost(None, 5) is None
+    assert unit_cost("not json", 5) is None
+
+
+def test_compose_rules_copy_limit():
+    assert datasheet_copy_limit(set()) == RULE_OF_THREE
+    assert datasheet_copy_limit({"BATTLELINE"}) is None       # 豁免
+    assert datasheet_copy_limit({"DEDICATED TRANSPORT"}) is None
+    assert datasheet_copy_limit({"EPIC HERO"}) == 1
+    assert size_limit("incursion") == 1000
+    assert size_limit("strike_force") == 2000
+    assert size_limit("unknown") == 2000                       # 回退
+
+
+def test_report_properties():
+    rep = ValidationReport(100, 2000, False, (
+        ValidationIssue("a", ERROR, "x"), ValidationIssue("b", WARN, "y")))
+    assert len(rep.errors) == 1 and len(rep.warnings) == 1
+
+
+# ── 集成：validate 逐条规则 ───────────────────────────────────────
+
+def _codes(rep):
+    return {i.code for i in rep.issues}
+
+
+@needs_db
+def test_legal_roster():
+    r = validate(DB, Roster("SM", DET_BASTION, "strike_force", (
+        RosterUnit(APOTHECARY, "Apothecary Biologis", 1, is_warlord=True, enhancement=ENH),
+        RosterUnit(INTERCESSOR, "Intercessor Squad", 5),
+    )))
+    assert r.legal is True and r.errors == ()
+    assert r.total_points == 150            # Apothecary + Intercessor 5-model
+
+
+@needs_db
+def test_warlord_count_and_character():
+    # 0 warlord
+    r0 = validate(DB, Roster("SM", DET_BASTION, "strike_force", (
+        RosterUnit(INTERCESSOR, "Intercessor Squad", 5),)))
+    assert "warlord_count" in _codes(r0) and r0.legal is False
+    # warlord 非 CHARACTER（Intercessor 当 warlord）
+    rn = validate(DB, Roster("SM", DET_BASTION, "strike_force", (
+        RosterUnit(INTERCESSOR, "Intercessor Squad", 5, is_warlord=True),)))
+    assert "warlord_not_character" in _codes(rn)
+
+
+@needs_db
+def test_rule_of_three_and_battleline_exempt():
+    # 非 battleline character x4 → 超编
+    r = validate(DB, Roster("SM", DET_BASTION, "strike_force", tuple(
+        [RosterUnit(APOTHECARY, "Apothecary Biologis", 1, is_warlord=(i == 0))
+         for i in range(4)])))
+    assert "rot_exceeded" in _codes(r)
+    # battleline x5 → 豁免，无 rot
+    rb = validate(DB, Roster("SM", DET_BASTION, "strike_force", tuple(
+        [RosterUnit(INTERCESSOR, "Intercessor Squad", 5) for _ in range(5)] +
+        [RosterUnit(APOTHECARY, "Apothecary Biologis", 1, is_warlord=True)])))
+    assert "rot_exceeded" not in _codes(rb)
+
+
+@needs_db
+def test_epic_hero_max_one():
+    r = validate(DB, Roster("SM", DET_BASTION, "strike_force", (
+        RosterUnit(EPIC_HERO, "Carab Culln", 1, is_warlord=True),
+        RosterUnit(EPIC_HERO, "Carab Culln", 1),
+    )))
+    assert "rot_exceeded" in _codes(r)      # epic hero 至多 1
+
+
+@needs_db
+def test_points_over_limit():
+    # incursion 1000：8× Intercessor 10 模型(150) = 1200 > 1000（battleline 免 RoT）
+    r = validate(DB, Roster("SM", DET_BASTION, "incursion", tuple(
+        [RosterUnit(INTERCESSOR, "Intercessor Squad", 10) for _ in range(8)] +
+        [RosterUnit(APOTHECARY, "Apothecary Biologis", 1, is_warlord=True)])))
+    assert "points_over" in _codes(r) and r.total_points > r.limit
+
+
+@needs_db
+def test_unit_unpriced_warn():
+    # Intercessor 档位只有 5/10 模型；选 7 → 无法定价 warn（surfaced_only）
+    r = validate(DB, Roster("SM", DET_BASTION, "strike_force", (
+        RosterUnit(INTERCESSOR, "Intercessor Squad", 7, is_warlord=False),
+        RosterUnit(APOTHECARY, "Apothecary Biologis", 1, is_warlord=True),
+    )))
+    unpriced = [i for i in r.issues if i.code == "unit_unpriced"]
+    assert unpriced and unpriced[0].surfaced_only and unpriced[0].severity == WARN
+
+
+@needs_db
+def test_enhancement_rules():
+    # 错分队强化
+    rw = validate(DB, Roster("SM", DET_BASTION, "strike_force", (
+        RosterUnit(APOTHECARY, "Apothecary Biologis", 1, is_warlord=True,
+                   enhancement="NotARealEnhancement"),)))
+    assert "enh_wrong_detachment" in _codes(rw)
+    # 强化挂非 CHARACTER
+    rc = validate(DB, Roster("SM", DET_BASTION, "strike_force", (
+        RosterUnit(INTERCESSOR, "Intercessor Squad", 5, enhancement=ENH),
+        RosterUnit(APOTHECARY, "Apothecary Biologis", 1, is_warlord=True),
+    )))
+    assert "enh_not_character" in _codes(rc)
+    # 重复强化
+    rd = validate(DB, Roster("SM", DET_BASTION, "strike_force", (
+        RosterUnit(APOTHECARY, "Apothecary Biologis", 1, is_warlord=True, enhancement=ENH),
+        RosterUnit(APOTHECARY, "Apothecary Biologis", 1, enhancement=ENH),
+    )))
+    assert "enh_duplicate" in _codes(rd)
+
+
+@needs_db
+def test_enhancement_unverified_without_detachment():
+    # 无 detachment → 强化归属未校验（surfaced_only，不假通过）
+    r = validate(DB, Roster("SM", None, "strike_force", (
+        RosterUnit(APOTHECARY, "Apothecary Biologis", 1, is_warlord=True, enhancement=ENH),)))
+    unv = [i for i in r.issues if i.code == "enh_unverified"]
+    assert unv and unv[0].surfaced_only is True
