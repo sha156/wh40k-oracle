@@ -458,8 +458,16 @@ def simulate_combat_resolved(
             cover_on = True
         gtg_warn = ("go_to_ground 开关已废弃（11 版核心战略无 Go to Ground），本次未生效"
                     if options.get("go_to_ground") else None)
+        # loadout 与阶段不匹配（如纯近战武器打射击阶段）→ 序列层滤成 0 攻击，显式披露不静默
+        _is_melee_phase = phase == "melee"
+        phase_warn = (
+            f"攻方在{'近战' if _is_melee_phase else '射击'}阶段无可开火武器"
+            f"（该 loadout 全是{'射击' if _is_melee_phase else '近战'}武器），期望伤害为 0"
+            if not any(w.is_melee == _is_melee_phase for w in asm.attacker.loadout)
+            else None)
         warning = "；".join(
-            x for x in (a.get("warning"), d.get("warning"), gtg_warn) if x) or None
+            x for x in (a.get("warning"), d.get("warning"), gtg_warn, phase_warn)
+            if x) or None
         if cover_on and not stance.target_in_cover:
             stance = _replace(stance, target_in_cover=True)
         if def_effects:

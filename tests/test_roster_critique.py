@@ -110,6 +110,18 @@ def test_critique_melee_only_assessed_in_melee_not_zero():
 
 
 @needs_db
+def test_critique_mixed_loadout_picks_higher_output_phase():
+    """攻守双武器：链锯剑(近战强)+重爆弹手枪(射击弱) → 评估 melee（总输出更高），
+    不被手枪拖成射击评估。"""
+    ASSAULT = "000001606"
+    r = Roster("SM", None, "strike_force", (
+        RosterUnit(ASSAULT, "Assault Intercessor Squad", 5,
+                   loadout=(("Astartes chainsword", 5), ("Heavy bolt pistol", 5))),))
+    a = critique(DB, r, n=1500, seed=7).assessments[0]
+    assert a.assessed and a.phase == "melee"
+
+
+@needs_db
 def test_critique_deterministic():
     r = Roster("SM", DET, "strike_force", (
         RosterUnit(INTERCESSOR, "Intercessor Squad", 5, loadout=(("Bolt rifle", 5),)),))
