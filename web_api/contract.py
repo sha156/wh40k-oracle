@@ -7,7 +7,7 @@ Python 3.9：不用 `X | Y` 联合语法，一律 Optional/List/Union/Literal。
 """
 from __future__ import annotations
 
-from typing import List, Literal, Optional, Union
+from typing import Any, Dict, List, Literal, Optional, Union
 
 from pydantic import BaseModel, ConfigDict, Field
 
@@ -158,3 +158,56 @@ class Exchange(BaseModel):
     question: str
     context: str
     answer: Answer
+
+
+# ── 模拟器页签（Stage 4，镜像 web/src/lib/sim.ts）─────────────────
+
+class SimToggle(BaseModel):
+    """守方可 opt-in 的防守开关（surface-don't-fake：只披露，不自动施加）。"""
+    name: str
+    note: str = ""
+    parsed: Optional[Any] = None
+
+
+class SimFactionOptions(_CamelModel):
+    """守方阵营分队清单（诚实披露未建模的分队/军队规则）。"""
+    faction_id: Optional[str] = Field(default=None, alias="factionId")
+    faction_name: Optional[str] = Field(default=None, alias="factionName")
+    detachments: List[str] = []
+
+
+class SimReportOut(_CamelModel):
+    """SimReport 镜像。distribution={p10,p50,p90,histogram,damage}；
+    funnel=attacks→hits→wounds→unsaved→damage→kills；efficiency=每100点。"""
+    expected_damage: float = Field(alias="expectedDamage")
+    expected_kills: float = Field(alias="expectedKills")
+    wipe_probability: float = Field(alias="wipeProbability")
+    distribution: Dict[str, Any] = {}
+    funnel: Dict[str, float] = {}
+    efficiency: Dict[str, Any] = {}
+    modeled_effects: List[str] = Field(default=[], alias="modeledEffects")
+    not_modeled: List[str] = Field(default=[], alias="notModeled")
+    bias_notes: List[str] = Field(default=[], alias="biasNotes")
+    iterations: int = 0
+    seed: int = 0
+    reverse: Optional["SimReportOut"] = None
+
+
+class SimResponse(_CamelModel):
+    """POST /simulate 响应。ok=False 时 reason 区分 not_found / loadout_required /
+    error；loadout_required 附 weaponPool + modelTiers 供前端装配面板。"""
+    ok: bool
+    reason: Optional[str] = None
+    note: Optional[str] = None
+    warning: Optional[str] = None
+    attacker: Optional[str] = None
+    defender: Optional[str] = None
+    phase: Optional[str] = None
+    report: Optional[SimReportOut] = None
+    defender_toggles: List[SimToggle] = Field(default=[], alias="defenderToggles")
+    faction_options: Optional[SimFactionOptions] = Field(
+        default=None, alias="factionOptions")
+    weapon_pool: Optional[List[str]] = Field(default=None, alias="weaponPool")
+    model_tiers: Optional[List[Dict[str, Any]]] = Field(
+        default=None, alias="modelTiers")
+    errors: List[str] = []

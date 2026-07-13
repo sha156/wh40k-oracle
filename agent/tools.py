@@ -362,7 +362,6 @@ def simulate_combat(
     （多模型单位必填，否则返回 ambiguous+武器池）；defender_loadout（给了则串行幸存反打）；
     fnp(守方无痛X)、damage_reduction；n(默认8000)、seed。
     """
-    options = options or {}
     db_path = db_path or DB_PATH
     if not Path(db_path).exists():
         return {"ok": False, "modeled": True, "tool": "simulate_combat",
@@ -374,6 +373,23 @@ def simulate_combat(
     d = _resolve_unit(defender, resolver=resolver)
     if not d["ok"]:
         return {"ok": False, "modeled": True, "tool": "simulate_combat", **d}
+    return simulate_combat_resolved(a, d, options, db_path)
+
+
+def simulate_combat_resolved(
+    a: Dict[str, Any], d: Dict[str, Any],
+    options: Optional[Dict[str, Any]] = None, db_path: Optional[Path] = None,
+) -> Dict[str, Any]:
+    """已解析攻/守（{"canonical_id","name_en",可选"warning"}）→ 模拟核心。
+
+    web_api /simulate 用图鉴 canonical id 直调（免名字解析歧义）；
+    simulate_combat 解析名字后同走此核心。options 语义见 simulate_combat。
+    """
+    options = options or {}
+    db_path = db_path or DB_PATH
+    if not Path(db_path).exists():
+        return {"ok": False, "modeled": True, "tool": "simulate_combat",
+                "note": "wh40k.sqlite 不存在，需先跑 db_compile build"}
 
     try:
         from dataclasses import replace as _replace
@@ -400,7 +416,7 @@ def simulate_combat(
                                 loadout=loadout, phase=phase)
         if asm is None:
             return {"ok": False, "modeled": True, "tool": "simulate_combat",
-                    "reason": "not_found", "note": f"单位 {attacker} 无法装载"}
+                    "reason": "not_found", "note": f"单位 {a['name_en']} 无法装载"}
         if asm.ambiguous or asm.attacker is None:
             return {"ok": False, "modeled": True, "tool": "simulate_combat",
                     "reason": "loadout_required", "note": asm.note,
@@ -411,7 +427,7 @@ def simulate_combat(
                              models=options.get("defender_models"))
         if target is None:
             return {"ok": False, "modeled": True, "tool": "simulate_combat",
-                    "reason": "not_found", "note": f"守方 {defender} 无法装载"}
+                    "reason": "not_found", "note": f"守方 {d['name_en']} 无法装载"}
         # P5-a：守方可 opt-in 的防守开关（名字/说明/是否解析出参数）——供面板预填、不自动施加
         from engines.simulator.context import build_toggles_available
         from engines.simulator.profile import load_faction_options
