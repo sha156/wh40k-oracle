@@ -30,6 +30,8 @@ def test_to_loadout_coercion():
     assert _to_loadout([["Gun", 0]]) == ()                  # 非正 → 整体拒收
     assert _to_loadout([["Gun"]]) == ()                     # 半份 → 拒收
     assert _to_loadout([["", 2]]) == ()                     # 空名 → 拒收
+    # 同名武器合并求和（防客户端追加行 → 引擎双计伤害）
+    assert _to_loadout([["Bolt rifle", 1], ["Bolt rifle", 2]]) == (("Bolt rifle", 3),)
 
 
 def _client():

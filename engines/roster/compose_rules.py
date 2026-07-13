@@ -44,13 +44,36 @@ def unit_keywords(db_path, canonical_id: str) -> Set[str]:
             "SELECT keywords_json FROM units WHERE id = ?", (canonical_id,)).fetchone()
     finally:
         conn.close()
-    if not row or not row[0]:
+    return _parse_keywords(row[0]) if row else set()
+
+
+def _parse_keywords(kj) -> Set[str]:
+    if not kj:
         return set()
     try:
-        data = json.loads(row[0])
+        data = json.loads(kj)
     except (ValueError, TypeError):
         return set()
     return {k.strip().upper() for k in data.get("keywords", []) if k and k.strip()}
+
+
+def unit_keywords_bulk(db_path, ids) -> Dict[str, Set[str]]:
+    """一次查多个单位的关键词 → {id: set}（避免验表按单位 N+1 连库）。查不到补空集。"""
+    ids = list(ids)
+    out: Dict[str, Set[str]] = {i: set() for i in ids}
+    uniq = list(set(ids))
+    if not uniq:
+        return out
+    conn = sqlite3.connect(str(db_path))
+    try:
+        ph = ",".join("?" * len(uniq))
+        rows = conn.execute(
+            f"SELECT id, keywords_json FROM units WHERE id IN ({ph})", uniq).fetchall()
+    finally:
+        conn.close()
+    for uid, kj in rows:
+        out[uid] = _parse_keywords(kj)
+    return out
 
 
 def is_character(kw: Set[str]) -> bool:

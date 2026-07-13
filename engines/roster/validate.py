@@ -8,9 +8,10 @@ from __future__ import annotations
 from collections import Counter
 from typing import List, Optional, Set
 
-from engines.roster.compose_rules import (MAX_ENHANCEMENTS, datasheet_copy_limit,
-                                          is_character, is_epic_hero, size_limit,
-                                          unit_keywords)
+from engines.roster.compose_rules import (MAX_ENHANCEMENTS, SIZE_LIMITS,
+                                          datasheet_copy_limit, is_character,
+                                          is_epic_hero, size_limit,
+                                          unit_keywords_bulk)
 from engines.roster.contracts import (ERROR, WARN, Roster, ValidationIssue,
                                       ValidationReport)
 from engines.roster.points import recompute, total_points
@@ -31,12 +32,23 @@ def validate(db_path, roster: Roster) -> ValidationReport:
     issues: List[ValidationIssue] = []
     limit = size_limit(priced.size)
     total = total_points(priced)
+    # 一次性取全部单位关键词（避免按单位 N+1 连库）
+    kw_map = unit_keywords_bulk(db_path, [u.canonical_id for u in priced.units])
+
+    # ⓪ 未知规模档：显式 surface（size_limit 会回退 2000，但不静默——否则报错消息会撒谎）
+    size_label = priced.size
+    if priced.size not in SIZE_LIMITS:
+        issues.append(ValidationIssue(
+            "unknown_size", WARN,
+            f"未知规模档「{priced.size}」，按 strike_force {limit} 计",
+            surfaced_only=True))
+        size_label = f"strike_force({limit})"
 
     # ① 总分 ≤ 上限
     if total > limit:
         issues.append(ValidationIssue(
             "points_over", ERROR,
-            f"总分 {total} 超出 {priced.size} 上限 {limit}（超 {total - limit}）",
+            f"总分 {total} 超出 {size_label} 上限 {limit}（超 {total - limit}）",
             anchor="11版 军表构筑·点数上限"))
 
     # ② 无法定价的单位（模型数不在档位内）—— warn，不静默计 0
@@ -55,7 +67,7 @@ def validate(db_path, roster: Roster) -> ValidationReport:
             f"须恰好 1 个 WARLORD，当前 {len(warlords)} 个",
             anchor="11版 军表构筑·Warlord"))
     for w in warlords:
-        if not is_character(unit_keywords(db_path, w.canonical_id)):
+        if not is_character(kw_map.get(w.canonical_id, set())):
             issues.append(ValidationIssue(
                 "warlord_not_character", ERROR,
                 f"{w.name_en} 非 CHARACTER，不能任 WARLORD",
@@ -64,7 +76,7 @@ def validate(db_path, roster: Roster) -> ValidationReport:
     # ④ Rule of Three：同 datasheet 份数上限（battleline/DT 豁免、epic hero≤1）
     counts = Counter(u.canonical_id for u in priced.units)
     for cid, n in counts.items():
-        kw = unit_keywords(db_path, cid)
+        kw = kw_map.get(cid, set())
         cap = datasheet_copy_limit(kw)
         if cap is not None and n > cap:
             name = next(u.name_en for u in priced.units if u.canonical_id == cid)
@@ -75,14 +87,15 @@ def validate(db_path, roster: Roster) -> ValidationReport:
                 anchor="11版 军表构筑·Rule of Three"))
 
     # ⑤ 强化：≤3 个、仅 CHARACTER 非 EPIC HERO、全军唯一、属于本 detachment
-    _validate_enhancements(db_path, priced, issues)
+    _validate_enhancements(db_path, priced, kw_map, issues)
 
     legal = not any(i.severity == ERROR for i in issues)
     return ValidationReport(total_points=total, limit=limit, legal=legal,
                             issues=tuple(issues))
 
 
-def _validate_enhancements(db_path, roster: Roster, issues: List[ValidationIssue]) -> None:
+def _validate_enhancements(db_path, roster: Roster, kw_map,
+                           issues: List[ValidationIssue]) -> None:
     enhanced = [u for u in roster.units if u.enhancement]
     if not enhanced:
         return
@@ -103,7 +116,7 @@ def _validate_enhancements(db_path, roster: Roster, issues: List[ValidationIssue
 
     # 仅 CHARACTER 非 EPIC HERO
     for u in enhanced:
-        kw = unit_keywords(db_path, u.canonical_id)
+        kw = kw_map.get(u.canonical_id, set())
         if not is_character(kw):
             issues.append(ValidationIssue(
                 "enh_not_character", ERROR,

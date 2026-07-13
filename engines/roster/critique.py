@@ -62,14 +62,27 @@ class CritiqueReport:
     not_modeled: Tuple[str, ...] = ()    # 诚实披露
 
 
+def _has_phase_weapons(attacker, phase: str) -> bool:
+    """该阶段是否真有可开火武器——防「纯近战 loadout 在射击阶段装配成功但 0 攻击」的
+    静默 0 伤陷阱（装配层不按阶段滤武器，序列层才滤；此处提前判）。"""
+    if phase == "melee":
+        return any(w.is_melee for w in attacker.loadout)
+    return any(not w.is_melee for w in attacker.loadout)
+
+
 def _assemble_best_phase(db_path, unit):
-    """按 unit.loadout 试装配（先射击后近战），返回 (phase, attacker) 或 (None, None)。"""
+    """按 unit.loadout 试装配，返回该阶段真有武器的 (phase, attacker) 或 (None, None)。
+
+    先射击后近战；某阶段装配成功但无该阶段武器（如纯近战 loadout 试射击）→ 跳过，
+    换下一阶段。避免把纯近战单位误评成射击 0 伤。
+    """
     from engines.simulator.assembly import assemble_attacker
     loadout = [(str(w), int(c)) for w, c in unit.loadout]
     for phase in ("shooting", "melee"):
         asm = assemble_attacker(db_path, unit.canonical_id,
                                 models=unit.models, loadout=loadout, phase=phase)
-        if asm and not asm.ambiguous and asm.attacker is not None:
+        if (asm and not asm.ambiguous and asm.attacker is not None
+                and _has_phase_weapons(asm.attacker, phase)):
             return phase, asm.attacker
     return None, None
 

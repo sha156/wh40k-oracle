@@ -14,23 +14,48 @@ from typing import Dict, List, Optional
 
 from engines.roster.contracts import Roster, RosterUnit
 
-_MODELS_RE = re.compile(r"(\d+)")
+# 与 engines/simulator/assembly.py 对齐的严格档位正则：必须 "N model(s)"，避免把复合
+# datasheet 描述（"3 X and 3 Y"）里的头一个数字当成模型数（评审 CRITICAL）。
+_MODELS_RE = re.compile(r"(\d+)\s*models?", re.IGNORECASE)
+# 「纯档位」：desc 只有 "N model(s)" 无其它修饰——它是基准价（无分队/特殊语境加价）
+_PLAIN_RE = re.compile(r"^\s*(\d+)\s*models?\s*$", re.IGNORECASE)
 
 
 def _tiers_from_points_json(points_json: Optional[str]) -> Dict[int, int]:
-    """points_json → {模型数: cost}（取 items 基准档，desc 如 '5 models'）。"""
+    """points_json → {模型数: cost}。
+
+    基准档（纯 "N models"）优先——Agent 类单位同模型数有分队加价档（"1 model" 110 vs
+    "1 model (Assigned Agent)" 125），取纯档基准价而非最后写入者。复合单位（"3 X and 3 Y"）
+    严格正则不匹配 → 跳过 → 无法定价 → 上层 surfaced（不静默编造错价）。同模型数多个非纯档
+    且价不同 → 歧义跳过（None）。
+    """
     if not points_json:
         return {}
     try:
         data = json.loads(points_json)
     except (ValueError, TypeError):
         return {}
-    out: Dict[int, int] = {}
+    plain: Dict[int, int] = {}
+    qualified: Dict[int, set] = {}
     for it in data.get("items", []):
-        m = _MODELS_RE.search(str(it.get("desc", "")))
+        desc = str(it.get("desc", ""))
         cost = it.get("cost")
-        if m and isinstance(cost, int):
-            out[int(m.group(1))] = cost
+        if not isinstance(cost, int):
+            continue
+        pm = _PLAIN_RE.match(desc.strip())
+        if pm:
+            plain[int(pm.group(1))] = cost
+            continue
+        m = _MODELS_RE.search(desc)
+        if m:
+            qualified.setdefault(int(m.group(1)), set()).add(cost)
+    out: Dict[int, int] = dict(plain)
+    for k, costs in qualified.items():
+        if k in out:            # 纯档基准价优先
+            continue
+        if len(costs) == 1:     # 唯一 qualified 价 → 采用
+            out[k] = next(iter(costs))
+        # 多个不同 qualified 价且无纯档 → 歧义，跳过 → unit_cost 返 None → surfaced
     return out
 
 

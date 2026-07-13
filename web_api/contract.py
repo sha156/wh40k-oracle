@@ -219,7 +219,7 @@ class RosterUnitIn(_CamelModel):
     """军表单位入参。loadout=[[武器名,数量],...]（点评用；验表可空）。"""
     canonical_id: str = Field(alias="canonicalId")
     name_en: str = Field(default="", alias="nameEn")
-    models: int = 1
+    models: int = Field(default=1, ge=1)     # 边界拒收 <1（不静默钳成 1）
     is_warlord: bool = Field(default=False, alias="isWarlord")
     enhancement: Optional[str] = None
     loadout: List[List[Any]] = []

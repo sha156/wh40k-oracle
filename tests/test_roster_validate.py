@@ -38,6 +38,21 @@ def test_tiers_and_unit_cost():
     assert unit_cost("not json", 5) is None
 
 
+def test_tiers_prefer_plain_and_reject_composite():
+    # 同模型数：纯档 110 优先于加价档 125（不是 last-write-wins）——评审 CRITICAL
+    agent = ('{"items":[{"desc":"1 model (Assigned Agent)","cost":125},'
+             '{"desc":"1 model","cost":110}]}')
+    assert _tiers_from_points_json(agent) == {1: 110}
+    # 复合 datasheet（无 "model" 字样）严格正则不匹配 → 空档 → 无法定价（不静默编造）
+    composite = ('{"items":[{"desc":"3 Headtakers and 3 Wolves","cost":110},'
+                 '{"desc":"6 Headtakers and 6 Wolves","cost":220}]}')
+    assert _tiers_from_points_json(composite) == {}
+    # 仅加价档、同模型数多价且无纯档 → 歧义跳过
+    ambiguous = ('{"items":[{"desc":"1 model (A)","cost":110},'
+                 '{"desc":"1 model (B)","cost":125}]}')
+    assert _tiers_from_points_json(ambiguous) == {}
+
+
 def test_compose_rules_copy_limit():
     assert datasheet_copy_limit(set()) == RULE_OF_THREE
     assert datasheet_copy_limit({"BATTLELINE"}) is None       # 豁免
@@ -144,6 +159,17 @@ def test_enhancement_rules():
         RosterUnit(APOTHECARY, "Apothecary Biologis", 1, enhancement=ENH),
     )))
     assert "enh_duplicate" in _codes(rd)
+
+
+@needs_db
+def test_unknown_size_surfaced_not_silent():
+    # 未知规模档 → warn 显式披露（回退 2000 但不静默；报错消息不撒谎）
+    r = validate(DB, Roster("SM", DET_BASTION, "Onslaught", (  # 大小写错
+        RosterUnit(INTERCESSOR, "Intercessor Squad", 5, is_warlord=False),)))
+    unk = [i for i in r.issues if i.code == "unknown_size"]
+    assert unk and unk[0].surfaced_only and unk[0].severity == WARN
+    assert "strike_force(2000)" in " ".join(
+        i.message for i in r.issues if i.code == "points_over") or r.total_points <= 2000
 
 
 @needs_db

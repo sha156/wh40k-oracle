@@ -95,8 +95,9 @@ export function CritiquePanel({
             </tr>
           </thead>
           <tbody>
-            {report.assessments.map((a) => (
-              <UnitScoreRow key={a.canonicalId + a.nameEn} a={a} />
+            {/* 同一 datasheet 可合法多份（key 必含 index 防碰撞） */}
+            {report.assessments.map((a, i) => (
+              <UnitScoreRow key={`${a.canonicalId}-${i}`} a={a} />
             ))}
           </tbody>
         </table>
