@@ -97,6 +97,19 @@ def test_critique_weapon_role_distinction():
 
 
 @needs_db
+def test_critique_melee_only_assessed_in_melee_not_zero():
+    """纯近战 loadout 必须评估 melee 且非 0——防「射击阶段装配成功但 0 攻击」静默 0 伤陷阱。"""
+    ASSAULT = "000001606"  # Assault Intercessor Squad（有 Astartes chainsword 近战）
+    r = Roster("SM", None, "strike_force", (
+        RosterUnit(ASSAULT, "Assault Intercessor Squad", 5,
+                   loadout=(("Astartes chainsword", 5),)),))
+    rep = critique(DB, r, n=1500, seed=7)
+    a = rep.assessments[0]
+    assert a.assessed and a.phase == "melee"           # 不是 shooting
+    assert any(s.expected_damage > 0 for s in a.scores)  # 非全 0
+
+
+@needs_db
 def test_critique_deterministic():
     r = Roster("SM", DET, "strike_force", (
         RosterUnit(INTERCESSOR, "Intercessor Squad", 5, loadout=(("Bolt rifle", 5),)),))

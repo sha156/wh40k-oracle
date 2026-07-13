@@ -113,20 +113,25 @@ export default function RosterPage() {
     return () => ctrl.abort();
   }, [detachmentId, onErr]);
 
-  // 换阵营处理器：单位/分队/强化都作废（单位是阵营私有的）
+  // 换阵营处理器：单位/分队/强化/旧阵营单位目录/校验结果都作废（阵营私有）
   const selectFaction = (id: string) => {
     if (id === factionId) return;
     setUnits([]);
     setDetachmentId(null);
     setEnhancements([]);
+    setFactionUnits([]); // 清旧阵营单位目录，防搜索框加进跨阵营单位
+    setQuery("");
+    setValidation(null); // 清旧阵营校验结果，防加首个新单位时闪现旧阵营点数/合法性
     setFactionId(id);
   };
+  // 换分队：强化目录换新 + 各单位已选强化作废（强化是分队私有的）
   const selectDetachment = (id: string) => {
     setDetachmentId(id || null);
     if (!id) setEnhancements([]);
+    setUnits((prev) => prev.map((u) => ({ ...u, enhancement: null })));
   };
 
-  // 实时校验（debounce）：军表编制相关状态变化即重算
+  // 实时校验（debounce）：军表编制相关状态变化即重算（不含 loadout——验表不用装配）
   const validationSig = useMemo(
     () =>
       JSON.stringify({
@@ -136,12 +141,24 @@ export default function RosterPage() {
       }),
     [detachmentId, size, units],
   );
+  // 点评额外依赖 loadout——单独签名，改装备后旧点评视为过期
+  const critiqueSig = useMemo(
+    () =>
+      JSON.stringify({
+        v: validationSig,
+        l: units.map((u) => [u.canonicalId, u.loadout]),
+      }),
+    [validationSig, units],
+  );
   useEffect(() => {
     if (!factionId || units.length === 0) return; // 空表不请求；显示层按 units.length 派生
     const ctrl = new AbortController();
     const t = setTimeout(() => {
       postValidate(toPayload(factionId, detachmentId, size, units), ctrl.signal)
-        .then(setValidation)
+        .then((r) => {
+          setValidation(r);
+          setError(null); // 成功即清错误横幅，防一次瞬时失败后永久卡显
+        })
         .catch(onErr);
     }, 300);
     return () => {
@@ -188,7 +205,7 @@ export default function RosterPage() {
     if (!factionId || units.length === 0 || critiquing) return;
     setCritiquing(true);
     setError(null);
-    const sig = validationSig;
+    const sig = critiqueSig;
     postCritique(toPayload(factionId, detachmentId, size, units))
       .then((report) => setCritique({ sig, report }))
       .catch((e) => {
@@ -345,7 +362,7 @@ export default function RosterPage() {
               {critiquing ? "点评解算中…" : "强度点评"}
             </button>
             <CritiquePanel
-              report={critique && critique.sig === validationSig ? critique.report : null}
+              report={critique && critique.sig === critiqueSig ? critique.report : null}
               loading={critiquing}
             />
           </div>
