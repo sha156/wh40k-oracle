@@ -179,6 +179,28 @@ class TestPayloadValidation:
         with pytest.raises(DslError, match="text_sha256"):
             parse_entry(_raw_entry(provenance={}))
 
+    def test_target_side_with_effects_rejected(self):
+        # 审查 H1：注入层未接 target 侧，带 effects 的 target 条目会被静默吞 → 拒载
+        raw = _raw_entry(side="target",
+                         effects=[{"phase": "fnp", "op": "fnp", "params": [5],
+                                   "condition": [], "source": "x"}])
+        with pytest.raises(DslError, match="target"):
+            parse_entry(raw)
+
+    def test_dice_param_op_rejected_until_convention(self):
+        # 审查 M3：DiceExpr 型 op 的 JSON 约定未定义，拒载防模拟期才炸
+        raw = _raw_entry(effects=[{"phase": "hit", "op": "extra_hits", "params": [1],
+                                   "condition": [], "source": "sustained"}])
+        with pytest.raises(DslError, match="DiceExpr"):
+            parse_entry(raw)
+
+    def test_string_int_param_rejected(self):
+        # 审查 M3：params 形状校验——"1"（字符串）不是 int
+        raw = _raw_entry(effects=[{"phase": "hit", "op": "bs_improve", "params": ["1"],
+                                   "condition": ["guided_vs_spotted"], "source": "x"}])
+        with pytest.raises(DslError, match="整数参数"):
+            parse_entry(raw)
+
     def test_real_payload_file_parses(self):
         entries = load_payload_file(Path("dsl_payloads/tau.json"))
         assert len(entries) >= 1

@@ -88,6 +88,39 @@ class TestDslApply:
             "SELECT dsl_status FROM abilities WHERE id='000008439'").fetchone()
         assert row[0] == "partial"
 
+    def test_drift_after_apply_clears_stale_projection(self, tmp_path):
+        # 审查 H2 真实运营场景：曾 apply 成功 → 上游刷新文本 → 再 apply。
+        # 旧投影必须被降级清空，不许让"不再经文本核验"的旧编码继续喂模拟层
+        db = _db(tmp_path)
+        pd = _payload_dir(tmp_path)
+        apply_dsl(db, pd)
+        conn = sqlite3.connect(str(db))
+        conn.execute("UPDATE abilities SET text_zh='upstream refreshed 11e text' "
+                     "WHERE id='000008439'")
+        conn.commit()
+        conn.close()
+        rep = apply_dsl(db, pd)
+        assert len(rep["fingerprint_mismatch"]) == 1
+        assert rep["fingerprint_mismatch"][0]["stale_projection_cleared"] is True
+        row = sqlite3.connect(str(db)).execute(
+            "SELECT effect_dsl_json, dsl_status FROM abilities "
+            "WHERE id='000008439'").fetchone()
+        assert row[0] is None and row[1] == "not_modeled"
+
+    def test_duplicate_entry_rejected(self, tmp_path):
+        # 审查 M2：重复 (table,id) 静默 last-write 是错 id 温床 → 拒载
+        import pytest
+        db = _db(tmp_path)
+        d = tmp_path / "payloads"
+        d.mkdir(exist_ok=True)
+        entry = json.loads((_payload_dir(tmp_path) / "tau.json").read_text(
+            encoding="utf-8"))["entries"][0]
+        (d / "tau.json").write_text(json.dumps(
+            {"dsl_version": 1, "faction": "TAU", "entries": [entry, entry]},
+            ensure_ascii=False), encoding="utf-8")
+        with pytest.raises(ValueError, match="重复条目"):
+            apply_dsl(db, d)
+
     def test_stage_wired_into_restore(self):
         from db_compile.update import _RESTORE_STAGES
         names = [fn.__name__ for _, fn in _RESTORE_STAGES]

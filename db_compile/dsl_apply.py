@@ -41,6 +41,7 @@ def apply_dsl(db_path, payload_dir) -> Dict:
         "by_status": {"encoded": 0, "partial": 0, "not_modeled": 0},
     }
     files = sorted(Path(payload_dir).glob("*.json"))
+    seen: set = set()
     conn = sqlite3.connect(str(db_path))
     try:
         for f in files:
@@ -50,6 +51,12 @@ def apply_dsl(db_path, payload_dir) -> Dict:
                 raw.setdefault("dsl_version", data.get("dsl_version"))
                 raw.setdefault("faction", data.get("faction"))
                 entry = parse_entry(raw)          # 不合法直接炸，不静默跳
+                key = (entry.table, entry.row_id)
+                if key in seen:
+                    # 审查 M2：跨文件重复也拒——静默 last-write 是错 id 的温床
+                    raise ValueError(f"dsl_payloads 重复条目 {key}（{f.name}）"
+                                     f"——同一 (table, id) 只许一条")
+                seen.add(key)
                 slim = {"table": entry.table, "id": entry.row_id, "name": entry.name_en}
                 if entry.table not in _PROJECTION_TABLES:
                     report["skipped"].append(
@@ -65,9 +72,19 @@ def apply_dsl(db_path, payload_dir) -> Dict:
                 cur_text, cur_json, cur_status = row
                 want = entry.provenance.get("text_sha256") if entry.provenance else None
                 if entry.effects and want and _fingerprint(cur_text) != want:
-                    # 原文变了而 DSL 没重核——让路告警，不投影过期编码
+                    # 原文变了而 DSL 没重核——让路告警，不投影过期编码；
+                    # 审查 H2：若库里残留着旧投影，必须同步降级清空——否则模拟层
+                    # 会继续把"已不再经文本核验"的旧编码当有效 DSL 消费
+                    cleared = False
+                    if cur_json is not None or cur_status != "not_modeled":
+                        conn.execute(
+                            f"UPDATE {entry.table} SET effect_dsl_json = NULL, "
+                            f"dsl_status = 'not_modeled' WHERE id = ?", (entry.row_id,))
+                        cleared = True
                     report["fingerprint_mismatch"].append(
-                        {**slim, "expected": want[:12], "db_now": _fingerprint(cur_text)[:12]})
+                        {**slim, "expected": want[:12],
+                         "db_now": _fingerprint(cur_text)[:12],
+                         "stale_projection_cleared": cleared})
                     continue
                 payload = json.dumps(raw, ensure_ascii=False, sort_keys=True)
                 if cur_json == payload and cur_status == entry.status:

@@ -245,10 +245,16 @@ def stage_dsl_apply(cfg: UpdateConfig) -> StageResult:
                            warning="dsl_payloads 目录缺失，DSL 投影未补")
     from db_compile.dsl_apply import apply_dsl
     rep = apply_dsl(cfg.db, cfg.dsl_payloads)
-    warn = None
+    warns = []
     if rep["fingerprint_mismatch"]:
-        warn = (f"{len(rep['fingerprint_mismatch'])} 条 DSL 原文指纹不匹配已让路"
-                "（文本被刷新而 DSL 未重核，需人工复核 dsl_payloads）")
+        warns.append(f"{len(rep['fingerprint_mismatch'])} 条 DSL 原文指纹不匹配已让路并"
+                     "清空旧投影（文本被刷新而 DSL 未重核，需人工复核 dsl_payloads）")
+    if rep["skipped"]:
+        # 审查 M1：漏投（行不存在/表无投影列）与指纹让路同级显眼，不许躺在 summary 里
+        warns.append(f"{len(rep['skipped'])} 条 DSL 投影被跳过："
+                     + "；".join(f"{s['table']}:{s['id']}（{s['reason']}）"
+                                 for s in rep["skipped"][:5]))
+    warn = "；".join(warns) or None
     return StageResult(
         "dsl_apply", True,
         f"DSL 投影 应用 {rep['applied']} / 幂等 {rep['already']} / "

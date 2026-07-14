@@ -60,6 +60,43 @@ class DslEntry:
     encoded_by: str = ""
 
 
+# op → params 形状校验（PR2 审查 M3）：int 型 op 必须恰 1 个 int；无参 op 必须空；
+# DiceExpr 型 op 的 JSON 编码约定未定义（PR3 项），先拒载防"校验通过、跑模拟才炸"
+_INT_PARAM_OPS = frozenset({
+    ("hit", "modify"), ("hit", "bs_improve"), ("hit", "crit_threshold"),
+    ("wound", "modify"), ("wound", "crit_threshold"),
+    ("attacks", "blast"),
+    ("fnp", "fnp"), ("damage", "damage_reduction"),
+})
+_NO_PARAM_OPS = frozenset({
+    ("hit", "auto_wound"), ("hit", "auto_hit"), ("hit", "indirect_fixed"),
+    ("hit", "ignore_hit_mods"),
+    ("wound", "mortal_pool"),
+    ("save", "ignores_cover"), ("save", "cover"),
+})
+_DICE_PARAM_OPS = frozenset({
+    ("attacks", "modify"), ("damage", "modify"), ("hit", "extra_hits"),
+})
+
+
+def _check_params(phase: str, op: str, params: tuple, entry_name: str) -> None:
+    key = (phase, op)
+    if key in _DICE_PARAM_OPS:
+        raise DslError(
+            f"{entry_name}：(phase={phase}, op={op}) 参数是 DiceExpr，其 JSON 编码约定"
+            f"尚未定义（spec PR3 项）——暂不可经 DSL 录入，防止校验通过而模拟期才炸")
+    if key in _INT_PARAM_OPS:
+        if len(params) != 1 or isinstance(params[0], bool) or not isinstance(params[0], int):
+            raise DslError(f"{entry_name}：(phase={phase}, op={op}) 需要恰 1 个整数参数，"
+                           f"收到 {params!r}")
+    elif key in _NO_PARAM_OPS:
+        if params:
+            raise DslError(f"{entry_name}：(phase={phase}, op={op}) 不接受参数，收到 {params!r}")
+    elif key == ("wound", "reroll"):
+        if tuple(params) != ("fail",):
+            raise DslError(f"{entry_name}：(wound, reroll) 参数必须为 [\"fail\"]，收到 {params!r}")
+
+
 def _parse_effect(raw: dict, side: str, entry_name: str) -> Effect:
     phase, op = raw.get("phase"), raw.get("op")
     consumed = ATTACKER_CONSUMED if side == "attacker" else TARGET_CONSUMED
@@ -67,6 +104,7 @@ def _parse_effect(raw: dict, side: str, entry_name: str) -> Effect:
         raise DslError(
             f"{entry_name}：(phase={phase!r}, op={op!r}) 不在 {side} 侧引擎消费点白名单"
             f"——引擎没接该通道，标 encoded/partial 会撒谎（评审 F7 判据④）")
+    _check_params(phase, op, tuple(raw.get("params") or ()), entry_name)
     condition = tuple(raw.get("condition") or ())
     if condition:
         tag = condition[0]
@@ -103,6 +141,11 @@ def parse_entry(raw: dict) -> DslEntry:
     if not raw.get("faction"):
         raise DslError(f"{name}：缺 faction（检索链接载体，评审 F3）")
     effects = tuple(_parse_effect(e, side, name) for e in (raw.get("effects") or ()))
+    if side == "target" and effects:
+        # PR2 审查 H1：注入层只有 inject_attacker，target 侧条目会被静默吞——
+        # fail fast 拒载，待 inject_target 消费点落地（PR3+）后放开
+        raise DslError(f"{name}：side=target 且带 effects——引擎注入层未接 target 侧，"
+                       f"该条目会静默零效果；防守向规则暂标 not_modeled 或等 inject_target")
     notes = tuple(raw.get("not_modeled_notes_zh") or ())
     if status == "encoded" and not effects:
         raise DslError(f"{name}：encoded 但 effects 为空——应标 not_modeled")
@@ -134,11 +177,18 @@ def load_payload_file(path) -> List[DslEntry]:
     if not isinstance(entries, list):
         raise DslError(f"{path}：载荷文件须有 entries 数组")
     out = []
+    seen = set()
     for raw in entries:
         raw = dict(raw)
         raw.setdefault("dsl_version", data.get("dsl_version"))
         raw.setdefault("faction", data.get("faction"))
-        out.append(parse_entry(raw))
+        entry = parse_entry(raw)
+        key = (entry.table, entry.row_id)
+        if key in seen:
+            # PR2 审查 M2：重复条目静默"后者覆盖前者"是铺量期复制粘贴错 id 的温床
+            raise DslError(f"{path}：重复条目 {key}——同一 (table, id) 只许一条")
+        seen.add(key)
+        out.append(entry)
     return out
 
 
@@ -168,6 +218,12 @@ def inject_attacker(
                 not_modeled.append(
                     f"DSL {entry.name_en}（{entry.status}）："
                     + "；".join(entry.not_modeled_notes_zh))
+            elif entry.effects:
+                # 防御性披露（审查 H1 纵深）：parse_entry 已拒 target+effects，
+                # 此分支只在 DB 投影被手改时可达——照样不许静默吞
+                not_modeled.append(
+                    f"DSL {entry.name_en}（side={entry.side}）引擎注入层未接该侧，"
+                    f"本次未施加")
             continue
         missing = [t for t in entry.requires_toggles if t not in toggles]
         if missing:
