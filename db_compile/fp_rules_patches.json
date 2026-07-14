@@ -1,0 +1,527 @@
+{
+ "_comment": "P7-PR1 钛帝国规则文本 11 版化补丁。text_patches 来自 2026-07-14 逐行 A/B 工作单（docs/superpowers/plans/2026-07-14-p7-pr1-fp-rules-worklist.md，55 行全落账：8 drifted / 3 identical / 35 not_in_fp / 9 review_needed / 5 fp_new）；name_patches 来自钛帝国十版中文codex refine 缓存逐条效果配对（43 条有源 + 11 条自译标记）。",
+ "text_patches": [
+  {
+   "table": "detachments",
+   "id": "000008810",
+   "name_en": "Killing Blow",
+   "column": "rule_text",
+   "from_text": "During the first, second and third battle rounds, ranged weapons equipped by <span class=\"kwb\">T’AU</span> <span class=\"kwb\">EMPIRE</span> models from your army have the [ASSAULT] ability. During the first, second and third battle rounds, while a unit is a Guided unit, its ranged weapons have the [LETHAL HITS] ability.",
+   "to_text": "During the first, second and third battle rounds, ranged weapons equipped by <span class=\"kwb\">T’AU</span> <span class=\"kwb\">EMPIRE</span> models from your army have the [ASSAULT] ability. During the first, second and third battle rounds, while a unit is a Guided unit (see For the Greater Good), its ranged weapons have the [LETHAL HITS] ability.",
+   "fp_source": "page_019.md",
+   "synthesis": "change-list应用：仅插入交叉引用 “(see For the Greater Good)”，其余保持 DB 原文与 HTML 风格；归一化后与 FP change-to 全文一致"
+  },
+  {
+   "table": "detachments",
+   "id": "000008814",
+   "name_en": "Bonded Heroes",
+   "column": "rule_text",
+   "from_text": "Each time a T’au Empire Battlesuit model from your army makes a ranged attack that targets a unit within 12\", improve the Strength characteristic of that attack by 1. If that attack targets a unit within 9\", improve the Armour Penetration characteristic of that attack by 1 as well.",
+   "to_text": "Each time a T’au Empire Battlesuit model from your army makes a ranged attack that targets a unit within 12\", improve the Strength characteristic of that attack by 1. If that attack targets a unit within 8\", improve the Armour Penetration characteristic of that attack by 1 as well.",
+   "fp_source": "page_019.md",
+   "synthesis": "change-list应用：9\"→8\"（唯一实质差异），其余保持 DB 原文；归一化后与 FP change-to 全文一致"
+  },
+  {
+   "table": "detachments",
+   "id": "000009838",
+   "name_en": "Integrated Command Structure",
+   "column": "rule_text",
+   "from_text": "Kroot and Vespid Stingwings units from your army have the following ability:<br><br><b>Targeting Triangulation (Aura):</b> While an enemy unit is within 9\" of and visible to this unit, each time a ranged attack made by a friendly <span class=\"kwb\">T’AU</span> <span class=\"kwb\">EMPIRE</span> model (excluding <span class=\"kwb\">KROOT</span>, <span class=\"kwb\">VESPID</span> <span class=\"kwb\">STINGWINGS</span> and Titanic models) targets that enemy unit, improve the Armour Penetration characteristic of that attack by 1.<br><br>T’au Empire units (excluding <span class=\"kwb\">KROOT</span> and <span class=\"kwb\">VESPID</span> <span class=\"kwb\">STINGWINGS</span> units) from your army have the following ability:<br><br><b>Localised Stealth Projectors (Aura):</b> While a friendly <span class=\"kwb\">KROOT</span> or <span class=\"kwb\">VESPID</span> <span class=\"kwb\">STINGWINGS</span> unit is wholly within 6\" of and visible to this unit, that <span class=\"kwb\">KROOT</span> or <span class=\"kwb\">VESPID</span> <span class=\"kwb\">STINGWINGS</span> unit can only be selected as the target of a ranged attack if the attacking model is within 18\".",
+   "to_text": "Friendly KROOT/VESPID STINGWINGS units have the following ability:<br><br><b>Harnessed Alien Instincts:</b> In your Shooting phase, this unit can select one visible enemy unit within 12\". That enemy unit is prey-marked:<br>- While a unit is prey-marked, that unit has +3\" detection range.<br><br>Friendly GHOSTKEEL BATTLESUIT/STEALTH BATTLESUITS units have the following ability:<br><br><b>Localised Stealth Projectors (Aura):</b> When a friendly KROOT/VESPID STINGWINGS unit within 6\" of this unit has shot, those attacks do not prevent that unit from being hidden.<br><br>This detachment has the AUXILIARIES tag and cannot be taken with another AUXILIARIES detachment.",
+   "fp_source": "page_003.md",
+   "synthesis": "整段替换（FP 完整重印体裁）；U+2011 不换行连字符归一为 ASCII '-'；末尾 AUXILIARIES tag 句随 11 版文本一并纳入"
+  },
+  {
+   "table": "detachments",
+   "id": "000009982",
+   "name_en": "Superior Craftsmanship",
+   "column": "rule_text",
+   "from_text": "Add 6\" to the Range characteristic of ranged weapons equipped by <span class=\"kwb\">T’AU</span> <span class=\"kwb\">EMPIRE</span> models from your army",
+   "to_text": "Friendly BATTLESUIT CHARACTER units’ ranged attacks have +6\" R.<br><br>This detachment has the RETALIATION tag and cannot be taken with another RETALIATION detachment.",
+   "fp_source": "page_004.md",
+   "synthesis": "整段替换（FP 完整重印体裁）；适用面从全军 T’AU EMPIRE 收窄为 BATTLESUIT CHARACTER units，属实质改动"
+  },
+  {
+   "table": "stratagems",
+   "id": "000008443006",
+   "name_en": "PHOTON GRENADES",
+   "column": "text_zh",
+   "from_text": "<b>WHEN:</b> Your opponent’s Charge phase, just after an enemy unit has declared a charge.<br><br><b>TARGET:</b> One T’au Empire Grenades unit from your army that was selected as one of the targets of that charge.<br><br><b>EFFECT:</b> That enemy unit must immediately take a Battle-shock test, and until the end of the phase, subtract 2 from Charge rolls made for that enemy unit.",
+   "to_text": "<b>WHEN:</b> Your opponent’s charge phase, just after an enemy unit has selected its charge target.<br><br><b>TARGET:</b> One T’au Empire Grenades unit from your army that was selected as one of the targets of that charge.<br><br><b>EFFECT:</b> That enemy unit must immediately take a Battle-shock test, and until the end of the phase, subtract 2 from Charge rolls made for that enemy unit.",
+   "fp_source": "page_019.md",
+   "synthesis": "change-list应用：仅替换 WHEN 段（FP 原文小写 “charge phase” 照录），TARGET/EFFECT 保持 DB 原文"
+  },
+  {
+   "table": "stratagems",
+   "id": "000009840002",
+   "name_en": "EXPERIMENTAL MODIFICATIONS",
+   "column": "text_zh",
+   "from_text": "<b>WHEN:</b> Your Shooting phase or the Fight phase.<br><br><b>TARGET:</b> One Kroot or Vespid Stingwings unit from your army that has not been selected to shoot or fight this phase.<br><br><b>EFFECT:</b> Until the end of the phase, improve the Armour Penetration characteristic of weapons equipped by models in your unit by 1.",
+   "to_text": "<b>WHEN:</b> Your Shooting phase or the Fight phase, when a friendly KROOT/VESPID STINGWINGS unit is selected to attack.<br><br><b>TARGET:</b> That KROOT/VESPID STINGWINGS unit.<br><br><b>EFFECT:</b> Your unit’s attacks have +1 AP.",
+   "fp_source": "page_003.md",
+   "synthesis": "整段替换（FP 完整重印体裁，11 版缩写风格照录）"
+  },
+  {
+   "table": "stratagems",
+   "id": "000009840006",
+   "name_en": "ALIEN EXPERTISE",
+   "column": "text_zh",
+   "from_text": "<b>WHEN:</b> Your Movement phase.<br><br><b>TARGET:</b> One <span class=\"kwb\">T’AU</span> <span class=\"kwb\">EMPIRE</span> unit from your army.<br><br><b>EFFECT:</b> Until the end of the turn, your unit is eligible to shoot in a turn in which it Advanced. If it is a Kroot or Vespid Stingwings unit, until the end of the turn, your unit is eligible to declare a charge in a turn in which it Advanced as well.",
+   "to_text": "<b>WHEN:</b> Your Movement phase, when a friendly KROOT/VESPID STINGWINGS unit is selected to make an advance move.<br><br><b>TARGET:</b> That KROOT/VESPID STINGWINGS unit.<br><br><b>EFFECT:</b> That move does not prevent your unit from being eligible to declare a charge.",
+   "fp_source": "page_003.md",
+   "synthesis": "整段替换（FP 完整重印体裁；效果从“全军 Advance 后可射击/可冲锋”收窄为“本次 advance move 不妨碍冲锋”，属实质改动）"
+  },
+  {
+   "table": "stratagems",
+   "id": "000009984005",
+   "name_en": "EXPERIMENTAL AMMUNITION",
+   "column": "text_zh",
+   "from_text": "<b>WHEN:</b> Your Shooting phase.<br><br><b>TARGET:</b> One <span class=\"kwb\">T’AU</span> <span class=\"kwb\">EMPIRE</span> unit from your army that has not been selected to shoot this phase.<br><br><b>EFFECT:</b> Select one of the following to apply to your unit until the end of the phase:<br><ul><li>Improve the Strength characteristic of ranged weapons equipped by models in your unit by 1.</li><li>Improve the Strength and Armour Penetration characteristics of ranged weapons equipped by models in your unit by 1, and those weapons have the [HAZARDOUS] ability.</li></ul><br><b>RESTRICTIONS:</b> You cannot target the same unit with the Experimental Ammunition and Threat Assessment Analyser Stratagems in the same phase.",
+   "to_text": "<b>WHEN:</b> Your Shooting phase, when a friendly BATTLESUIT CHARACTER unit is selected to shoot.<br><br><b>TARGET:</b> That BATTLESUIT CHARACTER unit.<br><br><b>EFFECT:</b> Your unit’s ranged attacks have:<br><ul><li>+1 S.</li><li>OR: +1 S, AP and [HAZARDOUS].</li></ul>",
+   "fp_source": "page_004.md",
+   "synthesis": "整段替换（FP 完整重印体裁；目标收窄为 BATTLESUIT CHARACTER；原 RESTRICTIONS 段随 11 版文本删除——Threat Assessment Analyser 在 FP 重印中已不存在）"
+  }
+ ],
+ "name_patches": [
+  {
+   "table": "detachments",
+   "id": "000008441",
+   "name_en": "Patient Hunter",
+   "name_zh": "耐心猎手",
+   "zh_source": "codex-10e",
+   "evidence": "page_005：第三大回合起远程武器获[连击1]+射击手忽略BS/命中修正，与英文rule_text对得上（10e为第三回合起，11e改为三/四/五回合，机制同源）"
+  },
+  {
+   "table": "detachments",
+   "id": "000008810",
+   "name_en": "Killing Blow",
+   "name_zh": "一击必杀",
+   "zh_source": "codex-10e",
+   "evidence": "page_007：一/二/三大回合远程武器获[突击]、射击手获[致命一击]，与英文完全一致"
+  },
+  {
+   "table": "detachments",
+   "id": "000008814",
+   "name_en": "Bonded Heroes",
+   "name_zh": "结义英雄",
+   "zh_source": "codex-10e",
+   "evidence": "page_009：战斗服射12寸内S+1、9寸内AP再+1，与英文完全一致"
+  },
+  {
+   "table": "detachments",
+   "id": "000008818",
+   "name_en": "Hunter’s Instincts",
+   "name_zh": "狩猎本能",
+   "zh_source": "codex-10e",
+   "evidence": "page_011：目标低于初始规模命中+1、低于半数造伤+1，与英文完全一致"
+  },
+  {
+   "table": "detachments",
+   "id": "000008819",
+   "name_en": "Skirmish Fighters",
+   "name_zh": "特遣队",
+   "zh_source": "codex-10e",
+   "evidence": "page_011：近战6+特保/射击5+特保，效果与英文完全一致。⚠️译名意译幅度大（直译应近\"散兵战士\"），但这是中文源原文，按源采用"
+  },
+  {
+   "table": "detachments",
+   "id": "000008820",
+   "name_en": "KEYWORDS",
+   "name_zh": "关键词",
+   "zh_source": "codex-10e",
+   "evidence": "page_011：\"如果你选择本分队，克鲁特食肉者单位获得战线关键词\"，与英文rule_text一致。该行本身是抓取产物（分队规则页的KEYWORDS小节）"
+  },
+  {
+   "table": "detachments",
+   "id": "000009635",
+   "name_en": "Markerlight Precision",
+   "name_zh": "标记光精准",
+   "zh_source": "self-translated",
+   "evidence": "Starfire Cadre 分队规则，11版FP新增，中文源无；Markerlight 沿用 wiki/core-rules/markerlight.md 定名\"标记光\""
+  },
+  {
+   "table": "detachments",
+   "id": "000009644",
+   "name_en": "Guerrilla Ambushers",
+   "name_zh": "游击伏兵",
+   "zh_source": "self-translated",
+   "evidence": "Kroot Raiding Party 分队规则，11版FP新增，中文源无；Guerrilla 沿用中文源对 Guerrilla Warriors 的\"游击\"取词"
+  },
+  {
+   "table": "detachments",
+   "id": "000009838",
+   "name_en": "Integrated Command Structure",
+   "name_zh": "综合指挥体系",
+   "zh_source": "codex-10e",
+   "evidence": "page_013：目标三角定位(光环)AP+1 / 局地隐匿投射器(光环)18寸外不可选为目标，与英文 Targeting Triangulation / 光环结构完全一致"
+  },
+  {
+   "table": "detachments",
+   "id": "000009982",
+   "name_en": "Superior Craftsmanship",
+   "name_zh": "精湛技艺",
+   "zh_source": "codex-10e",
+   "evidence": "page_015：军表中钛帝国模型射击武器射程+6寸，与英文完全一致"
+  },
+  {
+   "table": "stratagems",
+   "id": "000008443002",
+   "name_en": "A TEMPTING TRAP",
+   "name_zh": "诱惑陷阱",
+   "zh_source": "codex-10e",
+   "evidence": "page_006：首次使用选一个非敌方布置区任务点为\"陷阱任务点\"，射该点范围内敌军造伤+1；与英文Effect一致"
+  },
+  {
+   "table": "stratagems",
+   "id": "000008443003",
+   "name_en": "POINT-BLANK AMBUSH",
+   "name_zh": "抵近伏击",
+   "zh_source": "codex-10e",
+   "evidence": "page_006：射9寸内目标AP强化1；与英文Effect一致"
+  },
+  {
+   "table": "stratagems",
+   "id": "000008443004",
+   "name_en": "COORDINATE TO ENGAGE",
+   "name_zh": "联携攻击",
+   "zh_source": "codex-10e",
+   "evidence": "page_006：观察员单位攻击标的单位BS强化1、有标记光则获[忽略掩体]；与英文Effect一致"
+  },
+  {
+   "table": "stratagems",
+   "id": "000008443005",
+   "name_en": "COMBAT EMBARKATION",
+   "name_zh": "战术搭载",
+   "zh_source": "codex-10e",
+   "evidence": "page_006：被宣冲锋的步兵单位登入运输载具、对手可重选冲锋目标；与英文Effect一致"
+  },
+  {
+   "table": "stratagems",
+   "id": "000008443006",
+   "name_en": "PHOTON GRENADES",
+   "name_zh": "光子手雷",
+   "zh_source": "codex-10e",
+   "evidence": "page_006：冲锋的敌军立即震慑测试且冲锋骰-2；与英文Effect一致"
+  },
+  {
+   "table": "stratagems",
+   "id": "000008443007",
+   "name_en": "WALL OF MIRRORS",
+   "name_zh": "幻镜之墙",
+   "zh_source": "codex-10e",
+   "evidence": "page_006：敌方近战阶段结束时潜行/鬼覆/影阳单位移入战略预备队；与英文Effect一致"
+  },
+  {
+   "table": "stratagems",
+   "id": "000008812002",
+   "name_en": "PINPOINT COUNTER-OFFENSIVE",
+   "name_zh": "精准反攻",
+   "zh_source": "self-translated",
+   "evidence": "中文源 page_008 蒙特卡战略能力只有5条，缺此条（11版效果：己方单位刚被消灭后，全军攻击凶手单位重投命中直到游戏结束）。自译取\"精准+反攻\"直白对应"
+  },
+  {
+   "table": "stratagems",
+   "id": "000008812003",
+   "name_en": "AGGRESSIVE MOBILITY",
+   "name_zh": "灵活机动",
+   "zh_source": "codex-10e",
+   "evidence": "page_008：移动阶段，加速不投骰改为M+6寸；与英文Effect逐句一致。⚠️译名偏意译（直译近\"凶猛机动\"），按源采用"
+  },
+  {
+   "table": "stratagems",
+   "id": "000008812004",
+   "name_en": "FOCUSED FIRE",
+   "name_zh": "集中火力",
+   "zh_source": "codex-10e",
+   "evidence": "page_008：两个未射击单位只能选定同一敌方单位为目标且AP强化1；与英文Effect一致"
+  },
+  {
+   "table": "stratagems",
+   "id": "000008812005",
+   "name_en": "COMBAT DEBARKATION",
+   "name_zh": "战术下车",
+   "zh_source": "codex-10e",
+   "evidence": "page_008：本回合下车的步兵单位攻击最近敌方单位可重投造伤骰；与英文Effect一致"
+  },
+  {
+   "table": "stratagems",
+   "id": "000008812006",
+   "name_en": "PULSE ONSLAUGHT",
+   "name_zh": "脉冲冲击",
+   "zh_source": "codex-10e",
+   "evidence": "page_008：刚射击完的步兵单位使被命中的非巨兽非载具敌军进入\"动摇\"状态（M-2、加速/冲锋骰-2）；与英文Effect一致，2CP两边一致"
+  },
+  {
+   "table": "stratagems",
+   "id": "000008812007",
+   "name_en": "COUNTERFIRE DEFENCE SYSTEMS",
+   "name_zh": "防御反击系统",
+   "zh_source": "codex-10e",
+   "evidence": "page_008：敌方选完射击目标后，针对该单位的攻击破坏力(D)-1；与英文Effect一致。中文refine页该条丢了CP行（DB为2CP）"
+  },
+  {
+   "table": "stratagems",
+   "id": "000008816002",
+   "name_en": "FAIL-SAFE DETONATOR",
+   "name_zh": "自毁系统",
+   "zh_source": "codex-10e",
+   "evidence": "page_010：战斗服模型被消灭时，有致命破灭则自选1或6，否则6寸内每单位D6、4+受D3致命伤；与英文Effect一致"
+  },
+  {
+   "table": "stratagems",
+   "id": "000008816003",
+   "name_en": "STIMM INJECTORS",
+   "name_zh": "兴奋剂注射器",
+   "zh_source": "codex-10e",
+   "evidence": "page_010：被选为攻击目标的战斗服单位获得6+不知疼痛；与英文Effect一致"
+  },
+  {
+   "table": "stratagems",
+   "id": "000008816004",
+   "name_en": "THE SHORTENED BLADE",
+   "name_zh": "短兵相接",
+   "zh_source": "codex-10e",
+   "evidence": "page_010：深入打击入场的战斗服单位可部署在敌方3寸外（11版DB文本为6寸外，数值有版差但同一计谋），当回合不可冲锋；机制对应"
+  },
+  {
+   "table": "stratagems",
+   "id": "000008816005",
+   "name_en": "THE ARRO’KON PROTOCOL",
+   "name_zh": "阿拉孔教义",
+   "zh_source": "codex-10e",
+   "evidence": "page_010：攻击≥6模型的单位获[连击1]、≥11改为[连击2]；与英文Effect一致"
+  },
+  {
+   "table": "stratagems",
+   "id": "000008816006",
+   "name_en": "THE TORCHSTAR GAMBIT",
+   "name_zh": "炬星策略",
+   "zh_source": "codex-10e",
+   "evidence": "page_010：已射击的飞行战斗服单位不在接战范围内可做一次标准移动、本回合不可冲锋；与英文Effect一致"
+  },
+  {
+   "table": "stratagems",
+   "id": "000008816007",
+   "name_en": "GRAV-INHIBITOR FIELD",
+   "name_zh": "重力反斥力场",
+   "zh_source": "codex-10e",
+   "evidence": "page_010：被宣冲锋后敌军立即震慑测试且每模型投D6、6造成1致命伤；与英文Effect一致"
+  },
+  {
+   "table": "stratagems",
+   "id": "000008822002",
+   "name_en": "JOIN THE HUNT",
+   "name_zh": "加入狩猎",
+   "zh_source": "codex-10e",
+   "evidence": "page_012：刚被消灭的克鲁特步兵/猎犬队单位，在战略预备队新增一个相同的初始规模单位，一次性、不复原附属人物；与英文Effect一致。CP有版差：中文源1CP，DB(11版)2CP"
+  },
+  {
+   "table": "stratagems",
+   "id": "000008822003",
+   "name_en": "A TRAP WELL LAID",
+   "name_zh": "张机设阱",
+   "zh_source": "codex-10e",
+   "evidence": "page_012：单位结算攻击后选一个被命中的敌方单位，其余克鲁特模型攻击它AP强化1；与英文Effect一致"
+  },
+  {
+   "table": "stratagems",
+   "id": "000008822004",
+   "name_en": "EMP GRENADES",
+   "name_zh": "EMP手雷",
+   "zh_source": "codex-10e",
+   "evidence": "page_012：8寸内敌方载具将要射击/近战时其武器WS和BS削弱1；与英文Effect一致"
+  },
+  {
+   "table": "stratagems",
+   "id": "000008822005",
+   "name_en": "THE GRISLY FEAST",
+   "name_zh": "恐怖盛宴",
+   "zh_source": "codex-10e",
+   "evidence": "page_012：本阶段消灭过敌军的克鲁特单位，对手下个指挥阶段6寸内敌军全部震慑测试、低于半数-1；与英文Effect一致"
+  },
+  {
+   "table": "stratagems",
+   "id": "000008822006",
+   "name_en": "GUERRILLA WARRIORS",
+   "name_zh": "游击战士",
+   "zh_source": "codex-10e",
+   "evidence": "page_012：刚完成撤退移动的克鲁特单位本回合可如常射击与冲锋；与英文Effect一致"
+  },
+  {
+   "table": "stratagems",
+   "id": "000008822007",
+   "name_en": "HIDDEN HUNTERS",
+   "name_zh": "隐匿猎手",
+   "zh_source": "codex-10e",
+   "evidence": "page_012：被选为射击目标的克鲁特单位直到阶段结束只能被18寸内敌方模型选为目标；与英文Effect一致"
+  },
+  {
+   "table": "stratagems",
+   "id": "000009646002",
+   "name_en": "BOARDING BLADES",
+   "name_zh": "接舷利刃",
+   "zh_source": "self-translated",
+   "evidence": "11版FP新增，中文源无。效果：近战武器AP强化1、暴击造伤再+1AP。Boarding=接舷/跳帮，取\"接舷利刃\""
+  },
+  {
+   "table": "stratagems",
+   "id": "000009646003",
+   "name_en": "SWEEPING AMBUSH",
+   "name_zh": "横扫伏击",
+   "zh_source": "self-translated",
+   "evidence": "11版FP新增，中文源无。效果：迫近/巩固移动6寸代替3寸并可咬上未可见的最近敌军。Sweeping取\"横扫\""
+  },
+  {
+   "table": "stratagems",
+   "id": "000009646004",
+   "name_en": "BRUTE FORCE",
+   "name_zh": "蛮力破门",
+   "zh_source": "self-translated",
+   "evidence": "11版FP新增，中文源无。效果：猿兽骑兵开舱门(Hatchway)后对门另一侧3寸内敌军投D6致伤。取\"蛮力破门\"贴合开舱门语境"
+  },
+  {
+   "table": "stratagems",
+   "id": "000009646005",
+   "name_en": "TANGLEBOMB BOLAS",
+   "name_zh": "缠爆流星索",
+   "zh_source": "self-translated",
+   "evidence": "11版FP新增，中文源无。效果：9寸内敌军2+则M减半、加速/冲锋骰减半。Bolas=流星索/绊索，Tanglebomb取\"缠爆\""
+  },
+  {
+   "table": "stratagems",
+   "id": "000009637002",
+   "name_en": "FIRING LINE",
+   "name_zh": "火力战线",
+   "zh_source": "self-translated",
+   "evidence": "11版FP新增，中文源无。效果：友军被歼后9寸内火战士/寻路者队可视同射击阶段还击凶手。Firing line=射击战列，取\"火力战线\""
+  },
+  {
+   "table": "stratagems",
+   "id": "000009637003",
+   "name_en": "RETREATING FIRE",
+   "name_zh": "且退且射",
+   "zh_source": "self-translated",
+   "evidence": "11版FP新增，中文源无。效果：火战士/寻路者队撤退当回合仍可射击。取四字格\"且退且射\"，贴社区译法风格"
+  },
+  {
+   "table": "stratagems",
+   "id": "000009637004",
+   "name_en": "RESPONSIVE VOLLEY",
+   "name_zh": "应变齐射",
+   "zh_source": "self-translated",
+   "evidence": "11版FP新增，中文源无。效果：开舱门后射门对侧敌军5+即暴击。Responsive=应变，Volley=齐射"
+  },
+  {
+   "table": "stratagems",
+   "id": "000009637005",
+   "name_en": "PULSE BARRAGE",
+   "name_zh": "脉冲弹幕",
+   "zh_source": "self-translated",
+   "evidence": "11版FP新增，中文源无。效果：警戒射击5+命中。与中文源已有\"脉冲冲击\"(Pulse Onslaught)区分，Barrage取\"弹幕\""
+  },
+  {
+   "table": "stratagems",
+   "id": "000009840002",
+   "name_en": "EXPERIMENTAL MODIFICATIONS",
+   "name_zh": "实验性改装",
+   "zh_source": "codex-10e",
+   "evidence": "page_014：克鲁特/胡蜂人单位武器AP强化1；与英文Effect一致"
+  },
+  {
+   "table": "stratagems",
+   "id": "000009840003",
+   "name_en": "MULTISENSORY SCANNING",
+   "name_zh": "多感官扫描",
+   "zh_source": "codex-10e",
+   "evidence": "page_014：重投造伤骰的1，克鲁特/胡蜂人改为重投造伤骰；与英文Effect一致"
+  },
+  {
+   "table": "stratagems",
+   "id": "000009840004",
+   "name_en": "INTERLOCKING MANOUEVRES",
+   "name_zh": "连锁移动",
+   "zh_source": "codex-10e",
+   "evidence": "page_014：近战阶段结束时不在接战范围内可做至多6寸标准移动，否则可撤退；与英文Effect一致"
+  },
+  {
+   "table": "stratagems",
+   "id": "000009840005",
+   "name_en": "PHEROMONE WAYPOINTS",
+   "name_zh": "信息素路标",
+   "zh_source": "codex-10e",
+   "evidence": "page_014：克鲁特/胡蜂人单位加速不投骰改为M+6寸；与英文Effect一致"
+  },
+  {
+   "table": "stratagems",
+   "id": "000009840006",
+   "name_en": "ALIEN EXPERTISE",
+   "name_zh": "异星学识",
+   "zh_source": "codex-10e",
+   "evidence": "page_014：加速后可射击，克鲁特/胡蜂人加速后还可冲锋；与英文Effect一致"
+  },
+  {
+   "table": "stratagems",
+   "id": "000009840007",
+   "name_en": "GUIDED FIRE",
+   "name_zh": "引导射击",
+   "zh_source": "codex-10e",
+   "evidence": "page_014：射击武器S+1，完全位于克鲁特/胡蜂人9寸内改为S+2；与英文Effect一致"
+  },
+  {
+   "table": "stratagems",
+   "id": "000009984002",
+   "name_en": "AUTOMATED REPAIR DRONES",
+   "name_zh": "自动维修兵蜂",
+   "zh_source": "codex-10e",
+   "evidence": "page_016：指挥阶段选一个战斗服模型回复D3+1点W；与英文Effect一致。兵蜂=本语料对Drone的统一译名"
+  },
+  {
+   "table": "stratagems",
+   "id": "000009984003",
+   "name_en": "REACTIVE IMPACT DAMPENERS",
+   "name_zh": "冲击力场",
+   "zh_source": "codex-10e",
+   "evidence": "page_016：被选为攻击目标的战斗服单位，S>T的攻击造伤骰-1；使用时机/对象/效果与英文一致。⚠️译名意译幅度大（直译近\"反应式冲击阻尼器\"），按源采用"
+  },
+  {
+   "table": "stratagems",
+   "id": "000009984004",
+   "name_en": "EXPERIMENTAL WEAPONRY",
+   "name_zh": "实验性武器",
+   "zh_source": "codex-10e",
+   "evidence": "page_016：可重骰攻击次数骰；与英文Effect一致"
+  },
+  {
+   "table": "stratagems",
+   "id": "000009984005",
+   "name_en": "EXPERIMENTAL AMMUNITION",
+   "name_zh": "实验性弹药",
+   "zh_source": "codex-10e",
+   "evidence": "page_016：二选一：射击武器S+1，或S和AP+1并获[危险]；与英文Effect一致，且两边同有\"与危险分析仪互斥\"限制"
+  },
+  {
+   "table": "stratagems",
+   "id": "000009984006",
+   "name_en": "THREAT ASSESSMENT ANALYSER",
+   "name_zh": "危险分析仪",
+   "zh_source": "codex-10e",
+   "evidence": "page_016：选择[连击1]或[致命一击]，或改为三者齐拿并获[危险]；与英文Effect一致，且两边同有互斥限制"
+  },
+  {
+   "table": "stratagems",
+   "id": "000009984007",
+   "name_en": "NEUROWEB SYSTEM JAMMER",
+   "name_zh": "神经网络干扰器",
+   "zh_source": "codex-10e",
+   "evidence": "page_016：被选为射击目标的危机(Crisis)单位只能被18寸内敌方选为目标；与英文Effect一致（对象同为Crisis单位，效果同为18寸目标限制）"
+  },
+  {
+   "table": "abilities",
+   "id": "000008439",
+   "name_en": "For the Greater Good",
+   "name_zh": "为了上上善道",
+   "zh_source": "codex-10e",
+   "evidence": "wiki/core-rules/for-the-greater-good.md 与中文codex page_013/017/018 一致"
+  }
+ ]
+}

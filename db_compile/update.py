@@ -39,6 +39,7 @@ class UpdateConfig:
     terms: Path = Path("wiki/terms.json")
     mfm_json: Path = Path("db_sources/mfm/mfm_points.json")
     fp_errata: Path = Path("db_compile/fp_errata_patches.json")
+    fp_rules: Path = Path("db_compile/fp_rules_patches.json")
     refined: Path = Path("data_refined")
     blacklibrary_cache: Path = Path("db_sources/blacklibrary/units.json")
     blacklibrary_details: Path = Path("db_sources/blacklibrary/details.json")
@@ -209,6 +210,30 @@ def stage_fp_errata(cfg: UpdateConfig) -> StageResult:
         detail=rep, warning=warn)
 
 
+def stage_fp_rules(cfg: UpdateConfig) -> StageResult:
+    """Faction Pack 规则文本真漂移补丁 + name_zh 补齐（build 之后，否则被覆盖）。
+
+    P7 DSL 编码的前置：DSL 必须对着 11 版现行文本。库是混合态（Wahapedia 已滚入
+    部分勘误），本层只补 A/B 工作单坐实的真漂移条目。缺补丁文件时优雅跳过。
+    """
+    if not cfg.fp_rules.exists():
+        return StageResult("fp_rules", True, f"跳过（{cfg.fp_rules} 不存在）",
+                           warning="fp_rules 补丁文件缺失，规则文本未 11 版化")
+    from db_compile.fp_rules import apply_from_file
+    rep = apply_from_file(cfg.db, cfg.fp_rules)
+    mismatches = len(rep["text_mismatch"]) + len(rep["name_mismatch"])
+    warn = None
+    if mismatches:
+        warn = (f"{mismatches} 条补丁库现值既非 from 也非 to，已让路未覆盖"
+                "（上游可能已改，核对 fp_rules_patches.json）")
+    return StageResult(
+        "fp_rules", True,
+        f"文本补丁 应用 {rep['text_applied']} / 幂等 {rep['text_already']} / "
+        f"让路 {len(rep['text_mismatch'])}；中文名 应用 {rep['name_applied']} / "
+        f"幂等 {rep['name_already']} / 让路 {len(rep['name_mismatch'])}",
+        detail=rep, warning=warn)
+
+
 def stage_aliases(cfg: UpdateConfig) -> StageResult:
     """从 data_refined 双语标题重灌中文别名层（build 清库后需重建）。"""
     from db_compile.aliases import populate_aliases
@@ -342,6 +367,7 @@ _PIPELINE = [
     ("重建整库（Wahapedia CSV → sqlite）", stage_build, True),
     ("应用官方 MFM 分数", stage_mfm_apply, False),
     ("补 Faction Pack 11 版真漂移", stage_fp_errata, False),
+    ("补 Faction Pack 规则文本真漂移", stage_fp_rules, False),
     ("重灌中文别名层", stage_aliases, False),
     ("补黑图书馆中英别名", stage_aliases_blackforum, False),
     ("补社区俗名层", stage_aliases_community, False),
@@ -353,10 +379,11 @@ _PIPELINE = [
 
 
 # build 会 unlink 重建整库，清掉官方 MFM 分数/别名/中文层。这些恢复阶段用本地缓存把它们
-# 补回来（离线可跑），是「单独 build 后必须补跑」的那批（_PIPELINE 的 4-8 阶段）。
+# 补回来（离线可跑），是「单独 build 后必须补跑」的那批（_PIPELINE 的 4-9 阶段）。
 _RESTORE_STAGES = [
     ("应用官方 MFM 分数", stage_mfm_apply),
     ("补 Faction Pack 11 版真漂移", stage_fp_errata),
+    ("补 Faction Pack 规则文本真漂移", stage_fp_rules),
     ("重灌中文别名层", stage_aliases),
     ("补黑图书馆中英别名", stage_aliases_blackforum),
     ("补社区俗名层", stage_aliases_community),
