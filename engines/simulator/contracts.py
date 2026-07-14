@@ -113,6 +113,10 @@ class Stance:
     long_range: bool = False         # 目标完全在 12"/24" 外（conversion 暴击命中阈值下调触发）
     indirect: bool = False           # 以间接火力开火（11版24.19+10.07：目标获掩体，命中与BS无关——
                                      # 未修正仅6命中；stationary 代理条件下 4+）
+    guided: bool = False             # P7·FTGG 开关：假设本单位为受引导（Guided）且目标已被标记
+                                     # （Spotted）——观察员自身不射击的机会成本不建模，报告披露
+    markerlight_observer: bool = False  # P7：观察员带 Markerlight 关键词（与 guided 同开才生效，
+                                        # 追加 [IGNORES COVER]）
 
 
 @dataclass(frozen=True)

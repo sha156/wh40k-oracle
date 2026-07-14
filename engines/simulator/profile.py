@@ -134,6 +134,31 @@ def load_faction_options(db_path, unit_id: str) -> Dict:
             "detachments": names}
 
 
+def load_unit_dsl(db_path, unit_id: str) -> Tuple:
+    """该单位所属阵营的已编码 DSL 条目（P7）：扫 effect_dsl_json 非空行 → 校验 → 过滤阵营。
+
+    链接载体是载荷内的 faction 字段（abilities 表无阵营列，评审 F3）；试点期全库带
+    DSL 的行只有几十条，全扫过滤扛得住。坏载荷直接 raise（投影层已校验过，此处再炸
+    说明库被手改——不静默）。返回 tuple[DslEntry]。
+    """
+    from engines.simulator.dsl import parse_db_payload  # 延迟避免循环
+    conn = sqlite3.connect(str(db_path))
+    try:
+        u = conn.execute("SELECT faction_id FROM units WHERE id = ?", (unit_id,)).fetchone()
+        if not u or not u[0]:
+            return ()
+        fid = u[0]
+        rows = []
+        for table in ("abilities", "stratagems"):
+            rows.extend(conn.execute(
+                f"SELECT effect_dsl_json FROM {table} "
+                f"WHERE effect_dsl_json IS NOT NULL").fetchall())
+    finally:
+        conn.close()
+    entries = [parse_db_payload(r[0]) for r in rows]
+    return tuple(e for e in entries if e.faction == fid)
+
+
 def load_unit_header(db_path, unit_id: str) -> Optional[UnitHeader]:
     conn = sqlite3.connect(str(db_path))
     try:

@@ -40,6 +40,7 @@ class UpdateConfig:
     mfm_json: Path = Path("db_sources/mfm/mfm_points.json")
     fp_errata: Path = Path("db_compile/fp_errata_patches.json")
     fp_rules: Path = Path("db_compile/fp_rules_patches.json")
+    dsl_payloads: Path = Path("dsl_payloads")
     refined: Path = Path("data_refined")
     blacklibrary_cache: Path = Path("db_sources/blacklibrary/units.json")
     blacklibrary_details: Path = Path("db_sources/blacklibrary/details.json")
@@ -234,6 +235,29 @@ def stage_fp_rules(cfg: UpdateConfig) -> StageResult:
         detail=rep, warning=warn)
 
 
+def stage_dsl_apply(cfg: UpdateConfig) -> StageResult:
+    """P7 DSL 真源投影（build 之后、fp_rules 之后——指纹要对 11 版化后的文本核）。
+
+    dsl_payloads/*.json 是唯一真源，DB 列只是投影；rebuild 清零后由本阶段补回（评审 F1）。
+    """
+    if not cfg.dsl_payloads.exists():
+        return StageResult("dsl_apply", True, f"跳过（{cfg.dsl_payloads} 不存在）",
+                           warning="dsl_payloads 目录缺失，DSL 投影未补")
+    from db_compile.dsl_apply import apply_dsl
+    rep = apply_dsl(cfg.db, cfg.dsl_payloads)
+    warn = None
+    if rep["fingerprint_mismatch"]:
+        warn = (f"{len(rep['fingerprint_mismatch'])} 条 DSL 原文指纹不匹配已让路"
+                "（文本被刷新而 DSL 未重核，需人工复核 dsl_payloads）")
+    return StageResult(
+        "dsl_apply", True,
+        f"DSL 投影 应用 {rep['applied']} / 幂等 {rep['already']} / "
+        f"指纹让路 {len(rep['fingerprint_mismatch'])} / 跳过 {len(rep['skipped'])}"
+        f"（encoded {rep['by_status']['encoded']} / partial {rep['by_status']['partial']}"
+        f" / not_modeled {rep['by_status']['not_modeled']}）",
+        detail=rep, warning=warn)
+
+
 def stage_aliases(cfg: UpdateConfig) -> StageResult:
     """从 data_refined 双语标题重灌中文别名层（build 清库后需重建）。"""
     from db_compile.aliases import populate_aliases
@@ -368,6 +392,7 @@ _PIPELINE = [
     ("应用官方 MFM 分数", stage_mfm_apply, False),
     ("补 Faction Pack 11 版真漂移", stage_fp_errata, False),
     ("补 Faction Pack 规则文本真漂移", stage_fp_rules, False),
+    ("投影 P7 DSL 真源", stage_dsl_apply, False),
     ("重灌中文别名层", stage_aliases, False),
     ("补黑图书馆中英别名", stage_aliases_blackforum, False),
     ("补社区俗名层", stage_aliases_community, False),
@@ -384,6 +409,7 @@ _RESTORE_STAGES = [
     ("应用官方 MFM 分数", stage_mfm_apply),
     ("补 Faction Pack 11 版真漂移", stage_fp_errata),
     ("补 Faction Pack 规则文本真漂移", stage_fp_rules),
+    ("投影 P7 DSL 真源", stage_dsl_apply),
     ("重灌中文别名层", stage_aliases),
     ("补黑图书馆中英别名", stage_aliases_blackforum),
     ("补社区俗名层", stage_aliases_community),

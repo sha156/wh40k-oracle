@@ -47,6 +47,12 @@ def main() -> None:
     fr.add_argument("--patches", default="db_compile/fp_rules_patches.json")
     fr.add_argument("--db", default="db/wh40k.sqlite")
 
+    da = sub.add_parser(
+        "dsl-apply",
+        help="投影 P7 DSL 真源（dsl_payloads/*.json）进 effect_dsl_json/dsl_status 列")
+    da.add_argument("--payloads", default="dsl_payloads")
+    da.add_argument("--db", default="db/wh40k.sqlite")
+
     en = sub.add_parser(
         "enhancements",
         help="强化数据（P6 军表验表）：抓取/应用/对账 Enhancements.csv → enhancements 表")
@@ -249,6 +255,26 @@ def main() -> None:
                 for ch in rep[key]:
                     print(f"    {ch['table']:12} {str(ch['name'])[:40]:40} "
                           f"现值头 {ch.get('db_now_head', ch.get('db_now'))!r}")
+        print("\n  注意：db_compile build 重建会覆盖，重建后需重跑（已挂进 restore_authority_layers）")
+    elif args.cmd == "dsl-apply":
+        from db_compile.dsl_apply import apply_dsl
+
+        rep = apply_dsl(Path(args.db), Path(args.payloads))
+        print("\nP7 DSL 真源投影：")
+        print(f"  应用 {rep['applied']} / 幂等 {rep['already']} / "
+              f"指纹让路 {len(rep['fingerprint_mismatch'])} / 跳过 {len(rep['skipped'])}")
+        print(f"  三态：encoded {rep['by_status']['encoded']} / "
+              f"partial {rep['by_status']['partial']} / "
+              f"not_modeled {rep['by_status']['not_modeled']}")
+        for ch in rep["changes"]:
+            print(f"    {ch['table']:12} {str(ch['name'])[:40]:40} → {ch['status']}")
+        if rep["fingerprint_mismatch"]:
+            print("\n  ⚠️ 指纹让路（原文被刷新而 DSL 未重核，人工复核 dsl_payloads）：")
+            for ch in rep["fingerprint_mismatch"]:
+                print(f"    {ch['table']:12} {str(ch['name'])[:40]:40} "
+                      f"期望 {ch['expected']} 现 {ch['db_now']}")
+        for ch in rep["skipped"]:
+            print(f"    跳过 {ch['table']}:{ch['id']}：{ch['reason']}")
         print("\n  注意：db_compile build 重建会覆盖，重建后需重跑（已挂进 restore_authority_layers）")
     elif args.cmd == "enhancements":
         from db_compile.enhancements import (apply_enhancements,

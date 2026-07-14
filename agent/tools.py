@@ -407,6 +407,8 @@ def simulate_combat_resolved(
             target_in_cover=bool(options.get("cover")),
             long_range=bool(options.get("long_range")),
             indirect=bool(options.get("indirect")),
+            guided=bool(options.get("guided")),
+            markerlight_observer=bool(options.get("markerlight_observer")),
         )
 
         loadout = options.get("loadout")
@@ -428,6 +430,26 @@ def simulate_combat_resolved(
         if target is None:
             return {"ok": False, "modeled": True, "tool": "simulate_combat",
                     "reason": "not_found", "note": f"守方 {d['name_en']} 无法装载"}
+
+        # P7：攻方阵营 DSL 条目——开关满足才注入（stance 同源 options 点亮，条件 tag 放行），
+        # 注记随后挂进 report（modeled⇄结果被影响 成对，评审 F5）
+        from engines.simulator.dsl import inject_attacker
+        from engines.simulator.profile import load_unit_dsl
+        dsl_entries = load_unit_dsl(db_path, a["canonical_id"])
+        dsl_toggles = frozenset(
+            t for t in ("guided", "markerlight_observer") if options.get(t))
+        attacker_prof, dsl_modeled, dsl_notes = inject_attacker(
+            asm.attacker, list(dsl_entries), dsl_toggles)
+        # 面板/上层可见的可用开关清单（surface，不自动开）
+        dsl_available = [
+            {"name_en": e.name_en, "name_zh": e.name_zh, "status": e.status,
+             "requires_toggles": list(e.requires_toggles)}
+            for e in dsl_entries if e.side == "attacker" and e.effects]
+
+        def _annotate_dsl(rep):
+            rep.modeled_effects.extend(dsl_modeled)
+            rep.not_modeled.extend(dsl_notes)
+            return rep
         # P5-a：守方可 opt-in 的防守开关（名字/说明/是否解析出参数）——供面板预填、不自动施加
         from engines.simulator.context import build_toggles_available
         from engines.simulator.profile import load_faction_options
@@ -504,7 +526,7 @@ def simulate_combat_resolved(
                         "weapon_pool": [w.name_en for w in d_asm.weapon_pool],
                         "model_tiers": d_asm.tiers, "errors": d_asm.errors}
             rep = simulate_matchup(
-                asm.attacker, target, d_asm.attacker, a_as_target,
+                attacker_prof, target, d_asm.attacker, a_as_target,
                 stance_forward=stance, stance_reverse=Stance(phase=rev_phase),
                 n=n, seed=seed, points_a=points_a, points_b=points_b,
                 a_fights_first=bool(options.get("attacker_fights_first")),
@@ -513,17 +535,19 @@ def simulate_combat_resolved(
                 b_fights_last=bool(options.get("defender_fights_last")))
             return {"ok": True, "modeled": True, "tool": "simulate_combat",
                     "attacker": a["name_en"], "defender": d["name_en"],
-                    "phase": phase, "report": _report_to_dict(rep),
+                    "phase": phase, "report": _report_to_dict(_annotate_dsl(rep)),
                     "defender_toggles": defender_toggles,
                     "faction_options": faction_options,
+                    "dsl_available": dsl_available,
                     "warning": warning}
 
-        rep = simulate(asm.attacker, target, stance, n=n, seed=seed, points=points_a)
+        rep = simulate(attacker_prof, target, stance, n=n, seed=seed, points=points_a)
         return {"ok": True, "modeled": True, "tool": "simulate_combat",
                 "attacker": a["name_en"], "defender": d["name_en"],
-                "phase": phase, "report": _report_to_dict(rep),
+                "phase": phase, "report": _report_to_dict(_annotate_dsl(rep)),
                 "defender_toggles": defender_toggles,
                 "faction_options": faction_options,
+                "dsl_available": dsl_available,
                 "warning": warning}
     except Exception as exc:   # noqa: BLE001 — 显式暴露，不静默吞
         import traceback

@@ -97,6 +97,8 @@ def _options_from_inputs(st) -> Dict[str, Any]:
         "indirect": st.session_state.get("sim_indirect", False),
         "stealth": st.session_state.get("sim_stealth", False),
         "smokescreen": st.session_state.get("sim_smoke", False),
+        "guided": st.session_state.get("sim_guided", False),
+        "markerlight_observer": st.session_state.get("sim_markerlight", False),
         "n": int(st.session_state.get("sim_n", 8000)),
         "seed": int(st.session_state.get("sim_seed", 1234)),
     }
@@ -158,6 +160,16 @@ def render_simulator_panel(st) -> None:
                                "该阶段指向本单位的攻击目标获掩体收益（13.08=恶化攻方 BS 1）；"
                                "不额外附加十版 Stealth 式减命中"
                                "（Go to Ground 已从 11 版核心战略移除）")
+
+        cols_dsl = st.columns(4)
+        cols_dsl[0].checkbox("攻方受引导（FTGG）", key="sim_guided",
+                             help="P7·钛帝国军规 DSL 开关：假设本单位为受引导（Guided）且目标"
+                                  "已被标记（Spotted）——BS 特征值改善 1（特征值修正不吃 ±1 "
+                                  "命中修正夹取）。观察员自身不射击的机会成本不建模；非钛帝国"
+                                  "单位开了也无效果（无对应 DSL 条目）")
+        cols_dsl[1].checkbox("观察员带标记光", key="sim_markerlight",
+                             help="须与「攻方受引导」同开：观察员带 Markerlight 关键词时，"
+                                  "攻击追加 [IGNORES COVER]")
 
         cols3 = st.columns(4)
         cols3[0].number_input("守方 FNP X+（0=关）", 0, 6, 0, key="sim_fnp")
