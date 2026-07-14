@@ -16,7 +16,11 @@ from engines.simulator.contracts import (
 )
 from engines.simulator.context import STANDARD_BIAS, build_not_modeled, collect_effect_reporting
 from engines.simulator.report import build_report
-from engines.simulator.sequence import run_sequence, unconsumed_target_effect_notes
+from engines.simulator.sequence import (
+    run_sequence,
+    unconsumed_attacker_effect_notes,
+    unconsumed_target_effect_notes,
+)
 
 
 def simulate(
@@ -36,6 +40,8 @@ def simulate(
     not_modeled = build_not_modeled(attacker, target)
     # 评审 M：守方 Effect 要么被引擎消费、要么显式披露，绝不静默丢
     not_modeled.extend(unconsumed_target_effect_notes(target))
+    # P7 评审 F4：攻方侧同款对账——DSL 注入 op 合法但引擎没接时不许静默归零
+    not_modeled.extend(unconsumed_attacker_effect_notes(attacker))
     return build_report(
         raw, points=points, modeled_effects=modeled, not_modeled=not_modeled,
         bias_notes=list(STANDARD_BIAS) if include_bias else [],

@@ -81,8 +81,19 @@ def effective_save(sv: int, ap: int, invuln: Optional[int]) -> int:
 # ---------------------------------------------------------------------------
 # Effect 读取（P4-c：词条按阶段生效）
 # ---------------------------------------------------------------------------
+# _cond_true 认识的全部条件 tag——DSL 校验（dsl.py）引用此集合做白名单，唯一真源在此。
+# 新增 tag 时两处同步：本集合 + _cond_true 分支；test_simulator_dsl 有护栏断言
+# （集合内逐 tag 求值不 raise、集合外 raise）。
+KNOWN_CONDITION_TAGS = frozenset({
+    "half_range", "stationary", "charging", "long_range", "indirect",
+    "phase_shooting", "phase_melee", "target_has_keyword",
+    "guided_vs_spotted", "guided_markerlight",
+})
+
+
 def _cond_true(condition: Tuple, stance: Stance, target: TargetProfile) -> bool:
-    """Effect.condition 是否在本次态势/目标下成立。"""
+    """Effect.condition 是否在本次态势/目标下成立。契约：condition = (tag, *args)——
+    单 tag，首元素定分支、其余元素是该 tag 的参数；复合条件用复合 tag（不做合取求值器）。"""
     if not condition:
         return True
     tag = condition[0]
@@ -102,7 +113,14 @@ def _cond_true(condition: Tuple, stance: Stance, target: TargetProfile) -> bool:
         return stance.phase == "melee"
     if tag == "target_has_keyword":
         return len(condition) > 1 and condition[1] in target.keywords
-    return False
+    if tag == "guided_vs_spotted":       # P7：FTGG 受引导单位打被标记目标（11版军规）
+        return stance.phase == "shooting" and stance.guided
+    if tag == "guided_markerlight":      # P7：观察员带 Markerlight 关键词 → 追加 [IGNORES COVER]
+        return (stance.phase == "shooting" and stance.guided
+                and stance.markerlight_observer)
+    # P7 加固（评审 F2）：未知 tag 静默返回 False = 效果静默失效（攻方侧零披露），
+    # 是 CLAUDE.md 明令的静默降级缝——改为 raise，让 DSL 录入笔误在测试期就炸出来。
+    raise ValueError(f"未知 Effect condition tag: {tag!r}（来源条件 {condition!r}）")
 
 
 @dataclass
@@ -117,6 +135,9 @@ class _WeaponParams:
     torrent: bool = False
     indirect_fixed: bool = False   # 11版间接开火：命中改固定未修正阈值（6+；驻停代理 4+）
     hit_mod: int = 0
+    bs_delta: int = 0              # P7：BS 特征值净变化（改善为正、恶化为负；掩体 13.08 在此）。
+                                   # 特征值修正≠命中骰修正：不进 ±1 夹取（上限条款语料缺页，
+                                   # 按无上限实现并披露——spec D2），也不影响暴击阈值（看自然骰）
     ignore_neg_hit: bool = False   # 11版24.29 [PSYCHIC]：无视不利命中修正（保留有利修正）
     crit_wound_thr: int = _FACES
     twin: bool = False
@@ -129,6 +150,7 @@ class _WeaponParams:
 def _gather_params(w: WeaponProfile, stance: Stance, target: TargetProfile) -> _WeaponParams:
     p = _WeaponParams(cover=stance.target_in_cover)
     hit_pos = hit_neg = 0        # 命中修正分正负累计（[PSYCHIC] 只忽略负修正）
+    bs_pos = bs_neg = 0          # P7：BS 特征值修正另立通道，分正负累计（同 PSYCHIC 有利方向语义）
     for e in w.effects:
         ok = _cond_true(e.condition, stance, target)
         if e.phase == "attacks":
@@ -157,6 +179,15 @@ def _gather_params(w: WeaponProfile, stance: Stance, target: TargetProfile) -> _
                     hit_pos += v
                 else:
                     hit_neg += v
+            elif e.op == "bs_improve" and ok:
+                # P7：BS 特征值改善（FTGG "improve the Ballistic Skill characteristic
+                # by 1"）。特征值修正≠命中骰修正——禁止折进 hit_pos（会被 ±1 夹取吞掉
+                # 与 heavy 等叠加量）。负参数表示特征值恶化。
+                v = int(e.params[0])
+                if v >= 0:
+                    bs_pos += v
+                else:
+                    bs_neg += v
         elif e.phase == "wound":
             if e.op == "mortal_pool":
                 p.has_dev = True
@@ -170,7 +201,7 @@ def _gather_params(w: WeaponProfile, stance: Stance, target: TargetProfile) -> _
             if e.op == "modify" and ok:
                 p.melta_expr = e.params[0]        # DiceExpr（melta）
         elif e.phase == "save":
-            if e.op == "ignores_cover":
+            if e.op == "ignores_cover" and ok:
                 p.ignores_cover = True
             elif e.op == "cover" and ok:
                 p.cover = True
@@ -193,21 +224,28 @@ def _gather_params(w: WeaponProfile, stance: Stance, target: TargetProfile) -> _
             p.cover = True
     # ── Benefit of Cover（11版 13.08）：掩体收益 = 恶化该次攻击的 BS 1 点（射击专属），
     #   十版"护甲保存骰+1、且 AP0 对 3+ 甲无效"整体作废——掩体从保存侧挪到命中侧。
-    #   折进命中负修正 hit_neg（而非 effective_save）后自然获得三条 11 版语义：
+    #   P7 起折进 **BS 特征值通道 bs_neg**（S7 曾折 hit_neg，与 13.08 "worsen the
+    #   Ballistic Skill characteristic" 的措辞对齐后迁移；差异仅在与 bs_improve/命中修正
+    #   三方叠加时显现——特征值层先净算、命中骰修正层再独立夹 ±1）。三条 11 版联动不变：
     #     · 武器侧 [IGNORES COVER]（24.18）→ p.ignores_cover 使 cover_active 为假，惩罚不进桶；
-    #     · 攻方 [PSYCHIC]（24.29）→ 紧接的 hit_neg 清零把掩体惩罚一并无视（B6 交互）；
-    #     · 曲射固定阈值 / torrent 自动命中路径在 _resolve_weapon 不读 hit_mod，故掩体对其
-    #       天然无效（与 11 版一致：曲射阈值作用于"未修正"命中骰，掩体这类修正不生效）。
+    #     · 攻方 [PSYCHIC]（24.29）→ 下方按有利方向把 bs_neg 与 hit_neg 一并清零（B6 交互，
+    #       24.29 原文同时覆盖 "BS/WS 与命中骰" 两类修正）；
+    #     · 曲射固定阈值 / torrent 自动命中路径在 _resolve_weapon 不读 hit_mod/bs_delta，
+    #       故掩体对其天然无效（曲射阈值作用于"未修正"命中骰）。
     #   近战不受掩体影响（13.08 只对远程攻击），故仅射击阶段折算。
     cover_active = p.cover and not p.ignores_cover
     if cover_active and stance.phase == "shooting":
-        hit_neg -= 1
+        bs_neg -= 1
     # [PSYCHIC]（11版24.29）：攻方每次攻击可无视 BS/WS 与命中骰的任意修正（含掩体的 BS
-    # 惩罚）——按有利方向执行：只忽略负修正、保留正修正（heavy +1 照常享受）。
+    # 惩罚）——按有利方向执行：只忽略负修正（两个通道），保留正修正（heavy +1、
+    # FTGG bs_improve 照常享受）。
     if p.ignore_neg_hit:
         hit_neg = 0
-    # 命中/致伤修正各自夹到 ±1（修正总和上限，未审计项沿用十版口径）
+        bs_neg = 0
+    # 命中/致伤修正各自夹到 ±1（修正总和上限，未审计项沿用十版口径）；
+    # BS 特征值净变化不夹取（上限条款语料缺页，spec D2 按无上限实现并披露）
     p.hit_mod = max(-1, min(1, hit_pos + hit_neg))
+    p.bs_delta = bs_pos + bs_neg
     p.wound_mod = max(-1, min(1, p.wound_mod))
     return p
 
@@ -292,6 +330,44 @@ def _target_effect_value(target: TargetProfile, op: str) -> Optional[int]:
             p = e.params[0]
             return int(p)
     return None
+
+
+# ── Effect 消费点注册表（P7）────────────────────────────────────────────────
+# 引擎实际消费的 (phase, op) 全集，与 _gather_params/_target_effect_value 的分支一一对应。
+# DSL 校验（engines/simulator/dsl.py）按侧引用这两个集合做白名单——白名单唯一真源在此，
+# 不许在别处手抄第二份（评审 F7：encoded 判据第④条 = 施加侧存在消费点）。
+# 新增引擎分支时必须同步登记，测试 test_simulator_dsl 有差分断言护住漂移。
+ATTACKER_CONSUMED = frozenset({
+    ("attacks", "modify"), ("attacks", "blast"),
+    ("hit", "extra_hits"), ("hit", "auto_wound"), ("hit", "auto_hit"),
+    ("hit", "indirect_fixed"), ("hit", "crit_threshold"), ("hit", "ignore_hit_mods"),
+    ("hit", "modify"), ("hit", "bs_improve"),
+    ("wound", "mortal_pool"), ("wound", "crit_threshold"), ("wound", "reroll"),
+    ("wound", "modify"),
+    ("damage", "modify"),
+    ("save", "ignores_cover"), ("save", "cover"),
+})
+TARGET_CONSUMED = frozenset({
+    ("fnp", "fnp"), ("damage", "damage_reduction"),
+    ("hit", "modify"), ("save", "cover"),
+})
+
+
+def unconsumed_attacker_effect_notes(attacker) -> List[str]:
+    """列出攻方 loadout 各武器 effects 中引擎不会消费的条目（评审 F4）。
+
+    _gather_params 对未知 op 直接跳过零记账——DSL 注入若 op 合法但引擎该侧没接，
+    效果会静默归零。与守方对账同语义：要么被消费、要么显式披露。
+    """
+    notes = []
+    for w in attacker.loadout:
+        for e in w.effects:
+            if (e.phase, e.op) not in ATTACKER_CONSUMED:
+                notes.append(
+                    f"攻方 Effect 未消费：{w.name_en} 的 phase={e.phase}/op={e.op}"
+                    f"（来源 {e.source or '未知'}）——引擎攻方侧无此消费点，"
+                    f"该效果未计入本次结果")
+    return notes
 
 
 # ── 守方 Effect 消费对账（评审 M：target.effects 要么被消费、要么显式披露，绝不静默丢）──
@@ -392,7 +468,11 @@ def _resolve_weapon(
         crit_hit = hit & (hr >= p.crit_hit_thr) & (hr != 1)
     else:
         hr = rng.integers(1, _FACES + 1, size=(n, max_a), dtype=np.int64)
-        hit = active & (hr != 1) & ((hr >= p.crit_hit_thr) | (hr + p.hit_mod >= w.bs_ws))
+        # P7：先特征值后修正（11版 1.05 次序）——BS 特征值净变化 bs_delta 改阈值本身
+        # （改善为正 → 阈值变小），命中骰修正 hit_mod 已独立夹 ±1。BS 改善到 1+ 时
+        # 由 `hr != 1` 涌现出等效 2+ 下限，无需另行钳制（自然 1 恒失手）。
+        bs_need = w.bs_ws - p.bs_delta
+        hit = active & (hr != 1) & ((hr >= p.crit_hit_thr) | (hr + p.hit_mod >= bs_need))
         crit_hit = hit & (hr >= p.crit_hit_thr) & (hr != 1)
 
     # sustained hits：每个暴击命中 +X 命中（X 可为骰子）；这些额外命中走正常致伤

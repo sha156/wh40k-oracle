@@ -117,6 +117,13 @@ def main(argv: Optional[List[str]] = None) -> int:
                    help="守方烟幕战略（11版核心战略：对手射击阶段开始时使用，该阶段获掩体"
                         "收益=恶化攻方 BS 1；不额外附加十版 Stealth 式减命中。"
                         "Go to Ground 已从 11 版核心战略移除）")
+    p.add_argument("--guided", action="store_true",
+                   help="攻方阵营 DSL 开关（P7·钛帝国 FTGG）：假设本单位为受引导（Guided）"
+                        "且目标已被标记（Spotted）——BS 特征值改善 1（不吃 ±1 修正夹取）。"
+                        "观察员自身不射击的机会成本不建模，报告有披露")
+    p.add_argument("--markerlight-observer", action="store_true", dest="markerlight_observer",
+                   help="观察员带 Markerlight 关键词（须与 --guided 同开）：攻击追加 "
+                        "[IGNORES COVER]")
     p.add_argument("--def-fights-first", action="store_true", dest="defender_fights_first")
     p.add_argument("--def-fights-last", action="store_true", dest="defender_fights_last")
     p.add_argument("--atk-fights-first", action="store_true", dest="attacker_fights_first")
@@ -165,6 +172,8 @@ def main(argv: Optional[List[str]] = None) -> int:
         "long_range": args.long_range, "indirect": args.indirect,
         "stealth": args.stealth,
         "smokescreen": args.smokescreen,
+        "guided": args.guided,
+        "markerlight_observer": args.markerlight_observer,
         "attacker_fights_first": args.attacker_fights_first,
         "attacker_fights_last": args.attacker_fights_last,
         "defender_fights_first": args.defender_fights_first,

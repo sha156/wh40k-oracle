@@ -1,0 +1,37 @@
+{
+ "_comment": "P7 阵营技能 DSL 唯一真源（钛帝国）。DB effect_dsl_json/dsl_status 只是投影，由 `python -m db_compile dsl-apply` 写入并挂 restore（防 rebuild 清零）。逐条人工录入，判据与格式见 docs/superpowers/specs/2026-07-14-p7-faction-dsl-pilot-design.md 第二节；每条 encoded/partial 必须有解析级+引擎级双测试（tests/test_simulator_dsl.py）。",
+ "dsl_version": 1,
+ "faction": "TAU",
+ "entries": [
+  {
+   "table": "abilities",
+   "id": "000008439",
+   "side": "attacker",
+   "detachment": null,
+   "name_en": "For the Greater Good",
+   "name_zh": "为了上上善道",
+   "status": "partial",
+   "effects": [
+    {"phase": "hit", "op": "bs_improve", "params": [1],
+     "condition": ["guided_vs_spotted"],
+     "source": "For the Greater Good（受引导打被标记目标：BS 特征值改善 1）"},
+    {"phase": "save", "op": "ignores_cover", "params": [],
+     "condition": ["guided_markerlight"],
+     "source": "For the Greater Good（观察员带 Markerlight 关键词：追加 [IGNORES COVER]）"}
+   ],
+   "requires_toggles": ["guided"],
+   "not_modeled_notes_zh": [
+    "观察员单位自身本阶段不选择射击的机会成本未建模（模拟只算受引导单位的输出）",
+    "每个敌军单位每阶段只能被标记一次的军队级约束未建模（单点模拟不涉及）",
+    "开关语义=假设本单位已受引导且目标已被标记；观察员是否真的可用由玩家自行保证"
+   ],
+   "provenance": {
+    "current_text": "db abilities.text_zh（Wahapedia 已滚入 11 版勘误，与 Faction Pack Tau Empire p19 RULES UPDATES change-to 逐字一致，2026-07-14 A/B 工作单核验）",
+    "base_text": "Faction Pack Tau Empire p19（data_refined/Faction Pack Tau Empire/page_019.md:6-23）",
+    "synthesis": "无需合成（DB 现文本即 11 版现行）",
+    "text_sha256": "37b11b45d43e7aa8433c394a98cee93baa1ebfe86c3cf8a018f3344c33d13643"
+   },
+   "encoded_by": "manual-2026-07-14"
+  }
+ ]
+}

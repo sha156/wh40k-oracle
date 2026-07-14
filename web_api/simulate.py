@@ -64,8 +64,10 @@ def sanitize_options(raw: Optional[Dict[str, Any]]) -> Dict[str, Any]:
         out["reverse_phase"] = raw["reverse_phase"]
     # smokescreen 不在白名单：引擎里它只是 cover_on 的别名（smokescreen→cover_on），
     # 网页用 cover 开关表达即可，不重复暴露；agent 直调路径不过此白名单，仍可用 smokescreen。
+    # P7：guided/markerlight_observer = 攻方阵营 DSL 开关（FTGG），bool 直通；
+    # 前端契约与「已生效开关回显」按 spec §八 归 PR3，本期先保证后端不静默吞。
     for key in ("charge", "half_range", "cover", "stationary", "long_range",
-                "indirect", "stealth", "reverse"):
+                "indirect", "stealth", "reverse", "guided", "markerlight_observer"):
         if key in raw:
             out[key] = _as_bool(raw[key])
     for key in ("attacker_models", "defender_models", "damage_reduction", "seed"):
