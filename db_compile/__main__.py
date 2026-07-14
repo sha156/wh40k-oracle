@@ -41,6 +41,12 @@ def main() -> None:
     fe.add_argument("--patches", default="db_compile/fp_errata_patches.json")
     fe.add_argument("--db", default="db/wh40k.sqlite")
 
+    fr = sub.add_parser(
+        "fp-rules",
+        help="应用 Faction Pack 规则文本真漂移补丁 + name_zh 补齐（P7 DSL 前置）")
+    fr.add_argument("--patches", default="db_compile/fp_rules_patches.json")
+    fr.add_argument("--db", default="db/wh40k.sqlite")
+
     en = sub.add_parser(
         "enhancements",
         help="强化数据（P6 军表验表）：抓取/应用/对账 Enhancements.csv → enhancements 表")
@@ -216,6 +222,33 @@ def main() -> None:
                 for ch in rep[key]:
                     print(f"    {ch['faction']:4} {ch['unit'][:32]:32} {ch['field']:5} "
                           f"库现值 {ch['db_now']!r}")
+        print("\n  注意：db_compile build 重建会覆盖，重建后需重跑（已挂进 restore_authority_layers）")
+    elif args.cmd == "fp-rules":
+        from db_compile.fp_rules import apply_from_file as apply_rules_file
+
+        rep = apply_rules_file(Path(args.db), Path(args.patches))
+        print("\nFaction Pack 规则文本补丁：")
+        print(f"  文本：应用 {rep['text_applied']} / 幂等 {rep['text_already']} / "
+              f"让路 {len(rep['text_mismatch'])} / 跳过 {len(rep['text_skipped'])} / "
+              f"无效 {len(rep['text_invalid'])}")
+        print(f"  中文名：应用 {rep['name_applied']} / 幂等 {rep['name_already']} / "
+              f"让路 {len(rep['name_mismatch'])} / 跳过 {len(rep['name_skipped'])}")
+        if rep["text_changes"]:
+            print("\n  文本已改动：")
+            for ch in rep["text_changes"]:
+                print(f"    {ch['table']:12} {str(ch['name'])[:40]:40} "
+                      f"← {ch.get('fp_source')}（{ch.get('synthesis')}）")
+        if rep["name_changes"]:
+            print("\n  中文名已补：")
+            for ch in rep["name_changes"]:
+                print(f"    {ch['table']:12} {str(ch['name'])[:36]:36} "
+                      f"→ {ch['name_zh']}（{ch.get('zh_source')}）")
+        for tag, key in (("文本", "text_mismatch"), ("中文名", "name_mismatch")):
+            if rep[key]:
+                print(f"\n  ⚠️ {tag}让路未覆盖（库现值既非 from 也非 to）：")
+                for ch in rep[key]:
+                    print(f"    {ch['table']:12} {str(ch['name'])[:40]:40} "
+                          f"现值头 {ch.get('db_now_head', ch.get('db_now'))!r}")
         print("\n  注意：db_compile build 重建会覆盖，重建后需重跑（已挂进 restore_authority_layers）")
     elif args.cmd == "enhancements":
         from db_compile.enhancements import (apply_enhancements,
