@@ -6,7 +6,7 @@
 （Faction Pack 原文 "supplement your Codex"），语料按层组织：11版核心规则（rules，规则唯一真源）
 + Faction Pack（overlay 补丁）+ MFM/平衡版（points/balance）+ 十版 codex（codex-base 兵牌基底）。
 层级清单：`corpus_manifest.json`；迁移计划与进度：`docs/superpowers/plans/2026-07-10-edition-11-migration.md`。
-模拟器先攻判定已按 11 版，攻击序列词条沿用十版实现（S3 审计中）。
+模拟器已按 11 版对齐（先攻判定、掩体命中侧惩罚、USR 审计均完成）。
 
 ## 运行方式
 
@@ -33,19 +33,22 @@
 - 模型缓存在 `opt/`（bge-m3、ms-marco-MiniLM-L-12-v2 等），CPU 推理
 - 嵌入走 hf-mirror 镜像 + Clash 代理（127.0.0.1:7897），相关环境变量在 ingest.py 顶部设置
 
-## 当前重点：11 版迁移收尾（2026-07 立项，接近收官）
+## 当前进度（2026-07-14 更新）
 
-未完成任务全景见 `docs/superpowers/plans/2026-07-12-remaining-tasks.md`；迁移计划与进度见
-`docs/superpowers/plans/2026-07-10-edition-11-migration.md`。
+未完成任务全景见 `docs/superpowers/plans/2026-07-12-remaining-tasks.md`。
 
-- **已收官**：S1 语料重组 / S3 模拟器 USR 审计 / S4 结构库落账（含 fp_errata 武器补丁）/
-  S5 基准 v3=99.0 / S6 术语页 64/64 / **S7 模拟器掩体迁到命中侧（13.08 BS 惩罚 + B6 灵能×掩体）** /
-  **S2 中英跨语检索实测（bge-m3 跨语有效，规则层保底 fetch_k 修复后覆盖 25/25）**
-- **LLM PDF 重构已完成**：`llm_refine.py`（deepseek-chat 按领域 schema 重排每页为结构化 Markdown，
-  哈希缓存 `data_refined/<书>/`）+ `ingest.py` 优先读 refine 缓存按 `##` 分块，已全量铺开。
-  设计见 `docs/superpowers/specs/2026-07-02-llm-pdf-refine-design.md`
-- **剩余小收尾**：refine 缓存补齐对账（Core Rules 缺 12 页等，见 remaining-tasks T2）
-- **往后**：蓝图 P6 军表系统、P8 网站化（前端 BUILD-PLAN Stage 1-5）
+- **11 版迁移已正式收官**（2026-07-12，PR #16）：S1-S7 全部完成，refine 缓存对账零差额
+  （索引 5652 chunks），基准 gold v3 = 99.0 零硬错。LLM PDF 重构（`llm_refine.py` +
+  `data_refined/` 哈希缓存）已全量铺开，设计见
+  `docs/superpowers/specs/2026-07-02-llm-pdf-refine-design.md`
+- **蓝图 P6 军表系统已完成**（2026-07-14，PR #24-#30）：`engines/roster/` 验表（点数+编制
+  约束）+ 点评（接模拟器强度评估）+ enhancements 数据层（927 条）+ web 页签，两轮审查修复清零。
+  陷阱：points_json 档位解析必须严格 `(\d+)\s*models?` + 纯档优先；装配成功≠有输出
+- **P8 网站化四页签 4/4 收官**：聊天 / 图鉴 / 模拟器 / 军表实验室（Next.js + FastAPI，
+  契约真源 `answer.ts` + Pydantic camelCase 镜像）
+- **剩余**：T4 · P7 阵营技能 DSL 逐条编码 + wiki 全量编译（现仅钛帝国/吞世者 2 阵营）+
+  基准扩充（长期滚动）；T5 · Stage 5 部署；T6 · 分支清理。非阻塞遗留：67 个 verify_warn
+  页人工核查、军表 PR1c 文本解析、外部源观察项（BSData-11e / Wahapedia 11版 / 黑图书馆）
 
 ## 数据事实（2026-07-10 语料重组后）
 
