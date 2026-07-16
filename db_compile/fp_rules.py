@@ -34,12 +34,30 @@ _TEXT_TARGETS = {
     ("detachments", "rule_text"),
     ("stratagems", "text_zh"),
     ("abilities", "text_zh"),
+    ("enhancements", "description"),    # P7-PR4：FP p3/p4 重印 + p19 勘误波及增强层
 }
-# 允许补 name_zh 的表白名单
+# 允许补 name_zh 的表白名单（enhancements 无 name_zh 列，不进此单）
 _NAME_TABLES = {"detachments", "stratagems", "abilities"}
-# 允许打失效标记的表白名单（deactivations：FP 完整重印裁定 11 版已删除的行）
-_DEACTIVATE_TABLES = {"stratagems"}
+# 允许打失效标记的表白名单（deactivations：FP 完整重印裁定 11 版已删除的行）；
+# 值 = 该表的名字列（enhancements 的名字列是 name，不是 name_en）
+_DEACTIVATE_TABLES = {"stratagems": "name_en", "enhancements": "name"}
 _DEACTIVATE_STATUSES = {"removed_11e"}
+# 允许补录插行的表白名单（inserts：FP 有、Wahapedia/DB 无的 fp_new 条目，
+# 如 Advanced Acquisition Cadre 整分队；列名拼进 SQL，白名单外一律拒绝）
+_INSERT_COLUMNS = {
+    "detachments": ("id", "faction", "name_zh", "name_en", "rule_text"),
+    "stratagems": ("id", "faction", "detachment", "name_zh", "name_en",
+                   "cp_cost", "phase", "text_zh"),
+    "enhancements": ("id", "faction_id", "detachment_id", "detachment_name",
+                     "name", "cost", "legend", "description"),
+}
+# 插行同名去重的（表 → 名字列 + 分组列）——上游（Wahapedia）将来自己补录同名条目时，
+# synthetic 行必须让路告警而不是留双胞胎
+_INSERT_NAME_COLS = {
+    "detachments": ("name_en", "faction"),
+    "stratagems": ("name_en", "detachment"),
+    "enhancements": ("name", "detachment_name"),
+}
 
 _TAG_RE = re.compile(r"<[^>]+>")
 
@@ -142,8 +160,9 @@ def _apply_deactivations(conn, patches: List[dict], report: Dict) -> None:
             report["deact_invalid"].append(_slim(p))
             continue
         _ensure_fp_status_column(conn, table)
+        name_col = _DEACTIVATE_TABLES[table]
         row = conn.execute(
-            f"SELECT name_en, fp_status FROM {table} WHERE id = ?", (pid,)).fetchone()
+            f"SELECT {name_col}, fp_status FROM {table} WHERE id = ?", (pid,)).fetchone()
         if row is None:
             report["deact_skipped"].append({**_slim(p), "reason": "行不存在"})
             continue
@@ -161,8 +180,64 @@ def _apply_deactivations(conn, patches: List[dict], report: Dict) -> None:
             {**_slim(p), "status": status, "fp_source": p.get("fp_source")})
 
 
+def _apply_inserts(conn, patches: List[dict], report: Dict) -> None:
+    """fp_new 补录插行（P7-PR4）：FP 有、Wahapedia/DB 无的整条目（AAC 分队等）。
+
+    守卫：①表白名单外/缺 id/缺名字拒绝；②同 id 已存在——名字匹配则幂等跳过、
+    不匹配让路告警（防 id 撞车）；③**同名异 id 已存在**（上游将来自己补录）→
+    让路告警不插，synthetic 行绝不与上游行留双胞胎；④stratagems/enhancements
+    插入行标 fp_status='added_11e' 便于溯源与将来退役。
+    """
+    for p in patches:
+        table = p.get("table")
+        cols = _INSERT_COLUMNS.get(table)
+        values = p.get("values") or {}
+        name_col, group_col = _INSERT_NAME_COLS.get(table, (None, None))
+        pid = values.get("id")
+        slim = {"table": table, "id": pid,
+                "name": values.get(name_col) if name_col else None}
+        if cols is None or not pid or not values.get(name_col):
+            report["ins_invalid"].append(slim)
+            continue
+        extra = set(values) - set(cols)
+        if extra:
+            report["ins_invalid"].append(
+                {**slim, "reason": f"白名单外的列 {sorted(extra)}"})
+            continue
+        row = conn.execute(
+            f"SELECT {name_col} FROM {table} WHERE id = ?", (pid,)).fetchone()
+        if row is not None:
+            if _norm_text(row[0]) == _norm_text(values.get(name_col)):
+                report["ins_already"] += 1
+            else:
+                report["ins_mismatch"].append(
+                    {**slim, "reason": "id 已存在但名字不符（疑 id 撞车）",
+                     "db_name": row[0]})
+            continue
+        dup = conn.execute(
+            f"SELECT id FROM {table} WHERE {name_col} = ? COLLATE NOCASE "
+            f"AND COALESCE({group_col}, '') = ?",
+            (values.get(name_col), values.get(group_col) or "")).fetchone()
+        if dup is not None:
+            report["ins_mismatch"].append(
+                {**slim, "reason": f"同名行已存在（id={dup[0]}，疑上游已补录），"
+                                   f"synthetic 插入让路", "db_id": dup[0]})
+            continue
+        use_cols = [c for c in cols if c in values]
+        placeholders = ", ".join("?" for _ in use_cols)
+        conn.execute(
+            f"INSERT INTO {table} ({', '.join(use_cols)}) VALUES ({placeholders})",
+            tuple(values[c] for c in use_cols))
+        if table in ("stratagems", "enhancements"):
+            _ensure_fp_status_column(conn, table)
+            conn.execute(
+                f"UPDATE {table} SET fp_status = 'added_11e' WHERE id = ?", (pid,))
+        report["ins_applied"] += 1
+        report["ins_changes"].append({**slim, "fp_source": p.get("fp_source")})
+
+
 def apply_fp_rules(db_path, patches: dict) -> Dict:
-    """应用 fp_rules 文本/中文名/失效标记补丁到库，返回结构化报告（含逐条改动与告警）。"""
+    """应用 fp_rules 文本/中文名/失效标记/补录插行补丁到库，返回结构化报告。"""
     report = {
         "text_applied": 0, "text_already": 0,
         "text_changes": [], "text_mismatch": [], "text_skipped": [], "text_invalid": [],
@@ -170,9 +245,13 @@ def apply_fp_rules(db_path, patches: dict) -> Dict:
         "name_changes": [], "name_mismatch": [], "name_skipped": [], "name_invalid": [],
         "deact_applied": 0, "deact_already": 0,
         "deact_changes": [], "deact_mismatch": [], "deact_skipped": [], "deact_invalid": [],
+        "ins_applied": 0, "ins_already": 0,
+        "ins_changes": [], "ins_mismatch": [], "ins_invalid": [],
     }
     conn = sqlite3.connect(str(db_path))
     try:
+        # inserts 先于 text/deact：同一批补丁里对补录行的文本/失效引用应立即可见
+        _apply_inserts(conn, patches.get("inserts", []), report)
         _apply_text_patches(conn, patches.get("text_patches", []), report)
         _apply_name_patches(conn, patches.get("name_patches", []), report)
         _apply_deactivations(conn, patches.get("deactivations", []), report)

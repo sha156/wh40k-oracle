@@ -36,7 +36,7 @@ from engines.simulator.sequence import (
 DSL_VERSION = 1
 _STATUSES = ("encoded", "partial", "not_modeled")
 _SIDES = ("attacker", "target")
-_TABLES = ("abilities", "stratagems", "detachments")
+_TABLES = ("abilities", "stratagems", "detachments", "enhancements")
 
 
 class DslError(ValueError):

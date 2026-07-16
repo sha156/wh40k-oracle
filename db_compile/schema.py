@@ -132,6 +132,9 @@ CREATE TABLE IF NOT EXISTS detachments (
 """
 
 # Enhancements.csv → enhancements（P6 军表验表用：按 detachment_id 查合法强化+点数）
+# P7-PR4：补 DSL 投影列（effect_dsl_json/dsl_status，真源在 dsl_payloads/*.json）与
+# fp_status（NULL=现行；'removed_11e'=FP 完整重印裁定 11 版已删除；'added_11e'=FP 新增
+# 补录行，Wahapedia 无源）。旧库缺列由 fp_rules/dsl_apply 的 ensure-column 幂等补齐。
 ENHANCEMENTS_DDL = """
 CREATE TABLE IF NOT EXISTS enhancements (
     id TEXT PRIMARY KEY,
@@ -141,7 +144,10 @@ CREATE TABLE IF NOT EXISTS enhancements (
     name TEXT,
     cost INTEGER,
     legend TEXT,
-    description TEXT
+    description TEXT,
+    effect_dsl_json TEXT,
+    dsl_status TEXT DEFAULT 'not_modeled',
+    fp_status TEXT
 );
 """
 

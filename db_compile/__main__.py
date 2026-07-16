@@ -242,6 +242,16 @@ def main() -> None:
         print(f"  失效标记：应用 {rep['deact_applied']} / 幂等 {rep['deact_already']} / "
               f"让路 {len(rep['deact_mismatch'])} / 跳过 {len(rep['deact_skipped'])} / "
               f"无效 {len(rep['deact_invalid'])}")
+        print(f"  补录插行：应用 {rep['ins_applied']} / 幂等 {rep['ins_already']} / "
+              f"让路 {len(rep['ins_mismatch'])} / 无效 {len(rep['ins_invalid'])}")
+        if rep["ins_changes"]:
+            print("\n  已补录 fp_new 行（fp_status=added_11e）：")
+            for ch in rep["ins_changes"]:
+                print(f"    {ch['table']:12} {str(ch['name'])[:40]:40} ← {ch.get('fp_source')}")
+        if rep["ins_mismatch"]:
+            print("\n  ⚠️ 补录让路（id 撞车或上游已有同名行）：")
+            for ch in rep["ins_mismatch"]:
+                print(f"    {ch['table']:12} {str(ch['name'])[:40]:40} {ch.get('reason')}")
         if rep["deact_changes"]:
             print("\n  已标记 11 版删除（fp_status=removed_11e，原文保留）：")
             for ch in rep["deact_changes"]:
