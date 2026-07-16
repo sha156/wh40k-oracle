@@ -187,11 +187,38 @@ class TestPayloadValidation:
         with pytest.raises(DslError, match="target"):
             parse_entry(raw)
 
-    def test_dice_param_op_rejected_until_convention(self):
-        # 审查 M3：DiceExpr 型 op 的 JSON 约定未定义，拒载防模拟期才炸
+    def test_dice_param_int_shorthand(self):
+        # PR3 DiceExpr 约定：非负 int → 常量 DiceExpr（SUSTAINED HITS 1）
         raw = _raw_entry(effects=[{"phase": "hit", "op": "extra_hits", "params": [1],
                                    "condition": [], "source": "sustained"}])
-        with pytest.raises(DslError, match="DiceExpr"):
+        entry = parse_entry(raw)
+        (eff,) = entry.effects
+        assert eff.params == (DiceExpr(n=0, faces=0, k=1),)
+        assert eff.params[0].is_constant
+
+    def test_dice_param_object_form(self):
+        # PR3 DiceExpr 约定：{"n","faces","k"} → NdM+K（如 D3）
+        raw = _raw_entry(effects=[{"phase": "hit", "op": "extra_hits",
+                                   "params": [{"n": 1, "faces": 3, "k": 0}],
+                                   "condition": [], "source": "sustained d3"}])
+        (eff,) = parse_entry(raw).effects
+        assert eff.params == (DiceExpr(n=1, faces=3, k=0),)
+
+    def test_dice_param_bad_shapes_rejected(self):
+        # 负常量 / 键不齐 / bool / 有骰但 faces<2 —— 全拒载
+        bads = [-1, True, {"n": 1, "faces": 3}, {"n": 1, "faces": 1, "k": 0},
+                {"n": 1, "faces": 3, "k": 0, "extra": 1}, "d3"]
+        for bad in bads:
+            raw = _raw_entry(effects=[{"phase": "hit", "op": "extra_hits", "params": [bad],
+                                       "condition": [], "source": "x"}])
+            with pytest.raises(DslError):
+                parse_entry(raw)
+
+    def test_hit_reroll_params_fixed(self):
+        # ("hit","reroll") 参数固定 ["fail"]（引擎=只重骰失败的最优策略）
+        raw = _raw_entry(effects=[{"phase": "hit", "op": "reroll", "params": ["all"],
+                                   "condition": [], "source": "x"}])
+        with pytest.raises(DslError, match="fail"):
             parse_entry(raw)
 
     def test_string_int_param_rejected(self):

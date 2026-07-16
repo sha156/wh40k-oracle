@@ -99,9 +99,17 @@ def _options_from_inputs(st) -> Dict[str, Any]:
         "smokescreen": st.session_state.get("sim_smoke", False),
         "guided": st.session_state.get("sim_guided", False),
         "markerlight_observer": st.session_state.get("sim_markerlight", False),
+        "detachment_rounds": st.session_state.get("sim_det_rounds", False),
         "n": int(st.session_state.get("sim_n", 8000)),
         "seed": int(st.session_state.get("sim_seed", 1234)),
     }
+    det = (st.session_state.get("sim_detachment") or "").strip()
+    if det:
+        opts["detachment"] = det
+    strats = [s.strip() for s in
+              (st.session_state.get("sim_stratagems") or "").split(",") if s.strip()]
+    if strats:
+        opts["stratagems"] = strats
     fnp = int(st.session_state.get("sim_fnp", 0) or 0)
     if fnp:
         opts["fnp"] = fnp
@@ -168,8 +176,20 @@ def render_simulator_panel(st) -> None:
                                   "命中修正夹取）。观察员自身不射击的机会成本不建模；非钛帝国"
                                   "单位开了也无效果（无对应 DSL 条目）")
         cols_dsl[1].checkbox("观察员带标记光", key="sim_markerlight",
-                             help="须与「攻方受引导」同开：观察员带 Markerlight 关键词时，"
-                                  "攻击追加 [IGNORES COVER]")
+                             help="与「攻方受引导」同开=FTGG 引导加成；配「联携攻击」战略时"
+                                  "表示攻方观察员自带 Markerlight：攻击追加 [IGNORES COVER]")
+        cols_dsl[2].checkbox("处于分队规则生效轮次", key="sim_det_rounds",
+                             help="P7-PR3：引擎无战斗轮概念，开=假设当前处于分队规则生效轮次"
+                                  "（Kauyon 第3-5轮 / Mont'ka 第1-3轮），报告有披露。"
+                                  "须同时填「攻方分队」才有条目可放行")
+        cols_dsl2 = st.columns(2)
+        cols_dsl2[0].text_input("攻方分队（如 Kauyon / Mont'ka）", key="sim_detachment",
+                                help="放行该分队的规则条目；与点名战略做分队一致性校验。"
+                                    "撇号直弯均可；留空=只挂军队级规则（FTGG）")
+        cols_dsl2[1].text_input("战略点名（逗号分隔）", key="sim_stratagems",
+                                help="id/英文名/中文名均可，如「集中火力, 抵近伏击」。"
+                                    "一次性 opt-in：CP 消耗与次数限制不结算只披露；"
+                                    "未匹配或分队不符会显式报出，不静默")
 
         cols3 = st.columns(4)
         cols3[0].number_input("守方 FNP X+（0=关）", 0, 6, 0, key="sim_fnp")

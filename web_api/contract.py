@@ -176,6 +176,18 @@ class SimFactionOptions(_CamelModel):
     detachments: List[str] = []
 
 
+class SimDslEntry(_CamelModel):
+    """攻方阵营 DSL 可用条目（P7-PR3 回显）：军规/分队规则/战略——surface 供前端渲染
+    开关组与战略点名回传（stratagems 表条目须经 options.stratagems 点名才注入）。"""
+    table: str
+    id: str
+    name_en: str = Field(alias="nameEn")
+    name_zh: Optional[str] = Field(default=None, alias="nameZh")
+    status: str
+    detachment: Optional[str] = None
+    requires_toggles: List[str] = Field(default=[], alias="requiresToggles")
+
+
 class SimReportOut(_CamelModel):
     """SimReport 镜像。distribution={p10,p50,p90,histogram,damage}；
     funnel=attacks→hits→wounds→unsaved→damage→kills；efficiency=每100点。"""
@@ -210,6 +222,7 @@ class SimResponse(_CamelModel):
     weapon_pool: Optional[List[str]] = Field(default=None, alias="weaponPool")
     model_tiers: Optional[List[Dict[str, Any]]] = Field(
         default=None, alias="modelTiers")
+    dsl_available: List[SimDslEntry] = Field(default=[], alias="dslAvailable")
     errors: List[str] = []
 
 

@@ -26,7 +26,7 @@ from dataclasses import dataclass, replace
 from pathlib import Path
 from typing import Dict, FrozenSet, List, Tuple
 
-from engines.simulator.contracts import AttackerProfile, Effect
+from engines.simulator.contracts import AttackerProfile, DiceExpr, Effect
 from engines.simulator.sequence import (
     ATTACKER_CONSUMED,
     KNOWN_CONDITION_TAGS,
@@ -55,18 +55,23 @@ class DslEntry:
     status: str                      # encoded|partial|not_modeled
     effects: Tuple = ()              # tuple[Effect]
     requires_toggles: Tuple = ()     # 生效所需的手动态势开关名（Stance 字段名）
+    conflicts_with_toggles: Tuple = ()  # 与之互斥的开关名——开着任一则拒注入并显式披露
+                                        # （审查 PR3-H1：CTE 的攻方=Observer，规则原文
+                                        # Observer 排除在 Guided 外，与 guided 双开会
+                                        # 规则外双重叠加 BS 改善）
     not_modeled_notes_zh: Tuple = ()
     provenance: Dict = None
     encoded_by: str = ""
 
 
 # op → params 形状校验（PR2 审查 M3）：int 型 op 必须恰 1 个 int；无参 op 必须空；
-# DiceExpr 型 op 的 JSON 编码约定未定义（PR3 项），先拒载防"校验通过、跑模拟才炸"
+# DiceExpr 型 op 按 PR3 编码约定解析（见 _parse_dice）
 _INT_PARAM_OPS = frozenset({
     ("hit", "modify"), ("hit", "bs_improve"), ("hit", "crit_threshold"),
     ("wound", "modify"), ("wound", "crit_threshold"),
     ("attacks", "blast"),
     ("fnp", "fnp"), ("damage", "damage_reduction"),
+    ("save", "ap_improve"),
 })
 _NO_PARAM_OPS = frozenset({
     ("hit", "auto_wound"), ("hit", "auto_hit"), ("hit", "indirect_fixed"),
@@ -77,14 +82,46 @@ _NO_PARAM_OPS = frozenset({
 _DICE_PARAM_OPS = frozenset({
     ("attacks", "modify"), ("damage", "modify"), ("hit", "extra_hits"),
 })
+# 失败重骰型 op：params 固定 ["fail"]（引擎实现即"只重骰失败"最优策略，无其他模式）
+_REROLL_OPS = frozenset({("wound", "reroll"), ("hit", "reroll")})
 
 
-def _check_params(phase: str, op: str, params: tuple, entry_name: str) -> None:
+def _parse_dice(raw, entry_name: str, key) -> DiceExpr:
+    """DiceExpr 的 JSON 编码约定（PR3 解锁项）：
+      · 非负 int         → 常量（SUSTAINED HITS 1 → 1）
+      · {"n","faces","k"} → NdM+K（RAPID FIRE D3 → {"n":1,"faces":3,"k":0}）
+    恰这两种形状，键不许多不许少——手录笔误在校验期就炸（不静默）。"""
+    if isinstance(raw, bool):
+        raise DslError(f"{entry_name}：{key} 的 DiceExpr 参数不接受布尔，收到 {raw!r}")
+    if isinstance(raw, int):
+        if raw < 0:
+            raise DslError(f"{entry_name}：{key} 的 DiceExpr 常量必须非负，收到 {raw}")
+        return DiceExpr(k=raw)
+    if isinstance(raw, dict):
+        if set(raw) != {"n", "faces", "k"}:
+            raise DslError(f"{entry_name}：{key} 的 DiceExpr 对象必须恰含 n/faces/k 三键，"
+                           f"收到 {sorted(raw)!r}")
+        n, faces, k = raw["n"], raw["faces"], raw["k"]
+        for label, v in (("n", n), ("faces", faces), ("k", k)):
+            if isinstance(v, bool) or not isinstance(v, int):
+                raise DslError(f"{entry_name}：{key} 的 DiceExpr.{label} 必须是整数，收到 {v!r}")
+        if n < 0 or faces < 0 or (n > 0 and faces < 2) or (n == 0 and faces != 0):
+            raise DslError(f"{entry_name}：{key} 的 DiceExpr 不合法（n={n}, faces={faces}——"
+                           f"有骰必须 faces≥2；常量必须 n=0 且 faces=0（或直接写 int），"
+                           f"非规范形状按录入笔误拒载）")
+        return DiceExpr(n=n, faces=faces, k=k)
+    raise DslError(f"{entry_name}：{key} 的 DiceExpr 参数须为非负 int 或 "
+                   f'{{"n","faces","k"}} 对象，收到 {type(raw).__name__}')
+
+
+def _normalize_params(phase: str, op: str, params: tuple, entry_name: str) -> tuple:
+    """按 op 形状校验并归一参数（DiceExpr 型转 contracts.DiceExpr），返回入 Effect 的 params。"""
     key = (phase, op)
     if key in _DICE_PARAM_OPS:
-        raise DslError(
-            f"{entry_name}：(phase={phase}, op={op}) 参数是 DiceExpr，其 JSON 编码约定"
-            f"尚未定义（spec PR3 项）——暂不可经 DSL 录入，防止校验通过而模拟期才炸")
+        if len(params) != 1:
+            raise DslError(f"{entry_name}：(phase={phase}, op={op}) 需要恰 1 个 DiceExpr 参数，"
+                           f"收到 {params!r}")
+        return (_parse_dice(params[0], entry_name, key),)
     if key in _INT_PARAM_OPS:
         if len(params) != 1 or isinstance(params[0], bool) or not isinstance(params[0], int):
             raise DslError(f"{entry_name}：(phase={phase}, op={op}) 需要恰 1 个整数参数，"
@@ -92,9 +129,11 @@ def _check_params(phase: str, op: str, params: tuple, entry_name: str) -> None:
     elif key in _NO_PARAM_OPS:
         if params:
             raise DslError(f"{entry_name}：(phase={phase}, op={op}) 不接受参数，收到 {params!r}")
-    elif key == ("wound", "reroll"):
+    elif key in _REROLL_OPS:
         if tuple(params) != ("fail",):
-            raise DslError(f"{entry_name}：(wound, reroll) 参数必须为 [\"fail\"]，收到 {params!r}")
+            raise DslError(f"{entry_name}：(phase={phase}, op={op}) 参数必须为 [\"fail\"]"
+                           f"（引擎语义=只重骰失败骰），收到 {params!r}")
+    return params
 
 
 def _parse_effect(raw: dict, side: str, entry_name: str) -> Effect:
@@ -104,7 +143,7 @@ def _parse_effect(raw: dict, side: str, entry_name: str) -> Effect:
         raise DslError(
             f"{entry_name}：(phase={phase!r}, op={op!r}) 不在 {side} 侧引擎消费点白名单"
             f"——引擎没接该通道，标 encoded/partial 会撒谎（评审 F7 判据④）")
-    _check_params(phase, op, tuple(raw.get("params") or ()), entry_name)
+    params = _normalize_params(phase, op, tuple(raw.get("params") or ()), entry_name)
     condition = tuple(raw.get("condition") or ())
     if condition:
         tag = condition[0]
@@ -119,7 +158,7 @@ def _parse_effect(raw: dict, side: str, entry_name: str) -> Effect:
                     f"（第二元素 {extra!r} 也是已知 tag）——引擎只读 condition[0]，拒载")
     if not raw.get("source"):
         raise DslError(f"{entry_name}：effect 缺 source（进报告 modeled_effects 的来源标签）")
-    return Effect(phase=phase, op=op, params=tuple(raw.get("params") or ()),
+    return Effect(phase=phase, op=op, params=params,
                   condition=condition, source=raw["source"])
 
 
@@ -160,12 +199,18 @@ def parse_entry(raw: dict) -> DslEntry:
     if effects and not prov.get("text_sha256"):
         raise DslError(f"{name}：带 effects 必须有 provenance.text_sha256"
                        f"（原文指纹对账，评审 F12）")
+    conflicts = tuple(raw.get("conflicts_with_toggles") or ())
+    overlap = set(conflicts) & set(raw.get("requires_toggles") or ())
+    if overlap:
+        raise DslError(f"{name}：开关 {sorted(overlap)} 同时出现在 requires 与 conflicts"
+                       f"——条目永远无法生效，必是录入笔误")
     return DslEntry(
         table=raw["table"], row_id=raw["id"], side=side,
         faction=raw["faction"], detachment=raw.get("detachment"),
         name_en=raw.get("name_en") or "", name_zh=raw.get("name_zh"),
         status=status, effects=effects,
         requires_toggles=tuple(raw.get("requires_toggles") or ()),
+        conflicts_with_toggles=conflicts,
         not_modeled_notes_zh=notes, provenance=prov,
         encoded_by=raw.get("encoded_by") or "")
 
@@ -195,6 +240,72 @@ def load_payload_file(path) -> List[DslEntry]:
 def parse_db_payload(payload_json: str) -> DslEntry:
     """解析 DB effect_dsl_json 列里的单条投影（dsl_apply 写入的就是 entry 原始 dict）。"""
     return parse_entry(json.loads(payload_json))
+
+
+def _norm_token(s: str) -> str:
+    """名字/分队匹配归一：弯撇号 ’ 统一成 '，casefold + 去首尾空白。
+    DB 拼写带弯撇号（Mont’ka，以 enhancements.detachment_name 为准——评审 F3），
+    用户从 CLI/网页输入直撇号是常态，不许因引号形状静默匹配失败。"""
+    return s.strip().casefold().replace("’", "'")
+
+
+def select_entries(
+    entries: List[DslEntry],
+    detachment: str | None = None,
+    stratagems: Tuple = (),
+) -> Tuple[List[DslEntry], List[str]]:
+    """按所选分队 + 被点名战略过滤条目 → (入选条目, 披露注记)。P7-PR3 选择层：
+
+    - 非 stratagems 条目（军规/分队规则）：detachment 为 None（军队级）恒入选；
+      带 detachment 的仅当与所选分队匹配才入选（未选/不符 → 注记披露，不静默）。
+    - stratagems 表条目 = 一次性 opt-in：必须被 `stratagems` 点名（token 匹配
+      row_id / name_en / name_zh 任一，弯撇号归一）；点名了但分队不符 → 拒入选并披露。
+      未选分队时点名战略照常入选（假设军队就是该分队，注记披露该假设）。
+    - 点名 token 无匹配 → 注记披露（错名字不静默吞——批量期复制粘贴错名的温床）。
+    """
+    want_det = _norm_token(detachment) if detachment else None
+    tokens = [str(t) for t in stratagems if str(t).strip()]
+    selected: List[DslEntry] = []
+    notes: List[str] = []
+    matched_tokens: set = set()
+
+    def _entry_matches(entry: DslEntry, token: str) -> bool:
+        t = _norm_token(token)
+        cands = [entry.row_id, entry.name_en or "", entry.name_zh or ""]
+        return any(t == _norm_token(c) for c in cands if c)
+
+    for entry in entries:
+        e_det = _norm_token(entry.detachment) if entry.detachment else None
+        if entry.table == "stratagems":
+            hit = [tok for tok in tokens if _entry_matches(entry, tok)]
+            if not hit:
+                continue
+            matched_tokens.update(hit)
+            if want_det and e_det and e_det != want_det:
+                notes.append(
+                    f"战略 {entry.name_zh or entry.name_en} 属分队 {entry.detachment}，"
+                    f"与所选分队 {detachment} 不符——本次未施加")
+                continue
+            if not want_det and e_det:
+                notes.append(
+                    f"战略 {entry.name_zh or entry.name_en}：未指定分队，"
+                    f"按军队即为 {entry.detachment} 分队假设施加")
+            selected.append(entry)
+        else:
+            if e_det is None:
+                selected.append(entry)          # 军队级规则（FTGG）恒入选
+            elif want_det == e_det:
+                selected.append(entry)
+            elif want_det:
+                notes.append(
+                    f"分队规则 {entry.name_zh or entry.name_en}（{entry.detachment}）"
+                    f"与所选分队 {detachment} 不符——本次未施加")
+            # 未选分队 → 分队规则不入选也不逐条刷屏（dsl_available 已 surface 可选项）
+    for tok in tokens:
+        if tok not in matched_tokens:
+            notes.append(f"战略点名 {tok!r} 无匹配 DSL 条目（查 id / 英文名 / 中文名），"
+                         f"本次未施加")
+    return selected, notes
 
 
 def inject_attacker(
@@ -229,6 +340,14 @@ def inject_attacker(
         if missing:
             not_modeled.append(
                 f"DSL {entry.name_en} 未启用（需开关 {'/'.join(missing)}），本次未施加")
+            continue
+        conflict = [t for t in entry.conflicts_with_toggles if t in toggles]
+        if conflict:
+            # 审查 PR3-H1：互斥开关同开 → 硬性拒注入并显眼披露（不许规则外叠加），
+            # 不做"保留最高值"的静默修正——用户必须自己关掉其一
+            not_modeled.append(
+                f"⚠ DSL {entry.name_zh or entry.name_en} 与开关 {'/'.join(conflict)} 互斥"
+                f"（规则原文两种状态不能共存），本次未施加——关闭其一后重跑")
             continue
         new_loadout = [replace(w, effects=w.effects + entry.effects)
                        for w in new_loadout]

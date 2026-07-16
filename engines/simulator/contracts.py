@@ -117,6 +117,9 @@ class Stance:
                                      # （Spotted）——观察员自身不射击的机会成本不建模，报告披露
     markerlight_observer: bool = False  # P7：观察员带 Markerlight 关键词（与 guided 同开才生效，
                                         # 追加 [IGNORES COVER]）
+    detachment_rounds: bool = False  # P7-PR3：分队规则战轮门控开关——引擎无战斗轮概念，
+                                     # 开=假设当前处于该分队规则生效轮次（Kauyon 3-5 轮 /
+                                     # Mont'ka 1-3 轮），报告披露该假设
 
 
 @dataclass(frozen=True)

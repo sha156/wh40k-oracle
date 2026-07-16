@@ -87,7 +87,8 @@ def effective_save(sv: int, ap: int, invuln: Optional[int]) -> int:
 KNOWN_CONDITION_TAGS = frozenset({
     "half_range", "stationary", "charging", "long_range", "indirect",
     "phase_shooting", "phase_melee", "target_has_keyword",
-    "guided_vs_spotted", "guided_markerlight",
+    "guided_vs_spotted", "guided_markerlight", "markerlight_observer",
+    "detachment_rounds_shooting", "detachment_rounds_guided",
 })
 
 
@@ -118,6 +119,14 @@ def _cond_true(condition: Tuple, stance: Stance, target: TargetProfile) -> bool:
     if tag == "guided_markerlight":      # P7：观察员带 Markerlight 关键词 → 追加 [IGNORES COVER]
         return (stance.phase == "shooting" and stance.guided
                 and stance.markerlight_observer)
+    if tag == "markerlight_observer":    # P7-PR3：本单位自身带 Markerlight（不要求 guided——
+        return (stance.phase == "shooting"    # Coordinate to Engage 的攻方就是观察员）
+                and stance.markerlight_observer)
+    if tag == "detachment_rounds_shooting":  # P7-PR3：分队规则战轮门控（远程武器条款）
+        return stance.phase == "shooting" and stance.detachment_rounds
+    if tag == "detachment_rounds_guided":    # P7-PR3：战轮门控 + 受引导（分队规则第二条款）
+        return (stance.phase == "shooting" and stance.detachment_rounds
+                and stance.guided)
     # P7 加固（评审 F2）：未知 tag 静默返回 False = 效果静默失效（攻方侧零披露），
     # 是 CLAUDE.md 明令的静默降级缝——改为 raise，让 DSL 录入笔误在测试期就炸出来。
     raise ValueError(f"未知 Effect condition tag: {tag!r}（来源条件 {condition!r}）")
@@ -145,6 +154,8 @@ class _WeaponParams:
     wound_mod: int = 0
     ignores_cover: bool = False
     cover: bool = False
+    ap_improve: int = 0            # P7-PR3：AP 特征值改善累计（AP 存负值，改善=更负）
+    hit_reroll_fail: bool = False  # P7-PR3：命中骰失败重骰（最优策略=只重骰失败）
 
 
 def _gather_params(w: WeaponProfile, stance: Stance, target: TargetProfile) -> _WeaponParams:
@@ -161,18 +172,23 @@ def _gather_params(w: WeaponProfile, stance: Stance, target: TargetProfile) -> _
                 # 无参旧式 Effect（十版 [BLAST]）向后兼容为 X=1
                 p.blast_x = max(p.blast_x, int(e.params[0]) if e.params else 1)
         elif e.phase == "hit":
-            if e.op == "extra_hits":
+            # P7-PR3：extra_hits/auto_wound/auto_hit 补 ok 门控——既有词条 condition 恒空
+            # （ok=True，行为不变），分队规则经 DSL 注入的条件版（战轮门控）靠它放行/拦截
+            if e.op == "extra_hits" and ok:
                 p.sustained = e.params[0]
-            elif e.op == "auto_wound":
+            elif e.op == "auto_wound" and ok:
                 p.lethal = True
-            elif e.op == "auto_hit":
+            elif e.op == "auto_hit" and ok:
                 p.torrent = True
             elif e.op == "indirect_fixed" and ok:
                 p.indirect_fixed = True           # 11版24.19+10.07：命中改固定未修正阈值
             elif e.op == "crit_threshold" and ok:
                 p.crit_hit_thr = min(p.crit_hit_thr, int(e.params[0]))
-            elif e.op == "ignore_hit_mods":
-                p.ignore_neg_hit = True       # 11版24.29 [PSYCHIC]
+            elif e.op == "ignore_hit_mods" and ok:
+                p.ignore_neg_hit = True       # 11版24.29 [PSYCHIC]；P7-PR3 起带条件
+                                              # （Patient Hunter 受引导忽略修正走同通道）
+            elif e.op == "reroll" and ok:
+                p.hit_reroll_fail = True      # P7-PR3：命中失败重骰（Pinpoint 等）
             elif e.op == "modify" and ok:
                 v = int(e.params[0])
                 if v >= 0:
@@ -189,12 +205,12 @@ def _gather_params(w: WeaponProfile, stance: Stance, target: TargetProfile) -> _
                 else:
                     bs_neg += v
         elif e.phase == "wound":
-            if e.op == "mortal_pool":
+            if e.op == "mortal_pool" and ok:
                 p.has_dev = True
             elif e.op == "crit_threshold" and ok:
                 p.crit_wound_thr = min(p.crit_wound_thr, int(e.params[0]))
-            elif e.op == "reroll":
-                p.twin = True
+            elif e.op == "reroll" and ok:
+                p.twin = True      # 致伤失败重骰；P7-PR3 起带条件（Combat Debarkation 等）
             elif e.op == "modify" and ok:
                 p.wound_mod += int(e.params[0])
         elif e.phase == "damage":
@@ -205,6 +221,10 @@ def _gather_params(w: WeaponProfile, stance: Stance, target: TargetProfile) -> _
                 p.ignores_cover = True
             elif e.op == "cover" and ok:
                 p.cover = True
+            elif e.op == "ap_improve" and ok:
+                # P7-PR3："improve the Armour Penetration characteristic by 1"
+                # （Point-Blank Ambush / Focused Fire）。AP 存负值，改善=更负
+                p.ap_improve += int(e.params[0])
     # P5-a：守方防守 Effect 并入。
     #   · hit+modify（烟幕等减命中）叠加进攻方命中修正，再统一夹取——修正上限是对
     #     【总和】夹 ±1（未审计项，沿用十版口径），故必须在 clamp 之前叠加
@@ -341,11 +361,11 @@ ATTACKER_CONSUMED = frozenset({
     ("attacks", "modify"), ("attacks", "blast"),
     ("hit", "extra_hits"), ("hit", "auto_wound"), ("hit", "auto_hit"),
     ("hit", "indirect_fixed"), ("hit", "crit_threshold"), ("hit", "ignore_hit_mods"),
-    ("hit", "modify"), ("hit", "bs_improve"),
+    ("hit", "modify"), ("hit", "bs_improve"), ("hit", "reroll"),
     ("wound", "mortal_pool"), ("wound", "crit_threshold"), ("wound", "reroll"),
     ("wound", "modify"),
     ("damage", "modify"),
-    ("save", "ignores_cover"), ("save", "cover"),
+    ("save", "ignores_cover"), ("save", "cover"), ("save", "ap_improve"),
 })
 TARGET_CONSUMED = frozenset({
     ("fnp", "fnp"), ("damage", "damage_reduction"),
@@ -464,6 +484,9 @@ def _resolve_weapon(
         # 未修正 6 仍按暴击阈值算暴击命中（sustained/lethal 照常触发）。
         need = 4 if stance.stationary else 6
         hr = rng.integers(1, _FACES + 1, size=(n, max_a), dtype=np.int64)
+        if p.hit_reroll_fail:
+            rr = rng.integers(1, _FACES + 1, size=(n, max_a), dtype=np.int64)
+            hr = np.where(active & (hr < need), rr, hr)
         hit = active & (hr >= need)
         crit_hit = hit & (hr >= p.crit_hit_thr) & (hr != 1)
     else:
@@ -472,6 +495,13 @@ def _resolve_weapon(
         # （改善为正 → 阈值变小），命中骰修正 hit_mod 已独立夹 ±1。BS 改善到 1+ 时
         # 由 `hr != 1` 涌现出等效 2+ 下限，无需另行钳制（自然 1 恒失手）。
         bs_need = w.bs_ws - p.bs_delta
+        if p.hit_reroll_fail:
+            # P7-PR3：命中失败重骰（最优策略只重骰失败骰；不建模"重骰非暴击钓
+            # sustained"的进阶策略）。重骰用替换法：失败位置换新骰后统一判定，
+            # 暴击判定自然基于重骰后的骰面（重骰出的 6 照常触发 sustained/lethal）
+            first = (hr != 1) & ((hr >= p.crit_hit_thr) | (hr + p.hit_mod >= bs_need))
+            rr = rng.integers(1, _FACES + 1, size=(n, max_a), dtype=np.int64)
+            hr = np.where(active & ~first, rr, hr)
         hit = active & (hr != 1) & ((hr >= p.crit_hit_thr) | (hr + p.hit_mod >= bs_need))
         crit_hit = hit & (hr >= p.crit_hit_thr) & (hr != 1)
 
@@ -495,9 +525,9 @@ def _resolve_weapon(
         lethal_mask = np.zeros_like(hit)
         base_to_wound = hit
 
-    # ③-⑥ Wound / Save / Damage
+    # ③-⑥ Wound / Save / Damage（P7-PR3：AP 特征值改善——AP 存负值，改善=更负）
     wt = wound_target(w.strength, target.t)
-    sv_need = effective_save(target.sv, w.ap, target.invuln)
+    sv_need = effective_save(target.sv, w.ap - p.ap_improve, target.invuln)
     to_wound = np.concatenate([base_to_wound, extra_mask], axis=1)
 
     nd1, md1, w1, u1, m1 = _wound_save_damage(

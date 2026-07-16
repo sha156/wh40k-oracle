@@ -122,8 +122,18 @@ def main(argv: Optional[List[str]] = None) -> int:
                         "且目标已被标记（Spotted）——BS 特征值改善 1（不吃 ±1 修正夹取）。"
                         "观察员自身不射击的机会成本不建模，报告有披露")
     p.add_argument("--markerlight-observer", action="store_true", dest="markerlight_observer",
-                   help="观察员带 Markerlight 关键词（须与 --guided 同开）：攻击追加 "
-                        "[IGNORES COVER]")
+                   help="观察员带 Markerlight 关键词（与 --guided 同开=FTGG 引导加成；"
+                        "配 --stratagem 'Coordinate to Engage' 时表示攻方观察员自带标记光）："
+                        "攻击追加 [IGNORES COVER]")
+    p.add_argument("--detachment",
+                   help="攻方所属分队名（如 Kauyon / Mont'ka，撇号直弯均可）：放行该分队的"
+                        "规则条目；与点名战略做分队一致性校验")
+    p.add_argument("--detachment-rounds", action="store_true", dest="detachment_rounds",
+                   help="假设当前处于分队规则生效轮次（Kauyon 第3-5轮 / Mont'ka 第1-3轮）——"
+                        "引擎无战斗轮概念，此开关是显式假设，报告有披露")
+    p.add_argument("--stratagem", action="append", dest="stratagems", metavar="NAME_OR_ID",
+                   help="点名施放战略（id/英文名/中文名，可重复传多条）：一次性 opt-in，"
+                        "CP 消耗与次数限制不结算只披露；未匹配或分队不符显式报出")
     p.add_argument("--def-fights-first", action="store_true", dest="defender_fights_first")
     p.add_argument("--def-fights-last", action="store_true", dest="defender_fights_last")
     p.add_argument("--atk-fights-first", action="store_true", dest="attacker_fights_first")
@@ -174,6 +184,9 @@ def main(argv: Optional[List[str]] = None) -> int:
         "smokescreen": args.smokescreen,
         "guided": args.guided,
         "markerlight_observer": args.markerlight_observer,
+        "detachment": args.detachment,
+        "detachment_rounds": args.detachment_rounds,
+        "stratagems": args.stratagems,
         "attacker_fights_first": args.attacker_fights_first,
         "attacker_fights_last": args.attacker_fights_last,
         "defender_fights_first": args.defender_fights_first,

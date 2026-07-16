@@ -127,3 +127,142 @@ class TestDslApply:
         # dsl_apply 必须在 fp_rules 之后（指纹要对 11 版化后的文本核）
         assert "stage_dsl_apply" in names
         assert names.index("stage_dsl_apply") > names.index("stage_fp_rules")
+
+
+_RULE_TEXT = "During the third battle round, ranged weapons have [SUSTAINED HITS 1]."
+_RULE_FP = hashlib.sha256(_norm_text(_RULE_TEXT).encode("utf-8")).hexdigest()
+
+
+def _mat_db(tmp_path):
+    """detachments 源行 + 空 abilities（物化目标行由 dsl_apply 创建）。"""
+    db = tmp_path / "m.sqlite"
+    conn = sqlite3.connect(str(db))
+    for ddl in ALL_DDL:
+        conn.execute(ddl)
+    conn.execute(
+        "INSERT INTO detachments (id, faction, name_zh, name_en, rule_text) "
+        "VALUES (?,?,?,?,?)",
+        ("000008441", "TAU", "耐心猎手", "Patient Hunter", _RULE_TEXT))
+    conn.commit()
+    conn.close()
+    return db
+
+
+def _mat_payload_dir(tmp_path, sha=_RULE_FP):
+    d = tmp_path / "payloads"
+    d.mkdir(exist_ok=True)
+    (d / "tau.json").write_text(json.dumps({
+        "dsl_version": 1, "faction": "TAU",
+        "entries": [{
+            "table": "abilities", "id": "det000008441",
+            "materialize": {"from_table": "detachments", "from_id": "000008441",
+                            "from_column": "rule_text"},
+            "side": "attacker", "detachment": "Kauyon",
+            "name_en": "Patient Hunter", "name_zh": "耐心猎手", "status": "partial",
+            "effects": [{"phase": "hit", "op": "extra_hits", "params": [1],
+                         "condition": ["detachment_rounds_shooting"], "source": "PH"}],
+            "requires_toggles": ["detachment_rounds"],
+            "not_modeled_notes_zh": ["战轮门控用开关近似"],
+            "provenance": {"text_sha256": sha},
+        }],
+    }, ensure_ascii=False), encoding="utf-8")
+    return d
+
+
+class TestMaterialize:
+    """PR3 spec D5：分队规则条目物化到 abilities 新行（owner_id=NULL），指纹对源文本核。"""
+
+    def test_materializes_new_ability_row(self, tmp_path):
+        db = _mat_db(tmp_path)
+        rep = apply_dsl(db, _mat_payload_dir(tmp_path))
+        assert rep["applied"] == 1
+        assert rep["changes"][0].get("materialized") is True
+        row = sqlite3.connect(str(db)).execute(
+            "SELECT owner_id, name_en, text_zh, dsl_status FROM abilities "
+            "WHERE id='det000008441'").fetchone()
+        assert row == (None, "Patient Hunter", _RULE_TEXT, "partial")
+
+    def test_materialize_idempotent(self, tmp_path):
+        db = _mat_db(tmp_path)
+        pd = _mat_payload_dir(tmp_path)
+        apply_dsl(db, pd)
+        rep2 = apply_dsl(db, pd)
+        assert rep2["applied"] == 0 and rep2["already"] == 1
+
+    def test_materialize_fingerprint_mismatch_deletes_row(self, tmp_path):
+        # 源文本刷新而 DSL 未重核 → 物化行整行删除（行本身就是投影，残留=喂错数据）
+        db = _mat_db(tmp_path)
+        apply_dsl(db, _mat_payload_dir(tmp_path))
+        conn = sqlite3.connect(str(db))
+        conn.execute("UPDATE detachments SET rule_text='upstream refreshed' "
+                     "WHERE id='000008441'")
+        conn.commit()
+        conn.close()
+        rep = apply_dsl(db, _mat_payload_dir(tmp_path))
+        assert len(rep["fingerprint_mismatch"]) == 1
+        assert rep["fingerprint_mismatch"][0]["stale_projection_cleared"] is True
+        row = sqlite3.connect(str(db)).execute(
+            "SELECT count(*) FROM abilities WHERE id='det000008441'").fetchone()
+        assert row[0] == 0
+
+    def test_materialize_source_missing_skipped(self, tmp_path):
+        db = _mat_db(tmp_path)
+        conn = sqlite3.connect(str(db))
+        conn.execute("DELETE FROM detachments")
+        conn.commit()
+        conn.close()
+        rep = apply_dsl(db, _mat_payload_dir(tmp_path))
+        assert rep["applied"] == 0
+        assert any("源行不存在" in s["reason"] for s in rep["skipped"])
+
+    def test_materialize_source_whitelist(self, tmp_path):
+        # 源只许 detachments.rule_text；乱指源表/列 → 快速失败
+        import pytest
+        db = _mat_db(tmp_path)
+        d = tmp_path / "payloads"
+        d.mkdir(exist_ok=True)
+        raw = json.loads((_mat_payload_dir(tmp_path) / "tau.json").read_text(
+            encoding="utf-8"))
+        raw["entries"][0]["materialize"]["from_table"] = "units"
+        (d / "tau.json").write_text(json.dumps(raw, ensure_ascii=False),
+                                    encoding="utf-8")
+        with pytest.raises(ValueError, match="materialize"):
+            apply_dsl(db, d)
+
+    def test_real_payload_projection_counts(self, tmp_path):
+        # 真源 tau.json 全量对账：payload 三态计数 == 投影结果计数（applied+already）。
+        # 物化目标库：detachments 源行按真实 id/文本造两行，其余行照 payload id 造壳
+        import pathlib
+        payload = json.loads(pathlib.Path("dsl_payloads/tau.json").read_text(
+            encoding="utf-8"))
+        db = tmp_path / "r.sqlite"
+        conn = sqlite3.connect(str(db))
+        for ddl in ALL_DDL:
+            conn.execute(ddl)
+        # 用真库的源文本造行（指纹必须能对上真源 payload 里录的 sha）
+        real = sqlite3.connect("db/wh40k.sqlite")
+        for e in payload["entries"]:
+            mat = e.get("materialize")
+            if mat:
+                src = real.execute(
+                    "SELECT faction, name_zh, name_en, rule_text FROM detachments "
+                    "WHERE id=?", (mat["from_id"],)).fetchone()
+                conn.execute("INSERT INTO detachments (id, faction, name_zh, name_en, "
+                             "rule_text) VALUES (?,?,?,?,?)", (mat["from_id"], *src))
+            elif e["table"] == "abilities":
+                txt = real.execute("SELECT text_zh FROM abilities WHERE id=?",
+                                   (e["id"],)).fetchone()
+                conn.execute("INSERT INTO abilities (id, name_en, text_zh) "
+                             "VALUES (?,?,?)", (e["id"], e["name_en"], txt[0]))
+            else:
+                txt = real.execute("SELECT text_zh FROM stratagems WHERE id=?",
+                                   (e["id"],)).fetchone()
+                conn.execute("INSERT INTO stratagems (id, faction, name_en, text_zh) "
+                             "VALUES (?,?,?,?)", (e["id"], "TAU", e["name_en"], txt[0]))
+        real.close()
+        conn.commit()
+        conn.close()
+        rep = apply_dsl(db, "dsl_payloads")
+        assert rep["applied"] + rep["already"] == len(payload["entries"]) == 15
+        assert not rep["fingerprint_mismatch"] and not rep["skipped"]
+        assert rep["by_status"] == {"encoded": 0, "partial": 9, "not_modeled": 6}

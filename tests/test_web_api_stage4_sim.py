@@ -69,6 +69,48 @@ def test_sanitize_drops_smokescreen():
     assert sanitize_options({"cover": True})["cover"] is True
 
 
+def test_sanitize_dsl_keys():
+    # P7-PR3：detachment(str) / detachment_rounds(bool) / stratagems(list[str]) 白名单
+    out = sanitize_options({
+        "guided": True, "markerlight_observer": "true", "detachment_rounds": 1,
+        "detachment": "  Mont'ka  ", "stratagems": ["集中火力", " 抵近伏击 ", 42, ""],
+    })
+    assert out["guided"] is True and out["markerlight_observer"] is True
+    assert out["detachment_rounds"] is True
+    assert out["detachment"] == "Mont'ka"
+    assert out["stratagems"] == ["集中火力", "抵近伏击"]   # 非 str/空串滤掉
+    # 非法形状丢弃；条数上限 16
+    assert "detachment" not in sanitize_options({"detachment": 42})
+    assert "stratagems" not in sanitize_options({"stratagems": "集中火力"})
+    assert len(sanitize_options({"stratagems": [f"s{i}" for i in range(30)]})
+               ["stratagems"]) == 16
+
+
+@needs_db
+def test_run_simulation_dsl_available_echo():
+    # PR3 认领项：dsl_available 不再在 web 边界被丢——钛帝国单位应回显条目清单
+    strike = None
+    import sqlite3
+    conn = sqlite3.connect(str(DB_PATH))
+    row = conn.execute("SELECT id FROM units WHERE name_en='Strike Team'").fetchone()
+    conn.close()
+    strike = row[0]
+    res = run_simulation(DB_PATH, strike, BROADSIDE,
+                         {"loadout": [["Pulse rifle", 10]], "n": 100})
+    assert res is not None and res.ok
+    ids = {e.id for e in res.dsl_available}
+    assert "000008439" in ids            # FTGG 军规
+    assert "det000008441" in ids         # Patient Hunter（物化分队规则行）
+    assert "000008812004" in ids         # Focused Fire 战略
+    cte = next(e for e in res.dsl_available if e.id == "det000008441")
+    assert cte.detachment == "Kauyon" and cte.requires_toggles == ["detachment_rounds"]
+    # camelCase 契约（sim.ts 镜像）
+    dumped = res.model_dump(by_alias=True)
+    assert "dslAvailable" in dumped
+    assert {"table", "id", "nameEn", "nameZh", "status", "detachment",
+            "requiresToggles"} <= set(dumped["dslAvailable"][0])
+
+
 def test_sanitize_reverse_keys():
     out = sanitize_options({
         "reverse": True, "reverse_phase": "melee",

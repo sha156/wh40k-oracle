@@ -28,6 +28,12 @@ export interface SimOptions {
   reverse_phase?: "shooting" | "melee"; // 反打阶段，默认 melee
   n?: number;
   seed?: number;
+  // ── P7 攻方阵营 DSL（钛帝国试点）──
+  guided?: boolean; // FTGG：假设本单位受引导且目标已被标记
+  markerlight_observer?: boolean; // 观察员带 Markerlight 关键词
+  detachment?: string; // 分队名（Kauyon / Mont'ka，撇号直弯均可）
+  detachment_rounds?: boolean; // 假设处于分队规则生效轮次（Kauyon 3-5 / Mont'ka 1-3）
+  stratagems?: string[]; // 战略点名（id/英文名/中文名）；一次性 opt-in，CP 不结算
 }
 
 /** 守方可 opt-in 的防守开关（后端只披露，不自动施加） */
@@ -70,6 +76,17 @@ export interface SimReport {
   reverse: SimReport | null;
 }
 
+/** 攻方阵营 DSL 可用条目（P7-PR3 回显）：surface 供渲染开关组与战略点名回传 */
+export interface SimDslEntry {
+  table: string; // abilities（军规/分队规则）| stratagems（须点名 options.stratagems）
+  id: string;
+  nameEn: string;
+  nameZh: string | null;
+  status: string; // encoded | partial
+  detachment: string | null; // null=军队级；非空=仅该分队（options.detachment 匹配）
+  requiresToggles: string[]; // 需同开的态势开关名（guided / detachment_rounds …）
+}
+
 export interface SimResponse {
   ok: boolean;
   /** ok=false 时：not_found | loadout_required | defender_loadout_required | error
@@ -87,6 +104,8 @@ export interface SimResponse {
   weaponPool?: string[] | null;
   /** points 档位 [{models, cost}]，选模型数用 */
   modelTiers?: { models: number; cost: number | null }[] | null;
+  /** 攻方阵营 DSL 可用条目（空数组=该阵营无已编码条目） */
+  dslAvailable: SimDslEntry[];
   errors: string[];
 }
 
