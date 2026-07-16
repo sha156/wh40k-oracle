@@ -106,9 +106,16 @@ class TestCondTrueHardening:
 
     def test_all_registered_tags_evaluate(self):
         # 注册表与 _cond_true 分支不漂移：集合内逐 tag 求值不 raise
+        _ARGS = {"target_has_keyword": ("X",),
+                 "target_models_in_range": (1, 5)}   # 带参 tag 用合法参数形状
         for tag in KNOWN_CONDITION_TAGS:
-            cond = (tag, "X") if tag == "target_has_keyword" else (tag,)
+            cond = (tag,) + _ARGS.get(tag, ())
             assert _cond_true(cond, Stance(), _target()) in (True, False)
+
+    def test_models_in_range_bad_arity_raises(self):
+        # P7-PR4：带参 tag 缺参不许静默 False（与未知 tag 同罪）
+        with pytest.raises(ValueError, match="target_models_in_range"):
+            _cond_true(("target_models_in_range",), Stance(), _target())
 
 
 class TestAttackerReconciliation:
@@ -179,12 +186,21 @@ class TestPayloadValidation:
         with pytest.raises(DslError, match="text_sha256"):
             parse_entry(_raw_entry(provenance={}))
 
-    def test_target_side_with_effects_rejected(self):
-        # 审查 H1：注入层未接 target 侧，带 effects 的 target 条目会被静默吞 → 拒载
+    def test_target_side_with_effects_accepted_since_pr4(self):
+        # 审查 H1 的 target 侧拒载已随 P7-PR4 inject_target 落地解除：
+        # 守方向条目经 TARGET_CONSUMED 白名单校验后合法入载
         raw = _raw_entry(side="target",
                          effects=[{"phase": "fnp", "op": "fnp", "params": [5],
                                    "condition": [], "source": "x"}])
-        with pytest.raises(DslError, match="target"):
+        entry = parse_entry(raw)
+        assert entry.side == "target" and len(entry.effects) == 1
+
+    def test_target_side_op_not_in_whitelist_rejected(self):
+        # 守方侧消费点白名单仍然生效：攻方专属 op 出现在 target 侧 → 拒载
+        raw = _raw_entry(side="target",
+                         effects=[{"phase": "hit", "op": "bs_improve", "params": [1],
+                                   "condition": [], "source": "x"}])
+        with pytest.raises(DslError, match="白名单"):
             parse_entry(raw)
 
     def test_dice_param_int_shorthand(self):

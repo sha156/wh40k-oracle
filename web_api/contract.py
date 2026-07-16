@@ -177,10 +177,12 @@ class SimFactionOptions(_CamelModel):
 
 
 class SimDslEntry(_CamelModel):
-    """攻方阵营 DSL 可用条目（P7-PR3 回显）：军规/分队规则/战略——surface 供前端渲染
-    开关组与战略点名回传（stratagems 表条目须经 options.stratagems 点名才注入）。"""
+    """阵营 DSL 可用条目（P7-PR3 回显，PR4 补 side）：军规/分队规则/战略/增强——
+    surface 供前端分攻/守两栏渲染与点名回传（stratagems/enhancements 表条目须经
+    options.stratagems/enhancements（守方 defender_*）点名才注入）。"""
     table: str
     id: str
+    side: str = "attacker"          # attacker|target：条目施加侧（守方栏渲染用）
     name_en: str = Field(alias="nameEn")
     name_zh: Optional[str] = Field(default=None, alias="nameZh")
     status: str

@@ -26,7 +26,7 @@ from dataclasses import dataclass, replace
 from pathlib import Path
 from typing import Dict, FrozenSet, List, Tuple
 
-from engines.simulator.contracts import AttackerProfile, DiceExpr, Effect
+from engines.simulator.contracts import AttackerProfile, DiceExpr, Effect, TargetProfile
 from engines.simulator.sequence import (
     ATTACKER_CONSUMED,
     KNOWN_CONDITION_TAGS,
@@ -37,6 +37,41 @@ DSL_VERSION = 1
 _STATUSES = ("encoded", "partial", "not_modeled")
 _SIDES = ("attacker", "target")
 _TABLES = ("abilities", "stratagems", "detachments", "enhancements")
+
+# ── 态势开关唯一注册表（P7-PR4）────────────────────────────────────────────
+# 四路接线（CLI/tools/web/面板）都从这里取清单——开关名写死在各链路是
+# "某条链路被静默吞"的温床（spec §四.6）。载荷的 requires/conflicts_with_toggles
+# 校验也对着它，录入笔误在 parse 期就炸。
+# attacker 侧：值 = 该开关是否对应 Stance 字段（True=条件 tag 会读它；
+# False=纯注入门（entry 级 requires），无引擎字段）
+ATTACKER_TOGGLES = {
+    "guided": True, "markerlight_observer": True, "detachment_rounds": True,
+    "range_within_12": True, "range_within_8": True,
+    "target_below_starting": True, "target_below_half": True,
+    "markerlight_visible": False,   # Starfire 军规假设：目标对友军标记光单位可见
+    "bearer_leading": False,        # 增强通用假设：携带者正率领本单位/作用面成立
+}
+# target 侧（防守向条目 requires_toggles 用；不进 Stance——守方效果自带 condition）
+TARGET_TOGGLES = {
+    "defender_hidden": False,       # AAC 假设：守方单位处于 hidden 状态
+    "defender_bearer_leading": False,  # 守方增强通用假设
+}
+_ALL_TOGGLES = frozenset(ATTACKER_TOGGLES) | frozenset(TARGET_TOGGLES)
+
+
+def attacker_toggles_from_options(options) -> frozenset:
+    """options（dict 风格布尔开关）→ 攻方开关集合，含蕴含归一：
+    8" 档几何蕴含 12" 档、低于半编蕴含低于满编——用户只开强档时弱档自动点亮。"""
+    on = {t for t in ATTACKER_TOGGLES if options.get(t)}
+    if "range_within_8" in on:
+        on.add("range_within_12")
+    if "target_below_half" in on:
+        on.add("target_below_starting")
+    return frozenset(on)
+
+
+def target_toggles_from_options(options) -> frozenset:
+    return frozenset(t for t in TARGET_TOGGLES if options.get(t))
 
 
 class DslError(ValueError):
@@ -62,16 +97,19 @@ class DslEntry:
     not_modeled_notes_zh: Tuple = ()
     provenance: Dict = None
     encoded_by: str = ""
+    weapon_filter: str = ""          # P7-PR4：非空时只注入 name_en 含该子串（casefold）
+                                     # 的武器——"select one of this model's X weapons"
+                                     # 型增强（EPC 三件套）；无武器匹配→显式披露不静默
 
 
 # op → params 形状校验（PR2 审查 M3）：int 型 op 必须恰 1 个 int；无参 op 必须空；
 # DiceExpr 型 op 按 PR3 编码约定解析（见 _parse_dice）
 _INT_PARAM_OPS = frozenset({
     ("hit", "modify"), ("hit", "bs_improve"), ("hit", "crit_threshold"),
-    ("wound", "modify"), ("wound", "crit_threshold"),
+    ("wound", "modify"), ("wound", "crit_threshold"), ("wound", "s_improve"),
     ("attacks", "blast"),
     ("fnp", "fnp"), ("damage", "damage_reduction"),
-    ("save", "ap_improve"),
+    ("save", "ap_improve"), ("save", "invuln"), ("save", "sv_improve"),
 })
 _NO_PARAM_OPS = frozenset({
     ("hit", "auto_wound"), ("hit", "auto_hit"), ("hit", "indirect_fixed"),
@@ -126,6 +164,10 @@ def _normalize_params(phase: str, op: str, params: tuple, entry_name: str) -> tu
         if len(params) != 1 or isinstance(params[0], bool) or not isinstance(params[0], int):
             raise DslError(f"{entry_name}：(phase={phase}, op={op}) 需要恰 1 个整数参数，"
                            f"收到 {params!r}")
+        if key in (("save", "invuln"), ("fnp", "fnp")) and not 2 <= params[0] <= 6:
+            # 阈值型参数：2-6 之外必是录入笔误（1+ 不存在、7+ 永不成功）
+            raise DslError(f"{entry_name}：(phase={phase}, op={op}) 阈值必须在 2-6，"
+                           f"收到 {params[0]}")
     elif key in _NO_PARAM_OPS:
         if params:
             raise DslError(f"{entry_name}：(phase={phase}, op={op}) 不接受参数，收到 {params!r}")
@@ -156,6 +198,14 @@ def _parse_effect(raw: dict, side: str, entry_name: str) -> Effect:
                 raise DslError(
                     f"{entry_name}：condition {condition!r} 疑似合取列表"
                     f"（第二元素 {extra!r} 也是已知 tag）——引擎只读 condition[0]，拒载")
+        if tag == "target_models_in_range":
+            # P7-PR4 带参 tag 的形状校验：录入期就拦（引擎侧 len 检查会静默 False）
+            args = condition[1:]
+            if (len(args) != 2 or any(isinstance(a, bool) or not isinstance(a, int)
+                                      for a in args) or args[0] > args[1]):
+                raise DslError(
+                    f"{entry_name}：target_models_in_range 需要 (tag, lo, hi) 两个整数"
+                    f"且 lo≤hi，收到 {condition!r}")
     if not raw.get("source"):
         raise DslError(f"{entry_name}：effect 缺 source（进报告 modeled_effects 的来源标签）")
     return Effect(phase=phase, op=op, params=params,
@@ -180,11 +230,8 @@ def parse_entry(raw: dict) -> DslEntry:
     if not raw.get("faction"):
         raise DslError(f"{name}：缺 faction（检索链接载体，评审 F3）")
     effects = tuple(_parse_effect(e, side, name) for e in (raw.get("effects") or ()))
-    if side == "target" and effects:
-        # PR2 审查 H1：注入层只有 inject_attacker，target 侧条目会被静默吞——
-        # fail fast 拒载，待 inject_target 消费点落地（PR3+）后放开
-        raise DslError(f"{name}：side=target 且带 effects——引擎注入层未接 target 侧，"
-                       f"该条目会静默零效果；防守向规则暂标 not_modeled 或等 inject_target")
+    # PR2 审查 H1 的 target 侧拒载已随 P7-PR4 inject_target 落地而解除——
+    # target 侧 effects 经 TARGET_CONSUMED 白名单校验（_parse_effect），注入走 inject_target
     notes = tuple(raw.get("not_modeled_notes_zh") or ())
     if status == "encoded" and not effects:
         raise DslError(f"{name}：encoded 但 effects 为空——应标 not_modeled")
@@ -200,19 +247,31 @@ def parse_entry(raw: dict) -> DslEntry:
         raise DslError(f"{name}：带 effects 必须有 provenance.text_sha256"
                        f"（原文指纹对账，评审 F12）")
     conflicts = tuple(raw.get("conflicts_with_toggles") or ())
-    overlap = set(conflicts) & set(raw.get("requires_toggles") or ())
+    requires = tuple(raw.get("requires_toggles") or ())
+    overlap = set(conflicts) & set(requires)
     if overlap:
         raise DslError(f"{name}：开关 {sorted(overlap)} 同时出现在 requires 与 conflicts"
                        f"——条目永远无法生效，必是录入笔误")
+    unknown = (set(requires) | set(conflicts)) - _ALL_TOGGLES
+    if unknown:
+        # P7-PR4：开关名对注册表校验——错名开关永远不会被点亮=条目静默永不生效
+        raise DslError(f"{name}：未注册的开关名 {sorted(unknown)}（注册表见 dsl.py "
+                       f"ATTACKER_TOGGLES/TARGET_TOGGLES，四路接线从注册表取清单）")
+    wf = raw.get("weapon_filter") or ""
+    if wf and not isinstance(wf, str):
+        raise DslError(f"{name}：weapon_filter 必须是字符串，收到 {wf!r}")
+    if wf and side != "attacker":
+        raise DslError(f"{name}：weapon_filter 只对 attacker 侧有意义（守方无 loadout）")
     return DslEntry(
         table=raw["table"], row_id=raw["id"], side=side,
         faction=raw["faction"], detachment=raw.get("detachment"),
         name_en=raw.get("name_en") or "", name_zh=raw.get("name_zh"),
         status=status, effects=effects,
-        requires_toggles=tuple(raw.get("requires_toggles") or ()),
+        requires_toggles=requires,
         conflicts_with_toggles=conflicts,
         not_modeled_notes_zh=notes, provenance=prov,
-        encoded_by=raw.get("encoded_by") or "")
+        encoded_by=raw.get("encoded_by") or "",
+        weapon_filter=wf)
 
 
 def load_payload_file(path) -> List[DslEntry]:
@@ -253,21 +312,26 @@ def select_entries(
     entries: List[DslEntry],
     detachment: str | None = None,
     stratagems: Tuple = (),
+    enhancements: Tuple = (),
 ) -> Tuple[List[DslEntry], List[str]]:
-    """按所选分队 + 被点名战略过滤条目 → (入选条目, 披露注记)。P7-PR3 选择层：
+    """按所选分队 + 被点名战略/增强过滤条目 → (入选条目, 披露注记)。P7-PR3 选择层：
 
-    - 非 stratagems 条目（军规/分队规则）：detachment 为 None（军队级）恒入选；
+    - 非 opt-in 条目（军规/分队规则）：detachment 为 None（军队级）恒入选；
       带 detachment 的仅当与所选分队匹配才入选（未选/不符 → 注记披露，不静默）。
-    - stratagems 表条目 = 一次性 opt-in：必须被 `stratagems` 点名（token 匹配
-      row_id / name_en / name_zh 任一，弯撇号归一）；点名了但分队不符 → 拒入选并披露。
-      未选分队时点名战略照常入选（假设军队就是该分队，注记披露该假设）。
+    - stratagems / enhancements 表条目 = 一次性 opt-in：必须被各自 token 列表点名
+      （匹配 row_id / name_en / name_zh 任一，弯撇号归一）；点名了但分队不符 →
+      拒入选并披露。未选分队时点名照常入选（假设军队就是该分队，注记披露该假设）。
     - 点名 token 无匹配 → 注记披露（错名字不静默吞——批量期复制粘贴错名的温床）。
     """
     want_det = _norm_token(detachment) if detachment else None
-    tokens = [str(t) for t in stratagems if str(t).strip()]
+    opt_in_tokens = {
+        "stratagems": [str(t) for t in stratagems if str(t).strip()],
+        "enhancements": [str(t) for t in enhancements if str(t).strip()],
+    }
+    _KIND_LABEL = {"stratagems": "战略", "enhancements": "增强"}
     selected: List[DslEntry] = []
     notes: List[str] = []
-    matched_tokens: set = set()
+    matched_tokens: Dict[str, set] = {k: set() for k in opt_in_tokens}
 
     def _entry_matches(entry: DslEntry, token: str) -> bool:
         t = _norm_token(token)
@@ -276,19 +340,21 @@ def select_entries(
 
     for entry in entries:
         e_det = _norm_token(entry.detachment) if entry.detachment else None
-        if entry.table == "stratagems":
+        if entry.table in opt_in_tokens:
+            kind = _KIND_LABEL[entry.table]
+            tokens = opt_in_tokens[entry.table]
             hit = [tok for tok in tokens if _entry_matches(entry, tok)]
             if not hit:
                 continue
-            matched_tokens.update(hit)
+            matched_tokens[entry.table].update(hit)
             if want_det and e_det and e_det != want_det:
                 notes.append(
-                    f"战略 {entry.name_zh or entry.name_en} 属分队 {entry.detachment}，"
+                    f"{kind} {entry.name_zh or entry.name_en} 属分队 {entry.detachment}，"
                     f"与所选分队 {detachment} 不符——本次未施加")
                 continue
             if not want_det and e_det:
                 notes.append(
-                    f"战略 {entry.name_zh or entry.name_en}：未指定分队，"
+                    f"{kind} {entry.name_zh or entry.name_en}：未指定分队，"
                     f"按军队即为 {entry.detachment} 分队假设施加")
             selected.append(entry)
         else:
@@ -301,10 +367,11 @@ def select_entries(
                     f"分队规则 {entry.name_zh or entry.name_en}（{entry.detachment}）"
                     f"与所选分队 {detachment} 不符——本次未施加")
             # 未选分队 → 分队规则不入选也不逐条刷屏（dsl_available 已 surface 可选项）
-    for tok in tokens:
-        if tok not in matched_tokens:
-            notes.append(f"战略点名 {tok!r} 无匹配 DSL 条目（查 id / 英文名 / 中文名），"
-                         f"本次未施加")
+    for table, tokens in opt_in_tokens.items():
+        for tok in tokens:
+            if tok not in matched_tokens[table]:
+                notes.append(f"{_KIND_LABEL[table]}点名 {tok!r} 无匹配 DSL 条目"
+                             f"（查 id / 英文名 / 中文名），本次未施加")
     return selected, notes
 
 
@@ -325,36 +392,105 @@ def inject_attacker(
     new_loadout = list(attacker.loadout)
     for entry in entries:
         if entry.side != "attacker" or not entry.effects:
-            if entry.status == "not_modeled" and entry.not_modeled_notes_zh:
+            if entry.side == "target" and entry.effects:
+                # P7-PR4：防守向条目在攻方注入路径不适用——方向说明而非"未接线"
+                not_modeled.append(
+                    f"DSL {entry.name_zh or entry.name_en} 是防守向条目，"
+                    f"对本次攻击方向不适用（在守方侧选择该分队/条目时生效）")
+            elif entry.status == "not_modeled" and entry.not_modeled_notes_zh:
                 not_modeled.append(
                     f"DSL {entry.name_en}（{entry.status}）："
                     + "；".join(entry.not_modeled_notes_zh))
-            elif entry.effects:
-                # 防御性披露（审查 H1 纵深）：parse_entry 已拒 target+effects，
-                # 此分支只在 DB 投影被手改时可达——照样不许静默吞
-                not_modeled.append(
-                    f"DSL {entry.name_en}（side={entry.side}）引擎注入层未接该侧，"
-                    f"本次未施加")
             continue
-        missing = [t for t in entry.requires_toggles if t not in toggles]
-        if missing:
-            not_modeled.append(
-                f"DSL {entry.name_en} 未启用（需开关 {'/'.join(missing)}），本次未施加")
+        gate = _toggle_gate_note(entry, toggles)
+        if gate:
+            not_modeled.append(gate)
             continue
-        conflict = [t for t in entry.conflicts_with_toggles if t in toggles]
-        if conflict:
-            # 审查 PR3-H1：互斥开关同开 → 硬性拒注入并显眼披露（不许规则外叠加），
-            # 不做"保留最高值"的静默修正——用户必须自己关掉其一
-            not_modeled.append(
-                f"⚠ DSL {entry.name_zh or entry.name_en} 与开关 {'/'.join(conflict)} 互斥"
-                f"（规则原文两种状态不能共存），本次未施加——关闭其一后重跑")
-            continue
-        new_loadout = [replace(w, effects=w.effects + entry.effects)
-                       for w in new_loadout]
         label = entry.name_zh or entry.name_en
-        modeled.append(
-            f"DSL 已施加：{label}（{entry.status}，开关 "
-            f"{'/'.join(entry.requires_toggles) or '无'}）")
+        if entry.weapon_filter:
+            # P7-PR4："select one of this model's X weapons" 型条目只注入名字匹配的武器；
+            # 无匹配 → 显式披露不静默（装错 loadout 是批量期常见笔误）
+            key = entry.weapon_filter.casefold()
+            hit_idx = [i for i, w in enumerate(new_loadout)
+                       if key in (w.name_en or "").casefold()
+                       or key in (w.name_zh or "").casefold()]
+            if not hit_idx:
+                not_modeled.append(
+                    f"DSL {label} 未施加：loadout 中没有名字含 "
+                    f"{entry.weapon_filter!r} 的武器（该条目只作用于特定武器）")
+                continue
+            for i in hit_idx:
+                new_loadout[i] = replace(new_loadout[i],
+                                         effects=new_loadout[i].effects + entry.effects)
+            modeled.append(
+                f"DSL 已施加：{label}（{entry.status}，限武器 {entry.weapon_filter}，"
+                f"开关 {'/'.join(entry.requires_toggles) or '无'}）")
+        else:
+            new_loadout = [replace(w, effects=w.effects + entry.effects)
+                           for w in new_loadout]
+            modeled.append(
+                f"DSL 已施加：{label}（{entry.status}，开关 "
+                f"{'/'.join(entry.requires_toggles) or '无'}）")
         for note in entry.not_modeled_notes_zh:
             not_modeled.append(f"DSL {label} 未建模残量：{note}")
     return replace(attacker, loadout=tuple(new_loadout)), modeled, not_modeled
+
+
+def _toggle_gate_note(entry: DslEntry, toggles: FrozenSet[str]) -> str:
+    """开关闸门（requires 未满足 / conflicts 命中）→ 披露注记；通过返回空串。"""
+    missing = [t for t in entry.requires_toggles if t not in toggles]
+    if missing:
+        return (f"DSL {entry.name_en} 未启用（需开关 {'/'.join(missing)}），本次未施加")
+    conflict = [t for t in entry.conflicts_with_toggles if t in toggles]
+    if conflict:
+        # 审查 PR3-H1：互斥开关同开 → 硬性拒注入并显眼披露（不许规则外叠加），
+        # 不做"保留最高值"的静默修正——用户必须自己关掉其一
+        return (f"⚠ DSL {entry.name_zh or entry.name_en} 与开关 {'/'.join(conflict)} 互斥"
+                f"（规则原文两种状态不能共存），本次未施加——关闭其一后重跑")
+    return ""
+
+
+def inject_target(
+    target: TargetProfile,
+    entries: List[DslEntry],
+    toggles: FrozenSet[str],
+) -> Tuple[TargetProfile, List[str], List[str]]:
+    """把开关满足的守方侧 DSL 条目追加进 target.effects（P7-PR4 防守向注入）。
+
+    与 inject_attacker 同一套诚实语义：
+    - requires_toggles 未满足 / conflicts 命中 → 不注入，显式披露；
+    - side=attacker 且带 effects 的条目（守方阵营的攻方向规则）→ 方向说明披露
+      （反打路径未接 DSL，这里不能假装它生效）；
+    - partial 的未建模残量逐条透传。
+    效果消费点 = TARGET_CONSUMED（fnp/减伤/命中修正/掩体/无效保护/护甲改善），
+    条件求值在 sequence（_cond_true / _target_effect_value）。
+    """
+    modeled: List[str] = []
+    not_modeled: List[str] = []
+    extra: List = []
+    for entry in entries:
+        if entry.side != "target" or not entry.effects:
+            if entry.side == "attacker" and entry.effects:
+                not_modeled.append(
+                    f"DSL {entry.name_zh or entry.name_en} 是攻方向条目，"
+                    f"对守方防御不适用（守方反打方向当前未接 DSL 注入）")
+            elif entry.status == "not_modeled" and entry.not_modeled_notes_zh:
+                not_modeled.append(
+                    f"DSL {entry.name_en}（{entry.status}）："
+                    + "；".join(entry.not_modeled_notes_zh))
+            continue
+        gate = _toggle_gate_note(entry, toggles)
+        if gate:
+            not_modeled.append(gate)
+            continue
+        label = entry.name_zh or entry.name_en
+        extra.extend(entry.effects)
+        modeled.append(
+            f"DSL 已施加（守方）：{label}（{entry.status}，开关 "
+            f"{'/'.join(entry.requires_toggles) or '无'}）")
+        for note in entry.not_modeled_notes_zh:
+            not_modeled.append(f"DSL {label} 未建模残量：{note}")
+    if not extra:
+        return target, modeled, not_modeled
+    return (replace(target, effects=target.effects + tuple(extra)),
+            modeled, not_modeled)

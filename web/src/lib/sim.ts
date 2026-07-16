@@ -34,6 +34,20 @@ export interface SimOptions {
   detachment?: string; // 分队名（Kauyon / Mont'ka，撇号直弯均可）
   detachment_rounds?: boolean; // 假设处于分队规则生效轮次（Kauyon 3-5 / Mont'ka 1-3）
   stratagems?: string[]; // 战略点名（id/英文名/中文名）；一次性 opt-in，CP 不结算
+  // ── P7-PR4 攻方增强与假设开关 ──
+  enhancements?: string[]; // 增强点名（opt-in 同战略）
+  range_within_12?: boolean; // 假设目标在 12" 内（Bonded Heroes S+1 档）
+  range_within_8?: boolean; // 假设目标在 8" 内（AP 档，蕴含 12" 档）
+  target_below_starting?: boolean; // 假设目标低于满编（Hunter's Instincts 命中档）
+  target_below_half?: boolean; // 假设目标低于半编（蕴含低于满编）
+  markerlight_visible?: boolean; // 假设目标对友军标记光单位可见（Starfire 军规）
+  bearer_leading?: boolean; // 假设增强携带者正率领本单位
+  // ── P7-PR4 守方阵营 DSL（防守向条目经 inject_target 注入）──
+  defender_detachment?: string; // 守方分队名
+  defender_stratagems?: string[]; // 守方防守向战略点名（Stimm Injectors 等）
+  defender_enhancements?: string[]; // 守方增强点名
+  defender_hidden?: boolean; // 假设守方处于 hidden 状态（AAC）
+  defender_bearer_leading?: boolean; // 假设守方增强携带者正率领守方单位
 }
 
 /** 守方可 opt-in 的防守开关（后端只披露，不自动施加） */
@@ -76,10 +90,11 @@ export interface SimReport {
   reverse: SimReport | null;
 }
 
-/** 攻方阵营 DSL 可用条目（P7-PR3 回显）：surface 供渲染开关组与战略点名回传 */
+/** 阵营 DSL 可用条目（P7-PR3 回显，PR4 补 side）：surface 供分攻/守两栏渲染与点名回传 */
 export interface SimDslEntry {
-  table: string; // abilities（军规/分队规则）| stratagems（须点名 options.stratagems）
+  table: string; // abilities（军规/分队规则）| stratagems | enhancements（后两者须点名）
   id: string;
+  side: "attacker" | "target"; // 施加侧：attacker=攻方栏；target=守方栏（defender_* 点名）
   nameEn: string;
   nameZh: string | null;
   status: string; // encoded | partial
