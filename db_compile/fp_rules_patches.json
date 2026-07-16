@@ -523,5 +523,26 @@
    "zh_source": "codex-10e",
    "evidence": "wiki/core-rules/for-the-greater-good.md 与中文codex page_013/017/018 一致"
   }
+ ],
+ "_deactivations_comment": "9 条 review_needed 的最终裁定（2026-07-16 用户裁 A：FP 完整重印即整体替换）。证据：①FP p3/p4 对 Auxiliary Cadre / Experimental Prototype Cadre 用完整重印体裁（同书 datasheet 侧明文 replaces 语义，page_010）；②11 版 Experimental Ammunition 删除了与 Threat Assessment Analyser 互斥的 RESTRICTIONS 段（侧面印证 TAA 不复存在）；③Wahapedia 现网核证（2026-07-16 重拉 Stratagems.csv）确认其尚未消化这两页 FP（drifted 条仍旧十版措辞、GUIDED BY UNITY 与 Advanced Acquisition Cadre 均缺席），故'现网仍在'不构成反证。处置：置 fp_status='removed_11e'（原文保留可回滚）；P7 DSL 对账枚举、检索消费者应排除该标记行。将来 Wahapedia 滚更这两页时 text_patches 守卫会自动让路告警，届时复核本裁定。",
+ "deactivations": [
+  {"table": "stratagems", "id": "000009840003", "name_en": "MULTISENSORY SCANNING",
+   "status": "removed_11e", "fp_source": "page_003.md（完整重印未收录）"},
+  {"table": "stratagems", "id": "000009840004", "name_en": "INTERLOCKING MANOUEVRES",
+   "status": "removed_11e", "fp_source": "page_003.md（完整重印未收录）"},
+  {"table": "stratagems", "id": "000009840005", "name_en": "PHEROMONE WAYPOINTS",
+   "status": "removed_11e", "fp_source": "page_003.md（完整重印未收录）"},
+  {"table": "stratagems", "id": "000009840007", "name_en": "GUIDED FIRE",
+   "status": "removed_11e", "fp_source": "page_003.md（完整重印未收录；新条 GUIDED BY UNITY 名称效果均不同，非更名对应）"},
+  {"table": "stratagems", "id": "000009984002", "name_en": "AUTOMATED REPAIR DRONES",
+   "status": "removed_11e", "fp_source": "page_004.md（完整重印未收录）"},
+  {"table": "stratagems", "id": "000009984003", "name_en": "REACTIVE IMPACT DAMPENERS",
+   "status": "removed_11e", "fp_source": "page_004.md（完整重印未收录）"},
+  {"table": "stratagems", "id": "000009984004", "name_en": "EXPERIMENTAL WEAPONRY",
+   "status": "removed_11e", "fp_source": "page_004.md（完整重印未收录）"},
+  {"table": "stratagems", "id": "000009984006", "name_en": "THREAT ASSESSMENT ANALYSER",
+   "status": "removed_11e", "fp_source": "page_004.md（完整重印未收录；11版 Experimental Ammunition 已删互斥 RESTRICTIONS 段侧证）"},
+  {"table": "stratagems", "id": "000009984007", "name_en": "NEUROWEB SYSTEM JAMMER",
+   "status": "removed_11e", "fp_source": "page_004.md（完整重印未收录）"}
  ]
 }
