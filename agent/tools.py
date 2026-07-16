@@ -361,6 +361,9 @@ def simulate_combat(
     long_range、indirect；attacker_models、defender_models；loadout=[[武器名,数量],...]
     （多模型单位必填，否则返回 ambiguous+武器池）；defender_loadout（给了则串行幸存反打）；
     fnp(守方无痛X)、damage_reduction；n(默认8000)、seed。
+    P7 阵营 DSL：guided、markerlight_observer、detachment(分队名，如 Kauyon/Mont'ka)、
+    detachment_rounds(假设处于分队规则生效轮次)、stratagems=[战略 id/英文名/中文名,...]
+    （一次性 opt-in；CP 不结算，未匹配/分队不符显式披露）。
     """
     db_path = db_path or DB_PATH
     if not Path(db_path).exists():
@@ -409,6 +412,7 @@ def simulate_combat_resolved(
             indirect=bool(options.get("indirect")),
             guided=bool(options.get("guided")),
             markerlight_observer=bool(options.get("markerlight_observer")),
+            detachment_rounds=bool(options.get("detachment_rounds")),
         )
 
         loadout = options.get("loadout")
@@ -431,18 +435,28 @@ def simulate_combat_resolved(
             return {"ok": False, "modeled": True, "tool": "simulate_combat",
                     "reason": "not_found", "note": f"守方 {d['name_en']} 无法装载"}
 
-        # P7：攻方阵营 DSL 条目——开关满足才注入（stance 同源 options 点亮，条件 tag 放行），
-        # 注记随后挂进 report（modeled⇄结果被影响 成对，评审 F5）
-        from engines.simulator.dsl import inject_attacker
+        # P7：攻方阵营 DSL 条目——先过选择层（分队匹配 + 战略点名，PR3），再按开关注入
+        # （stance 同源 options 点亮，条件 tag 放行），注记随后挂进 report
+        # （modeled⇄结果被影响 成对，评审 F5）
+        from engines.simulator.dsl import inject_attacker, select_entries
         from engines.simulator.profile import load_unit_dsl
         dsl_entries = load_unit_dsl(db_path, a["canonical_id"])
+        selected_entries, select_notes = select_entries(
+            list(dsl_entries),
+            detachment=options.get("detachment"),
+            stratagems=tuple(options.get("stratagems") or ()))
         dsl_toggles = frozenset(
-            t for t in ("guided", "markerlight_observer") if options.get(t))
+            t for t in ("guided", "markerlight_observer", "detachment_rounds")
+            if options.get(t))
         attacker_prof, dsl_modeled, dsl_notes = inject_attacker(
-            asm.attacker, list(dsl_entries), dsl_toggles)
-        # 面板/上层可见的可用开关清单（surface，不自动开）
+            asm.attacker, selected_entries, dsl_toggles)
+        dsl_notes = select_notes + dsl_notes
+        # 面板/上层可见的可用开关/战略清单（surface，不自动开；PR3 补 table/id/detachment
+        # 供前端按分队分组渲染与点名回传）
         dsl_available = [
-            {"name_en": e.name_en, "name_zh": e.name_zh, "status": e.status,
+            {"table": e.table, "id": e.row_id,
+             "name_en": e.name_en, "name_zh": e.name_zh, "status": e.status,
+             "detachment": e.detachment,
              "requires_toggles": list(e.requires_toggles)}
             for e in dsl_entries if e.side == "attacker" and e.effects]
 

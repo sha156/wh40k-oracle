@@ -1,5 +1,5 @@
 {
- "_comment": "P7 阵营技能 DSL 唯一真源（钛帝国）。DB effect_dsl_json/dsl_status 只是投影，由 `python -m db_compile dsl-apply` 写入并挂 restore（防 rebuild 清零）。逐条人工录入，判据与格式见 docs/superpowers/specs/2026-07-14-p7-faction-dsl-pilot-design.md 第二节；每条 encoded/partial 必须有解析级+引擎级双测试（tests/test_simulator_dsl.py）。",
+ "_comment": "P7 阵营技能 DSL 唯一真源（钛帝国）。DB effect_dsl_json/dsl_status 只是投影，由 `python -m db_compile dsl-apply` 写入并挂 restore（防 rebuild 清零）。逐条人工录入，判据与格式见 docs/superpowers/specs/2026-07-14-p7-faction-dsl-pilot-design.md 第二节；每条 encoded/partial 必须有解析级+引擎级双测试（tests/test_simulator_dsl.py / test_simulator_dsl_kauyon_montka.py）。分队规则条目（spec D5）：table=abilities 新行（id 前缀 det+源 detachments id），materialize 指示 dsl_apply 从 detachments.rule_text 物化正文，指纹对着源文本核。战略条目=一次性 opt-in（options.stratagems 点名才注入），CP 经济与次数限制不建模只披露（spec D3）。",
  "dsl_version": 1,
  "faction": "TAU",
  "entries": [
@@ -32,6 +32,361 @@
     "text_sha256": "37b11b45d43e7aa8433c394a98cee93baa1ebfe86c3cf8a018f3344c33d13643"
    },
    "encoded_by": "manual-2026-07-14"
+  },
+  {
+   "table": "abilities",
+   "id": "det000008441",
+   "materialize": {"from_table": "detachments", "from_id": "000008441", "from_column": "rule_text"},
+   "side": "attacker",
+   "detachment": "Kauyon",
+   "name_en": "Patient Hunter",
+   "name_zh": "耐心猎手",
+   "status": "partial",
+   "effects": [
+    {"phase": "hit", "op": "extra_hits", "params": [1],
+     "condition": ["detachment_rounds_shooting"],
+     "source": "Kauyon: Patient Hunter（第3-5战斗轮：远程武器 [SUSTAINED HITS 1]）"},
+    {"phase": "hit", "op": "ignore_hit_mods", "params": [],
+     "condition": ["detachment_rounds_guided"],
+     "source": "Kauyon: Patient Hunter（3-5轮受引导打被标记目标：可无视 BS/命中骰修正）"}
+   ],
+   "requires_toggles": ["detachment_rounds"],
+   "not_modeled_notes_zh": [
+    "战轮门控（第3-5战斗轮）用开关近似：开=假设当前处于生效轮次，引擎无战斗轮概念",
+    "「可无视任意或全部 BS/命中骰修正」按最优玩法执行=只无视不利修正、保留有利修正（与 [PSYCHIC] 同通道）",
+    "第二条款仅对受引导单位生效——须同开「受引导」开关（条件 tag 自含），目标即被标记单位按 FTGG 开关假设",
+    "SUSTAINED HITS 1 对全军远程武器生效，模拟只算本单位输出"
+   ],
+   "provenance": {
+    "current_text": "db detachments.rule_text id=000008441（FP change-to 与 DB 归一化后逐字一致，PR1 工作单 identical）",
+    "base_text": "Faction Pack Tau Empire p19（data_refined/Faction Pack Tau Empire/page_019.md）",
+    "synthesis": "无需合成（DB 现文本即 11 版现行）；DSL 投影经 materialize 落 abilities 新行（spec D5）",
+    "text_sha256": "98bc71c0f1ec7cac300240f3586016f81ff8cfaa3e475374c14cd7aba0fee667"
+   },
+   "encoded_by": "manual-2026-07-16"
+  },
+  {
+   "table": "abilities",
+   "id": "det000008810",
+   "materialize": {"from_table": "detachments", "from_id": "000008810", "from_column": "rule_text"},
+   "side": "attacker",
+   "detachment": "Mont’ka",
+   "name_en": "Killing Blow",
+   "name_zh": "一击必杀",
+   "status": "partial",
+   "effects": [
+    {"phase": "hit", "op": "auto_wound", "params": [],
+     "condition": ["detachment_rounds_guided"],
+     "source": "Mont’ka: Killing Blow（1-3轮受引导：远程武器 [LETHAL HITS]）"}
+   ],
+   "requires_toggles": ["detachment_rounds"],
+   "not_modeled_notes_zh": [
+    "战轮门控（第1-3战斗轮）用开关近似：开=假设当前处于生效轮次，引擎无战斗轮概念",
+    "第一条款 [ASSAULT]（1-3轮全军远程武器）未建模——引擎无移动/冲刺，Advance 后射击的场景差异不在 1v1 序列范围",
+    "LETHAL HITS 条款仅对受引导单位生效——须同开「受引导」开关（条件 tag 自含）"
+   ],
+   "provenance": {
+    "current_text": "db detachments.rule_text id=000008810（PR1 已按 FP page_019 change-list 补回交叉引用，现行 11 版文本）",
+    "base_text": "Faction Pack Tau Empire p19（data_refined/Faction Pack Tau Empire/page_019.md）",
+    "synthesis": "十版基底 + FP change-list（PR1 fp_rules 补丁 #1 已落库）；DSL 投影经 materialize 落 abilities 新行（spec D5）",
+    "text_sha256": "bf107ae0cde2ea061cf055405b1ede093b05976cd32a807835222b366811322b"
+   },
+   "encoded_by": "manual-2026-07-16"
+  },
+  {
+   "table": "stratagems",
+   "id": "000008443002",
+   "side": "attacker",
+   "detachment": "Kauyon",
+   "name_en": "A TEMPTING TRAP",
+   "name_zh": "诱惑陷阱",
+   "status": "partial",
+   "effects": [
+    {"phase": "wound", "op": "modify", "params": [1],
+     "condition": ["phase_shooting"],
+     "source": "A Tempting Trap（1CP：致伤骰 +1）"}
+   ],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "「目标在陷阱目标点范围内」的空间条件未建模，按已满足假设",
+    "限第3-5战斗轮（1-2轮禁用）未建模——与分队战轮门控开关语义一致，由玩家自行保证",
+    "陷阱目标点的全场唯一选定（首次使用时指定）不建模",
+    "CP 消耗与使用次数限制不结算，仅假设本阶段已用（spec D3）"
+   ],
+   "provenance": {
+    "current_text": "db stratagems.text_zh id=000008443002（PR1 工作单 not_in_fp：十版文本 11 版仍现行）",
+    "base_text": "Wahapedia 10e Kauyon stratagems（FP 无勘误）",
+    "synthesis": "无需合成",
+    "text_sha256": "9fce24c02fa49be799e51b3f4653527537454f3408fe6f5b448991335c0fe121"
+   },
+   "encoded_by": "manual-2026-07-16"
+  },
+  {
+   "table": "stratagems",
+   "id": "000008443003",
+   "side": "attacker",
+   "detachment": "Kauyon",
+   "name_en": "POINT-BLANK AMBUSH",
+   "name_zh": "抵近伏击",
+   "status": "partial",
+   "effects": [
+    {"phase": "save", "op": "ap_improve", "params": [1],
+     "condition": ["phase_shooting"],
+     "source": "Point-Blank Ambush（1CP：9\"内 AP 特征值改善 1）"}
+   ],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "「目标在 9\" 内」的距离条件未建模，按已满足假设（近距离场景可同开「半射程」开关自洽）",
+    "限第3-5战斗轮（1-2轮禁用）未建模",
+    "CP 消耗与使用次数限制不结算，仅假设本阶段已用（spec D3）"
+   ],
+   "provenance": {
+    "current_text": "db stratagems.text_zh id=000008443003（PR1 工作单 not_in_fp：十版文本 11 版仍现行）",
+    "base_text": "Wahapedia 10e Kauyon stratagems（FP 无勘误）",
+    "synthesis": "无需合成",
+    "text_sha256": "27dd7e7951123b8dbd09312873e166745fb20c3edcaa1e353c9d2e8e8f6a07bf"
+   },
+   "encoded_by": "manual-2026-07-16"
+  },
+  {
+   "table": "stratagems",
+   "id": "000008443004",
+   "side": "attacker",
+   "detachment": "Kauyon",
+   "name_en": "COORDINATE TO ENGAGE",
+   "name_zh": "联携攻击",
+   "status": "partial",
+   "effects": [
+    {"phase": "hit", "op": "bs_improve", "params": [1],
+     "condition": ["phase_shooting"],
+     "source": "Coordinate to Engage（1CP：观察员打其标记目标 BS 特征值改善 1）"},
+    {"phase": "save", "op": "ignores_cover", "params": [],
+     "condition": ["markerlight_observer"],
+     "source": "Coordinate to Engage（观察员带 Markerlight 关键词：追加 [IGNORES COVER]）"}
+   ],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "本战略的攻方=观察员单位自身，目标须为其标记的 Spotted 单位——按已满足假设",
+    "与「受引导」开关互斥：观察员≠受引导单位，同开 guided 会错误双重叠加 BS 改善，请勿同开",
+    "[IGNORES COVER] 条款须开「观察员带标记光」开关（条件 tag 自含，不要求 guided）",
+    "CP 消耗与使用次数限制不结算，仅假设本阶段已用（spec D3）"
+   ],
+   "provenance": {
+    "current_text": "db stratagems.text_zh id=000008443004（PR1 工作单 not_in_fp：十版文本 11 版仍现行）",
+    "base_text": "Wahapedia 10e Kauyon stratagems（FP 无勘误）",
+    "synthesis": "无需合成",
+    "text_sha256": "b1d4c6d7edad785ee34c793f20f7b02b6e7ba7d5b1a432d95a4866fe68476ace"
+   },
+   "encoded_by": "manual-2026-07-16"
+  },
+  {
+   "table": "stratagems",
+   "id": "000008443005",
+   "side": "attacker",
+   "detachment": "Kauyon",
+   "name_en": "COMBAT EMBARKATION",
+   "name_zh": "战术搭载",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "冲锋宣告后紧急登入运输载具并允许对手重选冲锋目标——运输载具/冲锋阶段空间机制整体超出 1v1 攻击序列模拟范围"
+   ],
+   "provenance": {
+    "current_text": "db stratagems.text_zh id=000008443005（PR1 工作单 not_in_fp：十版文本 11 版仍现行）",
+    "base_text": "Wahapedia 10e Kauyon stratagems（FP 无勘误）",
+    "synthesis": "无需合成",
+    "text_sha256": "6e99063457e0fd335480017b97319dfe74b785586c0dc3e091cd71dba167ca13"
+   },
+   "encoded_by": "manual-2026-07-16"
+  },
+  {
+   "table": "stratagems",
+   "id": "000008443006",
+   "side": "attacker",
+   "detachment": "Kauyon",
+   "name_en": "PHOTON GRENADES",
+   "name_zh": "光子手雷",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "强制战意测试 + 冲锋骰 -2——引擎无士气（Battle-shock）与冲锋掷骰建模；近战模拟假设冲锋已成功，冲锋概率变化无法折算进攻击序列"
+   ],
+   "provenance": {
+    "current_text": "db stratagems.text_zh id=000008443006（PR1 补丁 #5 已按 FP page_019 修 WHEN 段：declared a charge → selected its charge target）",
+    "base_text": "十版基底 + FP page_019 change-list（PR1 fp_rules 已落库）",
+    "synthesis": "十版基底 + FP WHEN 段勘误",
+    "text_sha256": "26d305faae341c30dba699a34f9fc08976f74c734f5b02b7b76858889c3a2b67"
+   },
+   "encoded_by": "manual-2026-07-16"
+  },
+  {
+   "table": "stratagems",
+   "id": "000008443007",
+   "side": "attacker",
+   "detachment": "Kauyon",
+   "name_en": "WALL OF MIRRORS",
+   "name_zh": "幻镜之墙",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "对手战斗阶段结束时把单位移出战场进战略预备队——纯空间/部署机制，超出攻击序列模拟范围"
+   ],
+   "provenance": {
+    "current_text": "db stratagems.text_zh id=000008443007（PR1 工作单 not_in_fp：十版文本 11 版仍现行）",
+    "base_text": "Wahapedia 10e Kauyon stratagems（FP 无勘误）",
+    "synthesis": "无需合成",
+    "text_sha256": "412472053b9e414cbc8616ab3cd576a66329c375cef9f6e37e9c746517c76dcd"
+   },
+   "encoded_by": "manual-2026-07-16"
+  },
+  {
+   "table": "stratagems",
+   "id": "000008812002",
+   "side": "attacker",
+   "detachment": "Mont’ka",
+   "name_en": "PINPOINT COUNTER-OFFENSIVE",
+   "name_zh": "精准反攻",
+   "status": "partial",
+   "effects": [
+    {"phase": "hit", "op": "reroll", "params": ["fail"],
+     "condition": [],
+     "source": "Pinpoint Counter-Offensive（1CP：命中骰可重骰）"}
+   ],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "「目标=刚消灭我方单位的那个敌军单位」的复仇条件未建模，按已满足假设",
+    "「可以重骰」按最优策略执行=只重骰失败骰；不建模「重骰非暴击钓 sustained/lethal」的进阶策略（该策略仅在暴击增益武器上略优）",
+    "效果持续到战斗结束且对全军生效，模拟只算本单位一次攻击序列",
+    "CP 消耗与使用次数限制不结算，仅假设已触发（spec D3）"
+   ],
+   "provenance": {
+    "current_text": "db stratagems.text_zh id=000008812002（PR1 工作单 not_in_fp：十版文本 11 版仍现行）",
+    "base_text": "Wahapedia 10e Mont’ka stratagems（FP 无勘误）",
+    "synthesis": "无需合成",
+    "text_sha256": "bbce75459d10b006eb1ae330a0f013107fd68aa211027ca8f59ed408279eedf3"
+   },
+   "encoded_by": "manual-2026-07-16"
+  },
+  {
+   "table": "stratagems",
+   "id": "000008812003",
+   "side": "attacker",
+   "detachment": "Mont’ka",
+   "name_en": "AGGRESSIVE MOBILITY",
+   "name_zh": "灵活机动",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "冲刺免掷骰改 +6\" 移动——纯移动阶段机制，引擎无移动/距离建模"
+   ],
+   "provenance": {
+    "current_text": "db stratagems.text_zh id=000008812003（PR1 工作单 not_in_fp：十版文本 11 版仍现行）",
+    "base_text": "Wahapedia 10e Mont’ka stratagems（FP 无勘误）",
+    "synthesis": "无需合成",
+    "text_sha256": "8921cee4f9c1098e914296385a5258a65bd0aacd30f6ab0de65d18254ba8163c"
+   },
+   "encoded_by": "manual-2026-07-16"
+  },
+  {
+   "table": "stratagems",
+   "id": "000008812004",
+   "side": "attacker",
+   "detachment": "Mont’ka",
+   "name_en": "FOCUSED FIRE",
+   "name_zh": "集中火力",
+   "status": "partial",
+   "effects": [
+    {"phase": "save", "op": "ap_improve", "params": [1],
+     "condition": ["phase_shooting"],
+     "source": "Focused Fire（1CP：AP 特征值改善 1）"}
+   ],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "「两个单位只许打同一个指定敌军单位」的目标锁定约束未建模（模拟只算本单位对该目标的输出，符合锁定语义）",
+    "限第1-3战斗轮（4-5轮禁用）未建模",
+    "CP 消耗与使用次数限制不结算，仅假设本阶段已用（spec D3）"
+   ],
+   "provenance": {
+    "current_text": "db stratagems.text_zh id=000008812004（PR1 工作单 not_in_fp：十版文本 11 版仍现行）",
+    "base_text": "Wahapedia 10e Mont’ka stratagems（FP 无勘误）",
+    "synthesis": "无需合成",
+    "text_sha256": "810cdfdcab5942c6dfe4ff847e754331a08b6c588534e7a942b0fc02e8faab7b"
+   },
+   "encoded_by": "manual-2026-07-16"
+  },
+  {
+   "table": "stratagems",
+   "id": "000008812005",
+   "side": "attacker",
+   "detachment": "Mont’ka",
+   "name_en": "COMBAT DEBARKATION",
+   "name_zh": "战术下车",
+   "status": "partial",
+   "effects": [
+    {"phase": "wound", "op": "reroll", "params": ["fail"],
+     "condition": ["phase_shooting"],
+     "source": "Combat Debarkation（1CP：致伤骰可重骰）"}
+   ],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "「本回合从运输载具下车」与「目标=最近敌军单位」两个条件未建模，按已满足假设",
+    "「可以重骰」按最优策略执行=只重骰失败骰",
+    "CP 消耗与使用次数限制不结算，仅假设本阶段已用（spec D3）"
+   ],
+   "provenance": {
+    "current_text": "db stratagems.text_zh id=000008812005（PR1 工作单 not_in_fp：十版文本 11 版仍现行）",
+    "base_text": "Wahapedia 10e Mont’ka stratagems（FP 无勘误）",
+    "synthesis": "无需合成",
+    "text_sha256": "0fa0bed5fe0b1fcdb1e2c98b0dbd37d5dd2383e3fc3348f6cf60660bd5f99c37"
+   },
+   "encoded_by": "manual-2026-07-16"
+  },
+  {
+   "table": "stratagems",
+   "id": "000008812006",
+   "side": "attacker",
+   "detachment": "Mont’ka",
+   "name_en": "PULSE ONSLAUGHT",
+   "name_zh": "脉冲冲击",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "使敌军单位 shaken（移动 -2\"、冲刺/冲锋骰 -2）——纯移动域减益，引擎无移动/冲锋建模"
+   ],
+   "provenance": {
+    "current_text": "db stratagems.text_zh id=000008812006（PR1 工作单 not_in_fp：十版文本 11 版仍现行）",
+    "base_text": "Wahapedia 10e Mont’ka stratagems（FP 无勘误）",
+    "synthesis": "无需合成",
+    "text_sha256": "b5adb609d8949ef3392ad65dc08775e237af3a67cb44c8c9a22f323f47b21ba9"
+   },
+   "encoded_by": "manual-2026-07-16"
+  },
+  {
+   "table": "stratagems",
+   "id": "000008812007",
+   "side": "target",
+   "detachment": "Mont’ka",
+   "name_en": "COUNTERFIRE DEFENCE SYSTEMS",
+   "name_zh": "防御反击系统",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "防守向条目（被攻击时伤害特征值 -1）：引擎有消费点（damage_reduction）但 DSL 注入层只接了攻方侧（inject_target 未接线，PR2 审查 H1），暂不经 DSL 施加",
+    "可用守方手动开关精确等效近似：CLI --damage-reduction 1 / 面板「守方减伤 1」/ options.damage_reduction=1"
+   ],
+   "provenance": {
+    "current_text": "db stratagems.text_zh id=000008812007（PR1 工作单 not_in_fp：十版文本 11 版仍现行）",
+    "base_text": "Wahapedia 10e Mont’ka stratagems（FP 无勘误）",
+    "synthesis": "无需合成",
+    "text_sha256": "995a8d78ed476a821dfeb87e8c353cca2df41b7b4a1e9dd12b21c4fabb6f4cba"
+   },
+   "encoded_by": "manual-2026-07-16"
   }
  ]
 }

@@ -10,7 +10,13 @@ import sqlite3
 from pathlib import Path
 from typing import Any, Dict, List, Optional, Tuple
 
-from web_api.contract import SimFactionOptions, SimReportOut, SimResponse, SimToggle
+from web_api.contract import (
+    SimDslEntry,
+    SimFactionOptions,
+    SimReportOut,
+    SimResponse,
+    SimToggle,
+)
 
 # 允许透传给模拟核心的 options 键 → 收敛函数（边界验证，未知键静默丢弃）
 _N_MIN, _N_MAX = 100, 20000
@@ -64,12 +70,22 @@ def sanitize_options(raw: Optional[Dict[str, Any]]) -> Dict[str, Any]:
         out["reverse_phase"] = raw["reverse_phase"]
     # smokescreen 不在白名单：引擎里它只是 cover_on 的别名（smokescreen→cover_on），
     # 网页用 cover 开关表达即可，不重复暴露；agent 直调路径不过此白名单，仍可用 smokescreen。
-    # P7：guided/markerlight_observer = 攻方阵营 DSL 开关（FTGG），bool 直通；
-    # 前端契约与「已生效开关回显」按 spec §八 归 PR3，本期先保证后端不静默吞。
+    # P7：guided/markerlight_observer/detachment_rounds = 攻方阵营 DSL 开关，bool 直通
     for key in ("charge", "half_range", "cover", "stationary", "long_range",
-                "indirect", "stealth", "reverse", "guided", "markerlight_observer"):
+                "indirect", "stealth", "reverse", "guided", "markerlight_observer",
+                "detachment_rounds"):
         if key in raw:
             out[key] = _as_bool(raw[key])
+    # P7-PR3：分队名（str）+ 战略点名（list[str]，条数/长度设上限防滥用）——
+    # 匹配失败在核心层显式披露（select_entries），边界只收敛类型不猜语义
+    det = raw.get("detachment")
+    if isinstance(det, str) and det.strip():
+        out["detachment"] = det.strip()[:80]
+    strats = raw.get("stratagems")
+    if isinstance(strats, list):
+        toks = [s.strip()[:80] for s in strats if isinstance(s, str) and s.strip()]
+        if toks:
+            out["stratagems"] = toks[:16]
     for key in ("attacker_models", "defender_models", "damage_reduction", "seed"):
         v = _as_pos_int(raw.get(key))
         if v is not None:
@@ -160,5 +176,13 @@ def run_simulation(
             detachments=fo.get("detachments") or []) if fo else None,
         weapon_pool=res.get("weapon_pool"),
         model_tiers=res.get("model_tiers"),
+        dsl_available=[
+            SimDslEntry(
+                table=e.get("table", ""), id=e.get("id", ""),
+                name_en=e.get("name_en", ""), name_zh=e.get("name_zh"),
+                status=e.get("status", ""), detachment=e.get("detachment"),
+                requires_toggles=e.get("requires_toggles") or [])
+            for e in (res.get("dsl_available") or [])
+        ],
         errors=res.get("errors") or [],
     )
