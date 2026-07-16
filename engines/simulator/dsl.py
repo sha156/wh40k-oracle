@@ -55,6 +55,10 @@ class DslEntry:
     status: str                      # encoded|partial|not_modeled
     effects: Tuple = ()              # tuple[Effect]
     requires_toggles: Tuple = ()     # 生效所需的手动态势开关名（Stance 字段名）
+    conflicts_with_toggles: Tuple = ()  # 与之互斥的开关名——开着任一则拒注入并显式披露
+                                        # （审查 PR3-H1：CTE 的攻方=Observer，规则原文
+                                        # Observer 排除在 Guided 外，与 guided 双开会
+                                        # 规则外双重叠加 BS 改善）
     not_modeled_notes_zh: Tuple = ()
     provenance: Dict = None
     encoded_by: str = ""
@@ -101,9 +105,10 @@ def _parse_dice(raw, entry_name: str, key) -> DiceExpr:
         for label, v in (("n", n), ("faces", faces), ("k", k)):
             if isinstance(v, bool) or not isinstance(v, int):
                 raise DslError(f"{entry_name}：{key} 的 DiceExpr.{label} 必须是整数，收到 {v!r}")
-        if n < 0 or faces < 0 or (n > 0 and faces < 2):
+        if n < 0 or faces < 0 or (n > 0 and faces < 2) or (n == 0 and faces != 0):
             raise DslError(f"{entry_name}：{key} 的 DiceExpr 不合法（n={n}, faces={faces}——"
-                           f"有骰必须 faces≥2；常量写 n=0,faces=0 或直接写 int）")
+                           f"有骰必须 faces≥2；常量必须 n=0 且 faces=0（或直接写 int），"
+                           f"非规范形状按录入笔误拒载）")
         return DiceExpr(n=n, faces=faces, k=k)
     raise DslError(f"{entry_name}：{key} 的 DiceExpr 参数须为非负 int 或 "
                    f'{{"n","faces","k"}} 对象，收到 {type(raw).__name__}')
@@ -194,12 +199,18 @@ def parse_entry(raw: dict) -> DslEntry:
     if effects and not prov.get("text_sha256"):
         raise DslError(f"{name}：带 effects 必须有 provenance.text_sha256"
                        f"（原文指纹对账，评审 F12）")
+    conflicts = tuple(raw.get("conflicts_with_toggles") or ())
+    overlap = set(conflicts) & set(raw.get("requires_toggles") or ())
+    if overlap:
+        raise DslError(f"{name}：开关 {sorted(overlap)} 同时出现在 requires 与 conflicts"
+                       f"——条目永远无法生效，必是录入笔误")
     return DslEntry(
         table=raw["table"], row_id=raw["id"], side=side,
         faction=raw["faction"], detachment=raw.get("detachment"),
         name_en=raw.get("name_en") or "", name_zh=raw.get("name_zh"),
         status=status, effects=effects,
         requires_toggles=tuple(raw.get("requires_toggles") or ()),
+        conflicts_with_toggles=conflicts,
         not_modeled_notes_zh=notes, provenance=prov,
         encoded_by=raw.get("encoded_by") or "")
 
@@ -329,6 +340,14 @@ def inject_attacker(
         if missing:
             not_modeled.append(
                 f"DSL {entry.name_en} 未启用（需开关 {'/'.join(missing)}），本次未施加")
+            continue
+        conflict = [t for t in entry.conflicts_with_toggles if t in toggles]
+        if conflict:
+            # 审查 PR3-H1：互斥开关同开 → 硬性拒注入并显眼披露（不许规则外叠加），
+            # 不做"保留最高值"的静默修正——用户必须自己关掉其一
+            not_modeled.append(
+                f"⚠ DSL {entry.name_zh or entry.name_en} 与开关 {'/'.join(conflict)} 互斥"
+                f"（规则原文两种状态不能共存），本次未施加——关闭其一后重跑")
             continue
         new_loadout = [replace(w, effects=w.effects + entry.effects)
                        for w in new_loadout]

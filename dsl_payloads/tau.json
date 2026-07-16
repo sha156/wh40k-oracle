@@ -165,9 +165,10 @@
      "source": "Coordinate to Engage（观察员带 Markerlight 关键词：追加 [IGNORES COVER]）"}
    ],
    "requires_toggles": [],
+   "conflicts_with_toggles": ["guided"],
    "not_modeled_notes_zh": [
     "本战略的攻方=观察员单位自身，目标须为其标记的 Spotted 单位——按已满足假设",
-    "与「受引导」开关互斥：观察员≠受引导单位，同开 guided 会错误双重叠加 BS 改善，请勿同开",
+    "与「受引导」开关硬性互斥（FTGG 原文 excluding Observer units——观察员不为 Guided）：同开时本战略拒注入并显式披露（审查 PR3-H1）",
     "[IGNORES COVER] 条款须开「观察员带标记光」开关（条件 tag 自含，不要求 guided）",
     "CP 消耗与使用次数限制不结算，仅假设本阶段已用（spec D3）"
    ],

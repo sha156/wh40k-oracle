@@ -306,6 +306,48 @@ class TestStratagemEffects:
         raw3 = run_sequence(atk, _target(), st_ml, n=N, seed=7)
         assert raw3.hits.mean() / raw3.attacks.mean() == pytest.approx(4 / 6, abs=0.02)
 
+    def test_cte_conflicts_with_guided(self, entries):
+        # 审查 PR3-H1：FTGG 原文 "excluding Observer units"——观察员不为 Guided，
+        # CTE（攻方=观察员）与 guided 开关互斥。同开 → CTE 拒注入 + 显眼披露，
+        # 期望值 = 仅 FTGG guided 的 4/6（若错误叠加会到 5/6≈0.833）
+        ftgg = next(e for e in entries if e.row_id == "000008439")
+        cte = next(e for e in entries if e.row_id == "000008443004")
+        atk, modeled, notes = inject_attacker(
+            _attacker(_weapon()), [ftgg, cte], frozenset({"guided"}))
+        assert any("互斥" in x for x in notes)
+        assert not any("联携攻击" in x for x in modeled)
+        st = Stance(phase="shooting", guided=True)
+        raw = run_sequence(atk, _target(), st, n=N, seed=7)
+        assert raw.hits.mean() / raw.attacks.mean() == pytest.approx(4 / 6, abs=0.02)
+
+    def test_conflict_requires_overlap_rejected(self):
+        # requires 与 conflicts 同名开关 = 条目永远无法生效 → 录入期拒载
+        from engines.simulator.dsl import DslError, parse_entry
+        raw = {
+            "dsl_version": 1, "table": "abilities", "id": "x1", "side": "attacker",
+            "faction": "TAU", "name_en": "X", "status": "partial",
+            "effects": [{"phase": "hit", "op": "bs_improve", "params": [1],
+                         "condition": ["phase_shooting"], "source": "x"}],
+            "requires_toggles": ["guided"], "conflicts_with_toggles": ["guided"],
+            "not_modeled_notes_zh": ["n"], "provenance": {"text_sha256": "ab" * 32},
+        }
+        with pytest.raises(DslError, match="互斥|conflicts|录入笔误"):
+            parse_entry(raw)
+
+    def test_dice_constant_must_be_canonical(self):
+        # 审查 PR3-LOW：n=0 时 faces 必须为 0（非规范形状按录入笔误拒载）
+        from engines.simulator.dsl import DslError, parse_entry
+        raw = {
+            "dsl_version": 1, "table": "abilities", "id": "x2", "side": "attacker",
+            "faction": "TAU", "name_en": "X", "status": "partial",
+            "effects": [{"phase": "hit", "op": "extra_hits",
+                         "params": [{"n": 0, "faces": 5, "k": 3}],
+                         "condition": [], "source": "x"}],
+            "not_modeled_notes_zh": ["n"], "provenance": {"text_sha256": "ab" * 32},
+        }
+        with pytest.raises(DslError, match="DiceExpr 不合法"):
+            parse_entry(raw)
+
     def test_pinpoint_counter_offensive(self, entries):
         # 命中重骰失败：0.5 → 0.75（近战同样生效——条件为空）
         atk, _, _ = _inject(entries, "000008812002", set())
