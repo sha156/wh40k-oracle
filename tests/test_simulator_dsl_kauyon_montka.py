@@ -200,22 +200,26 @@ class TestSelectEntries:
 
 class TestPayloadReconciliation:
     def test_counts(self, entries):
-        # 军规 1 + 分队规则 2 + 战略 12 = 15；三态：partial 9 / not_modeled 6 / encoded 0
-        assert len(entries) == 15
+        # PR4 全量落账：abilities 11（军规1+分队规则物化10）+ 战略 39 + 增强 27 = 77；
+        # 三态：partial 35 / not_modeled 42 / encoded 0（全部带 CP/单位限定类假设注记）
+        assert len(entries) == 77
         by = {}
         for e in entries:
             by[e.status] = by.get(e.status, 0) + 1
-        assert by == {"partial": 9, "not_modeled": 6}
+        assert by == {"partial": 35, "not_modeled": 42}
 
     def test_kauyon_montka_stratagems_all_present(self, entries):
         ids = {e.row_id for e in entries if e.table == "stratagems"}
-        assert ids == {f"00000844300{i}" for i in range(2, 8)} | {
+        assert ids >= {f"00000844300{i}" for i in range(2, 8)} | {
             f"00000881200{i}" for i in range(2, 8)}
 
-    def test_counterfire_is_target_side_not_modeled(self, entries):
+    def test_counterfire_is_target_side_partial_since_pr4(self, entries):
+        # PR3 期它是 not_modeled（inject_target 未接线）；PR4 接线后升级 partial
         cf = next(e for e in entries if e.row_id == "000008812007")
-        assert cf.side == "target" and cf.status == "not_modeled" and not cf.effects
-        assert any("inject_target" in n for n in cf.not_modeled_notes_zh)
+        assert cf.side == "target" and cf.status == "partial"
+        (e,) = cf.effects
+        assert (e.phase, e.op) == ("damage", "damage_reduction")
+        assert e.condition == ("phase_shooting",)
 
 
 # ── 真源 payload 引擎级差分（每条带效果条目期望值必须动，评审 F7）─────────────

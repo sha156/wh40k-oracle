@@ -198,8 +198,8 @@ def _parse_effect(raw: dict, side: str, entry_name: str) -> Effect:
                 raise DslError(
                     f"{entry_name}：condition {condition!r} 疑似合取列表"
                     f"（第二元素 {extra!r} 也是已知 tag）——引擎只读 condition[0]，拒载")
-        if tag == "target_models_in_range":
-            # P7-PR4 带参 tag 的形状校验：录入期就拦（引擎侧 len 检查会静默 False）
+        if tag in ("target_models_in_range", "shooting_target_models_in_range"):
+            # P7-PR4 带参 tag 的形状校验：录入期就拦（引擎侧 len 检查是 raise 兜底）
             args = condition[1:]
             if (len(args) != 2 or any(isinstance(a, bool) or not isinstance(a, int)
                                       for a in args) or args[0] > args[1]):

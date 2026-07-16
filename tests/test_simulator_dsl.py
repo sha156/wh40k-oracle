@@ -107,7 +107,8 @@ class TestCondTrueHardening:
     def test_all_registered_tags_evaluate(self):
         # 注册表与 _cond_true 分支不漂移：集合内逐 tag 求值不 raise
         _ARGS = {"target_has_keyword": ("X",),
-                 "target_models_in_range": (1, 5)}   # 带参 tag 用合法参数形状
+                 "target_models_in_range": (1, 5),   # 带参 tag 用合法参数形状
+                 "shooting_target_models_in_range": (1, 5)}
         for tag in KNOWN_CONDITION_TAGS:
             cond = (tag,) + _ARGS.get(tag, ())
             assert _cond_true(cond, Stance(), _target()) in (True, False)
@@ -196,9 +197,9 @@ class TestPayloadValidation:
         assert entry.side == "target" and len(entry.effects) == 1
 
     def test_target_side_op_not_in_whitelist_rejected(self):
-        # 守方侧消费点白名单仍然生效：攻方专属 op 出现在 target 侧 → 拒载
+        # 守方侧消费点白名单仍然生效：攻方专属 op（wound+s_improve）出现在 target 侧 → 拒载
         raw = _raw_entry(side="target",
-                         effects=[{"phase": "hit", "op": "bs_improve", "params": [1],
+                         effects=[{"phase": "wound", "op": "s_improve", "params": [1],
                                    "condition": [], "source": "x"}])
         with pytest.raises(DslError, match="白名单"):
             parse_entry(raw)

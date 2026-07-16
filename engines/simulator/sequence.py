@@ -92,6 +92,7 @@ KNOWN_CONDITION_TAGS = frozenset({
     "ranged_within_12", "ranged_within_8",          # P7-PR4：绝对射程档假设（自含射击阶段）
     "target_below_starting", "target_below_half",   # P7-PR4：目标战损状态假设
     "target_models_in_range",                       # P7-PR4：(tag, lo, hi) 按目标模型数分档
+    "shooting_target_models_in_range",              # P7-PR4：复合 tag=射击阶段 × 目标规模
 })
 
 
@@ -144,6 +145,12 @@ def _cond_true(condition: Tuple, stance: Stance, target: TargetProfile) -> bool:
             raise ValueError(
                 f"target_models_in_range 需要 (tag, lo, hi)，收到 {condition!r}")
         return int(condition[1]) <= int(target.models) <= int(condition[2])
+    if tag == "shooting_target_models_in_range":  # P7-PR4 复合 tag（评审 F2：单 tag 契约，
+        if len(condition) != 3:                   # 复合语义注册复合 tag）——Arro'kon 等
+            raise ValueError(                     # "射击阶段战略 × 目标规模分档"用
+                f"shooting_target_models_in_range 需要 (tag, lo, hi)，收到 {condition!r}")
+        return (stance.phase == "shooting"
+                and int(condition[1]) <= int(target.models) <= int(condition[2]))
     # P7 加固（评审 F2）：未知 tag 静默返回 False = 效果静默失效（攻方侧零披露），
     # 是 CLAUDE.md 明令的静默降级缝——改为 raise，让 DSL 录入笔误在测试期就炸出来。
     raise ValueError(f"未知 Effect condition tag: {tag!r}（来源条件 {condition!r}）")
@@ -270,6 +277,15 @@ def _gather_params(w: WeaponProfile, stance: Stance, target: TargetProfile) -> _
                 hit_neg += v
         elif e.phase == "save" and e.op == "cover":
             p.cover = True
+        elif e.phase == "hit" and e.op == "bs_improve":
+            # P7-PR4 守方 DSL：WS/BS 特征值修正（EMP Grenades "worsen the ... Ballistic
+            # Skill characteristics by 1" → 参数 -1）。与掩体折算同通道：特征值层净算，
+            # 不吃 ±1 骰修正夹取；[PSYCHIC] 按有利方向可无视其恶化分量
+            v = int(e.params[0])
+            if v >= 0:
+                bs_pos += v
+            else:
+                bs_neg += v
         elif e.phase == "save" and e.op == "invuln":
             # P7-PR4 守方 DSL：授予无效保护（Skirmish Fighters 远程 5+/近战 6+ 等）。
             # 多来源取更优（阈值更小）；与 profile 自带 invuln 的合并在 _resolve_weapon
@@ -422,6 +438,7 @@ TARGET_CONSUMED = frozenset({
     ("fnp", "fnp"), ("damage", "damage_reduction"),
     ("hit", "modify"), ("save", "cover"),
     ("save", "invuln"), ("save", "sv_improve"),     # P7-PR4：inject_target 防守向通道
+    ("hit", "bs_improve"),                          # P7-PR4：守方 BS/WS 特征值修正（EMP）
 })
 
 
@@ -454,7 +471,7 @@ def unconsumed_attacker_effect_notes(attacker) -> List[str]:
 def _target_effect_consumed(e) -> bool:
     if e.op in ("fnp", "damage_reduction"):
         return True
-    if e.phase == "hit" and e.op == "modify":
+    if e.phase == "hit" and e.op in ("modify", "bs_improve"):
         return True
     return e.phase == "save" and e.op in ("cover", "invuln", "sv_improve")
 
