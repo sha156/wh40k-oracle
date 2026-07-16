@@ -112,9 +112,12 @@ CREATE TABLE IF NOT EXISTS stratagems (
     phase TEXT,
     text_zh TEXT,
     effect_dsl_json TEXT,
-    dsl_status TEXT DEFAULT 'not_modeled'
+    dsl_status TEXT DEFAULT 'not_modeled',
+    fp_status TEXT
 );
 """
+# fp_status：NULL=现行；'removed_11e'=经 FP 完整重印裁定 11 版已删除（fp_rules
+# deactivations 层写入，2026-07-16 裁 A）。原文保留可回滚；消费/对账应排除该标记行。
 
 # 待 Detachment_abilities.csv，当前无源数据，仅建表
 DETACHMENTS_DDL = """

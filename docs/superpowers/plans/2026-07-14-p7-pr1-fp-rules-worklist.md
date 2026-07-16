@@ -203,6 +203,15 @@ Analyser 互斥的 RESTRICTIONS 段随 11 版文本删除（TAA 本身在 FP 重
 
 ## review_needed 9 条（人工裁定项）
 
+> **✅ 已裁定（2026-07-16，用户裁 A：重印即整体替换）**：9 条均视为 11 版已删除，
+> `fp_rules_patches.json` 新增 `deactivations` 段置 `stratagems.fp_status='removed_11e'`
+> （原文保留可回滚，name_en 守卫防 id 复用）。裁定前补充核证：重拉 Wahapedia 现网
+> Stratagems.csv——9 条虽仍在现网，但同批 drifted 条文本仍是十版旧措辞、GUIDED BY UNITY
+> 与 Advanced Acquisition Cadre 均缺席，证明 Wahapedia 尚未消化 FP p3/p4，"现网仍在"
+> 不构成反证；FP 原文重印语义 + Experimental Ammunition 删互斥 RESTRICTIONS 侧证成立。
+> 将来 Wahapedia 滚更这两页时 text_patches 三态守卫会自动让路告警，届时复核本裁定。
+> P7 DSL 对账枚举与消费者应排除 fp_status='removed_11e' 行。
+
 **共同背景**：FP 对 Auxiliary Cadre（p3）和 Experimental Prototype Cadre（p4）采用**完整重印体裁**——
 整页给出 DETACHMENT RULES + ENHANCEMENTS + 全部战略，与 datasheet 侧 "This datasheet replaces the …
 datasheet found in Codex" 的替换语义一致（page_010 明文）。已对 PDF 原文逐页核实，refine 缓存无内容丢失：

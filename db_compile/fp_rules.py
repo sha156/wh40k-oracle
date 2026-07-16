@@ -37,6 +37,9 @@ _TEXT_TARGETS = {
 }
 # 允许补 name_zh 的表白名单
 _NAME_TABLES = {"detachments", "stratagems", "abilities"}
+# 允许打失效标记的表白名单（deactivations：FP 完整重印裁定 11 版已删除的行）
+_DEACTIVATE_TABLES = {"stratagems"}
+_DEACTIVATE_STATUSES = {"removed_11e"}
 
 _TAG_RE = re.compile(r"<[^>]+>")
 
@@ -120,18 +123,59 @@ def _apply_name_patches(conn, patches: List[dict], report: Dict) -> None:
             {**_slim(p), "name_zh": name_zh, "zh_source": p.get("zh_source")})
 
 
+def _ensure_fp_status_column(conn, table: str) -> None:
+    """旧库（建表早于 fp_status 入 DDL）补列；新库 DDL 自带，幂等。"""
+    cols = {r[1] for r in conn.execute(f"PRAGMA table_info({table})")}
+    if "fp_status" not in cols:
+        conn.execute(f"ALTER TABLE {table} ADD COLUMN fp_status TEXT")
+
+
+def _apply_deactivations(conn, patches: List[dict], report: Dict) -> None:
+    """失效标记（2026-07-16 裁定：FP 完整重印即整体替换，未收录的旧条目 11 版已删除）。
+
+    守卫：①表/状态值白名单外拒绝；②行不存在跳过；③name_en 不匹配让路告警
+    （防 id 被上游复用指到别的条目）；④已是目标状态幂等。原文不动，只置标记。
+    """
+    for p in patches:
+        table, pid, status = p.get("table"), p.get("id"), p.get("status")
+        if table not in _DEACTIVATE_TABLES or not pid or status not in _DEACTIVATE_STATUSES:
+            report["deact_invalid"].append(_slim(p))
+            continue
+        _ensure_fp_status_column(conn, table)
+        row = conn.execute(
+            f"SELECT name_en, fp_status FROM {table} WHERE id = ?", (pid,)).fetchone()
+        if row is None:
+            report["deact_skipped"].append({**_slim(p), "reason": "行不存在"})
+            continue
+        db_name, cur_status = row
+        if _norm_text(db_name) != _norm_text(p.get("name_en")):
+            report["deact_mismatch"].append({**_slim(p), "db_name": db_name})
+            continue
+        if cur_status == status:
+            report["deact_already"] += 1
+            continue
+        conn.execute(
+            f"UPDATE {table} SET fp_status = ? WHERE id = ?", (status, pid))
+        report["deact_applied"] += 1
+        report["deact_changes"].append(
+            {**_slim(p), "status": status, "fp_source": p.get("fp_source")})
+
+
 def apply_fp_rules(db_path, patches: dict) -> Dict:
-    """应用 fp_rules 文本/中文名补丁到库，返回结构化报告（含逐条改动与告警）。"""
+    """应用 fp_rules 文本/中文名/失效标记补丁到库，返回结构化报告（含逐条改动与告警）。"""
     report = {
         "text_applied": 0, "text_already": 0,
         "text_changes": [], "text_mismatch": [], "text_skipped": [], "text_invalid": [],
         "name_applied": 0, "name_already": 0,
         "name_changes": [], "name_mismatch": [], "name_skipped": [], "name_invalid": [],
+        "deact_applied": 0, "deact_already": 0,
+        "deact_changes": [], "deact_mismatch": [], "deact_skipped": [], "deact_invalid": [],
     }
     conn = sqlite3.connect(str(db_path))
     try:
         _apply_text_patches(conn, patches.get("text_patches", []), report)
         _apply_name_patches(conn, patches.get("name_patches", []), report)
+        _apply_deactivations(conn, patches.get("deactivations", []), report)
         conn.commit()
     finally:
         conn.close()

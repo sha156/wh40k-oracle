@@ -239,6 +239,17 @@ def main() -> None:
               f"无效 {len(rep['text_invalid'])}")
         print(f"  中文名：应用 {rep['name_applied']} / 幂等 {rep['name_already']} / "
               f"让路 {len(rep['name_mismatch'])} / 跳过 {len(rep['name_skipped'])}")
+        print(f"  失效标记：应用 {rep['deact_applied']} / 幂等 {rep['deact_already']} / "
+              f"让路 {len(rep['deact_mismatch'])} / 跳过 {len(rep['deact_skipped'])} / "
+              f"无效 {len(rep['deact_invalid'])}")
+        if rep["deact_changes"]:
+            print("\n  已标记 11 版删除（fp_status=removed_11e，原文保留）：")
+            for ch in rep["deact_changes"]:
+                print(f"    {ch['table']:12} {str(ch['name'])[:40]:40} ← {ch.get('fp_source')}")
+        if rep["deact_mismatch"]:
+            print("\n  ⚠️ 失效标记让路（id 对应行 name_en 不符，疑上游复用 id）：")
+            for ch in rep["deact_mismatch"]:
+                print(f"    {ch['table']:12} {str(ch['name'])[:40]:40} 库内名 {ch.get('db_name')!r}")
         if rep["text_changes"]:
             print("\n  文本已改动：")
             for ch in rep["text_changes"]:
