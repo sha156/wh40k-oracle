@@ -52,6 +52,8 @@ export interface SimOptions {
   vow_accept_any_challenge?: boolean; // 誓言·接受一切挑战：近战 S≤T 时致伤+1
   omen_instrument?: boolean; // 圣兆·神皇之器：近战接战 CHARACTER 时 [毁灭伤害]
   omen_momentous_brutality?: boolean; // 圣兆·凶暴神视：近战 A+2
+  // ── P7-PR7 帝皇之子 ──
+  advanced_or_fell_back?: boolean; // 假设本回合已加速/撤退（狂乱专注 +1 S 等）
   // ── P7-PR4 守方阵营 DSL（防守向条目经 inject_target 注入）──
   defender_detachment?: string; // 守方分队名
   defender_stratagems?: string[]; // 守方防守向战略点名（Stimm Injectors 等）

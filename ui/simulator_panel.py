@@ -117,6 +117,7 @@ def _options_from_inputs(st) -> Dict[str, Any]:
         "vow_accept_any_challenge": st.session_state.get("sim_vow_aac", False),
         "omen_instrument": st.session_state.get("sim_omen_instr", False),
         "omen_momentous_brutality": st.session_state.get("sim_omen_brutality", False),
+        "advanced_or_fell_back": st.session_state.get("sim_adv_fb", False),
         # P7-PR4 守方向
         "defender_hidden": st.session_state.get("sim_def_hidden", False),
         "defender_bearer_leading": st.session_state.get("sim_def_bearer", False),
@@ -268,6 +269,8 @@ def render_simulator_panel(st) -> None:
                                        " [毁灭伤害]（once per battle 假设本次已使用）")
             cols_dsl8[1].checkbox("圣兆·凶暴神视", key="sim_omen_brutality",
                                   help="指引圣兆：近战 A+2")
+            cols_dsl8[2].checkbox("本回合已加速/撤退", key="sim_adv_fb",
+                                  help="EC 狂乱专注（+1 S）等「加速/撤退回合」条款的生效前提")
             cols_dsl5 = st.columns(3)
             cols_dsl5[0].text_input("守方分队", key="sim_def_detachment",
                                     help="放行守方分队的防守向条目"

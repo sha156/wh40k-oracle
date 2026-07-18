@@ -178,6 +178,9 @@ def main(argv: Optional[List[str]] = None) -> int:
     p.add_argument("--omen-momentous-brutality", action="store_true",
                    dest="omen_momentous_brutality",
                    help="指引圣兆·凶暴神视已选定（近战 A+2）")
+    p.add_argument("--advanced-or-fell-back", action="store_true",
+                   dest="advanced_or_fell_back",
+                   help="假设本回合已加速或撤退（EC 狂乱专注 +1 S 等条款的生效前提）")
     p.add_argument("--defender-detachment", dest="defender_detachment",
                    help="守方所属分队名：放行守方分队的防守向 DSL 条目（P7-PR4）")
     p.add_argument("--defender-stratagem", action="append", dest="defender_stratagems",
@@ -259,6 +262,7 @@ def main(argv: Optional[List[str]] = None) -> int:
         "vow_accept_any_challenge": args.vow_accept_any_challenge,
         "omen_instrument": args.omen_instrument,
         "omen_momentous_brutality": args.omen_momentous_brutality,
+        "advanced_or_fell_back": args.advanced_or_fell_back,
         "defender_detachment": args.defender_detachment,
         "defender_stratagems": args.defender_stratagems,
         "defender_enhancements": args.defender_enhancements,
