@@ -128,6 +128,12 @@ class Stance:
                                          # 命中档；引擎不追踪目标战损状态）
     target_below_half: bool = False  # P7-PR4：假设目标已低于半编（Hunter's Instincts
                                      # 致伤档；蕴含 below_starting，选项归一层自动补开）
+    blessing_martial_excellence: bool = False  # P7-PR5·恐虐赐福「卓越武艺」：近战 [SUSTAINED
+                                               # HITS 1]——开=假设本大回合已激活该赐福
+    blessing_warp_blades: bool = False         # P7-PR5·恐虐赐福「次元邪刃」：近战 [LETHAL HITS]
+    blessing_decapitating_strikes: bool = False  # P7-PR5·恐虐赐福「斩首一击」：近战对步兵
+                                                 # [DEVASTATING WOUNDS]（军规限至多两项同开，
+                                                 # toggle_groups 硬拦，dsl.py）
 
 
 @dataclass(frozen=True)

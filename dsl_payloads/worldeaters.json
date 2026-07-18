@@ -1,0 +1,2379 @@
+{
+ "_comment": "P7 阵营技能 DSL 唯一真源（吞世者，P7-PR5）。DB effect_dsl_json/dsl_status 只是投影，由 `python -m db_compile dsl-apply` 写入并挂 restore。判据与格式沿 spec 2026-07-14 + PR3/PR4 约定；A/B 工作单见 docs/superpowers/plans/2026-07-18-p7-pr5-we-worklist.md。恐虐赐福三项可建模赐福走 Stance 开关 + toggle_groups「至多两项」硬拦；removed_11e 行（怒火容器重印未收录 6 条）零覆盖。",
+ "dsl_version": 1,
+ "faction": "WE",
+ "entries": [
+  {
+   "table": "abilities",
+   "id": "000008428",
+   "side": "attacker",
+   "detachment": null,
+   "name_en": "Blessings of Khorne",
+   "name_zh": "恐虐赐福",
+   "status": "partial",
+   "effects": [
+    {
+     "phase": "hit",
+     "op": "extra_hits",
+     "params": [
+      1
+     ],
+     "condition": [
+      "blessing_martial_excellence"
+     ],
+     "source": "恐虐赐福·卓越武艺（近战武器 [SUSTAINED HITS 1]）"
+    },
+    {
+     "phase": "hit",
+     "op": "auto_wound",
+     "params": [],
+     "condition": [
+      "blessing_warp_blades"
+     ],
+     "source": "恐虐赐福·次元邪刃（近战武器 [LETHAL HITS]）"
+    },
+    {
+     "phase": "wound",
+     "op": "mortal_pool",
+     "params": [],
+     "condition": [
+      "blessing_decapitating_strikes_vs_infantry"
+     ],
+     "source": "恐虐赐福·斩首一击（近战对步兵 [DEVASTATING WOUNDS]）"
+    }
+   ],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "赐福骰（8D6 组双/三条件）激活概率不建模：开关=假设该赐福本大回合已激活",
+    "军规「至多激活两项」由 toggle_groups 硬拦（三项全开时整条拒施加并披露）；Butchers of Khorne 分队规则可为终结者额外+1项，该例外无法在开关层表达",
+    "嗜血癫狂（冲锋重投→11e改+1冲锋）/燃怒活力（跟进重整6\"）/全面屠戮（4+死后反打）三项属移动/序列域未建模",
+    "斩首一击限步兵目标由复合条件 tag 自动判定（非步兵目标零影响）"
+   ],
+   "provenance": {
+    "current_text": "db abilities.text_zh id=000008428",
+    "base_text": "FP World Eaters（PR5 fp_rules 已刷新为 11 版现行文本，工作单 drifted）",
+    "synthesis": "无需合成",
+    "text_sha256": "c6ecadf644bbf6151021531afff5f36a4adbd00ad2f684e88f8a02547a1f708e"
+   },
+   "encoded_by": "manual-2026-07-18",
+   "toggle_groups": [
+    {
+     "toggles": [
+      "blessing_martial_excellence",
+      "blessing_warp_blades",
+      "blessing_decapitating_strikes"
+     ],
+     "max": 2,
+     "label_zh": "恐虐赐福"
+    }
+   ]
+  },
+  {
+   "table": "abilities",
+   "id": "det000008430",
+   "side": "attacker",
+   "detachment": "Berzerker Warband",
+   "name_en": "Relentless Rage",
+   "name_zh": "无情狂怒",
+   "status": "partial",
+   "effects": [
+    {
+     "phase": "attacks",
+     "op": "modify",
+     "params": [
+      1
+     ],
+     "condition": [
+      "melee_charging"
+     ],
+     "source": "Relentless Rage（冲锋回合近战武器 A+1）"
+    },
+    {
+     "phase": "wound",
+     "op": "s_improve",
+     "params": [
+      2
+     ],
+     "condition": [
+      "melee_charging"
+     ],
+     "source": "Relentless Rage（冲锋回合近战武器 S+2，特征值通道）"
+    }
+   ],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "冲锋态用态势面板「本回合冲锋」开关；melee_charging 复合 tag 防射击阶段误放行",
+    "S+2 走特征值通道（改 S vs T 查表本身，不折算致伤骰修正）"
+   ],
+   "provenance": {
+    "current_text": "db detachments.rule_text id=000008430",
+    "base_text": "Wahapedia 现文（PR5 工作单：FP 未触及，11 版仍现行）",
+    "synthesis": "DSL 投影经 materialize 落 abilities 新行（spec D5）",
+    "text_sha256": "b951db84ce5521a40ba11f480af0a4df547fabd1ff3bb452c2ad6f423c666c4d"
+   },
+   "encoded_by": "manual-2026-07-18",
+   "materialize": {
+    "from_table": "detachments",
+    "from_id": "000008430",
+    "from_column": "rule_text"
+   }
+  },
+  {
+   "table": "abilities",
+   "id": "det000009707",
+   "side": "attacker",
+   "detachment": "Boarding Butchers",
+   "name_en": "Focused Ferocity",
+   "name_zh": "凶性专注",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "宣布冲锋迫使目标 Battle-shock 测试——士气域未建模"
+   ],
+   "provenance": {
+    "current_text": "db detachments.rule_text id=000009707",
+    "base_text": "Wahapedia 现文（PR5 工作单：FP 未触及，11 版仍现行）",
+    "synthesis": "DSL 投影经 materialize 落 abilities 新行（spec D5）",
+    "text_sha256": "a36222f7b961e2bb4fb8bf13ed538ab77c825a6a9bf9bb6553f4dca1053d7edc"
+   },
+   "encoded_by": "manual-2026-07-18",
+   "materialize": {
+    "from_table": "detachments",
+    "from_id": "000009707",
+    "from_column": "rule_text"
+   }
+  },
+  {
+   "table": "abilities",
+   "id": "det000009715",
+   "side": "attacker",
+   "detachment": "Skullsworn",
+   "name_en": "Reap the Tally",
+   "name_zh": "收割战绩",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "近战被毁 5+ 死后反打——单向攻击序列无死后反打通道（串行反打近似亦不含）"
+   ],
+   "provenance": {
+    "current_text": "db detachments.rule_text id=000009715",
+    "base_text": "Wahapedia 现文（PR5 工作单：FP 未触及，11 版仍现行）",
+    "synthesis": "DSL 投影经 materialize 落 abilities 新行（spec D5）",
+    "text_sha256": "9f026dd27c3580766ab7d4428ce63d03eab991d3d82cd1cb060c2cb8dda3b0f7"
+   },
+   "encoded_by": "manual-2026-07-18",
+   "materialize": {
+    "from_table": "detachments",
+    "from_id": "000009715",
+    "from_column": "rule_text"
+   }
+  },
+  {
+   "table": "abilities",
+   "id": "det000009846",
+   "side": "attacker",
+   "detachment": "Vessels of Wrath",
+   "name_en": "Wrath of Khorne",
+   "name_zh": "恐虐之怒",
+   "status": "partial",
+   "effects": [
+    {
+     "phase": "save",
+     "op": "ap_improve",
+     "params": [
+      1
+     ],
+     "condition": [
+      "phase_melee"
+     ],
+     "source": "Wrath of Khorne（人物近战攻击 +1 AP 分支）"
+    }
+   ],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "二选一按 +1 AP 分支建模；[CLEAVE 1] 分支未编（cleave=每5目标模型+1A，对小规模目标 +1 AP 通常更优，按最优常态取 AP）",
+    "限 CHARACTER 模型的近战攻击——带保镖的附属单位整体注入会高估，建议单人物模拟",
+    "非史诗英雄限定按符合假设"
+   ],
+   "provenance": {
+    "current_text": "db detachments.rule_text id=000009846",
+    "base_text": "FP World Eaters（PR5 fp_rules 已刷新为 11 版现行文本，工作单 drifted）",
+    "synthesis": "DSL 投影经 materialize 落 abilities 新行（spec D5）",
+    "text_sha256": "a2338981ff0a2688d4e23d0aa40de948f199115c528687d0606bc3eb97a1d53d"
+   },
+   "encoded_by": "manual-2026-07-18",
+   "materialize": {
+    "from_table": "detachments",
+    "from_id": "000009846",
+    "from_column": "rule_text"
+   }
+  },
+  {
+   "table": "abilities",
+   "id": "det000010073",
+   "side": "attacker",
+   "detachment": "Cult of Blood",
+   "name_en": "Idols of Khorne",
+   "name_zh": "恐虐神像",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "光环类：受益需「本单位为 Jakhals/Goremongers 且在神像模型 6\"/9\" 内」双前提，引擎无距离与单位类型门控——错编会给全阵营单位错误加值",
+    "三神像每场各限一次的军队级资源选择不建模；如需近似 Idol of Infinite Rage（命中+1/致伤+1），请用守方/攻方手动修正开关"
+   ],
+   "provenance": {
+    "current_text": "db detachments.rule_text id=000010073",
+    "base_text": "Wahapedia 现文（PR5 工作单：FP 未触及，11 版仍现行）",
+    "synthesis": "DSL 投影经 materialize 落 abilities 新行（spec D5）",
+    "text_sha256": "ea2003f789aafd951b6c352b1ec089f3dccadcf05d69678a1b6083bb87b57583"
+   },
+   "encoded_by": "manual-2026-07-18",
+   "materialize": {
+    "from_table": "detachments",
+    "from_id": "000010073",
+    "from_column": "rule_text"
+   }
+  },
+  {
+   "table": "abilities",
+   "id": "det000010077",
+   "side": "attacker",
+   "detachment": "Khorne Daemonkin",
+   "name_en": "Blood Tithe",
+   "name_zh": "血税",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "BTP 资源经济（消灭单位 3+ 攒点、指挥阶段兑换）不建模；四项能力主要作用于鲜血军团（Blood Legions）盟军单位",
+    "Enraged Abjuration 的 FNP 5+ 仅对灵能/致命伤——引擎 FNP 通道对全部伤害生效，编入会高估防御（PR5 裁定不建 FNP-仅致命伤通道）"
+   ],
+   "provenance": {
+    "current_text": "db detachments.rule_text id=000010077",
+    "base_text": "Wahapedia 现文（PR5 工作单：FP 未触及，11 版仍现行）",
+    "synthesis": "DSL 投影经 materialize 落 abilities 新行（spec D5）",
+    "text_sha256": "02a76cd1b515baddc0513c0dacd8278fad8d359d2272d0a62f5298ac86180e3b"
+   },
+   "encoded_by": "manual-2026-07-18",
+   "materialize": {
+    "from_table": "detachments",
+    "from_id": "000010077",
+    "from_column": "rule_text"
+   }
+  },
+  {
+   "table": "abilities",
+   "id": "det000010081",
+   "side": "attacker",
+   "detachment": "Possessed Slaughterband",
+   "name_en": "Brazen Fury",
+   "name_zh": "黄铜之怒",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "被射击减员后 surge move（11e 改核心 surge 机制）——移动域未建模"
+   ],
+   "provenance": {
+    "current_text": "db detachments.rule_text id=000010081",
+    "base_text": "FP World Eaters（PR5 fp_rules 已刷新为 11 版现行文本，工作单 drifted）",
+    "synthesis": "DSL 投影经 materialize 落 abilities 新行（spec D5）",
+    "text_sha256": "93fc9d23588b13ee81d8bb3e57b0505ebfe45c03b153bcf04e273e0e94eafe7a"
+   },
+   "encoded_by": "manual-2026-07-18",
+   "materialize": {
+    "from_table": "detachments",
+    "from_id": "000010081",
+    "from_column": "rule_text"
+   }
+  },
+  {
+   "table": "abilities",
+   "id": "det000010085",
+   "side": "attacker",
+   "detachment": "Goretrack Onslaught",
+   "name_en": "Rush to the Fray",
+   "name_zh": "疾赴战场",
+   "status": "partial",
+   "effects": [
+    {
+     "phase": "wound",
+     "op": "modify",
+     "params": [
+      1
+     ],
+     "condition": [
+      "melee_charging"
+     ],
+     "source": "Rush to the Fray（下车回合近战武器 [lance]：冲锋致伤+1）"
+    }
+   ],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "前提=本回合从运输工具下车：引擎无运输建模，按「已下车且冲锋」假设（用态势面板 charge 开关）",
+    "+1 冲锋骰属移动域未建模"
+   ],
+   "provenance": {
+    "current_text": "db detachments.rule_text id=000010085",
+    "base_text": "Wahapedia 现文（PR5 工作单：FP 未触及，11 版仍现行）",
+    "synthesis": "DSL 投影经 materialize 落 abilities 新行（spec D5）",
+    "text_sha256": "025cbffc9f96079177ce7f2156798143321e4562c82a65edb6b5ee91f86c48dd"
+   },
+   "encoded_by": "manual-2026-07-18",
+   "materialize": {
+    "from_table": "detachments",
+    "from_id": "000010085",
+    "from_column": "rule_text"
+   }
+  },
+  {
+   "table": "abilities",
+   "id": "detfp11e-we-brazeng-det",
+   "side": "attacker",
+   "detachment": "Brazen Engines",
+   "name_en": "Rampaging Terrors",
+   "name_zh": "暴走恐魔",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "恶魔载具近战阶段迫使 battle-shock 骰（-1）——士气域未建模"
+   ],
+   "provenance": {
+    "current_text": "db detachments.rule_text id=fp11e-we-brazeng-det",
+    "base_text": "FP World Eaters（fp_new 补录行，PR5 inserts）",
+    "synthesis": "DSL 投影经 materialize 落 abilities 新行（spec D5）",
+    "text_sha256": "5d619530cdb2991c0d27c5c181518e77c603d60d98ad717671f43ef7a22b77ad"
+   },
+   "encoded_by": "manual-2026-07-18",
+   "materialize": {
+    "from_table": "detachments",
+    "from_id": "fp11e-we-brazeng-det",
+    "from_column": "rule_text"
+   }
+  },
+  {
+   "table": "abilities",
+   "id": "detfp11e-we-butchers-det",
+   "side": "attacker",
+   "detachment": "Butchers of Khorne",
+   "name_en": "Adamantine Avalanche",
+   "name_zh": "精金雪崩",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "效果=近战阶段为交战中的终结者小队额外激活一项赐福——请直接打开对应赐福开关近似",
+    "军规两项+本规则一项=终结者至多三项同时生效，但军规条目组约束按两项硬拦，开关层无法表达该例外（三项全开会被拒施加，请开两项主力赐福）"
+   ],
+   "provenance": {
+    "current_text": "db detachments.rule_text id=fp11e-we-butchers-det",
+    "base_text": "FP World Eaters（fp_new 补录行，PR5 inserts）",
+    "synthesis": "DSL 投影经 materialize 落 abilities 新行（spec D5）",
+    "text_sha256": "576ca57f93cba41cf8cacce6cbf04789610b8c12ccbce25f2d29000b42884659"
+   },
+   "encoded_by": "manual-2026-07-18",
+   "materialize": {
+    "from_table": "detachments",
+    "from_id": "fp11e-we-butchers-det",
+    "from_column": "rule_text"
+   }
+  },
+  {
+   "table": "stratagems",
+   "id": "000008431002",
+   "side": "attacker",
+   "detachment": "Berzerker Warband",
+   "name_en": "BLOOD OFFERING",
+   "name_zh": "鲜血供奉",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "单位被毁后保持目标点控制——目标点控制域未建模"
+   ],
+   "provenance": {
+    "current_text": "db stratagems.text_zh id=000008431002",
+    "base_text": "Wahapedia 现文（PR5 工作单：FP 未触及，11 版仍现行）",
+    "synthesis": "无需合成",
+    "text_sha256": "69f565c1c1fb18ac213b823a15f5dd3b28e172c37003e8d485f1dd43616b25c2"
+   },
+   "encoded_by": "manual-2026-07-18"
+  },
+  {
+   "table": "stratagems",
+   "id": "000008431003",
+   "side": "attacker",
+   "detachment": "Berzerker Warband",
+   "name_en": "HACK AND SLASH",
+   "name_zh": "斩尽杀绝",
+   "status": "partial",
+   "effects": [
+    {
+     "phase": "save",
+     "op": "ap_improve",
+     "params": [
+      1
+     ],
+     "condition": [
+      "melee_charging"
+     ],
+     "source": "Hack and Slash（冲锋回合近战武器 AP 改善 1）"
+    }
+   ],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "目标限定=本回合冲锋过的单位（melee_charging tag 自含，须开 charge 开关）",
+    "CP 消耗与使用次数限制不结算，仅在被点名（opt-in）时注入（spec D3）"
+   ],
+   "provenance": {
+    "current_text": "db stratagems.text_zh id=000008431003",
+    "base_text": "Wahapedia 现文（PR5 工作单：FP 未触及，11 版仍现行）",
+    "synthesis": "无需合成",
+    "text_sha256": "34fd741bd74fa661d1c4d9a8887e52f930778c87d2431be68d16acb466f2dd92"
+   },
+   "encoded_by": "manual-2026-07-18"
+  },
+  {
+   "table": "stratagems",
+   "id": "000008431004",
+   "side": "target",
+   "detachment": "Berzerker Warband",
+   "name_en": "FRENZIED RESILIENCE",
+   "name_zh": "血怒坚韧",
+   "status": "partial",
+   "effects": [
+    {
+     "phase": "damage",
+     "op": "damage_reduction",
+     "params": [
+      1
+     ],
+     "condition": [
+      "phase_melee"
+     ],
+     "source": "Frenzied Resilience（近战阶段：分配伤害特征值 -1）"
+    }
+   ],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "时机=近战阶段敌方选定目标后（射击不适用，条件 tag 硬门控）",
+    "「减伤后至少 1」由引擎夹取承担；DEVASTATING WOUNDS 致命池不经分配步骤、天然不吃本减伤（11版 24.10 口径）",
+    "CP 消耗与使用次数限制不结算，仅在被点名（opt-in）时注入（spec D3）"
+   ],
+   "provenance": {
+    "current_text": "db stratagems.text_zh id=000008431004",
+    "base_text": "Wahapedia 现文（PR5 工作单：FP 未触及，11 版仍现行）",
+    "synthesis": "无需合成",
+    "text_sha256": "62512a70f7d62b4dd7addfaeaeca6c6911ff3e0b6e5f1157f0ffb9d7153a06dd"
+   },
+   "encoded_by": "manual-2026-07-18"
+  },
+  {
+   "table": "stratagems",
+   "id": "000008431005",
+   "side": "attacker",
+   "detachment": "Berzerker Warband",
+   "name_en": "SKULLS FOR THE SKULL THRONE!",
+   "name_zh": "颅献颅座！",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "额外赐福骰并激活一项赐福——请直接打开对应赐福开关近似；触发前提（刚消灭人物/凶兽）与骰点经济不建模"
+   ],
+   "provenance": {
+    "current_text": "db stratagems.text_zh id=000008431005",
+    "base_text": "Wahapedia 现文（PR5 工作单：FP 未触及，11 版仍现行）",
+    "synthesis": "无需合成",
+    "text_sha256": "85ab5a6a46fd40b9f89cdda13f2b48cc5e3a98c810bb209ecee9d0e6c8450a54"
+   },
+   "encoded_by": "manual-2026-07-18"
+  },
+  {
+   "table": "stratagems",
+   "id": "000008431006",
+   "side": "attacker",
+   "detachment": "Berzerker Warband",
+   "name_en": "APOPLECTIC FRENZY",
+   "name_zh": "颠心狂暴",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "加速后仍可冲锋——移动资格域未建模"
+   ],
+   "provenance": {
+    "current_text": "db stratagems.text_zh id=000008431006",
+    "base_text": "Wahapedia 现文（PR5 工作单：FP 未触及，11 版仍现行）",
+    "synthesis": "无需合成",
+    "text_sha256": "98fdf7b1214e61ba3b3bd3a4c7b715193deb24cd7ffcd092e647bff1dca05533"
+   },
+   "encoded_by": "manual-2026-07-18"
+  },
+  {
+   "table": "stratagems",
+   "id": "000008431007",
+   "side": "attacker",
+   "detachment": "Berzerker Warband",
+   "name_en": "BERZERKER’S WRATH",
+   "name_zh": "狂战士之怒",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "surge move 免骰直移 8\"（11e 术语已刷新）——移动域未建模"
+   ],
+   "provenance": {
+    "current_text": "db stratagems.text_zh id=000008431007",
+    "base_text": "FP World Eaters（PR5 fp_rules 已刷新为 11 版现行文本，工作单 drifted）",
+    "synthesis": "无需合成",
+    "text_sha256": "21a34824c7a58d64348015e8fe81a8cfac966fa85e648438237060ebc3520e99"
+   },
+   "encoded_by": "manual-2026-07-18"
+  },
+  {
+   "table": "stratagems",
+   "id": "000009709002",
+   "side": "attacker",
+   "detachment": "Boarding Butchers",
+   "name_en": "TERRIFYING SCREAMS",
+   "name_zh": "骇人尖啸",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "全体敌军 Battle-shock/Ld 测试 -1——士气域未建模"
+   ],
+   "provenance": {
+    "current_text": "db stratagems.text_zh id=000009709002",
+    "base_text": "Wahapedia 现文（PR5 工作单：FP 未触及，11 版仍现行）",
+    "synthesis": "无需合成",
+    "text_sha256": "f9919dd7ac6117db85f5f986372905e7d8e1ab93a54d9307a8f91f78eadc3a1f"
+   },
+   "encoded_by": "manual-2026-07-18"
+  },
+  {
+   "table": "stratagems",
+   "id": "000009709003",
+   "side": "attacker",
+   "detachment": "Boarding Butchers",
+   "name_en": "UNSTOPPABLE RAGE",
+   "name_zh": "势不可挡之怒",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "登舰战舱门几何前提（3\" 内对侧）+眩晕敌方命中-1——登舰战地形域未建模"
+   ],
+   "provenance": {
+    "current_text": "db stratagems.text_zh id=000009709003",
+    "base_text": "Wahapedia 现文（PR5 工作单：FP 未触及，11 版仍现行）",
+    "synthesis": "无需合成",
+    "text_sha256": "15f9b77fe80b755ae32f471246f901c78801abd4aaed95f42d21a0733f6df3c8"
+   },
+   "encoded_by": "manual-2026-07-18"
+  },
+  {
+   "table": "stratagems",
+   "id": "000009709004",
+   "side": "target",
+   "detachment": "Boarding Butchers",
+   "name_en": "SAVAGE RESILIENCE",
+   "name_zh": "蛮性坚韧",
+   "status": "partial",
+   "effects": [
+    {
+     "phase": "damage",
+     "op": "damage_reduction",
+     "params": [
+      1
+     ],
+     "condition": [
+      "phase_shooting"
+     ],
+     "source": "Savage Resilience（对手射击阶段：分配伤害特征值 -1）"
+    }
+   ],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "时机=对手射击阶段（近战不适用，条件 tag 硬门控）",
+    "「减伤后至少 1」由引擎夹取承担；dev 致命池不吃本减伤（11版 24.10）",
+    "CP 消耗与使用次数限制不结算，仅在被点名（opt-in）时注入（spec D3）"
+   ],
+   "provenance": {
+    "current_text": "db stratagems.text_zh id=000009709004",
+    "base_text": "Wahapedia 现文（PR5 工作单：FP 未触及，11 版仍现行）",
+    "synthesis": "无需合成",
+    "text_sha256": "a773293c1bcbb3f5d1a84a750a0050da74222877d6a90eeb0b4ee4aefb6b51a5"
+   },
+   "encoded_by": "manual-2026-07-18"
+  },
+  {
+   "table": "stratagems",
+   "id": "000009709005",
+   "side": "attacker",
+   "detachment": "Boarding Butchers",
+   "name_en": "COWARDS’ BANE",
+   "name_zh": "懦夫克星",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "撤退绝望逃脱惩罚——移动/撤退域未建模"
+   ],
+   "provenance": {
+    "current_text": "db stratagems.text_zh id=000009709005",
+    "base_text": "Wahapedia 现文（PR5 工作单：FP 未触及，11 版仍现行）",
+    "synthesis": "无需合成",
+    "text_sha256": "78001b026e37a8fb9eea0652badb4bdaf9059f7e598b7ddee09333afce4fe692"
+   },
+   "encoded_by": "manual-2026-07-18"
+  },
+  {
+   "table": "stratagems",
+   "id": "000010075002",
+   "side": "attacker",
+   "detachment": "Cult of Blood",
+   "name_en": "BLOODY VENGEANCE",
+   "name_zh": "血腥复仇",
+   "status": "partial",
+   "effects": [
+    {
+     "phase": "hit",
+     "op": "reroll",
+     "params": [
+      "fail"
+     ],
+     "condition": [],
+     "source": "Bloody Vengeance（对复仇目标重投命中骰，最优=只重投失败）"
+    }
+   ],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "前提=本方凶兽/泰坦单位刚被当前目标消灭、且本单位为 Jakhals/Goremongers——均按成立假设（引擎无战场事件追踪）",
+    "CP 消耗与使用次数限制不结算，仅在被点名（opt-in）时注入（spec D3）"
+   ],
+   "provenance": {
+    "current_text": "db stratagems.text_zh id=000010075002",
+    "base_text": "Wahapedia 现文（PR5 工作单：FP 未触及，11 版仍现行）",
+    "synthesis": "无需合成",
+    "text_sha256": "667f7e866143c383a699381000c00c77765ff642f6a7ffcc247376b63c081763"
+   },
+   "encoded_by": "manual-2026-07-18"
+  },
+  {
+   "table": "stratagems",
+   "id": "000010075003",
+   "side": "attacker",
+   "detachment": "Cult of Blood",
+   "name_en": "DRAWN TO THE SLAUGHTER",
+   "name_zh": "引赴屠场",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "被毁 Jakhals 以战略预备队复制重入——复活/预备队域未建模"
+   ],
+   "provenance": {
+    "current_text": "db stratagems.text_zh id=000010075003",
+    "base_text": "Wahapedia 现文（PR5 工作单：FP 未触及，11 版仍现行）",
+    "synthesis": "无需合成",
+    "text_sha256": "ea068c29350e916caa1418f914f47e6d445d63cdaab33d3e731474766063b9e0"
+   },
+   "encoded_by": "manual-2026-07-18"
+  },
+  {
+   "table": "stratagems",
+   "id": "000010075004",
+   "side": "target",
+   "detachment": "Cult of Blood",
+   "name_en": "IN THE SHADOW OF BRASS IDOLS",
+   "name_zh": "黄铜神像之荫",
+   "status": "partial",
+   "effects": [
+    {
+     "phase": "fnp",
+     "op": "fnp",
+     "params": [
+      6
+     ],
+     "condition": [],
+     "source": "In the Shadow of Brass Idols（FNP 6+，保守基础档）"
+    }
+   ],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "6\"/9\" 内有本方凶兽/泰坦时升 5+——距离前提无门控，保守按 6+ 编码（不高估）",
+    "限 Jakhals/Goremongers 按守方符合假设",
+    "CP 消耗与使用次数限制不结算，仅在被点名（opt-in）时注入（spec D3）"
+   ],
+   "provenance": {
+    "current_text": "db stratagems.text_zh id=000010075004",
+    "base_text": "Wahapedia 现文（PR5 工作单：FP 未触及，11 版仍现行）",
+    "synthesis": "无需合成",
+    "text_sha256": "84b66bd91bd4bc40a0b7ec2c0ed7e8290da579961666e5ad996e573883cc6320"
+   },
+   "encoded_by": "manual-2026-07-18"
+  },
+  {
+   "table": "stratagems",
+   "id": "000010075005",
+   "side": "attacker",
+   "detachment": "Cult of Blood",
+   "name_en": "BLOODTHIRSTY HORDE",
+   "name_zh": "嗜血蛮群",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "3\" 内模型获近战资格——交战几何域未建模（引擎默认全员可打）"
+   ],
+   "provenance": {
+    "current_text": "db stratagems.text_zh id=000010075005",
+    "base_text": "Wahapedia 现文（PR5 工作单：FP 未触及，11 版仍现行）",
+    "synthesis": "无需合成",
+    "text_sha256": "7de7c17297945632febf7f6c8aa196ce1e99b99738d9aa1f85cc2f72e463732b"
+   },
+   "encoded_by": "manual-2026-07-18"
+  },
+  {
+   "table": "stratagems",
+   "id": "000010075006",
+   "side": "attacker",
+   "detachment": "Cult of Blood",
+   "name_en": "FAIL NOT THE BLOOD GOD",
+   "name_zh": "勿负血神",
+   "status": "partial",
+   "effects": [
+    {
+     "phase": "hit",
+     "op": "reroll",
+     "params": [
+      "fail"
+     ],
+     "condition": [
+      "phase_melee"
+     ],
+     "source": "Fail Not the Blood God（近凶兽/泰坦分支：重投命中骰）"
+    }
+   ],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "按「6\"/9\" 内有本方凶兽/泰坦」的完整重投分支编码并假设距离前提成立；基础分支（仅重投 1 点）引擎无通道——若无凶兽在场本编码高估，请勿点名",
+    "CP 消耗与使用次数限制不结算，仅在被点名（opt-in）时注入（spec D3）"
+   ],
+   "provenance": {
+    "current_text": "db stratagems.text_zh id=000010075006",
+    "base_text": "Wahapedia 现文（PR5 工作单：FP 未触及，11 版仍现行）",
+    "synthesis": "无需合成",
+    "text_sha256": "1b1ed5500b382237055e7fc262cc6f9aa58648a2a8efe2f8902ee27b046d2ca0"
+   },
+   "encoded_by": "manual-2026-07-18"
+  },
+  {
+   "table": "stratagems",
+   "id": "000010075007",
+   "side": "attacker",
+   "detachment": "Cult of Blood",
+   "name_en": "BRAZEN IDOL",
+   "name_zh": "黄铜神像",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "神像光环切换（光环本体见分队规则 not_modeled）——军队级资源域"
+   ],
+   "provenance": {
+    "current_text": "db stratagems.text_zh id=000010075007",
+    "base_text": "Wahapedia 现文（PR5 工作单：FP 未触及，11 版仍现行）",
+    "synthesis": "无需合成",
+    "text_sha256": "d609af998082de4024b625e0d03fd059e7d37221af108c049f97bf30685e0a64"
+   },
+   "encoded_by": "manual-2026-07-18"
+  },
+  {
+   "table": "stratagems",
+   "id": "000010087002",
+   "side": "attacker",
+   "detachment": "Goretrack Onslaught",
+   "name_en": "ENDLESS PURSUIT OF VIOLENCE",
+   "name_zh": "无尽逐暴",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "近战阶段末登车——运输域未建模"
+   ],
+   "provenance": {
+    "current_text": "db stratagems.text_zh id=000010087002",
+    "base_text": "Wahapedia 现文（PR5 工作单：FP 未触及，11 版仍现行）",
+    "synthesis": "无需合成",
+    "text_sha256": "3f16434d17b8fd09f657a8efd313dd223f46d1dffa2af93dfa95cbaded74dd0a"
+   },
+   "encoded_by": "manual-2026-07-18"
+  },
+  {
+   "table": "stratagems",
+   "id": "000010087003",
+   "side": "attacker",
+   "detachment": "Goretrack Onslaught",
+   "name_en": "SMASH THROUGH",
+   "name_zh": "横冲直撞",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "载具穿地形移动——移动域未建模"
+   ],
+   "provenance": {
+    "current_text": "db stratagems.text_zh id=000010087003",
+    "base_text": "Wahapedia 现文（PR5 工作单：FP 未触及，11 版仍现行）",
+    "synthesis": "无需合成",
+    "text_sha256": "7e3485e09ccc21bcfd4e21ab31dcfb689b3d090f7ffe605d120cc7f9dd90a6e5"
+   },
+   "encoded_by": "manual-2026-07-18"
+  },
+  {
+   "table": "stratagems",
+   "id": "000010087004",
+   "side": "attacker",
+   "detachment": "Goretrack Onslaught",
+   "name_en": "AGGRESSIVE DISEMBARKATION",
+   "name_zh": "强袭下车",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "6\" 任意下车入交战——运输/移动域未建模"
+   ],
+   "provenance": {
+    "current_text": "db stratagems.text_zh id=000010087004",
+    "base_text": "Wahapedia 现文（PR5 工作单：FP 未触及，11 版仍现行）",
+    "synthesis": "无需合成",
+    "text_sha256": "2b63e8b0c9d54971da75c5b61289be60678e3e353f7d629d1320cc03a606a54e"
+   },
+   "encoded_by": "manual-2026-07-18"
+  },
+  {
+   "table": "stratagems",
+   "id": "000010087005",
+   "side": "attacker",
+   "detachment": "Goretrack Onslaught",
+   "name_en": "FULL-THROTTLE ASSAULT",
+   "name_zh": "全速突击",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "移动后下车仍可冲锋——运输/移动域未建模"
+   ],
+   "provenance": {
+    "current_text": "db stratagems.text_zh id=000010087005",
+    "base_text": "Wahapedia 现文（PR5 工作单：FP 未触及，11 版仍现行）",
+    "synthesis": "无需合成",
+    "text_sha256": "f6cc204fc177c1dc6e21e7c41d1553fb3b9cc8ec631160f93e561081619e4679"
+   },
+   "encoded_by": "manual-2026-07-18"
+  },
+  {
+   "table": "stratagems",
+   "id": "000010087006",
+   "side": "attacker",
+   "detachment": "Goretrack Onslaught",
+   "name_en": "UNRELENTING ADVANCE",
+   "name_zh": "无情推进",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "被射击后标准移动 6\"——移动域未建模"
+   ],
+   "provenance": {
+    "current_text": "db stratagems.text_zh id=000010087006",
+    "base_text": "Wahapedia 现文（PR5 工作单：FP 未触及，11 版仍现行）",
+    "synthesis": "无需合成",
+    "text_sha256": "306fdb67d399b4eaa506c0fa3ee4deb8fd6ecb7dc6ac2bec6f1f66491c143445"
+   },
+   "encoded_by": "manual-2026-07-18"
+  },
+  {
+   "table": "stratagems",
+   "id": "000010087007",
+   "side": "attacker",
+   "detachment": "Goretrack Onslaught",
+   "name_en": "FURY UNLEASHED",
+   "name_zh": "怒火尽泄",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "被射击后下车 + surge move D6+2\"（11e 术语已刷新）——运输/移动域未建模"
+   ],
+   "provenance": {
+    "current_text": "db stratagems.text_zh id=000010087007",
+    "base_text": "FP World Eaters（PR5 fp_rules 已刷新为 11 版现行文本，工作单 drifted）",
+    "synthesis": "无需合成",
+    "text_sha256": "9b2b5c267c2724141ab7d05bd4e1f1c2314ee2c071b5cdfed5ade7c02b157ab4"
+   },
+   "encoded_by": "manual-2026-07-18"
+  },
+  {
+   "table": "stratagems",
+   "id": "000010079002",
+   "side": "attacker",
+   "detachment": "Khorne Daemonkin",
+   "name_en": "SUMMONED BY SLAUGHTER",
+   "name_zh": "屠戮召唤",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "血魔从预备队 9\" 落位——预备队/部署域未建模（Wahapedia 现文即 11 版）"
+   ],
+   "provenance": {
+    "current_text": "db stratagems.text_zh id=000010079002",
+    "base_text": "Wahapedia 现文（PR5 工作单 identical：FP change-to 已滚入）",
+    "synthesis": "无需合成",
+    "text_sha256": "f1cf24d881eabd3ff3e8e9c40a5ffb9079868bb0f9cd56beb6dc05f39989d011"
+   },
+   "encoded_by": "manual-2026-07-18"
+  },
+  {
+   "table": "stratagems",
+   "id": "000010079003",
+   "side": "attacker",
+   "detachment": "Khorne Daemonkin",
+   "name_en": "DAEMONIC FURY",
+   "name_zh": "恶魔之怒",
+   "status": "partial",
+   "effects": [
+    {
+     "phase": "wound",
+     "op": "modify",
+     "params": [
+      1
+     ],
+     "condition": [
+      "melee_charging"
+     ],
+     "source": "Daemonic Fury（近战武器 [LANCE]：冲锋回合致伤+1）"
+    }
+   ],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "目标=鲜血军团单位 6\" 内的 WE 单位，按前提成立假设",
+    "[LANCE] 需冲锋回合生效（charge 开关）",
+    "Daemonic Rage 激活时追加 [TWIN-LINKED] 的分支未建模（血税资源域）",
+    "CP 消耗与使用次数限制不结算，仅在被点名（opt-in）时注入（spec D3）"
+   ],
+   "provenance": {
+    "current_text": "db stratagems.text_zh id=000010079003",
+    "base_text": "Wahapedia 现文（PR5 工作单：FP 未触及，11 版仍现行）",
+    "synthesis": "无需合成",
+    "text_sha256": "0bc9846ba82c560a501b657204292acf0d98b0c1e3bffa6f8b95a7f3636ae594"
+   },
+   "encoded_by": "manual-2026-07-18"
+  },
+  {
+   "table": "stratagems",
+   "id": "000010079004",
+   "side": "attacker",
+   "detachment": "Khorne Daemonkin",
+   "name_en": "A WORTHY SKULL",
+   "name_zh": "够格的头颅",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "获 D3 BTP 并兑换——血税资源域未建模"
+   ],
+   "provenance": {
+    "current_text": "db stratagems.text_zh id=000010079004",
+    "base_text": "Wahapedia 现文（PR5 工作单：FP 未触及，11 版仍现行）",
+    "synthesis": "无需合成",
+    "text_sha256": "f6d30ec7148aaefa4b85a8984c33fa57db539d0be8d2acafc7fcf2665f39e8e8"
+   },
+   "encoded_by": "manual-2026-07-18"
+  },
+  {
+   "table": "stratagems",
+   "id": "000010079005",
+   "side": "target",
+   "detachment": "Khorne Daemonkin",
+   "name_en": "BLESSING OF BURNING BLOOD",
+   "name_zh": "燃血赐福",
+   "status": "partial",
+   "effects": [
+    {
+     "phase": "save",
+     "op": "invuln",
+     "params": [
+      5
+     ],
+     "condition": [],
+     "source": "Blessing of Burning Blood（5+ 无效保护）"
+    }
+   ],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "Boon of Blood 激活时升 4++ 的分支未建模（血税资源域）",
+    "目标=鲜血军团单位 6\" 内的 WE 单位，按前提成立假设；与守方自带 invuln 取更优",
+    "CP 消耗与使用次数限制不结算，仅在被点名（opt-in）时注入（spec D3）"
+   ],
+   "provenance": {
+    "current_text": "db stratagems.text_zh id=000010079005",
+    "base_text": "Wahapedia 现文（PR5 工作单：FP 未触及，11 版仍现行）",
+    "synthesis": "无需合成",
+    "text_sha256": "ab4f0e45142fc773f789fb41189b1e52ae576fb53432c52526031dfc171aef4f"
+   },
+   "encoded_by": "manual-2026-07-18"
+  },
+  {
+   "table": "stratagems",
+   "id": "000010079006",
+   "side": "attacker",
+   "detachment": "Khorne Daemonkin",
+   "name_en": "DAEMONTIDE",
+   "name_zh": "魔潮",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "鲜血军团模型复活回场——复活域未建模"
+   ],
+   "provenance": {
+    "current_text": "db stratagems.text_zh id=000010079006",
+    "base_text": "Wahapedia 现文（PR5 工作单：FP 未触及，11 版仍现行）",
+    "synthesis": "无需合成",
+    "text_sha256": "568228695bad96bc3266847471694be1d64d7bae8060a66a6cea4fe8e74735c2"
+   },
+   "encoded_by": "manual-2026-07-18"
+  },
+  {
+   "table": "stratagems",
+   "id": "000010079007",
+   "side": "attacker",
+   "detachment": "Khorne Daemonkin",
+   "name_en": "MURDER-CALL",
+   "name_zh": "杀戮召令",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "移出战场入战略预备队——预备队域未建模"
+   ],
+   "provenance": {
+    "current_text": "db stratagems.text_zh id=000010079007",
+    "base_text": "Wahapedia 现文（PR5 工作单：FP 未触及，11 版仍现行）",
+    "synthesis": "无需合成",
+    "text_sha256": "d4b084ec4c7b5f2f041811d721f50dca9957d53fa8a55bef1219128823a24eef"
+   },
+   "encoded_by": "manual-2026-07-18"
+  },
+  {
+   "table": "stratagems",
+   "id": "000010083002",
+   "side": "target",
+   "detachment": "Possessed Slaughterband",
+   "name_en": "DAEMONIC RESISTANCE",
+   "name_zh": "恶魔抗性",
+   "status": "partial",
+   "effects": [
+    {
+     "phase": "wound",
+     "op": "modify",
+     "params": [
+      -1
+     ],
+     "condition": [],
+     "source": "Daemonic Resistance（被攻击时致伤骰 -1）"
+    }
+   ],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "守方致伤修正与攻方加值并入统一 ±1 夹取（PR5 新通道）",
+    "限 WE Possessed 单位按守方符合假设",
+    "CP 消耗与使用次数限制不结算，仅在被点名（opt-in）时注入（spec D3）"
+   ],
+   "provenance": {
+    "current_text": "db stratagems.text_zh id=000010083002",
+    "base_text": "Wahapedia 现文（PR5 工作单：FP 未触及，11 版仍现行）",
+    "synthesis": "无需合成",
+    "text_sha256": "8f37e4138a557d3594d6dc8ce7e83de0d130911a46a7a8c2b403f0a836ad42d7"
+   },
+   "encoded_by": "manual-2026-07-18"
+  },
+  {
+   "table": "stratagems",
+   "id": "000010083003",
+   "side": "attacker",
+   "detachment": "Possessed Slaughterband",
+   "name_en": "DAEMONIC STRENGTH",
+   "name_zh": "恶魔伟力",
+   "status": "partial",
+   "effects": [
+    {
+     "phase": "damage",
+     "op": "modify",
+     "params": [
+      1
+     ],
+     "condition": [
+      "target_has_keyword",
+      "monster"
+     ],
+     "source": "Daemonic Strength（神尊八缚分支：对凶兽 D+1）"
+    },
+    {
+     "phase": "damage",
+     "op": "modify",
+     "params": [
+      1
+     ],
+     "condition": [
+      "target_has_keyword",
+      "vehicle"
+     ],
+     "source": "Daemonic Strength（神尊八缚分支：对载具 D+1）"
+    }
+   ],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "按神尊八缚（Exalted Eightbound 对凶兽/载具 D+1）分支编码；八缚（Eightbound 对非凶兽/载具）分支需否定条件，无通道未建模",
+    "同时具凶兽+载具双关键词的目标会重复 +2（正常兵牌不并存该两关键词，诚实披露）",
+    "CP 消耗与使用次数限制不结算，仅在被点名（opt-in）时注入（spec D3）"
+   ],
+   "provenance": {
+    "current_text": "db stratagems.text_zh id=000010083003",
+    "base_text": "Wahapedia 现文（PR5 工作单：FP 未触及，11 版仍现行）",
+    "synthesis": "无需合成",
+    "text_sha256": "9bd8c119704d0d20f87303384411e0961c4713c61da7cd2a6c5a3ee846f4018a"
+   },
+   "encoded_by": "manual-2026-07-18"
+  },
+  {
+   "table": "stratagems",
+   "id": "000010083004",
+   "side": "attacker",
+   "detachment": "Possessed Slaughterband",
+   "name_en": "IMMORTAL FURY",
+   "name_zh": "不朽之怒",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "死后反打——单向攻击序列无该通道"
+   ],
+   "provenance": {
+    "current_text": "db stratagems.text_zh id=000010083004",
+    "base_text": "Wahapedia 现文（PR5 工作单：FP 未触及，11 版仍现行）",
+    "synthesis": "无需合成",
+    "text_sha256": "5253639d03f6e8b0b7079946e35a8061f809b618d0e92191c106621ae1d04f3b"
+   },
+   "encoded_by": "manual-2026-07-18"
+  },
+  {
+   "table": "stratagems",
+   "id": "000010083005",
+   "side": "attacker",
+   "detachment": "Possessed Slaughterband",
+   "name_en": "RAPID MANIFESTATION",
+   "name_zh": "迅速显形",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "深潜落位收紧到 6\"（Wahapedia 现文即 11 版）——部署域未建模"
+   ],
+   "provenance": {
+    "current_text": "db stratagems.text_zh id=000010083005",
+    "base_text": "Wahapedia 现文（PR5 工作单 identical：FP change-to 已滚入）",
+    "synthesis": "无需合成",
+    "text_sha256": "c84dca7082e1449483d6de2557e442e4162f2652d87f7847482ff0b104257ffa"
+   },
+   "encoded_by": "manual-2026-07-18"
+  },
+  {
+   "table": "stratagems",
+   "id": "000010083006",
+   "side": "attacker",
+   "detachment": "Possessed Slaughterband",
+   "name_en": "WARP STALKERS",
+   "name_zh": "亚空间潜行者",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "穿越敌方模型移动（Wahapedia 现文即 11 版）——移动域未建模"
+   ],
+   "provenance": {
+    "current_text": "db stratagems.text_zh id=000010083006",
+    "base_text": "Wahapedia 现文（PR5 工作单 identical：FP change-to 已滚入）",
+    "synthesis": "无需合成",
+    "text_sha256": "4de983b42daeb77da26ecf579983dea9dd68225126a96ff1900117ef4254fd18"
+   },
+   "encoded_by": "manual-2026-07-18"
+  },
+  {
+   "table": "stratagems",
+   "id": "000010083007",
+   "side": "attacker",
+   "detachment": "Possessed Slaughterband",
+   "name_en": "HORRIFYING VIOLENCE",
+   "name_zh": "骇人暴行",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "交战敌军 Battle-shock 测试 -1——士气域未建模"
+   ],
+   "provenance": {
+    "current_text": "db stratagems.text_zh id=000010083007",
+    "base_text": "Wahapedia 现文（PR5 工作单：FP 未触及，11 版仍现行）",
+    "synthesis": "无需合成",
+    "text_sha256": "cf0c1baaf6cf192a0fac7e0531fd06ff151d26da5a6a7c8bf09c5d62d41b282c"
+   },
+   "encoded_by": "manual-2026-07-18"
+  },
+  {
+   "table": "stratagems",
+   "id": "000009717002",
+   "side": "attacker",
+   "detachment": "Skullsworn",
+   "name_en": "BLOOD RITE",
+   "name_zh": "血祭仪式",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "消灭单位后锁定目标点——目标点控制域未建模"
+   ],
+   "provenance": {
+    "current_text": "db stratagems.text_zh id=000009717002",
+    "base_text": "Wahapedia 现文（PR5 工作单：FP 未触及，11 版仍现行）",
+    "synthesis": "无需合成",
+    "text_sha256": "2221504e9e7bf627ea9a635582808255b6558f5422ceb6604cb9870b3d94bc63"
+   },
+   "encoded_by": "manual-2026-07-18"
+  },
+  {
+   "table": "stratagems",
+   "id": "000009717003",
+   "side": "attacker",
+   "detachment": "Skullsworn",
+   "name_en": "FURIOUS MOMENTUM",
+   "name_zh": "狂怒冲势",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "跟进/重整 6\"——近战移动域未建模"
+   ],
+   "provenance": {
+    "current_text": "db stratagems.text_zh id=000009717003",
+    "base_text": "Wahapedia 现文（PR5 工作单：FP 未触及，11 版仍现行）",
+    "synthesis": "无需合成",
+    "text_sha256": "38e5c6c8562dc3d835a8dfdc0c61a075347d4258ba4838bf0e8febcb00e62875"
+   },
+   "encoded_by": "manual-2026-07-18"
+  },
+  {
+   "table": "stratagems",
+   "id": "000009717004",
+   "side": "attacker",
+   "detachment": "Skullsworn",
+   "name_en": "RUINOUS RAMPAGE",
+   "name_zh": "毁灭暴走",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "穿舱门冲锋（登舰战地形）——未建模"
+   ],
+   "provenance": {
+    "current_text": "db stratagems.text_zh id=000009717004",
+    "base_text": "Wahapedia 现文（PR5 工作单：FP 未触及，11 版仍现行）",
+    "synthesis": "无需合成",
+    "text_sha256": "857ef2f4fed4fcb45d4b50ce1bf4903b6d73e3c1cb95e7dfc9f7f0286478b13e"
+   },
+   "encoded_by": "manual-2026-07-18"
+  },
+  {
+   "table": "stratagems",
+   "id": "000009717005",
+   "side": "attacker",
+   "detachment": "Skullsworn",
+   "name_en": "SHOCKING ONSLAUGHT",
+   "name_zh": "震骇猛攻",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "压制敌方警戒射击——警戒射击域未建模"
+   ],
+   "provenance": {
+    "current_text": "db stratagems.text_zh id=000009717005",
+    "base_text": "Wahapedia 现文（PR5 工作单：FP 未触及，11 版仍现行）",
+    "synthesis": "无需合成",
+    "text_sha256": "3e61f94d043a2364e46fb322f4fec4a3de4f08ab7e65a185165f6be184fc7579"
+   },
+   "encoded_by": "manual-2026-07-18"
+  },
+  {
+   "table": "stratagems",
+   "id": "000009848002",
+   "side": "attacker",
+   "detachment": "Vessels of Wrath",
+   "name_en": "ASPIRE TO INFAMY",
+   "name_zh": "渴望恶名",
+   "status": "partial",
+   "effects": [
+    {
+     "phase": "attacks",
+     "op": "modify",
+     "params": [
+      1
+     ],
+     "condition": [
+      "phase_melee"
+     ],
+     "source": "Aspire to Infamy（人物近战攻击 A+1）"
+    },
+    {
+     "phase": "wound",
+     "op": "s_improve",
+     "params": [
+      2
+     ],
+     "condition": [
+      "phase_melee"
+     ],
+     "source": "Aspire to Infamy（人物近战攻击 S+2，特征值通道）"
+    }
+   ],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "11e 重印：限 CHARACTER 单位的 CHARACTER 模型近战攻击——带保镖附属单位整体注入会高估，建议单人物模拟",
+    "非史诗英雄限定按符合假设",
+    "CP 消耗与使用次数限制不结算，仅在被点名（opt-in）时注入（spec D3）"
+   ],
+   "provenance": {
+    "current_text": "db stratagems.text_zh id=000009848002",
+    "base_text": "FP World Eaters（PR5 fp_rules 已刷新为 11 版现行文本，工作单 drifted）",
+    "synthesis": "无需合成",
+    "text_sha256": "f2c5e18575dd617437b2fa92fd07d9b407cc4c01f57fe40a3f2899a39a1086b7"
+   },
+   "encoded_by": "manual-2026-07-18"
+  },
+  {
+   "table": "stratagems",
+   "id": "000009848005",
+   "side": "attacker",
+   "detachment": "Vessels of Wrath",
+   "name_en": "PUNISH THE CRAVEN",
+   "name_zh": "惩罚懦夫",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "撤退强制绝望逃脱模式 + 战斗震撼者 hazard -1（11e 重印）——撤退域未建模"
+   ],
+   "provenance": {
+    "current_text": "db stratagems.text_zh id=000009848005",
+    "base_text": "FP World Eaters（PR5 fp_rules 已刷新为 11 版现行文本，工作单 drifted）",
+    "synthesis": "无需合成",
+    "text_sha256": "6a7af89c373fb553fae063ecec714d45b9b6a942d40ca6d7daa735222ba85a07"
+   },
+   "encoded_by": "manual-2026-07-18"
+  },
+  {
+   "table": "stratagems",
+   "id": "fp11e-we-vessels-s1",
+   "side": "target",
+   "detachment": "Vessels of Wrath",
+   "name_en": "SCORN THE WITCH",
+   "name_zh": "蔑视巫觋",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "FNP 4+ 仅对致命伤——引擎 FNP 通道对全部伤害生效，编入会高估防御（PR5 裁定不建 FNP-仅致命伤通道：需动 spike 验证过的分配核）",
+    "如需近似对 [DEVASTATING WOUNDS] 致命池的防御，可开守方 FNP 手动开关，但会同时波及普通伤害，请自行权衡"
+   ],
+   "provenance": {
+    "current_text": "db stratagems.text_zh id=fp11e-we-vessels-s1",
+    "base_text": "FP World Eaters（fp_new 补录行，PR5 inserts）",
+    "synthesis": "无需合成",
+    "text_sha256": "b4950c4cb1e4a3dc6fdefd9bd15c4976970cf34ac49772df0fc88530dd51c087"
+   },
+   "encoded_by": "manual-2026-07-18"
+  },
+  {
+   "table": "stratagems",
+   "id": "fp11e-we-brazeng-s1",
+   "side": "attacker",
+   "detachment": "Brazen Engines",
+   "name_en": "APOPLECTIC CLARITY",
+   "name_zh": "暴怒澄明",
+   "status": "partial",
+   "effects": [
+    {
+     "phase": "hit",
+     "op": "ignore_hit_mods",
+     "params": [],
+     "condition": [],
+     "source": "Apoplectic Clarity（无视 BS/WS 与命中骰修正）"
+    }
+   ],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "走 [PSYCHIC] 同通道：按有利方向只忽略不利修正、保留有利修正",
+    "「无视致伤骰修正」引擎无通道未建模",
+    "限 DAEMON VEHICLE 单位按符合假设",
+    "CP 消耗与使用次数限制不结算，仅在被点名（opt-in）时注入（spec D3）"
+   ],
+   "provenance": {
+    "current_text": "db stratagems.text_zh id=fp11e-we-brazeng-s1",
+    "base_text": "FP World Eaters（fp_new 补录行，PR5 inserts）",
+    "synthesis": "无需合成",
+    "text_sha256": "3a22a6e2a3bf23cb6e5e9de77f94b1980215d7d3bcc33c66331f3198cdb7f0a8"
+   },
+   "encoded_by": "manual-2026-07-18"
+  },
+  {
+   "table": "stratagems",
+   "id": "fp11e-we-brazeng-s2",
+   "side": "attacker",
+   "detachment": "Brazen Engines",
+   "name_en": "TRAIL OF DESTRUCTION",
+   "name_zh": "毁灭之迹",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "获 MOBILE——移动域未建模"
+   ],
+   "provenance": {
+    "current_text": "db stratagems.text_zh id=fp11e-we-brazeng-s2",
+    "base_text": "FP World Eaters（fp_new 补录行，PR5 inserts）",
+    "synthesis": "无需合成",
+    "text_sha256": "da5a043b9ffa4e9252112594d9f57ccf100e9f576598702bda63145d77b90ce2"
+   },
+   "encoded_by": "manual-2026-07-18"
+  },
+  {
+   "table": "stratagems",
+   "id": "fp11e-we-brazeng-s3",
+   "side": "attacker",
+   "detachment": "Brazen Engines",
+   "name_en": "GOADED TO FURY",
+   "name_zh": "激怒成狂",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "被射击后 surge move D6\"——移动域未建模"
+   ],
+   "provenance": {
+    "current_text": "db stratagems.text_zh id=fp11e-we-brazeng-s3",
+    "base_text": "FP World Eaters（fp_new 补录行，PR5 inserts）",
+    "synthesis": "无需合成",
+    "text_sha256": "e8056a469a55760df6a783b703213b20a0800cb29174c0bac1c6522e91ceed00"
+   },
+   "encoded_by": "manual-2026-07-18"
+  },
+  {
+   "table": "stratagems",
+   "id": "fp11e-we-butchers-s1",
+   "side": "attacker",
+   "detachment": "Butchers of Khorne",
+   "name_en": "FOCUSED FEROCITY",
+   "name_zh": "凶性专注",
+   "status": "partial",
+   "effects": [
+    {
+     "phase": "attacks",
+     "op": "modify",
+     "params": [
+      1
+     ],
+     "condition": [
+      "phase_melee"
+     ],
+     "source": "Focused Ferocity（近战攻击 A+1）"
+    }
+   ],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "限 TERMINATOR SQUAD 单位按符合假设",
+    "与分队/军规同阶段 +A 来源可叠加（PR5 起 attacks 通道累加）",
+    "CP 消耗与使用次数限制不结算，仅在被点名（opt-in）时注入（spec D3）"
+   ],
+   "provenance": {
+    "current_text": "db stratagems.text_zh id=fp11e-we-butchers-s1",
+    "base_text": "FP World Eaters（fp_new 补录行，PR5 inserts）",
+    "synthesis": "无需合成",
+    "text_sha256": "92254fe6347e435954a1d60c7d389810eba3d1a5e6008a3d2ee0fa0e87182056"
+   },
+   "encoded_by": "manual-2026-07-18"
+  },
+  {
+   "table": "stratagems",
+   "id": "fp11e-we-butchers-s2",
+   "side": "attacker",
+   "detachment": "Butchers of Khorne",
+   "name_en": "A TROPHY FOR THE THRONE",
+   "name_zh": "献予王座的战利",
+   "status": "partial",
+   "effects": [
+    {
+     "phase": "wound",
+     "op": "modify",
+     "params": [
+      1
+     ],
+     "condition": [
+      "melee_target_has_keyword",
+      "monster"
+     ],
+     "source": "A Trophy for the Throne（近战对凶兽致伤+1）"
+    },
+    {
+     "phase": "wound",
+     "op": "modify",
+     "params": [
+      1
+     ],
+     "condition": [
+      "melee_target_has_keyword",
+      "vehicle"
+     ],
+     "source": "A Trophy for the Throne（近战对载具致伤+1）"
+    }
+   ],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "限 TERMINATOR SQUAD 单位按符合假设；melee_target_has_keyword 复合 tag 防射击阶段误放行",
+    "双关键词目标的重复叠加由致伤修正 ±1 夹取兜住（不会 +2）",
+    "CP 消耗与使用次数限制不结算，仅在被点名（opt-in）时注入（spec D3）"
+   ],
+   "provenance": {
+    "current_text": "db stratagems.text_zh id=fp11e-we-butchers-s2",
+    "base_text": "FP World Eaters（fp_new 补录行，PR5 inserts）",
+    "synthesis": "无需合成",
+    "text_sha256": "43599fb4aecff36221c897c0b5781910f5747882891c65ae29ea9dcabda02420"
+   },
+   "encoded_by": "manual-2026-07-18"
+  },
+  {
+   "table": "stratagems",
+   "id": "fp11e-we-butchers-s3",
+   "side": "target",
+   "detachment": "Butchers of Khorne",
+   "name_en": "WRATH BEYOND REASON",
+   "name_zh": "失理暴怒",
+   "status": "partial",
+   "effects": [
+    {
+     "phase": "damage",
+     "op": "damage_reduction",
+     "params": [
+      1
+     ],
+     "condition": [
+      "phase_shooting"
+     ],
+     "source": "Wrath Beyond Reason（远程攻击 D-1）"
+    }
+   ],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "「直到该敌方单位攻击完毕」≈本次单挑模拟全程（对位语义等价）",
+    "限 TERMINATOR SQUAD 守方按符合假设；dev 致命池不吃减伤（11版 24.10）",
+    "CP 消耗与使用次数限制不结算，仅在被点名（opt-in）时注入（spec D3）"
+   ],
+   "provenance": {
+    "current_text": "db stratagems.text_zh id=fp11e-we-butchers-s3",
+    "base_text": "FP World Eaters（fp_new 补录行，PR5 inserts）",
+    "synthesis": "无需合成",
+    "text_sha256": "de02cbf8225277efcbd7f150b9ba4a03466b92d61bdabe41a8da13c2e9b1631a"
+   },
+   "encoded_by": "manual-2026-07-18"
+  },
+  {
+   "table": "enhancements",
+   "id": "000008432002",
+   "side": "attacker",
+   "detachment": "Berzerker Warband",
+   "name_en": "Berzerker Glaive",
+   "name_zh": "狂战之刃",
+   "status": "partial",
+   "effects": [
+    {
+     "phase": "attacks",
+     "op": "modify",
+     "params": [
+      1
+     ],
+     "condition": [
+      "phase_melee"
+     ],
+     "source": "Berzerker Glaive（近战 A+1）"
+    },
+    {
+     "phase": "damage",
+     "op": "modify",
+     "params": [
+      1
+     ],
+     "condition": [
+      "phase_melee"
+     ],
+     "source": "Berzerker Glaive（近战 D+1）"
+    }
+   ],
+   "requires_toggles": [
+    "bearer_leading"
+   ],
+   "not_modeled_notes_zh": [
+    "排除 [EXTRA ATTACKS] 武器——weapon_filter 无否定式，若 loadout 含额外攻击武器会被错误加成（请单列主武器模拟）",
+    "限携带者模型的武器：单人物模拟准确，附属单位整体注入会高估"
+   ],
+   "provenance": {
+    "current_text": "db enhancements.description id=000008432002",
+    "base_text": "Wahapedia 现文（PR5 工作单：FP 未触及，11 版仍现行）",
+    "synthesis": "无需合成",
+    "text_sha256": "02ec3e7612a3cf0442a3f15ea112efd19f79bcbafceae5b8af5791e6f0332e0c"
+   },
+   "encoded_by": "manual-2026-07-18"
+  },
+  {
+   "table": "enhancements",
+   "id": "000008432003",
+   "side": "target",
+   "detachment": "Berzerker Warband",
+   "name_en": "Helm of Brazen Ire",
+   "name_zh": "盛怒战盔",
+   "status": "partial",
+   "effects": [
+    {
+     "phase": "damage",
+     "op": "damage_reduction",
+     "params": [
+      1
+     ],
+     "condition": [],
+     "source": "Helm of Brazen Ire（分配给携带者的攻击 D-1）"
+    }
+   ],
+   "requires_toggles": [
+    "defender_bearer_leading"
+   ],
+   "not_modeled_notes_zh": [
+    "限分配给携带者模型的攻击——多模型守方整单位受益会高估（建议单人物守方）",
+    "dev 致命池不吃减伤（11版 24.10）"
+   ],
+   "provenance": {
+    "current_text": "db enhancements.description id=000008432003",
+    "base_text": "Wahapedia 现文（PR5 工作单：FP 未触及，11 版仍现行）",
+    "synthesis": "无需合成",
+    "text_sha256": "1ac36090bce7d78cb03044ce8eb2a9adab922b1a9e0670041835b0e1896a3f1e"
+   },
+   "encoded_by": "manual-2026-07-18"
+  },
+  {
+   "table": "enhancements",
+   "id": "000008432004",
+   "side": "attacker",
+   "detachment": "Berzerker Warband",
+   "name_en": "Favoured of Khorne",
+   "name_zh": "恐虐爱将",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "赐福骰重投 2 枚——骰点经济域未建模（赐福用开关近似）"
+   ],
+   "provenance": {
+    "current_text": "db enhancements.description id=000008432004",
+    "base_text": "Wahapedia 现文（PR5 工作单：FP 未触及，11 版仍现行）",
+    "synthesis": "无需合成",
+    "text_sha256": "b769e53ae13b534a8c59e603ec34594743e1b079feadc1c18445ddf3788d1cec"
+   },
+   "encoded_by": "manual-2026-07-18"
+  },
+  {
+   "table": "enhancements",
+   "id": "000008432005",
+   "side": "attacker",
+   "detachment": "Berzerker Warband",
+   "name_en": "Battle-lust",
+   "name_zh": "好战强欲",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "冲锋骰重投/+1——移动域未建模"
+   ],
+   "provenance": {
+    "current_text": "db enhancements.description id=000008432005",
+    "base_text": "Wahapedia 现文（PR5 工作单：FP 未触及，11 版仍现行）",
+    "synthesis": "无需合成",
+    "text_sha256": "58ee5a5a02a1ff45e9eebb3b2d743b3dcbef599cbe9459405e0704790ff5e98e"
+   },
+   "encoded_by": "manual-2026-07-18"
+  },
+  {
+   "table": "enhancements",
+   "id": "000009708002",
+   "side": "attacker",
+   "detachment": "Boarding Butchers",
+   "name_en": "Chosen of Khorne",
+   "name_zh": "恐虐神选",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "赐福骰全体重投——骰点经济域未建模"
+   ],
+   "provenance": {
+    "current_text": "db enhancements.description id=000009708002",
+    "base_text": "Wahapedia 现文（PR5 工作单：FP 未触及，11 版仍现行）",
+    "synthesis": "无需合成",
+    "text_sha256": "8a05ab19f948fdbcf23672310d4d3c48160cbd8c68437939266767fd9e64372d"
+   },
+   "encoded_by": "manual-2026-07-18"
+  },
+  {
+   "table": "enhancements",
+   "id": "000009708003",
+   "side": "attacker",
+   "detachment": "Boarding Butchers",
+   "name_en": "Battle Lust",
+   "name_zh": "好战欲",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "被射击后向攻击者移动 D6\"——移动域未建模"
+   ],
+   "provenance": {
+    "current_text": "db enhancements.description id=000009708003",
+    "base_text": "Wahapedia 现文（PR5 工作单：FP 未触及，11 版仍现行）",
+    "synthesis": "无需合成",
+    "text_sha256": "50b54ea7ea81724ad1683440f965a2c075f948cfdf22341d51b665f38c97170d"
+   },
+   "encoded_by": "manual-2026-07-18"
+  },
+  {
+   "table": "enhancements",
+   "id": "000010074002",
+   "side": "attacker",
+   "detachment": "Cult of Blood",
+   "name_en": "Chosen of the Blood God",
+   "name_zh": "血神神选",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "光环范围 +3\"——光环几何域未建模"
+   ],
+   "provenance": {
+    "current_text": "db enhancements.description id=000010074002",
+    "base_text": "Wahapedia 现文（PR5 工作单：FP 未触及，11 版仍现行）",
+    "synthesis": "无需合成",
+    "text_sha256": "7972189529190befa4b41679b57a3a26a96c5c8634b6f54b8d3b6693497871b6"
+   },
+   "encoded_by": "manual-2026-07-18"
+  },
+  {
+   "table": "enhancements",
+   "id": "000010074003",
+   "side": "attacker",
+   "detachment": "Cult of Blood",
+   "name_en": "Butcher Lord",
+   "name_zh": "屠夫领主",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "附队资格 + 渗透——编队/部署域未建模"
+   ],
+   "provenance": {
+    "current_text": "db enhancements.description id=000010074003",
+    "base_text": "Wahapedia 现文（PR5 工作单：FP 未触及，11 版仍现行）",
+    "synthesis": "无需合成",
+    "text_sha256": "ac03060c81b6d929e059450bca2d3ebbd61c4375ac1a823deea376c792b7903b"
+   },
+   "encoded_by": "manual-2026-07-18"
+  },
+  {
+   "table": "enhancements",
+   "id": "000010074004",
+   "side": "target",
+   "detachment": "Cult of Blood",
+   "name_en": "Brazen Form",
+   "name_zh": "黄铜之躯",
+   "status": "partial",
+   "effects": [
+    {
+     "phase": "fnp",
+     "op": "fnp",
+     "params": [
+      5
+     ],
+     "condition": [],
+     "source": "Brazen Form（FNP 5+）"
+    }
+   ],
+   "requires_toggles": [
+    "defender_bearer_leading"
+   ],
+   "not_modeled_notes_zh": [
+    "+1 T 无守方坚韧特征值通道未建模——可手动把守方档案 T+1 近似",
+    "限凶兽模型按守方符合假设"
+   ],
+   "provenance": {
+    "current_text": "db enhancements.description id=000010074004",
+    "base_text": "Wahapedia 现文（PR5 工作单：FP 未触及，11 版仍现行）",
+    "synthesis": "无需合成",
+    "text_sha256": "ec3bdb7eeec2a7b17417ed221befcd6572057a452ee2538a72da8669001f88a7"
+   },
+   "encoded_by": "manual-2026-07-18"
+  },
+  {
+   "table": "enhancements",
+   "id": "000010074005",
+   "side": "attacker",
+   "detachment": "Cult of Blood",
+   "name_en": "Strategic Slaughter",
+   "name_zh": "屠戮布阵",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "部署后重部署/入战略预备队——部署域未建模"
+   ],
+   "provenance": {
+    "current_text": "db enhancements.description id=000010074005",
+    "base_text": "Wahapedia 现文（PR5 工作单：FP 未触及，11 版仍现行）",
+    "synthesis": "无需合成",
+    "text_sha256": "2ba38e5f92a02f12593d60ece0d42a3fd4a54e26991ab41f4114b2656d765c93"
+   },
+   "encoded_by": "manual-2026-07-18"
+  },
+  {
+   "table": "enhancements",
+   "id": "000010086002",
+   "side": "attacker",
+   "detachment": "Goretrack Onslaught",
+   "name_en": "Murderous Onslaught",
+   "name_zh": "凶残猛攻",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "下车回合免疫警戒射击——警戒射击域未建模"
+   ],
+   "provenance": {
+    "current_text": "db enhancements.description id=000010086002",
+    "base_text": "Wahapedia 现文（PR5 工作单：FP 未触及，11 版仍现行）",
+    "synthesis": "无需合成",
+    "text_sha256": "aa5ae903ec31a32fcca7616c16e0927f796049bc81b94f0a48fe578c1e42ad4f"
+   },
+   "encoded_by": "manual-2026-07-18"
+  },
+  {
+   "table": "enhancements",
+   "id": "000010086003",
+   "side": "attacker",
+   "detachment": "Goretrack Onslaught",
+   "name_en": "Aggressive Deployment",
+   "name_zh": "激进部署",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "专属运输获 Scouts 9\"——部署域未建模"
+   ],
+   "provenance": {
+    "current_text": "db enhancements.description id=000010086003",
+    "base_text": "Wahapedia 现文（PR5 工作单：FP 未触及，11 版仍现行）",
+    "synthesis": "无需合成",
+    "text_sha256": "bf010f84fe18480608965c2ad62d57469b60336af09302987264fbf98d558f91"
+   },
+   "encoded_by": "manual-2026-07-18"
+  },
+  {
+   "table": "enhancements",
+   "id": "000010086004",
+   "side": "target",
+   "detachment": "Goretrack Onslaught",
+   "name_en": "Unleash Hell",
+   "name_zh": "倾泻火力",
+   "status": "partial",
+   "effects": [
+    {
+     "phase": "hit",
+     "op": "modify",
+     "params": [
+      -1
+     ],
+     "condition": [],
+     "source": "Unleash Hell（被压制单位命中 -1）"
+    }
+   ],
+   "requires_toggles": [
+    "defender_bearer_leading"
+   ],
+   "not_modeled_notes_zh": [
+    "前提=本方上个射击阶段已用本增强压制当前攻击单位——按成立假设",
+    "压制持续到下回合开始的时限不建模（单次对位语义等价）"
+   ],
+   "provenance": {
+    "current_text": "db enhancements.description id=000010086004",
+    "base_text": "Wahapedia 现文（PR5 工作单：FP 未触及，11 版仍现行）",
+    "synthesis": "无需合成",
+    "text_sha256": "6fd9b12fbea68d4bc5cceb6564e375db79baefccf45c76cc7729accb1074b25b"
+   },
+   "encoded_by": "manual-2026-07-18"
+  },
+  {
+   "table": "enhancements",
+   "id": "000010086005",
+   "side": "attacker",
+   "detachment": "Goretrack Onslaught",
+   "name_en": "Infernal Infusion",
+   "name_zh": "炼狱灌注",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "一次性 Fights First——先攻判定域（请在 fight_order 判定面板手动考虑）"
+   ],
+   "provenance": {
+    "current_text": "db enhancements.description id=000010086005",
+    "base_text": "Wahapedia 现文（PR5 工作单：FP 未触及，11 版仍现行）",
+    "synthesis": "无需合成",
+    "text_sha256": "39b127fd3d249e1eb1a47378578ad97dd8c6f8962771dde84a7df70c2fc17f75"
+   },
+   "encoded_by": "manual-2026-07-18"
+  },
+  {
+   "table": "enhancements",
+   "id": "000010078002",
+   "side": "attacker",
+   "detachment": "Khorne Daemonkin",
+   "name_en": "Icon of War",
+   "name_zh": "战争圣像",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "为鲜血军团光环授予赐福能力——盟军光环域未建模"
+   ],
+   "provenance": {
+    "current_text": "db enhancements.description id=000010078002",
+    "base_text": "Wahapedia 现文（PR5 工作单：FP 未触及，11 版仍现行）",
+    "synthesis": "无需合成",
+    "text_sha256": "a51ebbfda8b44c474a11dfd9e53fb9bc8d8e34a8add06871ef8eb417614c9e46"
+   },
+   "encoded_by": "manual-2026-07-18"
+  },
+  {
+   "table": "enhancements",
+   "id": "000010078003",
+   "side": "target",
+   "detachment": "Khorne Daemonkin",
+   "name_en": "Blood-forged Armour",
+   "name_zh": "血铸甲",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "Sv 设为 2+ 是绝对值设定，引擎只有 sv_improve 增量通道——请直接把守方档案 Sv 改 2+ 近似；被毁得 1 BTP 属血税资源域"
+   ],
+   "provenance": {
+    "current_text": "db enhancements.description id=000010078003",
+    "base_text": "Wahapedia 现文（PR5 工作单：FP 未触及，11 版仍现行）",
+    "synthesis": "无需合成",
+    "text_sha256": "6a008c480e19cc082b5488ba64034e99cb1f6352422617e135a6d19a8ba11126"
+   },
+   "encoded_by": "manual-2026-07-18"
+  },
+  {
+   "table": "enhancements",
+   "id": "000010078004",
+   "side": "attacker",
+   "detachment": "Khorne Daemonkin",
+   "name_en": "Disciple of Khorne",
+   "name_zh": "恐虐信徒",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "附队资格/深潜/阵营关键词切换——编队域未建模"
+   ],
+   "provenance": {
+    "current_text": "db enhancements.description id=000010078004",
+    "base_text": "Wahapedia 现文（PR5 工作单：FP 未触及，11 版仍现行）",
+    "synthesis": "无需合成",
+    "text_sha256": "82574e103ae6d9a684d22aaadce82c00faa7c84cb27328e3b5115809ef3b04c4"
+   },
+   "encoded_by": "manual-2026-07-18"
+  },
+  {
+   "table": "enhancements",
+   "id": "000010078005",
+   "side": "attacker",
+   "detachment": "Khorne Daemonkin",
+   "name_en": "Blade of Endless Bloodshed",
+   "name_zh": "无尽血战之刃",
+   "status": "partial",
+   "effects": [
+    {
+     "phase": "attacks",
+     "op": "modify",
+     "params": [
+      1
+     ],
+     "condition": [
+      "phase_melee"
+     ],
+     "source": "Blade of Endless Bloodshed（A+1）"
+    },
+    {
+     "phase": "wound",
+     "op": "s_improve",
+     "params": [
+      1
+     ],
+     "condition": [
+      "phase_melee"
+     ],
+     "source": "Blade of Endless Bloodshed（S+1，特征值通道）"
+    },
+    {
+     "phase": "damage",
+     "op": "modify",
+     "params": [
+      1
+     ],
+     "condition": [
+      "phase_melee"
+     ],
+     "source": "Blade of Endless Bloodshed（D+1）"
+    }
+   ],
+   "requires_toggles": [
+    "bearer_leading"
+   ],
+   "not_modeled_notes_zh": [
+    "限携带者近战武器：单人物模拟准确，附属单位整体注入会高估",
+    "消灭单位自动得 BTP 属血税资源域未建模"
+   ],
+   "provenance": {
+    "current_text": "db enhancements.description id=000010078005",
+    "base_text": "Wahapedia 现文（PR5 工作单：FP 未触及，11 版仍现行）",
+    "synthesis": "无需合成",
+    "text_sha256": "a29a96477de09b15a3c070c189324f86145e9f9f951bf07fc030bf143ada4409"
+   },
+   "encoded_by": "manual-2026-07-18"
+  },
+  {
+   "table": "enhancements",
+   "id": "000010082002",
+   "side": "attacker",
+   "detachment": "Possessed Slaughterband",
+   "name_en": "Malicious Vigour",
+   "name_zh": "恶意活力",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "Brazen Fury 移动固定 6——移动域未建模"
+   ],
+   "provenance": {
+    "current_text": "db enhancements.description id=000010082002",
+    "base_text": "Wahapedia 现文（PR5 工作单：FP 未触及，11 版仍现行）",
+    "synthesis": "无需合成",
+    "text_sha256": "d6f0e8cad9b24e2e7b6dff69a5c0934cfe5796d9d01b24ec381a73dfa202ba44"
+   },
+   "encoded_by": "manual-2026-07-18"
+  },
+  {
+   "table": "enhancements",
+   "id": "000010082003",
+   "side": "attacker",
+   "detachment": "Possessed Slaughterband",
+   "name_en": "Killing Clarity",
+   "name_zh": "杀戮澄明",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "消灭单位 4+ 得 CP——资源域未建模"
+   ],
+   "provenance": {
+    "current_text": "db enhancements.description id=000010082003",
+    "base_text": "Wahapedia 现文（PR5 工作单：FP 未触及，11 版仍现行）",
+    "synthesis": "无需合成",
+    "text_sha256": "eaf8dd53d61ed73187e54dcd837d1a838245126da84d303741116e01f060d776"
+   },
+   "encoded_by": "manual-2026-07-18"
+  },
+  {
+   "table": "enhancements",
+   "id": "000010082004",
+   "side": "attacker",
+   "detachment": "Possessed Slaughterband",
+   "name_en": "Frenzied Focus",
+   "name_zh": "狂乱专注",
+   "status": "partial",
+   "effects": [
+    {
+     "phase": "hit",
+     "op": "crit_threshold",
+     "params": [
+      5
+     ],
+     "condition": [],
+     "source": "Frenzied Focus（未修正 5+ 即暴击命中）"
+    }
+   ],
+   "requires_toggles": [
+    "bearer_leading"
+   ],
+   "not_modeled_notes_zh": [
+    "规则原文即整单位受益（bearer's unit），整 loadout 注入语义一致；全阶段生效（原文未限阶段）"
+   ],
+   "provenance": {
+    "current_text": "db enhancements.description id=000010082004",
+    "base_text": "Wahapedia 现文（PR5 工作单：FP 未触及，11 版仍现行）",
+    "synthesis": "无需合成",
+    "text_sha256": "87f34fd983f885794ce8a30988ab805ee80e224caab16a20493596a9d787791d"
+   },
+   "encoded_by": "manual-2026-07-18"
+  },
+  {
+   "table": "enhancements",
+   "id": "000010082005",
+   "side": "attacker",
+   "detachment": "Possessed Slaughterband",
+   "name_en": "Violent Demise",
+   "name_zh": "暴烈临终",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "Deadly Demise 增强（2+ 触发/D3+1）——爆炸域未建模"
+   ],
+   "provenance": {
+    "current_text": "db enhancements.description id=000010082005",
+    "base_text": "Wahapedia 现文（PR5 工作单：FP 未触及，11 版仍现行）",
+    "synthesis": "无需合成",
+    "text_sha256": "744c3e7b1fb315957e6db2f13bfb68e90146d2aca22438d4c7526492d0b7adfe"
+   },
+   "encoded_by": "manual-2026-07-18"
+  },
+  {
+   "table": "enhancements",
+   "id": "000009716002",
+   "side": "attacker",
+   "detachment": "Skullsworn",
+   "name_en": "Frenzied",
+   "name_zh": "狂乱",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "加速/冲锋骰重投 + 加速后可冲锋——移动域未建模"
+   ],
+   "provenance": {
+    "current_text": "db enhancements.description id=000009716002",
+    "base_text": "Wahapedia 现文（PR5 工作单：FP 未触及，11 版仍现行）",
+    "synthesis": "无需合成",
+    "text_sha256": "df7f5bf70b70a8b949945a75879dd2e2a2fb9984cc3f3978c250441912aca2d0"
+   },
+   "encoded_by": "manual-2026-07-18"
+  },
+  {
+   "table": "enhancements",
+   "id": "000009716003",
+   "side": "attacker",
+   "detachment": "Skullsworn",
+   "name_en": "Carmine Corona",
+   "name_zh": "腥红光冕",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "首杀后 OC=5——目标点控制域未建模"
+   ],
+   "provenance": {
+    "current_text": "db enhancements.description id=000009716003",
+    "base_text": "Wahapedia 现文（PR5 工作单：FP 未触及，11 版仍现行）",
+    "synthesis": "无需合成",
+    "text_sha256": "6c00208d867e3dd7db379e747f963ab3efd5cdefb1cb4c77997b95a5db1b4072"
+   },
+   "encoded_by": "manual-2026-07-18"
+  },
+  {
+   "table": "enhancements",
+   "id": "000009847002",
+   "side": "attacker",
+   "detachment": "Vessels of Wrath",
+   "name_en": "Archslaughterer",
+   "name_zh": "神选屠夫",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "11e 重印：一次性使本单位全部赐福生效——请直接打开两项主力赐福开关近似；「全部六项且不占军队上限」的例外无法在开关层表达（军规组约束按两项硬拦）"
+   ],
+   "provenance": {
+    "current_text": "db enhancements.description id=000009847002",
+    "base_text": "FP World Eaters（PR5 fp_rules 已刷新为 11 版现行文本，工作单 drifted）",
+    "synthesis": "无需合成",
+    "text_sha256": "dc9f0babe18632d6bf34f9776442fc8e4a099de1761dbec4a31a23902839bc8a"
+   },
+   "encoded_by": "manual-2026-07-18"
+  },
+  {
+   "table": "enhancements",
+   "id": "000009847005",
+   "side": "attacker",
+   "detachment": "Vessels of Wrath",
+   "name_en": "Gateways to Glory",
+   "name_zh": "荣耀之门",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "11e 重印：MOBILE + 冲锋 +1——移动域未建模"
+   ],
+   "provenance": {
+    "current_text": "db enhancements.description id=000009847005",
+    "base_text": "FP World Eaters（PR5 fp_rules 已刷新为 11 版现行文本，工作单 drifted）",
+    "synthesis": "无需合成",
+    "text_sha256": "22c099d5e2e9ca49271a80b3abb5a879ca648350b460a202c53bba3124b2edbe"
+   },
+   "encoded_by": "manual-2026-07-18"
+  },
+  {
+   "table": "enhancements",
+   "id": "fp11e-we-brazeng-e1",
+   "side": "attacker",
+   "detachment": "Brazen Engines",
+   "name_en": "Talons of Butchery",
+   "name_zh": "屠戮之爪",
+   "status": "partial",
+   "effects": [
+    {
+     "phase": "attacks",
+     "op": "blast",
+     "params": [
+      2
+     ],
+     "condition": [
+      "phase_melee"
+     ],
+     "source": "Talons of Butchery（Maulerfiend Fists [CLEAVE 2]：每5目标模型+2A）"
+    }
+   ],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "限 MAULERFIEND 单位按符合假设；weapon_filter 只注入 Maulerfiend Fists",
+    "[CLEAVE X] 与 blast 共用攻击骰加成通道（11版 24.06，phase_melee 门控）"
+   ],
+   "provenance": {
+    "current_text": "db enhancements.description id=fp11e-we-brazeng-e1",
+    "base_text": "FP World Eaters（fp_new 补录行，PR5 inserts）",
+    "synthesis": "无需合成",
+    "text_sha256": "da3c0930a6614daab86f89b06174783741ddc41b2a51773727505976ded58a0a"
+   },
+   "encoded_by": "manual-2026-07-18",
+   "weapon_filter": "maulerfiend fists"
+  },
+  {
+   "table": "enhancements",
+   "id": "fp11e-we-brazeng-e2",
+   "side": "attacker",
+   "detachment": "Brazen Engines",
+   "name_en": "Murder-Forged Entity",
+   "name_zh": "凶铸邪体",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "授予 DAEMON 关键词——关键词/编队域未建模"
+   ],
+   "provenance": {
+    "current_text": "db enhancements.description id=fp11e-we-brazeng-e2",
+    "base_text": "FP World Eaters（fp_new 补录行，PR5 inserts）",
+    "synthesis": "无需合成",
+    "text_sha256": "369d5f0d8a95528df6d7166f5c732a722d5a4fd493f16a38bfb9bf30319c35dd"
+   },
+   "encoded_by": "manual-2026-07-18"
+  },
+  {
+   "table": "enhancements",
+   "id": "fp11e-we-butchers-e1",
+   "side": "attacker",
+   "detachment": "Butchers of Khorne",
+   "name_en": "Sanctified in Slaughter",
+   "name_zh": "屠戮祝圣",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "+1 OC——目标点控制域未建模"
+   ],
+   "provenance": {
+    "current_text": "db enhancements.description id=fp11e-we-butchers-e1",
+    "base_text": "FP World Eaters（fp_new 补录行，PR5 inserts）",
+    "synthesis": "无需合成",
+    "text_sha256": "fe5ef8d79e6ae43bb4b9703091bc8c9773f1bc5fc748e09c968d9a76fbaba85b"
+   },
+   "encoded_by": "manual-2026-07-18"
+  },
+  {
+   "table": "enhancements",
+   "id": "fp11e-we-butchers-e2",
+   "side": "attacker",
+   "detachment": "Butchers of Khorne",
+   "name_en": "Gore-stained Veterans",
+   "name_zh": "浴血老兵",
+   "status": "partial",
+   "effects": [
+    {
+     "phase": "hit",
+     "op": "bs_improve",
+     "params": [
+      1
+     ],
+     "condition": [
+      "phase_melee"
+     ],
+     "source": "Gore-stained Veterans（近战 WS 特征值改善 1）"
+    }
+   ],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "限 TERMINATOR SQUAD 单位按符合假设（原文整单位受益）",
+    "WS 改善走特征值通道（不吃 ±1 命中骰修正夹取）"
+   ],
+   "provenance": {
+    "current_text": "db enhancements.description id=fp11e-we-butchers-e2",
+    "base_text": "FP World Eaters（fp_new 补录行，PR5 inserts）",
+    "synthesis": "无需合成",
+    "text_sha256": "72266b5f2f0531e9381a565ddc76b2078535fba4890dd989cb73f719d0455198"
+   },
+   "encoded_by": "manual-2026-07-18"
+  }
+ ]
+}

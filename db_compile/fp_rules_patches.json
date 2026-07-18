@@ -1,5 +1,5 @@
 {
- "_comment": "P7-PR1 钛帝国规则文本 11 版化补丁。text_patches 来自 2026-07-14 逐行 A/B 工作单（docs/superpowers/plans/2026-07-14-p7-pr1-fp-rules-worklist.md，55 行全落账：8 drifted / 3 identical / 35 not_in_fp / 9 review_needed / 5 fp_new）；name_patches 来自钛帝国十版中文codex refine 缓存逐条效果配对（43 条有源 + 11 条自译标记）。",
+ "_comment": "P7-PR1 钛帝国规则文本 11 版化补丁。text_patches 来自 2026-07-14 逐行 A/B 工作单（docs/superpowers/plans/2026-07-14-p7-pr1-fp-rules-worklist.md，55 行全落账：8 drifted / 3 identical / 35 not_in_fp / 9 review_needed / 5 fp_new）；name_patches 来自钛帝国十版中文codex refine 缓存逐条效果配对（43 条有源 + 11 条自译标记）。｜P7-PR5 吞世者追加（2026-07-18）：text 9（军规嗜血癫狂改+1冲锋、狂战士之怒/怒火尽泄 surge move 术语、黄铜之怒规则改核心 surge、怒火容器 p4 完整重印 5 条）；deactivations +6（怒火容器重印未收录）；inserts +13（Brazen Engines/Butchers of Khorne 两全新分队 + Scorn the Witch）；name +53（狂战士战帮/怒火容器/军规 DavidZ codex 有源配对，其余自译标记）。已滚入免补：Summoned by Slaughter / Warp Stalkers / Rapid Manifestation（Wahapedia 现文即 11 版）。｜PR5 兵牌层技能 6 条（FP p7-p8 DATASHEETS：Loping Speed 8\"、Blood Surge surge move 化、Helbrute Frenzy 重写、Scent of Blood 9\" 内判据、Chaos Rhino 8\"、Bloody Fury 重写）；已滚入免补：Exalted Eightbound Rend and Tear / Icon of Khorne×2 / Slaughterbound 武器 S10 / Defiler 整表（Wahapedia 已收）。FRAME 关键词沿 S4 裁定跳过（测距词）。",
  "text_patches": [
   {
    "table": "detachments",
@@ -140,6 +140,156 @@
    "to_text": "BATTLESUIT model only. In the Declare Battle Formations step, select one of this model’s Plasma Rifle weapons. That weapon’s attacks have:<br><ul><li>+2 S</li><li>+1 A, AP and D.</li></ul>",
    "fp_source": "page_004.md（Experimental Prototype Cadre 完整重印）",
    "synthesis": "整段替换（限定收窄为 BATTLESUIT + Declare Battle Formations 时机）"
+  },
+  {
+   "table": "abilities",
+   "id": "000008428",
+   "name_en": "Blessings of Khorne",
+   "column": "text_zh",
+   "from_text": "<div class=\"BreakInsideAvoid\">If your Army Faction is <span class=\"kwb\">WORLD</span> <span class=\"kwb\">EATERS</span>, at the start of the battle round, you can make a Blessings of Khorne roll. To do so, roll eight D6. You can then use those dice to activate up to two Blessings of Khorne (see below). Each Blessing of Khorne specifies the dice results it requires (where a number is specified, a double or triple of that value or higher is required). You can only activate each Blessing of Khorne once per battle round. Any unused dice from the Blessings of Khorne roll are then discarded. Once activated, each Blessing of Khorne applies to all units from your army with this ability until the end of the battle round.<br><br><div class=\"redExample\"><b>Example:</b> Ash makes a Blessings of Khorne roll, getting the following: 1, 2, 2, 2, 3, 4, 6, 6. First they use the two 6s to activate Warp Blades (which requires a double 5+), leaving the following dice: 1,2, 2, 2, 3, 4. They then use the two 2s to activate Unbridled Bloodlust. Now that two Blessings of Khorne have been activated, no more can be activated and the remaining dice are discarded.</div><br></div><div class=\"BreakInsideAvoid\"><div class=\"BreakInsideAvoid\"><table max-width=\"480px\" border=\"0\" cellpadding=\"3\" style=\"border-width:0px\"><tbody><tbody><tr><td class=\"td_w\"><p style=\"display:block\" class=\"impact18\">UNBRIDLED BLOODLUST</p><p><div class=\"cruWEwrapAll\"><div class=\"cruWEwrap\"><div class=\"cruD1w\"></div><div class=\"cruD1w\"></div><div class=\"cruPlusw\"></div></div><div class=\"cruWEright\"></div></div>You can re-roll <span class=\"tooltip00041\" data-tooltip-content=\"#tooltip_content00041\"><span class=\"tt kwbu\">Charge</span> <span class=\"tt kwbu\">rolls</span></span> made for this unit.</p></td></tr></tbody></tbody></table></div><div class=\"BreakInsideAvoid\"><table max-width=\"480px\" border=\"0\" cellpadding=\"3\" style=\"border-width:0px\"><tbody><tbody><tr><td class=\"td_w\"><p style=\"display:block\" class=\"impact18\">RAGE-FUELLED INVIGORATION</p><p><div class=\"cruWEwrapAll\"><div class=\"cruWEwrap\"><div class=\"cruD2w\"></div><div class=\"cruD2w\"></div><div class=\"cruPlusw\"></div></div><div class=\"cruWEright\"></div></div>Each time a model in this unit makes a <span class=\"tooltip00042\" data-tooltip-content=\"#tooltip_content00042\"><span class=\"tt kwbu\">Pile-in</span></span> or <span class=\"tooltip00043\" data-tooltip-content=\"#tooltip_content00043\"><span class=\"tt kwbu\">Consolidation</span> <span class=\"tt kwbu\">move</span></span>, it can move up to 6\" instead of up to 3\".</p></td></tr></tbody></tbody></table></div><div class=\"BreakInsideAvoid\"><table max-width=\"480px\" border=\"0\" cellpadding=\"3\" style=\"border-width:0px\"><tbody><tbody><tr><td class=\"td_w\"><p style=\"display:block\" class=\"impact18\">TOTAL CARNAGE</p><p><div class=\"cruWEwrapAll\"><div class=\"cruWEwrap\"><div class=\"cruD3w\"></div><div class=\"cruD3w\"></div><div class=\"cruPlusw\"></div></div><div class=\"cruWEright\"></div></div>Each time a model in this unit is destroyed by a melee attack, if it has not fought this phase, roll one D6: on a 4+, do not remove it from play. The destroyed model can fight after the attacking unit has finished making its attacks, and is then removed from play.</p></td></tr></tbody></tbody></table></div><div class=\"BreakInsideAvoid\"><table max-width=\"480px\" border=\"0\" cellpadding=\"3\" style=\"border-width:0px\"><tbody><tbody><tr><td class=\"td_w\"><p style=\"display:block\" class=\"impact18\">MARTIAL EXCELLENCE</p><p><div class=\"cruWEwrapAll\"><div class=\"cruWEwrap\"><div class=\"cruD4w\"></div><div class=\"cruD4w\"></div><div class=\"cruPlusw\"></div><div class=\"cruORw\"></div><div class=\"cruD1w\"></div><div class=\"cruD1w\"></div><div class=\"cruD1w\"></div><div class=\"cruPlusw\"></div></div><div class=\"cruWEright\"></div></div>Melee weapons equipped by models in this unit have the <span class=\"kwb2 bluefont\"><span class=\"tooltip00034\" data-tooltip-content=\"#tooltip_content00034\"><span class=\"tt kwbu\">[SUSTAINED</span> <span class=\"tt kwbu\">HITS</span> <span class=\"tt kwbu\">1]</span></span></span> ability.</p></td></tr></tbody></tbody></table></div><div class=\"BreakInsideAvoid\"><table max-width=\"480px\" border=\"0\" cellpadding=\"3\" style=\"border-width:0px\"><tbody><tbody><tr><td class=\"td_w\"><p style=\"display:block\" class=\"impact18\">WARP BLADES</p><p><div class=\"cruWEwrapAll\"><div class=\"cruWEwrap\"><div class=\"cruD5w\"></div><div class=\"cruD5w\"></div><div class=\"cruPlusw\"></div><div class=\"cruORw\"></div><div class=\"cruD2w\"></div><div class=\"cruD2w\"></div><div class=\"cruD2w\"></div><div class=\"cruPlusw\"></div></div><div class=\"cruWEright\"></div></div>Melee weapons equipped by models in this unit have the <span class=\"kwb2 bluefont\"><span class=\"tooltip00035\" data-tooltip-content=\"#tooltip_content00035\"><span class=\"tt kwbu\">[LETHAL</span> <span class=\"tt kwbu\">HITS]</span></span></span> ability.</p></td></tr></tbody></tbody></table></div><div class=\"BreakInsideAvoid\"><table max-width=\"480px\" border=\"0\" cellpadding=\"3\" style=\"border-width:0px\"><tbody><tbody><tr><td class=\"td_w\"><p style=\"display:block\" class=\"impact18\">DECAPITATING STRIKES</p><p><div class=\"cruWEwrapAll\"><div class=\"cruWEwrap\"><div class=\"cruD6w\"></div><div class=\"cruD6w\"></div><div class=\"cruORw\"></div><div class=\"cruD3w\"></div><div class=\"cruD3w\"></div><div class=\"cruD3w\"></div><div class=\"cruPlusw\"></div></div><div class=\"cruWEright\"></div></div>Each time a model in this unit makes a melee attack that targets an <span class=\"kwb\">INFANTRY</span> unit, that attack has the <span class=\"kwb2 bluefont\"><span class=\"tooltip00027\" data-tooltip-content=\"#tooltip_content00027\"><span class=\"tt kwbu\">[DEVASTATING</span> <span class=\"tt kwbu\">WOUNDS]</span></span></span> ability.</p></td></tr></tbody></tbody></table></div></div>",
+   "to_text": "<div class=\"BreakInsideAvoid\">If your Army Faction is <span class=\"kwb\">WORLD</span> <span class=\"kwb\">EATERS</span>, at the start of the battle round, you can make a Blessings of Khorne roll. To do so, roll eight D6. You can then use those dice to activate up to two Blessings of Khorne (see below). Each Blessing of Khorne specifies the dice results it requires (where a number is specified, a double or triple of that value or higher is required). You can only activate each Blessing of Khorne once per battle round. Any unused dice from the Blessings of Khorne roll are then discarded. Once activated, each Blessing of Khorne applies to all units from your army with this ability until the end of the battle round.<br><br><div class=\"redExample\"><b>Example:</b> Ash makes a Blessings of Khorne roll, getting the following: 1, 2, 2, 2, 3, 4, 6, 6. First they use the two 6s to activate Warp Blades (which requires a double 5+), leaving the following dice: 1,2, 2, 2, 3, 4. They then use the two 2s to activate Unbridled Bloodlust. Now that two Blessings of Khorne have been activated, no more can be activated and the remaining dice are discarded.</div><br></div><div class=\"BreakInsideAvoid\"><div class=\"BreakInsideAvoid\"><table max-width=\"480px\" border=\"0\" cellpadding=\"3\" style=\"border-width:0px\"><tbody><tbody><tr><td class=\"td_w\"><p style=\"display:block\" class=\"impact18\">UNBRIDLED BLOODLUST</p><p><div class=\"cruWEwrapAll\"><div class=\"cruWEwrap\"><div class=\"cruD1w\"></div><div class=\"cruD1w\"></div><div class=\"cruPlusw\"></div></div><div class=\"cruWEright\"></div></div>This unit has +1 to charge rolls.</p></td></tr></tbody></tbody></table></div><div class=\"BreakInsideAvoid\"><table max-width=\"480px\" border=\"0\" cellpadding=\"3\" style=\"border-width:0px\"><tbody><tbody><tr><td class=\"td_w\"><p style=\"display:block\" class=\"impact18\">RAGE-FUELLED INVIGORATION</p><p><div class=\"cruWEwrapAll\"><div class=\"cruWEwrap\"><div class=\"cruD2w\"></div><div class=\"cruD2w\"></div><div class=\"cruPlusw\"></div></div><div class=\"cruWEright\"></div></div>Each time a model in this unit makes a <span class=\"tooltip00042\" data-tooltip-content=\"#tooltip_content00042\"><span class=\"tt kwbu\">Pile-in</span></span> or <span class=\"tooltip00043\" data-tooltip-content=\"#tooltip_content00043\"><span class=\"tt kwbu\">Consolidation</span> <span class=\"tt kwbu\">move</span></span>, it can move up to 6\" instead of up to 3\".</p></td></tr></tbody></tbody></table></div><div class=\"BreakInsideAvoid\"><table max-width=\"480px\" border=\"0\" cellpadding=\"3\" style=\"border-width:0px\"><tbody><tbody><tr><td class=\"td_w\"><p style=\"display:block\" class=\"impact18\">TOTAL CARNAGE</p><p><div class=\"cruWEwrapAll\"><div class=\"cruWEwrap\"><div class=\"cruD3w\"></div><div class=\"cruD3w\"></div><div class=\"cruPlusw\"></div></div><div class=\"cruWEright\"></div></div>Each time a model in this unit is destroyed by a melee attack, if it has not fought this phase, roll one D6: on a 4+, do not remove it from play. The destroyed model can fight after the attacking unit has finished making its attacks, and is then removed from play.</p></td></tr></tbody></tbody></table></div><div class=\"BreakInsideAvoid\"><table max-width=\"480px\" border=\"0\" cellpadding=\"3\" style=\"border-width:0px\"><tbody><tbody><tr><td class=\"td_w\"><p style=\"display:block\" class=\"impact18\">MARTIAL EXCELLENCE</p><p><div class=\"cruWEwrapAll\"><div class=\"cruWEwrap\"><div class=\"cruD4w\"></div><div class=\"cruD4w\"></div><div class=\"cruPlusw\"></div><div class=\"cruORw\"></div><div class=\"cruD1w\"></div><div class=\"cruD1w\"></div><div class=\"cruD1w\"></div><div class=\"cruPlusw\"></div></div><div class=\"cruWEright\"></div></div>Melee weapons equipped by models in this unit have the <span class=\"kwb2 bluefont\"><span class=\"tooltip00034\" data-tooltip-content=\"#tooltip_content00034\"><span class=\"tt kwbu\">[SUSTAINED</span> <span class=\"tt kwbu\">HITS</span> <span class=\"tt kwbu\">1]</span></span></span> ability.</p></td></tr></tbody></tbody></table></div><div class=\"BreakInsideAvoid\"><table max-width=\"480px\" border=\"0\" cellpadding=\"3\" style=\"border-width:0px\"><tbody><tbody><tr><td class=\"td_w\"><p style=\"display:block\" class=\"impact18\">WARP BLADES</p><p><div class=\"cruWEwrapAll\"><div class=\"cruWEwrap\"><div class=\"cruD5w\"></div><div class=\"cruD5w\"></div><div class=\"cruPlusw\"></div><div class=\"cruORw\"></div><div class=\"cruD2w\"></div><div class=\"cruD2w\"></div><div class=\"cruD2w\"></div><div class=\"cruPlusw\"></div></div><div class=\"cruWEright\"></div></div>Melee weapons equipped by models in this unit have the <span class=\"kwb2 bluefont\"><span class=\"tooltip00035\" data-tooltip-content=\"#tooltip_content00035\"><span class=\"tt kwbu\">[LETHAL</span> <span class=\"tt kwbu\">HITS]</span></span></span> ability.</p></td></tr></tbody></tbody></table></div><div class=\"BreakInsideAvoid\"><table max-width=\"480px\" border=\"0\" cellpadding=\"3\" style=\"border-width:0px\"><tbody><tbody><tr><td class=\"td_w\"><p style=\"display:block\" class=\"impact18\">DECAPITATING STRIKES</p><p><div class=\"cruWEwrapAll\"><div class=\"cruWEwrap\"><div class=\"cruD6w\"></div><div class=\"cruD6w\"></div><div class=\"cruORw\"></div><div class=\"cruD3w\"></div><div class=\"cruD3w\"></div><div class=\"cruD3w\"></div><div class=\"cruPlusw\"></div></div><div class=\"cruWEright\"></div></div>Each time a model in this unit makes a melee attack that targets an <span class=\"kwb\">INFANTRY</span> unit, that attack has the <span class=\"kwb2 bluefont\"><span class=\"tooltip00027\" data-tooltip-content=\"#tooltip_content00027\"><span class=\"tt kwbu\">[DEVASTATING</span> <span class=\"tt kwbu\">WOUNDS]</span></span></span> ability.</p></td></tr></tbody></tbody></table></div></div>",
+   "fp_source": "page_007.md（Blessings of Khorne, Unbridled Bloodlust change-to）",
+   "synthesis": "change-list应用：仅替换 UNBRIDLED BLOODLUST 效果句（re-roll Charge rolls → +1 to charge rolls），其余段落与 HTML 结构保持 DB 原文"
+  },
+  {
+   "table": "stratagems",
+   "id": "000008431007",
+   "name_en": "BERZERKER’S WRATH",
+   "column": "text_zh",
+   "from_text": "<b>WHEN:</b> Your opponent’s Shooting phase, just after an enemy unit has shot.<br><br><b>TARGET:</b> One Khorne Berzerkers unit from your army that can make a Blood Surge move as a result of those attacks.<br><br><b>EFFECT:</b> Do not roll a D6 to determine how far models in your unit can move when they make their Blood Surge move. Instead, when making their Blood Surge move, these models can move up to 8\".",
+   "to_text": "<b>WHEN:</b> Your opponent’s Shooting phase, just after an enemy unit has shot.<br><br><b>TARGET:</b> One KHORNE BERZERKERS unit from your army that can make a surge move as a result of those attacks.<br><br><b>EFFECT:</b> Do not roll a D6 to determine how far models in your unit can move when they make a surge move. Instead, when making a surge move, those models can move up to 8\".",
+   "fp_source": "page_007.md（Berzerker’s Wrath Stratagem, Target and Effect Sections change-to）",
+   "synthesis": "change-list应用：TARGET/EFFECT 段按 FP 全文替换（Blood Surge move→11 版核心 surge move 术语），WHEN 段保持 DB 原文"
+  },
+  {
+   "table": "stratagems",
+   "id": "000010087007",
+   "name_en": "FURY UNLEASHED",
+   "column": "text_zh",
+   "from_text": "<b>WHEN:</b> Your opponent’s Shooting phase, just after an enemy unit has shot.<br><br><b>TARGET:</b> One World Eaters Rhino model from your army that has one or more wounds remaining and was hit by one or more of the attacking unit’s attacks.<br><br><b>EFFECT:</b> One Khorne Berzerkers unit embarked within your model can disembark and make a Blood Surge move.<br><br><b>RESTRICTIONS:</b> A unit cannot be targeted by this Stratagem and the Unrelenting Advance Stratagem in the same phase.",
+   "to_text": "<b>WHEN:</b> Your opponent’s Shooting phase, just after an enemy unit has shot.<br><br><b>TARGET:</b> One World Eaters Rhino model from your army that has one or more wounds remaining and was hit by one or more of the attacking unit’s attacks.<br><br><b>EFFECT:</b> One KHORNE BERZERKERS unit embarked within your model can make a disembark move and then make a surge move of up to D6+2\".<br><br><b>RESTRICTIONS:</b> A unit cannot be targeted by this Stratagem and the Unrelenting Advance Stratagem in the same phase.",
+   "fp_source": "page_007.md（Fury Unleashed Stratagem, Effect Section change-to）",
+   "synthesis": "change-list应用：仅替换 EFFECT 段（Blood Surge→surge move of up to D6+2\"），WHEN/TARGET/RESTRICTIONS 保持 DB 原文"
+  },
+  {
+   "table": "detachments",
+   "id": "000010081",
+   "name_en": "Brazen Fury",
+   "column": "rule_text",
+   "from_text": "World Eaters Possessed units from your army have the following ability:<br><br><b>Brazen Fury:</b> In your opponent’s Shooting phase, each time an enemy unit has shot, if any models from this unit were destroyed as a result of those attacks, this unit can make a Brazen Fury move. To do so, roll one D6: models in this unit move a number of inches up to this result, but this unit must end that move as close as possible to the closest enemy unit (excluding <span class=\"kwb\">AIRCRAFT</span>). When doing so, those models can be moved within Engagement Range of that enemy unit. This unit cannot make a Brazen Fury move while it is Battle-shocked or within Engagement Range of one or more enemy units, and can only make one Brazen Fury move per phase.",
+   "to_text": "World Eaters Possessed units from your army have the following ability:<br><br><b>Brazen Fury:</b> In your opponent’s Shooting phase, when an enemy unit has shot, if a model in this unit was destroyed as a result of those attacks, this unit can make a surge move of up to D6\". That surge move is a Brazen Fury move.",
+   "fp_source": "page_007.md（Brazen Fury Detachment Rule change-to）",
+   "synthesis": "change-list应用：Brazen Fury 能力体按 FP 全文替换（自带流程改核心 surge move + 限制句删除），lead-in 句保持 DB 原文"
+  },
+  {
+   "table": "detachments",
+   "id": "000009846",
+   "name_en": "Wrath of Khorne",
+   "column": "rule_text",
+   "from_text": "At the start of the battle round, after activating Blessings of Khorne, you can select one or more models from your army from those listed below (including models that are embarked within Transports):<br><ul><li>World Eaters Character (excluding Epic Heroes)</li><li>Eightbound Champion</li><li>Exalted Eightbound Champion</li><li>Khorne Berzerkers Champion</li><li>World Eaters Terminator Champion</li></ul><br>You can select the same type of model multiple times. The maximum number of models you can select depends on the battle size, as follows:<br><br><div class=\"BreakInsideAvoid\"  style=\"\"\"><table border=\"0\" bordercolor=\"#888\" cellpadding=\"4\" cellspacing=\"0\" style=\"border-collapse:collapse;border-width:0px\"><tbody><tr><td><table class=\" customTable tablefont\" border=\"1\" bordercolor=\"#888\" cellpadding=\"4\" style=\"border-collapse:collapse;border-color:#888888;border-width:0px\"><tbody><tr><td style=\"border-width:0 0 0 0;border-style:none none none none;text-align:left;vertical-align:middle;font-size:24px;width:312px;height:0px;\"><b>INCURSION:</b></td><td style=\"border-width:0 0 0 0;border-style:none none none none;text-align:left;vertical-align:middle;font-size:24px;width:289px;height:0px;\"><b>2 MODELS</b></td></tr><tr><td style=\"border-width:0 0 0 0;border-style:none none none none;text-align:left;vertical-align:middle;font-size:24px;width:312px;height:0px;\"><b>STRIKE FORCE:</b></td><td style=\"border-width:0 0 0 0;border-style:none none none none;text-align:left;vertical-align:middle;font-size:24px;width:289px;height:0px;\"><b>3 MODELS</b></td></tr><tr><td style=\"border-width:0 0 0 0;border-style:none none none none;text-align:left;vertical-align:middle;font-size:24px;width:312px;height:0px;\"><b>ONSLAUGHT:</b></td><td style=\"border-width:0 0 0 0;border-style:none none none none;text-align:left;vertical-align:middle;font-size:24px;width:289px;height:0px;\"><b>4 MODELS</b></td></tr></tbody></table></td></tr></tbody></table></div><br>Until the end of the battle round, each of those models has the <span class=\"kwb\">VESSEL</span> <span class=\"kwb2\">OF</span> <span class=\"kwb\">WRATH</span> keyword (we recommend marking such models with a suitable token). Then, select one Blessing of Khorne that is not currently active for your army. Until the end of the battle round, that Blessing of Khorne is active for <span class=\"kwb\">VESSEL</span> <span class=\"kwb2\">OF</span> <span class=\"kwb\">WRATH</span> units from your army in addition to any others that are active for your army.",
+   "to_text": "When a friendly WORLD EATERS CHARACTER unit (excluding EPIC HERO units) is selected to fight, that unit’s CHARACTER models’ melee attacks can have:<br><ul><li>[CLEAVE 1].</li><li>Or: +1 AP.</li></ul>",
+   "fp_source": "page_004.md（Vessels of Wrath 完整重印）",
+   "synthesis": "整段替换（FP 完整重印体裁：VESSEL OF WRATH 关键词/规模表机制整体废弃，改为人物近战 [CLEAVE 1] 或 +1 AP 二选一）"
+  },
+  {
+   "table": "stratagems",
+   "id": "000009848002",
+   "name_en": "ASPIRE TO INFAMY",
+   "column": "text_zh",
+   "from_text": "<b>WHEN:</b> Fight phase.<br><br><b>TARGET:</b> One Khorne Berzerkers or Jakhals unit from your army that has not been selected to fight this phase and is within 8\" of one or more friendly World Eaters Character models.<br><br><b>EFFECT:</b> Until the end of the phase, improve the Strength and Armour Penetration characteristics of melee weapons equipped by non-<span class=\"kwb\">CHARACTER</span> models in your unit by 1.",
+   "to_text": "<b>WHEN:</b> Fight phase, when a friendly WORLD EATERS CHARACTER unit (excluding EPIC HERO units) is selected to fight.<br><br><b>TARGET:</b> That WORLD EATERS CHARACTER unit.<br><br><b>EFFECT:</b> Your unit’s CHARACTER models’ melee attacks have: +1 A, +2 S.",
+   "fp_source": "page_004.md（Vessels of Wrath 完整重印）",
+   "synthesis": "整段替换（目标从狂战士/豺狼单位改为人物单位；效果从非人物 S/AP+1 改为人物模型 +1 A、+2 S）"
+  },
+  {
+   "table": "stratagems",
+   "id": "000009848005",
+   "name_en": "PUNISH THE CRAVEN",
+   "column": "text_zh",
+   "from_text": "<b>WHEN:</b> Your opponent’s Movement phase, just after an enemy unit (excluding <span class=\"kwb\">MONSTERS</span> and <span class=\"kwb\">VEHICLES</span>) is selected to Fall Back.<br><br><b>TARGET:</b> One World Eaters Infantry or World Eaters Daemon Prince unit from your army within Engagement Range of that enemy unit.<br><br><b>EFFECT:</b> When that enemy unit Falls Back, all models in that enemy unit must take a Desperate Escape test. When doing so, if your unit is a <span class=\"kwb\">VESSEL</span> <span class=\"kwb\">OF</span> <span class=\"kwb\">WRATH</span>  unit, subtract 1 from each of those tests.",
+   "to_text": "<b>WHEN:</b> Your opponent’s Movement phase, when a unit is selected to make a fall-back move, if that unit is engaged with a friendly WORLD EATERS CHARACTER unit.<br><br><b>TARGET:</b> That WORLD EATERS CHARACTER unit.<br><br><b>EFFECT:</b> When an enemy unit engaged with your unit is selected to make a fall-back move, that enemy unit must use the desperate escape mode. If that enemy unit is battle-shocked, -1 from those hazard rolls.",
+   "fp_source": "page_004.md（Vessels of Wrath 完整重印）",
+   "synthesis": "整段替换（目标改为人物单位；效果改 11 版 desperate escape mode/hazard rolls 术语）"
+  },
+  {
+   "table": "enhancements",
+   "id": "000009847002",
+   "name_en": "Archslaughterer",
+   "column": "description",
+   "from_text": "<span class=\"kwb\">WORLD</span> <span class=\"kwb\">EATERS</span> model only. Improve the Armour Penetration characteristic of melee weapons equipped by the bearer by 1. While the bearer is a <span class=\"kwb\">VESSEL</span> <span class=\"kwb\">OF</span> <span class=\"kwb\">WRATH</span> , improve the Damage characteristic of those weapons by 1 as well.",
+   "to_text": "WORLD EATERS model only. (Once per battle, per army) In your Command phase, you can use this ability. If you do, every Blessing of Khorne is active for this unit until the start of your next turn.",
+   "fp_source": "page_004.md（Vessels of Wrath 完整重印）",
+   "synthesis": "整段替换（效果从近战 AP/D 增强改为一次性全赐福激活，属实质改动）"
+  },
+  {
+   "table": "enhancements",
+   "id": "000009847005",
+   "name_en": "Gateways to Glory",
+   "column": "description",
+   "from_text": "World Eaters Daemon Prince or World Eaters Mounted model only. Each time the bearer makes a Normal, Advance or Charge move, it can move horizontally through models and terrain features. When doing so, it can move within Engagement Range of such models but cannot end a Normal or Advance move within Engagement Range of them.",
+   "to_text": "WORLD EATERS DAEMON PRINCE model only. This model has:<br><ul><li>MOBILE.</li><li>+1 to charge rolls.</li></ul>",
+   "fp_source": "page_004.md（Vessels of Wrath 完整重印）",
+   "synthesis": "整段替换（限定收窄为恶魔亲王；效果从穿越模型/地形改为 MOBILE + 冲锋+1）"
+  },
+  {
+   "table": "abilities",
+   "id": "000004076_a1",
+   "name_en": "Loping Speed",
+   "column": "text_zh",
+   "from_text": "Once per turn, when an enemy unit ends a Normal, Advance or Fall Back move within 9\" of this unit, if this unit is not within Engagement Range of one or more enemy units, it can make a Normal move of up to D6\".",
+   "to_text": "In your opponent’s Movement phase, if an enemy unit ends a move within 8\" of this unit, if this unit is not within Engagement Range of one or more enemy units, this unit can make a Normal move of up to D6\".",
+   "fp_source": "page_007.md（Goremongers, Loping Speed Ability change-to）",
+   "synthesis": "整段替换（触发距离 9\"→8\"，触发时机改到对手移动阶段末口径，删 Once per turn 限定随 FP 全文）"
+  },
+  {
+   "table": "abilities",
+   "id": "000002627_a1",
+   "name_en": "Blood Surge",
+   "column": "text_zh",
+   "from_text": "In your opponent’s Shooting phase, each time an enemy unit has shot, if any models from this unit were destroyed as a result of those attacks, this unit can make a Blood Surge move. To do so, roll one D6 and add 2 to the roll: models in this unit move a number of inches up to this result, but this unit must end that move as close as possible to the closest enemy unit (excluding <span class=\"kwb\">AIRCRAFT</span>), When doing so, those models can be moved within Engagement Range of that enemy unit. This unit cannot make a Blood Surge move while it is Battle-shocked or within Engagement Range of one or more enemy units, and can only make one Blood Surge move per phase.",
+   "to_text": "In your opponent’s Shooting phase, when an enemy unit has shot, if a model in this unit was destroyed as a result of those attacks, this unit can make a surge move of up to D6+2\".",
+   "fp_source": "page_007.md（Khorne Berzerkers, Blood Surge Ability change-to）",
+   "synthesis": "整段替换（自带流程改 11 版核心 surge move；距离 D6+2 保持；旧限制句随 FP 全文删除）"
+  },
+  {
+   "table": "abilities",
+   "id": "000002632_a2",
+   "name_en": "Frenzy",
+   "column": "text_zh",
+   "from_text": "In your opponent’s Shooting phase, and in the Fight phase, each time an enemy unit targets this model, after that unit has finished making its attacks, this model can either shoot or fight, but when resolving those attacks it can only target that enemy unit (and only if it is an eligible target).",
+   "to_text": "(Once per turn, per unit) In the Fight phase, when an enemy unit targets this unit, after that unit has resolved its attacks, you can use this ability. If you do, this unit is eligible to fight (even if it has already fought this phase) and must be selected to fight next.",
+   "fp_source": "page_008.md（Helbrute, Frenzy Ability change-to）",
+   "synthesis": "整段替换（从射击/近战双阶段反击改为近战阶段 once per turn 的立即再战机制，属实质改动）"
+  },
+  {
+   "table": "abilities",
+   "id": "000002639_a1",
+   "name_en": "The Scent of Blood",
+   "column": "text_zh",
+   "from_text": "Each time this model declares a charge that targets one or more units below Starting Strength, add 1 to the Charge roll. If one or more of the targets of that charge are Below Half-strength, add 2 to the Charge roll instead.",
+   "to_text": "In the Charge phase, when this unit declares a charge:<br><ul><li>If an enemy unit below starting strength is within 9\" of this unit, this unit has +1 to charge rolls.</li><li>Or: If an enemy unit below half strength is within 9\" of this unit, this unit has +2 to charge rolls.</li></ul>",
+   "fp_source": "page_008.md（Maulerfiend, Scent Of Blood Ability change-to）",
+   "synthesis": "整段替换（判据从冲锋目标战损改为 9\" 内存在战损敌军，属实质改动）"
+  },
+  {
+   "table": "abilities",
+   "id": "000002640_a1",
+   "name_en": "Meet Any Challenge",
+   "column": "text_zh",
+   "from_text": "In your opponent’s Movement phase, each time an enemy unit is set up or ends a Normal, Advance or Fall Back move within 9\" of this model, any units embarked within it can disembark.",
+   "to_text": "In your opponent’s Movement phase, each time an enemy unit is set up or ends a Normal, Advance or Fall Back move within 8\" of this model, any units embarked within it can disembark.",
+   "fp_source": "page_007.md（Chaos Rhino, Meet Any Challenge Ability：Change 9\" to 8\"）",
+   "synthesis": "change-list应用：仅 9\"→8\"，其余保持 DB 原文"
+  },
+  {
+   "table": "abilities",
+   "id": "000002629_a1",
+   "name_en": "Bloody Fury",
+   "column": "text_zh",
+   "from_text": "Each time a model in this unit makes a ranged attack that targets the closest enemy unit, you can re-roll the Hit roll. Each time this unit declares a charge that targets the closest eligible enemy unit, you can re-roll the Charge roll.",
+   "to_text": "<ul><li>This unit’s ranged attacks that target the closest eligible target can re-roll hit rolls.</li><li>When this unit declares a charge, you can use this part of this ability. If you do:<ul><li>This unit can re-roll that charge roll.</li><li>This unit must end that charge move engaged with the closest charge target.</li></ul></li></ul>",
+   "fp_source": "page_007.md（Chaos Terminators, Blood Fury Ability change-to）",
+   "synthesis": "整段替换（FP 称 Blood Fury、DB 行名 Bloody Fury 同源；冲锋重骰改为附带“必须与最近目标接战”代价，属实质改动）"
   }
  ],
  "name_patches": [
@@ -582,6 +732,430 @@
    "name_zh": "为了上上善道",
    "zh_source": "codex-10e",
    "evidence": "wiki/core-rules/for-the-greater-good.md 与中文codex page_013/017/018 一致"
+  },
+  {
+   "table": "abilities",
+   "id": "000008428",
+   "name_en": "Blessings of Khorne",
+   "name_zh": "恐虐赐福",
+   "zh_source": "codex-10e",
+   "evidence": "DavidZ page_001：军规名+八骰激活两赐福机制逐字对应"
+  },
+  {
+   "table": "detachments",
+   "id": "000008430",
+   "name_en": "Relentless Rage",
+   "name_zh": "无情狂怒",
+   "zh_source": "codex-10e",
+   "evidence": "DavidZ page_002：团策名+冲锋回合近战 S+2/A+1 对应"
+  },
+  {
+   "table": "detachments",
+   "id": "000009707",
+   "name_en": "Focused Ferocity",
+   "name_zh": "凶性专注",
+   "zh_source": "self-translation-11e",
+   "evidence": "Boarding Butchers 分队规则（宣冲即战识测试），无中文源自译"
+  },
+  {
+   "table": "detachments",
+   "id": "000009715",
+   "name_en": "Reap the Tally",
+   "name_zh": "收割战绩",
+   "zh_source": "self-translation-11e",
+   "evidence": "Skullsworn 分队规则（5+ 死后反打），无中文源自译"
+  },
+  {
+   "table": "detachments",
+   "id": "000009846",
+   "name_en": "Wrath of Khorne",
+   "name_zh": "恐虐之怒",
+   "zh_source": "codex-10e",
+   "evidence": "DavidZ page_017：怒火容器分队基础能力名对应（正文已被 11e 重印替换，名称沿用）"
+  },
+  {
+   "table": "detachments",
+   "id": "000010073",
+   "name_en": "Idols of Khorne",
+   "name_zh": "恐虐神像",
+   "zh_source": "self-translation-11e",
+   "evidence": "Cult of Blood 分队规则（三神像光环选择），无中文源自译"
+  },
+  {
+   "table": "detachments",
+   "id": "000010077",
+   "name_en": "Blood Tithe",
+   "name_zh": "血税",
+   "zh_source": "self-translation-11e",
+   "evidence": "Khorne Daemonkin 分队规则（BTP 积累兑换），无中文源自译"
+  },
+  {
+   "table": "detachments",
+   "id": "000010081",
+   "name_en": "Brazen Fury",
+   "name_zh": "黄铜之怒",
+   "zh_source": "self-translation-11e",
+   "evidence": "Possessed Slaughterband 分队规则（被射击减员后 surge move），无中文源自译"
+  },
+  {
+   "table": "detachments",
+   "id": "000010085",
+   "name_en": "Rush to the Fray",
+   "name_zh": "疾赴战场",
+   "zh_source": "self-translation-11e",
+   "evidence": "Goretrack Onslaught 分队规则（下车 +1 冲锋 + [lance]），无中文源自译"
+  },
+  {
+   "table": "stratagems",
+   "id": "000008431002",
+   "name_en": "BLOOD OFFERING",
+   "name_zh": "鲜血供奉",
+   "zh_source": "codex-10e",
+   "evidence": "DavidZ page_003 表头"
+  },
+  {
+   "table": "stratagems",
+   "id": "000008431003",
+   "name_en": "HACK AND SLASH",
+   "name_zh": "斩尽杀绝",
+   "zh_source": "codex-10e",
+   "evidence": "DavidZ page_003 表头"
+  },
+  {
+   "table": "stratagems",
+   "id": "000008431004",
+   "name_en": "FRENZIED RESILIENCE",
+   "name_zh": "血怒坚韧",
+   "zh_source": "codex-10e",
+   "evidence": "DavidZ page_003 表头"
+  },
+  {
+   "table": "stratagems",
+   "id": "000008431005",
+   "name_en": "SKULLS FOR THE SKULL THRONE!",
+   "name_zh": "颅献颅座！",
+   "zh_source": "codex-10e",
+   "evidence": "DavidZ page_004 表头"
+  },
+  {
+   "table": "stratagems",
+   "id": "000008431006",
+   "name_en": "APOPLECTIC FRENZY",
+   "name_zh": "颠心狂暴",
+   "zh_source": "codex-10e",
+   "evidence": "DavidZ page_004 表头"
+  },
+  {
+   "table": "stratagems",
+   "id": "000008431007",
+   "name_en": "BERZERKER’S WRATH",
+   "name_zh": "狂战士之怒",
+   "zh_source": "codex-10e",
+   "evidence": "DavidZ page_004 表头"
+  },
+  {
+   "table": "stratagems",
+   "id": "000009848002",
+   "name_en": "ASPIRE TO INFAMY",
+   "name_zh": "渴望恶名",
+   "zh_source": "codex-10e",
+   "evidence": "DavidZ page_018 表头"
+  },
+  {
+   "table": "stratagems",
+   "id": "000009848003",
+   "name_en": "OVERSHADOWED BY NONE",
+   "name_zh": "脱颖而出",
+   "zh_source": "codex-10e",
+   "evidence": "DavidZ page_018 表头"
+  },
+  {
+   "table": "stratagems",
+   "id": "000009848004",
+   "name_en": "GORY DEDICATION",
+   "name_zh": "血腥奉献",
+   "zh_source": "codex-10e",
+   "evidence": "DavidZ page_018 表头"
+  },
+  {
+   "table": "stratagems",
+   "id": "000009848005",
+   "name_en": "PUNISH THE CRAVEN",
+   "name_zh": "惩罚懦夫",
+   "zh_source": "codex-10e",
+   "evidence": "DavidZ page_019 表头"
+  },
+  {
+   "table": "stratagems",
+   "id": "000009848006",
+   "name_en": "MEET FORCE WITH FORCE",
+   "name_zh": "硬碰硬",
+   "zh_source": "codex-10e",
+   "evidence": "DavidZ page_019 表头"
+  },
+  {
+   "table": "stratagems",
+   "id": "000009848007",
+   "name_en": "BRAZEN CONTEMPT",
+   "name_zh": "愤怒蔑视",
+   "zh_source": "codex-10e",
+   "evidence": "DavidZ page_019 表头"
+  },
+  {
+   "table": "stratagems",
+   "id": "000009709002",
+   "name_en": "TERRIFYING SCREAMS",
+   "name_zh": "骇人尖啸",
+   "zh_source": "self-translation-11e",
+   "evidence": "无中文源自译"
+  },
+  {
+   "table": "stratagems",
+   "id": "000009709003",
+   "name_en": "UNSTOPPABLE RAGE",
+   "name_zh": "势不可挡之怒",
+   "zh_source": "self-translation-11e",
+   "evidence": "无中文源自译"
+  },
+  {
+   "table": "stratagems",
+   "id": "000009709004",
+   "name_en": "SAVAGE RESILIENCE",
+   "name_zh": "蛮性坚韧",
+   "zh_source": "self-translation-11e",
+   "evidence": "无中文源自译"
+  },
+  {
+   "table": "stratagems",
+   "id": "000009709005",
+   "name_en": "COWARDS’ BANE",
+   "name_zh": "懦夫克星",
+   "zh_source": "self-translation-11e",
+   "evidence": "无中文源自译"
+  },
+  {
+   "table": "stratagems",
+   "id": "000009717002",
+   "name_en": "BLOOD RITE",
+   "name_zh": "血祭仪式",
+   "zh_source": "self-translation-11e",
+   "evidence": "无中文源自译"
+  },
+  {
+   "table": "stratagems",
+   "id": "000009717003",
+   "name_en": "FURIOUS MOMENTUM",
+   "name_zh": "狂怒冲势",
+   "zh_source": "self-translation-11e",
+   "evidence": "无中文源自译"
+  },
+  {
+   "table": "stratagems",
+   "id": "000009717004",
+   "name_en": "RUINOUS RAMPAGE",
+   "name_zh": "毁灭暴走",
+   "zh_source": "self-translation-11e",
+   "evidence": "无中文源自译"
+  },
+  {
+   "table": "stratagems",
+   "id": "000009717005",
+   "name_en": "SHOCKING ONSLAUGHT",
+   "name_zh": "震骇猛攻",
+   "zh_source": "self-translation-11e",
+   "evidence": "无中文源自译"
+  },
+  {
+   "table": "stratagems",
+   "id": "000010075002",
+   "name_en": "BLOODY VENGEANCE",
+   "name_zh": "血腥复仇",
+   "zh_source": "self-translation-11e",
+   "evidence": "无中文源自译"
+  },
+  {
+   "table": "stratagems",
+   "id": "000010075003",
+   "name_en": "DRAWN TO THE SLAUGHTER",
+   "name_zh": "引赴屠场",
+   "zh_source": "self-translation-11e",
+   "evidence": "无中文源自译"
+  },
+  {
+   "table": "stratagems",
+   "id": "000010075004",
+   "name_en": "IN THE SHADOW OF BRASS IDOLS",
+   "name_zh": "黄铜神像之荫",
+   "zh_source": "self-translation-11e",
+   "evidence": "无中文源自译"
+  },
+  {
+   "table": "stratagems",
+   "id": "000010075005",
+   "name_en": "BLOODTHIRSTY HORDE",
+   "name_zh": "嗜血蛮群",
+   "zh_source": "self-translation-11e",
+   "evidence": "无中文源自译"
+  },
+  {
+   "table": "stratagems",
+   "id": "000010075006",
+   "name_en": "FAIL NOT THE BLOOD GOD",
+   "name_zh": "勿负血神",
+   "zh_source": "self-translation-11e",
+   "evidence": "无中文源自译"
+  },
+  {
+   "table": "stratagems",
+   "id": "000010075007",
+   "name_en": "BRAZEN IDOL",
+   "name_zh": "黄铜神像",
+   "zh_source": "self-translation-11e",
+   "evidence": "无中文源自译"
+  },
+  {
+   "table": "stratagems",
+   "id": "000010087002",
+   "name_en": "ENDLESS PURSUIT OF VIOLENCE",
+   "name_zh": "无尽逐暴",
+   "zh_source": "self-translation-11e",
+   "evidence": "无中文源自译"
+  },
+  {
+   "table": "stratagems",
+   "id": "000010087003",
+   "name_en": "SMASH THROUGH",
+   "name_zh": "横冲直撞",
+   "zh_source": "self-translation-11e",
+   "evidence": "无中文源自译"
+  },
+  {
+   "table": "stratagems",
+   "id": "000010087004",
+   "name_en": "AGGRESSIVE DISEMBARKATION",
+   "name_zh": "强袭下车",
+   "zh_source": "self-translation-11e",
+   "evidence": "无中文源自译"
+  },
+  {
+   "table": "stratagems",
+   "id": "000010087005",
+   "name_en": "FULL-THROTTLE ASSAULT",
+   "name_zh": "全速突击",
+   "zh_source": "self-translation-11e",
+   "evidence": "无中文源自译"
+  },
+  {
+   "table": "stratagems",
+   "id": "000010087006",
+   "name_en": "UNRELENTING ADVANCE",
+   "name_zh": "无情推进",
+   "zh_source": "self-translation-11e",
+   "evidence": "无中文源自译"
+  },
+  {
+   "table": "stratagems",
+   "id": "000010087007",
+   "name_en": "FURY UNLEASHED",
+   "name_zh": "怒火尽泄",
+   "zh_source": "self-translation-11e",
+   "evidence": "无中文源自译"
+  },
+  {
+   "table": "stratagems",
+   "id": "000010079002",
+   "name_en": "SUMMONED BY SLAUGHTER",
+   "name_zh": "屠戮召唤",
+   "zh_source": "self-translation-11e",
+   "evidence": "无中文源自译"
+  },
+  {
+   "table": "stratagems",
+   "id": "000010079003",
+   "name_en": "DAEMONIC FURY",
+   "name_zh": "恶魔之怒",
+   "zh_source": "self-translation-11e",
+   "evidence": "无中文源自译"
+  },
+  {
+   "table": "stratagems",
+   "id": "000010079004",
+   "name_en": "A WORTHY SKULL",
+   "name_zh": "够格的头颅",
+   "zh_source": "self-translation-11e",
+   "evidence": "无中文源自译"
+  },
+  {
+   "table": "stratagems",
+   "id": "000010079005",
+   "name_en": "BLESSING OF BURNING BLOOD",
+   "name_zh": "燃血赐福",
+   "zh_source": "self-translation-11e",
+   "evidence": "无中文源自译"
+  },
+  {
+   "table": "stratagems",
+   "id": "000010079006",
+   "name_en": "DAEMONTIDE",
+   "name_zh": "魔潮",
+   "zh_source": "self-translation-11e",
+   "evidence": "无中文源自译"
+  },
+  {
+   "table": "stratagems",
+   "id": "000010079007",
+   "name_en": "MURDER-CALL",
+   "name_zh": "杀戮召令",
+   "zh_source": "self-translation-11e",
+   "evidence": "无中文源自译"
+  },
+  {
+   "table": "stratagems",
+   "id": "000010083002",
+   "name_en": "DAEMONIC RESISTANCE",
+   "name_zh": "恶魔抗性",
+   "zh_source": "self-translation-11e",
+   "evidence": "无中文源自译"
+  },
+  {
+   "table": "stratagems",
+   "id": "000010083003",
+   "name_en": "DAEMONIC STRENGTH",
+   "name_zh": "恶魔伟力",
+   "zh_source": "self-translation-11e",
+   "evidence": "无中文源自译"
+  },
+  {
+   "table": "stratagems",
+   "id": "000010083004",
+   "name_en": "IMMORTAL FURY",
+   "name_zh": "不朽之怒",
+   "zh_source": "self-translation-11e",
+   "evidence": "无中文源自译"
+  },
+  {
+   "table": "stratagems",
+   "id": "000010083005",
+   "name_en": "RAPID MANIFESTATION",
+   "name_zh": "迅速显形",
+   "zh_source": "self-translation-11e",
+   "evidence": "无中文源自译"
+  },
+  {
+   "table": "stratagems",
+   "id": "000010083006",
+   "name_en": "WARP STALKERS",
+   "name_zh": "亚空间潜行者",
+   "zh_source": "self-translation-11e",
+   "evidence": "无中文源自译"
+  },
+  {
+   "table": "stratagems",
+   "id": "000010083007",
+   "name_en": "HORRIFYING VIOLENCE",
+   "name_zh": "骇人暴行",
+   "zh_source": "self-translation-11e",
+   "evidence": "无中文源自译"
   }
  ],
  "_deactivations_comment": "9 条 review_needed 的最终裁定（2026-07-16 用户裁 A：FP 完整重印即整体替换）。证据：①FP p3/p4 对 Auxiliary Cadre / Experimental Prototype Cadre 用完整重印体裁（同书 datasheet 侧明文 replaces 语义，page_010）；②11 版 Experimental Ammunition 删除了与 Threat Assessment Analyser 互斥的 RESTRICTIONS 段（侧面印证 TAA 不复存在）；③Wahapedia 现网核证（2026-07-16 重拉 Stratagems.csv）确认其尚未消化这两页 FP（drifted 条仍旧十版措辞、GUIDED BY UNITY 与 Advanced Acquisition Cadre 均缺席），故'现网仍在'不构成反证。处置：置 fp_status='removed_11e'（原文保留可回滚）；P7 DSL 对账枚举、检索消费者应排除该标记行。将来 Wahapedia 滚更这两页时 text_patches 守卫会自动让路告警，届时复核本裁定。",
@@ -669,6 +1243,48 @@
    "name_en": "Fusion Blades",
    "status": "removed_11e",
    "fp_source": "page_004.md（Experimental Prototype Cadre 完整重印仅 3 增强，未收录）"
+  },
+  {
+   "table": "stratagems",
+   "id": "000009848003",
+   "name_en": "OVERSHADOWED BY NONE",
+   "status": "removed_11e",
+   "fp_source": "page_004.md（Vessels of Wrath 完整重印未收录）"
+  },
+  {
+   "table": "stratagems",
+   "id": "000009848004",
+   "name_en": "GORY DEDICATION",
+   "status": "removed_11e",
+   "fp_source": "page_004.md（Vessels of Wrath 完整重印未收录）"
+  },
+  {
+   "table": "stratagems",
+   "id": "000009848006",
+   "name_en": "MEET FORCE WITH FORCE",
+   "status": "removed_11e",
+   "fp_source": "page_004.md（Vessels of Wrath 完整重印未收录）"
+  },
+  {
+   "table": "stratagems",
+   "id": "000009848007",
+   "name_en": "BRAZEN CONTEMPT",
+   "status": "removed_11e",
+   "fp_source": "page_004.md（Vessels of Wrath 完整重印未收录）"
+  },
+  {
+   "table": "enhancements",
+   "id": "000009847003",
+   "name_en": "Vox-diabolus",
+   "status": "removed_11e",
+   "fp_source": "page_004.md（Vessels of Wrath 完整重印未收录）"
+  },
+  {
+   "table": "enhancements",
+   "id": "000009847004",
+   "name_en": "Avenger’s Crown",
+   "status": "removed_11e",
+   "fp_source": "page_004.md（Vessels of Wrath 完整重印未收录）"
   }
  ],
  "_inserts_comment": "P7-PR4 fp_new 补录（2026-07-16）：FP 有、Wahapedia/DB 无的整条目。AAC 整分队（1 规则行 + 3 战略 + 2 增强，id 前缀 fp11e- 标 synthetic 溯源，增强点数 FP/MFM 均无源诚实置 NULL）+ Auxiliary Cadre 新战略 Guided by Unity。守卫：同 id 幂等/名字不符让路；同名异 id（上游将来自补）让路告警不留双胞胎；stratagems/enhancements 插入行标 fp_status='added_11e'。",
@@ -766,6 +1382,182 @@
     "cost": null,
     "legend": "点数未知：FP 不含点数，MFM 缓存无增强数据（诚实置空，勿猜）",
     "description": "GHOSTKEEL BATTLESUIT/PATHFINDER TEAM/STEALTH BATTLESUITS unit only. When this unit is selected to shoot, you can select one enemy unit within 24\" of this unit. That enemy unit has +9\" detection range until this unit has shot."
+   }
+  },
+  {
+   "table": "detachments",
+   "fp_source": "page_001.md（11 版新分队，Wahapedia 无源）",
+   "values": {
+    "id": "fp11e-we-brazeng-det",
+    "faction": "WE",
+    "name_zh": "暴走恐魔",
+    "name_en": "Rampaging Terrors",
+    "rule_text": "Friendly DAEMON VEHICLE units have the following ability:<br><br><b>Terror of Khorne:</b> At the start of the Fight phase, you can select one enemy unit engaged with this unit. That enemy unit makes a battle-shock roll, with -1 to that battle-shock roll. You cannot select the same enemy unit for this effect more than once per phase.<br><br>This detachment has the ONSLAUGHT tag and cannot be taken with another ONSLAUGHT detachment."
+   }
+  },
+  {
+   "table": "stratagems",
+   "fp_source": "page_001.md（11 版新分队，Wahapedia 无源）",
+   "values": {
+    "id": "fp11e-we-brazeng-s1",
+    "faction": "WE",
+    "detachment": "Brazen Engines",
+    "name_zh": "暴怒澄明",
+    "name_en": "APOPLECTIC CLARITY",
+    "cp_cost": "1",
+    "phase": "Shooting or Fight phase",
+    "text_zh": "<b>WHEN:</b> Your Shooting phase or the Fight phase, when a friendly DAEMON VEHICLE unit is selected to attack.<br><br><b>TARGET:</b> That DAEMON VEHICLE unit.<br><br><b>EFFECT:</b> Your unit’s attacks can ignore modifiers to:<br><ul><li>BS.</li><li>WS.</li><li>Hit rolls and wound rolls.</li></ul>"
+   }
+  },
+  {
+   "table": "stratagems",
+   "fp_source": "page_001.md（11 版新分队，Wahapedia 无源）",
+   "values": {
+    "id": "fp11e-we-brazeng-s2",
+    "faction": "WE",
+    "detachment": "Brazen Engines",
+    "name_zh": "毁灭之迹",
+    "name_en": "TRAIL OF DESTRUCTION",
+    "cp_cost": "1",
+    "phase": "Movement phase",
+    "text_zh": "<b>WHEN:</b> Your Movement phase, when a friendly DAEMON VEHICLE unit is selected to move.<br><br><b>TARGET:</b> That DAEMON VEHICLE unit.<br><br><b>EFFECT:</b> Your unit has MOBILE."
+   }
+  },
+  {
+   "table": "stratagems",
+   "fp_source": "page_001.md（11 版新分队，Wahapedia 无源）",
+   "values": {
+    "id": "fp11e-we-brazeng-s3",
+    "faction": "WE",
+    "detachment": "Brazen Engines",
+    "name_zh": "激怒成狂",
+    "name_en": "GOADED TO FURY",
+    "cp_cost": "1",
+    "phase": "Shooting phase",
+    "text_zh": "<b>WHEN:</b> Your opponent’s Shooting phase, when an enemy unit that targeted a friendly unengaged DAEMON VEHICLE unit (excluding TITANIC units) has shot.<br><br><b>TARGET:</b> That DAEMON VEHICLE unit.<br><br><b>EFFECT:</b> Your unit can make a surge move of up to D6\"."
+   }
+  },
+  {
+   "table": "enhancements",
+   "fp_source": "page_001.md（11 版新分队，Wahapedia 无源）",
+   "values": {
+    "id": "fp11e-we-brazeng-e1",
+    "faction_id": "WE",
+    "detachment_id": "fp11e-we-brazeng",
+    "detachment_name": "Brazen Engines",
+    "name": "Talons of Butchery",
+    "cost": null,
+    "legend": "点数未知：FP 不含点数，MFM 缓存无增强数据（诚实置空，勿猜）",
+    "description": "MAULERFIEND unit only. This unit’s Maulerfiend Fists have [CLEAVE 2]."
+   }
+  },
+  {
+   "table": "enhancements",
+   "fp_source": "page_001.md（11 版新分队，Wahapedia 无源）",
+   "values": {
+    "id": "fp11e-we-brazeng-e2",
+    "faction_id": "WE",
+    "detachment_id": "fp11e-we-brazeng",
+    "detachment_name": "Brazen Engines",
+    "name": "Murder-Forged Entity",
+    "cost": null,
+    "legend": "点数未知：FP 不含点数，MFM 缓存无增强数据（诚实置空，勿猜）",
+    "description": "WORLD EATERS VEHICLE unit only. This unit has DAEMON."
+   }
+  },
+  {
+   "table": "detachments",
+   "fp_source": "page_002.md（11 版新分队，Wahapedia 无源）",
+   "values": {
+    "id": "fp11e-we-butchers-det",
+    "faction": "WE",
+    "name_zh": "精金雪崩",
+    "name_en": "Adamantine Avalanche",
+    "rule_text": "At the start of the Fight phase, if a friendly TERMINATOR SQUAD unit is engaged, make a Blessings of Khorne roll and use the results to activate one Blessing of Khorne. Until the end of the phase, that Blessing of Khorne is active for friendly TERMINATOR SQUAD units in addition to any other Blessings of Khorne that are currently active."
+   }
+  },
+  {
+   "table": "stratagems",
+   "fp_source": "page_002.md（11 版新分队，Wahapedia 无源）",
+   "values": {
+    "id": "fp11e-we-butchers-s1",
+    "faction": "WE",
+    "detachment": "Butchers of Khorne",
+    "name_zh": "凶性专注",
+    "name_en": "FOCUSED FEROCITY",
+    "cp_cost": "1",
+    "phase": "Fight phase",
+    "text_zh": "<b>WHEN:</b> Fight phase, when a friendly TERMINATOR SQUAD unit is selected to fight.<br><br><b>TARGET:</b> That TERMINATOR SQUAD unit.<br><br><b>EFFECT:</b> Your unit’s melee attacks have +1 A."
+   }
+  },
+  {
+   "table": "stratagems",
+   "fp_source": "page_002.md（11 版新分队，Wahapedia 无源）",
+   "values": {
+    "id": "fp11e-we-butchers-s2",
+    "faction": "WE",
+    "detachment": "Butchers of Khorne",
+    "name_zh": "献予王座的战利",
+    "name_en": "A TROPHY FOR THE THRONE",
+    "cp_cost": "1",
+    "phase": "Fight phase",
+    "text_zh": "<b>WHEN:</b> Fight phase, when a friendly TERMINATOR SQUAD unit is selected to fight.<br><br><b>TARGET:</b> That TERMINATOR SQUAD unit.<br><br><b>EFFECT:</b> Your unit’s attacks that target a MONSTER/VEHICLE unit have +1 to wound rolls."
+   }
+  },
+  {
+   "table": "stratagems",
+   "fp_source": "page_002.md（11 版新分队，Wahapedia 无源）",
+   "values": {
+    "id": "fp11e-we-butchers-s3",
+    "faction": "WE",
+    "detachment": "Butchers of Khorne",
+    "name_zh": "失理暴怒",
+    "name_en": "WRATH BEYOND REASON",
+    "cp_cost": "2",
+    "phase": "Shooting phase",
+    "text_zh": "<b>WHEN:</b> Your opponent’s Shooting Phase, when an enemy unit targets a friendly TERMINATOR SQUAD unit.<br><br><b>TARGET:</b> That TERMINATOR SQUAD unit.<br><br><b>EFFECT:</b> Ranged attacks that target your unit have -1 D until that enemy unit has attacked."
+   }
+  },
+  {
+   "table": "enhancements",
+   "fp_source": "page_002.md（11 版新分队，Wahapedia 无源）",
+   "values": {
+    "id": "fp11e-we-butchers-e1",
+    "faction_id": "WE",
+    "detachment_id": "fp11e-we-butchers",
+    "detachment_name": "Butchers of Khorne",
+    "name": "Sanctified in Slaughter",
+    "cost": null,
+    "legend": "点数未知：FP 不含点数，MFM 缓存无增强数据（诚实置空，勿猜）",
+    "description": "TERMINATOR SQUAD unit only. This unit has +1 OC."
+   }
+  },
+  {
+   "table": "enhancements",
+   "fp_source": "page_002.md（11 版新分队，Wahapedia 无源）",
+   "values": {
+    "id": "fp11e-we-butchers-e2",
+    "faction_id": "WE",
+    "detachment_id": "fp11e-we-butchers",
+    "detachment_name": "Butchers of Khorne",
+    "name": "Gore-stained Veterans",
+    "cost": null,
+    "legend": "点数未知：FP 不含点数，MFM 缓存无增强数据（诚实置空，勿猜）",
+    "description": "TERMINATOR SQUAD unit only. This unit’s melee attacks have +1 WS."
+   }
+  },
+  {
+   "table": "stratagems",
+   "fp_source": "page_004.md（Vessels of Wrath 重印新增，Wahapedia 无源）",
+   "values": {
+    "id": "fp11e-we-vessels-s1",
+    "faction": "WE",
+    "detachment": "Vessels of Wrath",
+    "name_zh": "蔑视巫觋",
+    "name_en": "SCORN THE WITCH",
+    "cp_cost": "1",
+    "phase": "Any phase",
+    "text_zh": "<b>WHEN:</b> Any phase, when a friendly WORLD EATERS CHARACTER unit (excluding EPIC HERO units) suffers a mortal wound.<br><br><b>TARGET:</b> That WORLD EATERS CHARACTER unit.<br><br><b>EFFECT:</b> Your unit has Feel No Pain 4+ against mortal wounds."
    }
   }
  ]

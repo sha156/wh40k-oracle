@@ -107,6 +107,10 @@ def _options_from_inputs(st) -> Dict[str, Any]:
         "target_below_half": st.session_state.get("sim_tbh", False),
         "markerlight_visible": st.session_state.get("sim_ml_visible", False),
         "bearer_leading": st.session_state.get("sim_bearer", False),
+        # P7-PR5 恐虐赐福（WE 军规；至多两项，超限由 DSL toggle_groups 硬拦并披露）
+        "blessing_martial_excellence": st.session_state.get("sim_bless_me", False),
+        "blessing_warp_blades": st.session_state.get("sim_bless_wb", False),
+        "blessing_decapitating_strikes": st.session_state.get("sim_bless_ds", False),
         # P7-PR4 守方向
         "defender_hidden": st.session_state.get("sim_def_hidden", False),
         "defender_bearer_leading": st.session_state.get("sim_def_bearer", False),
@@ -236,6 +240,14 @@ def render_simulator_panel(st) -> None:
                                   help="Hunter's Instincts 致伤档；蕴含低于满编")
             cols_dsl4[2].checkbox("假设增强携带者率领本单位", key="sim_bearer",
                                   help="bearer/leading 型增强的生效前提")
+            cols_dsl6 = st.columns(3)
+            cols_dsl6[0].checkbox("赐福·卓越武艺", key="sim_bless_me",
+                                  help="恐虐赐福（WE 军规）：近战 [连击1]——"
+                                       "至多同开两项赐福，超限拒施加并披露")
+            cols_dsl6[1].checkbox("赐福·次元邪刃", key="sim_bless_wb",
+                                  help="恐虐赐福：近战 [致命一击]")
+            cols_dsl6[2].checkbox("赐福·斩首一击", key="sim_bless_ds",
+                                  help="恐虐赐福：近战对步兵 [毁灭伤害]")
             cols_dsl5 = st.columns(3)
             cols_dsl5[0].text_input("守方分队", key="sim_def_detachment",
                                     help="放行守方分队的防守向条目"

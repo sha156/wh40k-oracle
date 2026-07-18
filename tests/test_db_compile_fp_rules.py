@@ -187,20 +187,24 @@ class TestDeactivations:
         assert rep["deact_applied"] == 1
 
     def test_real_patches_file_deactivations_shape(self):
-        # 真源补丁文件：战略 9 条（2026-07-16 裁 A）+ 增强 3 条（PR4 同口径扩展）
+        # 真源补丁文件：钛 12 条（战略 9 + 增强 3，2026-07-16 裁 A / PR4）
+        # + 吞世者 6 条（PR5：怒火容器完整重印未收录——战略 4 + 增强 2）
         import json
         from pathlib import Path
         data = json.loads(Path("db_compile/fp_rules_patches.json").read_text(
             encoding="utf-8"))
         deacts = data.get("deactivations", [])
-        assert len(deacts) == 12
+        assert len(deacts) == 18
         strat = {d["id"] for d in deacts if d["table"] == "stratagems"}
         enh = {d["id"] for d in deacts if d["table"] == "enhancements"}
         assert strat == {
             "000009840003", "000009840004", "000009840005", "000009840007",
             "000009984002", "000009984003", "000009984004", "000009984006",
-            "000009984007"}
-        assert enh == {"000009839004", "000009839005", "000009983005"}
+            "000009984007",
+            # PR5 吞世者：Vessels of Wrath 重印未收录
+            "000009848003", "000009848004", "000009848006", "000009848007"}
+        assert enh == {"000009839004", "000009839005", "000009983005",
+                       "000009847003", "000009847004"}
         for d in deacts:
             assert d["status"] == "removed_11e"
             assert d.get("fp_source")
@@ -336,17 +340,26 @@ class TestInserts:
         assert len(rep2["ins_invalid"]) == 1
 
     def test_real_patches_file_inserts_shape(self):
-        # 真源补丁文件：AAC 整分队（1 规则 + 3 战略 + 2 增强）+ Aux 新战略 GBU
+        # 真源补丁文件：钛 7 条（AAC 整分队 + Aux 新战略 GBU）
+        # + 吞世者 13 条（PR5：Brazen Engines / Butchers of Khorne 两全新分队
+        #   各 1 规则+3 战略+2 增强，另 Vessels 重印新增 Scorn the Witch）
         import json
         from pathlib import Path
         data = json.loads(Path("db_compile/fp_rules_patches.json").read_text(
             encoding="utf-8"))
         ins = data.get("inserts", [])
-        assert len(ins) == 7
+        assert len(ins) == 20
         ids = {p["values"]["id"] for p in ins}
         assert ids == {"fp11e-tau-aac-det", "fp11e-tau-aac-s1", "fp11e-tau-aac-s2",
                        "fp11e-tau-aac-s3", "fp11e-tau-aux-gbu",
-                       "fp11e-tau-aac-e1", "fp11e-tau-aac-e2"}
+                       "fp11e-tau-aac-e1", "fp11e-tau-aac-e2",
+                       "fp11e-we-brazeng-det", "fp11e-we-brazeng-s1",
+                       "fp11e-we-brazeng-s2", "fp11e-we-brazeng-s3",
+                       "fp11e-we-brazeng-e1", "fp11e-we-brazeng-e2",
+                       "fp11e-we-butchers-det", "fp11e-we-butchers-s1",
+                       "fp11e-we-butchers-s2", "fp11e-we-butchers-s3",
+                       "fp11e-we-butchers-e1", "fp11e-we-butchers-e2",
+                       "fp11e-we-vessels-s1"}
         for p in ins:
             assert p.get("fp_source")
             assert p["values"].get("id", "").startswith("fp11e-")

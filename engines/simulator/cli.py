@@ -150,6 +150,15 @@ def main(argv: Optional[List[str]] = None) -> int:
     p.add_argument("--markerlight-visible", action="store_true",
                    dest="markerlight_visible",
                    help="假设目标对未交战的友军标记光单位可见（Starfire 军规）")
+    p.add_argument("--blessing-martial-excellence", action="store_true",
+                   dest="blessing_martial_excellence",
+                   help="恐虐赐福·卓越武艺已激活（近战 [连击1]；军规至多同开两项赐福）")
+    p.add_argument("--blessing-warp-blades", action="store_true",
+                   dest="blessing_warp_blades",
+                   help="恐虐赐福·次元邪刃已激活（近战 [致命一击]）")
+    p.add_argument("--blessing-decapitating-strikes", action="store_true",
+                   dest="blessing_decapitating_strikes",
+                   help="恐虐赐福·斩首一击已激活（近战对步兵 [毁灭伤害]）")
     p.add_argument("--bearer-leading", action="store_true", dest="bearer_leading",
                    help="假设增强携带者正率领本单位（bearer/leading 型增强的生效前提）")
     p.add_argument("--defender-detachment", dest="defender_detachment",
@@ -225,6 +234,9 @@ def main(argv: Optional[List[str]] = None) -> int:
         "target_below_half": args.target_below_half,
         "markerlight_visible": args.markerlight_visible,
         "bearer_leading": args.bearer_leading,
+        "blessing_martial_excellence": args.blessing_martial_excellence,
+        "blessing_warp_blades": args.blessing_warp_blades,
+        "blessing_decapitating_strikes": args.blessing_decapitating_strikes,
         "defender_detachment": args.defender_detachment,
         "defender_stratagems": args.defender_stratagems,
         "defender_enhancements": args.defender_enhancements,

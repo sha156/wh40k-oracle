@@ -50,6 +50,11 @@ ATTACKER_TOGGLES = {
     "target_below_starting": True, "target_below_half": True,
     "markerlight_visible": False,   # Starfire 军规假设：目标对友军标记光单位可见
     "bearer_leading": False,        # 增强通用假设：携带者正率领本单位/作用面成立
+    # P7-PR5·恐虐赐福（WE 军规）：三项可建模赐福各自成开关（条件 tag 自含近战门控）；
+    # 军规「每大回合至多激活两项」由条目 toggle_groups 硬拦（PR3-H1 语义：不做软提示）
+    "blessing_martial_excellence": True,
+    "blessing_warp_blades": True,
+    "blessing_decapitating_strikes": True,
 }
 # target 侧（防守向条目 requires_toggles 用；不进 Stance——守方效果自带 condition）
 TARGET_TOGGLES = {
@@ -100,6 +105,10 @@ class DslEntry:
     weapon_filter: str = ""          # P7-PR4：非空时只注入 name_en 含该子串（casefold）
                                      # 的武器——"select one of this model's X weapons"
                                      # 型增强（EPC 三件套）；无武器匹配→显式披露不静默
+    toggle_groups: Tuple = ()        # P7-PR5：组内开关数量上限约束，元素为
+                                     # {"toggles": [...], "max": n, "label_zh": "..."}——
+                                     # 「至多激活两项赐福」类规则的硬拦（PR3-H1：软提示
+                                     # 不是防线）；超上限拒注入并 ⚠ 披露
 
 
 # op → params 形状校验（PR2 审查 M3）：int 型 op 必须恰 1 个 int；无参 op 必须空；
@@ -206,6 +215,15 @@ def _parse_effect(raw: dict, side: str, entry_name: str) -> Effect:
                 raise DslError(
                     f"{entry_name}：target_models_in_range 需要 (tag, lo, hi) 两个整数"
                     f"且 lo≤hi，收到 {condition!r}")
+        if tag in ("target_has_keyword", "melee_target_has_keyword"):
+            # P7-PR5：关键词 tag 恰 1 个非空字符串参数，且须小写（profile 关键词
+            # 集合是 casefold 后的——大写录入会静默永不匹配）
+            args = condition[1:]
+            if (len(args) != 1 or not isinstance(args[0], str)
+                    or not args[0].strip() or args[0] != args[0].lower()):
+                raise DslError(
+                    f"{entry_name}：{tag} 需要 (tag, keyword) 一个小写非空字符串"
+                    f"（关键词集合按 casefold 存储），收到 {condition!r}")
     if not raw.get("source"):
         raise DslError(f"{entry_name}：effect 缺 source（进报告 modeled_effects 的来源标签）")
     return Effect(phase=phase, op=op, params=params,
@@ -262,6 +280,21 @@ def parse_entry(raw: dict) -> DslEntry:
         raise DslError(f"{name}：weapon_filter 必须是字符串，收到 {wf!r}")
     if wf and side != "attacker":
         raise DslError(f"{name}：weapon_filter 只对 attacker 侧有意义（守方无 loadout）")
+    groups = tuple(raw.get("toggle_groups") or ())
+    for g in groups:
+        # P7-PR5 组约束校验：形状/开关名/上限全在录入期炸（错名组约束=永不拦截的假防线）
+        if (not isinstance(g, dict) or not isinstance(g.get("toggles"), list)
+                or not g["toggles"]):
+            raise DslError(f"{name}：toggle_groups 元素须为 "
+                           f'{{"toggles": [...], "max": n}}，收到 {g!r}')
+        gmax = g.get("max")
+        if isinstance(gmax, bool) or not isinstance(gmax, int) \
+                or not 1 <= gmax < len(g["toggles"]):
+            raise DslError(f"{name}：toggle_groups.max 必须是 1 ≤ max < 组内开关数 的整数"
+                           f"（否则约束恒真/恒假），收到 {gmax!r}")
+        unknown_g = set(g["toggles"]) - _ALL_TOGGLES
+        if unknown_g:
+            raise DslError(f"{name}：toggle_groups 含未注册开关名 {sorted(unknown_g)}")
     return DslEntry(
         table=raw["table"], row_id=raw["id"], side=side,
         faction=raw["faction"], detachment=raw.get("detachment"),
@@ -271,7 +304,8 @@ def parse_entry(raw: dict) -> DslEntry:
         conflicts_with_toggles=conflicts,
         not_modeled_notes_zh=notes, provenance=prov,
         encoded_by=raw.get("encoded_by") or "",
-        weapon_filter=wf)
+        weapon_filter=wf,
+        toggle_groups=groups)
 
 
 def load_payload_file(path) -> List[DslEntry]:
@@ -437,7 +471,8 @@ def inject_attacker(
 
 
 def _toggle_gate_note(entry: DslEntry, toggles: FrozenSet[str]) -> str:
-    """开关闸门（requires 未满足 / conflicts 命中）→ 披露注记；通过返回空串。"""
+    """开关闸门（requires 未满足 / conflicts 命中 / toggle_groups 超上限）→ 披露注记；
+    通过返回空串。"""
     missing = [t for t in entry.requires_toggles if t not in toggles]
     if missing:
         return (f"DSL {entry.name_en} 未启用（需开关 {'/'.join(missing)}），本次未施加")
@@ -447,6 +482,15 @@ def _toggle_gate_note(entry: DslEntry, toggles: FrozenSet[str]) -> str:
         # 不做"保留最高值"的静默修正——用户必须自己关掉其一
         return (f"⚠ DSL {entry.name_zh or entry.name_en} 与开关 {'/'.join(conflict)} 互斥"
                 f"（规则原文两种状态不能共存），本次未施加——关闭其一后重跑")
+    for g in entry.toggle_groups:
+        # P7-PR5：组内开关数量上限（恐虐赐福「至多激活两项」）——超限硬性拒注入整条，
+        # 不做"保留前 N 个"的静默修正（选哪 N 个是玩家决策，引擎不代选）
+        active = [t for t in g["toggles"] if t in toggles]
+        if len(active) > g["max"]:
+            label = g.get("label_zh") or "组内开关"
+            return (f"⚠ DSL {entry.name_zh or entry.name_en}：{label}至多同开 {g['max']} 项，"
+                    f"现开 {len(active)} 项（{'/'.join(active)}），本次未施加"
+                    f"——关闭多余开关后重跑")
     return ""
 
 
