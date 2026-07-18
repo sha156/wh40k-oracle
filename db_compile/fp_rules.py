@@ -34,6 +34,7 @@ _TEXT_TARGETS = {
     ("detachments", "rule_text"),
     ("detachments", "name_en"),         # P7-PR6：完整重印可换分队规则名（BT 祷文升格）
     ("stratagems", "text_zh"),
+    ("stratagems", "cp_cost"),          # P7-PR7：完整重印可换 CP（EC 凤凰王庭两战略互换）
     ("abilities", "text_zh"),
     ("enhancements", "description"),    # P7-PR4：FP p3/p4 重印 + p19 勘误波及增强层
 }

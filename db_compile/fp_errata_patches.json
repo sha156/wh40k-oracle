@@ -300,6 +300,15 @@
    "from": "20+\"",
    "to": "12\"",
    "src": "Faction Pack World Eaters page_007.md（Heldrake Profile: Change M to 12\"）"
+  },
+  {
+   "unit_id": "000004092",
+   "faction": "EC",
+   "unit": "Heldrake",
+   "field": "m",
+   "from": "20+\"",
+   "to": "12\"",
+   "src": "Faction Pack Emperor S Children page_009.md（Heldrake Profile: Change M to 12\"）"
   }
  ],
  "new_units": [
@@ -548,6 +557,15 @@
     "Aircraft"
    ],
    "src": "Faction Pack World Eaters page_007.md（Heldrake Keywords: Remove 'AIRCRAFT'）"
+  },
+  {
+   "unit_id": "000004092",
+   "faction": "EC",
+   "unit": "Heldrake",
+   "remove": [
+    "Aircraft"
+   ],
+   "src": "Faction Pack Emperor S Children page_009.md（Heldrake Keywords: Remove 'AIRCRAFT'）"
   }
  ]
 }

@@ -350,12 +350,14 @@ class TestInserts:
         #   各 1 规则+3 战略+2 增强，另 Vessels 重印新增 Scorn the Witch）
         # + 黑色圣堂 10 条（PR6：Marshal's Household 1 规则+3 战略+2 增强、
         #   The Living Miracle 1 规则+1 增强、Wrathful 重印新增 1 战略+1 增强）
+        # + 帝皇之子 18 条（PR7：Elegant Brutes / Frenzied Host / Spectacle of
+        #   Slaughter 三全新分队各 1 规则+3 战略+2 增强）
         import json
         from pathlib import Path
         data = json.loads(Path("db_compile/fp_rules_patches.json").read_text(
             encoding="utf-8"))
         ins = data.get("inserts", [])
-        assert len(ins) == 30
+        assert len(ins) == 48
         ids = {p["values"]["id"] for p in ins}
         assert ids == {"fp11e-tau-aac-det", "fp11e-tau-aac-s1", "fp11e-tau-aac-s2",
                        "fp11e-tau-aac-s3", "fp11e-tau-aux-gbu",
@@ -371,7 +373,16 @@ class TestInserts:
                        "fp11e-bt-marshals-s2", "fp11e-bt-marshals-s3",
                        "fp11e-bt-marshals-e1", "fp11e-bt-marshals-e2",
                        "fp11e-bt-miracle-det", "fp11e-bt-miracle-e1",
-                       "fp11e-bt-wrathful-s1", "fp11e-bt-wrathful-e1"}
+                       "fp11e-bt-wrathful-s1", "fp11e-bt-wrathful-e1",
+                       "fp11e-ec-brutes-det", "fp11e-ec-brutes-s1",
+                       "fp11e-ec-brutes-s2", "fp11e-ec-brutes-s3",
+                       "fp11e-ec-brutes-e1", "fp11e-ec-brutes-e2",
+                       "fp11e-ec-host-det", "fp11e-ec-host-s1",
+                       "fp11e-ec-host-s2", "fp11e-ec-host-s3",
+                       "fp11e-ec-host-e1", "fp11e-ec-host-e2",
+                       "fp11e-ec-spectacle-det", "fp11e-ec-spectacle-s1",
+                       "fp11e-ec-spectacle-s2", "fp11e-ec-spectacle-s3",
+                       "fp11e-ec-spectacle-e1", "fp11e-ec-spectacle-e2"}
         for p in ins:
             assert p.get("fp_source")
             assert p["values"].get("id", "").startswith("fp11e-")
