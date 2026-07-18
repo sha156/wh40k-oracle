@@ -290,6 +290,116 @@
    "to_text": "<ul><li>This unit’s ranged attacks that target the closest eligible target can re-roll hit rolls.</li><li>When this unit declares a charge, you can use this part of this ability. If you do:<ul><li>This unit can re-roll that charge roll.</li><li>This unit must end that charge move engaged with the closest charge target.</li></ul></li></ul>",
    "fp_source": "page_007.md（Chaos Terminators, Blood Fury Ability change-to）",
    "synthesis": "整段替换（FP 称 Blood Fury、DB 行名 Bloody Fury 同源；冲锋重骰改为附带“必须与最近目标接战”代价，属实质改动）"
+  },
+  {
+   "table": "abilities",
+   "column": "text_zh",
+   "id": "000008526",
+   "name_en": "Templar Vows",
+   "from_text": "If your Army Faction is <span class=\"kwb\">ADEPTUS</span> <span class=\"kwb\">ASTARTES</span>, at the start of the first battle round, select one of the following Vows to be active for <span class=\"kwb\">ADEPTUS</span> <span class=\"kwb\">ASTARTES</span> units from your army. While a Vow is active for a unit from your army, that unit has the associated ability shown below.<br><br><div class=\"BreakInsideAvoid\"><table max-width=\"480px\" border=\"0\" cellpadding=\"3\" style=\"border-width:0px\"><tbody><tbody><tr><td class=\"td_w\"><p style=\"display:block\" class=\"impact18\">Abhor the Witch, Destroy the Witch</p><p>Each time this unit <span class=\"tooltip00041\" data-tooltip-content=\"#tooltip_content00041\"><span class=\"tt kwbu\">declares</span> <span class=\"tt kwbu\">a</span> <span class=\"tt kwbu\">charge</span></span>, if one or more targets of that charge have the <span class=\"kwb\">PSYKER</span> keyword, you can re-roll the <span class=\"tooltip00041\" data-tooltip-content=\"#tooltip_content00041\"><span class=\"tt kwbu\">Charge</span> <span class=\"tt kwbu\">roll</span></span>. Melee weapons equipped by models in this unit have the <span class=\"kwb2 bluefont\"><span class=\"tooltip00009\" data-tooltip-content=\"#tooltip_content00009\"><span class=\"tt kwbu\">[PRECISION]</span></span></span> ability while targeting <span class=\"kwb\">PSYKER</span> units.</p></td></tr></tbody></tbody></table></div><div class=\"BreakInsideAvoid\"><table max-width=\"480px\" border=\"0\" cellpadding=\"3\" style=\"border-width:0px\"><tbody><tbody><tr><td class=\"td_w\"><p style=\"display:block\" class=\"impact18\">Accept Any Challenge, No Matter the Odds</p><p>Each time a model in this unit makes a melee attack, if the Strength characteristic of that attack is less than or equal to the Toughness characteristic of the target, add 1 to the <span class=\"tooltip00008\" data-tooltip-content=\"#tooltip_content00008\"><span class=\"tt kwbu\">Wound</span> <span class=\"tt kwbu\">roll</span></span>.</p></td></tr></tbody></tbody></table></div><div class=\"BreakInsideAvoid\"><table max-width=\"480px\" border=\"0\" cellpadding=\"3\" style=\"border-width:0px\"><tbody><tbody><tr><td class=\"td_w\"><p style=\"display:block\" class=\"impact18\">Suffer Not the Unclean to Live</p><p>This unit is eligible to <a href=\"/wh40k10ed/the-rules/core-rules/#CHARGE-PHASE\">declare a charge</a> in a turn in which it <span class=\"tooltip00013\" data-tooltip-content=\"#tooltip_content00013\"><span class=\"tt kwbu\">Fell</span> <span class=\"tt kwbu\">Back</span></span>, and each time a model in this unit makes a <span class=\"tooltip00042\" data-tooltip-content=\"#tooltip_content00042\"><span class=\"tt kwbu\">Pile-in</span></span> or <span class=\"tooltip00043\" data-tooltip-content=\"#tooltip_content00043\"><span class=\"tt kwbu\">Consolidation</span> <span class=\"tt kwbu\">move</span></span>, it does not need to end that move closer to the closest enemy model, provided it ends that move as close as possible to the closest enemy unit.</p></td></tr></tbody></tbody></table></div><div class=\"BreakInsideAvoid\"><table max-width=\"480px\" border=\"0\" cellpadding=\"3\" style=\"border-width:0px\"><tbody><tbody><tr><td class=\"td_w\"><p style=\"display:block\" class=\"impact18\">Uphold the Honour of the Emperor</p><p>If this unit has the <span class=\"tooltip00051\" data-tooltip-content=\"#tooltip_content00051\" data-tooltip-anchor=\"#tooltip_content00051\"><span class=\"kwb kwbu\">INFANTRY</span></span> keyword:<br><ul><li>At the end of your <a href=\"/wh40k10ed/the-rules/core-rules/#COMMAND-PHASE\">Command phase</a>, if this unit is within range of an <span class=\"tooltip00048\" data-tooltip-content=\"#tooltip_content00048\"><span class=\"tt kwbu\">objective</span> <span class=\"tt kwbu\">marker</span></span> you control, that objective marker remains under your control until your opponent’s Level of Control over that objective marker is greater than yours at the end of a phase.</li><li>If the mission you are playing features <a href=\"/wh40k10ed/the-rules/chapter-approved-2025-26/#Actions\">Actions</a>, this unit is eligible to start to perform an Action in a turn in which it <span class=\"tooltip00010\" data-tooltip-content=\"#tooltip_content00010\"><span class=\"tt kwbu\">Advanced</span></span>.</li></ul></p></td></tr></tbody></tbody></table></div>",
+   "to_text": "If your Army Faction is <span class=\"kwb\">ADEPTUS</span> <span class=\"kwb\">ASTARTES</span>, at the start of the first battle round, select one of the following Vows to be active for <span class=\"kwb\">ADEPTUS</span> <span class=\"kwb\">ASTARTES</span> units from your army. While a Vow is active for a unit from your army, that unit has the associated ability shown below.<br><br><div class=\"BreakInsideAvoid\"><table max-width=\"480px\" border=\"0\" cellpadding=\"3\" style=\"border-width:0px\"><tbody><tbody><tr><td class=\"td_w\"><p style=\"display:block\" class=\"impact18\">Abhor the Witch, Destroy the Witch</p><p>This unit’s melee attacks that target a <span class=\"kwb\">PSYKER</span> unit have [PRECISION].<br>When this unit declares a charge, if an enemy <span class=\"kwb\">PSYKER</span> unit is within 12\" of this unit, you can use this part of this ability. If you do:<br><ul><li>This unit can re-roll that charge roll.</li><li>This unit must end that charge move engaged with one or more of those enemy <span class=\"kwb\">PSYKER</span> units.</li></ul></p></td></tr></tbody></tbody></table></div><div class=\"BreakInsideAvoid\"><table max-width=\"480px\" border=\"0\" cellpadding=\"3\" style=\"border-width:0px\"><tbody><tbody><tr><td class=\"td_w\"><p style=\"display:block\" class=\"impact18\">Accept Any Challenge, No Matter the Odds</p><p>Each time a model in this unit makes a melee attack, if the Strength characteristic of that attack is less than or equal to the Toughness characteristic of the target, add 1 to the <span class=\"tooltip00008\" data-tooltip-content=\"#tooltip_content00008\"><span class=\"tt kwbu\">Wound</span> <span class=\"tt kwbu\">roll</span></span>.</p></td></tr></tbody></tbody></table></div><div class=\"BreakInsideAvoid\"><table max-width=\"480px\" border=\"0\" cellpadding=\"3\" style=\"border-width:0px\"><tbody><tbody><tr><td class=\"td_w\"><p style=\"display:block\" class=\"impact18\">Suffer Not the Unclean to Live</p><p>This unit is eligible to <a href=\"/wh40k10ed/the-rules/core-rules/#CHARGE-PHASE\">declare a charge</a> in a turn in which it <span class=\"tooltip00013\" data-tooltip-content=\"#tooltip_content00013\"><span class=\"tt kwbu\">Fell</span> <span class=\"tt kwbu\">Back</span></span>, and each time a model in this unit makes a <span class=\"tooltip00042\" data-tooltip-content=\"#tooltip_content00042\"><span class=\"tt kwbu\">Pile-in</span></span> or <span class=\"tooltip00043\" data-tooltip-content=\"#tooltip_content00043\"><span class=\"tt kwbu\">Consolidation</span> <span class=\"tt kwbu\">move</span></span>, it does not need to end that move closer to the closest enemy model, provided it ends that move as close as possible to the closest enemy unit.</p></td></tr></tbody></tbody></table></div><div class=\"BreakInsideAvoid\"><table max-width=\"480px\" border=\"0\" cellpadding=\"3\" style=\"border-width:0px\"><tbody><tbody><tr><td class=\"td_w\"><p style=\"display:block\" class=\"impact18\">Uphold the Honour of the Emperor</p><p>If this unit has the <span class=\"tooltip00051\" data-tooltip-content=\"#tooltip_content00051\" data-tooltip-anchor=\"#tooltip_content00051\"><span class=\"kwb kwbu\">INFANTRY</span></span> keyword:<br><ul><li>At the end of your <a href=\"/wh40k10ed/the-rules/core-rules/#COMMAND-PHASE\">Command phase</a>, if this unit is within range of an <span class=\"tooltip00048\" data-tooltip-content=\"#tooltip_content00048\"><span class=\"tt kwbu\">objective</span> <span class=\"tt kwbu\">marker</span></span> you control, that objective marker remains under your control until your opponent’s Level of Control over that objective marker is greater than yours at the end of a phase.</li><li>If the mission you are playing features <a href=\"/wh40k10ed/the-rules/chapter-approved-2025-26/#Actions\">Actions</a>, this unit is eligible to start to perform an Action in a turn in which it <span class=\"tooltip00010\" data-tooltip-content=\"#tooltip_content00010\"><span class=\"tt kwbu\">Advanced</span></span>.</li></ul></p></td></tr></tbody></tbody></table></div>",
+   "fp_source": "Faction Pack Black Templars page_005.md",
+   "synthesis": "外科替换 Abhor the Witch 誓言段：重骰冲锋改为 12 寸内有敌 PSYKER 可选发动（重骰冲锋+必须接战 PSYKER 双弹点），[PRECISION] 措辞改 melee attacks；其余三条誓言原文保留"
+  },
+  {
+   "table": "detachments",
+   "column": "rule_text",
+   "id": "000009842",
+   "name_en": "Zealous Litanies",
+   "from_text": "At the start of the battle round, you can select one of the Litanies listed below. If you do, until the end of the battle round, that Litany is active and its effects apply to all Adeptus Astartes Infantry and Adeptus Astartes Mounted units from your army.<br><br><span class=\"hi_custom\">Chorus of Relentless Hate</span><br>Add 2\" to the Move characteristic of models in this unit and add 1 to Advance rolls made for it.<br><br><span class=\"hi_custom\">Rite of Perfervid Wrath</span><br>Add 1 to the Strength characteristic of melee weapons equipped by models in this unit.<br><br><span class=\"kwb\">CHANT</span> <span class=\"kwb2\">OF</span> <span class=\"kwb\">DEATHLESS</span> <span class=\"kwb\">DEVOTION</span><br>Models in this unit have a 5+ invulnerable save against ranged attacks.<br><br><span class=\"hi_custom\">RESTRICTIONS</span><br>Your army can include Black Templars units, but it cannot include <span class=\"kwb\">ADEPTUS</span> <span class=\"kwb\">ASTARTES</span> units drawn from any other Chapter.",
+   "to_text": "Friendly <span class=\"kwb\">CHAPLAIN</span> units have a 5+ invulnerable save against ranged attacks.<br><br><span class=\"hi_custom\">RESTRICTIONS</span><br>Your army can include BLACK TEMPLARS units, but it cannot include any ADEPTUS ASTARTES units drawn from any other Chapter.",
+   "fp_source": "Faction Pack Black Templars page_004.md（完整重印）",
+   "synthesis": "10 版 Grotmas 三选一祷文机制废弃：Chant of Deathless Devotion 升格为唯一分队规则且收窄为 CHAPLAIN；Chorus of Relentless Hate 删除、Rite of Perfervid Wrath 降格为战略（见 inserts）"
+  },
+  {
+   "table": "detachments",
+   "column": "name_en",
+   "id": "000009842",
+   "name_en": "Zealous Litanies",
+   "from_text": "Zealous Litanies",
+   "to_text": "Chant of Deathless Devotion",
+   "fp_source": "Faction Pack Black Templars page_004.md（完整重印）",
+   "synthesis": "重印后分队规则名整个换掉（祷文名升格），与 rule_text 整替配套"
+  },
+  {
+   "table": "stratagems",
+   "column": "text_zh",
+   "id": "000009844002",
+   "name_en": "FUELLED BY FAITH",
+   "from_text": "<b>WHEN:</b> Any phase, just after a mortal wound is allocated to an <span class=\"kwb\">ADEPTUS</span> <span class=\"kwb\">ASTARTES</span> unit from your army.<br><br><b>TARGET:</b> That <span class=\"kwb\">ADEPTUS</span> <span class=\"kwb\">ASTARTES</span> unit.<br><br><b>EFFECT:</b> Until the end of the phase, models in your unit have the Feel No Pain 5+ ability against mortal wounds.",
+   "to_text": "<b>WHEN:</b> Any phase, when a friendly <span class=\"kwb\">CHAPLAIN</span> unit suffers a mortal wound.<br><br><b>TARGET:</b> That <span class=\"kwb\">CHAPLAIN</span> unit.<br><br><b>EFFECT:</b> Your unit has Feel No Pain 4+ against mortal wounds.",
+   "fp_source": "Faction Pack Black Templars page_004.md（完整重印）",
+   "synthesis": "WHEN/TARGET 收窄 CHAPLAIN，FNP 5+→4+ against mortal wounds"
+  },
+  {
+   "table": "stratagems",
+   "column": "text_zh",
+   "id": "000009844004",
+   "name_en": "CASTIGATE THE DEMAGOGUES",
+   "from_text": "<b>WHEN:</b> Fight phase.<br><br><b>TARGET:</b> One <span class=\"kwb\">ADEPTUS</span> <span class=\"kwb\">ASTARTES</span> unit from your army that has not been selected to fight this phase.<br><br><b>EFFECT:</b> Until the end of the phase, melee weapons equipped by models in your unit have the [PRECISION] ability.",
+   "to_text": "<b>WHEN:</b> Fight phase, when a friendly <span class=\"kwb\">CHAPLAIN</span> unit is selected to fight.<br><br><b>TARGET:</b> That <span class=\"kwb\">CHAPLAIN</span> unit.<br><br><b>EFFECT:</b> Your unit’s melee attacks have [PRECISION].",
+   "fp_source": "Faction Pack Black Templars page_004.md（完整重印）",
+   "synthesis": "TARGET 收窄 CHAPLAIN selected to fight；EFFECT 改 11 版 melee attacks 措辞"
+  },
+  {
+   "table": "enhancements",
+   "column": "description",
+   "id": "000009843005",
+   "name_en": "Benediction of Fury",
+   "from_text": "Chaplain model only. The bearer’s melee weapons have the [DEVASTATING WOUNDS] ability.",
+   "to_text": "CHAPLAIN model only. This model’s melee attacks have [DEVASTATING WOUNDS].",
+   "fp_source": "Faction Pack Black Templars page_004.md（完整重印）",
+   "synthesis": "11 版措辞：bearer's melee weapons have the ... ability → This model's melee attacks have [...]（语义同源，重印即替换）"
+  },
+  {
+   "table": "stratagems",
+   "column": "text_zh",
+   "id": "000010393006",
+   "name_en": "HERESY BEGETS RETRIBUTION",
+   "from_text": "<b>WHEN:</b> Your opponent’s Movement phase, just after an enemy unit ends a Normal, Advance or Fall Back move.<br><br><b>TARGET:</b> One Chaplain or Judiciar unit from your army that is within 9\" of that enemy unit and is not within Engagement Range of one or more enemy units.<br><br><b>EFFECT:</b> Your unit can make a Retribution move. To do so, roll one D6: models in your unit move a number of inches up to the result, but your unit must end that move as close as possible to the closest enemy unit (excluding <span class=\"kwb\">AIRCRAFT</span>). When doing so, those models can be moved within Engagement Range of that enemy unit.",
+   "to_text": "<b>WHEN:</b> Your opponent’s Movement phase, just after an enemy unit ends a Normal, Advance or Fall Back move.<br><br><b>TARGET:</b> One Chaplain or Judiciar unit from your army that is within 9\" of that enemy unit and is not within Engagement Range of one or more enemy units.<br><br><b>EFFECT:</b> Your unit can make a surge move of up to D6\".",
+   "fp_source": "Faction Pack Black Templars page_005.md",
+   "synthesis": "EFFECT 整替：Retribution move 自带流程 → 11 版核心 surge move up to D6 寸；WHEN/TARGET 原文保留"
+  },
+  {
+   "table": "detachments",
+   "column": "rule_text",
+   "id": "000010395",
+   "name_en": "Purge and Sanctify",
+   "from_text": "<ul><li>Each time an attack targets an Ancient unit from your army, if that unit is within range of one or more objective markers and the Strength characteristic of that attack is greater than the Toughness characteristic of that unit, subtract 1 from the Wound roll.</li><li>Each time a Crusader Squad unit from your army makes a Righteous Zeal move, that unit can end that move as close as possible to the closest objective marker instead of as close as possible to the closest enemy unit.</li></ul><br><span class=\"hi_custom\">RESTRICTIONS</span><br>Your army can include Black Templars units, but it cannot include any <span class=\"kwb\">ADEPTUS</span> <span class=\"kwb\">ASTARTES</span> units drawn from any other Chapter.",
+   "to_text": "<ul><li>Each time an attack targets an Ancient unit from your army, if that unit is within range of one or more objective markers and the Strength characteristic of that attack is greater than the Toughness characteristic of that unit, subtract 1 from the Wound roll.</li><li>Each time a friendly CRUSADER SQUAD unit makes a surge move, instead of selecting a surge target, you can select the closest objective to that unit. When that unit makes that surge move, each model in that unit must end that surge move as close as possible to that objective instead.</li></ul><br><span class=\"hi_custom\">RESTRICTIONS</span><br>Your army can include Black Templars units, but it cannot include any <span class=\"kwb\">ADEPTUS</span> <span class=\"kwb\">ASTARTES</span> units drawn from any other Chapter.",
+   "fp_source": "Faction Pack Black Templars page_005.md",
+   "synthesis": "第二弹点整替为 11 版 surge move 措辞（FP 原文笔误 you can can 归一为单个 can）；第一弹点与 Restrictions 原文保留"
+  },
+  {
+   "table": "abilities",
+   "column": "text_zh",
+   "id": "000002795_a2",
+   "name_en": "Sigismund’s Heir",
+   "from_text": "Each time this model’s unit declares a charge, if one or more targets of that charge have the <span class=\"kwb\">CHARACTER</span> keyword, add 2 to the Charge roll. Once per battle, when this model’s unit is selected to fight, if that unit is within Engagement Range of one or more enemy <span class=\"kwb\">CHARACTER</span> units, this model can use this ability. If it does, until the end of the phase, melee weapons equipped by this model have the [DEVASTATING WOUNDS] ability.",
+   "to_text": "When this unit declares a charge, if an enemy <span class=\"kwb\">CHARACTER</span> unit is within 12\" of this unit, you can use this part of this ability. If you do:<br><ul><li>This unit can re-roll that charge roll.</li><li>This unit must end that charge move engaged with one or more of those enemy <span class=\"kwb\">CHARACTER</span> units.</li></ul>(Once per battle, per army) In the Fight phase, when this unit is selected to fight, if this unit is engaged with a <span class=\"kwb\">CHARACTER</span> unit, you can use this part of this ability. If you do, this unit’s melee attacks have [DEVASTATING WOUNDS].",
+   "fp_source": "Faction Pack Black Templars page_005.md",
+   "synthesis": "整替：+2 冲锋骰 → 12 寸内有敌 CHARACTER 可选发动（重骰冲锋+必须接战）；毁灭伤害段改 (Once per battle, per army) 且判据改 engaged"
+  },
+  {
+   "table": "abilities",
+   "column": "text_zh",
+   "id": "000002799_a1",
+   "name_en": "Righteous Zeal",
+   "from_text": "In your opponent’s Shooting phase, each time an enemy unit has shot, if any models in this unit were destroyed as a result of those attacks, this unit can make a Righteous Zeal move. To do so, roll one D6 and add 2 to the result: models in this unit move a number of inches up to this result, but this unit must end that move as close as possible to the closest enemy unit (excluding <span class=\"kwb\">AIRCRAFT</span>). When doing so, those models can be moved within Engagement Range of that enemy unit. This unit cannot make a Righteous Zeal move while it is Battle-shocked or within Engagement Range of one or more enemy units, and can only make one Righteous Zeal move per phase.",
+   "to_text": "In your opponent’s Shooting phase, each time an enemy unit has shot, if any models in this unit were destroyed as a result of those attacks, this unit can make a surge move of up to D6+2\".",
+   "fp_source": "Faction Pack Black Templars page_005.md",
+   "synthesis": "整替：Righteous Zeal move 自带流程 → 11 版核心 surge move up to D6+2 寸"
+  },
+  {
+   "table": "abilities",
+   "column": "text_zh",
+   "id": "000004138_a1",
+   "name_en": "Teleport Homer",
+   "from_text": "At the start of the battle, you can set up one Teleport Homer token for this unit anywhere on the battlefield that is not in your opponent’s deployment zone. If you do, once per battle, you can target this unit with the Rapid Ingress Stratagem for 0CP, but when resolving that Stratagem, you must set this unit up within 3\" of that token and not within 9\" of any enemy models. That token is then removed.",
+   "to_text": "At the start of the battle, you can set up one Teleport Homer token for this unit anywhere on the battlefield that is not in your opponent’s deployment zone. If you do, once per battle, you can target this unit with the Rapid Ingress Stratagem for 0CP, but when resolving that Stratagem, you must set this unit up within 3\" of that token and not within 8\" of any enemy models. That token is then removed.",
+   "fp_source": "Faction Pack Black Templars page_005.md",
+   "synthesis": "外科：敌方模型 9 寸外 → 8 寸外；DA/DW 等其他战团共享同名技能行不在 BT FP 授权范围（留 SM FP 铺量时处理）"
   }
  ],
  "name_patches": [
@@ -1156,6 +1266,262 @@
    "name_zh": "骇人暴行",
    "zh_source": "self-translation-11e",
    "evidence": "无中文源自译"
+  },
+  {
+   "table": "detachments",
+   "id": "000010391",
+   "name_en": "Righteous Fervour",
+   "name_zh": "热忱圣怒",
+   "zh_source": "codex-10e",
+   "evidence": "双子星 page_002：团策：热忱圣怒——重投加速骰与冲锋骰，与英文 rule_text 对得上"
+  },
+  {
+   "table": "detachments",
+   "id": "000010395",
+   "name_en": "Purge and Sanctify",
+   "name_zh": "净化！圣化！",
+   "zh_source": "codex-10e",
+   "evidence": "双子星 page_005：团策：净化！圣化！——旗手受击致伤-1 + 十字军小队狂热移动向目标点，同源"
+  },
+  {
+   "table": "detachments",
+   "id": "000010399",
+   "name_en": "Shock and Awe",
+   "name_zh": "震慑突袭",
+   "zh_source": "codex-10e",
+   "evidence": "双子星 page_008：团策：震慑突袭（神锤突击队）——下车冲锋震慑测试 + 下车近战命中+1，同源"
+  },
+  {
+   "table": "detachments",
+   "id": "000009842",
+   "name_en": "Chant of Deathless Devotion",
+   "name_zh": "不朽忠诚祷言",
+   "zh_source": "codex-10e",
+   "evidence": "双子星 page_011 祷文名：不朽忠诚祷言（5+特殊保护对远程）——11 版重印升格为分队规则后沿用"
+  },
+  {
+   "table": "abilities",
+   "id": "000008526",
+   "name_en": "Templar Vows",
+   "name_zh": "圣堂誓言",
+   "zh_source": "codex-10e",
+   "evidence": "双子星 page_001：种族规则：圣堂誓言"
+  },
+  {
+   "table": "abilities",
+   "id": "000002795_a2",
+   "name_en": "Sigismund’s Heir",
+   "name_zh": "西吉斯蒙德传人",
+   "zh_source": "codex-10e",
+   "evidence": "双子星 page_016：西吉斯蒙德传人——帝皇冠军兵牌技能，冲锋+毁灭伤害段同源"
+  },
+  {
+   "table": "abilities",
+   "id": "000002799_a1",
+   "name_en": "Righteous Zeal",
+   "name_zh": "正义狂热",
+   "zh_source": "codex-10e",
+   "evidence": "双子星 page_021：正义狂热——十字军小队被射击战损后移动，同源"
+  },
+  {
+   "table": "abilities",
+   "id": "000004138_a1",
+   "name_en": "Teleport Homer",
+   "name_zh": "传送信标",
+   "zh_source": "codex-10e",
+   "evidence": "双子星 page_025：传送信标——终结者小队快速入场 0CP 技能，同源"
+  },
+  {
+   "table": "stratagems",
+   "id": "000010393002",
+   "name_en": "DEVOUT PUSH",
+   "name_zh": "虔信推进",
+   "zh_source": "codex-10e",
+   "evidence": "双子星 page_002：狂热同袍战略，中英文效果同源"
+  },
+  {
+   "table": "stratagems",
+   "id": "000010393003",
+   "name_en": "HEARTS HARDENED TO DUTY",
+   "name_zh": "铁血矢志，恪尽职守！",
+   "zh_source": "codex-10e",
+   "evidence": "双子星 page_003：狂热同袍战略，中英文效果同源"
+  },
+  {
+   "table": "stratagems",
+   "id": "000010393004",
+   "name_en": "FOR THE EMPEROR'S HONOUR!",
+   "name_zh": "为了帝皇的荣誉！",
+   "zh_source": "codex-10e",
+   "evidence": "双子星 page_003：狂热同袍战略，中英文效果同源"
+  },
+  {
+   "table": "stratagems",
+   "id": "000010393005",
+   "name_en": "PIOUS ENMITY",
+   "name_zh": "虔信之仇",
+   "zh_source": "codex-10e",
+   "evidence": "双子星 page_004：狂热同袍战略，中英文效果同源"
+  },
+  {
+   "table": "stratagems",
+   "id": "000010393006",
+   "name_en": "HERESY BEGETS RETRIBUTION",
+   "name_zh": "异端必遭严惩！",
+   "zh_source": "codex-10e",
+   "evidence": "双子星 page_004：狂热同袍战略，中英文效果同源"
+  },
+  {
+   "table": "stratagems",
+   "id": "000010393007",
+   "name_en": "DREAD CRUSADERS",
+   "name_zh": "无畏十字军",
+   "zh_source": "codex-10e",
+   "evidence": "双子星 page_004：狂热同袍战略，中英文效果同源"
+  },
+  {
+   "table": "stratagems",
+   "id": "000010397002",
+   "name_en": "REFUSAL TO YIELD",
+   "name_zh": "拒绝倒下",
+   "zh_source": "codex-10e",
+   "evidence": "双子星 page_006：复仇特遣队战略，中英文效果同源"
+  },
+  {
+   "table": "stratagems",
+   "id": "000010397003",
+   "name_en": "LITANIES OF PURGATION",
+   "name_zh": "洗罪祷言",
+   "zh_source": "codex-10e",
+   "evidence": "双子星 page_006：复仇特遣队战略，中英文效果同源"
+  },
+  {
+   "table": "stratagems",
+   "id": "000010397004",
+   "name_en": "SPOOR OF THE UNHOLY",
+   "name_zh": "扫清异端",
+   "zh_source": "codex-10e",
+   "evidence": "双子星 page_006：复仇特遣队战略，中英文效果同源"
+  },
+  {
+   "table": "stratagems",
+   "id": "000010397005",
+   "name_en": "RECLAIM OUR HONOUR!",
+   "name_zh": "重拾我们的荣誉！",
+   "zh_source": "codex-10e",
+   "evidence": "双子星 page_007：复仇特遣队战略，中英文效果同源"
+  },
+  {
+   "table": "stratagems",
+   "id": "000010397006",
+   "name_en": "RECITATION OF THE REVERED",
+   "name_zh": "颂扬圣者",
+   "zh_source": "codex-10e",
+   "evidence": "双子星 page_007：复仇特遣队战略，中英文效果同源"
+  },
+  {
+   "table": "stratagems",
+   "id": "000010397007",
+   "name_en": "PERFERVID INTERVENTION",
+   "name_zh": "狂热干预",
+   "zh_source": "codex-10e",
+   "evidence": "双子星 page_007：复仇特遣队战略，中英文效果同源"
+  },
+  {
+   "table": "stratagems",
+   "id": "000010401002",
+   "name_en": "A CEASELESS CAUSE",
+   "name_zh": "永不停歇的进军",
+   "zh_source": "codex-10e",
+   "evidence": "双子星 page_009：神锤突击队战略，中英文效果同源"
+  },
+  {
+   "table": "stratagems",
+   "id": "000010401003",
+   "name_en": "UNCOMPROMISING EGRESS",
+   "name_zh": "迅猛突袭",
+   "zh_source": "codex-10e",
+   "evidence": "双子星 page_009：神锤突击队战略，中英文效果同源"
+  },
+  {
+   "table": "stratagems",
+   "id": "000010401004",
+   "name_en": "GAUNTLET OF THE GOD-EMPEROR",
+   "name_zh": "神皇铁拳",
+   "zh_source": "codex-10e",
+   "evidence": "双子星 page_009：神锤突击队战略，中英文效果同源"
+  },
+  {
+   "table": "stratagems",
+   "id": "000010401005",
+   "name_en": "FOCUSED HATRED",
+   "name_zh": "聚焦仇恨",
+   "zh_source": "codex-10e",
+   "evidence": "双子星 page_010：神锤突击队战略，中英文效果同源"
+  },
+  {
+   "table": "stratagems",
+   "id": "000010401006",
+   "name_en": "CONDEMNATORY INFO-SCREED",
+   "name_zh": "谴责音阵",
+   "zh_source": "codex-10e",
+   "evidence": "双子星 page_010：神锤突击队战略，中英文效果同源"
+  },
+  {
+   "table": "stratagems",
+   "id": "000010401007",
+   "name_en": "BLESSED HULL",
+   "name_zh": "祝圣外壳",
+   "zh_source": "codex-10e",
+   "evidence": "双子星 page_010：神锤突击队战略，中英文效果同源"
+  },
+  {
+   "table": "stratagems",
+   "id": "000009844002",
+   "name_en": "FUELLED BY FAITH",
+   "name_zh": "信仰驱动",
+   "zh_source": "codex-10e",
+   "evidence": "双子星 page_012：愤怒巡游队战略，中英文效果同源"
+  },
+  {
+   "table": "stratagems",
+   "id": "000009844003",
+   "name_en": "ARMOUR OF CONTEMPT",
+   "name_zh": "蔑视战甲",
+   "zh_source": "codex-10e",
+   "evidence": "双子星 page_012：愤怒巡游队战略，中英文效果同源"
+  },
+  {
+   "table": "stratagems",
+   "id": "000009844004",
+   "name_en": "CASTIGATE THE DEMAGOGUES",
+   "name_zh": "严惩煽动者",
+   "zh_source": "codex-10e",
+   "evidence": "双子星 page_012：愤怒巡游队战略，中英文效果同源"
+  },
+  {
+   "table": "stratagems",
+   "id": "000009844005",
+   "name_en": "BRUTE FERVOUR",
+   "name_zh": "狂热蛮力",
+   "zh_source": "codex-10e",
+   "evidence": "双子星 page_013：愤怒巡游队战略，中英文效果同源"
+  },
+  {
+   "table": "stratagems",
+   "id": "000009844006",
+   "name_en": "RELENTLESS MOMENTUM",
+   "name_zh": "势不可挡",
+   "zh_source": "codex-10e",
+   "evidence": "双子星 page_013：愤怒巡游队战略，中英文效果同源"
+  },
+  {
+   "table": "stratagems",
+   "id": "000009844007",
+   "name_en": "VOICE OF DEVOTION",
+   "name_zh": "虔诚之声",
+   "zh_source": "codex-10e",
+   "evidence": "双子星 page_013：愤怒巡游队战略，中英文效果同源"
   }
  ],
  "_deactivations_comment": "9 条 review_needed 的最终裁定（2026-07-16 用户裁 A：FP 完整重印即整体替换）。证据：①FP p3/p4 对 Auxiliary Cadre / Experimental Prototype Cadre 用完整重印体裁（同书 datasheet 侧明文 replaces 语义，page_010）；②11 版 Experimental Ammunition 删除了与 Threat Assessment Analyser 互斥的 RESTRICTIONS 段（侧面印证 TAA 不复存在）；③Wahapedia 现网核证（2026-07-16 重拉 Stratagems.csv）确认其尚未消化这两页 FP（drifted 条仍旧十版措辞、GUIDED BY UNITY 与 Advanced Acquisition Cadre 均缺席），故'现网仍在'不构成反证。处置：置 fp_status='removed_11e'（原文保留可回滚）；P7 DSL 对账枚举、检索消费者应排除该标记行。将来 Wahapedia 滚更这两页时 text_patches 守卫会自动让路告警，届时复核本裁定。",
@@ -1285,6 +1651,55 @@
    "name_en": "Avenger’s Crown",
    "status": "removed_11e",
    "fp_source": "page_004.md（Vessels of Wrath 完整重印未收录）"
+  },
+  {
+   "table": "stratagems",
+   "id": "000009844005",
+   "name_en": "BRUTE FERVOUR",
+   "status": "removed_11e",
+   "fp_source": "Faction Pack Black Templars page_004.md（完整重印未收录）"
+  },
+  {
+   "table": "stratagems",
+   "id": "000009844003",
+   "name_en": "ARMOUR OF CONTEMPT",
+   "status": "removed_11e",
+   "fp_source": "Faction Pack Black Templars page_004.md（完整重印未收录）"
+  },
+  {
+   "table": "stratagems",
+   "id": "000009844007",
+   "name_en": "VOICE OF DEVOTION",
+   "status": "removed_11e",
+   "fp_source": "Faction Pack Black Templars page_004.md（完整重印未收录）"
+  },
+  {
+   "table": "stratagems",
+   "id": "000009844006",
+   "name_en": "RELENTLESS MOMENTUM",
+   "status": "removed_11e",
+   "fp_source": "Faction Pack Black Templars page_004.md（完整重印未收录）"
+  },
+  {
+   "table": "enhancements",
+   "id": "000009843002",
+   "name_en": "Pyrebrand",
+   "status": "removed_11e",
+   "fp_source": "Faction Pack Black Templars page_004.md（完整重印未收录）"
+  },
+  {
+   "table": "enhancements",
+   "id": "000009843003",
+   "name_en": "Sacred Rage",
+   "status": "removed_11e",
+   "fp_source": "Faction Pack Black Templars page_004.md（完整重印未收录）"
+  },
+  {
+   "table": "enhancements",
+   "id": "000009843004",
+   "name_en": "Taramond’s Censer",
+   "status": "removed_11e",
+   "fp_source": "Faction Pack Black Templars page_004.md（完整重印未收录）"
   }
  ],
  "_inserts_comment": "P7-PR4 fp_new 补录（2026-07-16）：FP 有、Wahapedia/DB 无的整条目。AAC 整分队（1 规则行 + 3 战略 + 2 增强，id 前缀 fp11e- 标 synthetic 溯源，增强点数 FP/MFM 均无源诚实置 NULL）+ Auxiliary Cadre 新战略 Guided by Unity。守卫：同 id 幂等/名字不符让路；同名异 id（上游将来自补）让路告警不留双胞胎；stratagems/enhancements 插入行标 fp_status='added_11e'。",
@@ -1558,6 +1973,140 @@
     "cp_cost": "1",
     "phase": "Any phase",
     "text_zh": "<b>WHEN:</b> Any phase, when a friendly WORLD EATERS CHARACTER unit (excluding EPIC HERO units) suffers a mortal wound.<br><br><b>TARGET:</b> That WORLD EATERS CHARACTER unit.<br><br><b>EFFECT:</b> Your unit has Feel No Pain 4+ against mortal wounds."
+   }
+  },
+  {
+   "table": "detachments",
+   "fp_source": "Faction Pack Black Templars page_002.md（11 版新分队，Wahapedia 无源）",
+   "values": {
+    "id": "fp11e-bt-marshals-det",
+    "faction": "SM",
+    "name_zh": "信仰淬炼之毅",
+    "name_en": "Faith-Fuelled Resolve",
+    "rule_text": "Friendly <span class=\"kwb\">SWORD BRETHREN SQUAD</span> units have +1 OC.<br><br><span class=\"hi_custom\">RESTRICTIONS</span><br>Your army can include BLACK TEMPLARS units, but it cannot include any ADEPTUS ASTARTES units drawn from any other Chapter."
+   }
+  },
+  {
+   "table": "stratagems",
+   "fp_source": "Faction Pack Black Templars page_002.md（11 版新分队，Wahapedia 无源）",
+   "values": {
+    "id": "fp11e-bt-marshals-s1",
+    "faction": "SM",
+    "detachment": "Marshal’s Household",
+    "name_zh": "屠灭邪物",
+    "name_en": "SLAYERS OF ABOMINATIONS",
+    "cp_cost": "1",
+    "phase": "Fight phase",
+    "text_zh": "<b>WHEN:</b> Fight phase, when a friendly SWORD BRETHREN SQUAD unit is selected to fight.<br><br><b>TARGET:</b> That SWORD BRETHREN SQUAD unit.<br><br><b>EFFECT:</b> Your unit’s melee attacks that target a MONSTER/VEHICLE unit have +2 S."
+   }
+  },
+  {
+   "table": "stratagems",
+   "fp_source": "Faction Pack Black Templars page_002.md（11 版新分队，Wahapedia 无源）",
+   "values": {
+    "id": "fp11e-bt-marshals-s2",
+    "faction": "SM",
+    "detachment": "Marshal’s Household",
+    "name_zh": "憎恨之刃",
+    "name_en": "BLADE OF DETESTATION",
+    "cp_cost": "1",
+    "phase": "Charge phase",
+    "text_zh": "<b>WHEN:</b> Your Charge phase, when a friendly SWORD BRETHREN SQUAD unit ends a charge move.<br><br><b>TARGET:</b> That SWORD BRETHREN SQUAD unit.<br><br><b>EFFECT:</b> Select one enemy unit engaged with your unit. Roll one D6 for each model in your unit engaged with that enemy unit: for each 4+, that enemy unit suffers 1 mortal wound (to a maximum of 6 mortal wounds)."
+   }
+  },
+  {
+   "table": "stratagems",
+   "fp_source": "Faction Pack Black Templars page_002.md（11 版新分队，Wahapedia 无源）",
+   "values": {
+    "id": "fp11e-bt-marshals-s3",
+    "faction": "SM",
+    "detachment": "Marshal’s Household",
+    "name_zh": "无情处决",
+    "name_en": "UNSPARING EXECUTION",
+    "cp_cost": "1",
+    "phase": "Movement phase",
+    "text_zh": "<b>WHEN:</b> Your opponent’s Movement phase, when a unit is selected to make a fall-back move, if that unit is engaged with a friendly SWORD BRETHREN SQUAD unit.<br><br><b>TARGET:</b> That SWORD BRETHREN SQUAD unit.<br><br><b>EFFECT:</b> When an enemy unit engaged with your unit is selected to make a fall-back move, that enemy unit must use the desperate escape mode, with -1 to those hazard rolls if that enemy unit is battle-shocked."
+   }
+  },
+  {
+   "table": "enhancements",
+   "fp_source": "Faction Pack Black Templars page_002.md（11 版新分队，Wahapedia 无源）",
+   "values": {
+    "id": "fp11e-bt-marshals-e1",
+    "faction_id": "SM",
+    "detachment_id": "fp11e-bt-marshals",
+    "detachment_name": "Marshal’s Household",
+    "name": "Fervent Exemplars",
+    "cost": null,
+    "legend": "点数未知：FP 不含点数，MFM 缓存无增强数据（诚实置空，勿猜）",
+    "description": "SWORD BRETHREN SQUAD unit only. This unit has +1 to charge rolls."
+   }
+  },
+  {
+   "table": "enhancements",
+   "fp_source": "Faction Pack Black Templars page_002.md（11 版新分队，Wahapedia 无源）",
+   "values": {
+    "id": "fp11e-bt-marshals-e2",
+    "faction_id": "SM",
+    "detachment_id": "fp11e-bt-marshals",
+    "detachment_name": "Marshal’s Household",
+    "name": "Inheritors of Sigismund",
+    "cost": null,
+    "legend": "点数未知：FP 不含点数，MFM 缓存无增强数据（诚实置空，勿猜）",
+    "description": "SWORD BRETHREN SQUAD unit only. This unit has Fights First."
+   }
+  },
+  {
+   "table": "detachments",
+   "fp_source": "Faction Pack Black Templars page_003.md（11 版新分队，Wahapedia 无源）",
+   "values": {
+    "id": "fp11e-bt-miracle-det",
+    "faction": "SM",
+    "name_zh": "受膏勇士",
+    "name_en": "Anointed Champion",
+    "rule_text": "When a friendly <span class=\"kwb\">EMPEROR’S CHAMPION</span> unit is selected to fight, that model’s melee attacks can:<ul><li>Re-roll one hit roll.</li><li>Re-roll one wound roll.</li></ul>Enhancements selected from this detachment do not count towards the total number of enhancements in your army.<br><br><span class=\"hi_custom\">RESTRICTIONS</span><br>Your army can include BLACK TEMPLARS units, but it cannot include any ADEPTUS ASTARTES units drawn from any other Chapter."
+   }
+  },
+  {
+   "table": "enhancements",
+   "fp_source": "Faction Pack Black Templars page_003.md（11 版新分队，Wahapedia 无源）",
+   "values": {
+    "id": "fp11e-bt-miracle-e1",
+    "faction_id": "SM",
+    "detachment_id": "fp11e-bt-miracle",
+    "detachment_name": "The Living Miracle",
+    "name": "Guiding Omens",
+    "cost": null,
+    "legend": "点数未知：FP 不含点数，MFM 缓存无增强数据（诚实置空，勿猜）",
+    "description": "EMPEROR’S CHAMPION model only. At the start of the first battle round, you can select up to three of the following abilities. This model has those abilities until the end of the battle:<ul><li><b>Instrument of the God-Emperor</b> (Once per battle, per army): In the Fight phase, when this unit is selected to fight, if this unit is engaged with an enemy CHARACTER unit, you can use this ability. If you do, this model’s melee attacks have [DEVASTATING WOUNDS].</li><li><b>Foreseen Paths of the Unholy</b>: This unit has -3\" detection range.</li><li><b>Vision of Momentous Brutality</b>: This model’s melee attacks have +2 A.</li><li><b>Augury of Retribution</b>: Melee attacks that target this unit have [HAZARDOUS].</li><li><b>Omen of Sacred Intervention</b>: When you target this unit with the Heroic Intervention stratagem, that use is -1 CP.</li><li><b>Harbinger of Judgement</b>: When an enemy unit (excluding MONSTER/VEHICLE units) engaged with this model is selected to make a fall-back move, roll one D6: on a 2+, that enemy unit suffers D6 mortal wounds.</li></ul>"
+   }
+  },
+  {
+   "table": "stratagems",
+   "fp_source": "Faction Pack Black Templars page_004.md（完整重印新增）",
+   "values": {
+    "id": "fp11e-bt-wrathful-s1",
+    "faction": "SM",
+    "detachment": "Wrathful Procession",
+    "name_zh": "极端怒火仪式",
+    "name_en": "RITE OF PERFERVID WRATH",
+    "cp_cost": "1",
+    "phase": "Fight phase",
+    "text_zh": "<b>WHEN:</b> Fight phase, when a friendly CHAPLAIN unit is selected to fight.<br><br><b>TARGET:</b> That CHAPLAIN unit.<br><br><b>EFFECT:</b> Your unit’s melee attacks have +1 S."
+   }
+  },
+  {
+   "table": "enhancements",
+   "fp_source": "Faction Pack Black Templars page_004.md（完整重印新增）",
+   "values": {
+    "id": "fp11e-bt-wrathful-e1",
+    "faction_id": "SM",
+    "detachment_id": "000001006",
+    "detachment_name": "Wrathful Procession",
+    "name": "Adaptable Executioner",
+    "cost": null,
+    "legend": "点数未知：FP 不含点数，MFM 缓存无增强数据（诚实置空，勿猜）",
+    "description": "EXECRATOR model only. When this unit is selected to fight, this model’s melee attacks have:<ul><li>[CLEAVE 1].</li><li>Or: [PRECISION].</li></ul>"
    }
   }
  ]

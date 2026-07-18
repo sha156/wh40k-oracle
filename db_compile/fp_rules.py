@@ -32,6 +32,7 @@ from typing import Dict, List
 # 允许打文本补丁的 (表, 列) 白名单——表/列名会拼进 SQL，白名单外一律拒绝
 _TEXT_TARGETS = {
     ("detachments", "rule_text"),
+    ("detachments", "name_en"),         # P7-PR6：完整重印可换分队规则名（BT 祷文升格）
     ("stratagems", "text_zh"),
     ("abilities", "text_zh"),
     ("enhancements", "description"),    # P7-PR4：FP p3/p4 重印 + p19 勘误波及增强层

@@ -46,6 +46,12 @@ export interface SimOptions {
   blessing_martial_excellence?: boolean; // 卓越武艺：近战 [连击1]
   blessing_warp_blades?: boolean; // 次元邪刃：近战 [致命一击]
   blessing_decapitating_strikes?: boolean; // 斩首一击：近战对步兵 [毁灭伤害]
+  // ── P7-PR6 黑色圣堂（下车态/圣堂誓言/指引圣兆）──
+  disembarked_this_turn?: boolean; // 假设本回合已从运输工具下车（Shock and Awe 等）
+  disembarked_from_land_raider?: boolean; // 下车自 LAND RAIDER（谴责音阵档；蕴含下车）
+  vow_accept_any_challenge?: boolean; // 誓言·接受一切挑战：近战 S≤T 时致伤+1
+  omen_instrument?: boolean; // 圣兆·神皇之器：近战接战 CHARACTER 时 [毁灭伤害]
+  omen_momentous_brutality?: boolean; // 圣兆·凶暴神视：近战 A+2
   // ── P7-PR4 守方阵营 DSL（防守向条目经 inject_target 注入）──
   defender_detachment?: string; // 守方分队名
   defender_stratagems?: string[]; // 守方防守向战略点名（Stimm Injectors 等）

@@ -111,6 +111,12 @@ def _options_from_inputs(st) -> Dict[str, Any]:
         "blessing_martial_excellence": st.session_state.get("sim_bless_me", False),
         "blessing_warp_blades": st.session_state.get("sim_bless_wb", False),
         "blessing_decapitating_strikes": st.session_state.get("sim_bless_ds", False),
+        # P7-PR6 黑色圣堂（下车态/誓言/圣兆）
+        "disembarked_this_turn": st.session_state.get("sim_disembarked", False),
+        "disembarked_from_land_raider": st.session_state.get("sim_disembarked_lr", False),
+        "vow_accept_any_challenge": st.session_state.get("sim_vow_aac", False),
+        "omen_instrument": st.session_state.get("sim_omen_instr", False),
+        "omen_momentous_brutality": st.session_state.get("sim_omen_brutality", False),
         # P7-PR4 守方向
         "defender_hidden": st.session_state.get("sim_def_hidden", False),
         "defender_bearer_leading": st.session_state.get("sim_def_bearer", False),
@@ -248,6 +254,20 @@ def render_simulator_panel(st) -> None:
                                   help="恐虐赐福：近战 [致命一击]")
             cols_dsl6[2].checkbox("赐福·斩首一击", key="sim_bless_ds",
                                   help="恐虐赐福：近战对步兵 [毁灭伤害]")
+            cols_dsl7 = st.columns(3)
+            cols_dsl7[0].checkbox("本回合已下车", key="sim_disembarked",
+                                  help="BT 神锤突击队 Shock and Awe 近战命中+1 等"
+                                       "「下车回合」条款的生效前提")
+            cols_dsl7[1].checkbox("下车自 LAND RAIDER", key="sim_disembarked_lr",
+                                  help="谴责音阵全量致伤重骰档；自动蕴含下车开关")
+            cols_dsl7[2].checkbox("誓言·接受一切挑战", key="sim_vow_aac",
+                                  help="圣堂誓言（BT 军规四选一）：近战 S≤T 时致伤+1")
+            cols_dsl8 = st.columns(3)
+            cols_dsl8[0].checkbox("圣兆·神皇之器", key="sim_omen_instr",
+                                  help="指引圣兆（六选三）：近战接战 CHARACTER 时"
+                                       " [毁灭伤害]（once per battle 假设本次已使用）")
+            cols_dsl8[1].checkbox("圣兆·凶暴神视", key="sim_omen_brutality",
+                                  help="指引圣兆：近战 A+2")
             cols_dsl5 = st.columns(3)
             cols_dsl5[0].text_input("守方分队", key="sim_def_detachment",
                                     help="放行守方分队的防守向条目"

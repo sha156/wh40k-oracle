@@ -134,6 +134,15 @@ class Stance:
     blessing_decapitating_strikes: bool = False  # P7-PR5·恐虐赐福「斩首一击」：近战对步兵
                                                  # [DEVASTATING WOUNDS]（军规限至多两项同开，
                                                  # toggle_groups 硬拦，dsl.py）
+    disembarked_this_turn: bool = False  # P7-PR6：假设本回合已从运输工具下车（BT 神锤突击队
+                                         # Shock and Awe 近战命中+1 等"下车回合"条款）
+    disembarked_from_land_raider: bool = False  # P7-PR6：下车且运输工具带 LAND RAIDER 关键词
+                                                # （谴责音阵全量致伤重骰档；开启时几何蕴含
+                                                # 下车开关，选项归一层自动补开）
+    omen_instrument: bool = False        # P7-PR6·指引圣兆「神皇之器」：近战接战 CHARACTER
+                                         # 时 [DEVASTATING WOUNDS]（once per battle 假设本次
+                                         # 近战已使用；圣兆三选由玩家自行保证）
+    omen_momentous_brutality: bool = False  # P7-PR6·指引圣兆「凶暴神视」：近战 A+2
 
 
 @dataclass(frozen=True)

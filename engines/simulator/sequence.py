@@ -102,6 +102,17 @@ KNOWN_CONDITION_TAGS = frozenset({
     "melee_target_has_keyword",                     # P7-PR5：(tag, kw) 近战阶段 × 目标关键词
                                                     # （A Trophy for the Throne 等 Fight phase
                                                     # 战略——裸 target_has_keyword 会在射击误放行）
+    "melee_disembarked",                            # P7-PR6：近战 × 本回合下车（BT Shock and
+                                                    # Awe 命中+1 / Paragon of Fury 伤害档）
+    "melee_s_lte_t",                                # P7-PR6：近战 × 最终 S≤T（BT 誓言 Accept Any
+                                                    # Challenge 致伤+1）。S/T 比较延迟到
+                                                    # _resolve_weapon 的最终 S（含 s_improve）处
+                                                    # 判定——录入面仅限 (wound,modify)，dsl 校验拦
+    "wound_s_gt_t",                                 # P7-PR6：守方向 × 最终 S>T（BT Purge and
+                                                    # Sanctify 被伤-1）。同为延迟判定 tag
+    "omen_instrument_vs_character",                 # P7-PR6·圣兆「神皇之器」：近战 × 圣兆开 ×
+                                                    # 目标 CHARACTER → [DEVASTATING WOUNDS]
+    "omen_momentous_brutality",                     # P7-PR6·圣兆「凶暴神视」：近战 × 圣兆开
 })
 
 
@@ -174,6 +185,18 @@ def _cond_true(condition: Tuple, stance: Stance, target: TargetProfile) -> bool:
     if tag == "blessing_decapitating_strikes_vs_infantry":  # P7-PR5·斩首一击：近战对步兵 dev
         return (stance.phase == "melee" and stance.blessing_decapitating_strikes
                 and "infantry" in target.keywords)
+    if tag == "melee_disembarked":               # P7-PR6：近战 × 本回合下车（LR 档蕴含下车）
+        return stance.phase == "melee" and (stance.disembarked_this_turn
+                                            or stance.disembarked_from_land_raider)
+    if tag == "melee_s_lte_t":                   # P7-PR6：S≤T 分量延迟到 _resolve_weapon
+        return stance.phase == "melee"           # （此处只判近战门控；见 wound_mod_s_lte_t）
+    if tag == "wound_s_gt_t":                    # P7-PR6：守方向 S>T 延迟判定（无态势门控）
+        return True
+    if tag == "omen_instrument_vs_character":    # P7-PR6·圣兆「神皇之器」
+        return (stance.phase == "melee" and stance.omen_instrument
+                and "character" in target.keywords)
+    if tag == "omen_momentous_brutality":        # P7-PR6·圣兆「凶暴神视」
+        return stance.phase == "melee" and stance.omen_momentous_brutality
     # P7 加固（评审 F2）：未知 tag 静默返回 False = 效果静默失效（攻方侧零披露），
     # 是 CLAUDE.md 明令的静默降级缝——改为 raise，让 DSL 录入笔误在测试期就炸出来。
     raise ValueError(f"未知 Effect condition tag: {tag!r}（来源条件 {condition!r}）")
@@ -211,6 +234,14 @@ class _WeaponParams:
                                    # 下限由 effective_save 的 ≥2 夹取承担）
     target_invuln: object = None   # P7-PR4：守方 DSL 授予的无效保护阈值（Optional[int]，
                                    # 与 profile 自带 invuln 取更优）
+    wound_mod_raw: int = 0         # P7-PR6：致伤修正夹取前的原始累计——S/T 延迟分量并入后
+                                   # 须与基础分量【合并夹取 ±1】，不能各夹各的
+    wound_mod_s_lte_t: int = 0     # P7-PR6：仅当最终 S≤T 生效的致伤修正分量（BT 誓言
+                                   # Accept Any Challenge；最终 S=strength+s_improve，
+                                   # 在 _resolve_weapon 判定——录入期基础 S 判定会在
+                                   # S 改善叠加越过 T 时高估）
+    wound_mod_s_gt_t: int = 0      # P7-PR6：仅当最终 S>T 生效的致伤修正分量（守方向
+                                   # Purge and Sanctify 被伤-1）
 
 
 def _gather_params(w: WeaponProfile, stance: Stance, target: TargetProfile) -> _WeaponParams:
@@ -267,7 +298,11 @@ def _gather_params(w: WeaponProfile, stance: Stance, target: TargetProfile) -> _
             elif e.op == "reroll" and ok:
                 p.twin = True      # 致伤失败重骰；P7-PR3 起带条件（Combat Debarkation 等）
             elif e.op == "modify" and ok:
-                p.wound_mod += int(e.params[0])
+                if e.condition and e.condition[0] == "melee_s_lte_t":
+                    # P7-PR6：S≤T 分量延迟判定（_cond_true 只放行了近战门控）
+                    p.wound_mod_s_lte_t += int(e.params[0])
+                else:
+                    p.wound_mod += int(e.params[0])
             elif e.op == "s_improve" and ok:
                 # P7-PR4："improve the Strength characteristic by 1"（Bonded Heroes）。
                 # 特征值改善≠致伤骰修正：改 S vs T 查表输入本身——S4→S5 打 T7 仍 5+，
@@ -324,7 +359,11 @@ def _gather_params(w: WeaponProfile, stance: Stance, target: TargetProfile) -> _
             # P7-PR5 守方 DSL：致伤骰修正（DAEMONIC RESISTANCE "subtract 1 from the
             # Wound roll" → 参数 -1）。并入攻方致伤修正同一累计，随后统一夹 ±1
             # ——与守方 hit+modify 的烟幕先例同语义（正负可与攻方修正抵消）
-            p.wound_mod += int(e.params[0])
+            if e.condition and e.condition[0] == "wound_s_gt_t":
+                # P7-PR6：S>T 分量延迟到 _resolve_weapon 的最终 S 处判定
+                p.wound_mod_s_gt_t += int(e.params[0])
+            else:
+                p.wound_mod += int(e.params[0])
     # ── Benefit of Cover（11版 13.08）：掩体收益 = 恶化该次攻击的 BS 1 点（射击专属），
     #   十版"护甲保存骰+1、且 AP0 对 3+ 甲无效"整体作废——掩体从保存侧挪到命中侧。
     #   P7 起折进 **BS 特征值通道 bs_neg**（S7 曾折 hit_neg，与 13.08 "worsen the
@@ -346,9 +385,12 @@ def _gather_params(w: WeaponProfile, stance: Stance, target: TargetProfile) -> _
         hit_neg = 0
         bs_neg = 0
     # 命中/致伤修正各自夹到 ±1（修正总和上限，未审计项沿用十版口径）；
-    # BS 特征值净变化不夹取（上限条款语料缺页，spec D2 按无上限实现并披露）
+    # BS 特征值净变化不夹取（上限条款语料缺页，spec D2 按无上限实现并披露）。
+    # P7-PR6：致伤修正保留夹取前原值 wound_mod_raw——S/T 延迟分量（wound_mod_s_lte_t /
+    # wound_mod_s_gt_t）在 _resolve_weapon 判定成立后须与原值合并再统一夹 ±1
     p.hit_mod = max(-1, min(1, hit_pos + hit_neg))
     p.bs_delta = bs_pos + bs_neg
+    p.wound_mod_raw = p.wound_mod
     p.wound_mod = max(-1, min(1, p.wound_mod))
     return p
 
@@ -636,7 +678,16 @@ def _resolve_weapon(
 
     # ③-⑥ Wound / Save / Damage（P7-PR3：AP 特征值改善——AP 存负值，改善=更负；
     #   P7-PR4：S/Sv 特征值改善 + 守方 DSL 授予 invuln 与 profile 自带取更优）
-    wt = wound_target(w.strength + p.s_improve, target.t)
+    s_final = w.strength + p.s_improve
+    wt = wound_target(s_final, target.t)
+    # P7-PR6：S/T 延迟分量在最终 S（含 s_improve）处判定——誓言 Accept Any Challenge
+    # 只在 S≤T 时给 +1（RAW 特征值先改后比：S4+2 改到 S6 打 T5 不再享受）；
+    # Purge and Sanctify 只在 S>T 时给 -1。成立分量与基础分量合并后统一夹 ±1
+    wound_mod = p.wound_mod
+    deferred = ((p.wound_mod_s_lte_t if s_final <= target.t else 0)
+                + (p.wound_mod_s_gt_t if s_final > target.t else 0))
+    if deferred:
+        wound_mod = max(-1, min(1, p.wound_mod_raw + deferred))
     inv = target.invuln
     if p.target_invuln is not None:
         inv = int(p.target_invuln) if inv is None else min(inv, int(p.target_invuln))
@@ -644,7 +695,7 @@ def _resolve_weapon(
     to_wound = np.concatenate([base_to_wound, extra_mask], axis=1)
 
     nd1, md1, w1, u1, m1 = _wound_save_damage(
-        to_wound, rng, n, wt, p.crit_wound_thr, p.wound_mod, p.twin, p.has_dev,
+        to_wound, rng, n, wt, p.crit_wound_thr, wound_mod, p.twin, p.has_dev,
         sv_need, w.damage, p.melta_expr, dmg_reduction)
     nd2, w2, u2 = _autowound_save_damage(
         lethal_mask, rng, n, sv_need, w.damage, p.melta_expr, dmg_reduction)

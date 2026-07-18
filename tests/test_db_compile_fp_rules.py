@@ -189,12 +189,13 @@ class TestDeactivations:
     def test_real_patches_file_deactivations_shape(self):
         # 真源补丁文件：钛 12 条（战略 9 + 增强 3，2026-07-16 裁 A / PR4）
         # + 吞世者 6 条（PR5：怒火容器完整重印未收录——战略 4 + 增强 2）
+        # + 黑色圣堂 7 条（PR6：愤怒巡游队完整重印未收录——战略 4 + 增强 3）
         import json
         from pathlib import Path
         data = json.loads(Path("db_compile/fp_rules_patches.json").read_text(
             encoding="utf-8"))
         deacts = data.get("deactivations", [])
-        assert len(deacts) == 18
+        assert len(deacts) == 25
         strat = {d["id"] for d in deacts if d["table"] == "stratagems"}
         enh = {d["id"] for d in deacts if d["table"] == "enhancements"}
         assert strat == {
@@ -202,9 +203,13 @@ class TestDeactivations:
             "000009984002", "000009984003", "000009984004", "000009984006",
             "000009984007",
             # PR5 吞世者：Vessels of Wrath 重印未收录
-            "000009848003", "000009848004", "000009848006", "000009848007"}
+            "000009848003", "000009848004", "000009848006", "000009848007",
+            # PR6 黑色圣堂：Wrathful Procession 重印未收录
+            "000009844003", "000009844005", "000009844006", "000009844007"}
         assert enh == {"000009839004", "000009839005", "000009983005",
-                       "000009847003", "000009847004"}
+                       "000009847003", "000009847004",
+                       # PR6 黑色圣堂
+                       "000009843002", "000009843003", "000009843004"}
         for d in deacts:
             assert d["status"] == "removed_11e"
             assert d.get("fp_source")
@@ -343,12 +348,14 @@ class TestInserts:
         # 真源补丁文件：钛 7 条（AAC 整分队 + Aux 新战略 GBU）
         # + 吞世者 13 条（PR5：Brazen Engines / Butchers of Khorne 两全新分队
         #   各 1 规则+3 战略+2 增强，另 Vessels 重印新增 Scorn the Witch）
+        # + 黑色圣堂 10 条（PR6：Marshal's Household 1 规则+3 战略+2 增强、
+        #   The Living Miracle 1 规则+1 增强、Wrathful 重印新增 1 战略+1 增强）
         import json
         from pathlib import Path
         data = json.loads(Path("db_compile/fp_rules_patches.json").read_text(
             encoding="utf-8"))
         ins = data.get("inserts", [])
-        assert len(ins) == 20
+        assert len(ins) == 30
         ids = {p["values"]["id"] for p in ins}
         assert ids == {"fp11e-tau-aac-det", "fp11e-tau-aac-s1", "fp11e-tau-aac-s2",
                        "fp11e-tau-aac-s3", "fp11e-tau-aux-gbu",
@@ -359,7 +366,12 @@ class TestInserts:
                        "fp11e-we-butchers-det", "fp11e-we-butchers-s1",
                        "fp11e-we-butchers-s2", "fp11e-we-butchers-s3",
                        "fp11e-we-butchers-e1", "fp11e-we-butchers-e2",
-                       "fp11e-we-vessels-s1"}
+                       "fp11e-we-vessels-s1",
+                       "fp11e-bt-marshals-det", "fp11e-bt-marshals-s1",
+                       "fp11e-bt-marshals-s2", "fp11e-bt-marshals-s3",
+                       "fp11e-bt-marshals-e1", "fp11e-bt-marshals-e2",
+                       "fp11e-bt-miracle-det", "fp11e-bt-miracle-e1",
+                       "fp11e-bt-wrathful-s1", "fp11e-bt-wrathful-e1"}
         for p in ins:
             assert p.get("fp_source")
             assert p["values"].get("id", "").startswith("fp11e-")

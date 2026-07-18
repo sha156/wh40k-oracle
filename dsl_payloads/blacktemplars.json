@@ -1,0 +1,1352 @@
+{
+ "_comment": "P7 阵营技能 DSL 唯一真源（黑色圣堂，P7-PR6）。DB effect_dsl_json/dsl_status 只是投影，由 `python -m db_compile dsl-apply` 写入并挂 restore。判据与格式沿 spec 2026-07-14 + PR3/PR4/PR5 约定；A/B 工作单见 docs/superpowers/plans/2026-07-19-p7-pr6-bt-worklist.md。黑色圣堂为 SM 子阵营（faction='SM' 无独立阵营行）——军规誓言条目靠 vow_accept_any_challenge 开关声明军队为 BT；removed_11e 行（怒火巡游队重印未收录 7 条）零覆盖。",
+ "dsl_version": 1,
+ "faction": "SM",
+ "entries": [
+  {
+   "table": "abilities",
+   "id": "000008526",
+   "side": "attacker",
+   "detachment": null,
+   "name_en": "Templar Vows",
+   "name_zh": "圣堂誓言",
+   "status": "partial",
+   "effects": [
+    {
+     "phase": "wound",
+     "op": "modify",
+     "params": [
+      1
+     ],
+     "condition": [
+      "melee_s_lte_t"
+     ],
+     "source": "圣堂誓言·接受一切挑战（近战最终 S≤T 时致伤+1）"
+    }
+   ],
+   "requires_toggles": [
+    "vow_accept_any_challenge"
+   ],
+   "not_modeled_notes_zh": [
+    "誓言为战斗开始时四选一——开关即声明选定「接受一切挑战」；其余三誓言由玩家自行保证未同开",
+    "仅黑色圣堂军队适用（BT 为 SM 子阵营无独立阵营行——开关即声明军队为黑色圣堂）",
+    "弃绝巫术，讨灭巫师（对灵能者近战 [精准] + 12 寸内冲锋重投并强制接战）：精准=攻击分配域、冲锋=移动域未建模",
+    "不容奸邪苟活（撤退后可冲锋 + 跟进/重整移动自由）移动域未建模",
+    "捍卫帝皇荣光（目标点持续控制 + 加速后可行动）目标点/任务域未建模",
+    "S≤T 判定在引擎最终 S（含 S 特征值改善）处延迟结算——S 改善叠加越过 T 时自动失效（RAW 特征值先改后比）"
+   ],
+   "provenance": {
+    "current_text": "db abilities.text_zh id=000008526",
+    "base_text": "FP Black Templars（PR6 fp_rules 已刷新为 11 版现行文本，工作单 drifted）",
+    "synthesis": "无需合成",
+    "text_sha256": "6f3cea10c5d4e17f5815d7c205b095799c4887e917a3dbafc44d39660864ff3f"
+   },
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "abilities",
+   "id": "det000010391",
+   "side": "attacker",
+   "detachment": "Companions of Vehemence",
+   "name_en": "Righteous Fervour",
+   "name_zh": "热忱圣怒",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "重投加速骰与冲锋骰——移动域未建模"
+   ],
+   "provenance": {
+    "current_text": "db detachments.rule_text id=000010391",
+    "base_text": "Wahapedia 现文（PR6 工作单：FP 未触及，11 版仍现行）",
+    "synthesis": "DSL 投影经 materialize 落 abilities 新行（spec D5）",
+    "text_sha256": "94aefd99672750b76aa3b7a9cba9efefbb2c0a6e938ace243329788a05f16b6a"
+   },
+   "encoded_by": "manual-2026-07-19",
+   "materialize": {
+    "from_table": "detachments",
+    "from_id": "000010391",
+    "from_column": "rule_text"
+   }
+  },
+  {
+   "table": "abilities",
+   "id": "det000010395",
+   "side": "target",
+   "detachment": "Vindication Task Force",
+   "name_en": "Purge and Sanctify",
+   "name_zh": "净化！圣化！",
+   "status": "partial",
+   "effects": [
+    {
+     "phase": "wound",
+     "op": "modify",
+     "params": [
+      -1
+     ],
+     "condition": [
+      "wound_s_gt_t"
+     ],
+     "source": "净化！圣化！（旗手在目标点范围内被 S>T 攻击时被伤-1）"
+    }
+   ],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "仅限 ANCIENT 单位守方且需在目标点范围内——空间条件按已满足假设（选择本分队即声明）",
+    "S>T 判定在引擎攻方最终 S（含 S 特征值改善）处延迟结算",
+    "第二弹点（十字军小队 surge 移动改向最近目标点）移动域未建模"
+   ],
+   "provenance": {
+    "current_text": "db detachments.rule_text id=000010395",
+    "base_text": "FP Black Templars（PR6 fp_rules 已刷新为 11 版现行文本，工作单 drifted）",
+    "synthesis": "DSL 投影经 materialize 落 abilities 新行（spec D5）",
+    "text_sha256": "c88fdae2de20dcc1b73b2c0808b83b30e8597e5948072c8a8531218d75c76eed"
+   },
+   "encoded_by": "manual-2026-07-19",
+   "materialize": {
+    "from_table": "detachments",
+    "from_id": "000010395",
+    "from_column": "rule_text"
+   }
+  },
+  {
+   "table": "abilities",
+   "id": "det000010399",
+   "side": "attacker",
+   "detachment": "Godhammer Assault Force",
+   "name_en": "Shock and Awe",
+   "name_zh": "震慑突袭",
+   "status": "partial",
+   "effects": [
+    {
+     "phase": "hit",
+     "op": "modify",
+     "params": [
+      1
+     ],
+     "condition": [
+      "melee_disembarked"
+     ],
+     "source": "震慑突袭（下车回合近战命中+1）"
+    }
+   ],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "下车态用假设开关「本回合已下车」（引擎无运输载具建模）",
+    "第一弹点（下车冲锋强制目标战斗震慑测试）士气域未建模"
+   ],
+   "provenance": {
+    "current_text": "db detachments.rule_text id=000010399",
+    "base_text": "Wahapedia 现文（PR6 工作单：FP 未触及，11 版仍现行）",
+    "synthesis": "DSL 投影经 materialize 落 abilities 新行（spec D5）",
+    "text_sha256": "65e2800840e50efd68fb8fe0888515d0e6d756395570c877fdddc75b5932b21a"
+   },
+   "encoded_by": "manual-2026-07-19",
+   "materialize": {
+    "from_table": "detachments",
+    "from_id": "000010399",
+    "from_column": "rule_text"
+   }
+  },
+  {
+   "table": "abilities",
+   "id": "det000009842",
+   "side": "target",
+   "detachment": "Wrathful Procession",
+   "name_en": "Chant of Deathless Devotion",
+   "name_zh": "不朽忠诚祷言",
+   "status": "partial",
+   "effects": [
+    {
+     "phase": "save",
+     "op": "invuln",
+     "params": [
+      5
+     ],
+     "condition": [
+      "phase_shooting"
+     ],
+     "source": "不朽忠诚祷言（CHAPLAIN 对远程攻击 5+ 特殊保护）"
+    }
+   ],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "仅限 CHAPLAIN 单位守方——请只在模拟牧师单位时选择本分队规则",
+    "近战不生效（条件自含射击门控）"
+   ],
+   "provenance": {
+    "current_text": "db detachments.rule_text id=000009842",
+    "base_text": "FP Black Templars（PR6 fp_rules 已刷新为 11 版现行文本，工作单 drifted）",
+    "synthesis": "DSL 投影经 materialize 落 abilities 新行（spec D5）",
+    "text_sha256": "21b25c635ed7c306c0e925837b8ab3a0affea97a7c8e7f9cfce82ec5a6b4609b"
+   },
+   "encoded_by": "manual-2026-07-19",
+   "materialize": {
+    "from_table": "detachments",
+    "from_id": "000009842",
+    "from_column": "rule_text"
+   }
+  },
+  {
+   "table": "abilities",
+   "id": "detfp11e-bt-marshals-det",
+   "side": "attacker",
+   "detachment": "Marshal’s Household",
+   "name_en": "Faith-Fuelled Resolve",
+   "name_zh": "信仰淬炼之毅",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "SWORD BRETHREN SQUAD +1 OC——目标点控制域未建模（模拟器不结算 OC 争夺）"
+   ],
+   "provenance": {
+    "current_text": "db detachments.rule_text id=fp11e-bt-marshals-det",
+    "base_text": "FP Black Templars（PR6 fp_rules inserts 补录，Wahapedia 无源）",
+    "synthesis": "DSL 投影经 materialize 落 abilities 新行（spec D5）",
+    "text_sha256": "21eff57974bf3a1c0d8c718536b982d44d18857180159c40a64fde161db9a9fe"
+   },
+   "encoded_by": "manual-2026-07-19",
+   "materialize": {
+    "from_table": "detachments",
+    "from_id": "fp11e-bt-marshals-det",
+    "from_column": "rule_text"
+   }
+  },
+  {
+   "table": "abilities",
+   "id": "detfp11e-bt-miracle-det",
+   "side": "attacker",
+   "detachment": "The Living Miracle",
+   "name_en": "Anointed Champion",
+   "name_zh": "受膏勇士",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "帝皇冠军每次近战可重骰一颗命中骰+一颗致伤骰——引擎重骰通道为全部失败骰整体重骰，单骰重骰无通道，编入会高估",
+    "本分队增强不占全军增强上限——军表域规则，模拟器不结算"
+   ],
+   "provenance": {
+    "current_text": "db detachments.rule_text id=fp11e-bt-miracle-det",
+    "base_text": "FP Black Templars（PR6 fp_rules inserts 补录，Wahapedia 无源）",
+    "synthesis": "DSL 投影经 materialize 落 abilities 新行（spec D5）",
+    "text_sha256": "9e26e433ca96f4bdb49c69f68952fdd6b7d124b5c3ac11cb565fdad07af64bdd"
+   },
+   "encoded_by": "manual-2026-07-19",
+   "materialize": {
+    "from_table": "detachments",
+    "from_id": "fp11e-bt-miracle-det",
+    "from_column": "rule_text"
+   }
+  },
+  {
+   "table": "stratagems",
+   "id": "000010393002",
+   "side": "attacker",
+   "detachment": "Companions of Vehemence",
+   "name_en": "DEVOUT PUSH",
+   "name_zh": "虔信推进",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "跟进/重整移动 6 寸（原 3 寸）——移动域未建模"
+   ],
+   "provenance": {
+    "current_text": "db stratagems.text_zh id=000010393002",
+    "base_text": "Wahapedia 现文（PR6 工作单：FP 未触及，11 版仍现行）",
+    "synthesis": "无需合成",
+    "text_sha256": "7bd2c4bf40459ba58227401835801f969cbd73bb30b75d3804a7074161d643fd"
+   },
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "stratagems",
+   "id": "000010393003",
+   "side": "attacker",
+   "detachment": "Companions of Vehemence",
+   "name_en": "HEARTS HARDENED TO DUTY",
+   "name_zh": "铁血矢志，恪尽职守！",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "重整移动无需朝最近敌方模型——移动域未建模"
+   ],
+   "provenance": {
+    "current_text": "db stratagems.text_zh id=000010393003",
+    "base_text": "Wahapedia 现文（PR6 工作单：FP 未触及，11 版仍现行）",
+    "synthesis": "无需合成",
+    "text_sha256": "45c4b44fd09f81201c731f6dceeb736b092645cbe5e1a61095f9bc6604fd185e"
+   },
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "stratagems",
+   "id": "000010393004",
+   "side": "attacker",
+   "detachment": "Companions of Vehemence",
+   "name_en": "FOR THE EMPEROR'S HONOUR!",
+   "name_zh": "为了帝皇的荣誉！",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "近战武器 [精准]——攻击分配域（越过护卫点杀附属人物）未建模"
+   ],
+   "provenance": {
+    "current_text": "db stratagems.text_zh id=000010393004",
+    "base_text": "Wahapedia 现文（PR6 工作单：FP 未触及，11 版仍现行）",
+    "synthesis": "无需合成",
+    "text_sha256": "10caf384b5c95f05b9872bd13673f6d01bd80969e9448dda53fe77309b74475e"
+   },
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "stratagems",
+   "id": "000010393005",
+   "side": "attacker",
+   "detachment": "Companions of Vehemence",
+   "name_en": "PIOUS ENMITY",
+   "name_zh": "虔信之仇",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "重骰命中 1（对巨兽/载具另重骰致伤 1）——引擎重骰通道为全部失败骰整体重骰，重骰 1 编入会高估"
+   ],
+   "provenance": {
+    "current_text": "db stratagems.text_zh id=000010393005",
+    "base_text": "Wahapedia 现文（PR6 工作单：FP 未触及，11 版仍现行）",
+    "synthesis": "无需合成",
+    "text_sha256": "b2131967979c7f8f2e128c6b2906e5b1fd82d7261d3c637ebca435a097cdc76d"
+   },
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "stratagems",
+   "id": "000010393006",
+   "side": "attacker",
+   "detachment": "Companions of Vehemence",
+   "name_en": "HERESY BEGETS RETRIBUTION",
+   "name_zh": "异端必遭严惩！",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "对手移动后 surge 移动 D6 寸——移动域未建模"
+   ],
+   "provenance": {
+    "current_text": "db stratagems.text_zh id=000010393006",
+    "base_text": "FP Black Templars（PR6 fp_rules 已刷新为 11 版现行文本，工作单 drifted）",
+    "synthesis": "无需合成",
+    "text_sha256": "4facb2084a22366c06fadb5e49fa5b533ff265735fdf52cfe44e88acab32c54a"
+   },
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "stratagems",
+   "id": "000010393007",
+   "side": "attacker",
+   "detachment": "Companions of Vehemence",
+   "name_en": "DREAD CRUSADERS",
+   "name_zh": "无畏十字军",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "敌方冲锋时强制战斗震慑测试且结果-1——士气域未建模"
+   ],
+   "provenance": {
+    "current_text": "db stratagems.text_zh id=000010393007",
+    "base_text": "Wahapedia 现文（PR6 工作单：FP 未触及，11 版仍现行）",
+    "synthesis": "无需合成",
+    "text_sha256": "59c0b3064d01864d92df77247b4ff22018475c82f80d95d3884d7b2ead06df0c"
+   },
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "stratagems",
+   "id": "000010401002",
+   "side": "attacker",
+   "detachment": "Godhammer Assault Force",
+   "name_en": "A CEASELESS CAUSE",
+   "name_zh": "永不停歇的进军",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "近战阶段末常规移动 6 寸——移动域未建模"
+   ],
+   "provenance": {
+    "current_text": "db stratagems.text_zh id=000010401002",
+    "base_text": "Wahapedia 现文（PR6 工作单：FP 未触及，11 版仍现行）",
+    "synthesis": "无需合成",
+    "text_sha256": "30ad5970cb478bd6f52abd10c4e6f3e049debfab15e1fee215e92fe378359f75"
+   },
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "stratagems",
+   "id": "000010401003",
+   "side": "attacker",
+   "detachment": "Godhammer Assault Force",
+   "name_en": "UNCOMPROMISING EGRESS",
+   "name_zh": "迅猛突袭",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "兰德掠袭者 6 寸内任意下车并可入接战——部署/移动域未建模"
+   ],
+   "provenance": {
+    "current_text": "db stratagems.text_zh id=000010401003",
+    "base_text": "Wahapedia 现文（PR6 工作单：FP 未触及，11 版仍现行）",
+    "synthesis": "无需合成",
+    "text_sha256": "defbcd9d474bcae79830f7a9aef99de7b3e8fc5975e8b38d6a5ac7770240d8f8"
+   },
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "stratagems",
+   "id": "000010401004",
+   "side": "attacker",
+   "detachment": "Godhammer Assault Force",
+   "name_en": "GAUNTLET OF THE GOD-EMPEROR",
+   "name_zh": "神皇铁拳",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "载具水平穿越地形移动——移动域未建模"
+   ],
+   "provenance": {
+    "current_text": "db stratagems.text_zh id=000010401004",
+    "base_text": "Wahapedia 现文（PR6 工作单：FP 未触及，11 版仍现行）",
+    "synthesis": "无需合成",
+    "text_sha256": "43f7eb78d28c74b2f2ba1b0ae80f2d507eac5770462e88e0f107b5554066dde6"
+   },
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "stratagems",
+   "id": "000010401005",
+   "side": "attacker",
+   "detachment": "Godhammer Assault Force",
+   "name_en": "FOCUSED HATRED",
+   "name_zh": "聚焦仇恨",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "冲锋移动穿越模型——移动域未建模"
+   ],
+   "provenance": {
+    "current_text": "db stratagems.text_zh id=000010401005",
+    "base_text": "Wahapedia 现文（PR6 工作单：FP 未触及，11 版仍现行）",
+    "synthesis": "无需合成",
+    "text_sha256": "19f9cc0692a6142637d6d1d30774323a6134ffadfd9c681ecf5b7e7ebe66ca8b"
+   },
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "stratagems",
+   "id": "000010401006",
+   "side": "attacker",
+   "detachment": "Godhammer Assault Force",
+   "name_en": "CONDEMNATORY INFO-SCREED",
+   "name_zh": "谴责音阵",
+   "status": "partial",
+   "effects": [
+    {
+     "phase": "wound",
+     "op": "reroll",
+     "params": [
+      "fail"
+     ],
+     "condition": [
+      "phase_melee"
+     ],
+     "source": "谴责音阵（LAND RAIDER 下车档：近战致伤骰可重骰）"
+    }
+   ],
+   "requires_toggles": [
+    "disembarked_from_land_raider"
+   ],
+   "not_modeled_notes_zh": [
+    "只编 LAND RAIDER 下车档的全量致伤重骰（开关自动蕴含下车态）；普通下车档仅重骰致伤 1——重骰 1 无通道不编（防高估）",
+    "重骰语义=只重骰失败骰（引擎最优策略实现，与「可以重骰」等价）"
+   ],
+   "provenance": {
+    "current_text": "db stratagems.text_zh id=000010401006",
+    "base_text": "Wahapedia 现文（PR6 工作单：FP 未触及，11 版仍现行）",
+    "synthesis": "无需合成",
+    "text_sha256": "6d8aa1f17d6da670c9f452a9d5925a00dd0fab33b42c8eac2e7e180a3b3840ae"
+   },
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "stratagems",
+   "id": "000010401007",
+   "side": "target",
+   "detachment": "Godhammer Assault Force",
+   "name_en": "BLESSED HULL",
+   "name_zh": "祝圣外壳",
+   "status": "partial",
+   "effects": [
+    {
+     "phase": "damage",
+     "op": "damage_reduction",
+     "params": [
+      1
+     ],
+     "condition": [
+      "phase_shooting"
+     ],
+     "source": "祝圣外壳（被射击攻击伤害-1）"
+    }
+   ],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "仅限 ADEPTUS ASTARTES VEHICLE 单位守方（点名即声明守方为载具）",
+    "触发时机为敌方选中目标后——点名即假设已使用"
+   ],
+   "provenance": {
+    "current_text": "db stratagems.text_zh id=000010401007",
+    "base_text": "Wahapedia 现文（PR6 工作单：FP 未触及，11 版仍现行）",
+    "synthesis": "无需合成",
+    "text_sha256": "dc2880f01da8dc91459b9f48d84a76ea0a758f15279700a32fec061eef32c945"
+   },
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "stratagems",
+   "id": "fp11e-bt-marshals-s1",
+   "side": "attacker",
+   "detachment": "Marshal’s Household",
+   "name_en": "SLAYERS OF ABOMINATIONS",
+   "name_zh": "屠灭邪物",
+   "status": "partial",
+   "effects": [
+    {
+     "phase": "wound",
+     "op": "s_improve",
+     "params": [
+      2
+     ],
+     "condition": [
+      "melee_target_has_keyword",
+      "monster"
+     ],
+     "source": "屠灭邪物（近战对 MONSTER +2 S，特征值通道）"
+    },
+    {
+     "phase": "wound",
+     "op": "s_improve",
+     "params": [
+      2
+     ],
+     "condition": [
+      "melee_target_has_keyword",
+      "vehicle"
+     ],
+     "source": "屠灭邪物（近战对 VEHICLE +2 S，特征值通道）"
+    }
+   ],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "限 SWORD BRETHREN SQUAD（点名即声明攻方为宝剑兄弟）",
+    "MONSTER/VEHICLE 两条效果不会同时命中（无单位同时具备两关键词）；S+2 走特征值通道改 S vs T 查表本身"
+   ],
+   "provenance": {
+    "current_text": "db stratagems.text_zh id=fp11e-bt-marshals-s1",
+    "base_text": "FP Black Templars（PR6 fp_rules inserts 补录，Wahapedia 无源）",
+    "synthesis": "无需合成",
+    "text_sha256": "c4b322d1e3b42046af75b3c66def13975a52fb81910c664233ba4e331440fab4"
+   },
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "stratagems",
+   "id": "fp11e-bt-marshals-s2",
+   "side": "attacker",
+   "detachment": "Marshal’s Household",
+   "name_en": "BLADE OF DETESTATION",
+   "name_zh": "憎恨之刃",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "冲锋结束后按接战模型数掷 D6、4+ 各 1 致命伤（上限 6）——一次性爆发不在攻击序列内，接战模型数依赖空间建模"
+   ],
+   "provenance": {
+    "current_text": "db stratagems.text_zh id=fp11e-bt-marshals-s2",
+    "base_text": "FP Black Templars（PR6 fp_rules inserts 补录，Wahapedia 无源）",
+    "synthesis": "无需合成",
+    "text_sha256": "c08390df8aa052df61c8b504fd21fc7c1de5bf44e63c4e83ac2d1bbe6fe30f44"
+   },
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "stratagems",
+   "id": "fp11e-bt-marshals-s3",
+   "side": "attacker",
+   "detachment": "Marshal’s Household",
+   "name_en": "UNSPARING EXECUTION",
+   "name_zh": "无情处决",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "强制敌方撤退使用 desperate escape 模式（战斗震慑再 -1 hazard）——撤退/士气域未建模"
+   ],
+   "provenance": {
+    "current_text": "db stratagems.text_zh id=fp11e-bt-marshals-s3",
+    "base_text": "FP Black Templars（PR6 fp_rules inserts 补录，Wahapedia 无源）",
+    "synthesis": "无需合成",
+    "text_sha256": "2bd511e098a29f47126eb058ad113ff7c660079633ce29ecd8f0cfdea19e5a2b"
+   },
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "stratagems",
+   "id": "000010397002",
+   "side": "attacker",
+   "detachment": "Vindication Task Force",
+   "name_en": "REFUSAL TO YIELD",
+   "name_zh": "拒绝倒下",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "旗手被毁后满血重回战场——复活域未建模"
+   ],
+   "provenance": {
+    "current_text": "db stratagems.text_zh id=000010397002",
+    "base_text": "Wahapedia 现文（PR6 工作单：FP 未触及，11 版仍现行）",
+    "synthesis": "无需合成",
+    "text_sha256": "eec1e8a65ddcb796c6bd22646715c582f740dacd72011a59fd64e88e330fd5ce"
+   },
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "stratagems",
+   "id": "000010397003",
+   "side": "attacker",
+   "detachment": "Vindication Task Force",
+   "name_en": "LITANIES OF PURGATION",
+   "name_zh": "洗罪祷言",
+   "status": "partial",
+   "effects": [
+    {
+     "phase": "save",
+     "op": "ap_improve",
+     "params": [
+      1
+     ],
+     "condition": [
+      "phase_melee"
+     ],
+     "source": "洗罪祷言（近战 AP 改善 1）"
+    }
+   ],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "「本单位或目标在目标点范围内」空间条件按已满足假设（点名即声明）",
+    "WHEN=近战阶段（条件自含近战门控）"
+   ],
+   "provenance": {
+    "current_text": "db stratagems.text_zh id=000010397003",
+    "base_text": "Wahapedia 现文（PR6 工作单：FP 未触及，11 版仍现行）",
+    "synthesis": "无需合成",
+    "text_sha256": "34cfa0408e8b346336c2111bb00662606fafc63836d7c9ef59aed48e38644585"
+   },
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "stratagems",
+   "id": "000010397004",
+   "side": "attacker",
+   "detachment": "Vindication Task Force",
+   "name_en": "SPOOR OF THE UNHOLY",
+   "name_zh": "扫清异端",
+   "status": "partial",
+   "effects": [
+    {
+     "phase": "save",
+     "op": "ignores_cover",
+     "params": [],
+     "condition": [
+      "phase_shooting"
+     ],
+     "source": "扫清异端（远程武器 [无视掩体]）"
+    },
+    {
+     "phase": "hit",
+     "op": "ignore_hit_mods",
+     "params": [],
+     "condition": [],
+     "source": "扫清异端（忽略 BS/WS 与命中骰修正）"
+    }
+   ],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "「可以忽略任意或所有修正」按最优策略=只忽略不利修正（保留有利修正）——与引擎 [PSYCHIC] 通道同语义，掩体的 BS 惩罚亦被忽略",
+    "射击或近战均可用：忽略修正两相位生效，[无视掩体] 自含射击语义"
+   ],
+   "provenance": {
+    "current_text": "db stratagems.text_zh id=000010397004",
+    "base_text": "Wahapedia 现文（PR6 工作单：FP 未触及，11 版仍现行）",
+    "synthesis": "无需合成",
+    "text_sha256": "3e721642d65fc34226232319fd6ee7105cfb80f42031b174b9275fc339e6de0f"
+   },
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "stratagems",
+   "id": "000010397005",
+   "side": "attacker",
+   "detachment": "Vindication Task Force",
+   "name_en": "RECLAIM OUR HONOUR!",
+   "name_zh": "重拾我们的荣誉！",
+   "status": "partial",
+   "effects": [
+    {
+     "phase": "hit",
+     "op": "modify",
+     "params": [
+      1
+     ],
+     "condition": [],
+     "source": "重拾我们的荣誉！（对该敌方单位命中+1）"
+    }
+   ],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "触发前提（旗手被该敌方单位摧毁）按已发生假设——点名即声明",
+    "全军对该单位持续到战斗结束——单攻方对单目标模拟下等价"
+   ],
+   "provenance": {
+    "current_text": "db stratagems.text_zh id=000010397005",
+    "base_text": "Wahapedia 现文（PR6 工作单：FP 未触及，11 版仍现行）",
+    "synthesis": "无需合成",
+    "text_sha256": "b59e4c042c44f8ad99840b155046ece782c499672c674e3ff8c3471be88d0bba"
+   },
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "stratagems",
+   "id": "000010397006",
+   "side": "target",
+   "detachment": "Vindication Task Force",
+   "name_en": "RECITATION OF THE REVERED",
+   "name_zh": "颂扬圣者",
+   "status": "partial",
+   "effects": [
+    {
+     "phase": "hit",
+     "op": "modify",
+     "params": [
+      -1
+     ],
+     "condition": [
+      "phase_shooting"
+     ],
+     "source": "颂扬圣者（被射击命中-1）"
+    }
+   ],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "仅限 ANCIENT 单位守方（点名即声明）",
+    "WHEN=敌方射击阶段选中目标后——条件自含射击门控"
+   ],
+   "provenance": {
+    "current_text": "db stratagems.text_zh id=000010397006",
+    "base_text": "Wahapedia 现文（PR6 工作单：FP 未触及，11 版仍现行）",
+    "synthesis": "无需合成",
+    "text_sha256": "bb0a4b2ecac00e41ea6c35d762eb4f96a9a0d1a25ef27d1242821e3d299b67c0"
+   },
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "stratagems",
+   "id": "000010397007",
+   "side": "attacker",
+   "detachment": "Vindication Task Force",
+   "name_en": "PERFERVID INTERVENTION",
+   "name_zh": "狂热干预",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "敌方冲锋阶段末发动反冲锋——阶段外冲锋/移动域未建模"
+   ],
+   "provenance": {
+    "current_text": "db stratagems.text_zh id=000010397007",
+    "base_text": "Wahapedia 现文（PR6 工作单：FP 未触及，11 版仍现行）",
+    "synthesis": "无需合成",
+    "text_sha256": "bf16e9b8a5fa7efef47c743d32ed3c14541704b90ffbe2fa023ea162f2bd54b2"
+   },
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "stratagems",
+   "id": "000009844002",
+   "side": "target",
+   "detachment": "Wrathful Procession",
+   "name_en": "FUELLED BY FAITH",
+   "name_zh": "信仰驱动",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "FNP 4+ 仅对致命伤——引擎 FNP 通道作用于全部伤害，仅致命伤 FNP 编入会高估（沿 PR5 FNP-仅致命伤裁定，整条不编）"
+   ],
+   "provenance": {
+    "current_text": "db stratagems.text_zh id=000009844002",
+    "base_text": "FP Black Templars（PR6 fp_rules 已刷新为 11 版现行文本，工作单 drifted）",
+    "synthesis": "无需合成",
+    "text_sha256": "1ec1bc515ad8df49474c9c15cccce38614a33265073dc6b4e4d55e9c209cd71a"
+   },
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "stratagems",
+   "id": "000009844004",
+   "side": "attacker",
+   "detachment": "Wrathful Procession",
+   "name_en": "CASTIGATE THE DEMAGOGUES",
+   "name_zh": "严惩煽动者",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "近战 [精准]——攻击分配域（点杀附属人物）未建模"
+   ],
+   "provenance": {
+    "current_text": "db stratagems.text_zh id=000009844004",
+    "base_text": "FP Black Templars（PR6 fp_rules 已刷新为 11 版现行文本，工作单 drifted）",
+    "synthesis": "无需合成",
+    "text_sha256": "6a56e81d6a5b4c35d77565585c57bde9cf6fd559697dc131255e60ace1e08bd4"
+   },
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "stratagems",
+   "id": "fp11e-bt-wrathful-s1",
+   "side": "attacker",
+   "detachment": "Wrathful Procession",
+   "name_en": "RITE OF PERFERVID WRATH",
+   "name_zh": "极端怒火仪式",
+   "status": "partial",
+   "effects": [
+    {
+     "phase": "wound",
+     "op": "s_improve",
+     "params": [
+      1
+     ],
+     "condition": [
+      "phase_melee"
+     ],
+     "source": "极端怒火仪式（近战 +1 S，特征值通道）"
+    }
+   ],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "限 CHAPLAIN 单位（点名即声明攻方为牧师单位）"
+   ],
+   "provenance": {
+    "current_text": "db stratagems.text_zh id=fp11e-bt-wrathful-s1",
+    "base_text": "FP Black Templars（PR6 fp_rules inserts 补录，Wahapedia 无源）",
+    "synthesis": "无需合成",
+    "text_sha256": "7ab9e0ffb20cd4cd482559a71c0438044d6f11916e7c0ffdc2bcdb99ca1d532e"
+   },
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "enhancements",
+   "id": "000010392002",
+   "side": "attacker",
+   "detachment": "Companions of Vehemence",
+   "name_en": "Incendiary Animus",
+   "name_zh": "炽燃怒火",
+   "status": "partial",
+   "effects": [
+    {
+     "phase": "save",
+     "op": "ap_improve",
+     "params": [
+      1
+     ],
+     "condition": [
+      "phase_melee"
+     ],
+     "source": "炽燃怒火（携带者单位近战 AP 改善 1）"
+    }
+   ],
+   "requires_toggles": [
+    "bearer_leading"
+   ],
+   "not_modeled_notes_zh": [
+    "限牧师/裁决士携带（点名即声明）"
+   ],
+   "provenance": {
+    "current_text": "db enhancements.description id=000010392002",
+    "base_text": "Wahapedia 现文（PR6 工作单：FP 未触及，11 版仍现行）",
+    "synthesis": "无需合成",
+    "text_sha256": "43fa54b8d9c7979628543a2c1db31bcfa2b5ba58cfb72312e4375754ac55bce4"
+   },
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "enhancements",
+   "id": "000010392003",
+   "side": "attacker",
+   "detachment": "Companions of Vehemence",
+   "name_en": "Oathbound Exemplar",
+   "name_zh": "誓言典范",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "加速骰+1 与加速后行动——移动/任务域未建模"
+   ],
+   "provenance": {
+    "current_text": "db enhancements.description id=000010392003",
+    "base_text": "Wahapedia 现文（PR6 工作单：FP 未触及，11 版仍现行）",
+    "synthesis": "无需合成",
+    "text_sha256": "c05120f4fefefdbe9d1cae6e4b864883aedd415daaabfbe58d42462408e4a9be"
+   },
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "enhancements",
+   "id": "000010392004",
+   "side": "attacker",
+   "detachment": "Companions of Vehemence",
+   "name_en": "Merciless Denunciation",
+   "name_zh": "无情声讨",
+   "status": "partial",
+   "effects": [
+    {
+     "phase": "hit",
+     "op": "reroll",
+     "params": [
+      "fail"
+     ],
+     "condition": [
+      "phase_melee"
+     ],
+     "source": "无情声讨（携带者单位近战命中骰可重骰）"
+    }
+   ],
+   "requires_toggles": [
+    "bearer_leading"
+   ],
+   "not_modeled_notes_zh": [
+    "限牧师/裁决士携带；「可以重骰命中骰」按最优策略=只重骰失败骰（等价）"
+   ],
+   "provenance": {
+    "current_text": "db enhancements.description id=000010392004",
+    "base_text": "Wahapedia 现文（PR6 工作单：FP 未触及，11 版仍现行）",
+    "synthesis": "无需合成",
+    "text_sha256": "73c7cf2ef70ebf6b69b0157029ab1656ad89a62da000957a6d13801bf4f3301c"
+   },
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "enhancements",
+   "id": "000010392005",
+   "side": "attacker",
+   "detachment": "Companions of Vehemence",
+   "name_en": "Zealous Vanguard",
+   "name_zh": "正义先锋",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "斥候 6 寸——部署域未建模"
+   ],
+   "provenance": {
+    "current_text": "db enhancements.description id=000010392005",
+    "base_text": "Wahapedia 现文（PR6 工作单：FP 未触及，11 版仍现行）",
+    "synthesis": "无需合成",
+    "text_sha256": "0ddc7d3463633ab4a4d363becea88e814794e47a27cfda311ce16463253218cb"
+   },
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "enhancements",
+   "id": "000010400002",
+   "side": "attacker",
+   "detachment": "Godhammer Assault Force",
+   "name_en": "Paragon of Fury",
+   "name_zh": "怒火楷模",
+   "status": "partial",
+   "effects": [
+    {
+     "phase": "wound",
+     "op": "s_improve",
+     "params": [
+      2
+     ],
+     "condition": [
+      "phase_melee"
+     ],
+     "source": "怒火楷模（携带者近战武器 +2 S，特征值通道）"
+    },
+    {
+     "phase": "damage",
+     "op": "modify",
+     "params": [
+      1
+     ],
+     "condition": [
+      "melee_disembarked"
+     ],
+     "source": "怒火楷模（下车回合近战伤害 +1）"
+    }
+   ],
+   "requires_toggles": [
+    "bearer_leading"
+   ],
+   "not_modeled_notes_zh": [
+    "限携带者模型的武器——单人物模拟准确，附属单位整体注入会高估（请单列主武器模拟）",
+    "伤害档需下车态假设开关"
+   ],
+   "provenance": {
+    "current_text": "db enhancements.description id=000010400002",
+    "base_text": "Wahapedia 现文（PR6 工作单：FP 未触及，11 版仍现行）",
+    "synthesis": "无需合成",
+    "text_sha256": "a2ceafc1f6a2e22bdcf158b6848a887d2b73f0f7a8893f69e5b456b623d6b837"
+   },
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "enhancements",
+   "id": "000010400003",
+   "side": "attacker",
+   "detachment": "Godhammer Assault Force",
+   "name_en": "Battle-psalm Precentor",
+   "name_zh": "战歌颂唱者",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "震慑突袭附带的战斗震慑测试再-1——士气域未建模"
+   ],
+   "provenance": {
+    "current_text": "db enhancements.description id=000010400003",
+    "base_text": "Wahapedia 现文（PR6 工作单：FP 未触及，11 版仍现行）",
+    "synthesis": "无需合成",
+    "text_sha256": "63cc376aa9ab700098547a70cfffe67e3fa9cb5c67aa366543266d853052c0e8"
+   },
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "enhancements",
+   "id": "000010400004",
+   "side": "attacker",
+   "detachment": "Godhammer Assault Force",
+   "name_en": "Augury Servo-host",
+   "name_zh": "占卜伺服主机",
+   "status": "partial",
+   "effects": [
+    {
+     "phase": "save",
+     "op": "ignores_cover",
+     "params": [],
+     "condition": [
+      "phase_shooting"
+     ],
+     "source": "占卜伺服主机（所选敌方单位失去掩体收益）"
+    }
+   ],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "原文为剥夺一个 12 寸内可见敌方单位的掩体收益——单目标模拟下与攻方 [无视掩体] 等价；12 寸/可见按已满足假设",
+    "效果面为全军对该目标（不限携带者单位），故不挂 bearer_leading 开关"
+   ],
+   "provenance": {
+    "current_text": "db enhancements.description id=000010400004",
+    "base_text": "Wahapedia 现文（PR6 工作单：FP 未触及，11 版仍现行）",
+    "synthesis": "无需合成",
+    "text_sha256": "304799162fbdfb1bca4842c8497a56e56e642fbe74d18f381c7ceae3e4f69ab2"
+   },
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "enhancements",
+   "id": "000010400005",
+   "side": "attacker",
+   "detachment": "Godhammer Assault Force",
+   "name_en": "Herald of Sacred Slaughter",
+   "name_zh": "圣洁屠戮先锋",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "专属运输工具获斥候 9 寸——部署域未建模"
+   ],
+   "provenance": {
+    "current_text": "db enhancements.description id=000010400005",
+    "base_text": "Wahapedia 现文（PR6 工作单：FP 未触及，11 版仍现行）",
+    "synthesis": "无需合成",
+    "text_sha256": "23305d8f10088630f64cc74ecd1693c216d9be749a9a94694323c9be71de4588"
+   },
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "enhancements",
+   "id": "fp11e-bt-marshals-e1",
+   "side": "attacker",
+   "detachment": "Marshal’s Household",
+   "name_en": "Fervent Exemplars",
+   "name_zh": "热忱楷模",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "冲锋骰+1——移动域未建模"
+   ],
+   "provenance": {
+    "current_text": "db enhancements.description id=fp11e-bt-marshals-e1",
+    "base_text": "FP Black Templars（PR6 fp_rules inserts 补录，Wahapedia 无源）",
+    "synthesis": "无需合成",
+    "text_sha256": "26e119533dd683fe7f333c0b6d41cd32d2d2199645c7c7d0dc4d8a20638f8929"
+   },
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "enhancements",
+   "id": "fp11e-bt-marshals-e2",
+   "side": "attacker",
+   "detachment": "Marshal’s Household",
+   "name_en": "Inheritors of Sigismund",
+   "name_zh": "西吉斯蒙德的传人",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "Fights First（先攻）——先攻域由 fight_order 判定面板处理，DSL 无通道（可在面板手动勾选攻方先攻）"
+   ],
+   "provenance": {
+    "current_text": "db enhancements.description id=fp11e-bt-marshals-e2",
+    "base_text": "FP Black Templars（PR6 fp_rules inserts 补录，Wahapedia 无源）",
+    "synthesis": "无需合成",
+    "text_sha256": "66224658150b11caac9f46cf4115169d4556cd7f619084771961ab10f32b40ca"
+   },
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "enhancements",
+   "id": "fp11e-bt-miracle-e1",
+   "side": "attacker",
+   "detachment": "The Living Miracle",
+   "name_en": "Guiding Omens",
+   "name_zh": "指引圣兆",
+   "status": "partial",
+   "effects": [
+    {
+     "phase": "wound",
+     "op": "mortal_pool",
+     "params": [],
+     "condition": [
+      "omen_instrument_vs_character"
+     ],
+     "source": "指引圣兆·神皇之器（近战接战 CHARACTER 时 [毁灭伤害]）"
+    },
+    {
+     "phase": "attacks",
+     "op": "modify",
+     "params": [
+      2
+     ],
+     "condition": [
+      "omen_momentous_brutality"
+     ],
+     "source": "指引圣兆·凶暴神视（近战 A+2）"
+    }
+   ],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "限 EMPEROR'S CHAMPION 模型（点名即声明）",
+    "六圣兆选至多三项——可建模仅两项（各自成开关，开关即声明选定）；三选上限由玩家自行保证",
+    "神皇之器为 once per battle, per army——单场近战模拟按本次已使用假设",
+    "邪径先知（侦测-3 寸）/复仇预兆（被近战 [HAZARDOUS]）/圣佑降临（英雄干预-1CP）/审判先声（撤退 2+ 受 D6 致命伤）四项无引擎通道未建模"
+   ],
+   "provenance": {
+    "current_text": "db enhancements.description id=fp11e-bt-miracle-e1",
+    "base_text": "FP Black Templars（PR6 fp_rules inserts 补录，Wahapedia 无源）",
+    "synthesis": "无需合成",
+    "text_sha256": "65ae49195a291c842db911177da86662c8cef7a9f015890f175a45ad5501c99c"
+   },
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "enhancements",
+   "id": "000010396002",
+   "side": "attacker",
+   "detachment": "Vindication Task Force",
+   "name_en": "Imperialis of the Eternal Crusade",
+   "name_zh": "永恒远征圣旗",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "敌方对携带者单位冲锋-2——移动域未建模"
+   ],
+   "provenance": {
+    "current_text": "db enhancements.description id=000010396002",
+    "base_text": "Wahapedia 现文（PR6 工作单：FP 未触及，11 版仍现行）",
+    "synthesis": "无需合成",
+    "text_sha256": "fc5415d60086b6831457292747fe22f25be1aeec6ee64131f1543f6359eabf7d"
+   },
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "enhancements",
+   "id": "000010396003",
+   "side": "target",
+   "detachment": "Vindication Task Force",
+   "name_en": "Consecrating Aura",
+   "name_zh": "守护圣环",
+   "status": "partial",
+   "effects": [
+    {
+     "phase": "save",
+     "op": "invuln",
+     "params": [
+      5
+     ],
+     "condition": [],
+     "source": "守护圣环（携带者单位 5+ 特殊保护）"
+    }
+   ],
+   "requires_toggles": [
+    "defender_bearer_leading"
+   ],
+   "not_modeled_notes_zh": [
+    "与守方 profile 自带无效保护取更优（引擎语义）"
+   ],
+   "provenance": {
+    "current_text": "db enhancements.description id=000010396003",
+    "base_text": "Wahapedia 现文（PR6 工作单：FP 未触及，11 版仍现行）",
+    "synthesis": "无需合成",
+    "text_sha256": "6385986804f229e333a071f47918c13b055e50460297288572d4bda3ad7b6917"
+   },
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "enhancements",
+   "id": "000010396004",
+   "side": "attacker",
+   "detachment": "Vindication Task Force",
+   "name_en": "Orb of the Emperor’s Aegis",
+   "name_zh": "帝皇圣盾宝珠",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "深入打击——部署域未建模"
+   ],
+   "provenance": {
+    "current_text": "db enhancements.description id=000010396004",
+    "base_text": "Wahapedia 现文（PR6 工作单：FP 未触及，11 版仍现行）",
+    "synthesis": "无需合成",
+    "text_sha256": "2c8ff9c3b035906c88fb21613f4f49b3e2c32e96e63022b67df15be790743f2b"
+   },
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "enhancements",
+   "id": "000010396005",
+   "side": "attacker",
+   "detachment": "Vindication Task Force",
+   "name_en": "Warden of Honour",
+   "name_zh": "荣誉卫士",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "强化远征旗手兵牌技能「复仇训诫」的掷骰——兵牌技能不在 P7 编码范围（P5 分类披露层处理）"
+   ],
+   "provenance": {
+    "current_text": "db enhancements.description id=000010396005",
+    "base_text": "Wahapedia 现文（PR6 工作单：FP 未触及，11 版仍现行）",
+    "synthesis": "无需合成",
+    "text_sha256": "2f72ea144e0fb8b3ad8ccfb5c2ac3264b3ba8438acdc1cbcbef5e5a1dd436bd0"
+   },
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "enhancements",
+   "id": "000009843005",
+   "side": "attacker",
+   "detachment": "Wrathful Procession",
+   "name_en": "Benediction of Fury",
+   "name_zh": "怒火祝福",
+   "status": "partial",
+   "effects": [
+    {
+     "phase": "wound",
+     "op": "mortal_pool",
+     "params": [],
+     "condition": [
+      "phase_melee"
+     ],
+     "source": "怒火祝福（携带者近战攻击 [毁灭伤害]）"
+    }
+   ],
+   "requires_toggles": [
+    "bearer_leading"
+   ],
+   "not_modeled_notes_zh": [
+    "限携带者模型（CHAPLAIN）的近战攻击——单人物模拟准确，附属单位整体注入会高估"
+   ],
+   "provenance": {
+    "current_text": "db enhancements.description id=000009843005",
+    "base_text": "FP Black Templars（PR6 fp_rules 已刷新为 11 版现行文本，工作单 drifted）",
+    "synthesis": "无需合成",
+    "text_sha256": "fde903134fc1ed2abc4c049be76f69640eaa4a400e52de1eefbb24f98c3cc62b"
+   },
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "enhancements",
+   "id": "fp11e-bt-wrathful-e1",
+   "side": "attacker",
+   "detachment": "Wrathful Procession",
+   "name_en": "Adaptable Executioner",
+   "name_zh": "多面处刑者",
+   "status": "partial",
+   "effects": [
+    {
+     "phase": "attacks",
+     "op": "blast",
+     "params": [
+      1
+     ],
+     "condition": [
+      "phase_melee"
+     ],
+     "source": "多面处刑者（近战 [CLEAVE 1]——每满 5 目标模型 +1 攻击）"
+    }
+   ],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "限 EXECRATOR 模型（点名即声明）",
+    "二选一按 [CLEAVE 1] 分支编码；另一分支 [PRECISION] 为攻击分配域未建模——如需精准请勿点名本增强"
+   ],
+   "provenance": {
+    "current_text": "db enhancements.description id=fp11e-bt-wrathful-e1",
+    "base_text": "FP Black Templars（PR6 fp_rules inserts 补录，Wahapedia 无源）",
+    "synthesis": "无需合成",
+    "text_sha256": "19a6469fa8335c61793a4c9143b250ddf9fe448092d07c285ff9fff9e190c908"
+   },
+   "encoded_by": "manual-2026-07-19"
+  }
+ ]
+}

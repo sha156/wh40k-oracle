@@ -161,6 +161,23 @@ def main(argv: Optional[List[str]] = None) -> int:
                    help="恐虐赐福·斩首一击已激活（近战对步兵 [毁灭伤害]）")
     p.add_argument("--bearer-leading", action="store_true", dest="bearer_leading",
                    help="假设增强携带者正率领本单位（bearer/leading 型增强的生效前提）")
+    p.add_argument("--disembarked-this-turn", action="store_true",
+                   dest="disembarked_this_turn",
+                   help="假设本回合已从运输工具下车（BT 神锤突击队近战命中+1 等条款）")
+    p.add_argument("--disembarked-from-land-raider", action="store_true",
+                   dest="disembarked_from_land_raider",
+                   help="假设下车且运输工具带 LAND RAIDER 关键词（谴责音阵全量致伤重骰；"
+                        "自动蕴含下车开关）")
+    p.add_argument("--vow-accept-any-challenge", action="store_true",
+                   dest="vow_accept_any_challenge",
+                   help="圣堂誓言·接受一切挑战已选定（近战 S≤T 时致伤+1；誓言四选一"
+                        "由玩家自行保证）")
+    p.add_argument("--omen-instrument", action="store_true", dest="omen_instrument",
+                   help="指引圣兆·神皇之器已选定（近战接战 CHARACTER 时 [毁灭伤害]；"
+                        "圣兆六选三由玩家自行保证）")
+    p.add_argument("--omen-momentous-brutality", action="store_true",
+                   dest="omen_momentous_brutality",
+                   help="指引圣兆·凶暴神视已选定（近战 A+2）")
     p.add_argument("--defender-detachment", dest="defender_detachment",
                    help="守方所属分队名：放行守方分队的防守向 DSL 条目（P7-PR4）")
     p.add_argument("--defender-stratagem", action="append", dest="defender_stratagems",
@@ -237,6 +254,11 @@ def main(argv: Optional[List[str]] = None) -> int:
         "blessing_martial_excellence": args.blessing_martial_excellence,
         "blessing_warp_blades": args.blessing_warp_blades,
         "blessing_decapitating_strikes": args.blessing_decapitating_strikes,
+        "disembarked_this_turn": args.disembarked_this_turn,
+        "disembarked_from_land_raider": args.disembarked_from_land_raider,
+        "vow_accept_any_challenge": args.vow_accept_any_challenge,
+        "omen_instrument": args.omen_instrument,
+        "omen_momentous_brutality": args.omen_momentous_brutality,
         "defender_detachment": args.defender_detachment,
         "defender_stratagems": args.defender_stratagems,
         "defender_enhancements": args.defender_enhancements,
