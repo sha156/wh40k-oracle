@@ -53,6 +53,9 @@ KNOWN_CONDITION_TAGS = frozenset({
                                                     # 判定——录入面仅限 (wound,modify)，dsl 校验拦
     "wound_s_gt_t",                                 # P7-PR6：守方向 × 最终 S>T（BT Purge and
                                                     # Sanctify 被伤-1）。同为延迟判定 tag
+    "melee_wound_s_gt_t",                           # P7-PR7：近战 × 最终 S>T（EC 迷魂麝香
+                                                    # "melee attack ... S>T 被伤-1"——裸
+                                                    # wound_s_gt_t 会在射击阶段误放行）
     "omen_instrument_vs_character",                 # P7-PR6·圣兆「神皇之器」：近战 × 圣兆开 ×
                                                     # 目标 CHARACTER → [DEVASTATING WOUNDS]
     "omen_momentous_brutality",                     # P7-PR6·圣兆「凶暴神视」：近战 × 圣兆开
@@ -135,6 +138,8 @@ def _cond_true(condition: Tuple, stance: Stance, target: TargetProfile) -> bool:
         return stance.phase == "melee"           # （此处只判近战门控；见 wound_mod_s_lte_t）
     if tag == "wound_s_gt_t":                    # P7-PR6：守方向 S>T 延迟判定（无态势门控）
         return True
+    if tag == "melee_wound_s_gt_t":              # P7-PR7：近战门控此处判，S>T 分量延迟
+        return stance.phase == "melee"
     if tag == "omen_instrument_vs_character":    # P7-PR6·圣兆「神皇之器」
         return (stance.phase == "melee" and stance.omen_instrument
                 and "character" in target.keywords)
@@ -302,11 +307,18 @@ def _gather_params(w: WeaponProfile, stance: Stance, target: TargetProfile) -> _
             # P7-PR5 守方 DSL：致伤骰修正（DAEMONIC RESISTANCE "subtract 1 from the
             # Wound roll" → 参数 -1）。并入攻方致伤修正同一累计，随后统一夹 ±1
             # ——与守方 hit+modify 的烟幕先例同语义（正负可与攻方修正抵消）
-            if e.condition and e.condition[0] == "wound_s_gt_t":
-                # P7-PR6：S>T 分量延迟到 _resolve_weapon 的最终 S 处判定
+            if e.condition and e.condition[0] in ("wound_s_gt_t",
+                                                  "melee_wound_s_gt_t"):
+                # P7-PR6/PR7：S>T 分量延迟到 _resolve_weapon 的最终 S 处判定
+                # （melee 变体的近战门控已在 _cond_true 放行判定里消化）
                 p.wound_mod_s_gt_t += int(e.params[0])
             else:
                 p.wound_mod += int(e.params[0])
+        elif e.phase == "save" and e.op == "ap_improve":
+            # P7-PR7 守方 DSL："attacks that target your unit have -1 AP"
+            # （EC 恶孽甲胄/占有狂热等）——参数负值=恶化攻方 AP，并入攻方
+            # ap_improve 同一特征值累计（AP 存负值，w.ap - p.ap_improve 结算）
+            p.ap_improve += int(e.params[0])
     # ── Benefit of Cover（11版 13.08）：掩体收益 = 恶化该次攻击的 BS 1 点（射击专属），
     #   十版"护甲保存骰+1、且 AP0 对 3+ 甲无效"整体作废——掩体从保存侧挪到命中侧。
     #   P7 起折进 **BS 特征值通道 bs_neg**（S7 曾折 hit_neg，与 13.08 "worsen the
@@ -360,6 +372,8 @@ TARGET_CONSUMED = frozenset({
     ("hit", "bs_improve"),                          # P7-PR4：守方 BS/WS 特征值修正（EMP）
     ("wound", "modify"),                            # P7-PR5：守方致伤骰修正（-1 被伤，
                                                     # DAEMONIC RESISTANCE 等；并入统一 ±1 夹取）
+    ("save", "ap_improve"),                         # P7-PR7：守方 AP 恶化（"被攻 -1 AP"，
+                                                    # 负参并入攻方 ap_improve 特征值累计）
 })
 
 
@@ -398,7 +412,8 @@ def _target_effect_consumed(e) -> bool:
         return True
     if e.phase == "wound" and e.op == "modify":     # P7-PR5：守方致伤骰修正
         return True
-    return e.phase == "save" and e.op in ("cover", "invuln", "sv_improve")
+    return e.phase == "save" and e.op in ("cover", "invuln", "sv_improve",
+                                          "ap_improve")   # P7-PR7：守方 AP 恶化
 
 
 def unconsumed_target_effect_notes(target: TargetProfile) -> List[str]:

@@ -65,6 +65,9 @@ ATTACKER_TOGGLES = {
     # 组约束 3 上限对两开关永不触顶——由注记披露三选规则）
     "omen_instrument": True,
     "omen_momentous_brutality": True,
+    # P7-PR7·帝皇之子：假设本回合已加速或撤退（Frantic Focus "advance/fall-back
+    # move 回合攻击 +1 S"——纯注入门，引擎无移动态字段）
+    "advanced_or_fell_back": False,
 }
 # target 侧（防守向条目 requires_toggles 用；不进 Stance——守方效果自带 condition）
 TARGET_TOGGLES = {
@@ -227,7 +230,8 @@ def _parse_effect(raw: dict, side: str, entry_name: str) -> Effect:
                 raise DslError(
                     f"{entry_name}：target_models_in_range 需要 (tag, lo, hi) 两个整数"
                     f"且 lo≤hi，收到 {condition!r}")
-        if tag in ("melee_s_lte_t", "wound_s_gt_t") and (phase, op) != ("wound", "modify"):
+        if (tag in ("melee_s_lte_t", "wound_s_gt_t", "melee_wound_s_gt_t")
+                and (phase, op) != ("wound", "modify")):
             # P7-PR6：S/T 延迟判定 tag 只在 (wound,modify) 有引擎路由——挂到别的 op 上
             # _cond_true 的部分判定（缺 S/T 分量）会静默放行，录入期直接拒载
             raise DslError(

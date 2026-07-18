@@ -1,0 +1,2826 @@
+{
+ "_comment": "P7 阵营技能 DSL 唯一真源（帝皇之子，P7-PR7）。DB effect_dsl_json/dsl_status 只是投影，由 `python -m db_compile dsl-apply` 写入并挂 restore。判据与格式沿 spec 2026-07-14 + PR3-PR6 约定；A/B 工作单见 docs/superpowers/plans/2026-07-19-p7-pr7-ec-worklist.md。覆盖=faction='EC' 全扫（含库内 Sublime Strike 分队）；誓约点数（Coterie）与重骰 1 类通道按防高估裁定整条 not_modeled。",
+ "dsl_version": 1,
+ "faction": "EC",
+ "entries": [
+  {
+   "table": "abilities",
+   "id": "000009994",
+   "side": "attacker",
+   "detachment": null,
+   "name_en": "Thrill Seekers",
+   "name_zh": "嗜欲恶徒",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "加速/撤退回合仍可射击冲锋——行动资格域未建模（模拟器假设攻击本就合法）",
+    "两条目标限制（不得选回合初接战单位/本阶段已被他人选定单位）目标选择域未建模"
+   ],
+   "provenance": {
+    "current_text": "db abilities.text_zh id=000009994",
+    "base_text": "Wahapedia 现文（PR7 工作单：FP 未触及或已滚入，11 版仍现行）",
+    "synthesis": "无需合成",
+    "text_sha256": "f0e3fe8b4fe6e2bd7d27e81e97311245e7c2accb401cf0b6ac0714cb0eb0f867"
+   },
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "abilities",
+   "id": "det000009997",
+   "side": "attacker",
+   "detachment": "Mercurial Host",
+   "name_en": "Quicksilver Grace",
+   "name_zh": "优雅狂速",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "重投加速骰——移动域未建模"
+   ],
+   "provenance": {
+    "current_text": "db detachments.rule_text id=000009997",
+    "base_text": "Wahapedia 现文（PR7 工作单：FP 未触及或已滚入，11 版仍现行）",
+    "synthesis": "DSL 投影经 materialize 落 abilities 新行（spec D5）",
+    "text_sha256": "4dbfeb6ceb2d0f72ed0530b3092dddbce198d031101e4c3acbb7b5e15d1e07b6"
+   },
+   "encoded_by": "manual-2026-07-19",
+   "materialize": {
+    "from_table": "detachments",
+    "from_id": "000009997",
+    "from_column": "rule_text"
+   }
+  },
+  {
+   "table": "abilities",
+   "id": "det000010001",
+   "side": "attacker",
+   "detachment": "Peerless Bladesmen",
+   "name_en": "Exquisite Swordsmanship",
+   "name_zh": "绝伦剑术",
+   "status": "partial",
+   "effects": [
+    {
+     "phase": "hit",
+     "op": "extra_hits",
+     "params": [
+      1
+     ],
+     "condition": [
+      "melee_charging"
+     ],
+     "source": "绝伦剑术（冲锋回合近战二选一——按 [SUSTAINED HITS 1] 分支编码）"
+    }
+   ],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "原文冲锋回合近战可选 [LETHAL HITS] 或 [SUSTAINED HITS 1]——按连击分支编码（沿 Adaptable Executioner 二选一先例，双编会规则外叠加）；如需致命一击分支请勿选择本分队规则",
+    "冲锋态用「本回合冲锋」开关（melee_charging 复合 tag 防射击误放行）"
+   ],
+   "provenance": {
+    "current_text": "db detachments.rule_text id=000010001",
+    "base_text": "Wahapedia 现文（PR7 工作单：FP 未触及或已滚入，11 版仍现行）",
+    "synthesis": "DSL 投影经 materialize 落 abilities 新行（spec D5）",
+    "text_sha256": "c777ba9d4130e5bfaa4bf04d62f5f76b0a5d130af328a17e29e5f60033e6c37d"
+   },
+   "encoded_by": "manual-2026-07-19",
+   "materialize": {
+    "from_table": "detachments",
+    "from_id": "000010001",
+    "from_column": "rule_text"
+   }
+  },
+  {
+   "table": "abilities",
+   "id": "det000010005",
+   "side": "attacker",
+   "detachment": "Rapid Evisceration",
+   "name_en": "Mechanised Murder",
+   "name_zh": "机械化屠戮",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "运输/下车回合重骰命中 1 与致伤 1——引擎重骰通道为全部失败骰整体重骰，重骰 1 编入会高估（沿 PR6 裁定整条不编）"
+   ],
+   "provenance": {
+    "current_text": "db detachments.rule_text id=000010005",
+    "base_text": "Wahapedia 现文（PR7 工作单：FP 未触及或已滚入，11 版仍现行）",
+    "synthesis": "DSL 投影经 materialize 落 abilities 新行（spec D5）",
+    "text_sha256": "35bc200e2ca0e00534baf25c43acddd2f063147cffcc2370d748f884cffbcb49"
+   },
+   "encoded_by": "manual-2026-07-19",
+   "materialize": {
+    "from_table": "detachments",
+    "from_id": "000010005",
+    "from_column": "rule_text"
+   }
+  },
+  {
+   "table": "abilities",
+   "id": "det000010009",
+   "side": "attacker",
+   "detachment": "Carnival of Excess",
+   "name_en": "Daemonic Empowerment",
+   "name_zh": "魔性强化",
+   "status": "partial",
+   "effects": [
+    {
+     "phase": "hit",
+     "op": "extra_hits",
+     "params": [
+      1
+     ],
+     "condition": [],
+     "source": "魔性强化（被赋能单位武器 [SUSTAINED HITS 1]）"
+    }
+   ],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "赋能条件（6 寸内互邻纵欲军团/帝皇之子单位）空间条件按已满足假设（选择本分队规则即声明）",
+    "FAQ：自带 [SUSTAINED HITS] 武器改为未修正 5+ 暴击——该升档交互未建模（会与自带连击叠加高估，请勿对自带连击武器开启）"
+   ],
+   "provenance": {
+    "current_text": "db detachments.rule_text id=000010009",
+    "base_text": "Wahapedia 现文（PR7 工作单：FP 未触及或已滚入，11 版仍现行）",
+    "synthesis": "DSL 投影经 materialize 落 abilities 新行（spec D5）",
+    "text_sha256": "d595c7948dae1eec56a52e6950ca67b6fddb90cb68482bd52f561a4177a5b6c4"
+   },
+   "encoded_by": "manual-2026-07-19",
+   "materialize": {
+    "from_table": "detachments",
+    "from_id": "000010009",
+    "from_column": "rule_text"
+   }
+  },
+  {
+   "table": "abilities",
+   "id": "det000010013",
+   "side": "attacker",
+   "detachment": "Coterie of the Conceited",
+   "name_en": "Pledges to the Dark Prince",
+   "name_zh": "敬献黑暗亲王",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "誓约点数随战局动态累积（1+/3+/5+/7+ 四档增益）——战役状态域未建模，分档开关爆炸且重骰 1 档无通道，整条不编防高估"
+   ],
+   "provenance": {
+    "current_text": "db detachments.rule_text id=000010013",
+    "base_text": "Wahapedia 现文（PR7 工作单：FP 未触及或已滚入，11 版仍现行）",
+    "synthesis": "DSL 投影经 materialize 落 abilities 新行（spec D5）",
+    "text_sha256": "c908629921d623e544bf3e29531c0eebec29e551a23198c41fff08424d783c84"
+   },
+   "encoded_by": "manual-2026-07-19",
+   "materialize": {
+    "from_table": "detachments",
+    "from_id": "000010013",
+    "from_column": "rule_text"
+   }
+  },
+  {
+   "table": "abilities",
+   "id": "det000010017",
+   "side": "attacker",
+   "detachment": "Slaanesh’s Chosen",
+   "name_en": "Internal Rivalries",
+   "name_zh": "斗技争宠",
+   "status": "partial",
+   "effects": [
+    {
+     "phase": "wound",
+     "op": "reroll",
+     "params": [
+      "fail"
+     ],
+     "condition": [],
+     "source": "斗技争宠（神眷冠军攻击可重骰致伤骰）"
+    }
+   ],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "假设本单位为你军队的神眷冠军（开局为主将单位；选择本分队规则即声明模拟对象为冠军）——非冠军单位请勿选择",
+    "M/加速/冲锋修正忽略段移动域未建模"
+   ],
+   "provenance": {
+    "current_text": "db detachments.rule_text id=000010017",
+    "base_text": "Wahapedia 现文（PR7 工作单：FP 未触及或已滚入，11 版仍现行）",
+    "synthesis": "DSL 投影经 materialize 落 abilities 新行（spec D5）",
+    "text_sha256": "b790173f7e325f6ea2475177fe853701162da0335cbaf5e4b65a0ddd79c05cd6"
+   },
+   "encoded_by": "manual-2026-07-19",
+   "materialize": {
+    "from_table": "detachments",
+    "from_id": "000010017",
+    "from_column": "rule_text"
+   }
+  },
+  {
+   "table": "abilities",
+   "id": "det000010652",
+   "side": "attacker",
+   "detachment": "Court of the Phoenician",
+   "name_en": "Sensational Performance",
+   "name_zh": "惊艳献演",
+   "status": "partial",
+   "effects": [
+    {
+     "phase": "wound",
+     "op": "s_improve",
+     "params": [
+      1
+     ],
+     "condition": [
+      "melee_charging"
+     ],
+     "source": "惊艳献演（冲锋回合近战武器 S+1，特征值通道）"
+    },
+    {
+     "phase": "save",
+     "op": "ap_improve",
+     "params": [
+      1
+     ],
+     "condition": [
+      "melee_charging"
+     ],
+     "source": "惊艳献演（冲锋回合近战武器 AP 改善 1）"
+    }
+   ],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "两条目标限制（不得选回合初接战单位/本阶段已被他人攻击单位）目标选择域未建模——请自行保证目标合法",
+    "冲锋态用「本回合冲锋」开关"
+   ],
+   "provenance": {
+    "current_text": "db detachments.rule_text id=000010652",
+    "base_text": "Wahapedia 现文（PR7 工作单：FP 未触及或已滚入，11 版仍现行）",
+    "synthesis": "DSL 投影经 materialize 落 abilities 新行（spec D5）",
+    "text_sha256": "cd949e8466006271cc5c7c2bb39cf591c6bc7c03af943bca67a84ac5af93245f"
+   },
+   "encoded_by": "manual-2026-07-19",
+   "materialize": {
+    "from_table": "detachments",
+    "from_id": "000010652",
+    "from_column": "rule_text"
+   }
+  },
+  {
+   "table": "abilities",
+   "id": "det000010653",
+   "side": "attacker",
+   "detachment": "Court of the Phoenician",
+   "name_en": "Master of the Pageant",
+   "name_zh": "盛典主宰",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "Fulgrim 战略减费——CP 经济域未建模（战略点名即视为已支付）"
+   ],
+   "provenance": {
+    "current_text": "db detachments.rule_text id=000010653",
+    "base_text": "Wahapedia 现文（PR7 工作单：FP 未触及或已滚入，11 版仍现行）",
+    "synthesis": "DSL 投影经 materialize 落 abilities 新行（spec D5）",
+    "text_sha256": "feed75c8a2d1235939d1e2aafc159faf848b90061057abcdfccd2480759fcc7f"
+   },
+   "encoded_by": "manual-2026-07-19",
+   "materialize": {
+    "from_table": "detachments",
+    "from_id": "000010653",
+    "from_column": "rule_text"
+   }
+  },
+  {
+   "table": "abilities",
+   "id": "det000010807",
+   "side": "attacker",
+   "detachment": "Sublime Strike",
+   "name_en": "Dark Radiance",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "移动穿越模型——移动域未建模（Sublime Strike 分队在库但不在本次 FP，文本为 Wahapedia 现行）"
+   ],
+   "provenance": {
+    "current_text": "db detachments.rule_text id=000010807",
+    "base_text": "Wahapedia 现文（PR7 工作单：FP 未触及或已滚入，11 版仍现行）",
+    "synthesis": "DSL 投影经 materialize 落 abilities 新行（spec D5）",
+    "text_sha256": "dff1b1d4c9937392358cf75533957ba3ab50ec7b47ba750d3c9df7d849214249"
+   },
+   "encoded_by": "manual-2026-07-19",
+   "materialize": {
+    "from_table": "detachments",
+    "from_id": "000010807",
+    "from_column": "rule_text"
+   }
+  },
+  {
+   "table": "abilities",
+   "id": "detfp11e-ec-brutes-det",
+   "side": "attacker",
+   "detachment": "Elegant Brutes",
+   "name_en": "Eager to Kill",
+   "name_zh": "杀意迫切",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "落场回合冲锋骰 +1——移动域未建模"
+   ],
+   "provenance": {
+    "current_text": "db detachments.rule_text id=fp11e-ec-brutes-det",
+    "base_text": "FP Emperor S Children（PR7 fp_rules inserts 补录，Wahapedia 无源）",
+    "synthesis": "DSL 投影经 materialize 落 abilities 新行（spec D5）",
+    "text_sha256": "fcfe23ef380df1e96f1913208bda10af5e1573041c4cc10c2fde6ee8fa2ba6af"
+   },
+   "encoded_by": "manual-2026-07-19",
+   "materialize": {
+    "from_table": "detachments",
+    "from_id": "fp11e-ec-brutes-det",
+    "from_column": "rule_text"
+   }
+  },
+  {
+   "table": "abilities",
+   "id": "detfp11e-ec-host-det",
+   "side": "attacker",
+   "detachment": "Frenzied Host",
+   "name_en": "Frantic Focus",
+   "name_zh": "狂乱专注",
+   "status": "partial",
+   "effects": [
+    {
+     "phase": "wound",
+     "op": "s_improve",
+     "params": [
+      1
+     ],
+     "condition": [],
+     "source": "狂乱专注（加速/撤退回合攻击 +1 S，特征值通道）"
+    }
+   ],
+   "requires_toggles": [
+    "advanced_or_fell_back"
+   ],
+   "not_modeled_notes_zh": [
+    "限 EMPEROR'S CHILDREN BATTLELINE 单位（选择本分队规则即声明）",
+    "加速/撤退态用假设开关（引擎无移动态建模）；效果两相位均适用",
+    "HOST tag 互斥（不能与另一 HOST 分队同取）——军表域约束未建模"
+   ],
+   "provenance": {
+    "current_text": "db detachments.rule_text id=fp11e-ec-host-det",
+    "base_text": "FP Emperor S Children（PR7 fp_rules inserts 补录，Wahapedia 无源）",
+    "synthesis": "DSL 投影经 materialize 落 abilities 新行（spec D5）",
+    "text_sha256": "a34f77de3c589e93b7a59d68f3ee5b0686081bc8712b85cd56a2f7bc325a47ec"
+   },
+   "encoded_by": "manual-2026-07-19",
+   "materialize": {
+    "from_table": "detachments",
+    "from_id": "fp11e-ec-host-det",
+    "from_column": "rule_text"
+   }
+  },
+  {
+   "table": "abilities",
+   "id": "detfp11e-ec-spectacle-det",
+   "side": "attacker",
+   "detachment": "Spectacle of Slaughter",
+   "name_en": "Entitled to Victory",
+   "name_zh": "胜利天授",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "FLAWLESS BLADES Fights First——先攻域由 fight_order 判定面板处理，DSL 无通道（可在面板手动勾选攻方先攻）"
+   ],
+   "provenance": {
+    "current_text": "db detachments.rule_text id=fp11e-ec-spectacle-det",
+    "base_text": "FP Emperor S Children（PR7 fp_rules inserts 补录，Wahapedia 无源）",
+    "synthesis": "DSL 投影经 materialize 落 abilities 新行（spec D5）",
+    "text_sha256": "7888d05398599b55139c4173e779acb1be03a034a2db87d6d94cc14b7632b175"
+   },
+   "encoded_by": "manual-2026-07-19",
+   "materialize": {
+    "from_table": "detachments",
+    "from_id": "fp11e-ec-spectacle-det",
+    "from_column": "rule_text"
+   }
+  },
+  {
+   "table": "stratagems",
+   "id": "000010011002",
+   "side": "attacker",
+   "detachment": "Carnival of Excess",
+   "name_en": "SUSTAINED BY AGONY",
+   "name_zh": "痛苦滋养",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "回复伤/复活模型——治疗域未建模"
+   ],
+   "provenance": {
+    "current_text": "db stratagems.text_zh id=000010011002",
+    "base_text": "Wahapedia 现文（PR7 工作单：FP 未触及或已滚入，11 版仍现行）",
+    "synthesis": "无需合成",
+    "text_sha256": "9be08875008e42aa56961a0ed7befb0c63bc2a95ca74c10980b96d0fb6a3074b"
+   },
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "stratagems",
+   "id": "000010011003",
+   "side": "attacker",
+   "detachment": "Carnival of Excess",
+   "name_en": "ECSTATIC SLAUGHTER",
+   "name_zh": "狂喜屠戮",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "额外冲锋宣告——移动/资格域未建模"
+   ],
+   "provenance": {
+    "current_text": "db stratagems.text_zh id=000010011003",
+    "base_text": "Wahapedia 现文（PR7 工作单：FP 未触及或已滚入，11 版仍现行）",
+    "synthesis": "无需合成",
+    "text_sha256": "189bf0eb51ee67e028e9222f3aaa1e16e956e4f9bc505c8336eb831fa8752351"
+   },
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "stratagems",
+   "id": "000010011004",
+   "side": "attacker",
+   "detachment": "Carnival of Excess",
+   "name_en": "VIOLENT CRESCENDO",
+   "name_zh": "暴虐渐强",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "跟进/重整 6 寸——移动域未建模"
+   ],
+   "provenance": {
+    "current_text": "db stratagems.text_zh id=000010011004",
+    "base_text": "Wahapedia 现文（PR7 工作单：FP 未触及或已滚入，11 版仍现行）",
+    "synthesis": "无需合成",
+    "text_sha256": "26863c58468d74bb06d195f534fd3cd04f001c4ae38e4fca5e20bb0d570b83c0"
+   },
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "stratagems",
+   "id": "000010011005",
+   "side": "attacker",
+   "detachment": "Carnival of Excess",
+   "name_en": "SYCOPHANTIC SURGE",
+   "name_zh": "取悦狂涌",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "加速/撤退后冲锋资格——资格域未建模"
+   ],
+   "provenance": {
+    "current_text": "db stratagems.text_zh id=000010011005",
+    "base_text": "Wahapedia 现文（PR7 工作单：FP 未触及或已滚入，11 版仍现行）",
+    "synthesis": "无需合成",
+    "text_sha256": "0bcc0d14b36853629f39573f70504ee91a46033b1c18eb4063197022b4efc485"
+   },
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "stratagems",
+   "id": "000010011006",
+   "side": "target",
+   "detachment": "Carnival of Excess",
+   "name_en": "UNCANNY REACTIONS",
+   "name_zh": "超凡反应",
+   "status": "partial",
+   "effects": [
+    {
+     "phase": "hit",
+     "op": "modify",
+     "params": [
+      -1
+     ],
+     "condition": [
+      "phase_shooting"
+     ],
+     "source": "超凡反应（被射击命中 -1）"
+    }
+   ],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "限 SLAANESH 单位守方（点名即声明）"
+   ],
+   "provenance": {
+    "current_text": "db stratagems.text_zh id=000010011006",
+    "base_text": "Wahapedia 现文（PR7 工作单：FP 未触及或已滚入，11 版仍现行）",
+    "synthesis": "无需合成",
+    "text_sha256": "b0c4ac1485052e9fc556a3b1cc2805556b0b6bf5da5066f74a15454774bd15ff"
+   },
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "stratagems",
+   "id": "000010011007",
+   "side": "attacker",
+   "detachment": "Carnival of Excess",
+   "name_en": "DARK APPARITIONS",
+   "name_zh": "黑暗幻影",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "撤入战略预备队——部署域未建模"
+   ],
+   "provenance": {
+    "current_text": "db stratagems.text_zh id=000010011007",
+    "base_text": "Wahapedia 现文（PR7 工作单：FP 未触及或已滚入，11 版仍现行）",
+    "synthesis": "无需合成",
+    "text_sha256": "a7864ca3197b4a83f0c3aff0c800d3cc16b69b7c4d9595151d3f4cb684905866"
+   },
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "stratagems",
+   "id": "000010015002",
+   "side": "target",
+   "detachment": "Coterie of the Conceited",
+   "name_en": "PROTECTION OF THE DARK PRINCE",
+   "name_zh": "黑暗王子庇佑",
+   "status": "partial",
+   "effects": [
+    {
+     "phase": "fnp",
+     "op": "fnp",
+     "params": [
+      6
+     ],
+     "condition": [],
+     "source": "黑暗王子庇佑（FNP 6+）"
+    }
+   ],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "对致命伤的 FNP 4+ 档不编——引擎 FNP 通道作用于全部伤害，仅致命伤增档编入会高估（沿 PR5 裁定）；只编全伤害 6+ 档"
+   ],
+   "provenance": {
+    "current_text": "db stratagems.text_zh id=000010015002",
+    "base_text": "Wahapedia 现文（PR7 工作单：FP 未触及或已滚入，11 版仍现行）",
+    "synthesis": "无需合成",
+    "text_sha256": "7c3a4be8794780057dd054388351fc09ebeb38dfa5cce8503d7e32269405ad33"
+   },
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "stratagems",
+   "id": "000010015003",
+   "side": "attacker",
+   "detachment": "Coterie of the Conceited",
+   "name_en": "UNSHAKEABLE OPPONENTS",
+   "name_zh": "难撼恶敌",
+   "status": "partial",
+   "effects": [
+    {
+     "phase": "hit",
+     "op": "ignore_hit_mods",
+     "params": [],
+     "condition": [],
+     "source": "难撼恶敌（忽略 BS/WS 与命中骰修正）"
+    }
+   ],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "致伤骰修正忽略无引擎通道——未建模（命中侧按最优策略只忽略不利修正，与 [PSYCHIC] 通道同语义）"
+   ],
+   "provenance": {
+    "current_text": "db stratagems.text_zh id=000010015003",
+    "base_text": "Wahapedia 现文（PR7 工作单：FP 未触及或已滚入，11 版仍现行）",
+    "synthesis": "无需合成",
+    "text_sha256": "fafbc91f0a4263c066911e072dcafb4e0039a624ccbabcbf9ae9f4e868f985a4"
+   },
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "stratagems",
+   "id": "000010015004",
+   "side": "attacker",
+   "detachment": "Coterie of the Conceited",
+   "name_en": "EMBRACE THE PAIN",
+   "name_zh": "拥抱痛楚",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "强制敌方以本单位为目标——目标选择域未建模"
+   ],
+   "provenance": {
+    "current_text": "db stratagems.text_zh id=000010015004",
+    "base_text": "Wahapedia 现文（PR7 工作单：FP 未触及或已滚入，11 版仍现行）",
+    "synthesis": "无需合成",
+    "text_sha256": "483aba79974b4f74483082114a1f9c638fecd2c32b666f4c226b9a6a3e9a12f9"
+   },
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "stratagems",
+   "id": "000010015005",
+   "side": "attacker",
+   "detachment": "Coterie of the Conceited",
+   "name_en": "MARTIAL PERFECTION",
+   "name_zh": "至臻武艺",
+   "status": "partial",
+   "effects": [
+    {
+     "phase": "hit",
+     "op": "reroll",
+     "params": [
+      "fail"
+     ],
+     "condition": [
+      "phase_melee"
+     ],
+     "source": "至臻武艺（近战命中骰可重骰）"
+    }
+   ],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "「可以重骰命中骰」按最优策略=只重骰失败骰（等价）；WHEN=近战阶段"
+   ],
+   "provenance": {
+    "current_text": "db stratagems.text_zh id=000010015005",
+    "base_text": "Wahapedia 现文（PR7 工作单：FP 未触及或已滚入，11 版仍现行）",
+    "synthesis": "无需合成",
+    "text_sha256": "4eac9469eab7323215759f98b342e7f481c66046bc06fcfc38e2592ad26ec68d"
+   },
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "stratagems",
+   "id": "000010015006",
+   "side": "attacker",
+   "detachment": "Coterie of the Conceited",
+   "name_en": "UNBOUND ARROGANCE",
+   "name_zh": "不羁狂傲",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "誓约点数 +1——誓约域未建模（与分队规则同桶）"
+   ],
+   "provenance": {
+    "current_text": "db stratagems.text_zh id=000010015006",
+    "base_text": "Wahapedia 现文（PR7 工作单：FP 未触及或已滚入，11 版仍现行）",
+    "synthesis": "无需合成",
+    "text_sha256": "a508f1ffa8116f73e02cad796a3e1130ebb6a11c61e6f031b3bad45eec458caa"
+   },
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "stratagems",
+   "id": "000010015007",
+   "side": "target",
+   "detachment": "Coterie of the Conceited",
+   "name_en": "ARMOUR OF ABHORRENCE",
+   "name_zh": "恶孽甲胄",
+   "status": "partial",
+   "effects": [
+    {
+     "phase": "save",
+     "op": "ap_improve",
+     "params": [
+      -1
+     ],
+     "condition": [],
+     "source": "恶孽甲胄（被攻 AP 恶化 1）"
+    }
+   ],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "触发时机为敌方选中目标后——点名即假设已使用；两相位均适用"
+   ],
+   "provenance": {
+    "current_text": "db stratagems.text_zh id=000010015007",
+    "base_text": "FP Emperor S Children（PR7 fp_rules 已刷新为 11 版现行文本，工作单 drifted）",
+    "synthesis": "无需合成",
+    "text_sha256": "8564db2244542a6e462decaedf3ac39bd3c2d238497fc97cdc46dbbe5fb436e7"
+   },
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "stratagems",
+   "id": "000009999002",
+   "side": "attacker",
+   "detachment": "Mercurial Host",
+   "name_en": "VIOLENT EXCESS",
+   "name_zh": "纵暴极欲",
+   "status": "partial",
+   "effects": [
+    {
+     "phase": "hit",
+     "op": "extra_hits",
+     "params": [
+      1
+     ],
+     "condition": [
+      "phase_melee"
+     ],
+     "source": "纵暴极欲（近战武器 [SUSTAINED HITS 1]）"
+    }
+   ],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "WHEN=近战阶段（条件自含近战门控）"
+   ],
+   "provenance": {
+    "current_text": "db stratagems.text_zh id=000009999002",
+    "base_text": "Wahapedia 现文（PR7 工作单：FP 未触及或已滚入，11 版仍现行）",
+    "synthesis": "无需合成",
+    "text_sha256": "d2f44fc55da58d28b9ff8123fefdfb047e591aaeeeea52feebcad4a6a5aeae56"
+   },
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "stratagems",
+   "id": "000009999003",
+   "side": "target",
+   "detachment": "Mercurial Host",
+   "name_en": "COMBAT STIMMS",
+   "name_zh": "战斗药剂",
+   "status": "partial",
+   "effects": [
+    {
+     "phase": "wound",
+     "op": "modify",
+     "params": [
+      -1
+     ],
+     "condition": [
+      "phase_melee"
+     ],
+     "source": "战斗药剂（近战被伤致伤骰 -1）"
+    }
+   ],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "限 EMPEROR'S CHILDREN INFANTRY 守方（点名即声明）；WHEN=近战阶段"
+   ],
+   "provenance": {
+    "current_text": "db stratagems.text_zh id=000009999003",
+    "base_text": "Wahapedia 现文（PR7 工作单：FP 未触及或已滚入，11 版仍现行）",
+    "synthesis": "无需合成",
+    "text_sha256": "8b162166b4ebeaa523296ccf3f98236b8f12f55d8c970eb06ca6aee080fb23f5"
+   },
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "stratagems",
+   "id": "000009999004",
+   "side": "attacker",
+   "detachment": "Mercurial Host",
+   "name_en": "HONOUR THE PRINCE",
+   "name_zh": "荣归黑暗王子",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "加速改固定 +6\" M——移动域未建模"
+   ],
+   "provenance": {
+    "current_text": "db stratagems.text_zh id=000009999004",
+    "base_text": "Wahapedia 现文（PR7 工作单：FP 未触及或已滚入，11 版仍现行）",
+    "synthesis": "无需合成",
+    "text_sha256": "dbef3a6a4124cc87ad53454d4ac158c637c8c5ff435fd44d4b9e6cdbae783235"
+   },
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "stratagems",
+   "id": "000009999005",
+   "side": "attacker",
+   "detachment": "Mercurial Host",
+   "name_en": "DARK VIGOUR",
+   "name_zh": "黑暗活力",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "对方移动后 6 寸反应移动——移动域未建模"
+   ],
+   "provenance": {
+    "current_text": "db stratagems.text_zh id=000009999005",
+    "base_text": "FP Emperor S Children（PR7 fp_rules 已刷新为 11 版现行文本，工作单 drifted）",
+    "synthesis": "无需合成",
+    "text_sha256": "fb409b8dab26c8c7ef26b7b19f5fd9ff770e46f852e8d49397a79ca6f7429b90"
+   },
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "stratagems",
+   "id": "000009999006",
+   "side": "target",
+   "detachment": "Mercurial Host",
+   "name_en": "CAPRICIOUS REACTIONS",
+   "name_zh": "莫测反应",
+   "status": "partial",
+   "effects": [
+    {
+     "phase": "hit",
+     "op": "modify",
+     "params": [
+      -1
+     ],
+     "condition": [
+      "phase_shooting"
+     ],
+     "source": "莫测反应（被射击命中 -1）"
+    }
+   ],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "触发时机为敌方选中目标后——点名即假设已使用"
+   ],
+   "provenance": {
+    "current_text": "db stratagems.text_zh id=000009999006",
+    "base_text": "Wahapedia 现文（PR7 工作单：FP 未触及或已滚入，11 版仍现行）",
+    "synthesis": "无需合成",
+    "text_sha256": "e39908446bbfe422d1768b56f705ea5a3a5e7f60eddf95f9031835033823ddad"
+   },
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "stratagems",
+   "id": "000009999007",
+   "side": "attacker",
+   "detachment": "Mercurial Host",
+   "name_en": "CRUEL RAIDERS",
+   "name_zh": "劫掠暴徒",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "撤入战略预备队——部署域未建模"
+   ],
+   "provenance": {
+    "current_text": "db stratagems.text_zh id=000009999007",
+    "base_text": "Wahapedia 现文（PR7 工作单：FP 未触及或已滚入，11 版仍现行）",
+    "synthesis": "无需合成",
+    "text_sha256": "2c39ff90cc71885deb603fcab8f67f686b130c1bf139623a28fa50dda7db2354"
+   },
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "stratagems",
+   "id": "000010003002",
+   "side": "target",
+   "detachment": "Peerless Bladesmen",
+   "name_en": "DEFT PARRY",
+   "name_zh": "迅捷招架",
+   "status": "partial",
+   "effects": [
+    {
+     "phase": "hit",
+     "op": "modify",
+     "params": [
+      -1
+     ],
+     "condition": [
+      "phase_melee"
+     ],
+     "source": "迅捷招架（近战被击命中 -1）"
+    }
+   ],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "触发时机为敌方选中目标后——点名即假设已使用；WHEN=近战阶段"
+   ],
+   "provenance": {
+    "current_text": "db stratagems.text_zh id=000010003002",
+    "base_text": "Wahapedia 现文（PR7 工作单：FP 未触及或已滚入，11 版仍现行）",
+    "synthesis": "无需合成",
+    "text_sha256": "f4c2d8aa07f19d7fe9d02d369c272658f304070dd398cec857adb31239037432"
+   },
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "stratagems",
+   "id": "000010003003",
+   "side": "attacker",
+   "detachment": "Peerless Bladesmen",
+   "name_en": "DEATH ECSTASY",
+   "name_zh": "濒死狂欢",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "被毁模型死后反打——死亡结算域未建模（引擎串行幸存反打仅在 matchup 层）"
+   ],
+   "provenance": {
+    "current_text": "db stratagems.text_zh id=000010003003",
+    "base_text": "Wahapedia 现文（PR7 工作单：FP 未触及或已滚入，11 版仍现行）",
+    "synthesis": "无需合成",
+    "text_sha256": "c357f704b256e109cbd962f26adc4da9ba01cdb943107b98f2725926967f370d"
+   },
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "stratagems",
+   "id": "000010003004",
+   "side": "attacker",
+   "detachment": "Peerless Bladesmen",
+   "name_en": "INCESSANT VIOLENCE",
+   "name_zh": "无休暴力",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "重整移动 6 寸——移动域未建模"
+   ],
+   "provenance": {
+    "current_text": "db stratagems.text_zh id=000010003004",
+    "base_text": "Wahapedia 现文（PR7 工作单：FP 未触及或已滚入，11 版仍现行）",
+    "synthesis": "无需合成",
+    "text_sha256": "a2ac2d7e8293ef74764ad33d86a9b307d7b5f95b11f35dce22b4d5547f050996"
+   },
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "stratagems",
+   "id": "000010003005",
+   "side": "attacker",
+   "detachment": "Peerless Bladesmen",
+   "name_en": "CRUEL BLADESMAN",
+   "name_zh": "无情剑客",
+   "status": "partial",
+   "effects": [
+    {
+     "phase": "save",
+     "op": "ap_improve",
+     "params": [
+      1
+     ],
+     "condition": [
+      "melee_charging"
+     ],
+     "source": "无情剑客（冲锋回合近战 AP 改善 1）"
+    }
+   ],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "TARGET 限本回合冲锋过的单位——冲锋态用「本回合冲锋」开关"
+   ],
+   "provenance": {
+    "current_text": "db stratagems.text_zh id=000010003005",
+    "base_text": "Wahapedia 现文（PR7 工作单：FP 未触及或已滚入，11 版仍现行）",
+    "synthesis": "无需合成",
+    "text_sha256": "329419277bf468e22792ab14f7c35aa72fe3aad04fb88e38fae51edc36c3ecaa"
+   },
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "stratagems",
+   "id": "000010003006",
+   "side": "attacker",
+   "detachment": "Peerless Bladesmen",
+   "name_en": "TERRIFYING SPECTACLE",
+   "name_zh": "骇人盛景",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "战斗震慑测试——士气域未建模"
+   ],
+   "provenance": {
+    "current_text": "db stratagems.text_zh id=000010003006",
+    "base_text": "Wahapedia 现文（PR7 工作单：FP 未触及或已滚入，11 版仍现行）",
+    "synthesis": "无需合成",
+    "text_sha256": "25e1a888aae2a26c79bece19d7d8642cd6c55010c56db36311efaf82f4da1d4e"
+   },
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "stratagems",
+   "id": "000010003007",
+   "side": "attacker",
+   "detachment": "Peerless Bladesmen",
+   "name_en": "CUT DOWN THE WEAK",
+   "name_zh": "弱者当诛",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "撤退触发的阶段外冲锋——移动/资格域未建模"
+   ],
+   "provenance": {
+    "current_text": "db stratagems.text_zh id=000010003007",
+    "base_text": "Wahapedia 现文（PR7 工作单：FP 未触及或已滚入，11 版仍现行）",
+    "synthesis": "无需合成",
+    "text_sha256": "f14f98360c6f316abce2e003f303d7603043fe4d594df0837bdf3470181169bf"
+   },
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "stratagems",
+   "id": "000010007002",
+   "side": "attacker",
+   "detachment": "Rapid Evisceration",
+   "name_en": "ONTO THE NEXT",
+   "name_zh": "奔赴屠场",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "战斗后登车——运输域未建模"
+   ],
+   "provenance": {
+    "current_text": "db stratagems.text_zh id=000010007002",
+    "base_text": "Wahapedia 现文（PR7 工作单：FP 未触及或已滚入，11 版仍现行）",
+    "synthesis": "无需合成",
+    "text_sha256": "bbaeadcda0ce9fe262335ad958c2bf1cfaeb88c4eb089251c019fcdb779fff82"
+   },
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "stratagems",
+   "id": "000010007003",
+   "side": "attacker",
+   "detachment": "Rapid Evisceration",
+   "name_en": "ADVANCE AND CLAIM",
+   "name_zh": "突击占领",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "目标点持续控制——目标点域未建模"
+   ],
+   "provenance": {
+    "current_text": "db stratagems.text_zh id=000010007003",
+    "base_text": "Wahapedia 现文（PR7 工作单：FP 未触及或已滚入，11 版仍现行）",
+    "synthesis": "无需合成",
+    "text_sha256": "71a75ba69776945582cbd093bb3bfef9e6ad55d6b23b820f6f4cd0c0ce023730"
+   },
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "stratagems",
+   "id": "000010007004",
+   "side": "attacker",
+   "detachment": "Rapid Evisceration",
+   "name_en": "DYNAMIC BREAKTHROUGH",
+   "name_zh": "势如破竹",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "载具穿越敌模型——移动域未建模"
+   ],
+   "provenance": {
+    "current_text": "db stratagems.text_zh id=000010007004",
+    "base_text": "Wahapedia 现文（PR7 工作单：FP 未触及或已滚入，11 版仍现行）",
+    "synthesis": "无需合成",
+    "text_sha256": "bccb135a9592426404e76713e28358825358f11da8bff19c06fab3426d893baa"
+   },
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "stratagems",
+   "id": "000010007005",
+   "side": "attacker",
+   "detachment": "Rapid Evisceration",
+   "name_en": "CEASELESS ONSLAUGHT",
+   "name_zh": "不息攻势",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "下车后冲锋资格——资格域未建模"
+   ],
+   "provenance": {
+    "current_text": "db stratagems.text_zh id=000010007005",
+    "base_text": "Wahapedia 现文（PR7 工作单：FP 未触及或已滚入，11 版仍现行）",
+    "synthesis": "无需合成",
+    "text_sha256": "097f6fd5fb171963787c86e01e982a4d4768f3568914e0386486fea8370a7dd9"
+   },
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "stratagems",
+   "id": "000010007006",
+   "side": "attacker",
+   "detachment": "Rapid Evisceration",
+   "name_en": "REACTIVE DISEMBARKATION",
+   "name_zh": "应变脱离",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "反应下车——运输/部署域未建模"
+   ],
+   "provenance": {
+    "current_text": "db stratagems.text_zh id=000010007006",
+    "base_text": "Wahapedia 现文（PR7 工作单：FP 未触及或已滚入，11 版仍现行）",
+    "synthesis": "无需合成",
+    "text_sha256": "b2a543f04244a3aa0efee7b6e11567e72fe013911060a3e154c99331c9b7adb0"
+   },
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "stratagems",
+   "id": "000010007007",
+   "side": "attacker",
+   "detachment": "Rapid Evisceration",
+   "name_en": "OUTFLANKING STRIKE",
+   "name_zh": "侧翼打击",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "运输撤入战略预备队——部署域未建模"
+   ],
+   "provenance": {
+    "current_text": "db stratagems.text_zh id=000010007007",
+    "base_text": "Wahapedia 现文（PR7 工作单：FP 未触及或已滚入，11 版仍现行）",
+    "synthesis": "无需合成",
+    "text_sha256": "2e6fcf38aaa6e1b92f27bf4f084c33676e256c20f8302977aec34c9e89c224e1"
+   },
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "stratagems",
+   "id": "000010019002",
+   "side": "attacker",
+   "detachment": "Slaanesh’s Chosen",
+   "name_en": "DEVOTED DUELLISTS",
+   "name_zh": "专注决斗者",
+   "status": "partial",
+   "effects": [
+    {
+     "phase": "hit",
+     "op": "extra_hits",
+     "params": [
+      1
+     ],
+     "condition": [
+      "phase_melee"
+     ],
+     "source": "专注决斗者（近战武器对所选敌军 [SUSTAINED HITS 1]）"
+    }
+   ],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "限 CHARACTER 单位攻方且效果仅对所选敌方单位——单目标模拟下等价（点名即声明）"
+   ],
+   "provenance": {
+    "current_text": "db stratagems.text_zh id=000010019002",
+    "base_text": "Wahapedia 现文（PR7 工作单：FP 未触及或已滚入，11 版仍现行）",
+    "synthesis": "无需合成",
+    "text_sha256": "d1c9668d2fc4df1413c6e975b7428dc982de3ad119762efa0ca990c61ee17dc1"
+   },
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "stratagems",
+   "id": "000010019003",
+   "side": "attacker",
+   "detachment": "Slaanesh’s Chosen",
+   "name_en": "BEAUTIFUL DEATH",
+   "name_zh": "绝美之死",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "被毁模型死后反打——死亡结算域未建模"
+   ],
+   "provenance": {
+    "current_text": "db stratagems.text_zh id=000010019003",
+    "base_text": "Wahapedia 现文（PR7 工作单：FP 未触及或已滚入，11 版仍现行）",
+    "synthesis": "无需合成",
+    "text_sha256": "94dafb10ef8db0486d840ef778131097be3735f69d7481ad5c777e90e01059a9"
+   },
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "stratagems",
+   "id": "000010019004",
+   "side": "attacker",
+   "detachment": "Slaanesh’s Chosen",
+   "name_en": "HEIGHTENED JEALOUSY",
+   "name_zh": "妒火中烧",
+   "status": "partial",
+   "effects": [
+    {
+     "phase": "wound",
+     "op": "s_improve",
+     "params": [
+      1
+     ],
+     "condition": [],
+     "source": "妒火中烧（非神眷冠军的人物单位攻击 +1 S，特征值通道）"
+    }
+   ],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "触发前提（冠军易主或冠军灭敌）按已发生假设——点名即声明",
+    "效果面=非冠军的 EMPEROR'S CHILDREN CHARACTER 单位——请以该类单位为攻方"
+   ],
+   "provenance": {
+    "current_text": "db stratagems.text_zh id=000010019004",
+    "base_text": "Wahapedia 现文（PR7 工作单：FP 未触及或已滚入，11 版仍现行）",
+    "synthesis": "无需合成",
+    "text_sha256": "8a4549cb114234e3c57b026aeadf905e8b234de052e090c5624d676af5d91f57"
+   },
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "stratagems",
+   "id": "000010019005",
+   "side": "attacker",
+   "detachment": "Slaanesh’s Chosen",
+   "name_en": "DIABOLIC MAJESTY",
+   "name_zh": "邪魔尊荣",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "战斗震慑测试——士气域未建模"
+   ],
+   "provenance": {
+    "current_text": "db stratagems.text_zh id=000010019005",
+    "base_text": "Wahapedia 现文（PR7 工作单：FP 未触及或已滚入，11 版仍现行）",
+    "synthesis": "无需合成",
+    "text_sha256": "b4e964e650fd914ad02688096c35d4a7056856388c08bf8a0226f3aee171ecde"
+   },
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "stratagems",
+   "id": "000010019006",
+   "side": "attacker",
+   "detachment": "Slaanesh’s Chosen",
+   "name_en": "REFUSAL TO BE OUTDONE",
+   "name_zh": "不甘人后",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "冲锋重骰+强制接战——移动域未建模"
+   ],
+   "provenance": {
+    "current_text": "db stratagems.text_zh id=000010019006",
+    "base_text": "FP Emperor S Children（PR7 fp_rules 已刷新为 11 版现行文本，工作单 drifted）",
+    "synthesis": "无需合成",
+    "text_sha256": "7a437a3a37313f8e97ef0b8dd5d91e28025d43aa88996c3f57381267f8c1ae0e"
+   },
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "stratagems",
+   "id": "000010019007",
+   "side": "attacker",
+   "detachment": "Slaanesh’s Chosen",
+   "name_en": "VENGEFUL SURGE",
+   "name_zh": "复仇涌动",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "surge 移动——移动域未建模"
+   ],
+   "provenance": {
+    "current_text": "db stratagems.text_zh id=000010019007",
+    "base_text": "FP Emperor S Children（PR7 fp_rules 已刷新为 11 版现行文本，工作单 drifted）",
+    "synthesis": "无需合成",
+    "text_sha256": "6d442c89b3766cf6f7abcb7565bec92e34fac53c4785fab06e218f5ed770653f"
+   },
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "stratagems",
+   "id": "000010809002",
+   "side": "target",
+   "detachment": "Sublime Strike",
+   "name_en": "ALLURING GROTESQUERIE",
+   "name_zh": null,
+   "status": "partial",
+   "effects": [
+    {
+     "phase": "hit",
+     "op": "modify",
+     "params": [
+      -1
+     ],
+     "condition": [
+      "phase_melee"
+     ],
+     "source": "ALLURING GROTESQUERIE（近战被击命中 -1）"
+    }
+   ],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "战斗震慑测试段士气域未建模；WHEN=近战阶段开始"
+   ],
+   "provenance": {
+    "current_text": "db stratagems.text_zh id=000010809002",
+    "base_text": "Wahapedia 现文（PR7 工作单：FP 未触及或已滚入，11 版仍现行）",
+    "synthesis": "无需合成",
+    "text_sha256": "53f282e25062d5e14acb7e1f39f9a4b82d68b4533d870d6726b1c591747de310"
+   },
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "stratagems",
+   "id": "000010809003",
+   "side": "attacker",
+   "detachment": "Sublime Strike",
+   "name_en": "CLOYING CORRUPTION",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "目标点 Secured——目标点域未建模"
+   ],
+   "provenance": {
+    "current_text": "db stratagems.text_zh id=000010809003",
+    "base_text": "Wahapedia 现文（PR7 工作单：FP 未触及或已滚入，11 版仍现行）",
+    "synthesis": "无需合成",
+    "text_sha256": "e299e301c9acb37b8bc5678ccf28aaf40065c7c826fc18f28c8205646369435f"
+   },
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "stratagems",
+   "id": "000010809004",
+   "side": "attacker",
+   "detachment": "Sublime Strike",
+   "name_en": "EAGER FOR MORE",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "舱门触发移动——地形域未建模"
+   ],
+   "provenance": {
+    "current_text": "db stratagems.text_zh id=000010809004",
+    "base_text": "Wahapedia 现文（PR7 工作单：FP 未触及或已滚入，11 版仍现行）",
+    "synthesis": "无需合成",
+    "text_sha256": "be8ca3b1085648a411d507b86a6b2a4052d93fcbcf4491c2ca9757a7d3d917d0"
+   },
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "stratagems",
+   "id": "000010809005",
+   "side": "attacker",
+   "detachment": "Sublime Strike",
+   "name_en": "VYING FOR VICTORY",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "敌方撤退后反应移动——移动域未建模"
+   ],
+   "provenance": {
+    "current_text": "db stratagems.text_zh id=000010809005",
+    "base_text": "Wahapedia 现文（PR7 工作单：FP 未触及或已滚入，11 版仍现行）",
+    "synthesis": "无需合成",
+    "text_sha256": "e046f7a1f3cb47ab02e482d6144e1cd9bace729eedb663ebd3ad8b746aad1376"
+   },
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "stratagems",
+   "id": "000010655002",
+   "side": "target",
+   "detachment": "Court of the Phoenician",
+   "name_en": "CONTEMPTUOUS DISREGARD",
+   "name_zh": "轻蔑无视",
+   "status": "partial",
+   "effects": [
+    {
+     "phase": "wound",
+     "op": "modify",
+     "params": [
+      -1
+     ],
+     "condition": [
+      "wound_s_gt_t"
+     ],
+     "source": "轻蔑无视（被 S>T 攻击致伤 -1）"
+    }
+   ],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "S>T 判定在引擎攻方最终 S（含 S 改善）处延迟结算；两相位均适用"
+   ],
+   "provenance": {
+    "current_text": "db stratagems.text_zh id=000010655002",
+    "base_text": "FP Emperor S Children（PR7 fp_rules 已刷新为 11 版现行文本，工作单 drifted）",
+    "synthesis": "无需合成",
+    "text_sha256": "5db639a103f76134dd7b8ccb73c51592c4268f86c35678771651587f8f4058b4"
+   },
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "stratagems",
+   "id": "000010655003",
+   "side": "attacker",
+   "detachment": "Court of the Phoenician",
+   "name_en": "PRIDEFUL SUPERIORITY",
+   "name_zh": "傲然凌人",
+   "status": "partial",
+   "effects": [
+    {
+     "phase": "hit",
+     "op": "reroll",
+     "params": [
+      "fail"
+     ],
+     "condition": [
+      "melee_target_has_keyword",
+      "character"
+     ],
+     "source": "傲然凌人（近战对 CHARACTER 命中可重骰）"
+    },
+    {
+     "phase": "wound",
+     "op": "reroll",
+     "params": [
+      "fail"
+     ],
+     "condition": [
+      "melee_target_has_keyword",
+      "character"
+     ],
+     "source": "傲然凌人（近战对 CHARACTER 致伤可重骰）"
+    }
+   ],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "「可以重骰」按最优策略=只重骰失败骰（等价）；WHEN=近战阶段 × 目标 CHARACTER（复合 tag 自动判定）"
+   ],
+   "provenance": {
+    "current_text": "db stratagems.text_zh id=000010655003",
+    "base_text": "FP Emperor S Children（PR7 fp_rules 已刷新为 11 版现行文本，工作单 drifted）",
+    "synthesis": "无需合成",
+    "text_sha256": "27e58c83d6d162c6f13bc1647635ed1351dcc03ad98396b854ab7984c7cc3888"
+   },
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "stratagems",
+   "id": "000010655004",
+   "side": "attacker",
+   "detachment": "Court of the Phoenician",
+   "name_en": "SINUOUS BREACH",
+   "name_zh": "蜿蜒突进",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "穿越地形移动——移动域未建模"
+   ],
+   "provenance": {
+    "current_text": "db stratagems.text_zh id=000010655004",
+    "base_text": "Wahapedia 现文（PR7 工作单：FP 未触及或已滚入，11 版仍现行）",
+    "synthesis": "无需合成",
+    "text_sha256": "5992b60ed41a8b6510e2e35fc2bbbd176e1b2e481fa2164f6e800a06fbb95796"
+   },
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "stratagems",
+   "id": "000010655005",
+   "side": "attacker",
+   "detachment": "Court of the Phoenician",
+   "name_en": "CLOSE-QUARTERS EXCRUCIATION",
+   "name_zh": "近身酷刑",
+   "status": "partial",
+   "effects": [
+    {
+     "phase": "wound",
+     "op": "s_improve",
+     "params": [
+      1
+     ],
+     "condition": [
+      "ranged_within_12"
+     ],
+     "source": "近身酷刑（12 寸内攻击 +1 S，特征值通道）"
+    },
+    {
+     "phase": "save",
+     "op": "ap_improve",
+     "params": [
+      1
+     ],
+     "condition": [
+      "ranged_within_12"
+     ],
+     "source": "近身酷刑（12 寸内攻击 AP 改善 1）"
+    }
+   ],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "12 寸档用假设开关（引擎无距离建模）；WHEN=你的射击阶段（条件自含射击门控）"
+   ],
+   "provenance": {
+    "current_text": "db stratagems.text_zh id=000010655005",
+    "base_text": "Wahapedia 现文（PR7 工作单：FP 未触及或已滚入，11 版仍现行）",
+    "synthesis": "无需合成",
+    "text_sha256": "9350144ce161856c629c0a02da49f3a70ae7075ba8b715948e50c28134f4c338"
+   },
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "stratagems",
+   "id": "000010655006",
+   "side": "attacker",
+   "detachment": "Court of the Phoenician",
+   "name_en": "EUPHORIC INSPIRATION",
+   "name_zh": "欣快激励",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "冲锋重骰光环——移动域未建模"
+   ],
+   "provenance": {
+    "current_text": "db stratagems.text_zh id=000010655006",
+    "base_text": "Wahapedia 现文（PR7 工作单：FP 未触及或已滚入，11 版仍现行）",
+    "synthesis": "无需合成",
+    "text_sha256": "7ee7ca76cf9ac2eb372f207a30f5948b35a53689d4665dfd1e4728220ddf793c"
+   },
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "stratagems",
+   "id": "000010655007",
+   "side": "attacker",
+   "detachment": "Court of the Phoenician",
+   "name_en": "CATALYTIC STIMULUS",
+   "name_zh": "催化激涌",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "surge 移动——移动域未建模"
+   ],
+   "provenance": {
+    "current_text": "db stratagems.text_zh id=000010655007",
+    "base_text": "FP Emperor S Children（PR7 fp_rules 已刷新为 11 版现行文本，工作单 drifted）",
+    "synthesis": "无需合成",
+    "text_sha256": "d42e09713480c6cedce56d98e6fa540f6b3ce8082b7cbd1c8f056af8497ecf70"
+   },
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "stratagems",
+   "id": "fp11e-ec-brutes-s1",
+   "side": "target",
+   "detachment": "Elegant Brutes",
+   "name_en": "DELIGHT IN AGONY",
+   "name_zh": "乐在苦痛",
+   "status": "partial",
+   "effects": [
+    {
+     "phase": "wound",
+     "op": "modify",
+     "params": [
+      -1
+     ],
+     "condition": [
+      "wound_s_gt_t"
+     ],
+     "source": "乐在苦痛（被 S>T 攻击致伤 -1）"
+    }
+   ],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "限 EC TERMINATOR 守方（点名即声明）；S>T 延迟判定；两相位均适用"
+   ],
+   "provenance": {
+    "current_text": "db stratagems.text_zh id=fp11e-ec-brutes-s1",
+    "base_text": "FP Emperor S Children（PR7 fp_rules inserts 补录，Wahapedia 无源）",
+    "synthesis": "无需合成",
+    "text_sha256": "3f45bd959204c2a438ab560e6b776660524ee4337302678d43f1f6c2a5455cfc"
+   },
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "stratagems",
+   "id": "fp11e-ec-brutes-s2",
+   "side": "attacker",
+   "detachment": "Elegant Brutes",
+   "name_en": "PSYCHEDELIC SOULFLAME",
+   "name_zh": "迷幻魂焰",
+   "status": "partial",
+   "effects": [
+    {
+     "phase": "wound",
+     "op": "s_improve",
+     "params": [
+      2
+     ],
+     "condition": [],
+     "source": "迷幻魂焰（攻击 +2 S，特征值通道）"
+    }
+   ],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "限 EC TERMINATOR 攻方（点名即声明）；两相位均适用"
+   ],
+   "provenance": {
+    "current_text": "db stratagems.text_zh id=fp11e-ec-brutes-s2",
+    "base_text": "FP Emperor S Children（PR7 fp_rules inserts 补录，Wahapedia 无源）",
+    "synthesis": "无需合成",
+    "text_sha256": "906f499a08033c24ce897cc32a9e206758d155a1a24e7b15f3fe73e3f8490c60"
+   },
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "stratagems",
+   "id": "fp11e-ec-brutes-s3",
+   "side": "attacker",
+   "detachment": "Elegant Brutes",
+   "name_en": "WARP PLUNGE",
+   "name_zh": "亚空间遁入",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "撤入战略预备队——部署域未建模"
+   ],
+   "provenance": {
+    "current_text": "db stratagems.text_zh id=fp11e-ec-brutes-s3",
+    "base_text": "FP Emperor S Children（PR7 fp_rules inserts 补录，Wahapedia 无源）",
+    "synthesis": "无需合成",
+    "text_sha256": "11687f6ec1933d4fe1e120a5682c5b0a01e6b710a508538d2be8e134b7793a43"
+   },
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "stratagems",
+   "id": "fp11e-ec-host-s1",
+   "side": "target",
+   "detachment": "Frenzied Host",
+   "name_en": "POSSESSIVE MANIA",
+   "name_zh": "占有狂热",
+   "status": "partial",
+   "effects": [
+    {
+     "phase": "save",
+     "op": "ap_improve",
+     "params": [
+      -1
+     ],
+     "condition": [],
+     "source": "占有狂热（被攻 AP 恶化 1）"
+    }
+   ],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "限 EC BATTLELINE 守方且需在目标点范围内——空间条件按已满足假设（点名即声明）"
+   ],
+   "provenance": {
+    "current_text": "db stratagems.text_zh id=fp11e-ec-host-s1",
+    "base_text": "FP Emperor S Children（PR7 fp_rules inserts 补录，Wahapedia 无源）",
+    "synthesis": "无需合成",
+    "text_sha256": "7b59a4fe92f5bbc9a77398a03c8a80aa7589adffe813e65dc7bb29d387779e35"
+   },
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "stratagems",
+   "id": "fp11e-ec-host-s2",
+   "side": "attacker",
+   "detachment": "Frenzied Host",
+   "name_en": "AGONISED CACOPHONY",
+   "name_zh": "痛楚刺声",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "敌方侦测范围 +6\"——侦测域未建模"
+   ],
+   "provenance": {
+    "current_text": "db stratagems.text_zh id=fp11e-ec-host-s2",
+    "base_text": "FP Emperor S Children（PR7 fp_rules inserts 补录，Wahapedia 无源）",
+    "synthesis": "无需合成",
+    "text_sha256": "4eb13b913c8c89758927d0555d13d10071ea5210ca0d0f1d9091ebfe009de51e"
+   },
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "stratagems",
+   "id": "fp11e-ec-host-s3",
+   "side": "attacker",
+   "detachment": "Frenzied Host",
+   "name_en": "ABSOLUTE SENSORY OVERLOAD",
+   "name_zh": "绝对感官过载",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "射击不破 hidden——隐蔽域未建模"
+   ],
+   "provenance": {
+    "current_text": "db stratagems.text_zh id=fp11e-ec-host-s3",
+    "base_text": "FP Emperor S Children（PR7 fp_rules inserts 补录，Wahapedia 无源）",
+    "synthesis": "无需合成",
+    "text_sha256": "e437435175ddf4b56ab035b169459f5ba64fcf70f24e9ddeb1bb9502fd9880f1"
+   },
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "stratagems",
+   "id": "fp11e-ec-spectacle-s1",
+   "side": "attacker",
+   "detachment": "Spectacle of Slaughter",
+   "name_en": "HONOUR IS FOR FOOLS",
+   "name_zh": "荣誉属于蠢货",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "近战 [精准]——攻击分配域（点杀附属人物）未建模"
+   ],
+   "provenance": {
+    "current_text": "db stratagems.text_zh id=fp11e-ec-spectacle-s1",
+    "base_text": "FP Emperor S Children（PR7 fp_rules inserts 补录，Wahapedia 无源）",
+    "synthesis": "无需合成",
+    "text_sha256": "f38a1789e376698b421d4a911f45d849da12937af20018007a9622e38883e40e"
+   },
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "stratagems",
+   "id": "fp11e-ec-spectacle-s2",
+   "side": "attacker",
+   "detachment": "Spectacle of Slaughter",
+   "name_en": "SINGLE-MINDED STRIKE",
+   "name_zh": "心无旁骛",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "冲锋穿越模型——移动域未建模"
+   ],
+   "provenance": {
+    "current_text": "db stratagems.text_zh id=fp11e-ec-spectacle-s2",
+    "base_text": "FP Emperor S Children（PR7 fp_rules inserts 补录，Wahapedia 无源）",
+    "synthesis": "无需合成",
+    "text_sha256": "0b216c062005f6456f34455f4537e93aa7e82057878c61921c44c3b8f6fec047"
+   },
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "stratagems",
+   "id": "fp11e-ec-spectacle-s3",
+   "side": "attacker",
+   "detachment": "Spectacle of Slaughter",
+   "name_en": "INTOXICATED BY TRIUMPH",
+   "name_zh": "沉醉凯歌",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "敌撤退后 D3+3\" 反应移动——移动域未建模"
+   ],
+   "provenance": {
+    "current_text": "db stratagems.text_zh id=fp11e-ec-spectacle-s3",
+    "base_text": "FP Emperor S Children（PR7 fp_rules inserts 补录，Wahapedia 无源）",
+    "synthesis": "无需合成",
+    "text_sha256": "71496926f3eb90aabc6dd4f0e83ac139f7bad767209578574f22feb20b048862"
+   },
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "enhancements",
+   "id": "000010010002",
+   "side": "attacker",
+   "detachment": "Carnival of Excess",
+   "name_en": "Empyric Suffusion",
+   "name_zh": "灵能弥漫",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "英雄干预 -1 CP——CP 经济域未建模"
+   ],
+   "provenance": {
+    "current_text": "db enhancements.description id=000010010002",
+    "base_text": "FP Emperor S Children（PR7 fp_rules 已刷新为 11 版现行文本，工作单 drifted）",
+    "synthesis": "无需合成",
+    "text_sha256": "6b496e1f298d8ce6e80fe909ed2e4fd52355f1c8d6b6241593c446a6be35ad5a"
+   },
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "enhancements",
+   "id": "000010010003",
+   "side": "target",
+   "detachment": "Carnival of Excess",
+   "name_en": "Dark Blessings",
+   "name_zh": "黑暗赐福",
+   "status": "partial",
+   "effects": [
+    {
+     "phase": "save",
+     "op": "invuln",
+     "params": [
+      3
+     ],
+     "condition": [],
+     "source": "黑暗赐福（3+ 特殊保护）"
+    }
+   ],
+   "requires_toggles": [
+    "defender_bearer_leading"
+   ],
+   "not_modeled_notes_zh": [
+    "once per battle 单相位——单场模拟按已使用假设",
+    "仅携带者模型 3+（非全单位）——单人物守方模拟准确，整单位注入会高估"
+   ],
+   "provenance": {
+    "current_text": "db enhancements.description id=000010010003",
+    "base_text": "Wahapedia 现文（PR7 工作单：FP 未触及或已滚入，11 版仍现行）",
+    "synthesis": "无需合成",
+    "text_sha256": "089a385051ef78027088bf2c61663a2126944c83b67e1d4c46f6f943f102aec4"
+   },
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "enhancements",
+   "id": "000010010004",
+   "side": "attacker",
+   "detachment": "Carnival of Excess",
+   "name_en": "Possessed Blade",
+   "name_zh": "附魔之刃",
+   "status": "partial",
+   "effects": [
+    {
+     "phase": "attacks",
+     "op": "modify",
+     "params": [
+      1
+     ],
+     "condition": [
+      "phase_melee"
+     ],
+     "source": "附魔之刃（选定近战武器 A+1）"
+    },
+    {
+     "phase": "damage",
+     "op": "modify",
+     "params": [
+      1
+     ],
+     "condition": [
+      "phase_melee"
+     ],
+     "source": "附魔之刃（发动时 D+1）"
+    },
+    {
+     "phase": "wound",
+     "op": "mortal_pool",
+     "params": [],
+     "condition": [
+      "phase_melee"
+     ],
+     "source": "附魔之刃（发动时 [DEVASTATING WOUNDS]）"
+    }
+   ],
+   "requires_toggles": [
+    "bearer_leading"
+   ],
+   "not_modeled_notes_zh": [
+    "限战斗开始时选定的一把近战武器——请单列该武器模拟（限携带者相关武器/单位——单人物模拟准确，附属单位整体注入会高估）",
+    "[HAZARDOUS] 自伤未建模（发动即假设选择使用）"
+   ],
+   "provenance": {
+    "current_text": "db enhancements.description id=000010010004",
+    "base_text": "Wahapedia 现文（PR7 工作单：FP 未触及或已滚入，11 版仍现行）",
+    "synthesis": "无需合成",
+    "text_sha256": "09598ed44468aa3d2f63805084a0735dbb8b9c970f0a8807bdfae85cf104c149"
+   },
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "enhancements",
+   "id": "000010010005",
+   "side": "attacker",
+   "detachment": "Carnival of Excess",
+   "name_en": "Warp Walker",
+   "name_zh": "亚空间行者",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "加速改固定 +6\" 与穿越移动——移动域未建模"
+   ],
+   "provenance": {
+    "current_text": "db enhancements.description id=000010010005",
+    "base_text": "Wahapedia 现文（PR7 工作单：FP 未触及或已滚入，11 版仍现行）",
+    "synthesis": "无需合成",
+    "text_sha256": "7974477f359cad411e39d33a0e7cc47e400c90c1d7208618e60131cfbce2c914"
+   },
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "enhancements",
+   "id": "000010014002",
+   "side": "attacker",
+   "detachment": "Coterie of the Conceited",
+   "name_en": "Pledge of Eternal Servitude",
+   "name_zh": "永役誓约",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "死亡后 LD 测试复活——复活域未建模"
+   ],
+   "provenance": {
+    "current_text": "db enhancements.description id=000010014002",
+    "base_text": "Wahapedia 现文（PR7 工作单：FP 未触及或已滚入，11 版仍现行）",
+    "synthesis": "无需合成",
+    "text_sha256": "4e2b4a024d1aa977c234bac3a362e887aa923d98d9997709a6a7a536b4c1a504"
+   },
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "enhancements",
+   "id": "000010014003",
+   "side": "attacker",
+   "detachment": "Coterie of the Conceited",
+   "name_en": "Pledge of Dark Glory",
+   "name_zh": "暗耀誓约",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "LD/OC 改善——士气/目标点域未建模"
+   ],
+   "provenance": {
+    "current_text": "db enhancements.description id=000010014003",
+    "base_text": "Wahapedia 现文（PR7 工作单：FP 未触及或已滚入，11 版仍现行）",
+    "synthesis": "无需合成",
+    "text_sha256": "387c0992e679507f213f4b32ad8be595065a56a15bb7f0df948ff58a39f63183"
+   },
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "enhancements",
+   "id": "000010014004",
+   "side": "attacker",
+   "detachment": "Coterie of the Conceited",
+   "name_en": "Pledge of Mortal Pain",
+   "name_zh": "苦痛誓约",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "射击阶段开始时 LD 测试致命伤——阶段外一次性爆发未建模"
+   ],
+   "provenance": {
+    "current_text": "db enhancements.description id=000010014004",
+    "base_text": "Wahapedia 现文（PR7 工作单：FP 未触及或已滚入，11 版仍现行）",
+    "synthesis": "无需合成",
+    "text_sha256": "d2f125d5525b9de828e8b9a2d2fb976b9f3c27ef24787d67529d9062eec83394"
+   },
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "enhancements",
+   "id": "000010014005",
+   "side": "attacker",
+   "detachment": "Coterie of the Conceited",
+   "name_en": "Pledge of Unholy Fortune",
+   "name_zh": "邪运誓约",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "once per turn 单骰改 6——单骰干预域未建模（全序列向量化）"
+   ],
+   "provenance": {
+    "current_text": "db enhancements.description id=000010014005",
+    "base_text": "Wahapedia 现文（PR7 工作单：FP 未触及或已滚入，11 版仍现行）",
+    "synthesis": "无需合成",
+    "text_sha256": "1502a076fb0827d68b446f99ec80d243913a5ffdf57d3b1f194bce697358d2db"
+   },
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "enhancements",
+   "id": "000009998002",
+   "side": "attacker",
+   "detachment": "Mercurial Host",
+   "name_en": "Steeped in Suffering",
+   "name_zh": "浸淫苦难",
+   "status": "partial",
+   "effects": [
+    {
+     "phase": "hit",
+     "op": "modify",
+     "params": [
+      1
+     ],
+     "condition": [
+      "target_below_starting"
+     ],
+     "source": "浸淫苦难（目标低于满编命中 +1）"
+    },
+    {
+     "phase": "wound",
+     "op": "modify",
+     "params": [
+      1
+     ],
+     "condition": [
+      "target_below_half"
+     ],
+     "source": "浸淫苦难（目标低于半编致伤 +1）"
+    }
+   ],
+   "requires_toggles": [
+    "bearer_leading"
+   ],
+   "not_modeled_notes_zh": [
+    "目标战损状态用假设开关（低于半编蕴含低于满编）"
+   ],
+   "provenance": {
+    "current_text": "db enhancements.description id=000009998002",
+    "base_text": "Wahapedia 现文（PR7 工作单：FP 未触及或已滚入，11 版仍现行）",
+    "synthesis": "无需合成",
+    "text_sha256": "9257be999da53461cc7df5cbb70ffd3cd0e779a23492d8147426e4cec05cd187"
+   },
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "enhancements",
+   "id": "000009998003",
+   "side": "target",
+   "detachment": "Mercurial Host",
+   "name_en": "Intoxicating Musk",
+   "name_zh": "迷魂麝香",
+   "status": "partial",
+   "effects": [
+    {
+     "phase": "wound",
+     "op": "modify",
+     "params": [
+      -1
+     ],
+     "condition": [
+      "melee_wound_s_gt_t"
+     ],
+     "source": "迷魂麝香（近战被 S>T 攻击致伤 -1）"
+    }
+   ],
+   "requires_toggles": [
+    "defender_bearer_leading"
+   ],
+   "not_modeled_notes_zh": [
+    "近战限定 × S>T 延迟判定（复合 tag 防射击误放行）"
+   ],
+   "provenance": {
+    "current_text": "db enhancements.description id=000009998003",
+    "base_text": "Wahapedia 现文（PR7 工作单：FP 未触及或已滚入，11 版仍现行）",
+    "synthesis": "无需合成",
+    "text_sha256": "f223ba180e920b1f9f23aad0cc5cac974a75bde76b68aed19f091985517c51b2"
+   },
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "enhancements",
+   "id": "000009998004",
+   "side": "attacker",
+   "detachment": "Mercurial Host",
+   "name_en": "Tactical Perfection",
+   "name_zh": "完美战术",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "重新部署——部署域未建模"
+   ],
+   "provenance": {
+    "current_text": "db enhancements.description id=000009998004",
+    "base_text": "Wahapedia 现文（PR7 工作单：FP 未触及或已滚入，11 版仍现行）",
+    "synthesis": "无需合成",
+    "text_sha256": "64674cd3434c324ecf32a667322aa137cbef0e94c54449ad79cb794821259525"
+   },
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "enhancements",
+   "id": "000009998005",
+   "side": "attacker",
+   "detachment": "Mercurial Host",
+   "name_en": "Loathsome Dexterity",
+   "name_zh": "可憎灵巧",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "穿越敌模型移动——移动域未建模"
+   ],
+   "provenance": {
+    "current_text": "db enhancements.description id=000009998005",
+    "base_text": "Wahapedia 现文（PR7 工作单：FP 未触及或已滚入，11 版仍现行）",
+    "synthesis": "无需合成",
+    "text_sha256": "98611354f67bef41e1c17ebc2d57a9a0a846408a38e71a5653aefe1e6e648c3c"
+   },
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "enhancements",
+   "id": "000010002002",
+   "side": "attacker",
+   "detachment": "Peerless Bladesmen",
+   "name_en": "Faultless Opportunist",
+   "name_zh": "无瑕投机者",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "英雄干预 -1 CP 且不占用——CP 经济域未建模"
+   ],
+   "provenance": {
+    "current_text": "db enhancements.description id=000010002002",
+    "base_text": "FP Emperor S Children（PR7 fp_rules 已刷新为 11 版现行文本，工作单 drifted）",
+    "synthesis": "无需合成",
+    "text_sha256": "9fd2877b13ba0979967f4148ce23fbc89a4e62f950bd753d2d41d697813f1242"
+   },
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "enhancements",
+   "id": "000010002003",
+   "side": "attacker",
+   "detachment": "Peerless Bladesmen",
+   "name_en": "Blinding Speed",
+   "name_zh": "炫目神速",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "once per battle Fights First——先攻域由 fight_order 面板处理（可手动勾选）"
+   ],
+   "provenance": {
+    "current_text": "db enhancements.description id=000010002003",
+    "base_text": "Wahapedia 现文（PR7 工作单：FP 未触及或已滚入，11 版仍现行）",
+    "synthesis": "无需合成",
+    "text_sha256": "e6977caa74f5065339b2236ef33460324123d1177f62c855b719a1de1b4410bb"
+   },
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "enhancements",
+   "id": "000010002004",
+   "side": "attacker",
+   "detachment": "Peerless Bladesmen",
+   "name_en": "Distortion",
+   "name_zh": "扭曲",
+   "status": "partial",
+   "effects": [
+    {
+     "phase": "attacks",
+     "op": "modify",
+     "params": [
+      1
+     ],
+     "condition": [
+      "phase_melee"
+     ],
+     "source": "扭曲（近战武器 A+1）"
+    },
+    {
+     "phase": "damage",
+     "op": "modify",
+     "params": [
+      1
+     ],
+     "condition": [
+      "phase_melee"
+     ],
+     "source": "扭曲（近战武器 D+1）"
+    }
+   ],
+   "requires_toggles": [
+    "bearer_leading"
+   ],
+   "not_modeled_notes_zh": [
+    "限携带者相关武器/单位——单人物模拟准确，附属单位整体注入会高估"
+   ],
+   "provenance": {
+    "current_text": "db enhancements.description id=000010002004",
+    "base_text": "Wahapedia 现文（PR7 工作单：FP 未触及或已滚入，11 版仍现行）",
+    "synthesis": "无需合成",
+    "text_sha256": "a0330adfee0a65640aa7a867b128f87ef438811af04d4db9621a3e169e05d270"
+   },
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "enhancements",
+   "id": "000010002005",
+   "side": "attacker",
+   "detachment": "Peerless Bladesmen",
+   "name_en": "Rise to the Challenge",
+   "name_zh": "迎难而上",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "阶段末额外战斗一次——战斗序列域未建模"
+   ],
+   "provenance": {
+    "current_text": "db enhancements.description id=000010002005",
+    "base_text": "Wahapedia 现文（PR7 工作单：FP 未触及或已滚入，11 版仍现行）",
+    "synthesis": "无需合成",
+    "text_sha256": "9cc9a1a717e5f14b17e90b5d5014f704a2c5850b1ce741c592e7ef55c9b77a8c"
+   },
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "enhancements",
+   "id": "000010006002",
+   "side": "attacker",
+   "detachment": "Rapid Evisceration",
+   "name_en": "Sublime Prescience",
+   "name_zh": "超凡预见",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "预备队投放范围放宽——部署域未建模"
+   ],
+   "provenance": {
+    "current_text": "db enhancements.description id=000010006002",
+    "base_text": "Wahapedia 现文（PR7 工作单：FP 未触及或已滚入，11 版仍现行）",
+    "synthesis": "无需合成",
+    "text_sha256": "bcb3ba5cd63a32d1ce284363bcbf8aaa40d24b549d73233fd5df6cccc9c3bd80"
+   },
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "enhancements",
+   "id": "000010006003",
+   "side": "attacker",
+   "detachment": "Rapid Evisceration",
+   "name_en": "Spearhead Striker",
+   "name_zh": "先锋突袭者",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "下车冲锋重骰 + 免疫火力压制——移动/反应域未建模"
+   ],
+   "provenance": {
+    "current_text": "db enhancements.description id=000010006003",
+    "base_text": "Wahapedia 现文（PR7 工作单：FP 未触及或已滚入，11 版仍现行）",
+    "synthesis": "无需合成",
+    "text_sha256": "607b22c350c5ac93c8284cef5aa3f00568cb928587db23503f1d2782e363b66f"
+   },
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "enhancements",
+   "id": "000010006004",
+   "side": "attacker",
+   "detachment": "Rapid Evisceration",
+   "name_en": "Accomplished Tactician",
+   "name_zh": "娴熟战术家",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "受击后登车——运输域未建模"
+   ],
+   "provenance": {
+    "current_text": "db enhancements.description id=000010006004",
+    "base_text": "Wahapedia 现文（PR7 工作单：FP 未触及或已滚入，11 版仍现行）",
+    "synthesis": "无需合成",
+    "text_sha256": "62e1453754a9a00b5b24062aa4d307c0f43ff8fb45873405c607f19aabc3266d"
+   },
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "enhancements",
+   "id": "000010006005",
+   "side": "attacker",
+   "detachment": "Rapid Evisceration",
+   "name_en": "Heretek Adept",
+   "name_zh": "邪机专家",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "once per battle round 单次伤害改 0——单骰干预域未建模"
+   ],
+   "provenance": {
+    "current_text": "db enhancements.description id=000010006005",
+    "base_text": "Wahapedia 现文（PR7 工作单：FP 未触及或已滚入，11 版仍现行）",
+    "synthesis": "无需合成",
+    "text_sha256": "1dd7ac5595b6bcd493bf2f791f7fdf00c7610a617e4e1b70952dc16d6a0ae3e6"
+   },
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "enhancements",
+   "id": "000010018002",
+   "side": "attacker",
+   "detachment": "Slaanesh’s Chosen",
+   "name_en": "Eager to Prove",
+   "name_zh": "急于证明",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "冲锋重骰与 +2\" M——移动域未建模"
+   ],
+   "provenance": {
+    "current_text": "db enhancements.description id=000010018002",
+    "base_text": "Wahapedia 现文（PR7 工作单：FP 未触及或已滚入，11 版仍现行）",
+    "synthesis": "无需合成",
+    "text_sha256": "ec5241bb0a0125d854d5e504dd8ebf6b3a34b8c2fff57fe2bfb7e2320289d15c"
+   },
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "enhancements",
+   "id": "000010018003",
+   "side": "attacker",
+   "detachment": "Slaanesh’s Chosen",
+   "name_en": "Repulsed by Weakness",
+   "name_zh": "厌弃孱弱",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "撤退 desperate escape——撤退域未建模"
+   ],
+   "provenance": {
+    "current_text": "db enhancements.description id=000010018003",
+    "base_text": "Wahapedia 现文（PR7 工作单：FP 未触及或已滚入，11 版仍现行）",
+    "synthesis": "无需合成",
+    "text_sha256": "3709f791009eebf3e2abb5fef69a1592e21f718432cff5f851595a6e75adefbf"
+   },
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "enhancements",
+   "id": "000010018004",
+   "side": "attacker",
+   "detachment": "Slaanesh’s Chosen",
+   "name_en": "Proud and Vainglorious",
+   "name_zh": "傲慢虚荣",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "士气重骰与 OC——士气/目标点域未建模"
+   ],
+   "provenance": {
+    "current_text": "db enhancements.description id=000010018004",
+    "base_text": "Wahapedia 现文（PR7 工作单：FP 未触及或已滚入，11 版仍现行）",
+    "synthesis": "无需合成",
+    "text_sha256": "b1e951aef2da38e5d66c729ed492f470c9779b195c77b8a97453be477905209b"
+   },
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "enhancements",
+   "id": "000010018005",
+   "side": "attacker",
+   "detachment": "Slaanesh’s Chosen",
+   "name_en": "Slayer of Champions",
+   "name_zh": "弑冠军者",
+   "status": "partial",
+   "effects": [
+    {
+     "phase": "wound",
+     "op": "s_improve",
+     "params": [
+      1
+     ],
+     "condition": [
+      "melee_target_has_keyword",
+      "character"
+     ],
+     "source": "弑冠军者（近战对 CHARACTER +1 S，特征值通道）"
+    },
+    {
+     "phase": "save",
+     "op": "ap_improve",
+     "params": [
+      1
+     ],
+     "condition": [
+      "melee_target_has_keyword",
+      "character"
+     ],
+     "source": "弑冠军者（近战对 CHARACTER AP 改善 1）"
+    }
+   ],
+   "requires_toggles": [
+    "bearer_leading"
+   ],
+   "not_modeled_notes_zh": [
+    "[PRECISION] 攻击分配域未建模；限携带者相关武器/单位——单人物模拟准确，附属单位整体注入会高估"
+   ],
+   "provenance": {
+    "current_text": "db enhancements.description id=000010018005",
+    "base_text": "Wahapedia 现文（PR7 工作单：FP 未触及或已滚入，11 版仍现行）",
+    "synthesis": "无需合成",
+    "text_sha256": "648203afb39dcd4bad8cfff4bedc38bd9cbd9012052c237e2b5b2220e9233022"
+   },
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "enhancements",
+   "id": "000010808002",
+   "side": "attacker",
+   "detachment": "Sublime Strike",
+   "name_en": "Venom of the Six-fanged Serpent",
+   "name_zh": null,
+   "status": "partial",
+   "effects": [
+    {
+     "phase": "wound",
+     "op": "s_improve",
+     "params": [
+      1
+     ],
+     "condition": [
+      "phase_melee"
+     ],
+     "source": "六牙蛇毒（近战武器 S+1，特征值通道）"
+    },
+    {
+     "phase": "damage",
+     "op": "modify",
+     "params": [
+      1
+     ],
+     "condition": [
+      "phase_melee"
+     ],
+     "source": "六牙蛇毒（近战武器 D+1）"
+    },
+    {
+     "phase": "save",
+     "op": "ap_improve",
+     "params": [
+      2
+     ],
+     "condition": [
+      "phase_melee"
+     ],
+     "source": "六牙蛇毒（近战武器 AP 改善 2）"
+    }
+   ],
+   "requires_toggles": [
+    "bearer_leading"
+   ],
+   "not_modeled_notes_zh": [
+    "限携带者相关武器/单位——单人物模拟准确，附属单位整体注入会高估"
+   ],
+   "provenance": {
+    "current_text": "db enhancements.description id=000010808002",
+    "base_text": "Wahapedia 现文（PR7 工作单：FP 未触及或已滚入，11 版仍现行）",
+    "synthesis": "无需合成",
+    "text_sha256": "354beb2a4532fa531be2e47ca1c82840fbc103579acf33b57f314c447d35bf93"
+   },
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "enhancements",
+   "id": "000010808003",
+   "side": "attacker",
+   "detachment": "Sublime Strike",
+   "name_en": "Daemonshrieker",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "开舱门——地形域未建模"
+   ],
+   "provenance": {
+    "current_text": "db enhancements.description id=000010808003",
+    "base_text": "Wahapedia 现文（PR7 工作单：FP 未触及或已滚入，11 版仍现行）",
+    "synthesis": "无需合成",
+    "text_sha256": "8224148782a3e554dda470b1f45c9470d61705cf713f3a4d9d32cacfd8575bb5"
+   },
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "enhancements",
+   "id": "000010654002",
+   "side": "attacker",
+   "detachment": "Court of the Phoenician",
+   "name_en": "Tears of the Phoenix",
+   "name_zh": "凤凰之泪",
+   "status": "partial",
+   "effects": [
+    {
+     "phase": "hit",
+     "op": "ignore_hit_mods",
+     "params": [],
+     "condition": [
+      "phase_melee"
+     ],
+     "source": "凤凰之泪（近战忽略 WS/命中骰修正）"
+    }
+   ],
+   "requires_toggles": [
+    "bearer_leading"
+   ],
+   "not_modeled_notes_zh": [
+    "致伤骰修正忽略无引擎通道——未建模（命中侧按最优策略只忽略不利修正）"
+   ],
+   "provenance": {
+    "current_text": "db enhancements.description id=000010654002",
+    "base_text": "Wahapedia 现文（PR7 工作单：FP 未触及或已滚入，11 版仍现行）",
+    "synthesis": "无需合成",
+    "text_sha256": "bbf355f88bbb78f316b26946ca8e4bb08505c9b34e001420fa34f867fcde378b"
+   },
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "enhancements",
+   "id": "000010654003",
+   "side": "attacker",
+   "detachment": "Court of the Phoenician",
+   "name_en": "Exalted Patron",
+   "name_zh": "尊崇恩主",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "+1\" M 与编队搭配——移动/军表域未建模"
+   ],
+   "provenance": {
+    "current_text": "db enhancements.description id=000010654003",
+    "base_text": "Wahapedia 现文（PR7 工作单：FP 未触及或已滚入，11 版仍现行）",
+    "synthesis": "无需合成",
+    "text_sha256": "148b0f80fd7838e879ad42e70f0d5cf0028779767fb33d019a69c42ffc451800"
+   },
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "enhancements",
+   "id": "000010654004",
+   "side": "attacker",
+   "detachment": "Court of the Phoenician",
+   "name_en": "Soulstain Made Manifest",
+   "name_zh": "魂污显形",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "战斗震慑测试——士气域未建模"
+   ],
+   "provenance": {
+    "current_text": "db enhancements.description id=000010654004",
+    "base_text": "Wahapedia 现文（PR7 工作单：FP 未触及或已滚入，11 版仍现行）",
+    "synthesis": "无需合成",
+    "text_sha256": "0df59438e229c46f4baf4e1f579e448a53760e9ae387a103fbe8641b8228bd1d"
+   },
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "enhancements",
+   "id": "000010654005",
+   "side": "attacker",
+   "detachment": "Court of the Phoenician",
+   "name_en": "Spiritsliver",
+   "name_zh": "裂魂刃",
+   "status": "partial",
+   "effects": [
+    {
+     "phase": "wound",
+     "op": "s_improve",
+     "params": [
+      1
+     ],
+     "condition": [
+      "phase_melee"
+     ],
+     "source": "裂魂刃（近战武器 S+1，特征值通道）"
+    },
+    {
+     "phase": "attacks",
+     "op": "modify",
+     "params": [
+      1
+     ],
+     "condition": [
+      "phase_melee"
+     ],
+     "source": "裂魂刃（近战武器 A+1）"
+    }
+   ],
+   "requires_toggles": [
+    "bearer_leading"
+   ],
+   "not_modeled_notes_zh": [
+    "限恶魔亲王模型；限携带者相关武器/单位——单人物模拟准确，附属单位整体注入会高估"
+   ],
+   "provenance": {
+    "current_text": "db enhancements.description id=000010654005",
+    "base_text": "Wahapedia 现文（PR7 工作单：FP 未触及或已滚入，11 版仍现行）",
+    "synthesis": "无需合成",
+    "text_sha256": "82815cc695423570ad26f8845a1171ea1e63730e7aafb417b271ff3e82e0f1d4"
+   },
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "enhancements",
+   "id": "fp11e-ec-brutes-e1",
+   "side": "attacker",
+   "detachment": "Elegant Brutes",
+   "name_en": "Cacophonic Accompaniment",
+   "name_zh": "刺耳伴奏",
+   "status": "partial",
+   "effects": [
+    {
+     "phase": "save",
+     "op": "ignores_cover",
+     "params": [],
+     "condition": [
+      "phase_shooting"
+     ],
+     "source": "刺耳伴奏（本单位远程攻击 [无视掩体]）"
+    }
+   ],
+   "requires_toggles": [
+    "bearer_leading"
+   ],
+   "not_modeled_notes_zh": [
+    "Deep Strike 部署域未建模；限爆音领主携带"
+   ],
+   "provenance": {
+    "current_text": "db enhancements.description id=fp11e-ec-brutes-e1",
+    "base_text": "FP Emperor S Children（PR7 fp_rules inserts 补录，Wahapedia 无源）",
+    "synthesis": "无需合成",
+    "text_sha256": "f17acd528d7a792394ab2a8d1ec4dee81cc94f4cce4b4d6828889139d5e844db"
+   },
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "enhancements",
+   "id": "fp11e-ec-brutes-e2",
+   "side": "attacker",
+   "detachment": "Elegant Brutes",
+   "name_en": "Frenzied Ferocity",
+   "name_zh": "狂乱凶暴",
+   "status": "partial",
+   "effects": [
+    {
+     "phase": "hit",
+     "op": "extra_hits",
+     "params": [
+      1
+     ],
+     "condition": [],
+     "source": "狂乱凶暴（攻击 [SUSTAINED HITS 1]）"
+    }
+   ],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "限 EC TERMINATOR SQUAD 单位（点名即声明）；两相位均适用"
+   ],
+   "provenance": {
+    "current_text": "db enhancements.description id=fp11e-ec-brutes-e2",
+    "base_text": "FP Emperor S Children（PR7 fp_rules inserts 补录，Wahapedia 无源）",
+    "synthesis": "无需合成",
+    "text_sha256": "b32e619aa6d0a508e6d53c263868bca80a1042fa625c6a2881ebe31725efa1c9"
+   },
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "enhancements",
+   "id": "fp11e-ec-host-e1",
+   "side": "attacker",
+   "detachment": "Frenzied Host",
+   "name_en": "Euphoric Crown",
+   "name_zh": "欣快之冠",
+   "status": "partial",
+   "effects": [
+    {
+     "phase": "wound",
+     "op": "s_improve",
+     "params": [
+      1
+     ],
+     "condition": [
+      "phase_melee"
+     ],
+     "source": "欣快之冠（携带者近战 +1 S，特征值通道）"
+    }
+   ],
+   "requires_toggles": [
+    "bearer_leading"
+   ],
+   "not_modeled_notes_zh": [
+    "限极乐领主；限携带者相关武器/单位——单人物模拟准确，附属单位整体注入会高估"
+   ],
+   "provenance": {
+    "current_text": "db enhancements.description id=fp11e-ec-host-e1",
+    "base_text": "FP Emperor S Children（PR7 fp_rules inserts 补录，Wahapedia 无源）",
+    "synthesis": "无需合成",
+    "text_sha256": "535c833a5a9e39c05c8d7abf0794a4276e44da7698de8e11277f31ded0acf603"
+   },
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "enhancements",
+   "id": "fp11e-ec-host-e2",
+   "side": "attacker",
+   "detachment": "Frenzied Host",
+   "name_en": "Howling Plate",
+   "name_zh": "嚎啸战甲",
+   "status": "partial",
+   "effects": [
+    {
+     "phase": "save",
+     "op": "ap_improve",
+     "params": [
+      1
+     ],
+     "condition": [
+      "phase_shooting"
+     ],
+     "source": "嚎啸战甲（本单位远程攻击 AP 改善 1）"
+    }
+   ],
+   "requires_toggles": [
+    "bearer_leading"
+   ],
+   "not_modeled_notes_zh": [
+    "限极乐领主携带（效果面为携带者所在单位）"
+   ],
+   "provenance": {
+    "current_text": "db enhancements.description id=fp11e-ec-host-e2",
+    "base_text": "FP Emperor S Children（PR7 fp_rules inserts 补录，Wahapedia 无源）",
+    "synthesis": "无需合成",
+    "text_sha256": "dcaa92fc000f17b193cb54c5ef172ae17f54df4535ff9abc2f2e9cdb7276a471"
+   },
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "enhancements",
+   "id": "fp11e-ec-spectacle-e1",
+   "side": "attacker",
+   "detachment": "Spectacle of Slaughter",
+   "name_en": "Eager Patrons",
+   "name_zh": "急切恩主",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "+2\" M——移动域未建模"
+   ],
+   "provenance": {
+    "current_text": "db enhancements.description id=fp11e-ec-spectacle-e1",
+    "base_text": "FP Emperor S Children（PR7 fp_rules inserts 补录，Wahapedia 无源）",
+    "synthesis": "无需合成",
+    "text_sha256": "e37bc73aa386c37a5ad135f3a1ea4badf3c37ce1f9f53d972c95a4f41438fe4b"
+   },
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "enhancements",
+   "id": "fp11e-ec-spectacle-e2",
+   "side": "attacker",
+   "detachment": "Spectacle of Slaughter",
+   "name_en": "Beguiling Grotesquerie",
+   "name_zh": "惑人怪貌",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "免疫 snap shooting 指名——目标选择域未建模"
+   ],
+   "provenance": {
+    "current_text": "db enhancements.description id=fp11e-ec-spectacle-e2",
+    "base_text": "FP Emperor S Children（PR7 fp_rules inserts 补录，Wahapedia 无源）",
+    "synthesis": "无需合成",
+    "text_sha256": "025ac7026f1da463b69a3d0e79da7eeab2cb1a2d1658ebfacc0e069d84f183a9"
+   },
+   "encoded_by": "manual-2026-07-19"
+  }
+ ]
+}

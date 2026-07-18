@@ -400,6 +400,116 @@
    "to_text": "At the start of the battle, you can set up one Teleport Homer token for this unit anywhere on the battlefield that is not in your opponent’s deployment zone. If you do, once per battle, you can target this unit with the Rapid Ingress Stratagem for 0CP, but when resolving that Stratagem, you must set this unit up within 3\" of that token and not within 8\" of any enemy models. That token is then removed.",
    "fp_source": "Faction Pack Black Templars page_005.md",
    "synthesis": "外科：敌方模型 9 寸外 → 8 寸外；DA/DW 等其他战团共享同名技能行不在 BT FP 授权范围（留 SM FP 铺量时处理）"
+  },
+  {
+   "table": "stratagems",
+   "column": "text_zh",
+   "id": "000010655007",
+   "name_en": "CATALYTIC STIMULUS",
+   "from_text": "<b>WHEN:</b> Your opponent’s Shooting phase, just after an enemy unit has shot.<br><br><b>TARGET:</b> One Emperor’s Children unit from your army that lost one or more wounds as a result of those attacks.<br><br><b>EFFECT:</b> Your unit can make a Stimulus move. To do so, roll one D6: models in your unit move a number of inches up to the result, but your unit must end that move as close as possible to the closest enemy unit (excluding <span class=\"kwb\">AIRCRAFT</span>). When doing so, those models can be moved within Engagement Range of that enemy unit.",
+   "to_text": "<b>WHEN:</b> Your opponent’s Shooting phase, just after an enemy unit has shot.<br><br><b>TARGET:</b> One Emperor’s Children unit from your army that lost one or more wounds as a result of those attacks.<br><br><b>EFFECT:</b> Your unit can make a surge move of up to D6\".",
+   "fp_source": "Faction Pack Emperor S Children page_006.md（完整重印）",
+   "synthesis": "EFFECT 整替：Stimulus move 自带流程 → 11 版核心 surge move up to D6 寸；WHEN/TARGET 原文保留"
+  },
+  {
+   "table": "stratagems",
+   "column": "cp_cost",
+   "id": "000010655003",
+   "name_en": "PRIDEFUL SUPERIORITY",
+   "from_text": "2",
+   "to_text": "1",
+   "fp_source": "Faction Pack Emperor S Children page_006.md（完整重印）",
+   "synthesis": "重印 CP 互换：2→1（与 CONTEMPTUOUS DISREGARD 对调）"
+  },
+  {
+   "table": "stratagems",
+   "column": "cp_cost",
+   "id": "000010655002",
+   "name_en": "CONTEMPTUOUS DISREGARD",
+   "from_text": "1",
+   "to_text": "2",
+   "fp_source": "Faction Pack Emperor S Children page_006.md（完整重印）",
+   "synthesis": "重印 CP 互换：1→2"
+  },
+  {
+   "table": "enhancements",
+   "column": "description",
+   "id": "000010010002",
+   "name_en": "Empyric Suffusion",
+   "from_text": "Emperor’s Children model only. Once per battle round, you can target one friendly Slaanesh unit within 6\" of the bearer with the Heroic Intervention Stratagem for 0CP.",
+   "to_text": "<span class=\"kwb\">EMPEROR’S CHILDREN</span> model only. When you target this unit with the Heroic Intervention stratagem, that use is -1 CP.",
+   "fp_source": "Faction Pack Emperor S Children page_009.md",
+   "synthesis": "整替：0CP 英雄干预（6 寸内友军色孽单位）→ 本单位被英雄干预时该次 -1 CP"
+  },
+  {
+   "table": "stratagems",
+   "column": "text_zh",
+   "id": "000010015007",
+   "name_en": "ARMOUR OF ABHORRENCE",
+   "from_text": "<b>WHEN:</b> Your opponent’s Shooting phase or the Fight phase, just after an enemy unit has selected its targets.<br><br><b>TARGET:</b> One Emperor’s Children unit from your army that was selected as the target of one or more of the attacking unit’s attacks.<br><br><b>EFFECT:</b> Until the attacking unit has finished making its attacks, each time an attack targets a model in your unit, worsen the Armour Penetration characteristic of that attack by 1.",
+   "to_text": "<b>WHEN:</b> Your opponent’s Shooting phase or the Fight phase, just after an enemy unit has selected its targets.<br><br><b>TARGET:</b> One Emperor’s Children unit from your army that was selected as the target of one or more of the attacking unit’s attacks.<br><br><b>EFFECT:</b> Until the attacking unit has finished making its attacks, each time an attack targets your unit, worsen the Armour Penetration characteristic of that attack by 1.",
+   "fp_source": "Faction Pack Emperor S Children page_009.md",
+   "synthesis": "EFFECT 整替：targets a model in your unit → targets your unit（11 版口径）"
+  },
+  {
+   "table": "stratagems",
+   "column": "text_zh",
+   "id": "000009999005",
+   "name_en": "DARK VIGOUR",
+   "from_text": "<b>WHEN:</b> Your opponent’s Movement phase, just after an enemy unit ends a Normal, Advance or Fall Back move.<br><br><b>TARGET:</b> One Emperor’s Children unit from your army (excluding Beasts and Vehicles) that is within 9\" of the enemy unit that just ended that move.<br><br><b>EFFECT:</b> Your unit can make a Normal move of up to 6\".",
+   "to_text": "<b>WHEN:</b> Your opponent’s Movement phase, just after an enemy unit ends a Normal, Advance or Fall Back move.<br><br><b>TARGET:</b> One Emperor’s Children unit from your army (excluding Beasts and Vehicles) that is within 8\" of the enemy unit that just ended that move.<br><br><b>EFFECT:</b> Your unit can make a Normal move of up to 6\".",
+   "fp_source": "Faction Pack Emperor S Children page_009.md",
+   "synthesis": "外科：TARGET 段 9 寸→8 寸"
+  },
+  {
+   "table": "enhancements",
+   "column": "description",
+   "id": "000010002002",
+   "name_en": "Faultless Opportunist",
+   "from_text": "Emperor’s Children model only. You can target the bearer’s unit with the Heroic Intervention Stratagem for 0CP, and can do so even if you have already targeted a different unit with that Stratagem this phase.",
+   "to_text": "You can target this unit with the Heroic Intervention stratagem, regardless of any other uses of that stratagem this phase. If you do:<ul><li>That use is -1 CP.</li><li>That use does not prevent any uses of that stratagem on other units this phase.</li></ul>",
+   "fp_source": "Faction Pack Emperor S Children page_009.md",
+   "synthesis": "整替：0CP 可重复 → -1 CP 且不占用其他单位的使用"
+  },
+  {
+   "table": "stratagems",
+   "column": "text_zh",
+   "id": "000010019007",
+   "name_en": "VENGEFUL SURGE",
+   "from_text": "<b>WHEN:</b> Your opponent’s Shooting phase, just after an enemy unit has selected its targets.<br><br><b>TARGET:</b> One Emperor’s Children Character unit from your army that was selected as the target of one or more of the attacking unit’s attacks.<br><br><b>EFFECT:</b> After the attacking unit has shot, your unit can make a Surge move. To do so, roll one D6: each model in your unit can move a distance in inches up to the result, but your unit must end that move as close as possible to the closest enemy unit. When doing so, those models can be moved within Engagement Range of that enemy unit. If your unit is not your army’s Favoured Champions, you can re-roll the dice to determine the distance of its Surge move.",
+   "to_text": "<b>WHEN:</b> Your opponent’s Shooting phase, just after an enemy unit has selected its targets.<br><br><b>TARGET:</b> One Emperor’s Children Character unit from your army that was selected as the target of one or more of the attacking unit’s attacks.<br><br><b>EFFECT:</b> Your unit can make a surge move of up to D6\". If your unit is not your army’s Favoured Champions, you can re-roll the dice to determine the distance of that surge move.",
+   "fp_source": "Faction Pack Emperor S Children page_009.md",
+   "synthesis": "EFFECT 整替：Surge move 自带流程 → 11 版核心 surge move D6 寸 + 非神眷冠军可重骰距离"
+  },
+  {
+   "table": "stratagems",
+   "column": "text_zh",
+   "id": "000010019006",
+   "name_en": "REFUSAL TO BE OUTDONE",
+   "from_text": "<b>WHEN:</b> Your Charge phase.<br><br><b>TARGET:</b> One Emperor’s Children Character unit from your army.<br><br><b>EFFECT:</b> Select one enemy unit within Engagement Range of one or more units from your army. Until the end of the phase, each time your unit declares a charge, if that enemy unit is one of the targets of that charge, add 2 to the Charge roll.",
+   "to_text": "<b>WHEN:</b> Your Charge phase, when a friendly <span class=\"kwb\">EMPEROR’S CHILDREN</span> <span class=\"kwb\">CHARACTER</span> unit within 12\" of an engaged enemy unit declares a charge.<br><br><b>TARGET:</b> That EMPEROR’S CHILDREN CHARACTER unit.<br><br><b>EFFECT:</b><ul><li>Your unit can re-roll charge rolls.</li><li>Your unit must end that charge move engaged with one or more of those enemy units.</li></ul>",
+   "fp_source": "Faction Pack Emperor S Children page_009.md",
+   "synthesis": "整替：+2 冲锋骰 → 12 寸内接战敌军宣冲可重骰冲锋 + 必须接战（BT 誓言同款结构）"
+  },
+  {
+   "table": "abilities",
+   "column": "text_zh",
+   "id": "000004090_a1",
+   "name_en": "Scuttling Horrors",
+   "from_text": "Once per turn, when an enemy unit ends a Normal, Advance or Fall Back move within 9\" of this unit, this unit can make a Normal move of up to 6\".",
+   "to_text": "In your opponent’s Movement phase, if an enemy unit ends a move within 8\" of this unit, if this unit is not within Engagement Range of one or more enemy units, this unit can make a Normal move of up to 6\".",
+   "fp_source": "Faction Pack Emperor S Children page_009.md",
+   "synthesis": "整替：once per turn 9 寸内 → 对方移动阶段 8 寸内 + 自身未接战"
+  },
+  {
+   "table": "abilities",
+   "column": "text_zh",
+   "id": "000004081_a1",
+   "name_en": "Lethal Obsession",
+   "from_text": "In your Shooting phase, each time this unit is selected to shoot, if it makes one or more ranged attacks and all of those attacks target the same enemy unit, until the end of the turn, each time this unit declares a charge, if that enemy unit is a target of that charge, you can re-roll the Charge roll.",
+   "to_text": "In your Shooting phase, after this unit has shot, you can use this ability. If you do, select one enemy unit hit by those ranged attacks. Until the end of the turn, when this unit declares a charge:<ul><li>This unit can re-roll that charge roll.</li><li>This unit must end that charge move engaged with that enemy unit.</li></ul>",
+   "fp_source": "Faction Pack Emperor S Children page_009.md",
+   "synthesis": "整替：全弹同目标冲锋重骰 → 射击后选一被命中单位（冲锋重骰 + 必须接战之）"
   }
  ],
  "name_patches": [
@@ -1522,6 +1632,414 @@
    "name_zh": "虔诚之声",
    "zh_source": "codex-10e",
    "evidence": "双子星 page_013：愤怒巡游队战略，中英文效果同源"
+  },
+  {
+   "table": "abilities",
+   "id": "000009994",
+   "name_en": "Thrill Seekers",
+   "name_zh": "嗜欲恶徒",
+   "zh_source": "codex-10e",
+   "evidence": "老湿腐 page_001：种族规则嗜欲恶徒——加速/撤退回合仍可射击冲锋（带两限制），同源"
+  },
+  {
+   "table": "detachments",
+   "id": "000009997",
+   "name_en": "Quicksilver Grace",
+   "name_zh": "优雅狂速",
+   "zh_source": "codex-10e",
+   "evidence": "老湿腐 page_008：水银邪军 分队基础能力，中英文机制同源"
+  },
+  {
+   "table": "detachments",
+   "id": "000010001",
+   "name_en": "Exquisite Swordsmanship",
+   "name_zh": "绝伦剑术",
+   "zh_source": "codex-10e",
+   "evidence": "老湿腐 page_014：无双剑客 分队基础能力，中英文机制同源"
+  },
+  {
+   "table": "detachments",
+   "id": "000010005",
+   "name_en": "Mechanised Murder",
+   "name_zh": "机械化屠戮",
+   "zh_source": "codex-10e",
+   "evidence": "老湿腐 page_011：开膛车履 分队基础能力，中英文机制同源"
+  },
+  {
+   "table": "detachments",
+   "id": "000010009",
+   "name_en": "Daemonic Empowerment",
+   "name_zh": "魔性强化",
+   "zh_source": "codex-10e",
+   "evidence": "老湿腐 page_017：纵欲狂欢 分队基础能力，中英文机制同源"
+  },
+  {
+   "table": "detachments",
+   "id": "000010013",
+   "name_en": "Pledges to the Dark Prince",
+   "name_zh": "敬献黑暗亲王",
+   "zh_source": "codex-10e",
+   "evidence": "老湿腐 page_002：自负骄子 分队基础能力，中英文机制同源"
+  },
+  {
+   "table": "detachments",
+   "id": "000010017",
+   "name_en": "Internal Rivalries",
+   "name_zh": "斗技争宠",
+   "zh_source": "codex-10e",
+   "evidence": "老湿腐 page_005：色孽宠儿 分队基础能力，中英文机制同源"
+  },
+  {
+   "table": "detachments",
+   "id": "000010652",
+   "name_en": "Sensational Performance",
+   "name_zh": "惊艳献演",
+   "zh_source": "self-translation-11e",
+   "evidence": "凤凰王庭分队规则（Wahapedia 已收录 11 版内容，codex 无源自译）"
+  },
+  {
+   "table": "detachments",
+   "id": "000010653",
+   "name_en": "Master of the Pageant",
+   "name_zh": "盛典主宰",
+   "zh_source": "self-translation-11e",
+   "evidence": "凤凰王庭第二规则（Fulgrim 战略减费，自译）"
+  },
+  {
+   "table": "stratagems",
+   "id": "000010011002",
+   "name_en": "SUSTAINED BY AGONY",
+   "name_zh": "痛苦滋养",
+   "zh_source": "codex-10e",
+   "evidence": "老湿腐帝皇之子 V1.05 中英对照标题（EN 笔误已按 DB 名归一），效果同源"
+  },
+  {
+   "table": "stratagems",
+   "id": "000010011003",
+   "name_en": "ECSTATIC SLAUGHTER",
+   "name_zh": "狂喜屠戮",
+   "zh_source": "codex-10e",
+   "evidence": "老湿腐帝皇之子 V1.05 中英对照标题（EN 笔误已按 DB 名归一），效果同源"
+  },
+  {
+   "table": "stratagems",
+   "id": "000010011004",
+   "name_en": "VIOLENT CRESCENDO",
+   "name_zh": "暴虐渐强",
+   "zh_source": "codex-10e",
+   "evidence": "老湿腐帝皇之子 V1.05 中英对照标题（EN 笔误已按 DB 名归一），效果同源"
+  },
+  {
+   "table": "stratagems",
+   "id": "000010011005",
+   "name_en": "SYCOPHANTIC SURGE",
+   "name_zh": "取悦狂涌",
+   "zh_source": "codex-10e",
+   "evidence": "老湿腐帝皇之子 V1.05 中英对照标题（EN 笔误已按 DB 名归一），效果同源"
+  },
+  {
+   "table": "stratagems",
+   "id": "000010011006",
+   "name_en": "UNCANNY REACTIONS",
+   "name_zh": "超凡反应",
+   "zh_source": "codex-10e",
+   "evidence": "老湿腐帝皇之子 V1.05 中英对照标题（EN 笔误已按 DB 名归一），效果同源"
+  },
+  {
+   "table": "stratagems",
+   "id": "000010011007",
+   "name_en": "DARK APPARITIONS",
+   "name_zh": "黑暗幻影",
+   "zh_source": "codex-10e",
+   "evidence": "老湿腐帝皇之子 V1.05 中英对照标题（EN 笔误已按 DB 名归一），效果同源"
+  },
+  {
+   "table": "stratagems",
+   "id": "000010015002",
+   "name_en": "PROTECTION OF THE DARK PRINCE",
+   "name_zh": "黑暗王子庇佑",
+   "zh_source": "codex-10e",
+   "evidence": "老湿腐帝皇之子 V1.05 中英对照标题（EN 笔误已按 DB 名归一），效果同源"
+  },
+  {
+   "table": "stratagems",
+   "id": "000010015003",
+   "name_en": "UNSHAKEABLE OPPONENTS",
+   "name_zh": "难撼恶敌",
+   "zh_source": "codex-10e",
+   "evidence": "老湿腐帝皇之子 V1.05 中英对照标题（EN 笔误已按 DB 名归一），效果同源"
+  },
+  {
+   "table": "stratagems",
+   "id": "000010015004",
+   "name_en": "EMBRACE THE PAIN",
+   "name_zh": "拥抱痛楚",
+   "zh_source": "codex-10e",
+   "evidence": "老湿腐帝皇之子 V1.05 中英对照标题（EN 笔误已按 DB 名归一），效果同源"
+  },
+  {
+   "table": "stratagems",
+   "id": "000010015005",
+   "name_en": "MARTIAL PERFECTION",
+   "name_zh": "至臻武艺",
+   "zh_source": "codex-10e",
+   "evidence": "老湿腐帝皇之子 V1.05 中英对照标题（EN 笔误已按 DB 名归一），效果同源"
+  },
+  {
+   "table": "stratagems",
+   "id": "000010015006",
+   "name_en": "UNBOUND ARROGANCE",
+   "name_zh": "不羁狂傲",
+   "zh_source": "codex-10e",
+   "evidence": "老湿腐帝皇之子 V1.05 中英对照标题（EN 笔误已按 DB 名归一），效果同源"
+  },
+  {
+   "table": "stratagems",
+   "id": "000010015007",
+   "name_en": "ARMOUR OF ABHORRENCE",
+   "name_zh": "恶孽甲胄",
+   "zh_source": "codex-10e",
+   "evidence": "老湿腐帝皇之子 V1.05 中英对照标题（EN 笔误已按 DB 名归一），效果同源"
+  },
+  {
+   "table": "stratagems",
+   "id": "000009999002",
+   "name_en": "VIOLENT EXCESS",
+   "name_zh": "纵暴极欲",
+   "zh_source": "codex-10e",
+   "evidence": "老湿腐帝皇之子 V1.05 中英对照标题（EN 笔误已按 DB 名归一），效果同源"
+  },
+  {
+   "table": "stratagems",
+   "id": "000009999003",
+   "name_en": "COMBAT STIMMS",
+   "name_zh": "战斗药剂",
+   "zh_source": "codex-10e",
+   "evidence": "老湿腐帝皇之子 V1.05 中英对照标题（EN 笔误已按 DB 名归一），效果同源"
+  },
+  {
+   "table": "stratagems",
+   "id": "000009999004",
+   "name_en": "HONOUR THE PRINCE",
+   "name_zh": "荣归黑暗王子",
+   "zh_source": "codex-10e",
+   "evidence": "老湿腐帝皇之子 V1.05 中英对照标题（EN 笔误已按 DB 名归一），效果同源"
+  },
+  {
+   "table": "stratagems",
+   "id": "000009999005",
+   "name_en": "DARK VIGOUR",
+   "name_zh": "黑暗活力",
+   "zh_source": "codex-10e",
+   "evidence": "老湿腐帝皇之子 V1.05 中英对照标题（EN 笔误已按 DB 名归一），效果同源"
+  },
+  {
+   "table": "stratagems",
+   "id": "000009999006",
+   "name_en": "CAPRICIOUS REACTIONS",
+   "name_zh": "莫测反应",
+   "zh_source": "codex-10e",
+   "evidence": "老湿腐帝皇之子 V1.05 中英对照标题（EN 笔误已按 DB 名归一），效果同源"
+  },
+  {
+   "table": "stratagems",
+   "id": "000009999007",
+   "name_en": "CRUEL RAIDERS",
+   "name_zh": "劫掠暴徒",
+   "zh_source": "codex-10e",
+   "evidence": "老湿腐帝皇之子 V1.05 中英对照标题（EN 笔误已按 DB 名归一），效果同源"
+  },
+  {
+   "table": "stratagems",
+   "id": "000010007002",
+   "name_en": "ONTO THE NEXT",
+   "name_zh": "奔赴屠场",
+   "zh_source": "codex-10e",
+   "evidence": "老湿腐帝皇之子 V1.05 中英对照标题（EN 笔误已按 DB 名归一），效果同源"
+  },
+  {
+   "table": "stratagems",
+   "id": "000010007003",
+   "name_en": "ADVANCE AND CLAIM",
+   "name_zh": "突击占领",
+   "zh_source": "codex-10e",
+   "evidence": "老湿腐帝皇之子 V1.05 中英对照标题（EN 笔误已按 DB 名归一），效果同源"
+  },
+  {
+   "table": "stratagems",
+   "id": "000010007004",
+   "name_en": "DYNAMIC BREAKTHROUGH",
+   "name_zh": "势如破竹",
+   "zh_source": "codex-10e",
+   "evidence": "老湿腐帝皇之子 V1.05 中英对照标题（EN 笔误已按 DB 名归一），效果同源"
+  },
+  {
+   "table": "stratagems",
+   "id": "000010007005",
+   "name_en": "CEASELESS ONSLAUGHT",
+   "name_zh": "不息攻势",
+   "zh_source": "codex-10e",
+   "evidence": "老湿腐帝皇之子 V1.05 中英对照标题（EN 笔误已按 DB 名归一），效果同源"
+  },
+  {
+   "table": "stratagems",
+   "id": "000010007006",
+   "name_en": "REACTIVE DISEMBARKATION",
+   "name_zh": "应变脱离",
+   "zh_source": "codex-10e",
+   "evidence": "老湿腐帝皇之子 V1.05 中英对照标题（EN 笔误已按 DB 名归一），效果同源"
+  },
+  {
+   "table": "stratagems",
+   "id": "000010007007",
+   "name_en": "OUTFLANKING STRIKE",
+   "name_zh": "侧翼打击",
+   "zh_source": "codex-10e",
+   "evidence": "老湿腐帝皇之子 V1.05 中英对照标题（EN 笔误已按 DB 名归一），效果同源"
+  },
+  {
+   "table": "stratagems",
+   "id": "000010003002",
+   "name_en": "DEFT PARRY",
+   "name_zh": "迅捷招架",
+   "zh_source": "codex-10e",
+   "evidence": "老湿腐帝皇之子 V1.05 中英对照标题（EN 笔误已按 DB 名归一），效果同源"
+  },
+  {
+   "table": "stratagems",
+   "id": "000010003003",
+   "name_en": "DEATH ECSTASY",
+   "name_zh": "濒死狂欢",
+   "zh_source": "codex-10e",
+   "evidence": "老湿腐帝皇之子 V1.05 中英对照标题（EN 笔误已按 DB 名归一），效果同源"
+  },
+  {
+   "table": "stratagems",
+   "id": "000010003004",
+   "name_en": "INCESSANT VIOLENCE",
+   "name_zh": "无休暴力",
+   "zh_source": "codex-10e",
+   "evidence": "老湿腐帝皇之子 V1.05 中英对照标题（EN 笔误已按 DB 名归一），效果同源"
+  },
+  {
+   "table": "stratagems",
+   "id": "000010003005",
+   "name_en": "CRUEL BLADESMAN",
+   "name_zh": "无情剑客",
+   "zh_source": "codex-10e",
+   "evidence": "老湿腐帝皇之子 V1.05 中英对照标题（EN 笔误已按 DB 名归一），效果同源"
+  },
+  {
+   "table": "stratagems",
+   "id": "000010003006",
+   "name_en": "TERRIFYING SPECTACLE",
+   "name_zh": "骇人盛景",
+   "zh_source": "codex-10e",
+   "evidence": "老湿腐帝皇之子 V1.05 中英对照标题（EN 笔误已按 DB 名归一），效果同源"
+  },
+  {
+   "table": "stratagems",
+   "id": "000010003007",
+   "name_en": "CUT DOWN THE WEAK",
+   "name_zh": "弱者当诛",
+   "zh_source": "codex-10e",
+   "evidence": "老湿腐帝皇之子 V1.05 中英对照标题（EN 笔误已按 DB 名归一），效果同源"
+  },
+  {
+   "table": "stratagems",
+   "id": "000010019002",
+   "name_en": "DEVOTED DUELLISTS",
+   "name_zh": "专注决斗者",
+   "zh_source": "codex-10e",
+   "evidence": "老湿腐帝皇之子 V1.05 中英对照标题（EN 笔误已按 DB 名归一），效果同源"
+  },
+  {
+   "table": "stratagems",
+   "id": "000010019003",
+   "name_en": "BEAUTIFUL DEATH",
+   "name_zh": "绝美之死",
+   "zh_source": "codex-10e",
+   "evidence": "老湿腐帝皇之子 V1.05 中英对照标题（EN 笔误已按 DB 名归一），效果同源"
+  },
+  {
+   "table": "stratagems",
+   "id": "000010019004",
+   "name_en": "HEIGHTENED JEALOUSY",
+   "name_zh": "妒火中烧",
+   "zh_source": "codex-10e",
+   "evidence": "老湿腐帝皇之子 V1.05 中英对照标题（EN 笔误已按 DB 名归一），效果同源"
+  },
+  {
+   "table": "stratagems",
+   "id": "000010019005",
+   "name_en": "DIABOLIC MAJESTY",
+   "name_zh": "邪魔尊荣",
+   "zh_source": "codex-10e",
+   "evidence": "老湿腐帝皇之子 V1.05 中英对照标题（EN 笔误已按 DB 名归一），效果同源"
+  },
+  {
+   "table": "stratagems",
+   "id": "000010019006",
+   "name_en": "REFUSAL TO BE OUTDONE",
+   "name_zh": "不甘人后",
+   "zh_source": "codex-10e",
+   "evidence": "老湿腐帝皇之子 V1.05 中英对照标题（EN 笔误已按 DB 名归一），效果同源"
+  },
+  {
+   "table": "stratagems",
+   "id": "000010019007",
+   "name_en": "VENGEFUL SURGE",
+   "name_zh": "复仇涌动",
+   "zh_source": "codex-10e",
+   "evidence": "老湿腐帝皇之子 V1.05 中英对照标题（EN 笔误已按 DB 名归一），效果同源"
+  },
+  {
+   "table": "stratagems",
+   "id": "000010655002",
+   "name_en": "CONTEMPTUOUS DISREGARD",
+   "name_zh": "轻蔑无视",
+   "zh_source": "self-translation-11e",
+   "evidence": "凤凰王庭战略（codex 无源自译）"
+  },
+  {
+   "table": "stratagems",
+   "id": "000010655003",
+   "name_en": "PRIDEFUL SUPERIORITY",
+   "name_zh": "傲然凌人",
+   "zh_source": "self-translation-11e",
+   "evidence": "凤凰王庭战略（codex 无源自译）"
+  },
+  {
+   "table": "stratagems",
+   "id": "000010655004",
+   "name_en": "SINUOUS BREACH",
+   "name_zh": "蜿蜒突进",
+   "zh_source": "self-translation-11e",
+   "evidence": "凤凰王庭战略（codex 无源自译）"
+  },
+  {
+   "table": "stratagems",
+   "id": "000010655005",
+   "name_en": "CLOSE-QUARTERS EXCRUCIATION",
+   "name_zh": "近身酷刑",
+   "zh_source": "self-translation-11e",
+   "evidence": "凤凰王庭战略（codex 无源自译）"
+  },
+  {
+   "table": "stratagems",
+   "id": "000010655006",
+   "name_en": "EUPHORIC INSPIRATION",
+   "name_zh": "欣快激励",
+   "zh_source": "self-translation-11e",
+   "evidence": "凤凰王庭战略（codex 无源自译）"
+  },
+  {
+   "table": "stratagems",
+   "id": "000010655007",
+   "name_en": "CATALYTIC STIMULUS",
+   "name_zh": "催化激涌",
+   "zh_source": "self-translation-11e",
+   "evidence": "凤凰王庭战略（codex 无源自译）"
   }
  ],
  "_deactivations_comment": "9 条 review_needed 的最终裁定（2026-07-16 用户裁 A：FP 完整重印即整体替换）。证据：①FP p3/p4 对 Auxiliary Cadre / Experimental Prototype Cadre 用完整重印体裁（同书 datasheet 侧明文 replaces 语义，page_010）；②11 版 Experimental Ammunition 删除了与 Threat Assessment Analyser 互斥的 RESTRICTIONS 段（侧面印证 TAA 不复存在）；③Wahapedia 现网核证（2026-07-16 重拉 Stratagems.csv）确认其尚未消化这两页 FP（drifted 条仍旧十版措辞、GUIDED BY UNITY 与 Advanced Acquisition Cadre 均缺席），故'现网仍在'不构成反证。处置：置 fp_status='removed_11e'（原文保留可回滚）；P7 DSL 对账枚举、检索消费者应排除该标记行。将来 Wahapedia 滚更这两页时 text_patches 守卫会自动让路告警，届时复核本裁定。",
@@ -2107,6 +2625,249 @@
     "cost": null,
     "legend": "点数未知：FP 不含点数，MFM 缓存无增强数据（诚实置空，勿猜）",
     "description": "EXECRATOR model only. When this unit is selected to fight, this model’s melee attacks have:<ul><li>[CLEAVE 1].</li><li>Or: [PRECISION].</li></ul>"
+   }
+  },
+  {
+   "table": "detachments",
+   "fp_source": "Faction Pack Emperor S Children page_002.md（11 版新分队，Wahapedia 无源）",
+   "values": {
+    "id": "fp11e-ec-brutes-det",
+    "faction": "EC",
+    "name_zh": "杀意迫切",
+    "name_en": "Eager to Kill",
+    "rule_text": "When a friendly <span class=\"kwb\">EMPEROR’S CHILDREN</span> <span class=\"kwb\">TERMINATOR</span> unit is set up, that unit has +1 to charge rolls until the end of the turn."
+   }
+  },
+  {
+   "table": "stratagems",
+   "fp_source": "Faction Pack Emperor S Children page_002.md（11 版新分队，Wahapedia 无源）",
+   "values": {
+    "id": "fp11e-ec-brutes-s1",
+    "faction": "EC",
+    "detachment": "Elegant Brutes",
+    "name_zh": "乐在苦痛",
+    "name_en": "DELIGHT IN AGONY",
+    "cp_cost": "1",
+    "phase": "Shooting phase",
+    "text_zh": "<b>WHEN:</b> Your opponent’s Shooting phase or the Fight phase, when an enemy unit targets a friendly EMPEROR’S CHILDREN TERMINATOR unit.<br><br><b>TARGET:</b> That EMPEROR’S CHILDREN TERMINATOR unit.<br><br><b>EFFECT:</b> Attacks that target your unit with a Strength greater than your unit’s Toughness have -1 to wound rolls."
+   }
+  },
+  {
+   "table": "stratagems",
+   "fp_source": "Faction Pack Emperor S Children page_002.md（11 版新分队，Wahapedia 无源）",
+   "values": {
+    "id": "fp11e-ec-brutes-s2",
+    "faction": "EC",
+    "detachment": "Elegant Brutes",
+    "name_zh": "迷幻魂焰",
+    "name_en": "PSYCHEDELIC SOULFLAME",
+    "cp_cost": "1",
+    "phase": "Shooting phase",
+    "text_zh": "<b>WHEN:</b> Your Shooting phase or the Fight phase, when a friendly EMPEROR’S CHILDREN TERMINATOR unit is selected to attack.<br><br><b>TARGET:</b> That EMPEROR’S CHILDREN TERMINATOR unit.<br><br><b>EFFECT:</b> Your unit’s attacks have +2 S."
+   }
+  },
+  {
+   "table": "stratagems",
+   "fp_source": "Faction Pack Emperor S Children page_002.md（11 版新分队，Wahapedia 无源）",
+   "values": {
+    "id": "fp11e-ec-brutes-s3",
+    "faction": "EC",
+    "detachment": "Elegant Brutes",
+    "name_zh": "亚空间遁入",
+    "name_en": "WARP PLUNGE",
+    "cp_cost": "1",
+    "phase": "Fight phase",
+    "text_zh": "<b>WHEN:</b> End of your opponent’s Fight phase.<br><br><b>TARGET:</b> One friendly unengaged EMPEROR’S CHILDREN TERMINATOR unit.<br><br><b>EFFECT:</b> Place your unit in strategic reserves."
+   }
+  },
+  {
+   "table": "enhancements",
+   "fp_source": "Faction Pack Emperor S Children page_002.md（11 版新分队，Wahapedia 无源）",
+   "values": {
+    "id": "fp11e-ec-brutes-e1",
+    "faction_id": "EC",
+    "detachment_id": "fp11e-ec-brutes",
+    "detachment_name": "Elegant Brutes",
+    "name": "Cacophonic Accompaniment",
+    "cost": null,
+    "legend": "点数未知：FP 不含点数，MFM 缓存无增强数据（诚实置空，勿猜）",
+    "description": "LORD KAKOPHONIST model only.<ul><li>This model has Deep Strike.</li><li>This unit’s ranged attacks have [IGNORES COVER].</li></ul>"
+   }
+  },
+  {
+   "table": "enhancements",
+   "fp_source": "Faction Pack Emperor S Children page_002.md（11 版新分队，Wahapedia 无源）",
+   "values": {
+    "id": "fp11e-ec-brutes-e2",
+    "faction_id": "EC",
+    "detachment_id": "fp11e-ec-brutes",
+    "detachment_name": "Elegant Brutes",
+    "name": "Frenzied Ferocity",
+    "cost": null,
+    "legend": "点数未知：FP 不含点数，MFM 缓存无增强数据（诚实置空，勿猜）",
+    "description": "EMPEROR’S CHILDREN TERMINATOR SQUAD unit only. This unit’s attacks have [SUSTAINED HITS 1]."
+   }
+  },
+  {
+   "table": "detachments",
+   "fp_source": "Faction Pack Emperor S Children page_003.md（11 版新分队，Wahapedia 无源）",
+   "values": {
+    "id": "fp11e-ec-host-det",
+    "faction": "EC",
+    "name_zh": "狂乱专注",
+    "name_en": "Frantic Focus",
+    "rule_text": "When a friendly <span class=\"kwb\">EMPEROR’S CHILDREN</span> <span class=\"kwb\">BATTLELINE</span> unit is selected to make an advance/fall-back move, that unit’s attacks have +1 S until the end of the turn.<br><br>This detachment has the HOST tag and cannot be taken with another HOST detachment."
+   }
+  },
+  {
+   "table": "stratagems",
+   "fp_source": "Faction Pack Emperor S Children page_003.md（11 版新分队，Wahapedia 无源）",
+   "values": {
+    "id": "fp11e-ec-host-s1",
+    "faction": "EC",
+    "detachment": "Frenzied Host",
+    "name_zh": "占有狂热",
+    "name_en": "POSSESSIVE MANIA",
+    "cp_cost": "1",
+    "phase": "Shooting phase",
+    "text_zh": "<b>WHEN:</b> Your opponent’s Shooting phase or the Fight phase, when an enemy unit targets a friendly EMPEROR’S CHILDREN BATTLELINE unit within range of an objective.<br><br><b>TARGET:</b> That EMPEROR’S CHILDREN BATTLELINE unit.<br><br><b>EFFECT:</b> Attacks that target your unit have -1 AP until that enemy unit has attacked."
+   }
+  },
+  {
+   "table": "stratagems",
+   "fp_source": "Faction Pack Emperor S Children page_003.md（11 版新分队，Wahapedia 无源）",
+   "values": {
+    "id": "fp11e-ec-host-s2",
+    "faction": "EC",
+    "detachment": "Frenzied Host",
+    "name_zh": "痛楚刺声",
+    "name_en": "AGONISED CACOPHONY",
+    "cp_cost": "1",
+    "phase": "Shooting phase",
+    "text_zh": "<b>WHEN:</b> Start of your Shooting phase.<br><br><b>TARGET:</b> One friendly EMPEROR’S CHILDREN BATTLELINE unit.<br><br><b>EFFECT:</b> Select one visible enemy unit within 12\" of your unit. That enemy unit has +6\" detection range."
+   }
+  },
+  {
+   "table": "stratagems",
+   "fp_source": "Faction Pack Emperor S Children page_003.md（11 版新分队，Wahapedia 无源）",
+   "values": {
+    "id": "fp11e-ec-host-s3",
+    "faction": "EC",
+    "detachment": "Frenzied Host",
+    "name_zh": "绝对感官过载",
+    "name_en": "ABSOLUTE SENSORY OVERLOAD",
+    "cp_cost": "1",
+    "phase": "Shooting phase",
+    "text_zh": "<b>WHEN:</b> Your Shooting phase, when a friendly EMPEROR’S CHILDREN BATTLELINE unit is selected to shoot.<br><br><b>TARGET:</b> That EMPEROR’S CHILDREN BATTLELINE unit.<br><br><b>EFFECT:</b> Those ranged attacks do not prevent your unit from being hidden."
+   }
+  },
+  {
+   "table": "enhancements",
+   "fp_source": "Faction Pack Emperor S Children page_003.md（11 版新分队，Wahapedia 无源）",
+   "values": {
+    "id": "fp11e-ec-host-e1",
+    "faction_id": "EC",
+    "detachment_id": "fp11e-ec-host",
+    "detachment_name": "Frenzied Host",
+    "name": "Euphoric Crown",
+    "cost": null,
+    "legend": "点数未知：FP 不含点数，MFM 缓存无增强数据（诚实置空，勿猜）",
+    "description": "LORD EXULTANT model only. This model’s melee attacks have +1 S."
+   }
+  },
+  {
+   "table": "enhancements",
+   "fp_source": "Faction Pack Emperor S Children page_003.md（11 版新分队，Wahapedia 无源）",
+   "values": {
+    "id": "fp11e-ec-host-e2",
+    "faction_id": "EC",
+    "detachment_id": "fp11e-ec-host",
+    "detachment_name": "Frenzied Host",
+    "name": "Howling Plate",
+    "cost": null,
+    "legend": "点数未知：FP 不含点数，MFM 缓存无增强数据（诚实置空，勿猜）",
+    "description": "LORD EXULTANT model only. This unit’s ranged attacks have +1 AP."
+   }
+  },
+  {
+   "table": "detachments",
+   "fp_source": "Faction Pack Emperor S Children page_004.md（11 版新分队，Wahapedia 无源）",
+   "values": {
+    "id": "fp11e-ec-spectacle-det",
+    "faction": "EC",
+    "name_zh": "胜利天授",
+    "name_en": "Entitled to Victory",
+    "rule_text": "Friendly <span class=\"kwb\">FLAWLESS BLADES</span> units have Fights First."
+   }
+  },
+  {
+   "table": "stratagems",
+   "fp_source": "Faction Pack Emperor S Children page_004.md（11 版新分队，Wahapedia 无源）",
+   "values": {
+    "id": "fp11e-ec-spectacle-s1",
+    "faction": "EC",
+    "detachment": "Spectacle of Slaughter",
+    "name_zh": "荣誉属于蠢货",
+    "name_en": "HONOUR IS FOR FOOLS",
+    "cp_cost": "1",
+    "phase": "Fight phase",
+    "text_zh": "<b>WHEN:</b> Fight phase, when a friendly FLAWLESS BLADES unit is selected to fight.<br><br><b>TARGET:</b> That FLAWLESS BLADES unit.<br><br><b>EFFECT:</b> Your unit’s melee attacks have [PRECISION]."
+   }
+  },
+  {
+   "table": "stratagems",
+   "fp_source": "Faction Pack Emperor S Children page_004.md（11 版新分队，Wahapedia 无源）",
+   "values": {
+    "id": "fp11e-ec-spectacle-s2",
+    "faction": "EC",
+    "detachment": "Spectacle of Slaughter",
+    "name_zh": "心无旁骛",
+    "name_en": "SINGLE-MINDED STRIKE",
+    "cp_cost": "1",
+    "phase": "Charge phase",
+    "text_zh": "<b>WHEN:</b> Your Charge phase, when a friendly FLAWLESS BLADES unit starts a charge move.<br><br><b>TARGET:</b> That FLAWLESS BLADES unit.<br><br><b>EFFECT:</b> Your unit can move through models (excluding MONSTER/VEHICLE models)."
+   }
+  },
+  {
+   "table": "stratagems",
+   "fp_source": "Faction Pack Emperor S Children page_004.md（11 版新分队，Wahapedia 无源）",
+   "values": {
+    "id": "fp11e-ec-spectacle-s3",
+    "faction": "EC",
+    "detachment": "Spectacle of Slaughter",
+    "name_zh": "沉醉凯歌",
+    "name_en": "INTOXICATED BY TRIUMPH",
+    "cp_cost": "1",
+    "phase": "Movement phase",
+    "text_zh": "<b>WHEN:</b> Your opponent’s Movement phase, when an enemy unit that was engaged with a friendly FLAWLESS BLADES unit ends a fall-back move, if that FLAWLESS BLADES unit is unengaged.<br><br><b>TARGET:</b> That FLAWLESS BLADES unit.<br><br><b>EFFECT:</b> Your unit can make a normal move of up to D3+3\"."
+   }
+  },
+  {
+   "table": "enhancements",
+   "fp_source": "Faction Pack Emperor S Children page_004.md（11 版新分队，Wahapedia 无源）",
+   "values": {
+    "id": "fp11e-ec-spectacle-e1",
+    "faction_id": "EC",
+    "detachment_id": "fp11e-ec-spectacle",
+    "detachment_name": "Spectacle of Slaughter",
+    "name": "Eager Patrons",
+    "cost": null,
+    "legend": "点数未知：FP 不含点数，MFM 缓存无增强数据（诚实置空，勿猜）",
+    "description": "FLAWLESS BLADES unit only. This unit has +2\" M."
+   }
+  },
+  {
+   "table": "enhancements",
+   "fp_source": "Faction Pack Emperor S Children page_004.md（11 版新分队，Wahapedia 无源）",
+   "values": {
+    "id": "fp11e-ec-spectacle-e2",
+    "faction_id": "EC",
+    "detachment_id": "fp11e-ec-spectacle",
+    "detachment_name": "Spectacle of Slaughter",
+    "name": "Beguiling Grotesquerie",
+    "cost": null,
+    "legend": "点数未知：FP 不含点数，MFM 缓存无增强数据（诚实置空，勿猜）",
+    "description": "FLAWLESS BLADES unit only. Enemy units cannot target this unit with snap shooting attacks."
    }
   }
  ]
