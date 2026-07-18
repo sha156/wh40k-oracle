@@ -161,23 +161,36 @@ def test_explicit_zero_models_target_yields_all_zero_report():
     assert rep.expected_damage == 0.0 and rep.expected_kills == 0.0
 
 
-# ═══ M：守方非 hit 阶段 Effect 显式披露（不静默丢、不影响数值）═══
+# ═══ M：守方未消费 Effect 显式披露（不静默丢、不影响数值）═══
 def test_unconsumed_defender_effect_surfaces_and_keeps_numbers():
-    wound_eff = Effect("wound", "modify", (-1,), (), "某防守词条")
+    # P7-PR5 起 (wound, modify) 已成守方消费点（DAEMONIC RESISTANCE 通道），
+    # 换用引擎守方侧确实无消费者的 (attacks, modify) 验披露语义
+    atk_eff = Effect("attacks", "modify", (1,), (), "某防守词条")
     base = simulate(_atk(), _tgt(), Stance(), n=2000, seed=7)
-    with_eff = simulate(_atk(), _tgt(effects=(wound_eff,)), Stance(), n=2000, seed=7)
+    with_eff = simulate(_atk(), _tgt(effects=(atk_eff,)), Stance(), n=2000, seed=7)
     joined = "；".join(with_eff.not_modeled + with_eff.bias_notes)
-    assert "未消费" in joined and "wound" in joined       # 显式出现在报告注解
+    assert "未消费" in joined and "attacks" in joined     # 显式出现在报告注解
     assert with_eff.expected_damage == base.expected_damage   # 但不影响数值
     assert with_eff.funnel == base.funnel
 
 
+def test_defender_wound_modify_is_consumed_and_changes_numbers():
+    # P7-PR5 新通道：守方 (wound, modify, -1) 并入致伤修正统一夹取——数值必须变差
+    wound_eff = Effect("wound", "modify", (-1,), (), "daemonic resistance")
+    base = simulate(_atk(), _tgt(), Stance(), n=4000, seed=7)
+    with_eff = simulate(_atk(), _tgt(effects=(wound_eff,)), Stance(), n=4000, seed=7)
+    assert not any("未消费" in nm
+                   for nm in with_eff.not_modeled + with_eff.bias_notes)
+    assert with_eff.expected_damage < base.expected_damage
+
+
 def test_consumed_defender_effects_not_flagged():
-    # fnp / damage_reduction / hit+modify / save+cover（11版 Stealth）是被消费的
-    # 四类，不得误报"未消费"
+    # fnp / damage_reduction / hit+modify / save+cover（11版 Stealth）/ wound+modify
+    # 是被消费的五类，不得误报"未消费"
     effs = (Effect("fnp", "fnp", (5,), (), "feel no pain 5+"),
             Effect("damage", "damage_reduction", (1,), (), "damage reduction"),
             Effect("hit", "modify", (-1,), ("phase_shooting",), "smokescreen"),
-            Effect("save", "cover", (), ("phase_shooting",), "stealth"))
+            Effect("save", "cover", (), ("phase_shooting",), "stealth"),
+            Effect("wound", "modify", (-1,), (), "daemonic resistance"))
     rep = simulate(_atk(), _tgt(effects=effs), Stance(), n=500, seed=11)
     assert not any("未消费" in nm for nm in rep.not_modeled + rep.bias_notes)

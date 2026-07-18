@@ -42,6 +42,10 @@ export interface SimOptions {
   target_below_half?: boolean; // 假设目标低于半编（蕴含低于满编）
   markerlight_visible?: boolean; // 假设目标对友军标记光单位可见（Starfire 军规）
   bearer_leading?: boolean; // 假设增强携带者正率领本单位
+  // ── P7-PR5 恐虐赐福（WE 军规；至多同开两项，超限后端拒施加并披露）──
+  blessing_martial_excellence?: boolean; // 卓越武艺：近战 [连击1]
+  blessing_warp_blades?: boolean; // 次元邪刃：近战 [致命一击]
+  blessing_decapitating_strikes?: boolean; // 斩首一击：近战对步兵 [毁灭伤害]
   // ── P7-PR4 守方阵营 DSL（防守向条目经 inject_target 注入）──
   defender_detachment?: string; // 守方分队名
   defender_stratagems?: string[]; // 守方防守向战略点名（Stimm Injectors 等）

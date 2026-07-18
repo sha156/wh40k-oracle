@@ -339,6 +339,7 @@ class TestFourWayToggleParity:
             "sim_guided": True, "sim_markerlight": True, "sim_det_rounds": True,
             "sim_r12": True, "sim_r8": True, "sim_tbs": True, "sim_tbh": True,
             "sim_ml_visible": True, "sim_bearer": True,
+            "sim_bless_me": True, "sim_bless_wb": True, "sim_bless_ds": True,
             "sim_def_hidden": True, "sim_def_bearer": True,
             "sim_detachment": "Kauyon", "sim_stratagems": "X",
             "sim_enhancements": "Y", "sim_def_detachment": "Kroot Hunting Pack",

@@ -93,6 +93,12 @@ KNOWN_CONDITION_TAGS = frozenset({
     "target_below_starting", "target_below_half",   # P7-PR4：目标战损状态假设
     "target_models_in_range",                       # P7-PR4：(tag, lo, hi) 按目标模型数分档
     "shooting_target_models_in_range",              # P7-PR4：复合 tag=射击阶段 × 目标规模
+    "melee_charging",                               # P7-PR5：复合 tag=近战阶段 × 本回合冲锋
+                                                    # （Relentless Rage 等"冲锋回合近战武器"条款——
+                                                    # 单独 charging 会在射击阶段误放行）
+    "blessing_martial_excellence",                  # P7-PR5·恐虐赐福（各自自含近战阶段门控）
+    "blessing_warp_blades",
+    "blessing_decapitating_strikes_vs_infantry",    # 复合 tag=近战 × 赐福开 × 目标步兵
 })
 
 
@@ -151,6 +157,15 @@ def _cond_true(condition: Tuple, stance: Stance, target: TargetProfile) -> bool:
                 f"shooting_target_models_in_range 需要 (tag, lo, hi)，收到 {condition!r}")
         return (stance.phase == "shooting"
                 and int(condition[1]) <= int(target.models) <= int(condition[2]))
+    if tag == "melee_charging":              # P7-PR5：冲锋回合的近战条款（Relentless Rage）
+        return stance.phase == "melee" and stance.charging
+    if tag == "blessing_martial_excellence":     # P7-PR5·卓越武艺：近战 [SUSTAINED HITS 1]
+        return stance.phase == "melee" and stance.blessing_martial_excellence
+    if tag == "blessing_warp_blades":            # P7-PR5·次元邪刃：近战 [LETHAL HITS]
+        return stance.phase == "melee" and stance.blessing_warp_blades
+    if tag == "blessing_decapitating_strikes_vs_infantry":  # P7-PR5·斩首一击：近战对步兵 dev
+        return (stance.phase == "melee" and stance.blessing_decapitating_strikes
+                and "infantry" in target.keywords)
     # P7 加固（评审 F2）：未知 tag 静默返回 False = 效果静默失效（攻方侧零披露），
     # 是 CLAUDE.md 明令的静默降级缝——改为 raise，让 DSL 录入笔误在测试期就炸出来。
     raise ValueError(f"未知 Effect condition tag: {tag!r}（来源条件 {condition!r}）")
@@ -159,7 +174,9 @@ def _cond_true(condition: Tuple, stance: Stance, target: TargetProfile) -> bool:
 @dataclass
 class _WeaponParams:
     """一把武器在当前态势下解算出的生效参数（把 Effect 汇成标量开关）。"""
-    rf_expr: object = None         # DiceExpr | None（rapid fire X，X 可为骰子）
+    rf_exprs: tuple = ()           # tuple[DiceExpr]（附加攻击骰：rapid fire X / DSL "+X A"；
+                                   # P7-PR5 起累加——分队规则与战略同阶段各 +1 A 必须叠加，
+                                   # 旧的单值 last-write 会静默吞掉一层）
     blast_x: int = 0               # [BLAST X]/[CLEAVE X]：每满 5 目标模型 +X 攻击骰（0=无）
     melta_expr: object = None      # DiceExpr | None（melta X，X 可为骰子）
     crit_hit_thr: int = _FACES
@@ -196,7 +213,7 @@ def _gather_params(w: WeaponProfile, stance: Stance, target: TargetProfile) -> _
         ok = _cond_true(e.condition, stance, target)
         if e.phase == "attacks":
             if e.op == "modify" and ok:
-                p.rf_expr = e.params[0]           # DiceExpr（rapid fire）
+                p.rf_exprs = p.rf_exprs + (e.params[0],)   # DiceExpr（rapid fire / +X A，累加）
             elif e.op == "blast" and ok:
                 # blast（无条件）与 cleave（condition=phase_melee）共用本通道；
                 # 无参旧式 Effect（十版 [BLAST]）向后兼容为 X=1
@@ -295,6 +312,11 @@ def _gather_params(w: WeaponProfile, stance: Stance, target: TargetProfile) -> _
             # P7-PR4 守方 DSL："+1 Sv"（Autoreactive Camouflage）——护甲特征值改善，
             # 不作用于 invuln；1+ 以下由 effective_save 的 ≥2 夹取兜住
             p.sv_improve += int(e.params[0])
+        elif e.phase == "wound" and e.op == "modify":
+            # P7-PR5 守方 DSL：致伤骰修正（DAEMONIC RESISTANCE "subtract 1 from the
+            # Wound roll" → 参数 -1）。并入攻方致伤修正同一累计，随后统一夹 ±1
+            # ——与守方 hit+modify 的烟幕先例同语义（正负可与攻方修正抵消）
+            p.wound_mod += int(e.params[0])
     # ── Benefit of Cover（11版 13.08）：掩体收益 = 恶化该次攻击的 BS 1 点（射击专属），
     #   十版"护甲保存骰+1、且 AP0 对 3+ 甲无效"整体作废——掩体从保存侧挪到命中侧。
     #   P7 起折进 **BS 特征值通道 bs_neg**（S7 曾折 hit_neg，与 13.08 "worsen the
@@ -439,6 +461,8 @@ TARGET_CONSUMED = frozenset({
     ("hit", "modify"), ("save", "cover"),
     ("save", "invuln"), ("save", "sv_improve"),     # P7-PR4：inject_target 防守向通道
     ("hit", "bs_improve"),                          # P7-PR4：守方 BS/WS 特征值修正（EMP）
+    ("wound", "modify"),                            # P7-PR5：守方致伤骰修正（-1 被伤，
+                                                    # DAEMONIC RESISTANCE 等；并入统一 ±1 夹取）
 })
 
 
@@ -466,12 +490,16 @@ def unconsumed_attacker_effect_notes(attacker) -> List[str]:
 #   · phase == "hit" 且 op == "modify" → _gather_params 并入攻方命中修正（烟幕等减命中）；
 #   · phase == "save" 且 op == "cover" → _gather_params 并入掩体开关（11版 Stealth 24.33）；
 #   · phase == "save" 且 op == "invuln"/"sv_improve" → _gather_params 折进有效保存
-#     （P7-PR4 inject_target 防守向通道：DSL 授予无效保护/护甲改善）。
-# 其余 phase/op（如 wound 阶段的防守修正）当前没有消费者——列入报告注解透传。
+#     （P7-PR4 inject_target 防守向通道：DSL 授予无效保护/护甲改善）；
+#   · phase == "wound" 且 op == "modify" → _gather_params 并入致伤修正统一夹取
+#     （P7-PR5：DAEMONIC RESISTANCE 等"被伤致伤骰-1"）。
+# 其余 phase/op 当前没有消费者——列入报告注解透传。
 def _target_effect_consumed(e) -> bool:
     if e.op in ("fnp", "damage_reduction"):
         return True
     if e.phase == "hit" and e.op in ("modify", "bs_improve"):
+        return True
+    if e.phase == "wound" and e.op == "modify":     # P7-PR5：守方致伤骰修正
         return True
     return e.phase == "save" and e.op in ("cover", "invuln", "sv_improve")
 
@@ -531,8 +559,8 @@ def _resolve_weapon(
     # ① Attacks：每模型掷 A，+rapid fire（半射程，X 可为骰子）
     #   +blast X / cleave X（每满 5 目标模型 +X，11版24.05/24.06）
     atk = sample_dice(w.attacks, rng, (n, count)).astype(np.int64)
-    if p.rf_expr is not None:
-        atk = atk + sample_dice(p.rf_expr, rng, (n, count)).astype(np.int64)
+    for rf in p.rf_exprs:
+        atk = atk + sample_dice(rf, rng, (n, count)).astype(np.int64)
     if p.blast_x:
         atk = atk + p.blast_x * (int(target.models) // 5)
     n_attacks = np.maximum(atk.sum(axis=1), 0).astype(np.int64)   # 防御性夹 ≥0（真实武器不会负）

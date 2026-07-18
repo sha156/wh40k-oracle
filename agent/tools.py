@@ -422,6 +422,9 @@ def simulate_combat_resolved(
             range_within_8=bool(options.get("range_within_8")),
             target_below_starting=bool(options.get("target_below_starting")),
             target_below_half=bool(options.get("target_below_half")),
+            blessing_martial_excellence=bool(options.get("blessing_martial_excellence")),
+            blessing_warp_blades=bool(options.get("blessing_warp_blades")),
+            blessing_decapitating_strikes=bool(options.get("blessing_decapitating_strikes")),
         )
 
         loadout = options.get("loadout")
