@@ -112,6 +112,30 @@ class TestBlessingConditionTags:
         assert inf.mortals.mean() > 0
         assert veh.mortals.mean() == 0
 
+    def test_melee_target_has_keyword_composite(self):
+        # (tag, kw)：近战 × 目标关键词；射击阶段不放行；缺参 raise
+        cond = ("melee_target_has_keyword", "monster")
+        assert _cond_true(cond, _MELEE, _target(keywords=frozenset({"monster"})))
+        assert not _cond_true(cond, _MELEE, _target(keywords=frozenset({"vehicle"})))
+        assert not _cond_true(cond, Stance(phase="shooting"),
+                              _target(keywords=frozenset({"monster"})))
+        with pytest.raises(ValueError):
+            _cond_true(("melee_target_has_keyword",), _MELEE, _target())
+
+    def test_keyword_tag_args_validated_at_parse(self):
+        # 关键词 tag 大写/缺参在录入期就炸（大写会静默永不匹配）
+        def _entry(cond):
+            return _blessing_entry(effects=[
+                {"phase": "wound", "op": "modify", "params": [1],
+                 "condition": cond, "source": "trophy"}], toggle_groups=[])
+        parse_entry(_entry(["melee_target_has_keyword", "monster"]))   # 合法
+        with pytest.raises(DslError):
+            parse_entry(_entry(["melee_target_has_keyword", "MONSTER"]))
+        with pytest.raises(DslError):
+            parse_entry(_entry(["melee_target_has_keyword"]))
+        with pytest.raises(DslError):
+            parse_entry(_entry(["target_has_keyword", "Vehicle"]))
+
     def test_melee_charging_composite(self):
         assert _cond_true(("melee_charging",),
                           Stance(phase="melee", charging=True), _target())

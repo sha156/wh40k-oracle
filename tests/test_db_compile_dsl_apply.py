@@ -230,18 +230,22 @@ class TestMaterialize:
             apply_dsl(db, d)
 
     def test_real_payload_projection_counts(self, tmp_path):
-        # 真源 tau.json 全量对账：payload 三态计数 == 投影结果计数（applied+already）。
-        # 物化目标库：detachments 源行按真实 id/文本造两行，其余行照 payload id 造壳
+        # 真源全量对账（P7-PR5 起多文件：tau + worldeaters + …）：payload 三态计数
+        # == 投影结果计数（applied+already）。物化目标库：detachments 源行按真实
+        # id/文本造行，其余行照 payload id 造壳
         import pathlib
-        payload = json.loads(pathlib.Path("dsl_payloads/tau.json").read_text(
-            encoding="utf-8"))
+        all_entries = []
+        for f in sorted(pathlib.Path("dsl_payloads").glob("*.json")):
+            payload = json.loads(f.read_text(encoding="utf-8"))
+            fac = payload.get("faction", "TAU")
+            all_entries += [(fac, e) for e in payload["entries"]]
         db = tmp_path / "r.sqlite"
         conn = sqlite3.connect(str(db))
         for ddl in ALL_DDL:
             conn.execute(ddl)
         # 用真库的源文本造行（指纹必须能对上真源 payload 里录的 sha）
         real = sqlite3.connect("db/wh40k.sqlite")
-        for e in payload["entries"]:
+        for fac, e in all_entries:
             mat = e.get("materialize")
             if mat:
                 src = real.execute(
@@ -259,16 +263,17 @@ class TestMaterialize:
                                    (e["id"],)).fetchone()
                 conn.execute("INSERT INTO enhancements (id, faction_id, name, "
                              "description) VALUES (?,?,?,?)",
-                             (e["id"], "TAU", e["name_en"], txt[0]))
+                             (e["id"], fac, e["name_en"], txt[0]))
             else:
                 txt = real.execute("SELECT text_zh FROM stratagems WHERE id=?",
                                    (e["id"],)).fetchone()
                 conn.execute("INSERT INTO stratagems (id, faction, name_en, text_zh) "
-                             "VALUES (?,?,?,?)", (e["id"], "TAU", e["name_en"], txt[0]))
+                             "VALUES (?,?,?,?)", (e["id"], fac, e["name_en"], txt[0]))
         real.close()
         conn.commit()
         conn.close()
         rep = apply_dsl(db, "dsl_payloads")
-        assert rep["applied"] + rep["already"] == len(payload["entries"]) == 77
+        # 77（钛 PR4）+ 88（吞世者 PR5）= 165
+        assert rep["applied"] + rep["already"] == len(all_entries) == 165
         assert not rep["fingerprint_mismatch"] and not rep["skipped"]
-        assert rep["by_status"] == {"encoded": 0, "partial": 35, "not_modeled": 42}
+        assert rep["by_status"] == {"encoded": 0, "partial": 62, "not_modeled": 103}

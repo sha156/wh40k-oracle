@@ -116,7 +116,8 @@ class TestDbReconciliation:
         assert materialized == {f"det{r}" for r in rules}
 
     def test_projection_counts_match_payload(self, entries):
-        # DB 投影三态计数 == 真源计数（dsl-apply 已跑过；rebuild 后由 restore 链保证）
+        # DB 投影三态计数 == 真源计数（dsl-apply 已跑过；rebuild 后由 restore 链保证）。
+        # P7-PR5 起真源是多文件（tau + worldeaters + …），对账按全部 payload 聚合
         con = self._db()
         db_counts = {}
         for table in ("abilities", "stratagems", "enhancements"):
@@ -126,8 +127,9 @@ class TestDbReconciliation:
                 db_counts[status] = db_counts.get(status, 0) + n
         con.close()
         want = {}
-        for e in entries:
-            want[e.status] = want.get(e.status, 0) + 1
+        for f in sorted(Path("dsl_payloads").glob("*.json")):
+            for e in load_payload_file(f):
+                want[e.status] = want.get(e.status, 0) + 1
         assert db_counts == want
 
 

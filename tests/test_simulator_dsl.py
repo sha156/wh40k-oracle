@@ -107,6 +107,7 @@ class TestCondTrueHardening:
     def test_all_registered_tags_evaluate(self):
         # 注册表与 _cond_true 分支不漂移：集合内逐 tag 求值不 raise
         _ARGS = {"target_has_keyword": ("X",),
+                 "melee_target_has_keyword": ("monster",),   # P7-PR5 复合关键词 tag
                  "target_models_in_range": (1, 5),   # 带参 tag 用合法参数形状
                  "shooting_target_models_in_range": (1, 5)}
         for tag in KNOWN_CONDITION_TAGS:

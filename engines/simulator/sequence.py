@@ -99,6 +99,9 @@ KNOWN_CONDITION_TAGS = frozenset({
     "blessing_martial_excellence",                  # P7-PR5·恐虐赐福（各自自含近战阶段门控）
     "blessing_warp_blades",
     "blessing_decapitating_strikes_vs_infantry",    # 复合 tag=近战 × 赐福开 × 目标步兵
+    "melee_target_has_keyword",                     # P7-PR5：(tag, kw) 近战阶段 × 目标关键词
+                                                    # （A Trophy for the Throne 等 Fight phase
+                                                    # 战略——裸 target_has_keyword 会在射击误放行）
 })
 
 
@@ -159,6 +162,11 @@ def _cond_true(condition: Tuple, stance: Stance, target: TargetProfile) -> bool:
                 and int(condition[1]) <= int(target.models) <= int(condition[2]))
     if tag == "melee_charging":              # P7-PR5：冲锋回合的近战条款（Relentless Rage）
         return stance.phase == "melee" and stance.charging
+    if tag == "melee_target_has_keyword":    # P7-PR5：(tag, kw) 近战 × 目标关键词复合
+        if len(condition) != 2:
+            raise ValueError(
+                f"melee_target_has_keyword 需要 (tag, keyword)，收到 {condition!r}")
+        return stance.phase == "melee" and condition[1] in target.keywords
     if tag == "blessing_martial_excellence":     # P7-PR5·卓越武艺：近战 [SUSTAINED HITS 1]
         return stance.phase == "melee" and stance.blessing_martial_excellence
     if tag == "blessing_warp_blades":            # P7-PR5·次元邪刃：近战 [LETHAL HITS]

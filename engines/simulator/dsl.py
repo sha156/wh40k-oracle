@@ -215,6 +215,15 @@ def _parse_effect(raw: dict, side: str, entry_name: str) -> Effect:
                 raise DslError(
                     f"{entry_name}：target_models_in_range 需要 (tag, lo, hi) 两个整数"
                     f"且 lo≤hi，收到 {condition!r}")
+        if tag in ("target_has_keyword", "melee_target_has_keyword"):
+            # P7-PR5：关键词 tag 恰 1 个非空字符串参数，且须小写（profile 关键词
+            # 集合是 casefold 后的——大写录入会静默永不匹配）
+            args = condition[1:]
+            if (len(args) != 1 or not isinstance(args[0], str)
+                    or not args[0].strip() or args[0] != args[0].lower()):
+                raise DslError(
+                    f"{entry_name}：{tag} 需要 (tag, keyword) 一个小写非空字符串"
+                    f"（关键词集合按 casefold 存储），收到 {condition!r}")
     if not raw.get("source"):
         raise DslError(f"{entry_name}：effect 缺 source（进报告 modeled_effects 的来源标签）")
     return Effect(phase=phase, op=op, params=params,
