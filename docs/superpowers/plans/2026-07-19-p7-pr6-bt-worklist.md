@@ -102,7 +102,11 @@ fp_new 走 inserts 补录（fp11e- 前缀 synthetic id）。
   DSL 编码时对两单位的领队类技能加 not_modeled 注记
 - 双子星 codex 的「执罚者」（page_019）与 DB Execrator=执裁者 用词分歧——DB 现值
   已有不冲突，不动
-- Vowed Target（000008773，Righteous Crusaders 分队规则）不在本 FP 更新范围，
-  且双子星 V1.20 未收录该分队——name_zh 留空宁缺勿错
+- Vowed Target（000008773）初判误归 BT——实为暗黑天使 Inner Circle Task Force 的
+  分队规则（战略家族 000008775xxx 佐证），不入 BT 范围；10 版 BT 的 Righteous
+  Crusaders 分队在 DB 无行（Wahapedia 只载现行四个 Grotmas 系分队）
 - 六圣兆中文名（神皇之器/邪径先知/凶暴神视/复仇预兆/圣佑降临/审判先声）用于
   DSL 注记与开关文案（自译）
+- 审查 MEDIUM 备忘（PR7+）：`engines/simulator/sequence.py` 已 787 行、逼近 800
+  上限——下个阵营再加延迟条件类通道前先拆模块（候选：_gather_params/_resolve_weapon
+  独立成文件，或延迟致伤合并逻辑外移）
