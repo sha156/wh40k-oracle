@@ -311,7 +311,11 @@ def _resolve_weapon(
     inv = target.invuln
     if p.target_invuln is not None:
         inv = int(p.target_invuln) if inv is None else min(inv, int(p.target_invuln))
-    sv_need = effective_save(target.sv - p.sv_improve, w.ap - p.ap_improve, inv)
+    # P7-PR7 审查 HIGH：AP 净算后夹 ≤0——守方「恶化 AP」不能把 AP0 武器推成正 AP
+    # 给护甲反向加成（核心规则修改特征值口径：AP 恶化以 0 为界；攻方改善方向更负
+    # 不受此夹取影响）
+    sv_need = effective_save(target.sv - p.sv_improve,
+                             min(0, w.ap - p.ap_improve), inv)
     to_wound = np.concatenate([base_to_wound, extra_mask], axis=1)
 
     nd1, md1, w1, u1, m1 = _wound_save_damage(

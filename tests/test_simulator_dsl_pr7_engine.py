@@ -73,11 +73,19 @@ class TestTargetApWorsen:
         assert _ratio(on.unsaved, on.wounds) == pytest.approx(1 / 2, abs=0.02)
 
     def test_ap0_cannot_be_worsened_into_bonus_save(self):
-        # AP0 被恶化成 +1（w.ap - (-1) = +1）：Sv4 → 3+。engine 按特征值层净算，
-        # 11 版 AP 恶化下限条款未见——如实按净算（3+ = 1/3 未保）
+        # AP0 被恶化：净算 +1 会给护甲反向加成（Sv4→3+）——核心规则修改特征值口径
+        # AP 恶化以 0 为界，引擎夹 min(0, ·)（审查 HIGH 修复）。AP0 恶化后仍 AP0：
+        # Sv4 → 4+，unsaved/wounds = 1/2（与无效果基线一致）
         on = _run(_melee(ap=0), _target(sv=4, effects=[self._DEF]),
                   Stance(phase="melee"))
-        assert _ratio(on.unsaved, on.wounds) == pytest.approx(1 / 3, abs=0.02)
+        assert _ratio(on.unsaved, on.wounds) == pytest.approx(1 / 2, abs=0.02)
+
+    def test_attacker_ap_improve_not_capped_by_floor(self):
+        # 攻方改善方向（更负）不受 ≤0 夹取影响：AP0 + 改善 1 → AP-1，Sv4 → 5+
+        imp = Effect("save", "ap_improve", (1,), (), "攻方改善")
+        on = _run(_melee(ap=0, effects=[imp]), _target(sv=4),
+                  Stance(phase="melee"))
+        assert _ratio(on.unsaved, on.wounds) == pytest.approx(2 / 3, abs=0.02)
 
 
 class TestMeleeWoundSGtT:
