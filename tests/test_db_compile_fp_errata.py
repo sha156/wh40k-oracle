@@ -188,3 +188,52 @@ class TestNewUnits:
         rep = apply_fp_errata(db, {"stat_patches": [], "new_units": [self._unit()]})
         assert rep["units_inserted"] == []
         assert rep["units_exist"] == ["ORK:Bigboss"]
+
+
+class TestKeywordPatch:
+    """P7-PR5：keyword_patches 层（首例 WE Heldrake 删 AIRCRAFT）。"""
+
+    def _db(self, tmp_path, keywords):
+        db = tmp_path / "t.sqlite"
+        conn = _db_with([("u1", "WE", "Heldrake", '20+"')])
+        conn.execute(
+            "UPDATE units SET keywords_json = ? WHERE id = 'u1'",
+            (json.dumps({"keywords": keywords,
+                         "faction_keywords": ["World Eaters"]}),))
+        conn.commit()
+        conn.execute("VACUUM INTO ?", (str(db),)); conn.close()
+        return db
+
+    def _patch(self, **over):
+        p = {"unit_id": "u1", "faction": "WE", "unit": "Heldrake",
+             "remove": ["Aircraft"], "src": "page_007.md"}
+        p.update(over)
+        return {"keyword_patches": [p]}
+
+    def test_removes_keyword_case_insensitive(self, tmp_path):
+        db = self._db(tmp_path, ["Aircraft", "Vehicle", "Fly"])
+        rep = apply_fp_errata(db, self._patch())
+        assert rep["kw_applied"] == 1
+        assert rep["kw_changes"][0]["removed"] == ["Aircraft"]
+        kw = json.loads(sqlite3.connect(db).execute(
+            "SELECT keywords_json FROM units WHERE id='u1'").fetchone()[0])
+        assert kw["keywords"] == ["Vehicle", "Fly"]          # 保序、只删目标词
+        assert kw["faction_keywords"] == ["World Eaters"]    # 阵营关键词不动
+
+    def test_idempotent_when_already_removed(self, tmp_path):
+        db = self._db(tmp_path, ["Vehicle", "Fly"])
+        rep = apply_fp_errata(db, self._patch())
+        assert rep["kw_applied"] == 0
+        assert rep["kw_already"] == 1
+
+    def test_missing_unit_skipped(self, tmp_path):
+        db = self._db(tmp_path, ["Aircraft"])
+        rep = apply_fp_errata(db, self._patch(unit_id="nope"))
+        assert rep["kw_applied"] == 0
+        assert len(rep["kw_skipped"]) == 1
+
+    def test_empty_remove_invalid(self, tmp_path):
+        db = self._db(tmp_path, ["Aircraft"])
+        rep = apply_fp_errata(db, self._patch(remove=[]))
+        assert rep["kw_applied"] == 0
+        assert len(rep["kw_invalid"]) == 1

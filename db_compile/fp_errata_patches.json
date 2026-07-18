@@ -1,533 +1,553 @@
 {
-  "_comment": "Faction Pack 兵牌级真漂移外科补丁（S4 落账）。前提：29 包 481 张重印表 × 17138 单元格 A/B 核对后，库已 98.7%/99.9% 与官方 11 版重印一致（Wahapedia 已并入 6 月勘误）。本文件只补真·漂移，不做冗余覆盖。逐条 from 值取自落账时的库现值做防误覆盖守卫。",
-  "source": "29 Faction Packs first iteration (legal 2026-06-20), reprinted datasheet tables",
-  "generated": "2026-07-11",
-  "policy": "apply 前校验库现值==from；已等于 to 则幂等跳过；既非 from 也非 to 则跳过并告警（不盲覆盖）",
-  "stat_patches": [
+ "_comment": "Faction Pack 兵牌级真漂移外科补丁（S4 落账）。前提：29 包 481 张重印表 × 17138 单元格 A/B 核对后，库已 98.7%/99.9% 与官方 11 版重印一致（Wahapedia 已并入 6 月勘误）。本文件只补真·漂移，不做冗余覆盖。逐条 from 值取自落账时的库现值做防误覆盖守卫。｜P7-PR5 追加：WE Heldrake（S4 25 飞机清单未覆盖）——M 20+\"→12\" + keyword_patches 新层删 AIRCRAFT；OC 0→'-' 不补（功能等价且库无 '-' 先例，防下游 int 解析破坏，见 PR5 工作单）。",
+ "source": "29 Faction Packs first iteration (legal 2026-06-20), reprinted datasheet tables",
+ "generated": "2026-07-11",
+ "policy": "apply 前校验库现值==from；已等于 to 则幂等跳过；既非 from 也非 to 则跳过并告警（不盲覆盖）",
+ "stat_patches": [
+  {
+   "unit_id": "000001564",
+   "faction": "AC",
+   "unit": "Orion Assault Dropship",
+   "field": "m",
+   "from": "20+\"",
+   "to": "14\"",
+   "src": "page_029.md"
+  },
+  {
+   "unit_id": "000000624",
+   "faction": "AE",
+   "unit": "Phoenix",
+   "field": "m",
+   "from": "20+\"",
+   "to": "9\"",
+   "src": "page_033.md"
+  },
+  {
+   "unit_id": "000000625",
+   "faction": "AE",
+   "unit": "Vampire Raider",
+   "field": "m",
+   "from": "20+\"",
+   "to": "14\"",
+   "src": "page_035.md"
+  },
+  {
+   "unit_id": "000000626",
+   "faction": "AE",
+   "unit": "Vampire Hunter",
+   "field": "m",
+   "from": "20+\"",
+   "to": "12\"",
+   "src": "page_039.md"
+  },
+  {
+   "unit_id": "000000623",
+   "faction": "AE",
+   "unit": "NIGHTWING",
+   "field": "m",
+   "from": "20+\"",
+   "to": "8\"",
+   "src": "page_058.md"
+  },
+  {
+   "unit_id": "000001237",
+   "faction": "AM",
+   "unit": "Valkyrie Sky Talon",
+   "field": "m",
+   "from": "20+\"",
+   "to": "14\"",
+   "src": "page_043.md"
+  },
+  {
+   "unit_id": "000000778",
+   "faction": "AM",
+   "unit": "Aquila Lander",
+   "field": "m",
+   "from": "20+\"",
+   "to": "14\"",
+   "src": "page_045.md"
+  },
+  {
+   "unit_id": "000001317",
+   "faction": "CSM",
+   "unit": "Hell Blade",
+   "field": "m",
+   "from": "20+\"",
+   "to": "8\"",
+   "src": "page_048.md"
+  },
+  {
+   "unit_id": "000001318",
+   "faction": "CSM",
+   "unit": "Hell Talon",
+   "field": "m",
+   "from": "20+\"",
+   "to": "9\"",
+   "src": "page_050.md"
+  },
+  {
+   "unit_id": "000001321",
+   "faction": "CSM",
+   "unit": "CHAOS THUNDERHAWK",
+   "field": "m",
+   "from": "20+\"",
+   "to": "20\"",
+   "src": "page_100.md"
+  },
+  {
+   "unit_id": "000000358",
+   "faction": "SM",
+   "unit": "CORVUS BLACKSTAR",
+   "field": "m",
+   "from": "20+\"",
+   "to": "14\"",
+   "src": "page_016.md"
+  },
+  {
+   "unit_id": "000001390",
+   "faction": "DRU",
+   "unit": "RAVEN STRIKE FIGHTER",
+   "field": "m",
+   "from": "20+\"",
+   "to": "8\"",
+   "src": "page_008.md"
+  },
+  {
+   "unit_id": "000001197",
+   "faction": "GK",
+   "unit": "Grey Knights Thunderhawk Gunship",
+   "field": "m",
+   "from": "20+\"",
+   "to": "20\"",
+   "src": "page_007.md"
+  },
+  {
+   "unit_id": "000000325",
+   "faction": "SM",
+   "unit": "STORMFANG GUNSHIP",
+   "field": "m",
+   "from": "20+\"",
+   "to": "14\"",
+   "src": "page_028.md"
+  },
+  {
+   "unit_id": "000000321",
+   "faction": "SM",
+   "unit": "STORMWOLF",
+   "field": "m",
+   "from": "20+\"",
+   "to": "14\"",
+   "src": "page_030.md"
+  },
+  {
+   "unit_id": "000000139",
+   "faction": "SM",
+   "unit": "Thunderhawk Gunship",
+   "field": "m",
+   "from": "20+\"",
+   "to": "20\"",
+   "src": "page_057.md"
+  },
+  {
+   "unit_id": "000000072",
+   "faction": "SM",
+   "unit": "Caestus Assault Ram",
+   "field": "m",
+   "from": "20+\"",
+   "to": "14\"",
+   "src": "page_077.md"
+  },
+  {
+   "unit_id": "000002724",
+   "faction": "SM",
+   "unit": "Thunderhawk Transporter",
+   "field": "m",
+   "from": "20+\"",
+   "to": "20\"",
+   "src": "page_105.md"
+  },
+  {
+   "unit_id": "000002729",
+   "faction": "SM",
+   "unit": "Xiphon Interceptor",
+   "field": "m",
+   "from": "20+\"",
+   "to": "9\"",
+   "src": "page_194.md"
+  },
+  {
+   "unit_id": "000000113",
+   "faction": "SM",
+   "unit": "Storm Eagle Gunship",
+   "field": "m",
+   "from": "20+\"",
+   "to": "10\"",
+   "src": "page_196.md"
+  },
+  {
+   "unit_id": "000001609",
+   "faction": "SM",
+   "unit": "Fire Raptor Gunship",
+   "field": "m",
+   "from": "20+\"",
+   "to": "10\"",
+   "src": "page_198.md"
+  },
+  {
+   "unit_id": "000001179",
+   "faction": "SM",
+   "unit": "Sokar-pattern Stormbird",
+   "field": "m",
+   "from": "20+\"",
+   "to": "20\"",
+   "src": "page_212.md"
+  },
+  {
+   "unit_id": "000000457",
+   "faction": "TAU",
+   "unit": "MANTA",
+   "field": "m",
+   "from": "20+\"",
+   "to": "40\"",
+   "src": "page_017.md"
+  },
+  {
+   "unit_id": "000000456",
+   "faction": "TAU",
+   "unit": "Orca Dropship",
+   "field": "m",
+   "from": "20+\"",
+   "to": "20\"",
+   "src": "page_021.md"
+  },
+  {
+   "unit_id": "000000504",
+   "faction": "TYR",
+   "unit": "Harridan",
+   "field": "m",
+   "from": "20+\"",
+   "to": "14\"",
+   "src": "page_015.md"
+  },
+  {
+   "unit_id": "000001663",
+   "faction": "QT",
+   "unit": "War Dog Moirax",
+   "field": "t",
+   "from": "10",
+   "to": "9",
+   "src": "Faction Pack reprint"
+  },
+  {
+   "unit_id": "000001663",
+   "faction": "QT",
+   "unit": "War Dog Moirax",
+   "field": "w",
+   "from": "12",
+   "to": "14",
+   "src": "Faction Pack reprint"
+  },
+  {
+   "unit_id": "000001663",
+   "faction": "QT",
+   "unit": "War Dog Moirax",
+   "field": "oc",
+   "from": "8",
+   "to": "6",
+   "src": "Faction Pack reprint"
+  },
+  {
+   "unit_id": "000002711",
+   "faction": "SM",
+   "unit": "Land Speeder",
+   "field": "t",
+   "from": "7",
+   "to": "8",
+   "src": "Faction Pack reprint"
+  },
+  {
+   "unit_id": "000002711",
+   "faction": "SM",
+   "unit": "Land Speeder",
+   "field": "w",
+   "from": "6",
+   "to": "9",
+   "src": "Faction Pack reprint"
+  },
+  {
+   "unit_id": "000002711",
+   "faction": "SM",
+   "unit": "Land Speeder",
+   "field": "oc",
+   "from": "2",
+   "to": "3",
+   "src": "Faction Pack reprint"
+  },
+  {
+   "unit_id": "000002801",
+   "faction": "SM",
+   "unit": "Venerable Dreadnought",
+   "field": "m",
+   "from": "8\"",
+   "to": "6\"",
+   "src": "Faction Pack reprint"
+  },
+  {
+   "unit_id": "000002641",
+   "faction": "WE",
+   "unit": "Heldrake",
+   "field": "m",
+   "from": "20+\"",
+   "to": "12\"",
+   "src": "Faction Pack World Eaters page_007.md（Heldrake Profile: Change M to 12\"）"
+  }
+ ],
+ "new_units": [
+  {
+   "unit_id": "fpe_bigboss",
+   "faction": "ORK",
+   "name": "Bigboss",
+   "version": "11e-fp",
+   "src": "Faction Pack Orks/page_011",
+   "keywords": [
+    "INFANTRY",
+    "CHARACTER",
+    "BIGBOSS"
+   ],
+   "faction_keywords": [
+    "ORKS"
+   ],
+   "models": [
     {
-      "unit_id": "000001564",
-      "faction": "AC",
-      "unit": "Orion Assault Dropship",
-      "field": "m",
-      "from": "20+\"",
-      "to": "14\"",
-      "src": "page_029.md"
-    },
-    {
-      "unit_id": "000000624",
-      "faction": "AE",
-      "unit": "Phoenix",
-      "field": "m",
-      "from": "20+\"",
-      "to": "9\"",
-      "src": "page_033.md"
-    },
-    {
-      "unit_id": "000000625",
-      "faction": "AE",
-      "unit": "Vampire Raider",
-      "field": "m",
-      "from": "20+\"",
-      "to": "14\"",
-      "src": "page_035.md"
-    },
-    {
-      "unit_id": "000000626",
-      "faction": "AE",
-      "unit": "Vampire Hunter",
-      "field": "m",
-      "from": "20+\"",
-      "to": "12\"",
-      "src": "page_039.md"
-    },
-    {
-      "unit_id": "000000623",
-      "faction": "AE",
-      "unit": "NIGHTWING",
-      "field": "m",
-      "from": "20+\"",
-      "to": "8\"",
-      "src": "page_058.md"
-    },
-    {
-      "unit_id": "000001237",
-      "faction": "AM",
-      "unit": "Valkyrie Sky Talon",
-      "field": "m",
-      "from": "20+\"",
-      "to": "14\"",
-      "src": "page_043.md"
-    },
-    {
-      "unit_id": "000000778",
-      "faction": "AM",
-      "unit": "Aquila Lander",
-      "field": "m",
-      "from": "20+\"",
-      "to": "14\"",
-      "src": "page_045.md"
-    },
-    {
-      "unit_id": "000001317",
-      "faction": "CSM",
-      "unit": "Hell Blade",
-      "field": "m",
-      "from": "20+\"",
-      "to": "8\"",
-      "src": "page_048.md"
-    },
-    {
-      "unit_id": "000001318",
-      "faction": "CSM",
-      "unit": "Hell Talon",
-      "field": "m",
-      "from": "20+\"",
-      "to": "9\"",
-      "src": "page_050.md"
-    },
-    {
-      "unit_id": "000001321",
-      "faction": "CSM",
-      "unit": "CHAOS THUNDERHAWK",
-      "field": "m",
-      "from": "20+\"",
-      "to": "20\"",
-      "src": "page_100.md"
-    },
-    {
-      "unit_id": "000000358",
-      "faction": "SM",
-      "unit": "CORVUS BLACKSTAR",
-      "field": "m",
-      "from": "20+\"",
-      "to": "14\"",
-      "src": "page_016.md"
-    },
-    {
-      "unit_id": "000001390",
-      "faction": "DRU",
-      "unit": "RAVEN STRIKE FIGHTER",
-      "field": "m",
-      "from": "20+\"",
-      "to": "8\"",
-      "src": "page_008.md"
-    },
-    {
-      "unit_id": "000001197",
-      "faction": "GK",
-      "unit": "Grey Knights Thunderhawk Gunship",
-      "field": "m",
-      "from": "20+\"",
-      "to": "20\"",
-      "src": "page_007.md"
-    },
-    {
-      "unit_id": "000000325",
-      "faction": "SM",
-      "unit": "STORMFANG GUNSHIP",
-      "field": "m",
-      "from": "20+\"",
-      "to": "14\"",
-      "src": "page_028.md"
-    },
-    {
-      "unit_id": "000000321",
-      "faction": "SM",
-      "unit": "STORMWOLF",
-      "field": "m",
-      "from": "20+\"",
-      "to": "14\"",
-      "src": "page_030.md"
-    },
-    {
-      "unit_id": "000000139",
-      "faction": "SM",
-      "unit": "Thunderhawk Gunship",
-      "field": "m",
-      "from": "20+\"",
-      "to": "20\"",
-      "src": "page_057.md"
-    },
-    {
-      "unit_id": "000000072",
-      "faction": "SM",
-      "unit": "Caestus Assault Ram",
-      "field": "m",
-      "from": "20+\"",
-      "to": "14\"",
-      "src": "page_077.md"
-    },
-    {
-      "unit_id": "000002724",
-      "faction": "SM",
-      "unit": "Thunderhawk Transporter",
-      "field": "m",
-      "from": "20+\"",
-      "to": "20\"",
-      "src": "page_105.md"
-    },
-    {
-      "unit_id": "000002729",
-      "faction": "SM",
-      "unit": "Xiphon Interceptor",
-      "field": "m",
-      "from": "20+\"",
-      "to": "9\"",
-      "src": "page_194.md"
-    },
-    {
-      "unit_id": "000000113",
-      "faction": "SM",
-      "unit": "Storm Eagle Gunship",
-      "field": "m",
-      "from": "20+\"",
-      "to": "10\"",
-      "src": "page_196.md"
-    },
-    {
-      "unit_id": "000001609",
-      "faction": "SM",
-      "unit": "Fire Raptor Gunship",
-      "field": "m",
-      "from": "20+\"",
-      "to": "10\"",
-      "src": "page_198.md"
-    },
-    {
-      "unit_id": "000001179",
-      "faction": "SM",
-      "unit": "Sokar-pattern Stormbird",
-      "field": "m",
-      "from": "20+\"",
-      "to": "20\"",
-      "src": "page_212.md"
-    },
-    {
-      "unit_id": "000000457",
-      "faction": "TAU",
-      "unit": "MANTA",
-      "field": "m",
-      "from": "20+\"",
-      "to": "40\"",
-      "src": "page_017.md"
-    },
-    {
-      "unit_id": "000000456",
-      "faction": "TAU",
-      "unit": "Orca Dropship",
-      "field": "m",
-      "from": "20+\"",
-      "to": "20\"",
-      "src": "page_021.md"
-    },
-    {
-      "unit_id": "000000504",
-      "faction": "TYR",
-      "unit": "Harridan",
-      "field": "m",
-      "from": "20+\"",
-      "to": "14\"",
-      "src": "page_015.md"
-    },
-    {
-      "unit_id": "000001663",
-      "faction": "QT",
-      "unit": "War Dog Moirax",
-      "field": "t",
-      "from": "10",
-      "to": "9",
-      "src": "Faction Pack reprint"
-    },
-    {
-      "unit_id": "000001663",
-      "faction": "QT",
-      "unit": "War Dog Moirax",
-      "field": "w",
-      "from": "12",
-      "to": "14",
-      "src": "Faction Pack reprint"
-    },
-    {
-      "unit_id": "000001663",
-      "faction": "QT",
-      "unit": "War Dog Moirax",
-      "field": "oc",
-      "from": "8",
-      "to": "6",
-      "src": "Faction Pack reprint"
-    },
-    {
-      "unit_id": "000002711",
-      "faction": "SM",
-      "unit": "Land Speeder",
-      "field": "t",
-      "from": "7",
-      "to": "8",
-      "src": "Faction Pack reprint"
-    },
-    {
-      "unit_id": "000002711",
-      "faction": "SM",
-      "unit": "Land Speeder",
-      "field": "w",
-      "from": "6",
-      "to": "9",
-      "src": "Faction Pack reprint"
-    },
-    {
-      "unit_id": "000002711",
-      "faction": "SM",
-      "unit": "Land Speeder",
-      "field": "oc",
-      "from": "2",
-      "to": "3",
-      "src": "Faction Pack reprint"
-    },
-    {
-      "unit_id": "000002801",
-      "faction": "SM",
-      "unit": "Venerable Dreadnought",
-      "field": "m",
-      "from": "8\"",
-      "to": "6\"",
-      "src": "Faction Pack reprint"
+     "name": "Bigboss",
+     "m": "6\"",
+     "t": "5",
+     "sv": "4+",
+     "invuln": "",
+     "w": "5",
+     "ld": "7+",
+     "oc": "1"
     }
-  ],
-  "new_units": [
+   ],
+   "weapons": [
     {
-      "unit_id": "fpe_bigboss",
-      "faction": "ORK",
-      "name": "Bigboss",
-      "version": "11e-fp",
-      "src": "Faction Pack Orks/page_011",
-      "keywords": [
-        "INFANTRY",
-        "CHARACTER",
-        "BIGBOSS"
-      ],
-      "faction_keywords": [
-        "ORKS"
-      ],
-      "models": [
-        {
-          "name": "Bigboss",
-          "m": "6\"",
-          "t": "5",
-          "sv": "4+",
-          "invuln": "",
-          "w": "5",
-          "ld": "7+",
-          "oc": "1"
-        }
-      ],
-      "weapons": [
-        {
-          "name": "Slugga",
-          "kind": "ranged",
-          "range": "12\"",
-          "a": "1",
-          "bs_ws": "5+",
-          "s": "4",
-          "ap": "0",
-          "d": "1",
-          "keywords": [
-            "CLOSE-QUARTERS"
-          ]
-        },
-        {
-          "name": "Two-handed big choppa",
-          "kind": "melee",
-          "range": "Melee",
-          "a": "5",
-          "bs_ws": "3+",
-          "s": "7",
-          "ap": "-1",
-          "d": "2",
-          "keywords": [
-            "CLEAVE 1"
-          ]
-        }
-      ]
+     "name": "Slugga",
+     "kind": "ranged",
+     "range": "12\"",
+     "a": "1",
+     "bs_ws": "5+",
+     "s": "4",
+     "ap": "0",
+     "d": "1",
+     "keywords": [
+      "CLOSE-QUARTERS"
+     ]
     },
     {
-      "unit_id": "fpe_bannernob",
-      "faction": "ORK",
-      "name": "Bannernob",
-      "version": "11e-fp",
-      "src": "Faction Pack Orks/page_012",
-      "keywords": [
-        "INFANTRY",
-        "CHARACTER",
-        "BANNERNOB"
-      ],
-      "faction_keywords": [
-        "ORKS"
-      ],
-      "models": [
-        {
-          "name": "Bannernob",
-          "m": "6\"",
-          "t": "5",
-          "sv": "4+",
-          "invuln": "5+",
-          "w": "4",
-          "ld": "7+",
-          "oc": "6"
-        }
-      ],
-      "weapons": [
-        {
-          "name": "Shoota",
-          "kind": "ranged",
-          "range": "18\"",
-          "a": "2",
-          "bs_ws": "5+",
-          "s": "4",
-          "ap": "0",
-          "d": "1",
-          "keywords": [
-            "RAPID FIRE 1"
-          ]
-        },
-        {
-          "name": "Choppa",
-          "kind": "melee",
-          "range": "Melee",
-          "a": "5",
-          "bs_ws": "3+",
-          "s": "4",
-          "ap": "-1",
-          "d": "1",
-          "keywords": []
-        }
-      ]
-    },
-    {
-      "unit_id": "fpe_big_mek_dakkarig",
-      "faction": "ORK",
-      "name": "Big Mek Dakkarig",
-      "version": "11e-fp",
-      "src": "Faction Pack Orks/page_014",
-      "keywords": [
-        "VEHICLE",
-        "WALKER",
-        "BIG MEK",
-        "DAKKARIG"
-      ],
-      "faction_keywords": [
-        "ORKS"
-      ],
-      "models": [
-        {
-          "name": "Big Mek Dakkarig",
-          "m": "8\"",
-          "t": "8",
-          "sv": "3+",
-          "invuln": "5+",
-          "w": "11",
-          "ld": "7+",
-          "oc": "3"
-        }
-      ],
-      "weapons": [
-        {
-          "name": "Blitzkannon",
-          "kind": "ranged",
-          "range": "24\"",
-          "a": "8",
-          "bs_ws": "5+",
-          "s": "7",
-          "ap": "-2",
-          "d": "2",
-          "keywords": [
-            "HEAVY",
-            "SUSTAINED HITS 1"
-          ]
-        },
-        {
-          "name": "Rokkit launcha",
-          "kind": "ranged",
-          "range": "24\"",
-          "a": "6",
-          "bs_ws": "5+",
-          "s": "10",
-          "ap": "-2",
-          "d": "3",
-          "keywords": [
-            "HEAVY"
-          ]
-        },
-        {
-          "name": "Stompy feet",
-          "kind": "melee",
-          "range": "Melee",
-          "a": "4",
-          "bs_ws": "3+",
-          "s": "6",
-          "ap": "-1",
-          "d": "1",
-          "keywords": []
-        }
-      ]
+     "name": "Two-handed big choppa",
+     "kind": "melee",
+     "range": "Melee",
+     "a": "5",
+     "bs_ws": "3+",
+     "s": "7",
+     "ap": "-1",
+     "d": "2",
+     "keywords": [
+      "CLEAVE 1"
+     ]
     }
-  ],
-  "review_needed": [],
-  "weapon_patches": [
+   ]
+  },
+  {
+   "unit_id": "fpe_bannernob",
+   "faction": "ORK",
+   "name": "Bannernob",
+   "version": "11e-fp",
+   "src": "Faction Pack Orks/page_012",
+   "keywords": [
+    "INFANTRY",
+    "CHARACTER",
+    "BANNERNOB"
+   ],
+   "faction_keywords": [
+    "ORKS"
+   ],
+   "models": [
     {
-      "unit_id": "000000050",
-      "faction": "ORK",
-      "unit": "Grot Mega-Tank",
-      "weapon": "Twin grotzooka",
-      "field": "ap",
-      "from": "0",
-      "to": "-1",
-      "src": "BSData Orks.cat + Faction Pack",
-      "note": "grotzooka 通例 AP-1，BSData(单/双管均-1)与 pack 双源佐证，库沿用了错值 0"
-    },
-    {
-      "unit_id": "000004187",
-      "faction": "SM",
-      "unit": "Captain Titus",
-      "weapon": "Bolt pistol",
-      "field": "bs_ws",
-      "from": "3",
-      "to": "2",
-      "src": "BSData SM.cat + Faction Pack + 同单位其他武器",
-      "note": "具名角色 BS 应统一：Titus 大师级爆弹枪/链锯剑均 2+，唯 bolt pistol 库存通用值 3"
+     "name": "Bannernob",
+     "m": "6\"",
+     "t": "5",
+     "sv": "4+",
+     "invuln": "5+",
+     "w": "4",
+     "ld": "7+",
+     "oc": "6"
     }
-  ],
-  "resolved": [
+   ],
+   "weapons": [
     {
-      "faction": "ORK",
-      "unit": "Grot Mega-Tank",
-      "weapon": "Twin grotzooka",
-      "field": "ap",
-      "verdict": "apply -1",
-      "evidence": "BSData grotzooka(单/双管)=AP-1 + pack -1 双源 > DB 0"
+     "name": "Shoota",
+     "kind": "ranged",
+     "range": "18\"",
+     "a": "2",
+     "bs_ws": "5+",
+     "s": "4",
+     "ap": "0",
+     "d": "1",
+     "keywords": [
+      "RAPID FIRE 1"
+     ]
     },
     {
-      "faction": "ORK",
-      "unit": "KILL TANK",
-      "weapon": "Twin big shoota",
-      "field": "range",
-      "verdict": "DB 正确(18\")不改",
-      "evidence": "BSData Twin big shoota=18\"（单管 Big shoota 才 36\"）→ pack refine 把双管误配单管值 36\""
-    },
-    {
-      "faction": "SM",
-      "unit": "Captain Titus",
-      "weapon": "Bolt pistol",
-      "field": "bs_ws",
-      "verdict": "apply 2",
-      "evidence": "BSData SM Bolt pistol=2+ + pack 2+ + Titus 其他武器均 2+ > DB 3（通用值错配）"
-    },
-    {
-      "faction": "SM",
-      "unit": "Librarian with Jump Pack",
-      "weapon": "Inferno pistol",
-      "field": "d",
-      "verdict": "DB 正确(D3)不改",
-      "evidence": "BSData Inferno pistol=D3 + inferno pistol 通例 D3 > pack refine D6（精炼误）"
+     "name": "Choppa",
+     "kind": "melee",
+     "range": "Melee",
+     "a": "5",
+     "bs_ws": "3+",
+     "s": "4",
+     "ap": "-1",
+     "d": "1",
+     "keywords": []
     }
-  ]
+   ]
+  },
+  {
+   "unit_id": "fpe_big_mek_dakkarig",
+   "faction": "ORK",
+   "name": "Big Mek Dakkarig",
+   "version": "11e-fp",
+   "src": "Faction Pack Orks/page_014",
+   "keywords": [
+    "VEHICLE",
+    "WALKER",
+    "BIG MEK",
+    "DAKKARIG"
+   ],
+   "faction_keywords": [
+    "ORKS"
+   ],
+   "models": [
+    {
+     "name": "Big Mek Dakkarig",
+     "m": "8\"",
+     "t": "8",
+     "sv": "3+",
+     "invuln": "5+",
+     "w": "11",
+     "ld": "7+",
+     "oc": "3"
+    }
+   ],
+   "weapons": [
+    {
+     "name": "Blitzkannon",
+     "kind": "ranged",
+     "range": "24\"",
+     "a": "8",
+     "bs_ws": "5+",
+     "s": "7",
+     "ap": "-2",
+     "d": "2",
+     "keywords": [
+      "HEAVY",
+      "SUSTAINED HITS 1"
+     ]
+    },
+    {
+     "name": "Rokkit launcha",
+     "kind": "ranged",
+     "range": "24\"",
+     "a": "6",
+     "bs_ws": "5+",
+     "s": "10",
+     "ap": "-2",
+     "d": "3",
+     "keywords": [
+      "HEAVY"
+     ]
+    },
+    {
+     "name": "Stompy feet",
+     "kind": "melee",
+     "range": "Melee",
+     "a": "4",
+     "bs_ws": "3+",
+     "s": "6",
+     "ap": "-1",
+     "d": "1",
+     "keywords": []
+    }
+   ]
+  }
+ ],
+ "review_needed": [],
+ "weapon_patches": [
+  {
+   "unit_id": "000000050",
+   "faction": "ORK",
+   "unit": "Grot Mega-Tank",
+   "weapon": "Twin grotzooka",
+   "field": "ap",
+   "from": "0",
+   "to": "-1",
+   "src": "BSData Orks.cat + Faction Pack",
+   "note": "grotzooka 通例 AP-1，BSData(单/双管均-1)与 pack 双源佐证，库沿用了错值 0"
+  },
+  {
+   "unit_id": "000004187",
+   "faction": "SM",
+   "unit": "Captain Titus",
+   "weapon": "Bolt pistol",
+   "field": "bs_ws",
+   "from": "3",
+   "to": "2",
+   "src": "BSData SM.cat + Faction Pack + 同单位其他武器",
+   "note": "具名角色 BS 应统一：Titus 大师级爆弹枪/链锯剑均 2+，唯 bolt pistol 库存通用值 3"
+  }
+ ],
+ "resolved": [
+  {
+   "faction": "ORK",
+   "unit": "Grot Mega-Tank",
+   "weapon": "Twin grotzooka",
+   "field": "ap",
+   "verdict": "apply -1",
+   "evidence": "BSData grotzooka(单/双管)=AP-1 + pack -1 双源 > DB 0"
+  },
+  {
+   "faction": "ORK",
+   "unit": "KILL TANK",
+   "weapon": "Twin big shoota",
+   "field": "range",
+   "verdict": "DB 正确(18\")不改",
+   "evidence": "BSData Twin big shoota=18\"（单管 Big shoota 才 36\"）→ pack refine 把双管误配单管值 36\""
+  },
+  {
+   "faction": "SM",
+   "unit": "Captain Titus",
+   "weapon": "Bolt pistol",
+   "field": "bs_ws",
+   "verdict": "apply 2",
+   "evidence": "BSData SM Bolt pistol=2+ + pack 2+ + Titus 其他武器均 2+ > DB 3（通用值错配）"
+  },
+  {
+   "faction": "SM",
+   "unit": "Librarian with Jump Pack",
+   "weapon": "Inferno pistol",
+   "field": "d",
+   "verdict": "DB 正确(D3)不改",
+   "evidence": "BSData Inferno pistol=D3 + inferno pistol 通例 D3 > pack refine D6（精炼误）"
+  }
+ ],
+ "keyword_patches": [
+  {
+   "unit_id": "000002641",
+   "faction": "WE",
+   "unit": "Heldrake",
+   "remove": [
+    "Aircraft"
+   ],
+   "src": "Faction Pack World Eaters page_007.md（Heldrake Keywords: Remove 'AIRCRAFT'）"
+  }
+ ]
 }

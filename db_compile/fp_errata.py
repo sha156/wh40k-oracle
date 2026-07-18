@@ -121,6 +121,41 @@ def _slim(p: dict) -> dict:
     return {"unit": p.get("unit"), "faction": p.get("faction"), "field": p.get("field")}
 
 
+def _apply_keyword_patches(conn, patches: List[dict], report: Dict) -> None:
+    """关键词级真漂移补丁（units.keywords_json，P7-PR5）。
+
+    首例：FP World Eaters p7 Heldrake「Keywords: Remove 'AIRCRAFT'」——11 版取消
+    飞行器模式后个别兵牌的关键词漂移，S4 的 25 飞机移动补丁没覆盖关键词面。
+    守卫：①单位不存在→跳过告警；②remove 列表里的词库内已不存在→幂等；
+    ③只删不加（新增关键词属重印整表体裁，走 new_units/上游滚更，不在本层）。
+    大小写不敏感匹配、保留库内原大小写与顺序。
+    """
+    for p in patches:
+        uid, removes = p.get("unit_id"), p.get("remove") or []
+        if not uid or not removes or not isinstance(removes, list):
+            report["kw_invalid"].append(_slim(p))
+            continue
+        row = conn.execute(
+            "SELECT keywords_json FROM units WHERE id = ?", (uid,)).fetchone()
+        if row is None:
+            report["kw_skipped"].append({**_slim(p), "reason": "单位不存在"})
+            continue
+        data = json.loads(row[0] or "{}")
+        kws = data.get("keywords", [])
+        drop = {r.casefold() for r in removes}
+        kept = [k for k in kws if k.casefold() not in drop]
+        if len(kept) == len(kws):
+            report["kw_already"] += 1               # 幂等：目标词已不在
+            continue
+        data["keywords"] = kept
+        conn.execute(
+            "UPDATE units SET keywords_json = ? WHERE id = ?",
+            (json.dumps(data, ensure_ascii=False), uid))
+        report["kw_applied"] += 1
+        report["kw_changes"].append(
+            {**_slim(p), "removed": [k for k in kws if k.casefold() in drop]})
+
+
 def _insert_new_units(conn, units: List[dict], report: Dict) -> None:
     for u in units:
         fac, name = u.get("faction"), u.get("name")
@@ -176,12 +211,15 @@ def apply_fp_errata(db_path, patches: dict) -> Dict:
         "weapon_applied": 0, "weapon_already": 0,
         "weapon_changes": [], "weapon_mismatch": [], "weapon_skipped": [],
         "weapon_invalid": [],
+        "kw_applied": 0, "kw_already": 0,
+        "kw_changes": [], "kw_skipped": [], "kw_invalid": [],
         "units_inserted": [], "units_exist": [],
     }
     conn = sqlite3.connect(str(db_path))
     try:
         _apply_stat_patches(conn, patches.get("stat_patches", []), report)
         _apply_weapon_patches(conn, patches.get("weapon_patches", []), report)
+        _apply_keyword_patches(conn, patches.get("keyword_patches", []), report)
         _insert_new_units(conn, patches.get("new_units", []), report)
         conn.commit()
     finally:

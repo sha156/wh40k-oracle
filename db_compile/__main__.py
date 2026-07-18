@@ -210,6 +210,8 @@ def main() -> None:
               f"让路 {len(rep['stat_mismatch'])} / 跳过 {len(rep['stat_skipped'])}")
         print(f"  武器：应用 {rep['weapon_applied']} / 幂等 {rep['weapon_already']} / "
               f"让路 {len(rep['weapon_mismatch'])} / 跳过 {len(rep['weapon_skipped'])}")
+        print(f"  关键词：应用 {rep['kw_applied']} / 幂等 {rep['kw_already']} / "
+              f"跳过 {len(rep['kw_skipped'])} / 无效 {len(rep['kw_invalid'])}")
         print(f"  新单位：插入 {len(rep['units_inserted'])}（{', '.join(rep['units_inserted'])}）"
               f" / 已存在 {len(rep['units_exist'])}")
         if rep["stat_changes"]:
@@ -222,6 +224,10 @@ def main() -> None:
             for ch in rep["weapon_changes"]:
                 print(f"    {ch['faction']:4} {ch['unit'][:28]:28} {ch['weapon'][:20]:20} "
                       f"{ch['field']:5} {ch['from']!r} → {ch['to']!r}")
+        if rep["kw_changes"]:
+            print("\n  关键词已删：")
+            for ch in rep["kw_changes"]:
+                print(f"    {ch['faction']:4} {ch['unit'][:32]:32} -{ch['removed']}")
         for tag, key in (("属性", "stat_mismatch"), ("武器", "weapon_mismatch")):
             if rep[key]:
                 print(f"\n  ⚠️ {tag}让路未覆盖（库现值既非 from 也非 to）：")
