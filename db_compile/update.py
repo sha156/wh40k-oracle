@@ -222,16 +222,19 @@ def stage_fp_rules(cfg: UpdateConfig) -> StageResult:
                            warning="fp_rules 补丁文件缺失，规则文本未 11 版化")
     from db_compile.fp_rules import apply_from_file
     rep = apply_from_file(cfg.db, cfg.fp_rules)
-    mismatches = len(rep["text_mismatch"]) + len(rep["name_mismatch"])
+    mismatches = (len(rep["text_mismatch"]) + len(rep["name_mismatch"])
+                  + len(rep["deact_mismatch"]) + len(rep["ins_mismatch"]))
     warn = None
     if mismatches:
-        warn = (f"{mismatches} 条补丁库现值既非 from 也非 to，已让路未覆盖"
-                "（上游可能已改，核对 fp_rules_patches.json）")
+        warn = (f"{mismatches} 条补丁与库现状不符（既非 from 也非 to / 名字不符 / "
+                "同名行已存在），已让路未覆盖——上游可能已改，核对 fp_rules_patches.json")
     return StageResult(
         "fp_rules", True,
         f"文本补丁 应用 {rep['text_applied']} / 幂等 {rep['text_already']} / "
         f"让路 {len(rep['text_mismatch'])}；中文名 应用 {rep['name_applied']} / "
-        f"幂等 {rep['name_already']} / 让路 {len(rep['name_mismatch'])}",
+        f"幂等 {rep['name_already']} / 让路 {len(rep['name_mismatch'])}；"
+        f"失效标记 应用 {rep['deact_applied']} / 幂等 {rep['deact_already']}；"
+        f"补录插行 应用 {rep['ins_applied']} / 幂等 {rep['ins_already']}",
         detail=rep, warning=warn)
 
 

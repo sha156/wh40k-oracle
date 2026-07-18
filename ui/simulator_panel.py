@@ -100,6 +100,16 @@ def _options_from_inputs(st) -> Dict[str, Any]:
         "guided": st.session_state.get("sim_guided", False),
         "markerlight_observer": st.session_state.get("sim_markerlight", False),
         "detachment_rounds": st.session_state.get("sim_det_rounds", False),
+        # P7-PR4 假设开关（攻方）
+        "range_within_12": st.session_state.get("sim_r12", False),
+        "range_within_8": st.session_state.get("sim_r8", False),
+        "target_below_starting": st.session_state.get("sim_tbs", False),
+        "target_below_half": st.session_state.get("sim_tbh", False),
+        "markerlight_visible": st.session_state.get("sim_ml_visible", False),
+        "bearer_leading": st.session_state.get("sim_bearer", False),
+        # P7-PR4 守方向
+        "defender_hidden": st.session_state.get("sim_def_hidden", False),
+        "defender_bearer_leading": st.session_state.get("sim_def_bearer", False),
         "n": int(st.session_state.get("sim_n", 8000)),
         "seed": int(st.session_state.get("sim_seed", 1234)),
     }
@@ -110,6 +120,23 @@ def _options_from_inputs(st) -> Dict[str, Any]:
               (st.session_state.get("sim_stratagems") or "").split(",") if s.strip()]
     if strats:
         opts["stratagems"] = strats
+    enhs = [s.strip() for s in
+            (st.session_state.get("sim_enhancements") or "").split(",") if s.strip()]
+    if enhs:
+        opts["enhancements"] = enhs
+    d_det = (st.session_state.get("sim_def_detachment") or "").strip()
+    if d_det:
+        opts["defender_detachment"] = d_det
+    d_strats = [s.strip() for s in
+                (st.session_state.get("sim_def_stratagems") or "").split(",")
+                if s.strip()]
+    if d_strats:
+        opts["defender_stratagems"] = d_strats
+    d_enhs = [s.strip() for s in
+              (st.session_state.get("sim_def_enhancements") or "").split(",")
+              if s.strip()]
+    if d_enhs:
+        opts["defender_enhancements"] = d_enhs
     fnp = int(st.session_state.get("sim_fnp", 0) or 0)
     if fnp:
         opts["fnp"] = fnp
@@ -182,7 +209,7 @@ def render_simulator_panel(st) -> None:
                              help="P7-PR3：引擎无战斗轮概念，开=假设当前处于分队规则生效轮次"
                                   "（Kauyon 第3-5轮 / Mont'ka 第1-3轮），报告有披露。"
                                   "须同时填「攻方分队」才有条目可放行")
-        cols_dsl2 = st.columns(2)
+        cols_dsl2 = st.columns(3)
         cols_dsl2[0].text_input("攻方分队（如 Kauyon / Mont'ka）", key="sim_detachment",
                                 help="放行该分队的规则条目；与点名战略做分队一致性校验。"
                                     "撇号直弯均可；留空=只挂军队级规则（FTGG）")
@@ -190,6 +217,36 @@ def render_simulator_panel(st) -> None:
                                 help="id/英文名/中文名均可，如「集中火力, 抵近伏击」。"
                                     "一次性 opt-in：CP 消耗与次数限制不结算只披露；"
                                     "未匹配或分队不符会显式报出，不静默")
+        cols_dsl2[2].text_input("增强点名（逗号分隔）", key="sim_enhancements",
+                                help="P7-PR4：opt-in 同战略；bearer/leading 型条目须"
+                                     "同开「假设携带者率领本单位」")
+        with st.expander("P7-PR4 假设开关与守方阵营 DSL（默认全关）"):
+            cols_dsl3 = st.columns(3)
+            cols_dsl3[0].checkbox('假设目标在 12" 内', key="sim_r12",
+                                  help="Bonded Heroes S+1 档；引擎无距离建模，"
+                                       "此开关是显式假设，报告有披露")
+            cols_dsl3[1].checkbox('假设目标在 8" 内', key="sim_r8",
+                                  help="Bonded Heroes AP 档；自动蕴含 12 寸档")
+            cols_dsl3[2].checkbox("假设目标对友军标记光单位可见", key="sim_ml_visible",
+                                  help="Starfire Cadre 军规 Markerlight Precision 前提")
+            cols_dsl4 = st.columns(3)
+            cols_dsl4[0].checkbox("假设目标低于满编", key="sim_tbs",
+                                  help="Hunter's Instincts 命中档")
+            cols_dsl4[1].checkbox("假设目标低于半编", key="sim_tbh",
+                                  help="Hunter's Instincts 致伤档；蕴含低于满编")
+            cols_dsl4[2].checkbox("假设增强携带者率领本单位", key="sim_bearer",
+                                  help="bearer/leading 型增强的生效前提")
+            cols_dsl5 = st.columns(3)
+            cols_dsl5[0].text_input("守方分队", key="sim_def_detachment",
+                                    help="放行守方分队的防守向条目"
+                                         "（如 Kroot Hunting Pack 的 Skirmish Fighters）")
+            cols_dsl5[1].text_input("守方战略点名（逗号分隔）", key="sim_def_stratagems",
+                                    help="防守向战略（Stimm Injectors / 防御反击系统等）")
+            cols_dsl5[2].text_input("守方增强点名（逗号分隔）", key="sim_def_enhancements")
+            cols_dsl6 = st.columns(2)
+            cols_dsl6[0].checkbox("假设守方处于 hidden 状态", key="sim_def_hidden",
+                                  help="AAC 自反应迷彩（+1 Sv）的生效前提")
+            cols_dsl6[1].checkbox("假设守方增强携带者率领守方单位", key="sim_def_bearer")
 
         cols3 = st.columns(4)
         cols3[0].number_input("守方 FNP X+（0=关）", 0, 6, 0, key="sim_fnp")

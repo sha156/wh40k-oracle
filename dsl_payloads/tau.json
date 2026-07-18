@@ -12,14 +12,30 @@
    "name_zh": "为了上上善道",
    "status": "partial",
    "effects": [
-    {"phase": "hit", "op": "bs_improve", "params": [1],
-     "condition": ["guided_vs_spotted"],
-     "source": "For the Greater Good（受引导打被标记目标：BS 特征值改善 1）"},
-    {"phase": "save", "op": "ignores_cover", "params": [],
-     "condition": ["guided_markerlight"],
-     "source": "For the Greater Good（观察员带 Markerlight 关键词：追加 [IGNORES COVER]）"}
+    {
+     "phase": "hit",
+     "op": "bs_improve",
+     "params": [
+      1
+     ],
+     "condition": [
+      "guided_vs_spotted"
+     ],
+     "source": "For the Greater Good（受引导打被标记目标：BS 特征值改善 1）"
+    },
+    {
+     "phase": "save",
+     "op": "ignores_cover",
+     "params": [],
+     "condition": [
+      "guided_markerlight"
+     ],
+     "source": "For the Greater Good（观察员带 Markerlight 关键词：追加 [IGNORES COVER]）"
+    }
    ],
-   "requires_toggles": ["guided"],
+   "requires_toggles": [
+    "guided"
+   ],
    "not_modeled_notes_zh": [
     "观察员单位自身本阶段不选择射击的机会成本未建模（模拟只算受引导单位的输出）",
     "每个敌军单位每阶段只能被标记一次的军队级约束未建模（单点模拟不涉及）",
@@ -36,21 +52,41 @@
   {
    "table": "abilities",
    "id": "det000008441",
-   "materialize": {"from_table": "detachments", "from_id": "000008441", "from_column": "rule_text"},
+   "materialize": {
+    "from_table": "detachments",
+    "from_id": "000008441",
+    "from_column": "rule_text"
+   },
    "side": "attacker",
    "detachment": "Kauyon",
    "name_en": "Patient Hunter",
    "name_zh": "耐心猎手",
    "status": "partial",
    "effects": [
-    {"phase": "hit", "op": "extra_hits", "params": [1],
-     "condition": ["detachment_rounds_shooting"],
-     "source": "Kauyon: Patient Hunter（第3-5战斗轮：远程武器 [SUSTAINED HITS 1]）"},
-    {"phase": "hit", "op": "ignore_hit_mods", "params": [],
-     "condition": ["detachment_rounds_guided"],
-     "source": "Kauyon: Patient Hunter（3-5轮受引导打被标记目标：可无视 BS/命中骰修正）"}
+    {
+     "phase": "hit",
+     "op": "extra_hits",
+     "params": [
+      1
+     ],
+     "condition": [
+      "detachment_rounds_shooting"
+     ],
+     "source": "Kauyon: Patient Hunter（第3-5战斗轮：远程武器 [SUSTAINED HITS 1]）"
+    },
+    {
+     "phase": "hit",
+     "op": "ignore_hit_mods",
+     "params": [],
+     "condition": [
+      "detachment_rounds_guided"
+     ],
+     "source": "Kauyon: Patient Hunter（3-5轮受引导打被标记目标：可无视 BS/命中骰修正）"
+    }
    ],
-   "requires_toggles": ["detachment_rounds"],
+   "requires_toggles": [
+    "detachment_rounds"
+   ],
    "not_modeled_notes_zh": [
     "战轮门控（第3-5战斗轮）用开关近似：开=假设当前处于生效轮次，引擎无战斗轮概念",
     "「可无视任意或全部 BS/命中骰修正」按最优玩法执行=只无视不利修正、保留有利修正（与 [PSYCHIC] 同通道）",
@@ -68,18 +104,30 @@
   {
    "table": "abilities",
    "id": "det000008810",
-   "materialize": {"from_table": "detachments", "from_id": "000008810", "from_column": "rule_text"},
+   "materialize": {
+    "from_table": "detachments",
+    "from_id": "000008810",
+    "from_column": "rule_text"
+   },
    "side": "attacker",
    "detachment": "Mont’ka",
    "name_en": "Killing Blow",
    "name_zh": "一击必杀",
    "status": "partial",
    "effects": [
-    {"phase": "hit", "op": "auto_wound", "params": [],
-     "condition": ["detachment_rounds_guided"],
-     "source": "Mont’ka: Killing Blow（1-3轮受引导：远程武器 [LETHAL HITS]）"}
+    {
+     "phase": "hit",
+     "op": "auto_wound",
+     "params": [],
+     "condition": [
+      "detachment_rounds_guided"
+     ],
+     "source": "Mont’ka: Killing Blow（1-3轮受引导：远程武器 [LETHAL HITS]）"
+    }
    ],
-   "requires_toggles": ["detachment_rounds"],
+   "requires_toggles": [
+    "detachment_rounds"
+   ],
    "not_modeled_notes_zh": [
     "战轮门控（第1-3战斗轮）用开关近似：开=假设当前处于生效轮次，引擎无战斗轮概念",
     "第一条款 [ASSAULT]（1-3轮全军远程武器）未建模——引擎无移动/冲刺，Advance 后射击的场景差异不在 1v1 序列范围",
@@ -102,9 +150,17 @@
    "name_zh": "诱惑陷阱",
    "status": "partial",
    "effects": [
-    {"phase": "wound", "op": "modify", "params": [1],
-     "condition": ["phase_shooting"],
-     "source": "A Tempting Trap（1CP：致伤骰 +1）"}
+    {
+     "phase": "wound",
+     "op": "modify",
+     "params": [
+      1
+     ],
+     "condition": [
+      "phase_shooting"
+     ],
+     "source": "A Tempting Trap（1CP：致伤骰 +1）"
+    }
    ],
    "requires_toggles": [],
    "not_modeled_notes_zh": [
@@ -130,9 +186,17 @@
    "name_zh": "抵近伏击",
    "status": "partial",
    "effects": [
-    {"phase": "save", "op": "ap_improve", "params": [1],
-     "condition": ["phase_shooting"],
-     "source": "Point-Blank Ambush（1CP：9\"内 AP 特征值改善 1）"}
+    {
+     "phase": "save",
+     "op": "ap_improve",
+     "params": [
+      1
+     ],
+     "condition": [
+      "phase_shooting"
+     ],
+     "source": "Point-Blank Ambush（1CP：9\"内 AP 特征值改善 1）"
+    }
    ],
    "requires_toggles": [],
    "not_modeled_notes_zh": [
@@ -157,15 +221,31 @@
    "name_zh": "联携攻击",
    "status": "partial",
    "effects": [
-    {"phase": "hit", "op": "bs_improve", "params": [1],
-     "condition": ["phase_shooting"],
-     "source": "Coordinate to Engage（1CP：观察员打其标记目标 BS 特征值改善 1）"},
-    {"phase": "save", "op": "ignores_cover", "params": [],
-     "condition": ["markerlight_observer"],
-     "source": "Coordinate to Engage（观察员带 Markerlight 关键词：追加 [IGNORES COVER]）"}
+    {
+     "phase": "hit",
+     "op": "bs_improve",
+     "params": [
+      1
+     ],
+     "condition": [
+      "phase_shooting"
+     ],
+     "source": "Coordinate to Engage（1CP：观察员打其标记目标 BS 特征值改善 1）"
+    },
+    {
+     "phase": "save",
+     "op": "ignores_cover",
+     "params": [],
+     "condition": [
+      "markerlight_observer"
+     ],
+     "source": "Coordinate to Engage（观察员带 Markerlight 关键词：追加 [IGNORES COVER]）"
+    }
    ],
    "requires_toggles": [],
-   "conflicts_with_toggles": ["guided"],
+   "conflicts_with_toggles": [
+    "guided"
+   ],
    "not_modeled_notes_zh": [
     "本战略的攻方=观察员单位自身，目标须为其标记的 Spotted 单位——按已满足假设",
     "与「受引导」开关硬性互斥（FTGG 原文 excluding Observer units——观察员不为 Guided）：同开时本战略拒注入并显式披露（审查 PR3-H1）",
@@ -252,9 +332,15 @@
    "name_zh": "精准反攻",
    "status": "partial",
    "effects": [
-    {"phase": "hit", "op": "reroll", "params": ["fail"],
+    {
+     "phase": "hit",
+     "op": "reroll",
+     "params": [
+      "fail"
+     ],
      "condition": [],
-     "source": "Pinpoint Counter-Offensive（1CP：命中骰可重骰）"}
+     "source": "Pinpoint Counter-Offensive（1CP：命中骰可重骰）"
+    }
    ],
    "requires_toggles": [],
    "not_modeled_notes_zh": [
@@ -301,9 +387,17 @@
    "name_zh": "集中火力",
    "status": "partial",
    "effects": [
-    {"phase": "save", "op": "ap_improve", "params": [1],
-     "condition": ["phase_shooting"],
-     "source": "Focused Fire（1CP：AP 特征值改善 1）"}
+    {
+     "phase": "save",
+     "op": "ap_improve",
+     "params": [
+      1
+     ],
+     "condition": [
+      "phase_shooting"
+     ],
+     "source": "Focused Fire（1CP：AP 特征值改善 1）"
+    }
    ],
    "requires_toggles": [],
    "not_modeled_notes_zh": [
@@ -328,9 +422,17 @@
    "name_zh": "战术下车",
    "status": "partial",
    "effects": [
-    {"phase": "wound", "op": "reroll", "params": ["fail"],
-     "condition": ["phase_shooting"],
-     "source": "Combat Debarkation（1CP：致伤骰可重骰）"}
+    {
+     "phase": "wound",
+     "op": "reroll",
+     "params": [
+      "fail"
+     ],
+     "condition": [
+      "phase_shooting"
+     ],
+     "source": "Combat Debarkation（1CP：致伤骰可重骰）"
+    }
    ],
    "requires_toggles": [],
    "not_modeled_notes_zh": [
@@ -374,18 +476,1855 @@
    "detachment": "Mont’ka",
    "name_en": "COUNTERFIRE DEFENCE SYSTEMS",
    "name_zh": "防御反击系统",
+   "status": "partial",
+   "effects": [
+    {
+     "phase": "damage",
+     "op": "damage_reduction",
+     "params": [
+      1
+     ],
+     "condition": [
+      "phase_shooting"
+     ],
+     "source": "Counterfire Defence Systems（对手射击阶段：分配伤害特征值 -1）"
+    }
+   ],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "时机=对手射击阶段目标选定后（近战不适用，条件 tag 硬门控）",
+    "「减伤后至少 1」由引擎夹取承担；DEVASTATING WOUNDS 致命池不经分配步骤、天然不吃本减伤（11版 24.10 口径）",
+    "仅 T'AU EMPIRE 单位，按守方符合假设",
+    "CP 消耗与使用次数限制不结算，仅假设本阶段已用（spec D3）"
+   ],
+   "provenance": {
+    "current_text": "db stratagems.text_zh id=000008812007",
+    "base_text": "Wahapedia 10e（PR1 工作单 not_in_fp：十版文本 11 版仍现行）",
+    "synthesis": "无需合成",
+    "text_sha256": "995a8d78ed476a821dfeb87e8c353cca2df41b7b4a1e9dd12b21c4fabb6f4cba"
+   },
+   "encoded_by": "manual-2026-07-16"
+  },
+  {
+   "table": "abilities",
+   "id": "det000008814",
+   "materialize": {
+    "from_table": "detachments",
+    "from_id": "000008814",
+    "from_column": "rule_text"
+   },
+   "side": "attacker",
+   "detachment": "Retaliation Cadre",
+   "name_en": "Bonded Heroes",
+   "name_zh": "结义英雄",
+   "status": "partial",
+   "effects": [
+    {
+     "phase": "wound",
+     "op": "s_improve",
+     "params": [
+      1
+     ],
+     "condition": [
+      "ranged_within_12"
+     ],
+     "source": "Bonded Heroes（目标 12″ 内：远程攻击 S 特征值改善 1）"
+    },
+    {
+     "phase": "save",
+     "op": "ap_improve",
+     "params": [
+      1
+     ],
+     "condition": [
+      "ranged_within_8"
+     ],
+     "source": "Bonded Heroes（目标 8″ 内：AP 特征值再改善 1）"
+    }
+   ],
+   "requires_toggles": [
+    "range_within_12"
+   ],
+   "not_modeled_notes_zh": [
+    "引擎无距离建模——12″/8″ 距离档用假设开关近似（8″ 档须另开「假设目标在 8″ 内」，几何蕴含 12″ 档自动点亮）",
+    "仅 T'AU EMPIRE BATTLESUIT 模型的远程攻击受益——按模拟单位为 Battlesuit 假设"
+   ],
+   "provenance": {
+    "current_text": "db detachments.rule_text id=000008814（11 版现行，PR1 fp_rules 已核）",
+    "base_text": "FP page_019 change-list（AP 门槛 9″→8″ 已由 PR1 fp_rules 落库）",
+    "synthesis": "DSL 投影经 materialize 落 abilities 新行（spec D5）",
+    "text_sha256": "1283c11fb3a8b27aa9d3b988d4cde23330647bfcf5079f0ac516a49c4882ee2b"
+   },
+   "encoded_by": "manual-2026-07-16"
+  },
+  {
+   "table": "abilities",
+   "id": "det000008818",
+   "materialize": {
+    "from_table": "detachments",
+    "from_id": "000008818",
+    "from_column": "rule_text"
+   },
+   "side": "attacker",
+   "detachment": "Kroot Hunting Pack",
+   "name_en": "Hunter’s Instincts",
+   "name_zh": "狩猎本能",
+   "status": "partial",
+   "effects": [
+    {
+     "phase": "hit",
+     "op": "modify",
+     "params": [
+      1
+     ],
+     "condition": [
+      "target_below_starting"
+     ],
+     "source": "Hunter's Instincts（目标低于满编：命中骰 +1）"
+    },
+    {
+     "phase": "wound",
+     "op": "modify",
+     "params": [
+      1
+     ],
+     "condition": [
+      "target_below_half"
+     ],
+     "source": "Hunter's Instincts（目标低于半编：致伤骰再 +1）"
+    }
+   ],
+   "requires_toggles": [
+    "target_below_starting"
+   ],
+   "not_modeled_notes_zh": [
+    "引擎不追踪目标战损状态——低于满编/半编用假设开关（半编档须另开「假设目标低于半编」，蕴含满编档）",
+    "仅 KROOT 模型受益——按模拟单位为 Kroot 假设；命中/致伤 +1 为骰修正，正常吃 ±1 夹取"
+   ],
+   "provenance": {
+    "current_text": "db detachments.rule_text id=000008818（11 版现行，PR1 fp_rules 已核）",
+    "base_text": "Wahapedia 10e（FP 未提及，十版文本 11 版仍现行）",
+    "synthesis": "DSL 投影经 materialize 落 abilities 新行（spec D5）",
+    "text_sha256": "0be27c6d82a8f0560731a23a0bb8288c6ffce39f5baff4fda790c6a221c95d1a"
+   },
+   "encoded_by": "manual-2026-07-16"
+  },
+  {
+   "table": "abilities",
+   "id": "det000008819",
+   "materialize": {
+    "from_table": "detachments",
+    "from_id": "000008819",
+    "from_column": "rule_text"
+   },
+   "side": "target",
+   "detachment": "Kroot Hunting Pack",
+   "name_en": "Skirmish Fighters",
+   "name_zh": "特遣队",
+   "status": "partial",
+   "effects": [
+    {
+     "phase": "save",
+     "op": "invuln",
+     "params": [
+      5
+     ],
+     "condition": [
+      "phase_shooting"
+     ],
+     "source": "Skirmish Fighters（对远程攻击 5++ 无效保护）"
+    },
+    {
+     "phase": "save",
+     "op": "invuln",
+     "params": [
+      6
+     ],
+     "condition": [
+      "phase_melee"
+     ],
+     "source": "Skirmish Fighters（对近战攻击 6++ 无效保护）"
+    }
+   ],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "防守向分队规则（side=target）：守方选择 Kroot Hunting Pack 分队时经 inject_target 施加",
+    "仅 KROOT 模型——按守方单位为 Kroot 假设；与 profile 自带无效保护取更优"
+   ],
+   "provenance": {
+    "current_text": "db detachments.rule_text id=000008819（11 版现行，PR1 fp_rules 已核）",
+    "base_text": "Wahapedia 10e（FP 未提及，十版文本 11 版仍现行）",
+    "synthesis": "DSL 投影经 materialize 落 abilities 新行（spec D5）",
+    "text_sha256": "0dc97df38100ca1716cd7e26f3244930fc6e5c7444ebd6baaac21a5960fad06b"
+   },
+   "encoded_by": "manual-2026-07-16"
+  },
+  {
+   "table": "abilities",
+   "id": "det000009635",
+   "materialize": {
+    "from_table": "detachments",
+    "from_id": "000009635",
+    "from_column": "rule_text"
+   },
+   "side": "attacker",
+   "detachment": "Starfire Cadre",
+   "name_en": "Markerlight Precision",
+   "name_zh": "标记光精准",
+   "status": "partial",
+   "effects": [
+    {
+     "phase": "hit",
+     "op": "bs_improve",
+     "params": [
+      1
+     ],
+     "condition": [
+      "phase_shooting"
+     ],
+     "source": "Markerlight Precision（BS 特征值改善 1）"
+    },
+    {
+     "phase": "hit",
+     "op": "extra_hits",
+     "params": [
+      1
+     ],
+     "condition": [
+      "phase_shooting"
+     ],
+     "source": "Markerlight Precision（[SUSTAINED HITS 1]）"
+    }
+   ],
+   "requires_toggles": [
+    "markerlight_visible"
+   ],
+   "not_modeled_notes_zh": [
+    "生效前提「目标对 ≥1 个未交战的友军 MARKERLIGHT 单位可见」为假设开关（引擎无空间/视线建模）",
+    "排除 KROOT 单位——按模拟单位非 Kroot 假设"
+   ],
+   "provenance": {
+    "current_text": "db detachments.rule_text id=000009635（11 版现行，PR1 fp_rules 已核）",
+    "base_text": "Wahapedia 10e（FP 未提及，十版文本 11 版仍现行）",
+    "synthesis": "DSL 投影经 materialize 落 abilities 新行（spec D5）",
+    "text_sha256": "b5f1dfcdffa212e241f24d7d449b8547b41a3e68b853c3039d982a108cbf8aa0"
+   },
+   "encoded_by": "manual-2026-07-16"
+  },
+  {
+   "table": "abilities",
+   "id": "det000009644",
+   "materialize": {
+    "from_table": "detachments",
+    "from_id": "000009644",
+    "from_column": "rule_text"
+   },
+   "side": "attacker",
+   "detachment": "Kroot Raiding Party",
+   "name_en": "Guerrilla Ambushers",
+   "name_zh": "游击伏兵",
    "status": "not_modeled",
    "effects": [],
    "requires_toggles": [],
    "not_modeled_notes_zh": [
-    "防守向条目（被攻击时伤害特征值 -1）：引擎有消费点（damage_reduction）但 DSL 注入层只接了攻方侧（inject_target 未接线，PR2 审查 H1），暂不经 DSL 施加",
-    "可用守方手动开关精确等效近似：CLI --damage-reduction 1 / 面板「守方减伤 1」/ options.damage_reduction=1"
+    "针对敌方 Overwatch（4+ 使其本回合不能以 KROOT 为目标）——引擎无 Overwatch/阶段外反应射击建模，且属防守向概率减免而非攻击序列修正"
    ],
    "provenance": {
-    "current_text": "db stratagems.text_zh id=000008812007（PR1 工作单 not_in_fp：十版文本 11 版仍现行）",
-    "base_text": "Wahapedia 10e Mont’ka stratagems（FP 无勘误）",
+    "current_text": "db detachments.rule_text id=000009644（11 版现行，PR1 fp_rules 已核）",
+    "base_text": "Wahapedia 10e（FP 未提及，十版文本 11 版仍现行）",
+    "synthesis": "DSL 投影经 materialize 落 abilities 新行（spec D5）",
+    "text_sha256": "602220c3efb8a09fc1ff32508442993b98051055fe0c2a099567814f42416ebb"
+   },
+   "encoded_by": "manual-2026-07-16"
+  },
+  {
+   "table": "abilities",
+   "id": "det000009838",
+   "materialize": {
+    "from_table": "detachments",
+    "from_id": "000009838",
+    "from_column": "rule_text"
+   },
+   "side": "attacker",
+   "detachment": "Auxiliary Cadre",
+   "name_en": "Integrated Command Structure",
+   "name_zh": "综合指挥体系",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "prey-marked（+3″ detection range）与 hidden 保持均为 11 版侦测-隐蔽机制，超出 1v1 攻击序列建模范围（对命中/致伤/保存无直接数值修正）"
+   ],
+   "provenance": {
+    "current_text": "db detachments.rule_text id=000009838（11 版现行，PR1 fp_rules 已核）",
+    "base_text": "FP page_003 完整重印（PR1 fp_rules 已整段替换落库）",
+    "synthesis": "DSL 投影经 materialize 落 abilities 新行（spec D5）",
+    "text_sha256": "75380e1466439b053d15565582af74f375d550b02e5770d4a69dc19ab0744f6c"
+   },
+   "encoded_by": "manual-2026-07-16"
+  },
+  {
+   "table": "abilities",
+   "id": "det000009982",
+   "materialize": {
+    "from_table": "detachments",
+    "from_id": "000009982",
+    "from_column": "rule_text"
+   },
+   "side": "attacker",
+   "detachment": "Experimental Prototype Cadre",
+   "name_en": "Superior Craftsmanship",
+   "name_zh": "精湛技艺",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "+6″ 射程为射程特征值修正——引擎不建模距离/射程（半射程/远距离仅是态势开关），对攻击序列无直接数值影响；可在开「半射程」等开关时自行考虑射程余量"
+   ],
+   "provenance": {
+    "current_text": "db detachments.rule_text id=000009982（11 版现行，PR1 fp_rules 已核）",
+    "base_text": "FP page_004 完整重印（PR1 fp_rules 已整段替换落库）",
+    "synthesis": "DSL 投影经 materialize 落 abilities 新行（spec D5）",
+    "text_sha256": "348c1ce76f2ba2fe43fd1e7193f70cf13e99a86ab7d4860a85005bd9af7df309"
+   },
+   "encoded_by": "manual-2026-07-16"
+  },
+  {
+   "table": "abilities",
+   "id": "detfp11e-tau-aac-det",
+   "materialize": {
+    "from_table": "detachments",
+    "from_id": "fp11e-tau-aac-det",
+    "from_column": "rule_text"
+   },
+   "side": "attacker",
+   "detachment": "Advanced Acquisition Cadre",
+   "name_en": "Expert Fieldcraft",
+   "name_zh": "野战专精",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "射击不破除 hidden——11 版侦测-隐蔽机制超出攻击序列建模范围"
+   ],
+   "provenance": {
+    "current_text": "db detachments.rule_text id=fp11e-tau-aac-det（11 版现行，PR1 fp_rules 已核）",
+    "base_text": "FP page_002（11 版新分队，PR4 fp_rules inserts 补录行）",
+    "synthesis": "DSL 投影经 materialize 落 abilities 新行（spec D5）",
+    "text_sha256": "fd5dd1cdd16b553759e1dfc6dce4a086c0aba74b7ffade1f356a005fe08c99da"
+   },
+   "encoded_by": "manual-2026-07-16"
+  },
+  {
+   "table": "stratagems",
+   "id": "000008822002",
+   "side": "attacker",
+   "detachment": "Kroot Hunting Pack",
+   "name_en": "JOIN THE HUNT",
+   "name_zh": "加入狩猎",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "被毁单位以满编复制进战略预备队——编制/复活机制超出攻击序列建模范围",
+    "CP 消耗与使用次数限制不结算，仅假设本阶段已用（spec D3）"
+   ],
+   "provenance": {
+    "current_text": "db stratagems.text_zh id=000008822002",
+    "base_text": "Wahapedia 10e（PR1 工作单 not_in_fp：十版文本 11 版仍现行）",
     "synthesis": "无需合成",
-    "text_sha256": "995a8d78ed476a821dfeb87e8c353cca2df41b7b4a1e9dd12b21c4fabb6f4cba"
+    "text_sha256": "c37fa2c2a4516796633eda089c2b20e27a7e7f5f0ff2eccb351acaca3830e403"
+   },
+   "encoded_by": "manual-2026-07-16"
+  },
+  {
+   "table": "stratagems",
+   "id": "000008822003",
+   "side": "attacker",
+   "detachment": "Kroot Hunting Pack",
+   "name_en": "A TRAP WELL LAID",
+   "name_zh": "张机设阱",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "本单位打完后为**其他** KROOT 单位提供对该目标的 AP+1——跨单位增益，1v1 单单位模拟中无受益者（战略目标单位自身不受益）",
+    "CP 消耗与使用次数限制不结算，仅假设本阶段已用（spec D3）"
+   ],
+   "provenance": {
+    "current_text": "db stratagems.text_zh id=000008822003",
+    "base_text": "Wahapedia 10e（PR1 工作单 not_in_fp：十版文本 11 版仍现行）",
+    "synthesis": "无需合成",
+    "text_sha256": "f628c069c375d703e0d4affffaeef75a291b9043cfe236ab7d77a84e6bec9a81"
+   },
+   "encoded_by": "manual-2026-07-16"
+  },
+  {
+   "table": "stratagems",
+   "id": "000008822004",
+   "side": "target",
+   "detachment": "Kroot Hunting Pack",
+   "name_en": "EMP GRENADES",
+   "name_zh": "EMP手雷",
+   "status": "partial",
+   "effects": [
+    {
+     "phase": "hit",
+     "op": "bs_improve",
+     "params": [
+      -1
+     ],
+     "condition": [],
+     "source": "EMP Grenades（敌载具武器 WS/BS 特征值恶化 1）"
+    }
+   ],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "仅当攻方为 VEHICLE 单位、且 8″ 内有己方 Kroot Grenades 单位——均按满足假设",
+    "WS/BS 特征值恶化走 BS 特征值通道（不吃 ±1 骰修正夹取；攻方 [PSYCHIC] 可无视其恶化分量）",
+    "CP 消耗与使用次数限制不结算，仅假设本阶段已用（spec D3）"
+   ],
+   "provenance": {
+    "current_text": "db stratagems.text_zh id=000008822004",
+    "base_text": "Wahapedia 10e（PR1 工作单 not_in_fp：十版文本 11 版仍现行）",
+    "synthesis": "无需合成",
+    "text_sha256": "58cb73f4986fc663aa3e144fe0c412db2f0ed13b6634cc8ae730b7b083a6f5b0"
+   },
+   "encoded_by": "manual-2026-07-16"
+  },
+  {
+   "table": "stratagems",
+   "id": "000008822005",
+   "side": "attacker",
+   "detachment": "Kroot Hunting Pack",
+   "name_en": "THE GRISLY FEAST",
+   "name_zh": "恐怖盛宴",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "强制敌方 Battle-shock 测试——士气机制未建模",
+    "CP 消耗与使用次数限制不结算，仅假设本阶段已用（spec D3）"
+   ],
+   "provenance": {
+    "current_text": "db stratagems.text_zh id=000008822005",
+    "base_text": "Wahapedia 10e（PR1 工作单 not_in_fp：十版文本 11 版仍现行）",
+    "synthesis": "无需合成",
+    "text_sha256": "c5d8d7bfbdfba9fea57de44091d2f6b7ffdff33a882e93e016d43f474ab3bbd6"
+   },
+   "encoded_by": "manual-2026-07-16"
+  },
+  {
+   "table": "stratagems",
+   "id": "000008822006",
+   "side": "attacker",
+   "detachment": "Kroot Hunting Pack",
+   "name_en": "GUERRILLA WARRIORS",
+   "name_zh": "游击战士",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "撤退后保留射击/冲锋资格——移动域资格机制，模拟假设本单位本就可开火",
+    "CP 消耗与使用次数限制不结算，仅假设本阶段已用（spec D3）"
+   ],
+   "provenance": {
+    "current_text": "db stratagems.text_zh id=000008822006",
+    "base_text": "Wahapedia 10e（PR1 工作单 not_in_fp：十版文本 11 版仍现行）",
+    "synthesis": "无需合成",
+    "text_sha256": "029a8195b1d0fd79b91a33658c7d5f45de0e2111b1b95db64ad2c33f44e8b5a1"
+   },
+   "encoded_by": "manual-2026-07-16"
+  },
+  {
+   "table": "stratagems",
+   "id": "000008822007",
+   "side": "attacker",
+   "detachment": "Kroot Hunting Pack",
+   "name_en": "HIDDEN HUNTERS",
+   "name_zh": "隐匿猎手",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "18″ 外不可被选为射击目标——目标选择/距离机制（效果是「打不到」而非数值修正），超出攻击序列建模范围",
+    "CP 消耗与使用次数限制不结算，仅假设本阶段已用（spec D3）"
+   ],
+   "provenance": {
+    "current_text": "db stratagems.text_zh id=000008822007",
+    "base_text": "Wahapedia 10e（PR1 工作单 not_in_fp：十版文本 11 版仍现行）",
+    "synthesis": "无需合成",
+    "text_sha256": "78eceac3c2c03eeff2953a99de00514e27fe9cd76deadf8ef0e29465acda4530"
+   },
+   "encoded_by": "manual-2026-07-16"
+  },
+  {
+   "table": "stratagems",
+   "id": "000009646002",
+   "side": "attacker",
+   "detachment": "Kroot Raiding Party",
+   "name_en": "BOARDING BLADES",
+   "name_zh": "接舷利刃",
+   "status": "partial",
+   "effects": [
+    {
+     "phase": "save",
+     "op": "ap_improve",
+     "params": [
+      1
+     ],
+     "condition": [
+      "phase_melee"
+     ],
+     "source": "Boarding Blades（近战武器 AP 改善 1）"
+    }
+   ],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "暴击致伤时额外 AP+1 未编码——引擎无「暴击条件 AP」通道，保守只编常驻档",
+    "CP 消耗与使用次数限制不结算，仅假设本阶段已用（spec D3）"
+   ],
+   "provenance": {
+    "current_text": "db stratagems.text_zh id=000009646002",
+    "base_text": "Wahapedia 10e（PR1 工作单 not_in_fp：十版文本 11 版仍现行）",
+    "synthesis": "无需合成",
+    "text_sha256": "312805802e6de49d776bbf269bb0cd116a0084cea1815969c5880f255001463a"
+   },
+   "encoded_by": "manual-2026-07-16"
+  },
+  {
+   "table": "stratagems",
+   "id": "000009646003",
+   "side": "attacker",
+   "detachment": "Kroot Raiding Party",
+   "name_en": "SWEEPING AMBUSH",
+   "name_zh": "横扫伏击",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "Pile-in/Consolidation 6″ 与接敌豁免——近战移动机制未建模",
+    "CP 消耗与使用次数限制不结算，仅假设本阶段已用（spec D3）"
+   ],
+   "provenance": {
+    "current_text": "db stratagems.text_zh id=000009646003",
+    "base_text": "Wahapedia 10e（PR1 工作单 not_in_fp：十版文本 11 版仍现行）",
+    "synthesis": "无需合成",
+    "text_sha256": "c6c363c39b6212f93ddd46bf3d8fda4587be70d40a608d3bc088ed0abe11390c"
+   },
+   "encoded_by": "manual-2026-07-16"
+  },
+  {
+   "table": "stratagems",
+   "id": "000009646004",
+   "side": "attacker",
+   "detachment": "Kroot Raiding Party",
+   "name_en": "BRUTE FORCE",
+   "name_zh": "蛮力破门",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "Hatchway（登舰战舱门）开门致命伤——空间/场景机制超出攻击序列",
+    "CP 消耗与使用次数限制不结算，仅假设本阶段已用（spec D3）"
+   ],
+   "provenance": {
+    "current_text": "db stratagems.text_zh id=000009646004",
+    "base_text": "Wahapedia 10e（PR1 工作单 not_in_fp：十版文本 11 版仍现行）",
+    "synthesis": "无需合成",
+    "text_sha256": "19a4918f71cf3a1876d0cfdb61e528524449e2522517c1763279770aec76ccd4"
+   },
+   "encoded_by": "manual-2026-07-16"
+  },
+  {
+   "table": "stratagems",
+   "id": "000009646005",
+   "side": "attacker",
+   "detachment": "Kroot Raiding Party",
+   "name_en": "TANGLEBOMB BOLAS",
+   "name_zh": "缠爆流星索",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "减半移动/冲刺/冲锋骰——移动域减益，引擎无移动建模",
+    "CP 消耗与使用次数限制不结算，仅假设本阶段已用（spec D3）"
+   ],
+   "provenance": {
+    "current_text": "db stratagems.text_zh id=000009646005",
+    "base_text": "Wahapedia 10e（PR1 工作单 not_in_fp：十版文本 11 版仍现行）",
+    "synthesis": "无需合成",
+    "text_sha256": "bb96113128e9c0c6c6201961bf9132ca39ec01afee075adc05c416c69722936d"
+   },
+   "encoded_by": "manual-2026-07-16"
+  },
+  {
+   "table": "stratagems",
+   "id": "000008816002",
+   "side": "attacker",
+   "detachment": "Retaliation Cadre",
+   "name_en": "FAIL-SAFE DETONATOR",
+   "name_zh": "自毁系统",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "阵亡触发 Deadly Demise/自爆——阵亡结算链超出攻击序列（模拟不结算我方阵亡时点）",
+    "CP 消耗与使用次数限制不结算，仅假设本阶段已用（spec D3）"
+   ],
+   "provenance": {
+    "current_text": "db stratagems.text_zh id=000008816002",
+    "base_text": "Wahapedia 10e（PR1 工作单 not_in_fp：十版文本 11 版仍现行）",
+    "synthesis": "无需合成",
+    "text_sha256": "0810e8fe9f7808c10e7be95303e452ee5fceffe2af6155b58b7bb42b22da13c9"
+   },
+   "encoded_by": "manual-2026-07-16"
+  },
+  {
+   "table": "stratagems",
+   "id": "000008816003",
+   "side": "target",
+   "detachment": "Retaliation Cadre",
+   "name_en": "STIMM INJECTORS",
+   "name_zh": "兴奋剂注射器",
+   "status": "partial",
+   "effects": [
+    {
+     "phase": "fnp",
+     "op": "fnp",
+     "params": [
+      6
+     ],
+     "condition": [],
+     "source": "Stimm Injectors（该阶段 Feel No Pain 6+）"
+    }
+   ],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "时机=对手射击阶段或战斗阶段目标选定后——两相位均适用故无相位条件；仅 T'au Empire Battlesuit 单位，按守方符合假设",
+    "CP 消耗与使用次数限制不结算，仅假设本阶段已用（spec D3）"
+   ],
+   "provenance": {
+    "current_text": "db stratagems.text_zh id=000008816003",
+    "base_text": "Wahapedia 10e（PR1 工作单 not_in_fp：十版文本 11 版仍现行）",
+    "synthesis": "无需合成",
+    "text_sha256": "40a976aa3b1553fd74b20eb05b4b51d5bc517d0440e7778d03f10074476fcd23"
+   },
+   "encoded_by": "manual-2026-07-16"
+  },
+  {
+   "table": "stratagems",
+   "id": "000008816004",
+   "side": "attacker",
+   "detachment": "Retaliation Cadre",
+   "name_en": "THE SHORTENED BLADE",
+   "name_zh": "短兵相接",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "深打 6″ 距离豁免（且当回合不得冲锋）——部署机制超出攻击序列",
+    "CP 消耗与使用次数限制不结算，仅假设本阶段已用（spec D3）"
+   ],
+   "provenance": {
+    "current_text": "db stratagems.text_zh id=000008816004",
+    "base_text": "Wahapedia 10e（PR1 工作单 not_in_fp：十版文本 11 版仍现行）",
+    "synthesis": "无需合成",
+    "text_sha256": "8b552019af81146055d29a61415ea8d6b27ed590f9cd46cb53a17736124fe5cf"
+   },
+   "encoded_by": "manual-2026-07-16"
+  },
+  {
+   "table": "stratagems",
+   "id": "000008816005",
+   "side": "attacker",
+   "detachment": "Retaliation Cadre",
+   "name_en": "THE ARRO’KON PROTOCOL",
+   "name_zh": "阿拉孔教义",
+   "status": "partial",
+   "effects": [
+    {
+     "phase": "hit",
+     "op": "extra_hits",
+     "params": [
+      1
+     ],
+     "condition": [
+      "shooting_target_models_in_range",
+      6,
+      10
+     ],
+     "source": "The Arro'kon Protocol（目标 6-10 模型：[SUSTAINED HITS 1]）"
+    },
+    {
+     "phase": "hit",
+     "op": "extra_hits",
+     "params": [
+      2
+     ],
+     "condition": [
+      "shooting_target_models_in_range",
+      11,
+      9999
+     ],
+     "source": "The Arro'kon Protocol（目标 ≥11 模型：[SUSTAINED HITS 2]）"
+    }
+   ],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "按目标当前模型数自动分档（<6 不触发）；仅 Battlesuit 单位，按攻方符合假设",
+    "CP 消耗与使用次数限制不结算，仅假设本阶段已用（spec D3）"
+   ],
+   "provenance": {
+    "current_text": "db stratagems.text_zh id=000008816005",
+    "base_text": "Wahapedia 10e（PR1 工作单 not_in_fp：十版文本 11 版仍现行）",
+    "synthesis": "无需合成",
+    "text_sha256": "44ac91f17d9dc643a100494291dba6c689c62d414b7be35516f74f1ab6370937"
+   },
+   "encoded_by": "manual-2026-07-16"
+  },
+  {
+   "table": "stratagems",
+   "id": "000008816006",
+   "side": "attacker",
+   "detachment": "Retaliation Cadre",
+   "name_en": "THE TORCHSTAR GAMBIT",
+   "name_zh": "炬星策略",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "射击结算后 Normal move——移动域机制，对本次攻击序列无数值影响",
+    "CP 消耗与使用次数限制不结算，仅假设本阶段已用（spec D3）"
+   ],
+   "provenance": {
+    "current_text": "db stratagems.text_zh id=000008816006",
+    "base_text": "Wahapedia 10e（PR1 工作单 not_in_fp：十版文本 11 版仍现行）",
+    "synthesis": "无需合成",
+    "text_sha256": "559fe0f23a88f668430a4bbd272e354e79b933bc75de9c7d443f80fed67fcfe5"
+   },
+   "encoded_by": "manual-2026-07-16"
+  },
+  {
+   "table": "stratagems",
+   "id": "000008816007",
+   "side": "attacker",
+   "detachment": "Retaliation Cadre",
+   "name_en": "GRAV-INHIBITOR FIELD",
+   "name_zh": "重力反斥力场",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "使冲锋敌军 Battle-shock 测试 + 每模型 6+ 致命伤——冲锋阶段互动与士气机制超出攻击序列（防守向但非命中/保存/伤害修正）",
+    "CP 消耗与使用次数限制不结算，仅假设本阶段已用（spec D3）"
+   ],
+   "provenance": {
+    "current_text": "db stratagems.text_zh id=000008816007",
+    "base_text": "Wahapedia 10e（PR1 工作单 not_in_fp：十版文本 11 版仍现行）",
+    "synthesis": "无需合成",
+    "text_sha256": "a4753f3715d5dcba068208e2b953d173ff01341fa16461906eb12d1085e75392"
+   },
+   "encoded_by": "manual-2026-07-16"
+  },
+  {
+   "table": "stratagems",
+   "id": "000009637002",
+   "side": "attacker",
+   "detachment": "Starfire Cadre",
+   "name_en": "FIRING LINE",
+   "name_zh": "火力战线",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "战斗阶段的阶段外反应射击（未修正 5+ 固定命中阈值）——引擎无阶段外攻击序列，固定阈值通道亦只有间接火力的 6/4 两档",
+    "CP 消耗与使用次数限制不结算，仅假设本阶段已用（spec D3）"
+   ],
+   "provenance": {
+    "current_text": "db stratagems.text_zh id=000009637002",
+    "base_text": "Wahapedia 10e（PR1 工作单 not_in_fp：十版文本 11 版仍现行）",
+    "synthesis": "无需合成",
+    "text_sha256": "2a1dac7acabca01b5a567c5f7a16449d6a3983bc0634f98dd6668658c50e2d26"
+   },
+   "encoded_by": "manual-2026-07-16"
+  },
+  {
+   "table": "stratagems",
+   "id": "000009637003",
+   "side": "attacker",
+   "detachment": "Starfire Cadre",
+   "name_en": "RETREATING FIRE",
+   "name_zh": "且退且射",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "撤退后保留射击资格——移动域资格机制，模拟假设本单位本就可开火",
+    "CP 消耗与使用次数限制不结算，仅假设本阶段已用（spec D3）"
+   ],
+   "provenance": {
+    "current_text": "db stratagems.text_zh id=000009637003",
+    "base_text": "Wahapedia 10e（PR1 工作单 not_in_fp：十版文本 11 版仍现行）",
+    "synthesis": "无需合成",
+    "text_sha256": "171e275ae6709e2b3023c2f7ad9f009d8e4fcccacd24af2e5fcce9e4e76777aa"
+   },
+   "encoded_by": "manual-2026-07-16"
+  },
+  {
+   "table": "stratagems",
+   "id": "000009637004",
+   "side": "attacker",
+   "detachment": "Starfire Cadre",
+   "name_en": "RESPONSIVE VOLLEY",
+   "name_zh": "应变齐射",
+   "status": "partial",
+   "effects": [
+    {
+     "phase": "hit",
+     "op": "crit_threshold",
+     "params": [
+      5
+     ],
+     "condition": [
+      "phase_shooting"
+     ],
+     "source": "Responsive Volley（未修正 5+ 即暴击命中）"
+    }
+   ],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "「目标完全处于舱门另一侧」为登舰战 Hatchway 空间条件——按满足假设",
+    "CP 消耗与使用次数限制不结算，仅假设本阶段已用（spec D3）"
+   ],
+   "provenance": {
+    "current_text": "db stratagems.text_zh id=000009637004",
+    "base_text": "Wahapedia 10e（PR1 工作单 not_in_fp：十版文本 11 版仍现行）",
+    "synthesis": "无需合成",
+    "text_sha256": "1b1262514a032ffcf36beea2f647ad29635476cb978dc962acbdf3e7b19369b7"
+   },
+   "encoded_by": "manual-2026-07-16"
+  },
+  {
+   "table": "stratagems",
+   "id": "000009637005",
+   "side": "attacker",
+   "detachment": "Starfire Cadre",
+   "name_en": "PULSE BARRAGE",
+   "name_zh": "脉冲弹幕",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "Overwatch 命中阈值改 5+——引擎无 Overwatch 建模",
+    "CP 消耗与使用次数限制不结算，仅假设本阶段已用（spec D3）"
+   ],
+   "provenance": {
+    "current_text": "db stratagems.text_zh id=000009637005",
+    "base_text": "Wahapedia 10e（PR1 工作单 not_in_fp：十版文本 11 版仍现行）",
+    "synthesis": "无需合成",
+    "text_sha256": "e73fdd00248b5f6bcb34660cb0dd5d0b7f4d89a0b040b573a8c626a6d68b745a"
+   },
+   "encoded_by": "manual-2026-07-16"
+  },
+  {
+   "table": "stratagems",
+   "id": "000009840002",
+   "side": "attacker",
+   "detachment": "Auxiliary Cadre",
+   "name_en": "EXPERIMENTAL MODIFICATIONS",
+   "name_zh": "实验性改装",
+   "status": "partial",
+   "effects": [
+    {
+     "phase": "save",
+     "op": "ap_improve",
+     "params": [
+      1
+     ],
+     "condition": [],
+     "source": "Experimental Modifications（攻击 AP 改善 1）"
+    }
+   ],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "射击或战斗阶段均可用——无相位条件；仅 KROOT/VESPID STINGWINGS 单位，按攻方符合假设",
+    "CP 消耗与使用次数限制不结算，仅假设本阶段已用（spec D3）"
+   ],
+   "provenance": {
+    "current_text": "db stratagems.text_zh id=000009840002",
+    "base_text": "FP page_003 完整重印（PR1 fp_rules 已整段替换落库）",
+    "synthesis": "无需合成",
+    "text_sha256": "6bc1a5b874a9079959ae60e2112e2777f48b3bf34d9157c3ccd6ba0dcf846132"
+   },
+   "encoded_by": "manual-2026-07-16"
+  },
+  {
+   "table": "stratagems",
+   "id": "000009840006",
+   "side": "attacker",
+   "detachment": "Auxiliary Cadre",
+   "name_en": "ALIEN EXPERTISE",
+   "name_zh": "异星学识",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "冲刺移动不阻止宣告冲锋——移动域资格机制",
+    "CP 消耗与使用次数限制不结算，仅假设本阶段已用（spec D3）"
+   ],
+   "provenance": {
+    "current_text": "db stratagems.text_zh id=000009840006",
+    "base_text": "FP page_003 完整重印（PR1 fp_rules 已整段替换落库）",
+    "synthesis": "无需合成",
+    "text_sha256": "6cba48aed126fc034199cc5d8ceeff5c4e96cb01f33c3dfe2e0d2701359ce35c"
+   },
+   "encoded_by": "manual-2026-07-16"
+  },
+  {
+   "table": "stratagems",
+   "id": "fp11e-tau-aux-gbu",
+   "side": "attacker",
+   "detachment": "Auxiliary Cadre",
+   "name_en": "GUIDED BY UNITY",
+   "name_zh": "团结引导",
+   "status": "partial",
+   "effects": [
+    {
+     "phase": "hit",
+     "op": "auto_wound",
+     "params": [],
+     "condition": [
+      "phase_shooting"
+     ],
+     "source": "Guided by Unity（[LETHAL HITS]）"
+    }
+   ],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "仅对「目标在友军 KROOT/VESPID STINGWINGS 9″ 内」的攻击生效——空间条件按满足假设",
+    "攻方须为非 KROOT/VESPID 的 T'AU EMPIRE 单位，按符合假设",
+    "CP 消耗与使用次数限制不结算，仅假设本阶段已用（spec D3）"
+   ],
+   "provenance": {
+    "current_text": "db stratagems.text_zh id=fp11e-tau-aux-gbu",
+    "base_text": "FP page_003（Auxiliary Cadre 重印新增战略，PR4 fp_rules inserts 补录行）",
+    "synthesis": "无需合成",
+    "text_sha256": "d6aa1c42b4321949af2a84034f9edec04314a1f728fed5dd224b843162a04b72"
+   },
+   "encoded_by": "manual-2026-07-16"
+  },
+  {
+   "table": "stratagems",
+   "id": "000009984005",
+   "side": "attacker",
+   "detachment": "Experimental Prototype Cadre",
+   "name_en": "EXPERIMENTAL AMMUNITION",
+   "name_zh": "实验性弹药",
+   "status": "partial",
+   "effects": [
+    {
+     "phase": "wound",
+     "op": "s_improve",
+     "params": [
+      1
+     ],
+     "condition": [
+      "phase_shooting"
+     ],
+     "source": "Experimental Ammunition（模式 A：远程攻击 S+1）"
+    }
+   ],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "规则为二选一：编码保守模式 A（+1 S）；模式 B（+1 S、AP + [HAZARDOUS]）未编码——HAZARDOUS 自伤未建模，不擅替玩家选带风险模式",
+    "仅 BATTLESUIT CHARACTER 单位，按攻方符合假设",
+    "CP 消耗与使用次数限制不结算，仅假设本阶段已用（spec D3）"
+   ],
+   "provenance": {
+    "current_text": "db stratagems.text_zh id=000009984005",
+    "base_text": "FP page_004 完整重印（PR1 fp_rules 已整段替换落库）",
+    "synthesis": "无需合成",
+    "text_sha256": "b81129478e4b7ef311088179f4777d78264874888803caae18521e99c6e1663b"
+   },
+   "encoded_by": "manual-2026-07-16"
+  },
+  {
+   "table": "stratagems",
+   "id": "fp11e-tau-aac-s1",
+   "side": "attacker",
+   "detachment": "Advanced Acquisition Cadre",
+   "name_en": "MARKER BEACON",
+   "name_zh": "标记信标",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "使己方控制的目标点 secured——目标点控制机制超出攻击序列",
+    "CP 消耗与使用次数限制不结算，仅假设本阶段已用（spec D3）"
+   ],
+   "provenance": {
+    "current_text": "db stratagems.text_zh id=fp11e-tau-aac-s1",
+    "base_text": "FP page_002（11 版新分队，PR4 fp_rules inserts 补录行）",
+    "synthesis": "无需合成",
+    "text_sha256": "efedffc9d37d034f01f80eeb4711b72df3f7ae52bfdaa26ba70913f0c94e0431"
+   },
+   "encoded_by": "manual-2026-07-16"
+  },
+  {
+   "table": "stratagems",
+   "id": "fp11e-tau-aac-s2",
+   "side": "attacker",
+   "detachment": "Advanced Acquisition Cadre",
+   "name_en": "MICRODRONE SUPPORT",
+   "name_zh": "微型兵蜂支援",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "行动（action）不阻止射击资格——行动/资格机制超出攻击序列",
+    "CP 消耗与使用次数限制不结算，仅假设本阶段已用（spec D3）"
+   ],
+   "provenance": {
+    "current_text": "db stratagems.text_zh id=fp11e-tau-aac-s2",
+    "base_text": "FP page_002（11 版新分队，PR4 fp_rules inserts 补录行）",
+    "synthesis": "无需合成",
+    "text_sha256": "52cea591cd290bbf87ad9b88587d6c39ebeaff7f0bbd076f23f4edb9b8cb14d3"
+   },
+   "encoded_by": "manual-2026-07-16"
+  },
+  {
+   "table": "stratagems",
+   "id": "fp11e-tau-aac-s3",
+   "side": "target",
+   "detachment": "Advanced Acquisition Cadre",
+   "name_en": "AUTOREACTIVE CAMOUFLAGE",
+   "name_zh": "自反应迷彩",
+   "status": "partial",
+   "effects": [
+    {
+     "phase": "save",
+     "op": "sv_improve",
+     "params": [
+      1
+     ],
+     "condition": [
+      "phase_shooting"
+     ],
+     "source": "Autoreactive Camouflage（+1 Sv）"
+    }
+   ],
+   "requires_toggles": [
+    "defender_hidden"
+   ],
+   "not_modeled_notes_zh": [
+    "生效前提=守方处于 hidden 状态（假设开关「假设守方处于 hidden 状态」）",
+    "仅 PATHFINDER TEAM/STEALTH BATTLESUITS 单位，按守方符合假设",
+    "CP 消耗与使用次数限制不结算，仅假设本阶段已用（spec D3）"
+   ],
+   "provenance": {
+    "current_text": "db stratagems.text_zh id=fp11e-tau-aac-s3",
+    "base_text": "FP page_002（11 版新分队，PR4 fp_rules inserts 补录行）",
+    "synthesis": "无需合成",
+    "text_sha256": "4b2ffebb2fbbce219cb44e179d6d11693459599ebba98f1d42f8b1d388fe02ab"
+   },
+   "encoded_by": "manual-2026-07-16"
+  },
+  {
+   "table": "enhancements",
+   "id": "000009839002",
+   "side": "attacker",
+   "detachment": "Auxiliary Cadre",
+   "name_en": "Student of Kauyon",
+   "name_zh": "空降学徒",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "为至多 3 个 Kroot 单位授予 Deep Strike——部署机制超出攻击序列"
+   ],
+   "provenance": {
+    "current_text": "db enhancements.description id=000009839002（PR4 fp_rules 增强层 11 版化后文本）",
+    "base_text": "FP page_003 完整重印（PR4 fp_rules 增强层已整段替换）",
+    "synthesis": "无需合成",
+    "text_sha256": "b54694f1c0a0e9a2aa699dfea3092e599e6aa82fccd9e080714e039e6ffe7fdb"
+   },
+   "encoded_by": "manual-2026-07-16"
+  },
+  {
+   "table": "enhancements",
+   "id": "000009839003",
+   "side": "attacker",
+   "detachment": "Auxiliary Cadre",
+   "name_en": "Admired Leader",
+   "name_zh": "敬爱领袖",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "+1 Ld 与 OC——士气/占点域特征值，攻击序列无消费点"
+   ],
+   "provenance": {
+    "current_text": "db enhancements.description id=000009839003（PR4 fp_rules 增强层 11 版化后文本）",
+    "base_text": "FP page_003 完整重印（PR4 fp_rules 增强层已整段替换）",
+    "synthesis": "无需合成",
+    "text_sha256": "14ea8d5d5146445165757cd077ca648292bc9a963b52251d2fcc3afdabbb8cb7"
+   },
+   "encoded_by": "manual-2026-07-16"
+  },
+  {
+   "table": "enhancements",
+   "id": "000009983002",
+   "side": "attacker",
+   "detachment": "Experimental Prototype Cadre",
+   "name_en": "Supernova Launcher",
+   "name_zh": "超新星发射器",
+   "status": "partial",
+   "effects": [
+    {
+     "phase": "wound",
+     "op": "s_improve",
+     "params": [
+      3
+     ],
+     "condition": [],
+     "source": "Supernova Launcher（+3 S）"
+    },
+    {
+     "phase": "save",
+     "op": "ap_improve",
+     "params": [
+      1
+     ],
+     "condition": [],
+     "source": "Supernova Launcher（+1 AP）"
+    },
+    {
+     "phase": "damage",
+     "op": "modify",
+     "params": [
+      1
+     ],
+     "condition": [],
+     "source": "Supernova Launcher（+1 D）"
+    }
+   ],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "规则选定一件武器强化——weapon_filter 只注入名字匹配的武器；若该武器行 count>1 会整行受益（高估），请把强化武器在 loadout 中单列一件",
+    "Declare Battle Formations 的武器选定按已完成假设"
+   ],
+   "provenance": {
+    "current_text": "db enhancements.description id=000009983002（PR4 fp_rules 增强层 11 版化后文本）",
+    "base_text": "FP page_004 完整重印（PR4 fp_rules 增强层已整段替换）",
+    "synthesis": "无需合成",
+    "text_sha256": "66271fe4edbc321537c32e9a1301db1e773063bcc18309f32b7463f66c3ff42f"
+   },
+   "encoded_by": "manual-2026-07-16",
+   "weapon_filter": "airbursting fragmentation projector"
+  },
+  {
+   "table": "enhancements",
+   "id": "000009983003",
+   "side": "attacker",
+   "detachment": "Experimental Prototype Cadre",
+   "name_en": "Thermoneutronic Projector",
+   "name_zh": "热中子投射器",
+   "status": "partial",
+   "effects": [
+    {
+     "phase": "wound",
+     "op": "s_improve",
+     "params": [
+      2
+     ],
+     "condition": [],
+     "source": "Thermoneutronic Projector（+2 S）"
+    },
+    {
+     "phase": "save",
+     "op": "ap_improve",
+     "params": [
+      1
+     ],
+     "condition": [],
+     "source": "Thermoneutronic Projector（+1 AP）"
+    },
+    {
+     "phase": "damage",
+     "op": "modify",
+     "params": [
+      1
+     ],
+     "condition": [],
+     "source": "Thermoneutronic Projector（+1 D）"
+    }
+   ],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "规则选定一件 T'au Flamer 强化——weapon_filter 按名字含 flamer 子串注入；若该武器行 count>1、或 loadout 含多件名字带 flamer 的不同武器，会全部受益（高估），请只单列目标那一件",
+    "Declare Battle Formations 的武器选定按已完成假设"
+   ],
+   "provenance": {
+    "current_text": "db enhancements.description id=000009983003（PR4 fp_rules 增强层 11 版化后文本）",
+    "base_text": "FP page_004 完整重印（PR4 fp_rules 增强层已整段替换）",
+    "synthesis": "无需合成",
+    "text_sha256": "1446129b6991e0a16c0776c834b9c390d8ae14b52842d5fe826df06ee3dc04ce"
+   },
+   "encoded_by": "manual-2026-07-16",
+   "weapon_filter": "flamer"
+  },
+  {
+   "table": "enhancements",
+   "id": "000009983004",
+   "side": "attacker",
+   "detachment": "Experimental Prototype Cadre",
+   "name_en": "Plasma Accelerator Rifle",
+   "name_zh": "等离子加速步枪",
+   "status": "partial",
+   "effects": [
+    {
+     "phase": "attacks",
+     "op": "modify",
+     "params": [
+      1
+     ],
+     "condition": [],
+     "source": "Plasma Accelerator Rifle（+1 A）"
+    },
+    {
+     "phase": "wound",
+     "op": "s_improve",
+     "params": [
+      2
+     ],
+     "condition": [],
+     "source": "Plasma Accelerator Rifle（+2 S）"
+    },
+    {
+     "phase": "save",
+     "op": "ap_improve",
+     "params": [
+      1
+     ],
+     "condition": [],
+     "source": "Plasma Accelerator Rifle（+1 AP）"
+    },
+    {
+     "phase": "damage",
+     "op": "modify",
+     "params": [
+      1
+     ],
+     "condition": [],
+     "source": "Plasma Accelerator Rifle（+1 D）"
+    }
+   ],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "规则选定一件 Plasma Rifle 强化——weapon_filter 按名字注入；若该武器行 count>1 会整行受益（高估），请单列",
+    "Declare Battle Formations 的武器选定按已完成假设"
+   ],
+   "provenance": {
+    "current_text": "db enhancements.description id=000009983004（PR4 fp_rules 增强层 11 版化后文本）",
+    "base_text": "FP page_004 完整重印（PR4 fp_rules 增强层已整段替换）",
+    "synthesis": "无需合成",
+    "text_sha256": "979b79b129fd3ab6e28148711cbe508b86adefedbaea7795219bd4752b0f60b3"
+   },
+   "encoded_by": "manual-2026-07-16",
+   "weapon_filter": "plasma rifle"
+  },
+  {
+   "table": "enhancements",
+   "id": "000008442002",
+   "side": "attacker",
+   "detachment": "Kauyon",
+   "name_en": "Exemplar of the Kauyon",
+   "name_zh": "空育典范",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "Patient Hunter 生效轮次 3→2 提前——引擎战轮已抽象为「处于生效轮次」假设开关，窗口平移无独立可编码残量（开开关即含该假设）"
+   ],
+   "provenance": {
+    "current_text": "db enhancements.description id=000008442002（PR4 fp_rules 增强层 11 版化后文本）",
+    "base_text": "Wahapedia 10e（FP 未勘误，十版文本 11 版仍现行）",
+    "synthesis": "无需合成",
+    "text_sha256": "73a1ce5a0fc95846f6febb979a4c630ca2f87b12e9b03bb91f72b6a484ee3ef9"
+   },
+   "encoded_by": "manual-2026-07-16"
+  },
+  {
+   "table": "enhancements",
+   "id": "000008442003",
+   "side": "attacker",
+   "detachment": "Kauyon",
+   "name_en": "Precision of the Patient Hunter",
+   "name_zh": "耐心猎手之精准",
+   "status": "partial",
+   "effects": [
+    {
+     "phase": "hit",
+     "op": "modify",
+     "params": [
+      1
+     ],
+     "condition": [
+      "phase_shooting"
+     ],
+     "source": "Precision of the Patient Hunter（远程命中骰 +1）"
+    },
+    {
+     "phase": "wound",
+     "op": "modify",
+     "params": [
+      1
+     ],
+     "condition": [
+      "detachment_rounds_shooting"
+     ],
+     "source": "Precision of the Patient Hunter（第三轮起致伤骰 +1）"
+    }
+   ],
+   "requires_toggles": [
+    "bearer_leading"
+   ],
+   "not_modeled_notes_zh": [
+    "规则仅携带者自身受益——整单位模拟会高估，建议将模拟对象限定为携带者（或其武器经 weapon_filter 单列）",
+    "「第三战斗轮起」复用战轮门控开关（Kauyon 窗口 3-5 轮一致）",
+    "「携带者正率领本单位」为假设开关（引擎无依附建模）"
+   ],
+   "provenance": {
+    "current_text": "db enhancements.description id=000008442003（PR4 fp_rules 增强层 11 版化后文本）",
+    "base_text": "Wahapedia 10e（FP 未勘误，十版文本 11 版仍现行）",
+    "synthesis": "无需合成",
+    "text_sha256": "826a5507baaacda1c7ca14ed4956d5a3b39ed97c6e1d03466cfbace7cc090a82"
+   },
+   "encoded_by": "manual-2026-07-16"
+  },
+  {
+   "table": "enhancements",
+   "id": "000008442004",
+   "side": "attacker",
+   "detachment": "Kauyon",
+   "name_en": "Solid-image Projection Unit",
+   "name_zh": "实像投影装置",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "部署后重新部署至多 3 个单位/进战略预备队——部署机制超出攻击序列"
+   ],
+   "provenance": {
+    "current_text": "db enhancements.description id=000008442004（PR4 fp_rules 增强层 11 版化后文本）",
+    "base_text": "Wahapedia 10e（FP 未勘误，十版文本 11 版仍现行）",
+    "synthesis": "无需合成",
+    "text_sha256": "bf164982fb2582c89809e67c5028844b0c3e3e351685a23788eb4e333da3dee5"
+   },
+   "encoded_by": "manual-2026-07-16"
+  },
+  {
+   "table": "enhancements",
+   "id": "000008442005",
+   "side": "attacker",
+   "detachment": "Kauyon",
+   "name_en": "Through Unity, Devastation",
+   "name_zh": "团结致胜",
+   "status": "partial",
+   "effects": [
+    {
+     "phase": "hit",
+     "op": "auto_wound",
+     "params": [],
+     "condition": [
+      "guided_vs_spotted"
+     ],
+     "source": "Through Unity, Devastation（受引导打被标记目标：[LETHAL HITS]）"
+    }
+   ],
+   "requires_toggles": [
+    "guided"
+   ],
+   "not_modeled_notes_zh": [
+    "增强挂在观察员单位的领袖身上，本编码从**受益方（受引导单位）**视角施加——须军中存在由该增强携带者率领的观察员为本单位提供引导，按满足假设"
+   ],
+   "provenance": {
+    "current_text": "db enhancements.description id=000008442005（PR4 fp_rules 增强层 11 版化后文本）",
+    "base_text": "FP page_019 change-to（Wahapedia 已滚入，机械核验 identical）",
+    "synthesis": "无需合成",
+    "text_sha256": "fc5e8113c83352b4e734f280a7bbe5e319cf24b11b8cbcd8e078418434bc8dcb"
+   },
+   "encoded_by": "manual-2026-07-16"
+  },
+  {
+   "table": "enhancements",
+   "id": "000008811002",
+   "side": "attacker",
+   "detachment": "Mont’ka",
+   "name_en": "Coordinated Exploitation",
+   "name_zh": "协同破敌",
+   "status": "partial",
+   "effects": [
+    {
+     "phase": "hit",
+     "op": "extra_hits",
+     "params": [
+      1
+     ],
+     "condition": [
+      "guided_vs_spotted"
+     ],
+     "source": "Coordinated Exploitation（受引导打被标记目标：[SUSTAINED HITS 1]）"
+    }
+   ],
+   "requires_toggles": [
+    "guided"
+   ],
+   "not_modeled_notes_zh": [
+    "增强挂在观察员单位的领袖身上，本编码从**受益方（受引导单位）**视角施加——须军中存在由该增强携带者率领的观察员为本单位提供引导，按满足假设"
+   ],
+   "provenance": {
+    "current_text": "db enhancements.description id=000008811002（PR4 fp_rules 增强层 11 版化后文本）",
+    "base_text": "FP page_019 change-to（Wahapedia 已滚入，机械核验 identical）",
+    "synthesis": "无需合成",
+    "text_sha256": "7e7b36259d007718b66d62150c174f51c438d9be4b47c0493c0f83c6d8691f78"
+   },
+   "encoded_by": "manual-2026-07-16"
+  },
+  {
+   "table": "enhancements",
+   "id": "000008811003",
+   "side": "attacker",
+   "detachment": "Mont’ka",
+   "name_en": "Exemplar of the Mont’ka",
+   "name_zh": "蒙特卡典范",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "Killing Blow 生效轮次延至第四轮——引擎战轮已抽象为假设开关，窗口扩展无独立可编码残量"
+   ],
+   "provenance": {
+    "current_text": "db enhancements.description id=000008811003（PR4 fp_rules 增强层 11 版化后文本）",
+    "base_text": "Wahapedia 10e（FP 未勘误，十版文本 11 版仍现行）",
+    "synthesis": "无需合成",
+    "text_sha256": "0dca572bfe8a9d4bf4f036feec2b4d16380e1bb08e712602b2581d4482e4f0ac"
+   },
+   "encoded_by": "manual-2026-07-16"
+  },
+  {
+   "table": "enhancements",
+   "id": "000008811004",
+   "side": "attacker",
+   "detachment": "Mont’ka",
+   "name_en": "Strategic Conqueror",
+   "name_zh": "战略征服者",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "目标点 OC+1——占点域特征值，攻击序列无消费点"
+   ],
+   "provenance": {
+    "current_text": "db enhancements.description id=000008811004（PR4 fp_rules 增强层 11 版化后文本）",
+    "base_text": "Wahapedia 10e（FP 未勘误，十版文本 11 版仍现行）",
+    "synthesis": "无需合成",
+    "text_sha256": "bd39b9f23c2844a667866fbe7142ee731d969165e54daa0ae447b7bccf10e583"
+   },
+   "encoded_by": "manual-2026-07-16"
+  },
+  {
+   "table": "enhancements",
+   "id": "000008811005",
+   "side": "attacker",
+   "detachment": "Mont’ka",
+   "name_en": "Strike Swiftly",
+   "name_zh": "迅捷突袭",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "授予 Scouts 6″——部署机制超出攻击序列"
+   ],
+   "provenance": {
+    "current_text": "db enhancements.description id=000008811005（PR4 fp_rules 增强层 11 版化后文本）",
+    "base_text": "FP page_019 Second Sentence change-to（PR4 fp_rules 已合成落库）",
+    "synthesis": "无需合成",
+    "text_sha256": "70967db8644fe6c778e749395e63699dad9cbdb6a209333cbe11a05ebbe2e898"
+   },
+   "encoded_by": "manual-2026-07-16"
+  },
+  {
+   "table": "enhancements",
+   "id": "000008821002",
+   "side": "attacker",
+   "detachment": "Kroot Hunting Pack",
+   "name_en": "Borthrod Gland",
+   "name_zh": "博斯罗德腺体",
+   "status": "partial",
+   "effects": [
+    {
+     "phase": "hit",
+     "op": "crit_threshold",
+     "params": [
+      5
+     ],
+     "condition": [
+      "phase_melee"
+     ],
+     "source": "Borthrod Gland（近战未修正 5+ 即暴击命中）"
+    }
+   ],
+   "requires_toggles": [
+    "bearer_leading"
+   ],
+   "not_modeled_notes_zh": [
+    "全单位近战攻击受益（携带者率领时）",
+    "仅 Kroot Flesh Shaper 可携带——按军表合法假设",
+    "「携带者正率领本单位」为假设开关（引擎无依附建模）"
+   ],
+   "provenance": {
+    "current_text": "db enhancements.description id=000008821002（PR4 fp_rules 增强层 11 版化后文本）",
+    "base_text": "Wahapedia 10e（FP 未勘误，十版文本 11 版仍现行）",
+    "synthesis": "无需合成",
+    "text_sha256": "b025323993a61f8678ed0deccf0b0f22391bbd4090041dc68ada2ef73e90ded2"
+   },
+   "encoded_by": "manual-2026-07-16"
+  },
+  {
+   "table": "enhancements",
+   "id": "000008821003",
+   "side": "attacker",
+   "detachment": "Kroot Hunting Pack",
+   "name_en": "Kroothawk Flock",
+   "name_zh": "克鲁特鹰群",
+   "status": "partial",
+   "effects": [
+    {
+     "phase": "save",
+     "op": "ignores_cover",
+     "params": [],
+     "condition": [
+      "phase_shooting"
+     ],
+     "source": "Kroothawk Flock（远程武器 [IGNORES COVER]）"
+    }
+   ],
+   "requires_toggles": [
+    "bearer_leading"
+   ],
+   "not_modeled_notes_zh": [
+    "敌军增援不得于携带者 12″ 内落地——部署域限制未编码",
+    "「携带者正率领本单位」为假设开关（引擎无依附建模）"
+   ],
+   "provenance": {
+    "current_text": "db enhancements.description id=000008821003（PR4 fp_rules 增强层 11 版化后文本）",
+    "base_text": "Wahapedia 10e（FP 未勘误，十版文本 11 版仍现行）",
+    "synthesis": "无需合成",
+    "text_sha256": "dfbc12a35e03c1d40f8bda2e438f2edfc10a0d2a9bf7f76ea070e5fd21cd0abd"
+   },
+   "encoded_by": "manual-2026-07-16"
+  },
+  {
+   "table": "enhancements",
+   "id": "000008821004",
+   "side": "attacker",
+   "detachment": "Kroot Hunting Pack",
+   "name_en": "Nomadic Hunter",
+   "name_zh": "游牧猎手",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "+3″ 移动与 [ASSAULT]（冲刺后可射）——移动域机制与射击资格，攻击序列无消费点"
+   ],
+   "provenance": {
+    "current_text": "db enhancements.description id=000008821004（PR4 fp_rules 增强层 11 版化后文本）",
+    "base_text": "Wahapedia 10e（FP 未勘误，十版文本 11 版仍现行）",
+    "synthesis": "无需合成",
+    "text_sha256": "7c2bff4959594d7f9be098442f97a98c006fa6ec801f21951095d2d5238b41dd"
+   },
+   "encoded_by": "manual-2026-07-16"
+  },
+  {
+   "table": "enhancements",
+   "id": "000008821005",
+   "side": "attacker",
+   "detachment": "Kroot Hunting Pack",
+   "name_en": "Root-carved Weapons",
+   "name_zh": "根雕武器",
+   "status": "partial",
+   "effects": [
+    {
+     "phase": "wound",
+     "op": "mortal_pool",
+     "params": [],
+     "condition": [],
+     "source": "Root-carved Weapons（[DEVASTATING WOUNDS]）"
+    }
+   ],
+   "requires_toggles": [
+    "bearer_leading"
+   ],
+   "not_modeled_notes_zh": [
+    "规则仅携带者自身受益——整单位模拟会高估，建议将模拟对象限定为携带者（或其武器经 weapon_filter 单列）",
+    "[PRECISION]（点名击杀随队角色）未建模——伤害分配不区分模型",
+    "「携带者正率领本单位」为假设开关（引擎无依附建模）"
+   ],
+   "provenance": {
+    "current_text": "db enhancements.description id=000008821005（PR4 fp_rules 增强层 11 版化后文本）",
+    "base_text": "Wahapedia 10e（FP 未勘误，十版文本 11 版仍现行）",
+    "synthesis": "无需合成",
+    "text_sha256": "80eddf24bd0f3376d4d03849685f744900c36d3a5b5e521631557b29e0192806"
+   },
+   "encoded_by": "manual-2026-07-16"
+  },
+  {
+   "table": "enhancements",
+   "id": "000009645002",
+   "side": "attacker",
+   "detachment": "Kroot Raiding Party",
+   "name_en": "Experienced Leader",
+   "name_zh": "经验老到的头领",
+   "status": "partial",
+   "effects": [
+    {
+     "phase": "wound",
+     "op": "reroll",
+     "params": [
+      "fail"
+     ],
+     "condition": [],
+     "source": "Experienced Leader(对选定目标重骰致伤)"
+    }
+   ],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "规则只对开局选定的**那一个**敌军单位生效——按当前模拟目标即选定目标假设",
+    "携带者在场假设；重骰按最优策略只重骰失败骰"
+   ],
+   "provenance": {
+    "current_text": "db enhancements.description id=000009645002（PR4 fp_rules 增强层 11 版化后文本）",
+    "base_text": "Wahapedia 10e（FP 未勘误，十版文本 11 版仍现行）",
+    "synthesis": "无需合成",
+    "text_sha256": "418d58bb5d22f75eb91fad80ec05cebe633f651ea947e43a2587e3d6f7daa07a"
+   },
+   "encoded_by": "manual-2026-07-16"
+  },
+  {
+   "table": "enhancements",
+   "id": "000009645003",
+   "side": "attacker",
+   "detachment": "Kroot Raiding Party",
+   "name_en": "Quill Marker",
+   "name_zh": "刺羽标记",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "冲锋可将不可见单位纳入目标——冲锋阶段目标选择机制超出攻击序列"
+   ],
+   "provenance": {
+    "current_text": "db enhancements.description id=000009645003（PR4 fp_rules 增强层 11 版化后文本）",
+    "base_text": "Wahapedia 10e（FP 未勘误，十版文本 11 版仍现行）",
+    "synthesis": "无需合成",
+    "text_sha256": "36c958b3c4145d7f5c741a375a90e0e0fc89d79331d5b342ee7ab04c54f6055b"
+   },
+   "encoded_by": "manual-2026-07-16"
+  },
+  {
+   "table": "enhancements",
+   "id": "000008815002",
+   "side": "attacker",
+   "detachment": "Retaliation Cadre",
+   "name_en": "Internal Grenade Racks",
+   "name_zh": "内置榴弹架",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "Normal move 越过敌军掷 6D6 致命伤——移动域机制超出攻击序列"
+   ],
+   "provenance": {
+    "current_text": "db enhancements.description id=000008815002（PR4 fp_rules 增强层 11 版化后文本）",
+    "base_text": "Wahapedia 10e（FP 未勘误，十版文本 11 版仍现行）",
+    "synthesis": "无需合成",
+    "text_sha256": "5fe168a8e663a0b0f70455d2cd421c3cb0c355613af54aece0b7ea5c017eaec8"
+   },
+   "encoded_by": "manual-2026-07-16"
+  },
+  {
+   "table": "enhancements",
+   "id": "000008815003",
+   "side": "attacker",
+   "detachment": "Retaliation Cadre",
+   "name_en": "Prototype Weapon System",
+   "name_zh": "原型武器系统",
+   "status": "partial",
+   "effects": [
+    {
+     "phase": "hit",
+     "op": "auto_wound",
+     "params": [],
+     "condition": [
+      "phase_shooting"
+     ],
+     "source": "Prototype Weapon System（编码固定 [LETHAL HITS] 模式）"
+    }
+   ],
+   "requires_toggles": [
+    "bearer_leading"
+   ],
+   "not_modeled_notes_zh": [
+    "规则为每次射击在 [LETHAL HITS]/[SUSTAINED HITS 1] 二选一——本编码固定 LETHAL 模式（对高韧目标通常更优）；需 SUSTAINED 档请手动加词条对比",
+    "规则仅携带者自身受益——整单位模拟会高估，建议将模拟对象限定为携带者（或其武器经 weapon_filter 单列）",
+    "「携带者正率领本单位」为假设开关（引擎无依附建模）"
+   ],
+   "provenance": {
+    "current_text": "db enhancements.description id=000008815003（PR4 fp_rules 增强层 11 版化后文本）",
+    "base_text": "Wahapedia 10e（FP 未勘误，十版文本 11 版仍现行）",
+    "synthesis": "无需合成",
+    "text_sha256": "07505dd20ff16c40e9baf438145af6dbfe32b6448e0b09622322b0e41573104b"
+   },
+   "encoded_by": "manual-2026-07-16"
+  },
+  {
+   "table": "enhancements",
+   "id": "000008815004",
+   "side": "attacker",
+   "detachment": "Retaliation Cadre",
+   "name_en": "Puretide Engram Neurochip",
+   "name_zh": "纯洁之潮铭印芯片",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "4+ 回复 1CP——CP 经济不建模（spec D3）"
+   ],
+   "provenance": {
+    "current_text": "db enhancements.description id=000008815004（PR4 fp_rules 增强层 11 版化后文本）",
+    "base_text": "FP page_019 change-to（Wahapedia 已滚入，机械核验 identical）",
+    "synthesis": "无需合成",
+    "text_sha256": "46fd43db9f99df41a6f91eb88948da12cb0850a836ec1e158bcdc0fa33b104e4"
+   },
+   "encoded_by": "manual-2026-07-16"
+  },
+  {
+   "table": "enhancements",
+   "id": "000008815005",
+   "side": "attacker",
+   "detachment": "Retaliation Cadre",
+   "name_en": "Starflare Ignition System",
+   "name_zh": "星耀点火系统",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "对手回合末回战略预备队——部署机制超出攻击序列"
+   ],
+   "provenance": {
+    "current_text": "db enhancements.description id=000008815005（PR4 fp_rules 增强层 11 版化后文本）",
+    "base_text": "Wahapedia 10e（FP 未勘误，十版文本 11 版仍现行）",
+    "synthesis": "无需合成",
+    "text_sha256": "008c4331682b5f3c82b440be46e87d1e96bcdb275abc867e3823373ddb87b9a3"
+   },
+   "encoded_by": "manual-2026-07-16"
+  },
+  {
+   "table": "enhancements",
+   "id": "000009636002",
+   "side": "attacker",
+   "detachment": "Starfire Cadre",
+   "name_en": "Target Optimisation Microdrones",
+   "name_zh": "目标优化微型兵蜂",
+   "status": "partial",
+   "effects": [
+    {
+     "phase": "save",
+     "op": "ap_improve",
+     "params": [
+      1
+     ],
+     "condition": [
+      "phase_shooting"
+     ],
+     "source": "Target Optimisation Microdrones（远程武器 AP 改善 1）"
+    }
+   ],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "规则作用于携带者 6″ 内被选中射击的一个友军单位——按本单位即受益单位假设",
+    "每回合一次的次数限制不结算（同战略口径）"
+   ],
+   "provenance": {
+    "current_text": "db enhancements.description id=000009636002（PR4 fp_rules 增强层 11 版化后文本）",
+    "base_text": "Wahapedia 10e（FP 未勘误，十版文本 11 版仍现行）",
+    "synthesis": "无需合成",
+    "text_sha256": "dfd6b766b093ff1c96c97e57d539df9013416e5828bec5bb222e6411437fecfd"
+   },
+   "encoded_by": "manual-2026-07-16"
+  },
+  {
+   "table": "enhancements",
+   "id": "000009636003",
+   "side": "attacker",
+   "detachment": "Starfire Cadre",
+   "name_en": "Duty’s Echo",
+   "name_zh": "职责回响",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "射击阶段末 3″ 位移并视为已 Set Overwatch——移动/Overwatch 机制未建模"
+   ],
+   "provenance": {
+    "current_text": "db enhancements.description id=000009636003（PR4 fp_rules 增强层 11 版化后文本）",
+    "base_text": "Wahapedia 10e（FP 未勘误，十版文本 11 版仍现行）",
+    "synthesis": "无需合成",
+    "text_sha256": "586b421e9d046b8cdc37ed45f4e5825b8307f1044fefbc1c9ef3be70a15646c7"
+   },
+   "encoded_by": "manual-2026-07-16"
+  },
+  {
+   "table": "enhancements",
+   "id": "fp11e-tau-aac-e1",
+   "side": "attacker",
+   "detachment": "Advanced Acquisition Cadre",
+   "name_en": "Negation Emitters",
+   "name_zh": "消隐发射器",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "-3″ detection range——11 版侦测机制超出攻击序列建模范围"
+   ],
+   "provenance": {
+    "current_text": "db enhancements.description id=fp11e-tau-aac-e1（PR4 fp_rules 增强层 11 版化后文本）",
+    "base_text": "FP page_002（11 版新分队，PR4 fp_rules inserts 补录行）",
+    "synthesis": "无需合成",
+    "text_sha256": "3e9baba55e3a0bf22891a5033a00e20d4aeb1cfbc61a49484915da65e09dceed"
+   },
+   "encoded_by": "manual-2026-07-16"
+  },
+  {
+   "table": "enhancements",
+   "id": "fp11e-tau-aac-e2",
+   "side": "attacker",
+   "detachment": "Advanced Acquisition Cadre",
+   "name_en": "Unmasking Suite",
+   "name_zh": "显形套件",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "予敌 +9″ detection range——11 版侦测机制超出攻击序列建模范围"
+   ],
+   "provenance": {
+    "current_text": "db enhancements.description id=fp11e-tau-aac-e2（PR4 fp_rules 增强层 11 版化后文本）",
+    "base_text": "FP page_002（11 版新分队，PR4 fp_rules inserts 补录行）",
+    "synthesis": "无需合成",
+    "text_sha256": "1247f2742757652d42ac3c7e87edf7543e3501e65f75f5f3310c4960bb34af10"
    },
    "encoded_by": "manual-2026-07-16"
   }

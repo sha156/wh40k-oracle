@@ -80,6 +80,66 @@
    "to_text": "<b>WHEN:</b> Your Shooting phase, when a friendly BATTLESUIT CHARACTER unit is selected to shoot.<br><br><b>TARGET:</b> That BATTLESUIT CHARACTER unit.<br><br><b>EFFECT:</b> Your unit’s ranged attacks have:<br><ul><li>+1 S.</li><li>OR: +1 S, AP and [HAZARDOUS].</li></ul>",
    "fp_source": "page_004.md",
    "synthesis": "整段替换（FP 完整重印体裁；目标收窄为 BATTLESUIT CHARACTER；原 RESTRICTIONS 段随 11 版文本删除——Threat Assessment Analyser 在 FP 重印中已不存在）"
+  },
+  {
+   "table": "enhancements",
+   "id": "000008811005",
+   "name_en": "Strike Swiftly",
+   "column": "description",
+   "from_text": "<span class=\"kwb\">T’AU</span> <span class=\"kwb\">EMPIRE</span> model only. At the start of the battle, before any moves are made using the Scouts ability, you can select up to two friendly <span class=\"kwb\">T’AU</span> <span class=\"kwb\">EMPIRE</span> units within 6\" of the bearer that do not have the Scouts ability. Until the end of the battle, all models in the selected units have the Scouts 6\" ability.",
+   "to_text": "T’AU EMPIRE model only. In the Resolve Pre-battle Abilities step, you can select up to two friendly T’AU EMPIRE units within 6\" of this model that do not have the Scouts ability. Until the end of the battle, all models in the selected units have the Scouts 6\" ability.",
+   "fp_source": "page_019.md（Second Sentence change-to，合成全文）",
+   "synthesis": "FP 只改第二句，第一/三句沿用 DB 原文"
+  },
+  {
+   "table": "enhancements",
+   "id": "000009839002",
+   "name_en": "Student of Kauyon",
+   "column": "description",
+   "from_text": "Kroot Shaper model only. In the Declare Battle Formations step, you can select up to three Kroot Carnivores or Kroot Farstalkers units from your army. Models in those units have the Deep Strike ability.",
+   "to_text": "KROOT SHAPER model only. In the Declare Battle Formations step, you can select up to three friendly KROOT CARNIVORES/FARSTALKERS units. Those units have Deep Strike.",
+   "fp_source": "page_003.md（Auxiliary Cadre 完整重印）",
+   "synthesis": "整段替换"
+  },
+  {
+   "table": "enhancements",
+   "id": "000009839003",
+   "name_en": "Admired Leader",
+   "column": "description",
+   "from_text": "<span class=\"kwb\">T’AU</span> <span class=\"kwb\">EMPIRE</span> model (excluding Kroot models) only. In your Command phase, you can select one <span class=\"kwb\">KROOT</span> or Vespid Stingwings unit within 12\" of the bearer. If you do, until the start of your next Command phase, improve the Leadership characteristic of models in that unit by 1, and while such a unit is not Battle-shocked, add 1 to the Objective Control characteristic of models in that unit.",
+   "to_text": "T’AU EMPIRE model only (excluding KROOT models). In your Command phase, you can select one KROOT/VESPID STINGWINGS unit within 12\" of this model. If you do, that unit has +1 Ld and OC until the start of your next Command phase.",
+   "fp_source": "page_003.md（Auxiliary Cadre 完整重印）",
+   "synthesis": "整段替换（11 版删去 Battle-shocked 前提）"
+  },
+  {
+   "table": "enhancements",
+   "id": "000009983002",
+   "name_en": "Supernova Launcher",
+   "column": "description",
+   "from_text": "<span class=\"kwb\">T’AU</span> <span class=\"kwb\">EMPIRE</span> model only. Select one airbursting fragmentation projector equipped by the bearer. Improve the Strength characteristic of that weapon by 3, and improve the Armour Penetration and Damage characteristics of that weapon by 1.",
+   "to_text": "BATTLESUIT model only. In the Declare Battle Formations step, select one of this model’s Airbursting Fragmentation Projector weapons. That weapon’s attacks have:<br><ul><li>+3 S</li><li>+1 AP and D.</li></ul>",
+   "fp_source": "page_004.md（Experimental Prototype Cadre 完整重印）",
+   "synthesis": "整段替换（限定收窄为 BATTLESUIT + Declare Battle Formations 时机）"
+  },
+  {
+   "table": "enhancements",
+   "id": "000009983003",
+   "name_en": "Thermoneutronic Projector",
+   "column": "description",
+   "from_text": "<span class=\"kwb\">T’AU</span> <span class=\"kwb\">EMPIRE</span> model only. Select one T’au flamer equipped by the bearer. Improve the Strength characteristic of that weapon by 2, and improve the Armour Penetration and Damage characteristics of that weapon by 1.",
+   "to_text": "BATTLESUIT model only. In the Declare Battle Formations step, select one of this model’s T’au Flamer weapons. That weapon’s attacks have:<br><ul><li>+2 S</li><li>+1 AP and D.</li></ul>",
+   "fp_source": "page_004.md（Experimental Prototype Cadre 完整重印）",
+   "synthesis": "整段替换（限定收窄为 BATTLESUIT + Declare Battle Formations 时机）"
+  },
+  {
+   "table": "enhancements",
+   "id": "000009983004",
+   "name_en": "Plasma Accelerator Rifle",
+   "column": "description",
+   "from_text": "<span class=\"kwb\">T’AU</span> <span class=\"kwb\">EMPIRE</span> model only. Select one plasma rifle equipped by the bearer. Improve the Strength characteristic of that weapon by 2, and improve the Attacks, Armour Penetration and Damage characteristics of that weapon by 1.",
+   "to_text": "BATTLESUIT model only. In the Declare Battle Formations step, select one of this model’s Plasma Rifle weapons. That weapon’s attacks have:<br><ul><li>+2 S</li><li>+1 A, AP and D.</li></ul>",
+   "fp_source": "page_004.md（Experimental Prototype Cadre 完整重印）",
+   "synthesis": "整段替换（限定收窄为 BATTLESUIT + Declare Battle Formations 时机）"
   }
  ],
  "name_patches": [
@@ -526,23 +586,187 @@
  ],
  "_deactivations_comment": "9 条 review_needed 的最终裁定（2026-07-16 用户裁 A：FP 完整重印即整体替换）。证据：①FP p3/p4 对 Auxiliary Cadre / Experimental Prototype Cadre 用完整重印体裁（同书 datasheet 侧明文 replaces 语义，page_010）；②11 版 Experimental Ammunition 删除了与 Threat Assessment Analyser 互斥的 RESTRICTIONS 段（侧面印证 TAA 不复存在）；③Wahapedia 现网核证（2026-07-16 重拉 Stratagems.csv）确认其尚未消化这两页 FP（drifted 条仍旧十版措辞、GUIDED BY UNITY 与 Advanced Acquisition Cadre 均缺席），故'现网仍在'不构成反证。处置：置 fp_status='removed_11e'（原文保留可回滚）；P7 DSL 对账枚举、检索消费者应排除该标记行。将来 Wahapedia 滚更这两页时 text_patches 守卫会自动让路告警，届时复核本裁定。",
  "deactivations": [
-  {"table": "stratagems", "id": "000009840003", "name_en": "MULTISENSORY SCANNING",
-   "status": "removed_11e", "fp_source": "page_003.md（完整重印未收录）"},
-  {"table": "stratagems", "id": "000009840004", "name_en": "INTERLOCKING MANOUEVRES",
-   "status": "removed_11e", "fp_source": "page_003.md（完整重印未收录）"},
-  {"table": "stratagems", "id": "000009840005", "name_en": "PHEROMONE WAYPOINTS",
-   "status": "removed_11e", "fp_source": "page_003.md（完整重印未收录）"},
-  {"table": "stratagems", "id": "000009840007", "name_en": "GUIDED FIRE",
-   "status": "removed_11e", "fp_source": "page_003.md（完整重印未收录；新条 GUIDED BY UNITY 名称效果均不同，非更名对应）"},
-  {"table": "stratagems", "id": "000009984002", "name_en": "AUTOMATED REPAIR DRONES",
-   "status": "removed_11e", "fp_source": "page_004.md（完整重印未收录）"},
-  {"table": "stratagems", "id": "000009984003", "name_en": "REACTIVE IMPACT DAMPENERS",
-   "status": "removed_11e", "fp_source": "page_004.md（完整重印未收录）"},
-  {"table": "stratagems", "id": "000009984004", "name_en": "EXPERIMENTAL WEAPONRY",
-   "status": "removed_11e", "fp_source": "page_004.md（完整重印未收录）"},
-  {"table": "stratagems", "id": "000009984006", "name_en": "THREAT ASSESSMENT ANALYSER",
-   "status": "removed_11e", "fp_source": "page_004.md（完整重印未收录；11版 Experimental Ammunition 已删互斥 RESTRICTIONS 段侧证）"},
-  {"table": "stratagems", "id": "000009984007", "name_en": "NEUROWEB SYSTEM JAMMER",
-   "status": "removed_11e", "fp_source": "page_004.md（完整重印未收录）"}
+  {
+   "table": "stratagems",
+   "id": "000009840003",
+   "name_en": "MULTISENSORY SCANNING",
+   "status": "removed_11e",
+   "fp_source": "page_003.md（完整重印未收录）"
+  },
+  {
+   "table": "stratagems",
+   "id": "000009840004",
+   "name_en": "INTERLOCKING MANOUEVRES",
+   "status": "removed_11e",
+   "fp_source": "page_003.md（完整重印未收录）"
+  },
+  {
+   "table": "stratagems",
+   "id": "000009840005",
+   "name_en": "PHEROMONE WAYPOINTS",
+   "status": "removed_11e",
+   "fp_source": "page_003.md（完整重印未收录）"
+  },
+  {
+   "table": "stratagems",
+   "id": "000009840007",
+   "name_en": "GUIDED FIRE",
+   "status": "removed_11e",
+   "fp_source": "page_003.md（完整重印未收录；新条 GUIDED BY UNITY 名称效果均不同，非更名对应）"
+  },
+  {
+   "table": "stratagems",
+   "id": "000009984002",
+   "name_en": "AUTOMATED REPAIR DRONES",
+   "status": "removed_11e",
+   "fp_source": "page_004.md（完整重印未收录）"
+  },
+  {
+   "table": "stratagems",
+   "id": "000009984003",
+   "name_en": "REACTIVE IMPACT DAMPENERS",
+   "status": "removed_11e",
+   "fp_source": "page_004.md（完整重印未收录）"
+  },
+  {
+   "table": "stratagems",
+   "id": "000009984004",
+   "name_en": "EXPERIMENTAL WEAPONRY",
+   "status": "removed_11e",
+   "fp_source": "page_004.md（完整重印未收录）"
+  },
+  {
+   "table": "stratagems",
+   "id": "000009984006",
+   "name_en": "THREAT ASSESSMENT ANALYSER",
+   "status": "removed_11e",
+   "fp_source": "page_004.md（完整重印未收录；11版 Experimental Ammunition 已删互斥 RESTRICTIONS 段侧证）"
+  },
+  {
+   "table": "stratagems",
+   "id": "000009984007",
+   "name_en": "NEUROWEB SYSTEM JAMMER",
+   "status": "removed_11e",
+   "fp_source": "page_004.md（完整重印未收录）"
+  },
+  {
+   "table": "enhancements",
+   "id": "000009839004",
+   "name_en": "Fanatical Convert",
+   "status": "removed_11e",
+   "fp_source": "page_003.md（Auxiliary Cadre 完整重印仅 2 增强，未收录）"
+  },
+  {
+   "table": "enhancements",
+   "id": "000009839005",
+   "name_en": "Transponder Lock Module",
+   "status": "removed_11e",
+   "fp_source": "page_003.md（Auxiliary Cadre 完整重印仅 2 增强，未收录）"
+  },
+  {
+   "table": "enhancements",
+   "id": "000009983005",
+   "name_en": "Fusion Blades",
+   "status": "removed_11e",
+   "fp_source": "page_004.md（Experimental Prototype Cadre 完整重印仅 3 增强，未收录）"
+  }
+ ],
+ "_inserts_comment": "P7-PR4 fp_new 补录（2026-07-16）：FP 有、Wahapedia/DB 无的整条目。AAC 整分队（1 规则行 + 3 战略 + 2 增强，id 前缀 fp11e- 标 synthetic 溯源，增强点数 FP/MFM 均无源诚实置 NULL）+ Auxiliary Cadre 新战略 Guided by Unity。守卫：同 id 幂等/名字不符让路；同名异 id（上游将来自补）让路告警不留双胞胎；stratagems/enhancements 插入行标 fp_status='added_11e'。",
+ "inserts": [
+  {
+   "table": "detachments",
+   "fp_source": "page_002.md（11 版新分队，Wahapedia 无源）",
+   "values": {
+    "id": "fp11e-tau-aac-det",
+    "faction": "TAU",
+    "name_zh": "野战专精",
+    "name_en": "Expert Fieldcraft",
+    "rule_text": "In your Shooting phase, when a friendly PATHFINDER TEAM/STEALTH BATTLESUITS unit is selected to shoot, those ranged attacks do not prevent your unit from being hidden."
+   }
+  },
+  {
+   "table": "stratagems",
+   "fp_source": "page_002.md（11 版新分队，Wahapedia 无源）",
+   "values": {
+    "id": "fp11e-tau-aac-s1",
+    "faction": "TAU",
+    "detachment": "Advanced Acquisition Cadre",
+    "name_zh": "标记信标",
+    "name_en": "MARKER BEACON",
+    "cp_cost": "1",
+    "phase": "Movement phase",
+    "text_zh": "<b>WHEN:</b> End of your Movement phase.<br><br><b>TARGET:</b> One friendly PATHFINDER TEAM/STEALTH BATTLESUITS unit.<br><br><b>EFFECT:</b> Select one objective your unit is controlling. That objective is secured."
+   }
+  },
+  {
+   "table": "stratagems",
+   "fp_source": "page_002.md（11 版新分队，Wahapedia 无源）",
+   "values": {
+    "id": "fp11e-tau-aac-s2",
+    "faction": "TAU",
+    "detachment": "Advanced Acquisition Cadre",
+    "name_zh": "微型兵蜂支援",
+    "name_en": "MICRODRONE SUPPORT",
+    "cp_cost": "1",
+    "phase": "Shooting phase",
+    "text_zh": "<b>WHEN:</b> Your Shooting phase, when a friendly PATHFINDER TEAM/STEALTH BATTLESUITS unit starts an action.<br><br><b>TARGET:</b> That PATHFINDER TEAM/STEALTH BATTLESUITS unit.<br><br><b>EFFECT:</b> That action does not prevent your unit from being eligible to shoot."
+   }
+  },
+  {
+   "table": "stratagems",
+   "fp_source": "page_002.md（11 版新分队，Wahapedia 无源）",
+   "values": {
+    "id": "fp11e-tau-aac-s3",
+    "faction": "TAU",
+    "detachment": "Advanced Acquisition Cadre",
+    "name_zh": "自反应迷彩",
+    "name_en": "AUTOREACTIVE CAMOUFLAGE",
+    "cp_cost": "1",
+    "phase": "Shooting phase",
+    "text_zh": "<b>WHEN:</b> Your opponent’s Shooting phase, when an enemy unit targets a friendly PATHFINDER TEAM/STEALTH BATTLESUITS unit, if that friendly unit is hidden.<br><br><b>TARGET:</b> That PATHFINDER TEAM/STEALTH BATTLESUITS unit.<br><br><b>EFFECT:</b> Your unit has +1 Sv."
+   }
+  },
+  {
+   "table": "stratagems",
+   "fp_source": "page_003.md（Auxiliary Cadre 重印新增战略）",
+   "values": {
+    "id": "fp11e-tau-aux-gbu",
+    "faction": "TAU",
+    "detachment": "Auxiliary Cadre",
+    "name_zh": "团结引导",
+    "name_en": "GUIDED BY UNITY",
+    "cp_cost": "1",
+    "phase": "Shooting phase",
+    "text_zh": "<b>WHEN:</b> Your Shooting phase, when a friendly T’AU EMPIRE unit (excluding KROOT/VESPID STINGWINGS units) is selected to shoot.<br><br><b>TARGET:</b> That T’AU EMPIRE unit.<br><br><b>EFFECT:</b> Your unit’s ranged attacks that target a unit within 9\" of a friendly KROOT/VESPID STINGWINGS unit have [LETHAL HITS]."
+   }
+  },
+  {
+   "table": "enhancements",
+   "fp_source": "page_002.md（11 版新分队，Wahapedia 无源）",
+   "values": {
+    "id": "fp11e-tau-aac-e1",
+    "faction_id": "TAU",
+    "detachment_id": "fp11e-tau-aac",
+    "detachment_name": "Advanced Acquisition Cadre",
+    "name": "Negation Emitters",
+    "cost": null,
+    "legend": "点数未知：FP 不含点数，MFM 缓存无增强数据（诚实置空，勿猜）",
+    "description": "STEALTH BATTLESUITS unit only. This unit has -3\" detection range."
+   }
+  },
+  {
+   "table": "enhancements",
+   "fp_source": "page_002.md（11 版新分队，Wahapedia 无源）",
+   "values": {
+    "id": "fp11e-tau-aac-e2",
+    "faction_id": "TAU",
+    "detachment_id": "fp11e-tau-aac",
+    "detachment_name": "Advanced Acquisition Cadre",
+    "name": "Unmasking Suite",
+    "cost": null,
+    "legend": "点数未知：FP 不含点数，MFM 缓存无增强数据（诚实置空，勿猜）",
+    "description": "GHOSTKEEL BATTLESUIT/PATHFINDER TEAM/STEALTH BATTLESUITS unit only. When this unit is selected to shoot, you can select one enemy unit within 24\" of this unit. That enemy unit has +9\" detection range until this unit has shot."
+   }
+  }
  ]
 }

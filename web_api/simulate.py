@@ -70,22 +70,27 @@ def sanitize_options(raw: Optional[Dict[str, Any]]) -> Dict[str, Any]:
         out["reverse_phase"] = raw["reverse_phase"]
     # smokescreen 不在白名单：引擎里它只是 cover_on 的别名（smokescreen→cover_on），
     # 网页用 cover 开关表达即可，不重复暴露；agent 直调路径不过此白名单，仍可用 smokescreen。
-    # P7：guided/markerlight_observer/detachment_rounds = 攻方阵营 DSL 开关，bool 直通
-    for key in ("charge", "half_range", "cover", "stationary", "long_range",
-                "indirect", "stealth", "reverse", "guided", "markerlight_observer",
-                "detachment_rounds"):
+    # P7：阵营 DSL 布尔开关（攻/守两侧，PR4 起清单以 dsl.py 注册表为唯一真源——
+    # 新增开关登记注册表即自动过边界，不再手抄第二份）
+    from engines.simulator.dsl import ATTACKER_TOGGLES, TARGET_TOGGLES
+    for key in (("charge", "half_range", "cover", "stationary", "long_range",
+                 "indirect", "stealth", "reverse")
+                + tuple(ATTACKER_TOGGLES) + tuple(TARGET_TOGGLES)):
         if key in raw:
             out[key] = _as_bool(raw[key])
-    # P7-PR3：分队名（str）+ 战略点名（list[str]，条数/长度设上限防滥用）——
+    # P7-PR3/PR4：分队名（str）+ 战略/增强点名（list[str]，条数/长度设上限防滥用）——
     # 匹配失败在核心层显式披露（select_entries），边界只收敛类型不猜语义
-    det = raw.get("detachment")
-    if isinstance(det, str) and det.strip():
-        out["detachment"] = det.strip()[:80]
-    strats = raw.get("stratagems")
-    if isinstance(strats, list):
-        toks = [s.strip()[:80] for s in strats if isinstance(s, str) and s.strip()]
-        if toks:
-            out["stratagems"] = toks[:16]
+    for det_key in ("detachment", "defender_detachment"):
+        det = raw.get(det_key)
+        if isinstance(det, str) and det.strip():
+            out[det_key] = det.strip()[:80]
+    for list_key in ("stratagems", "enhancements",
+                     "defender_stratagems", "defender_enhancements"):
+        vals = raw.get(list_key)
+        if isinstance(vals, list):
+            toks = [s.strip()[:80] for s in vals if isinstance(s, str) and s.strip()]
+            if toks:
+                out[list_key] = toks[:16]
     for key in ("attacker_models", "defender_models", "damage_reduction", "seed"):
         v = _as_pos_int(raw.get(key))
         if v is not None:
@@ -179,6 +184,7 @@ def run_simulation(
         dsl_available=[
             SimDslEntry(
                 table=e.get("table", ""), id=e.get("id", ""),
+                side=e.get("side", "attacker"),
                 name_en=e.get("name_en", ""), name_zh=e.get("name_zh"),
                 status=e.get("status", ""), detachment=e.get("detachment"),
                 requires_toggles=e.get("requires_toggles") or [])

@@ -364,6 +364,11 @@ def simulate_combat(
     P7 阵营 DSL：guided、markerlight_observer、detachment(分队名，如 Kauyon/Mont'ka)、
     detachment_rounds(假设处于分队规则生效轮次)、stratagems=[战略 id/英文名/中文名,...]
     （一次性 opt-in；CP 不结算，未匹配/分队不符显式披露）。
+    P7-PR4 新增：enhancements=[增强名,...]（opt-in 同战略）；假设开关
+    range_within_12/range_within_8（Bonded Heroes 射程档）、target_below_starting/
+    target_below_half（Hunter's Instincts 战损档）、markerlight_visible、bearer_leading；
+    守方向：defender_detachment、defender_stratagems、defender_enhancements、
+    defender_hidden、defender_bearer_leading（防守 DSL 经 inject_target 注入）。
     """
     db_path = db_path or DB_PATH
     if not Path(db_path).exists():
@@ -413,6 +418,10 @@ def simulate_combat_resolved(
             guided=bool(options.get("guided")),
             markerlight_observer=bool(options.get("markerlight_observer")),
             detachment_rounds=bool(options.get("detachment_rounds")),
+            range_within_12=bool(options.get("range_within_12")),
+            range_within_8=bool(options.get("range_within_8")),
+            target_below_starting=bool(options.get("target_below_starting")),
+            target_below_half=bool(options.get("target_below_half")),
         )
 
         loadout = options.get("loadout")
@@ -435,30 +444,55 @@ def simulate_combat_resolved(
             return {"ok": False, "modeled": True, "tool": "simulate_combat",
                     "reason": "not_found", "note": f"守方 {d['name_en']} 无法装载"}
 
-        # P7：攻方阵营 DSL 条目——先过选择层（分队匹配 + 战略点名，PR3），再按开关注入
-        # （stance 同源 options 点亮，条件 tag 放行），注记随后挂进 report
+        # P7：攻方阵营 DSL 条目——先过选择层（分队匹配 + 战略/增强点名，PR3/PR4），
+        # 再按开关注入（stance 同源 options 点亮，条件 tag 放行），注记随后挂进 report
         # （modeled⇄结果被影响 成对，评审 F5）
-        from engines.simulator.dsl import inject_attacker, select_entries
+        from engines.simulator.dsl import (
+            attacker_toggles_from_options,
+            inject_attacker,
+            inject_target,
+            select_entries,
+            target_toggles_from_options,
+        )
         from engines.simulator.profile import load_unit_dsl
         dsl_entries = load_unit_dsl(db_path, a["canonical_id"])
         selected_entries, select_notes = select_entries(
             list(dsl_entries),
             detachment=options.get("detachment"),
-            stratagems=tuple(options.get("stratagems") or ()))
-        dsl_toggles = frozenset(
-            t for t in ("guided", "markerlight_observer", "detachment_rounds")
-            if options.get(t))
+            stratagems=tuple(options.get("stratagems") or ()),
+            enhancements=tuple(options.get("enhancements") or ()))
+        dsl_toggles = attacker_toggles_from_options(options)
         attacker_prof, dsl_modeled, dsl_notes = inject_attacker(
             asm.attacker, selected_entries, dsl_toggles)
         dsl_notes = select_notes + dsl_notes
-        # 面板/上层可见的可用开关/战略清单（surface，不自动开；PR3 补 table/id/detachment
-        # 供前端按分队分组渲染与点名回传）
+        # P7-PR4：守方阵营 DSL——防守向条目（Skirmish Fighters/Stimm Injectors/
+        # Counterfire 等）经 inject_target 注入 target.effects；守方自己的分队/
+        # 战略/增强用 defender_* 选项点名
+        defender_dsl = load_unit_dsl(db_path, d["canonical_id"])
+        d_selected, d_select_notes = select_entries(
+            list(defender_dsl),
+            detachment=options.get("defender_detachment"),
+            stratagems=tuple(options.get("defender_stratagems") or ()),
+            enhancements=tuple(options.get("defender_enhancements") or ()))
+        target, t_modeled, t_notes = inject_target(
+            target, d_selected, target_toggles_from_options(options))
+        dsl_modeled = dsl_modeled + t_modeled
+        dsl_notes = dsl_notes + d_select_notes + t_notes
+        # 面板/上层可见的可用开关/战略/增强清单（surface，不自动开；PR4 补 side
+        # 供前端分攻/守两栏渲染与点名回传）：攻方栏=攻方阵营的攻方向条目，
+        # 守方栏=守方阵营的防守向条目（异阵营对局两栏各取各的）
         dsl_available = [
-            {"table": e.table, "id": e.row_id,
+            {"table": e.table, "id": e.row_id, "side": e.side,
              "name_en": e.name_en, "name_zh": e.name_zh, "status": e.status,
              "detachment": e.detachment,
              "requires_toggles": list(e.requires_toggles)}
-            for e in dsl_entries if e.side == "attacker" and e.effects]
+            for e in dsl_entries if e.effects and e.side == "attacker"
+        ] + [
+            {"table": e.table, "id": e.row_id, "side": e.side,
+             "name_en": e.name_en, "name_zh": e.name_zh, "status": e.status,
+             "detachment": e.detachment,
+             "requires_toggles": list(e.requires_toggles)}
+            for e in defender_dsl if e.effects and e.side == "target"]
 
         def _annotate_dsl(rep):
             rep.modeled_effects.extend(dsl_modeled)
@@ -507,7 +541,9 @@ def simulate_combat_resolved(
         if cover_on and not stance.target_in_cover:
             stance = _replace(stance, target_in_cover=True)
         if def_effects:
-            target = _replace(target, effects=tuple(def_effects))
+            # P7-PR4：追加而非整体替换——target.effects 里可能已有 inject_target
+            # 注入的守方 DSL 效果，替换会静默吞掉（多来源同 op 由引擎取更优）
+            target = _replace(target, effects=target.effects + tuple(def_effects))
 
         n = int(options.get("n", 8000))
         seed = int(options.get("seed", 1234))

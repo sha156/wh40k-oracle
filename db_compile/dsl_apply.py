@@ -23,8 +23,21 @@ from typing import Dict
 
 from db_compile.fp_rules import _norm_text
 
-# DSL 投影列只存在于这两张表（分队规则条目按 spec D5 落 abilities 新行）
-_PROJECTION_TABLES = {"abilities": "text_zh", "stratagems": "text_zh"}
+# DSL 投影列所在表（分队规则条目按 spec D5 落 abilities 新行；
+# P7-PR4 起 enhancements 也有投影列，指纹对 description 列核）
+_PROJECTION_TABLES = {"abilities": "text_zh", "stratagems": "text_zh",
+                      "enhancements": "description"}
+
+
+def _ensure_dsl_columns(conn, table: str) -> None:
+    """旧库（建表早于 DSL 列入 DDL）幂等补列；新库 DDL 自带。
+    P7-PR4：enhancements 的 effect_dsl_json/dsl_status 晚于该表首建入 DDL。"""
+    cols = {r[1] for r in conn.execute(f"PRAGMA table_info({table})")}
+    if "effect_dsl_json" not in cols:
+        conn.execute(f"ALTER TABLE {table} ADD COLUMN effect_dsl_json TEXT")
+    if "dsl_status" not in cols:
+        conn.execute(
+            f"ALTER TABLE {table} ADD COLUMN dsl_status TEXT DEFAULT 'not_modeled'")
 # materialize 白名单（PR3）：分队规则正文源只允许 detachments.rule_text——
 # 物化条目 table 必须是 abilities（spec D5：owner_id=NULL 新行），指纹对源文本核
 _MATERIALIZE_SOURCES = {("detachments", "rule_text")}
@@ -93,6 +106,7 @@ def apply_dsl(db_path, payload_dir) -> Dict:
     seen: set = set()
     conn = sqlite3.connect(str(db_path))
     try:
+        _ensure_dsl_columns(conn, "enhancements")   # 旧库补列（幂等）
         for f in files:
             data = json.loads(f.read_text(encoding="utf-8"))
             for raw in data.get("entries", []):

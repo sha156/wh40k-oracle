@@ -149,7 +149,7 @@ def load_unit_dsl(db_path, unit_id: str) -> Tuple:
             return ()
         fid = u[0]
         rows = []
-        for table in ("abilities", "stratagems"):
+        for table in ("abilities", "stratagems", "enhancements"):   # PR4：增强层投影
             rows.extend(conn.execute(
                 f"SELECT effect_dsl_json FROM {table} "
                 f"WHERE effect_dsl_json IS NOT NULL").fetchall())

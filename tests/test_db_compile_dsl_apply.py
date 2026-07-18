@@ -254,6 +254,12 @@ class TestMaterialize:
                                    (e["id"],)).fetchone()
                 conn.execute("INSERT INTO abilities (id, name_en, text_zh) "
                              "VALUES (?,?,?)", (e["id"], e["name_en"], txt[0]))
+            elif e["table"] == "enhancements":     # P7-PR4：增强层投影（指纹列=description）
+                txt = real.execute("SELECT description FROM enhancements WHERE id=?",
+                                   (e["id"],)).fetchone()
+                conn.execute("INSERT INTO enhancements (id, faction_id, name, "
+                             "description) VALUES (?,?,?,?)",
+                             (e["id"], "TAU", e["name_en"], txt[0]))
             else:
                 txt = real.execute("SELECT text_zh FROM stratagems WHERE id=?",
                                    (e["id"],)).fetchone()
@@ -263,6 +269,6 @@ class TestMaterialize:
         conn.commit()
         conn.close()
         rep = apply_dsl(db, "dsl_payloads")
-        assert rep["applied"] + rep["already"] == len(payload["entries"]) == 15
+        assert rep["applied"] + rep["already"] == len(payload["entries"]) == 77
         assert not rep["fingerprint_mismatch"] and not rep["skipped"]
-        assert rep["by_status"] == {"encoded": 0, "partial": 9, "not_modeled": 6}
+        assert rep["by_status"] == {"encoded": 0, "partial": 35, "not_modeled": 42}

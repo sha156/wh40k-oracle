@@ -134,6 +134,37 @@ def main(argv: Optional[List[str]] = None) -> int:
     p.add_argument("--stratagem", action="append", dest="stratagems", metavar="NAME_OR_ID",
                    help="点名施放战略（id/英文名/中文名，可重复传多条）：一次性 opt-in，"
                         "CP 消耗与次数限制不结算只披露；未匹配或分队不符显式报出")
+    p.add_argument("--enhancement", action="append", dest="enhancements",
+                   metavar="NAME_OR_ID",
+                   help="点名攻方增强（P7-PR4，opt-in 同战略；bearer-only 型条目见"
+                        " --bearer-leading 假设开关）")
+    p.add_argument("--range-within-12", action="store_true", dest="range_within_12",
+                   help="假设目标在 12 寸内（Bonded Heroes S+1 档；引擎无距离建模）")
+    p.add_argument("--range-within-8", action="store_true", dest="range_within_8",
+                   help="假设目标在 8 寸内（Bonded Heroes AP 档；自动蕴含 12 寸档）")
+    p.add_argument("--target-below-starting", action="store_true",
+                   dest="target_below_starting",
+                   help="假设目标低于满编（Hunter's Instincts 命中档）")
+    p.add_argument("--target-below-half", action="store_true", dest="target_below_half",
+                   help="假设目标低于半编（自动蕴含低于满编档）")
+    p.add_argument("--markerlight-visible", action="store_true",
+                   dest="markerlight_visible",
+                   help="假设目标对未交战的友军标记光单位可见（Starfire 军规）")
+    p.add_argument("--bearer-leading", action="store_true", dest="bearer_leading",
+                   help="假设增强携带者正率领本单位（bearer/leading 型增强的生效前提）")
+    p.add_argument("--defender-detachment", dest="defender_detachment",
+                   help="守方所属分队名：放行守方分队的防守向 DSL 条目（P7-PR4）")
+    p.add_argument("--defender-stratagem", action="append", dest="defender_stratagems",
+                   metavar="NAME_OR_ID",
+                   help="点名守方防守向战略（Stimm Injectors/Counterfire 等，opt-in）")
+    p.add_argument("--defender-enhancement", action="append",
+                   dest="defender_enhancements", metavar="NAME_OR_ID",
+                   help="点名守方增强（opt-in）")
+    p.add_argument("--defender-hidden", action="store_true", dest="defender_hidden",
+                   help="假设守方处于 hidden 状态（AAC Autoreactive Camouflage 前提）")
+    p.add_argument("--defender-bearer-leading", action="store_true",
+                   dest="defender_bearer_leading",
+                   help="假设守方增强携带者正率领守方单位")
     p.add_argument("--def-fights-first", action="store_true", dest="defender_fights_first")
     p.add_argument("--def-fights-last", action="store_true", dest="defender_fights_last")
     p.add_argument("--atk-fights-first", action="store_true", dest="attacker_fights_first")
@@ -187,6 +218,18 @@ def main(argv: Optional[List[str]] = None) -> int:
         "detachment": args.detachment,
         "detachment_rounds": args.detachment_rounds,
         "stratagems": args.stratagems,
+        "enhancements": args.enhancements,
+        "range_within_12": args.range_within_12,
+        "range_within_8": args.range_within_8,
+        "target_below_starting": args.target_below_starting,
+        "target_below_half": args.target_below_half,
+        "markerlight_visible": args.markerlight_visible,
+        "bearer_leading": args.bearer_leading,
+        "defender_detachment": args.defender_detachment,
+        "defender_stratagems": args.defender_stratagems,
+        "defender_enhancements": args.defender_enhancements,
+        "defender_hidden": args.defender_hidden,
+        "defender_bearer_leading": args.defender_bearer_leading,
         "attacker_fights_first": args.attacker_fights_first,
         "attacker_fights_last": args.attacker_fights_last,
         "defender_fights_first": args.defender_fights_first,

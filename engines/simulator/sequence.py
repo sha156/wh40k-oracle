@@ -89,6 +89,10 @@ KNOWN_CONDITION_TAGS = frozenset({
     "phase_shooting", "phase_melee", "target_has_keyword",
     "guided_vs_spotted", "guided_markerlight", "markerlight_observer",
     "detachment_rounds_shooting", "detachment_rounds_guided",
+    "ranged_within_12", "ranged_within_8",          # P7-PR4：绝对射程档假设（自含射击阶段）
+    "target_below_starting", "target_below_half",   # P7-PR4：目标战损状态假设
+    "target_models_in_range",                       # P7-PR4：(tag, lo, hi) 按目标模型数分档
+    "shooting_target_models_in_range",              # P7-PR4：复合 tag=射击阶段 × 目标规模
 })
 
 
@@ -127,6 +131,26 @@ def _cond_true(condition: Tuple, stance: Stance, target: TargetProfile) -> bool:
     if tag == "detachment_rounds_guided":    # P7-PR3：战轮门控 + 受引导（分队规则第二条款）
         return (stance.phase == "shooting" and stance.detachment_rounds
                 and stance.guided)
+    if tag == "ranged_within_12":            # P7-PR4：假设目标在 12" 内（8" 档几何蕴含）
+        return (stance.phase == "shooting"
+                and (stance.range_within_12 or stance.range_within_8))
+    if tag == "ranged_within_8":             # P7-PR4：假设目标在 8" 内
+        return stance.phase == "shooting" and stance.range_within_8
+    if tag == "target_below_starting":       # P7-PR4：目标低于满编（低于半编蕴含之）
+        return stance.target_below_starting or stance.target_below_half
+    if tag == "target_below_half":           # P7-PR4：目标低于半编
+        return stance.target_below_half
+    if tag == "target_models_in_range":      # P7-PR4：(tag, lo, hi) 按目标模型数分档
+        if len(condition) != 3:              # 缺参静默 False=效果静默失效，与未知 tag 同罪
+            raise ValueError(
+                f"target_models_in_range 需要 (tag, lo, hi)，收到 {condition!r}")
+        return int(condition[1]) <= int(target.models) <= int(condition[2])
+    if tag == "shooting_target_models_in_range":  # P7-PR4 复合 tag（评审 F2：单 tag 契约，
+        if len(condition) != 3:                   # 复合语义注册复合 tag）——Arro'kon 等
+            raise ValueError(                     # "射击阶段战略 × 目标规模分档"用
+                f"shooting_target_models_in_range 需要 (tag, lo, hi)，收到 {condition!r}")
+        return (stance.phase == "shooting"
+                and int(condition[1]) <= int(target.models) <= int(condition[2]))
     # P7 加固（评审 F2）：未知 tag 静默返回 False = 效果静默失效（攻方侧零披露），
     # 是 CLAUDE.md 明令的静默降级缝——改为 raise，让 DSL 录入笔误在测试期就炸出来。
     raise ValueError(f"未知 Effect condition tag: {tag!r}（来源条件 {condition!r}）")
@@ -156,6 +180,12 @@ class _WeaponParams:
     cover: bool = False
     ap_improve: int = 0            # P7-PR3：AP 特征值改善累计（AP 存负值，改善=更负）
     hit_reroll_fail: bool = False  # P7-PR3：命中骰失败重骰（最优策略=只重骰失败）
+    s_improve: int = 0             # P7-PR4：S 特征值改善累计（Bonded Heroes 等；
+                                   # 特征值≠致伤骰修正——改 S vs T 查表本身，不吃 ±1 夹取）
+    sv_improve: int = 0            # P7-PR4：守方护甲 Sv 特征值改善累计（+1 Sv=阈值-1；
+                                   # 下限由 effective_save 的 ≥2 夹取承担）
+    target_invuln: object = None   # P7-PR4：守方 DSL 授予的无效保护阈值（Optional[int]，
+                                   # 与 profile 自带 invuln 取更优）
 
 
 def _gather_params(w: WeaponProfile, stance: Stance, target: TargetProfile) -> _WeaponParams:
@@ -213,6 +243,11 @@ def _gather_params(w: WeaponProfile, stance: Stance, target: TargetProfile) -> _
                 p.twin = True      # 致伤失败重骰；P7-PR3 起带条件（Combat Debarkation 等）
             elif e.op == "modify" and ok:
                 p.wound_mod += int(e.params[0])
+            elif e.op == "s_improve" and ok:
+                # P7-PR4："improve the Strength characteristic by 1"（Bonded Heroes）。
+                # 特征值改善≠致伤骰修正：改 S vs T 查表输入本身——S4→S5 打 T7 仍 5+，
+                # 而致伤骰 +1 会错升成 4+；两通道禁止互相折算
+                p.s_improve += int(e.params[0])
         elif e.phase == "damage":
             if e.op == "modify" and ok:
                 p.melta_expr = e.params[0]        # DiceExpr（melta）
@@ -242,6 +277,24 @@ def _gather_params(w: WeaponProfile, stance: Stance, target: TargetProfile) -> _
                 hit_neg += v
         elif e.phase == "save" and e.op == "cover":
             p.cover = True
+        elif e.phase == "hit" and e.op == "bs_improve":
+            # P7-PR4 守方 DSL：WS/BS 特征值修正（EMP Grenades "worsen the ... Ballistic
+            # Skill characteristics by 1" → 参数 -1）。与掩体折算同通道：特征值层净算，
+            # 不吃 ±1 骰修正夹取；[PSYCHIC] 按有利方向可无视其恶化分量
+            v = int(e.params[0])
+            if v >= 0:
+                bs_pos += v
+            else:
+                bs_neg += v
+        elif e.phase == "save" and e.op == "invuln":
+            # P7-PR4 守方 DSL：授予无效保护（Skirmish Fighters 远程 5+/近战 6+ 等）。
+            # 多来源取更优（阈值更小）；与 profile 自带 invuln 的合并在 _resolve_weapon
+            v = int(e.params[0])
+            p.target_invuln = v if p.target_invuln is None else min(int(p.target_invuln), v)
+        elif e.phase == "save" and e.op == "sv_improve":
+            # P7-PR4 守方 DSL："+1 Sv"（Autoreactive Camouflage）——护甲特征值改善，
+            # 不作用于 invuln；1+ 以下由 effective_save 的 ≥2 夹取兜住
+            p.sv_improve += int(e.params[0])
     # ── Benefit of Cover（11版 13.08）：掩体收益 = 恶化该次攻击的 BS 1 点（射击专属），
     #   十版"护甲保存骰+1、且 AP0 对 3+ 甲无效"整体作废——掩体从保存侧挪到命中侧。
     #   P7 起折进 **BS 特征值通道 bs_neg**（S7 曾折 hit_neg，与 13.08 "worsen the
@@ -344,12 +397,26 @@ def _autowound_save_damage(
             unsaved.sum(axis=1).astype(np.int64))
 
 
-def _target_effect_value(target: TargetProfile, op: str) -> Optional[int]:
+def _target_effect_value(target: TargetProfile, op: str, stance: Stance) -> Optional[int]:
+    """守方顶层效果取值（fnp / damage_reduction）。
+
+    P7-PR4 修复：①condition 不再被无视——DSL 注入的条件式守方效果（如仅射击阶段的
+    FNP）必须过 _cond_true 才计入（此前首个匹配 op 的效果无条件生效=错编温床）；
+    ②多来源取更优（fnp 阈值取小、减伤取大）而非首匹配——手动开关与 DSL 同时给
+    fnp 时不再依赖 effects 顺序。
+    """
+    best = None
     for e in target.effects:
-        if e.op == op and e.params:
-            p = e.params[0]
-            return int(p)
-    return None
+        if e.op != op or not e.params:
+            continue
+        if not _cond_true(e.condition, stance, target):
+            continue
+        v = int(e.params[0])
+        if best is None:
+            best = v
+        else:
+            best = min(best, v) if op == "fnp" else max(best, v)
+    return best
 
 
 # ── Effect 消费点注册表（P7）────────────────────────────────────────────────
@@ -363,13 +430,15 @@ ATTACKER_CONSUMED = frozenset({
     ("hit", "indirect_fixed"), ("hit", "crit_threshold"), ("hit", "ignore_hit_mods"),
     ("hit", "modify"), ("hit", "bs_improve"), ("hit", "reroll"),
     ("wound", "mortal_pool"), ("wound", "crit_threshold"), ("wound", "reroll"),
-    ("wound", "modify"),
+    ("wound", "modify"), ("wound", "s_improve"),
     ("damage", "modify"),
     ("save", "ignores_cover"), ("save", "cover"), ("save", "ap_improve"),
 })
 TARGET_CONSUMED = frozenset({
     ("fnp", "fnp"), ("damage", "damage_reduction"),
     ("hit", "modify"), ("save", "cover"),
+    ("save", "invuln"), ("save", "sv_improve"),     # P7-PR4：inject_target 防守向通道
+    ("hit", "bs_improve"),                          # P7-PR4：守方 BS/WS 特征值修正（EMP）
 })
 
 
@@ -392,16 +461,19 @@ def unconsumed_attacker_effect_notes(attacker) -> List[str]:
 
 # ── 守方 Effect 消费对账（评审 M：target.effects 要么被消费、要么显式披露，绝不静默丢）──
 # 引擎当前的全部消费点：
-#   · op == "fnp" / "damage_reduction" → run_sequence 顶层经 _target_effect_value 读取；
+#   · op == "fnp" / "damage_reduction" → run_sequence 顶层经 _target_effect_value 读取
+#     （P7-PR4 起过 condition + 多来源取更优）；
 #   · phase == "hit" 且 op == "modify" → _gather_params 并入攻方命中修正（烟幕等减命中）；
-#   · phase == "save" 且 op == "cover" → _gather_params 并入掩体开关（11版 Stealth 24.33）。
+#   · phase == "save" 且 op == "cover" → _gather_params 并入掩体开关（11版 Stealth 24.33）；
+#   · phase == "save" 且 op == "invuln"/"sv_improve" → _gather_params 折进有效保存
+#     （P7-PR4 inject_target 防守向通道：DSL 授予无效保护/护甲改善）。
 # 其余 phase/op（如 wound 阶段的防守修正）当前没有消费者——列入报告注解透传。
 def _target_effect_consumed(e) -> bool:
     if e.op in ("fnp", "damage_reduction"):
         return True
-    if e.phase == "hit" and e.op == "modify":
+    if e.phase == "hit" and e.op in ("modify", "bs_improve"):
         return True
-    return e.phase == "save" and e.op == "cover"
+    return e.phase == "save" and e.op in ("cover", "invuln", "sv_improve")
 
 
 def unconsumed_target_effect_notes(target: TargetProfile) -> List[str]:
@@ -412,7 +484,8 @@ def unconsumed_target_effect_notes(target: TargetProfile) -> List[str]:
     return [
         f"守方 Effect 未消费：phase={e.phase}/op={e.op}"
         f"（来源 {e.source or '未知'}）——引擎当前只消费 fnp/damage_reduction/"
-        f"命中修正（hit+modify）/掩体（save+cover），该效果未计入本次结果"
+        f"命中修正（hit+modify）/掩体（save+cover）/无效保护（save+invuln）/"
+        f"护甲改善（save+sv_improve），该效果未计入本次结果"
         for e in target.effects if not _target_effect_consumed(e)
     ]
 
@@ -525,9 +598,13 @@ def _resolve_weapon(
         lethal_mask = np.zeros_like(hit)
         base_to_wound = hit
 
-    # ③-⑥ Wound / Save / Damage（P7-PR3：AP 特征值改善——AP 存负值，改善=更负）
-    wt = wound_target(w.strength, target.t)
-    sv_need = effective_save(target.sv, w.ap - p.ap_improve, target.invuln)
+    # ③-⑥ Wound / Save / Damage（P7-PR3：AP 特征值改善——AP 存负值，改善=更负；
+    #   P7-PR4：S/Sv 特征值改善 + 守方 DSL 授予 invuln 与 profile 自带取更优）
+    wt = wound_target(w.strength + p.s_improve, target.t)
+    inv = target.invuln
+    if p.target_invuln is not None:
+        inv = int(p.target_invuln) if inv is None else min(inv, int(p.target_invuln))
+    sv_need = effective_save(target.sv - p.sv_improve, w.ap - p.ap_improve, inv)
     to_wound = np.concatenate([base_to_wound, extra_mask], axis=1)
 
     nd1, md1, w1, u1, m1 = _wound_save_damage(
@@ -585,8 +662,8 @@ def run_sequence(
     rng = np.random.default_rng(seed)
     weapons = _select_weapons(attacker.loadout, stance.phase)
 
-    fnp_thresh = _target_effect_value(target, "fnp")
-    dmg_reduction = _target_effect_value(target, "damage_reduction") or 0
+    fnp_thresh = _target_effect_value(target, "fnp", stance)
+    dmg_reduction = _target_effect_value(target, "damage_reduction", stance) or 0
 
     normal_blocks: List[np.ndarray] = []
     mortal_blocks: List[np.ndarray] = []

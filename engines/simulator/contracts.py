@@ -120,6 +120,14 @@ class Stance:
     detachment_rounds: bool = False  # P7-PR3：分队规则战轮门控开关——引擎无战斗轮概念，
                                      # 开=假设当前处于该分队规则生效轮次（Kauyon 3-5 轮 /
                                      # Mont'ka 1-3 轮），报告披露该假设
+    range_within_12: bool = False    # P7-PR4：假设目标在 12" 内（Bonded Heroes S+1 档；
+                                     # 引擎无距离建模，绝对射程档用假设开关近似）
+    range_within_8: bool = False     # P7-PR4：假设目标在 8" 内（Bonded Heroes AP 档；
+                                     # 开启时几何蕴含 12" 档，选项归一层自动补开）
+    target_below_starting: bool = False  # P7-PR4：假设目标已低于满编（Hunter's Instincts
+                                         # 命中档；引擎不追踪目标战损状态）
+    target_below_half: bool = False  # P7-PR4：假设目标已低于半编（Hunter's Instincts
+                                     # 致伤档；蕴含 below_starting，选项归一层自动补开）
 
 
 @dataclass(frozen=True)
