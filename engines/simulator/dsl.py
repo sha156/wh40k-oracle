@@ -55,6 +55,16 @@ ATTACKER_TOGGLES = {
     "blessing_martial_excellence": True,
     "blessing_warp_blades": True,
     "blessing_decapitating_strikes": True,
+    # P7-PR6·黑色圣堂：下车态（Shock and Awe / Paragon of Fury / 谴责音阵 LR 档）
+    "disembarked_this_turn": True,
+    "disembarked_from_land_raider": True,   # 蕴含下车（选项归一层自动补开）
+    # P7-PR6·圣堂誓言（军队级四选一，仅 Accept Any Challenge 有可建模效果——
+    # 单开关即可，无需 toggle_groups；其余三誓言 not_modeled 注记）
+    "vow_accept_any_challenge": False,
+    # P7-PR6·指引圣兆（The Living Miracle 增强，六选三；可建模仅两项，
+    # 组约束 3 上限对两开关永不触顶——由注记披露三选规则）
+    "omen_instrument": True,
+    "omen_momentous_brutality": True,
 }
 # target 侧（防守向条目 requires_toggles 用；不进 Stance——守方效果自带 condition）
 TARGET_TOGGLES = {
@@ -72,6 +82,8 @@ def attacker_toggles_from_options(options) -> frozenset:
         on.add("range_within_12")
     if "target_below_half" in on:
         on.add("target_below_starting")
+    if "disembarked_from_land_raider" in on:    # P7-PR6：LR 下车蕴含普通下车
+        on.add("disembarked_this_turn")
     return frozenset(on)
 
 
@@ -215,6 +227,12 @@ def _parse_effect(raw: dict, side: str, entry_name: str) -> Effect:
                 raise DslError(
                     f"{entry_name}：target_models_in_range 需要 (tag, lo, hi) 两个整数"
                     f"且 lo≤hi，收到 {condition!r}")
+        if tag in ("melee_s_lte_t", "wound_s_gt_t") and (phase, op) != ("wound", "modify"):
+            # P7-PR6：S/T 延迟判定 tag 只在 (wound,modify) 有引擎路由——挂到别的 op 上
+            # _cond_true 的部分判定（缺 S/T 分量）会静默放行，录入期直接拒载
+            raise DslError(
+                f"{entry_name}：condition tag {tag!r} 仅允许挂在 (wound, modify) 上"
+                f"（S/T 比较延迟到引擎最终 S 处判定），收到 (phase={phase!r}, op={op!r})")
         if tag in ("target_has_keyword", "melee_target_has_keyword"):
             # P7-PR5：关键词 tag 恰 1 个非空字符串参数，且须小写（profile 关键词
             # 集合是 casefold 后的——大写录入会静默永不匹配）

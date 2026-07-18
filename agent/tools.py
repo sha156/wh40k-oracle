@@ -425,6 +425,10 @@ def simulate_combat_resolved(
             blessing_martial_excellence=bool(options.get("blessing_martial_excellence")),
             blessing_warp_blades=bool(options.get("blessing_warp_blades")),
             blessing_decapitating_strikes=bool(options.get("blessing_decapitating_strikes")),
+            disembarked_this_turn=bool(options.get("disembarked_this_turn")),
+            disembarked_from_land_raider=bool(options.get("disembarked_from_land_raider")),
+            omen_instrument=bool(options.get("omen_instrument")),
+            omen_momentous_brutality=bool(options.get("omen_momentous_brutality")),
         )
 
         loadout = options.get("loadout")
