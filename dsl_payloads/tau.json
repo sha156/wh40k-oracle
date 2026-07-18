@@ -1662,7 +1662,7 @@
    ],
    "requires_toggles": [],
    "not_modeled_notes_zh": [
-    "规则选定一件 T'au Flamer 强化——weapon_filter 按名字含 flamer 注入；若该武器行 count>1 会整行受益（高估），请单列",
+    "规则选定一件 T'au Flamer 强化——weapon_filter 按名字含 flamer 子串注入；若该武器行 count>1、或 loadout 含多件名字带 flamer 的不同武器，会全部受益（高估），请只单列目标那一件",
     "Declare Battle Formations 的武器选定按已完成假设"
    ],
    "provenance": {
