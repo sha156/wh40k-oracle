@@ -82,12 +82,13 @@ def _ratio(numer, denom):
 
 class TestPayloadShape:
     def test_counts(self, entries):
-        # 11 分队规则物化 + 53 战略 + 34 增强 = 98（15 encoded / 16 partial / 67 not_modeled）
+        # 11 分队规则物化 + 53 战略 + 34 增强 = 98（14 encoded / 16 partial / 68 not_modeled；
+        # 审查后帝皇的处刑者改判 not_modeled——仅 Fight phase×低于满编无复合 tag 载体）
         assert len(entries) == 98
         by = {}
         for e in entries:
             by[e.status] = by.get(e.status, 0) + 1
-        assert by == {"encoded": 15, "partial": 16, "not_modeled": 67}
+        assert by == {"encoded": 14, "partial": 16, "not_modeled": 68}
 
     def test_partial_entries_all_have_notes_and_fingerprint(self, entries):
         for e in entries:
@@ -181,14 +182,13 @@ class TestDefensiveFromPayload:
 
 
 class TestAttackerFromPayload:
-    def test_emperors_executioners_below_starting_only(self, entries):
-        # 帝皇的处刑者：对低于满编敌 +1 致伤。S4 vs T4：满编 4+（1/2）→ 低于满编 3+（2/3）
+    def test_emperors_executioners_not_modeled(self, entries):
+        # 帝皇的处刑者：仅 Fight phase×低于满编 +1 致伤，单 tag 无复合门载体 →
+        # 审查后改判 not_modeled（防射击阶段误施加，同 PR10 Warp Fields 先例）
         ee = _entry(entries, "000008922005")
-        atk, _, _ = inject_attacker(_attacker(_melee(s=4)), [ee], frozenset())
-        on = _run(atk, _target(t=4), Stance(phase="melee", target_below_starting=True))
-        off = _run(atk, _target(t=4), Stance(phase="melee"))
-        assert _ratio(on.wounds, on.hits) == pytest.approx(2 / 3, abs=0.02)
-        assert _ratio(off.wounds, off.hits) == pytest.approx(1 / 2, abs=0.02)
+        assert ee.status == "not_modeled"
+        assert ee.effects == ()
+        assert ee.not_modeled_notes_zh
 
     def test_deathsong_lance_and_psyker_attacks(self, entries):
         # 死歌之镰：[LANCE] 冲锋致伤 +1 + 对 PSYKER +1 A。冲锋打 psyker：攻击 1→2，

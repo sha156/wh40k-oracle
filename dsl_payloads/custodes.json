@@ -1,5 +1,5 @@
 {
- "_comment": "P7 阵营技能 DSL 唯一真源（卡斯托迪斯，P7-PR11）。DB 投影由 dsl-apply 写入挂 restore。判据格式沿 spec 2026-07-14 + PR3-PR10 约定；A/B 工作单见 docs/superpowers/plans/2026-07-19-p7-pr11-ac-worklist.md。卡斯托迪斯为精英近战/载具阵营，可编率显著高于千子：大量命中/致伤/S/AP/A 特征值增益、[LANCE]/无效保护/FNP/守方 S>T 被伤-1（无瑕造物走 wound_s_gt_t 全阶段防守 tag）/+1T（坚毅决心走 t_improve）/对低于满编敌 +1 致伤（target_below_starting）。零新引擎通道（第三个纯编码 PR）。防高估不编：重骰1类（承袭专精/黄金装甲/荣光逝者——重骰1≠重骰失败）、幸存反打（誓死不退/帝皇的复仇/永恒警戒）、按敌模型数动态（凶悍征服者）、自身战损状态（为逝者复仇）、[PRECISION]/[TORRENT] 关键字无 weapon_filter、二选一按单分支（考古军械）、光辉披风攻击者距离无载体（宁漏不错）、+1D 无通用伤害通道。",
+ "_comment": "P7 阵营技能 DSL 唯一真源（卡斯托迪斯，P7-PR11）。DB 投影由 dsl-apply 写入挂 restore。判据格式沿 spec 2026-07-14 + PR3-PR10 约定；A/B 工作单见 docs/superpowers/plans/2026-07-19-p7-pr11-ac-worklist.md。卡斯托迪斯为精英近战/载具阵营，可编率显著高于千子：大量命中/致伤/S/AP/A 特征值增益、[LANCE]/无效保护/FNP/守方 S>T 被伤-1（无瑕造物走 wound_s_gt_t 全阶段防守 tag）/+1T（坚毅决心走 t_improve）/零新引擎通道（第三个纯编码 PR）。审查后帝皇的处刑者（仅 Fight phase×低于满编，单 tag 无复合门载体）改判 not_modeled。防高估不编：重骰1类（承袭专精/黄金装甲/荣光逝者——重骰1≠重骰失败）、幸存反打（誓死不退/帝皇的复仇/永恒警戒）、按敌模型数动态（凶悍征服者）、自身战损状态（为逝者复仇）、[PRECISION]/[TORRENT] 关键字无 weapon_filter、二选一按单分支（考古军械）、光辉披风攻击者距离无载体（宁漏不错）、+1D 无通用伤害通道。",
  "dsl_version": 1,
  "faction": "AC",
  "entries": [
@@ -1057,27 +1057,12 @@
    "detachment": "Talons Of The Emperor",
    "name_en": "EMPEROR’S EXECUTIONERS",
    "name_zh": "帝皇的处刑者",
-   "status": "encoded",
-   "effects": [
-    {
-     "phase": "wound",
-     "op": "modify",
-     "params": [
-      1
-     ],
-     "source": "帝皇的处刑者：对低于满编敌单位致伤 +1",
-     "condition": [
-      "target_below_starting"
-     ]
-    }
-   ],
+   "status": "not_modeled",
+   "effects": [],
    "requires_toggles": [],
-   "not_modeled_notes_zh": [],
-   "provenance": {
-    "current_text": "db stratagems.text_zh id=000008922005",
-    "base_text": "Wahapedia 现文（PR11 工作单：11 版化后文本，FP 未触及或已滚入）",
-    "text_sha256": "1c3b4237823f95722b3dcccf01ae85fbde0d021b1ac537fb486216e342b39575"
-   },
+   "not_modeled_notes_zh": [
+    "帝皇的处刑者：仅 Fight phase 对低于满编敌 +1 致伤——单 tag 契约无法叠加 phase_melee×target_below_starting，现无「近战×低于满编」复合 tag 载体，宁漏不错不建模（同 PR10 Warp Fields 远程 S>T 先例，避免射击阶段误施加）"
+   ],
    "encoded_by": "manual-2026-07-19"
   },
   {
@@ -1648,12 +1633,12 @@
    "side": "attacker",
    "detachment": "Shield Host",
    "name_en": "Castellan’s Mark",
-   "name_zh": "castellan印记",
+   "name_zh": "城主印记",
    "status": "not_modeled",
    "effects": [],
    "requires_toggles": [],
    "not_modeled_notes_zh": [
-    "castellan 印记：重新部署——部署无载体"
+    "城主印记：重新部署——部署无载体"
    ],
    "encoded_by": "manual-2026-07-19"
   },

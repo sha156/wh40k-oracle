@@ -278,4 +278,4 @@ class TestMaterialize:
         # + 98（卡斯托迪斯 PR11）= 699
         assert rep["applied"] + rep["already"] == len(all_entries) == 699
         assert not rep["fingerprint_mismatch"] and not rep["skipped"]
-        assert rep["by_status"] == {"encoded": 26, "partial": 193, "not_modeled": 480}
+        assert rep["by_status"] == {"encoded": 25, "partial": 193, "not_modeled": 481}
