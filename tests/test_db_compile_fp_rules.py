@@ -380,12 +380,14 @@ class TestInserts:
         #   the Doomed 三全新分队各 1 规则+3 战略+2 增强）
         # + 千子 18 条（PR10：Ritual of Regeneration / Sekhetar Cohort / Servants
         #   of Change 三全新分队各 1 规则+3 战略+2 增强）
+        # + 卡斯托迪斯 18 条（PR11：Might of the Moritoi / Silent Hunters /
+        #   Tharanatoi Hammerblow 三全新分队各 1 规则+3 战略+2 增强）
         import json
         from pathlib import Path
         data = json.loads(Path("db_compile/fp_rules_patches.json").read_text(
             encoding="utf-8"))
         ins = data.get("inserts", [])
-        assert len(ins) == 96
+        assert len(ins) == 114
         ids = {p["values"]["id"] for p in ins}
         assert ids == {"fp11e-tau-aac-det", "fp11e-tau-aac-s1", "fp11e-tau-aac-s2",
                        "fp11e-tau-aac-s3", "fp11e-tau-aux-gbu",
@@ -434,7 +436,16 @@ class TestInserts:
                        "fp11e-ts-sekhetar-s2", "fp11e-ts-sekhetar-s3",
                        "fp11e-ts-servants", "fp11e-ts-servants-e1",
                        "fp11e-ts-servants-e2", "fp11e-ts-servants-s1",
-                       "fp11e-ts-servants-s2", "fp11e-ts-servants-s3"}
+                       "fp11e-ts-servants-s2", "fp11e-ts-servants-s3",
+                       "fp11e-ac-moritoi", "fp11e-ac-moritoi-e1",
+                       "fp11e-ac-moritoi-e2", "fp11e-ac-moritoi-s1",
+                       "fp11e-ac-moritoi-s2", "fp11e-ac-moritoi-s3",
+                       "fp11e-ac-silent", "fp11e-ac-silent-e1",
+                       "fp11e-ac-silent-e2", "fp11e-ac-silent-s1",
+                       "fp11e-ac-silent-s2", "fp11e-ac-silent-s3",
+                       "fp11e-ac-tharanatoi", "fp11e-ac-tharanatoi-e1",
+                       "fp11e-ac-tharanatoi-e2", "fp11e-ac-tharanatoi-s1",
+                       "fp11e-ac-tharanatoi-s2", "fp11e-ac-tharanatoi-s3"}
         for p in ins:
             assert p.get("fp_source")
             assert p["values"].get("id", "").startswith("fp11e-")
