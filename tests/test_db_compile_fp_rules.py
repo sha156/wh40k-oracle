@@ -378,12 +378,14 @@ class TestInserts:
         #   两全新分队各 1 规则+3 战略+2 增强）
         # + 圣血天使 18 条（PR9：Legacy of Grace / Encarmine Speartip / Wrath of
         #   the Doomed 三全新分队各 1 规则+3 战略+2 增强）
+        # + 千子 18 条（PR10：Ritual of Regeneration / Sekhetar Cohort / Servants
+        #   of Change 三全新分队各 1 规则+3 战略+2 增强）
         import json
         from pathlib import Path
         data = json.loads(Path("db_compile/fp_rules_patches.json").read_text(
             encoding="utf-8"))
         ins = data.get("inserts", [])
-        assert len(ins) == 78
+        assert len(ins) == 96
         ids = {p["values"]["id"] for p in ins}
         assert ids == {"fp11e-tau-aac-det", "fp11e-tau-aac-s1", "fp11e-tau-aac-s2",
                        "fp11e-tau-aac-s3", "fp11e-tau-aux-gbu",
@@ -423,7 +425,16 @@ class TestInserts:
                        "fp11e-ba-speartip-e1", "fp11e-ba-speartip-e2",
                        "fp11e-ba-doomed-det", "fp11e-ba-doomed-s1",
                        "fp11e-ba-doomed-s2", "fp11e-ba-doomed-s3",
-                       "fp11e-ba-doomed-e1", "fp11e-ba-doomed-e2"}
+                       "fp11e-ba-doomed-e1", "fp11e-ba-doomed-e2",
+                       "fp11e-ts-regen", "fp11e-ts-regen-e1",
+                       "fp11e-ts-regen-e2", "fp11e-ts-regen-s1",
+                       "fp11e-ts-regen-s2", "fp11e-ts-regen-s3",
+                       "fp11e-ts-sekhetar", "fp11e-ts-sekhetar-e1",
+                       "fp11e-ts-sekhetar-e2", "fp11e-ts-sekhetar-s1",
+                       "fp11e-ts-sekhetar-s2", "fp11e-ts-sekhetar-s3",
+                       "fp11e-ts-servants", "fp11e-ts-servants-e1",
+                       "fp11e-ts-servants-e2", "fp11e-ts-servants-s1",
+                       "fp11e-ts-servants-s2", "fp11e-ts-servants-s3"}
         for p in ins:
             assert p.get("fp_source")
             assert p["values"].get("id", "").startswith("fp11e-")
