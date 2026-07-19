@@ -1,0 +1,1751 @@
+{
+ "_comment": "P7 阵营技能 DSL 唯一真源（圣血修女 Adepta Sororitas，P7-PR15）。信仰/奇迹骰驱动阵营，可编率低——大量机制（奇迹骰生成/替换、Acts of Faith、Vows of Atonement 动态选择、Righteous 动态标记、复活/据点/预备队/移动/战栗、仅致命伤 FNP、[PRECISION]、负关键字门、6\" 射程档、Torrent 关键词筛选）无战斗链载体，宁漏不错编。零新引擎通道（第七个纯编码 PR）：Righteous/Vow 动态态未加 toggle，按基础分量编码 + 注记残量（保持通道集合稳定，同 Waaagh 范式）。防高估不编：本方单位战损门（The Blood of Martyrs）、6\" 射程 S 加值（Fervent Purgation/Rites of Fire）、仅致命伤 FNP（Shield of Faith/Denial/Faithful Fortitude）、Torrent×DEV（Cleansing Flames）、负关键字 DEV（Devastating Reprise）、重骰1（Prayer of Precision）、伤害封顶（Mantle of Ophelia）、五选一（Hagiomnifex）。已编：守方无效保护/FNP/AP恶化/命中-1/S>T 被伤-1、近战 +A/+S/+D/+AP/[LETHAL]/[LANCE]/crit5+/命中重骰/[SUSTAINED]、WS/BS +1、无视命中修正。阶段门严核：战斗阶段触发（BASTION OF FAITH 守方命中-1）挂 phase_melee；[LANCE]/冲锋誓言挂 melee_charging。A/B 工作单见 docs/superpowers/plans/2026-07-20-p7-pr15-sororitas-worklist.md。",
+ "dsl_version": 1,
+ "faction": "AS",
+ "entries": [
+  {
+   "table": "abilities",
+   "id": "det000008468",
+   "side": "attacker",
+   "detachment": "Hallowed Martyrs",
+   "name_en": "The Blood of Martyrs",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "触发为本方单位低于满编(+1命中)/低于半编(另+1致伤)——引擎无「本方单位战损」态载体（target_below_* 指目标而非本方），不编"
+   ],
+   "provenance": {},
+   "encoded_by": "manual-2026-07-20",
+   "materialize": {
+    "from_table": "detachments",
+    "from_id": "000008468",
+    "from_column": "rule_text"
+   }
+  },
+  {
+   "table": "abilities",
+   "id": "det000009028",
+   "side": "attacker",
+   "detachment": "Penitent Host",
+   "name_en": "Desperate for Redemption",
+   "name_zh": null,
+   "status": "partial",
+   "effects": [
+    {
+     "phase": "attacks",
+     "op": "modify",
+     "source": "赎罪之战誓言：冲锋回合 PENITENT 近战 A+1",
+     "params": [
+      1
+     ],
+     "condition": [
+      "melee_charging"
+     ]
+    },
+    {
+     "phase": "wound",
+     "op": "s_improve",
+     "source": "赎罪之战誓言：冲锋回合 PENITENT 近战 S+1",
+     "params": [
+      1
+     ],
+     "condition": [
+      "melee_charging"
+     ]
+    }
+   ],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "Vows of Atonement 三选一（每大回合选一，此处编「战阵中的赦免」誓言，假设已选且为 PENITENT 单位）",
+    "「忏悔者之路」+3\"M 与「宁死不辱」阵亡后反打两誓言无载体，未建模"
+   ],
+   "provenance": {
+    "text_sha256": "8cbecd878368b247e410845cdbda01b321ae3cf8a22c01d9e8814f0a017d0c8f"
+   },
+   "encoded_by": "manual-2026-07-20",
+   "materialize": {
+    "from_table": "detachments",
+    "from_id": "000009028",
+    "from_column": "rule_text"
+   }
+  },
+  {
+   "table": "abilities",
+   "id": "det000009032",
+   "side": "attacker",
+   "detachment": "Bringers of Flame",
+   "name_en": "Fervent Purgation",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "[ASSAULT] 无移动载体；+1 S 限目标 6\" 内，引擎仅 8\"/12\" 射程档、无 6\" 精确档，用 8\" 档会过度施加，故整条不编"
+   ],
+   "provenance": {},
+   "encoded_by": "manual-2026-07-20",
+   "materialize": {
+    "from_table": "detachments",
+    "from_id": "000009032",
+    "from_column": "rule_text"
+   }
+  },
+  {
+   "table": "abilities",
+   "id": "det000009036",
+   "side": "attacker",
+   "detachment": "Army of Faith",
+   "name_en": "Sacred Rites",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "每阶段可行两次 Acts of Faith（而非一次）——奇迹骰/信仰行动机制无战斗链载体"
+   ],
+   "provenance": {},
+   "encoded_by": "manual-2026-07-20",
+   "materialize": {
+    "from_table": "detachments",
+    "from_id": "000009036",
+    "from_column": "rule_text"
+   }
+  },
+  {
+   "table": "abilities",
+   "id": "det000009307",
+   "side": "target",
+   "detachment": "Pious Protectors",
+   "name_en": "The Emperor Protects",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "据点范围内 4++（上一射击阶段执行 Secure Site 则升 3++）——排除 ARCO-FLAGELLANTS/REPENTIA SQUAD 为负关键字门无载体（裸编会对被排除单位过度施加 4++），且据点范围/Secure Site 状态无载体，整条不编（同 Devastating Reprise/Cleansing Flames 负关键字/关键词筛选先例）"
+   ],
+   "provenance": {},
+   "encoded_by": "manual-2026-07-20",
+   "materialize": {
+    "from_table": "detachments",
+    "from_id": "000009307",
+    "from_column": "rule_text"
+   }
+  },
+  {
+   "table": "abilities",
+   "id": "det000009315",
+   "side": "attacker",
+   "detachment": "Penitents and Pilgrims",
+   "name_en": "Bloody Redemption",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "ARCO/REPENTIA 阵亡时首个奇迹骰值置 6——奇迹骰机制无载体"
+   ],
+   "provenance": {},
+   "encoded_by": "manual-2026-07-20",
+   "materialize": {
+    "from_table": "detachments",
+    "from_id": "000009315",
+    "from_column": "rule_text"
+   }
+  },
+  {
+   "table": "abilities",
+   "id": "det000009830",
+   "side": "attacker",
+   "detachment": "Champions of Faith",
+   "name_en": "Righteous Purpose",
+   "name_zh": null,
+   "status": "partial",
+   "effects": [
+    {
+     "phase": "hit",
+     "op": "bs_improve",
+     "source": "正义使命：Righteous 单位 WS/BS 特征值 +1",
+     "params": [
+      1
+     ]
+    }
+   ],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "Righteous 为动态标记（每指挥阶段选≤3单位，按 active 假设）",
+    "限 Battle Sisters Squad/Celestian Sacresants/Paragon Warsuits 单位武器",
+    "+1\"M/+1Ld、未战栗 Sacresants +1 OC 未建模"
+   ],
+   "provenance": {
+    "text_sha256": "55da3102e97b8bb1b360166f86af295ca8a59caac1859e7844f24e451288208d"
+   },
+   "encoded_by": "manual-2026-07-20",
+   "materialize": {
+    "from_table": "detachments",
+    "from_id": "000009830",
+    "from_column": "rule_text"
+   }
+  },
+  {
+   "table": "abilities",
+   "id": "detfp11e-sororitas-chorus",
+   "side": "attacker",
+   "detachment": "Chorus of Condemnation",
+   "name_en": "Angelic Judgement",
+   "name_zh": "天使裁决",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "Condemnatory Psalms 谴责目标 +3\" 侦测范围——侦测/预备队机制无战斗链载体"
+   ],
+   "provenance": {},
+   "encoded_by": "manual-2026-07-20",
+   "materialize": {
+    "from_table": "detachments",
+    "from_id": "fp11e-sororitas-chorus",
+    "from_column": "rule_text"
+   }
+  },
+  {
+   "table": "abilities",
+   "id": "detfp11e-sororitas-orators",
+   "side": "attacker",
+   "detachment": "Sanctified Orators",
+   "name_en": "Hymns of Battle",
+   "name_zh": "战斗圣咏",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "增强不占额度 + CHARACTER +1 Ld——军表/领导力层，无战斗链载体"
+   ],
+   "provenance": {},
+   "encoded_by": "manual-2026-07-20",
+   "materialize": {
+    "from_table": "detachments",
+    "from_id": "fp11e-sororitas-orators",
+    "from_column": "rule_text"
+   }
+  },
+  {
+   "table": "abilities",
+   "id": "detfp11e-sororitas-sacred",
+   "side": "attacker",
+   "detachment": "Sacred Champions",
+   "name_en": "Holy Quest",
+   "name_zh": "神圣征途",
+   "status": "partial",
+   "effects": [
+    {
+     "phase": "hit",
+     "op": "bs_improve",
+     "source": "神圣征途：CELESTIAN SACRESANTS 攻击 WS/BS +1",
+     "params": [
+      1
+     ]
+    }
+   ],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "限 CELESTIAN SACRESANTS 单位（假设攻方为该单位）；REVEREND 分队 tag 约束不建模"
+   ],
+   "provenance": {
+    "text_sha256": "b69dc5ff7e17e42e6973bbf5c7bc0161669e999c07ff00af0d357a49e214b5d5"
+   },
+   "encoded_by": "manual-2026-07-20",
+   "materialize": {
+    "from_table": "detachments",
+    "from_id": "fp11e-sororitas-sacred",
+    "from_column": "rule_text"
+   }
+  },
+  {
+   "table": "enhancements",
+   "id": "000008470002",
+   "side": "attacker",
+   "detachment": "Hallowed Martyrs",
+   "name_en": "Saintly Example",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "携带者阵亡额外获 D3 奇迹骰——奇迹骰无载体"
+   ],
+   "provenance": {},
+   "encoded_by": "manual-2026-07-20"
+  },
+  {
+   "table": "enhancements",
+   "id": "000008470003",
+   "side": "attacker",
+   "detachment": "Hallowed Martyrs",
+   "name_en": "Through Suffering, Strength",
+   "name_zh": null,
+   "status": "partial",
+   "effects": [
+    {
+     "phase": "attacks",
+     "op": "modify",
+     "source": "受难即力量：携带者近战 A+1",
+     "params": [
+      1
+     ],
+     "condition": [
+      "phase_melee"
+     ]
+    },
+    {
+     "phase": "wound",
+     "op": "s_improve",
+     "source": "受难即力量：携带者近战 S+1",
+     "params": [
+      1
+     ],
+     "condition": [
+      "phase_melee"
+     ]
+    },
+    {
+     "phase": "damage",
+     "op": "modify",
+     "source": "受难即力量：携带者近战 D+1",
+     "params": [
+      1
+     ],
+     "condition": [
+      "phase_melee"
+     ]
+    }
+   ],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "携带者已失去伤口时升为 +2 A/S/D（本方失伤动态状态无载体）——按未受伤基础 +1 编码"
+   ],
+   "provenance": {
+    "text_sha256": "9178f9a850448b47a0f2a134749ad5d05fb071fccb0f71fc401e7e19d49bd884"
+   },
+   "encoded_by": "manual-2026-07-20"
+  },
+  {
+   "table": "enhancements",
+   "id": "000008470004",
+   "side": "attacker",
+   "detachment": "Hallowed Martyrs",
+   "name_en": "Chaplet of Sacrifice",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "重骰奇迹骰——奇迹骰无载体"
+   ],
+   "provenance": {},
+   "encoded_by": "manual-2026-07-20"
+  },
+  {
+   "table": "enhancements",
+   "id": "000008470005",
+   "side": "target",
+   "detachment": "Hallowed Martyrs",
+   "name_en": "Mantle of Ophelia",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "将分配到携带者的攻击伤害改为 1——引擎无「伤害封顶」载体（damage_reduction 为固定减量非封顶），不编"
+   ],
+   "provenance": {},
+   "encoded_by": "manual-2026-07-20"
+  },
+  {
+   "table": "enhancements",
+   "id": "000009029002",
+   "side": "attacker",
+   "detachment": "Penitent Host",
+   "name_en": "Psalm of Righteous Judgement",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "弃 1 奇迹骰换 1 个值 6 奇迹骰——奇迹骰无载体"
+   ],
+   "provenance": {},
+   "encoded_by": "manual-2026-07-20"
+  },
+  {
+   "table": "enhancements",
+   "id": "000009029003",
+   "side": "attacker",
+   "detachment": "Penitent Host",
+   "name_en": "Verse of Holy Piety",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "额外激活一个 Vow of Atonement——誓约机制无载体"
+   ],
+   "provenance": {},
+   "encoded_by": "manual-2026-07-20"
+  },
+  {
+   "table": "enhancements",
+   "id": "000009029004",
+   "side": "target",
+   "detachment": "Penitent Host",
+   "name_en": "Refrain of Enduring Faith",
+   "name_zh": null,
+   "status": "partial",
+   "effects": [
+    {
+     "phase": "save",
+     "op": "invuln",
+     "source": "持久信仰的叠句：携带者率领单位 5++ 无效保护",
+     "params": [
+      5
+     ]
+    }
+   ],
+   "requires_toggles": [
+    "defender_bearer_leading"
+   ],
+   "not_modeled_notes_zh": [
+    "限携带者（PENITENT model）率领单位时（defender_bearer_leading 开关表作用面成立）"
+   ],
+   "provenance": {
+    "text_sha256": "6a55d3b6aae20d73b482c5a45f0daccfbaa8f6341fa5c41196d72c0840413fa6"
+   },
+   "encoded_by": "manual-2026-07-20"
+  },
+  {
+   "table": "enhancements",
+   "id": "000009029005",
+   "side": "attacker",
+   "detachment": "Penitent Host",
+   "name_en": "Catechism of Divine Penitence",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "获 PENITENT 关键字并可挂接 REPENTIA——关键字/挂接无载体"
+   ],
+   "provenance": {},
+   "encoded_by": "manual-2026-07-20"
+  },
+  {
+   "table": "enhancements",
+   "id": "000009033002",
+   "side": "attacker",
+   "detachment": "Bringers of Flame",
+   "name_en": "Righteous Rage",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "选择弃≤3 奇迹骰、每弃一枚近战 +1 A/S——奇迹骰数量驱动的可变加值无固定载体"
+   ],
+   "provenance": {},
+   "encoded_by": "manual-2026-07-20"
+  },
+  {
+   "table": "enhancements",
+   "id": "000009033003",
+   "side": "attacker",
+   "detachment": "Bringers of Flame",
+   "name_en": "Manual of Saint Griselda",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "合成奇迹骰——奇迹骰无载体"
+   ],
+   "provenance": {},
+   "encoded_by": "manual-2026-07-20"
+  },
+  {
+   "table": "enhancements",
+   "id": "000009033004",
+   "side": "attacker",
+   "detachment": "Bringers of Flame",
+   "name_en": "Fire and Fury",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "Torrent 武器 +1 A 与「其余远程武器」[SUSTAINED HITS 1]——[SUSTAINED] 明文排除 Torrent 武器（负关键词筛选无载体，裸编会对 Torrent 过度施加），Torrent +1 A 亦无武器关键词筛选载体，整条不编（同 Cleansing Flames 关键词筛选先例）"
+   ],
+   "provenance": {},
+   "encoded_by": "manual-2026-07-20"
+  },
+  {
+   "table": "enhancements",
+   "id": "000009033005",
+   "side": "target",
+   "detachment": "Bringers of Flame",
+   "name_en": "Iron Surplice of Saint Istalela",
+   "name_zh": null,
+   "status": "partial",
+   "effects": [
+    {
+     "phase": "fnp",
+     "op": "fnp",
+     "source": "圣伊斯塔莱拉铁圣衣：FNP 5+",
+     "params": [
+      5
+     ]
+    }
+   ],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "Sv 特征值置 2+（绝对设定非增量，sv_improve 仅表增量差）未建模"
+   ],
+   "provenance": {
+    "text_sha256": "cd8a938bcd799ad33d1cb8860294a3c17d2c0ea9af75967c5f989d8b93552e54"
+   },
+   "encoded_by": "manual-2026-07-20"
+  },
+  {
+   "table": "enhancements",
+   "id": "000009037002",
+   "side": "attacker",
+   "detachment": "Army of Faith",
+   "name_en": "Litanies of Faith",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "领导力测试获奇迹骰——奇迹骰无载体"
+   ],
+   "provenance": {},
+   "encoded_by": "manual-2026-07-20"
+  },
+  {
+   "table": "enhancements",
+   "id": "000009037003",
+   "side": "attacker",
+   "detachment": "Army of Faith",
+   "name_en": "Blade of Saint Ellynor",
+   "name_zh": null,
+   "status": "partial",
+   "effects": [
+    {
+     "phase": "wound",
+     "op": "s_improve",
+     "source": "圣艾琳诺之刃：携带者近战 S+1",
+     "params": [
+      1
+     ],
+     "condition": [
+      "phase_melee"
+     ]
+    },
+    {
+     "phase": "save",
+     "op": "ap_improve",
+     "source": "圣艾琳诺之刃：携带者近战 AP+1",
+     "params": [
+      1
+     ],
+     "condition": [
+      "phase_melee"
+     ]
+    }
+   ],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "[PRECISION] 无载体（可点名指挥模型）未建模；击杀获奇迹骰未建模"
+   ],
+   "provenance": {
+    "text_sha256": "432bb756d67fc8ccbf2c54343ec72e4a3a35a5deb98bee2f5a5853e37b5a0f99"
+   },
+   "encoded_by": "manual-2026-07-20"
+  },
+  {
+   "table": "enhancements",
+   "id": "000009037004",
+   "side": "attacker",
+   "detachment": "Army of Faith",
+   "name_en": "Divine Aspect",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "战栗测试获奇迹骰——战栗/奇迹骰无载体"
+   ],
+   "provenance": {},
+   "encoded_by": "manual-2026-07-20"
+  },
+  {
+   "table": "enhancements",
+   "id": "000009037005",
+   "side": "attacker",
+   "detachment": "Army of Faith",
+   "name_en": "Triptych of the Macharian Crusade",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "信仰行动替换保存自动成功——Acts of Faith/奇迹骰无载体"
+   ],
+   "provenance": {},
+   "encoded_by": "manual-2026-07-20"
+  },
+  {
+   "table": "enhancements",
+   "id": "000009308002",
+   "side": "attacker",
+   "detachment": "Pious Protectors",
+   "name_en": "Martial Discipline",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "前进/撤退回合仍可射击——移动资格无载体"
+   ],
+   "provenance": {},
+   "encoded_by": "manual-2026-07-20"
+  },
+  {
+   "table": "enhancements",
+   "id": "000009308003",
+   "side": "attacker",
+   "detachment": "Pious Protectors",
+   "name_en": "Limitless Resolve",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "战栗单位 OC 置 1——OC/战栗无载体"
+   ],
+   "provenance": {},
+   "encoded_by": "manual-2026-07-20"
+  },
+  {
+   "table": "enhancements",
+   "id": "000009316002",
+   "side": "target",
+   "detachment": "Penitents and Pilgrims",
+   "name_en": "Fervent Ferocity",
+   "name_zh": null,
+   "status": "partial",
+   "effects": [
+    {
+     "phase": "fnp",
+     "op": "fnp",
+     "source": "狂热凶暴：FNP 4+",
+     "params": [
+      4
+     ]
+    }
+   ],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "增强作用于携带者（按守方为携带者假设）"
+   ],
+   "provenance": {
+    "text_sha256": "d1f84ecc1a83cfae0f6e9c5bee32e7acad4ae8e0ea920f0cfcb4fd964ec07e46"
+   },
+   "encoded_by": "manual-2026-07-20"
+  },
+  {
+   "table": "enhancements",
+   "id": "000009316003",
+   "side": "attacker",
+   "detachment": "Penitents and Pilgrims",
+   "name_en": "Sanctification Rituals",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "视作 BATTLELINE 执行 Secure Site——据点机动无载体"
+   ],
+   "provenance": {},
+   "encoded_by": "manual-2026-07-20"
+  },
+  {
+   "table": "enhancements",
+   "id": "000009831002",
+   "side": "attacker",
+   "detachment": "Champions of Faith",
+   "name_en": "Triptych of Judgement",
+   "name_zh": null,
+   "status": "partial",
+   "effects": [
+    {
+     "phase": "hit",
+     "op": "ignore_hit_mods",
+     "source": "裁决三联画：无视命中的不利修正"
+    }
+   ],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "引擎仅无视不利命中骰修正；对 BS/WS 特征值修正的无视为近似；本次攻击无负修正时为空操作"
+   ],
+   "provenance": {
+    "text_sha256": "8def2110d4aa429a65031d48d9cf9b95f0e1c17a6e30bc4abc84fe36383d1877"
+   },
+   "encoded_by": "manual-2026-07-20"
+  },
+  {
+   "table": "enhancements",
+   "id": "000009831003",
+   "side": "attacker",
+   "detachment": "Champions of Faith",
+   "name_en": "Mark of Devotion",
+   "name_zh": null,
+   "status": "partial",
+   "effects": [
+    {
+     "phase": "attacks",
+     "op": "modify",
+     "source": "虔诚印记：携带者近战 A+1",
+     "params": [
+      1
+     ],
+     "condition": [
+      "phase_melee"
+     ]
+    }
+   ],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "Righteous 时升为 +2 A、+1 D（动态状态）——按非 Righteous 基础 +1 A 编码"
+   ],
+   "provenance": {
+    "text_sha256": "4621ec77a2aa2bf697bfbe8556145ae4daab1cc744a7ee3cdd03ec0a1fb45fff"
+   },
+   "encoded_by": "manual-2026-07-20"
+  },
+  {
+   "table": "enhancements",
+   "id": "000009831004",
+   "side": "attacker",
+   "detachment": "Champions of Faith",
+   "name_en": "Eyes of the Oracle",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "[PRECISION] + 击杀指挥模型获 1CP——[PRECISION]/CP 无载体"
+   ],
+   "provenance": {},
+   "encoded_by": "manual-2026-07-20"
+  },
+  {
+   "table": "enhancements",
+   "id": "000009831005",
+   "side": "attacker",
+   "detachment": "Champions of Faith",
+   "name_en": "Sanctified Amulet",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "敌预备队不得于 12\" 内展开——预备队无载体"
+   ],
+   "provenance": {},
+   "encoded_by": "manual-2026-07-20"
+  },
+  {
+   "table": "enhancements",
+   "id": "fp11e-sororitas-chorus-e1",
+   "side": "attacker",
+   "detachment": "Chorus of Condemnation",
+   "name_en": "Clarion of Urgency",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "置入战略预备——预备队无载体"
+   ],
+   "provenance": {},
+   "encoded_by": "manual-2026-07-20"
+  },
+  {
+   "table": "enhancements",
+   "id": "fp11e-sororitas-chorus-e2",
+   "side": "attacker",
+   "detachment": "Chorus of Condemnation",
+   "name_en": "Symphonic Payload Upgrade",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "重骰决定武器攻击数的掷骰——攻击数重骰无载体"
+   ],
+   "provenance": {},
+   "encoded_by": "manual-2026-07-20"
+  },
+  {
+   "table": "enhancements",
+   "id": "fp11e-sororitas-orators-e1",
+   "side": "attacker",
+   "detachment": "Sanctified Orators",
+   "name_en": "Hagiomnifex Upgrade",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "每回合五选一（Rite of Revelation/Sermon/Catechism/Psalm +1 S/Chorus 守方 S>T 被伤-1）——动态五选一且可建模两项分属攻/守两侧且互斥单选，保守不编"
+   ],
+   "provenance": {},
+   "encoded_by": "manual-2026-07-20"
+  },
+  {
+   "table": "enhancements",
+   "id": "fp11e-sororitas-sacred-e1",
+   "side": "attacker",
+   "detachment": "Sacred Champions",
+   "name_en": "Writ of Compunction Upgrade",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "+1 OC——OC 无载体"
+   ],
+   "provenance": {},
+   "encoded_by": "manual-2026-07-20"
+  },
+  {
+   "table": "enhancements",
+   "id": "fp11e-sororitas-sacred-e2",
+   "side": "attacker",
+   "detachment": "Sacred Champions",
+   "name_en": "Perfervid Haste",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "+1\" M——移动无载体"
+   ],
+   "provenance": {},
+   "encoded_by": "manual-2026-07-20"
+  },
+  {
+   "table": "stratagems",
+   "id": "000008469002",
+   "side": "attacker",
+   "detachment": "Hallowed Martyrs",
+   "name_en": "DIVINE INTERVENTION",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "复活最后阵亡模型——无载体"
+   ],
+   "provenance": {},
+   "encoded_by": "manual-2026-07-20"
+  },
+  {
+   "table": "stratagems",
+   "id": "000008469003",
+   "side": "target",
+   "detachment": "Hallowed Martyrs",
+   "name_en": "SUFFERING AND SACRIFICE",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "强制敌选本单位为攻击目标——目标分配机制无载体"
+   ],
+   "provenance": {},
+   "encoded_by": "manual-2026-07-20"
+  },
+  {
+   "table": "stratagems",
+   "id": "000008469004",
+   "side": "attacker",
+   "detachment": "Hallowed Martyrs",
+   "name_en": "RIGHTEOUS VENGEANCE",
+   "name_zh": null,
+   "status": "partial",
+   "effects": [
+    {
+     "phase": "hit",
+     "op": "reroll",
+     "source": "义愤复仇：近战重骰命中",
+     "params": [
+      "fail"
+     ],
+     "condition": [
+      "phase_melee"
+     ]
+    }
+   ],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "本方低于半编时可另重骰致伤——本方战损态无载体未建模；战略一次性/CP 不建模（假设已使用）"
+   ],
+   "provenance": {
+    "text_sha256": "35983efb0f7f9db446e6c6202522b11abffc2d33ea3cb18fb66d4950b2eb7189"
+   },
+   "encoded_by": "manual-2026-07-20"
+  },
+  {
+   "table": "stratagems",
+   "id": "000008469005",
+   "side": "attacker",
+   "detachment": "Hallowed Martyrs",
+   "name_en": "SANCTIFIED IMMOLATION",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "Deadly Demise 致命伤自动触发——致命伤机制无载体"
+   ],
+   "provenance": {},
+   "encoded_by": "manual-2026-07-20"
+  },
+  {
+   "table": "stratagems",
+   "id": "000008469006",
+   "side": "attacker",
+   "detachment": "Hallowed Martyrs",
+   "name_en": "SPIRIT OF THE MARTYR",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "阵亡后反打——无载体"
+   ],
+   "provenance": {},
+   "encoded_by": "manual-2026-07-20"
+  },
+  {
+   "table": "stratagems",
+   "id": "000008469007",
+   "side": "attacker",
+   "detachment": "Hallowed Martyrs",
+   "name_en": "PRAISE THE FALLEN",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "敌射击阶段追加射击——额外行动无载体"
+   ],
+   "provenance": {},
+   "encoded_by": "manual-2026-07-20"
+  },
+  {
+   "table": "stratagems",
+   "id": "000009030002",
+   "side": "attacker",
+   "detachment": "Penitent Host",
+   "name_en": "FINAL REDEMPTION",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "保留据点控制——据点机制无载体"
+   ],
+   "provenance": {},
+   "encoded_by": "manual-2026-07-20"
+  },
+  {
+   "table": "stratagems",
+   "id": "000009030003",
+   "side": "target",
+   "detachment": "Penitent Host",
+   "name_en": "PURITY OF SUFFERING",
+   "name_zh": null,
+   "status": "partial",
+   "effects": [
+    {
+     "phase": "fnp",
+     "op": "fnp",
+     "source": "受难之纯粹：PENITENT 单位 FNP 4+",
+     "params": [
+      4
+     ]
+    }
+   ],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "限 PENITENT models（点名即声明）；战略一次性/CP 不建模"
+   ],
+   "provenance": {
+    "text_sha256": "b6b3a06cbf65c35b4694c7ef617d15c29ce725d558bf4ccf4d0b33bb57512d60"
+   },
+   "encoded_by": "manual-2026-07-20"
+  },
+  {
+   "table": "stratagems",
+   "id": "000009030004",
+   "side": "attacker",
+   "detachment": "Penitent Host",
+   "name_en": "PASSION OF THE PENITENT",
+   "name_zh": null,
+   "status": "partial",
+   "effects": [
+    {
+     "phase": "hit",
+     "op": "crit_threshold",
+     "source": "忏悔者的热忱：近战未修正命中 5+ 即暴击",
+     "params": [
+      5
+     ],
+     "condition": [
+      "phase_melee"
+     ]
+    }
+   ],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "限 PENITENT models 近战；战略一次性/CP 不建模"
+   ],
+   "provenance": {
+    "text_sha256": "f10c031f15b0ace4197857068864ddcf911307053d70e658f9da59c768d6060e"
+   },
+   "encoded_by": "manual-2026-07-20"
+  },
+  {
+   "table": "stratagems",
+   "id": "000009030005",
+   "side": "attacker",
+   "detachment": "Penitent Host",
+   "name_en": "LASH OF GUILT",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "前进后可冲锋/+6\"M——移动/冲锋资格无载体"
+   ],
+   "provenance": {},
+   "encoded_by": "manual-2026-07-20"
+  },
+  {
+   "table": "stratagems",
+   "id": "000009030006",
+   "side": "attacker",
+   "detachment": "Penitent Host",
+   "name_en": "BOUNDLESS ZEAL",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "撤退后仍可射击/冲锋——移动资格无载体"
+   ],
+   "provenance": {},
+   "encoded_by": "manual-2026-07-20"
+  },
+  {
+   "table": "stratagems",
+   "id": "000009030007",
+   "side": "attacker",
+   "detachment": "Penitent Host",
+   "name_en": "DEVOUT FANATICISM",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "超冲锋 surge move D6\"——移动无载体"
+   ],
+   "provenance": {},
+   "encoded_by": "manual-2026-07-20"
+  },
+  {
+   "table": "stratagems",
+   "id": "000009034002",
+   "side": "target",
+   "detachment": "Bringers of Flame",
+   "name_en": "SHIELD OF AVERSION",
+   "name_zh": null,
+   "status": "partial",
+   "effects": [
+    {
+     "phase": "save",
+     "op": "ap_improve",
+     "source": "回避之盾：针对本单位的攻击 AP 恶化 1",
+     "params": [
+      -1
+     ]
+    }
+   ],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "AP 恶化净算并夹 ≤0（原本无 AP 的攻击不受影响，符合规则）；战略一次性/CP 不建模"
+   ],
+   "provenance": {
+    "text_sha256": "8dfa1b4a1c1c536ee7ece1dba448e5a6f3967f9b5a9a659b07a3c57c5a404e21"
+   },
+   "encoded_by": "manual-2026-07-20"
+  },
+  {
+   "table": "stratagems",
+   "id": "000009034003",
+   "side": "attacker",
+   "detachment": "Bringers of Flame",
+   "name_en": "RIGHTEOUS BLOWS",
+   "name_zh": null,
+   "status": "partial",
+   "effects": [
+    {
+     "phase": "hit",
+     "op": "auto_wound",
+     "source": "义愤之击：近战 [LETHAL HITS]",
+     "condition": [
+      "phase_melee"
+     ]
+    }
+   ],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "击杀触发敌单位战栗测试未建模；战略一次性/CP 不建模"
+   ],
+   "provenance": {
+    "text_sha256": "35d548ed139e183c20c0cc9622037405cfff7b824c479b4542b1d70b1bcc30b1"
+   },
+   "encoded_by": "manual-2026-07-20"
+  },
+  {
+   "table": "stratagems",
+   "id": "000009034004",
+   "side": "attacker",
+   "detachment": "Bringers of Flame",
+   "name_en": "CARRY FORTH THE FAITHFUL",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "前进重骰/下车——移动/运输无载体"
+   ],
+   "provenance": {},
+   "encoded_by": "manual-2026-07-20"
+  },
+  {
+   "table": "stratagems",
+   "id": "000009034005",
+   "side": "attacker",
+   "detachment": "Bringers of Flame",
+   "name_en": "CLEANSING FLAMES",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "仅 Torrent 武器 [DEVASTATING WOUNDS]——按武器关键词筛选引擎不支持，施加于全部远程会过度，不编"
+   ],
+   "provenance": {},
+   "encoded_by": "manual-2026-07-20"
+  },
+  {
+   "table": "stratagems",
+   "id": "000009034006",
+   "side": "attacker",
+   "detachment": "Bringers of Flame",
+   "name_en": "RITES OF FIRE",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "+1 致伤限目标 6\" 内且在据点范围——6\" 射程档+据点门无载体"
+   ],
+   "provenance": {},
+   "encoded_by": "manual-2026-07-20"
+  },
+  {
+   "table": "stratagems",
+   "id": "000009034007",
+   "side": "attacker",
+   "detachment": "Bringers of Flame",
+   "name_en": "BLAZING IRE",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "下车后追加射击——额外行动无载体"
+   ],
+   "provenance": {},
+   "encoded_by": "manual-2026-07-20"
+  },
+  {
+   "table": "stratagems",
+   "id": "000009038002",
+   "side": "target",
+   "detachment": "Army of Faith",
+   "name_en": "SHIELD OF FAITH",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "仅对致命伤 FNP 5+——仅致命伤 FNP 无载体（通用 fnp 会误减普通伤害），不编"
+   ],
+   "provenance": {},
+   "encoded_by": "manual-2026-07-20"
+  },
+  {
+   "table": "stratagems",
+   "id": "000009038003",
+   "side": "attacker",
+   "detachment": "Army of Faith",
+   "name_en": "LIGHT OF THE EMPEROR",
+   "name_zh": null,
+   "status": "partial",
+   "effects": [
+    {
+     "phase": "hit",
+     "op": "ignore_hit_mods",
+     "source": "帝皇之光：无视命中的不利修正"
+    }
+   ],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "引擎仅无视不利命中骰修正；对特征值/掷骰的广义无视为近似；JUMP PACK 3\" 传导不建模；战略一次性/CP 不建模"
+   ],
+   "provenance": {
+    "text_sha256": "c031ddea7582d6a79a353e5f842a96a2f607db34a48118abd9c1d4652f50bd1c"
+   },
+   "encoded_by": "manual-2026-07-20"
+  },
+  {
+   "table": "stratagems",
+   "id": "000009038004",
+   "side": "attacker",
+   "detachment": "Army of Faith",
+   "name_en": "FAITH AND FURY",
+   "name_zh": null,
+   "status": "partial",
+   "effects": [
+    {
+     "phase": "wound",
+     "op": "modify",
+     "source": "信仰与狂怒：近战 [LANCE]（冲锋回合致伤+1）",
+     "params": [
+      1
+     ],
+     "condition": [
+      "melee_charging"
+     ]
+    }
+   ],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "击杀获奇迹骰未建模；战略一次性/CP 不建模"
+   ],
+   "provenance": {
+    "text_sha256": "c30c751ecdc6aa81b656c887fa69b7707a8c2475533202a5cd2c0a611814529e"
+   },
+   "encoded_by": "manual-2026-07-20"
+  },
+  {
+   "table": "stratagems",
+   "id": "000009038005",
+   "side": "target",
+   "detachment": "Army of Faith",
+   "name_en": "BLINDING RADIANCE",
+   "name_zh": null,
+   "status": "partial",
+   "effects": [
+    {
+     "phase": "hit",
+     "op": "modify",
+     "source": "炫目光辉：针对本单位的攻击命中 -1",
+     "params": [
+      -1
+     ]
+    }
+   ],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "双阶段（射击/近战）均生效故不设阶段门；JUMP PACK 3\" 传导不建模；战略一次性/CP 不建模"
+   ],
+   "provenance": {
+    "text_sha256": "315528cb87a945eee63a2058eb7dc90f970b6b8a6086f3a5ef59b7e8a6c5e373"
+   },
+   "encoded_by": "manual-2026-07-20"
+  },
+  {
+   "table": "stratagems",
+   "id": "000009038006",
+   "side": "attacker",
+   "detachment": "Army of Faith",
+   "name_en": "DIVINE GUIDANCE",
+   "name_zh": null,
+   "status": "partial",
+   "effects": [
+    {
+     "phase": "save",
+     "op": "ap_improve",
+     "source": "神圣指引：本单位攻击 AP+1",
+     "params": [
+      1
+     ]
+    }
+   ],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "射击或近战阶段选一，按所选阶段施加 +1 AP；击杀获奇迹骰未建模；战略一次性/CP 不建模"
+   ],
+   "provenance": {
+    "text_sha256": "3e12efb1e368fd2b37b33f7c60113547093f9805d3342adf88459760c1dc7227"
+   },
+   "encoded_by": "manual-2026-07-20"
+  },
+  {
+   "table": "stratagems",
+   "id": "000009038007",
+   "side": "attacker",
+   "detachment": "Army of Faith",
+   "name_en": "ANGELIC DESCENT",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "移入战略预备——预备队无载体"
+   ],
+   "provenance": {},
+   "encoded_by": "manual-2026-07-20"
+  },
+  {
+   "table": "stratagems",
+   "id": "000009309002",
+   "side": "attacker",
+   "detachment": "Pious Protectors",
+   "name_en": "FINAL TESTAMENT",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "阵亡后反打（弃奇迹骰）——无载体"
+   ],
+   "provenance": {},
+   "encoded_by": "manual-2026-07-20"
+  },
+  {
+   "table": "stratagems",
+   "id": "000009309003",
+   "side": "attacker",
+   "detachment": "Pious Protectors",
+   "name_en": "PRAYER OF PRECISION",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "重骰命中 1（弃奇迹骰则全重骰）——重骰1无精确载体（reroll-fail 会过度），全重骰需奇迹骰资源，不编"
+   ],
+   "provenance": {},
+   "encoded_by": "manual-2026-07-20"
+  },
+  {
+   "table": "stratagems",
+   "id": "000009309004",
+   "side": "attacker",
+   "detachment": "Pious Protectors",
+   "name_en": "REPEL BOARDERS",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "守望命中改善 + 攻击数重骰——守望/攻击数重骰无载体"
+   ],
+   "provenance": {},
+   "encoded_by": "manual-2026-07-20"
+  },
+  {
+   "table": "stratagems",
+   "id": "000009309005",
+   "side": "attacker",
+   "detachment": "Pious Protectors",
+   "name_en": "RADIANT ILLUMINATION",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "敌冲锋骰 -1/-2——冲锋骰无载体"
+   ],
+   "provenance": {},
+   "encoded_by": "manual-2026-07-20"
+  },
+  {
+   "table": "stratagems",
+   "id": "000009317002",
+   "side": "attacker",
+   "detachment": "Penitents and Pilgrims",
+   "name_en": "SLICK WITH GORE",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "战栗光环——战栗机制无载体"
+   ],
+   "provenance": {},
+   "encoded_by": "manual-2026-07-20"
+  },
+  {
+   "table": "stratagems",
+   "id": "000009317003",
+   "side": "target",
+   "detachment": "Penitents and Pilgrims",
+   "name_en": "CONTEMPT FOR DEATH",
+   "name_zh": null,
+   "status": "partial",
+   "effects": [
+    {
+     "phase": "wound",
+     "op": "modify",
+     "source": "蔑视死亡：攻击 S>T 时被伤 -1",
+     "params": [
+      -1
+     ],
+     "condition": [
+      "wound_s_gt_t"
+     ]
+    }
+   ],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "仅当攻击 S>T 生效；战略一次性/CP 不建模"
+   ],
+   "provenance": {
+    "text_sha256": "4d3198416d2915d234b06339632603102df8de8cbdc457e027214a5e25971eed"
+   },
+   "encoded_by": "manual-2026-07-20"
+  },
+  {
+   "table": "stratagems",
+   "id": "000009317004",
+   "side": "attacker",
+   "detachment": "Penitents and Pilgrims",
+   "name_en": "FEVERED ZEALOTS",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "Fights First——先攻序列无 DSL 载体"
+   ],
+   "provenance": {},
+   "encoded_by": "manual-2026-07-20"
+  },
+  {
+   "table": "stratagems",
+   "id": "000009317005",
+   "side": "attacker",
+   "detachment": "Penitents and Pilgrims",
+   "name_en": "SAVAGE FRENZY",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "绝望逃脱测试——士气机制无载体"
+   ],
+   "provenance": {},
+   "encoded_by": "manual-2026-07-20"
+  },
+  {
+   "table": "stratagems",
+   "id": "000009832002",
+   "side": "target",
+   "detachment": "Champions of Faith",
+   "name_en": "SHIELD OF DENIAL",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "仅对致命伤 FNP 6+/5+——仅致命伤 FNP 无载体"
+   ],
+   "provenance": {},
+   "encoded_by": "manual-2026-07-20"
+  },
+  {
+   "table": "stratagems",
+   "id": "000009832003",
+   "side": "attacker",
+   "detachment": "Champions of Faith",
+   "name_en": "SUFFER NOT THE UNFAITHFUL",
+   "name_zh": null,
+   "status": "partial",
+   "effects": [
+    {
+     "phase": "hit",
+     "op": "extra_hits",
+     "source": "绝不宽宥不信者：武器 [SUSTAINED HITS 1]（二选一分支）",
+     "params": [
+      1
+     ]
+    }
+   ],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "[LETHAL HITS]/[SUSTAINED HITS 1] 二选一——按 SUSTAINED 分支编码（需 LETHAL 分支请另择）",
+    "需单位为 Righteous（动态状态，按 active 假设）；战略一次性/CP 不建模"
+   ],
+   "provenance": {
+    "text_sha256": "2e6715d1f3ea8c49f23fbb7fe5cdba7acb6b80e0865242d339d72bca98701bd7"
+   },
+   "encoded_by": "manual-2026-07-20"
+  },
+  {
+   "table": "stratagems",
+   "id": "000009832004",
+   "side": "attacker",
+   "detachment": "Champions of Faith",
+   "name_en": "TO THE HEART OF HERESY",
+   "name_zh": null,
+   "status": "partial",
+   "effects": [
+    {
+     "phase": "wound",
+     "op": "s_improve",
+     "source": "直捣异端核心：近战武器 S+1",
+     "params": [
+      1
+     ],
+     "condition": [
+      "phase_melee"
+     ]
+    }
+   ],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "Righteous 时近战武器另 +1 AP（动态状态）未建模；战略一次性/CP 不建模"
+   ],
+   "provenance": {
+    "text_sha256": "ccccb467f9ce1994a2fde7218dcbfe3b9283f33a215fba82360356298c143c3e"
+   },
+   "encoded_by": "manual-2026-07-20"
+  },
+  {
+   "table": "stratagems",
+   "id": "000009832005",
+   "side": "attacker",
+   "detachment": "Champions of Faith",
+   "name_en": "PATH OF THE RIGHTEOUS",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "6\" 巩固/戳入移动——移动无载体"
+   ],
+   "provenance": {},
+   "encoded_by": "manual-2026-07-20"
+  },
+  {
+   "table": "stratagems",
+   "id": "000009832006",
+   "side": "target",
+   "detachment": "Champions of Faith",
+   "name_en": "BASTION OF FAITH",
+   "name_zh": null,
+   "status": "partial",
+   "effects": [
+    {
+     "phase": "hit",
+     "op": "modify",
+     "source": "信仰壁垒：近战阶段针对本单位的攻击命中 -1",
+     "params": [
+      -1
+     ],
+     "condition": [
+      "phase_melee"
+     ]
+    }
+   ],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "WHEN=近战阶段（战斗阶段）故设 phase_melee 门；Righteous 时可传导至另一 Sacresants 单位不建模；战略一次性/CP 不建模"
+   ],
+   "provenance": {
+    "text_sha256": "b7a6b0341ece7324d4a1e87d71fd493e5695c42ef318c8697547e2ea0548c7c7"
+   },
+   "encoded_by": "manual-2026-07-20"
+  },
+  {
+   "table": "stratagems",
+   "id": "000009832007",
+   "side": "attacker",
+   "detachment": "Champions of Faith",
+   "name_en": "INDEFATIGABLE DEDICATION",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "撤退后仍可射击——移动资格无载体"
+   ],
+   "provenance": {},
+   "encoded_by": "manual-2026-07-20"
+  },
+  {
+   "table": "stratagems",
+   "id": "fp11e-sororitas-chorus-s1",
+   "side": "attacker",
+   "detachment": "Chorus of Condemnation",
+   "name_en": "Inspirational Battle Canticles",
+   "name_zh": "鼓舞战颂",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "解除战栗——战栗机制无载体"
+   ],
+   "provenance": {},
+   "encoded_by": "manual-2026-07-20"
+  },
+  {
+   "table": "stratagems",
+   "id": "fp11e-sororitas-chorus-s2",
+   "side": "attacker",
+   "detachment": "Chorus of Condemnation",
+   "name_en": "Harmonised Exorcism",
+   "name_zh": "谐鸣驱魔",
+   "status": "partial",
+   "effects": [
+    {
+     "phase": "hit",
+     "op": "modify",
+     "source": "谐鸣驱魔：EXORCIST 远程攻击命中 +1",
+     "params": [
+      1
+     ],
+     "condition": [
+      "phase_shooting"
+     ]
+    }
+   ],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "限 EXORCIST 单位远程；目标须经友军 INFANTRY FLY 单位可见并 9\" 内（选目标机制）不建模；战略一次性/CP 不建模"
+   ],
+   "provenance": {
+    "text_sha256": "35154f9df6c9cddfaae9a45d9f7bdc684ae2cf196128748cd991af9fb171d230"
+   },
+   "encoded_by": "manual-2026-07-20"
+  },
+  {
+   "table": "stratagems",
+   "id": "fp11e-sororitas-chorus-s3",
+   "side": "attacker",
+   "detachment": "Chorus of Condemnation",
+   "name_en": "Devastating Reprise",
+   "name_zh": "毁灭余响",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "[DEVASTATING WOUNDS] 限非 MONSTER/VEHICLE 目标——负关键字门无载体（裸编会对 MONSTER/VEHICLE 过度施加），不编"
+   ],
+   "provenance": {},
+   "encoded_by": "manual-2026-07-20"
+  },
+  {
+   "table": "stratagems",
+   "id": "fp11e-sororitas-sacred-s1",
+   "side": "attacker",
+   "detachment": "Sacred Champions",
+   "name_en": "Sanctified Blows",
+   "name_zh": "圣洁打击",
+   "status": "partial",
+   "effects": [
+    {
+     "phase": "attacks",
+     "op": "modify",
+     "source": "圣洁打击：CELESTIAN SACRESANTS 近战 A+1",
+     "params": [
+      1
+     ],
+     "condition": [
+      "phase_melee"
+     ]
+    },
+    {
+     "phase": "wound",
+     "op": "s_improve",
+     "source": "圣洁打击：CELESTIAN SACRESANTS 近战 S+1",
+     "params": [
+      1
+     ],
+     "condition": [
+      "phase_melee"
+     ]
+    }
+   ],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "限 CELESTIAN SACRESANTS 单位近战；战略一次性/CP 不建模"
+   ],
+   "provenance": {
+    "text_sha256": "3b8c942ae08dd7c48372b5111e99d7cea6661288412c53fcc040032d23f6c823"
+   },
+   "encoded_by": "manual-2026-07-20"
+  },
+  {
+   "table": "stratagems",
+   "id": "fp11e-sororitas-sacred-s2",
+   "side": "target",
+   "detachment": "Sacred Champions",
+   "name_en": "Faithful Fortitude",
+   "name_zh": "虔信坚忍",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "仅对致命伤 FNP 5+——仅致命伤 FNP 无载体"
+   ],
+   "provenance": {},
+   "encoded_by": "manual-2026-07-20"
+  },
+  {
+   "table": "stratagems",
+   "id": "fp11e-sororitas-sacred-s3",
+   "side": "attacker",
+   "detachment": "Sacred Champions",
+   "name_en": "Unflinching Determination",
+   "name_zh": "不屈决意",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "[ASSAULT] + 前进/撤退不阻射击冲锋——[ASSAULT]/移动资格无载体"
+   ],
+   "provenance": {},
+   "encoded_by": "manual-2026-07-20"
+  }
+ ]
+}

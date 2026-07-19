@@ -3,9 +3,13 @@
 对照源：`data_refined/Faction Pack Adepta Sororitas/`（24 页，"first iteration …
 all new"）vs `db/wh40k.sqlite`（faction='AS'）。体裁沿 PR1/PR4-PR14。
 
-> **进度**：Part 1（DB 11 版对齐）已收官——1 text_patch + 14 inserts 落库、全库
-> 1179 测试绿。Part 2（DSL 全量编码 sororitas.json）+ Part 3（基准）+ Part 4
-> （自审）为后续迭代。
+> **进度**：Part 1（DB 11 版对齐，1 text_patch + 14 inserts）+ Part 2（DSL 全量编码
+> `dsl_payloads/sororitas.json` 83 条）+ Part 3（基准）+ Part 4（自审）均已收官——全库
+> **1193 测试绿**；`test_db_compile_dsl_apply` 投影计数 1098→1181、三态 encoded 89 /
+> partial 259 / not_modeled 833。基准 gold v3 **96/96 correct、100.0、零硬错**（DSL/DB 补丁
+> 不进 FAISS 语料，检索不变）。自审 code-reviewer：0 CRITICAL / 0 HIGH / 2 MEDIUM，
+> 阶段门审计全清（历史最大 HIGH 坑本 PR 无复现），两条 MEDIUM（负关键字/关键词筛选门
+> 过度施加）已按建议降 not_modeled 修清。
 
 ## FP 内容面
 
@@ -87,6 +91,53 @@ Updates（p.13-14）· Legends Datasheets（p.15-24）。
 覆盖面 = faction='AS' 全部活跃：**10 分队规则物化 + 44 战略 + 29 增强**（含 14 inserts）。
 圣血修女为信仰/奇迹骰驱动阵营，可编率**中低**——大量机制无战斗链载体（Miracle dice
 生成/替换、Acts of Faith、Battle-shock、Vows of Atonement 动态、复活/据点/预备队/移动）。
+
+### 编码盘面终稿（2026-07-20 落账）
+
+**三态：0 encoded · 25 partial · 58 not_modeled**（自审后由 27/56 调整——The Emperor
+Protects 与 Fire and Fury 两条负关键字/关键词筛选门无载体，降 not_modeled）。同 P7-PR9
+圣血天使为 0 encoded——
+信仰阵营几乎每条可编效果都带残量注记：单位限定 / 战略一次性 CP / 动态状态假设，
+按仓库约定一律降 partial）。零新引擎通道（第七个纯编码 PR）：Righteous 标记与 Vows of
+Atonement 动态态**未加 toggle**，按基础分量编码 + 注记残量（同 Waaagh 范式，保持通道集合稳定）。
+
+**25 条 partial（有战斗链载体）**：
+- 分队规则 3：Desperate for Redemption（Absolution 誓言 melee_charging +1A/+1S）·
+  Righteous Purpose（bs_improve +1 WS/BS）· Holy Quest（bs_improve +1 WS/BS）
+- 增强 7：Through Suffering Strength（近战 +1A/+1S/+1D）· Refrain of Enduring Faith
+  （守方 5++，defender_bearer_leading）· Iron Surplice（守方 FNP5+）· Blade of Saint
+  Ellynor（近战 +1S/+1AP）· Fervent Ferocity（守方 FNP4+）· Triptych of Judgement
+  （ignore_hit_mods）· Mark of Devotion（近战 +1A）
+- 战略 15：RIGHTEOUS VENGEANCE（近战命中重骰）· PURITY OF SUFFERING（守方 FNP4+）·
+  PASSION OF THE PENITENT（近战 crit5+）· SHIELD OF AVERSION（守方 AP 恶化）· RIGHTEOUS
+  BLOWS（近战 [LETHAL]）· LIGHT OF THE EMPEROR（ignore_hit_mods）· FAITH AND FURY
+  （[LANCE]=melee_charging 致伤+1）· BLINDING RADIANCE（守方命中-1）· DIVINE GUIDANCE
+  （+1AP）· CONTEMPT FOR DEATH（守方 S>T 被伤-1）· SUFFER NOT THE UNFAITHFUL（[SUSTAINED]
+  二选一分支）· TO THE HEART OF HERESY（近战 +1S）· BASTION OF FAITH（守方命中-1，
+  **phase_melee 门**）· Harmonised Exorcism（远程命中+1）· Sanctified Blows（近战 +1A/+1S）
+
+**阶段门严核（STAGED-WHEN 复发坑）**：唯一战斗阶段限定的守方条目 **BASTION OF FAITH**
+（WHEN=Fight phase）挂 `phase_melee`——不挂则会在射击阶段误减攻方命中（测试
+`test_bastion_of_faith_hit_minus_one_melee_only` 一正一负成对钉死）。SHIELD OF AVERSION /
+BLINDING RADIANCE / CONTEMPT FOR DEATH 原文均「射击或近战阶段」双阶段生效，故**不设**
+阶段门（反向 MEDIUM：过度设门=欠建模）。近战专属条款（Sanctified Blows/RIGHTEOUS BLOWS/
+PASSION/TO THE HEART/RIGHTEOUS VENGEANCE/Through Suffering/Mark/Blade/Holy Quest 近战部分）
+挂 `phase_melee`；[LANCE]/Absolution 冲锋誓言挂 `melee_charging`。
+
+**58 条 not_modeled（防高估宁漏不错）**：负关键字/关键词筛选门（The Emperor Protects
+排除 ARCO/REPENTIA 的 4++、Fire and Fury 排除 Torrent 的 [SUSTAINED]、Cleansing Flames
+Torrent×[DEV]、Devastating Reprise excl MONSTER/VEHICLE）· 奇迹骰全链（生成/替换/弃换/重骰/合成，≈12 条）·
+Acts of Faith / Vows of Atonement 动态 / Righteous 复活 · 仅致命伤 FNP（Shield of Faith/
+Shield of Denial/Faithful Fortitude）· 本方单位战损门（The Blood of Martyrs +1命中/致伤）·
+6" 射程 S 加值（Fervent Purgation / Rites of Fire，无 6" 精确档）· Torrent×[DEV]（Cleansing
+Flames，无武器关键词筛选）· 负关键字 [DEV]（Devastating Reprise，excl MONSTER/VEHICLE）·
+重骰1（Prayer of Precision，reroll-fail 会过度）· 伤害封顶改 1（Mantle of Ophelia，
+damage_reduction 为固定减量非封顶）· 五选一（Hagiomnifex）· [PRECISION]（Eyes/Blade 主体）·
+[ASSAULT] / 前进撤退资格 / 超冲锋 / 巩固戳入 / 预备队 / 侦测 / CP / OC / 战栗 / Fights First。
+
+---
+
+**原始规划（Part 2 编码前预判，保留存档）**
 
 **可走既有通道（预判 encoded/partial）**：
 - 守方无效保护 invuln（The Emperor Protects 4++/条件 3++、Refrain of Enduring Faith
