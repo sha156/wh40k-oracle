@@ -1,0 +1,2010 @@
+{
+ "_comment": "P7 阵营技能 DSL 唯一真源（圣血天使，P7-PR9）。DB effect_dsl_json/dsl_status 只是投影，由 `python -m db_compile dsl-apply` 写入并挂 restore。判据与格式沿 spec 2026-07-14 + PR3-PR8 约定；A/B 工作单见 docs/superpowers/plans/2026-07-19-p7-pr9-ba-worklist.md。圣血天使沿 PR6 BT 子阵营口径（faction='SM'，按 8 分队清单圈定；无独立军规行——Oath of Moment 属 SM 通用）。重骰 1 类（猩红饥渴致伤重骰/赤红狂怒传承/崇高战殁低编档）与仅致命伤 FNP（天使优雅）按防高估硬裁定不编；二选一（野蛮回响/赤红狂怒/撕成碎片/武艺宗师/天使处刑者）按单分支先例；蔑视甲胄 ×5 走 PR7 守方 AP 恶化通道（净算夹 ≤0）。",
+ "dsl_version": 1,
+ "faction": "SM",
+ "entries": [
+  {
+   "table": "abilities",
+   "id": "det000008374",
+   "side": "attacker",
+   "detachment": "Liberator Assault Group",
+   "name_en": "Red Thirst",
+   "name_zh": "猩红饥渴",
+   "status": "partial",
+   "effects": [
+    {
+     "phase": "attacks",
+     "op": "modify",
+     "params": [
+      1
+     ],
+     "condition": [
+      "melee_charging"
+     ],
+     "source": "猩红饥渴（冲锋回合近战 A+1）"
+    },
+    {
+     "phase": "wound",
+     "op": "s_improve",
+     "params": [
+      2
+     ],
+     "condition": [
+      "melee_charging"
+     ],
+     "source": "猩红饥渴（冲锋回合近战 S+2）"
+    }
+   ],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "冲锋态用 charging 态势开关（真实模拟参数非假设）",
+    "军表域约束（不可混编其他战团）不建模——BA 分队通用限制句"
+   ],
+   "provenance": {
+    "current_text": "db detachments.rule_text id=000008374",
+    "base_text": "Wahapedia 现文（PR9 工作单：FP 未触及或已滚入，11 版仍现行）",
+    "synthesis": "DSL 投影经 materialize 落 abilities 新行（spec D5）",
+    "text_sha256": "3de35d7c8f6d04924ee80bf27c09305478c72654dcdc76aca7c829c89b5e2de0"
+   },
+   "encoded_by": "manual-2026-07-19",
+   "materialize": {
+    "from_table": "detachments",
+    "from_id": "000008374",
+    "from_column": "rule_text"
+   }
+  },
+  {
+   "table": "abilities",
+   "id": "det000009185",
+   "side": "attacker",
+   "detachment": "The Lost Brethren",
+   "name_en": "A Noble Death in Combat",
+   "name_zh": "崇高战殁",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "低于满编重骰致伤 1——重骰1≠重骰失败，防高估硬裁定不编",
+    "低于半数升级全重骰——自身战损状态无 Stance 载体",
+    "死亡连获 BATTLELINE——军表域",
+    "军表域约束（不可混编其他战团）不建模——BA 分队通用限制句"
+   ],
+   "provenance": {
+    "current_text": "db detachments.rule_text id=000009185",
+    "base_text": "Wahapedia 现文（PR9 工作单：FP 未触及或已滚入，11 版仍现行）",
+    "synthesis": "DSL 投影经 materialize 落 abilities 新行（spec D5）",
+    "text_sha256": "243c6164c6e629cf0374ecde3c726844ac3f770dd76ca686d033038d1deb41ad"
+   },
+   "encoded_by": "manual-2026-07-19",
+   "materialize": {
+    "from_table": "detachments",
+    "from_id": "000009185",
+    "from_column": "rule_text"
+   }
+  },
+  {
+   "table": "abilities",
+   "id": "det000009189",
+   "side": "attacker",
+   "detachment": "The Angelic Host",
+   "name_en": "Upon Wings of Fire",
+   "name_zh": "炽翼翔空",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "跳包单位撤场入预备队再深打——部署域",
+    "军表域约束（不可混编其他战团）不建模——BA 分队通用限制句"
+   ],
+   "provenance": {
+    "current_text": "db detachments.rule_text id=000009189",
+    "base_text": "Wahapedia 现文（PR9 工作单：FP 未触及或已滚入，11 版仍现行）",
+    "synthesis": "DSL 投影经 materialize 落 abilities 新行（spec D5）",
+    "text_sha256": "b2cbedeb343648a9e97c452be5d77980b682e38b2d115b1c72ba56a6f5693081"
+   },
+   "encoded_by": "manual-2026-07-19",
+   "materialize": {
+    "from_table": "detachments",
+    "from_id": "000009189",
+    "from_column": "rule_text"
+   }
+  },
+  {
+   "table": "abilities",
+   "id": "det000009834",
+   "side": "attacker",
+   "detachment": "Angelic Inheritors",
+   "name_en": "Legacy of the Angel",
+   "name_zh": "天使遗产",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "三选二天使传承：圣吉列斯的优雅（撤退射击/冲锋资格——移动域）、血誓之怒（Carmine Wrath：重骰命中1+致伤1——防高估硬裁定不编；DavidZ 译名与 RED RAMPAGE 战略同为「赤红狂怒」，此处改称防混淆）、既定之时（加速/冲锋重骰——冲锋域），无一落攻击序列消费点",
+    "军表域约束（不可混编其他战团）不建模——BA 分队通用限制句"
+   ],
+   "provenance": {
+    "current_text": "db detachments.rule_text id=000009834",
+    "base_text": "Wahapedia 现文（PR9 工作单：FP 未触及或已滚入，11 版仍现行）",
+    "synthesis": "DSL 投影经 materialize 落 abilities 新行（spec D5）",
+    "text_sha256": "29a57e8993efb0c5cc873c9a324ca0f4f19fe4d34a2bc96642c5d004becbb9c5"
+   },
+   "encoded_by": "manual-2026-07-19",
+   "materialize": {
+    "from_table": "detachments",
+    "from_id": "000009834",
+    "from_column": "rule_text"
+   }
+  },
+  {
+   "table": "abilities",
+   "id": "det000010644",
+   "side": "attacker",
+   "detachment": "Rage-cursed Onslaught",
+   "name_en": "Maddened Ferocity",
+   "name_zh": "癫狂凶暴",
+   "status": "partial",
+   "effects": [
+    {
+     "phase": "attacks",
+     "op": "modify",
+     "params": [
+      1
+     ],
+     "condition": [
+      "melee_charging"
+     ],
+     "source": "癫狂凶暴（冲锋回合近战 A+1）"
+    }
+   ],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "近战重骰致伤 1——防高估硬裁定不编",
+    "被震慑时 +2 A 分支——引擎无自身震慑态载体，按常规 +1 分支编码（二选一单分支先例）",
+    "军表域约束（不可混编其他战团）不建模——BA 分队通用限制句"
+   ],
+   "provenance": {
+    "current_text": "db detachments.rule_text id=000010644",
+    "base_text": "Wahapedia 现文（PR9 工作单：FP 未触及或已滚入，11 版仍现行）",
+    "synthesis": "DSL 投影经 materialize 落 abilities 新行（spec D5）",
+    "text_sha256": "25b065929a208deb5416a35e9c74beee5597bf54f50c36cb86089169f150b354"
+   },
+   "encoded_by": "manual-2026-07-19",
+   "materialize": {
+    "from_table": "detachments",
+    "from_id": "000010644",
+    "from_column": "rule_text"
+   }
+  },
+  {
+   "table": "abilities",
+   "id": "detfp11e-ba-grace-det",
+   "side": "attacker",
+   "detachment": "Legacy of Grace",
+   "name_en": "Legacy of the Angel",
+   "name_zh": "天使遗产",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "INFANTRY CHARACTER 加速/冲锋骰 +1（排除 COMMANDER DANTE）——冲锋域",
+    "GRACE tag 分队互斥——军表域，DB 无载体",
+    "军表域约束（不可混编其他战团）不建模——BA 分队通用限制句"
+   ],
+   "provenance": {
+    "current_text": "db detachments.rule_text id=fp11e-ba-grace-det",
+    "base_text": "Faction Pack Blood Angels page_002.md（fp_rules 补录 fp_new）",
+    "synthesis": "11 版新分队，Wahapedia 无源，DB 行即 FP 原文；materialize 落 abilities 新行",
+    "text_sha256": "68d883a6ba3f0abf5d73330a2ad2325d07eac006cf0736004aae18d1af0a56b6"
+   },
+   "encoded_by": "manual-2026-07-19",
+   "materialize": {
+    "from_table": "detachments",
+    "from_id": "fp11e-ba-grace-det",
+    "from_column": "rule_text"
+   }
+  },
+  {
+   "table": "abilities",
+   "id": "detfp11e-ba-speartip-det",
+   "side": "attacker",
+   "detachment": "Encarmine Speartip",
+   "name_en": "Wrath of Angels",
+   "name_zh": "天使之怒",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "圣血卫队撤退后保留射击/冲锋资格——移动域",
+    "军表域约束（不可混编其他战团）不建模——BA 分队通用限制句"
+   ],
+   "provenance": {
+    "current_text": "db detachments.rule_text id=fp11e-ba-speartip-det",
+    "base_text": "Faction Pack Blood Angels page_003.md（fp_rules 补录 fp_new）",
+    "synthesis": "11 版新分队，Wahapedia 无源，DB 行即 FP 原文；materialize 落 abilities 新行",
+    "text_sha256": "d51e4f8eae45df3ae00f1185dcbf54cc56d5ef19d56f3401f3aa297169283889"
+   },
+   "encoded_by": "manual-2026-07-19",
+   "materialize": {
+    "from_table": "detachments",
+    "from_id": "fp11e-ba-speartip-det",
+    "from_column": "rule_text"
+   }
+  },
+  {
+   "table": "abilities",
+   "id": "detfp11e-ba-doomed-det",
+   "side": "attacker",
+   "detachment": "Wrath of the Doomed",
+   "name_en": "Fanatical Celerity",
+   "name_zh": "狂热神速",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "死亡连加速自伤 D3+1 换冲锋资格——移动域/序列外自伤",
+    "DOOMED tag 分队互斥——军表域，DB 无载体",
+    "军表域约束（不可混编其他战团）不建模——BA 分队通用限制句"
+   ],
+   "provenance": {
+    "current_text": "db detachments.rule_text id=fp11e-ba-doomed-det",
+    "base_text": "Faction Pack Blood Angels page_004.md（fp_rules 补录 fp_new）",
+    "synthesis": "11 版新分队，Wahapedia 无源，DB 行即 FP 原文；materialize 落 abilities 新行",
+    "text_sha256": "ecbf884991a91a77ecde7d49694e5d5770897760917d77c53a14daf8e222fcce"
+   },
+   "encoded_by": "manual-2026-07-19",
+   "materialize": {
+    "from_table": "detachments",
+    "from_id": "fp11e-ba-doomed-det",
+    "from_column": "rule_text"
+   }
+  },
+  {
+   "table": "stratagems",
+   "id": "000008375002",
+   "side": "target",
+   "detachment": "Liberator Assault Group",
+   "name_en": "ANGELIC GRACE",
+   "name_zh": "天使优雅",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "FNP 5+ 仅对致命伤——防高估硬裁定（仅致命伤 FNP 不编）"
+   ],
+   "provenance": {
+    "current_text": "db stratagems.text_zh id=000008375002",
+    "base_text": "Wahapedia 现文（PR9 工作单：FP 未触及或已滚入，11 版仍现行）",
+    "synthesis": "无需合成",
+    "text_sha256": "78ca705b4a4c08a341eb2a0a37aa1999dac94c9bee25ba187859b8aec2649cc2"
+   },
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "stratagems",
+   "id": "000008375003",
+   "side": "target",
+   "detachment": "Liberator Assault Group",
+   "name_en": "ARMOUR OF CONTEMPT",
+   "name_zh": "蔑视甲胄",
+   "status": "partial",
+   "effects": [
+    {
+     "phase": "save",
+     "op": "ap_improve",
+     "params": [
+      -1
+     ],
+     "condition": [],
+     "source": "蔑视甲胄（被攻 AP 恶化 1）"
+    }
+   ],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "战略一次性/CP 不建模（假设本次攻击已使用）"
+   ],
+   "provenance": {
+    "current_text": "db stratagems.text_zh id=000008375003",
+    "base_text": "Wahapedia 现文（PR9 工作单：FP 未触及或已滚入，11 版仍现行）",
+    "synthesis": "无需合成",
+    "text_sha256": "35d8af3acc35ff49353b590f9a67c23d622a0edeb0e172ccd7183b080d1e0c83"
+   },
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "stratagems",
+   "id": "000008375004",
+   "side": "attacker",
+   "detachment": "Liberator Assault Group",
+   "name_en": "SAVAGE ECHOES",
+   "name_zh": "野蛮回响",
+   "status": "partial",
+   "effects": [
+    {
+     "phase": "attacks",
+     "op": "modify",
+     "params": [
+      1
+     ],
+     "condition": [
+      "phase_melee"
+     ],
+     "source": "野蛮回响（近战 A+1——A 分支）"
+    }
+   ],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "S 或 A 二选一——按 A 分支编码（Adaptable Executioner 先例）；需 S 分支请勿点名本条",
+    "屈服猩红饥渴（震慑换双升）分支不建模——战役状态代价",
+    "前提：本回合刚被冲锋（opt-in 自查）"
+   ],
+   "provenance": {
+    "current_text": "db stratagems.text_zh id=000008375004",
+    "base_text": "Wahapedia 现文（PR9 工作单：FP 未触及或已滚入，11 版仍现行）",
+    "synthesis": "无需合成",
+    "text_sha256": "230331c25d0cd094f98c8fc97c119c337fef864de9767e747770725fede4a78f"
+   },
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "stratagems",
+   "id": "000008375005",
+   "side": "attacker",
+   "detachment": "Liberator Assault Group",
+   "name_en": "RED RAMPAGE",
+   "name_zh": "赤红狂怒",
+   "status": "partial",
+   "effects": [
+    {
+     "phase": "hit",
+     "op": "auto_wound",
+     "params": [],
+     "condition": [
+      "phase_melee"
+     ],
+     "source": "赤红狂怒（近战 [LETHAL HITS]——致命分支）"
+    }
+   ],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "[LANCE] 或 [LETHAL HITS] 二选一——按致命一击分支编码；需 LANCE（冲锋致伤+1）分支请勿点名本条",
+    "屈服猩红饥渴分支不建模——战役状态代价"
+   ],
+   "provenance": {
+    "current_text": "db stratagems.text_zh id=000008375005",
+    "base_text": "Wahapedia 现文（PR9 工作单：FP 未触及或已滚入，11 版仍现行）",
+    "synthesis": "无需合成",
+    "text_sha256": "db8c72d8eebb2e4a6c755872755cdbc038068776572d1eb7d5ab9106de0abd32"
+   },
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "stratagems",
+   "id": "000008375006",
+   "side": "attacker",
+   "detachment": "Liberator Assault Group",
+   "name_en": "AGGRESSIVE ONSLAUGHT",
+   "name_zh": "侵袭猛攻",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "加速后射击/冲锋资格——移动域"
+   ],
+   "provenance": {
+    "current_text": "db stratagems.text_zh id=000008375006",
+    "base_text": "Wahapedia 现文（PR9 工作单：FP 未触及或已滚入，11 版仍现行）",
+    "synthesis": "无需合成",
+    "text_sha256": "1b052ee75010482bbb9fa0f430649b60259e76e7f027298a2636a36298d61a64"
+   },
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "stratagems",
+   "id": "000008375007",
+   "side": "attacker",
+   "detachment": "Liberator Assault Group",
+   "name_en": "RELENTLESS ASSAULT",
+   "name_zh": "无情突击",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "撤退后射击/冲锋资格——移动域"
+   ],
+   "provenance": {
+    "current_text": "db stratagems.text_zh id=000008375007",
+    "base_text": "Wahapedia 现文（PR9 工作单：FP 未触及或已滚入，11 版仍现行）",
+    "synthesis": "无需合成",
+    "text_sha256": "bdeda770b411d367c77404bcf06fd71d165761ead6026a9ed58369e6aaaba095"
+   },
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "stratagems",
+   "id": "000009187002",
+   "side": "attacker",
+   "detachment": "The Lost Brethren",
+   "name_en": "GLORIOUS SACRIFICE",
+   "name_zh": "荣光牺牲",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "目标点控制保持——任务域"
+   ],
+   "provenance": {
+    "current_text": "db stratagems.text_zh id=000009187002",
+    "base_text": "Wahapedia 现文（PR9 工作单：FP 未触及或已滚入，11 版仍现行）",
+    "synthesis": "无需合成",
+    "text_sha256": "a7fe55691a0541a8a0806c3b78ccf8466d686a86bdb2c19dc854d8814656c08f"
+   },
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "stratagems",
+   "id": "000009187003",
+   "side": "target",
+   "detachment": "The Lost Brethren",
+   "name_en": "ARMOUR OF CONTEMPT",
+   "name_zh": "蔑视甲胄",
+   "status": "partial",
+   "effects": [
+    {
+     "phase": "save",
+     "op": "ap_improve",
+     "params": [
+      -1
+     ],
+     "condition": [],
+     "source": "蔑视甲胄（被攻 AP 恶化 1）"
+    }
+   ],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "战略一次性/CP 不建模（假设本次攻击已使用）"
+   ],
+   "provenance": {
+    "current_text": "db stratagems.text_zh id=000009187003",
+    "base_text": "Wahapedia 现文（PR9 工作单：FP 未触及或已滚入，11 版仍现行）",
+    "synthesis": "无需合成",
+    "text_sha256": "35d8af3acc35ff49353b590f9a67c23d622a0edeb0e172ccd7183b080d1e0c83"
+   },
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "stratagems",
+   "id": "000009187004",
+   "side": "target",
+   "detachment": "The Lost Brethren",
+   "name_en": "FINAL RETRIBUTION",
+   "name_zh": "最终复仇",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "战死模型延迟反打——攻击序列外（幸存反打域）"
+   ],
+   "provenance": {
+    "current_text": "db stratagems.text_zh id=000009187004",
+    "base_text": "Wahapedia 现文（PR9 工作单：FP 未触及或已滚入，11 版仍现行）",
+    "synthesis": "无需合成",
+    "text_sha256": "48b5b740bbbfa099130b35e5e6a7a8d95191222917762afe36bc36b907295800"
+   },
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "stratagems",
+   "id": "000009187005",
+   "side": "attacker",
+   "detachment": "The Lost Brethren",
+   "name_en": "FURIOUS ONSLAUGHT",
+   "name_zh": "狂怒猛攻",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "Pile-in 距离增强——移动域"
+   ],
+   "provenance": {
+    "current_text": "db stratagems.text_zh id=000009187005",
+    "base_text": "Wahapedia 现文（PR9 工作单：FP 未触及或已滚入，11 版仍现行）",
+    "synthesis": "无需合成",
+    "text_sha256": "5c1c2233c91224dfaf115dc0f6b957afb17c39d71305bcfdc7cd5b675b483ed1"
+   },
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "stratagems",
+   "id": "000009187006",
+   "side": "attacker",
+   "detachment": "The Lost Brethren",
+   "name_en": "LOST TO RAGE",
+   "name_zh": "迷失盛怒",
+   "status": "partial",
+   "effects": [
+    {
+     "phase": "attacks",
+     "op": "modify",
+     "params": [
+      1
+     ],
+     "condition": [
+      "phase_melee"
+     ],
+     "source": "迷失盛怒（近战 A+1）"
+    },
+    {
+     "phase": "wound",
+     "op": "s_improve",
+     "params": [
+      1
+     ],
+     "condition": [
+      "phase_melee"
+     ],
+     "source": "迷失盛怒（近战 S+1）"
+    },
+    {
+     "phase": "save",
+     "op": "ap_improve",
+     "params": [
+      1
+     ],
+     "condition": [
+      "phase_melee"
+     ],
+     "source": "迷失盛怒（近战 AP 改善 1）"
+    }
+   ],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "前提：本单位低于满编（opt-in 战略按自身战损自查）",
+    "不在牧师 12 寸内时武器带 [HAZARDOUS]——危险代价不建模，无牧师场景会高估，自查"
+   ],
+   "provenance": {
+    "current_text": "db stratagems.text_zh id=000009187006",
+    "base_text": "Wahapedia 现文（PR9 工作单：FP 未触及或已滚入，11 版仍现行）",
+    "synthesis": "无需合成",
+    "text_sha256": "6a745f28bb4355a34d709338d5b75437d9a1d96f010dad968c0c8128f0111d57"
+   },
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "stratagems",
+   "id": "000009187007",
+   "side": "attacker",
+   "detachment": "The Lost Brethren",
+   "name_en": "WRATHFUL RAMPAGE",
+   "name_zh": "暴怒冲动",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "加速后冲锋资格——移动域"
+   ],
+   "provenance": {
+    "current_text": "db stratagems.text_zh id=000009187007",
+    "base_text": "Wahapedia 现文（PR9 工作单：FP 未触及或已滚入，11 版仍现行）",
+    "synthesis": "无需合成",
+    "text_sha256": "3ba0003852f0c11a074818fff358cfc31e1cd6f9d76aefb59ef99354b56a9f6d"
+   },
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "stratagems",
+   "id": "000009191002",
+   "side": "attacker",
+   "detachment": "The Angelic Host",
+   "name_en": "UNBRIDLED ARDOUR",
+   "name_zh": "无拘热忱",
+   "status": "partial",
+   "effects": [
+    {
+     "phase": "hit",
+     "op": "reroll",
+     "params": [
+      "fail"
+     ],
+     "condition": [],
+     "source": "无拘热忱（对灭我单位之敌重骰命中）"
+    },
+    {
+     "phase": "wound",
+     "op": "reroll",
+     "params": [
+      "fail"
+     ],
+     "condition": [],
+     "source": "无拘热忱（对灭我单位之敌重骰致伤）"
+    }
+   ],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "前提：目标刚消灭我方单位且本单位为圣血卫队（opt-in 自查）"
+   ],
+   "provenance": {
+    "current_text": "db stratagems.text_zh id=000009191002",
+    "base_text": "Wahapedia 现文（PR9 工作单：FP 未触及或已滚入，11 版仍现行）",
+    "synthesis": "无需合成",
+    "text_sha256": "451162916c96d69fb301b28cb3b8d3007f3226b4e64837e83d04ddbe1d5036f2"
+   },
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "stratagems",
+   "id": "000009191003",
+   "side": "target",
+   "detachment": "The Angelic Host",
+   "name_en": "ARMOUR OF CONTEMPT",
+   "name_zh": "蔑视甲胄",
+   "status": "partial",
+   "effects": [
+    {
+     "phase": "save",
+     "op": "ap_improve",
+     "params": [
+      -1
+     ],
+     "condition": [],
+     "source": "蔑视甲胄（被攻 AP 恶化 1）"
+    }
+   ],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "战略一次性/CP 不建模（假设本次攻击已使用）"
+   ],
+   "provenance": {
+    "current_text": "db stratagems.text_zh id=000009191003",
+    "base_text": "Wahapedia 现文（PR9 工作单：FP 未触及或已滚入，11 版仍现行）",
+    "synthesis": "无需合成",
+    "text_sha256": "35d8af3acc35ff49353b590f9a67c23d622a0edeb0e172ccd7183b080d1e0c83"
+   },
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "stratagems",
+   "id": "000009191004",
+   "side": "target",
+   "detachment": "The Angelic Host",
+   "name_en": "ANGEL’S SACRIFICE",
+   "name_zh": "天使牺牲",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "强制敌军全弹指向本单位——目标分配域"
+   ],
+   "provenance": {
+    "current_text": "db stratagems.text_zh id=000009191004",
+    "base_text": "Wahapedia 现文（PR9 工作单：FP 未触及或已滚入，11 版仍现行）",
+    "synthesis": "无需合成",
+    "text_sha256": "8cd0a0cbbf9fc435831fece307bccacea9b44233701ecc802e1ac4ba08122cd5"
+   },
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "stratagems",
+   "id": "000009191005",
+   "side": "attacker",
+   "detachment": "The Angelic Host",
+   "name_en": "MARTIAL EXEMPLARS",
+   "name_zh": "武艺典范",
+   "status": "partial",
+   "effects": [
+    {
+     "phase": "hit",
+     "op": "auto_wound",
+     "params": [],
+     "condition": [
+      "phase_melee"
+     ],
+     "source": "武艺典范（近战 [LETHAL HITS]）"
+    }
+   ],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "[PRECISION]（点名人物分配）——伤害分配域不建模",
+    "限跳包单位——点名即声明"
+   ],
+   "provenance": {
+    "current_text": "db stratagems.text_zh id=000009191005",
+    "base_text": "Wahapedia 现文（PR9 工作单：FP 未触及或已滚入，11 版仍现行）",
+    "synthesis": "无需合成",
+    "text_sha256": "04e3ffb99bd3dfaf6e069934cda5da66287464badb951732e04fb7d2a7bbd2c4"
+   },
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "stratagems",
+   "id": "000009191006",
+   "side": "attacker",
+   "detachment": "The Angelic Host",
+   "name_en": "DESCENT OF ANGELS",
+   "name_zh": "天使降临",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "深打落点收紧 6 寸——部署域"
+   ],
+   "provenance": {
+    "current_text": "db stratagems.text_zh id=000009191006",
+    "base_text": "Wahapedia 现文（PR9 工作单：FP 未触及或已滚入，11 版仍现行）",
+    "synthesis": "无需合成",
+    "text_sha256": "4a463eb83bead0d569b558de4c742c1bdb853164acfeb55b506ef2ce14d04150"
+   },
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "stratagems",
+   "id": "000009191007",
+   "side": "attacker",
+   "detachment": "The Angelic Host",
+   "name_en": "DEATH FROM THE SKIES",
+   "name_zh": "死从天降",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "加速/撤退后射击冲锋资格——移动域"
+   ],
+   "provenance": {
+    "current_text": "db stratagems.text_zh id=000009191007",
+    "base_text": "Wahapedia 现文（PR9 工作单：FP 未触及或已滚入，11 版仍现行）",
+    "synthesis": "无需合成",
+    "text_sha256": "8b0d5879437cb312df2d89cc12e4e5d909e613bdf5632d1cea66f09d0190318c"
+   },
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "stratagems",
+   "id": "000009836002",
+   "side": "target",
+   "detachment": "Angelic Inheritors",
+   "name_en": "ARMOUR OF CONTEMPT",
+   "name_zh": "蔑视甲胄",
+   "status": "partial",
+   "effects": [
+    {
+     "phase": "save",
+     "op": "ap_improve",
+     "params": [
+      -1
+     ],
+     "condition": [],
+     "source": "蔑视甲胄（被攻 AP 恶化 1）"
+    }
+   ],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "战略一次性/CP 不建模（假设本次攻击已使用）"
+   ],
+   "provenance": {
+    "current_text": "db stratagems.text_zh id=000009836002",
+    "base_text": "Wahapedia 现文（PR9 工作单：FP 未触及或已滚入，11 版仍现行）",
+    "synthesis": "无需合成",
+    "text_sha256": "35d8af3acc35ff49353b590f9a67c23d622a0edeb0e172ccd7183b080d1e0c83"
+   },
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "stratagems",
+   "id": "000009836003",
+   "side": "attacker",
+   "detachment": "Angelic Inheritors",
+   "name_en": "FOCUSED FURY",
+   "name_zh": "聚焦怒火",
+   "status": "partial",
+   "effects": [
+    {
+     "phase": "hit",
+     "op": "auto_wound",
+     "params": [],
+     "condition": [
+      "phase_melee"
+     ],
+     "source": "聚焦怒火（近战 [LETHAL HITS]）"
+    }
+   ],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "人物单位追加 [LANCE]（冲锋致伤+1）——限定分支不编（防高估），人物单挑场景会低估，自查"
+   ],
+   "provenance": {
+    "current_text": "db stratagems.text_zh id=000009836003",
+    "base_text": "Wahapedia 现文（PR9 工作单：FP 未触及或已滚入，11 版仍现行）",
+    "synthesis": "无需合成",
+    "text_sha256": "dc2cadd612e5fdbc7080aa45e75043b4f36e11972d4481841624015c07192be5"
+   },
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "stratagems",
+   "id": "000009836004",
+   "side": "attacker",
+   "detachment": "Angelic Inheritors",
+   "name_en": "INSTANT OF GRACE",
+   "name_zh": "乍现优雅",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "授予 CHARACTER 关键词——关键词域（与分队规则联动）"
+   ],
+   "provenance": {
+    "current_text": "db stratagems.text_zh id=000009836004",
+    "base_text": "Wahapedia 现文（PR9 工作单：FP 未触及或已滚入，11 版仍现行）",
+    "synthesis": "无需合成",
+    "text_sha256": "a015b472441bb0ac4180b19fcec58c4f7cab9a66e447de573e1e29cc00aa43b9"
+   },
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "stratagems",
+   "id": "000009836005",
+   "side": "attacker",
+   "detachment": "Angelic Inheritors",
+   "name_en": "STRIKE NOW FOR GLORY",
+   "name_zh": "为荣耀而战",
+   "status": "partial",
+   "effects": [
+    {
+     "phase": "hit",
+     "op": "extra_hits",
+     "params": [
+      1
+     ],
+     "condition": [
+      "phase_shooting"
+     ],
+     "source": "为荣耀而战（远程 [SUSTAINED HITS 1]）"
+    }
+   ],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "战略一次性/CP 不建模"
+   ],
+   "provenance": {
+    "current_text": "db stratagems.text_zh id=000009836005",
+    "base_text": "Wahapedia 现文（PR9 工作单：FP 未触及或已滚入，11 版仍现行）",
+    "synthesis": "无需合成",
+    "text_sha256": "fd615328036144db573267d9a9e449f29869e30dd31f3ea792519f2e095ce3b1"
+   },
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "stratagems",
+   "id": "000009836006",
+   "side": "target",
+   "detachment": "Angelic Inheritors",
+   "name_en": "IN THE SHADOW OF GREAT WINGS",
+   "name_zh": "巨翼荫蔽",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "18 寸外不可被选为射击目标——目标合法性域"
+   ],
+   "provenance": {
+    "current_text": "db stratagems.text_zh id=000009836006",
+    "base_text": "Wahapedia 现文（PR9 工作单：FP 未触及或已滚入，11 版仍现行）",
+    "synthesis": "无需合成",
+    "text_sha256": "0a5ba5b77e73e6ed6b07af50c9c66a71778ba6bdf026c1de20b4a4745a87bdd0"
+   },
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "stratagems",
+   "id": "000009836007",
+   "side": "attacker",
+   "detachment": "Angelic Inheritors",
+   "name_en": "UNTO THE BURNING SKIES",
+   "name_zh": "直击燃空",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "撤场入战略预备队——部署域"
+   ],
+   "provenance": {
+    "current_text": "db stratagems.text_zh id=000009836007",
+    "base_text": "Wahapedia 现文（PR9 工作单：FP 未触及或已滚入，11 版仍现行）",
+    "synthesis": "无需合成",
+    "text_sha256": "e11dcfb4557e9aceec7d4aa564d1933d02828552a0fbe0df9f4730925c4510c4"
+   },
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "stratagems",
+   "id": "000010646002",
+   "side": "attacker",
+   "detachment": "Rage-cursed Onslaught",
+   "name_en": "A GRIM WARNING",
+   "name_zh": "严酷警示",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "目标点控制保持——任务域"
+   ],
+   "provenance": {
+    "current_text": "db stratagems.text_zh id=000010646002",
+    "base_text": "Wahapedia 现文（PR9 工作单：FP 未触及或已滚入，11 版仍现行）",
+    "synthesis": "无需合成",
+    "text_sha256": "9da7d296b387eae5fb9ff9e280e4eaee22dc41d842dc68743a4781b87d09f346"
+   },
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "stratagems",
+   "id": "000010646003",
+   "side": "target",
+   "detachment": "Rage-cursed Onslaught",
+   "name_en": "ARMOUR OF CONTEMPT",
+   "name_zh": "蔑视甲胄",
+   "status": "partial",
+   "effects": [
+    {
+     "phase": "save",
+     "op": "ap_improve",
+     "params": [
+      -1
+     ],
+     "condition": [],
+     "source": "蔑视甲胄（被攻 AP 恶化 1）"
+    }
+   ],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "战略一次性/CP 不建模（假设本次攻击已使用）"
+   ],
+   "provenance": {
+    "current_text": "db stratagems.text_zh id=000010646003",
+    "base_text": "Wahapedia 现文（PR9 工作单：FP 未触及或已滚入，11 版仍现行）",
+    "synthesis": "无需合成",
+    "text_sha256": "35d8af3acc35ff49353b590f9a67c23d622a0edeb0e172ccd7183b080d1e0c83"
+   },
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "stratagems",
+   "id": "000010646004",
+   "side": "target",
+   "detachment": "Rage-cursed Onslaught",
+   "name_en": "INSENSATE RAMPAGE",
+   "name_zh": "无觉暴走",
+   "status": "partial",
+   "effects": [
+    {
+     "phase": "fnp",
+     "op": "fnp",
+     "params": [
+      5
+     ],
+     "condition": [],
+     "source": "无觉暴走（FNP 5+）"
+    }
+   ],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "限死亡连单位守方——点名即声明",
+    "战略一次性/CP 不建模"
+   ],
+   "provenance": {
+    "current_text": "db stratagems.text_zh id=000010646004",
+    "base_text": "Wahapedia 现文（PR9 工作单：FP 未触及或已滚入，11 版仍现行）",
+    "synthesis": "无需合成",
+    "text_sha256": "148ba9ae4510aec57a41ee388bf1840ee7864d780236a7d4f658f6683eeb5224"
+   },
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "stratagems",
+   "id": "000010646005",
+   "side": "attacker",
+   "detachment": "Rage-cursed Onslaught",
+   "name_en": "LIMB FROM LIMB",
+   "name_zh": "撕成碎片",
+   "status": "partial",
+   "effects": [
+    {
+     "phase": "wound",
+     "op": "s_improve",
+     "params": [
+      1
+     ],
+     "condition": [
+      "melee_charging"
+     ],
+     "source": "撕成碎片（冲锋回合近战 S+1——S 分支）"
+    }
+   ],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "S 或 AP 二选一——按 S 分支编码；需 AP 分支请勿点名本条",
+    "屈服猩红饥渴（震慑换 S+AP 双升）分支不建模——战役状态代价"
+   ],
+   "provenance": {
+    "current_text": "db stratagems.text_zh id=000010646005",
+    "base_text": "Wahapedia 现文（PR9 工作单：FP 未触及或已滚入，11 版仍现行）",
+    "synthesis": "无需合成",
+    "text_sha256": "e3a058a42d648112ce34ae32f125a9ed0a1724d5eac2470af492a9f9528ba700"
+   },
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "stratagems",
+   "id": "000010646006",
+   "side": "target",
+   "detachment": "Rage-cursed Onslaught",
+   "name_en": "DEATHLESS DUTY",
+   "name_zh": "不死之责",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "战死模型延迟反打——攻击序列外（幸存反打域）"
+   ],
+   "provenance": {
+    "current_text": "db stratagems.text_zh id=000010646006",
+    "base_text": "Wahapedia 现文（PR9 工作单：FP 未触及或已滚入，11 版仍现行）",
+    "synthesis": "无需合成",
+    "text_sha256": "0f7e2e0b3194fb98780ca57733a2aadfc99259b2035ceb70205f6661da0bf6cc"
+   },
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "stratagems",
+   "id": "000010646007",
+   "side": "attacker",
+   "detachment": "Rage-cursed Onslaught",
+   "name_en": "RED WRATH",
+   "name_zh": "赤红之怒",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "加速后射击/冲锋资格（屈服分支同域）——移动域"
+   ],
+   "provenance": {
+    "current_text": "db stratagems.text_zh id=000010646007",
+    "base_text": "Wahapedia 现文（PR9 工作单：FP 未触及或已滚入，11 版仍现行）",
+    "synthesis": "无需合成",
+    "text_sha256": "b630086df727291ac5ef681edc503e4526337def4a69522e497a2e1873810a9a"
+   },
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "stratagems",
+   "id": "fp11e-ba-grace-s1",
+   "side": "attacker",
+   "detachment": "Legacy of Grace",
+   "name_en": "MARTIAL PARAGON",
+   "name_zh": "武艺宗师",
+   "status": "partial",
+   "effects": [
+    {
+     "phase": "hit",
+     "op": "extra_hits",
+     "params": [
+      1
+     ],
+     "condition": [],
+     "source": "武艺宗师（[SUSTAINED HITS 1]——连击分支）"
+    }
+   ],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "[LETHAL HITS] 或 [SUSTAINED HITS 1] 二选一——按连击分支编码（Adaptable Executioner 先例）；需致命分支请勿点名本条",
+    "限 CHARACTER 单位——点名即声明"
+   ],
+   "provenance": {
+    "current_text": "db stratagems.text_zh id=fp11e-ba-grace-s1",
+    "base_text": "Faction Pack Blood Angels page_002.md（fp_rules 补录 fp_new）",
+    "synthesis": "11 版新分队，Wahapedia 无源，DB 行即 FP 原文",
+    "text_sha256": "fb20ffb0d3cfbdbe4cbfa0956da874f51630a5c1f3e585d2dba38b504478d299"
+   },
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "stratagems",
+   "id": "fp11e-ba-grace-s2",
+   "side": "attacker",
+   "detachment": "Legacy of Grace",
+   "name_en": "SOUL-DARKENED FURY",
+   "name_zh": "魂暗之怒",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "撤退强制绝望突围——移动/士气域"
+   ],
+   "provenance": {
+    "current_text": "db stratagems.text_zh id=fp11e-ba-grace-s2",
+    "base_text": "Faction Pack Blood Angels page_002.md（fp_rules 补录 fp_new）",
+    "synthesis": "11 版新分队，Wahapedia 无源，DB 行即 FP 原文",
+    "text_sha256": "6c1f7eae0c05af9bb74b3b0a73e685c4a4d1c2461606a67f4818e0e421e79468"
+   },
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "stratagems",
+   "id": "fp11e-ba-grace-s3",
+   "side": "target",
+   "detachment": "Legacy of Grace",
+   "name_en": "AURA OF THE ANGEL’S GRACE",
+   "name_zh": "天使优雅光环",
+   "status": "partial",
+   "effects": [
+    {
+     "phase": "save",
+     "op": "invuln",
+     "params": [
+      5
+     ],
+     "condition": [
+      "phase_shooting"
+     ],
+     "source": "天使优雅光环（被射击 5+ 特殊保护）"
+    }
+   ],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "限 CHARACTER 单位守方——点名即声明",
+    "战略一次性/CP 不建模"
+   ],
+   "provenance": {
+    "current_text": "db stratagems.text_zh id=fp11e-ba-grace-s3",
+    "base_text": "Faction Pack Blood Angels page_002.md（fp_rules 补录 fp_new）",
+    "synthesis": "11 版新分队，Wahapedia 无源，DB 行即 FP 原文",
+    "text_sha256": "d2dcc422c0453c801843b3fa76cdb33e7ca22622b0ea1be53a74ebee85db7925"
+   },
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "stratagems",
+   "id": "fp11e-ba-speartip-s1",
+   "side": "attacker",
+   "detachment": "Encarmine Speartip",
+   "name_en": "JUDGEMENT OF THE GOLDEN HOST",
+   "name_zh": "黄金裁决",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "冲锋后逐模型 3+ 致命伤——攻击序列外（冲锋触发）"
+   ],
+   "provenance": {
+    "current_text": "db stratagems.text_zh id=fp11e-ba-speartip-s1",
+    "base_text": "Faction Pack Blood Angels page_003.md（fp_rules 补录 fp_new）",
+    "synthesis": "11 版新分队，Wahapedia 无源，DB 行即 FP 原文",
+    "text_sha256": "17071fc8144e08db8c1be48dc2ace5991a29d05bf56ddb5b0ca1ef88f9d813ba"
+   },
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "stratagems",
+   "id": "fp11e-ba-speartip-s2",
+   "side": "attacker",
+   "detachment": "Encarmine Speartip",
+   "name_en": "INEXORABLE VALOUR",
+   "name_zh": "不屈英勇",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "敌撤退后 D3+3 寸移动——移动域"
+   ],
+   "provenance": {
+    "current_text": "db stratagems.text_zh id=fp11e-ba-speartip-s2",
+    "base_text": "Faction Pack Blood Angels page_003.md（fp_rules 补录 fp_new）",
+    "synthesis": "11 版新分队，Wahapedia 无源，DB 行即 FP 原文",
+    "text_sha256": "e1f7909fbab5bd3c2badc3d97832fa5ce0911b99a361ad97cf5333aac9a4689f"
+   },
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "stratagems",
+   "id": "fp11e-ba-speartip-s3",
+   "side": "target",
+   "detachment": "Encarmine Speartip",
+   "name_en": "BLINDING BLURS OF VENGEANCE",
+   "name_zh": "炫目复仇",
+   "status": "partial",
+   "effects": [
+    {
+     "phase": "save",
+     "op": "cover",
+     "params": [],
+     "condition": [
+      "phase_shooting"
+     ],
+     "source": "炫目复仇（隐匿：被远程攻击获掩体收益）"
+    }
+   ],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "11 版隐匿=掩体收益（命中侧 BS 惩罚），武器 [IGNORES COVER] 可整体抵消",
+    "限圣血卫队守方——点名即声明"
+   ],
+   "provenance": {
+    "current_text": "db stratagems.text_zh id=fp11e-ba-speartip-s3",
+    "base_text": "Faction Pack Blood Angels page_003.md（fp_rules 补录 fp_new）",
+    "synthesis": "11 版新分队，Wahapedia 无源，DB 行即 FP 原文",
+    "text_sha256": "747912f6c9c96ec27e7f241b7e01275479fef5b51d4c98630a5522d0bce8a02c"
+   },
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "stratagems",
+   "id": "fp11e-ba-doomed-s1",
+   "side": "attacker",
+   "detachment": "Wrath of the Doomed",
+   "name_en": "DEATH BEGETS VENGEANCE",
+   "name_zh": "以死偿仇",
+   "status": "partial",
+   "effects": [
+    {
+     "phase": "wound",
+     "op": "modify",
+     "params": [
+      1
+     ],
+     "condition": [],
+     "source": "以死偿仇（对被恨单位致伤 +1）"
+    }
+   ],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "前提：目标此前消灭过我方死亡连单位（hated 战役状态——opt-in 自查）",
+    "限死亡连攻击方——点名即声明"
+   ],
+   "provenance": {
+    "current_text": "db stratagems.text_zh id=fp11e-ba-doomed-s1",
+    "base_text": "Faction Pack Blood Angels page_004.md（fp_rules 补录 fp_new）",
+    "synthesis": "11 版新分队，Wahapedia 无源，DB 行即 FP 原文",
+    "text_sha256": "b53a0c91c1880a8739abfaad6f3d62aede1c256a0c8df055a0fa1772edd149f0"
+   },
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "stratagems",
+   "id": "fp11e-ba-doomed-s2",
+   "side": "attacker",
+   "detachment": "Wrath of the Doomed",
+   "name_en": "NO BARRIER TO RETRIBUTION",
+   "name_zh": "复仇无阻",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "MOBILE——移动域"
+   ],
+   "provenance": {
+    "current_text": "db stratagems.text_zh id=fp11e-ba-doomed-s2",
+    "base_text": "Faction Pack Blood Angels page_004.md（fp_rules 补录 fp_new）",
+    "synthesis": "11 版新分队，Wahapedia 无源，DB 行即 FP 原文",
+    "text_sha256": "e0688ca0fd0138b7c43535b4f48b6e88ce2dfc7839c90a347d768554e4fe9e54"
+   },
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "stratagems",
+   "id": "fp11e-ba-doomed-s3",
+   "side": "attacker",
+   "detachment": "Wrath of the Doomed",
+   "name_en": "RAGE-FUELLED RESPONSE",
+   "name_zh": "怒火回应",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "被射击后 surge D6 寸——移动域/序列外"
+   ],
+   "provenance": {
+    "current_text": "db stratagems.text_zh id=fp11e-ba-doomed-s3",
+    "base_text": "Faction Pack Blood Angels page_004.md（fp_rules 补录 fp_new）",
+    "synthesis": "11 版新分队，Wahapedia 无源，DB 行即 FP 原文",
+    "text_sha256": "6b7b4766256fa9cb4511e51383a7c1b296e291f9318d032f439da5ce4c2eb1c6"
+   },
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "enhancements",
+   "id": "000008376002",
+   "side": "attacker",
+   "detachment": "Liberator Assault Group",
+   "name_en": "Speed of the Primarch",
+   "name_zh": "原体之速",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "Fights First——先手判定域（fight_order）"
+   ],
+   "provenance": {
+    "current_text": "db enhancements.description id=000008376002",
+    "base_text": "Wahapedia 现文（PR9 工作单：FP 未触及或已滚入，11 版仍现行）",
+    "synthesis": "无需合成",
+    "text_sha256": "8188280f4da6dada10dbad8d3129bea1cfe485d362534e23b167671ecfdc95cd"
+   },
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "enhancements",
+   "id": "000008376003",
+   "side": "attacker",
+   "detachment": "Liberator Assault Group",
+   "name_en": "Rage-fuelled Warrior",
+   "name_zh": "燃怒战士",
+   "status": "partial",
+   "effects": [
+    {
+     "phase": "hit",
+     "op": "extra_hits",
+     "params": [
+      3
+     ],
+     "condition": [
+      "phase_melee"
+     ],
+     "source": "燃怒战士（近战 [SUSTAINED HITS 3]）"
+    }
+   ],
+   "requires_toggles": [
+    "bearer_leading"
+   ],
+   "not_modeled_notes_zh": [
+    "一次性技能——假设本阶段已使用",
+    "仅携带者近战武器——单模型（人物）口径模拟；整单位 loadout 会高估"
+   ],
+   "provenance": {
+    "current_text": "db enhancements.description id=000008376003",
+    "base_text": "Wahapedia 现文（PR9 工作单：FP 未触及或已滚入，11 版仍现行）",
+    "synthesis": "无需合成",
+    "text_sha256": "04a30ba548c34b9f0674e837c3e46909e990404065fd9d2de7f75cf2c32587e3"
+   },
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "enhancements",
+   "id": "000008376004",
+   "side": "attacker",
+   "detachment": "Liberator Assault Group",
+   "name_en": "Icon of the Angel",
+   "name_zh": "天使圣旗",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "敌撤退强制绝望突围——移动/士气域"
+   ],
+   "provenance": {
+    "current_text": "db enhancements.description id=000008376004",
+    "base_text": "Wahapedia 现文（PR9 工作单：FP 未触及或已滚入，11 版仍现行）",
+    "synthesis": "无需合成",
+    "text_sha256": "8d279997a89eb67675b0107d1871393b9e49b5874b615c17219e7d33c43c9dc7"
+   },
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "enhancements",
+   "id": "000008376005",
+   "side": "attacker",
+   "detachment": "Liberator Assault Group",
+   "name_en": "Gift of Foresight",
+   "name_zh": "预言之赐",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "每大回合一骰改 6——单骰干预无蒙特卡洛通道"
+   ],
+   "provenance": {
+    "current_text": "db enhancements.description id=000008376005",
+    "base_text": "Wahapedia 现文（PR9 工作单：FP 未触及或已滚入，11 版仍现行）",
+    "synthesis": "无需合成",
+    "text_sha256": "1cc80e7170ac4a5caf2347ee58bc56ee831d11b141bba914b18980ade6b526d6"
+   },
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "enhancements",
+   "id": "000009186002",
+   "side": "attacker",
+   "detachment": "The Lost Brethren",
+   "name_en": "Sanguinius’ Grace",
+   "name_zh": "圣吉列斯的优雅",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "近战阶段结束追加一轮攻击——序列外（一次性额外出手）"
+   ],
+   "provenance": {
+    "current_text": "db enhancements.description id=000009186002",
+    "base_text": "Wahapedia 现文（PR9 工作单：FP 未触及或已滚入，11 版仍现行）",
+    "synthesis": "无需合成",
+    "text_sha256": "e4b72184189aeb17f216736b88cf0feb939989e9e363bce2fbc30b77f7c5d64e"
+   },
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "enhancements",
+   "id": "000009186003",
+   "side": "target",
+   "detachment": "The Lost Brethren",
+   "name_en": "Blood Shard",
+   "name_zh": "鲜血碎片",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "首次阵亡 2+ 复活——治疗/复活域"
+   ],
+   "provenance": {
+    "current_text": "db enhancements.description id=000009186003",
+    "base_text": "Wahapedia 现文（PR9 工作单：FP 未触及或已滚入，11 版仍现行）",
+    "synthesis": "无需合成",
+    "text_sha256": "58d6aa2aeca2dfe9889cac155e69c0f523e23a69248a27c6e370d0a99cb1cf14"
+   },
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "enhancements",
+   "id": "000009186004",
+   "side": "attacker",
+   "detachment": "The Lost Brethren",
+   "name_en": "To Slay the Warmaster",
+   "name_zh": "诛杀战帅！",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "6D6 致命伤爆发——攻击序列外（一次性）"
+   ],
+   "provenance": {
+    "current_text": "db enhancements.description id=000009186004",
+    "base_text": "Wahapedia 现文（PR9 工作单：FP 未触及或已滚入，11 版仍现行）",
+    "synthesis": "无需合成",
+    "text_sha256": "7f7bcccbe608745284ef7ba2fe55e65a015c4974746d2e7c11f1575f2ffb0711"
+   },
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "enhancements",
+   "id": "000009186005",
+   "side": "attacker",
+   "detachment": "The Lost Brethren",
+   "name_en": "Vengeful Onslaught",
+   "name_zh": "复仇猛攻",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "阵亡后全军死亡连命中 +1——死亡触发的军队级状态，序列外"
+   ],
+   "provenance": {
+    "current_text": "db enhancements.description id=000009186005",
+    "base_text": "Wahapedia 现文（PR9 工作单：FP 未触及或已滚入，11 版仍现行）",
+    "synthesis": "无需合成",
+    "text_sha256": "9eff29326b34529d5b1ea0ffad384e012c678a7229460ddde9149a0a040c1e4c"
+   },
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "enhancements",
+   "id": "000009190002",
+   "side": "attacker",
+   "detachment": "The Angelic Host",
+   "name_en": "Artisan of War",
+   "name_zh": "战争工匠",
+   "status": "partial",
+   "effects": [
+    {
+     "phase": "save",
+     "op": "ap_improve",
+     "params": [
+      1
+     ],
+     "condition": [],
+     "source": "战争工匠（携带者武器 AP 改善 1）"
+    }
+   ],
+   "requires_toggles": [
+    "bearer_leading"
+   ],
+   "not_modeled_notes_zh": [
+    "Sv 2+ 是防御面特征值——本条目为攻方向，守方点名时该面未接入",
+    "仅携带者武器——单模型（人物）口径模拟"
+   ],
+   "provenance": {
+    "current_text": "db enhancements.description id=000009190002",
+    "base_text": "Wahapedia 现文（PR9 工作单：FP 未触及或已滚入，11 版仍现行）",
+    "synthesis": "无需合成",
+    "text_sha256": "62f80fa5d049963a9122912f9f085349bde76ab4acf5f06bbf763f7575dd955a"
+   },
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "enhancements",
+   "id": "000009190003",
+   "side": "attacker",
+   "detachment": "The Angelic Host",
+   "name_en": "Visage of Death",
+   "name_zh": "死亡面具",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "接战震慑测试——士气域"
+   ],
+   "provenance": {
+    "current_text": "db enhancements.description id=000009190003",
+    "base_text": "Wahapedia 现文（PR9 工作单：FP 未触及或已滚入，11 版仍现行）",
+    "synthesis": "无需合成",
+    "text_sha256": "2c03aee718b31907a1aabf723653026ca506a19b351f8bef4a8821b4e5e29e1a"
+   },
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "enhancements",
+   "id": "000009190004",
+   "side": "attacker",
+   "detachment": "The Angelic Host",
+   "name_en": "Archangel’s Shard",
+   "name_zh": "大天使碎片",
+   "status": "partial",
+   "effects": [
+    {
+     "phase": "wound",
+     "op": "crit_threshold",
+     "params": [
+      5
+     ],
+     "condition": [
+      "melee_target_has_keyword",
+      "chaos"
+     ],
+     "source": "大天使碎片（[ANTI-CHAOS 5+]：近战对混沌 5+ 暴击致伤）"
+    },
+    {
+     "phase": "wound",
+     "op": "modify",
+     "params": [
+      1
+     ],
+     "condition": [
+      "melee_charging"
+     ],
+     "source": "大天使碎片（[LANCE]：冲锋回合近战致伤 +1）"
+    }
+   ],
+   "requires_toggles": [
+    "bearer_leading"
+   ],
+   "not_modeled_notes_zh": [
+    "仅携带者近战武器——单模型（人物）口径模拟"
+   ],
+   "provenance": {
+    "current_text": "db enhancements.description id=000009190004",
+    "base_text": "Wahapedia 现文（PR9 工作单：FP 未触及或已滚入，11 版仍现行）",
+    "synthesis": "无需合成",
+    "text_sha256": "e1b35b9f852b5634c80b9c33318748317499e964cef637ffb4958a2df153bb9a"
+   },
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "enhancements",
+   "id": "000009190005",
+   "side": "attacker",
+   "detachment": "The Angelic Host",
+   "name_en": "Gleaming Pinions",
+   "name_zh": "闪耀炽羽",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "对方移动阶段反应移动——移动域"
+   ],
+   "provenance": {
+    "current_text": "db enhancements.description id=000009190005",
+    "base_text": "Faction Pack Blood Angels page_009.md（fp_rules 已 11 版化）",
+    "synthesis": "fp_rules 补丁后的 DB 现行文本",
+    "text_sha256": "e43e62c28be1b41e496efa04ea73a8de31e51a99c9c065bf50f96e12379a1320"
+   },
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "enhancements",
+   "id": "000009835002",
+   "side": "attacker",
+   "detachment": "Angelic Inheritors",
+   "name_en": "Prescient Flash",
+   "name_zh": "预言灵光",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "Scouts 6——部署域"
+   ],
+   "provenance": {
+    "current_text": "db enhancements.description id=000009835002",
+    "base_text": "Wahapedia 现文（PR9 工作单：FP 未触及或已滚入，11 版仍现行）",
+    "synthesis": "无需合成",
+    "text_sha256": "0ddc7d3463633ab4a4d363becea88e814794e47a27cfda311ce16463253218cb"
+   },
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "enhancements",
+   "id": "000009835003",
+   "side": "attacker",
+   "detachment": "Angelic Inheritors",
+   "name_en": "Troubling Visions",
+   "name_zh": "不安幻视",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "一次性全开三天使传承——传承本体无攻击序列消费点（见分队规则条目）"
+   ],
+   "provenance": {
+    "current_text": "db enhancements.description id=000009835003",
+    "base_text": "Wahapedia 现文（PR9 工作单：FP 未触及或已滚入，11 版仍现行）",
+    "synthesis": "无需合成",
+    "text_sha256": "7195f30e3a50607fbfc21880a28433b6c7209937a0227d68441d5f85f7246d79"
+   },
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "enhancements",
+   "id": "000009835004",
+   "side": "target",
+   "detachment": "Angelic Inheritors",
+   "name_en": "Blazing Icon",
+   "name_zh": "炽燃圣印",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "免疫坚守射击——反应射击域"
+   ],
+   "provenance": {
+    "current_text": "db enhancements.description id=000009835004",
+    "base_text": "Wahapedia 现文（PR9 工作单：FP 未触及或已滚入，11 版仍现行）",
+    "synthesis": "无需合成",
+    "text_sha256": "f1dd887e9bd4fd3771c40aaf9ec67d1be7decaccf478ec9499fa0204639bda03"
+   },
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "enhancements",
+   "id": "000009835005",
+   "side": "target",
+   "detachment": "Angelic Inheritors",
+   "name_en": "Ordained Sacrifice",
+   "name_zh": "命定牺牲",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "首次阵亡 2+ 复活——治疗/复活域"
+   ],
+   "provenance": {
+    "current_text": "db enhancements.description id=000009835005",
+    "base_text": "Wahapedia 现文（PR9 工作单：FP 未触及或已滚入，11 版仍现行）",
+    "synthesis": "无需合成",
+    "text_sha256": "cd3a977c7d726a803d76cc7e8e2a8b732d77a1616a914ffd5fe9d3e91bc58024"
+   },
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "enhancements",
+   "id": "000010645002",
+   "side": "attacker",
+   "detachment": "Rage-cursed Onslaught",
+   "name_en": "Carmine Reliquary",
+   "name_zh": "赤红圣匣",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "Scouts 6 + 震慑重骰——部署/士气域"
+   ],
+   "provenance": {
+    "current_text": "db enhancements.description id=000010645002",
+    "base_text": "Wahapedia 现文（PR9 工作单：FP 未触及或已滚入，11 版仍现行）",
+    "synthesis": "无需合成",
+    "text_sha256": "fba3d4d9b3a74cb7087610d42be6dcf7cac13c83eac092e6ae47b0b652beae92"
+   },
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "enhancements",
+   "id": "000010645003",
+   "side": "attacker",
+   "detachment": "Rage-cursed Onslaught",
+   "name_en": "Master of the Red Thirst",
+   "name_zh": "猩渴宗师",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "Fights First——先手判定域（fight_order）"
+   ],
+   "provenance": {
+    "current_text": "db enhancements.description id=000010645003",
+    "base_text": "Wahapedia 现文（PR9 工作单：FP 未触及或已滚入，11 版仍现行）",
+    "synthesis": "无需合成",
+    "text_sha256": "8188280f4da6dada10dbad8d3129bea1cfe485d362534e23b167671ecfdc95cd"
+   },
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "enhancements",
+   "id": "000010645004",
+   "side": "attacker",
+   "detachment": "Rage-cursed Onslaught",
+   "name_en": "Sanguinary Tear (Aura)",
+   "name_zh": "圣血之泪",
+   "status": "partial",
+   "effects": [
+    {
+     "phase": "wound",
+     "op": "s_improve",
+     "params": [
+      1
+     ],
+     "condition": [],
+     "source": "圣血之泪（死亡连武器 S+1）"
+    }
+   ],
+   "requires_toggles": [
+    "bearer_leading"
+   ],
+   "not_modeled_notes_zh": [
+    "光环前提：死亡连单位在携带者 6 寸内（opt-in 自查）",
+    "全武器 S+1（远程近战同享）"
+   ],
+   "provenance": {
+    "current_text": "db enhancements.description id=000010645004",
+    "base_text": "Wahapedia 现文（PR9 工作单：FP 未触及或已滚入，11 版仍现行）",
+    "synthesis": "无需合成",
+    "text_sha256": "995ec118a23d192d125c0670006a8e368dee0b39af0aa1d737689d2aec2731bd"
+   },
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "enhancements",
+   "id": "000010645005",
+   "side": "attacker",
+   "detachment": "Rage-cursed Onslaught",
+   "name_en": "Angel’s Fang",
+   "name_zh": "天使之牙",
+   "status": "partial",
+   "effects": [
+    {
+     "phase": "hit",
+     "op": "extra_hits",
+     "params": [
+      2
+     ],
+     "condition": [
+      "melee_target_has_keyword",
+      "character"
+     ],
+     "source": "天使之牙（对人物 [SUSTAINED HITS 2]）"
+    },
+    {
+     "phase": "hit",
+     "op": "extra_hits",
+     "params": [
+      2
+     ],
+     "condition": [
+      "melee_target_has_keyword",
+      "monster"
+     ],
+     "source": "天使之牙（对巨兽 [SUSTAINED HITS 2]）"
+    },
+    {
+     "phase": "hit",
+     "op": "extra_hits",
+     "params": [
+      2
+     ],
+     "condition": [
+      "melee_target_has_keyword",
+      "vehicle"
+     ],
+     "source": "天使之牙（对载具 [SUSTAINED HITS 2]）"
+    }
+   ],
+   "requires_toggles": [
+    "bearer_leading"
+   ],
+   "not_modeled_notes_zh": [
+    "仅携带者近战攻击——单模型（人物）口径模拟"
+   ],
+   "provenance": {
+    "current_text": "db enhancements.description id=000010645005",
+    "base_text": "Wahapedia 现文（PR9 工作单：FP 未触及或已滚入，11 版仍现行）",
+    "synthesis": "无需合成",
+    "text_sha256": "c7789131717b98cf4a8a0f38cb05d2c0e8c05ed0dce5da6bad1f366fa0ef7325"
+   },
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "enhancements",
+   "id": "fp11e-ba-grace-e1",
+   "side": "attacker",
+   "detachment": "Legacy of Grace",
+   "name_en": "Blood Boil",
+   "name_zh": "沸血",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "[ANTI: non-MONSTER/VEHICLE 5+]——否定式关键词无条件通道",
+    "重骰伤害骰——伤害重骰无通道"
+   ],
+   "provenance": {
+    "current_text": "db enhancements.description id=fp11e-ba-grace-e1",
+    "base_text": "Faction Pack Blood Angels page_002.md（fp_rules 补录 fp_new）",
+    "synthesis": "11 版新分队，Wahapedia 无源，DB 行即 FP 原文",
+    "text_sha256": "0e28a2e2a1cafef2423bb64fa2ebad415685f7144270433a072a6bc27f32b25e"
+   },
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "enhancements",
+   "id": "fp11e-ba-grace-e2",
+   "side": "target",
+   "detachment": "Legacy of Grace",
+   "name_en": "Aureole of the Angel",
+   "name_zh": "天使光轮",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "-3 寸侦测范围——侦测域"
+   ],
+   "provenance": {
+    "current_text": "db enhancements.description id=fp11e-ba-grace-e2",
+    "base_text": "Faction Pack Blood Angels page_002.md（fp_rules 补录 fp_new）",
+    "synthesis": "11 版新分队，Wahapedia 无源，DB 行即 FP 原文",
+    "text_sha256": "fb408a082c1a2719f7909948b0753e176a71de1c2d687f75512187df9450877f"
+   },
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "enhancements",
+   "id": "fp11e-ba-speartip-e1",
+   "side": "attacker",
+   "detachment": "Encarmine Speartip",
+   "name_en": "Angelic Executioner",
+   "name_zh": "天使处刑者",
+   "status": "partial",
+   "effects": [
+    {
+     "phase": "hit",
+     "op": "extra_hits",
+     "params": [
+      1
+     ],
+     "condition": [
+      "phase_melee"
+     ],
+     "source": "天使处刑者（近战 [SUSTAINED HITS 1]——连击分支）"
+    }
+   ],
+   "requires_toggles": [
+    "bearer_leading"
+   ],
+   "not_modeled_notes_zh": [
+    "[LETHAL HITS] 或 [SUSTAINED HITS 1] 二选一——按连击分支编码；需致命分支请勿点名本条"
+   ],
+   "provenance": {
+    "current_text": "db enhancements.description id=fp11e-ba-speartip-e1",
+    "base_text": "Faction Pack Blood Angels page_003.md（fp_rules 补录 fp_new）",
+    "synthesis": "11 版新分队，Wahapedia 无源，DB 行即 FP 原文",
+    "text_sha256": "c2d5596233e45dbb4b17991d8fcf668551eb4648c054d644f69563f46622910c"
+   },
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "enhancements",
+   "id": "fp11e-ba-speartip-e2",
+   "side": "attacker",
+   "detachment": "Encarmine Speartip",
+   "name_en": "Shadow of Abomination",
+   "name_zh": "憎恶之影",
+   "status": "partial",
+   "effects": [
+    {
+     "phase": "damage",
+     "op": "modify",
+     "params": [
+      1
+     ],
+     "condition": [
+      "phase_melee"
+     ],
+     "source": "憎恶之影（近战 +1 D）"
+    }
+   ],
+   "requires_toggles": [
+    "bearer_leading"
+   ],
+   "not_modeled_notes_zh": [
+    "(Once per battle, per army) 一次性——假设本次近战已使用",
+    "仅携带者近战攻击——单模型（人物）口径模拟"
+   ],
+   "provenance": {
+    "current_text": "db enhancements.description id=fp11e-ba-speartip-e2",
+    "base_text": "Faction Pack Blood Angels page_003.md（fp_rules 补录 fp_new）",
+    "synthesis": "11 版新分队，Wahapedia 无源，DB 行即 FP 原文",
+    "text_sha256": "112ac5b64b20bd4f2106e52eb2265c3b54400d7c5c8e366bae3f439e33a65a57"
+   },
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "enhancements",
+   "id": "fp11e-ba-doomed-e1",
+   "side": "attacker",
+   "detachment": "Wrath of the Doomed",
+   "name_en": "Instinctive Interception",
+   "name_zh": "本能拦截",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "英勇介入 -1 CP——CP 经济域"
+   ],
+   "provenance": {
+    "current_text": "db enhancements.description id=fp11e-ba-doomed-e1",
+    "base_text": "Faction Pack Blood Angels page_004.md（fp_rules 补录 fp_new）",
+    "synthesis": "11 版新分队，Wahapedia 无源，DB 行即 FP 原文",
+    "text_sha256": "15aff792db012320dcf0d5937b04947f2a5e00f2f5bcc079dc18a36da00a8f12"
+   },
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "enhancements",
+   "id": "fp11e-ba-doomed-e2",
+   "side": "attacker",
+   "detachment": "Wrath of the Doomed",
+   "name_en": "On the Archtraitor's Bridge",
+   "name_zh": "大叛贼舰桥上",
+   "status": "partial",
+   "effects": [
+    {
+     "phase": "attacks",
+     "op": "modify",
+     "params": [
+      2
+     ],
+     "condition": [
+      "phase_melee"
+     ],
+     "source": "大叛贼舰桥上（携带者近战 A+2）"
+    }
+   ],
+   "requires_toggles": [
+    "bearer_leading"
+   ],
+   "not_modeled_notes_zh": [
+    "仅携带者近战攻击——单模型（人物）口径模拟；整单位 loadout 会高估"
+   ],
+   "provenance": {
+    "current_text": "db enhancements.description id=fp11e-ba-doomed-e2",
+    "base_text": "Faction Pack Blood Angels page_004.md（fp_rules 补录 fp_new）",
+    "synthesis": "11 版新分队，Wahapedia 无源，DB 行即 FP 原文",
+    "text_sha256": "6664d500144ea958d503f96fcdb559a17263d374936a51de2713c5f4c647a74f"
+   },
+   "encoded_by": "manual-2026-07-19"
+  }
+ ]
+}

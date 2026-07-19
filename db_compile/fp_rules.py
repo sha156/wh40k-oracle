@@ -189,6 +189,12 @@ def _apply_inserts(conn, patches: List[dict], report: Dict) -> None:
     不匹配让路告警（防 id 撞车）；③**同名异 id 已存在**（上游将来自己补录）→
     让路告警不插，synthetic 行绝不与上游行留双胞胎；④stratagems/enhancements
     插入行标 fp_status='added_11e' 便于溯源与将来退役。
+
+    P7-PR9 豁免旗标 `expect_duplicate_name`：GW 确实会跨分队复用规则名（首例
+    圣血天使 Legacy of the Angel 同时是 Legacy of Grace 与 Angelic Inheritors
+    的分队规则名），此时同名守卫会误拦合法补录。补丁显式带
+    `"expect_duplicate_name": true`（附证据注记）方可跳过③——默认仍拦，
+    豁免必须逐条有意为之。
     """
     for p in patches:
         table = p.get("table")
@@ -220,7 +226,7 @@ def _apply_inserts(conn, patches: List[dict], report: Dict) -> None:
             f"SELECT id FROM {table} WHERE {name_col} = ? COLLATE NOCASE "
             f"AND COALESCE({group_col}, '') = ?",
             (values.get(name_col), values.get(group_col) or "")).fetchone()
-        if dup is not None:
+        if dup is not None and not p.get("expect_duplicate_name"):
             report["ins_mismatch"].append(
                 {**slim, "reason": f"同名行已存在（id={dup[0]}，疑上游已补录），"
                                    f"synthetic 插入让路", "db_id": dup[0]})

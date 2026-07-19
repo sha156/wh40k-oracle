@@ -340,6 +340,23 @@ class TestInserts:
         assert rep["ins_applied"] == 0
         assert len(rep["ins_mismatch"]) == 1
 
+    def test_expect_duplicate_name_overrides_guard(self, tmp_path):
+        # P7-PR9：GW 跨分队复用规则名（首例 BA Legacy of the Angel）——补丁显式带
+        # expect_duplicate_name 才放行同名插入；不带旗标仍拦（上一测试保证）
+        db = _db(tmp_path)
+        conn = sqlite3.connect(str(db))
+        conn.execute(
+            "INSERT INTO stratagems (id, faction, detachment, name_en, text_zh) "
+            "VALUES ('000099999', 'TAU', 'Advanced Acquisition Cadre', "
+            "'Marker Beacon', 'upstream text')")
+        conn.commit()
+        conn.close()
+        patch = _insert_patch()
+        patch["inserts"][0]["expect_duplicate_name"] = True
+        rep = apply_fp_rules(db, patch)
+        assert rep["ins_applied"] == 1
+        assert not rep["ins_mismatch"]
+
     def test_whitelists(self, tmp_path):
         db = _db(tmp_path)
         rep = apply_fp_rules(db, _insert_patch(table="units"))
@@ -359,12 +376,14 @@ class TestInserts:
         #   Slaughter 三全新分队各 1 规则+3 战略+2 增强）
         # + 死亡守卫 12 条（PR8：Contagion Engines / Paragons of Putrescence
         #   两全新分队各 1 规则+3 战略+2 增强）
+        # + 圣血天使 18 条（PR9：Legacy of Grace / Encarmine Speartip / Wrath of
+        #   the Doomed 三全新分队各 1 规则+3 战略+2 增强）
         import json
         from pathlib import Path
         data = json.loads(Path("db_compile/fp_rules_patches.json").read_text(
             encoding="utf-8"))
         ins = data.get("inserts", [])
-        assert len(ins) == 60
+        assert len(ins) == 78
         ids = {p["values"]["id"] for p in ins}
         assert ids == {"fp11e-tau-aac-det", "fp11e-tau-aac-s1", "fp11e-tau-aac-s2",
                        "fp11e-tau-aac-s3", "fp11e-tau-aux-gbu",
@@ -395,7 +414,16 @@ class TestInserts:
                        "fp11e-dg-engines-e1", "fp11e-dg-engines-e2",
                        "fp11e-dg-paragons-det", "fp11e-dg-paragons-s1",
                        "fp11e-dg-paragons-s2", "fp11e-dg-paragons-s3",
-                       "fp11e-dg-paragons-e1", "fp11e-dg-paragons-e2"}
+                       "fp11e-dg-paragons-e1", "fp11e-dg-paragons-e2",
+                       "fp11e-ba-grace-det", "fp11e-ba-grace-s1",
+                       "fp11e-ba-grace-s2", "fp11e-ba-grace-s3",
+                       "fp11e-ba-grace-e1", "fp11e-ba-grace-e2",
+                       "fp11e-ba-speartip-det", "fp11e-ba-speartip-s1",
+                       "fp11e-ba-speartip-s2", "fp11e-ba-speartip-s3",
+                       "fp11e-ba-speartip-e1", "fp11e-ba-speartip-e2",
+                       "fp11e-ba-doomed-det", "fp11e-ba-doomed-s1",
+                       "fp11e-ba-doomed-s2", "fp11e-ba-doomed-s3",
+                       "fp11e-ba-doomed-e1", "fp11e-ba-doomed-e2"}
         for p in ins:
             assert p.get("fp_source")
             assert p["values"].get("id", "").startswith("fp11e-")
