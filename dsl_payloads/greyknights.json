@@ -1,0 +1,1935 @@
+{
+ "_comment": "P7 阵营技能 DSL 唯一真源（灰骑士 Grey Knights，P7-PR16）。灵能/传送/精英近战阵营，可编率中等——大量机制（深入奇袭/传送/战略预备队再部署、涌动/普通移动、致命伤爆发、重投1（非重投失败）、[PSYCHIC] 关键词武器筛选、仅致命伤 FNP、[PRECISION]、圣化之地区域态、战栗检定、冲锋骰、CP 经济、火力守望、ANTI-X）无战斗链载体，宁漏不错编。零新引擎通道（第七个纯编码 PR 序列延续）：全部落既有通道。已编：crit 命中5+、无视命中修正、守方 FNP/掩体（Stealth）/无效保护/命中-1、[SUSTAINED]/[DEV]/[TWIN-LINKED]/[LANCE] 授予、近战 A+1/+3、S+2/+4、AP 改善（weapon_filter 风暴爆弹枪）、致伤重投、对 MONSTER/VEHICLE 致伤+1、守方 T+2。阶段门严核：冲锋后触发（圣化屠戮/彼界之刃 [LANCE]）挂 melee_charging；掩体/无效保护/AP 改善类挂 phase_shooting；A+1/+3、S+4 挂 phase_melee。防高估不编：Dauntless Champions 严格 S<T（引擎仅 S≤T tag，S=T 边界过度施加）；SHINING RESOLVE 射击限定 S>T（wound_s_gt_t 无射击门控，裸挂近战误放行，同兽人「刀枪不入」先例）；[PSYCHIC] 关键词武器筛选（Channelled Force/Truesilver Channelling，非名字子串不可选）；仅致命伤/仅伤害1 FNP（无法按条件化）；重投1、ANTI-X、[PRECISION]、致命伤/移动/预备队/战栗/CP/OC 类。A/B 工作单见 docs/superpowers/plans/2026-07-20-p7-pr16-greyknights-worklist.md。",
+ "dsl_version": 1,
+ "faction": "GK",
+ "entries": [
+  {
+   "table": "abilities",
+   "id": "det000009484",
+   "side": "attacker",
+   "detachment": "Void Purge Force",
+   "name_en": "An Urgent Duty",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "机动/冲锋：GK 单位 Advance 与 Charge 骰 +1——移动/冲锋骰无战斗链载体"
+   ],
+   "provenance": {},
+   "encoded_by": "manual-2026-07-20",
+   "materialize": {
+    "from_table": "detachments",
+    "from_id": "000009484",
+    "from_column": "rule_text"
+   }
+  },
+  {
+   "table": "abilities",
+   "id": "det000009492",
+   "side": "attacker",
+   "detachment": "Baneslayer Strike",
+   "name_en": "Pre-Emptive Strike",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "首回合 Reserves 步骤深入奇袭布置——预备队/部署机制无载体"
+   ],
+   "provenance": {},
+   "encoded_by": "manual-2026-07-20",
+   "materialize": {
+    "from_table": "detachments",
+    "from_id": "000009492",
+    "from_column": "rule_text"
+   }
+  },
+  {
+   "table": "abilities",
+   "id": "det000009776",
+   "side": "attacker",
+   "detachment": "Warpbane Task Force",
+   "name_en": "Hallowed Ground",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "命中重投1（非重投失败）；净化者小队/整个处于圣化之地时可完整重投命中——重骰1无载体、圣化之地区域态无载体"
+   ],
+   "provenance": {},
+   "encoded_by": "manual-2026-07-20",
+   "materialize": {
+    "from_table": "detachments",
+    "from_id": "000009776",
+    "from_column": "rule_text"
+   }
+  },
+  {
+   "table": "abilities",
+   "id": "det000010347",
+   "side": "attacker",
+   "detachment": "Brotherhood Strike",
+   "name_en": "Fury of Titan",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "深入奇袭登场后命中/致伤各重投1——重骰1 + 深入奇袭门无载体"
+   ],
+   "provenance": {},
+   "encoded_by": "manual-2026-07-20",
+   "materialize": {
+    "from_table": "detachments",
+    "from_id": "000010347",
+    "from_column": "rule_text"
+   }
+  },
+  {
+   "table": "abilities",
+   "id": "det000010351",
+   "side": "attacker",
+   "detachment": "Hallowed Conclave",
+   "name_en": "Duty Before All",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "终结者撤退回合仍可射击/宣告冲锋——资格/移动机制无载体"
+   ],
+   "provenance": {},
+   "encoded_by": "manual-2026-07-20",
+   "materialize": {
+    "from_table": "detachments",
+    "from_id": "000010351",
+    "from_column": "rule_text"
+   }
+  },
+  {
+   "table": "abilities",
+   "id": "det000010355",
+   "side": "attacker",
+   "detachment": "Banishers",
+   "name_en": "Channelled Force",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "领导力检定通过后 [PSYCHIC] 近战武器获 [SUSTAINED]/[LETHAL]（二选一）——[PSYCHIC] 关键词筛选非名字子串不可选（同单位非灵能武器会被误加）+ 领导力检定随机 + 二选一"
+   ],
+   "provenance": {},
+   "encoded_by": "manual-2026-07-20",
+   "materialize": {
+    "from_table": "detachments",
+    "from_id": "000010355",
+    "from_column": "rule_text"
+   }
+  },
+  {
+   "table": "abilities",
+   "id": "det000010359",
+   "side": "attacker",
+   "detachment": "Sanctic Spearhead",
+   "name_en": "Mailed Fist",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "载具 Advance 免骰、+6\"M、远程武器获 [ASSAULT]——移动/[ASSAULT]（加速后射击）无载体"
+   ],
+   "provenance": {},
+   "encoded_by": "manual-2026-07-20",
+   "materialize": {
+    "from_table": "detachments",
+    "from_id": "000010359",
+    "from_column": "rule_text"
+   }
+  },
+  {
+   "table": "abilities",
+   "id": "det000010363",
+   "side": "attacker",
+   "detachment": "Augurium Task Force",
+   "name_en": "Prescient Redeployment",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "第二战轮起战略预备队再部署——预备队/移动机制无载体"
+   ],
+   "provenance": {},
+   "encoded_by": "manual-2026-07-20",
+   "materialize": {
+    "from_table": "detachments",
+    "from_id": "000010363",
+    "from_column": "rule_text"
+   }
+  },
+  {
+   "table": "abilities",
+   "id": "detfp11e-gk-argent",
+   "side": "attacker",
+   "detachment": "Argent Assault",
+   "name_en": "Dauntless Champions",
+   "name_zh": "无畏勇士",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "PALADIN 近战 S<T（严格小于）→ 致伤+1；引擎仅 melee_s_lte_t(S≤T) tag，在 S=T 边界会过度施加，strictly-less-than 无精确载体，不编"
+   ],
+   "provenance": {},
+   "encoded_by": "manual-2026-07-20",
+   "materialize": {
+    "from_table": "detachments",
+    "from_id": "fp11e-gk-argent",
+    "from_column": "rule_text"
+   }
+  },
+  {
+   "table": "abilities",
+   "id": "detfp11e-gk-fires",
+   "side": "attacker",
+   "detachment": "Fires of Purgation",
+   "name_en": "Searing Soulflame",
+   "name_zh": "灼魂圣焰",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "被钉住的敌方单位战栗检定 -1——战栗（battle-shock）机制无载体"
+   ],
+   "provenance": {},
+   "encoded_by": "manual-2026-07-20",
+   "materialize": {
+    "from_table": "detachments",
+    "from_id": "fp11e-gk-fires",
+    "from_column": "rule_text"
+   }
+  },
+  {
+   "table": "abilities",
+   "id": "detfp11e-gk-immaterial",
+   "side": "attacker",
+   "detachment": "Immaterial Interdiction",
+   "name_en": "Echojump",
+   "name_zh": "回响跃迁",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "射击后涌动移动 D6+1\"、换取放弃 Personal Teleporters——移动机制无载体"
+   ],
+   "provenance": {},
+   "encoded_by": "manual-2026-07-20",
+   "materialize": {
+    "from_table": "detachments",
+    "from_id": "fp11e-gk-immaterial",
+    "from_column": "rule_text"
+   }
+  },
+  {
+   "table": "stratagems",
+   "id": "000010365002",
+   "side": "attacker",
+   "detachment": "Augurium Task Force",
+   "name_en": "AGGRESSIVE ANTICIPATION",
+   "name_zh": null,
+   "status": "partial",
+   "effects": [
+    {
+     "phase": "hit",
+     "op": "ignore_hit_mods",
+     "params": [],
+     "source": "谨慎预判：无视本单位攻击的命中/BS 修正"
+    }
+   ],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "引擎按 [PSYCHIC] 语义忽略命中骰与 BS 特征值的负修正（掩体、烟幕、减命中等）；忽略正修正无收益故不建模；WHEN=射击或战斗均适用（无阶段门恰对）"
+   ],
+   "provenance": {
+    "text_sha256": "20f559c529eed0152e05f1d141481cd9eb040054f3253e3d535adab7acd3f406"
+   },
+   "encoded_by": "manual-2026-07-20"
+  },
+  {
+   "table": "stratagems",
+   "id": "000010365003",
+   "side": "attacker",
+   "detachment": "Augurium Task Force",
+   "name_en": "APPOINTED HOUR",
+   "name_zh": null,
+   "status": "encoded",
+   "effects": [
+    {
+     "phase": "hit",
+     "op": "crit_threshold",
+     "params": [
+      5
+     ],
+     "source": "既定之刻：未修正命中5+ 即暴击"
+    }
+   ],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [],
+   "provenance": {
+    "text_sha256": "e75584573f32ffcd4662051d1b0cb88ee754769248c9dbfefd4bbf56e3a418dc"
+   },
+   "encoded_by": "manual-2026-07-20"
+  },
+  {
+   "table": "stratagems",
+   "id": "000010365004",
+   "side": "target",
+   "detachment": "Augurium Task Force",
+   "name_en": "FOREWARNED EVASION",
+   "name_zh": null,
+   "status": "encoded",
+   "effects": [
+    {
+     "phase": "hit",
+     "op": "modify",
+     "params": [
+      -1
+     ],
+     "source": "预警闪避：攻击本 WALKER 单位命中-1"
+    }
+   ],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [],
+   "provenance": {
+    "text_sha256": "dd3ac1bb89fb6af2e52dafe8355d0ef65c2ca435a9267a5454cf2429fad036d4"
+   },
+   "encoded_by": "manual-2026-07-20"
+  },
+  {
+   "table": "stratagems",
+   "id": "000010365005",
+   "side": "attacker",
+   "detachment": "Augurium Task Force",
+   "name_en": "NECESSARY END",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "阵亡模型可于攻击方结算后反打（D6>战轮数）——串行反打/复活时序无载体"
+   ],
+   "provenance": {},
+   "encoded_by": "manual-2026-07-20"
+  },
+  {
+   "table": "stratagems",
+   "id": "000010365006",
+   "side": "attacker",
+   "detachment": "Augurium Task Force",
+   "name_en": "REDIRECTED STRIKE",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "置入战略预备队——预备队机制无载体"
+   ],
+   "provenance": {},
+   "encoded_by": "manual-2026-07-20"
+  },
+  {
+   "table": "stratagems",
+   "id": "000010365007",
+   "side": "attacker",
+   "detachment": "Augurium Task Force",
+   "name_en": "MIRAGE OF ECHOES",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "置入战略预备队——预备队机制无载体"
+   ],
+   "provenance": {},
+   "encoded_by": "manual-2026-07-20"
+  },
+  {
+   "table": "stratagems",
+   "id": "000009494002",
+   "side": "target",
+   "detachment": "Baneslayer Strike",
+   "name_en": "ARMOURED AEGIS",
+   "name_zh": null,
+   "status": "encoded",
+   "effects": [
+    {
+     "phase": "fnp",
+     "op": "fnp",
+     "params": [
+      4
+     ],
+     "source": "装甲庇护：CHARACTER 获 FNP4+"
+    }
+   ],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [],
+   "provenance": {
+    "text_sha256": "3b1b4373c8daf4f1cd7ed1461dd089b246f69918b605a6ae669d17347aaaed5e"
+   },
+   "encoded_by": "manual-2026-07-20"
+  },
+  {
+   "table": "stratagems",
+   "id": "000009494003",
+   "side": "attacker",
+   "detachment": "Baneslayer Strike",
+   "name_en": "SANCTIC CIRCLE",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "据点争夺 + 领导力检定夺控——目标点/据点机制无载体"
+   ],
+   "provenance": {},
+   "encoded_by": "manual-2026-07-20"
+  },
+  {
+   "table": "stratagems",
+   "id": "000009494004",
+   "side": "attacker",
+   "detachment": "Baneslayer Strike",
+   "name_en": "RELENTLESS BOARDERS",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "撤退回合仍可宣告冲锋——资格/移动机制无载体"
+   ],
+   "provenance": {},
+   "encoded_by": "manual-2026-07-20"
+  },
+  {
+   "table": "stratagems",
+   "id": "000009494005",
+   "side": "attacker",
+   "detachment": "Baneslayer Strike",
+   "name_en": "PSYBOLT AMMUNITION",
+   "name_zh": null,
+   "status": "encoded",
+   "effects": [
+    {
+     "phase": "save",
+     "op": "ap_improve",
+     "params": [
+      1
+     ],
+     "source": "灵能弹药：风暴爆弹枪 AP 改善1"
+    }
+   ],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [],
+   "provenance": {
+    "text_sha256": "40de8b8f80f6d1a79ab50d77983e08d65f2fabb44bf7c38f79867e8d9b9854f3"
+   },
+   "encoded_by": "manual-2026-07-20",
+   "weapon_filter": "storm bolter"
+  },
+  {
+   "table": "stratagems",
+   "id": "000010357002",
+   "side": "attacker",
+   "detachment": "Banishers",
+   "name_en": "HEXWROUGHT REPRISAL",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "致命伤反射——致命伤/伤害反射机制无载体"
+   ],
+   "provenance": {},
+   "encoded_by": "manual-2026-07-20"
+  },
+  {
+   "table": "stratagems",
+   "id": "000010357003",
+   "side": "target",
+   "detachment": "Banishers",
+   "name_en": "WARDING CHANT",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "对未修正伤害特征值=1 的攻击 FNP5+——引擎 FNP 作用于全部伤害，无法按武器伤害档条件化，宁漏不错编"
+   ],
+   "provenance": {},
+   "encoded_by": "manual-2026-07-20"
+  },
+  {
+   "table": "stratagems",
+   "id": "000010357004",
+   "side": "attacker",
+   "detachment": "Banishers",
+   "name_en": "CHAOS BANE",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "远程 [ANTI-CHAOS 4+]——ANTI-X（按目标关键词提升致伤暴击阈值）无载体"
+   ],
+   "provenance": {},
+   "encoded_by": "manual-2026-07-20"
+  },
+  {
+   "table": "stratagems",
+   "id": "000010357005",
+   "side": "attacker",
+   "detachment": "Banishers",
+   "name_en": "CELERITY",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "加速回合仍可宣告冲锋——资格/移动机制无载体"
+   ],
+   "provenance": {},
+   "encoded_by": "manual-2026-07-20"
+  },
+  {
+   "table": "stratagems",
+   "id": "000010357006",
+   "side": "attacker",
+   "detachment": "Banishers",
+   "name_en": "CIRCLE OF SANCTUARY",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "预备队登场压制（12\"内不得作为增援布置）——预备队/部署机制无载体"
+   ],
+   "provenance": {},
+   "encoded_by": "manual-2026-07-20"
+  },
+  {
+   "table": "stratagems",
+   "id": "000010357007",
+   "side": "attacker",
+   "detachment": "Banishers",
+   "name_en": "SHADOW OF ANARCH",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "普通移动 6\"/置入预备队——移动/预备队机制无载体"
+   ],
+   "provenance": {},
+   "encoded_by": "manual-2026-07-20"
+  },
+  {
+   "table": "stratagems",
+   "id": "000010349002",
+   "side": "attacker",
+   "detachment": "Brotherhood Strike",
+   "name_en": "TRUESILVER CHANNELLING",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "[PSYCHIC] 近战武器获 [DEVASTATING WOUNDS]——[PSYCHIC] 关键词筛选非名字子串不可选（同单位非灵能武器会被误加），不编"
+   ],
+   "provenance": {},
+   "encoded_by": "manual-2026-07-20"
+  },
+  {
+   "table": "stratagems",
+   "id": "000010349003",
+   "side": "attacker",
+   "detachment": "Brotherhood Strike",
+   "name_en": "COMBAT MANIFESTATION",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "深入奇袭布置——部署机制无载体"
+   ],
+   "provenance": {},
+   "encoded_by": "manual-2026-07-20"
+  },
+  {
+   "table": "stratagems",
+   "id": "000010349004",
+   "side": "attacker",
+   "detachment": "Brotherhood Strike",
+   "name_en": "PURGATION PATTERN",
+   "name_zh": null,
+   "status": "partial",
+   "effects": [
+    {
+     "phase": "hit",
+     "op": "extra_hits",
+     "params": [
+      1
+     ],
+     "source": "涤净弹幕：射击阶段武器获 [SUSTAINED HITS 1]",
+     "condition": [
+      "phase_shooting"
+     ]
+    }
+   ],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "假设本单位本回合借深入奇袭登场（战略前提）；[SUSTAINED HITS 1] 仅本射击阶段"
+   ],
+   "provenance": {
+    "text_sha256": "3b85b3c1cca87a91dfefd6c8ccc8e8dd3c5d55a278140f169af510022ba4be59"
+   },
+   "encoded_by": "manual-2026-07-20"
+  },
+  {
+   "table": "stratagems",
+   "id": "000010349005",
+   "side": "attacker",
+   "detachment": "Brotherhood Strike",
+   "name_en": "DUTY UNENDING",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "置入战略预备队——预备队机制无载体"
+   ],
+   "provenance": {},
+   "encoded_by": "manual-2026-07-20"
+  },
+  {
+   "table": "stratagems",
+   "id": "000010349006",
+   "side": "target",
+   "detachment": "Brotherhood Strike",
+   "name_en": "SHINING VEIL",
+   "name_zh": null,
+   "status": "encoded",
+   "effects": [
+    {
+     "phase": "save",
+     "op": "cover",
+     "params": [],
+     "source": "闪耀帷幕：获得 Stealth（11版=掩体，仅射击）",
+     "condition": [
+      "phase_shooting"
+     ]
+    }
+   ],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [],
+   "provenance": {
+    "text_sha256": "29d56d56757623d524294bf3989d5a4f1403f3278ebeb947601be563dbb7ff8f"
+   },
+   "encoded_by": "manual-2026-07-20"
+  },
+  {
+   "table": "stratagems",
+   "id": "000010349007",
+   "side": "attacker",
+   "detachment": "Brotherhood Strike",
+   "name_en": "EXPEDITIOUS EXIT",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "置入战略预备队——预备队机制无载体"
+   ],
+   "provenance": {},
+   "encoded_by": "manual-2026-07-20"
+  },
+  {
+   "table": "stratagems",
+   "id": "000010353002",
+   "side": "attacker",
+   "detachment": "Hallowed Conclave",
+   "name_en": "GIANTS OF THE BATTLEFIELD",
+   "name_zh": null,
+   "status": "encoded",
+   "effects": [
+    {
+     "phase": "attacks",
+     "op": "modify",
+     "params": [
+      1
+     ],
+     "source": "战场巨人：终结者近战武器 A+1",
+     "condition": [
+      "phase_melee"
+     ]
+    }
+   ],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [],
+   "provenance": {
+    "text_sha256": "c0b4fe3a4f0a26138706b2a137f6696c02de90b1e33f30b95f0b1b9f473da232"
+   },
+   "encoded_by": "manual-2026-07-20"
+  },
+  {
+   "table": "stratagems",
+   "id": "000010353003",
+   "side": "attacker",
+   "detachment": "Hallowed Conclave",
+   "name_en": "UNENDING FIDELITY",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "阵亡模型可反打射击/近战（4+）——串行反打时序无载体"
+   ],
+   "provenance": {},
+   "encoded_by": "manual-2026-07-20"
+  },
+  {
+   "table": "stratagems",
+   "id": "000010353004",
+   "side": "attacker",
+   "detachment": "Hallowed Conclave",
+   "name_en": "POINT-BLANK PURGATION",
+   "name_zh": null,
+   "status": "partial",
+   "effects": [
+    {
+     "phase": "wound",
+     "op": "reroll",
+     "params": [
+      "fail"
+     ],
+     "source": "近距涤净：风暴爆弹枪 [TWIN-LINKED] 致伤重投",
+     "condition": [
+      "phase_shooting"
+     ]
+    }
+   ],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "[TWIN-LINKED]（致伤重投）已编；[PISTOL]（接战中可射击）无载体"
+   ],
+   "provenance": {
+    "text_sha256": "ebe2f6320c8b0e29a442b59fbab39438100ac167a845c3fe710af261fa7f28a4"
+   },
+   "encoded_by": "manual-2026-07-20",
+   "weapon_filter": "storm bolter"
+  },
+  {
+   "table": "stratagems",
+   "id": "000010353005",
+   "side": "attacker",
+   "detachment": "Hallowed Conclave",
+   "name_en": "GRIND THEM UNDERFOOT",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "冲锋后每模型 D6 → 4+ 致命伤——致命伤机制无载体"
+   ],
+   "provenance": {},
+   "encoded_by": "manual-2026-07-20"
+  },
+  {
+   "table": "stratagems",
+   "id": "000010353006",
+   "side": "attacker",
+   "detachment": "Hallowed Conclave",
+   "name_en": "PRECOGNITIVE STRATEGIES",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "普通移动 D6\"——移动机制无载体"
+   ],
+   "provenance": {},
+   "encoded_by": "manual-2026-07-20"
+  },
+  {
+   "table": "stratagems",
+   "id": "000010353007",
+   "side": "target",
+   "detachment": "Hallowed Conclave",
+   "name_en": "SHINING RESOLVE",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "对方射击阶段限定的 S>T 被伤-1——引擎 wound_s_gt_t tag 无射击门控，裸挂会在近战误放行（同兽人「刀枪不入」/PR13「闪避协议」先例），无射击门控 S>T 载体不编"
+   ],
+   "provenance": {},
+   "encoded_by": "manual-2026-07-20"
+  },
+  {
+   "table": "stratagems",
+   "id": "000010361002",
+   "side": "target",
+   "detachment": "Sanctic Spearhead",
+   "name_en": "TRUESILVER WILL",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "对致命伤 FNP4+——引擎 FNP 作用于全部伤害，无法仅对致命伤条件化"
+   ],
+   "provenance": {},
+   "encoded_by": "manual-2026-07-20"
+  },
+  {
+   "table": "stratagems",
+   "id": "000010361003",
+   "side": "attacker",
+   "detachment": "Sanctic Spearhead",
+   "name_en": "ABOMINUS-CLASS TARGETS",
+   "name_zh": null,
+   "status": "partial",
+   "effects": [
+    {
+     "phase": "wound",
+     "op": "modify",
+     "params": [
+      1
+     ],
+     "source": "湮灭级目标：对 MONSTER 致伤+1",
+     "condition": [
+      "target_has_keyword",
+      "monster"
+     ]
+    },
+    {
+     "phase": "wound",
+     "op": "modify",
+     "params": [
+      1
+     ],
+     "source": "湮灭级目标：对 VEHICLE 致伤+1",
+     "condition": [
+      "target_has_keyword",
+      "vehicle"
+     ]
+    }
+   ],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "MONSTER 或 VEHICLE 二关键字，引擎单关键字 tag 无 OR——拆两条编；仅当目标同时具两关键字（现实近乎不存在）会双计+2；WHEN 原文即「Your Shooting phase or the Fight phase」双阶段，故用裸 target_has_keyword（无阶段门恰对，同 WE「恶魔之力」DAEMONIC STRENGTH 先例：裸 target_has_keyword 双阶段对凶兽/载具 OR 拆分；区别于 Fight-only 的 melee_target_has_keyword）"
+   ],
+   "provenance": {
+    "text_sha256": "1b3bb20a1f8ba14025904d72bb3e915d672a924b147ff3ae509b4025f37c42f9"
+   },
+   "encoded_by": "manual-2026-07-20"
+  },
+  {
+   "table": "stratagems",
+   "id": "000010361004",
+   "side": "attacker",
+   "detachment": "Sanctic Spearhead",
+   "name_en": "ARMOURED AEGIS",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "回复至多 3 点失去的伤口——治疗机制无载体"
+   ],
+   "provenance": {},
+   "encoded_by": "manual-2026-07-20"
+  },
+  {
+   "table": "stratagems",
+   "id": "000010361005",
+   "side": "attacker",
+   "detachment": "Sanctic Spearhead",
+   "name_en": "REDOUBLED ASSAULT",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "撤退回合仍可射击/宣告冲锋——资格/移动机制无载体"
+   ],
+   "provenance": {},
+   "encoded_by": "manual-2026-07-20"
+  },
+  {
+   "table": "stratagems",
+   "id": "000010361006",
+   "side": "attacker",
+   "detachment": "Sanctic Spearhead",
+   "name_en": "FORCE WAVE",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "穿越地形移动——移动机制无载体"
+   ],
+   "provenance": {},
+   "encoded_by": "manual-2026-07-20"
+  },
+  {
+   "table": "stratagems",
+   "id": "000010361007",
+   "side": "attacker",
+   "detachment": "Sanctic Spearhead",
+   "name_en": "ARGENT WRATH",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "3\"内敌每单位战栗检定 -1——战栗机制无载体"
+   ],
+   "provenance": {},
+   "encoded_by": "manual-2026-07-20"
+  },
+  {
+   "table": "stratagems",
+   "id": "000009486002",
+   "side": "attacker",
+   "detachment": "Void Purge Force",
+   "name_en": "BREACH-SHOCK",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "跟进/整合移动 6\"（替代 3\"）——移动机制无载体"
+   ],
+   "provenance": {},
+   "encoded_by": "manual-2026-07-20"
+  },
+  {
+   "table": "stratagems",
+   "id": "000009486003",
+   "side": "target",
+   "detachment": "Void Purge Force",
+   "name_en": "HEXBANE WARDS",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "使攻击方近战武器获 [HAZARDOUS]（自伤）——攻击方危险测试自伤从守方侧无载体"
+   ],
+   "provenance": {},
+   "encoded_by": "manual-2026-07-20"
+  },
+  {
+   "table": "stratagems",
+   "id": "000009486004",
+   "side": "attacker",
+   "detachment": "Void Purge Force",
+   "name_en": "TRANSLOCATION",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "穿墙/舱口移动——移动机制无载体"
+   ],
+   "provenance": {},
+   "encoded_by": "manual-2026-07-20"
+  },
+  {
+   "table": "stratagems",
+   "id": "000009486005",
+   "side": "attacker",
+   "detachment": "Void Purge Force",
+   "name_en": "SANCTIFIED SLAUGHTER",
+   "name_zh": null,
+   "status": "partial",
+   "effects": [
+    {
+     "phase": "hit",
+     "op": "extra_hits",
+     "params": [
+      1
+     ],
+     "source": "圣化屠戮：冲锋回合近战 [SUSTAINED HITS 1]",
+     "condition": [
+      "melee_charging"
+     ]
+    }
+   ],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "冲锋回合近战 [SUSTAINED HITS 1] 已编；「若武器已有 SUSTAINED 则改未修正命中5+暴击」的条件升级需逐武器判定，无载体"
+   ],
+   "provenance": {
+    "text_sha256": "296c4ad951a05ed12faaf07387678796c984d26374b783e6f3ff4e42a1194307"
+   },
+   "encoded_by": "manual-2026-07-20"
+  },
+  {
+   "table": "stratagems",
+   "id": "000009778002",
+   "side": "attacker",
+   "detachment": "Warpbane Task Force",
+   "name_en": "SANCTIFIED KILL ZONE",
+   "name_zh": null,
+   "status": "partial",
+   "effects": [
+    {
+     "phase": "wound",
+     "op": "reroll",
+     "params": [
+      "fail"
+     ],
+     "source": "圣化杀戮区：致伤重投（净化者=完整重投）"
+    }
+   ],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "编码假设本单位为净化者小队（享完整致伤重投）；非净化者仅重投致伤1（无重骰1载体）；假设本单位整个处于圣化之地（战略目标前提）；WHEN=射击或战斗均适用"
+   ],
+   "provenance": {
+    "text_sha256": "3bf72bdd9b816148fb8fcac0e4b815aca978d1ea309151d83312af1d3a251b01"
+   },
+   "encoded_by": "manual-2026-07-20"
+  },
+  {
+   "table": "stratagems",
+   "id": "000009778003",
+   "side": "attacker",
+   "detachment": "Warpbane Task Force",
+   "name_en": "FLAMES OF SANCTITY",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "6\"内敌每单位 D6 → 4+ 致命伤——致命伤机制无载体"
+   ],
+   "provenance": {},
+   "encoded_by": "manual-2026-07-20"
+  },
+  {
+   "table": "stratagems",
+   "id": "000009778004",
+   "side": "attacker",
+   "detachment": "Warpbane Task Force",
+   "name_en": "HALLOWED BEACON",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "深入奇袭布置于圣化之地——部署机制无载体"
+   ],
+   "provenance": {},
+   "encoded_by": "manual-2026-07-20"
+  },
+  {
+   "table": "stratagems",
+   "id": "000009778005",
+   "side": "attacker",
+   "detachment": "Warpbane Task Force",
+   "name_en": "FIRES OF COVENANT",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "敌方移动触发 D6 → 4+ 致命伤——致命伤/移动触发机制无载体"
+   ],
+   "provenance": {},
+   "encoded_by": "manual-2026-07-20"
+  },
+  {
+   "table": "stratagems",
+   "id": "000009778006",
+   "side": "target",
+   "detachment": "Warpbane Task Force",
+   "name_en": "AEGIS ETERNAL",
+   "name_zh": null,
+   "status": "partial",
+   "effects": [
+    {
+     "phase": "save",
+     "op": "invuln",
+     "params": [
+      4
+     ],
+     "source": "永恒庇护：圣化之地内模型 4+ 无效保护（仅对方射击阶段）",
+     "condition": [
+      "phase_shooting"
+     ]
+    }
+   ],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "假设本单位整个处于圣化之地（战略目标前提）；仅对方射击阶段生效（WHEN 限定），已挂 phase_shooting"
+   ],
+   "provenance": {
+    "text_sha256": "a2c3e177ae22a99e32dc59b532d098b4ec15a7fb2dbb1a29b6873bcf49b2de9e"
+   },
+   "encoded_by": "manual-2026-07-20"
+  },
+  {
+   "table": "stratagems",
+   "id": "000009778007",
+   "side": "target",
+   "detachment": "Warpbane Task Force",
+   "name_en": "REPELLING SPHERE",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "被冲锋时冲锋骰-1/-2——冲锋骰机制无载体"
+   ],
+   "provenance": {},
+   "encoded_by": "manual-2026-07-20"
+  },
+  {
+   "table": "stratagems",
+   "id": "fp11e-gk-argent-s1",
+   "side": "target",
+   "detachment": "Argent Assault",
+   "name_en": "Truesilver Aegis",
+   "name_zh": "真银庇护",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "对致命伤 FNP4+——引擎 FNP 作用于全部伤害，无法仅对致命伤条件化"
+   ],
+   "provenance": {},
+   "encoded_by": "manual-2026-07-20"
+  },
+  {
+   "table": "stratagems",
+   "id": "fp11e-gk-argent-s2",
+   "side": "attacker",
+   "detachment": "Argent Assault",
+   "name_en": "A Threat Ended",
+   "name_zh": "威胁终结",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "近战 [PRECISION]——攻击分配至角色，分配域无载体"
+   ],
+   "provenance": {},
+   "encoded_by": "manual-2026-07-20"
+  },
+  {
+   "table": "stratagems",
+   "id": "fp11e-gk-argent-s3",
+   "side": "target",
+   "detachment": "Argent Assault",
+   "name_en": "Aura of Vengeance",
+   "name_zh": "复仇灵光",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "使敌方近战武器获 [HAZARDOUS]（自伤）——攻击方自伤从守方侧无载体"
+   ],
+   "provenance": {},
+   "encoded_by": "manual-2026-07-20"
+  },
+  {
+   "table": "stratagems",
+   "id": "fp11e-gk-fires-s1",
+   "side": "attacker",
+   "detachment": "Fires of Purgation",
+   "name_en": "Soul-Locked",
+   "name_zh": "锁魂",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "撤退后仍可射击——资格/移动机制无载体"
+   ],
+   "provenance": {},
+   "encoded_by": "manual-2026-07-20"
+  },
+  {
+   "table": "stratagems",
+   "id": "fp11e-gk-fires-s2",
+   "side": "attacker",
+   "detachment": "Fires of Purgation",
+   "name_en": "Focused Immolation",
+   "name_zh": "聚焦焚烧",
+   "status": "encoded",
+   "effects": [
+    {
+     "phase": "wound",
+     "op": "mortal_pool",
+     "params": [],
+     "source": "聚焦焚烧：对所选目标的远程攻击获 [DEVASTATING WOUNDS]",
+     "condition": [
+      "phase_shooting"
+     ]
+    },
+    {
+     "phase": "hit",
+     "op": "extra_hits",
+     "params": [
+      1
+     ],
+     "source": "聚焦焚烧：对所选目标的远程攻击获 [SUSTAINED HITS 1]",
+     "condition": [
+      "phase_shooting"
+     ]
+    }
+   ],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [],
+   "provenance": {
+    "text_sha256": "aba9425650f8a8ffc9a9e71cc287e511c8f9f74896066f8080b5ccd6563e5642"
+   },
+   "encoded_by": "manual-2026-07-20"
+  },
+  {
+   "table": "stratagems",
+   "id": "fp11e-gk-fires-s3",
+   "side": "attacker",
+   "detachment": "Fires of Purgation",
+   "name_en": "Spiritsear",
+   "name_zh": "灼魂",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "对战栗敌方 D3+1 致命伤——致命伤机制无载体"
+   ],
+   "provenance": {},
+   "encoded_by": "manual-2026-07-20"
+  },
+  {
+   "table": "stratagems",
+   "id": "fp11e-gk-immaterial-s1",
+   "side": "attacker",
+   "detachment": "Immaterial Interdiction",
+   "name_en": "Blades from the Beyond",
+   "name_zh": "彼界之刃",
+   "status": "encoded",
+   "effects": [
+    {
+     "phase": "wound",
+     "op": "modify",
+     "params": [
+      1
+     ],
+     "source": "彼界之刃：冲锋回合近战 [LANCE] 致伤+1",
+     "condition": [
+      "melee_charging"
+     ]
+    }
+   ],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [],
+   "provenance": {
+    "text_sha256": "521b1135875d433ad7a67b9da2e7a39bef6fd04d20ac6ec2857855c227004e1c"
+   },
+   "encoded_by": "manual-2026-07-20"
+  },
+  {
+   "table": "stratagems",
+   "id": "fp11e-gk-immaterial-s2",
+   "side": "attacker",
+   "detachment": "Immaterial Interdiction",
+   "name_en": "By Thought Alone",
+   "name_zh": "意念独行",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "执行动作后仍可射击——资格/动作机制无载体"
+   ],
+   "provenance": {},
+   "encoded_by": "manual-2026-07-20"
+  },
+  {
+   "table": "stratagems",
+   "id": "fp11e-gk-immaterial-s3",
+   "side": "attacker",
+   "detachment": "Immaterial Interdiction",
+   "name_en": "Responsive Displacement",
+   "name_zh": "应变位移",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "普通移动 D3+3\"——移动机制无载体"
+   ],
+   "provenance": {},
+   "encoded_by": "manual-2026-07-20"
+  },
+  {
+   "table": "enhancements",
+   "id": "000010364002",
+   "side": "attacker",
+   "detachment": "Augurium Task Force",
+   "name_en": "Grimoire of Conjunctions",
+   "name_zh": null,
+   "status": "partial",
+   "effects": [
+    {
+     "phase": "wound",
+     "op": "s_improve",
+     "params": [
+      4
+     ],
+     "source": "连结魔典：携带者近战武器 S+4",
+     "condition": [
+      "phase_melee"
+     ]
+    }
+   ],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "每场一次、于战斗阶段开始激活——触发时机假设已用；仅携带者近战武器"
+   ],
+   "provenance": {
+    "text_sha256": "e315f9c8de561f2b3d661b3fd9c4903c086f4131d7681275d16eb73b3e238441"
+   },
+   "encoded_by": "manual-2026-07-20"
+  },
+  {
+   "table": "enhancements",
+   "id": "000010364003",
+   "side": "target",
+   "detachment": "Augurium Task Force",
+   "name_en": "Shield of Prophecy",
+   "name_zh": null,
+   "status": "partial",
+   "effects": [
+    {
+     "phase": "wound",
+     "op": "t_improve",
+     "params": [
+      2
+     ],
+     "source": "预言之盾：本单位模型 T+2"
+    }
+   ],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "每战轮一次、于战轮开始激活——触发时机假设已用；+2 T 及于本单位全体"
+   ],
+   "provenance": {
+    "text_sha256": "19942d48ab509585a7df07a72d2ab084be32bac1f6c006156c730c55e0c3d72b"
+   },
+   "encoded_by": "manual-2026-07-20"
+  },
+  {
+   "table": "enhancements",
+   "id": "000010364004",
+   "side": "attacker",
+   "detachment": "Augurium Task Force",
+   "name_en": "A Foot in the Future",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "登场后普通移动 D6\"——移动机制无载体"
+   ],
+   "provenance": {},
+   "encoded_by": "manual-2026-07-20"
+  },
+  {
+   "table": "enhancements",
+   "id": "000010364005",
+   "side": "attacker",
+   "detachment": "Augurium Task Force",
+   "name_en": "Doomseer’s Amulet",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "登场后敌方战栗检定 -1——战栗机制无载体"
+   ],
+   "provenance": {},
+   "encoded_by": "manual-2026-07-20"
+  },
+  {
+   "table": "enhancements",
+   "id": "000009493002",
+   "side": "target",
+   "detachment": "Baneslayer Strike",
+   "name_en": "Shield of Admonishment",
+   "name_zh": null,
+   "status": "encoded",
+   "effects": [
+    {
+     "phase": "hit",
+     "op": "modify",
+     "params": [
+      -1
+     ],
+     "source": "训诫之盾：针对携带者的近战攻击命中-1",
+     "condition": [
+      "phase_melee"
+     ]
+    }
+   ],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [],
+   "provenance": {
+    "text_sha256": "d66ab28c9dc2ff63108e9f867ba9705b865b0706686eba35ab9d70e0e636323a"
+   },
+   "encoded_by": "manual-2026-07-20"
+  },
+  {
+   "table": "enhancements",
+   "id": "000009493003",
+   "side": "attacker",
+   "detachment": "Baneslayer Strike",
+   "name_en": "Close and Sanction",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "被命中后冲刺移动——移动机制无载体"
+   ],
+   "provenance": {},
+   "encoded_by": "manual-2026-07-20"
+  },
+  {
+   "table": "enhancements",
+   "id": "000010356002",
+   "side": "attacker",
+   "detachment": "Banishers",
+   "name_en": "Sigil of the Hunt",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "射击阶段命中重投1——重骰1无载体"
+   ],
+   "provenance": {},
+   "encoded_by": "manual-2026-07-20"
+  },
+  {
+   "table": "enhancements",
+   "id": "000010356003",
+   "side": "attacker",
+   "detachment": "Banishers",
+   "name_en": "The Ephemeral Tome",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "射击阶段前普通移动 D6\"——移动机制无载体"
+   ],
+   "provenance": {},
+   "encoded_by": "manual-2026-07-20"
+  },
+  {
+   "table": "enhancements",
+   "id": "000010356004",
+   "side": "attacker",
+   "detachment": "Banishers",
+   "name_en": "The Sixty-sixth Seal",
+   "name_zh": null,
+   "status": "encoded",
+   "effects": [
+    {
+     "phase": "save",
+     "op": "ap_improve",
+     "params": [
+      1
+     ],
+     "source": "第六十六封印：射击阶段该攻击 AP 改善1",
+     "condition": [
+      "phase_shooting"
+     ]
+    }
+   ],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [],
+   "provenance": {
+    "text_sha256": "544c56115219e2b9b57ee73a642919a5ad702d4bfd3e1d036b7c753f330a6c79"
+   },
+   "encoded_by": "manual-2026-07-20"
+  },
+  {
+   "table": "enhancements",
+   "id": "000010356005",
+   "side": "attacker",
+   "detachment": "Banishers",
+   "name_en": "Pyresoul (Psychic)",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "24\"内敌 D3 致命伤——致命伤机制无载体"
+   ],
+   "provenance": {},
+   "encoded_by": "manual-2026-07-20"
+  },
+  {
+   "table": "enhancements",
+   "id": "000010348002",
+   "side": "attacker",
+   "detachment": "Brotherhood Strike",
+   "name_en": "Banishing Wave (Psychic)",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "深入奇袭登场后 12\"内敌 D6 致命伤——致命伤/部署机制无载体"
+   ],
+   "provenance": {},
+   "encoded_by": "manual-2026-07-20"
+  },
+  {
+   "table": "enhancements",
+   "id": "000010348003",
+   "side": "attacker",
+   "detachment": "Brotherhood Strike",
+   "name_en": "Blinding Aura",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "登场后敌不能用火力守望射击本单位——守望/资格机制无载体"
+   ],
+   "provenance": {},
+   "encoded_by": "manual-2026-07-20"
+  },
+  {
+   "table": "enhancements",
+   "id": "000010348004",
+   "side": "attacker",
+   "detachment": "Brotherhood Strike",
+   "name_en": "Purity of Purpose",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "登场后冲锋骰重投——冲锋骰机制无载体"
+   ],
+   "provenance": {},
+   "encoded_by": "manual-2026-07-20"
+  },
+  {
+   "table": "enhancements",
+   "id": "000010348005",
+   "side": "attacker",
+   "detachment": "Brotherhood Strike",
+   "name_en": "Tome of Forbidden Ways",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "Gate of Infinity 可选单位数 +1——部署/预备队机制无载体"
+   ],
+   "provenance": {},
+   "encoded_by": "manual-2026-07-20"
+  },
+  {
+   "table": "enhancements",
+   "id": "000010352002",
+   "side": "attacker",
+   "detachment": "Hallowed Conclave",
+   "name_en": "Eye of the Augurium",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "英勇介入战略 CP 经济改善（-1CP、不阻其他单位使用）——CP/战略经济无战斗链载体"
+   ],
+   "provenance": {},
+   "encoded_by": "manual-2026-07-20"
+  },
+  {
+   "table": "enhancements",
+   "id": "000010352003",
+   "side": "attacker",
+   "detachment": "Hallowed Conclave",
+   "name_en": "Inescapable Judgement (Psychic)",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "敌撤退时 D3/D3+3 致命伤——致命伤机制无载体"
+   ],
+   "provenance": {},
+   "encoded_by": "manual-2026-07-20"
+  },
+  {
+   "table": "enhancements",
+   "id": "000010352004",
+   "side": "attacker",
+   "detachment": "Hallowed Conclave",
+   "name_en": "Sanctic Reaper",
+   "name_zh": null,
+   "status": "encoded",
+   "effects": [
+    {
+     "phase": "attacks",
+     "op": "modify",
+     "params": [
+      3
+     ],
+     "source": "圣裁收割者：携带者近战武器 A+3",
+     "condition": [
+      "phase_melee"
+     ]
+    }
+   ],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [],
+   "provenance": {
+    "text_sha256": "6c8681961643abe05cca21f3a9d128e822893d3b6fbc705e181d9562719cc901"
+   },
+   "encoded_by": "manual-2026-07-20"
+  },
+  {
+   "table": "enhancements",
+   "id": "000010352005",
+   "side": "attacker",
+   "detachment": "Hallowed Conclave",
+   "name_en": "Nemesis Rounds",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "火力守望命中5+——守望机制无载体"
+   ],
+   "provenance": {},
+   "encoded_by": "manual-2026-07-20"
+  },
+  {
+   "table": "enhancements",
+   "id": "000010360002",
+   "side": "attacker",
+   "detachment": "Sanctic Spearhead",
+   "name_en": "Driven by Duty",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "跟进/整合移动 6\"——移动机制无载体"
+   ],
+   "provenance": {},
+   "encoded_by": "manual-2026-07-20"
+  },
+  {
+   "table": "enhancements",
+   "id": "000010360003",
+   "side": "attacker",
+   "detachment": "Sanctic Spearhead",
+   "name_en": "Quickening Foci",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "下车后冲锋骰重投——冲锋骰机制无载体"
+   ],
+   "provenance": {},
+   "encoded_by": "manual-2026-07-20"
+  },
+  {
+   "table": "enhancements",
+   "id": "000010360004",
+   "side": "attacker",
+   "detachment": "Sanctic Spearhead",
+   "name_en": "Sigil of Exigence",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "被瞄准时移除再部署——部署/预备队机制无载体"
+   ],
+   "provenance": {},
+   "encoded_by": "manual-2026-07-20"
+  },
+  {
+   "table": "enhancements",
+   "id": "000010360005",
+   "side": "attacker",
+   "detachment": "Sanctic Spearhead",
+   "name_en": "Spiritus Machina",
+   "name_zh": null,
+   "status": "partial",
+   "effects": [
+    {
+     "phase": "wound",
+     "op": "reroll",
+     "params": [
+      "fail"
+     ],
+     "source": "机魂：射击阶段致伤完整重投",
+     "condition": [
+      "phase_shooting"
+     ]
+    }
+   ],
+   "requires_toggles": [
+    "disembarked_this_turn"
+   ],
+   "not_modeled_notes_zh": [
+    "限本回合从运输载具下车（开关 disembarked_this_turn）；射击阶段致伤完整重投；及于携带者所在单位"
+   ],
+   "provenance": {
+    "text_sha256": "110d11e4c87b5943951b566a198de26e3745dc963589c0f3757eaa36a192ac6a"
+   },
+   "encoded_by": "manual-2026-07-20"
+  },
+  {
+   "table": "enhancements",
+   "id": "000009485002",
+   "side": "attacker",
+   "detachment": "Void Purge Force",
+   "name_en": "Sigil of Warding",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "射击阶段末普通移动 3\"——移动机制无载体"
+   ],
+   "provenance": {},
+   "encoded_by": "manual-2026-07-20"
+  },
+  {
+   "table": "enhancements",
+   "id": "000009485003",
+   "side": "attacker",
+   "detachment": "Void Purge Force",
+   "name_en": "Tactical Haruspexy",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "可对不可见目标（9\"内）宣告冲锋——冲锋目标选择机制无载体"
+   ],
+   "provenance": {},
+   "encoded_by": "manual-2026-07-20"
+  },
+  {
+   "table": "enhancements",
+   "id": "000009777002",
+   "side": "attacker",
+   "detachment": "Warpbane Task Force",
+   "name_en": "Mandulian Reliquary",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "未战栗时 OC+3——目标控制值（OC）不进战斗链，引擎不消费"
+   ],
+   "provenance": {},
+   "encoded_by": "manual-2026-07-20"
+  },
+  {
+   "table": "enhancements",
+   "id": "000009777003",
+   "side": "attacker",
+   "detachment": "Warpbane Task Force",
+   "name_en": "Radiant Champion",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "近战 [PRECISION] + 圣化之地内每次致伤额外 1 致命伤——[PRECISION] 分配域无载体；「每次致伤+1 致命伤」（非暴击致伤转化）无载体"
+   ],
+   "provenance": {},
+   "encoded_by": "manual-2026-07-20"
+  },
+  {
+   "table": "enhancements",
+   "id": "000009777004",
+   "side": "target",
+   "detachment": "Warpbane Task Force",
+   "name_en": "Phial of the Abyss",
+   "name_zh": null,
+   "status": "encoded",
+   "effects": [
+    {
+     "phase": "save",
+     "op": "cover",
+     "params": [],
+     "source": "深渊药瓶：本单位获 Stealth（11版=掩体，仅射击）",
+     "condition": [
+      "phase_shooting"
+     ]
+    }
+   ],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [],
+   "provenance": {
+    "text_sha256": "ff625fcf707934fddeb9e8ebf3451416a9cf6ec378fb370ea39d554ce851f57e"
+   },
+   "encoded_by": "manual-2026-07-20"
+  },
+  {
+   "table": "enhancements",
+   "id": "000009777005",
+   "side": "attacker",
+   "detachment": "Warpbane Task Force",
+   "name_en": "Paragon of Sanctity",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "授予友军单位圣化之地态——区域态机制无载体"
+   ],
+   "provenance": {},
+   "encoded_by": "manual-2026-07-20"
+  },
+  {
+   "table": "enhancements",
+   "id": "fp11e-gk-argent-e1",
+   "side": "attacker",
+   "detachment": "Argent Assault",
+   "name_en": "Psychic Celerity",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "冲锋骰 +1——冲锋骰机制无载体"
+   ],
+   "provenance": {},
+   "encoded_by": "manual-2026-07-20"
+  },
+  {
+   "table": "enhancements",
+   "id": "fp11e-gk-argent-e2",
+   "side": "attacker",
+   "detachment": "Argent Assault",
+   "name_en": "Vigilance of Titan",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "选定敌方单位侦测范围 +6\"——侦测/隐蔽机制无载体"
+   ],
+   "provenance": {},
+   "encoded_by": "manual-2026-07-20"
+  },
+  {
+   "table": "enhancements",
+   "id": "fp11e-gk-fires-e1",
+   "side": "attacker",
+   "detachment": "Fires of Purgation",
+   "name_en": "Precognicient Volleys",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "快速射击（snap shooting）命中5+——快速射击/守望机制无载体"
+   ],
+   "provenance": {},
+   "encoded_by": "manual-2026-07-20"
+  },
+  {
+   "table": "enhancements",
+   "id": "fp11e-gk-fires-e2",
+   "side": "attacker",
+   "detachment": "Fires of Purgation",
+   "name_en": "Boons of Deimos",
+   "name_zh": null,
+   "status": "encoded",
+   "effects": [
+    {
+     "phase": "wound",
+     "op": "s_improve",
+     "params": [
+      2
+     ],
+     "source": "戴摩斯恩赐：PURGATION 远程攻击 S+2",
+     "condition": [
+      "phase_shooting"
+     ]
+    }
+   ],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [],
+   "provenance": {
+    "text_sha256": "ee3b7c712abd40a1134950924bd663ccf65f313d19bb38aaf71c563924326f22"
+   },
+   "encoded_by": "manual-2026-07-20"
+  },
+  {
+   "table": "enhancements",
+   "id": "fp11e-gk-immaterial-e1",
+   "side": "attacker",
+   "detachment": "Immaterial Interdiction",
+   "name_en": "Predestined Coordinates",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "首个移动阶段可切入（ingress）移动——移动/部署机制无载体"
+   ],
+   "provenance": {},
+   "encoded_by": "manual-2026-07-20"
+  },
+  {
+   "table": "enhancements",
+   "id": "fp11e-gk-immaterial-e2",
+   "side": "target",
+   "detachment": "Immaterial Interdiction",
+   "name_en": "Astral Overlap",
+   "name_zh": null,
+   "status": "encoded",
+   "effects": [
+    {
+     "phase": "save",
+     "op": "cover",
+     "params": [],
+     "source": "星界重叠：本单位获 Stealth（11版=掩体，仅射击）",
+     "condition": [
+      "phase_shooting"
+     ]
+    }
+   ],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [],
+   "provenance": {
+    "text_sha256": "4300094d249813e450609181d197e2b39ab9aa8b0da0319621d126f6355ccb66"
+   },
+   "encoded_by": "manual-2026-07-20"
+  }
+ ]
+}

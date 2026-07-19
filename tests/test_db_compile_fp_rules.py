@@ -390,12 +390,14 @@ class TestInserts:
         # + 圣血修女 14 条（PR15：Chorus of Condemnation 1 规则+2 增强+3 战略、
         #   Sacred Champions 1 规则+2 增强+3 战略、Sanctified Orators 1 规则+1 增强
         #   ——三全新分队，Sanctified Orators 无战略）
+        # + 灰骑士 18 条（PR16：Argent Assault / Fires of Purgation / Immaterial
+        #   Interdiction 三全新分队各 1 规则+2 增强+3 战略）
         import json
         from pathlib import Path
         data = json.loads(Path("db_compile/fp_rules_patches.json").read_text(
             encoding="utf-8"))
         ins = data.get("inserts", [])
-        assert len(ins) == 170
+        assert len(ins) == 188
         ids = {p["values"]["id"] for p in ins}
         assert ids == {"fp11e-tau-aac-det", "fp11e-tau-aac-s1", "fp11e-tau-aac-s2",
                        "fp11e-tau-aac-s3", "fp11e-tau-aux-gbu",
@@ -481,7 +483,16 @@ class TestInserts:
                        "fp11e-sororitas-sacred", "fp11e-sororitas-sacred-e1",
                        "fp11e-sororitas-sacred-e2", "fp11e-sororitas-sacred-s1",
                        "fp11e-sororitas-sacred-s2", "fp11e-sororitas-sacred-s3",
-                       "fp11e-sororitas-orators", "fp11e-sororitas-orators-e1"}
+                       "fp11e-sororitas-orators", "fp11e-sororitas-orators-e1",
+                       "fp11e-gk-argent", "fp11e-gk-argent-e1",
+                       "fp11e-gk-argent-e2", "fp11e-gk-argent-s1",
+                       "fp11e-gk-argent-s2", "fp11e-gk-argent-s3",
+                       "fp11e-gk-fires", "fp11e-gk-fires-e1",
+                       "fp11e-gk-fires-e2", "fp11e-gk-fires-s1",
+                       "fp11e-gk-fires-s2", "fp11e-gk-fires-s3",
+                       "fp11e-gk-immaterial", "fp11e-gk-immaterial-e1",
+                       "fp11e-gk-immaterial-e2", "fp11e-gk-immaterial-s1",
+                       "fp11e-gk-immaterial-s2", "fp11e-gk-immaterial-s3"}
         for p in ins:
             assert p.get("fp_source")
             assert p["values"].get("id", "").startswith("fp11e-")

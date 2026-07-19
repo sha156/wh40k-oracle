@@ -990,6 +990,16 @@
    "to_text": "<b>WHEN:</b> Your opponent’s Shooting phase, just after an enemy unit has shot.<br><br><b>TARGET:</b> One PENITENT unit from your army that was selected as the target as one or more of the attacking unit’s attacks.<br><br><b>EFFECT:</b> Your unit can make a surge move of up to D6\".",
    "fp_source": "Faction Pack Adepta Sororitas page_013.md（Rules Updates：Penitent Host / Devout Fanaticism When&Effect）",
    "synthesis": "EFFECT 整改：旧「Roll one D6 移动至最近敌」→ 11 版「surge move up to D6\"」；WHEN/TARGET 不动（TARGET 保留库现拼写 'as one or more'）"
+  },
+  {
+   "table": "enhancements",
+   "column": "description",
+   "id": "000010352002",
+   "name_en": "Eye of the Augurium",
+   "from_text": "<span class=\"kwb\">GREY</span> <span class=\"kwb\">KNIGHTS</span> model only. Once per battle round, the bearer can use this Enhancement. If it does, you can target the bearer’s unit with the Fire Overwatch or Heroic Intervention Stratagem for 0CP, and can do so even if you have already targeted a different unit with that Stratagem this turn.",
+   "to_text": "<span class=\"kwb\">GREY</span> <span class=\"kwb\">KNIGHTS</span> model only. You can target this unit with the Heroic Intervention Stratagem, regardless of any other uses of that Stratagem this phase. If you do:<br><ul><li>That use is -1CP.</li><li>That use does not prevent any uses of that Stratagem on other units this phase.</li></ul>",
+   "fp_source": "Faction Pack Grey Knights page_009.md（Rules Updates：Hallowed Conclave / Eye of the Augurium 改写）",
+   "synthesis": "Eye of the Augurium 整改：旧「每战轮 Fire Overwatch/Heroic Intervention 0CP」→ 11 版「Heroic Intervention 无视本阶段其他用例，-1CP 且不阻其他单位使用」"
   }
  ],
  "name_patches": [
@@ -5830,6 +5840,249 @@
     "cost": null,
     "legend": "点数未知：FP 不含点数，MFM 缓存无增强数据（诚实置空，勿猜）",
     "description": "<span class=\"kwb\">ADEPTA</span> <span class=\"kwb\">SORORITAS</span> <span class=\"kwb\">CHARACTER</span> unit only (excluding <span class=\"kwb\">PENITENT</span> units). (Once per turn, per unit) At the start of a phase, you can use this ability. If you do, select one of the abilities below:<br><ul><li><b>Rite of Revelation:</b> While this unit is shooting, enemy units have +6\" detection range.</li><li><b>Sermon of Intolerance:</b> This unit’s Battle-shock rolls automatically succeed.</li><li><b>Catechism of Raging Fervour:</b> This unit has +1\" M.</li><li><b>Psalm of Righteous Smiting:</b> This unit’s attacks have +1 S.</li><li><b>Chorus of Repudiation:</b> Attacks that target this unit with a S greater than this unit’s T have -1 to Wound rolls.</li></ul>"
+   }
+  },
+  {
+   "table": "detachments",
+   "fp_source": "Faction Pack Grey Knights page_002.md（11 版新分队 Argent Assault，Wahapedia 无源）",
+   "values": {
+    "id": "fp11e-gk-argent",
+    "faction": "GK",
+    "name_zh": "无畏勇士",
+    "name_en": "Dauntless Champions",
+    "rule_text": "When a friendly <span class=\"kwb\">PALADIN</span> <span class=\"kwb\">SQUAD</span> unit is selected to fight, if the S of those attacks is lower than the T of the target, those attacks have +1 to wound rolls."
+   }
+  },
+  {
+   "table": "enhancements",
+   "fp_source": "Faction Pack Grey Knights page_002.md",
+   "values": {
+    "id": "fp11e-gk-argent-e1",
+    "faction_id": "GK",
+    "detachment_id": "fp11e-gk-argent",
+    "detachment_name": "Argent Assault",
+    "name": "Psychic Celerity",
+    "cost": null,
+    "legend": "点数未知：FP 不含点数，MFM 缓存无该增强数据（诚实置空，勿猜）",
+    "description": "<span class=\"kwb\">TERMINATOR</span> model only. This unit has +1 to charge rolls."
+   }
+  },
+  {
+   "table": "enhancements",
+   "fp_source": "Faction Pack Grey Knights page_002.md",
+   "values": {
+    "id": "fp11e-gk-argent-e2",
+    "faction_id": "GK",
+    "detachment_id": "fp11e-gk-argent",
+    "detachment_name": "Argent Assault",
+    "name": "Vigilance of Titan",
+    "cost": null,
+    "legend": "点数未知：FP 不含点数，MFM 缓存无该增强数据（诚实置空，勿猜）",
+    "description": "<span class=\"kwb\">TERMINATOR</span> model only. At the start of your Shooting phase, you can select one visible enemy unit within 12\" of this unit. That enemy unit has +6\" detection range."
+   }
+  },
+  {
+   "table": "stratagems",
+   "fp_source": "Faction Pack Grey Knights page_002.md",
+   "values": {
+    "id": "fp11e-gk-argent-s1",
+    "faction": "GK",
+    "detachment": "Argent Assault",
+    "name_zh": "真银庇护",
+    "name_en": "Truesilver Aegis",
+    "cp_cost": "1",
+    "phase": "Any phase",
+    "text_zh": "<b>WHEN:</b> Any phase, when a friendly <span class=\"kwb\">PALADIN</span> <span class=\"kwb\">SQUAD</span> unit suffers a mortal wound.<br><br><b>TARGET:</b> That <span class=\"kwb\">PALADIN</span> <span class=\"kwb\">SQUAD</span> unit.<br><br><b>EFFECT:</b> Your unit has Feel No Pain 4+ against mortal wounds."
+   }
+  },
+  {
+   "table": "stratagems",
+   "fp_source": "Faction Pack Grey Knights page_002.md",
+   "values": {
+    "id": "fp11e-gk-argent-s2",
+    "faction": "GK",
+    "detachment": "Argent Assault",
+    "name_zh": "威胁终结",
+    "name_en": "A Threat Ended",
+    "cp_cost": "1",
+    "phase": "Fight phase",
+    "text_zh": "<b>WHEN:</b> Fight phase, when a friendly <span class=\"kwb\">PALADIN</span> <span class=\"kwb\">SQUAD</span> unit is selected to fight.<br><br><b>TARGET:</b> That <span class=\"kwb\">PALADIN</span> <span class=\"kwb\">SQUAD</span> unit.<br><br><b>EFFECT:</b> Your unit's melee attacks have [PRECISION]."
+   }
+  },
+  {
+   "table": "stratagems",
+   "fp_source": "Faction Pack Grey Knights page_002.md",
+   "values": {
+    "id": "fp11e-gk-argent-s3",
+    "faction": "GK",
+    "detachment": "Argent Assault",
+    "name_zh": "复仇灵光",
+    "name_en": "Aura of Vengeance",
+    "cp_cost": "1",
+    "phase": "Fight phase",
+    "text_zh": "<b>WHEN:</b> Fight phase, when an enemy unit targets a friendly <span class=\"kwb\">PALADIN</span> <span class=\"kwb\">SQUAD</span> unit.<br><br><b>TARGET:</b> That <span class=\"kwb\">PALADIN</span> <span class=\"kwb\">SQUAD</span> unit.<br><br><b>EFFECT:</b> That enemy unit's melee attacks have [HAZARDOUS]."
+   }
+  },
+  {
+   "table": "detachments",
+   "fp_source": "Faction Pack Grey Knights page_003.md（11 版新分队 Fires of Purgation，Wahapedia 无源）",
+   "values": {
+    "id": "fp11e-gk-fires",
+    "faction": "GK",
+    "name_zh": "灼魂圣焰",
+    "name_en": "Searing Soulflame",
+    "rule_text": "When you select a unit to be pinned by a friendly <span class=\"kwb\">PURGATION</span> <span class=\"kwb\">SQUAD</span> unit's Righteous Persecution ability, that enemy unit makes a battle-shock roll, with -1 to that battle-shock roll."
+   }
+  },
+  {
+   "table": "enhancements",
+   "fp_source": "Faction Pack Grey Knights page_003.md",
+   "values": {
+    "id": "fp11e-gk-fires-e1",
+    "faction_id": "GK",
+    "detachment_id": "fp11e-gk-fires",
+    "detachment_name": "Fires of Purgation",
+    "name": "Precognicient Volleys",
+    "cost": null,
+    "legend": "点数未知：FP 不含点数，MFM 缓存无该增强数据（诚实置空，勿猜）",
+    "description": "<span class=\"kwb\">PURGATION</span> <span class=\"kwb\">SQUAD</span> unit only. This unit's snap shooting attacks hit on unmodified hit rolls of 5+."
+   }
+  },
+  {
+   "table": "enhancements",
+   "fp_source": "Faction Pack Grey Knights page_003.md",
+   "values": {
+    "id": "fp11e-gk-fires-e2",
+    "faction_id": "GK",
+    "detachment_id": "fp11e-gk-fires",
+    "detachment_name": "Fires of Purgation",
+    "name": "Boons of Deimos",
+    "cost": null,
+    "legend": "点数未知：FP 不含点数，MFM 缓存无该增强数据（诚实置空，勿猜）",
+    "description": "<span class=\"kwb\">PURGATION</span> <span class=\"kwb\">SQUAD</span> unit only. This unit's ranged attacks have +2 S."
+   }
+  },
+  {
+   "table": "stratagems",
+   "fp_source": "Faction Pack Grey Knights page_003.md",
+   "values": {
+    "id": "fp11e-gk-fires-s1",
+    "faction": "GK",
+    "detachment": "Fires of Purgation",
+    "name_zh": "锁魂",
+    "name_en": "Soul-Locked",
+    "cp_cost": "1",
+    "phase": "Movement phase",
+    "text_zh": "<b>WHEN:</b> Your Movement phase, when a friendly <span class=\"kwb\">PURGATION</span> <span class=\"kwb\">SQUAD</span> unit is selected to make a fall-back move.<br><br><b>TARGET:</b> That <span class=\"kwb\">PURGATION</span> <span class=\"kwb\">SQUAD</span> unit.<br><br><b>EFFECT:</b> That move does not prevent your unit from being eligible to shoot."
+   }
+  },
+  {
+   "table": "stratagems",
+   "fp_source": "Faction Pack Grey Knights page_003.md",
+   "values": {
+    "id": "fp11e-gk-fires-s2",
+    "faction": "GK",
+    "detachment": "Fires of Purgation",
+    "name_zh": "聚焦焚烧",
+    "name_en": "Focused Immolation",
+    "cp_cost": "1",
+    "phase": "Shooting phase",
+    "text_zh": "<b>WHEN:</b> Your Shooting phase, when a friendly <span class=\"kwb\">PURGATION</span> <span class=\"kwb\">SQUAD</span> unit is selected to shoot.<br><br><b>TARGET:</b> That <span class=\"kwb\">PURGATION</span> <span class=\"kwb\">SQUAD</span> unit.<br><br><b>EFFECT:</b> Select one enemy unit. Your unit's ranged attacks that target that unit have [DEVASTATING WOUNDS] and [SUSTAINED HITS 1]."
+   }
+  },
+  {
+   "table": "stratagems",
+   "fp_source": "Faction Pack Grey Knights page_003.md",
+   "values": {
+    "id": "fp11e-gk-fires-s3",
+    "faction": "GK",
+    "detachment": "Fires of Purgation",
+    "name_zh": "灼魂",
+    "name_en": "Spiritsear",
+    "cp_cost": "1",
+    "phase": "Shooting phase",
+    "text_zh": "<b>WHEN:</b> Your Shooting phase, when a friendly <span class=\"kwb\">PURGATION</span> <span class=\"kwb\">SQUAD</span> unit has shot.<br><br><b>TARGET:</b> That <span class=\"kwb\">PURGATION</span> <span class=\"kwb\">SQUAD</span> unit.<br><br><b>EFFECT:</b> Select one battle-shocked enemy unit hit by those attacks. That enemy unit suffers D3+1 mortal wounds."
+   }
+  },
+  {
+   "table": "detachments",
+   "fp_source": "Faction Pack Grey Knights page_004.md（11 版新分队 Immaterial Interdiction，Wahapedia 无源）",
+   "values": {
+    "id": "fp11e-gk-immaterial",
+    "faction": "GK",
+    "name_zh": "回响跃迁",
+    "name_en": "Echojump",
+    "rule_text": "In your Shooting phase, when a friendly <span class=\"kwb\">INTERCEPTOR</span> <span class=\"kwb\">SQUAD</span> unit has shot, if that unit did not make an ingress move this turn, you can use this ability. If you do:<br><ul><li>That unit cannot use its Personal Teleporters ability.</li><li>That unit can make a surge move of up to D6+1\".</li></ul>"
+   }
+  },
+  {
+   "table": "enhancements",
+   "fp_source": "Faction Pack Grey Knights page_004.md",
+   "values": {
+    "id": "fp11e-gk-immaterial-e1",
+    "faction_id": "GK",
+    "detachment_id": "fp11e-gk-immaterial",
+    "detachment_name": "Immaterial Interdiction",
+    "name": "Predestined Coordinates",
+    "cost": null,
+    "legend": "点数未知：FP 不含点数，MFM 缓存无该增强数据（诚实置空，勿猜）",
+    "description": "<span class=\"kwb\">INTERCEPTOR</span> <span class=\"kwb\">SQUAD</span> unit only. In your first Movement phase, this unit can make an ingress move."
+   }
+  },
+  {
+   "table": "enhancements",
+   "fp_source": "Faction Pack Grey Knights page_004.md",
+   "values": {
+    "id": "fp11e-gk-immaterial-e2",
+    "faction_id": "GK",
+    "detachment_id": "fp11e-gk-immaterial",
+    "detachment_name": "Immaterial Interdiction",
+    "name": "Astral Overlap",
+    "cost": null,
+    "legend": "点数未知：FP 不含点数，MFM 缓存无该增强数据（诚实置空，勿猜）",
+    "description": "<span class=\"kwb\">INTERCEPTOR</span> <span class=\"kwb\">SQUAD</span> unit only. This unit has Stealth."
+   }
+  },
+  {
+   "table": "stratagems",
+   "fp_source": "Faction Pack Grey Knights page_004.md",
+   "values": {
+    "id": "fp11e-gk-immaterial-s1",
+    "faction": "GK",
+    "detachment": "Immaterial Interdiction",
+    "name_zh": "彼界之刃",
+    "name_en": "Blades from the Beyond",
+    "cp_cost": "1",
+    "phase": "Fight phase",
+    "text_zh": "<b>WHEN:</b> Fight phase, when a friendly <span class=\"kwb\">INTERCEPTOR</span> <span class=\"kwb\">SQUAD</span> unit that made a charge move this turn is selected to fight.<br><br><b>TARGET:</b> That <span class=\"kwb\">INTERCEPTOR</span> <span class=\"kwb\">SQUAD</span> unit.<br><br><b>EFFECT:</b> Your unit's melee attacks have [LANCE]."
+   }
+  },
+  {
+   "table": "stratagems",
+   "fp_source": "Faction Pack Grey Knights page_004.md",
+   "values": {
+    "id": "fp11e-gk-immaterial-s2",
+    "faction": "GK",
+    "detachment": "Immaterial Interdiction",
+    "name_zh": "意念独行",
+    "name_en": "By Thought Alone",
+    "cp_cost": "1",
+    "phase": "Shooting phase",
+    "text_zh": "<b>WHEN:</b> Your Shooting phase, when a friendly <span class=\"kwb\">INTERCEPTOR</span> <span class=\"kwb\">SQUAD</span> unit starts an action.<br><br><b>TARGET:</b> That <span class=\"kwb\">INTERCEPTOR</span> <span class=\"kwb\">SQUAD</span> unit.<br><br><b>EFFECT:</b> That action does not prevent your unit from being eligible to shoot."
+   }
+  },
+  {
+   "table": "stratagems",
+   "fp_source": "Faction Pack Grey Knights page_004.md",
+   "values": {
+    "id": "fp11e-gk-immaterial-s3",
+    "faction": "GK",
+    "detachment": "Immaterial Interdiction",
+    "name_zh": "应变位移",
+    "name_en": "Responsive Displacement",
+    "cp_cost": "1",
+    "phase": "Movement phase",
+    "text_zh": "<b>WHEN:</b> Your opponent's Movement phase, when an enemy unit that was engaged with a friendly <span class=\"kwb\">INTERCEPTOR</span> <span class=\"kwb\">SQUAD</span> unit ends a fall-back move, if that <span class=\"kwb\">INTERCEPTOR</span> <span class=\"kwb\">SQUAD</span> unit is unengaged.<br><br><b>TARGET:</b> That <span class=\"kwb\">INTERCEPTOR</span> <span class=\"kwb\">SQUAD</span> unit.<br><br><b>EFFECT:</b> Your unit can make a normal move of up to D3+3\"."
    }
   }
  ]
