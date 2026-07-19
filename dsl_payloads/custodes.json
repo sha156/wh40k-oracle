@@ -1,0 +1,2149 @@
+{
+ "_comment": "P7 阵营技能 DSL 唯一真源（卡斯托迪斯，P7-PR11）。DB 投影由 dsl-apply 写入挂 restore。判据格式沿 spec 2026-07-14 + PR3-PR10 约定；A/B 工作单见 docs/superpowers/plans/2026-07-19-p7-pr11-ac-worklist.md。卡斯托迪斯为精英近战/载具阵营，可编率显著高于千子：大量命中/致伤/S/AP/A 特征值增益、[LANCE]/无效保护/FNP/守方 S>T 被伤-1（无瑕造物走 wound_s_gt_t 全阶段防守 tag）/+1T（坚毅决心走 t_improve）/零新引擎通道（第三个纯编码 PR）。审查后帝皇的处刑者（仅 Fight phase×低于满编，单 tag 无复合门载体）改判 not_modeled。防高估不编：重骰1类（承袭专精/黄金装甲/荣光逝者——重骰1≠重骰失败）、幸存反打（誓死不退/帝皇的复仇/永恒警戒）、按敌模型数动态（凶悍征服者）、自身战损状态（为逝者复仇）、[PRECISION]/[TORRENT] 关键字无 weapon_filter、二选一按单分支（考古军械）、光辉披风攻击者距离无载体（宁漏不错）、+1D 无通用伤害通道。",
+ "dsl_version": 1,
+ "faction": "AC",
+ "entries": [
+  {
+   "table": "abilities",
+   "id": "det000008393",
+   "side": "attacker",
+   "detachment": "Martial Mastery",
+   "name_en": "Martial Mastery",
+   "name_zh": "武艺精通",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "武艺精通：每战斗轮二选一（近战暴击 5+ / 近战 +1 AP）+ 限 Martial Ka'tah 关键字模型——每轮互斥选择 + 数据表关键字门无 toggle 载体，宁漏不错不建模"
+   ],
+   "encoded_by": "manual-2026-07-19",
+   "materialize": {
+    "from_table": "detachments",
+    "from_id": "000008393",
+    "from_column": "rule_text"
+   }
+  },
+  {
+   "table": "abilities",
+   "id": "det000008920",
+   "side": "attacker",
+   "detachment": "Revered Companions",
+   "name_en": "Revered Companions",
+   "name_zh": "崇敬同袍",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "崇敬同袍：Null Aegis 光环（对灵能/致命伤 FNP 5+）+ Deadly Unity 光环（近 AP 单位 +1 命中）——跨单位光环无载体"
+   ],
+   "encoded_by": "manual-2026-07-19",
+   "materialize": {
+    "from_table": "detachments",
+    "from_id": "000008920",
+    "from_column": "rule_text"
+   }
+  },
+  {
+   "table": "abilities",
+   "id": "det000008924",
+   "side": "attacker",
+   "detachment": "Creeping Dread (Aura)",
+   "name_en": "Creeping Dread (Aura)",
+   "name_zh": "蔓延恐惧",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "蔓延恐惧：战意测试光环——战意无载体"
+   ],
+   "encoded_by": "manual-2026-07-19",
+   "materialize": {
+    "from_table": "detachments",
+    "from_id": "000008924",
+    "from_column": "rule_text"
+   }
+  },
+  {
+   "table": "abilities",
+   "id": "det000008929",
+   "side": "attacker",
+   "detachment": "Assemblage of Might",
+   "name_en": "Assemblage of Might",
+   "name_zh": "力量集结",
+   "status": "partial",
+   "effects": [
+    {
+     "phase": "wound",
+     "op": "modify",
+     "params": [
+      1
+     ],
+     "source": "力量集结：对指挥阶段所选敌单位致伤 +1"
+    }
+   ],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "限 ADEPTUS CUSTODES CHARACTER 模型对指挥阶段所选敌单位——按该组合成立建模"
+   ],
+   "provenance": {
+    "current_text": "db detachments.rule_text id=000008929",
+    "base_text": "Wahapedia 现文（PR11 工作单：11 版化后文本，FP 未触及或已滚入）",
+    "text_sha256": "18cd549ed011cca052f59d664b102f601061f75f6789df189af21d05f64102c0"
+   },
+   "encoded_by": "manual-2026-07-19",
+   "materialize": {
+    "from_table": "detachments",
+    "from_id": "000008929",
+    "from_column": "rule_text"
+   }
+  },
+  {
+   "table": "abilities",
+   "id": "det000009263",
+   "side": "attacker",
+   "detachment": "Overwhelming Magnificence",
+   "name_en": "Overwhelming Magnificence",
+   "name_zh": "压倒性辉煌",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "压倒性辉煌：敌 OC -1——目标控制无载体"
+   ],
+   "encoded_by": "manual-2026-07-19",
+   "materialize": {
+    "from_table": "detachments",
+    "from_id": "000009263",
+    "from_column": "rule_text"
+   }
+  },
+  {
+   "table": "abilities",
+   "id": "det000009272",
+   "side": "attacker",
+   "detachment": "Priority Quarry",
+   "name_en": "Priority Quarry",
+   "name_zh": "优先猎物",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "优先猎物：对猎物重骰命中 1 + 冲锋无视可视——仅重骰 1（非重骰失败）+ 目标选择无载体"
+   ],
+   "encoded_by": "manual-2026-07-19",
+   "materialize": {
+    "from_table": "detachments",
+    "from_id": "000009272",
+    "from_column": "rule_text"
+   }
+  },
+  {
+   "table": "abilities",
+   "id": "det000009752",
+   "side": "attacker",
+   "detachment": "Auric Armour",
+   "name_en": "Auric Armour",
+   "name_zh": "黄金装甲",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "黄金装甲：满编 OC+2 / 战损重骰命中 1 / 半编重骰命中+致伤 1 + Moritoi Ancients WALKER +2M——重骰 1 非重骰失败 + OC + 移动无载体"
+   ],
+   "encoded_by": "manual-2026-07-19",
+   "materialize": {
+    "from_table": "detachments",
+    "from_id": "000009752",
+    "from_column": "rule_text"
+   }
+  },
+  {
+   "table": "abilities",
+   "id": "det000009986",
+   "side": "attacker",
+   "detachment": "Against All Odds",
+   "name_en": "Against All Odds",
+   "name_zh": "以寡敌众",
+   "status": "partial",
+   "effects": [
+    {
+     "phase": "hit",
+     "op": "modify",
+     "params": [
+      1
+     ],
+     "source": "以寡敌众：6吋内无其他友军时命中 +1"
+    },
+    {
+     "phase": "wound",
+     "op": "modify",
+     "params": [
+      1
+     ],
+     "source": "以寡敌众：6吋内无其他友军时致伤 +1"
+    }
+   ],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "需本单位 6吋内无其他友军——假设孤立成立；VEHICLE 除外"
+   ],
+   "provenance": {
+    "current_text": "db detachments.rule_text id=000009986",
+    "base_text": "Wahapedia 现文（PR11 工作单：11 版化后文本，FP 未触及或已滚入）",
+    "text_sha256": "f6b8745bdbd866600c5ab91690be8dffeec9b3b87a53d91f6a894a26e7064187"
+   },
+   "encoded_by": "manual-2026-07-19",
+   "materialize": {
+    "from_table": "detachments",
+    "from_id": "000009986",
+    "from_column": "rule_text"
+   }
+  },
+  {
+   "table": "abilities",
+   "id": "detfp11e-ac-moritoi",
+   "side": "attacker",
+   "detachment": "March of the Honoured Dead",
+   "name_en": "March of the Honoured Dead",
+   "name_zh": "亡者的行军",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "亡者的行军：WALKER +2M +1 冲锋/前进——移动无载体"
+   ],
+   "encoded_by": "manual-2026-07-19",
+   "materialize": {
+    "from_table": "detachments",
+    "from_id": "fp11e-ac-moritoi",
+    "from_column": "rule_text"
+   }
+  },
+  {
+   "table": "abilities",
+   "id": "detfp11e-ac-silent",
+   "side": "attacker",
+   "detachment": "Skin-Crawling Disorientation",
+   "name_en": "Skin-Crawling Disorientation",
+   "name_zh": "静默猎手",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "静默猎手：前进后可执行动作 + nulled 侦测——动作资格与侦测无载体"
+   ],
+   "encoded_by": "manual-2026-07-19",
+   "materialize": {
+    "from_table": "detachments",
+    "from_id": "fp11e-ac-silent",
+    "from_column": "rule_text"
+   }
+  },
+  {
+   "table": "abilities",
+   "id": "detfp11e-ac-tharanatoi",
+   "side": "attacker",
+   "detachment": "The Hammer Falls",
+   "name_en": "The Hammer Falls",
+   "name_zh": "铁锤落下",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "铁锤落下：ingress 后重骰冲锋骰——冲锋骰重骰无载体"
+   ],
+   "encoded_by": "manual-2026-07-19",
+   "materialize": {
+    "from_table": "detachments",
+    "from_id": "fp11e-ac-tharanatoi",
+    "from_column": "rule_text"
+   }
+  },
+  {
+   "table": "stratagems",
+   "id": "000008931002",
+   "side": "attacker",
+   "detachment": "Auric Champions",
+   "name_en": "SLAYER OF CHAMPIONS",
+   "name_zh": "冠军杀手",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "冠军杀手：击杀猎物后对所选敌 +1 致伤 + 得 CP——反应式选择 + CP 收益无载体"
+   ],
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "stratagems",
+   "id": "000008931004",
+   "side": "target",
+   "detachment": "Auric Champions",
+   "name_en": "THE EMPEROR’S AUSPICE",
+   "name_zh": "帝皇的守望",
+   "status": "partial",
+   "effects": [
+    {
+     "phase": "fnp",
+     "op": "fnp",
+     "params": [
+      4
+     ],
+     "source": "帝皇的守望：CHARACTER 模型 FNP 4+"
+    }
+   ],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "限 CHARACTER 模型——单单位模拟按全体，非 CHARACTER 单位高估"
+   ],
+   "provenance": {
+    "current_text": "db stratagems.text_zh id=000008931004",
+    "base_text": "Wahapedia 现文（PR11 工作单：11 版化后文本，FP 未触及或已滚入）",
+    "text_sha256": "e2eb689e6fcdfcb68dee7dfe82f818b2c4ef7b33e6c1a437e3a8e72068248def"
+   },
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "stratagems",
+   "id": "000008931003",
+   "side": "attacker",
+   "detachment": "Auric Champions",
+   "name_en": "SUPERHUMAN RESERVES",
+   "name_zh": "超凡预备",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "超凡预备：复用每战一次能力——能力复用无载体"
+   ],
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "stratagems",
+   "id": "000008931007",
+   "side": "attacker",
+   "detachment": "Auric Champions",
+   "name_en": "SHOULDER THE MANTLE",
+   "name_zh": "肩负重任",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "肩负重任：附加领袖——编队无载体"
+   ],
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "stratagems",
+   "id": "000008931005",
+   "side": "attacker",
+   "detachment": "Auric Champions",
+   "name_en": "EARNING OF A NAME",
+   "name_zh": "扬名立万",
+   "status": "partial",
+   "effects": [
+    {
+     "phase": "hit",
+     "op": "reroll",
+     "params": [
+      "fail"
+     ],
+     "source": "扬名立万：近战对 MONSTER 重骰命中",
+     "condition": [
+      "melee_target_has_keyword",
+      "monster"
+     ]
+    },
+    {
+     "phase": "hit",
+     "op": "reroll",
+     "params": [
+      "fail"
+     ],
+     "source": "扬名立万：近战对 VEHICLE 重骰命中",
+     "condition": [
+      "melee_target_has_keyword",
+      "vehicle"
+     ]
+    },
+    {
+     "phase": "wound",
+     "op": "reroll",
+     "params": [
+      "fail"
+     ],
+     "source": "扬名立万：近战对 MONSTER 重骰致伤",
+     "condition": [
+      "melee_target_has_keyword",
+      "monster"
+     ]
+    },
+    {
+     "phase": "wound",
+     "op": "reroll",
+     "params": [
+      "fail"
+     ],
+     "source": "扬名立万：近战对 VEHICLE 重骰致伤",
+     "condition": [
+      "melee_target_has_keyword",
+      "vehicle"
+     ]
+    }
+   ],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "限 CHARACTER 模型——按全体近战建模"
+   ],
+   "provenance": {
+    "current_text": "db stratagems.text_zh id=000008931005",
+    "base_text": "Wahapedia 现文（PR11 工作单：11 版化后文本，FP 未触及或已滚入）",
+    "text_sha256": "80610aebbc968e23c935e01755fca6bd5a91780148e15404823933a2841a613a"
+   },
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "stratagems",
+   "id": "000008931006",
+   "side": "attacker",
+   "detachment": "Auric Champions",
+   "name_en": "VIGIL UNENDING",
+   "name_zh": "永恒警戒",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "永恒警戒：被毁后反打——串行幸存反打无载体"
+   ],
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "stratagems",
+   "id": "000009274003",
+   "side": "target",
+   "detachment": "Black Ship Guardians",
+   "name_en": "FOCUSED FEAR",
+   "name_zh": "聚焦恐惧",
+   "status": "encoded",
+   "effects": [
+    {
+     "phase": "save",
+     "op": "ap_improve",
+     "params": [
+      -1
+     ],
+     "source": "聚焦恐惧：攻击本单位 AP 恶化 1"
+    }
+   ],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [],
+   "provenance": {
+    "current_text": "db stratagems.text_zh id=000009274003",
+    "base_text": "Wahapedia 现文（PR11 工作单：11 版化后文本，FP 未触及或已滚入）",
+    "text_sha256": "42a872311570eff82681d5199d0cca62222ac44eb8e6be4f3c49ab61ad76c1e6"
+   },
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "stratagems",
+   "id": "000009274005",
+   "side": "attacker",
+   "detachment": "Black Ship Guardians",
+   "name_en": "PUNISHMENT OF THE PROSECUTORS",
+   "name_zh": "追缉判罚",
+   "status": "partial",
+   "effects": [
+    {
+     "phase": "save",
+     "op": "ap_improve",
+     "params": [
+      1
+     ],
+     "source": "追缉判罚：远程武器 AP +1",
+     "condition": [
+      "phase_shooting"
+     ]
+    }
+   ],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "暴击致伤时额外 +1 AP 不建模（无 on-crit 改 AP 通道）"
+   ],
+   "provenance": {
+    "current_text": "db stratagems.text_zh id=000009274005",
+    "base_text": "Wahapedia 现文（PR11 工作单：11 版化后文本，FP 未触及或已滚入）",
+    "text_sha256": "45413a1b7e5b2fd436faf396fc80af8d4f105085b1f583ea73890f118a2025e4"
+   },
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "stratagems",
+   "id": "000009274002",
+   "side": "target",
+   "detachment": "Black Ship Guardians",
+   "name_en": "BLADES OF THE VIGILATORS",
+   "name_zh": "警戒者之刃",
+   "status": "encoded",
+   "effects": [
+    {
+     "phase": "wound",
+     "op": "modify",
+     "params": [
+      -1
+     ],
+     "source": "警戒者之刃：攻击本单位致伤 -1（近战阶段）",
+     "condition": [
+      "phase_melee"
+     ]
+    }
+   ],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [],
+   "provenance": {
+    "current_text": "db stratagems.text_zh id=000009274002",
+    "base_text": "Wahapedia 现文（PR11 工作单：11 版化后文本，FP 未触及或已滚入）",
+    "text_sha256": "2680d48555353cf9e894f2bbf23b6f00f47496c28210755cd4ba5a43397ab6c5"
+   },
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "stratagems",
+   "id": "000009274004",
+   "side": "attacker",
+   "detachment": "Black Ship Guardians",
+   "name_en": "CORNERED PREY",
+   "name_zh": "困兽",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "困兽：撤退后可射击/冲锋——射击/冲锋资格无载体"
+   ],
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "stratagems",
+   "id": "000009988004",
+   "side": "attacker",
+   "detachment": "Lions of the Emperor",
+   "name_en": "PEERLESS WARRIOR",
+   "name_zh": "无双战士",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "无双战士：近战 [PRECISION]——精确=目标选择（可打被率领单位内人物）非伤害增益无载体"
+   ],
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "stratagems",
+   "id": "000009988007",
+   "side": "attacker",
+   "detachment": "Lions of the Emperor",
+   "name_en": "SWIFT AS THE EAGLE",
+   "name_zh": "迅如雄鹰",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "迅如雄鹰：Normal move——移动无载体"
+   ],
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "stratagems",
+   "id": "000009988005",
+   "side": "attacker",
+   "detachment": "Lions of the Emperor",
+   "name_en": "UNLEASH THE LIONS",
+   "name_zh": "释放雄狮",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "释放雄狮：拆分单位——编制无载体"
+   ],
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "stratagems",
+   "id": "000009988003",
+   "side": "attacker",
+   "detachment": "Lions of the Emperor",
+   "name_en": "DEFIANT TO THE LAST",
+   "name_zh": "誓死不退",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "誓死不退：被毁后反打——串行幸存反打无载体"
+   ],
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "stratagems",
+   "id": "000009988002",
+   "side": "attacker",
+   "detachment": "Lions of the Emperor",
+   "name_en": "GILDED CHAMPION",
+   "name_zh": "镀金勇者",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "镀金勇者：复用每战一次能力——能力复用无载体"
+   ],
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "stratagems",
+   "id": "000009988006",
+   "side": "attacker",
+   "detachment": "Lions of the Emperor",
+   "name_en": "MANOEUVRE AND FIRE",
+   "name_zh": "机动开火",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "机动开火：撤退后可射击/冲锋——射击/冲锋资格无载体"
+   ],
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "stratagems",
+   "id": "000008927006",
+   "side": "attacker",
+   "detachment": "Null Maiden Vigil",
+   "name_en": "PURGATION SWEEP",
+   "name_zh": "净化横扫",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "净化横扫：Torrent 武器 +1/+2 A——torrent 关键字无 weapon_filter 载体"
+   ],
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "stratagems",
+   "id": "000008927004",
+   "side": "attacker",
+   "detachment": "Null Maiden Vigil",
+   "name_en": "ANATHEMA BLADEMASTERY",
+   "name_zh": "湮灭剑术",
+   "status": "partial",
+   "effects": [
+    {
+     "phase": "hit",
+     "op": "reroll",
+     "params": [
+      "fail"
+     ],
+     "source": "湮灭剑术：近战重骰命中",
+     "condition": [
+      "phase_melee"
+     ]
+    },
+    {
+     "phase": "wound",
+     "op": "reroll",
+     "params": [
+      "fail"
+     ],
+     "source": "湮灭剑术：近战对 PSYKER 重骰致伤",
+     "condition": [
+      "melee_target_has_keyword",
+      "psyker"
+     ]
+    }
+   ],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "目标为战意震慑单位时亦可重骰致伤——battle-shock 状态无载体，仅编 PSYKER 分支"
+   ],
+   "provenance": {
+    "current_text": "db stratagems.text_zh id=000008927004",
+    "base_text": "Wahapedia 现文（PR11 工作单：11 版化后文本，FP 未触及或已滚入）",
+    "text_sha256": "7bf04ca22c86a351ffe89835a3421994fc8b238cfd170b451200e2ca7a884441"
+   },
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "stratagems",
+   "id": "000008927003",
+   "side": "attacker",
+   "detachment": "Null Maiden Vigil",
+   "name_en": "WITCH HUNTERS",
+   "name_zh": "猎巫者",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "猎巫者：[LETHAL]/[SUSTAINED] 二选一且仅对 PSYKER 目标——二选一 + 目标限制双约束无载体"
+   ],
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "stratagems",
+   "id": "000008927005",
+   "side": "attacker",
+   "detachment": "Null Maiden Vigil",
+   "name_en": "PSY-CHAFF VOLLEY",
+   "name_zh": "灵能糠射",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "灵能糠射：标记敌单位 AP+1/命中-1——反应式标记 + 跨单位无载体"
+   ],
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "stratagems",
+   "id": "000008927002",
+   "side": "attacker",
+   "detachment": "Null Maiden Vigil",
+   "name_en": "DESPERATION’S PRICE",
+   "name_zh": "绝望代价",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "绝望代价：领导测试 + 致命伤——领导测试与致命伤无载体"
+   ],
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "stratagems",
+   "id": "000008927007",
+   "side": "target",
+   "detachment": "Null Maiden Vigil",
+   "name_en": "PSYCHIC ABOMINATIONS",
+   "name_zh": "灵能憎恶",
+   "status": "partial",
+   "effects": [
+    {
+     "phase": "save",
+     "op": "cover",
+     "params": [],
+     "source": "灵能憎恶：本单位获 Stealth（对远程掩体收益）",
+     "condition": [
+      "phase_shooting"
+     ]
+    }
+   ],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "战意震慑/PSYKER 模型 12吋外不得远程选中本单位——目标选择限制无载体"
+   ],
+   "provenance": {
+    "current_text": "db stratagems.text_zh id=000008927007",
+    "base_text": "Wahapedia 现文（PR11 工作单：11 版化后文本，FP 未触及或已滚入）",
+    "text_sha256": "ede3a6d256e431f2367e3f2453195131e2d221e8baec76eeb9591752ec926cf8"
+   },
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "stratagems",
+   "id": "000008394007",
+   "side": "attacker",
+   "detachment": "Shield Host",
+   "name_en": "ARCHEOTECH MUNITIONS",
+   "name_zh": "考古军械",
+   "status": "partial",
+   "effects": [
+    {
+     "phase": "hit",
+     "op": "extra_hits",
+     "params": [
+      1
+     ],
+     "source": "考古军械：远程 [SUSTAINED HITS 1]（二选一单分支）",
+     "condition": [
+      "phase_shooting"
+     ]
+    }
+   ],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "二选一按 [SUSTAINED HITS 1] 单分支建模（另可选 [LETHAL HITS]）"
+   ],
+   "provenance": {
+    "current_text": "db stratagems.text_zh id=000008394007",
+    "base_text": "Wahapedia 现文（PR11 工作单：11 版化后文本，FP 未触及或已滚入）",
+    "text_sha256": "c04a99a041e95af7f8d2a5fb9a0e151af0edd14fc4bffdd77f0950291f1c06c6"
+   },
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "stratagems",
+   "id": "000008394002",
+   "side": "attacker",
+   "detachment": "Shield Host",
+   "name_en": "ARCANE GENETIC ALCHEMY",
+   "name_zh": "奥术基因炼金",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "奥术基因炼金：对致命伤 FNP 4+——FNP 仅对致命伤无载体"
+   ],
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "stratagems",
+   "id": "000008394006",
+   "side": "attacker",
+   "detachment": "Shield Host",
+   "name_en": "VIGILANCE ETERNAL",
+   "name_zh": "永恒警戒",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "永恒警戒：目标控制——目标控制无载体"
+   ],
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "stratagems",
+   "id": "000008394005",
+   "side": "attacker",
+   "detachment": "Shield Host",
+   "name_en": "MULTIPOTENTIALITY",
+   "name_zh": "多能性",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "多能性：撤退后可射击/冲锋——射击/冲锋资格无载体"
+   ],
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "stratagems",
+   "id": "000008394004",
+   "side": "target",
+   "detachment": "Shield Host",
+   "name_en": "UNWAVERING SENTINELS",
+   "name_zh": "岿然哨兵",
+   "status": "encoded",
+   "effects": [
+    {
+     "phase": "hit",
+     "op": "modify",
+     "params": [
+      -1
+     ],
+     "source": "岿然哨兵：近战攻击本单位命中 -1",
+     "condition": [
+      "phase_melee"
+     ]
+    }
+   ],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [],
+   "provenance": {
+    "current_text": "db stratagems.text_zh id=000008394004",
+    "base_text": "Wahapedia 现文（PR11 工作单：11 版化后文本，FP 未触及或已滚入）",
+    "text_sha256": "d1dbd2b3b110ca863586e0e091e60bcdc4f3565781c38f97ac82efd5c9c96e75"
+   },
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "stratagems",
+   "id": "000008394003",
+   "side": "attacker",
+   "detachment": "Shield Host",
+   "name_en": "AVENGE THE FALLEN",
+   "name_zh": "为逝者复仇",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "为逝者复仇：自身低于满编时近战 +1/+2 A——自身战损状态无载体"
+   ],
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "stratagems",
+   "id": "000009754002",
+   "side": "target",
+   "detachment": "Solar Spearhead",
+   "name_en": "FLAWLESS CONSTRUCTION",
+   "name_zh": "无瑕造物",
+   "status": "encoded",
+   "effects": [
+    {
+     "phase": "wound",
+     "op": "modify",
+     "params": [
+      -1
+     ],
+     "source": "无瑕造物：S>T 攻击致伤 -1",
+     "condition": [
+      "wound_s_gt_t"
+     ]
+    }
+   ],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [],
+   "provenance": {
+    "current_text": "db stratagems.text_zh id=000009754002",
+    "base_text": "Wahapedia 现文（PR11 工作单：11 版化后文本，FP 未触及或已滚入）",
+    "text_sha256": "f148fb5c753288e39e9d7a40d55be93a6f4ddd27311faf9ba5c8ca85f6bc533c"
+   },
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "stratagems",
+   "id": "000009754003",
+   "side": "attacker",
+   "detachment": "Solar Spearhead",
+   "name_en": "EMPEROR’S VENGEANCE",
+   "name_zh": "帝皇的复仇",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "帝皇的复仇：被毁后反打——串行幸存反打无载体"
+   ],
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "stratagems",
+   "id": "000009754004",
+   "side": "attacker",
+   "detachment": "Solar Spearhead",
+   "name_en": "WRATHFUL ADVANCE",
+   "name_zh": "狂怒突进",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "狂怒突进：突入 D3+3吋——近战机动无载体"
+   ],
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "stratagems",
+   "id": "000009754005",
+   "side": "attacker",
+   "detachment": "Solar Spearhead",
+   "name_en": "UNSTOPPABLE",
+   "name_zh": "势不可挡",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "势不可挡：穿越地形——移动无载体"
+   ],
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "stratagems",
+   "id": "000009754007",
+   "side": "attacker",
+   "detachment": "Solar Spearhead",
+   "name_en": "PUNISHMENT INESCAPABLE",
+   "name_zh": "无可逃脱的惩罚",
+   "status": "encoded",
+   "effects": [
+    {
+     "phase": "save",
+     "op": "ignores_cover",
+     "params": [],
+     "source": "无可逃脱的惩罚：远程 [IGNORES COVER]",
+     "condition": [
+      "phase_shooting"
+     ]
+    },
+    {
+     "phase": "hit",
+     "op": "ignore_hit_mods",
+     "params": [],
+     "source": "无可逃脱的惩罚：无视 BS/命中不利修正",
+     "condition": [
+      "phase_shooting"
+     ]
+    }
+   ],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [],
+   "provenance": {
+    "current_text": "db stratagems.text_zh id=000009754007",
+    "base_text": "Wahapedia 现文（PR11 工作单：11 版化后文本，FP 未触及或已滚入）",
+    "text_sha256": "6e3af1e976570c0f785291e98b02ae34d7cdfe21e48068445a631780d39cae6f"
+   },
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "stratagems",
+   "id": "000009754006",
+   "side": "attacker",
+   "detachment": "Solar Spearhead",
+   "name_en": "RELENTLESS PERSECUTION",
+   "name_zh": "无情追击",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "无情追击：前进后可射击——射击资格无载体"
+   ],
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "stratagems",
+   "id": "000008922003",
+   "side": "attacker",
+   "detachment": "Talons Of The Emperor",
+   "name_en": "TALONS INTERLOCKED",
+   "name_zh": "利爪连锁",
+   "status": "encoded",
+   "effects": [
+    {
+     "phase": "wound",
+     "op": "s_improve",
+     "params": [
+      1
+     ],
+     "source": "利爪连锁：远程 S +1",
+     "condition": [
+      "phase_shooting"
+     ]
+    },
+    {
+     "phase": "save",
+     "op": "ap_improve",
+     "params": [
+      1
+     ],
+     "source": "利爪连锁：远程 AP +1",
+     "condition": [
+      "phase_shooting"
+     ]
+    }
+   ],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [],
+   "provenance": {
+    "current_text": "db stratagems.text_zh id=000008922003",
+    "base_text": "Wahapedia 现文（PR11 工作单：11 版化后文本，FP 未触及或已滚入）",
+    "text_sha256": "956bd7a97d3ad9f5b651e0468727717381897b247a2a94772ce5ab56e7c17bdb"
+   },
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "stratagems",
+   "id": "000008922004",
+   "side": "attacker",
+   "detachment": "Talons Of The Emperor",
+   "name_en": "EMPYRIC SEVERANCE",
+   "name_zh": "灵能断绝",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "灵能断绝：对灵能/致命伤 FNP 4+——FNP 仅对灵能/致命伤无载体"
+   ],
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "stratagems",
+   "id": "000008922005",
+   "side": "attacker",
+   "detachment": "Talons Of The Emperor",
+   "name_en": "EMPEROR’S EXECUTIONERS",
+   "name_zh": "帝皇的处刑者",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "帝皇的处刑者：仅 Fight phase 对低于满编敌 +1 致伤——单 tag 契约无法叠加 phase_melee×target_below_starting，现无「近战×低于满编」复合 tag 载体，宁漏不错不建模（同 PR10 Warp Fields 远程 S>T 先例，避免射击阶段误施加）"
+   ],
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "stratagems",
+   "id": "000008922006",
+   "side": "attacker",
+   "detachment": "Talons Of The Emperor",
+   "name_en": "TALONED PINCER",
+   "name_zh": "利爪钳击",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "利爪钳击：Normal move——移动无载体"
+   ],
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "stratagems",
+   "id": "000008922007",
+   "side": "attacker",
+   "detachment": "Talons Of The Emperor",
+   "name_en": "SHIELD OF HONOUR",
+   "name_zh": "荣誉之盾",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "荣誉之盾：攻击重定向——目标重定向无载体"
+   ],
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "stratagems",
+   "id": "000008922002",
+   "side": "attacker",
+   "detachment": "Talons Of The Emperor",
+   "name_en": "HUNT AS ONE",
+   "name_zh": "同心猎杀",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "同心猎杀：撤退后可射击/冲锋——射击/冲锋资格无载体"
+   ],
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "stratagems",
+   "id": "000009265004",
+   "side": "attacker",
+   "detachment": "Voyagers in Darkness",
+   "name_en": "ARTIFICER ROUNDS",
+   "name_zh": "神匠弹药",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "神匠弹药：6吋内 [SUSTAINED HITS 1]——6吋档无 tag + 武器排除无载体"
+   ],
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "stratagems",
+   "id": "000009265005",
+   "side": "attacker",
+   "detachment": "Voyagers in Darkness",
+   "name_en": "AURIC STORM",
+   "name_zh": "黄金风暴",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "黄金风暴：战意测试——战意无载体"
+   ],
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "stratagems",
+   "id": "000009265003",
+   "side": "attacker",
+   "detachment": "Voyagers in Darkness",
+   "name_en": "BREACHING BEHEMOTHS",
+   "name_zh": "破障巨兽",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "破障巨兽：穿越模型——移动无载体"
+   ],
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "stratagems",
+   "id": "000009265002",
+   "side": "attacker",
+   "detachment": "Voyagers in Darkness",
+   "name_en": "INESCAPABLE VENGEANCE",
+   "name_zh": "逃无可逃的复仇",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "逃无可逃的复仇：突入/巩固可视——可视性无载体"
+   ],
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "stratagems",
+   "id": "fp11e-ac-moritoi-s1",
+   "side": "target",
+   "detachment": "Might of the Moritoi",
+   "name_en": "Flawless Construction",
+   "name_zh": "无瑕造物",
+   "status": "encoded",
+   "effects": [
+    {
+     "phase": "wound",
+     "op": "modify",
+     "params": [
+      -1
+     ],
+     "source": "无瑕造物：S>T 攻击致伤 -1",
+     "condition": [
+      "wound_s_gt_t"
+     ]
+    }
+   ],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [],
+   "provenance": {
+    "current_text": "db stratagems.text_zh id=fp11e-ac-moritoi-s1",
+    "base_text": "Wahapedia 现文（PR11 工作单：11 版化后文本，FP 未触及或已滚入）",
+    "text_sha256": "3c86d2dff4618f73fa926799cca5db051f1413cf850f3b8abbf98d1934a1364f"
+   },
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "stratagems",
+   "id": "fp11e-ac-moritoi-s2",
+   "side": "attacker",
+   "detachment": "Might of the Moritoi",
+   "name_en": "Unstoppable Advance",
+   "name_zh": "势不可挡的进击",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "势不可挡的进击：获 MOBILE——移动关键字无载体"
+   ],
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "stratagems",
+   "id": "fp11e-ac-moritoi-s3",
+   "side": "attacker",
+   "detachment": "Might of the Moritoi",
+   "name_en": "Prioritised Eradication",
+   "name_zh": "优先歼灭",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "优先歼灭：Arachnus Storm Cannon/Iliastus 加 [RAPID FIRE]——武器名专属无载体"
+   ],
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "stratagems",
+   "id": "fp11e-ac-silent-s1",
+   "side": "attacker",
+   "detachment": "Silent Hunters",
+   "name_en": "Deathsong Scythes",
+   "name_zh": "死歌之镰",
+   "status": "encoded",
+   "effects": [
+    {
+     "phase": "wound",
+     "op": "modify",
+     "params": [
+      1
+     ],
+     "source": "死歌之镰：[LANCE] 冲锋近战致伤 +1",
+     "condition": [
+      "melee_charging"
+     ]
+    },
+    {
+     "phase": "attacks",
+     "op": "modify",
+     "params": [
+      1
+     ],
+     "source": "死歌之镰：近战对 PSYKER +1 A",
+     "condition": [
+      "melee_target_has_keyword",
+      "psyker"
+     ]
+    }
+   ],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [],
+   "provenance": {
+    "current_text": "db stratagems.text_zh id=fp11e-ac-silent-s1",
+    "base_text": "Wahapedia 现文（PR11 工作单：11 版化后文本，FP 未触及或已滚入）",
+    "text_sha256": "7e9b803b37f7cfa1c7277fdfb4bfd6e98792523327d4b96d4eaa92c3c6203cee"
+   },
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "stratagems",
+   "id": "fp11e-ac-silent-s2",
+   "side": "attacker",
+   "detachment": "Silent Hunters",
+   "name_en": "Umbral Prosecution",
+   "name_zh": "暗影追诉",
+   "status": "encoded",
+   "effects": [
+    {
+     "phase": "attacks",
+     "op": "modify",
+     "params": [
+      2
+     ],
+     "source": "暗影追诉：Boltgun [RAPID FIRE 2]",
+     "condition": [
+      "half_range"
+     ]
+    },
+    {
+     "phase": "save",
+     "op": "ap_improve",
+     "params": [
+      1
+     ],
+     "source": "暗影追诉：Boltgun +1 AP",
+     "condition": [
+      "phase_shooting"
+     ]
+    }
+   ],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [],
+   "weapon_filter": "boltgun",
+   "provenance": {
+    "current_text": "db stratagems.text_zh id=fp11e-ac-silent-s2",
+    "base_text": "Wahapedia 现文（PR11 工作单：11 版化后文本，FP 未触及或已滚入）",
+    "text_sha256": "84371c7091c90d8132cb3c35db49674bc375a26985d3f0e5adf725b536d9547e"
+   },
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "stratagems",
+   "id": "fp11e-ac-silent-s3",
+   "side": "attacker",
+   "detachment": "Silent Hunters",
+   "name_en": "Synchronised Inferno",
+   "name_zh": "同步炼狱",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "同步炼狱：[TORRENT] 远程获 [BLAST 1]——torrent 关键字无 weapon_filter 载体"
+   ],
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "stratagems",
+   "id": "fp11e-ac-tharanatoi-s1",
+   "side": "target",
+   "detachment": "Tharanatoi Hammerblow",
+   "name_en": "Hardened Resolve",
+   "name_zh": "坚毅决心",
+   "status": "encoded",
+   "effects": [
+    {
+     "phase": "wound",
+     "op": "t_improve",
+     "params": [
+      1
+     ],
+     "source": "坚毅决心：本单位 T +1"
+    }
+   ],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [],
+   "provenance": {
+    "current_text": "db stratagems.text_zh id=fp11e-ac-tharanatoi-s1",
+    "base_text": "Wahapedia 现文（PR11 工作单：11 版化后文本，FP 未触及或已滚入）",
+    "text_sha256": "fafbb47a561207635e595f8ebf4d7e26e2cc579081161f25e6770dc7ae7fb9e7"
+   },
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "stratagems",
+   "id": "fp11e-ac-tharanatoi-s2",
+   "side": "attacker",
+   "detachment": "Tharanatoi Hammerblow",
+   "name_en": "Unleash the Lions",
+   "name_zh": "释放雄狮",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "释放雄狮：拆分单位——编制无载体"
+   ],
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "stratagems",
+   "id": "fp11e-ac-tharanatoi-s3",
+   "side": "attacker",
+   "detachment": "Tharanatoi Hammerblow",
+   "name_en": "Electroexorcist Saturation",
+   "name_zh": "电控驱魔饱和",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "电控驱魔饱和：Ballistus Grenade Launcher D3+3 A——武器名专属无载体"
+   ],
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "enhancements",
+   "id": "000009273002",
+   "side": "target",
+   "detachment": "Black Ship Guardians",
+   "name_en": "The Vratine Aquila (Aura)",
+   "name_zh": "弗拉汀之鹰",
+   "status": "partial",
+   "effects": [
+    {
+     "phase": "save",
+     "op": "invuln",
+     "params": [
+      4
+     ],
+     "source": "弗拉汀之鹰：ANATHEMA PSYKANA 单位 4+ 无效保护"
+    }
+   ],
+   "requires_toggles": [
+    "defender_bearer_leading"
+   ],
+   "not_modeled_notes_zh": [
+    "光环授予 3吋内 ANATHEMA PSYKANA 单位——假设本单位在范围内"
+   ],
+   "provenance": {
+    "current_text": "db enhancements.description id=000009273002",
+    "base_text": "Wahapedia 现文（PR11 工作单：11 版化后文本，FP 未触及或已滚入）",
+    "text_sha256": "bcefcd99033b8dcf6108aa82d3cb0b53f73ff7d6ae299c0539b58b7b38c70269"
+   },
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "enhancements",
+   "id": "000008921002",
+   "side": "attacker",
+   "detachment": "Talons Of The Emperor",
+   "name_en": "Aegis Projector",
+   "name_zh": "神盾投射器",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "神盾投射器：失保后改伤 0——反应式单次改伤无载体"
+   ],
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "enhancements",
+   "id": "000009987002",
+   "side": "attacker",
+   "detachment": "Lions of the Emperor",
+   "name_en": "Superior Creation",
+   "name_zh": "卓越造物",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "卓越造物：每战一次复活——复活无载体"
+   ],
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "enhancements",
+   "id": "000009264002",
+   "side": "attacker",
+   "detachment": "Voyagers in Darkness",
+   "name_en": "Voidstrider",
+   "name_zh": "虚空行者",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "虚空行者：M +2——移动无载体"
+   ],
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "enhancements",
+   "id": "000008926002",
+   "side": "target",
+   "detachment": "Null Maiden Vigil",
+   "name_en": "Enhanced Voidsheen Cloak",
+   "name_zh": "增幅虚光斗篷",
+   "status": "partial",
+   "effects": [
+    {
+     "phase": "damage",
+     "op": "damage_reduction",
+     "params": [
+      1
+     ],
+     "source": "增幅虚光斗篷：分配到携带者的攻击伤害 -1"
+    }
+   ],
+   "requires_toggles": [
+    "defender_bearer_leading"
+   ],
+   "not_modeled_notes_zh": [
+    "PSYKER/战意震慑攻击者改伤为 1 不建模（改伤设定值）"
+   ],
+   "provenance": {
+    "current_text": "db enhancements.description id=000008926002",
+    "base_text": "Wahapedia 现文（PR11 工作单：11 版化后文本，FP 未触及或已滚入）",
+    "text_sha256": "2909eb82c9359985bad5e808724e7aa1f4dc7092dd795cb5eb4f14f0503e0437"
+   },
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "enhancements",
+   "id": "000009753002",
+   "side": "attacker",
+   "detachment": "Solar Spearhead",
+   "name_en": "Adamantine Talisman",
+   "name_zh": "金刚护符",
+   "status": "partial",
+   "effects": [
+    {
+     "phase": "attacks",
+     "op": "modify",
+     "params": [
+      1
+     ],
+     "source": "金刚护符：近战 A +1",
+     "condition": [
+      "phase_melee"
+     ]
+    },
+    {
+     "phase": "wound",
+     "op": "s_improve",
+     "params": [
+      1
+     ],
+     "source": "金刚护符：近战 S +1",
+     "condition": [
+      "phase_melee"
+     ]
+    }
+   ],
+   "requires_toggles": [
+    "bearer_leading"
+   ],
+   "not_modeled_notes_zh": [
+    "+1 D 不建模（无通用伤害特征值通道）"
+   ],
+   "provenance": {
+    "current_text": "db enhancements.description id=000009753002",
+    "base_text": "Wahapedia 现文（PR11 工作单：11 版化后文本，FP 未触及或已滚入）",
+    "text_sha256": "5d0a353b0d9e9af408885facf13bd2f4fe812571e2259f69db30ab3bcf6a4974"
+   },
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "enhancements",
+   "id": "000008395002",
+   "side": "attacker",
+   "detachment": "Shield Host",
+   "name_en": "Auric Mantle",
+   "name_zh": "黄金披风",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "黄金披风：W +2——W 特征值无通道"
+   ],
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "enhancements",
+   "id": "000008930002",
+   "side": "attacker",
+   "detachment": "Auric Champions",
+   "name_en": "Blade Imperator",
+   "name_zh": "剑之统帅",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "剑之统帅：冲锋后致命伤 + 战意——致命伤与战意无载体"
+   ],
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "enhancements",
+   "id": "000008926003",
+   "side": "attacker",
+   "detachment": "Null Maiden Vigil",
+   "name_en": "Huntress’ Eye",
+   "name_zh": "女猎手之眼",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "女猎手之眼：战意测试——战意无载体"
+   ],
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "enhancements",
+   "id": "000009273003",
+   "side": "attacker",
+   "detachment": "Black Ship Guardians",
+   "name_en": "Sinister Presence (Aura)",
+   "name_zh": "阴森威压",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "阴森威压：战意测试光环——战意无载体"
+   ],
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "enhancements",
+   "id": "000009753003",
+   "side": "target",
+   "detachment": "Solar Spearhead",
+   "name_en": "Augury Uplink",
+   "name_zh": "预警上行链路",
+   "status": "encoded",
+   "effects": [
+    {
+     "phase": "fnp",
+     "op": "fnp",
+     "params": [
+      5
+     ],
+     "source": "预警上行链路：携带者 FNP 5+"
+    }
+   ],
+   "requires_toggles": [
+    "defender_bearer_leading"
+   ],
+   "not_modeled_notes_zh": [],
+   "provenance": {
+    "current_text": "db enhancements.description id=000009753003",
+    "base_text": "Wahapedia 现文（PR11 工作单：11 版化后文本，FP 未触及或已滚入）",
+    "text_sha256": "4cff8a745d0294b39123aa4aaca846360f9113b3909a10960b63224c5bb89ef7"
+   },
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "enhancements",
+   "id": "000008395003",
+   "side": "attacker",
+   "detachment": "Shield Host",
+   "name_en": "Castellan’s Mark",
+   "name_zh": "城主印记",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "城主印记：重新部署——部署无载体"
+   ],
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "enhancements",
+   "id": "000008930003",
+   "side": "attacker",
+   "detachment": "Auric Champions",
+   "name_en": "Inspirational Exemplar",
+   "name_zh": "鼓舞典范",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "鼓舞典范：解除战意震慑——战意无载体"
+   ],
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "enhancements",
+   "id": "000008921003",
+   "side": "attacker",
+   "detachment": "Talons Of The Emperor",
+   "name_en": "Champion of the Imperium",
+   "name_zh": "帝国冠军",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "帝国冠军：光环射程——光环距离无载体"
+   ],
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "enhancements",
+   "id": "000009987003",
+   "side": "target",
+   "detachment": "Lions of the Emperor",
+   "name_en": "Praesidius",
+   "name_zh": "守护者",
+   "status": "partial",
+   "effects": [
+    {
+     "phase": "save",
+     "op": "cover",
+     "params": [],
+     "source": "守护者：携带者获 Stealth（对远程掩体收益）",
+     "condition": [
+      "phase_shooting"
+     ]
+    }
+   ],
+   "requires_toggles": [
+    "defender_bearer_leading"
+   ],
+   "not_modeled_notes_zh": [
+    "Lone Operative 不建模（目标选择）"
+   ],
+   "provenance": {
+    "current_text": "db enhancements.description id=000009987003",
+    "base_text": "Wahapedia 现文（PR11 工作单：11 版化后文本，FP 未触及或已滚入）",
+    "text_sha256": "5da4b9c726309721415df1a2b0ce81b96c7a3ff422712949d2d11d225c868989"
+   },
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "enhancements",
+   "id": "000009264003",
+   "side": "attacker",
+   "detachment": "Voyagers in Darkness",
+   "name_en": "Mantle of the Emissary",
+   "name_zh": "使节披风",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "使节披风：OC 5——目标控制无载体"
+   ],
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "enhancements",
+   "id": "000008926004",
+   "side": "attacker",
+   "detachment": "Null Maiden Vigil",
+   "name_en": "Oblivion Knight",
+   "name_zh": "湮灭骑士",
+   "status": "encoded",
+   "effects": [
+    {
+     "phase": "hit",
+     "op": "modify",
+     "params": [
+      1
+     ],
+     "source": "湮灭骑士：被率领单位命中 +1"
+    },
+    {
+     "phase": "wound",
+     "op": "modify",
+     "params": [
+      1
+     ],
+     "source": "湮灭骑士：对 PSYKER 致伤 +1",
+     "condition": [
+      "target_has_keyword",
+      "psyker"
+     ]
+    }
+   ],
+   "requires_toggles": [
+    "bearer_leading"
+   ],
+   "not_modeled_notes_zh": [],
+   "provenance": {
+    "current_text": "db enhancements.description id=000008926004",
+    "base_text": "Wahapedia 现文（PR11 工作单：11 版化后文本，FP 未触及或已滚入）",
+    "text_sha256": "5a74793c57bbf82510c028048dce62099888cf7b1d6210ed56e7907447dcbf70"
+   },
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "enhancements",
+   "id": "000008930004",
+   "side": "attacker",
+   "detachment": "Auric Champions",
+   "name_en": "Martial Philosopher",
+   "name_zh": "武学哲人",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "武学哲人：撤退后可射击/冲锋 + 反应移动——射击资格与移动无载体"
+   ],
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "enhancements",
+   "id": "000009753004",
+   "side": "attacker",
+   "detachment": "Solar Spearhead",
+   "name_en": "Honoured Fallen (Aura)",
+   "name_zh": "荣光逝者",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "荣光逝者：重骰命中 1 光环——仅重骰 1 + 光环无载体"
+   ],
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "enhancements",
+   "id": "000008395004",
+   "side": "attacker",
+   "detachment": "Shield Host",
+   "name_en": "From the Hall of Armouries",
+   "name_zh": "武库大厅",
+   "status": "partial",
+   "effects": [
+    {
+     "phase": "wound",
+     "op": "s_improve",
+     "params": [
+      1
+     ],
+     "source": "武库大厅：近战 S +1",
+     "condition": [
+      "phase_melee"
+     ]
+    }
+   ],
+   "requires_toggles": [
+    "bearer_leading"
+   ],
+   "not_modeled_notes_zh": [
+    "+1 D 不建模（无通用伤害特征值通道）"
+   ],
+   "provenance": {
+    "current_text": "db enhancements.description id=000008395004",
+    "base_text": "Wahapedia 现文（PR11 工作单：11 版化后文本，FP 未触及或已滚入）",
+    "text_sha256": "6aefca747bc67b3ec9ab3b6c556f490891e61fe108d0a590f1ac1a0b52f88939"
+   },
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "enhancements",
+   "id": "000009987004",
+   "side": "attacker",
+   "detachment": "Lions of the Emperor",
+   "name_en": "Fierce Conqueror",
+   "name_zh": "凶悍征服者",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "凶悍征服者：每 5 敌模型 +2 A——按敌模型数动态无载体"
+   ],
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "enhancements",
+   "id": "000008921004",
+   "side": "attacker",
+   "detachment": "Talons Of The Emperor",
+   "name_en": "Gift of Terran Artifice",
+   "name_zh": "泰拉造物之赐",
+   "status": "encoded",
+   "effects": [
+    {
+     "phase": "wound",
+     "op": "modify",
+     "params": [
+      1
+     ],
+     "source": "泰拉造物之赐：近战致伤 +1",
+     "condition": [
+      "phase_melee"
+     ]
+    }
+   ],
+   "requires_toggles": [
+    "bearer_leading"
+   ],
+   "not_modeled_notes_zh": [],
+   "provenance": {
+    "current_text": "db enhancements.description id=000008921004",
+    "base_text": "Wahapedia 现文（PR11 工作单：11 版化后文本，FP 未触及或已滚入）",
+    "text_sha256": "b8fdbbef052b027bc78a110b423832a3c736a74e8043ee4676b5ac9ceb41268f"
+   },
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "enhancements",
+   "id": "000009753005",
+   "side": "attacker",
+   "detachment": "Solar Spearhead",
+   "name_en": "Veteran of the Kataphraktoi",
+   "name_zh": "卡塔法克托伊老兵",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "卡塔法克托伊老兵：撤退后可射击——射击资格无载体"
+   ],
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "enhancements",
+   "id": "000008395005",
+   "side": "attacker",
+   "detachment": "Shield Host",
+   "name_en": "Panoptispex",
+   "name_zh": "全景观测仪",
+   "status": "encoded",
+   "effects": [
+    {
+     "phase": "save",
+     "op": "ignores_cover",
+     "params": [],
+     "source": "全景观测仪：被率领单位远程 [IGNORES COVER]",
+     "condition": [
+      "phase_shooting"
+     ]
+    }
+   ],
+   "requires_toggles": [
+    "bearer_leading"
+   ],
+   "not_modeled_notes_zh": [],
+   "provenance": {
+    "current_text": "db enhancements.description id=000008395005",
+    "base_text": "Wahapedia 现文（PR11 工作单：11 版化后文本，FP 未触及或已滚入）",
+    "text_sha256": "bec0bb5c10723e16347fbe41ae295157883e00018825f35a317c05e16220c59d"
+   },
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "enhancements",
+   "id": "000009987005",
+   "side": "attacker",
+   "detachment": "Lions of the Emperor",
+   "name_en": "Admonimortis",
+   "name_zh": "谴责之刃",
+   "status": "partial",
+   "effects": [
+    {
+     "phase": "wound",
+     "op": "s_improve",
+     "params": [
+      3
+     ],
+     "source": "谴责之刃：近战 S +3",
+     "condition": [
+      "phase_melee"
+     ]
+    },
+    {
+     "phase": "save",
+     "op": "ap_improve",
+     "params": [
+      1
+     ],
+     "source": "谴责之刃：近战 AP +1",
+     "condition": [
+      "phase_melee"
+     ]
+    }
+   ],
+   "requires_toggles": [
+    "bearer_leading"
+   ],
+   "not_modeled_notes_zh": [
+    "+1 D 不建模（无通用伤害特征值通道）"
+   ],
+   "provenance": {
+    "current_text": "db enhancements.description id=000009987005",
+    "base_text": "Wahapedia 现文（PR11 工作单：11 版化后文本，FP 未触及或已滚入）",
+    "text_sha256": "26901df5a2cd63aef4429643582106f48c131974ce493edf3b79fe5cf84f025a"
+   },
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "enhancements",
+   "id": "000008921005",
+   "side": "attacker",
+   "detachment": "Talons Of The Emperor",
+   "name_en": "Radiant Mantle",
+   "name_zh": "光辉披风",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "光辉披风：攻击者 12吋内命中 -1——攻击者距离无载体（无条件施加会对远程过度施加）"
+   ],
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "enhancements",
+   "id": "000008930005",
+   "side": "attacker",
+   "detachment": "Auric Champions",
+   "name_en": "Veiled Blade",
+   "name_zh": "隐蔽之刃",
+   "status": "partial",
+   "effects": [
+    {
+     "phase": "attacks",
+     "op": "modify",
+     "params": [
+      2
+     ],
+     "source": "隐蔽之刃：近战 A +2",
+     "condition": [
+      "phase_melee"
+     ]
+    }
+   ],
+   "requires_toggles": [
+    "bearer_leading"
+   ],
+   "not_modeled_notes_zh": [
+    "每战一次三倍 OC 不建模（目标控制）"
+   ],
+   "provenance": {
+    "current_text": "db enhancements.description id=000008930005",
+    "base_text": "Wahapedia 现文（PR11 工作单：11 版化后文本，FP 未触及或已滚入）",
+    "text_sha256": "263a97d6ebd72ee2281bd08ec7307af16454dbc7a2b99576c57125ac1d0fb66c"
+   },
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "enhancements",
+   "id": "000008926005",
+   "side": "attacker",
+   "detachment": "Null Maiden Vigil",
+   "name_en": "Raptor Blade",
+   "name_zh": "猛禽之刃",
+   "status": "partial",
+   "effects": [
+    {
+     "phase": "attacks",
+     "op": "modify",
+     "params": [
+      1
+     ],
+     "source": "猛禽之刃：近战 A +1",
+     "condition": [
+      "phase_melee"
+     ]
+    },
+    {
+     "phase": "wound",
+     "op": "s_improve",
+     "params": [
+      1
+     ],
+     "source": "猛禽之刃：近战 S +1",
+     "condition": [
+      "phase_melee"
+     ]
+    }
+   ],
+   "requires_toggles": [
+    "bearer_leading"
+   ],
+   "not_modeled_notes_zh": [
+    "+1 D 不建模；对战意震慑 PSYKER 敌升 +2 A/S/D 不建模（battle-shock 状态无载体）"
+   ],
+   "provenance": {
+    "current_text": "db enhancements.description id=000008926005",
+    "base_text": "Wahapedia 现文（PR11 工作单：11 版化后文本，FP 未触及或已滚入）",
+    "text_sha256": "0c8cf17306e53fe2635bccf08aeb0da098172920ea15de723ff98876dd3888ef"
+   },
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "enhancements",
+   "id": "fp11e-ac-moritoi-e1",
+   "side": "attacker",
+   "detachment": "Might of the Moritoi",
+   "name_en": "Interred Expertise",
+   "name_zh": "承袭专精",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "承袭专精：重骰命中 1 + 致伤 1——仅重骰 1（非重骰失败）无载体"
+   ],
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "enhancements",
+   "id": "fp11e-ac-moritoi-e2",
+   "side": "attacker",
+   "detachment": "Might of the Moritoi",
+   "name_en": "Auramite Sarcophagus",
+   "name_zh": "金相石棺",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "金相石棺：战略 -1 CP——CP 折扣无载体"
+   ],
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "enhancements",
+   "id": "fp11e-ac-silent-e1",
+   "side": "attacker",
+   "detachment": "Silent Hunters",
+   "name_en": "Encircling Hunter",
+   "name_zh": "包抄猎手",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "包抄猎手：重新部署——部署无载体"
+   ],
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "enhancements",
+   "id": "fp11e-ac-silent-e2",
+   "side": "attacker",
+   "detachment": "Silent Hunters",
+   "name_en": "Psyk-Out Grenades",
+   "name_zh": "驱灵手雷",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "驱灵手雷：EXPLOSIVES + 对 PSYKER 重骰致命伤——战略触发与致命伤无载体"
+   ],
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "enhancements",
+   "id": "fp11e-ac-tharanatoi-e1",
+   "side": "attacker",
+   "detachment": "Tharanatoi Hammerblow",
+   "name_en": "Mnemo-locked Shrine Cipher",
+   "name_zh": "记忆锁圣所密码",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "记忆锁圣所密码：ingress 移动——移动无载体"
+   ],
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "enhancements",
+   "id": "fp11e-ac-tharanatoi-e2",
+   "side": "attacker",
+   "detachment": "Tharanatoi Hammerblow",
+   "name_en": "Efficient Aggression",
+   "name_zh": "高效侵略",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "高效侵略：surge 移动——移动无载体"
+   ],
+   "encoded_by": "manual-2026-07-19"
+  }
+ ]
+}
