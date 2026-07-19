@@ -1,0 +1,1920 @@
+{
+ "_comment": "P7 阵营技能 DSL 唯一真源（千子，P7-PR10）。DB effect_dsl_json/dsl_status 只是投影，由 `python -m db_compile dsl-apply` 写入并挂 restore。判据与格式沿 spec 2026-07-14 + PR3-PR9 约定；A/B 工作单见 docs/superpowers/plans/2026-07-19-p7-pr10-ts-worklist.md。千子为灵能重型阵营：绝大多数条目属灵能测试·仪式·移动·致命伤·治疗·目标控制·预备队·战意·侦测·跨单位光环·Flow of Magic 区域态，均无战斗结算载体 → not_modeled 诚实披露。可建模子集=纯战斗增益：巫视/焦烧翻焰远程 [IGNORES COVER]、附魔灌注载具 [PSYCHIC]+致伤、利骨丛生近战 [CLEAVE]+AP、阿波米努斯法杖近战 [SUSTAINED D3]+[DEV]，及守方向硫磺帷幕/岿然阵列/咒印甲胄/扭曲无常/血肉之变/坚定守护/真名之书/扭曲之钻/流变之肉/代价赐福等。灵能武器 +S 类因 weapon_filter 仅按名字子串无法选中 [PSYCHIC] 关键字武器 → not_modeled；扭曲力场远程 S>T 因无远程门控 S>T tag 不建模（宁漏不错）。",
+ "dsl_version": 1,
+ "faction": "TS",
+ "entries": [
+  {
+   "table": "abilities",
+   "id": "det000009653",
+   "side": "attacker",
+   "detachment": "Witchsight",
+   "name_en": "Witchsight",
+   "name_zh": "巫视",
+   "status": "encoded",
+   "effects": [
+    {
+     "phase": "save",
+     "op": "ignores_cover",
+     "params": [],
+     "source": "巫视：THOUSAND SONS 远程武器 [IGNORES COVER]",
+     "condition": [
+      "phase_shooting"
+     ]
+    }
+   ],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [],
+   "provenance": {
+    "current_text": "db detachments.rule_text id=000009653",
+    "base_text": "Wahapedia 现文（PR10 工作单：11 版化后文本，FP 未触及或已滚入）",
+    "text_sha256": "8f498e822ca13a2738fa3ab02462bfdbe52c0d914dd7bf7b24e261f3accc4514"
+   },
+   "encoded_by": "manual-2026-07-19",
+   "materialize": {
+    "from_table": "detachments",
+    "from_id": "000009653",
+    "from_column": "rule_text"
+   }
+  },
+  {
+   "table": "abilities",
+   "id": "det000009662",
+   "side": "attacker",
+   "detachment": "Fervent Devotees",
+   "name_en": "Fervent Devotees",
+   "name_zh": "虔诚信徒",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "近战 [SUSTAINED HITS 1] 仅当目标在目标标记范围内——无客观位置载体（逐次攻击门控），宁漏不错不建模"
+   ],
+   "encoded_by": "manual-2026-07-19",
+   "materialize": {
+    "from_table": "detachments",
+    "from_id": "000009662",
+    "from_column": "rule_text"
+   }
+  },
+  {
+   "table": "abilities",
+   "id": "det000009671",
+   "side": "attacker",
+   "detachment": "Methodical Conquest",
+   "name_en": "Methodical Conquest",
+   "name_zh": "缜密征服",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "火力压制命中 5+ / Set Overwatch 战术机动——Overwatch 与战术机动均无载体"
+   ],
+   "encoded_by": "manual-2026-07-19",
+   "materialize": {
+    "from_table": "detachments",
+    "from_id": "000009671",
+    "from_column": "rule_text"
+   }
+  },
+  {
+   "table": "abilities",
+   "id": "det000009740",
+   "side": "attacker",
+   "detachment": "Flow of Magic",
+   "name_en": "Flow of Magic",
+   "name_zh": "魔力涌流",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "灵能攻击重骰致伤 1 + FoM 区域内 +1 致伤——灵能武器专属 + Flow of Magic 区域态无载体，且重骰 1≠重骰失败"
+   ],
+   "encoded_by": "manual-2026-07-19",
+   "materialize": {
+    "from_table": "detachments",
+    "from_id": "000009740",
+    "from_column": "rule_text"
+   }
+  },
+  {
+   "table": "abilities",
+   "id": "det000010192",
+   "side": "attacker",
+   "detachment": "Kindred Sorcery",
+   "name_en": "Kindred Sorcery",
+   "name_zh": "血脉巫术",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "指挥阶段三选一灵能增益（射程/+1 致伤/[DEVASTATING WOUNDS]）——每战一次选择 + 灵能武器专属无载体"
+   ],
+   "encoded_by": "manual-2026-07-19",
+   "materialize": {
+    "from_table": "detachments",
+    "from_id": "000010192",
+    "from_column": "rule_text"
+   }
+  },
+  {
+   "table": "abilities",
+   "id": "det000010196",
+   "side": "attacker",
+   "detachment": "Infernal Pacts",
+   "name_en": "Infernal Pacts",
+   "name_zh": "炼狱契约",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "光耀军团 4++ 对远程无效保护光环 + 授予军规——跨单位光环 + 军表混编域无载体"
+   ],
+   "encoded_by": "manual-2026-07-19",
+   "materialize": {
+    "from_table": "detachments",
+    "from_id": "000010196",
+    "from_column": "rule_text"
+   }
+  },
+  {
+   "table": "abilities",
+   "id": "det000010200",
+   "side": "attacker",
+   "detachment": "Warpmeld Sacrifice",
+   "name_en": "Warpmeld Sacrifice",
+   "name_zh": "扭曲献祭",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "撤离献祭：守方 -1 致伤 / 攻方 +1 致伤 系逐次可选献祭且代价 D3 致命伤——选择态 + 自伤代价 + TZEENTCH MUTANT 专属无载体，宁漏不错不建模"
+   ],
+   "encoded_by": "manual-2026-07-19",
+   "materialize": {
+    "from_table": "detachments",
+    "from_id": "000010200",
+    "from_column": "rule_text"
+   }
+  },
+  {
+   "table": "abilities",
+   "id": "det000010204",
+   "side": "attacker",
+   "detachment": "All is Dust",
+   "name_en": "All is Dust",
+   "name_zh": "皆为尘",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "伤害特征值为 1 的攻击命中 Rubricae → 护甲 +1——按攻击伤害值分档无条件 tag 载体"
+   ],
+   "encoded_by": "manual-2026-07-19",
+   "materialize": {
+    "from_table": "detachments",
+    "from_id": "000010204",
+    "from_column": "rule_text"
+   }
+  },
+  {
+   "table": "abilities",
+   "id": "det000010208",
+   "side": "attacker",
+   "detachment": "Warpfire Infusion",
+   "name_en": "Warpfire Infusion",
+   "name_zh": "翻焰灌注",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "载具近灵能者可重骰命中/致伤/伤害各一 + Deadly Demise 5+——单骰重骰非全重骰 + 位置光环 + 死亡爆炸均无载体"
+   ],
+   "encoded_by": "manual-2026-07-19",
+   "materialize": {
+    "from_table": "detachments",
+    "from_id": "000010208",
+    "from_column": "rule_text"
+   }
+  },
+  {
+   "table": "abilities",
+   "id": "detfp11e-ts-regen",
+   "side": "attacker",
+   "detachment": "Sorcerous Invigoration",
+   "name_en": "Sorcerous Invigoration",
+   "name_zh": "再生仪典",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "显现仪式后单位治疗 D3——治疗 + 灵能测试无载体"
+   ],
+   "encoded_by": "manual-2026-07-19",
+   "materialize": {
+    "from_table": "detachments",
+    "from_id": "fp11e-ts-regen",
+    "from_column": "rule_text"
+   }
+  },
+  {
+   "table": "abilities",
+   "id": "detfp11e-ts-sekhetar",
+   "side": "attacker",
+   "detachment": "Ensorcelled Animus",
+   "name_en": "Ensorcelled Animus",
+   "name_zh": "塞赫塔尔联队",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "SEKHETAR ROBOTS 攻击 [PSYCHIC] + TS PSYKER 近机器人 +1WS 光环——单位专属授予 + 12吋光环无载体"
+   ],
+   "encoded_by": "manual-2026-07-19",
+   "materialize": {
+    "from_table": "detachments",
+    "from_id": "fp11e-ts-sekhetar",
+    "from_column": "rule_text"
+   }
+  },
+  {
+   "table": "abilities",
+   "id": "detfp11e-ts-servants",
+   "side": "attacker",
+   "detachment": "All-Seeing Mutant Hordes",
+   "name_en": "All-Seeing Mutant Hordes",
+   "name_zh": "变化仆役",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "TZAANGORS 得 BATTLELINE + 变体射击时敌探测 +6吋——军表关键字 + 侦测距离无载体"
+   ],
+   "encoded_by": "manual-2026-07-19",
+   "materialize": {
+    "from_table": "detachments",
+    "from_id": "fp11e-ts-servants",
+    "from_column": "rule_text"
+   }
+  },
+  {
+   "table": "stratagems",
+   "id": "000010198002",
+   "side": "target",
+   "detachment": "Changehost of Deceit",
+   "name_en": "SULPHUROUS VEIL",
+   "name_zh": "硫磺帷幕",
+   "status": "encoded",
+   "effects": [
+    {
+     "phase": "hit",
+     "op": "modify",
+     "params": [
+      -1
+     ],
+     "source": "硫磺帷幕：攻击本单位命中 -1"
+    }
+   ],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [],
+   "provenance": {
+    "current_text": "db stratagems.text_zh id=000010198002",
+    "base_text": "Wahapedia 现文（PR10 工作单：11 版化后文本，FP 未触及或已滚入）",
+    "text_sha256": "49fd484b5d0bdfb0137c8d48a5146d21b7e6e774d3d1606cf299c1c44dd08329"
+   },
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "stratagems",
+   "id": "000010198004",
+   "side": "attacker",
+   "detachment": "Changehost of Deceit",
+   "name_en": "ETHEREAL PHANTASM",
+   "name_zh": "以太幻影",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "以太幻影：Normal move——移动无载体"
+   ],
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "stratagems",
+   "id": "000010198003",
+   "side": "attacker",
+   "detachment": "Changehost of Deceit",
+   "name_en": "DECEPTIVE GLAMOUR",
+   "name_zh": "欺敌幻光",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "欺敌幻光：目标选择限制（无光耀军团可选目标才能选你）——攻击目标优先级无载体"
+   ],
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "stratagems",
+   "id": "000010198007",
+   "side": "attacker",
+   "detachment": "Changehost of Deceit",
+   "name_en": "GLIMMERSHIFT PORTAL",
+   "name_zh": "微光位移门",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "微光位移门：撤入预备队——预备队无载体"
+   ],
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "stratagems",
+   "id": "000010198006",
+   "side": "attacker",
+   "detachment": "Changehost of Deceit",
+   "name_en": "CHRONOSORCEROUS BLEED",
+   "name_zh": "时序巫蚀",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "时序巫蚀：敌冲锋骰 -1——冲锋骰修正无载体"
+   ],
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "stratagems",
+   "id": "000010198005",
+   "side": "attacker",
+   "detachment": "Changehost of Deceit",
+   "name_en": "FRACTAL DISJUNCTION",
+   "name_zh": "分形错断",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "分形错断：仅攻击者在 18吋内才能远程选中——攻击距离目标限制无载体"
+   ],
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "stratagems",
+   "id": "000009655005",
+   "side": "attacker",
+   "detachment": "Chosen Cabal",
+   "name_en": "TZEENTCH’S BOON",
+   "name_zh": "泽特奇之赐",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "泽特奇之赐：灵能攻击重骰致伤——灵能专属 + 仅重骰无载体"
+   ],
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "stratagems",
+   "id": "000009655002",
+   "side": "target",
+   "detachment": "Chosen Cabal",
+   "name_en": "COSTLY BLESSING",
+   "name_zh": "代价赐福",
+   "status": "partial",
+   "effects": [
+    {
+     "phase": "save",
+     "op": "invuln",
+     "params": [
+      3
+     ],
+     "source": "代价赐福：本模型 3+ 无效保护（近战阶段）",
+     "condition": [
+      "phase_melee"
+     ]
+    }
+   ],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "阶段结束 D3 致命伤代价不建模",
+    "限单一 PSYKER CHARACTER 模型"
+   ],
+   "provenance": {
+    "current_text": "db stratagems.text_zh id=000009655002",
+    "base_text": "Wahapedia 现文（PR10 工作单：11 版化后文本，FP 未触及或已滚入）",
+    "text_sha256": "8a00d171d77c863f28d0cb57b7d0c51fad3f751f7df842cd546846e12448d06a"
+   },
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "stratagems",
+   "id": "000009655003",
+   "side": "attacker",
+   "detachment": "Chosen Cabal",
+   "name_en": "EMPYRIC DESECRATION",
+   "name_zh": "炼狱亵渎",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "炼狱亵渎：解除敌方目标据守——目标控制无载体"
+   ],
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "stratagems",
+   "id": "000009655004",
+   "side": "attacker",
+   "detachment": "Chosen Cabal",
+   "name_en": "INFERNO BOLTERS",
+   "name_zh": "地狱爆弹",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "地狱爆弹：越舱门射击 AP0——地形/舱门无载体"
+   ],
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "stratagems",
+   "id": "000009664003",
+   "side": "target",
+   "detachment": "Devoted Thralls",
+   "name_en": "FLESH CHANGE",
+   "name_zh": "血肉之变",
+   "status": "encoded",
+   "effects": [
+    {
+     "phase": "fnp",
+     "op": "fnp",
+     "params": [
+      5
+     ],
+     "source": "血肉之变：Tzaangors FNP 5+"
+    }
+   ],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [],
+   "provenance": {
+    "current_text": "db stratagems.text_zh id=000009664003",
+    "base_text": "Wahapedia 现文（PR10 工作单：11 版化后文本，FP 未触及或已滚入）",
+    "text_sha256": "f02fc8bdfdee1f6bd6ae27fa08aac9cf89c6f108b747551bf9a9c916dfbe35e0"
+   },
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "stratagems",
+   "id": "000009664002",
+   "side": "attacker",
+   "detachment": "Devoted Thralls",
+   "name_en": "PSYCHIC INGRESS",
+   "name_zh": "灵能潜入",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "灵能潜入：开启舱门——地形无载体"
+   ],
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "stratagems",
+   "id": "000009664005",
+   "side": "attacker",
+   "detachment": "Devoted Thralls",
+   "name_en": "BESTIAL SURGE",
+   "name_zh": "野性突涌",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "野性突涌：移动——移动无载体"
+   ],
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "stratagems",
+   "id": "000009664004",
+   "side": "attacker",
+   "detachment": "Devoted Thralls",
+   "name_en": "FELL SACRIFICE",
+   "name_zh": "凶厄献祭",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "凶厄献祭：战意测试——战意无载体"
+   ],
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "stratagems",
+   "id": "000009673002",
+   "side": "attacker",
+   "detachment": "Fateseekers",
+   "name_en": "ENDURING ANIMUS",
+   "name_zh": "恒常魂动",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "恒常魂动：被毁模型 4+ 幸存反打——串行幸存反打机制无载体"
+   ],
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "stratagems",
+   "id": "000009673004",
+   "side": "attacker",
+   "detachment": "Fateseekers",
+   "name_en": "PHANTASMIC MUNITIONS",
+   "name_zh": "幻魅军械",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "幻魅军械：无视敌模型判定可视——可视性无载体"
+   ],
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "stratagems",
+   "id": "000009673003",
+   "side": "attacker",
+   "detachment": "Fateseekers",
+   "name_en": "STRATEGIC VISION",
+   "name_zh": "战略视界",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "战略视界：[PISTOL] + 接战中射击资格——射击资格与目标选择无载体（非伤害增益）"
+   ],
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "stratagems",
+   "id": "000009673005",
+   "side": "attacker",
+   "detachment": "Fateseekers",
+   "name_en": "INVISIBLE ASSAILANTS",
+   "name_zh": "隐形袭击者",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "隐形袭击者：领导力/移动/冲锋减值——领导测试与移动无载体"
+   ],
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "stratagems",
+   "id": "000010194007",
+   "side": "attacker",
+   "detachment": "Grand Coven",
+   "name_en": "DEVASTATING SORCERY",
+   "name_zh": "毁灭巫术",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "毁灭巫术：灵能武器射程 + 重骰命中/致伤——灵能专属 + 射程 + 重骰无载体"
+   ],
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "stratagems",
+   "id": "000010194002",
+   "side": "attacker",
+   "detachment": "Grand Coven",
+   "name_en": "PSYCHIC DOMINION",
+   "name_zh": "灵能宰制",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "灵能宰制：敌灵能武器 [HAZARDOUS] + 你对灵能攻击 FNP 4+——FNP 仅对灵能攻击 + 对敌武器改动无载体"
+   ],
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "stratagems",
+   "id": "000010194005",
+   "side": "attacker",
+   "detachment": "Grand Coven",
+   "name_en": "DESECRATION OF WORLDS",
+   "name_zh": "亵渎诸界",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "亵渎诸界：目标控制——目标控制无载体"
+   ],
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "stratagems",
+   "id": "000010194003",
+   "side": "attacker",
+   "detachment": "Grand Coven",
+   "name_en": "DESTINED BY FATE",
+   "name_zh": "命定天数",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "命定天数：失保后改伤 0——反应式单次失保改伤无载体"
+   ],
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "stratagems",
+   "id": "000010194006",
+   "side": "attacker",
+   "detachment": "Grand Coven",
+   "name_en": "ARCANE FOCUS",
+   "name_zh": "奥术聚焦",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "奥术聚焦：重骰灵能测试——灵能测试无载体"
+   ],
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "stratagems",
+   "id": "000010194004",
+   "side": "attacker",
+   "detachment": "Grand Coven",
+   "name_en": "EGOTISTICAL POWER",
+   "name_zh": "自负之力",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "自负之力：血脉巫术能力切换——每战一次能力选择无载体"
+   ],
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "stratagems",
+   "id": "000009742007",
+   "side": "target",
+   "detachment": "Hexwarp Thrallband",
+   "name_en": "KALEIDOSCOPIC TEMPEST",
+   "name_zh": "万花风暴",
+   "status": "encoded",
+   "effects": [
+    {
+     "phase": "save",
+     "op": "cover",
+     "params": [],
+     "source": "万花风暴：本单位获 Stealth（11版=对远程掩体收益）",
+     "condition": [
+      "phase_shooting"
+     ]
+    }
+   ],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [],
+   "provenance": {
+    "current_text": "db stratagems.text_zh id=000009742007",
+    "base_text": "Wahapedia 现文（PR10 工作单：11 版化后文本，FP 未触及或已滚入）",
+    "text_sha256": "1c9435d14dc60abbcde51c315f00861de2f735c934d211c7de01b89b4948541c"
+   },
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "stratagems",
+   "id": "000009742005",
+   "side": "attacker",
+   "detachment": "Hexwarp Thrallband",
+   "name_en": "THROUGH THE VEIL",
+   "name_zh": "穿越帷幕",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "穿越帷幕：深入打击/预备队——预备队无载体"
+   ],
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "stratagems",
+   "id": "000009742002",
+   "side": "attacker",
+   "detachment": "Hexwarp Thrallband",
+   "name_en": "WARDING HEX",
+   "name_zh": "禁锢咒印",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "禁锢咒印：目标控制——目标控制无载体"
+   ],
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "stratagems",
+   "id": "000009742006",
+   "side": "attacker",
+   "detachment": "Hexwarp Thrallband",
+   "name_en": "SCOURING WARPFLAME",
+   "name_zh": "焦烧翻焰",
+   "status": "encoded",
+   "effects": [
+    {
+     "phase": "save",
+     "op": "ignores_cover",
+     "params": [],
+     "source": "焦烧翻焰：本单位远程武器 [IGNORES COVER]",
+     "condition": [
+      "phase_shooting"
+     ]
+    }
+   ],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [],
+   "provenance": {
+    "current_text": "db stratagems.text_zh id=000009742006",
+    "base_text": "Wahapedia 现文（PR10 工作单：11 版化后文本，FP 未触及或已滚入）",
+    "text_sha256": "89bbeae3ff293125919e890a3b540e5277eb07007b7fabfe2b42d710b4cbc00c"
+   },
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "stratagems",
+   "id": "000009742004",
+   "side": "attacker",
+   "detachment": "Hexwarp Thrallband",
+   "name_en": "STRANDS OF TIME",
+   "name_zh": "时之丝线",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "时之丝线：撤退后可射击/冲锋——射击/冲锋资格无载体"
+   ],
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "stratagems",
+   "id": "000009742003",
+   "side": "attacker",
+   "detachment": "Hexwarp Thrallband",
+   "name_en": "WRATH OF THE DOOMED",
+   "name_zh": "厄命之怒",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "厄命之怒：被毁模型 4+ 幸存反打——串行幸存反打机制无载体"
+   ],
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "stratagems",
+   "id": "000010206007",
+   "side": "target",
+   "detachment": "Rubricae Phalanx",
+   "name_en": "UNWAVERING PHALANX",
+   "name_zh": "岿然阵列",
+   "status": "encoded",
+   "effects": [
+    {
+     "phase": "wound",
+     "op": "modify",
+     "params": [
+      -1
+     ],
+     "source": "岿然阵列：攻击本单位致伤 -1"
+    }
+   ],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [],
+   "provenance": {
+    "current_text": "db stratagems.text_zh id=000010206007",
+    "base_text": "Wahapedia 现文（PR10 工作单：11 版化后文本，FP 未触及或已滚入）",
+    "text_sha256": "7a54bc41c8e5937b311f12440f3cdb910a9422a2f7e30c946ad609942a4ef53b"
+   },
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "stratagems",
+   "id": "000010206003",
+   "side": "attacker",
+   "detachment": "Rubricae Phalanx",
+   "name_en": "INEXORABLE ADVANCE",
+   "name_zh": "无可阻挡的进击",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "无可阻挡的进击：无视移动修正 + [ASSAULT]——移动修正与射击资格无载体"
+   ],
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "stratagems",
+   "id": "000010206006",
+   "side": "target",
+   "detachment": "Rubricae Phalanx",
+   "name_en": "IMPLACABLE GUARDIANS",
+   "name_zh": "坚定守护",
+   "status": "partial",
+   "effects": [
+    {
+     "phase": "damage",
+     "op": "damage_reduction",
+     "params": [
+      1
+     ],
+     "source": "坚定守护：分配到本单位的攻击伤害 -1（对方射击阶段）",
+     "condition": [
+      "phase_shooting"
+     ]
+    }
+   ],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "PSYKER 模型除外——单单位模拟按全体减伤，混编时高估"
+   ],
+   "provenance": {
+    "current_text": "db stratagems.text_zh id=000010206006",
+    "base_text": "Wahapedia 现文（PR10 工作单：11 版化后文本，FP 未触及或已滚入）",
+    "text_sha256": "11e6c8e553aa165d3b4dc6d4e518b084683905218e8514be8484af967e404fa3"
+   },
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "stratagems",
+   "id": "000010206005",
+   "side": "attacker",
+   "detachment": "Rubricae Phalanx",
+   "name_en": "REVENGE OF THE RUBRICAE",
+   "name_zh": "红骸复仇",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "红骸复仇：被毁后额外射击——反应式额外射击无载体"
+   ],
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "stratagems",
+   "id": "000010206002",
+   "side": "attacker",
+   "detachment": "Rubricae Phalanx",
+   "name_en": "ARDENT AUTOMATA",
+   "name_zh": "炽热自动机",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "炽热自动机：撤退后可射击/冲锋——射击/冲锋资格无载体"
+   ],
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "stratagems",
+   "id": "000010206004",
+   "side": "attacker",
+   "detachment": "Rubricae Phalanx",
+   "name_en": "INFERNAL FUSILLADE",
+   "name_zh": "炼狱齐射",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "炼狱齐射：inferno 武器 [PSYCHIC] + S 设为 5——武器名专属 + S 设定值（非增量）无载体"
+   ],
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "stratagems",
+   "id": "000010210002",
+   "side": "target",
+   "detachment": "Warpforged Cabal",
+   "name_en": "HEX-MARKED ARMOUR",
+   "name_zh": "咒印甲胄",
+   "status": "encoded",
+   "effects": [
+    {
+     "phase": "save",
+     "op": "ap_improve",
+     "params": [
+      -1
+     ],
+     "source": "咒印甲胄：攻击本单位 AP 恶化 1"
+    }
+   ],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [],
+   "provenance": {
+    "current_text": "db stratagems.text_zh id=000010210002",
+    "base_text": "Wahapedia 现文（PR10 工作单：11 版化后文本，FP 未触及或已滚入）",
+    "text_sha256": "16b890b4321ba02632462cca221501cbdea1a57ccce68a1d07341e2a390a1af1"
+   },
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "stratagems",
+   "id": "000010210006",
+   "side": "attacker",
+   "detachment": "Warpforged Cabal",
+   "name_en": "ENSORCELLED INFUSION",
+   "name_zh": "附魔灌注",
+   "status": "encoded",
+   "effects": [
+    {
+     "phase": "hit",
+     "op": "ignore_hit_mods",
+     "params": [],
+     "source": "附魔灌注：载具远程武器 [PSYCHIC]（无视不利命中修正）",
+     "condition": [
+      "phase_shooting"
+     ]
+    },
+    {
+     "phase": "wound",
+     "op": "modify",
+     "params": [
+      1
+     ],
+     "source": "附魔灌注：载具远程武器致伤 +1",
+     "condition": [
+      "phase_shooting"
+     ]
+    }
+   ],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [],
+   "provenance": {
+    "current_text": "db stratagems.text_zh id=000010210006",
+    "base_text": "Wahapedia 现文（PR10 工作单：11 版化后文本，FP 未触及或已滚入）",
+    "text_sha256": "3820813410197712f86e81d6a3f07cf1caa3485fb9cf13b7a0cef9c9ca158b74"
+   },
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "stratagems",
+   "id": "000010210003",
+   "side": "attacker",
+   "detachment": "Warpforged Cabal",
+   "name_en": "MUTATE LANDSCAPE",
+   "name_zh": "变异地貌",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "变异地貌：目标控制 + 移动触发致命伤——目标控制与移动触发无载体"
+   ],
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "stratagems",
+   "id": "000010210005",
+   "side": "attacker",
+   "detachment": "Warpforged Cabal",
+   "name_en": "MALEVOLENT ANIMUS",
+   "name_zh": "恶意魂动",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "恶意魂动：忽略特征值/命中修正——泛化忽略修正无载体"
+   ],
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "stratagems",
+   "id": "000010210004",
+   "side": "attacker",
+   "detachment": "Warpforged Cabal",
+   "name_en": "CYBERSPIRIT MACHINATIONS",
+   "name_zh": "赛博灵机谋算",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "赛博灵机谋算：撤退后可射击/冲锋——射击/冲锋资格无载体"
+   ],
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "stratagems",
+   "id": "000010210007",
+   "side": "attacker",
+   "detachment": "Warpforged Cabal",
+   "name_en": "WARPFLAME GARGOYLES",
+   "name_zh": "翻焰石像鬼",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "翻焰石像鬼：6D6 致命伤 + 战意——致命伤与战意无载体"
+   ],
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "stratagems",
+   "id": "000010202002",
+   "side": "attacker",
+   "detachment": "Warpmeld Pact",
+   "name_en": "GIFT OF CHANGE",
+   "name_zh": "变化之赐",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "变化之赐：被毁后生成 Chaos Spawn——生成单位无载体"
+   ],
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "stratagems",
+   "id": "000010202006",
+   "side": "attacker",
+   "detachment": "Warpmeld Pact",
+   "name_en": "TOUCHED BY TZEENTCH",
+   "name_zh": "泽特奇之触",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "泽特奇之触：前进后可射击/冲锋——射击/冲锋资格无载体"
+   ],
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "stratagems",
+   "id": "000010202005",
+   "side": "attacker",
+   "detachment": "Warpmeld Pact",
+   "name_en": "BLESSED TRANSMUTATIONS",
+   "name_zh": "赐福嬗变",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "赐福嬗变：返还被毁模型——返还模型无载体"
+   ],
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "stratagems",
+   "id": "000010202004",
+   "side": "attacker",
+   "detachment": "Warpmeld Pact",
+   "name_en": "DERANGED FEROCITY",
+   "name_zh": "疯狂凶性",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "疯狂凶性：突入/巩固 + 接战资格——近战机动与资格无载体"
+   ],
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "stratagems",
+   "id": "000010202003",
+   "side": "target",
+   "detachment": "Warpmeld Pact",
+   "name_en": "WARPED VICISSITUDE",
+   "name_zh": "扭曲无常",
+   "status": "encoded",
+   "effects": [
+    {
+     "phase": "save",
+     "op": "invuln",
+     "params": [
+      4
+     ],
+     "source": "扭曲无常：Tzaangors 4+ 无效保护"
+    }
+   ],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [],
+   "provenance": {
+    "current_text": "db stratagems.text_zh id=000010202003",
+    "base_text": "Wahapedia 现文（PR10 工作单：11 版化后文本，FP 未触及或已滚入）",
+    "text_sha256": "a1e738dcd9fba50e443c5c2be7fef321963a6d25c13400bf21568133f32ed4f7"
+   },
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "stratagems",
+   "id": "000010202007",
+   "side": "attacker",
+   "detachment": "Warpmeld Pact",
+   "name_en": "TWISTED MIRAGE",
+   "name_zh": "扭曲幻景",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "扭曲幻景：预备队部署——预备队无载体"
+   ],
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "stratagems",
+   "id": "fp11e-ts-regen-s1",
+   "side": "attacker",
+   "detachment": "Ritual of Regeneration",
+   "name_en": "Relentless Rebirth",
+   "name_zh": "不倦重生",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "不倦重生：对致命伤 FNP 5+——FNP 仅对致命伤无载体"
+   ],
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "stratagems",
+   "id": "fp11e-ts-regen-s2",
+   "side": "attacker",
+   "detachment": "Ritual of Regeneration",
+   "name_en": "Mutagenic Magicks",
+   "name_zh": "诱变魔法",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "诱变魔法：6D6 致命伤——致命伤无载体"
+   ],
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "stratagems",
+   "id": "fp11e-ts-regen-s3",
+   "side": "attacker",
+   "detachment": "Ritual of Regeneration",
+   "name_en": "Multitudinous Limbs",
+   "name_zh": "繁生肢体",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "繁生肢体：前进/撤退后可执行动作——动作资格无载体"
+   ],
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "stratagems",
+   "id": "fp11e-ts-sekhetar-s1",
+   "side": "attacker",
+   "detachment": "Sekhetar Cohort",
+   "name_en": "Arcane Venting",
+   "name_zh": "奥术宣泄",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "奥术宣泄：据点确保——目标控制无载体"
+   ],
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "stratagems",
+   "id": "fp11e-ts-sekhetar-s2",
+   "side": "attacker",
+   "detachment": "Sekhetar Cohort",
+   "name_en": "Ectoplasmic Extrusion",
+   "name_zh": "胞质外突",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "胞质外突：执行动作后仍可射击——射击资格无载体"
+   ],
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "stratagems",
+   "id": "fp11e-ts-sekhetar-s3",
+   "side": "attacker",
+   "detachment": "Sekhetar Cohort",
+   "name_en": "Warp Fields",
+   "name_zh": "扭曲力场",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "扭曲力场：远程 × S>T 被伤 -1——引擎有 wound_s_gt_t（全阶段）/melee_wound_s_gt_t（近战），无远程门控变体；用全阶段版会在近战过度施加，宁漏不错不建模"
+   ],
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "stratagems",
+   "id": "fp11e-ts-servants-s1",
+   "side": "attacker",
+   "detachment": "Servants of Change",
+   "name_en": "Prismatic Displacement",
+   "name_zh": "棱镜移位",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "棱镜移位：[ASSAULT] + 前进后可射击/冲锋——射击资格无载体（[ASSAULT] 非伤害增益）"
+   ],
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "stratagems",
+   "id": "fp11e-ts-servants-s2",
+   "side": "attacker",
+   "detachment": "Servants of Change",
+   "name_en": "Temporal Instability",
+   "name_zh": "时序失稳",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "时序失稳：前进后可执行动作——动作资格无载体"
+   ],
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "stratagems",
+   "id": "fp11e-ts-servants-s3",
+   "side": "attacker",
+   "detachment": "Servants of Change",
+   "name_en": "The Land Writhes",
+   "name_zh": "大地翻涌",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "大地翻涌：获 MOBILE——移动关键字无载体"
+   ],
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "enhancements",
+   "id": "000010205002",
+   "side": "attacker",
+   "detachment": "Rubricae Phalanx",
+   "name_en": "Risen Rubricae",
+   "name_zh": "复起红骸",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "复起红骸：Infiltrators——部署能力无载体"
+   ],
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "enhancements",
+   "id": "000010197002",
+   "side": "attacker",
+   "detachment": "Changehost of Deceit",
+   "name_en": "Nethershriek Mind-eater",
+   "name_zh": "冥啸噬心者",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "冥啸噬心者：战意失败 → 3 致命伤——战意与致命伤无载体"
+   ],
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "enhancements",
+   "id": "000010201002",
+   "side": "attacker",
+   "detachment": "Warpmeld Pact",
+   "name_en": "Warpmeld Dagger",
+   "name_zh": "扭曲之匕",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "扭曲之匕：灵能测试增益 + 自伤——灵能测试与自伤无载体"
+   ],
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "enhancements",
+   "id": "000010193002",
+   "side": "attacker",
+   "detachment": "Grand Coven",
+   "name_en": "Lord of Forbidden Lore",
+   "name_zh": "禁忌学识之主",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "禁忌学识之主：仪式射程——仪式射程无载体"
+   ],
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "enhancements",
+   "id": "000009741002",
+   "side": "attacker",
+   "detachment": "Hexwarp Thrallband",
+   "name_en": "Arcane Might",
+   "name_zh": "奥术伟力",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "奥术伟力：灵能武器 +1 S（FoM 内 +2）——灵能武器专属（关键字无法 weapon_filter）+ FoM 区域态无载体"
+   ],
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "enhancements",
+   "id": "000009663002",
+   "side": "attacker",
+   "detachment": "Devoted Thralls",
+   "name_en": "Thrallmaster",
+   "name_zh": "奴役之主",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "奴役之主：Normal move——移动无载体"
+   ],
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "enhancements",
+   "id": "000009654002",
+   "side": "attacker",
+   "detachment": "Chosen Cabal",
+   "name_en": "Warp Mastery",
+   "name_zh": "巫术精通",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "巫术精通：灵能武器攻击数重骰——攻击数重骰无载体"
+   ],
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "enhancements",
+   "id": "000010209002",
+   "side": "attacker",
+   "detachment": "Warpforged Cabal",
+   "name_en": "Warp Syphon",
+   "name_zh": "巫能虹吸",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "巫能虹吸：载具致命伤 + 重骰 Channel——自伤与灵能测试无载体"
+   ],
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "enhancements",
+   "id": "000009672002",
+   "side": "attacker",
+   "detachment": "Fateseekers",
+   "name_en": "Predestined Champion",
+   "name_zh": "命定冠军",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "命定冠军：视为多控一个目标——目标控制无载体"
+   ],
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "enhancements",
+   "id": "000009663003",
+   "side": "attacker",
+   "detachment": "Devoted Thralls",
+   "name_en": "Prescient Authority",
+   "name_zh": "先知权柄",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "先知权柄：近携带者单位重骰致伤 1——仅重骰 1（非重骰失败）+ 位置光环无载体"
+   ],
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "enhancements",
+   "id": "000010197003",
+   "side": "attacker",
+   "detachment": "Changehost of Deceit",
+   "name_en": "Diabolic Savant",
+   "name_zh": "邪谋智者",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "邪谋智者：Channels 时 +1 灵能测试——灵能测试无载体"
+   ],
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "enhancements",
+   "id": "000009741003",
+   "side": "attacker",
+   "detachment": "Hexwarp Thrallband",
+   "name_en": "Empowered Manifestation",
+   "name_zh": "强能显现",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "强能显现：灵能射程 + Hazardous 重骰——灵能射程与危险测试无载体"
+   ],
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "enhancements",
+   "id": "000009654003",
+   "side": "attacker",
+   "detachment": "Chosen Cabal",
+   "name_en": "Fires of Change",
+   "name_zh": "变化之火",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "变化之火：射击后战意测试——战意无载体"
+   ],
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "enhancements",
+   "id": "000010201003",
+   "side": "target",
+   "detachment": "Warpmeld Pact",
+   "name_en": "Diamond of Distortion",
+   "name_zh": "扭曲之钻",
+   "status": "encoded",
+   "effects": [
+    {
+     "phase": "hit",
+     "op": "modify",
+     "params": [
+      -1
+     ],
+     "source": "扭曲之钻：攻击携带者所率单位命中 -1"
+    }
+   ],
+   "requires_toggles": [
+    "defender_bearer_leading"
+   ],
+   "not_modeled_notes_zh": [],
+   "provenance": {
+    "current_text": "db enhancements.description id=000010201003",
+    "base_text": "Wahapedia 现文（PR10 工作单：11 版化后文本，FP 未触及或已滚入）",
+    "text_sha256": "2cae94863963e5314d15cf8a7f9aadf8d4cbdb63cdedb0c7e56342ca9084789a"
+   },
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "enhancements",
+   "id": "000010193003",
+   "side": "attacker",
+   "detachment": "Grand Coven",
+   "name_en": "Incandaeum",
+   "name_zh": "炽焰灵体",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "炽焰灵体：可选 Doombolt 仪式——仪式选择无载体"
+   ],
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "enhancements",
+   "id": "000009672003",
+   "side": "attacker",
+   "detachment": "Fateseekers",
+   "name_en": "Astral Predation",
+   "name_zh": "星界潜猎",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "星界潜猎：穿越舱门——地形无载体"
+   ],
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "enhancements",
+   "id": "000010205003",
+   "side": "attacker",
+   "detachment": "Rubricae Phalanx",
+   "name_en": "Arcane Thralls (Aura)",
+   "name_zh": "奥术奴仆",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "奥术奴仆：重骰 Rubricae 战意测试——战意无载体"
+   ],
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "enhancements",
+   "id": "000010209003",
+   "side": "attacker",
+   "detachment": "Warpforged Cabal",
+   "name_en": "The Perplexing Cloak",
+   "name_zh": "迷惑之袍",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "迷惑之袍：Lone Operative——孤胆无载体"
+   ],
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "enhancements",
+   "id": "000010197004",
+   "side": "attacker",
+   "detachment": "Changehost of Deceit",
+   "name_en": "Duplicitous Malediction",
+   "name_zh": "口是心非诅咒",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "口是心非诅咒：重新部署——部署无载体"
+   ],
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "enhancements",
+   "id": "000010201004",
+   "side": "attacker",
+   "detachment": "Warpmeld Pact",
+   "name_en": "Bray Lord",
+   "name_zh": "布雷领主",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "布雷领主：Scouts + 编组——部署能力无载体"
+   ],
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "enhancements",
+   "id": "000010209004",
+   "side": "attacker",
+   "detachment": "Warpforged Cabal",
+   "name_en": "Biomechanical Mutation",
+   "name_zh": "生物机械突变",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "生物机械突变：治疗载具 D3——治疗无载体"
+   ],
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "enhancements",
+   "id": "000010205004",
+   "side": "attacker",
+   "detachment": "Rubricae Phalanx",
+   "name_en": "Lord of the Rubricae",
+   "name_zh": "红骸之主",
+   "status": "partial",
+   "effects": [
+    {
+     "phase": "hit",
+     "op": "modify",
+     "params": [
+      1
+     ],
+     "source": "红骸之主：被率领单位内 Rubricae 模型命中 +1"
+    }
+   ],
+   "requires_toggles": [
+    "bearer_leading"
+   ],
+   "not_modeled_notes_zh": [
+    "限被率领单位内 Rubricae 模型——假设本单位为 Rubricae"
+   ],
+   "provenance": {
+    "current_text": "db enhancements.description id=000010205004",
+    "base_text": "Wahapedia 现文（PR10 工作单：11 版化后文本，FP 未触及或已滚入）",
+    "text_sha256": "51e735172a6585aeb2a877d7ff0a9f796e5518a6dbcf8b0daae540958c204fc0"
+   },
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "enhancements",
+   "id": "000009741004",
+   "side": "attacker",
+   "detachment": "Hexwarp Thrallband",
+   "name_en": "Empyric Onslaught",
+   "name_zh": "灵能突袭",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "灵能突袭：FoM 内远程灵能武器 +3 A——FoM 区域态 + 灵能武器专属无载体"
+   ],
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "enhancements",
+   "id": "000010193004",
+   "side": "attacker",
+   "detachment": "Grand Coven",
+   "name_en": "Umbralefic Crystal",
+   "name_zh": "本影晶石",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "本影晶石：撤入预备队——预备队无载体"
+   ],
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "enhancements",
+   "id": "000010197005",
+   "side": "target",
+   "detachment": "Changehost of Deceit",
+   "name_en": "Tome of True Names",
+   "name_zh": "真名之书",
+   "status": "partial",
+   "effects": [
+    {
+     "phase": "save",
+     "op": "invuln",
+     "params": [
+      2
+     ],
+     "source": "真名之书：携带者 2+ 无效保护"
+    }
+   ],
+   "requires_toggles": [
+    "defender_bearer_leading"
+   ],
+   "not_modeled_notes_zh": [
+    "每战一次、仅持续一个阶段——按常驻建模，多阶段战斗高估"
+   ],
+   "provenance": {
+    "current_text": "db enhancements.description id=000010197005",
+    "base_text": "Wahapedia 现文（PR10 工作单：11 版化后文本，FP 未触及或已滚入）",
+    "text_sha256": "e390b58a7317d11e74be6da49f919cefcff3ad8d40e485b397802b144edc4f57"
+   },
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "enhancements",
+   "id": "000010193005",
+   "side": "attacker",
+   "detachment": "Grand Coven",
+   "name_en": "Eldritch Vortex of E’taph",
+   "name_zh": "厄塔弗虚旋",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "厄塔弗虚旋：灵能武器 +1 S/+1 D——灵能武器专属（weapon_filter 仅按名字子串无法选中 [PSYCHIC] 关键字武器）+ 无通用伤害特征值通道"
+   ],
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "enhancements",
+   "id": "000010201005",
+   "side": "target",
+   "detachment": "Warpmeld Pact",
+   "name_en": "Flowing Flesh",
+   "name_zh": "流变之肉",
+   "status": "partial",
+   "effects": [
+    {
+     "phase": "fnp",
+     "op": "fnp",
+     "params": [
+      4
+     ],
+     "source": "流变之肉：携带者 FNP 4+"
+    }
+   ],
+   "requires_toggles": [
+    "defender_bearer_leading"
+   ],
+   "not_modeled_notes_zh": [
+    "Wounds 特征值改 5 不建模（无通用 W 通道）"
+   ],
+   "provenance": {
+    "current_text": "db enhancements.description id=000010201005",
+    "base_text": "Wahapedia 现文（PR10 工作单：11 版化后文本，FP 未触及或已滚入）",
+    "text_sha256": "9ed0470d24df31f365a76da9ad2f2217b570ed5b3ede63675d9b4f1631fc7643"
+   },
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "enhancements",
+   "id": "000009741005",
+   "side": "attacker",
+   "detachment": "Hexwarp Thrallband",
+   "name_en": "Noctilith Mantle",
+   "name_zh": "夜岩斗篷",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "夜岩斗篷：常驻 FoM + 禁用仪式——FoM 区域态与仪式无载体"
+   ],
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "enhancements",
+   "id": "000010205005",
+   "side": "attacker",
+   "detachment": "Rubricae Phalanx",
+   "name_en": "The Stave Abominus",
+   "name_zh": "阿波米努斯法杖",
+   "status": "encoded",
+   "effects": [
+    {
+     "phase": "hit",
+     "op": "extra_hits",
+     "params": [
+      {
+       "n": 1,
+       "faces": 3,
+       "k": 0
+      }
+     ],
+     "source": "阿波米努斯法杖：近战 [SUSTAINED HITS D3]",
+     "condition": [
+      "phase_melee"
+     ]
+    },
+    {
+     "phase": "wound",
+     "op": "mortal_pool",
+     "params": [],
+     "source": "阿波米努斯法杖：近战 [DEVASTATING WOUNDS]",
+     "condition": [
+      "phase_melee"
+     ]
+    }
+   ],
+   "requires_toggles": [
+    "bearer_leading"
+   ],
+   "not_modeled_notes_zh": [
+    "限携带者近战武器——按被率领单位近战建模"
+   ],
+   "provenance": {
+    "current_text": "db enhancements.description id=000010205005",
+    "base_text": "Wahapedia 现文（PR10 工作单：11 版化后文本，FP 未触及或已滚入）",
+    "text_sha256": "27be27032a2351b83db5b38bafb951033a793b4c407415abaa42487e9c8ef264"
+   },
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "enhancements",
+   "id": "000010209005",
+   "side": "attacker",
+   "detachment": "Warpforged Cabal",
+   "name_en": "Warp-cursed Runemaster",
+   "name_zh": "巫诅符文师",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "巫诅符文师：近载具时仪式射程——仪式射程 + 位置光环无载体"
+   ],
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "enhancements",
+   "id": "fp11e-ts-regen-e1",
+   "side": "attacker",
+   "detachment": "Ritual of Regeneration",
+   "name_en": "Eruption of Vitality",
+   "name_zh": "生机迸发",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "生机迸发：被毁后 2+ 复活——复活无载体"
+   ],
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "enhancements",
+   "id": "fp11e-ts-regen-e2",
+   "side": "attacker",
+   "detachment": "Ritual of Regeneration",
+   "name_en": "Curse of Life",
+   "name_zh": "生命诅咒",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "生命诅咒：治疗量 +3——治疗无载体"
+   ],
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "enhancements",
+   "id": "fp11e-ts-sekhetar-e1",
+   "side": "attacker",
+   "detachment": "Sekhetar Cohort",
+   "name_en": "Walking Rampart",
+   "name_zh": "行走壁垒",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "行走壁垒：治疗机器人 + Lone Operative——治疗与孤胆无载体"
+   ],
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "enhancements",
+   "id": "fp11e-ts-sekhetar-e2",
+   "side": "attacker",
+   "detachment": "Sekhetar Cohort",
+   "name_en": "Occulus Infernum",
+   "name_zh": "地狱之眼",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "地狱之眼：为 6吋内另一 SEKHETAR ROBOTS 单位 +1 BS——跨单位光环无载体"
+   ],
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "enhancements",
+   "id": "fp11e-ts-servants-e1",
+   "side": "attacker",
+   "detachment": "Servants of Change",
+   "name_en": "Unravelled Fates",
+   "name_zh": "解构天命",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "解构天命：解除战意震慑——战意无载体"
+   ],
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "enhancements",
+   "id": "fp11e-ts-servants-e2",
+   "side": "attacker",
+   "detachment": "Servants of Change",
+   "name_en": "Thicket of Bladed Bone",
+   "name_zh": "利骨丛生",
+   "status": "encoded",
+   "effects": [
+    {
+     "phase": "attacks",
+     "op": "blast",
+     "params": [
+      1
+     ],
+     "source": "利骨丛生：近战 [CLEAVE 1]",
+     "condition": [
+      "phase_melee"
+     ]
+    },
+    {
+     "phase": "save",
+     "op": "ap_improve",
+     "params": [
+      1
+     ],
+     "source": "利骨丛生：近战 +1 AP",
+     "condition": [
+      "phase_melee"
+     ]
+    }
+   ],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [],
+   "provenance": {
+    "current_text": "db enhancements.description id=fp11e-ts-servants-e2",
+    "base_text": "Wahapedia 现文（PR10 工作单：11 版化后文本，FP 未触及或已滚入）",
+    "text_sha256": "b3feec7555a68106502cea98b8da9423b8a57e21666eade17f15b02c1705cc38"
+   },
+   "encoded_by": "manual-2026-07-19"
+  }
+ ]
+}
