@@ -274,7 +274,7 @@ class TestMaterialize:
         conn.close()
         rep = apply_dsl(db, "dsl_payloads")
         # 77（钛）+ 88（吞世者）+ 48（黑色圣堂）+ 104（帝皇之子 PR7）
-        # + 106（死亡守卫 PR8）+ 73（圣血天使 PR9）= 496
-        assert rep["applied"] + rep["already"] == len(all_entries) == 496
+        # + 106（死亡守卫 PR8）+ 73（圣血天使 PR9）+ 105（千子 PR10）= 601
+        assert rep["applied"] + rep["already"] == len(all_entries) == 601
         assert not rep["fingerprint_mismatch"] and not rep["skipped"]
-        assert rep["by_status"] == {"encoded": 0, "partial": 171, "not_modeled": 325}
+        assert rep["by_status"] == {"encoded": 11, "partial": 177, "not_modeled": 413}

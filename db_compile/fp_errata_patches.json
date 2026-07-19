@@ -309,6 +309,15 @@
    "from": "20+\"",
    "to": "12\"",
    "src": "Faction Pack Emperor S Children page_009.md（Heldrake Profile: Change M to 12\"）"
+  },
+  {
+   "unit_id": "000001024",
+   "faction": "TS",
+   "unit": "Heldrake",
+   "field": "m",
+   "from": "20+\"",
+   "to": "12\"",
+   "src": "Faction Pack Thousand Sons page_010.md（Heldrake Profile: Change M to 12\"）"
   }
  ],
  "new_units": [
@@ -512,6 +521,17 @@
    "to": "2",
    "src": "BSData SM.cat + Faction Pack + 同单位其他武器",
    "note": "具名角色 BS 应统一：Titus 大师级爆弹枪/链锯剑均 2+，唯 bolt pistol 库存通用值 3"
+  },
+  {
+   "unit_id": "000004123",
+   "faction": "TS",
+   "unit": "Kairos Fateweaver",
+   "weapon": "Infernal Gateway – focused witchfire",
+   "field": "a",
+   "from": "D3+6",
+   "to": "D6+6",
+   "src": "Faction Pack Thousand Sons page_010.md（Infernal Gateway - Focused Witchfire A→D6+6）",
+   "note": "witchfire 档(D6+3)一致；仅 focused 档攻击数 D3+6→D6+6"
   }
  ],
  "resolved": [
@@ -602,6 +622,15 @@
     "Death Guard"
    ],
    "src": "Faction Pack Death Guard page_014.md（同上）"
+  },
+  {
+   "unit_id": "000001024",
+   "faction": "TS",
+   "unit": "Heldrake",
+   "remove": [
+    "Aircraft"
+   ],
+   "src": "Faction Pack Thousand Sons page_010.md（Heldrake Keywords: Remove 'AIRCRAFT'）"
   }
  ]
 }
