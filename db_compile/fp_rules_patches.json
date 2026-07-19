@@ -770,6 +770,86 @@
    "to_text": "<b>WHEN:</b> Your opponent’s Movement phase, just after an enemy unit ends a Normal, Advance or Fall Back move.<br><br><b>TARGET:</b> Up to two Adeptus Custodes units from your army that are within 8\" of that enemy unit.<br><br><b>EFFECT:</b> Your units can make a Normal move of up to 6\".<br><br><b>RESTRICTIONS:</b> You cannot select units that are within Engagement Range of one or more enemy units. You can only select two units if one (and only one) of them is an Anathema Psykana unit and both are within 6\" of each other.",
    "fp_source": "Faction Pack Adeptus Custodes page_035.md（Taloned Pincer Target 9→8）",
    "synthesis": "TARGET 段触发距离 9\"→8\""
+  },
+  {
+   "table": "stratagems",
+   "column": "text_zh",
+   "id": "000010585007",
+   "name_en": "Enfolding Nightmare",
+   "from_text": "<b>WHEN:</b> Your opponent’s Shooting phase, just after an enemy unit has shot.<br><br><b>TARGET:</b> One Haemonculus Covens unit from your army that was selected as the target of one or more of the attacking unit’s attacks.<br><br><b>EFFECT:</b> Roll one D6: your unit can be moved a number of inches up to the result, but it must end that move as close as possible to the closest enemy unit (excluding <span class=\"kwb\">AIRCRAFT</span>). When doing so, those models can be moved within Engagement Range of that enemy unit.",
+   "to_text": "<b>WHEN:</b> Your opponent’s Shooting phase, just after an enemy unit has shot.<br><br><b>TARGET:</b> One Haemonculus Covens unit from your army that was selected as the target of one or more of the attacking unit’s attacks.<br><br><b>EFFECT:</b> Your unit can make a surge move of up to D6\".",
+   "fp_source": "Faction Pack Drukhari page_007.md（Enfolding Nightmare Effect→surge move）",
+   "synthesis": "EFFECT 整改：Roll D6 移动至最近敌 → surge move D6\""
+  },
+  {
+   "table": "stratagems",
+   "column": "text_zh",
+   "id": "000010577006",
+   "name_en": "Swooping Mockery",
+   "from_text": "<b>WHEN:</b> Your opponent’s Movement phase, just after an enemy unit ends a Normal, Advance or Fall Back move.<br><br><b>TARGET:</b> One Drukhari Transport from your army that is within 9\" of that enemy unit.<br><br><b>EFFECT:</b> Your <span class=\"kwb\">TRANSPORT</span> can make a Normal move of up to 6\".",
+   "to_text": "<b>WHEN:</b> Your opponent’s Movement phase, just after an enemy unit ends a Normal, Advance or Fall Back move.<br><br><b>TARGET:</b> One Drukhari Transport from your army that is within 8\" of that enemy unit.<br><br><b>EFFECT:</b> Your <span class=\"kwb\">TRANSPORT</span> can make a Normal move of up to 6\".",
+   "fp_source": "Faction Pack Drukhari page_007.md（Swooping Mockery Target 9→8）",
+   "synthesis": "TARGET 触发距离 9\"→8\""
+  },
+  {
+   "table": "stratagems",
+   "column": "text_zh",
+   "id": "000010577003",
+   "name_en": "Wraithlike Retreat",
+   "from_text": "<b>WHEN:</b> End of the Fight phase.<br><br><b>TARGET:</b> One Drukhari Infantry unit from your army that fought this phase.<br><br><b>EFFECT:</b> Your unit can make a Normal or Fall Back move, but unless it is a Wyches unit, it must end that move wholly within 3\" horizontally and 5\" vertically of a friendly Drukhari Transport and must embark within that <span class=\"kwb\">TRANSPORT</span> at the end of that move (otherwise, it cannot make that move).",
+   "to_text": "<b>WHEN:</b> End of the Fight phase.<br><br><b>TARGET:</b> One Drukhari Infantry unit from your army that fought this phase.<br><br><b>EFFECT:</b> Your unit can make a Normal or Fall Back move, but unless it is a Wyches unit, it must end that move wholly within 3\" horizontally and 5\" vertically of a friendly Drukhari Transport and must embark within that <span class=\"kwb\">TRANSPORT</span> at the end of that move (otherwise, it cannot make that move). Your unit can embark within that <span class=\"kwb\">TRANSPORT</span> in a turn it disembarked from that <span class=\"kwb\">TRANSPORT</span>.",
+   "fp_source": "Faction Pack Drukhari page_007.md（Wraithlike Retreat 追加下车同回合可登上句）",
+   "synthesis": "EFFECT 追加：下车同回合可再登上该 TRANSPORT"
+  },
+  {
+   "table": "stratagems",
+   "column": "text_zh",
+   "id": "000010581006",
+   "name_en": "A Challenge Met",
+   "from_text": "<b>WHEN:</b> End of your opponent’s Movement phase.<br><br><b>TARGET:</b> One WYCH CULT unit from your army that would be able to declare a charge if it were your Charge phase.<br><br><b>EFFECT:</b> Select one enemy unit within 9\" of your unit that was set up on the battlefield this phase or that ended a Normal or Advance move this phase. Your unit now declares a charge that targets only that enemy unit, and you resolve that charge.<br><br><b>RESTRICTIONS:</b> Even if that charge is successful, your unit does not receive any Charge bonus this turn.",
+   "to_text": "<b>WHEN:</b> Your opponent’s Movement phase, when an enemy unit ends a fall-back move.<br><br><b>TARGET:</b> One friendly unengaged WYCH CULT unit that is within 6\" of that enemy unit.<br><br><b>EFFECT:</b> Declare a charge with your unit. When selecting charge targets, you can only select enemy units that made a fall-back move this phase and are within the maximum distance.",
+   "fp_source": "Faction Pack Drukhari page_007.md（A Challenge Met When/Target/Effect 整改 + 删 Restrictions）",
+   "synthesis": "整改：对方移动结束 9\"无冲锋加成 → 对方移动阶段敌撤退后·未接战 6\"内·冲锋仅可选撤退单位"
+  },
+  {
+   "table": "abilities",
+   "column": "text_zh",
+   "id": "000000659_a2",
+   "name_en": "Skyboard Evasion",
+   "from_text": "Once per turn, when an enemy unit ends a Normal, Advance or Fall Back move within 9\" of this unit, this unit can make a Normal move of up to D6\".",
+   "to_text": "In your opponent’s Movement phase, if an enemy unit ends a move within 8\" of this unit, if this unit is not within Engagement Range of one or more enemy units, this unit can make a Normal move of up to D6\".",
+   "fp_source": "Faction Pack Drukhari page_007.md（Hellions Skyboard Evasion 整改）",
+   "synthesis": "整改：每回合 9\" → 对方移动阶段 8\"（加未接战门，去 once-per-turn）"
+  },
+  {
+   "table": "abilities",
+   "column": "text_zh",
+   "id": "000004155_a3",
+   "name_en": "Mind Like a Steel Trap",
+   "from_text": "Each time your opponent targets a unit from their army with a Stratagem, if that unit is within 12\" of this model, increase the cost of that use of that Stratagem by 1CP.",
+   "to_text": "Once per turn, when your opponent targets a unit from their army within 12\" of this model with a stratagem, you can use this ability. If you do increase the CP cost of that use of that stratagem by 1CP.",
+   "fp_source": "Faction Pack Drukhari page_007.md（Lady Malys Mind Like a Steel Trap 整改）",
+   "synthesis": "整改：光环（无限）→ once per turn"
+  },
+  {
+   "table": "abilities",
+   "column": "text_zh",
+   "id": "000000657_a2",
+   "name_en": "Aerialists",
+   "from_text": "At the end of the Fight phase, if there are no models currently embarked within this <span class=\"kwb\">TRANSPORT</span>, you can select one friendly Drukhari Infantry unit that has 6 or fewer models that is wholly within 6\" of this <span class=\"kwb\">TRANSPORT</span> (you cannot select a unit that can Fly). Unless that unit is within Engagement Range of one or more enemy units, it can embark within this <span class=\"kwb\">TRANSPORT</span>.",
+   "to_text": "At the end of the Fight phase, if there are no models currently embarked within this <span class=\"kwb\">TRANSPORT</span>, you can select one friendly Drukhari Infantry unit that has 6 or fewer models that is wholly within 6\" of this <span class=\"kwb\">TRANSPORT</span> (you cannot select a unit that can Fly). Unless that unit is within Engagement Range of one or more enemy units, it can embark within this <span class=\"kwb\">TRANSPORT</span>. That unit can embark within this <span class=\"kwb\">TRANSPORT</span> in a turn it disembarked from this <span class=\"kwb\">TRANSPORT</span>.",
+   "fp_source": "Faction Pack Drukhari page_007.md（Venom Aerialists 追加下车同回合可登上句）",
+   "synthesis": "EFFECT 追加：下车同回合可再登上此 TRANSPORT"
+  },
+  {
+   "table": "abilities",
+   "column": "text_zh",
+   "id": "000000661_a2",
+   "name_en": "Void Mine",
+   "from_text": "Once per battle, after this unit ends a Normal move, you can select one enemy model that it moved over during that move, then roll one D6 for each enemy unit within D6\" of that model: on a 4+, that enemy unit suffers D6 mortal wounds.",
+   "to_text": "At the end of your opponent’s Fight phase, select one visible enemy model (excluding Lone Operative units) within 24\" of this unit, and roll one D6 for each enemy unit within D6\" of that model:<br><ul><li>For each 4+, that enemy unit suffers D6 mortal wounds.</li></ul>",
+   "fp_source": "Faction Pack Drukhari page_007.md（Voidraven Void Mine 整改）",
+   "synthesis": "整改：本战一次 Normal move 越过敌 → 对方战斗阶段结束 24\"内可见敌（排除 Lone Op）"
   }
  ],
  "name_patches": [
@@ -4856,6 +4936,249 @@
     "cp_cost": "1",
     "phase": "Shooting phase",
     "text_zh": "<b>WHEN:</b> Your Shooting phase, when a friendly <span class=\"kwb\">ADEPTUS</span> <span class=\"kwb\">CUSTODES</span> <span class=\"kwb\">TERMINATOR</span> unit is selected to shoot.<br><br><b>TARGET:</b> That <span class=\"kwb\">ADEPTUS</span> <span class=\"kwb\">CUSTODES</span> <span class=\"kwb\">TERMINATOR</span> unit.<br><br><b>EFFECT:</b> Your unit’s Ballistus Grenade Launcher weapons have D3+3 A."
+   }
+  },
+  {
+   "table": "detachments",
+   "fp_source": "Faction Pack Drukhari page_002.md（11 版新分队，Wahapedia 无源）",
+   "values": {
+    "id": "fp11e-dru-exhibition",
+    "faction": "DRU",
+    "name_zh": "屠戮盛演",
+    "name_en": "Exacting Cruelty",
+    "rule_text": "Friendly <span class=\"kwb\">WYCH</span> <span class=\"kwb\">CULT</span> units' melee attacks have [LETHAL HITS: non-<span class=\"kwb\">MONSTER</span>/<span class=\"kwb\">VEHICLE</span>].<br><br>This detachment has the WYCH CULT tag and cannot be taken with another WYCH CULT detachment."
+   }
+  },
+  {
+   "table": "enhancements",
+   "fp_source": "Faction Pack Drukhari page_002.md（11 版新分队，Wahapedia 无源）",
+   "values": {
+    "id": "fp11e-dru-exhibition-e1",
+    "faction_id": "DRU",
+    "detachment_id": "fp11e-dru-exhibition",
+    "detachment_name": "Exhibition of Slaughter",
+    "name": "Periapt of Torments",
+    "cost": null,
+    "legend": "点数未知：FP 不含点数，MFM 缓存无增强数据（诚实置空，勿猜）",
+    "description": "<span class=\"kwb\">SUCCUBUS</span> model only. Enemy units cannot target this unit with snap shooting attacks."
+   }
+  },
+  {
+   "table": "enhancements",
+   "fp_source": "Faction Pack Drukhari page_002.md（11 版新分队，Wahapedia 无源）",
+   "values": {
+    "id": "fp11e-dru-exhibition-e2",
+    "faction_id": "DRU",
+    "detachment_id": "fp11e-dru-exhibition",
+    "detachment_name": "Exhibition of Slaughter",
+    "name": "Hyperstimm Trafficker",
+    "cost": null,
+    "legend": "点数未知：FP 不含点数，MFM 缓存无增强数据（诚实置空，勿猜）",
+    "description": "<span class=\"kwb\">SUCCUBUS</span> model only. This unit has +1 T."
+   }
+  },
+  {
+   "table": "stratagems",
+   "fp_source": "Faction Pack Drukhari page_002.md（11 版新分队，Wahapedia 无源）",
+   "values": {
+    "id": "fp11e-dru-exhibition-s1",
+    "faction": "DRU",
+    "detachment": "Exhibition of Slaughter",
+    "name_zh": "预谋打击",
+    "name_en": "Planned Strikes",
+    "cp_cost": "1",
+    "phase": "Fight phase",
+    "text_zh": "<b>WHEN:</b> Fight phase, when a friendly <span class=\"kwb\">WYCH</span> <span class=\"kwb\">CULT</span> unit is selected to fight.<br><br><b>TARGET:</b> That <span class=\"kwb\">WYCH</span> <span class=\"kwb\">CULT</span> unit.<br><br><b>EFFECT:</b> Your unit’s melee attacks have [LETHAL HITS]."
+   }
+  },
+  {
+   "table": "stratagems",
+   "fp_source": "Faction Pack Drukhari page_002.md（11 版新分队，Wahapedia 无源）",
+   "values": {
+    "id": "fp11e-dru-exhibition-s2",
+    "faction": "DRU",
+    "detachment": "Exhibition of Slaughter",
+    "name_zh": "布置舞台",
+    "name_en": "Sculpting the Stage",
+    "cp_cost": "1",
+    "phase": "Movement phase",
+    "text_zh": "<b>WHEN:</b> Your Movement phase, when a friendly <span class=\"kwb\">WYCH</span> <span class=\"kwb\">CULT</span> unit is selected to make an advance/fall-back move.<br><br><b>TARGET:</b> That <span class=\"kwb\">WYCH</span> <span class=\"kwb\">CULT</span> unit.<br><br><b>EFFECT:</b> That move does not prevent your unit from being eligible to start an action."
+   }
+  },
+  {
+   "table": "stratagems",
+   "fp_source": "Faction Pack Drukhari page_002.md（11 版新分队，Wahapedia 无源）",
+   "values": {
+    "id": "fp11e-dru-exhibition-s3",
+    "faction": "DRU",
+    "detachment": "Exhibition of Slaughter",
+    "name_zh": "杂技表演",
+    "name_en": "Acrobatic Display",
+    "cp_cost": "1",
+    "phase": "Opponent's Shooting phase",
+    "text_zh": "<b>WHEN:</b> Your opponent’s Shooting phase, when an enemy unit targets a friendly <span class=\"kwb\">WYCH</span> <span class=\"kwb\">CULT</span> unit.<br><br><b>TARGET:</b> That <span class=\"kwb\">WYCH</span> <span class=\"kwb\">CULT</span> unit.<br><br><b>EFFECT:</b> Your unit has a 5+ invulnerable save."
+   }
+  },
+  {
+   "table": "detachments",
+   "fp_source": "Faction Pack Drukhari page_003.md（11 版新分队，Wahapedia 无源）",
+   "values": {
+    "id": "fp11e-dru-agonysts",
+    "faction": "DRU",
+    "name_zh": "卡巴莱刑徒",
+    "name_en": "Contracted Harvest",
+    "rule_text": "Friendly <span class=\"kwb\">BLADES</span> <span class=\"kwb\">FOR</span> <span class=\"kwb\">HIRE</span>/<span class=\"kwb\">KABAL</span> units' ranged attacks have [SUSTAINED HITS 1: non-<span class=\"kwb\">MONSTER</span>/<span class=\"kwb\">VEHICLE</span>].<br><br>This detachment has the KABAL tag and cannot be taken with another KABAL detachment."
+   }
+  },
+  {
+   "table": "enhancements",
+   "fp_source": "Faction Pack Drukhari page_003.md（11 版新分队，Wahapedia 无源）",
+   "values": {
+    "id": "fp11e-dru-agonysts-e1",
+    "faction_id": "DRU",
+    "detachment_id": "fp11e-dru-agonysts",
+    "detachment_name": "Kabalite Agonysts",
+    "name": "Towering Arrogance",
+    "cost": null,
+    "legend": "点数未知：FP 不含点数，MFM 缓存无增强数据（诚实置空，勿猜）",
+    "description": "<span class=\"kwb\">ARCHON</span> model only. This unit has +1 Ld and OC."
+   }
+  },
+  {
+   "table": "enhancements",
+   "fp_source": "Faction Pack Drukhari page_003.md（11 版新分队，Wahapedia 无源）",
+   "values": {
+    "id": "fp11e-dru-agonysts-e2",
+    "faction_id": "DRU",
+    "detachment_id": "fp11e-dru-agonysts",
+    "detachment_name": "Kabalite Agonysts",
+    "name": "Contempt for Rivals",
+    "cost": null,
+    "legend": "点数未知：FP 不含点数，MFM 缓存无增强数据（诚实置空，勿猜）",
+    "description": "<span class=\"kwb\">ARCHON</span> model only. This unit’s attacks have [PRECISION]."
+   }
+  },
+  {
+   "table": "stratagems",
+   "fp_source": "Faction Pack Drukhari page_003.md（11 版新分队，Wahapedia 无源）",
+   "values": {
+    "id": "fp11e-dru-agonysts-s1",
+    "faction": "DRU",
+    "detachment": "Kabalite Agonysts",
+    "name_zh": "优先猎物",
+    "name_en": "Prioritised Victim",
+    "cp_cost": "1",
+    "phase": "Shooting or Fight phase",
+    "text_zh": "<b>WHEN:</b> Your Shooting phase or the Fight phase, when a friendly <span class=\"kwb\">BLADES</span> <span class=\"kwb\">FOR</span> <span class=\"kwb\">HIRE</span>/<span class=\"kwb\">KABAL</span> unit targets a <span class=\"kwb\">CHARACTER</span> unit.<br><br><b>TARGET:</b> That <span class=\"kwb\">BLADES</span> <span class=\"kwb\">FOR</span> <span class=\"kwb\">HIRE</span>/<span class=\"kwb\">KABAL</span> unit.<br><br><b>EFFECT:</b> Your unit’s attacks that target a <span class=\"kwb\">CHARACTER</span> unit can:<ul><li>Re-roll hit rolls of 1.</li><li>Re-roll wound rolls of 1.</li></ul>"
+   }
+  },
+  {
+   "table": "stratagems",
+   "fp_source": "Faction Pack Drukhari page_003.md（11 版新分队，Wahapedia 无源）",
+   "values": {
+    "id": "fp11e-dru-agonysts-s2",
+    "faction": "DRU",
+    "detachment": "Kabalite Agonysts",
+    "name_zh": "暗影之触",
+    "name_en": "Shadows' Reach",
+    "cp_cost": "1",
+    "phase": "Shooting phase",
+    "text_zh": "<b>WHEN:</b> Your Shooting phase, when a friendly <span class=\"kwb\">BLADES</span> <span class=\"kwb\">FOR</span> <span class=\"kwb\">HIRE</span>/<span class=\"kwb\">KABAL</span> unit has shot.<br><br><b>TARGET:</b> That <span class=\"kwb\">BLADES</span> <span class=\"kwb\">FOR</span> <span class=\"kwb\">HIRE</span>/<span class=\"kwb\">KABAL</span> unit.<br><br><b>EFFECT:</b> Those attacks do not prevent your unit from being hidden."
+   }
+  },
+  {
+   "table": "stratagems",
+   "fp_source": "Faction Pack Drukhari page_003.md（11 版新分队，Wahapedia 无源）",
+   "values": {
+    "id": "fp11e-dru-agonysts-s3",
+    "faction": "DRU",
+    "detachment": "Kabalite Agonysts",
+    "name_zh": "黑塔杀手",
+    "name_en": "Killers from the Dark Spires",
+    "cp_cost": "1",
+    "phase": "Shooting phase",
+    "text_zh": "<b>WHEN:</b> Your Shooting phase, when a friendly <span class=\"kwb\">KABALITE</span> <span class=\"kwb\">WARRIORS</span> unit is selected to shoot.<br><br><b>TARGET:</b> That <span class=\"kwb\">KABALITE</span> <span class=\"kwb\">WARRIORS</span> unit.<br><br><b>EFFECT:</b> Your unit’s ranged attacks have [IGNORES COVER]."
+   }
+  },
+  {
+   "table": "detachments",
+   "fp_source": "Faction Pack Drukhari page_004.md（11 版新分队，Wahapedia 无源）",
+   "values": {
+    "id": "fp11e-dru-torment",
+    "faction": "DRU",
+    "name_zh": "折磨工具",
+    "name_en": "Darkest Artifice",
+    "rule_text": "Attacks that target friendly <span class=\"kwb\">CRONOS</span>/<span class=\"kwb\">TALOS</span> units with a S greater than that unit’s T have -1 to wound rolls.<br><br>This detachment has the COVENS tag and cannot be taken with another COVENS detachment."
+   }
+  },
+  {
+   "table": "enhancements",
+   "fp_source": "Faction Pack Drukhari page_004.md（11 版新分队，Wahapedia 无源）",
+   "values": {
+    "id": "fp11e-dru-torment-e1",
+    "faction_id": "DRU",
+    "detachment_id": "fp11e-dru-torment",
+    "detachment_name": "Tools of Torment",
+    "name": "Gnarlskin Experimentor",
+    "cost": null,
+    "legend": "点数未知：FP 不含点数，MFM 缓存无增强数据（诚实置空，勿猜）",
+    "description": "<span class=\"kwb\">HAEMONCULUS</span> model only. Attacks that target this unit with a S greater than your unit’s T have -1 to wound rolls."
+   }
+  },
+  {
+   "table": "enhancements",
+   "fp_source": "Faction Pack Drukhari page_004.md（11 版新分队，Wahapedia 无源）",
+   "values": {
+    "id": "fp11e-dru-torment-e2",
+    "faction_id": "DRU",
+    "detachment_id": "fp11e-dru-torment",
+    "detachment_name": "Tools of Torment",
+    "name": "Elixir of the Corpse Courts",
+    "cost": null,
+    "legend": "点数未知：FP 不含点数，MFM 缓存无增强数据（诚实置空，勿猜）",
+    "description": "<span class=\"kwb\">CRONOS</span>/<span class=\"kwb\">TALOS</span> unit only. This unit has a 5+ invulnerable save."
+   }
+  },
+  {
+   "table": "stratagems",
+   "fp_source": "Faction Pack Drukhari page_004.md（11 版新分队，Wahapedia 无源）",
+   "values": {
+    "id": "fp11e-dru-torment-s1",
+    "faction": "DRU",
+    "detachment": "Tools of Torment",
+    "name_zh": "伤口撒盐",
+    "name_en": "Salting the Wound",
+    "cp_cost": "1",
+    "phase": "Fight phase",
+    "text_zh": "<b>WHEN:</b> Fight phase, when a friendly <span class=\"kwb\">CRONOS</span>/<span class=\"kwb\">TALOS</span> unit is selected to fight.<br><br><b>TARGET:</b> That <span class=\"kwb\">CRONOS</span>/<span class=\"kwb\">TALOS</span> unit.<br><br><b>EFFECT:</b> Your unit’s attacks that target a battle-shocked unit have [DEVASTATING WOUNDS]."
+   }
+  },
+  {
+   "table": "stratagems",
+   "fp_source": "Faction Pack Drukhari page_004.md（11 版新分队，Wahapedia 无源）",
+   "values": {
+    "id": "fp11e-dru-torment-s2",
+    "faction": "DRU",
+    "detachment": "Tools of Torment",
+    "name_zh": "苦痛红利",
+    "name_en": "Dividends of Agony",
+    "cp_cost": "1",
+    "phase": "Fight phase",
+    "text_zh": "<b>WHEN:</b> Fight phase, when a friendly <span class=\"kwb\">HAEMONCULUS</span> <span class=\"kwb\">COVENS</span> unit destroys an enemy unit.<br><br><b>TARGET:</b> That <span class=\"kwb\">HAEMONCULUS</span> <span class=\"kwb\">COVENS</span> unit.<br><br><b>EFFECT:</b> Select one visible enemy unit within 12\" of your unit. That enemy unit makes a battle-shock roll, with -1 to that battle-shock roll."
+   }
+  },
+  {
+   "table": "stratagems",
+   "fp_source": "Faction Pack Drukhari page_004.md（11 版新分队，Wahapedia 无源）",
+   "values": {
+    "id": "fp11e-dru-torment-s3",
+    "faction": "DRU",
+    "detachment": "Tools of Torment",
+    "name_zh": "紧急异变",
+    "name_en": "Urgent Metamorphosis",
+    "cp_cost": "1",
+    "phase": "Movement phase",
+    "text_zh": "<b>WHEN:</b> Your Movement phase, when a friendly <span class=\"kwb\">HAEMONCULUS</span> <span class=\"kwb\">COVENS</span> unit is selected to make a fall-back move.<br><br><b>TARGET:</b> That <span class=\"kwb\">HAEMONCULUS</span> <span class=\"kwb\">COVENS</span> unit.<br><br><b>EFFECT:</b> That move does not prevent your unit from being eligible to declare a charge."
    }
   }
  ]

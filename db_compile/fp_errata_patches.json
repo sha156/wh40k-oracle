@@ -318,6 +318,24 @@
    "from": "20+\"",
    "to": "12\"",
    "src": "Faction Pack Thousand Sons page_010.md（Heldrake Profile: Change M to 12\"）"
+  },
+  {
+   "unit_id": "000000660",
+   "faction": "DRU",
+   "unit": "Razorwing Jetfighter",
+   "field": "m",
+   "from": "20+\"",
+   "to": "-",
+   "src": "Faction Pack Drukhari page_007.md（去 Hover 后 M→'-'）"
+  },
+  {
+   "unit_id": "000000661",
+   "faction": "DRU",
+   "unit": "Voidraven Bomber",
+   "field": "m",
+   "from": "20+\"",
+   "to": "-",
+   "src": "Faction Pack Drukhari page_007.md（去 Hover 后 M→'-'）"
   }
  ],
  "new_units": [
