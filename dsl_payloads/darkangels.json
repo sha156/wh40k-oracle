@@ -1,0 +1,1662 @@
+{
+ "_comment": "P7 阵营技能 DSL 唯一真源（黑暗天使，P7-PR19）。DB effect_dsl_json/dsl_status 只是投影，由 `python -m db_compile dsl-apply` 写入并挂 restore。判据与格式沿 spec 2026-07-14 + PR6/PR16/PR17 约定；A/B 工作单见 docs/superpowers/plans/2026-07-20-p7-pr19-darkangels-worklist.md。黑暗天使 11 版为 ADEPTUS ASTARTES 战团（faction='SM' 无独立阵营行）——8 个分队：5 现有（Company of Hunters/Inner Circle Task Force/Unforgiven Task Force/Lion’s Blade Task Force/Wrath of the Rock，文本与 11 版 FP 逐字一致零漂移）+ 3 新（Dark Age Arsenal/Darkflight Pursuit/Interrogation Conclave，fp_rules inserts 补录 id 前缀 fp11e-da-）。分队规则条目物化到 abilities 新行（spec D5）。零新引擎通道、零新态势开关（沿 PR9-17 约定）。fp_errata：Nephilim Jetfighter / Ravenwing Dark Talon M 20+\"→'-'（去 Hover）2 条 stat_patches。",
+ "dsl_version": 1,
+ "faction": "SM",
+ "entries": [
+  {
+   "table": "abilities",
+   "id": "det000008777",
+   "side": "attacker",
+   "detachment": "Company of Hunters",
+   "name_en": "Masters Of Manoeuvre",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "军规：AA 单位加速/撤退后仍可射击、AA 骑乘加速/撤退后可射击并冲锋——移动资格域未建模",
+    "Outrider Squad 获 Battleline 关键词——编成域未建模"
+   ],
+   "provenance": {
+    "text_sha256": "a7c8d89ec3031c97e55ec775ff7d64765082f593665a270521d51223be776606"
+   },
+   "encoded_by": "manual-2026-07-20",
+   "materialize": {
+    "from_table": "detachments",
+    "from_id": "000008777",
+    "from_column": "rule_text"
+   }
+  },
+  {
+   "table": "stratagems",
+   "id": "000008779002",
+   "side": "attacker",
+   "detachment": "Company of Hunters",
+   "name_en": "HUNTERS’ TRAIL",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "据点控制持续（无模型仍保有）——目标点/任务域未建模"
+   ],
+   "provenance": {
+    "text_sha256": "be2ff12a0018b6e0f1ff466d2e65e6b36e3d25372102eddc59329df0f0ffc282"
+   },
+   "encoded_by": "manual-2026-07-20"
+  },
+  {
+   "table": "stratagems",
+   "id": "000008779003",
+   "side": "target",
+   "detachment": "Company of Hunters",
+   "name_en": "ARMOUR OF CONTEMPT",
+   "name_zh": null,
+   "status": "partial",
+   "effects": [
+    {
+     "phase": "save",
+     "op": "ap_improve",
+     "params": [
+      -1
+     ],
+     "condition": [],
+     "source": "傲慢之甲（被攻 AP 恶化 1，射击/近战两相位）"
+    }
+   ],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "触发时机为敌方选中目标后——点名即假设已使用；射击与近战两相位均适用"
+   ],
+   "provenance": {
+    "text_sha256": "35d8af3acc35ff49353b590f9a67c23d622a0edeb0e172ccd7183b080d1e0c83"
+   },
+   "encoded_by": "manual-2026-07-20"
+  },
+  {
+   "table": "stratagems",
+   "id": "000008779004",
+   "side": "attacker",
+   "detachment": "Company of Hunters",
+   "name_en": "TALON STRIKE",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "对 INFANTRY CHARACTER / MOUNTED CHARACTER +1 致伤——复合关键词（步兵×人物 / 骑乘×人物）无载体，裸 target_has_keyword 'character' 会误放行 VEHICLE/MONSTER CHARACTER（过度施加），不编"
+   ],
+   "provenance": {
+    "text_sha256": "53fe65a8e276fbb8b52ef9f9f773010597f513d166963026e403d7c4163228ea"
+   },
+   "encoded_by": "manual-2026-07-20"
+  },
+  {
+   "table": "stratagems",
+   "id": "000008779005",
+   "side": "attacker",
+   "detachment": "Company of Hunters",
+   "name_en": "DEATH ON THE WIND",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "敌方战斗震慑测试——士气域未建模"
+   ],
+   "provenance": {
+    "text_sha256": "730dc4336f5f866c7b1492cfa2dc1fb007ea90968e911ca7214528cfa8a528f7"
+   },
+   "encoded_by": "manual-2026-07-20"
+  },
+  {
+   "table": "stratagems",
+   "id": "000008779006",
+   "side": "target",
+   "detachment": "Company of Hunters",
+   "name_en": "HIGH-SPEED FOCUS",
+   "name_zh": null,
+   "status": "partial",
+   "effects": [
+    {
+     "phase": "hit",
+     "op": "modify",
+     "params": [
+      -1
+     ],
+     "condition": [
+      "phase_shooting"
+     ],
+     "source": "高速专注（守方被射击命中-1）"
+    }
+   ],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "WHEN=对手射击阶段选中目标后——条件自含射击门控，近战不注入"
+   ],
+   "provenance": {
+    "text_sha256": "91c17f93691d31bd40de5a69b1b7b473a8843276fa8e1d033ec45ab77ef1ac25"
+   },
+   "encoded_by": "manual-2026-07-20"
+  },
+  {
+   "table": "stratagems",
+   "id": "000008779007",
+   "side": "attacker",
+   "detachment": "Company of Hunters",
+   "name_en": "RAPID REAPPRAISAL",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "撤出战场置入战略预备队——预备队/移动域未建模"
+   ],
+   "provenance": {
+    "text_sha256": "e64d7fe438fcf34bd62fb982446346cfb0d054cd1ce2a3bb2f5e291f0fe9e9eb"
+   },
+   "encoded_by": "manual-2026-07-20"
+  },
+  {
+   "table": "enhancements",
+   "id": "000008778002",
+   "side": "attacker",
+   "detachment": "Company of Hunters",
+   "name_en": "Master-crafted Weapon",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "近战武器 [PRECISION]——攻击分配域（点杀附属人物）未建模"
+   ],
+   "provenance": {
+    "text_sha256": "3ef408d92485c03def5645ac7a91a3c62e2eb18fc65b59feb06a1c5342c3ad00"
+   },
+   "encoded_by": "manual-2026-07-20"
+  },
+  {
+   "table": "enhancements",
+   "id": "000008778003",
+   "side": "attacker",
+   "detachment": "Company of Hunters",
+   "name_en": "Mounted Strategist",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "重投加速与冲锋骰——移动域未建模"
+   ],
+   "provenance": {
+    "text_sha256": "cdeb7986661ff630f7c8f3fd29be6fb6868964763b7889570fa31d224a79599e"
+   },
+   "encoded_by": "manual-2026-07-20"
+  },
+  {
+   "table": "enhancements",
+   "id": "000008778004",
+   "side": "attacker",
+   "detachment": "Company of Hunters",
+   "name_en": "Master of Manoeuvre",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "战略预备队点数与出场轮次——编成/预备队域未建模"
+   ],
+   "provenance": {
+    "text_sha256": "67b2ff2789ce676774ed7769facdb0b0e523c5837fe4b4976cb9d2253130e459"
+   },
+   "encoded_by": "manual-2026-07-20"
+  },
+  {
+   "table": "enhancements",
+   "id": "000008778005",
+   "side": "attacker",
+   "detachment": "Company of Hunters",
+   "name_en": "Recon Hunter",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "斥候 9 寸——部署域未建模"
+   ],
+   "provenance": {
+    "text_sha256": "6c4bc0fd523e3fb015cc5417772cf422ffc4fb50620f1495985f66949bb95fa1"
+   },
+   "encoded_by": "manual-2026-07-20"
+  },
+  {
+   "table": "abilities",
+   "id": "det000008773",
+   "side": "attacker",
+   "detachment": "Inner Circle Task Force",
+   "name_en": "Vowed Target",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "军规：指挥阶段选宣誓目标点（Defensive Footing/Aggressive Push），DEATHWING INFANTRY 对宣誓目标点范围内单位 +1 致伤——目标点范围空间门控无载体，不编"
+   ],
+   "provenance": {
+    "text_sha256": "7652fa2828e68fbe7a23dd12284ed5a7b1deb2e1e39871161b78b9862503ba55"
+   },
+   "encoded_by": "manual-2026-07-20",
+   "materialize": {
+    "from_table": "detachments",
+    "from_id": "000008773",
+    "from_column": "rule_text"
+   }
+  },
+  {
+   "table": "stratagems",
+   "id": "000008775002",
+   "side": "target",
+   "detachment": "Inner Circle Task Force",
+   "name_en": "ARMOUR OF CONTEMPT",
+   "name_zh": null,
+   "status": "partial",
+   "effects": [
+    {
+     "phase": "save",
+     "op": "ap_improve",
+     "params": [
+      -1
+     ],
+     "condition": [],
+     "source": "傲慢之甲（被攻 AP 恶化 1，射击/近战两相位）"
+    }
+   ],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "触发时机为敌方选中目标后——点名即假设已使用；射击与近战两相位均适用"
+   ],
+   "provenance": {
+    "text_sha256": "35d8af3acc35ff49353b590f9a67c23d622a0edeb0e172ccd7183b080d1e0c83"
+   },
+   "encoded_by": "manual-2026-07-20"
+  },
+  {
+   "table": "stratagems",
+   "id": "000008775003",
+   "side": "attacker",
+   "detachment": "Inner Circle Task Force",
+   "name_en": "MARTIAL MASTERY",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "重投致伤骰 1（宣誓目标点范围内则全量重投）——重骰 1 无载体（引擎重骰=全部失败骰整体重投，编入会高估），全量重投分支依赖目标点范围，均不编"
+   ],
+   "provenance": {
+    "text_sha256": "c74b974c0d59a6d6f0f7399277c6e5c470b970e165811746e1fa3a0ce989acc2"
+   },
+   "encoded_by": "manual-2026-07-20"
+  },
+  {
+   "table": "stratagems",
+   "id": "000008775004",
+   "side": "attacker",
+   "detachment": "Inner Circle Task Force",
+   "name_en": "DUTY UNTO DEATH",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "被毁模型 4+ 死后一击——战斗序列/复活域未建模"
+   ],
+   "provenance": {
+    "text_sha256": "c8da94fb6bce0effc919aa367cfaa41f9d6575c7c950eea921d8e88bb575ac88"
+   },
+   "encoded_by": "manual-2026-07-20"
+  },
+  {
+   "table": "stratagems",
+   "id": "000008775005",
+   "side": "attacker",
+   "detachment": "Inner Circle Task Force",
+   "name_en": "RELIC TELEPORTARIUM",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "深入打击落点 6 寸——部署/移动域未建模"
+   ],
+   "provenance": {
+    "text_sha256": "8ac52d24fa7e7b2b1ec4a3c185c870728ca98726c7f0f5cce53cb13be23ea4c7"
+   },
+   "encoded_by": "manual-2026-07-20"
+  },
+  {
+   "table": "stratagems",
+   "id": "000008775006",
+   "side": "attacker",
+   "detachment": "Inner Circle Task Force",
+   "name_en": "WRATH OF THE LION",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "冲锋后每模型 D6、4+ 各 1 致命伤（上限 3）——一次性爆发不在攻击序列内，依赖模型数/空间建模"
+   ],
+   "provenance": {
+    "text_sha256": "cdb0e215fe00549d93742aa6cdcccb88bafb8ac05da5bced5ad336471b626336"
+   },
+   "encoded_by": "manual-2026-07-20"
+  },
+  {
+   "table": "stratagems",
+   "id": "000008775007",
+   "side": "target",
+   "detachment": "Inner Circle Task Force",
+   "name_en": "UNMATCHED FORTITUDE",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "守方 S>T 时 -1 致伤，但 WHEN=对手射击阶段（仅射击）——phase_shooting × S>T 无复合载体（wound_s_gt_t 两相位通用，裸编会在近战过度施加），不编"
+   ],
+   "provenance": {
+    "text_sha256": "85eee60ccff4d7cd1997d09e36c18990e33a321e242a60d3cc67f4108fb14673"
+   },
+   "encoded_by": "manual-2026-07-20"
+  },
+  {
+   "table": "enhancements",
+   "id": "000008774002",
+   "side": "attacker",
+   "detachment": "Inner Circle Task Force",
+   "name_en": "Champion of the Deathwing",
+   "name_zh": null,
+   "status": "partial",
+   "effects": [
+    {
+     "phase": "hit",
+     "op": "auto_wound",
+     "params": [],
+     "condition": [
+      "phase_melee"
+     ],
+     "source": "死翼勇士（近战 [LETHAL HITS]——暴击自动致伤）"
+    }
+   ],
+   "requires_toggles": [
+    "bearer_leading"
+   ],
+   "not_modeled_notes_zh": [
+    "限携带者（DEATHWING）近战武器（点名即声明携带者率领本单位）",
+    "宣誓目标点范围内暴击阈值降至 5+——目标点范围/暴击阈值联动无载体，仅编基础 [LETHAL HITS]（防高估）"
+   ],
+   "provenance": {
+    "text_sha256": "fe684b0a4a407ee10b6d721dd5f207d3476c95644699670653c2181181842d62"
+   },
+   "encoded_by": "manual-2026-07-20"
+  },
+  {
+   "table": "enhancements",
+   "id": "000008774003",
+   "side": "attacker",
+   "detachment": "Inner Circle Task Force",
+   "name_en": "Eye of the Unseen",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "被战略指定时 5+ 回 1CP——CP 域未建模"
+   ],
+   "provenance": {
+    "text_sha256": "822f855df4a49e5a558b18854e4025650d253177ac602eb914ed9de34996c646"
+   },
+   "encoded_by": "manual-2026-07-20"
+  },
+  {
+   "table": "enhancements",
+   "id": "000008774004",
+   "side": "attacker",
+   "detachment": "Inner Circle Task Force",
+   "name_en": "Singular Will",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "跟进/巩固额外 3 寸——移动域未建模"
+   ],
+   "provenance": {
+    "text_sha256": "3b7e0f19d959296c54ccd8b5ed366512773552fdaef61bba2deb6cde27a57016"
+   },
+   "encoded_by": "manual-2026-07-20"
+  },
+  {
+   "table": "enhancements",
+   "id": "000008774005",
+   "side": "attacker",
+   "detachment": "Inner Circle Task Force",
+   "name_en": "Deathwing Assault",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "前三个移动阶段深入打击——部署/预备队域未建模"
+   ],
+   "provenance": {
+    "text_sha256": "d08a1c33e04dfd0e852ef2e0bf05ec70de3c85395daa1ad9884b3645106c2f94"
+   },
+   "encoded_by": "manual-2026-07-20"
+  },
+  {
+   "table": "abilities",
+   "id": "det000008770",
+   "side": "attacker",
+   "detachment": "Unforgiven Task Force",
+   "name_en": "Grim Resolve",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "军规：战斗震慑单位 OC 改 1、指挥阶段选一单位 +1 OC——目标点/OC 争夺域未建模"
+   ],
+   "provenance": {
+    "text_sha256": "b0101b3e19f01dda6a6c4e9409b470c5e96419bb3cb78080f6cc1ec4d971fc47"
+   },
+   "encoded_by": "manual-2026-07-20",
+   "materialize": {
+    "from_table": "detachments",
+    "from_id": "000008770",
+    "from_column": "rule_text"
+   }
+  },
+  {
+   "table": "stratagems",
+   "id": "000008389002",
+   "side": "target",
+   "detachment": "Unforgiven Task Force",
+   "name_en": "ARMOUR OF CONTEMPT",
+   "name_zh": null,
+   "status": "partial",
+   "effects": [
+    {
+     "phase": "save",
+     "op": "ap_improve",
+     "params": [
+      -1
+     ],
+     "condition": [],
+     "source": "傲慢之甲（被攻 AP 恶化 1，射击/近战两相位）"
+    }
+   ],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "触发时机为敌方选中目标后——点名即假设已使用；射击与近战两相位均适用"
+   ],
+   "provenance": {
+    "text_sha256": "35d8af3acc35ff49353b590f9a67c23d622a0edeb0e172ccd7183b080d1e0c83"
+   },
+   "encoded_by": "manual-2026-07-20"
+  },
+  {
+   "table": "stratagems",
+   "id": "000008389003",
+   "side": "attacker",
+   "detachment": "Unforgiven Task Force",
+   "name_en": "UNFORGIVEN FURY",
+   "name_zh": null,
+   "status": "partial",
+   "effects": [
+    {
+     "phase": "hit",
+     "op": "auto_wound",
+     "params": [],
+     "condition": [],
+     "source": "不赦之怒（全武器 [LETHAL HITS]——暴击自动致伤，射击/近战两相位）"
+    }
+   ],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "全武器 [LETHAL HITS]（射击或近战阶段均可发动，故不挂相位门）",
+    "若有 AA 单位处于战斗震慑，暴击阈值降至 5+——战斗震慑状态机无载体，仅编基础 [LETHAL HITS]（防高估）"
+   ],
+   "provenance": {
+    "text_sha256": "ba4e1d9d568308448e5a10551ff6182f1adbbdfd63ed9aac267373eac81e5fe0"
+   },
+   "encoded_by": "manual-2026-07-20"
+  },
+  {
+   "table": "stratagems",
+   "id": "000008389004",
+   "side": "attacker",
+   "detachment": "Unforgiven Task Force",
+   "name_en": "INTRACTABLE",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "撤退后仍可射击并冲锋——移动资格域未建模"
+   ],
+   "provenance": {
+    "text_sha256": "5188da1d2f915b793d0b544952ed236335181db676d381b2f6cf51f8a3ee2ea1"
+   },
+   "encoded_by": "manual-2026-07-20"
+  },
+  {
+   "table": "stratagems",
+   "id": "000008389005",
+   "side": "attacker",
+   "detachment": "Unforgiven Task Force",
+   "name_en": "FIRE DISCIPLINE",
+   "name_zh": null,
+   "status": "partial",
+   "effects": [
+    {
+     "phase": "save",
+     "op": "ignores_cover",
+     "params": [],
+     "condition": [
+      "phase_shooting"
+     ],
+     "source": "火力戒律（远程武器 [无视掩体]）"
+    }
+   ],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "[ASSAULT]（加速后可射击）与 [HEAVY]（驻停 +1 命中）为移动/驻停域未建模；仅编 [无视掩体]"
+   ],
+   "provenance": {
+    "text_sha256": "caba86d9a582dd454c85e1327e12792e379b2ff045938445ff901a88e5bc10dd"
+   },
+   "encoded_by": "manual-2026-07-20"
+  },
+  {
+   "table": "stratagems",
+   "id": "000008389006",
+   "side": "attacker",
+   "detachment": "Unforgiven Task Force",
+   "name_en": "GRIM RETRIBUTION",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "对手射击阶段还击射击——阶段外射击域未建模"
+   ],
+   "provenance": {
+    "text_sha256": "39b9bf27e1d41a77d95c7f05071bf15ab4a68337482583f87925b89343a9eac4"
+   },
+   "encoded_by": "manual-2026-07-20"
+  },
+  {
+   "table": "stratagems",
+   "id": "000008389007",
+   "side": "target",
+   "detachment": "Unforgiven Task Force",
+   "name_en": "UNBREAKABLE LINES",
+   "name_zh": null,
+   "status": "partial",
+   "effects": [
+    {
+     "phase": "wound",
+     "op": "modify",
+     "params": [
+      -1
+     ],
+     "condition": [
+      "phase_melee"
+     ],
+     "source": "坚不可摧的战线（被近战攻击致伤-1）"
+    }
+   ],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "WHEN=对手冲锋阶段末（点名即假设已触发并处于接战），效果持续至回合结束——但对手回合相位序中射击在冲锋之前，触发后本回合仅剩战斗（近战）阶段能生效，故门控 phase_melee（避免过度施加到射击阶段）"
+   ],
+   "provenance": {
+    "text_sha256": "59546b137037143e3dc166d4204bcd77542102c9be73eb13b5a81faa569da2ec"
+   },
+   "encoded_by": "manual-2026-07-20"
+  },
+  {
+   "table": "enhancements",
+   "id": "000008771002",
+   "side": "attacker",
+   "detachment": "Unforgiven Task Force",
+   "name_en": "Shroud of Heroes",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "首次被毁 2+ 复活（默认带 3 伤，被毁时处于战斗震慑则满血复活）——复活域未建模"
+   ],
+   "provenance": {
+    "text_sha256": "741b480b6dd498424d3581175577561baea29c04d144853186b6122f020334ad"
+   },
+   "encoded_by": "manual-2026-07-20"
+  },
+  {
+   "table": "enhancements",
+   "id": "000008771003",
+   "side": "attacker",
+   "detachment": "Unforgiven Task Force",
+   "name_en": "Stubborn Tenacity",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "携带者单位低于起始编制时 +1 命中、且战斗震慑并低于起始编制时 +1 致伤——攻方本单位低于起始编制/战斗震慑自身状态无载体（target_below_starting 读的是目标状态，非攻方本单位），不编"
+   ],
+   "provenance": {
+    "text_sha256": "1cab2e1a87e62880e373d1224cba71e94627614c9503930f1c3e96ffc8aae6ef"
+   },
+   "encoded_by": "manual-2026-07-20"
+  },
+  {
+   "table": "enhancements",
+   "id": "000008771004",
+   "side": "attacker",
+   "detachment": "Unforgiven Task Force",
+   "name_en": "Weapons of the First Legion",
+   "name_zh": null,
+   "status": "partial",
+   "effects": [
+    {
+     "phase": "attacks",
+     "op": "modify",
+     "params": [
+      1
+     ],
+     "condition": [
+      "phase_melee"
+     ],
+     "source": "第一军团之武（携带者近战武器 A+1）"
+    },
+    {
+     "phase": "wound",
+     "op": "s_improve",
+     "params": [
+      1
+     ],
+     "condition": [
+      "phase_melee"
+     ],
+     "source": "第一军团之武（携带者近战武器 +1 S，特征值通道）"
+    },
+    {
+     "phase": "damage",
+     "op": "modify",
+     "params": [
+      1
+     ],
+     "condition": [
+      "phase_melee"
+     ],
+     "source": "第一军团之武（携带者近战武器 D+1）"
+    }
+   ],
+   "requires_toggles": [
+    "bearer_leading"
+   ],
+   "not_modeled_notes_zh": [
+    "限携带者模型近战武器——单人物模拟准确，附属单位整体注入会高估（请单列主武器模拟）",
+    "战斗震慑时改为 +2 A/S/D——战斗震慑状态机无载体，仅编基础 +1（防高估）"
+   ],
+   "provenance": {
+    "text_sha256": "56b2606e19363a9967dbb7def85a637c062eeddc330828b14d383c11d7e0e850"
+   },
+   "encoded_by": "manual-2026-07-20"
+  },
+  {
+   "table": "enhancements",
+   "id": "000008771005",
+   "side": "target",
+   "detachment": "Unforgiven Task Force",
+   "name_en": "Pennant of Remembrance",
+   "name_zh": null,
+   "status": "partial",
+   "effects": [
+    {
+     "phase": "fnp",
+     "op": "fnp",
+     "params": [
+      6
+     ],
+     "condition": [],
+     "source": "追念之旗（携带者单位 FNP 6+）"
+    }
+   ],
+   "requires_toggles": [
+    "defender_bearer_leading"
+   ],
+   "not_modeled_notes_zh": [
+    "限旗手（Ancient）率领单位（点名即声明守方为携带者单位）",
+    "该单位战斗震慑时升为 FNP 4+——战斗震慑状态机无载体，仅编基础 6+（防高估）"
+   ],
+   "provenance": {
+    "text_sha256": "9178388455a81d1e3e9b4db734ff65ec7a63c2e619bfc06dbf597c073426e22e"
+   },
+   "encoded_by": "manual-2026-07-20"
+  },
+  {
+   "table": "abilities",
+   "id": "det000009732",
+   "side": "attacker",
+   "detachment": "Lion’s Blade Task Force",
+   "name_en": "In The Lion’s Claws",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "军规：敌方在 Ravenwing 接战范围内撤退须 Desperate Escape、Deathwing 冲锋 +2——移动/士气域未建模"
+   ],
+   "provenance": {
+    "text_sha256": "ff2a0a0d9afee4c416c8c1ca699bc39d1806c0877337f0558217a3dc36ce4078"
+   },
+   "encoded_by": "manual-2026-07-20",
+   "materialize": {
+    "from_table": "detachments",
+    "from_id": "000009732",
+    "from_column": "rule_text"
+   }
+  },
+  {
+   "table": "stratagems",
+   "id": "000009734002",
+   "side": "attacker",
+   "detachment": "Lion’s Blade Task Force",
+   "name_en": "OVERPOWERING EXACTION",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "敌方战斗震慑测试（Deathwing/Ravenwing 时 -1）——士气域未建模"
+   ],
+   "provenance": {
+    "text_sha256": "a701eaafa16378d69eb933532125fa77f62b5f1ee906b39eef37e3ff3dd82d11"
+   },
+   "encoded_by": "manual-2026-07-20"
+  },
+  {
+   "table": "stratagems",
+   "id": "000009734003",
+   "side": "target",
+   "detachment": "Lion’s Blade Task Force",
+   "name_en": "ARMOUR OF CONTEMPT",
+   "name_zh": null,
+   "status": "partial",
+   "effects": [
+    {
+     "phase": "save",
+     "op": "ap_improve",
+     "params": [
+      -1
+     ],
+     "condition": [],
+     "source": "傲慢之甲（被攻 AP 恶化 1，射击/近战两相位）"
+    }
+   ],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "触发时机为敌方选中目标后——点名即假设已使用；射击与近战两相位均适用"
+   ],
+   "provenance": {
+    "text_sha256": "35d8af3acc35ff49353b590f9a67c23d622a0edeb0e172ccd7183b080d1e0c83"
+   },
+   "encoded_by": "manual-2026-07-20"
+  },
+  {
+   "table": "stratagems",
+   "id": "000009734004",
+   "side": "target",
+   "detachment": "Lion’s Blade Task Force",
+   "name_en": "STRENGTH IN UNITY",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "两分支各依赖敌方处于我方 Ravenwing 接战范围（-1 命中）或 Deathwing 接战范围（S>T 时 -1 致伤）——空间/编成分支且互不排斥，单目标模拟无法表达'处于哪支单位接战范围'，编入任一或两者都会错误施加；另与傲慢之甲同相位互斥。不编"
+   ],
+   "provenance": {
+    "text_sha256": "a07d829d247879b4a35a413adc3ebefe564fbfe575e5ec9750e21d9a378481e3"
+   },
+   "encoded_by": "manual-2026-07-20"
+  },
+  {
+   "table": "stratagems",
+   "id": "000009734005",
+   "side": "attacker",
+   "detachment": "Lion’s Blade Task Force",
+   "name_en": "KNIGHTS OF IRON",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "水平穿越地形移动——移动域未建模"
+   ],
+   "provenance": {
+    "text_sha256": "456cb822187c0ba898a6d46f5d874a44e407595aa32545f765aa850666a1d6d7"
+   },
+   "encoded_by": "manual-2026-07-20"
+  },
+  {
+   "table": "stratagems",
+   "id": "000009734006",
+   "side": "attacker",
+   "detachment": "Lion’s Blade Task Force",
+   "name_en": "ILLUMINATING FIRE",
+   "name_zh": null,
+   "status": "partial",
+   "effects": [
+    {
+     "phase": "wound",
+     "op": "modify",
+     "params": [
+      1
+     ],
+     "condition": [
+      "phase_shooting"
+     ],
+     "source": "照明射击（友方 Deathwing 对被标记敌方单位射击致伤+1）"
+    }
+   ],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "限友方 Deathwing 单位对被标记敌方单位（12 寸内/单位类型/空间按已满足假设）；WHEN=射击阶段（条件自含射击门控）"
+   ],
+   "provenance": {
+    "text_sha256": "d291dc575ca17205e39188542620c48b87fd2aae553375854d0ef61f50a80a7c"
+   },
+   "encoded_by": "manual-2026-07-20"
+  },
+  {
+   "table": "stratagems",
+   "id": "000009734007",
+   "side": "attacker",
+   "detachment": "Lion’s Blade Task Force",
+   "name_en": "INESCAPABLE WRATH",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "对手冲锋阶段末反冲锋——阶段外冲锋/移动域未建模"
+   ],
+   "provenance": {
+    "text_sha256": "532ac2316b4f62f680cff15d8fd579712f0df5ddcca359b256019e08c03cf3a9"
+   },
+   "encoded_by": "manual-2026-07-20"
+  },
+  {
+   "table": "enhancements",
+   "id": "000009733002",
+   "side": "attacker",
+   "detachment": "Lion’s Blade Task Force",
+   "name_en": "Calibanite Armaments",
+   "name_zh": null,
+   "status": "partial",
+   "effects": [
+    {
+     "phase": "damage",
+     "op": "modify",
+     "params": [
+      1
+     ],
+     "condition": [
+      "phase_melee"
+     ],
+     "source": "卡利班军械（携带者近战武器 D+1）"
+    }
+   ],
+   "requires_toggles": [
+    "bearer_leading"
+   ],
+   "not_modeled_notes_zh": [
+    "限携带者模型近战武器——单人物模拟准确，附属单位整体注入会高估"
+   ],
+   "provenance": {
+    "text_sha256": "0ad2b4f97cb92f8f876cf0f83e348a64683b69f0b15151e2b7af7f2d465199c3"
+   },
+   "encoded_by": "manual-2026-07-20"
+  },
+  {
+   "table": "enhancements",
+   "id": "000009733003",
+   "side": "attacker",
+   "detachment": "Lion’s Blade Task Force",
+   "name_en": "Lord of the Hunt",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "撤退后可射击并冲锋 + 重投 Desperate Escape——移动域未建模"
+   ],
+   "provenance": {
+    "text_sha256": "7ae2a93dd21ffe196ae38a36493deda676bd181f18419fdaf1ff8e33013be581"
+   },
+   "encoded_by": "manual-2026-07-20"
+  },
+  {
+   "table": "enhancements",
+   "id": "000009733004",
+   "side": "attacker",
+   "detachment": "Lion’s Blade Task Force",
+   "name_en": "Stalwart Champion",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "未战斗震慑时 +1 OC——目标点控制域未建模"
+   ],
+   "provenance": {
+    "text_sha256": "9839c93eba0ef6b23bcf717470ad4c26df3ecfe32e1e52dc75351ea9932fc70f"
+   },
+   "encoded_by": "manual-2026-07-20"
+  },
+  {
+   "table": "enhancements",
+   "id": "000009733005",
+   "side": "attacker",
+   "detachment": "Lion’s Blade Task Force",
+   "name_en": "Fulgus Magna",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "每场一次撤出置入战略预备队——预备队/移动域未建模"
+   ],
+   "provenance": {
+    "text_sha256": "be90b98ca43acca36947da944a48d6475c24bcc7b72b58bb69e009d5a7ddbe64"
+   },
+   "encoded_by": "manual-2026-07-20"
+  },
+  {
+   "table": "abilities",
+   "id": "det000010154",
+   "side": "target",
+   "detachment": "Wrath of the Rock",
+   "name_en": "Dutiful Tenacity",
+   "name_zh": null,
+   "status": "partial",
+   "effects": [
+    {
+     "phase": "wound",
+     "op": "modify",
+     "params": [
+      -1
+     ],
+     "condition": [
+      "wound_s_gt_t"
+     ],
+     "source": "尽责坚韧（守方被 S>T 攻击时致伤-1）"
+    }
+   ],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "限 AA 步兵/骑乘守方（选本分队即声明守方类型）；S>T 延迟判定在引擎攻方最终 S 处结算；射击/近战两相位均适用"
+   ],
+   "provenance": {
+    "text_sha256": "46da5d9bfa2c6da156a0b8982777599c0328c2b02183e6de4374134e1141da8f"
+   },
+   "encoded_by": "manual-2026-07-20",
+   "materialize": {
+    "from_table": "detachments",
+    "from_id": "000010154",
+    "from_column": "rule_text"
+   }
+  },
+  {
+   "table": "stratagems",
+   "id": "000010161002",
+   "side": "attacker",
+   "detachment": "Wrath of the Rock",
+   "name_en": "INESCAPABLE JUSTICE",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "宣誓目标转移至新敌方单位——誓约标记机制不在 P7 编码范围（P5 分类披露层处理）"
+   ],
+   "provenance": {
+    "text_sha256": "a2b690492e79cab54624ee41fd65cfc53c1d8994a91f226193d41a8a8942d06a"
+   },
+   "encoded_by": "manual-2026-07-20"
+  },
+  {
+   "table": "stratagems",
+   "id": "000010161003",
+   "side": "attacker",
+   "detachment": "Wrath of the Rock",
+   "name_en": "LION’S WILL",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "+1 OC（目标点域）；额外 +1 命中仅限本单位无 Deathwing/Ravenwing/Vehicle 关键词——负关键词门（非某关键词）无载体，引擎只能表达'具备关键词'，裸编会对 Deathwing/Ravenwing/载具单位过度施加，不编"
+   ],
+   "provenance": {
+    "text_sha256": "f2e8a2ec44d8fcfca39112a23dd9a72270b0eda2afa0fd4e6b6393791b561e30"
+   },
+   "encoded_by": "manual-2026-07-20"
+  },
+  {
+   "table": "stratagems",
+   "id": "000010161004",
+   "side": "target",
+   "detachment": "Wrath of the Rock",
+   "name_en": "ARMOUR OF CONTEMPT",
+   "name_zh": null,
+   "status": "partial",
+   "effects": [
+    {
+     "phase": "save",
+     "op": "ap_improve",
+     "params": [
+      -1
+     ],
+     "condition": [],
+     "source": "傲慢之甲（被攻 AP 恶化 1，射击/近战两相位）"
+    }
+   ],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "触发时机为敌方选中目标后——点名即假设已使用；射击与近战两相位均适用"
+   ],
+   "provenance": {
+    "text_sha256": "35d8af3acc35ff49353b590f9a67c23d622a0edeb0e172ccd7183b080d1e0c83"
+   },
+   "encoded_by": "manual-2026-07-20"
+  },
+  {
+   "table": "stratagems",
+   "id": "000010161005",
+   "side": "attacker",
+   "detachment": "Wrath of the Rock",
+   "name_en": "TACTICAL MASTERY",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "加速后仍可射击并冲锋（Ravenwing 另撤退后亦可）——移动资格域未建模"
+   ],
+   "provenance": {
+    "text_sha256": "2257b91bfc81a2df9ff25ddc92c6caa54f79bc4956f3b11b9746071fa5ac95da"
+   },
+   "encoded_by": "manual-2026-07-20"
+  },
+  {
+   "table": "stratagems",
+   "id": "000010161006",
+   "side": "attacker",
+   "detachment": "Wrath of the Rock",
+   "name_en": "RELICS OF THE DARK AGE",
+   "name_zh": null,
+   "status": "partial",
+   "effects": [
+    {
+     "phase": "wound",
+     "op": "s_improve",
+     "params": [
+      2
+     ],
+     "condition": [
+      "phase_shooting"
+     ],
+     "source": "远古时代圣械（远程武器 +2 S，特征值通道）"
+    }
+   ],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "限 AA 步兵/骑乘单位远程武器；WHEN=射击阶段（条件自含射击门控），近战不注入"
+   ],
+   "provenance": {
+    "text_sha256": "3c114eeba8d3e06d872c505be5b8b7cbc0cb8e08f7dac1e1552284efc2733aa0"
+   },
+   "encoded_by": "manual-2026-07-20"
+  },
+  {
+   "table": "stratagems",
+   "id": "000010161007",
+   "side": "attacker",
+   "detachment": "Wrath of the Rock",
+   "name_en": "LEONINE AGGRESSION",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "对手冲锋阶段末反冲锋——阶段外冲锋/移动域未建模"
+   ],
+   "provenance": {
+    "text_sha256": "3a784dacce6abc5b8de220719018b0f21f30903dd016ea748fc37d5eb66479ae"
+   },
+   "encoded_by": "manual-2026-07-20"
+  },
+  {
+   "table": "enhancements",
+   "id": "000010155002",
+   "side": "attacker",
+   "detachment": "Wrath of the Rock",
+   "name_en": "Tempered in Battle (Aura)",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "重投战斗震慑与领导力测验（光环）——士气域未建模"
+   ],
+   "provenance": {
+    "text_sha256": "27b7b4860c447919220f423a59715efdfb68ce2c78e054c488d7b5d751833b9f"
+   },
+   "encoded_by": "manual-2026-07-20"
+  },
+  {
+   "table": "enhancements",
+   "id": "000010155003",
+   "side": "attacker",
+   "detachment": "Wrath of the Rock",
+   "name_en": "Ancient Weapons",
+   "name_zh": null,
+   "status": "partial",
+   "effects": [
+    {
+     "phase": "wound",
+     "op": "s_improve",
+     "params": [
+      2
+     ],
+     "condition": [
+      "phase_melee"
+     ],
+     "source": "远古兵刃（携带者近战武器 +2 S，特征值通道）"
+    },
+    {
+     "phase": "save",
+     "op": "ap_improve",
+     "params": [
+      1
+     ],
+     "condition": [
+      "phase_melee"
+     ],
+     "source": "远古兵刃（携带者近战武器 AP 改善 1）"
+    },
+    {
+     "phase": "damage",
+     "op": "modify",
+     "params": [
+      1
+     ],
+     "condition": [
+      "phase_melee"
+     ],
+     "source": "远古兵刃（携带者近战武器 D+1）"
+    }
+   ],
+   "requires_toggles": [
+    "bearer_leading"
+   ],
+   "not_modeled_notes_zh": [
+    "限携带者模型近战武器——单人物模拟准确，附属单位整体注入会高估"
+   ],
+   "provenance": {
+    "text_sha256": "947c62074c02f9bd17b1159a8e8a878811940089b576b636c4e8efc7be4bb78e"
+   },
+   "encoded_by": "manual-2026-07-20"
+  },
+  {
+   "table": "enhancements",
+   "id": "000010155004",
+   "side": "attacker",
+   "detachment": "Wrath of the Rock",
+   "name_en": "Deathwing Assault",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "前三个移动阶段深入打击——部署/预备队域未建模"
+   ],
+   "provenance": {
+    "text_sha256": "d08a1c33e04dfd0e852ef2e0bf05ec70de3c85395daa1ad9884b3645106c2f94"
+   },
+   "encoded_by": "manual-2026-07-20"
+  },
+  {
+   "table": "enhancements",
+   "id": "000010155005",
+   "side": "attacker",
+   "detachment": "Wrath of the Rock",
+   "name_en": "Lord of the Ravenwing",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "重投加速与冲锋骰——移动域未建模"
+   ],
+   "provenance": {
+    "text_sha256": "cdeb7986661ff630f7c8f3fd29be6fb6868964763b7889570fa31d224a79599e"
+   },
+   "encoded_by": "manual-2026-07-20"
+  },
+  {
+   "table": "abilities",
+   "id": "detfp11e-da-arsenal",
+   "side": "attacker",
+   "detachment": "Dark Age Arsenal",
+   "name_en": "Invocations of Ancient Fury",
+   "name_zh": "远古怒火祈唤",
+   "status": "partial",
+   "effects": [
+    {
+     "phase": "wound",
+     "op": "s_improve",
+     "params": [
+      1
+     ],
+     "condition": [],
+     "source": "远古怒火祈唤（等离子武器 +1 S，特征值通道）"
+    }
+   ],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "限名字含 'Plasma' 的武器（weapon_filter 精确匹配 FP 定义的等离子武器档）；军队限 DARK ANGELS（选本分队即声明）"
+   ],
+   "provenance": {
+    "text_sha256": "c6cf00669933b5598ec0a0e2e81598d63ae57a51e613731ece73c8d83a7ae9fd"
+   },
+   "encoded_by": "manual-2026-07-20",
+   "weapon_filter": "plasma",
+   "materialize": {
+    "from_table": "detachments",
+    "from_id": "fp11e-da-arsenal",
+    "from_column": "rule_text"
+   }
+  },
+  {
+   "table": "stratagems",
+   "id": "fp11e-da-arsenal-s1",
+   "side": "attacker",
+   "detachment": "Dark Age Arsenal",
+   "name_en": "Searing Bursts",
+   "name_zh": "灼烧爆发",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "被击中敌方单位 -2 寸移动（seared）——移动减益/几何域未建模"
+   ],
+   "provenance": {
+    "text_sha256": "67dca2ecf1f5c7a306d1726a723b785a302c9b82ad90060c6c3945e261368c69"
+   },
+   "encoded_by": "manual-2026-07-20"
+  },
+  {
+   "table": "stratagems",
+   "id": "fp11e-da-arsenal-s2",
+   "side": "attacker",
+   "detachment": "Dark Age Arsenal",
+   "name_en": "No Sacrifice Too Great",
+   "name_zh": "无谓牺牲",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "[HAZARDOUS] 等离子攻击 +1 S——[HAZARDOUS] 为关键词非名字子串，weapon_filter 无法选取，裸按 'plasma' 名字过滤会对非危险档等离子档过度施加，不编"
+   ],
+   "provenance": {
+    "text_sha256": "fec82591b8c8f7d6bd89cb9a4d150d2960de32d97764091328c804ab0f55c25a"
+   },
+   "encoded_by": "manual-2026-07-20"
+  },
+  {
+   "table": "stratagems",
+   "id": "fp11e-da-arsenal-s3",
+   "side": "attacker",
+   "detachment": "Dark Age Arsenal",
+   "name_en": "Revelation of Guilt",
+   "name_zh": "罪愆昭示",
+   "status": "partial",
+   "effects": [
+    {
+     "phase": "hit",
+     "op": "modify",
+     "params": [
+      1
+     ],
+     "condition": [
+      "phase_shooting"
+     ],
+     "source": "罪愆昭示（等离子远程攻击 +1 命中）"
+    }
+   ],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "限名字含 'Plasma' 的武器（weapon_filter）；WHEN=射击阶段（条件自含射击门控）"
+   ],
+   "provenance": {
+    "text_sha256": "70626a03a66de055e5c6c4c912a3eff86d3c355377d83e62f7a03da514c7b0bc"
+   },
+   "encoded_by": "manual-2026-07-20",
+   "weapon_filter": "plasma"
+  },
+  {
+   "table": "enhancements",
+   "id": "fp11e-da-arsenal-e1",
+   "side": "attacker",
+   "detachment": "Dark Age Arsenal",
+   "name_en": "Petition of Stability",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "等离子攻击 +6 寸射程——射程/几何域未建模"
+   ],
+   "provenance": {
+    "text_sha256": "f3315d7ba7bb7a497f20623f2c3440f1eac46f623b2e7033bbbe3865a67f9d8f"
+   },
+   "encoded_by": "manual-2026-07-20"
+  },
+  {
+   "table": "enhancements",
+   "id": "fp11e-da-arsenal-e2",
+   "side": "attacker",
+   "detachment": "Dark Age Arsenal",
+   "name_en": "Entreaty of Perpetual Ardour",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "snap shooting（Fire Overwatch）命中 5+——snap shooting 无载体，未建模"
+   ],
+   "provenance": {
+    "text_sha256": "b26d2e6a858a5d51c1ae8fb4fa778f468a64e80736a55cd01140d58e901ca8dd"
+   },
+   "encoded_by": "manual-2026-07-20"
+  },
+  {
+   "table": "abilities",
+   "id": "detfp11e-da-darkflight",
+   "side": "attacker",
+   "detachment": "Darkflight Pursuit",
+   "name_en": "Black-Winged Vigilance",
+   "name_zh": "黑翼戒备",
+   "status": "partial",
+   "effects": [
+    {
+     "phase": "save",
+     "op": "ignores_cover",
+     "params": [],
+     "condition": [
+      "phase_shooting"
+     ],
+     "source": "黑翼戒备（RAVENWING FLY 远程攻击 [无视掩体]）"
+    }
+   ],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "限 RAVENWING FLY 单位（选本分队即声明攻方类型）；[无视掩体] 自含射击语义"
+   ],
+   "provenance": {
+    "text_sha256": "d6ba7d83e46058127b31a543cd1a420d5605aaaab77af011b0ef13e78e28da13"
+   },
+   "encoded_by": "manual-2026-07-20",
+   "materialize": {
+    "from_table": "detachments",
+    "from_id": "fp11e-da-darkflight",
+    "from_column": "rule_text"
+   }
+  },
+  {
+   "table": "stratagems",
+   "id": "fp11e-da-darkflight-s1",
+   "side": "attacker",
+   "detachment": "Darkflight Pursuit",
+   "name_en": "Skyborne Surveillance",
+   "name_zh": "天穹监视",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "6 寸内可见敌 +3 寸侦测范围——侦测/几何域未建模"
+   ],
+   "provenance": {
+    "text_sha256": "f5832eb9eb3451f36709297cffe6441fcf9e34a9513925237e92a4145fa86755"
+   },
+   "encoded_by": "manual-2026-07-20"
+  },
+  {
+   "table": "stratagems",
+   "id": "fp11e-da-darkflight-s2",
+   "side": "target",
+   "detachment": "Darkflight Pursuit",
+   "name_en": "Wings of Shadow",
+   "name_zh": "暗影之翼",
+   "status": "partial",
+   "effects": [
+    {
+     "phase": "hit",
+     "op": "modify",
+     "params": [
+      -1
+     ],
+     "condition": [
+      "phase_shooting"
+     ],
+     "source": "暗影之翼（守方获 Stealth，被远程攻击命中-1）"
+    }
+   ],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "Stealth 语义=被远程攻击时命中-1（条件自含射击门控）；WHEN=对手射击阶段目标为本 RAVENWING FLY 单位时"
+   ],
+   "provenance": {
+    "text_sha256": "ab5675d83624b9761f8a630471080432a717090cc587fc793d6fa35470b29d34"
+   },
+   "encoded_by": "manual-2026-07-20"
+  },
+  {
+   "table": "stratagems",
+   "id": "fp11e-da-darkflight-s3",
+   "side": "attacker",
+   "detachment": "Darkflight Pursuit",
+   "name_en": "We Are Vengeance",
+   "name_zh": "吾等即复仇",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "被射击后常规移动 D3+3 寸——移动域未建模"
+   ],
+   "provenance": {
+    "text_sha256": "ea2cf3f5d675897dabdfee37039627e19e3ebc1381b61cf0298ef33d315086b7"
+   },
+   "encoded_by": "manual-2026-07-20"
+  },
+  {
+   "table": "enhancements",
+   "id": "fp11e-da-darkflight-e1",
+   "side": "attacker",
+   "detachment": "Darkflight Pursuit",
+   "name_en": "Thundercowl Turbines",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "首个移动阶段 ingress move——移动/部署域未建模"
+   ],
+   "provenance": {
+    "text_sha256": "135eabc69ef9b589c022ab798bc76efd41e44c90cd25ee794d6a8e7421d67c17"
+   },
+   "encoded_by": "manual-2026-07-20"
+  },
+  {
+   "table": "enhancements",
+   "id": "fp11e-da-darkflight-e2",
+   "side": "attacker",
+   "detachment": "Darkflight Pursuit",
+   "name_en": "Nightforged Battery",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "重投武器攻击次数骰与危险测验——攻击次数重投无载体、危险测验域未建模"
+   ],
+   "provenance": {
+    "text_sha256": "9d4353ef9fd1772f9332088880ee9299977861941a2b2e8fc948d0373f408cb2"
+   },
+   "encoded_by": "manual-2026-07-20"
+  },
+  {
+   "table": "abilities",
+   "id": "detfp11e-da-conclave",
+   "side": "attacker",
+   "detachment": "Interrogation Conclave",
+   "name_en": "Dread Catechism",
+   "name_zh": "恐惧教义",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "CHAPLAIN 击杀触发 6 寸内战斗震慑 + Sower of Dread 光环 -1 领导力——士气/领导力域未建模"
+   ],
+   "provenance": {
+    "text_sha256": "2e3441036fdf0c8c7236b2277e7c8c6c25e8599fbbbf8239558a222c554bca6e"
+   },
+   "encoded_by": "manual-2026-07-20",
+   "materialize": {
+    "from_table": "detachments",
+    "from_id": "fp11e-da-conclave",
+    "from_column": "rule_text"
+   }
+  },
+  {
+   "table": "stratagems",
+   "id": "fp11e-da-conclave-s1",
+   "side": "attacker",
+   "detachment": "Interrogation Conclave",
+   "name_en": "Exacting Punishment",
+   "name_zh": "精准惩戒",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "攻击 [PRECISION]——攻击分配域（点杀附属人物）未建模"
+   ],
+   "provenance": {
+    "text_sha256": "6590f97cbcf28f84f4c534e72347f938386cefe3aafbfb71b63330278f1aaee7"
+   },
+   "encoded_by": "manual-2026-07-20"
+  },
+  {
+   "table": "stratagems",
+   "id": "fp11e-da-conclave-s2",
+   "side": "attacker",
+   "detachment": "Interrogation Conclave",
+   "name_en": "Terrifying Zeal",
+   "name_zh": "恐怖热诚",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "冲锋后令接战敌方单位（排除 MONSTER/VEHICLE）过领导力测验、失败则 -1 命中——领导力测验条件分支 + 负关键词门（排除 MONSTER/VEHICLE）均无载体，不编"
+   ],
+   "provenance": {
+    "text_sha256": "878b1528bab9b021cfc06c2d1128905758e679ff24c46e2d9628328be90ffced"
+   },
+   "encoded_by": "manual-2026-07-20"
+  },
+  {
+   "table": "stratagems",
+   "id": "fp11e-da-conclave-s3",
+   "side": "attacker",
+   "detachment": "Interrogation Conclave",
+   "name_en": "Wages of Cowardice",
+   "name_zh": "怯懦的代价",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "撤退敌方脱离后常规移动 D3+3 寸——移动域未建模"
+   ],
+   "provenance": {
+    "text_sha256": "bc305532c5d44ba3ebb4a574bfdf667a7cc87894d4a3ed71d95cab5ef5dea517"
+   },
+   "encoded_by": "manual-2026-07-20"
+  },
+  {
+   "table": "enhancements",
+   "id": "fp11e-da-conclave-e1",
+   "side": "attacker",
+   "detachment": "Interrogation Conclave",
+   "name_en": "Limitless Zeal",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "+1 冲锋骰——移动域未建模"
+   ],
+   "provenance": {
+    "text_sha256": "7f6c6a7bee5aa6f7c013fcfbe08bd8ba98c4b3217d8383d9494e605cd1b3da3a"
+   },
+   "encoded_by": "manual-2026-07-20"
+  },
+  {
+   "table": "enhancements",
+   "id": "fp11e-da-conclave-e2",
+   "side": "attacker",
+   "detachment": "Interrogation Conclave",
+   "name_en": "Inescapable Interrogation",
+   "name_zh": null,
+   "status": "partial",
+   "effects": [
+    {
+     "phase": "save",
+     "op": "ignores_cover",
+     "params": [],
+     "condition": [
+      "phase_shooting"
+     ],
+     "source": "无从遁形的审讯（CHAPLAIN 远程攻击 [无视掩体]）"
+    }
+   ],
+   "requires_toggles": [
+    "bearer_leading"
+   ],
+   "not_modeled_notes_zh": [
+    "限 CHAPLAIN 携带者单位（点名即声明）；[无视掩体] 自含射击语义"
+   ],
+   "provenance": {
+    "text_sha256": "5fdb792b28b578296f02f9d0b6ee67f9568625e0137d85e5f44edaec1f589c0c"
+   },
+   "encoded_by": "manual-2026-07-20"
+  }
+ ]
+}

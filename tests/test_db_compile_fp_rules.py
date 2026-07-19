@@ -397,7 +397,7 @@ class TestInserts:
         data = json.loads(Path("db_compile/fp_rules_patches.json").read_text(
             encoding="utf-8"))
         ins = data.get("inserts", [])
-        assert len(ins) == 188
+        assert len(ins) == 206
         ids = {p["values"]["id"] for p in ins}
         assert ids == {"fp11e-tau-aac-det", "fp11e-tau-aac-s1", "fp11e-tau-aac-s2",
                        "fp11e-tau-aac-s3", "fp11e-tau-aux-gbu",
@@ -492,7 +492,16 @@ class TestInserts:
                        "fp11e-gk-fires-s2", "fp11e-gk-fires-s3",
                        "fp11e-gk-immaterial", "fp11e-gk-immaterial-e1",
                        "fp11e-gk-immaterial-e2", "fp11e-gk-immaterial-s1",
-                       "fp11e-gk-immaterial-s2", "fp11e-gk-immaterial-s3"}
+                       "fp11e-gk-immaterial-s2", "fp11e-gk-immaterial-s3",
+                       "fp11e-da-arsenal", "fp11e-da-arsenal-e1",
+                       "fp11e-da-arsenal-e2", "fp11e-da-arsenal-s1",
+                       "fp11e-da-arsenal-s2", "fp11e-da-arsenal-s3",
+                       "fp11e-da-darkflight", "fp11e-da-darkflight-e1",
+                       "fp11e-da-darkflight-e2", "fp11e-da-darkflight-s1",
+                       "fp11e-da-darkflight-s2", "fp11e-da-darkflight-s3",
+                       "fp11e-da-conclave", "fp11e-da-conclave-e1",
+                       "fp11e-da-conclave-e2", "fp11e-da-conclave-s1",
+                       "fp11e-da-conclave-s2", "fp11e-da-conclave-s3"}
         for p in ins:
             assert p.get("fp_source")
             assert p["values"].get("id", "").startswith("fp11e-")

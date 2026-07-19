@@ -417,6 +417,24 @@
    "from": "20+\"",
    "to": "-",
    "src": "Faction Pack Grey Knights page_009.md（Stormtalon Gunship M 20+\"→'-'，去 Hover）"
+  },
+  {
+   "unit_id": "000000239",
+   "faction": "SM",
+   "unit": "Nephilim Jetfighter",
+   "field": "m",
+   "from": "20+\"",
+   "to": "-",
+   "src": "Faction Pack Dark Angels page_009.md（Nephilim Jetfighter Profile: Change M and OC to '-'）——仅补 M；OC 0→'-' 不补（功能等价且库无 '-' OC 先例，防下游 int 解析破坏，同 Heldrake 处理）"
+  },
+  {
+   "unit_id": "000000240",
+   "faction": "SM",
+   "unit": "Ravenwing Dark Talon",
+   "field": "m",
+   "from": "20+\"",
+   "to": "-",
+   "src": "Faction Pack Dark Angels page_009.md（Ravenwing Dark Talon Profile: Change M and OC to '-'）——仅补 M；OC 0→'-' 不补（功能等价且库无 '-' OC 先例，防下游 int 解析破坏，同 Heldrake 处理）"
   }
  ],
  "new_units": [
