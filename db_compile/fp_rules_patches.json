@@ -1,5 +1,5 @@
 {
- "_comment": "P7-PR1 钛帝国规则文本 11 版化补丁。text_patches 来自 2026-07-14 逐行 A/B 工作单（docs/superpowers/plans/2026-07-14-p7-pr1-fp-rules-worklist.md，55 行全落账：8 drifted / 3 identical / 35 not_in_fp / 9 review_needed / 5 fp_new）；name_patches 来自钛帝国十版中文codex refine 缓存逐条效果配对（43 条有源 + 11 条自译标记）。｜P7-PR5 吞世者追加（2026-07-18）：text 9（军规嗜血癫狂改+1冲锋、狂战士之怒/怒火尽泄 surge move 术语、黄铜之怒规则改核心 surge、怒火容器 p4 完整重印 5 条）；deactivations +6（怒火容器重印未收录）；inserts +13（Brazen Engines/Butchers of Khorne 两全新分队 + Scorn the Witch）；name +53（狂战士战帮/怒火容器/军规 DavidZ codex 有源配对，其余自译标记）。已滚入免补：Summoned by Slaughter / Warp Stalkers / Rapid Manifestation（Wahapedia 现文即 11 版）。｜PR5 兵牌层技能 6 条（FP p7-p8 DATASHEETS：Loping Speed 8\"、Blood Surge surge move 化、Helbrute Frenzy 重写、Scent of Blood 9\" 内判据、Chaos Rhino 8\"、Bloody Fury 重写）；已滚入免补：Exalted Eightbound Rend and Tear / Icon of Khorne×2 / Slaughterbound 武器 S10 / Defiler 整表（Wahapedia 已收）。FRAME 关键词沿 S4 裁定跳过（测距词）。｜P7-PR8 死亡守卫追加（2026-07-19）：text 9（Flyblown Host 完整重印 6 条 + 军规两处合一 + Death Approaches 9\"→8\" + Beckoning Blight 9\"→8\"）、deact 5（Flyblown重印未收录 3 战略 2 增强）、inserts 12（Contagion Engines/Paragons of Putrescence两新分队各 1 规则 3 战略 2 增强）、name 51（军规 1 + det 规则 7 + 战略 42 + 死神降临，源=老湿腐死亡守卫V1.1；工作单 docs/superpowers/plans/2026-07-19-p7-pr8-dg-worklist.md）",
+ "_comment": "P7-PR1 钛帝国规则文本 11 版化补丁。text_patches 来自 2026-07-14 逐行 A/B 工作单（docs/superpowers/plans/2026-07-14-p7-pr1-fp-rules-worklist.md，55 行全落账：8 drifted / 3 identical / 35 not_in_fp / 9 review_needed / 5 fp_new）；name_patches 来自钛帝国十版中文codex refine 缓存逐条效果配对（43 条有源 + 11 条自译标记）。｜P7-PR5 吞世者追加（2026-07-18）：text 9（军规嗜血癫狂改+1冲锋、狂战士之怒/怒火尽泄 surge move 术语、黄铜之怒规则改核心 surge、怒火容器 p4 完整重印 5 条）；deactivations +6（怒火容器重印未收录）；inserts +13（Brazen Engines/Butchers of Khorne 两全新分队 + Scorn the Witch）；name +53（狂战士战帮/怒火容器/军规 DavidZ codex 有源配对，其余自译标记）。已滚入免补：Summoned by Slaughter / Warp Stalkers / Rapid Manifestation（Wahapedia 现文即 11 版）。｜PR5 兵牌层技能 6 条（FP p7-p8 DATASHEETS：Loping Speed 8\"、Blood Surge surge move 化、Helbrute Frenzy 重写、Scent of Blood 9\" 内判据、Chaos Rhino 8\"、Bloody Fury 重写）；已滚入免补：Exalted Eightbound Rend and Tear / Icon of Khorne×2 / Slaughterbound 武器 S10 / Defiler 整表（Wahapedia 已收）。FRAME 关键词沿 S4 裁定跳过（测距词）。｜P7-PR8 死亡守卫追加（2026-07-19）：text 9（Flyblown Host 完整重印 6 条 + 军规两处合一 + Death Approaches 9\"→8\" + Beckoning Blight 9\"→8\"）、deact 5（Flyblown重印未收录 3 战略 2 增强）、inserts 12（Contagion Engines/Paragons of Putrescence两新分队各 1 规则 3 战略 2 增强）、name 51（军规 1 + det 规则 7 + 战略 42 + 死神降临，源=老湿腐死亡守卫V1.1；工作单 docs/superpowers/plans/2026-07-19-p7-pr8-dg-worklist.md）｜P7-PR9 圣血天使追加（2026-07-19）：text 9（全兵牌技能层——Legends Black Rage×4 + 狂乱反噬 + 狂怒驱使 surge + 大叛乱幻视 + 奇迹救赎 ingress + Gleaming Pinions 8\"）、inserts 18（Legacy of Grace/Encarmine Speartip/Wrath of the Doomed 三新分队各 1 规则 3 战略 2 增强；Legacy of the Angel 同名豁免旗标expect_duplicate_name 首用）、name 49（4 codex 分队有源 + Rage-cursed 自译，源=DavidZ圣血天使V1.05；工作单 docs/superpowers/plans/2026-07-19-p7-pr9-ba-worklist.md）。零 deactivations（重印无删减）零 fp_errata",
  "text_patches": [
   {
    "table": "detachments",
@@ -600,6 +600,96 @@
    "to_text": "Death Guard model only. Each time a Plague Legions unit from your army is set up on the battlefield using the Deep Strike ability, if it is set up wholly within 12\" of the bearer, it can be set up anywhere that is more than 6\" horizontally away from all enemy models, instead of more than 8\".",
    "fp_source": "Faction Pack Death Guard page_007.md",
    "synthesis": "外科：instead of more than 9\"→8\""
+  },
+  {
+   "table": "abilities",
+   "column": "text_zh",
+   "id": "000003835_a1",
+   "name_en": "Black Rage",
+   "from_text": "Each time this model makes a melee attack, you can re-roll the Hit roll. While this model’s unit is not within 6\" of one or more friendly Blood Angels Character models, or 12\" of one or more friendly Chaplain models, it cannot be selected to Fall Back and its Objective Control characteristic is 0.",
+   "to_text": "Each time this model makes an attack, you can re-roll the Hit roll. While this model is not within 12\" of one or more friendly <span class=\"kwb\">CHAPLAIN</span> models, it cannot be selected to Fall Back and its Objective Control characteristic is 0.",
+   "fp_source": "Faction Pack Blood Angels page_014.md",
+   "synthesis": "Legends 全文重印为准：任意攻击重骰命中 + 仅 12\" 牧师条款（DB 被滚成主表版 melee+6\"/12\"）"
+  },
+  {
+   "table": "abilities",
+   "column": "text_zh",
+   "id": "000003836_a1",
+   "name_en": "Black Rage",
+   "from_text": "Each time this model makes a melee attack, you can re-roll the Hit roll. While this model’s unit is not within 6\" of one or more friendly Blood Angels Character models, or 12\" of one or more friendly Chaplain models, it cannot be selected to Fall Back and its Objective Control characteristic is 0.",
+   "to_text": "Each time a model in this unit makes an attack, you can re-roll the Hit roll. While this unit is not within 12\" of one or more friendly <span class=\"kwb\">CHAPLAIN</span> models, it cannot be selected to Fall Back and the Objective Control characteristic of models in this unit is 0.",
+   "fp_source": "Faction Pack Blood Angels page_016.md",
+   "synthesis": "同磁抓龙裁定（unit 措辞版）"
+  },
+  {
+   "table": "abilities",
+   "column": "text_zh",
+   "id": "000003837_a1",
+   "name_en": "Black Rage",
+   "from_text": "Each time this model makes a melee attack, you can re-roll the Hit roll. While this model’s unit is not within 6\" of one or more friendly Blood Angels Character models, or 12\" of one or more friendly Chaplain models, it cannot be selected to Fall Back and its Objective Control characteristic is 0.",
+   "to_text": "Each time a model in this unit makes an attack, you can re-roll the Hit roll. While this unit is not within 12\" of one or more friendly <span class=\"kwb\">CHAPLAIN</span> models, it cannot be selected to Fall Back and the Objective Control characteristic of models in this unit is 0.",
+   "fp_source": "Faction Pack Blood Angels page_018.md",
+   "synthesis": "同上"
+  },
+  {
+   "table": "abilities",
+   "column": "text_zh",
+   "id": "000000153_a2",
+   "name_en": "Black Rage",
+   "from_text": "Each time this model makes a melee attack, you can re-roll the Hit roll. While this model’s unit is not within 6\" of one or more friendly Blood Angels Character models, or 12\" of one or more friendly Chaplain models, it cannot be selected to Fall Back and its Objective Control characteristic is 0.",
+   "to_text": "Each time this model makes an attack, you can re-roll the Hit roll. While this model is not within 12\" of one or more friendly <span class=\"kwb\">CHAPLAIN</span> models, it cannot be selected to Fall Back and its Objective Control characteristic is 0.",
+   "fp_source": "Faction Pack Blood Angels page_026.md",
+   "synthesis": "同上（Tycho the Lost，model 措辞版）"
+  },
+  {
+   "table": "abilities",
+   "column": "text_zh",
+   "id": "000003835_a2",
+   "name_en": "Frenzied Reprisal",
+   "from_text": "Each time an enemy unit targets this model, after that unit has finished making its attacks, this model can either shoot as if it were your Shooting phase or fight as if it were the Fight phase.",
+   "to_text": "Once per turn, in the Fight phase, when an enemy unit targets this unit, after that unit has resolved its attacks, this unit is eligible to fight (even if it has already fought this phase) and must be selected to fight next.",
+   "fp_source": "Faction Pack Blood Angels page_014.md",
+   "synthesis": "整替：被击后自由射/打 → once per turn 近战被攻后可出手且必须下一个被选"
+  },
+  {
+   "table": "abilities",
+   "column": "text_zh",
+   "id": "000000166_a2",
+   "name_en": "Driven By Fury",
+   "from_text": "In your opponent’s Shooting phase, each time an enemy unit has shot, if this model was hit by one or more of those attacks, it can make a Driven by Fury move. To do so, roll one D6 and add 2 to the roll: this model moves a number of inches up to the result, but must finish as close as possible to the closest enemy unit (excluding <span class=\"kwb\">AIRCRAFT</span>). When doing so, this model can be moved within Engagement Range of that enemy unit. A model cannot make a Driven by Fury move while it is Battle-shocked or within Engagement Range of one or more enemy units, and can only make one Driven by Fury move per phase.",
+   "to_text": "In your opponent’s Shooting phase, when an enemy unit has shot, if this model lost a wound as a result of those attacks, this unit can make a surge move of up to D6+2\".",
+   "fp_source": "Faction Pack Blood Angels page_009.md",
+   "synthesis": "整替：Driven by Fury move 自带流程 → 11 版核心 surge move D6+2（触发条件改「损失伤」）"
+  },
+  {
+   "table": "abilities",
+   "column": "text_zh",
+   "id": "000002285_a2",
+   "name_en": "Visions of Heresy",
+   "from_text": "Once per turn, you can target this unit with the Fire Overwatch or the Heroic Intervention Stratagem for 0CP. While resolving that Stratagem, each time a model in this unit makes a ranged attack you can re-roll the Hit roll, or you can re-roll the Charge roll made for this unit (whichever applies).",
+   "to_text": "<ul><li>This unit can re-roll charge rolls.</li><li>When you target this unit with the Fire Overwatch/Heroic Intervention stratagem, that use is -1 CP.</li></ul>",
+   "fp_source": "Faction Pack Blood Angels page_009.md",
+   "synthesis": "整替：0CP 坚守/英勇介入+重骰 → 重骰冲锋 + 坚守/英勇介入 -1 CP"
+  },
+  {
+   "table": "abilities",
+   "column": "text_zh",
+   "id": "000000156_a2",
+   "name_en": "Miraculous Saviour",
+   "from_text": "Once per battle, at the end of your opponent’s Charge phase, if this model is still in Reserves, you can select one enemy unit that made a Charge move this phase. Set this model up on the battlefield within Engagement Range of that enemy unit.",
+   "to_text": "(Once per battle, per army) At the end of your opponent’s Charge phase (excluding the first battle round), you can select one enemy unit that made a charge move this phase. This unit can make an ingress move and must be set up engaged with that enemy unit.",
+   "fp_source": "Faction Pack Blood Angels page_009.md",
+   "synthesis": "整替：预备队接战部署 → 排除第一轮 + ingress move 必须接战（FAQ：可多单位）"
+  },
+  {
+   "table": "enhancements",
+   "column": "description",
+   "id": "000009190005",
+   "name_en": "Gleaming Pinions",
+   "from_text": "Adeptus Astartes Jump Pack model only. Once per turn, when an enemy unit ends a Normal, Advance or Fall Back move within 9\" of the bearer, if this bearer’s unit is not within Engagement Range of one or more enemy units, it can make a Normal move of up to 6\".",
+   "to_text": "<span class=\"kwb\">ADEPTUS</span> <span class=\"kwb\">ASTARTES</span> <span class=\"kwb\">JUMP</span> <span class=\"kwb\">PACK</span> model only. In your opponent’s Movement phase, if an enemy unit ends a move within 8\" of this unit, if this unit is not within Engagement Range of one or more enemy units, this unit can make a Normal move of up to 6\".",
+   "fp_source": "Faction Pack Blood Angels page_009.md",
+   "synthesis": "整替：once per turn 9\" 触发 → 对方移动阶段 8\" + 未接战 → Normal move 6\""
   }
  ],
  "name_patches": [
@@ -2538,6 +2628,398 @@
    "name_zh": "凋败滋养",
    "zh_source": "codex-10e",
    "evidence": "老湿腐死亡守卫V1.1 page_022（removed_11e 行也配）"
+  },
+  {
+   "table": "detachments",
+   "id": "000008374",
+   "name_en": "Red Thirst",
+   "name_zh": "猩红饥渴",
+   "zh_source": "codex-10e",
+   "evidence": "DavidZ圣血天使V1.05 page_001 解放者突击队基础能力，内容核实"
+  },
+  {
+   "table": "detachments",
+   "id": "000009185",
+   "name_en": "A Noble Death in Combat",
+   "name_zh": "崇高战殁",
+   "zh_source": "codex-10e",
+   "evidence": "page_004 迷失兄弟连基础能力，内容核实"
+  },
+  {
+   "table": "detachments",
+   "id": "000009189",
+   "name_en": "Upon Wings of Fire",
+   "name_zh": "炽翼翔空",
+   "zh_source": "codex-10e",
+   "evidence": "page_007 天使战群基础能力，内容核实"
+  },
+  {
+   "table": "detachments",
+   "id": "000009834",
+   "name_en": "Legacy of the Angel",
+   "name_zh": "天使遗产",
+   "zh_source": "codex-10e",
+   "evidence": "page_010 天使继任者基础能力，内容核实"
+  },
+  {
+   "table": "detachments",
+   "id": "000010644",
+   "name_en": "Maddened Ferocity",
+   "name_zh": "癫狂凶暴",
+   "zh_source": "self-translation-11e",
+   "evidence": "Rage-cursed Onslaught 11e 新规则名（codex 无源自译）"
+  },
+  {
+   "table": "stratagems",
+   "id": "000008375002",
+   "name_en": "ANGELIC GRACE",
+   "name_zh": "天使优雅",
+   "zh_source": "codex-10e",
+   "evidence": "DavidZ圣血天使V1.05 page_002"
+  },
+  {
+   "table": "stratagems",
+   "id": "000008375003",
+   "name_en": "ARMOUR OF CONTEMPT",
+   "name_zh": "蔑视甲胄",
+   "zh_source": "codex-10e",
+   "evidence": "DavidZ圣血天使V1.05 page_002"
+  },
+  {
+   "table": "stratagems",
+   "id": "000008375004",
+   "name_en": "SAVAGE ECHOES",
+   "name_zh": "野蛮回响",
+   "zh_source": "codex-10e",
+   "evidence": "DavidZ圣血天使V1.05 page_002"
+  },
+  {
+   "table": "stratagems",
+   "id": "000008375005",
+   "name_en": "RED RAMPAGE",
+   "name_zh": "赤红狂怒",
+   "zh_source": "codex-10e",
+   "evidence": "DavidZ圣血天使V1.05 page_003"
+  },
+  {
+   "table": "stratagems",
+   "id": "000008375006",
+   "name_en": "AGGRESSIVE ONSLAUGHT",
+   "name_zh": "侵袭猛攻",
+   "zh_source": "codex-10e",
+   "evidence": "DavidZ圣血天使V1.05 page_003"
+  },
+  {
+   "table": "stratagems",
+   "id": "000008375007",
+   "name_en": "RELENTLESS ASSAULT",
+   "name_zh": "无情突击",
+   "zh_source": "codex-10e",
+   "evidence": "DavidZ圣血天使V1.05 page_003"
+  },
+  {
+   "table": "stratagems",
+   "id": "000009187002",
+   "name_en": "GLORIOUS SACRIFICE",
+   "name_zh": "荣光牺牲",
+   "zh_source": "codex-10e",
+   "evidence": "DavidZ圣血天使V1.05 page_005"
+  },
+  {
+   "table": "stratagems",
+   "id": "000009187003",
+   "name_en": "ARMOUR OF CONTEMPT",
+   "name_zh": "蔑视甲胄",
+   "zh_source": "codex-10e",
+   "evidence": "DavidZ圣血天使V1.05 page_005"
+  },
+  {
+   "table": "stratagems",
+   "id": "000009187004",
+   "name_en": "FINAL RETRIBUTION",
+   "name_zh": "最终复仇",
+   "zh_source": "codex-10e",
+   "evidence": "DavidZ圣血天使V1.05 page_005"
+  },
+  {
+   "table": "stratagems",
+   "id": "000009187005",
+   "name_en": "FURIOUS ONSLAUGHT",
+   "name_zh": "狂怒猛攻",
+   "zh_source": "codex-10e",
+   "evidence": "DavidZ圣血天使V1.05 page_006"
+  },
+  {
+   "table": "stratagems",
+   "id": "000009187006",
+   "name_en": "LOST TO RAGE",
+   "name_zh": "迷失盛怒",
+   "zh_source": "codex-10e",
+   "evidence": "DavidZ圣血天使V1.05 page_006"
+  },
+  {
+   "table": "stratagems",
+   "id": "000009187007",
+   "name_en": "WRATHFUL RAMPAGE",
+   "name_zh": "暴怒冲动",
+   "zh_source": "codex-10e",
+   "evidence": "DavidZ圣血天使V1.05 page_006（DavidZ 题 WRAITHFUL 已归 WRATHFUL）"
+  },
+  {
+   "table": "stratagems",
+   "id": "000009191002",
+   "name_en": "UNBRIDLED ARDOUR",
+   "name_zh": "无拘热忱",
+   "zh_source": "codex-10e",
+   "evidence": "DavidZ圣血天使V1.05 page_008"
+  },
+  {
+   "table": "stratagems",
+   "id": "000009191003",
+   "name_en": "ARMOUR OF CONTEMPT",
+   "name_zh": "蔑视甲胄",
+   "zh_source": "codex-10e",
+   "evidence": "DavidZ圣血天使V1.05 page_008"
+  },
+  {
+   "table": "stratagems",
+   "id": "000009191004",
+   "name_en": "ANGEL’S SACRIFICE",
+   "name_zh": "天使牺牲",
+   "zh_source": "codex-10e",
+   "evidence": "DavidZ圣血天使V1.05 page_008"
+  },
+  {
+   "table": "stratagems",
+   "id": "000009191005",
+   "name_en": "MARTIAL EXEMPLARS",
+   "name_zh": "武艺典范",
+   "zh_source": "codex-10e",
+   "evidence": "DavidZ圣血天使V1.05 page_009（DavidZ 题 EXEMPLAR 已归 EXEMPLARS）"
+  },
+  {
+   "table": "stratagems",
+   "id": "000009191006",
+   "name_en": "DESCENT OF ANGELS",
+   "name_zh": "天使降临",
+   "zh_source": "codex-10e",
+   "evidence": "DavidZ圣血天使V1.05 page_009"
+  },
+  {
+   "table": "stratagems",
+   "id": "000009191007",
+   "name_en": "DEATH FROM THE SKIES",
+   "name_zh": "死从天降",
+   "zh_source": "codex-10e",
+   "evidence": "DavidZ圣血天使V1.05 page_009"
+  },
+  {
+   "table": "stratagems",
+   "id": "000009836002",
+   "name_en": "ARMOUR OF CONTEMPT",
+   "name_zh": "蔑视甲胄",
+   "zh_source": "codex-10e",
+   "evidence": "DavidZ圣血天使V1.05 page_011"
+  },
+  {
+   "table": "stratagems",
+   "id": "000009836003",
+   "name_en": "FOCUSED FURY",
+   "name_zh": "聚焦怒火",
+   "zh_source": "codex-10e",
+   "evidence": "DavidZ圣血天使V1.05 page_011"
+  },
+  {
+   "table": "stratagems",
+   "id": "000009836004",
+   "name_en": "INSTANT OF GRACE",
+   "name_zh": "乍现优雅",
+   "zh_source": "codex-10e",
+   "evidence": "DavidZ圣血天使V1.05 page_011"
+  },
+  {
+   "table": "stratagems",
+   "id": "000009836005",
+   "name_en": "STRIKE NOW FOR GLORY",
+   "name_zh": "为荣耀而战",
+   "zh_source": "codex-10e",
+   "evidence": "DavidZ圣血天使V1.05 page_012"
+  },
+  {
+   "table": "stratagems",
+   "id": "000009836006",
+   "name_en": "IN THE SHADOW OF GREAT WINGS",
+   "name_zh": "巨翼荫蔽",
+   "zh_source": "codex-10e",
+   "evidence": "DavidZ圣血天使V1.05 page_012（DavidZ 英题笔误 DESENT OF ANGELS，效果正文核实为本条）"
+  },
+  {
+   "table": "stratagems",
+   "id": "000009836007",
+   "name_en": "UNTO THE BURNING SKIES",
+   "name_zh": "直击燃空",
+   "zh_source": "codex-10e",
+   "evidence": "DavidZ圣血天使V1.05 page_012（DavidZ 英题笔误 DEATH FROM THE SKIES，效果正文核实为本条）"
+  },
+  {
+   "table": "stratagems",
+   "id": "000010646002",
+   "name_en": "A GRIM WARNING",
+   "name_zh": "严酷警示",
+   "zh_source": "self-translation-11e",
+   "evidence": "Rage-cursed 11e"
+  },
+  {
+   "table": "stratagems",
+   "id": "000010646003",
+   "name_en": "ARMOUR OF CONTEMPT",
+   "name_zh": "蔑视甲胄",
+   "zh_source": "codex-10e",
+   "evidence": "DavidZ圣血天使V1.05 译名沿 codex 各分队同名战略"
+  },
+  {
+   "table": "stratagems",
+   "id": "000010646004",
+   "name_en": "INSENSATE RAMPAGE",
+   "name_zh": "无觉暴走",
+   "zh_source": "self-translation-11e",
+   "evidence": "Rage-cursed 11e"
+  },
+  {
+   "table": "stratagems",
+   "id": "000010646005",
+   "name_en": "LIMB FROM LIMB",
+   "name_zh": "撕成碎片",
+   "zh_source": "self-translation-11e",
+   "evidence": "Rage-cursed 11e"
+  },
+  {
+   "table": "stratagems",
+   "id": "000010646006",
+   "name_en": "DEATHLESS DUTY",
+   "name_zh": "不死之责",
+   "zh_source": "self-translation-11e",
+   "evidence": "Rage-cursed 11e"
+  },
+  {
+   "table": "stratagems",
+   "id": "000010646007",
+   "name_en": "RED WRATH",
+   "name_zh": "赤红之怒",
+   "zh_source": "self-translation-11e",
+   "evidence": "Rage-cursed 11e"
+  },
+  {
+   "table": "abilities",
+   "id": "000003835_a1",
+   "name_en": "Black Rage",
+   "name_zh": "黑怒",
+   "zh_source": "codex-10e",
+   "evidence": "DavidZ圣血天使V1.05 死亡连各兵牌页（黑怒）"
+  },
+  {
+   "table": "abilities",
+   "id": "000003836_a1",
+   "name_en": "Black Rage",
+   "name_zh": "黑怒",
+   "zh_source": "codex-10e",
+   "evidence": "DavidZ圣血天使V1.05 死亡连各兵牌页（黑怒）"
+  },
+  {
+   "table": "abilities",
+   "id": "000003837_a1",
+   "name_en": "Black Rage",
+   "name_zh": "黑怒",
+   "zh_source": "codex-10e",
+   "evidence": "DavidZ圣血天使V1.05 死亡连各兵牌页（黑怒）"
+  },
+  {
+   "table": "abilities",
+   "id": "000000153_a2",
+   "name_en": "Black Rage",
+   "name_zh": "黑怒",
+   "zh_source": "codex-10e",
+   "evidence": "DavidZ圣血天使V1.05 死亡连各兵牌页（黑怒）"
+  },
+  {
+   "table": "abilities",
+   "id": "000000166_a1",
+   "name_en": "Black Rage",
+   "name_zh": "黑怒",
+   "zh_source": "codex-10e",
+   "evidence": "DavidZ圣血天使V1.05 死亡连各兵牌页（黑怒）"
+  },
+  {
+   "table": "abilities",
+   "id": "000001997_a1",
+   "name_en": "Black Rage",
+   "name_zh": "黑怒",
+   "zh_source": "codex-10e",
+   "evidence": "DavidZ圣血天使V1.05 死亡连各兵牌页（黑怒）"
+  },
+  {
+   "table": "abilities",
+   "id": "000002285_a1",
+   "name_en": "Black Rage",
+   "name_zh": "黑怒",
+   "zh_source": "codex-10e",
+   "evidence": "DavidZ圣血天使V1.05 死亡连各兵牌页（黑怒）"
+  },
+  {
+   "table": "abilities",
+   "id": "000002737_a1",
+   "name_en": "Black Rage",
+   "name_zh": "黑怒",
+   "zh_source": "codex-10e",
+   "evidence": "DavidZ圣血天使V1.05 死亡连各兵牌页（黑怒）"
+  },
+  {
+   "table": "abilities",
+   "id": "000003832_a2",
+   "name_en": "Black Rage",
+   "name_zh": "黑怒",
+   "zh_source": "codex-10e",
+   "evidence": "DavidZ圣血天使V1.05 死亡连各兵牌页（黑怒）"
+  },
+  {
+   "table": "abilities",
+   "id": "000003833_a2",
+   "name_en": "Black Rage",
+   "name_zh": "黑怒",
+   "zh_source": "codex-10e",
+   "evidence": "DavidZ圣血天使V1.05 死亡连各兵牌页（黑怒）"
+  },
+  {
+   "table": "abilities",
+   "id": "000003835_a2",
+   "name_en": "Frenzied Reprisal",
+   "name_zh": "狂乱反噬",
+   "zh_source": "self-translation-11e",
+   "evidence": "Legends 磁抓龙版技能（codex 无源自译）"
+  },
+  {
+   "table": "abilities",
+   "id": "000000166_a2",
+   "name_en": "Driven By Fury",
+   "name_zh": "狂怒驱使",
+   "zh_source": "codex-10e",
+   "evidence": "page_033 死亡连无畏"
+  },
+  {
+   "table": "abilities",
+   "id": "000002285_a2",
+   "name_en": "Visions of Heresy",
+   "name_zh": "大叛乱幻视",
+   "zh_source": "codex-10e",
+   "evidence": "page_027 装备爆弹步枪的死亡连小队"
+  },
+  {
+   "table": "abilities",
+   "id": "000000156_a2",
+   "name_en": "Miraculous Saviour",
+   "name_zh": "奇迹救赎",
+   "zh_source": "codex-10e",
+   "evidence": "page_017 圣吉列诺"
   }
  ],
  "_deactivations_comment": "9 条 review_needed 的最终裁定（2026-07-16 用户裁 A：FP 完整重印即整体替换）。证据：①FP p3/p4 对 Auxiliary Cadre / Experimental Prototype Cadre 用完整重印体裁（同书 datasheet 侧明文 replaces 语义，page_010）；②11 版 Experimental Ammunition 删除了与 Threat Assessment Analyser 互斥的 RESTRICTIONS 段（侧面印证 TAA 不复存在）；③Wahapedia 现网核证（2026-07-16 重拉 Stratagems.csv）确认其尚未消化这两页 FP（drifted 条仍旧十版措辞、GUIDED BY UNITY 与 Advanced Acquisition Cadre 均缺席），故'现网仍在'不构成反证。处置：置 fp_status='removed_11e'（原文保留可回滚）；P7 DSL 对账枚举、检索消费者应排除该标记行。将来 Wahapedia 滚更这两页时 text_patches 守卫会自动让路告警，届时复核本裁定。",
@@ -3563,6 +4045,251 @@
     "cost": null,
     "legend": "点数未知：FP 不含点数，MFM 缓存无增强数据（诚实置空，勿猜）",
     "description": "<span class=\"kwb\">DEATH</span> <span class=\"kwb\">GUARD</span> <span class=\"kwb\">INFANTRY</span> model only. (Once per battle, per army) In your Command phase, you can use this ability. If you do, select one of the Plagues listed in Nurgle’s Gift (see Codex: Death Guard). Enemy units within Contagion Range of this unit also have the effect of that Plague in addition to your army’s chosen Plague until the end of the battle."
+   }
+  },
+  {
+   "table": "detachments",
+   "fp_source": "Faction Pack Blood Angels page_002.md（11 版新分队，Wahapedia 无源）",
+   "expect_duplicate_name": true,
+   "duplicate_evidence": "GW 复用规则名：Legacy of the Angel 同时是 Legacy of Grace（本行）与 Angelic Inheritors（000009834）的分队规则名，两行内容不同，非上游补录双胞胎",
+   "values": {
+    "id": "fp11e-ba-grace-det",
+    "faction": "SM",
+    "name_zh": "天使遗产",
+    "name_en": "Legacy of the Angel",
+    "rule_text": "Friendly <span class=\"kwb\">BLOOD</span> <span class=\"kwb\">ANGELS</span> <span class=\"kwb\">INFANTRY</span> <span class=\"kwb\">CHARACTER</span> units (excluding <span class=\"kwb\">COMMANDER</span> <span class=\"kwb\">DANTE</span> units) have +1 to advance rolls and charge rolls.<br><br>This detachment has the GRACE tag and cannot be taken with another GRACE detachment.<br><br>Restrictions: Your army can include BLOOD ANGELS units, but it cannot include any ADEPTUS ASTARTES units drawn from any other Chapter."
+   }
+  },
+  {
+   "table": "stratagems",
+   "fp_source": "Faction Pack Blood Angels page_002.md（11 版新分队，Wahapedia 无源）",
+   "values": {
+    "id": "fp11e-ba-grace-s1",
+    "faction": "SM",
+    "detachment": "Legacy of Grace",
+    "name_zh": "武艺宗师",
+    "name_en": "MARTIAL PARAGON",
+    "cp_cost": "1",
+    "phase": "Shooting or Fight phase",
+    "text_zh": "<b>WHEN:</b> Your Shooting phase or the Fight phase, when a friendly <span class=\"kwb\">ADEPTUS</span> <span class=\"kwb\">ASTARTES</span> <span class=\"kwb\">CHARACTER</span> unit is selected to attack.<br><br><b>TARGET:</b> That <span class=\"kwb\">ADEPTUS</span> <span class=\"kwb\">ASTARTES</span> <span class=\"kwb\">CHARACTER</span> unit.<br><br><b>EFFECT:</b> Your unit’s attacks have:<ul><li>[LETHAL HITS].</li><li>OR: [SUSTAINED HITS 1].</li></ul>"
+   }
+  },
+  {
+   "table": "stratagems",
+   "fp_source": "Faction Pack Blood Angels page_002.md（11 版新分队，Wahapedia 无源）",
+   "values": {
+    "id": "fp11e-ba-grace-s2",
+    "faction": "SM",
+    "detachment": "Legacy of Grace",
+    "name_zh": "魂暗之怒",
+    "name_en": "SOUL-DARKENED FURY",
+    "cp_cost": "1",
+    "phase": "Movement phase",
+    "text_zh": "<b>WHEN:</b> Your opponent’s Movement phase, when an enemy unit is selected to make a fall-back move, if that unit is engaged with a friendly <span class=\"kwb\">ADEPTUS</span> <span class=\"kwb\">ASTARTES</span> <span class=\"kwb\">CHARACTER</span> unit.<br><br><b>TARGET:</b> That <span class=\"kwb\">ADEPTUS</span> <span class=\"kwb\">ASTARTES</span> <span class=\"kwb\">CHARACTER</span> unit.<br><br><b>EFFECT:</b> When an enemy unit engaged with your unit is selected to make a fall-back move, that enemy unit must use the desperate escape mode, with -1 to those hazard rolls if that enemy unit is battle-shocked."
+   }
+  },
+  {
+   "table": "stratagems",
+   "fp_source": "Faction Pack Blood Angels page_002.md（11 版新分队，Wahapedia 无源）",
+   "values": {
+    "id": "fp11e-ba-grace-s3",
+    "faction": "SM",
+    "detachment": "Legacy of Grace",
+    "name_zh": "天使优雅光环",
+    "name_en": "AURA OF THE ANGEL’S GRACE",
+    "cp_cost": "1",
+    "phase": "Shooting phase",
+    "text_zh": "<b>WHEN:</b> Your opponent’s Shooting phase, when an enemy unit targets a friendly <span class=\"kwb\">ADEPTUS</span> <span class=\"kwb\">ASTARTES</span> <span class=\"kwb\">CHARACTER</span> unit.<br><br><b>TARGET:</b> That <span class=\"kwb\">CHARACTER</span> unit.<br><br><b>EFFECT:</b> Your unit has 5+ InSv."
+   }
+  },
+  {
+   "table": "enhancements",
+   "fp_source": "Faction Pack Blood Angels page_002.md（11 版新分队，Wahapedia 无源）",
+   "values": {
+    "id": "fp11e-ba-grace-e1",
+    "faction_id": "SM",
+    "detachment_id": "fp11e-ba-grace",
+    "detachment_name": "Legacy of Grace",
+    "name": "Blood Boil",
+    "cost": null,
+    "legend": "点数未知：FP 不含点数，MFM 缓存无增强数据（诚实置空，勿猜）",
+    "description": "<span class=\"kwb\">ADEPTUS</span> <span class=\"kwb\">ASTARTES</span> <span class=\"kwb\">PSYKER</span> model only. This model’s [PSYCHIC] attacks:<ul><li>Have [ANTI: non-MONSTER/VEHICLE 5+].</li><li>Can re-roll damage rolls.</li></ul>"
+   }
+  },
+  {
+   "table": "enhancements",
+   "fp_source": "Faction Pack Blood Angels page_002.md（11 版新分队，Wahapedia 无源）",
+   "values": {
+    "id": "fp11e-ba-grace-e2",
+    "faction_id": "SM",
+    "detachment_id": "fp11e-ba-grace",
+    "detachment_name": "Legacy of Grace",
+    "name": "Aureole of the Angel",
+    "cost": null,
+    "legend": "点数未知：FP 不含点数，MFM 缓存无增强数据（诚实置空，勿猜）",
+    "description": "<span class=\"kwb\">ADEPTUS</span> <span class=\"kwb\">ASTARTES</span> model only. This unit has -3\" detection range."
+   }
+  },
+  {
+   "table": "detachments",
+   "fp_source": "Faction Pack Blood Angels page_003.md（11 版新分队，Wahapedia 无源）",
+   "values": {
+    "id": "fp11e-ba-speartip-det",
+    "faction": "SM",
+    "name_zh": "天使之怒",
+    "name_en": "Wrath of Angels",
+    "rule_text": "When a friendly <span class=\"kwb\">SANGUINARY</span> <span class=\"kwb\">GUARD</span> unit is selected to make a fall-back move, that move does not prevent that unit from being eligible to shoot/eligible to declare a charge.<br><br>Restrictions: Your army can include BLOOD ANGELS units, but it cannot include any ADEPTUS ASTARTES units drawn from any other Chapter."
+   }
+  },
+  {
+   "table": "stratagems",
+   "fp_source": "Faction Pack Blood Angels page_003.md（11 版新分队，Wahapedia 无源）",
+   "values": {
+    "id": "fp11e-ba-speartip-s1",
+    "faction": "SM",
+    "detachment": "Encarmine Speartip",
+    "name_zh": "黄金裁决",
+    "name_en": "JUDGEMENT OF THE GOLDEN HOST",
+    "cp_cost": "1",
+    "phase": "Charge phase",
+    "text_zh": "<b>WHEN:</b> Your Charge phase, when a friendly <span class=\"kwb\">SANGUINARY</span> <span class=\"kwb\">GUARD</span> unit from your army ends a charge move.<br><br><b>TARGET:</b> That <span class=\"kwb\">SANGUINARY</span> <span class=\"kwb\">GUARD</span> unit.<br><br><b>EFFECT:</b> Select one enemy unit engaged with your unit. Roll one D6 for each model in your unit engaged with that enemy unit: for each 3+, that enemy unit suffers 1 mortal wound."
+   }
+  },
+  {
+   "table": "stratagems",
+   "fp_source": "Faction Pack Blood Angels page_003.md（11 版新分队，Wahapedia 无源）",
+   "values": {
+    "id": "fp11e-ba-speartip-s2",
+    "faction": "SM",
+    "detachment": "Encarmine Speartip",
+    "name_zh": "不屈英勇",
+    "name_en": "INEXORABLE VALOUR",
+    "cp_cost": "1",
+    "phase": "Movement phase",
+    "text_zh": "<b>WHEN:</b> Your opponent’s Movement phase, when an enemy unit that was engaged with a friendly <span class=\"kwb\">SANGUINARY</span> <span class=\"kwb\">GUARD</span> unit ends a fall-back move, if that <span class=\"kwb\">SANGUINARY</span> <span class=\"kwb\">GUARD</span> unit is unengaged.<br><br><b>TARGET:</b> That <span class=\"kwb\">SANGUINARY</span> <span class=\"kwb\">GUARD</span> unit.<br><br><b>EFFECT:</b> Your unit can make a normal move of up to D3+3\"."
+   }
+  },
+  {
+   "table": "stratagems",
+   "fp_source": "Faction Pack Blood Angels page_003.md（11 版新分队，Wahapedia 无源）",
+   "values": {
+    "id": "fp11e-ba-speartip-s3",
+    "faction": "SM",
+    "detachment": "Encarmine Speartip",
+    "name_zh": "炫目复仇",
+    "name_en": "BLINDING BLURS OF VENGEANCE",
+    "cp_cost": "1",
+    "phase": "Shooting phase",
+    "text_zh": "<b>WHEN:</b> Your opponent’s Shooting phase, when an enemy unit targets a friendly <span class=\"kwb\">SANGUINARY</span> <span class=\"kwb\">GUARD</span> unit.<br><br><b>TARGET:</b> That <span class=\"kwb\">SANGUINARY</span> <span class=\"kwb\">GUARD</span> unit.<br><br><b>EFFECT:</b> Your unit has Stealth."
+   }
+  },
+  {
+   "table": "enhancements",
+   "fp_source": "Faction Pack Blood Angels page_003.md（11 版新分队，Wahapedia 无源）",
+   "values": {
+    "id": "fp11e-ba-speartip-e1",
+    "faction_id": "SM",
+    "detachment_id": "fp11e-ba-speartip",
+    "detachment_name": "Encarmine Speartip",
+    "name": "Angelic Executioner",
+    "cost": null,
+    "legend": "点数未知：FP 不含点数，MFM 缓存无增强数据（诚实置空，勿猜）",
+    "description": "<span class=\"kwb\">ADEPTUS</span> <span class=\"kwb\">ASTARTES</span> <span class=\"kwb\">JUMP</span> <span class=\"kwb\">PACK</span> model only. When this unit is selected to fight, this unit’s melee attacks have:<ul><li>[LETHAL HITS].</li><li>Or: [SUSTAINED HITS 1].</li></ul>"
+   }
+  },
+  {
+   "table": "enhancements",
+   "fp_source": "Faction Pack Blood Angels page_003.md（11 版新分队，Wahapedia 无源）",
+   "values": {
+    "id": "fp11e-ba-speartip-e2",
+    "faction_id": "SM",
+    "detachment_id": "fp11e-ba-speartip",
+    "detachment_name": "Encarmine Speartip",
+    "name": "Shadow of Abomination",
+    "cost": null,
+    "legend": "点数未知：FP 不含点数，MFM 缓存无增强数据（诚实置空，勿猜）",
+    "description": "<span class=\"kwb\">ADEPTUS</span> <span class=\"kwb\">ASTARTES</span> <span class=\"kwb\">JUMP</span> <span class=\"kwb\">PACK</span> model only. (Once per battle, per army) When this unit is selected to fight you can use this ability. If you do, this model’s melee attacks have +1 D."
+   }
+  },
+  {
+   "table": "detachments",
+   "fp_source": "Faction Pack Blood Angels page_004.md（11 版新分队，Wahapedia 无源）",
+   "values": {
+    "id": "fp11e-ba-doomed-det",
+    "faction": "SM",
+    "name_zh": "狂热神速",
+    "name_en": "Fanatical Celerity",
+    "rule_text": "When a friendly <span class=\"kwb\">DEATH</span> <span class=\"kwb\">COMPANY</span> unit is selected to make an advance move, you can use this ability. If you do:<ul><li>That unit suffers D3+1 mortal wounds.</li><li>That move does not prevent that unit from being eligible to declare a charge.</li></ul>This detachment has the DOOMED tag and cannot be taken with another DOOMED detachment.<br><br>Restrictions: Your army can include BLOOD ANGELS units, but it cannot include any ADEPTUS ASTARTES units drawn from any other Chapter."
+   }
+  },
+  {
+   "table": "stratagems",
+   "fp_source": "Faction Pack Blood Angels page_004.md（11 版新分队，Wahapedia 无源）",
+   "values": {
+    "id": "fp11e-ba-doomed-s1",
+    "faction": "SM",
+    "detachment": "Wrath of the Doomed",
+    "name_zh": "以死偿仇",
+    "name_en": "DEATH BEGETS VENGEANCE",
+    "cp_cost": "1",
+    "phase": "Any phase",
+    "text_zh": "<b>WHEN:</b> Any phase, when a friendly <span class=\"kwb\">DEATH</span> <span class=\"kwb\">COMPANY</span> unit is destroyed by an enemy unit.<br><br><b>TARGET:</b> That enemy unit.<br><br><b>EFFECT:</b> That enemy unit is hated until the end of the battle. While a unit is hated, friendly <span class=\"kwb\">DEATH</span> <span class=\"kwb\">COMPANY</span> units’ attacks that target that unit have +1 to wound rolls."
+   }
+  },
+  {
+   "table": "stratagems",
+   "fp_source": "Faction Pack Blood Angels page_004.md（11 版新分队，Wahapedia 无源）",
+   "values": {
+    "id": "fp11e-ba-doomed-s2",
+    "faction": "SM",
+    "detachment": "Wrath of the Doomed",
+    "name_zh": "复仇无阻",
+    "name_en": "NO BARRIER TO RETRIBUTION",
+    "cp_cost": "1",
+    "phase": "Movement or Charge phase",
+    "text_zh": "<b>WHEN:</b> Your Movement or your Charge phase, when a friendly <span class=\"kwb\">DEATH</span> <span class=\"kwb\">COMPANY</span> <span class=\"kwb\">DREADNOUGHT</span> unit is selected to make a normal/advance/charge move.<br><br><b>TARGET:</b> That <span class=\"kwb\">DEATH</span> <span class=\"kwb\">COMPANY</span> <span class=\"kwb\">DREADNOUGHT</span> unit.<br><br><b>EFFECT:</b> Your unit has MOBILE."
+   }
+  },
+  {
+   "table": "stratagems",
+   "fp_source": "Faction Pack Blood Angels page_004.md（11 版新分队，Wahapedia 无源）",
+   "values": {
+    "id": "fp11e-ba-doomed-s3",
+    "faction": "SM",
+    "detachment": "Wrath of the Doomed",
+    "name_zh": "怒火回应",
+    "name_en": "RAGE-FUELLED RESPONSE",
+    "cp_cost": "1",
+    "phase": "Shooting phase",
+    "text_zh": "<b>WHEN:</b> Your opponent’s Shooting phase, when an enemy unit that targeted a friendly unengaged <span class=\"kwb\">DEATH</span> <span class=\"kwb\">COMPANY</span> unit has shot.<br><br><b>TARGET:</b> That <span class=\"kwb\">DEATH</span> <span class=\"kwb\">COMPANY</span> unit.<br><br><b>EFFECT:</b> Your unit can make a surge move of up to D6\"."
+   }
+  },
+  {
+   "table": "enhancements",
+   "fp_source": "Faction Pack Blood Angels page_004.md（11 版新分队，Wahapedia 无源）",
+   "values": {
+    "id": "fp11e-ba-doomed-e1",
+    "faction_id": "SM",
+    "detachment_id": "fp11e-ba-doomed",
+    "detachment_name": "Wrath of the Doomed",
+    "name": "Instinctive Interception",
+    "cost": null,
+    "legend": "点数未知：FP 不含点数，MFM 缓存无增强数据（诚实置空，勿猜）",
+    "description": "<span class=\"kwb\">DEATH</span> <span class=\"kwb\">COMPANY</span> model only. When you target this unit with the Heroic Intervention stratagem, that use is -1 CP."
+   }
+  },
+  {
+   "table": "enhancements",
+   "fp_source": "Faction Pack Blood Angels page_004.md（11 版新分队，Wahapedia 无源）",
+   "values": {
+    "id": "fp11e-ba-doomed-e2",
+    "faction_id": "SM",
+    "detachment_id": "fp11e-ba-doomed",
+    "detachment_name": "Wrath of the Doomed",
+    "name": "On the Archtraitor's Bridge",
+    "cost": null,
+    "legend": "点数未知：FP 不含点数，MFM 缓存无增强数据（诚实置空，勿猜）",
+    "description": "<span class=\"kwb\">DEATH</span> <span class=\"kwb\">COMPANY</span> model only. This model’s melee attacks have +2 A."
    }
   }
  ]
