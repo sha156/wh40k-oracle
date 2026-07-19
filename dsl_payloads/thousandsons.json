@@ -723,7 +723,7 @@
    "detachment": "Hexwarp Thrallband",
    "name_en": "SCOURING WARPFLAME",
    "name_zh": "焦烧翻焰",
-   "status": "encoded",
+   "status": "partial",
    "effects": [
     {
      "phase": "save",
@@ -736,7 +736,9 @@
     }
    ],
    "requires_toggles": [],
-   "not_modeled_notes_zh": [],
+   "not_modeled_notes_zh": [
+    "第二子句「被命中的敌单位本阶段不得享有掩体收益」系军队级效果（惠及其他友军后续攻击该目标）——单攻方/单目标模拟域外，不建模"
+   ],
    "provenance": {
     "current_text": "db stratagems.text_zh id=000009742006",
     "base_text": "Wahapedia 现文（PR10 工作单：11 版化后文本，FP 未触及或已滚入）",
@@ -789,7 +791,10 @@
      "params": [
       -1
      ],
-     "source": "岿然阵列：攻击本单位致伤 -1"
+     "source": "岿然阵列：攻击本单位致伤 -1（近战阶段）",
+     "condition": [
+      "phase_melee"
+     ]
     }
    ],
    "requires_toggles": [],

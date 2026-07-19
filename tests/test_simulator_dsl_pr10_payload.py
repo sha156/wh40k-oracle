@@ -82,12 +82,12 @@ def _ratio(numer, denom):
 
 class TestPayloadShape:
     def test_counts(self, entries):
-        # 12 分队规则物化 + 57 战略 + 36 增强 = 105（12 encoded / 5 partial / 88 not_modeled）
+        # 12 分队规则物化 + 57 战略 + 36 增强 = 105（11 encoded / 6 partial / 88 not_modeled）
         assert len(entries) == 105
         by = {}
         for e in entries:
             by[e.status] = by.get(e.status, 0) + 1
-        assert by == {"encoded": 12, "partial": 5, "not_modeled": 88}
+        assert by == {"encoded": 11, "partial": 6, "not_modeled": 88}
 
     def test_partial_entries_all_have_notes_and_fingerprint(self, entries):
         for e in entries:
@@ -228,12 +228,15 @@ class TestDefensiveFromPayload:
         r = _run(_attacker(_melee(ap=-1)), tgt, Stance(phase="melee"))
         assert _ratio(r.unsaved, r.wounds) == pytest.approx(1 / 2, abs=0.02)
 
-    def test_unwavering_phalanx_wound_minus_one(self, entries):
-        # 岿然阵列：攻击致伤 -1。S4 vs T4（4+，1/2）→ -1（5+，1/3）
+    def test_unwavering_phalanx_wound_minus_one_melee_only(self, entries):
+        # 岿然阵列：攻击致伤 -1（近战阶段）。触发于对方冲锋阶段后，同回合射击已过 →
+        # 仅影响对方近战。S4 vs T4：近战 4+→5+（1/2→1/3）；射击阶段不生效（1/2 不变）
         up = _entry(entries, "000010206007")
         tgt, _, _ = inject_target(_target(t=4), [up], frozenset())
-        r = _run(_attacker(_melee(s=4)), tgt, Stance(phase="melee"))
-        assert _ratio(r.wounds, r.hits) == pytest.approx(1 / 3, abs=0.02)
+        melee = _run(_attacker(_melee(s=4)), tgt, Stance(phase="melee"))
+        shoot = _run(_attacker(_gun(s=4)), tgt, Stance(phase="shooting"))
+        assert _ratio(melee.wounds, melee.hits) == pytest.approx(1 / 3, abs=0.02)
+        assert _ratio(shoot.wounds, shoot.hits) == pytest.approx(1 / 2, abs=0.02)
 
     def test_costly_blessing_invuln_melee_only(self, entries):
         # 代价赐福：3+ 无效保护（近战阶段）。AP-3 打 Sv7 近战 → 3++（unsaved 1/3）；
