@@ -1,0 +1,298 @@
+{
+ "_comment": "P7 阵营技能 DSL 唯一真源（死亡守望，P7-PR17）。DB effect_dsl_json/dsl_status 只是投影，由 `python -m db_compile dsl-apply` 写入并挂 restore。判据与格式沿 spec 2026-07-14 + PR6/PR16 约定；A/B 工作单见 docs/superpowers/plans/2026-07-20-p7-pr17-deathwatch-worklist.md。死亡守望 11 版为 ADEPTUS ASTARTES 战团（faction='SM' 无独立阵营行）——分队为 Black Spear Task Force（军规=Kill Teams id 000009792、分队规则=Mission Tactics id 000008521）；旧十版 Agents of the Imperium（AoI Ordo Xenos 等）为审判庭内容，不在本阵营范围。DB A/B 判定：规则/战略/增强文本 + 全部数据卡数值与 FP 11 版一致（Wahapedia 已滚更），零漂移零补丁；FP refined 若干数据卡表格 OCR 错位/字段互换，以 DB 真值为准。零新引擎通道、零新态势开关（沿 PR9-16 约定）。",
+ "dsl_version": 1,
+ "faction": "SM",
+ "entries": [
+  {
+   "table": "abilities",
+   "id": "000009792",
+   "side": "target",
+   "detachment": null,
+   "name_en": "Kill Teams",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "混编 Kill Team 单位被攻击时按多数模型的 T 结算致伤（并列取最高 T）——引擎守方为单一 T 侧写，混合韧性取多数/取最高机制无载体",
+    "运输载具搭乘限制为部署/编队域，非战斗链"
+   ],
+   "provenance": {
+    "text_sha256": "2367ab8fef65d251fccaf2f0980d7aa819f4fb123fad66acea71ac18c9965c9c"
+   },
+   "encoded_by": "manual-2026-07-20"
+  },
+  {
+   "table": "abilities",
+   "id": "000008521",
+   "side": "attacker",
+   "detachment": "Black Spear Task Force",
+   "name_en": "Mission Tactics",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "Furor/Malleus/Purgatus 三选一为指挥阶段持续声明——无对应态势开关载体，遵循 PR9-16 零新通道约定不新增开关",
+    "Furor=[SUSTAINED HITS 1] / Malleus=[LETHAL HITS] 仅在选定对应战术时全军武器生效，无条件编入任一会过度施加（宁 not_modeled 不错编）",
+    "Purgatus 暴击命中→[精准] 为攻击分配域未建模"
+   ],
+   "provenance": {
+    "text_sha256": "495664376b435860ac7db1b6bbb24692813672ff761e2b1d2d5fc1ef97c93dd8"
+   },
+   "encoded_by": "manual-2026-07-20"
+  },
+  {
+   "table": "stratagems",
+   "id": "000008523002",
+   "side": "target",
+   "detachment": "Black Spear Task Force",
+   "name_en": "ARMOUR OF CONTEMPT",
+   "name_zh": null,
+   "status": "partial",
+   "effects": [
+    {
+     "phase": "save",
+     "op": "ap_improve",
+     "params": [
+      -1
+     ],
+     "condition": [],
+     "source": "傲慢之甲（被攻 AP 恶化 1）"
+    }
+   ],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "触发时机为敌方选中目标后——点名即假设已使用；射击与近战两相位均适用"
+   ],
+   "provenance": {
+    "text_sha256": "35d8af3acc35ff49353b590f9a67c23d622a0edeb0e172ccd7183b080d1e0c83"
+   },
+   "encoded_by": "manual-2026-07-20"
+  },
+  {
+   "table": "stratagems",
+   "id": "000008523003",
+   "side": "attacker",
+   "detachment": "Black Spear Task Force",
+   "name_en": "ADAPTIVE TACTICS",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "为所选单位单独指定 Furor/Malleus/Purgatus 任务战术——依赖任务战术开关载体（见 Mission Tactics，无开关不编）"
+   ],
+   "provenance": {
+    "text_sha256": "8332e02319e3fc2c536a0145ea4ae98777b70daf8d9229baf022dd68f38fe4c2"
+   },
+   "encoded_by": "manual-2026-07-20"
+  },
+  {
+   "table": "stratagems",
+   "id": "000008523004",
+   "side": "attacker",
+   "detachment": "Black Spear Task Force",
+   "name_en": "HELLFIRE ROUNDS",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "射击阶段令远程武器（非 [毁灭伤害] 者）获 [ANTI-INFANTRY 2+] 与 [ANTI-MONSTER 5+]——射击×目标关键词无复合 tag（裸 target_has_keyword 会在近战误放行）",
+    "暴击致伤阈值下调仅在武器配 [毁灭伤害] 时转化为额外伤害，无载体不编（防高估）"
+   ],
+   "provenance": {
+    "text_sha256": "9036ad317b32ef06cec11c5360ec79e66ee269021280c35a7a7a984fc0297d15"
+   },
+   "encoded_by": "manual-2026-07-20"
+  },
+  {
+   "table": "stratagems",
+   "id": "000008523005",
+   "side": "attacker",
+   "detachment": "Black Spear Task Force",
+   "name_en": "KRAKEN ROUNDS",
+   "name_zh": null,
+   "status": "partial",
+   "effects": [
+    {
+     "phase": "save",
+     "op": "ap_improve",
+     "params": [
+      1
+     ],
+     "condition": [
+      "phase_shooting"
+     ],
+     "source": "克拉肯弹（射击远程武器 AP 改善 1）"
+    }
+   ],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "射程 +6 寸未建模（几何域）",
+    "AP 改善仅射击阶段生效（条件自含射击门控）；效果面为远程武器，近战阶段不注入"
+   ],
+   "provenance": {
+    "text_sha256": "5acb487738ba23593ae2ce52cb8a6dcf4df92069d6e5d0e8556516ecf6b63966"
+   },
+   "encoded_by": "manual-2026-07-20"
+  },
+  {
+   "table": "stratagems",
+   "id": "000008523006",
+   "side": "attacker",
+   "detachment": "Black Spear Task Force",
+   "name_en": "DRAGONFIRE ROUNDS",
+   "name_zh": null,
+   "status": "partial",
+   "effects": [
+    {
+     "phase": "save",
+     "op": "ignores_cover",
+     "params": [],
+     "condition": [
+      "phase_shooting"
+     ],
+     "source": "龙焰弹（远程武器 [无视掩体]）"
+    }
+   ],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "[ASSAULT]（加速后仍可射击）为移动域未建模",
+    "[无视掩体] 自含射击语义（条件门 phase_shooting），近战阶段不注入"
+   ],
+   "provenance": {
+    "text_sha256": "3d3b35c9e2195cedcc215ce92ad6845dff657d5c2e4b046f7fb2548413712ae1"
+   },
+   "encoded_by": "manual-2026-07-20"
+  },
+  {
+   "table": "stratagems",
+   "id": "000008523007",
+   "side": "attacker",
+   "detachment": "Black Spear Task Force",
+   "name_en": "SITE-TO-SITE TELEPORTATION",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "将单位撤出战场置入战略预备队并授予深入打击——预备队/部署/移动域未建模"
+   ],
+   "provenance": {
+    "text_sha256": "a2f3305bfb0086316624713a8d3909fd9ebbdc74c5d958ef618a0a49b94c562d"
+   },
+   "encoded_by": "manual-2026-07-20"
+  },
+  {
+   "table": "enhancements",
+   "id": "000008522002",
+   "side": "attacker",
+   "detachment": "Black Spear Task Force",
+   "name_en": "Thief of Secrets",
+   "name_zh": null,
+   "status": "partial",
+   "effects": [
+    {
+     "phase": "wound",
+     "op": "s_improve",
+     "params": [
+      1
+     ],
+     "condition": [
+      "phase_melee"
+     ],
+     "source": "窃密之刃（携带者近战武器 +1 S，特征值通道）"
+    },
+    {
+     "phase": "damage",
+     "op": "modify",
+     "params": [
+      1
+     ],
+     "condition": [
+      "phase_melee"
+     ],
+     "source": "窃密之刃（携带者近战武器 D+1）"
+    },
+    {
+     "phase": "save",
+     "op": "ap_improve",
+     "params": [
+      1
+     ],
+     "condition": [
+      "phase_melee"
+     ],
+     "source": "窃密之刃（携带者近战武器 AP 改善 1）"
+    }
+   ],
+   "requires_toggles": [
+    "bearer_leading"
+   ],
+   "not_modeled_notes_zh": [
+    "限携带者模型（ADEPTUS ASTARTES）的近战武器——单人物模拟准确，附属单位整体注入会高估（请单列主武器模拟）",
+    "战斗阶段末若本阶段有击杀，则本战斗永久升为 +2 S/D/AP——战斗内触发的永久升级为战局状态机无载体，仅编基础 +1（防高估）"
+   ],
+   "provenance": {
+    "text_sha256": "35ca35939733f4976f679a162bc4104702acb26ca9b43c44182f5d07eae3b5f5"
+   },
+   "encoded_by": "manual-2026-07-20"
+  },
+  {
+   "table": "enhancements",
+   "id": "000008522003",
+   "side": "attacker",
+   "detachment": "Black Spear Task Force",
+   "name_en": "Osseus Key",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "对手射击阶段开始时选一 12 寸内可见敌方载具令其过领导力测验，成功则该单位命中-1、失败则不能射击——领导力测验/条件分支/射击资格域无载体"
+   ],
+   "provenance": {
+    "text_sha256": "e99e228b8c3a33b910a2b95089a3871d53e89168fcd25a0899fa8f4f59598fea"
+   },
+   "encoded_by": "manual-2026-07-20"
+  },
+  {
+   "table": "enhancements",
+   "id": "000008522004",
+   "side": "attacker",
+   "detachment": "Black Spear Task Force",
+   "name_en": "Beacon Angelis",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "携带者单位获深入打击，并可 0CP 对其使用快速切入战略——部署/预备队域未建模"
+   ],
+   "provenance": {
+    "text_sha256": "d8968b02e15a6a081c43cdc96a7037b42f50a88bf46f8d577b1b0a1f3e8e7226"
+   },
+   "encoded_by": "manual-2026-07-20"
+  },
+  {
+   "table": "enhancements",
+   "id": "000008522005",
+   "side": "attacker",
+   "detachment": "Black Spear Task Force",
+   "name_en": "The Tome of Ectoclades",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "每场一次，选定誓约目标后可再指定第二个敌方单位为誓约目标——誓约为全局标记态+对誓约目标重投命中，誓约机制不在 P7 编码范围（P5 分类披露层处理）"
+   ],
+   "provenance": {
+    "text_sha256": "3dd18cb4a88c156ad77899b2f4695a13a00683c7bf30d30f8722371825014769"
+   },
+   "encoded_by": "manual-2026-07-20"
+  }
+ ]
+}
