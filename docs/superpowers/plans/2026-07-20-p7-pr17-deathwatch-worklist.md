@@ -48,6 +48,14 @@ DB 现值与 FP 11 版逐项一致，无补丁。
 Corvus 有一 legends 变体显示 M20+）——经与 `db/wh40k.sqlite` models 表 A/B，**DB 为真值**，
 FP refined 表格系分栏解析错位，非真实漂移，免补。
 
+**非阻塞后续观察项（本 PR 范围外，自评审 LOW 记录）**：`data_refined/Faction Pack Deathwatch/`
+的 refine 缓存 `skipped_pages.json = [7]`——`page_007`（含 HELLFIRE / KRAKEN ROUNDS 战略文本）
+被 refine 流水线跳过，未进 FAISS 检索语料。**不影响本 PR 编码正确性**：DSL 指纹校验对的是
+`db/wh40k.sqlite`（KRAKEN 文本在库、已据此编码，见 `test_fingerprints_match_db`），非 refine 缓存；
+本 PR 为纯编码不改检索索引，基准 100.0 零硬错。属既有 refine 缓存缺页（已被 skipped_pages 追踪、
+非静默漏页），留作 chat-RAG 检索完整性的独立后续项（如需可对 page_007 单独补 refine 再 ingest），
+不在死亡守望阵营编码 PR 交付面内。
+
 ### removed_11e：零（无分队/数据卡被 FP 移除）
 
 ### fp_new：零（无全新分队/数据卡——Black Spear 及全部 datasheet 均已在库，reprint 免补）
