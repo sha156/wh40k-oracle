@@ -6084,6 +6084,249 @@
     "phase": "Movement phase",
     "text_zh": "<b>WHEN:</b> Your opponent's Movement phase, when an enemy unit that was engaged with a friendly <span class=\"kwb\">INTERCEPTOR</span> <span class=\"kwb\">SQUAD</span> unit ends a fall-back move, if that <span class=\"kwb\">INTERCEPTOR</span> <span class=\"kwb\">SQUAD</span> unit is unengaged.<br><br><b>TARGET:</b> That <span class=\"kwb\">INTERCEPTOR</span> <span class=\"kwb\">SQUAD</span> unit.<br><br><b>EFFECT:</b> Your unit can make a normal move of up to D3+3\"."
    }
+  },
+  {
+   "table": "detachments",
+   "fp_source": "Faction Pack Dark Angels（11 版新分队，Wahapedia 无源）",
+   "values": {
+    "id": "fp11e-da-arsenal",
+    "faction": "SM",
+    "name_zh": "远古怒火祈唤",
+    "name_en": "Invocations of Ancient Fury",
+    "rule_text": "<ul><li>Friendly <span class=\"kwb\">ADEPTUS</span> <span class=\"kwb\">ASTARTES</span> units’ weapon profiles with ‘Plasma’ in their names are plasma weapon profiles.</li><li>Plasma weapon profiles have +1 Strength.</li></ul><br><br><span class=\"hi_custom\">RESTRICTIONS</span><br>Your army can include <span class=\"kwb\">DARK</span> <span class=\"kwb\">ANGELS</span> units, but it cannot include any <span class=\"kwb\">ADEPTUS</span> <span class=\"kwb\">ASTARTES</span> units drawn from any other Chapter."
+   }
+  },
+  {
+   "table": "detachments",
+   "fp_source": "Faction Pack Dark Angels（11 版新分队，Wahapedia 无源）",
+   "values": {
+    "id": "fp11e-da-darkflight",
+    "faction": "SM",
+    "name_zh": "黑翼戒备",
+    "name_en": "Black-Winged Vigilance",
+    "rule_text": "Friendly <span class=\"kwb\">RAVENWING</span> <span class=\"kwb\">FLY</span> units’ ranged attacks have [IGNORES COVER].<br><br><span class=\"hi_custom\">RESTRICTIONS</span><br>Your army can include <span class=\"kwb\">DARK</span> <span class=\"kwb\">ANGELS</span> units, but it cannot include any <span class=\"kwb\">ADEPTUS</span> <span class=\"kwb\">ASTARTES</span> units drawn from any other Chapter."
+   }
+  },
+  {
+   "table": "detachments",
+   "fp_source": "Faction Pack Dark Angels（11 版新分队，Wahapedia 无源）",
+   "values": {
+    "id": "fp11e-da-conclave",
+    "faction": "SM",
+    "name_zh": "恐惧教义",
+    "name_en": "Dread Catechism",
+    "rule_text": "<ul><li>In the Fight phase, when a friendly <span class=\"kwb\">CHAPLAIN</span> unit destroys an enemy unit, enemy units within 6\" of that <span class=\"kwb\">CHAPLAIN</span> unit make a Battle-shock roll.</li><li>Friendly <span class=\"kwb\">CHAPLAIN</span> units have the following ability:<br><b>Sower of Dread (Aura):</b> While an enemy unit is within 6\" of this unit, that enemy unit has -1 Leadership.</li></ul><br><br><span class=\"hi_custom\">RESTRICTIONS</span><br>Your army can include <span class=\"kwb\">DARK</span> <span class=\"kwb\">ANGELS</span> units, but it cannot include any <span class=\"kwb\">ADEPTUS</span> <span class=\"kwb\">ASTARTES</span> units drawn from any other Chapter."
+   }
+  },
+  {
+   "table": "enhancements",
+   "fp_source": "Faction Pack Dark Angels（11 版新分队，Wahapedia 无源）",
+   "values": {
+    "id": "fp11e-da-arsenal-e1",
+    "faction_id": "SM",
+    "detachment_id": "dark-age-arsenal",
+    "detachment_name": "Dark Age Arsenal",
+    "name": "Petition of Stability",
+    "cost": null,
+    "legend": "点数未知：FP 不含点数，MFM 缓存无增强数据（诚实置空，勿猜）",
+    "description": "<span class=\"kwb\">ADEPTUS</span> <span class=\"kwb\">ASTARTES</span> unit only. This unit’s plasma attacks have +6\" Range."
+   }
+  },
+  {
+   "table": "enhancements",
+   "fp_source": "Faction Pack Dark Angels（11 版新分队，Wahapedia 无源）",
+   "values": {
+    "id": "fp11e-da-arsenal-e2",
+    "faction_id": "SM",
+    "detachment_id": "dark-age-arsenal",
+    "detachment_name": "Dark Age Arsenal",
+    "name": "Entreaty of Perpetual Ardour",
+    "cost": null,
+    "legend": "点数未知：FP 不含点数，MFM 缓存无增强数据（诚实置空，勿猜）",
+    "description": "<span class=\"kwb\">HELLBLASTER</span> <span class=\"kwb\">SQUAD</span> only. This unit’s snap shooting attacks hit on unmodified hit rolls of 5+."
+   }
+  },
+  {
+   "table": "enhancements",
+   "fp_source": "Faction Pack Dark Angels（11 版新分队，Wahapedia 无源）",
+   "values": {
+    "id": "fp11e-da-darkflight-e1",
+    "faction_id": "SM",
+    "detachment_id": "darkflight-pursuit",
+    "detachment_name": "Darkflight Pursuit",
+    "name": "Thundercowl Turbines",
+    "cost": null,
+    "legend": "点数未知：FP 不含点数，MFM 缓存无增强数据（诚实置空，勿猜）",
+    "description": "<span class=\"kwb\">RAVENWING</span> <span class=\"kwb\">FLY</span> unit only. In your first Movement phase, this unit can make an ingress move."
+   }
+  },
+  {
+   "table": "enhancements",
+   "fp_source": "Faction Pack Dark Angels（11 版新分队，Wahapedia 无源）",
+   "values": {
+    "id": "fp11e-da-darkflight-e2",
+    "faction_id": "SM",
+    "detachment_id": "darkflight-pursuit",
+    "detachment_name": "Darkflight Pursuit",
+    "name": "Nightforged Battery",
+    "cost": null,
+    "legend": "点数未知：FP 不含点数，MFM 缓存无增强数据（诚实置空，勿猜）",
+    "description": "<span class=\"kwb\">LAND</span> <span class=\"kwb\">SPEEDER</span> <span class=\"kwb\">VENGEANCE</span> unit only. This unit can re-roll rolls to determine the Attacks characteristic of a weapon, and can re-roll Hazardous tests."
+   }
+  },
+  {
+   "table": "enhancements",
+   "fp_source": "Faction Pack Dark Angels（11 版新分队，Wahapedia 无源）",
+   "values": {
+    "id": "fp11e-da-conclave-e1",
+    "faction_id": "SM",
+    "detachment_id": "interrogation-conclave",
+    "detachment_name": "Interrogation Conclave",
+    "name": "Limitless Zeal",
+    "cost": null,
+    "legend": "点数未知：FP 不含点数，MFM 缓存无增强数据（诚实置空，勿猜）",
+    "description": "<span class=\"kwb\">CHAPLAIN</span> model only. This unit has +1 to Charge rolls."
+   }
+  },
+  {
+   "table": "enhancements",
+   "fp_source": "Faction Pack Dark Angels（11 版新分队，Wahapedia 无源）",
+   "values": {
+    "id": "fp11e-da-conclave-e2",
+    "faction_id": "SM",
+    "detachment_id": "interrogation-conclave",
+    "detachment_name": "Interrogation Conclave",
+    "name": "Inescapable Interrogation",
+    "cost": null,
+    "legend": "点数未知：FP 不含点数，MFM 缓存无增强数据（诚实置空，勿猜）",
+    "description": "<span class=\"kwb\">CHAPLAIN</span> model only. This unit’s ranged attacks have [IGNORES COVER]."
+   }
+  },
+  {
+   "table": "stratagems",
+   "fp_source": "Faction Pack Dark Angels（11 版新分队，Wahapedia 无源）",
+   "values": {
+    "id": "fp11e-da-arsenal-s1",
+    "faction": "SM",
+    "detachment": "Dark Age Arsenal",
+    "name_zh": "灼烧爆发",
+    "name_en": "Searing Bursts",
+    "cp_cost": "1",
+    "phase": "Shooting phase",
+    "text_zh": "<b>WHEN:</b> Your Shooting phase, when a friendly <span class=\"kwb\">HELLBLASTER</span> <span class=\"kwb\">SQUAD</span> unit has shot.<br><br><b>TARGET:</b> That <span class=\"kwb\">HELLBLASTER</span> <span class=\"kwb\">SQUAD</span> unit.<br><br><b>EFFECT:</b> Select one enemy unit hit by your unit’s plasma ranged attacks. That enemy unit is seared until the start of your next turn. While a unit is seared, that unit has -2\" Move."
+   }
+  },
+  {
+   "table": "stratagems",
+   "fp_source": "Faction Pack Dark Angels（11 版新分队，Wahapedia 无源）",
+   "values": {
+    "id": "fp11e-da-arsenal-s2",
+    "faction": "SM",
+    "detachment": "Dark Age Arsenal",
+    "name_zh": "无谓牺牲",
+    "name_en": "No Sacrifice Too Great",
+    "cp_cost": "1",
+    "phase": "Shooting phase",
+    "text_zh": "<b>WHEN:</b> Your Shooting phase, when a friendly <span class=\"kwb\">ADEPTUS</span> <span class=\"kwb\">ASTARTES</span> unit is selected to shoot.<br><br><b>TARGET:</b> That <span class=\"kwb\">ADEPTUS</span> <span class=\"kwb\">ASTARTES</span> unit.<br><br><b>EFFECT:</b> Your unit’s [HAZARDOUS] plasma ranged attacks have +1 Strength."
+   }
+  },
+  {
+   "table": "stratagems",
+   "fp_source": "Faction Pack Dark Angels（11 版新分队，Wahapedia 无源）",
+   "values": {
+    "id": "fp11e-da-arsenal-s3",
+    "faction": "SM",
+    "detachment": "Dark Age Arsenal",
+    "name_zh": "罪愆昭示",
+    "name_en": "Revelation of Guilt",
+    "cp_cost": "1",
+    "phase": "Shooting phase",
+    "text_zh": "<b>WHEN:</b> Your Shooting phase, when a friendly <span class=\"kwb\">ADEPTUS</span> <span class=\"kwb\">ASTARTES</span> unit is selected to shoot.<br><br><b>TARGET:</b> That <span class=\"kwb\">ADEPTUS</span> <span class=\"kwb\">ASTARTES</span> unit.<br><br><b>EFFECT:</b> Your unit’s plasma ranged attacks have +1 to Hit rolls."
+   }
+  },
+  {
+   "table": "stratagems",
+   "fp_source": "Faction Pack Dark Angels（11 版新分队，Wahapedia 无源）",
+   "values": {
+    "id": "fp11e-da-darkflight-s1",
+    "faction": "SM",
+    "detachment": "Darkflight Pursuit",
+    "name_zh": "天穹监视",
+    "name_en": "Skyborne Surveillance",
+    "cp_cost": "1",
+    "phase": "Shooting phase",
+    "text_zh": "<b>WHEN:</b> Your Shooting phase, when a friendly <span class=\"kwb\">RAVENWING</span> <span class=\"kwb\">FLY</span> unit has shot.<br><br><b>TARGET:</b> That <span class=\"kwb\">RAVENWING</span> <span class=\"kwb\">FLY</span> unit.<br><br><b>EFFECT:</b> Visible enemy units within 6\" of your unit have +3\" detection range."
+   }
+  },
+  {
+   "table": "stratagems",
+   "fp_source": "Faction Pack Dark Angels（11 版新分队，Wahapedia 无源）",
+   "values": {
+    "id": "fp11e-da-darkflight-s2",
+    "faction": "SM",
+    "detachment": "Darkflight Pursuit",
+    "name_zh": "暗影之翼",
+    "name_en": "Wings of Shadow",
+    "cp_cost": "1",
+    "phase": "Shooting phase",
+    "text_zh": "<b>WHEN:</b> Your opponent’s Shooting phase, when an enemy unit targets a friendly <span class=\"kwb\">RAVENWING</span> <span class=\"kwb\">FLY</span> unit.<br><br><b>TARGET:</b> That <span class=\"kwb\">RAVENWING</span> <span class=\"kwb\">FLY</span> unit.<br><br><b>EFFECT:</b> Your unit has the Stealth ability."
+   }
+  },
+  {
+   "table": "stratagems",
+   "fp_source": "Faction Pack Dark Angels（11 版新分队，Wahapedia 无源）",
+   "values": {
+    "id": "fp11e-da-darkflight-s3",
+    "faction": "SM",
+    "detachment": "Darkflight Pursuit",
+    "name_zh": "吾等即复仇",
+    "name_en": "We Are Vengeance",
+    "cp_cost": "1",
+    "phase": "Shooting phase",
+    "text_zh": "<b>WHEN:</b> Your opponent’s Shooting phase, when an enemy unit that targeted a friendly unengaged <span class=\"kwb\">RAVENWING</span> <span class=\"kwb\">FLY</span> unit has shot.<br><br><b>TARGET:</b> That <span class=\"kwb\">RAVENWING</span> <span class=\"kwb\">FLY</span> unit.<br><br><b>EFFECT:</b> Your unit can make a Normal move of up to D3+3\"."
+   }
+  },
+  {
+   "table": "stratagems",
+   "fp_source": "Faction Pack Dark Angels（11 版新分队，Wahapedia 无源）",
+   "values": {
+    "id": "fp11e-da-conclave-s1",
+    "faction": "SM",
+    "detachment": "Interrogation Conclave",
+    "name_zh": "精准惩戒",
+    "name_en": "Exacting Punishment",
+    "cp_cost": "1",
+    "phase": "Fight phase",
+    "text_zh": "<b>WHEN:</b> Your Shooting phase or the Fight phase, when a friendly <span class=\"kwb\">CHAPLAIN</span> unit is selected to attack.<br><br><b>TARGET:</b> That <span class=\"kwb\">CHAPLAIN</span> unit.<br><br><b>EFFECT:</b> Your unit’s attacks have [PRECISION]."
+   }
+  },
+  {
+   "table": "stratagems",
+   "fp_source": "Faction Pack Dark Angels（11 版新分队，Wahapedia 无源）",
+   "values": {
+    "id": "fp11e-da-conclave-s2",
+    "faction": "SM",
+    "detachment": "Interrogation Conclave",
+    "name_zh": "恐怖热诚",
+    "name_en": "Terrifying Zeal",
+    "cp_cost": "1",
+    "phase": "Charge phase",
+    "text_zh": "<b>WHEN:</b> Your Charge phase, when a friendly <span class=\"kwb\">CHAPLAIN</span> unit ends a Charge move.<br><br><b>TARGET:</b> That <span class=\"kwb\">CHAPLAIN</span> unit.<br><br><b>EFFECT:</b> Select one enemy unit (excluding <span class=\"kwb\">MONSTER</span> and <span class=\"kwb\">VEHICLE</span> units) engaged with your unit. That enemy unit makes a Leadership roll. If that Leadership roll is failed, that enemy unit’s attacks have -1 to Hit rolls until the end of the turn."
+   }
+  },
+  {
+   "table": "stratagems",
+   "fp_source": "Faction Pack Dark Angels（11 版新分队，Wahapedia 无源）",
+   "values": {
+    "id": "fp11e-da-conclave-s3",
+    "faction": "SM",
+    "detachment": "Interrogation Conclave",
+    "name_zh": "怯懦的代价",
+    "name_en": "Wages of Cowardice",
+    "cp_cost": "1",
+    "phase": "Movement phase",
+    "text_zh": "<b>WHEN:</b> Your opponent’s Movement phase, when an enemy unit that was engaged with a friendly <span class=\"kwb\">CHAPLAIN</span> unit ends a Fall Back move, if that <span class=\"kwb\">CHAPLAIN</span> unit is unengaged.<br><br><b>TARGET:</b> That <span class=\"kwb\">CHAPLAIN</span> unit.<br><br><b>EFFECT:</b> Your unit can make a Normal move of up to D3+3\"."
+   }
   }
  ]
 }
