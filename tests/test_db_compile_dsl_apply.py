@@ -276,7 +276,7 @@ class TestMaterialize:
         # 77（钛）+ 88（吞世者）+ 48（黑色圣堂）+ 104（帝皇之子 PR7）
         # + 106（死亡守卫 PR8）+ 73（圣血天使 PR9）+ 105（千子 PR10）
         # + 98（卡斯托迪斯 PR11）+ 112（德鲁卡里 PR12）+ 145（死灵 PR13）
-        # + 142（兽人 PR14）+ 83（圣血修女 PR15）= 1181
-        assert rep["applied"] + rep["already"] == len(all_entries) == 1181
+        # + 142（兽人 PR14）+ 83（圣血修女 PR15）+ 98（灰骑士 PR16）= 1279
+        assert rep["applied"] + rep["already"] == len(all_entries) == 1279
         assert not rep["fingerprint_mismatch"] and not rep["skipped"]
-        assert rep["by_status"] == {"encoded": 89, "partial": 259, "not_modeled": 833}
+        assert rep["by_status"] == {"encoded": 103, "partial": 269, "not_modeled": 907}
