@@ -1,0 +1,2345 @@
+{
+ "_comment": "P7 阵营技能 DSL 唯一真源（德鲁卡里，P7-PR12）。DB 投影由 dsl-apply 写入挂 restore。判据格式沿 spec 2026-07-14 + PR3-PR11 约定；A/B 工作单见 docs/superpowers/plans/2026-07-19-p7-pr12-dru-worklist.md。德鲁卡里为高速近战/毒刃阵营，可编率中高：守方 S>T 被伤-1（缝肉憎恶/至暗造物/瘤皮实验者走 wound_s_gt_t）、下车 [IGNORES COVER]+[LANCE]（残酷之雨走 disembarked_this_turn+melee_charging）、[LETHAL/SUSTAINED/IGNORES COVER]、ANTI-X（窃船者/复仇大师走 crit_threshold+target_has_keyword）、invuln、减伤、±命中/致伤、+1T、splinter 武器 AP（weapon_filter）。零新引擎通道（第四个纯编码 PR）。防高估不编：Pain token 经济/Empowered 门（全阵营核心机制无载体）、战斗药剂六选一（六开关未注册）、赌局输赢状态、[LETHAL/SUSTAINED: non-MONSTER/VEHICLE] 负关键字门（裸编会对怪兽/载具过度施加）、重骰1（无情竞赛/优先猎物）、幸存反打、二选一按单分支（恶意狂热）、目标战意震慑状态无 tag、+1D 无通用伤害通道。",
+ "dsl_version": 1,
+ "faction": "DRU",
+ "entries": [
+  {
+   "table": "abilities",
+   "id": "det000008714",
+   "side": "attacker",
+   "detachment": "Rain Of Cruelty",
+   "name_en": "Rain Of Cruelty",
+   "name_zh": "残酷之雨",
+   "status": "encoded",
+   "effects": [
+    {
+     "phase": "save",
+     "op": "ignores_cover",
+     "params": [],
+     "source": "残酷之雨：下车后远程 [IGNORES COVER]",
+     "condition": [
+      "phase_shooting"
+     ]
+    },
+    {
+     "phase": "wound",
+     "op": "modify",
+     "params": [
+      1
+     ],
+     "source": "残酷之雨：下车后近战 [LANCE]（冲锋致伤 +1）",
+     "condition": [
+      "melee_charging"
+     ]
+    }
+   ],
+   "requires_toggles": [
+    "disembarked_this_turn"
+   ],
+   "not_modeled_notes_zh": [],
+   "provenance": {
+    "current_text": "db detachments.rule_text id=000008714",
+    "base_text": "Wahapedia 现文（PR12 工作单：11 版化后文本，FP 未触及或已滚入）",
+    "text_sha256": "81a96651eeaf9b2785894ea01316649d2a402937fc3e0c0e2b3c1c5ff2f0ed94"
+   },
+   "encoded_by": "manual-2026-07-19",
+   "materialize": {
+    "from_table": "detachments",
+    "from_id": "000008714",
+    "from_column": "rule_text"
+   }
+  },
+  {
+   "table": "abilities",
+   "id": "det000009424",
+   "side": "attacker",
+   "detachment": "Commorrite Rivalries",
+   "name_en": "Commorrite Rivalries",
+   "name_zh": "科摩罗竞争",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "科摩罗竞争：击杀敌人物得 Pain token + CP 折扣——Pain token 经济无载体"
+   ],
+   "encoded_by": "manual-2026-07-19",
+   "materialize": {
+    "from_table": "detachments",
+    "from_id": "000009424",
+    "from_column": "rule_text"
+   }
+  },
+  {
+   "table": "abilities",
+   "id": "det000009432",
+   "side": "attacker",
+   "detachment": "Raid and Pillage",
+   "name_en": "Raid and Pillage",
+   "name_zh": "劫掠",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "劫掠：据点范围内击杀得 Pain token + 据守——Pain token 与目标控制无载体"
+   ],
+   "encoded_by": "manual-2026-07-19",
+   "materialize": {
+    "from_table": "detachments",
+    "from_id": "000009432",
+    "from_column": "rule_text"
+   }
+  },
+  {
+   "table": "abilities",
+   "id": "det000009440",
+   "side": "attacker",
+   "detachment": "Appetite for Adulation",
+   "name_en": "Appetite for Adulation",
+   "name_zh": "渴求赞誉",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "渴求赞誉：Pain token + Empowered WYCH 近战 [ANTI-INFANTRY 4+]——Empowered 门(token) 无载体"
+   ],
+   "encoded_by": "manual-2026-07-19",
+   "materialize": {
+    "from_table": "detachments",
+    "from_id": "000009440",
+    "from_column": "rule_text"
+   }
+  },
+  {
+   "table": "abilities",
+   "id": "det000009449",
+   "side": "attacker",
+   "detachment": "Regenerative Agony",
+   "name_en": "Regenerative Agony",
+   "name_zh": "再生痛楚",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "再生痛楚：Pain token + Empowered 治疗——token 经济与治疗无载体"
+   ],
+   "encoded_by": "manual-2026-07-19",
+   "materialize": {
+    "from_table": "detachments",
+    "from_id": "000009449",
+    "from_column": "rule_text"
+   }
+  },
+  {
+   "table": "abilities",
+   "id": "det000009780",
+   "side": "attacker",
+   "detachment": "Callous Competition",
+   "name_en": "Callous Competition",
+   "name_zh": "无情竞赛",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "无情竞赛：赌局输赢重骰命中/致伤 1——赌局状态 + 重骰1（非重骰失败）无载体"
+   ],
+   "encoded_by": "manual-2026-07-19",
+   "materialize": {
+    "from_table": "detachments",
+    "from_id": "000009780",
+    "from_column": "rule_text"
+   }
+  },
+  {
+   "table": "abilities",
+   "id": "det000010572",
+   "side": "attacker",
+   "detachment": "Alliance of Agony",
+   "name_en": "Alliance of Agony",
+   "name_zh": "痛苦联盟",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "痛苦联盟：开局按编成得 Pain token——Pain token 设置无载体"
+   ],
+   "encoded_by": "manual-2026-07-19",
+   "materialize": {
+    "from_table": "detachments",
+    "from_id": "000010572",
+    "from_column": "rule_text"
+   }
+  },
+  {
+   "table": "abilities",
+   "id": "det000010579",
+   "side": "attacker",
+   "detachment": "Combat Drugs",
+   "name_en": "Combat Drugs",
+   "name_zh": "战斗药剂",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "战斗药剂：指挥阶段六选一/随机二（+1A/+2M/+1WS/+1T/+1S/+1Ld+1BS）——每回合互斥选择 + WYCH CULT 专属，六开关未注册（零新通道）无载体"
+   ],
+   "encoded_by": "manual-2026-07-19",
+   "materialize": {
+    "from_table": "detachments",
+    "from_id": "000010579",
+    "from_column": "rule_text"
+   }
+  },
+  {
+   "table": "abilities",
+   "id": "det000010583",
+   "side": "target",
+   "detachment": "Stitchflesh Abominations",
+   "name_en": "Stitchflesh Abominations",
+   "name_zh": "缝肉憎恶",
+   "status": "encoded",
+   "effects": [
+    {
+     "phase": "wound",
+     "op": "modify",
+     "params": [
+      -1
+     ],
+     "source": "缝肉憎恶：S>T 攻击致伤 -1",
+     "condition": [
+      "wound_s_gt_t"
+     ]
+    }
+   ],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [],
+   "provenance": {
+    "current_text": "db detachments.rule_text id=000010583",
+    "base_text": "Wahapedia 现文（PR12 工作单：11 版化后文本，FP 未触及或已滚入）",
+    "text_sha256": "4e76c713a313373671d4b69aa4af0febf9d91005bf8d3873c2c390bcf87ba161"
+   },
+   "encoded_by": "manual-2026-07-19",
+   "materialize": {
+    "from_table": "detachments",
+    "from_id": "000010583",
+    "from_column": "rule_text"
+   }
+  },
+  {
+   "table": "abilities",
+   "id": "det000010587",
+   "side": "attacker",
+   "detachment": "Murderous Agenda",
+   "name_en": "Murderous Agenda",
+   "name_zh": "谋杀议程",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "谋杀议程：契约选择 → 对契约单位 [PRECISION]/[SUSTAINED]/[LETHAL]——契约选择 + 单位专属无载体"
+   ],
+   "encoded_by": "manual-2026-07-19",
+   "materialize": {
+    "from_table": "detachments",
+    "from_id": "000010587",
+    "from_column": "rule_text"
+   }
+  },
+  {
+   "table": "abilities",
+   "id": "detfp11e-dru-exhibition",
+   "side": "attacker",
+   "detachment": "Exacting Cruelty",
+   "name_en": "Exacting Cruelty",
+   "name_zh": "精准残酷",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "精准残酷：WYCH CULT 近战 [LETHAL HITS: non-MONSTER/VEHICLE]——负关键字门无载体，裸 LETHAL 会对怪兽/载具过度施加，宁漏不错不建模"
+   ],
+   "encoded_by": "manual-2026-07-19",
+   "materialize": {
+    "from_table": "detachments",
+    "from_id": "fp11e-dru-exhibition",
+    "from_column": "rule_text"
+   }
+  },
+  {
+   "table": "abilities",
+   "id": "detfp11e-dru-agonysts",
+   "side": "attacker",
+   "detachment": "Contracted Harvest",
+   "name_en": "Contracted Harvest",
+   "name_zh": "契约收割",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "契约收割：BLADES FOR HIRE/KABAL 远程 [SUSTAINED HITS 1: non-MONSTER/VEHICLE]——负关键字门（非怪兽/载具）无载体，裸 SUSTAINED 会对怪兽/载具过度施加，宁漏不错不建模"
+   ],
+   "encoded_by": "manual-2026-07-19",
+   "materialize": {
+    "from_table": "detachments",
+    "from_id": "fp11e-dru-agonysts",
+    "from_column": "rule_text"
+   }
+  },
+  {
+   "table": "abilities",
+   "id": "detfp11e-dru-torment",
+   "side": "target",
+   "detachment": "Darkest Artifice",
+   "name_en": "Darkest Artifice",
+   "name_zh": "至暗造物",
+   "status": "encoded",
+   "effects": [
+    {
+     "phase": "wound",
+     "op": "modify",
+     "params": [
+      -1
+     ],
+     "source": "至暗造物：CRONOS/TALOS 被 S>T 攻击致伤 -1",
+     "condition": [
+      "wound_s_gt_t"
+     ]
+    }
+   ],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [],
+   "provenance": {
+    "current_text": "db detachments.rule_text id=fp11e-dru-torment",
+    "base_text": "Wahapedia 现文（PR12 工作单：11 版化后文本，FP 未触及或已滚入）",
+    "text_sha256": "6bb0b6733eb8f3df394d929dae9fa6b2931acce7378ed503b060ae48c65e4853"
+   },
+   "encoded_by": "manual-2026-07-19",
+   "materialize": {
+    "from_table": "detachments",
+    "from_id": "fp11e-dru-torment",
+    "from_column": "rule_text"
+   }
+  },
+  {
+   "table": "stratagems",
+   "id": "000010585006",
+   "side": "target",
+   "detachment": "Covenite Coterie",
+   "name_en": "CONNOISSEURS OF PAIN",
+   "name_zh": "痛苦鉴赏家",
+   "status": "partial",
+   "effects": [
+    {
+     "phase": "save",
+     "op": "ap_improve",
+     "params": [
+      -1
+     ],
+     "source": "痛苦鉴赏家：攻击本单位 AP 恶化 1"
+    }
+   ],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "花 1 Pain token 触发 + 阶段末 HAEMONCULUS COVENS 回 token——token 经济不建模"
+   ],
+   "provenance": {
+    "current_text": "db stratagems.text_zh id=000010585006",
+    "base_text": "Wahapedia 现文（PR12 工作单：11 版化后文本，FP 未触及或已滚入）",
+    "text_sha256": "c753aa99487d0a686c44218c934e567059e9c0c5f6fe039956c576d0e2aef87f"
+   },
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "stratagems",
+   "id": "000010585002",
+   "side": "attacker",
+   "detachment": "Covenite Coterie",
+   "name_en": "POSTMORTALITY",
+   "name_zh": "亡后术",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "亡后术：花 Pain token 复活——复活 + token 无载体"
+   ],
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "stratagems",
+   "id": "000010585004",
+   "side": "attacker",
+   "detachment": "Covenite Coterie",
+   "name_en": "POISONER’S ART",
+   "name_zh": "投毒者技艺",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "投毒者技艺：标记敌 → 指挥阶段致命伤——标记 + 致命伤无载体"
+   ],
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "stratagems",
+   "id": "000010585003",
+   "side": "attacker",
+   "detachment": "Covenite Coterie",
+   "name_en": "SYMPHONY OF SUFFERING",
+   "name_zh": "受难交响",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "受难交响：战意测试——战意无载体"
+   ],
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "stratagems",
+   "id": "000010585007",
+   "side": "attacker",
+   "detachment": "Covenite Coterie",
+   "name_en": "ENFOLDING NIGHTMARE",
+   "name_zh": "包裹梦魇",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "包裹梦魇：surge move——移动无载体"
+   ],
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "stratagems",
+   "id": "000010585005",
+   "side": "attacker",
+   "detachment": "Covenite Coterie",
+   "name_en": "DISTILLERS OF FEAR",
+   "name_zh": "恐惧蒸馏",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "恐惧蒸馏：对战意震慑敌 [DEVASTATING WOUNDS]——目标战意震慑状态无载体"
+   ],
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "stratagems",
+   "id": "000010589003",
+   "side": "attacker",
+   "detachment": "Kabalite Cartel",
+   "name_en": "TAKEN ALIVE",
+   "name_zh": "生擒",
+   "status": "partial",
+   "effects": [
+    {
+     "phase": "hit",
+     "op": "modify",
+     "params": [
+      1
+     ],
+     "source": "生擒：近战命中 +1",
+     "condition": [
+      "phase_melee"
+     ]
+    }
+   ],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "击杀契约单位触发全军战意——战意级联不建模"
+   ],
+   "provenance": {
+    "current_text": "db stratagems.text_zh id=000010589003",
+    "base_text": "Wahapedia 现文（PR12 工作单：11 版化后文本，FP 未触及或已滚入）",
+    "text_sha256": "6b5dca84f3e1fccc040d0158cad5bf2917cddc37e34e2effa638b53fdcf3cd66"
+   },
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "stratagems",
+   "id": "000010589006",
+   "side": "attacker",
+   "detachment": "Kabalite Cartel",
+   "name_en": "MAKING A POINT",
+   "name_zh": "证明观点",
+   "status": "encoded",
+   "effects": [
+    {
+     "phase": "hit",
+     "op": "bs_improve",
+     "params": [
+      1
+     ],
+     "source": "证明观点：远程 BS +1",
+     "condition": [
+      "phase_shooting"
+     ]
+    },
+    {
+     "phase": "save",
+     "op": "ap_improve",
+     "params": [
+      1
+     ],
+     "source": "证明观点：远程 AP +1",
+     "condition": [
+      "phase_shooting"
+     ]
+    }
+   ],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [],
+   "provenance": {
+    "current_text": "db stratagems.text_zh id=000010589006",
+    "base_text": "Wahapedia 现文（PR12 工作单：11 版化后文本，FP 未触及或已滚入）",
+    "text_sha256": "a686781abb4db6fad9c8b6edc109196cd7ba4f61f0175049c44f8c253ec14ed7"
+   },
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "stratagems",
+   "id": "000010589004",
+   "side": "attacker",
+   "detachment": "Kabalite Cartel",
+   "name_en": "TAILORED TOXINS",
+   "name_zh": "定制毒素",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "定制毒素：对契约单位暴击 5+——契约单位专属无载体"
+   ],
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "stratagems",
+   "id": "000010589005",
+   "side": "attacker",
+   "detachment": "Kabalite Cartel",
+   "name_en": "ENEMIES WITHOUT NUMBER",
+   "name_zh": "无尽之敌",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "无尽之敌：新契约——契约选择无载体"
+   ],
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "stratagems",
+   "id": "000010589002",
+   "side": "attacker",
+   "detachment": "Kabalite Cartel",
+   "name_en": "DOUBLE-CROSS",
+   "name_zh": "双重背叛",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "双重背叛：伤害转嫁为致命伤——伤害重定向无载体"
+   ],
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "stratagems",
+   "id": "000010589007",
+   "side": "attacker",
+   "detachment": "Kabalite Cartel",
+   "name_en": "DEADLY DECEIVERS",
+   "name_zh": "致命骗徒",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "致命骗徒：18\"外不得远程选中——目标距离限制无载体"
+   ],
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "stratagems",
+   "id": "000009434003",
+   "side": "attacker",
+   "detachment": "Kabalite Corsairs",
+   "name_en": "DECKPLATE SWEEPERS",
+   "name_zh": "甲板清扫者",
+   "status": "encoded",
+   "effects": [
+    {
+     "phase": "save",
+     "op": "ap_improve",
+     "params": [
+      1
+     ],
+     "source": "甲板清扫者：splinter 武器 AP +1",
+     "condition": [
+      "phase_shooting"
+     ]
+    }
+   ],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [],
+   "weapon_filter": "splinter",
+   "provenance": {
+    "current_text": "db stratagems.text_zh id=000009434003",
+    "base_text": "Wahapedia 现文（PR12 工作单：11 版化后文本，FP 未触及或已滚入）",
+    "text_sha256": "6bd670d5781144064350a680118095afd56cfae2b40edd868975477a2f851166"
+   },
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "stratagems",
+   "id": "000009434002",
+   "side": "target",
+   "detachment": "Kabalite Corsairs",
+   "name_en": "ELUSIVE DUELLISTS",
+   "name_zh": "灵巧决斗者",
+   "status": "partial",
+   "effects": [
+    {
+     "phase": "hit",
+     "op": "modify",
+     "params": [
+      -1
+     ],
+     "source": "灵巧决斗者：攻击本单位命中 -1（近战阶段）",
+     "condition": [
+      "phase_melee"
+     ]
+    }
+   ],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "INCUBI 关键字单位额外 4+ 无效保护——单位关键字条件不建模"
+   ],
+   "provenance": {
+    "current_text": "db stratagems.text_zh id=000009434002",
+    "base_text": "Wahapedia 现文（PR12 工作单：11 版化后文本，FP 未触及或已滚入）",
+    "text_sha256": "e711ba688e4d0855542253a135fbcf21829c7ea607c85e17244da3dbfe8e5e18"
+   },
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "stratagems",
+   "id": "000009434005",
+   "side": "attacker",
+   "detachment": "Kabalite Corsairs",
+   "name_en": "OPPORTUNISTIC THIEVES",
+   "name_zh": "机会窃贼",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "机会窃贼：向据点移动——移动无载体"
+   ],
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "stratagems",
+   "id": "000009434004",
+   "side": "attacker",
+   "detachment": "Kabalite Corsairs",
+   "name_en": "TAKE THEM ALIVE",
+   "name_zh": "生擒他们",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "生擒他们：战意测试——战意无载体"
+   ],
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "stratagems",
+   "id": "000009451003",
+   "side": "attacker",
+   "detachment": "Painbringers",
+   "name_en": "UNFEELING ABOMINATIONS",
+   "name_zh": "麻木憎恶",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "麻木憎恶：被毁后反打——串行幸存反打无载体"
+   ],
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "stratagems",
+   "id": "000009451004",
+   "side": "attacker",
+   "detachment": "Painbringers",
+   "name_en": "MOULDED MUSCULATURE",
+   "name_zh": "塑形肌理",
+   "status": "partial",
+   "effects": [
+    {
+     "phase": "wound",
+     "op": "s_improve",
+     "params": [
+      1
+     ],
+     "source": "塑形肌理：近战 S +1",
+     "condition": [
+      "phase_melee"
+     ]
+    },
+    {
+     "phase": "save",
+     "op": "ap_improve",
+     "params": [
+      1
+     ],
+     "source": "塑形肌理：近战 AP +1",
+     "condition": [
+      "phase_melee"
+     ]
+    }
+   ],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "限所选模型 + 须打舱门对侧敌——选定子集与地形目标限制不建模"
+   ],
+   "provenance": {
+    "current_text": "db stratagems.text_zh id=000009451004",
+    "base_text": "Wahapedia 现文（PR12 工作单：11 版化后文本，FP 未触及或已滚入）",
+    "text_sha256": "5a2c324eba043d80ea017c6313e55f70dc26cb4cca57b8a6497839488bbcf3a1"
+   },
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "stratagems",
+   "id": "000009451002",
+   "side": "attacker",
+   "detachment": "Painbringers",
+   "name_en": "HORRIFYING FORM",
+   "name_zh": "恐怖形态",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "恐怖形态：据点据守——目标控制无载体"
+   ],
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "stratagems",
+   "id": "000009451005",
+   "side": "attacker",
+   "detachment": "Painbringers",
+   "name_en": "TERRIFYING AURA",
+   "name_zh": "恐怖光环",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "恐怖光环：领导测试 → 敌命中固定 6——领导测试无载体"
+   ],
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "stratagems",
+   "id": "000010575002",
+   "side": "target",
+   "detachment": "Realspace Raiders",
+   "name_en": "INSENSIBLE TO PAIN",
+   "name_zh": "麻木无痛",
+   "status": "encoded",
+   "effects": [
+    {
+     "phase": "damage",
+     "op": "damage_reduction",
+     "params": [
+      1
+     ],
+     "source": "麻木无痛：分配到本单位的攻击伤害 -1"
+    }
+   ],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [],
+   "provenance": {
+    "current_text": "db stratagems.text_zh id=000010575002",
+    "base_text": "Wahapedia 现文（PR12 工作单：11 版化后文本，FP 未触及或已滚入）",
+    "text_sha256": "124ea88d1f39db51b58dca70b579e919136ac7feafa12b23ba6dc21b382bce62"
+   },
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "stratagems",
+   "id": "000010575006",
+   "side": "attacker",
+   "detachment": "Realspace Raiders",
+   "name_en": "EAGER FOR THE KILL",
+   "name_zh": "渴望杀戮",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "渴望杀戮：前进不掷骰 +6\"M——移动无载体"
+   ],
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "stratagems",
+   "id": "000010575004",
+   "side": "attacker",
+   "detachment": "Realspace Raiders",
+   "name_en": "INSTINCTIVE SPITE",
+   "name_zh": "本能怨恨",
+   "status": "partial",
+   "effects": [
+    {
+     "phase": "hit",
+     "op": "modify",
+     "params": [
+      1
+     ],
+     "source": "本能怨恨：对低于半编敌命中 +1",
+     "condition": [
+      "target_below_half"
+     ]
+    }
+   ],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "花 1 Pain token 时额外 +1 致伤——token 经济分量不建模"
+   ],
+   "provenance": {
+    "current_text": "db stratagems.text_zh id=000010575004",
+    "base_text": "Wahapedia 现文（PR12 工作单：11 版化后文本，FP 未触及或已滚入）",
+    "text_sha256": "e6b1856857d2f30e816d76537adf6ff00bb7d32eb462672d983a26914ec3b9d6"
+   },
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "stratagems",
+   "id": "000010575003",
+   "side": "target",
+   "detachment": "Realspace Raiders",
+   "name_en": "FIGHTING SHADOWS",
+   "name_zh": "暗影战斗",
+   "status": "encoded",
+   "effects": [
+    {
+     "phase": "hit",
+     "op": "modify",
+     "params": [
+      -1
+     ],
+     "source": "暗影战斗：攻击本单位命中 -1"
+    }
+   ],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [],
+   "provenance": {
+    "current_text": "db stratagems.text_zh id=000010575003",
+    "base_text": "Wahapedia 现文（PR12 工作单：11 版化后文本，FP 未触及或已滚入）",
+    "text_sha256": "cac2cd8c68262545ff6bda68bc5c37893e2716faf1922d412acd44c03c0ae00d"
+   },
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "stratagems",
+   "id": "000010575005",
+   "side": "attacker",
+   "detachment": "Realspace Raiders",
+   "name_en": "DARK HARVEST",
+   "name_zh": "黑暗收割",
+   "status": "encoded",
+   "effects": [
+    {
+     "phase": "hit",
+     "op": "auto_wound",
+     "params": [],
+     "source": "黑暗收割：近战 [LETHAL HITS]",
+     "condition": [
+      "phase_melee"
+     ]
+    }
+   ],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [],
+   "provenance": {
+    "current_text": "db stratagems.text_zh id=000010575005",
+    "base_text": "Wahapedia 现文（PR12 工作单：11 版化后文本，FP 未触及或已滚入）",
+    "text_sha256": "4126f86ee2c3aa098252d38253f720e96f7c07d037080a40798fcc3778db175a"
+   },
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "stratagems",
+   "id": "000010575007",
+   "side": "attacker",
+   "detachment": "Realspace Raiders",
+   "name_en": "RAID AND FADE",
+   "name_zh": "劫掠即撤",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "劫掠即撤：Normal move——移动无载体"
+   ],
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "stratagems",
+   "id": "000009782002",
+   "side": "attacker",
+   "detachment": "Reaper’s Wager",
+   "name_en": "MALICIOUS FRENZY",
+   "name_zh": "恶意狂热",
+   "status": "partial",
+   "effects": [
+    {
+     "phase": "hit",
+     "op": "extra_hits",
+     "params": [
+      1
+     ],
+     "source": "恶意狂热：[SUSTAINED HITS 1]（二选一单分支）"
+    }
+   ],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "二选一按 [SUSTAINED HITS 1] 单分支建模（另可选 [LETHAL HITS]）"
+   ],
+   "provenance": {
+    "current_text": "db stratagems.text_zh id=000009782002",
+    "base_text": "Wahapedia 现文（PR12 工作单：11 版化后文本，FP 未触及或已滚入）",
+    "text_sha256": "880929b385ea762626a3f260da212f0b21accddfb9ca784a3f3b137c0adeaccb"
+   },
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "stratagems",
+   "id": "000009782004",
+   "side": "target",
+   "detachment": "Reaper’s Wager",
+   "name_en": "MURDERER’S CIRCUS",
+   "name_zh": "杀手马戏团",
+   "status": "encoded",
+   "effects": [
+    {
+     "phase": "hit",
+     "op": "modify",
+     "params": [
+      -1
+     ],
+     "source": "杀手马戏团：攻击本单位命中 -1（近战阶段）",
+     "condition": [
+      "phase_melee"
+     ]
+    }
+   ],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [],
+   "provenance": {
+    "current_text": "db stratagems.text_zh id=000009782004",
+    "base_text": "Wahapedia 现文（PR12 工作单：11 版化后文本，FP 未触及或已滚入）",
+    "text_sha256": "eeafd1bd197d4d09cbe1ffa392e8ae3ad80bbd73a247f066941b56e4dcb4a0c4"
+   },
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "stratagems",
+   "id": "000009782007",
+   "side": "attacker",
+   "detachment": "Reaper’s Wager",
+   "name_en": "DANCE MACABRE",
+   "name_zh": "死亡之舞",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "死亡之舞：Normal move——移动无载体"
+   ],
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "stratagems",
+   "id": "000009782005",
+   "side": "attacker",
+   "detachment": "Reaper’s Wager",
+   "name_en": "SHORTEN THE ODDS",
+   "name_zh": "缩短赔率",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "缩短赔率：前进后可射击/冲锋——射击/冲锋资格无载体"
+   ],
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "stratagems",
+   "id": "000009782003",
+   "side": "attacker",
+   "detachment": "Reaper’s Wager",
+   "name_en": "FATEFUL ROLE",
+   "name_zh": "命定角色",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "命定角色：被毁后反打——串行幸存反打无载体"
+   ],
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "stratagems",
+   "id": "000009782006",
+   "side": "attacker",
+   "detachment": "Reaper’s Wager",
+   "name_en": "SCINTILLATING TEMPO",
+   "name_zh": "闪耀节奏",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "闪耀节奏：禁敌 Overwatch——Overwatch 资格无载体"
+   ],
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "stratagems",
+   "id": "000009442002",
+   "side": "target",
+   "detachment": "Ship-killer Cult",
+   "name_en": "HYPERAGILITY",
+   "name_zh": "超敏捷",
+   "status": "encoded",
+   "effects": [
+    {
+     "phase": "hit",
+     "op": "modify",
+     "params": [
+      -1
+     ],
+     "source": "超敏捷：攻击本单位命中 -1"
+    },
+    {
+     "phase": "wound",
+     "op": "modify",
+     "params": [
+      -1
+     ],
+     "source": "超敏捷：攻击本单位致伤 -1"
+    }
+   ],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [],
+   "provenance": {
+    "current_text": "db stratagems.text_zh id=000009442002",
+    "base_text": "Wahapedia 现文（PR12 工作单：11 版化后文本，FP 未触及或已滚入）",
+    "text_sha256": "cae61b29dd1378970e59820fe98c8dbcb79e886fcedadb899863b8e73c555a0b"
+   },
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "stratagems",
+   "id": "000009442003",
+   "side": "attacker",
+   "detachment": "Ship-killer Cult",
+   "name_en": "TOYING WITH THE PREY",
+   "name_zh": "玩弄猎物",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "玩弄猎物：OC 减值——目标控制无载体"
+   ],
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "stratagems",
+   "id": "000009442004",
+   "side": "attacker",
+   "detachment": "Ship-killer Cult",
+   "name_en": "NO OBSTACLE",
+   "name_zh": "无可阻挡",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "无可阻挡：越舱门冲锋——地形/冲锋可视无载体"
+   ],
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "stratagems",
+   "id": "000009442005",
+   "side": "attacker",
+   "detachment": "Ship-killer Cult",
+   "name_en": "PHANTASM GRENADES",
+   "name_zh": "幻象手雷",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "幻象手雷：战意 + 禁 Overwatch——战意与 Overwatch 无载体"
+   ],
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "stratagems",
+   "id": "000010577005",
+   "side": "attacker",
+   "detachment": "Skysplinter Assault",
+   "name_en": "SKYBORNE ANNIHILATION",
+   "name_zh": "空降歼灭",
+   "status": "partial",
+   "effects": [
+    {
+     "phase": "hit",
+     "op": "extra_hits",
+     "params": [
+      1
+     ],
+     "source": "空降歼灭：下车后远程 [SUSTAINED HITS 1]",
+     "condition": [
+      "phase_shooting"
+     ]
+    }
+   ],
+   "requires_toggles": [
+    "disembarked_this_turn"
+   ],
+   "not_modeled_notes_zh": [
+    "Kabalite Warriors/Hand of the Archon 单位升 [SUSTAINED HITS 2]——单位关键字分档不建模"
+   ],
+   "provenance": {
+    "current_text": "db stratagems.text_zh id=000010577005",
+    "base_text": "Wahapedia 现文（PR12 工作单：11 版化后文本，FP 未触及或已滚入）",
+    "text_sha256": "60775de65425f3c2c13cdf01492fa95bac3db3c5e6808ec5ea6bcb362bf56555"
+   },
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "stratagems",
+   "id": "000010577002",
+   "side": "attacker",
+   "detachment": "Skysplinter Assault",
+   "name_en": "VICIOUS BLADES",
+   "name_zh": "凶残刀刃",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "凶残刀刃：每登载模型致命伤——致命伤无载体"
+   ],
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "stratagems",
+   "id": "000010577006",
+   "side": "attacker",
+   "detachment": "Skysplinter Assault",
+   "name_en": "SWOOPING MOCKERY",
+   "name_zh": "俯冲嘲弄",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "俯冲嘲弄：Normal move——移动无载体"
+   ],
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "stratagems",
+   "id": "000010577004",
+   "side": "attacker",
+   "detachment": "Skysplinter Assault",
+   "name_en": "POUNCE ON THE PREY",
+   "name_zh": "扑向猎物",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "扑向猎物：下车后可冲锋——冲锋资格无载体"
+   ],
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "stratagems",
+   "id": "000010577003",
+   "side": "attacker",
+   "detachment": "Skysplinter Assault",
+   "name_en": "WRAITHLIKE RETREAT",
+   "name_zh": "如魅撤退",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "如魅撤退：Normal/Fall Back move——移动无载体"
+   ],
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "stratagems",
+   "id": "000010577007",
+   "side": "target",
+   "detachment": "Skysplinter Assault",
+   "name_en": "NIGHT SHIELD",
+   "name_zh": "夜幕护盾",
+   "status": "encoded",
+   "effects": [
+    {
+     "phase": "save",
+     "op": "invuln",
+     "params": [
+      4
+     ],
+     "source": "夜幕护盾：4+ 无效保护（对方射击阶段）",
+     "condition": [
+      "phase_shooting"
+     ]
+    }
+   ],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [],
+   "provenance": {
+    "current_text": "db stratagems.text_zh id=000010577007",
+    "base_text": "Wahapedia 现文（PR12 工作单：11 版化后文本，FP 未触及或已滚入）",
+    "text_sha256": "7b567bd175f8e7cb7f9e72b85fd378f77b72c38499d52111f27d46892cea017d"
+   },
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "stratagems",
+   "id": "000009426002",
+   "side": "target",
+   "detachment": "Space Lane Raiders",
+   "name_en": "SHIPBOARD SHADES",
+   "name_zh": "船载暗影",
+   "status": "encoded",
+   "effects": [
+    {
+     "phase": "hit",
+     "op": "modify",
+     "params": [
+      -1
+     ],
+     "source": "船载暗影：攻击本单位命中 -1"
+    }
+   ],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [],
+   "provenance": {
+    "current_text": "db stratagems.text_zh id=000009426002",
+    "base_text": "Wahapedia 现文（PR12 工作单：11 版化后文本，FP 未触及或已滚入）",
+    "text_sha256": "1856048f12ab19492251062509a45c870cebae792ac9a1a2aa567e87f69c5ecc"
+   },
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "stratagems",
+   "id": "000009426003",
+   "side": "attacker",
+   "detachment": "Space Lane Raiders",
+   "name_en": "CREW-THIEVES",
+   "name_zh": "窃船者",
+   "status": "encoded",
+   "effects": [
+    {
+     "phase": "wound",
+     "op": "crit_threshold",
+     "params": [
+      3
+     ],
+     "source": "窃船者：近战对 INFANTRY [ANTI-INFANTRY 3+]",
+     "condition": [
+      "melee_target_has_keyword",
+      "infantry"
+     ]
+    }
+   ],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [],
+   "provenance": {
+    "current_text": "db stratagems.text_zh id=000009426003",
+    "base_text": "Wahapedia 现文（PR12 工作单：11 版化后文本，FP 未触及或已滚入）",
+    "text_sha256": "8024c63beb90809a4a12b1ac83d0fcf187052d58b9120f26908d440f42d8668a"
+   },
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "stratagems",
+   "id": "000009426004",
+   "side": "attacker",
+   "detachment": "Space Lane Raiders",
+   "name_en": "VOIDSHIP GLADIATORS",
+   "name_zh": "虚空斗士",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "虚空斗士：禁敌 Overwatch——Overwatch 无载体"
+   ],
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "stratagems",
+   "id": "000009426005",
+   "side": "attacker",
+   "detachment": "Space Lane Raiders",
+   "name_en": "VETERAN PIRATES",
+   "name_zh": "老练海盗",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "老练海盗：Normal move——移动无载体"
+   ],
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "stratagems",
+   "id": "000010581007",
+   "side": "target",
+   "detachment": "Spectacle of Spite",
+   "name_en": "ACROBATIC DISPLAY",
+   "name_zh": "杂技表演",
+   "status": "encoded",
+   "effects": [
+    {
+     "phase": "save",
+     "op": "invuln",
+     "params": [
+      5
+     ],
+     "source": "杂技表演：5+ 无效保护（对方射击阶段）",
+     "condition": [
+      "phase_shooting"
+     ]
+    }
+   ],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [],
+   "provenance": {
+    "current_text": "db stratagems.text_zh id=000010581007",
+    "base_text": "Wahapedia 现文（PR12 工作单：11 版化后文本，FP 未触及或已滚入）",
+    "text_sha256": "0ec9e0f79579ccb9934be2755753298e4735f27b4f73b31fcb2c97ce07a745ce"
+   },
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "stratagems",
+   "id": "000010581006",
+   "side": "attacker",
+   "detachment": "Spectacle of Spite",
+   "name_en": "A CHALLENGE MET",
+   "name_zh": "接受挑战",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "接受挑战：宣布冲锋——冲锋无载体"
+   ],
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "stratagems",
+   "id": "000010581003",
+   "side": "attacker",
+   "detachment": "Spectacle of Spite",
+   "name_en": "DEADLY DEBUT",
+   "name_zh": "致命首秀",
+   "status": "partial",
+   "effects": [
+    {
+     "phase": "hit",
+     "op": "auto_wound",
+     "params": [],
+     "source": "致命首秀：近战 [LETHAL HITS]",
+     "condition": [
+      "phase_melee"
+     ]
+    },
+    {
+     "phase": "save",
+     "op": "ap_improve",
+     "params": [
+      1
+     ],
+     "source": "致命首秀：Wyches 近战 AP +1",
+     "condition": [
+      "phase_melee"
+     ]
+    }
+   ],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "AP +1 分量限 Wyches 单位——按 Wyches 建模，非 Wyches 高估"
+   ],
+   "provenance": {
+    "current_text": "db stratagems.text_zh id=000010581003",
+    "base_text": "Wahapedia 现文（PR12 工作单：11 版化后文本，FP 未触及或已滚入）",
+    "text_sha256": "200be8923f97f659828d3d9a10156cc80e779b37239a01728caedc11020e5eb2"
+   },
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "stratagems",
+   "id": "000010581005",
+   "side": "attacker",
+   "detachment": "Spectacle of Spite",
+   "name_en": "PRETERNATURAL AGILITY",
+   "name_zh": "超凡敏捷",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "超凡敏捷：无视移动修正 + 穿越模型——移动无载体"
+   ],
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "stratagems",
+   "id": "000010581002",
+   "side": "attacker",
+   "detachment": "Spectacle of Spite",
+   "name_en": "BERSERK FUGUE",
+   "name_zh": "狂暴赋格",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "狂暴赋格：被毁后反打——串行幸存反打无载体"
+   ],
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "stratagems",
+   "id": "000010581004",
+   "side": "attacker",
+   "detachment": "Spectacle of Spite",
+   "name_en": "FEIGNED WEAKNESS",
+   "name_zh": "佯装虚弱",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "佯装虚弱：撤退后可射击/冲锋——射击/冲锋资格无载体"
+   ],
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "stratagems",
+   "id": "fp11e-dru-exhibition-s1",
+   "side": "attacker",
+   "detachment": "Exhibition of Slaughter",
+   "name_en": "Planned Strikes",
+   "name_zh": "预谋打击",
+   "status": "encoded",
+   "effects": [
+    {
+     "phase": "hit",
+     "op": "auto_wound",
+     "params": [],
+     "source": "预谋打击：近战 [LETHAL HITS]",
+     "condition": [
+      "phase_melee"
+     ]
+    }
+   ],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [],
+   "provenance": {
+    "current_text": "db stratagems.text_zh id=fp11e-dru-exhibition-s1",
+    "base_text": "Wahapedia 现文（PR12 工作单：11 版化后文本，FP 未触及或已滚入）",
+    "text_sha256": "cd897b73275d15864b9dc7259a401073d31aab86b7a273887bfc4cf13b6a0574"
+   },
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "stratagems",
+   "id": "fp11e-dru-exhibition-s2",
+   "side": "attacker",
+   "detachment": "Exhibition of Slaughter",
+   "name_en": "Sculpting the Stage",
+   "name_zh": "布置舞台",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "布置舞台：前进/撤退后可执行动作——动作资格无载体"
+   ],
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "stratagems",
+   "id": "fp11e-dru-exhibition-s3",
+   "side": "target",
+   "detachment": "Exhibition of Slaughter",
+   "name_en": "Acrobatic Display",
+   "name_zh": "杂技表演",
+   "status": "encoded",
+   "effects": [
+    {
+     "phase": "save",
+     "op": "invuln",
+     "params": [
+      5
+     ],
+     "source": "杂技表演：5+ 无效保护（对方射击阶段）",
+     "condition": [
+      "phase_shooting"
+     ]
+    }
+   ],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [],
+   "provenance": {
+    "current_text": "db stratagems.text_zh id=fp11e-dru-exhibition-s3",
+    "base_text": "Wahapedia 现文（PR12 工作单：11 版化后文本，FP 未触及或已滚入）",
+    "text_sha256": "73a8de50c5868a42ca7238316705d2bcdd30bf5545c7b6f49afbc70cb089ebcc"
+   },
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "stratagems",
+   "id": "fp11e-dru-agonysts-s1",
+   "side": "attacker",
+   "detachment": "Kabalite Agonysts",
+   "name_en": "Prioritised Victim",
+   "name_zh": "优先猎物",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "优先猎物：对人物重骰命中/致伤 1——仅重骰 1（非重骰失败）无载体"
+   ],
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "stratagems",
+   "id": "fp11e-dru-agonysts-s2",
+   "side": "attacker",
+   "detachment": "Kabalite Agonysts",
+   "name_en": "Shadows' Reach",
+   "name_zh": "暗影之触",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "暗影之触：射击后仍隐藏——隐藏状态无载体"
+   ],
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "stratagems",
+   "id": "fp11e-dru-agonysts-s3",
+   "side": "attacker",
+   "detachment": "Kabalite Agonysts",
+   "name_en": "Killers from the Dark Spires",
+   "name_zh": "黑塔杀手",
+   "status": "encoded",
+   "effects": [
+    {
+     "phase": "save",
+     "op": "ignores_cover",
+     "params": [],
+     "source": "黑塔杀手：远程 [IGNORES COVER]",
+     "condition": [
+      "phase_shooting"
+     ]
+    }
+   ],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [],
+   "provenance": {
+    "current_text": "db stratagems.text_zh id=fp11e-dru-agonysts-s3",
+    "base_text": "Wahapedia 现文（PR12 工作单：11 版化后文本，FP 未触及或已滚入）",
+    "text_sha256": "ba4fb2cc6e69481962fb6d595c74c77cfb806453469c9198417a398e33b17a76"
+   },
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "stratagems",
+   "id": "fp11e-dru-torment-s1",
+   "side": "attacker",
+   "detachment": "Tools of Torment",
+   "name_en": "Salting the Wound",
+   "name_zh": "伤口撒盐",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "伤口撒盐：对战意震慑敌 [DEVASTATING WOUNDS]——目标战意震慑状态无载体"
+   ],
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "stratagems",
+   "id": "fp11e-dru-torment-s2",
+   "side": "attacker",
+   "detachment": "Tools of Torment",
+   "name_en": "Dividends of Agony",
+   "name_zh": "苦痛红利",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "苦痛红利：战意测试——战意无载体"
+   ],
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "stratagems",
+   "id": "fp11e-dru-torment-s3",
+   "side": "attacker",
+   "detachment": "Tools of Torment",
+   "name_en": "Urgent Metamorphosis",
+   "name_zh": "紧急异变",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "紧急异变：撤退后可冲锋——冲锋资格无载体"
+   ],
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "enhancements",
+   "id": "000009450002",
+   "side": "attacker",
+   "detachment": "Painbringers",
+   "name_en": "Rending Chain-Flails",
+   "name_zh": "撕裂连枷",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "撕裂连枷：敌撤退时致命伤——致命伤无载体"
+   ],
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "enhancements",
+   "id": "000010580002",
+   "side": "attacker",
+   "detachment": "Spectacle of Spite",
+   "name_en": "Pharmacophex",
+   "name_zh": "药剂师",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "药剂师：额外战斗药剂——药剂选择无载体"
+   ],
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "enhancements",
+   "id": "000009433002",
+   "side": "attacker",
+   "detachment": "Kabalite Corsairs",
+   "name_en": "Dark Charisma",
+   "name_zh": "黑暗魅力",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "黑暗魅力：OC 5 + 重骰战意——目标控制与战意无载体"
+   ],
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "enhancements",
+   "id": "000010574002",
+   "side": "attacker",
+   "detachment": "Realspace Raiders",
+   "name_en": "Dark Vitality",
+   "name_zh": "黑暗活力",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "黑暗活力：常驻 Empowered——token 经济无载体"
+   ],
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "enhancements",
+   "id": "000010588002",
+   "side": "attacker",
+   "detachment": "Kabalite Cartel",
+   "name_en": "Leechbite Plate",
+   "name_zh": "吸血甲板",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "吸血甲板：Save 3+ + 治疗——护甲特征值设定 + 治疗无载体"
+   ],
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "enhancements",
+   "id": "000009425002",
+   "side": "attacker",
+   "detachment": "Space Lane Raiders",
+   "name_en": "Power and Greed",
+   "name_zh": "力量与贪婪",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "力量与贪婪：Empowered 得 Pain token——token 经济无载体"
+   ],
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "enhancements",
+   "id": "000010584002",
+   "side": "attacker",
+   "detachment": "Covenite Coterie",
+   "name_en": "Master Regenesist",
+   "name_zh": "重生大师",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "重生大师：返还被毁模型——返还无载体"
+   ],
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "enhancements",
+   "id": "000009441002",
+   "side": "attacker",
+   "detachment": "Ship-killer Cult",
+   "name_en": "Stimm-Fervour",
+   "name_zh": "兴奋剂狂热",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "兴奋剂狂热：前进后可冲锋——冲锋资格无载体"
+   ],
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "enhancements",
+   "id": "000010576002",
+   "side": "target",
+   "detachment": "Skysplinter Assault",
+   "name_en": "Phantasmal Smoke",
+   "name_zh": "幻象烟雾",
+   "status": "partial",
+   "effects": [
+    {
+     "phase": "save",
+     "op": "cover",
+     "params": [],
+     "source": "幻象烟雾：携带者单位获 Stealth（对远程掩体收益）",
+     "condition": [
+      "phase_shooting"
+     ]
+    }
+   ],
+   "requires_toggles": [
+    "defender_bearer_leading"
+   ],
+   "not_modeled_notes_zh": [
+    "限携带者单位 6\" 内有友方 Transport——位置条件按成立建模"
+   ],
+   "provenance": {
+    "current_text": "db enhancements.description id=000010576002",
+    "base_text": "Wahapedia 现文（PR12 工作单：11 版化后文本，FP 未触及或已滚入）",
+    "text_sha256": "bb3f635857c6fcf81a34d7748ab090642f8fc840761290d904027951c0018cb4"
+   },
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "enhancements",
+   "id": "000009781002",
+   "side": "attacker",
+   "detachment": "Reaper’s Wager",
+   "name_en": "Archraider",
+   "name_zh": "首袭者",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "首袭者：Scouts——部署能力无载体"
+   ],
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "enhancements",
+   "id": "000009441003",
+   "side": "attacker",
+   "detachment": "Ship-killer Cult",
+   "name_en": "Blood-Drenched Champion",
+   "name_zh": "血染冠军",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "血染冠军：战意测试——战意无载体"
+   ],
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "enhancements",
+   "id": "000009450003",
+   "side": "attacker",
+   "detachment": "Painbringers",
+   "name_en": "Vile Surgeon",
+   "name_zh": "邪恶外科医师",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "邪恶外科医师：对人物 Damage 3——设伤值 + 武器名 + 目标关键字无载体"
+   ],
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "enhancements",
+   "id": "000010584003",
+   "side": "attacker",
+   "detachment": "Covenite Coterie",
+   "name_en": "Master Nemesine",
+   "name_zh": "复仇大师",
+   "status": "encoded",
+   "effects": [
+    {
+     "phase": "wound",
+     "op": "crit_threshold",
+     "params": [
+      2
+     ],
+     "source": "复仇大师：[ANTI-BEAST 2+]",
+     "condition": [
+      "target_has_keyword",
+      "beast"
+     ]
+    },
+    {
+     "phase": "wound",
+     "op": "crit_threshold",
+     "params": [
+      4
+     ],
+     "source": "复仇大师：[ANTI-MONSTER 4+]",
+     "condition": [
+      "target_has_keyword",
+      "monster"
+     ]
+    }
+   ],
+   "requires_toggles": [
+    "bearer_leading"
+   ],
+   "not_modeled_notes_zh": [],
+   "provenance": {
+    "current_text": "db enhancements.description id=000010584003",
+    "base_text": "Wahapedia 现文（PR12 工作单：11 版化后文本，FP 未触及或已滚入）",
+    "text_sha256": "c4366edb0122a124607c44e5693f8aa61decf3715f03c53ab30d02e551d078f7"
+   },
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "enhancements",
+   "id": "000009425003",
+   "side": "attacker",
+   "detachment": "Space Lane Raiders",
+   "name_en": "Spiteful Demise",
+   "name_zh": "怨恨消亡",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "怨恨消亡：被毁后反打——串行幸存反打无载体"
+   ],
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "enhancements",
+   "id": "000010580003",
+   "side": "attacker",
+   "detachment": "Spectacle of Spite",
+   "name_en": "Chronoshard",
+   "name_zh": "时间碎片",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "时间碎片：Fights First——先攻/攻击顺序无载体（单交换模拟）"
+   ],
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "enhancements",
+   "id": "000010574003",
+   "side": "attacker",
+   "detachment": "Realspace Raiders",
+   "name_en": "Labyrinthine Cunning",
+   "name_zh": "迷宫狡诈",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "迷宫狡诈：Pain token → CP——CP 经济无载体"
+   ],
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "enhancements",
+   "id": "000010588003",
+   "side": "attacker",
+   "detachment": "Kabalite Cartel",
+   "name_en": "Webway Awl",
+   "name_zh": "灵网锥",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "灵网锥：深入打击——预备队无载体"
+   ],
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "enhancements",
+   "id": "000009433003",
+   "side": "attacker",
+   "detachment": "Kabalite Corsairs",
+   "name_en": "Malevolent Cunning",
+   "name_zh": "恶毒狡诈",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "恶毒狡诈：战略 +1CP——CP 经济无载体"
+   ],
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "enhancements",
+   "id": "000009781003",
+   "side": "attacker",
+   "detachment": "Reaper’s Wager",
+   "name_en": "Webway Walker",
+   "name_zh": "灵网行者",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "灵网行者：深入打击 + 重骰冲锋——预备队与冲锋骰无载体"
+   ],
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "enhancements",
+   "id": "000010576003",
+   "side": "attacker",
+   "detachment": "Skysplinter Assault",
+   "name_en": "Sadistic Fulcrum",
+   "name_zh": "施虐支点",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "施虐支点：为 Transport 重骰命中——跨单位 + token 无载体"
+   ],
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "enhancements",
+   "id": "000010588004",
+   "side": "attacker",
+   "detachment": "Kabalite Cartel",
+   "name_en": "Informant Network",
+   "name_zh": "线人网络",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "线人网络：Infiltrators——部署能力无载体"
+   ],
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "enhancements",
+   "id": "000009781004",
+   "side": "target",
+   "detachment": "Reaper’s Wager",
+   "name_en": "Reaper’s Cowl",
+   "name_zh": "死神兜帽",
+   "status": "partial",
+   "effects": [
+    {
+     "phase": "save",
+     "op": "cover",
+     "params": [],
+     "source": "死神兜帽：携带者单位获 Stealth（对远程掩体收益）",
+     "condition": [
+      "phase_shooting"
+     ]
+    }
+   ],
+   "requires_toggles": [
+    "defender_bearer_leading"
+   ],
+   "not_modeled_notes_zh": [
+    "Infiltrators 不建模（部署能力）"
+   ],
+   "provenance": {
+    "current_text": "db enhancements.description id=000009781004",
+    "base_text": "Wahapedia 现文（PR12 工作单：11 版化后文本，FP 未触及或已滚入）",
+    "text_sha256": "104912d889a5b2f6517e7ba9156281e0c919c549d882a5be92c8be8e163d9e30"
+   },
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "enhancements",
+   "id": "000010580004",
+   "side": "attacker",
+   "detachment": "Spectacle of Spite",
+   "name_en": "Periapt of Torments",
+   "name_zh": "折磨护符",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "折磨护符：禁敌 Overwatch——Overwatch 无载体"
+   ],
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "enhancements",
+   "id": "000010574004",
+   "side": "attacker",
+   "detachment": "Realspace Raiders",
+   "name_en": "Eye of Spite",
+   "name_zh": "怨恨之眼",
+   "status": "partial",
+   "effects": [
+    {
+     "phase": "attacks",
+     "op": "modify",
+     "params": [
+      1
+     ],
+     "source": "怨恨之眼：近战 A +1",
+     "condition": [
+      "phase_melee"
+     ]
+    },
+    {
+     "phase": "save",
+     "op": "ap_improve",
+     "params": [
+      1
+     ],
+     "source": "怨恨之眼：近战 AP +1",
+     "condition": [
+      "phase_melee"
+     ]
+    }
+   ],
+   "requires_toggles": [
+    "bearer_leading"
+   ],
+   "not_modeled_notes_zh": [
+    "花 1 Pain token 升 +2 A/AP——token 经济分量不建模"
+   ],
+   "provenance": {
+    "current_text": "db enhancements.description id=000010574004",
+    "base_text": "Wahapedia 现文（PR12 工作单：11 版化后文本，FP 未触及或已滚入）",
+    "text_sha256": "98a63568ee01f2f5ba17d400e7f558911cfa982aa2b03f0757825b294b968779"
+   },
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "enhancements",
+   "id": "000010584004",
+   "side": "target",
+   "detachment": "Covenite Coterie",
+   "name_en": "Master Artisan",
+   "name_zh": "工匠大师",
+   "status": "partial",
+   "effects": [
+    {
+     "phase": "wound",
+     "op": "t_improve",
+     "params": [
+      1
+     ],
+     "source": "工匠大师：携带者单位 T +1"
+    }
+   ],
+   "requires_toggles": [
+    "defender_bearer_leading"
+   ],
+   "not_modeled_notes_zh": [
+    "携带者 +1 W 不建模（无 W 通道）"
+   ],
+   "provenance": {
+    "current_text": "db enhancements.description id=000010584004",
+    "base_text": "Wahapedia 现文（PR12 工作单：11 版化后文本，FP 未触及或已滚入）",
+    "text_sha256": "85bb990afb18e45696f43c27a1ba7a7eda2ca7783b4f1c609ae2865b9c29a8c3"
+   },
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "enhancements",
+   "id": "000010576004",
+   "side": "attacker",
+   "detachment": "Skysplinter Assault",
+   "name_en": "Spiteful Raider",
+   "name_zh": "怨恨劫掠者",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "怨恨劫掠者：Pain token——token 经济无载体"
+   ],
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "enhancements",
+   "id": "000010576005",
+   "side": "attacker",
+   "detachment": "Skysplinter Assault",
+   "name_en": "Nightmare Shroud",
+   "name_zh": "梦魇裹尸布",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "梦魇裹尸布：下车后禁敌 Overwatch——Overwatch 无载体"
+   ],
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "enhancements",
+   "id": "000010574005",
+   "side": "attacker",
+   "detachment": "Realspace Raiders",
+   "name_en": "Crucible of Malediction",
+   "name_zh": "诅咒坩埚",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "诅咒坩埚：战意 + 致命伤——战意与致命伤无载体"
+   ],
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "enhancements",
+   "id": "000010588005",
+   "side": "attacker",
+   "detachment": "Kabalite Cartel",
+   "name_en": "Towering Arrogance",
+   "name_zh": "高耸傲慢",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "高耸傲慢：+1 Ld/OC——Ld/OC 无载体"
+   ],
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "enhancements",
+   "id": "000010580005",
+   "side": "attacker",
+   "detachment": "Spectacle of Spite",
+   "name_en": "Morghenna’s Curse",
+   "name_zh": "莫格恩娜之咒",
+   "status": "partial",
+   "effects": [
+    {
+     "phase": "save",
+     "op": "ap_improve",
+     "params": [
+      1
+     ],
+     "source": "莫格恩娜之咒：近战 AP +1",
+     "condition": [
+      "phase_melee"
+     ]
+    }
+   ],
+   "requires_toggles": [
+    "bearer_leading"
+   ],
+   "not_modeled_notes_zh": [
+    "+1 D 不建模（无通用伤害特征值通道）"
+   ],
+   "provenance": {
+    "current_text": "db enhancements.description id=000010580005",
+    "base_text": "Wahapedia 现文（PR12 工作单：11 版化后文本，FP 未触及或已滚入）",
+    "text_sha256": "b31c8bbee1880766cfb97bd9bcaa911e59111df900779c787432894b1f85655f"
+   },
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "enhancements",
+   "id": "000010584005",
+   "side": "attacker",
+   "detachment": "Covenite Coterie",
+   "name_en": "Master Repugnomancer (Aura)",
+   "name_zh": "厌恶巫师大师",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "厌恶巫师大师：Pain token 光环——token 经济无载体"
+   ],
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "enhancements",
+   "id": "000009781005",
+   "side": "attacker",
+   "detachment": "Reaper’s Wager",
+   "name_en": "Conductor of Torment",
+   "name_zh": "折磨指挥者",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "折磨指挥者：赌局/Pain token 切换——赌局状态与 token 无载体"
+   ],
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "enhancements",
+   "id": "fp11e-dru-exhibition-e1",
+   "side": "attacker",
+   "detachment": "Exhibition of Slaughter",
+   "name_en": "Periapt of Torments",
+   "name_zh": "折磨护符",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "折磨护符：禁敌快射（snap shooting）——快射/Overwatch 目标无载体"
+   ],
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "enhancements",
+   "id": "fp11e-dru-exhibition-e2",
+   "side": "target",
+   "detachment": "Exhibition of Slaughter",
+   "name_en": "Hyperstimm Trafficker",
+   "name_zh": "超刺激贩子",
+   "status": "encoded",
+   "effects": [
+    {
+     "phase": "wound",
+     "op": "t_improve",
+     "params": [
+      1
+     ],
+     "source": "超刺激贩子：携带者单位 T +1"
+    }
+   ],
+   "requires_toggles": [
+    "defender_bearer_leading"
+   ],
+   "not_modeled_notes_zh": [],
+   "provenance": {
+    "current_text": "db enhancements.description id=fp11e-dru-exhibition-e2",
+    "base_text": "Wahapedia 现文（PR12 工作单：11 版化后文本，FP 未触及或已滚入）",
+    "text_sha256": "b073edb83255be047e0f6737d6d4b2a6bdaa41f8be5af818a3de5e4d6d8295a6"
+   },
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "enhancements",
+   "id": "fp11e-dru-agonysts-e1",
+   "side": "attacker",
+   "detachment": "Kabalite Agonysts",
+   "name_en": "Towering Arrogance",
+   "name_zh": "高耸傲慢",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "高耸傲慢：+1 Ld/OC——Ld/OC 无载体"
+   ],
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "enhancements",
+   "id": "fp11e-dru-agonysts-e2",
+   "side": "attacker",
+   "detachment": "Kabalite Agonysts",
+   "name_en": "Contempt for Rivals",
+   "name_zh": "蔑视对手",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "蔑视对手：[PRECISION]——精确=目标选择非伤害增益无载体"
+   ],
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "enhancements",
+   "id": "fp11e-dru-torment-e1",
+   "side": "target",
+   "detachment": "Tools of Torment",
+   "name_en": "Gnarlskin Experimentor",
+   "name_zh": "瘤皮实验者",
+   "status": "encoded",
+   "effects": [
+    {
+     "phase": "wound",
+     "op": "modify",
+     "params": [
+      -1
+     ],
+     "source": "瘤皮实验者：携带者单位被 S>T 攻击致伤 -1",
+     "condition": [
+      "wound_s_gt_t"
+     ]
+    }
+   ],
+   "requires_toggles": [
+    "defender_bearer_leading"
+   ],
+   "not_modeled_notes_zh": [],
+   "provenance": {
+    "current_text": "db enhancements.description id=fp11e-dru-torment-e1",
+    "base_text": "Wahapedia 现文（PR12 工作单：11 版化后文本，FP 未触及或已滚入）",
+    "text_sha256": "df75d4899dc67de1dde7bea5e9b96340db031535946373a3a2480c0a62f1f3c6"
+   },
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "enhancements",
+   "id": "fp11e-dru-torment-e2",
+   "side": "target",
+   "detachment": "Tools of Torment",
+   "name_en": "Elixir of the Corpse Courts",
+   "name_zh": "尸廷灵药",
+   "status": "encoded",
+   "effects": [
+    {
+     "phase": "save",
+     "op": "invuln",
+     "params": [
+      5
+     ],
+     "source": "尸廷灵药：CRONOS/TALOS 单位 5+ 无效保护"
+    }
+   ],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [],
+   "provenance": {
+    "current_text": "db enhancements.description id=fp11e-dru-torment-e2",
+    "base_text": "Wahapedia 现文（PR12 工作单：11 版化后文本，FP 未触及或已滚入）",
+    "text_sha256": "3543ea78103ed1589d42383b384c94eb0fdec79d46d76d574d34bc631afcbcf5"
+   },
+   "encoded_by": "manual-2026-07-19"
+  }
+ ]
+}
