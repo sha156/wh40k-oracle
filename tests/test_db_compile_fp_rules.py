@@ -387,12 +387,15 @@ class TestInserts:
         # + 死灵 18 条（PR13：Hand of the Dynasty / Skyshroud Spearhead /
         #   The Phaeron's Armoury 三全新分队各 1 规则+3 战略+2 增强）
         # + 兽人 6 条（PR14：Rollin' Deff 单一全新分队 1 规则+3 战略+2 增强）
+        # + 圣血修女 14 条（PR15：Chorus of Condemnation 1 规则+2 增强+3 战略、
+        #   Sacred Champions 1 规则+2 增强+3 战略、Sanctified Orators 1 规则+1 增强
+        #   ——三全新分队，Sanctified Orators 无战略）
         import json
         from pathlib import Path
         data = json.loads(Path("db_compile/fp_rules_patches.json").read_text(
             encoding="utf-8"))
         ins = data.get("inserts", [])
-        assert len(ins) == 156
+        assert len(ins) == 170
         ids = {p["values"]["id"] for p in ins}
         assert ids == {"fp11e-tau-aac-det", "fp11e-tau-aac-s1", "fp11e-tau-aac-s2",
                        "fp11e-tau-aac-s3", "fp11e-tau-aux-gbu",
@@ -471,7 +474,14 @@ class TestInserts:
                        "fp11e-nec-phaeron-s2", "fp11e-nec-phaeron-s3",
                        "fp11e-ork-rollin", "fp11e-ork-rollin-e1",
                        "fp11e-ork-rollin-e2", "fp11e-ork-rollin-s1",
-                       "fp11e-ork-rollin-s2", "fp11e-ork-rollin-s3"}
+                       "fp11e-ork-rollin-s2", "fp11e-ork-rollin-s3",
+                       "fp11e-sororitas-chorus", "fp11e-sororitas-chorus-e1",
+                       "fp11e-sororitas-chorus-e2", "fp11e-sororitas-chorus-s1",
+                       "fp11e-sororitas-chorus-s2", "fp11e-sororitas-chorus-s3",
+                       "fp11e-sororitas-sacred", "fp11e-sororitas-sacred-e1",
+                       "fp11e-sororitas-sacred-e2", "fp11e-sororitas-sacred-s1",
+                       "fp11e-sororitas-sacred-s2", "fp11e-sororitas-sacred-s3",
+                       "fp11e-sororitas-orators", "fp11e-sororitas-orators-e1"}
         for p in ins:
             assert p.get("fp_source")
             assert p["values"].get("id", "").startswith("fp11e-")

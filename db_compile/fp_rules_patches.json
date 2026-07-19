@@ -1,5 +1,5 @@
 {
- "_comment": "P7-PR1 钛帝国规则文本 11 版化补丁。text_patches 来自 2026-07-14 逐行 A/B 工作单（docs/superpowers/plans/2026-07-14-p7-pr1-fp-rules-worklist.md，55 行全落账：8 drifted / 3 identical / 35 not_in_fp / 9 review_needed / 5 fp_new）；name_patches 来自钛帝国十版中文codex refine 缓存逐条效果配对（43 条有源 + 11 条自译标记）。｜P7-PR5 吞世者追加（2026-07-18）：text 9（军规嗜血癫狂改+1冲锋、狂战士之怒/怒火尽泄 surge move 术语、黄铜之怒规则改核心 surge、怒火容器 p4 完整重印 5 条）；deactivations +6（怒火容器重印未收录）；inserts +13（Brazen Engines/Butchers of Khorne 两全新分队 + Scorn the Witch）；name +53（狂战士战帮/怒火容器/军规 DavidZ codex 有源配对，其余自译标记）。已滚入免补：Summoned by Slaughter / Warp Stalkers / Rapid Manifestation（Wahapedia 现文即 11 版）。｜PR5 兵牌层技能 6 条（FP p7-p8 DATASHEETS：Loping Speed 8\"、Blood Surge surge move 化、Helbrute Frenzy 重写、Scent of Blood 9\" 内判据、Chaos Rhino 8\"、Bloody Fury 重写）；已滚入免补：Exalted Eightbound Rend and Tear / Icon of Khorne×2 / Slaughterbound 武器 S10 / Defiler 整表（Wahapedia 已收）。FRAME 关键词沿 S4 裁定跳过（测距词）。｜P7-PR8 死亡守卫追加（2026-07-19）：text 9（Flyblown Host 完整重印 6 条 + 军规两处合一 + Death Approaches 9\"→8\" + Beckoning Blight 9\"→8\"）、deact 5（Flyblown重印未收录 3 战略 2 增强）、inserts 12（Contagion Engines/Paragons of Putrescence两新分队各 1 规则 3 战略 2 增强）、name 51（军规 1 + det 规则 7 + 战略 42 + 死神降临，源=老湿腐死亡守卫V1.1；工作单 docs/superpowers/plans/2026-07-19-p7-pr8-dg-worklist.md）｜P7-PR9 圣血天使追加（2026-07-19）：text 9（全兵牌技能层——Legends Black Rage×4 + 狂乱反噬 + 狂怒驱使 surge + 大叛乱幻视 + 奇迹救赎 ingress + Gleaming Pinions 8\"）、inserts 18（Legacy of Grace/Encarmine Speartip/Wrath of the Doomed 三新分队各 1 规则 3 战略 2 增强；Legacy of the Angel 同名豁免旗标expect_duplicate_name 首用）、name 49（4 codex 分队有源 + Rage-cursed 自译，源=DavidZ圣血天使V1.05；工作单 docs/superpowers/plans/2026-07-19-p7-pr9-ba-worklist.md）。零 deactivations（重印无删减）零 fp_errata",
+ "_comment": "P7-PR1 钛帝国规则文本 11 版化补丁。text_patches 来自 2026-07-14 逐行 A/B 工作单（docs/superpowers/plans/2026-07-14-p7-pr1-fp-rules-worklist.md，55 行全落账：8 drifted / 3 identical / 35 not_in_fp / 9 review_needed / 5 fp_new）；name_patches 来自钛帝国十版中文codex refine 缓存逐条效果配对（43 条有源 + 11 条自译标记）。｜P7-PR5 吞世者追加（2026-07-18）：text 9（军规嗜血癫狂改+1冲锋、狂战士之怒/怒火尽泄 surge move 术语、黄铜之怒规则改核心 surge、怒火容器 p4 完整重印 5 条）；deactivations +6（怒火容器重印未收录）；inserts +13（Brazen Engines/Butchers of Khorne 两全新分队 + Scorn the Witch）；name +53（狂战士战帮/怒火容器/军规 DavidZ codex 有源配对，其余自译标记）。已滚入免补：Summoned by Slaughter / Warp Stalkers / Rapid Manifestation（Wahapedia 现文即 11 版）。｜PR5 兵牌层技能 6 条（FP p7-p8 DATASHEETS：Loping Speed 8\"、Blood Surge surge move 化、Helbrute Frenzy 重写、Scent of Blood 9\" 内判据、Chaos Rhino 8\"、Bloody Fury 重写）；已滚入免补：Exalted Eightbound Rend and Tear / Icon of Khorne×2 / Slaughterbound 武器 S10 / Defiler 整表（Wahapedia 已收）。FRAME 关键词沿 S4 裁定跳过（测距词）。｜P7-PR8 死亡守卫追加（2026-07-19）：text 9（Flyblown Host 完整重印 6 条 + 军规两处合一 + Death Approaches 9\"→8\" + Beckoning Blight 9\"→8\"）、deact 5（Flyblown重印未收录 3 战略 2 增强）、inserts 12（Contagion Engines/Paragons of Putrescence两新分队各 1 规则 3 战略 2 增强）、name 51（军规 1 + det 规则 7 + 战略 42 + 死神降临，源=老湿腐死亡守卫V1.1；工作单 docs/superpowers/plans/2026-07-19-p7-pr8-dg-worklist.md）｜P7-PR9 圣血天使追加（2026-07-19）：text 9（全兵牌技能层——Legends Black Rage×4 + 狂乱反噬 + 狂怒驱使 surge + 大叛乱幻视 + 奇迹救赎 ingress + Gleaming Pinions 8\"）、inserts 18（Legacy of Grace/Encarmine Speartip/Wrath of the Doomed 三新分队各 1 规则 3 战略 2 增强；Legacy of the Angel 同名豁免旗标expect_duplicate_name 首用）、name 49（4 codex 分队有源 + Rage-cursed 自译，源=DavidZ圣血天使V1.05；工作单 docs/superpowers/plans/2026-07-19-p7-pr9-ba-worklist.md）。零 deactivations（重印无删减）零 fp_errata｜P7-PR15 圣血修女追加（2026-07-20）：text 1（Penitent Host / Devout Fanaticism EFFECT → surge move）；inserts +14（3 新分队 Chorus of Condemnation / Sacred Champions / Sanctified Orators：3 规则 + 5 增强 + 6 战略，id 前缀 fp11e-sororitas-，cost 置空）。免补：Rules Updates 其余（Shield of Aversion/Rites of Fire/Fervent Purgation/Suffering&Sacrifice/Divine Intervention/Desperate for Redemption/Blazing Ire&Cleansing Flames 2CP/Acts of Faith 军规）Wahapedia 已滚入逐字一致。观察项：FRAME 关键字×4、8 datasheet 技能改（Leader→Support 等）、3+5 新 datasheet/Legends 单位——datasheet 层不落本 PR。",
  "text_patches": [
   {
    "table": "detachments",
@@ -980,6 +980,16 @@
    "to_text": "Each time a Mek, Orks Walker or Grots Vehicle unit from your army is selected to shoot or fight, roll one D6. Until the end of the phase, weapons equipped by models in that unit have the corresponding ability shown in the table below.<br><div class=\"BreakInsideAvoid\"  style=\"\"\"><table width=\"0\" border=\"0\" bordercolor=\"#888\" cellpadding=\"4\" cellspacing=\"0\" style=\"border-collapse:collapse;border-width:0px\"><tbody><tr><td><table class=\" customTable tablefont\" border=\"1\" bordercolor=\"#888\" cellpadding=\"4\" style=\"border-collapse:collapse;border-color:#888888;border-width:0px\"><tbody><tr><td style=\"border-width:1px 1px 1px 1px;border-style:none none solid none;background-color:rgb(70,91,24);color:rgb(254,254,254);text-align:center;vertical-align:middle;font-size:20px;width:160px;height:0px;\"><b>D6</b></td><td style=\"border-width:1px 1px 1px 1px;border-style:none none solid none;background-color:rgb(70,91,24);color:rgb(254,254,254);text-align:center;vertical-align:middle;font-size:20px;width:320px;height:0px;\"><b>BUTTON EFFECT</b></td></tr><tr><td style=\"border-width:1px 1px 1px 1px;border-style:none none dotted none;text-align:center;vertical-align:middle;font-size:18px;width:160px;height:0px;\"><img src=\"/wh40k10ed/img/d1.png\"> <img src=\"/wh40k10ed/img/d2.png\"></td><td style=\"border-width:1px 1px 1px 1px;border-style:none none dotted none;text-align:center;vertical-align:middle;font-size:18px;width:320px;height:0px;\"><b><span class=\"kwb2 bluefont\"><span class=\"tooltip00034\" data-tooltip-content=\"#tooltip_content00034\"><span class=\"tt kwbu\">[SUSTAINED</span> <span class=\"tt kwbu\">HITS</span> <span class=\"tt kwbu\">1]</span></span></span> ability.</b></td></tr><tr><td style=\"border-width:1px 1px 1px 1px;border-style:none none dotted none;text-align:center;vertical-align:middle;font-size:18px;width:160px;height:0px;\"><img src=\"/wh40k10ed/img/d3.png\"> <img src=\"/wh40k10ed/img/d4.png\"></td><td style=\"border-width:1px 1px 1px 1px;border-style:none none dotted none;text-align:center;vertical-align:middle;font-size:18px;width:320px;height:0px;\"><b><span class=\"kwb2 bluefont\"><span class=\"tooltip00035\" data-tooltip-content=\"#tooltip_content00035\"><span class=\"tt kwbu\">[LETHAL</span> <span class=\"tt kwbu\">HITS]</span></span></span> ability.</b></td></tr><tr><td style=\"border-width:1px 1px 1px 1px;border-style:none none dotted none;text-align:center;vertical-align:middle;font-size:18px;width:160px;height:0px;\"><img src=\"/wh40k10ed/img/d5.png\"> <img src=\"/wh40k10ed/img/d6.png\"></td><td style=\"border-width:1px 1px 1px 1px;border-style:none none dotted none;text-align:center;vertical-align:middle;font-size:18px;width:320px;height:0px;\"><b>Each time an attack is made with this weapon, on a <span class=\"tooltip00008\" data-tooltip-content=\"#tooltip_content00008\"><span class=\"tt kwbu\">Critical</span> <span class=\"tt kwbu\">Wound</span></span>, improve the Armour Penetration characteristic of that attack by 2.</b></td></tr></tbody></table></td></tr></tbody></table></div><br>Alternatively, when such a unit is selected to shoot or fight, you can select one of the abilities above instead of rolling the D6. If you do, until the end of the phase, weapons equipped by models in that unit have the [HAZARDOUS] ability as well.<br><br>If a weapon equipped by a model from you army has the [HAZARDOUS] ability from multiple sources, each time you take a Hazardous test for that weapon, it is failed on a roll of 1-3.",
    "fp_source": "Faction Pack Orks page_023.md（Try Dat Button 末段多来源 HAZARDOUS 失败 1或2→1-3）",
    "synthesis": "多来源 [HAZARDOUS] 危险测试失败：1或2 → 1-3（精确替换保留 HTML 表格）"
+  },
+  {
+   "table": "stratagems",
+   "column": "text_zh",
+   "id": "000009030007",
+   "name_en": "DEVOUT FANATICISM",
+   "from_text": "<b>WHEN:</b> Your opponent’s Shooting phase, just after an enemy unit has shot.<br><br><b>TARGET:</b> One PENITENT unit from your army that was selected as the target as one or more of the attacking unit’s attacks.<br><br><b>EFFECT:</b> Roll one D6: your unit can be moved a distance in inches up to the result, but it must end that move as close as possible to the closest enemy unit (excluding <span class=\"kwb\">AIRCRAFT</span>). When doing so, models in your unit can be moved within Engagement Range of enemy units.",
+   "to_text": "<b>WHEN:</b> Your opponent’s Shooting phase, just after an enemy unit has shot.<br><br><b>TARGET:</b> One PENITENT unit from your army that was selected as the target as one or more of the attacking unit’s attacks.<br><br><b>EFFECT:</b> Your unit can make a surge move of up to D6\".",
+   "fp_source": "Faction Pack Adepta Sororitas page_013.md（Rules Updates：Penitent Host / Devout Fanaticism When&Effect）",
+   "synthesis": "EFFECT 整改：旧「Roll one D6 移动至最近敌」→ 11 版「surge move up to D6\"」；WHEN/TARGET 不动（TARGET 保留库现拼写 'as one or more'）"
   }
  ],
  "name_patches": [
@@ -5633,6 +5643,193 @@
     "cp_cost": "1",
     "phase": "Fight phase",
     "text_zh": "<b>WHEN:</b> Your Fight phase, when a friendly <span class=\"kwb\">WAGON</span> unit that made a charge move this turn is selected to fight.<br><br><b>TARGET:</b> That <span class=\"kwb\">WAGON</span> unit.<br><br><b>EFFECT:</b> Your unit’s melee attacks have [CLEAVE 1]."
+   }
+  },
+  {
+   "table": "detachments",
+   "fp_source": "Faction Pack Adepta Sororitas page_002.md（11 版新分队，Wahapedia 无源）",
+   "values": {
+    "id": "fp11e-sororitas-chorus",
+    "faction": "AS",
+    "name_zh": "天使裁决",
+    "name_en": "Angelic Judgement",
+    "rule_text": "Friendly <span class=\"kwb\">ADEPTA</span> <span class=\"kwb\">SORORITAS</span> <span class=\"kwb\">INFANTRY</span> <span class=\"kwb\">FLY</span> units have the following ability:<br><br><b>Condemnatory Psalms:</b> In your Shooting phase, this unit can select one visible enemy unit within 12\". That enemy unit is condemned:<br><ul><li>While a unit is condemned, that unit has +3\" detection range.</li></ul>"
+   }
+  },
+  {
+   "table": "enhancements",
+   "fp_source": "Faction Pack Adepta Sororitas page_002.md（11 版新分队，Wahapedia 无源）",
+   "values": {
+    "id": "fp11e-sororitas-chorus-e1",
+    "faction_id": "AS",
+    "detachment_id": "fp11e-sororitas-chorus",
+    "detachment_name": "Chorus of Condemnation",
+    "name": "Clarion of Urgency",
+    "cost": null,
+    "legend": "点数未知：FP 不含点数，MFM 缓存无增强数据（诚实置空，勿猜）",
+    "description": "<span class=\"kwb\">CANONESS</span> <span class=\"kwb\">WITH</span> <span class=\"kwb\">JUMP</span> <span class=\"kwb\">PACK</span> model only. At the end of your opponent’s Fight phase, if this unit is unengaged, you can place this unit in Strategic Reserves."
+   }
+  },
+  {
+   "table": "enhancements",
+   "fp_source": "Faction Pack Adepta Sororitas page_002.md（11 版新分队，Wahapedia 无源）",
+   "values": {
+    "id": "fp11e-sororitas-chorus-e2",
+    "faction_id": "AS",
+    "detachment_id": "fp11e-sororitas-chorus",
+    "detachment_name": "Chorus of Condemnation",
+    "name": "Symphonic Payload Upgrade",
+    "cost": null,
+    "legend": "点数未知：FP 不含点数，MFM 缓存无增强数据（诚实置空，勿猜）",
+    "description": "<span class=\"kwb\">EXORCIST</span> unit only. This unit can re-roll rolls to determine the A of a weapon."
+   }
+  },
+  {
+   "table": "stratagems",
+   "fp_source": "Faction Pack Adepta Sororitas page_002.md（11 版新分队，Wahapedia 无源）",
+   "values": {
+    "id": "fp11e-sororitas-chorus-s1",
+    "faction": "AS",
+    "detachment": "Chorus of Condemnation",
+    "name_zh": "鼓舞战颂",
+    "name_en": "Inspirational Battle Canticles",
+    "cp_cost": "1",
+    "phase": "Command phase",
+    "text_zh": "<b>WHEN:</b> Start of the Command phase.<br><br><b>TARGET:</b> One friendly <span class=\"kwb\">ADEPTA</span> <span class=\"kwb\">SORORITAS</span> <span class=\"kwb\">INFANTRY</span> <span class=\"kwb\">FLY</span> unit or one friendly <span class=\"kwb\">EXORCIST</span> unit.<br><br><b>EFFECT:</b> Select one friendly battle-shocked <span class=\"kwb\">ADEPTA</span> <span class=\"kwb\">SORORITAS</span> unit within 6\" of your unit. That unit is no longer battle-shocked."
+   }
+  },
+  {
+   "table": "stratagems",
+   "fp_source": "Faction Pack Adepta Sororitas page_002.md（11 版新分队，Wahapedia 无源）",
+   "values": {
+    "id": "fp11e-sororitas-chorus-s2",
+    "faction": "AS",
+    "detachment": "Chorus of Condemnation",
+    "name_zh": "谐鸣驱魔",
+    "name_en": "Harmonised Exorcism",
+    "cp_cost": "1",
+    "phase": "Shooting phase",
+    "text_zh": "<b>WHEN:</b> Your Shooting phase, when a friendly <span class=\"kwb\">EXORCIST</span> unit is selected to shoot.<br><br><b>TARGET:</b> That <span class=\"kwb\">EXORCIST</span> unit.<br><br><b>EFFECT:</b> Select one unit visible to and within 9\" of a friendly <span class=\"kwb\">ADEPTA</span> <span class=\"kwb\">SORORITAS</span> <span class=\"kwb\">INFANTRY</span> <span class=\"kwb\">FLY</span> unit. Your unit’s ranged attacks that target that unit have +1 to Hit rolls."
+   }
+  },
+  {
+   "table": "stratagems",
+   "fp_source": "Faction Pack Adepta Sororitas page_002.md（11 版新分队，Wahapedia 无源）",
+   "values": {
+    "id": "fp11e-sororitas-chorus-s3",
+    "faction": "AS",
+    "detachment": "Chorus of Condemnation",
+    "name_zh": "毁灭余响",
+    "name_en": "Devastating Reprise",
+    "cp_cost": "1",
+    "phase": "Shooting phase",
+    "text_zh": "<b>WHEN:</b> Your Shooting phase, when a friendly <span class=\"kwb\">EXORCIST</span> unit has shot.<br><br><b>TARGET:</b> One friendly <span class=\"kwb\">ADEPTA</span> <span class=\"kwb\">SORORITAS</span> <span class=\"kwb\">INFANTRY</span> <span class=\"kwb\">FLY</span> unit.<br><br><b>EFFECT:</b> Select one enemy unit (excluding <span class=\"kwb\">MONSTER</span>/<span class=\"kwb\">VEHICLE</span> units) hit by those ranged attacks. Your unit’s ranged attacks that target that unit have [DEVASTATING WOUNDS]."
+   }
+  },
+  {
+   "table": "detachments",
+   "fp_source": "Faction Pack Adepta Sororitas page_003.md（11 版新分队，Wahapedia 无源）",
+   "values": {
+    "id": "fp11e-sororitas-sacred",
+    "faction": "AS",
+    "name_zh": "神圣征途",
+    "name_en": "Holy Quest",
+    "rule_text": "Friendly <span class=\"kwb\">CELESTIAN</span> <span class=\"kwb\">SACRESANTS</span> units’ attacks have +1 BS and WS.<br><br>This detachment has the REVEREND tag and cannot be taken with another REVEREND detachment."
+   }
+  },
+  {
+   "table": "enhancements",
+   "fp_source": "Faction Pack Adepta Sororitas page_003.md（11 版新分队，Wahapedia 无源）",
+   "values": {
+    "id": "fp11e-sororitas-sacred-e1",
+    "faction_id": "AS",
+    "detachment_id": "fp11e-sororitas-sacred",
+    "detachment_name": "Sacred Champions",
+    "name": "Writ of Compunction Upgrade",
+    "cost": null,
+    "legend": "点数未知：FP 不含点数，MFM 缓存无增强数据（诚实置空，勿猜）",
+    "description": "<span class=\"kwb\">CELESTIAN</span> <span class=\"kwb\">SACRESANTS</span> unit only. This unit has +1 OC."
+   }
+  },
+  {
+   "table": "enhancements",
+   "fp_source": "Faction Pack Adepta Sororitas page_003.md（11 版新分队，Wahapedia 无源）",
+   "values": {
+    "id": "fp11e-sororitas-sacred-e2",
+    "faction_id": "AS",
+    "detachment_id": "fp11e-sororitas-sacred",
+    "detachment_name": "Sacred Champions",
+    "name": "Perfervid Haste",
+    "cost": null,
+    "legend": "点数未知：FP 不含点数，MFM 缓存无增强数据（诚实置空，勿猜）",
+    "description": "<span class=\"kwb\">ADEPTA</span> <span class=\"kwb\">SORORITAS</span> model only. This unit has +1\" M."
+   }
+  },
+  {
+   "table": "stratagems",
+   "fp_source": "Faction Pack Adepta Sororitas page_003.md（11 版新分队，Wahapedia 无源）",
+   "values": {
+    "id": "fp11e-sororitas-sacred-s1",
+    "faction": "AS",
+    "detachment": "Sacred Champions",
+    "name_zh": "圣洁打击",
+    "name_en": "Sanctified Blows",
+    "cp_cost": "1",
+    "phase": "Fight phase",
+    "text_zh": "<b>WHEN:</b> Fight phase, when a friendly <span class=\"kwb\">CELESTIAN</span> <span class=\"kwb\">SACRESANTS</span> unit is selected to fight.<br><br><b>TARGET:</b> That <span class=\"kwb\">CELESTIAN</span> <span class=\"kwb\">SACRESANTS</span> unit.<br><br><b>EFFECT:</b> Your unit’s melee attacks have +1 A and S."
+   }
+  },
+  {
+   "table": "stratagems",
+   "fp_source": "Faction Pack Adepta Sororitas page_003.md（11 版新分队，Wahapedia 无源）",
+   "values": {
+    "id": "fp11e-sororitas-sacred-s2",
+    "faction": "AS",
+    "detachment": "Sacred Champions",
+    "name_zh": "虔信坚忍",
+    "name_en": "Faithful Fortitude",
+    "cp_cost": "1",
+    "phase": "Any phase",
+    "text_zh": "<b>WHEN:</b> Any phase, when a friendly <span class=\"kwb\">CELESTIAN</span> <span class=\"kwb\">SACRESANTS</span> unit suffers a mortal wound.<br><br><b>TARGET:</b> That <span class=\"kwb\">CELESTIAN</span> <span class=\"kwb\">SACRESANTS</span> unit.<br><br><b>EFFECT:</b> Your unit has the Feel No Pain 5+ ability against mortal wounds until the end of the phase."
+   }
+  },
+  {
+   "table": "stratagems",
+   "fp_source": "Faction Pack Adepta Sororitas page_003.md（11 版新分队，Wahapedia 无源）",
+   "values": {
+    "id": "fp11e-sororitas-sacred-s3",
+    "faction": "AS",
+    "detachment": "Sacred Champions",
+    "name_zh": "不屈决意",
+    "name_en": "Unflinching Determination",
+    "cp_cost": "1",
+    "phase": "Movement phase",
+    "text_zh": "<b>WHEN:</b> Your Movement phase, when a friendly <span class=\"kwb\">CELESTIAN</span> <span class=\"kwb\">SACRESANTS</span> unit is selected to make an Advance or Fall Back move.<br><br><b>TARGET:</b> That <span class=\"kwb\">CELESTIAN</span> <span class=\"kwb\">SACRESANTS</span> unit.<br><br><b>EFFECT:</b> Until the end of the turn, your unit’s ranged attacks have [ASSAULT], and that move does not prevent your unit from being eligible to shoot or declare a charge."
+   }
+  },
+  {
+   "table": "detachments",
+   "fp_source": "Faction Pack Adepta Sororitas page_004.md（11 版新分队，Wahapedia 无源）",
+   "values": {
+    "id": "fp11e-sororitas-orators",
+    "faction": "AS",
+    "name_zh": "战斗圣咏",
+    "name_en": "Hymns of Battle",
+    "rule_text": "<ul><li>Enhancements selected from this detachment do not count towards the total number of enhancements in your army.</li><li>Friendly <span class=\"kwb\">ADEPTA</span> <span class=\"kwb\">SORORITAS</span> <span class=\"kwb\">CHARACTER</span> units have +1 Ld.</li></ul>"
+   }
+  },
+  {
+   "table": "enhancements",
+   "fp_source": "Faction Pack Adepta Sororitas page_004.md（11 版新分队，Wahapedia 无源）",
+   "values": {
+    "id": "fp11e-sororitas-orators-e1",
+    "faction_id": "AS",
+    "detachment_id": "fp11e-sororitas-orators",
+    "detachment_name": "Sanctified Orators",
+    "name": "Hagiomnifex Upgrade",
+    "cost": null,
+    "legend": "点数未知：FP 不含点数，MFM 缓存无增强数据（诚实置空，勿猜）",
+    "description": "<span class=\"kwb\">ADEPTA</span> <span class=\"kwb\">SORORITAS</span> <span class=\"kwb\">CHARACTER</span> unit only (excluding <span class=\"kwb\">PENITENT</span> units). (Once per turn, per unit) At the start of a phase, you can use this ability. If you do, select one of the abilities below:<br><ul><li><b>Rite of Revelation:</b> While this unit is shooting, enemy units have +6\" detection range.</li><li><b>Sermon of Intolerance:</b> This unit’s Battle-shock rolls automatically succeed.</li><li><b>Catechism of Raging Fervour:</b> This unit has +1\" M.</li><li><b>Psalm of Righteous Smiting:</b> This unit’s attacks have +1 S.</li><li><b>Chorus of Repudiation:</b> Attacks that target this unit with a S greater than this unit’s T have -1 to Wound rolls.</li></ul>"
    }
   }
  ]
