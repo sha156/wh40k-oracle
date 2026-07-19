@@ -566,6 +566,42 @@
     "Aircraft"
    ],
    "src": "Faction Pack Emperor S Children page_009.md（Heldrake Keywords: Remove 'AIRCRAFT'）"
+  },
+  {
+   "unit_id": "000001037",
+   "faction": "DG",
+   "unit": "Death Guard Chaos Lord",
+   "add_faction": [
+    "Death Guard"
+   ],
+   "src": "Faction Pack Death Guard page_010.md（Faction Keywords: Death Guard；库 faction_keywords 空缺）"
+  },
+  {
+   "unit_id": "000001038",
+   "faction": "DG",
+   "unit": "Death Guard Chaos Lord In Terminator Armour",
+   "add_faction": [
+    "Death Guard"
+   ],
+   "src": "Faction Pack Death Guard page_012.md（同上）"
+  },
+  {
+   "unit_id": "000001041",
+   "faction": "DG",
+   "unit": "Death Guard Sorcerer In Terminator Armour",
+   "add_faction": [
+    "Death Guard"
+   ],
+   "src": "Faction Pack Death Guard page_016.md（同上）"
+  },
+  {
+   "unit_id": "000001043",
+   "faction": "DG",
+   "unit": "Death Guard Cultists",
+   "add_faction": [
+    "Death Guard"
+   ],
+   "src": "Faction Pack Death Guard page_014.md（同上）"
   }
  ]
 }

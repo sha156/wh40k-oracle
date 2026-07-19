@@ -118,6 +118,8 @@ def _options_from_inputs(st) -> Dict[str, Any]:
         "omen_instrument": st.session_state.get("sim_omen_instr", False),
         "omen_momentous_brutality": st.session_state.get("sim_omen_brutality", False),
         "advanced_or_fell_back": st.session_state.get("sim_adv_fb", False),
+        "target_afflicted": st.session_state.get("sim_afflicted", False),
+        "plague_rattlejoint": st.session_state.get("sim_plague_rj", False),
         # P7-PR4 守方向
         "defender_hidden": st.session_state.get("sim_def_hidden", False),
         "defender_bearer_leading": st.session_state.get("sim_def_bearer", False),
@@ -271,6 +273,13 @@ def render_simulator_panel(st) -> None:
                                   help="指引圣兆：近战 A+2")
             cols_dsl8[2].checkbox("本回合已加速/撤退", key="sim_adv_fb",
                                   help="EC 狂乱专注（+1 S）等「加速/撤退回合」条款的生效前提")
+            cols_dsl9 = st.columns(3)
+            cols_dsl9[0].checkbox("目标被感染（Afflicted）", key="sim_afflicted",
+                                  help="DG 纳垢赐福：假设目标处于被感染状态（T-1 等）；"
+                                       "近战几乎恒成立，射击自查传染范围/感染来源")
+            cols_dsl9[1].checkbox("瘟疫·骨疽疟", key="sim_plague_rj",
+                                  help="军队所选瘟疫为骨疽疟（Afflicted 目标 Sv 恶化 1，"
+                                       "护甲面以 AP+1 等价编码）；与「目标被感染」同开生效")
             cols_dsl5 = st.columns(3)
             cols_dsl5[0].text_input("守方分队", key="sim_def_detachment",
                                     help="放行守方分队的防守向条目"

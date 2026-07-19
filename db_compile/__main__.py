@@ -225,9 +225,14 @@ def main() -> None:
                 print(f"    {ch['faction']:4} {ch['unit'][:28]:28} {ch['weapon'][:20]:20} "
                       f"{ch['field']:5} {ch['from']!r} → {ch['to']!r}")
         if rep["kw_changes"]:
-            print("\n  关键词已删：")
+            print("\n  关键词已改动：")
             for ch in rep["kw_changes"]:
-                print(f"    {ch['faction']:4} {ch['unit'][:32]:32} -{ch['removed']}")
+                parts = []
+                if ch.get("removed"):
+                    parts.append(f"-{ch['removed']}")
+                if ch.get("added_faction"):
+                    parts.append(f"+faction{ch['added_faction']}")
+                print(f"    {ch['faction']:4} {ch['unit'][:32]:32} {' '.join(parts)}")
         for tag, key in (("属性", "stat_mismatch"), ("武器", "weapon_mismatch")):
             if rep[key]:
                 print(f"\n  ⚠️ {tag}让路未覆盖（库现值既非 from 也非 to）：")

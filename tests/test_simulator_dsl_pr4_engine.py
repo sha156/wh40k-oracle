@@ -343,6 +343,7 @@ class TestFourWayToggleParity:
             "sim_disembarked": True, "sim_disembarked_lr": True,
             "sim_vow_aac": True, "sim_omen_instr": True, "sim_omen_brutality": True,
             "sim_adv_fb": True,
+            "sim_afflicted": True, "sim_plague_rj": True,
             "sim_def_hidden": True, "sim_def_bearer": True,
             "sim_detachment": "Kauyon", "sim_stratagems": "X",
             "sim_enhancements": "Y", "sim_def_detachment": "Kroot Hunting Pack",

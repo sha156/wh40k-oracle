@@ -181,6 +181,14 @@ def main(argv: Optional[List[str]] = None) -> int:
     p.add_argument("--advanced-or-fell-back", action="store_true",
                    dest="advanced_or_fell_back",
                    help="假设本回合已加速或撤退（EC 狂乱专注 +1 S 等条款的生效前提）")
+    p.add_argument("--target-afflicted", action="store_true",
+                   dest="target_afflicted",
+                   help="假设目标处于被感染（Afflicted）状态（DG 纳垢赐福 T-1 等；"
+                        "近战几乎恒成立，射击自查传染范围/感染来源）")
+    p.add_argument("--plague-rattlejoint", action="store_true",
+                   dest="plague_rattlejoint",
+                   help="军队所选瘟疫为骨疽疟（Rattlejoint Ague：Afflicted 目标 Sv "
+                        "恶化 1；与 target_afflicted 同开生效）")
     p.add_argument("--defender-detachment", dest="defender_detachment",
                    help="守方所属分队名：放行守方分队的防守向 DSL 条目（P7-PR4）")
     p.add_argument("--defender-stratagem", action="append", dest="defender_stratagems",
@@ -263,6 +271,8 @@ def main(argv: Optional[List[str]] = None) -> int:
         "omen_instrument": args.omen_instrument,
         "omen_momentous_brutality": args.omen_momentous_brutality,
         "advanced_or_fell_back": args.advanced_or_fell_back,
+        "target_afflicted": args.target_afflicted,
+        "plague_rattlejoint": args.plague_rattlejoint,
         "defender_detachment": args.defender_detachment,
         "defender_stratagems": args.defender_stratagems,
         "defender_enhancements": args.defender_enhancements,

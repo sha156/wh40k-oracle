@@ -237,3 +237,60 @@ class TestKeywordPatch:
         rep = apply_fp_errata(db, self._patch(remove=[]))
         assert rep["kw_applied"] == 0
         assert len(rep["kw_invalid"]) == 1
+
+
+class TestKeywordAddFaction:
+    """P7-PR8：keyword_patches 扩 add_faction（DG 4 兵牌 faction_keywords 补缺）。"""
+
+    def _db(self, tmp_path, faction_keywords):
+        db = tmp_path / "t.sqlite"
+        conn = _db_with([("u1", "DG", "Death Guard Cultists", '6"')])
+        conn.execute(
+            "UPDATE units SET keywords_json = ? WHERE id = 'u1'",
+            (json.dumps({"keywords": ["Infantry", "Chaos"],
+                         "faction_keywords": faction_keywords}),))
+        conn.commit()
+        conn.execute("VACUUM INTO ?", (str(db),)); conn.close()
+        return db
+
+    def _patch(self, **over):
+        p = {"unit_id": "u1", "faction": "DG", "unit": "Death Guard Cultists",
+             "add_faction": ["Death Guard"], "src": "page_014.md"}
+        p.update(over)
+        return {"keyword_patches": [p]}
+
+    def test_fills_empty_faction_keywords(self, tmp_path):
+        db = self._db(tmp_path, [])
+        rep = apply_fp_errata(db, self._patch())
+        assert rep["kw_applied"] == 1
+        assert rep["kw_changes"][0]["added_faction"] == ["Death Guard"]
+        kw = json.loads(sqlite3.connect(db).execute(
+            "SELECT keywords_json FROM units WHERE id='u1'").fetchone()[0])
+        assert kw["faction_keywords"] == ["Death Guard"]
+        assert kw["keywords"] == ["Infantry", "Chaos"]      # 主关键词列表不动
+
+    def test_idempotent_case_insensitive_when_present(self, tmp_path):
+        db = self._db(tmp_path, ["DEATH GUARD"])
+        rep = apply_fp_errata(db, self._patch())
+        assert rep["kw_applied"] == 0
+        assert rep["kw_already"] == 1
+
+    def test_appends_without_overwriting_existing(self, tmp_path):
+        db = self._db(tmp_path, ["Chaos Undivided"])
+        rep = apply_fp_errata(db, self._patch())
+        assert rep["kw_applied"] == 1
+        kw = json.loads(sqlite3.connect(db).execute(
+            "SELECT keywords_json FROM units WHERE id='u1'").fetchone()[0])
+        assert kw["faction_keywords"] == ["Chaos Undivided", "Death Guard"]
+
+    def test_missing_unit_skipped(self, tmp_path):
+        db = self._db(tmp_path, [])
+        rep = apply_fp_errata(db, self._patch(unit_id="nope"))
+        assert rep["kw_applied"] == 0
+        assert len(rep["kw_skipped"]) == 1
+
+    def test_neither_remove_nor_add_invalid(self, tmp_path):
+        db = self._db(tmp_path, [])
+        rep = apply_fp_errata(db, self._patch(add_faction=[]))
+        assert rep["kw_applied"] == 0
+        assert len(rep["kw_invalid"]) == 1

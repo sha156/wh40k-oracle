@@ -68,6 +68,13 @@ ATTACKER_TOGGLES = {
     # P7-PR7·帝皇之子：假设本回合已加速或撤退（Frantic Focus "advance/fall-back
     # move 回合攻击 +1 S"——纯注入门，引擎无移动态字段）
     "advanced_or_fell_back": False,
+    # P7-PR8·死亡守卫：假设目标处于被感染（Afflicted）状态——承载一切感染来源
+    # （传染范围内/毒雾轰炸/血锈倾盆/定点感染等，近战几乎恒成立、射击自查距离）；
+    # 军规 T-1 与骨疽疟等瘟疫效果全部挂此门（纯注入门）
+    "target_afflicted": False,
+    # P7-PR8·纳垢赐福瘟疫三选一中唯一可建模项：骨疽疟（Rattlejoint Ague，
+    # Afflicted 目标 Sv 恶化 1）——开=军队所选瘟疫为骨疽疟（条件 tag 读 Stance）
+    "plague_rattlejoint": True,
 }
 # target 侧（防守向条目 requires_toggles 用；不进 Stance——守方效果自带 condition）
 TARGET_TOGGLES = {
@@ -131,6 +138,7 @@ class DslEntry:
 _INT_PARAM_OPS = frozenset({
     ("hit", "modify"), ("hit", "bs_improve"), ("hit", "crit_threshold"),
     ("wound", "modify"), ("wound", "crit_threshold"), ("wound", "s_improve"),
+    ("wound", "t_worsen"), ("wound", "t_improve"),
     ("attacks", "blast"),
     ("fnp", "fnp"), ("damage", "damage_reduction"),
     ("save", "ap_improve"), ("save", "invuln"), ("save", "sv_improve"),

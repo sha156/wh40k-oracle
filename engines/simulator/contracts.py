@@ -143,6 +143,10 @@ class Stance:
                                          # 时 [DEVASTATING WOUNDS]（once per battle 假设本次
                                          # 近战已使用；圣兆三选由玩家自行保证）
     omen_momentous_brutality: bool = False  # P7-PR6·指引圣兆「凶暴神视」：近战 A+2
+    plague_rattlejoint: bool = False     # P7-PR8·纳垢赐福「骨疽疟」：军队所选瘟疫为
+                                         # Rattlejoint Ague（Afflicted 目标 Sv 恶化 1——
+                                         # 以 AP 特征值改善 1 编码，护甲面数学等价、
+                                         # 特保不受影响；每场只选一疫由玩家自行保证）
 
 
 @dataclass(frozen=True)

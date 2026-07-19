@@ -59,6 +59,9 @@ KNOWN_CONDITION_TAGS = frozenset({
     "omen_instrument_vs_character",                 # P7-PR6·圣兆「神皇之器」：近战 × 圣兆开 ×
                                                     # 目标 CHARACTER → [DEVASTATING WOUNDS]
     "omen_momentous_brutality",                     # P7-PR6·圣兆「凶暴神视」：近战 × 圣兆开
+    "plague_rattlejoint",                           # P7-PR8·纳垢赐福「骨疽疟」：军队所选瘟疫
+                                                    # 为 Rattlejoint（Afflicted 目标 Sv 恶化 1
+                                                    # → AP 特征值改善 1 编码，护甲面等价）
 })
 
 
@@ -145,6 +148,8 @@ def _cond_true(condition: Tuple, stance: Stance, target: TargetProfile) -> bool:
                 and "character" in target.keywords)
     if tag == "omen_momentous_brutality":        # P7-PR6·圣兆「凶暴神视」
         return stance.phase == "melee" and stance.omen_momentous_brutality
+    if tag == "plague_rattlejoint":              # P7-PR8·纳垢赐福「骨疽疟」（所选瘟疫开关）
+        return stance.plague_rattlejoint
     # P7 加固（评审 F2）：未知 tag 静默返回 False = 效果静默失效（攻方侧零披露），
     # 是 CLAUDE.md 明令的静默降级缝——改为 raise，让 DSL 录入笔误在测试期就炸出来。
     raise ValueError(f"未知 Effect condition tag: {tag!r}（来源条件 {condition!r}）")
@@ -190,6 +195,14 @@ class _WeaponParams:
                                    # S 改善叠加越过 T 时高估）
     wound_mod_s_gt_t: int = 0      # P7-PR6：仅当最终 S>T 生效的致伤修正分量（守方向
                                    # Purge and Sanctify 被伤-1）
+    t_worsen: int = 0              # P7-PR8：攻方「目标 T 特征值恶化」累计（纳垢赐福
+                                   # Afflicted T-1）。特征值≠骰修正：改 S vs T 查表输入
+                                   # 本身——T-1 与 S+1 在 2T 边界不等价（S6 打 T4：T-1
+                                   # 后 6≥2×3 升 2+，S+1 仍 3+），必须真 T 通道；
+                                   # 下限钳 T≥1（核心规则特征值不低于 1）
+    t_improve: int = 0             # P7-PR8：守方「T 特征值改善」累计（GROTESQUE
+                                   # FORTITUDE +2 T / Talisman of Burgeoning +1 T）——
+                                   # 与 t_worsen 同一 t_final 净算
 
 
 def _gather_params(w: WeaponProfile, stance: Stance, target: TargetProfile) -> _WeaponParams:
@@ -256,6 +269,10 @@ def _gather_params(w: WeaponProfile, stance: Stance, target: TargetProfile) -> _
                 # 特征值改善≠致伤骰修正：改 S vs T 查表输入本身——S4→S5 打 T7 仍 5+，
                 # 而致伤骰 +1 会错升成 4+；两通道禁止互相折算
                 p.s_improve += int(e.params[0])
+            elif e.op == "t_worsen" and ok:
+                # P7-PR8：纳垢赐福「subtract 1 from the Toughness characteristic」——
+                # 目标 T 特征值恶化，与 s_improve 同为查表输入修正（t_final 净算）
+                p.t_worsen += int(e.params[0])
         elif e.phase == "damage":
             if e.op == "modify" and ok:
                 p.melta_expr = e.params[0]        # DiceExpr（melta）
@@ -319,6 +336,11 @@ def _gather_params(w: WeaponProfile, stance: Stance, target: TargetProfile) -> _
             # （EC 恶孽甲胄/占有狂热等）——参数负值=恶化攻方 AP，并入攻方
             # ap_improve 同一特征值累计（AP 存负值，w.ap - p.ap_improve 结算）
             p.ap_improve += int(e.params[0])
+        elif e.phase == "wound" and e.op == "t_improve":
+            # P7-PR8 守方 DSL："add 2 to the Toughness characteristic"
+            # （GROTESQUE FORTITUDE 等）——与攻方 t_worsen 在 t_final 净算，
+            # 下限钳 T≥1 由 _resolve_weapon 承担
+            p.t_improve += int(e.params[0])
     # ── Benefit of Cover（11版 13.08）：掩体收益 = 恶化该次攻击的 BS 1 点（射击专属），
     #   十版"护甲保存骰+1、且 AP0 对 3+ 甲无效"整体作废——掩体从保存侧挪到命中侧。
     #   P7 起折进 **BS 特征值通道 bs_neg**（S7 曾折 hit_neg，与 13.08 "worsen the
@@ -361,7 +383,7 @@ ATTACKER_CONSUMED = frozenset({
     ("hit", "indirect_fixed"), ("hit", "crit_threshold"), ("hit", "ignore_hit_mods"),
     ("hit", "modify"), ("hit", "bs_improve"), ("hit", "reroll"),
     ("wound", "mortal_pool"), ("wound", "crit_threshold"), ("wound", "reroll"),
-    ("wound", "modify"), ("wound", "s_improve"),
+    ("wound", "modify"), ("wound", "s_improve"), ("wound", "t_worsen"),
     ("damage", "modify"),
     ("save", "ignores_cover"), ("save", "cover"), ("save", "ap_improve"),
 })
@@ -374,6 +396,8 @@ TARGET_CONSUMED = frozenset({
                                                     # DAEMONIC RESISTANCE 等；并入统一 ±1 夹取）
     ("save", "ap_improve"),                         # P7-PR7：守方 AP 恶化（"被攻 -1 AP"，
                                                     # 负参并入攻方 ap_improve 特征值累计）
+    ("wound", "t_improve"),                         # P7-PR8：守方 T 特征值改善（+2 T 等，
+                                                    # 与攻方 t_worsen 在 t_final 净算）
 })
 
 
@@ -410,8 +434,8 @@ def _target_effect_consumed(e) -> bool:
         return True
     if e.phase == "hit" and e.op in ("modify", "bs_improve"):
         return True
-    if e.phase == "wound" and e.op == "modify":     # P7-PR5：守方致伤骰修正
-        return True
+    if e.phase == "wound" and e.op in ("modify", "t_improve"):
+        return True                                  # P7-PR5 致伤骰修正 / P7-PR8 T 改善
     return e.phase == "save" and e.op in ("cover", "invuln", "sv_improve",
                                           "ap_improve")   # P7-PR7：守方 AP 恶化
 
