@@ -299,13 +299,17 @@ def _resolve_weapon(
     # ③-⑥ Wound / Save / Damage（P7-PR3：AP 特征值改善——AP 存负值，改善=更负；
     #   P7-PR4：S/Sv 特征值改善 + 守方 DSL 授予 invuln 与 profile 自带取更优）
     s_final = w.strength + p.s_improve
-    wt = wound_target(s_final, target.t)
+    # P7-PR8：T 特征值净算（攻方 t_worsen 恶化 − 守方 t_improve 改善），下限钳 ≥1
+    # （核心规则特征值不低于 1）。T-1 与 S+1 在 2T/T/2 边界不等价，必须真 T 通道
+    t_final = max(1, int(target.t) - p.t_worsen + p.t_improve)
+    wt = wound_target(s_final, t_final)
     # P7-PR6：S/T 延迟分量在最终 S（含 s_improve）处判定——誓言 Accept Any Challenge
     # 只在 S≤T 时给 +1（RAW 特征值先改后比：S4+2 改到 S6 打 T5 不再享受）；
-    # Purge and Sanctify 只在 S>T 时给 -1。成立分量与基础分量合并后统一夹 ±1
+    # Purge and Sanctify 只在 S>T 时给 -1。成立分量与基础分量合并后统一夹 ±1。
+    # P7-PR8 起比较基准同为最终 T（RAW 修正后特征值互比）
     wound_mod = p.wound_mod
-    deferred = ((p.wound_mod_s_lte_t if s_final <= target.t else 0)
-                + (p.wound_mod_s_gt_t if s_final > target.t else 0))
+    deferred = ((p.wound_mod_s_lte_t if s_final <= t_final else 0)
+                + (p.wound_mod_s_gt_t if s_final > t_final else 0))
     if deferred:
         wound_mod = max(-1, min(1, p.wound_mod_raw + deferred))
     inv = target.invuln

@@ -1,0 +1,2662 @@
+{
+ "_comment": "P7 阵营技能 DSL 唯一真源（死亡守卫，P7-PR8）。DB effect_dsl_json/dsl_status 只是投影，由 `python -m db_compile dsl-apply` 写入并挂 restore。判据与格式沿 spec 2026-07-14 + PR3-PR7 约定；A/B 工作单见 docs/superpowers/plans/2026-07-19-p7-pr8-dg-worklist.md。覆盖=faction='DG' 全扫（10 存量分队 + 2 个 11 版新分队）；removed_11e 行（蝇息疫军重印未收录 5 条）零覆盖。军规纳垢赐福走 target_afflicted 开关（承载一切感染来源防重复计数）+ 新通道 t_worsen（T 特征值恶化，与 S+1 在 2T 边界不等价故必须真 T 通道）；瘟疫三选一仅骨疽疟可建模（plague_rattlejoint 开关，Sv 恶化以 AP 特征值改善等价编码）；重骰 1 类（新鲜病媒/蝇虫混响/嗡鸣恐怖等）按防高估硬裁定整条不编。",
+ "dsl_version": 1,
+ "faction": "DG",
+ "entries": [
+  {
+   "table": "abilities",
+   "id": "000008396",
+   "side": "attacker",
+   "detachment": null,
+   "name_en": "Nurgle’s Gift (Aura)",
+   "name_zh": "纳垢赐福",
+   "status": "partial",
+   "effects": [
+    {
+     "phase": "wound",
+     "op": "t_worsen",
+     "params": [
+      1
+     ],
+     "condition": [],
+     "source": "纳垢赐福（Afflicted 目标 T-1）"
+    },
+    {
+     "phase": "save",
+     "op": "ap_improve",
+     "params": [
+      1
+     ],
+     "condition": [
+      "plague_rattlejoint"
+     ],
+     "source": "骨疽疟（Afflicted 目标 Sv 恶化 1——AP 特征值等价编码）"
+    }
+   ],
+   "requires_toggles": [
+    "target_afflicted"
+   ],
+   "not_modeled_notes_zh": [
+    "被感染判定由 target_afflicted 开关声明——传染范围逐轮 3/6/9 寸（上限 12 寸）与毒雾轰炸/血锈倾盆/定点感染等来源统一由该开关承载；近战几乎恒成立，射击自查",
+    "瘟疫三选一仅骨疽疟（Rattlejoint Ague）可建模：plague_rattlejoint 开关声明军队所选瘟疫；Sv 恶化 1 以 AP 特征值改善 1 编码——护甲面数学等价、特保不受影响，与 RAW 一致",
+    "颅蛆枯萎（Skullsquirm：被感染单位近战命中-1）是敌方攻击方向的减益，本条目为攻方向——DG 为守方时该效果未接入（守方向军规注入不在本期）",
+    "疥痂魂腐（Scabrous：M/Ld/OC 恶化）无战斗数学通道"
+   ],
+   "provenance": {
+    "current_text": "db abilities.text_zh id=000008396",
+    "base_text": "Faction Pack Death Guard page_007.md（fp_rules 已 11 版化）",
+    "synthesis": "fp_rules 补丁后的 DB 现行文本",
+    "text_sha256": "23c3d9aa1cb58c5356d21e0a5fbda7ef8c7bbe28d04e79e68b06799d22c68875"
+   },
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "abilities",
+   "id": "det000009397",
+   "side": "attacker",
+   "detachment": "Vectors of Decay",
+   "name_en": "Sevenfold Offerings",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "随击杀数增长传染范围——战役动态状态，逐轮追踪不建模"
+   ],
+   "provenance": {
+    "current_text": "db detachments.rule_text id=000009397",
+    "base_text": "Wahapedia 现文（PR8 工作单：FP 未触及或已滚入，11 版仍现行）",
+    "synthesis": "DSL 投影经 materialize 落 abilities 新行（spec D5）",
+    "text_sha256": "3487d96099e7832d3d1f78933740b78dbf0c9a69bd3a8c8a82dd9744e15dc680"
+   },
+   "encoded_by": "manual-2026-07-19",
+   "materialize": {
+    "from_table": "detachments",
+    "from_id": "000009397",
+    "from_column": "rule_text"
+   }
+  },
+  {
+   "table": "abilities",
+   "id": "det000009407",
+   "side": "attacker",
+   "detachment": "Unclean Uprising",
+   "name_en": "Relentless Spread",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "Consolidation 移动增强——移动域"
+   ],
+   "provenance": {
+    "current_text": "db detachments.rule_text id=000009407",
+    "base_text": "Wahapedia 现文（PR8 工作单：FP 未触及或已滚入，11 版仍现行）",
+    "synthesis": "DSL 投影经 materialize 落 abilities 新行（spec D5）",
+    "text_sha256": "9089573e482b7c3d9bc7f3aefdd7fc817b91eed19f7ef88a94b5f8c1690f4492"
+   },
+   "encoded_by": "manual-2026-07-19",
+   "materialize": {
+    "from_table": "detachments",
+    "from_id": "000009407",
+    "from_column": "rule_text"
+   }
+  },
+  {
+   "table": "abilities",
+   "id": "det000009415",
+   "side": "attacker",
+   "detachment": "Arch-Contaminators",
+   "name_en": "Inescapable Corruption",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "战术机动否决与目标点 Secured 剥夺——LD 测试/任务域"
+   ],
+   "provenance": {
+    "current_text": "db detachments.rule_text id=000009415",
+    "base_text": "Wahapedia 现文（PR8 工作单：FP 未触及或已滚入，11 版仍现行）",
+    "synthesis": "DSL 投影经 materialize 落 abilities 新行（spec D5）",
+    "text_sha256": "d47596d88936e0eb3014ea1228cb0ebc835e8444092509fc3ef40fe617df1af1"
+   },
+   "encoded_by": "manual-2026-07-19",
+   "materialize": {
+    "from_table": "detachments",
+    "from_id": "000009415",
+    "from_column": "rule_text"
+   }
+  },
+  {
+   "table": "abilities",
+   "id": "det000009728",
+   "side": "attacker",
+   "detachment": "Flyblown Host",
+   "name_en": "Verminous Haze",
+   "name_zh": "虫害毒雾",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "渗透部署（Infiltrators）——部署域",
+    "FLYBLOWN tag 分队互斥——军表域约束，DB 无载体"
+   ],
+   "provenance": {
+    "current_text": "db detachments.rule_text id=000009728",
+    "base_text": "Faction Pack Death Guard page_003.md（fp_rules 已 11 版化）",
+    "synthesis": "fp_rules 补丁后的 DB 现行文本；materialize 落 abilities 新行",
+    "text_sha256": "173408030bc5dd91f4b2bf63b62d84ebf888e7fc3b927eaf6550115113fc8571"
+   },
+   "encoded_by": "manual-2026-07-19",
+   "materialize": {
+    "from_table": "detachments",
+    "from_id": "000009728",
+    "from_column": "rule_text"
+   }
+  },
+  {
+   "table": "abilities",
+   "id": "det000010122",
+   "side": "attacker",
+   "detachment": "Virulent Vectorium",
+   "name_en": "Worldblight",
+   "name_zh": "世界之瘟",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "目标点控制与目标点获得纳垢赐福——任务域"
+   ],
+   "provenance": {
+    "current_text": "db detachments.rule_text id=000010122",
+    "base_text": "Wahapedia 现文（PR8 工作单：FP 未触及或已滚入，11 版仍现行）",
+    "synthesis": "DSL 投影经 materialize 落 abilities 新行（spec D5）",
+    "text_sha256": "eb968fcc01203eead70cf1aac0f6f804564fbe6909ae2a9a55e5b905f4722707"
+   },
+   "encoded_by": "manual-2026-07-19",
+   "materialize": {
+    "from_table": "detachments",
+    "from_id": "000010122",
+    "from_column": "rule_text"
+   }
+  },
+  {
+   "table": "abilities",
+   "id": "det000010126",
+   "side": "attacker",
+   "detachment": "Mortarion’s Hammer",
+   "name_en": "Miasmic Bombardment",
+   "name_zh": "毒雾轰炸",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "12 寸外远程施加 Afflicted——模拟时直接开 target_afflicted 声明目标被感染（军规条目结算 T-1 等），本条不另编防重复计数"
+   ],
+   "provenance": {
+    "current_text": "db detachments.rule_text id=000010126",
+    "base_text": "Wahapedia 现文（PR8 工作单：FP 未触及或已滚入，11 版仍现行）",
+    "synthesis": "DSL 投影经 materialize 落 abilities 新行（spec D5）",
+    "text_sha256": "48cae6524286497123ff811e8f5a6086e5d100513a9ae63b932034283c35a005"
+   },
+   "encoded_by": "manual-2026-07-19",
+   "materialize": {
+    "from_table": "detachments",
+    "from_id": "000010126",
+    "from_column": "rule_text"
+   }
+  },
+  {
+   "table": "abilities",
+   "id": "det000010130",
+   "side": "attacker",
+   "detachment": "Champions of Contagion",
+   "name_en": "Manifold Maladies",
+   "name_zh": "多重感染",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "每大回合可改选瘟疫——战役动态；所选瘟疫用 plague_rattlejoint 开关声明"
+   ],
+   "provenance": {
+    "current_text": "db detachments.rule_text id=000010130",
+    "base_text": "Wahapedia 现文（PR8 工作单：FP 未触及或已滚入，11 版仍现行）",
+    "synthesis": "DSL 投影经 materialize 落 abilities 新行（spec D5）",
+    "text_sha256": "46cb9d4fbec5f7f577da3291ead7ed051f6dbe8c4485a71c41150a20013c244d"
+   },
+   "encoded_by": "manual-2026-07-19",
+   "materialize": {
+    "from_table": "detachments",
+    "from_id": "000010130",
+    "from_column": "rule_text"
+   }
+  },
+  {
+   "table": "abilities",
+   "id": "det000010134",
+   "side": "attacker",
+   "detachment": "Tallyband Summoners",
+   "name_en": "Reverberant Rancidity",
+   "name_zh": "瘟疫军团",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "瘟疫军团编列许可与光环共享——军表域/光环域"
+   ],
+   "provenance": {
+    "current_text": "db detachments.rule_text id=000010134",
+    "base_text": "Wahapedia 现文（PR8 工作单：FP 未触及或已滚入，11 版仍现行）",
+    "synthesis": "DSL 投影经 materialize 落 abilities 新行（spec D5）",
+    "text_sha256": "ebb52bca55975a01e3a1715cd625b3d0e258d4be158312a8471d4f9d3400eef8"
+   },
+   "encoded_by": "manual-2026-07-19",
+   "materialize": {
+    "from_table": "detachments",
+    "from_id": "000010134",
+    "from_column": "rule_text"
+   }
+  },
+  {
+   "table": "abilities",
+   "id": "det000010138",
+   "side": "attacker",
+   "detachment": "Shamblerot Vectorium",
+   "name_en": "Numberless Horde",
+   "name_zh": "无尽尸群",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "逐轮增援瘟疫行尸——增援域"
+   ],
+   "provenance": {
+    "current_text": "db detachments.rule_text id=000010138",
+    "base_text": "Wahapedia 现文（PR8 工作单：FP 未触及或已滚入，11 版仍现行）",
+    "synthesis": "DSL 投影经 materialize 落 abilities 新行（spec D5）",
+    "text_sha256": "9a6f824d826942db86012de3fed6003b6e581195a2263c37279b39b0a7106af4"
+   },
+   "encoded_by": "manual-2026-07-19",
+   "materialize": {
+    "from_table": "detachments",
+    "from_id": "000010138",
+    "from_column": "rule_text"
+   }
+  },
+  {
+   "table": "abilities",
+   "id": "det000010142",
+   "side": "attacker",
+   "detachment": "Death Lord’s Chosen",
+   "name_en": "Deadly Vectors",
+   "name_zh": "致命发作",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "对方指挥阶段对 Afflicted 单位掷 2D6 致命伤——攻击序列外"
+   ],
+   "provenance": {
+    "current_text": "db detachments.rule_text id=000010142",
+    "base_text": "Wahapedia 现文（PR8 工作单：FP 未触及或已滚入，11 版仍现行）",
+    "synthesis": "DSL 投影经 materialize 落 abilities 新行（spec D5）",
+    "text_sha256": "5eb9b5997da9a11968424668fb7a5af384c9d1c3ac5ec708dcba77d5dbfdcae8"
+   },
+   "encoded_by": "manual-2026-07-19",
+   "materialize": {
+    "from_table": "detachments",
+    "from_id": "000010142",
+    "from_column": "rule_text"
+   }
+  },
+  {
+   "table": "abilities",
+   "id": "detfp11e-dg-engines-det",
+   "side": "attacker",
+   "detachment": "Contagion Engines",
+   "name_en": "Warped and Rusted Animus",
+   "name_zh": "扭曲锈蚀之魂",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "授予 CONTAGION ENGINE tag 与远程 [ASSAULT]——ASSAULT 属移动域（加速后可射），1v1 攻击序列无消费点",
+    "ENGINES tag 分队互斥——军表域约束，DB 无载体"
+   ],
+   "provenance": {
+    "current_text": "db detachments.rule_text id=fp11e-dg-engines-det",
+    "base_text": "Faction Pack Death Guard page_002.md（fp_rules 补录 fp_new）",
+    "synthesis": "11 版新分队，Wahapedia 无源，DB 行即 FP 原文；materialize 落 abilities 新行",
+    "text_sha256": "ff06589313c2f76e15228191e9a0149ac4253c87ee2f417773d8cd4184007bca"
+   },
+   "encoded_by": "manual-2026-07-19",
+   "materialize": {
+    "from_table": "detachments",
+    "from_id": "fp11e-dg-engines-det",
+    "from_column": "rule_text"
+   }
+  },
+  {
+   "table": "abilities",
+   "id": "detfp11e-dg-paragons-det",
+   "side": "attacker",
+   "detachment": "Paragons of Putrescence",
+   "name_en": "Hypervirulent Strains",
+   "name_zh": "超毒瘟株",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "CHARACTER 传染范围 +3 寸（上限 12 寸）——影响 target_afflicted假设的成立范围，无独立数值效果"
+   ],
+   "provenance": {
+    "current_text": "db detachments.rule_text id=fp11e-dg-paragons-det",
+    "base_text": "Faction Pack Death Guard page_004.md（fp_rules 补录 fp_new）",
+    "synthesis": "11 版新分队，Wahapedia 无源，DB 行即 FP 原文；materialize 落 abilities 新行",
+    "text_sha256": "6c794c9227d1964dbabad91acfc5fa9a9943818c9845a862d520ccd3768dc396"
+   },
+   "encoded_by": "manual-2026-07-19",
+   "materialize": {
+    "from_table": "detachments",
+    "from_id": "fp11e-dg-paragons-det",
+    "from_column": "rule_text"
+   }
+  },
+  {
+   "table": "stratagems",
+   "id": "000009417002",
+   "side": "target",
+   "detachment": "Arch-Contaminators",
+   "name_en": "ALLIES OF ENTROPY",
+   "name_zh": "熵灭之友",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "战死模型延迟反打——攻击序列外（幸存反打域）"
+   ],
+   "provenance": {
+    "current_text": "db stratagems.text_zh id=000009417002",
+    "base_text": "Wahapedia 现文（PR8 工作单：FP 未触及或已滚入，11 版仍现行）",
+    "synthesis": "无需合成",
+    "text_sha256": "8f41e0789eac8ce5048518bb6485c66e82028c325e365fe15148d4d0d8cde836"
+   },
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "stratagems",
+   "id": "000009417003",
+   "side": "attacker",
+   "detachment": "Arch-Contaminators",
+   "name_en": "SEED OF CORRUPTION",
+   "name_zh": "腐化之种",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "落地回合战术机动许可——移动/任务域"
+   ],
+   "provenance": {
+    "current_text": "db stratagems.text_zh id=000009417003",
+    "base_text": "Wahapedia 现文（PR8 工作单：FP 未触及或已滚入，11 版仍现行）",
+    "synthesis": "无需合成",
+    "text_sha256": "6db9c952242ba7242750d7d180722663eee0ec3bd849b36d00db398bf41084f9"
+   },
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "stratagems",
+   "id": "000009417004",
+   "side": "attacker",
+   "detachment": "Arch-Contaminators",
+   "name_en": "CORROSIVE CURSE",
+   "name_zh": "腐蚀诅咒",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "目标点 Secured——任务域"
+   ],
+   "provenance": {
+    "current_text": "db stratagems.text_zh id=000009417004",
+    "base_text": "Wahapedia 现文（PR8 工作单：FP 未触及或已滚入，11 版仍现行）",
+    "synthesis": "无需合成",
+    "text_sha256": "36d262135fababea2146c8c802cc76c26fe8b5605194da0c3e15e96c87879d67"
+   },
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "stratagems",
+   "id": "000009417005",
+   "side": "target",
+   "detachment": "Arch-Contaminators",
+   "name_en": "CLOUD OF FLIES",
+   "name_zh": "蝇群蔽体",
+   "status": "partial",
+   "effects": [
+    {
+     "phase": "hit",
+     "op": "modify",
+     "params": [
+      -1
+     ],
+     "condition": [],
+     "source": "蝇群蔽体（被攻命中 -1）"
+    }
+   ],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "战略一次性/CP 消耗不建模（假设本阶段已使用）"
+   ],
+   "provenance": {
+    "current_text": "db stratagems.text_zh id=000009417005",
+    "base_text": "Wahapedia 现文（PR8 工作单：FP 未触及或已滚入，11 版仍现行）",
+    "synthesis": "无需合成",
+    "text_sha256": "8cf83aa3381a2c2f88c72eb9bb5150b9b98e69a05206b6ea8eb3024834112181"
+   },
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "stratagems",
+   "id": "000010132002",
+   "side": "attacker",
+   "detachment": "Champions of Contagion",
+   "name_en": "BLESSINGS OF FILTH",
+   "name_zh": "污秽赐福",
+   "status": "partial",
+   "effects": [
+    {
+     "phase": "hit",
+     "op": "crit_threshold",
+     "params": [
+      5
+     ],
+     "condition": [],
+     "source": "污秽赐福（未修正 5+ 暴击命中）"
+    }
+   ],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "限 Attached（人物领队）单位——点名即声明",
+    "战略一次性/CP 不建模"
+   ],
+   "provenance": {
+    "current_text": "db stratagems.text_zh id=000010132002",
+    "base_text": "Wahapedia 现文（PR8 工作单：FP 未触及或已滚入，11 版仍现行）",
+    "synthesis": "无需合成",
+    "text_sha256": "017d17093378afc51c2c79ae240032b3350e935fb1520a5171b9edde694cc5ce"
+   },
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "stratagems",
+   "id": "000010132003",
+   "side": "attacker",
+   "detachment": "Champions of Contagion",
+   "name_en": "MALIGNANCE MAGNIFIED",
+   "name_zh": "恶疾发作",
+   "status": "partial",
+   "effects": [
+    {
+     "phase": "hit",
+     "op": "reroll",
+     "params": [
+      "fail"
+     ],
+     "condition": [
+      "target_below_starting"
+     ],
+     "source": "恶疾发作（对低于满编目标重骰命中）"
+    },
+    {
+     "phase": "wound",
+     "op": "reroll",
+     "params": [
+      "fail"
+     ],
+     "condition": [
+      "target_below_starting"
+     ],
+     "source": "恶疾发作（对低于满编目标重骰致伤）"
+    }
+   ],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "需开「目标低于满编」开关（引擎不追踪战损）",
+    "限 Attached 单位——点名即声明"
+   ],
+   "provenance": {
+    "current_text": "db stratagems.text_zh id=000010132003",
+    "base_text": "Wahapedia 现文（PR8 工作单：FP 未触及或已滚入，11 版仍现行）",
+    "synthesis": "无需合成",
+    "text_sha256": "88c1a0911d55281e68790233f9bbadd6fe0080c03b66a77f3405e04fcee9a17a"
+   },
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "stratagems",
+   "id": "000010132004",
+   "side": "target",
+   "detachment": "Champions of Contagion",
+   "name_en": "GROTESQUE FORTITUDE",
+   "name_zh": "怪诞坚韧",
+   "status": "partial",
+   "effects": [
+    {
+     "phase": "wound",
+     "op": "t_improve",
+     "params": [
+      2
+     ],
+     "condition": [],
+     "source": "怪诞坚韧（+2 T）"
+    }
+   ],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "限 Attached 单位——点名即声明",
+    "战略一次性/CP 不建模"
+   ],
+   "provenance": {
+    "current_text": "db stratagems.text_zh id=000010132004",
+    "base_text": "Wahapedia 现文（PR8 工作单：FP 未触及或已滚入，11 版仍现行）",
+    "synthesis": "无需合成",
+    "text_sha256": "4aefd7f8b5902bfcdc578663b9ca1a34f9fc1bd16186773df095d05657739511"
+   },
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "stratagems",
+   "id": "000010132005",
+   "side": "attacker",
+   "detachment": "Champions of Contagion",
+   "name_en": "RABID INFUSION",
+   "name_zh": "狂暴轰入",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "Fights First——先手判定域（fight_order），非攻击数值效果"
+   ],
+   "provenance": {
+    "current_text": "db stratagems.text_zh id=000010132005",
+    "base_text": "Wahapedia 现文（PR8 工作单：FP 未触及或已滚入，11 版仍现行）",
+    "synthesis": "无需合成",
+    "text_sha256": "22a76f7d0a15ca51b1692fb4f346551ba3993e005cca09a7656f333c90d1aaaf"
+   },
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "stratagems",
+   "id": "000010132006",
+   "side": "attacker",
+   "detachment": "Champions of Contagion",
+   "name_en": "MOBILE VECTOR",
+   "name_zh": "污秽传承",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "领队重新依附——军表/移动域"
+   ],
+   "provenance": {
+    "current_text": "db stratagems.text_zh id=000010132006",
+    "base_text": "Wahapedia 现文（PR8 工作单：FP 未触及或已滚入，11 版仍现行）",
+    "synthesis": "无需合成",
+    "text_sha256": "02d7b6648aa4e4564d0d4d2c76e6aa24d2d67e8f1afb5b3acf974fc9ae71d1cf"
+   },
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "stratagems",
+   "id": "000010132007",
+   "side": "attacker",
+   "detachment": "Champions of Contagion",
+   "name_en": "DEATH’S HEADS",
+   "name_zh": "亡者颅骨",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "目标获全部瘟疫效果——多瘟疫叠加不建模；可开 target_afflicted + plague_rattlejoint 近似其中可建模部分"
+   ],
+   "provenance": {
+    "current_text": "db stratagems.text_zh id=000010132007",
+    "base_text": "Wahapedia 现文（PR8 工作单：FP 未触及或已滚入，11 版仍现行）",
+    "synthesis": "无需合成",
+    "text_sha256": "ecfeffe3709888f55358122774158dc29464b681dd6a8aec9702dade5c0087c3"
+   },
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "stratagems",
+   "id": "fp11e-dg-engines-s1",
+   "side": "attacker",
+   "detachment": "Contagion Engines",
+   "name_en": "FRESH VECTORS",
+   "name_zh": "新鲜病媒",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "重骰致伤 1——重骰1≠重骰失败，防高估硬裁定不编"
+   ],
+   "provenance": {
+    "current_text": "db stratagems.text_zh id=fp11e-dg-engines-s1",
+    "base_text": "Faction Pack Death Guard page_002.md（fp_rules 补录 fp_new）",
+    "synthesis": "11 版新分队，Wahapedia 无源，DB 行即 FP 原文",
+    "text_sha256": "d81593ae9e19da8dd13711f001d60b380259c90796f96c14976bccd3c0435dde"
+   },
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "stratagems",
+   "id": "fp11e-dg-engines-s2",
+   "side": "attacker",
+   "detachment": "Contagion Engines",
+   "name_en": "BLOODRUST DELUGE",
+   "name_zh": "血锈倾盆",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "使可见目标临时 Afflicted——模拟时直接开 target_afflicted 声明（军规条目结算），本条不另编防重复计数"
+   ],
+   "provenance": {
+    "current_text": "db stratagems.text_zh id=fp11e-dg-engines-s2",
+    "base_text": "Faction Pack Death Guard page_002.md（fp_rules 补录 fp_new）",
+    "synthesis": "11 版新分队，Wahapedia 无源，DB 行即 FP 原文",
+    "text_sha256": "29dda492ec19e99e632c317c9081322f5b644c2fd2555176a447b79b600b4888"
+   },
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "stratagems",
+   "id": "fp11e-dg-engines-s3",
+   "side": "attacker",
+   "detachment": "Contagion Engines",
+   "name_en": "SOULROT FLUX",
+   "name_zh": "魂腐涌流",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "脱离接战掷 D6 致命伤——攻击序列外"
+   ],
+   "provenance": {
+    "current_text": "db stratagems.text_zh id=fp11e-dg-engines-s3",
+    "base_text": "Faction Pack Death Guard page_002.md（fp_rules 补录 fp_new）",
+    "synthesis": "11 版新分队，Wahapedia 无源，DB 行即 FP 原文",
+    "text_sha256": "c7bc55168a843be696a2274f30c7d9c6f0f04f15fc08094a059fca36d40e452f"
+   },
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "stratagems",
+   "id": "000010144002",
+   "side": "attacker",
+   "detachment": "Death Lord’s Chosen",
+   "name_en": "BLOOMING PESTILENCE",
+   "name_zh": "瘟疫爆发",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "传染范围 +3 寸——影响 target_afflicted 假设的成立范围，无独立数值效果"
+   ],
+   "provenance": {
+    "current_text": "db stratagems.text_zh id=000010144002",
+    "base_text": "Wahapedia 现文（PR8 工作单：FP 未触及或已滚入，11 版仍现行）",
+    "synthesis": "无需合成",
+    "text_sha256": "5d34f6d14a3c188f58dc0808120079ccca3649d9f3e343ecbac1ffb4c474a00d"
+   },
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "stratagems",
+   "id": "000010144003",
+   "side": "attacker",
+   "detachment": "Death Lord’s Chosen",
+   "name_en": "GRIM REAPERS",
+   "name_zh": "无情收割",
+   "status": "partial",
+   "effects": [
+    {
+     "phase": "hit",
+     "op": "reroll",
+     "params": [
+      "fail"
+     ],
+     "condition": [
+      "phase_melee"
+     ],
+     "source": "无情收割（近战重骰命中）"
+    }
+   ],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "排除巨兽/载具目标——opt-in 战略按目标合法性自查（对巨兽/载具模拟时勿点名本条）"
+   ],
+   "provenance": {
+    "current_text": "db stratagems.text_zh id=000010144003",
+    "base_text": "Wahapedia 现文（PR8 工作单：FP 未触及或已滚入，11 版仍现行）",
+    "synthesis": "无需合成",
+    "text_sha256": "f41673bd3a94c71683cebd4210e9bd7ab6cf9814f0233762c5fbcf4908d9160e"
+   },
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "stratagems",
+   "id": "000010144004",
+   "side": "target",
+   "detachment": "Death Lord’s Chosen",
+   "name_en": "UNDYING SPITE",
+   "name_zh": "不死怨念",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "战死模型延迟反打——攻击序列外（幸存反打域）"
+   ],
+   "provenance": {
+    "current_text": "db stratagems.text_zh id=000010144004",
+    "base_text": "Wahapedia 现文（PR8 工作单：FP 未触及或已滚入，11 版仍现行）",
+    "synthesis": "无需合成",
+    "text_sha256": "48db0054a921d8a2c48c9c7918374bc6b946b221c6470d838907621b888d5da9"
+   },
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "stratagems",
+   "id": "000010144005",
+   "side": "attacker",
+   "detachment": "Death Lord’s Chosen",
+   "name_en": "SIGNAL POX",
+   "name_zh": "定点感染",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "目标点范围施加 Afflicted——开 target_afflicted 声明即可"
+   ],
+   "provenance": {
+    "current_text": "db stratagems.text_zh id=000010144005",
+    "base_text": "Wahapedia 现文（PR8 工作单：FP 未触及或已滚入，11 版仍现行）",
+    "synthesis": "无需合成",
+    "text_sha256": "18c2bf0b7d8c88718178faebf42abb5b6ed521843779d453cb4e06733ca6bfa8"
+   },
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "stratagems",
+   "id": "000010144006",
+   "side": "attacker",
+   "detachment": "Death Lord’s Chosen",
+   "name_en": "MORTARION'S TEACHINGS",
+   "name_zh": "原体教诲",
+   "status": "partial",
+   "effects": [
+    {
+     "phase": "hit",
+     "op": "modify",
+     "params": [
+      1
+     ],
+     "condition": [
+      "stationary"
+     ],
+     "source": "原体教诲（[HEAVY]：驻停命中 +1）"
+    }
+   ],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "[ASSAULT]（加速后可射）属移动域不建模",
+    "[HEAVY] 收益需开「驻停」态势开关；与武器自带 [HEAVY] 同开时命中修正统一夹 ±1"
+   ],
+   "provenance": {
+    "current_text": "db stratagems.text_zh id=000010144006",
+    "base_text": "Wahapedia 现文（PR8 工作单：FP 未触及或已滚入，11 版仍现行）",
+    "synthesis": "无需合成",
+    "text_sha256": "06642fc4ad3b866e4071d1f9119a2985ee772d8120b9fb0d08ed8ae78084154c"
+   },
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "stratagems",
+   "id": "000010144007",
+   "side": "attacker",
+   "detachment": "Death Lord’s Chosen",
+   "name_en": "SICKENING IMPACT",
+   "name_zh": "恶臭冲击",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "冲锋后掷骰致命伤（上限 6）——攻击序列外（冲锋触发）"
+   ],
+   "provenance": {
+    "current_text": "db stratagems.text_zh id=000010144007",
+    "base_text": "Wahapedia 现文（PR8 工作单：FP 未触及或已滚入，11 版仍现行）",
+    "synthesis": "无需合成",
+    "text_sha256": "f050e8b2dd0ca6115316b6f8909ec0a624fe114532eee2e47a1b8a62fc12bc31"
+   },
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "stratagems",
+   "id": "000009730002",
+   "side": "attacker",
+   "detachment": "Flyblown Host",
+   "name_en": "NAUSEATING PAROXYSMS",
+   "name_zh": "作呕爆发",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "震慑骰 -1——士气域"
+   ],
+   "provenance": {
+    "current_text": "db stratagems.text_zh id=000009730002",
+    "base_text": "Faction Pack Death Guard page_003.md（fp_rules 已 11 版化）",
+    "synthesis": "fp_rules 补丁后的 DB 现行文本",
+    "text_sha256": "bcf129312245322bb73c45e355c77570d3a2cf2f1117d0afa73a7db96ddb22cb"
+   },
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "stratagems",
+   "id": "000009730004",
+   "side": "attacker",
+   "detachment": "Flyblown Host",
+   "name_en": "EYE OF THE SWARM",
+   "name_zh": "蝇群之眼",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "[CLOSE-QUARTERS]=交战中射击资格（11 版与 [PISTOL] 等同）——目标合法性域，攻击数值无变化"
+   ],
+   "provenance": {
+    "current_text": "db stratagems.text_zh id=000009730004",
+    "base_text": "Faction Pack Death Guard page_003.md（fp_rules 已 11 版化）",
+    "synthesis": "fp_rules 补丁后的 DB 现行文本",
+    "text_sha256": "3b862b20775e28b2631d6720bf47366812b237384d68f8f7247f1091ed130fdc"
+   },
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "stratagems",
+   "id": "000009730005",
+   "side": "attacker",
+   "detachment": "Flyblown Host",
+   "name_en": "DRONING HORROR",
+   "name_zh": "嗡鸣恐怖",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "重骰命中 1 + 半程重骰致伤 1——重骰1≠重骰失败，防高估硬裁定不编"
+   ],
+   "provenance": {
+    "current_text": "db stratagems.text_zh id=000009730005",
+    "base_text": "Faction Pack Death Guard page_003.md（fp_rules 已 11 版化）",
+    "synthesis": "fp_rules 补丁后的 DB 现行文本",
+    "text_sha256": "3e711aeca76ec9b9bc82c40a1e535592992b90765ff5faa80e3c115584c83238"
+   },
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "stratagems",
+   "id": "000010128002",
+   "side": "attacker",
+   "detachment": "Mortarion’s Hammer",
+   "name_en": "BLIGHTED LAND",
+   "name_zh": "凋零大地",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "地形 3 寸内施加 Afflicted——开 target_afflicted 声明即可"
+   ],
+   "provenance": {
+    "current_text": "db stratagems.text_zh id=000010128002",
+    "base_text": "Wahapedia 现文（PR8 工作单：FP 未触及或已滚入，11 版仍现行）",
+    "synthesis": "无需合成",
+    "text_sha256": "fd968ef9c43bb0606781c765c0ca099df01266cc96b3bdd83e84af03583e32e9"
+   },
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "stratagems",
+   "id": "000010128003",
+   "side": "attacker",
+   "detachment": "Mortarion’s Hammer",
+   "name_en": "RELENTLESS GRIND",
+   "name_zh": "无情碾碎",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "穿越地形移动——移动域"
+   ],
+   "provenance": {
+    "current_text": "db stratagems.text_zh id=000010128003",
+    "base_text": "Wahapedia 现文（PR8 工作单：FP 未触及或已滚入，11 版仍现行）",
+    "synthesis": "无需合成",
+    "text_sha256": "1d0d495b963f76501794f3f78cd9dea20d6df6b8aecad83d377dd652856f2545"
+   },
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "stratagems",
+   "id": "000010128004",
+   "side": "attacker",
+   "detachment": "Mortarion’s Hammer",
+   "name_en": "DRAWN TO DESPAIR",
+   "name_zh": "绝望沉沦",
+   "status": "partial",
+   "effects": [
+    {
+     "phase": "hit",
+     "op": "reroll",
+     "params": [
+      "fail"
+     ],
+     "condition": [
+      "phase_shooting"
+     ],
+     "source": "绝望沉沦（对敌方部署区内目标重骰命中）"
+    }
+   ],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "目标须在敌方部署区内且可见（排除飞行器）——opt-in 战略按目标位置自查"
+   ],
+   "provenance": {
+    "current_text": "db stratagems.text_zh id=000010128004",
+    "base_text": "Wahapedia 现文（PR8 工作单：FP 未触及或已滚入，11 版仍现行）",
+    "synthesis": "无需合成",
+    "text_sha256": "dc0e44b2760f25e2210ad3b51b1433b3abc12ae250f0bc249977a9d5ae724830"
+   },
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "stratagems",
+   "id": "000010128005",
+   "side": "attacker",
+   "detachment": "Mortarion’s Hammer",
+   "name_en": "FONT OF FILTH",
+   "name_zh": "污秽之源",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "[ASSAULT]——移动域（加速后可射），攻击序列无消费点"
+   ],
+   "provenance": {
+    "current_text": "db stratagems.text_zh id=000010128005",
+    "base_text": "Wahapedia 现文（PR8 工作单：FP 未触及或已滚入，11 版仍现行）",
+    "synthesis": "无需合成",
+    "text_sha256": "7a96212785d6de627eeb999a4e332dcded981f47bdbf75c7f9fc98ab3e419ec0"
+   },
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "stratagems",
+   "id": "000010128006",
+   "side": "attacker",
+   "detachment": "Mortarion’s Hammer",
+   "name_en": "EYESTINGER STORM",
+   "name_zh": "遮天蔽目",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "Afflicted 单位震慑测试——士气域"
+   ],
+   "provenance": {
+    "current_text": "db stratagems.text_zh id=000010128006",
+    "base_text": "Wahapedia 现文（PR8 工作单：FP 未触及或已滚入，11 版仍现行）",
+    "synthesis": "无需合成",
+    "text_sha256": "2959b377c07ab5ca1a641959971f1a37fe1ff0ee7bd0d1b647a39a2bafabebae"
+   },
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "stratagems",
+   "id": "000010128007",
+   "side": "target",
+   "detachment": "Mortarion’s Hammer",
+   "name_en": "STINKING MIRE",
+   "name_zh": "腐臭泥潭",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "冲锋骰 -2——冲锋域"
+   ],
+   "provenance": {
+    "current_text": "db stratagems.text_zh id=000010128007",
+    "base_text": "Wahapedia 现文（PR8 工作单：FP 未触及或已滚入，11 版仍现行）",
+    "synthesis": "无需合成",
+    "text_sha256": "7515d838a538ce0251de344691808b78bf99a735acd1a07f6ce845367a86f5c0"
+   },
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "stratagems",
+   "id": "fp11e-dg-paragons-s1",
+   "side": "attacker",
+   "detachment": "Paragons of Putrescence",
+   "name_en": "TERRITORIAL INFECTION",
+   "name_zh": "领地感染",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "+1 OC——任务域"
+   ],
+   "provenance": {
+    "current_text": "db stratagems.text_zh id=fp11e-dg-paragons-s1",
+    "base_text": "Faction Pack Death Guard page_004.md（fp_rules 补录 fp_new）",
+    "synthesis": "11 版新分队，Wahapedia 无源，DB 行即 FP 原文",
+    "text_sha256": "f3f447b3f66f9d1e3b4bf9b7db51a92ac6b3462858f4888eff0facd87bbf5cd4"
+   },
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "stratagems",
+   "id": "fp11e-dg-paragons-s2",
+   "side": "attacker",
+   "detachment": "Paragons of Putrescence",
+   "name_en": "AGGRAVUS SPASMS",
+   "name_zh": "剧痛痉挛",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "+6 寸侦测范围——侦测域"
+   ],
+   "provenance": {
+    "current_text": "db stratagems.text_zh id=fp11e-dg-paragons-s2",
+    "base_text": "Faction Pack Death Guard page_004.md（fp_rules 补录 fp_new）",
+    "synthesis": "11 版新分队，Wahapedia 无源，DB 行即 FP 原文",
+    "text_sha256": "3c4ea05c7528360e93881e0ab25ebeb8b1c3673865cc2790b1130d066ab0fad9"
+   },
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "stratagems",
+   "id": "fp11e-dg-paragons-s3",
+   "side": "attacker",
+   "detachment": "Paragons of Putrescence",
+   "name_en": "SIMULTANEOUS CONTAMINATION",
+   "name_zh": "同步污染",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "行动不碍射击资格——行动域"
+   ],
+   "provenance": {
+    "current_text": "db stratagems.text_zh id=fp11e-dg-paragons-s3",
+    "base_text": "Faction Pack Death Guard page_004.md（fp_rules 补录 fp_new）",
+    "synthesis": "11 版新分队，Wahapedia 无源，DB 行即 FP 原文",
+    "text_sha256": "4d9846191fbab6d7c2bffea24429a5034b9e515fb756d772db5220cfd466d741"
+   },
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "stratagems",
+   "id": "000010140002",
+   "side": "target",
+   "detachment": "Shamblerot Vectorium",
+   "name_en": "GRIP OF THE WALKING POX",
+   "name_zh": "行尸之触",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "战死模型 6+ 反噬致命伤——攻击序列外"
+   ],
+   "provenance": {
+    "current_text": "db stratagems.text_zh id=000010140002",
+    "base_text": "Wahapedia 现文（PR8 工作单：FP 未触及或已滚入，11 版仍现行）",
+    "synthesis": "无需合成",
+    "text_sha256": "78c7b8055edf3289b482757d26904e8d4cdf062cf354dd36433660253fd8f13f"
+   },
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "stratagems",
+   "id": "000010140003",
+   "side": "attacker",
+   "detachment": "Shamblerot Vectorium",
+   "name_en": "SMEARED WITH FILTH",
+   "name_zh": "污秽感染",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "被灭队后施加永久 Afflicted——开 target_afflicted 声明即可"
+   ],
+   "provenance": {
+    "current_text": "db stratagems.text_zh id=000010140003",
+    "base_text": "Wahapedia 现文（PR8 工作单：FP 未触及或已滚入，11 版仍现行）",
+    "synthesis": "无需合成",
+    "text_sha256": "39e2dd529046d405303f60ec4edff5ce50a9a18e814993786575f4506c970f50"
+   },
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "stratagems",
+   "id": "000010140004",
+   "side": "attacker",
+   "detachment": "Shamblerot Vectorium",
+   "name_en": "GNAWING HUNGER",
+   "name_zh": "饥饿折磨",
+   "status": "partial",
+   "effects": [
+    {
+     "phase": "attacks",
+     "op": "modify",
+     "params": [
+      1
+     ],
+     "condition": [
+      "phase_melee"
+     ],
+     "source": "饥饿折磨（近战 A+1）"
+    },
+    {
+     "phase": "wound",
+     "op": "s_improve",
+     "params": [
+      1
+     ],
+     "condition": [
+      "phase_melee"
+     ],
+     "source": "饥饿折磨（近战 S+1）"
+    }
+   ],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "M+1 移动域不建模",
+    "限瘟疫行尸单位——点名即声明"
+   ],
+   "provenance": {
+    "current_text": "db stratagems.text_zh id=000010140004",
+    "base_text": "Wahapedia 现文（PR8 工作单：FP 未触及或已滚入，11 版仍现行）",
+    "synthesis": "无需合成",
+    "text_sha256": "adae1cfa529a05cf73d0f86a962e8a7cdf8bf0092f9ce44e7c433690e29b1f6a"
+   },
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "stratagems",
+   "id": "000010140005",
+   "side": "attacker",
+   "detachment": "Shamblerot Vectorium",
+   "name_en": "HIDDEN AMONGST THE DEAD",
+   "name_zh": "潜伏于尸群",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "战略预备队深打——部署域"
+   ],
+   "provenance": {
+    "current_text": "db stratagems.text_zh id=000010140005",
+    "base_text": "Wahapedia 现文（PR8 工作单：FP 未触及或已滚入，11 版仍现行）",
+    "synthesis": "无需合成",
+    "text_sha256": "a43fc81f26ac07b0c08a17326fc3026982183ad0ab4cd69e967fd8c9246a7887"
+   },
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "stratagems",
+   "id": "000010140006",
+   "side": "attacker",
+   "detachment": "Shamblerot Vectorium",
+   "name_en": "SHOCK AND HORROR",
+   "name_zh": "恐怖冲击",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "冲锋后震慑测试——士气域"
+   ],
+   "provenance": {
+    "current_text": "db stratagems.text_zh id=000010140006",
+    "base_text": "Wahapedia 现文（PR8 工作单：FP 未触及或已滚入，11 版仍现行）",
+    "synthesis": "无需合成",
+    "text_sha256": "46018d0f731e4e3eed0145869716fd68bbf0b1f829dc2f5812ba2188c4fcef18"
+   },
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "stratagems",
+   "id": "000010140007",
+   "side": "target",
+   "detachment": "Shamblerot Vectorium",
+   "name_en": "SHAMBLING WALL",
+   "name_zh": "蹒跚肉墙",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "伤害转移瘟疫行尸挡枪——分配重定向域，1v1 序列无消费点"
+   ],
+   "provenance": {
+    "current_text": "db stratagems.text_zh id=000010140007",
+    "base_text": "Wahapedia 现文（PR8 工作单：FP 未触及或已滚入，11 版仍现行）",
+    "synthesis": "无需合成",
+    "text_sha256": "10428a296a64c91f667f9b8bfa000749c7c51881ca7801ec7f7a979dc36fffe6"
+   },
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "stratagems",
+   "id": "000010136002",
+   "side": "attacker",
+   "detachment": "Tallyband Summoners",
+   "name_en": "PERSISTENT PESTS",
+   "name_zh": "疫病魔宠",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "整队复活进战略预备队——增援域"
+   ],
+   "provenance": {
+    "current_text": "db stratagems.text_zh id=000010136002",
+    "base_text": "Wahapedia 现文（PR8 工作单：FP 未触及或已滚入，11 版仍现行）",
+    "synthesis": "无需合成",
+    "text_sha256": "15b8c964345c27bd14d62f8b085f631f01cd2a31aaa44d3a621799b11a112792"
+   },
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "stratagems",
+   "id": "000010136003",
+   "side": "attacker",
+   "detachment": "Tallyband Summoners",
+   "name_en": "CLUTCHING CORRUPTION",
+   "name_zh": "腐蚀之握",
+   "status": "partial",
+   "effects": [
+    {
+     "phase": "hit",
+     "op": "reroll",
+     "params": [
+      "fail"
+     ],
+     "condition": [
+      "phase_melee"
+     ],
+     "source": "腐蚀之握（近战重骰命中）"
+    }
+   ],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "前提：目标与友军瘟疫军团单位接战——opt-in 战略按战场态势自查"
+   ],
+   "provenance": {
+    "current_text": "db stratagems.text_zh id=000010136003",
+    "base_text": "Wahapedia 现文（PR8 工作单：FP 未触及或已滚入，11 版仍现行）",
+    "synthesis": "无需合成",
+    "text_sha256": "0f57aeb22de33f9e0cf3a830f44994ad50e1d3a891c1ca93bbff2d7355d12c96"
+   },
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "stratagems",
+   "id": "000010136004",
+   "side": "attacker",
+   "detachment": "Tallyband Summoners",
+   "name_en": "ALL IS ROT",
+   "name_zh": "万物皆朽",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "交战中射击资格豁免 + 反噬致命伤——目标合法性域/序列外"
+   ],
+   "provenance": {
+    "current_text": "db stratagems.text_zh id=000010136004",
+    "base_text": "Wahapedia 现文（PR8 工作单：FP 未触及或已滚入，11 版仍现行）",
+    "synthesis": "无需合成",
+    "text_sha256": "db4ae9fd85abee80cd10c0d9aa55b97972d51cbd80c183cdc9654bfdb4a2520e"
+   },
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "stratagems",
+   "id": "000010136005",
+   "side": "attacker",
+   "detachment": "Tallyband Summoners",
+   "name_en": "FLESHY AVALANCHE",
+   "name_zh": "肉山冲击",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "穿越地形移动——移动域"
+   ],
+   "provenance": {
+    "current_text": "db stratagems.text_zh id=000010136005",
+    "base_text": "Wahapedia 现文（PR8 工作单：FP 未触及或已滚入，11 版仍现行）",
+    "synthesis": "无需合成",
+    "text_sha256": "28b0b094c7272ea9813de88eb76444ebdff317357d667899439bc2f7ec330342"
+   },
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "stratagems",
+   "id": "000010136006",
+   "side": "attacker",
+   "detachment": "Tallyband Summoners",
+   "name_en": "AVATARS OF DECAY",
+   "name_zh": "腐朽化身",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "6 寸光环施加 Afflicted——开 target_afflicted 声明即可"
+   ],
+   "provenance": {
+    "current_text": "db stratagems.text_zh id=000010136006",
+    "base_text": "Wahapedia 现文（PR8 工作单：FP 未触及或已滚入，11 版仍现行）",
+    "synthesis": "无需合成",
+    "text_sha256": "244f5db28254ffd03c10984638c99f3b4c2153aa84046ec671b5f2c031cd1933"
+   },
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "stratagems",
+   "id": "000010136007",
+   "side": "attacker",
+   "detachment": "Tallyband Summoners",
+   "name_en": "MIRESLICK",
+   "name_zh": "烂泥缠身",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "脱离接战 LD 测试强制驻停——移动/士气域"
+   ],
+   "provenance": {
+    "current_text": "db stratagems.text_zh id=000010136007",
+    "base_text": "Wahapedia 现文（PR8 工作单：FP 未触及或已滚入，11 版仍现行）",
+    "synthesis": "无需合成",
+    "text_sha256": "d21bbbd4c57a379fe196ff1969e020cebb5a5bbc9fa008724f24c19789dc2af5"
+   },
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "stratagems",
+   "id": "000009409002",
+   "side": "attacker",
+   "detachment": "Unclean Uprising",
+   "name_en": "POX FLARE",
+   "name_zh": "脓疱闪耀",
+   "status": "partial",
+   "effects": [
+    {
+     "phase": "save",
+     "op": "ap_improve",
+     "params": [
+      1
+     ],
+     "condition": [
+      "phase_melee"
+     ],
+     "source": "脓疱闪耀（近战 AP 改善 1）"
+    }
+   ],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "限瘟疫行尸单位——点名即声明",
+    "战略一次性/CP 不建模"
+   ],
+   "provenance": {
+    "current_text": "db stratagems.text_zh id=000009409002",
+    "base_text": "Wahapedia 现文（PR8 工作单：FP 未触及或已滚入，11 版仍现行）",
+    "synthesis": "无需合成",
+    "text_sha256": "23dc1617bfdc5d9981066fb8ae1494ba4657811d2a05a0b20e65f3bda04416ee"
+   },
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "stratagems",
+   "id": "000009409003",
+   "side": "attacker",
+   "detachment": "Unclean Uprising",
+   "name_en": "PATH OF PESTILENCE",
+   "name_zh": "疫途",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "舱门操作——地形交互域"
+   ],
+   "provenance": {
+    "current_text": "db stratagems.text_zh id=000009409003",
+    "base_text": "Wahapedia 现文（PR8 工作单：FP 未触及或已滚入，11 版仍现行）",
+    "synthesis": "无需合成",
+    "text_sha256": "0919820114b97ecabe04f7c5cbc15a66da6ba8cf43bbc7f2cab9496119b2c7ef"
+   },
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "stratagems",
+   "id": "000009409004",
+   "side": "attacker",
+   "detachment": "Unclean Uprising",
+   "name_en": "THE DEAD RISE",
+   "name_zh": "亡者复起",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "预备队深打——部署域"
+   ],
+   "provenance": {
+    "current_text": "db stratagems.text_zh id=000009409004",
+    "base_text": "Wahapedia 现文（PR8 工作单：FP 未触及或已滚入，11 版仍现行）",
+    "synthesis": "无需合成",
+    "text_sha256": "45a5a18f5c50991538157421ddb8e8a5f15f0d636f4db79e66d416af59b4d512"
+   },
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "stratagems",
+   "id": "000009409005",
+   "side": "attacker",
+   "detachment": "Unclean Uprising",
+   "name_en": "SHAMBLING ONSLAUGHT",
+   "name_zh": "蹒跚猛攻",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "敌撤退后跟进移动——移动域"
+   ],
+   "provenance": {
+    "current_text": "db stratagems.text_zh id=000009409005",
+    "base_text": "Wahapedia 现文（PR8 工作单：FP 未触及或已滚入，11 版仍现行）",
+    "synthesis": "无需合成",
+    "text_sha256": "e03a2b216f74ea71b674b8431bc15cba5b026f8581bb23dc88c71269dcc912d2"
+   },
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "stratagems",
+   "id": "000009399002",
+   "side": "attacker",
+   "detachment": "Vectors of Decay",
+   "name_en": "CHINKS IN THE ARMOUR",
+   "name_zh": "甲缝之隙",
+   "status": "partial",
+   "effects": [
+    {
+     "phase": "hit",
+     "op": "crit_threshold",
+     "params": [
+      5
+     ],
+     "condition": [],
+     "source": "甲缝之隙（对传染范围内目标未修正 5+ 暴击命中）"
+    }
+   ],
+   "requires_toggles": [
+    "target_afflicted"
+   ],
+   "not_modeled_notes_zh": [
+    "目标在传染范围内的前提由 target_afflicted 开关声明"
+   ],
+   "provenance": {
+    "current_text": "db stratagems.text_zh id=000009399002",
+    "base_text": "Wahapedia 现文（PR8 工作单：FP 未触及或已滚入，11 版仍现行）",
+    "synthesis": "无需合成",
+    "text_sha256": "5cad028e0eef88586d06d31bcc6021bb141bbcb5c87972e617ba42344119fdcc"
+   },
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "stratagems",
+   "id": "000009399003",
+   "side": "attacker",
+   "detachment": "Vectors of Decay",
+   "name_en": "GROTESQUE DEMISE",
+   "name_zh": "怪诞灭亡",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "击杀后震慑测试——士气域"
+   ],
+   "provenance": {
+    "current_text": "db stratagems.text_zh id=000009399003",
+    "base_text": "Wahapedia 现文（PR8 工作单：FP 未触及或已滚入，11 版仍现行）",
+    "synthesis": "无需合成",
+    "text_sha256": "d4b5d24d3861be7ca44197f649f3ff2339df50bbf9b90a4ae6aa8098fa4379c0"
+   },
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "stratagems",
+   "id": "000009399004",
+   "side": "attacker",
+   "detachment": "Vectors of Decay",
+   "name_en": "INFESTATION",
+   "name_zh": "疫巢盘踞",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "目标点 Secured 保持——任务域"
+   ],
+   "provenance": {
+    "current_text": "db stratagems.text_zh id=000009399004",
+    "base_text": "Wahapedia 现文（PR8 工作单：FP 未触及或已滚入，11 版仍现行）",
+    "synthesis": "无需合成",
+    "text_sha256": "222927943f4d4fa35d7c7dd11a27cb731fb15a4f7a671840a3bbf11d5c613e2b"
+   },
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "stratagems",
+   "id": "000009399005",
+   "side": "attacker",
+   "detachment": "Vectors of Decay",
+   "name_en": "SEEPING CORROSION",
+   "name_zh": "渗漏腐蚀",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "舱门开启致命伤——地形交互域/序列外"
+   ],
+   "provenance": {
+    "current_text": "db stratagems.text_zh id=000009399005",
+    "base_text": "Wahapedia 现文（PR8 工作单：FP 未触及或已滚入，11 版仍现行）",
+    "synthesis": "无需合成",
+    "text_sha256": "566bad725ac3ea214ba6aa72f7607482b58949ec0358a25f4d5da8011cde94fb"
+   },
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "stratagems",
+   "id": "000010124002",
+   "side": "attacker",
+   "detachment": "Virulent Vectorium",
+   "name_en": "PUTRID DETONATION",
+   "name_zh": "腐败爆破",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "致命破灭自动触发 + 施加 Afflicted——死亡爆炸域/序列外"
+   ],
+   "provenance": {
+    "current_text": "db stratagems.text_zh id=000010124002",
+    "base_text": "Wahapedia 现文（PR8 工作单：FP 未触及或已滚入，11 版仍现行）",
+    "synthesis": "无需合成",
+    "text_sha256": "3875ab25bdd8702a413f01fc81262f68cf1f7e133da705c5f94f2e25bb3b6cf3"
+   },
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "stratagems",
+   "id": "000010124003",
+   "side": "target",
+   "detachment": "Virulent Vectorium",
+   "name_en": "DISGUSTINGLY RESILIENT",
+   "name_zh": "可憎坚韧",
+   "status": "partial",
+   "effects": [
+    {
+     "phase": "damage",
+     "op": "damage_reduction",
+     "params": [
+      1
+     ],
+     "condition": [],
+     "source": "可憎坚韧（被分配攻击 D-1）"
+    }
+   ],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "战略一次性/CP 不建模（假设本阶段已使用）"
+   ],
+   "provenance": {
+    "current_text": "db stratagems.text_zh id=000010124003",
+    "base_text": "Wahapedia 现文（PR8 工作单：FP 未触及或已滚入，11 版仍现行）",
+    "synthesis": "无需合成",
+    "text_sha256": "e0f457c49482a10282c3893ec3679c20c0ac53003be8da9de9f3e864476b168a"
+   },
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "stratagems",
+   "id": "000010124004",
+   "side": "attacker",
+   "detachment": "Virulent Vectorium",
+   "name_en": "PLAGUESURGE",
+   "name_zh": "瘟疫爆发",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "全军传染范围 +3 寸——影响 target_afflicted 假设的成立范围"
+   ],
+   "provenance": {
+    "current_text": "db stratagems.text_zh id=000010124004",
+    "base_text": "Wahapedia 现文（PR8 工作单：FP 未触及或已滚入，11 版仍现行）",
+    "synthesis": "无需合成",
+    "text_sha256": "645be03aefe9dd0e772c7aabfc625ca5883c433877a888587f7a4a97a7a1233a"
+   },
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "stratagems",
+   "id": "000010124005",
+   "side": "attacker",
+   "detachment": "Virulent Vectorium",
+   "name_en": "LEECHSPORE ERUPTION",
+   "name_zh": "吸血孢子",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "按失血数掷骰致命伤+回血——攻击序列外"
+   ],
+   "provenance": {
+    "current_text": "db stratagems.text_zh id=000010124005",
+    "base_text": "Wahapedia 现文（PR8 工作单：FP 未触及或已滚入，11 版仍现行）",
+    "synthesis": "无需合成",
+    "text_sha256": "ce1ce6630c02d981f864081c61ddc8ff9a3f280d17f161b6d3b9d68aca5de73c"
+   },
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "stratagems",
+   "id": "000010124006",
+   "side": "attacker",
+   "detachment": "Virulent Vectorium",
+   "name_en": "OVERWHELMING GENEROSITY",
+   "name_zh": "盛情款待",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "重骰攻击数决定骰——引擎无攻击数重骰通道"
+   ],
+   "provenance": {
+    "current_text": "db stratagems.text_zh id=000010124006",
+    "base_text": "Wahapedia 现文（PR8 工作单：FP 未触及或已滚入，11 版仍现行）",
+    "synthesis": "无需合成",
+    "text_sha256": "18acd088c895aebaa4caf11c66e85719e9ddeef5c03122c60d6ef2db06614f5e"
+   },
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "stratagems",
+   "id": "000010124007",
+   "side": "attacker",
+   "detachment": "Virulent Vectorium",
+   "name_en": "CREEPING BLIGHT",
+   "name_zh": "日渐凋零",
+   "status": "partial",
+   "effects": [
+    {
+     "phase": "hit",
+     "op": "reroll",
+     "params": [
+      "fail"
+     ],
+     "condition": [
+      "phase_shooting"
+     ],
+     "source": "日渐凋零（射击对 Afflicted 目标重骰命中）"
+    },
+    {
+     "phase": "wound",
+     "op": "reroll",
+     "params": [
+      "fail"
+     ],
+     "condition": [
+      "phase_shooting"
+     ],
+     "source": "日渐凋零（射击对 Afflicted 目标重骰致伤）"
+    }
+   ],
+   "requires_toggles": [
+    "target_afflicted"
+   ],
+   "not_modeled_notes_zh": [
+    "目标 Afflicted 前提由 target_afflicted 开关声明"
+   ],
+   "provenance": {
+    "current_text": "db stratagems.text_zh id=000010124007",
+    "base_text": "Wahapedia 现文（PR8 工作单：FP 未触及或已滚入，11 版仍现行）",
+    "synthesis": "无需合成",
+    "text_sha256": "51b5664eccc1f4de32b59e1bdeae00d31736bd491c332983dd5182d49ee2fc07"
+   },
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "enhancements",
+   "id": "000009416002",
+   "side": "attacker",
+   "detachment": "Arch-Contaminators",
+   "name_en": "Miasmic Odour",
+   "name_zh": "瘴气恶臭",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "传染范围 +3 寸——影响 target_afflicted 假设的成立范围"
+   ],
+   "provenance": {
+    "current_text": "db enhancements.description id=000009416002",
+    "base_text": "Wahapedia 现文（PR8 工作单：FP 未触及或已滚入，11 版仍现行）",
+    "synthesis": "无需合成",
+    "text_sha256": "bd1c4e2e3392e021e6e6578074f96473aad770e592ff8503f51ea0e4b9cb5c5d"
+   },
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "enhancements",
+   "id": "000009416003",
+   "side": "attacker",
+   "detachment": "Arch-Contaminators",
+   "name_en": "Disgusting Reinvigoration",
+   "name_zh": "恶心复元",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "近战击杀回血——治疗域"
+   ],
+   "provenance": {
+    "current_text": "db enhancements.description id=000009416003",
+    "base_text": "Wahapedia 现文（PR8 工作单：FP 未触及或已滚入，11 版仍现行）",
+    "synthesis": "无需合成",
+    "text_sha256": "25e459cd8d92ddeb447360322b714759abf13ace22f648494cb0d28757e6f680"
+   },
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "enhancements",
+   "id": "000010131002",
+   "side": "attacker",
+   "detachment": "Champions of Contagion",
+   "name_en": "Final Ingredient",
+   "name_zh": "最终素材",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "击杀人物后追加瘟疫——战役动态状态，一次性技能不建模"
+   ],
+   "provenance": {
+    "current_text": "db enhancements.description id=000010131002",
+    "base_text": "Wahapedia 现文（PR8 工作单：FP 未触及或已滚入，11 版仍现行）",
+    "synthesis": "无需合成",
+    "text_sha256": "c9fb21ced160e6a2f30c559ee21d7d7d4b0002d0267054788f3466eed5843e20"
+   },
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "enhancements",
+   "id": "000010131003",
+   "side": "attacker",
+   "detachment": "Champions of Contagion",
+   "name_en": "Visions of Virulence",
+   "name_zh": "恶毒预示",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "灵能减益联动施加 Afflicted——开 target_afflicted 声明即可"
+   ],
+   "provenance": {
+    "current_text": "db enhancements.description id=000010131003",
+    "base_text": "Wahapedia 现文（PR8 工作单：FP 未触及或已滚入，11 版仍现行）",
+    "synthesis": "无需合成",
+    "text_sha256": "7142bf542c8b43bb578bcd0843862535d08cfec397d9bf1d011044156c4b9aae"
+   },
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "enhancements",
+   "id": "000010131004",
+   "side": "attacker",
+   "detachment": "Champions of Contagion",
+   "name_en": "Needle of Nurgle",
+   "name_zh": "精华注射",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "复活模型增量——治疗域"
+   ],
+   "provenance": {
+    "current_text": "db enhancements.description id=000010131004",
+    "base_text": "Wahapedia 现文（PR8 工作单：FP 未触及或已滚入，11 版仍现行）",
+    "synthesis": "无需合成",
+    "text_sha256": "d4ce7f86cfef346b87d090160aa914dd2cb8e210e44ee3d3fb610b75091404a3"
+   },
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "enhancements",
+   "id": "000010131005",
+   "side": "attacker",
+   "detachment": "Champions of Contagion",
+   "name_en": "Cornucophagus",
+   "name_zh": "魔尘熏香",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "传染范围内追加第二瘟疫——多瘟疫叠加不建模（防高估：二选一/追加类光环整条不编）"
+   ],
+   "provenance": {
+    "current_text": "db enhancements.description id=000010131005",
+    "base_text": "Wahapedia 现文（PR8 工作单：FP 未触及或已滚入，11 版仍现行）",
+    "synthesis": "无需合成",
+    "text_sha256": "7d7335eee7cff6431931efffb2829ded43ac46bf6fc2f0e26f2109e31810f499"
+   },
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "enhancements",
+   "id": "fp11e-dg-engines-e1",
+   "side": "attacker",
+   "detachment": "Contagion Engines",
+   "name_en": "Parasitic Woe-Reaper",
+   "name_zh": "寄生灾殃收割者",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "战后治疗 D3——治疗域"
+   ],
+   "provenance": {
+    "current_text": "db enhancements.description id=fp11e-dg-engines-e1",
+    "base_text": "Faction Pack Death Guard page_002.md（fp_rules 补录 fp_new）",
+    "synthesis": "11 版新分队，Wahapedia 无源，DB 行即 FP 原文",
+    "text_sha256": "543d097ccba660cf59a5ad5ccff962c3138f1d48d208b0701476fd4d8d896193"
+   },
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "enhancements",
+   "id": "fp11e-dg-engines-e2",
+   "side": "attacker",
+   "detachment": "Contagion Engines",
+   "name_en": "Lancet of the Worldsore",
+   "name_zh": "世界疮刺",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "MOBILE——移动域"
+   ],
+   "provenance": {
+    "current_text": "db enhancements.description id=fp11e-dg-engines-e2",
+    "base_text": "Faction Pack Death Guard page_002.md（fp_rules 补录 fp_new）",
+    "synthesis": "11 版新分队，Wahapedia 无源，DB 行即 FP 原文",
+    "text_sha256": "8612faa0e7b90fb092ebac73a3e1f87cb741a6c57e90c61500022ad12080e71e"
+   },
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "enhancements",
+   "id": "000010143002",
+   "side": "attacker",
+   "detachment": "Death Lord’s Chosen",
+   "name_en": "Face of Death",
+   "name_zh": "死亡之面",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "接战震慑测试——士气域"
+   ],
+   "provenance": {
+    "current_text": "db enhancements.description id=000010143002",
+    "base_text": "Wahapedia 现文（PR8 工作单：FP 未触及或已滚入，11 版仍现行）",
+    "synthesis": "无需合成",
+    "text_sha256": "ba35ffbf2c646cd934ed829b1a218f765c657016cced26f47829d3c79078253a"
+   },
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "enhancements",
+   "id": "000010143003",
+   "side": "attacker",
+   "detachment": "Death Lord’s Chosen",
+   "name_en": "Vile Vigour",
+   "name_zh": "邪恶活力",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "M+1 与加速重骰——移动域"
+   ],
+   "provenance": {
+    "current_text": "db enhancements.description id=000010143003",
+    "base_text": "Wahapedia 现文（PR8 工作单：FP 未触及或已滚入，11 版仍现行）",
+    "synthesis": "无需合成",
+    "text_sha256": "d56ec4d827585e0195de8de013ad08a9c3150b2d457fdcb87e67eb5a79fb2f68"
+   },
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "enhancements",
+   "id": "000010143004",
+   "side": "attacker",
+   "detachment": "Death Lord’s Chosen",
+   "name_en": "Warprot Talisman",
+   "name_zh": "亚空间护符",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "一次性撤回战略预备队——部署域"
+   ],
+   "provenance": {
+    "current_text": "db enhancements.description id=000010143004",
+    "base_text": "Wahapedia 现文（PR8 工作单：FP 未触及或已滚入，11 版仍现行）",
+    "synthesis": "无需合成",
+    "text_sha256": "007c56d0c74b2c44d38b8ce4d02e08cd11417b03c91a6f79c65733286dfdd9fd"
+   },
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "enhancements",
+   "id": "000010143005",
+   "side": "target",
+   "detachment": "Death Lord’s Chosen",
+   "name_en": "Helm of the Fly King",
+   "name_zh": "蝇王之盔",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "18 寸外不可被选为射击目标——目标合法性域"
+   ],
+   "provenance": {
+    "current_text": "db enhancements.description id=000010143005",
+    "base_text": "Wahapedia 现文（PR8 工作单：FP 未触及或已滚入，11 版仍现行）",
+    "synthesis": "无需合成",
+    "text_sha256": "57956f88e57fdbf77dddfc470a66b6775ab5b56a78699a19e6c60dd3d3b2f53a"
+   },
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "enhancements",
+   "id": "000009729003",
+   "side": "attacker",
+   "detachment": "Flyblown Host",
+   "name_en": "Insectile Murmuration",
+   "name_zh": "蝇虫混响",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "重骰致伤 1——重骰1≠重骰失败，防高估硬裁定不编"
+   ],
+   "provenance": {
+    "current_text": "db enhancements.description id=000009729003",
+    "base_text": "Faction Pack Death Guard page_003.md（fp_rules 已 11 版化）",
+    "synthesis": "fp_rules 补丁后的 DB 现行文本",
+    "text_sha256": "bd15efc9c09165ef265dcdd0d15e8360f5a88469946dff2db83b5d03d30df252"
+   },
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "enhancements",
+   "id": "000009729005",
+   "side": "target",
+   "detachment": "Flyblown Host",
+   "name_en": "Plagueveil",
+   "name_zh": "瘟疫面纱",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "-3 寸侦测范围——侦测域"
+   ],
+   "provenance": {
+    "current_text": "db enhancements.description id=000009729005",
+    "base_text": "Faction Pack Death Guard page_003.md（fp_rules 已 11 版化）",
+    "synthesis": "fp_rules 补丁后的 DB 现行文本",
+    "text_sha256": "1ae1bc49dad5445f39e4a79740f2b87d7ccb87b35b4d357726a294db0157afe6"
+   },
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "enhancements",
+   "id": "000010127002",
+   "side": "attacker",
+   "detachment": "Mortarion’s Hammer",
+   "name_en": "Eye of Affliction",
+   "name_zh": "折磨之眼",
+   "status": "partial",
+   "effects": [
+    {
+     "phase": "save",
+     "op": "ignores_cover",
+     "params": [],
+     "condition": [
+      "phase_shooting"
+     ],
+     "source": "折磨之眼（射击 Afflicted 目标 [忽视掩体]）"
+    }
+   ],
+   "requires_toggles": [
+    "target_afflicted",
+    "bearer_leading"
+   ],
+   "not_modeled_notes_zh": [
+    "目标 Afflicted 前提由 target_afflicted 开关声明；作用面=携带者所在单位（bearer_leading 开关声明）"
+   ],
+   "provenance": {
+    "current_text": "db enhancements.description id=000010127002",
+    "base_text": "Wahapedia 现文（PR8 工作单：FP 未触及或已滚入，11 版仍现行）",
+    "synthesis": "无需合成",
+    "text_sha256": "2255dd668277326f9be2162af2f5b478f35e4ac01596ef4f97633e1504312ba7"
+   },
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "enhancements",
+   "id": "000010127003",
+   "side": "attacker",
+   "detachment": "Mortarion’s Hammer",
+   "name_en": "Bilemaw Blight",
+   "name_zh": "腐瘟喷吐",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "武器射程 +12 寸——射程域（引擎无距离建模）"
+   ],
+   "provenance": {
+    "current_text": "db enhancements.description id=000010127003",
+    "base_text": "Wahapedia 现文（PR8 工作单：FP 未触及或已滚入，11 版仍现行）",
+    "synthesis": "无需合成",
+    "text_sha256": "38bbe8f2d610c2e46bfb443d72c0ac63becdad021217e906ea825d9ff554f8dd"
+   },
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "enhancements",
+   "id": "000010127004",
+   "side": "attacker",
+   "detachment": "Mortarion’s Hammer",
+   "name_en": "Shriekworm Familiar",
+   "name_zh": "尖啸虫使",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "0CP 坚守射击——CP 经济域"
+   ],
+   "provenance": {
+    "current_text": "db enhancements.description id=000010127004",
+    "base_text": "Wahapedia 现文（PR8 工作单：FP 未触及或已滚入，11 版仍现行）",
+    "synthesis": "无需合成",
+    "text_sha256": "417db4a74388f21f79d66f20a1770fa7569e01c61f9e38ecff304bb7e08edb4b"
+   },
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "enhancements",
+   "id": "000010127005",
+   "side": "attacker",
+   "detachment": "Mortarion’s Hammer",
+   "name_en": "Tendrilous Emissions",
+   "name_zh": "索敌毒云",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "独行特工 + 载具重骰致伤 1——目标合法性域；重骰1 防高估不编"
+   ],
+   "provenance": {
+    "current_text": "db enhancements.description id=000010127005",
+    "base_text": "Wahapedia 现文（PR8 工作单：FP 未触及或已滚入，11 版仍现行）",
+    "synthesis": "无需合成",
+    "text_sha256": "f1ad3decf28b115f0169fcbd4479f00b172334caff41b1e54eb6f3ab456500f5"
+   },
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "enhancements",
+   "id": "fp11e-dg-paragons-e1",
+   "side": "target",
+   "detachment": "Paragons of Putrescence",
+   "name_en": "Rejuvenating Swarm",
+   "name_zh": "活化蝇群",
+   "status": "partial",
+   "effects": [
+    {
+     "phase": "wound",
+     "op": "modify",
+     "params": [
+      -1
+     ],
+     "condition": [
+      "wound_s_gt_t"
+     ],
+     "source": "活化蝇群（S>T 攻击被伤 -1）"
+    }
+   ],
+   "requires_toggles": [
+    "defender_bearer_leading"
+   ],
+   "not_modeled_notes_zh": [
+    "S/T 比较延迟到引擎最终 S/T 处判定（含特征值修正）",
+    "排除 TERMINATOR 模型——按携带者单位自查"
+   ],
+   "provenance": {
+    "current_text": "db enhancements.description id=fp11e-dg-paragons-e1",
+    "base_text": "Faction Pack Death Guard page_004.md（fp_rules 补录 fp_new）",
+    "synthesis": "11 版新分队，Wahapedia 无源，DB 行即 FP 原文",
+    "text_sha256": "7f25b0e2b803bf306ecf4d8f057836e56e3fb41e26166497a63b648243757507"
+   },
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "enhancements",
+   "id": "fp11e-dg-paragons-e2",
+   "side": "attacker",
+   "detachment": "Paragons of Putrescence",
+   "name_en": "Host of the Hybridised Pox",
+   "name_zh": "杂合瘟疫宿主",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "一次性追加第二瘟疫——战役动态状态，防高估不编"
+   ],
+   "provenance": {
+    "current_text": "db enhancements.description id=fp11e-dg-paragons-e2",
+    "base_text": "Faction Pack Death Guard page_004.md（fp_rules 补录 fp_new）",
+    "synthesis": "11 版新分队，Wahapedia 无源，DB 行即 FP 原文",
+    "text_sha256": "d43497b1365b538224ba036ff3e7175ce9a68a4591cae6aa20008ec3dfca3448"
+   },
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "enhancements",
+   "id": "000010139002",
+   "side": "attacker",
+   "detachment": "Shamblerot Vectorium",
+   "name_en": "Witherbone Pipes",
+   "name_zh": "驱尸灵笛",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "OC+1 与震慑/LD 测试 +1——任务/士气域"
+   ],
+   "provenance": {
+    "current_text": "db enhancements.description id=000010139002",
+    "base_text": "Wahapedia 现文（PR8 工作单：FP 未触及或已滚入，11 版仍现行）",
+    "synthesis": "无需合成",
+    "text_sha256": "9690b58990bc4efa4bfd680efb464e4353a4f0f8cb6b0ed85de464cff921dfcf"
+   },
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "enhancements",
+   "id": "000010139003",
+   "side": "attacker",
+   "detachment": "Shamblerot Vectorium",
+   "name_en": "Lord of the Walking Pox",
+   "name_zh": "行尸之主",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "预备队入场轮次视作第三轮——部署域"
+   ],
+   "provenance": {
+    "current_text": "db enhancements.description id=000010139003",
+    "base_text": "Wahapedia 现文（PR8 工作单：FP 未触及或已滚入，11 版仍现行）",
+    "synthesis": "无需合成",
+    "text_sha256": "b8393ad62d33ca26614300bf36b53ec20ab559b9e7b8df15c01e23981e68664d"
+   },
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "enhancements",
+   "id": "000010139004",
+   "side": "attacker",
+   "detachment": "Shamblerot Vectorium",
+   "name_en": "Sorrowsyphon",
+   "name_zh": "悲痛虹吸",
+   "status": "partial",
+   "effects": [
+    {
+     "phase": "damage",
+     "op": "modify",
+     "params": [
+      1
+     ],
+     "condition": [],
+     "source": "悲痛虹吸（瘟疫之风 D+1）"
+    }
+   ],
+   "requires_toggles": [
+    "bearer_leading"
+   ],
+   "not_modeled_notes_zh": [
+    "每轮攻击后自毁 D3 保镖模型的代价不建模（幸存/持续战力域）",
+    "loadout 须含瘟疫之风（Plague Wind）武器，无匹配时显式披露"
+   ],
+   "provenance": {
+    "current_text": "db enhancements.description id=000010139004",
+    "base_text": "Wahapedia 现文（PR8 工作单：FP 未触及或已滚入，11 版仍现行）",
+    "synthesis": "无需合成",
+    "text_sha256": "c2464ced20adebb94da16f868fd7a8bbd0d1f084cd898ff661ca48e45438f0f7"
+   },
+   "encoded_by": "manual-2026-07-19",
+   "weapon_filter": "Plague Wind"
+  },
+  {
+   "table": "enhancements",
+   "id": "000010139005",
+   "side": "target",
+   "detachment": "Shamblerot Vectorium",
+   "name_en": "Talisman of Burgeoning",
+   "name_zh": "再生护符",
+   "status": "partial",
+   "effects": [
+    {
+     "phase": "wound",
+     "op": "t_improve",
+     "params": [
+      1
+     ],
+     "condition": [],
+     "source": "再生护符（瘟疫行尸 +1 T）"
+    }
+   ],
+   "requires_toggles": [
+    "defender_bearer_leading"
+   ],
+   "not_modeled_notes_zh": [
+    "仅作用于所领导单位中的瘟疫行尸模型——整单位近似（混编时略高估）"
+   ],
+   "provenance": {
+    "current_text": "db enhancements.description id=000010139005",
+    "base_text": "Wahapedia 现文（PR8 工作单：FP 未触及或已滚入，11 版仍现行）",
+    "synthesis": "无需合成",
+    "text_sha256": "eba105d080003a95b556f7d1224f560da36e04bc9b0fe40d9ff66c79f93d48b9"
+   },
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "enhancements",
+   "id": "000010135002",
+   "side": "attacker",
+   "detachment": "Tallyband Summoners",
+   "name_en": "Beckoning Blight",
+   "name_zh": "召唤凋零",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "深打落点收紧（8 寸→6 寸）——部署域"
+   ],
+   "provenance": {
+    "current_text": "db enhancements.description id=000010135002",
+    "base_text": "Faction Pack Death Guard page_007.md（fp_rules 已 11 版化）",
+    "synthesis": "fp_rules 补丁后的 DB 现行文本",
+    "text_sha256": "eae5f01260e07da04b56ed38a537830963e0420b570cb8b381c58cbeb182a015"
+   },
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "enhancements",
+   "id": "000010135003",
+   "side": "attacker",
+   "detachment": "Tallyband Summoners",
+   "name_en": "Fell Harvester",
+   "name_zh": "残暴收割",
+   "status": "partial",
+   "effects": [
+    {
+     "phase": "attacks",
+     "op": "modify",
+     "params": [
+      2
+     ],
+     "condition": [
+      "phase_melee"
+     ],
+     "source": "残暴收割（携带者近战武器 A+2）"
+    }
+   ],
+   "requires_toggles": [
+    "bearer_leading"
+   ],
+   "not_modeled_notes_zh": [
+    "仅携带者的近战武器——单模型（人物）口径模拟；整单位 loadout 会高估"
+   ],
+   "provenance": {
+    "current_text": "db enhancements.description id=000010135003",
+    "base_text": "Wahapedia 现文（PR8 工作单：FP 未触及或已滚入，11 版仍现行）",
+    "synthesis": "无需合成",
+    "text_sha256": "ca00051ea29a28d653f7bc13887289ede8cc8afba596111e218d59b1ee796188"
+   },
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "enhancements",
+   "id": "000010135004",
+   "side": "attacker",
+   "detachment": "Tallyband Summoners",
+   "name_en": "Entropic Knell",
+   "name_zh": "恐怖丧钟",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "6 寸内低编敌军震慑测试——士气域"
+   ],
+   "provenance": {
+    "current_text": "db enhancements.description id=000010135004",
+    "base_text": "Wahapedia 现文（PR8 工作单：FP 未触及或已滚入，11 版仍现行）",
+    "synthesis": "无需合成",
+    "text_sha256": "7a688291e88ce4da53093b73290332bfd5b7bfec4fc61facad332cd28daf6c75"
+   },
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "enhancements",
+   "id": "000010135005",
+   "side": "attacker",
+   "detachment": "Tallyband Summoners",
+   "name_en": "Tome of Bounteous Blessings",
+   "name_zh": "赐福魔典",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "震慑测试 +1 与回血/复活——士气/治疗域"
+   ],
+   "provenance": {
+    "current_text": "db enhancements.description id=000010135005",
+    "base_text": "Wahapedia 现文（PR8 工作单：FP 未触及或已滚入，11 版仍现行）",
+    "synthesis": "无需合成",
+    "text_sha256": "ae1d1f5af9a6543ac279085defe1c795c1276988b20b8e081fb1c34678171383"
+   },
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "enhancements",
+   "id": "000009408002",
+   "side": "attacker",
+   "detachment": "Unclean Uprising",
+   "name_en": "Pox-Bearer",
+   "name_zh": "瘟疫使者",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "一次性复活 D3+2 瘟疫行尸——治疗域"
+   ],
+   "provenance": {
+    "current_text": "db enhancements.description id=000009408002",
+    "base_text": "Wahapedia 现文（PR8 工作单：FP 未触及或已滚入，11 版仍现行）",
+    "synthesis": "无需合成",
+    "text_sha256": "98ae95b8dd7c1b72badc7fd6a0ef0137eb1a8762ee3bbadc7052167a7fa1e84f"
+   },
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "enhancements",
+   "id": "000009408003",
+   "side": "attacker",
+   "detachment": "Unclean Uprising",
+   "name_en": "Hand of Nurgle",
+   "name_zh": "纳垢之手",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "目标点 Secured——任务域"
+   ],
+   "provenance": {
+    "current_text": "db enhancements.description id=000009408003",
+    "base_text": "Wahapedia 现文（PR8 工作单：FP 未触及或已滚入，11 版仍现行）",
+    "synthesis": "无需合成",
+    "text_sha256": "321a660259fbb5359bf5a0bb4e24a1a0656cea920fb12a717838a4ef8ac1081d"
+   },
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "enhancements",
+   "id": "000009398002",
+   "side": "target",
+   "detachment": "Vectors of Decay",
+   "name_en": "Foul Constitution",
+   "name_zh": "污秽体质",
+   "status": "partial",
+   "effects": [
+    {
+     "phase": "damage",
+     "op": "damage_reduction",
+     "params": [
+      1
+     ],
+     "condition": [],
+     "source": "污秽体质（被分配攻击 D-1）"
+    }
+   ],
+   "requires_toggles": [
+    "defender_bearer_leading"
+   ],
+   "not_modeled_notes_zh": [
+    "仅分配给携带者的攻击——单模型（人物）口径模拟；整单位目标会高估"
+   ],
+   "provenance": {
+    "current_text": "db enhancements.description id=000009398002",
+    "base_text": "Wahapedia 现文（PR8 工作单：FP 未触及或已滚入，11 版仍现行）",
+    "synthesis": "无需合成",
+    "text_sha256": "ae21206ba0337790e734908325894b1db530e2cf6ed05fdbbab2e53ea96e1b0a"
+   },
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "enhancements",
+   "id": "000009398003",
+   "side": "attacker",
+   "detachment": "Vectors of Decay",
+   "name_en": "Fountaining Filth",
+   "name_zh": "喷涌污秽",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "阵亡时爆发致命伤——死亡触发域/序列外"
+   ],
+   "provenance": {
+    "current_text": "db enhancements.description id=000009398003",
+    "base_text": "Wahapedia 现文（PR8 工作单：FP 未触及或已滚入，11 版仍现行）",
+    "synthesis": "无需合成",
+    "text_sha256": "9896d98bc2d9692808f237b444a3871ad5e451b9295d12f82bc26e6f43be4ec5"
+   },
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "enhancements",
+   "id": "000010123002",
+   "side": "attacker",
+   "detachment": "Virulent Vectorium",
+   "name_en": "Daemon Weapon of Nurgle",
+   "name_zh": "纳垢武器",
+   "status": "partial",
+   "effects": [
+    {
+     "phase": "hit",
+     "op": "crit_threshold",
+     "params": [
+      5
+     ],
+     "condition": [
+      "phase_melee"
+     ],
+     "source": "纳垢武器（近战未修正 5+ 暴击命中）"
+    }
+   ],
+   "requires_toggles": [
+    "bearer_leading"
+   ],
+   "not_modeled_notes_zh": [
+    "仅携带者的近战攻击——单模型（人物）口径模拟；整单位 loadout 会高估"
+   ],
+   "provenance": {
+    "current_text": "db enhancements.description id=000010123002",
+    "base_text": "Wahapedia 现文（PR8 工作单：FP 未触及或已滚入，11 版仍现行）",
+    "synthesis": "无需合成",
+    "text_sha256": "20a90ee38704588cbf025400d3fe8ccefee834ef6ed3f3924df15e4c2f9e972b"
+   },
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "enhancements",
+   "id": "000010123003",
+   "side": "attacker",
+   "detachment": "Virulent Vectorium",
+   "name_en": "Furnace of Plagues",
+   "name_zh": "瘟疫熔炉",
+   "status": "partial",
+   "effects": [
+    {
+     "phase": "attacks",
+     "op": "modify",
+     "params": [
+      1
+     ],
+     "condition": [
+      "phase_melee"
+     ],
+     "source": "瘟疫熔炉（近战 A+1）"
+    },
+    {
+     "phase": "wound",
+     "op": "s_improve",
+     "params": [
+      1
+     ],
+     "condition": [
+      "phase_melee"
+     ],
+     "source": "瘟疫熔炉（近战 S+1）"
+    },
+    {
+     "phase": "wound",
+     "op": "mortal_pool",
+     "params": [],
+     "condition": [
+      "phase_melee"
+     ],
+     "source": "瘟疫熔炉（近战 [毁灭伤害]）"
+    }
+   ],
+   "requires_toggles": [
+    "bearer_leading"
+   ],
+   "not_modeled_notes_zh": [
+    "仅携带者的近战武器——单模型（人物）口径模拟；整单位 loadout 会高估"
+   ],
+   "provenance": {
+    "current_text": "db enhancements.description id=000010123003",
+    "base_text": "Wahapedia 现文（PR8 工作单：FP 未触及或已滚入，11 版仍现行）",
+    "synthesis": "无需合成",
+    "text_sha256": "fc077e8349e6060216ec8c56768302dba999726724ae49dd83ebbe266e3bea86"
+   },
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "enhancements",
+   "id": "000010123004",
+   "side": "attacker",
+   "detachment": "Virulent Vectorium",
+   "name_en": "Arch Contaminator",
+   "name_zh": "超级病源",
+   "status": "partial",
+   "effects": [
+    {
+     "phase": "wound",
+     "op": "reroll",
+     "params": [
+      "fail"
+     ],
+     "condition": [],
+     "source": "超级病源（重骰致伤）"
+    }
+   ],
+   "requires_toggles": [
+    "bearer_leading"
+   ],
+   "not_modeled_notes_zh": [
+    "前提：携带者所在单位位于己方控制的目标点范围内——opt-in 增强按战场态势自查"
+   ],
+   "provenance": {
+    "current_text": "db enhancements.description id=000010123004",
+    "base_text": "Wahapedia 现文（PR8 工作单：FP 未触及或已滚入，11 版仍现行）",
+    "synthesis": "无需合成",
+    "text_sha256": "54075871d2bed0e514c16029b2db54f140ceb5a242b9e2095656c64c6b996aa7"
+   },
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "enhancements",
+   "id": "000010123005",
+   "side": "target",
+   "detachment": "Virulent Vectorium",
+   "name_en": "Revolting Regeneration",
+   "name_zh": "可怖再生",
+   "status": "partial",
+   "effects": [
+    {
+     "phase": "fnp",
+     "op": "fnp",
+     "params": [
+      5
+     ],
+     "condition": [],
+     "source": "可怖再生（FNP 5+）"
+    }
+   ],
+   "requires_toggles": [
+    "defender_bearer_leading"
+   ],
+   "not_modeled_notes_zh": [
+    "携带者单体 FNP——单模型（人物）目标口径模拟；整单位目标会高估"
+   ],
+   "provenance": {
+    "current_text": "db enhancements.description id=000010123005",
+    "base_text": "Wahapedia 现文（PR8 工作单：FP 未触及或已滚入，11 版仍现行）",
+    "synthesis": "无需合成",
+    "text_sha256": "26dca105af72d2bf077a003e72be3db042a90fb222bf5f29d89aaee1441e0d25"
+   },
+   "encoded_by": "manual-2026-07-19"
+  }
+ ]
+}

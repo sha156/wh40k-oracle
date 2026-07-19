@@ -93,9 +93,12 @@ fp_new 走 inserts 补录（fp11e- 前缀 synthetic id）。
   - abilities 000001371_a2 Death Approaches 死亡将至（老湿腐死亡守卫终结者页，
     落补丁前再核原文页；无源则留空）
 - 自译标记（zh_source=self-translation-11e）：inserts 自带 name_zh——传染引擎
-  （Contagion Engines）面：锈蚀狂躁兵魂（Warped and Rusted Animus）/ 新鲜病媒 /
-  血锈倾盆 / 魂腐涌流；腐熟贤范（Paragons of Putrescence）面：超毒瘟株
-  （Hypervirulent Strains）/ 领地感染 / 剧痛痉挛 / 同步污染
+  （Contagion Engines）面：扭曲锈蚀之魂（Warped and Rusted Animus）/ 新鲜病媒 /
+  血锈倾盆 / 魂腐涌流；Paragons of Putrescence 面：超毒瘟株
+  （Hypervirulent Strains）/ 领地感染 / 剧痛痉挛 / 同步污染；DSL payload 层
+  增强自译：寄生灾殃收割者 / 世界疮刺 / 活化蝇群（沿 codex 名）/ 杂合瘟疫宿主
+  及 Grotmas 无源战略 10 条（熵灭之友/腐化之种/腐蚀诅咒/蝇群蔽体/脓疱闪耀/
+  疫途/亡者复起/蹒跚猛攻/甲缝之隙/怪诞灭亡/疫巢盘踞/渗漏腐蚀）
 - 三个 index/Grotmas 期分队（Vectors of Decay/Sevenfold Offerings、Unclean
   Uprising/Relentless Spread、Arch-Contaminators/Inescapable Corruption）及其
   14 战略：中文 codex 无源，宁缺勿错留空

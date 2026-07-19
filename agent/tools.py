@@ -429,6 +429,7 @@ def simulate_combat_resolved(
             disembarked_from_land_raider=bool(options.get("disembarked_from_land_raider")),
             omen_instrument=bool(options.get("omen_instrument")),
             omen_momentous_brutality=bool(options.get("omen_momentous_brutality")),
+            plague_rattlejoint=bool(options.get("plague_rattlejoint")),
         )
 
         loadout = options.get("loadout")
