@@ -122,17 +122,26 @@ def _slim(p: dict) -> dict:
 
 
 def _apply_keyword_patches(conn, patches: List[dict], report: Dict) -> None:
-    """关键词级真漂移补丁（units.keywords_json，P7-PR5）。
+    """关键词级真漂移补丁（units.keywords_json，P7-PR5；P7-PR8 扩 add_faction）。
 
     首例：FP World Eaters p7 Heldrake「Keywords: Remove 'AIRCRAFT'」——11 版取消
     飞行器模式后个别兵牌的关键词漂移，S4 的 25 飞机移动补丁没覆盖关键词面。
     守卫：①单位不存在→跳过告警；②remove 列表里的词库内已不存在→幂等；
-    ③只删不加（新增关键词属重印整表体裁，走 new_units/上游滚更，不在本层）。
-    大小写不敏感匹配、保留库内原大小写与顺序。
+    ③keywords 主列表只删不加（新增关键词属重印整表体裁，走 new_units/上游滚更，
+    不在本层）。大小写不敏感匹配、保留库内原大小写与顺序。
+
+    P7-PR8 追加 `add_faction`：faction_keywords 补缺（全库 1715 单位仅 4 张 DG
+    兵牌为空 []，FP 明印 Faction Keywords 且 profile.py 把 faction_keywords 并进
+    raw_keywords——空缺会让 DSL 关键词条件静默漏匹配）。只增不删、已含目标词幂等，
+    绝不覆盖既有列表。
     """
     for p in patches:
-        uid, removes = p.get("unit_id"), p.get("remove") or []
-        if not uid or not removes or not isinstance(removes, list):
+        uid = p.get("unit_id")
+        removes = p.get("remove") or []
+        add_faction = p.get("add_faction") or []
+        if (not uid or not isinstance(removes, list)
+                or not isinstance(add_faction, list)
+                or not (removes or add_faction)):
             report["kw_invalid"].append(_slim(p))
             continue
         row = conn.execute(
@@ -141,19 +150,27 @@ def _apply_keyword_patches(conn, patches: List[dict], report: Dict) -> None:
             report["kw_skipped"].append({**_slim(p), "reason": "单位不存在"})
             continue
         data = json.loads(row[0] or "{}")
+        changed = {}
         kws = data.get("keywords", [])
         drop = {r.casefold() for r in removes}
         kept = [k for k in kws if k.casefold() not in drop]
-        if len(kept) == len(kws):
-            report["kw_already"] += 1               # 幂等：目标词已不在
+        if len(kept) != len(kws):
+            data["keywords"] = kept
+            changed["removed"] = [k for k in kws if k.casefold() in drop]
+        fks = data.get("faction_keywords", [])
+        have = {k.casefold() for k in fks}
+        missing = [t for t in add_faction if t.casefold() not in have]
+        if missing:
+            data["faction_keywords"] = fks + missing
+            changed["added_faction"] = missing
+        if not changed:
+            report["kw_already"] += 1               # 幂等：删的已不在 / 加的已在
             continue
-        data["keywords"] = kept
         conn.execute(
             "UPDATE units SET keywords_json = ? WHERE id = ?",
             (json.dumps(data, ensure_ascii=False), uid))
         report["kw_applied"] += 1
-        report["kw_changes"].append(
-            {**_slim(p), "removed": [k for k in kws if k.casefold() in drop]})
+        report["kw_changes"].append({**_slim(p), **changed})
 
 
 def _insert_new_units(conn, units: List[dict], report: Dict) -> None:

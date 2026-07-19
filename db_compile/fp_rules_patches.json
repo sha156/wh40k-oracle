@@ -1,5 +1,5 @@
 {
- "_comment": "P7-PR1 钛帝国规则文本 11 版化补丁。text_patches 来自 2026-07-14 逐行 A/B 工作单（docs/superpowers/plans/2026-07-14-p7-pr1-fp-rules-worklist.md，55 行全落账：8 drifted / 3 identical / 35 not_in_fp / 9 review_needed / 5 fp_new）；name_patches 来自钛帝国十版中文codex refine 缓存逐条效果配对（43 条有源 + 11 条自译标记）。｜P7-PR5 吞世者追加（2026-07-18）：text 9（军规嗜血癫狂改+1冲锋、狂战士之怒/怒火尽泄 surge move 术语、黄铜之怒规则改核心 surge、怒火容器 p4 完整重印 5 条）；deactivations +6（怒火容器重印未收录）；inserts +13（Brazen Engines/Butchers of Khorne 两全新分队 + Scorn the Witch）；name +53（狂战士战帮/怒火容器/军规 DavidZ codex 有源配对，其余自译标记）。已滚入免补：Summoned by Slaughter / Warp Stalkers / Rapid Manifestation（Wahapedia 现文即 11 版）。｜PR5 兵牌层技能 6 条（FP p7-p8 DATASHEETS：Loping Speed 8\"、Blood Surge surge move 化、Helbrute Frenzy 重写、Scent of Blood 9\" 内判据、Chaos Rhino 8\"、Bloody Fury 重写）；已滚入免补：Exalted Eightbound Rend and Tear / Icon of Khorne×2 / Slaughterbound 武器 S10 / Defiler 整表（Wahapedia 已收）。FRAME 关键词沿 S4 裁定跳过（测距词）。",
+ "_comment": "P7-PR1 钛帝国规则文本 11 版化补丁。text_patches 来自 2026-07-14 逐行 A/B 工作单（docs/superpowers/plans/2026-07-14-p7-pr1-fp-rules-worklist.md，55 行全落账：8 drifted / 3 identical / 35 not_in_fp / 9 review_needed / 5 fp_new）；name_patches 来自钛帝国十版中文codex refine 缓存逐条效果配对（43 条有源 + 11 条自译标记）。｜P7-PR5 吞世者追加（2026-07-18）：text 9（军规嗜血癫狂改+1冲锋、狂战士之怒/怒火尽泄 surge move 术语、黄铜之怒规则改核心 surge、怒火容器 p4 完整重印 5 条）；deactivations +6（怒火容器重印未收录）；inserts +13（Brazen Engines/Butchers of Khorne 两全新分队 + Scorn the Witch）；name +53（狂战士战帮/怒火容器/军规 DavidZ codex 有源配对，其余自译标记）。已滚入免补：Summoned by Slaughter / Warp Stalkers / Rapid Manifestation（Wahapedia 现文即 11 版）。｜PR5 兵牌层技能 6 条（FP p7-p8 DATASHEETS：Loping Speed 8\"、Blood Surge surge move 化、Helbrute Frenzy 重写、Scent of Blood 9\" 内判据、Chaos Rhino 8\"、Bloody Fury 重写）；已滚入免补：Exalted Eightbound Rend and Tear / Icon of Khorne×2 / Slaughterbound 武器 S10 / Defiler 整表（Wahapedia 已收）。FRAME 关键词沿 S4 裁定跳过（测距词）。｜P7-PR8 死亡守卫追加（2026-07-19）：text 9（Flyblown Host 完整重印 6 条 + 军规两处合一 + Death Approaches 9\"→8\" + Beckoning Blight 9\"→8\"）、deact 5（Flyblown重印未收录 3 战略 2 增强）、inserts 12（Contagion Engines/Paragons of Putrescence两新分队各 1 规则 3 战略 2 增强）、name 51（军规 1 + det 规则 7 + 战略 42 + 死神降临，源=老湿腐死亡守卫V1.1；工作单 docs/superpowers/plans/2026-07-19-p7-pr8-dg-worklist.md）",
  "text_patches": [
   {
    "table": "detachments",
@@ -510,6 +510,96 @@
    "to_text": "In your Shooting phase, after this unit has shot, you can use this ability. If you do, select one enemy unit hit by those ranged attacks. Until the end of the turn, when this unit declares a charge:<ul><li>This unit can re-roll that charge roll.</li><li>This unit must end that charge move engaged with that enemy unit.</li></ul>",
    "fp_source": "Faction Pack Emperor S Children page_009.md",
    "synthesis": "整替：全弹同目标冲锋重骰 → 射击后选一被命中单位（冲锋重骰 + 必须接战之）"
+  },
+  {
+   "table": "detachments",
+   "column": "rule_text",
+   "id": "000009728",
+   "name_en": "Verminous Haze",
+   "from_text": "Death Guard Infantry units (excluding Poxwalkers units) from your army that are not embarked within a Transport have the Scouts 5\" and Stealth abilities.",
+   "to_text": "In the Declare Battle Formations step, you can select up to two friendly <span class=\"kwb\">PLAGUE</span> <span class=\"kwb\">MARINES</span> units. Those units have Infiltrators.<br><br>This detachment has the FLYBLOWN tag and cannot be taken with another FLYBLOWN detachment.",
+   "fp_source": "Faction Pack Death Guard page_003.md",
+   "synthesis": "完整重印整体替换：Scouts 5\"+Stealth → 至多两个 PLAGUE MARINES 获 Infiltrators + FLYBLOWN tag 互斥"
+  },
+  {
+   "table": "stratagems",
+   "column": "text_zh",
+   "id": "000009730002",
+   "name_en": "NAUSEATING PAROXYSMS",
+   "from_text": "<b>WHEN:</b> Start of the Fight phase.<br><br><b>TARGET:</b> One Death Guard Infantry unit from your army that is within Engagement Range of one or more enemy units.<br><br><b>EFFECT:</b> Select one enemy unit within Engagement Range of your unit. That unit must take a Battle-shock test, subtracting 1 from the result.",
+   "to_text": "<b>WHEN:</b> Start of the Fight phase.<br><br><b>TARGET:</b> One friendly engaged <span class=\"kwb\">PLAGUE</span> <span class=\"kwb\">MARINES</span> unit.<br><br><b>EFFECT:</b> Select one enemy unit engaged with your unit. That enemy unit makes a battle-shock roll, with -1 to that battle-shock roll.",
+   "fp_source": "Faction Pack Death Guard page_003.md",
+   "synthesis": "重印：TARGET 收窄 PLAGUE MARINES（engaged 措辞）；battle-shock test→roll with -1"
+  },
+  {
+   "table": "stratagems",
+   "column": "text_zh",
+   "id": "000009730004",
+   "name_en": "EYE OF THE SWARM",
+   "from_text": "<b>WHEN:</b> Your Shooting phase.<br><br><b>TARGET:</b> One Death Guard Infantry unit from your army that has not been selected to shoot this phase.<br><br><b>EFFECT:</b> Until the end of the phase, ranged weapons equipped by models in your unit (excluding Blast weapons) have the [PISTOL] ability.",
+   "to_text": "<b>WHEN:</b> Your Shooting phase, when a friendly <span class=\"kwb\">PLAGUE</span> <span class=\"kwb\">MARINES</span> unit is selected to shoot.<br><br><b>TARGET:</b> That <span class=\"kwb\">PLAGUE</span> <span class=\"kwb\">MARINES</span> unit.<br><br><b>EFFECT:</b> Your unit’s ranged attacks have [CLOSE-QUARTERS].",
+   "fp_source": "Faction Pack Death Guard page_003.md",
+   "synthesis": "重印：EFFECT 整替 [PISTOL]（excluding Blast）→ [CLOSE-QUARTERS]"
+  },
+  {
+   "table": "stratagems",
+   "column": "text_zh",
+   "id": "000009730005",
+   "name_en": "DRONING HORROR",
+   "from_text": "<b>WHEN:</b> Your Shooting phase.<br><br><b>TARGET:</b> One Death Guard Infantry unit from your army that has not been selected to shoot this phase.<br><br><b>EFFECT:</b> Until the end of the phase, each time a model in your unit makes a ranged attack, re-roll a Hit roll of 1. If that attack targets a unit within half range, you can re-roll the Hit roll instead.",
+   "to_text": "<b>WHEN:</b> Your Shooting phase, when a friendly <span class=\"kwb\">PLAGUE</span> <span class=\"kwb\">MARINES</span> unit is selected to shoot.<br><br><b>TARGET:</b> That <span class=\"kwb\">PLAGUE</span> <span class=\"kwb\">MARINES</span> unit.<br><br><b>EFFECT:</b> Your unit’s ranged attacks:<ul><li>Can re-roll hit rolls of 1.</li><li>That target a unit within half range, can re-roll wound rolls of 1.</li></ul>",
+   "fp_source": "Faction Pack Death Guard page_003.md",
+   "synthesis": "重印：EFFECT 整替 重骰命中1/半程重骰命中 → 重骰命中1 + 半程重骰致伤1"
+  },
+  {
+   "table": "enhancements",
+   "column": "description",
+   "id": "000009729003",
+   "name_en": "Insectile Murmuration",
+   "from_text": "Death Guard Infantry model only. Each time a model in the bearer’s unit makes an attack that targets a unit that is within Contagion Range of one or more <span class=\"kwb\">DEATH</span> <span class=\"kwb\">GUARD</span> units from your army, re-roll a Wound roll of 1.",
+   "to_text": "<span class=\"kwb\">PLAGUE</span> <span class=\"kwb\">MARINES</span> unit only. When this unit’s attacks target a unit within Contagion Range of a friendly unit, those attacks can re-roll wound rolls of 1.",
+   "fp_source": "Faction Pack Death Guard page_003.md",
+   "synthesis": "重印：DG Infantry model→PLAGUE MARINES unit only；条件改 within Contagion Range of a friendly unit"
+  },
+  {
+   "table": "enhancements",
+   "column": "description",
+   "id": "000009729005",
+   "name_en": "Plagueveil",
+   "from_text": "Death Guard Infantry model only. While the bearer’s unit is within range of one or more objective markers that you control, that unit can only be selected as the target of a ranged attack if the attacking model is within 18\".",
+   "to_text": "<span class=\"kwb\">PLAGUE</span> <span class=\"kwb\">MARINES</span> unit only. This unit has -3\" detection range.",
+   "fp_source": "Faction Pack Death Guard page_003.md",
+   "synthesis": "重印：EFFECT 整个换掉：目标点上 18\" 外不可被选为射击目标 → -3\" 侦测范围"
+  },
+  {
+   "table": "abilities",
+   "column": "text_zh",
+   "id": "000008396",
+   "name_en": "Nurgle’s Gift (Aura)",
+   "from_text": "<div class=\"BreakInsideAvoid\">If your Army Faction is <span class=\"kwb\">DEATH</span> <span class=\"kwb\">GUARD</span>, while an enemy unit is within Contagion Range of one or more Death Guard models from your army, it is Afflicted (see below).<br><br><span class=\"hi_custom\">CONTAGION RANGE</span><br>Contagion Range changes over the course of the battle:<br><br><div class=\" img-opa\"><img border=\"0\" src=\"/wh40k10ed/img/ContagionRange1.png\" style=\"margin:0px\"></div><br><div class=\" img-opa\"><img border=\"0\" src=\"/wh40k10ed/img/ContagionRange2.png\" style=\"margin:0px\"></div><br><div class=\" img-opa\"><img border=\"0\" src=\"/wh40k10ed/img/ContagionRange3.png\" style=\"margin:0px\"></div><br><br></div><span class=\"hi_custom\">AFFLICTED</span><br>During the Declare Battle Formations step, select one of the Plagues below. Until the end of the battle, while an enemy unit is Afflicted, subtract 1 from the Toughness characteristic of models in that unit, and that unit has the effect of your chosen Plague.<div style=\"height:8px\"></div><div class=\"BreakInsideAvoid\"><table max-width=\"480px\" border=\"0\" cellpadding=\"3\" style=\"border-width:0px\"><tbody><tbody><tr><td class=\"td_w\"><p style=\"display:block\" class=\"impact18\">Skullsquirm Blight</p><p class=\"ShowFluff legend2\">This horrifying affliction sees the minds and senses of the victim gnawed gradually away from within.</p><p>Each time a model in this unit makes an attack, subtract 1 from the <span class=\"tooltip00017\" data-tooltip-content=\"#tooltip_content00017\"><span class=\"tt kwbu\">Hit</span> <span class=\"tt kwbu\">roll</span></span>.</p></td></tr></tbody></tbody></table></div><div class=\"BreakInsideAvoid\"><table max-width=\"480px\" border=\"0\" cellpadding=\"3\" style=\"border-width:0px\"><tbody><tbody><tr><td class=\"td_w\"><p style=\"display:block\" class=\"impact18\">Rattlejoint Ague</p><p class=\"ShowFluff legend2\">Limbs shuddering with fever palsy, bones turned brittle as glass, these warriors can barely act to defend themselves.</p><p>Worsen the Save characteristic of models in this unit by 1.</p></td></tr></tbody></tbody></table></div><div class=\"BreakInsideAvoid\"><table max-width=\"480px\" border=\"0\" cellpadding=\"3\" style=\"border-width:0px\"><tbody><tbody><tr><td class=\"td_w\"><p style=\"display:block\" class=\"impact18\">Scabrous Soulrot</p><p class=\"ShowFluff legend2\">Victims of this insidious ailment become glassy eyed and morose as their very animus and essence decay.</p><p>Worsen the Move, Leadership, and Objective Control characteristics of models in this unit by 1 (this rule can only worsen a model’s Objective Control characteristic to a minimum of 1).</p></td></tr></tbody></tbody></table></div>",
+   "to_text": "<div class=\"BreakInsideAvoid\">If your Army Faction is <span class=\"kwb\">DEATH</span> <span class=\"kwb\">GUARD</span>, while an enemy unit is within Contagion Range of one or more Death Guard models from your army, it is Afflicted (see below).<br><br><span class=\"hi_custom\">CONTAGION RANGE</span><br>Contagion Range changes over the course of the battle:<br><br><div class=\" img-opa\"><img border=\"0\" src=\"/wh40k10ed/img/ContagionRange1.png\" style=\"margin:0px\"></div><br><div class=\" img-opa\"><img border=\"0\" src=\"/wh40k10ed/img/ContagionRange2.png\" style=\"margin:0px\"></div><br><div class=\" img-opa\"><img border=\"0\" src=\"/wh40k10ed/img/ContagionRange3.png\" style=\"margin:0px\"></div><br><br></div>Contagion Range cannot be greater than 12\" after modifiers.<br><br><span class=\"hi_custom\">AFFLICTED</span><br>During the Declare Battle Formations step, select one of the Plagues below. Until the end of the battle, while an enemy unit is Afflicted, subtract 1 from the Toughness characteristic of models in that unit, and that unit has the effect of your chosen Plague.<div style=\"height:8px\"></div><div class=\"BreakInsideAvoid\"><table max-width=\"480px\" border=\"0\" cellpadding=\"3\" style=\"border-width:0px\"><tbody><tbody><tr><td class=\"td_w\"><p style=\"display:block\" class=\"impact18\">Skullsquirm Blight</p><p class=\"ShowFluff legend2\">This horrifying affliction sees the minds and senses of the victim gnawed gradually away from within.</p><p>Each time a model in this unit makes a melee attack, subtract 1 from the <span class=\"tooltip00017\" data-tooltip-content=\"#tooltip_content00017\"><span class=\"tt kwbu\">Hit</span> <span class=\"tt kwbu\">roll</span></span>.</p></td></tr></tbody></tbody></table></div><div class=\"BreakInsideAvoid\"><table max-width=\"480px\" border=\"0\" cellpadding=\"3\" style=\"border-width:0px\"><tbody><tbody><tr><td class=\"td_w\"><p style=\"display:block\" class=\"impact18\">Rattlejoint Ague</p><p class=\"ShowFluff legend2\">Limbs shuddering with fever palsy, bones turned brittle as glass, these warriors can barely act to defend themselves.</p><p>Worsen the Save characteristic of models in this unit by 1.</p></td></tr></tbody></tbody></table></div><div class=\"BreakInsideAvoid\"><table max-width=\"480px\" border=\"0\" cellpadding=\"3\" style=\"border-width:0px\"><tbody><tbody><tr><td class=\"td_w\"><p style=\"display:block\" class=\"impact18\">Scabrous Soulrot</p><p class=\"ShowFluff legend2\">Victims of this insidious ailment become glassy eyed and morose as their very animus and essence decay.</p><p>Worsen the Move, Leadership, and Objective Control characteristics of models in this unit by 1 (this rule can only worsen a model’s Objective Control characteristic to a minimum of 1).</p></td></tr></tbody></tbody></table></div>",
+   "fp_source": "Faction Pack Death Guard page_007.md",
+   "synthesis": "两处合一：Skullsquirm Blight 限定 melee attack + CONTAGION RANGE 节补 12\" 上限句"
+  },
+  {
+   "table": "abilities",
+   "column": "text_zh",
+   "id": "000001371_a2",
+   "name_en": "Death Approaches",
+   "from_text": "In your Movement phase, when this unit is set up on the battlefield using the Deep Strike ability, it can be set up anywhere on the battlefield that is more than 6\" horizontally away from all Afflicted enemy units, and more than 9\" horizontally away from all other enemy units.",
+   "to_text": "Each time this unit is set up on the battlefield using the Deep Strike ability, it can be set up anywhere on the battlefield that is more than 6\" horizontally away from all Afflicted enemy units, and more than 8\" horizontally away from all other enemy units.",
+   "fp_source": "Faction Pack Death Guard page_007.md",
+   "synthesis": "整替：In your Movement phase, when→Each time；other enemy units 9\"→8\""
+  },
+  {
+   "table": "enhancements",
+   "column": "description",
+   "id": "000010135002",
+   "name_en": "Beckoning Blight",
+   "from_text": "Death Guard model only. Each time a Plague Legions unit from your army is set up on the battlefield using the Deep Strike ability, if it is set up wholly within 12\" of the bearer, it can be set up anywhere that is more than 6\" horizontally away from all enemy models, instead of more than 9\".",
+   "to_text": "Death Guard model only. Each time a Plague Legions unit from your army is set up on the battlefield using the Deep Strike ability, if it is set up wholly within 12\" of the bearer, it can be set up anywhere that is more than 6\" horizontally away from all enemy models, instead of more than 8\".",
+   "fp_source": "Faction Pack Death Guard page_007.md",
+   "synthesis": "外科：instead of more than 9\"→8\""
   }
  ],
  "name_patches": [
@@ -2040,6 +2130,414 @@
    "name_zh": "催化激涌",
    "zh_source": "self-translation-11e",
    "evidence": "凤凰王庭战略（codex 无源自译）"
+  },
+  {
+   "table": "abilities",
+   "id": "000008396",
+   "name_en": "Nurgle’s Gift (Aura)",
+   "name_zh": "纳垢赐福",
+   "zh_source": "codex-10e",
+   "evidence": "老湿腐死亡守卫V1.1 正文引用体（纳垢赐福（军队基础规则））"
+  },
+  {
+   "table": "abilities",
+   "id": "000001371_a2",
+   "name_en": "Death Approaches",
+   "name_zh": "死神降临",
+   "zh_source": "codex-10e",
+   "evidence": "page_041 死亡寿衣终结者技能"
+  },
+  {
+   "table": "detachments",
+   "id": "000010122",
+   "name_en": "Worldblight",
+   "name_zh": "世界之瘟",
+   "zh_source": "codex-10e",
+   "evidence": "page_002 恶毒容器基础技能，内容核实"
+  },
+  {
+   "table": "detachments",
+   "id": "000010126",
+   "name_en": "Miasmic Bombardment",
+   "name_zh": "毒雾轰炸",
+   "zh_source": "codex-10e",
+   "evidence": "page_005 莫塔里安之锤基础技能，内容核实"
+  },
+  {
+   "table": "detachments",
+   "id": "000010130",
+   "name_en": "Manifold Maladies",
+   "name_zh": "多重感染",
+   "zh_source": "codex-10e",
+   "evidence": "page_008 传染冠军基础技能，内容核实"
+  },
+  {
+   "table": "detachments",
+   "id": "000010134",
+   "name_en": "Reverberant Rancidity",
+   "name_zh": "瘟疫军团",
+   "zh_source": "codex-10e",
+   "evidence": "page_011 唤魔记账官基础技能，内容核实"
+  },
+  {
+   "table": "detachments",
+   "id": "000010138",
+   "name_en": "Numberless Horde",
+   "name_zh": "无尽尸群",
+   "zh_source": "codex-10e",
+   "evidence": "page_014 蹒跚尸群基础技能，内容核实"
+  },
+  {
+   "table": "detachments",
+   "id": "000010142",
+   "name_en": "Deadly Vectors",
+   "name_zh": "致命发作",
+   "zh_source": "codex-10e",
+   "evidence": "page_017 死亡之主亲选基础技能，内容核实"
+  },
+  {
+   "table": "detachments",
+   "id": "000009728",
+   "name_en": "Verminous Haze",
+   "name_zh": "虫害毒雾",
+   "zh_source": "codex-10e",
+   "evidence": "page_020 蝇息疫军基础技能（名沿用，重印后指 11 版新文本）"
+  },
+  {
+   "table": "stratagems",
+   "id": "000010124002",
+   "name_en": "PUTRID DETONATION",
+   "name_zh": "腐败爆破",
+   "zh_source": "codex-10e",
+   "evidence": "老湿腐死亡守卫V1.1 page_003"
+  },
+  {
+   "table": "stratagems",
+   "id": "000010124003",
+   "name_en": "DISGUSTINGLY RESILIENT",
+   "name_zh": "可憎坚韧",
+   "zh_source": "codex-10e",
+   "evidence": "老湿腐死亡守卫V1.1 page_003"
+  },
+  {
+   "table": "stratagems",
+   "id": "000010124004",
+   "name_en": "PLAGUESURGE",
+   "name_zh": "瘟疫爆发",
+   "zh_source": "codex-10e",
+   "evidence": "老湿腐死亡守卫V1.1 page_003"
+  },
+  {
+   "table": "stratagems",
+   "id": "000010124005",
+   "name_en": "LEECHSPORE ERUPTION",
+   "name_zh": "吸血孢子",
+   "zh_source": "codex-10e",
+   "evidence": "老湿腐死亡守卫V1.1 page_003"
+  },
+  {
+   "table": "stratagems",
+   "id": "000010124006",
+   "name_en": "OVERWHELMING GENEROSITY",
+   "name_zh": "盛情款待",
+   "zh_source": "codex-10e",
+   "evidence": "老湿腐死亡守卫V1.1 page_004"
+  },
+  {
+   "table": "stratagems",
+   "id": "000010124007",
+   "name_en": "CREEPING BLIGHT",
+   "name_zh": "日渐凋零",
+   "zh_source": "codex-10e",
+   "evidence": "老湿腐死亡守卫V1.1 page_004"
+  },
+  {
+   "table": "stratagems",
+   "id": "000010128002",
+   "name_en": "BLIGHTED LAND",
+   "name_zh": "凋零大地",
+   "zh_source": "codex-10e",
+   "evidence": "老湿腐死亡守卫V1.1 page_006"
+  },
+  {
+   "table": "stratagems",
+   "id": "000010128003",
+   "name_en": "RELENTLESS GRIND",
+   "name_zh": "无情碾碎",
+   "zh_source": "codex-10e",
+   "evidence": "老湿腐死亡守卫V1.1 page_006"
+  },
+  {
+   "table": "stratagems",
+   "id": "000010128004",
+   "name_en": "DRAWN TO DESPAIR",
+   "name_zh": "绝望沉沦",
+   "zh_source": "codex-10e",
+   "evidence": "老湿腐死亡守卫V1.1 page_006"
+  },
+  {
+   "table": "stratagems",
+   "id": "000010128005",
+   "name_en": "FONT OF FILTH",
+   "name_zh": "污秽之源",
+   "zh_source": "codex-10e",
+   "evidence": "老湿腐死亡守卫V1.1 page_006"
+  },
+  {
+   "table": "stratagems",
+   "id": "000010128006",
+   "name_en": "EYESTINGER STORM",
+   "name_zh": "遮天蔽目",
+   "zh_source": "codex-10e",
+   "evidence": "老湿腐死亡守卫V1.1 page_007"
+  },
+  {
+   "table": "stratagems",
+   "id": "000010128007",
+   "name_en": "STINKING MIRE",
+   "name_zh": "腐臭泥潭",
+   "zh_source": "codex-10e",
+   "evidence": "老湿腐死亡守卫V1.1 page_007"
+  },
+  {
+   "table": "stratagems",
+   "id": "000010132002",
+   "name_en": "BLESSINGS OF FILTH",
+   "name_zh": "污秽赐福",
+   "zh_source": "codex-10e",
+   "evidence": "老湿腐死亡守卫V1.1 page_009（老湿腐题 BLESSING OF FILTH 已归一）"
+  },
+  {
+   "table": "stratagems",
+   "id": "000010132003",
+   "name_en": "MALIGNANCE MAGNIFIED",
+   "name_zh": "恶疾发作",
+   "zh_source": "codex-10e",
+   "evidence": "老湿腐死亡守卫V1.1 page_009"
+  },
+  {
+   "table": "stratagems",
+   "id": "000010132004",
+   "name_en": "GROTESQUE FORTITUDE",
+   "name_zh": "怪诞坚韧",
+   "zh_source": "codex-10e",
+   "evidence": "老湿腐死亡守卫V1.1 page_009"
+  },
+  {
+   "table": "stratagems",
+   "id": "000010132005",
+   "name_en": "RABID INFUSION",
+   "name_zh": "狂暴轰入",
+   "zh_source": "codex-10e",
+   "evidence": "老湿腐死亡守卫V1.1 page_009"
+  },
+  {
+   "table": "stratagems",
+   "id": "000010132006",
+   "name_en": "MOBILE VECTOR",
+   "name_zh": "污秽传承",
+   "zh_source": "codex-10e",
+   "evidence": "老湿腐死亡守卫V1.1 page_010"
+  },
+  {
+   "table": "stratagems",
+   "id": "000010132007",
+   "name_en": "DEATH’S HEADS",
+   "name_zh": "亡者颅骨",
+   "zh_source": "codex-10e",
+   "evidence": "老湿腐死亡守卫V1.1 page_010"
+  },
+  {
+   "table": "stratagems",
+   "id": "000010136002",
+   "name_en": "PERSISTENT PESTS",
+   "name_zh": "疫病魔宠",
+   "zh_source": "codex-10e",
+   "evidence": "老湿腐死亡守卫V1.1 page_012"
+  },
+  {
+   "table": "stratagems",
+   "id": "000010136003",
+   "name_en": "CLUTCHING CORRUPTION",
+   "name_zh": "腐蚀之握",
+   "zh_source": "codex-10e",
+   "evidence": "老湿腐死亡守卫V1.1 page_012"
+  },
+  {
+   "table": "stratagems",
+   "id": "000010136004",
+   "name_en": "ALL IS ROT",
+   "name_zh": "万物皆朽",
+   "zh_source": "codex-10e",
+   "evidence": "老湿腐死亡守卫V1.1 page_012"
+  },
+  {
+   "table": "stratagems",
+   "id": "000010136005",
+   "name_en": "FLESHY AVALANCHE",
+   "name_zh": "肉山冲击",
+   "zh_source": "codex-10e",
+   "evidence": "老湿腐死亡守卫V1.1 page_012"
+  },
+  {
+   "table": "stratagems",
+   "id": "000010136006",
+   "name_en": "AVATARS OF DECAY",
+   "name_zh": "腐朽化身",
+   "zh_source": "codex-10e",
+   "evidence": "老湿腐死亡守卫V1.1 page_013"
+  },
+  {
+   "table": "stratagems",
+   "id": "000010136007",
+   "name_en": "MIRESLICK",
+   "name_zh": "烂泥缠身",
+   "zh_source": "codex-10e",
+   "evidence": "老湿腐死亡守卫V1.1 page_013"
+  },
+  {
+   "table": "stratagems",
+   "id": "000010140002",
+   "name_en": "GRIP OF THE WALKING POX",
+   "name_zh": "行尸之触",
+   "zh_source": "codex-10e",
+   "evidence": "老湿腐死亡守卫V1.1 page_015（老湿腐题 GRIP OF WALKING POX 已归一）"
+  },
+  {
+   "table": "stratagems",
+   "id": "000010140003",
+   "name_en": "SMEARED WITH FILTH",
+   "name_zh": "污秽感染",
+   "zh_source": "codex-10e",
+   "evidence": "老湿腐死亡守卫V1.1 page_015"
+  },
+  {
+   "table": "stratagems",
+   "id": "000010140004",
+   "name_en": "GNAWING HUNGER",
+   "name_zh": "饥饿折磨",
+   "zh_source": "codex-10e",
+   "evidence": "老湿腐死亡守卫V1.1 page_015"
+  },
+  {
+   "table": "stratagems",
+   "id": "000010140005",
+   "name_en": "HIDDEN AMONGST THE DEAD",
+   "name_zh": "潜伏于尸群",
+   "zh_source": "codex-10e",
+   "evidence": "老湿腐死亡守卫V1.1 page_015"
+  },
+  {
+   "table": "stratagems",
+   "id": "000010140006",
+   "name_en": "SHOCK AND HORROR",
+   "name_zh": "恐怖冲击",
+   "zh_source": "codex-10e",
+   "evidence": "老湿腐死亡守卫V1.1 page_016"
+  },
+  {
+   "table": "stratagems",
+   "id": "000010140007",
+   "name_en": "SHAMBLING WALL",
+   "name_zh": "蹒跚肉墙",
+   "zh_source": "codex-10e",
+   "evidence": "老湿腐死亡守卫V1.1 page_016"
+  },
+  {
+   "table": "stratagems",
+   "id": "000010144002",
+   "name_en": "BLOOMING PESTILENCE",
+   "name_zh": "瘟疫爆发",
+   "zh_source": "codex-10e",
+   "evidence": "老湿腐死亡守卫V1.1 page_018（老湿腐与 PLAGUESURGE 同名，源即如此照录）"
+  },
+  {
+   "table": "stratagems",
+   "id": "000010144003",
+   "name_en": "GRIM REAPERS",
+   "name_zh": "无情收割",
+   "zh_source": "codex-10e",
+   "evidence": "老湿腐死亡守卫V1.1 page_018"
+  },
+  {
+   "table": "stratagems",
+   "id": "000010144004",
+   "name_en": "UNDYING SPITE",
+   "name_zh": "不死怨念",
+   "zh_source": "codex-10e",
+   "evidence": "老湿腐死亡守卫V1.1 page_018"
+  },
+  {
+   "table": "stratagems",
+   "id": "000010144005",
+   "name_en": "SIGNAL POX",
+   "name_zh": "定点感染",
+   "zh_source": "codex-10e",
+   "evidence": "老湿腐死亡守卫V1.1 page_018"
+  },
+  {
+   "table": "stratagems",
+   "id": "000010144006",
+   "name_en": "MORTARION'S TEACHINGS",
+   "name_zh": "原体教诲",
+   "zh_source": "codex-10e",
+   "evidence": "老湿腐死亡守卫V1.1 page_019"
+  },
+  {
+   "table": "stratagems",
+   "id": "000010144007",
+   "name_en": "SICKENING IMPACT",
+   "name_zh": "恶臭冲击",
+   "zh_source": "codex-10e",
+   "evidence": "老湿腐死亡守卫V1.1 page_019"
+  },
+  {
+   "table": "stratagems",
+   "id": "000009730002",
+   "name_en": "NAUSEATING PAROXYSMS",
+   "name_zh": "作呕爆发",
+   "zh_source": "codex-10e",
+   "evidence": "老湿腐死亡守卫V1.1 page_021"
+  },
+  {
+   "table": "stratagems",
+   "id": "000009730003",
+   "name_en": "VERMIN CLOUD",
+   "name_zh": "害虫毒云",
+   "zh_source": "codex-10e",
+   "evidence": "老湿腐死亡守卫V1.1 page_021（removed_11e 行也配，原文留库可检索）"
+  },
+  {
+   "table": "stratagems",
+   "id": "000009730004",
+   "name_en": "EYE OF THE SWARM",
+   "name_zh": "蝇群之眼",
+   "zh_source": "codex-10e",
+   "evidence": "老湿腐死亡守卫V1.1 page_021"
+  },
+  {
+   "table": "stratagems",
+   "id": "000009730005",
+   "name_en": "DRONING HORROR",
+   "name_zh": "嗡鸣恐怖",
+   "zh_source": "codex-10e",
+   "evidence": "老湿腐死亡守卫V1.1 page_021"
+  },
+  {
+   "table": "stratagems",
+   "id": "000009730006",
+   "name_en": "ENERVATING ONSLAUGHT",
+   "name_zh": "致衰猛攻",
+   "zh_source": "codex-10e",
+   "evidence": "老湿腐死亡守卫V1.1 page_022（removed_11e 行也配）"
+  },
+  {
+   "table": "stratagems",
+   "id": "000009730007",
+   "name_en": "MYPHITIC INVIGORATION",
+   "name_zh": "凋败滋养",
+   "zh_source": "codex-10e",
+   "evidence": "老湿腐死亡守卫V1.1 page_022（removed_11e 行也配）"
   }
  ],
  "_deactivations_comment": "9 条 review_needed 的最终裁定（2026-07-16 用户裁 A：FP 完整重印即整体替换）。证据：①FP p3/p4 对 Auxiliary Cadre / Experimental Prototype Cadre 用完整重印体裁（同书 datasheet 侧明文 replaces 语义，page_010）；②11 版 Experimental Ammunition 删除了与 Threat Assessment Analyser 互斥的 RESTRICTIONS 段（侧面印证 TAA 不复存在）；③Wahapedia 现网核证（2026-07-16 重拉 Stratagems.csv）确认其尚未消化这两页 FP（drifted 条仍旧十版措辞、GUIDED BY UNITY 与 Advanced Acquisition Cadre 均缺席），故'现网仍在'不构成反证。处置：置 fp_status='removed_11e'（原文保留可回滚）；P7 DSL 对账枚举、检索消费者应排除该标记行。将来 Wahapedia 滚更这两页时 text_patches 守卫会自动让路告警，届时复核本裁定。",
@@ -2218,6 +2716,41 @@
    "name_en": "Taramond’s Censer",
    "status": "removed_11e",
    "fp_source": "Faction Pack Black Templars page_004.md（完整重印未收录）"
+  },
+  {
+   "table": "stratagems",
+   "id": "000009730003",
+   "name_en": "VERMIN CLOUD",
+   "status": "removed_11e",
+   "fp_source": "Faction Pack Death Guard page_003.md（完整重印未收录）"
+  },
+  {
+   "table": "stratagems",
+   "id": "000009730006",
+   "name_en": "ENERVATING ONSLAUGHT",
+   "status": "removed_11e",
+   "fp_source": "Faction Pack Death Guard page_003.md（完整重印未收录）"
+  },
+  {
+   "table": "stratagems",
+   "id": "000009730007",
+   "name_en": "MYPHITIC INVIGORATION",
+   "status": "removed_11e",
+   "fp_source": "Faction Pack Death Guard page_003.md（完整重印未收录）"
+  },
+  {
+   "table": "enhancements",
+   "id": "000009729002",
+   "name_en": "Droning Chorus",
+   "status": "removed_11e",
+   "fp_source": "Faction Pack Death Guard page_003.md（完整重印未收录）"
+  },
+  {
+   "table": "enhancements",
+   "id": "000009729004",
+   "name_en": "Rejuvenating Swarm",
+   "status": "removed_11e",
+   "fp_source": "Faction Pack Death Guard page_003.md（完整重印未收录；Paragons 同名新增强效果不同走 inserts 新行）"
   }
  ],
  "_inserts_comment": "P7-PR4 fp_new 补录（2026-07-16）：FP 有、Wahapedia/DB 无的整条目。AAC 整分队（1 规则行 + 3 战略 + 2 增强，id 前缀 fp11e- 标 synthetic 溯源，增强点数 FP/MFM 均无源诚实置 NULL）+ Auxiliary Cadre 新战略 Guided by Unity。守卫：同 id 幂等/名字不符让路；同名异 id（上游将来自补）让路告警不留双胞胎；stratagems/enhancements 插入行标 fp_status='added_11e'。",
@@ -2868,6 +3401,168 @@
     "cost": null,
     "legend": "点数未知：FP 不含点数，MFM 缓存无增强数据（诚实置空，勿猜）",
     "description": "FLAWLESS BLADES unit only. Enemy units cannot target this unit with snap shooting attacks."
+   }
+  },
+  {
+   "table": "detachments",
+   "fp_source": "Faction Pack Death Guard page_002.md（11 版新分队，Wahapedia 无源）",
+   "values": {
+    "id": "fp11e-dg-engines-det",
+    "faction": "DG",
+    "name_zh": "扭曲锈蚀之魂",
+    "name_en": "Warped and Rusted Animus",
+    "rule_text": "<ul><li>Friendly <span class=\"kwb\">FOETID</span> <span class=\"kwb\">BLOAT-DRONE</span>/<span class=\"kwb\">FOETID</span> <span class=\"kwb\">BLOAT-DRONE</span> <span class=\"kwb\">WITH</span> <span class=\"kwb\">HEAVY</span> <span class=\"kwb\">BLIGHT</span> <span class=\"kwb\">LAUNCHER</span>/<span class=\"kwb\">HELBRUTE</span>/<span class=\"kwb\">MYPHITIC</span> <span class=\"kwb\">BLIGHT-HAULER</span> units have CONTAGION ENGINE.</li><li>Friendly <span class=\"kwb\">CONTAGION</span> <span class=\"kwb\">ENGINE</span> units’ ranged attacks have [ASSAULT].</li></ul>This detachment has the ENGINES tag and cannot be taken with another ENGINES detachment."
+   }
+  },
+  {
+   "table": "stratagems",
+   "fp_source": "Faction Pack Death Guard page_002.md（11 版新分队，Wahapedia 无源）",
+   "values": {
+    "id": "fp11e-dg-engines-s1",
+    "faction": "DG",
+    "detachment": "Contagion Engines",
+    "name_zh": "新鲜病媒",
+    "name_en": "FRESH VECTORS",
+    "cp_cost": "1",
+    "phase": "Shooting or Fight phase",
+    "text_zh": "<b>WHEN:</b> Your Shooting phase or the Fight phase, when a friendly <span class=\"kwb\">CONTAGION</span> <span class=\"kwb\">ENGINE</span> unit is selected to attack.<br><br><b>TARGET:</b> That <span class=\"kwb\">CONTAGION</span> <span class=\"kwb\">ENGINE</span> unit.<br><br><b>EFFECT:</b> Your unit’s attacks can re-roll wound rolls of 1."
+   }
+  },
+  {
+   "table": "stratagems",
+   "fp_source": "Faction Pack Death Guard page_002.md（11 版新分队，Wahapedia 无源）",
+   "values": {
+    "id": "fp11e-dg-engines-s2",
+    "faction": "DG",
+    "detachment": "Contagion Engines",
+    "name_zh": "血锈倾盆",
+    "name_en": "BLOODRUST DELUGE",
+    "cp_cost": "1",
+    "phase": "Shooting phase",
+    "text_zh": "<b>WHEN:</b> Your Shooting phase, when a friendly <span class=\"kwb\">CONTAGION</span> <span class=\"kwb\">ENGINE</span> unit is selected to shoot.<br><br><b>TARGET:</b> That <span class=\"kwb\">CONTAGION</span> <span class=\"kwb\">ENGINE</span> unit.<br><br><b>EFFECT:</b> Select one visible enemy unit. That enemy unit is Afflicted until your unit has attacked."
+   }
+  },
+  {
+   "table": "stratagems",
+   "fp_source": "Faction Pack Death Guard page_002.md（11 版新分队，Wahapedia 无源）",
+   "values": {
+    "id": "fp11e-dg-engines-s3",
+    "faction": "DG",
+    "detachment": "Contagion Engines",
+    "name_zh": "魂腐涌流",
+    "name_en": "SOULROT FLUX",
+    "cp_cost": "1",
+    "phase": "Movement phase",
+    "text_zh": "<b>WHEN:</b> Your opponent’s Movement phase, when an enemy unit is selected to make a fall-back move, if that enemy unit is engaged with a friendly <span class=\"kwb\">CONTAGION</span> <span class=\"kwb\">ENGINE</span> unit.<br><br><b>TARGET:</b> That <span class=\"kwb\">CONTAGION</span> <span class=\"kwb\">ENGINE</span> unit.<br><br><b>EFFECT:</b> When an enemy unit engaged with your unit is selected to make a fall-back move, roll one D6:<ul><li>On a 1, that enemy unit suffers 1 mortal wound.</li><li>On a 2-5, that enemy unit suffers D3 mortal wounds.</li><li>On a 6, that enemy unit suffers 3 mortal wounds.</li></ul>"
+   }
+  },
+  {
+   "table": "enhancements",
+   "fp_source": "Faction Pack Death Guard page_002.md（11 版新分队，Wahapedia 无源）",
+   "values": {
+    "id": "fp11e-dg-engines-e1",
+    "faction_id": "DG",
+    "detachment_id": "fp11e-dg-engines",
+    "detachment_name": "Contagion Engines",
+    "name": "Parasitic Woe-Reaper",
+    "cost": null,
+    "legend": "点数未知：FP 不含点数，MFM 缓存无增强数据（诚实置空，勿猜）",
+    "description": "<span class=\"kwb\">CONTAGION</span> <span class=\"kwb\">ENGINE</span> unit only. When this unit has fought, one model in this unit heals D3 wounds."
+   }
+  },
+  {
+   "table": "enhancements",
+   "fp_source": "Faction Pack Death Guard page_002.md（11 版新分队，Wahapedia 无源）",
+   "values": {
+    "id": "fp11e-dg-engines-e2",
+    "faction_id": "DG",
+    "detachment_id": "fp11e-dg-engines",
+    "detachment_name": "Contagion Engines",
+    "name": "Lancet of the Worldsore",
+    "cost": null,
+    "legend": "点数未知：FP 不含点数，MFM 缓存无增强数据（诚实置空，勿猜）",
+    "description": "Friendly <span class=\"kwb\">HELBRUTE</span>/<span class=\"kwb\">MYPHITIC</span> <span class=\"kwb\">BLIGHT-HAULER</span> unit only. This unit has MOBILE."
+   }
+  },
+  {
+   "table": "detachments",
+   "fp_source": "Faction Pack Death Guard page_004.md（11 版新分队，Wahapedia 无源）",
+   "values": {
+    "id": "fp11e-dg-paragons-det",
+    "faction": "DG",
+    "name_zh": "超毒瘟株",
+    "name_en": "Hypervirulent Strains",
+    "rule_text": "Friendly <span class=\"kwb\">DEATH</span> <span class=\"kwb\">GUARD</span> <span class=\"kwb\">CHARACTER</span> units have +3\" to their Contagion Range (to a maximum of 12\")."
+   }
+  },
+  {
+   "table": "stratagems",
+   "fp_source": "Faction Pack Death Guard page_004.md（11 版新分队，Wahapedia 无源）",
+   "values": {
+    "id": "fp11e-dg-paragons-s1",
+    "faction": "DG",
+    "detachment": "Paragons of Putrescence",
+    "name_zh": "领地感染",
+    "name_en": "TERRITORIAL INFECTION",
+    "cp_cost": "1",
+    "phase": "Command phase",
+    "text_zh": "<b>WHEN:</b> Start of the Command phase.<br><br><b>TARGET:</b> One friendly <span class=\"kwb\">DEATH</span> <span class=\"kwb\">GUARD</span> <span class=\"kwb\">CHARACTER</span> unit.<br><br><b>EFFECT:</b> Your unit has +1 OC until the end of the turn."
+   }
+  },
+  {
+   "table": "stratagems",
+   "fp_source": "Faction Pack Death Guard page_004.md（11 版新分队，Wahapedia 无源）",
+   "values": {
+    "id": "fp11e-dg-paragons-s2",
+    "faction": "DG",
+    "detachment": "Paragons of Putrescence",
+    "name_zh": "剧痛痉挛",
+    "name_en": "AGGRAVUS SPASMS",
+    "cp_cost": "1",
+    "phase": "Shooting phase",
+    "text_zh": "<b>WHEN:</b> Start of your Shooting phase.<br><br><b>TARGET:</b> One friendly <span class=\"kwb\">DEATH</span> <span class=\"kwb\">GUARD</span> <span class=\"kwb\">CHARACTER</span> unit.<br><br><b>EFFECT:</b> Select one visible enemy unit within Contagion Range of your unit. That enemy unit has +6\" detection range."
+   }
+  },
+  {
+   "table": "stratagems",
+   "fp_source": "Faction Pack Death Guard page_004.md（11 版新分队，Wahapedia 无源）",
+   "values": {
+    "id": "fp11e-dg-paragons-s3",
+    "faction": "DG",
+    "detachment": "Paragons of Putrescence",
+    "name_zh": "同步污染",
+    "name_en": "SIMULTANEOUS CONTAMINATION",
+    "cp_cost": "1",
+    "phase": "Shooting phase",
+    "text_zh": "<b>WHEN:</b> Your Shooting phase, when a friendly <span class=\"kwb\">DEATH</span> <span class=\"kwb\">GUARD</span> <span class=\"kwb\">CHARACTER</span> unit starts an action.<br><br><b>TARGET:</b> That <span class=\"kwb\">DEATH</span> <span class=\"kwb\">GUARD</span> <span class=\"kwb\">CHARACTER</span> unit.<br><br><b>EFFECT:</b> That action does not prevent your unit from being eligible to shoot."
+   }
+  },
+  {
+   "table": "enhancements",
+   "fp_source": "Faction Pack Death Guard page_004.md（11 版新分队，Wahapedia 无源）",
+   "values": {
+    "id": "fp11e-dg-paragons-e1",
+    "faction_id": "DG",
+    "detachment_id": "fp11e-dg-paragons",
+    "detachment_name": "Paragons of Putrescence",
+    "name": "Rejuvenating Swarm",
+    "cost": null,
+    "legend": "点数未知：FP 不含点数，MFM 缓存无增强数据（诚实置空，勿猜）",
+    "description": "<span class=\"kwb\">DEATH</span> <span class=\"kwb\">GUARD</span> <span class=\"kwb\">INFANTRY</span> model only (excluding <span class=\"kwb\">TERMINATOR</span> models). Attacks that target this unit with a S greater than this unit’s T have -1 to wound rolls."
+   }
+  },
+  {
+   "table": "enhancements",
+   "fp_source": "Faction Pack Death Guard page_004.md（11 版新分队，Wahapedia 无源）",
+   "values": {
+    "id": "fp11e-dg-paragons-e2",
+    "faction_id": "DG",
+    "detachment_id": "fp11e-dg-paragons",
+    "detachment_name": "Paragons of Putrescence",
+    "name": "Host of the Hybridised Pox",
+    "cost": null,
+    "legend": "点数未知：FP 不含点数，MFM 缓存无增强数据（诚实置空，勿猜）",
+    "description": "<span class=\"kwb\">DEATH</span> <span class=\"kwb\">GUARD</span> <span class=\"kwb\">INFANTRY</span> model only. (Once per battle, per army) In your Command phase, you can use this ability. If you do, select one of the Plagues listed in Nurgle’s Gift (see Codex: Death Guard). Enemy units within Contagion Range of this unit also have the effect of that Plague in addition to your army’s chosen Plague until the end of the battle."
    }
   }
  ]

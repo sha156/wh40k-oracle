@@ -190,12 +190,13 @@ class TestDeactivations:
         # 真源补丁文件：钛 12 条（战略 9 + 增强 3，2026-07-16 裁 A / PR4）
         # + 吞世者 6 条（PR5：怒火容器完整重印未收录——战略 4 + 增强 2）
         # + 黑色圣堂 7 条（PR6：愤怒巡游队完整重印未收录——战略 4 + 增强 3）
+        # + 死亡守卫 5 条（PR8：蝇息疫军完整重印未收录——战略 3 + 增强 2）
         import json
         from pathlib import Path
         data = json.loads(Path("db_compile/fp_rules_patches.json").read_text(
             encoding="utf-8"))
         deacts = data.get("deactivations", [])
-        assert len(deacts) == 25
+        assert len(deacts) == 30
         strat = {d["id"] for d in deacts if d["table"] == "stratagems"}
         enh = {d["id"] for d in deacts if d["table"] == "enhancements"}
         assert strat == {
@@ -205,11 +206,15 @@ class TestDeactivations:
             # PR5 吞世者：Vessels of Wrath 重印未收录
             "000009848003", "000009848004", "000009848006", "000009848007",
             # PR6 黑色圣堂：Wrathful Procession 重印未收录
-            "000009844003", "000009844005", "000009844006", "000009844007"}
+            "000009844003", "000009844005", "000009844006", "000009844007",
+            # PR8 死亡守卫：Flyblown Host 重印未收录
+            "000009730003", "000009730006", "000009730007"}
         assert enh == {"000009839004", "000009839005", "000009983005",
                        "000009847003", "000009847004",
                        # PR6 黑色圣堂
-                       "000009843002", "000009843003", "000009843004"}
+                       "000009843002", "000009843003", "000009843004",
+                       # PR8 死亡守卫
+                       "000009729002", "000009729004"}
         for d in deacts:
             assert d["status"] == "removed_11e"
             assert d.get("fp_source")
@@ -352,12 +357,14 @@ class TestInserts:
         #   The Living Miracle 1 规则+1 增强、Wrathful 重印新增 1 战略+1 增强）
         # + 帝皇之子 18 条（PR7：Elegant Brutes / Frenzied Host / Spectacle of
         #   Slaughter 三全新分队各 1 规则+3 战略+2 增强）
+        # + 死亡守卫 12 条（PR8：Contagion Engines / Paragons of Putrescence
+        #   两全新分队各 1 规则+3 战略+2 增强）
         import json
         from pathlib import Path
         data = json.loads(Path("db_compile/fp_rules_patches.json").read_text(
             encoding="utf-8"))
         ins = data.get("inserts", [])
-        assert len(ins) == 48
+        assert len(ins) == 60
         ids = {p["values"]["id"] for p in ins}
         assert ids == {"fp11e-tau-aac-det", "fp11e-tau-aac-s1", "fp11e-tau-aac-s2",
                        "fp11e-tau-aac-s3", "fp11e-tau-aux-gbu",
@@ -382,7 +389,13 @@ class TestInserts:
                        "fp11e-ec-host-e1", "fp11e-ec-host-e2",
                        "fp11e-ec-spectacle-det", "fp11e-ec-spectacle-s1",
                        "fp11e-ec-spectacle-s2", "fp11e-ec-spectacle-s3",
-                       "fp11e-ec-spectacle-e1", "fp11e-ec-spectacle-e2"}
+                       "fp11e-ec-spectacle-e1", "fp11e-ec-spectacle-e2",
+                       "fp11e-dg-engines-det", "fp11e-dg-engines-s1",
+                       "fp11e-dg-engines-s2", "fp11e-dg-engines-s3",
+                       "fp11e-dg-engines-e1", "fp11e-dg-engines-e2",
+                       "fp11e-dg-paragons-det", "fp11e-dg-paragons-s1",
+                       "fp11e-dg-paragons-s2", "fp11e-dg-paragons-s3",
+                       "fp11e-dg-paragons-e1", "fp11e-dg-paragons-e2"}
         for p in ins:
             assert p.get("fp_source")
             assert p["values"].get("id", "").startswith("fp11e-")
