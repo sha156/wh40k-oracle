@@ -177,6 +177,17 @@ class TestAttackerFromPayload:
         hr = _run(atk, _target(), Stance(phase="shooting", half_range=True))
         assert hr.attacks.mean() == pytest.approx(2.0, abs=0.05)
 
+    def test_cold_fervour_strength_all_phases(self, entries):
+        # 冷酷狂热：Destroyer Cult 武器 S +2（全阶段，远近皆适用——FP 原文「weapons」无限定）。
+        # S4→S6 vs T6：射击与近战都从 5+（1/3）升到 4+（1/2）
+        cf = _entry(entries, "det000010667")
+        atk_g, _, _ = inject_attacker(_attacker(_gun(bs=4, s=4)), [cf], frozenset())
+        sh = _run(atk_g, _target(t=6), Stance(phase="shooting"))
+        atk_m, _, _ = inject_attacker(_attacker(_melee(s=4)), [cf], frozenset())
+        ml = _run(atk_m, _target(t=6), Stance(phase="melee"))
+        assert _ratio(sh.wounds, sh.hits) == pytest.approx(1 / 2, abs=0.02)
+        assert _ratio(ml.wounds, ml.hits) == pytest.approx(1 / 2, abs=0.02)
+
     def test_command_protocols_hit_requires_leading(self, entries):
         # 指令协议：Character 率领 +1 命中。BS4→3+（2/3）；开关未启用不注入
         cp = _entry(entries, "det000008370")

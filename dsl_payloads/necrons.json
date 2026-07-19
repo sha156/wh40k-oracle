@@ -248,15 +248,12 @@
      "params": [
       2
      ],
-     "source": "冷酷狂热：Destroyer Cult 近战武器 S +2",
-     "condition": [
-      "phase_melee"
-     ]
+     "source": "冷酷狂热：Destroyer Cult 武器 S +2（全阶段，远近皆适用）"
     }
    ],
    "requires_toggles": [],
    "not_modeled_notes_zh": [
-    "首杀后全军（非 Destroyer Cult）+2 S 分量不建模；仅编 Destroyer Cult 本体近战 S+2"
+    "首杀后全军（非 Destroyer Cult）+2 S 分量不建模；仅编 Destroyer Cult 本体武器 S+2"
    ],
    "provenance": {
     "current_text": "db detachments.rule_text id=000010667",
