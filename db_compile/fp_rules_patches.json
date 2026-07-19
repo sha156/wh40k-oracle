@@ -890,6 +890,86 @@
    "to_text": "Each time this model is selected to Advance, you can remove it from the battlefield and set it up again anywhere on the battlefield that is more than 8\" horizontally away from all enemy units.",
    "fp_source": "Faction Pack Necrons page_029.md（Transcendent C'tan Transdimensional Displacement 9→8）",
    "synthesis": "出场距离 9\"→8\""
+  },
+  {
+   "table": "detachments",
+   "column": "rule_text",
+   "id": "000008867",
+   "name_en": "Da Hunt Is On",
+   "from_text": "At the start of your Command phase, select one <span class=\"kwb\">MONSTER</span>, <span class=\"kwb\">VEHICLE</span> or <span class=\"kwb\">CHARACTER</span> unit from your opponent’s army. Until the start of your next Command phase, that enemy unit is your Prey:<br><ul><li>Each time a Beast Snagga unit from your army declares a charge that includes your Prey as one of the targets, you can re-roll the Charge roll.</li><li>Each time a <span class=\"kwb\">BEAST</span> <span class=\"kwb\">SNAGGA</span> model from your army makes an attack that targets your Prey, improve the Armour Penetration characteristic of that attack by 1.</li></ul>",
+   "to_text": "At the start of your Command phase, select one <span class=\"kwb\">MONSTER</span>, <span class=\"kwb\">VEHICLE</span> or <span class=\"kwb\">CHARACTER</span> unit from your opponent’s army. Until the start of your next Command phase, that enemy unit is your Prey:<br><ul><li>When a friendly <span class=\"kwb\">BEAST</span> <span class=\"kwb\">SNAGGA</span> unit declares a charge, if your Prey is within 12\" of that unit, you can use this part of this ability. If you do:<ul><li>That <span class=\"kwb\">BEAST</span> <span class=\"kwb\">SNAGGA</span> unit can re-roll that charge roll.</li><li>That <span class=\"kwb\">BEAST</span> <span class=\"kwb\">SNAGGA</span> unit must end that charge move engaged with your Prey.</li></ul></li><li>Each time a <span class=\"kwb\">BEAST</span> <span class=\"kwb\">SNAGGA</span> model from your army makes an attack that targets your Prey, improve the Armour Penetration characteristic of that attack by 1.</li></ul>",
+   "fp_source": "Faction Pack Orks page_023.md（Da Hunt Is On 第一 bullet 整改：加 12\"门 + 须终于接战）",
+   "synthesis": "第一 bullet：冲锋含 Prey 即重骰 → Prey 12\"内·重骰·须终于与 Prey 接战"
+  },
+  {
+   "table": "stratagems",
+   "column": "text_zh",
+   "id": "000008869004",
+   "name_en": "Dat One's Even Bigga!",
+   "from_text": "<b>WHEN:</b> Your Charge phase.<br><br><b>TARGET:</b> One Beast Snagga unit from your army.<br><br><b>EFFECT:</b> Until the end of the phase, your unit is eligible to charge in a turn in which it Advanced or Fell Back. In addition, you can re-roll Charge rolls made for your unit, provided one of the targets of that charge is your Prey.",
+   "to_text": "<b>WHEN:</b> Your Charge phase.<br><br><b>TARGET:</b> One Beast Snagga unit from your army.<br><br><b>EFFECT:</b> Until the end of the phase, your unit is eligible to charge in a turn in which it Advanced or Fell Back. In addition, you can re-roll charge rolls made for your unit. If you do, your unit must end that charge move engaged with your Prey.",
+   "fp_source": "Faction Pack Orks page_023.md（Dat One's Even Bigga! Effect 整改）",
+   "synthesis": "重骰须一目标为 Prey → 重骰后须终于与 Prey 接战"
+  },
+  {
+   "table": "stratagems",
+   "column": "text_zh",
+   "id": "000008882007",
+   "name_en": "Go Get ’Em!",
+   "from_text": "<b>WHEN:</b> Your opponent’s Shooting phase, just after an enemy unit has selected its targets.<br><br><b>TARGET:</b> One Boyz unit from your army that was selected as the target of one or more of the attacking unit’s attacks.<br><br><b>EFFECT:</b> After the attacking unit has shot, your unit can make a Go Get ’Em! move. To do so, roll one D6: each model in your unit can move a distance in inches up to the result, but your unit must end that move as close as possible to the closest enemy unit. When doing so, those models can be moved within Engagement Range of that enemy unit. If your unit contains 10 or more models, you can re-roll the D6 to determine how far your unit can move.",
+   "to_text": "<b>WHEN:</b> Your opponent’s Shooting phase, just after an enemy unit has selected its targets.<br><br><b>TARGET:</b> One Boyz unit from your army that was selected as the target of one or more of the attacking unit’s attacks.<br><br><b>EFFECT:</b> Your unit can make a surge move of up to D6\".",
+   "fp_source": "Faction Pack Orks page_023.md（Go Get 'Em! Effect→surge move）",
+   "synthesis": "Roll D6 移动至最近敌·10+ 重骰 → surge move D6\""
+  },
+  {
+   "table": "stratagems",
+   "column": "text_zh",
+   "id": "000008873007",
+   "name_en": "More Gitz Over 'Ere!",
+   "from_text": "<b>WHEN:</b> Your opponent’s Movement phase, just after an enemy unit ends a Normal, Advance or Fall Back move.<br><br><b>TARGET:</b> One Speed Freeks unit from your army that is within 9\" of that enemy unit and is not within Engagement Range of one or more enemy units.<br><br><b>EFFECT:</b> Your unit can make a Normal move of up to 6\".",
+   "to_text": "<b>WHEN:</b> Your opponent’s Movement phase, just after an enemy unit ends a Normal, Advance or Fall Back move.<br><br><b>TARGET:</b> One Speed Freeks unit from your army that is within 8\" of that enemy unit and is not within Engagement Range of one or more enemy units.<br><br><b>EFFECT:</b> Your unit can make a Normal move of up to 6\".",
+   "fp_source": "Faction Pack Orks page_023.md（More Gitz Over 'Ere! Target 9→8）",
+   "synthesis": "TARGET 触发距离 9\"→8\""
+  },
+  {
+   "table": "abilities",
+   "column": "text_zh",
+   "id": "000000004_a2",
+   "name_en": "Da Jump",
+   "from_text": "Once per turn, at the end of your Movement phase, one <span class=\"kwb\">WEIRDBOY</span> from your army can use this ability. If it does, roll one D6: on a 1, that <span class=\"kwb\">WEIRDBOY</span>’s unit suffers D6 mortal wounds; on a 2+, remove this <span class=\"kwb\">WEIRDBOY</span>’s unit from the battlefield and set it up again anywhere on the battlefield that is more than 9\" horizontally away from all enemy models.",
+   "to_text": "Once per turn, at the end of your Movement phase, one <span class=\"kwb\">WEIRDBOY</span> from your army can use this ability. If it does, roll one D6: on a 1, that <span class=\"kwb\">WEIRDBOY</span>’s unit suffers D6 mortal wounds; on a 2+, remove this <span class=\"kwb\">WEIRDBOY</span>’s unit from the battlefield and set it up again anywhere on the battlefield that is more than 8\" horizontally away from all enemy models.",
+   "fp_source": "Faction Pack Orks page_025.md（Weirdboy Da Jump 9→8）",
+   "synthesis": "出场距离 9\"→8\""
+  },
+  {
+   "table": "abilities",
+   "column": "text_zh",
+   "id": "000002490_a2",
+   "name_en": "Single-minded Predator",
+   "from_text": "You can target this model's unit with the Heroic Intervention Stratagem for 0CP, and can do so even if you have already targeted a different unit with that Stratagem this phase.",
+   "to_text": "You can target this unit with the Heroic Intervention stratagem, regardless of any other uses of that stratagem this phase. If you do:<br><ul><li>That use is -1 CP.</li><li>That use does not prevent any uses of that stratagem on other units this phase.</li></ul>",
+   "fp_source": "Faction Pack Orks page_024.md（Beastboss on Squigosaur Single-Minded Predator 整改）",
+   "synthesis": "整改：英勇介入 0CP 无条件复用 → -1CP + 不阻其他单位用"
+  },
+  {
+   "table": "abilities",
+   "column": "text_zh",
+   "id": "000000031_a1",
+   "name_en": "Boom Bomb",
+   "from_text": "Each time this model ends a Normal move, you can select one enemy unit it moved over during that move and roll one D6: on a 4+, that unit suffers D6 mortal wounds.",
+   "to_text": "At the end of your opponent’s Fight phase, select one visible enemy unit (excluding Lone Operative units) within 24\" of this unit, and roll one D6 for that unit: On a 4+, that unit suffers D6 mortal wounds.",
+   "fp_source": "Faction Pack Orks page_024.md（Blitza-Bommer Boom Bomb 整改）",
+   "synthesis": "整改：Normal move 越过敌 → 对方战斗阶段结束·24\"内可见敌"
+  },
+  {
+   "table": "abilities",
+   "column": "text_zh",
+   "id": "000000030_a1",
+   "name_en": "Burna Bomb",
+   "from_text": "Each time this model ends a Normal move, you can select one enemy unit it moved over during that move. Until the end of the turn, models in that unit cannot have the Benefit of Cover. In addition, roll one D6 for each model in that unit: for each 6, that unit suffers 1 mortal wound.",
+   "to_text": "At the end of your opponent’s Fight phase, you can select one visible enemy unit (excluding Lone Operative units) within 24\" of this unit:<br><ul><li>Friendly <span class=\"kwb\">ORKS</span> units’ ranged attacks that target that enemy unit have [IGNORES COVER] until the end of your next turn.</li><li>Roll one D6 for each model in that enemy unit: for each 6, that enemy unit suffers 1 mortal wound.</li></ul>",
+   "fp_source": "Faction Pack Orks page_024.md（Burna-Bommer Burna Bomb 整改）",
+   "synthesis": "整改：Normal move 去掩体 → 对方战斗阶段结束·24\"内 IGNORES COVER + 每模型 6→1 致命伤"
   }
  ],
  "name_patches": [
@@ -5462,6 +5542,87 @@
     "cp_cost": "1",
     "phase": "Shooting phase",
     "text_zh": "<b>WHEN:</b> Your Shooting phase, when a friendly <span class=\"kwb\">OBELISK</span>/<span class=\"kwb\">TESSERACT</span> <span class=\"kwb\">VAULT</span> unit is selected to shoot.<br><br><b>TARGET:</b> That <span class=\"kwb\">OBELISK</span>/<span class=\"kwb\">TESSERACT</span> <span class=\"kwb\">VAULT</span> unit.<br><br><b>EFFECT:</b> Your unit’s Tesla Sphere weapons have +1 AP."
+   }
+  },
+  {
+   "table": "detachments",
+   "fp_source": "Faction Pack Orks page_002.md（11 版新分队，Wahapedia 无源）",
+   "values": {
+    "id": "fp11e-ork-rollin",
+    "faction": "ORK",
+    "name_zh": "滚滚死亡",
+    "name_en": "Thundering Wagons",
+    "rule_text": "<ul><li>Friendly <span class=\"kwb\">BATTLEWAGON</span>/<span class=\"kwb\">HUNTA</span> <span class=\"kwb\">RIG</span>/<span class=\"kwb\">KILL</span> <span class=\"kwb\">RIG</span> units have <span class=\"kwb\">WAGON</span>.</li><li>Friendly <span class=\"kwb\">WAGON</span> units can re-roll charge rolls.</li><li>When a friendly <span class=\"kwb\">WAGON</span> unit is selected to make an advance move, that unit can change advance rolls to a 6.</li></ul><br>This detachment has the WAGONS tag and cannot be taken with another WAGONS detachment."
+   }
+  },
+  {
+   "table": "enhancements",
+   "fp_source": "Faction Pack Orks page_002.md（11 版新分队，Wahapedia 无源）",
+   "values": {
+    "id": "fp11e-ork-rollin-e1",
+    "faction_id": "ORK",
+    "detachment_id": "fp11e-ork-rollin",
+    "detachment_name": "Rollin' Deff",
+    "name": "Boarding Ramps",
+    "cost": null,
+    "legend": "点数未知：FP 不含点数，MFM 缓存无增强数据（诚实置空，勿猜）",
+    "description": "<span class=\"kwb\">WAGON</span> unit only. When a unit embarked within this unit is selected to make a disembark move, that unit has +1 to charge rolls until the end of the turn."
+   }
+  },
+  {
+   "table": "enhancements",
+   "fp_source": "Faction Pack Orks page_002.md（11 版新分队，Wahapedia 无源）",
+   "values": {
+    "id": "fp11e-ork-rollin-e2",
+    "faction_id": "ORK",
+    "detachment_id": "fp11e-ork-rollin",
+    "detachment_name": "Rollin' Deff",
+    "name": "Targetin' Gizmos",
+    "cost": null,
+    "legend": "点数未知：FP 不含点数，MFM 缓存无增强数据（诚实置空，勿猜）",
+    "description": "<span class=\"kwb\">WAGON</span> unit only. While a <span class=\"kwb\">BIG</span> <span class=\"kwb\">MEK</span> model is embarked within this unit:<br><ul><li>This unit’s ranged attacks have [IGNORES COVER].</li><li>If the Waaagh! is active for this unit, this unit’s ranged attacks have [SUSTAINED HITS 1].</li></ul>"
+   }
+  },
+  {
+   "table": "stratagems",
+   "fp_source": "Faction Pack Orks page_002.md（11 版新分队，Wahapedia 无源）",
+   "values": {
+    "id": "fp11e-ork-rollin-s1",
+    "faction": "ORK",
+    "detachment": "Rollin' Deff",
+    "name_zh": "残暴齐射",
+    "name_en": "Brutal Broadside",
+    "cp_cost": "1",
+    "phase": "Shooting phase",
+    "text_zh": "<b>WHEN:</b> Your Shooting phase, when a friendly <span class=\"kwb\">BATTLEWAGON</span> unit is selected to shoot.<br><br><b>TARGET:</b> That <span class=\"kwb\">BATTLEWAGON</span> unit.<br><br><b>EFFECT:</b> Your unit’s ranged attacks (excluding attacks made by weapons selected with Firing Deck) have [RAPID FIRE X], where X is that attack’s A."
+   }
+  },
+  {
+   "table": "stratagems",
+   "fp_source": "Faction Pack Orks page_002.md（11 版新分队，Wahapedia 无源）",
+   "values": {
+    "id": "fp11e-ork-rollin-s2",
+    "faction": "ORK",
+    "detachment": "Rollin' Deff",
+    "name_zh": "迫近碾压",
+    "name_en": "Impending Crunch",
+    "cp_cost": "1",
+    "phase": "Charge phase",
+    "text_zh": "<b>WHEN:</b> Your Charge phase, when a friendly <span class=\"kwb\">WAGON</span> unit ends a charge move.<br><br><b>TARGET:</b> That <span class=\"kwb\">WAGON</span> unit.<br><br><b>EFFECT:</b> Each enemy unit engaged with your unit makes a battle-shock roll, with -1 to that battle-shock roll."
+   }
+  },
+  {
+   "table": "stratagems",
+   "fp_source": "Faction Pack Orks page_002.md（11 版新分队，Wahapedia 无源）",
+   "values": {
+    "id": "fp11e-ork-rollin-s3",
+    "faction": "ORK",
+    "detachment": "Rollin' Deff",
+    "name_zh": "毁灭漂移",
+    "name_en": "Devastating Drift",
+    "cp_cost": "1",
+    "phase": "Fight phase",
+    "text_zh": "<b>WHEN:</b> Your Fight phase, when a friendly <span class=\"kwb\">WAGON</span> unit that made a charge move this turn is selected to fight.<br><br><b>TARGET:</b> That <span class=\"kwb\">WAGON</span> unit.<br><br><b>EFFECT:</b> Your unit’s melee attacks have [CLEAVE 1]."
    }
   }
  ]

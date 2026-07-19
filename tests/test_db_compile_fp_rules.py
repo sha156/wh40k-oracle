@@ -386,12 +386,13 @@ class TestInserts:
         #   Tools of Torment 三全新分队各 1 规则+3 战略+2 增强）
         # + 死灵 18 条（PR13：Hand of the Dynasty / Skyshroud Spearhead /
         #   The Phaeron's Armoury 三全新分队各 1 规则+3 战略+2 增强）
+        # + 兽人 6 条（PR14：Rollin' Deff 单一全新分队 1 规则+3 战略+2 增强）
         import json
         from pathlib import Path
         data = json.loads(Path("db_compile/fp_rules_patches.json").read_text(
             encoding="utf-8"))
         ins = data.get("inserts", [])
-        assert len(ins) == 150
+        assert len(ins) == 156
         ids = {p["values"]["id"] for p in ins}
         assert ids == {"fp11e-tau-aac-det", "fp11e-tau-aac-s1", "fp11e-tau-aac-s2",
                        "fp11e-tau-aac-s3", "fp11e-tau-aux-gbu",
@@ -467,7 +468,10 @@ class TestInserts:
                        "fp11e-nec-skyshroud-s2", "fp11e-nec-skyshroud-s3",
                        "fp11e-nec-phaeron", "fp11e-nec-phaeron-e1",
                        "fp11e-nec-phaeron-e2", "fp11e-nec-phaeron-s1",
-                       "fp11e-nec-phaeron-s2", "fp11e-nec-phaeron-s3"}
+                       "fp11e-nec-phaeron-s2", "fp11e-nec-phaeron-s3",
+                       "fp11e-ork-rollin", "fp11e-ork-rollin-e1",
+                       "fp11e-ork-rollin-e2", "fp11e-ork-rollin-s1",
+                       "fp11e-ork-rollin-s2", "fp11e-ork-rollin-s3"}
         for p in ins:
             assert p.get("fp_source")
             assert p["values"].get("id", "").startswith("fp11e-")

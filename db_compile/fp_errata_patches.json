@@ -354,6 +354,42 @@
    "from": "20+\"",
    "to": "14\"",
    "src": "Faction Pack Necrons page_029.md（Night Scythe M→14吋，改悬停）"
+  },
+  {
+   "unit_id": "000000031",
+   "faction": "ORK",
+   "unit": "Blitza-bommer",
+   "field": "m",
+   "from": "20+\"",
+   "to": "-",
+   "src": "Faction Pack Orks page_023.md（Blitza-bommer M→'-'）"
+  },
+  {
+   "unit_id": "000000030",
+   "faction": "ORK",
+   "unit": "Burna-bommer",
+   "field": "m",
+   "from": "20+\"",
+   "to": "-",
+   "src": "Faction Pack Orks page_023.md（Burna-bommer M→'-'）"
+  },
+  {
+   "unit_id": "000000029",
+   "faction": "ORK",
+   "unit": "Dakkajet",
+   "field": "m",
+   "from": "20+\"",
+   "to": "-",
+   "src": "Faction Pack Orks page_023.md（Dakkajet M→'-'）"
+  },
+  {
+   "unit_id": "000000032",
+   "faction": "ORK",
+   "unit": "Wazbom Blastajet",
+   "field": "m",
+   "from": "20+\"",
+   "to": "-",
+   "src": "Faction Pack Orks page_023.md（Wazbom Blastajet M→'-'）"
   }
  ],
  "new_units": [
