@@ -1,0 +1,2799 @@
+{
+ "_comment": "P7 阵营技能 DSL 唯一真源（死灵，P7-PR13）。DB 投影由 dsl-apply 写入挂 restore。判据格式沿 spec 2026-07-14 + PR3-PR12 约定；A/B 工作单见 docs/superpowers/plans/2026-07-19-p7-pr13-nec-worklist.md。死灵为机械/重生阵营，可编率中：守方 S>T 被伤-1（不屈之躯/缝肉憎恶式走 wound_s_gt_t）、守方 -1 AP（亚表面量子织网）、invuln（量子闪耀护盾/量子偏转/微圣甲虫群）、减伤（纳米装配协议）、FNP（灵能真皮键结/耐伤）、掩体（冥界之匣）、[DEV]（歼灭焦点）、[SUSTAINED]（缜密谋杀/坚定防御）、crit 5+（奴役造物）、ANTI-INFANTRY（不屈意志走 crit_threshold）、tesla sphere/rapid fire（weapon_filter/half_range）、+S（破坏力场/饥饿虚空/冷酷狂热）、对低于满/半编 +命中致伤（脆弱之痕走 target_below_starting/half）、重骰命中致伤（瞄准算法/集中原子化）、Character 率领 +1 命中（指令协议）。零新引擎通道（第五个纯编码 PR）。防高估不编：Reanimation Protocols（全阵营核心机制无载体）、重骰1（力量矩阵/威严/复起暴君）、Power Matrix/五选一能力/三选一光环区域态与选择机制、闪避协议远程 S>T（无远程门控 tag，同 PR12 Warp Fields）、[ASSAULT]/[PISTOL]/[PRECISION] 射击资格/目标选择、暴击改 AP 无载体、ingress/深入/移动/据点/战意/CP 经济类、+1D/+W 无通用通道。",
+ "dsl_version": 1,
+ "faction": "NEC",
+ "entries": [
+  {
+   "table": "abilities",
+   "id": "det000008370",
+   "side": "attacker",
+   "detachment": "Command Protocols",
+   "name_en": "Command Protocols",
+   "name_zh": "指令协议",
+   "status": "partial",
+   "effects": [
+    {
+     "phase": "hit",
+     "op": "modify",
+     "params": [
+      1
+     ],
+     "source": "指令协议：Character 率领本单位时命中 +1"
+    }
+   ],
+   "requires_toggles": [
+    "bearer_leading"
+   ],
+   "not_modeled_notes_zh": [
+    "需 Necrons Character 率领本单位——按率领态建模"
+   ],
+   "provenance": {
+    "current_text": "db detachments.rule_text id=000008370",
+    "base_text": "Wahapedia 现文（PR13 工作单：11 版化后文本，FP 未触及或已滚入）",
+    "text_sha256": "e58b153e977534c3b2f93c86d5c719221df82940d999ad3fe97bc4c9418efd02"
+   },
+   "encoded_by": "manual-2026-07-19",
+   "materialize": {
+    "from_table": "detachments",
+    "from_id": "000008370",
+    "from_column": "rule_text"
+   }
+  },
+  {
+   "table": "abilities",
+   "id": "det000008542",
+   "side": "attacker",
+   "detachment": "Annihilation Protocol",
+   "name_en": "Annihilation Protocol",
+   "name_zh": "歼灭协议",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "歼灭协议：冲锋重骰 + DESTROYER CULT 对最近目标 +1 AP——冲锋重骰与「最近目标」无载体"
+   ],
+   "encoded_by": "manual-2026-07-19",
+   "materialize": {
+    "from_table": "detachments",
+    "from_id": "000008542",
+    "from_column": "rule_text"
+   }
+  },
+  {
+   "table": "abilities",
+   "id": "det000008545",
+   "side": "attacker",
+   "detachment": "Power Matrix",
+   "name_en": "Power Matrix",
+   "name_zh": "力量矩阵",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "力量矩阵：CRYPTEK/CANOPTEK 重骰命中 1 + 区域态——仅重骰 1 + Power Matrix 区域无载体"
+   ],
+   "encoded_by": "manual-2026-07-19",
+   "materialize": {
+    "from_table": "detachments",
+    "from_id": "000008545",
+    "from_column": "rule_text"
+   }
+  },
+  {
+   "table": "abilities",
+   "id": "det000008549",
+   "side": "attacker",
+   "detachment": "Worthy Foes",
+   "name_en": "Worthy Foes",
+   "name_zh": "劲敌",
+   "status": "partial",
+   "effects": [
+    {
+     "phase": "wound",
+     "op": "modify",
+     "params": [
+      1
+     ],
+     "source": "劲敌：对指挥阶段所选敌单位致伤 +1"
+    }
+   ],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "限 NOBLE/LYCHGUARD/TRIARCH 单位对所选敌——按该组合建模"
+   ],
+   "provenance": {
+    "current_text": "db detachments.rule_text id=000008549",
+    "base_text": "Wahapedia 现文（PR13 工作单：11 版化后文本，FP 未触及或已滚入）",
+    "text_sha256": "7c108ea5e38394264265105d16f4e33706c230f84a48b02ef8db14162e83b34f"
+   },
+   "encoded_by": "manual-2026-07-19",
+   "materialize": {
+    "from_table": "detachments",
+    "from_id": "000008549",
+    "from_column": "rule_text"
+   }
+  },
+  {
+   "table": "abilities",
+   "id": "det000008553",
+   "side": "attacker",
+   "detachment": "Hyperphasing",
+   "name_en": "Hyperphasing",
+   "name_zh": "超相位",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "超相位：撤入预备队——预备队无载体"
+   ],
+   "encoded_by": "manual-2026-07-19",
+   "materialize": {
+    "from_table": "detachments",
+    "from_id": "000008553",
+    "from_column": "rule_text"
+   }
+  },
+  {
+   "table": "abilities",
+   "id": "det000009587",
+   "side": "attacker",
+   "detachment": "Conquest Protocols",
+   "name_en": "Conquest Protocols",
+   "name_zh": "征服协议",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "征服协议：近据点时暴击伤 +1 AP——暴击改 AP + 目标点无载体"
+   ],
+   "encoded_by": "manual-2026-07-19",
+   "materialize": {
+    "from_table": "detachments",
+    "from_id": "000009587",
+    "from_column": "rule_text"
+   }
+  },
+  {
+   "table": "abilities",
+   "id": "det000009595",
+   "side": "attacker",
+   "detachment": "Terrifying Charge",
+   "name_en": "Terrifying Charge",
+   "name_zh": "恐怖冲锋",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "恐怖冲锋：领导测试 → 敌命中 -1——领导测试无载体"
+   ],
+   "encoded_by": "manual-2026-07-19",
+   "materialize": {
+    "from_table": "detachments",
+    "from_id": "000009595",
+    "from_column": "rule_text"
+   }
+  },
+  {
+   "table": "abilities",
+   "id": "det000009603",
+   "side": "attacker",
+   "detachment": "Retribution Protocols",
+   "name_en": "Retribution Protocols",
+   "name_zh": "报应协议",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "报应协议：敌杀 Cryptek 后重骰命中——反应式跨条件无载体"
+   ],
+   "encoded_by": "manual-2026-07-19",
+   "materialize": {
+    "from_table": "detachments",
+    "from_id": "000009603",
+    "from_column": "rule_text"
+   }
+  },
+  {
+   "table": "abilities",
+   "id": "det000009748",
+   "side": "attacker",
+   "detachment": "Relentless Onslaught",
+   "name_en": "Relentless Onslaught",
+   "name_zh": "无情猛攻",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "无情猛攻：近据点 +1 命中 + 载具/骑乘远程 [ASSAULT]——目标点无载体 + assault 射击资格"
+   ],
+   "encoded_by": "manual-2026-07-19",
+   "materialize": {
+    "from_table": "detachments",
+    "from_id": "000009748",
+    "from_column": "rule_text"
+   }
+  },
+  {
+   "table": "abilities",
+   "id": "det000010663",
+   "side": "attacker",
+   "detachment": "Technosorcerous Augmentations",
+   "name_en": "Technosorcerous Augmentations",
+   "name_zh": "技术巫术强化",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "技术巫术强化：Cryptek 远程 [ASSAULT] + 五选一能力（ANTI/HEAVY/IGNORES COVER）——射击资格 + 五选一无 toggle 载体"
+   ],
+   "encoded_by": "manual-2026-07-19",
+   "materialize": {
+    "from_table": "detachments",
+    "from_id": "000010663",
+    "from_column": "rule_text"
+   }
+  },
+  {
+   "table": "abilities",
+   "id": "det000010667",
+   "side": "attacker",
+   "detachment": "Cold Fervour",
+   "name_en": "Cold Fervour",
+   "name_zh": "冷酷狂热",
+   "status": "partial",
+   "effects": [
+    {
+     "phase": "wound",
+     "op": "s_improve",
+     "params": [
+      2
+     ],
+     "source": "冷酷狂热：Destroyer Cult 武器 S +2（全阶段，远近皆适用）"
+    }
+   ],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "首杀后全军（非 Destroyer Cult）+2 S 分量不建模；仅编 Destroyer Cult 本体武器 S+2"
+   ],
+   "provenance": {
+    "current_text": "db detachments.rule_text id=000010667",
+    "base_text": "Wahapedia 现文（PR13 工作单：11 版化后文本，FP 未触及或已滚入）",
+    "text_sha256": "bd53d583c7356a8d4b70e2d7ba8d4e8b9621436104fa88273de27c09f1d9ee0c"
+   },
+   "encoded_by": "manual-2026-07-19",
+   "materialize": {
+    "from_table": "detachments",
+    "from_id": "000010667",
+    "from_column": "rule_text"
+   }
+  },
+  {
+   "table": "abilities",
+   "id": "det000010671",
+   "side": "attacker",
+   "detachment": "Cosmic Distortion",
+   "name_en": "Cosmic Distortion",
+   "name_zh": "宇宙扭曲",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "宇宙扭曲：Monster 光环（unravelling → 敌 AP+1）+ 自伤扩程——光环 + unravelling 状态 + 自伤无载体"
+   ],
+   "encoded_by": "manual-2026-07-19",
+   "materialize": {
+    "from_table": "detachments",
+    "from_id": "000010671",
+    "from_column": "rule_text"
+   }
+  },
+  {
+   "table": "abilities",
+   "id": "det000010734",
+   "side": "attacker",
+   "detachment": "Arcanoscientific Expertise",
+   "name_en": "Arcanoscientific Expertise",
+   "name_zh": "奥秘科学专精",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "奥秘科学专精：Cryptek 三选一光环（前进/+1S/5++）——三选一 + 光环无载体"
+   ],
+   "encoded_by": "manual-2026-07-19",
+   "materialize": {
+    "from_table": "detachments",
+    "from_id": "000010734",
+    "from_column": "rule_text"
+   }
+  },
+  {
+   "table": "abilities",
+   "id": "detfp11e-nec-hand",
+   "side": "attacker",
+   "detachment": "Hypermotility Protocols",
+   "name_en": "Hypermotility Protocols",
+   "name_zh": "超机动协议",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "超机动协议：IMMORTALS/WARRIORS 远程 [ASSAULT] + 前进→动作——射击资格与动作资格无载体"
+   ],
+   "encoded_by": "manual-2026-07-19",
+   "materialize": {
+    "from_table": "detachments",
+    "from_id": "fp11e-nec-hand",
+    "from_column": "rule_text"
+   }
+  },
+  {
+   "table": "abilities",
+   "id": "detfp11e-nec-skyshroud",
+   "side": "attacker",
+   "detachment": "Transdimensional Deployment",
+   "name_en": "Transdimensional Deployment",
+   "name_zh": "跨维部署",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "跨维部署：TOMB BLADES Deep Strike + ingress→+1 命中——深入打击 + ingress 状态无载体"
+   ],
+   "encoded_by": "manual-2026-07-19",
+   "materialize": {
+    "from_table": "detachments",
+    "from_id": "fp11e-nec-skyshroud",
+    "from_column": "rule_text"
+   }
+  },
+  {
+   "table": "abilities",
+   "id": "detfp11e-nec-phaeron",
+   "side": "attacker",
+   "detachment": "Empowered Engines",
+   "name_en": "Empowered Engines",
+   "name_zh": "强能引擎",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "强能引擎：TITANIC FLY +6\"M——移动无载体"
+   ],
+   "encoded_by": "manual-2026-07-19",
+   "materialize": {
+    "from_table": "detachments",
+    "from_id": "fp11e-nec-phaeron",
+    "from_column": "rule_text"
+   }
+  },
+  {
+   "table": "stratagems",
+   "id": "000008405002",
+   "side": "target",
+   "detachment": "Annihilation Legion",
+   "name_en": "MASKS OF DEATH",
+   "name_zh": "死亡面具",
+   "status": "encoded",
+   "effects": [
+    {
+     "phase": "hit",
+     "op": "modify",
+     "params": [
+      -1
+     ],
+     "source": "死亡面具：攻击本单位命中 -1"
+    }
+   ],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [],
+   "provenance": {
+    "current_text": "db stratagems.text_zh id=000008405002",
+    "base_text": "Wahapedia 现文（PR13 工作单：11 版化后文本，FP 未触及或已滚入）",
+    "text_sha256": "f543e2b1e3fe056717faf84cbae203f3c369516be3d2e79777ced200f4d068ec"
+   },
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "stratagems",
+   "id": "000008405007",
+   "side": "attacker",
+   "detachment": "Annihilation Legion",
+   "name_en": "INSANITY’S IRE",
+   "name_zh": "疯狂之怒",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "疯狂之怒：移动——移动无载体"
+   ],
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "stratagems",
+   "id": "000008405004",
+   "side": "attacker",
+   "detachment": "Annihilation Legion",
+   "name_en": "MURDEROUS REANIMATION",
+   "name_zh": "凶残重生",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "凶残重生：重生协议激活——重生协议无载体"
+   ],
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "stratagems",
+   "id": "000008405006",
+   "side": "attacker",
+   "detachment": "Annihilation Legion",
+   "name_en": "BLOOD-FUELLED CRUELTY",
+   "name_zh": "血燃残酷",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "血燃残酷：致命伤 + 移动——致命伤与移动无载体"
+   ],
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "stratagems",
+   "id": "000008405003",
+   "side": "attacker",
+   "detachment": "Annihilation Legion",
+   "name_en": "THE SPOOR OF FRAILTY",
+   "name_zh": "脆弱之痕",
+   "status": "encoded",
+   "effects": [
+    {
+     "phase": "hit",
+     "op": "modify",
+     "params": [
+      1
+     ],
+     "source": "脆弱之痕：对低于满编敌命中 +1",
+     "condition": [
+      "target_below_starting"
+     ]
+    },
+    {
+     "phase": "wound",
+     "op": "modify",
+     "params": [
+      1
+     ],
+     "source": "脆弱之痕：对低于半编敌致伤 +1",
+     "condition": [
+      "target_below_half"
+     ]
+    }
+   ],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [],
+   "provenance": {
+    "current_text": "db stratagems.text_zh id=000008405003",
+    "base_text": "Wahapedia 现文（PR13 工作单：11 版化后文本，FP 未触及或已滚入）",
+    "text_sha256": "f9801697e3f2329a8e2b42b4d08857a4504c4861a4f9f47ad58d12acddabf987"
+   },
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "stratagems",
+   "id": "000008405005",
+   "side": "attacker",
+   "detachment": "Annihilation Legion",
+   "name_en": "PITILESS HUNTERS",
+   "name_zh": "无情猎手",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "无情猎手：突入/巩固 6\"——近战机动无载体"
+   ],
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "stratagems",
+   "id": "000008371004",
+   "side": "attacker",
+   "detachment": "Awakened Dynasty",
+   "name_en": "PROTOCOL OF THE HUNGRY VOID",
+   "name_zh": "饥饿虚空协议",
+   "status": "partial",
+   "effects": [
+    {
+     "phase": "wound",
+     "op": "s_improve",
+     "params": [
+      1
+     ],
+     "source": "饥饿虚空协议：近战 S +1",
+     "condition": [
+      "phase_melee"
+     ]
+    }
+   ],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "Character 率领时另 +1 AP 分量——限率领态，单独不建模"
+   ],
+   "provenance": {
+    "current_text": "db stratagems.text_zh id=000008371004",
+    "base_text": "Wahapedia 现文（PR13 工作单：11 版化后文本，FP 未触及或已滚入）",
+    "text_sha256": "49c244de817291063c84de2f8cce8ee46d11f95d0d3bd7313bb7fab69eb71b60"
+   },
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "stratagems",
+   "id": "000008371006",
+   "side": "attacker",
+   "detachment": "Awakened Dynasty",
+   "name_en": "PROTOCOL OF THE CONQUERING TYRANT",
+   "name_zh": "征服暴君协议",
+   "status": "partial",
+   "effects": [
+    {
+     "phase": "hit",
+     "op": "reroll",
+     "params": [
+      "fail"
+     ],
+     "source": "征服暴君协议：半程重骰命中（Character 率领时全重骰）",
+     "condition": [
+      "half_range"
+     ]
+    }
+   ],
+   "requires_toggles": [
+    "bearer_leading"
+   ],
+   "not_modeled_notes_zh": [
+    "无 Character 率领时仅重骰 1（非重骰失败），不建模——按率领态全重骰建模"
+   ],
+   "provenance": {
+    "current_text": "db stratagems.text_zh id=000008371006",
+    "base_text": "Wahapedia 现文（PR13 工作单：11 版化后文本，FP 未触及或已滚入）",
+    "text_sha256": "08a262586d0801056365750cfa7d13c1497a381734dfa274641655b107d35736"
+   },
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "stratagems",
+   "id": "000008371002",
+   "side": "attacker",
+   "detachment": "Awakened Dynasty",
+   "name_en": "PROTOCOL OF THE ETERNAL REVENANT",
+   "name_zh": "永恒亡者协议",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "永恒亡者协议：复活——复活无载体"
+   ],
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "stratagems",
+   "id": "000008371003",
+   "side": "attacker",
+   "detachment": "Awakened Dynasty",
+   "name_en": "PROTOCOL OF THE UNDYING LEGIONS",
+   "name_zh": "不朽军团协议",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "不朽军团协议：重生——重生协议无载体"
+   ],
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "stratagems",
+   "id": "000008371005",
+   "side": "attacker",
+   "detachment": "Awakened Dynasty",
+   "name_en": "PROTOCOL OF THE SUDDEN STORM",
+   "name_zh": "骤袭风暴协议",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "骤袭风暴协议：[ASSAULT] + 重骰前进——射击资格与前进无载体"
+   ],
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "stratagems",
+   "id": "000008371007",
+   "side": "attacker",
+   "detachment": "Awakened Dynasty",
+   "name_en": "PROTOCOL OF THE VENGEFUL STARS",
+   "name_zh": "复仇星辰协议",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "复仇星辰协议：额外射击——反应式额外射击无载体"
+   ],
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "stratagems",
+   "id": "000008547002",
+   "side": "attacker",
+   "detachment": "Canoptek Court",
+   "name_en": "CURSE OF THE CRYPTEK",
+   "name_zh": "克里普特克诅咒",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "克里普特克诅咒：反应式 +1 命中致伤——反应式跨条件无载体"
+   ],
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "stratagems",
+   "id": "000008547003",
+   "side": "attacker",
+   "detachment": "Canoptek Court",
+   "name_en": "CYNOSURE OF ERADICATION",
+   "name_zh": "歼灭焦点",
+   "status": "encoded",
+   "effects": [
+    {
+     "phase": "wound",
+     "op": "mortal_pool",
+     "params": [],
+     "source": "歼灭焦点：CRYPTEK/CANOPTEK 武器 [DEVASTATING WOUNDS]"
+    }
+   ],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [],
+   "provenance": {
+    "current_text": "db stratagems.text_zh id=000008547003",
+    "base_text": "Wahapedia 现文（PR13 工作单：11 版化后文本，FP 未触及或已滚入）",
+    "text_sha256": "1ba08d8105a0eaa39f937249bb1db332ed4a56e7a1c7a530364fb8dedf06ef11"
+   },
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "stratagems",
+   "id": "000008547004",
+   "side": "attacker",
+   "detachment": "Canoptek Court",
+   "name_en": "SOLAR PULSE",
+   "name_zh": "太阳脉冲",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "太阳脉冲：据点范围 [IGNORES COVER]——目标点范围无载体"
+   ],
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "stratagems",
+   "id": "000008547006",
+   "side": "attacker",
+   "detachment": "Canoptek Court",
+   "name_en": "COUNTERTEMPORAL SHIFT",
+   "name_zh": "逆时位移",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "逆时位移：18\" 外不得远程选中——目标距离限制无载体"
+   ],
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "stratagems",
+   "id": "000008547007",
+   "side": "attacker",
+   "detachment": "Canoptek Court",
+   "name_en": "SUBOPTIMAL FACADE",
+   "name_zh": "次优伪装",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "次优伪装：重生协议激活——重生协议无载体"
+   ],
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "stratagems",
+   "id": "000008547005",
+   "side": "attacker",
+   "detachment": "Canoptek Court",
+   "name_en": "REACTIVE SUBROUTINES",
+   "name_zh": "反应式子程序",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "反应式子程序：移动——移动无载体"
+   ],
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "stratagems",
+   "id": "000009605002",
+   "side": "attacker",
+   "detachment": "Canoptek Harvesters",
+   "name_en": "TARGETING ALGORITHMS",
+   "name_zh": "瞄准算法",
+   "status": "encoded",
+   "effects": [
+    {
+     "phase": "hit",
+     "op": "reroll",
+     "params": [
+      "fail"
+     ],
+     "source": "瞄准算法：重骰命中"
+    },
+    {
+     "phase": "wound",
+     "op": "reroll",
+     "params": [
+      "fail"
+     ],
+     "source": "瞄准算法：重骰致伤"
+    }
+   ],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [],
+   "provenance": {
+    "current_text": "db stratagems.text_zh id=000009605002",
+    "base_text": "Wahapedia 现文（PR13 工作单：11 版化后文本，FP 未触及或已滚入）",
+    "text_sha256": "bc53df47614aa93256d9036d91e681205ff1bb010c4cee65bb6eba3297376d68"
+   },
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "stratagems",
+   "id": "000009605004",
+   "side": "attacker",
+   "detachment": "Canoptek Harvesters",
+   "name_en": "PHASE-SHIFT",
+   "name_zh": "相位移",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "相位移：穿越墙壁——移动无载体"
+   ],
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "stratagems",
+   "id": "000009605005",
+   "side": "attacker",
+   "detachment": "Canoptek Harvesters",
+   "name_en": "NANOSCARAB VIRUS",
+   "name_zh": "纳米圣甲虫病毒",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "纳米圣甲虫病毒：关闭舱门——地形无载体"
+   ],
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "stratagems",
+   "id": "000009605003",
+   "side": "target",
+   "detachment": "Canoptek Harvesters",
+   "name_en": "QUANTUM FLARE-SHIELD",
+   "name_zh": "量子闪耀护盾",
+   "status": "encoded",
+   "effects": [
+    {
+     "phase": "save",
+     "op": "invuln",
+     "params": [
+      4
+     ],
+     "source": "量子闪耀护盾：4+ 无效保护"
+    }
+   ],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [],
+   "provenance": {
+    "current_text": "db stratagems.text_zh id=000009605003",
+    "base_text": "Wahapedia 现文（PR13 工作单：11 版化后文本，FP 未触及或已滚入）",
+    "text_sha256": "5347a3ff9fa9d6375b3144a94190813652f33f3e3bb0007084795531ef099177"
+   },
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "stratagems",
+   "id": "000010665002",
+   "side": "attacker",
+   "detachment": "Cryptek Conclave",
+   "name_en": "MOLECULAR TARGETING",
+   "name_zh": "分子瞄准",
+   "status": "partial",
+   "effects": [
+    {
+     "phase": "hit",
+     "op": "ignore_hit_mods",
+     "params": [],
+     "source": "分子瞄准：无视 BS/WS/命中修正"
+    }
+   ],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "CRYPTEK 单位另无视致伤修正——无「无视致伤修正」通道，该分量不建模"
+   ],
+   "provenance": {
+    "current_text": "db stratagems.text_zh id=000010665002",
+    "base_text": "Wahapedia 现文（PR13 工作单：11 版化后文本，FP 未触及或已滚入）",
+    "text_sha256": "92613b3dc3764646b4735d310ed55b81b08724fb42ccb4b358e437f4d10ba420"
+   },
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "stratagems",
+   "id": "000010665006",
+   "side": "attacker",
+   "detachment": "Cryptek Conclave",
+   "name_en": "UNTAPPED POWER",
+   "name_zh": "未汲之力",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "未汲之力：额外能力选择——能力选择无载体"
+   ],
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "stratagems",
+   "id": "000010665005",
+   "side": "attacker",
+   "detachment": "Cryptek Conclave",
+   "name_en": "SYNERGISTIC EMPOWERMENT",
+   "name_zh": "协同赋能",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "协同赋能：授予关键字——关键字授予无载体"
+   ],
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "stratagems",
+   "id": "000010665007",
+   "side": "attacker",
+   "detachment": "Cryptek Conclave",
+   "name_en": "POTENTIALITY SYPHON",
+   "name_zh": "潜能虹吸",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "潜能虹吸：重生协议——重生协议无载体"
+   ],
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "stratagems",
+   "id": "000010665003",
+   "side": "target",
+   "detachment": "Cryptek Conclave",
+   "name_en": "MICROSCARAB SWARM",
+   "name_zh": "微圣甲虫群",
+   "status": "partial",
+   "effects": [
+    {
+     "phase": "save",
+     "op": "invuln",
+     "params": [
+      5
+     ],
+     "source": "微圣甲虫群：5+ 无效保护（Necron Warriors）"
+    }
+   ],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "Immortals 单位实为 4+——保守按 Necron Warriors 5+ 建模（宁漏不错）"
+   ],
+   "provenance": {
+    "current_text": "db stratagems.text_zh id=000010665003",
+    "base_text": "Wahapedia 现文（PR13 工作单：11 版化后文本，FP 未触及或已滚入）",
+    "text_sha256": "2f427f3a33e95ceb04c9677edcb92d274caf110b38ccec8b4fa23a52537972fa"
+   },
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "stratagems",
+   "id": "000010665004",
+   "side": "attacker",
+   "detachment": "Cryptek Conclave",
+   "name_en": "ANIMUS CURSE",
+   "name_zh": "灵怒诅咒",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "灵怒诅咒：反应式重骰命中——反应式无载体"
+   ],
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "stratagems",
+   "id": "000010669002",
+   "side": "attacker",
+   "detachment": "Cursed Legion",
+   "name_en": "METHODICAL MURDER",
+   "name_zh": "缜密谋杀",
+   "status": "encoded",
+   "effects": [
+    {
+     "phase": "hit",
+     "op": "extra_hits",
+     "params": [
+      1
+     ],
+     "source": "缜密谋杀：[SUSTAINED HITS 1]"
+    }
+   ],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [],
+   "provenance": {
+    "current_text": "db stratagems.text_zh id=000010669002",
+    "base_text": "Wahapedia 现文（PR13 工作单：11 版化后文本，FP 未触及或已滚入）",
+    "text_sha256": "18e8be3d4cdc66ff298cae4e427afa7ff67635fad11233b92913c9c553e33086"
+   },
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "stratagems",
+   "id": "000010669003",
+   "side": "target",
+   "detachment": "Cursed Legion",
+   "name_en": "IMAGE OF DEATH",
+   "name_zh": "死亡幻影",
+   "status": "encoded",
+   "effects": [
+    {
+     "phase": "hit",
+     "op": "modify",
+     "params": [
+      -1
+     ],
+     "source": "死亡幻影：攻击本单位命中 -1"
+    }
+   ],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [],
+   "provenance": {
+    "current_text": "db stratagems.text_zh id=000010669003",
+    "base_text": "Wahapedia 现文（PR13 工作单：11 版化后文本，FP 未触及或已滚入）",
+    "text_sha256": "4e5145f4ccad1a8a808802d59f6d2d36f000b412fa9b54332e6f6e9b4d92600a"
+   },
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "stratagems",
+   "id": "000010669006",
+   "side": "attacker",
+   "detachment": "Cursed Legion",
+   "name_en": "SPREADING MADNESS",
+   "name_zh": "蔓延疯狂",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "蔓延疯狂：+2 冲锋骰——冲锋骰无载体"
+   ],
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "stratagems",
+   "id": "000010669005",
+   "side": "attacker",
+   "detachment": "Cursed Legion",
+   "name_en": "DRIVEN TO BUTCHERY",
+   "name_zh": "驱向屠戮",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "驱向屠戮：前进后可射击/冲锋——射击/冲锋资格无载体"
+   ],
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "stratagems",
+   "id": "000010669007",
+   "side": "attacker",
+   "detachment": "Cursed Legion",
+   "name_en": "UNNATURAL AGGRESSION",
+   "name_zh": "非自然侵略",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "非自然侵略：冲锋——冲锋无载体"
+   ],
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "stratagems",
+   "id": "000010669004",
+   "side": "attacker",
+   "detachment": "Cursed Legion",
+   "name_en": "MORTIS PROTOCOLS",
+   "name_zh": "死亡协议",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "死亡协议：重生协议——重生协议无载体"
+   ],
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "stratagems",
+   "id": "000009597005",
+   "side": "attacker",
+   "detachment": "Deranged Outcasts",
+   "name_en": "TERRIFYING AMBUSH",
+   "name_zh": "恐怖伏击",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "恐怖伏击：领导测试 + 禁 Overwatch——领导测试无载体"
+   ],
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "stratagems",
+   "id": "000009597002",
+   "side": "attacker",
+   "detachment": "Deranged Outcasts",
+   "name_en": "BATHED IN BLOOD",
+   "name_zh": "浴血",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "浴血：据点据守——目标控制无载体"
+   ],
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "stratagems",
+   "id": "000009597003",
+   "side": "attacker",
+   "detachment": "Deranged Outcasts",
+   "name_en": "SHADOW STALKERS",
+   "name_zh": "暗影潜猎",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "暗影潜猎：深入打击——预备队无载体"
+   ],
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "stratagems",
+   "id": "000009597004",
+   "side": "attacker",
+   "detachment": "Deranged Outcasts",
+   "name_en": "RUSH TO SLAUGHTER",
+   "name_zh": "冲向屠杀",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "冲向屠杀：穿越模型——移动无载体"
+   ],
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "stratagems",
+   "id": "000010736003",
+   "side": "attacker",
+   "detachment": "Harbinger Cabal",
+   "name_en": "HOLOGYRIC SIMULATION",
+   "name_zh": "全息模拟",
+   "status": "partial",
+   "effects": [
+    {
+     "phase": "hit",
+     "op": "reroll",
+     "params": [
+      "fail"
+     ],
+     "source": "全息模拟：重骰命中"
+    }
+   ],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "需 6\" 内友方 Cryptek——按成立建模；CRYPTEK 单位另重骰致伤，该分量不建模"
+   ],
+   "provenance": {
+    "current_text": "db stratagems.text_zh id=000010736003",
+    "base_text": "Wahapedia 现文（PR13 工作单：11 版化后文本，FP 未触及或已滚入）",
+    "text_sha256": "2c4f22db894602a08b429bf2b95d39d072a794af9734d7b84e44d5e805ab3245"
+   },
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "stratagems",
+   "id": "000010736004",
+   "side": "attacker",
+   "detachment": "Harbinger Cabal",
+   "name_en": "ANTI-PROXIMAL SUBROUTINES",
+   "name_zh": "近距子程序",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "近距子程序：[PISTOL]——手枪射击资格无载体"
+   ],
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "stratagems",
+   "id": "000010736002",
+   "side": "attacker",
+   "detachment": "Harbinger Cabal",
+   "name_en": "DYNAMIC RECONFIGURATION",
+   "name_zh": "动态重构",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "动态重构：能力选择——能力选择无载体"
+   ],
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "stratagems",
+   "id": "000010736005",
+   "side": "attacker",
+   "detachment": "Harbinger Cabal",
+   "name_en": "CONTINUUM REALIGNMENT",
+   "name_zh": "连续统重整",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "连续统重整：移动——移动无载体"
+   ],
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "stratagems",
+   "id": "000008555004",
+   "side": "attacker",
+   "detachment": "Hypercrypt Legion",
+   "name_en": "REANIMATION CRYPTS",
+   "name_zh": "重生墓室",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "重生墓室：预备队重生——重生协议无载体"
+   ],
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "stratagems",
+   "id": "000008555005",
+   "side": "attacker",
+   "detachment": "Hypercrypt Legion",
+   "name_en": "COSMIC PRECISION",
+   "name_zh": "宇宙精准",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "宇宙精准：深入打击部署——预备队无载体"
+   ],
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "stratagems",
+   "id": "000008555002",
+   "side": "attacker",
+   "detachment": "Hypercrypt Legion",
+   "name_en": "HYPERPHASIC RECALL",
+   "name_zh": "超相位召回",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "超相位召回：预备队——预备队无载体"
+   ],
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "stratagems",
+   "id": "000008555006",
+   "side": "attacker",
+   "detachment": "Hypercrypt Legion",
+   "name_en": "DIMENSIONAL CORRIDOR",
+   "name_zh": "维度走廊",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "维度走廊：冲锋资格——冲锋资格无载体"
+   ],
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "stratagems",
+   "id": "000008555003",
+   "side": "target",
+   "detachment": "Hypercrypt Legion",
+   "name_en": "QUANTUM DEFLECTION",
+   "name_zh": "量子偏转",
+   "status": "encoded",
+   "effects": [
+    {
+     "phase": "save",
+     "op": "invuln",
+     "params": [
+      4
+     ],
+     "source": "量子偏转：4+ 无效保护"
+    }
+   ],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [],
+   "provenance": {
+    "current_text": "db stratagems.text_zh id=000008555003",
+    "base_text": "Wahapedia 现文（PR13 工作单：11 版化后文本，FP 未触及或已滚入）",
+    "text_sha256": "ee36370e62906cfce8af6f513ed6bf244d5f7e5221df021376263c84aa03253c"
+   },
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "stratagems",
+   "id": "000008555007",
+   "side": "attacker",
+   "detachment": "Hypercrypt Legion",
+   "name_en": "ENTROPIC DAMPING",
+   "name_zh": "熵减阻尼",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "熵减阻尼：对敌武器 [HAZARDOUS]——对敌武器改动无载体"
+   ],
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "stratagems",
+   "id": "000008551006",
+   "side": "attacker",
+   "detachment": "Obeisance Phalanx",
+   "name_en": "SUFFER NO RIVAL",
+   "name_zh": "不容匹敌",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "不容匹敌：近战 [PRECISION]——精确=目标选择无载体"
+   ],
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "stratagems",
+   "id": "000008551004",
+   "side": "target",
+   "detachment": "Obeisance Phalanx",
+   "name_en": "NANOASSEMBLY PROTOCOLS",
+   "name_zh": "纳米装配协议",
+   "status": "encoded",
+   "effects": [
+    {
+     "phase": "damage",
+     "op": "damage_reduction",
+     "params": [
+      1
+     ],
+     "source": "纳米装配协议：分配到本单位的攻击伤害 -1"
+    }
+   ],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [],
+   "provenance": {
+    "current_text": "db stratagems.text_zh id=000008551004",
+    "base_text": "Wahapedia 现文（PR13 工作单：11 版化后文本，FP 未触及或已滚入）",
+    "text_sha256": "41df48d92494ad9eef139f352c006ec4bf57ce53d9e63fa24a3d362890d0e488"
+   },
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "stratagems",
+   "id": "000008551003",
+   "side": "attacker",
+   "detachment": "Obeisance Phalanx",
+   "name_en": "ENSLAVED ARTIFICE",
+   "name_zh": "奴役造物",
+   "status": "encoded",
+   "effects": [
+    {
+     "phase": "hit",
+     "op": "crit_threshold",
+     "params": [
+      5
+     ],
+     "source": "奴役造物：命中 5+ 即暴击"
+    }
+   ],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [],
+   "provenance": {
+    "current_text": "db stratagems.text_zh id=000008551003",
+    "base_text": "Wahapedia 现文（PR13 工作单：11 版化后文本，FP 未触及或已滚入）",
+    "text_sha256": "64108654cab35e5094206125281e812427a2c24d9ced9cdc8dc7962b877c2c51"
+   },
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "stratagems",
+   "id": "000008551005",
+   "side": "attacker",
+   "detachment": "Obeisance Phalanx",
+   "name_en": "SENTINELS OF ETERNITY",
+   "name_zh": "永恒哨兵",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "永恒哨兵：被毁后反打——串行幸存反打无载体"
+   ],
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "stratagems",
+   "id": "000008551002",
+   "side": "attacker",
+   "detachment": "Obeisance Phalanx",
+   "name_en": "YOUR TIME IS NIGH",
+   "name_zh": "汝时将至",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "汝时将至：战意/领导减值——战意无载体"
+   ],
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "stratagems",
+   "id": "000008551007",
+   "side": "attacker",
+   "detachment": "Obeisance Phalanx",
+   "name_en": "TERRITORIAL OBSESSION",
+   "name_zh": "领土执念",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "领土执念：+1/+3 OC——目标控制无载体"
+   ],
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "stratagems",
+   "id": "000010673006",
+   "side": "attacker",
+   "detachment": "Pantheon of Woe",
+   "name_en": "CHRONODISTORTION",
+   "name_zh": "时序扭曲",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "时序扭曲：被毁后反打——串行幸存反打无载体"
+   ],
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "stratagems",
+   "id": "000010673005",
+   "side": "attacker",
+   "detachment": "Pantheon of Woe",
+   "name_en": "ENTROPHASIC AURA TARGETING",
+   "name_zh": "熵相光环瞄准",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "熵相光环瞄准：重骰命中 1——仅重骰 1 无载体"
+   ],
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "stratagems",
+   "id": "000010673004",
+   "side": "attacker",
+   "detachment": "Pantheon of Woe",
+   "name_en": "MASS TRANSMOGRIFICATION",
+   "name_zh": "群体嬗变",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "群体嬗变：重生协议——重生协议无载体"
+   ],
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "stratagems",
+   "id": "000010673002",
+   "side": "attacker",
+   "detachment": "Pantheon of Woe",
+   "name_en": "DISHARMONISATION CASCADE",
+   "name_zh": "失谐级联",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "失谐级联：Deadly Demise 强化——死亡爆炸无载体"
+   ],
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "stratagems",
+   "id": "000010673003",
+   "side": "attacker",
+   "detachment": "Pantheon of Woe",
+   "name_en": "MOLECULAR EROSION",
+   "name_zh": "分子侵蚀",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "分子侵蚀：战意 + 致命伤——战意与致命伤无载体"
+   ],
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "stratagems",
+   "id": "000010673007",
+   "side": "attacker",
+   "detachment": "Pantheon of Woe",
+   "name_en": "PHASE MELDING",
+   "name_zh": "相位融合",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "相位融合：绝望逃脱——移动测试无载体"
+   ],
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "stratagems",
+   "id": "000009750003",
+   "side": "target",
+   "detachment": "Starshatter Arsenal",
+   "name_en": "UNYIELDING FORMS",
+   "name_zh": "不屈之躯",
+   "status": "encoded",
+   "effects": [
+    {
+     "phase": "wound",
+     "op": "modify",
+     "params": [
+      -1
+     ],
+     "source": "不屈之躯：S>T 攻击致伤 -1",
+     "condition": [
+      "wound_s_gt_t"
+     ]
+    }
+   ],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [],
+   "provenance": {
+    "current_text": "db stratagems.text_zh id=000009750003",
+    "base_text": "Wahapedia 现文（PR13 工作单：11 版化后文本，FP 未触及或已滚入）",
+    "text_sha256": "cc601fc81a4bd93e7db565e0dbc1d94ac2f143754d83d5951c1584da7664f657"
+   },
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "stratagems",
+   "id": "000009750002",
+   "side": "attacker",
+   "detachment": "Starshatter Arsenal",
+   "name_en": "MERCILESS RECLAMATION",
+   "name_zh": "无情回收",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "无情回收：近据点致伤 +1——目标点无载体"
+   ],
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "stratagems",
+   "id": "000009750007",
+   "side": "attacker",
+   "detachment": "Starshatter Arsenal",
+   "name_en": "REACTIVE REPOSITION",
+   "name_zh": "反应式换位",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "反应式换位：移动——移动无载体"
+   ],
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "stratagems",
+   "id": "000009750006",
+   "side": "attacker",
+   "detachment": "Starshatter Arsenal",
+   "name_en": "ENDLESS SERVITUDE",
+   "name_zh": "无尽奴役",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "无尽奴役：重生协议——重生协议无载体"
+   ],
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "stratagems",
+   "id": "000009750005",
+   "side": "attacker",
+   "detachment": "Starshatter Arsenal",
+   "name_en": "DIMENSIONAL TUNNEL",
+   "name_zh": "维度隧道",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "维度隧道：穿越模型/地形——移动无载体"
+   ],
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "stratagems",
+   "id": "000009750004",
+   "side": "attacker",
+   "detachment": "Starshatter Arsenal",
+   "name_en": "CHRONOSHIFT",
+   "name_zh": "时序偏移",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "时序偏移：前进不掷骰 +6\"M——移动无载体"
+   ],
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "stratagems",
+   "id": "000009589002",
+   "side": "attacker",
+   "detachment": "Tomb Ship Complement",
+   "name_en": "DISRUPTION FIELDS",
+   "name_zh": "破坏力场",
+   "status": "encoded",
+   "effects": [
+    {
+     "phase": "wound",
+     "op": "s_improve",
+     "params": [
+      1
+     ],
+     "source": "破坏力场：近战 S +1",
+     "condition": [
+      "phase_melee"
+     ]
+    }
+   ],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [],
+   "provenance": {
+    "current_text": "db stratagems.text_zh id=000009589002",
+    "base_text": "Wahapedia 现文（PR13 工作单：11 版化后文本，FP 未触及或已滚入）",
+    "text_sha256": "f97210cb559f158bc825c78af467bf0e61d9a0bb1d6f9d90fb480537c28cd11d"
+   },
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "stratagems",
+   "id": "000009589003",
+   "side": "attacker",
+   "detachment": "Tomb Ship Complement",
+   "name_en": "UNWAVERING DEFENCE",
+   "name_zh": "坚定防御",
+   "status": "partial",
+   "effects": [
+    {
+     "phase": "hit",
+     "op": "extra_hits",
+     "params": [
+      2
+     ],
+     "source": "坚定防御：近战 [SUSTAINED HITS 2]",
+     "condition": [
+      "phase_melee"
+     ]
+    }
+   ],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "需本单位处于 Set to Defend 状态——按使用前提成立建模"
+   ],
+   "provenance": {
+    "current_text": "db stratagems.text_zh id=000009589003",
+    "base_text": "Wahapedia 现文（PR13 工作单：11 版化后文本，FP 未触及或已滚入）",
+    "text_sha256": "487eb53f58eec189019d1d3c942008813d6a12b946cdcc353a83fdb0e52450f9"
+   },
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "stratagems",
+   "id": "000009589004",
+   "side": "attacker",
+   "detachment": "Tomb Ship Complement",
+   "name_en": "CONCENTRATED ATOMISATION",
+   "name_zh": "集中原子化",
+   "status": "encoded",
+   "effects": [
+    {
+     "phase": "hit",
+     "op": "reroll",
+     "params": [
+      "fail"
+     ],
+     "source": "集中原子化：远程重骰命中",
+     "condition": [
+      "phase_shooting"
+     ]
+    }
+   ],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [],
+   "provenance": {
+    "current_text": "db stratagems.text_zh id=000009589004",
+    "base_text": "Wahapedia 现文（PR13 工作单：11 版化后文本，FP 未触及或已滚入）",
+    "text_sha256": "4aa79ab9afd9403e4290d277a23785141c24a44ce218f83dcb7ece8ff496f0ef"
+   },
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "stratagems",
+   "id": "000009589005",
+   "side": "attacker",
+   "detachment": "Tomb Ship Complement",
+   "name_en": "DISINTEGRATION BEAMS",
+   "name_zh": "解离光束",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "解离光束：致命伤——致命伤无载体"
+   ],
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "stratagems",
+   "id": "fp11e-nec-hand-s1",
+   "side": "attacker",
+   "detachment": "Hand of the Dynasty",
+   "name_en": "Dominance Protocols",
+   "name_zh": "统御协议",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "统御协议：+1 OC——目标控制无载体"
+   ],
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "stratagems",
+   "id": "fp11e-nec-hand-s2",
+   "side": "attacker",
+   "detachment": "Hand of the Dynasty",
+   "name_en": "Will of the Conqueror",
+   "name_zh": "征服者之意",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "征服者之意：据点据守——目标控制无载体"
+   ],
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "stratagems",
+   "id": "fp11e-nec-hand-s3",
+   "side": "attacker",
+   "detachment": "Hand of the Dynasty",
+   "name_en": "Nanosaturation",
+   "name_zh": "纳米饱和",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "纳米饱和：snap 射击——快射射击资格无载体"
+   ],
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "stratagems",
+   "id": "fp11e-nec-skyshroud-s1",
+   "side": "attacker",
+   "detachment": "Skyshroud Spearhead",
+   "name_en": "Omnilocked Strafing",
+   "name_zh": "全向扫射",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "全向扫射：撤退后可射击——射击资格无载体"
+   ],
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "stratagems",
+   "id": "fp11e-nec-skyshroud-s2",
+   "side": "attacker",
+   "detachment": "Skyshroud Spearhead",
+   "name_en": "Swift as Death",
+   "name_zh": "迅捷如死",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "迅捷如死：移动——移动无载体"
+   ],
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "stratagems",
+   "id": "fp11e-nec-skyshroud-s3",
+   "side": "attacker",
+   "detachment": "Skyshroud Spearhead",
+   "name_en": "Evasive Protocols",
+   "name_zh": "闪避协议",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "闪避协议：远程 × S>T 被伤 -1——引擎无远程门控 S>T tag（只有全阶段/近战），用全阶段版会在近战过度施加，宁漏不错不建模（同 PR12 Warp Fields）"
+   ],
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "stratagems",
+   "id": "fp11e-nec-phaeron-s1",
+   "side": "target",
+   "detachment": "The Phaeron's Armoury",
+   "name_en": "Subsurface Quantumweave",
+   "name_zh": "亚表面量子织网",
+   "status": "encoded",
+   "effects": [
+    {
+     "phase": "save",
+     "op": "ap_improve",
+     "params": [
+      -1
+     ],
+     "source": "亚表面量子织网：攻击本单位 AP 恶化 1"
+    }
+   ],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [],
+   "provenance": {
+    "current_text": "db stratagems.text_zh id=fp11e-nec-phaeron-s1",
+    "base_text": "Wahapedia 现文（PR13 工作单：11 版化后文本，FP 未触及或已滚入）",
+    "text_sha256": "8762b36c5af32a0719ce16caa25afd3bc832942e64dc2fd01564dd04a9c48c93"
+   },
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "stratagems",
+   "id": "fp11e-nec-phaeron-s2",
+   "side": "attacker",
+   "detachment": "The Phaeron's Armoury",
+   "name_en": "Particle Pulse",
+   "name_zh": "粒子脉冲",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "粒子脉冲：侦测范围——侦测无载体"
+   ],
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "stratagems",
+   "id": "fp11e-nec-phaeron-s3",
+   "side": "attacker",
+   "detachment": "The Phaeron's Armoury",
+   "name_en": "Cosmic Storm",
+   "name_zh": "宇宙风暴",
+   "status": "encoded",
+   "effects": [
+    {
+     "phase": "save",
+     "op": "ap_improve",
+     "params": [
+      1
+     ],
+     "source": "宇宙风暴：Tesla Sphere 武器 AP +1",
+     "condition": [
+      "phase_shooting"
+     ]
+    }
+   ],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [],
+   "weapon_filter": "tesla sphere",
+   "provenance": {
+    "current_text": "db stratagems.text_zh id=fp11e-nec-phaeron-s3",
+    "base_text": "Wahapedia 现文（PR13 工作单：11 版化后文本，FP 未触及或已滚入）",
+    "text_sha256": "1af9dc2a78d8bc5393fb958183fc929e67925a70d1be7c7161bd5c07443000c2"
+   },
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "enhancements",
+   "id": "000008550002",
+   "side": "attacker",
+   "detachment": "Obeisance Phalanx",
+   "name_en": "Honourable Combatant",
+   "name_zh": "光荣战士",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "光荣战士：CP——CP 经济无载体"
+   ],
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "enhancements",
+   "id": "000008372002",
+   "side": "attacker",
+   "detachment": "Awakened Dynasty",
+   "name_en": "Veil of Darkness",
+   "name_zh": "黑暗之幕",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "黑暗之幕：预备队——预备队无载体"
+   ],
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "enhancements",
+   "id": "000009596002",
+   "side": "target",
+   "detachment": "Deranged Outcasts",
+   "name_en": "Inured to Damage",
+   "name_zh": "耐伤",
+   "status": "partial",
+   "effects": [
+    {
+     "phase": "fnp",
+     "op": "fnp",
+     "params": [
+      6
+     ],
+     "source": "耐伤：携带者 FNP 6+"
+    }
+   ],
+   "requires_toggles": [
+    "defender_bearer_leading"
+   ],
+   "not_modeled_notes_zh": [
+    "击杀后升 FNP 5+——按初始 6+ 建模"
+   ],
+   "provenance": {
+    "current_text": "db enhancements.description id=000009596002",
+    "base_text": "Wahapedia 现文（PR13 工作单：11 版化后文本，FP 未触及或已滚入）",
+    "text_sha256": "7ba66fef1cd5efa719be39ea66ba9c874efd0080324996485810b821fdd89a98"
+   },
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "enhancements",
+   "id": "000008546002",
+   "side": "attacker",
+   "detachment": "Canoptek Court",
+   "name_en": "Dimensional Sanctum",
+   "name_zh": "维度圣所",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "维度圣所：Infiltrators——部署能力无载体"
+   ],
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "enhancements",
+   "id": "000008543002",
+   "side": "attacker",
+   "detachment": "Annihilation Legion",
+   "name_en": "Eternal Madness",
+   "name_zh": "永恒疯狂",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "永恒疯狂：被毁后反打——串行幸存反打无载体"
+   ],
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "enhancements",
+   "id": "000010664002",
+   "side": "attacker",
+   "detachment": "Cryptek Conclave",
+   "name_en": "Quantum Abacus",
+   "name_zh": "量子算盘",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "量子算盘：CP——CP 经济无载体"
+   ],
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "enhancements",
+   "id": "000009604002",
+   "side": "attacker",
+   "detachment": "Canoptek Harvesters",
+   "name_en": "Nanoscarab Reconstitution",
+   "name_zh": "纳米圣甲虫重构",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "纳米圣甲虫重构：治疗——治疗无载体"
+   ],
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "enhancements",
+   "id": "000010668002",
+   "side": "attacker",
+   "detachment": "Cursed Legion",
+   "name_en": "Destroyer Ankh",
+   "name_zh": "毁灭者安卡",
+   "status": "partial",
+   "effects": [
+    {
+     "phase": "attacks",
+     "op": "modify",
+     "params": [
+      2
+     ],
+     "source": "毁灭者安卡：携带者近战 A +2",
+     "condition": [
+      "phase_melee"
+     ]
+    }
+   ],
+   "requires_toggles": [
+    "bearer_leading"
+   ],
+   "not_modeled_notes_zh": [
+    "+2 M 不建模（移动）"
+   ],
+   "provenance": {
+    "current_text": "db enhancements.description id=000010668002",
+    "base_text": "Wahapedia 现文（PR13 工作单：11 版化后文本，FP 未触及或已滚入）",
+    "text_sha256": "a6de853a3f5b29f5bbfc7357aa0557c69f0126e1688915d3add7c69eb74cbe1a"
+   },
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "enhancements",
+   "id": "000009588002",
+   "side": "attacker",
+   "detachment": "Tomb Ship Complement",
+   "name_en": "Resurrection Protocols",
+   "name_zh": "复活协议",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "复活协议：复活——复活无载体"
+   ],
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "enhancements",
+   "id": "000010735002",
+   "side": "target",
+   "detachment": "Harbinger Cabal",
+   "name_en": "Cryptometric Experimentation",
+   "name_zh": "密码计量实验",
+   "status": "partial",
+   "effects": [
+    {
+     "phase": "wound",
+     "op": "t_improve",
+     "params": [
+      1
+     ],
+     "source": "密码计量实验：携带者 T +1"
+    },
+    {
+     "phase": "save",
+     "op": "invuln",
+     "params": [
+      4
+     ],
+     "source": "密码计量实验：携带者 4+ 无效保护"
+    }
+   ],
+   "requires_toggles": [
+    "defender_bearer_leading"
+   ],
+   "not_modeled_notes_zh": [
+    "+1 W 不建模（无 W 通道）"
+   ],
+   "provenance": {
+    "current_text": "db enhancements.description id=000010735002",
+    "base_text": "Wahapedia 现文（PR13 工作单：11 版化后文本，FP 未触及或已滚入）",
+    "text_sha256": "36bdcb684bec72b47defc84571e04b4f17933d596ba42b3b04fe988607134dc2"
+   },
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "enhancements",
+   "id": "000010672002",
+   "side": "attacker",
+   "detachment": "Pantheon of Woe",
+   "name_en": "Singularity Matrix",
+   "name_zh": "奇点矩阵",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "奇点矩阵：战略费用光环——CP 经济无载体"
+   ],
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "enhancements",
+   "id": "000008554002",
+   "side": "attacker",
+   "detachment": "Hypercrypt Legion",
+   "name_en": "Dimensional Overseer",
+   "name_zh": "维度督军",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "维度督军：预备队数量——预备队无载体"
+   ],
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "enhancements",
+   "id": "000009749002",
+   "side": "attacker",
+   "detachment": "Starshatter Arsenal",
+   "name_en": "Dread Majesty (Aura)",
+   "name_zh": "威严",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "威严（光环）：重骰命中/致伤 1——仅重骰 1 + 光环无载体"
+   ],
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "enhancements",
+   "id": "000008546003",
+   "side": "attacker",
+   "detachment": "Canoptek Court",
+   "name_en": "Hyperphasic Fulcrum",
+   "name_zh": "超相位支点",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "超相位支点：Power Matrix 内重骰致伤 1——仅重骰 1 + 区域无载体"
+   ],
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "enhancements",
+   "id": "000009604003",
+   "side": "attacker",
+   "detachment": "Canoptek Harvesters",
+   "name_en": "Impromptu Translocation",
+   "name_zh": "即兴转位",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "即兴转位：移动——移动无载体"
+   ],
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "enhancements",
+   "id": "000008543003",
+   "side": "attacker",
+   "detachment": "Annihilation Legion",
+   "name_en": "Ingrained Superiority",
+   "name_zh": "根植优越",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "根植优越：暴击伤 +1 AP——暴击改 AP 无载体"
+   ],
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "enhancements",
+   "id": "000009596003",
+   "side": "attacker",
+   "detachment": "Deranged Outcasts",
+   "name_en": "Domineering Presence",
+   "name_zh": "支配存在",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "支配存在：战意测试——战意无载体"
+   ],
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "enhancements",
+   "id": "000009749003",
+   "side": "attacker",
+   "detachment": "Starshatter Arsenal",
+   "name_en": "Miniaturised Nebuloscope",
+   "name_zh": "微型星云镜",
+   "status": "encoded",
+   "effects": [
+    {
+     "phase": "save",
+     "op": "ignores_cover",
+     "params": [],
+     "source": "微型星云镜：被率领单位远程 [IGNORES COVER]",
+     "condition": [
+      "phase_shooting"
+     ]
+    }
+   ],
+   "requires_toggles": [
+    "bearer_leading"
+   ],
+   "not_modeled_notes_zh": [],
+   "provenance": {
+    "current_text": "db enhancements.description id=000009749003",
+    "base_text": "Wahapedia 现文（PR13 工作单：11 版化后文本，FP 未触及或已滚入）",
+    "text_sha256": "5ad986e9c4895293b1ba0284425bc49fde6b39609cd2b6a08f398e7f97b5faa4"
+   },
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "enhancements",
+   "id": "000008550003",
+   "side": "attacker",
+   "detachment": "Obeisance Phalanx",
+   "name_en": "Unflinching Will",
+   "name_zh": "不屈意志",
+   "status": "partial",
+   "effects": [
+    {
+     "phase": "wound",
+     "op": "crit_threshold",
+     "params": [
+      5
+     ],
+     "source": "不屈意志：近战对 INFANTRY [ANTI-INFANTRY 5+]",
+     "condition": [
+      "melee_target_has_keyword",
+      "infantry"
+     ]
+    }
+   ],
+   "requires_toggles": [
+    "bearer_leading"
+   ],
+   "not_modeled_notes_zh": [
+    "[PRECISION] 不建模（目标选择）"
+   ],
+   "provenance": {
+    "current_text": "db enhancements.description id=000008550003",
+    "base_text": "Wahapedia 现文（PR13 工作单：11 版化后文本，FP 未触及或已滚入）",
+    "text_sha256": "4071130e340979c381e38f3ee337318fb572e0e965ece1057ad949cbd9f4eb80"
+   },
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "enhancements",
+   "id": "000008554003",
+   "side": "attacker",
+   "detachment": "Hypercrypt Legion",
+   "name_en": "Arisen Tyrant",
+   "name_zh": "复起暴君",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "复起暴君：重骰命中 1（本回合部署时全重骰）——仅重骰 1 + 本回合部署无载体"
+   ],
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "enhancements",
+   "id": "000010672003",
+   "side": "attacker",
+   "detachment": "Pantheon of Woe",
+   "name_en": "Quantum Goad",
+   "name_zh": "量子刺激",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "量子刺激：前进后可冲锋——冲锋资格无载体"
+   ],
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "enhancements",
+   "id": "000010668003",
+   "side": "attacker",
+   "detachment": "Cursed Legion",
+   "name_en": "Murdermind",
+   "name_zh": "谋杀心智",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "谋杀心智：+3 M + 编组——移动与编组无载体"
+   ],
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "enhancements",
+   "id": "000010735003",
+   "side": "attacker",
+   "detachment": "Harbinger Cabal",
+   "name_en": "Portal Transmuter",
+   "name_zh": "传送门嬗变者",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "传送门嬗变者：传送——移动无载体"
+   ],
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "enhancements",
+   "id": "000010664003",
+   "side": "attacker",
+   "detachment": "Cryptek Conclave",
+   "name_en": "Atomic Disintegrators",
+   "name_zh": "原子解离器",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "原子解离器：额外能力——能力选择无载体"
+   ],
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "enhancements",
+   "id": "000008372003",
+   "side": "target",
+   "detachment": "Awakened Dynasty",
+   "name_en": "Nether-realm Casket",
+   "name_zh": "冥界之匣",
+   "status": "encoded",
+   "effects": [
+    {
+     "phase": "save",
+     "op": "cover",
+     "params": [],
+     "source": "冥界之匣：携带者单位获 Stealth（对远程掩体收益）",
+     "condition": [
+      "phase_shooting"
+     ]
+    }
+   ],
+   "requires_toggles": [
+    "defender_bearer_leading"
+   ],
+   "not_modeled_notes_zh": [],
+   "provenance": {
+    "current_text": "db enhancements.description id=000008372003",
+    "base_text": "Wahapedia 现文（PR13 工作单：11 版化后文本，FP 未触及或已滚入）",
+    "text_sha256": "7a09ace1de04a77561403db4f6bacb4e6b97d97d433f00bf7bfa8315762851c6"
+   },
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "enhancements",
+   "id": "000009588003",
+   "side": "attacker",
+   "detachment": "Tomb Ship Complement",
+   "name_en": "Mindshackle Scarabs",
+   "name_zh": "束心圣甲虫",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "束心圣甲虫：领导测试减值——领导测试无载体"
+   ],
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "enhancements",
+   "id": "000008546004",
+   "side": "attacker",
+   "detachment": "Canoptek Court",
+   "name_en": "Autodivinator",
+   "name_zh": "自动占卜者",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "自动占卜者：CP——CP 经济无载体"
+   ],
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "enhancements",
+   "id": "000008543004",
+   "side": "attacker",
+   "detachment": "Annihilation Legion",
+   "name_en": "Soulless Reaper",
+   "name_zh": "无魂收割者",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "无魂收割者：阻止撤退——移动限制无载体"
+   ],
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "enhancements",
+   "id": "000009749004",
+   "side": "attacker",
+   "detachment": "Starshatter Arsenal",
+   "name_en": "Demanding Leader",
+   "name_zh": "苛求领袖",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "苛求领袖：撤退后可射击——射击资格无载体"
+   ],
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "enhancements",
+   "id": "000010672004",
+   "side": "attacker",
+   "detachment": "Pantheon of Woe",
+   "name_en": "Animus Damper",
+   "name_zh": "灵怒抑制器",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "灵怒抑制器：对敌载具 -1 命中/致伤——单敌单位专属 + 领导测试无载体"
+   ],
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "enhancements",
+   "id": "000008550004",
+   "side": "target",
+   "detachment": "Obeisance Phalanx",
+   "name_en": "Warrior Noble",
+   "name_zh": "战士贵族",
+   "status": "encoded",
+   "effects": [
+    {
+     "phase": "hit",
+     "op": "modify",
+     "params": [
+      -1
+     ],
+     "source": "战士贵族：近战攻击携带者单位命中 -1",
+     "condition": [
+      "phase_melee"
+     ]
+    }
+   ],
+   "requires_toggles": [
+    "defender_bearer_leading"
+   ],
+   "not_modeled_notes_zh": [],
+   "provenance": {
+    "current_text": "db enhancements.description id=000008550004",
+    "base_text": "Wahapedia 现文（PR13 工作单：11 版化后文本，FP 未触及或已滚入）",
+    "text_sha256": "4f4715f3db56dade154be736524bf2861b3cc464a977be26f093b523c9ef2e27"
+   },
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "enhancements",
+   "id": "000010668004",
+   "side": "attacker",
+   "detachment": "Cursed Legion",
+   "name_en": "Mark of the Nekrosor",
+   "name_zh": "内克罗索之印",
+   "status": "partial",
+   "effects": [
+    {
+     "phase": "hit",
+     "op": "modify",
+     "params": [
+      1
+     ],
+     "source": "内克罗索之印：被率领单位命中 +1"
+    }
+   ],
+   "requires_toggles": [
+    "bearer_leading"
+   ],
+   "not_modeled_notes_zh": [
+    "限 Destroyer Cult 单位——按率领态建模"
+   ],
+   "provenance": {
+    "current_text": "db enhancements.description id=000010668004",
+    "base_text": "Wahapedia 现文（PR13 工作单：11 版化后文本，FP 未触及或已滚入）",
+    "text_sha256": "9139d8057da4b638bd946b58f3c87ac683fee120bbbf195b08f6a2ae442a6fb4"
+   },
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "enhancements",
+   "id": "000008554004",
+   "side": "attacker",
+   "detachment": "Hypercrypt Legion",
+   "name_en": "Hyperspatial Transfer Node",
+   "name_zh": "超空间转移节点",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "超空间转移节点：前进移动——移动无载体"
+   ],
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "enhancements",
+   "id": "000010664004",
+   "side": "attacker",
+   "detachment": "Cryptek Conclave",
+   "name_en": "Gauntlet of Compression",
+   "name_zh": "压缩护手",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "压缩护手：+6\" 射程——射程无载体"
+   ],
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "enhancements",
+   "id": "000008372004",
+   "side": "attacker",
+   "detachment": "Awakened Dynasty",
+   "name_en": "Phasal Subjugator (Aura)",
+   "name_zh": "相位征服者",
+   "status": "partial",
+   "effects": [
+    {
+     "phase": "hit",
+     "op": "modify",
+     "params": [
+      1
+     ],
+     "source": "相位征服者：6\" 内友军命中 +1"
+    }
+   ],
+   "requires_toggles": [
+    "bearer_leading"
+   ],
+   "not_modeled_notes_zh": [
+    "光环授予 6\" 内非 Character 友军——假设本单位在范围内"
+   ],
+   "provenance": {
+    "current_text": "db enhancements.description id=000008372004",
+    "base_text": "Wahapedia 现文（PR13 工作单：11 版化后文本，FP 未触及或已滚入）",
+    "text_sha256": "29697714c9ed8e0942877b6c840fcccbcd4da9a24641c584e03b2c1aca6b8eb2"
+   },
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "enhancements",
+   "id": "000010668005",
+   "side": "attacker",
+   "detachment": "Cursed Legion",
+   "name_en": "Cursed Circlet",
+   "name_zh": "诅咒环冠",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "诅咒环冠：surge move——移动无载体"
+   ],
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "enhancements",
+   "id": "000008543005",
+   "side": "attacker",
+   "detachment": "Annihilation Legion",
+   "name_en": "Eldritch Nightmare",
+   "name_zh": "邪术梦魇",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "邪术梦魇：战意测试——战意无载体"
+   ],
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "enhancements",
+   "id": "000008550005",
+   "side": "attacker",
+   "detachment": "Obeisance Phalanx",
+   "name_en": "Eternal Conqueror",
+   "name_zh": "永恒征服者",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "永恒征服者：近据点重骰命中——目标点无载体"
+   ],
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "enhancements",
+   "id": "000008546005",
+   "side": "attacker",
+   "detachment": "Canoptek Court",
+   "name_en": "Metalodermal Tesla Weave",
+   "name_zh": "金属真皮特斯拉织网",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "金属真皮特斯拉织网：冲锋致命伤——致命伤无载体"
+   ],
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "enhancements",
+   "id": "000008554005",
+   "side": "attacker",
+   "detachment": "Hypercrypt Legion",
+   "name_en": "Osteoclave Fulcrum",
+   "name_zh": "骨钥支点",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "骨钥支点：Deep Strike——深入打击无载体"
+   ],
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "enhancements",
+   "id": "000010672005",
+   "side": "attacker",
+   "detachment": "Pantheon of Woe",
+   "name_en": "Reletavistic Tether",
+   "name_zh": "相对论系绳",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "相对论系绳：深入打击部署——预备队无载体"
+   ],
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "enhancements",
+   "id": "000010664005",
+   "side": "attacker",
+   "detachment": "Cryptek Conclave",
+   "name_en": "Gravitic Bolas",
+   "name_zh": "重力套索",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "重力套索：钉住敌——移动减值无载体"
+   ],
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "enhancements",
+   "id": "000008372005",
+   "side": "target",
+   "detachment": "Awakened Dynasty",
+   "name_en": "Enaegic Dermal Bond",
+   "name_zh": "灵能真皮键结",
+   "status": "encoded",
+   "effects": [
+    {
+     "phase": "fnp",
+     "op": "fnp",
+     "params": [
+      4
+     ],
+     "source": "灵能真皮键结：携带者 FNP 4+"
+    }
+   ],
+   "requires_toggles": [
+    "defender_bearer_leading"
+   ],
+   "not_modeled_notes_zh": [],
+   "provenance": {
+    "current_text": "db enhancements.description id=000008372005",
+    "base_text": "Wahapedia 现文（PR13 工作单：11 版化后文本，FP 未触及或已滚入）",
+    "text_sha256": "ed1fe580ec91c84e0e9738fec53cf9fc26b802ea21662824f0bd76b9523fbc7d"
+   },
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "enhancements",
+   "id": "000009749005",
+   "side": "attacker",
+   "detachment": "Starshatter Arsenal",
+   "name_en": "Chrono-impedance Fields",
+   "name_zh": "时序阻抗力场",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "时序阻抗力场：跨单位选择 -1 伤——跨单位无载体"
+   ],
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "enhancements",
+   "id": "fp11e-nec-hand-e1",
+   "side": "attacker",
+   "detachment": "Hand of the Dynasty",
+   "name_en": "Enlivened Sentinels",
+   "name_zh": "焕活哨兵",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "焕活哨兵：Scouts 5\"——部署能力无载体"
+   ],
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "enhancements",
+   "id": "fp11e-nec-hand-e2",
+   "side": "attacker",
+   "detachment": "Hand of the Dynasty",
+   "name_en": "Tools of Dominion",
+   "name_zh": "统御工具",
+   "status": "encoded",
+   "effects": [
+    {
+     "phase": "attacks",
+     "op": "modify",
+     "params": [
+      1
+     ],
+     "source": "统御工具：IMMORTALS 远程 [RAPID FIRE 1]",
+     "condition": [
+      "half_range"
+     ]
+    }
+   ],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [],
+   "provenance": {
+    "current_text": "db enhancements.description id=fp11e-nec-hand-e2",
+    "base_text": "Wahapedia 现文（PR13 工作单：11 版化后文本，FP 未触及或已滚入）",
+    "text_sha256": "061b2d87da5e4cbc0dc99da15229f4abd68ccae3e7f054bf44cd4f9de2c8e0a6"
+   },
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "enhancements",
+   "id": "fp11e-nec-skyshroud-e1",
+   "side": "attacker",
+   "detachment": "Skyshroud Spearhead",
+   "name_en": "Recursive Reanimation",
+   "name_zh": "递归重生",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "递归重生：+1 重生——重生协议无载体"
+   ],
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "enhancements",
+   "id": "fp11e-nec-skyshroud-e2",
+   "side": "attacker",
+   "detachment": "Skyshroud Spearhead",
+   "name_en": "Deepening Madness",
+   "name_zh": "深化疯狂",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "深化疯狂：[ASSAULT]——射击资格无载体"
+   ],
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "enhancements",
+   "id": "fp11e-nec-phaeron-e1",
+   "side": "attacker",
+   "detachment": "The Phaeron's Armoury",
+   "name_en": "Prelocational Optimiser",
+   "name_zh": "预定位优化器",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "预定位优化器：Monolith 传送后 [LETHAL]/[SUSTAINED]——Monolith 传送门条件 + 二选一无载体"
+   ],
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "enhancements",
+   "id": "fp11e-nec-phaeron-e2",
+   "side": "attacker",
+   "detachment": "The Phaeron's Armoury",
+   "name_en": "Mortality Shroud",
+   "name_zh": "死亡帷幕",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "死亡帷幕：战意光环——战意无载体"
+   ],
+   "encoded_by": "manual-2026-07-19"
+  }
+ ]
+}

@@ -850,6 +850,46 @@
    "to_text": "At the end of your opponent’s Fight phase, select one visible enemy model (excluding Lone Operative units) within 24\" of this unit, and roll one D6 for each enemy unit within D6\" of that model:<br><ul><li>For each 4+, that enemy unit suffers D6 mortal wounds.</li></ul>",
    "fp_source": "Faction Pack Drukhari page_007.md（Voidraven Void Mine 整改）",
    "synthesis": "整改：本战一次 Normal move 越过敌 → 对方战斗阶段结束 24\"内可见敌（排除 Lone Op）"
+  },
+  {
+   "table": "stratagems",
+   "column": "text_zh",
+   "id": "000008547005",
+   "name_en": "Reactive Subroutines",
+   "from_text": "<b>WHEN:</b> Your opponent’s Movement phase, just after an enemy unit ends a Normal, Advance or Fall Back move.<br><br><b>TARGET:</b> One CANOPTEK unit from your army that is within 9\" of that enemy unit.<br><br><b>EFFECT:</b> Your unit can make a Normal move of up to 6\".",
+   "to_text": "<b>WHEN:</b> Your opponent’s Movement phase, just after an enemy unit ends a Normal, Advance or Fall Back move.<br><br><b>TARGET:</b> One CANOPTEK unit from your army that is within 8\" of that enemy unit.<br><br><b>EFFECT:</b> Your unit can make a Normal move of up to 6\".",
+   "fp_source": "Faction Pack Necrons page_029.md（Reactive Subroutines Target 9→8）",
+   "synthesis": "TARGET 触发距离 9\"→8\""
+  },
+  {
+   "table": "abilities",
+   "column": "text_zh",
+   "id": "000000552_a1",
+   "name_en": "Eternity Gate",
+   "from_text": "In the Reinforcements step of your Movement phase, you can select one Necrons Infantry unit from your army that is either in Reserves or on the battlefield (if you select the latter, remove that unit from the battlefield and place it into Reserves). That unit is then set up anywhere on the battlefield that is wholly within 6\" of this model and not within Engagement Range of any enemy models. That unit cannot declare a charge this turn.",
+   "to_text": "In your movement phase (excluding the first battle round), you can select one friendly NECRONS INFANTRY unit that is either in strategic reserves or on the battlefield (if you select a unit on the battlefield, remove that unit from the battlefield and place it into strategic reserves). That unit can make an ingress move, and must be set up wholly within 6\" of this unit and not engaged with any enemy units. That unit cannot make a charge move this turn.",
+   "fp_source": "Faction Pack Necrons page_029.md（Monolith Eternity Gate 整改）",
+   "synthesis": "整改：Reinforcements step → movement phase（除首轮）+ ingress move"
+  },
+  {
+   "table": "abilities",
+   "column": "text_zh",
+   "id": "000002358_a2",
+   "name_en": "Tunnelling Horrors",
+   "from_text": "At the end of your opponent’s turn, if this unit is not within Engagement Range of one or more enemy units, you can remove this unit from the battlefield. In the Reinforcements step of your next Movement phase, set it up anywhere on the battlefield that is more than 9\" horizontally away from all enemy models.",
+   "to_text": "At the end of your opponent’s turn, if this unit is not within Engagement Range of one or more enemy units, you can remove this unit from the battlefield. In the Reinforcements step of your next Movement phase, set it up anywhere on the battlefield that is more than 8\" horizontally away from all enemy models.",
+   "fp_source": "Faction Pack Necrons page_029.md（Ophydian Destroyers Tunnelling Horrors 9→8）",
+   "synthesis": "出场距离 9\"→8\""
+  },
+  {
+   "table": "abilities",
+   "column": "text_zh",
+   "id": "000000555_a1",
+   "name_en": "Transdimensional Displacement",
+   "from_text": "Each time this model is selected to Advance, you can remove it from the battlefield and set it up again anywhere on the battlefield that is more than 9\" horizontally away from all enemy units.",
+   "to_text": "Each time this model is selected to Advance, you can remove it from the battlefield and set it up again anywhere on the battlefield that is more than 8\" horizontally away from all enemy units.",
+   "fp_source": "Faction Pack Necrons page_029.md（Transcendent C'tan Transdimensional Displacement 9→8）",
+   "synthesis": "出场距离 9\"→8\""
   }
  ],
  "name_patches": [
@@ -5179,6 +5219,249 @@
     "cp_cost": "1",
     "phase": "Movement phase",
     "text_zh": "<b>WHEN:</b> Your Movement phase, when a friendly <span class=\"kwb\">HAEMONCULUS</span> <span class=\"kwb\">COVENS</span> unit is selected to make a fall-back move.<br><br><b>TARGET:</b> That <span class=\"kwb\">HAEMONCULUS</span> <span class=\"kwb\">COVENS</span> unit.<br><br><b>EFFECT:</b> That move does not prevent your unit from being eligible to declare a charge."
+   }
+  },
+  {
+   "table": "detachments",
+   "fp_source": "Faction Pack Necrons page_002.md（11 版新分队，Wahapedia 无源）",
+   "values": {
+    "id": "fp11e-nec-hand",
+    "faction": "NEC",
+    "name_zh": "王朝之手",
+    "name_en": "Hypermotility Protocols",
+    "rule_text": "<ul><li>Friendly <span class=\"kwb\">IMMORTALS</span>/<span class=\"kwb\">NECRON</span> <span class=\"kwb\">WARRIORS</span> units' ranged attacks have [ASSAULT].</li><li>When a friendly <span class=\"kwb\">IMMORTALS</span>/<span class=\"kwb\">NECRON</span> <span class=\"kwb\">WARRIORS</span> unit is selected to make an advance move, that move does not prevent that unit from being eligible to start an action.</li></ul><br>This detachment has the DYNASTY tag and cannot be taken with another DYNASTY detachment."
+   }
+  },
+  {
+   "table": "enhancements",
+   "fp_source": "Faction Pack Necrons page_002.md（11 版新分队，Wahapedia 无源）",
+   "values": {
+    "id": "fp11e-nec-hand-e1",
+    "faction_id": "NEC",
+    "detachment_id": "fp11e-nec-hand",
+    "detachment_name": "Hand of the Dynasty",
+    "name": "Enlivened Sentinels",
+    "cost": null,
+    "legend": "点数未知：FP 不含点数，MFM 缓存无增强数据（诚实置空，勿猜）",
+    "description": "<span class=\"kwb\">NECRON</span> <span class=\"kwb\">WARRIORS</span> unit only. This unit has Scouts 5\"."
+   }
+  },
+  {
+   "table": "enhancements",
+   "fp_source": "Faction Pack Necrons page_002.md（11 版新分队，Wahapedia 无源）",
+   "values": {
+    "id": "fp11e-nec-hand-e2",
+    "faction_id": "NEC",
+    "detachment_id": "fp11e-nec-hand",
+    "detachment_name": "Hand of the Dynasty",
+    "name": "Tools of Dominion",
+    "cost": null,
+    "legend": "点数未知：FP 不含点数，MFM 缓存无增强数据（诚实置空，勿猜）",
+    "description": "<span class=\"kwb\">IMMORTALS</span> unit only. This unit’s ranged attacks have [RAPID FIRE 1]."
+   }
+  },
+  {
+   "table": "stratagems",
+   "fp_source": "Faction Pack Necrons page_002.md（11 版新分队，Wahapedia 无源）",
+   "values": {
+    "id": "fp11e-nec-hand-s1",
+    "faction": "NEC",
+    "detachment": "Hand of the Dynasty",
+    "name_zh": "统御协议",
+    "name_en": "Dominance Protocols",
+    "cp_cost": "1",
+    "phase": "Command phase",
+    "text_zh": "<b>WHEN:</b> Command phase.<br><br><b>TARGET:</b> One friendly <span class=\"kwb\">IMMORTALS</span> unit.<br><br><b>EFFECT:</b> Your unit has +1 OC until the end of the turn."
+   }
+  },
+  {
+   "table": "stratagems",
+   "fp_source": "Faction Pack Necrons page_002.md（11 版新分队，Wahapedia 无源）",
+   "values": {
+    "id": "fp11e-nec-hand-s2",
+    "faction": "NEC",
+    "detachment": "Hand of the Dynasty",
+    "name_zh": "征服者之意",
+    "name_en": "Will of the Conqueror",
+    "cp_cost": "1",
+    "phase": "Movement phase",
+    "text_zh": "<b>WHEN:</b> End of your Movement phase.<br><br><b>TARGET:</b> One friendly <span class=\"kwb\">IMMORTALS</span>/<span class=\"kwb\">NECRON</span> <span class=\"kwb\">WARRIORS</span> unit.<br><br><b>EFFECT:</b> Select one objective your unit is controlling. That objective is secured."
+   }
+  },
+  {
+   "table": "stratagems",
+   "fp_source": "Faction Pack Necrons page_002.md（11 版新分队，Wahapedia 无源）",
+   "values": {
+    "id": "fp11e-nec-hand-s3",
+    "faction": "NEC",
+    "detachment": "Hand of the Dynasty",
+    "name_zh": "纳米饱和",
+    "name_en": "Nanosaturation",
+    "cp_cost": "1",
+    "phase": "Opponent's Shooting phase",
+    "text_zh": "<b>WHEN:</b> Your opponent’s Shooting phase, when an enemy unit that targeted a friendly <span class=\"kwb\">IMMORTALS</span>/<span class=\"kwb\">NECRON</span> <span class=\"kwb\">WARRIORS</span> unit has shot.<br><br><b>TARGET:</b> That <span class=\"kwb\">IMMORTALS</span>/<span class=\"kwb\">NECRON</span> <span class=\"kwb\">WARRIORS</span> unit.<br><br><b>EFFECT:</b> Your unit shoots using snap shooting, but while doing so your unit can only target that enemy unit."
+   }
+  },
+  {
+   "table": "detachments",
+   "fp_source": "Faction Pack Necrons page_003.md（11 版新分队，Wahapedia 无源）",
+   "values": {
+    "id": "fp11e-nec-skyshroud",
+    "faction": "NEC",
+    "name_zh": "天幕矛头",
+    "name_en": "Transdimensional Deployment",
+    "rule_text": "<ul><li>Friendly <span class=\"kwb\">TOMB</span> <span class=\"kwb\">BLADES</span> units have Deep Strike.</li><li>When a friendly <span class=\"kwb\">TOMB</span> <span class=\"kwb\">BLADES</span> unit is selected to shoot, if that unit made an ingress move this turn, that unit’s ranged attacks have +1 to hit rolls.</li></ul><br>This detachment has the DESTROYER CULT tag and cannot be taken with another DESTROYER CULT detachment."
+   }
+  },
+  {
+   "table": "enhancements",
+   "fp_source": "Faction Pack Necrons page_003.md（11 版新分队，Wahapedia 无源）",
+   "values": {
+    "id": "fp11e-nec-skyshroud-e1",
+    "faction_id": "NEC",
+    "detachment_id": "fp11e-nec-skyshroud",
+    "detachment_name": "Skyshroud Spearhead",
+    "name": "Recursive Reanimation",
+    "cost": null,
+    "legend": "点数未知：FP 不含点数，MFM 缓存无增强数据（诚实置空，勿猜）",
+    "description": "<span class=\"kwb\">TOMB</span> <span class=\"kwb\">BLADES</span> unit only. When this unit activates its Reanimation Protocols, +1 to the roll."
+   }
+  },
+  {
+   "table": "enhancements",
+   "fp_source": "Faction Pack Necrons page_003.md（11 版新分队，Wahapedia 无源）",
+   "values": {
+    "id": "fp11e-nec-skyshroud-e2",
+    "faction_id": "NEC",
+    "detachment_id": "fp11e-nec-skyshroud",
+    "detachment_name": "Skyshroud Spearhead",
+    "name": "Deepening Madness",
+    "cost": null,
+    "legend": "点数未知：FP 不含点数，MFM 缓存无增强数据（诚实置空，勿猜）",
+    "description": "<span class=\"kwb\">DESTROYER</span> <span class=\"kwb\">CULT</span> <span class=\"kwb\">MOUNTED</span> unit only. This unit’s ranged attacks have [ASSAULT]."
+   }
+  },
+  {
+   "table": "stratagems",
+   "fp_source": "Faction Pack Necrons page_003.md（11 版新分队，Wahapedia 无源）",
+   "values": {
+    "id": "fp11e-nec-skyshroud-s1",
+    "faction": "NEC",
+    "detachment": "Skyshroud Spearhead",
+    "name_zh": "全向扫射",
+    "name_en": "Omnilocked Strafing",
+    "cp_cost": "1",
+    "phase": "Movement phase",
+    "text_zh": "<b>WHEN:</b> Your Movement phase, when a friendly <span class=\"kwb\">NECRONS</span> <span class=\"kwb\">MOUNTED</span> unit is selected to make a fall-back move.<br><br><b>TARGET:</b> That <span class=\"kwb\">NECRONS</span> <span class=\"kwb\">MOUNTED</span> unit.<br><br><b>EFFECT:</b> That move does not prevent your unit from being eligible to shoot."
+   }
+  },
+  {
+   "table": "stratagems",
+   "fp_source": "Faction Pack Necrons page_003.md（11 版新分队，Wahapedia 无源）",
+   "values": {
+    "id": "fp11e-nec-skyshroud-s2",
+    "faction": "NEC",
+    "detachment": "Skyshroud Spearhead",
+    "name_zh": "迅捷如死",
+    "name_en": "Swift as Death",
+    "cp_cost": "1",
+    "phase": "Opponent's Movement phase",
+    "text_zh": "<b>WHEN:</b> Your opponent’s Movement phase, when an enemy unit ends a move within 8\" of a friendly unengaged <span class=\"kwb\">NECRONS</span> <span class=\"kwb\">MOUNTED</span> unit.<br><br><b>TARGET:</b> That <span class=\"kwb\">NECRONS</span> <span class=\"kwb\">MOUNTED</span> unit.<br><br><b>EFFECT:</b> Your unit can make a normal move of up to D3+3\"."
+   }
+  },
+  {
+   "table": "stratagems",
+   "fp_source": "Faction Pack Necrons page_003.md（11 版新分队，Wahapedia 无源）",
+   "values": {
+    "id": "fp11e-nec-skyshroud-s3",
+    "faction": "NEC",
+    "detachment": "Skyshroud Spearhead",
+    "name_zh": "闪避协议",
+    "name_en": "Evasive Protocols",
+    "cp_cost": "1",
+    "phase": "Opponent's Shooting phase",
+    "text_zh": "<b>WHEN:</b> Your opponent’s Shooting phase, when an enemy unit targets a friendly <span class=\"kwb\">NECRONS</span> <span class=\"kwb\">MOUNTED</span> unit.<br><br><b>TARGET:</b> That <span class=\"kwb\">NECRONS</span> <span class=\"kwb\">MOUNTED</span> unit.<br><br><b>EFFECT:</b> Ranged attacks that target your unit with a S greater than your unit’s T have -1 to wound rolls."
+   }
+  },
+  {
+   "table": "detachments",
+   "fp_source": "Faction Pack Necrons page_004.md（11 版新分队，Wahapedia 无源）",
+   "values": {
+    "id": "fp11e-nec-phaeron",
+    "faction": "NEC",
+    "name_zh": "法老军械库",
+    "name_en": "Empowered Engines",
+    "rule_text": "Friendly <span class=\"kwb\">NECRONS</span> <span class=\"kwb\">TITANIC</span> <span class=\"kwb\">FLY</span> units have +6\" M.<br><br>This detachment has the HYPERCRYPT tag and cannot be taken with another HYPERCRYPT detachment."
+   }
+  },
+  {
+   "table": "enhancements",
+   "fp_source": "Faction Pack Necrons page_004.md（11 版新分队，Wahapedia 无源）",
+   "values": {
+    "id": "fp11e-nec-phaeron-e1",
+    "faction_id": "NEC",
+    "detachment_id": "fp11e-nec-phaeron",
+    "detachment_name": "The Phaeron's Armoury",
+    "name": "Prelocational Optimiser",
+    "cost": null,
+    "legend": "点数未知：FP 不含点数，MFM 缓存无增强数据（诚实置空，勿猜）",
+    "description": "<span class=\"kwb\">NECRONS</span> model only. When this unit is selected to shoot, if this unit was set up using a Monolith’s Eternity Gate ability this turn, this unit’s ranged attacks have:<br><ul><li>[LETHAL HITS].</li><li>Or: [SUSTAINED HITS 1].</li></ul>"
+   }
+  },
+  {
+   "table": "enhancements",
+   "fp_source": "Faction Pack Necrons page_004.md（11 版新分队，Wahapedia 无源）",
+   "values": {
+    "id": "fp11e-nec-phaeron-e2",
+    "faction_id": "NEC",
+    "detachment_id": "fp11e-nec-phaeron",
+    "detachment_name": "The Phaeron's Armoury",
+    "name": "Mortality Shroud",
+    "cost": null,
+    "legend": "点数未知：FP 不含点数，MFM 缓存无增强数据（诚实置空，勿猜）",
+    "description": "<span class=\"kwb\">OBELISK</span> unit only. In your opponent’s Battle-shock step, if an enemy unit within 8\" of this unit is below starting strength, that enemy unit makes a battle-shock roll."
+   }
+  },
+  {
+   "table": "stratagems",
+   "fp_source": "Faction Pack Necrons page_004.md（11 版新分队，Wahapedia 无源）",
+   "values": {
+    "id": "fp11e-nec-phaeron-s1",
+    "faction": "NEC",
+    "detachment": "The Phaeron's Armoury",
+    "name_zh": "亚表面量子织网",
+    "name_en": "Subsurface Quantumweave",
+    "cp_cost": "1",
+    "phase": "Opponent's Shooting or Fight phase",
+    "text_zh": "<b>WHEN:</b> Your opponent’s Shooting phase or the Fight phase, when an enemy unit targets a friendly <span class=\"kwb\">NECRONS</span> <span class=\"kwb\">TITANIC</span> <span class=\"kwb\">FLY</span> unit.<br><br><b>TARGET:</b> That <span class=\"kwb\">NECRONS</span> <span class=\"kwb\">TITANIC</span> <span class=\"kwb\">FLY</span> unit.<br><br><b>EFFECT:</b> Attacks that target your unit have -1 AP until that enemy unit has attacked."
+   }
+  },
+  {
+   "table": "stratagems",
+   "fp_source": "Faction Pack Necrons page_004.md（11 版新分队，Wahapedia 无源）",
+   "values": {
+    "id": "fp11e-nec-phaeron-s2",
+    "faction": "NEC",
+    "detachment": "The Phaeron's Armoury",
+    "name_zh": "粒子脉冲",
+    "name_en": "Particle Pulse",
+    "cp_cost": "1",
+    "phase": "Shooting phase",
+    "text_zh": "<b>WHEN:</b> Start of your Shooting phase.<br><br><b>TARGET:</b> One friendly <span class=\"kwb\">NECRONS</span> <span class=\"kwb\">TITANIC</span> <span class=\"kwb\">FLY</span> unit.<br><br><b>EFFECT:</b> Select one visible enemy unit within 12\" of your unit. That enemy unit has +3\" detection range."
+   }
+  },
+  {
+   "table": "stratagems",
+   "fp_source": "Faction Pack Necrons page_004.md（11 版新分队，Wahapedia 无源）",
+   "values": {
+    "id": "fp11e-nec-phaeron-s3",
+    "faction": "NEC",
+    "detachment": "The Phaeron's Armoury",
+    "name_zh": "宇宙风暴",
+    "name_en": "Cosmic Storm",
+    "cp_cost": "1",
+    "phase": "Shooting phase",
+    "text_zh": "<b>WHEN:</b> Your Shooting phase, when a friendly <span class=\"kwb\">OBELISK</span>/<span class=\"kwb\">TESSERACT</span> <span class=\"kwb\">VAULT</span> unit is selected to shoot.<br><br><b>TARGET:</b> That <span class=\"kwb\">OBELISK</span>/<span class=\"kwb\">TESSERACT</span> <span class=\"kwb\">VAULT</span> unit.<br><br><b>EFFECT:</b> Your unit’s Tesla Sphere weapons have +1 AP."
    }
   }
  ]
