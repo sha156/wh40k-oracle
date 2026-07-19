@@ -1,0 +1,2755 @@
+{
+ "_comment": "P7 阵营技能 DSL 唯一真源（兽人，P7-PR14）。DB 投影由 dsl-apply 写入挂 restore。判据格式沿 spec 2026-07-14 + PR3-PR13 约定；A/B 工作单见 docs/superpowers/plans/2026-07-19-p7-pr14-ork-worklist.md。兽人为近战冲锋/Dakka 阵营，可编率中高：守方 S>T 被伤-1（好战登舰者/壮如刺角兽走 wound_s_gt_t）、BOYZ invuln（群体心理）、AP 恶化（巨兽蛮汉/移动中劫掠）、-1 致伤（坚如磐石）、减伤（额外配件）、FNP（伤痕蛮兽/超级赛博）、掩体（潜行战术/尘迹/烟雾配件）、[IGNORES COVER]（长时间失控/找目标护目镜等）、[DEV]（戈布肖特/断头者）、[SUSTAINED/LETHAL] 近战/远程、crit 5+（无节制杀戮）、[CLEAVE 1] 冲锋（毁灭漂移）、[LANCE]（致命构造）、[RAPID FIRE 1]（闪亮射手）、+S/+命中/+BS（咔嗒钳爪/瞄准菌/大师技工）、对 Prey +AP（追猎开始）。**零新引擎通道（第六个纯编码 PR）**——Waaagh 状态未加 toggle，Waaagh-gated 效果按基础分量编码 + 注记残量（保持通道集合稳定）。防高估不编：Waaagh 激活/状态门、重骰1、射击×关键字无复合 tag（装甲决斗者/特制弹药 ANTI-X/BLAST）、射击范围 S>T 无射击门控 tag（刀枪不入）、[RAPID FIRE X=A] 特殊语义、目标点/最近目标、冲锋骰/移动/预备队/战意/CP 经济类、+1D/+W 无通用通道。",
+ "dsl_version": 1,
+ "faction": "ORK",
+ "entries": [
+  {
+   "table": "abilities",
+   "id": "det000008365",
+   "side": "attacker",
+   "detachment": "Get Stuck In",
+   "name_en": "Get Stuck In",
+   "name_zh": "深陷苦战",
+   "status": "encoded",
+   "effects": [
+    {
+     "phase": "hit",
+     "op": "extra_hits",
+     "params": [
+      1
+     ],
+     "source": "深陷苦战：ORKS 近战 [SUSTAINED HITS 1]",
+     "condition": [
+      "phase_melee"
+     ]
+    }
+   ],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [],
+   "provenance": {
+    "current_text": "db detachments.rule_text id=000008365",
+    "base_text": "Wahapedia 现文（PR14 工作单：11 版化后文本，FP 未触及或已滚入）",
+    "text_sha256": "aea99fa18f5f1ffdbe1d7262214b35c69a4aa8625ec5dabefc0f1a0d0c56cbb1"
+   },
+   "encoded_by": "manual-2026-07-19",
+   "materialize": {
+    "from_table": "detachments",
+    "from_id": "000008365",
+    "from_column": "rule_text"
+   }
+  },
+  {
+   "table": "abilities",
+   "id": "det000008867",
+   "side": "attacker",
+   "detachment": "Da Hunt Is On",
+   "name_en": "Da Hunt Is On",
+   "name_zh": "追猎开始",
+   "status": "partial",
+   "effects": [
+    {
+     "phase": "save",
+     "op": "ap_improve",
+     "params": [
+      1
+     ],
+     "source": "追猎开始：对 Prey +1 AP"
+    }
+   ],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "限对指挥阶段所选 Prey——按成立建模；BEAST SNAGGA 对 Prey 冲锋重骰不建模"
+   ],
+   "provenance": {
+    "current_text": "db detachments.rule_text id=000008867",
+    "base_text": "Wahapedia 现文（PR14 工作单：11 版化后文本，FP 未触及或已滚入）",
+    "text_sha256": "37c66feda6d1f6ab82afde445ccf024bde36f556520bc511c27f5074f9e485fb"
+   },
+   "encoded_by": "manual-2026-07-19",
+   "materialize": {
+    "from_table": "detachments",
+    "from_id": "000008867",
+    "from_column": "rule_text"
+   }
+  },
+  {
+   "table": "abilities",
+   "id": "det000008871",
+   "side": "attacker",
+   "detachment": "Adrenaline Junkies",
+   "name_en": "Adrenaline Junkies",
+   "name_zh": "肾上腺瘾君子",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "肾上腺瘾君子：SPEED FREEKS 前进/撤退后可射击/冲锋——射击/冲锋资格无载体"
+   ],
+   "encoded_by": "manual-2026-07-19",
+   "materialize": {
+    "from_table": "detachments",
+    "from_id": "000008871",
+    "from_column": "rule_text"
+   }
+  },
+  {
+   "table": "abilities",
+   "id": "det000008875",
+   "side": "attacker",
+   "detachment": "Try Dat Button!",
+   "name_en": "Try Dat Button!",
+   "name_zh": "试试这按钮",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "试试这按钮：随机 D6 三选一武器能力——随机选择无载体"
+   ],
+   "encoded_by": "manual-2026-07-19",
+   "materialize": {
+    "from_table": "detachments",
+    "from_id": "000008875",
+    "from_column": "rule_text"
+   }
+  },
+  {
+   "table": "abilities",
+   "id": "det000008876",
+   "side": "attacker",
+   "detachment": "KEYWORDS",
+   "name_en": "KEYWORDS",
+   "name_zh": "关键字",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "关键字：Gretchin 得 BATTLELINE——关键字无载体"
+   ],
+   "encoded_by": "manual-2026-07-19",
+   "materialize": {
+    "from_table": "detachments",
+    "from_id": "000008876",
+    "from_column": "rule_text"
+   }
+  },
+  {
+   "table": "abilities",
+   "id": "det000008880",
+   "side": "target",
+   "detachment": "Mob Mentality",
+   "name_en": "Mob Mentality",
+   "name_zh": "群体心理",
+   "status": "partial",
+   "effects": [
+    {
+     "phase": "save",
+     "op": "invuln",
+     "params": [
+      6
+     ],
+     "source": "群体心理：BOYZ 6+ 无效保护"
+    }
+   ],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "10+ 模型升 5+ 无效保护——按基础 6+ 建模"
+   ],
+   "provenance": {
+    "current_text": "db detachments.rule_text id=000008880",
+    "base_text": "Wahapedia 现文（PR14 工作单：11 版化后文本，FP 未触及或已滚入）",
+    "text_sha256": "3de4155eb2ad391c03d73bb90f0a349a865ad62398722b744c7e197674c55802"
+   },
+   "encoded_by": "manual-2026-07-19",
+   "materialize": {
+    "from_table": "detachments",
+    "from_id": "000008880",
+    "from_column": "rule_text"
+   }
+  },
+  {
+   "table": "abilities",
+   "id": "det000008884",
+   "side": "attacker",
+   "detachment": "Da Boss Is Watchin’",
+   "name_en": "Da Boss Is Watchin’",
+   "name_zh": "老大在看",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "老大在看：第二次 Waaagh!——Waaagh 激活无载体"
+   ],
+   "encoded_by": "manual-2026-07-19",
+   "materialize": {
+    "from_table": "detachments",
+    "from_id": "000008884",
+    "from_column": "rule_text"
+   }
+  },
+  {
+   "table": "abilities",
+   "id": "det000009614",
+   "side": "target",
+   "detachment": "Belligerent Boarders",
+   "name_en": "Belligerent Boarders",
+   "name_zh": "好战登舰者",
+   "status": "encoded",
+   "effects": [
+    {
+     "phase": "wound",
+     "op": "modify",
+     "params": [
+      -1
+     ],
+     "source": "好战登舰者：S>T 攻击致伤 -1",
+     "condition": [
+      "wound_s_gt_t"
+     ]
+    }
+   ],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [],
+   "provenance": {
+    "current_text": "db detachments.rule_text id=000009614",
+    "base_text": "Wahapedia 现文（PR14 工作单：11 版化后文本，FP 未触及或已滚入）",
+    "text_sha256": "ff2aa8e0104c7196e7a492be526b4af9dda0af8b668cc4d09f58b13cdf83f54d"
+   },
+   "encoded_by": "manual-2026-07-19",
+   "materialize": {
+    "from_table": "detachments",
+    "from_id": "000009614",
+    "from_column": "rule_text"
+   }
+  },
+  {
+   "table": "abilities",
+   "id": "det000009622",
+   "side": "attacker",
+   "detachment": "Comin’ Through",
+   "name_en": "Comin’ Through",
+   "name_zh": "冲过来",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "冲过来：绝望逃脱自动过 + 穿越低韧性模型——移动无载体"
+   ],
+   "encoded_by": "manual-2026-07-19",
+   "materialize": {
+    "from_table": "detachments",
+    "from_id": "000009622",
+    "from_column": "rule_text"
+   }
+  },
+  {
+   "table": "abilities",
+   "id": "det000009794",
+   "side": "attacker",
+   "detachment": "Lissen ’Ere",
+   "name_en": "Lissen ’Ere",
+   "name_zh": "听好了",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "听好了：Taktiks 发令——Taktiks 选择 + 领导测试无载体"
+   ],
+   "encoded_by": "manual-2026-07-19",
+   "materialize": {
+    "from_table": "detachments",
+    "from_id": "000009794",
+    "from_column": "rule_text"
+   }
+  },
+  {
+   "table": "abilities",
+   "id": "det000009990",
+   "side": "attacker",
+   "detachment": "Dakka! Dakka! Dakka!",
+   "name_en": "Dakka! Dakka! Dakka!",
+   "name_zh": "哒哒哒",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "哒哒哒：ORKS 远程 [ASSAULT] + Waaagh 时射击 [SUSTAINED HITS 1]——assault 射击资格 + Waaagh 状态无载体（保持零新引擎通道）"
+   ],
+   "encoded_by": "manual-2026-07-19",
+   "materialize": {
+    "from_table": "detachments",
+    "from_id": "000009990",
+    "from_column": "rule_text"
+   }
+  },
+  {
+   "table": "abilities",
+   "id": "det000010711",
+   "side": "attacker",
+   "detachment": "Here Be Loot",
+   "name_en": "Here Be Loot",
+   "name_zh": "此处有战利品",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "此处有战利品：近战利品目标 [SUSTAINED HITS 1]——目标点无载体"
+   ],
+   "encoded_by": "manual-2026-07-19",
+   "materialize": {
+    "from_table": "detachments",
+    "from_id": "000010711",
+    "from_column": "rule_text"
+   }
+  },
+  {
+   "table": "abilities",
+   "id": "det000010794",
+   "side": "attacker",
+   "detachment": "Turbo Boostas",
+   "name_en": "Turbo Boostas",
+   "name_zh": "涡轮加速",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "涡轮加速：turbo 移动 + [ASSAULT]——移动与射击资格无载体"
+   ],
+   "encoded_by": "manual-2026-07-19",
+   "materialize": {
+    "from_table": "detachments",
+    "from_id": "000010794",
+    "from_column": "rule_text"
+   }
+  },
+  {
+   "table": "abilities",
+   "id": "det000010798",
+   "side": "attacker",
+   "detachment": "Eager for the Fight",
+   "name_en": "Eager for the Fight",
+   "name_zh": "渴战",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "渴战：下车后重骰前进/冲锋——重骰前进/冲锋无载体"
+   ],
+   "encoded_by": "manual-2026-07-19",
+   "materialize": {
+    "from_table": "detachments",
+    "from_id": "000010798",
+    "from_column": "rule_text"
+   }
+  },
+  {
+   "table": "abilities",
+   "id": "detfp11e-ork-rollin",
+   "side": "attacker",
+   "detachment": "Thundering Wagons",
+   "name_en": "Thundering Wagons",
+   "name_zh": "雷鸣战车",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "雷鸣战车：WAGON 授予 + 重骰冲锋 + 前进改 6——授予/冲锋/前进无载体"
+   ],
+   "encoded_by": "manual-2026-07-19",
+   "materialize": {
+    "from_table": "detachments",
+    "from_id": "fp11e-ork-rollin",
+    "from_column": "rule_text"
+   }
+  },
+  {
+   "table": "stratagems",
+   "id": "000010800005",
+   "side": "attacker",
+   "detachment": "Blitz Brigade",
+   "name_en": "ARMOURED DUELLISTS",
+   "name_zh": "装甲决斗者",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "装甲决斗者：射击对 MONSTER/VEHICLE +命中致伤——射击×关键字无复合 tag，宁漏不错不建模"
+   ],
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "stratagems",
+   "id": "000010800003",
+   "side": "attacker",
+   "detachment": "Blitz Brigade",
+   "name_en": "MEKANISED BRUTALITY",
+   "name_zh": "机械化残暴",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "机械化残暴：下车后可冲锋——冲锋资格无载体"
+   ],
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "stratagems",
+   "id": "000010800004",
+   "side": "attacker",
+   "detachment": "Blitz Brigade",
+   "name_en": "RUN ’EM DOWN",
+   "name_zh": "碾过去",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "碾过去：前进后可冲锋——冲锋资格无载体"
+   ],
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "stratagems",
+   "id": "000010800007",
+   "side": "attacker",
+   "detachment": "Blitz Brigade",
+   "name_en": "YOOZ IN TROUBLE NOW",
+   "name_zh": "你有麻烦了",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "你有麻烦了：下车 surge——移动无载体"
+   ],
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "stratagems",
+   "id": "000010800006",
+   "side": "attacker",
+   "detachment": "Blitz Brigade",
+   "name_en": "IMPERVIOUS",
+   "name_zh": "刀枪不入",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "刀枪不入：射击 × S>T 被伤-1——射击范围 S>T 引擎无射击门控 tag，宁漏不错不建模"
+   ],
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "stratagems",
+   "id": "000010800002",
+   "side": "attacker",
+   "detachment": "Blitz Brigade",
+   "name_en": "MOUNT UP, LADZ",
+   "name_zh": "上车吧小子",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "上车吧小子：登车——登车无载体"
+   ],
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "stratagems",
+   "id": "000008886007",
+   "side": "target",
+   "detachment": "Bully Boyz",
+   "name_en": "HULKING BRUTES",
+   "name_zh": "巨兽蛮汉",
+   "status": "encoded",
+   "effects": [
+    {
+     "phase": "save",
+     "op": "ap_improve",
+     "params": [
+      -1
+     ],
+     "source": "巨兽蛮汉：攻击本单位 AP 恶化 1"
+    }
+   ],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [],
+   "provenance": {
+    "current_text": "db stratagems.text_zh id=000008886007",
+    "base_text": "Wahapedia 现文（PR14 工作单：11 版化后文本，FP 未触及或已滚入）",
+    "text_sha256": "2e3b9d7a2ece2d6cdbe2eb2a19b136cb7bf09afcba72dff86b075bec521bad1d"
+   },
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "stratagems",
+   "id": "000008886002",
+   "side": "attacker",
+   "detachment": "Bully Boyz",
+   "name_en": "ARMED TO DATEEF",
+   "name_zh": "武装到牙齿",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "武装到牙齿：重骰命中 1（Waaagh 全重骰）——重骰1 + Waaagh 无载体"
+   ],
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "stratagems",
+   "id": "000008886006",
+   "side": "attacker",
+   "detachment": "Bully Boyz",
+   "name_en": "CUT’EM DOWN",
+   "name_zh": "砍倒他们",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "砍倒他们：绝望逃脱减值——移动测试无载体"
+   ],
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "stratagems",
+   "id": "000008886005",
+   "side": "attacker",
+   "detachment": "Bully Boyz",
+   "name_en": "CRUSHING IMPACT",
+   "name_zh": "碾压冲击",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "碾压冲击：致命伤——致命伤无载体"
+   ],
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "stratagems",
+   "id": "000008886003",
+   "side": "attacker",
+   "detachment": "Bully Boyz",
+   "name_en": "TOO ARROGANT TO DIE",
+   "name_zh": "傲慢不死",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "傲慢不死：被毁后反打——串行幸存反打无载体"
+   ],
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "stratagems",
+   "id": "000008886004",
+   "side": "attacker",
+   "detachment": "Bully Boyz",
+   "name_en": "ALWAYS LOOKIN’ FER A FIGHT",
+   "name_zh": "总想打架",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "总想打架：巩固 D3+3\"——近战机动无载体"
+   ],
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "stratagems",
+   "id": "000008869006",
+   "side": "target",
+   "detachment": "Da Big Hunt",
+   "name_en": "STALKIN’ TAKTIKS",
+   "name_zh": "潜行战术",
+   "status": "encoded",
+   "effects": [
+    {
+     "phase": "save",
+     "op": "cover",
+     "params": [],
+     "source": "潜行战术：本单位对远程获掩体收益（Stealth）",
+     "condition": [
+      "phase_shooting"
+     ]
+    }
+   ],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [],
+   "provenance": {
+    "current_text": "db stratagems.text_zh id=000008869006",
+    "base_text": "Wahapedia 现文（PR14 工作单：11 版化后文本，FP 未触及或已滚入）",
+    "text_sha256": "58b2b1574bf2449be75b1546363a617f4075de85e44bbbd177ca8f638eec30be"
+   },
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "stratagems",
+   "id": "000008869002",
+   "side": "attacker",
+   "detachment": "Da Big Hunt",
+   "name_en": "DRAG IT DOWN",
+   "name_zh": "拽下来",
+   "status": "partial",
+   "effects": [
+    {
+     "phase": "hit",
+     "op": "extra_hits",
+     "params": [
+      1
+     ],
+     "source": "拽下来：近战 [SUSTAINED HITS 1]",
+     "condition": [
+      "phase_melee"
+     ]
+    }
+   ],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "对 Prey 暴击 5+ 分量不建模（无对特定目标改暴击阈值门）"
+   ],
+   "provenance": {
+    "current_text": "db stratagems.text_zh id=000008869002",
+    "base_text": "Wahapedia 现文（PR14 工作单：11 版化后文本，FP 未触及或已滚入）",
+    "text_sha256": "ed018168ecdc74f4748efbd676fff6ae1fff46038858c33bf45aebc2e08e0811"
+   },
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "stratagems",
+   "id": "000008869004",
+   "side": "attacker",
+   "detachment": "Da Big Hunt",
+   "name_en": "DAT ONE’S EVEN BIGGA!",
+   "name_zh": "那个更大",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "那个更大：冲锋——冲锋资格无载体"
+   ],
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "stratagems",
+   "id": "000008869007",
+   "side": "attacker",
+   "detachment": "Da Big Hunt",
+   "name_en": "INSTINCTIVE HUNTERS",
+   "name_zh": "本能猎手",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "本能猎手：预备队——预备队无载体"
+   ],
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "stratagems",
+   "id": "000008869005",
+   "side": "attacker",
+   "detachment": "Da Big Hunt",
+   "name_en": "WHERE D’YA FINK YOU’RE GOING?",
+   "name_zh": "你想去哪",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "你想去哪：移动——移动无载体"
+   ],
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "stratagems",
+   "id": "000008869003",
+   "side": "attacker",
+   "detachment": "Da Big Hunt",
+   "name_en": "UNSTOPPABLE MOMENTUM",
+   "name_zh": "不可阻挡的势头",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "不可阻挡的势头：致命伤——致命伤无载体"
+   ],
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "stratagems",
+   "id": "000008878005",
+   "side": "attacker",
+   "detachment": "Dread Mob",
+   "name_en": "DAKKA! DAKKA! DAKKA!",
+   "name_zh": "哒哒哒（Dread Mob）",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "哒哒哒：重骰命中 1（push 全重骰）——重骰1 + push 无载体"
+   ],
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "stratagems",
+   "id": "000008878004",
+   "side": "attacker",
+   "detachment": "Dread Mob",
+   "name_en": "BIGGER SHELLS FOR BIGGER GITZ",
+   "name_zh": "大个子用大炮弹",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "大个子用大炮弹：射击对 MONSTER/VEHICLE +致伤——射击×关键字无复合 tag + push 不建模"
+   ],
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "stratagems",
+   "id": "000008878007",
+   "side": "target",
+   "detachment": "Dread Mob",
+   "name_en": "EXTRA GUBBINZ",
+   "name_zh": "额外配件",
+   "status": "encoded",
+   "effects": [
+    {
+     "phase": "damage",
+     "op": "damage_reduction",
+     "params": [
+      1
+     ],
+     "source": "额外配件：分配到本单位的攻击伤害 -1"
+    }
+   ],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [],
+   "provenance": {
+    "current_text": "db stratagems.text_zh id=000008878007",
+    "base_text": "Wahapedia 现文（PR14 工作单：11 版化后文本，FP 未触及或已滚入）",
+    "text_sha256": "2cef4fc7d858e47a2fec24fa6f05f69f65f5958b38d24f38da948511392d680e"
+   },
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "stratagems",
+   "id": "000008878002",
+   "side": "attacker",
+   "detachment": "Dread Mob",
+   "name_en": "KLANKIN’ KLAWS",
+   "name_zh": "咔嗒钳爪",
+   "status": "partial",
+   "effects": [
+    {
+     "phase": "wound",
+     "op": "s_improve",
+     "params": [
+      2
+     ],
+     "source": "咔嗒钳爪：近战 S +2",
+     "condition": [
+      "phase_melee"
+     ]
+    }
+   ],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "push 时另 +1D + [HAZARDOUS]——push 分量不建模",
+    "近战武器专属（Orks Walker）"
+   ],
+   "provenance": {
+    "current_text": "db stratagems.text_zh id=000008878002",
+    "base_text": "Wahapedia 现文（PR14 工作单：11 版化后文本，FP 未触及或已滚入）",
+    "text_sha256": "8da97988b0b48b60c51d8f6a3fa0f74405c78df7025955bfd1a21fad4a5a33fe"
+   },
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "stratagems",
+   "id": "000008878006",
+   "side": "attacker",
+   "detachment": "Dread Mob",
+   "name_en": "CONNIVING RUNTS",
+   "name_zh": "狡诈跑腿",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "狡诈跑腿：致命伤 + 移动——致命伤与移动无载体"
+   ],
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "stratagems",
+   "id": "000008878003",
+   "side": "attacker",
+   "detachment": "Dread Mob",
+   "name_en": "SUPERFUELLED BOILER",
+   "name_zh": "超燃锅炉",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "超燃锅炉：前进 + [ASSAULT]——前进与射击资格无载体"
+   ],
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "stratagems",
+   "id": "000010713004",
+   "side": "attacker",
+   "detachment": "Freebooter Krew",
+   "name_en": "BOARDIN’ RUSH",
+   "name_zh": "登舰冲锋",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "登舰冲锋：前进——移动无载体"
+   ],
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "stratagems",
+   "id": "000010713002",
+   "side": "attacker",
+   "detachment": "Freebooter Krew",
+   "name_en": "BASH AND GRAB",
+   "name_zh": "抢夺",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "抢夺：近战利品目标重骰致伤——目标点无载体"
+   ],
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "stratagems",
+   "id": "000010713006",
+   "side": "attacker",
+   "detachment": "Freebooter Krew",
+   "name_en": "ROLLING LOOT-HEAP",
+   "name_zh": "滚动战利品堆",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "滚动战利品堆：射击 [ANTI-VEHICLE 4+]——射击×关键字 ANTI 无复合 tag，宁漏不错不建模"
+   ],
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "stratagems",
+   "id": "000010713003",
+   "side": "attacker",
+   "detachment": "Freebooter Krew",
+   "name_en": "GRAB AND BASH",
+   "name_zh": "夺取",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "夺取：Waaagh 激活——Waaagh 激活无载体"
+   ],
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "stratagems",
+   "id": "000010713005",
+   "side": "attacker",
+   "detachment": "Freebooter Krew",
+   "name_en": "DECK FRAGGERS",
+   "name_zh": "甲板破片",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "甲板破片：射击对 INFANTRY [BLAST]——射击×关键字 blast 无复合 tag，宁漏不错不建模"
+   ],
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "stratagems",
+   "id": "000010713007",
+   "side": "attacker",
+   "detachment": "Freebooter Krew",
+   "name_en": "KRUMP AND RUN",
+   "name_zh": "砸完就跑",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "砸完就跑：移动——移动无载体"
+   ],
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "stratagems",
+   "id": "000008882003",
+   "side": "attacker",
+   "detachment": "Green Tide",
+   "name_en": "BULLDOZER BRUTALITY",
+   "name_zh": "推土机残暴",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "推土机残暴：接战资格——近战资格无载体"
+   ],
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "stratagems",
+   "id": "000008882002",
+   "side": "attacker",
+   "detachment": "Green Tide",
+   "name_en": "COMPETITIVE STREAK",
+   "name_zh": "好胜心",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "好胜心：重骰致伤 1（10+ 全重骰）——重骰1 + 编制无载体"
+   ],
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "stratagems",
+   "id": "000008882006",
+   "side": "attacker",
+   "detachment": "Green Tide",
+   "name_en": "TIDE OF MUSCLE",
+   "name_zh": "肌肉浪潮",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "肌肉浪潮：+1 冲锋骰——冲锋骰无载体"
+   ],
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "stratagems",
+   "id": "000008882005",
+   "side": "attacker",
+   "detachment": "Green Tide",
+   "name_en": "COME ON LADZ!",
+   "name_zh": "上啊小子",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "上啊小子：返还模型——返还无载体"
+   ],
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "stratagems",
+   "id": "000008882004",
+   "side": "attacker",
+   "detachment": "Green Tide",
+   "name_en": "BRAGGIN’ RIGHTS",
+   "name_zh": "吹嘘权",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "吹嘘权：视为 10+ 模型——编制无载体"
+   ],
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "stratagems",
+   "id": "000008882007",
+   "side": "attacker",
+   "detachment": "Green Tide",
+   "name_en": "GO GET ’EM!",
+   "name_zh": "上去干他们",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "上去干他们：surge move——移动无载体"
+   ],
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "stratagems",
+   "id": "000009624005",
+   "side": "attacker",
+   "detachment": "Kaptin Killers",
+   "name_en": "CORNERED AND KRUMPED",
+   "name_zh": "困兽之斗",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "困兽之斗：额外接战——反应式额外接战无载体"
+   ],
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "stratagems",
+   "id": "000009624004",
+   "side": "attacker",
+   "detachment": "Kaptin Killers",
+   "name_en": "PIT FIGHTER",
+   "name_zh": "斗士",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "斗士：撤退后可冲锋——冲锋资格无载体"
+   ],
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "stratagems",
+   "id": "000009624002",
+   "side": "target",
+   "detachment": "Kaptin Killers",
+   "name_en": "LOOT ON THE MOVE",
+   "name_zh": "移动中劫掠",
+   "status": "encoded",
+   "effects": [
+    {
+     "phase": "save",
+     "op": "ap_improve",
+     "params": [
+      -1
+     ],
+     "source": "移动中劫掠：攻击本单位 AP 恶化 1"
+    }
+   ],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [],
+   "provenance": {
+    "current_text": "db stratagems.text_zh id=000009624002",
+    "base_text": "Wahapedia 现文（PR14 工作单：11 版化后文本，FP 未触及或已滚入）",
+    "text_sha256": "f6ef6ae58a42640b32e0aafa43892caea11a17591af1458b8ab1a1bff6ab9b6a"
+   },
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "stratagems",
+   "id": "000009624003",
+   "side": "attacker",
+   "detachment": "Kaptin Killers",
+   "name_en": "PILE THROUGH",
+   "name_zh": "挤过去",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "挤过去：Fights First——先攻无载体"
+   ],
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "stratagems",
+   "id": "000008873004",
+   "side": "attacker",
+   "detachment": "Kult of Speed",
+   "name_en": "DAKKASTORM",
+   "name_zh": "达卡风暴",
+   "status": "partial",
+   "effects": [
+    {
+     "phase": "hit",
+     "op": "extra_hits",
+     "params": [
+      1
+     ],
+     "source": "达卡风暴：远程 [SUSTAINED HITS 1]",
+     "condition": [
+      "phase_shooting"
+     ]
+    }
+   ],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "9\" 内升 [SUSTAINED HITS 2]——按基础 1 建模（无近距分档门）"
+   ],
+   "provenance": {
+    "current_text": "db stratagems.text_zh id=000008873004",
+    "base_text": "Wahapedia 现文（PR14 工作单：11 版化后文本，FP 未触及或已滚入）",
+    "text_sha256": "b086007f955bd03db845ccd606d0ac94ff84fbea5ff80d27effd5338bbf149aa"
+   },
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "stratagems",
+   "id": "000008873005",
+   "side": "attacker",
+   "detachment": "Kult of Speed",
+   "name_en": "BLITZA FIRE",
+   "name_zh": "闪电射击",
+   "status": "partial",
+   "effects": [
+    {
+     "phase": "hit",
+     "op": "auto_wound",
+     "params": [],
+     "source": "闪电射击：远程 [LETHAL HITS]",
+     "condition": [
+      "phase_shooting"
+     ]
+    }
+   ],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "9\" 内暴击 5+ 分量不建模（无近距暴击门）"
+   ],
+   "provenance": {
+    "current_text": "db stratagems.text_zh id=000008873005",
+    "base_text": "Wahapedia 现文（PR14 工作单：11 版化后文本，FP 未触及或已滚入）",
+    "text_sha256": "e343abd2654d74e7867a2e0754e8f2354d57492468772ff86987bcca1145605a"
+   },
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "stratagems",
+   "id": "000008873006",
+   "side": "attacker",
+   "detachment": "Kult of Speed",
+   "name_en": "FULL THROTTLE!",
+   "name_zh": "全速前进",
+   "status": "encoded",
+   "effects": [
+    {
+     "phase": "wound",
+     "op": "modify",
+     "params": [
+      1
+     ],
+     "source": "全速前进：近战致伤 +1",
+     "condition": [
+      "phase_melee"
+     ]
+    }
+   ],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [],
+   "provenance": {
+    "current_text": "db stratagems.text_zh id=000008873006",
+    "base_text": "Wahapedia 现文（PR14 工作单：11 版化后文本，FP 未触及或已滚入）",
+    "text_sha256": "8e4b1f0e3d4f456ee689df4d3a048d3b4534e4e282bc7eefa283acef77e07645"
+   },
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "stratagems",
+   "id": "000008873007",
+   "side": "attacker",
+   "detachment": "Kult of Speed",
+   "name_en": "MORE GITZ OVER ’ERE!",
+   "name_zh": "更多小子在这",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "更多小子在这：移动——移动无载体"
+   ],
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "stratagems",
+   "id": "000008873002",
+   "side": "target",
+   "detachment": "Kult of Speed",
+   "name_en": "SPEEDIEST FREEKS",
+   "name_zh": "最速狂飙",
+   "status": "partial",
+   "effects": [
+    {
+     "phase": "save",
+     "op": "invuln",
+     "params": [
+      5
+     ],
+     "source": "最速狂飙：5+ 无效保护"
+    }
+   ],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "T≤8 的载具单位升 4+——按基础 5+ 建模"
+   ],
+   "provenance": {
+    "current_text": "db stratagems.text_zh id=000008873002",
+    "base_text": "Wahapedia 现文（PR14 工作单：11 版化后文本，FP 未触及或已滚入）",
+    "text_sha256": "4b4e72f898c1619b31b15e064bbcc72d73ffb59e8465e4cfd4516d5f8905d942"
+   },
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "stratagems",
+   "id": "000008873003",
+   "side": "attacker",
+   "detachment": "Kult of Speed",
+   "name_en": "SQUIG FLINGIN’",
+   "name_zh": "掷菌兽",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "掷菌兽：战意测试——战意无载体"
+   ],
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "stratagems",
+   "id": "000009992005",
+   "side": "attacker",
+   "detachment": "More Dakka!",
+   "name_en": "LONG, UNCONTROLLED BURSTS",
+   "name_zh": "长时间失控射击",
+   "status": "encoded",
+   "effects": [
+    {
+     "phase": "save",
+     "op": "ignores_cover",
+     "params": [],
+     "source": "长时间失控射击：远程 [IGNORES COVER]",
+     "condition": [
+      "phase_shooting"
+     ]
+    }
+   ],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [],
+   "provenance": {
+    "current_text": "db stratagems.text_zh id=000009992005",
+    "base_text": "Wahapedia 现文（PR14 工作单：11 版化后文本，FP 未触及或已滚入）",
+    "text_sha256": "6cbd221968844676c33283e71de2db198daeab2823d5853b7b1352ae03d85c1a"
+   },
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "stratagems",
+   "id": "000009992002",
+   "side": "attacker",
+   "detachment": "More Dakka!",
+   "name_en": "ORKS IS STILL ORKS",
+   "name_zh": "兽人还是兽人",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "兽人还是兽人：重骰致伤 1（近据点全重骰）——重骰1 + 目标点无载体"
+   ],
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "stratagems",
+   "id": "000009992003",
+   "side": "attacker",
+   "detachment": "More Dakka!",
+   "name_en": "GET STUCK IN, LADZ!",
+   "name_zh": "上啊小子（More Dakka）",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "上啊小子：Waaagh 激活——Waaagh 激活无载体"
+   ],
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "stratagems",
+   "id": "000009992004",
+   "side": "attacker",
+   "detachment": "More Dakka!",
+   "name_en": "HUGE SHOW-OFFS",
+   "name_zh": "大炫耀",
+   "status": "partial",
+   "effects": [
+    {
+     "phase": "hit",
+     "op": "modify",
+     "params": [
+      1
+     ],
+     "source": "大炫耀：命中 +1"
+    }
+   ],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "M/Ld/OC +1 不建模（移动/领导/目标控制）"
+   ],
+   "provenance": {
+    "current_text": "db stratagems.text_zh id=000009992004",
+    "base_text": "Wahapedia 现文（PR14 工作单：11 版化后文本，FP 未触及或已滚入）",
+    "text_sha256": "cd6cecdd3836201489111c1923cf4ebf5d037199ad2dc03fcc9194c9e0baadb2"
+   },
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "stratagems",
+   "id": "000009992007",
+   "side": "attacker",
+   "detachment": "More Dakka!",
+   "name_en": "CALL DAT DAKKA?",
+   "name_zh": "这也叫达卡？",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "这也叫达卡？：额外射击——反应式额外射击无载体"
+   ],
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "stratagems",
+   "id": "000009992006",
+   "side": "attacker",
+   "detachment": "More Dakka!",
+   "name_en": "SPESHUL SHELLS",
+   "name_zh": "特制炮弹",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "特制炮弹：18\" 内最近目标 +1 AP——最近目标无载体"
+   ],
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "stratagems",
+   "id": "000009616005",
+   "side": "attacker",
+   "detachment": "Ramship Raiders",
+   "name_en": "ENRAGED RUSH",
+   "name_zh": "狂怒冲锋",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "狂怒冲锋：移动——移动无载体"
+   ],
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "stratagems",
+   "id": "000009616002",
+   "side": "attacker",
+   "detachment": "Ramship Raiders",
+   "name_en": "PILE THROUGH",
+   "name_zh": "挤过去（Ramship）",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "挤过去：Fights First——先攻无载体"
+   ],
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "stratagems",
+   "id": "000009616003",
+   "side": "attacker",
+   "detachment": "Ramship Raiders",
+   "name_en": "RAMBOYZ RAMPAGE",
+   "name_zh": "撞车小子暴走",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "撞车小子暴走：前进冲锋——移动无载体"
+   ],
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "stratagems",
+   "id": "000009616004",
+   "side": "attacker",
+   "detachment": "Ramship Raiders",
+   "name_en": "EAGER TO FIGHT",
+   "name_zh": "渴望战斗",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "渴望战斗：前进移动——移动无载体"
+   ],
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "stratagems",
+   "id": "000010796002",
+   "side": "attacker",
+   "detachment": "Speedwaaagh!",
+   "name_en": "ON DA MOVE",
+   "name_zh": "上路",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "上路：撤退/前进后可射击/冲锋——射击/冲锋资格无载体"
+   ],
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "stratagems",
+   "id": "000010796007",
+   "side": "attacker",
+   "detachment": "Speedwaaagh!",
+   "name_en": "EVASIVE MANOOVA",
+   "name_zh": "闪避机动",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "闪避机动：预备队——预备队无载体"
+   ],
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "stratagems",
+   "id": "000010796006",
+   "side": "target",
+   "detachment": "Speedwaaagh!",
+   "name_en": "DUST TRAILS",
+   "name_zh": "尘迹",
+   "status": "encoded",
+   "effects": [
+    {
+     "phase": "save",
+     "op": "cover",
+     "params": [],
+     "source": "尘迹：本单位对远程获掩体收益",
+     "condition": [
+      "phase_shooting"
+     ]
+    }
+   ],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [],
+   "provenance": {
+    "current_text": "db stratagems.text_zh id=000010796006",
+    "base_text": "Wahapedia 现文（PR14 工作单：11 版化后文本，FP 未触及或已滚入）",
+    "text_sha256": "30e7ec2b6c731989fd49e1cd882a06f005a4656a7a913443102693b9c95bb921"
+   },
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "stratagems",
+   "id": "000010796005",
+   "side": "attacker",
+   "detachment": "Speedwaaagh!",
+   "name_en": "DED KILLY CONSTRUCTION",
+   "name_zh": "致命构造",
+   "status": "partial",
+   "effects": [
+    {
+     "phase": "wound",
+     "op": "modify",
+     "params": [
+      1
+     ],
+     "source": "致命构造：[LANCE] 冲锋近战致伤 +1",
+     "condition": [
+      "melee_charging"
+     ]
+    }
+   ],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "冲锋时 +1D 分量不建模（无通用伤害通道）"
+   ],
+   "provenance": {
+    "current_text": "db stratagems.text_zh id=000010796005",
+    "base_text": "Wahapedia 现文（PR14 工作单：11 版化后文本，FP 未触及或已滚入）",
+    "text_sha256": "f8d9c4da050d5150e5050d7e9e2d32b78cbec532b75ac071633ad4e10c7418ee"
+   },
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "stratagems",
+   "id": "000010796003",
+   "side": "attacker",
+   "detachment": "Speedwaaagh!",
+   "name_en": "MOBILE DAKKASTORM",
+   "name_zh": "机动达卡风暴",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "机动达卡风暴：反应式对目标 +2 S——反应式选择无载体"
+   ],
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "stratagems",
+   "id": "000010796004",
+   "side": "attacker",
+   "detachment": "Speedwaaagh!",
+   "name_en": "SPESHUL AMMO",
+   "name_zh": "特制弹药",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "特制弹药：射击 [ANTI-MONSTER/VEHICLE 4+]——射击×关键字无复合 tag，宁漏不错不建模"
+   ],
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "stratagems",
+   "id": "000009796005",
+   "side": "attacker",
+   "detachment": "Taktikal Brigade",
+   "name_en": "KRUNCHIN’ DESCENT",
+   "name_zh": "碾压降临",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "碾压降临：致命伤——致命伤无载体"
+   ],
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "stratagems",
+   "id": "000009796003",
+   "side": "attacker",
+   "detachment": "Taktikal Brigade",
+   "name_en": "FIGHT PROPPA",
+   "name_zh": "好好打",
+   "status": "partial",
+   "effects": [
+    {
+     "phase": "hit",
+     "op": "extra_hits",
+     "params": [
+      1
+     ],
+     "source": "好好打：近战 [SUSTAINED HITS 1]（二选一单分支）",
+     "condition": [
+      "phase_melee"
+     ]
+    }
+   ],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "二选一按 [SUSTAINED HITS 1] 单分支建模（另可选 [LETHAL HITS]）"
+   ],
+   "provenance": {
+    "current_text": "db stratagems.text_zh id=000009796003",
+    "base_text": "Wahapedia 现文（PR14 工作单：11 版化后文本，FP 未触及或已滚入）",
+    "text_sha256": "b6315da8593cad1567cf2fe9646abfba6c9bac3221849c8d2b97db22cc466a10"
+   },
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "stratagems",
+   "id": "000009796007",
+   "side": "attacker",
+   "detachment": "Taktikal Brigade",
+   "name_en": "DED SNEAKY",
+   "name_zh": "死鬼祟",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "死鬼祟：预备队——预备队无载体"
+   ],
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "stratagems",
+   "id": "000009796006",
+   "side": "attacker",
+   "detachment": "Taktikal Brigade",
+   "name_en": "ON TO DA NEXT",
+   "name_zh": "下一个",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "下一个：移动——移动无载体"
+   ],
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "stratagems",
+   "id": "000009796004",
+   "side": "attacker",
+   "detachment": "Taktikal Brigade",
+   "name_en": "TAKTIKAL RETREAT",
+   "name_zh": "战术撤退",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "战术撤退：撤退后可射击/冲锋——射击/冲锋资格无载体"
+   ],
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "stratagems",
+   "id": "000009796002",
+   "side": "attacker",
+   "detachment": "Taktikal Brigade",
+   "name_en": "DAT’S OURS",
+   "name_zh": "那是我们的",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "那是我们的：+1 OC——目标控制无载体"
+   ],
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "stratagems",
+   "id": "000008366007",
+   "side": "attacker",
+   "detachment": "War Horde",
+   "name_en": "ERE WE GO",
+   "name_zh": "我们上",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "我们上：+2 前进/冲锋骰——前进/冲锋骰无载体"
+   ],
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "stratagems",
+   "id": "000008366006",
+   "side": "attacker",
+   "detachment": "War Horde",
+   "name_en": "MOB RULE",
+   "name_zh": "暴民法则",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "暴民法则：解除战意——战意无载体"
+   ],
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "stratagems",
+   "id": "000008366005",
+   "side": "target",
+   "detachment": "War Horde",
+   "name_en": "’ARD AS NAILS",
+   "name_zh": "坚如磐石",
+   "status": "encoded",
+   "effects": [
+    {
+     "phase": "wound",
+     "op": "modify",
+     "params": [
+      -1
+     ],
+     "source": "坚如磐石：攻击本单位致伤 -1"
+    }
+   ],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [],
+   "provenance": {
+    "current_text": "db stratagems.text_zh id=000008366005",
+    "base_text": "Wahapedia 现文（PR14 工作单：11 版化后文本，FP 未触及或已滚入）",
+    "text_sha256": "2998f8e76ce1c2fa68defea7e7fd71eeca2b984f9b9069f7cea5a6fbe031f750"
+   },
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "stratagems",
+   "id": "000008366004",
+   "side": "attacker",
+   "detachment": "War Horde",
+   "name_en": "UNBRIDLED CARNAGE",
+   "name_zh": "无节制杀戮",
+   "status": "encoded",
+   "effects": [
+    {
+     "phase": "hit",
+     "op": "crit_threshold",
+     "params": [
+      5
+     ],
+     "source": "无节制杀戮：近战命中 5+ 即暴击",
+     "condition": [
+      "phase_melee"
+     ]
+    }
+   ],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [],
+   "provenance": {
+    "current_text": "db stratagems.text_zh id=000008366004",
+    "base_text": "Wahapedia 现文（PR14 工作单：11 版化后文本，FP 未触及或已滚入）",
+    "text_sha256": "33dfa4d811addbf354163306304dea2e95bcaf00e226c360ac833050f5fb9cad"
+   },
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "stratagems",
+   "id": "000008366003",
+   "side": "attacker",
+   "detachment": "War Horde",
+   "name_en": "ORKS IS NEVER BEATEN",
+   "name_zh": "兽人永不言败",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "兽人永不言败：被毁后反打——串行幸存反打无载体"
+   ],
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "stratagems",
+   "id": "000008366002",
+   "side": "attacker",
+   "detachment": "War Horde",
+   "name_en": "CAREEN!",
+   "name_zh": "急冲",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "急冲：被毁后移动——移动无载体"
+   ],
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "stratagems",
+   "id": "fp11e-ork-rollin-s1",
+   "side": "attacker",
+   "detachment": "Rollin' Deff",
+   "name_en": "Brutal Broadside",
+   "name_zh": "残暴齐射",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "残暴齐射：[RAPID FIRE X]（X=攻击数 A）——RAPID FIRE X=A 特殊语义无载体"
+   ],
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "stratagems",
+   "id": "fp11e-ork-rollin-s2",
+   "side": "attacker",
+   "detachment": "Rollin' Deff",
+   "name_en": "Impending Crunch",
+   "name_zh": "迫近碾压",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "迫近碾压：战意测试——战意无载体"
+   ],
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "stratagems",
+   "id": "fp11e-ork-rollin-s3",
+   "side": "attacker",
+   "detachment": "Rollin' Deff",
+   "name_en": "Devastating Drift",
+   "name_zh": "毁灭漂移",
+   "status": "encoded",
+   "effects": [
+    {
+     "phase": "attacks",
+     "op": "blast",
+     "params": [
+      1
+     ],
+     "source": "毁灭漂移：冲锋回合近战 [CLEAVE 1]",
+     "condition": [
+      "melee_charging"
+     ]
+    }
+   ],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [],
+   "provenance": {
+    "current_text": "db stratagems.text_zh id=fp11e-ork-rollin-s3",
+    "base_text": "Wahapedia 现文（PR14 工作单：11 版化后文本，FP 未触及或已滚入）",
+    "text_sha256": "114cd5bacde0c6cdc500b64b190bb8279edfa3dd0d348e65fbd249c64b9efaeb"
+   },
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "enhancements",
+   "id": "000009623002",
+   "side": "attacker",
+   "detachment": "Kaptin Killers",
+   "name_en": "Tellyporta",
+   "name_zh": "传送器（Kaptin）",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "传送器：Deep Strike——深入打击无载体"
+   ],
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "enhancements",
+   "id": "000009795002",
+   "side": "attacker",
+   "detachment": "Taktikal Brigade",
+   "name_en": "Skwad Leader",
+   "name_zh": "小队长",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "小队长：Infiltrators/Stealth——部署能力无载体"
+   ],
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "enhancements",
+   "id": "000010799002",
+   "side": "attacker",
+   "detachment": "Blitz Brigade",
+   "name_en": "Runnin’ Boots",
+   "name_zh": "跑鞋",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "跑鞋：下车冲锋 +1——冲锋骰无载体"
+   ],
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "enhancements",
+   "id": "000008877002",
+   "side": "attacker",
+   "detachment": "Dread Mob",
+   "name_en": "Gitfinder Googlez",
+   "name_zh": "找目标护目镜",
+   "status": "encoded",
+   "effects": [
+    {
+     "phase": "save",
+     "op": "ignores_cover",
+     "params": [],
+     "source": "找目标护目镜：被率领单位远程 [IGNORES COVER]",
+     "condition": [
+      "phase_shooting"
+     ]
+    }
+   ],
+   "requires_toggles": [
+    "bearer_leading"
+   ],
+   "not_modeled_notes_zh": [],
+   "provenance": {
+    "current_text": "db enhancements.description id=000008877002",
+    "base_text": "Wahapedia 现文（PR14 工作单：11 版化后文本，FP 未触及或已滚入）",
+    "text_sha256": "ce62089799d54c5a0a9fc47e17af5abbe009b1cc501051205947b70e2e64daab"
+   },
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "enhancements",
+   "id": "000008872002",
+   "side": "attacker",
+   "detachment": "Kult of Speed",
+   "name_en": "Fasta Than Yooz",
+   "name_zh": "比你快",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "比你快：下车后可冲锋——冲锋资格无载体"
+   ],
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "enhancements",
+   "id": "000009615002",
+   "side": "attacker",
+   "detachment": "Ramship Raiders",
+   "name_en": "Living Battering Ram",
+   "name_zh": "活体撞锤",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "活体撞锤：战意测试——战意无载体"
+   ],
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "enhancements",
+   "id": "000010712002",
+   "side": "attacker",
+   "detachment": "Freebooter Krew",
+   "name_en": "Da Kaptin",
+   "name_zh": "队长",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "队长：解除战意 + 自伤——战意与自伤无载体"
+   ],
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "enhancements",
+   "id": "000008868002",
+   "side": "attacker",
+   "detachment": "Da Big Hunt",
+   "name_en": "Glory Hog",
+   "name_zh": "荣耀猪",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "荣耀猪：Scouts——部署能力无载体"
+   ],
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "enhancements",
+   "id": "000010795002",
+   "side": "attacker",
+   "detachment": "Speedwaaagh!",
+   "name_en": "Kustom Shokk Box",
+   "name_zh": "定制冲击箱",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "定制冲击箱：turbo 穿越地形——移动无载体"
+   ],
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "enhancements",
+   "id": "000008881002",
+   "side": "attacker",
+   "detachment": "Green Tide",
+   "name_en": "Bloodthirsty Belligerence",
+   "name_zh": "嗜血好战",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "嗜血好战：重骰前进/冲锋——前进/冲锋骰无载体"
+   ],
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "enhancements",
+   "id": "000009991002",
+   "side": "attacker",
+   "detachment": "More Dakka!",
+   "name_en": "Da Gobshot Thunderbuss",
+   "name_zh": "戈布肖特雷鸣铳",
+   "status": "partial",
+   "effects": [
+    {
+     "phase": "wound",
+     "op": "mortal_pool",
+     "params": [],
+     "source": "戈布肖特雷鸣铳：携带者远程 [DEVASTATING WOUNDS]",
+     "condition": [
+      "phase_shooting"
+     ]
+    }
+   ],
+   "requires_toggles": [
+    "bearer_leading"
+   ],
+   "not_modeled_notes_zh": [
+    "[HAZARDOUS] 分量不建模"
+   ],
+   "provenance": {
+    "current_text": "db enhancements.description id=000009991002",
+    "base_text": "Wahapedia 现文（PR14 工作单：11 版化后文本，FP 未触及或已滚入）",
+    "text_sha256": "4f1aa6a8653d5ec542d6c82660bc1cfecf0a07e44fae1857f73ba99f050948eb"
+   },
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "enhancements",
+   "id": "000008367002",
+   "side": "attacker",
+   "detachment": "War Horde",
+   "name_en": "Follow Me Ladz",
+   "name_zh": "跟我上小子",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "跟我上小子：+2 M——移动无载体"
+   ],
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "enhancements",
+   "id": "000008885002",
+   "side": "attacker",
+   "detachment": "Bully Boyz",
+   "name_en": "Big Gob",
+   "name_zh": "大嘴",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "大嘴：战意测试——战意无载体"
+   ],
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "enhancements",
+   "id": "000008868003",
+   "side": "attacker",
+   "detachment": "Da Big Hunt",
+   "name_en": "Proper Killy",
+   "name_zh": "真能杀",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "真能杀：+1 D 近战——无通用伤害特征值通道"
+   ],
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "enhancements",
+   "id": "000010712003",
+   "side": "attacker",
+   "detachment": "Freebooter Krew",
+   "name_en": "Git-spotter Squig",
+   "name_zh": "找子菌",
+   "status": "encoded",
+   "effects": [
+    {
+     "phase": "save",
+     "op": "ignores_cover",
+     "params": [],
+     "source": "找子菌：被率领单位远程 [IGNORES COVER]",
+     "condition": [
+      "phase_shooting"
+     ]
+    }
+   ],
+   "requires_toggles": [
+    "bearer_leading"
+   ],
+   "not_modeled_notes_zh": [],
+   "provenance": {
+    "current_text": "db enhancements.description id=000010712003",
+    "base_text": "Wahapedia 现文（PR14 工作单：11 版化后文本，FP 未触及或已滚入）",
+    "text_sha256": "9566b32e730e6e40184a1ea7d81182bfcb4543ee713ebc0d6ee0b2f755ca8834"
+   },
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "enhancements",
+   "id": "000010799003",
+   "side": "attacker",
+   "detachment": "Blitz Brigade",
+   "name_en": "Blitzkaptin",
+   "name_zh": "闪电队长",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "闪电队长：重新部署——部署无载体"
+   ],
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "enhancements",
+   "id": "000009623003",
+   "side": "attacker",
+   "detachment": "Kaptin Killers",
+   "name_en": "Gnasher Squig Crates",
+   "name_zh": "咬牙菌箱",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "咬牙菌箱：据点据守——目标控制无载体"
+   ],
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "enhancements",
+   "id": "000008872003",
+   "side": "attacker",
+   "detachment": "Kult of Speed",
+   "name_en": "Speed Makes Right",
+   "name_zh": "速度即真理",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "速度即真理：CP——CP 经济无载体"
+   ],
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "enhancements",
+   "id": "000009615003",
+   "side": "target",
+   "detachment": "Ramship Raiders",
+   "name_en": "Scarred Brute",
+   "name_zh": "伤痕蛮兽",
+   "status": "encoded",
+   "effects": [
+    {
+     "phase": "fnp",
+     "op": "fnp",
+     "params": [
+      5
+     ],
+     "source": "伤痕蛮兽：携带者 FNP 5+"
+    }
+   ],
+   "requires_toggles": [
+    "defender_bearer_leading"
+   ],
+   "not_modeled_notes_zh": [],
+   "provenance": {
+    "current_text": "db enhancements.description id=000009615003",
+    "base_text": "Wahapedia 现文（PR14 工作单：11 版化后文本，FP 未触及或已滚入）",
+    "text_sha256": "d4ac9e8d9f9458bdd769ed168e9c0690ec8ed3f0d53825e9de31443c136ca261"
+   },
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "enhancements",
+   "id": "000010795003",
+   "side": "attacker",
+   "detachment": "Speedwaaagh!",
+   "name_en": "Dakkamek",
+   "name_zh": "达卡技工",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "达卡技工：为所选载具 [RAPID FIRE 1]——跨单位无载体"
+   ],
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "enhancements",
+   "id": "000009795003",
+   "side": "attacker",
+   "detachment": "Taktikal Brigade",
+   "name_en": "Mek Kaptin",
+   "name_zh": "技工队长",
+   "status": "encoded",
+   "effects": [
+    {
+     "phase": "hit",
+     "op": "reroll",
+     "params": [
+      "fail"
+     ],
+     "source": "技工队长：被率领 Flash Gitz 单位远程重骰命中",
+     "condition": [
+      "phase_shooting"
+     ]
+    }
+   ],
+   "requires_toggles": [
+    "bearer_leading"
+   ],
+   "not_modeled_notes_zh": [],
+   "provenance": {
+    "current_text": "db enhancements.description id=000009795003",
+    "base_text": "Wahapedia 现文（PR14 工作单：11 版化后文本，FP 未触及或已滚入）",
+    "text_sha256": "5720e44e8c92a58f69f97ba2d4232f51113186e2abc4c7a549171e97a775a41c"
+   },
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "enhancements",
+   "id": "000009991003",
+   "side": "attacker",
+   "detachment": "More Dakka!",
+   "name_en": "Dead Shiny Shootas",
+   "name_zh": "闪亮射手",
+   "status": "encoded",
+   "effects": [
+    {
+     "phase": "attacks",
+     "op": "modify",
+     "params": [
+      1
+     ],
+     "source": "闪亮射手：被率领单位远程 [RAPID FIRE 1]",
+     "condition": [
+      "half_range"
+     ]
+    }
+   ],
+   "requires_toggles": [
+    "bearer_leading"
+   ],
+   "not_modeled_notes_zh": [],
+   "provenance": {
+    "current_text": "db enhancements.description id=000009991003",
+    "base_text": "Wahapedia 现文（PR14 工作单：11 版化后文本，FP 未触及或已滚入）",
+    "text_sha256": "ffdb43fffbf356098e8dba3f5940ba5473bde2733f5fed1f78e5468f45677eae"
+   },
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "enhancements",
+   "id": "000008367003",
+   "side": "attacker",
+   "detachment": "War Horde",
+   "name_en": "Headwoppa’s Killchoppa",
+   "name_zh": "断头者砍刀",
+   "status": "encoded",
+   "effects": [
+    {
+     "phase": "wound",
+     "op": "mortal_pool",
+     "params": [],
+     "source": "断头者砍刀：携带者近战 [DEVASTATING WOUNDS]",
+     "condition": [
+      "phase_melee"
+     ]
+    }
+   ],
+   "requires_toggles": [
+    "bearer_leading"
+   ],
+   "not_modeled_notes_zh": [],
+   "provenance": {
+    "current_text": "db enhancements.description id=000008367003",
+    "base_text": "Wahapedia 现文（PR14 工作单：11 版化后文本，FP 未触及或已滚入）",
+    "text_sha256": "14b3b2b7ed9559862340831fa4927fdb6dd5b323807b3bf320805bb1620ec16b"
+   },
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "enhancements",
+   "id": "000008881003",
+   "side": "attacker",
+   "detachment": "Green Tide",
+   "name_en": "Brutal But Kunnin’",
+   "name_zh": "残暴又狡猾",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "残暴又狡猾：CP——CP 经济无载体"
+   ],
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "enhancements",
+   "id": "000008877003",
+   "side": "attacker",
+   "detachment": "Dread Mob",
+   "name_en": "Press It Fasta!",
+   "name_zh": "按快点",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "按快点：额外按钮——按钮选择无载体"
+   ],
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "enhancements",
+   "id": "000008885003",
+   "side": "attacker",
+   "detachment": "Bully Boyz",
+   "name_en": "Da Biggest Boss",
+   "name_zh": "最大老大",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "最大老大：+2 W——W 特征值无通道"
+   ],
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "enhancements",
+   "id": "000010795004",
+   "side": "attacker",
+   "detachment": "Speedwaaagh!",
+   "name_en": "Supa-burny Fuel",
+   "name_zh": "超燃燃料",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "超燃燃料：改武器攻击数为 3D6/3——设攻击数 + 武器名无载体"
+   ],
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "enhancements",
+   "id": "000010799004",
+   "side": "attacker",
+   "detachment": "Blitz Brigade",
+   "name_en": "Supercharged Squig Oil",
+   "name_zh": "超充菌油",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "超充菌油：重骰冲锋——冲锋骰无载体"
+   ],
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "enhancements",
+   "id": "000010712004",
+   "side": "attacker",
+   "detachment": "Freebooter Krew",
+   "name_en": "Bionik Workshop",
+   "name_zh": "仿生工坊",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "仿生工坊：随机 D3 仿生——随机选择无载体"
+   ],
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "enhancements",
+   "id": "000009991004",
+   "side": "attacker",
+   "detachment": "More Dakka!",
+   "name_en": "Targetin’ Squigs",
+   "name_zh": "瞄准菌",
+   "status": "encoded",
+   "effects": [
+    {
+     "phase": "hit",
+     "op": "modify",
+     "params": [
+      1
+     ],
+     "source": "瞄准菌：被率领单位远程命中 +1",
+     "condition": [
+      "phase_shooting"
+     ]
+    }
+   ],
+   "requires_toggles": [
+    "bearer_leading"
+   ],
+   "not_modeled_notes_zh": [],
+   "provenance": {
+    "current_text": "db enhancements.description id=000009991004",
+    "base_text": "Wahapedia 现文（PR14 工作单：11 版化后文本，FP 未触及或已滚入）",
+    "text_sha256": "38264f48a514bdd54b58ca7e7469a33786cdc7db32173d504b0371f4491d6aa8"
+   },
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "enhancements",
+   "id": "000009795004",
+   "side": "attacker",
+   "detachment": "Taktikal Brigade",
+   "name_en": "Mork’s Kunnin’",
+   "name_zh": "莫克的狡诈",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "莫克的狡诈：重新部署——部署无载体"
+   ],
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "enhancements",
+   "id": "000008367004",
+   "side": "attacker",
+   "detachment": "War Horde",
+   "name_en": "Kunnin’ But Brutal",
+   "name_zh": "狡猾又残暴",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "狡猾又残暴：撤退后可射击/冲锋——射击/冲锋资格无载体"
+   ],
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "enhancements",
+   "id": "000008872004",
+   "side": "attacker",
+   "detachment": "Kult of Speed",
+   "name_en": "Squig-hide Tyres",
+   "name_zh": "菌皮轮胎",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "菌皮轮胎：巩固 6\"——近战机动无载体"
+   ],
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "enhancements",
+   "id": "000008868004",
+   "side": "attacker",
+   "detachment": "Da Big Hunt",
+   "name_en": "Skrag Every Stash!",
+   "name_zh": "劫掠每个藏匿处",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "劫掠每个藏匿处：目标据守——目标控制无载体"
+   ],
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "enhancements",
+   "id": "000008885004",
+   "side": "attacker",
+   "detachment": "Bully Boyz",
+   "name_en": "’Eadstompa",
+   "name_zh": "爆头者",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "爆头者：对残编敌重骰致伤 1——重骰1 无载体"
+   ],
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "enhancements",
+   "id": "000008881004",
+   "side": "attacker",
+   "detachment": "Green Tide",
+   "name_en": "Ferocious Show Off",
+   "name_zh": "凶猛炫耀者",
+   "status": "partial",
+   "effects": [
+    {
+     "phase": "wound",
+     "op": "s_improve",
+     "params": [
+      1
+     ],
+     "source": "凶猛炫耀者：近战 S +1",
+     "condition": [
+      "phase_melee"
+     ]
+    }
+   ],
+   "requires_toggles": [
+    "bearer_leading"
+   ],
+   "not_modeled_notes_zh": [
+    "10+ 模型升 +3 S——按基础 +1 建模"
+   ],
+   "provenance": {
+    "current_text": "db enhancements.description id=000008881004",
+    "base_text": "Wahapedia 现文（PR14 工作单：11 版化后文本，FP 未触及或已滚入）",
+    "text_sha256": "a97a67dae5572e7bc1ba238f09ddce7a02817824919ebd4107ec81fa74451940"
+   },
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "enhancements",
+   "id": "000008877004",
+   "side": "target",
+   "detachment": "Dread Mob",
+   "name_en": "Smoky Gubbinz",
+   "name_zh": "烟雾配件",
+   "status": "encoded",
+   "effects": [
+    {
+     "phase": "save",
+     "op": "cover",
+     "params": [],
+     "source": "烟雾配件：被率领单位对远程获掩体收益",
+     "condition": [
+      "phase_shooting"
+     ]
+    }
+   ],
+   "requires_toggles": [
+    "defender_bearer_leading"
+   ],
+   "not_modeled_notes_zh": [],
+   "provenance": {
+    "current_text": "db enhancements.description id=000008877004",
+    "base_text": "Wahapedia 现文（PR14 工作单：11 版化后文本，FP 未触及或已滚入）",
+    "text_sha256": "3301313a8e7764bbaf2ae45ad52d5c82ac24065fe82deaa21b1288d4e98935b2"
+   },
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "enhancements",
+   "id": "000008881005",
+   "side": "attacker",
+   "detachment": "Green Tide",
+   "name_en": "Raucous Warcaller",
+   "name_zh": "喧闹战嚎者",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "喧闹战嚎者：视为 10+ 模型——编制无载体"
+   ],
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "enhancements",
+   "id": "000008877005",
+   "side": "attacker",
+   "detachment": "Dread Mob",
+   "name_en": "Supa-glowy Fing",
+   "name_zh": "超亮玩意",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "超亮玩意：战意/致命伤/命中减值——战意与致命伤无载体"
+   ],
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "enhancements",
+   "id": "000010799005",
+   "side": "attacker",
+   "detachment": "Blitz Brigade",
+   "name_en": "Tuff Git",
+   "name_zh": "硬汉",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "硬汉：解除战意——战意无载体"
+   ],
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "enhancements",
+   "id": "000010795005",
+   "side": "attacker",
+   "detachment": "Speedwaaagh!",
+   "name_en": "Master Meknologist",
+   "name_zh": "大师技工",
+   "status": "encoded",
+   "effects": [
+    {
+     "phase": "hit",
+     "op": "bs_improve",
+     "params": [
+      1
+     ],
+     "source": "大师技工：携带者远程 BS +1",
+     "condition": [
+      "phase_shooting"
+     ]
+    }
+   ],
+   "requires_toggles": [
+    "bearer_leading"
+   ],
+   "not_modeled_notes_zh": [],
+   "provenance": {
+    "current_text": "db enhancements.description id=000010795005",
+    "base_text": "Wahapedia 现文（PR14 工作单：11 版化后文本，FP 未触及或已滚入）",
+    "text_sha256": "77be072cde6e2c8aa02e406909f29b4264882d9d1a00088cde1c59907c9de4ac"
+   },
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "enhancements",
+   "id": "000009991005",
+   "side": "attacker",
+   "detachment": "More Dakka!",
+   "name_en": "Zog Off and Eat Dakka!",
+   "name_zh": "滚开吃达卡",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "滚开吃达卡：撤退后可射击——射击资格无载体"
+   ],
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "enhancements",
+   "id": "000008868005",
+   "side": "target",
+   "detachment": "Da Big Hunt",
+   "name_en": "Surly as a Squiggoth",
+   "name_zh": "壮如刺角兽",
+   "status": "encoded",
+   "effects": [
+    {
+     "phase": "wound",
+     "op": "modify",
+     "params": [
+      -1
+     ],
+     "source": "壮如刺角兽：被率领单位 S>T 攻击致伤 -1",
+     "condition": [
+      "wound_s_gt_t"
+     ]
+    }
+   ],
+   "requires_toggles": [
+    "defender_bearer_leading"
+   ],
+   "not_modeled_notes_zh": [],
+   "provenance": {
+    "current_text": "db enhancements.description id=000008868005",
+    "base_text": "Wahapedia 现文（PR14 工作单：11 版化后文本，FP 未触及或已滚入）",
+    "text_sha256": "cb5aea7e8ec91286abc5433be6d6479ed3ea5925471770b0cf70cf3fae3d4048"
+   },
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "enhancements",
+   "id": "000010712005",
+   "side": "attacker",
+   "detachment": "Freebooter Krew",
+   "name_en": "Razgit’s Magik Map",
+   "name_zh": "拉兹吉特魔法地图",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "拉兹吉特魔法地图：重新部署——部署无载体"
+   ],
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "enhancements",
+   "id": "000009795005",
+   "side": "attacker",
+   "detachment": "Taktikal Brigade",
+   "name_en": "Gob Boomer",
+   "name_zh": "戈布轰炸机",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "戈布轰炸机：Taktiks 射程——Taktiks 距离无载体"
+   ],
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "enhancements",
+   "id": "000008367005",
+   "side": "target",
+   "detachment": "War Horde",
+   "name_en": "Supa-Cybork Body",
+   "name_zh": "超级赛博兽人身躯",
+   "status": "encoded",
+   "effects": [
+    {
+     "phase": "fnp",
+     "op": "fnp",
+     "params": [
+      4
+     ],
+     "source": "超级赛博兽人身躯：携带者 FNP 4+"
+    }
+   ],
+   "requires_toggles": [
+    "defender_bearer_leading"
+   ],
+   "not_modeled_notes_zh": [],
+   "provenance": {
+    "current_text": "db enhancements.description id=000008367005",
+    "base_text": "Wahapedia 现文（PR14 工作单：11 版化后文本，FP 未触及或已滚入）",
+    "text_sha256": "91bdfba16e8dd0796ae744df6f17a3a96c2f99080545a6899328edf2f6bc2c6b"
+   },
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "enhancements",
+   "id": "000008885005",
+   "side": "attacker",
+   "detachment": "Bully Boyz",
+   "name_en": "Tellyporta",
+   "name_zh": "传送器",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "传送器：Deep Strike——深入打击无载体"
+   ],
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "enhancements",
+   "id": "000008872005",
+   "side": "attacker",
+   "detachment": "Kult of Speed",
+   "name_en": "Wazblasta",
+   "name_zh": "瓦兹炮",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "瓦兹炮：射击后移动——移动无载体"
+   ],
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "enhancements",
+   "id": "fp11e-ork-rollin-e1",
+   "side": "attacker",
+   "detachment": "Rollin' Deff",
+   "name_en": "Boarding Ramps",
+   "name_zh": "登舰坡道",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "登舰坡道：下车 +1 冲锋——冲锋骰无载体"
+   ],
+   "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "enhancements",
+   "id": "fp11e-ork-rollin-e2",
+   "side": "attacker",
+   "detachment": "Rollin' Deff",
+   "name_en": "Targetin' Gizmos",
+   "name_zh": "瞄准装置",
+   "status": "partial",
+   "effects": [
+    {
+     "phase": "save",
+     "op": "ignores_cover",
+     "params": [],
+     "source": "瞄准装置：本单位远程 [IGNORES COVER]",
+     "condition": [
+      "phase_shooting"
+     ]
+    }
+   ],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "需 BIG MEK 登载于本单位——按成立建模；Waaagh 时另 [SUSTAINED HITS 1] 分量不建模"
+   ],
+   "provenance": {
+    "current_text": "db enhancements.description id=fp11e-ork-rollin-e2",
+    "base_text": "Wahapedia 现文（PR14 工作单：11 版化后文本，FP 未触及或已滚入）",
+    "text_sha256": "99f0a81d88d8b33d61e47427e0aaed1f0d373650e646d5796a1ff656c1bc1b56"
+   },
+   "encoded_by": "manual-2026-07-19"
+  }
+ ]
+}
