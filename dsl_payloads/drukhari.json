@@ -1350,9 +1350,9 @@
      "phase": "hit",
      "op": "auto_wound",
      "params": [],
-     "source": "致命首秀：近战 [LETHAL HITS]",
+     "source": "致命首秀：本回合冲锋近战 [LETHAL HITS]",
      "condition": [
-      "phase_melee"
+      "melee_charging"
      ]
     },
     {
@@ -1361,9 +1361,9 @@
      "params": [
       1
      ],
-     "source": "致命首秀：Wyches 近战 AP +1",
+     "source": "致命首秀：Wyches 本回合冲锋近战 AP +1",
      "condition": [
-      "phase_melee"
+      "melee_charging"
      ]
     }
    ],

@@ -184,6 +184,18 @@ class TestAttackerFromPayload:
         r = _run(atk, _target(sv=4), Stance(phase="shooting"))
         assert _ratio(r.unsaved, r.wounds) == pytest.approx(2 / 3, abs=0.02)
 
+    def test_deadly_debut_lethal_charge_only(self, entries):
+        # 致命首秀：[LETHAL HITS] 限本回合冲锋（战略只可选本回合冲锋单位）。
+        # 冲锋 melee 生效（暴击命中自动致伤，vs T8 致伤率升）；非冲锋 melee 不生效
+        dd = _entry(entries, "000010581003")
+        atk, _, _ = inject_attacker(_attacker(_melee(ws=4, s=4)), [dd], frozenset())
+        chg = _run(atk, _target(t=8), Stance(phase="melee", charging=True))
+        no_chg = _run(atk, _target(t=8), Stance(phase="melee"))
+        base = _run(_attacker(_melee(s=4)), _target(t=8),
+                    Stance(phase="melee", charging=True))
+        assert _ratio(chg.wounds, chg.hits) > _ratio(base.wounds, base.hits) + 0.15
+        assert _ratio(no_chg.wounds, no_chg.hits) == pytest.approx(1 / 6, abs=0.02)
+
     def test_making_a_point_bs_and_ap(self, entries):
         # 证明观点：远程 BS+1 + AP+1。BS4→3+（2/3）；AP0→-1 打 Sv4（4+→5+，2/3）
         mp = _entry(entries, "000010589006")
