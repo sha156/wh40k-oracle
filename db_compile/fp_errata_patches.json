@@ -336,6 +336,24 @@
    "from": "20+\"",
    "to": "-",
    "src": "Faction Pack Drukhari page_007.md（去 Hover 后 M→'-'）"
+  },
+  {
+   "unit_id": "000000545",
+   "faction": "NEC",
+   "unit": "Doom Scythe",
+   "field": "m",
+   "from": "20+\"",
+   "to": "-",
+   "src": "Faction Pack Necrons page_029.md（Doom Scythe M→'-'）"
+  },
+  {
+   "unit_id": "000000544",
+   "faction": "NEC",
+   "unit": "Night Scythe",
+   "field": "m",
+   "from": "20+\"",
+   "to": "14\"",
+   "src": "Faction Pack Necrons page_029.md（Night Scythe M→14吋，改悬停）"
   }
  ],
  "new_units": [
@@ -649,6 +667,15 @@
     "Aircraft"
    ],
    "src": "Faction Pack Thousand Sons page_010.md（Heldrake Keywords: Remove 'AIRCRAFT'）"
+  },
+  {
+   "unit_id": "000000544",
+   "faction": "NEC",
+   "unit": "Night Scythe",
+   "remove": [
+    "Aircraft"
+   ],
+   "src": "Faction Pack Necrons page_029.md（Night Scythe Keywords: Remove 'AIRCRAFT'）"
   }
  ]
 }
