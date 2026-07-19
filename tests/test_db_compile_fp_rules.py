@@ -382,12 +382,14 @@ class TestInserts:
         #   of Change 三全新分队各 1 规则+3 战略+2 增强）
         # + 卡斯托迪斯 18 条（PR11：Might of the Moritoi / Silent Hunters /
         #   Tharanatoi Hammerblow 三全新分队各 1 规则+3 战略+2 增强）
+        # + 德鲁卡里 18 条（PR12：Exhibition of Slaughter / Kabalite Agonysts /
+        #   Tools of Torment 三全新分队各 1 规则+3 战略+2 增强）
         import json
         from pathlib import Path
         data = json.loads(Path("db_compile/fp_rules_patches.json").read_text(
             encoding="utf-8"))
         ins = data.get("inserts", [])
-        assert len(ins) == 114
+        assert len(ins) == 132
         ids = {p["values"]["id"] for p in ins}
         assert ids == {"fp11e-tau-aac-det", "fp11e-tau-aac-s1", "fp11e-tau-aac-s2",
                        "fp11e-tau-aac-s3", "fp11e-tau-aux-gbu",
@@ -445,7 +447,16 @@ class TestInserts:
                        "fp11e-ac-silent-s2", "fp11e-ac-silent-s3",
                        "fp11e-ac-tharanatoi", "fp11e-ac-tharanatoi-e1",
                        "fp11e-ac-tharanatoi-e2", "fp11e-ac-tharanatoi-s1",
-                       "fp11e-ac-tharanatoi-s2", "fp11e-ac-tharanatoi-s3"}
+                       "fp11e-ac-tharanatoi-s2", "fp11e-ac-tharanatoi-s3",
+                       "fp11e-dru-exhibition", "fp11e-dru-exhibition-e1",
+                       "fp11e-dru-exhibition-e2", "fp11e-dru-exhibition-s1",
+                       "fp11e-dru-exhibition-s2", "fp11e-dru-exhibition-s3",
+                       "fp11e-dru-agonysts", "fp11e-dru-agonysts-e1",
+                       "fp11e-dru-agonysts-e2", "fp11e-dru-agonysts-s1",
+                       "fp11e-dru-agonysts-s2", "fp11e-dru-agonysts-s3",
+                       "fp11e-dru-torment", "fp11e-dru-torment-e1",
+                       "fp11e-dru-torment-e2", "fp11e-dru-torment-s1",
+                       "fp11e-dru-torment-s2", "fp11e-dru-torment-s3"}
         for p in ins:
             assert p.get("fp_source")
             assert p["values"].get("id", "").startswith("fp11e-")
