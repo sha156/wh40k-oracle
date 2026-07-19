@@ -1000,6 +1000,42 @@
    "to_text": "<span class=\"kwb\">GREY</span> <span class=\"kwb\">KNIGHTS</span> model only. You can target this unit with the Heroic Intervention Stratagem, regardless of any other uses of that Stratagem this phase. If you do:<br><ul><li>That use is -1CP.</li><li>That use does not prevent any uses of that Stratagem on other units this phase.</li></ul>",
    "fp_source": "Faction Pack Grey Knights page_009.md（Rules Updates：Hallowed Conclave / Eye of the Augurium 改写）",
    "synthesis": "Eye of the Augurium 整改：旧「每战轮 Fire Overwatch/Heroic Intervention 0CP」→ 11 版「Heroic Intervention 无视本阶段其他用例，-1CP 且不阻其他单位使用」"
+  },
+  {
+   "table": "detachments",
+   "column": "rule_text",
+   "id": "000009850",
+   "fp_source": "Faction Pack Space Wolves page_002.md（11 版 CoF 完整重印，Wahapedia 仍十版旧文）",
+   "synthesis": "CoF 分队规则同名重印（The Great Wolf Watches）：十版 Terminator OC + 反击 → 11 版 INFANTRY CHARACTER 的 Countercharge（英雄干预不占次数）整段替换",
+   "from_text": "At the end of your opponent’s Charge phase, each Adeptus Astartes Infantry and Adeptus Astartes Walker unit from your army that is within 3\" of one or more enemy units and would be eligible to declare a charge against one or more of those units can declare a charge against one or more of those units, and you resolve that charge as if it were your Charge phase. If that charge is successful, your unit does not receive any Charge bonus this turn.<br><br>While Adeptus Astartes Terminator units from your army are not Battle-shocked, add 1 to the Objective Control characteristic of models in those units.<br><br><span class=\"hi_custom\">RESTRICTIONS</span><br>Your army can include Space Wolves units, but it cannot include any <span class=\"kwb\">ADEPTUS</span> <span class=\"kwb\">ASTARTES</span> units drawn from any other Chapter.",
+   "to_text": "Friendly <span class=\"kwb\">ADEPTUS</span> <span class=\"kwb\">ASTARTES</span> <span class=\"kwb\">INFANTRY</span> <span class=\"kwb\">CHARACTER</span> units have the following ability:<br><br><b>Countercharge:</b> (Once per battle round, per unit) You can target this unit with the Heroic Intervention stratagem, regardless of any other uses of that stratagem this phase. If you do:<br>- That use does not prevent any uses of that stratagem on other units this phase.<br><br><span class=\"hi_custom\">RESTRICTIONS</span><br>Your army can include SPACE WOLVES units, but it cannot include any ADEPTUS ASTARTES units drawn from any other Chapter."
+  },
+  {
+   "table": "enhancements",
+   "column": "description",
+   "id": "000010660002",
+   "fp_source": "Faction Pack Space Wolves page_006.md（Saga of the Great Wolf 重印真漂移）",
+   "synthesis": "Grimnar's Mark 重印真漂移：十版 0CP + 从第二轮起 + 可挂 WGT → 11 版 -1CP + 每轮一次 + 不占其它单位次数（删『可编队挂载』句）",
+   "from_text": "Adeptus Astartes Terminator Captain model only. Once per battle round, from the second battle round onwards, you can target the bearer’s unit with the Rapid Ingress or Heroic Intervention Stratagem for 0CP, and can do so even if you have already targeted a different unit with that Stratagem this turn.<br><br>In the Declare Battle Formations step, the bearer can be attached to a Wolf Guard Terminators unit.",
+   "to_text": "Adeptus Astartes Terminator Captain model only. Once per battle round, you can target this unit with the Rapid Ingress or Heroic Intervention stratagem, regardless of any other uses of that stratagem this phase. If you do:<br>- That use is -1 CP.<br>- That use does not prevent any uses of that stratagem on other units this phase."
+  },
+  {
+   "table": "stratagems",
+   "column": "text_zh",
+   "id": "000010270006",
+   "fp_source": "Faction Pack Space Wolves page_010.md RULES UPDATES：Impetuosity Stratagem, Effect Section",
+   "synthesis": "Impetuosity EFFECT 整替：十版自带流程 Impetuous move → 11 版核心 surge move D6\"",
+   "from_text": "<b>WHEN:</b> Your opponent’s Shooting phase, just after an enemy unit has selected its targets.<br><br><b>TARGET:</b> One Wulfen Infantry or Blood Claws unit from your army that was selected as the target of one or more of the attacking unit’s attacks.<br><br><b>EFFECT:</b> Until the end of the phase, after that enemy unit has shot, if one or more models in your unit were destroyed as a result of those attacks, your unit can make an Impetuous move. To do so, roll one D6: your unit can be moved a number of inches up to the result, but your unit must end that move as close as possible to the closest enemy unit (excluding <span class=\"kwb\">AIRCRAFT</span>). When doing so, those models can be moved within Engagement Range of that enemy unit.",
+   "to_text": "<b>WHEN:</b> Your opponent's Shooting phase, just after an enemy unit has selected its targets.<br><br><b>TARGET:</b> One Wulfen Infantry or Blood Claws unit from your army that was selected as the target of one or more of the attacking unit's attacks.<br><br><b>EFFECT:</b> Your unit can make a surge move of up to D6\"."
+  },
+  {
+   "table": "stratagems",
+   "column": "text_zh",
+   "id": "000010270005",
+   "fp_source": "Faction Pack Space Wolves page_010.md RULES UPDATES：Thunderous Pursuit Stratagem, Target Section（9\"→8\"）",
+   "synthesis": "Thunderous Pursuit TARGET 距离 9\"→8\" 外科替换",
+   "from_text": "<b>WHEN:</b> Your opponent’s Movement phase, just after an enemy unit ends a Normal, Advance or Fall Back move.<br><br><b>TARGET:</b> One <span class=\"kwb\">ADEPTUS</span> <span class=\"kwb\">ASTARTES</span> unit from your army that is within 9\" of that enemy unit and not within Engagement Range of one or more enemy units.<br><br><b>EFFECT:</b> Your unit can make a Normal move of up to D6\". If your unit has the Space Wolves Infantry or Thunderwolf Cavalry keywords, it can make a Normal move of up to 6\" instead.",
+   "to_text": "<b>WHEN:</b> Your opponent's Movement phase, just after an enemy unit ends a Normal, Advance or Fall Back move.<br><br><b>TARGET:</b> One <span class=\"kwb\">ADEPTUS</span> <span class=\"kwb\">ASTARTES</span> unit from your army that is within 8\" of that enemy unit and not within Engagement Range of one or more enemy units.<br><br><b>EFFECT:</b> Your unit can make a Normal move of up to D6\". If your unit has the Space Wolves Infantry or Thunderwolf Cavalry keywords, it can make a Normal move of up to 6\" instead."
   }
  ],
  "name_patches": [
@@ -3543,6 +3579,76 @@
    "name_en": "Rejuvenating Swarm",
    "status": "removed_11e",
    "fp_source": "Faction Pack Death Guard page_003.md（完整重印未收录；Paragons 同名新增强效果不同走 inserts 新行）"
+  },
+  {
+   "table": "stratagems",
+   "id": "000009852002",
+   "name_en": "PREYTAKER'S EYE",
+   "status": "removed_11e",
+   "fp_source": "Faction Pack Space Wolves page_002.md（11 版 CoF 完整重印，Wahapedia 仍十版旧文）（旧 Champions of Fenris 条目，11 版 CoF 重印未收录）"
+  },
+  {
+   "table": "stratagems",
+   "id": "000009852003",
+   "name_en": "ARMOUR OF CONTEMPT",
+   "status": "removed_11e",
+   "fp_source": "Faction Pack Space Wolves page_002.md（11 版 CoF 完整重印，Wahapedia 仍十版旧文）（旧 Champions of Fenris 条目，11 版 CoF 重印未收录）"
+  },
+  {
+   "table": "stratagems",
+   "id": "000009852004",
+   "name_en": "RUNES OF CLAIMING",
+   "status": "removed_11e",
+   "fp_source": "Faction Pack Space Wolves page_002.md（11 版 CoF 完整重印，Wahapedia 仍十版旧文）（旧 Champions of Fenris 条目，11 版 CoF 重印未收录）"
+  },
+  {
+   "table": "stratagems",
+   "id": "000009852005",
+   "name_en": "CHILLING HOWL",
+   "status": "removed_11e",
+   "fp_source": "Faction Pack Space Wolves page_002.md（11 版 CoF 完整重印，Wahapedia 仍十版旧文）（旧 Champions of Fenris 条目，11 版 CoF 重印未收录）"
+  },
+  {
+   "table": "stratagems",
+   "id": "000009852006",
+   "name_en": "STALKING WOLVES",
+   "status": "removed_11e",
+   "fp_source": "Faction Pack Space Wolves page_002.md（11 版 CoF 完整重印，Wahapedia 仍十版旧文）（旧 Champions of Fenris 条目，11 版 CoF 重印未收录）"
+  },
+  {
+   "table": "stratagems",
+   "id": "000009852007",
+   "name_en": "ONRUSHING STORM",
+   "status": "removed_11e",
+   "fp_source": "Faction Pack Space Wolves page_002.md（11 版 CoF 完整重印，Wahapedia 仍十版旧文）（旧 Champions of Fenris 条目，11 版 CoF 重印未收录）"
+  },
+  {
+   "table": "enhancements",
+   "id": "000009851002",
+   "name_en": "Wolves' Wisdom",
+   "status": "removed_11e",
+   "fp_source": "Faction Pack Space Wolves page_002.md（11 版 CoF 完整重印，Wahapedia 仍十版旧文）（旧 Champions of Fenris 条目，11 版 CoF 重印未收录）"
+  },
+  {
+   "table": "enhancements",
+   "id": "000009851003",
+   "name_en": "Foes' Fate",
+   "status": "removed_11e",
+   "fp_source": "Faction Pack Space Wolves page_002.md（11 版 CoF 完整重印，Wahapedia 仍十版旧文）（旧 Champions of Fenris 条目，11 版 CoF 重印未收录）"
+  },
+  {
+   "table": "enhancements",
+   "id": "000009851004",
+   "name_en": "Fangrune Pendant",
+   "status": "removed_11e",
+   "fp_source": "Faction Pack Space Wolves page_002.md（11 版 CoF 完整重印，Wahapedia 仍十版旧文）（旧 Champions of Fenris 条目，11 版 CoF 重印未收录）"
+  },
+  {
+   "table": "enhancements",
+   "id": "000009851005",
+   "name_en": "Longstrider",
+   "status": "removed_11e",
+   "fp_source": "Faction Pack Space Wolves page_002.md（11 版 CoF 完整重印，Wahapedia 仍十版旧文）（旧 Champions of Fenris 条目，11 版 CoF 重印未收录）"
   }
  ],
  "_inserts_comment": "P7-PR4 fp_new 补录（2026-07-16）：FP 有、Wahapedia/DB 无的整条目。AAC 整分队（1 规则行 + 3 战略 + 2 增强，id 前缀 fp11e- 标 synthetic 溯源，增强点数 FP/MFM 均无源诚实置 NULL）+ Auxiliary Cadre 新战略 Guided by Unity。守卫：同 id 幂等/名字不符让路；同名异 id（上游将来自补）让路告警不留双胞胎；stratagems/enhancements 插入行标 fp_status='added_11e'。",
@@ -6083,6 +6189,240 @@
     "cp_cost": "1",
     "phase": "Movement phase",
     "text_zh": "<b>WHEN:</b> Your opponent's Movement phase, when an enemy unit that was engaged with a friendly <span class=\"kwb\">INTERCEPTOR</span> <span class=\"kwb\">SQUAD</span> unit ends a fall-back move, if that <span class=\"kwb\">INTERCEPTOR</span> <span class=\"kwb\">SQUAD</span> unit is unengaged.<br><br><b>TARGET:</b> That <span class=\"kwb\">INTERCEPTOR</span> <span class=\"kwb\">SQUAD</span> unit.<br><br><b>EFFECT:</b> Your unit can make a normal move of up to D3+3\"."
+   }
+  },
+  {
+   "table": "stratagems",
+   "fp_source": "Faction Pack Space Wolves page_002.md（11 版 CoF 完整重印，Wahapedia 仍十版旧文）",
+   "values": {
+    "id": "fp11e-sw-fenris-s1",
+    "faction": "SM",
+    "detachment": "Champions of Fenris",
+    "name_zh": "狼图腾",
+    "name_en": "Wolf Totems",
+    "cp_cost": "1",
+    "phase": "Any phase",
+    "text_zh": "<b>WHEN:</b> Any phase, when a friendly ADEPTUS ASTARTES INFANTRY CHARACTER unit suffers a mortal wound.<br><br><b>TARGET:</b> That ADEPTUS ASTARTES INFANTRY CHARACTER unit.<br><br><b>EFFECT:</b> Your unit has Feel No Pain 5+ against mortal wounds."
+   }
+  },
+  {
+   "table": "stratagems",
+   "fp_source": "Faction Pack Space Wolves page_002.md（11 版 CoF 完整重印，Wahapedia 仍十版旧文）",
+   "values": {
+    "id": "fp11e-sw-fenris-s2",
+    "faction": "SM",
+    "detachment": "Champions of Fenris",
+    "name_zh": "宣索符文",
+    "name_en": "Runes of Claiming",
+    "cp_cost": "1",
+    "phase": "Movement phase",
+    "text_zh": "<b>WHEN:</b> End of your Movement phase.<br><br><b>TARGET:</b> One friendly ADEPTUS ASTARTES INFANTRY CHARACTER unit.<br><br><b>EFFECT:</b> Select one objective your unit is controlling. That objective is secured."
+   },
+   "expect_duplicate_name": true,
+   "_dup_note": "旧同名 RUNES OF CLAIMING 000009852004 已 removed_11e，11 版为不同措辞的同名重印，豁免同名守卫"
+  },
+  {
+   "table": "stratagems",
+   "fp_source": "Faction Pack Space Wolves page_002.md（11 版 CoF 完整重印，Wahapedia 仍十版旧文）",
+   "values": {
+    "id": "fp11e-sw-fenris-s3",
+    "faction": "SM",
+    "detachment": "Champions of Fenris",
+    "name_zh": "界隙潜行",
+    "name_en": "Stalk Between Worlds",
+    "cp_cost": "1",
+    "phase": "Shooting phase",
+    "text_zh": "<b>WHEN:</b> Your opponent's Shooting phase, when an enemy unit targets a friendly ADEPTUS ASTARTES INFANTRY CHARACTER unit.<br><br><b>TARGET:</b> That ADEPTUS ASTARTES INFANTRY CHARACTER unit.<br><br><b>EFFECT:</b> Your unit has Stealth."
+   }
+  },
+  {
+   "table": "enhancements",
+   "fp_source": "Faction Pack Space Wolves page_002.md（11 版 CoF 完整重印，Wahapedia 仍十版旧文）",
+   "values": {
+    "id": "fp11e-sw-fenris-e1",
+    "faction_id": "SM",
+    "detachment_id": "000001008",
+    "detachment_name": "Champions of Fenris",
+    "name": "A Giant Amongst Giants",
+    "cost": null,
+    "legend": "点数未知：FP 不含点数，MFM 缓存无增强数据（诚实置空，勿猜）",
+    "description": "ADEPTUS ASTARTES INFANTRY model only.<br>- This model has +2 W.<br>- This model's melee attacks have +1 S."
+   }
+  },
+  {
+   "table": "enhancements",
+   "fp_source": "Faction Pack Space Wolves page_002.md（11 版 CoF 完整重印，Wahapedia 仍十版旧文）",
+   "values": {
+    "id": "fp11e-sw-fenris-e2",
+    "faction_id": "SM",
+    "detachment_id": "000001008",
+    "detachment_name": "Champions of Fenris",
+    "name": "Preyslayer",
+    "cost": null,
+    "legend": "点数未知：FP 不含点数，MFM 缓存无增强数据（诚实置空，勿猜）",
+    "description": "ADEPTUS ASTARTES INFANTRY model only. This unit can re-roll advance rolls and countercharge rolls."
+   }
+  },
+  {
+   "table": "detachments",
+   "fp_source": "Faction Pack Space Wolves page_003.md（11 版全新分队，Wahapedia 无源）",
+   "values": {
+    "id": "fp11e-sw-legends-det",
+    "faction": "SM",
+    "name_zh": "大步冲锋",
+    "name_en": "Loping Charge",
+    "rule_text": "Friendly <span class=\"kwb\">ADEPTUS</span> <span class=\"kwb\">ASTARTES</span> <span class=\"kwb\">TERMINATOR</span> units have +1 to charge rolls.<br><br><span class=\"hi_custom\">RESTRICTIONS</span><br>Your army can include SPACE WOLVES units, but it cannot include any ADEPTUS ASTARTES units drawn from any other Chapter."
+   }
+  },
+  {
+   "table": "stratagems",
+   "fp_source": "Faction Pack Space Wolves page_003.md（11 版全新分队，Wahapedia 无源）",
+   "values": {
+    "id": "fp11e-sw-legends-s1",
+    "faction": "SM",
+    "detachment": "Legends of Saga and Song",
+    "name_zh": "群狼獠牙",
+    "name_en": "FANGS OF THE PACK",
+    "cp_cost": "1",
+    "phase": "Fight phase",
+    "text_zh": "<b>WHEN:</b> Fight phase, when a friendly ADEPTUS ASTARTES TERMINATOR unit is selected to fight.<br><br><b>TARGET:</b> That ADEPTUS ASTARTES TERMINATOR unit.<br><br><b>EFFECT:</b> Your unit's melee attacks have [PRECISION]."
+   }
+  },
+  {
+   "table": "stratagems",
+   "fp_source": "Faction Pack Space Wolves page_003.md（11 版全新分队，Wahapedia 无源）",
+   "values": {
+    "id": "fp11e-sw-legends-s2",
+    "faction": "SM",
+    "detachment": "Legends of Saga and Song",
+    "name_zh": "彻骨长嚎",
+    "name_en": "CHILLING HOWL",
+    "cp_cost": "1",
+    "phase": "Command phase",
+    "text_zh": "<b>WHEN:</b> Your opponent's Command phase.<br><br><b>TARGET:</b> One friendly WOLF GUARD TERMINATORS unit.<br><br><b>EFFECT:</b> Select one enemy unit within 6\" of your unit. That enemy unit makes a battle-shock roll, with -1 to that battle-shock roll if that enemy unit is at or below half-strength."
+   }
+  },
+  {
+   "table": "stratagems",
+   "fp_source": "Faction Pack Space Wolves page_003.md（11 版全新分队，Wahapedia 无源）",
+   "values": {
+    "id": "fp11e-sw-legends-s3",
+    "faction": "SM",
+    "detachment": "Legends of Saga and Song",
+    "name_zh": "暴雪之翼",
+    "name_en": "WINGS OF THE BLIZZARD",
+    "cp_cost": "1",
+    "phase": "Fight phase",
+    "text_zh": "<b>WHEN:</b> End of your opponent's Fight phase.<br><br><b>TARGET:</b> One friendly unengaged ADEPTUS ASTARTES TERMINATOR unit.<br><br><b>EFFECT:</b> Place your unit in strategic reserves."
+   }
+  },
+  {
+   "table": "enhancements",
+   "fp_source": "Faction Pack Space Wolves page_003.md（11 版全新分队，Wahapedia 无源）",
+   "values": {
+    "id": "fp11e-sw-legends-e1",
+    "faction_id": "SM",
+    "detachment_id": "fp11e-sw-legends",
+    "detachment_name": "Legends of Saga and Song",
+    "name": "Thirst for Glory",
+    "cost": null,
+    "legend": "点数未知：FP 不含点数，MFM 缓存无增强数据（诚实置空，勿猜）",
+    "description": "ADEPTUS ASTARTES TERMINATOR model only. This unit has +1 OC."
+   }
+  },
+  {
+   "table": "enhancements",
+   "fp_source": "Faction Pack Space Wolves page_003.md（11 版全新分队，Wahapedia 无源）",
+   "values": {
+    "id": "fp11e-sw-legends-e2",
+    "faction_id": "SM",
+    "detachment_id": "fp11e-sw-legends",
+    "detachment_name": "Legends of Saga and Song",
+    "name": "Fierce Example",
+    "cost": null,
+    "legend": "点数未知：FP 不含点数，MFM 缓存无增强数据（诚实置空，勿猜）",
+    "description": "WOLF GUARD TERMINATORS unit only. This unit has +1 T."
+   }
+  },
+  {
+   "table": "detachments",
+   "fp_source": "Faction Pack Space Wolves page_004.md（11 版全新分队，Wahapedia 无源）",
+   "values": {
+    "id": "fp11e-sw-fang-det",
+    "faction": "SM",
+    "name_zh": "灰鬃老将",
+    "name_en": "Old Greymanes",
+    "rule_text": "- When a friendly GREY HUNTER unit starts an action, that action does not prevent this unit from being eligible to shoot.<br>- In the Declare Battle Formations step, you can split a friendly GREY HUNTERS unit into two units, each with a starting strength of 5.<br><br><span class=\"hi_custom\">RESTRICTIONS</span><br>Your army can include SPACE WOLVES units, but it cannot include any ADEPTUS ASTARTES units drawn from any other Chapter."
+   }
+  },
+  {
+   "table": "stratagems",
+   "fp_source": "Faction Pack Space Wolves page_004.md（11 版全新分队，Wahapedia 无源）",
+   "values": {
+    "id": "fp11e-sw-fang-s1",
+    "faction": "SM",
+    "detachment": "Veterans of the Fang",
+    "name_zh": "沙场老杀手",
+    "name_en": "GRIZZLED KILLERS",
+    "cp_cost": "1",
+    "phase": "Fight phase",
+    "text_zh": "<b>WHEN:</b> Fight phase, when a friendly GREY HUNTERS unit is selected to fight.<br><br><b>TARGET:</b> That GREY HUNTERS unit.<br><br><b>EFFECT:</b> Your unit's melee attacks have:<br>- [SUSTAINED HITS 1].<br>- OR: [LETHAL HITS]."
+   }
+  },
+  {
+   "table": "stratagems",
+   "fp_source": "Faction Pack Space Wolves page_004.md（11 版全新分队，Wahapedia 无源）",
+   "values": {
+    "id": "fp11e-sw-fang-s2",
+    "faction": "SM",
+    "detachment": "Veterans of the Fang",
+    "name_zh": "寒冰沉着",
+    "name_en": "ICY CALM",
+    "cp_cost": "1",
+    "phase": "Movement phase",
+    "text_zh": "<b>WHEN:</b> Your Movement phase, when a friendly GREY HUNTERS unit is selected to make an advance/fall-back move.<br><br><b>TARGET:</b> That GREY HUNTERS unit.<br><br><b>EFFECT:</b> That move does not prevent your unit from being eligible to start an action."
+   }
+  },
+  {
+   "table": "stratagems",
+   "fp_source": "Faction Pack Space Wolves page_004.md（11 版全新分队，Wahapedia 无源）",
+   "values": {
+    "id": "fp11e-sw-fang-s3",
+    "faction": "SM",
+    "detachment": "Veterans of the Fang",
+    "name_zh": "锐感如刃",
+    "name_en": "BLADE-KEEN SENSES",
+    "cp_cost": "1",
+    "phase": "Shooting phase",
+    "text_zh": "<b>WHEN:</b> Start of your Shooting phase.<br><br><b>TARGET:</b> One friendly unengaged GREY HUNTERS unit.<br><br><b>EFFECT:</b> Select one visible enemy unit within 24\" of your unit. That enemy unit has +6\" detection range."
+   }
+  },
+  {
+   "table": "enhancements",
+   "fp_source": "Faction Pack Space Wolves page_004.md（11 版全新分队，Wahapedia 无源）",
+   "values": {
+    "id": "fp11e-sw-fang-e1",
+    "faction_id": "SM",
+    "detachment_id": "fp11e-sw-fang",
+    "detachment_name": "Veterans of the Fang",
+    "name": "Eye of the Hunter",
+    "cost": null,
+    "legend": "点数未知：FP 不含点数，MFM 缓存无增强数据（诚实置空，勿猜）",
+    "description": "WOLF GUARD BATTLE LEADER model only. This unit's ranged attacks have:<br>- [ASSAULT].<br>- [IGNORES COVER].<br>- +1 AP."
+   }
+  },
+  {
+   "table": "enhancements",
+   "fp_source": "Faction Pack Space Wolves page_004.md（11 版全新分队，Wahapedia 无源）",
+   "values": {
+    "id": "fp11e-sw-fang-e2",
+    "faction_id": "SM",
+    "detachment_id": "fp11e-sw-fang",
+    "detachment_name": "Veterans of the Fang",
+    "name": "Weaver of Sagas",
+    "cost": null,
+    "legend": "点数未知：FP 不含点数，MFM 缓存无增强数据（诚实置空，勿猜）",
+    "description": "WOLF PRIEST model only. (Once per battle-round, per army) In your Movement phase, at the start or end of this unit's move, you can:<br>- Select one friendly ADEPTUS ASTARTES unit within 6\" of this unit. That unit is no longer battle-shocked.<br>- Or: Select one friendly GREY HUNTERS unit within 18\" of this unit. That unit is no longer battle-shocked."
    }
   }
  ]
