@@ -114,5 +114,12 @@ fp_new 走 inserts 补录（fp11e- 前缀 synthetic id）。
   源即如此，照录不消歧
 - Nurgle's Gift 军规 CONTAGION RANGE 节是 Wahapedia 图片（3 张 img），12" 上限句
   插在图片段与 AFFLICTED 节之间的文本位
-- 审查 MEDIUM 备忘（沿 PR6）：sequence.py 已近 800 行——本 PR 新通道若需动
-  sequence 先评估拆分（PR6 备忘的候选：_gather_params/_resolve_weapon 外移）
+- sequence.py 行数备忘已清账：#40 拆分后 415 行（effect_params 独立），PR6 的
+  800 行预警不再适用；本 PR t_final 改动落 sequence 无压力
+- **审查 MEDIUM 前提备忘（PR9+ 编码者必读）**：骨疽疟「Sv 恶化 1」以攻方
+  ap_improve+1 等价编码——等价性依赖当前引擎护甲式 armor = sv − sv_improve −
+  ap + ap_improve 的加法对称且特保两侧都不动；**将来任何直接读目标 Sv 特征值
+  的条件/效果入库时（如 "if Sv is X+"），须先复核该等价是否仍成立**
+- 审查 LOW 惯例观察：bearer_leading 开关被复用为「opt-in 前提已满足」的泛化门
+  （超级病源的目标点前提等），UI 文案与具体前提不符但注记已披露——沿
+  PR5/PR6 既有惯例；若继续跨阵营复发可考虑改中性名（不阻塞）
