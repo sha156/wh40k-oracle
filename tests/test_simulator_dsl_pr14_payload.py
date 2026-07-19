@@ -194,12 +194,15 @@ class TestDefensiveFromPayload:
         r = _run(_attacker(_gun(ap=-3)), tgt, Stance(phase="shooting"))
         assert _ratio(r.unsaved, r.wounds) == pytest.approx(5 / 6, abs=0.02)
 
-    def test_hulking_brutes_ap_worsen(self, entries):
-        # 巨兽蛮汉：攻击 AP 恶化 1。AP-1 打 Sv4（5+，2/3）→ AP0（4+，1/2）
+    def test_hulking_brutes_ap_worsen_shooting_only(self, entries):
+        # 巨兽蛮汉：攻击 AP 恶化 1（仅对方射击阶段）。射击 AP-1 打 Sv4（5+，2/3）→
+        # AP0（4+，1/2）；近战阶段不生效（AP-1 维持 2/3）
         hb = _entry(entries, "000008886007")
         tgt, _, _ = inject_target(_target(sv=4), [hb], frozenset())
-        r = _run(_attacker(_melee(ap=-1)), tgt, Stance(phase="melee"))
-        assert _ratio(r.unsaved, r.wounds) == pytest.approx(1 / 2, abs=0.02)
+        shoot = _run(_attacker(_gun(ap=-1)), tgt, Stance(phase="shooting"))
+        melee = _run(_attacker(_melee(ap=-1)), tgt, Stance(phase="melee"))
+        assert _ratio(shoot.unsaved, shoot.wounds) == pytest.approx(1 / 2, abs=0.02)
+        assert _ratio(melee.unsaved, melee.wounds) == pytest.approx(2 / 3, abs=0.02)
 
     def test_ard_as_nails_wound_minus_one(self, entries):
         # 坚如磐石：攻击本单位致伤 -1。S4 vs T4（4+，1/2）→ 5+（1/3）

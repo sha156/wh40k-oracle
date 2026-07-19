@@ -466,7 +466,10 @@
      "params": [
       -1
      ],
-     "source": "巨兽蛮汉：攻击本单位 AP 恶化 1"
+     "source": "巨兽蛮汉：攻击本单位 AP 恶化 1（对方射击阶段）",
+     "condition": [
+      "phase_shooting"
+     ]
     }
    ],
    "requires_toggles": [],
@@ -718,7 +721,10 @@
      "params": [
       1
      ],
-     "source": "额外配件：分配到本单位的攻击伤害 -1"
+     "source": "额外配件：分配到本单位的攻击伤害 -1（对方射击阶段）",
+     "condition": [
+      "phase_shooting"
+     ]
     }
    ],
    "requires_toggles": [],

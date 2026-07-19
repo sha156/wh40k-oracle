@@ -24,6 +24,7 @@ iteration … all new"）vs `db/wh40k.sqlite`（faction='ORK'）。体裁沿 PR1
 | 行 | 判定 | 说明 |
 |---|---|---|
 | detachments 000008867 Da Hunt Is On（Da Big Hunt） | drifted | 第一 bullet 整改：旧「冲锋含 Prey 即重骰」→ **「Prey 12"内 → 重骰 + 须终于与 Prey 接战」**（嵌套结构） |
+| detachments 000008875 Try Dat Button（Dread Mob） | drifted | 末段多来源 [HAZARDOUS] 危险测试失败 `1或2` → **`1-3`**（审查 MEDIUM 补落：取库现 rule_text 精确 .replace 保留 HTML 表格，规避全文重构风险） |
 | detachments 000008875 Try Dat Button（Dread Mob） | drifted | 末段：多来源 [HAZARDOUS] 危险测试失败判定 `1或2` → **`1-3`** |
 | stratagems 000008869004 Dat One's Even Bigga!（Da Big Hunt） | drifted | EFFECT：旧「重骰须一目标为 Prey」→ **「重骰后须终于与 Prey 接战」** |
 | stratagems 000008882007 Go Get 'Em!（Green Tide） | drifted | EFFECT 整改：旧「Roll D6 移动至最近敌·10+ 重骰」→ **「surge move D6"」** |
@@ -44,7 +45,9 @@ iteration … all new"）vs `db/wh40k.sqlite`（faction='ORK'）。体裁沿 PR1
 
 **观察项（不落库，datasheet ability RAG 层次要，非 DSL 阻塞，留后续）**：① FRAME 关键字
 ×8（Battlewagon/Blitza/Burna/Dakkajet/Hunta Rig/Kill Rig/Stompa/Trukk）——机制只删不加；
-② Boss Snikrot Red Skulls/Kunnin' Infiltrator、Big Mek Shokk-boosta（+terrain/desperate
+② 4 飞机 OC——FP 印「OC→'-'」但全库无-OC 一律存 '0'（Heldrake/Doom Scythe 同例），
+DB 约定即 '0'、引擎不消费 OC，功能等价保留（审查 LOW，非「已 '-'」而是「按约定 '0'」）；
+③ Boss Snikrot Red Skulls/Kunnin' Infiltrator、Big Mek Shokk-boosta（+terrain/desperate
 escape 细节）、Boyz Bodyguard（双领袖）、Bomb Squigs 整改、Battlewagon/Stompa transport
 容量、Wartrakk 去 Core/Support 段——datasheet ability/元数据层，本 PR 未逐条落，记观察。
 
