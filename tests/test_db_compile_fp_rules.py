@@ -397,7 +397,7 @@ class TestInserts:
         data = json.loads(Path("db_compile/fp_rules_patches.json").read_text(
             encoding="utf-8"))
         ins = data.get("inserts", [])
-        assert len(ins) == 206
+        assert len(ins) == 219
         ids = {p["values"]["id"] for p in ins}
         assert ids == {"fp11e-tau-aac-det", "fp11e-tau-aac-s1", "fp11e-tau-aac-s2",
                        "fp11e-tau-aac-s3", "fp11e-tau-aux-gbu",
@@ -501,7 +501,14 @@ class TestInserts:
                        "fp11e-da-darkflight-s2", "fp11e-da-darkflight-s3",
                        "fp11e-da-conclave", "fp11e-da-conclave-e1",
                        "fp11e-da-conclave-e2", "fp11e-da-conclave-s1",
-                       "fp11e-da-conclave-s2", "fp11e-da-conclave-s3"}
+                       "fp11e-da-conclave-s2", "fp11e-da-conclave-s3",
+                       "fp11e-spacemarines-fulguris", "fp11e-spacemarines-fulguris-e1",
+                       "fp11e-spacemarines-fulguris-e2", "fp11e-spacemarines-fulguris-s1",
+                       "fp11e-spacemarines-fulguris-s2", "fp11e-spacemarines-fulguris-s3",
+                       "fp11e-spacemarines-subversion", "fp11e-spacemarines-subversion-e1",
+                       "fp11e-spacemarines-subversion-e2", "fp11e-spacemarines-subversion-s1",
+                       "fp11e-spacemarines-subversion-s2", "fp11e-spacemarines-subversion-s3",
+                       "fp11e-spacemarines-bastion-s6"}
         for p in ins:
             assert p.get("fp_source")
             assert p["values"].get("id", "").startswith("fp11e-")
