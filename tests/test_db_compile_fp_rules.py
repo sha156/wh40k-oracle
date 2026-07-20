@@ -398,8 +398,10 @@ class TestInserts:
             encoding="utf-8"))
         # + 帝国骑士 12 条（PR21：Dominus Foebreakers / Throne-bonded Outriders
         #   两全新分队各 1 规则+2 增强+3 战略）
+        # + 沃坦联盟 18 条（PR24：Armoured Trailblazers / Farseekers / Hearthguard
+        #   Covenant 三全新分队各 1 规则+2 增强+3 战略；FP 页 2/3/4，Wahapedia 未滚入）
         ins = data.get("inserts", [])
-        assert len(ins) == 231
+        assert len(ins) == 249
         ids = {p["values"]["id"] for p in ins}
         assert ids == {"fp11e-tau-aac-det", "fp11e-tau-aac-s1", "fp11e-tau-aac-s2",
                        "fp11e-tau-aac-s3", "fp11e-tau-aux-gbu",
@@ -522,7 +524,25 @@ class TestInserts:
                        "fp11e-imperialknights-throne-e2",
                        "fp11e-imperialknights-throne-s1",
                        "fp11e-imperialknights-throne-s2",
-                       "fp11e-imperialknights-throne-s3"}
+                       "fp11e-imperialknights-throne-s3",
+                       "fp11e-votann-trailblazers",
+                       "fp11e-votann-trailblazers-e1",
+                       "fp11e-votann-trailblazers-e2",
+                       "fp11e-votann-trailblazers-s1",
+                       "fp11e-votann-trailblazers-s2",
+                       "fp11e-votann-trailblazers-s3",
+                       "fp11e-votann-farseekers",
+                       "fp11e-votann-farseekers-e1",
+                       "fp11e-votann-farseekers-e2",
+                       "fp11e-votann-farseekers-s1",
+                       "fp11e-votann-farseekers-s2",
+                       "fp11e-votann-farseekers-s3",
+                       "fp11e-votann-hearthguard",
+                       "fp11e-votann-hearthguard-e1",
+                       "fp11e-votann-hearthguard-e2",
+                       "fp11e-votann-hearthguard-s1",
+                       "fp11e-votann-hearthguard-s2",
+                       "fp11e-votann-hearthguard-s3"}
         for p in ins:
             assert p.get("fp_source")
             assert p["values"].get("id", "").startswith("fp11e-")

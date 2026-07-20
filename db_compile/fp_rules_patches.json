@@ -1030,6 +1030,26 @@
    "to_text": "INqUISITOR model only. Once per battle, if the bearer is on the battlefield, you can use the Rapid Ingress Stratagem for 0CP. When doing so, you must target a GREy KNIGHTS TERMINATOR SqUAD unit from your army, and when using that Stratagem, that unit can be set up anywhere on the battlefield that is more than 6\" away from all enemy units.",
    "fp_source": "Faction Pack Imperial Agents page_010.md（Rules Updates → Daemon Hunters Detachment → Gift of the Prescient Enhancement：3\"→6\"）",
    "synthesis": "change-list应用：唯一实质差异几何 3\"→6\"，其余保持 DB 原文；Truesilver Armour 库现文即「worsen AP by 1」已 11 版免补"
+  },
+  {
+   "table": "stratagems",
+   "id": "000010448002",
+   "name_en": "SECURE POSITIONS",
+   "column": "text_zh",
+   "from_text": "<b>WHEN:</b> End of any of your phases.<br><br><b>TARGET:</b> One Leagues of Votann Transport unit from your army.<br><br><b>EFFECT:</b> One <span class=\"kwb\">LEAGUES</span> <span class=\"kwb2\">OF</span> <span class=\"kwb\">VOTANN</span> unit embarked within your <span class=\"kwb\">TRANSPORT</span> can disembark. When doing so, models in that unit can be set up anywhere on the battlefield wholly within 6\" of your <span class=\"kwb\">TRANSPORT</span>. That unit cannot declare a charge in the same turn, but can otherwise act normally in the remainder of the turn.",
+   "to_text": "<b>WHEN:</b> End of any of your phases, if units from your army have Hostile Acquisition.<br><br><b>TARGET:</b> One <span class=\"kwb\">LEAGUES</span> <span class=\"kwb2\">OF</span> <span class=\"kwb\">VOTANN</span> <span class=\"kwb\">TRANSPORT</span> unit from your army.<br><br><b>EFFECT:</b> One <span class=\"kwb\">LEAGUES</span> <span class=\"kwb2\">OF</span> <span class=\"kwb\">VOTANN</span> unit embarked within your <span class=\"kwb\">TRANSPORT</span> can disembark. When doing so, models in that unit can be set up anywhere on the battlefield wholly within 6\" of your <span class=\"kwb\">TRANSPORT</span>. That unit cannot declare a charge in the same turn, but can otherwise act normally in the remainder of the turn.",
+   "fp_source": "Faction Pack Leagues Of Votann page_011.md（Rules Updates → Brandfast Oathband Detachment → Secure Positions Stratagem 完整重印）",
+   "synthesis": "change-list应用：WHEN 段追加条件从句「if units from your army have Hostile Acquisition」（唯一实质差异），TARGET/EFFECT 保持 DB 原文与 HTML 风格；归一化后与 FP change-to 全文一致"
+  },
+  {
+   "table": "stratagems",
+   "id": "000010440006",
+   "name_en": "CLAIMSTAKER REFLEX",
+   "column": "text_zh",
+   "from_text": "<b>WHEN:</b> Your opponent’s Movement phase, just after an enemy unit ends a Normal, Advance or Fall Back move.<br><br><b>TARGET:</b> One <span class=\"kwb\">LEAGUES</span> <span class=\"kwb2\">OF</span> <span class=\"kwb\">VOTANN</span> unit from your army (excluding Artillery and Vehicle units) that is within 9\" of that enemy unit.<br><br><b>EFFECT:</b> Each time you use this Stratagem, you can spend 2YP. Your unit can make a Normal move of up to D6\". If you spent YP during this use of this Stratagem, your unit can make a Normal move of up to 6\" instead.<br><br><b>RESTRICTIONS:</b> A unit cannot embark within a Transport as part of this move.",
+   "to_text": "<b>WHEN:</b> Your opponent’s Movement phase, just after an enemy unit ends a Normal, Advance or Fall Back move.<br><br><b>TARGET:</b> One <span class=\"kwb\">LEAGUES</span> <span class=\"kwb2\">OF</span> <span class=\"kwb\">VOTANN</span> unit from your army (excluding Artillery and Vehicle units) that is within 8\" of that enemy unit.<br><br><b>EFFECT:</b> Each time you use this Stratagem, you can spend 2YP. Your unit can make a Normal move of up to D6\". If you spent YP during this use of this Stratagem, your unit can make a Normal move of up to 6\" instead.<br><br><b>RESTRICTIONS:</b> A unit cannot embark within a Transport as part of this move.",
+   "fp_source": "Faction Pack Leagues Of Votann page_011.md（Rules Updates → Persecution Prospect Detachment → Claimstaker Reflex Stratagem Target：9\"→8\"）",
+   "synthesis": "change-list应用：唯一实质差异 TARGET 段几何 9\"→8\"，WHEN/EFFECT/RESTRICTIONS 保持 DB 原文；Needgaârd Reactive Reprisal/Void Hardened 库现文即 11 版逐字一致免补"
   }
  ],
  "name_patches": [
@@ -6694,6 +6714,249 @@
     "cp_cost": "1",
     "phase": "Fight phase",
     "text_zh": "<b>WHEN:</b> Your opponent's Shooting phase or the Fight phase, just after an enemy unit has selected its targets.<br><br><b>TARGET:</b> One ADEPTUS ASTARTES Battleline unit from your army that was selected as the target of one or more of the attacking unit's attacks.<br><br><b>EFFECT:</b> Until the end of the phase, each time an attack targets your unit, if the Strength characteristic of that attack is greater than the Toughness characteristic of your unit, subtract 1 from the Wound roll."
+   }
+  },
+  {
+   "table": "detachments",
+   "fp_source": "Faction Pack Leagues Of Votann page_002.md（11 版新分队，Wahapedia/DB 无源）",
+   "values": {
+    "id": "fp11e-votann-trailblazers",
+    "faction": "LoV",
+    "name_zh": "装甲开路者",
+    "name_en": "Sagitaur Spearhead",
+    "rule_text": "Friendly SAGITAUR units have Scouts 6\"."
+   }
+  },
+  {
+   "table": "enhancements",
+   "fp_source": "Faction Pack Leagues Of Votann page_002.md（11 版新分队，Wahapedia/DB 无源）",
+   "values": {
+    "id": "fp11e-votann-trailblazers-e1",
+    "faction_id": "LoV",
+    "detachment_id": "fp11e-votann-trailblazers",
+    "detachment_name": "Armoured Trailblazers",
+    "name": "Saturation Rounds",
+    "cost": null,
+    "legend": "点数未知：FP 不含点数，MFM 缓存无增强数据（诚实置空，勿猜）",
+    "description": "SAGITAUR unit only. This unit’s ranged attacks have [IGNORES COVER]."
+   }
+  },
+  {
+   "table": "enhancements",
+   "fp_source": "Faction Pack Leagues Of Votann page_002.md（11 版新分队，Wahapedia/DB 无源）",
+   "values": {
+    "id": "fp11e-votann-trailblazers-e2",
+    "faction_id": "LoV",
+    "detachment_id": "fp11e-votann-trailblazers",
+    "detachment_name": "Armoured Trailblazers",
+    "name": "Optimised Attack Lines",
+    "cost": null,
+    "legend": "点数未知：FP 不含点数，MFM 缓存无增强数据（诚实置空，勿猜）",
+    "description": "SAGITAUR unit only. This unit has MOBILE."
+   }
+  },
+  {
+   "table": "stratagems",
+   "fp_source": "Faction Pack Leagues Of Votann page_002.md（11 版新分队，Wahapedia/DB 无源）",
+   "values": {
+    "id": "fp11e-votann-trailblazers-s1",
+    "faction": "LoV",
+    "detachment": "Armoured Trailblazers",
+    "name_zh": "协同交叉火力",
+    "name_en": "COORDINATED CROSSFIRE",
+    "cp_cost": "1",
+    "phase": "Shooting phase",
+    "text_zh": "<b>WHEN:</b> Start of your Shooting phase.<br><br><b>TARGET:</b> Up to two friendly SAGITAUR units.<br><br><b>EFFECT:</b> Select one enemy unit. Your units’ ranged attacks that target that enemy unit can re-roll Hit rolls of 1 and re-roll Wound rolls of 1."
+   }
+  },
+  {
+   "table": "stratagems",
+   "fp_source": "Faction Pack Leagues Of Votann page_002.md（11 版新分队，Wahapedia/DB 无源）",
+   "values": {
+    "id": "fp11e-votann-trailblazers-s2",
+    "faction": "LoV",
+    "detachment": "Armoured Trailblazers",
+    "name_zh": "侧翼装甲",
+    "name_en": "OUTFLANKING ARMOUR",
+    "cp_cost": "1",
+    "phase": "Movement phase",
+    "text_zh": "<b>WHEN:</b> End of your opponent’s Movement phase, from the second battle round onwards.<br><br><b>TARGET:</b> Up to two friendly SAGITAUR units in Strategic Reserves.<br><br><b>EFFECT:</b> Your units each make an ingress move."
+   }
+  },
+  {
+   "table": "stratagems",
+   "fp_source": "Faction Pack Leagues Of Votann page_002.md（11 版新分队，Wahapedia/DB 无源）",
+   "values": {
+    "id": "fp11e-votann-trailblazers-s3",
+    "faction": "LoV",
+    "detachment": "Armoured Trailblazers",
+    "name_zh": "坚不可摧",
+    "name_en": "BUILT TO LAST",
+    "cp_cost": "1",
+    "phase": "Shooting phase",
+    "text_zh": "<b>WHEN:</b> Your opponent’s Shooting phase, when an enemy unit targets a friendly SAGITAUR unit.<br><br><b>TARGET:</b> That SAGITAUR unit.<br><br><b>EFFECT:</b> Ranged attacks that target your unit with a Strength characteristic greater than your unit’s Toughness characteristic have -1 to Wound rolls."
+   }
+  },
+  {
+   "table": "detachments",
+   "fp_source": "Faction Pack Leagues Of Votann page_003.md（11 版新分队，Wahapedia/DB 无源）",
+   "values": {
+    "id": "fp11e-votann-farseekers",
+    "faction": "LoV",
+    "name_zh": "远索者",
+    "name_en": "Eye of the Hunt",
+    "rule_text": "Friendly HERNKYN units’ ranged attacks that target a unit within 12\" have +1 to Hit rolls."
+   }
+  },
+  {
+   "table": "enhancements",
+   "fp_source": "Faction Pack Leagues Of Votann page_003.md（11 版新分队，Wahapedia/DB 无源）",
+   "values": {
+    "id": "fp11e-votann-farseekers-e1",
+    "faction_id": "LoV",
+    "detachment_id": "fp11e-votann-farseekers",
+    "detachment_name": "Farseekers",
+    "name": "Pan-Spectral Lockons",
+    "cost": null,
+    "legend": "点数未知：FP 不含点数，MFM 缓存无增强数据（诚实置空，勿猜）",
+    "description": "PIONEERS unit only. In your Shooting phase, you can select one visible enemy unit within 12\" of this unit. That enemy unit is spotted. While a unit is spotted, that unit has +3\" detection range."
+   }
+  },
+  {
+   "table": "enhancements",
+   "fp_source": "Faction Pack Leagues Of Votann page_003.md（11 版新分队，Wahapedia/DB 无源）",
+   "values": {
+    "id": "fp11e-votann-farseekers-e2",
+    "faction_id": "LoV",
+    "detachment_id": "fp11e-votann-farseekers",
+    "detachment_name": "Farseekers",
+    "name": "Shroudwërke Talismans",
+    "cost": null,
+    "legend": "点数未知：FP 不含点数，MFM 缓存无增强数据（诚实置空，勿猜）",
+    "description": "YAEGIRS unit only. This unit has -3\" detection range."
+   }
+  },
+  {
+   "table": "stratagems",
+   "fp_source": "Faction Pack Leagues Of Votann page_003.md（11 版新分队，Wahapedia/DB 无源）",
+   "values": {
+    "id": "fp11e-votann-farseekers-s1",
+    "faction": "LoV",
+    "detachment": "Farseekers",
+    "name_zh": "轻蔑剖析",
+    "name_en": "SCORNFUL ANALYSIS",
+    "cp_cost": "1",
+    "phase": "Shooting phase",
+    "text_zh": "<b>WHEN:</b> Start of your Shooting phase.<br><br><b>TARGET:</b> One friendly HERNKYN unit.<br><br><b>EFFECT:</b> Select one visible enemy unit within 12\" of your unit. Friendly LEAGUES OF VOTANN units’ attacks that target that enemy unit have [IGNORES COVER]."
+   }
+  },
+  {
+   "table": "stratagems",
+   "fp_source": "Faction Pack Leagues Of Votann page_003.md（11 版新分队，Wahapedia/DB 无源）",
+   "values": {
+    "id": "fp11e-votann-farseekers-s2",
+    "faction": "LoV",
+    "detachment": "Farseekers",
+    "name_zh": "弹无虚发",
+    "name_en": "NO SHOT WASTED",
+    "cp_cost": "1",
+    "phase": "Shooting phase",
+    "text_zh": "<b>WHEN:</b> Your Shooting phase, when a friendly HERNKYN unit is selected to shoot.<br><br><b>TARGET:</b> That HERNKYN unit.<br><br><b>EFFECT:</b> Your unit’s ranged attacks have [LETHAL HITS]."
+   }
+  },
+  {
+   "table": "stratagems",
+   "fp_source": "Faction Pack Leagues Of Votann page_003.md（11 版新分队，Wahapedia/DB 无源）",
+   "values": {
+    "id": "fp11e-votann-farseekers-s3",
+    "faction": "LoV",
+    "detachment": "Farseekers",
+    "name_zh": "经济机动",
+    "name_en": "ECONOMY OF MOTION",
+    "cp_cost": "1",
+    "phase": "Movement phase",
+    "text_zh": "<b>WHEN:</b> Your opponent’s Movement phase, when an enemy unit ends a move within 8\" of a friendly unengaged PIONEERS unit.<br><br><b>TARGET:</b> That PIONEERS unit.<br><br><b>EFFECT:</b> Your unit can make a Normal move of up to D3+3\"."
+   }
+  },
+  {
+   "table": "detachments",
+   "fp_source": "Faction Pack Leagues Of Votann page_004.md（11 版新分队，Wahapedia/DB 无源）",
+   "values": {
+    "id": "fp11e-votann-hearthguard",
+    "faction": "LoV",
+    "name_zh": "炉卫盟约",
+    "name_en": "Avatars of the Ancestors",
+    "rule_text": "Friendly KÂHL/EINHYR CHAMPION/EINHYR HEARTHGUARD/ÛTHAR THE DESTINED units’ ranged attacks that target a unit within 9\" can re-roll Wound rolls of 1.<br><br>This detachment has the HEARTHGUARD tag and cannot be taken with another HEARTHGUARD detachment."
+   }
+  },
+  {
+   "table": "enhancements",
+   "fp_source": "Faction Pack Leagues Of Votann page_004.md（11 版新分队，Wahapedia/DB 无源）",
+   "values": {
+    "id": "fp11e-votann-hearthguard-e1",
+    "faction_id": "LoV",
+    "detachment_id": "fp11e-votann-hearthguard",
+    "detachment_name": "Hearthguard Covenant",
+    "name": "High Kâhl",
+    "cost": null,
+    "legend": "点数未知：FP 不含点数，MFM 缓存无增强数据（诚实置空，勿猜）",
+    "description": "KÂHL model only. In the Fight phase, when a model in this unit is destroyed, if this unit has not been selected to fight this phase, roll one D6: on a 4+, do not remove that model from the battlefield; after this unit has fought, or at the end of the phase (whichever comes first), that model is removed from the battlefield."
+   }
+  },
+  {
+   "table": "enhancements",
+   "fp_source": "Faction Pack Leagues Of Votann page_004.md（11 版新分队，Wahapedia/DB 无源）",
+   "values": {
+    "id": "fp11e-votann-hearthguard-e2",
+    "faction_id": "LoV",
+    "detachment_id": "fp11e-votann-hearthguard",
+    "detachment_name": "Hearthguard Covenant",
+    "name": "Ironskein",
+    "cost": null,
+    "legend": "点数未知：FP 不含点数，MFM 缓存无增强数据（诚实置空，勿猜）",
+    "description": "KÂHL model only. This model has +2 W."
+   }
+  },
+  {
+   "table": "stratagems",
+   "fp_source": "Faction Pack Leagues Of Votann page_004.md（11 版新分队，Wahapedia/DB 无源）",
+   "values": {
+    "id": "fp11e-votann-hearthguard-s1",
+    "faction": "LoV",
+    "detachment": "Hearthguard Covenant",
+    "name_zh": "护盾结界",
+    "name_en": "BRËKKEKNOTS",
+    "cp_cost": "1",
+    "phase": "Fight phase",
+    "text_zh": "<b>WHEN:</b> Your opponent’s Shooting phase or the Fight phase, when an enemy unit targets a friendly EINHYR HEARTHGUARD unit.<br><br><b>TARGET:</b> That EINHYR HEARTHGUARD unit.<br><br><b>EFFECT:</b> Your unit has a 4+ invulnerable save."
+   }
+  },
+  {
+   "table": "stratagems",
+   "fp_source": "Faction Pack Leagues Of Votann page_004.md（11 版新分队，Wahapedia/DB 无源）",
+   "values": {
+    "id": "fp11e-votann-hearthguard-s2",
+    "faction": "LoV",
+    "detachment": "Hearthguard Covenant",
+    "name_zh": "炉火之怒",
+    "name_en": "FURY OF THE HEARTH",
+    "cp_cost": "1",
+    "phase": "Shooting phase",
+    "text_zh": "<b>WHEN:</b> Your Shooting phase, when a friendly EINHYR HEARTHGUARD unit is selected to shoot.<br><br><b>TARGET:</b> That EINHYR HEARTHGUARD unit.<br><br><b>EFFECT:</b> Your unit’s ranged attacks have +1 S. If you spend 1YP, your unit’s ranged attacks have [SUSTAINED HITS 1] as well."
+   }
+  },
+  {
+   "table": "stratagems",
+   "fp_source": "Faction Pack Leagues Of Votann page_004.md（11 版新分队，Wahapedia/DB 无源）",
+   "values": {
+    "id": "fp11e-votann-hearthguard-s3",
+    "faction": "LoV",
+    "detachment": "Hearthguard Covenant",
+    "name_zh": "物质化矩阵",
+    "name_en": "MATERIALISATION MATRICES",
+    "cp_cost": "1",
+    "phase": "Movement phase",
+    "text_zh": "<b>WHEN:</b> Your Movement phase, when a friendly EINHYR HEARTHGUARD unit with Deep Strike is selected to make an ingress move.<br><br><b>TARGET:</b> That EINHYR HEARTHGUARD unit.<br><br><b>EFFECT:</b> Your unit can be set up anywhere on the battlefield that is more than 6\" horizontally from all enemy units, even if that is within your opponent’s deployment zone. Your unit is not eligible to declare a charge until the end of the turn."
    }
   }
  ]
