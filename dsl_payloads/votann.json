@@ -1,0 +1,2247 @@
+{
+ "_comment": "P7 阵营技能 DSL 唯一真源（钢铁联盟 Leagues Of Votann，faction='LoV'，P7-PR24）。DB effect_dsl_json/dsl_status 只是投影，由 `python -m db_compile dsl-apply` 写入并挂 restore。判据与格式沿 spec 2026-07-14 + PR3-PR23 约定；A/B 工作单见 docs/superpowers/plans/2026-07-20-p7-pr24-votann-worklist.md。覆盖=faction='LoV' 全部 12 分队规则 + 59 战略 + 38 增强 = 109（6 encoded / 13 partial / 90 not_modeled）。钢铁联盟为矮人耐战/精准射击阵营，气质=YP（Yugana Points）经济/誓言（Hostile Acquisition⇄Fortify Takeover）/审判标记（Judgement token）/assailed·pinned·suppressed 状态标记/预备队/移动/据点，可编率低（21/109 带效果）。零新引擎通道、零新态势开关（沿 PR9-16 约定）。DB 对齐见迭代 1：2 text_patches（SECURE POSITIONS WHEN 增补 / CLAIMSTAKER REFLEX 9\"→8\"，均几何/触发漂移不影响 DSL）+ 18 fp_new inserts（Armoured Trailblazers/Farseekers/Hearthguard Covenant 三真新分队）。可编子集：守方 invuln4/被伤-1（S>T 门）/AP 恶化/匿踪-1命中/压制敌命中-1、远程 [IGNORES COVER]/[LETHAL HITS]/[SUSTAINED HITS 1·2]/+1S/+1命中(12\")/无视命中修正、近战 AP+1。防高估不编：重骰 1（多数 Oathband 战略）、YP 门控增伤/SH 升级、审判标记/assailed/pinned/suppressed 状态门、负关键字门（排除 MONSTERS/VEHICLES）、MONSTER 或 VEHICLE 双关键字析取、[PISTOL]/[PRECISION]/[DEVASTATING WOUNDS] 关键字、三选一自由改选（Masterful Construction）、W 特征值提升、光环定位门（火力基地/远索炮兵）、限远程×S>T（无 shooting_wound_s_gt_t 复合 tag）、誓言/CP/预备队/侦测/据点/移动/过守火域。",
+ "dsl_version": 1,
+ "faction": "LoV",
+ "entries": [
+  {
+   "table": "abilities",
+   "id": "det000009528",
+   "detachment": "Void Salvagers",
+   "name_en": "Stalwart Advance",
+   "name_zh": null,
+   "materialize": {
+    "from_table": "detachments",
+    "from_id": "000009528",
+    "from_column": "rule_text"
+   },
+   "encoded_by": "manual-2026-07-20",
+   "provenance": {
+    "text_sha256": "f638c270ed382f62c48bb7ef9781d23ff236c888d19bd98a752d24233098923f"
+   },
+   "side": "attacker",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "射击后 3\" 常规移动 + 操作舱门（Hatchway）——移动/地形域，非战斗链"
+   ]
+  },
+  {
+   "table": "abilities",
+   "id": "det000009536",
+   "detachment": "Hearthfire Strike",
+   "name_en": "Wrought in Wrath",
+   "name_zh": null,
+   "materialize": {
+    "from_table": "detachments",
+    "from_id": "000009536",
+    "from_column": "rule_text"
+   },
+   "encoded_by": "manual-2026-07-20",
+   "provenance": {
+    "text_sha256": "dd5ab62efbd757c0e1152112855f474f888d3719789591f1c4d435e267830252"
+   },
+   "side": "attacker",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "Advance 与 Charge 骰 +1——移动域"
+   ]
+  },
+  {
+   "table": "abilities",
+   "id": "det000009822",
+   "detachment": "Hearthband",
+   "name_en": "Methodical Annihilation",
+   "name_zh": null,
+   "materialize": {
+    "from_table": "detachments",
+    "from_id": "000009822",
+    "from_column": "rule_text"
+   },
+   "encoded_by": "manual-2026-07-20",
+   "provenance": {
+    "text_sha256": "b66da8f3da508c92fca0a447d3c92f2da9e9e29892a31a8884fe3b05a177ea68"
+   },
+   "side": "attacker",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "攻击最近合规/交战距离内目标：重骰致伤骰 1；若 Kâhl/Einhyr Hearthguard/Ûthar 则该攻击 AP 改善 1——重骰 1 无载体；AP 改善的「攻击者单位类型 × 最近目标」双门均无载体"
+   ]
+  },
+  {
+   "table": "abilities",
+   "id": "det000010434",
+   "detachment": "Needgaârd Oathband",
+   "name_en": "Martial Leverage",
+   "name_zh": null,
+   "materialize": {
+    "from_table": "detachments",
+    "from_id": "000010434",
+    "from_column": "rule_text"
+   },
+   "encoded_by": "manual-2026-07-20",
+   "provenance": {
+    "text_sha256": "5fac30b604794abdb2bbbd8a62901088799739c5a528188cfb3c99e7b8e6b6b2"
+   },
+   "side": "attacker",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "敌方单位被消灭→获 1YP——YP 经济域"
+   ]
+  },
+  {
+   "table": "abilities",
+   "id": "det000010438",
+   "detachment": "Persecution Prospect",
+   "name_en": "Assailed From Every Angle",
+   "name_zh": null,
+   "materialize": {
+    "from_table": "detachments",
+    "from_id": "000010438",
+    "from_column": "rule_text"
+   },
+   "encoded_by": "manual-2026-07-20",
+   "provenance": {
+    "text_sha256": "61d67db02b4cea6a3bde672e011bf0cc2828e6c0780f2453216cd01e5962d4d8"
+   },
+   "side": "attacker",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "游击密探：选一敌方单位（排除 MONSTERS/VEHICLES）标记为 assailed/pinned + 移动惩罚——状态标记 + 负关键字门 + 移动域均无载体"
+   ]
+  },
+  {
+   "table": "abilities",
+   "id": "det000010442",
+   "detachment": "Dêlve Assault Shift",
+   "name_en": "Fury From The Dêlve",
+   "name_zh": null,
+   "materialize": {
+    "from_table": "detachments",
+    "from_id": "000010442",
+    "from_column": "rule_text"
+   },
+   "encoded_by": "manual-2026-07-20",
+   "provenance": {
+    "text_sha256": "20888454fa6565725b97b757b39b424aa48ce66490cda262d084687c75d00a5b"
+   },
+   "side": "attacker",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "Cthonian Beserks 获深入部署 + BATTLELINE 关键字——部署/关键字域"
+   ]
+  },
+  {
+   "table": "abilities",
+   "id": "det000010446",
+   "detachment": "Brandfast Oathband",
+   "name_en": "Mobile Sensor Relays",
+   "name_zh": null,
+   "materialize": {
+    "from_table": "detachments",
+    "from_id": "000010446",
+    "from_column": "rule_text"
+   },
+   "encoded_by": "manual-2026-07-20",
+   "provenance": {
+    "text_sha256": "ef417b5d27a914bffa40084ccbf62afed3c23eec8526fe7d9bcbdf36d5ecfdeb"
+   },
+   "side": "attacker",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "火力基地光环：INFANTRY 在 TRANSPORT 6\" 内则远程武器 [SUSTAINED HITS 1]——光环「在运输载具 6\" 内」定位门无载体，分队规则自动施加会对所有单位过度施加，不编"
+   ]
+  },
+  {
+   "table": "abilities",
+   "id": "det000010450",
+   "detachment": "Hearthfyre Arsenal",
+   "name_en": "Optimal Application",
+   "name_zh": null,
+   "materialize": {
+    "from_table": "detachments",
+    "from_id": "000010450",
+    "from_column": "rule_text"
+   },
+   "encoded_by": "manual-2026-07-20",
+   "provenance": {
+    "text_sha256": "ddf88ceb82da811dede1bf6ac86287fce90ae57c2be69d681c147092d434b061"
+   },
+   "side": "attacker",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "据点 YP + 花 YP 重骰命中骰 1——YP 经济 + 重骰 1 无载体"
+   ]
+  },
+  {
+   "table": "abilities",
+   "id": "det000010707",
+   "detachment": "Mercenary Oathband",
+   "name_en": "Ruthless Reinvestment",
+   "name_zh": null,
+   "materialize": {
+    "from_table": "detachments",
+    "from_id": "000010707",
+    "from_column": "rule_text"
+   },
+   "encoded_by": "manual-2026-07-20",
+   "provenance": {
+    "text_sha256": "e4568cffa4ab6e501e872bb3e926a595cd747823baaf40957de12f78e4842bd3"
+   },
+   "side": "attacker",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "Hostile Acquisition / Fortify Takeover 誓言切换 + YP——誓言/YP 经济域"
+   ]
+  },
+  {
+   "table": "abilities",
+   "id": "detfp11e-votann-farseekers",
+   "detachment": "Farseekers",
+   "name_en": "Eye of the Hunt",
+   "name_zh": "远索者",
+   "materialize": {
+    "from_table": "detachments",
+    "from_id": "fp11e-votann-farseekers",
+    "from_column": "rule_text"
+   },
+   "encoded_by": "manual-2026-07-20",
+   "provenance": {
+    "text_sha256": "395b8efc7cb3d393ac023c6b07d88d1d7eaaa181fa193425e831a90ba47d0a6e"
+   },
+   "side": "attacker",
+   "status": "partial",
+   "effects": [
+    {
+     "phase": "hit",
+     "op": "modify",
+     "params": [
+      1
+     ],
+     "condition": [
+      "ranged_within_12"
+     ],
+     "source": "远索者（Farseekers 分队规则）：HERNKYN 单位对 12\" 内目标的远程攻击命中骰 +1"
+    }
+   ],
+   "requires_toggles": [
+    "range_within_12"
+   ],
+   "not_modeled_notes_zh": [
+    "限 HERNKYN 单位——Farseekers 分队单位（Pioneers/Yaegirs 等）本即 HERNKYN，按成立假设"
+   ]
+  },
+  {
+   "table": "abilities",
+   "id": "detfp11e-votann-hearthguard",
+   "detachment": "Hearthguard Covenant",
+   "name_en": "Avatars of the Ancestors",
+   "name_zh": "炉卫盟约",
+   "materialize": {
+    "from_table": "detachments",
+    "from_id": "fp11e-votann-hearthguard",
+    "from_column": "rule_text"
+   },
+   "encoded_by": "manual-2026-07-20",
+   "provenance": {
+    "text_sha256": "161a736ed594103f6b0979bcb5834accc5cf3c0940d298be21fb4a7090e5b9fb"
+   },
+   "side": "attacker",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "KÂHL/EINHYR 系对 9\" 内目标的远程攻击重骰致伤骰 1——重骰 1 无载体"
+   ]
+  },
+  {
+   "table": "abilities",
+   "id": "detfp11e-votann-trailblazers",
+   "detachment": "Armoured Trailblazers",
+   "name_en": "Sagitaur Spearhead",
+   "name_zh": "装甲开路者",
+   "materialize": {
+    "from_table": "detachments",
+    "from_id": "fp11e-votann-trailblazers",
+    "from_column": "rule_text"
+   },
+   "encoded_by": "manual-2026-07-20",
+   "provenance": {
+    "text_sha256": "dd094dfe41cdc9b8bdd8c855d2def8259928335144722a6ab3c2b58915571b8d"
+   },
+   "side": "attacker",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "SAGITAUR 单位获 Scouts 6\"——部署/前哨移动域"
+   ]
+  },
+  {
+   "table": "stratagems",
+   "id": "fp11e-votann-trailblazers-s1",
+   "detachment": "Armoured Trailblazers",
+   "name_en": "COORDINATED CROSSFIRE",
+   "name_zh": "协同交叉火力",
+   "encoded_by": "manual-2026-07-20",
+   "provenance": {
+    "text_sha256": "26af78274b939a0218c3f923a5c82022056c5390eb11bf9deda8777a5e722384"
+   },
+   "side": "attacker",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "对所选敌方单位重骰命中/致伤骰 1——重骰 1≠重骰失败，无载体"
+   ]
+  },
+  {
+   "table": "stratagems",
+   "id": "fp11e-votann-trailblazers-s2",
+   "detachment": "Armoured Trailblazers",
+   "name_en": "OUTFLANKING ARMOUR",
+   "name_zh": "侧翼装甲",
+   "encoded_by": "manual-2026-07-20",
+   "provenance": {
+    "text_sha256": "7557e38506d671eae6c7b78aeaa81f553f7093a23dfa7b7b4e1f856911374587"
+   },
+   "side": "attacker",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "预备队 ingress 移动——预备队/移动域"
+   ]
+  },
+  {
+   "table": "stratagems",
+   "id": "fp11e-votann-trailblazers-s3",
+   "detachment": "Armoured Trailblazers",
+   "name_en": "BUILT TO LAST",
+   "name_zh": "坚不可摧",
+   "encoded_by": "manual-2026-07-20",
+   "provenance": {
+    "text_sha256": "f768012217c0241db4c3fcfec5100d1cb698cc1dd4bfcd8209e70b4323e39320"
+   },
+   "side": "target",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "瞄准本单位、S>T 的远程攻击致伤骰 -1——限远程×S>T，无 shooting_wound_s_gt_t 复合 tag，裸 wound_s_gt_t 会在近战误放行，不编"
+   ]
+  },
+  {
+   "table": "stratagems",
+   "id": "000010448002",
+   "detachment": "Brandfast Oathband",
+   "name_en": "SECURE POSITIONS",
+   "name_zh": null,
+   "encoded_by": "manual-2026-07-20",
+   "provenance": {
+    "text_sha256": "945a844e4aca41676887386beb08e789adf060d87a56d52cdf5d619107a8c8df"
+   },
+   "side": "attacker",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "下车重部署——移动域（DB 已补 SECURE POSITIONS 触发文）"
+   ]
+  },
+  {
+   "table": "stratagems",
+   "id": "000010448003",
+   "detachment": "Brandfast Oathband",
+   "name_en": "BASTION RUNNING",
+   "name_zh": null,
+   "encoded_by": "manual-2026-07-20",
+   "provenance": {
+    "text_sha256": "d5fb2a6d751bf902fcedec4c5859a19716b9899414898613ffe58ff9a5c86eec"
+   },
+   "side": "attacker",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "穿越地形移动——移动/地形域"
+   ]
+  },
+  {
+   "table": "stratagems",
+   "id": "000010448004",
+   "detachment": "Brandfast Oathband",
+   "name_en": "ILLUMINATED PRIORITY",
+   "name_zh": null,
+   "encoded_by": "manual-2026-07-20",
+   "provenance": {
+    "text_sha256": "8819e62536dd195c74c3029e301563d9646874151de54f3401784fb463720cb8"
+   },
+   "side": "attacker",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "重骰命中骰 1——重骰 1 无载体"
+   ]
+  },
+  {
+   "table": "stratagems",
+   "id": "000010448005",
+   "detachment": "Brandfast Oathband",
+   "name_en": "INEXORABLE EFFICIENCY",
+   "name_zh": null,
+   "encoded_by": "manual-2026-07-20",
+   "provenance": {
+    "text_sha256": "7ac3cb5414f7bd63dab918e93a199f7894bd5dec1afa460c65719dc7880ea442"
+   },
+   "side": "attacker",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "撤退回合可射击——移动资格域"
+   ]
+  },
+  {
+   "table": "stratagems",
+   "id": "000010448006",
+   "detachment": "Brandfast Oathband",
+   "name_en": "OPPORTUNISTIC ESCALATION",
+   "name_zh": null,
+   "encoded_by": "manual-2026-07-20",
+   "provenance": {
+    "text_sha256": "3408460f108ab1f4e3717407b3d30a74eef3143642c1117d363c59ceb7cf060e"
+   },
+   "side": "attacker",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "常规移动 D6\"——移动域"
+   ]
+  },
+  {
+   "table": "stratagems",
+   "id": "000010448007",
+   "detachment": "Brandfast Oathband",
+   "name_en": "VENGEANCE FLARE",
+   "name_zh": null,
+   "encoded_by": "manual-2026-07-20",
+   "provenance": {
+    "text_sha256": "4cefa3ac20aa69ebd507ba9dc750ba0f7f86a3ef92ada4c80359e972c94ef225"
+   },
+   "side": "attacker",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "额外射击激活（YP）——超相位激活域"
+   ]
+  },
+  {
+   "table": "stratagems",
+   "id": "000010444002",
+   "detachment": "Dêlve Assault Shift",
+   "name_en": "CYBERSTIMM INFUSION",
+   "name_zh": null,
+   "encoded_by": "manual-2026-07-20",
+   "provenance": {
+    "text_sha256": "0a48d9d19f0681db89e2a6c2cefedb96cfe123e85f38d1e0e786e2c106fb7e96"
+   },
+   "side": "attacker",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "重骰致伤骰 1（花 YP→整颗重骰）——重骰 1 无载体、YP 门控"
+   ]
+  },
+  {
+   "table": "stratagems",
+   "id": "000010444003",
+   "detachment": "Dêlve Assault Shift",
+   "name_en": "UNSTOPPABLE FORCE",
+   "name_zh": null,
+   "encoded_by": "manual-2026-07-20",
+   "provenance": {
+    "text_sha256": "2b731c0169834bba3849dcfb05977f383a4f2bccf600a36d0972c0e7c23c1582"
+   },
+   "side": "attacker",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "Pile-in/Consolidate 6\"——移动域"
+   ]
+  },
+  {
+   "table": "stratagems",
+   "id": "000010444004",
+   "detachment": "Dêlve Assault Shift",
+   "name_en": "AUGMENTED ASSAULT",
+   "name_zh": null,
+   "encoded_by": "manual-2026-07-20",
+   "provenance": {
+    "text_sha256": "060c3d0327f898e4db9f40b95445f72d79f9d05e6c32046cfa16ba9e5e3d854b"
+   },
+   "side": "attacker",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "+X\" 移动 + Advance 后可冲锋——移动/YP 域"
+   ]
+  },
+  {
+   "table": "stratagems",
+   "id": "000010444005",
+   "detachment": "Dêlve Assault Shift",
+   "name_en": "TECTONIC FRACTURE",
+   "name_zh": null,
+   "encoded_by": "manual-2026-07-20",
+   "provenance": {
+    "text_sha256": "9e45b7cd8a2c50c651c743c51358d082b43084758b0258647a1682150fb9c5e4"
+   },
+   "side": "attacker",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "敌方 -2\" 移动、-2 冲锋骰——移动debuff域"
+   ]
+  },
+  {
+   "table": "stratagems",
+   "id": "000010444006",
+   "detachment": "Dêlve Assault Shift",
+   "name_en": "WEAVEWËRKE BUTTRESS",
+   "name_zh": null,
+   "encoded_by": "manual-2026-07-20",
+   "provenance": {
+    "text_sha256": "aca5e31dc26add024e81dca702c389bb84c0b615c01cd8542da25e2258e6230c"
+   },
+   "side": "target",
+   "status": "partial",
+   "effects": [
+    {
+     "phase": "wound",
+     "op": "modify",
+     "params": [
+      -1
+     ],
+     "condition": [
+      "phase_shooting"
+     ],
+     "source": "织能扶壁：对手射击阶段瞄准本单位的攻击致伤骰 -1（守方，仅射击相位）"
+    }
+   ],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "前置「本军拥有 Hostile Acquisition 誓言」按成立假设（誓言态无载体）"
+   ]
+  },
+  {
+   "table": "stratagems",
+   "id": "000010444007",
+   "detachment": "Dêlve Assault Shift",
+   "name_en": "HIDDEN ACCESSWAYS",
+   "name_zh": null,
+   "encoded_by": "manual-2026-07-20",
+   "provenance": {
+    "text_sha256": "7e4ba15b61576ae155206e41415f6e5b0ed4191af86d2116dfcda2ea32c648c0"
+   },
+   "side": "attacker",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "移出战场进战略预备队——预备队域"
+   ]
+  },
+  {
+   "table": "stratagems",
+   "id": "fp11e-votann-farseekers-s1",
+   "detachment": "Farseekers",
+   "name_en": "SCORNFUL ANALYSIS",
+   "name_zh": "轻蔑剖析",
+   "encoded_by": "manual-2026-07-20",
+   "provenance": {
+    "text_sha256": "ba15fa8487fe51db4778dc894d17d6b61098315a41723a92c55c701b2ab97d66"
+   },
+   "side": "attacker",
+   "status": "encoded",
+   "effects": [
+    {
+     "phase": "save",
+     "op": "ignores_cover",
+     "params": [],
+     "condition": [
+      "phase_shooting"
+     ],
+     "source": "轻蔑剖析：对所选 12\" 内敌方单位的攻击 [IGNORES COVER]"
+    }
+   ],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": []
+  },
+  {
+   "table": "stratagems",
+   "id": "fp11e-votann-farseekers-s2",
+   "detachment": "Farseekers",
+   "name_en": "NO SHOT WASTED",
+   "name_zh": "弹无虚发",
+   "encoded_by": "manual-2026-07-20",
+   "provenance": {
+    "text_sha256": "2fc20057b9b71851270c64195b0ca119e17fa70f0bc6819d248a35052034f6b7"
+   },
+   "side": "attacker",
+   "status": "encoded",
+   "effects": [
+    {
+     "phase": "hit",
+     "op": "auto_wound",
+     "params": [],
+     "condition": [
+      "phase_shooting"
+     ],
+     "source": "弹无虚发：本单位远程攻击 [LETHAL HITS]"
+    }
+   ],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": []
+  },
+  {
+   "table": "stratagems",
+   "id": "fp11e-votann-farseekers-s3",
+   "detachment": "Farseekers",
+   "name_en": "ECONOMY OF MOTION",
+   "name_zh": "经济机动",
+   "encoded_by": "manual-2026-07-20",
+   "provenance": {
+    "text_sha256": "346acba6979142f8255dd46576e8dc481d3b1c2b28bc67f5db89a8a10422c890"
+   },
+   "side": "attacker",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "敌方移动至 8\" 内→常规移动 D3+3\"——移动域"
+   ]
+  },
+  {
+   "table": "stratagems",
+   "id": "000009824002",
+   "detachment": "Hearthband",
+   "name_en": "BRËKKEKNOTS",
+   "name_zh": null,
+   "encoded_by": "manual-2026-07-20",
+   "provenance": {
+    "text_sha256": "c7989f3bdefb0cf7ec5556cab0883b8e2eda03db619427931b61da4472923f27"
+   },
+   "side": "target",
+   "status": "encoded",
+   "effects": [
+    {
+     "phase": "save",
+     "op": "invuln",
+     "params": [
+      4
+     ],
+     "condition": [],
+     "source": "护盾结界（Hearthband）：被选为攻击目标时本单位获 4+ 无效保护（守方，两相位）"
+    }
+   ],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": []
+  },
+  {
+   "table": "stratagems",
+   "id": "000009824003",
+   "detachment": "Hearthband",
+   "name_en": "SURE OF PURPOSE",
+   "name_zh": null,
+   "encoded_by": "manual-2026-07-20",
+   "provenance": {
+    "text_sha256": "0206dad7094433a7ff63a514f5d00929e6e64d2a73b10b334c21408b3e8d5950"
+   },
+   "side": "attacker",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "Pile-in/Consolidate 移动 6\"——移动域"
+   ]
+  },
+  {
+   "table": "stratagems",
+   "id": "000009824004",
+   "detachment": "Hearthband",
+   "name_en": "SUPERIOR CRAFTSMANSHIP",
+   "name_zh": null,
+   "encoded_by": "manual-2026-07-20",
+   "provenance": {
+    "text_sha256": "bf4ebc106153990c8c789eefac9ac7de5f8e921ded63fd69dabb2860ee75f30f"
+   },
+   "side": "attacker",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "对 MONSTER 或 VEHICLE 的攻击 +1 伤害——「MONSTER 或 VEHICLE」为双关键字析取，单 condition tag 只表达单关键字，两条 melee_target_has_keyword 会在同具双关键字目标 +2，为避免过度施加不编"
+   ]
+  },
+  {
+   "table": "stratagems",
+   "id": "000009824005",
+   "detachment": "Hearthband",
+   "name_en": "UNYIELDING AGGRESSION",
+   "name_zh": null,
+   "encoded_by": "manual-2026-07-20",
+   "provenance": {
+    "text_sha256": "ccac10b201dd61c7026a438412e95b9b61b7d208dce6dc67e923666596fc2de4"
+   },
+   "side": "attacker",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "撤退回合可射击/冲锋——移动资格域"
+   ]
+  },
+  {
+   "table": "stratagems",
+   "id": "000009824006",
+   "detachment": "Hearthband",
+   "name_en": "MATERIALISATION MATRICES",
+   "name_zh": null,
+   "encoded_by": "manual-2026-07-20",
+   "provenance": {
+    "text_sha256": "3a6316205b1e761a91cc23091ddaf5ed716b58986f2d352784e8f604b8ed7cab"
+   },
+   "side": "attacker",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "深入部署（Deep Strike）设置——部署域"
+   ]
+  },
+  {
+   "table": "stratagems",
+   "id": "000009824007",
+   "detachment": "Hearthband",
+   "name_en": "FURY OF THE HEARTH",
+   "name_zh": null,
+   "encoded_by": "manual-2026-07-20",
+   "provenance": {
+    "text_sha256": "cb0a5da8b17d63e6f44ceed4ab58d3e23e5faca357195270eddec2f37b248de0"
+   },
+   "side": "attacker",
+   "status": "partial",
+   "effects": [
+    {
+     "phase": "wound",
+     "op": "s_improve",
+     "params": [
+      1
+     ],
+     "condition": [
+      "phase_shooting"
+     ],
+     "source": "炉火之怒（Hearthband）：本单位远程武器 S +1"
+    }
+   ],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "花费 1YP 追加 [SUSTAINED HITS 1] 分支未建模（YP 经济无载体）"
+   ]
+  },
+  {
+   "table": "stratagems",
+   "id": "000009538002",
+   "detachment": "Hearthfire Strike",
+   "name_en": "WEAVEFIELD FLARE",
+   "name_zh": null,
+   "encoded_by": "manual-2026-07-20",
+   "provenance": {
+    "text_sha256": "324ab1802990726ae8fd6bb1cacd5ff478d3aff309c633712ccbab485cc1e15d"
+   },
+   "side": "target",
+   "status": "encoded",
+   "effects": [
+    {
+     "phase": "wound",
+     "op": "modify",
+     "params": [
+      -1
+     ],
+     "condition": [
+      "wound_s_gt_t"
+     ],
+     "source": "织焰照明弹：被攻击的 S 高于本单位 T 时，致伤骰 -1（守方，射击/近战两相位）"
+    }
+   ],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": []
+  },
+  {
+   "table": "stratagems",
+   "id": "000009538003",
+   "detachment": "Hearthfire Strike",
+   "name_en": "PAN-SPECTRAL VISUALISER",
+   "name_zh": null,
+   "encoded_by": "manual-2026-07-20",
+   "provenance": {
+    "text_sha256": "7b3822024055841da36382611a789449e91c79dd6145ec724fd50cc93a5fc3d6"
+   },
+   "side": "attacker",
+   "status": "encoded",
+   "effects": [
+    {
+     "phase": "save",
+     "op": "ignores_cover",
+     "params": [],
+     "condition": [
+      "phase_shooting"
+     ],
+     "source": "全谱视觉仪：远程武器 [IGNORES COVER]"
+    },
+    {
+     "phase": "hit",
+     "op": "ignore_hit_mods",
+     "params": [],
+     "condition": [
+      "phase_shooting"
+     ],
+     "source": "全谱视觉仪：可无视 BS 与命中骰的任意/全部修正"
+    }
+   ],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": []
+  },
+  {
+   "table": "stratagems",
+   "id": "000009538004",
+   "detachment": "Hearthfire Strike",
+   "name_en": "ECONOMY OF AGGRESSION",
+   "name_zh": null,
+   "encoded_by": "manual-2026-07-20",
+   "provenance": {
+    "text_sha256": "320edcc2221a8a581c0e6e6e9e8b0407aa5d3a8fcde6f7db00e6cc2c00b34a54"
+   },
+   "side": "attacker",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "特定武器（外骨甲榴弹发射器）攻击特征值改为 6、去 [BLAST]、可打不可见目标——设定固定 Attacks 特征值与可见性/舱门几何域无载体"
+   ]
+  },
+  {
+   "table": "stratagems",
+   "id": "000009538005",
+   "detachment": "Hearthfire Strike",
+   "name_en": "GRAVITRONIC PULSE",
+   "name_zh": null,
+   "encoded_by": "manual-2026-07-20",
+   "provenance": {
+    "text_sha256": "efe6680216a4ed6595dd198606d166e51c30eb4dd26ab9393ba7904e8b163af9"
+   },
+   "side": "target",
+   "status": "partial",
+   "effects": [
+    {
+     "phase": "hit",
+     "op": "modify",
+     "params": [
+      -1
+     ],
+     "condition": [
+      "phase_melee"
+     ],
+     "source": "重能脉冲：被冲锋的敌方单位近战反击命中骰 -1（守方向减来袭命中，仅近战）"
+    }
+   ],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "敌方单位失去「先发制人（Fights First）」未建模（引擎无先攻剥夺通道）",
+    "触发限本单位冲锋后处于交战距离内的敌方单位——冲锋触发门无载体，按已触发假设施加",
+    "WHEN=本方冲锋阶段、持续「至回合结束」——冲锋阶段位于射击阶段之后，本回合敌方仅在随后的战斗阶段反击，故 -1 命中挂 phase_melee 门（射击阶段不施加）"
+   ]
+  },
+  {
+   "table": "stratagems",
+   "id": "000010452002",
+   "detachment": "Hearthfyre Arsenal",
+   "name_en": "UNWAVERING ACCURACY",
+   "name_zh": null,
+   "encoded_by": "manual-2026-07-20",
+   "provenance": {
+    "text_sha256": "0d7a64073fec1d29e429c1e1eb5a752c4c4797ba1310fe514b087f8eccdd60a1"
+   },
+   "side": "attacker",
+   "status": "partial",
+   "effects": [
+    {
+     "phase": "hit",
+     "op": "ignore_hit_mods",
+     "params": [],
+     "condition": [
+      "phase_shooting"
+     ],
+     "source": "毫厘不爽：本单位可无视 BS 与命中骰的任意/全部修正"
+    }
+   ],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "「无视致伤骰修正」「无视 AP 修正」未建模（引擎无致伤/AP 修正忽略通道）"
+   ]
+  },
+  {
+   "table": "stratagems",
+   "id": "000010452003",
+   "detachment": "Hearthfyre Arsenal",
+   "name_en": "FIRST CONCERN",
+   "name_zh": null,
+   "encoded_by": "manual-2026-07-20",
+   "provenance": {
+    "text_sha256": "8defc9517e95a8b85c91a16e7102f89e3e1103620d942988f3540c949494c047"
+   },
+   "side": "attacker",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "常规移动——移动域"
+   ]
+  },
+  {
+   "table": "stratagems",
+   "id": "000010452004",
+   "detachment": "Hearthfyre Arsenal",
+   "name_en": "DELAYED-FIRE ROUNDS",
+   "name_zh": null,
+   "encoded_by": "manual-2026-07-20",
+   "provenance": {
+    "text_sha256": "b656e226feb20a74c20d3f67436bc281fa207d8c8559a8d0c0c7ee0fba5acafe"
+   },
+   "side": "attacker",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "敌方移动时受致命伤（排除 MONSTERS/VEHICLES）——移动触发致命伤 + 负关键字门无载体"
+   ]
+  },
+  {
+   "table": "stratagems",
+   "id": "000010452005",
+   "detachment": "Hearthfyre Arsenal",
+   "name_en": "WALL OF STEEL",
+   "name_zh": null,
+   "encoded_by": "manual-2026-07-20",
+   "provenance": {
+    "text_sha256": "c44d0996c2aa54bf16d4c1a956d67cef68d335e986c8bd6c4b8ec9d5386ff132"
+   },
+   "side": "attacker",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "冲锋后 D6 致命伤（排除 MONSTERS/VEHICLES）——致命伤 + 负关键字门无载体"
+   ]
+  },
+  {
+   "table": "stratagems",
+   "id": "000010452006",
+   "detachment": "Hearthfyre Arsenal",
+   "name_en": "PREVENTATIVE PURGE",
+   "name_zh": null,
+   "encoded_by": "manual-2026-07-20",
+   "provenance": {
+    "text_sha256": "e506f92c20c8e0e001f021bb5d26a42aceaf1c51144e7478dc409dfd9138385b"
+   },
+   "side": "attacker",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "额外射击且本次 -1 命中——超相位激活 + 自罚域"
+   ]
+  },
+  {
+   "table": "stratagems",
+   "id": "000010452007",
+   "detachment": "Hearthfyre Arsenal",
+   "name_en": "COGITATED NEED",
+   "name_zh": null,
+   "encoded_by": "manual-2026-07-20",
+   "provenance": {
+    "text_sha256": "824ca165c18587a7a821578a587b0f23bc2894d2ae4624c269bacaed29fc3144"
+   },
+   "side": "attacker",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "常规移动趋近据点——移动域"
+   ]
+  },
+  {
+   "table": "stratagems",
+   "id": "fp11e-votann-hearthguard-s1",
+   "detachment": "Hearthguard Covenant",
+   "name_en": "BRËKKEKNOTS",
+   "name_zh": "护盾结界",
+   "encoded_by": "manual-2026-07-20",
+   "provenance": {
+    "text_sha256": "76c38529e092bd79dd239cedcc426f09eb4e3e66c9d2fe92e6f1019b86779a3b"
+   },
+   "side": "target",
+   "status": "encoded",
+   "effects": [
+    {
+     "phase": "save",
+     "op": "invuln",
+     "params": [
+      4
+     ],
+     "condition": [],
+     "source": "护盾结界（Hearthguard Covenant）：被瞄准时本单位获 4+ 无效保护（守方，两相位）"
+    }
+   ],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": []
+  },
+  {
+   "table": "stratagems",
+   "id": "fp11e-votann-hearthguard-s2",
+   "detachment": "Hearthguard Covenant",
+   "name_en": "FURY OF THE HEARTH",
+   "name_zh": "炉火之怒",
+   "encoded_by": "manual-2026-07-20",
+   "provenance": {
+    "text_sha256": "ab8298529a41a30838726afb6e05268ecbae661acdc539ae1c35515536b3948d"
+   },
+   "side": "attacker",
+   "status": "partial",
+   "effects": [
+    {
+     "phase": "wound",
+     "op": "s_improve",
+     "params": [
+      1
+     ],
+     "condition": [
+      "phase_shooting"
+     ],
+     "source": "炉火之怒（Hearthguard Covenant）：本单位远程武器 S +1"
+    }
+   ],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "花费 1YP 追加 [SUSTAINED HITS 1] 分支未建模（YP 经济无载体）"
+   ]
+  },
+  {
+   "table": "stratagems",
+   "id": "fp11e-votann-hearthguard-s3",
+   "detachment": "Hearthguard Covenant",
+   "name_en": "MATERIALISATION MATRICES",
+   "name_zh": "物质化矩阵",
+   "encoded_by": "manual-2026-07-20",
+   "provenance": {
+    "text_sha256": "67772733be279d8c909f907f2318d3934362a53ad232b2d293c30fcb80c0c325"
+   },
+   "side": "attacker",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "深入部署 ingress 设置——部署域"
+   ]
+  },
+  {
+   "table": "stratagems",
+   "id": "000010709002",
+   "detachment": "Mercenary Oathband",
+   "name_en": "AUXILIARY CONTRACT",
+   "name_zh": null,
+   "encoded_by": "manual-2026-07-20",
+   "provenance": {
+    "text_sha256": "16ab1af7c766e039081391533a3b0d5d2b5ac8ded6607903d7d89bac7b4e6702"
+   },
+   "side": "attacker",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "武器获 [PRECISION]（可分配至人物）——无战斗数值载体"
+   ]
+  },
+  {
+   "table": "stratagems",
+   "id": "000010709003",
+   "detachment": "Mercenary Oathband",
+   "name_en": "OPTIMAL EXPENDITURE",
+   "name_zh": null,
+   "encoded_by": "manual-2026-07-20",
+   "provenance": {
+    "text_sha256": "d2a4836bb4ff6772910994982e6357d3e266fa64cb29e4265a5f8432fea89151"
+   },
+   "side": "attacker",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "重骰命中/致伤骰 1（YP→更优）——重骰 1 无载体、YP 门控"
+   ]
+  },
+  {
+   "table": "stratagems",
+   "id": "000010709004",
+   "detachment": "Mercenary Oathband",
+   "name_en": "GRAND ARTIFICE",
+   "name_zh": null,
+   "encoded_by": "manual-2026-07-20",
+   "provenance": {
+    "text_sha256": "19945af952de371555466076d4ac2dfba70eb57d281020520cb0343fba790926"
+   },
+   "side": "attacker",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "撤退回合可射击/冲锋——移动资格域"
+   ]
+  },
+  {
+   "table": "stratagems",
+   "id": "000010709005",
+   "detachment": "Mercenary Oathband",
+   "name_en": "PRIVATEER ARSENAL",
+   "name_zh": null,
+   "encoded_by": "manual-2026-07-20",
+   "provenance": {
+    "text_sha256": "b9d7901e7771cba9fdf765e4518e9af1d90c6f5f748f3677a07e50490f8cba50"
+   },
+   "side": "attacker",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "重骰命中/致伤骰 1（YP→更优）——重骰 1 无载体、YP 门控"
+   ]
+  },
+  {
+   "table": "stratagems",
+   "id": "000010709006",
+   "detachment": "Mercenary Oathband",
+   "name_en": "NEW HORIZONS",
+   "name_zh": null,
+   "encoded_by": "manual-2026-07-20",
+   "provenance": {
+    "text_sha256": "aba373f8214977ba8cca1d580662a1875437aa70c5fe01d249473ef0dce208a7"
+   },
+   "side": "attacker",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "登上运输载具——移动域"
+   ]
+  },
+  {
+   "table": "stratagems",
+   "id": "000010709007",
+   "detachment": "Mercenary Oathband",
+   "name_en": "MOBILE EXPLOITATION",
+   "name_zh": null,
+   "encoded_by": "manual-2026-07-20",
+   "provenance": {
+    "text_sha256": "fa7ea67e5657a538923fa992f4a8be50dec8ab906fd8b1b9e4214a162132d3e8"
+   },
+   "side": "attacker",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "移出战场进战略预备队——预备队域"
+   ]
+  },
+  {
+   "table": "stratagems",
+   "id": "000010436002",
+   "detachment": "Needgaârd Oathband",
+   "name_en": "VOID HARDENED",
+   "name_zh": null,
+   "encoded_by": "manual-2026-07-20",
+   "provenance": {
+    "text_sha256": "675082c07dee80ed62613a397c628e605239b26a07d4314f948046f935e8d5f8"
+   },
+   "side": "target",
+   "status": "partial",
+   "effects": [
+    {
+     "phase": "save",
+     "op": "ap_improve",
+     "params": [
+      -1
+     ],
+     "condition": [],
+     "source": "虚空硬化：瞄准本单位的攻击 AP 恶化 1（守方，射击/近战两相位）"
+    }
+   ],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "前置「本军拥有 Fortify Takeover 誓言」按成立假设（誓言态无载体，同 ARMOUR OF CONTEMPT 先例）"
+   ]
+  },
+  {
+   "table": "stratagems",
+   "id": "000010436003",
+   "detachment": "Needgaârd Oathband",
+   "name_en": "HONOUR OF THE HOLD",
+   "name_zh": null,
+   "encoded_by": "manual-2026-07-20",
+   "provenance": {
+    "text_sha256": "1dba10fed69abbdc19aa7592467a0c2042d0374fbc0cf1dd50e7ac4502ee6289"
+   },
+   "side": "attacker",
+   "status": "partial",
+   "effects": [
+    {
+     "phase": "save",
+     "op": "ap_improve",
+     "params": [
+      1
+     ],
+     "condition": [
+      "phase_melee"
+     ],
+     "source": "坚守荣誉：对所选敌方单位的近战攻击 AP 改善 1"
+    }
+   ],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "花费 3YP 改为 AP 改善 2 的分支未建模（YP 经济无载体）",
+    "限对「交战距离内所选敌方单位」——在模拟器中即当前近战目标"
+   ]
+  },
+  {
+   "table": "stratagems",
+   "id": "000010436004",
+   "detachment": "Needgaârd Oathband",
+   "name_en": "ORDERED RETREAT",
+   "name_zh": null,
+   "encoded_by": "manual-2026-07-20",
+   "provenance": {
+    "text_sha256": "19945af952de371555466076d4ac2dfba70eb57d281020520cb0343fba790926"
+   },
+   "side": "attacker",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "撤退回合可射击/冲锋——移动资格域"
+   ]
+  },
+  {
+   "table": "stratagems",
+   "id": "000010436005",
+   "detachment": "Needgaârd Oathband",
+   "name_en": "ANCESTRAL SENTENCE",
+   "name_zh": null,
+   "encoded_by": "manual-2026-07-20",
+   "provenance": {
+    "text_sha256": "a7beeb2408f4965cdb0d0fe67ef9634ba4937063f2e559bf3b22f6169e0de8f6"
+   },
+   "side": "attacker",
+   "status": "partial",
+   "effects": [
+    {
+     "phase": "hit",
+     "op": "extra_hits",
+     "params": [
+      1
+     ],
+     "condition": [
+      "phase_shooting"
+     ],
+     "source": "先祖裁决：本单位远程武器 [SUSTAINED HITS 1]"
+    }
+   ],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "花费 3YP 升级为 [SUSTAINED HITS 2] 的分支未建模（YP 经济无载体）"
+   ]
+  },
+  {
+   "table": "stratagems",
+   "id": "000010436006",
+   "detachment": "Needgaârd Oathband",
+   "name_en": "HUNTR’S MARK",
+   "name_zh": null,
+   "encoded_by": "manual-2026-07-20",
+   "provenance": {
+    "text_sha256": "acafdfad19dffde5df9bc7b84f0d713208c82bf182f7a07de03eba0b6c6475ff"
+   },
+   "side": "attacker",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "重骰命中/致伤骰 1——重骰 1≠重骰失败，无载体"
+   ]
+  },
+  {
+   "table": "stratagems",
+   "id": "000010436007",
+   "detachment": "Needgaârd Oathband",
+   "name_en": "REACTIVE REPRISAL",
+   "name_zh": null,
+   "encoded_by": "manual-2026-07-20",
+   "provenance": {
+    "text_sha256": "f36dff7658522052c6338688dfd39125d3c359916f41b15392cd225428c27ba5"
+   },
+   "side": "attacker",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "额外射击激活——超相位激活无载体"
+   ]
+  },
+  {
+   "table": "stratagems",
+   "id": "000010440002",
+   "detachment": "Persecution Prospect",
+   "name_en": "ADAPTABLE AVARICE",
+   "name_zh": null,
+   "encoded_by": "manual-2026-07-20",
+   "provenance": {
+    "text_sha256": "a05c111b157cf1bb65eb6879e522a01d434c614116725661f28aaece833c0280"
+   },
+   "side": "attacker",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "誓言切换 + YP——誓言/YP 经济域"
+   ]
+  },
+  {
+   "table": "stratagems",
+   "id": "000010440003",
+   "detachment": "Persecution Prospect",
+   "name_en": "FRONTIER MOMENTUM",
+   "name_zh": null,
+   "encoded_by": "manual-2026-07-20",
+   "provenance": {
+    "text_sha256": "12eee79113a02299cd1c9ad2d503b0f5ff076fd858b794f6cb72d8486e3cf8eb"
+   },
+   "side": "attacker",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "Advance 免骰 +6\"——移动域"
+   ]
+  },
+  {
+   "table": "stratagems",
+   "id": "000010440004",
+   "detachment": "Persecution Prospect",
+   "name_en": "EXPOSED FLAWS",
+   "name_zh": null,
+   "encoded_by": "manual-2026-07-20",
+   "provenance": {
+    "text_sha256": "7d94cdb33277fdcc34a8c6e16d5faac04142703138e35ae4b03222479ca8d6e3"
+   },
+   "side": "attacker",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "花 YP 且/或打 assailed 目标→重骰致伤骰——assailed 状态门无载体、YP 门控"
+   ]
+  },
+  {
+   "table": "stratagems",
+   "id": "000010440005",
+   "detachment": "Persecution Prospect",
+   "name_en": "RANGER TACTICS",
+   "name_zh": null,
+   "encoded_by": "manual-2026-07-20",
+   "provenance": {
+    "text_sha256": "76d643d9b21abb998e869bc400904175dc6d55ed49e65cdb7ab6ed5326a19635"
+   },
+   "side": "attacker",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "打 assailed 目标且/或本单位 Hernkyn→重骰命中骰——assailed 状态门与「攻击者 Hernkyn 关键字」门均无载体；Persecution 含非 Hernkyn 单位，无条件重骰会过度施加，不编"
+   ]
+  },
+  {
+   "table": "stratagems",
+   "id": "000010440006",
+   "detachment": "Persecution Prospect",
+   "name_en": "CLAIMSTAKER REFLEX",
+   "name_zh": null,
+   "encoded_by": "manual-2026-07-20",
+   "provenance": {
+    "text_sha256": "4224b45c7af855afad163718863bf9e69b84ea58980cde4cdde425a32ea2b2d4"
+   },
+   "side": "attacker",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "常规移动——移动域（DB 已补 8\" 几何）"
+   ]
+  },
+  {
+   "table": "stratagems",
+   "id": "000010440007",
+   "detachment": "Persecution Prospect",
+   "name_en": "DISPERSED FORMATION",
+   "name_zh": null,
+   "encoded_by": "manual-2026-07-20",
+   "provenance": {
+    "text_sha256": "edcb5cbf196062d7de6ab8959904c87aa27cba27b76438b44a06295ec6df9a84"
+   },
+   "side": "target",
+   "status": "partial",
+   "effects": [
+    {
+     "phase": "hit",
+     "op": "modify",
+     "params": [
+      -1
+     ],
+     "condition": [
+      "phase_shooting"
+     ],
+     "source": "分散阵型：本单位获匿踪（Stealth）——瞄准本单位的远程攻击命中骰 -1（守方）"
+    }
+   ],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "另予「掩体加成（Benefit of Cover）」——引擎 11 版掩体亦折算为攻方命中/BS 惩罚，与匿踪 -1 命中同向，为避免双重叠加此处只编匿踪一份"
+   ]
+  },
+  {
+   "table": "stratagems",
+   "id": "000009530002",
+   "detachment": "Void Salvagers",
+   "name_en": "RELIC CYPHER",
+   "name_zh": null,
+   "encoded_by": "manual-2026-07-20",
+   "provenance": {
+    "text_sha256": "ac5238c1de6adfb37f29de747a7cada172b5c9bdfa547544ff778f294853b459"
+   },
+   "side": "attacker",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "开启舱门（Hatchway）——地形域"
+   ]
+  },
+  {
+   "table": "stratagems",
+   "id": "000009530003",
+   "detachment": "Void Salvagers",
+   "name_en": "POINT-BLANK FIRE",
+   "name_zh": null,
+   "encoded_by": "manual-2026-07-20",
+   "provenance": {
+    "text_sha256": "00df1b6482217d9d0044bef32322ef3834f1ad99123affef20536c9e6b5aac5e"
+   },
+   "side": "attacker",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "远程武器获 [PISTOL]（可在交战距离内射击）——无战斗数值载体"
+   ]
+  },
+  {
+   "table": "stratagems",
+   "id": "000009530004",
+   "detachment": "Void Salvagers",
+   "name_en": "JUDGED AND PUNISHED",
+   "name_zh": null,
+   "encoded_by": "manual-2026-07-20",
+   "provenance": {
+    "text_sha256": "89e09a4de9fe30ee21a75ca2db7716a06aaa1a8a14352d5640d08ec24a85b6c9"
+   },
+   "side": "attacker",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "对含 1+ 审判标记（Judgement token）目标重骰命中骰、含 2 标记再重骰致伤骰（原文无「1」限定，为整颗重骰）——审判标记状态门无载体，无条件重骰会过度施加，不编"
+   ]
+  },
+  {
+   "table": "stratagems",
+   "id": "000009530005",
+   "detachment": "Void Salvagers",
+   "name_en": "CORRIDOR COVERED",
+   "name_zh": null,
+   "encoded_by": "manual-2026-07-20",
+   "provenance": {
+    "text_sha256": "68ae9b71fe69dc6c93a0dc5f208e4f7deaf20a87a3cd90495cf16f8cc63063aa"
+   },
+   "side": "attacker",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "Overwatch 以 5+ 命中——过守火（Overwatch）机制无载体"
+   ]
+  },
+  {
+   "table": "enhancements",
+   "id": "fp11e-votann-trailblazers-e1",
+   "detachment": "Armoured Trailblazers",
+   "name_en": "Saturation Rounds",
+   "name_zh": null,
+   "encoded_by": "manual-2026-07-20",
+   "provenance": {
+    "text_sha256": "6063d1d96bd735843707c12129aa2c698baca5f68b16ac71b3a926854a6bd95b"
+   },
+   "side": "attacker",
+   "status": "partial",
+   "effects": [
+    {
+     "phase": "save",
+     "op": "ignores_cover",
+     "params": [],
+     "condition": [
+      "phase_shooting"
+     ],
+     "source": "饱和弹幕：本单位远程攻击 [IGNORES COVER]"
+    }
+   ],
+   "requires_toggles": [
+    "bearer_leading"
+   ],
+   "not_modeled_notes_zh": [
+    "限 SAGITAUR 单位——按携带者所在单位即 SAGITAUR 假设（作用面 bearer_leading）"
+   ]
+  },
+  {
+   "table": "enhancements",
+   "id": "fp11e-votann-trailblazers-e2",
+   "detachment": "Armoured Trailblazers",
+   "name_en": "Optimised Attack Lines",
+   "name_zh": null,
+   "encoded_by": "manual-2026-07-20",
+   "provenance": {
+    "text_sha256": "b7ceb49db082e716007e24fcc9a30cda9ea0b076a08b4fd55bb7814a836b9624"
+   },
+   "side": "attacker",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "本单位获 MOBILE 关键字——关键字域，无战斗数值载体"
+   ]
+  },
+  {
+   "table": "enhancements",
+   "id": "000010447002",
+   "detachment": "Brandfast Oathband",
+   "name_en": "Tactical Alchemy",
+   "name_zh": null,
+   "encoded_by": "manual-2026-07-20",
+   "provenance": {
+    "text_sha256": "fb6a877364668928d065aeebc9ebe96229cf3eeaa43ca6c0e7f126745ed79ded"
+   },
+   "side": "attacker",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "据点内 YP→CP——据点/CP 经济域"
+   ]
+  },
+  {
+   "table": "enhancements",
+   "id": "000010447003",
+   "detachment": "Brandfast Oathband",
+   "name_en": "Trivärg Cyber Implant",
+   "name_zh": null,
+   "encoded_by": "manual-2026-07-20",
+   "provenance": {
+    "text_sha256": "293d93049f506628905bc0759bbf606fa22c31eca11923f7211f6cf00a1524c9"
+   },
+   "side": "attacker",
+   "status": "partial",
+   "effects": [
+    {
+     "phase": "hit",
+     "op": "extra_hits",
+     "params": [
+      2
+     ],
+     "condition": [
+      "phase_shooting"
+     ],
+     "source": "特里瓦格电子植入体：下车回合本单位远程武器 [SUSTAINED HITS 2]"
+    }
+   ],
+   "requires_toggles": [
+    "bearer_leading",
+    "disembarked_this_turn"
+   ],
+   "not_modeled_notes_zh": [
+    "「或花费 2YP」的替代触发分支未建模（YP 经济无载体）——本条按下车触发编码",
+    "限携带者所在单位；作用面按携带者在场假设（bearer_leading）"
+   ]
+  },
+  {
+   "table": "enhancements",
+   "id": "000010447004",
+   "detachment": "Brandfast Oathband",
+   "name_en": "Precursive Judgement",
+   "name_zh": null,
+   "encoded_by": "manual-2026-07-20",
+   "provenance": {
+    "text_sha256": "1d9f3d56ed6bacfd2bc54066d126ef14a80213f45df29a9dbb1545d0e805782c"
+   },
+   "side": "attacker",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "0CP 过守火 + 5+ 命中——过守火机制域"
+   ]
+  },
+  {
+   "table": "enhancements",
+   "id": "000010447005",
+   "detachment": "Brandfast Oathband",
+   "name_en": "Signature Restoration",
+   "name_zh": null,
+   "encoded_by": "manual-2026-07-20",
+   "provenance": {
+    "text_sha256": "3cb86f5de968e2c13627d1094486c2193c38d894046b18f5a3e7f9a0136c243c"
+   },
+   "side": "attacker",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "修复友军多回 1 伤——修复机制域"
+   ]
+  },
+  {
+   "table": "enhancements",
+   "id": "000010443002",
+   "detachment": "Dêlve Assault Shift",
+   "name_en": "Dêlvwerke Navigator",
+   "name_zh": null,
+   "encoded_by": "manual-2026-07-20",
+   "provenance": {
+    "text_sha256": "2c9255b840f2ca5d239f7e417ff42ea575332efa18a56d957f28acaa6a8fd1c9"
+   },
+   "side": "attacker",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "花 YP 复活 Cthonian Beserks 模型——复活/YP 域"
+   ]
+  },
+  {
+   "table": "enhancements",
+   "id": "000010443003",
+   "detachment": "Dêlve Assault Shift",
+   "name_en": "Multiwave System Jammer",
+   "name_zh": null,
+   "encoded_by": "manual-2026-07-20",
+   "provenance": {
+    "text_sha256": "ee4ecc23db6f90e44d44d3a89e6373111b3330c2bcc631f173350f4b49d7f851"
+   },
+   "side": "attacker",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "视战轮数 +1 便利预备队上场——预备队时序域"
+   ]
+  },
+  {
+   "table": "enhancements",
+   "id": "000010443004",
+   "detachment": "Dêlve Assault Shift",
+   "name_en": "Quake Supervisor",
+   "name_zh": null,
+   "encoded_by": "manual-2026-07-20",
+   "provenance": {
+    "text_sha256": "bb97c2fa9bc7c4da0dc7f402f625b3fae147b43273a5b65df4f6764015404c80"
+   },
+   "side": "attacker",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "友军 ARTILLERY 3\" 内 +1 命中 + Lone Operative——光环/几何域，无「友军炮兵在范围内」载体"
+   ]
+  },
+  {
+   "table": "enhancements",
+   "id": "000010443005",
+   "detachment": "Dêlve Assault Shift",
+   "name_en": "Piledriver",
+   "name_zh": null,
+   "encoded_by": "manual-2026-07-20",
+   "provenance": {
+    "text_sha256": "e3575ab1e65a0338eb01fc7571613d3abaabcbdd81bb3513f8daa9751c5e33d8"
+   },
+   "side": "attacker",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "花 YP→近战武器 +伤害——YP 门控伤害无载体"
+   ]
+  },
+  {
+   "table": "enhancements",
+   "id": "fp11e-votann-farseekers-e1",
+   "detachment": "Farseekers",
+   "name_en": "Pan-Spectral Lockons",
+   "name_zh": null,
+   "encoded_by": "manual-2026-07-20",
+   "provenance": {
+    "text_sha256": "a0df74456b9ffff82c03ed146a8b8edd817f1197342659ac40c3afa65b4d0445"
+   },
+   "side": "attacker",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "标记敌方 spotted → +3\" 侦测范围——侦测/移动域"
+   ]
+  },
+  {
+   "table": "enhancements",
+   "id": "fp11e-votann-farseekers-e2",
+   "detachment": "Farseekers",
+   "name_en": "Shroudwërke Talismans",
+   "name_zh": null,
+   "encoded_by": "manual-2026-07-20",
+   "provenance": {
+    "text_sha256": "4137815413f09129a3adf242655530e979287c8c3cf400cb02b19751d21f55d9"
+   },
+   "side": "target",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "本单位 -3\" 侦测范围——侦测域"
+   ]
+  },
+  {
+   "table": "enhancements",
+   "id": "000009823002",
+   "detachment": "Hearthband",
+   "name_en": "Bastion Shield",
+   "name_zh": null,
+   "encoded_by": "manual-2026-07-20",
+   "provenance": {
+    "text_sha256": "69e990deaa685775421d3ee0c1eb525bb4d99ff65bd75a7610c402b91dfc9460"
+   },
+   "side": "target",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "攻击者 12\" 内时被攻 AP 恶化 1（18\" 需 YP）——守方无「攻击者射程」tag 载体，裸射击门会对所有远程过度施加，不编"
+   ]
+  },
+  {
+   "table": "enhancements",
+   "id": "000009823003",
+   "detachment": "Hearthband",
+   "name_en": "Quake Multigenerator",
+   "name_zh": null,
+   "encoded_by": "manual-2026-07-20",
+   "provenance": {
+    "text_sha256": "8ccedb4e157a1d920e1ff0e3da064edd4bfe1d89a30134d7ddd5d0d0c672c4eb"
+   },
+   "side": "target",
+   "status": "partial",
+   "effects": [
+    {
+     "phase": "hit",
+     "op": "modify",
+     "params": [
+      -1
+     ],
+     "condition": [],
+     "source": "震荡多重发生器：被压制的敌方单位攻击命中骰 -1（守方向减来袭命中，两相位）"
+    }
+   ],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "触发限本单位射击命中后所选的敌方单位（排除 TITANIC）——射击命中触发门无载体，按已压制假设施加"
+   ]
+  },
+  {
+   "table": "enhancements",
+   "id": "000009823004",
+   "detachment": "Hearthband",
+   "name_en": "Ironskein",
+   "name_zh": null,
+   "encoded_by": "manual-2026-07-20",
+   "provenance": {
+    "text_sha256": "9afca91f919467cef54c5f20f8cdf8cc83bedff39a3f155b9a9ea32a25572cdf"
+   },
+   "side": "target",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "Wounds 特征值 +2——引擎无提升 W 特征值的通道"
+   ]
+  },
+  {
+   "table": "enhancements",
+   "id": "000009823005",
+   "detachment": "Hearthband",
+   "name_en": "High Kâhl",
+   "name_zh": null,
+   "encoded_by": "manual-2026-07-20",
+   "provenance": {
+    "text_sha256": "447128ffdbbe7ecdfc32e6e408fa78291c349ca803bb48ff346fa3444f4cbcac"
+   },
+   "side": "target",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "被近战消灭的模型 4+ 反打——「死后反击」无载体"
+   ]
+  },
+  {
+   "table": "enhancements",
+   "id": "000009537002",
+   "detachment": "Hearthfire Strike",
+   "name_en": "Celebrated Folk Hero",
+   "name_zh": null,
+   "encoded_by": "manual-2026-07-20",
+   "provenance": {
+    "text_sha256": "e4f3c89218c18f45bd6f654d3a030997e84dfeec2977117811e8954289c3753f"
+   },
+   "side": "target",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "携带者首次被消灭→敌方获审判标记——审判标记域无载体"
+   ]
+  },
+  {
+   "table": "enhancements",
+   "id": "000009537003",
+   "detachment": "Hearthfire Strike",
+   "name_en": "Gûlyk’s Stars",
+   "name_zh": null,
+   "encoded_by": "manual-2026-07-20",
+   "provenance": {
+    "text_sha256": "5bc70a039b8f79815f4d7d4c02613644a5148ccd89408507fea3754e25affe38"
+   },
+   "side": "attacker",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "冲锋后致命伤 + 开舱门——冲锋触发的致命伤（非攻击链）无载体"
+   ]
+  },
+  {
+   "table": "enhancements",
+   "id": "000010451002",
+   "detachment": "Hearthfyre Arsenal",
+   "name_en": "Fârstrydr Node",
+   "name_zh": null,
+   "encoded_by": "manual-2026-07-20",
+   "provenance": {
+    "text_sha256": "72312d34220f04303ff11140f9fa8dacc623b1ffaf4f33d14f22b5df3fd3b57c"
+   },
+   "side": "attacker",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "获深入部署——部署域"
+   ]
+  },
+  {
+   "table": "enhancements",
+   "id": "000010451003",
+   "detachment": "Hearthfyre Arsenal",
+   "name_en": "Calculated Tenacity",
+   "name_zh": null,
+   "encoded_by": "manual-2026-07-20",
+   "provenance": {
+    "text_sha256": "02caa465bcf1ac944051c7f081c1101afd6fc2e5f00e85c8db95d584fa57d562"
+   },
+   "side": "attacker",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "+1 OC——据点控制域"
+   ]
+  },
+  {
+   "table": "enhancements",
+   "id": "000010451004",
+   "detachment": "Hearthfyre Arsenal",
+   "name_en": "Mantle of Elders",
+   "name_zh": null,
+   "encoded_by": "manual-2026-07-20",
+   "provenance": {
+    "text_sha256": "fc92a7bc02e34b09fd76bf24b883ec0e36cc3a2b281e7d4c24db2aee561fcad7"
+   },
+   "side": "attacker",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "用 Optimal Application 时 D6→获 YP——YP 经济域"
+   ]
+  },
+  {
+   "table": "enhancements",
+   "id": "000010451005",
+   "detachment": "Hearthfyre Arsenal",
+   "name_en": "Graviton Vault",
+   "name_zh": null,
+   "encoded_by": "manual-2026-07-20",
+   "provenance": {
+    "text_sha256": "764c7c473cceca8cde115fddfdb4b1417a98ad70fe104ce114e2afe44e23a28b"
+   },
+   "side": "target",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "压制 MONSTER/VEHICLE→其命中 -1——守方无「攻击者关键字」tag，限 MONSTER/VEHICLE 攻击者的裸编会对所有来袭过度施加，不编"
+   ]
+  },
+  {
+   "table": "enhancements",
+   "id": "fp11e-votann-hearthguard-e1",
+   "detachment": "Hearthguard Covenant",
+   "name_en": "High Kâhl",
+   "name_zh": null,
+   "encoded_by": "manual-2026-07-20",
+   "provenance": {
+    "text_sha256": "aca6294149e9c4f816808a3e7de851d88ee0c1975b5f8bf37f51284f46460493"
+   },
+   "side": "target",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "近战被消灭模型 4+ 反打——「死后反击」无载体"
+   ]
+  },
+  {
+   "table": "enhancements",
+   "id": "fp11e-votann-hearthguard-e2",
+   "detachment": "Hearthguard Covenant",
+   "name_en": "Ironskein",
+   "name_zh": null,
+   "encoded_by": "manual-2026-07-20",
+   "provenance": {
+    "text_sha256": "2f86c46accd0a554c1eae16ee39f7608a0dcbc351a078e165c31f06c0a2182f8"
+   },
+   "side": "target",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "本模型 +2 W——引擎无提升 W 特征值的通道"
+   ]
+  },
+  {
+   "table": "enhancements",
+   "id": "000010708002",
+   "detachment": "Mercenary Oathband",
+   "name_en": "Mercenary Prospector",
+   "name_zh": null,
+   "encoded_by": "manual-2026-07-20",
+   "provenance": {
+    "text_sha256": "7ca6a714fc1c2df2f3eda083036d604bd64e084651df6abdd54c55d3cfdb206b"
+   },
+   "side": "attacker",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "消灭敌方单位→获 2YP——YP 经济域"
+   ]
+  },
+  {
+   "table": "enhancements",
+   "id": "000010708003",
+   "detachment": "Mercenary Oathband",
+   "name_en": "Metaphysical Brokerage",
+   "name_zh": null,
+   "encoded_by": "manual-2026-07-20",
+   "provenance": {
+    "text_sha256": "e2d61c5065eeb643da1e2116d44fae27d133a477b2abb15b9ffde2d1e3db45b7"
+   },
+   "side": "attacker",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "回合末补足 YP——YP 经济域"
+   ]
+  },
+  {
+   "table": "enhancements",
+   "id": "000010708004",
+   "detachment": "Mercenary Oathband",
+   "name_en": "Etacarn SB9 Targeting Implant",
+   "name_zh": null,
+   "encoded_by": "manual-2026-07-20",
+   "provenance": {
+    "text_sha256": "c3da4cf973d5bcc516ea049a8503cd5d6f97f063548942741eb1b8e900a5c9dd"
+   },
+   "side": "attacker",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "重骰命中骰 1；花 3YP→[SUSTAINED HITS 1]——重骰 1 无载体、SH1 为 YP 门控"
+   ]
+  },
+  {
+   "table": "enhancements",
+   "id": "000010708005",
+   "detachment": "Mercenary Oathband",
+   "name_en": "Asset Manipulator",
+   "name_zh": null,
+   "encoded_by": "manual-2026-07-20",
+   "provenance": {
+    "text_sha256": "764be77e86e6104d7b666c44bc2653fb6b0d3d0267790a35bab44a95b4a5d422"
+   },
+   "side": "attacker",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "敌方 3\" 内 -1 OC——据点控制域"
+   ]
+  },
+  {
+   "table": "enhancements",
+   "id": "000010435002",
+   "detachment": "Needgaârd Oathband",
+   "name_en": "Oathbound Speculator",
+   "name_zh": null,
+   "encoded_by": "manual-2026-07-20",
+   "provenance": {
+    "text_sha256": "7289cf6cce3c32dcd127ca1088ad29f99ccb1786108d93372c775afe76e5906f"
+   },
+   "side": "attacker",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "重骰致伤骰 1；花 3YP→致伤骰 +1——重骰 1 无载体，+1 致伤为 YP 门控"
+   ]
+  },
+  {
+   "table": "enhancements",
+   "id": "000010435003",
+   "detachment": "Needgaârd Oathband",
+   "name_en": "Dead Reckoning",
+   "name_zh": null,
+   "encoded_by": "manual-2026-07-20",
+   "provenance": {
+    "text_sha256": "f22b3ed9a0f39daec06a78fe449b5831d783fbffdb732c417b83460367f86ff3"
+   },
+   "side": "attacker",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "回合末获 1YP——YP 经济域"
+   ]
+  },
+  {
+   "table": "enhancements",
+   "id": "000010435004",
+   "detachment": "Needgaârd Oathband",
+   "name_en": "Iron Ambassador",
+   "name_zh": null,
+   "encoded_by": "manual-2026-07-20",
+   "provenance": {
+    "text_sha256": "a92dd2e6d82465fb27efc6b1cd79bed5fa292cb44c7a69f13b9a851a3cecc31c"
+   },
+   "side": "attacker",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "花 YP→远程武器 +伤害——YP 门控伤害无载体"
+   ]
+  },
+  {
+   "table": "enhancements",
+   "id": "000010435005",
+   "detachment": "Needgaârd Oathband",
+   "name_en": "Ancestral Crest",
+   "name_zh": null,
+   "encoded_by": "manual-2026-07-20",
+   "provenance": {
+    "text_sha256": "c03a2b4ed6b2ce931f9ab5d5251de3c72231d8c00aafe7fc6b54dcb57f5034f2"
+   },
+   "side": "attacker",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "降低 Command Re-roll 战略 CP 花费——CP 经济域"
+   ]
+  },
+  {
+   "table": "enhancements",
+   "id": "000010439002",
+   "detachment": "Persecution Prospect",
+   "name_en": "Eye for Weakness",
+   "name_zh": null,
+   "encoded_by": "manual-2026-07-20",
+   "provenance": {
+    "text_sha256": "2b5d2861ad9d02739b2354efd71c457cb92608ac5e70d5aba53b887bec84d034"
+   },
+   "side": "attacker",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "打 assailed 目标致伤骰 +1——assailed 状态门无载体"
+   ]
+  },
+  {
+   "table": "enhancements",
+   "id": "000010439003",
+   "detachment": "Persecution Prospect",
+   "name_en": "Writ of Acquisition",
+   "name_zh": null,
+   "encoded_by": "manual-2026-07-20",
+   "provenance": {
+    "text_sha256": "969b4c204deb5303ef4f01c901feacdc31770e8c4e0062baf0ecb185ecf9c62e"
+   },
+   "side": "attacker",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "射击后按命中 assailed 单位数获 YP——YP 经济域"
+   ]
+  },
+  {
+   "table": "enhancements",
+   "id": "000010439004",
+   "detachment": "Persecution Prospect",
+   "name_en": "Surgical Saboteur",
+   "name_zh": null,
+   "encoded_by": "manual-2026-07-20",
+   "provenance": {
+    "text_sha256": "dc2ebe126b582ba6ef047826281588f3f571f4d94873fae5610a3ed26a77fba0"
+   },
+   "side": "attacker",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "射击后钉住（pin）MONSTER/VEHICLE——状态标记域无载体"
+   ]
+  },
+  {
+   "table": "enhancements",
+   "id": "000010439005",
+   "detachment": "Persecution Prospect",
+   "name_en": "Nomad Strategist",
+   "name_zh": null,
+   "encoded_by": "manual-2026-07-20",
+   "provenance": {
+    "text_sha256": "fb65a15d20e1b86329de275e7bf48bf3aceb0f2b7e63c80205e44a4244941bfa"
+   },
+   "side": "attacker",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "回合末进战略预备队 + YP——预备队/YP 域"
+   ]
+  },
+  {
+   "table": "enhancements",
+   "id": "000009529002",
+   "detachment": "Void Salvagers",
+   "name_en": "Masterful Construction",
+   "name_zh": null,
+   "encoded_by": "manual-2026-07-20",
+   "provenance": {
+    "text_sha256": "258bd194bcd8f937c3437401b657f819a5510ae698d4c7d229df71062a7e377b"
+   },
+   "side": "attacker",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "每次选定射击/近战三选一（[DEVASTATING WOUNDS]／[LETHAL HITS]／[SUSTAINED HITS 1]，排除灵能武器）——每相位自由改选的三选一无固定分支，编入任一即代玩家选择（遵 one-of-N 单分支约定不编）；[DEVASTATING WOUNDS] 亦无载体"
+   ]
+  },
+  {
+   "table": "enhancements",
+   "id": "000009529003",
+   "detachment": "Void Salvagers",
+   "name_en": "Obsessive Drive",
+   "name_zh": null,
+   "encoded_by": "manual-2026-07-20",
+   "provenance": {
+    "text_sha256": "238f6573381148ff980e232d961738bba9154626a55a1df01249d8056a8420c0"
+   },
+   "side": "attacker",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "据点标记内敌方视为多 1 审判标记——审判标记/据点域无载体"
+   ]
+  }
+ ]
+}
