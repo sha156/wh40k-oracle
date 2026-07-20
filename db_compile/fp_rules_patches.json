@@ -2,6 +2,16 @@
  "_comment": "P7-PR1 钛帝国规则文本 11 版化补丁。text_patches 来自 2026-07-14 逐行 A/B 工作单（docs/superpowers/plans/2026-07-14-p7-pr1-fp-rules-worklist.md，55 行全落账：8 drifted / 3 identical / 35 not_in_fp / 9 review_needed / 5 fp_new）；name_patches 来自钛帝国十版中文codex refine 缓存逐条效果配对（43 条有源 + 11 条自译标记）。｜P7-PR5 吞世者追加（2026-07-18）：text 9（军规嗜血癫狂改+1冲锋、狂战士之怒/怒火尽泄 surge move 术语、黄铜之怒规则改核心 surge、怒火容器 p4 完整重印 5 条）；deactivations +6（怒火容器重印未收录）；inserts +13（Brazen Engines/Butchers of Khorne 两全新分队 + Scorn the Witch）；name +53（狂战士战帮/怒火容器/军规 DavidZ codex 有源配对，其余自译标记）。已滚入免补：Summoned by Slaughter / Warp Stalkers / Rapid Manifestation（Wahapedia 现文即 11 版）。｜PR5 兵牌层技能 6 条（FP p7-p8 DATASHEETS：Loping Speed 8\"、Blood Surge surge move 化、Helbrute Frenzy 重写、Scent of Blood 9\" 内判据、Chaos Rhino 8\"、Bloody Fury 重写）；已滚入免补：Exalted Eightbound Rend and Tear / Icon of Khorne×2 / Slaughterbound 武器 S10 / Defiler 整表（Wahapedia 已收）。FRAME 关键词沿 S4 裁定跳过（测距词）。｜P7-PR8 死亡守卫追加（2026-07-19）：text 9（Flyblown Host 完整重印 6 条 + 军规两处合一 + Death Approaches 9\"→8\" + Beckoning Blight 9\"→8\"）、deact 5（Flyblown重印未收录 3 战略 2 增强）、inserts 12（Contagion Engines/Paragons of Putrescence两新分队各 1 规则 3 战略 2 增强）、name 51（军规 1 + det 规则 7 + 战略 42 + 死神降临，源=老湿腐死亡守卫V1.1；工作单 docs/superpowers/plans/2026-07-19-p7-pr8-dg-worklist.md）｜P7-PR9 圣血天使追加（2026-07-19）：text 9（全兵牌技能层——Legends Black Rage×4 + 狂乱反噬 + 狂怒驱使 surge + 大叛乱幻视 + 奇迹救赎 ingress + Gleaming Pinions 8\"）、inserts 18（Legacy of Grace/Encarmine Speartip/Wrath of the Doomed 三新分队各 1 规则 3 战略 2 增强；Legacy of the Angel 同名豁免旗标expect_duplicate_name 首用）、name 49（4 codex 分队有源 + Rage-cursed 自译，源=DavidZ圣血天使V1.05；工作单 docs/superpowers/plans/2026-07-19-p7-pr9-ba-worklist.md）。零 deactivations（重印无删减）零 fp_errata｜P7-PR15 圣血修女追加（2026-07-20）：text 1（Penitent Host / Devout Fanaticism EFFECT → surge move）；inserts +14（3 新分队 Chorus of Condemnation / Sacred Champions / Sanctified Orators：3 规则 + 5 增强 + 6 战略，id 前缀 fp11e-sororitas-，cost 置空）。免补：Rules Updates 其余（Shield of Aversion/Rites of Fire/Fervent Purgation/Suffering&Sacrifice/Divine Intervention/Desperate for Redemption/Blazing Ire&Cleansing Flames 2CP/Acts of Faith 军规）Wahapedia 已滚入逐字一致。观察项：FRAME 关键字×4、8 datasheet 技能改（Leader→Support 等）、3+5 新 datasheet/Legends 单位——datasheet 层不落本 PR。｜P7-PR20 Space-Marines 追加（2026-07-20）：inserts +13 —— 2 新迷你分队（Fulguris Task Force 天雷突袭 / Subversion Assets 无所遁形，各 1 规则 + 2 增强 + 3 战略，id 前缀 fp11e-spacemarines-）+ Bastion Task Force 漏录的 Angels Defiant 战略（DB id 序 002-005,007 缺 006，补回 000010677006）。11 现有分队（Armoured Speartip→Reclamation Force + Librarius Conclave）文本与 11 版 FP 逐字一致（Wahapedia 已滚入），零 text_patches/零 deactivations/零 fp_errata。",
  "text_patches": [
   {
+   "table": "stratagems",
+   "id": "000010494006",
+   "name_en": "TACTICAL FOIL",
+   "column": "text_zh",
+   "from_text": "<b>WHEN:</b> Your opponent’s Movement phase, just after an enemy unit ends a Normal, Advance or Fall Back move.<br><br><b>TARGET:</b> One Imperial Knights model from your army that is within 9\" of that unit.<br><br><b>EFFECT:</b> Your model can make a Normal move of up to D6\".",
+   "to_text": "<b>WHEN:</b> Your opponent’s Movement phase, just after an enemy unit ends a Normal, Advance or Fall Back move.<br><br><b>TARGET:</b> One Imperial Knights model from your army that is within 8\" of that unit.<br><br><b>EFFECT:</b> Your model can make a Normal move of up to D6\".",
+   "fp_source": "Faction Pack Imperial Knights page_026.md（Rules Updates → Valourstrike Lance → Tactical Foil Target：9\"→8\"）",
+   "synthesis": "change-list应用：唯一实质差异 TARGET 段 9\"→8\"，WHEN/EFFECT 保持 DB 原文与 HTML 风格；其余 Rules Updates（Bold Gallantry/Run Them Through/Full Tilt/OC→10 十骑士）核对库现已逐字 11 版，免补"
+  },
+  {
    "table": "detachments",
    "id": "000008810",
    "name_en": "Killing Blow",
@@ -3547,6 +3557,168 @@
  ],
  "_inserts_comment": "P7-PR4 fp_new 补录（2026-07-16）：FP 有、Wahapedia/DB 无的整条目。AAC 整分队（1 规则行 + 3 战略 + 2 增强，id 前缀 fp11e- 标 synthetic 溯源，增强点数 FP/MFM 均无源诚实置 NULL）+ Auxiliary Cadre 新战略 Guided by Unity。守卫：同 id 幂等/名字不符让路；同名异 id（上游将来自补）让路告警不留双胞胎；stratagems/enhancements 插入行标 fp_status='added_11e'。",
  "inserts": [
+  {
+   "table": "detachments",
+   "fp_source": "Faction Pack Imperial Knights page_002.md（11 版新分队，Wahapedia/DB 无源）",
+   "values": {
+    "id": "fp11e-imperialknights-dominus",
+    "faction": "QI",
+    "name_zh": "毁灭之雨",
+    "name_en": "Rain of Devastation",
+    "rule_text": "Friendly <span class=\"kwb\">IMPERIAL</span> <span class=\"kwb\">KNIGHTS</span> <span class=\"kwb\">DOMINUS</span> units' attacks that target a unit in a terrain area have +1 to Hit rolls."
+   }
+  },
+  {
+   "table": "enhancements",
+   "fp_source": "Faction Pack Imperial Knights page_002.md（11 版新分队，Wahapedia/DB 无源）",
+   "values": {
+    "id": "fp11e-imperialknights-dominus-e1",
+    "faction_id": "QI",
+    "detachment_id": "dominus-foebreakers",
+    "detachment_name": "Dominus Foebreakers",
+    "name": "Blessed Plate",
+    "cost": null,
+    "legend": "点数未知：FP 不含点数，MFM 缓存无增强数据（诚实置空，勿猜）",
+    "description": "<span class=\"kwb\">IMPERIAL</span> <span class=\"kwb\">KNIGHTS</span> <span class=\"kwb\">DOMINUS</span> model only. This model has +1 T."
+   }
+  },
+  {
+   "table": "enhancements",
+   "fp_source": "Faction Pack Imperial Knights page_002.md（11 版新分队，Wahapedia/DB 无源）",
+   "values": {
+    "id": "fp11e-imperialknights-dominus-e2",
+    "faction_id": "QI",
+    "detachment_id": "dominus-foebreakers",
+    "detachment_name": "Dominus Foebreakers",
+    "name": "Archeotech Autoloaders",
+    "cost": null,
+    "legend": "点数未知：FP 不含点数，MFM 缓存无增强数据（诚实置空，勿猜）",
+    "description": "<span class=\"kwb\">IMPERIAL</span> <span class=\"kwb\">KNIGHTS</span> <span class=\"kwb\">DOMINUS</span> model only. This unit can re-roll rolls to determine the Attacks characteristic of a weapon."
+   }
+  },
+  {
+   "table": "stratagems",
+   "fp_source": "Faction Pack Imperial Knights page_002.md（11 版新分队，Wahapedia/DB 无源）",
+   "values": {
+    "id": "fp11e-imperialknights-dominus-s1",
+    "faction": "QI",
+    "detachment": "Dominus Foebreakers",
+    "name_zh": "撼地阔步",
+    "name_en": "Ground-Shaking Strides",
+    "cp_cost": "1",
+    "phase": "Movement phase",
+    "text_zh": "<b>WHEN:</b> Your Movement phase, when a friendly IMPERIAL KNIGHTS DOMINUS unit is selected to move.<br><br><b>TARGET:</b> That IMPERIAL KNIGHTS DOMINUS unit.<br><br><b>EFFECT:</b> Your unit has +2\" M."
+   }
+  },
+  {
+   "table": "stratagems",
+   "fp_source": "Faction Pack Imperial Knights page_002.md（11 版新分队，Wahapedia/DB 无源）",
+   "values": {
+    "id": "fp11e-imperialknights-dominus-s2",
+    "faction": "QI",
+    "detachment": "Dominus Foebreakers",
+    "name_zh": "破敌火风暴",
+    "name_en": "Foebreaker Firestorm",
+    "cp_cost": "1",
+    "phase": "Shooting phase",
+    "text_zh": "<b>WHEN:</b> Your Shooting phase, when a friendly engaged IMPERIAL KNIGHTS DOMINUS unit is selected to shoot.<br><br><b>TARGET:</b> That IMPERIAL KNIGHTS DOMINUS unit.<br><br><b>EFFECT:</b> Your unit's [BLAST] ranged attacks:<br><ul><li>Do not have [BLAST].</li><li>Have +1 A.</li></ul>"
+   }
+  },
+  {
+   "table": "stratagems",
+   "fp_source": "Faction Pack Imperial Knights page_002.md（11 版新分队，Wahapedia/DB 无源）",
+   "values": {
+    "id": "fp11e-imperialknights-dominus-s3",
+    "faction": "QI",
+    "detachment": "Dominus Foebreakers",
+    "name_zh": "火力震慑",
+    "name_en": "Fire Shocked",
+    "cp_cost": "1",
+    "phase": "Shooting phase",
+    "text_zh": "<b>WHEN:</b> Your Shooting phase, when a friendly IMPERIAL KNIGHTS DOMINUS unit has shot.<br><br><b>TARGET:</b> That IMPERIAL KNIGHTS DOMINUS unit.<br><br><b>EFFECT:</b> Select one enemy unit hit by those attacks. That enemy unit makes a battle-shock roll, with -1 to that battle-shock roll."
+   }
+  },
+  {
+   "table": "detachments",
+   "fp_source": "Faction Pack Imperial Knights page_004.md（11 版新分队，Wahapedia/DB 无源）",
+   "values": {
+    "id": "fp11e-imperialknights-throne",
+    "faction": "QI",
+    "name_zh": "逐出巢穴",
+    "name_en": "Driven From Their Lairs",
+    "rule_text": "While a friendly <span class=\"kwb\">ARMIGER</span> unit is affected by a Bondsman ability, that unit's ranged attacks have [IGNORES COVER].<br><br>This detachment has the ARMIGERS tag and cannot be taken with another ARMIGERS detachment."
+   }
+  },
+  {
+   "table": "enhancements",
+   "fp_source": "Faction Pack Imperial Knights page_004.md（11 版新分队，Wahapedia/DB 无源）",
+   "values": {
+    "id": "fp11e-imperialknights-throne-e1",
+    "faction_id": "QI",
+    "detachment_id": "throne-bonded-outriders",
+    "detachment_name": "Throne-bonded Outriders",
+    "name": "Gyro-optimised Actuators",
+    "cost": null,
+    "legend": "点数未知：FP 不含点数，MFM 缓存无增强数据（诚实置空，勿猜）",
+    "description": "<span class=\"kwb\">ARMIGER</span> unit only. This unit has MOBILE."
+   }
+  },
+  {
+   "table": "enhancements",
+   "fp_source": "Faction Pack Imperial Knights page_004.md（11 版新分队，Wahapedia/DB 无源）",
+   "values": {
+    "id": "fp11e-imperialknights-throne-e2",
+    "faction_id": "QI",
+    "detachment_id": "throne-bonded-outriders",
+    "detachment_name": "Throne-bonded Outriders",
+    "name": "Ancestral Overbleed",
+    "cost": null,
+    "legend": "点数未知：FP 不含点数，MFM 缓存无增强数据（诚实置空，勿猜）",
+    "description": "<span class=\"kwb\">ARMIGER</span> unit only. When you target this unit with the Fire Overwatch or Heroic Intervention Stratagem, that use is -1 CP."
+   }
+  },
+  {
+   "table": "stratagems",
+   "fp_source": "Faction Pack Imperial Knights page_004.md（11 版新分队，Wahapedia/DB 无源）",
+   "values": {
+    "id": "fp11e-imperialknights-throne-s1",
+    "faction": "QI",
+    "detachment": "Throne-bonded Outriders",
+    "name_zh": "神经鞭策",
+    "name_en": "Neural Lash",
+    "cp_cost": "1",
+    "phase": "Command phase",
+    "text_zh": "<b>WHEN:</b> Command phase.<br><br><b>TARGET:</b> One friendly IMPERIAL KNIGHTS TITANIC unit.<br><br><b>EFFECT:</b> Select one friendly battle-shocked ARMIGER unit within 12\" of your unit. That ARMIGER unit is no longer battle-shocked."
+   }
+  },
+  {
+   "table": "stratagems",
+   "fp_source": "Faction Pack Imperial Knights page_004.md（11 版新分队，Wahapedia/DB 无源）",
+   "values": {
+    "id": "fp11e-imperialknights-throne-s2",
+    "faction": "QI",
+    "detachment": "Throne-bonded Outriders",
+    "name_zh": "头盔调训",
+    "name_en": "Helm Conditioning",
+    "cp_cost": "1",
+    "phase": "Command phase",
+    "text_zh": "<b>WHEN:</b> Your Command phase, when a friendly IMPERIAL KNIGHTS unit uses a Bondsman ability.<br><br><b>TARGET:</b> That IMPERIAL KNIGHTS unit.<br><br><b>EFFECT:</b> When selecting an ARMIGER model for that Bondsman ability, you can select one within 18\" of your unit (excluding models already affected by a Bondsman ability)."
+   }
+  },
+  {
+   "table": "stratagems",
+   "fp_source": "Faction Pack Imperial Knights page_004.md（11 版新分队，Wahapedia/DB 无源）",
+   "values": {
+    "id": "fp11e-imperialknights-throne-s3",
+    "faction": "QI",
+    "detachment": "Throne-bonded Outriders",
+    "name_zh": "效命为荣",
+    "name_en": "Honoured to Serve",
+    "cp_cost": "1",
+    "phase": "Shooting phase",
+    "text_zh": "<b>WHEN:</b> Your Shooting phase, when a friendly ARMIGER unit has shot.<br><br><b>TARGET:</b> That ARMIGER unit.<br><br><b>EFFECT:</b> Those attacks do not prevent your unit from being eligible to start an action."
+   }
+  },
   {
    "table": "detachments",
    "fp_source": "page_002.md（11 版新分队，Wahapedia 无源）",

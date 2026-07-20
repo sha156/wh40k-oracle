@@ -396,8 +396,10 @@ class TestInserts:
         from pathlib import Path
         data = json.loads(Path("db_compile/fp_rules_patches.json").read_text(
             encoding="utf-8"))
+        # + 帝国骑士 12 条（PR21：Dominus Foebreakers / Throne-bonded Outriders
+        #   两全新分队各 1 规则+2 增强+3 战略）
         ins = data.get("inserts", [])
-        assert len(ins) == 219
+        assert len(ins) == 231
         ids = {p["values"]["id"] for p in ins}
         assert ids == {"fp11e-tau-aac-det", "fp11e-tau-aac-s1", "fp11e-tau-aac-s2",
                        "fp11e-tau-aac-s3", "fp11e-tau-aux-gbu",
@@ -508,7 +510,19 @@ class TestInserts:
                        "fp11e-spacemarines-subversion", "fp11e-spacemarines-subversion-e1",
                        "fp11e-spacemarines-subversion-e2", "fp11e-spacemarines-subversion-s1",
                        "fp11e-spacemarines-subversion-s2", "fp11e-spacemarines-subversion-s3",
-                       "fp11e-spacemarines-bastion-s6"}
+                       "fp11e-spacemarines-bastion-s6",
+                       "fp11e-imperialknights-dominus",
+                       "fp11e-imperialknights-dominus-e1",
+                       "fp11e-imperialknights-dominus-e2",
+                       "fp11e-imperialknights-dominus-s1",
+                       "fp11e-imperialknights-dominus-s2",
+                       "fp11e-imperialknights-dominus-s3",
+                       "fp11e-imperialknights-throne",
+                       "fp11e-imperialknights-throne-e1",
+                       "fp11e-imperialknights-throne-e2",
+                       "fp11e-imperialknights-throne-s1",
+                       "fp11e-imperialknights-throne-s2",
+                       "fp11e-imperialknights-throne-s3"}
         for p in ins:
             assert p.get("fp_source")
             assert p["values"].get("id", "").startswith("fp11e-")
