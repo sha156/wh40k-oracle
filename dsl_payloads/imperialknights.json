@@ -1,0 +1,1696 @@
+{
+ "_comment": "P7 阵营技能 DSL 唯一真源（帝国骑士，P7-PR21）。DB 投影由 dsl-apply 写入挂 restore；A/B 工作单见 docs/superpowers/plans/2026-07-20-p7-pr21-imperialknights-worklist.md。帝国骑士为超重型步行机甲（Vehicle/Titanic/Walker）阵营——技能以光环/移动/据点/预备队/Bondsman 从属/治疗/CP 经济为主，可编率低（18/79，0 encoded）。可编子集：传奇骑士/英勇不退 FNP 6+、圣所/旋转离子盾 invuln、破枪反制近战 S>T 致伤-1（melee_wound_s_gt_t）、以责为盾被射击 AP 恶化、坚定优势近战重投命中、巨神轰炸/银怒战旗 [SUSTAINED HITS 2]、复仇誓约 [LETHAL HITS]、贯穿！[LANCE]、勇气美德近战命中+1、削减其众 [RAPID FIRE 1]（half_range）、机械专注无视命中减值、正义使者近战 A+2/命中+1、猎手之眼 [IGNORES COVER]、受祝甲板 T+1、雷霆践踏 Feet +1 AP（weapon_filter）。零新引擎通道、零新态势开关（纯编码 PR）。阶段门纪律：射击授予的武器技能挂 phase_shooting、近战挂 phase_melee/melee_charging，两相位（FNP/AP恶化/T+1/invuln 持续性、MACHINE FOCUS）不加门。防高估不编：防线/地形/Bondsman 影响等位置/状态门无载体、重投1（非重投失败）、仅致命伤 FNP、三关键词 OR、射击×关键词无复合 tag、[ASSAULT]/[PRECISION]、移动/据点/战栗/预备队/CP/W/治疗类。fp_new 两新分队 Dominus Foebreakers/Throne-bonded Outriders（fp11e-imperialknights-*）已由 fp_rules inserts 补录；Tactical Foil 9\"→8\" 文本漂移已补。",
+ "dsl_version": 1,
+ "faction": "QI",
+ "entries": [
+  {
+   "table": "abilities",
+   "id": "det000010492",
+   "side": "attacker",
+   "detachment": "Valourstrike Lance",
+   "name_en": "Bold Gallantry",
+   "name_zh": "英勇无畏",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "军规：IK 冲锋后远程武器获 [ASSAULT]——冲锋后射击资格无战斗链载体"
+   ],
+   "provenance": {
+    "text_sha256": "5ec66719ea2ca2ffb477e6e79755c10496e3af1eef349786ca4c1c6de985bb00"
+   },
+   "encoded_by": "manual-2026-07-20",
+   "materialize": {
+    "from_table": "detachments",
+    "from_id": "000010492",
+    "from_column": "rule_text"
+   }
+  },
+  {
+   "table": "abilities",
+   "id": "det000009760",
+   "side": "attacker",
+   "detachment": "Questor Forgepact",
+   "name_en": "Cogbound Alliance",
+   "name_zh": "齿轮之盟",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "军规：圣器誓约治疗 + 神圣启示（Admech 重骰命中/致伤 1）+ 锻造世界盟友——治疗/重投1/建军盟友均无载体"
+   ],
+   "provenance": {
+    "text_sha256": "e035cbe82f5925b920902dbc3f68b83d2d2af65754f3fb2b60c6c3890c12a33e"
+   },
+   "encoded_by": "manual-2026-07-20",
+   "materialize": {
+    "from_table": "detachments",
+    "from_id": "000009760",
+    "from_column": "rule_text"
+   }
+  },
+  {
+   "table": "abilities",
+   "id": "det000010496",
+   "side": "attacker",
+   "detachment": "Gate Warden Lance",
+   "name_en": "Dauntless Defenders",
+   "name_zh": "无畏守御",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "军规：防线上单位无视命中减值 + [SUSTAINED HITS 1]——防线为地图位置门无载体，裸编会过度施加"
+   ],
+   "provenance": {
+    "text_sha256": "1cb0cd5d0d252ee8f8a596a9ecd7bcc8c590039095971bd6885b767d88692f09"
+   },
+   "encoded_by": "manual-2026-07-20",
+   "materialize": {
+    "from_table": "detachments",
+    "from_id": "000010496",
+    "from_column": "rule_text"
+   }
+  },
+  {
+   "table": "abilities",
+   "id": "det000010500",
+   "side": "attacker",
+   "detachment": "Questoris Companions",
+   "name_en": "Heroes of Legend",
+   "name_zh": "传奇英雄",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "军规：誓约完成后追加誓约 + CP——誓约/CP 经济无载体"
+   ],
+   "provenance": {
+    "text_sha256": "f75584db4ddc0aaf63759801362475dd0153369f3627c0217521bd1bd8d29f5d"
+   },
+   "encoded_by": "manual-2026-07-20",
+   "materialize": {
+    "from_table": "detachments",
+    "from_id": "000010500",
+    "from_column": "rule_text"
+   }
+  },
+  {
+   "table": "abilities",
+   "id": "det000010505",
+   "side": "attacker",
+   "detachment": "Spearhead-At-Arms",
+   "name_en": "Knightly Teachings",
+   "name_zh": "骑士教诲",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "军规：Bondsman 可选至多三 Armiger + BATTLELINE 关键词——Bondsman 选择机制/关键词授予无载体"
+   ],
+   "provenance": {
+    "text_sha256": "a9be9fe22c949573b40241167761e038c6bd78913ede45284655d917141c9a88"
+   },
+   "encoded_by": "manual-2026-07-20",
+   "materialize": {
+    "from_table": "detachments",
+    "from_id": "000010505",
+    "from_column": "rule_text"
+   }
+  },
+  {
+   "table": "abilities",
+   "id": "det000010754",
+   "side": "target",
+   "detachment": "Freeblade Company",
+   "name_en": "Knights of Legend",
+   "name_zh": "传奇骑士",
+   "status": "partial",
+   "effects": [
+    {
+     "phase": "fnp",
+     "op": "fnp",
+     "params": [
+      6
+     ],
+     "condition": [],
+     "source": "传奇骑士（IK 模型 FNP 6+）"
+    }
+   ],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "指挥阶段每模型回复 1 失去伤口——治疗无载体，仅编 FNP 6+"
+   ],
+   "provenance": {
+    "text_sha256": "5505fff39859904ce08395f072770933d32014a37414fe9d8637c34f18bcbdb9"
+   },
+   "encoded_by": "manual-2026-07-20",
+   "materialize": {
+    "from_table": "detachments",
+    "from_id": "000010754",
+    "from_column": "rule_text"
+   }
+  },
+  {
+   "table": "abilities",
+   "id": "det000010501",
+   "side": "attacker",
+   "detachment": "Valourstrike Lance",
+   "name_en": "Valour’s Reward",
+   "name_zh": "英勇之赏",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "军规：增强可消耗、履行誓约后复位——增强消耗状态机无载体"
+   ],
+   "provenance": {
+    "text_sha256": "5adb83def46cce875ad2e5d685c4e27fed576cc6caec47b867ca166a1f15022b"
+   },
+   "encoded_by": "manual-2026-07-20",
+   "materialize": {
+    "from_table": "detachments",
+    "from_id": "000010501",
+    "from_column": "rule_text"
+   }
+  },
+  {
+   "table": "abilities",
+   "id": "detfp11e-imperialknights-dominus",
+   "side": "attacker",
+   "detachment": "Dominus Foebreakers",
+   "name_en": "Rain of Devastation",
+   "name_zh": "毁灭之雨",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "军规：DOMINUS 攻击目标在地形区域内时命中+1——地形区域为位置门无载体，裸编会过度施加"
+   ],
+   "provenance": {
+    "text_sha256": "ee3f506e27cff4ca99cc140865a37f056a829f8ac760ae226957ecf119a92f70"
+   },
+   "encoded_by": "manual-2026-07-20",
+   "materialize": {
+    "from_table": "detachments",
+    "from_id": "fp11e-imperialknights-dominus",
+    "from_column": "rule_text"
+   }
+  },
+  {
+   "table": "abilities",
+   "id": "detfp11e-imperialknights-throne",
+   "side": "attacker",
+   "detachment": "Throne-bonded Outriders",
+   "name_en": "Driven From Their Lairs",
+   "name_zh": "逐出巢穴",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "军规：受 Bondsman 影响的 Armiger 远程 [IGNORES COVER]——Bondsman 影响态无载体，裸编会过度施加"
+   ],
+   "provenance": {
+    "text_sha256": "374dcdd0919db0b5aed29df7ab10d6d2a0a1e598034b5e7dce9a84b62eaa895e"
+   },
+   "encoded_by": "manual-2026-07-20",
+   "materialize": {
+    "from_table": "detachments",
+    "from_id": "fp11e-imperialknights-throne",
+    "from_column": "rule_text"
+   }
+  },
+  {
+   "table": "stratagems",
+   "id": "000010756007",
+   "side": "attacker",
+   "detachment": "Freeblade Company",
+   "name_en": "FLANKING MANOEUVRES",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "撤入战略预备队——预备队机制无载体"
+   ],
+   "provenance": {
+    "text_sha256": "3c1d0c0fa0da189794e9831971fdc0fb4db6e0472c41eb32a75d6e222d553abb"
+   },
+   "encoded_by": "manual-2026-07-20"
+  },
+  {
+   "table": "stratagems",
+   "id": "000010756004",
+   "side": "attacker",
+   "detachment": "Freeblade Company",
+   "name_en": "FULL TILT",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "加速不掷骰、M+6\"/9\"——移动增益无载体"
+   ],
+   "provenance": {
+    "text_sha256": "6a4a7c6747a11a8ff89e14d822647fc03722ac252bd56cfb2ad85eb1344b1a6a"
+   },
+   "encoded_by": "manual-2026-07-20"
+  },
+  {
+   "table": "stratagems",
+   "id": "000010756002",
+   "side": "attacker",
+   "detachment": "Freeblade Company",
+   "name_en": "NOBLE SACRIFICE",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "致命殒落 4+ 造成致命伤（Armiger +1）——致命殒落/致命伤无载体"
+   ],
+   "provenance": {
+    "text_sha256": "7fc2c9e17d672cba8c74c90afb280ac39b7acce1f39edcd6e38fe70ddf47f4dd"
+   },
+   "encoded_by": "manual-2026-07-20"
+  },
+  {
+   "table": "stratagems",
+   "id": "000010756005",
+   "side": "attacker",
+   "detachment": "Freeblade Company",
+   "name_en": "POINT‑BLANK BARRAGE",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "近距 [BLAST] 可打接战敌 + 免接战命中罚 + 命中1自伤——目标资格/接战罚/致命伤无载体"
+   ],
+   "provenance": {
+    "text_sha256": "a6fc22741eff329ceb20aa10b9132f7a8bffe07bc91e6e6a5e96d92cba88be76"
+   },
+   "encoded_by": "manual-2026-07-20"
+  },
+  {
+   "table": "stratagems",
+   "id": "000010756003",
+   "side": "attacker",
+   "detachment": "Freeblade Company",
+   "name_en": "STRENGTH FROM EXILE",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "孤立时重投命中1与致伤1——重投1（非重投失败）+ 孤立门无载体"
+   ],
+   "provenance": {
+    "text_sha256": "a5052e87edbbb67f6ad98701dc3d8aaf8d53cffefe3cfe9a44d41ef977c04f41"
+   },
+   "encoded_by": "manual-2026-07-20"
+  },
+  {
+   "table": "stratagems",
+   "id": "000010756006",
+   "side": "target",
+   "detachment": "Freeblade Company",
+   "name_en": "SURVIVOR OF STRIFE",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "对手射击阶段被 S>T 攻击致伤-1——仅射击相位的 S>T 门无载体（wound_s_gt_t 无相位分量会波及近战、melee 变体相位相反），不编"
+   ],
+   "provenance": {
+    "text_sha256": "79b0aa036b2d50423f49ebfad051255f969328edc6fea5b4f86b563faf4a7b11"
+   },
+   "encoded_by": "manual-2026-07-20"
+  },
+  {
+   "table": "stratagems",
+   "id": "000010498003",
+   "side": "target",
+   "detachment": "Gate Warden Lance",
+   "name_en": "LANCEBREAKER",
+   "name_zh": null,
+   "status": "partial",
+   "effects": [
+    {
+     "phase": "wound",
+     "op": "modify",
+     "params": [
+      -1
+     ],
+     "condition": [
+      "melee_wound_s_gt_t"
+     ],
+     "source": "破枪反制（近战被 S>T 攻击致伤-1）"
+    }
+   ],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "WHEN=近战阶段敌选中目标后 + 须在防线上——点名即假设已使用且在防线；近战门（melee_wound_s_gt_t）"
+   ],
+   "provenance": {
+    "text_sha256": "6b8a029b7f0e6264bdb4dff90f06cf674cc7f2cade39862de81f0d151fa0ddcd"
+   },
+   "encoded_by": "manual-2026-07-20"
+  },
+  {
+   "table": "stratagems",
+   "id": "000010498004",
+   "side": "attacker",
+   "detachment": "Gate Warden Lance",
+   "name_en": "STEADFAST SUPERIORITY",
+   "name_zh": null,
+   "status": "partial",
+   "effects": [
+    {
+     "phase": "hit",
+     "op": "reroll",
+     "params": [
+      "fail"
+     ],
+     "condition": [
+      "phase_melee"
+     ],
+     "source": "坚定优势（近战重投命中）"
+    }
+   ],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "WHEN=近战阶段 + 须接战且在防线上未出手——点名即假设满足；近战门"
+   ],
+   "provenance": {
+    "text_sha256": "bf957e098aa83ade7088c88951e6c0a1410c763e79bd8362929221799d20e344"
+   },
+   "encoded_by": "manual-2026-07-20"
+  },
+  {
+   "table": "stratagems",
+   "id": "000010498006",
+   "side": "attacker",
+   "detachment": "Gate Warden Lance",
+   "name_en": "TITANIC BOMBARDMENT",
+   "name_zh": null,
+   "status": "partial",
+   "effects": [
+    {
+     "phase": "hit",
+     "op": "extra_hits",
+     "params": [
+      2
+     ],
+     "condition": [
+      "phase_shooting"
+     ],
+     "source": "巨神轰炸（远程 [SUSTAINED HITS 2]）"
+    }
+   ],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "WHEN=须驻步且在防线上未射击——点名即假设满足；射击门"
+   ],
+   "provenance": {
+    "text_sha256": "ff33d656ac290262699c127c2ec135b94ed9a9c3b718454bb569fdbcb881e471"
+   },
+   "encoded_by": "manual-2026-07-20"
+  },
+  {
+   "table": "stratagems",
+   "id": "000010498002",
+   "side": "attacker",
+   "detachment": "Gate Warden Lance",
+   "name_en": "DRIVE THEM OUT!",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "对防线上敌 unmodified 命中5+ 为暴击——目标位置门（防线上）无载体，且无 SUSTAINED/LETHAL 时暴击阈值改无实义"
+   ],
+   "provenance": {
+    "text_sha256": "b6fa6c99d80d3b56a978e5e2417bdd66370d15196aa6a372b148f1e1d4107ca8"
+   },
+   "encoded_by": "manual-2026-07-20"
+  },
+  {
+   "table": "stratagems",
+   "id": "000010498005",
+   "side": "attacker",
+   "detachment": "Gate Warden Lance",
+   "name_en": "MARSHAL THE DEFENCE",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "至多两单位 M+3\"——移动增益无载体"
+   ],
+   "provenance": {
+    "text_sha256": "00ce2307a7d49386ac53a722a42d87ee712a4b08873f9caf73ed661206006836"
+   },
+   "encoded_by": "manual-2026-07-20"
+  },
+  {
+   "table": "stratagems",
+   "id": "000010498007",
+   "side": "attacker",
+   "detachment": "Gate Warden Lance",
+   "name_en": "FORTRESS OF INTIMIDATION",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "冲锋者战栗测试-1——战栗测试无载体"
+   ],
+   "provenance": {
+    "text_sha256": "2f29ce104ce27202836df78dd2b912c3c0749d9bcf7b0f44d7a7b45c730c9ced"
+   },
+   "encoded_by": "manual-2026-07-20"
+  },
+  {
+   "table": "stratagems",
+   "id": "000009762005",
+   "side": "attacker",
+   "detachment": "Questor Forgepact",
+   "name_en": "MACHINE FOCUS",
+   "name_zh": null,
+   "status": "partial",
+   "effects": [
+    {
+     "phase": "hit",
+     "op": "ignore_hit_mods",
+     "params": [],
+     "condition": [],
+     "source": "机械专注（无视命中骰减值，两相位）"
+    }
+   ],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "另可无视 WS/BS 特征值减值与致伤骰减值——特征值/致伤减值无净算载体，仅编无视命中骰减值；持续至下回合初、两相位"
+   ],
+   "provenance": {
+    "text_sha256": "ab195de38b1645ddaf63787f82dc1d121ba55b35bc39ceee1dd7eec52eb89780"
+   },
+   "encoded_by": "manual-2026-07-20"
+  },
+  {
+   "table": "stratagems",
+   "id": "000009762006",
+   "side": "attacker",
+   "detachment": "Questor Forgepact",
+   "name_en": "AGGRESSION BEGETS AGGRESSION",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "远程 [ASSAULT]——冲锋后射击资格无载体"
+   ],
+   "provenance": {
+    "text_sha256": "94ae805900e13432359aef8e7063b80071c36786bd079b1bb57b20cd9de86f11"
+   },
+   "encoded_by": "manual-2026-07-20"
+  },
+  {
+   "table": "stratagems",
+   "id": "000009762004",
+   "side": "attacker",
+   "detachment": "Questor Forgepact",
+   "name_en": "BONDED IMPERATIVE",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "Bondsman 可加选 Admech 单位——Bondsman 选择机制无载体"
+   ],
+   "provenance": {
+    "text_sha256": "78988d56aa0e3fa3e8ae93257043e83748fc657340308389dd73a753b574d2dc"
+   },
+   "encoded_by": "manual-2026-07-20"
+  },
+  {
+   "table": "stratagems",
+   "id": "000009762002",
+   "side": "target",
+   "detachment": "Questor Forgepact",
+   "name_en": "OMNISSIAH’S GRACE",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "对致命伤 FNP 5+——仅对致命伤的 FNP 无载体（引擎伤害非致命伤来源）"
+   ],
+   "provenance": {
+    "text_sha256": "970bad742d9efda7d9e7ab312234e90d8e9fc5ca70b6feb7717ee636e7188947"
+   },
+   "encoded_by": "manual-2026-07-20"
+  },
+  {
+   "table": "stratagems",
+   "id": "000009762007",
+   "side": "attacker",
+   "detachment": "Questor Forgepact",
+   "name_en": "THRONEGHEIST FURY",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "敌移动后守望式射击、须 6 命中——反应射击/固定命中无载体"
+   ],
+   "provenance": {
+    "text_sha256": "b47086b74c50e8ab623e29b906da4a7d0b0fe3cdcf3d30fa39c195764a034f4d"
+   },
+   "encoded_by": "manual-2026-07-20"
+  },
+  {
+   "table": "stratagems",
+   "id": "000009762003",
+   "side": "attacker",
+   "detachment": "Questor Forgepact",
+   "name_en": "VENGEANCE OF THE MACHINE CULT",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "标记摧毁者 → Admech 对其 [LETHAL HITS]——身后标记/异单位增益无载体"
+   ],
+   "provenance": {
+    "text_sha256": "313fe2791c56bb959e355710b060ee78becf4b902ee4f6dd6d698c6e86a942fd"
+   },
+   "encoded_by": "manual-2026-07-20"
+  },
+  {
+   "table": "stratagems",
+   "id": "000010503002",
+   "side": "target",
+   "detachment": "Questoris Companions",
+   "name_en": "COURAGEOUS STAND",
+   "name_zh": null,
+   "status": "partial",
+   "effects": [
+    {
+     "phase": "fnp",
+     "op": "fnp",
+     "params": [
+      6
+     ],
+     "condition": [],
+     "source": "英勇不退（FNP 6+，射击/近战两相位）"
+    }
+   ],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "WHEN=敌选中目标后（射击或近战）——点名即假设已使用；两相位均适用"
+   ],
+   "provenance": {
+    "text_sha256": "f7529d99a83bc312265cf6cd06fc8883221392900be4a87d29e3725b4a5e6bba"
+   },
+   "encoded_by": "manual-2026-07-20"
+  },
+  {
+   "table": "stratagems",
+   "id": "000010503007",
+   "side": "attacker",
+   "detachment": "Questoris Companions",
+   "name_en": "DRIVEN BY THE PAST",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "加速回合可宣冲锋——冲锋资格无载体"
+   ],
+   "provenance": {
+    "text_sha256": "534b9aaf8eff239f314b3543ce6bcd1309681c1c5a2b9ba9c3337deff400aa0f"
+   },
+   "encoded_by": "manual-2026-07-20"
+  },
+  {
+   "table": "stratagems",
+   "id": "000010503005",
+   "side": "attacker",
+   "detachment": "Questoris Companions",
+   "name_en": "HERO’S TREAD",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "据点控制等级设为 5——据点控制无载体"
+   ],
+   "provenance": {
+    "text_sha256": "0895d839a0f07c4ead64473fe518764133b57cffef5de6703bf9a8a781382b37"
+   },
+   "encoded_by": "manual-2026-07-20"
+  },
+  {
+   "table": "stratagems",
+   "id": "000010503004",
+   "side": "attacker",
+   "detachment": "Questoris Companions",
+   "name_en": "MOMENT OF GLORY",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "巩固可多移 3\"——移动增益无载体"
+   ],
+   "provenance": {
+    "text_sha256": "40738b6d38e24970bb0c8e13eb334894c4ae4accbf30233bb85aa0a6ea8a9dba"
+   },
+   "encoded_by": "manual-2026-07-20"
+  },
+  {
+   "table": "stratagems",
+   "id": "000010503003",
+   "side": "attacker",
+   "detachment": "Questoris Companions",
+   "name_en": "TITANIC DUEL",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "对 MONSTER/TITANIC/WALKER 命中+1 致伤+1——三关键词 OR 单 tag 不可表达（target_has_keyword 仅一关键词），不编"
+   ],
+   "provenance": {
+    "text_sha256": "43e8cd4adcca303199251c8587cd1aeb6bb8128bfb6fad0a07435469ac039682"
+   },
+   "encoded_by": "manual-2026-07-20"
+  },
+  {
+   "table": "stratagems",
+   "id": "000010503006",
+   "side": "attacker",
+   "detachment": "Questoris Companions",
+   "name_en": "UNSTOPPABLE WARRIOR",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "撤退回合仍可射击与宣冲锋——射击/冲锋资格无载体"
+   ],
+   "provenance": {
+    "text_sha256": "15b3bf81ccd536406eb1bbd7e1b1a246a0a7150254dfae8499e03743abdb2742"
+   },
+   "encoded_by": "manual-2026-07-20"
+  },
+  {
+   "table": "stratagems",
+   "id": "000010507002",
+   "side": "attacker",
+   "detachment": "Spearhead-At-Arms",
+   "name_en": "VIRTUE OF COURAGE",
+   "name_zh": null,
+   "status": "partial",
+   "effects": [
+    {
+     "phase": "hit",
+     "op": "modify",
+     "params": [
+      1
+     ],
+     "condition": [
+      "phase_melee"
+     ],
+     "source": "勇气美德（Armiger 近战对选定敌命中+1）"
+    }
+   ],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "限 Armiger 对所选敌单位（单位对局假设即该敌）；WHEN=近战阶段开始；近战门"
+   ],
+   "provenance": {
+    "text_sha256": "8d2d1c461bac113913d6d26e37850bc00613f387498f5dbe5aec402593f57700"
+   },
+   "encoded_by": "manual-2026-07-20"
+  },
+  {
+   "table": "stratagems",
+   "id": "000010507005",
+   "side": "attacker",
+   "detachment": "Spearhead-At-Arms",
+   "name_en": "THIN THEIR RANKS",
+   "name_zh": null,
+   "status": "partial",
+   "effects": [
+    {
+     "phase": "attacks",
+     "op": "modify",
+     "params": [
+      1
+     ],
+     "condition": [
+      "half_range"
+     ],
+     "source": "削减其众（Armiger 远程 [RAPID FIRE 1]——半射程 A+1）"
+    }
+   ],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "[RAPID FIRE 1]=半射程内攻击次数+1（half_range 门，仅射击）；限 Armiger（单位对局假设即 Armiger）"
+   ],
+   "provenance": {
+    "text_sha256": "caf679d5f3106e88491b99001883b341ac629a2d11df0aa0e296ffaa9f95d4aa"
+   },
+   "encoded_by": "manual-2026-07-20"
+  },
+  {
+   "table": "stratagems",
+   "id": "000010507006",
+   "side": "target",
+   "detachment": "Spearhead-At-Arms",
+   "name_en": "LET DUTY BE YOUR SHIELD",
+   "name_zh": null,
+   "status": "partial",
+   "effects": [
+    {
+     "phase": "save",
+     "op": "ap_improve",
+     "params": [
+      -1
+     ],
+     "condition": [
+      "phase_shooting"
+     ],
+     "source": "以责为盾（Armiger 被射击 AP 恶化1）"
+    }
+   ],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "WHEN=对手射击阶段选中目标后——点名即假设已使用；限 Armiger；射击门（近战不注入）"
+   ],
+   "provenance": {
+    "text_sha256": "0ecfbcb3b748b90867715c324d04d63ca08cb47f66e73b7144f39580628e2bbb"
+   },
+   "encoded_by": "manual-2026-07-20"
+  },
+  {
+   "table": "stratagems",
+   "id": "000010507003",
+   "side": "attacker",
+   "detachment": "Spearhead-At-Arms",
+   "name_en": "EXEMPLAR’S WISDOM",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "射击后选一被命中敌 → Armiger 对其 +1 AP——身后选定目标/Bondsman 无载体"
+   ],
+   "provenance": {
+    "text_sha256": "8552cde8d7983795c342da60158b119c26e6a3f579596883049b53896e9afc88"
+   },
+   "encoded_by": "manual-2026-07-20"
+  },
+  {
+   "table": "stratagems",
+   "id": "000010507004",
+   "side": "attacker",
+   "detachment": "Spearhead-At-Arms",
+   "name_en": "MANTLE OF THE MENTOR",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "Armiger 撤退回合可射击——射击资格无载体"
+   ],
+   "provenance": {
+    "text_sha256": "c1e7bab56b5cb6f0e305572462d785b2ff9bac00438c14f3f22bae018f12213f"
+   },
+   "encoded_by": "manual-2026-07-20"
+  },
+  {
+   "table": "stratagems",
+   "id": "000010507007",
+   "side": "attacker",
+   "detachment": "Spearhead-At-Arms",
+   "name_en": "SQUIRES OFTHE HUNT",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "Armiger 撤入战略预备队——预备队机制无载体"
+   ],
+   "provenance": {
+    "text_sha256": "66c21e4a7457bfc29515b7685dc5a32fa5f478c1ad71a7edcf7681521cc9b516"
+   },
+   "encoded_by": "manual-2026-07-20"
+  },
+  {
+   "table": "stratagems",
+   "id": "000010494002",
+   "side": "attacker",
+   "detachment": "Valourstrike Lance",
+   "name_en": "RUN THEM THROUGH!",
+   "name_zh": null,
+   "status": "partial",
+   "effects": [
+    {
+     "phase": "wound",
+     "op": "modify",
+     "params": [
+      1
+     ],
+     "condition": [
+      "melee_charging"
+     ],
+     "source": "贯穿！（近战 [LANCE]——冲锋回合致伤+1）"
+    }
+   ],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "[LANCE]=冲锋回合近战致伤+1（melee_charging 复合门）；非冲锋回合不生效"
+   ],
+   "provenance": {
+    "text_sha256": "7451cfccc49a8a9535e1fac77f9d1986c625cf45a1e94cd2d15b14efd0139e9a"
+   },
+   "encoded_by": "manual-2026-07-20"
+  },
+  {
+   "table": "stratagems",
+   "id": "000010494003",
+   "side": "attacker",
+   "detachment": "Valourstrike Lance",
+   "name_en": "THUNDERSTOMP",
+   "name_zh": null,
+   "status": "partial",
+   "effects": [
+    {
+     "phase": "save",
+     "op": "ap_improve",
+     "params": [
+      1
+     ],
+     "condition": [
+      "phase_melee"
+     ],
+     "source": "雷霆践踏（Feet 近战武器 +1 AP）"
+    }
+   ],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "主效果=设定 armoured Feet 攻击次数为 8、titanic Feet 为 12（SET 无载体，modify 为增量非设定）——不编；仅编 Feet 武器 +1 AP 残量；近战门、限名字含 feet 的武器"
+   ],
+   "provenance": {
+    "text_sha256": "f4fe58b3489e0d3f908ea26bbc3454a69fd2db65c083084f47dd9848277b3a55"
+   },
+   "encoded_by": "manual-2026-07-20",
+   "weapon_filter": "feet"
+  },
+  {
+   "table": "stratagems",
+   "id": "000010494005",
+   "side": "attacker",
+   "detachment": "Valourstrike Lance",
+   "name_en": "VOW OF RETRIBUTION",
+   "name_zh": null,
+   "status": "partial",
+   "effects": [
+    {
+     "phase": "hit",
+     "op": "auto_wound",
+     "params": [],
+     "condition": [
+      "phase_shooting"
+     ],
+     "source": "复仇誓约（远程 [LETHAL HITS]——暴击自动致伤）"
+    }
+   ],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "WHEN=射击阶段未射击——点名即假设满足；射击门"
+   ],
+   "provenance": {
+    "text_sha256": "c9bef88a9003e5141fd8bc91346f6cbfbac42d4070b09e4a23eec86033af8605"
+   },
+   "encoded_by": "manual-2026-07-20"
+  },
+  {
+   "table": "stratagems",
+   "id": "000010494007",
+   "side": "target",
+   "detachment": "Valourstrike Lance",
+   "name_en": "ROTATE ION SHIELDS",
+   "name_zh": null,
+   "status": "partial",
+   "effects": [
+    {
+     "phase": "save",
+     "op": "invuln",
+     "params": [
+      4
+     ],
+     "condition": [
+      "phase_shooting"
+     ],
+     "source": "旋转离子盾（4+ 无效保护，射击）"
+    }
+   ],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "WHEN=对手射击阶段选中目标后——点名即假设已使用；射击门（近战不注入）"
+   ],
+   "provenance": {
+    "text_sha256": "efc3a835468384e051805b21b4ec9c93a2d0c809dc27e6cd5ff7a2ed973d5be4"
+   },
+   "encoded_by": "manual-2026-07-20"
+  },
+  {
+   "table": "stratagems",
+   "id": "000010494004",
+   "side": "attacker",
+   "detachment": "Valourstrike Lance",
+   "name_en": "FULL TILT",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "M+2\"、加速骰+2——移动增益无载体"
+   ],
+   "provenance": {
+    "text_sha256": "a71439d85775a008bb45a221f0a8f01ffb954c6d186e093aec12ef08972884e3"
+   },
+   "encoded_by": "manual-2026-07-20"
+  },
+  {
+   "table": "stratagems",
+   "id": "000010494006",
+   "side": "attacker",
+   "detachment": "Valourstrike Lance",
+   "name_en": "TACTICAL FOIL",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "敌移动后本模型可 D6\" 普通移动——移动无载体（本 PR 已补 9\"→8\" 文本漂移）"
+   ],
+   "provenance": {
+    "text_sha256": "2ce1a111c69f5d122ee10fe96868bb4fdc365dc02d241e1172d693443b4ae98c"
+   },
+   "encoded_by": "manual-2026-07-20"
+  },
+  {
+   "table": "stratagems",
+   "id": "fp11e-imperialknights-dominus-s1",
+   "side": "attacker",
+   "detachment": "Dominus Foebreakers",
+   "name_en": "Ground-Shaking Strides",
+   "name_zh": "撼地阔步",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "M+2\"——移动增益无载体"
+   ],
+   "provenance": {
+    "text_sha256": "07ac3788b387d1f565acfdc79ed9dedf354b5d33e2a5ec95427fdbd0bd041dd2"
+   },
+   "encoded_by": "manual-2026-07-20"
+  },
+  {
+   "table": "stratagems",
+   "id": "fp11e-imperialknights-dominus-s2",
+   "side": "attacker",
+   "detachment": "Dominus Foebreakers",
+   "name_en": "Foebreaker Firestorm",
+   "name_zh": "破敌火风暴",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "[BLAST] 攻击去 [BLAST] 且 A+1——去 BLAST/按武器改 A 无通用载体"
+   ],
+   "provenance": {
+    "text_sha256": "bdc544fca3a2029093f5760ddb79e69bf07f69497d49697be9a218188b52d8cc"
+   },
+   "encoded_by": "manual-2026-07-20"
+  },
+  {
+   "table": "stratagems",
+   "id": "fp11e-imperialknights-dominus-s3",
+   "side": "attacker",
+   "detachment": "Dominus Foebreakers",
+   "name_en": "Fire Shocked",
+   "name_zh": "火力震慑",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "敌战栗测试-1——战栗测试无载体"
+   ],
+   "provenance": {
+    "text_sha256": "22b0e7af1b042a3a8960feeeb0d0e73f71dc8851d886e3e89c573b8fbc0eefb7"
+   },
+   "encoded_by": "manual-2026-07-20"
+  },
+  {
+   "table": "stratagems",
+   "id": "fp11e-imperialknights-throne-s1",
+   "side": "attacker",
+   "detachment": "Throne-bonded Outriders",
+   "name_en": "Neural Lash",
+   "name_zh": "神经鞭策",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "解除 Armiger 战栗——战栗状态无载体"
+   ],
+   "provenance": {
+    "text_sha256": "87845885e22d43ec5f917e7176108a8ae522c5a91e694c8d73c7ad30a628c6cd"
+   },
+   "encoded_by": "manual-2026-07-20"
+  },
+  {
+   "table": "stratagems",
+   "id": "fp11e-imperialknights-throne-s2",
+   "side": "attacker",
+   "detachment": "Throne-bonded Outriders",
+   "name_en": "Helm Conditioning",
+   "name_zh": "头盔调训",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "Bondsman 选择范围 18\"——Bondsman 选择机制无载体"
+   ],
+   "provenance": {
+    "text_sha256": "b4ad4fa36094db58195e237f14f5a319afcdd128166e32868d216f90ee945800"
+   },
+   "encoded_by": "manual-2026-07-20"
+  },
+  {
+   "table": "stratagems",
+   "id": "fp11e-imperialknights-throne-s3",
+   "side": "attacker",
+   "detachment": "Throne-bonded Outriders",
+   "name_en": "Honoured to Serve",
+   "name_zh": "效命为荣",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "射击不阻碍开始行动——行动资格无载体"
+   ],
+   "provenance": {
+    "text_sha256": "1cf9d06cf870bdc501cfa1610aa005c6b130d541a0a7cba2d4cf523be1dd4d4b"
+   },
+   "encoded_by": "manual-2026-07-20"
+  },
+  {
+   "table": "enhancements",
+   "id": "000010755002",
+   "side": "attacker",
+   "detachment": "Freeblade Company",
+   "name_en": "Bringer of Justice",
+   "name_zh": null,
+   "status": "partial",
+   "effects": [
+    {
+     "phase": "attacks",
+     "op": "modify",
+     "params": [
+      2
+     ],
+     "condition": [
+      "phase_melee"
+     ],
+     "source": "正义使者（携带者近战武器 A+2）"
+    },
+    {
+     "phase": "hit",
+     "op": "modify",
+     "params": [
+      1
+     ],
+     "condition": [
+      "phase_melee"
+     ],
+     "source": "正义使者（携带者近战命中+1）"
+    }
+   ],
+   "requires_toggles": [
+    "bearer_leading"
+   ],
+   "not_modeled_notes_zh": [
+    "限携带者模型近战武器（附属单位整体注入会高估）；近战门"
+   ],
+   "provenance": {
+    "text_sha256": "c4a1e4c55e5f413f72f6abd618f498ee23c35791b73d1269918089ce199f4b9e"
+   },
+   "encoded_by": "manual-2026-07-20"
+  },
+  {
+   "table": "enhancements",
+   "id": "000010755003",
+   "side": "attacker",
+   "detachment": "Freeblade Company",
+   "name_en": "Hunter’s Eye",
+   "name_zh": null,
+   "status": "partial",
+   "effects": [
+    {
+     "phase": "save",
+     "op": "ignores_cover",
+     "params": [],
+     "condition": [
+      "phase_shooting"
+     ],
+     "source": "猎手之眼（携带者远程 [IGNORES COVER]）"
+    }
+   ],
+   "requires_toggles": [
+    "bearer_leading"
+   ],
+   "not_modeled_notes_zh": [
+    "限携带者模型远程武器；射击门"
+   ],
+   "provenance": {
+    "text_sha256": "d492a2f9ce419330ad4fcca9d752fa889d82867eeca1c492be6a4044668c25aa"
+   },
+   "encoded_by": "manual-2026-07-20"
+  },
+  {
+   "table": "enhancements",
+   "id": "000010755005",
+   "side": "target",
+   "detachment": "Freeblade Company",
+   "name_en": "Sanctuary",
+   "name_zh": null,
+   "status": "partial",
+   "effects": [
+    {
+     "phase": "save",
+     "op": "invuln",
+     "params": [
+      5
+     ],
+     "condition": [],
+     "source": "圣所（携带者 5+ 无效保护）"
+    }
+   ],
+   "requires_toggles": [
+    "defender_bearer_leading"
+   ],
+   "not_modeled_notes_zh": [
+    "限携带者（点名即声明守方为携带者）"
+   ],
+   "provenance": {
+    "text_sha256": "acdfbb9a44be126f43c84318cd15433b23c7d3806e46d8774e710079fd29e8dd"
+   },
+   "encoded_by": "manual-2026-07-20"
+  },
+  {
+   "table": "enhancements",
+   "id": "000010755004",
+   "side": "attacker",
+   "detachment": "Freeblade Company",
+   "name_en": "Mysterious Guardian",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "深入 + 每战一次撤场重部署——深入/预备队机制无载体"
+   ],
+   "provenance": {
+    "text_sha256": "7a8733d4b7dfc879af2b9816bc3f05dd26c8951cf7ef286b257ffdf8bfd6ab9d"
+   },
+   "encoded_by": "manual-2026-07-20"
+  },
+  {
+   "table": "enhancements",
+   "id": "000010497002",
+   "side": "attacker",
+   "detachment": "Gate Warden Lance",
+   "name_en": "Acquisitor-at-Arms",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "防线上向 Bondsman 单位加算 OC——据点控制/位置门无载体"
+   ],
+   "provenance": {
+    "text_sha256": "323ae1d481d471d695557d8ff60f1cdc1bdb4029c3bd5b288e92643c7c9f17c4"
+   },
+   "encoded_by": "manual-2026-07-20"
+  },
+  {
+   "table": "enhancements",
+   "id": "000010497004",
+   "side": "attacker",
+   "detachment": "Gate Warden Lance",
+   "name_en": "Augury Halo",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "防线上远程 [IGNORES COVER]——防线为位置门（增强随移动进出），无载体不编"
+   ],
+   "provenance": {
+    "text_sha256": "ab6b38b8d82436e90347f7e4f4ebafd16ab49325dee2029c7238a7d30fb795e0"
+   },
+   "encoded_by": "manual-2026-07-20"
+  },
+  {
+   "table": "enhancements",
+   "id": "000010497003",
+   "side": "attacker",
+   "detachment": "Gate Warden Lance",
+   "name_en": "Purgation’s Hand",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "防线上近战重投命中1与致伤1——重投1（非重投失败）+ 防线位置门无载体"
+   ],
+   "provenance": {
+    "text_sha256": "7c7857e37b0ab6a27d17ccf6a52d4b96539b6b5abe4f489ef09a15da987aec8a"
+   },
+   "encoded_by": "manual-2026-07-20"
+  },
+  {
+   "table": "enhancements",
+   "id": "000010497005",
+   "side": "attacker",
+   "detachment": "Gate Warden Lance",
+   "name_en": "Vengeful Tread",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "每回合可 0CP 坦克冲撞携带者——战略经济无载体"
+   ],
+   "provenance": {
+    "text_sha256": "b2ca5f148a2532ac013f94b6b09bdb222370df1c7dc216d78f67ecad2ddb4d36"
+   },
+   "encoded_by": "manual-2026-07-20"
+  },
+  {
+   "table": "enhancements",
+   "id": "000009761003",
+   "side": "attacker",
+   "detachment": "Questor Forgepact",
+   "name_en": "Knight of the Opus Machina",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "近 Admech 时远程重投命中1——重投1（非重投失败）+ 光环门无载体"
+   ],
+   "provenance": {
+    "text_sha256": "c50c0be1db3ee94c03d2db6e50eec6f4f8c20395794a1e48cb71db54dada4c1f"
+   },
+   "encoded_by": "manual-2026-07-20"
+  },
+  {
+   "table": "enhancements",
+   "id": "000009761004",
+   "side": "attacker",
+   "detachment": "Questor Forgepact",
+   "name_en": "Magos Questoris",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "Tech-Priest 孤狼 + 指挥阶段治疗——孤狼/治疗无载体"
+   ],
+   "provenance": {
+    "text_sha256": "b80788eeb6f8465c057d880a5fc1b89b70290f5578b13d0c38463cb356a95f8c"
+   },
+   "encoded_by": "manual-2026-07-20"
+  },
+  {
+   "table": "enhancements",
+   "id": "000009761002",
+   "side": "attacker",
+   "detachment": "Questor Forgepact",
+   "name_en": "Omnissian Champion",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "携带者 W+4——W 增益无战斗链载体"
+   ],
+   "provenance": {
+    "text_sha256": "d4973c86160f3ba640edf37a29f5ccc73ffb498fe2d850585c3b3bdfbec24d03"
+   },
+   "encoded_by": "manual-2026-07-20"
+  },
+  {
+   "table": "enhancements",
+   "id": "000009761005",
+   "side": "attacker",
+   "detachment": "Questor Forgepact",
+   "name_en": "Vocifer Magnificat (Aura)",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "领导力光环（敌-1/Admech+1 LD）——领导力无载体"
+   ],
+   "provenance": {
+    "text_sha256": "7d6b434585552942685b75c4e8d064dcb060f66f8877760a6c0db44f49df1af4"
+   },
+   "encoded_by": "manual-2026-07-20"
+  },
+  {
+   "table": "enhancements",
+   "id": "000010502004",
+   "side": "attacker",
+   "detachment": "Questoris Companions",
+   "name_en": "Pennant of Silvered Fury",
+   "name_zh": null,
+   "status": "partial",
+   "effects": [
+    {
+     "phase": "hit",
+     "op": "extra_hits",
+     "params": [
+      2
+     ],
+     "condition": [
+      "phase_melee"
+     ],
+     "source": "银怒战旗（携带者近战武器 [SUSTAINED HITS 2]）"
+    }
+   ],
+   "requires_toggles": [
+    "bearer_leading"
+   ],
+   "not_modeled_notes_zh": [
+    "限携带者近战武器；出战时消耗式启用——点名即假设已启用；近战门"
+   ],
+   "provenance": {
+    "text_sha256": "0c549be79c58abfc4fcd09d7701b029c3ea8b1074d2ed036a9e53382300ed40f"
+   },
+   "encoded_by": "manual-2026-07-20"
+  },
+  {
+   "table": "enhancements",
+   "id": "000010502005",
+   "side": "attacker",
+   "detachment": "Questoris Companions",
+   "name_en": "Crushing Condemnation",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "近战摧毁敌后对 12\"内另一敌掷 6D6 每 4+ 致命伤——身后致命伤/选定目标无载体"
+   ],
+   "provenance": {
+    "text_sha256": "e8c48becc8ea7e9ad8cf4ffcf9a19b5378c626e9a91086161e508ed4cc08d76f"
+   },
+   "encoded_by": "manual-2026-07-20"
+  },
+  {
+   "table": "enhancements",
+   "id": "000010502002",
+   "side": "attacker",
+   "detachment": "Questoris Companions",
+   "name_en": "Herald of Triumph",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "冲锋后接战敌战栗测试-1——战栗测试无载体"
+   ],
+   "provenance": {
+    "text_sha256": "e97464d905a52073aa88b76ca2751a901b53b3d5f691f05a8dc70781dc53c291"
+   },
+   "encoded_by": "manual-2026-07-20"
+  },
+  {
+   "table": "enhancements",
+   "id": "000010502003",
+   "side": "attacker",
+   "detachment": "Questoris Companions",
+   "name_en": "Wyrmslayer Divination",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "射击时对 FLY 单位重投命中——射击×关键词无复合 tag（重投须重投失败且仅射击门），不编"
+   ],
+   "provenance": {
+    "text_sha256": "72984cb4cc3b48e942d3527b62e8d3f771d93870ea47d2ccb48061f9ce02f964"
+   },
+   "encoded_by": "manual-2026-07-20"
+  },
+  {
+   "table": "enhancements",
+   "id": "000010506003",
+   "side": "attacker",
+   "detachment": "Spearhead-At-Arms",
+   "name_en": "Fables of Nightmare",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "2+ Armiger 受 Bondsman 时近战武器 [PRECISION]——[PRECISION] 攻击分配无载体 + Bondsman 影响态无载体"
+   ],
+   "provenance": {
+    "text_sha256": "224cb35899de8ff12152346d2963594758d519a707f3346666d47274b0e46ec3"
+   },
+   "encoded_by": "manual-2026-07-20"
+  },
+  {
+   "table": "enhancements",
+   "id": "000010506005",
+   "side": "attacker",
+   "detachment": "Spearhead-At-Arms",
+   "name_en": "Martial Tuition",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "0CP 反击战略——战略经济 + Bondsman 影响态无载体"
+   ],
+   "provenance": {
+    "text_sha256": "57a05cf8c5a531fc34e1765ba798c48a8824dfc253de312de6ffacd76f872863"
+   },
+   "encoded_by": "manual-2026-07-20"
+  },
+  {
+   "table": "enhancements",
+   "id": "000010506002",
+   "side": "attacker",
+   "detachment": "Spearhead-At-Arms",
+   "name_en": "Mentor’s Pride",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "Armiger 重投命中1——重投1（非重投失败）+ Bondsman 影响态无载体"
+   ],
+   "provenance": {
+    "text_sha256": "3e7e90384092073ea8972f608f1b1a6cef64639acfffacb268ea87772513533e"
+   },
+   "encoded_by": "manual-2026-07-20"
+  },
+  {
+   "table": "enhancements",
+   "id": "000010506004",
+   "side": "attacker",
+   "detachment": "Spearhead-At-Arms",
+   "name_en": "Tales of Heroism",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "Armiger 近战可无视命中/致伤减值——Bondsman 影响态（2+ Armiger）无载体，裸编会过度施加"
+   ],
+   "provenance": {
+    "text_sha256": "50c1505b5d3e8801e4fce55bdf03b9ac2740495bf651161d803d407905e82225"
+   },
+   "encoded_by": "manual-2026-07-20"
+  },
+  {
+   "table": "enhancements",
+   "id": "000010493003",
+   "side": "attacker",
+   "detachment": "Valourstrike Lance",
+   "name_en": "Bearer of the Evanescent Ion",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "移动阶段末赋另一 IK 模型潜行——授予异模型 + 潜行状态无载体"
+   ],
+   "provenance": {
+    "text_sha256": "416bc43f1f19861064256e40689f81bc6df1d8209f2b97e1033a9faac74b4d97"
+   },
+   "encoded_by": "manual-2026-07-20"
+  },
+  {
+   "table": "enhancements",
+   "id": "000010493002",
+   "side": "attacker",
+   "detachment": "Valourstrike Lance",
+   "name_en": "Bearer of the Iron Chalice",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "移动阶段末治疗另一 IK 模型——授予异模型 + 治疗无载体"
+   ],
+   "provenance": {
+    "text_sha256": "7516b82887725cc609db71db2f2248a03e38f405e3b419fb2d69bc738a3aa261"
+   },
+   "encoded_by": "manual-2026-07-20"
+  },
+  {
+   "table": "enhancements",
+   "id": "000010493004",
+   "side": "attacker",
+   "detachment": "Valourstrike Lance",
+   "name_en": "Bearer of the Judicant’s Helm",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "射击阶段初赋另一 IK 模型远程 [IGNORES COVER]——效果作用于异模型（非携带者），选择/光环机制无载体"
+   ],
+   "provenance": {
+    "text_sha256": "5a888c423a408df1f463746d1a52413d0696d700fdc6d96e8ae3f4e695518437"
+   },
+   "encoded_by": "manual-2026-07-20"
+  },
+  {
+   "table": "enhancements",
+   "id": "000010493005",
+   "side": "attacker",
+   "detachment": "Valourstrike Lance",
+   "name_en": "Bearer of the Lancer’s Sigil",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "冲锋阶段初赋另一 IK 模型重投冲锋——授予异模型 + 冲锋骰无载体"
+   ],
+   "provenance": {
+    "text_sha256": "097ae9a9f06ed2aff38c541cfb3f07485dccb34e4bcf3e039bd1878136508a58"
+   },
+   "encoded_by": "manual-2026-07-20"
+  },
+  {
+   "table": "enhancements",
+   "id": "fp11e-imperialknights-dominus-e1",
+   "side": "target",
+   "detachment": "Dominus Foebreakers",
+   "name_en": "Blessed Plate",
+   "name_zh": null,
+   "status": "partial",
+   "effects": [
+    {
+     "phase": "wound",
+     "op": "t_improve",
+     "params": [
+      1
+     ],
+     "condition": [],
+     "source": "受祝甲板（携带者 T+1）"
+    }
+   ],
+   "requires_toggles": [
+    "defender_bearer_leading"
+   ],
+   "not_modeled_notes_zh": [
+    "限携带者（点名即声明守方为携带者）；T+1 净算通道"
+   ],
+   "provenance": {
+    "text_sha256": "c64ac09e0b287b4797e40225edd4fdf4bfab481877db80ce3ddece44aecab6ad"
+   },
+   "encoded_by": "manual-2026-07-20"
+  },
+  {
+   "table": "enhancements",
+   "id": "fp11e-imperialknights-dominus-e2",
+   "side": "attacker",
+   "detachment": "Dominus Foebreakers",
+   "name_en": "Archeotech Autoloaders",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "重投武器攻击次数骰——攻击次数骰重投无载体"
+   ],
+   "provenance": {
+    "text_sha256": "389984442ab9ceb4557c5c7dbc60507a87cbfe859b4dac0154c7b3fb1114c362"
+   },
+   "encoded_by": "manual-2026-07-20"
+  },
+  {
+   "table": "enhancements",
+   "id": "fp11e-imperialknights-throne-e1",
+   "side": "attacker",
+   "detachment": "Throne-bonded Outriders",
+   "name_en": "Gyro-optimised Actuators",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "单位获 MOBILE——移动关键词无载体"
+   ],
+   "provenance": {
+    "text_sha256": "6496fb191aa73a2e63f56fb63ba6af73f792e0400c964be7cbe40f70c7db6f98"
+   },
+   "encoded_by": "manual-2026-07-20"
+  },
+  {
+   "table": "enhancements",
+   "id": "fp11e-imperialknights-throne-e2",
+   "side": "attacker",
+   "detachment": "Throne-bonded Outriders",
+   "name_en": "Ancestral Overbleed",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "守望/英勇介入 -1CP——战略经济无载体"
+   ],
+   "provenance": {
+    "text_sha256": "65c86ef5ae6daf05bb9f758404a0a13814e8fd1ad9264d0c3da4cdf2fdca0b38"
+   },
+   "encoded_by": "manual-2026-07-20"
+  }
+ ]
+}
