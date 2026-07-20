@@ -133,3 +133,42 @@ SM 通用分队气质=移动资格/目标点/战斗教条/预备队/重骰1/ausp
   **零硬错**），见 `benchmarks/v3_edition11/qa_agent_results_p7pr20.json`（纯编码 PR——DSL/DB 补丁
   不进 FAISS 检索语料，检索侧零影响，与历史 99.0 基线一致）
 - 自审（code-reviewer 子代理）：见「自审修复」节
+
+## 自审修复（code-reviewer 子代理，2026-07-20）
+
+对 `dsl_payloads/spacemarines.json`（158 项）+ `fp_rules_patches.json` SM inserts +
+`tests/test_simulator_dsl_pr20_payload.py` 做对抗式复核，逐条比对引擎 tag 真源
+（`engines/simulator/dsl.py` + `effect_params.py`）与已并阵营范式（orks/darkangels/bloodangels）。
+重点核查本 PR 系列四次复发的 staged-WHEN 相位门 HIGH 与反向过度加门 MEDIUM：
+
+- **Trap 1（触发相位后漏门致过度施加）**：全部 charge/触发时序词条已核 —
+  `COURAGE AND HONOUR!`（[LANCE]）用 `melee_charging`（= phase=="melee" and stance.charging，
+  与 LANCE「本回合冲锋后战斗阶段」语义精确一致）；`AUGMETIC FORTITUDE`（WHEN=对手冲锋阶段末，
+  持续到回合结束）正确挂 `phase_melee`（顺相位序 Charge→Fight，同玩家回合冲锋后仅剩战斗阶段可受益）；
+  Shock Deployment/Firestorm Coordinators 等下车射击词条正确 `disembarked_this_turn` + `phase_shooting`
+  复合。**零漏门**。
+- **Trap 2（反向多加门致欠建模）**：所有标注「两相位均适用」的词条（傲慢之甲 ×10 / Ruthless
+  Butchery / Fury of the First / Malodraxian Standard / Angels Defiant）均正确不挂相位门（或用
+  相位无关的 `wound_s_gt_t`）。**零冗余门**。
+- **Trap 3（无载体机制误标 partial）**：负关键字门（Fusillade ANTI-M/V、Target Weak Point、
+  Priority Strike）、[TORRENT]/[PSYCHIC] 关键字 weapon_filter（Immolation Protocols/Immolator）、
+  重骰 1（Gunnery Honours/Calculated Annihilation/Codex Discipline）、致命伤池（Assail）、
+  一次性二选一（Augmented Targeting/Cogitated Ferocity/Spear Thrust and Sabre Swing）—— 全部
+  正确 `not_modeled`，无一走私为 partial。
+- **Trap 4（partial 诚实性）**：Spearpoint Paragon / Oath of Macragge / War-tempered Artifice
+  抽查——均只编保守基础值并显式披露未建模的冲锋/教条升级分支，符合系列「防高估」约定。
+- **Trap 5（id 约定）**：`fp11e-spacemarines-bastion-s6` 与 fulguris/subversion 分队 inserts
+  均守 `fp11e-spacemarines-` 前缀，grep 全库零 id 碰撞；Angels Defiant DB 文本
+  （WHEN=对手射击阶段或战斗阶段）与 payload 无相位门 `wound_s_gt_t` 编码精确对应。
+
+**裁定：APPROVE —— 零 CRITICAL/HIGH/MEDIUM/LOW。** 编码保守诚实，无相位门缺陷、无诚实性违规、
+无 id 碰撞，无需修复。
+
+## 收尾（iteration 2）
+
+- 修正 iter1 的行尾/BOM 漂移：`fp_rules_patches.json` 被 iter1 误写成 CRLF 致 12840 行噪声 diff，
+  重写为 LF 无 BOM（与 main 序列化精确一致），diff 收敛为 178 行真实变更（_comment + 13 inserts）；
+  `dsl_payloads/spacemarines.json` 与 `benchmarks/.../qa_agent_results_p7pr20.json` CRLF→LF
+  对齐同族文件约定（orks/darkangels 等均 LF）。内容零改动（text/name/deactivations 三段逐字节等价）。
+- 删除 iter1 误提交的 `_sm_*.py`/`_sm_*.json`/`_sm_*.md` 脚手架文件（10 个）。
+- 复跑 `pytest tests/ -q` = **1267 passed**（重排后回归零失败）。
