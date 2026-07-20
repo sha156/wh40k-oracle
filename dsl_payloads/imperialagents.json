@@ -1,0 +1,1485 @@
+{
+ "_comment": "P7 阵营技能 DSL 唯一真源（帝国代理 Imperial Agents，faction='AoI'，P7-PR23）。DB effect_dsl_json/dsl_status 只是投影，由 `python -m db_compile dsl-apply` 写入并挂 restore。判据与格式沿 spec 2026-07-14 + PR3-PR21 约定；A/B 工作单见 docs/superpowers/plans/2026-07-20-p7-pr23-imperialagents-worklist.md。覆盖=faction='AoI' 全部 7 分队规则 + 38 战略 + 24 增强 = 69（4 encoded / 15 partial / 50 not_modeled）。帝国代理为审判庭/刺客/死亡守望/灰骑士/仲裁庭/虚空舰混编阵营，气质=特工/部署/预备队/据点/战意/具体目标声明，可编率低。零新引擎通道、零新态势开关（沿 PR9-16 约定），零 fp_new（FP 唯一新分队 Veiled Blade Elimination Force 已在 DB 由 Wahapedia 滚入）。DB 对齐：2 text_patches（Rapid Tactical Relocation 9\"→8\" / Gift of the Prescient 3\"→6\"，均几何漂移不影响 DSL，两条目本 payload 均 not_modeled）；ARMOUR OF CONTEMPT / TRUESILVER ARMOUR 的「worsen AP by 1」库现文即 11 版免补。datasheet 层改（Corvus Blackstar M/keyword、Callidus/Culexus/Rhino 等）沿死亡守望/圣血修女先例不落本 PR。可编子集：守方 FNP/invuln/T+1/AP 恶化、近战重骰命中+致伤、[LETHAL HITS]、[IGNORES COVER]、[SUSTAINED HITS 1]、12\" 内 +S/+AP、对 PSYKER 重骰命中、近战 +1A、传家宝刃全特征值。防高估不编：重骰 1（毁灭异端/首要目标）、负关键字门（non-MONSTER/VEHICLE 眩晕手雷）、ANTI-X 关键字（地狱火弹/宇宙咒诅/微聚变弹）、[DEVASTATING WOUNDS]/[MELTA]/[PRECISION] 关键字、具体目标声明（暴力夺取/弹药配给/猎人头盔）、任务战术选一/据点门/部署/预备队/CP/战意/移动域。",
+ "dsl_version": 1,
+ "faction": "AoI",
+ "entries": [
+  {
+   "table": "abilities",
+   "id": "det000009125",
+   "side": "attacker",
+   "detachment": "Deathwatch Mission Tactics",
+   "name_en": "Deathwatch Mission Tactics",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "指挥阶段三选一任务战术（Furor=[SUSTAINED HITS 1]／Malleus=[LETHAL HITS]／Purgatus=暴击致伤→[PRECISION]），每种每战一次——三选一持续声明无态势开关载体，遵循 PR9-16 零新通道约定不新增开关；无条件编入任一会过度施加",
+    "Purgatus 暴击致伤→[精准] 为攻击分配域未建模"
+   ],
+   "provenance": {
+    "text_sha256": "8c160cf1423d7a096190cde3d1b34422d496d4d154961d230cb4929affcc73a5"
+   },
+   "encoded_by": "manual-2026-07-20",
+   "materialize": {
+    "from_table": "detachments",
+    "from_id": "000009125",
+    "from_column": "rule_text"
+   }
+  },
+  {
+   "table": "abilities",
+   "id": "det000009129",
+   "side": "attacker",
+   "detachment": "Root out Heresy",
+   "name_en": "Root out Heresy",
+   "name_zh": null,
+   "status": "partial",
+   "effects": [
+    {
+     "phase": "save",
+     "op": "ignores_cover",
+     "params": [],
+     "condition": [
+      "phase_shooting"
+     ],
+     "source": "揪出异端：合规单位远程武器 [IGNORES COVER]"
+    }
+   ],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "对含 5+ 模型的 CHAOS 单位攻击额外 [SUSTAINED HITS 1]——射击×目标 CHAOS 关键字×规模门无复合 tag，裸编会在近战/非 CHAOS 目标误放行，不编",
+    "效果面假设本单位属 ADEPTUS ARBITES/INQUISITOR/INQUISITORIAL AGENTS/ORDO HERETICUS（军规限定关键字），非上述单位不获 [IGNORES COVER]"
+   ],
+   "provenance": {
+    "text_sha256": "7c66e1cabba0cc6c1ab360eaab7b71d7624de841bb47d2fe697b76a1aec166d7"
+   },
+   "encoded_by": "manual-2026-07-20",
+   "materialize": {
+    "from_table": "detachments",
+    "from_id": "000009129",
+    "from_column": "rule_text"
+   }
+  },
+  {
+   "table": "abilities",
+   "id": "det000009133",
+   "side": "attacker",
+   "detachment": "Destroy the Daemonic",
+   "name_en": "Destroy the Daemonic",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "重骰命中骰 1（对 DAEMON 目标再重骰致伤骰 1）——重骰 1≠重骰失败，引擎仅支持重骰失败骰，无载体"
+   ],
+   "provenance": {
+    "text_sha256": "3774cda7acf14617a7bfd545df0362a7bc6c8fd64e9347ca976844e73227a2a8"
+   },
+   "encoded_by": "manual-2026-07-20",
+   "materialize": {
+    "from_table": "detachments",
+    "from_id": "000009133",
+    "from_column": "rule_text"
+   }
+  },
+  {
+   "table": "abilities",
+   "id": "det000009137",
+   "side": "attacker",
+   "detachment": "At all Costs",
+   "name_en": "At all Costs",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "指挥阶段二选一：Eliminate（选定敌方单位 +1 命中）／Acquire（据点内 +1 Ld/OC + 5+ 无效保护）——具体目标/据点范围门 + 二选一声明无载体，裸编会对所有目标过度施加"
+   ],
+   "provenance": {
+    "text_sha256": "582e16f4261b0035fd841fdae68bbec1e503a5419ebe2959741c2b3ef1136859"
+   },
+   "encoded_by": "manual-2026-07-20",
+   "materialize": {
+    "from_table": "detachments",
+    "from_id": "000009137",
+    "from_column": "rule_text"
+   }
+  },
+  {
+   "table": "abilities",
+   "id": "det000009359",
+   "side": "attacker",
+   "detachment": "Beseechment Codes",
+   "name_en": "Beseechment Codes",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "移动阶段操作舱门（Hatchway）——地形/移动交互域，非战斗链"
+   ],
+   "provenance": {
+    "text_sha256": "6008a62260acec52377f96a0f50e2a2e0b3ed7e07f033c6745bcbadb80fa2188"
+   },
+   "encoded_by": "manual-2026-07-20",
+   "materialize": {
+    "from_table": "detachments",
+    "from_id": "000009359",
+    "from_column": "rule_text"
+   }
+  },
+  {
+   "table": "abilities",
+   "id": "det000009368",
+   "side": "attacker",
+   "detachment": "Chastisor Auto-Vox",
+   "name_en": "Chastisor Auto-Vox",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "对手指挥阶段 3\" 内敌方战意测验（低于半编 -1）——战意测验域，非战斗链"
+   ],
+   "provenance": {
+    "text_sha256": "5872358adf1a5899c449b762bd73bda8d9ce01d4cf8c3035ff0ff1bd88e0e228"
+   },
+   "encoded_by": "manual-2026-07-20",
+   "materialize": {
+    "from_table": "detachments",
+    "from_id": "000009368",
+    "from_column": "rule_text"
+   }
+  },
+  {
+   "table": "abilities",
+   "id": "det000009756",
+   "side": "attacker",
+   "detachment": "Extremis Sanction",
+   "name_en": "Extremis Sanction",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "Officio Assassinorum 单位 Overkill/Soulless Horror/Shieldbreaker 每战两次 + 按点数附加 Extremis 能力——能力使用次数/建军点数域，非战斗链"
+   ],
+   "provenance": {
+    "text_sha256": "5540f404c53230e5bdf5cbc86765d863c1af5761380177f30777dd280f5b5d63"
+   },
+   "encoded_by": "manual-2026-07-20",
+   "materialize": {
+    "from_table": "detachments",
+    "from_id": "000009756",
+    "from_column": "rule_text"
+   }
+  },
+  {
+   "table": "stratagems",
+   "id": "000009139002",
+   "side": "attacker",
+   "detachment": "Imperialis Fleet",
+   "name_en": "VIOLENT ACQUISITION",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "攻击据点范围内敌方单位→[SUSTAINED HITS 1]/[LANCE]/[IGNORES COVER]——三关键字全挂「目标在据点范围内」门，无据点范围载体，裸编会对所有目标过度施加"
+   ],
+   "encoded_by": "manual-2026-07-20",
+   "provenance": {}
+  },
+  {
+   "table": "stratagems",
+   "id": "000009139003",
+   "side": "attacker",
+   "detachment": "Imperialis Fleet",
+   "name_en": "MASTERS OF THE VOID",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "战略预备队可部署进对手部署区——部署/预备队域未建模"
+   ],
+   "encoded_by": "manual-2026-07-20",
+   "provenance": {}
+  },
+  {
+   "table": "stratagems",
+   "id": "000009139004",
+   "side": "attacker",
+   "detachment": "Imperialis Fleet",
+   "name_en": "CLOSE-QUARTERS BARRAGE",
+   "name_zh": null,
+   "status": "partial",
+   "effects": [
+    {
+     "phase": "wound",
+     "op": "s_improve",
+     "params": [
+      1
+     ],
+     "condition": [
+      "ranged_within_12"
+     ],
+     "source": "近距弹幕：远程 12\" 内 +1 S"
+    },
+    {
+     "phase": "save",
+     "op": "ap_improve",
+     "params": [
+      1
+     ],
+     "condition": [
+      "ranged_within_12"
+     ],
+     "source": "近距弹幕：远程 12\" 内 +1 AP"
+    }
+   ],
+   "requires_toggles": [
+    "range_within_12"
+   ],
+   "not_modeled_notes_zh": [
+    "+1 S/+1 AP 仅对 12\" 内目标（ranged_within_12 自含射击门），需开 range_within_12 开关；近战不注入"
+   ],
+   "encoded_by": "manual-2026-07-20",
+   "provenance": {
+    "text_sha256": "a856d88b5048549cfb0cad5745215ca9a88b230fce44174535fc2cd7926ffb85"
+   }
+  },
+  {
+   "table": "stratagems",
+   "id": "000009139005",
+   "side": "attacker",
+   "detachment": "Imperialis Fleet",
+   "name_en": "EMPEROR'S WILL",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "加速/撤退回合仍可射击——移动/射击资格域未建模"
+   ],
+   "encoded_by": "manual-2026-07-20",
+   "provenance": {}
+  },
+  {
+   "table": "stratagems",
+   "id": "000009139006",
+   "side": "target",
+   "detachment": "Imperialis Fleet",
+   "name_en": "DISPLACER FIELD",
+   "name_zh": null,
+   "status": "partial",
+   "effects": [
+    {
+     "phase": "save",
+     "op": "invuln",
+     "params": [
+      4
+     ],
+     "condition": [],
+     "source": "位移力场：4+ 无效保护"
+    }
+   ],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "4+ 无效保护（守方，对手射击阶段点名即假设已用）",
+    "解算后可 6\" 正常移动（视为 FLY）——移动域未建模",
+    "限 AGENTS OF THE IMPERIUM CHARACTER 单位（排除 OFFICIO ASSASSINORUM）"
+   ],
+   "encoded_by": "manual-2026-07-20",
+   "provenance": {
+    "text_sha256": "518a5a7483756735ad3763d80593ee3f9c37699d63389dc77034899a5220b77c"
+   }
+  },
+  {
+   "table": "stratagems",
+   "id": "000009139007",
+   "side": "target",
+   "detachment": "Imperialis Fleet",
+   "name_en": "SELFLESS BODYGUARD",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "[PRECISION] 攻击改分配给 Bodyguard 模型（D6 2+）——攻击分配域未建模"
+   ],
+   "encoded_by": "manual-2026-07-20",
+   "provenance": {}
+  },
+  {
+   "table": "stratagems",
+   "id": "000009370002",
+   "side": "attacker",
+   "detachment": "Interdiction Team",
+   "name_en": "CRACKDOWN",
+   "name_zh": null,
+   "status": "encoded",
+   "effects": [
+    {
+     "phase": "hit",
+     "op": "reroll",
+     "params": [
+      "fail"
+     ],
+     "condition": [
+      "phase_melee"
+     ],
+     "source": "扫荡镇压：近战重骰命中"
+    },
+    {
+     "phase": "wound",
+     "op": "reroll",
+     "params": [
+      "fail"
+     ],
+     "condition": [
+      "phase_melee"
+     ],
+     "source": "扫荡镇压：近战重骰致伤"
+    }
+   ],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [],
+   "encoded_by": "manual-2026-07-20",
+   "provenance": {
+    "text_sha256": "d4f276d2c94654e3017c6d70dee8913c9606108f3aa6b441c868513698ec1407"
+   }
+  },
+  {
+   "table": "stratagems",
+   "id": "000009370003",
+   "side": "target",
+   "detachment": "Interdiction Team",
+   "name_en": "DUTY AND DEATH",
+   "name_zh": null,
+   "status": "encoded",
+   "effects": [
+    {
+     "phase": "fnp",
+     "op": "fnp",
+     "params": [
+      4
+     ],
+     "condition": [],
+     "source": "以死尽责：本单位 FNP 4+"
+    }
+   ],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [],
+   "encoded_by": "manual-2026-07-20",
+   "provenance": {
+    "text_sha256": "5a1f437d34fd4865c89b2650e9356ee394922ea79c832a1bb0fb7dfcfa3323ec"
+   }
+  },
+  {
+   "table": "stratagems",
+   "id": "000009370004",
+   "side": "attacker",
+   "detachment": "Interdiction Team",
+   "name_en": "ARBITRARY EXECUTION",
+   "name_zh": null,
+   "status": "partial",
+   "effects": [
+    {
+     "phase": "hit",
+     "op": "auto_wound",
+     "params": [],
+     "condition": [
+      "phase_shooting"
+     ],
+     "source": "专断处决：Arbites 手炮 [LETHAL HITS]"
+    }
+   ],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "Arbites 手炮攻击特征值设为 2（定值非增量，modify 为加量无法表达设定值），不编",
+    "本单位可越交战范围选敌为目标——目标资格域未建模",
+    "[LETHAL HITS] 仅注入名字含 shotpistol 的武器"
+   ],
+   "encoded_by": "manual-2026-07-20",
+   "provenance": {
+    "text_sha256": "9fe06ec57148974151837b5fcb36deeef422f59a91c443c2b0028ac894d335f1"
+   },
+   "weapon_filter": "shotpistol"
+  },
+  {
+   "table": "stratagems",
+   "id": "000009370005",
+   "side": "attacker",
+   "detachment": "Interdiction Team",
+   "name_en": "INESCAPABLE JUDGEMENT",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "敌方撤退时须做 Desperate Escape 测验——移动/战意测验域未建模"
+   ],
+   "encoded_by": "manual-2026-07-20",
+   "provenance": {}
+  },
+  {
+   "table": "stratagems",
+   "id": "000009131002",
+   "side": "attacker",
+   "detachment": "Ordo Hereticus Purgation Force",
+   "name_en": "STUN GRENADES",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "选敌方单位（排除 MONSTERS/VEHICLES）战意测验 + 其攻击 -1 命中——负关键字门（non-MONSTER/VEHICLE）无载体，引擎只能表达「有关键字」；且含战意测验域"
+   ],
+   "encoded_by": "manual-2026-07-20",
+   "provenance": {}
+  },
+  {
+   "table": "stratagems",
+   "id": "000009131003",
+   "side": "attacker",
+   "detachment": "Ordo Hereticus Purgation Force",
+   "name_en": "DISPENSE JUSTICE",
+   "name_zh": null,
+   "status": "encoded",
+   "effects": [
+    {
+     "phase": "hit",
+     "op": "auto_wound",
+     "params": [],
+     "condition": [],
+     "source": "伸张正义：本单位武器 [LETHAL HITS]"
+    }
+   ],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [],
+   "encoded_by": "manual-2026-07-20",
+   "provenance": {
+    "text_sha256": "4bf6549841a5402b8122da8f6e043c5239d40960b15ca30a3b62a194ed3e7e54"
+   }
+  },
+  {
+   "table": "stratagems",
+   "id": "000009131004",
+   "side": "target",
+   "detachment": "Ordo Hereticus Purgation Force",
+   "name_en": "INVIOLATE JURISDICTION",
+   "name_zh": null,
+   "status": "partial",
+   "effects": [
+    {
+     "phase": "fnp",
+     "op": "fnp",
+     "params": [
+      5
+     ],
+     "condition": [],
+     "source": "不可侵犯管辖：本单位 FNP 5+"
+    }
+   ],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "FNP 5+（守方，点名即假设已用）；需在据点范围内——按已在据点假设施加",
+    "限 INFANTRY 单位"
+   ],
+   "encoded_by": "manual-2026-07-20",
+   "provenance": {
+    "text_sha256": "a81cbad4f6475707804e1166287f410f325dd7ea0db2482f1773f89ad0323f8d"
+   }
+  },
+  {
+   "table": "stratagems",
+   "id": "000009131005",
+   "side": "attacker",
+   "detachment": "Ordo Hereticus Purgation Force",
+   "name_en": "EXECUTION ORDER",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "指定敌方 CHARACTER 单位后对其攻击带 [PRECISION]——具体目标门 + [PRECISION] 攻击分配域无载体"
+   ],
+   "encoded_by": "manual-2026-07-20",
+   "provenance": {}
+  },
+  {
+   "table": "stratagems",
+   "id": "000009131006",
+   "side": "attacker",
+   "detachment": "Ordo Hereticus Purgation Force",
+   "name_en": "LINE OF FIRE",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "可射击处于友军交战范围内的敌方单位（12\" 内）——目标资格/几何域未建模"
+   ],
+   "encoded_by": "manual-2026-07-20",
+   "provenance": {}
+  },
+  {
+   "table": "stratagems",
+   "id": "000009131007",
+   "side": "attacker",
+   "detachment": "Ordo Hereticus Purgation Force",
+   "name_en": "EXACT PUNISHMENT",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "单位被毁后可越序对肇事敌单位射击——射击序列/触发域未建模"
+   ],
+   "encoded_by": "manual-2026-07-20",
+   "provenance": {}
+  },
+  {
+   "table": "stratagems",
+   "id": "000009135002",
+   "side": "attacker",
+   "detachment": "Ordo Malleus Daemon Hunters",
+   "name_en": "RITUAL OF WARDING",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "据点守护 + 阻止敌方 DAEMON 在其 6\" 内部署——据点/部署域未建模"
+   ],
+   "encoded_by": "manual-2026-07-20",
+   "provenance": {}
+  },
+  {
+   "table": "stratagems",
+   "id": "000009135003",
+   "side": "attacker",
+   "detachment": "Ordo Malleus Daemon Hunters",
+   "name_en": "RITES OF EXORCISM",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "敌方 DAEMON 战意测验失败→对其攻击带 [DEVASTATING WOUNDS]——战意测验触发 + [DEVASTATING WOUNDS]（暴击致伤转致命，引擎无该通道）+ 目标关键字门，均无载体"
+   ],
+   "encoded_by": "manual-2026-07-20",
+   "provenance": {}
+  },
+  {
+   "table": "stratagems",
+   "id": "000009135004",
+   "side": "attacker",
+   "detachment": "Ordo Malleus Daemon Hunters",
+   "name_en": "STEEL HEART",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "撤退回合仍可射击/冲锋——移动/资格域未建模"
+   ],
+   "encoded_by": "manual-2026-07-20",
+   "provenance": {}
+  },
+  {
+   "table": "stratagems",
+   "id": "000009135005",
+   "side": "target",
+   "detachment": "Ordo Malleus Daemon Hunters",
+   "name_en": "TRUESILVER ARMOUR",
+   "name_zh": null,
+   "status": "partial",
+   "effects": [
+    {
+     "phase": "save",
+     "op": "ap_improve",
+     "params": [
+      -1
+     ],
+     "condition": [],
+     "source": "真银之甲：被攻 AP 恶化 1"
+    }
+   ],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "被攻 AP 恶化 1（守方，点名即假设已用）；限 GREY KNIGHTS TERMINATOR SQUAD",
+    "射击与近战两相位均适用"
+   ],
+   "encoded_by": "manual-2026-07-20",
+   "provenance": {
+    "text_sha256": "e9a562885fedf4a97d1f35b2c75bfafbca3e9cfd88e89292d4d2a10c1091dd98"
+   }
+  },
+  {
+   "table": "stratagems",
+   "id": "000009135006",
+   "side": "target",
+   "detachment": "Ordo Malleus Daemon Hunters",
+   "name_en": "HEXAGRAMMIC WARDS",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "攻方 Psychic 武器获 [HAZARDOUS]——攻方自伤域未建模"
+   ],
+   "encoded_by": "manual-2026-07-20",
+   "provenance": {}
+  },
+  {
+   "table": "stratagems",
+   "id": "000009135007",
+   "side": "attacker",
+   "detachment": "Ordo Malleus Daemon Hunters",
+   "name_en": "PSYBOLT AMMUNITION",
+   "name_zh": null,
+   "status": "partial",
+   "effects": [
+    {
+     "phase": "hit",
+     "op": "auto_wound",
+     "params": [],
+     "condition": [
+      "phase_shooting"
+     ],
+     "source": "灵能弹药：远程武器 [LETHAL HITS]"
+    }
+   ],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "[PSYCHIC] 关键字授予无载体（关键字标签非战斗链数值）",
+    "限 GREY KNIGHTS TERMINATOR SQUAD 远程武器"
+   ],
+   "encoded_by": "manual-2026-07-20",
+   "provenance": {
+    "text_sha256": "e9cee15146e9d40918e0b6ff6b58d10ee21ff9e92052f0e69faa97e41bb017f8"
+   }
+  },
+  {
+   "table": "stratagems",
+   "id": "000009127002",
+   "side": "target",
+   "detachment": "Ordo Xenos Alien Hunters",
+   "name_en": "ARMOUR OF CONTEMPT",
+   "name_zh": null,
+   "status": "partial",
+   "effects": [
+    {
+     "phase": "save",
+     "op": "ap_improve",
+     "params": [
+      -1
+     ],
+     "condition": [],
+     "source": "傲慢之甲：被攻 AP 恶化 1"
+    }
+   ],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "被攻 AP 恶化 1（守方，点名即假设已用）；限 DEATHWATCH 单位",
+    "射击与近战两相位均适用"
+   ],
+   "encoded_by": "manual-2026-07-20",
+   "provenance": {
+    "text_sha256": "279fec64195356e417e2411802268c13647758a02ae82648fba540456a48db91"
+   }
+  },
+  {
+   "table": "stratagems",
+   "id": "000009127003",
+   "side": "attacker",
+   "detachment": "Ordo Xenos Alien Hunters",
+   "name_en": "ADAPTIVE TACTICS",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "为本单位单独选定任务战术——依赖任务战术开关载体（见 Deathwatch Mission Tactics，无开关不编）"
+   ],
+   "encoded_by": "manual-2026-07-20",
+   "provenance": {}
+  },
+  {
+   "table": "stratagems",
+   "id": "000009127004",
+   "side": "attacker",
+   "detachment": "Ordo Xenos Alien Hunters",
+   "name_en": "HELLFIRE ROUNDS",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "远程武器（排除 [毁灭伤害] 者）获 [ANTI-INFANTRY 2+]/[ANTI-MONSTER 5+]——射击×ANTI 关键字无复合 tag + 排除 DEV 武器的负过滤，裸 target_has_keyword 会在近战误放行"
+   ],
+   "encoded_by": "manual-2026-07-20",
+   "provenance": {}
+  },
+  {
+   "table": "stratagems",
+   "id": "000009127005",
+   "side": "attacker",
+   "detachment": "Ordo Xenos Alien Hunters",
+   "name_en": "DRAGONFIRE ROUNDS",
+   "name_zh": null,
+   "status": "partial",
+   "effects": [
+    {
+     "phase": "save",
+     "op": "ignores_cover",
+     "params": [],
+     "condition": [
+      "phase_shooting"
+     ],
+     "source": "龙焰弹：远程武器 [IGNORES COVER]"
+    }
+   ],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "[ASSAULT]（加速后可射击）为移动域未建模",
+    "限 DEATHWATCH INFANTRY 远程武器；[无视掩体] 自含射击门，近战不注入"
+   ],
+   "encoded_by": "manual-2026-07-20",
+   "provenance": {
+    "text_sha256": "cf758fbcd3ceadbaaaed5985efde3f0c8211834fb9435e7cd64bb9a70295d0bc"
+   }
+  },
+  {
+   "table": "stratagems",
+   "id": "000009127006",
+   "side": "attacker",
+   "detachment": "Ordo Xenos Alien Hunters",
+   "name_en": "KRAKEN ROUNDS",
+   "name_zh": null,
+   "status": "partial",
+   "effects": [
+    {
+     "phase": "save",
+     "op": "ap_improve",
+     "params": [
+      1
+     ],
+     "condition": [
+      "phase_shooting"
+     ],
+     "source": "克拉肯弹：射击远程武器 AP 改善 1"
+    }
+   ],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "射程 +6\" 未建模（几何域）",
+    "限 DEATHWATCH INFANTRY 远程武器；AP 改善仅射击阶段生效（phase_shooting 门），近战不注入"
+   ],
+   "encoded_by": "manual-2026-07-20",
+   "provenance": {
+    "text_sha256": "9792a8556d13cf854cc59f328ffb45c80f97743fef3cd19fc34fcbb282a2a871"
+   }
+  },
+  {
+   "table": "stratagems",
+   "id": "000009127007",
+   "side": "attacker",
+   "detachment": "Ordo Xenos Alien Hunters",
+   "name_en": "RAPID TACTICAL RELOCATION",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "撤离战场后于己方移动阶段再部署（≥8\" 离敌）——预备队/部署/几何域未建模"
+   ],
+   "encoded_by": "manual-2026-07-20",
+   "provenance": {}
+  },
+  {
+   "table": "stratagems",
+   "id": "000009758002",
+   "side": "attacker",
+   "detachment": "Veiled Blade Elimination Force",
+   "name_en": "PRIME TARGET",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "对 CHARACTER 目标重骰致伤骰 1（Assassin 对敌 WARLORD 可重骰整个致伤骰）——重骰 1≠重骰失败 + 具体目标关键字门，无载体"
+   ],
+   "encoded_by": "manual-2026-07-20",
+   "provenance": {}
+  },
+  {
+   "table": "stratagems",
+   "id": "000009758003",
+   "side": "target",
+   "detachment": "Veiled Blade Elimination Force",
+   "name_en": "HYPERSTIMMS",
+   "name_zh": null,
+   "status": "partial",
+   "effects": [
+    {
+     "phase": "wound",
+     "op": "t_improve",
+     "params": [
+      1
+     ],
+     "condition": [],
+     "source": "超量兴奋剂：本单位 T +1"
+    }
+   ],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "+1 T（守方，点名即假设已用）",
+    "Eversor Assassin 单位额外获 FNP 4+ 分支——依单位类型条件，未建模"
+   ],
+   "encoded_by": "manual-2026-07-20",
+   "provenance": {
+    "text_sha256": "0612da909d6a408b343701b6e5a2ae4644633081eac6019c24bf02726035ed2d"
+   }
+  },
+  {
+   "table": "stratagems",
+   "id": "000009758004",
+   "side": "attacker",
+   "detachment": "Veiled Blade Elimination Force",
+   "name_en": "WILL-SAPPING SALVO",
+   "name_zh": null,
+   "status": "partial",
+   "effects": [
+    {
+     "phase": "hit",
+     "op": "extra_hits",
+     "params": [
+      1
+     ],
+     "condition": [
+      "phase_shooting"
+     ],
+     "source": "夺志齐射：远程武器 [SUSTAINED HITS 1]"
+    }
+   ],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "Culexus Assassin 单位远程武器 D 改为 3 分支——依单位类型条件，未建模",
+    "限 INFANTRY 远程武器；[SUSTAINED HITS 1] 自含射击门"
+   ],
+   "encoded_by": "manual-2026-07-20",
+   "provenance": {
+    "text_sha256": "1be12247c40d406ee42e549179f69c56d624acd9402ba00dfbef208d058b6fdb"
+   }
+  },
+  {
+   "table": "stratagems",
+   "id": "000009758005",
+   "side": "target",
+   "detachment": "Veiled Blade Elimination Force",
+   "name_en": "ORBITAL OVERSIGHT",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "仅当攻方在 18\"（Lone Operative 则 6\"）内才可被远程选为目标——目标资格/几何域未建模"
+   ],
+   "encoded_by": "manual-2026-07-20",
+   "provenance": {}
+  },
+  {
+   "table": "stratagems",
+   "id": "000009758006",
+   "side": "attacker",
+   "detachment": "Veiled Blade Elimination Force",
+   "name_en": "BLIND GRENADES",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "敌方冲锋骰 -1（Vindicare 则 -2）——冲锋骰域未建模"
+   ],
+   "encoded_by": "manual-2026-07-20",
+   "provenance": {}
+  },
+  {
+   "table": "stratagems",
+   "id": "000009758007",
+   "side": "attacker",
+   "detachment": "Veiled Blade Elimination Force",
+   "name_en": "ENSNARING TRAP",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "于对手冲锋阶段末反向宣告冲锋（Callidus 经此冲锋则近战 +1 致伤）——冲锋宣告域 + Callidus 加成依附本战略触发的冲锋条件链，无载体"
+   ],
+   "encoded_by": "manual-2026-07-20",
+   "provenance": {}
+  },
+  {
+   "table": "stratagems",
+   "id": "000009361002",
+   "side": "attacker",
+   "detachment": "Voidship’s Company",
+   "name_en": "BREACH AND CLEAR",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "越过舱门另一侧时 +1 命中 +1 致伤——地形/舱门位置门无载体"
+   ],
+   "encoded_by": "manual-2026-07-20",
+   "provenance": {}
+  },
+  {
+   "table": "stratagems",
+   "id": "000009361003",
+   "side": "attacker",
+   "detachment": "Voidship’s Company",
+   "name_en": "AMMO RATIONS",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "对选定敌方单位攻击 +1 AP——具体目标门无载体，裸编会对所有目标过度施加"
+   ],
+   "encoded_by": "manual-2026-07-20",
+   "provenance": {}
+  },
+  {
+   "table": "stratagems",
+   "id": "000009361004",
+   "side": "attacker",
+   "detachment": "Voidship’s Company",
+   "name_en": "BOARDING DRILL",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "撤退回合仍可射击/战术机动——移动/资格域未建模"
+   ],
+   "encoded_by": "manual-2026-07-20",
+   "provenance": {}
+  },
+  {
+   "table": "stratagems",
+   "id": "000009361005",
+   "side": "attacker",
+   "detachment": "Voidship’s Company",
+   "name_en": "SHIP'S WATCH",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "Overwatch 命中门槛降至 5+（含 Canid 暴击 5+）——防御火力（Overwatch）域未建模"
+   ],
+   "encoded_by": "manual-2026-07-20",
+   "provenance": {}
+  },
+  {
+   "table": "enhancements",
+   "id": "000009138002",
+   "side": "attacker",
+   "detachment": "Imperialis Fleet",
+   "name_en": "Clandestine Operation",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "最多三单位获 Infiltrators——部署域未建模"
+   ],
+   "encoded_by": "manual-2026-07-20",
+   "provenance": {}
+  },
+  {
+   "table": "enhancements",
+   "id": "000009138003",
+   "side": "attacker",
+   "detachment": "Imperialis Fleet",
+   "name_en": "Combat Landers",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "最多三 VOIDFARERS 单位获 Deep Strike——部署/预备队域未建模"
+   ],
+   "encoded_by": "manual-2026-07-20",
+   "provenance": {}
+  },
+  {
+   "table": "enhancements",
+   "id": "000009138004",
+   "side": "attacker",
+   "detachment": "Imperialis Fleet",
+   "name_en": "Digital Weapons",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "被选择战斗时掷 3D6，每 4+ 令交战范围内一敌方单位受 1 致命伤（[PRECISION] 分配）——掷骰生成固定致命伤池、非攻击链驱动，无载体"
+   ],
+   "encoded_by": "manual-2026-07-20",
+   "provenance": {}
+  },
+  {
+   "table": "enhancements",
+   "id": "000009138005",
+   "side": "attacker",
+   "detachment": "Imperialis Fleet",
+   "name_en": "Fleetmaster",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "每大回合可 0CP 使用指定战略——CP 经济域未建模"
+   ],
+   "encoded_by": "manual-2026-07-20",
+   "provenance": {}
+  },
+  {
+   "table": "enhancements",
+   "id": "000009369002",
+   "side": "attacker",
+   "detachment": "Interdiction Team",
+   "name_en": "Manhunter's Helm",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "对 Priority Target 攻击 +1 致伤——具体目标门无载体，裸编会对所有目标过度施加"
+   ],
+   "encoded_by": "manual-2026-07-20",
+   "provenance": {}
+  },
+  {
+   "table": "enhancements",
+   "id": "000009369003",
+   "side": "attacker",
+   "detachment": "Interdiction Team",
+   "name_en": "Vasov's Auto-Oppressor",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "令一敌方单位移动/加速/冲锋减半——移动减益域未建模"
+   ],
+   "encoded_by": "manual-2026-07-20",
+   "provenance": {}
+  },
+  {
+   "table": "enhancements",
+   "id": "000009130002",
+   "side": "attacker",
+   "detachment": "Ordo Hereticus Purgation Force",
+   "name_en": "Ignis Judicium",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "携带者远程武器获 [DEVASTATING WOUNDS]/[MELTA 1]/[PRECISION]——三关键字均无载体（DEV 暴击转致命/MELTA 近距额外伤害/PRECISION 分配）"
+   ],
+   "encoded_by": "manual-2026-07-20",
+   "provenance": {}
+  },
+  {
+   "table": "enhancements",
+   "id": "000009130003",
+   "side": "attacker",
+   "detachment": "Ordo Hereticus Purgation Force",
+   "name_en": "Liber Heresius",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "最多三单位重新部署（可入战略预备队）——部署/预备队域未建模"
+   ],
+   "encoded_by": "manual-2026-07-20",
+   "provenance": {}
+  },
+  {
+   "table": "enhancements",
+   "id": "000009130004",
+   "side": "attacker",
+   "detachment": "Ordo Hereticus Purgation Force",
+   "name_en": "No Escape (Aura)",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "6\" 内敌方撤退须过领导力测验否则不动——移动/领导力域未建模"
+   ],
+   "encoded_by": "manual-2026-07-20",
+   "provenance": {}
+  },
+  {
+   "table": "enhancements",
+   "id": "000009130005",
+   "side": "attacker",
+   "detachment": "Ordo Hereticus Purgation Force",
+   "name_en": "Witch Hunter",
+   "name_zh": null,
+   "status": "encoded",
+   "effects": [
+    {
+     "phase": "hit",
+     "op": "reroll",
+     "params": [
+      "fail"
+     ],
+     "condition": [
+      "target_has_keyword",
+      "psyker"
+     ],
+     "source": "猎巫者：对 PSYKER 目标重骰命中"
+    }
+   ],
+   "requires_toggles": [
+    "bearer_leading"
+   ],
+   "not_modeled_notes_zh": [],
+   "encoded_by": "manual-2026-07-20",
+   "provenance": {
+    "text_sha256": "3d3cd2bf269731cb994725db7da64e54ac2a03057e8288924e246f5936eb4e25"
+   }
+  },
+  {
+   "table": "enhancements",
+   "id": "000009134002",
+   "side": "attacker",
+   "detachment": "Ordo Malleus Daemon Hunters",
+   "name_en": "Daemon Slayer",
+   "name_zh": null,
+   "status": "partial",
+   "effects": [
+    {
+     "phase": "attacks",
+     "op": "modify",
+     "params": [
+      1
+     ],
+     "condition": [
+      "phase_melee"
+     ],
+     "source": "弑魔者：携带者近战武器 +1 A"
+    }
+   ],
+   "requires_toggles": [
+    "bearer_leading"
+   ],
+   "not_modeled_notes_zh": [
+    "[ANTI-DAEMON 3+] 无载体（近战×DAEMON 关键字致伤阈值）",
+    "+1 A 限携带者近战武器（附属单位整体注入会高估——请单列携带者模拟）"
+   ],
+   "encoded_by": "manual-2026-07-20",
+   "provenance": {
+    "text_sha256": "705211212ec98a46f318366f3c4b110f0f859780b909cfc8673b16860716d684"
+   }
+  },
+  {
+   "table": "enhancements",
+   "id": "000009134003",
+   "side": "attacker",
+   "detachment": "Ordo Malleus Daemon Hunters",
+   "name_en": "Formidable Resolve",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "+1 Ld/+1 W + 每战一次解除友军 Battle-shock——Ld/W 特征值与战意域，W 不进单模型战斗链"
+   ],
+   "encoded_by": "manual-2026-07-20",
+   "provenance": {}
+  },
+  {
+   "table": "enhancements",
+   "id": "000009134004",
+   "side": "attacker",
+   "detachment": "Ordo Malleus Daemon Hunters",
+   "name_en": "Gift of the Prescient",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "每战一次 0CP Rapid Ingress（GK 终结者可置于 ≥6\" 离敌处）——预备队/CP/几何域未建模"
+   ],
+   "encoded_by": "manual-2026-07-20",
+   "provenance": {}
+  },
+  {
+   "table": "enhancements",
+   "id": "000009134005",
+   "side": "attacker",
+   "detachment": "Ordo Malleus Daemon Hunters",
+   "name_en": "Grimoire of True Names (Aura)",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "9\" 内敌 -1 Ld；9\" 内敌 DAEMON 攻击 -1 命中 -1 致伤——光环减益依赖攻方 DAEMON 关键字 + 范围，守方侧无「攻方关键字」门载体"
+   ],
+   "encoded_by": "manual-2026-07-20",
+   "provenance": {}
+  },
+  {
+   "table": "enhancements",
+   "id": "000009126002",
+   "side": "attacker",
+   "detachment": "Ordo Xenos Alien Hunters",
+   "name_en": "Amulet of Auto-Chastisement",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "敌方 VEHICLE 领导力测验→ -1 命中或不可射击——领导力/射击资格域未建模"
+   ],
+   "encoded_by": "manual-2026-07-20",
+   "provenance": {}
+  },
+  {
+   "table": "enhancements",
+   "id": "000009126003",
+   "side": "attacker",
+   "detachment": "Ordo Xenos Alien Hunters",
+   "name_en": "Beacon Angelis",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "携带者单位获 Deep Strike + 0CP Rapid Ingress——部署/预备队域未建模"
+   ],
+   "encoded_by": "manual-2026-07-20",
+   "provenance": {}
+  },
+  {
+   "table": "enhancements",
+   "id": "000009126004",
+   "side": "target",
+   "detachment": "Ordo Xenos Alien Hunters",
+   "name_en": "Blackweave Shroud",
+   "name_zh": null,
+   "status": "partial",
+   "effects": [
+    {
+     "phase": "fnp",
+     "op": "fnp",
+     "params": [
+      4
+     ],
+     "condition": [],
+     "source": "暗纹裹尸布：携带者 FNP 4+"
+    }
+   ],
+   "requires_toggles": [
+    "defender_bearer_leading"
+   ],
+   "not_modeled_notes_zh": [
+    "FNP 4+ 限携带者模型（附属单位整体注入会高估——请单列携带者模拟）"
+   ],
+   "encoded_by": "manual-2026-07-20",
+   "provenance": {
+    "text_sha256": "c0fbbe5df0b71a64b57724b2c9bca460f69ea3ceea2b12ac1b10ce1b21d16b27"
+   }
+  },
+  {
+   "table": "enhancements",
+   "id": "000009126005",
+   "side": "attacker",
+   "detachment": "Ordo Xenos Alien Hunters",
+   "name_en": "Universal Anathema",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "携带者近战武器获 [ANTI-INFANTRY 2+]/[ANTI-MONSTER 4+]——ANTI 关键字致伤阈值无载体"
+   ],
+   "encoded_by": "manual-2026-07-20",
+   "provenance": {}
+  },
+  {
+   "table": "enhancements",
+   "id": "000009757002",
+   "side": "attacker",
+   "detachment": "Veiled Blade Elimination Force",
+   "name_en": "Decoy Targets",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "每战两次于移动阶段将友军模型换位——移动/部署域未建模"
+   ],
+   "encoded_by": "manual-2026-07-20",
+   "provenance": {}
+  },
+  {
+   "table": "enhancements",
+   "id": "000009757003",
+   "side": "attacker",
+   "detachment": "Veiled Blade Elimination Force",
+   "name_en": "Esoteric Explosives",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "被 Grenades 战略指向时致命伤阈值 4+→3+——手雷战略域未建模"
+   ],
+   "encoded_by": "manual-2026-07-20",
+   "provenance": {}
+  },
+  {
+   "table": "enhancements",
+   "id": "000009757004",
+   "side": "attacker",
+   "detachment": "Veiled Blade Elimination Force",
+   "name_en": "Intraneural Biotech",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "每大回合可 0CP 对本模型用 Heroic Intervention/Counter-offensive——CP/战略域未建模"
+   ],
+   "encoded_by": "manual-2026-07-20",
+   "provenance": {}
+  },
+  {
+   "table": "enhancements",
+   "id": "000009757005",
+   "side": "attacker",
+   "detachment": "Veiled Blade Elimination Force",
+   "name_en": "Micromelta Rounds",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "exitus rifle 获 [ANTI-MONSTER 4+]/[ANTI-VEHICLE 4+]——ANTI 关键字致伤阈值无载体"
+   ],
+   "encoded_by": "manual-2026-07-20",
+   "provenance": {}
+  },
+  {
+   "table": "enhancements",
+   "id": "000009360002",
+   "side": "attacker",
+   "detachment": "Voidship’s Company",
+   "name_en": "Lathimon's Flock",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "对手先部署 + IMPERIAL NAVY BREACHERS 获 Infiltrators——部署域未建模"
+   ],
+   "encoded_by": "manual-2026-07-20",
+   "provenance": {}
+  },
+  {
+   "table": "enhancements",
+   "id": "000009360003",
+   "side": "attacker",
+   "detachment": "Voidship’s Company",
+   "name_en": "Heirloom Blade",
+   "name_zh": null,
+   "status": "partial",
+   "effects": [
+    {
+     "phase": "attacks",
+     "op": "modify",
+     "params": [
+      1
+     ],
+     "condition": [
+      "phase_melee"
+     ],
+     "source": "传家宝刃：单溅镜甘蔗剑 A +1"
+    },
+    {
+     "phase": "hit",
+     "op": "bs_improve",
+     "params": [
+      1
+     ],
+     "condition": [
+      "phase_melee"
+     ],
+     "source": "传家宝刃：单溅镜甘蔗剑 WS 改善 1"
+    },
+    {
+     "phase": "wound",
+     "op": "s_improve",
+     "params": [
+      1
+     ],
+     "condition": [
+      "phase_melee"
+     ],
+     "source": "传家宝刃：单溅镜甘蔗剑 S +1"
+    },
+    {
+     "phase": "save",
+     "op": "ap_improve",
+     "params": [
+      1
+     ],
+     "condition": [
+      "phase_melee"
+     ],
+     "source": "传家宝刃：单溅镜甘蔗剑 AP 改善 1"
+    },
+    {
+     "phase": "damage",
+     "op": "modify",
+     "params": [
+      1
+     ],
+     "condition": [
+      "phase_melee"
+     ],
+     "source": "传家宝刃：单溅镜甘蔗剑 D +1"
+    }
+   ],
+   "requires_toggles": [
+    "bearer_leading"
+   ],
+   "not_modeled_notes_zh": [
+    "每场一次（点名即假设已用）",
+    "限携带者名字含 cane-rapier 的单溅镜甘蔗-长剑（weapon_filter，避让他单位的 Monomolecular rapier）；Range 特征（Melee）不适用"
+   ],
+   "encoded_by": "manual-2026-07-20",
+   "provenance": {
+    "text_sha256": "4662526721dd23804d346a5700b9dc792cea239b3938379de04af991385c0d37"
+   },
+   "weapon_filter": "cane-rapier"
+  }
+ ]
+}
