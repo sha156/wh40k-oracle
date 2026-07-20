@@ -1,5 +1,5 @@
 {
- "_comment": "P7-PR1 钛帝国规则文本 11 版化补丁。text_patches 来自 2026-07-14 逐行 A/B 工作单（docs/superpowers/plans/2026-07-14-p7-pr1-fp-rules-worklist.md，55 行全落账：8 drifted / 3 identical / 35 not_in_fp / 9 review_needed / 5 fp_new）；name_patches 来自钛帝国十版中文codex refine 缓存逐条效果配对（43 条有源 + 11 条自译标记）。｜P7-PR5 吞世者追加（2026-07-18）：text 9（军规嗜血癫狂改+1冲锋、狂战士之怒/怒火尽泄 surge move 术语、黄铜之怒规则改核心 surge、怒火容器 p4 完整重印 5 条）；deactivations +6（怒火容器重印未收录）；inserts +13（Brazen Engines/Butchers of Khorne 两全新分队 + Scorn the Witch）；name +53（狂战士战帮/怒火容器/军规 DavidZ codex 有源配对，其余自译标记）。已滚入免补：Summoned by Slaughter / Warp Stalkers / Rapid Manifestation（Wahapedia 现文即 11 版）。｜PR5 兵牌层技能 6 条（FP p7-p8 DATASHEETS：Loping Speed 8\"、Blood Surge surge move 化、Helbrute Frenzy 重写、Scent of Blood 9\" 内判据、Chaos Rhino 8\"、Bloody Fury 重写）；已滚入免补：Exalted Eightbound Rend and Tear / Icon of Khorne×2 / Slaughterbound 武器 S10 / Defiler 整表（Wahapedia 已收）。FRAME 关键词沿 S4 裁定跳过（测距词）。｜P7-PR8 死亡守卫追加（2026-07-19）：text 9（Flyblown Host 完整重印 6 条 + 军规两处合一 + Death Approaches 9\"→8\" + Beckoning Blight 9\"→8\"）、deact 5（Flyblown重印未收录 3 战略 2 增强）、inserts 12（Contagion Engines/Paragons of Putrescence两新分队各 1 规则 3 战略 2 增强）、name 51（军规 1 + det 规则 7 + 战略 42 + 死神降临，源=老湿腐死亡守卫V1.1；工作单 docs/superpowers/plans/2026-07-19-p7-pr8-dg-worklist.md）｜P7-PR9 圣血天使追加（2026-07-19）：text 9（全兵牌技能层——Legends Black Rage×4 + 狂乱反噬 + 狂怒驱使 surge + 大叛乱幻视 + 奇迹救赎 ingress + Gleaming Pinions 8\"）、inserts 18（Legacy of Grace/Encarmine Speartip/Wrath of the Doomed 三新分队各 1 规则 3 战略 2 增强；Legacy of the Angel 同名豁免旗标expect_duplicate_name 首用）、name 49（4 codex 分队有源 + Rage-cursed 自译，源=DavidZ圣血天使V1.05；工作单 docs/superpowers/plans/2026-07-19-p7-pr9-ba-worklist.md）。零 deactivations（重印无删减）零 fp_errata｜P7-PR15 圣血修女追加（2026-07-20）：text 1（Penitent Host / Devout Fanaticism EFFECT → surge move）；inserts +14（3 新分队 Chorus of Condemnation / Sacred Champions / Sanctified Orators：3 规则 + 5 增强 + 6 战略，id 前缀 fp11e-sororitas-，cost 置空）。免补：Rules Updates 其余（Shield of Aversion/Rites of Fire/Fervent Purgation/Suffering&Sacrifice/Divine Intervention/Desperate for Redemption/Blazing Ire&Cleansing Flames 2CP/Acts of Faith 军规）Wahapedia 已滚入逐字一致。观察项：FRAME 关键字×4、8 datasheet 技能改（Leader→Support 等）、3+5 新 datasheet/Legends 单位——datasheet 层不落本 PR。",
+ "_comment": "P7-PR1 钛帝国规则文本 11 版化补丁。text_patches 来自 2026-07-14 逐行 A/B 工作单（docs/superpowers/plans/2026-07-14-p7-pr1-fp-rules-worklist.md，55 行全落账：8 drifted / 3 identical / 35 not_in_fp / 9 review_needed / 5 fp_new）；name_patches 来自钛帝国十版中文codex refine 缓存逐条效果配对（43 条有源 + 11 条自译标记）。｜P7-PR5 吞世者追加（2026-07-18）：text 9（军规嗜血癫狂改+1冲锋、狂战士之怒/怒火尽泄 surge move 术语、黄铜之怒规则改核心 surge、怒火容器 p4 完整重印 5 条）；deactivations +6（怒火容器重印未收录）；inserts +13（Brazen Engines/Butchers of Khorne 两全新分队 + Scorn the Witch）；name +53（狂战士战帮/怒火容器/军规 DavidZ codex 有源配对，其余自译标记）。已滚入免补：Summoned by Slaughter / Warp Stalkers / Rapid Manifestation（Wahapedia 现文即 11 版）。｜PR5 兵牌层技能 6 条（FP p7-p8 DATASHEETS：Loping Speed 8\"、Blood Surge surge move 化、Helbrute Frenzy 重写、Scent of Blood 9\" 内判据、Chaos Rhino 8\"、Bloody Fury 重写）；已滚入免补：Exalted Eightbound Rend and Tear / Icon of Khorne×2 / Slaughterbound 武器 S10 / Defiler 整表（Wahapedia 已收）。FRAME 关键词沿 S4 裁定跳过（测距词）。｜P7-PR8 死亡守卫追加（2026-07-19）：text 9（Flyblown Host 完整重印 6 条 + 军规两处合一 + Death Approaches 9\"→8\" + Beckoning Blight 9\"→8\"）、deact 5（Flyblown重印未收录 3 战略 2 增强）、inserts 12（Contagion Engines/Paragons of Putrescence两新分队各 1 规则 3 战略 2 增强）、name 51（军规 1 + det 规则 7 + 战略 42 + 死神降临，源=老湿腐死亡守卫V1.1；工作单 docs/superpowers/plans/2026-07-19-p7-pr8-dg-worklist.md）｜P7-PR9 圣血天使追加（2026-07-19）：text 9（全兵牌技能层——Legends Black Rage×4 + 狂乱反噬 + 狂怒驱使 surge + 大叛乱幻视 + 奇迹救赎 ingress + Gleaming Pinions 8\"）、inserts 18（Legacy of Grace/Encarmine Speartip/Wrath of the Doomed 三新分队各 1 规则 3 战略 2 增强；Legacy of the Angel 同名豁免旗标expect_duplicate_name 首用）、name 49（4 codex 分队有源 + Rage-cursed 自译，源=DavidZ圣血天使V1.05；工作单 docs/superpowers/plans/2026-07-19-p7-pr9-ba-worklist.md）。零 deactivations（重印无删减）零 fp_errata｜P7-PR15 圣血修女追加（2026-07-20）：text 1（Penitent Host / Devout Fanaticism EFFECT → surge move）；inserts +14（3 新分队 Chorus of Condemnation / Sacred Champions / Sanctified Orators：3 规则 + 5 增强 + 6 战略，id 前缀 fp11e-sororitas-，cost 置空）。免补：Rules Updates 其余（Shield of Aversion/Rites of Fire/Fervent Purgation/Suffering&Sacrifice/Divine Intervention/Desperate for Redemption/Blazing Ire&Cleansing Flames 2CP/Acts of Faith 军规）Wahapedia 已滚入逐字一致。观察项：FRAME 关键字×4、8 datasheet 技能改（Leader→Support 等）、3+5 新 datasheet/Legends 单位——datasheet 层不落本 PR。｜P7-PR20 Space-Marines 追加（2026-07-20）：inserts +13 —— 2 新迷你分队（Fulguris Task Force 天雷突袭 / Subversion Assets 无所遁形，各 1 规则 + 2 增强 + 3 战略，id 前缀 fp11e-spacemarines-）+ Bastion Task Force 漏录的 Angels Defiant 战略（DB id 序 002-005,007 缺 006，补回 000010677006）。11 现有分队（Armoured Speartip→Reclamation Force + Librarius Conclave）文本与 11 版 FP 逐字一致（Wahapedia 已滚入），零 text_patches/零 deactivations/零 fp_errata。",
  "text_patches": [
   {
    "table": "detachments",
@@ -6326,6 +6326,182 @@
     "cp_cost": "1",
     "phase": "Movement phase",
     "text_zh": "<b>WHEN:</b> Your opponent’s Movement phase, when an enemy unit that was engaged with a friendly <span class=\"kwb\">CHAPLAIN</span> unit ends a Fall Back move, if that <span class=\"kwb\">CHAPLAIN</span> unit is unengaged.<br><br><b>TARGET:</b> That <span class=\"kwb\">CHAPLAIN</span> unit.<br><br><b>EFFECT:</b> Your unit can make a Normal move of up to D3+3\"."
+   }
+  },
+  {
+   "table": "detachments",
+   "fp_source": "Faction Pack Space-Marines（11 版新分队，Wahapedia 无源）",
+   "values": {
+    "id": "fp11e-spacemarines-fulguris",
+    "faction": "SM",
+    "name_zh": "天雷突袭",
+    "name_en": "Skystrike",
+    "rule_text": "Friendly <span class=\"kwb\">LAND</span> <span class=\"kwb\">SPEEDER</span>/<span class=\"kwb\">STORM</span> <span class=\"kwb\">SPEEDER</span> HAILSTRIKE/HAMMERSTRIKE/THUNDERSTRIKE units have the <span class=\"kwb\">SPEEDER</span> keyword.<br><br>In your first Movement phase, friendly SPEEDER units can make an ingress move."
+   }
+  },
+  {
+   "table": "enhancements",
+   "fp_source": "Faction Pack Space-Marines（11 版新分队，Wahapedia 无源）",
+   "values": {
+    "id": "fp11e-spacemarines-fulguris-e1",
+    "faction_id": "SM",
+    "detachment_id": "fulguris-task-force",
+    "detachment_name": "Fulguris Task Force",
+    "name": "Bellicose Weapon Spirits",
+    "cost": null,
+    "legend": "点数未知：FP 不含点数，MFM 缓存无增强数据（诚实置空，勿猜）",
+    "description": "SPEEDER unit only. This unit can re-roll Damage rolls and rolls to determine the Attacks characteristic of a weapon."
+   }
+  },
+  {
+   "table": "enhancements",
+   "fp_source": "Faction Pack Space-Marines（11 版新分队，Wahapedia 无源）",
+   "values": {
+    "id": "fp11e-spacemarines-fulguris-e2",
+    "faction_id": "SM",
+    "detachment_id": "fulguris-task-force",
+    "detachment_name": "Fulguris Task Force",
+    "name": "Raptorial Cogitator Core",
+    "cost": null,
+    "legend": "点数未知：FP 不含点数，MFM 缓存无增强数据（诚实置空，勿猜）",
+    "description": "SPEEDER unit only. This unit's ranged attacks have [IGNORES COVER]."
+   }
+  },
+  {
+   "table": "stratagems",
+   "fp_source": "Faction Pack Space-Marines（11 版新分队，Wahapedia 无源）",
+   "values": {
+    "id": "fp11e-spacemarines-fulguris-s1",
+    "faction": "SM",
+    "detachment": "Fulguris Task Force",
+    "name_zh": "数据链导测",
+    "name_en": "Data-Link Augury",
+    "cp_cost": "1",
+    "phase": "Shooting phase",
+    "text_zh": "<b>WHEN:</b> Your Shooting phase, when a friendly SPEEDER unit is selected to shoot.<br><br><b>TARGET:</b> That SPEEDER unit.<br><br><b>EFFECT:</b> Select one enemy unit within 24\" of your unit. That enemy unit has +6\" detection range until your unit has shot."
+   }
+  },
+  {
+   "table": "stratagems",
+   "fp_source": "Faction Pack Space-Marines（11 版新分队，Wahapedia 无源）",
+   "values": {
+    "id": "fp11e-spacemarines-fulguris-s2",
+    "faction": "SM",
+    "detachment": "Fulguris Task Force",
+    "name_zh": "反应机动",
+    "name_en": "Reactive Evasion",
+    "cp_cost": "1",
+    "phase": "Movement phase",
+    "text_zh": "<b>WHEN:</b> Your opponent's Movement phase, when an enemy unit ends a move within 8\" of a friendly unengaged SPEEDER unit.<br><br><b>TARGET:</b> That SPEEDER unit.<br><br><b>EFFECT:</b> Your unit can make a Normal move of up to D3+3\"."
+   }
+  },
+  {
+   "table": "stratagems",
+   "fp_source": "Faction Pack Space-Marines（11 版新分队，Wahapedia 无源）",
+   "values": {
+    "id": "fp11e-spacemarines-fulguris-s3",
+    "faction": "SM",
+    "detachment": "Fulguris Task Force",
+    "name_zh": "反重力涌动",
+    "name_en": "Anti-Grav Surge",
+    "cp_cost": "1",
+    "phase": "Fight phase",
+    "text_zh": "<b>WHEN:</b> End of your opponent's Fight phase.<br><br><b>TARGET:</b> One friendly unengaged SPEEDER unit.<br><br><b>EFFECT:</b> Place your unit in Strategic Reserves."
+   }
+  },
+  {
+   "table": "detachments",
+   "fp_source": "Faction Pack Space-Marines（11 版新分队，Wahapedia 无源）",
+   "values": {
+    "id": "fp11e-spacemarines-subversion",
+    "faction": "SM",
+    "name_zh": "无所遁形",
+    "name_en": "Nowhere to Hide",
+    "rule_text": "Friendly <span class=\"kwb\">PHOBOS</span>/<span class=\"kwb\">SCOUT</span> <span class=\"kwb\">SQUAD</span> units have the following ability:<br><br><b>Transhuman Perception:</b> In your Shooting phase, this unit can select one visible enemy unit within 12\". That enemy unit is detected. While a unit is detected, that unit has +3\" detection range."
+   }
+  },
+  {
+   "table": "enhancements",
+   "fp_source": "Faction Pack Space-Marines（11 版新分队，Wahapedia 无源）",
+   "values": {
+    "id": "fp11e-spacemarines-subversion-e1",
+    "faction_id": "SM",
+    "detachment_id": "subversion-assets",
+    "detachment_name": "Subversion Assets",
+    "name": "Shroud Field",
+    "cost": null,
+    "legend": "点数未知：FP 不含点数，MFM 缓存无增强数据（诚实置空，勿猜）",
+    "description": "PHOBOS model only. This model has Lone Operative and Stealth."
+   }
+  },
+  {
+   "table": "enhancements",
+   "fp_source": "Faction Pack Space-Marines（11 版新分队，Wahapedia 无源）",
+   "values": {
+    "id": "fp11e-spacemarines-subversion-e2",
+    "faction_id": "SM",
+    "detachment_id": "subversion-assets",
+    "detachment_name": "Subversion Assets",
+    "name": "Death in the Dark",
+    "cost": null,
+    "legend": "点数未知：FP 不含点数，MFM 缓存无增强数据（诚实置空，勿猜）",
+    "description": "INFANTRY PHOBOS unit only. This unit's attacks that target a hidden unit have +1 to Hit rolls."
+   }
+  },
+  {
+   "table": "stratagems",
+   "fp_source": "Faction Pack Space-Marines（11 版新分队，Wahapedia 无源）",
+   "values": {
+    "id": "fp11e-spacemarines-subversion-s1",
+    "faction": "SM",
+    "detachment": "Subversion Assets",
+    "name_zh": "适应作战",
+    "name_en": "Adaptive Operations",
+    "cp_cost": "1",
+    "phase": "Shooting phase",
+    "text_zh": "<b>WHEN:</b> Your Shooting phase, when a friendly PHOBOS/SCOUT SQUAD unit starts an action.<br><br><b>TARGET:</b> That PHOBOS/SCOUT SQUAD unit.<br><br><b>EFFECT:</b> That action does not prevent your unit from being eligible to shoot."
+   }
+  },
+  {
+   "table": "stratagems",
+   "fp_source": "Faction Pack Space-Marines（11 版新分队，Wahapedia 无源）",
+   "values": {
+    "id": "fp11e-spacemarines-subversion-s2",
+    "faction": "SM",
+    "detachment": "Subversion Assets",
+    "name_zh": "暗影狙杀",
+    "name_en": "Strike from the Shadows",
+    "cp_cost": "1",
+    "phase": "Shooting phase",
+    "text_zh": "<b>WHEN:</b> Your Shooting phase, when a friendly PHOBOS/SCOUT SQUAD unit has shot.<br><br><b>TARGET:</b> That PHOBOS/SCOUT SQUAD unit.<br><br><b>EFFECT:</b> Those ranged attacks do not prevent your unit from being hidden."
+   }
+  },
+  {
+   "table": "stratagems",
+   "fp_source": "Faction Pack Space-Marines（11 版新分队，Wahapedia 无源）",
+   "values": {
+    "id": "fp11e-spacemarines-subversion-s3",
+    "faction": "SM",
+    "detachment": "Subversion Assets",
+    "name_zh": "潜行阵位",
+    "name_en": "Cloaked Position",
+    "cp_cost": "1",
+    "phase": "Movement phase",
+    "text_zh": "<b>WHEN:</b> Start of your opponent's Movement phase.<br><br><b>TARGET:</b> One friendly unengaged PHOBOS/SCOUT SQUAD unit.<br><br><b>EFFECT:</b> Your unit has -3\" detection range until the end of the turn."
+   }
+  },
+  {
+   "table": "stratagems",
+   "fp_source": "Faction Pack Space-Marines（Bastion Task Force 漏录战略补回，DB id 序缺 006）",
+   "values": {
+    "id": "fp11e-spacemarines-bastion-s6",
+    "faction": "SM",
+    "detachment": "Bastion Task Force",
+    "name_zh": "天使不屈",
+    "name_en": "Angels Defiant",
+    "cp_cost": "1",
+    "phase": "Fight phase",
+    "text_zh": "<b>WHEN:</b> Your opponent's Shooting phase or the Fight phase, just after an enemy unit has selected its targets.<br><br><b>TARGET:</b> One ADEPTUS ASTARTES Battleline unit from your army that was selected as the target of one or more of the attacking unit's attacks.<br><br><b>EFFECT:</b> Until the end of the phase, each time an attack targets your unit, if the Strength characteristic of that attack is greater than the Toughness characteristic of your unit, subtract 1 from the Wound roll."
    }
   }
  ]

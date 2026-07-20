@@ -1,0 +1,3528 @@
+{
+ "_comment": "P7 阵营技能 DSL 唯一真源（Space Marines / 通用星际战士 Codex 分队，P7-PR20）。DB effect_dsl_json/dsl_status 只是投影，由 `python -m db_compile dsl-apply` 写入并挂 restore。Space Marines FP（VERSION 1.0，2026-06-20 生效）定义 15 个分队，均挂 faction='SM'（战团/亚阵营混存）：13 现有（Librarius Conclave + Armoured Speartip/Headhunter Task Force/Ceramite Sentinels/Blade of Ultramar/Hammer of Avernii/Spearpoint Task Force/Forgefather's Seekers/Emperor's Shield/Shadowmark Talon/Bastion Task Force/Orbital Assault Force/Reclamation Force，文本与 11 版 FP 逐字一致，Wahapedia 已滚入，零 text_patches）+ 2 新迷你分队（Fulguris Task Force / Subversion Assets，各 1 规则 + 2 增强 + 3 战略，fp_rules inserts 补录 id 前缀 fp11e-spacemarines-）+ Bastion 漏录战略 Angels Defiant（补回 000010677006）。分队规则条目物化到 abilities 新行（spec D5）。零新引擎通道、零新态势开关（沿 PR9-19 约定）。A/B 工作单见 docs/superpowers/plans/2026-07-20-p7-pr20-spacemarines-worklist.md。",
+ "dsl_version": 1,
+ "faction": "SM",
+ "entries": [
+  {
+   "table": "abilities",
+   "id": "det000009784",
+   "side": "attacker",
+   "detachment": "Librarius Conclave",
+   "name_en": "Psychic Disciplines",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "军规：每大回合选一心灵领域（生物操纵/预言/焰控/念动/心灵感应），全军 PSYKER 单位获对应效果——灵能领域选择状态机 + PSYKER 单位域，无引擎载体，不编"
+   ],
+   "provenance": {
+    "text_sha256": "03638a0dff4ec3c58e55a00dba15074549733bc0b7bef84988747b4a784639ac"
+   },
+   "encoded_by": "manual-2026-07-20",
+   "materialize": {
+    "from_table": "detachments",
+    "from_id": "000009784",
+    "from_column": "rule_text"
+   }
+  },
+  {
+   "table": "stratagems",
+   "id": "000009791002",
+   "side": "attacker",
+   "detachment": "Librarius Conclave",
+   "name_en": "SENSORY ASSAULT",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "指挥阶段 pin 敌方（-2M/-2冲锋）+ 心灵感应触发战斗震慑——移动减益/士气域未建模"
+   ],
+   "provenance": {
+    "text_sha256": "e1e6ca06ae0609e823ab6e811e7fd60c98319ecf45fc30935b8593b08dfdaf35"
+   },
+   "encoded_by": "manual-2026-07-20"
+  },
+  {
+   "table": "stratagems",
+   "id": "000009791003",
+   "side": "target",
+   "detachment": "Librarius Conclave",
+   "name_en": "ARMOUR OF CONTEMPT",
+   "name_zh": null,
+   "status": "partial",
+   "effects": [
+    {
+     "phase": "save",
+     "op": "ap_improve",
+     "params": [
+      -1
+     ],
+     "condition": [],
+     "source": "傲慢之甲（被攻 AP 恶化 1，射击/近战两相位）"
+    }
+   ],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "触发时机为敌方选中目标后——点名即假设已使用；射击与近战两相位均适用"
+   ],
+   "provenance": {
+    "text_sha256": "35d8af3acc35ff49353b590f9a67c23d622a0edeb0e172ccd7183b080d1e0c83"
+   },
+   "encoded_by": "manual-2026-07-20"
+  },
+  {
+   "table": "stratagems",
+   "id": "000009791004",
+   "side": "target",
+   "detachment": "Librarius Conclave",
+   "name_en": "FIERY SHIELD",
+   "name_zh": null,
+   "status": "partial",
+   "effects": [
+    {
+     "phase": "hit",
+     "op": "modify",
+     "params": [
+      -1
+     ],
+     "condition": [
+      "phase_melee"
+     ],
+     "source": "炽焰护盾（近战被攻命中-1）"
+    }
+   ],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "WHEN=战斗阶段敌方选中目标后（仅近战），焰控领域附加 [HAZARDOUS] 为武器关键词域未建模；仅编近战命中-1"
+   ],
+   "provenance": {
+    "text_sha256": "23bb5664710d1fc923e40c104ea2a2fc3e5ba54391f0508543f1b4b5a71452f6"
+   },
+   "encoded_by": "manual-2026-07-20"
+  },
+  {
+   "table": "stratagems",
+   "id": "000009791005",
+   "side": "attacker",
+   "detachment": "Librarius Conclave",
+   "name_en": "IRON ARM",
+   "name_zh": null,
+   "status": "partial",
+   "effects": [
+    {
+     "phase": "wound",
+     "op": "s_improve",
+     "params": [
+      1
+     ],
+     "condition": [
+      "phase_melee"
+     ],
+     "source": "铁腕（近战武器 +1 S，特征值通道）"
+    }
+   ],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "生物操纵领域激活时改 +2 S——领域状态机无载体，仅编基础 +1（防高估）；近战门"
+   ],
+   "provenance": {
+    "text_sha256": "56a1eedb56a7ee0e634d6012d0012e15c6293a673c1fc8532a00c3eda5876b08"
+   },
+   "encoded_by": "manual-2026-07-20"
+  },
+  {
+   "table": "stratagems",
+   "id": "000009791006",
+   "side": "attacker",
+   "detachment": "Librarius Conclave",
+   "name_en": "ASSAIL",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "6D6、4+ 各 1 致命伤——固定致命伤池不在攻击序列内，念动领域 +1 分支依赖领域状态，均不编"
+   ],
+   "provenance": {
+    "text_sha256": "529f9df6936561fbee258b686f767c8d30827f844e48841d30f6cea91acbd407"
+   },
+   "encoded_by": "manual-2026-07-20"
+  },
+  {
+   "table": "stratagems",
+   "id": "000009791007",
+   "side": "attacker",
+   "detachment": "Librarius Conclave",
+   "name_en": "PRESCIENT PRECISION",
+   "name_zh": null,
+   "status": "partial",
+   "effects": [
+    {
+     "phase": "hit",
+     "op": "auto_wound",
+     "params": [],
+     "condition": [
+      "phase_shooting"
+     ],
+     "source": "预知精准（远程 [LETHAL HITS]——暴击自动致伤）"
+    }
+   ],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "预言领域激活时附加 [IGNORES COVER]——领域状态机无载体，仅编基础 [LETHAL HITS]；射击门"
+   ],
+   "provenance": {
+    "text_sha256": "6872cb1d858ccf8b54a6129a47d60ca18a96dc05589c5ad4b76acdfacd9350f3"
+   },
+   "encoded_by": "manual-2026-07-20"
+  },
+  {
+   "table": "enhancements",
+   "id": "000009785002",
+   "side": "attacker",
+   "detachment": "Librarius Conclave",
+   "name_en": "Prescience",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "敌方结束移动后反应移动——移动域未建模"
+   ],
+   "provenance": {
+    "text_sha256": "54d44101810dd22dd78901a8ea37f7037017c7a3c4b65ca6e4326120b3e0306b"
+   },
+   "encoded_by": "manual-2026-07-20"
+  },
+  {
+   "table": "enhancements",
+   "id": "000009785003",
+   "side": "attacker",
+   "detachment": "Librarius Conclave",
+   "name_en": "Celerity",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "加速/撤退后可冲锋——移动资格域未建模"
+   ],
+   "provenance": {
+    "text_sha256": "1d5b999011dc28fb01f2f63fc49bca90f7bda4ebc2700d94003ca22eb9266b61"
+   },
+   "encoded_by": "manual-2026-07-20"
+  },
+  {
+   "table": "enhancements",
+   "id": "000009785004",
+   "side": "attacker",
+   "detachment": "Librarius Conclave",
+   "name_en": "Obfuscation",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "禁敌方掩护射击 + 心灵感应远程射程限制——掩护射击/射程门域未建模"
+   ],
+   "provenance": {
+    "text_sha256": "779ca3109356390c6857ccc18544b15de626e0559f801fab30866ddd65ad562d"
+   },
+   "encoded_by": "manual-2026-07-20"
+  },
+  {
+   "table": "enhancements",
+   "id": "000009785005",
+   "side": "attacker",
+   "detachment": "Librarius Conclave",
+   "name_en": "Fusillade",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "[ANTI-MONSTER/VEHICLE 5+]（关键词条件暴击阈值 + 领域附加 [SUSTAINED]/射程）——ANTI 关键词门无载体，不编"
+   ],
+   "provenance": {
+    "text_sha256": "9fe588c8b400be3b5bc887cbe4bece5db2b202b95eb4220a57edf45992f1bb2d"
+   },
+   "encoded_by": "manual-2026-07-20"
+  },
+  {
+   "table": "abilities",
+   "id": "det000010777",
+   "side": "attacker",
+   "detachment": "Armoured Speartip",
+   "name_en": "Rapid Deployment",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "军规：下车单位常规移动 D6/D3+3、Heavy Transport 关键词——移动/编成域未建模"
+   ],
+   "provenance": {
+    "text_sha256": "478c730a873d830ecd86a1b406f8a2e43e614f8fcdfb9c3a2765e32cb634b78d"
+   },
+   "encoded_by": "manual-2026-07-20",
+   "materialize": {
+    "from_table": "detachments",
+    "from_id": "000010777",
+    "from_column": "rule_text"
+   }
+  },
+  {
+   "table": "stratagems",
+   "id": "000010780002",
+   "side": "attacker",
+   "detachment": "Armoured Speartip",
+   "name_en": "MACHINE WRATH",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "被毁 Heavy Transport 死前移动——移动/Deadly Demise 域未建模"
+   ],
+   "provenance": {
+    "text_sha256": "7a8909c1f4d585086548e2d38c8793f56991182ec16a4789e18ed66bd564767d"
+   },
+   "encoded_by": "manual-2026-07-20"
+  },
+  {
+   "table": "stratagems",
+   "id": "000010780003",
+   "side": "target",
+   "detachment": "Armoured Speartip",
+   "name_en": "ARMOUR OF CONTEMPT",
+   "name_zh": null,
+   "status": "partial",
+   "effects": [
+    {
+     "phase": "save",
+     "op": "ap_improve",
+     "params": [
+      -1
+     ],
+     "condition": [],
+     "source": "傲慢之甲（被攻 AP 恶化 1，射击/近战两相位）"
+    }
+   ],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "触发时机为敌方选中目标后——点名即假设已使用；射击与近战两相位均适用"
+   ],
+   "provenance": {
+    "text_sha256": "35d8af3acc35ff49353b590f9a67c23d622a0edeb0e172ccd7183b080d1e0c83"
+   },
+   "encoded_by": "manual-2026-07-20"
+  },
+  {
+   "table": "stratagems",
+   "id": "000010780004",
+   "side": "attacker",
+   "detachment": "Armoured Speartip",
+   "name_en": "RAPID EMBARKATION",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "战斗阶段末登车——移动/登车域未建模"
+   ],
+   "provenance": {
+    "text_sha256": "5a421ead57554b7becf519e977867a5c7b9318e75802b71cc8b766796fdfae3e"
+   },
+   "encoded_by": "manual-2026-07-20"
+  },
+  {
+   "table": "stratagems",
+   "id": "000010780005",
+   "side": "attacker",
+   "detachment": "Armoured Speartip",
+   "name_en": "CERAMITE SLEDGEHAMMER",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "穿越地形/敌方模型移动——移动域未建模"
+   ],
+   "provenance": {
+    "text_sha256": "ee3fa66279261dc626af53b3df08658881348103e05c7ed06b50a19da9fb826b"
+   },
+   "encoded_by": "manual-2026-07-20"
+  },
+  {
+   "table": "stratagems",
+   "id": "000010780006",
+   "side": "attacker",
+   "detachment": "Armoured Speartip",
+   "name_en": "ADVANCED DEPLOYMENT",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "加速后下车——移动/下车域未建模"
+   ],
+   "provenance": {
+    "text_sha256": "b70c695b185b1bfd73b3b390ae1b4cabb00fb72b9f933862eeb5eb8cf18c6b12"
+   },
+   "encoded_by": "manual-2026-07-20"
+  },
+  {
+   "table": "stratagems",
+   "id": "000010780007",
+   "side": "attacker",
+   "detachment": "Armoured Speartip",
+   "name_en": "PURGATION DOCTRINE",
+   "name_zh": null,
+   "status": "partial",
+   "effects": [
+    {
+     "phase": "hit",
+     "op": "modify",
+     "params": [
+      1
+     ],
+     "condition": [
+      "phase_shooting"
+     ],
+     "source": "净化教条（射击命中+1）"
+    }
+   ],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "WHEN=射击阶段（条件自含射击门）；下车自 Heavy Transport 时附加致伤+1——下车态无射击复合载体，仅编命中+1"
+   ],
+   "provenance": {
+    "text_sha256": "6d5039176622792e7de7294503d48630e348ffdee4c5147c94ae72f24bc12cce"
+   },
+   "encoded_by": "manual-2026-07-20"
+  },
+  {
+   "table": "enhancements",
+   "id": "000010779002",
+   "side": "attacker",
+   "detachment": "Armoured Speartip",
+   "name_en": "Liberator",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "目标点持续控制——目标点域未建模"
+   ],
+   "provenance": {
+    "text_sha256": "42d121cc08c5d18cc2881b6149bd6041e4c2418cf0ce3ecef6b1a51a870d941c"
+   },
+   "encoded_by": "manual-2026-07-20"
+  },
+  {
+   "table": "enhancements",
+   "id": "000010779003",
+   "side": "attacker",
+   "detachment": "Armoured Speartip",
+   "name_en": "Tip of the Spear",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "运输载具 Scouts 6\"——部署域未建模"
+   ],
+   "provenance": {
+    "text_sha256": "85205834b253f8755028663e63e437ba80da409e521c03f6ea9a1c5e03968d88"
+   },
+   "encoded_by": "manual-2026-07-20"
+  },
+  {
+   "table": "enhancements",
+   "id": "000010779004",
+   "side": "attacker",
+   "detachment": "Armoured Speartip",
+   "name_en": "Shock Deployment",
+   "name_zh": null,
+   "status": "partial",
+   "effects": [
+    {
+     "phase": "hit",
+     "op": "extra_hits",
+     "params": [
+      1
+     ],
+     "condition": [
+      "phase_shooting"
+     ],
+     "source": "震慑下车（下车后远程 [SUSTAINED HITS 1]）"
+    }
+   ],
+   "requires_toggles": [
+    "bearer_leading",
+    "disembarked_this_turn"
+   ],
+   "not_modeled_notes_zh": [
+    "限携带者（Terminator/Gravis）单位本回合下车后远程武器——下车态用开关门控，射击门自含"
+   ],
+   "provenance": {
+    "text_sha256": "25889a6b79d001cba5c041a97f12c1acae7dd34cb89ad26e6ee15f82648af356"
+   },
+   "encoded_by": "manual-2026-07-20"
+  },
+  {
+   "table": "enhancements",
+   "id": "000010779005",
+   "side": "attacker",
+   "detachment": "Armoured Speartip",
+   "name_en": "Armoured Commander",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "预备队出场轮次+1——预备队域未建模"
+   ],
+   "provenance": {
+    "text_sha256": "f8517f99989e977c5c83c13c6d3ce60045011cefa186140385bc1244afacb99f"
+   },
+   "encoded_by": "manual-2026-07-20"
+  },
+  {
+   "table": "abilities",
+   "id": "det000010782",
+   "side": "attacker",
+   "detachment": "Headhunter Task Force",
+   "name_en": "Target Sighted",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "军规：Tank Ace 加速 +6\"M、驻停重投伤害 + Tank Ace/Character 关键词授予——移动/重投伤害/编成域未建模"
+   ],
+   "provenance": {
+    "text_sha256": "d039db588d158355982f2f4a5fa5f0f2dfc87064087d501b240b80b80f8b0317"
+   },
+   "encoded_by": "manual-2026-07-20",
+   "materialize": {
+    "from_table": "detachments",
+    "from_id": "000010782",
+    "from_column": "rule_text"
+   }
+  },
+  {
+   "table": "stratagems",
+   "id": "000010784002",
+   "side": "target",
+   "detachment": "Headhunter Task Force",
+   "name_en": "ARMOUR OF CONTEMPT",
+   "name_zh": null,
+   "status": "partial",
+   "effects": [
+    {
+     "phase": "save",
+     "op": "ap_improve",
+     "params": [
+      -1
+     ],
+     "condition": [],
+     "source": "傲慢之甲（被攻 AP 恶化 1，射击/近战两相位）"
+    }
+   ],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "触发时机为敌方选中目标后——点名即假设已使用；射击与近战两相位均适用"
+   ],
+   "provenance": {
+    "text_sha256": "35d8af3acc35ff49353b590f9a67c23d622a0edeb0e172ccd7183b080d1e0c83"
+   },
+   "encoded_by": "manual-2026-07-20"
+  },
+  {
+   "table": "stratagems",
+   "id": "000010784003",
+   "side": "attacker",
+   "detachment": "Headhunter Task Force",
+   "name_en": "TARGET WEAK POINT",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "对 Monster/Vehicle +1 AP——射击×关键词（M/V 二选）无复合载体，裸 target_has_keyword 只能表达单关键词且不含射击门，不编"
+   ],
+   "provenance": {
+    "text_sha256": "f31f3d354eb337bb5fe589c38b855f6f5528ef3655ee351ebe0c014a2f02aae7"
+   },
+   "encoded_by": "manual-2026-07-20"
+  },
+  {
+   "table": "stratagems",
+   "id": "000010784004",
+   "side": "attacker",
+   "detachment": "Headhunter Task Force",
+   "name_en": "KILL SHOT",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "对 Monster/Vehicle 重投致伤 1（低于起始编制则全量重投）——重骰 1/关键词门/编制状态均无载体，不编"
+   ],
+   "provenance": {
+    "text_sha256": "3dfd52490e4dec71b3d4d7337c11d08c213eb2fac9eaffc390d77054e2bc1ba9"
+   },
+   "encoded_by": "manual-2026-07-20"
+  },
+  {
+   "table": "stratagems",
+   "id": "000010784005",
+   "side": "attacker",
+   "detachment": "Headhunter Task Force",
+   "name_en": "RAPID GUNNERY",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "撤退后可射击——移动资格域未建模"
+   ],
+   "provenance": {
+    "text_sha256": "014c9da0204db7326d98a6f27895526cc5898771f43aab76ce39f84f37b37d30"
+   },
+   "encoded_by": "manual-2026-07-20"
+  },
+  {
+   "table": "stratagems",
+   "id": "000010784006",
+   "side": "attacker",
+   "detachment": "Headhunter Task Force",
+   "name_en": "REACTIVE REPOSITIONING",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "敌方移动后反应移动——移动域未建模"
+   ],
+   "provenance": {
+    "text_sha256": "8c12dd1b9a5fdd108a886bb02d6e5d246dd7feee362a2c5e7b2820fc1a531848"
+   },
+   "encoded_by": "manual-2026-07-20"
+  },
+  {
+   "table": "stratagems",
+   "id": "000010784007",
+   "side": "attacker",
+   "detachment": "Headhunter Task Force",
+   "name_en": "MACHINE VENGEANCE",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "对手射击阶段还击射击——阶段外射击域未建模"
+   ],
+   "provenance": {
+    "text_sha256": "d0e078288ca06ee728dc706630cd59228f8803b29539a65c11ec95ee32428206"
+   },
+   "encoded_by": "manual-2026-07-20"
+  },
+  {
+   "table": "enhancements",
+   "id": "000010783002",
+   "side": "target",
+   "detachment": "Headhunter Task Force",
+   "name_en": "Redoubtable Machine Spirit",
+   "name_zh": null,
+   "status": "partial",
+   "effects": [
+    {
+     "phase": "save",
+     "op": "invuln",
+     "params": [
+      5
+     ],
+     "condition": [],
+     "source": "坚毅机魂（携带者 5+ 无效保护）"
+    }
+   ],
+   "requires_toggles": [
+    "defender_bearer_leading"
+   ],
+   "not_modeled_notes_zh": [
+    "限携带者（Vehicle）模型（点名即声明守方为携带者）；指挥阶段回 1 伤——回血域未建模，仅编 5+ 无效保护"
+   ],
+   "provenance": {
+    "text_sha256": "b4125b7d9125f77691899be34210d82ede22a3163c683672b481db06e989a4a7"
+   },
+   "encoded_by": "manual-2026-07-20"
+  },
+  {
+   "table": "enhancements",
+   "id": "000010783003",
+   "side": "attacker",
+   "detachment": "Headhunter Task Force",
+   "name_en": "Gunnery Honours",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "每阶段重投一次命中/致伤/伤害骰——单次重投无载体，未建模"
+   ],
+   "provenance": {
+    "text_sha256": "e5cb4833aad120ab8823a90abaf008476f2fb95b39b778e79595d199ac5d445f"
+   },
+   "encoded_by": "manual-2026-07-20"
+  },
+  {
+   "table": "enhancements",
+   "id": "000010783004",
+   "side": "attacker",
+   "detachment": "Headhunter Task Force",
+   "name_en": "Firestorm Coordinators",
+   "name_zh": null,
+   "status": "partial",
+   "effects": [
+    {
+     "phase": "hit",
+     "op": "extra_hits",
+     "params": [
+      1
+     ],
+     "condition": [
+      "phase_shooting"
+     ],
+     "source": "风暴协调（携带者远程 [SUSTAINED HITS 1]）"
+    }
+   ],
+   "requires_toggles": [
+    "bearer_leading"
+   ],
+   "not_modeled_notes_zh": [
+    "限携带者（Vehicle）模型远程武器（单人物模拟准确，附属单位整体注入会高估）；射击门"
+   ],
+   "provenance": {
+    "text_sha256": "8c73bc0e43864be2f66b8bc999a95d3baf3111fe30d01510c17bb04f9d067f8d"
+   },
+   "encoded_by": "manual-2026-07-20"
+  },
+  {
+   "table": "enhancements",
+   "id": "000010783005",
+   "side": "attacker",
+   "detachment": "Headhunter Task Force",
+   "name_en": "Astartes Tank Ace (Aura)",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "光环授予友方 Vehicle [ASSAULT]——光环/移动域未建模"
+   ],
+   "provenance": {
+    "text_sha256": "de64e0ca928b417c419e70effd43a0986ae9b6d03103cf51e33000a3ce9e340e"
+   },
+   "encoded_by": "manual-2026-07-20"
+  },
+  {
+   "table": "abilities",
+   "id": "det000010758",
+   "side": "attacker",
+   "detachment": "Ceramite Sentinels",
+   "name_en": "Adaptive Defence",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "军规：地形内重投命中1/致伤1 + Entrenched 关键词——重骰 1/地形状态域无载体，不编"
+   ],
+   "provenance": {
+    "text_sha256": "f9ec22182eaadbceb359317440ff91c66cdba473d56fe00f4fa284586ede4069"
+   },
+   "encoded_by": "manual-2026-07-20",
+   "materialize": {
+    "from_table": "detachments",
+    "from_id": "000010758",
+    "from_column": "rule_text"
+   }
+  },
+  {
+   "table": "stratagems",
+   "id": "000010760002",
+   "side": "attacker",
+   "detachment": "Ceramite Sentinels",
+   "name_en": "UNYIELDING MIGHT",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "+1 OC——目标点域未建模"
+   ],
+   "provenance": {
+    "text_sha256": "ec8628e2e2fab2ecdae478d3f362e63deafdc1b3c3c6a669fd0baebadca973b9"
+   },
+   "encoded_by": "manual-2026-07-20"
+  },
+  {
+   "table": "stratagems",
+   "id": "000010760003",
+   "side": "attacker",
+   "detachment": "Ceramite Sentinels",
+   "name_en": "PRIORITY STRIKE",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "对 Character/Monster/Vehicle 全量重投致伤——关键词门（三选）无载体，裸编会对全目标过度施加，不编"
+   ],
+   "provenance": {
+    "text_sha256": "055206f0c15150d392e6e35085db856f158db6bd2ed1d5f473f785db002ac97b"
+   },
+   "encoded_by": "manual-2026-07-20"
+  },
+  {
+   "table": "stratagems",
+   "id": "000010760004",
+   "side": "target",
+   "detachment": "Ceramite Sentinels",
+   "name_en": "ARMOUR OF CONTEMPT",
+   "name_zh": null,
+   "status": "partial",
+   "effects": [
+    {
+     "phase": "save",
+     "op": "ap_improve",
+     "params": [
+      -1
+     ],
+     "condition": [],
+     "source": "傲慢之甲（被攻 AP 恶化 1，射击/近战两相位）"
+    }
+   ],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "触发时机为敌方选中目标后——点名即假设已使用；射击与近战两相位均适用"
+   ],
+   "provenance": {
+    "text_sha256": "35d8af3acc35ff49353b590f9a67c23d622a0edeb0e172ccd7183b080d1e0c83"
+   },
+   "encoded_by": "manual-2026-07-20"
+  },
+  {
+   "table": "stratagems",
+   "id": "000010760005",
+   "side": "attacker",
+   "detachment": "Ceramite Sentinels",
+   "name_en": "STAND TO THE END",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "被毁模型死后一击——战斗序列/复活域未建模"
+   ],
+   "provenance": {
+    "text_sha256": "8cf00aac147cf34173bbf35ae47e398675e5244a930ca39ecb2fcb1274d06c64"
+   },
+   "encoded_by": "manual-2026-07-20"
+  },
+  {
+   "table": "stratagems",
+   "id": "000010760006",
+   "side": "attacker",
+   "detachment": "Ceramite Sentinels",
+   "name_en": "AUGMENTED TARGETING",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "[SUSTAINED HITS 1] 或 [LETHAL HITS] 二选一（Entrenched 则两者）——一次性二选一单分支无载体，不编"
+   ],
+   "provenance": {
+    "text_sha256": "cc55351e3806e69174878b1a99db35d2fa8cca4659f004e920e51c9f5675695a"
+   },
+   "encoded_by": "manual-2026-07-20"
+  },
+  {
+   "table": "stratagems",
+   "id": "000010760007",
+   "side": "attacker",
+   "detachment": "Ceramite Sentinels",
+   "name_en": "EVASIVE REPOSITIONING",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "敌方射击后反应移动——移动域未建模"
+   ],
+   "provenance": {
+    "text_sha256": "e646b785d46609d3bf3f819fa9bf32d21410eb6cc649f82dedbd0c56d444fb6b"
+   },
+   "encoded_by": "manual-2026-07-20"
+  },
+  {
+   "table": "enhancements",
+   "id": "000010759002",
+   "side": "attacker",
+   "detachment": "Ceramite Sentinels",
+   "name_en": "Honour Indefatigable",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "首次被毁 2+ 复活——复活域未建模"
+   ],
+   "provenance": {
+    "text_sha256": "5be95474d6ccb6bb8f99dc8f8b8bd77e556040224bf5d6d1def4d73f52b40898"
+   },
+   "encoded_by": "manual-2026-07-20"
+  },
+  {
+   "table": "enhancements",
+   "id": "000010759003",
+   "side": "attacker",
+   "detachment": "Ceramite Sentinels",
+   "name_en": "Castellum Omnivox",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "撤退后可行动/射击冲锋——移动资格域未建模"
+   ],
+   "provenance": {
+    "text_sha256": "260dfff5bb6264045b326ca1bdd1a8801a52d949d42a2a734f352e58ffa68b51"
+   },
+   "encoded_by": "manual-2026-07-20"
+  },
+  {
+   "table": "enhancements",
+   "id": "000010759004",
+   "side": "attacker",
+   "detachment": "Ceramite Sentinels",
+   "name_en": "Spy-skull Data Link",
+   "name_zh": null,
+   "status": "partial",
+   "effects": [
+    {
+     "phase": "save",
+     "op": "ignores_cover",
+     "params": [],
+     "condition": [
+      "phase_shooting"
+     ],
+     "source": "侦骷数据链（携带者单位远程 [无视掩体]）"
+    }
+   ],
+   "requires_toggles": [
+    "bearer_leading"
+   ],
+   "not_modeled_notes_zh": [
+    "限携带者单位远程武器；[无视掩体] 自含射击语义"
+   ],
+   "provenance": {
+    "text_sha256": "9337020ff2232609a0a0ba78c6e8dab581afad2dfa9a61adc1ae2bb8ac77963e"
+   },
+   "encoded_by": "manual-2026-07-20"
+  },
+  {
+   "table": "enhancements",
+   "id": "000010759005",
+   "side": "attacker",
+   "detachment": "Ceramite Sentinels",
+   "name_en": "Defensive Mastery",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "部署后重部署——部署域未建模"
+   ],
+   "provenance": {
+    "text_sha256": "43acd0617fb0137cc1c0afa29ef8ce0bfb87aa0875cc771f46dc786056c77d99"
+   },
+   "encoded_by": "manual-2026-07-20"
+  },
+  {
+   "table": "abilities",
+   "id": "det000010632",
+   "side": "attacker",
+   "detachment": "Blade of Ultramar",
+   "name_en": "Mastered Doctrines",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "军规：至多三次指挥阶段选战斗教条（毁灭者/战术/突击）——教条选择状态机无载体，不编"
+   ],
+   "provenance": {
+    "text_sha256": "6ea0003f7fe72cb76de93d68ee52e39b253d68da137ec8d1c564c259924a75e5"
+   },
+   "encoded_by": "manual-2026-07-20",
+   "materialize": {
+    "from_table": "detachments",
+    "from_id": "000010632",
+    "from_column": "rule_text"
+   }
+  },
+  {
+   "table": "stratagems",
+   "id": "000010634002",
+   "side": "target",
+   "detachment": "Blade of Ultramar",
+   "name_en": "ARMOUR OF CONTEMPT",
+   "name_zh": null,
+   "status": "partial",
+   "effects": [
+    {
+     "phase": "save",
+     "op": "ap_improve",
+     "params": [
+      -1
+     ],
+     "condition": [],
+     "source": "傲慢之甲（被攻 AP 恶化 1，射击/近战两相位）"
+    }
+   ],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "触发时机为敌方选中目标后——点名即假设已使用；射击与近战两相位均适用"
+   ],
+   "provenance": {
+    "text_sha256": "35d8af3acc35ff49353b590f9a67c23d622a0edeb0e172ccd7183b080d1e0c83"
+   },
+   "encoded_by": "manual-2026-07-20"
+  },
+  {
+   "table": "stratagems",
+   "id": "000010634003",
+   "side": "attacker",
+   "detachment": "Blade of Ultramar",
+   "name_en": "TACTICAL FORESIGHT",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "守方 S≥T 时被伤-1——引擎 wound_s_gt_t 为 S>T 严格，漏 S=T 档不等价，不编（防错编）"
+   ],
+   "provenance": {
+    "text_sha256": "6a5c6aa94bfdd07daff9e1861ef512c1d28f16498608ffc54cfe8af106863fa4"
+   },
+   "encoded_by": "manual-2026-07-20"
+  },
+  {
+   "table": "stratagems",
+   "id": "000010634004",
+   "side": "attacker",
+   "detachment": "Blade of Ultramar",
+   "name_en": "COURAGE AND HONOUR!",
+   "name_zh": null,
+   "status": "partial",
+   "effects": [
+    {
+     "phase": "wound",
+     "op": "modify",
+     "params": [
+      1
+     ],
+     "condition": [
+      "melee_charging"
+     ],
+     "source": "荣耀与荣光（近战 [LANCE]——冲锋回合致伤+1）"
+    }
+   ],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "[LANCE]=冲锋回合近战致伤+1（melee_charging 复合门）；突击教条附加 +1 AP——教条状态机无载体，不编 AP 分支"
+   ],
+   "provenance": {
+    "text_sha256": "1ef9b641cb4e51160e24d53474cfb3b906f2a7f5df1912a81c2751b5e61f62fc"
+   },
+   "encoded_by": "manual-2026-07-20"
+  },
+  {
+   "table": "stratagems",
+   "id": "000010634005",
+   "side": "attacker",
+   "detachment": "Blade of Ultramar",
+   "name_en": "ULTRAMARIAN ADAPTIVITY",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "指挥阶段为本单位选战斗教条——教条状态机无载体，不编"
+   ],
+   "provenance": {
+    "text_sha256": "a98114f40eac80ee9eaab95887ba3e8155eeb29669edbfcd6bb7ab25ff446123"
+   },
+   "encoded_by": "manual-2026-07-20"
+  },
+  {
+   "table": "stratagems",
+   "id": "000010634006",
+   "side": "attacker",
+   "detachment": "Blade of Ultramar",
+   "name_en": "EXEMPLARY VIGILANCE",
+   "name_zh": null,
+   "status": "partial",
+   "effects": [
+    {
+     "phase": "save",
+     "op": "ignores_cover",
+     "params": [],
+     "condition": [
+      "phase_shooting"
+     ],
+     "source": "模范警惕（远程 [无视掩体]）"
+    }
+   ],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "WHEN=射击阶段（射击门自含）；毁灭者教条附加 +1 AP——教条状态机无载体，不编 AP 分支"
+   ],
+   "provenance": {
+    "text_sha256": "756682bc3296f50c6ac1bb40bd7df79ce11dff1c8f66bad446252c05db4475c7"
+   },
+   "encoded_by": "manual-2026-07-20"
+  },
+  {
+   "table": "stratagems",
+   "id": "000010634007",
+   "side": "attacker",
+   "detachment": "Blade of Ultramar",
+   "name_en": "PRACTICAL TACTICS",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "敌方移动后反应移动——移动域未建模"
+   ],
+   "provenance": {
+    "text_sha256": "512cb8b342b41482ddfb58cd7733920472eef1184f3c0dc29855401c0df161a9"
+   },
+   "encoded_by": "manual-2026-07-20"
+  },
+  {
+   "table": "enhancements",
+   "id": "000010633002",
+   "side": "target",
+   "detachment": "Blade of Ultramar",
+   "name_en": "Armour of Antoninus",
+   "name_zh": null,
+   "status": "partial",
+   "effects": [
+    {
+     "phase": "fnp",
+     "op": "fnp",
+     "params": [
+      5
+     ],
+     "condition": [],
+     "source": "安东尼努斯之铠（携带者 FNP 5+）"
+    }
+   ],
+   "requires_toggles": [
+    "defender_bearer_leading"
+   ],
+   "not_modeled_notes_zh": [
+    "限携带者（点名即声明守方为携带者）；Sv 改 2+ 依赖基础护甲无净算载体——仅编 FNP 5+"
+   ],
+   "provenance": {
+    "text_sha256": "0e5ce03915278a4a74bcafcf45adc0125356e5115c9158ed074f0cbaee016f88"
+   },
+   "encoded_by": "manual-2026-07-20"
+  },
+  {
+   "table": "enhancements",
+   "id": "000010633003",
+   "side": "attacker",
+   "detachment": "Blade of Ultramar",
+   "name_en": "Oath of Macragge",
+   "name_zh": null,
+   "status": "partial",
+   "effects": [
+    {
+     "phase": "attacks",
+     "op": "modify",
+     "params": [
+      1
+     ],
+     "condition": [
+      "phase_melee"
+     ],
+     "source": "马克拉格之誓（携带者近战武器 A+1）"
+    },
+    {
+     "phase": "wound",
+     "op": "s_improve",
+     "params": [
+      1
+     ],
+     "condition": [
+      "phase_melee"
+     ],
+     "source": "马克拉格之誓（携带者近战武器 +1 S，特征值通道）"
+    }
+   ],
+   "requires_toggles": [
+    "bearer_leading"
+   ],
+   "not_modeled_notes_zh": [
+    "限携带者模型近战武器（附属单位整体注入会高估）；突击教条时改 +2 A/S——教条状态机无载体，仅编 +1（防高估）；近战门"
+   ],
+   "provenance": {
+    "text_sha256": "b9d0bc62d9afc454087234a0abb964b773d28e8c510d665c03e8c6111a553307"
+   },
+   "encoded_by": "manual-2026-07-20"
+  },
+  {
+   "table": "enhancements",
+   "id": "000010633004",
+   "side": "attacker",
+   "detachment": "Blade of Ultramar",
+   "name_en": "Student of the Codex",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "指挥阶段为本单位强制战术教条——教条状态机无载体，不编"
+   ],
+   "provenance": {
+    "text_sha256": "7d334436a5e72145fb2c743ac7b3c5f87ff0bcc5364c43d548f740371f506ca6"
+   },
+   "encoded_by": "manual-2026-07-20"
+  },
+  {
+   "table": "enhancements",
+   "id": "000010633005",
+   "side": "attacker",
+   "detachment": "Blade of Ultramar",
+   "name_en": "Veteran of Behemoth",
+   "name_zh": null,
+   "status": "partial",
+   "effects": [
+    {
+     "phase": "hit",
+     "op": "extra_hits",
+     "params": [
+      1
+     ],
+     "condition": [
+      "phase_shooting"
+     ],
+     "source": "贝希摩斯老兵（携带者单位远程 [SUSTAINED HITS 1]）"
+    }
+   ],
+   "requires_toggles": [
+    "bearer_leading"
+   ],
+   "not_modeled_notes_zh": [
+    "限携带者率领单位远程武器；毁灭者教条重投加速——教条/移动域未建模；射击门"
+   ],
+   "provenance": {
+    "text_sha256": "e7c26a53cd3eb76f315cd94362e151c0dfba1829467fe01c5d2946bd0969c231"
+   },
+   "encoded_by": "manual-2026-07-20"
+  },
+  {
+   "table": "abilities",
+   "id": "det000010620",
+   "side": "attacker",
+   "detachment": "Hammer of Avernii",
+   "name_en": "Calculated Annihilation",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "军规：对誓约目标重投致伤 1——重骰 1 无载体（引擎重骰=全部失败骰）+ 誓约目标机制不在 P7 编码范围，不编"
+   ],
+   "provenance": {
+    "text_sha256": "da50bd93c93ba2a6cf91de8244e9b528cc837aa268a1bf83ba3b0e6ed8459108"
+   },
+   "encoded_by": "manual-2026-07-20",
+   "materialize": {
+    "from_table": "detachments",
+    "from_id": "000010620",
+    "from_column": "rule_text"
+   }
+  },
+  {
+   "table": "abilities",
+   "id": "det000010621",
+   "side": "attacker",
+   "detachment": "Hammer of Avernii",
+   "name_en": "Recalculating",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "Caanok Var 重新指定誓约目标——誓约标记机制不在 P7 编码范围，不编"
+   ],
+   "provenance": {
+    "text_sha256": "e1a152fff7b48cfe233103cbcb63184a3a6857e4165059c277cd6f6e83718000"
+   },
+   "encoded_by": "manual-2026-07-20",
+   "materialize": {
+    "from_table": "detachments",
+    "from_id": "000010621",
+    "from_column": "rule_text"
+   }
+  },
+  {
+   "table": "stratagems",
+   "id": "000010624002",
+   "side": "target",
+   "detachment": "Hammer of Avernii",
+   "name_en": "ARMOUR OF CONTEMPT",
+   "name_zh": null,
+   "status": "partial",
+   "effects": [
+    {
+     "phase": "save",
+     "op": "ap_improve",
+     "params": [
+      -1
+     ],
+     "condition": [],
+     "source": "傲慢之甲（被攻 AP 恶化 1，射击/近战两相位）"
+    }
+   ],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "触发时机为敌方选中目标后——点名即假设已使用；射击与近战两相位均适用"
+   ],
+   "provenance": {
+    "text_sha256": "35d8af3acc35ff49353b590f9a67c23d622a0edeb0e172ccd7183b080d1e0c83"
+   },
+   "encoded_by": "manual-2026-07-20"
+  },
+  {
+   "table": "stratagems",
+   "id": "000010624003",
+   "side": "attacker",
+   "detachment": "Hammer of Avernii",
+   "name_en": "RUTHLESS BUTCHERY",
+   "name_zh": null,
+   "status": "partial",
+   "effects": [
+    {
+     "phase": "hit",
+     "op": "modify",
+     "params": [
+      1
+     ],
+     "condition": [],
+     "source": "无情屠戮（命中+1，射击/近战两相位）"
+    }
+   ],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "WHEN=射击或战斗阶段（两相位均可，故不挂相位门）；本单位低于起始编制时附加致伤+1——攻方本单位编制状态无载体，不编致伤分支"
+   ],
+   "provenance": {
+    "text_sha256": "941138af065228d6e926b885c578aff084a5cec774bcc8cb709b4facfe2943ef"
+   },
+   "encoded_by": "manual-2026-07-20"
+  },
+  {
+   "table": "stratagems",
+   "id": "000010624004",
+   "side": "attacker",
+   "detachment": "Hammer of Avernii",
+   "name_en": "DOMINATOR BEACON",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "目标点持续控制——目标点域未建模"
+   ],
+   "provenance": {
+    "text_sha256": "bb5f33933386d465fa251dadbbc21386a2c4944da6ecdaf02de76b5705c42b25"
+   },
+   "encoded_by": "manual-2026-07-20"
+  },
+  {
+   "table": "stratagems",
+   "id": "000010624005",
+   "side": "attacker",
+   "detachment": "Hammer of Avernii",
+   "name_en": "COGITATED FEROCITY",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "近战 [SUSTAINED HITS 1] 或 [LETHAL HITS] 二选一——一次性二选一单分支无载体，不编"
+   ],
+   "provenance": {
+    "text_sha256": "5fadcc1685aa316bb4d7e5b8d4906f675a2fca7efc27e6bf1063975a6e83e4a3"
+   },
+   "encoded_by": "manual-2026-07-20"
+  },
+  {
+   "table": "stratagems",
+   "id": "000010624006",
+   "side": "target",
+   "detachment": "Hammer of Avernii",
+   "name_en": "AUGMETIC FORTITUDE",
+   "name_zh": null,
+   "status": "partial",
+   "effects": [
+    {
+     "phase": "damage",
+     "op": "damage_reduction",
+     "params": [
+      1
+     ],
+     "condition": [
+      "phase_melee"
+     ],
+     "source": "机械坚韧（被近战攻击伤害-1）"
+    }
+   ],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "WHEN=对手冲锋阶段末（点名即假设已触发接战），持续至回合末——对手相位序中射击在冲锋前，触发后本回合仅剩近战能生效，故门 phase_melee（避免过度施加到射击）"
+   ],
+   "provenance": {
+    "text_sha256": "b1a509efa3b8615200ee07bf50563d6934b05f08c9265f5b5fe3d5c8d3abc763"
+   },
+   "encoded_by": "manual-2026-07-20"
+  },
+  {
+   "table": "stratagems",
+   "id": "000010624007",
+   "side": "attacker",
+   "detachment": "Hammer of Avernii",
+   "name_en": "DROPSHIP EXTRACTION",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "撤出置入预备队——预备队域未建模"
+   ],
+   "provenance": {
+    "text_sha256": "8015fcac912187d2d89f19fe97cce4c5fb1c10d9ef233517231810f9a87f6b1b"
+   },
+   "encoded_by": "manual-2026-07-20"
+  },
+  {
+   "table": "enhancements",
+   "id": "000010623002",
+   "side": "attacker",
+   "detachment": "Hammer of Avernii",
+   "name_en": "Spiritus Ferrum",
+   "name_zh": null,
+   "status": "partial",
+   "effects": [
+    {
+     "phase": "attacks",
+     "op": "modify",
+     "params": [
+      1
+     ],
+     "condition": [
+      "phase_melee"
+     ],
+     "source": "铁血之魂（携带者近战武器 A+1）"
+    }
+   ],
+   "requires_toggles": [
+    "bearer_leading"
+   ],
+   "not_modeled_notes_zh": [
+    "限携带者模型近战武器；每场一次全单位 A+1——一次性单位增益无载体，仅编携带者 +1；近战门"
+   ],
+   "provenance": {
+    "text_sha256": "e65403de0cf603cc2343f3491a46098637428eb6fb36c98009b4d656665ca44a"
+   },
+   "encoded_by": "manual-2026-07-20"
+  },
+  {
+   "table": "enhancements",
+   "id": "000010623003",
+   "side": "attacker",
+   "detachment": "Hammer of Avernii",
+   "name_en": "Medusan Roar (Aura)",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "敌方战斗震慑失败则毁模型——士气/战斗震慑域未建模"
+   ],
+   "provenance": {
+    "text_sha256": "3f09aa3747d4e08128fdd192aa20b032dc53898ceb36ea9a63fb9127418b76d8"
+   },
+   "encoded_by": "manual-2026-07-20"
+  },
+  {
+   "table": "enhancements",
+   "id": "000010623004",
+   "side": "attacker",
+   "detachment": "Hammer of Avernii",
+   "name_en": "Iron Laurel",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "+1 OC——目标点域未建模"
+   ],
+   "provenance": {
+    "text_sha256": "38ffb4f570a6ae37a7da867074ea935c0fdf8bb2e70eaa43c92ae4ac0bf3ad43"
+   },
+   "encoded_by": "manual-2026-07-20"
+  },
+  {
+   "table": "enhancements",
+   "id": "000010623005",
+   "side": "attacker",
+   "detachment": "Hammer of Avernii",
+   "name_en": "Steel Font",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "指挥阶段复活 Bodyguard 模型——复活域未建模"
+   ],
+   "provenance": {
+    "text_sha256": "9f566e5f59444c91ab869ca7386749c1fbef3bc5706422fd0c5201a1d3b8b3f8"
+   },
+   "encoded_by": "manual-2026-07-20"
+  },
+  {
+   "table": "abilities",
+   "id": "det000010626",
+   "side": "attacker",
+   "detachment": "Spearpoint Task Force",
+   "name_en": "Storm-swift Onslaught",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "军规：加速/撤退后可冲锋——移动资格域未建模"
+   ],
+   "provenance": {
+    "text_sha256": "6b4bea10b5fdc7f873d9d59e5faa974cc45ad0c310576331386b16d129e8b9c1"
+   },
+   "encoded_by": "manual-2026-07-20",
+   "materialize": {
+    "from_table": "detachments",
+    "from_id": "000010626",
+    "from_column": "rule_text"
+   }
+  },
+  {
+   "table": "abilities",
+   "id": "det000010627",
+   "side": "attacker",
+   "detachment": "Spearpoint Task Force",
+   "name_en": "Wrath of the First Khan",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "Suboden Khan 战斗阶段末击杀后移动——移动域未建模"
+   ],
+   "provenance": {
+    "text_sha256": "40313fd7d786bc6e92f9d3bf76879853cae47bcb7014c53d5bd4e6866436cc5f"
+   },
+   "encoded_by": "manual-2026-07-20",
+   "materialize": {
+    "from_table": "detachments",
+    "from_id": "000010627",
+    "from_column": "rule_text"
+   }
+  },
+  {
+   "table": "stratagems",
+   "id": "000010630002",
+   "side": "target",
+   "detachment": "Spearpoint Task Force",
+   "name_en": "ARMOUR OF CONTEMPT",
+   "name_zh": null,
+   "status": "partial",
+   "effects": [
+    {
+     "phase": "save",
+     "op": "ap_improve",
+     "params": [
+      -1
+     ],
+     "condition": [],
+     "source": "傲慢之甲（被攻 AP 恶化 1，射击/近战两相位）"
+    }
+   ],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "触发时机为敌方选中目标后——点名即假设已使用；射击与近战两相位均适用"
+   ],
+   "provenance": {
+    "text_sha256": "35d8af3acc35ff49353b590f9a67c23d622a0edeb0e172ccd7183b080d1e0c83"
+   },
+   "encoded_by": "manual-2026-07-20"
+  },
+  {
+   "table": "stratagems",
+   "id": "000010630003",
+   "side": "attacker",
+   "detachment": "Spearpoint Task Force",
+   "name_en": "SPEAR THRUST AND SABRE SWING",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "[LANCE] 或 [LETHAL HITS] 二选一（Mounted 则两者）——一次性二选一单分支无载体，不编"
+   ],
+   "provenance": {
+    "text_sha256": "0349835b3d54d7300a25bac5cf686c1d21c6cda2f623b7a501c1f56735a24e47"
+   },
+   "encoded_by": "manual-2026-07-20"
+  },
+  {
+   "table": "stratagems",
+   "id": "000010630004",
+   "side": "attacker",
+   "detachment": "Spearpoint Task Force",
+   "name_en": "MOBILE LETHALITY",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "加速/撤退后可射击——移动资格域未建模"
+   ],
+   "provenance": {
+    "text_sha256": "f6da6fbe7cb4c777e8003389c83d72b03d2cc33520966a28844051a691167c5f"
+   },
+   "encoded_by": "manual-2026-07-20"
+  },
+  {
+   "table": "stratagems",
+   "id": "000010630005",
+   "side": "attacker",
+   "detachment": "Spearpoint Task Force",
+   "name_en": "HUNTER’S INSTINCTS",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "敌方移动后反应移动——移动域未建模"
+   ],
+   "provenance": {
+    "text_sha256": "a5c74439562678464eee96febea5d2840912b75467005fd7a58759be3ddc67ff"
+   },
+   "encoded_by": "manual-2026-07-20"
+  },
+  {
+   "table": "stratagems",
+   "id": "000010630006",
+   "side": "target",
+   "detachment": "Spearpoint Task Force",
+   "name_en": "EVASIVE MANOEUVRES",
+   "name_zh": null,
+   "status": "partial",
+   "effects": [
+    {
+     "phase": "hit",
+     "op": "modify",
+     "params": [
+      -1
+     ],
+     "condition": [
+      "phase_shooting"
+     ],
+     "source": "闪避机动（守方被射击命中-1）"
+    },
+    {
+     "phase": "wound",
+     "op": "modify",
+     "params": [
+      -1
+     ],
+     "condition": [
+      "phase_shooting"
+     ],
+     "source": "闪避机动（守方被射击致伤-1）"
+    }
+   ],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "限 Mounted/Fly Vehicle 守方；WHEN=对手射击阶段选中目标后（射击门自含），近战不注入"
+   ],
+   "provenance": {
+    "text_sha256": "56a681ef7a59932b9267383f79452cf9dc2e34747c7cc001304946ea2bf5eb42"
+   },
+   "encoded_by": "manual-2026-07-20"
+  },
+  {
+   "table": "stratagems",
+   "id": "000010630007",
+   "side": "attacker",
+   "detachment": "Spearpoint Task Force",
+   "name_en": "WITHDRAW AND REGROUP",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "撤出置入预备队——预备队域未建模"
+   ],
+   "provenance": {
+    "text_sha256": "a57abf6fc35dfce91995510434bb72c396e359d0632b04ee41f33cbbc3f8e59a"
+   },
+   "encoded_by": "manual-2026-07-20"
+  },
+  {
+   "table": "enhancements",
+   "id": "000010629002",
+   "side": "attacker",
+   "detachment": "Spearpoint Task Force",
+   "name_en": "Spearpoint Paragon",
+   "name_zh": null,
+   "status": "partial",
+   "effects": [
+    {
+     "phase": "wound",
+     "op": "s_improve",
+     "params": [
+      1
+     ],
+     "condition": [
+      "phase_melee"
+     ],
+     "source": "矛尖楷模（携带者近战武器 +1 S，特征值通道）"
+    },
+    {
+     "phase": "save",
+     "op": "ap_improve",
+     "params": [
+      1
+     ],
+     "condition": [
+      "phase_melee"
+     ],
+     "source": "矛尖楷模（携带者近战武器 AP 改善 1）"
+    }
+   ],
+   "requires_toggles": [
+    "bearer_leading"
+   ],
+   "not_modeled_notes_zh": [
+    "限携带者模型近战武器；冲锋后改 +2 S/AP——一次性冲锋增益无载体，仅编基础 +1（防高估）；近战门"
+   ],
+   "provenance": {
+    "text_sha256": "ad90d2ec661268c04e071ced447210435b2b6fa8b26f19f2a64d6d70afbe956c"
+   },
+   "encoded_by": "manual-2026-07-20"
+  },
+  {
+   "table": "enhancements",
+   "id": "000010629003",
+   "side": "attacker",
+   "detachment": "Spearpoint Task Force",
+   "name_en": "Stormseers’ Wisdom",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "重投加速——移动域未建模"
+   ],
+   "provenance": {
+    "text_sha256": "fe1d7dc8591bdd50a5c98238252ae3568a88596039e669914d8241e8fa9e89db"
+   },
+   "encoded_by": "manual-2026-07-20"
+  },
+  {
+   "table": "enhancements",
+   "id": "000010629004",
+   "side": "attacker",
+   "detachment": "Spearpoint Task Force",
+   "name_en": "Hunter’s Eye",
+   "name_zh": null,
+   "status": "partial",
+   "effects": [
+    {
+     "phase": "hit",
+     "op": "extra_hits",
+     "params": [
+      1
+     ],
+     "condition": [
+      "phase_shooting"
+     ],
+     "source": "猎手之眼（携带者单位远程 [SUSTAINED HITS 1]）"
+    },
+    {
+     "phase": "save",
+     "op": "ignores_cover",
+     "params": [],
+     "condition": [
+      "phase_shooting"
+     ],
+     "source": "猎手之眼（携带者单位远程 [无视掩体]）"
+    }
+   ],
+   "requires_toggles": [
+    "bearer_leading"
+   ],
+   "not_modeled_notes_zh": [
+    "限携带者率领单位远程武器（单人物模拟准确，附属单位整体注入会高估）；射击门"
+   ],
+   "provenance": {
+    "text_sha256": "0619975fd80bfae3500b31c400c01555e8357d0178821c844e32e4a4d0aa9907"
+   },
+   "encoded_by": "manual-2026-07-20"
+  },
+  {
+   "table": "enhancements",
+   "id": "000010629005",
+   "side": "attacker",
+   "detachment": "Spearpoint Task Force",
+   "name_en": "Chogorian Huntmaster",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "预备队出场轮次+1——预备队域未建模"
+   ],
+   "provenance": {
+    "text_sha256": "cd899bfe94712a2c18ee93a171441387d6775671a49bef898268dc907254dd89"
+   },
+   "encoded_by": "manual-2026-07-20"
+  },
+  {
+   "table": "abilities",
+   "id": "det000010367",
+   "side": "attacker",
+   "detachment": "Forgefather’s Seekers",
+   "name_en": "Vulkan’s Quest",
+   "name_zh": null,
+   "status": "partial",
+   "effects": [
+    {
+     "phase": "wound",
+     "op": "s_improve",
+     "params": [
+      1
+     ],
+     "condition": [
+      "ranged_within_12"
+     ],
+     "source": "火神追寻（远程攻击 12\" 内 +1 S，特征值通道）"
+    }
+   ],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "[ASSAULT]（加速后可射击）为移动域未建模；Seeker's Companions（Infernus 行动资格）未建模；ranged_within_12 自含射击门"
+   ],
+   "provenance": {
+    "text_sha256": "e966b91a400368d90f7ddd4d59aa5fadad910404c6d1b4534742070153bdc375"
+   },
+   "encoded_by": "manual-2026-07-20",
+   "materialize": {
+    "from_table": "detachments",
+    "from_id": "000010367",
+    "from_column": "rule_text"
+   }
+  },
+  {
+   "table": "stratagems",
+   "id": "000010369002",
+   "side": "target",
+   "detachment": "Forgefather’s Seekers",
+   "name_en": "ARMOUR OF CONTEMPT",
+   "name_zh": null,
+   "status": "partial",
+   "effects": [
+    {
+     "phase": "save",
+     "op": "ap_improve",
+     "params": [
+      -1
+     ],
+     "condition": [],
+     "source": "傲慢之甲（被攻 AP 恶化 1，射击/近战两相位）"
+    }
+   ],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "触发时机为敌方选中目标后——点名即假设已使用；射击与近战两相位均适用"
+   ],
+   "provenance": {
+    "text_sha256": "35d8af3acc35ff49353b590f9a67c23d622a0edeb0e172ccd7183b080d1e0c83"
+   },
+   "encoded_by": "manual-2026-07-20"
+  },
+  {
+   "table": "stratagems",
+   "id": "000010369003",
+   "side": "attacker",
+   "detachment": "Forgefather’s Seekers",
+   "name_en": "CRUCIBLE OF BATTLE",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "对 6\" 内最近合格目标 +1 致伤——空间「最近目标」判据无载体，不编"
+   ],
+   "provenance": {
+    "text_sha256": "5f4b940ca30a92b19d1aaaf32845915b4163e68dedb3a090ee0184981506fb88"
+   },
+   "encoded_by": "manual-2026-07-20"
+  },
+  {
+   "table": "stratagems",
+   "id": "000010369004",
+   "side": "attacker",
+   "detachment": "Forgefather’s Seekers",
+   "name_en": "WRATHFUL INFERNO",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "撤退后可射击——移动资格域未建模"
+   ],
+   "provenance": {
+    "text_sha256": "dcde2040161528e1392a0d96656471805d10fed34ffa26eb135908908e6b9105"
+   },
+   "encoded_by": "manual-2026-07-20"
+  },
+  {
+   "table": "stratagems",
+   "id": "000010369005",
+   "side": "attacker",
+   "detachment": "Forgefather’s Seekers",
+   "name_en": "IMMOLATION PROTOCOLS",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "Torrent 武器 [DEVASTATING WOUNDS]——Torrent 为武器关键词非名字子串，weapon_filter 无法选取，裸编对非 Torrent 过度施加，不编"
+   ],
+   "provenance": {
+    "text_sha256": "cdf5677af2299931ed99f771904174812ce3239807b3f699543bedc4d8c91533"
+   },
+   "encoded_by": "manual-2026-07-20"
+  },
+  {
+   "table": "stratagems",
+   "id": "000010369006",
+   "side": "attacker",
+   "detachment": "Forgefather’s Seekers",
+   "name_en": "BURNING VENGEANCE",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "下车+还击射击——移动/阶段外射击域未建模"
+   ],
+   "provenance": {
+    "text_sha256": "7b64c8a3fd89c9f91933cfefd05509d77f65ee98b5d83d44ef80ddca1c93025f"
+   },
+   "encoded_by": "manual-2026-07-20"
+  },
+  {
+   "table": "stratagems",
+   "id": "000010369007",
+   "side": "attacker",
+   "detachment": "Forgefather’s Seekers",
+   "name_en": "BLAZING EARTH",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "-2 敌方冲锋骰——士气/移动域未建模"
+   ],
+   "provenance": {
+    "text_sha256": "6431f2adad71b9fd930f1610f089aa0e8a1e55f7c3e1d320f0e820d8763edbf0"
+   },
+   "encoded_by": "manual-2026-07-20"
+  },
+  {
+   "table": "enhancements",
+   "id": "000010368002",
+   "side": "attacker",
+   "detachment": "Forgefather’s Seekers",
+   "name_en": "Immolator",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "Torrent 武器 A+1——Torrent 为关键词非名字子串，weapon_filter 无法选取，不编"
+   ],
+   "provenance": {
+    "text_sha256": "8a88648d4cd956dda8c696ff1383ada811d6d3a11b7b1b1bd5f5e7a4dc35fefb"
+   },
+   "encoded_by": "manual-2026-07-20"
+  },
+  {
+   "table": "enhancements",
+   "id": "000010368003",
+   "side": "attacker",
+   "detachment": "Forgefather’s Seekers",
+   "name_en": "War-tempered Artifice",
+   "name_zh": null,
+   "status": "partial",
+   "effects": [
+    {
+     "phase": "wound",
+     "op": "s_improve",
+     "params": [
+      3
+     ],
+     "condition": [
+      "phase_melee"
+     ],
+     "source": "战火淬炼军械（携带者近战武器 +3 S，特征值通道）"
+    }
+   ],
+   "requires_toggles": [
+    "bearer_leading"
+   ],
+   "not_modeled_notes_zh": [
+    "限携带者（Infantry）模型近战武器；+3 S 延迟判定在引擎最终 S 处结算；近战门"
+   ],
+   "provenance": {
+    "text_sha256": "746be9074886bd1e70883c56e9cc197c768a99bc72d87f34064d8adb1b5ff266"
+   },
+   "encoded_by": "manual-2026-07-20"
+  },
+  {
+   "table": "enhancements",
+   "id": "000010368004",
+   "side": "attacker",
+   "detachment": "Forgefather’s Seekers",
+   "name_en": "Forged in Battle",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "每回合一次把命中/保存骰改为 6——单骰结果操纵无载体，未建模"
+   ],
+   "provenance": {
+    "text_sha256": "14f0cced1ae8d416d33945abd3793014bef1c8edaa39e604616a6ddc1f4a4fc2"
+   },
+   "encoded_by": "manual-2026-07-20"
+  },
+  {
+   "table": "enhancements",
+   "id": "000010368005",
+   "side": "target",
+   "detachment": "Forgefather’s Seekers",
+   "name_en": "Adamantine Mantle",
+   "name_zh": null,
+   "status": "partial",
+   "effects": [
+    {
+     "phase": "damage",
+     "op": "damage_reduction",
+     "params": [
+      1
+     ],
+     "condition": [],
+     "source": "精金披风（携带者被攻伤害-1，射击/近战两相位）"
+    }
+   ],
+   "requires_toggles": [
+    "defender_bearer_leading"
+   ],
+   "not_modeled_notes_zh": [
+    "限携带者（点名即声明守方为携带者）；Melta/Torrent 攻击改伤害为 1——武器关键词门无载体，仅编基础伤害-1（防高估）"
+   ],
+   "provenance": {
+    "text_sha256": "3466d3f5f3df3dcd909f8ab13b0b2d6334a57817076c93a4908dcc68b2fac3ca"
+   },
+   "encoded_by": "manual-2026-07-20"
+  },
+  {
+   "table": "abilities",
+   "id": "det000010459",
+   "side": "attacker",
+   "detachment": "Emperor’s Shield",
+   "name_en": "Wrath of Dorn",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "军规：对誓约目标重投致伤 1 / Lysander 单位全量重投——重骰 1/誓约目标机制不在 P7 编码范围，不编"
+   ],
+   "provenance": {
+    "text_sha256": "2458b6990f30b57ae075b653c85b2204d684aec611e4ec607b03b2db5ef328dd"
+   },
+   "encoded_by": "manual-2026-07-20",
+   "materialize": {
+    "from_table": "detachments",
+    "from_id": "000010459",
+    "from_column": "rule_text"
+   }
+  },
+  {
+   "table": "stratagems",
+   "id": "000010461002",
+   "side": "target",
+   "detachment": "Emperor’s Shield",
+   "name_en": "ARMOUR OF CONTEMPT",
+   "name_zh": null,
+   "status": "partial",
+   "effects": [
+    {
+     "phase": "save",
+     "op": "ap_improve",
+     "params": [
+      -1
+     ],
+     "condition": [],
+     "source": "傲慢之甲（被攻 AP 恶化 1，射击/近战两相位）"
+    }
+   ],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "触发时机为敌方选中目标后——点名即假设已使用；射击与近战两相位均适用"
+   ],
+   "provenance": {
+    "text_sha256": "35d8af3acc35ff49353b590f9a67c23d622a0edeb0e172ccd7183b080d1e0c83"
+   },
+   "encoded_by": "manual-2026-07-20"
+  },
+  {
+   "table": "stratagems",
+   "id": "000010461003",
+   "side": "attacker",
+   "detachment": "Emperor’s Shield",
+   "name_en": "FURY OF THE FIRST",
+   "name_zh": null,
+   "status": "partial",
+   "effects": [
+    {
+     "phase": "hit",
+     "op": "modify",
+     "params": [
+      1
+     ],
+     "condition": [],
+     "source": "首连之怒（命中+1，射击/近战两相位）"
+    }
+   ],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "WHEN=射击或战斗阶段（两相位均可，不挂相位门）；本单位低于起始编制时附加致伤+1——攻方本单位编制状态无载体，不编致伤分支"
+   ],
+   "provenance": {
+    "text_sha256": "e873f79af798331efd2b7be1a81f1aae3597917ac360276cefd249629ed7e91c"
+   },
+   "encoded_by": "manual-2026-07-20"
+  },
+  {
+   "table": "stratagems",
+   "id": "000010461004",
+   "side": "attacker",
+   "detachment": "Emperor’s Shield",
+   "name_en": "OBDURATE VENGEANCE",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "被毁模型死后一击——战斗序列/复活域未建模"
+   ],
+   "provenance": {
+    "text_sha256": "647a4746c17824540937e43c44aa9738e08bee63a9c07a0dcc4fd174b83ba3e4"
+   },
+   "encoded_by": "manual-2026-07-20"
+  },
+  {
+   "table": "stratagems",
+   "id": "000010461005",
+   "side": "attacker",
+   "detachment": "Emperor’s Shield",
+   "name_en": "WRATHFUL CONQUERORS",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "目标点持续控制——目标点域未建模"
+   ],
+   "provenance": {
+    "text_sha256": "e5f31c40b75aa64ae90780a229a42595cdcde3663a1a4ac373b5339991c96864"
+   },
+   "encoded_by": "manual-2026-07-20"
+  },
+  {
+   "table": "stratagems",
+   "id": "000010461006",
+   "side": "attacker",
+   "detachment": "Emperor’s Shield",
+   "name_en": "DISCIPLINED EXTERMINATION",
+   "name_zh": null,
+   "status": "partial",
+   "effects": [
+    {
+     "phase": "save",
+     "op": "ignores_cover",
+     "params": [],
+     "condition": [
+      "phase_shooting"
+     ],
+     "source": "纪律歼灭（远程 [无视掩体]）"
+    },
+    {
+     "phase": "save",
+     "op": "ap_improve",
+     "params": [
+      1
+     ],
+     "condition": [
+      "phase_shooting"
+     ],
+     "source": "纪律歼灭（远程攻击 AP 改善 1）"
+    }
+   ],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "限 Terminator/老兵单位远程武器（选本战略即声明）；射击门"
+   ],
+   "provenance": {
+    "text_sha256": "6b107e379fc66192d314b4442b03a1abf1a000a2436ff73a41b4048cc7e5602e"
+   },
+   "encoded_by": "manual-2026-07-20"
+  },
+  {
+   "table": "stratagems",
+   "id": "000010461007",
+   "side": "attacker",
+   "detachment": "Emperor’s Shield",
+   "name_en": "DROPSHIP EXTRACTION",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "撤出置入预备队——预备队域未建模"
+   ],
+   "provenance": {
+    "text_sha256": "8015fcac912187d2d89f19fe97cce4c5fb1c10d9ef233517231810f9a87f6b1b"
+   },
+   "encoded_by": "manual-2026-07-20"
+  },
+  {
+   "table": "enhancements",
+   "id": "000010460002",
+   "side": "attacker",
+   "detachment": "Emperor’s Shield",
+   "name_en": "Champion of the Feast",
+   "name_zh": null,
+   "status": "partial",
+   "effects": [
+    {
+     "phase": "attacks",
+     "op": "modify",
+     "params": [
+      1
+     ],
+     "condition": [
+      "phase_melee"
+     ],
+     "source": "盛宴勇士（携带者近战武器 A+1）"
+    }
+   ],
+   "requires_toggles": [
+    "bearer_leading"
+   ],
+   "not_modeled_notes_zh": [
+    "限携带者模型近战武器；每场一次全单位 A+1——一次性单位增益无载体，仅编携带者 +1；近战门"
+   ],
+   "provenance": {
+    "text_sha256": "7a32e94a8993f1a79211d2c2b10173db09e5105c2b37bf3dd10dbb28e01910f2"
+   },
+   "encoded_by": "manual-2026-07-20"
+  },
+  {
+   "table": "enhancements",
+   "id": "000010460003",
+   "side": "attacker",
+   "detachment": "Emperor’s Shield",
+   "name_en": "Disciple of Rhetoricus",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "+1 OC——目标点域未建模"
+   ],
+   "provenance": {
+    "text_sha256": "9f3b38f457e3b5a850c1158f62e825dc449e44f7ccd44115db59f3b1fb75d702"
+   },
+   "encoded_by": "manual-2026-07-20"
+  },
+  {
+   "table": "enhancements",
+   "id": "000010460004",
+   "side": "attacker",
+   "detachment": "Emperor’s Shield",
+   "name_en": "Indomitable Champion",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "首次被毁 2+ 带 3 伤复活——复活域未建模"
+   ],
+   "provenance": {
+    "text_sha256": "369deef61b005ba356f20e70553682ff872ab67bcb022090ae61fe6be22731c3"
+   },
+   "encoded_by": "manual-2026-07-20"
+  },
+  {
+   "table": "enhancements",
+   "id": "000010460005",
+   "side": "target",
+   "detachment": "Emperor’s Shield",
+   "name_en": "Malodraxian Standard",
+   "name_zh": null,
+   "status": "partial",
+   "effects": [
+    {
+     "phase": "wound",
+     "op": "modify",
+     "params": [
+      -1
+     ],
+     "condition": [
+      "wound_s_gt_t"
+     ],
+     "source": "马洛德拉克斯军旗（守方被 S>T 攻击致伤-1）"
+    }
+   ],
+   "requires_toggles": [
+    "defender_bearer_leading"
+   ],
+   "not_modeled_notes_zh": [
+    "限旗手（Ancient）率领单位（点名即声明守方为携带者单位）；S>T 延迟判定在引擎最终 S 处结算；射击/近战两相位均适用"
+   ],
+   "provenance": {
+    "text_sha256": "91910213cc7789532255d9598069448e014db2b7ae71bd4cb69a596b131874fa"
+   },
+   "encoded_by": "manual-2026-07-20"
+  },
+  {
+   "table": "abilities",
+   "id": "det000010463",
+   "side": "attacker",
+   "detachment": "Shadowmark Talon",
+   "name_en": "Masters of Shadow",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "军规：远程攻击者非 12\" 内则守方 -1 命中且获掩体——「攻击者超 12\"」的远程距离门无守方载体，裸编会在近距离过度施加，不编"
+   ],
+   "provenance": {
+    "text_sha256": "aea0f63709b4de842e37dbe045d6a2ec79ef0810859862306d3030c9c7dc8f44"
+   },
+   "encoded_by": "manual-2026-07-20",
+   "materialize": {
+    "from_table": "detachments",
+    "from_id": "000010463",
+    "from_column": "rule_text"
+   }
+  },
+  {
+   "table": "abilities",
+   "id": "det000010464",
+   "side": "attacker",
+   "detachment": "Shadowmark Talon",
+   "name_en": "Unparalleled Tactician",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "每大回合 0CP 用 Into Darkness——CP/战略域未建模"
+   ],
+   "provenance": {
+    "text_sha256": "0cc3a0a94111caa665ee609f879a6158b4d33b47aac3b15b9013ad1cd170cac1"
+   },
+   "encoded_by": "manual-2026-07-20",
+   "materialize": {
+    "from_table": "detachments",
+    "from_id": "000010464",
+    "from_column": "rule_text"
+   }
+  },
+  {
+   "table": "stratagems",
+   "id": "000010467002",
+   "side": "target",
+   "detachment": "Shadowmark Talon",
+   "name_en": "ARMOUR OF CONTEMPT",
+   "name_zh": null,
+   "status": "partial",
+   "effects": [
+    {
+     "phase": "save",
+     "op": "ap_improve",
+     "params": [
+      -1
+     ],
+     "condition": [],
+     "source": "傲慢之甲（被攻 AP 恶化 1，射击/近战两相位）"
+    }
+   ],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "触发时机为敌方选中目标后——点名即假设已使用；射击与近战两相位均适用"
+   ],
+   "provenance": {
+    "text_sha256": "35d8af3acc35ff49353b590f9a67c23d622a0edeb0e172ccd7183b080d1e0c83"
+   },
+   "encoded_by": "manual-2026-07-20"
+  },
+  {
+   "table": "stratagems",
+   "id": "000010467003",
+   "side": "attacker",
+   "detachment": "Shadowmark Talon",
+   "name_en": "LAY LOW THE TYRANTS",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "近战 [PRECISION]——攻击分配域（点杀附属人物）未建模"
+   ],
+   "provenance": {
+    "text_sha256": "10caf384b5c95f05b9872bd13673f6d01bd80969e9448dda53fe77309b74475e"
+   },
+   "encoded_by": "manual-2026-07-20"
+  },
+  {
+   "table": "stratagems",
+   "id": "000010467004",
+   "side": "attacker",
+   "detachment": "Shadowmark Talon",
+   "name_en": "FEINT AND THRUST",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "撤退后可射击冲锋——移动资格域未建模"
+   ],
+   "provenance": {
+    "text_sha256": "e698546153f55d0e1e2a3ba49f09a8d96ec2f5821de8915caf02c95dcb9e4224"
+   },
+   "encoded_by": "manual-2026-07-20"
+  },
+  {
+   "table": "stratagems",
+   "id": "000010467005",
+   "side": "attacker",
+   "detachment": "Shadowmark Talon",
+   "name_en": "STUNNING FUSILLADE",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "对 >12\" 敌 +1 BS/+1 AP + 战斗震慑——「超 12\"」远程距离门无载体，不编"
+   ],
+   "provenance": {
+    "text_sha256": "ab2601b930bccd92b1aee7e9f8b0c33c7f2c11f92fa68fcbc81ed8ac9532ce66"
+   },
+   "encoded_by": "manual-2026-07-20"
+  },
+  {
+   "table": "stratagems",
+   "id": "000010467006",
+   "side": "attacker",
+   "detachment": "Shadowmark Talon",
+   "name_en": "RAPTORIAL VIGILANCE",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "敌方移动后反应移动——移动域未建模"
+   ],
+   "provenance": {
+    "text_sha256": "250220e69e145f6533d410d55578222ba9e5da2f138c0d6ffb3fcd3b29db224b"
+   },
+   "encoded_by": "manual-2026-07-20"
+  },
+  {
+   "table": "stratagems",
+   "id": "000010467007",
+   "side": "attacker",
+   "detachment": "Shadowmark Talon",
+   "name_en": "INTO DARKNESS",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "撤出置入预备队——预备队域未建模"
+   ],
+   "provenance": {
+    "text_sha256": "e8d45110c333a18ef685c9dda70d5da46c7babf35f0a45e8f8cf7235d97f870f"
+   },
+   "encoded_by": "manual-2026-07-20"
+  },
+  {
+   "table": "enhancements",
+   "id": "000010466002",
+   "side": "attacker",
+   "detachment": "Shadowmark Talon",
+   "name_en": "Blackwing Shroud",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "携带者单位获 Infiltrators——部署域未建模"
+   ],
+   "provenance": {
+    "text_sha256": "16a04ce6fc3e3451db0f6bcbc09415a94fb3febc21923994bbebc8725eb412a8"
+   },
+   "encoded_by": "manual-2026-07-20"
+  },
+  {
+   "table": "enhancements",
+   "id": "000010466003",
+   "side": "attacker",
+   "detachment": "Shadowmark Talon",
+   "name_en": "Coronal Susurrant",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "敌方战略 CP 税光环——CP 域未建模"
+   ],
+   "provenance": {
+    "text_sha256": "c9f38cb74f479d60dc7b76984ade9a424c88f7825e133332e92544e20d54047a"
+   },
+   "encoded_by": "manual-2026-07-20"
+  },
+  {
+   "table": "enhancements",
+   "id": "000010466004",
+   "side": "target",
+   "detachment": "Shadowmark Talon",
+   "name_en": "Umbral Raptor",
+   "name_zh": null,
+   "status": "partial",
+   "effects": [
+    {
+     "phase": "hit",
+     "op": "modify",
+     "params": [
+      -1
+     ],
+     "condition": [
+      "phase_shooting"
+     ],
+     "source": "暗影猛禽（携带者获 Stealth，被远程攻击命中-1）"
+    }
+   ],
+   "requires_toggles": [
+    "defender_bearer_leading"
+   ],
+   "not_modeled_notes_zh": [
+    "Stealth 语义=被远程攻击命中-1（射击门自含）；Lone Operative（点名限制）未建模"
+   ],
+   "provenance": {
+    "text_sha256": "c6d4ea4f217a37bbcfced025e0eddda18a58ea14df9ebb1e4223e7184c83116c"
+   },
+   "encoded_by": "manual-2026-07-20"
+  },
+  {
+   "table": "enhancements",
+   "id": "000010466005",
+   "side": "attacker",
+   "detachment": "Shadowmark Talon",
+   "name_en": "Hunter’s Instincts",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "预备队出场轮次+1——预备队域未建模"
+   ],
+   "provenance": {
+    "text_sha256": "9f441f25f6336dabe61ddd5a5c9fa8c21f3ba95f20fe1c553b53c610f22d8063"
+   },
+   "encoded_by": "manual-2026-07-20"
+  },
+  {
+   "table": "abilities",
+   "id": "det000010675",
+   "side": "attacker",
+   "detachment": "Bastion Task Force",
+   "name_en": "Interlocking Tactics",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "军规：Battleline 加速/撤退后可射击冲锋 + auspex 标记重投命中 1——移动资格/重骰 1/标记状态域无载体，不编"
+   ],
+   "provenance": {
+    "text_sha256": "ac942845e48e4111e81a62e37268ce23595fb03fd4e8fe6e87ecd81cb0456a09"
+   },
+   "encoded_by": "manual-2026-07-20",
+   "materialize": {
+    "from_table": "detachments",
+    "from_id": "000010675",
+    "from_column": "rule_text"
+   }
+  },
+  {
+   "table": "stratagems",
+   "id": "000010677002",
+   "side": "attacker",
+   "detachment": "Bastion Task Force",
+   "name_en": "CODEX DISCIPLINE",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "重投命中 1（auspex 则重投致伤 1）——重骰 1 无载体，不编"
+   ],
+   "provenance": {
+    "text_sha256": "10ed54dce9a4b45a7c078e607b5714f37fd1bab1f5e9235d7e7f6c4509061ec0"
+   },
+   "encoded_by": "manual-2026-07-20"
+  },
+  {
+   "table": "stratagems",
+   "id": "000010677003",
+   "side": "attacker",
+   "detachment": "Bastion Task Force",
+   "name_en": "GUIDED DISRUPTION",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "auspex 标记敌方 pinned——移动减益/标记状态域未建模"
+   ],
+   "provenance": {
+    "text_sha256": "56501a35b0244f8d204b4b957d5496c9089cc3905f04d63ab1f870b0c5c3cdda"
+   },
+   "encoded_by": "manual-2026-07-20"
+  },
+  {
+   "table": "stratagems",
+   "id": "000010677004",
+   "side": "attacker",
+   "detachment": "Bastion Task Force",
+   "name_en": "LIGHT OF VENGEANCE",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "[LETHAL HITS] 或 [SUSTAINED HITS 1] 二选一（限 auspex/Battleline）——一次性二选一 + 标记/编成门无载体，不编"
+   ],
+   "provenance": {
+    "text_sha256": "6b4605d216dcdf8f2c5b7808748718fe03397ad4defcd2e7c5d09327f9d99b10"
+   },
+   "encoded_by": "manual-2026-07-20"
+  },
+  {
+   "table": "stratagems",
+   "id": "000010677005",
+   "side": "attacker",
+   "detachment": "Bastion Task Force",
+   "name_en": "SHOCK BOMBARDMENT",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "auspex 标记敌方 suppressed（-1 命中）——标记状态/敌方减益域未建模"
+   ],
+   "provenance": {
+    "text_sha256": "22aa60b02fcb69226e957c8337984610d60e9907d6a57d1e87528adff742443c"
+   },
+   "encoded_by": "manual-2026-07-20"
+  },
+  {
+   "table": "stratagems",
+   "id": "fp11e-spacemarines-bastion-s6",
+   "side": "target",
+   "detachment": "Bastion Task Force",
+   "name_en": "Angels Defiant",
+   "name_zh": "天使不屈",
+   "status": "partial",
+   "effects": [
+    {
+     "phase": "wound",
+     "op": "modify",
+     "params": [
+      -1
+     ],
+     "condition": [
+      "wound_s_gt_t"
+     ],
+     "source": "天使不屈（守方 Battleline 被 S>T 攻击致伤-1）"
+    }
+   ],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "限 Battleline 守方；WHEN=对手射击或战斗阶段选中目标后；S>T 延迟判定在引擎最终 S 处结算；两相位均适用"
+   ],
+   "provenance": {
+    "text_sha256": "9449abb08beccd0a7f3090ba31abb0f9a6af7102f05bfcf00d63b542e57b4411"
+   },
+   "encoded_by": "manual-2026-07-20"
+  },
+  {
+   "table": "stratagems",
+   "id": "000010677007",
+   "side": "attacker",
+   "detachment": "Bastion Task Force",
+   "name_en": "HERESY UNDONE",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "加速/撤退后可射击冲锋（须打 auspex 目标）——移动资格/标记域未建模"
+   ],
+   "provenance": {
+    "text_sha256": "bb139dd6e25d2bd0621414c9d7f05c2f4e8538e442f4cea2ac3eef8eb5086f14"
+   },
+   "encoded_by": "manual-2026-07-20"
+  },
+  {
+   "table": "enhancements",
+   "id": "000010676002",
+   "side": "attacker",
+   "detachment": "Bastion Task Force",
+   "name_en": "Eye of the Primarch",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "Battleline 远程 [PRECISION]——攻击分配域未建模"
+   ],
+   "provenance": {
+    "text_sha256": "e253ce8af0ce655c1a7ab6c1c2f0fea1a5c4306bc5c01ae46aff5f1c66b53ed6"
+   },
+   "encoded_by": "manual-2026-07-20"
+  },
+  {
+   "table": "enhancements",
+   "id": "000010676003",
+   "side": "attacker",
+   "detachment": "Bastion Task Force",
+   "name_en": "Hero of the Chapter",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "携带者获 Battleline 关键词——编成域未建模"
+   ],
+   "provenance": {
+    "text_sha256": "38ea6544604b8c2ab3d1635b26138ab8b42728a4802a021771fcf4f1dd853688"
+   },
+   "encoded_by": "manual-2026-07-20"
+  },
+  {
+   "table": "enhancements",
+   "id": "000010676004",
+   "side": "attacker",
+   "detachment": "Bastion Task Force",
+   "name_en": "Blades of Valour",
+   "name_zh": null,
+   "status": "partial",
+   "effects": [
+    {
+     "phase": "save",
+     "op": "ap_improve",
+     "params": [
+      1
+     ],
+     "condition": [
+      "phase_melee"
+     ],
+     "source": "英勇之刃（携带者及单位 Battleline 模型近战武器 AP 改善 1）"
+    }
+   ],
+   "requires_toggles": [
+    "bearer_leading"
+   ],
+   "not_modeled_notes_zh": [
+    "限携带者及单位内 Battleline 模型近战武器（附属单位整体注入会高估）；近战门"
+   ],
+   "provenance": {
+    "text_sha256": "693c45d8c1c14a15f2e76e9ac671378d23c9394a80a747f0cc8bcaf681e84e33"
+   },
+   "encoded_by": "manual-2026-07-20"
+  },
+  {
+   "table": "enhancements",
+   "id": "000010676005",
+   "side": "attacker",
+   "detachment": "Bastion Task Force",
+   "name_en": "Bombast Omnivox",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "被战略指定时 4+ 回 1CP——CP 域未建模"
+   ],
+   "provenance": {
+    "text_sha256": "393e97e6e1391098c20cafae12bfa5f6bf7454b4e72c7f132eb887cf2421d616"
+   },
+   "encoded_by": "manual-2026-07-20"
+  },
+  {
+   "table": "abilities",
+   "id": "det000010679",
+   "side": "attacker",
+   "detachment": "Orbital Assault Force",
+   "name_en": "Rapid-drop Deployment",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "军规：按战斗规模授 Deep Strike + 本回合部署/下车 Drop Pod 重投致伤 1/命中 1——预备队/重骰 1 无载体，不编"
+   ],
+   "provenance": {
+    "text_sha256": "4ed386f1d9d9eaef028e8c80b37815b4b67ffcc00c9b817a954ef4a339af26b3"
+   },
+   "encoded_by": "manual-2026-07-20",
+   "materialize": {
+    "from_table": "detachments",
+    "from_id": "000010679",
+    "from_column": "rule_text"
+   }
+  },
+  {
+   "table": "stratagems",
+   "id": "000010681002",
+   "side": "attacker",
+   "detachment": "Orbital Assault Force",
+   "name_en": "SUPPRESSION STRAFING",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "战斗震慑 suppressed——士气域未建模"
+   ],
+   "provenance": {
+    "text_sha256": "116e98dd5eef696e29edb5faffefcff68306243dd8944f2be46cece77a2b84e3"
+   },
+   "encoded_by": "manual-2026-07-20"
+  },
+  {
+   "table": "stratagems",
+   "id": "000010681003",
+   "side": "attacker",
+   "detachment": "Orbital Assault Force",
+   "name_en": "TACTICAL DECAPITATION",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "[PRECISION] + 对 Character +1 命中——攻击分配/关键词门无载体，不编"
+   ],
+   "provenance": {
+    "text_sha256": "8664571b02f7ca2bd2274060275f490c5e45aae51df67b7a83d0df7d57208a1b"
+   },
+   "encoded_by": "manual-2026-07-20"
+  },
+  {
+   "table": "stratagems",
+   "id": "000010681004",
+   "side": "attacker",
+   "detachment": "Orbital Assault Force",
+   "name_en": "SHOCK ONSLAUGHT",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "跟进/巩固移动 6\"——移动域未建模"
+   ],
+   "provenance": {
+    "text_sha256": "f106725c877a20242ec82175810dd58ba5cd15db33602b90109617f79601a0ec"
+   },
+   "encoded_by": "manual-2026-07-20"
+  },
+  {
+   "table": "stratagems",
+   "id": "000010681005",
+   "side": "attacker",
+   "detachment": "Orbital Assault Force",
+   "name_en": "AUTO‑SENSE COORDINATION",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "[LETHAL HITS] 或 [SUSTAINED HITS 1] 二选一（限下车/12\" 内）——一次性二选一单分支无载体，不编"
+   ],
+   "provenance": {
+    "text_sha256": "fe10d82021ddfffc9ed4c6c0a08601adb84e30e09daa7a83ce2bf50131b1e50f"
+   },
+   "encoded_by": "manual-2026-07-20"
+  },
+  {
+   "table": "stratagems",
+   "id": "000010681006",
+   "side": "target",
+   "detachment": "Orbital Assault Force",
+   "name_en": "BLIND SCREEN",
+   "name_zh": null,
+   "status": "partial",
+   "effects": [
+    {
+     "phase": "hit",
+     "op": "modify",
+     "params": [
+      -1
+     ],
+     "condition": [
+      "phase_shooting"
+     ],
+     "source": "致盲屏障（守方获 Stealth，被远程攻击命中-1）"
+    },
+    {
+     "phase": "save",
+     "op": "cover",
+     "params": [],
+     "condition": [
+      "phase_shooting"
+     ],
+     "source": "致盲屏障（守方获掩体）"
+    }
+   ],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "限烟幕载具/Drop Pod 9\" 内友方（点名即假设已满足）；WHEN=对手射击阶段（射击门自含），近战不注入"
+   ],
+   "provenance": {
+    "text_sha256": "2b867f06fe540491bd78cd822733e8cb2be79df0dc088b402bd40d54f209019b"
+   },
+   "encoded_by": "manual-2026-07-20"
+  },
+  {
+   "table": "stratagems",
+   "id": "000010681007",
+   "side": "attacker",
+   "detachment": "Orbital Assault Force",
+   "name_en": "ONWARD FOR THE EMPEROR",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "战斗阶段末登车——移动/登车域未建模"
+   ],
+   "provenance": {
+    "text_sha256": "c0190b3b889d62360b3a7707b7f3efb79ab05a4a53981a579b35de3b4f1c220e"
+   },
+   "encoded_by": "manual-2026-07-20"
+  },
+  {
+   "table": "enhancements",
+   "id": "000010680002",
+   "side": "attacker",
+   "detachment": "Orbital Assault Force",
+   "name_en": "Laurels of Thunder",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "部署回合重投冲锋——移动域未建模"
+   ],
+   "provenance": {
+    "text_sha256": "9fac79a3a7ed18e806314c89cbd27a167054ad861bfc21111f1f8aa512ab1a4a"
+   },
+   "encoded_by": "manual-2026-07-20"
+  },
+  {
+   "table": "enhancements",
+   "id": "000010680003",
+   "side": "attacker",
+   "detachment": "Orbital Assault Force",
+   "name_en": "Veteran of the Vanguard",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "单位 Scouts 6\"——部署域未建模"
+   ],
+   "provenance": {
+    "text_sha256": "0ddc7d3463633ab4a4d363becea88e814794e47a27cfda311ce16463253218cb"
+   },
+   "encoded_by": "manual-2026-07-20"
+  },
+  {
+   "table": "enhancements",
+   "id": "000010680004",
+   "side": "attacker",
+   "detachment": "Orbital Assault Force",
+   "name_en": "Orbital Uplink Reliquary",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "部署后重部署——部署域未建模"
+   ],
+   "provenance": {
+    "text_sha256": "4399c58941ebace5950e7e12f8ee64a155870e1444ae854623bcc0526e55f838"
+   },
+   "encoded_by": "manual-2026-07-20"
+  },
+  {
+   "table": "enhancements",
+   "id": "000010680005",
+   "side": "attacker",
+   "detachment": "Orbital Assault Force",
+   "name_en": "Dedicated Gunship",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "撤出置入预备队——预备队域未建模"
+   ],
+   "provenance": {
+    "text_sha256": "6f96c82b2ebc09c656adf4992ffdd093df2eb01762320eeab7a07a726b8e7272"
+   },
+   "encoded_by": "manual-2026-07-20"
+  },
+  {
+   "table": "abilities",
+   "id": "det000010683",
+   "side": "attacker",
+   "detachment": "Reclamation Force",
+   "name_en": "Oath of Reclamation",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "军规：近战对目标点范围内目标 +1 AP + 守方目标点范围内 S>T 被伤-1——两分支均依赖目标点范围空间门，无载体，不编"
+   ],
+   "provenance": {
+    "text_sha256": "bb16012128b9d3142b5a0484d6d21bea2e266d808a11b16daa97baa1835038d7"
+   },
+   "encoded_by": "manual-2026-07-20",
+   "materialize": {
+    "from_table": "detachments",
+    "from_id": "000010683",
+    "from_column": "rule_text"
+   }
+  },
+  {
+   "table": "stratagems",
+   "id": "000010685002",
+   "side": "attacker",
+   "detachment": "Reclamation Force",
+   "name_en": "CRUSADING CONQUERORS",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "+1 OC——目标点域未建模"
+   ],
+   "provenance": {
+    "text_sha256": "ef803363bd7fd403401aeb1a71a82e59fdf819d65cd6d1b9d0fc11105161a11b"
+   },
+   "encoded_by": "manual-2026-07-20"
+  },
+  {
+   "table": "stratagems",
+   "id": "000010685003",
+   "side": "attacker",
+   "detachment": "Reclamation Force",
+   "name_en": "FURIOUS DEDICATION",
+   "name_zh": null,
+   "status": "partial",
+   "effects": [
+    {
+     "phase": "attacks",
+     "op": "modify",
+     "params": [
+      1
+     ],
+     "condition": [
+      "phase_melee"
+     ],
+     "source": "狂热奉献（近战武器 A+1）"
+    }
+   ],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "WHEN=冲锋或战斗阶段；+2 冲锋骰为移动域未建模；仅编近战 A+1（近战门）"
+   ],
+   "provenance": {
+    "text_sha256": "b79332fd8c085f7d5b1bc7b5d25fc3ee6d23880365adbb739326be17fbbbe60d"
+   },
+   "encoded_by": "manual-2026-07-20"
+  },
+  {
+   "table": "stratagems",
+   "id": "000010685004",
+   "side": "attacker",
+   "detachment": "Reclamation Force",
+   "name_en": "FIGHT TO THE END",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "被毁模型死后一击——战斗序列/复活域未建模"
+   ],
+   "provenance": {
+    "text_sha256": "1e9ffa83fb8251642e0900d51f8807166aad65adc95b82ccef7ec101d7af2eb1"
+   },
+   "encoded_by": "manual-2026-07-20"
+  },
+  {
+   "table": "stratagems",
+   "id": "000010685005",
+   "side": "attacker",
+   "detachment": "Reclamation Force",
+   "name_en": "SCIONS OF GUILLIMAN",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "撤退后可射击冲锋——移动资格域未建模"
+   ],
+   "provenance": {
+    "text_sha256": "1d91af8de32e49b5cc79ef5ccdf7fb40764c387b3b52a0f26a310eb918679016"
+   },
+   "encoded_by": "manual-2026-07-20"
+  },
+  {
+   "table": "stratagems",
+   "id": "000010685006",
+   "side": "attacker",
+   "detachment": "Reclamation Force",
+   "name_en": "ULTRAMARIAN DESTINY",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "目标点持续控制——目标点域未建模"
+   ],
+   "provenance": {
+    "text_sha256": "0bff5ddf99b40907f53127e438b31674629f806fa5facc5e52fd31a5c6cb8c82"
+   },
+   "encoded_by": "manual-2026-07-20"
+  },
+  {
+   "table": "stratagems",
+   "id": "000010685007",
+   "side": "attacker",
+   "detachment": "Reclamation Force",
+   "name_en": "MARCHING EVER ON",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "敌方撤退后反应移动——移动域未建模"
+   ],
+   "provenance": {
+    "text_sha256": "d56ef8fec90ffbf63fa2befe2e164075962f243ccf58a7fb4f71370510f28269"
+   },
+   "encoded_by": "manual-2026-07-20"
+  },
+  {
+   "table": "enhancements",
+   "id": "000010684002",
+   "side": "target",
+   "detachment": "Reclamation Force",
+   "name_en": "Seals of Reconquest",
+   "name_zh": null,
+   "status": "partial",
+   "effects": [
+    {
+     "phase": "save",
+     "op": "invuln",
+     "params": [
+      5
+     ],
+     "condition": [],
+     "source": "重征之封（携带者单位 5+ 无效保护）"
+    }
+   ],
+   "requires_toggles": [
+    "defender_bearer_leading"
+   ],
+   "not_modeled_notes_zh": [
+    "限携带者率领单位（点名即声明守方为携带者单位）"
+   ],
+   "provenance": {
+    "text_sha256": "6385986804f229e333a071f47918c13b055e50460297288572d4bda3ad7b6917"
+   },
+   "encoded_by": "manual-2026-07-20"
+  },
+  {
+   "table": "enhancements",
+   "id": "000010684003",
+   "side": "attacker",
+   "detachment": "Reclamation Force",
+   "name_en": "Avenging Avatar (Aura)",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "光环触发敌方战斗震慑——士气域未建模"
+   ],
+   "provenance": {
+    "text_sha256": "70c724ecdbb9405edafabde605ab061a91391290e00402d80dcc05d9b5c8f2a4"
+   },
+   "encoded_by": "manual-2026-07-20"
+  },
+  {
+   "table": "enhancements",
+   "id": "000010684004",
+   "side": "attacker",
+   "detachment": "Reclamation Force",
+   "name_en": "Scroll of Proclamation",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "宣布冲锋时重投冲锋骰——移动域未建模"
+   ],
+   "provenance": {
+    "text_sha256": "808ed962142b7abbbb08430ffc489086e124a99607d3c33aef3412d6d6cd827f"
+   },
+   "encoded_by": "manual-2026-07-20"
+  },
+  {
+   "table": "enhancements",
+   "id": "000010684005",
+   "side": "attacker",
+   "detachment": "Reclamation Force",
+   "name_en": "Liberatum",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "对目标点范围内目标重投命中/致伤——目标点范围空间门无载体，不编"
+   ],
+   "provenance": {
+    "text_sha256": "6d3e9754eb514ddf4c8304277b1eba2ec29c1125a4a482c12586c79852d74a72"
+   },
+   "encoded_by": "manual-2026-07-20"
+  },
+  {
+   "table": "abilities",
+   "id": "detfp11e-spacemarines-fulguris",
+   "side": "attacker",
+   "detachment": "Fulguris Task Force",
+   "name_en": "Skystrike",
+   "name_zh": "天雷突袭",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "军规：SPEEDER 关键词授予 + 首个移动阶段 ingress move——移动/部署域未建模"
+   ],
+   "provenance": {
+    "text_sha256": "98a6f589f137deba0744403c0748a0ef6bca47e4ab3dcf06c8d904266ad7ed7f"
+   },
+   "encoded_by": "manual-2026-07-20",
+   "materialize": {
+    "from_table": "detachments",
+    "from_id": "fp11e-spacemarines-fulguris",
+    "from_column": "rule_text"
+   }
+  },
+  {
+   "table": "enhancements",
+   "id": "fp11e-spacemarines-fulguris-e1",
+   "side": "attacker",
+   "detachment": "Fulguris Task Force",
+   "name_en": "Bellicose Weapon Spirits",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "重投伤害骰与武器攻击次数骰——伤害/攻击次数重投无载体，未建模"
+   ],
+   "provenance": {
+    "text_sha256": "c3a361a3bd4780468ce915b4a34062af3880837a247489906e0ddca9fc7a3ab5"
+   },
+   "encoded_by": "manual-2026-07-20"
+  },
+  {
+   "table": "enhancements",
+   "id": "fp11e-spacemarines-fulguris-e2",
+   "side": "attacker",
+   "detachment": "Fulguris Task Force",
+   "name_en": "Raptorial Cogitator Core",
+   "name_zh": null,
+   "status": "partial",
+   "effects": [
+    {
+     "phase": "save",
+     "op": "ignores_cover",
+     "params": [],
+     "condition": [
+      "phase_shooting"
+     ],
+     "source": "猛禽逻辑核（携带者单位远程 [无视掩体]）"
+    }
+   ],
+   "requires_toggles": [
+    "bearer_leading"
+   ],
+   "not_modeled_notes_zh": [
+    "限携带者（SPEEDER）单位远程武器；[无视掩体] 自含射击语义"
+   ],
+   "provenance": {
+    "text_sha256": "734c70d6be669952dc10d5d2db54e6499e78767c25e48d0a58fdeefbb7bf459e"
+   },
+   "encoded_by": "manual-2026-07-20"
+  },
+  {
+   "table": "stratagems",
+   "id": "fp11e-spacemarines-fulguris-s1",
+   "side": "attacker",
+   "detachment": "Fulguris Task Force",
+   "name_en": "Data-Link Augury",
+   "name_zh": "数据链导测",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "敌方 +6\" 侦测范围——侦测/几何域未建模"
+   ],
+   "provenance": {
+    "text_sha256": "a5fe5c4d6cb99aa06b5d3389858eca83195787b139ac9519f441074a67c80916"
+   },
+   "encoded_by": "manual-2026-07-20"
+  },
+  {
+   "table": "stratagems",
+   "id": "fp11e-spacemarines-fulguris-s2",
+   "side": "attacker",
+   "detachment": "Fulguris Task Force",
+   "name_en": "Reactive Evasion",
+   "name_zh": "反应机动",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "反应常规移动 D3+3\"——移动域未建模"
+   ],
+   "provenance": {
+    "text_sha256": "bc6f81a4c22d751ac9f7e66216eec550e3e726d914d711f9428c85da0453497c"
+   },
+   "encoded_by": "manual-2026-07-20"
+  },
+  {
+   "table": "stratagems",
+   "id": "fp11e-spacemarines-fulguris-s3",
+   "side": "attacker",
+   "detachment": "Fulguris Task Force",
+   "name_en": "Anti-Grav Surge",
+   "name_zh": "反重力涌动",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "撤出置入战略预备队——预备队域未建模"
+   ],
+   "provenance": {
+    "text_sha256": "46a0f2a1ba6911a233773f3b6d5ebd88704c08baa6fec775ecba1f7bd2955be9"
+   },
+   "encoded_by": "manual-2026-07-20"
+  },
+  {
+   "table": "abilities",
+   "id": "detfp11e-spacemarines-subversion",
+   "side": "attacker",
+   "detachment": "Subversion Assets",
+   "name_en": "Nowhere to Hide",
+   "name_zh": "无所遁形",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "军规：PHOBOS/SCOUT 标记敌方 detected（+3\" 侦测范围）——侦测/标记状态域未建模"
+   ],
+   "provenance": {
+    "text_sha256": "98c237c32dcb7efd3c280d06633d5bac74a69cbf90b557a54adbb65478c32595"
+   },
+   "encoded_by": "manual-2026-07-20",
+   "materialize": {
+    "from_table": "detachments",
+    "from_id": "fp11e-spacemarines-subversion",
+    "from_column": "rule_text"
+   }
+  },
+  {
+   "table": "enhancements",
+   "id": "fp11e-spacemarines-subversion-e1",
+   "side": "target",
+   "detachment": "Subversion Assets",
+   "name_en": "Shroud Field",
+   "name_zh": null,
+   "status": "partial",
+   "effects": [
+    {
+     "phase": "hit",
+     "op": "modify",
+     "params": [
+      -1
+     ],
+     "condition": [
+      "phase_shooting"
+     ],
+     "source": "遮蔽力场（携带者获 Stealth，被远程攻击命中-1）"
+    }
+   ],
+   "requires_toggles": [
+    "defender_bearer_leading"
+   ],
+   "not_modeled_notes_zh": [
+    "Stealth 语义=被远程攻击命中-1（射击门自含）；Lone Operative（点名限制）未建模"
+   ],
+   "provenance": {
+    "text_sha256": "6ea937bae28117b2d1292dbfadee5a3584f7f5b6f0b662e1bcb4a2b63e6b4084"
+   },
+   "encoded_by": "manual-2026-07-20"
+  },
+  {
+   "table": "enhancements",
+   "id": "fp11e-spacemarines-subversion-e2",
+   "side": "attacker",
+   "detachment": "Subversion Assets",
+   "name_en": "Death in the Dark",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "对 hidden 目标 +1 命中——目标 hidden 状态门无载体，不编"
+   ],
+   "provenance": {
+    "text_sha256": "bd740e4d05b054487a1640a61781b6131460241e1747e6d44c91b15390f29c3d"
+   },
+   "encoded_by": "manual-2026-07-20"
+  },
+  {
+   "table": "stratagems",
+   "id": "fp11e-spacemarines-subversion-s1",
+   "side": "attacker",
+   "detachment": "Subversion Assets",
+   "name_en": "Adaptive Operations",
+   "name_zh": "适应作战",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "行动不阻止射击资格——行动/射击资格域未建模"
+   ],
+   "provenance": {
+    "text_sha256": "caaf92b051eabbedce95f15903b526fb0c9a6fdaad06abf4a4ab307ded2091ed"
+   },
+   "encoded_by": "manual-2026-07-20"
+  },
+  {
+   "table": "stratagems",
+   "id": "fp11e-spacemarines-subversion-s2",
+   "side": "attacker",
+   "detachment": "Subversion Assets",
+   "name_en": "Strike from the Shadows",
+   "name_zh": "暗影狙杀",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "射击后保持 hidden——隐蔽状态域未建模"
+   ],
+   "provenance": {
+    "text_sha256": "1f81d5afe6462746c81b78512ea3cb6221abf17bbbcecd7692b4ef42b7e6d2ae"
+   },
+   "encoded_by": "manual-2026-07-20"
+  },
+  {
+   "table": "stratagems",
+   "id": "fp11e-spacemarines-subversion-s3",
+   "side": "attacker",
+   "detachment": "Subversion Assets",
+   "name_en": "Cloaked Position",
+   "name_zh": "潜行阵位",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "-3\" 侦测范围——侦测/几何域未建模"
+   ],
+   "provenance": {
+    "text_sha256": "5a0e42086b4e5dd92e59c677ec5cee92911d744d033e95f76f8ddb70141ed72c"
+   },
+   "encoded_by": "manual-2026-07-20"
+  }
+ ]
+}
