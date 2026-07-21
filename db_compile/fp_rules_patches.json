@@ -1612,6 +1612,150 @@
    "fp_source": "Faction Pack Aeldari page_022.md（RULES UPDATES · WINDRIDER HOST DETACHMENT · Daring Riders, Effect: 9\"→8\"）",
    "from_text": "<b>WHEN:</b> The Reinforcements step of your Movement phase.<br><br><b>TARGET:</b> One Asuryani Mounted or VYPER unit from your army in Reserves.<br><br><b>EFFECT:</b> Until the end of the phase, when setting up your unit on the battlefield from Reserves, it can be set up anywhere on the battlefield that is more than 6\" horizontally away from all enemy units. When doing so, if your unit is set up within 9\" horizontally of one or more enemy units, until the end of the turn, it is not eligible to declare a charge.",
    "to_text": "<b>WHEN:</b> The Reinforcements step of your Movement phase.<br><br><b>TARGET:</b> One Asuryani Mounted or VYPER unit from your army in Reserves.<br><br><b>EFFECT:</b> Until the end of the phase, when setting up your unit on the battlefield from Reserves, it can be set up anywhere on the battlefield that is more than 6\" horizontally away from all enemy units. When doing so, if your unit is set up within 8\" horizontally of one or more enemy units, until the end of the turn, it is not eligible to declare a charge."
+  },
+  {
+   "table": "detachments",
+   "column": "rule_text",
+   "id": "000009736",
+   "name_en": "Leader-beasts",
+   "fp_source": "Faction Pack Tyranids page_004.md（Warrior Bioform Onslaught 11 版整页重印：分队规则 LEADER-BEASTS 删掉十版「未受战斗震撼时 OC 3」从句）",
+   "from_text": "Tyranid Warriors (see below), Tyranid Prime with Lash Whip and Winged Tyranid Prime units from your army have a 5+ invulnerable save.<br><br><span class=\"hi_custom\">KEYWORDS</span><br>Tyranid Warriors with Ranged Bio-weapons and Tyranid Warriors with Melee Bio-weapons units from your army gain the <span class=\"kwb\">TYRANID</span> <span class=\"kwb\">WARRIORS</span> and <span class=\"kwb\">BATTLELINE</span> keywords, and while such a unit is not Battle-shocked, <span class=\"kwb\">TYRANID</span> <span class=\"kwb\">WARRIORS</span> models in that unit have an Objective Control characteristic of 3.",
+   "to_text": "Friendly Tyranid Warriors with Ranged Bio-weapons and Tyranid Warriors with Melee Bio-weapons units have the <span class=\"kwb\">TYRANID</span> <span class=\"kwb\">WARRIORS</span> and <span class=\"kwb\">BATTLELINE</span> keywords.<br><br><span class=\"kwb\">TYRANID</span> <span class=\"kwb\">WARRIORS</span>, Tyranid Prime with Lash Whip and Winged Tyranid Prime models from your army have a 5+ invulnerable save."
+  },
+  {
+   "table": "detachments",
+   "column": "rule_text",
+   "id": "000008407",
+   "name_en": "Insurmountable Odds",
+   "fp_source": "Faction Pack Tyranids page_019（PDF 原页；refine 缓存 page_019.md 尾部截断漏掉本条） UNENDING SWARM DETACHMENT · Insurmountable Odds Detachment Rule，11 版改写为核心 surge move 术语",
+   "from_text": "Each time an enemy unit is selected to shoot, after that unit has finished making its attacks, if one or more models from one or more Endless Multitude units from your army were destroyed as a result of those attacks, each such unit can make a Surge move. To do so, roll one D6: that unit can be moved a distance in inches up to the result, but that unit must end that move as close as possible to the closest enemy unit (excluding <span class=\"kwb\">AIRCRAFT</span>). When doing so, those models can be moved within Engagement Range of enemy units. A unit cannot make a Surge move while it is Battle-shocked.",
+   "to_text": "In your opponent’s Shooting phase, when an enemy unit has shot, if a model from a friendly <span class=\"kwb\">ENDLESS</span> <span class=\"kwb\">MULTITUDE</span> unit was destroyed as a result of those attacks, that friendly unit can make a surge move of up to D6\"."
+  },
+  {
+   "table": "enhancements",
+   "column": "description",
+   "id": "000008412003",
+   "name_en": "Instinctive Defence",
+   "fp_source": "Faction Pack Tyranids page_019.md（RULES UPDATES · ASSIMILATION SWARM · Instinctive Defence Enhancement：0CP → -1 CP）",
+   "from_text": "<span class=\"kwb\">TYRANIDS</span> model only. While the bearer is within 6\" of one or more friendly Harvester units, you can target the bearer’s unit with the Heroic Intervention Stratagem for 0CP. In addition, while the bearer is within 6\" of one or more friendly <span class=\"kwb\">HARVESTER</span> units, models in the bearer’s unit have the Fights First ability.",
+   "to_text": "<span class=\"kwb\">TYRANIDS</span> model only. While the bearer is within 6\" of one or more friendly <span class=\"kwb\">HARVESTER</span> units, when you target this unit with the Heroic Intervention Stratagem, that use is -1 CP. In addition, while the bearer is within 6\" of one or more friendly <span class=\"kwb\">HARVESTER</span> units, models in the bearer’s unit have the Fights First ability."
+  },
+  {
+   "table": "enhancements",
+   "column": "description",
+   "id": "000009737003",
+   "name_en": "Ocular Adaptation",
+   "fp_source": "Faction Pack Tyranids page_004.md（WBO 11 版重印 · OCULAR ADAPTATION：十版「任意攻击 +1 命中」收窄为「近战攻击 +1 命中」）",
+   "from_text": "Winged Tyranid Prime or Tyranid Prime with Lash Whip model only. Each time a model in the bearer’s unit makes an attack, add 1 to the Hit roll.",
+   "to_text": "Winged Tyranid Prime or Tyranid Prime with Lash Whip model only. This unit’s melee attacks have +1 to hit rolls."
+  },
+  {
+   "table": "enhancements",
+   "column": "description",
+   "id": "000009737005",
+   "name_en": "Elevated Might",
+   "fp_source": "Faction Pack Tyranids page_004.md（WBO 11 版重印 · ELEVATED MIGHT：整条改写，十版「加速回合可宣布冲锋」→ 11 版「近战重掷致伤 + AP+1」）",
+   "from_text": "<span class=\"kwb\">TYRANIDS</span> model only. The bearer’s unit is eligible to declare a charge in a turn in which it Advanced.",
+   "to_text": "Winged Tyranid Prime or Tyranid Prime with Lash Whip model only. This model’s melee attacks:<br><ul><li>Can re-roll wound rolls.</li><li>Have +1 AP.</li></ul>"
+  },
+  {
+   "table": "stratagems",
+   "column": "text_zh",
+   "id": "000009738005",
+   "name_en": "SYNAPTIC MICRONODES",
+   "fp_source": "Faction Pack Tyranids page_004.md（WBO 11 版重印 · SYNAPTIC MICRONODES：WHEN 改为移动阶段结束、EFFECT 改为 11 版「目标点被确保」术语）",
+   "from_text": "<b>WHEN:</b> Your Movement phase.<br><br><b>TARGET:</b> One Tyranid Warriors unit from your army.<br><br><b>EFFECT:</b> Select one objective marker you control that your unit is within range of. That objective marker remains under your control until your opponent’s Level of Control over that objective marker is greater than yours at the end of a phase.",
+   "to_text": "<b>WHEN:</b> End of your Movement phase.<br><br><b>TARGET:</b> One friendly <span class=\"kwb\">TYRANID</span> <span class=\"kwb\">WARRIORS</span> unit.<br><br><b>EFFECT:</b> Select one objective your unit is controlling. That objective is secured."
+  },
+  {
+   "table": "stratagems",
+   "column": "text_zh",
+   "id": "000009738006",
+   "name_en": "PARASITIC PAYLOAD",
+   "fp_source": "Faction Pack Tyranids page_004.md（WBO 11 版重印 · PARASITIC PAYLOAD：TARGET 放宽到全体 TYRANID WARRIORS、EFFECT 删掉十版「目标本回合不得享有掩体」从句）",
+   "from_text": "<b>WHEN:</b> Your Shooting phase.<br><br><b>TARGET:</b> One Tyranid Warriors with Ranged Bio-weapons unit from your army that has not been selected to shoot this phase.<br><br><b>EFFECT:</b> Until the end of the phase, ranged weapons equipped by models in your unit have the [IGNORES COVER] ability. After your unit has resolved its shooting attacks this phase, select one enemy unit hit by one or more of those attacks. Until the end of the turn, models in that unit cannot have the Benefit of Cover.",
+   "to_text": "<b>WHEN:</b> Your Shooting phase, when a friendly <span class=\"kwb\">TYRANID</span> <span class=\"kwb\">WARRIORS</span> unit is selected to shoot.<br><br><b>TARGET:</b> That <span class=\"kwb\">TYRANID</span> <span class=\"kwb\">WARRIORS</span> unit.<br><br><b>EFFECT:</b> Your unit’s ranged attacks have [IGNORE COVER]."
+  },
+  {
+   "table": "stratagems",
+   "column": "text_zh",
+   "id": "000008418005",
+   "name_en": "HYPERSENSORY SCILLIA",
+   "fp_source": "Faction Pack Tyranids page_019（PDF 原页；refine 缓存尾部截断漏掉本条） VANGUARD ONSLAUGHT DETACHMENT · Hypersensory Scillia Stratagem, Target Section：9\" → 8\"（只改 TARGET 段两处，EFFECT 段 6\" 不动）",
+   "from_text": "<b>WHEN:</b> Your opponent’s Movement phase, just after an enemy unit ends a Normal, Advance or Fall Back move.<br><br><b>TARGET:</b> Up to two Vanguard Invader units from your army that are within 9\" of that enemy unit, or one other Tyranids Infantry unit from your army that is within 9\" of that enemy unit.<br><br><b>EFFECT:</b> Those selected units can each make a Normal move of up to 6\".<br><br><b>RESTRICTIONS:</b> You cannot target units that are within Engagement Range of one or more enemy units.",
+   "to_text": "<b>WHEN:</b> Your opponent’s Movement phase, just after an enemy unit ends a Normal, Advance or Fall Back move.<br><br><b>TARGET:</b> Up to two Vanguard Invader units from your army that are within 8\" of that enemy unit, or one other Tyranids Infantry unit from your army that is within 8\" of that enemy unit.<br><br><b>EFFECT:</b> Those selected units can each make a Normal move of up to 6\".<br><br><b>RESTRICTIONS:</b> You cannot target units that are within Engagement Range of one or more enemy units."
+  },
+  {
+   "table": "abilities",
+   "column": "text_zh",
+   "id": "000000490_a1",
+   "name_en": "Blistering Assault",
+   "fp_source": "Faction Pack Tyranids page_020.md（DATASHEETS · Carnifexes, Blistering Assault：整条改写为核心 surge move 术语）",
+   "from_text": "Each time an enemy unit is selected to shoot, after that unit has shot, if any models from this unit lost one or more wounds as a result of those attacks, this unit can make a Blistering Assault move. If it does, roll one D6, adding 2 to the result: each model in this unit can be moved a distance in inches up to the result, but this unit must finish that move as close as possible to the closest enemy unit. When doing so, those models can be moved within Engagement Range of that enemy unit. Each unit can only make one Blistering Assault move per phase.",
+   "to_text": "In your opponent’s Shooting phase, when an enemy unit has shot, if a model in this unit lost a wound as a result of those attacks, this unit can make a surge move of up to D6+2\"."
+  },
+  {
+   "table": "abilities",
+   "column": "text_zh",
+   "id": "000000485_a1",
+   "name_en": "Spore Mine Cysts",
+   "fp_source": "Faction Pack Tyranids page_020.md（DATASHEETS · Harpy, Spore Mine Cysts：整条改写，触发时机由「结束普通移动」改为「对手近战阶段结束」，孢子雷放置距离 9\" → 8\"）",
+   "from_text": "Each time this model ends a Normal move, you can select one of the following:<br><ul><li>Select one enemy unit it moved over during that move and roll six D6: for each 3+, that unit suffers 1 mortal wound.</li><li>Add one new Spore Mines unit containing D3 models to your army and set it up anywhere on the battlefield that is wholly within 6\" of this model and more than 9\" horizontally away from all enemy units. You cannot select this option for more than one model per turn.</li></ul>",
+   "to_text": "At the end of your opponent’s Fight phase, you can do one of the following:<br><ul><li>Select one visible enemy unit (excluding Lone Operative units) within 24\" of this unit and roll six D6 for that unit: for each 3+, that unit suffers 1 mortal wound.</li><li>Add a new <span class=\"kwb\">SPORE</span> <span class=\"kwb\">MINES</span> unit containing D3 models to your army and set it up anywhere on the battlefield that is within 6\" of this model and more than 8\" horizontally away from all enemy units. You cannot select this option for more than one model per turn.</li></ul>"
+  },
+  {
+   "table": "abilities",
+   "column": "text_zh",
+   "id": "000000498_a1",
+   "name_en": "Seed Mucolids",
+   "fp_source": "Faction Pack Tyranids page_020.md（DATASHEETS · Sporocyst, Seed Mucolids：9\" → 8\"；同句 18\" 是投放半径，FP 未改，不许连坐）",
+   "from_text": "Once per turn, in your Shooting phase, when selected to shoot, one unit with this ability can use it instead of making any attacks with its ranged weapons. If it does, you can add one new Mucolid Spores unit containing 1 model to your army and set it up anywhere on the battlefield that is wholly within 18\" of this model and more than 9\" horizontally away from all enemy units.",
+   "to_text": "Once per turn, in your Shooting phase, when selected to shoot, one unit with this ability can use it instead of making any attacks with its ranged weapons. If it does, you can add one new Mucolid Spores unit containing 1 model to your army and set it up anywhere on the battlefield that is wholly within 18\" of this model and more than 8\" horizontally away from all enemy units."
+  },
+  {
+   "table": "abilities",
+   "column": "text_zh",
+   "id": "000000491_a1",
+   "name_en": "Seed Spore Mines",
+   "fp_source": "Faction Pack Tyranids page_019（PDF 原页；refine 缓存尾部截断漏掉本条） DATASHEETS · Biovores, Seed Spore Mine Ability：9\" → 8\"；同句 48\" 是投放半径，FP 未改，不许连坐",
+   "from_text": "Once per turn, in your Shooting phase, when selected to shoot, one unit with this ability can use it instead of making any attacks with its ranged weapons. If it does, you can add one new Spore Mines unit to your army and set it up anywhere on the battlefield that is wholly within 48\" of this unit and more than 9\" horizontally away from all enemy units. That <span class=\"kwb\">SPORE</span> <span class=\"kwb\">MINES</span> unit contains 1 model for each model in this unit.",
+   "to_text": "Once per turn, in your Shooting phase, when selected to shoot, one unit with this ability can use it instead of making any attacks with its ranged weapons. If it does, you can add one new Spore Mines unit to your army and set it up anywhere on the battlefield that is wholly within 48\" of this unit and more than 8\" horizontally away from all enemy units. That <span class=\"kwb\">SPORE</span> <span class=\"kwb\">MINES</span> unit contains 1 model for each model in this unit."
+  },
+  {
+   "table": "abilities",
+   "column": "text_zh",
+   "id": "000000468_a1",
+   "name_en": "Skulking Horrors",
+   "fp_source": "Faction Pack Tyranids page_020.md（DATASHEETS · Termagants, Skulking Horrors：整条改写，限定到对手移动阶段、触发距离 9\" → 8\"、删掉「每回合一次」）",
+   "from_text": "Once per turn, when an enemy unit ends a Normal, Advance or Fall Back move within 9\" of this unit, if this unit is not within Engagement Range of one or more enemy units, it can make a Normal move of up to D6\".",
+   "to_text": "In your opponent’s Movement phase, if an enemy unit ends a move within 8\" of this unit, if this unit is not within Engagement Range of one or more enemy units, this unit can make a Normal move of up to D6\"."
+  },
+  {
+   "table": "abilities",
+   "column": "text_zh",
+   "id": "000000461_a2",
+   "name_en": "Malign Presence (Aura)",
+   "fp_source": "Faction Pack Tyranids page_020.md（DATASHEETS · The Swarmlord, Malign Presence：整条改写——删掉「须为 WARLORD」前提、改为每回合一次的主动技能；十版指向 2024 平衡数据板的设计者注记随之作废）",
+   "from_text": "If this model is your <span class=\"kwb\">WARLORD</span>, each time your opponent targets a unit from their army with a Stratagem, if that unit is within 12\" of this model, increase the cost of that use of that Stratagem by 1CP.<br><br><b>Designer’s Note:</b> <i>This ability takes precedence over the Lord of Deceit ability presented in the Balance Dataslate June 2024.</i>",
+   "to_text": "Once per turn, when your opponent targets a unit from their army within 12\" of this model with a Stratagem, you can use this ability. If you do increase the CP cost of that use of that Stratagem by 1CP."
+  },
+  {
+   "table": "abilities",
+   "column": "text_zh",
+   "id": "000002693_a1",
+   "name_en": "Pouncing Leap",
+   "fp_source": "Faction Pack Tyranids page_020.md（DATASHEETS · Von Ryan's Leapers, Pouncing Leap：整条改写，0CP → -1 CP 且改为不阻断其他单位本阶段的使用；库内 Tyranids 版与 Genestealer Cults 共用版两行同名同文，一起补）",
+   "from_text": "You can target this unit with the Heroic Intervention Stratagem for 0CP, and can do so even if you have already used that Stratagem on a different unit this phase.",
+   "to_text": "You can target this unit with the Heroic Intervention Stratagem, regardless of any other uses of that Stratagem this phase. If you do:<br><ul><li>That use is -1 CP.</li><li>That use does not prevent any uses of that Stratagem on other units this phase.</li></ul>"
+  },
+  {
+   "table": "abilities",
+   "column": "text_zh",
+   "id": "000003888_a1",
+   "name_en": "Pouncing Leap",
+   "fp_source": "Faction Pack Tyranids page_020.md（DATASHEETS · Von Ryan's Leapers, Pouncing Leap：整条改写，0CP → -1 CP 且改为不阻断其他单位本阶段的使用；库内 Tyranids 版与 Genestealer Cults 共用版两行同名同文，一起补）",
+   "from_text": "You can target this unit with the Heroic Intervention Stratagem for 0CP, and can do so even if you have already used that Stratagem on a different unit this phase.",
+   "to_text": "You can target this unit with the Heroic Intervention Stratagem, regardless of any other uses of that Stratagem this phase. If you do:<br><ul><li>That use is -1 CP.</li><li>That use does not prevent any uses of that Stratagem on other units this phase.</li></ul>"
   }
  ],
  "name_patches": [
@@ -4421,6 +4565,50 @@
    "name_en": "ANTI‑GRAV REPULSION",
    "status": "removed_11e",
    "fp_source": "Faction Pack Aeldari page_002.md（Armoured Warhost 11 版整页重印：11 版分队定式为 1 规则 + 2 增强 + 3 战略，本条未收录）"
+  },
+  {
+   "table": "stratagems",
+   "id": "000009738002",
+   "name_en": "SYNAPTIC AMPLIFICATION",
+   "status": "removed_11e",
+   "fp_source": "Faction Pack Tyranids page_004.md（Warrior Bioform Onslaught 11 版整页重印：11 版分队定式为 1 规则 + 2 增强 + 3 战略，本条未收录）"
+  },
+  {
+   "table": "stratagems",
+   "id": "000009738003",
+   "name_en": "SPONTANEOUS HYPERCORROSION",
+   "status": "removed_11e",
+   "fp_source": "Faction Pack Tyranids page_004.md（Warrior Bioform Onslaught 11 版整页重印：11 版分队定式为 1 规则 + 2 增强 + 3 战略，本条未收录）"
+  },
+  {
+   "table": "stratagems",
+   "id": "000009738004",
+   "name_en": "RESTORATIVE IMPULSE",
+   "status": "removed_11e",
+   "fp_source": "Faction Pack Tyranids page_004.md（Warrior Bioform Onslaught 11 版整页重印：11 版分队定式为 1 规则 + 2 增强 + 3 战略，本条未收录）"
+  },
+  {
+   "table": "stratagems",
+   "id": "000009738007",
+   "name_en": "SYNAPTIC SHIELD",
+   "status": "removed_11e",
+   "fp_source": "Faction Pack Tyranids page_004.md（Warrior Bioform Onslaught 11 版整页重印：11 版分队定式为 1 规则 + 2 增强 + 3 战略，本条未收录）；其「S>T 则致伤 -1」机制由 11 版全新战略 ALIEN PHYSIOLOGY 承接（改名 + 放宽到近战），故按重印替换处理"
+  },
+  {
+   "table": "enhancements",
+   "id": "000009737002",
+   "name": "Synaptic Tyrant",
+   "name_en": "Synaptic Tyrant",
+   "status": "removed_11e",
+   "fp_source": "Faction Pack Tyranids page_004.md（Warrior Bioform Onslaught 11 版整页重印：11 版分队定式为 1 规则 + 2 增强 + 3 战略，本条未收录）"
+  },
+  {
+   "table": "enhancements",
+   "id": "000009737004",
+   "name": "Sensory Assimilation",
+   "name_en": "Sensory Assimilation",
+   "status": "removed_11e",
+   "fp_source": "Faction Pack Tyranids page_004.md（Warrior Bioform Onslaught 11 版整页重印：11 版分队定式为 1 规则 + 2 增强 + 3 战略，本条未收录）"
   }
  ],
  "_inserts_comment": "P7-PR4 fp_new 补录（2026-07-16）：FP 有、Wahapedia/DB 无的整条目。AAC 整分队（1 规则行 + 3 战略 + 2 增强，id 前缀 fp11e- 标 synthetic 溯源，增强点数 FP/MFM 均无源诚实置 NULL）+ Auxiliary Cadre 新战略 Guided by Unity。守卫：同 id 幂等/名字不符让路；同名异 id（上游将来自补）让路告警不留双胞胎；stratagems/enhancements 插入行标 fp_status='added_11e'。",
@@ -9349,6 +9537,182 @@
     "cp_cost": "1",
     "phase": "Shooting phase",
     "text_zh": "<b>WHEN:</b> Your Shooting phase, when a friendly <span class=\"kwb\">HARLEQUINS</span> <span class=\"kwb\">VEHICLE</span> unit has shot.<br><br><b>TARGET:</b> That <span class=\"kwb\">HARLEQUINS</span> <span class=\"kwb\">VEHICLE</span> unit.<br><br><b>EFFECT:</b><br>▪ Your unit can make a normal move of up to D6\".<br>▪ Your unit is not eligible to declare a charge until the end of the turn."
+   }
+  },
+  {
+   "table": "detachments",
+   "fp_source": "Faction Pack Tyranids page_002.md（11 版全新分队 Ambush Predators，Wahapedia/DB 无源）",
+   "values": {
+    "id": "fp11e-tyranids-ambush",
+    "faction": "TYR",
+    "name_zh": "噬心饥渴",
+    "name_en": "Mindhunger",
+    "rule_text": "Friendly <span class=\"kwb\">DEATHLEAPER</span>/<span class=\"kwb\">LICTOR</span>/<span class=\"kwb\">NEUROLICTOR</span> units have Deep Strike.<br><br>Friendly <span class=\"kwb\">LICTOR</span>/<span class=\"kwb\">NEUROLICTOR</span> units’ attacks that target a <span class=\"kwb\">CHARACTER</span> unit can re-roll hit rolls of 1."
+   }
+  },
+  {
+   "table": "enhancements",
+   "fp_source": "Faction Pack Tyranids page_002.md（11 版全新分队 Ambush Predators，Wahapedia/DB 无源）",
+   "values": {
+    "id": "fp11e-tyranids-ambush-e1",
+    "faction_id": "TYR",
+    "detachment_id": "fp11e-tyranids-ambush",
+    "detachment_name": "Ambush Predators",
+    "name": "Encircling Horrors",
+    "cost": null,
+    "legend": "点数未知：FP 不含点数，MFM 缓存无增强数据（诚实置空，勿猜）",
+    "description": "<span class=\"kwb\">NEUROLICTOR</span>/<span class=\"kwb\">LICTOR</span>/<span class=\"kwb\">VON RYAN’S LEAPERS</span> unit only. In your opponent’s Movement phase, when an enemy unit ends a move within 8\" of this unit, this unit can make a normal move of up to D3+3\"."
+   }
+  },
+  {
+   "table": "enhancements",
+   "fp_source": "Faction Pack Tyranids page_002.md（11 版全新分队 Ambush Predators，Wahapedia/DB 无源）",
+   "values": {
+    "id": "fp11e-tyranids-ambush-e2",
+    "faction_id": "TYR",
+    "detachment_id": "fp11e-tyranids-ambush",
+    "detachment_name": "Ambush Predators",
+    "name": "Cryptophotaic Camouflage",
+    "cost": null,
+    "legend": "点数未知：FP 不含点数，MFM 缓存无增强数据（诚实置空，勿猜）",
+    "description": "<span class=\"kwb\">VON RYAN’S LEAPERS</span> unit only. This unit has -3\" detection range."
+   }
+  },
+  {
+   "table": "stratagems",
+   "fp_source": "Faction Pack Tyranids page_002.md（11 版全新分队 Ambush Predators，Wahapedia/DB 无源）",
+   "values": {
+    "id": "fp11e-tyranids-ambush-s1",
+    "faction": "TYR",
+    "detachment": "Ambush Predators",
+    "name_zh": "反捕猎",
+    "name_en": "COUNTERPREDATION",
+    "cp_cost": "1",
+    "phase": "Fight phase",
+    "text_zh": "<b>WHEN:</b> Fight phase, when a friendly <span class=\"kwb\">DEATHLEAPER</span>/<span class=\"kwb\">LICTOR</span>/<span class=\"kwb\">NEUROLICTOR</span>/<span class=\"kwb\">VON RYAN’S LEAPERS</span> unit is selected to fight.<br><br><b>TARGET:</b> That <span class=\"kwb\">DEATHLEAPER</span>/<span class=\"kwb\">LICTOR</span>/<span class=\"kwb\">NEUROLICTOR</span>/<span class=\"kwb\">VON RYAN’S LEAPERS</span> unit.<br><br><b>EFFECT:</b> Your unit’s attacks that target a hidden unit have +1 S and AP."
+   }
+  },
+  {
+   "table": "stratagems",
+   "fp_source": "Faction Pack Tyranids page_002.md（11 版全新分队 Ambush Predators，Wahapedia/DB 无源）",
+   "values": {
+    "id": "fp11e-tyranids-ambush-s2",
+    "faction": "TYR",
+    "detachment": "Ambush Predators",
+    "name_zh": "超感适应",
+    "name_en": "HYPERSENSORY ADAPTATIONS",
+    "cp_cost": "1",
+    "phase": "Shooting phase",
+    "text_zh": "<b>WHEN:</b> Start of your Shooting phase.<br><br><b>TARGET:</b> One friendly <span class=\"kwb\">DEATHLEAPER</span>/<span class=\"kwb\">LICTOR</span>/<span class=\"kwb\">NEUROLICTOR</span>/<span class=\"kwb\">VON RYAN’S LEAPERS</span> unit.<br><br><b>EFFECT:</b> Select one visible enemy unit within 12\" of your unit. That enemy unit has +6\" detection range."
+   }
+  },
+  {
+   "table": "stratagems",
+   "fp_source": "Faction Pack Tyranids page_002.md（11 版全新分队 Ambush Predators，Wahapedia/DB 无源）",
+   "values": {
+    "id": "fp11e-tyranids-ambush-s3",
+    "faction": "TYR",
+    "detachment": "Ambush Predators",
+    "name_zh": "扫描幽灵",
+    "name_en": "SCANNER GHEIST",
+    "cp_cost": "1",
+    "phase": "Fight phase",
+    "text_zh": "<b>WHEN:</b> End of your opponent’s Fight phase.<br><br><b>TARGET:</b> One friendly unengaged <span class=\"kwb\">DEATHLEAPER</span>/<span class=\"kwb\">LICTOR</span>/<span class=\"kwb\">NEUROLICTOR</span> unit.<br><br><b>EFFECT:</b> Place your unit in strategic reserves."
+   }
+  },
+  {
+   "table": "detachments",
+   "fp_source": "Faction Pack Tyranids page_003.md（11 版全新分队 Talons of the Norn Queen，Wahapedia/DB 无源）",
+   "values": {
+    "id": "fp11e-tyranids-norn",
+    "faction": "TYR",
+    "name_zh": "更高指令",
+    "name_en": "Higher Imperatives",
+    "rule_text": "Friendly <span class=\"kwb\">NORN EMISSARY</span>/<span class=\"kwb\">NORN ASSIMILATOR</span> units have the following ability:<br><br><b>Protean Purpose:</b> (Once per battle, per unit) In your Command phase, you can use this ability. If you do, this unit can make a selection for its Singular Purpose ability (this replaces the previous selection)."
+   }
+  },
+  {
+   "table": "enhancements",
+   "fp_source": "Faction Pack Tyranids page_003.md（11 版全新分队 Talons of the Norn Queen，Wahapedia/DB 无源）",
+   "values": {
+    "id": "fp11e-tyranids-norn-e1",
+    "faction_id": "TYR",
+    "detachment_id": "fp11e-tyranids-norn",
+    "detachment_name": "Talons of the Norn Queen",
+    "name": "Destabilising Predation",
+    "cost": null,
+    "legend": "点数未知：FP 不含点数，MFM 缓存无增强数据（诚实置空，勿猜）",
+    "description": "<span class=\"kwb\">NORN EMISSARY</span> unit only. This unit’s ranged attacks have [ANTI-CHARACTER 2+]."
+   }
+  },
+  {
+   "table": "enhancements",
+   "fp_source": "Faction Pack Tyranids page_003.md（11 版全新分队 Talons of the Norn Queen，Wahapedia/DB 无源）",
+   "values": {
+    "id": "fp11e-tyranids-norn-e2",
+    "faction_id": "TYR",
+    "detachment_id": "fp11e-tyranids-norn",
+    "detachment_name": "Talons of the Norn Queen",
+    "name": "Synaptoprescience",
+    "cost": null,
+    "legend": "点数未知：FP 不含点数，MFM 缓存无增强数据（诚实置空，勿猜）",
+    "description": "<span class=\"kwb\">NORN ASSIMILATOR</span> unit only. This unit has 4+ InSv."
+   }
+  },
+  {
+   "table": "stratagems",
+   "fp_source": "Faction Pack Tyranids page_003.md（11 版全新分队 Talons of the Norn Queen，Wahapedia/DB 无源）",
+   "values": {
+    "id": "fp11e-tyranids-norn-s1",
+    "faction": "TYR",
+    "detachment": "Talons of the Norn Queen",
+    "name_zh": "催化生物强化",
+    "name_en": "CATALYTIC BIOFORTIFICATION",
+    "cp_cost": "1",
+    "phase": "Any phase",
+    "text_zh": "<b>WHEN:</b> Any phase, when a friendly <span class=\"kwb\">NORN ASSIMILATOR</span> unit suffers a mortal wound.<br><br><b>TARGET:</b> That <span class=\"kwb\">NORN ASSIMILATOR</span> unit.<br><br><b>EFFECT:</b> Your unit has Feel No Pain 4+ against mortal wounds."
+   }
+  },
+  {
+   "table": "stratagems",
+   "fp_source": "Faction Pack Tyranids page_003.md（11 版全新分队 Talons of the Norn Queen，Wahapedia/DB 无源）",
+   "values": {
+    "id": "fp11e-tyranids-norn-s2",
+    "faction": "TYR",
+    "detachment": "Talons of the Norn Queen",
+    "name_zh": "低等猎物",
+    "name_en": "LESSER PREY",
+    "cp_cost": "1",
+    "phase": "Fight phase",
+    "text_zh": "<b>WHEN:</b> Fight phase, when a friendly <span class=\"kwb\">NORN ASSIMILATOR</span>/<span class=\"kwb\">NORN EMISSARY</span> unit is selected to fight.<br><br><b>TARGET:</b> That <span class=\"kwb\">NORN ASSIMILATOR</span>/<span class=\"kwb\">NORN EMISSARY</span> unit.<br><br><b>EFFECT:</b> Your unit’s melee attacks have +2 S."
+   }
+  },
+  {
+   "table": "stratagems",
+   "fp_source": "Faction Pack Tyranids page_003.md（11 版全新分队 Talons of the Norn Queen，Wahapedia/DB 无源）",
+   "values": {
+    "id": "fp11e-tyranids-norn-s3",
+    "faction": "TYR",
+    "detachment": "Talons of the Norn Queen",
+    "name_zh": "缠缚弹",
+    "name_en": "TANGLESTRIKE ROUNDS",
+    "cp_cost": "1",
+    "phase": "Shooting phase",
+    "text_zh": "<b>WHEN:</b> Your Shooting phase, when a friendly <span class=\"kwb\">NORN ASSIMILATOR</span> unit has shot.<br><br><b>TARGET:</b> That <span class=\"kwb\">NORN ASSIMILATOR</span> unit.<br><br><b>EFFECT:</b> Select one enemy unit hit by those attacks. That enemy unit is tethered until the start of your next Command phase:<br><ul><li>While a unit is tethered, that unit has -2\" M.</li></ul>"
+   }
+  },
+  {
+   "table": "stratagems",
+   "fp_source": "Faction Pack Tyranids page_004.md（Warrior Bioform Onslaught 11 版重印新增战略，库内无同名行——十版 SYNAPTIC SHIELD 已按重印替换标 removed_11e）",
+   "values": {
+    "id": "fp11e-tyranids-wbo-s1",
+    "faction": "TYR",
+    "detachment": "Warrior Bioform Onslaught",
+    "name_zh": "异形生理",
+    "name_en": "ALIEN PHYSIOLOGY",
+    "cp_cost": "1",
+    "phase": "Shooting or Fight phase",
+    "text_zh": "<b>WHEN:</b> Your opponent’s Shooting phase or the Fight phase, when an enemy unit targets a friendly <span class=\"kwb\">TYRANID</span> <span class=\"kwb\">WARRIORS</span> unit.<br><br><b>TARGET:</b> That <span class=\"kwb\">TYRANID</span> <span class=\"kwb\">WARRIORS</span> unit.<br><br><b>EFFECT:</b> Attacks that target your unit with a S greater than your unit’s T have -1 to wound rolls."
    }
   }
  ]
