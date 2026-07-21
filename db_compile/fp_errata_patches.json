@@ -435,6 +435,33 @@
    "from": "20+\"",
    "to": "-",
    "src": "Faction Pack Dark Angels page_009.md（Ravenwing Dark Talon Profile: Change M and OC to '-'）——仅补 M；OC 0→'-' 不补（功能等价且库无 '-' OC 先例，防下游 int 解析破坏，同 Heldrake 处理）"
+  },
+  {
+   "unit_id": "000002087",
+   "faction": "AdM",
+   "unit": "Archaeopter Fusilave",
+   "field": "m",
+   "from": "20+\"",
+   "to": "-",
+   "src": "Faction Pack Adeptus Mechanicus page_017.md（Archaeopter Fusilave Profiles: Change M and OC to '-'）——仅补 M；OC 0→'-' 不补（功能等价且库无 '-' OC 先例，防下游 int 解析破坏，同 Heldrake/Dark Talon 处理）"
+  },
+  {
+   "unit_id": "000002086",
+   "faction": "AdM",
+   "unit": "Archaeopter Stratoraptor",
+   "field": "m",
+   "from": "20+\"",
+   "to": "-",
+   "src": "Faction Pack Adeptus Mechanicus page_017.md（Archaeopter Stratoraptor Profiles: Change M and OC to '-'）——仅补 M，同上"
+  },
+  {
+   "unit_id": "000002085",
+   "faction": "AdM",
+   "unit": "Archaeopter Transvector",
+   "field": "m",
+   "from": "20+\"",
+   "to": "14\"",
+   "src": "Faction Pack Adeptus Mechanicus page_017.md（Archaeopter Transvector Profile: Change M to 14\"）"
   }
  ],
  "new_units": [
@@ -683,6 +710,30 @@
    "field": "d",
    "verdict": "DB 正确(D3)不改",
    "evidence": "BSData Inferno pistol=D3 + inferno pistol 通例 D3 > pack refine D6（精炼误）"
+  },
+  {
+   "faction": "AdM",
+   "unit": "Skorpius Disintegrator / Skorpius Dunerider",
+   "weapon": "-",
+   "field": "keywords",
+   "verdict": "不补（keyword_patches 主列表只删不加）",
+   "evidence": "FP page_017「Keywords section: Add the 'FRAME' keyword」；本层策略明定主列表只增关键词属重印整表体裁（走 new_units/上游滚更），故记录不落补丁"
+  },
+  {
+   "faction": "AdM",
+   "unit": "Onager Dunecrawler",
+   "weapon": "Eradication beamer",
+   "field": "a/s",
+   "verdict": "DB 正确不改",
+   "evidence": "FP page_017「Eradication beamer: Change A to '3D3' and S to '10'」；库内两档 A 均已=3D3（说明该勘误已由 Wahapedia 滚入），focused 档 S=10 一致、dissipated 档 S=9 为档位差，单行 change-to 无法判定是否要抹平两档，保守不动"
+  },
+  {
+   "faction": "AdM",
+   "unit": "Skitarii Marshal / Technoarcheologist / Cybernetica Datasmith / Archaeopter Fusilave / Archaeopter Stratoraptor / Skorpius Dunerider",
+   "weapon": "-",
+   "field": "core_abilities",
+   "verdict": "不补（本层无核心技能列）",
+   "evidence": "FP page_017「Remove 'Leader', add 'Support'」/「Remove 'Hover'」/「Add 'Firing Deck 2'」均为核心技能层，库 abilities 表只存兵牌特有技能，无核心技能行可补"
   }
  ],
  "keyword_patches": [
@@ -757,6 +808,15 @@
     "Aircraft"
    ],
    "src": "Faction Pack Necrons page_029.md（Night Scythe Keywords: Remove 'AIRCRAFT'）"
+  },
+  {
+   "unit_id": "000002085",
+   "faction": "AdM",
+   "unit": "Archaeopter Transvector",
+   "remove": [
+    "Aircraft"
+   ],
+   "src": "Faction Pack Adeptus Mechanicus page_017.md（Archaeopter Transvector Keywords: Remove 'AIRCRAFT'）"
   }
  ]
 }
