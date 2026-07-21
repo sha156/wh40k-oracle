@@ -422,8 +422,11 @@ class TestInserts:
         # + 混沌恶魔 18 条（PR26：Cavalcade of Chaos 1 规则+2 增强+3 战略、
         #   Lords of the Warp 1 规则+1 增强+4 战略、Warptide 1 规则+2 增强+3 战略
         #   ——三全新分队，FP 页 120/121/122，Wahapedia 未滚入）
+        # + 帝国机械教 18 条（PR27：Cohort Acquisitus / Lords of the Forge /
+        #   Luminen Auto-choir 三全新分队各 1 规则+2 增强+3 战略；FP 页 2/3/4，
+        #   Wahapedia 未滚入；页 3 refine 截断，正文回原 PDF PyMuPDF 取全）
         ins = data.get("inserts", [])
-        assert len(ins) == 300
+        assert len(ins) == 318
         ids = {p["values"]["id"] for p in ins}
         assert ids == {"fp11e-tau-aac-det", "fp11e-tau-aac-s1", "fp11e-tau-aac-s2",
                        "fp11e-tau-aac-s3", "fp11e-tau-aux-gbu",
@@ -610,7 +613,26 @@ class TestInserts:
                        "fp11e-chaosdaemons-warptide-e2",
                        "fp11e-chaosdaemons-warptide-s1",
                        "fp11e-chaosdaemons-warptide-s2",
-                       "fp11e-chaosdaemons-warptide-s3"}
+                       "fp11e-chaosdaemons-warptide-s3",
+                       # PR27 帝国机械教：三全新分队
+                       "fp11e-admech-acquisitus",
+                       "fp11e-admech-acquisitus-e1",
+                       "fp11e-admech-acquisitus-e2",
+                       "fp11e-admech-acquisitus-s1",
+                       "fp11e-admech-acquisitus-s2",
+                       "fp11e-admech-acquisitus-s3",
+                       "fp11e-admech-lordsforge",
+                       "fp11e-admech-lordsforge-e1",
+                       "fp11e-admech-lordsforge-e2",
+                       "fp11e-admech-lordsforge-s1",
+                       "fp11e-admech-lordsforge-s2",
+                       "fp11e-admech-lordsforge-s3",
+                       "fp11e-admech-luminen",
+                       "fp11e-admech-luminen-e1",
+                       "fp11e-admech-luminen-e2",
+                       "fp11e-admech-luminen-s1",
+                       "fp11e-admech-luminen-s2",
+                       "fp11e-admech-luminen-s3"}
         for p in ins:
             assert p.get("fp_source")
             assert p["values"].get("id", "").startswith("fp11e-")

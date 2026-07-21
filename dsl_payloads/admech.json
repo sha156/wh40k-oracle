@@ -1,0 +1,2702 @@
+{
+ "_comment": "P7 阵营技能 DSL 唯一真源（帝国机械教 Adeptus Mechanicus，faction='AdM'，P7-PR27）。DB effect_dsl_json/dsl_status 只是投影，由 `python -m db_compile dsl-apply` 写入并挂 restore；A/B 工作单见 docs/superpowers/plans/2026-07-20-p7-pr27-admech-worklist.md。覆盖 1 条军规（教义指令）+ 13 个分队容器（10 个 Index/Codex/登舰行动分队 + 3 个 FP 新分队）的13 条分队规则 + 63 战略 + 40 增强 = 117 条。三态：16 encoded / 18 partial / 83 not_modeled。零新引擎通道、零新态势开关（纯编码 PR）。帝国机械教是「指令切换 + 目标点经济 + 远程增益」气质阵营——军规「教义指令」二选一、分队规则「获取目标点」几何、Override 四选一、重掷「1」、士气/移动/预备队/舱门（登舰行动）全无载体，故大量 not_modeled；可编子集集中在 AP 改善 / [LETHAL HITS] / [SUSTAINED HITS] / [IGNORES COVER] / 特殊保护 / FNP / 命中·致伤骰修正 / 暴击阈值 / [LANCE]（melee_charging）。阶段门纪律（双向核对）：WHEN 落在单一相位的挂 phase_melee/phase_shooting；WHEN 写「射击阶段或近战阶段」的两相位一律不加门（过度加门＝欠建模，同属事实错误）；凶兆光环 WHEN=近战阶段且「持续到回合结束」——近战是回合最后一个攻击阶段，故仍只挂 phase_melee。防高估：重掷特定点数「1」、仅致命伤 FNP、特征值 SET（BS 3+ / 伤害置 1 / 伤害置 0）、多选一单分支（教义指令 / 万机神祝祷 / Override / 解缚之怒）、「射击 × 目标关键词」无复合 tag（[ANTI-VEHICLE] 等增强）、6\" 距离档（引擎只有 8\"/12\"）、攻方自身战损档（机魂复苏）、增强授予整把新武器（TL-4Ø9）一律不编。",
+ "dsl_version": 1,
+ "faction": "AdM",
+ "entries": [
+  {
+   "table": "abilities",
+   "id": "000008382",
+   "side": "attacker",
+   "detachment": null,
+   "name_en": "Doctrina Imperatives",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "教义指令（军规）：每战轮在守护指令/征服指令中二选一，引擎无 imperative 状态开关——裸编任一分支等于把二选一当恒开，过度施加",
+    "守护指令的 [HEAVY]（驻停命中+1）与 BS 特征值改善 1、征服指令的 [ASSAULT] 与 WS 特征值改善 1，本可落 hit/modify·hit/bs_improve，但均被上面的二选一门锁住",
+    "两条指令末条的「本单位带 BATTLELINE 关键词 和/或 6\" 内有友军 ADEPTUS MECHANICUS BATTLELINE 单位」为友军邻接门，引擎只能表达目标关键词，无载体"
+   ],
+   "provenance": {
+    "text_sha256": "16d91ec0efcb39c82e2d6790d0adf66de63e8f4fc2616ce8d84d0a72886f175b"
+   },
+   "encoded_by": "manual-2026-07-21",
+   "weapon_filter": ""
+  },
+  {
+   "table": "abilities",
+   "id": "det000008384",
+   "side": "attacker",
+   "detachment": null,
+   "name_en": "Rad-bombardment",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "辐射轰炸：开局与每指挥阶段对敌方部署区单位掷骰造成致命伤 + 士气检定——部署区几何、外部致命伤池、士气均无载体"
+   ],
+   "provenance": {
+    "text_sha256": "e046884986cd34524b1fa156ab2c2366cd72131e9471c267d8f79d723c4ce055"
+   },
+   "encoded_by": "manual-2026-07-21",
+   "weapon_filter": "",
+   "materialize": {
+    "from_table": "detachments",
+    "from_id": "000008384",
+    "from_column": "rule_text"
+   }
+  },
+  {
+   "table": "abilities",
+   "id": "det000008559",
+   "side": "target",
+   "detachment": null,
+   "name_en": "Stealth Optimisation",
+   "name_zh": null,
+   "status": "partial",
+   "effects": [
+    {
+     "phase": "save",
+     "op": "cover",
+     "params": [],
+     "condition": [
+      "phase_shooting"
+     ],
+     "source": "潜行优化（Stealth：被远程攻击时获掩体收益）"
+    }
+   ],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "Stealth 只给 SKITARII INFANTRY / SKITARII MOUNTED / IRONSTRIDER BALLISTARII——引擎无「守方自身关键词」门，注入到任何守方都会生效，适用性由使用者自查",
+    "第二条款「攻方模型不在 12\" 内时 SICARIAN 目标获掩体」是反向距离门（引擎只有 ranged_within_8/12 正向档），无载体；且与已编的 Stealth 同为掩体通道不叠加"
+   ],
+   "provenance": {
+    "text_sha256": "7917da8b34dd82fa4c542b9d39371a85199f05b9eb14635e6f2dc0756c7933c9"
+   },
+   "encoded_by": "manual-2026-07-21",
+   "weapon_filter": "",
+   "materialize": {
+    "from_table": "detachments",
+    "from_id": "000008559",
+    "from_column": "rule_text"
+   }
+  },
+  {
+   "table": "abilities",
+   "id": "det000008563",
+   "side": "attacker",
+   "detachment": null,
+   "name_en": "Benedictions Of The Omnissiah",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "万机神的祝祷：开局在颂歌行列/野蛮引述中二选一并持续整场——二选一无分支开关，裸编任一支过度施加",
+    "颂歌行列（半射程内远程攻击 AP 改善 1）本可落 save/ap_improve；野蛮引述（冲锋回合近战 S+1、A+1）本可落 wound/s_improve + attacks/modify，均被二选一门锁住"
+   ],
+   "provenance": {
+    "text_sha256": "a4e11271003e87b8932722ec467a837f681304498aefde95ccc1b20dd4d8b137"
+   },
+   "encoded_by": "manual-2026-07-21",
+   "weapon_filter": "",
+   "materialize": {
+    "from_table": "detachments",
+    "from_id": "000008563",
+    "from_column": "rule_text"
+   }
+  },
+  {
+   "table": "abilities",
+   "id": "det000008567",
+   "side": "attacker",
+   "detachment": null,
+   "name_en": "Acquisition At Any Cost",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "不惜代价的获取：攻方或目标在「获取目标点」范围内时重掷致伤骰的「1」——目标点几何无载体，且引擎重掷只有「重掷失败」一种模式，重掷特定点数无通道"
+   ],
+   "provenance": {
+    "text_sha256": "8846316dde55ba6966b20a96f27a583d72d98a38ee7cc0c333f8c724a65a0858"
+   },
+   "encoded_by": "manual-2026-07-21",
+   "weapon_filter": "",
+   "materialize": {
+    "from_table": "detachments",
+    "from_id": "000008567",
+    "from_column": "rule_text"
+   }
+  },
+  {
+   "table": "abilities",
+   "id": "det000008571",
+   "side": "attacker",
+   "detachment": null,
+   "name_en": "Cyber-Psalm Programming",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "电子圣诗程序：移动特征值 +2\"、目标控制 +1——移动/OC 域无引擎载体"
+   ],
+   "provenance": {
+    "text_sha256": "e8d3363ba8b8e201eccf56d2e08a19dda0d8c08399aaf1a9388e796085ab31ad"
+   },
+   "encoded_by": "manual-2026-07-21",
+   "weapon_filter": "",
+   "materialize": {
+    "from_table": "detachments",
+    "from_id": "000008571",
+    "from_column": "rule_text"
+   }
+  },
+  {
+   "table": "abilities",
+   "id": "det000009280",
+   "side": "attacker",
+   "detachment": null,
+   "name_en": "Overload Machine Spirits",
+   "name_zh": null,
+   "status": "partial",
+   "effects": [
+    {
+     "phase": "save",
+     "op": "ap_improve",
+     "params": [
+      1
+     ],
+     "condition": [
+      "phase_shooting"
+     ],
+     "source": "机魂超载（远程武器 AP 特征值改善 1）"
+    }
+   ],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "机魂超载同时给这些远程武器 [HAZARDOUS]（自伤）——危险测试无引擎载体，编码只落了增益侧，对攻方结果构成高估",
+    "原文是「可以使用」的可选技能，本编码按恒用处理"
+   ],
+   "provenance": {
+    "text_sha256": "fa5aecd34bac5537911ef1a9523709c9758a26ce64eb2deab1d37b3664baa416"
+   },
+   "encoded_by": "manual-2026-07-21",
+   "weapon_filter": "",
+   "materialize": {
+    "from_table": "detachments",
+    "from_id": "000009280",
+    "from_column": "rule_text"
+   }
+  },
+  {
+   "table": "abilities",
+   "id": "det000009289",
+   "side": "attacker",
+   "detachment": null,
+   "name_en": "Procedural Elimination",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "程序化清除：每战轮在近战/远程中选一类，SKITARII 重掷该类命中骰的「1」——战轮二选一无开关，且重掷特定点数无通道"
+   ],
+   "provenance": {
+    "text_sha256": "abd4e18b518c85795fadc4e6f9e1e3be7ffd5f17c50f8668287296567e9fe644"
+   },
+   "encoded_by": "manual-2026-07-21",
+   "weapon_filter": "",
+   "materialize": {
+    "from_table": "detachments",
+    "from_id": "000009289",
+    "from_column": "rule_text"
+   }
+  },
+  {
+   "table": "abilities",
+   "id": "det000009297",
+   "side": "attacker",
+   "detachment": null,
+   "name_en": "Canticles of the Omnissiah",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "万机神的圣咏：加速骰/冲锋骰/士气检定 +1——移动与士气域均无引擎载体"
+   ],
+   "provenance": {
+    "text_sha256": "14544796a61f26fbbd6e5c054cf83fb5fbb50fa5cab9db218989dc21bcb7d5e7"
+   },
+   "encoded_by": "manual-2026-07-21",
+   "weapon_filter": "",
+   "materialize": {
+    "from_table": "detachments",
+    "from_id": "000009297",
+    "from_column": "rule_text"
+   }
+  },
+  {
+   "table": "abilities",
+   "id": "det000009744",
+   "side": "attacker",
+   "detachment": null,
+   "name_en": "Noospheric Transference",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "诺斯层传输：指挥阶段按战斗规模选 1-3 个单位授予 HALO OVERRIDE，再四选一 Override 技能——四选一无分支开关，裸编任一支过度施加",
+    "四支中「微致动器支撑」（T+1）本可落 wound/t_improve（守方向）；「静默伺服马达」（Stealth）本可落 save/cover；其余两支（移动 +2\"、加速后可冲锋）无载体"
+   ],
+   "provenance": {
+    "text_sha256": "6402dca305cc78274252062a96e4c0d026c07f349af9806d3b3652b867e9327e"
+   },
+   "encoded_by": "manual-2026-07-21",
+   "weapon_filter": "",
+   "materialize": {
+    "from_table": "detachments",
+    "from_id": "000009744",
+    "from_column": "rule_text"
+   }
+  },
+  {
+   "table": "abilities",
+   "id": "det000010746",
+   "side": "attacker",
+   "detachment": null,
+   "name_en": "Murderous Imperative",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "杀戮律令：守护指令开→重掷命中「1」；征服指令开→重掷致伤「1」——既依赖未建模的 imperative 状态，重掷特定点数也无通道（引擎只有重掷失败）"
+   ],
+   "provenance": {
+    "text_sha256": "7c26dcfb5c8e14684cd3d4951156941fefd81f2436cd233812fa780aa1a8bbf3"
+   },
+   "encoded_by": "manual-2026-07-21",
+   "weapon_filter": "",
+   "materialize": {
+    "from_table": "detachments",
+    "from_id": "000010746",
+    "from_column": "rule_text"
+   }
+  },
+  {
+   "table": "abilities",
+   "id": "detfp11e-admech-acquisitus",
+   "side": "attacker",
+   "detachment": null,
+   "name_en": "Noospheric Recon",
+   "name_zh": "诺斯层侦察",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "诺斯层侦察：授予 RECON AUGURY 关键词 + 「增幅占卜仪」标记敌军单位使其侦测范围 +3\"——关键词授予与侦测范围（detection range）均无引擎载体"
+   ],
+   "provenance": {
+    "text_sha256": "482cab5ede452a7b1028909fc1819fd1dee265cd3216f8cdd4263a5c8c5a59ae"
+   },
+   "encoded_by": "manual-2026-07-21",
+   "weapon_filter": "",
+   "materialize": {
+    "from_table": "detachments",
+    "from_id": "fp11e-admech-acquisitus",
+    "from_column": "rule_text"
+   }
+  },
+  {
+   "table": "abilities",
+   "id": "detfp11e-admech-lordsforge",
+   "side": "target",
+   "detachment": null,
+   "name_en": "War-Form Mantles",
+   "name_zh": "战形披挂",
+   "status": "partial",
+   "effects": [
+    {
+     "phase": "save",
+     "op": "invuln",
+     "params": [
+      4
+     ],
+     "condition": [],
+     "source": "战形披挂（友方 TECH-PRIEST 模型 4+ 特殊保护）"
+    },
+    {
+     "phase": "fnp",
+     "op": "fnp",
+     "params": [
+      5
+     ],
+     "condition": [],
+     "source": "战形披挂（友方 TECH-PRIEST 模型 无痛感 5+）"
+    }
+   ],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "两项减伤只给 TECH-PRIEST 模型——引擎无「守方自身关键词」门，注入到任何守方都会生效，适用性由使用者自查",
+    "「困惑数据播报」（D6 判定后令 12\" 内敌 VEHICLE 做 -1 士气检定 / 射击不破隐蔽）涉及士气与隐蔽域，无载体"
+   ],
+   "provenance": {
+    "text_sha256": "36578261b80ade50d808e850d72ac777150dc2c45c0539e1b103fea0652fd431"
+   },
+   "encoded_by": "manual-2026-07-21",
+   "weapon_filter": "",
+   "materialize": {
+    "from_table": "detachments",
+    "from_id": "fp11e-admech-lordsforge",
+    "from_column": "rule_text"
+   }
+  },
+  {
+   "table": "abilities",
+   "id": "detfp11e-admech-luminen",
+   "side": "attacker",
+   "detachment": null,
+   "name_en": "Cyber-Static Canticles",
+   "name_zh": "电子静滞圣咏",
+   "status": "partial",
+   "effects": [
+    {
+     "phase": "hit",
+     "op": "auto_wound",
+     "params": [],
+     "condition": [
+      "phase_shooting"
+     ],
+     "source": "电子静滞圣咏（友方 CORPUSCARII 单位远程攻击 [LETHAL HITS]）"
+    }
+   ],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "[LETHAL HITS] 只给 CORPUSCARII 单位——引擎无「攻方自身关键词」门，注入到任何攻方都会生效，适用性由使用者自查",
+    "第二条款「友方 FULGURITE 单位出手后治疗 D3 伤口」属治疗域，无载体",
+    "DATA-PSALM 互斥标签是编制层约束，与战斗链无关"
+   ],
+   "provenance": {
+    "text_sha256": "0f2c73c97647d6841202fea9488034adedeadf13d721905633756e8708d94116"
+   },
+   "encoded_by": "manual-2026-07-21",
+   "weapon_filter": "",
+   "materialize": {
+    "from_table": "detachments",
+    "from_id": "fp11e-admech-luminen",
+    "from_column": "rule_text"
+   }
+  },
+  {
+   "table": "stratagems",
+   "id": "000008386002",
+   "side": "target",
+   "detachment": "Rad-Zone Corps",
+   "name_en": "BALEFUL HALO",
+   "name_zh": null,
+   "status": "encoded",
+   "effects": [
+    {
+     "phase": "wound",
+     "op": "modify",
+     "params": [
+      -1
+     ],
+     "condition": [
+      "phase_melee"
+     ],
+     "source": "凶兆光环（近战阶段触发、持续到回合结束——近战是回合最后一个攻击阶段，故本回合仅近战可受益，挂 phase_melee）"
+    }
+   ],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [],
+   "provenance": {
+    "text_sha256": "e8aa6e67fe787de2f16a7c953a64a10ced294d2bd7e365968d534cea895f4c19"
+   },
+   "encoded_by": "manual-2026-07-21",
+   "weapon_filter": ""
+  },
+  {
+   "table": "stratagems",
+   "id": "000008386003",
+   "side": "attacker",
+   "detachment": "Rad-Zone Corps",
+   "name_en": "EXTINCTION ORDER",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "灭绝指令：对目标点范围内敌军掷骰造成致命伤与士气检定——外部致命伤池无载体"
+   ],
+   "provenance": {
+    "text_sha256": "d726905b2d4af1984d5f468663dd994cdccc2dd8ad170646bc958fa39c5ccb3b"
+   },
+   "encoded_by": "manual-2026-07-21",
+   "weapon_filter": ""
+  },
+  {
+   "table": "stratagems",
+   "id": "000008386004",
+   "side": "attacker",
+   "detachment": "Rad-Zone Corps",
+   "name_en": "AGGRESSOR IMPERATIVE",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "侵略者律令：加速不掷骰、改为移动 +6\"——移动域无载体"
+   ],
+   "provenance": {
+    "text_sha256": "3f31ebb73a8bd25c89fe2026cb92a5a8c21ac078092cdcf2e9a39a59ae540d74"
+   },
+   "encoded_by": "manual-2026-07-21",
+   "weapon_filter": ""
+  },
+  {
+   "table": "stratagems",
+   "id": "000008386005",
+   "side": "attacker",
+   "detachment": "Rad-Zone Corps",
+   "name_en": "PRE-CALIBRATED PURGE SOLUTION",
+   "name_zh": null,
+   "status": "partial",
+   "effects": [
+    {
+     "phase": "hit",
+     "op": "reroll",
+     "params": [
+      "fail"
+     ],
+     "condition": [
+      "phase_shooting"
+     ],
+     "source": "预校准净化方案（远程攻击可重掷命中骰＝重掷失败）"
+    }
+   ],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "生效前提是目标位于对手部署区内——部署区几何无载体，编码按恒满足处理（高估）"
+   ],
+   "provenance": {
+    "text_sha256": "a3b6015906792bfb87c705d10a7969ff41a6adfba48bce671deea0300d93e870"
+   },
+   "encoded_by": "manual-2026-07-21",
+   "weapon_filter": ""
+  },
+  {
+   "table": "stratagems",
+   "id": "000008386006",
+   "side": "attacker",
+   "detachment": "Rad-Zone Corps",
+   "name_en": "LETHAL DOSAGE",
+   "name_zh": null,
+   "status": "encoded",
+   "effects": [
+    {
+     "phase": "hit",
+     "op": "auto_wound",
+     "params": [],
+     "condition": [
+      "phase_shooting"
+     ],
+     "source": "致命剂量（远程武器 [LETHAL HITS]）"
+    }
+   ],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [],
+   "provenance": {
+    "text_sha256": "7eb1c9b9afce3a0ca831736ef94244225be56acf89370bd25f3d5b4802debe3e"
+   },
+   "encoded_by": "manual-2026-07-21",
+   "weapon_filter": ""
+  },
+  {
+   "table": "stratagems",
+   "id": "000008386007",
+   "side": "target",
+   "detachment": "Rad-Zone Corps",
+   "name_en": "BULWARK IMPERATIVE",
+   "name_zh": null,
+   "status": "encoded",
+   "effects": [
+    {
+     "phase": "save",
+     "op": "invuln",
+     "params": [
+      4
+     ],
+     "condition": [
+      "phase_shooting"
+     ],
+     "source": "壁垒律令（对手射击阶段本单位 4+ 特殊保护；持续到该阶段结束故挂 phase_shooting）"
+    }
+   ],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [],
+   "provenance": {
+    "text_sha256": "4aa7b45e820f52d4566e6aff9f6660e483db8bd26ad5f9e81b1830c1fcf5e7fa"
+   },
+   "encoded_by": "manual-2026-07-21",
+   "weapon_filter": ""
+  },
+  {
+   "table": "stratagems",
+   "id": "000008561002",
+   "side": "target",
+   "detachment": "Skitarii Hunter Cohort",
+   "name_en": "BIONIC ENDURANCE",
+   "name_zh": null,
+   "status": "encoded",
+   "effects": [
+    {
+     "phase": "fnp",
+     "op": "fnp",
+     "params": [
+      5
+     ],
+     "condition": [],
+     "source": "仿生耐力（无痛感 5+；WHEN=对手射击阶段或近战阶段，两相位皆可故不加门）"
+    }
+   ],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [],
+   "provenance": {
+    "text_sha256": "ba5ddaa3ebda436b45d842c83e0ab82df82bad533901515141a66b76c66e235a"
+   },
+   "encoded_by": "manual-2026-07-21",
+   "weapon_filter": ""
+  },
+  {
+   "table": "stratagems",
+   "id": "000008561003",
+   "side": "attacker",
+   "detachment": "Skitarii Hunter Cohort",
+   "name_en": "BINHARIC OFFENCE",
+   "name_zh": null,
+   "status": "encoded",
+   "effects": [
+    {
+     "phase": "save",
+     "op": "ap_improve",
+     "params": [
+      1
+     ],
+     "condition": [],
+     "source": "二进制攻势（本单位全部武器 AP 特征值改善 1；WHEN=射击阶段或近战阶段开始，两相位皆可且原文未限武器类型，故不加门）"
+    }
+   ],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [],
+   "provenance": {
+    "text_sha256": "8a62860c6a12ac03fad60b2cee8d16fd69e079038362961a2aa8721ea33a841a"
+   },
+   "encoded_by": "manual-2026-07-21",
+   "weapon_filter": ""
+  },
+  {
+   "table": "stratagems",
+   "id": "000008561004",
+   "side": "attacker",
+   "detachment": "Skitarii Hunter Cohort",
+   "name_en": "EXPEDITED PURGE PROTOCOL",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "加速净化协议：加速后仍可宣告冲锋——移动域无载体"
+   ],
+   "provenance": {
+    "text_sha256": "b70225bdb5d9a4e21605ef3910a5e74bb847ba6c1b3f9c30468c9bffc13a9cab"
+   },
+   "encoded_by": "manual-2026-07-21",
+   "weapon_filter": ""
+  },
+  {
+   "table": "stratagems",
+   "id": "000008561005",
+   "side": "attacker",
+   "detachment": "Skitarii Hunter Cohort",
+   "name_en": "ISOLATE AND DESTROY",
+   "name_zh": null,
+   "status": "encoded",
+   "effects": [
+    {
+     "phase": "wound",
+     "op": "modify",
+     "params": [
+      1
+     ],
+     "condition": [
+      "phase_shooting"
+     ],
+     "source": "孤立摧毁（致伤骰 +1；WHEN=我方射击阶段且持续至该阶段结束故挂 phase_shooting。前提「目标 6\" 内无其他敌军单位」在 1v1 模拟里天然满足，同 [CLEAVE] 单目标前提处理）"
+    }
+   ],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [],
+   "provenance": {
+    "text_sha256": "aeb7639b6b5e370cbd6b0938648e2cc83991bd4c01989f14508c83929b5d7f29"
+   },
+   "encoded_by": "manual-2026-07-21",
+   "weapon_filter": ""
+  },
+  {
+   "table": "stratagems",
+   "id": "000008561006",
+   "side": "attacker",
+   "detachment": "Skitarii Hunter Cohort",
+   "name_en": "SHROUD PROTOCOLS",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "遮蔽协议：只有 18\" 内的攻方模型才能选本单位为远程攻击目标——属选取限制而非战斗数值修正，无载体"
+   ],
+   "provenance": {
+    "text_sha256": "c5611003a3140755aa11c3fa4d970ce179acd114c74780eb90a3e60b3b5492eb"
+   },
+   "encoded_by": "manual-2026-07-21",
+   "weapon_filter": ""
+  },
+  {
+   "table": "stratagems",
+   "id": "000008561007",
+   "side": "attacker",
+   "detachment": "Skitarii Hunter Cohort",
+   "name_en": "PROGRAMMED WITHDRAWAL",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "程序化撤离：移出战场进入战略预备队——预备队域无载体"
+   ],
+   "provenance": {
+    "text_sha256": "943a882923c83b6ed0aef7caffa66b99a7fee493238e1e95f11e289b825b85e2"
+   },
+   "encoded_by": "manual-2026-07-21",
+   "weapon_filter": ""
+  },
+  {
+   "table": "stratagems",
+   "id": "000008565002",
+   "side": "attacker",
+   "detachment": "Data-Psalm Conclave",
+   "name_en": "INCANTATION OF THE IRON SOUL",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "铁魂咒言：仅对致命伤的无痛感 4+——引擎 FNP 无「仅致命伤」分档通道，裸编成通用 FNP 会大幅高估"
+   ],
+   "provenance": {
+    "text_sha256": "f3787f34e2071b5ee9a32622df78ee27679d1c6e7a1b63013bd672c3cdbd691f"
+   },
+   "encoded_by": "manual-2026-07-21",
+   "weapon_filter": ""
+  },
+  {
+   "table": "stratagems",
+   "id": "000008565003",
+   "side": "attacker",
+   "detachment": "Data-Psalm Conclave",
+   "name_en": "CHANT OF THE REMORSELESS FIST",
+   "name_zh": null,
+   "status": "encoded",
+   "effects": [
+    {
+     "phase": "wound",
+     "op": "modify",
+     "params": [
+      1
+     ],
+     "condition": [
+      "phase_melee"
+     ],
+     "source": "无情之拳颂唱（近战攻击致伤骰 +1；WHEN=近战阶段，仅近战从句故挂 phase_melee）"
+    }
+   ],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [],
+   "provenance": {
+    "text_sha256": "8e08cf904fc8e9f97bbb8e931363a1577785245c7953c9cb4b5999fca95e8ffd"
+   },
+   "encoded_by": "manual-2026-07-21",
+   "weapon_filter": ""
+  },
+  {
+   "table": "stratagems",
+   "id": "000008565004",
+   "side": "attacker",
+   "detachment": "Data-Psalm Conclave",
+   "name_en": "VERSE OF VENGEANCE",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "复仇诗节：被消灭的模型 4+ 不移出、可延后出手——复活/出手顺序域无载体"
+   ],
+   "provenance": {
+    "text_sha256": "ccf54dd8f66116f86d1f410133c4f2a0d7f892cb9b91870af643f884a96d4a8b"
+   },
+   "encoded_by": "manual-2026-07-21",
+   "weapon_filter": ""
+  },
+  {
+   "table": "stratagems",
+   "id": "000008565005",
+   "side": "attacker",
+   "detachment": "Data-Psalm Conclave",
+   "name_en": "TRIBUTE OF EMPHATIC VENERATION",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "热切崇敬之贡：敌军士气检定失败才施加命中 -1——士气检定无载体，无条件编码等于把「检定必失败」当前提，过度施加"
+   ],
+   "provenance": {
+    "text_sha256": "918b79078a5f750854ae619b0be3d9fb90486b385fdc737260f1c331e80e8c75"
+   },
+   "encoded_by": "manual-2026-07-21",
+   "weapon_filter": ""
+  },
+  {
+   "table": "stratagems",
+   "id": "000008565006",
+   "side": "attacker",
+   "detachment": "Data-Psalm Conclave",
+   "name_en": "LITANY OF THE ELECTROMANCER",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "电术士祷文：对 6\" 内每个敌军单位掷 D6，5+ 造成 D3 致命伤——外部致命伤池无载体"
+   ],
+   "provenance": {
+    "text_sha256": "47090c16594fed551ca8ca194e33998aed982e680b4789c60eaa75cc69746a98"
+   },
+   "encoded_by": "manual-2026-07-21",
+   "weapon_filter": ""
+  },
+  {
+   "table": "stratagems",
+   "id": "000008565007",
+   "side": "target",
+   "detachment": "Data-Psalm Conclave",
+   "name_en": "LUMINESCENT BLESSING",
+   "name_zh": null,
+   "status": "encoded",
+   "effects": [
+    {
+     "phase": "save",
+     "op": "invuln",
+     "params": [
+      4
+     ],
+     "condition": [
+      "phase_shooting"
+     ],
+     "source": "流明祝福（对手射击阶段本单位 4+ 特殊保护；持续到该阶段结束故挂 phase_shooting）"
+    }
+   ],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [],
+   "provenance": {
+    "text_sha256": "ce50fe4d672772b84373c2315694e9916b5adf20b90d29fd4bf27c123c37578a"
+   },
+   "encoded_by": "manual-2026-07-21",
+   "weapon_filter": ""
+  },
+  {
+   "table": "stratagems",
+   "id": "000008569002",
+   "side": "attacker",
+   "detachment": "Explorator Maniple",
+   "name_en": "CACHED ACQUISITION",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "缓存获取：单位被消灭后仍保有目标点控制权——目标点/控制域无载体"
+   ],
+   "provenance": {
+    "text_sha256": "90b613356bec798d1890a8e3e0078a6b738e4c6018d11ad850f2090fe99b2cd6"
+   },
+   "encoded_by": "manual-2026-07-21",
+   "weapon_filter": ""
+  },
+  {
+   "table": "stratagems",
+   "id": "000008569003",
+   "side": "attacker",
+   "detachment": "Explorator Maniple",
+   "name_en": "PRIORITY RECLAMATION",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "优先回收：巩固移动 3\"→6\"——移动域无载体"
+   ],
+   "provenance": {
+    "text_sha256": "1364247f52fef1e6614b90bf36fc7cb243e59c8b72d1dc483fab4311c44692cb"
+   },
+   "encoded_by": "manual-2026-07-21",
+   "weapon_filter": ""
+  },
+  {
+   "table": "stratagems",
+   "id": "000008569004",
+   "side": "attacker",
+   "detachment": "Explorator Maniple",
+   "name_en": "INFOSLAVE SKULL",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "情报奴颅：把一个目标点额外算作「获取目标点」——目标点域无载体"
+   ],
+   "provenance": {
+    "text_sha256": "ece3ac13dbcc33d6ba969b50938d944d6ff36510ad9ddd33a87523c53b3f9d11"
+   },
+   "encoded_by": "manual-2026-07-21",
+   "weapon_filter": ""
+  },
+  {
+   "table": "stratagems",
+   "id": "000008569005",
+   "side": "attacker",
+   "detachment": "Explorator Maniple",
+   "name_en": "AUTO-ORACULAR RETRIEVAL",
+   "name_zh": null,
+   "status": "partial",
+   "effects": [
+    {
+     "phase": "wound",
+     "op": "modify",
+     "params": [
+      1
+     ],
+     "condition": [
+      "phase_shooting"
+     ],
+     "source": "自动神谕回收（远程攻击致伤骰 +1）"
+    }
+   ],
+   "requires_toggles": [
+    "disembarked_this_turn"
+   ],
+   "not_modeled_notes_zh": [
+    "目标须在「获取目标点」范围内的几何门无载体，编码按恒满足处理（高估）",
+    "开关语义=假设本单位本回合已从运输载具下车（原文 TARGET 前提）"
+   ],
+   "provenance": {
+    "text_sha256": "4d1016184b7811be13fb4b006d91b76618c5d01ee579fbea61254e2a7021e3a4"
+   },
+   "encoded_by": "manual-2026-07-21",
+   "weapon_filter": ""
+  },
+  {
+   "table": "stratagems",
+   "id": "000008569006",
+   "side": "target",
+   "detachment": "Explorator Maniple",
+   "name_en": "INCENSE EXHAUSTS",
+   "name_zh": null,
+   "status": "encoded",
+   "effects": [
+    {
+     "phase": "save",
+     "op": "cover",
+     "params": [],
+     "condition": [
+      "phase_shooting"
+     ],
+     "source": "熏香排气（对手射击阶段本单位获 Stealth 与掩体收益；11 版二者同属掩体通道不叠加）"
+    }
+   ],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [],
+   "provenance": {
+    "text_sha256": "698233d0c11084aa1ac208a76d8e81091ab7b60cfc2c6d103246c560e1120d70"
+   },
+   "encoded_by": "manual-2026-07-21",
+   "weapon_filter": ""
+  },
+  {
+   "table": "stratagems",
+   "id": "000008569007",
+   "side": "attacker",
+   "detachment": "Explorator Maniple",
+   "name_en": "REACTIVE SAFEGUARD",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "反应性保全：登上运输载具——登舰/移动域无载体"
+   ],
+   "provenance": {
+    "text_sha256": "b5be573069c0e80e4abb51d72dcfdee3279dba41a237462c78d7f5b281456dc4"
+   },
+   "encoded_by": "manual-2026-07-21",
+   "weapon_filter": ""
+  },
+  {
+   "table": "stratagems",
+   "id": "000008573002",
+   "side": "attacker",
+   "detachment": "Cohort Cybernetica",
+   "name_en": "MOTIVE IMPERATIVE",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "驱动律令：移动特征值 +3\"、加速骰与冲锋骰 +1——移动域无载体"
+   ],
+   "provenance": {
+    "text_sha256": "d302784da7b5a062fda88bfc944f2601c6a3e6eee6263971d6203472db26a372"
+   },
+   "encoded_by": "manual-2026-07-21",
+   "weapon_filter": ""
+  },
+  {
+   "table": "stratagems",
+   "id": "000008573003",
+   "side": "attacker",
+   "detachment": "Cohort Cybernetica",
+   "name_en": "AUTO-DIVINATORY TARGETING",
+   "name_zh": null,
+   "status": "partial",
+   "effects": [
+    {
+     "phase": "save",
+     "op": "ignores_cover",
+     "params": [],
+     "condition": [
+      "phase_shooting"
+     ],
+     "source": "自动占卜索敌（远程武器获 [IGNORES COVER]）"
+    }
+   ],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "同时把远程武器 BS 特征值 SET 为 3+——引擎只有相对的 bs_improve，无「特征值置为定值」通道（且 SET 与后续 Protector 指令 +1 的叠加序也无载体）",
+    "「只能瞄准所选目标点范围内的单位」是目标限制，1v1 模拟按恒满足处理"
+   ],
+   "provenance": {
+    "text_sha256": "6f7af69f0cd81d664b1eadf769c014f3abc1dbd3cc05312a06004892c1907b01"
+   },
+   "encoded_by": "manual-2026-07-21",
+   "weapon_filter": ""
+  },
+  {
+   "table": "stratagems",
+   "id": "000008573004",
+   "side": "attacker",
+   "detachment": "Cohort Cybernetica",
+   "name_en": "MACHINE SPIRIT RESURGENT",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "机魂复苏：本方单位低于满编→重掷命中骰，低于半编→并重掷致伤骰——引擎的 target_below_starting/target_below_half 是「目标」战损档，「攻方自身战损」无对应态势字段，无载体"
+   ],
+   "provenance": {
+    "text_sha256": "864acdf1ff1aa15e2aa2a65a2080b58341ed5e088231791deda4bc046d8572a8"
+   },
+   "encoded_by": "manual-2026-07-21",
+   "weapon_filter": ""
+  },
+  {
+   "table": "stratagems",
+   "id": "000008573005",
+   "side": "attacker",
+   "detachment": "Cohort Cybernetica",
+   "name_en": "MACHINE SUPERIORITY",
+   "name_zh": null,
+   "status": "partial",
+   "effects": [
+    {
+     "phase": "hit",
+     "op": "ignore_hit_mods",
+     "params": [],
+     "condition": [],
+     "source": "机械优越（忽略不利命中修正；引擎实现只忽略负修正、保留正修正，与原文「可忽略任意或全部修正」的最优选择一致）"
+    }
+   ],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "撤退后仍可射击属移动域，无载体",
+    "原文可忽略「特征值与任何骰/检定」的全部修正（保存投掷除外）——引擎只有命中修正一路消费点，对致伤/伤害/保存等其他修正的忽略未建模（欠建模）"
+   ],
+   "provenance": {
+    "text_sha256": "47331ca8421d733001ece37366ed0e9978ebbe012a56ddb5d29daf069dc787c8"
+   },
+   "encoded_by": "manual-2026-07-21",
+   "weapon_filter": ""
+  },
+  {
+   "table": "stratagems",
+   "id": "000008573006",
+   "side": "attacker",
+   "detachment": "Cohort Cybernetica",
+   "name_en": "TRANSCENDENT COGITATION",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "超验认知：令征服指令与守护指令同时生效——依赖未建模的 imperative 状态"
+   ],
+   "provenance": {
+    "text_sha256": "4bfb6ebf54a693e1b9dd9e222fd4a76a62313c334c7fcc63dd414409476f64e8"
+   },
+   "encoded_by": "manual-2026-07-21",
+   "weapon_filter": ""
+  },
+  {
+   "table": "stratagems",
+   "id": "000008573007",
+   "side": "target",
+   "detachment": "Cohort Cybernetica",
+   "name_en": "BENEVOLENCE OF THE OMNISSIAH",
+   "name_zh": null,
+   "status": "partial",
+   "effects": [
+    {
+     "phase": "fnp",
+     "op": "fnp",
+     "params": [
+      6
+     ],
+     "condition": [],
+     "source": "万机神的仁慈（无痛感 6+）"
+    }
+   ],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "原文对致命伤改善为无痛感 5+——引擎 FNP 是单一阈值，无「按伤害来源分档」通道，只编了通用 6+（对致命伤欠建模）"
+   ],
+   "provenance": {
+    "text_sha256": "7ebff4d857b8847d24f1de9b15f88cf87dfc17f7628cde854d14bb25ccdf08d2"
+   },
+   "encoded_by": "manual-2026-07-21",
+   "weapon_filter": ""
+  },
+  {
+   "table": "stratagems",
+   "id": "000009282002",
+   "side": "attacker",
+   "detachment": "Electromartyrs",
+   "name_en": "AUTO-VENGEANCE",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "自动复仇：被消灭的模型 3+ 不移出、可延后出手——复活/出手顺序域无载体"
+   ],
+   "provenance": {
+    "text_sha256": "5452ee169a4ca82866741e46f20ae07e74e2b7470e2df7e48a89047e9aa2bf32"
+   },
+   "encoded_by": "manual-2026-07-21",
+   "weapon_filter": ""
+  },
+  {
+   "table": "stratagems",
+   "id": "000009282003",
+   "side": "attacker",
+   "detachment": "Electromartyrs",
+   "name_en": "BALLISTIC SYNCHRONY",
+   "name_zh": null,
+   "status": "encoded",
+   "effects": [
+    {
+     "phase": "hit",
+     "op": "auto_wound",
+     "params": [],
+     "condition": [
+      "phase_shooting"
+     ],
+     "source": "弹道同步（远程武器 [LETHAL HITS]）"
+    }
+   ],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [],
+   "provenance": {
+    "text_sha256": "7eb1c9b9afce3a0ca831736ef94244225be56acf89370bd25f3d5b4802debe3e"
+   },
+   "encoded_by": "manual-2026-07-21",
+   "weapon_filter": ""
+  },
+  {
+   "table": "stratagems",
+   "id": "000009282004",
+   "side": "attacker",
+   "detachment": "Electromartyrs",
+   "name_en": "OMNI-TARGETERS",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "全向索敌器：授予 [PISTOL]（无战斗数值效果）；已有 [PISTOL] 的武器打 6\" 内目标命中 +1——按 [PISTOL] 关键词挑武器不是名字子串，weapon_filter 选不中；且 6\" 档引擎无对应距离 tag"
+   ],
+   "provenance": {
+    "text_sha256": "8233bb16a5130703940cf2f3ba48e8e6f3b332ec6591a9f05ca859d24c37df75"
+   },
+   "encoded_by": "manual-2026-07-21",
+   "weapon_filter": ""
+  },
+  {
+   "table": "stratagems",
+   "id": "000009282005",
+   "side": "target",
+   "detachment": "Electromartyrs",
+   "name_en": "SAVIOUR SYSTEMS",
+   "name_zh": null,
+   "status": "encoded",
+   "effects": [
+    {
+     "phase": "wound",
+     "op": "modify",
+     "params": [
+      -1
+     ],
+     "condition": [
+      "phase_shooting"
+     ],
+     "source": "救援系统（对手射击阶段瞄准本单位的攻击致伤骰 -1；持续到该阶段结束故挂 phase_shooting）"
+    }
+   ],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [],
+   "provenance": {
+    "text_sha256": "75709a0c60087fa839bcb520afae84ca62a3d7b6d3969bc45afbad2a7c2fc528"
+   },
+   "encoded_by": "manual-2026-07-21",
+   "weapon_filter": ""
+  },
+  {
+   "table": "stratagems",
+   "id": "000009291002",
+   "side": "target",
+   "detachment": "Response Clade",
+   "name_en": "RESPONSIVE SHIELDING",
+   "name_zh": null,
+   "status": "partial",
+   "effects": [
+    {
+     "phase": "save",
+     "op": "invuln",
+     "params": [
+      4
+     ],
+     "condition": [],
+     "source": "响应护盾（对手射击阶段或近战阶段本单位 4+ 特殊保护；两相位皆可故不加门）"
+    }
+   ],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "生效前提是本单位位于某目标点范围内——目标点几何无载体，编码按恒满足处理（高估）"
+   ],
+   "provenance": {
+    "text_sha256": "d16240ec389fbba756982d2b29c67f3886fa80ee2bbf884a105ca6a56820d5bb"
+   },
+   "encoded_by": "manual-2026-07-21",
+   "weapon_filter": ""
+  },
+  {
+   "table": "stratagems",
+   "id": "000009291003",
+   "side": "attacker",
+   "detachment": "Response Clade",
+   "name_en": "ACCESS OVERRIDES",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "权限覆写：尝试操作舱门——登舰行动地图机制无载体"
+   ],
+   "provenance": {
+    "text_sha256": "2d539c94f54ea38b5795568199c0b5d785d9707ab1c83deef51690f35f79092a"
+   },
+   "encoded_by": "manual-2026-07-21",
+   "weapon_filter": ""
+  },
+  {
+   "table": "stratagems",
+   "id": "000009291004",
+   "side": "attacker",
+   "detachment": "Response Clade",
+   "name_en": "PRECOGNITATED FIREFIELDS",
+   "name_zh": null,
+   "status": "partial",
+   "effects": [
+    {
+     "phase": "hit",
+     "op": "extra_hits",
+     "params": [
+      1
+     ],
+     "condition": [
+      "phase_shooting"
+     ],
+     "source": "预知火网（远程武器 [SUSTAINED HITS 1]）"
+    }
+   ],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "BATTLELINE 单位改为 [SUSTAINED HITS 2]——引擎无「攻方自身关键词」分档门，保守只编基础档 1（对 BATTLELINE 单位欠建模）"
+   ],
+   "provenance": {
+    "text_sha256": "c000835ca68349c0088f7aad05f7ebb61b82011c6ee7a08e017696dabb19ac96"
+   },
+   "encoded_by": "manual-2026-07-21",
+   "weapon_filter": ""
+  },
+  {
+   "table": "stratagems",
+   "id": "000009291005",
+   "side": "attacker",
+   "detachment": "Response Clade",
+   "name_en": "INTEGRATIVE WITHDRAWAL",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "整合撤离：撤退后仍可射击 + 关闭舱门——移动与舱门机制无载体"
+   ],
+   "provenance": {
+    "text_sha256": "bd4f1264e89ee3ae2d48ef3d09966c6b45493d179c15718db51b868007fd5701"
+   },
+   "encoded_by": "manual-2026-07-21",
+   "weapon_filter": ""
+  },
+  {
+   "table": "stratagems",
+   "id": "000009299002",
+   "side": "attacker",
+   "detachment": "Machine Cult",
+   "name_en": "ELECTROGHEIST VISITATIONS",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "电灵显现：攻方模型在 6\" 内时命中 -1——引擎距离档只有 8\"/12\"，8\" 档反向蕴含 6\"，裸编会对 6\"-8\" 的攻击误放行（过度施加），无精确载体"
+   ],
+   "provenance": {
+    "text_sha256": "6d2f7f901c1e3d09b86e572bc015c7762986f2ef4ceb5cdd115774ca938e3e9a"
+   },
+   "encoded_by": "manual-2026-07-21",
+   "weapon_filter": ""
+  },
+  {
+   "table": "stratagems",
+   "id": "000009299003",
+   "side": "attacker",
+   "detachment": "Machine Cult",
+   "name_en": "OMNISSIAH’S GUIDANCE",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "万机神的指引：判定可见性时忽略本单位其他模型——可见性域无载体"
+   ],
+   "provenance": {
+    "text_sha256": "018882746c35d9b9bbf4c5e8fd408cbde45dbd986cc0e51cc38d86b6e0320d0b"
+   },
+   "encoded_by": "manual-2026-07-21",
+   "weapon_filter": ""
+  },
+  {
+   "table": "stratagems",
+   "id": "000009299004",
+   "side": "attacker",
+   "detachment": "Machine Cult",
+   "name_en": "POWER OF THE MOTIVE FORCE",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "驱动之力：加速后仍可宣告冲锋——移动域无载体"
+   ],
+   "provenance": {
+    "text_sha256": "c00dbf422ea4b465308b8f14048b1f46646ca239c3ae9648469851a542f90c30"
+   },
+   "encoded_by": "manual-2026-07-21",
+   "weapon_filter": ""
+  },
+  {
+   "table": "stratagems",
+   "id": "000009299005",
+   "side": "attacker",
+   "detachment": "Machine Cult",
+   "name_en": "TETHER-TENDRILS",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "缆索触须：迫使敌军撤退时做绝望逃脱检定——士气/移动域无载体"
+   ],
+   "provenance": {
+    "text_sha256": "4a7f68ff352bfa70281adf7fc2a7071cb1f5214c39e9bab2dc3bd4609f76b048"
+   },
+   "encoded_by": "manual-2026-07-21",
+   "weapon_filter": ""
+  },
+  {
+   "table": "stratagems",
+   "id": "000009746002",
+   "side": "attacker",
+   "detachment": "Haloscreed Battle Clade",
+   "name_en": "ERADICATION PROTOCOLS",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "清除协议：重掷致伤骰的「1」（HALO OVERRIDE 单位并重掷命中「1」）——引擎重掷只有「重掷失败」，重掷特定点数无通道"
+   ],
+   "provenance": {
+    "text_sha256": "db4991bd4d79c4b0205d813b1f256785d77fa18192cb756f8cb3bc0a8ba61293"
+   },
+   "encoded_by": "manual-2026-07-21",
+   "weapon_filter": ""
+  },
+  {
+   "table": "stratagems",
+   "id": "000009746003",
+   "side": "attacker",
+   "detachment": "Haloscreed Battle Clade",
+   "name_en": "TARGETING OVERRIDE",
+   "name_zh": null,
+   "status": "encoded",
+   "effects": [
+    {
+     "phase": "hit",
+     "op": "crit_threshold",
+     "params": [
+      5
+     ],
+     "condition": [],
+     "source": "索敌覆写（未修正命中骰 5+ 即暴击命中；WHEN=射击阶段或近战阶段，两相位皆可故不加门）"
+    }
+   ],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [],
+   "provenance": {
+    "text_sha256": "9d19494b5f0ae83774fc6ed29ff131957acc342304ad389f20a153dd6f4a809a"
+   },
+   "encoded_by": "manual-2026-07-21",
+   "weapon_filter": ""
+  },
+  {
+   "table": "stratagems",
+   "id": "000009746004",
+   "side": "attacker",
+   "detachment": "Haloscreed Battle Clade",
+   "name_en": "NEURAL OVERLOAD",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "神经过载：自受 D3 致命伤换取一项 Override 技能——四选一 Override 与自伤均无载体"
+   ],
+   "provenance": {
+    "text_sha256": "6fde0f09f42a2834023e5f45f692a109573ff293f8c164e259db1c1e5668d5ef"
+   },
+   "encoded_by": "manual-2026-07-21",
+   "weapon_filter": ""
+  },
+  {
+   "table": "stratagems",
+   "id": "000009746005",
+   "side": "attacker",
+   "detachment": "Haloscreed Battle Clade",
+   "name_en": "AGGRESSIVE IMPULSE",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "侵略性冲动：下车后仍可宣告冲锋——移动/登舰域无载体"
+   ],
+   "provenance": {
+    "text_sha256": "09a729f545a4e26651cd5680550e892d07aa01d75cd3ce6c9db22dcc8d219e6a"
+   },
+   "encoded_by": "manual-2026-07-21",
+   "weapon_filter": ""
+  },
+  {
+   "table": "stratagems",
+   "id": "000009746006",
+   "side": "attacker",
+   "detachment": "Haloscreed Battle Clade",
+   "name_en": "GUIDED RETREAT",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "引导撤退：撤退后仍可射击与冲锋、重掷绝望逃脱——移动/检定域无载体"
+   ],
+   "provenance": {
+    "text_sha256": "8c7071695863de590024be7c98c88fe25965559a290a92f5603d57c1e5191ded"
+   },
+   "encoded_by": "manual-2026-07-21",
+   "weapon_filter": ""
+  },
+  {
+   "table": "stratagems",
+   "id": "000009746007",
+   "side": "attacker",
+   "detachment": "Haloscreed Battle Clade",
+   "name_en": "ANALYTICAL DIVINATION",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "分析式占卜：对手移动阶段做一次普通移动——移动域无载体"
+   ],
+   "provenance": {
+    "text_sha256": "8849de1e85a401e36ac173a2affd2a7b616bedb3f8fb82872bdefce27ce05db1"
+   },
+   "encoded_by": "manual-2026-07-21",
+   "weapon_filter": ""
+  },
+  {
+   "table": "stratagems",
+   "id": "000010748002",
+   "side": "attacker",
+   "detachment": "Eradication Cohort",
+   "name_en": "SERVO‑DRIVEN CHARGE",
+   "name_zh": null,
+   "status": "encoded",
+   "effects": [
+    {
+     "phase": "wound",
+     "op": "modify",
+     "params": [
+      1
+     ],
+     "condition": [
+      "melee_charging"
+     ],
+     "source": "伺服驱动冲锋（近战武器获 [LANCE]：冲锋回合近战致伤 +1；melee_charging 复合门=近战阶段 × 本回合冲锋，裸 charging 会在射击阶段误放行）"
+    }
+   ],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [],
+   "provenance": {
+    "text_sha256": "91ac8ed61084048ef616610bf9557851ae21eb204123500ad6492cb83ae1d7cf"
+   },
+   "encoded_by": "manual-2026-07-21",
+   "weapon_filter": ""
+  },
+  {
+   "table": "stratagems",
+   "id": "000010748003",
+   "side": "attacker",
+   "detachment": "Eradication Cohort",
+   "name_en": "UNRELENTING AGGRESSION",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "不懈进攻：撤退后仍可射击（SKITARII 并可冲锋）——移动域无载体"
+   ],
+   "provenance": {
+    "text_sha256": "4bfd4b7ebffc5ba470c8f50a0dd2767a28ef874f200cacfbd9f9f365475b9c20"
+   },
+   "encoded_by": "manual-2026-07-21",
+   "weapon_filter": ""
+  },
+  {
+   "table": "stratagems",
+   "id": "000010748004",
+   "side": "attacker",
+   "detachment": "Eradication Cohort",
+   "name_en": "UNSHACKLED WRATH",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "解缚之怒：在 [SUSTAINED HITS 1] / [LETHAL HITS] 中选一，或三者全上并附带 [HAZARDOUS]——多选一无分支开关，裸编任一支过度施加；[HAZARDOUS] 自伤亦无载体，编「全上」分支会双向高估"
+   ],
+   "provenance": {
+    "text_sha256": "49be9385ec2472124d910abdd1e7fecd88106447626c7832a436253670a8c5da"
+   },
+   "encoded_by": "manual-2026-07-21",
+   "weapon_filter": ""
+  },
+  {
+   "table": "stratagems",
+   "id": "000010748005",
+   "side": "attacker",
+   "detachment": "Eradication Cohort",
+   "name_en": "THREAT‑COGITATION TARGETERS",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "威胁认知瞄准器：对 MONSTER/VEHICLE 模型可重掷伤害骰——引擎伤害面无重掷通道"
+   ],
+   "provenance": {
+    "text_sha256": "b83ed544cdce584779936e061762802b0c00a0cde7a07dbd7f0789db33991e82"
+   },
+   "encoded_by": "manual-2026-07-21",
+   "weapon_filter": ""
+  },
+  {
+   "table": "stratagems",
+   "id": "000010748006",
+   "side": "attacker",
+   "detachment": "Eradication Cohort",
+   "name_en": "PRECISION ONSLAUGHT",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "精准猛攻：冲锋移动结束后按交战范围内模型数掷 D6，4+ 各造成 1 点致命伤——外部致命伤池与几何计数均无载体"
+   ],
+   "provenance": {
+    "text_sha256": "5eba6151dd152b4224c9722f3bae6c278ccf74919b26c43f951273a17fe0b19f"
+   },
+   "encoded_by": "manual-2026-07-21",
+   "weapon_filter": ""
+  },
+  {
+   "table": "stratagems",
+   "id": "000010748007",
+   "side": "attacker",
+   "detachment": "Eradication Cohort",
+   "name_en": "ANALYTIC REPRISALS",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "分析性反击：在对手射击阶段以射击阶段之姿开火——阶段外开火属回合结构域，无载体"
+   ],
+   "provenance": {
+    "text_sha256": "2e85d98e2e60a9f517eb9a533eec5b929554377c3613d8aa7df803e9696d9633"
+   },
+   "encoded_by": "manual-2026-07-21",
+   "weapon_filter": ""
+  },
+  {
+   "table": "stratagems",
+   "id": "fp11e-admech-acquisitus-s1",
+   "side": "attacker",
+   "detachment": "Cohort Acquisitus",
+   "name_en": "DEFECT SCRUTINY",
+   "name_zh": "缺陷检视",
+   "status": "partial",
+   "effects": [
+    {
+     "phase": "save",
+     "op": "ignores_cover",
+     "params": [],
+     "condition": [
+      "phase_shooting"
+     ],
+     "source": "缺陷检视（远程攻击对该敌军单位获 [IGNORES COVER]）"
+    }
+   ],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "生效前提是所选敌军单位处于某友军 RECON AUGURY 单位 12\" 内——第三单位几何在 1v1 模拟无载体，编码按恒满足处理（高估）"
+   ],
+   "provenance": {
+    "text_sha256": "b51b68c91990c3c12244ea9f6622cfdacbe0fc47e4f7f330750cd60827855f33"
+   },
+   "encoded_by": "manual-2026-07-21",
+   "weapon_filter": ""
+  },
+  {
+   "table": "stratagems",
+   "id": "fp11e-admech-acquisitus-s2",
+   "side": "attacker",
+   "detachment": "Cohort Acquisitus",
+   "name_en": "REPOLARISED AUGURS",
+   "name_zh": "反极化占卜仪",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "反极化占卜仪：本单位侦测范围 -3\"——侦测范围域无载体"
+   ],
+   "provenance": {
+    "text_sha256": "240de82550f083046bf01aa219c4fc7342a5538feb7709018c1c7624eb8c2222"
+   },
+   "encoded_by": "manual-2026-07-21",
+   "weapon_filter": ""
+  },
+  {
+   "table": "stratagems",
+   "id": "fp11e-admech-acquisitus-s3",
+   "side": "attacker",
+   "detachment": "Cohort Acquisitus",
+   "name_en": "CLANDESTINE REPOSITION",
+   "name_zh": "隐秘转进",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "隐秘转进：放入战略预备队——预备队域无载体"
+   ],
+   "provenance": {
+    "text_sha256": "b14057e19819838770fb380b5a0104be9c2d9073118be9d2e9755047a8b98b1e"
+   },
+   "encoded_by": "manual-2026-07-21",
+   "weapon_filter": ""
+  },
+  {
+   "table": "stratagems",
+   "id": "fp11e-admech-lordsforge-s1",
+   "side": "target",
+   "detachment": "Lords of the Forge",
+   "name_en": "SCRIPTURAL PROGNOSIS",
+   "name_zh": "经文预断",
+   "status": "partial",
+   "effects": [
+    {
+     "phase": "save",
+     "op": "ap_improve",
+     "params": [
+      -1
+     ],
+     "condition": [],
+     "source": "经文预断（瞄准本单位的攻击 AP 恶化 1；WHEN=对手射击阶段或近战阶段，两相位皆可故不加门。守方 AP 恶化以负参并入攻方 ap_improve 净算并夹 ≤0）"
+    }
+   ],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "生效前提是本单位位于某目标点范围内——目标点几何无载体，编码按恒满足处理（高估）",
+    "「直到该敌军单位攻击完毕」的持续期短于一个阶段——引擎按整阶段生效，同阶段内其他敌军单位的攻击会被误加成（高估）"
+   ],
+   "provenance": {
+    "text_sha256": "0cc699a90eb2b38fe25146d762afa7e49e1439fc0edffd31b3d85159485e93cc"
+   },
+   "encoded_by": "manual-2026-07-21",
+   "weapon_filter": ""
+  },
+  {
+   "table": "stratagems",
+   "id": "fp11e-admech-lordsforge-s2",
+   "side": "attacker",
+   "detachment": "Lords of the Forge",
+   "name_en": "OVERLOADED SAFEGUARDS",
+   "name_zh": "过载防护协议",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "过载防护协议：撤退后仍可射击/冲锋——移动域无载体"
+   ],
+   "provenance": {
+    "text_sha256": "f233aa9cbd77eb9f3b2415051262b0b7180b88f1cbcf97748708c5a6cee64432"
+   },
+   "encoded_by": "manual-2026-07-21",
+   "weapon_filter": ""
+  },
+  {
+   "table": "stratagems",
+   "id": "fp11e-admech-lordsforge-s3",
+   "side": "attacker",
+   "detachment": "Lords of the Forge",
+   "name_en": "HOLY AVARICE",
+   "name_zh": "神圣贪欲",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "神圣贪欲：执行 action 后仍可射击——action 域无载体"
+   ],
+   "provenance": {
+    "text_sha256": "ab9bab77e752c6c7bcbeb42e50c4bbdfbb0deec9d92d167030d52e0da2e03978"
+   },
+   "encoded_by": "manual-2026-07-21",
+   "weapon_filter": ""
+  },
+  {
+   "table": "stratagems",
+   "id": "fp11e-admech-luminen-s1",
+   "side": "attacker",
+   "detachment": "Luminen Auto-choir",
+   "name_en": "ECHOES OF THE CONDUIT WARS",
+   "name_zh": "导管战争回响",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "导管战争回响：重掷命中骰的「1」与致伤骰的「1」——引擎重掷只有「重掷失败」，重掷特定点数无通道；且生效前提是目标在目标点范围内（几何门亦无载体）"
+   ],
+   "provenance": {
+    "text_sha256": "6a154d5a95507227513cc1cc9bcf5719cc6582f1e97a154f63c14680bfe076fc"
+   },
+   "encoded_by": "manual-2026-07-21",
+   "weapon_filter": ""
+  },
+  {
+   "table": "stratagems",
+   "id": "fp11e-admech-luminen-s2",
+   "side": "attacker",
+   "detachment": "Luminen Auto-choir",
+   "name_en": "CHANT OF ELECTROTRACTION",
+   "name_zh": "电致牵引颂唱",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "电致牵引颂唱：加速后仍可宣告冲锋——移动域无载体"
+   ],
+   "provenance": {
+    "text_sha256": "2418707c5da4aa688cf6a669014ffc515a9ce3967c441db39227aec5d28471a7"
+   },
+   "encoded_by": "manual-2026-07-21",
+   "weapon_filter": ""
+  },
+  {
+   "table": "stratagems",
+   "id": "fp11e-admech-luminen-s3",
+   "side": "attacker",
+   "detachment": "Luminen Auto-choir",
+   "name_en": "MOMENTUM FEEDBACK",
+   "name_zh": "动量回授",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "动量回授：做一次 D6\" 涌动移动——移动域无载体"
+   ],
+   "provenance": {
+    "text_sha256": "6fb1b9e823754aafe1909d1dcabfd21978fc971de8b7e8cdd4571e178e202324"
+   },
+   "encoded_by": "manual-2026-07-21",
+   "weapon_filter": ""
+  },
+  {
+   "table": "enhancements",
+   "id": "000008385002",
+   "side": "attacker",
+   "detachment": "Rad-Zone Corps",
+   "name_en": "Radial Suffusion",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "辐射弥散：扩大辐射轰炸「沉降」的掷骰范围——依赖未建模的分队规则致命伤池"
+   ],
+   "provenance": {
+    "text_sha256": "424b5b493fd7f42c0239d4711e5a32d362c59dd3286a4c5bf0d0e0157f864246"
+   },
+   "encoded_by": "manual-2026-07-21",
+   "weapon_filter": ""
+  },
+  {
+   "table": "enhancements",
+   "id": "000008385003",
+   "side": "target",
+   "detachment": "Rad-Zone Corps",
+   "name_en": "Malphonic Susurrus",
+   "name_zh": null,
+   "status": "encoded",
+   "effects": [
+    {
+     "phase": "save",
+     "op": "cover",
+     "params": [],
+     "condition": [
+      "phase_shooting"
+     ],
+     "source": "恶语低吟（携带者所率单位获 Stealth：被远程攻击时获掩体收益）"
+    }
+   ],
+   "requires_toggles": [
+    "defender_bearer_leading"
+   ],
+   "not_modeled_notes_zh": [],
+   "provenance": {
+    "text_sha256": "a105eaa1ced8fbcca25cbb7550a2bd1e4c28f28fa604201238ed1d22721ed44a"
+   },
+   "encoded_by": "manual-2026-07-21",
+   "weapon_filter": ""
+  },
+  {
+   "table": "enhancements",
+   "id": "000008385004",
+   "side": "attacker",
+   "detachment": "Rad-Zone Corps",
+   "name_en": "Peerless Eradicator",
+   "name_zh": null,
+   "status": "encoded",
+   "effects": [
+    {
+     "phase": "hit",
+     "op": "extra_hits",
+     "params": [
+      1
+     ],
+     "condition": [
+      "phase_shooting"
+     ],
+     "source": "无双灭绝者（携带者所率单位远程武器 [SUSTAINED HITS 1]）"
+    }
+   ],
+   "requires_toggles": [
+    "bearer_leading"
+   ],
+   "not_modeled_notes_zh": [],
+   "provenance": {
+    "text_sha256": "6f80ce71604de8a1ae81d0dcc56c4f2f4f8e374fe7d82a4c45af46192dc769cb"
+   },
+   "encoded_by": "manual-2026-07-21",
+   "weapon_filter": ""
+  },
+  {
+   "table": "enhancements",
+   "id": "000008385005",
+   "side": "attacker",
+   "detachment": "Rad-Zone Corps",
+   "name_en": "Autoclavic Denunciation",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "高压灭菌谴责：携带者远程武器获 [ANTI-INFANTRY 2+] 与 [ANTI-MONSTER 4+]——无「射击阶段 × 目标关键词」复合 tag，裸 target_has_keyword 会在近战误放行，故不编"
+   ],
+   "provenance": {
+    "text_sha256": "344e687cfffed7708917d08ca5ecd090d0c3c5afabdb88ae268056b6ae5fa1b3"
+   },
+   "encoded_by": "manual-2026-07-21",
+   "weapon_filter": ""
+  },
+  {
+   "table": "enhancements",
+   "id": "000008560002",
+   "side": "attacker",
+   "detachment": "Skitarii Hunter Cohort",
+   "name_en": "Cantic Thrallnet",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "圣咏奴役网：令守护指令与征服指令同时生效——依赖未建模的 imperative 状态"
+   ],
+   "provenance": {
+    "text_sha256": "f464e56ada0b3e6fc9e21911a7dbc1c6f74dbeca3cfc00a021467a0d62e47132"
+   },
+   "encoded_by": "manual-2026-07-21",
+   "weapon_filter": ""
+  },
+  {
+   "table": "enhancements",
+   "id": "000008560003",
+   "side": "attacker",
+   "detachment": "Skitarii Hunter Cohort",
+   "name_en": "Clandestine Infiltrator",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "隐秘渗透者：授予 Infiltrators 与 Scouts 6\"——部署域无载体"
+   ],
+   "provenance": {
+    "text_sha256": "9aa3e455c9d7f4da357744c005f615e4679f7287745f827becc4ea6bbc0d2c93"
+   },
+   "encoded_by": "manual-2026-07-21",
+   "weapon_filter": ""
+  },
+  {
+   "table": "enhancements",
+   "id": "000008560004",
+   "side": "attacker",
+   "detachment": "Skitarii Hunter Cohort",
+   "name_en": "Veiled Hunter",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "蒙面猎手：部署后重新部署至多三个单位（可入战略预备队）——部署/预备队域无载体"
+   ],
+   "provenance": {
+    "text_sha256": "b77c8739a2db7d2966ee6106c67add545a5990caeec4d1304ac0ee8b3694d3c5"
+   },
+   "encoded_by": "manual-2026-07-21",
+   "weapon_filter": ""
+  },
+  {
+   "table": "enhancements",
+   "id": "000008560005",
+   "side": "attacker",
+   "detachment": "Skitarii Hunter Cohort",
+   "name_en": "Battle-sphere Uplink",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "战斗层上行链路：射击后做 6\" 普通移动——移动域无载体"
+   ],
+   "provenance": {
+    "text_sha256": "c2d8fbe2cad8f15f51e9e2fb01c3a22ead22c754b5d0b77dd2555965c159c40c"
+   },
+   "encoded_by": "manual-2026-07-21",
+   "weapon_filter": ""
+  },
+  {
+   "table": "enhancements",
+   "id": "000008564002",
+   "side": "attacker",
+   "detachment": "Data-Psalm Conclave",
+   "name_en": "Mechanicus Locum",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "万机教代理人：领导力特征值与解除士气崩溃——士气域无载体"
+   ],
+   "provenance": {
+    "text_sha256": "ea6815edb26e6ff551a52778ad46df81c8fd0ac09e0d1a21782f5b86a0e34e30"
+   },
+   "encoded_by": "manual-2026-07-21",
+   "weapon_filter": ""
+  },
+  {
+   "table": "enhancements",
+   "id": "000008564003",
+   "side": "attacker",
+   "detachment": "Data-Psalm Conclave",
+   "name_en": "Mantle of the Gnosticarch",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "诺斯教长斗篷：分配到携带者的攻击伤害特征值改为 1——引擎只有 damage_reduction（减法），无「置为定值」通道；且仅对携带者本人分配的攻击生效"
+   ],
+   "provenance": {
+    "text_sha256": "78c724c49928546f5bfc308087224a1dbcb8854c23a42e4cc62c83ff742818fc"
+   },
+   "encoded_by": "manual-2026-07-21",
+   "weapon_filter": ""
+  },
+  {
+   "table": "enhancements",
+   "id": "000008564004",
+   "side": "attacker",
+   "detachment": "Data-Psalm Conclave",
+   "name_en": "Data-blessed Autosermon",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "数据祝福自动布道：额外激活另一条万机神祝祷——依赖未建模的二选一祝祷"
+   ],
+   "provenance": {
+    "text_sha256": "04b1d1ed37a51d673f040faa4b49d5eb80fbc13e8e45cfa26404a06268187cfa"
+   },
+   "encoded_by": "manual-2026-07-21",
+   "weapon_filter": ""
+  },
+  {
+   "table": "enhancements",
+   "id": "000008564005",
+   "side": "attacker",
+   "detachment": "Data-Psalm Conclave",
+   "name_en": "Temporcopia",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "时之丰饶角：携带者单位获 Fights First——出手顺序不是 DSL 通道"
+   ],
+   "provenance": {
+    "text_sha256": "8041f601541b473fa20052213a74514e4b18aa735e85666cf87fd01d5118d9b0"
+   },
+   "encoded_by": "manual-2026-07-21",
+   "weapon_filter": ""
+  },
+  {
+   "table": "enhancements",
+   "id": "000008568002",
+   "side": "attacker",
+   "detachment": "Explorator Maniple",
+   "name_en": "Magos",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "贤者：指挥阶段结束时 4+ 获得 1CP——CP 域无载体"
+   ],
+   "provenance": {
+    "text_sha256": "2b43efdcd0f69ef0d6ebc96583b31704e0e0a83df8a9260410a0814f7303ed19"
+   },
+   "encoded_by": "manual-2026-07-21",
+   "weapon_filter": ""
+  },
+  {
+   "table": "enhancements",
+   "id": "000008568003",
+   "side": "target",
+   "detachment": "Explorator Maniple",
+   "name_en": "Genetor",
+   "name_zh": null,
+   "status": "partial",
+   "effects": [
+    {
+     "phase": "save",
+     "op": "invuln",
+     "params": [
+      4
+     ],
+     "condition": [],
+     "source": "遗传学家（携带者所率单位 4+ 特殊保护）"
+    }
+   ],
+   "requires_toggles": [
+    "defender_bearer_leading"
+   ],
+   "not_modeled_notes_zh": [
+    "生效前提是该单位位于「获取目标点」范围内——目标点几何无载体，编码按恒满足处理（高估）"
+   ],
+   "provenance": {
+    "text_sha256": "263087ac86c304d9c751ce623b233ad218cf4327e83a7d9a7e762ee0d627cc10"
+   },
+   "encoded_by": "manual-2026-07-21",
+   "weapon_filter": ""
+  },
+  {
+   "table": "enhancements",
+   "id": "000008568004",
+   "side": "attacker",
+   "detachment": "Explorator Maniple",
+   "name_en": "Logis",
+   "name_zh": null,
+   "status": "partial",
+   "effects": [
+    {
+     "phase": "hit",
+     "op": "modify",
+     "params": [
+      1
+     ],
+     "condition": [],
+     "source": "逻辑师（携带者所率单位攻击命中骰 +1）"
+    }
+   ],
+   "requires_toggles": [
+    "bearer_leading"
+   ],
+   "not_modeled_notes_zh": [
+    "生效前提是目标位于「获取目标点」范围内——目标点几何无载体，编码按恒满足处理（高估）"
+   ],
+   "provenance": {
+    "text_sha256": "cfc36b26f95d6341cd8056c24e40fd4c768cfebb60d9544a505d3174f5399da4"
+   },
+   "encoded_by": "manual-2026-07-21",
+   "weapon_filter": ""
+  },
+  {
+   "table": "enhancements",
+   "id": "000008568005",
+   "side": "attacker",
+   "detachment": "Explorator Maniple",
+   "name_en": "Artisan",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "工匠：每阶段一次把一次骰改为未修正 6——单次触发无通道"
+   ],
+   "provenance": {
+    "text_sha256": "bade8105ab10969d44be1944caa2b247d30cf5e269ed53fa16decc4ec08426c8"
+   },
+   "encoded_by": "manual-2026-07-21",
+   "weapon_filter": ""
+  },
+  {
+   "table": "enhancements",
+   "id": "000008572002",
+   "side": "attacker",
+   "detachment": "Cohort Cybernetica",
+   "name_en": "Necromechanic",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "死灵机械师：每战轮一次把一次攻击的伤害特征值改为 0——单次触发与「伤害特征值置零」均无通道（引擎只有减法 damage_reduction）"
+   ],
+   "provenance": {
+    "text_sha256": "384682cf9db3da26969f959669701d96f84ba0f83c2354fa30ced4941cb91896"
+   },
+   "encoded_by": "manual-2026-07-21",
+   "weapon_filter": ""
+  },
+  {
+   "table": "enhancements",
+   "id": "000008572003",
+   "side": "attacker",
+   "detachment": "Cohort Cybernetica",
+   "name_en": "Lord of Machines",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "机械之主：迫使敌 VEHICLE 做领导力检定——检定域无载体"
+   ],
+   "provenance": {
+    "text_sha256": "f166239cb8a0f0e842f384741a75884927413ce0246500f9bf9187e2c483aef2"
+   },
+   "encoded_by": "manual-2026-07-21",
+   "weapon_filter": ""
+  },
+  {
+   "table": "enhancements",
+   "id": "000008572004",
+   "side": "attacker",
+   "detachment": "Cohort Cybernetica",
+   "name_en": "Emotionless Clarity",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "无情澄明：致命殒灭改为自动造成致命伤——致命殒灭域无载体"
+   ],
+   "provenance": {
+    "text_sha256": "08c2b37f9f691952ed532466389494978d1b5b1b1e7b4e39dc7ffb9d30ff31a4"
+   },
+   "encoded_by": "manual-2026-07-21",
+   "weapon_filter": ""
+  },
+  {
+   "table": "enhancements",
+   "id": "000008572005",
+   "side": "attacker",
+   "detachment": "Cohort Cybernetica",
+   "name_en": "Arch-negator",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "反否定者：携带者远程武器获 [ANTI-VEHICLE 4+]——引擎只有 melee_target_has_keyword 复合门，无「射击阶段 × 目标关键词」复合 tag；裸 target_has_keyword 会在近战阶段误放行，故不编"
+   ],
+   "provenance": {
+    "text_sha256": "3506064bad3af2f38bfece63c09e9e6f4ee9ec0ca542bf33d6a19da9575a6f49"
+   },
+   "encoded_by": "manual-2026-07-21",
+   "weapon_filter": ""
+  },
+  {
+   "table": "enhancements",
+   "id": "000009281002",
+   "side": "attacker",
+   "detachment": "Electromartyrs",
+   "name_en": "Remote Lockdown",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "远程锁闭：阻止敌军操作舱门——登舰行动地图机制无载体"
+   ],
+   "provenance": {
+    "text_sha256": "97cfb5932ae274ebb8e4cfb55206e9c49a5b82a7b24ed9c61fb4676066b6603f"
+   },
+   "encoded_by": "manual-2026-07-21",
+   "weapon_filter": ""
+  },
+  {
+   "table": "enhancements",
+   "id": "000009281003",
+   "side": "attacker",
+   "detachment": "Electromartyrs",
+   "name_en": "Multi-dimensional Auspex",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "多维探知器：无视墙体/舱门判定可见性、射程改为 6\"——可见性与射程域无载体"
+   ],
+   "provenance": {
+    "text_sha256": "756158bfb2d5e941859ef95ba0396a208fd3740c395443064b03292fbe91c6fb"
+   },
+   "encoded_by": "manual-2026-07-21",
+   "weapon_filter": ""
+  },
+  {
+   "table": "enhancements",
+   "id": "000009290002",
+   "side": "attacker",
+   "detachment": "Response Clade",
+   "name_en": "Admonissor Shunt",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "训诫分流：解除一个 SKITARII 单位的士气崩溃——士气域无载体"
+   ],
+   "provenance": {
+    "text_sha256": "e7ff1cb9463898e1e539046dcf241feff3a47147bcc2c3d6486bda25eec538ad"
+   },
+   "encoded_by": "manual-2026-07-21",
+   "weapon_filter": ""
+  },
+  {
+   "table": "enhancements",
+   "id": "000009290003",
+   "side": "attacker",
+   "detachment": "Response Clade",
+   "name_en": "Optimised Cogitators",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "优化认知仪：每战轮一次战略消耗 -1CP——CP 域无载体"
+   ],
+   "provenance": {
+    "text_sha256": "92553d169a1e9d5fbc1d827c8f72d9ab7edb128ac4300172534cdb2168b4ac45"
+   },
+   "encoded_by": "manual-2026-07-21",
+   "weapon_filter": ""
+  },
+  {
+   "table": "enhancements",
+   "id": "000009298002",
+   "side": "attacker",
+   "detachment": "Machine Cult",
+   "name_en": "Beseech the Machine Spirits",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "恳求机魂：远距操作舱门——登舰行动地图机制无载体"
+   ],
+   "provenance": {
+    "text_sha256": "5bfb1d3ccf43aee50acecab6e8dd56425bc046037ee55654385f0768b702801d"
+   },
+   "encoded_by": "manual-2026-07-21",
+   "weapon_filter": ""
+  },
+  {
+   "table": "enhancements",
+   "id": "000009298003",
+   "side": "attacker",
+   "detachment": "Machine Cult",
+   "name_en": "Harmonic Discordator",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "谐波失谐器：迫使敌军做士气检定——士气域无载体"
+   ],
+   "provenance": {
+    "text_sha256": "6ab8330c6d367036f86f6627c492d9b543cc52aaa88d49752e31dde8195a52ee"
+   },
+   "encoded_by": "manual-2026-07-21",
+   "weapon_filter": ""
+  },
+  {
+   "table": "enhancements",
+   "id": "000009745002",
+   "side": "attacker",
+   "detachment": "Haloscreed Battle Clade",
+   "name_en": "Transoracular Dyad Wafers",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "超神谕双联晶片：授予 HALO OVERRIDE 关键词——关键词授予无载体"
+   ],
+   "provenance": {
+    "text_sha256": "13264b6c18ca43fd714060c7bc2c17034493269a756933702f134ced6cac23fe"
+   },
+   "encoded_by": "manual-2026-07-21",
+   "weapon_filter": ""
+  },
+  {
+   "table": "enhancements",
+   "id": "000009745003",
+   "side": "attacker",
+   "detachment": "Haloscreed Battle Clade",
+   "name_en": "Cognitive Reinforcement",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "认知强化：令征服指令与守护指令同时生效——依赖未建模的 imperative 状态"
+   ],
+   "provenance": {
+    "text_sha256": "8b462a270f8671fd809f2fb7b8d017d61d56f95446707356f12a74ff05ec997a"
+   },
+   "encoded_by": "manual-2026-07-21",
+   "weapon_filter": ""
+  },
+  {
+   "table": "enhancements",
+   "id": "000009745004",
+   "side": "attacker",
+   "detachment": "Haloscreed Battle Clade",
+   "name_en": "Sanctified Ordnance",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "圣化军械：携带者单位远程武器 +6\" 射程、危险测试可重掷——射程与危险测试均无引擎载体"
+   ],
+   "provenance": {
+    "text_sha256": "ff28e6b5ad7b26b7f3eb63a828ee3a8d1081c405327f56b7ac228dc57c25d34f"
+   },
+   "encoded_by": "manual-2026-07-21",
+   "weapon_filter": ""
+  },
+  {
+   "table": "enhancements",
+   "id": "000009745005",
+   "side": "attacker",
+   "detachment": "Haloscreed Battle Clade",
+   "name_en": "Inloaded Lethality",
+   "name_zh": null,
+   "status": "partial",
+   "effects": [
+    {
+     "phase": "attacks",
+     "op": "modify",
+     "params": [
+      3
+     ],
+     "condition": [
+      "phase_melee"
+     ],
+     "source": "内载致命性（携带者近战武器 A +3）"
+    },
+    {
+     "phase": "damage",
+     "op": "modify",
+     "params": [
+      1
+     ],
+     "condition": [
+      "phase_melee"
+     ],
+     "source": "内载致命性（携带者近战武器 伤害 +1）"
+    }
+   ],
+   "requires_toggles": [
+    "bearer_leading"
+   ],
+   "not_modeled_notes_zh": [
+    "两项增益只加在携带者本人的近战武器上——引擎按单位面注入全部武器，多模型单位会高估；须以携带者单模型 loadout 模拟才等价"
+   ],
+   "provenance": {
+    "text_sha256": "ef19a019c9d362268332b8799b09a42d1221ae68343737f7ca4164dd7d889d7d"
+   },
+   "encoded_by": "manual-2026-07-21",
+   "weapon_filter": ""
+  },
+  {
+   "table": "enhancements",
+   "id": "000010747002",
+   "side": "attacker",
+   "detachment": "Eradication Cohort",
+   "name_en": "Omnicogitator",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "全知认知仪：令征服指令与守护指令同时生效——依赖未建模的 imperative 状态"
+   ],
+   "provenance": {
+    "text_sha256": "d5aa812aed2970da28b01b66665a96c905206054f3dbb89309e534e9c7c86edd"
+   },
+   "encoded_by": "manual-2026-07-21",
+   "weapon_filter": ""
+  },
+  {
+   "table": "enhancements",
+   "id": "000010747003",
+   "side": "attacker",
+   "detachment": "Eradication Cohort",
+   "name_en": "Martial Signatum Amplificator",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "武备签记增幅器：令携带者单位模型获得 Skitarii 关键词——关键词授予无载体"
+   ],
+   "provenance": {
+    "text_sha256": "57e92ea5db7d44909736b9195e29d95662ce83c25713991a134a24a4b45f0e08"
+   },
+   "encoded_by": "manual-2026-07-21",
+   "weapon_filter": ""
+  },
+  {
+   "table": "enhancements",
+   "id": "000010747004",
+   "side": "attacker",
+   "detachment": "Eradication Cohort",
+   "name_en": "Belicosa-Class Capacitor Vanes",
+   "name_zh": null,
+   "status": "partial",
+   "effects": [
+    {
+     "phase": "wound",
+     "op": "s_improve",
+     "params": [
+      1
+     ],
+     "condition": [
+      "phase_shooting"
+     ],
+     "source": "贝里科萨级电容叶片（携带者单位远程武器 S 特征值 +1）"
+    }
+   ],
+   "requires_toggles": [
+    "bearer_leading"
+   ],
+   "not_modeled_notes_zh": [
+    "同时给这些远程武器 +6\" 射程——引擎不建模距离（只有 half_range 等档位开关），无载体"
+   ],
+   "provenance": {
+    "text_sha256": "4d0181c25d739cba78cf031a5f453c30f7e30f7b3de7ea2186cc555995da6ba0"
+   },
+   "encoded_by": "manual-2026-07-21",
+   "weapon_filter": ""
+  },
+  {
+   "table": "enhancements",
+   "id": "000010747005",
+   "side": "attacker",
+   "detachment": "Eradication Cohort",
+   "name_en": "Omnissiah’s Fury",
+   "name_zh": null,
+   "status": "partial",
+   "effects": [
+    {
+     "phase": "attacks",
+     "op": "modify",
+     "params": [
+      2
+     ],
+     "condition": [
+      "phase_melee"
+     ],
+     "source": "万机神之怒（携带者近战武器 A +2）"
+    },
+    {
+     "phase": "save",
+     "op": "ap_improve",
+     "params": [
+      1
+     ],
+     "condition": [
+      "phase_melee"
+     ],
+     "source": "万机神之怒（携带者近战武器 AP 特征值改善 1）"
+    },
+    {
+     "phase": "damage",
+     "op": "modify",
+     "params": [
+      1
+     ],
+     "condition": [
+      "phase_melee"
+     ],
+     "source": "万机神之怒（携带者近战武器 伤害 +1）"
+    }
+   ],
+   "requires_toggles": [
+    "bearer_leading"
+   ],
+   "not_modeled_notes_zh": [
+    "三项增益只加在携带者本人的近战武器上——引擎按单位面注入全部武器，多模型单位会高估；须以携带者单模型 loadout 模拟才等价"
+   ],
+   "provenance": {
+    "text_sha256": "b9c581e698fae6d3b079859d3f032c4e529c132c791fa10b1461de254ff28977"
+   },
+   "encoded_by": "manual-2026-07-21",
+   "weapon_filter": ""
+  },
+  {
+   "table": "enhancements",
+   "id": "fp11e-admech-acquisitus-e1",
+   "side": "attacker",
+   "detachment": "Cohort Acquisitus",
+   "name_en": "Explorator Dispensation",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "探索者特许：授予 Infiltrators——部署域无载体"
+   ],
+   "provenance": {
+    "text_sha256": "749bd82b5f45e8cf5aebdab673cdb273ea725de5341a24f24960c8c981be8276"
+   },
+   "encoded_by": "manual-2026-07-21",
+   "weapon_filter": ""
+  },
+  {
+   "table": "enhancements",
+   "id": "fp11e-admech-acquisitus-e2",
+   "side": "attacker",
+   "detachment": "Cohort Acquisitus",
+   "name_en": "Stealth-Screened Cybercanids",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "隐匿屏蔽赛博犬：授予 Lone Operative 15\"——选取限制域无载体"
+   ],
+   "provenance": {
+    "text_sha256": "77575097bf695fde3d78ff72f41cb96cb1eff3479c65d71f5735aaf3c6d51f7a"
+   },
+   "encoded_by": "manual-2026-07-21",
+   "weapon_filter": ""
+  },
+  {
+   "table": "enhancements",
+   "id": "fp11e-admech-lordsforge-e1",
+   "side": "attacker",
+   "detachment": "Lords of the Forge",
+   "name_en": "Vingh’s Wafers of Dynamism",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "温赫的动力晶片：授予 MOBILE 关键词——关键词授予与移动域无载体"
+   ],
+   "provenance": {
+    "text_sha256": "393622132ce6843f1b79899fce0c980c583bc2a3353262b87691cabc3fde4365"
+   },
+   "encoded_by": "manual-2026-07-21",
+   "weapon_filter": ""
+  },
+  {
+   "table": "enhancements",
+   "id": "fp11e-admech-lordsforge-e2",
+   "side": "attacker",
+   "detachment": "Lords of the Forge",
+   "name_en": "TL-4Ø9",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "TL-4Ø9：为携带者增加一把全新武器（24\" A3 BS2+ S11 AP-2 D D3+2 [DEVASTATING WOUNDS, HAZARDOUS]）——DSL 只能改既有武器的特征值，「新增一把武器」是装配层职责，无效果通道"
+   ],
+   "provenance": {
+    "text_sha256": "7df8895377217c44de1bb92ffa9da7e06fa59cf02870666118ace0cfa54cf1a9"
+   },
+   "encoded_by": "manual-2026-07-21",
+   "weapon_filter": ""
+  },
+  {
+   "table": "enhancements",
+   "id": "fp11e-admech-luminen-e1",
+   "side": "attacker",
+   "detachment": "Luminen Auto-choir",
+   "name_en": "Voltagheist Reliquary",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "电压幽魂圣匣：敌军无法以速射（snap shooting）攻击瞄准本单位——选取限制域无载体"
+   ],
+   "provenance": {
+    "text_sha256": "8336ad1d7168258c4fb4c498a21ef07352aa3e8fa1888f04901e8984372005f9"
+   },
+   "encoded_by": "manual-2026-07-21",
+   "weapon_filter": ""
+  },
+  {
+   "table": "enhancements",
+   "id": "fp11e-admech-luminen-e2",
+   "side": "target",
+   "detachment": "Luminen Auto-choir",
+   "name_en": "Electromiasmic Brazier",
+   "name_zh": null,
+   "status": "encoded",
+   "effects": [
+    {
+     "phase": "save",
+     "op": "cover",
+     "params": [],
+     "condition": [
+      "phase_shooting"
+     ],
+     "source": "电磁瘴气火盆（本单位获 Stealth：被远程攻击时获掩体收益）"
+    }
+   ],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [],
+   "provenance": {
+    "text_sha256": "c698cc04931bb65e2838280b437c49ebe2a03d77942b67b5e45fa42773289676"
+   },
+   "encoded_by": "manual-2026-07-21",
+   "weapon_filter": ""
+  }
+ ]
+}
