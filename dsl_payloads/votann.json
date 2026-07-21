@@ -1433,20 +1433,18 @@
    "status": "partial",
    "effects": [
     {
-     "phase": "hit",
-     "op": "modify",
-     "params": [
-      -1
-     ],
+     "phase": "save",
+     "op": "cover",
+     "params": [],
      "condition": [
       "phase_shooting"
      ],
-     "source": "分散阵型：本单位获匿踪（Stealth）——瞄准本单位的远程攻击命中骰 -1（守方）"
+     "source": "分散阵型：本单位获 Stealth（11版24.33=掩体收益 13.08，BS 恶化 1）"
     }
    ],
    "requires_toggles": [],
    "not_modeled_notes_zh": [
-    "另予「掩体加成（Benefit of Cover）」——引擎 11 版掩体亦折算为攻方命中/BS 惩罚，与匿踪 -1 命中同向，为避免双重叠加此处只编匿踪一份"
+    "原文「获 Stealth + 获掩体收益」两个从句在 11 版收敛为同一个二元状态（24.33 的全部效果就是授予 13.08 掩体收益），只编一份 (save,cover)——与地形掩体开关天然去重、可被 [IGNORES COVER]（24.18 点名含 Stealth）整体抵消；勿编成 hit-1（十版 Stealth 语义，会与掩体双重叠加且不吃 24.18 抵消）"
    ]
   },
   {

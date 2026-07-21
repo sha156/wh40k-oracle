@@ -162,7 +162,10 @@ class _WeaponParams:
                                    # P7-PR5 起累加——分队规则与战略同阶段各 +1 A 必须叠加，
                                    # 旧的单值 last-write 会静默吞掉一层）
     blast_x: int = 0               # [BLAST X]/[CLEAVE X]：每满 5 目标模型 +X 攻击骰（0=无）
-    melta_expr: object = None      # DiceExpr | None（melta X，X 可为骰子）
+    dmg_mod_exprs: tuple = ()      # tuple[DiceExpr]（伤害特征值加值：melta X / DSL "+1 D"；
+                                   # 2026-07-20 审查修复：与 rf_exprs 同语义累加——melta 与
+                                   # 增强 "+1 Damage" 是不同来源修正必须叠加，旧的单值
+                                   # last-write（melta_expr）会静默吞掉先写入的一层）
     crit_hit_thr: int = _FACES
     sustained: object = None      # DiceExpr | None
     lethal: bool = False
@@ -205,6 +208,15 @@ class _WeaponParams:
                                    # 与 t_worsen 同一 t_final 净算
 
 
+def _expect_expr(x) -> float:
+    """DiceExpr / 旧式 int 的期望值（sustained 多来源取更优用；不引 numpy）。"""
+    if isinstance(x, int):
+        return float(x)
+    if x.is_constant:
+        return float(x.k)
+    return x.n * (x.faces + 1) / 2.0 + x.k
+
+
 def _gather_params(w: WeaponProfile, stance: Stance, target: TargetProfile) -> _WeaponParams:
     p = _WeaponParams(cover=stance.target_in_cover)
     hit_pos = hit_neg = 0        # 命中修正分正负累计（[PSYCHIC] 只忽略负修正）
@@ -222,7 +234,12 @@ def _gather_params(w: WeaponProfile, stance: Stance, target: TargetProfile) -> _
             # P7-PR3：extra_hits/auto_wound/auto_hit 补 ok 门控——既有词条 condition 恒空
             # （ok=True，行为不变），分队规则经 DSL 注入的条件版（战轮门控）靠它放行/拦截
             if e.op == "extra_hits" and ok:
-                p.sustained = e.params[0]
+                # 2026-07-20 审查修复：同能力多实例不叠加、取更优值（规则注记
+                # "Weapon Abilities With Differing Values"）——旧 last-write 会让
+                # DSL 授予的 [SUSTAINED HITS 1] 把武器自带的 [SUSTAINED HITS 2] 降级
+                if (p.sustained is None
+                        or _expect_expr(e.params[0]) > _expect_expr(p.sustained)):
+                    p.sustained = e.params[0]
             elif e.op == "auto_wound" and ok:
                 p.lethal = True
             elif e.op == "auto_hit" and ok:
@@ -275,7 +292,8 @@ def _gather_params(w: WeaponProfile, stance: Stance, target: TargetProfile) -> _
                 p.t_worsen += int(e.params[0])
         elif e.phase == "damage":
             if e.op == "modify" and ok:
-                p.melta_expr = e.params[0]        # DiceExpr（melta）
+                # DiceExpr（melta X / DSL "+1 Damage"）：多来源累加，见字段注释
+                p.dmg_mod_exprs = p.dmg_mod_exprs + (e.params[0],)
         elif e.phase == "save":
             if e.op == "ignores_cover" and ok:
                 p.ignores_cover = True

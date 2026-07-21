@@ -1459,20 +1459,18 @@
    "status": "partial",
    "effects": [
     {
-     "phase": "hit",
-     "op": "modify",
-     "params": [
-      -1
-     ],
+     "phase": "save",
+     "op": "cover",
+     "params": [],
      "condition": [
       "phase_shooting"
      ],
-     "source": "暗影之翼（守方获 Stealth，被远程攻击命中-1）"
+     "source": "暗影之翼（守方获 Stealth：11版24.33=掩体收益 13.08，BS 恶化 1）"
     }
    ],
    "requires_toggles": [],
    "not_modeled_notes_zh": [
-    "Stealth 语义=被远程攻击时命中-1（条件自含射击门控）；WHEN=对手射击阶段目标为本 RAVENWING FLY 单位时"
+    "Stealth 的 11 版语义=授予掩体收益（24.33→13.08，二元状态，与地形掩体去重、可被 [IGNORES COVER] 抵消），勿编成命中-1（十版残留语义）；WHEN=对手射击阶段目标为本 RAVENWING FLY 单位时"
    ],
    "provenance": {
     "text_sha256": "ab5675d83624b9761f8a630471080432a717090cc587fc793d6fa35470b29d34"

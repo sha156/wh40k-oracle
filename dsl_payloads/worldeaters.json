@@ -1123,10 +1123,10 @@
       1
      ],
      "condition": [
-      "target_has_keyword",
+      "melee_target_has_keyword",
       "monster"
      ],
-     "source": "Daemonic Strength（神尊八缚分支：对凶兽 D+1）"
+     "source": "Daemonic Strength（神尊八缚分支：近战对凶兽 D+1）"
     },
     {
      "phase": "damage",
@@ -1135,15 +1135,16 @@
       1
      ],
      "condition": [
-      "target_has_keyword",
+      "melee_target_has_keyword",
       "vehicle"
      ],
-     "source": "Daemonic Strength（神尊八缚分支：对载具 D+1）"
+     "source": "Daemonic Strength（神尊八缚分支：近战对载具 D+1）"
     }
    ],
    "requires_toggles": [],
    "not_modeled_notes_zh": [
     "按神尊八缚（Exalted Eightbound 对凶兽/载具 D+1）分支编码；八缚（Eightbound 对非凶兽/载具）分支需否定条件，无通道未建模",
+    "WHEN=战斗阶段、持续至该阶段末——melee_target_has_keyword 复合门（近战×关键词），射击阶段不施加",
     "同时具凶兽+载具双关键词的目标会重复 +2（正常兵牌不并存该两关键词，诚实披露）",
     "CP 消耗与使用次数限制不结算，仅在被点名（opt-in）时注入（spec D3）"
    ],

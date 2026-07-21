@@ -282,13 +282,15 @@
      "params": [
       4
      ],
-     "condition": [],
-     "source": "位移力场：4+ 无效保护"
+     "condition": [
+      "phase_shooting"
+     ],
+     "source": "位移力场：4+ 无效保护（仅射击相位）"
     }
    ],
    "requires_toggles": [],
    "not_modeled_notes_zh": [
-    "4+ 无效保护（守方，对手射击阶段点名即假设已用）",
+    "4+ 无效保护（守方，对手射击阶段点名即假设已用）；WHEN=对手射击阶段、持续至该阶段末——phase_shooting 门控，近战不施加",
     "解算后可 6\" 正常移动（视为 FLY）——移动域未建模",
     "限 AGENTS OF THE IMPERIUM CHARACTER 单位（排除 OFFICIO ASSASSINORUM）"
    ],

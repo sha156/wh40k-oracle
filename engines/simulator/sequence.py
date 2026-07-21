@@ -92,11 +92,11 @@ def effective_save(sv: int, ap: int, invuln: Optional[int]) -> int:
     return armor
 
 
-def _sample_damage(dmg_expr, melta_expr, rng, n, k, dmg_reduction) -> np.ndarray:
-    """采样伤害 D（+melta，melta 可为骰子）后减伤夹 ≥1。"""
+def _sample_damage(dmg_expr, dmg_mod_exprs, rng, n, k, dmg_reduction) -> np.ndarray:
+    """采样伤害 D（+伤害加值：melta / DSL "+1 D"，逐来源累加，可为骰子）后减伤夹 ≥1。"""
     dmg = sample_dice(dmg_expr, rng, (n, k)).astype(np.int64)
-    if melta_expr is not None:
-        dmg = dmg + sample_dice(melta_expr, rng, (n, k)).astype(np.int64)
+    for me in dmg_mod_exprs or ():      # 兼容旧调用方传 None（=无伤害加值）
+        dmg = dmg + sample_dice(me, rng, (n, k)).astype(np.int64)
     return (np.maximum(dmg - dmg_reduction, 1) if dmg_reduction > 0
             else np.maximum(dmg, 1))
 
@@ -104,7 +104,7 @@ def _sample_damage(dmg_expr, melta_expr, rng, n, k, dmg_reduction) -> np.ndarray
 def _wound_save_damage(
     mask: np.ndarray, rng: np.random.Generator, n: int,
     wt: int, crit_wound_thr: int, wound_mod: int, twin: bool, has_dev: bool,
-    sv_need: int, dmg_expr, melta_expr, dmg_reduction: int,
+    sv_need: int, dmg_expr, dmg_mod_exprs, dmg_reduction: int,
 ) -> Tuple[np.ndarray, np.ndarray, np.ndarray, np.ndarray, np.ndarray]:
     """给定"进入致伤掷骰"的攻击掩码，产出正常伤害/致命池伤害数组 + 漏斗计数。"""
     k = mask.shape[1]
@@ -137,7 +137,7 @@ def _wound_save_damage(
     # dev 致命池不吃减伤（11版24.10+06.02）：暴击致伤即结束攻击序列、直接对单位施加
     # 致命伤，从未进入伤害分配步骤——挂在分配上的「受伤-1」类减伤只作用于正常伤害；
     # melta 属 D 特性修正，两路都计。
-    dmg_raw = _sample_damage(dmg_expr, melta_expr, rng, n, k, 0)
+    dmg_raw = _sample_damage(dmg_expr, dmg_mod_exprs, rng, n, k, 0)
     dmg_normal = (np.maximum(dmg_raw - dmg_reduction, 1)
                   if dmg_reduction > 0 else dmg_raw)
     normal_dmg = np.where(unsaved, dmg_normal, 0)
@@ -150,7 +150,7 @@ def _wound_save_damage(
 
 def _autowound_save_damage(
     mask: np.ndarray, rng: np.random.Generator, n: int,
-    sv_need: int, dmg_expr, melta_expr, dmg_reduction: int,
+    sv_need: int, dmg_expr, dmg_mod_exprs, dmg_reduction: int,
 ) -> Tuple[np.ndarray, np.ndarray, np.ndarray]:
     """lethal hits 暴击命中 → 自动致伤（跳致伤掷骰、不触发 dev）：直接走保存+伤害。"""
     k = mask.shape[1]
@@ -160,7 +160,7 @@ def _autowound_save_damage(
     save_roll = rng.integers(1, _FACES + 1, size=(n, k), dtype=np.int64)
     saved = mask & (save_roll != 1) & (save_roll >= sv_need)
     unsaved = mask & ~saved
-    dmg = _sample_damage(dmg_expr, melta_expr, rng, n, k, dmg_reduction)
+    dmg = _sample_damage(dmg_expr, dmg_mod_exprs, rng, n, k, dmg_reduction)
     return (np.where(unsaved, dmg, 0),
             mask.sum(axis=1).astype(np.int64),
             unsaved.sum(axis=1).astype(np.int64))
@@ -324,9 +324,9 @@ def _resolve_weapon(
 
     nd1, md1, w1, u1, m1 = _wound_save_damage(
         to_wound, rng, n, wt, p.crit_wound_thr, wound_mod, p.twin, p.has_dev,
-        sv_need, w.damage, p.melta_expr, dmg_reduction)
+        sv_need, w.damage, p.dmg_mod_exprs, dmg_reduction)
     nd2, w2, u2 = _autowound_save_damage(
-        lethal_mask, rng, n, sv_need, w.damage, p.melta_expr, dmg_reduction)
+        lethal_mask, rng, n, sv_need, w.damage, p.dmg_mod_exprs, dmg_reduction)
 
     normal_dmg = np.concatenate([nd1, nd2], axis=1)
     mortal_dmg = md1

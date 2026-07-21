@@ -2552,22 +2552,20 @@
    "status": "partial",
    "effects": [
     {
-     "phase": "hit",
-     "op": "modify",
-     "params": [
-      -1
-     ],
+     "phase": "save",
+     "op": "cover",
+     "params": [],
      "condition": [
       "phase_shooting"
      ],
-     "source": "暗影猛禽（携带者获 Stealth，被远程攻击命中-1）"
+     "source": "暗影猛禽（携带者获 Stealth：11版24.33=掩体收益 13.08，BS 恶化 1）"
     }
    ],
    "requires_toggles": [
     "defender_bearer_leading"
    ],
    "not_modeled_notes_zh": [
-    "Stealth 语义=被远程攻击命中-1（射击门自含）；Lone Operative（点名限制）未建模"
+    "Stealth 的 11 版语义=授予掩体收益（24.33→13.08，二元状态，与地形掩体去重、可被 [IGNORES COVER] 抵消），勿编成命中-1（十版残留语义）；Lone Operative（点名限制）未建模"
    ],
    "provenance": {
     "text_sha256": "c6d4ea4f217a37bbcfced025e0eddda18a58ea14df9ebb1e4223e7184c83116c"
@@ -2926,29 +2924,19 @@
    "status": "partial",
    "effects": [
     {
-     "phase": "hit",
-     "op": "modify",
-     "params": [
-      -1
-     ],
-     "condition": [
-      "phase_shooting"
-     ],
-     "source": "致盲屏障（守方获 Stealth，被远程攻击命中-1）"
-    },
-    {
      "phase": "save",
      "op": "cover",
      "params": [],
      "condition": [
       "phase_shooting"
      ],
-     "source": "致盲屏障（守方获掩体）"
+     "source": "致盲屏障（守方获 Stealth+掩体收益：11版两从句收敛为同一二元状态，只编一份）"
     }
    ],
    "requires_toggles": [],
    "not_modeled_notes_zh": [
-    "限烟幕载具/Drop Pod 9\" 内友方（点名即假设已满足）；WHEN=对手射击阶段（射击门自含），近战不注入"
+    "限烟幕载具/Drop Pod 9\" 内友方（点名即假设已满足）；WHEN=对手射击阶段（射击门自含），近战不注入",
+    "原文「获 Stealth」与「获掩体收益」在 11 版是同一个状态（24.33 的全部效果就是授予 13.08），勿再叠编 hit-1——十版 Stealth 语义残留会双重计费且不吃 [IGNORES COVER] 抵消"
    ],
    "provenance": {
     "text_sha256": "2b867f06fe540491bd78cd822733e8cb2be79df0dc088b402bd40d54f209019b"
@@ -3430,22 +3418,20 @@
    "status": "partial",
    "effects": [
     {
-     "phase": "hit",
-     "op": "modify",
-     "params": [
-      -1
-     ],
+     "phase": "save",
+     "op": "cover",
+     "params": [],
      "condition": [
       "phase_shooting"
      ],
-     "source": "遮蔽力场（携带者获 Stealth，被远程攻击命中-1）"
+     "source": "遮蔽力场（携带者获 Stealth：11版24.33=掩体收益 13.08，BS 恶化 1）"
     }
    ],
    "requires_toggles": [
     "defender_bearer_leading"
    ],
    "not_modeled_notes_zh": [
-    "Stealth 语义=被远程攻击命中-1（射击门自含）；Lone Operative（点名限制）未建模"
+    "Stealth 的 11 版语义=授予掩体收益（24.33→13.08，二元状态，与地形掩体去重、可被 [IGNORES COVER] 抵消），勿编成命中-1（十版残留语义）；Lone Operative（点名限制）未建模"
    ],
    "provenance": {
     "text_sha256": "6ea937bae28117b2d1292dbfadee5a3584f7f5b6f0b662e1bcb4a2b63e6b4084"
