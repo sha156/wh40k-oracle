@@ -193,12 +193,13 @@ class TestDeactivations:
         # + 死亡守卫 5 条（PR8：蝇息疫军完整重印未收录——战略 3 + 增强 2）
         # + 太空野狼 10 条（PR18：Champions of Fenris 完整重印未收录——战略 6 + 增强 4）
         # + 混沌骑士 9 条（PR22：Iconoclast Fiefdom 完整重印未收录——战略 5 + 增强 4）
+        # + 混沌星际战士 9 条（PR28：Cabal of Chaos 完整重印未收录——战略 6 + 增强 3）
         import json
         from pathlib import Path
         data = json.loads(Path("db_compile/fp_rules_patches.json").read_text(
             encoding="utf-8"))
         deacts = data.get("deactivations", [])
-        assert len(deacts) == 49
+        assert len(deacts) == 58
         strat = {d["id"] for d in deacts if d["table"] == "stratagems"}
         enh = {d["id"] for d in deacts if d["table"] == "enhancements"}
         assert strat == {
@@ -216,7 +217,10 @@ class TestDeactivations:
             "000009852006", "000009852007",
             # PR22 混沌骑士：旧 Iconoclast Fiefdom 重印未收录
             "000009766003", "000009766004", "000009766005", "000009766006",
-            "000009766007"}
+            "000009766007",
+            # PR28 混沌星际战士：旧 Cabal of Chaos 重印未收录
+            "000010152002", "000010152003", "000010152004", "000010152005",
+            "000010152006", "000010152007"}
         assert enh == {"000009839004", "000009839005", "000009983005",
                        "000009847003", "000009847004",
                        # PR6 黑色圣堂
@@ -228,7 +232,9 @@ class TestDeactivations:
                        "000009851005",
                        # PR22 混沌骑士
                        "000009765002", "000009765003", "000009765004",
-                       "000009765005"}
+                       "000009765005",
+                       # PR28 混沌星际战士
+                       "000010151003", "000010151004", "000010151005"}
         for d in deacts:
             assert d["status"] == "removed_11e"
             assert d.get("fp_source")
@@ -425,8 +431,11 @@ class TestInserts:
         # + 帝国机械教 18 条（PR27：Cohort Acquisitus / Lords of the Forge /
         #   Luminen Auto-choir 三全新分队各 1 规则+2 增强+3 战略；FP 页 2/3/4，
         #   Wahapedia 未滚入；页 3 refine 截断，正文回原 PDF PyMuPDF 取全）
+        # + 混沌星际战士 16 条（PR28：Devotees of Destruction / Murdertalon Raiders
+        #   两全新分队各 1 规则+2 增强+3 战略；Cabal of Chaos 完整重印新增 1 增强+3 战略；
+        #   FP 页 2/3/4，Wahapedia 未滚入）
         ins = data.get("inserts", [])
-        assert len(ins) == 318
+        assert len(ins) == 334
         ids = {p["values"]["id"] for p in ins}
         assert ids == {"fp11e-tau-aac-det", "fp11e-tau-aac-s1", "fp11e-tau-aac-s2",
                        "fp11e-tau-aac-s3", "fp11e-tau-aux-gbu",
@@ -632,7 +641,16 @@ class TestInserts:
                        "fp11e-admech-luminen-e2",
                        "fp11e-admech-luminen-s1",
                        "fp11e-admech-luminen-s2",
-                       "fp11e-admech-luminen-s3"}
+                       "fp11e-admech-luminen-s3",
+                       # PR28 混沌星际战士
+                       "fp11e-csm-cabal-e1", "fp11e-csm-cabal-s1",
+                       "fp11e-csm-cabal-s2", "fp11e-csm-cabal-s3",
+                       "fp11e-csm-devotees", "fp11e-csm-devotees-e1",
+                       "fp11e-csm-devotees-e2", "fp11e-csm-devotees-s1",
+                       "fp11e-csm-devotees-s2", "fp11e-csm-devotees-s3",
+                       "fp11e-csm-murdertalon", "fp11e-csm-murdertalon-e1",
+                       "fp11e-csm-murdertalon-e2", "fp11e-csm-murdertalon-s1",
+                       "fp11e-csm-murdertalon-s2", "fp11e-csm-murdertalon-s3"}
         for p in ins:
             assert p.get("fp_source")
             assert p["values"].get("id", "").startswith("fp11e-")
