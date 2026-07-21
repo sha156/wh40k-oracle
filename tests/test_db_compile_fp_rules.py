@@ -195,12 +195,13 @@ class TestDeactivations:
         # + 混沌骑士 9 条（PR22：Iconoclast Fiefdom 完整重印未收录——战略 5 + 增强 4）
         # + 混沌星际战士 9 条（PR28：Cabal of Chaos 完整重印未收录——战略 6 + 增强 3）
         # + 星界军 5 条（PR29：Bridgehead Strike 完整重印未收录——战略 3 + 增强 2）
+        # + 灵族 5 条（PR30：Armoured Warhost 完整重印未收录——战略 3 + 增强 2）
         import json
         from pathlib import Path
         data = json.loads(Path("db_compile/fp_rules_patches.json").read_text(
             encoding="utf-8"))
         deacts = data.get("deactivations", [])
-        assert len(deacts) == 63
+        assert len(deacts) == 68
         strat = {d["id"] for d in deacts if d["table"] == "stratagems"}
         enh = {d["id"] for d in deacts if d["table"] == "enhancements"}
         assert strat == {
@@ -223,7 +224,9 @@ class TestDeactivations:
             "000010152002", "000010152003", "000010152004", "000010152005",
             "000010152006", "000010152007",
             # PR29 星界军：旧 Bridgehead Strike 重印未收录
-            "000009802002", "000009802004", "000009802006"}
+            "000009802002", "000009802004", "000009802006",
+            # PR30 灵族：旧 Armoured Warhost 重印未收录
+            "000009770003", "000009770005", "000009770007"}
         assert enh == {"000009839004", "000009839005", "000009983005",
                        "000009847003", "000009847004",
                        # PR6 黑色圣堂
@@ -239,7 +242,9 @@ class TestDeactivations:
                        # PR28 混沌星际战士
                        "000010151003", "000010151004", "000010151005",
                        # PR29 星界军
-                       "000009801004", "000009801005"}
+                       "000009801004", "000009801005",
+                       # PR30 灵族
+                       "000009769003", "000009769005"}
         for d in deacts:
             assert d["status"] == "removed_11e"
             assert d.get("fp_source")
@@ -441,8 +446,12 @@ class TestInserts:
         #   FP 页 2/3/4，Wahapedia 未滚入）
         # + 星界军 12 条（PR29：Abhuman Auxiliaries / Designation Force 两全新分队
         #   各 1 规则+2 增强+3 战略；FP 页 2/4，Wahapedia 未滚入）
+        # + 灵族 18 条（PR30：Fateful Performance / Path of the Outcast /
+        #   Twilight Flickers 三全新分队各 1 规则+2 增强+3 战略；FP 页 3/4/5，
+        #   Wahapedia 未滚入；Acrobatic Onslaught 与库内 Ghosts of the Webway
+        #   分队规则同名异体，挂 expect_duplicate_name）
         ins = data.get("inserts", [])
-        assert len(ins) == 346
+        assert len(ins) == 364
         ids = {p["values"]["id"] for p in ins}
         assert ids == {"fp11e-tau-aac-det", "fp11e-tau-aac-s1", "fp11e-tau-aac-s2",
                        "fp11e-tau-aac-s3", "fp11e-tau-aux-gbu",
@@ -664,7 +673,17 @@ class TestInserts:
                        "fp11e-am-abhuman-s2", "fp11e-am-abhuman-s3",
                        "fp11e-am-designation", "fp11e-am-designation-e1",
                        "fp11e-am-designation-e2", "fp11e-am-designation-s1",
-                       "fp11e-am-designation-s2", "fp11e-am-designation-s3"}
+                       "fp11e-am-designation-s2", "fp11e-am-designation-s3",
+                       # PR30 灵族
+                       "fp11e-aeldari-fateful", "fp11e-aeldari-fateful-e1",
+                       "fp11e-aeldari-fateful-e2", "fp11e-aeldari-fateful-s1",
+                       "fp11e-aeldari-fateful-s2", "fp11e-aeldari-fateful-s3",
+                       "fp11e-aeldari-outcast", "fp11e-aeldari-outcast-e1",
+                       "fp11e-aeldari-outcast-e2", "fp11e-aeldari-outcast-s1",
+                       "fp11e-aeldari-outcast-s2", "fp11e-aeldari-outcast-s3",
+                       "fp11e-aeldari-twilight", "fp11e-aeldari-twilight-e1",
+                       "fp11e-aeldari-twilight-e2", "fp11e-aeldari-twilight-s1",
+                       "fp11e-aeldari-twilight-s2", "fp11e-aeldari-twilight-s3"}
         for p in ins:
             assert p.get("fp_source")
             assert p["values"].get("id", "").startswith("fp11e-")
