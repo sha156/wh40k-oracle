@@ -1,0 +1,1721 @@
+{
+ "_comment": "P7 阵营技能 DSL 唯一真源（混沌骑士 Chaos Knights，faction='QT'，P7-PR22）。DB effect_dsl_json/dsl_status 只是投影，由 `python -m db_compile dsl-apply` 写入并挂 restore；A/B 工作单见 docs/superpowers/plans/2026-07-20-p7-pr22-chaosknights-worklist.md。覆盖 8 个分队规则 + 39 战略 + 28 增强 = 75 条；fp_rules 标 removed_11e 的 9 行（Iconoclast Fiefdom 11 版完整重印未收录的 5 战略 + 4 增强）零覆盖，沿 PR18 太空野狼先例。三态：4 encoded / 16 partial / 55 not_modeled。混沌骑士与帝国骑士（PR21）同为超重型步行机甲阵营，可编率同样低——技能以 Dread 技能选择、Empowered 状态机、光环共享、侦测范围、致命伤/治疗、移动/据点/CP 经济为主。可编子集：地狱锻造/兽皮显化/受咒骑士全装/潜行专注 被攻 AP 恶化（ap_improve 负参净算，夹 ≤0）、次元视界/咆哮竞逐 [IGNORES COVER]、恶魔壁垒/梅德朗加德之幕 invuln（后者射击 4+ / 近战 5+ 分门）、蔑视符文 伤害 -1、标记猎物/无情齐射 [SUSTAINED HITS 1]、渴战 暴击阈值 5+、无情征服者 冲锋回合近战 AP+1（melee_charging）、蔑视弱者/狂乱嗜血 FNP、暗影风暴/黑暗主宰的祝福 Stealth=掩体、恶魔骑士 近战 WS+1、血肉金属融合 T+1、威慑警示 被压制敌军命中-1（守方向）。零新引擎通道、零新态势开关（纯编码 PR）。阶段门纪律：WHEN 落在单一相位的（近战阶段战略、对手射击阶段战略、原文明写 Ranged/melee 的）一律挂 phase_melee/phase_shooting；WHEN 写「射击阶段或近战阶段」的两相位不加门（过度加门=欠建模，同属事实错误）；冲锋分量落 melee_charging。防高估不编：目标战栗（Battle-shocked）态、负关键词门（排除 MONSTERS/VEHICLES）、重投「1」（非重投失败）、仅对致命伤的 FNP、Empowered/Dread 状态机与二选一单分支、Sv/伤害 SET（非增量）、随机 A 重投、侦测范围、异单位/异模型授予（DAMNED 与光环共享）、移动/冲锋/据点/CP/预备队/action/治疗/致命伤类。fp_new 两全新分队 Bastions of Tyranny / Hunting Warpack（fp11e-chaosknights-*）已由 fp_rules inserts 补录；Iconoclast Fiefdom 11 版完整重印的 3 条 text_patch + 9 条 removed_11e + 4 条新增插行同批落账。",
+ "dsl_version": 1,
+ "faction": "QT",
+ "entries": [
+  {
+   "table": "abilities",
+   "id": "det000008518",
+   "side": "attacker",
+   "detachment": null,
+   "name_en": "Paragons of Terror",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "恐惧楷模：战斗轮初额外选一条 Dread 技能——战前/军规技能选择无载体"
+   ],
+   "provenance": {
+    "text_sha256": "600a8e15b8e0c2031aae55162d958b0929111aff7744a983309756541417dc92"
+   },
+   "encoded_by": "manual-2026-07-21",
+   "weapon_filter": "",
+   "materialize": {
+    "from_table": "detachments",
+    "from_id": "000008518",
+    "from_column": "rule_text"
+   }
+  },
+  {
+   "table": "abilities",
+   "id": "det000009764",
+   "side": "attacker",
+   "detachment": null,
+   "name_en": "Wretched Thralls",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "卑贱奴众（11 版重印）：Damned 建军点数上限 + DAMNED 重投领导力检定——建军域与领导力检定均无载体"
+   ],
+   "provenance": {
+    "text_sha256": "62feeb5f7f92e7172755878af2e4e636b94607e74b39ec23881a820f521ab42b"
+   },
+   "encoded_by": "manual-2026-07-21",
+   "weapon_filter": "",
+   "materialize": {
+    "from_table": "detachments",
+    "from_id": "000009764",
+    "from_column": "rule_text"
+   }
+  },
+  {
+   "table": "abilities",
+   "id": "det000010303",
+   "side": "attacker",
+   "detachment": null,
+   "name_en": "Malefic Surge",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "恶意涌动：Empowered 状态机（领导力检定→失败 D3 致命伤→三选一→用后即失）。状态机、致命伤、移动 +3\"、二选一/三选一单分支均无载体；其中 [LETHAL HITS]/[SUSTAINED HITS 1] 是二选一，裸编任一支都过度施加"
+   ],
+   "provenance": {
+    "text_sha256": "ea8ea64b37347ffb456c9c606a59034c97ab2e6fcf696b9f370c1025bca56cff"
+   },
+   "encoded_by": "manual-2026-07-21",
+   "weapon_filter": "",
+   "materialize": {
+    "from_table": "detachments",
+    "from_id": "000010303",
+    "from_column": "rule_text"
+   }
+  },
+  {
+   "table": "abilities",
+   "id": "det000010307",
+   "side": "attacker",
+   "detachment": null,
+   "name_en": "Tyrannical Court",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "暴君之庭：CHARACTER 模型 OC+2 + 每战斗轮一次 0CP 战略——OC/CP 经济无载体"
+   ],
+   "provenance": {
+    "text_sha256": "686598b0e88b9865eb83ea2def57af450d55b072badc24471a9aae6c1b49356a"
+   },
+   "encoded_by": "manual-2026-07-21",
+   "weapon_filter": "",
+   "materialize": {
+    "from_table": "detachments",
+    "from_id": "000010307",
+    "from_column": "rule_text"
+   }
+  },
+  {
+   "table": "abilities",
+   "id": "det000010311",
+   "side": "attacker",
+   "detachment": null,
+   "name_en": "Marked Prey",
+   "name_zh": null,
+   "status": "partial",
+   "effects": [
+    {
+     "phase": "hit",
+     "op": "extra_hits",
+     "params": [
+      1
+     ],
+     "condition": [],
+     "source": "标记猎物（WAR DOG 对指挥阶段所选敌单位 [SUSTAINED HITS 1]，两相位）"
+    }
+   ],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "限 WAR DOG 模型、对指挥阶段所选敌单位且须可见——单位对局假设本单位即 WAR DOG、被打者即所选敌单位、可见性成立（沿 PR21「限 Armiger（单位对局假设即 Armiger）」先例）",
+    "原文无相位限制（makes an attack）——两相位注入，不加相位门",
+    "附带建军条款（须含 3+ WAR DOG 单位、WAR DOG 获 BATTLELINE、选 3 单位获 CHARACTER）无载体"
+   ],
+   "provenance": {
+    "text_sha256": "4db253b1126f31752b1d33074fffa9fe4b07676439910284416e62e70fbe2d75"
+   },
+   "encoded_by": "manual-2026-07-21",
+   "weapon_filter": "",
+   "materialize": {
+    "from_table": "detachments",
+    "from_id": "000010311",
+    "from_column": "rule_text"
+   }
+  },
+  {
+   "table": "abilities",
+   "id": "det000010750",
+   "side": "attacker",
+   "detachment": null,
+   "name_en": "Masters of the Pack",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "群兽之主：Titanic 单位在 2+ 友方 WAR DOG 在其光环内时自身也吃该光环——光环自反射（几何 + 编队计数）无载体，且被共享的光环内容取决于具体兵牌"
+   ],
+   "provenance": {
+    "text_sha256": "0eb46367582abd1db9d3d663c08dd3bd6f4b13e542530ed4dcdcf2fec069dd5a"
+   },
+   "encoded_by": "manual-2026-07-21",
+   "weapon_filter": "",
+   "materialize": {
+    "from_table": "detachments",
+    "from_id": "000010750",
+    "from_column": "rule_text"
+   }
+  },
+  {
+   "table": "abilities",
+   "id": "detfp11e-chaosknights-bastions",
+   "side": "attacker",
+   "detachment": null,
+   "name_en": "Annihilate the Unworthy",
+   "name_zh": "歼灭卑劣者",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "歼灭卑劣者：KNIGHT TYRANT 打「战栗（Battle-shocked）」目标命中+1——目标战栗态无载体（引擎只有 target_below_starting/target_below_half 战损档），裸编 hit+1 会对所有目标过度施加"
+   ],
+   "provenance": {
+    "text_sha256": "06a869aa4317ab050b29b1f4f803d8c57fe6171e72a471fdf972fb5d35a286d2"
+   },
+   "encoded_by": "manual-2026-07-21",
+   "weapon_filter": "",
+   "materialize": {
+    "from_table": "detachments",
+    "from_id": "fp11e-chaosknights-bastions",
+    "from_column": "rule_text"
+   }
+  },
+  {
+   "table": "abilities",
+   "id": "detfp11e-chaosknights-hunting",
+   "side": "attacker",
+   "detachment": null,
+   "name_en": "Scenting Fear",
+   "name_zh": "嗅探恐惧",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "嗅探恐惧：射击阶段令一敌单位 +6\" 侦测范围——侦测范围（detection range）属 11 版隐蔽/视线域，引擎无载体（沿 PR20 Cloaked Position 先例）"
+   ],
+   "provenance": {
+    "text_sha256": "5e182f15990f4de1cdbbfd16002eef23399d71e3f9cd0a7d8ae0ed86d0e5d8aa"
+   },
+   "encoded_by": "manual-2026-07-21",
+   "weapon_filter": "",
+   "materialize": {
+    "from_table": "detachments",
+    "from_id": "fp11e-chaosknights-hunting",
+    "from_column": "rule_text"
+   }
+  },
+  {
+   "table": "stratagems",
+   "id": "000008517002",
+   "side": "attacker",
+   "detachment": "Traitoris Lance",
+   "name_en": "PTERRORSHADES",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "翼魇群：敌战栗检定失败后 6D6 掷 4+ 各 1 致命伤并回血——致命伤池与治疗均无载体，且触发挂在战栗检定上"
+   ],
+   "provenance": {
+    "text_sha256": "6ac65107c00d2baf7e99b55addc2e26b31650580222fd6649365eb8bf317b939"
+   },
+   "encoded_by": "manual-2026-07-21",
+   "weapon_filter": ""
+  },
+  {
+   "table": "stratagems",
+   "id": "000008517003",
+   "side": "attacker",
+   "detachment": "Traitoris Lance",
+   "name_en": "CONQUERORS WITHOUT MERCY",
+   "name_zh": null,
+   "status": "partial",
+   "effects": [
+    {
+     "phase": "save",
+     "op": "ap_improve",
+     "params": [
+      1
+     ],
+     "condition": [
+      "melee_charging"
+     ],
+     "source": "无情征服者（本回合冲锋过的模型近战武器 AP 改善 1）"
+    }
+   ],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "WHEN=近战阶段且目标须本回合冲锋过、本阶段未出手——冲锋分量落 melee_charging 复合门（非冲锋回合不生效）",
+    "后半句「摧毁敌单位后 6\" 内敌军战栗检定」无载体不编"
+   ],
+   "provenance": {
+    "text_sha256": "1345cc4c874155164bcb84bfbd0401b1e67664005d7518b454f83c1739f51021"
+   },
+   "encoded_by": "manual-2026-07-21",
+   "weapon_filter": ""
+  },
+  {
+   "table": "stratagems",
+   "id": "000008517004",
+   "side": "target",
+   "detachment": "Traitoris Lance",
+   "name_en": "DISDAIN FOR THE WEAK",
+   "name_zh": null,
+   "status": "partial",
+   "effects": [
+    {
+     "phase": "fnp",
+     "op": "fnp",
+     "params": [
+      6
+     ],
+     "condition": [
+      "phase_melee"
+     ],
+     "source": "蔑视弱者（近战被击 FNP 6+）"
+    }
+   ],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "WHEN=近战阶段敌选中目标后——仅近战注入（射击阶段不放行）",
+    "「对战栗模型的攻击改 FNP 5+」的战栗态门无载体，只编 FNP 6+ 基线"
+   ],
+   "provenance": {
+    "text_sha256": "c20acfa302f02af50e65adf994cb4d31926afb627e69da01b1f48e437e4010db"
+   },
+   "encoded_by": "manual-2026-07-21",
+   "weapon_filter": ""
+  },
+  {
+   "table": "stratagems",
+   "id": "000008517005",
+   "side": "attacker",
+   "detachment": "Traitoris Lance",
+   "name_en": "A LONG LEASH",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "长绳索：WAR DOG 视为在 ABHORRENT 光环范围内——光环几何无载体"
+   ],
+   "provenance": {
+    "text_sha256": "2125dc81aa31a52c656ea04bd79c45ee4eda5758d4eb7e6b65ee72ff9b1753c7"
+   },
+   "encoded_by": "manual-2026-07-21",
+   "weapon_filter": ""
+  },
+  {
+   "table": "stratagems",
+   "id": "000008517006",
+   "side": "attacker",
+   "detachment": "Traitoris Lance",
+   "name_en": "IMPERIOUS ADVANCE",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "高傲行进：穿越模型/地形移动 + 自动通过绝望逃脱——移动域无载体"
+   ],
+   "provenance": {
+    "text_sha256": "356997312eca1a644fa1bf4d28800f289f73fe271d5d6fdb58538bc4458321dd"
+   },
+   "encoded_by": "manual-2026-07-21",
+   "weapon_filter": ""
+  },
+  {
+   "table": "stratagems",
+   "id": "000008517007",
+   "side": "target",
+   "detachment": "Traitoris Lance",
+   "name_en": "STORM OF DARKNESS",
+   "name_zh": null,
+   "status": "partial",
+   "effects": [
+    {
+     "phase": "save",
+     "op": "cover",
+     "params": [],
+     "condition": [
+      "phase_shooting"
+     ],
+     "source": "暗影风暴（守方获 Stealth + 掩体收益：11 版 24.33 的全部效果就是授予 13.08 掩体收益，两从句收敛为同一二元状态，只编一份）"
+    }
+   ],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "WHEN=对手射击阶段选中目标后——射击门自含，近战不注入",
+    "原文「获 Stealth」与「获掩体收益」在 11 版是同一个状态，勿再叠编 hit-1（十版 Stealth 语义残留会双重计费且不吃 [IGNORES COVER] 24.18 抵消）"
+   ],
+   "provenance": {
+    "text_sha256": "4bde62667f1880888725971d8216124f097edb3d892b8283fb2cd35f247cd5ae"
+   },
+   "encoded_by": "manual-2026-07-21",
+   "weapon_filter": ""
+  },
+  {
+   "table": "stratagems",
+   "id": "000009766002",
+   "side": "attacker",
+   "detachment": "Iconoclast Fiefdom",
+   "name_en": "AVENGE THE MASTERS!",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "为主复仇！（11 版重印）：摧毁者敌单位被 marked 至战斗结束，友方 DAMNED 单位打 marked 目标获 [LETHAL HITS]——效果施加于友军 DAMNED 单位（异单位授予）+ marked 状态，双双无载体"
+   ],
+   "provenance": {
+    "text_sha256": "878b6e57af622f23a28bf1d3f74664a3652cb5e83699c3448bd4f91b7c3719af"
+   },
+   "encoded_by": "manual-2026-07-21",
+   "weapon_filter": ""
+  },
+  {
+   "table": "stratagems",
+   "id": "000010305002",
+   "side": "attacker",
+   "detachment": "Infernal Lance",
+   "name_en": "PROFANE SYMBIOSIS",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "亵渎共生：令本单位进行一次 Malefic Surge——Empowered 状态机无载体"
+   ],
+   "provenance": {
+    "text_sha256": "625140d2138e49c9272fd79873294f776943baae0060158b49747106acb80d02"
+   },
+   "encoded_by": "manual-2026-07-21",
+   "weapon_filter": ""
+  },
+  {
+   "table": "stratagems",
+   "id": "000010305003",
+   "side": "target",
+   "detachment": "Infernal Lance",
+   "name_en": "HELLFORGED CONSTRUCTION",
+   "name_zh": null,
+   "status": "encoded",
+   "effects": [
+    {
+     "phase": "save",
+     "op": "ap_improve",
+     "params": [
+      -1
+     ],
+     "condition": [
+      "phase_melee"
+     ],
+     "source": "地狱锻造（近战阶段被攻 AP 恶化 1）"
+    }
+   ],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [],
+   "provenance": {
+    "text_sha256": "10961d5c20c58245f5b42be5e12338622e77d29311d178af0dcae7a7dd9ae1fd"
+   },
+   "encoded_by": "manual-2026-07-21",
+   "weapon_filter": ""
+  },
+  {
+   "table": "stratagems",
+   "id": "000010305004",
+   "side": "attacker",
+   "detachment": "Infernal Lance",
+   "name_en": "CORRUPTING TAINT",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "腐化污痕：锁定目标点控制权——据点/控制域无载体"
+   ],
+   "provenance": {
+    "text_sha256": "fdf408c84cb152eaac7d0733165015852a2e74876c1aa84588063fdd6469f3fe"
+   },
+   "encoded_by": "manual-2026-07-21",
+   "weapon_filter": ""
+  },
+  {
+   "table": "stratagems",
+   "id": "000010305005",
+   "side": "attacker",
+   "detachment": "Infernal Lance",
+   "name_en": "UNLEASH BALEFIRE",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "释放邪火：战栗检定失败令敌 aflame（M-2\"、冲锋骰-2）——战栗与移动/冲锋减值均无载体"
+   ],
+   "provenance": {
+    "text_sha256": "ce6225151c283ff8e98266ecfbd52ffe0dd6ab529eea7bfed6f66b40568ebf4f"
+   },
+   "encoded_by": "manual-2026-07-21",
+   "weapon_filter": ""
+  },
+  {
+   "table": "stratagems",
+   "id": "000010305006",
+   "side": "attacker",
+   "detachment": "Infernal Lance",
+   "name_en": "WARP VISION",
+   "name_zh": null,
+   "status": "encoded",
+   "effects": [
+    {
+     "phase": "save",
+     "op": "ignores_cover",
+     "params": [],
+     "condition": [
+      "phase_shooting"
+     ],
+     "source": "次元视界（远程武器 [IGNORES COVER]）"
+    }
+   ],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [],
+   "provenance": {
+    "text_sha256": "a4a4f5ff7786f06a251e36514663fe27932ee4099ff6085675679252fa593175"
+   },
+   "encoded_by": "manual-2026-07-21",
+   "weapon_filter": ""
+  },
+  {
+   "table": "stratagems",
+   "id": "000010305007",
+   "side": "target",
+   "detachment": "Infernal Lance",
+   "name_en": "DIABOLIC BULWARK",
+   "name_zh": null,
+   "status": "encoded",
+   "effects": [
+    {
+     "phase": "save",
+     "op": "invuln",
+     "params": [
+      4
+     ],
+     "condition": [
+      "phase_shooting"
+     ],
+     "source": "恶魔壁垒（对手射击阶段 4+ 无效保护）"
+    }
+   ],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [],
+   "provenance": {
+    "text_sha256": "866163f4dc6ed9b7785ad8fafb477f5b5bee2f97aa4b9ba0e8737d4231368ea6"
+   },
+   "encoded_by": "manual-2026-07-21",
+   "weapon_filter": ""
+  },
+  {
+   "table": "stratagems",
+   "id": "000010309002",
+   "side": "attacker",
+   "detachment": "Lords of Dread",
+   "name_en": "CLAIMED FOR THE DARK GODS",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "为黑暗诸神所据：目标点控制等级锁 5——据点/控制域无载体"
+   ],
+   "provenance": {
+    "text_sha256": "4e07b6e68147f9600d966371db8af9acc0d17a0ae86838db20e84c03b576a72e"
+   },
+   "encoded_by": "manual-2026-07-21",
+   "weapon_filter": ""
+  },
+  {
+   "table": "stratagems",
+   "id": "000010309003",
+   "side": "attacker",
+   "detachment": "Lords of Dread",
+   "name_en": "SPITEFUL DEMISE",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "恶意消亡：Deadly Demise 触发档 6→4+——覆灭致命伤域无载体"
+   ],
+   "provenance": {
+    "text_sha256": "2e6fd032ac920210b34e13bfd1abf0c8aea11089ae6d6321b8f36a946f72bbc9"
+   },
+   "encoded_by": "manual-2026-07-21",
+   "weapon_filter": ""
+  },
+  {
+   "table": "stratagems",
+   "id": "000010309004",
+   "side": "target",
+   "detachment": "Lords of Dread",
+   "name_en": "RUNES OF DISDAIN",
+   "name_zh": null,
+   "status": "partial",
+   "effects": [
+    {
+     "phase": "damage",
+     "op": "damage_reduction",
+     "params": [
+      1
+     ],
+     "condition": [],
+     "source": "蔑视符文（分配到本单位的攻击伤害 -1，射击/近战两相位）"
+    }
+   ],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "限 CHAOS KNIGHTS CHARACTER 单位（单位对局假设即该单位）",
+    "WHEN=对手射击阶段或近战阶段敌选中目标后——两相位均适用，不加相位门"
+   ],
+   "provenance": {
+    "text_sha256": "3fede533d7bcbd8f00f1e9eee25496314736c03542ea5949e682821c5f119d4e"
+   },
+   "encoded_by": "manual-2026-07-21",
+   "weapon_filter": ""
+  },
+  {
+   "table": "stratagems",
+   "id": "000010309005",
+   "side": "attacker",
+   "detachment": "Lords of Dread",
+   "name_en": "TITANIC DUEL",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "泰坦决斗：对 MONSTER/VEHICLE 重投命中骰 1 与致伤骰 1（TITANIC 时升级为全重投）——重投「1」（非重投失败）无载体，且 MONSTER-或-VEHICLE 的关键词析取与 TITANIC 升级档也无复合载体"
+   ],
+   "provenance": {
+    "text_sha256": "25ae8ca2a94d387abe808fb7bbd4c094a189699fdfaff2b455b70c7a2b49b118"
+   },
+   "encoded_by": "manual-2026-07-21",
+   "weapon_filter": ""
+  },
+  {
+   "table": "stratagems",
+   "id": "000010309006",
+   "side": "attacker",
+   "detachment": "Lords of Dread",
+   "name_en": "TROPHY HUNTER",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "猎取战利品：巩固额外移动 3\"——移动域无载体"
+   ],
+   "provenance": {
+    "text_sha256": "91e0a2b940d77f1169b3b627c6177b9c62a12dbbc11d00537941a5dd5a1e4564"
+   },
+   "encoded_by": "manual-2026-07-21",
+   "weapon_filter": ""
+  },
+  {
+   "table": "stratagems",
+   "id": "000010309007",
+   "side": "attacker",
+   "detachment": "Lords of Dread",
+   "name_en": "CRUSHED LIKE VERMIN",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "碾如虫豸：碾过的敌单位（排除 MONSTERS/VEHICLES）6D6 掷 4+ 各 1 致命伤——致命伤 + 负关键词门（引擎只能表达「有关键词」）双双无载体"
+   ],
+   "provenance": {
+    "text_sha256": "9145c4c1d641eb17a4f8349b5b897aefc802f4e36a71ad17792d842316134562"
+   },
+   "encoded_by": "manual-2026-07-21",
+   "weapon_filter": ""
+  },
+  {
+   "table": "stratagems",
+   "id": "000010313002",
+   "side": "attacker",
+   "detachment": "Houndpack Lance",
+   "name_en": "VOX-HOWL",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "长嚎传讯：6\" 内敌战栗检定 + 友方 WAR DOG 脱离战栗——战栗域无载体"
+   ],
+   "provenance": {
+    "text_sha256": "52316c2c82e1be6e34f3d4c3aa0435f3b648c36b5d209ba2a48e2df2ad5a2690"
+   },
+   "encoded_by": "manual-2026-07-21",
+   "weapon_filter": ""
+  },
+  {
+   "table": "stratagems",
+   "id": "000010313003",
+   "side": "attacker",
+   "detachment": "Houndpack Lance",
+   "name_en": "HUNGRY FOR COMBAT",
+   "name_zh": null,
+   "status": "partial",
+   "effects": [
+    {
+     "phase": "hit",
+     "op": "crit_threshold",
+     "params": [
+      5
+     ],
+     "condition": [
+      "phase_melee"
+     ],
+     "source": "渴战（近战未修正命中骰 5+ 即暴击）"
+    }
+   ],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "WHEN=近战阶段初，须两个以上 WAR DOG 单位与同一敌单位接战——点名即假设已满足；近战门",
+    "附带的「只能选该敌单位为目标」限制在单位对局中自然成立，不单独编"
+   ],
+   "provenance": {
+    "text_sha256": "39da11862574d6f1398f902efe5f689e0e8dbd4bbc08cbd1724070e232c81eb6"
+   },
+   "encoded_by": "manual-2026-07-21",
+   "weapon_filter": ""
+  },
+  {
+   "table": "stratagems",
+   "id": "000010313004",
+   "side": "attacker",
+   "detachment": "Houndpack Lance",
+   "name_en": "CUNNING HUNTER",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "狡诈猎手：撤退后仍可射击/宣告冲锋——移动资格域无载体"
+   ],
+   "provenance": {
+    "text_sha256": "5cc790dc0f605d900dd99295a5dc0e152ccbbad9cf078f111ca238893b384815"
+   },
+   "encoded_by": "manual-2026-07-21",
+   "weapon_filter": ""
+  },
+  {
+   "table": "stratagems",
+   "id": "000010313005",
+   "side": "attacker",
+   "detachment": "Houndpack Lance",
+   "name_en": "ANIMALISTIC RAGE",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "野性狂怒：被摧毁的单位在覆灭结算前反打——摧毁后反打（时序域）无载体"
+   ],
+   "provenance": {
+    "text_sha256": "81e0405ba2f05d692137aae0da6498eb4025086ec611c7a843af3e46d4669d01"
+   },
+   "encoded_by": "manual-2026-07-21",
+   "weapon_filter": ""
+  },
+  {
+   "table": "stratagems",
+   "id": "000010313006",
+   "side": "attacker",
+   "detachment": "Houndpack Lance",
+   "name_en": "HARRYING HOUNDS",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "追猎猎犬：常规移动 6\"——移动域无载体"
+   ],
+   "provenance": {
+    "text_sha256": "9d76effd91c88c0bea57e51e138e6d7c5aab66dcdee4d9eb65e9f68351c599a2"
+   },
+   "encoded_by": "manual-2026-07-21",
+   "weapon_filter": ""
+  },
+  {
+   "table": "stratagems",
+   "id": "000010313007",
+   "side": "attacker",
+   "detachment": "Houndpack Lance",
+   "name_en": "ENCIRCLING PACK",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "包抄猎群：撤出战场进战略预备队——预备队域无载体"
+   ],
+   "provenance": {
+    "text_sha256": "636ce3aba5630b45b6b3f954d2315c2785740be36abf3a3a416465b1bb50b1a9"
+   },
+   "encoded_by": "manual-2026-07-21",
+   "weapon_filter": ""
+  },
+  {
+   "table": "stratagems",
+   "id": "000010752002",
+   "side": "attacker",
+   "detachment": "Helhunt Lance",
+   "name_en": "FERAL ARROGANCE",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "凶兽傲慢：对致命伤的 FNP 5+——「仅对致命伤」的 FNP 无载体（引擎 fnp 通道不分伤害来源，裸编会对普通伤害过度施加）"
+   ],
+   "provenance": {
+    "text_sha256": "a322c4b8067150f99b01251b4cc27c42a18fb28eee26cedbd49aef9bf8b432d1"
+   },
+   "encoded_by": "manual-2026-07-21",
+   "weapon_filter": ""
+  },
+  {
+   "table": "stratagems",
+   "id": "000010752003",
+   "side": "attacker",
+   "detachment": "Helhunt Lance",
+   "name_en": "MERCILESS FUSILLADE",
+   "name_zh": null,
+   "status": "partial",
+   "effects": [
+    {
+     "phase": "hit",
+     "op": "extra_hits",
+     "params": [
+      1
+     ],
+     "condition": [],
+     "source": "无情齐射（[SUSTAINED HITS 1]，射击或近战两相位）"
+    }
+   ],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "WHEN=你的射击阶段初或近战阶段初二选一，效果持续到该阶段结束——两相位各自可达，按「点名即假设本阶段已用」两相位注入，不加相位门",
+    "附带的「只能选该敌单位为全部攻击目标」与「至多两个 WAR DOG 单位同享」在单位对局中自然成立/无载体，不单独编"
+   ],
+   "provenance": {
+    "text_sha256": "9d88b232e2aa4ecc3915e0f2ae90163b2dadcc968a10552a87e20ebf5c914319"
+   },
+   "encoded_by": "manual-2026-07-21",
+   "weapon_filter": ""
+  },
+  {
+   "table": "stratagems",
+   "id": "000010752004",
+   "side": "target",
+   "detachment": "Helhunt Lance",
+   "name_en": "BEASTHIDE MANIFESTATION",
+   "name_zh": null,
+   "status": "encoded",
+   "effects": [
+    {
+     "phase": "save",
+     "op": "ap_improve",
+     "params": [
+      -1
+     ],
+     "condition": [],
+     "source": "兽皮显化（被攻 AP 恶化 1，对手射击阶段或近战阶段两相位）"
+    }
+   ],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [],
+   "provenance": {
+    "text_sha256": "7b22807729cf60260b3d25468742d4821f8888d9b55279c65ac7517e013c260d"
+   },
+   "encoded_by": "manual-2026-07-21",
+   "weapon_filter": ""
+  },
+  {
+   "table": "stratagems",
+   "id": "000010752005",
+   "side": "attacker",
+   "detachment": "Helhunt Lance",
+   "name_en": "FLUSH THE QUARRY",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "驱出猎物：穿越模型/地形移动 + 自动通过绝望逃脱——移动域无载体"
+   ],
+   "provenance": {
+    "text_sha256": "a4273c4d046eaedf87be576190c19e1a121675020d345c323ddf30221e7b2301"
+   },
+   "encoded_by": "manual-2026-07-21",
+   "weapon_filter": ""
+  },
+  {
+   "table": "stratagems",
+   "id": "000010752006",
+   "side": "attacker",
+   "detachment": "Helhunt Lance",
+   "name_en": "CONTEMPTUOUS VOLLEYS",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "轻蔑齐射：撤退后仍可射击/宣告冲锋——移动资格域无载体"
+   ],
+   "provenance": {
+    "text_sha256": "1b3ff3f903fa944649262026dafe4051464369d6303c4f5e1dea9745c5ae240f"
+   },
+   "encoded_by": "manual-2026-07-21",
+   "weapon_filter": ""
+  },
+  {
+   "table": "stratagems",
+   "id": "000010752007",
+   "side": "attacker",
+   "detachment": "Helhunt Lance",
+   "name_en": "GOADED BEAST",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "被激怒的野兽：D6\" 冲刺移动（surge move）——移动域无载体"
+   ],
+   "provenance": {
+    "text_sha256": "4d10e65661b46e4b1d05c06352ab5f63387e0bd8fc6f04d55dd3ef353da097d9"
+   },
+   "encoded_by": "manual-2026-07-21",
+   "weapon_filter": ""
+  },
+  {
+   "table": "stratagems",
+   "id": "fp11e-chaosknights-bastions-s1",
+   "side": "attacker",
+   "detachment": "Bastions of Tyranny",
+   "name_en": "RUNE-CURSED STRONGHOLD",
+   "name_zh": "符咒堡垒",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "符咒堡垒：对致命伤的 FNP 5+——「仅对致命伤」的 FNP 无载体（同凶兽傲慢）"
+   ],
+   "provenance": {
+    "text_sha256": "89e468cc36f04de32854b9662402ecd397027e860955353f28e01d153863502a"
+   },
+   "encoded_by": "manual-2026-07-21",
+   "weapon_filter": ""
+  },
+  {
+   "table": "stratagems",
+   "id": "fp11e-chaosknights-bastions-s2",
+   "side": "attacker",
+   "detachment": "Bastions of Tyranny",
+   "name_en": "PITILESS FOCUS",
+   "name_zh": "无情专注",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "无情专注：撤退移动不剥夺射击资格——移动资格域无载体"
+   ],
+   "provenance": {
+    "text_sha256": "9b44c61de9d68bc5d942df0f247c60b61ca897b07eb4918ae21d11737c1662f1"
+   },
+   "encoded_by": "manual-2026-07-21",
+   "weapon_filter": ""
+  },
+  {
+   "table": "stratagems",
+   "id": "fp11e-chaosknights-bastions-s3",
+   "side": "target",
+   "detachment": "Bastions of Tyranny",
+   "name_en": "INTIMIDATING REMINDER",
+   "name_zh": "威慑警示",
+   "status": "partial",
+   "effects": [
+    {
+     "phase": "hit",
+     "op": "modify",
+     "params": [
+      -1
+     ],
+     "condition": [],
+     "source": "威慑警示（被压制的敌单位攻击命中骰 -1，守方向减来袭命中，两相位）"
+    }
+   ],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "限 KNIGHT TYRANT 施加且须我方射击已命中——点名即假设已使用（沿 PR24 震荡多重发生器先例）",
+    "suppressed 状态持续到我方下一指挥阶段初，覆盖对手整个回合的射击与近战——两相位注入，不加相位门"
+   ],
+   "provenance": {
+    "text_sha256": "6158ea62a7cb143bed6877a4dbddd898339f25a499c8ae882510f712e30b00e6"
+   },
+   "encoded_by": "manual-2026-07-21",
+   "weapon_filter": ""
+  },
+  {
+   "table": "stratagems",
+   "id": "fp11e-chaosknights-hunting-s1",
+   "side": "target",
+   "detachment": "Hunting Warpack",
+   "name_en": "INSENSATE BLOODTHIRST",
+   "name_zh": "狂乱嗜血",
+   "status": "partial",
+   "effects": [
+    {
+     "phase": "fnp",
+     "op": "fnp",
+     "params": [
+      5
+     ],
+     "condition": [
+      "phase_melee"
+     ],
+     "source": "狂乱嗜血（近战被击 FNP 5+）"
+    }
+   ],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "WHEN=近战阶段敌单位选中友方 WAR DOG 单位时——仅近战注入（射击阶段不放行）",
+    "限 WAR DOG 单位（单位对局假设即该单位）"
+   ],
+   "provenance": {
+    "text_sha256": "53bf83145730809402bd1347b5e641c3523e288516c1a2448bd5a7e17ef8bb50"
+   },
+   "encoded_by": "manual-2026-07-21",
+   "weapon_filter": ""
+  },
+  {
+   "table": "stratagems",
+   "id": "fp11e-chaosknights-hunting-s2",
+   "side": "attacker",
+   "detachment": "Hunting Warpack",
+   "name_en": "LEASH OF THE MASTERS",
+   "name_zh": "主宰束链",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "主宰束链：射击后仍可开始 action——action 域无载体"
+   ],
+   "provenance": {
+    "text_sha256": "b548bb6c7f019c0a01dc1c9dd6822e2406b3dea83dc0e97de4f821bf4cbbc6ea"
+   },
+   "encoded_by": "manual-2026-07-21",
+   "weapon_filter": ""
+  },
+  {
+   "table": "stratagems",
+   "id": "fp11e-chaosknights-hunting-s3",
+   "side": "target",
+   "detachment": "Hunting Warpack",
+   "name_en": "STALKING FOCUS",
+   "name_zh": "潜行专注",
+   "status": "partial",
+   "effects": [
+    {
+     "phase": "save",
+     "op": "ap_improve",
+     "params": [
+      -1
+     ],
+     "condition": [
+      "phase_shooting"
+     ],
+     "source": "潜行专注（针对本单位的远程攻击 AP 恶化 1）"
+    }
+   ],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "WHEN=对手射击阶段——原文明写 Ranged attacks，射击门（近战不注入）",
+    "限 WAR DOG 单位且须在目标标记范围内——点名即假设已满足"
+   ],
+   "provenance": {
+    "text_sha256": "926c7cb7df807ed18d8601d92504cf070291d82092a033bb0e1b10613e93485e"
+   },
+   "encoded_by": "manual-2026-07-21",
+   "weapon_filter": ""
+  },
+  {
+   "table": "stratagems",
+   "id": "fp11e-chaosknights-iconoclast-s1",
+   "side": "attacker",
+   "detachment": "Iconoclast Fiefdom",
+   "name_en": "DARK SACRIFICE",
+   "name_zh": "黑暗献祭",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "黑暗献祭：己方 DAMNED 单位吃 D3+3 致命伤换 CHAOS KNIGHTS 模型回同量伤口——己方致命伤与治疗均无载体"
+   ],
+   "provenance": {
+    "text_sha256": "e08c2e14d7373a17a26917fe54dcd2e392e7fb64fcc0829f700fd658ec0f3075"
+   },
+   "encoded_by": "manual-2026-07-21",
+   "weapon_filter": ""
+  },
+  {
+   "table": "stratagems",
+   "id": "fp11e-chaosknights-iconoclast-s2",
+   "side": "attacker",
+   "detachment": "Iconoclast Fiefdom",
+   "name_en": "COURSING THRALLS",
+   "name_zh": "追猎奴众",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "追猎奴众：令一敌单位 +6\" 侦测范围（hunted）——侦测范围无载体"
+   ],
+   "provenance": {
+    "text_sha256": "f23aafab5181e3a919e0133036fa77405472abc8bd835df7829192a0b6c86441"
+   },
+   "encoded_by": "manual-2026-07-21",
+   "weapon_filter": ""
+  },
+  {
+   "table": "enhancements",
+   "id": "000008516002",
+   "side": "attacker",
+   "detachment": "Traitoris Lance",
+   "name_en": "Nightmare’s Master",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "梦魇之主：近战阶段初接战敌单位战栗检定——战栗域无载体"
+   ],
+   "provenance": {
+    "text_sha256": "5a9984a4e3464b48271c5c3a470ea9ca06602aeb1f0ed5436ba84d5ad227b7dd"
+   },
+   "encoded_by": "manual-2026-07-21",
+   "weapon_filter": ""
+  },
+  {
+   "table": "enhancements",
+   "id": "000008516003",
+   "side": "attacker",
+   "detachment": "Traitoris Lance",
+   "name_en": "Tyrant’s Shadow",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "暴君之影：目标点控制 + 授予 Deathly Terror——据点/控制域无载体"
+   ],
+   "provenance": {
+    "text_sha256": "47dc25ee22b74beabf9d3b2c3190a534f8600f17254a492282a62811670b3d1e"
+   },
+   "encoded_by": "manual-2026-07-21",
+   "weapon_filter": ""
+  },
+  {
+   "table": "enhancements",
+   "id": "000008516004",
+   "side": "attacker",
+   "detachment": "Traitoris Lance",
+   "name_en": "Malevolent Heraldry",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "恶意纹章：随机选 Dread 技能时重投——战前随机选择无载体"
+   ],
+   "provenance": {
+    "text_sha256": "0f603b0fa65c7cdc2394eda902bd134a51e9a58221ca6a362bac7e24974ed7de"
+   },
+   "encoded_by": "manual-2026-07-21",
+   "weapon_filter": ""
+  },
+  {
+   "table": "enhancements",
+   "id": "000008516005",
+   "side": "target",
+   "detachment": "Traitoris Lance",
+   "name_en": "Veil of Medrengard",
+   "name_zh": null,
+   "status": "partial",
+   "effects": [
+    {
+     "phase": "save",
+     "op": "invuln",
+     "params": [
+      4
+     ],
+     "condition": [
+      "phase_shooting"
+     ],
+     "source": "梅德朗加德之幕（对远程 4+ 无效保护）"
+    },
+    {
+     "phase": "save",
+     "op": "invuln",
+     "params": [
+      5
+     ],
+     "condition": [
+      "phase_melee"
+     ],
+     "source": "梅德朗加德之幕（对近战 5+ 无效保护）"
+    }
+   ],
+   "requires_toggles": [
+    "defender_bearer_leading"
+   ],
+   "not_modeled_notes_zh": [
+    "限携带者模型（点名即声明守方为携带者；附属单位整体注入会高估）——沿 PR21 圣所先例",
+    "两档 invuln 按相位分门：射击 4+ / 近战 5+，互不串相位"
+   ],
+   "provenance": {
+    "text_sha256": "d2cc4d3c4fb6d6a30d14719ac41ad130c03c83a7f4b0f1ac3b3a3b1a37ada946"
+   },
+   "encoded_by": "manual-2026-07-21",
+   "weapon_filter": ""
+  },
+  {
+   "table": "enhancements",
+   "id": "000010304002",
+   "side": "attacker",
+   "detachment": "Infernal Lance",
+   "name_en": "Knight Diabolus",
+   "name_zh": null,
+   "status": "partial",
+   "effects": [
+    {
+     "phase": "hit",
+     "op": "bs_improve",
+     "params": [
+      1
+     ],
+     "condition": [
+      "phase_melee"
+     ],
+     "source": "恶魔骑士（携带者近战武器 WS 特征值改善 1）"
+    }
+   ],
+   "requires_toggles": [
+    "bearer_leading"
+   ],
+   "not_modeled_notes_zh": [
+    "限携带者模型近战武器（点名即声明；附属单位整体注入会高估）",
+    "后半句「使用 Diabolic Power 期间近战武器获 [LANCE]」挂 Empowered 状态机——无载体不编"
+   ],
+   "provenance": {
+    "text_sha256": "85e6e89a92a6797abc761c155485da1a19df8afa9945007eff6b724e144024c8"
+   },
+   "encoded_by": "manual-2026-07-21",
+   "weapon_filter": ""
+  },
+  {
+   "table": "enhancements",
+   "id": "000010304003",
+   "side": "attacker",
+   "detachment": "Infernal Lance",
+   "name_en": "Blasphemous Engine",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "亵渎引擎：携带者 W+2 + Malefic Surge 领导力检定重投——伤口特征值与检定重投均无载体"
+   ],
+   "provenance": {
+    "text_sha256": "de87f5f9a0ff30527c96036d1577ade184a55556debc911873cdf122ca20fea1"
+   },
+   "encoded_by": "manual-2026-07-21",
+   "weapon_filter": ""
+  },
+  {
+   "table": "enhancements",
+   "id": "000010304004",
+   "side": "target",
+   "detachment": "Infernal Lance",
+   "name_en": "Fleshmetal Fusion",
+   "name_zh": null,
+   "status": "partial",
+   "effects": [
+    {
+     "phase": "wound",
+     "op": "t_improve",
+     "params": [
+      1
+     ],
+     "condition": [],
+     "source": "血肉金属融合（携带者 T+1，两相位）"
+    }
+   ],
+   "requires_toggles": [
+    "defender_bearer_leading"
+   ],
+   "not_modeled_notes_zh": [
+    "限携带者模型（点名即声明守方为携带者）",
+    "后半句「使用 Unnatural Fortitude 期间对 D1 攻击护甲骰+1」挂 Empowered 状态机 × 伤害档双门——无载体不编",
+    "T+1 走 t_improve 净算通道（T+1 与 S-1 在 2×T 边界不等价，不可互换）"
+   ],
+   "provenance": {
+    "text_sha256": "9acd13b0a76a7a693a300cbd929ac9ea0c94cf28d737ef0bfe67785225575799"
+   },
+   "encoded_by": "manual-2026-07-21",
+   "weapon_filter": ""
+  },
+  {
+   "table": "enhancements",
+   "id": "000010304005",
+   "side": "attacker",
+   "detachment": "Infernal Lance",
+   "name_en": "Bestial Aspect",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "兽性形貌：远程武器 [ASSAULT] + 使用 Unholy Hunger 期间无视移动修正——[ASSAULT]（移动后射击资格）与 Empowered 状态机均无载体"
+   ],
+   "provenance": {
+    "text_sha256": "6f6bd80c4ea7d0ac1a6f9a1a04d0a11c12ef82dab5bd572f91f58d868761291f"
+   },
+   "encoded_by": "manual-2026-07-21",
+   "weapon_filter": ""
+  },
+  {
+   "table": "enhancements",
+   "id": "000010308002",
+   "side": "attacker",
+   "detachment": "Lords of Dread",
+   "name_en": "Throne Mechanicum of Skulls",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "颅骨御座：冲锋骰重投 + 每战一次冲刺后仍可宣告冲锋——冲锋域无载体"
+   ],
+   "provenance": {
+    "text_sha256": "e9c89e9685d963d7a32a1b1f80e2f1e18e00d3c1eec560b431e2c67263ad3118"
+   },
+   "encoded_by": "manual-2026-07-21",
+   "weapon_filter": ""
+  },
+  {
+   "table": "enhancements",
+   "id": "000010308003",
+   "side": "attacker",
+   "detachment": "Lords of Dread",
+   "name_en": "Blade of Celerity",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "迅捷之刃：远程武器 [ASSAULT] + 每战一次 Fights First——射击资格与出手顺序域均无载体"
+   ],
+   "provenance": {
+    "text_sha256": "6cf775a30bcec898df375f77c94e2898c2e213bf359631cbfc64281fc0c7bf0f"
+   },
+   "encoded_by": "manual-2026-07-21",
+   "weapon_filter": ""
+  },
+  {
+   "table": "enhancements",
+   "id": "000010308004",
+   "side": "attacker",
+   "detachment": "Lords of Dread",
+   "name_en": "Warp-borne Stalker",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "次元潜行者：Deep Strike + 每战一次回预备队——部署/预备队域无载体"
+   ],
+   "provenance": {
+    "text_sha256": "975af80fdb7a347121dbc8ac90ef99622623824bfb8b5f377dd1230a28c484bc"
+   },
+   "encoded_by": "manual-2026-07-21",
+   "weapon_filter": ""
+  },
+  {
+   "table": "enhancements",
+   "id": "000010308005",
+   "side": "attacker",
+   "detachment": "Lords of Dread",
+   "name_en": "Putrid Carapace",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "腐臭甲壳：携带者 Sv 特征值设定为 2+（SET 非增量，sv_improve 只做增量）+ 每战一次回复 D6 伤口（治疗）——两条均无载体"
+   ],
+   "provenance": {
+    "text_sha256": "13d480d4d47d9e8f1249e85e47384e29a0a3499b1afa4d13f7a4e9fa61fec11e"
+   },
+   "encoded_by": "manual-2026-07-21",
+   "weapon_filter": ""
+  },
+  {
+   "table": "enhancements",
+   "id": "000010308006",
+   "side": "attacker",
+   "detachment": "Lords of Dread",
+   "name_en": "Mirror of Fates",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "命运之镜：抬高敌方战略 CP 花费 1——CP 经济无载体"
+   ],
+   "provenance": {
+    "text_sha256": "b5750278270092321bf33053e0b070ccf8cc5123e3c9b3ba0727f0c2c812d4b5"
+   },
+   "encoded_by": "manual-2026-07-21",
+   "weapon_filter": ""
+  },
+  {
+   "table": "enhancements",
+   "id": "000010308007",
+   "side": "target",
+   "detachment": "Lords of Dread",
+   "name_en": "Blessing of the Dark Master",
+   "name_zh": null,
+   "status": "partial",
+   "effects": [
+    {
+     "phase": "save",
+     "op": "cover",
+     "params": [],
+     "condition": [
+      "phase_shooting"
+     ],
+     "source": "黑暗主宰的祝福（携带者获 Stealth：11 版 24.33=授予 13.08 掩体收益，仅射击）"
+    }
+   ],
+   "requires_toggles": [
+    "defender_bearer_leading"
+   ],
+   "not_modeled_notes_zh": [
+    "限携带者模型（点名即声明守方为携带者）",
+    "后半句「每战一次把某次攻击的伤害特征值改为 0」是一次性 SET，无载体不编",
+    "Stealth 的 11 版语义=授予掩体收益（可被 [IGNORES COVER] 整体抵消），勿编成命中-1"
+   ],
+   "provenance": {
+    "text_sha256": "f9c9072f4f27e76dd344b547f3b48dd1766c19f364016b4d48f0dc935f708524"
+   },
+   "encoded_by": "manual-2026-07-21",
+   "weapon_filter": ""
+  },
+  {
+   "table": "enhancements",
+   "id": "000010312002",
+   "side": "attacker",
+   "detachment": "Houndpack Lance",
+   "name_en": "Preyslayer’s Mantle",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "猎杀者斗篷：携带者获 Super-heavy Walker——移动/接战通行技能无载体"
+   ],
+   "provenance": {
+    "text_sha256": "e46ac66c9b2c3a9595d1badbdfd99a153c635b919011c992aa8c2a329711951c"
+   },
+   "encoded_by": "manual-2026-07-21",
+   "weapon_filter": ""
+  },
+  {
+   "table": "enhancements",
+   "id": "000010312003",
+   "side": "attacker",
+   "detachment": "Houndpack Lance",
+   "name_en": "Final Howl (Aura)",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "终末长嚎（光环）：6\" 内友方 WAR DOG 重投致伤骰 1——重投「1」（非重投失败）无载体，且为异单位授予"
+   ],
+   "provenance": {
+    "text_sha256": "668eb240f3aa061987bdd9f030fb789e217e76fa4d6f33b9f849630673785e2a"
+   },
+   "encoded_by": "manual-2026-07-21",
+   "weapon_filter": ""
+  },
+  {
+   "table": "enhancements",
+   "id": "000010312004",
+   "side": "attacker",
+   "detachment": "Houndpack Lance",
+   "name_en": "Loping Predator",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "疾驰掠食者：携带者远程武器 [ASSAULT]——移动后射击资格无载体"
+   ],
+   "provenance": {
+    "text_sha256": "01b5045db6c910a9d6bbd49380b34595596dca76df058aa74f9833cf89f1119c"
+   },
+   "encoded_by": "manual-2026-07-21",
+   "weapon_filter": ""
+  },
+  {
+   "table": "enhancements",
+   "id": "000010312005",
+   "side": "target",
+   "detachment": "Houndpack Lance",
+   "name_en": "Panoply of the Cursed Knight",
+   "name_zh": null,
+   "status": "partial",
+   "effects": [
+    {
+     "phase": "save",
+     "op": "ap_improve",
+     "params": [
+      -1
+     ],
+     "condition": [],
+     "source": "受咒骑士全装（针对携带者的攻击 AP 恶化 1，两相位）"
+    }
+   ],
+   "requires_toggles": [
+    "defender_bearer_leading"
+   ],
+   "not_modeled_notes_zh": [
+    "限携带者 WAR DOG 模型（点名即声明守方为携带者）",
+    "原文无相位限制（Each time an attack targets the bearer）——两相位注入，不加相位门；守方 AP 恶化走 ap_improve 负参净算（净值夹 ≤0）"
+   ],
+   "provenance": {
+    "text_sha256": "ca585a81cdf49dec6f9ab92cde00cd7efe7ce46e80795910344c3e78e6733f2c"
+   },
+   "encoded_by": "manual-2026-07-21",
+   "weapon_filter": ""
+  },
+  {
+   "table": "enhancements",
+   "id": "000010751002",
+   "side": "attacker",
+   "detachment": "Helhunt Lance",
+   "name_en": "Aspect of the Beast",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "凶兽形貌：为携带者额外激活一条 Dread 技能——Dread 技能选择无载体"
+   ],
+   "provenance": {
+    "text_sha256": "6c3f9ec53c8025873302fb37dade42ee893cefd2315b0cb9d2bb33431504c666"
+   },
+   "encoded_by": "manual-2026-07-21",
+   "weapon_filter": ""
+  },
+  {
+   "table": "enhancements",
+   "id": "000010751003",
+   "side": "attacker",
+   "detachment": "Helhunt Lance",
+   "name_en": "Hunter’s Helm",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "猎手之盔：冲刺骰与冲锋骰重投——移动/冲锋域无载体"
+   ],
+   "provenance": {
+    "text_sha256": "92fbb56ca5f244cd5ee7a22e9ed9324543195d6280c3fa1d99528ef21d882282"
+   },
+   "encoded_by": "manual-2026-07-21",
+   "weapon_filter": ""
+  },
+  {
+   "table": "enhancements",
+   "id": "000010751004",
+   "side": "attacker",
+   "detachment": "Helhunt Lance",
+   "name_en": "Octagram of Conjuration",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "召唤八芒星（光环）：友方 WAR DOG 射击后令被命中敌单位战栗检定——战栗域 + 异单位触发，无载体"
+   ],
+   "provenance": {
+    "text_sha256": "8256ec277344134801cb4f44ff4467205cf785b260408ff17a6e871509122968"
+   },
+   "encoded_by": "manual-2026-07-21",
+   "weapon_filter": ""
+  },
+  {
+   "table": "enhancements",
+   "id": "000010751005",
+   "side": "attacker",
+   "detachment": "Helhunt Lance",
+   "name_en": "Throne Tyrannicus",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "暴君御座：把携带者的 WAR DOG 光环共享给另一 CHARACTER 模型——光环共享（异模型授予）无载体"
+   ],
+   "provenance": {
+    "text_sha256": "e2d39ec64e77a45834ed838c4fc8f8ba7157650d2c245458463ad55fe7390fff"
+   },
+   "encoded_by": "manual-2026-07-21",
+   "weapon_filter": ""
+  },
+  {
+   "table": "enhancements",
+   "id": "fp11e-chaosknights-bastions-e1",
+   "side": "attacker",
+   "detachment": "Bastions of Tyranny",
+   "name_en": "Pterrorshade Rookery",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "翼魇巢穴：射击时令 24\" 内一敌单位 +6\" 侦测范围——侦测范围无载体"
+   ],
+   "provenance": {
+    "text_sha256": "a1d46b9db74c29c9d1c36ca1a9cf814443b5fee3820bbd56c958c94df6ac577c"
+   },
+   "encoded_by": "manual-2026-07-21",
+   "weapon_filter": ""
+  },
+  {
+   "table": "enhancements",
+   "id": "fp11e-chaosknights-bastions-e2",
+   "side": "attacker",
+   "detachment": "Bastions of Tyranny",
+   "name_en": "Hate-filled Dominion",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "憎恨支配：重投「决定武器攻击次数」的骰（随机 A）——随机 A 的重投无载体（attacks 通道只有 modify/blast 增量）"
+   ],
+   "provenance": {
+    "text_sha256": "d4ba6af753a614a8cc94c0014ff6e1b978915234907dd9f14b5e290a3fffb6c3"
+   },
+   "encoded_by": "manual-2026-07-21",
+   "weapon_filter": ""
+  },
+  {
+   "table": "enhancements",
+   "id": "fp11e-chaosknights-hunting-e1",
+   "side": "attacker",
+   "detachment": "Hunting Warpack",
+   "name_en": "Soul-spoor Auspicator",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "魂迹卜测仪：HUNTSMAN 单位远程攻击 +6\" R——射程几何域无载体"
+   ],
+   "provenance": {
+    "text_sha256": "fa28ef0c777a77da7a734d25c9ce907d3678f9f2ad420e4e977f8f78a8fa9b54"
+   },
+   "encoded_by": "manual-2026-07-21",
+   "weapon_filter": ""
+  },
+  {
+   "table": "enhancements",
+   "id": "fp11e-chaosknights-hunting-e2",
+   "side": "attacker",
+   "detachment": "Hunting Warpack",
+   "name_en": "Snarling Rivalry",
+   "name_zh": null,
+   "status": "partial",
+   "effects": [
+    {
+     "phase": "save",
+     "op": "ignores_cover",
+     "params": [],
+     "condition": [
+      "phase_shooting"
+     ],
+     "source": "咆哮竞逐（EXECUTIONER 远程攻击 [IGNORES COVER]）"
+    }
+   ],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "限 EXECUTIONER 单位（单位对局假设本单位即 EXECUTIONER）；射击门"
+   ],
+   "provenance": {
+    "text_sha256": "7aefd715d7984d88846ef66e8cfb2ea88f8a69be91c7b9b57cfdbc08da41c69d"
+   },
+   "encoded_by": "manual-2026-07-21",
+   "weapon_filter": ""
+  },
+  {
+   "table": "enhancements",
+   "id": "fp11e-chaosknights-iconoclast-e1",
+   "side": "attacker",
+   "detachment": "Iconoclast Fiefdom",
+   "name_en": "Cruel Lashmaster (Aura)",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "残酷鞭主（光环）：6\" 内友方 DAMNED 单位移动 +2\" M——移动域 + 异单位授予，无载体"
+   ],
+   "provenance": {
+    "text_sha256": "66ba4e574264a4c77a48ff684e693cfe6b9ac6e9234a0a8d5f6b6db7a4889b6c"
+   },
+   "encoded_by": "manual-2026-07-21",
+   "weapon_filter": ""
+  },
+  {
+   "table": "enhancements",
+   "id": "fp11e-chaosknights-iconoclast-e2",
+   "side": "attacker",
+   "detachment": "Iconoclast Fiefdom",
+   "name_en": "Iconoclast Idol (Aura)",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "破像神偶（光环）：对 6\" 内友方 DAMNED 用英雄干预战略 -1CP——CP 经济无载体"
+   ],
+   "provenance": {
+    "text_sha256": "3fbbc2d3db54b32500b4561e9f6aaad80fc81df39b2ca54f575ee4140e6a2f3d"
+   },
+   "encoded_by": "manual-2026-07-21",
+   "weapon_filter": ""
+  }
+ ]
+}
