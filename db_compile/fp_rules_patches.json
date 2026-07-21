@@ -1050,6 +1050,166 @@
    "to_text": "<b>WHEN:</b> Your opponent’s Movement phase, just after an enemy unit ends a Normal, Advance or Fall Back move.<br><br><b>TARGET:</b> One <span class=\"kwb\">LEAGUES</span> <span class=\"kwb2\">OF</span> <span class=\"kwb\">VOTANN</span> unit from your army (excluding Artillery and Vehicle units) that is within 8\" of that enemy unit.<br><br><b>EFFECT:</b> Each time you use this Stratagem, you can spend 2YP. Your unit can make a Normal move of up to D6\". If you spent YP during this use of this Stratagem, your unit can make a Normal move of up to 6\" instead.<br><br><b>RESTRICTIONS:</b> A unit cannot embark within a Transport as part of this move.",
    "fp_source": "Faction Pack Leagues Of Votann page_011.md（Rules Updates → Persecution Prospect Detachment → Claimstaker Reflex Stratagem Target：9\"→8\"）",
    "synthesis": "change-list应用：唯一实质差异 TARGET 段几何 9\"→8\"，WHEN/EFFECT/RESTRICTIONS 保持 DB 原文；Needgaârd Reactive Reprisal/Void Hardened 库现文即 11 版逐字一致免补"
+  },
+  {
+   "table": "stratagems",
+   "id": "000009076006",
+   "name_en": "STIMULATED BIO-SURGE",
+   "column": "text_zh",
+   "from_text": "<b>WHEN:</b> Your Charge phase.<br><br><b>TARGET:</b> One Aberrants, Biophagus or Purestrain Genestealers unit from your army that has not declared a charge this phase.<br><br><b>EFFECT:</b> Until the end of the phase, each time your unit declares a charge, if the closest eligible enemy unit is selected as one of the targets of that charge, add 1 to the Charge roll for each selected target of that charge (including the closest eligible enemy unit), to a maximum of +3.",
+   "to_text": "<b>WHEN:</b> Your Charge phase.<br><br><b>TARGET:</b> One Aberrants, Biophagus or Purestrain Genestealers unit from your army that has not declared a charge this phase.<br><br><b>EFFECT:</b> Your unit has +2 to charge rolls.",
+   "fp_source": "Faction Pack Genestealer Cults page_007.md（Rules Updates → Biosanctic Broodsurge Detachment → Stimulated Bio-surge Stratagem, Effect section）",
+   "synthesis": "change-list应用：EFFECT 段整体换成 11 版定值「+2 to charge rolls」，WHEN/TARGET 保持 DB 原文"
+  },
+  {
+   "table": "stratagems",
+   "id": "000009085002",
+   "name_en": "IN THE SHADOW OF IRON",
+   "column": "text_zh",
+   "from_text": "<b>WHEN:</b> Any phase, just after an enemy unit ends a move within 9” of one or more of your Cult Ambush markers.<br><br><b>TARGET:</b> One Astra Militarum Vehicle unit from your army.<br><br><b>EFFECT:</b> Select one of those Cult Ambush markers. You can set up that Cult Ambush marker anywhere on the battlefield that is more than 9\" horizontally away from all enemy units and wholly within 6\" of your unit.",
+   "to_text": "<b>WHEN:</b> Any phase, just after an enemy unit ends a move within 9” of one or more of your Cult Ambush markers.<br><br><b>TARGET:</b> One Astra Militarum Vehicle unit from your army.<br><br><b>EFFECT:</b> Select one of those Cult Ambush markers. You can set up that Cult Ambush marker anywhere on the battlefield that is more than 8\" horizontally away from all enemy units and wholly within 6\" of your unit.",
+   "fp_source": "Faction Pack Genestealer Cults page_007.md（Rules Updates → Brood Brothers Auxilia Detachment → In the Shadow of Iron Stratagem, Effect Section：9\"→8\"）",
+   "synthesis": "change-list应用：仅 EFFECT 段几何 9\"→8\"；WHEN 段的 9” 不在 FP change 范围内，保持 DB 原文不动"
+  },
+  {
+   "table": "stratagems",
+   "id": "000009085003",
+   "name_en": "REGIMENTAL REINFORCEMENTS",
+   "column": "text_zh",
+   "from_text": "<b>WHEN:</b> Your opponent’s Shooting phase or the Fight phase, just after an Astra Militarum Infantry Regiment unit from your army (excluding Artillery and Character units) is destroyed.<br><br><b>TARGET:</b> That <span class=\"kwb\">INFANTRY</span> unit. You can use this Stratagem on that unit even though it was just destroyed.<br><br><b>EFFECT:</b> Roll one D6: on a 3+, place one Cult Ambush marker anywhere on the battlefield that is more than 9\" horizontally away from all enemy units (if this is not possible, no marker is placed) and add a new unit to your army identical to your destroyed unit, in Cult Ambush, at its Starting Strength, with all of its wounds remaining and any <span class=\"kwb2 bluefont\">[ONE SHOT]</span> weapons those models are equipped with considered as not having been shot.<br><br><b>RESTRICTIONS:</b> You can only use this Stratagem once per battle.",
+   "to_text": "<b>WHEN:</b> Your opponent’s Shooting phase or the Fight phase, just after an Astra Militarum Infantry Regiment unit from your army (excluding Artillery and Character units) is destroyed.<br><br><b>TARGET:</b> That <span class=\"kwb\">INFANTRY</span> unit. You can use this Stratagem on that unit even though it was just destroyed.<br><br><b>EFFECT:</b> Roll one D6: on a 3+, place one Cult Ambush marker anywhere on the battlefield that is more than 8\" horizontally away from all enemy units (if this is not possible, no marker is placed) and add a new unit to your army identical to your destroyed unit, in Cult Ambush, at its Starting Strength, with all of its wounds remaining and any <span class=\"kwb2 bluefont\">[ONE SHOT]</span> weapons those models are equipped with considered as not having been shot.<br><br><b>RESTRICTIONS:</b> You can only use this Stratagem once per battle.",
+   "fp_source": "Faction Pack Genestealer Cults page_007.md（Rules Updates → Brood Brothers Auxilia Detachment → Regimental Reinforcements Stratagem, Effect Section 完整重印）",
+   "synthesis": "change-list应用：重印全文与 DB 现文逐字比对，唯一实质差异为标记放置几何 9\"→8\""
+  },
+  {
+   "table": "stratagems",
+   "id": "000009080002",
+   "name_en": "ALONG SHADOWED TRAILS",
+   "column": "text_zh",
+   "from_text": "<b>WHEN:</b> Any phase, just after an enemy unit ends a move within 9\" of one or more of your Cult Ambush markers.<br><br><b>TARGET:</b> Select one of those Cult Ambush markers.<br><br><b>EFFECT:</b> You can set up that Cult Ambush marker anywhere on the battlefield that is more than 9\" horizontally away from all enemy units.",
+   "to_text": "<b>WHEN:</b> Any phase, just after an enemy unit ends a move within 9\" of one or more of your Cult Ambush markers.<br><br><b>TARGET:</b> Select one of those Cult Ambush markers.<br><br><b>EFFECT:</b> You can set up that Cult Ambush marker anywhere on the battlefield that is more than 8\" horizontally away from all enemy units.",
+   "fp_source": "Faction Pack Genestealer Cults page_008.md（Rules Updates → Outlander Claw Detachment → Along Shadowed Trails Stratagem, Target and Effect Sections）",
+   "synthesis": "change-list应用：TARGET 段重印与 DB 现文一致免动，EFFECT 段几何 9\"→8\""
+  },
+  {
+   "table": "stratagems",
+   "id": "000009072006",
+   "name_en": "THE DOWNTRODDEN RISE",
+   "column": "text_zh",
+   "from_text": "<b>WHEN:</b> End of the Reinforcements step of your opponent’s Movement phase.<br><br><b>TARGET:</b> One Acolyte Hybrids, Hybrid Metamorphs or Neophyte Hybrids unit from your army in Cult Ambush.<br><br><b>EFFECT:</b> Until the end of the phase, you can set up your unit on the battlefield without using a Cult Ambush marker. When doing so, set up your unit anywhere on the battlefield that is more than 6\" horizontally away from all enemy units.",
+   "to_text": "<b>WHEN:</b> End of your opponent’s Movement phase.<br><br><b>TARGET:</b> One Acolyte Hybrids, Hybrid Metamorphs or Neophyte Hybrids unit from your army in Cult Ambush.<br><br><b>EFFECT:</b> Until the end of the phase, you can set up your unit on the battlefield without using a Cult Ambush marker. When doing so, set up your unit anywhere on the battlefield that is more than 6\" horizontally away from all enemy units.",
+   "fp_source": "Faction Pack Genestealer Cults page_008.md（Rules Updates → Xenocreed Congregation Detachment → The Downtrodden Rise Stratagem, When and Effect Sections）",
+   "synthesis": "change-list应用：WHEN 由「增援步骤结束」放宽为「对手移动阶段结束」；EFFECT 段重印与 DB 现文逐字一致免动"
+  },
+  {
+   "table": "stratagems",
+   "id": "000009072004",
+   "name_en": "TIRELESS FERVOUR",
+   "column": "text_zh",
+   "from_text": "<b>WHEN:</b> Your Charge phase.<br><br><b>TARGET:</b> One Acolyte Hybrids, Hybrid Metamorphs or Neophyte Hybrids unit from your army that has not declared a charge this phase.<br><br><b>EFFECT:</b> Until the end of the phase, your unit is eligible to declare a charge in a turn in which it Advanced or Fell Back. When doing so, if it targets an enemy unit within Engagement Range of one or more friendly Character units, you can re-roll the Charge roll.",
+   "to_text": "<b>WHEN:</b> Your Charge phase.<br><br><b>TARGET:</b> One Acolyte Hybrids, Hybrid Metamorphs or Neophyte Hybrids unit from your army that has not declared a charge this phase.<br><br><b>EFFECT:</b><ul><li>If your unit made an Advance or Fall Back move this turn, that Advance or Fall Back move does not prevent your unit from being eligible to declare a charge.</li><li>When your unit declares a charge, you can use this part of this Stratagem. If you do:<ul><li>Your unit can re-roll Charge rolls.</li><li>Your unit must end that charge move engaged with an enemy unit engaged with a friendly <span class=\"kwb\">CHARACTER</span> unit.</li></ul></li></ul>",
+   "fp_source": "Faction Pack Genestealer Cults page_008.md（Rules Updates → Xenocreed Congregation Detachment → Tireless Fervour Stratagem, Effect Section）",
+   "synthesis": "change-list应用：EFFECT 段改为两级列表——①进军/撤退不再阻断宣冲 ②可选启用「重骰冲锋+必须与友方 CHARACTER 交战的敌军咬住」分支；WHEN/TARGET 保持 DB 原文"
+  },
+  {
+   "table": "enhancements",
+   "id": "000009075002",
+   "name_en": "Predatory Instincts",
+   "column": "description",
+   "from_text": "AbOmINANT, BIOPHAgUS or PATRIARCH model only. Models in the bearer’s unit have the Infiltrators ability and, once per battle round, you can target the bearer’s unit with the Heroic Intervention Stratagem for 0CP, and can do so even if you have already targeted a different unit with that Stratagem this phase.",
+   "to_text": "ABOMINANT, BIOPHAGUS or PATRIARCH model only.<ul><li>Models in the bearer’s unit have the Infiltrators ability.</li><li>You can target this unit with the Heroic Intervention Stratagem, regardless of any other uses of that Stratagem this phase. If you do:<ul><li>That use is -1 CP.</li><li>That use does not prevent any uses of that Stratagem on other units this phase.</li></ul></li></ul>",
+   "fp_source": "Faction Pack Genestealer Cults page_007.md（Rules Updates → Biosanctic Broodsurge Detachment → Predatory Instincts Enhancement）",
+   "synthesis": "change-list应用：整条重写——英雄干预由「0CP 每轮一次」改为「-1CP 且不占用本阶段其他单位的使用次数」，Infiltrators 保留"
+  },
+  {
+   "table": "enhancements",
+   "id": "000009084003",
+   "name_en": "Adaptive Reprisal",
+   "column": "description",
+   "from_text": "<span class=\"kwb\">GENESTEALER</span> <span class=\"kwb\">CULTS</span> <span class=\"kwb\">INFANTRY</span> model only. Once per turn, you can target a friendly <span class=\"kwb\">GENESTEALER</span> <span class=\"kwb\">CULTS</span> unit within 9\" of the bearer with the Heroic Intervention Stratagem for 0CP.",
+   "to_text": "<span class=\"kwb\">GENESTEALER</span> <span class=\"kwb\">CULTS</span> <span class=\"kwb\">INFANTRY</span> model only. When you target this unit with the Heroic Intervention Stratagem, that use is -1 CP.",
+   "fp_source": "Faction Pack Genestealer Cults page_007.md（Rules Updates → Brood Brothers Auxilia Detachment → Adaptive Reprisal Enhancement）",
+   "synthesis": "change-list应用：整条重写——由「每回合一次、9\" 内友军 0CP 英雄干预」收窄为「本单位自身英雄干预 -1CP」"
+  },
+  {
+   "table": "enhancements",
+   "id": "000009067002",
+   "name_en": "Prowling Agitant",
+   "column": "description",
+   "from_text": "<span class=\"kwb\">GENESTEALER</span> <span class=\"kwb\">CULTS</span> model only. Once per turn, when an enemy unit ends a Normal, Advance or Fall Back move within 9\" of the bearer’s unit, if the bearer’s unit is not within Engagement Range of any enemy units, it can make a Normal move of up to D6\".",
+   "to_text": "<span class=\"kwb\">GENESTEALER</span> <span class=\"kwb\">CULTS</span> model only. In your opponent’s Movement phase, if an enemy unit ends a move within 8\" of this unit, if this unit is not within Engagement Range of one or more enemy units, this unit can make a Normal move of up to D6\".",
+   "fp_source": "Faction Pack Genestealer Cults page_008.md（Rules Updates → Host of Ascension Detachment → Prowling Agitant Enhancement）",
+   "synthesis": "change-list应用：整条重写——去掉「每回合一次」限制、触发几何 9\"→8\"、移动类型由「一般/进军/撤退移动」放宽为「任何移动」"
+  },
+  {
+   "table": "abilities",
+   "id": "000008501",
+   "name_en": "Cult Ambush",
+   "column": "text_zh",
+   "from_text": "If your Army Faction is <span class=\"kwb\">GENESTEALER</span> <span class=\"kwb\">CULTS</span>, you start the battle with a number of Resurgence points, depending on the battle size, as shown below.<br><ul><li><b>Incursion:</b> 6 Resurgence points</li><li><b>Strike Force:</b> 10 Resurgence points</li><li><b>Onslaught:</b> 14 Resurgence points</li></ul><br>Each time a unit from your army is destroyed, if every model in that unit has this ability, you can spend the relevant number of Resurgence points shown below based on that unit’s Starting Strength.<br><br><div class=\"BreakInsideAvoid\"><div class=\"BreakInsideAvoid\"  style=\"\"\"><table border=\"0\" bordercolor=\"#888\" cellpadding=\"4\" cellspacing=\"0\" style=\"border-collapse:collapse;border-width:0px\"><tbody><tr><td><table class=\" customTable\" border=\"1\" bordercolor=\"#888\" cellpadding=\"4\" style=\"border-collapse:collapse;border-color:#888888;border-width:0px\"><tbody><tr><td colspan=\"2\" style=\"border-width:1px 0 1px 1px;border-style:none none none none;background-color:rgb(91,27,54);text-align:left;vertical-align:middle;width:0px;height:0px;\"><b><a href=\"/wh40k10ed/factions/genestealer-cults/Aberrants\">Aberrants</a></b></td></tr><tr><td style=\"border-width:0 0 0 0;border-style:none none none none;vertical-align:bottom;width:351px;height:0px;\">5 models</td><td style=\"border-width:0 0 0 0;border-style:none none none none;vertical-align:bottom;width:208px;height:0px;\">4 Resurgence points</td></tr><tr><td style=\"border-width:0 0 0 0;border-style:none none none none;vertical-align:bottom;width:351px;height:0px;\">10 models</td><td style=\"border-width:0 0 0 0;border-style:none none none none;vertical-align:bottom;width:208px;height:0px;\">8 Resurgence points</td></tr><tr><td style=\"border-width:0 0 0 0;border-style:none none none none;vertical-align:bottom;width:351px;height:0px;\"></td><td style=\"border-width:0 0 0 0;border-style:none none none none;vertical-align:bottom;width:208px;height:0px;\"></td></tr><tr><td colspan=\"2\" style=\"border-width:1px 0 1px 1px;border-style:none none none none;background-color:rgb(91,27,54);text-align:left;vertical-align:middle;width:0px;height:0px;\"><b><a href=\"/wh40k10ed/factions/genestealer-cults/Acolyte-Hybrids-With-Autopistols\">Acolyte Hybrids with Autopistols</a>, <a href=\"/wh40k10ed/factions/genestealer-cults/Acolyte-Hybrids-With-Hand-Flamers\">Acolyte Hybrids with Hand Flamers</a>, <a href=\"/wh40k10ed/factions/genestealer-cults/Hybrid-Metamorphs\">Hybrid Metamorphs</a></b></td></tr><tr><td style=\"border-width:0 0 0 0;border-style:none none none none;vertical-align:bottom;width:351px;height:0px;\">5 models</td><td style=\"border-width:0 0 0 0;border-style:none none none none;vertical-align:bottom;width:208px;height:0px;\">2 Resurgence points</td></tr><tr><td style=\"border-width:0 0 0 0;border-style:none none none none;vertical-align:bottom;width:351px;height:0px;\">10 models</td><td style=\"border-width:0 0 0 0;border-style:none none none none;vertical-align:bottom;width:208px;height:0px;\">4 Resurgence points</td></tr><tr><td style=\"border-width:0 0 0 0;border-style:none none none none;vertical-align:bottom;width:351px;height:0px;\"></td><td style=\"border-width:0 0 0 0;border-style:none none none none;vertical-align:bottom;width:208px;height:0px;\"></td></tr><tr><td colspan=\"2\" style=\"border-width:1px 0 1px 1px;border-style:none none none none;background-color:rgb(91,27,54);text-align:left;vertical-align:middle;width:0px;height:0px;\"><b><a href=\"/wh40k10ed/factions/genestealer-cults/Atalan-Jackals\">Atalan Jackals</a></b></td></tr><tr><td style=\"border-width:0 0 0 0;border-style:none none none none;vertical-align:bottom;width:351px;height:0px;\">5 models</td><td style=\"border-width:0 0 0 0;border-style:none none none none;vertical-align:bottom;width:208px;height:0px;\">2 Resurgence points</td></tr><tr><td style=\"border-width:0 0 0 0;border-style:none none none none;vertical-align:bottom;width:351px;height:0px;\">10 models</td><td style=\"border-width:0 0 0 0;border-style:none none none none;vertical-align:bottom;width:208px;height:0px;\">6 Resurgence points</td></tr><tr><td style=\"border-width:0 0 0 0;border-style:none none none none;vertical-align:bottom;width:351px;height:0px;\"></td><td style=\"border-width:0 0 0 0;border-style:none none none none;vertical-align:bottom;width:208px;height:0px;\"></td></tr><tr><td colspan=\"2\" style=\"border-width:1px 0 1px 1px;border-style:none none none none;background-color:rgb(91,27,54);text-align:left;vertical-align:middle;width:0px;height:0px;\"><b><a href=\"/wh40k10ed/factions/genestealer-cults/Neophyte-Hybrids\">Neophyte Hybrids</a></b></td></tr><tr><td style=\"border-width:0 0 0 0;border-style:none none none none;vertical-align:bottom;width:351px;height:0px;\">10 models</td><td style=\"border-width:0 0 0 0;border-style:none none none none;vertical-align:bottom;width:208px;height:0px;\">3 Resurgence points</td></tr><tr><td style=\"border-width:0 0 0 0;border-style:none none none none;vertical-align:bottom;width:351px;height:0px;\">20 models</td><td style=\"border-width:0 0 0 0;border-style:none none none none;vertical-align:bottom;width:208px;height:0px;\">6 Resurgence points</td></tr><tr><td style=\"border-width:0 0 0 0;border-style:none none none none;vertical-align:bottom;width:351px;height:0px;\"></td><td style=\"border-width:0 0 0 0;border-style:none none none none;vertical-align:bottom;width:208px;height:0px;\"></td></tr><tr><td colspan=\"2\" style=\"border-width:1px 0 1px 1px;border-style:none none none none;background-color:rgb(91,27,54);text-align:left;vertical-align:middle;width:0px;height:0px;\"><b><a href=\"/wh40k10ed/factions/genestealer-cults/Purestrain-Genestealers\">Purestrain Genestealers</a></b></td></tr><tr><td style=\"border-width:0 0 0 0;border-style:none none none none;vertical-align:bottom;width:351px;height:0px;\">5 models</td><td style=\"border-width:0 0 0 0;border-style:none none none none;vertical-align:bottom;width:208px;height:0px;\">2 Resurgence points</td></tr><tr><td style=\"border-width:0 0 0 0;border-style:none none none none;vertical-align:bottom;width:351px;height:0px;\">10 models</td><td style=\"border-width:0 0 0 0;border-style:none none none none;vertical-align:bottom;width:208px;height:0px;\">6 Resurgence points</td></tr></tbody></table></td></tr></tbody></table></div><br></div>If you do:<br><ul><li>Add a new unit to your army identical to your destroyed unit, in Cult Ambush, at its Starting Strength, with all of its wounds remaining and any <span class=\"kwb2 bluefont\">[ONE SHOT]</span> weapons those models are equipped with considered as not having been shot.</li><li>Place one Cult Ambush marker (see below) anywhere on the battlefield that is more than 9\" horizontally away from all enemy units (if this is not possible, no marker is placed).</li></ul><br><span class=\"hi_custom\">Units in Cult Ambush</span><br>Cult Ambush is a type of Strategic Reserves. Units in Cult Ambush cannot be targeted with the Rapid Ingress Stratagem, but can be set up on the battlefield using a Cult Ambush marker as described below, or by following the rules for Strategic Reserves in a subsequent turn.<br><br><span class=\"hi_custom\">Cult Ambush Markers</span><br>Use a circular 32mm diameter marker for Cult Ambush markers. If an enemy model (excluding <span class=\"kwb\">AIRCRAFT</span>) ends any kind of move within 9\" of a Cult Ambush marker you placed, that Cult Ambush marker is removed from the battlefield. At the end of the Reinforcements step of your opponent’s next Movement phase, for each of your Cult Ambush markers still on the battlefield, you can select one unit from your army that is in Cult Ambush and set up that unit using that Cult Ambush marker. To do so, set that unit up on the battlefield more than 9\" horizontally away from all enemy units, with at least one model in that unit touching that Cult Ambush marker and all other models placed wholly within 3\" of that Cult Ambush marker (that Cult Ambush marker is then removed from the battlefield).",
+   "to_text": "If your Army Faction is <span class=\"kwb\">GENESTEALER</span> <span class=\"kwb\">CULTS</span>, you start the battle with a number of Resurgence points, depending on the battle size, as shown below.<br><ul><li><b>Incursion:</b> 6 Resurgence points</li><li><b>Strike Force:</b> 10 Resurgence points</li><li><b>Onslaught:</b> 14 Resurgence points</li></ul><br>Each time a unit from your army is destroyed, if every model in that unit has this ability, you can spend the relevant number of Resurgence points shown below based on that unit’s Starting Strength.<br><br><div class=\"BreakInsideAvoid\"><div class=\"BreakInsideAvoid\"  style=\"\"\"><table border=\"0\" bordercolor=\"#888\" cellpadding=\"4\" cellspacing=\"0\" style=\"border-collapse:collapse;border-width:0px\"><tbody><tr><td><table class=\" customTable\" border=\"1\" bordercolor=\"#888\" cellpadding=\"4\" style=\"border-collapse:collapse;border-color:#888888;border-width:0px\"><tbody><tr><td colspan=\"2\" style=\"border-width:1px 0 1px 1px;border-style:none none none none;background-color:rgb(91,27,54);text-align:left;vertical-align:middle;width:0px;height:0px;\"><b><a href=\"/wh40k10ed/factions/genestealer-cults/Aberrants\">Aberrants</a></b></td></tr><tr><td style=\"border-width:0 0 0 0;border-style:none none none none;vertical-align:bottom;width:351px;height:0px;\">5 models</td><td style=\"border-width:0 0 0 0;border-style:none none none none;vertical-align:bottom;width:208px;height:0px;\">4 Resurgence points</td></tr><tr><td style=\"border-width:0 0 0 0;border-style:none none none none;vertical-align:bottom;width:351px;height:0px;\">10 models</td><td style=\"border-width:0 0 0 0;border-style:none none none none;vertical-align:bottom;width:208px;height:0px;\">8 Resurgence points</td></tr><tr><td style=\"border-width:0 0 0 0;border-style:none none none none;vertical-align:bottom;width:351px;height:0px;\"></td><td style=\"border-width:0 0 0 0;border-style:none none none none;vertical-align:bottom;width:208px;height:0px;\"></td></tr><tr><td colspan=\"2\" style=\"border-width:1px 0 1px 1px;border-style:none none none none;background-color:rgb(91,27,54);text-align:left;vertical-align:middle;width:0px;height:0px;\"><b><a href=\"/wh40k10ed/factions/genestealer-cults/Acolyte-Hybrids-With-Autopistols\">Acolyte Hybrids with Autopistols</a>, <a href=\"/wh40k10ed/factions/genestealer-cults/Acolyte-Hybrids-With-Hand-Flamers\">Acolyte Hybrids with Hand Flamers</a>, <a href=\"/wh40k10ed/factions/genestealer-cults/Hybrid-Metamorphs\">Hybrid Metamorphs</a></b></td></tr><tr><td style=\"border-width:0 0 0 0;border-style:none none none none;vertical-align:bottom;width:351px;height:0px;\">5 models</td><td style=\"border-width:0 0 0 0;border-style:none none none none;vertical-align:bottom;width:208px;height:0px;\">2 Resurgence points</td></tr><tr><td style=\"border-width:0 0 0 0;border-style:none none none none;vertical-align:bottom;width:351px;height:0px;\">10 models</td><td style=\"border-width:0 0 0 0;border-style:none none none none;vertical-align:bottom;width:208px;height:0px;\">4 Resurgence points</td></tr><tr><td style=\"border-width:0 0 0 0;border-style:none none none none;vertical-align:bottom;width:351px;height:0px;\"></td><td style=\"border-width:0 0 0 0;border-style:none none none none;vertical-align:bottom;width:208px;height:0px;\"></td></tr><tr><td colspan=\"2\" style=\"border-width:1px 0 1px 1px;border-style:none none none none;background-color:rgb(91,27,54);text-align:left;vertical-align:middle;width:0px;height:0px;\"><b><a href=\"/wh40k10ed/factions/genestealer-cults/Atalan-Jackals\">Atalan Jackals</a></b></td></tr><tr><td style=\"border-width:0 0 0 0;border-style:none none none none;vertical-align:bottom;width:351px;height:0px;\">5 models</td><td style=\"border-width:0 0 0 0;border-style:none none none none;vertical-align:bottom;width:208px;height:0px;\">2 Resurgence points</td></tr><tr><td style=\"border-width:0 0 0 0;border-style:none none none none;vertical-align:bottom;width:351px;height:0px;\">10 models</td><td style=\"border-width:0 0 0 0;border-style:none none none none;vertical-align:bottom;width:208px;height:0px;\">6 Resurgence points</td></tr><tr><td style=\"border-width:0 0 0 0;border-style:none none none none;vertical-align:bottom;width:351px;height:0px;\"></td><td style=\"border-width:0 0 0 0;border-style:none none none none;vertical-align:bottom;width:208px;height:0px;\"></td></tr><tr><td colspan=\"2\" style=\"border-width:1px 0 1px 1px;border-style:none none none none;background-color:rgb(91,27,54);text-align:left;vertical-align:middle;width:0px;height:0px;\"><b><a href=\"/wh40k10ed/factions/genestealer-cults/Neophyte-Hybrids\">Neophyte Hybrids</a></b></td></tr><tr><td style=\"border-width:0 0 0 0;border-style:none none none none;vertical-align:bottom;width:351px;height:0px;\">10 models</td><td style=\"border-width:0 0 0 0;border-style:none none none none;vertical-align:bottom;width:208px;height:0px;\">3 Resurgence points</td></tr><tr><td style=\"border-width:0 0 0 0;border-style:none none none none;vertical-align:bottom;width:351px;height:0px;\">20 models</td><td style=\"border-width:0 0 0 0;border-style:none none none none;vertical-align:bottom;width:208px;height:0px;\">6 Resurgence points</td></tr><tr><td style=\"border-width:0 0 0 0;border-style:none none none none;vertical-align:bottom;width:351px;height:0px;\"></td><td style=\"border-width:0 0 0 0;border-style:none none none none;vertical-align:bottom;width:208px;height:0px;\"></td></tr><tr><td colspan=\"2\" style=\"border-width:1px 0 1px 1px;border-style:none none none none;background-color:rgb(91,27,54);text-align:left;vertical-align:middle;width:0px;height:0px;\"><b><a href=\"/wh40k10ed/factions/genestealer-cults/Purestrain-Genestealers\">Purestrain Genestealers</a></b></td></tr><tr><td style=\"border-width:0 0 0 0;border-style:none none none none;vertical-align:bottom;width:351px;height:0px;\">5 models</td><td style=\"border-width:0 0 0 0;border-style:none none none none;vertical-align:bottom;width:208px;height:0px;\">2 Resurgence points</td></tr><tr><td style=\"border-width:0 0 0 0;border-style:none none none none;vertical-align:bottom;width:351px;height:0px;\">10 models</td><td style=\"border-width:0 0 0 0;border-style:none none none none;vertical-align:bottom;width:208px;height:0px;\">6 Resurgence points</td></tr></tbody></table></td></tr></tbody></table></div><br></div>If you do:<br><ul><li>Add a new unit to your army identical to your destroyed unit, in Cult Ambush, at its Starting Strength, with all of its wounds remaining and any <span class=\"kwb2 bluefont\">[ONE SHOT]</span> weapons those models are equipped with considered as not having been shot.</li><li>Place one Cult Ambush marker (see below) anywhere on the battlefield that is more than 8\" horizontally away from all enemy units (if this is not possible, no marker is placed).</li></ul><br><span class=\"hi_custom\">Units in Cult Ambush</span><br>Cult Ambush is a type of Strategic Reserves. Units in Cult Ambush cannot be targeted with the Rapid Ingress Stratagem, but can be set up on the battlefield using a Cult Ambush marker as described below, or by following the rules for Strategic Reserves in a subsequent turn. Units in Cult Ambush are not automatically destroyed at the end of the third battle round.<br><br><span class=\"hi_custom\">Cult Ambush Markers</span><br>Use a circular 32mm diameter marker for Cult Ambush markers. If an enemy model (excluding <span class=\"kwb\">AIRCRAFT</span>) ends any kind of move within 8\" of a Cult Ambush marker you placed, that Cult Ambush marker is removed from the battlefield. At the end of your opponent’s next Movement phase, for each of your Cult Ambush markers still on the battlefield, you can select one unit from your army that is in Cult Ambush to make an ingress move. For that ingress move, set that unit up with at least one model in that unit in base contact with that Cult Ambush marker and all other models placed wholly within 3\" of that Cult Ambush marker (that Cult Ambush marker is then removed from the battlefield). Units in Cult Ambush can make an ingress move in the first battle round using this rule.",
+   "fp_source": "Faction Pack Genestealer Cults page_007.md（Rules Updates → Army Rules → Cult Ambush 完整重印）",
+   "synthesis": "change-list应用：①标记放置几何 9\"→8\" ②标记被踢除几何 9\"→8\" ③补入「Cult Ambush 单位不在第三轮末自动阵亡」④增援由「增援步骤内按标记摆放」改为「对手移动阶段结束时做 ingress move、贴底接触标记、首轮即可」；复苏点表（6/10/14 与各单位 4/8·2/4·2/6·3/6·2/6）库现值与 FP 逐格一致免动"
+  },
+  {
+   "table": "abilities",
+   "id": "000000510_a2",
+   "name_en": "Summon the Cult",
+   "column": "text_zh",
+   "from_text": "Once per battle, when you have to remove a Cult Ambush marker because your opponent has moved too close to it, if one or more models from your army with this ability are on the battlefield, you can use this ability. If you do, instead of removing that marker, you can place it anywhere on the battlefield that is within 12\" of a model from your army with this ability and more than 9\" horizontally away from all enemy units (if this is not possible, this ability is not considered to have been used and that marker is removed as normal).",
+   "to_text": "Once per battle, when you have to remove a Cult Ambush marker because your opponent has moved too close to it, if one or more models from your army with this ability are on the battlefield, you can use this ability. If you do, instead of removing that marker, you can place it anywhere on the battlefield that is within 12\" of a model from your army with this ability and more than 8\" horizontally away from all enemy units (if this is not possible, this ability is not considered to have been used and that marker is removed as normal).",
+   "fp_source": "Faction Pack Genestealer Cults page_008.md（Rules Updates → Datasheets → Acolyte Iconward, Summon the Cult Ability：9\"→8\"）",
+   "synthesis": "change-list应用：唯一实质差异几何 9\"→8\""
+  },
+  {
+   "table": "abilities",
+   "id": "000000513_a1",
+   "name_en": "Brood Surge",
+   "column": "text_zh",
+   "from_text": "Each time an enemy unit is selected to shoot, after that unit has shot, if any models from this unit were destroyed as a result of those attacks, this unit can make a Brood Surge move. To do so, roll one D6: this unit can be moved a number of inches up to the result, but it must end that move as close as possible to the closest enemy unit (excluding <span class=\"kwb\">AIRCRAFT</span>). When doing so, those models can be moved within Engagement Range of that enemy unit.<br><br>If, at the start of the battle, no model in this unit is equipped with a hand flamer, each time this unit makes a Brood Surge move, it can be moved up to 6\" instead of up to D6\". A unit cannot make a Brood Surge move while it is Battle-shocked.",
+   "to_text": "In your opponent’s Shooting phase, when an enemy unit has shot, if a model in this unit was destroyed as a result of those attacks, this unit can make a surge move of up to D6\".",
+   "fp_source": "Faction Pack Genestealer Cults page_008.md（Rules Updates → Datasheets → Hybrid Metamorphs, Brood Surge Ability）",
+   "synthesis": "change-list应用：整条重写为 11 版 surge move 体裁（D6\"），十版的「必须尽量靠近最近敌军 / 无喷火器改 6\" / 士气崩溃禁用」条款一并删除"
+  },
+  {
+   "table": "abilities",
+   "id": "000001570_a2",
+   "name_en": "Hypersensory Abilities",
+   "column": "text_zh",
+   "from_text": "Once per turn, in your opponent’s Movement phase, when an enemy unit ends a Normal, Advance or Fall Back move within 9\" of this model, if this model is not within Engagement Range of one or more enemy units, it can shoot at that unit as if it were your Shooting phase and then make a Normal move of up to D6\" (it cannot embark within a <span class=\"kwb\">TRANSPORT</span> as part of this move).",
+   "to_text": "Once per turn, in your opponent’s Movement phase, when an enemy unit ends a Normal, Advance or Fall Back move within 8\" of this model, if this model is not within Engagement Range of one or more enemy units, it can shoot at that unit as if it were your Shooting phase and then make a Normal move of up to D6\" (it cannot embark within a <span class=\"kwb\">TRANSPORT</span> as part of this move).",
+   "fp_source": "Faction Pack Genestealer Cults page_008.md（Rules Updates → Datasheets → Kelermorph, Hypersensory Abilities）",
+   "synthesis": "change-list应用：重印全文与 DB 现文逐字比对，唯一实质差异几何 9\"→8\""
+  },
+  {
+   "table": "abilities",
+   "id": "000002525_a2",
+   "name_en": "Planted Explosives",
+   "column": "text_zh",
+   "from_text": "Once per battle, when an enemy unit ends a Normal, Advance or Fall Back move within 9” of this model, this model can use its Reductus mine. If it does, roll one D6: on a 2+, that enemy unit suffers D3+3 mortal wounds. Only one model from your army with this ability can use it in the same battle round.<br><br><b>Designer’s Note:</b> <i>Place a Reductus Mine token next to the model, removing it once this ability has been used.</i>",
+   "to_text": "Once per battle, when an enemy unit ends a Normal, Advance or Fall Back move within 8” of this model, this model can use its Reductus mine. If it does, roll one D6: on a 2+, that enemy unit suffers D3+3 mortal wounds. Only one model from your army with this ability can use it in the same battle round.<br><br><b>Designer’s Note:</b> <i>Place a Reductus Mine token next to the model, removing it once this ability has been used.</i>",
+   "fp_source": "Faction Pack Genestealer Cults page_008.md（Rules Updates → Datasheets → Reductus Saboteur, Planted Explosives Ability：9\"→8\"）",
+   "synthesis": "change-list应用：唯一实质差异几何 9\"→8\"（库现文此处用弯引号 ”，替换保形）"
+  },
+  {
+   "table": "abilities",
+   "id": "000001569_a1",
+   "name_en": "Creeping Shadow",
+   "column": "text_zh",
+   "from_text": "If this model is equipped with a cult sniper rifle, once per turn, when an enemy unit ends a Normal, Advance or Fall Back move within 9\" of this model, if this model is not within Engagement Range of one or more enemy units, it can make a Normal move of up to 6\".",
+   "to_text": "If this model is equipped with a cult sniper rifle, in your opponent’s Movement phase, if an enemy unit ends a move within 8\" of this unit, if this unit is not within Engagement Range of one or more enemy units, this unit can make a Normal move of up to 6\".",
+   "fp_source": "Faction Pack Genestealer Cults page_009.md（Rules Updates → Sanctus → Creeping Shadow Ability）",
+   "synthesis": "change-list应用：整条重写——去掉「每回合一次」、触发几何 9\"→8\"、移动类型放宽为「任何移动」，移动距离 6\" 不变"
+  },
+  {
+   "table": "abilities",
+   "id": "000001569_a2",
+   "name_en": "Cloaked Assassin",
+   "column": "text_zh",
+   "from_text": "If this model is equipped with a Sanctus bio-dagger, enemy units cannot use the Fire Overwatch Stratagem to shoot at this model.",
+   "to_text": "If this model is equipped with a Sanctus bio-dagger, enemy units cannot target this unit with snap shooting attacks.",
+   "fp_source": "Faction Pack Genestealer Cults page_009.md（Rules Updates → Sanctus → Cloaked Assassin Ability, Second Sentence）",
+   "synthesis": "change-list应用：第二句改为 11 版 snap shooting 体裁（过守火战略在 11 版并入 snap shooting 概念）；首句装备前提保持 DB 原文"
   }
  ],
  "name_patches": [
@@ -6957,6 +7117,249 @@
     "cp_cost": "1",
     "phase": "Movement phase",
     "text_zh": "<b>WHEN:</b> Your Movement phase, when a friendly EINHYR HEARTHGUARD unit with Deep Strike is selected to make an ingress move.<br><br><b>TARGET:</b> That EINHYR HEARTHGUARD unit.<br><br><b>EFFECT:</b> Your unit can be set up anywhere on the battlefield that is more than 6\" horizontally from all enemy units, even if that is within your opponent’s deployment zone. Your unit is not eligible to declare a charge until the end of the turn."
+   }
+  },
+  {
+   "table": "detachments",
+   "fp_source": "Faction Pack Genestealer Cults page_002.md（11 版新分队，Wahapedia/DB 无源）",
+   "values": {
+    "id": "fp11e-genestealercults-heroesuprising",
+    "faction": "GC",
+    "name_zh": "杀手威名",
+    "name_en": "Killer Reputation",
+    "rule_text": "Friendly <span class=\"kwb\">KELERMORPH</span>/<span class=\"kwb\">LOCUS</span>/<span class=\"kwb\">REDUCTUS</span> <span class=\"kwb\">SABOTEUR</span>/<span class=\"kwb\">SANCTUS</span> models have <span class=\"kwb\">KILLER</span>.<br><br>Friendly <span class=\"kwb\">KILLER</span> models’ attacks can:<ul><li>Re-roll Hit rolls of 1.</li><li>Re-roll Wound rolls of 1.</li></ul>"
+   }
+  },
+  {
+   "table": "enhancements",
+   "fp_source": "Faction Pack Genestealer Cults page_002.md（11 版新分队，Wahapedia/DB 无源）",
+   "values": {
+    "id": "fp11e-genestealercults-heroesuprising-e1",
+    "faction_id": "GC",
+    "detachment_id": "fp11e-genestealercults-heroesuprising",
+    "detachment_name": "Heroes of the Uprising",
+    "name": "Gene-tailored Toxins",
+    "cost": null,
+    "legend": "点数未知：FP 不含点数，MFM 缓存无增强数据（诚实置空，勿猜）",
+    "description": "<span class=\"kwb\">LOCUS</span>/<span class=\"kwb\">SANCTUS</span> model only. This model’s attacks have +1 D."
+   }
+  },
+  {
+   "table": "enhancements",
+   "fp_source": "Faction Pack Genestealer Cults page_002.md（11 版新分队，Wahapedia/DB 无源）",
+   "values": {
+    "id": "fp11e-genestealercults-heroesuprising-e2",
+    "faction_id": "GC",
+    "detachment_id": "fp11e-genestealercults-heroesuprising",
+    "detachment_name": "Heroes of the Uprising",
+    "name": "Contraband Munitions",
+    "cost": null,
+    "legend": "点数未知：FP 不含点数，MFM 缓存无增强数据（诚实置空，勿猜）",
+    "description": "<span class=\"kwb\">KELERMORPH</span>/<span class=\"kwb\">REDUCTUS</span> <span class=\"kwb\">SABOTEUR</span> model only. This unit’s ranged attacks have +2 S."
+   }
+  },
+  {
+   "table": "stratagems",
+   "fp_source": "Faction Pack Genestealer Cults page_002.md（11 版新分队，Wahapedia/DB 无源）",
+   "values": {
+    "id": "fp11e-genestealercults-heroesuprising-s1",
+    "faction": "GC",
+    "detachment": "Heroes of the Uprising",
+    "name_zh": "不负盛名",
+    "name_en": "LIVING UP TO LEGEND",
+    "cp_cost": "1",
+    "phase": "Shooting or Fight phase",
+    "text_zh": "<b>WHEN:</b> Your Shooting phase or the Fight phase, when a friendly <span class=\"kwb\">KILLER</span> unit has attacked, if those attacks destroyed an enemy unit or an enemy <span class=\"kwb\">CHARACTER</span> model.<br><br><b>TARGET:</b> That <span class=\"kwb\">KILLER</span> unit.<br><br><b>EFFECT:</b> Each visible friendly Battle-shocked <span class=\"kwb\">GENESTEALER</span> <span class=\"kwb\">CULTS</span> unit within 12\" of your unit is no longer Battle-shocked."
+   }
+  },
+  {
+   "table": "stratagems",
+   "fp_source": "Faction Pack Genestealer Cults page_002.md（11 版新分队，Wahapedia/DB 无源）",
+   "values": {
+    "id": "fp11e-genestealercults-heroesuprising-s2",
+    "faction": "GC",
+    "detachment": "Heroes of the Uprising",
+    "name_zh": "汹涌巢崇",
+    "name_en": "SURGING BROODWORSHIP",
+    "cp_cost": "1",
+    "phase": "Shooting or Fight phase",
+    "text_zh": "<b>WHEN:</b> Your Shooting phase or the Fight phase, when a friendly <span class=\"kwb\">KILLER</span> unit is selected to attack.<br><br><b>TARGET:</b> That <span class=\"kwb\">KILLER</span> unit.<br><br><b>EFFECT:</b> Attacks made by <span class=\"kwb\">KILLER</span> models in your unit have <span class=\"kwb2 bluefont\">[DEVASTATING WOUNDS]</span>."
+   }
+  },
+  {
+   "table": "stratagems",
+   "fp_source": "Faction Pack Genestealer Cults page_002.md（11 版新分队，Wahapedia/DB 无源）",
+   "values": {
+    "id": "fp11e-genestealercults-heroesuprising-s3",
+    "faction": "GC",
+    "detachment": "Heroes of the Uprising",
+    "name_zh": "至死效忠",
+    "name_en": "LOYAL TO THE END",
+    "cp_cost": "1",
+    "phase": "Fight phase",
+    "text_zh": "<b>WHEN:</b> Fight phase, when an enemy unit targets a friendly <span class=\"kwb\">KILLER</span> unit.<br><br><b>TARGET:</b> That <span class=\"kwb\">KILLER</span> unit.<br><br><b>EFFECT:</b> When a <span class=\"kwb\">KILLER</span> model in your unit is destroyed, if your unit has not been selected to fight this phase, roll one D6:<ul><li>On a 1, that enemy unit suffers 1 mortal wound.</li><li>On a 2+, do not remove that model from the battlefield. When your unit has fought, or at the end of the phase (whichever comes first), that model is removed from the battlefield.</li></ul>"
+   }
+  },
+  {
+   "table": "detachments",
+   "fp_source": "Faction Pack Genestealer Cults page_003.md（11 版新分队，Wahapedia/DB 无源）",
+   "values": {
+    "id": "fp11e-genestealercults-purestrainbroodswarm",
+    "faction": "GC",
+    "name_zh": "内部之敌",
+    "name_en": "Enemy Within",
+    "rule_text": "At the end of your opponent’s Fight phase, friendly unengaged <span class=\"kwb\">PURESTRAIN</span> <span class=\"kwb\">GENESTEALERS</span> units can be placed in Strategic Reserves.<br><br>This Detachment has the <span class=\"kwb\">PURESTRAIN</span> tag and cannot be taken with another <span class=\"kwb\">PURESTRAIN</span> Detachment."
+   }
+  },
+  {
+   "table": "enhancements",
+   "fp_source": "Faction Pack Genestealer Cults page_003.md（11 版新分队，Wahapedia/DB 无源）",
+   "values": {
+    "id": "fp11e-genestealercults-purestrainbroodswarm-e1",
+    "faction_id": "GC",
+    "detachment_id": "fp11e-genestealercults-purestrainbroodswarm",
+    "detachment_name": "Purestrain Broodswarm",
+    "name": "Mark of the Star Children",
+    "cost": null,
+    "legend": "点数未知：FP 不含点数，MFM 缓存无增强数据（诚实置空，勿猜）；FP 标注为 UPGRADE 型增强",
+    "description": "<span class=\"kwb\">PURESTRAIN</span> <span class=\"kwb\">GENESTEALERS</span> unit only. This unit has:<ul><li>+1 T.</li><li>4+ Sv.</li><li>This unit’s melee attacks have +1 S.</li></ul>"
+   }
+  },
+  {
+   "table": "enhancements",
+   "fp_source": "Faction Pack Genestealer Cults page_003.md（11 版新分队，Wahapedia/DB 无源）",
+   "values": {
+    "id": "fp11e-genestealercults-purestrainbroodswarm-e2",
+    "faction_id": "GC",
+    "detachment_id": "fp11e-genestealercults-purestrainbroodswarm",
+    "detachment_name": "Purestrain Broodswarm",
+    "name": "Talons of the Sire",
+    "cost": null,
+    "legend": "点数未知：FP 不含点数，MFM 缓存无增强数据（诚实置空，勿猜）",
+    "description": "<span class=\"kwb\">PATRIARCH</span> model only. This unit’s attacks can re-roll Wound rolls of 1."
+   }
+  },
+  {
+   "table": "stratagems",
+   "fp_source": "Faction Pack Genestealer Cults page_003.md（11 版新分队，Wahapedia/DB 无源）",
+   "values": {
+    "id": "fp11e-genestealercults-purestrainbroodswarm-s1",
+    "faction": "GC",
+    "detachment": "Purestrain Broodswarm",
+    "name_zh": "潜伏突袭",
+    "name_en": "LURK AND STRIKE",
+    "cp_cost": "1",
+    "phase": "Movement phase",
+    "text_zh": "<b>WHEN:</b> Your Movement phase, when a friendly <span class=\"kwb\">PURESTRAIN</span> <span class=\"kwb\">GENESTEALERS</span> unit is selected to make a Fall Back move.<br><br><b>TARGET:</b> That <span class=\"kwb\">PURESTRAIN</span> <span class=\"kwb\">GENESTEALERS</span> unit.<br><br><b>EFFECT:</b> That move does not prevent your unit from being eligible to declare a charge."
+   }
+  },
+  {
+   "table": "stratagems",
+   "fp_source": "Faction Pack Genestealer Cults page_003.md（11 版新分队，Wahapedia/DB 无源）",
+   "values": {
+    "id": "fp11e-genestealercults-purestrainbroodswarm-s2",
+    "faction": "GC",
+    "detachment": "Purestrain Broodswarm",
+    "name_zh": "匍行恐怖",
+    "name_en": "CRAWLING HORROR",
+    "cp_cost": "1",
+    "phase": "Movement phase",
+    "text_zh": "<b>WHEN:</b> Start of your opponent’s Movement phase.<br><br><b>TARGET:</b> One friendly <span class=\"kwb\">PURESTRAIN</span> <span class=\"kwb\">GENESTEALERS</span> unit.<br><br><b>EFFECT:</b> Your unit has -6\" detection range until the end of the turn."
+   }
+  },
+  {
+   "table": "stratagems",
+   "fp_source": "Faction Pack Genestealer Cults page_003.md（11 版新分队，Wahapedia/DB 无源）",
+   "values": {
+    "id": "fp11e-genestealercults-purestrainbroodswarm-s3",
+    "faction": "GC",
+    "detachment": "Purestrain Broodswarm",
+    "name_zh": "非人反应",
+    "name_en": "INHUMAN REACTIONS",
+    "cp_cost": "1",
+    "phase": "Movement phase",
+    "text_zh": "<b>WHEN:</b> Your opponent’s Movement phase, when an enemy unit ends a move within 8\" of a friendly unengaged <span class=\"kwb\">PURESTRAIN</span> <span class=\"kwb\">GENESTEALERS</span> unit.<br><br><b>TARGET:</b> That <span class=\"kwb\">PURESTRAIN</span> <span class=\"kwb\">GENESTEALERS</span> unit.<br><br><b>EFFECT:</b> Your unit can make a Normal move of up to D3+3\"."
+   }
+  },
+  {
+   "table": "detachments",
+   "fp_source": "Faction Pack Genestealer Cults page_004.md（11 版新分队，Wahapedia/DB 无源）",
+   "values": {
+    "id": "fp11e-genestealercults-xenocultmasses",
+    "faction": "GC",
+    "name_zh": "信徒洪流",
+    "name_en": "Hordes of the Faithful",
+    "rule_text": "In your Command phase, if a friendly <span class=\"kwb\">NEOPHYTE</span> <span class=\"kwb\">HYBRIDS</span> unit is within a terrain area, that unit heals 3 wounds.<br><br>This Detachment has the <span class=\"kwb\">HOSTS</span> tag and cannot be taken with another <span class=\"kwb\">HOSTS</span> Detachment."
+   }
+  },
+  {
+   "table": "enhancements",
+   "fp_source": "Faction Pack Genestealer Cults page_004.md（11 版新分队，Wahapedia/DB 无源）",
+   "values": {
+    "id": "fp11e-genestealercults-xenocultmasses-e1",
+    "faction_id": "GC",
+    "detachment_id": "fp11e-genestealercults-xenocultmasses",
+    "detachment_name": "Xenocult Masses",
+    "name": "Inspired to Greatness",
+    "cost": null,
+    "legend": "点数未知：FP 不含点数，MFM 缓存无增强数据（诚实置空，勿猜）",
+    "description": "<span class=\"kwb\">MAGUS</span>/<span class=\"kwb\">PRIMUS</span> model only. This unit’s attacks can re-roll Damage rolls."
+   }
+  },
+  {
+   "table": "enhancements",
+   "fp_source": "Faction Pack Genestealer Cults page_004.md（11 版新分队，Wahapedia/DB 无源）",
+   "values": {
+    "id": "fp11e-genestealercults-xenocultmasses-e2",
+    "faction_id": "GC",
+    "detachment_id": "fp11e-genestealercults-xenocultmasses",
+    "detachment_name": "Xenocult Masses",
+    "name": "Devious Disguises",
+    "cost": null,
+    "legend": "点数未知：FP 不含点数，MFM 缓存无增强数据（诚实置空，勿猜）；FP 标注为 UPGRADE 型增强",
+    "description": "<span class=\"kwb\">NEOPHYTE</span> <span class=\"kwb\">HYBRIDS</span> unit only. This unit has -3\" detection range."
+   }
+  },
+  {
+   "table": "stratagems",
+   "fp_source": "Faction Pack Genestealer Cults page_004.md（11 版新分队，Wahapedia/DB 无源）",
+   "values": {
+    "id": "fp11e-genestealercults-xenocultmasses-s1",
+    "faction": "GC",
+    "detachment": "Xenocult Masses",
+    "name_zh": "教派之眼",
+    "name_en": "EYES OF THE CULT",
+    "cp_cost": "1",
+    "phase": "Shooting phase",
+    "text_zh": "<b>WHEN:</b> Start of your Shooting phase.<br><br><b>TARGET:</b> One friendly <span class=\"kwb\">NEOPHYTE</span> <span class=\"kwb\">HYBRIDS</span> unit within a terrain area.<br><br><b>EFFECT:</b> Enemy units within that terrain area have +6\" detection range."
+   }
+  },
+  {
+   "table": "stratagems",
+   "fp_source": "Faction Pack Genestealer Cults page_004.md（11 版新分队，Wahapedia/DB 无源）",
+   "values": {
+    "id": "fp11e-genestealercults-xenocultmasses-s2",
+    "faction": "GC",
+    "detachment": "Xenocult Masses",
+    "name_zh": "狂信弹雨",
+    "name_en": "FANATICAL HAIL",
+    "cp_cost": "1",
+    "phase": "Shooting phase",
+    "text_zh": "<b>WHEN:</b> Your Shooting phase, when a friendly <span class=\"kwb\">NEOPHYTE</span> <span class=\"kwb\">HYBRIDS</span> unit is selected to shoot.<br><br><b>TARGET:</b> That <span class=\"kwb\">NEOPHYTE</span> <span class=\"kwb\">HYBRIDS</span> unit.<br><br><b>EFFECT:</b> Select one enemy unit. Your unit’s ranged attacks that target that enemy unit can re-roll Hit rolls."
+   }
+  },
+  {
+   "table": "stratagems",
+   "fp_source": "Faction Pack Genestealer Cults page_004.md（11 版新分队，Wahapedia/DB 无源）",
+   "values": {
+    "id": "fp11e-genestealercults-xenocultmasses-s3",
+    "faction": "GC",
+    "detachment": "Xenocult Masses",
+    "name_zh": "自暗腹潜出",
+    "name_en": "SLUNK FROM THE UNDERBELLY",
+    "cp_cost": "1",
+    "phase": "Shooting phase",
+    "text_zh": "<b>WHEN:</b> Your opponent’s Shooting phase, when an enemy unit targets a friendly <span class=\"kwb\">NEOPHYTE</span> <span class=\"kwb\">HYBRIDS</span> unit with every model within a terrain area.<br><br><b>TARGET:</b> That <span class=\"kwb\">NEOPHYTE</span> <span class=\"kwb\">HYBRIDS</span> unit.<br><br><b>EFFECT:</b> Ranged attacks that target your unit have -1 AP until that unit has attacked."
    }
   }
  ]

@@ -649,6 +649,50 @@
    "to": "D6+6",
    "src": "Faction Pack Thousand Sons page_010.md（Infernal Gateway - Focused Witchfire A→D6+6）",
    "note": "witchfire 档(D6+3)一致；仅 focused 档攻击数 D3+6→D6+6"
+  },
+  {
+   "unit_id": "000003716",
+   "faction": "GC",
+   "unit": "Acolyte Hybrids With Hand Flamers",
+   "weapon": "Demolition charges",
+   "field": "range",
+   "from": "8",
+   "to": "6",
+   "src": "Faction Pack Genestealer Cults page_008.md（Rules Updates → Datasheets → 爆破弹类 Range 改 6\"）",
+   "note": "FP「Acolyte Hybrids with Hand Flamers, Ranged Weapons：Change the Range characteristic of demolition charges to 6\"」——库沿用十版 8\""
+  },
+  {
+   "unit_id": "000000521",
+   "faction": "GC",
+   "unit": "Goliath Rockgrinder",
+   "weapon": "Demolition charge cache",
+   "field": "range",
+   "from": "8",
+   "to": "6",
+   "src": "Faction Pack Genestealer Cults page_008.md（Rules Updates → Datasheets → 爆破弹类 Range 改 6\"）",
+   "note": "FP「Goliath Rockgrinder, Ranged Weapons：demolition charge cache Range → 6\"」——库沿用十版 8\""
+  },
+  {
+   "unit_id": "000000516",
+   "faction": "GC",
+   "unit": "Goliath Truck",
+   "weapon": "Demolition charge cache",
+   "field": "range",
+   "from": "8",
+   "to": "6",
+   "src": "Faction Pack Genestealer Cults page_008.md（Rules Updates → Datasheets → 爆破弹类 Range 改 6\"）",
+   "note": "FP「Goliath Truck, Ranged Weapons：demolition charge cache Range → 6\"」——库沿用十版 8\""
+  },
+  {
+   "unit_id": "000002525",
+   "faction": "GC",
+   "unit": "Reductus Saboteur",
+   "weapon": "Demolition charges",
+   "field": "range",
+   "from": "8",
+   "to": "6",
+   "src": "Faction Pack Genestealer Cults page_008.md（Rules Updates → Datasheets → 爆破弹类 Range 改 6\"）",
+   "note": "FP「Reductus Saboteur → Demolition Charges：Change Range characteristic to 6\"」——库沿用十版 8\""
   }
  ],
  "resolved": [

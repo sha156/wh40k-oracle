@@ -400,8 +400,11 @@ class TestInserts:
         #   两全新分队各 1 规则+2 增强+3 战略）
         # + 沃坦联盟 18 条（PR24：Armoured Trailblazers / Farseekers / Hearthguard
         #   Covenant 三全新分队各 1 规则+2 增强+3 战略；FP 页 2/3/4，Wahapedia 未滚入）
+        # + 基因窃取者教派 18 条（PR25：Heroes of the Uprising / Purestrain Broodswarm /
+        #   Xenocult Masses 三全新分队各 1 规则+2 增强+3 战略；FP 页 2/3/4，Wahapedia
+        #   仅滚入了第四个分队 Final Day 故不在本单）
         ins = data.get("inserts", [])
-        assert len(ins) == 249
+        assert len(ins) == 267
         ids = {p["values"]["id"] for p in ins}
         assert ids == {"fp11e-tau-aac-det", "fp11e-tau-aac-s1", "fp11e-tau-aac-s2",
                        "fp11e-tau-aac-s3", "fp11e-tau-aux-gbu",
@@ -542,7 +545,25 @@ class TestInserts:
                        "fp11e-votann-hearthguard-e2",
                        "fp11e-votann-hearthguard-s1",
                        "fp11e-votann-hearthguard-s2",
-                       "fp11e-votann-hearthguard-s3"}
+                       "fp11e-votann-hearthguard-s3",
+                       "fp11e-genestealercults-heroesuprising",
+                       "fp11e-genestealercults-heroesuprising-e1",
+                       "fp11e-genestealercults-heroesuprising-e2",
+                       "fp11e-genestealercults-heroesuprising-s1",
+                       "fp11e-genestealercults-heroesuprising-s2",
+                       "fp11e-genestealercults-heroesuprising-s3",
+                       "fp11e-genestealercults-purestrainbroodswarm",
+                       "fp11e-genestealercults-purestrainbroodswarm-e1",
+                       "fp11e-genestealercults-purestrainbroodswarm-e2",
+                       "fp11e-genestealercults-purestrainbroodswarm-s1",
+                       "fp11e-genestealercults-purestrainbroodswarm-s2",
+                       "fp11e-genestealercults-purestrainbroodswarm-s3",
+                       "fp11e-genestealercults-xenocultmasses",
+                       "fp11e-genestealercults-xenocultmasses-e1",
+                       "fp11e-genestealercults-xenocultmasses-e2",
+                       "fp11e-genestealercults-xenocultmasses-s1",
+                       "fp11e-genestealercults-xenocultmasses-s2",
+                       "fp11e-genestealercults-xenocultmasses-s3"}
         for p in ins:
             assert p.get("fp_source")
             assert p["values"].get("id", "").startswith("fp11e-")
