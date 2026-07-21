@@ -1,5 +1,5 @@
 {
- "_comment": "P7-PR1 钛帝国规则文本 11 版化补丁。text_patches 来自 2026-07-14 逐行 A/B 工作单（docs/superpowers/plans/2026-07-14-p7-pr1-fp-rules-worklist.md，55 行全落账：8 drifted / 3 identical / 35 not_in_fp / 9 review_needed / 5 fp_new）；name_patches 来自钛帝国十版中文codex refine 缓存逐条效果配对（43 条有源 + 11 条自译标记）。｜P7-PR5 吞世者追加（2026-07-18）：text 9（军规嗜血癫狂改+1冲锋、狂战士之怒/怒火尽泄 surge move 术语、黄铜之怒规则改核心 surge、怒火容器 p4 完整重印 5 条）；deactivations +6（怒火容器重印未收录）；inserts +13（Brazen Engines/Butchers of Khorne 两全新分队 + Scorn the Witch）；name +53（狂战士战帮/怒火容器/军规 DavidZ codex 有源配对，其余自译标记）。已滚入免补：Summoned by Slaughter / Warp Stalkers / Rapid Manifestation（Wahapedia 现文即 11 版）。｜PR5 兵牌层技能 6 条（FP p7-p8 DATASHEETS：Loping Speed 8\"、Blood Surge surge move 化、Helbrute Frenzy 重写、Scent of Blood 9\" 内判据、Chaos Rhino 8\"、Bloody Fury 重写）；已滚入免补：Exalted Eightbound Rend and Tear / Icon of Khorne×2 / Slaughterbound 武器 S10 / Defiler 整表（Wahapedia 已收）。FRAME 关键词沿 S4 裁定跳过（测距词）。｜P7-PR8 死亡守卫追加（2026-07-19）：text 9（Flyblown Host 完整重印 6 条 + 军规两处合一 + Death Approaches 9\"→8\" + Beckoning Blight 9\"→8\"）、deact 5（Flyblown重印未收录 3 战略 2 增强）、inserts 12（Contagion Engines/Paragons of Putrescence两新分队各 1 规则 3 战略 2 增强）、name 51（军规 1 + det 规则 7 + 战略 42 + 死神降临，源=老湿腐死亡守卫V1.1；工作单 docs/superpowers/plans/2026-07-19-p7-pr8-dg-worklist.md）｜P7-PR9 圣血天使追加（2026-07-19）：text 9（全兵牌技能层——Legends Black Rage×4 + 狂乱反噬 + 狂怒驱使 surge + 大叛乱幻视 + 奇迹救赎 ingress + Gleaming Pinions 8\"）、inserts 18（Legacy of Grace/Encarmine Speartip/Wrath of the Doomed 三新分队各 1 规则 3 战略 2 增强；Legacy of the Angel 同名豁免旗标expect_duplicate_name 首用）、name 49（4 codex 分队有源 + Rage-cursed 自译，源=DavidZ圣血天使V1.05；工作单 docs/superpowers/plans/2026-07-19-p7-pr9-ba-worklist.md）。零 deactivations（重印无删减）零 fp_errata｜P7-PR15 圣血修女追加（2026-07-20）：text 1（Penitent Host / Devout Fanaticism EFFECT → surge move）；inserts +14（3 新分队 Chorus of Condemnation / Sacred Champions / Sanctified Orators：3 规则 + 5 增强 + 6 战略，id 前缀 fp11e-sororitas-，cost 置空）。免补：Rules Updates 其余（Shield of Aversion/Rites of Fire/Fervent Purgation/Suffering&Sacrifice/Divine Intervention/Desperate for Redemption/Blazing Ire&Cleansing Flames 2CP/Acts of Faith 军规）Wahapedia 已滚入逐字一致。观察项：FRAME 关键字×4、8 datasheet 技能改（Leader→Support 等）、3+5 新 datasheet/Legends 单位——datasheet 层不落本 PR。｜P7-PR20 Space-Marines 追加（2026-07-20）：inserts +13 —— 2 新迷你分队（Fulguris Task Force 天雷突袭 / Subversion Assets 无所遁形，各 1 规则 + 2 增强 + 3 战略，id 前缀 fp11e-spacemarines-）+ Bastion Task Force 漏录的 Angels Defiant 战略（DB id 序 002-005,007 缺 006，补回 000010677006）。11 现有分队（Armoured Speartip→Reclamation Force + Librarius Conclave）文本与 11 版 FP 逐字一致（Wahapedia 已滚入），零 text_patches/零 deactivations/零 fp_errata。｜P7-PR23 帝国代理（Imperial Agents，faction='AoI'）追加（2026-07-20）：text 2（Rapid Tactical Relocation 9\"→8\"、Gift of the Prescient 3\"→6\"，均几何漂移不影响 DSL）。免补：Armour of Contempt / Truesilver Armour 的「worsen AP by 1」库现文即 11 版逐字一致；FP 唯一新分队 Veiled Blade Elimination Force（Extremis Sanction + 6 战略 + 4 增强）Wahapedia 已滚入 DB 故零 fp_new；零 deactivations/零 fp_errata。datasheet 层改（Corvus Blackstar M14\"/去 AIRCRAFT、Callidus/Culexus/Rhino/Inquisitor Leader 等）沿死亡守望/圣血修女先例不落本 PR（观察项）。｜P7-PR18 太空野狼追加（2026-07-21）：text 4（Champions of Fenris 分队规则同名重印、Grimnar's Mark 增强重印真漂移、Rules Updates 的 Impetuosity EFFECT → surge move、Thunderous Pursuit TARGET 9\"→8\"）；deactivations +10（11 版 CoF 完整重印未收录的 6 战略 + 4 增强）；inserts +17（CoF 重印新增 3 战略 + 2 增强，Legends of Saga and Song / Veterans of the Fang 两全新分队各 1 规则 + 3 战略 + 2 增强，id 前缀 fp11e-sw-）。｜P7-PR22 混沌骑士（Chaos Knights，faction='QT'）追加（2026-07-21）：text 3（Iconoclast Fiefdom 完整重印：分队规则名 Dreaded Masters→Wretched Thralls、rule_text 整替、Avenge the Masters! 目标/施加方整替）；deactivations +9（重印未收录的 5 战略 + 4 增强）；inserts +16（Bastions of Tyranny / Hunting Warpack 两全新分队各 1 规则 + 2 增强 + 3 战略，Iconoclast 重印新增 2 增强 + 2 战略，id 前缀 fp11e-chaosknights-，cost 置空）。免补：Helhunt Lance（FP p5-p6）1 规则 + 4 增强 + 6 战略与库现文逐字一致（Wahapedia 已滚入）；page_025 RULES UPDATES 全部已滚入（Darkness→Stealth、Animalistic Rage WHEN、Harrying Hounds 8\"、Unnatural Fortitude、Hellforged Construction AP、Claimed for the Dark Gods WHEN、Mirror of Fates、Imperious Advance EFFECT 逐条 A/B 均一致）。观察项：FP p7-p24 的 18 页 Imperial Armour 兵牌（Acastus/Cerastus/Questoris/War Dog Moirax）与 Knight Abominant Warp Storms 改动属 datasheet 层，沿死亡守望/圣血修女先例不落本 PR。｜P7-PR26 混沌恶魔追加（2026-07-21）：text 5（Warp Rifts 深入打击 9\"→8\"、First Prince of Chaos 的 PENUMBRAL PUPPETRY 加 Stealth 并限近战 + SHADOW'S CARESS 改 snap shooting、Murdercall 加相位限定并 6\"→8\"、SHADE PATH 时点/目标/-2→-1 整替、FOOLS’ FLIGHT 11 版重写）；inserts +18（Cavalcade of Chaos 1 规则+2 增强+3 战略、Lords of the Warp 1 规则+1 增强+4 战略、Warptide 1 规则+2 增强+3 战略，id 前缀 fp11e-chaosdaemons-，cost 置空；Swollen with Power 与 CSM 登舰增强同名异 id，挂 expect_duplicate_name）。零 deactivations（6 个现有分队 FP 均为重印，无删减条目）；零 fp_errata（本 FP 数值层改动全落在 p14-p119 的 Index 兵牌，沿死亡守望/圣血修女/混沌骑士先例作观察项不落本 PR）。已滚入免补：Daemonic Incursion 全部 6 战略 4 增强、Blood Legion 其余 5 战略 4 增强 + Blood Tainted、Scintillating Legion / Plague Legion / Legion of Excess 全套、Shadow Legion 其余 5 战略 4 增强 + Thralls of the First Prince（Wahapedia 已滚入逐字一致）。｜P7-PR28 混沌星际战士追加（2026-07-21）：text 13（Cabal of Chaos 分队规则 + Touched by the Warp 整替、Marks of Chaos Restrictions CHARACTER/EPIC HERO、Falsehood 第三句、PORTAL OF SPITE 无条件 +2 冲锋、TO THE FAVOURED THE SPOILS surge 术语化、RELENTLESS PURSUIT / PREDATORY PURSUIT / MILLENNIA OF EXPERIENCE 9\"→8\"、SCREAMING DESCENT battle-shock roll、UNSTOPPABLE RAMPAGE / PREDATORY PURSUIT TARGET 收窄 DAEMON VEHICLE、BRINGERS OF DESPAIR WHEN + CP 2→1）；deact 9（Cabal of Chaos 11 版重印未收录的 3 增强 6 战略）；inserts 16（Cabal of Chaos 重印新增 1 增强 3 战略 + 全新分队 Devotees of Destruction / Murdertalon Raiders 各 1 规则 2 增强 3 战略）。假警报：UNHOLY FORTITUDE 的 2CP 系 refine 把浮动 CP 标错行（PDF p8 全页仅一个 2CP，按库内 SOUL-TALLY OFFERING=2CP 归位），不补；FRAME 关键词新增与 Master of Executions Leader→Support 沿既有层策略不补。工作单 docs/superpowers/plans/2026-07-20-p7-pr28-csm-worklist.md",
+ "_comment": "P7-PR1 钛帝国规则文本 11 版化补丁。text_patches 来自 2026-07-14 逐行 A/B 工作单（docs/superpowers/plans/2026-07-14-p7-pr1-fp-rules-worklist.md，55 行全落账：8 drifted / 3 identical / 35 not_in_fp / 9 review_needed / 5 fp_new）；name_patches 来自钛帝国十版中文codex refine 缓存逐条效果配对（43 条有源 + 11 条自译标记）。｜P7-PR5 吞世者追加（2026-07-18）：text 9（军规嗜血癫狂改+1冲锋、狂战士之怒/怒火尽泄 surge move 术语、黄铜之怒规则改核心 surge、怒火容器 p4 完整重印 5 条）；deactivations +6（怒火容器重印未收录）；inserts +13（Brazen Engines/Butchers of Khorne 两全新分队 + Scorn the Witch）；name +53（狂战士战帮/怒火容器/军规 DavidZ codex 有源配对，其余自译标记）。已滚入免补：Summoned by Slaughter / Warp Stalkers / Rapid Manifestation（Wahapedia 现文即 11 版）。｜PR5 兵牌层技能 6 条（FP p7-p8 DATASHEETS：Loping Speed 8\"、Blood Surge surge move 化、Helbrute Frenzy 重写、Scent of Blood 9\" 内判据、Chaos Rhino 8\"、Bloody Fury 重写）；已滚入免补：Exalted Eightbound Rend and Tear / Icon of Khorne×2 / Slaughterbound 武器 S10 / Defiler 整表（Wahapedia 已收）。FRAME 关键词沿 S4 裁定跳过（测距词）。｜P7-PR8 死亡守卫追加（2026-07-19）：text 9（Flyblown Host 完整重印 6 条 + 军规两处合一 + Death Approaches 9\"→8\" + Beckoning Blight 9\"→8\"）、deact 5（Flyblown重印未收录 3 战略 2 增强）、inserts 12（Contagion Engines/Paragons of Putrescence两新分队各 1 规则 3 战略 2 增强）、name 51（军规 1 + det 规则 7 + 战略 42 + 死神降临，源=老湿腐死亡守卫V1.1；工作单 docs/superpowers/plans/2026-07-19-p7-pr8-dg-worklist.md）｜P7-PR9 圣血天使追加（2026-07-19）：text 9（全兵牌技能层——Legends Black Rage×4 + 狂乱反噬 + 狂怒驱使 surge + 大叛乱幻视 + 奇迹救赎 ingress + Gleaming Pinions 8\"）、inserts 18（Legacy of Grace/Encarmine Speartip/Wrath of the Doomed 三新分队各 1 规则 3 战略 2 增强；Legacy of the Angel 同名豁免旗标expect_duplicate_name 首用）、name 49（4 codex 分队有源 + Rage-cursed 自译，源=DavidZ圣血天使V1.05；工作单 docs/superpowers/plans/2026-07-19-p7-pr9-ba-worklist.md）。零 deactivations（重印无删减）零 fp_errata｜P7-PR15 圣血修女追加（2026-07-20）：text 1（Penitent Host / Devout Fanaticism EFFECT → surge move）；inserts +14（3 新分队 Chorus of Condemnation / Sacred Champions / Sanctified Orators：3 规则 + 5 增强 + 6 战略，id 前缀 fp11e-sororitas-，cost 置空）。免补：Rules Updates 其余（Shield of Aversion/Rites of Fire/Fervent Purgation/Suffering&Sacrifice/Divine Intervention/Desperate for Redemption/Blazing Ire&Cleansing Flames 2CP/Acts of Faith 军规）Wahapedia 已滚入逐字一致。观察项：FRAME 关键字×4、8 datasheet 技能改（Leader→Support 等）、3+5 新 datasheet/Legends 单位——datasheet 层不落本 PR。｜P7-PR20 Space-Marines 追加（2026-07-20）：inserts +13 —— 2 新迷你分队（Fulguris Task Force 天雷突袭 / Subversion Assets 无所遁形，各 1 规则 + 2 增强 + 3 战略，id 前缀 fp11e-spacemarines-）+ Bastion Task Force 漏录的 Angels Defiant 战略（DB id 序 002-005,007 缺 006，补回 000010677006）。11 现有分队（Armoured Speartip→Reclamation Force + Librarius Conclave）文本与 11 版 FP 逐字一致（Wahapedia 已滚入），零 text_patches/零 deactivations/零 fp_errata。｜P7-PR23 帝国代理（Imperial Agents，faction='AoI'）追加（2026-07-20）：text 2（Rapid Tactical Relocation 9\"→8\"、Gift of the Prescient 3\"→6\"，均几何漂移不影响 DSL）。免补：Armour of Contempt / Truesilver Armour 的「worsen AP by 1」库现文即 11 版逐字一致；FP 唯一新分队 Veiled Blade Elimination Force（Extremis Sanction + 6 战略 + 4 增强）Wahapedia 已滚入 DB 故零 fp_new；零 deactivations/零 fp_errata。datasheet 层改（Corvus Blackstar M14\"/去 AIRCRAFT、Callidus/Culexus/Rhino/Inquisitor Leader 等）沿死亡守望/圣血修女先例不落本 PR（观察项）。｜P7-PR18 太空野狼追加（2026-07-21）：text 4（Champions of Fenris 分队规则同名重印、Grimnar's Mark 增强重印真漂移、Rules Updates 的 Impetuosity EFFECT → surge move、Thunderous Pursuit TARGET 9\"→8\"）；deactivations +10（11 版 CoF 完整重印未收录的 6 战略 + 4 增强）；inserts +17（CoF 重印新增 3 战略 + 2 增强，Legends of Saga and Song / Veterans of the Fang 两全新分队各 1 规则 + 3 战略 + 2 增强，id 前缀 fp11e-sw-）。｜P7-PR22 混沌骑士（Chaos Knights，faction='QT'）追加（2026-07-21）：text 3（Iconoclast Fiefdom 完整重印：分队规则名 Dreaded Masters→Wretched Thralls、rule_text 整替、Avenge the Masters! 目标/施加方整替）；deactivations +9（重印未收录的 5 战略 + 4 增强）；inserts +16（Bastions of Tyranny / Hunting Warpack 两全新分队各 1 规则 + 2 增强 + 3 战略，Iconoclast 重印新增 2 增强 + 2 战略，id 前缀 fp11e-chaosknights-，cost 置空）。免补：Helhunt Lance（FP p5-p6）1 规则 + 4 增强 + 6 战略与库现文逐字一致（Wahapedia 已滚入）；page_025 RULES UPDATES 全部已滚入（Darkness→Stealth、Animalistic Rage WHEN、Harrying Hounds 8\"、Unnatural Fortitude、Hellforged Construction AP、Claimed for the Dark Gods WHEN、Mirror of Fates、Imperious Advance EFFECT 逐条 A/B 均一致）。观察项：FP p7-p24 的 18 页 Imperial Armour 兵牌（Acastus/Cerastus/Questoris/War Dog Moirax）与 Knight Abominant Warp Storms 改动属 datasheet 层，沿死亡守望/圣血修女先例不落本 PR。｜P7-PR26 混沌恶魔追加（2026-07-21）：text 5（Warp Rifts 深入打击 9\"→8\"、First Prince of Chaos 的 PENUMBRAL PUPPETRY 加 Stealth 并限近战 + SHADOW'S CARESS 改 snap shooting、Murdercall 加相位限定并 6\"→8\"、SHADE PATH 时点/目标/-2→-1 整替、FOOLS’ FLIGHT 11 版重写）；inserts +18（Cavalcade of Chaos 1 规则+2 增强+3 战略、Lords of the Warp 1 规则+1 增强+4 战略、Warptide 1 规则+2 增强+3 战略，id 前缀 fp11e-chaosdaemons-，cost 置空；Swollen with Power 与 CSM 登舰增强同名异 id，挂 expect_duplicate_name）。零 deactivations（6 个现有分队 FP 均为重印，无删减条目）；零 fp_errata（本 FP 数值层改动全落在 p14-p119 的 Index 兵牌，沿死亡守望/圣血修女/混沌骑士先例作观察项不落本 PR）。已滚入免补：Daemonic Incursion 全部 6 战略 4 增强、Blood Legion 其余 5 战略 4 增强 + Blood Tainted、Scintillating Legion / Plague Legion / Legion of Excess 全套、Shadow Legion 其余 5 战略 4 增强 + Thralls of the First Prince（Wahapedia 已滚入逐字一致）。｜P7-PR28 混沌星际战士追加（2026-07-21）：text 13（Cabal of Chaos 分队规则 + Touched by the Warp 整替、Marks of Chaos Restrictions CHARACTER/EPIC HERO、Falsehood 第三句、PORTAL OF SPITE 无条件 +2 冲锋、TO THE FAVOURED THE SPOILS surge 术语化、RELENTLESS PURSUIT / PREDATORY PURSUIT / MILLENNIA OF EXPERIENCE 9\"→8\"、SCREAMING DESCENT battle-shock roll、UNSTOPPABLE RAMPAGE / PREDATORY PURSUIT TARGET 收窄 DAEMON VEHICLE、BRINGERS OF DESPAIR WHEN + CP 2→1）；deact 9（Cabal of Chaos 11 版重印未收录的 3 增强 6 战略）；inserts 16（Cabal of Chaos 重印新增 1 增强 3 战略 + 全新分队 Devotees of Destruction / Murdertalon Raiders 各 1 规则 2 增强 3 战略）。假警报：UNHOLY FORTITUDE 的 2CP 系 refine 把浮动 CP 标错行（PDF p8 全页仅一个 2CP，按库内 SOUL-TALLY OFFERING=2CP 归位），不补；FRAME 关键词新增与 Master of Executions Leader→Support 沿既有层策略不补。工作单 docs/superpowers/plans/2026-07-20-p7-pr28-csm-worklist.md｜P7-PR29 星界军（Astra Militarum，faction='AM'）追加（2026-07-21）：text 12（Bridgehead Strike 11 版整页重印 5 条：分队规则 Fire Zone Purge 整替 + 2 增强 + FIRING HOT/SERVO-DESIGNATORS/ON MY POSITION 三战略，含 ON MY POSITION 的 phase 列 Fight→Charge；Grizzled Company 重印的 ADDITIONAL ARMOUR 持续期改「直到阶段结束」；RULES UPDATES 的 Masters of Camouflage 分队规则、Swift Interception 9\"→8\"、Draw Them Out 9\"→8\"、Tanglefoot Grenades EFFECT 整替）；deactivations +5（Bridgehead Strike 重印未收录的 3 战略 2 增强）；inserts +12（Abhuman Auxiliaries / Designation Force 两全新分队各 1 规则 + 2 增强 + 3 战略，id 前缀 fp11e-am-，cost 置空）。免补：Steel Hammer（p5-p6）/ Armoured Infantry（p7-p8）/ Grizzled Company（p9-p10）三分队的 1 规则 + 4 增强 + 6 战略与库现文逐字一致（Wahapedia 已滚入），Siege Regiment 的 Creeping Barrage change-to 亦已逐字一致。观察项：detachments 表不在 deactivations 白名单内，Bridgehead Strike 的旧第二条分队规则 Only the Best（id 000009798）11 版重印未收录但无法落失效标记，仅在工作单与 DSL 注记披露；p27-p28 的 datasheet 层改动（Tempestus Scions/Aquilons BS 3+、Krieg 系列武器格、FRAME 关键词等）沿死亡守望/圣血修女先例不落本 PR。",
  "text_patches": [
   {
    "table": "stratagems",
@@ -1348,6 +1348,126 @@
    "fp_source": "Faction Pack Chaos Space Marines page_037.md（Veterans of the Long War Detachment · Millennia of Experience Stratagem, Target Section: change 9\" to 8\"）",
    "from_text": "<b>WHEN:</b> Your opponent’s Movement phase, just after an enemy unit ends a Normal, Advance or Fall Back move.<br><br><b>TARGET:</b> One HERETIC ASTARTES INFANTRY or HERETIC ASTARTES MOUNTED unit from your army (excluding  DAMNED units) that is within 9\" of that enemy unit and not within Engagement Range of one or more enemy units.<br><br><b>EFFECT:</b> Your unit can make a Normal move of up to 6\".",
    "to_text": "<b>WHEN:</b> Your opponent’s Movement phase, just after an enemy unit ends a Normal, Advance or Fall Back move.<br><br><b>TARGET:</b> One HERETIC ASTARTES INFANTRY or HERETIC ASTARTES MOUNTED unit from your army (excluding  DAMNED units) that is within 8\" of that enemy unit and not within Engagement Range of one or more enemy units.<br><br><b>EFFECT:</b> Your unit can make a Normal move of up to 6\"."
+  },
+  {
+   "table": "detachments",
+   "column": "rule_text",
+   "id": "000009799",
+   "name_en": "Fire Zone Purge",
+   "fp_source": "Faction Pack Astra Militarum page_003.md（Bridgehead Strike 11 版整页重印，分队规则整段替换）",
+   "from_text": "Each time a Militarum Tempestus model from your army makes a ranged attack in a turn in which it was set up on the battlefield from Reserves or it disembarked from a Transport, add 1 to the Hit roll.",
+   "to_text": "If a friendly <span class=\"kwb\">MILITARUM</span> <span class=\"kwb\">TEMPESTUS</span> <span class=\"kwb\">OFFICER</span> model is your <span class=\"kwb\">WARLORD</span>, friendly <span class=\"kwb\">TEMPESTUS</span> <span class=\"kwb\">SCIONS</span> units have:<ul><li><span class=\"kwb\">BATTLELINE</span>.</li><li>+1 OC.</li></ul>When a friendly <span class=\"kwb\">MILITARUM</span> <span class=\"kwb\">TEMPESTUS</span> unit is selected to shoot, if that unit was set up this turn, that unit’s ranged attacks have +1 to hit rolls.",
+   "synthesis": "无需合成：FP p3 原文逐字"
+  },
+  {
+   "table": "detachments",
+   "column": "rule_text",
+   "id": "000009868",
+   "name_en": "Masters of Camouflage",
+   "fp_source": "Faction Pack Astra Militarum page_027.md（RULES UPDATES · RECON ELEMENT DETACHMENT · Masters of Camouflage Detachment Rule, Change to）",
+   "from_text": "Astra Militarum Walker and Regiment models from your army have the Benefit of Cover. While such a model has the Benefit of Cover for any other reason (e.g. because it is wholly within a <span class=\"kwb\">RUIN</span>), improve the Save characteristic of that model by 1 (to a maximum of 3+).",
+   "to_text": "<span class=\"kwb\">ASTRA</span> <span class=\"kwb\">MILITARUM</span> <span class=\"kwb\">WALKER</span> and <span class=\"kwb\">REGIMENT</span> models from your army have the Benefit of Cover. While such a model has the Benefit of Cover for any other reason, improve the Save characteristic of that model by 1 (to a maximum of 3+).",
+   "synthesis": "无需合成：FP p27 change-to 原文逐字（删去十版的 RUIN 举例从句）"
+  },
+  {
+   "table": "enhancements",
+   "column": "description",
+   "id": "000009801002",
+   "name_en": "Bombast-class Vox-array",
+   "fp_source": "Faction Pack Astra Militarum page_003.md（Bridgehead Strike 11 版整页重印）",
+   "from_text": "Militarum Tempestus Officer model only. Each time the bearer issues an Order, if the bearer’s unit contains one or more models equipped with a master vox, it can issue that Order to up to three different Regiment units, instead of only one.",
+   "to_text": "<span class=\"kwb\">MILITARUM</span> <span class=\"kwb\">TEMPESTUS</span> <span class=\"kwb\">OFFICER</span> model only. When this model issues an Order, if this unit has the Master Vox wargear ability, this model can issue that Order to up to three different <span class=\"kwb\">REGIMENT</span> units, instead of only one.",
+   "synthesis": "无需合成：FP p3 原文逐字（判据由「单位内有装备 master vox 的模型」改为「本单位有 Master Vox 战备技能」）"
+  },
+  {
+   "table": "enhancements",
+   "column": "description",
+   "id": "000009801003",
+   "name_en": "Priority-drop Beacon",
+   "fp_source": "Faction Pack Astra Militarum page_003.md（Bridgehead Strike 11 版整页重印，整段改写为 ingress move）",
+   "from_text": "Militarum Tempestus Officer model only. The bearer’s unit can be set up using the Deep Strike ability in the Reinforcements step of your first, second or third Movement phase, regardless of any mission rules.",
+   "to_text": "<span class=\"kwb\">MILITARUM</span> <span class=\"kwb\">TEMPESTUS</span> <span class=\"kwb\">OFFICER</span> model only. In your first Movement phase, this unit can make an ingress move.",
+   "synthesis": "无需合成：FP p3 原文逐字"
+  },
+  {
+   "table": "stratagems",
+   "column": "text_zh",
+   "id": "000009802003",
+   "name_en": "FIRING HOT",
+   "fp_source": "Faction Pack Astra Militarum page_003.md（Bridgehead Strike 11 版整页重印）",
+   "from_text": "<b>WHEN:</b> Your Shooting phase.<br><br><b>TARGET:</b> One Militarum Tempestus or Kasrkin unit from your army that has not been selected to shoot this phase.<br><br><b>EFFECT:</b> Until the end of the phase, when targeting an enemy unit within 12\", improve the Strength and Armour Penetration characteristics of hot-shot lascarbines, hot-shot lasguns, hot-shot laspistols, hot-shot marksman rifles, hot-shot volley guns and sentry hot-shot volley guns equipped by models in your unit by 1.",
+   "to_text": "<b>WHEN:</b> Your Shooting phase, when a friendly <span class=\"kwb\">MILITARUM</span> <span class=\"kwb\">TEMPESTUS</span>/<span class=\"kwb\">KASRKIN</span> unit is selected to shoot.<br><br><b>TARGET:</b> That <span class=\"kwb\">MILITARUM</span> <span class=\"kwb\">TEMPESTUS</span>/<span class=\"kwb\">KASRKIN</span> unit.<br><br><b>EFFECT:</b> Your unit’s Hot-shot Lascarbines, Hot-shot Lasguns, Hot-shot Laspistols, Hot-shot Marksman Rifles, Hot-shot Volley Guns and Sentry Hot-shot Volley Guns weapons that targeted an enemy unit within 12\" have +1 S and AP.",
+   "synthesis": "无需合成：FP p3 原文逐字（机制不变，11 版措辞重构）"
+  },
+  {
+   "table": "stratagems",
+   "column": "text_zh",
+   "id": "000009802005",
+   "name_en": "SERVO‑DESIGNATORS",
+   "fp_source": "Faction Pack Astra Militarum page_003.md（Bridgehead Strike 11 版整页重印，施加方与效果双改）",
+   "from_text": "<b>WHEN:</b> Your Shooting phase, just after an <span class=\"kwb\">ASTRA</span> <span class=\"kwb\">MILITARUM</span> <span class=\"kwb\">INFANTRY</span> unit from your army has shot.<br><br><b>TARGET:</b> That Astra Militarum Infantry unit.<br><br><b>EFFECT:</b> Select one enemy unit hit by one or more of those attacks that is visible to your unit. Until the end of the phase, that enemy unit cannot have the Benefit of Cover.",
+   "to_text": "<b>WHEN:</b> Your Shooting phase, when a friendly <span class=\"kwb\">MILITARUM</span> <span class=\"kwb\">TEMPESTUS</span> unit has shot.<br><br><b>TARGET:</b> That <span class=\"kwb\">MILITARUM</span> <span class=\"kwb\">TEMPESTUS</span> unit.<br><br><b>EFFECT:</b> Select one enemy unit hit by those ranged attacks. Friendly <span class=\"kwb\">MILITARUM</span> <span class=\"kwb\">TEMPESTUS</span> units’ ranged attacks that target that enemy unit have [IGNORES COVER].",
+   "synthesis": "无需合成：FP p3 原文逐字（受益方由 AM INFANTRY 收窄为 MILITARUM TEMPESTUS；效果由「目标不得享掩体」改为攻方武器获 [IGNORES COVER]）"
+  },
+  {
+   "table": "stratagems",
+   "column": "text_zh",
+   "id": "000009802007",
+   "name_en": "ON MY POSITION",
+   "fp_source": "Faction Pack Astra Militarum page_003.md（Bridgehead Strike 11 版整页重印，WHEN 由近战阶段末改冲锋阶段末）",
+   "from_text": "<b>WHEN:</b> End of your opponent’s Fight phase.<br><br><b>TARGET:</b> One Regiment Infantry unit from your army that is within Engagement Range of one or more enemy units.<br><br><b>EFFECT:</b> Roll one D6 for each enemy unit within Engagement Range of your unit: on a 2+, that enemy unit suffers D6 mortal wounds. Then, your unit suffers 3D3 mortal wounds.",
+   "to_text": "<b>WHEN:</b> End of your opponent’s Charge phase.<br><br><b>TARGET:</b> One friendly engaged <span class=\"kwb\">REGIMENT</span> unit.<br><br><b>EFFECT:</b> Roll one D6 for each enemy unit engaged with your unit:<ul><li>On a 2+ that enemy unit suffers D6 mortal wounds.</li></ul>Then, your unit suffers 3D3 mortal wounds.",
+   "synthesis": "无需合成：FP p3 原文逐字"
+  },
+  {
+   "table": "stratagems",
+   "column": "phase",
+   "id": "000009802007",
+   "name_en": "ON MY POSITION",
+   "fp_source": "Faction Pack Astra Militarum page_003.md（同上：WHEN 段落改冲锋阶段末，phase 列随之归位）",
+   "from_text": "Fight phase",
+   "to_text": "Charge phase",
+   "synthesis": "无需合成：随 text_zh 的 WHEN 段落同步"
+  },
+  {
+   "table": "stratagems",
+   "column": "text_zh",
+   "id": "000010638007",
+   "name_en": "ADDITIONAL ARMOUR",
+   "fp_source": "Faction Pack Astra Militarum page_010.md（Grizzled Company 11 版整页重印：EFFECT 持续期由「直到该攻击单位攻击完毕」改「直到阶段结束」）",
+   "from_text": "<b>WHEN:</b> Your opponent’s Shooting phase, just after an enemy unit has selected its targets.<br><br><b>TARGET:</b> One <span class=\"kwb\">ASTRA</span> <span class=\"kwb\">MILITARUM</span> unit from your army that was selected as the target of one or more of the attacking unit’s attacks.<br><br><b>EFFECT:</b> Until the attacking unit has finished making its attacks, each time an attack targets your unit, worsen the Armour Penetration characteristic of that attack by 1.",
+   "to_text": "<b>WHEN:</b> Your opponent’s Shooting phase, just after an enemy unit has selected its targets.<br><br><b>TARGET:</b> One <span class=\"kwb\">ASTRA</span> <span class=\"kwb\">MILITARUM</span> unit from your army that was selected as the target of one or more of the attacking unit’s attacks.<br><br><b>EFFECT:</b> Until the end of the phase, each time an attack targets your unit, worsen the Armour Penetration characteristic of that attack by 1.",
+   "synthesis": "无需合成：FP p10 原文逐字"
+  },
+  {
+   "table": "stratagems",
+   "column": "text_zh",
+   "id": "000009862005",
+   "name_en": "SWIFT INTERCEPTION",
+   "fp_source": "Faction Pack Astra Militarum page_027.md（RULES UPDATES · MECHANISED ASSAULT DETACHMENT · Swift Interception Stratagem, Target section：9\" → 8\"）",
+   "from_text": "<b>WHEN:</b> Your opponent’s Movement phase, just after an enemy unit ends a Normal, Advance or Fall Back move.<br><br><b>TARGET:</b> One Transport unit from your army (excluding AIRCRAFT and TiTANic units) that is not within Engagement Range of one or more enemy units, and is within 9\" of the enemy unit that just ended that move.<br><br><b>EFFECT:</b> Your <span class=\"kwb\">TRANSPORT</span> can make a Normal move of up to 6\".",
+   "to_text": "<b>WHEN:</b> Your opponent’s Movement phase, just after an enemy unit ends a Normal, Advance or Fall Back move.<br><br><b>TARGET:</b> One Transport unit from your army (excluding AIRCRAFT and TiTANic units) that is not within Engagement Range of one or more enemy units, and is within 8\" of the enemy unit that just ended that move.<br><br><b>EFFECT:</b> Your <span class=\"kwb\">TRANSPORT</span> can make a Normal move of up to 6\".",
+   "synthesis": "几何漂移：只改 9\"→8\"，其余保留库现文（FP change-to 段其余措辞与库一致）"
+  },
+  {
+   "table": "stratagems",
+   "column": "text_zh",
+   "id": "000009870003",
+   "name_en": "DRAW THEM OUT",
+   "fp_source": "Faction Pack Astra Militarum page_027.md（RULES UPDATES · RECON ELEMENT DETACHMENT · Draw Them Out Stratagem, Target Section：Change 9\" to 8\"）",
+   "from_text": "<b>WHEN:</b> Your opponent’s Movement phase, just after an enemy unit ends a Normal, Advance or Fall Back move.<br><br><b>TARGET:</b> One Platoon unit from your army that is within 9\" of that enemy unit, and is not within Engagement Range of one or more enemy units.<br><br><b>EFFECT:</b> Your unit can make a Normal move of up to 6\".",
+   "to_text": "<b>WHEN:</b> Your opponent’s Movement phase, just after an enemy unit ends a Normal, Advance or Fall Back move.<br><br><b>TARGET:</b> One Platoon unit from your army that is within 8\" of that enemy unit, and is not within Engagement Range of one or more enemy units.<br><br><b>EFFECT:</b> Your unit can make a Normal move of up to 6\".",
+   "synthesis": "几何漂移：只改 9\"→8\""
+  },
+  {
+   "table": "stratagems",
+   "column": "text_zh",
+   "id": "000009870006",
+   "name_en": "TANGLEFOOT GRENADES",
+   "fp_source": "Faction Pack Astra Militarum page_027.md（RULES UPDATES · RECON ELEMENT DETACHMENT · Tanglefoot Grenades Stratagem, Effect Section, Change to）",
+   "from_text": "<b>WHEN:</b> Start of your opponent’s Charge phase.<br><br><b>TARGET:</b> One Astra Militarum Grenades unit from your army.<br><br><b>EFFECT:</b> Until the end of the phase, each time an enemy unit selects your unit as the target of a charge, subtract 2 from the Charge roll (this is not cumulative with any other negative modifiers to that Charge roll).",
+   "to_text": "<b>WHEN:</b> Start of your opponent’s Charge phase.<br><br><b>TARGET:</b> One Astra Militarum Grenades unit from your army.<br><br><b>EFFECT:</b> Select one visible enemy unit within 12\" of your unit. When that enemy unit declares a charge, that enemy unit has -1 to charge rolls.",
+   "synthesis": "无需合成：FP p27 change-to 原文逐字（由「以本单位为冲锋目标 -2」改为「所选 12\" 内敌军宣告冲锋 -1」）"
   }
  ],
  "name_patches": [
@@ -4087,6 +4207,41 @@
    "name_en": "SHROUD OF CHAOS",
    "status": "removed_11e",
    "fp_source": "Faction Pack Chaos Space Marines page_002.md（11 版 Cabal of Chaos 完整重印，Wahapedia 仍十版旧文）（旧 Cabal of Chaos 条目，11 版重印未收录）"
+  },
+  {
+   "table": "enhancements",
+   "id": "000009801004",
+   "name_en": "Shroud Projector",
+   "status": "removed_11e",
+   "fp_source": "Faction Pack Astra Militarum page_003.md（Bridgehead Strike 11 版整页重印：11 版分队定式为 1 规则 + 2 增强 + 3 战略，本条未收录）"
+  },
+  {
+   "table": "enhancements",
+   "id": "000009801005",
+   "name_en": "Advance Augury",
+   "status": "removed_11e",
+   "fp_source": "Faction Pack Astra Militarum page_003.md（Bridgehead Strike 11 版整页重印：11 版分队定式为 1 规则 + 2 增强 + 3 战略，本条未收录）"
+  },
+  {
+   "table": "stratagems",
+   "id": "000009802002",
+   "name_en": "BELLICOSA DROP",
+   "status": "removed_11e",
+   "fp_source": "Faction Pack Astra Militarum page_003.md（Bridgehead Strike 11 版整页重印：11 版分队定式为 1 规则 + 2 增强 + 3 战略，本条未收录）"
+  },
+  {
+   "table": "stratagems",
+   "id": "000009802004",
+   "name_en": "FIRE AND RELOCATE",
+   "status": "removed_11e",
+   "fp_source": "Faction Pack Astra Militarum page_003.md（Bridgehead Strike 11 版整页重印：11 版分队定式为 1 规则 + 2 增强 + 3 战略，本条未收录）"
+  },
+  {
+   "table": "stratagems",
+   "id": "000009802006",
+   "name_en": "AERIAL EXTRACTION",
+   "status": "removed_11e",
+   "fp_source": "Faction Pack Astra Militarum page_003.md（Bridgehead Strike 11 版整页重印：11 版分队定式为 1 规则 + 2 增强 + 3 战略，本条未收录）"
   }
  ],
  "_inserts_comment": "P7-PR4 fp_new 补录（2026-07-16）：FP 有、Wahapedia/DB 无的整条目。AAC 整分队（1 规则行 + 3 战略 + 2 增强，id 前缀 fp11e- 标 synthetic 溯源，增强点数 FP/MFM 均无源诚实置 NULL）+ Auxiliary Cadre 新战略 Guided by Unity。守卫：同 id 幂等/名字不符让路；同名异 id（上游将来自补）让路告警不留双胞胎；stratagems/enhancements 插入行标 fp_status='added_11e'。",
@@ -8608,6 +8763,168 @@
     "cp_cost": "1",
     "phase": "Movement phase",
     "text_zh": "<b>WHEN:</b> Your Movement phase, when a friendly <span class=\"kwb\">WARP</span> <span class=\"kwb\">TALONS</span> unit ends a move.<br><br><b>TARGET:</b> That <span class=\"kwb\">WARP</span> <span class=\"kwb\">TALONS</span> unit.<br><br><b>EFFECT:</b> Select one visible enemy unit (excluding <span class=\"kwb\">MONSTER</span>/<span class=\"kwb\">VEHICLE</span> units) within 9\" of your unit. That enemy unit makes a battle-shock roll, with -1 to that battle-shock roll."
+   }
+  },
+  {
+   "table": "detachments",
+   "fp_source": "Faction Pack Astra Militarum page_002.md（11 版全新分队 Abhuman Auxiliaries，Wahapedia/DB 无源）",
+   "values": {
+    "id": "fp11e-am-abhuman",
+    "faction": "AM",
+    "name_zh": "绝对主义准则",
+    "name_en": "Absolutist Principles",
+    "rule_text": "Friendly <span class=\"kwb\">BULLGRYN</span> <span class=\"kwb\">SQUAD</span>/<span class=\"kwb\">OGRYN</span> <span class=\"kwb\">SQUAD</span>/<span class=\"kwb\">RATLINGS</span> units have <span class=\"kwb\">ABHUMAN</span>.<br>Friendly <span class=\"kwb\">COMMISSAR</span> models can:<ul><li>Issue the Take Aim! Order.</li><li>Issue 1 Order to a friendly <span class=\"kwb\">ABHUMAN</span> unit.</li></ul>This detachment has the <span class=\"kwb\">ABHUMAN</span> tag and cannot be taken with another <span class=\"kwb\">ABHUMAN</span> detachment."
+   }
+  },
+  {
+   "table": "enhancements",
+   "fp_source": "Faction Pack Astra Militarum page_002.md（11 版全新分队 Abhuman Auxiliaries，Wahapedia/DB 无源）",
+   "values": {
+    "id": "fp11e-am-abhuman-e1",
+    "faction_id": "AM",
+    "detachment_id": "fp11e-am-abhuman",
+    "detachment_name": "Abhuman Auxiliaries",
+    "name": "Sharp Eyes, Light Fingers",
+    "cost": null,
+    "legend": "点数未知：FP 不含点数，MFM 缓存无增强数据（诚实置空，勿猜）",
+    "description": "<span class=\"kwb\">RATLINGS</span> unit only. When this unit is selected to shoot, enemy units have +6\" detection range until this unit has shot."
+   }
+  },
+  {
+   "table": "enhancements",
+   "fp_source": "Faction Pack Astra Militarum page_002.md（11 版全新分队 Abhuman Auxiliaries，Wahapedia/DB 无源）",
+   "values": {
+    "id": "fp11e-am-abhuman-e2",
+    "faction_id": "AM",
+    "detachment_id": "fp11e-am-abhuman",
+    "detachment_name": "Abhuman Auxiliaries",
+    "name": "Exemplar of Duty",
+    "cost": null,
+    "legend": "点数未知：FP 不含点数，MFM 缓存无增强数据（诚实置空，勿猜）",
+    "description": "<span class=\"kwb\">COMMISSAR</span> model only. This model has Feel No Pain 4+."
+   }
+  },
+  {
+   "table": "stratagems",
+   "fp_source": "Faction Pack Astra Militarum page_002.md（11 版全新分队 Abhuman Auxiliaries，Wahapedia/DB 无源）",
+   "values": {
+    "id": "fp11e-am-abhuman-s1",
+    "faction": "AM",
+    "detachment": "Abhuman Auxiliaries",
+    "name_zh": "厚颅固执",
+    "name_en": "THICK-SKULLED OBDURANCE",
+    "cp_cost": "1",
+    "phase": "Shooting or Fight phase",
+    "text_zh": "<b>WHEN:</b> Your opponent’s Shooting phase or the Fight phase, when an enemy unit targets a friendly <span class=\"kwb\">BULLGRYN</span> <span class=\"kwb\">SQUAD</span>/<span class=\"kwb\">OGRYN</span> <span class=\"kwb\">SQUAD</span> unit that is within range of an objective.<br><br><b>TARGET:</b> That <span class=\"kwb\">BULLGRYN</span> <span class=\"kwb\">SQUAD</span>/<span class=\"kwb\">OGRYN</span> <span class=\"kwb\">SQUAD</span> unit.<br><br><b>EFFECT:</b> Attacks that target your unit have -1 AP until that enemy unit has attacked."
+   }
+  },
+  {
+   "table": "stratagems",
+   "fp_source": "Faction Pack Astra Militarum page_002.md（11 版全新分队 Abhuman Auxiliaries，Wahapedia/DB 无源）",
+   "values": {
+    "id": "fp11e-am-abhuman-s2",
+    "faction": "AM",
+    "detachment": "Abhuman Auxiliaries",
+    "name_zh": "低伏身形",
+    "name_en": "LOW PROFILE",
+    "cp_cost": "1",
+    "phase": "Shooting phase",
+    "text_zh": "<b>WHEN:</b> Your Shooting phase, when a friendly <span class=\"kwb\">RATLINGS</span> unit has shot.<br><br><b>TARGET:</b> That <span class=\"kwb\">RATLINGS</span> unit.<br><br><b>EFFECT:</b> Those ranged attacks do not prevent your unit from being hidden."
+   }
+  },
+  {
+   "table": "stratagems",
+   "fp_source": "Faction Pack Astra Militarum page_002.md（11 版全新分队 Abhuman Auxiliaries，Wahapedia/DB 无源）",
+   "values": {
+    "id": "fp11e-am-abhuman-s3",
+    "faction": "AM",
+    "detachment": "Abhuman Auxiliaries",
+    "name_zh": "激起行动",
+    "name_en": "STIRRED TO ACTION",
+    "cp_cost": "1",
+    "phase": "Shooting phase",
+    "text_zh": "<b>WHEN:</b> Your opponent’s Shooting phase, when an enemy unit that targeted a friendly unengaged <span class=\"kwb\">BULLGRYN</span> <span class=\"kwb\">SQUAD</span>/<span class=\"kwb\">OGRYN</span> <span class=\"kwb\">SQUAD</span> unit has shot.<br><br><b>TARGET:</b> That <span class=\"kwb\">BULLGRYN</span> <span class=\"kwb\">SQUAD</span>/<span class=\"kwb\">OGRYN</span> <span class=\"kwb\">SQUAD</span> unit.<br><br><b>EFFECT:</b> Your unit can make a surge move of up to D6\"."
+   }
+  },
+  {
+   "table": "detachments",
+   "fp_source": "Faction Pack Astra Militarum page_004.md（11 版全新分队 Designation Force，Wahapedia/DB 无源）",
+   "values": {
+    "id": "fp11e-am-designation",
+    "faction": "AM",
+    "name_zh": "指定目标",
+    "name_en": "Designated Targets",
+    "rule_text": "Friendly <span class=\"kwb\">SCOUT</span> <span class=\"kwb\">SENTINEL</span>/<span class=\"kwb\">ASTRA</span> <span class=\"kwb\">MILITARUM</span> <span class=\"kwb\">INFANTRY</span> <span class=\"kwb\">SMOKE</span> units have the following ability:<br><b>Signal Flares:</b> In your Shooting phase, this unit can select one visible enemy unit within 12\". That enemy unit is designated:<ul><li>While a unit is designated, that unit has +3\" detection range.</li></ul>This detachment has the <span class=\"kwb\">RECON</span> tag and cannot be taken with another <span class=\"kwb\">RECON</span> detachment."
+   }
+  },
+  {
+   "table": "enhancements",
+   "fp_source": "Faction Pack Astra Militarum page_004.md（11 版全新分队 Designation Force，Wahapedia/DB 无源）",
+   "values": {
+    "id": "fp11e-am-designation-e1",
+    "faction_id": "AM",
+    "detachment_id": "fp11e-am-designation",
+    "detachment_name": "Designation Force",
+    "name": "Long-range Scout",
+    "cost": null,
+    "legend": "点数未知：FP 不含点数，MFM 缓存无增强数据（诚实置空，勿猜）",
+    "description": "<span class=\"kwb\">SCOUT</span> <span class=\"kwb\">SENTINEL</span> unit only. This unit has Infiltrators."
+   }
+  },
+  {
+   "table": "enhancements",
+   "fp_source": "Faction Pack Astra Militarum page_004.md（11 版全新分队 Designation Force，Wahapedia/DB 无源）",
+   "values": {
+    "id": "fp11e-am-designation-e2",
+    "faction_id": "AM",
+    "detachment_id": "fp11e-am-designation",
+    "detachment_name": "Designation Force",
+    "name": "Recon Star",
+    "cost": null,
+    "legend": "点数未知：FP 不含点数，MFM 缓存无增强数据（诚实置空，勿猜）",
+    "description": "<span class=\"kwb\">ASTRA</span> <span class=\"kwb\">MILITARUM</span> <span class=\"kwb\">INFANTRY</span> <span class=\"kwb\">PLATOON</span> unit only. In your first Movement phase, this unit can make an ingress move."
+   }
+  },
+  {
+   "table": "stratagems",
+   "fp_source": "Faction Pack Astra Militarum page_004.md（11 版全新分队 Designation Force，Wahapedia/DB 无源）",
+   "values": {
+    "id": "fp11e-am-designation-s1",
+    "faction": "AM",
+    "detachment": "Designation Force",
+    "name_zh": "近距侦测",
+    "name_en": "CLOSE-RANGE DETECTION",
+    "cp_cost": "1",
+    "phase": "Shooting phase",
+    "text_zh": "<b>WHEN:</b> Start of your Shooting phase.<br><br><b>TARGET:</b> One friendly <span class=\"kwb\">SCOUT</span> <span class=\"kwb\">SENTINEL</span>/<span class=\"kwb\">ASTRA</span> <span class=\"kwb\">MILITARUM</span> <span class=\"kwb\">INFANTRY</span> unit.<br><br><b>EFFECT:</b> While a visible enemy unit is within 6\" of your unit, that unit has +3\" detection range."
+   }
+  },
+  {
+   "table": "stratagems",
+   "fp_source": "Faction Pack Astra Militarum page_004.md（11 版全新分队 Designation Force，Wahapedia/DB 无源）",
+   "values": {
+    "id": "fp11e-am-designation-s2",
+    "faction": "AM",
+    "detachment": "Designation Force",
+    "name_zh": "触发警讯",
+    "name_en": "TRIGGERED ALERTS",
+    "cp_cost": "1",
+    "phase": "Movement phase",
+    "text_zh": "<b>WHEN:</b> Your opponent’s Movement phase, when an enemy unit ends a move within 8\" of a friendly unengaged <span class=\"kwb\">ASTRA</span> <span class=\"kwb\">MILITARUM</span> <span class=\"kwb\">INFANTRY</span> unit.<br><br><b>TARGET:</b> That <span class=\"kwb\">ASTRA</span> <span class=\"kwb\">MILITARUM</span> <span class=\"kwb\">INFANTRY</span> unit.<br><br><b>EFFECT:</b> Your unit can make a normal move of up to D3+3\"."
+   }
+  },
+  {
+   "table": "stratagems",
+   "fp_source": "Faction Pack Astra Militarum page_004.md（11 版全新分队 Designation Force，Wahapedia/DB 无源）",
+   "values": {
+    "id": "fp11e-am-designation-s3",
+    "faction": "AM",
+    "detachment": "Designation Force",
+    "name_zh": "污沼烟幕",
+    "name_en": "SUMP-SMOG SCREEN",
+    "cp_cost": "1",
+    "phase": "Shooting phase",
+    "text_zh": "<b>WHEN:</b> Start of your opponent’s Shooting phase.<br><br><b>TARGET:</b> One friendly <span class=\"kwb\">ASTRA</span> <span class=\"kwb\">MILITARUM</span> <span class=\"kwb\">INFANTRY</span> <span class=\"kwb\">SMOKE</span> unit.<br><br><b>EFFECT:</b> When an attack targets either your unit, or a unit that is not fully visible to the attacking model because of one or more models in your unit, the target has the benefit of cover against that attack."
    }
   }
  ]

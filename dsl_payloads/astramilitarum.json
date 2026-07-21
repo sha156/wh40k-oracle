@@ -1,0 +1,2833 @@
+{
+ "_comment": "P7 阵营技能 DSL 唯一真源（星界军 Astra Militarum，faction='AM'，P7-PR29）。DB effect_dsl_json/dsl_status 只是投影，由 `python -m db_compile dsl-apply` 写入并挂 restore；A/B 工作单见 docs/superpowers/plans/2026-07-20-p7-pr29-astramilitarum-worklist.md。覆盖 1 条军规（指挥之声）+ 13 个分队容器（11 个库内分队 + 2 个 FP 全新分队）的 14 条分队规则 + 65 战略 + 42 增强 = 122 条。三态：13 encoded / 20 partial / 89 not_modeled。零新引擎通道、零新态势开关（纯编码 PR）。星界军是「命令（Orders）驱动 + 远程火力 + 载具搭乘」气质阵营：军规「指挥之声」六选一命令、各分队大量围绕命令域/移动域/预备队/目标点经济/登舰行动舱门做文章，全部无引擎载体，故 not_modeled 占大多数。可编子集集中在 AP 改善·恶化 / [IGNORES COVER] / [LETHAL HITS] / 掩体 / FNP / 命中·致伤骰修正与重掷 / 暴击阈值 / S 改善 / A 加值 / 伤害减免。阶段门纪律（双向核对）：WHEN 落在单一相位的挂 phase_melee/phase_shooting；WHEN 写「对手射击阶段或近战阶段」的两相位一律不加门（过度加门＝欠建模，同属事实错误）；12\" 距离档用自含射击相位的 ranged_within_12 tag；half_range / stationary 两个 tag 不自含相位门，挂它们的条目一律降 partial 并注明「须只在射击模拟下开启该开关」（狂暴排射 / 操典指挥官）。防高估：重掷特定点数「1」（唯有精锐 / 无情纪律 / 老练车组）、攻方自身战损档（最后时刻）、多选一（军规六道命令 / 炮兵支援三选一 / 增强新增的可选命令）、负关键词门（天生士兵排除 MONSTER/VEHICLE）、「射击 × 目标关键词」无复合 tag（天生士兵第二从句 / 支援炮火）、S<T 严格小于且跨相位（歼灭部队）、重掷伤害骰（泰坦杀手）、交战范围命中惩罚豁免（不息炮火，引擎本就不施加该惩罚）一律不编。",
+ "dsl_version": 1,
+ "faction": "AM",
+ "entries": [
+  {
+   "table": "abilities",
+   "id": "000008377",
+   "side": "attacker",
+   "detachment": null,
+   "name_en": "Voice of Command",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "指挥之声（军规）：六道命令（Move! Move! Move! / Fix Bayonets! / Take Aim! / First Rank, Fire! Second Rank, Fire! / Take Cover! / Duty and Honour!）由军官逐单位下达，每战轮条数上限 + 6\" 范围 + 一单位同时只受一条 + 士气门——引擎无命令状态开关，裸编任一条等于把多选一当恒开，过度施加",
+    "其中 Take Aim!（远程 BS 改善 1）、Fix Bayonets!（近战 WS 改善 1）、Take Cover!（Sv 改善 1，不优于 3+）、First Rank, Fire!（[RAPID FIRE] 武器 A+1）本可分别落 hit/bs_improve、save/sv_improve、attacks/modify 通道，均被上面的多选一 + 范围门锁死",
+    "Move! Move! Move!（M+3\"）与 Duty and Honour!（Ld/OC+1）属移动域与目标控制域，无引擎载体"
+   ],
+   "provenance": {
+    "text_sha256": "6326915de032e11cb7ead0ad8d7c38093d8ad1b5bdfcce828b31495fa65deb68"
+   },
+   "encoded_by": "manual-2026-07-21",
+   "weapon_filter": ""
+  },
+  {
+   "table": "abilities",
+   "id": "det000008379",
+   "side": "attacker",
+   "detachment": "Combined Arms",
+   "name_en": "Born Soldiers",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "天生士兵：第一从句「Regiment 单位远程攻击排除 MONSTER/VEHICLE 的目标获 [LETHAL HITS]」是负关键词门——引擎只能表达「目标有关键词」，裸编会对载具/魔物过度施加",
+    "第二从句「Squadron 单位远程攻击 MONSTER/VEHICLE 目标获 [LETHAL HITS]」是「射击阶段 × 目标关键词」，引擎只有通用 target_has_keyword 与 melee_target_has_keyword，无射击侧复合 tag——裸编会在近战阶段误放行"
+   ],
+   "provenance": {
+    "text_sha256": "917669032ad11d797f6ac157f84c71c6c29a6e0bbef2f1fc0070a8b6642d916b"
+   },
+   "encoded_by": "manual-2026-07-21",
+   "weapon_filter": "",
+   "materialize": {
+    "from_table": "detachments",
+    "from_id": "000008379",
+    "from_column": "rule_text"
+   }
+  },
+  {
+   "table": "abilities",
+   "id": "det000009379",
+   "side": "attacker",
+   "detachment": "Embarked Regiment",
+   "name_en": "Get Down!",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "卧倒！：选定友军单位后攻击方可无视其模型判定可见性——视线/遮挡几何无引擎载体"
+   ],
+   "provenance": {
+    "text_sha256": "448bd8bcba0916bd5718866abe1b3dbe3828fa76b8e982776a99fc5eec864937"
+   },
+   "encoded_by": "manual-2026-07-21",
+   "weapon_filter": "",
+   "materialize": {
+    "from_table": "detachments",
+    "from_id": "000009379",
+    "from_column": "rule_text"
+   }
+  },
+  {
+   "table": "abilities",
+   "id": "det000009388",
+   "side": "attacker",
+   "detachment": "Tempestus Boarding Regiment",
+   "name_en": "Purge-Sweep Protocols",
+   "name_zh": null,
+   "status": "partial",
+   "effects": [
+    {
+     "phase": "hit",
+     "op": "auto_wound",
+     "params": [],
+     "condition": [
+      "phase_shooting"
+     ],
+     "source": "净扫协议（远程武器对所选敌军单位获 [LETHAL HITS]）"
+    }
+   ],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "登舰行动舱门（Hatchway）几何前提——本单位须有模型在开启舱门 1\" 内、全员同侧、目标在对侧——无引擎载体，编码按恒满足处理（高估）",
+    "「MILITARUM TEMPESTUS 单位」是攻方自关键词限制，引擎无攻方关键词门，注入到任何攻方都会生效，适用性由使用者自查"
+   ],
+   "provenance": {
+    "text_sha256": "2cf14fb47897a36cc102b4b26b3d8437553b67996a537c964ea0d1e6e1352075"
+   },
+   "encoded_by": "manual-2026-07-21",
+   "weapon_filter": "",
+   "materialize": {
+    "from_table": "detachments",
+    "from_id": "000009388",
+    "from_column": "rule_text"
+   }
+  },
+  {
+   "table": "abilities",
+   "id": "det000009798",
+   "side": "attacker",
+   "detachment": "Bridgehead Strike",
+   "name_en": "Only the Best",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "唯有精锐：重掷「1」这一特定点数——引擎 hit/reroll 语义是「重掷失败骰」，重掷 1 无载体（裸编等同重掷全部失败，高估）",
+    "11 版 FP p3 的 Bridgehead Strike 整页重印只收录 FIRE ZONE PURGE 一条分队规则，本条疑为 11 版删除；fp_rules 的 deactivations 白名单不含 detachments 表，故不落失效标记，仅在此与工作单披露"
+   ],
+   "provenance": {
+    "text_sha256": "1c283c09519ee02f06e717f9b529a767b7c2164d181b552874aac607cf20b226"
+   },
+   "encoded_by": "manual-2026-07-21",
+   "weapon_filter": "",
+   "materialize": {
+    "from_table": "detachments",
+    "from_id": "000009798",
+    "from_column": "rule_text"
+   }
+  },
+  {
+   "table": "abilities",
+   "id": "det000009799",
+   "side": "attacker",
+   "detachment": "Bridgehead Strike",
+   "name_en": "Fire Zone Purge",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "火区清剿：命中 +1 的前置门是「该单位本回合被摆放上场（set up this turn）」这一攻方自身抵达态——引擎无该状态开关（disembarked_this_turn 只表达下车，11 版已删去下车从句），且分队规则条目非 opt-in（select_entries 选中该分队即自动施加），裸编等于让全军每个射击阶段恒享 +1 命中，过度施加；同「最后时刻」的攻方自身战损档一样，改判 not_modeled 而非为一条加新开关",
+    "第一从句「MILITARUM TEMPESTUS OFFICER 为 WARLORD 时 TEMPESTUS SCIONS 获 BATTLELINE 与 +1 OC」属建军与目标控制域，无引擎载体"
+   ],
+   "provenance": {
+    "text_sha256": "19932c649ce4d7e896e589050fa69461a80acb252373c0e0f830a3e05716d59b"
+   },
+   "encoded_by": "manual-2026-07-21",
+   "weapon_filter": "",
+   "materialize": {
+    "from_table": "detachments",
+    "from_id": "000009799",
+    "from_column": "rule_text"
+   }
+  },
+  {
+   "table": "abilities",
+   "id": "det000009856",
+   "side": "attacker",
+   "detachment": "Siege Regiment",
+   "name_en": "Artillery Support",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "炮兵支援：每战轮在 Creeping Barrage / Incendiary Bombardment / Smoke Shells 三选一——引擎无支援类型状态开关，裸编任一分支等于把三选一当恒开",
+    "Creeping Barrage 的 shaken（M-2\"、冲锋骰 -2）属移动域；Incendiary Bombardment 的 scattered（目标不得享掩体）本可落 save/ignores_cover，但被三选一 + 「距我方全部模型 12\" 外」几何 + 战斗规模上限三重门锁死；Smoke Shells 的 Stealth 是守方向且同被三选一锁住"
+   ],
+   "provenance": {
+    "text_sha256": "4a71eab517541f71771665b903ebe9178ed4226342f1bdcfdc11b1e13092000e"
+   },
+   "encoded_by": "manual-2026-07-21",
+   "weapon_filter": "",
+   "materialize": {
+    "from_table": "detachments",
+    "from_id": "000009856",
+    "from_column": "rule_text"
+   }
+  },
+  {
+   "table": "abilities",
+   "id": "det000009860",
+   "side": "attacker",
+   "detachment": "Mechanised Assault",
+   "name_en": "Armoured Fist",
+   "name_zh": null,
+   "status": "encoded",
+   "effects": [
+    {
+     "phase": "wound",
+     "op": "modify",
+     "params": [
+      1
+     ],
+     "condition": [
+      "phase_shooting"
+     ],
+     "source": "装甲铁拳（本回合下车的 ASTRA MILITARUM 模型远程攻击致伤骰 +1）"
+    }
+   ],
+   "requires_toggles": [
+    "disembarked_this_turn"
+   ],
+   "not_modeled_notes_zh": [],
+   "provenance": {
+    "text_sha256": "bd3bc86ad712c56688bd11ab72dc478d8cd90b9147121f4671d031a0fb4b9456"
+   },
+   "encoded_by": "manual-2026-07-21",
+   "weapon_filter": "",
+   "materialize": {
+    "from_table": "detachments",
+    "from_id": "000009860",
+    "from_column": "rule_text"
+   }
+  },
+  {
+   "table": "abilities",
+   "id": "det000009864",
+   "side": "attacker",
+   "detachment": "Hammer of the Emperor",
+   "name_en": "Iron Tread",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "铁履：Squadron 单位加速不掷骰、M+6\"、加速移动可穿越敌军交战范围——纯移动域，无引擎载体"
+   ],
+   "provenance": {
+    "text_sha256": "bad454791d88e07df096df85cb5cbacd8154dc4a0f403127416c13b4177f03c5"
+   },
+   "encoded_by": "manual-2026-07-21",
+   "weapon_filter": "",
+   "materialize": {
+    "from_table": "detachments",
+    "from_id": "000009864",
+    "from_column": "rule_text"
+   }
+  },
+  {
+   "table": "abilities",
+   "id": "det000009868",
+   "side": "target",
+   "detachment": "Recon Element",
+   "name_en": "Masters of Camouflage",
+   "name_zh": null,
+   "status": "partial",
+   "effects": [
+    {
+     "phase": "save",
+     "op": "cover",
+     "params": [],
+     "condition": [],
+     "source": "伪装大师（ASTRA MILITARUM WALKER/REGIMENT 模型恒享掩体收益；11 版掩体落命中侧，射击与近战皆按引擎掩体通道处理）"
+    }
+   ],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "第二从句「若该模型另有来源已享掩体收益，则 Sv 改善 1（至多 3+）」需要「掩体来自另一来源」的状态区分——引擎只有单一掩体开关，裸编 sv_improve 会与本条第一从句自我叠加，故不编（欠建模）",
+    "「WALKER / REGIMENT 模型」是守方自关键词限制，引擎无守方关键词门，注入到任何守方都会生效，适用性由使用者自查"
+   ],
+   "provenance": {
+    "text_sha256": "49d8ecc5ec4037b4e7d553440e5206a928fddbdfbbc768a90a9acbc429051112"
+   },
+   "encoded_by": "manual-2026-07-21",
+   "weapon_filter": "",
+   "materialize": {
+    "from_table": "detachments",
+    "from_id": "000009868",
+    "from_column": "rule_text"
+   }
+  },
+  {
+   "table": "abilities",
+   "id": "det000010636",
+   "side": "attacker",
+   "detachment": "Grizzled Company",
+   "name_en": "Ruthless Discipline",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "无情纪律：第一从句「军官可下达命令数 +1」属命令域，无引擎载体",
+    "第二从句「受命令影响的单位重掷命中骰 1」是重掷特定点数「1」——引擎 hit/reroll 只有「重掷失败骰」语义，裸编高估；且前置的「受命令影响」同属命令域"
+   ],
+   "provenance": {
+    "text_sha256": "13eeb855150022ff35058d5b776feb67fd017014c7a27d66d12a2589691fa8ed"
+   },
+   "encoded_by": "manual-2026-07-21",
+   "weapon_filter": "",
+   "materialize": {
+    "from_table": "detachments",
+    "from_id": "000010636",
+    "from_column": "rule_text"
+   }
+  },
+  {
+   "table": "abilities",
+   "id": "det000010786",
+   "side": "attacker",
+   "detachment": "Steel Hammer",
+   "name_en": "Ceaseless Cannonade",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "不息炮火：允许对交战范围内敌军射击（含 Blast）并免除「身处交战范围」的命中惩罚——引擎的射击序列本就不施加交战范围命中惩罚，裸编 hit/ignore_hit_mods 会凭空造出加成（高估）",
+    "「目标选择资格」与 KEYWORDS 段的「TITANIC 单位获 CHARACTER 关键词」属建军与目标选择域，无引擎载体"
+   ],
+   "provenance": {
+    "text_sha256": "410a10858a062863e85549aa92b326481254f01a442696852d4c396358c30ddf"
+   },
+   "encoded_by": "manual-2026-07-21",
+   "weapon_filter": "",
+   "materialize": {
+    "from_table": "detachments",
+    "from_id": "000010786",
+    "from_column": "rule_text"
+   }
+  },
+  {
+   "table": "abilities",
+   "id": "det000010790",
+   "side": "attacker",
+   "detachment": "Armoured Infantry",
+   "name_en": "Squadron Command",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "中队指挥：把 Squadron 加入军官可下达命令的单位列表并新增 ON MY SIGNAL 命令——命令域无引擎载体",
+    "ON MY SIGNAL 的效果是「敌军单位在 9\" 内结束移动后本单位可移动 D6\"」，属移动域",
+    "KEYWORDS 段授予 ARMOURED SKIRMISHER 关键词属建军域"
+   ],
+   "provenance": {
+    "text_sha256": "fefc969e67dc8124f0d46114a715fd7fc76becafaefbb0bcdf808d5245e37e40"
+   },
+   "encoded_by": "manual-2026-07-21",
+   "weapon_filter": "",
+   "materialize": {
+    "from_table": "detachments",
+    "from_id": "000010790",
+    "from_column": "rule_text"
+   }
+  },
+  {
+   "table": "abilities",
+   "id": "detfp11e-am-abhuman",
+   "side": "attacker",
+   "detachment": "Abhuman Auxiliaries",
+   "name_en": "Absolutist Principles",
+   "name_zh": "绝对主义准则",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "绝对主义准则：授予 ABHUMAN 关键词、允许 COMMISSAR 下达 Take Aim! 与对 ABHUMAN 单位下达 1 条命令——关键词授予属建军域、命令属命令域，均无引擎载体"
+   ],
+   "provenance": {
+    "text_sha256": "e70b75e02657a82114fc96b1512721b37d2570f4571b6eb87746069aa36af177"
+   },
+   "encoded_by": "manual-2026-07-21",
+   "weapon_filter": "",
+   "materialize": {
+    "from_table": "detachments",
+    "from_id": "fp11e-am-abhuman",
+    "from_column": "rule_text"
+   }
+  },
+  {
+   "table": "abilities",
+   "id": "detfp11e-am-designation",
+   "side": "attacker",
+   "detachment": "Designation Force",
+   "name_en": "Designated Targets",
+   "name_zh": "指定目标",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "指定目标：Signal Flares 使所选敌军单位被「指定」并获 +3\" 侦测距离（detection range）——11 版隐蔽/侦测距离机制无引擎载体（引擎不建模隐藏与被发现）"
+   ],
+   "provenance": {
+    "text_sha256": "399eac75ba829d9455b693269c310a10f938848dbed7ace283098c8ff00bd09b"
+   },
+   "encoded_by": "manual-2026-07-21",
+   "weapon_filter": "",
+   "materialize": {
+    "from_table": "detachments",
+    "from_id": "fp11e-am-designation",
+    "from_column": "rule_text"
+   }
+  },
+  {
+   "table": "stratagems",
+   "id": "000008381002",
+   "side": "attacker",
+   "detachment": "Combined Arms",
+   "name_en": "COORDINATED ACTION",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "协同行动：使一个 Regiment 与一个 Squadron 单位互享对方所受命令——命令域无引擎载体"
+   ],
+   "provenance": {
+    "text_sha256": "760d7ae98b086bf88bc6aaec63b5c97fec1dd1720ddae435f3afdf959e536080"
+   },
+   "encoded_by": "manual-2026-07-21",
+   "weapon_filter": ""
+  },
+  {
+   "table": "stratagems",
+   "id": "000008381003",
+   "side": "attacker",
+   "detachment": "Combined Arms",
+   "name_en": "REINFORCEMENTS!",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "增援！：把刚被摧毁的单位以满编重新加入战略预备队——单位复活与预备队域无引擎载体"
+   ],
+   "provenance": {
+    "text_sha256": "edc5ff6c332502d85dd46f8ecd2ef25176fc0d88b672ff5bcaa9c43c45af88e5"
+   },
+   "encoded_by": "manual-2026-07-21",
+   "weapon_filter": ""
+  },
+  {
+   "table": "stratagems",
+   "id": "000008381004",
+   "side": "attacker",
+   "detachment": "Combined Arms",
+   "name_en": "FLEXIBLE COMMAND",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "灵活指挥：扩大军官可下达命令的单位范围——命令域无引擎载体"
+   ],
+   "provenance": {
+    "text_sha256": "0b837ba8c90508ed1a9671cab5686f5ad73ec09dcb465aed4146497ff5c4bcb9"
+   },
+   "encoded_by": "manual-2026-07-21",
+   "weapon_filter": ""
+  },
+  {
+   "table": "stratagems",
+   "id": "000008381005",
+   "side": "attacker",
+   "detachment": "Combined Arms",
+   "name_en": "FIELDS OF FIRE",
+   "name_zh": null,
+   "status": "encoded",
+   "effects": [
+    {
+     "phase": "save",
+     "op": "ap_improve",
+     "params": [
+      1
+     ],
+     "condition": [
+      "phase_shooting"
+     ],
+     "source": "交叉火力（射击阶段所选 REGIMENT 与 SQUADRON 单位攻击所选敌军单位时 AP 改善 1）"
+    }
+   ],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [],
+   "provenance": {
+    "text_sha256": "d44ab288870371296dc4c615ff981db14df59eb739e0e9357e306123641a59ba"
+   },
+   "encoded_by": "manual-2026-07-21",
+   "weapon_filter": ""
+  },
+  {
+   "table": "stratagems",
+   "id": "000008381006",
+   "side": "attacker",
+   "detachment": "Combined Arms",
+   "name_en": "INSPIRED COMMAND",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "灵感指挥：在对手指挥阶段额外下达一条命令——命令域无引擎载体"
+   ],
+   "provenance": {
+    "text_sha256": "b2458f9791c00af3e181bbb0356dc33df1f3a9613e70a0a918a65bf660c7aba7"
+   },
+   "encoded_by": "manual-2026-07-21",
+   "weapon_filter": ""
+  },
+  {
+   "table": "stratagems",
+   "id": "000008381007",
+   "side": "target",
+   "detachment": "Combined Arms",
+   "name_en": "STALWART PROTECTOR",
+   "name_zh": null,
+   "status": "partial",
+   "effects": [
+    {
+     "phase": "save",
+     "op": "cover",
+     "params": [],
+     "condition": [
+      "phase_shooting"
+     ],
+     "source": "坚定守护者（被分配远程攻击的 INFANTRY 模型获掩体收益）"
+    }
+   ],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "生效前提是该模型因己方 VEHICLE 遮挡而未对攻击单位全部模型完全可见——遮挡可见性几何无引擎载体，编码按恒满足处理（高估）",
+    "只作用于 INFANTRY 模型——引擎无守方自关键词门，注入到任何守方都会生效，适用性由使用者自查"
+   ],
+   "provenance": {
+    "text_sha256": "6a7a1ece6fe27e919da5147cd4f71491eda2857533d27dbf705fea6dc2490da8"
+   },
+   "encoded_by": "manual-2026-07-21",
+   "weapon_filter": ""
+  },
+  {
+   "table": "stratagems",
+   "id": "000009381002",
+   "side": "attacker",
+   "detachment": "Embarked Regiment",
+   "name_en": "AGAINST THE ODDS",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "以寡敌众：「暴击致伤时该次攻击 AP 改善 2」是「暴击致伤触发额外效果」——引擎只有 wound/crit_threshold（改暴击阈值），无「暴击致伤后施加效果」通道；裸编 ap_improve 会施加到全部攻击（高估）"
+   ],
+   "provenance": {
+    "text_sha256": "d5a62f6f68d46ad77b016d8a2c9e71bdf62441700c43b78270117c3ca2c65eac"
+   },
+   "encoded_by": "manual-2026-07-21",
+   "weapon_filter": ""
+  },
+  {
+   "table": "stratagems",
+   "id": "000009381003",
+   "side": "target",
+   "detachment": "Embarked Regiment",
+   "name_en": "DUCK AND COVER",
+   "name_zh": null,
+   "status": "partial",
+   "effects": [
+    {
+     "phase": "hit",
+     "op": "modify",
+     "params": [
+      -1
+     ],
+     "condition": [],
+     "source": "闪避掩蔽（瞄准本单位的攻击命中骰 -1；WHEN=对手射击阶段或近战阶段，两相位皆可故不加门）"
+    }
+   ],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "生效前提是本单位有模型与攻击单位模型分处一道开启舱门两侧——登舰行动舱门几何无引擎载体，编码按恒满足处理（高估）"
+   ],
+   "provenance": {
+    "text_sha256": "2e275d3e9ceead7eb7d080444c517f960051e4e2be262f8d52c80244386f0417"
+   },
+   "encoded_by": "manual-2026-07-21",
+   "weapon_filter": ""
+  },
+  {
+   "table": "stratagems",
+   "id": "000009381004",
+   "side": "attacker",
+   "detachment": "Embarked Regiment",
+   "name_en": "IDLE HANDS",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "闲手：操作一道关闭的舱门——登舰行动舱门机制无引擎载体"
+   ],
+   "provenance": {
+    "text_sha256": "109e58cb0c9c4d539f98a4e9d2d32a41b42e8a98d8a57fbf380d3a96ad865693"
+   },
+   "encoded_by": "manual-2026-07-21",
+   "weapon_filter": ""
+  },
+  {
+   "table": "stratagems",
+   "id": "000009381005",
+   "side": "attacker",
+   "detachment": "Embarked Regiment",
+   "name_en": "BRUTAL CHOKE POINT",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "残酷咽喉点：把 Overwatch 的命中判据由未修正 6 放宽到 5+——引擎不建模 Overwatch（守方反击射击）"
+   ],
+   "provenance": {
+    "text_sha256": "3c0b61087b05ef59a6581d13df9cb21a0cedbeaf7b7a79d05c277fed4417dd6e"
+   },
+   "encoded_by": "manual-2026-07-21",
+   "weapon_filter": ""
+  },
+  {
+   "table": "stratagems",
+   "id": "000009390002",
+   "side": "attacker",
+   "detachment": "Tempestus Boarding Regiment",
+   "name_en": "BRUTAL TRAINING",
+   "name_zh": null,
+   "status": "encoded",
+   "effects": [
+    {
+     "phase": "attacks",
+     "op": "modify",
+     "params": [
+      1
+     ],
+     "condition": [
+      "phase_melee"
+     ],
+     "source": "残酷训练（近战武器 A+1）"
+    },
+    {
+     "phase": "wound",
+     "op": "s_improve",
+     "params": [
+      1
+     ],
+     "condition": [
+      "phase_melee"
+     ],
+     "source": "残酷训练（近战武器 S+1）"
+    }
+   ],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [],
+   "provenance": {
+    "text_sha256": "26fa17ffd1496222639455c561cca5d8d0b5ce7af6d929eafbe9654c6f3c4071"
+   },
+   "encoded_by": "manual-2026-07-21",
+   "weapon_filter": ""
+  },
+  {
+   "table": "stratagems",
+   "id": "000009390003",
+   "side": "attacker",
+   "detachment": "Tempestus Boarding Regiment",
+   "name_en": "COORDINATED STRIKE",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "协同打击：向全军下达同一条命令——命令域无引擎载体"
+   ],
+   "provenance": {
+    "text_sha256": "52a32d9295f7dd5fb13a789e6bf3af0b6fdd605605b3b850c36fdf3869272116"
+   },
+   "encoded_by": "manual-2026-07-21",
+   "weapon_filter": ""
+  },
+  {
+   "table": "stratagems",
+   "id": "000009390004",
+   "side": "attacker",
+   "detachment": "Tempestus Boarding Regiment",
+   "name_en": "LOCKDOWN",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "封锁：移动后关闭一道舱门——登舰行动舱门机制无引擎载体"
+   ],
+   "provenance": {
+    "text_sha256": "4df16e1eddb104626ea2b6e0abf421e2cc4b656818839d192bb0cd37870cfd83"
+   },
+   "encoded_by": "manual-2026-07-21",
+   "weapon_filter": ""
+  },
+  {
+   "table": "stratagems",
+   "id": "000009390005",
+   "side": "attacker",
+   "detachment": "Tempestus Boarding Regiment",
+   "name_en": "FIRE-PATTERN HURRICANUS",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "飓风射击阵型：命中的敌军单位 M-2\"、加速与冲锋骰 -2——移动域无引擎载体"
+   ],
+   "provenance": {
+    "text_sha256": "711e21e8782e7d324b7b683fc5c2b1cb1af6b9ac3111f209e3999c8e7c6cd77f"
+   },
+   "encoded_by": "manual-2026-07-21",
+   "weapon_filter": ""
+  },
+  {
+   "table": "stratagems",
+   "id": "000009802003",
+   "side": "attacker",
+   "detachment": "Bridgehead Strike",
+   "name_en": "FIRING HOT",
+   "name_zh": null,
+   "status": "encoded",
+   "effects": [
+    {
+     "phase": "wound",
+     "op": "s_improve",
+     "params": [
+      1
+     ],
+     "condition": [
+      "ranged_within_12"
+     ],
+     "source": "火力全开（Hot-shot 系武器攻击 12\" 内目标时 S+1）"
+    },
+    {
+     "phase": "save",
+     "op": "ap_improve",
+     "params": [
+      1
+     ],
+     "condition": [
+      "ranged_within_12"
+     ],
+     "source": "火力全开（Hot-shot 系武器攻击 12\" 内目标时 AP 改善 1）"
+    }
+   ],
+   "requires_toggles": [
+    "range_within_12"
+   ],
+   "not_modeled_notes_zh": [],
+   "provenance": {
+    "text_sha256": "dcfc054e9455a2401d551c454447524edc8a7a8509bb3e69d26f94ffc8a19da2"
+   },
+   "encoded_by": "manual-2026-07-21",
+   "weapon_filter": "hot-shot"
+  },
+  {
+   "table": "stratagems",
+   "id": "000009802005",
+   "side": "attacker",
+   "detachment": "Bridgehead Strike",
+   "name_en": "SERVO‑DESIGNATORS",
+   "name_zh": null,
+   "status": "partial",
+   "effects": [
+    {
+     "phase": "save",
+     "op": "ignores_cover",
+     "params": [],
+     "condition": [
+      "phase_shooting"
+     ],
+     "source": "伺服标定器（对所选敌军单位的远程攻击获 [IGNORES COVER]）"
+    }
+   ],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "受益面是「全军友军 MILITARUM TEMPESTUS 单位」而非战略的 TARGET 单位——引擎无攻方自关键词门，注入到任何攻方都会生效，适用性由使用者自查（同「净扫协议」「协同火力」的同型从句同一判法）"
+   ],
+   "provenance": {
+    "text_sha256": "b97f1f09e526e55369bb4781ebeb44ad45dca46b643d5f5a54bfe4b717964f0d"
+   },
+   "encoded_by": "manual-2026-07-21",
+   "weapon_filter": ""
+  },
+  {
+   "table": "stratagems",
+   "id": "000009802007",
+   "side": "attacker",
+   "detachment": "Bridgehead Strike",
+   "name_en": "ON MY POSITION",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "就位开火：对交战中的每个敌军单位掷 D6，2+ 造成 D6 致命伤，随后本单位承受 3D3 致命伤——攻击序列外的致命伤池与自伤均无引擎载体（wound/mortal_pool 只承载 [DEVASTATING WOUNDS] 型「致伤骰暴击转致命伤」）"
+   ],
+   "provenance": {
+    "text_sha256": "2e2c6e173d08b70031499b597cf8c7397373bc6c79977dd8f528b76458287c9b"
+   },
+   "encoded_by": "manual-2026-07-21",
+   "weapon_filter": ""
+  },
+  {
+   "table": "stratagems",
+   "id": "000009858002",
+   "side": "attacker",
+   "detachment": "Siege Regiment",
+   "name_en": "TRENCH FIGHTERS",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "堑壕斗士：被摧毁的模型掷 D6（Regiment +2）4+ 可先反击再移除——「死亡后反打」属结算顺序域，引擎无载体"
+   ],
+   "provenance": {
+    "text_sha256": "26fb2220ca1f8bc50407d38d896cb87b2976567e01fbb266f8a2e0afab170c15"
+   },
+   "encoded_by": "manual-2026-07-21",
+   "weapon_filter": ""
+  },
+  {
+   "table": "stratagems",
+   "id": "000009858003",
+   "side": "attacker",
+   "detachment": "Siege Regiment",
+   "name_en": "OVER THE TOP",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "越过顶端：扩大 Move! Move! Move! 命令的下达范围——命令域无引擎载体"
+   ],
+   "provenance": {
+    "text_sha256": "0b5471db2047438475a343a2bc296995b9ee98e191e570e6be764afd4584a6a7"
+   },
+   "encoded_by": "manual-2026-07-21",
+   "weapon_filter": ""
+  },
+  {
+   "table": "stratagems",
+   "id": "000009858004",
+   "side": "attacker",
+   "detachment": "Siege Regiment",
+   "name_en": "FLARE BURST",
+   "name_zh": null,
+   "status": "encoded",
+   "effects": [
+    {
+     "phase": "hit",
+     "op": "reroll",
+     "params": [
+      "fail"
+     ],
+     "condition": [
+      "ranged_within_12"
+     ],
+     "source": "照明弹（射击阶段攻击 12\" 内可见目标时重掷命中骰）"
+    }
+   ],
+   "requires_toggles": [
+    "range_within_12"
+   ],
+   "not_modeled_notes_zh": [],
+   "provenance": {
+    "text_sha256": "8a1b08f2a5fa75a88c5f32fe84c08531251c4e4297936c006bfddff2bd8d7283"
+   },
+   "encoded_by": "manual-2026-07-21",
+   "weapon_filter": ""
+  },
+  {
+   "table": "stratagems",
+   "id": "000009858005",
+   "side": "attacker",
+   "detachment": "Siege Regiment",
+   "name_en": "CALLOUS SACRIFICE",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "冷酷牺牲：使敌军不再被视为处于本单位交战范围内（解锁远程目标选择）+ 敌军每失去 1 点伤掷 D6 4+ 摧毁本单位一个模型——目标选择资格与自伤反馈均无引擎载体"
+   ],
+   "provenance": {
+    "text_sha256": "100643398694648ab0ec60dd056b035240f0b80cb1b34b706c3fbc3efc9ea83b"
+   },
+   "encoded_by": "manual-2026-07-21",
+   "weapon_filter": ""
+  },
+  {
+   "table": "stratagems",
+   "id": "000009858006",
+   "side": "attacker",
+   "detachment": "Siege Regiment",
+   "name_en": "FURIOUS FUSILLADE",
+   "name_zh": null,
+   "status": "partial",
+   "effects": [
+    {
+     "phase": "attacks",
+     "op": "modify",
+     "params": [
+      1
+     ],
+     "condition": [
+      "half_range"
+     ],
+     "source": "狂暴排射（远程武器攻击半射程内目标时 A+1）"
+    }
+   ],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "原文限「远程武器」且 WHEN=我方射击阶段，但引擎的 half_range tag 只读半射程态、不含相位门（对比自含射击相位的 ranged_within_12）——在近战模拟里同时开半射程开关会误放行，使用者须只在射击模拟下开启；引擎无「射击 × 半射程」复合 tag，本 PR 不为一条加新 tag"
+   ],
+   "provenance": {
+    "text_sha256": "170dd43c6431f5d4c4228c88691eee787d126b0ae55e3cc306e6b9b71a55c524"
+   },
+   "encoded_by": "manual-2026-07-21",
+   "weapon_filter": ""
+  },
+  {
+   "table": "stratagems",
+   "id": "000009858007",
+   "side": "attacker",
+   "detachment": "Siege Regiment",
+   "name_en": "MINEFIELD",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "雷区：敌军冲锋移动进入交战范围时逐模型掷 D6，5+ 各造成 1 点致命伤（上限 6）——冲锋移动触发的攻击序列外致命伤无引擎载体"
+   ],
+   "provenance": {
+    "text_sha256": "de7ce5a7318b37c7de0296c1adba12cce7d4f7ed29426b19dfccb7f787820380"
+   },
+   "encoded_by": "manual-2026-07-21",
+   "weapon_filter": ""
+  },
+  {
+   "table": "stratagems",
+   "id": "000009862002",
+   "side": "attacker",
+   "detachment": "Mechanised Assault",
+   "name_en": "VOX-RELAY",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "通讯中继：车内军官仍可下达命令且无视距离——命令域无引擎载体"
+   ],
+   "provenance": {
+    "text_sha256": "1add17ae7a5f8f7f2e29daa5b288ff8fb37a66c0e5245d653694de4f298e1b56"
+   },
+   "encoded_by": "manual-2026-07-21",
+   "weapon_filter": ""
+  },
+  {
+   "table": "stratagems",
+   "id": "000009862003",
+   "side": "attacker",
+   "detachment": "Mechanised Assault",
+   "name_en": "RAPID DISPERSAL",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "快速疏散：下车后再移动 D6\"——移动域无引擎载体"
+   ],
+   "provenance": {
+    "text_sha256": "d0c37ff80672cfa1a8e7b6ee7249d098f44c0dc3df666f45ccfa46cc0a963ffd"
+   },
+   "encoded_by": "manual-2026-07-21",
+   "weapon_filter": ""
+  },
+  {
+   "table": "stratagems",
+   "id": "000009862004",
+   "side": "attacker",
+   "detachment": "Mechanised Assault",
+   "name_en": "CLEAR AND SECURE",
+   "name_zh": null,
+   "status": "partial",
+   "effects": [
+    {
+     "phase": "hit",
+     "op": "reroll",
+     "params": [
+      "fail"
+     ],
+     "condition": [
+      "phase_shooting"
+     ],
+     "source": "清剿与占领（射击阶段攻击目标点范围内的单位时重掷命中骰）"
+    },
+    {
+     "phase": "wound",
+     "op": "reroll",
+     "params": [
+      "fail"
+     ],
+     "condition": [
+      "phase_shooting"
+     ],
+     "source": "清剿与占领（射击阶段攻击目标点范围内的单位时重掷致伤骰）"
+    }
+   ],
+   "requires_toggles": [
+    "disembarked_this_turn"
+   ],
+   "not_modeled_notes_zh": [
+    "「目标位于某目标点范围内」几何前提无引擎载体，编码按恒满足处理（高估）",
+    "开关语义=假设本单位本回合已从运输载具下车（原文 TARGET 前提）"
+   ],
+   "provenance": {
+    "text_sha256": "13739f089af4f31dae36fd80000ed1450bc6147912480c663b71bb0a4212139e"
+   },
+   "encoded_by": "manual-2026-07-21",
+   "weapon_filter": ""
+  },
+  {
+   "table": "stratagems",
+   "id": "000009862005",
+   "side": "attacker",
+   "detachment": "Mechanised Assault",
+   "name_en": "SWIFT INTERCEPTION",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "迅捷拦截：运输载具可移动 6\"——移动域无引擎载体（11 版 FP 已把触发距离 9\"→8\"，已落 fp_rules）"
+   ],
+   "provenance": {
+    "text_sha256": "489f4183ed7af1f734436d877ae1b60feef999ba6aebe1145899528adbc014c2"
+   },
+   "encoded_by": "manual-2026-07-21",
+   "weapon_filter": ""
+  },
+  {
+   "table": "stratagems",
+   "id": "000009862006",
+   "side": "attacker",
+   "detachment": "Mechanised Assault",
+   "name_en": "HASTY EXTRACTION",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "仓促撤离：登车——移动/搭乘域无引擎载体"
+   ],
+   "provenance": {
+    "text_sha256": "075a3a1db8a0c22cb905531c5b0021cf7b9e383bc8cbf9507d9e17414c50a811"
+   },
+   "encoded_by": "manual-2026-07-21",
+   "weapon_filter": ""
+  },
+  {
+   "table": "stratagems",
+   "id": "000009862007",
+   "side": "attacker",
+   "detachment": "Mechanised Assault",
+   "name_en": "MOVE OUT",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "撤出：登车——移动/搭乘域无引擎载体"
+   ],
+   "provenance": {
+    "text_sha256": "67fd0f6178ca172db8c2e88322747fae4aecca305196f9c6f2fb3b2a6fa1692f"
+   },
+   "encoded_by": "manual-2026-07-21",
+   "weapon_filter": ""
+  },
+  {
+   "table": "stratagems",
+   "id": "000009866002",
+   "side": "attacker",
+   "detachment": "Hammer of the Emperor",
+   "name_en": "FINAL HOUR",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "最后时刻：前置门是「本单位低于半编」的攻方自身战损档——引擎的 target_below_half 是守方档，无攻方自身战损载体，裸编会对满编单位过度施加",
+    "「无视对该次攻击 BS 特征值与命中骰的任何修正」本可落 hit/ignore_hit_mods，被上面的战损门锁住",
+    "远程武器获 [HAZARDOUS]（自伤代价）无引擎载体，只编收益侧会单向高估"
+   ],
+   "provenance": {
+    "text_sha256": "0e2cd21d5ccf9b8e555e2d97f806a0116af8fc1092ca1e73aa72b88cb84a9aeb"
+   },
+   "encoded_by": "manual-2026-07-21",
+   "weapon_filter": ""
+  },
+  {
+   "table": "stratagems",
+   "id": "000009866003",
+   "side": "attacker",
+   "detachment": "Hammer of the Emperor",
+   "name_en": "BLAZING ADVANCE",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "炽烈突进：加速后仍可射击——移动资格域无引擎载体"
+   ],
+   "provenance": {
+    "text_sha256": "35ea93c35c37775fb64044b04f9fb9fcc8385810c551fcc53946f101315a444c"
+   },
+   "encoded_by": "manual-2026-07-21",
+   "weapon_filter": ""
+  },
+  {
+   "table": "stratagems",
+   "id": "000009866004",
+   "side": "attacker",
+   "detachment": "Hammer of the Emperor",
+   "name_en": "TACTICAL WITHDRAWAL",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "战术撤离：撤退后仍可射击——移动资格域无引擎载体"
+   ],
+   "provenance": {
+    "text_sha256": "2ab0734a232b2fc0d44293bad5fa0cce1a7639527e1dc5f1eabed90d06808d3e"
+   },
+   "encoded_by": "manual-2026-07-21",
+   "weapon_filter": ""
+  },
+  {
+   "table": "stratagems",
+   "id": "000009866005",
+   "side": "attacker",
+   "detachment": "Hammer of the Emperor",
+   "name_en": "CRASH THROUGH",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "破障冲撞：移动可穿越地形——移动域无引擎载体"
+   ],
+   "provenance": {
+    "text_sha256": "752286a84d2b7cc25b74320f1d9068329263f58ca2a65b7861563d4075fda94b"
+   },
+   "encoded_by": "manual-2026-07-21",
+   "weapon_filter": ""
+  },
+  {
+   "table": "stratagems",
+   "id": "000009866006",
+   "side": "attacker",
+   "detachment": "Hammer of the Emperor",
+   "name_en": "FURIOUS CANNONADE",
+   "name_zh": null,
+   "status": "encoded",
+   "effects": [
+    {
+     "phase": "save",
+     "op": "ap_improve",
+     "params": [
+      1
+     ],
+     "condition": [
+      "ranged_within_12"
+     ],
+     "source": "狂怒炮击（射击阶段攻击 12\" 内目标时 AP 改善 1）"
+    }
+   ],
+   "requires_toggles": [
+    "range_within_12"
+   ],
+   "not_modeled_notes_zh": [],
+   "provenance": {
+    "text_sha256": "3e38bc80a0102da4bfaab1a831243de87bb06b616cd2bbec554f3be054b42ffa"
+   },
+   "encoded_by": "manual-2026-07-21",
+   "weapon_filter": ""
+  },
+  {
+   "table": "stratagems",
+   "id": "000009866007",
+   "side": "target",
+   "detachment": "Hammer of the Emperor",
+   "name_en": "ABLATIVE PLATING",
+   "name_zh": null,
+   "status": "encoded",
+   "effects": [
+    {
+     "phase": "damage",
+     "op": "damage_reduction",
+     "params": [
+      1
+     ],
+     "condition": [
+      "phase_shooting"
+     ],
+     "source": "附加装甲（对手射击阶段，分配给本单位的攻击伤害 -1）"
+    }
+   ],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [],
+   "provenance": {
+    "text_sha256": "f2b9eeb1e1accf91cc70a32adc5bc1b3cf9b1d93a6045b48f74e6293bfeba2f1"
+   },
+   "encoded_by": "manual-2026-07-21",
+   "weapon_filter": ""
+  },
+  {
+   "table": "stratagems",
+   "id": "000009870002",
+   "side": "attacker",
+   "detachment": "Recon Element",
+   "name_en": "CRACK SHOTS",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "神射手：远程武器获 [PRECISION]（可把伤害定点分配给被率领的 CHARACTER）——伤害分配定向无引擎载体（引擎按单位面结算）"
+   ],
+   "provenance": {
+    "text_sha256": "8ecb9150483bd54448007ac0eddd068db7b746d872d60e4e454f7660be834f7d"
+   },
+   "encoded_by": "manual-2026-07-21",
+   "weapon_filter": ""
+  },
+  {
+   "table": "stratagems",
+   "id": "000009870003",
+   "side": "attacker",
+   "detachment": "Recon Element",
+   "name_en": "DRAW THEM OUT",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "引蛇出洞：本单位可移动 6\"——移动域无引擎载体（11 版 FP 已把触发距离 9\"→8\"，已落 fp_rules）"
+   ],
+   "provenance": {
+    "text_sha256": "105a5222cfb32dd28d87fa1ad7a6de498dc9014cef309507615925b43e26c9f6"
+   },
+   "encoded_by": "manual-2026-07-21",
+   "weapon_filter": ""
+  },
+  {
+   "table": "stratagems",
+   "id": "000009870004",
+   "side": "attacker",
+   "detachment": "Recon Element",
+   "name_en": "SCRAMBLE FIELD",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "扰频立场：限制敌军增援落点——预备队/部署域无引擎载体"
+   ],
+   "provenance": {
+    "text_sha256": "536aa6c9d7e893736d30ae14079c894e76db8ae18599f74e88067383d5ec4a23"
+   },
+   "encoded_by": "manual-2026-07-21",
+   "weapon_filter": ""
+  },
+  {
+   "table": "stratagems",
+   "id": "000009870005",
+   "side": "target",
+   "detachment": "Recon Element",
+   "name_en": "COURAGEOUS DIVERSION",
+   "name_zh": null,
+   "status": "partial",
+   "effects": [
+    {
+     "phase": "fnp",
+     "op": "fnp",
+     "params": [
+      6
+     ],
+     "condition": [
+      "phase_shooting"
+     ],
+     "source": "英勇佯动（对手射击阶段本单位获 FNP 6+）"
+    },
+    {
+     "phase": "hit",
+     "op": "modify",
+     "params": [
+      -1
+     ],
+     "condition": [
+      "phase_shooting"
+     ],
+     "source": "英勇佯动（对手射击阶段瞄准本单位的攻击命中骰 -1）"
+    }
+   ],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "命中 -1 的前提是「本单位是最近的合法目标」——目标选择几何无引擎载体，编码按恒满足处理（高估）；FNP 6+ 无此前提"
+   ],
+   "provenance": {
+    "text_sha256": "97e15e279d752ecb9068324453eb4885f3e2156fae2c8d78c8b27fcb965a45af"
+   },
+   "encoded_by": "manual-2026-07-21",
+   "weapon_filter": ""
+  },
+  {
+   "table": "stratagems",
+   "id": "000009870006",
+   "side": "attacker",
+   "detachment": "Recon Element",
+   "name_en": "TANGLEFOOT GRENADES",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "绊索手雷：所选 12\" 内敌军宣告冲锋时冲锋骰 -1——冲锋骰域无引擎载体（11 版 FP 已整段改写，已落 fp_rules）"
+   ],
+   "provenance": {
+    "text_sha256": "cf54cd7edac1807bed096f91378a93018835f475c0399d58aab5139915824497"
+   },
+   "encoded_by": "manual-2026-07-21",
+   "weapon_filter": ""
+  },
+  {
+   "table": "stratagems",
+   "id": "000009870007",
+   "side": "attacker",
+   "detachment": "Recon Element",
+   "name_en": "SCOUTING OUTRIDERS",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "侦察骑兵：撤回战略预备队——预备队域无引擎载体"
+   ],
+   "provenance": {
+    "text_sha256": "ce5fa046efafe7e23c966f06fa24e7ead9956888987c9537366fcb28e53cb3f7"
+   },
+   "encoded_by": "manual-2026-07-21",
+   "weapon_filter": ""
+  },
+  {
+   "table": "stratagems",
+   "id": "000010638002",
+   "side": "attacker",
+   "detachment": "Grizzled Company",
+   "name_en": "SNAP TO IT",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "动作快点：额外下达 1 条命令——命令域无引擎载体"
+   ],
+   "provenance": {
+    "text_sha256": "a83f1f79f56011b68a161ea7333a442d59483ebd134289ce311243524f2777f7"
+   },
+   "encoded_by": "manual-2026-07-21",
+   "weapon_filter": ""
+  },
+  {
+   "table": "stratagems",
+   "id": "000010638003",
+   "side": "attacker",
+   "detachment": "Grizzled Company",
+   "name_en": "NO RETREAT!",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "绝不后退！：维持目标点控制权——目标点经济无引擎载体"
+   ],
+   "provenance": {
+    "text_sha256": "7b90ee6e72d8e9eabadaca4d52e3451c09d13813b9e42ea7de0ccdcc37777d52"
+   },
+   "encoded_by": "manual-2026-07-21",
+   "weapon_filter": ""
+  },
+  {
+   "table": "stratagems",
+   "id": "000010638004",
+   "side": "attacker",
+   "detachment": "Grizzled Company",
+   "name_en": "VETERAN SHARPSHOOTERS",
+   "name_zh": null,
+   "status": "encoded",
+   "effects": [
+    {
+     "phase": "save",
+     "op": "ignores_cover",
+     "params": [],
+     "condition": [
+      "phase_shooting"
+     ],
+     "source": "老兵神射手（射击阶段远程武器获 [IGNORES COVER]）"
+    }
+   ],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [],
+   "provenance": {
+    "text_sha256": "dfc5620d7825493b62c756ade0d768dde554a7c59a28d94b48729318bc36f975"
+   },
+   "encoded_by": "manual-2026-07-21",
+   "weapon_filter": ""
+  },
+  {
+   "table": "stratagems",
+   "id": "000010638005",
+   "side": "attacker",
+   "detachment": "Grizzled Company",
+   "name_en": "PURGING FIRE",
+   "name_zh": null,
+   "status": "partial",
+   "effects": [
+    {
+     "phase": "hit",
+     "op": "auto_wound",
+     "params": [],
+     "condition": [
+      "phase_shooting"
+     ],
+     "source": "净化之火（射击阶段远程武器获 [LETHAL HITS]）"
+    }
+   ],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "「本单位位于某目标点范围内」几何前提无引擎载体，编码按恒满足处理（高估）",
+    "TARGET 前提「本单位正受某条命令影响」属命令域，无引擎载体，同按恒满足处理（高估）"
+   ],
+   "provenance": {
+    "text_sha256": "c5e641f32ee00b4af17609a646ea7a876bcc9f357998d231cb8aeafa060d0ccd"
+   },
+   "encoded_by": "manual-2026-07-21",
+   "weapon_filter": ""
+  },
+  {
+   "table": "stratagems",
+   "id": "000010638006",
+   "side": "attacker",
+   "detachment": "Grizzled Company",
+   "name_en": "MORDIAN MINUTE",
+   "name_zh": null,
+   "status": "partial",
+   "effects": [
+    {
+     "phase": "wound",
+     "op": "s_improve",
+     "params": [
+      1
+     ],
+     "condition": [
+      "phase_shooting"
+     ],
+     "source": "莫迪安一分钟（射击阶段本单位攻击的 S 改善 1）"
+    }
+   ],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "TARGET 前提「本单位正受 First Rank, Fire! Second Rank, Fire! 命令影响」属命令域，无引擎载体，编码按恒满足处理（高估）"
+   ],
+   "provenance": {
+    "text_sha256": "f270ae7b7edc66e7121bde0e9d60407739e2e263eb66be98bf7c6faaf05ffd4b"
+   },
+   "encoded_by": "manual-2026-07-21",
+   "weapon_filter": ""
+  },
+  {
+   "table": "stratagems",
+   "id": "000010638007",
+   "side": "target",
+   "detachment": "Grizzled Company",
+   "name_en": "ADDITIONAL ARMOUR",
+   "name_zh": null,
+   "status": "encoded",
+   "effects": [
+    {
+     "phase": "save",
+     "op": "ap_improve",
+     "params": [
+      -1
+     ],
+     "condition": [
+      "phase_shooting"
+     ],
+     "source": "附加护甲（对手射击阶段，瞄准本单位的攻击 AP 恶化 1；守方 AP 恶化以负参并入攻方 ap_improve 净算并夹 ≤0）"
+    }
+   ],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [],
+   "provenance": {
+    "text_sha256": "47a66ea56089442b191a3ddf05a27cd324bbeba80dc97d3ba757853fa166b66f"
+   },
+   "encoded_by": "manual-2026-07-21",
+   "weapon_filter": ""
+  },
+  {
+   "table": "stratagems",
+   "id": "000010788002",
+   "side": "attacker",
+   "detachment": "Steel Hammer",
+   "name_en": "ENGINE OF WRATH",
+   "name_zh": null,
+   "status": "encoded",
+   "effects": [
+    {
+     "phase": "attacks",
+     "op": "modify",
+     "params": [
+      6
+     ],
+     "condition": [
+      "phase_melee"
+     ],
+     "source": "怒火引擎（近战武器 A+6）"
+    },
+    {
+     "phase": "save",
+     "op": "ap_improve",
+     "params": [
+      2
+     ],
+     "condition": [
+      "phase_melee"
+     ],
+     "source": "怒火引擎（近战武器 AP 改善 2）"
+    }
+   ],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [],
+   "provenance": {
+    "text_sha256": "094d6a5066e61da4195a70058f78602e5fe1321fed4e69851bd15b4e6f1c40c7"
+   },
+   "encoded_by": "manual-2026-07-21",
+   "weapon_filter": ""
+  },
+  {
+   "table": "stratagems",
+   "id": "000010788003",
+   "side": "attacker",
+   "detachment": "Steel Hammer",
+   "name_en": "IMPOSING ARRIVAL",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "威压降临：从预备队摆放上场——预备队/部署域无引擎载体"
+   ],
+   "provenance": {
+    "text_sha256": "76afec19fb0ae61228b34c82bd7a6b6febd496fcbd3e1f5a44d1e2a7eb4d7af6"
+   },
+   "encoded_by": "manual-2026-07-21",
+   "weapon_filter": ""
+  },
+  {
+   "table": "stratagems",
+   "id": "000010788004",
+   "side": "attacker",
+   "detachment": "Steel Hammer",
+   "name_en": "ADAMANTINE BEHEMOTH",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "精金巨兽：移动可穿越地形——移动域无引擎载体"
+   ],
+   "provenance": {
+    "text_sha256": "07beff6f2b429f9ac49e15bb1856b3a81f39f6a0f75e3f66d7065038de74d3c1"
+   },
+   "encoded_by": "manual-2026-07-21",
+   "weapon_filter": ""
+  },
+  {
+   "table": "stratagems",
+   "id": "000010788005",
+   "side": "attacker",
+   "detachment": "Steel Hammer",
+   "name_en": "SHATTERING SALVO",
+   "name_zh": null,
+   "status": "encoded",
+   "effects": [
+    {
+     "phase": "save",
+     "op": "ignores_cover",
+     "params": [],
+     "condition": [
+      "phase_shooting"
+     ],
+     "source": "碎裂齐射（射击阶段所选敌军单位不得享掩体收益）"
+    }
+   ],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [],
+   "provenance": {
+    "text_sha256": "e20440dc9e5374a4fa95757f4539a66bbf780e8cbd46518240591738bcea09bb"
+   },
+   "encoded_by": "manual-2026-07-21",
+   "weapon_filter": ""
+  },
+  {
+   "table": "stratagems",
+   "id": "000010788006",
+   "side": "attacker",
+   "detachment": "Steel Hammer",
+   "name_en": "WITHERING FIREPOWER",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "凋敝火力：敌军进行士气检定并 -1——士气域无引擎载体"
+   ],
+   "provenance": {
+    "text_sha256": "a30ba6b541e168cf091b486918b7c0f183af5120eca89d22d9b8e446945dd9c0"
+   },
+   "encoded_by": "manual-2026-07-21",
+   "weapon_filter": ""
+  },
+  {
+   "table": "stratagems",
+   "id": "000010788007",
+   "side": "attacker",
+   "detachment": "Steel Hammer",
+   "name_en": "ACCURACY UNDER PRESSURE",
+   "name_zh": null,
+   "status": "encoded",
+   "effects": [
+    {
+     "phase": "hit",
+     "op": "reroll",
+     "params": [
+      "fail"
+     ],
+     "condition": [
+      "phase_shooting"
+     ],
+     "source": "压力下的精准（射击阶段重掷命中骰）"
+    }
+   ],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [],
+   "provenance": {
+    "text_sha256": "73193c202ffd44d28903c5e6ffe55672a022d6f7ce7f4058c5d3e5eeec575496"
+   },
+   "encoded_by": "manual-2026-07-21",
+   "weapon_filter": ""
+  },
+  {
+   "table": "stratagems",
+   "id": "000010792002",
+   "side": "attacker",
+   "detachment": "Armoured Infantry",
+   "name_en": "ORDER THE ADVANCE",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "下令前进：重掷加速骰——移动域无引擎载体"
+   ],
+   "provenance": {
+    "text_sha256": "b45478d3d7ec3f8090a6e415e2adfb94accbd03b5efecde4b702295a7701f145"
+   },
+   "encoded_by": "manual-2026-07-21",
+   "weapon_filter": ""
+  },
+  {
+   "table": "stratagems",
+   "id": "000010792003",
+   "side": "attacker",
+   "detachment": "Armoured Infantry",
+   "name_en": "MOBILE FIREBASE",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "移动火力基地：加速/撤退后仍可射击——移动资格域无引擎载体"
+   ],
+   "provenance": {
+    "text_sha256": "dc78e26fa75775208fa32d77cd62700394c2f4ec80acb2ff9b9431694ca09d68"
+   },
+   "encoded_by": "manual-2026-07-21",
+   "weapon_filter": ""
+  },
+  {
+   "table": "stratagems",
+   "id": "000010792004",
+   "side": "attacker",
+   "detachment": "Armoured Infantry",
+   "name_en": "BURST OF SPEED",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "爆发速度：额外移动 D6\"——移动域无引擎载体"
+   ],
+   "provenance": {
+    "text_sha256": "6ad5a681634ef7fc004b9cbe6b8079faaf3601469b36a89c009f35dc9a7f9674"
+   },
+   "encoded_by": "manual-2026-07-21",
+   "weapon_filter": ""
+  },
+  {
+   "table": "stratagems",
+   "id": "000010792005",
+   "side": "attacker",
+   "detachment": "Armoured Infantry",
+   "name_en": "SUPPORTING ORDNANCE",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "支援炮火：「攻击可见的 MONSTER 或 VEHICLE 目标时重掷命中骰」是「射击阶段 × 目标关键词」——引擎只有通用 target_has_keyword（近战也会放行）与 melee_target_has_keyword，无射击侧复合 tag，裸编会过度施加"
+   ],
+   "provenance": {
+    "text_sha256": "ca0be8281aaaea33ee8d2cbb8384fdf241bdf98ef7c039e8d37ee2544d4e4d44"
+   },
+   "encoded_by": "manual-2026-07-21",
+   "weapon_filter": ""
+  },
+  {
+   "table": "stratagems",
+   "id": "000010792006",
+   "side": "attacker",
+   "detachment": "Armoured Infantry",
+   "name_en": "COMBINED FIRE",
+   "name_zh": null,
+   "status": "partial",
+   "effects": [
+    {
+     "phase": "save",
+     "op": "ignores_cover",
+     "params": [],
+     "condition": [
+      "phase_shooting"
+     ],
+     "source": "协同火力（射击阶段所选敌军单位不得享掩体收益）"
+    },
+    {
+     "phase": "wound",
+     "op": "s_improve",
+     "params": [
+      2
+     ],
+     "condition": [
+      "phase_shooting"
+     ],
+     "source": "协同火力（ARMOURED SKIRMISHER 单位攻击该敌军单位时 S 改善 2）"
+    }
+   ],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "S+2 只对 ARMOURED SKIRMISHER 单位生效（掩体剥夺则对全军生效）——引擎无攻方自关键词门，注入到任何攻方都会生效，适用性由使用者自查"
+   ],
+   "provenance": {
+    "text_sha256": "991f2b0688d17186aec12575989736681d0312c3d14de02dad44f5d8e8ac0889"
+   },
+   "encoded_by": "manual-2026-07-21",
+   "weapon_filter": ""
+  },
+  {
+   "table": "stratagems",
+   "id": "000010792007",
+   "side": "attacker",
+   "detachment": "Armoured Infantry",
+   "name_en": "OPENING SALVO",
+   "name_zh": null,
+   "status": "encoded",
+   "effects": [
+    {
+     "phase": "wound",
+     "op": "modify",
+     "params": [
+      1
+     ],
+     "condition": [
+      "phase_shooting"
+     ],
+     "source": "首轮齐射（射击阶段本回合下车的单位攻击致伤骰 +1）"
+    }
+   ],
+   "requires_toggles": [
+    "disembarked_this_turn"
+   ],
+   "not_modeled_notes_zh": [],
+   "provenance": {
+    "text_sha256": "ee66b357e2d21f29bf718ed0ad6b3de614e5266b2b259fd11e97cf6e3afac883"
+   },
+   "encoded_by": "manual-2026-07-21",
+   "weapon_filter": ""
+  },
+  {
+   "table": "stratagems",
+   "id": "fp11e-am-abhuman-s1",
+   "side": "target",
+   "detachment": "Abhuman Auxiliaries",
+   "name_en": "THICK-SKULLED OBDURANCE",
+   "name_zh": "厚颅固执",
+   "status": "partial",
+   "effects": [
+    {
+     "phase": "save",
+     "op": "ap_improve",
+     "params": [
+      -1
+     ],
+     "condition": [],
+     "source": "厚颅固执（瞄准本单位的攻击 AP 恶化 1；WHEN=对手射击阶段或近战阶段，两相位皆可故不加门。守方 AP 恶化以负参并入攻方 ap_improve 净算并夹 ≤0）"
+    }
+   ],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "生效前提是本单位位于某目标点范围内——目标点几何无引擎载体，编码按恒满足处理（高估）",
+    "「直到该敌军单位攻击完毕」的持续期短于一个阶段——引擎按整阶段生效，同阶段内其他敌军单位的攻击会被误加成（高估）"
+   ],
+   "provenance": {
+    "text_sha256": "74c38cfb097548a5d25af66f0e5723bb812e345c4a1e10dc10f9b68e0c0999b0"
+   },
+   "encoded_by": "manual-2026-07-21",
+   "weapon_filter": ""
+  },
+  {
+   "table": "stratagems",
+   "id": "fp11e-am-abhuman-s2",
+   "side": "attacker",
+   "detachment": "Abhuman Auxiliaries",
+   "name_en": "LOW PROFILE",
+   "name_zh": "低伏身形",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "低伏身形：射击后仍可保持 hidden 状态——11 版隐蔽（hidden）机制无引擎载体"
+   ],
+   "provenance": {
+    "text_sha256": "63416fb59cecd91c178d4896a5d5c0f25488a70e10914b607bd1bde3e41d160c"
+   },
+   "encoded_by": "manual-2026-07-21",
+   "weapon_filter": ""
+  },
+  {
+   "table": "stratagems",
+   "id": "fp11e-am-abhuman-s3",
+   "side": "attacker",
+   "detachment": "Abhuman Auxiliaries",
+   "name_en": "STIRRED TO ACTION",
+   "name_zh": "激起行动",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "激起行动：本单位可进行 D6\" 的 surge move——移动域无引擎载体"
+   ],
+   "provenance": {
+    "text_sha256": "194d5cd1bd86939d947978e6815c2682d2856a7b5e4527d31e9962e70d94c417"
+   },
+   "encoded_by": "manual-2026-07-21",
+   "weapon_filter": ""
+  },
+  {
+   "table": "stratagems",
+   "id": "fp11e-am-designation-s1",
+   "side": "attacker",
+   "detachment": "Designation Force",
+   "name_en": "CLOSE-RANGE DETECTION",
+   "name_zh": "近距侦测",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "近距侦测：6\" 内可见敌军单位 +3\" 侦测距离——11 版侦测距离机制无引擎载体"
+   ],
+   "provenance": {
+    "text_sha256": "ae5482c122ce2281fe27a798cc4c2b843f3917bd59f377830c4ca5842f24bd6a"
+   },
+   "encoded_by": "manual-2026-07-21",
+   "weapon_filter": ""
+  },
+  {
+   "table": "stratagems",
+   "id": "fp11e-am-designation-s2",
+   "side": "attacker",
+   "detachment": "Designation Force",
+   "name_en": "TRIGGERED ALERTS",
+   "name_zh": "触发警讯",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "触发警讯：本单位可进行 D3+3\" 的普通移动——移动域无引擎载体"
+   ],
+   "provenance": {
+    "text_sha256": "d9668814e678e2c4cfb0c076ae8b8c386b4e7197541a9c12dfb31a39436bcba4"
+   },
+   "encoded_by": "manual-2026-07-21",
+   "weapon_filter": ""
+  },
+  {
+   "table": "stratagems",
+   "id": "fp11e-am-designation-s3",
+   "side": "target",
+   "detachment": "Designation Force",
+   "name_en": "SUMP-SMOG SCREEN",
+   "name_zh": "污沼烟幕",
+   "status": "partial",
+   "effects": [
+    {
+     "phase": "save",
+     "op": "cover",
+     "params": [],
+     "condition": [
+      "phase_shooting"
+     ],
+     "source": "污沼烟幕（对手射击阶段瞄准本单位的攻击，目标享掩体收益）"
+    }
+   ],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "第二受益面「因本单位模型遮挡而未完全可见的其他友军单位也享掩体」是遮挡可见性几何，无引擎载体",
+    "原文的 WHEN 是对手射击阶段开始，但 EFFECT 写「当一次攻击瞄准……」未限相位；引擎按射击阶段门编码（掩体在 11 版落命中侧，近战不吃掩体），与原文使用时机一致"
+   ],
+   "provenance": {
+    "text_sha256": "0b48ddbc2e0314f49e56534c3402565711bdec8f3cfbde1c1ddb33721cae66d4"
+   },
+   "encoded_by": "manual-2026-07-21",
+   "weapon_filter": ""
+  },
+  {
+   "table": "enhancements",
+   "id": "000008380002",
+   "side": "target",
+   "detachment": "Combined Arms",
+   "name_en": "Death Mask of Ollanius",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "奥兰尼乌斯的死亡面具：士气崩溃时 OC 减 1 而非归零——士气与目标控制域无引擎载体"
+   ],
+   "provenance": {
+    "text_sha256": "70f1dfecdb551dd9bf78de0e66ad2c1fabaec01e13036bda6f8cab7984e79b98"
+   },
+   "encoded_by": "manual-2026-07-21",
+   "weapon_filter": ""
+  },
+  {
+   "table": "enhancements",
+   "id": "000008380003",
+   "side": "attacker",
+   "detachment": "Combined Arms",
+   "name_en": "Drill Commander",
+   "name_zh": null,
+   "status": "partial",
+   "effects": [
+    {
+     "phase": "hit",
+     "op": "crit_threshold",
+     "params": [
+      5
+     ],
+     "condition": [
+      "stationary"
+     ],
+     "source": "操典指挥官（携带者所率单位驻停回合的远程攻击，未修正命中 5+ 即暴击）"
+    }
+   ],
+   "requires_toggles": [
+    "bearer_leading"
+   ],
+   "not_modeled_notes_zh": [
+    "原文限「远程攻击」，但引擎的 stationary tag 只读驻停态、不含相位门——在近战模拟里同时开驻停开关会误放行（高估），使用者须只在射击模拟下开启"
+   ],
+   "provenance": {
+    "text_sha256": "5356a504bb710f113b3e7b30adcdb0946a9c683d48bf7c8dcc3010a5b4b5edd3"
+   },
+   "encoded_by": "manual-2026-07-21",
+   "weapon_filter": ""
+  },
+  {
+   "table": "enhancements",
+   "id": "000008380004",
+   "side": "attacker",
+   "detachment": "Combined Arms",
+   "name_en": "Grand Strategist",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "大战略家：额外下达一条命令——命令域无引擎载体"
+   ],
+   "provenance": {
+    "text_sha256": "612f3ccebeabc1be2832e0d9a71051992299bb02a904e7401a8d304309d8343c"
+   },
+   "encoded_by": "manual-2026-07-21",
+   "weapon_filter": ""
+  },
+  {
+   "table": "enhancements",
+   "id": "000008380005",
+   "side": "attacker",
+   "detachment": "Combined Arms",
+   "name_en": "Reactive Command",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "应激指挥：敌军 9\" 内摆放时额外下达一条命令——命令域无引擎载体"
+   ],
+   "provenance": {
+    "text_sha256": "3ee744662bd865f3d12302e929496121223d30f717b54ddb299777a1395061f4"
+   },
+   "encoded_by": "manual-2026-07-21",
+   "weapon_filter": ""
+  },
+  {
+   "table": "enhancements",
+   "id": "000009380002",
+   "side": "attacker",
+   "detachment": "Embarked Regiment",
+   "name_en": "Rigged Blind Grenades",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "诡雷致盲手雷：使敌军单位陷入士气崩溃——士气域与舱门机制无引擎载体"
+   ],
+   "provenance": {
+    "text_sha256": "1e6be47b05a7f1ecb0de1685754c99ad986f098b9956cb0eabc06c1c946a922a"
+   },
+   "encoded_by": "manual-2026-07-21",
+   "weapon_filter": ""
+  },
+  {
+   "table": "enhancements",
+   "id": "000009380003",
+   "side": "attacker",
+   "detachment": "Embarked Regiment",
+   "name_en": "Shipboard Veteran",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "舰载老兵：掷骰返还 1CP——CP 经济无引擎载体"
+   ],
+   "provenance": {
+    "text_sha256": "491e812eac727504d311f8094f19f8d24c74663ba47ca42104f315d69089003e"
+   },
+   "encoded_by": "manual-2026-07-21",
+   "weapon_filter": ""
+  },
+  {
+   "table": "enhancements",
+   "id": "000009389002",
+   "side": "attacker",
+   "detachment": "Tempestus Boarding Regiment",
+   "name_en": "Covert Breach",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "隐秘突破：首战轮前额外移动 6\"——移动域无引擎载体"
+   ],
+   "provenance": {
+    "text_sha256": "4ce5190e617a90a5902a6c1bf4b65ed9f1de11b4ced605b4a50498c552c5f0bd"
+   },
+   "encoded_by": "manual-2026-07-21",
+   "weapon_filter": ""
+  },
+  {
+   "table": "enhancements",
+   "id": "000009389003",
+   "side": "attacker",
+   "detachment": "Tempestus Boarding Regiment",
+   "name_en": "Elimination Force",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "歼灭部队：「该次攻击 S 小于目标 T 时致伤骰 +1」是 S<T 的延迟判定——引擎的三个 S/T 延迟 tag 是 melee_s_lte_t（近战 × S≤T）、wound_s_gt_t（S>T）、melee_wound_s_gt_t（近战 × S>T），既无「全相位 S<T」也无严格小于档；用 melee_s_lte_t 会把 S==T 一并放行且丢掉射击侧（双向失真），故不编"
+   ],
+   "provenance": {
+    "text_sha256": "fafae7b3f0de67f689bdfeccb5bda412485cf45d536f2cea0cae419df332392e"
+   },
+   "encoded_by": "manual-2026-07-21",
+   "weapon_filter": ""
+  },
+  {
+   "table": "enhancements",
+   "id": "000009801002",
+   "side": "attacker",
+   "detachment": "Bridgehead Strike",
+   "name_en": "Bombast-class Vox-array",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "轰鸣级通讯阵列：一条命令可同时下达给至多三个 REGIMENT 单位——命令域无引擎载体"
+   ],
+   "provenance": {
+    "text_sha256": "fe89f6d4ea9738d8da64586c86900c83b8688673bcebc28b1e40ebfe04615867"
+   },
+   "encoded_by": "manual-2026-07-21",
+   "weapon_filter": ""
+  },
+  {
+   "table": "enhancements",
+   "id": "000009801003",
+   "side": "attacker",
+   "detachment": "Bridgehead Strike",
+   "name_en": "Priority-drop Beacon",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "优先空降信标：首个移动阶段可进行 ingress move——移动/部署域无引擎载体"
+   ],
+   "provenance": {
+    "text_sha256": "deab24c5980e19fc35c96f638c6e77dccea57046d9d709ca0467aced365b2b14"
+   },
+   "encoded_by": "manual-2026-07-21",
+   "weapon_filter": ""
+  },
+  {
+   "table": "enhancements",
+   "id": "000009857002",
+   "side": "attacker",
+   "detachment": "Siege Regiment",
+   "name_en": "Eager Advance",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "急切推进：授予 Scouts 6\"——部署前移动域无引擎载体"
+   ],
+   "provenance": {
+    "text_sha256": "848702fec797d93f627a6e285735be32bc073789f4588e2f6a1a21b4ceb9b818"
+   },
+   "encoded_by": "manual-2026-07-21",
+   "weapon_filter": ""
+  },
+  {
+   "table": "enhancements",
+   "id": "000009857003",
+   "side": "attacker",
+   "detachment": "Siege Regiment",
+   "name_en": "Flash Grenades",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "闪光手雷：禁用敌方 Fire Overwatch 战略——引擎不建模 Overwatch"
+   ],
+   "provenance": {
+    "text_sha256": "63e47fd9f34b688e447065858a22e4e94d64d74390a162d0de39f84c3c7d59b7"
+   },
+   "encoded_by": "manual-2026-07-21",
+   "weapon_filter": ""
+  },
+  {
+   "table": "enhancements",
+   "id": "000009857004",
+   "side": "attacker",
+   "detachment": "Siege Regiment",
+   "name_en": "Legacy Sidearm",
+   "name_zh": null,
+   "status": "partial",
+   "effects": [
+    {
+     "phase": "attacks",
+     "op": "modify",
+     "params": [
+      2
+     ],
+     "condition": [],
+     "source": "传世佩枪（携带者的 Pistol 武器 A+2）"
+    }
+   ],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "增益只加在携带者本人的手枪上——引擎按单位面注入全部匹配武器，多模型单位会高估；须以携带者单模型 loadout 模拟才等价",
+    "weapon_filter 按名字子串 'pistol' 选中——[PISTOL] 是武器关键词而非名字，名字不含 pistol 的手枪型武器会漏选，装配须自查"
+   ],
+   "provenance": {
+    "text_sha256": "7e8864b6aefbb8afdcbd1475375fe451ae24994fdf6f251cc4d6fa1961f3f3ef"
+   },
+   "encoded_by": "manual-2026-07-21",
+   "weapon_filter": "pistol"
+  },
+  {
+   "table": "enhancements",
+   "id": "000009857005",
+   "side": "attacker",
+   "detachment": "Siege Regiment",
+   "name_en": "Stalwart’s Honours",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "坚定者荣勋：所率单位受命令时额外附带 Take Cover! 命令——命令域无引擎载体"
+   ],
+   "provenance": {
+    "text_sha256": "df034c66087b5fbc7181576068745536921088368247904973ec2df7617eea1e"
+   },
+   "encoded_by": "manual-2026-07-21",
+   "weapon_filter": ""
+  },
+  {
+   "table": "enhancements",
+   "id": "000009861002",
+   "side": "attacker",
+   "detachment": "Mechanised Assault",
+   "name_en": "Bold Leadership",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "大胆领导：维持目标点控制权——目标点经济无引擎载体"
+   ],
+   "provenance": {
+    "text_sha256": "4d1f6ebbd8fde83c1f05302a1085b65fcaf059d6e1e2f51ab40932f6daed3aa1"
+   },
+   "encoded_by": "manual-2026-07-21",
+   "weapon_filter": ""
+  },
+  {
+   "table": "enhancements",
+   "id": "000009861003",
+   "side": "attacker",
+   "detachment": "Mechanised Assault",
+   "name_en": "Sacred Unguents",
+   "name_zh": null,
+   "status": "partial",
+   "effects": [
+    {
+     "phase": "hit",
+     "op": "reroll",
+     "params": [
+      "fail"
+     ],
+     "condition": [
+      "phase_shooting"
+     ],
+     "source": "圣涂油膏（所选运输载具射击阶段重掷命中骰）"
+    }
+   ],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "受益者是携带者 3\" 内所选的另一友军 TRANSPORT 单位（非携带者所率单位）——须以该 TRANSPORT 为攻方模拟；bearer_leading 开关语义是「携带者率领本单位」，故不挂",
+    "「3\" 内」的光环几何与「排除 AIRCRAFT/TITANIC」的负关键词门均无引擎载体，按恒满足处理（高估）"
+   ],
+   "provenance": {
+    "text_sha256": "b59dd3d892636cb15b4d91ef8c659e0ec07047228421159ad7553f9fc3c37565"
+   },
+   "encoded_by": "manual-2026-07-21",
+   "weapon_filter": ""
+  },
+  {
+   "table": "enhancements",
+   "id": "000009861004",
+   "side": "target",
+   "detachment": "Mechanised Assault",
+   "name_en": "Smoke Grenades",
+   "name_zh": null,
+   "status": "partial",
+   "effects": [
+    {
+     "phase": "save",
+     "op": "cover",
+     "params": [],
+     "condition": [],
+     "source": "烟雾手雷（携带者所率单位获掩体收益）"
+    }
+   ],
+   "requires_toggles": [
+    "defender_bearer_leading"
+   ],
+   "not_modeled_notes_zh": [
+    "同时授予的 Stealth（11 版=远程攻击时享掩体）与 Benefit of Cover 同走引擎掩体通道，不叠加",
+    "生效前提是本单位整体位于友军 TRANSPORT 模型 3\" 内——光环几何无引擎载体，按恒满足处理（高估）"
+   ],
+   "provenance": {
+    "text_sha256": "af078e6499fa8a847f6de9272a71f8b6cf5cc4a4ecc532c961f7221568496fb7"
+   },
+   "encoded_by": "manual-2026-07-21",
+   "weapon_filter": ""
+  },
+  {
+   "table": "enhancements",
+   "id": "000009861005",
+   "side": "attacker",
+   "detachment": "Mechanised Assault",
+   "name_en": "Vanguard Honours",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "先锋荣勋：加速后仍可下车——移动/搭乘域无引擎载体"
+   ],
+   "provenance": {
+    "text_sha256": "cc2c24b77179cd01a74355f6333d475d9a5a00c59d441b1e78122c809cce6495"
+   },
+   "encoded_by": "manual-2026-07-21",
+   "weapon_filter": ""
+  },
+  {
+   "table": "enhancements",
+   "id": "000009865002",
+   "side": "attacker",
+   "detachment": "Hammer of the Emperor",
+   "name_en": "Calm Under Fire",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "临危不乱：把同一条命令再下达给另一 SQUADRON 单位——命令域无引擎载体"
+   ],
+   "provenance": {
+    "text_sha256": "2e9aa0b2b0f93225b0e51fab58e0b35efc7729198ee203ed2e8548fccfd76f2f"
+   },
+   "encoded_by": "manual-2026-07-21",
+   "weapon_filter": ""
+  },
+  {
+   "table": "enhancements",
+   "id": "000009865003",
+   "side": "target",
+   "detachment": "Hammer of the Emperor",
+   "name_en": "Indomitable Steed",
+   "name_zh": null,
+   "status": "partial",
+   "effects": [
+    {
+     "phase": "fnp",
+     "op": "fnp",
+     "params": [
+      6
+     ],
+     "condition": [],
+     "source": "不屈战驹（携带者获 FNP 6+）"
+    }
+   ],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "只给携带者本人（VEHICLE OFFICER 模型）——引擎按单位面注入，多模型单位会高估；须以携带者单模型模拟才等价"
+   ],
+   "provenance": {
+    "text_sha256": "ec92d76a17ddbd4d5dad22bd1338aee88e26968064740251bca49c3bc5b7b442"
+   },
+   "encoded_by": "manual-2026-07-21",
+   "weapon_filter": ""
+  },
+  {
+   "table": "enhancements",
+   "id": "000009865004",
+   "side": "target",
+   "detachment": "Hammer of the Emperor",
+   "name_en": "Regimental Banner",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "团旗：OC+3——目标控制域无引擎载体"
+   ],
+   "provenance": {
+    "text_sha256": "aef5605c1ad3a3a54d07ee274f6c066cc82c47bbe19bb5b0fad75c0f51e0bd03"
+   },
+   "encoded_by": "manual-2026-07-21",
+   "weapon_filter": ""
+  },
+  {
+   "table": "enhancements",
+   "id": "000009865005",
+   "side": "attacker",
+   "detachment": "Hammer of the Emperor",
+   "name_en": "Veteran Crew",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "老练车组：重掷命中骰「1」——引擎 hit/reroll 只有「重掷失败骰」语义，重掷特定点数无载体（裸编高估）"
+   ],
+   "provenance": {
+    "text_sha256": "3e3e3ddf05f8b1345dfb15e37b034664b0a9b4a933e4f96d8a30446b15cf1125"
+   },
+   "encoded_by": "manual-2026-07-21",
+   "weapon_filter": ""
+  },
+  {
+   "table": "enhancements",
+   "id": "000009869002",
+   "side": "attacker",
+   "detachment": "Recon Element",
+   "name_en": "Guerrilla Honours",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "游击荣勋：部署后重新部署——部署域无引擎载体"
+   ],
+   "provenance": {
+    "text_sha256": "2b31655f8b460e3f0b1abe4ad5bc67e8a2435ad5444e4ec72deabeb91446aca3"
+   },
+   "encoded_by": "manual-2026-07-21",
+   "weapon_filter": ""
+  },
+  {
+   "table": "enhancements",
+   "id": "000009869003",
+   "side": "attacker",
+   "detachment": "Recon Element",
+   "name_en": "Scare Gas Grenades",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "惊惧毒气手雷：迫使敌军进行士气检定——士气域无引擎载体"
+   ],
+   "provenance": {
+    "text_sha256": "b9423c7bc9ff9a4e835d6d909ac18dbbd94d8bb3663e3c2d4fa8a0b1aaca6644"
+   },
+   "encoded_by": "manual-2026-07-21",
+   "weapon_filter": ""
+  },
+  {
+   "table": "enhancements",
+   "id": "000009869004",
+   "side": "attacker",
+   "detachment": "Recon Element",
+   "name_en": "Survival Gear",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "生存装具：授予 Scouts 6\"——部署前移动域无引擎载体"
+   ],
+   "provenance": {
+    "text_sha256": "865f1f6644da08d8dfaa68fe53da8f42e8feb180ec1112d86eafea87d6bd4a3c"
+   },
+   "encoded_by": "manual-2026-07-21",
+   "weapon_filter": ""
+  },
+  {
+   "table": "enhancements",
+   "id": "000009869005",
+   "side": "attacker",
+   "detachment": "Recon Element",
+   "name_en": "Tripwires",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "绊索：敌军 INFANTRY/MOUNTED 单位在 9\" 内结束移动时掷 D6，4+ 陷入 stunned（其攻击命中 -1）——触发在移动阶段且效果施加在敌方攻方侧，引擎无「守方给攻方挂负面状态」的跨方通道"
+   ],
+   "provenance": {
+    "text_sha256": "3f70fc77b06b41f61e1f6bcfa851cc585bf876fcb70db6fc6b5677b2e5bd6dc2"
+   },
+   "encoded_by": "manual-2026-07-21",
+   "weapon_filter": ""
+  },
+  {
+   "table": "enhancements",
+   "id": "000010637002",
+   "side": "attacker",
+   "detachment": "Grizzled Company",
+   "name_en": "Abhuman Detail",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "亚人分队：扩大可下达命令的单位范围并允许附属——命令与建军域无引擎载体"
+   ],
+   "provenance": {
+    "text_sha256": "7ef086451d4dd656b557c73cd70778dee00863bf9e7db97e251eae43f0ef772c"
+   },
+   "encoded_by": "manual-2026-07-21",
+   "weapon_filter": ""
+  },
+  {
+   "table": "enhancements",
+   "id": "000010637003",
+   "side": "attacker",
+   "detachment": "Grizzled Company",
+   "name_en": "Aquilan Eye",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "天鹰之眼：新增 Target Weak Spot 命令（远程攻击 12\" 内目标 AP 改善 1）——命令须由军官在多道命令中择一下达，引擎无命令状态开关，裸编等于把可选命令当恒开（高估）"
+   ],
+   "provenance": {
+    "text_sha256": "80e3bca25a1df17909ca599a093b802e670c7c994951bcf4ef3424dec1a299ef"
+   },
+   "encoded_by": "manual-2026-07-21",
+   "weapon_filter": ""
+  },
+  {
+   "table": "enhancements",
+   "id": "000010637004",
+   "side": "attacker",
+   "detachment": "Grizzled Company",
+   "name_en": "Spec Ops Veteran",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "特勤老兵：新增 Move to the Shadows 命令（本单位获 Stealth）——同为命令域，且属守方向；裸编等于把可选命令当恒开（高估）"
+   ],
+   "provenance": {
+    "text_sha256": "d190f02d20dd84077108047c64a3e60e7bd3c427739466daecebb3755334774d"
+   },
+   "encoded_by": "manual-2026-07-21",
+   "weapon_filter": ""
+  },
+  {
+   "table": "enhancements",
+   "id": "000010637005",
+   "side": "attacker",
+   "detachment": "Grizzled Company",
+   "name_en": "Laud Hailer",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "扩音器：命令下达距离 6\"→12\"——命令域无引擎载体"
+   ],
+   "provenance": {
+    "text_sha256": "e3c9331f384ab84866a004e6c5017466dc474ac1ff9aab38035eb6654ca5bd08"
+   },
+   "encoded_by": "manual-2026-07-21",
+   "weapon_filter": ""
+  },
+  {
+   "table": "enhancements",
+   "id": "000010787002",
+   "side": "attacker",
+   "detachment": "Steel Hammer",
+   "name_en": "Battalion Commander",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "营级指挥官：授予 Voice of Command 与 OFFICER 关键词——命令与建军域无引擎载体"
+   ],
+   "provenance": {
+    "text_sha256": "93123e94b951d80540bdb84731de9546f4ecb06599a778249c5d33793e4f8df8"
+   },
+   "encoded_by": "manual-2026-07-21",
+   "weapon_filter": ""
+  },
+  {
+   "table": "enhancements",
+   "id": "000010787003",
+   "side": "attacker",
+   "detachment": "Steel Hammer",
+   "name_en": "Titan Killer",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "泰坦杀手：远程攻击可重掷伤害骰——引擎 damage 通道只有 modify（加值）与 damage_reduction，无「重掷伤害骰」载体"
+   ],
+   "provenance": {
+    "text_sha256": "4563351880cfa86d01222a6b7dab54fb0505851e89223fc30db64a7888b385e0"
+   },
+   "encoded_by": "manual-2026-07-21",
+   "weapon_filter": ""
+  },
+  {
+   "table": "enhancements",
+   "id": "000010787004",
+   "side": "attacker",
+   "detachment": "Steel Hammer",
+   "name_en": "Engine Speaker",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "引擎语者：所选载具 M+3\"——移动域无引擎载体"
+   ],
+   "provenance": {
+    "text_sha256": "67c5e4ec652eb0b2c2e63c8a0cf6219c6c3fda46e9b5fbbb0851ff69800f9b78"
+   },
+   "encoded_by": "manual-2026-07-21",
+   "weapon_filter": ""
+  },
+  {
+   "table": "enhancements",
+   "id": "000010787005",
+   "side": "attacker",
+   "detachment": "Steel Hammer",
+   "name_en": "Assault Hatches",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "突击舱门：下车后仍可宣告冲锋——移动/冲锋资格域无引擎载体"
+   ],
+   "provenance": {
+    "text_sha256": "10c25b028b50e6ce28b615ad1e3dc4b5df6a111616beee6e9527f45533cd7332"
+   },
+   "encoded_by": "manual-2026-07-21",
+   "weapon_filter": ""
+  },
+  {
+   "table": "enhancements",
+   "id": "000010791002",
+   "side": "attacker",
+   "detachment": "Armoured Infantry",
+   "name_en": "Exemplary Officer",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "模范军官：一条命令同时下达给 3\" 内至多两个 Platoon 单位——命令域无引擎载体"
+   ],
+   "provenance": {
+    "text_sha256": "e97d6223807535503b2030c5f1e9718be86a764c10c3531752b0e0f3bc6077fb"
+   },
+   "encoded_by": "manual-2026-07-21",
+   "weapon_filter": ""
+  },
+  {
+   "table": "enhancements",
+   "id": "000010791003",
+   "side": "attacker",
+   "detachment": "Armoured Infantry",
+   "name_en": "Master Manoeuvrist",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "机动大师：对手近战阶段末登车——移动/搭乘域无引擎载体"
+   ],
+   "provenance": {
+    "text_sha256": "495985a16a05202896b780ea8a47a04b584903dfeacd92f590037a0fd024a3a0"
+   },
+   "encoded_by": "manual-2026-07-21",
+   "weapon_filter": ""
+  },
+  {
+   "table": "enhancements",
+   "id": "000010791004",
+   "side": "target",
+   "detachment": "Armoured Infantry",
+   "name_en": "Omnissian Unguents  (Aura)",
+   "name_zh": null,
+   "status": "partial",
+   "effects": [
+    {
+     "phase": "fnp",
+     "op": "fnp",
+     "params": [
+      5
+     ],
+     "condition": [],
+     "source": "万机神圣膏（光环：携带者 3\" 内的友军单位获 FNP 5+）"
+    }
+   ],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "受益者是携带者 3\" 内的另一友军 ARMOURED SKIRMISHER 单位，不是携带者所率单位——故不挂 defender_bearer_leading；光环几何与 ARMOURED SKIRMISHER 关键词门均无引擎载体，按恒满足处理（高估），适用性由使用者自查"
+   ],
+   "provenance": {
+    "text_sha256": "e6ccb7d4ba0b0017c358c26499ebb1619359f3fbabc6ccf6cb7a8d8d3a4a86f3"
+   },
+   "encoded_by": "manual-2026-07-21",
+   "weapon_filter": ""
+  },
+  {
+   "table": "enhancements",
+   "id": "000010791005",
+   "side": "attacker",
+   "detachment": "Armoured Infantry",
+   "name_en": "Grand Strategist",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "大战略家：部署后重新部署——部署域无引擎载体"
+   ],
+   "provenance": {
+    "text_sha256": "a1bd1affdc3442b6e28337d5953a5ed6cdf39492ac4fda0cb0f13dd94db02b36"
+   },
+   "encoded_by": "manual-2026-07-21",
+   "weapon_filter": ""
+  },
+  {
+   "table": "enhancements",
+   "id": "fp11e-am-abhuman-e1",
+   "side": "attacker",
+   "detachment": "Abhuman Auxiliaries",
+   "name_en": "Sharp Eyes, Light Fingers",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "锐眼巧手：本单位射击时敌军单位 +6\" 侦测距离——11 版侦测距离机制无引擎载体"
+   ],
+   "provenance": {
+    "text_sha256": "ec421a2724b0bfca4783ae53a9ab8729f83f7b0b36727eb45dce1f09b37f5582"
+   },
+   "encoded_by": "manual-2026-07-21",
+   "weapon_filter": ""
+  },
+  {
+   "table": "enhancements",
+   "id": "fp11e-am-abhuman-e2",
+   "side": "target",
+   "detachment": "Abhuman Auxiliaries",
+   "name_en": "Exemplar of Duty",
+   "name_zh": null,
+   "status": "partial",
+   "effects": [
+    {
+     "phase": "fnp",
+     "op": "fnp",
+     "params": [
+      4
+     ],
+     "condition": [],
+     "source": "尽责典范（携带者获 FNP 4+）"
+    }
+   ],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "只给携带者本人（COMMISSAR 模型）——引擎按单位面注入，多模型单位会高估；须以携带者单模型模拟才等价"
+   ],
+   "provenance": {
+    "text_sha256": "c6c59e25373947c7cc67c8754ea28d68fc6090b0d7826dfa2b4183894751ec40"
+   },
+   "encoded_by": "manual-2026-07-21",
+   "weapon_filter": ""
+  },
+  {
+   "table": "enhancements",
+   "id": "fp11e-am-designation-e1",
+   "side": "attacker",
+   "detachment": "Designation Force",
+   "name_en": "Long-range Scout",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "远程侦察兵：授予 Infiltrators——部署域无引擎载体"
+   ],
+   "provenance": {
+    "text_sha256": "e19915f485a58a5293f706957a65e36b5d8638a04fa84845ec5a9145c6a211c4"
+   },
+   "encoded_by": "manual-2026-07-21",
+   "weapon_filter": ""
+  },
+  {
+   "table": "enhancements",
+   "id": "fp11e-am-designation-e2",
+   "side": "attacker",
+   "detachment": "Designation Force",
+   "name_en": "Recon Star",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "侦察之星：首个移动阶段可进行 ingress move——移动/部署域无引擎载体"
+   ],
+   "provenance": {
+    "text_sha256": "75681deceaa079b518e245db5a322dbca850e97c90d9bbf75df0e67204307e68"
+   },
+   "encoded_by": "manual-2026-07-21",
+   "weapon_filter": ""
+  }
+ ]
+}
