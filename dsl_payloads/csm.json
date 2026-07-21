@@ -1,0 +1,4690 @@
+{
+ "_comment": "P7 阵营技能 DSL 唯一真源（混沌星际战士 Chaos Space Marines，faction='CSM'，P7-PR28）。DB effect_dsl_json/dsl_status 只是投影，由 `python -m db_compile dsl-apply` 写入并挂 restore；A/B 工作单见 docs/superpowers/plans/2026-07-20-p7-pr28-csm-worklist.md。覆盖 1 条军规（黑暗契约）+ 20 个分队容器（18 个库内分队 + 2 个 FP 全新分队）的 23 条分队规则 + 105 战略 + 68 增强 = 197 条。三态：19 encoded / 44 partial / 134 not_modeled。零新引擎通道、零新态势开关（纯编码 PR）。混沌星际战士是「黑暗契约状态机 + 士气恐惧 + 移动资格」气质阵营——军规黑暗契约二选一、神印五选一、Desperate Pact / 契约调用 / Default to Doctrine 三套状态、Battle-shock 士气链、目标点经济、大量移动/冲锋资格条款全无引擎载体，故 not_modeled 占多数；可编子集集中在 AP 改善·恶化 / [IGNORES COVER] / Stealth（掩体）/ FNP / 特殊保护 / 命中·致伤骰修正与重掷 / 暴击阈值 / [LANCE]（melee_charging）/ [HEAVY]（stationary）/ [DEVASTATING WOUNDS] / S≤T·S>T 延迟判定。阶段门纪律（双向核对）：WHEN 落在单一相位的挂 phase_melee/phase_shooting；WHEN 写「射击阶段或近战阶段」的一律不加门（过度加门＝欠建模，同属事实错误）；腐化装甲 WHEN=战斗阶段且「持续到回合结束」——战斗是回合最后一个攻击阶段，故仍只挂 phase_melee。防高估：重掷特定点数「1」（混沌之印 / 猎弱而噬）、单骰单次重掷（传奇之印）、特征值 SET（Torrent A=6 / 伤害置 0）、多选一单分支（黑暗契约 / 神印 / 实验性增体 / 悍勇杀手三选一 / 从不落于下风）、**单一相位 × 目标战损档无复合 tag**（逐个击破 / 无情炮击 / 无底残酷 / 无情猎手）、**射击 × S>T 无复合 tag**（钢铁坚毅 / 不灭之恨）、**「三关键词任一」析取**（灵魂清算献祭）、攻方自身战损档（不屈袭击者第二段 / 燃火之刺）、按武器名清单过滤（黑色远征）一律不编。",
+ "dsl_version": 1,
+ "faction": "CSM",
+ "entries": [
+  {
+   "table": "abilities",
+   "id": "000008359",
+   "side": "attacker",
+   "detachment": null,
+   "name_en": "Dark Pacts",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "黑暗契约（军规）：每次射击/近战可发动，成功后在 [LETHAL HITS] 与 [SUSTAINED HITS 1] 中二选一——引擎无二选一分支开关，裸编任一支等于把选择当恒开，过度施加",
+    "发动前须过领导力检定，失败受 D3 致命伤——引擎无领导力检定与自伤池"
+   ],
+   "provenance": {
+    "text_sha256": "517abad7127b91f2e60294faef0f24e8d9a4075b496a7fd089b11016546e15c1"
+   },
+   "encoded_by": "manual-2026-07-21",
+   "weapon_filter": ""
+  },
+  {
+   "table": "abilities",
+   "id": "det000008362",
+   "side": "attacker",
+   "detachment": "Pactbound Zealots",
+   "name_en": "Marks of Chaos",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "混沌之印（Pactbound Zealots）：暴击阈值 5+ 的分档同时挂两重无载体门——① 本单位这次 Dark Pact 拿到的是 [LETHAL HITS] 还是 [SUSTAINED HITS 1]（二选一状态）；② 军队组建时给该单位选的神印（KHORNE/TZEENTCH/NURGLE/SLAANESH/UNDIVIDED）",
+    "CHAOS UNDIVIDED 支是「重掷命中骰 1」——引擎 hit/reroll 只有「重掷失败」一种模式，重掷特定点数无通道"
+   ],
+   "provenance": {
+    "text_sha256": "10cdb8e0537f6f0fc18b1d01396914c6b12930ef8245f115f708434997d2973c"
+   },
+   "encoded_by": "manual-2026-07-21",
+   "weapon_filter": "",
+   "materialize": {
+    "from_table": "detachments",
+    "from_id": "000008362",
+    "from_column": "rule_text"
+   }
+  },
+  {
+   "table": "abilities",
+   "id": "det000008959",
+   "side": "attacker",
+   "detachment": "Veterans of the Long War",
+   "name_en": "Focus of Hatred",
+   "name_zh": null,
+   "status": "partial",
+   "effects": [
+    {
+     "phase": "hit",
+     "op": "reroll",
+     "params": [
+      "fail"
+     ],
+     "condition": [],
+     "source": "仇恨焦点（对被点名的仇恨焦点单位重掷命中骰）"
+    }
+   ],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "仇恨焦点是每个指挥阶段点名的单一敌军单位——引擎单向单目标模拟按「当前目标即仇恨焦点」处理（高估）；实战中一回合只有一个敌军单位吃到",
+    "原文排除 DAMNED 模型——引擎无攻方自关键词门，注入到任何攻方都会生效"
+   ],
+   "provenance": {
+    "text_sha256": "1431f94485338d20f2ce142097f18ccc87a69f29b8674016cf47bc1f99786a2d"
+   },
+   "encoded_by": "manual-2026-07-21",
+   "weapon_filter": "",
+   "materialize": {
+    "from_table": "detachments",
+    "from_id": "000008959",
+    "from_column": "rule_text"
+   }
+  },
+  {
+   "table": "abilities",
+   "id": "det000008963",
+   "side": "attacker",
+   "detachment": "Deceptors",
+   "name_en": "Masters of Misdirection",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "误导大师（Deceptors）：宣告战斗编成阶段给若干 LEGIONARIES / CULTIST MOB 单位 Infiltrators——部署位置与战斗规模分档全在地图域，无引擎载体"
+   ],
+   "provenance": {
+    "text_sha256": "a22abd5832fe67975e0e8f6cd4ec24d4f893bbb3364cd3b3e2236eec6aece780"
+   },
+   "encoded_by": "manual-2026-07-21",
+   "weapon_filter": "",
+   "materialize": {
+    "from_table": "detachments",
+    "from_id": "000008963",
+    "from_column": "rule_text"
+   }
+  },
+  {
+   "table": "abilities",
+   "id": "det000008967",
+   "side": "attacker",
+   "detachment": "Renegade Raiders",
+   "name_en": "Raiders and Reavers",
+   "name_zh": null,
+   "status": "partial",
+   "effects": [
+    {
+     "phase": "save",
+     "op": "ap_improve",
+     "params": [
+      1
+     ],
+     "condition": [],
+     "source": "劫掠者与蹂躏者（攻击目标点范围内的单位时 AP 改善 1；原文两相位通用故不加相位门）"
+    }
+   ],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "「目标点范围内」几何前提无引擎载体，按恒满足处理（高估）",
+    "远程武器获 [ASSAULT]（加速回合仍可射击）属移动资格域，无引擎载体"
+   ],
+   "provenance": {
+    "text_sha256": "6abbb15059abfb0dc1bb5c315c17442f06ab5ab896b1f218d89a13f87ca00856"
+   },
+   "encoded_by": "manual-2026-07-21",
+   "weapon_filter": "",
+   "materialize": {
+    "from_table": "detachments",
+    "from_id": "000008967",
+    "from_column": "rule_text"
+   }
+  },
+  {
+   "table": "abilities",
+   "id": "det000008971",
+   "side": "attacker",
+   "detachment": "Dread Talons",
+   "name_en": "Terror Descends (Aura)",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "恐惧降临（Dread Talons，光环）：整条围绕士气检定（强制检定 + 结果 -1）——引擎无士气/Battle-shock 状态"
+   ],
+   "provenance": {
+    "text_sha256": "0e3dadb0c8da371326b64f018eca2b186154282cd18b4b3abab8990147747d95"
+   },
+   "encoded_by": "manual-2026-07-21",
+   "weapon_filter": "",
+   "materialize": {
+    "from_table": "detachments",
+    "from_id": "000008971",
+    "from_column": "rule_text"
+   }
+  },
+  {
+   "table": "abilities",
+   "id": "det000008975",
+   "side": "target",
+   "detachment": "Fellhammer Siege-host",
+   "name_en": "Iron Fortitude",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "钢铁坚毅（Fellhammer Siege-host）：**远程**攻击且 S>T 时被伤 -1——引擎只有 `wound_s_gt_t`（无相位门，会在近战误放行）与 `melee_wound_s_gt_t`（近战向），缺「射击 × S>T」复合 tag；只挂 phase_shooting 又会丢掉 S>T 前提对全部远程过度施加。两个方向都错，故不编",
+    "原文排除 DAMNED 单位——引擎无守方自关键词门"
+   ],
+   "provenance": {
+    "text_sha256": "c63e67aff16ca856e737ee9e4de24c959a70a52847ea244df36c513ad80c6868"
+   },
+   "encoded_by": "manual-2026-07-21",
+   "weapon_filter": "",
+   "materialize": {
+    "from_table": "detachments",
+    "from_id": "000008975",
+    "from_column": "rule_text"
+   }
+  },
+  {
+   "table": "abilities",
+   "id": "det000008979",
+   "side": "attacker",
+   "detachment": "Chaos Cult",
+   "name_en": "Desperate Devotion",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "绝望虔诚（Chaos Cult）：Desperate Pact 换 +2 移动与 +2 冲锋骰——移动/冲锋域无引擎载体；领导力检定与失败 D3 致命伤亦无载体"
+   ],
+   "provenance": {
+    "text_sha256": "15b2294c639571f2ed978c58231cf322a9a04964bfa2b340eb3c6c19cddd1cfb"
+   },
+   "encoded_by": "manual-2026-07-21",
+   "weapon_filter": "",
+   "materialize": {
+    "from_table": "detachments",
+    "from_id": "000008979",
+    "from_column": "rule_text"
+   }
+  },
+  {
+   "table": "abilities",
+   "id": "det000008980",
+   "side": "attacker",
+   "detachment": "Chaos Cult",
+   "name_en": "KEYWORDS",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "KEYWORDS（Chaos Cult 附条）：给 TRAITOR GUARDSMEN SQUAD 加 BATTLELINE 关键词——关键词授予属编制/关键词域，无战斗链载体"
+   ],
+   "provenance": {
+    "text_sha256": "3a88e1e24ad3d23578a26c7ccb5e11df352a2dc4ce1c0a7baee8271b9c779bb6"
+   },
+   "encoded_by": "manual-2026-07-21",
+   "weapon_filter": "",
+   "materialize": {
+    "from_table": "detachments",
+    "from_id": "000008980",
+    "from_column": "rule_text"
+   }
+  },
+  {
+   "table": "abilities",
+   "id": "det000008984",
+   "side": "attacker",
+   "detachment": "Soulforged Warpack",
+   "name_en": "Debt to the Soul Forge",
+   "name_zh": null,
+   "status": "partial",
+   "effects": [
+    {
+     "phase": "wound",
+     "op": "modify",
+     "params": [
+      1
+     ],
+     "condition": [
+      "phase_shooting"
+     ],
+     "source": "灵魂熔炉之债（调用契约后远程致伤 +1）"
+    },
+    {
+     "phase": "attacks",
+     "op": "modify",
+     "params": [
+      2
+     ],
+     "condition": [
+      "phase_melee"
+     ],
+     "source": "灵魂熔炉之债（调用契约后近战武器 A +2）"
+    }
+   ],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "仅 HERETIC ASTARTES DAEMON VEHICLE 单位可调用契约——引擎无攻方自关键词门，注入到任何攻方都会生效",
+    "「可以调用」是可选动作且调用会使该次 Dark Pact 的领导力检定 -1——按恒调用处理（高估），检定失败的致命伤未建模"
+   ],
+   "provenance": {
+    "text_sha256": "d0fba5f963cae9535e9a0056cded335781825dd4a25f54713d1bcc329026a429"
+   },
+   "encoded_by": "manual-2026-07-21",
+   "weapon_filter": "",
+   "materialize": {
+    "from_table": "detachments",
+    "from_id": "000008984",
+    "from_column": "rule_text"
+   }
+  },
+  {
+   "table": "abilities",
+   "id": "det000009502",
+   "side": "attacker",
+   "detachment": "Infernal Reavers",
+   "name_en": "Dark Rewards",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "黑暗赏赐（Infernal Reavers）：Dark Pact 领导力检定 9+ 得 1CP——CP 经济无引擎载体"
+   ],
+   "provenance": {
+    "text_sha256": "f4200b80b3d606473df574c6684d9f28ee33f0eea88fb27b49599e8e998589c2"
+   },
+   "encoded_by": "manual-2026-07-21",
+   "weapon_filter": "",
+   "materialize": {
+    "from_table": "detachments",
+    "from_id": "000009502",
+    "from_column": "rule_text"
+   }
+  },
+  {
+   "table": "abilities",
+   "id": "det000009511",
+   "side": "attacker",
+   "detachment": "Underdeck Uprising",
+   "name_en": "Fanatical Onslaught",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "狂热猛攻（Underdeck Uprising）：被射击减员后可做 3\" Rush 移动——移动域无引擎载体"
+   ],
+   "provenance": {
+    "text_sha256": "93d775035a307a3a974ea84de6b34d104281b8959fc6eba4bca28fa9612c5f81"
+   },
+   "encoded_by": "manual-2026-07-21",
+   "weapon_filter": "",
+   "materialize": {
+    "from_table": "detachments",
+    "from_id": "000009511",
+    "from_column": "rule_text"
+   }
+  },
+  {
+   "table": "abilities",
+   "id": "det000009519",
+   "side": "attacker",
+   "detachment": "Champions of Chaos",
+   "name_en": "Dark Purpose",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "黑暗目的（Champions of Chaos）：巩固移动可朝最近目标点——移动与目标点几何无引擎载体"
+   ],
+   "provenance": {
+    "text_sha256": "67c5e246f77e9e4106250905648488989632d43d0305dd6ee086e348623da4f7"
+   },
+   "encoded_by": "manual-2026-07-21",
+   "weapon_filter": "",
+   "materialize": {
+    "from_table": "detachments",
+    "from_id": "000009519",
+    "from_column": "rule_text"
+   }
+  },
+  {
+   "table": "abilities",
+   "id": "det000009772",
+   "side": "attacker",
+   "detachment": "Creations of Bile",
+   "name_en": "Experimental Augmentations",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "实验性增体（Creations of Bile）：开局在 6 项增体中选一项、或随机掷两项——多选一/随机二无分支开关，裸编任一项等于把选择当恒开",
+    "六项中 +1 A / +1 S / WS 改善本可落 attacks/modify · wound/s_improve · hit/modify，但均被上面的选择门锁住；+2\" 移动与 +1 T（模型特征值）另属无载体项"
+   ],
+   "provenance": {
+    "text_sha256": "b9debcb515a5e7217aa70b5c209a580670f19a098b42e4dd7c1d5ea3b36be001"
+   },
+   "encoded_by": "manual-2026-07-21",
+   "weapon_filter": "",
+   "materialize": {
+    "from_table": "detachments",
+    "from_id": "000009772",
+    "from_column": "rule_text"
+   }
+  },
+  {
+   "table": "abilities",
+   "id": "det000010150",
+   "side": "attacker",
+   "detachment": "Cabal of Chaos",
+   "name_en": "Empyric Wellspring",
+   "name_zh": null,
+   "status": "partial",
+   "effects": [
+    {
+     "phase": "wound",
+     "op": "s_improve",
+     "params": [
+      1
+     ],
+     "condition": [
+      "phase_shooting"
+     ],
+     "source": "灵能涌泉（PSYKER 单位发动 Dark Pact 后远程攻击 S +1）"
+    },
+    {
+     "phase": "wound",
+     "op": "s_improve",
+     "params": [
+      2
+     ],
+     "condition": [
+      "phase_melee"
+     ],
+     "source": "灵能涌泉（DAEMON PRINCE 发动 Dark Pact 后近战攻击 S +2）"
+    },
+    {
+     "phase": "save",
+     "op": "ap_improve",
+     "params": [
+      1
+     ],
+     "condition": [
+      "phase_melee"
+     ],
+     "source": "灵能涌泉（DAEMON PRINCE 发动 Dark Pact 后近战攻击 AP +1）"
+    }
+   ],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "两条从句分别只给 HERETIC ASTARTES PSYKER（排除 DAEMON）与 HERETIC ASTARTES DAEMON PRINCE（排除 KHORNE）——引擎无攻方自关键词门，两条会同时注入到同一攻方（高估）",
+    "前提「本单位已成功发动 Dark Pact」——引擎无 Dark Pact 状态开关，按已发动处理（高估）；发动失败的 D3 致命伤亦未建模"
+   ],
+   "provenance": {
+    "text_sha256": "6a029aee2328afea0d6bb8ada178301339034710b5917f810fc17c945064ea28"
+   },
+   "encoded_by": "manual-2026-07-21",
+   "weapon_filter": "",
+   "materialize": {
+    "from_table": "detachments",
+    "from_id": "000010150",
+    "from_column": "rule_text"
+   }
+  },
+  {
+   "table": "abilities",
+   "id": "det000010640",
+   "side": "attacker",
+   "detachment": "Nightmare Hunt",
+   "name_en": "Terror Made Manifest",
+   "name_zh": null,
+   "status": "partial",
+   "effects": [
+    {
+     "phase": "hit",
+     "op": "modify",
+     "params": [
+      1
+     ],
+     "condition": [
+      "target_below_half"
+     ],
+     "source": "恐惧成真（对低于半编目标命中 +1）"
+    }
+   ],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "第 1 条（士气检定强制 + 结果 -1）、第 3 条（攻方处于 Battle-shocked 时对我方命中 -1）、第 4 条（对 Battle-shocked 目标致伤 +1）全部依赖士气状态——引擎无 Battle-shock 状态"
+   ],
+   "provenance": {
+    "text_sha256": "e692eae312edcc0c79b713ba8a1efb17cf900466cdee1c61afc2ad90813c7300"
+   },
+   "encoded_by": "manual-2026-07-21",
+   "weapon_filter": "",
+   "materialize": {
+    "from_table": "detachments",
+    "from_id": "000010640",
+    "from_column": "rule_text"
+   }
+  },
+  {
+   "table": "abilities",
+   "id": "det000010687",
+   "side": "attacker",
+   "detachment": "Huron’s Marauders",
+   "name_en": "Tyrannical Motivation",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "暴君的鞭策（Huron’s Marauders）：每指挥阶段在 Huron’s Elite（命中 +1）与 Mobile Marauders（撤退后可射击/冲锋）中二选一——无二选一分支开关",
+    "「对 Huron Blackheart 可见则两项同时生效」是可见性几何，亦无载体"
+   ],
+   "provenance": {
+    "text_sha256": "608f42c7f5b26d207dd703ffc9a4af73f82c623cf475355af083b53054a6fc71"
+   },
+   "encoded_by": "manual-2026-07-21",
+   "weapon_filter": "",
+   "materialize": {
+    "from_table": "detachments",
+    "from_id": "000010687",
+    "from_column": "rule_text"
+   }
+  },
+  {
+   "table": "abilities",
+   "id": "det000010691",
+   "side": "attacker",
+   "detachment": "Renegade Warband",
+   "name_en": "Slaves to None",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "不臣于谁（Renegade Warband）：失去 Dark Pacts 军规 + 远程武器获 [ASSAULT] + 禁用 Cults of the Dark Gods——三条分别属军规状态、移动资格、组建期，均无战斗链载体"
+   ],
+   "provenance": {
+    "text_sha256": "c3527a931fc144202e29fbe52010a95f3a6290d244c156ce6afbfa82ff126cfd"
+   },
+   "encoded_by": "manual-2026-07-21",
+   "weapon_filter": "",
+   "materialize": {
+    "from_table": "detachments",
+    "from_id": "000010691",
+    "from_column": "rule_text"
+   }
+  },
+  {
+   "table": "abilities",
+   "id": "det000010692",
+   "side": "attacker",
+   "detachment": "Renegade Warband",
+   "name_en": "Vendetta",
+   "name_zh": null,
+   "status": "partial",
+   "effects": [
+    {
+     "phase": "hit",
+     "op": "reroll",
+     "params": [
+      "fail"
+     ],
+     "condition": [],
+     "source": "血仇（对被点名的 Vendetta 目标重掷命中骰）"
+    }
+   ],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "Vendetta 目标是每个指挥阶段点名的单一敌军单位——引擎按「当前目标即 Vendetta 目标」处理（高估）",
+    "原文排除 Damned 模型——引擎无攻方自关键词门"
+   ],
+   "provenance": {
+    "text_sha256": "0d2b2ddf2aedde5c7174c5c8ae15a8b36c87332f9b90eecaf6df92b5a2aa8bf0"
+   },
+   "encoded_by": "manual-2026-07-21",
+   "weapon_filter": "",
+   "materialize": {
+    "from_table": "detachments",
+    "from_id": "000010692",
+    "from_column": "rule_text"
+   }
+  },
+  {
+   "table": "abilities",
+   "id": "det000010693",
+   "side": "attacker",
+   "detachment": "Renegade Warband",
+   "name_en": "Twisted Doctrine",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "扭曲教条（Renegade Warband）：移动阶段可 Default to Doctrine 换撤退后射击/冲锋或加速后冲锋——移动资格域 + 士气检定前置，均无引擎载体"
+   ],
+   "provenance": {
+    "text_sha256": "80d0e6922ec21f016f510d6d16ac3b3deab1597d7bedafb12945ab5eb7c3de11"
+   },
+   "encoded_by": "manual-2026-07-21",
+   "weapon_filter": "",
+   "materialize": {
+    "from_table": "detachments",
+    "from_id": "000010693",
+    "from_column": "rule_text"
+   }
+  },
+  {
+   "table": "abilities",
+   "id": "det000010738",
+   "side": "attacker",
+   "detachment": "Warpstrike Champions",
+   "name_en": "Warp Portals",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "亚空之门（Warpstrike Champions）：回合末把终结者/湮灭者/残虐者收回战略预备队——预备队域无引擎载体"
+   ],
+   "provenance": {
+    "text_sha256": "f4088f712d6ffc909bd8f50c5ce97d4b8bd4b0165635f7e54049084db5faf21b"
+   },
+   "encoded_by": "manual-2026-07-21",
+   "weapon_filter": "",
+   "materialize": {
+    "from_table": "detachments",
+    "from_id": "000010738",
+    "from_column": "rule_text"
+   }
+  },
+  {
+   "table": "abilities",
+   "id": "det000010742",
+   "side": "target",
+   "detachment": "Cult of the Arkifane",
+   "name_en": "Soul Forge Boons",
+   "name_zh": null,
+   "status": "partial",
+   "effects": [
+    {
+     "phase": "save",
+     "op": "invuln",
+     "params": [
+      5
+     ],
+     "condition": [],
+     "source": "灵魂熔炉恩赐（SOUL FORGE 单位 5+ 特殊保护）"
+    }
+   ],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "前两条（车辆获 Daemon 关键词、车辆/Lord Discordant/Vashtorr 获 SOUL FORGE 关键词）属关键词授予，无战斗链载体",
+    "5+ 特殊保护只给 SOUL FORGE 单位——引擎无守方自关键词门，注入到任何守方都会生效，适用性由使用者自查"
+   ],
+   "provenance": {
+    "text_sha256": "bca56e2c7d9feed623f7adc999aaa3db622d3a7ae1e15884ea55a4d73923378a"
+   },
+   "encoded_by": "manual-2026-07-21",
+   "weapon_filter": "",
+   "materialize": {
+    "from_table": "detachments",
+    "from_id": "000010742",
+    "from_column": "rule_text"
+   }
+  },
+  {
+   "table": "abilities",
+   "id": "detfp11e-csm-devotees",
+   "side": "attacker",
+   "detachment": "Devotees of Destruction",
+   "name_en": "Rain of Ruin",
+   "name_zh": null,
+   "status": "partial",
+   "effects": [
+    {
+     "phase": "hit",
+     "op": "modify",
+     "params": [
+      1
+     ],
+     "condition": [
+      "stationary"
+     ],
+     "source": "毁灭之雨（HAVOCS/OBLITERATORS 远程武器获 [HEAVY]：驻停命中 +1）"
+    }
+   ],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "仅 HAVOCS / OBLITERATORS 单位——引擎无攻方自关键词门",
+    "[HEAVY] 只作用于远程武器，而 `stationary` tag 不含相位门——若在近战阶段同时开驻停，会对近战误放行（高估），须以射击态势模拟"
+   ],
+   "provenance": {
+    "text_sha256": "347debe6dd6d36bc45ebb69911e7deed66d856842fb069bc8e9aff5343cf8c39"
+   },
+   "encoded_by": "manual-2026-07-21",
+   "weapon_filter": "",
+   "materialize": {
+    "from_table": "detachments",
+    "from_id": "fp11e-csm-devotees",
+    "from_column": "rule_text"
+   }
+  },
+  {
+   "table": "abilities",
+   "id": "detfp11e-csm-murdertalon",
+   "side": "attacker",
+   "detachment": "Murdertalon Raiders",
+   "name_en": "Prey on the Weak",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "猎弱而噬（Murdertalon Raiders）第 1 条是「重掷命中骰 1」——引擎 hit/reroll 只有「重掷失败」一种模式，重掷特定点数无通道；且门控为「士气崩溃 和/或 半编以下」，士气分量亦无载体",
+    "第 2 条门控在**攻方自身**是否 Battle-shocked / 半编以下——引擎 target_below_* 是目标侧状态，无攻方战损载体",
+    "NIGHTMARE 分队互斥标签属编制域"
+   ],
+   "provenance": {
+    "text_sha256": "7f6eb5fde5fd71c34fe51498b9501f3fcf705032561a7cfc8e9662d8a47a910e"
+   },
+   "encoded_by": "manual-2026-07-21",
+   "weapon_filter": "",
+   "materialize": {
+    "from_table": "detachments",
+    "from_id": "fp11e-csm-murdertalon",
+    "from_column": "rule_text"
+   }
+  },
+  {
+   "table": "stratagems",
+   "id": "fp11e-csm-cabal-s1",
+   "side": "attacker",
+   "detachment": "Cabal of Chaos",
+   "name_en": "INFERNAL VIGOUR",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "邪能活力：治疗 D3+1 伤——治疗域无引擎载体"
+   ],
+   "provenance": {
+    "text_sha256": "8af2442e3ce7d3b34d0c6fcc001f29f1b758543bb5bfd4955ddc9f5efd9eea84"
+   },
+   "encoded_by": "manual-2026-07-21",
+   "weapon_filter": ""
+  },
+  {
+   "table": "stratagems",
+   "id": "fp11e-csm-cabal-s2",
+   "side": "attacker",
+   "detachment": "Cabal of Chaos",
+   "name_en": "FLESHY CURSE",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "肉身之咒：对 12\" 内可见敌军掷 D6 造成 1/D3/2D3 致命伤——外部致命伤池（不经攻击序列）无引擎载体"
+   ],
+   "provenance": {
+    "text_sha256": "44b4beceb7c43ffa03d2cca5fe8c05c164deaeb0300dd07651b714a9d3ad86f4"
+   },
+   "encoded_by": "manual-2026-07-21",
+   "weapon_filter": ""
+  },
+  {
+   "table": "stratagems",
+   "id": "fp11e-csm-cabal-s3",
+   "side": "attacker",
+   "detachment": "Cabal of Chaos",
+   "name_en": "WREATHED IN WARPFLAME",
+   "name_zh": null,
+   "status": "encoded",
+   "effects": [
+    {
+     "phase": "save",
+     "op": "ignores_cover",
+     "params": [],
+     "condition": [
+      "phase_shooting"
+     ],
+     "source": "亚空间烈焰缠身（本单位远程攻击获 [IGNORES COVER]）"
+    }
+   ],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [],
+   "provenance": {
+    "text_sha256": "b829f651aa7f18b422b7d76344ca9814d81a0f100f4f1df9bc05d5f93f3b6816"
+   },
+   "encoded_by": "manual-2026-07-21",
+   "weapon_filter": ""
+  },
+  {
+   "table": "stratagems",
+   "id": "000009521002",
+   "side": "attacker",
+   "detachment": "Champions of Chaos",
+   "name_en": "IMPERIOUS ADVANCE",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "威严推进：+1 A 只给所选的部分模型，且被选模型必须打「舱门另一侧」的敌军——部分模型选择与登舰行动舱门几何均无引擎载体"
+   ],
+   "provenance": {
+    "text_sha256": "74f068496af7e79fc672bf586decc7e8b8ba61c172babcc73ccd73d17ec4acbe"
+   },
+   "encoded_by": "manual-2026-07-21",
+   "weapon_filter": ""
+  },
+  {
+   "table": "stratagems",
+   "id": "000009521003",
+   "side": "attacker",
+   "detachment": "Champions of Chaos",
+   "name_en": "MALIGN WILL",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "恶意之志：Dark Pact 领导力检定 -1 + 目标点 Secured——领导力检定与目标点经济无引擎载体"
+   ],
+   "provenance": {
+    "text_sha256": "595e68aef3c32ece0ed5bbe157f5610852cd5d158faa2798719281deef663583"
+   },
+   "encoded_by": "manual-2026-07-21",
+   "weapon_filter": ""
+  },
+  {
+   "table": "stratagems",
+   "id": "000009521004",
+   "side": "attacker",
+   "detachment": "Champions of Chaos",
+   "name_en": "INFERNAL PATRONS",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "邪恶庇主：对手战略反制（领导力检定使其失效）——战略层无引擎载体"
+   ],
+   "provenance": {
+    "text_sha256": "426bd43061dbb3abbf71b0a46cdf5ffca3b0ee81efeb080493ac0711913f51f5"
+   },
+   "encoded_by": "manual-2026-07-21",
+   "weapon_filter": ""
+  },
+  {
+   "table": "stratagems",
+   "id": "000009521005",
+   "side": "attacker",
+   "detachment": "Champions of Chaos",
+   "name_en": "AGGRESSIVE STRIKE",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "凌厉突袭：深空突击后额外 6\" 普通移动——移动域无引擎载体"
+   ],
+   "provenance": {
+    "text_sha256": "d5aa631c985c0a9ac2500132710b1af8af960ecd6fc0d057a1039707b8b5b416"
+   },
+   "encoded_by": "manual-2026-07-21",
+   "weapon_filter": ""
+  },
+  {
+   "table": "stratagems",
+   "id": "000008982002",
+   "side": "attacker",
+   "detachment": "Chaos Cult",
+   "name_en": "CHOSEN FOR GLORY",
+   "name_zh": null,
+   "status": "partial",
+   "effects": [
+    {
+     "phase": "hit",
+     "op": "reroll",
+     "params": [
+      "fail"
+     ],
+     "condition": [],
+     "source": "荣耀之选（Desperate Pact 后重掷命中骰；原文两相位通用故不加门）"
+    }
+   ],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "第二段「若领导力检定未失败则连致伤骰也可重掷」依赖 Desperate Pact 检定结果——引擎无领导力检定状态，保守只编重掷命中（欠建模）",
+    "Desperate Pact 检定失败的 D3 致命伤未建模"
+   ],
+   "provenance": {
+    "text_sha256": "273dbe2a86a8db041dce3a6a26c1ed5435d3b32635eea51972b1aa7afad63e53"
+   },
+   "encoded_by": "manual-2026-07-21",
+   "weapon_filter": ""
+  },
+  {
+   "table": "stratagems",
+   "id": "000008982003",
+   "side": "attacker",
+   "detachment": "Chaos Cult",
+   "name_en": "SELFLESS DEMISE",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "无私殒命：己方模型阵亡时掷 D6 对攻方造成致命伤——反打致命伤池无载体"
+   ],
+   "provenance": {
+    "text_sha256": "f14fb81a44fb243e63f61d8f29abd7c4c64b42856520160d73bbfed06622cf36"
+   },
+   "encoded_by": "manual-2026-07-21",
+   "weapon_filter": ""
+  },
+  {
+   "table": "stratagems",
+   "id": "000008982004",
+   "side": "attacker",
+   "detachment": "Chaos Cult",
+   "name_en": "INFERNAL SACRIFICE",
+   "name_zh": null,
+   "status": "partial",
+   "effects": [
+    {
+     "phase": "attacks",
+     "op": "modify",
+     "params": [
+      1
+     ],
+     "condition": [
+      "phase_melee"
+     ],
+     "source": "邪恶献祭（近战武器 A +1）"
+    }
+   ],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "第二段「若领导力检定未失败则近战武器 S 再 +1」依赖检定结果，未编（欠建模）",
+    "本战略必定使本单位承受 D3 致命伤（外加检定失败的追加致命伤）——自伤未建模，属高估"
+   ],
+   "provenance": {
+    "text_sha256": "e16d740d4e1473a366ca73ff16f6341a8548118234f25051c258c91cfa8a5457"
+   },
+   "encoded_by": "manual-2026-07-21",
+   "weapon_filter": ""
+  },
+  {
+   "table": "stratagems",
+   "id": "000008982005",
+   "side": "attacker",
+   "detachment": "Chaos Cult",
+   "name_en": "CRAZED FOCUS",
+   "name_zh": null,
+   "status": "partial",
+   "effects": [
+    {
+     "phase": "save",
+     "op": "ap_improve",
+     "params": [
+      1
+     ],
+     "condition": [
+      "phase_shooting"
+     ],
+     "source": "疯狂专注（射击阶段攻击 AP 改善 1）"
+    }
+   ],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "第二段「若领导力检定未失败则 S 再 +1」依赖检定结果，未编（欠建模）",
+    "Desperate Pact 检定失败的 D3 致命伤未建模"
+   ],
+   "provenance": {
+    "text_sha256": "576ee824b22387cf149828780773d640b8edcc6be8ccfb93813207ab13594731"
+   },
+   "encoded_by": "manual-2026-07-21",
+   "weapon_filter": ""
+  },
+  {
+   "table": "stratagems",
+   "id": "000008982006",
+   "side": "attacker",
+   "detachment": "Chaos Cult",
+   "name_en": "RECKLESS HASTE",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "鲁莽疾行：加速回合可宣告冲锋——移动资格域无引擎载体"
+   ],
+   "provenance": {
+    "text_sha256": "adda31041653acc54afbc506f220ed93c8168d0e2bd1b96d60edab04bbf113ba"
+   },
+   "encoded_by": "manual-2026-07-21",
+   "weapon_filter": ""
+  },
+  {
+   "table": "stratagems",
+   "id": "000008982007",
+   "side": "attacker",
+   "detachment": "Chaos Cult",
+   "name_en": "MORTAL THRALLS",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "凡人傀儡：把致伤改判为友军 DAMNED 单位承受等量致命伤——转移伤害无载体"
+   ],
+   "provenance": {
+    "text_sha256": "b5f9e38524cce3efeaf873ea888f0929c31836a758787a7dd588646413a7f6d8"
+   },
+   "encoded_by": "manual-2026-07-21",
+   "weapon_filter": ""
+  },
+  {
+   "table": "stratagems",
+   "id": "000009774002",
+   "side": "target",
+   "detachment": "Creations of Bile",
+   "name_en": "MONSTROUS VISAGES",
+   "name_zh": null,
+   "status": "encoded",
+   "effects": [
+    {
+     "phase": "hit",
+     "op": "modify",
+     "params": [
+      -1
+     ],
+     "condition": [],
+     "source": "狰狞相貌（攻击本单位的命中骰 -1；原文两相位通用故不加门）"
+    }
+   ],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [],
+   "provenance": {
+    "text_sha256": "0e4632775e3c5b3d40ac3126e8b39bfd97b42cceed9a71f7cd9ff84569e70c8b"
+   },
+   "encoded_by": "manual-2026-07-21",
+   "weapon_filter": ""
+  },
+  {
+   "table": "stratagems",
+   "id": "000009774003",
+   "side": "target",
+   "detachment": "Creations of Bile",
+   "name_en": "MASTERS ARE WATCHING",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "主人在看：阵亡模型 4+ 留场再打一次——出手顺序/复活域无引擎载体"
+   ],
+   "provenance": {
+    "text_sha256": "625ef52d5bc37ccc75baacb7d5a3c50db543a0e5026c517b62c5750483daa2cb"
+   },
+   "encoded_by": "manual-2026-07-21",
+   "weapon_filter": ""
+  },
+  {
+   "table": "stratagems",
+   "id": "000009774004",
+   "side": "attacker",
+   "detachment": "Creations of Bile",
+   "name_en": "SPECIMENS FOR THE SPIDER",
+   "name_zh": null,
+   "status": "partial",
+   "effects": [
+    {
+     "phase": "wound",
+     "op": "reroll",
+     "params": [
+      "fail"
+     ],
+     "condition": [
+      "melee_target_has_keyword",
+      "character"
+     ],
+     "source": "蛛主的标本（近战攻击 CHARACTER 目标重掷致伤骰）"
+    }
+   ],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "战后「敌军单位士气检定 / 若敌方 WARLORD 阵亡则 6\" 内全体检定」条款——士气域无引擎载体"
+   ],
+   "provenance": {
+    "text_sha256": "677b4896b8edad5a38d568569e3ca770a3f45fa8581cf458a0f320a232bb7b88"
+   },
+   "encoded_by": "manual-2026-07-21",
+   "weapon_filter": ""
+  },
+  {
+   "table": "stratagems",
+   "id": "000009774005",
+   "side": "attacker",
+   "detachment": "Creations of Bile",
+   "name_en": "DELAYED MUTATIONS",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "迟发突变：承受 D3 致命伤换一项实验性增体——增体多选一无分支开关"
+   ],
+   "provenance": {
+    "text_sha256": "157a95f4f624a57602dde82a5561c3bb956fd2d75a84197b7b61c20fcc84f75f"
+   },
+   "encoded_by": "manual-2026-07-21",
+   "weapon_filter": ""
+  },
+  {
+   "table": "stratagems",
+   "id": "000009774006",
+   "side": "attacker",
+   "detachment": "Creations of Bile",
+   "name_en": "DIABOLIC REGENERATION",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "邪恶再生：复活阵亡模型——复活域无引擎载体"
+   ],
+   "provenance": {
+    "text_sha256": "cbb84d1112b3dfb457a3c060965e446c6f2fc03f09e201f4b8befd7e7bd4a901"
+   },
+   "encoded_by": "manual-2026-07-21",
+   "weapon_filter": ""
+  },
+  {
+   "table": "stratagems",
+   "id": "000009774007",
+   "side": "attacker",
+   "detachment": "Creations of Bile",
+   "name_en": "AUTOSTIMULANTS",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "自体兴奋剂：加速回合可宣告冲锋——移动资格域无引擎载体"
+   ],
+   "provenance": {
+    "text_sha256": "6bc2c0eb0b4a5864b94be5f4001113b18811e070b3baf8b8996f7e2674570f28"
+   },
+   "encoded_by": "manual-2026-07-21",
+   "weapon_filter": ""
+  },
+  {
+   "table": "stratagems",
+   "id": "000010744002",
+   "side": "attacker",
+   "detachment": "Cult of the Arkifane",
+   "name_en": "TOUCH OF THE ARKIFANE",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "方尖之触：Dark Pact 可同时取两项能力——引擎无 Dark Pact 状态与二选一分支"
+   ],
+   "provenance": {
+    "text_sha256": "eade2b1541b5b81003f7afa57433aabf8d15fda3207bcb316bafa253e96f30b4"
+   },
+   "encoded_by": "manual-2026-07-21",
+   "weapon_filter": ""
+  },
+  {
+   "table": "stratagems",
+   "id": "000010744003",
+   "side": "attacker",
+   "detachment": "Cult of the Arkifane",
+   "name_en": "BALEFIRE BOON",
+   "name_zh": null,
+   "status": "encoded",
+   "effects": [
+    {
+     "phase": "save",
+     "op": "ap_improve",
+     "params": [
+      1
+     ],
+     "condition": [],
+     "source": "邪火恩赐（本单位攻击 AP 改善 1；原文两相位通用故不加门）"
+    }
+   ],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [],
+   "provenance": {
+    "text_sha256": "d15881e8f4582e98457fa4eebf9626ef6a686cec326b9aef5e16dc1803c6be9c"
+   },
+   "encoded_by": "manual-2026-07-21",
+   "weapon_filter": ""
+  },
+  {
+   "table": "stratagems",
+   "id": "000010744004",
+   "side": "attacker",
+   "detachment": "Cult of the Arkifane",
+   "name_en": "SOUL-TALLY OFFERING",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "灵魂清算献祭：「射击或近战 × 目标为 CHARACTER/MONSTER/VEHICLE 三者之一」——引擎 target_has_keyword 只接单个关键词、无「三者任一」析取载体；裸编单个关键词会漏、去掉关键词门又会对全部目标过度施加，故不编"
+   ],
+   "provenance": {
+    "text_sha256": "d3e0a3b826f0e06a1f1de0b1c37c086bb6d69dc66e61949d39ed00fafb6776df"
+   },
+   "encoded_by": "manual-2026-07-21",
+   "weapon_filter": ""
+  },
+  {
+   "table": "stratagems",
+   "id": "000010744005",
+   "side": "attacker",
+   "detachment": "Cult of the Arkifane",
+   "name_en": "BIOMECHANOID REGENERATION",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "生化机再生：治疗 D3 / 3 伤——治疗域无引擎载体"
+   ],
+   "provenance": {
+    "text_sha256": "2c61bc311b857b26dc13e6c989e48c9103e9ad93791ff1a6549cd39f5df22d07"
+   },
+   "encoded_by": "manual-2026-07-21",
+   "weapon_filter": ""
+  },
+  {
+   "table": "stratagems",
+   "id": "000010744006",
+   "side": "attacker",
+   "detachment": "Cult of the Arkifane",
+   "name_en": "FORGE-FIRE SURGE",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "熔炉之火激涌：加速后可射击/冲锋——移动资格域无引擎载体"
+   ],
+   "provenance": {
+    "text_sha256": "266d4f71dcaffd7cb91f50288b31fdfdf1f42a3c15be0bf6d5a1345bbb2fad4b"
+   },
+   "encoded_by": "manual-2026-07-21",
+   "weapon_filter": ""
+  },
+  {
+   "table": "stratagems",
+   "id": "000010744007",
+   "side": "target",
+   "detachment": "Cult of the Arkifane",
+   "name_en": "UNHOLY FORTITUDE",
+   "name_zh": null,
+   "status": "encoded",
+   "effects": [
+    {
+     "phase": "wound",
+     "op": "t_improve",
+     "params": [
+      1
+     ],
+     "condition": [
+      "phase_shooting"
+     ],
+     "source": "邪能坚韧（对手射击阶段本单位 T +1）"
+    }
+   ],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [],
+   "provenance": {
+    "text_sha256": "fc288742aba4e43a9347f0a55ea61ed150b3b933fc88018c7936b8cf48cabf61"
+   },
+   "encoded_by": "manual-2026-07-21",
+   "weapon_filter": ""
+  },
+  {
+   "table": "stratagems",
+   "id": "000008965002",
+   "side": "attacker",
+   "detachment": "Deceptors",
+   "name_en": "DETONATOR",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "引爆器：改判敌方 Deadly Demise 的致命伤判定——外部致命伤池无载体"
+   ],
+   "provenance": {
+    "text_sha256": "1cdcf049831d78285b10aaabed1824e71a6faef6a80f1f51a8a4ec14bcb4ccfd"
+   },
+   "encoded_by": "manual-2026-07-21",
+   "weapon_filter": ""
+  },
+  {
+   "table": "stratagems",
+   "id": "000008965003",
+   "side": "attacker",
+   "detachment": "Deceptors",
+   "name_en": "FROM ALL SIDES",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "四面合围：冲锋骰 +N——冲锋域无引擎载体"
+   ],
+   "provenance": {
+    "text_sha256": "8a85d357456795f96598f7b73168179cd76a2ab52891b4cca8e8bb1717c6e392"
+   },
+   "encoded_by": "manual-2026-07-21",
+   "weapon_filter": ""
+  },
+  {
+   "table": "stratagems",
+   "id": "000008965004",
+   "side": "attacker",
+   "detachment": "Deceptors",
+   "name_en": "PICK THEM OFF",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "逐个击破：WHEN 限**射击阶段**、效果门控在目标战损档——引擎缺「射击 × 目标低于满编」复合 tag；裸挂 target_below_starting 会在近战误放行，只挂 phase_shooting 又丢掉战损门，两个方向都错，故不编（同 PITILESS CANNONADE / PICK THEM OFF 类）"
+   ],
+   "provenance": {
+    "text_sha256": "fcabc8d8ad012d1033d5f0efeff35d9a9c4d21f8a44a0f5b213977a010239378"
+   },
+   "encoded_by": "manual-2026-07-21",
+   "weapon_filter": ""
+  },
+  {
+   "table": "stratagems",
+   "id": "000008965005",
+   "side": "attacker",
+   "detachment": "Deceptors",
+   "name_en": "COILS OF DECEPTION",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "欺诈之环：撤退后可射击——移动资格域无引擎载体"
+   ],
+   "provenance": {
+    "text_sha256": "48578a6b355b02886fb4aecaf2768e76f872878311e12992ba89a2d49e3bab03"
+   },
+   "encoded_by": "manual-2026-07-21",
+   "weapon_filter": ""
+  },
+  {
+   "table": "stratagems",
+   "id": "000008965006",
+   "side": "attacker",
+   "detachment": "Deceptors",
+   "name_en": "RELENTLESS PURSUIT",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "穷追不舍：对手移动阶段做 6\" 普通移动——移动域无引擎载体"
+   ],
+   "provenance": {
+    "text_sha256": "c82bc7a86d15a1238a823b8fcd9e0622a699728910d5f9486ecef081a254ff55"
+   },
+   "encoded_by": "manual-2026-07-21",
+   "weapon_filter": ""
+  },
+  {
+   "table": "stratagems",
+   "id": "000008965007",
+   "side": "attacker",
+   "detachment": "Deceptors",
+   "name_en": "SCRAMBLED COORDINATES",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "坐标扰乱：限制敌方预备队落点——预备队/部署域无引擎载体"
+   ],
+   "provenance": {
+    "text_sha256": "890a7069102ec0a31dd983f8a0db7de1e84305d6d2260af656a33af2b5bd92f1"
+   },
+   "encoded_by": "manual-2026-07-21",
+   "weapon_filter": ""
+  },
+  {
+   "table": "stratagems",
+   "id": "000008973002",
+   "side": "attacker",
+   "detachment": "Dread Talons",
+   "name_en": "DEPTHLESS CRUELTY",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "无底残酷：WHEN 限**近战阶段**、门控为「士气崩溃 和/或 半编以下」——士气分量无载体，战损分量缺「近战 × 目标低于半编」复合 tag，故不编"
+   ],
+   "provenance": {
+    "text_sha256": "8122e1e7a005806504c1e9351ccd91468c5434105f13b45680d4d6f0b2456b34"
+   },
+   "encoded_by": "manual-2026-07-21",
+   "weapon_filter": ""
+  },
+  {
+   "table": "stratagems",
+   "id": "000008973003",
+   "side": "attacker",
+   "detachment": "Dread Talons",
+   "name_en": "BLOODY EXAMPLE",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "血腥榜样：12\" 内敌军士气检定——士气域无引擎载体"
+   ],
+   "provenance": {
+    "text_sha256": "d6473590db1874deebb2c25f1704bbd4df1686cc3b23125a7f97f660fdf71ecc"
+   },
+   "encoded_by": "manual-2026-07-21",
+   "weapon_filter": ""
+  },
+  {
+   "table": "stratagems",
+   "id": "000008973004",
+   "side": "attacker",
+   "detachment": "Dread Talons",
+   "name_en": "PITILESS HUNTERS",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "无情猎手：WHEN 限**射击阶段** × 士气/战损档——同上，两分量均无载体"
+   ],
+   "provenance": {
+    "text_sha256": "0f1f7f3f966e2cac581798015137a997d9829da01841018777d4e9300f8bfa68"
+   },
+   "encoded_by": "manual-2026-07-21",
+   "weapon_filter": ""
+  },
+  {
+   "table": "stratagems",
+   "id": "000008973005",
+   "side": "attacker",
+   "detachment": "Dread Talons",
+   "name_en": "RELENTLESS TERROR",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "无情恐惧：撤退回合可宣告冲锋——移动资格域无引擎载体"
+   ],
+   "provenance": {
+    "text_sha256": "c0001c97a31b539c98bf82dde33297d11ce23ccbbdab1d6de16ec8cda24840d1"
+   },
+   "encoded_by": "manual-2026-07-21",
+   "weapon_filter": ""
+  },
+  {
+   "table": "stratagems",
+   "id": "000008973006",
+   "side": "attacker",
+   "detachment": "Dread Talons",
+   "name_en": "SCREAMING DESCENT",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "尖啸降临：预备队落点 + 士气检定——两者均无引擎载体"
+   ],
+   "provenance": {
+    "text_sha256": "a1233b501ab9a98130054ab9cf6d7b6e0e281f11bfb0c5f17979f9b9e39365dd"
+   },
+   "encoded_by": "manual-2026-07-21",
+   "weapon_filter": ""
+  },
+  {
+   "table": "stratagems",
+   "id": "000008973007",
+   "side": "attacker",
+   "detachment": "Dread Talons",
+   "name_en": "MERCILESS PURSUIT",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "无情追击：额外冲锋宣告——冲锋域无引擎载体"
+   ],
+   "provenance": {
+    "text_sha256": "fdc58660703fa1fd05436c1b83643385d4999e63621d24c4b359bc7320d705d5"
+   },
+   "encoded_by": "manual-2026-07-21",
+   "weapon_filter": ""
+  },
+  {
+   "table": "stratagems",
+   "id": "000008977002",
+   "side": "attacker",
+   "detachment": "Fellhammer Siege-host",
+   "name_en": "PERSISTENT ASSAILANTS",
+   "name_zh": null,
+   "status": "partial",
+   "effects": [
+    {
+     "phase": "hit",
+     "op": "reroll",
+     "params": [
+      "fail"
+     ],
+     "condition": [
+      "phase_melee"
+     ],
+     "source": "不屈袭击者（近战阶段重掷命中骰）"
+    }
+   ],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "第二段「若本单位低于半编则连致伤骰也可重掷」门控在**攻方自身**战损档——引擎 target_below_* 是目标侧状态，无攻方战损载体（欠建模）"
+   ],
+   "provenance": {
+    "text_sha256": "6bdf5b2a15975f645b68d7e1b552b61cb93c42dee27dc16fa2dfcfad72d73da9"
+   },
+   "encoded_by": "manual-2026-07-21",
+   "weapon_filter": ""
+  },
+  {
+   "table": "stratagems",
+   "id": "000008977003",
+   "side": "target",
+   "detachment": "Fellhammer Siege-host",
+   "name_en": "BRUTAL ATTRITION",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "残酷消耗：被近战分配伤害后掷 D6 反打致命伤——反打致命伤池无载体"
+   ],
+   "provenance": {
+    "text_sha256": "30c7d2251389a769d6c408c6e8331557bd616c8235af4fe1fd563ad244a5750e"
+   },
+   "encoded_by": "manual-2026-07-21",
+   "weapon_filter": ""
+  },
+  {
+   "table": "stratagems",
+   "id": "000008977004",
+   "side": "attacker",
+   "detachment": "Fellhammer Siege-host",
+   "name_en": "PITILESS CANNONADE",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "无情炮击：WHEN 限**射击阶段** × 目标低于半编 → 暴击命中阈值 5+——缺「射击 × 目标战损档」复合 tag，两个单挂方向都会错，故不编"
+   ],
+   "provenance": {
+    "text_sha256": "4b77e62a9926eaf10ddba2ef054b2e771e07c7fdc37d5480615b6850fbb72ec6"
+   },
+   "encoded_by": "manual-2026-07-21",
+   "weapon_filter": ""
+  },
+  {
+   "table": "stratagems",
+   "id": "000008977005",
+   "side": "attacker",
+   "detachment": "Fellhammer Siege-host",
+   "name_en": "POINT-BLANK DESTRUCTION",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "近距摧毁：远程武器获 [PISTOL]——接战内射击资格域无引擎载体"
+   ],
+   "provenance": {
+    "text_sha256": "a849b905ab716d0241a6824588d70dd61c572e066c6ec637d41c8c5cf63fe209"
+   },
+   "encoded_by": "manual-2026-07-21",
+   "weapon_filter": ""
+  },
+  {
+   "table": "stratagems",
+   "id": "000008977006",
+   "side": "target",
+   "detachment": "Fellhammer Siege-host",
+   "name_en": "STEADFAST DETERMINATION",
+   "name_zh": null,
+   "status": "encoded",
+   "effects": [
+    {
+     "phase": "fnp",
+     "op": "fnp",
+     "params": [
+      5
+     ],
+     "condition": [
+      "phase_shooting"
+     ],
+     "source": "坚定决心（对手射击阶段本单位 FNP 5+）"
+    }
+   ],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [],
+   "provenance": {
+    "text_sha256": "78aa2559270aeabd301bb629edf2b0c36cb59154f6026789fac3fbacea83a136"
+   },
+   "encoded_by": "manual-2026-07-21",
+   "weapon_filter": ""
+  },
+  {
+   "table": "stratagems",
+   "id": "000008977007",
+   "side": "target",
+   "detachment": "Fellhammer Siege-host",
+   "name_en": "SIEGECRAFT",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "攻城术：敌军对本单位的冲锋骰 -2——冲锋域无引擎载体"
+   ],
+   "provenance": {
+    "text_sha256": "3c01207c2f940b3c5d7fc071b4d3c220632d047c5324a6cde933d360f45126f2"
+   },
+   "encoded_by": "manual-2026-07-21",
+   "weapon_filter": ""
+  },
+  {
+   "table": "stratagems",
+   "id": "000010689002",
+   "side": "attacker",
+   "detachment": "Huron’s Marauders",
+   "name_en": "HARDENED KILLERS",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "悍勇杀手：在 BS 改善 1 / Rapid Fire 武器 A 改善 1 / Sv 改善 1 三者中选一——三选一无分支开关，裸编任一支过度施加"
+   ],
+   "provenance": {
+    "text_sha256": "989e384569b5815d5bc880fb3b6310bd1a34d0ffd6f3519095dc82610a452e8b"
+   },
+   "encoded_by": "manual-2026-07-21",
+   "weapon_filter": ""
+  },
+  {
+   "table": "stratagems",
+   "id": "000010689003",
+   "side": "attacker",
+   "detachment": "Huron’s Marauders",
+   "name_en": "AT THE TYRANT’S COMMAND",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "遵暴君令：加速后可射击并冲锋——移动资格域无引擎载体"
+   ],
+   "provenance": {
+    "text_sha256": "a05a44bd589f98f169eecde0008ef08c217072711ecbf3f0a2203d8d3b36e09f"
+   },
+   "encoded_by": "manual-2026-07-21",
+   "weapon_filter": ""
+  },
+  {
+   "table": "stratagems",
+   "id": "000010689004",
+   "side": "attacker",
+   "detachment": "Huron’s Marauders",
+   "name_en": "SEIZE THE PRIZE",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "夺取战利品：免掷 Advance 改 +6\" 移动——移动域无引擎载体"
+   ],
+   "provenance": {
+    "text_sha256": "17325dee063db9974f2231f0fea7073427f7cd50f5809a5fda034c42e33d9454"
+   },
+   "encoded_by": "manual-2026-07-21",
+   "weapon_filter": ""
+  },
+  {
+   "table": "stratagems",
+   "id": "000010689005",
+   "side": "attacker",
+   "detachment": "Huron’s Marauders",
+   "name_en": "REAVERS’ FLURRY",
+   "name_zh": null,
+   "status": "encoded",
+   "effects": [
+    {
+     "phase": "attacks",
+     "op": "modify",
+     "params": [
+      1
+     ],
+     "condition": [
+      "melee_charging"
+     ],
+     "source": "劫掠者狂舞（本回合冲锋过的单位近战武器 A +1；melee_charging 复合门＝近战阶段 × 本回合冲锋）"
+    }
+   ],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [],
+   "provenance": {
+    "text_sha256": "f975c0e49e9217d8bda70d29ed3c4d235e6613aba2b4dbb23b856c5f2533a880"
+   },
+   "encoded_by": "manual-2026-07-21",
+   "weapon_filter": ""
+  },
+  {
+   "table": "stratagems",
+   "id": "000010689006",
+   "side": "attacker",
+   "detachment": "Huron’s Marauders",
+   "name_en": "TO THE FAVOURED THE SPOILS",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "厚赏勇者：D6\" surge move——移动域无引擎载体"
+   ],
+   "provenance": {
+    "text_sha256": "43185a2c5d4e2096acc8e6ef211f5cf6c38105636b485762186bbfbad1798560"
+   },
+   "encoded_by": "manual-2026-07-21",
+   "weapon_filter": ""
+  },
+  {
+   "table": "stratagems",
+   "id": "000010689007",
+   "side": "attacker",
+   "detachment": "Huron’s Marauders",
+   "name_en": "ENCIRCLING SURGE",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "合围突袭：撤回战略预备队——预备队域无引擎载体"
+   ],
+   "provenance": {
+    "text_sha256": "49edda3045138c44cce76bfb3b01589933b16e3ab300601ad5913ae09421bacf"
+   },
+   "encoded_by": "manual-2026-07-21",
+   "weapon_filter": ""
+  },
+  {
+   "table": "stratagems",
+   "id": "000009504002",
+   "side": "attacker",
+   "detachment": "Infernal Reavers",
+   "name_en": "INVETERATE MURDERERS",
+   "name_zh": null,
+   "status": "encoded",
+   "effects": [
+    {
+     "phase": "wound",
+     "op": "modify",
+     "params": [
+      1
+     ],
+     "condition": [
+      "melee_s_lte_t"
+     ],
+     "source": "积习杀手（近战阶段攻击 S ≤ 目标 T 时致伤骰 +1；S/T 比较延迟到引擎最终 S 处判定）"
+    }
+   ],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [],
+   "provenance": {
+    "text_sha256": "b80ce7bf6b5f0ef0f061e0a60a9b991c5b1394d61ac3a4c5805462169742c107"
+   },
+   "encoded_by": "manual-2026-07-21",
+   "weapon_filter": ""
+  },
+  {
+   "table": "stratagems",
+   "id": "000009504003",
+   "side": "target",
+   "detachment": "Infernal Reavers",
+   "name_en": "LOW CUNNING",
+   "name_zh": null,
+   "status": "encoded",
+   "effects": [
+    {
+     "phase": "wound",
+     "op": "modify",
+     "params": [
+      -1
+     ],
+     "condition": [
+      "wound_s_gt_t"
+     ],
+     "source": "狡诈低伏（攻击 S > 本单位 T 时致伤骰 -1；原文两相位通用故不加相位门）"
+    }
+   ],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [],
+   "provenance": {
+    "text_sha256": "b4691d10252d0873895a6de23caea2c0f25018e19d8651048b7873d011921f31"
+   },
+   "encoded_by": "manual-2026-07-21",
+   "weapon_filter": ""
+  },
+  {
+   "table": "stratagems",
+   "id": "000009504004",
+   "side": "attacker",
+   "detachment": "Infernal Reavers",
+   "name_en": "NEXT PRIZE",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "下一件战利品：3\" 普通移动 / 舱门——移动与舱门域无引擎载体"
+   ],
+   "provenance": {
+    "text_sha256": "988334647c08c1b72eea5c72219f377d97cb96cdfa591e48b4645d4609dcc30d"
+   },
+   "encoded_by": "manual-2026-07-21",
+   "weapon_filter": ""
+  },
+  {
+   "table": "stratagems",
+   "id": "000009504005",
+   "side": "attacker",
+   "detachment": "Infernal Reavers",
+   "name_en": "CRUEL EXECUTION",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "残酷处决：撤退后可射击——移动资格域无引擎载体"
+   ],
+   "provenance": {
+    "text_sha256": "5e35a77a056cb1001c68377de7876c182ab7901e5ea7027a282450224b868d28"
+   },
+   "encoded_by": "manual-2026-07-21",
+   "weapon_filter": ""
+  },
+  {
+   "table": "stratagems",
+   "id": "000010642002",
+   "side": "attacker",
+   "detachment": "Nightmare Hunt",
+   "name_en": "TALONS SUNK DEEP",
+   "name_zh": null,
+   "status": "partial",
+   "effects": [
+    {
+     "phase": "save",
+     "op": "ap_improve",
+     "params": [
+      1
+     ],
+     "condition": [
+      "target_below_half"
+     ],
+     "source": "深陷之爪（对低于半编目标 AP 改善 1；原文两相位通用故不加相位门）"
+    }
+   ],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "原文门控是「士气崩溃 **和/或** 低于半编」——士气分量无引擎载体，只编战损分量（目标仅士气崩溃时本条不生效，属保守欠建模）"
+   ],
+   "provenance": {
+    "text_sha256": "86b0b71229ba770f8851a245ce77df5b804a107809634dd7c73ed094c5265d37"
+   },
+   "encoded_by": "manual-2026-07-21",
+   "weapon_filter": ""
+  },
+  {
+   "table": "stratagems",
+   "id": "000010642003",
+   "side": "attacker",
+   "detachment": "Nightmare Hunt",
+   "name_en": "PREY ON THE WEAK",
+   "name_zh": null,
+   "status": "partial",
+   "effects": [
+    {
+     "phase": "hit",
+     "op": "reroll",
+     "params": [
+      "fail"
+     ],
+     "condition": [
+      "target_below_half"
+     ],
+     "source": "猎弱而噬（对低于半编目标重掷命中骰；原文两相位通用故不加相位门）"
+    }
+   ],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "原文门控是「士气崩溃 **和/或** 低于半编」——士气分量无引擎载体，属保守欠建模"
+   ],
+   "provenance": {
+    "text_sha256": "6e941e48d153c650566f2d192454dd7d8504d518943ac82a60a57422fba27812"
+   },
+   "encoded_by": "manual-2026-07-21",
+   "weapon_filter": ""
+  },
+  {
+   "table": "stratagems",
+   "id": "000010642004",
+   "side": "attacker",
+   "detachment": "Nightmare Hunt",
+   "name_en": "SADISTIC DISPLAY",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "虐杀展示：6\" 内敌军士气检定——士气域无引擎载体"
+   ],
+   "provenance": {
+    "text_sha256": "6651850d0416b7943c86d3ab0fea06c08ea62f9f00bbf1b897650f72a4e6d3c7"
+   },
+   "encoded_by": "manual-2026-07-21",
+   "weapon_filter": ""
+  },
+  {
+   "table": "stratagems",
+   "id": "000010642005",
+   "side": "attacker",
+   "detachment": "Nightmare Hunt",
+   "name_en": "MALICIOUS SURGE",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "恶意突进：加速回合可宣告冲锋——移动资格域无引擎载体"
+   ],
+   "provenance": {
+    "text_sha256": "deb4967cceb7de364265c29681128f36593a01d841d27927a54adbdbf482b622"
+   },
+   "encoded_by": "manual-2026-07-21",
+   "weapon_filter": ""
+  },
+  {
+   "table": "stratagems",
+   "id": "000010642006",
+   "side": "attacker",
+   "detachment": "Nightmare Hunt",
+   "name_en": "RELENTLESS TERROR",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "无情恐惧：撤退回合可射击并冲锋——移动资格域无引擎载体"
+   ],
+   "provenance": {
+    "text_sha256": "0cf816f0f99387c22a869193b38e623e18fbab5c6a50023548a25e8f91e2d1b7"
+   },
+   "encoded_by": "manual-2026-07-21",
+   "weapon_filter": ""
+  },
+  {
+   "table": "stratagems",
+   "id": "000010642007",
+   "side": "attacker",
+   "detachment": "Nightmare Hunt",
+   "name_en": "HORRIFIC INCURSION",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "恐怖入侵：12\" 内敌军士气检定 -1——士气域无引擎载体"
+   ],
+   "provenance": {
+    "text_sha256": "461de55676e0063b0d6cca5626e41f4eff3c830e563c648a7ee37947b48e401c"
+   },
+   "encoded_by": "manual-2026-07-21",
+   "weapon_filter": ""
+  },
+  {
+   "table": "stratagems",
+   "id": "000008358002",
+   "side": "attacker",
+   "detachment": "Pactbound Zealots",
+   "name_en": "EYE OF THE GODS",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "诸神之眼：整场为**某一个** CHARACTER 模型加 M/T/W 与近战 A/S/D——触发式（击杀敌军单位后）、单模型、且含 M/T/W 模型特征值，引擎无单模型成长载体"
+   ],
+   "provenance": {
+    "text_sha256": "96b2917a9ccead2a3b8d4d0ff0a9a2d09c41749ab1742c7a3b3af4608ad154ba"
+   },
+   "encoded_by": "manual-2026-07-21",
+   "weapon_filter": ""
+  },
+  {
+   "table": "stratagems",
+   "id": "000008358003",
+   "side": "attacker",
+   "detachment": "Pactbound Zealots",
+   "name_en": "ETERNAL HATE",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "永恒之恨：阵亡模型 4+ 留场再打——出手顺序/复活域无引擎载体"
+   ],
+   "provenance": {
+    "text_sha256": "3c7509a5264f844084bdfae2d46298794fc344922698ccfb204d9761ff35e6d8"
+   },
+   "encoded_by": "manual-2026-07-21",
+   "weapon_filter": ""
+  },
+  {
+   "table": "stratagems",
+   "id": "000008358004",
+   "side": "attacker",
+   "detachment": "Pactbound Zealots",
+   "name_en": "PROFANE ZEAL",
+   "name_zh": null,
+   "status": "encoded",
+   "effects": [
+    {
+     "phase": "wound",
+     "op": "reroll",
+     "params": [
+      "fail"
+     ],
+     "condition": [],
+     "source": "亵渎狂热（本单位攻击重掷致伤骰；原文两相位通用故不加门）"
+    }
+   ],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [],
+   "provenance": {
+    "text_sha256": "e4796c4512d7fa6f99d05851ddc8dc8f10f4b7e82b8e280da9b68f306ab91c98"
+   },
+   "encoded_by": "manual-2026-07-21",
+   "weapon_filter": ""
+  },
+  {
+   "table": "stratagems",
+   "id": "000008358005",
+   "side": "attacker",
+   "detachment": "Pactbound Zealots",
+   "name_en": "SKINSHIFT",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "换皮：治疗 3 伤 / 复活 TZEENTCH 模型——治疗与复活域无引擎载体"
+   ],
+   "provenance": {
+    "text_sha256": "6b6565d104264f385b08f98edcd289ca94eae8bb7d6acba57b747334adf17005"
+   },
+   "encoded_by": "manual-2026-07-21",
+   "weapon_filter": ""
+  },
+  {
+   "table": "stratagems",
+   "id": "000008358006",
+   "side": "attacker",
+   "detachment": "Pactbound Zealots",
+   "name_en": "TORPEFYING REFRAIN",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "麻痹副歌：撤退/加速后可射击并冲锋——移动资格域无引擎载体"
+   ],
+   "provenance": {
+    "text_sha256": "690672bdcdb63bb6af6f546ca7f0c0b4aafb6ba4346d351f4c02daf8ca641e56"
+   },
+   "encoded_by": "manual-2026-07-21",
+   "weapon_filter": ""
+  },
+  {
+   "table": "stratagems",
+   "id": "000008358007",
+   "side": "target",
+   "detachment": "Pactbound Zealots",
+   "name_en": "FESTERING MIASMA",
+   "name_zh": null,
+   "status": "partial",
+   "effects": [
+    {
+     "phase": "save",
+     "op": "cover",
+     "params": [],
+     "condition": [
+      "phase_shooting"
+     ],
+     "source": "腐臭瘴气（本单位获 Stealth：11 版即远程攻击时享掩体收益）"
+    }
+   ],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "第二段「若为 NURGLE 单位则只能被 18\" 内的远程攻击选中」是射程门，引擎不建模距离限制"
+   ],
+   "provenance": {
+    "text_sha256": "cf8fc98f97308f56db950db29ffcadd2a3759f9f03d0bb56de3d44b9c32fb7ad"
+   },
+   "encoded_by": "manual-2026-07-21",
+   "weapon_filter": ""
+  },
+  {
+   "table": "stratagems",
+   "id": "000008969002",
+   "side": "target",
+   "detachment": "Renegade Raiders",
+   "name_en": "UNFAILINGLY OBDURATE",
+   "name_zh": null,
+   "status": "encoded",
+   "effects": [
+    {
+     "phase": "save",
+     "op": "ap_improve",
+     "params": [
+      -1
+     ],
+     "condition": [],
+     "source": "坚定不移（攻击本单位的 AP 恶化 1；守方 AP 恶化在引擎内净算并夹取 ≤0；两相位通用故不加门）"
+    }
+   ],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [],
+   "provenance": {
+    "text_sha256": "1db835bd8c39578188e8bfcbb1c79617a6c64e42cb4839ef222fd1693b345527"
+   },
+   "encoded_by": "manual-2026-07-21",
+   "weapon_filter": ""
+  },
+  {
+   "table": "stratagems",
+   "id": "000008969003",
+   "side": "attacker",
+   "detachment": "Renegade Raiders",
+   "name_en": "SCOUR AND SEIZE",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "扫荡与占领：攻击获 [PRECISION]——附属角色定向分配无引擎载体"
+   ],
+   "provenance": {
+    "text_sha256": "e94cfa3d96aaf79d509af2676c427dc26af30733197fc5cff993663e5ead1bbe"
+   },
+   "encoded_by": "manual-2026-07-21",
+   "weapon_filter": ""
+  },
+  {
+   "table": "stratagems",
+   "id": "000008969004",
+   "side": "attacker",
+   "detachment": "Renegade Raiders",
+   "name_en": "OPPORTUNISTIC RAIDERS",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "机会主义劫掠者：战斗阶段末额外移动/撤退——移动域无引擎载体"
+   ],
+   "provenance": {
+    "text_sha256": "f19a53c7c9c2f5db200c64aa8a464b27bb232a05739bde043d55fc476672f864"
+   },
+   "encoded_by": "manual-2026-07-21",
+   "weapon_filter": ""
+  },
+  {
+   "table": "stratagems",
+   "id": "000008969005",
+   "side": "attacker",
+   "detachment": "Renegade Raiders",
+   "name_en": "WARPCHARGED ENGINES",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "亚空充能引擎：免掷 Advance 改 +6\" 移动——移动域无引擎载体"
+   ],
+   "provenance": {
+    "text_sha256": "6c1ca1277c9d8759866c1416c1d0977a5c44e408eac6ea23bc7d78b131579689"
+   },
+   "encoded_by": "manual-2026-07-21",
+   "weapon_filter": ""
+  },
+  {
+   "table": "stratagems",
+   "id": "000008969006",
+   "side": "attacker",
+   "detachment": "Renegade Raiders",
+   "name_en": "RUINOUS RAID",
+   "name_zh": null,
+   "status": "partial",
+   "effects": [
+    {
+     "phase": "hit",
+     "op": "reroll",
+     "params": [
+      "fail"
+     ],
+     "condition": [],
+     "source": "毁灭突袭（目标在目标点范围内时重掷命中骰）"
+    },
+    {
+     "phase": "wound",
+     "op": "reroll",
+     "params": [
+      "fail"
+     ],
+     "condition": [],
+     "source": "毁灭突袭（目标在目标点范围内时重掷致伤骰）"
+    }
+   ],
+   "requires_toggles": [
+    "disembarked_this_turn"
+   ],
+   "not_modeled_notes_zh": [
+    "「目标点范围内」几何前提无引擎载体，按恒满足处理（高估）"
+   ],
+   "provenance": {
+    "text_sha256": "f31d7cdc33516f5f941d113b5ecb4caecda70c961e5cdbba1b4cf5b2ec5aaced"
+   },
+   "encoded_by": "manual-2026-07-21",
+   "weapon_filter": ""
+  },
+  {
+   "table": "stratagems",
+   "id": "000008969007",
+   "side": "attacker",
+   "detachment": "Renegade Raiders",
+   "name_en": "REAVERS’ HASTE",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "劫掠者疾行：加速回合可冲锋 + 冲锋骰 +1——冲锋域无引擎载体"
+   ],
+   "provenance": {
+    "text_sha256": "b837d72a2f889cf96b826fce12566c4d483f6ecca4c1568c5b25814513565f04"
+   },
+   "encoded_by": "manual-2026-07-21",
+   "weapon_filter": ""
+  },
+  {
+   "table": "stratagems",
+   "id": "000010695002",
+   "side": "attacker",
+   "detachment": "Renegade Warband",
+   "name_en": "NEVER OUTGUNNED",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "从不落于下风：在 [LETHAL HITS] 与 [SUSTAINED HITS 1] 中二选一——无二选一分支开关，裸编任一支过度施加"
+   ],
+   "provenance": {
+    "text_sha256": "669c3ff115fdf9a5eeb1cf9f34a6bf66d561cd71e0c11a0d210665a7b5485746"
+   },
+   "encoded_by": "manual-2026-07-21",
+   "weapon_filter": ""
+  },
+  {
+   "table": "stratagems",
+   "id": "000010695003",
+   "side": "attacker",
+   "detachment": "Renegade Warband",
+   "name_en": "VENGEFUL DESTRUCTION",
+   "name_zh": null,
+   "status": "partial",
+   "effects": [
+    {
+     "phase": "wound",
+     "op": "modify",
+     "params": [
+      1
+     ],
+     "condition": [],
+     "source": "复仇毁灭（攻击 Vendetta 目标时致伤骰 +1；两相位通用故不加门）"
+    }
+   ],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "Vendetta 目标是分队规则每指挥阶段点名的单一敌军单位——引擎按「当前目标即 Vendetta 目标」处理（高估）"
+   ],
+   "provenance": {
+    "text_sha256": "58d5ed33dd35084b15067fa9ac9dd0ff6e8b8bbebc7432b0818a776bc3b067db"
+   },
+   "encoded_by": "manual-2026-07-21",
+   "weapon_filter": ""
+  },
+  {
+   "table": "stratagems",
+   "id": "000010695004",
+   "side": "target",
+   "detachment": "Renegade Warband",
+   "name_en": "UNDYING HATRED",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "不灭之恨：阵亡模型 4+ 留场再打——出手顺序/复活域无引擎载体"
+   ],
+   "provenance": {
+    "text_sha256": "89f31e198f96e49454e974bb9631f04cb81b10ce963cfb1fb705d059976c1186"
+   },
+   "encoded_by": "manual-2026-07-21",
+   "weapon_filter": ""
+  },
+  {
+   "table": "stratagems",
+   "id": "000010695005",
+   "side": "attacker",
+   "detachment": "Renegade Warband",
+   "name_en": "RENEGADE CLAIM",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "叛徒的宣称：锁定目标点控制权——目标点经济无引擎载体"
+   ],
+   "provenance": {
+    "text_sha256": "90b53281659172012ede9b7d204c3301003b64ce8978333be164b9dfc3ea868f"
+   },
+   "encoded_by": "manual-2026-07-21",
+   "weapon_filter": ""
+  },
+  {
+   "table": "stratagems",
+   "id": "000010695006",
+   "side": "attacker",
+   "detachment": "Renegade Warband",
+   "name_en": "CORRUPTED MUNITIONS",
+   "name_zh": null,
+   "status": "encoded",
+   "effects": [
+    {
+     "phase": "save",
+     "op": "ap_improve",
+     "params": [
+      1
+     ],
+     "condition": [
+      "phase_shooting"
+     ],
+     "source": "腐化弹药（本单位远程攻击 AP 改善 1）"
+    }
+   ],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [],
+   "provenance": {
+    "text_sha256": "1d3b7181f856cfbf95643c7124f07674264ebe3199aadb899ca108a5aa7cf98e"
+   },
+   "encoded_by": "manual-2026-07-21",
+   "weapon_filter": ""
+  },
+  {
+   "table": "stratagems",
+   "id": "000010695007",
+   "side": "attacker",
+   "detachment": "Renegade Warband",
+   "name_en": "REAVERS’ REACTION",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "劫掠者的反应：D6\" 普通移动——移动域无引擎载体"
+   ],
+   "provenance": {
+    "text_sha256": "5d3ba89a3a772d1fd8ef466da097b8007f3fe1253a15da585b063ad4ec03252f"
+   },
+   "encoded_by": "manual-2026-07-21",
+   "weapon_filter": ""
+  },
+  {
+   "table": "stratagems",
+   "id": "000008986002",
+   "side": "attacker",
+   "detachment": "Soulforged Warpack",
+   "name_en": "DESPERATE PLEDGE",
+   "name_zh": null,
+   "status": "partial",
+   "effects": [
+    {
+     "phase": "save",
+     "op": "ap_improve",
+     "params": [
+      1
+     ],
+     "condition": [],
+     "source": "绝望誓约（调用契约后本单位攻击 AP 改善 1；两相位通用故不加门）"
+    }
+   ],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "「若本单位调用其契约」是可选动作且会使该次 Dark Pact 领导力检定 -1——引擎无契约状态，按恒调用处理（高估），检定失败的致命伤未建模"
+   ],
+   "provenance": {
+    "text_sha256": "f9723559d4985810add58ec8451c55d0351a6768eb2d1525f990eaf440b1cf05"
+   },
+   "encoded_by": "manual-2026-07-21",
+   "weapon_filter": ""
+  },
+  {
+   "table": "stratagems",
+   "id": "000008986003",
+   "side": "attacker",
+   "detachment": "Soulforged Warpack",
+   "name_en": "GLUT OF SOULS",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "灵魂盛宴：击杀后 5+ 回复 1 伤——治疗域无引擎载体"
+   ],
+   "provenance": {
+    "text_sha256": "dead3dc72bcd7888b7d4045dd7db55724a8890bbb236c3b3e90a66c2015970ea"
+   },
+   "encoded_by": "manual-2026-07-21",
+   "weapon_filter": ""
+  },
+  {
+   "table": "stratagems",
+   "id": "000008986004",
+   "side": "attacker",
+   "detachment": "Soulforged Warpack",
+   "name_en": "DAEMONIC POSSESION",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "恶魔附身：整场获得 DAEMON 关键词——关键词授予无战斗链载体"
+   ],
+   "provenance": {
+    "text_sha256": "69d1e57bb9eb9cc85dec09af1316701248a157b0a2bbac5f09b47118904a3deb"
+   },
+   "encoded_by": "manual-2026-07-21",
+   "weapon_filter": ""
+  },
+  {
+   "table": "stratagems",
+   "id": "000008986005",
+   "side": "attacker",
+   "detachment": "Soulforged Warpack",
+   "name_en": "UNSTOPPABLE RAMPAGE",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "势不可挡：可穿越地形移动——移动与地形域无引擎载体"
+   ],
+   "provenance": {
+    "text_sha256": "4f273fd172782d0cf3857b07765f18ab04c13b87245bf73b7fc84dee9a2ff0c8"
+   },
+   "encoded_by": "manual-2026-07-21",
+   "weapon_filter": ""
+  },
+  {
+   "table": "stratagems",
+   "id": "000008986006",
+   "side": "attacker",
+   "detachment": "Soulforged Warpack",
+   "name_en": "PREDATORY PURSUIT",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "掠食追击：对手移动阶段 6\" 普通移动——移动域无引擎载体"
+   ],
+   "provenance": {
+    "text_sha256": "0a7724b4ec5f63a61e0c27d319e08f5e5da353811552c29e6131edb87ed9da5e"
+   },
+   "encoded_by": "manual-2026-07-21",
+   "weapon_filter": ""
+  },
+  {
+   "table": "stratagems",
+   "id": "000008986007",
+   "side": "attacker",
+   "detachment": "Soulforged Warpack",
+   "name_en": "FEEDING FRENZY",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "摄食狂潮：强制敌军 Desperate Escape 检定——撤退检定域无引擎载体"
+   ],
+   "provenance": {
+    "text_sha256": "03475bd9ac063c13043cab769a5726ae1d3353883b3cc07d9b258c877d1cc1c7"
+   },
+   "encoded_by": "manual-2026-07-21",
+   "weapon_filter": ""
+  },
+  {
+   "table": "stratagems",
+   "id": "000009513002",
+   "side": "target",
+   "detachment": "Underdeck Uprising",
+   "name_en": "INFERNAL ALTARS",
+   "name_zh": null,
+   "status": "partial",
+   "effects": [
+    {
+     "phase": "fnp",
+     "op": "fnp",
+     "params": [
+      5
+     ],
+     "condition": [],
+     "source": "邪能祭坛（在目标点范围内时本单位 FNP 5+；两相位通用故不加门）"
+    }
+   ],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "「目标点范围内」几何前提无引擎载体，按恒满足处理（高估）",
+    "「若本单位带 CULTIST MOB 关键词则改为 FNP 4+」是守方自关键词分档——引擎无守方自关键词门，保守取 5+ 档（欠建模）"
+   ],
+   "provenance": {
+    "text_sha256": "18265c72a0bd7c9eb5d0d0e93ad94ef1989d1fd630d646d11c65ac923c18488a"
+   },
+   "encoded_by": "manual-2026-07-21",
+   "weapon_filter": ""
+  },
+  {
+   "table": "stratagems",
+   "id": "000009513003",
+   "side": "attacker",
+   "detachment": "Underdeck Uprising",
+   "name_en": "FLEETING MIGHT",
+   "name_zh": null,
+   "status": "partial",
+   "effects": [
+    {
+     "phase": "wound",
+     "op": "mortal_pool",
+     "params": [],
+     "condition": [],
+     "source": "瞬息之力（本单位武器获 [DEVASTATING WOUNDS]；两相位通用故不加门）"
+    }
+   ],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "前提「本单位已成功发动 Dark Pact」——引擎无 Dark Pact 状态开关，按已发动处理（高估）；发动失败的 D3 致命伤亦未建模"
+   ],
+   "provenance": {
+    "text_sha256": "d1cb0172cae563b8eb4835a396392907ab9c6b3d9662805b22468c33d6e61353"
+   },
+   "encoded_by": "manual-2026-07-21",
+   "weapon_filter": ""
+  },
+  {
+   "table": "stratagems",
+   "id": "000009513004",
+   "side": "attacker",
+   "detachment": "Underdeck Uprising",
+   "name_en": "CRUDE SABOTAGE",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "粗劣破坏：操作舱门——登舰行动舱门域无引擎载体"
+   ],
+   "provenance": {
+    "text_sha256": "f6dc9a2430ffd010091a8e2f581d1ba078df75d8abe595d737b5f99f6dc33a67"
+   },
+   "encoded_by": "manual-2026-07-21",
+   "weapon_filter": ""
+  },
+  {
+   "table": "stratagems",
+   "id": "000009513005",
+   "side": "attacker",
+   "detachment": "Underdeck Uprising",
+   "name_en": "STORM THE BRIDGE!",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "强攻舰桥！：加速回合可宣告冲锋——移动资格域无引擎载体"
+   ],
+   "provenance": {
+    "text_sha256": "858a61817e217d534d2486cb2e60a3cb22928976437795865bc7b0f479979533"
+   },
+   "encoded_by": "manual-2026-07-21",
+   "weapon_filter": ""
+  },
+  {
+   "table": "stratagems",
+   "id": "000008961002",
+   "side": "attacker",
+   "detachment": "Veterans of the Long War",
+   "name_en": "ENDLESS IRE",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "无尽怒火：重新指定仇恨焦点——点名状态无引擎载体"
+   ],
+   "provenance": {
+    "text_sha256": "313c365c711ada4e9f23039cd266a94bdd14a7990a7ac00b783745efeb9ac27b"
+   },
+   "encoded_by": "manual-2026-07-21",
+   "weapon_filter": ""
+  },
+  {
+   "table": "stratagems",
+   "id": "000008961003",
+   "side": "target",
+   "detachment": "Veterans of the Long War",
+   "name_en": "CONTEMPTUOUS DISREGARD",
+   "name_zh": null,
+   "status": "encoded",
+   "effects": [
+    {
+     "phase": "save",
+     "op": "ap_improve",
+     "params": [
+      -1
+     ],
+     "condition": [],
+     "source": "轻蔑漠视（攻击本单位的 AP 恶化 1；守方 AP 恶化净算并夹取 ≤0；两相位通用故不加门）"
+    }
+   ],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [],
+   "provenance": {
+    "text_sha256": "027c49e5e38f73a966817280030a680adad1aa17bab9442e14c651098371e9af"
+   },
+   "encoded_by": "manual-2026-07-21",
+   "weapon_filter": ""
+  },
+  {
+   "table": "stratagems",
+   "id": "000008961004",
+   "side": "attacker",
+   "detachment": "Veterans of the Long War",
+   "name_en": "BRINGERS OF DESPAIR",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "绝望使者：获得 Fights First——出手顺序由 fight_order 模块按规则判定，DSL 层无该通道"
+   ],
+   "provenance": {
+    "text_sha256": "2ba695433f651b24e4d3cb4f2d232300a9791989e5ba285b81753fb1c008651a"
+   },
+   "encoded_by": "manual-2026-07-21",
+   "weapon_filter": ""
+  },
+  {
+   "table": "stratagems",
+   "id": "000008961005",
+   "side": "attacker",
+   "detachment": "Veterans of the Long War",
+   "name_en": "BLACK CRUSADE",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "黑色远征：撤退/加速后可射击 + bolt pistol/boltgun/combi-bolter 获 [DEVASTATING WOUNDS] 且本回合累计 6 伤后失效——移动资格、按武器名清单过滤（weapon_filter 只认单个子串）、累计上限三项均无引擎载体"
+   ],
+   "provenance": {
+    "text_sha256": "d09e682de96d1eef4c75e3f455bd8b36b6d5bb1b75f87cce7f063df37dc50eca"
+   },
+   "encoded_by": "manual-2026-07-21",
+   "weapon_filter": ""
+  },
+  {
+   "table": "stratagems",
+   "id": "000008961006",
+   "side": "attacker",
+   "detachment": "Veterans of the Long War",
+   "name_en": "LET THE GALAXY BURN",
+   "name_zh": null,
+   "status": "partial",
+   "effects": [
+    {
+     "phase": "save",
+     "op": "ignores_cover",
+     "params": [],
+     "condition": [
+      "phase_shooting"
+     ],
+     "source": "让银河燃烧（本单位远程武器获 [IGNORES COVER]）"
+    }
+   ],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "第二段「Torrent 武器攻击数改为 6」是特征值 SET——引擎只有相对加值（attacks/modify），无置数通道"
+   ],
+   "provenance": {
+    "text_sha256": "f12ac63a99416364d3e2781f04bffc6f8ef81f4e59078c7638bdcd21487d9b8b"
+   },
+   "encoded_by": "manual-2026-07-21",
+   "weapon_filter": ""
+  },
+  {
+   "table": "stratagems",
+   "id": "000008961007",
+   "side": "attacker",
+   "detachment": "Veterans of the Long War",
+   "name_en": "MILLENNIA OF EXPERIENCE",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "千年经验：对手移动阶段 6\" 普通移动——移动域无引擎载体"
+   ],
+   "provenance": {
+    "text_sha256": "3b133368b4cce7f39151127e1c2f6394768b5db9d7ef010daeacd351e618c99b"
+   },
+   "encoded_by": "manual-2026-07-21",
+   "weapon_filter": ""
+  },
+  {
+   "table": "stratagems",
+   "id": "000010740002",
+   "side": "target",
+   "detachment": "Warpstrike Champions",
+   "name_en": "EMPYRIC DISLOCATION",
+   "name_zh": null,
+   "status": "encoded",
+   "effects": [
+    {
+     "phase": "save",
+     "op": "ap_improve",
+     "params": [
+      -1
+     ],
+     "condition": [],
+     "source": "灵能错位（攻击本单位的 AP 恶化 1；守方 AP 恶化净算并夹取 ≤0；两相位通用故不加门）"
+    }
+   ],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [],
+   "provenance": {
+    "text_sha256": "c5bce17463d3a2beb39a5d05323dc7c193e1acddad785c89238e6d3e29eda749"
+   },
+   "encoded_by": "manual-2026-07-21",
+   "weapon_filter": ""
+  },
+  {
+   "table": "stratagems",
+   "id": "000010740003",
+   "side": "target",
+   "detachment": "Warpstrike Champions",
+   "name_en": "ARMOUR OF CORRUPTION",
+   "name_zh": null,
+   "status": "encoded",
+   "effects": [
+    {
+     "phase": "damage",
+     "op": "damage_reduction",
+     "params": [
+      1
+     ],
+     "condition": [
+      "phase_melee"
+     ],
+     "source": "腐化装甲（分配到本单位的攻击伤害 -1；WHEN=战斗阶段、持续到回合结束——战斗是回合最后一个攻击阶段，故本回合仅近战可受益）"
+    }
+   ],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [],
+   "provenance": {
+    "text_sha256": "1d31d68154b2fbc2e5b6671097398fb8499101ab7d701c928beae474a3e43cfd"
+   },
+   "encoded_by": "manual-2026-07-21",
+   "weapon_filter": ""
+  },
+  {
+   "table": "stratagems",
+   "id": "000010740004",
+   "side": "attacker",
+   "detachment": "Warpstrike Champions",
+   "name_en": "WARP FLICKER",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "亚空闪现：加速后可射击并冲锋——移动资格域无引擎载体"
+   ],
+   "provenance": {
+    "text_sha256": "5f63e9265a21c2714902004da7d5d790cbde0c74772787e826379ad58b3c49b9"
+   },
+   "encoded_by": "manual-2026-07-21",
+   "weapon_filter": ""
+  },
+  {
+   "table": "stratagems",
+   "id": "000010740005",
+   "side": "attacker",
+   "detachment": "Warpstrike Champions",
+   "name_en": "WARP-TAINTED",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "亚空污染：锁定目标点控制权——目标点经济无引擎载体"
+   ],
+   "provenance": {
+    "text_sha256": "da926e0a5c77e8cac5e0780ae590583d611aac58281e42703dd7b38a51f7890b"
+   },
+   "encoded_by": "manual-2026-07-21",
+   "weapon_filter": ""
+  },
+  {
+   "table": "stratagems",
+   "id": "000010740006",
+   "side": "attacker",
+   "detachment": "Warpstrike Champions",
+   "name_en": "SIEGEBREAKER STRIKE",
+   "name_zh": null,
+   "status": "encoded",
+   "effects": [
+    {
+     "phase": "save",
+     "op": "ignores_cover",
+     "params": [],
+     "condition": [
+      "phase_shooting"
+     ],
+     "source": "破城打击（本单位远程武器获 [IGNORES COVER]）"
+    }
+   ],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [],
+   "provenance": {
+    "text_sha256": "f963d839a76ec7bfe9a2f5d9285a40339d73255470e079ca21515c592a36ed53"
+   },
+   "encoded_by": "manual-2026-07-21",
+   "weapon_filter": ""
+  },
+  {
+   "table": "stratagems",
+   "id": "000010740007",
+   "side": "attacker",
+   "detachment": "Warpstrike Champions",
+   "name_en": "PORTAL OF SPITE",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "怨恨之门：冲锋骰 +2——冲锋域无引擎载体"
+   ],
+   "provenance": {
+    "text_sha256": "0dcaea3d2193c6cdfefdfee554d73a784f7b1631d75b4243037afaeffbdf51fa"
+   },
+   "encoded_by": "manual-2026-07-21",
+   "weapon_filter": ""
+  },
+  {
+   "table": "stratagems",
+   "id": "fp11e-csm-devotees-s1",
+   "side": "attacker",
+   "detachment": "Devotees of Destruction",
+   "name_en": "RUINATION’S BOUNTY",
+   "name_zh": null,
+   "status": "partial",
+   "effects": [
+    {
+     "phase": "hit",
+     "op": "auto_wound",
+     "params": [],
+     "condition": [
+      "phase_shooting"
+     ],
+     "source": "毁灭之赐（Dark Pacts 后远程攻击获 [LETHAL HITS]）"
+    },
+    {
+     "phase": "hit",
+     "op": "extra_hits",
+     "params": [
+      1
+     ],
+     "condition": [
+      "phase_shooting"
+     ],
+     "source": "毁灭之赐（Dark Pacts 后远程攻击获 [SUSTAINED HITS 1]）"
+    }
+   ],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "前提「本单位已成功发动 Dark Pact」——引擎无 Dark Pact 状态开关，按已发动处理（高估）；发动失败的 D3 致命伤亦未建模",
+    "仅 HAVOCS / OBLITERATORS 单位可点名——点名即声明，由使用者自查"
+   ],
+   "provenance": {
+    "text_sha256": "a60a11b7cf74b12fb8f26a994ec26c8ff7daa2d3f8daa634ba25f83e1d009a2a"
+   },
+   "encoded_by": "manual-2026-07-21",
+   "weapon_filter": ""
+  },
+  {
+   "table": "stratagems",
+   "id": "fp11e-csm-devotees-s2",
+   "side": "attacker",
+   "detachment": "Devotees of Destruction",
+   "name_en": "SNARE OF FIRE",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "火网陷阱：D3+3\" 普通移动——移动域无引擎载体"
+   ],
+   "provenance": {
+    "text_sha256": "fd2216a9fc775c73d7fb6082320e4c37bee8ee7fd0dd501f540d75c5e20e1ea1"
+   },
+   "encoded_by": "manual-2026-07-21",
+   "weapon_filter": ""
+  },
+  {
+   "table": "stratagems",
+   "id": "fp11e-csm-devotees-s3",
+   "side": "target",
+   "detachment": "Devotees of Destruction",
+   "name_en": "UNDYING HATRED",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "不灭之恨（毁灭信徒）：WHEN 限**对手射击阶段** × 攻击 S > 本单位 T 时致伤 -1——引擎缺「射击 × S>T」复合 tag（wound_s_gt_t 无相位门会在近战误放行，只挂 phase_shooting 又丢掉 S>T 前提），同 Iron Fortitude 判法，故不编"
+   ],
+   "provenance": {
+    "text_sha256": "8a1988c893b73c5a6bd49eb489c1e38fa466bcd617fa8380f8be5e8c42a246cd"
+   },
+   "encoded_by": "manual-2026-07-21",
+   "weapon_filter": ""
+  },
+  {
+   "table": "stratagems",
+   "id": "fp11e-csm-murdertalon-s1",
+   "side": "attacker",
+   "detachment": "Murdertalon Raiders",
+   "name_en": "PLUNGING TALONS",
+   "name_zh": null,
+   "status": "encoded",
+   "effects": [
+    {
+     "phase": "wound",
+     "op": "modify",
+     "params": [
+      1
+     ],
+     "condition": [
+      "melee_charging"
+     ],
+     "source": "俯冲利爪（本回合冲锋过的单位近战攻击获 [LANCE]：冲锋回合致伤 +1；melee_charging 复合门＝近战阶段 × 本回合冲锋，裸 charging 会在射击阶段误放行）"
+    }
+   ],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [],
+   "provenance": {
+    "text_sha256": "0d0fb3af02bd2dda0907212ec2a1c6d1df5d1f9b4e58affbaa154de002d352ec"
+   },
+   "encoded_by": "manual-2026-07-21",
+   "weapon_filter": ""
+  },
+  {
+   "table": "stratagems",
+   "id": "fp11e-csm-murdertalon-s2",
+   "side": "attacker",
+   "detachment": "Murdertalon Raiders",
+   "name_en": "RAKING PASS",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "掠空回旋：撤退移动不影响冲锋资格——移动资格域无引擎载体"
+   ],
+   "provenance": {
+    "text_sha256": "9d87c7c4af43791b9a110e2f93ac296e6879dc8508028ee05a75298c2c8d7373"
+   },
+   "encoded_by": "manual-2026-07-21",
+   "weapon_filter": ""
+  },
+  {
+   "table": "stratagems",
+   "id": "fp11e-csm-murdertalon-s3",
+   "side": "attacker",
+   "detachment": "Murdertalon Raiders",
+   "name_en": "WARP-TWISTED TERRORS",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "亚空扭曲之恐：9\" 内敌军士气检定 -1——士气域无引擎载体"
+   ],
+   "provenance": {
+    "text_sha256": "1a9ca017aee99759db273b9b06b468f4c040376d3abb6a2854a792a6a5780330"
+   },
+   "encoded_by": "manual-2026-07-21",
+   "weapon_filter": ""
+  },
+  {
+   "table": "enhancements",
+   "id": "000010151002",
+   "side": "attacker",
+   "detachment": "Cabal of Chaos",
+   "name_en": "Touched by the Warp",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "亚空间沾染：授予 PSYKER 关键词 + 武器获 [PSYCHIC]——关键词授予与 [PSYCHIC]（灵能攻击标签）均无战斗链载体"
+   ],
+   "provenance": {
+    "text_sha256": "9504f399ff51a082b991e08eef9499d59dbb37306622ad35e016aa1b36f19691"
+   },
+   "encoded_by": "manual-2026-07-21",
+   "weapon_filter": ""
+  },
+  {
+   "table": "enhancements",
+   "id": "fp11e-csm-cabal-e1",
+   "side": "attacker",
+   "detachment": "Cabal of Chaos",
+   "name_en": "Conduit of Chaos",
+   "name_zh": null,
+   "status": "partial",
+   "effects": [
+    {
+     "phase": "wound",
+     "op": "modify",
+     "params": [
+      1
+     ],
+     "condition": [
+      "melee_charging"
+     ],
+     "source": "混沌导管（携带者近战攻击获 [LANCE]：冲锋回合致伤 +1）"
+    }
+   ],
+   "requires_toggles": [
+    "bearer_leading"
+   ],
+   "not_modeled_notes_zh": [
+    "增益只加在携带者本人身上——引擎按单位面注入全部模型/武器，多模型单位会高估；须以携带者单模型 loadout 模拟才等价"
+   ],
+   "provenance": {
+    "text_sha256": "c5e06449b2b68054ff82aa286c2ae70907195d7b97ec0b0429c5a5e5b93b3526"
+   },
+   "encoded_by": "manual-2026-07-21",
+   "weapon_filter": ""
+  },
+  {
+   "table": "enhancements",
+   "id": "000009520002",
+   "side": "attacker",
+   "detachment": "Champions of Chaos",
+   "name_en": "Manifest Vengeance",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "彰显复仇：阵亡后 4+ 留场再打一次——出手顺序/复活域无引擎载体"
+   ],
+   "provenance": {
+    "text_sha256": "6610ebbb0315ad8674614f26648a9a44709fee6f428f7ce9f47b6b4304a1aa1a"
+   },
+   "encoded_by": "manual-2026-07-21",
+   "weapon_filter": ""
+  },
+  {
+   "table": "enhancements",
+   "id": "000009520003",
+   "side": "attacker",
+   "detachment": "Champions of Chaos",
+   "name_en": "Dark Majesty",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "黑暗威仪：冲锋结束后使敌军单位 stunned（其攻击命中 -1）——引擎无 stunned 状态，且该减益作用在敌方**攻击我方**的方向上，单向模拟的攻方链路无载体"
+   ],
+   "provenance": {
+    "text_sha256": "3196717054c3abfaff009b4d3b22718760b50f23cbc51afca5327388aa104349"
+   },
+   "encoded_by": "manual-2026-07-21",
+   "weapon_filter": ""
+  },
+  {
+   "table": "enhancements",
+   "id": "000008981002",
+   "side": "attacker",
+   "detachment": "Chaos Cult",
+   "name_en": "Amulet of Tainted Vigour",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "腐化活力护符：复活 DAMNED 模型——复活域无引擎载体"
+   ],
+   "provenance": {
+    "text_sha256": "4cc34e2860ac9e5fb396a42120ed73712854f22807826daf7a8c941ca352b62e"
+   },
+   "encoded_by": "manual-2026-07-21",
+   "weapon_filter": ""
+  },
+  {
+   "table": "enhancements",
+   "id": "000008981003",
+   "side": "attacker",
+   "detachment": "Chaos Cult",
+   "name_en": "Cultist’s Brand",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "信徒烙印：重掷 Advance 与 Charge 骰——移动/冲锋域无引擎载体"
+   ],
+   "provenance": {
+    "text_sha256": "48d815edec40322ad9e7064a5457c02a279a7f355211b71e4ed3b6a3dfd9f50d"
+   },
+   "encoded_by": "manual-2026-07-21",
+   "weapon_filter": ""
+  },
+  {
+   "table": "enhancements",
+   "id": "000008981004",
+   "side": "attacker",
+   "detachment": "Chaos Cult",
+   "name_en": "Incendiary Goad",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "燃火之刺：门控在**携带者所在单位自身**低于满编 / 低于半编——引擎 target_below_* 是目标侧状态，无攻方战损载体"
+   ],
+   "provenance": {
+    "text_sha256": "23ef23a7c52b0b78fcade8933398d0593c53569811108e1b04be96a609729b37"
+   },
+   "encoded_by": "manual-2026-07-21",
+   "weapon_filter": ""
+  },
+  {
+   "table": "enhancements",
+   "id": "000008981005",
+   "side": "attacker",
+   "detachment": "Chaos Cult",
+   "name_en": "Warped Foresight",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "扭曲预知：Scouts 6\" 扩散——部署域无引擎载体"
+   ],
+   "provenance": {
+    "text_sha256": "a2ff911266b79abdc68f3a1ddd09b316f684c15fb53793108497fee5d903e563"
+   },
+   "encoded_by": "manual-2026-07-21",
+   "weapon_filter": ""
+  },
+  {
+   "table": "enhancements",
+   "id": "000009773002",
+   "side": "attacker",
+   "detachment": "Creations of Bile",
+   "name_en": "Surgical Precision",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "外科精准：近战武器获 [PRECISION]——附属角色定向分配无引擎载体"
+   ],
+   "provenance": {
+    "text_sha256": "dbebc5cef5ceeb99b25fd03489887f0a219013c2b6e04fcf948dbb3a24d83db3"
+   },
+   "encoded_by": "manual-2026-07-21",
+   "weapon_filter": ""
+  },
+  {
+   "table": "enhancements",
+   "id": "000009773003",
+   "side": "target",
+   "detachment": "Creations of Bile",
+   "name_en": "Living Carapace",
+   "name_zh": null,
+   "status": "partial",
+   "effects": [
+    {
+     "phase": "fnp",
+     "op": "fnp",
+     "params": [
+      5
+     ],
+     "condition": [],
+     "source": "活体甲壳（携带者 FNP 5+）"
+    }
+   ],
+   "requires_toggles": [
+    "defender_bearer_leading"
+   ],
+   "not_modeled_notes_zh": [
+    "增益只加在携带者本人身上——引擎按单位面注入全部模型/武器，多模型单位会高估；须以携带者单模型 loadout 模拟才等价",
+    "+1 W（模型特征值）未编——引擎守方 profile 的 w 由装配层给定"
+   ],
+   "provenance": {
+    "text_sha256": "41af79a473a9452340a804152cafe6e2941dc76705a8a1b30932c5fae1c5f90a"
+   },
+   "encoded_by": "manual-2026-07-21",
+   "weapon_filter": ""
+  },
+  {
+   "table": "enhancements",
+   "id": "000009773004",
+   "side": "attacker",
+   "detachment": "Creations of Bile",
+   "name_en": "Helm of All-seeing",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "全视之盔：限制敌方预备队落点——预备队域无引擎载体"
+   ],
+   "provenance": {
+    "text_sha256": "6f9a986114d97519d6eb6fd4cee5a8cf9cb97b5ea6390b17aea9744a7d4b1335"
+   },
+   "encoded_by": "manual-2026-07-21",
+   "weapon_filter": ""
+  },
+  {
+   "table": "enhancements",
+   "id": "000009773005",
+   "side": "attacker",
+   "detachment": "Creations of Bile",
+   "name_en": "Prime Test Subject",
+   "name_zh": null,
+   "status": "partial",
+   "effects": [
+    {
+     "phase": "damage",
+     "op": "modify",
+     "params": [
+      1
+     ],
+     "condition": [
+      "phase_melee"
+     ],
+     "source": "首要试验体（携带者近战武器伤害 +1）"
+    },
+    {
+     "phase": "hit",
+     "op": "reroll",
+     "params": [
+      "fail"
+     ],
+     "condition": [
+      "phase_melee"
+     ],
+     "source": "首要试验体（携带者近战攻击重掷命中骰）"
+    }
+   ],
+   "requires_toggles": [
+    "bearer_leading"
+   ],
+   "not_modeled_notes_zh": [
+    "增益只加在携带者本人身上——引擎按单位面注入全部模型/武器，多模型单位会高估；须以携带者单模型 loadout 模拟才等价"
+   ],
+   "provenance": {
+    "text_sha256": "d3fbf87598eed00b643d87234f9de42803b828b5aa6de148e11ef08a69b5f88b"
+   },
+   "encoded_by": "manual-2026-07-21",
+   "weapon_filter": ""
+  },
+  {
+   "table": "enhancements",
+   "id": "000010743002",
+   "side": "attacker",
+   "detachment": "Cult of the Arkifane",
+   "name_en": "Wyredjinn",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "亚线妖精：掷骰得 CP——CP 经济无引擎载体"
+   ],
+   "provenance": {
+    "text_sha256": "f00631932f3dafeb19219c5c7584996cb7f2807efefbe4f1098b9fcb849ff9a4"
+   },
+   "encoded_by": "manual-2026-07-21",
+   "weapon_filter": ""
+  },
+  {
+   "table": "enhancements",
+   "id": "000010743003",
+   "side": "attacker",
+   "detachment": "Cult of the Arkifane",
+   "name_en": "Cybinfernal Font",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "赛博邪能源：授予 SOUL FORGE 关键词——关键词授予无战斗链载体"
+   ],
+   "provenance": {
+    "text_sha256": "8b0e693b9a5cecc19b7158bcb6ed0194c74335371569fbee3034f3e2166be586"
+   },
+   "encoded_by": "manual-2026-07-21",
+   "weapon_filter": ""
+  },
+  {
+   "table": "enhancements",
+   "id": "000010743004",
+   "side": "attacker",
+   "detachment": "Cult of the Arkifane",
+   "name_en": "Mark of the Soul Forges",
+   "name_zh": null,
+   "status": "partial",
+   "effects": [
+    {
+     "phase": "hit",
+     "op": "crit_threshold",
+     "params": [
+      5
+     ],
+     "condition": [],
+     "source": "灵魂熔炉之印（携带者攻击未修正命中 5+ 即暴击；两相位通用故不加门）"
+    }
+   ],
+   "requires_toggles": [
+    "bearer_leading"
+   ],
+   "not_modeled_notes_zh": [
+    "增益只加在携带者本人身上——引擎按单位面注入全部模型/武器，多模型单位会高估；须以携带者单模型 loadout 模拟才等价"
+   ],
+   "provenance": {
+    "text_sha256": "a6c49ffa94f94d736d73fa7c48f0198c375bee76033a74c2983f4b9f43de461a"
+   },
+   "encoded_by": "manual-2026-07-21",
+   "weapon_filter": ""
+  },
+  {
+   "table": "enhancements",
+   "id": "000010743005",
+   "side": "attacker",
+   "detachment": "Cult of the Arkifane",
+   "name_en": "Crown of Worms",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "蠕虫王冠：Warpsmith 系技能射程 +3\"——技能射程域无引擎载体"
+   ],
+   "provenance": {
+    "text_sha256": "6e9758e2f986d63918238460175bb2b37a07cafabc419b6da8448b2f8d139e9b"
+   },
+   "encoded_by": "manual-2026-07-21",
+   "weapon_filter": ""
+  },
+  {
+   "table": "enhancements",
+   "id": "000008964002",
+   "side": "attacker",
+   "detachment": "Deceptors",
+   "name_en": "Cursed Fang",
+   "name_zh": null,
+   "status": "partial",
+   "effects": [
+    {
+     "phase": "save",
+     "op": "ap_improve",
+     "params": [
+      1
+     ],
+     "condition": [
+      "phase_melee"
+     ],
+     "source": "诅咒之牙（携带者近战武器 AP 改善 1）"
+    }
+   ],
+   "requires_toggles": [
+    "bearer_leading"
+   ],
+   "not_modeled_notes_zh": [
+    "增益只加在携带者本人身上——引擎按单位面注入全部模型/武器，多模型单位会高估；须以携带者单模型 loadout 模拟才等价",
+    "近战武器获 [PRECISION]——附属角色定向分配无引擎载体"
+   ],
+   "provenance": {
+    "text_sha256": "2b44ab5fb2ac28ee3c427dce93df15d7a35d79bc22fb60f6fe9ba37a918fcc71"
+   },
+   "encoded_by": "manual-2026-07-21",
+   "weapon_filter": ""
+  },
+  {
+   "table": "enhancements",
+   "id": "000008964003",
+   "side": "attacker",
+   "detachment": "Deceptors",
+   "name_en": "Falsehood",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "虚言：预备队入场 + 替换友军模型上场——部署域无引擎载体"
+   ],
+   "provenance": {
+    "text_sha256": "25b8232f99ae462363b71bd357b7fc800db3d33a91f3721506dbd41dc447b286"
+   },
+   "encoded_by": "manual-2026-07-21",
+   "weapon_filter": ""
+  },
+  {
+   "table": "enhancements",
+   "id": "000008964004",
+   "side": "target",
+   "detachment": "Deceptors",
+   "name_en": "Shroud of Obfuscation",
+   "name_zh": null,
+   "status": "partial",
+   "effects": [
+    {
+     "phase": "save",
+     "op": "cover",
+     "params": [],
+     "condition": [
+      "phase_shooting"
+     ],
+     "source": "混淆之幕（携带者获 Stealth：11 版即远程攻击时享掩体收益）"
+    }
+   ],
+   "requires_toggles": [
+    "defender_bearer_leading"
+   ],
+   "not_modeled_notes_zh": [
+    "增益只加在携带者本人身上——引擎按单位面注入全部模型/武器，多模型单位会高估；须以携带者单模型 loadout 模拟才等价",
+    "Lone Operative（只能被 12\" 内攻击选中）无引擎载体"
+   ],
+   "provenance": {
+    "text_sha256": "0160181e5cfa2f169804f9f79a3c8e52683e088a2545f2c787c876c72baafae2"
+   },
+   "encoded_by": "manual-2026-07-21",
+   "weapon_filter": ""
+  },
+  {
+   "table": "enhancements",
+   "id": "000008964005",
+   "side": "attacker",
+   "detachment": "Deceptors",
+   "name_en": "Soul Link",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "灵魂链接：复制其他 CHARACTER 的兵牌技能——技能替换无引擎载体"
+   ],
+   "provenance": {
+    "text_sha256": "66f646e81de082888e7ded0ed53c76dbe2483b8e5b342d1aa66c9a4103f99271"
+   },
+   "encoded_by": "manual-2026-07-21",
+   "weapon_filter": ""
+  },
+  {
+   "table": "enhancements",
+   "id": "000008972002",
+   "side": "attacker",
+   "detachment": "Dread Talons",
+   "name_en": "Eater of Dread",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "恐惧吞噬者：掷骰得 CP——CP 经济无引擎载体"
+   ],
+   "provenance": {
+    "text_sha256": "d7874cdf595cac759fa4b134f24dee38c1b9d85a68fe5060b5014c23864eab75"
+   },
+   "encoded_by": "manual-2026-07-21",
+   "weapon_filter": ""
+  },
+  {
+   "table": "enhancements",
+   "id": "000008972003",
+   "side": "target",
+   "detachment": "Dread Talons",
+   "name_en": "Night’s Shroud",
+   "name_zh": null,
+   "status": "encoded",
+   "effects": [
+    {
+     "phase": "save",
+     "op": "cover",
+     "params": [],
+     "condition": [
+      "phase_shooting"
+     ],
+     "source": "夜之幕（携带者所率单位获 Stealth：11 版即远程攻击时享掩体收益）"
+    }
+   ],
+   "requires_toggles": [
+    "defender_bearer_leading"
+   ],
+   "not_modeled_notes_zh": [],
+   "provenance": {
+    "text_sha256": "213fc55e6edb9d1def54fec7777d3591a11e61bd769772eb0afc9d179f750dd2"
+   },
+   "encoded_by": "manual-2026-07-21",
+   "weapon_filter": ""
+  },
+  {
+   "table": "enhancements",
+   "id": "000008972004",
+   "side": "attacker",
+   "detachment": "Dread Talons",
+   "name_en": "Warp-fuelled Thrusters",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "亚空推进器：撤回战略预备队——预备队域无引擎载体"
+   ],
+   "provenance": {
+    "text_sha256": "39f00e850436ee26e9bd0d2bc6088941cc00ff1db7c4a5df683d99a8c420d27e"
+   },
+   "encoded_by": "manual-2026-07-21",
+   "weapon_filter": ""
+  },
+  {
+   "table": "enhancements",
+   "id": "000008972005",
+   "side": "attacker",
+   "detachment": "Dread Talons",
+   "name_en": "Willbreaker",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "破志者：敌军士气检定——士气域无引擎载体"
+   ],
+   "provenance": {
+    "text_sha256": "8ab97d842f759d5d94d5bb0e8ad6a4e852ff016180b8ab47079ff49370a4cc40"
+   },
+   "encoded_by": "manual-2026-07-21",
+   "weapon_filter": ""
+  },
+  {
+   "table": "enhancements",
+   "id": "000008976002",
+   "side": "attacker",
+   "detachment": "Fellhammer Siege-host",
+   "name_en": "Bastion Plate",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "堡垒护板：每战轮一次把某次攻击的伤害改为 0——单次触发 + 特征值 SET，两者均无引擎通道"
+   ],
+   "provenance": {
+    "text_sha256": "43bd764dbfd47b2cea4e489928c8a7a71fe291fa6f68f333fd8437f9347d756a"
+   },
+   "encoded_by": "manual-2026-07-21",
+   "weapon_filter": ""
+  },
+  {
+   "table": "enhancements",
+   "id": "000008976003",
+   "side": "attacker",
+   "detachment": "Fellhammer Siege-host",
+   "name_en": "Iron Artifice",
+   "name_zh": null,
+   "status": "partial",
+   "effects": [
+    {
+     "phase": "wound",
+     "op": "crit_threshold",
+     "params": [
+      4
+     ],
+     "condition": [
+      "target_has_keyword",
+      "vehicle"
+     ],
+     "source": "钢铁匠艺（携带者武器获 [ANTI-VEHICLE 4+]：对 VEHICLE 目标未修正致伤 4+ 即暴击）"
+    }
+   ],
+   "requires_toggles": [
+    "bearer_leading"
+   ],
+   "not_modeled_notes_zh": [
+    "增益只加在携带者本人身上——引擎按单位面注入全部模型/武器，多模型单位会高估；须以携带者单模型 loadout 模拟才等价",
+    "[ANTI-FORTIFICATION 4+] 分支未编——引擎目标 profile 无 FORTIFICATION 场景"
+   ],
+   "provenance": {
+    "text_sha256": "482441b691eca804a67bee942cd85bd8d67e49cf0fd7056f535adc1ca9f0f21b"
+   },
+   "encoded_by": "manual-2026-07-21",
+   "weapon_filter": ""
+  },
+  {
+   "table": "enhancements",
+   "id": "000008976004",
+   "side": "attacker",
+   "detachment": "Fellhammer Siege-host",
+   "name_en": "Ironbound Enmity",
+   "name_zh": null,
+   "status": "partial",
+   "effects": [
+    {
+     "phase": "wound",
+     "op": "modify",
+     "params": [
+      1
+     ],
+     "condition": [],
+     "source": "钢缚仇恨（携带者在目标点范围内攻击时致伤骰 +1；两相位通用故不加门）"
+    }
+   ],
+   "requires_toggles": [
+    "bearer_leading"
+   ],
+   "not_modeled_notes_zh": [
+    "「携带者在目标点范围内」几何前提无引擎载体，按恒满足处理（高估）",
+    "增益只加在携带者本人身上——引擎按单位面注入全部模型/武器，多模型单位会高估；须以携带者单模型 loadout 模拟才等价"
+   ],
+   "provenance": {
+    "text_sha256": "6bff37933f02f202ee325b0c227c91c95d2f6a4d0c26cd920ef57efd47be1efe"
+   },
+   "encoded_by": "manual-2026-07-21",
+   "weapon_filter": ""
+  },
+  {
+   "table": "enhancements",
+   "id": "000008976005",
+   "side": "attacker",
+   "detachment": "Fellhammer Siege-host",
+   "name_en": "Warp Tracer",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "亚空追踪器：携带者射击**之后**使被命中的敌军单位本阶段失去掩体收益——受益者是后续攻击方而非携带者本次攻击，单向单次模拟无载体"
+   ],
+   "provenance": {
+    "text_sha256": "6a0caa3e1013ae0a47d4b47116d3824f080da6fed385b3cd21297bd0ef5732c4"
+   },
+   "encoded_by": "manual-2026-07-21",
+   "weapon_filter": ""
+  },
+  {
+   "table": "enhancements",
+   "id": "000010688002",
+   "side": "attacker",
+   "detachment": "Huron’s Marauders",
+   "name_en": "Voice of the Tyrant",
+   "name_zh": null,
+   "status": "partial",
+   "effects": [
+    {
+     "phase": "hit",
+     "op": "modify",
+     "params": [
+      1
+     ],
+     "condition": [],
+     "source": "暴君之声（携带者所率单位获 Huron’s Elite：命中骰 +1；两相位通用故不加门）"
+    }
+   ],
+   "requires_toggles": [
+    "bearer_leading"
+   ],
+   "not_modeled_notes_zh": [
+    "同时获得的 Mobile Marauders（撤退回合可射击并冲锋）属移动资格域，无引擎载体"
+   ],
+   "provenance": {
+    "text_sha256": "25cd92f7edfea3859da50e3a4ae262a563f1e4a447499d1d982f9bf41cb0075a"
+   },
+   "encoded_by": "manual-2026-07-21",
+   "weapon_filter": ""
+  },
+  {
+   "table": "enhancements",
+   "id": "000010688003",
+   "side": "attacker",
+   "detachment": "Huron’s Marauders",
+   "name_en": "Raid Leader",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "突袭领袖：下车后仍可宣告冲锋——移动资格域无引擎载体"
+   ],
+   "provenance": {
+    "text_sha256": "59d4d8e4e7d4f313b09e69c931ace992d9144289a71c84c9140563b29e12a46d"
+   },
+   "encoded_by": "manual-2026-07-21",
+   "weapon_filter": ""
+  },
+  {
+   "table": "enhancements",
+   "id": "000010688004",
+   "side": "attacker",
+   "detachment": "Huron’s Marauders",
+   "name_en": "Dread Reputation",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "骇人名声：入场时敌军士气检定——士气域无引擎载体"
+   ],
+   "provenance": {
+    "text_sha256": "40829f2c1e34635744a558312f76d73ddfbf0dc9cea2ba8a77528afb17eb9579"
+   },
+   "encoded_by": "manual-2026-07-21",
+   "weapon_filter": ""
+  },
+  {
+   "table": "enhancements",
+   "id": "000010688005",
+   "side": "attacker",
+   "detachment": "Huron’s Marauders",
+   "name_en": "Eager for Bloodshed",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "嗜血渴战：Infiltrators——部署域无引擎载体"
+   ],
+   "provenance": {
+    "text_sha256": "abcb0e69aca5939bb557547bc8ce144db02c5ddd2a2b3e70755f7ffc6ea05462"
+   },
+   "encoded_by": "manual-2026-07-21",
+   "weapon_filter": ""
+  },
+  {
+   "table": "enhancements",
+   "id": "000009503002",
+   "side": "attacker",
+   "detachment": "Infernal Reavers",
+   "name_en": "Voice of the Octed",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "八元之声：Dark Pact 同时取两项能力——引擎无 Dark Pact 状态与二选一分支"
+   ],
+   "provenance": {
+    "text_sha256": "39f39de5ff7cfb98f40d7662b13a6ccffa4a7d50c45bc762e7774d40a228e717"
+   },
+   "encoded_by": "manual-2026-07-21",
+   "weapon_filter": ""
+  },
+  {
+   "table": "enhancements",
+   "id": "000009503003",
+   "side": "target",
+   "detachment": "Infernal Reavers",
+   "name_en": "Swollen with Power",
+   "name_zh": null,
+   "status": "partial",
+   "effects": [
+    {
+     "phase": "wound",
+     "op": "t_improve",
+     "params": [
+      1
+     ],
+     "condition": [],
+     "source": "力量膨胀（携带者 T +1）"
+    }
+   ],
+   "requires_toggles": [
+    "defender_bearer_leading"
+   ],
+   "not_modeled_notes_zh": [
+    "增益只加在携带者本人身上——引擎按单位面注入全部模型/武器，多模型单位会高估；须以携带者单模型 loadout 模拟才等价",
+    "舱门争夺 roll-off 重掷属登舰行动域，无引擎载体"
+   ],
+   "provenance": {
+    "text_sha256": "5e9fdca1853cdb44af4ad1de198e8d44b508aca5afc9105b6cbe00c7b66616b1"
+   },
+   "encoded_by": "manual-2026-07-21",
+   "weapon_filter": ""
+  },
+  {
+   "table": "enhancements",
+   "id": "000010641002",
+   "side": "target",
+   "detachment": "Nightmare Hunt",
+   "name_en": "Greyveil Hex",
+   "name_zh": null,
+   "status": "partial",
+   "effects": [
+    {
+     "phase": "save",
+     "op": "cover",
+     "params": [],
+     "condition": [
+      "phase_shooting"
+     ],
+     "source": "灰纱咒（携带者所率单位获 Stealth：11 版即远程攻击时享掩体收益）"
+    }
+   ],
+   "requires_toggles": [
+    "defender_bearer_leading"
+   ],
+   "not_modeled_notes_zh": [
+    "第二条「在己方控制的目标点范围内时只能被 18\" 内的远程攻击选中」是射程门 + 目标点几何，引擎均不建模"
+   ],
+   "provenance": {
+    "text_sha256": "4f0b44e7f58474c3988e41450a6943ce99e43231a25ff514dc48ec21c764687d"
+   },
+   "encoded_by": "manual-2026-07-21",
+   "weapon_filter": ""
+  },
+  {
+   "table": "enhancements",
+   "id": "000010641003",
+   "side": "attacker",
+   "detachment": "Nightmare Hunt",
+   "name_en": "Warp-fuelled Thrusters",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "亚空推进器：撤回战略预备队——预备队域无引擎载体"
+   ],
+   "provenance": {
+    "text_sha256": "a0ba770ff53ed97cd199c77e009f7addfb5e07ecd78747849625605412158285"
+   },
+   "encoded_by": "manual-2026-07-21",
+   "weapon_filter": ""
+  },
+  {
+   "table": "enhancements",
+   "id": "000010641004",
+   "side": "attacker",
+   "detachment": "Nightmare Hunt",
+   "name_en": "Terrorglut Parasite",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "恐惧饕餮寄生体：接战敌军士气检定 -1——士气域无引擎载体"
+   ],
+   "provenance": {
+    "text_sha256": "adde12e9e37413189cbbe5788b6fff12a4ef2dae7a4398b1dacb2e45989c6b9a"
+   },
+   "encoded_by": "manual-2026-07-21",
+   "weapon_filter": ""
+  },
+  {
+   "table": "enhancements",
+   "id": "000010641005",
+   "side": "attacker",
+   "detachment": "Nightmare Hunt",
+   "name_en": "Sorrowscent Vulture",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "悲香秃鹫：Scouts 6\" + 附属 Warp Talons——部署/编制域无引擎载体"
+   ],
+   "provenance": {
+    "text_sha256": "b47a61c1201379eaac15c19c89f5a428b41fb8f4258ed6db6fc3dedbe3817fa7"
+   },
+   "encoded_by": "manual-2026-07-21",
+   "weapon_filter": ""
+  },
+  {
+   "table": "enhancements",
+   "id": "000008357002",
+   "side": "attacker",
+   "detachment": "Pactbound Zealots",
+   "name_en": "Eye of Tzeentch",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "奸奇之眼：Dark Pact 检定 8+ 得 1CP——CP 经济无引擎载体"
+   ],
+   "provenance": {
+    "text_sha256": "c272a7f447f2284eb8607751cd97e931171131ea6e3f48e59053be7ef0d6c081"
+   },
+   "encoded_by": "manual-2026-07-21",
+   "weapon_filter": ""
+  },
+  {
+   "table": "enhancements",
+   "id": "000008357003",
+   "side": "target",
+   "detachment": "Pactbound Zealots",
+   "name_en": "Intoxicating Elixir",
+   "name_zh": null,
+   "status": "partial",
+   "effects": [
+    {
+     "phase": "fnp",
+     "op": "fnp",
+     "params": [
+      5
+     ],
+     "condition": [],
+     "source": "迷醉灵药（携带者 FNP 5+）"
+    }
+   ],
+   "requires_toggles": [
+    "defender_bearer_leading"
+   ],
+   "not_modeled_notes_zh": [
+    "增益只加在携带者本人身上——引擎按单位面注入全部模型/武器，多模型单位会高估；须以携带者单模型 loadout 模拟才等价",
+    "攻击后的敌军士气检定条款无引擎载体"
+   ],
+   "provenance": {
+    "text_sha256": "319d080491630547b23df093e63622e0a27e4dd3cf8535bf5ba9dfcd1a76176f"
+   },
+   "encoded_by": "manual-2026-07-21",
+   "weapon_filter": ""
+  },
+  {
+   "table": "enhancements",
+   "id": "000008357004",
+   "side": "attacker",
+   "detachment": "Pactbound Zealots",
+   "name_en": "Orbs of Unlife",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "无生之球：战斗阶段末对 3\" 内敌军掷骰造致命伤——外部致命伤池无载体"
+   ],
+   "provenance": {
+    "text_sha256": "4ac214f285d027de5e973a83a31fdf82aac68f22434c8bd5d9a2a4ffdb216c51"
+   },
+   "encoded_by": "manual-2026-07-21",
+   "weapon_filter": ""
+  },
+  {
+   "table": "enhancements",
+   "id": "000008357005",
+   "side": "attacker",
+   "detachment": "Pactbound Zealots",
+   "name_en": "Talisman of Burning Blood",
+   "name_zh": null,
+   "status": "partial",
+   "effects": [
+    {
+     "phase": "attacks",
+     "op": "modify",
+     "params": [
+      1
+     ],
+     "condition": [
+      "phase_melee"
+     ],
+     "source": "燃血护符（携带者近战武器 A +1）"
+    },
+    {
+     "phase": "wound",
+     "op": "s_improve",
+     "params": [
+      1
+     ],
+     "condition": [
+      "phase_melee"
+     ],
+     "source": "燃血护符（携带者近战武器 S +1）"
+    }
+   ],
+   "requires_toggles": [
+    "bearer_leading"
+   ],
+   "not_modeled_notes_zh": [
+    "增益只加在携带者本人身上——引擎按单位面注入全部模型/武器，多模型单位会高估；须以携带者单模型 loadout 模拟才等价",
+    "「Dark Pact 未失败时改为掷 D3 取代 +1」的分支依赖 Dark Pact 检定状态，未编（欠建模）"
+   ],
+   "provenance": {
+    "text_sha256": "9c54c3ec6a81d243af39b6b4c57e4ce086173f2e31ddfc8b2023edcad9b3c991"
+   },
+   "encoded_by": "manual-2026-07-21",
+   "weapon_filter": ""
+  },
+  {
+   "table": "enhancements",
+   "id": "000008968002",
+   "side": "attacker",
+   "detachment": "Renegade Raiders",
+   "name_en": "Despot’s Claim",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "暴君的宣称：掷骰得 CP——CP 经济无引擎载体"
+   ],
+   "provenance": {
+    "text_sha256": "b4315511dc17857b53a29869e23df225f5ed9b32b4278cda185a3495fb4eced5"
+   },
+   "encoded_by": "manual-2026-07-21",
+   "weapon_filter": ""
+  },
+  {
+   "table": "enhancements",
+   "id": "000008968003",
+   "side": "attacker",
+   "detachment": "Renegade Raiders",
+   "name_en": "Dread Reaver",
+   "name_zh": null,
+   "status": "partial",
+   "effects": [
+    {
+     "phase": "hit",
+     "op": "reroll",
+     "params": [
+      "fail"
+     ],
+     "condition": [
+      "phase_melee"
+     ],
+     "source": "恐惧劫掠者（携带者近战攻击重掷命中骰）"
+    },
+    {
+     "phase": "wound",
+     "op": "reroll",
+     "params": [
+      "fail"
+     ],
+     "condition": [
+      "phase_melee"
+     ],
+     "source": "恐惧劫掠者（携带者近战攻击重掷致伤骰）"
+    }
+   ],
+   "requires_toggles": [
+    "bearer_leading"
+   ],
+   "not_modeled_notes_zh": [
+    "「携带者完全位于对手部署区 12\" 内」是部署区几何前提，无引擎载体，按恒满足处理（高估）",
+    "增益只加在携带者本人身上——引擎按单位面注入全部模型/武器，多模型单位会高估；须以携带者单模型 loadout 模拟才等价"
+   ],
+   "provenance": {
+    "text_sha256": "7f4ff68b67f195d1067c64de835ed1c0b50bd16dbf427fe3dd1d821369304fa7"
+   },
+   "encoded_by": "manual-2026-07-21",
+   "weapon_filter": ""
+  },
+  {
+   "table": "enhancements",
+   "id": "000008968004",
+   "side": "attacker",
+   "detachment": "Renegade Raiders",
+   "name_en": "Mark of the Hound",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "猎犬之印：Scouts 6\"——部署域无引擎载体"
+   ],
+   "provenance": {
+    "text_sha256": "ccc5e66b235f5b3b998fde9ee25ca75c13896a3bc4616a9474e44c64dece9249"
+   },
+   "encoded_by": "manual-2026-07-21",
+   "weapon_filter": ""
+  },
+  {
+   "table": "enhancements",
+   "id": "000008968005",
+   "side": "attacker",
+   "detachment": "Renegade Raiders",
+   "name_en": "Tyrant’s Lash",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "暴君之鞭：重掷 Advance + 撤退后可射击——移动资格域无引擎载体"
+   ],
+   "provenance": {
+    "text_sha256": "804e070e6e71d99a1e0f0f0a890407f79b4484440b8d391044ada8c08246016f"
+   },
+   "encoded_by": "manual-2026-07-21",
+   "weapon_filter": ""
+  },
+  {
+   "table": "enhancements",
+   "id": "000010694002",
+   "side": "attacker",
+   "detachment": "Renegade Warband",
+   "name_en": "Weaponised Hatred",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "武器化仇恨：重新指定 Vendetta 目标——点名状态无引擎载体"
+   ],
+   "provenance": {
+    "text_sha256": "c92a04529bce3d952564260a5c5efe5ec8697cefd2a37bb359d550a2d90f56bf"
+   },
+   "encoded_by": "manual-2026-07-21",
+   "weapon_filter": ""
+  },
+  {
+   "table": "enhancements",
+   "id": "000010694003",
+   "side": "attacker",
+   "detachment": "Renegade Warband",
+   "name_en": "Eyes of the Hunter",
+   "name_zh": null,
+   "status": "encoded",
+   "effects": [
+    {
+     "phase": "save",
+     "op": "ignores_cover",
+     "params": [],
+     "condition": [
+      "phase_shooting"
+     ],
+     "source": "猎手之眼（携带者所率单位远程武器获 [IGNORES COVER]）"
+    }
+   ],
+   "requires_toggles": [
+    "bearer_leading"
+   ],
+   "not_modeled_notes_zh": [],
+   "provenance": {
+    "text_sha256": "9255f90db49ed3eb52b591ffb466b464c5b9fb0f9c6cb2caf3b0388d1e75796c"
+   },
+   "encoded_by": "manual-2026-07-21",
+   "weapon_filter": ""
+  },
+  {
+   "table": "enhancements",
+   "id": "000010694004",
+   "side": "attacker",
+   "detachment": "Renegade Warband",
+   "name_en": "Fratricidal Trophies",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "弑亲战利品：门控是「本回合本单位选择了 Default to Doctrine」——该状态由 Twisted Doctrine 分队规则的移动阶段选择产生，引擎无此状态开关"
+   ],
+   "provenance": {
+    "text_sha256": "45920dbcdd13e3575dd18d6c2ebdfc6956d31116fd44195a1633d72959189eb4"
+   },
+   "encoded_by": "manual-2026-07-21",
+   "weapon_filter": ""
+  },
+  {
+   "table": "enhancements",
+   "id": "000010694005",
+   "side": "attacker",
+   "detachment": "Renegade Warband",
+   "name_en": "Empyric Symbiote",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "灵能共生体：Advance 与 Charge 骰 +1——移动/冲锋域无引擎载体"
+   ],
+   "provenance": {
+    "text_sha256": "aabd37cffd816358ba5a3050246ee807397ea5439acb474ae746f56d536254fa"
+   },
+   "encoded_by": "manual-2026-07-21",
+   "weapon_filter": ""
+  },
+  {
+   "table": "enhancements",
+   "id": "000008985002",
+   "side": "target",
+   "detachment": "Soulforged Warpack",
+   "name_en": "Forge’s Blessing",
+   "name_zh": null,
+   "status": "partial",
+   "effects": [
+    {
+     "phase": "fnp",
+     "op": "fnp",
+     "params": [
+      6
+     ],
+     "condition": [],
+     "source": "熔炉的祝福（受益单位 FNP 6+）"
+    }
+   ],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "受益者是指挥阶段点名的、12\" 内的**另一个**友军 HERETIC ASTARTES VEHICLE 单位（非携带者所在单位）——引擎按「当前守方即受益单位」处理（高估）"
+   ],
+   "provenance": {
+    "text_sha256": "3afd453bfcda12d2772da8a1de1f5bd6c150b8b96313402a2958f681e05037b8"
+   },
+   "encoded_by": "manual-2026-07-21",
+   "weapon_filter": ""
+  },
+  {
+   "table": "enhancements",
+   "id": "000008985003",
+   "side": "attacker",
+   "detachment": "Soulforged Warpack",
+   "name_en": "Invigorated Mechatendrils",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "强化机械触手：移动 +4\"——移动域无引擎载体"
+   ],
+   "provenance": {
+    "text_sha256": "6db1503abf102edd73f3394b115dc5ad710b489adf344d5ada05128d220e2d29"
+   },
+   "encoded_by": "manual-2026-07-21",
+   "weapon_filter": ""
+  },
+  {
+   "table": "enhancements",
+   "id": "000008985004",
+   "side": "attacker",
+   "detachment": "Soulforged Warpack",
+   "name_en": "Tempting Addendum",
+   "name_zh": null,
+   "status": "partial",
+   "effects": [
+    {
+     "phase": "hit",
+     "op": "reroll",
+     "params": [
+      "fail"
+     ],
+     "condition": [],
+     "source": "诱人附款（受益单位攻击重掷命中骰；两相位通用故不加门）"
+    }
+   ],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "受益者是 3\" 内调用契约的**另一个**友军 DAEMON VEHICLE 单位（非携带者所在单位），且以「调用契约」为前提——两重前提均无引擎载体，按恒满足处理（高估）",
+    "「调用契约受致命伤时额外 +1 点」的惩罚分量未建模"
+   ],
+   "provenance": {
+    "text_sha256": "572a0a3e7baf0cc9c69c3f333b074003bb249f1dac0eb42e3d4f54e694a33cd0"
+   },
+   "encoded_by": "manual-2026-07-21",
+   "weapon_filter": ""
+  },
+  {
+   "table": "enhancements",
+   "id": "000008985005",
+   "side": "attacker",
+   "detachment": "Soulforged Warpack",
+   "name_en": "Soul Harvester",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "灵魂收割者：击杀敌军得 CP——CP 经济无引擎载体"
+   ],
+   "provenance": {
+    "text_sha256": "1680e86abf16b27e572c4c52b998d1fc88179c0f8c03ceb9a4554eff3d3a6046"
+   },
+   "encoded_by": "manual-2026-07-21",
+   "weapon_filter": ""
+  },
+  {
+   "table": "enhancements",
+   "id": "000009512002",
+   "side": "attacker",
+   "detachment": "Underdeck Uprising",
+   "name_en": "Rabble Rouser",
+   "name_zh": null,
+   "status": "partial",
+   "effects": [
+    {
+     "phase": "attacks",
+     "op": "modify",
+     "params": [
+      1
+     ],
+     "condition": [],
+     "source": "煽动者（受益单位武器 A +1；两相位通用故不加门）"
+    }
+   ],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "受益者是 6\" 内的**另一个**友军 CULTIST MOB / FELLGOR BEASTMEN 单位（非携带者所在单位）——引擎按「当前攻方即受益单位」处理（高估）",
+    "「每回合一次」的次数限制未建模"
+   ],
+   "provenance": {
+    "text_sha256": "f4d7f304f3dbeb4bf03166330d60ff98050cb33d583b6a0c32718e5a40d855bc"
+   },
+   "encoded_by": "manual-2026-07-21",
+   "weapon_filter": ""
+  },
+  {
+   "table": "enhancements",
+   "id": "000009512003",
+   "side": "attacker",
+   "detachment": "Underdeck Uprising",
+   "name_en": "Vox Malevolus",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "恶意通讯：第一战轮重掷 Advance 骰——移动域无引擎载体"
+   ],
+   "provenance": {
+    "text_sha256": "a8aac381924dad8c43e0bf326810e50b45b1a799b0705a1fedd97938a988b9be"
+   },
+   "encoded_by": "manual-2026-07-21",
+   "weapon_filter": ""
+  },
+  {
+   "table": "enhancements",
+   "id": "000008960002",
+   "side": "attacker",
+   "detachment": "Veterans of the Long War",
+   "name_en": "Eager for Vengeance",
+   "name_zh": null,
+   "status": "partial",
+   "effects": [
+    {
+     "phase": "hit",
+     "op": "modify",
+     "params": [
+      1
+     ],
+     "condition": [],
+     "source": "渴望复仇（撤退回合攻击仇恨焦点时命中骰 +1；两相位通用故不加门）"
+    }
+   ],
+   "requires_toggles": [
+    "bearer_leading",
+    "advanced_or_fell_back"
+   ],
+   "not_modeled_notes_zh": [
+    "仇恨焦点是分队规则每指挥阶段点名的单一敌军单位——引擎按「当前目标即仇恨焦点」处理（高估）",
+    "「撤退回合仍可射击并冲锋」的资格条款与「对仇恨焦点冲锋骰 +1」属移动/冲锋域，无引擎载体"
+   ],
+   "provenance": {
+    "text_sha256": "2f77dce1f08f23658e9b29da7eefbb61804e55b80afe69f1dd75aa352f5ae350"
+   },
+   "encoded_by": "manual-2026-07-21",
+   "weapon_filter": ""
+  },
+  {
+   "table": "enhancements",
+   "id": "000008960003",
+   "side": "attacker",
+   "detachment": "Veterans of the Long War",
+   "name_en": "Eye of Abaddon",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "阿巴顿之眼：仇恨焦点被摧毁时掷骰得 CP——CP 经济无引擎载体"
+   ],
+   "provenance": {
+    "text_sha256": "2fb2c650d207846abe1f6dfcc5370c1490c608504d3d79e7f7073c8a9f1f9694"
+   },
+   "encoded_by": "manual-2026-07-21",
+   "weapon_filter": ""
+  },
+  {
+   "table": "enhancements",
+   "id": "000008960004",
+   "side": "attacker",
+   "detachment": "Veterans of the Long War",
+   "name_en": "Mark of Legend",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "传奇之印：每回合一次重掷一颗命中/致伤/保护骰——单骰单次重掷无引擎通道（hit/wound reroll 是「全部失败骰」语义，裸编会大幅高估）"
+   ],
+   "provenance": {
+    "text_sha256": "6090a862bc2489fbacf6fa5f3e15fee383b05792120dae16b934b2d0b0a8baa4"
+   },
+   "encoded_by": "manual-2026-07-21",
+   "weapon_filter": ""
+  },
+  {
+   "table": "enhancements",
+   "id": "000008960005",
+   "side": "attacker",
+   "detachment": "Veterans of the Long War",
+   "name_en": "Warmaster’s Gift",
+   "name_zh": null,
+   "status": "partial",
+   "effects": [
+    {
+     "phase": "wound",
+     "op": "crit_threshold",
+     "params": [
+      5
+     ],
+     "condition": [],
+     "source": "战帅的馈赠（攻击仇恨焦点时未修正致伤 5+ 即暴击；两相位通用故不加门）"
+    }
+   ],
+   "requires_toggles": [
+    "bearer_leading"
+   ],
+   "not_modeled_notes_zh": [
+    "仇恨焦点是每指挥阶段点名的单一敌军单位——引擎按「当前目标即仇恨焦点」处理（高估）",
+    "增益只加在携带者本人身上——引擎按单位面注入全部模型/武器，多模型单位会高估；须以携带者单模型 loadout 模拟才等价"
+   ],
+   "provenance": {
+    "text_sha256": "67b32e0b26de6918180874080abed2673219be850d6cdaef11cca30768837d08"
+   },
+   "encoded_by": "manual-2026-07-21",
+   "weapon_filter": ""
+  },
+  {
+   "table": "enhancements",
+   "id": "000010739002",
+   "side": "attacker",
+   "detachment": "Warpstrike Champions",
+   "name_en": "Infernal Fulgurite",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "邪能雷石：Rapid Ingress 战略 0CP——CP 与预备队域无引擎载体"
+   ],
+   "provenance": {
+    "text_sha256": "b7f774e8e007191d8784d784f6f2eb40f6fa825120c2c7de03e498539305ff2e"
+   },
+   "encoded_by": "manual-2026-07-21",
+   "weapon_filter": ""
+  },
+  {
+   "table": "enhancements",
+   "id": "000010739003",
+   "side": "attacker",
+   "detachment": "Warpstrike Champions",
+   "name_en": "Eye of the Warp",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "亚空之眼：重掷冲锋骰——冲锋域无引擎载体"
+   ],
+   "provenance": {
+    "text_sha256": "169f337651ce0d8b15bfcf8ed0bbe616200926c51e5551250ac3607016f6fc99"
+   },
+   "encoded_by": "manual-2026-07-21",
+   "weapon_filter": ""
+  },
+  {
+   "table": "enhancements",
+   "id": "000010739004",
+   "side": "attacker",
+   "detachment": "Warpstrike Champions",
+   "name_en": "Akshur’s Binding Runes",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "阿克舒尔的束缚符文：放宽深空突击回合限制——预备队域无引擎载体"
+   ],
+   "provenance": {
+    "text_sha256": "3a03fe890acd9019ed7fb163c02a396f0d5998b5eb23d4fa224514b93bcac397"
+   },
+   "encoded_by": "manual-2026-07-21",
+   "weapon_filter": ""
+  },
+  {
+   "table": "enhancements",
+   "id": "000010739005",
+   "side": "attacker",
+   "detachment": "Warpstrike Champions",
+   "name_en": "Tzagulla",
+   "name_zh": null,
+   "status": "partial",
+   "effects": [
+    {
+     "phase": "attacks",
+     "op": "modify",
+     "params": [
+      1
+     ],
+     "condition": [],
+     "source": "扎古拉（携带者武器 A +1）"
+    },
+    {
+     "phase": "wound",
+     "op": "s_improve",
+     "params": [
+      1
+     ],
+     "condition": [],
+     "source": "扎古拉（携带者武器 S 改善 1）"
+    },
+    {
+     "phase": "save",
+     "op": "ap_improve",
+     "params": [
+      1
+     ],
+     "condition": [],
+     "source": "扎古拉（携带者武器 AP 改善 1）"
+    }
+   ],
+   "requires_toggles": [
+    "bearer_leading"
+   ],
+   "not_modeled_notes_zh": [
+    "增益只加在携带者本人身上——引擎按单位面注入全部模型/武器，多模型单位会高估；须以携带者单模型 loadout 模拟才等价",
+    "「从预备队上场当回合武器伤害改善 1」的分档依赖预备队入场状态，未编（欠建模）"
+   ],
+   "provenance": {
+    "text_sha256": "d2756fef5931be7f44da2843b6e847af383716ce73aed27a0c6d5b355bc89436"
+   },
+   "encoded_by": "manual-2026-07-21",
+   "weapon_filter": ""
+  },
+  {
+   "table": "enhancements",
+   "id": "fp11e-csm-devotees-e1",
+   "side": "attacker",
+   "detachment": "Devotees of Destruction",
+   "name_en": "Pact of Destruction",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "毁灭之约：Dark Pacts 领导力检定可重掷 + 击杀后治疗 3 伤——领导力检定与治疗域均无引擎载体"
+   ],
+   "provenance": {
+    "text_sha256": "a219e430425e84ba13162f82acdfaac3812fbece952bfc052a5226337cf24ef4"
+   },
+   "encoded_by": "manual-2026-07-21",
+   "weapon_filter": ""
+  },
+  {
+   "table": "enhancements",
+   "id": "fp11e-csm-devotees-e2",
+   "side": "attacker",
+   "detachment": "Devotees of Destruction",
+   "name_en": "Eye of Oblivion",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "湮灭之眼：使敌军单位侦测范围 +6\"——侦测/可见性域无引擎载体"
+   ],
+   "provenance": {
+    "text_sha256": "cbde7b8efa7a7eadf8b9328e19ca66008ed8ae5c951633ac12382c7bd56f98ab"
+   },
+   "encoded_by": "manual-2026-07-21",
+   "weapon_filter": ""
+  },
+  {
+   "table": "enhancements",
+   "id": "fp11e-csm-murdertalon-e1",
+   "side": "target",
+   "detachment": "Murdertalon Raiders",
+   "name_en": "Shadowcowl Talisman",
+   "name_zh": null,
+   "status": "encoded",
+   "effects": [
+    {
+     "phase": "save",
+     "op": "invuln",
+     "params": [
+      5
+     ],
+     "condition": [],
+     "source": "影兜护符（携带者所在单位获 5+ 特殊保护）"
+    }
+   ],
+   "requires_toggles": [
+    "defender_bearer_leading"
+   ],
+   "not_modeled_notes_zh": [],
+   "provenance": {
+    "text_sha256": "e15a84b0978044e37df0d25407e652de9fbe74f9ac1b0f194b9f255b09e5d494"
+   },
+   "encoded_by": "manual-2026-07-21",
+   "weapon_filter": ""
+  },
+  {
+   "table": "enhancements",
+   "id": "fp11e-csm-murdertalon-e2",
+   "side": "attacker",
+   "detachment": "Murdertalon Raiders",
+   "name_en": "Pact of Cursed Pinions",
+   "name_zh": null,
+   "status": "partial",
+   "effects": [
+    {
+     "phase": "attacks",
+     "op": "modify",
+     "params": [
+      1
+     ],
+     "condition": [
+      "phase_melee"
+     ],
+     "source": "受诅之翼契约（携带者近战攻击 A +1）"
+    }
+   ],
+   "requires_toggles": [
+    "bearer_leading"
+   ],
+   "not_modeled_notes_zh": [
+    "增益只加在携带者本人身上——引擎按单位面注入全部模型/武器，多模型单位会高估；须以携带者单模型 loadout 模拟才等价",
+    "授予 DAEMON 关键词无战斗链载体"
+   ],
+   "provenance": {
+    "text_sha256": "15b0b7cb620a1925143f3b6199913f6bf83a81603615d463659d56664b24f4be"
+   },
+   "encoded_by": "manual-2026-07-21",
+   "weapon_filter": ""
+  }
+ ]
+}

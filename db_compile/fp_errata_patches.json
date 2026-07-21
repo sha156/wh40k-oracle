@@ -462,6 +462,15 @@
    "from": "20+\"",
    "to": "14\"",
    "src": "Faction Pack Adeptus Mechanicus page_017.md（Archaeopter Transvector Profile: Change M to 14\"）"
+  },
+  {
+   "unit_id": "000000961",
+   "faction": "CSM",
+   "unit": "Heldrake",
+   "field": "m",
+   "from": "20+\"",
+   "to": "12\"",
+   "src": "Faction Pack Chaos Space Marines page_037.md（Heldrake Profile: Change M to 12\"）——OC 0→'-' 不补（功能等价且库无 '-' OC 先例，同 WE/EC/TS Heldrake 处理）"
   }
  ],
  "new_units": [
@@ -817,6 +826,15 @@
     "Aircraft"
    ],
    "src": "Faction Pack Adeptus Mechanicus page_017.md（Archaeopter Transvector Keywords: Remove 'AIRCRAFT'）"
+  },
+  {
+   "unit_id": "000000961",
+   "faction": "CSM",
+   "unit": "Heldrake",
+   "remove": [
+    "Aircraft"
+   ],
+   "src": "Faction Pack Chaos Space Marines page_037.md（Heldrake Keywords: Remove 'AIRCRAFT'）"
   }
  ]
 }
