@@ -191,12 +191,13 @@ class TestDeactivations:
         # + 吞世者 6 条（PR5：怒火容器完整重印未收录——战略 4 + 增强 2）
         # + 黑色圣堂 7 条（PR6：愤怒巡游队完整重印未收录——战略 4 + 增强 3）
         # + 死亡守卫 5 条（PR8：蝇息疫军完整重印未收录——战略 3 + 增强 2）
+        # + 太空野狼 10 条（PR18：Champions of Fenris 完整重印未收录——战略 6 + 增强 4）
         import json
         from pathlib import Path
         data = json.loads(Path("db_compile/fp_rules_patches.json").read_text(
             encoding="utf-8"))
         deacts = data.get("deactivations", [])
-        assert len(deacts) == 30
+        assert len(deacts) == 40
         strat = {d["id"] for d in deacts if d["table"] == "stratagems"}
         enh = {d["id"] for d in deacts if d["table"] == "enhancements"}
         assert strat == {
@@ -208,13 +209,19 @@ class TestDeactivations:
             # PR6 黑色圣堂：Wrathful Procession 重印未收录
             "000009844003", "000009844005", "000009844006", "000009844007",
             # PR8 死亡守卫：Flyblown Host 重印未收录
-            "000009730003", "000009730006", "000009730007"}
+            "000009730003", "000009730006", "000009730007",
+            # PR18 太空野狼：旧 Champions of Fenris 重印未收录
+            "000009852002", "000009852003", "000009852004", "000009852005",
+            "000009852006", "000009852007"}
         assert enh == {"000009839004", "000009839005", "000009983005",
                        "000009847003", "000009847004",
                        # PR6 黑色圣堂
                        "000009843002", "000009843003", "000009843004",
                        # PR8 死亡守卫
-                       "000009729002", "000009729004"}
+                       "000009729002", "000009729004",
+                       # PR18 太空野狼
+                       "000009851002", "000009851003", "000009851004",
+                       "000009851005"}
         for d in deacts:
             assert d["status"] == "removed_11e"
             assert d.get("fp_source")
@@ -392,6 +399,9 @@ class TestInserts:
         #   ——三全新分队，Sanctified Orators 无战略）
         # + 灰骑士 18 条（PR16：Argent Assault / Fires of Purgation / Immaterial
         #   Interdiction 三全新分队各 1 规则+2 增强+3 战略）
+        # + 太空野狼 17 条（PR18：Champions of Fenris 重印新增 3 战略+2 增强、
+        #   Legends of Saga and Song / Veterans of the Fang 两全新分队各
+        #   1 规则+3 战略+2 增强）
         import json
         from pathlib import Path
         data = json.loads(Path("db_compile/fp_rules_patches.json").read_text(
@@ -401,7 +411,11 @@ class TestInserts:
         # + 沃坦联盟 18 条（PR24：Armoured Trailblazers / Farseekers / Hearthguard
         #   Covenant 三全新分队各 1 规则+2 增强+3 战略；FP 页 2/3/4，Wahapedia 未滚入）
         ins = data.get("inserts", [])
+<<<<<<< HEAD
         assert len(ins) == 249
+=======
+        assert len(ins) == 205
+>>>>>>> feat/p7-pr18-spacewolves
         ids = {p["values"]["id"] for p in ins}
         assert ids == {"fp11e-tau-aac-det", "fp11e-tau-aac-s1", "fp11e-tau-aac-s2",
                        "fp11e-tau-aac-s3", "fp11e-tau-aux-gbu",
@@ -497,6 +511,7 @@ class TestInserts:
                        "fp11e-gk-immaterial", "fp11e-gk-immaterial-e1",
                        "fp11e-gk-immaterial-e2", "fp11e-gk-immaterial-s1",
                        "fp11e-gk-immaterial-s2", "fp11e-gk-immaterial-s3",
+<<<<<<< HEAD
                        "fp11e-da-arsenal", "fp11e-da-arsenal-e1",
                        "fp11e-da-arsenal-e2", "fp11e-da-arsenal-s1",
                        "fp11e-da-arsenal-s2", "fp11e-da-arsenal-s3",
@@ -543,6 +558,18 @@ class TestInserts:
                        "fp11e-votann-hearthguard-s1",
                        "fp11e-votann-hearthguard-s2",
                        "fp11e-votann-hearthguard-s3"}
+=======
+                       # PR18 太空野狼：Champions of Fenris 重印新增 + 两全新分队
+                       "fp11e-sw-fenris-s1", "fp11e-sw-fenris-s2",
+                       "fp11e-sw-fenris-s3", "fp11e-sw-fenris-e1",
+                       "fp11e-sw-fenris-e2",
+                       "fp11e-sw-legends-det", "fp11e-sw-legends-s1",
+                       "fp11e-sw-legends-s2", "fp11e-sw-legends-s3",
+                       "fp11e-sw-legends-e1", "fp11e-sw-legends-e2",
+                       "fp11e-sw-fang-det", "fp11e-sw-fang-s1",
+                       "fp11e-sw-fang-s2", "fp11e-sw-fang-s3",
+                       "fp11e-sw-fang-e1", "fp11e-sw-fang-e2"}
+>>>>>>> feat/p7-pr18-spacewolves
         for p in ins:
             assert p.get("fp_source")
             assert p["values"].get("id", "").startswith("fp11e-")

@@ -1,0 +1,1459 @@
+{
+ "_comment": "P7 阵营技能 DSL 唯一真源（太空野狼，P7-PR18）。DB effect_dsl_json/dsl_status 只是投影，由 `python -m db_compile dsl-apply` 写入并挂 restore。判据与格式沿 spec 2026-07-14 + PR6/PR9/PR17 约定；A/B 工作单见 docs/superpowers/plans/2026-07-20-p7-pr18-spacewolves-worklist.md。太空野狼 11 版为 ADEPTUS ASTARTES 战团（faction='SM' 无独立阵营行）——军规沿用通用 Oath of Moment（000008350，非本战团专属，按血天使 PR9 先例不重复收录）。覆盖 7 个分队：Champions of Fenris（11 版完整重印）、Legends of Saga and Song 与 Veterans of the Fang（11 版全新）、四条 Saga（Great Wolf / Beastslayer / Bold / Hunter）；分队规则 9 行全部 materialize 自 detachments.rule_text（含 Saga of the Great Wolf 的 Howling Onslaught 与 Restrictions 两行附属规则）。removed_11e 行（CoF 旧 6 战略 + 4 增强）零覆盖。零新引擎通道、零新态势开关（沿 PR9-17 约定）。",
+ "dsl_version": 1,
+ "faction": "SM",
+ "entries": [
+  {
+   "table": "abilities",
+   "id": "det000009850",
+   "side": "attacker",
+   "detachment": "Champions of Fenris",
+   "name_en": "The Great Wolf Watches",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "Countercharge：每战轮每单位一次，可对本单位额外使用英勇干预战略——战略使用次数元规则域未建模",
+    "军表域限制（可含 SPACE WOLVES，不可混编其他战团）不建模"
+   ],
+   "provenance": {
+    "text_sha256": "aed504474aa1fd90db48215b9cdd657c47f5db77d725d3f78df7680e6ca67246"
+   },
+   "encoded_by": "manual-2026-07-21",
+   "materialize": {
+    "from_table": "detachments",
+    "from_id": "000009850",
+    "from_column": "rule_text"
+   }
+  },
+  {
+   "table": "abilities",
+   "id": "det000010260",
+   "side": "attacker",
+   "detachment": "Saga of the Hunter",
+   "name_en": "Pack’s Quarry",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "近战 +1 命中的前提为「敌方单位正与另一支友方 AA 单位交战」或「攻击单位模型数多于敌方单位」——前者为战场几何、后者为攻守双方模型数比较，引擎条件层只读目标侧规模，两分支均无载体（裸编会过度施加）",
+    "Saga 完成后再 +1 致伤——Quarry 计数为战局累计状态机，无载体"
+   ],
+   "provenance": {
+    "text_sha256": "8c8ff549ebdc1a22b01323906c757106b00d2f79a6dd2c5b7e3f9cc370d3fe3e"
+   },
+   "encoded_by": "manual-2026-07-21",
+   "materialize": {
+    "from_table": "detachments",
+    "from_id": "000010260",
+    "from_column": "rule_text"
+   }
+  },
+  {
+   "table": "abilities",
+   "id": "det000010264",
+   "side": "attacker",
+   "detachment": "Saga of the Bold",
+   "name_en": "Heroes All",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "「可重骰一次命中骰/致伤骰/伤害骰」为每次攻击序列限一颗骰的重骰——引擎重骰通道语义是重骰全部失败骰，裸编会大幅高估（单骰重骰无载体）",
+    "Saga（三项 Boast）完成与否切换二档效果——战局累计状态机无载体"
+   ],
+   "provenance": {
+    "text_sha256": "dc5e2df06aea08667b9fb0871f2866a9e8dba0cbba3dd2be2e6afc627df28837"
+   },
+   "encoded_by": "manual-2026-07-21",
+   "materialize": {
+    "from_table": "detachments",
+    "from_id": "000010264",
+    "from_column": "rule_text"
+   }
+  },
+  {
+   "table": "abilities",
+   "id": "det000010268",
+   "side": "attacker",
+   "detachment": "Saga of the Beastslayer",
+   "name_en": "Legendary Slayers",
+   "name_zh": null,
+   "status": "partial",
+   "effects": [
+    {
+     "phase": "hit",
+     "op": "auto_wound",
+     "params": [],
+     "condition": [
+      "target_has_keyword",
+      "character"
+     ],
+     "source": "传奇屠戮者：攻击 CHARACTER 目标时 [LETHAL HITS]"
+    },
+    {
+     "phase": "hit",
+     "op": "auto_wound",
+     "params": [],
+     "condition": [
+      "target_has_keyword",
+      "monster"
+     ],
+     "source": "传奇屠戮者：攻击 MONSTER 目标时 [LETHAL HITS]"
+    },
+    {
+     "phase": "hit",
+     "op": "auto_wound",
+     "params": [],
+     "condition": [
+      "target_has_keyword",
+      "vehicle"
+     ],
+     "source": "传奇屠戮者：攻击 VEHICLE 目标时 [LETHAL HITS]"
+    }
+   ],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "「或己方 Saga 已完成时全体获 [LETHAL HITS]」分支——Beastslayer 计数为战局累计状态机，无载体，仅编关键词分支（防高估）",
+    "原文为「makes an attack」不分相位——条件只挂目标关键词、不加相位门（加门会欠建模）"
+   ],
+   "provenance": {
+    "text_sha256": "a33ce78a5549ab0e33b91a6032d4007cf5b9892a4db04b73557090f008c5b4dc"
+   },
+   "encoded_by": "manual-2026-07-21",
+   "materialize": {
+    "from_table": "detachments",
+    "from_id": "000010268",
+    "from_column": "rule_text"
+   }
+  },
+  {
+   "table": "abilities",
+   "id": "det000010657",
+   "side": "attacker",
+   "detachment": "Saga of the Great Wolf",
+   "name_en": "Master of Wolves",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "指挥阶段三选一狩猎群（Encircling Jaws / Hunter’s Eye / Ferocious Strike）为持续声明态——无对应态势开关载体，遵循 PR9-17 零新通道约定不新增开关（无条件编入任一会过度施加）",
+    "Encircling Jaws=加速/冲锋骰重骰（移动域）、Ferocious Strike=[LETHAL HITS] 与 [SUSTAINED HITS 1] 二选一（单分支裸编即在另一分支上撒谎）",
+    "Hunter’s Eye=远程攻击命中 +1，本身有现成通道（hit/modify +1 × phase_shooting，与 EYE OF THE PACK 同款）——唯一缺的是「本大回合所选狩猎群=Hunter’s Eye」的互斥声明开关（PR6 圣兆式先例）；本迭代守零新开关约定故整条 not_modeled，此分支是后续补录投入产出比最高项"
+   ],
+   "provenance": {
+    "text_sha256": "ccc0b537eedfacb62fef95bcc8de03b82ddf874e2c05e7e35bb9f9fb78a14123"
+   },
+   "encoded_by": "manual-2026-07-21",
+   "materialize": {
+    "from_table": "detachments",
+    "from_id": "000010657",
+    "from_column": "rule_text"
+   }
+  },
+  {
+   "table": "abilities",
+   "id": "det000010658",
+   "side": "attacker",
+   "detachment": "Saga of the Great Wolf",
+   "name_en": "Howling Onslaught",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "每场一次、允许重复选择已用过的狩猎群——依赖狩猎群载体（见 Master of Wolves），无开关不编"
+   ],
+   "provenance": {
+    "text_sha256": "2c1c60c8c94e84e7bb2e427a81fe7b0b36eaa90bbd862aa81e7c5d789baf440a"
+   },
+   "encoded_by": "manual-2026-07-21",
+   "materialize": {
+    "from_table": "detachments",
+    "from_id": "000010658",
+    "from_column": "rule_text"
+   }
+  },
+  {
+   "table": "abilities",
+   "id": "det000010659",
+   "side": "attacker",
+   "detachment": "Saga of the Great Wolf",
+   "name_en": "Restrictions",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "军表域限制（可含 SPACE WOLVES，不可混编其他战团）——编制域，非战斗链"
+   ],
+   "provenance": {
+    "text_sha256": "b1a55035223f1486a63f12032eaecfe606d7a499f1e4211656663be6043ca564"
+   },
+   "encoded_by": "manual-2026-07-21",
+   "materialize": {
+    "from_table": "detachments",
+    "from_id": "000010659",
+    "from_column": "rule_text"
+   }
+  },
+  {
+   "table": "abilities",
+   "id": "detfp11e-sw-legends-det",
+   "side": "attacker",
+   "detachment": "Legends of Saga and Song",
+   "name_en": "Loping Charge",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "AA TERMINATOR 单位冲锋骰 +1——冲锋骰域无战斗链载体",
+    "军表域限制（不可混编其他战团）不建模"
+   ],
+   "provenance": {
+    "text_sha256": "59e36428bbaf3a652c58c7eb8bde2eecaae870a77f3a58d077d0bc40993bd2ca"
+   },
+   "encoded_by": "manual-2026-07-21",
+   "materialize": {
+    "from_table": "detachments",
+    "from_id": "fp11e-sw-legends-det",
+    "from_column": "rule_text"
+   }
+  },
+  {
+   "table": "abilities",
+   "id": "detfp11e-sw-fang-det",
+   "side": "attacker",
+   "detachment": "Veterans of the Fang",
+   "name_en": "Old Greymanes",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "起手行动（action）不阻断射击资格——任务行动/资格域未建模",
+    "编队阶段把 GREY HUNTERS 拆成两支 5 人单位——编制域未建模",
+    "军表域限制（不可混编其他战团）不建模"
+   ],
+   "provenance": {
+    "text_sha256": "31f6fbda94021fd5eeaffd65aba4d77e6b48a78ac677af1e1f921e52009199c7"
+   },
+   "encoded_by": "manual-2026-07-21",
+   "materialize": {
+    "from_table": "detachments",
+    "from_id": "fp11e-sw-fang-det",
+    "from_column": "rule_text"
+   }
+  },
+  {
+   "table": "stratagems",
+   "id": "fp11e-sw-fenris-s1",
+   "side": "target",
+   "detachment": "Champions of Fenris",
+   "name_en": "Wolf Totems",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "「仅对致命伤（mortal wounds）的 FNP 5+」——引擎 FNP 通道对全部未保存伤害生效，裸编会高估（仅致命伤 FNP 无载体）"
+   ],
+   "provenance": {
+    "text_sha256": "f47f976843731881e2309f2a43632590019ad790ba1cca7e286b5dfd50df8a7b"
+   },
+   "encoded_by": "manual-2026-07-21"
+  },
+  {
+   "table": "stratagems",
+   "id": "fp11e-sw-fenris-s2",
+   "side": "attacker",
+   "detachment": "Champions of Fenris",
+   "name_en": "Runes of Claiming",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "锁定目标点控制权（secured）——任务目标域，非战斗链"
+   ],
+   "provenance": {
+    "text_sha256": "5aaef8efb09059e5d097752e7d7597d7a09f398d0a6b77ae4ad4cb9ef06b9ff8"
+   },
+   "encoded_by": "manual-2026-07-21"
+  },
+  {
+   "table": "stratagems",
+   "id": "fp11e-sw-fenris-s3",
+   "side": "target",
+   "detachment": "Champions of Fenris",
+   "name_en": "Stalk Between Worlds",
+   "name_zh": null,
+   "status": "partial",
+   "effects": [
+    {
+     "phase": "save",
+     "op": "cover",
+     "params": [],
+     "condition": [
+      "phase_shooting"
+     ],
+     "source": "界隙潜行：本单位获 Stealth（11 版=掩体收益，仅射击）"
+    }
+   ],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "11 版隐匿=掩体收益（折成攻方命中侧 BS 惩罚），敌方武器 [IGNORES COVER] 可整体抵消",
+    "触发时机为敌方射击阶段选中目标后——点名即假设已使用"
+   ],
+   "provenance": {
+    "text_sha256": "ed6e4e29b6f877ca28ddeab8d301200747be35b47de9d1a1279ad39400770c68"
+   },
+   "encoded_by": "manual-2026-07-21"
+  },
+  {
+   "table": "stratagems",
+   "id": "fp11e-sw-legends-s1",
+   "side": "attacker",
+   "detachment": "Legends of Saga and Song",
+   "name_en": "FANGS OF THE PACK",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "[PRECISION]（攻击可分配给所领导的 CHARACTER 模型）为攻击分配域未建模"
+   ],
+   "provenance": {
+    "text_sha256": "fd1ef2fc22cc5a4bf3af1676af45201f32665a279a9de76fbed7d2659cea0b32"
+   },
+   "encoded_by": "manual-2026-07-21"
+  },
+  {
+   "table": "stratagems",
+   "id": "fp11e-sw-legends-s2",
+   "side": "attacker",
+   "detachment": "Legends of Saga and Song",
+   "name_en": "CHILLING HOWL",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "战意震慑（battle-shock）检定及其 -1 修正无战斗链载体"
+   ],
+   "provenance": {
+    "text_sha256": "4bf88ee3936789b5e3b8660b3bc343c5523bf82e6615bac780b294219b4b27fe"
+   },
+   "encoded_by": "manual-2026-07-21"
+  },
+  {
+   "table": "stratagems",
+   "id": "fp11e-sw-legends-s3",
+   "side": "attacker",
+   "detachment": "Legends of Saga and Song",
+   "name_en": "WINGS OF THE BLIZZARD",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "把单位置入战略预备队——预备队/部署域未建模"
+   ],
+   "provenance": {
+    "text_sha256": "292696ebbac7dffe431f11bae93cc01fff22016a90fa6be4cbab8fe90fe1f4e4"
+   },
+   "encoded_by": "manual-2026-07-21"
+  },
+  {
+   "table": "stratagems",
+   "id": "fp11e-sw-fang-s1",
+   "side": "attacker",
+   "detachment": "Veterans of the Fang",
+   "name_en": "GRIZZLED KILLERS",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "[SUSTAINED HITS 1] 与 [LETHAL HITS] 二选一——单分支裸编即在另一分支上撒谎，遵循 PR9-17 二选一不编约定"
+   ],
+   "provenance": {
+    "text_sha256": "66b3a9e6ae001b3dc8be2333bebcb59ed3dacab38f18beedb92189b37a69a5ce"
+   },
+   "encoded_by": "manual-2026-07-21"
+  },
+  {
+   "table": "stratagems",
+   "id": "fp11e-sw-fang-s2",
+   "side": "attacker",
+   "detachment": "Veterans of the Fang",
+   "name_en": "ICY CALM",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "加速/撤退移动不阻断起手行动资格——任务行动/移动域未建模"
+   ],
+   "provenance": {
+    "text_sha256": "34f5245ee08ac64f0d1fad8e8bde8ee25883392ab736e9a8f4e9699270ba909d"
+   },
+   "encoded_by": "manual-2026-07-21"
+  },
+  {
+   "table": "stratagems",
+   "id": "fp11e-sw-fang-s3",
+   "side": "attacker",
+   "detachment": "Veterans of the Fang",
+   "name_en": "BLADE-KEEN SENSES",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "敌方单位探测距离（detection range）+6 寸——侦测/隐蔽域未建模"
+   ],
+   "provenance": {
+    "text_sha256": "851d01291deaa1be742b73db74f3a7642e35e16b72f07550e930ccd4192cf8ab"
+   },
+   "encoded_by": "manual-2026-07-21"
+  },
+  {
+   "table": "stratagems",
+   "id": "000010270002",
+   "side": "attacker",
+   "detachment": "Saga of the Beastslayer",
+   "name_en": "UNBRIDLED FEROCITY",
+   "name_zh": null,
+   "status": "encoded",
+   "effects": [
+    {
+     "phase": "wound",
+     "op": "modify",
+     "params": [
+      1
+     ],
+     "condition": [
+      "phase_melee"
+     ],
+     "source": "无羁凶性：近战阶段致伤骰 +1"
+    }
+   ],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [],
+   "provenance": {
+    "text_sha256": "4a4b184ba3f2c4f45281751dfc809fdc6251b1b1479baf45f06d8e25dbe85c76"
+   },
+   "encoded_by": "manual-2026-07-21"
+  },
+  {
+   "table": "stratagems",
+   "id": "000010270003",
+   "side": "attacker",
+   "detachment": "Saga of the Beastslayer",
+   "name_en": "SHOCK CAVALRY",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "穿越模型与地形的移动、以及交战距离内的移动限制——移动域未建模"
+   ],
+   "provenance": {
+    "text_sha256": "ce51926d78880e08ab6f9ebc76e0ece57278a2053282bfed980ffef642424dc5"
+   },
+   "encoded_by": "manual-2026-07-21"
+  },
+  {
+   "table": "stratagems",
+   "id": "000010270004",
+   "side": "attacker",
+   "detachment": "Saga of the Beastslayer",
+   "name_en": "PINNING FIRE",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "被钉住（pinned）状态：M-2 寸、冲锋骰 -2——移动/冲锋域未建模"
+   ],
+   "provenance": {
+    "text_sha256": "e92c749281c69c519c667c0244928bdcdcd24f03ee803ed5550a62c2ff9367d1"
+   },
+   "encoded_by": "manual-2026-07-21"
+  },
+  {
+   "table": "stratagems",
+   "id": "000010270005",
+   "side": "attacker",
+   "detachment": "Saga of the Beastslayer",
+   "name_en": "THUNDEROUS PURSUIT",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "敌方移动后的追击常规移动（D6 寸 / 6 寸）——移动域未建模"
+   ],
+   "provenance": {
+    "text_sha256": "168deb200519a66753818da4b3163b9a16d308246b62d238f32c6f863e61f908"
+   },
+   "encoded_by": "manual-2026-07-21"
+  },
+  {
+   "table": "stratagems",
+   "id": "000010270006",
+   "side": "attacker",
+   "detachment": "Saga of the Beastslayer",
+   "name_en": "IMPETUOSITY",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "涌动移动（surge move）D6 寸——移动域未建模"
+   ],
+   "provenance": {
+    "text_sha256": "0f8045a25b735df3939c1841af42c1bccff89a7becb964aa4f1762bb1d62be71"
+   },
+   "encoded_by": "manual-2026-07-21"
+  },
+  {
+   "table": "stratagems",
+   "id": "000010270007",
+   "side": "attacker",
+   "detachment": "Saga of the Beastslayer",
+   "name_en": "COORDINATED STRIKE",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "撤出战场置入战略预备队——预备队域未建模"
+   ],
+   "provenance": {
+    "text_sha256": "2c771243d4d50c099d8661c134f6dcb1d8c9a938a89e407a8d61969b32f91b8f"
+   },
+   "encoded_by": "manual-2026-07-21"
+  },
+  {
+   "table": "stratagems",
+   "id": "000010266002",
+   "side": "attacker",
+   "detachment": "Saga of the Bold",
+   "name_en": "INSPIRING PRESENCE",
+   "name_zh": null,
+   "status": "encoded",
+   "effects": [
+    {
+     "phase": "hit",
+     "op": "auto_wound",
+     "params": [],
+     "condition": [
+      "phase_melee"
+     ],
+     "source": "鼓舞临在：近战武器 [LETHAL HITS]"
+    }
+   ],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [],
+   "provenance": {
+    "text_sha256": "2902cb26b108e7dcdb1334a36a50f5c561c48e04c68c77f001872dbab302f3b0"
+   },
+   "encoded_by": "manual-2026-07-21"
+  },
+  {
+   "table": "stratagems",
+   "id": "000010266003",
+   "side": "attacker",
+   "detachment": "Saga of the Bold",
+   "name_en": "CHAMPION’S GUIDANCE",
+   "name_zh": null,
+   "status": "partial",
+   "effects": [
+    {
+     "phase": "hit",
+     "op": "reroll",
+     "params": [
+      "fail"
+     ],
+     "condition": [],
+     "source": "勇士指引：本单位攻击可重骰命中骰"
+    }
+   ],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "「可以重骰命中骰」按最优策略=只重骰失败骰（引擎等价编码）",
+    "WHEN 为射击阶段或近战阶段二选一——条件留空按所模拟阶段生效（加相位门反而欠建模）"
+   ],
+   "provenance": {
+    "text_sha256": "699caee9d8762c3d1972a14cb7426e47b660cc188baba52b2168ae334b4ae136"
+   },
+   "encoded_by": "manual-2026-07-21"
+  },
+  {
+   "table": "stratagems",
+   "id": "000010266004",
+   "side": "attacker",
+   "detachment": "Saga of the Bold",
+   "name_en": "BIRTH OF A SAGA",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "临时授予 CHARACTER 关键字——单位关键字动态变更无载体"
+   ],
+   "provenance": {
+    "text_sha256": "f5e60b42ec14118218994a709cdaa81cc19e72ce6e8f91040e82630be279a6f3"
+   },
+   "encoded_by": "manual-2026-07-21"
+  },
+  {
+   "table": "stratagems",
+   "id": "000010266005",
+   "side": "attacker",
+   "detachment": "Saga of the Bold",
+   "name_en": "ALPHA STRIKE",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "加速回合仍可宣告冲锋——冲锋资格/移动域未建模"
+   ],
+   "provenance": {
+    "text_sha256": "38da9849ee5099c88e32f7e60b5d95347c1b31cc6bc9309b26e918410b7a75fd"
+   },
+   "encoded_by": "manual-2026-07-21"
+  },
+  {
+   "table": "stratagems",
+   "id": "000010266006",
+   "side": "target",
+   "detachment": "Saga of the Bold",
+   "name_en": "HEROIC RESOLVE",
+   "name_zh": null,
+   "status": "partial",
+   "effects": [
+    {
+     "phase": "damage",
+     "op": "damage_reduction",
+     "params": [
+      1
+     ],
+     "condition": [
+      "phase_shooting"
+     ],
+     "source": "英勇决意：被射击攻击伤害 -1"
+    }
+   ],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "限 SPACE WOLVES CHARACTER 单位守方（点名即声明）",
+    "WHEN 仅敌方射击阶段（条件自含射击门控），近战阶段不注入；触发时机为敌方选中目标后，点名即假设已使用"
+   ],
+   "provenance": {
+    "text_sha256": "103e76e88febfe7bc7fadd3eec950138eab6649166230621653a7545c288f443"
+   },
+   "encoded_by": "manual-2026-07-21"
+  },
+  {
+   "table": "stratagems",
+   "id": "000010266007",
+   "side": "attacker",
+   "detachment": "Saga of the Bold",
+   "name_en": "COUNTERCHARGE",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "敌方冲锋阶段末临时宣告冲锋——冲锋/移动域未建模"
+   ],
+   "provenance": {
+    "text_sha256": "d41862b2739a30b6b556a7fc2dfca520b80e79b532058635b82b394c13a76492"
+   },
+   "encoded_by": "manual-2026-07-21"
+  },
+  {
+   "table": "stratagems",
+   "id": "000010661002",
+   "side": "target",
+   "detachment": "Saga of the Great Wolf",
+   "name_en": "THE FOE FORESEEN",
+   "name_zh": null,
+   "status": "partial",
+   "effects": [
+    {
+     "phase": "save",
+     "op": "ap_improve",
+     "params": [
+      -1
+     ],
+     "condition": [],
+     "source": "预见之敌（被攻 AP 恶化 1）"
+    }
+   ],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "触发时机为敌方选中目标后——点名即假设已使用；WHEN 含射击与近战两相位，故不加相位门"
+   ],
+   "provenance": {
+    "text_sha256": "35d8af3acc35ff49353b590f9a67c23d622a0edeb0e172ccd7183b080d1e0c83"
+   },
+   "encoded_by": "manual-2026-07-21"
+  },
+  {
+   "table": "stratagems",
+   "id": "000010661003",
+   "side": "attacker",
+   "detachment": "Saga of the Great Wolf",
+   "name_en": "GRIMNAR’S COMMAND",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "为单支单位改选狩猎群——狩猎群三选一无态势开关载体（见 Master of Wolves），无开关不编"
+   ],
+   "provenance": {
+    "text_sha256": "9c411d6eef34d10f9e62cf2539c092269f24bc1d7446b6a0d2ec80d50ef387a5"
+   },
+   "encoded_by": "manual-2026-07-21"
+  },
+  {
+   "table": "stratagems",
+   "id": "000010661004",
+   "side": "attacker",
+   "detachment": "Saga of the Great Wolf",
+   "name_en": "FENRISIAN FEROCITY",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "水平穿越模型与地形的移动——移动域未建模"
+   ],
+   "provenance": {
+    "text_sha256": "df47f19d07fc9c9df7ea8bf7015c712afba44378cdfa09b8fa42d247e936be78"
+   },
+   "encoded_by": "manual-2026-07-21"
+  },
+  {
+   "table": "stratagems",
+   "id": "000010661005",
+   "side": "attacker",
+   "detachment": "Saga of the Great Wolf",
+   "name_en": "UNRELENTING HUNTERS",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "撤退/加速回合仍可宣告冲锋——冲锋资格域未建模"
+   ],
+   "provenance": {
+    "text_sha256": "fbd12db73302bc10b00f61eb0f3a8130045913fe8c73de18baf27e4e71d4f4f4"
+   },
+   "encoded_by": "manual-2026-07-21"
+  },
+  {
+   "table": "stratagems",
+   "id": "000010661006",
+   "side": "attacker",
+   "detachment": "Saga of the Great Wolf",
+   "name_en": "EYE OF THE PACK",
+   "name_zh": null,
+   "status": "encoded",
+   "effects": [
+    {
+     "phase": "wound",
+     "op": "modify",
+     "params": [
+      1
+     ],
+     "condition": [
+      "phase_shooting"
+     ],
+     "source": "群狼之眼：射击阶段致伤骰 +1"
+    }
+   ],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [],
+   "provenance": {
+    "text_sha256": "487f90788e49854ade83c92d8b59de908fbb10dc7774f47b17cedab5716471b9"
+   },
+   "encoded_by": "manual-2026-07-21"
+  },
+  {
+   "table": "stratagems",
+   "id": "000010661007",
+   "side": "attacker",
+   "detachment": "Saga of the Great Wolf",
+   "name_en": "BATTLE INSTINCTS",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "被射击后的 D6 寸常规移动——移动域未建模"
+   ],
+   "provenance": {
+    "text_sha256": "b14010ee867c93526585529fc2c6fb43758020e4c6ace2199bfde1de4538eef5"
+   },
+   "encoded_by": "manual-2026-07-21"
+  },
+  {
+   "table": "stratagems",
+   "id": "000010262002",
+   "side": "attacker",
+   "detachment": "Saga of the Hunter",
+   "name_en": "HUNTERS’ TRAIL",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "突入/巩固移动距离与方向放宽——移动域未建模"
+   ],
+   "provenance": {
+    "text_sha256": "885283f13f0fbb4ef04f11555f948b0e6f4aa9f53e62ee577e084106f6602c0a"
+   },
+   "encoded_by": "manual-2026-07-21"
+  },
+  {
+   "table": "stratagems",
+   "id": "000010262003",
+   "side": "attacker",
+   "detachment": "Saga of the Hunter",
+   "name_en": "TERRITORIAL ADVANTAGE",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "锁定目标点控制权——任务目标域，非战斗链"
+   ],
+   "provenance": {
+    "text_sha256": "773a01f704cdd6080778b024d18e8dd97b123536b28253b660e6706dbcbd3c4f"
+   },
+   "encoded_by": "manual-2026-07-21"
+  },
+  {
+   "table": "stratagems",
+   "id": "000010262004",
+   "side": "target",
+   "detachment": "Saga of the Hunter",
+   "name_en": "OVERWHELMING ONSLAUGHT",
+   "name_zh": null,
+   "status": "partial",
+   "effects": [
+    {
+     "phase": "hit",
+     "op": "modify",
+     "params": [
+      -1
+     ],
+     "condition": [
+      "phase_melee"
+     ],
+     "source": "压倒性猛攻：近战攻击本单位命中 -1"
+    }
+   ],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "施放前提为两支 AA 单位（或一支 SPACE WOLVES BEASTS 单位）与该敌方单位交战——编制/位置条件按已满足假设（点名即声明）",
+    "WHEN 为近战阶段（条件自含近战门控），射击阶段不注入"
+   ],
+   "provenance": {
+    "text_sha256": "e8f4070c6f51993b6c99a1efe1d852a4c1cb9eb7e1fe87e47bfac903d5f7bf84"
+   },
+   "encoded_by": "manual-2026-07-21"
+  },
+  {
+   "table": "stratagems",
+   "id": "000010262005",
+   "side": "attacker",
+   "detachment": "Saga of the Hunter",
+   "name_en": "CHOSEN PREY",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "撤退后仍可射击与冲锋——资格/移动域未建模"
+   ],
+   "provenance": {
+    "text_sha256": "bf1bc30301b01c9db4772fdf7b508eb0f837e3ad29be832c5bc67a6a8ea28e42"
+   },
+   "encoded_by": "manual-2026-07-21"
+  },
+  {
+   "table": "stratagems",
+   "id": "000010262006",
+   "side": "attacker",
+   "detachment": "Saga of the Hunter",
+   "name_en": "BOUNDING ADVANCE",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "穿越模型的移动——移动域未建模"
+   ],
+   "provenance": {
+    "text_sha256": "27e7eefbe87fbdd19299d22022f86f01364de9609ebf13c7416cec77a522acfd"
+   },
+   "encoded_by": "manual-2026-07-21"
+  },
+  {
+   "table": "stratagems",
+   "id": "000010262007",
+   "side": "attacker",
+   "detachment": "Saga of the Hunter",
+   "name_en": "MARKED FOR DESTRUCTION",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "「致伤骰 1 重骰」——引擎重骰通道语义为重骰全部失败骰，裸编会高估（重骰 1 无载体）",
+    "两支单位锁定同一敌方单位为目标选择约束，非战斗链"
+   ],
+   "provenance": {
+    "text_sha256": "5dea8848e7632e0dc85d6d8479a4b4a9cb7d7b14081027ac186d6ad10c2042d1"
+   },
+   "encoded_by": "manual-2026-07-21"
+  },
+  {
+   "table": "enhancements",
+   "id": "fp11e-sw-fenris-e1",
+   "side": "attacker",
+   "detachment": "Champions of Fenris",
+   "name_en": "A Giant Amongst Giants",
+   "name_zh": null,
+   "status": "partial",
+   "effects": [
+    {
+     "phase": "wound",
+     "op": "s_improve",
+     "params": [
+      1
+     ],
+     "condition": [
+      "phase_melee"
+     ],
+     "source": "巨人中的巨人：携带者近战武器 S+1"
+    }
+   ],
+   "requires_toggles": [
+    "bearer_leading"
+   ],
+   "not_modeled_notes_zh": [
+    "+2 W 为携带者耐久面——引擎攻方侧无 W 通道，不建模",
+    "限携带者模型的近战武器——单模型（人物）口径模拟；整单位注入会高估"
+   ],
+   "provenance": {
+    "text_sha256": "bea9429511c0291247fd1475b7dd8115606c76c0438699f66b744eb4101bab2e"
+   },
+   "encoded_by": "manual-2026-07-21"
+  },
+  {
+   "table": "enhancements",
+   "id": "fp11e-sw-fenris-e2",
+   "side": "attacker",
+   "detachment": "Champions of Fenris",
+   "name_en": "Preyslayer",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "加速骰与反冲锋（countercharge）骰重骰——移动/冲锋域未建模"
+   ],
+   "provenance": {
+    "text_sha256": "9055236a518658bbcd82264991708aefcc5ec4668ad621ef1799c47a92fbb458"
+   },
+   "encoded_by": "manual-2026-07-21"
+  },
+  {
+   "table": "enhancements",
+   "id": "fp11e-sw-legends-e1",
+   "side": "attacker",
+   "detachment": "Legends of Saga and Song",
+   "name_en": "Thirst for Glory",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "+1 OC 为目标点控制值——任务目标域，非战斗链"
+   ],
+   "provenance": {
+    "text_sha256": "6601e342dae4117822ae017c799dda04d72cde00921e9aa015bf67c643a30de3"
+   },
+   "encoded_by": "manual-2026-07-21"
+  },
+  {
+   "table": "enhancements",
+   "id": "fp11e-sw-legends-e2",
+   "side": "target",
+   "detachment": "Legends of Saga and Song",
+   "name_en": "Fierce Example",
+   "name_zh": null,
+   "status": "encoded",
+   "effects": [
+    {
+     "phase": "wound",
+     "op": "t_improve",
+     "params": [
+      1
+     ],
+     "condition": [],
+     "source": "凶悍表率：携带者所在单位 T+1"
+    }
+   ],
+   "requires_toggles": [
+    "defender_bearer_leading"
+   ],
+   "not_modeled_notes_zh": [],
+   "provenance": {
+    "text_sha256": "014b97a11b1b72533ebd2910e8d56c3bcbeb00670ace842c6e710d831a2dc1af"
+   },
+   "encoded_by": "manual-2026-07-21"
+  },
+  {
+   "table": "enhancements",
+   "id": "fp11e-sw-fang-e1",
+   "side": "attacker",
+   "detachment": "Veterans of the Fang",
+   "name_en": "Eye of the Hunter",
+   "name_zh": null,
+   "status": "partial",
+   "effects": [
+    {
+     "phase": "save",
+     "op": "ignores_cover",
+     "params": [],
+     "condition": [
+      "phase_shooting"
+     ],
+     "source": "猎手之眼：本单位远程攻击 [IGNORES COVER]"
+    },
+    {
+     "phase": "save",
+     "op": "ap_improve",
+     "params": [
+      1
+     ],
+     "condition": [
+      "phase_shooting"
+     ],
+     "source": "猎手之眼：本单位远程攻击 AP 改善 1"
+    }
+   ],
+   "requires_toggles": [
+    "bearer_leading"
+   ],
+   "not_modeled_notes_zh": [
+    "[ASSAULT]（加速后仍可射击）为移动域未建模",
+    "效果面为本单位远程攻击（条件自含射击门控），近战阶段不注入"
+   ],
+   "provenance": {
+    "text_sha256": "5fc00826de91e1f1893fc9e85e0c1385fd253d147b01699380f3dc7ae61f56c0"
+   },
+   "encoded_by": "manual-2026-07-21"
+  },
+  {
+   "table": "enhancements",
+   "id": "fp11e-sw-fang-e2",
+   "side": "attacker",
+   "detachment": "Veterans of the Fang",
+   "name_en": "Weaver of Sagas",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "解除友方单位的战意震慑状态——battle-shock 无战斗链载体"
+   ],
+   "provenance": {
+    "text_sha256": "e8bf807edb3a6058319be665504884ad9b2258668d6324bdc11217ba0890fb78"
+   },
+   "encoded_by": "manual-2026-07-21"
+  },
+  {
+   "table": "enhancements",
+   "id": "000010269002",
+   "side": "attacker",
+   "detachment": "Saga of the Beastslayer",
+   "name_en": "Wolf-touched",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "M+2 寸与编队阶段附属 WULFEN INFANTRY——移动/编制域未建模"
+   ],
+   "provenance": {
+    "text_sha256": "ae1d0ea6dc3a6fe274207f4d65599694e9e783e90a372ae1bcaa21694860ecb6"
+   },
+   "encoded_by": "manual-2026-07-21"
+  },
+  {
+   "table": "enhancements",
+   "id": "000010269003",
+   "side": "attacker",
+   "detachment": "Saga of the Beastslayer",
+   "name_en": "Hunter’s Guile",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "部署后重新部署/置入战略预备队——部署域未建模"
+   ],
+   "provenance": {
+    "text_sha256": "958c2652d34b73684b55258235dc413a3a8701b37a42bbf0ca092b16cfcff97e"
+   },
+   "encoded_by": "manual-2026-07-21"
+  },
+  {
+   "table": "enhancements",
+   "id": "000010269004",
+   "side": "attacker",
+   "detachment": "Saga of the Beastslayer",
+   "name_en": "Elder’s Guidance",
+   "name_zh": null,
+   "status": "partial",
+   "effects": [
+    {
+     "phase": "save",
+     "op": "ap_improve",
+     "params": [
+      1
+     ],
+     "condition": [
+      "phase_melee"
+     ],
+     "source": "长者指引：所领导 BLOOD CLAWS 单位近战武器 AP 改善 1"
+    }
+   ],
+   "requires_toggles": [
+    "bearer_leading"
+   ],
+   "not_modeled_notes_zh": [
+    "每场一次、于近战阶段开始激活——触发时机按已使用假设",
+    "限携带者正率领 BLOOD CLAWS 单位（点名即声明）"
+   ],
+   "provenance": {
+    "text_sha256": "7a227b5dd83e28b9c70c92475e2d9066c17511c53504f2951e227e5ee4d8dd04"
+   },
+   "encoded_by": "manual-2026-07-21"
+  },
+  {
+   "table": "enhancements",
+   "id": "000010269005",
+   "side": "target",
+   "detachment": "Saga of the Beastslayer",
+   "name_en": "Helm of the Beastslayer",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "仅对 CHARACTER/MONSTER/VEHICLE 模型发起的攻击 AP 恶化 1——引擎关键词条件层只读守方（目标）关键词，攻方关键词门无载体，裸编会对全部攻击者过度施加"
+   ],
+   "provenance": {
+    "text_sha256": "d382d5c55dec01b5b6005da28c6b6661cc08264041f38c47750d94797d5b862e"
+   },
+   "encoded_by": "manual-2026-07-21"
+  },
+  {
+   "table": "enhancements",
+   "id": "000010265002",
+   "side": "attacker",
+   "detachment": "Saga of the Bold",
+   "name_en": "Braggart’s Steel",
+   "name_zh": null,
+   "status": "partial",
+   "effects": [
+    {
+     "phase": "wound",
+     "op": "s_improve",
+     "params": [
+      2
+     ],
+     "condition": [
+      "phase_melee"
+     ],
+     "source": "夸口之钢：携带者近战武器 S+2"
+    }
+   ],
+   "requires_toggles": [
+    "bearer_leading"
+   ],
+   "not_modeled_notes_zh": [
+    "「本单位已达成一项以上 Boast 时另 +1 D」——Boast 为战局累计状态机，无载体，仅编基础 S+2（防高估）",
+    "限携带者模型的近战武器——单模型（人物）口径模拟；整单位注入会高估"
+   ],
+   "provenance": {
+    "text_sha256": "44db670e953071107a8482c071fff89665c68bc1862c2e13577a63a7b7f1a319"
+   },
+   "encoded_by": "manual-2026-07-21"
+  },
+  {
+   "table": "enhancements",
+   "id": "000010265003",
+   "side": "attacker",
+   "detachment": "Saga of the Bold",
+   "name_en": "Skjald",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "达成 Boast 时 +1CP——CP 域未建模"
+   ],
+   "provenance": {
+    "text_sha256": "0dfeff679dff173960601286bb558aeeaacea1e5bfa57dd258612e1fea7503b4"
+   },
+   "encoded_by": "manual-2026-07-21"
+  },
+  {
+   "table": "enhancements",
+   "id": "000010265004",
+   "side": "attacker",
+   "detachment": "Saga of the Bold",
+   "name_en": "Hordeslayer",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "「携带者 6 寸内敌方模型数多于友方模型数」时近战 A+2（有 Boast 则 +3）——双方模型数的战场几何比较无载体（引擎条件层只读目标规模）"
+   ],
+   "provenance": {
+    "text_sha256": "f074a4ebefa423e7bef682188badb4bc834a1efe7f2324b1da8ee322df767316"
+   },
+   "encoded_by": "manual-2026-07-21"
+  },
+  {
+   "table": "enhancements",
+   "id": "000010265005",
+   "side": "attacker",
+   "detachment": "Saga of the Bold",
+   "name_en": "Thunderwolf’s Fortitude",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "首次被消灭后 2+ 复活并留 3 W——复活/战局状态机未建模"
+   ],
+   "provenance": {
+    "text_sha256": "5bae5963c2d5494174b6e9ce9e783de64dc970d9f623f412ebbb53a2abbb276b"
+   },
+   "encoded_by": "manual-2026-07-21"
+  },
+  {
+   "table": "enhancements",
+   "id": "000010660002",
+   "side": "attacker",
+   "detachment": "Saga of the Great Wolf",
+   "name_en": "Grimnar’s Mark",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "战略使用次数放宽与 -1CP 折扣——战略元规则/CP 域未建模"
+   ],
+   "provenance": {
+    "text_sha256": "c824e97f2f6e38a8b09586e9634779e57e1d80f02706a21f064176853f33cbd9"
+   },
+   "encoded_by": "manual-2026-07-21"
+  },
+  {
+   "table": "enhancements",
+   "id": "000010660003",
+   "side": "attacker",
+   "detachment": "Saga of the Great Wolf",
+   "name_en": "Howlmaw",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "近战阶段开始迫使 6 寸内敌方单位做 -1 战意震慑检定——battle-shock 无战斗链载体"
+   ],
+   "provenance": {
+    "text_sha256": "9b189ca80da15911bcb51026706dc1e06b3b620fd145e033c704862f7f2b8cb6"
+   },
+   "encoded_by": "manual-2026-07-21"
+  },
+  {
+   "table": "enhancements",
+   "id": "000010660004",
+   "side": "attacker",
+   "detachment": "Saga of the Great Wolf",
+   "name_en": "Chariots of the Storm",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "部署后重新部署/置入战略预备队——部署域未建模"
+   ],
+   "provenance": {
+    "text_sha256": "43acd0617fb0137cc1c0afa29ef8ce0bfb87aa0875cc771f46dc786056c77d99"
+   },
+   "encoded_by": "manual-2026-07-21"
+  },
+  {
+   "table": "enhancements",
+   "id": "000010660005",
+   "side": "attacker",
+   "detachment": "Saga of the Great Wolf",
+   "name_en": "Skjald’s Foretelling",
+   "name_zh": null,
+   "status": "encoded",
+   "effects": [
+    {
+     "phase": "wound",
+     "op": "modify",
+     "params": [
+      1
+     ],
+     "condition": [
+      "melee_charging"
+     ],
+     "source": "吟游者的预言：[LANCE]（冲锋回合近战致伤 +1）"
+    }
+   ],
+   "requires_toggles": [
+    "bearer_leading"
+   ],
+   "not_modeled_notes_zh": [],
+   "provenance": {
+    "text_sha256": "ad520059765f2a8c6c13395b204b9ebfbf9b6b967c7d74d03f6a370dd85bf10c"
+   },
+   "encoded_by": "manual-2026-07-21"
+  },
+  {
+   "table": "enhancements",
+   "id": "000010261002",
+   "side": "attacker",
+   "detachment": "Saga of the Hunter",
+   "name_en": "Swift Hunter",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "Scouts 7 寸——战前移动/部署域未建模"
+   ],
+   "provenance": {
+    "text_sha256": "6b0b93c4cc2125e4dd0d20546d1b31841aac41aab5614b2a33bb87b942f08ce1"
+   },
+   "encoded_by": "manual-2026-07-21"
+  },
+  {
+   "table": "enhancements",
+   "id": "000010261003",
+   "side": "target",
+   "detachment": "Saga of the Hunter",
+   "name_en": "Fenrisian Grit",
+   "name_zh": null,
+   "status": "partial",
+   "effects": [
+    {
+     "phase": "fnp",
+     "op": "fnp",
+     "params": [
+      4
+     ],
+     "condition": [],
+     "source": "芬里斯之韧：携带者 FNP 4+"
+    }
+   ],
+   "requires_toggles": [
+    "defender_bearer_leading"
+   ],
+   "not_modeled_notes_zh": [
+    "仅携带者单模型有 FNP——单模型（人物）目标口径模拟；整单位目标会高估"
+   ],
+   "provenance": {
+    "text_sha256": "78cec4a16463e361362c226ba322d3bdb1425a9f6d220a31955747817fb56afc"
+   },
+   "encoded_by": "manual-2026-07-21"
+  },
+  {
+   "table": "enhancements",
+   "id": "000010261004",
+   "side": "attacker",
+   "detachment": "Saga of the Hunter",
+   "name_en": "Wolf Master",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "指挥阶段为 9 寸内友方 SPACE WOLVES 单位的 teeth and claws / Tyrnak / Fenrir 武器授予 [LETHAL HITS]——weapon_filter 为条目级单一子串，三个并列武器名无法表达（多名过滤无载体）"
+   ],
+   "provenance": {
+    "text_sha256": "8f8ec421b489bdb9121c2428027e34a5639f180b63eced1da3686a24d48a3a1a"
+   },
+   "encoded_by": "manual-2026-07-21"
+  },
+  {
+   "table": "enhancements",
+   "id": "000010261005",
+   "side": "attacker",
+   "detachment": "Saga of the Hunter",
+   "name_en": "Feral Rage",
+   "name_zh": null,
+   "status": "partial",
+   "effects": [
+    {
+     "phase": "attacks",
+     "op": "modify",
+     "params": [
+      1
+     ],
+     "condition": [
+      "phase_melee"
+     ],
+     "source": "野性暴怒：携带者近战武器 A+1"
+    },
+    {
+     "phase": "attacks",
+     "op": "modify",
+     "params": [
+      1
+     ],
+     "condition": [
+      "melee_charging"
+     ],
+     "source": "野性暴怒：携带者结束冲锋移动后近战武器再 +1 A（与基础 +1 累加）"
+    }
+   ],
+   "requires_toggles": [
+    "bearer_leading"
+   ],
+   "not_modeled_notes_zh": [
+    "限携带者模型的近战武器——单模型（人物）口径模拟；整单位注入会高估"
+   ],
+   "provenance": {
+    "text_sha256": "6b5461bae4292f50282cac14eeb1ce75d82b46e2af57e5ba49d3b8e88d54c3b8"
+   },
+   "encoded_by": "manual-2026-07-21"
+  }
+ ]
+}
