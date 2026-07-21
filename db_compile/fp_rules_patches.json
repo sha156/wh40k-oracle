@@ -1,5 +1,5 @@
 {
- "_comment": "P7-PR1 钛帝国规则文本 11 版化补丁。text_patches 来自 2026-07-14 逐行 A/B 工作单（docs/superpowers/plans/2026-07-14-p7-pr1-fp-rules-worklist.md，55 行全落账：8 drifted / 3 identical / 35 not_in_fp / 9 review_needed / 5 fp_new）；name_patches 来自钛帝国十版中文codex refine 缓存逐条效果配对（43 条有源 + 11 条自译标记）。｜P7-PR5 吞世者追加（2026-07-18）：text 9（军规嗜血癫狂改+1冲锋、狂战士之怒/怒火尽泄 surge move 术语、黄铜之怒规则改核心 surge、怒火容器 p4 完整重印 5 条）；deactivations +6（怒火容器重印未收录）；inserts +13（Brazen Engines/Butchers of Khorne 两全新分队 + Scorn the Witch）；name +53（狂战士战帮/怒火容器/军规 DavidZ codex 有源配对，其余自译标记）。已滚入免补：Summoned by Slaughter / Warp Stalkers / Rapid Manifestation（Wahapedia 现文即 11 版）。｜PR5 兵牌层技能 6 条（FP p7-p8 DATASHEETS：Loping Speed 8\"、Blood Surge surge move 化、Helbrute Frenzy 重写、Scent of Blood 9\" 内判据、Chaos Rhino 8\"、Bloody Fury 重写）；已滚入免补：Exalted Eightbound Rend and Tear / Icon of Khorne×2 / Slaughterbound 武器 S10 / Defiler 整表（Wahapedia 已收）。FRAME 关键词沿 S4 裁定跳过（测距词）。｜P7-PR8 死亡守卫追加（2026-07-19）：text 9（Flyblown Host 完整重印 6 条 + 军规两处合一 + Death Approaches 9\"→8\" + Beckoning Blight 9\"→8\"）、deact 5（Flyblown重印未收录 3 战略 2 增强）、inserts 12（Contagion Engines/Paragons of Putrescence两新分队各 1 规则 3 战略 2 增强）、name 51（军规 1 + det 规则 7 + 战略 42 + 死神降临，源=老湿腐死亡守卫V1.1；工作单 docs/superpowers/plans/2026-07-19-p7-pr8-dg-worklist.md）｜P7-PR9 圣血天使追加（2026-07-19）：text 9（全兵牌技能层——Legends Black Rage×4 + 狂乱反噬 + 狂怒驱使 surge + 大叛乱幻视 + 奇迹救赎 ingress + Gleaming Pinions 8\"）、inserts 18（Legacy of Grace/Encarmine Speartip/Wrath of the Doomed 三新分队各 1 规则 3 战略 2 增强；Legacy of the Angel 同名豁免旗标expect_duplicate_name 首用）、name 49（4 codex 分队有源 + Rage-cursed 自译，源=DavidZ圣血天使V1.05；工作单 docs/superpowers/plans/2026-07-19-p7-pr9-ba-worklist.md）。零 deactivations（重印无删减）零 fp_errata｜P7-PR15 圣血修女追加（2026-07-20）：text 1（Penitent Host / Devout Fanaticism EFFECT → surge move）；inserts +14（3 新分队 Chorus of Condemnation / Sacred Champions / Sanctified Orators：3 规则 + 5 增强 + 6 战略，id 前缀 fp11e-sororitas-，cost 置空）。免补：Rules Updates 其余（Shield of Aversion/Rites of Fire/Fervent Purgation/Suffering&Sacrifice/Divine Intervention/Desperate for Redemption/Blazing Ire&Cleansing Flames 2CP/Acts of Faith 军规）Wahapedia 已滚入逐字一致。观察项：FRAME 关键字×4、8 datasheet 技能改（Leader→Support 等）、3+5 新 datasheet/Legends 单位——datasheet 层不落本 PR。｜P7-PR20 Space-Marines 追加（2026-07-20）：inserts +13 —— 2 新迷你分队（Fulguris Task Force 天雷突袭 / Subversion Assets 无所遁形，各 1 规则 + 2 增强 + 3 战略，id 前缀 fp11e-spacemarines-）+ Bastion Task Force 漏录的 Angels Defiant 战略（DB id 序 002-005,007 缺 006，补回 000010677006）。11 现有分队（Armoured Speartip→Reclamation Force + Librarius Conclave）文本与 11 版 FP 逐字一致（Wahapedia 已滚入），零 text_patches/零 deactivations/零 fp_errata。｜P7-PR23 帝国代理（Imperial Agents，faction='AoI'）追加（2026-07-20）：text 2（Rapid Tactical Relocation 9\"→8\"、Gift of the Prescient 3\"→6\"，均几何漂移不影响 DSL）。免补：Armour of Contempt / Truesilver Armour 的「worsen AP by 1」库现文即 11 版逐字一致；FP 唯一新分队 Veiled Blade Elimination Force（Extremis Sanction + 6 战略 + 4 增强）Wahapedia 已滚入 DB 故零 fp_new；零 deactivations/零 fp_errata。datasheet 层改（Corvus Blackstar M14\"/去 AIRCRAFT、Callidus/Culexus/Rhino/Inquisitor Leader 等）沿死亡守望/圣血修女先例不落本 PR（观察项）。｜P7-PR18 太空野狼追加（2026-07-21）：text 4（Champions of Fenris 分队规则同名重印、Grimnar's Mark 增强重印真漂移、Rules Updates 的 Impetuosity EFFECT → surge move、Thunderous Pursuit TARGET 9\"→8\"）；deactivations +10（11 版 CoF 完整重印未收录的 6 战略 + 4 增强）；inserts +17（CoF 重印新增 3 战略 + 2 增强，Legends of Saga and Song / Veterans of the Fang 两全新分队各 1 规则 + 3 战略 + 2 增强，id 前缀 fp11e-sw-）。｜P7-PR22 混沌骑士（Chaos Knights，faction='QT'）追加（2026-07-21）：text 3（Iconoclast Fiefdom 完整重印：分队规则名 Dreaded Masters→Wretched Thralls、rule_text 整替、Avenge the Masters! 目标/施加方整替）；deactivations +9（重印未收录的 5 战略 + 4 增强）；inserts +16（Bastions of Tyranny / Hunting Warpack 两全新分队各 1 规则 + 2 增强 + 3 战略，Iconoclast 重印新增 2 增强 + 2 战略，id 前缀 fp11e-chaosknights-，cost 置空）。免补：Helhunt Lance（FP p5-p6）1 规则 + 4 增强 + 6 战略与库现文逐字一致（Wahapedia 已滚入）；page_025 RULES UPDATES 全部已滚入（Darkness→Stealth、Animalistic Rage WHEN、Harrying Hounds 8\"、Unnatural Fortitude、Hellforged Construction AP、Claimed for the Dark Gods WHEN、Mirror of Fates、Imperious Advance EFFECT 逐条 A/B 均一致）。观察项：FP p7-p24 的 18 页 Imperial Armour 兵牌（Acastus/Cerastus/Questoris/War Dog Moirax）与 Knight Abominant Warp Storms 改动属 datasheet 层，沿死亡守望/圣血修女先例不落本 PR。",
+ "_comment": "P7-PR1 钛帝国规则文本 11 版化补丁。text_patches 来自 2026-07-14 逐行 A/B 工作单（docs/superpowers/plans/2026-07-14-p7-pr1-fp-rules-worklist.md，55 行全落账：8 drifted / 3 identical / 35 not_in_fp / 9 review_needed / 5 fp_new）；name_patches 来自钛帝国十版中文codex refine 缓存逐条效果配对（43 条有源 + 11 条自译标记）。｜P7-PR5 吞世者追加（2026-07-18）：text 9（军规嗜血癫狂改+1冲锋、狂战士之怒/怒火尽泄 surge move 术语、黄铜之怒规则改核心 surge、怒火容器 p4 完整重印 5 条）；deactivations +6（怒火容器重印未收录）；inserts +13（Brazen Engines/Butchers of Khorne 两全新分队 + Scorn the Witch）；name +53（狂战士战帮/怒火容器/军规 DavidZ codex 有源配对，其余自译标记）。已滚入免补：Summoned by Slaughter / Warp Stalkers / Rapid Manifestation（Wahapedia 现文即 11 版）。｜PR5 兵牌层技能 6 条（FP p7-p8 DATASHEETS：Loping Speed 8\"、Blood Surge surge move 化、Helbrute Frenzy 重写、Scent of Blood 9\" 内判据、Chaos Rhino 8\"、Bloody Fury 重写）；已滚入免补：Exalted Eightbound Rend and Tear / Icon of Khorne×2 / Slaughterbound 武器 S10 / Defiler 整表（Wahapedia 已收）。FRAME 关键词沿 S4 裁定跳过（测距词）。｜P7-PR8 死亡守卫追加（2026-07-19）：text 9（Flyblown Host 完整重印 6 条 + 军规两处合一 + Death Approaches 9\"→8\" + Beckoning Blight 9\"→8\"）、deact 5（Flyblown重印未收录 3 战略 2 增强）、inserts 12（Contagion Engines/Paragons of Putrescence两新分队各 1 规则 3 战略 2 增强）、name 51（军规 1 + det 规则 7 + 战略 42 + 死神降临，源=老湿腐死亡守卫V1.1；工作单 docs/superpowers/plans/2026-07-19-p7-pr8-dg-worklist.md）｜P7-PR9 圣血天使追加（2026-07-19）：text 9（全兵牌技能层——Legends Black Rage×4 + 狂乱反噬 + 狂怒驱使 surge + 大叛乱幻视 + 奇迹救赎 ingress + Gleaming Pinions 8\"）、inserts 18（Legacy of Grace/Encarmine Speartip/Wrath of the Doomed 三新分队各 1 规则 3 战略 2 增强；Legacy of the Angel 同名豁免旗标expect_duplicate_name 首用）、name 49（4 codex 分队有源 + Rage-cursed 自译，源=DavidZ圣血天使V1.05；工作单 docs/superpowers/plans/2026-07-19-p7-pr9-ba-worklist.md）。零 deactivations（重印无删减）零 fp_errata｜P7-PR15 圣血修女追加（2026-07-20）：text 1（Penitent Host / Devout Fanaticism EFFECT → surge move）；inserts +14（3 新分队 Chorus of Condemnation / Sacred Champions / Sanctified Orators：3 规则 + 5 增强 + 6 战略，id 前缀 fp11e-sororitas-，cost 置空）。免补：Rules Updates 其余（Shield of Aversion/Rites of Fire/Fervent Purgation/Suffering&Sacrifice/Divine Intervention/Desperate for Redemption/Blazing Ire&Cleansing Flames 2CP/Acts of Faith 军规）Wahapedia 已滚入逐字一致。观察项：FRAME 关键字×4、8 datasheet 技能改（Leader→Support 等）、3+5 新 datasheet/Legends 单位——datasheet 层不落本 PR。｜P7-PR20 Space-Marines 追加（2026-07-20）：inserts +13 —— 2 新迷你分队（Fulguris Task Force 天雷突袭 / Subversion Assets 无所遁形，各 1 规则 + 2 增强 + 3 战略，id 前缀 fp11e-spacemarines-）+ Bastion Task Force 漏录的 Angels Defiant 战略（DB id 序 002-005,007 缺 006，补回 000010677006）。11 现有分队（Armoured Speartip→Reclamation Force + Librarius Conclave）文本与 11 版 FP 逐字一致（Wahapedia 已滚入），零 text_patches/零 deactivations/零 fp_errata。｜P7-PR23 帝国代理（Imperial Agents，faction='AoI'）追加（2026-07-20）：text 2（Rapid Tactical Relocation 9\"→8\"、Gift of the Prescient 3\"→6\"，均几何漂移不影响 DSL）。免补：Armour of Contempt / Truesilver Armour 的「worsen AP by 1」库现文即 11 版逐字一致；FP 唯一新分队 Veiled Blade Elimination Force（Extremis Sanction + 6 战略 + 4 增强）Wahapedia 已滚入 DB 故零 fp_new；零 deactivations/零 fp_errata。datasheet 层改（Corvus Blackstar M14\"/去 AIRCRAFT、Callidus/Culexus/Rhino/Inquisitor Leader 等）沿死亡守望/圣血修女先例不落本 PR（观察项）。｜P7-PR18 太空野狼追加（2026-07-21）：text 4（Champions of Fenris 分队规则同名重印、Grimnar's Mark 增强重印真漂移、Rules Updates 的 Impetuosity EFFECT → surge move、Thunderous Pursuit TARGET 9\"→8\"）；deactivations +10（11 版 CoF 完整重印未收录的 6 战略 + 4 增强）；inserts +17（CoF 重印新增 3 战略 + 2 增强，Legends of Saga and Song / Veterans of the Fang 两全新分队各 1 规则 + 3 战略 + 2 增强，id 前缀 fp11e-sw-）。｜P7-PR22 混沌骑士（Chaos Knights，faction='QT'）追加（2026-07-21）：text 3（Iconoclast Fiefdom 完整重印：分队规则名 Dreaded Masters→Wretched Thralls、rule_text 整替、Avenge the Masters! 目标/施加方整替）；deactivations +9（重印未收录的 5 战略 + 4 增强）；inserts +16（Bastions of Tyranny / Hunting Warpack 两全新分队各 1 规则 + 2 增强 + 3 战略，Iconoclast 重印新增 2 增强 + 2 战略，id 前缀 fp11e-chaosknights-，cost 置空）。免补：Helhunt Lance（FP p5-p6）1 规则 + 4 增强 + 6 战略与库现文逐字一致（Wahapedia 已滚入）；page_025 RULES UPDATES 全部已滚入（Darkness→Stealth、Animalistic Rage WHEN、Harrying Hounds 8\"、Unnatural Fortitude、Hellforged Construction AP、Claimed for the Dark Gods WHEN、Mirror of Fates、Imperious Advance EFFECT 逐条 A/B 均一致）。观察项：FP p7-p24 的 18 页 Imperial Armour 兵牌（Acastus/Cerastus/Questoris/War Dog Moirax）与 Knight Abominant Warp Storms 改动属 datasheet 层，沿死亡守望/圣血修女先例不落本 PR。｜P7-PR26 混沌恶魔追加（2026-07-21）：text 5（Warp Rifts 深入打击 9\"→8\"、First Prince of Chaos 的 PENUMBRAL PUPPETRY 加 Stealth 并限近战 + SHADOW'S CARESS 改 snap shooting、Murdercall 加相位限定并 6\"→8\"、SHADE PATH 时点/目标/-2→-1 整替、FOOLS’ FLIGHT 11 版重写）；inserts +18（Cavalcade of Chaos 1 规则+2 增强+3 战略、Lords of the Warp 1 规则+1 增强+4 战略、Warptide 1 规则+2 增强+3 战略，id 前缀 fp11e-chaosdaemons-，cost 置空；Swollen with Power 与 CSM 登舰增强同名异 id，挂 expect_duplicate_name）。零 deactivations（6 个现有分队 FP 均为重印，无删减条目）；零 fp_errata（本 FP 数值层改动全落在 p14-p119 的 Index 兵牌，沿死亡守望/圣血修女/混沌骑士先例作观察项不落本 PR）。已滚入免补：Daemonic Incursion 全部 6 战略 4 增强、Blood Legion 其余 5 战略 4 增强 + Blood Tainted、Scintillating Legion / Plague Legion / Legion of Excess 全套、Shadow Legion 其余 5 战略 4 增强 + Thralls of the First Prince（Wahapedia 已滚入逐字一致）。",
  "text_patches": [
   {
    "table": "stratagems",
@@ -1116,6 +1116,56 @@
    "to_text": "<b>WHEN:</b> Any phase, when a friendly <span class=\"kwb\">CHAOS</span> <span class=\"kwb\">KNIGHTS</span> unit is destroyed by an enemy unit.<br><br><b>TARGET:</b> That enemy unit.<br><br><b>EFFECT:</b> That enemy unit is marked until the end of the battle.<br>- Friendly <span class=\"kwb\">DAMNED</span> units’ attacks that target a marked unit have [LETHAL HITS].",
    "fp_source": "Faction Pack Chaos Knights page_004.md（11 版 Iconoclast Fiefdom 完整重印，Wahapedia 仍十版旧文）",
    "synthesis": "重印真漂移：十版「目标=刚被摧毁的己方骑士单位、Damned *模型*的攻击」→ 11 版「目标=摧毁者敌军单位、Damned *单位*的攻击」，标记语义同（marked 至战斗结束）"
+  },
+  {
+   "table": "detachments",
+   "column": "rule_text",
+   "id": "000008436",
+   "name_en": "Warp Rifts",
+   "from_text": "Each time a <span class=\"kwb\">LEGIONES</span> <span class=\"kwb\">DAEMONICA</span> unit from your army is set up on the battlefield using the Deep Strike ability, if it is set up wholly within your army’s Shadow of Chaos, and/or if it is set up wholly within 6\" of one or more friendly Bloodthirster, Great Unclean One, Kairos Fateweaver, Keeper of Secrets, Lord of Change, Rotigus, Shalaxi Helbane or Skarbrand units with which it shares the <span class=\"kwb\">KHORNE</span>, <span class=\"kwb\">TZEENTCH</span>, <span class=\"kwb\">NURGLE</span> or <span class=\"kwb\">SLAANESH</span> keyword, it can be set up anywhere that is more than 6\" horizontally away from all enemy models, instead of more than 9\".",
+   "to_text": "Each time a <span class=\"kwb\">LEGIONES</span> <span class=\"kwb\">DAEMONICA</span> unit from your army is set up on the battlefield using the Deep Strike ability, if it is set up wholly within your army’s Shadow of Chaos, and/or if it is set up wholly within 6\" of one or more friendly Bloodthirster, Great Unclean One, Kairos Fateweaver, Keeper of Secrets, Lord of Change, Rotigus, Shalaxi Helbane or Skarbrand units, with which it shares the <span class=\"kwb\">KHORNE</span>, <span class=\"kwb\">TZEENTCH</span>, <span class=\"kwb\">NURGLE</span> or <span class=\"kwb\">SLAANESH</span> keyword, it can be set up anywhere that is more than 6\" horizontally away from all enemy models, instead of more than 8\".",
+   "fp_source": "Faction Pack Chaos Daemons page_004.md（PDF p4 原文复核）",
+   "synthesis": "深入打击落点门槛 9\" → 8\"（11 版核心 Deep Strike 距离下调）；并入 FP 的断句逗号。其余从句（Shadow of Chaos / 8 个大恶魔点名 / 共享神祇关键词 / 6\" 落点）逐字一致"
+  },
+  {
+   "table": "detachments",
+   "column": "rule_text",
+   "id": "000009978",
+   "name_en": "First Prince of Chaos",
+   "from_text": "Units from your army have the relevant abilities presented below.<br><br><div class=\"Columns2\"><div class=\"BreakInsideAvoid\"><table max-width=\"480px\" border=\"0\" cellpadding=\"3\" style=\"border-width:0px\"><tbody><tbody class=\"clFl ALAL ALKH LDLD LDDI LDSH LDLE LDSC LDBL LDPL LDDA LDIO LDRR LDDC LDPI\"><tr><td class=\"td_w\"><p style=\"display:block\" class=\"impact18\">MURDERER’S COWL</p><p class=\"ShowFluff legend2\">The most murderous seek not to hide in the Dark Master’s pall. The shadows extend before them, offering a rapid route to slaughter.</p><p><span class=\"tooltip00074\" data-tooltip-content=\"#tooltip_content00074\" data-tooltip-anchor=\"#tooltip_content00074\"><span class=\"kwb kwbu\">SHADOW</span> <span class=\"kwb kwbu\">LEGION</span> <span class=\"kwb kwbu\">KHORNE</span></span> units only. This unit is eligible to shoot and <a href=\"/wh40k10ed/the-rules/core-rules/#CHARGE-PHASE\">declare a charge</a> in a turn in which it <span class=\"tooltip00010\" data-tooltip-content=\"#tooltip_content00010\"><span class=\"tt kwbu\">Advanced</span></span>.</p></td></tr></tbody></tbody></table></div><div class=\"BreakInsideAvoid\"><table max-width=\"480px\" border=\"0\" cellpadding=\"3\" style=\"border-width:0px\"><tbody><tbody class=\"clFl ALAL ALTZ LDLD LDDI LDSH LDLE LDSC LDBL LDPL LDDA LDIO LDRR LDDC LDPI\"><tr><td class=\"td_w\"><p style=\"display:block\" class=\"impact18\">PENUMBRAL PUPPETRY</p><p class=\"ShowFluff legend2\">Mutative agents of change, touched by the Dark Master’s umbral aura, summon illusory magicks to confound and confuse their desperate foes.</p><p><span class=\"tooltip00075\" data-tooltip-content=\"#tooltip_content00075\" data-tooltip-anchor=\"#tooltip_content00075\"><span class=\"kwb kwbu\">SHADOW</span> <span class=\"kwb kwbu\">LEGION</span> <span class=\"kwb kwbu\">TZEENTCH</span></span> units only. Each time an attack targets this unit, subtract 1 from the <span class=\"tooltip00017\" data-tooltip-content=\"#tooltip_content00017\"><span class=\"tt kwbu\">Hit</span> <span class=\"tt kwbu\">roll</span></span>.</p></td></tr></tbody></tbody></table></div><div class=\"BreakInsideAvoid\"><table max-width=\"480px\" border=\"0\" cellpadding=\"3\" style=\"border-width:0px\"><tbody><tbody class=\"clFl ALAL ALNU LDLD LDDI LDSH LDLE LDSC LDBL LDPL LDDA LDIO LDRR LDDC LDPI\"><tr><td class=\"td_w\"><p style=\"display:block\" class=\"impact18\">GLOAM ROT</p><p class=\"ShowFluff legend2\">Borne upon the gloaming wisp of Be’lakor’s shadow, this debilitating curse atrophies muscle and withers flesh, greatly weakening its victims.</p><p><span class=\"tooltip00076\" data-tooltip-content=\"#tooltip_content00076\" data-tooltip-anchor=\"#tooltip_content00076\"><span class=\"kwb kwbu\">SHADOW</span> <span class=\"kwb kwbu\">LEGION</span> <span class=\"kwb kwbu\">NURGLE</span></span> units only. Each time an attack targets this unit, if the Strength characteristic of that attack is greater than this unit’s Toughness characteristic, subtract 1 from the <span class=\"tooltip00008\" data-tooltip-content=\"#tooltip_content00008\"><span class=\"tt kwbu\">Wound</span> <span class=\"tt kwbu\">roll</span></span>.</p></td></tr></tbody></tbody></table></div><div class=\"BreakInsideAvoid\"><table max-width=\"480px\" border=\"0\" cellpadding=\"3\" style=\"border-width:0px\"><tbody><tbody class=\"clFl ALAL ALSL LDLD LDDI LDSH LDLE LDSC LDBL LDPL LDDA LDIO LDRR LDDC LDPI\"><tr><td class=\"td_w\"><p style=\"display:block\" class=\"impact18\">SHADOW’S CARESS</p><p class=\"ShowFluff legend2\">The Dark Master’s shadow falls across his thralls, masking their approach.</p><p><span class=\"tooltip00077\" data-tooltip-content=\"#tooltip_content00077\" data-tooltip-anchor=\"#tooltip_content00077\"><span class=\"kwb kwbu\">SHADOW</span> <span class=\"kwb kwbu\">LEGION</span> <span class=\"kwb kwbu\">SLAANESH</span></span> units only. Enemy units cannot use the <span class=\"tooltip00053\" data-tooltip-content=\"#tooltip_content00053\"><span class=\"tt kwbu\">Fire</span> <span class=\"tt kwbu\">Overwatch</span></span> Stratagem to shoot at this unit.</p></td></tr></tbody></tbody></table></div><div class=\"BreakInsideAvoid\"><table max-width=\"480px\" border=\"0\" cellpadding=\"3\" style=\"border-width:0px\"><tbody><tbody><tr><td class=\"td_w\"><p style=\"display:block\" class=\"impact18\">DISCIPLES OF BE’LAKOR</p><p class=\"ShowFluff legend2\">Be’lakor’s immortal ego draws into his orbit those as yet unclaimed by any one Chaos God. Their hate-filled pacts are made to the entire fell pantheon, and the dangerous boons they receive see them plunged along paths of perpetual night straight into the enemy’s midst.</p><p><span class=\"tooltip00078\" data-tooltip-content=\"#tooltip_content00078\" data-tooltip-anchor=\"#tooltip_content00078\"><span class=\"kwb kwbu\">SHADOW</span> <span class=\"kwb kwbu\">LEGION</span> <span class=\"kwb kwbu\">UNDIVIDED</span></span> units only.<br><ul><li>This unit has the <span class=\"tooltip00079\" data-tooltip-content=\"#tooltip_content00079\"><span class=\"tt kwbu\">Dark</span> <span class=\"tt kwbu\">Pacts</span></span> army rule, and can use it as described in <i>Codex: Chaos Space Marines</i>, even though your Army Faction is not <span class=\"kwb\">HERETIC</span> <span class=\"kwb\">ASTARTES</span>. If this unit is <a class=\"kwbOne\" href=\"/wh40k10ed/factions/chaos-daemons/Be-lakor\"><span class=\"kwb kwbo\">BE’LAKOR</span></a>, it automatically passes the <span class=\"tooltip00012\" data-tooltip-content=\"#tooltip_content00012\"><span class=\"tt kwbu\">Leadership</span> <span class=\"tt kwbu\">test</span></span> required for Dark Pacts.</li><li><span class=\"tooltip00080\" data-tooltip-content=\"#tooltip_content00080\" data-tooltip-anchor=\"#tooltip_content00080\"><span class=\"kwb kwbu\">SHADOW</span> <span class=\"kwb kwbu\">LEGION</span> <span class=\"kwb kwbu\">HERETIC</span> <span class=\"kwb kwbu\">ASTARTES</span></span> models in this unit have the <span class=\"tooltip00021\" data-tooltip-content=\"#tooltip_content00021\"><span class=\"tt kwbu\">Deep</span> <span class=\"tt kwbu\">Strike</span></span> ability.</li></ul></p></td></tr></tbody></tbody></table></div></div>",
+   "to_text": "Units from your army have the relevant abilities presented below.<br><br><div class=\"Columns2\"><div class=\"BreakInsideAvoid\"><table max-width=\"480px\" border=\"0\" cellpadding=\"3\" style=\"border-width:0px\"><tbody><tbody class=\"clFl ALAL ALKH LDLD LDDI LDSH LDLE LDSC LDBL LDPL LDDA LDIO LDRR LDDC LDPI\"><tr><td class=\"td_w\"><p style=\"display:block\" class=\"impact18\">MURDERER’S COWL</p><p class=\"ShowFluff legend2\">The most murderous seek not to hide in the Dark Master’s pall. The shadows extend before them, offering a rapid route to slaughter.</p><p><span class=\"tooltip00074\" data-tooltip-content=\"#tooltip_content00074\" data-tooltip-anchor=\"#tooltip_content00074\"><span class=\"kwb kwbu\">SHADOW</span> <span class=\"kwb kwbu\">LEGION</span> <span class=\"kwb kwbu\">KHORNE</span></span> units only. This unit is eligible to shoot and <a href=\"/wh40k10ed/the-rules/core-rules/#CHARGE-PHASE\">declare a charge</a> in a turn in which it <span class=\"tooltip00010\" data-tooltip-content=\"#tooltip_content00010\"><span class=\"tt kwbu\">Advanced</span></span>.</p></td></tr></tbody></tbody></table></div><div class=\"BreakInsideAvoid\"><table max-width=\"480px\" border=\"0\" cellpadding=\"3\" style=\"border-width:0px\"><tbody><tbody class=\"clFl ALAL ALTZ LDLD LDDI LDSH LDLE LDSC LDBL LDPL LDDA LDIO LDRR LDDC LDPI\"><tr><td class=\"td_w\"><p style=\"display:block\" class=\"impact18\">PENUMBRAL PUPPETRY</p><p class=\"ShowFluff legend2\">Mutative agents of change, touched by the Dark Master’s umbral aura, summon illusory magicks to confound and confuse their desperate foes.</p><p><span class=\"tooltip00075\" data-tooltip-content=\"#tooltip_content00075\" data-tooltip-anchor=\"#tooltip_content00075\"><span class=\"kwb kwbu\">SHADOW</span> <span class=\"kwb kwbu\">LEGION</span> <span class=\"kwb kwbu\">TZEENTCH</span></span> units only. This unit has <span class=\"tt kwbu\">Stealth</span>. Each time a melee attack targets this unit, subtract 1 from the <span class=\"tooltip00017\" data-tooltip-content=\"#tooltip_content00017\"><span class=\"tt kwbu\">Hit</span> <span class=\"tt kwbu\">roll</span></span>.</p></td></tr></tbody></tbody></table></div><div class=\"BreakInsideAvoid\"><table max-width=\"480px\" border=\"0\" cellpadding=\"3\" style=\"border-width:0px\"><tbody><tbody class=\"clFl ALAL ALNU LDLD LDDI LDSH LDLE LDSC LDBL LDPL LDDA LDIO LDRR LDDC LDPI\"><tr><td class=\"td_w\"><p style=\"display:block\" class=\"impact18\">GLOAM ROT</p><p class=\"ShowFluff legend2\">Borne upon the gloaming wisp of Be’lakor’s shadow, this debilitating curse atrophies muscle and withers flesh, greatly weakening its victims.</p><p><span class=\"tooltip00076\" data-tooltip-content=\"#tooltip_content00076\" data-tooltip-anchor=\"#tooltip_content00076\"><span class=\"kwb kwbu\">SHADOW</span> <span class=\"kwb kwbu\">LEGION</span> <span class=\"kwb kwbu\">NURGLE</span></span> units only. Each time an attack targets this unit, if the Strength characteristic of that attack is greater than this unit’s Toughness characteristic, subtract 1 from the <span class=\"tooltip00008\" data-tooltip-content=\"#tooltip_content00008\"><span class=\"tt kwbu\">Wound</span> <span class=\"tt kwbu\">roll</span></span>.</p></td></tr></tbody></tbody></table></div><div class=\"BreakInsideAvoid\"><table max-width=\"480px\" border=\"0\" cellpadding=\"3\" style=\"border-width:0px\"><tbody><tbody class=\"clFl ALAL ALSL LDLD LDDI LDSH LDLE LDSC LDBL LDPL LDDA LDIO LDRR LDDC LDPI\"><tr><td class=\"td_w\"><p style=\"display:block\" class=\"impact18\">SHADOW’S CARESS</p><p class=\"ShowFluff legend2\">The Dark Master’s shadow falls across his thralls, masking their approach.</p><p><span class=\"tooltip00077\" data-tooltip-content=\"#tooltip_content00077\" data-tooltip-anchor=\"#tooltip_content00077\"><span class=\"kwb kwbu\">SHADOW</span> <span class=\"kwb kwbu\">LEGION</span> <span class=\"kwb kwbu\">SLAANESH</span></span> units only. Enemy units cannot target this unit with snap shooting attacks.</p></td></tr></tbody></tbody></table></div><div class=\"BreakInsideAvoid\"><table max-width=\"480px\" border=\"0\" cellpadding=\"3\" style=\"border-width:0px\"><tbody><tbody><tr><td class=\"td_w\"><p style=\"display:block\" class=\"impact18\">DISCIPLES OF BE’LAKOR</p><p class=\"ShowFluff legend2\">Be’lakor’s immortal ego draws into his orbit those as yet unclaimed by any one Chaos God. Their hate-filled pacts are made to the entire fell pantheon, and the dangerous boons they receive see them plunged along paths of perpetual night straight into the enemy’s midst.</p><p><span class=\"tooltip00078\" data-tooltip-content=\"#tooltip_content00078\" data-tooltip-anchor=\"#tooltip_content00078\"><span class=\"kwb kwbu\">SHADOW</span> <span class=\"kwb kwbu\">LEGION</span> <span class=\"kwb kwbu\">UNDIVIDED</span></span> units only.<br><ul><li>This unit has the <span class=\"tooltip00079\" data-tooltip-content=\"#tooltip_content00079\"><span class=\"tt kwbu\">Dark</span> <span class=\"tt kwbu\">Pacts</span></span> army rule, and can use it as described in <i>Codex: Chaos Space Marines</i>, even though your Army Faction is not <span class=\"kwb\">HERETIC</span> <span class=\"kwb\">ASTARTES</span>. If this unit is <a class=\"kwbOne\" href=\"/wh40k10ed/factions/chaos-daemons/Be-lakor\"><span class=\"kwb kwbo\">BE’LAKOR</span></a>, it automatically passes the <span class=\"tooltip00012\" data-tooltip-content=\"#tooltip_content00012\"><span class=\"tt kwbu\">Leadership</span> <span class=\"tt kwbu\">test</span></span> required for Dark Pacts.</li><li><span class=\"tooltip00080\" data-tooltip-content=\"#tooltip_content00080\" data-tooltip-anchor=\"#tooltip_content00080\"><span class=\"kwb kwbu\">SHADOW</span> <span class=\"kwb kwbu\">LEGION</span> <span class=\"kwb kwbu\">HERETIC</span> <span class=\"kwb kwbu\">ASTARTES</span></span> models in this unit have the <span class=\"tooltip00021\" data-tooltip-content=\"#tooltip_content00021\"><span class=\"tt kwbu\">Deep</span> <span class=\"tt kwbu\">Strike</span></span> ability.</li></ul></p></td></tr></tbody></tbody></table></div></div>",
+   "fp_source": "Faction Pack Chaos Daemons page_005.md（PDF p5 原文复核）",
+   "synthesis": "两条神祇分支漂移：① PENUMBRAL PUPPETRY 十版「任何攻击瞄准本单位命中 -1」→ 11 版「本单位获 Stealth，且**近战**攻击瞄准本单位命中 -1」（射击侧改由 Stealth=掩体承载）；② SHADOW'S CARESS 十版「敌不能用火力守望战略射击本单位」→ 11 版「敌不能以 snap shooting 攻击瞄准本单位」（11 版守望机制改名）。MURDERER'S COWL / GLOAM ROT / DISCIPLES OF BE'LAKOR（含 HERETIC ASTARTES 深入打击第二条）逐字一致，免补"
+  },
+  {
+   "table": "detachments",
+   "column": "rule_text",
+   "id": "000009813",
+   "name_en": "Murdercall",
+   "from_text": "Each time an enemy unit (excluding <span class=\"kwb\">AIRCRAFT</span>) ends a Normal or Advance move within 6\" of one or more Legiones Daemonica Khorne units from your army, one of those <span class=\"kwb\">LEGIONES</span> <span class=\"kwb\">DAEMONICA</span> <span class=\"kwb\">KHORNE</span> units can make a Surge move towards that enemy unit. To do so, roll one D6: models in your unit move a number of inches up to this result, but your unit must end that move as close as possible to that enemy unit. When doing so, those models can be moved within Engagement Range of that enemy unit. A unit cannot make a Surge move while it is within Engagement Range of one or more enemy units.",
+   "to_text": "In your opponent’s Movement phase, each time an enemy unit (excluding <span class=\"kwb\">AIRCRAFT</span>) ends a move within 8\" of one or more Legiones Daemonica Khorne units from your army, one of those <span class=\"kwb\">LEGIONES</span> <span class=\"kwb\">DAEMONICA</span> <span class=\"kwb\">KHORNE</span> units can make a Surge move towards that enemy unit. To do so, roll one D6: models in your unit move a number of inches up to this result, but your unit must end that move as close as possible to that enemy unit. When doing so, those models can be moved within Engagement Range of that enemy unit. A unit cannot make a Surge move while it is within Engagement Range of one or more enemy units.",
+   "fp_source": "Faction Pack Chaos Daemons page_123.md（PDF p123 原文复核）",
+   "synthesis": "三处漂移：① 新增相位限定「在对手移动阶段」；② 触发半径 6\" → 8\"；③ 触发移动类型由「Normal 或 Advance 移动」放宽为「任何移动」。库现文的 surge move 展开式与 FP 压缩式「make a surge move of up to D6\"」语义同（沿 PR22 Goaded Beast 先例），保留不动"
+  },
+  {
+   "table": "stratagems",
+   "column": "text_zh",
+   "id": "000009979006",
+   "name_en": "SHADE PATH",
+   "from_text": "<b>WHEN:</b> Your opponent’s Charge phase, just after an enemy unit declares a charge.<br><br><b>TARGET:</b> One Shadow Legion unit from your army that was selected as a target of that charge.<br><br><b>EFFECT:</b> Until the end of the phase, subtract 2 from Charge rolls made for that enemy unit. In addition, if your unit has the Nurgle keyword, that enemy unit must take a Battle-shock test.",
+   "to_text": "<b>WHEN:</b> Start of your opponent’s Charge phase.<br><br><b>TARGET:</b> One friendly Shadow Legion unit.<br><br><b>EFFECT:</b> Select one visible enemy unit within 12\" of your unit. When that enemy unit declares a charge, that enemy unit has -1 to Charge rolls. If your unit has the Nurgle keyword, that enemy unit must take a Battle-shock test.",
+   "fp_source": "Faction Pack Chaos Daemons page_010.md（PDF p10 原文复核）",
+   "synthesis": "整替：十版「对手冲锋阶段敌宣告冲锋后 → 目标须是该次冲锋的被冲方 → 冲锋骰 -2」→ 11 版「对手冲锋阶段**开始时** → 目标任选己方 Shadow Legion 单位 → 点名 12\" 内一个可见敌单位，其冲锋骰 **-1**」；Nurgle 追加战栗检定从句不变"
+  },
+  {
+   "table": "stratagems",
+   "column": "text_zh",
+   "id": "000009816006",
+   "name_en": "FOOLS’ FLIGHT",
+   "from_text": "<b>WHEN:</b> Your opponent’s Movement phase, just after an enemy unit Falls Back.<br><br><b>TARGET:</b> One Legiones Daemonica Khorne unit from your army that is within 6\" of that enemy unit and would be eligible to declare a charge against that enemy unit.<br><br><b>EFFECT:</b> Your unit now declares a charge that targets only that enemy unit, and you resolve that charge. Note that even if that charge is successful, your unit does not receive any Charge bonus this turn.",
+   "to_text": "<b>WHEN:</b> Your opponent’s Movement phase, when an enemy unit ends a Fall Back move.<br><br><b>TARGET:</b> One friendly unengaged Legiones Daemonica Khorne unit that is within 6\" of that enemy unit.<br><br><b>EFFECT:</b> Declare a charge with your unit. When selecting charge targets, you can only select enemy units that made a Fall Back move this phase and are within the maximum distance.",
+   "fp_source": "Faction Pack Chaos Daemons page_124.md（PDF p124 原文复核）",
+   "synthesis": "整替：十版「目标须本可合法冲锋该敌单位 → 立即结算一次只打该单位的冲锋，且不获冲锋加成」→ 11 版「目标只需未接战且在 6\" 内 → 宣告一次冲锋，选靶时只能选本阶段撤退过、且在最大距离内的敌单位」（不再明写「无冲锋加成」）"
   }
  ],
  "name_patches": [
@@ -7608,6 +7658,250 @@
     "cp_cost": "1",
     "phase": "Shooting phase",
     "text_zh": "<b>WHEN:</b> Start of your Shooting phase.<br><br><b>TARGET:</b> One friendly <span class=\"kwb\">DAMNED</span> unit.<br><br><b>EFFECT:</b> Select one visible enemy unit within 12\" of your unit. That enemy unit is hunted:<br>- While a unit is hunted, that unit has +6\" detection range."
+   }
+  },
+  {
+   "table": "detachments",
+   "fp_source": "Faction Pack Chaos Daemons page_120.md（11 版新分队 Cavalcade of Chaos，Wahapedia/DB 无源）",
+   "values": {
+    "id": "fp11e-chaosdaemons-cavalcade",
+    "faction": "CD",
+    "name_zh": "混沌铁骑",
+    "name_en": "Unholy Avalanche",
+    "rule_text": "If a friendly <span class=\"kwb\">LEGIONES</span> <span class=\"kwb\">DAEMONICA</span> <span class=\"kwb\">MOUNTED</span> unit made a Fall Back move this turn, that move does not prevent that unit from being eligible to shoot and eligible to declare a charge."
+   }
+  },
+  {
+   "table": "enhancements",
+   "fp_source": "Faction Pack Chaos Daemons page_120.md（11 版新分队 Cavalcade of Chaos，Wahapedia/DB 无源）",
+   "values": {
+    "id": "fp11e-chaosdaemons-cavalcade-e1",
+    "faction_id": "CD",
+    "detachment_id": "fp11e-chaosdaemons-cavalcade",
+    "detachment_name": "Cavalcade of Chaos",
+    "name": "Apocalyptic Steeds",
+    "cost": null,
+    "legend": "点数未知：FP 不含点数，MFM 缓存无增强数据（诚实置空，勿猜）",
+    "description": "<span class=\"kwb\">LEGIONES</span> <span class=\"kwb\">DAEMONICA</span> <span class=\"kwb\">MOUNTED</span> unit only. This unit has +1\" Move characteristic."
+   }
+  },
+  {
+   "table": "enhancements",
+   "fp_source": "Faction Pack Chaos Daemons page_120.md（11 版新分队 Cavalcade of Chaos，Wahapedia/DB 无源）",
+   "values": {
+    "id": "fp11e-chaosdaemons-cavalcade-e2",
+    "faction_id": "CD",
+    "detachment_id": "fp11e-chaosdaemons-cavalcade",
+    "detachment_name": "Cavalcade of Chaos",
+    "name": "Soul-Shattering Charge",
+    "cost": null,
+    "legend": "点数未知：FP 不含点数，MFM 缓存无增强数据（诚实置空，勿猜）",
+    "description": "<span class=\"kwb\">LEGIONES</span> <span class=\"kwb\">DAEMONICA</span> <span class=\"kwb\">MOUNTED</span> unit only. When this unit is selected to fight, if this unit made a Charge move this turn, you can use this ability. If you do, when determining which models in this unit can fight, friendly models that are within 3\" of enemy units engaged with this unit can target those enemy units."
+   }
+  },
+  {
+   "table": "stratagems",
+   "fp_source": "Faction Pack Chaos Daemons page_120.md（11 版新分队 Cavalcade of Chaos，Wahapedia/DB 无源）",
+   "values": {
+    "id": "fp11e-chaosdaemons-cavalcade-s1",
+    "faction": "CD",
+    "detachment": "Cavalcade of Chaos",
+    "name_zh": "自帷幕之外",
+    "name_en": "FROM BEYOND THE VEIL",
+    "cp_cost": "1",
+    "phase": "Movement phase",
+    "text_zh": "<b>WHEN:</b> End of the Movement phase, from the start of the battle.<br><br><b>TARGET:</b> One friendly <span class=\"kwb\">LEGIONES</span> <span class=\"kwb\">DAEMONICA</span> <span class=\"kwb\">MOUNTED</span> unit in Strategic Reserves.<br><br><b>EFFECT:</b> Your unit can make an ingress move."
+   }
+  },
+  {
+   "table": "stratagems",
+   "fp_source": "Faction Pack Chaos Daemons page_120.md（11 版新分队 Cavalcade of Chaos，Wahapedia/DB 无源）",
+   "values": {
+    "id": "fp11e-chaosdaemons-cavalcade-s2",
+    "faction": "CD",
+    "detachment": "Cavalcade of Chaos",
+    "name_zh": "亚空间骑手",
+    "name_en": "WARP-RIDERS",
+    "cp_cost": "1",
+    "phase": "Movement phase",
+    "text_zh": "<b>WHEN:</b> Your Movement phase, when a friendly <span class=\"kwb\">LEGIONES</span> <span class=\"kwb\">DAEMONICA</span> <span class=\"kwb\">MOUNTED</span> unit is selected to move.<br><br><b>TARGET:</b> That <span class=\"kwb\">LEGIONES</span> <span class=\"kwb\">DAEMONICA</span> <span class=\"kwb\">MOUNTED</span> unit.<br><br><b>EFFECT:</b> Your unit has <span class=\"kwb\">MOBILE</span>."
+   }
+  },
+  {
+   "table": "stratagems",
+   "fp_source": "Faction Pack Chaos Daemons page_120.md（11 版新分队 Cavalcade of Chaos，Wahapedia/DB 无源）",
+   "values": {
+    "id": "fp11e-chaosdaemons-cavalcade-s3",
+    "faction": "CD",
+    "detachment": "Cavalcade of Chaos",
+    "name_zh": "无从遁逃的显现",
+    "name_en": "INESCAPABLE MANIFESTATIONS",
+    "cp_cost": "1",
+    "phase": "Movement phase",
+    "text_zh": "<b>WHEN:</b> Your opponent’s Movement phase, when a unit is selected to make a Fall Back move, if that unit is engaged with a friendly <span class=\"kwb\">LEGIONES</span> <span class=\"kwb\">DAEMONICA</span> <span class=\"kwb\">MOUNTED</span> unit.<br><br><b>TARGET:</b> That <span class=\"kwb\">LEGIONES</span> <span class=\"kwb\">DAEMONICA</span> <span class=\"kwb\">MOUNTED</span> unit.<br><br><b>EFFECT:</b> When an enemy unit engaged with your unit is selected to make a Fall Back move, that enemy unit must use the Desperate Escape mode. If that enemy unit is Battle-shocked, subtract 1 from those Hazard rolls."
+   }
+  },
+  {
+   "table": "detachments",
+   "fp_source": "Faction Pack Chaos Daemons page_121.md（11 版新分队 Lords of the Warp，Wahapedia/DB 无源）",
+   "values": {
+    "id": "fp11e-chaosdaemons-lordswarp",
+    "faction": "CD",
+    "name_zh": "亚空间领主",
+    "name_en": "Loci of Power",
+    "rule_text": "Friendly <span class=\"kwb\">LEGIONES</span> <span class=\"kwb\">DAEMONICA</span> <span class=\"kwb\">CHARACTER</span> models (excluding <span class=\"kwb\">MONSTER</span> models) have +1 Leadership and +1 Objective Control characteristic."
+   }
+  },
+  {
+   "table": "enhancements",
+   "fp_source": "Faction Pack Chaos Daemons page_121.md（11 版新分队 Lords of the Warp，Wahapedia/DB 无源）",
+   "values": {
+    "id": "fp11e-chaosdaemons-lordswarp-e1",
+    "faction_id": "CD",
+    "detachment_id": "fp11e-chaosdaemons-lordswarp",
+    "detachment_name": "Lords of the Warp",
+    "name": "Swollen with Power",
+    "cost": null,
+    "legend": "点数未知：FP 不含点数，MFM 缓存无增强数据（诚实置空，勿猜）",
+    "description": "<span class=\"kwb\">LEGIONES</span> <span class=\"kwb\">DAEMONICA</span> <span class=\"kwb\">CHARACTER</span> model only (excluding <span class=\"kwb\">MONSTER</span> units). This model has +2 Wounds characteristic."
+   },
+   "expect_duplicate_name": true
+  },
+  {
+   "table": "stratagems",
+   "fp_source": "Faction Pack Chaos Daemons page_121.md（11 版新分队 Lords of the Warp，Wahapedia/DB 无源）",
+   "values": {
+    "id": "fp11e-chaosdaemons-lordswarp-s1",
+    "faction": "CD",
+    "detachment": "Lords of the Warp",
+    "name_zh": "过度之狂欢",
+    "name_en": "CARNIVAL OF EXCESS",
+    "cp_cost": "1",
+    "phase": "Fight phase",
+    "text_zh": "<b>WHEN:</b> Fight phase, when an enemy unit has fought.<br><br><b>TARGET:</b> One friendly <span class=\"kwb\">LEGIONES</span> <span class=\"kwb\">DAEMONICA</span> <span class=\"kwb\">CHARACTER</span> <span class=\"kwb\">SLAANESH</span> unit (excluding <span class=\"kwb\">MONSTER</span> units) that has not been selected to fight this phase.<br><br><b>EFFECT:</b> Your unit has Fights First and must be the next unit you select to fight."
+   }
+  },
+  {
+   "table": "stratagems",
+   "fp_source": "Faction Pack Chaos Daemons page_121.md（11 版新分队 Lords of the Warp，Wahapedia/DB 无源）",
+   "values": {
+    "id": "fp11e-chaosdaemons-lordswarp-s2",
+    "faction": "CD",
+    "detachment": "Lords of the Warp",
+    "name_zh": "屠戮号令",
+    "name_en": "CALL TO MURDER",
+    "cp_cost": "1",
+    "phase": "Fight phase",
+    "text_zh": "<b>WHEN:</b> Fight phase, when a friendly <span class=\"kwb\">LEGIONES</span> <span class=\"kwb\">DAEMONICA</span> <span class=\"kwb\">KHORNE</span> <span class=\"kwb\">CHARACTER</span> unit (excluding <span class=\"kwb\">MONSTER</span> units) that made a Charge move this turn is selected to fight.<br><br><b>TARGET:</b> That <span class=\"kwb\">LEGIONES</span> <span class=\"kwb\">DAEMONICA</span> <span class=\"kwb\">CHARACTER</span> <span class=\"kwb\">KHORNE</span> unit.<br><br><b>EFFECT:</b> Your unit’s melee attacks have +1 Attacks characteristic."
+   }
+  },
+  {
+   "table": "stratagems",
+   "fp_source": "Faction Pack Chaos Daemons page_121.md（11 版新分队 Lords of the Warp，Wahapedia/DB 无源）",
+   "values": {
+    "id": "fp11e-chaosdaemons-lordswarp-s3",
+    "faction": "CD",
+    "detachment": "Lords of the Warp",
+    "name_zh": "胆汁祝福",
+    "name_en": "BILIOUS BLESSING",
+    "cp_cost": "1",
+    "phase": "Shooting phase",
+    "text_zh": "<b>WHEN:</b> Start of your Shooting phase.<br><br><b>TARGET:</b> One friendly <span class=\"kwb\">LEGIONES</span> <span class=\"kwb\">DAEMONICA</span> <span class=\"kwb\">CHARACTER</span> <span class=\"kwb\">NURGLE</span> unit (excluding <span class=\"kwb\">MONSTER</span> units).<br><br><b>EFFECT:</b> Select one visible enemy unit within 8\" of your unit and roll seven D6: for each 4+, that enemy unit suffers 1 mortal wound."
+   }
+  },
+  {
+   "table": "stratagems",
+   "fp_source": "Faction Pack Chaos Daemons page_121.md（11 版新分队 Lords of the Warp，Wahapedia/DB 无源）",
+   "values": {
+    "id": "fp11e-chaosdaemons-lordswarp-s4",
+    "faction": "CD",
+    "detachment": "Lords of the Warp",
+    "name_zh": "尖啸魔法",
+    "name_en": "SKIRLING MAGICKS",
+    "cp_cost": "1",
+    "phase": "Shooting phase",
+    "text_zh": "<b>WHEN:</b> Your Shooting phase, when a friendly <span class=\"kwb\">LEGIONES</span> <span class=\"kwb\">DAEMONICA</span> <span class=\"kwb\">CHARACTER</span> <span class=\"kwb\">TZEENTCH</span> unit (excluding <span class=\"kwb\">MONSTER</span> units) is selected to shoot.<br><br><b>TARGET:</b> That <span class=\"kwb\">LEGIONES</span> <span class=\"kwb\">DAEMONICA</span> <span class=\"kwb\">CHARACTER</span> <span class=\"kwb\">TZEENTCH</span> unit.<br><br><b>EFFECT:</b> Your unit’s ranged attacks have the [LETHAL HITS] ability."
+   }
+  },
+  {
+   "table": "detachments",
+   "fp_source": "Faction Pack Chaos Daemons page_122.md（11 版新分队 Warptide，Wahapedia/DB 无源）",
+   "values": {
+    "id": "fp11e-chaosdaemons-warptide",
+    "faction": "CD",
+    "name_zh": "亚空间浪潮",
+    "name_en": "Shudderblink",
+    "rule_text": "When a friendly <span class=\"kwb\">LEGIONES</span> <span class=\"kwb\">DAEMONICA</span> <span class=\"kwb\">BATTLELINE</span> unit is selected to make an Advance move:<br><ul><li>That unit’s ranged attacks have the [ASSAULT] ability until the end of the turn.</li><li>That move does not prevent that unit from being eligible to declare a charge.</li></ul>"
+   }
+  },
+  {
+   "table": "enhancements",
+   "fp_source": "Faction Pack Chaos Daemons page_122.md（11 版新分队 Warptide，Wahapedia/DB 无源）",
+   "values": {
+    "id": "fp11e-chaosdaemons-warptide-e1",
+    "faction_id": "CD",
+    "detachment_id": "fp11e-chaosdaemons-warptide",
+    "detachment_name": "Warptide",
+    "name": "Bane-forged Weapons",
+    "cost": null,
+    "legend": "点数未知：FP 不含点数，MFM 缓存无增强数据（诚实置空，勿猜）",
+    "description": "<span class=\"kwb\">LEGIONES</span> <span class=\"kwb\">DAEMONICA</span> <span class=\"kwb\">BATTLELINE</span> unit only. This unit’s attacks have +1 Strength characteristic."
+   }
+  },
+  {
+   "table": "enhancements",
+   "fp_source": "Faction Pack Chaos Daemons page_122.md（11 版新分队 Warptide，Wahapedia/DB 无源）",
+   "values": {
+    "id": "fp11e-chaosdaemons-warptide-e2",
+    "faction_id": "CD",
+    "detachment_id": "fp11e-chaosdaemons-warptide",
+    "detachment_name": "Warptide",
+    "name": "Soul-hungry Slaughterers",
+    "cost": null,
+    "legend": "点数未知：FP 不含点数，MFM 缓存无增强数据（诚实置空，勿猜）",
+    "description": "<span class=\"kwb\">LEGIONES</span> <span class=\"kwb\">DAEMONICA</span> <span class=\"kwb\">BATTLELINE</span> unit only. When you target this unit with the Heroic Intervention or Fire Overwatch Stratagem, that use is -1 CP."
+   }
+  },
+  {
+   "table": "stratagems",
+   "fp_source": "Faction Pack Chaos Daemons page_122.md（11 版新分队 Warptide，Wahapedia/DB 无源）",
+   "values": {
+    "id": "fp11e-chaosdaemons-warptide-s1",
+    "faction": "CD",
+    "detachment": "Warptide",
+    "name_zh": "恶魔滋生",
+    "name_en": "DAEMONIC INFESTATION",
+    "cp_cost": "1",
+    "phase": "Command phase",
+    "text_zh": "<b>WHEN:</b> Your Command phase.<br><br><b>TARGET:</b> One friendly <span class=\"kwb\">LEGIONES</span> <span class=\"kwb\">DAEMONICA</span> <span class=\"kwb\">BATTLELINE</span> unit (excluding <span class=\"kwb\">PINK</span> <span class=\"kwb\">HORRORS</span> units).<br><br><b>EFFECT:</b> Your unit heals 3 wounds."
+   }
+  },
+  {
+   "table": "stratagems",
+   "fp_source": "Faction Pack Chaos Daemons page_122.md（11 版新分队 Warptide，Wahapedia/DB 无源）",
+   "values": {
+    "id": "fp11e-chaosdaemons-warptide-s2",
+    "faction": "CD",
+    "detachment": "Warptide",
+    "name_zh": "灵视",
+    "name_en": "SOULSEEING",
+    "cp_cost": "1",
+    "phase": "Shooting phase",
+    "text_zh": "<b>WHEN:</b> Start of your Shooting phase.<br><br><b>TARGET:</b> One friendly <span class=\"kwb\">LEGIONES</span> <span class=\"kwb\">DAEMONICA</span> <span class=\"kwb\">BATTLELINE</span> unit.<br><br><b>EFFECT:</b> Select one visible enemy unit within 12\" of your unit. That enemy unit has +6\" detection range."
+   }
+  },
+  {
+   "table": "stratagems",
+   "fp_source": "Faction Pack Chaos Daemons page_122.md（11 版新分队 Warptide，Wahapedia/DB 无源）",
+   "values": {
+    "id": "fp11e-chaosdaemons-warptide-s3",
+    "faction": "CD",
+    "detachment": "Warptide",
+    "name_zh": "无形实体",
+    "name_en": "INCORPOREAL ENTITIES",
+    "cp_cost": "1",
+    "phase": "Shooting phase",
+    "text_zh": "<b>WHEN:</b> Your opponent’s Shooting phase, when an enemy unit targets a friendly <span class=\"kwb\">LEGIONES</span> <span class=\"kwb\">DAEMONICA</span> <span class=\"kwb\">BATTLELINE</span> unit.<br><br><b>TARGET:</b> That <span class=\"kwb\">LEGIONES</span> <span class=\"kwb\">DAEMONICA</span> <span class=\"kwb\">BATTLELINE</span> unit.<br><br><b>EFFECT:</b> Ranged attacks that target your unit with a Strength characteristic greater than your unit’s Toughness characteristic have -1 to Wound rolls."
    }
   }
  ]
