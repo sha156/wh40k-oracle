@@ -1,0 +1,2811 @@
+{
+ "_comment": "P7 阵营技能 DSL 唯一真源（混沌恶魔 Chaos Daemons，faction='CD'，P7-PR26）。DB effect_dsl_json/dsl_status 只是投影，由 `python -m db_compile dsl-apply` 写入并挂 restore；A/B 工作单见 docs/superpowers/plans/2026-07-20-p7-pr26-chaosdaemons-worklist.md。覆盖 13 个分队容器（6 个 Index/Codex 分队 + 4 个登舰行动分队 + 3 个 FP 新分队）的 17 分队规则 + 66 战略 + 39 增强 = 122 条。三态：1 encoded / 25 partial / 96 not_modeled。零新引擎通道、零新态势开关（纯编码 PR）。混沌恶魔是「区域态 + 战栗 + 召唤/预备队」气质阵营——军规 Shadow of Chaos、Daemonic Manifestation/Terror、Flux token、Surge move、深入打击落点、复活/治疗、致命伤池全无载体，故可编率低。可编子集：恐惧之饮/孢子之泉 AP 改善、烈焰创生/永恒法杖/祸铸武装 S 特征值、渗漏毒性 暴击阈值 5+、热病幻象/梦寐之冠 命中 +1、极致痛师/虚妄威仪 致伤 +1、引导之怒/嗜血渴望 [LANCE]（melee_charging）、逼近黑暗/尖啸魔法 [IGNORES COVER]/[LETHAL HITS]、无形恐怖/过度泛滥/魅惑低语/闪耀存在 守方命中 -1、污秽韧性/无尽馈赠 FNP、阿尔加斯/永恒之刃 携带者多属性、诱敌之赌 重投命中（melee_charging）、屠戮号令 A+1、致命爱抚 致伤暴击阈值 5+。阶段门纪律（双向核对）：WHEN 落在单一相位的挂 phase_melee/phase_shooting；WHEN 写「射击阶段或近战阶段」的两相位一律不加门（过度加门＝欠建模，同属事实错误）；带阶段性 WHEN（冲锋后声明 / 冲锋过才出手 / [LANCE]）顺 WHEN 往后推可生效阶段，落 melee_charging 复合门。防高估不编：己方神祇关键词互斥分支（首位混沌魔王五分支、引导之怒 KHORNE 支）、Flux token 经济与二选一强化支、Shadow of Chaos 区域态、战栗检定态、仅重投「1」（非重投失败）、仅对灵能/致命伤的 FNP、Sv/W 特征值 SET、远程 × S>T（无 shooting_wound_s_gt_t 复合 tag）、负关键词门、移动/冲锋/surge/预备队/据点/CP/侦测范围/治疗/复活/致命伤池/出手顺序/摧毁后反打。",
+ "dsl_version": 1,
+ "faction": "CD",
+ "entries": [
+  {
+   "table": "abilities",
+   "id": "det000008436",
+   "side": "attacker",
+   "detachment": null,
+   "name_en": "Warp Rifts",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "亚空间裂隙：深入打击落点门槛降到 6\"（11 版 8\" 基线）——部署/落点几何无载体"
+   ],
+   "provenance": {
+    "text_sha256": "25426edcf6944b58986f77ae62b91028e7973e7e1e55f42ca8284e79b2d03cb5"
+   },
+   "encoded_by": "manual-2026-07-21",
+   "weapon_filter": "",
+   "materialize": {
+    "from_table": "detachments",
+    "from_id": "000008436",
+    "from_column": "rule_text"
+   }
+  },
+  {
+   "table": "abilities",
+   "id": "det000009546",
+   "side": "attacker",
+   "detachment": null,
+   "name_en": "Unnatural Energies",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "非凡能量（登舰行动）：加速/撤退回合仍可执行战术机动——action 域无载体"
+   ],
+   "provenance": {
+    "text_sha256": "41c08ae36d91651516518e11b2878e68a0586ef399213bb684baad24bc2b8650"
+   },
+   "encoded_by": "manual-2026-07-21",
+   "weapon_filter": "",
+   "materialize": {
+    "from_table": "detachments",
+    "from_id": "000009546",
+    "from_column": "rule_text"
+   }
+  },
+  {
+   "table": "abilities",
+   "id": "det000009554",
+   "side": "attacker",
+   "detachment": null,
+   "name_en": "Brutal Entrance",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "野蛮闯入（登舰行动）：舱门锁开 + 越门冲锋骰 +1——舱门与冲锋骰均无载体"
+   ],
+   "provenance": {
+    "text_sha256": "1a6803705ddcac769270bb061d0a3fa3f49f53f81545188f2c89fff2a816f458"
+   },
+   "encoded_by": "manual-2026-07-21",
+   "weapon_filter": "",
+   "materialize": {
+    "from_table": "detachments",
+    "from_id": "000009554",
+    "from_column": "rule_text"
+   }
+  },
+  {
+   "table": "abilities",
+   "id": "det000009563",
+   "side": "attacker",
+   "detachment": null,
+   "name_en": "Toxic Miasma",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "剧毒瘴气（登舰行动）：3\" 内敌移动减半、加速/冲锋骰 -1——移动域无载体，且效果施加于敌方单位（异单位减益）"
+   ],
+   "provenance": {
+    "text_sha256": "da209a310e6fb416505b56da77fd6ec899495fb22ab4888d7edee94edcfb3df0"
+   },
+   "encoded_by": "manual-2026-07-21",
+   "weapon_filter": "",
+   "materialize": {
+    "from_table": "detachments",
+    "from_id": "000009563",
+    "from_column": "rule_text"
+   }
+  },
+  {
+   "table": "abilities",
+   "id": "det000009571",
+   "side": "attacker",
+   "detachment": null,
+   "name_en": "Lithe Killers",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "轻灵杀手（登舰行动）：SLAANESH 步兵穿越模型移动 + 1-2 自吃致命伤——移动域与致命伤池均无载体"
+   ],
+   "provenance": {
+    "text_sha256": "fac9b29fee34c23015886ccdc78399a4c2938f70595d3a2ea3d5e2e0a39fc368"
+   },
+   "encoded_by": "manual-2026-07-21",
+   "weapon_filter": "",
+   "materialize": {
+    "from_table": "detachments",
+    "from_id": "000009571",
+    "from_column": "rule_text"
+   }
+  },
+  {
+   "table": "abilities",
+   "id": "det000009579",
+   "side": "attacker",
+   "detachment": null,
+   "name_en": "Living Flame",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "活体烈焰（登舰行动）：可越接战选靶，且瞄准「在友军接战范围内的敌单位」时远程武器获 [SUSTAINED HITS 1]——选靶资格无载体；连击的门是第三方友军几何（引擎无该 tag），裸编 extra_hits 会对所有射击过度施加，宁漏不错"
+   ],
+   "provenance": {
+    "text_sha256": "bdd540b12c354c905682f3c3adb595adf51ca6052933cd480cc657e4cadbc4d0"
+   },
+   "encoded_by": "manual-2026-07-21",
+   "weapon_filter": "",
+   "materialize": {
+    "from_table": "detachments",
+    "from_id": "000009579",
+    "from_column": "rule_text"
+   }
+  },
+  {
+   "table": "abilities",
+   "id": "det000009804",
+   "side": "attacker",
+   "detachment": null,
+   "name_en": "Beguiling Aura",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "魅惑光环：SLAANESH 单位撤退回合仍可宣告冲锋——移动资格域无载体"
+   ],
+   "provenance": {
+    "text_sha256": "c3d0c464f52f612189ff1c1131505b1775fa58ede750b47ce467eca5fc2624bf"
+   },
+   "encoded_by": "manual-2026-07-21",
+   "weapon_filter": "",
+   "materialize": {
+    "from_table": "detachments",
+    "from_id": "000009804",
+    "from_column": "rule_text"
+   }
+  },
+  {
+   "table": "abilities",
+   "id": "det000009805",
+   "side": "attacker",
+   "detachment": null,
+   "name_en": "Seductive Gambit",
+   "name_zh": null,
+   "status": "partial",
+   "effects": [
+    {
+     "phase": "hit",
+     "op": "reroll",
+     "params": [
+      "fail"
+     ],
+     "condition": [
+      "melee_charging"
+     ],
+     "source": "诱敌之赌（冲锋后声明：本回合攻击可重投命中骰）"
+    }
+   ],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "WHEN=本单位结束冲锋移动后声明，效果持续至回合结束——顺 WHEN 往后推「本回合还剩哪些阶段」＝只剩战斗阶段，故落 melee_charging 复合门（裸 charging 会在射击阶段误放行）",
+    "代价「本回合失去 Fights First」不建模——出手顺序域无载体，故本条编码只含收益，对拥有先攻的单位会高估，自查",
+    "「重投致伤骰的 1」不建模——引擎 (wound, reroll) 只有「重投失败骰」语义，重投「1」无载体",
+    "是否声明是玩家选择（不声明则无任何效果）——按已声明建模"
+   ],
+   "provenance": {
+    "text_sha256": "5303c69f94a506b9671bdfa630391e942c6526daa8a50e55eae677426e8a41ff"
+   },
+   "encoded_by": "manual-2026-07-21",
+   "weapon_filter": "",
+   "materialize": {
+    "from_table": "detachments",
+    "from_id": "000009805",
+    "from_column": "rule_text"
+   }
+  },
+  {
+   "table": "abilities",
+   "id": "det000009809",
+   "side": "attacker",
+   "detachment": null,
+   "name_en": "Fates in Flux",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "变幻之命：Flux token 三枚起手、双方互相授受、可重投任意骰并强化战略——token 经济与通用重投状态机无载体"
+   ],
+   "provenance": {
+    "text_sha256": "4efe6c45826d11f750b97a7b3e61e9d315c17bd485eb20fe796118e54c01e706"
+   },
+   "encoded_by": "manual-2026-07-21",
+   "weapon_filter": "",
+   "materialize": {
+    "from_table": "detachments",
+    "from_id": "000009809",
+    "from_column": "rule_text"
+   }
+  },
+  {
+   "table": "abilities",
+   "id": "det000009813",
+   "side": "attacker",
+   "detachment": null,
+   "name_en": "Murdercall",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "杀戮召唤：对手移动阶段 8\" 内敌结束移动 → 己方 KHORNE 单位 surge move——移动域无载体"
+   ],
+   "provenance": {
+    "text_sha256": "e3e73b64fde595b1f5c225e429af5874c3417fd0e6da5c4d5b31818d582e68b8"
+   },
+   "encoded_by": "manual-2026-07-21",
+   "weapon_filter": "",
+   "materialize": {
+    "from_table": "detachments",
+    "from_id": "000009813",
+    "from_column": "rule_text"
+   }
+  },
+  {
+   "table": "abilities",
+   "id": "det000009814",
+   "side": "attacker",
+   "detachment": null,
+   "name_en": "Blood Tainted",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "血污浸染：摧毁敌单位后锁定目标点控制权——据点/控制等级域无载体"
+   ],
+   "provenance": {
+    "text_sha256": "a229aef292dfd9e8f430449173cecc1150dfb8788b4143c58bcc7495696019a3"
+   },
+   "encoded_by": "manual-2026-07-21",
+   "weapon_filter": "",
+   "materialize": {
+    "from_table": "detachments",
+    "from_id": "000009814",
+    "from_column": "rule_text"
+   }
+  },
+  {
+   "table": "abilities",
+   "id": "det000009818",
+   "side": "attacker",
+   "detachment": null,
+   "name_en": "Melancholic Miasma",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "忧郁瘴气：9\" 内敌单位纳入 Shadow of Chaos + 双方指挥阶段点名战栗检定——区域态与战栗检定均无载体"
+   ],
+   "provenance": {
+    "text_sha256": "3f5edd7d900132cdd3b80cd88f770a0d115807cc40b54ff3dd1fca08f7ed8962"
+   },
+   "encoded_by": "manual-2026-07-21",
+   "weapon_filter": "",
+   "materialize": {
+    "from_table": "detachments",
+    "from_id": "000009818",
+    "from_column": "rule_text"
+   }
+  },
+  {
+   "table": "abilities",
+   "id": "det000009976",
+   "side": "attacker",
+   "detachment": null,
+   "name_en": "Thralls of the First Prince",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "首王之奴众：建军条款（禁 Daemon Prince/Epic Hero、可带 15 类 HERETIC ASTARTES 单位并按战斗规模限点）+ 关键词授予——建军域无载体"
+   ],
+   "provenance": {
+    "text_sha256": "9e312dc1f43cd2922227a04dd98a633fd5d3d77fca7ce5a0b2d2b03eabdd0600"
+   },
+   "encoded_by": "manual-2026-07-21",
+   "weapon_filter": "",
+   "materialize": {
+    "from_table": "detachments",
+    "from_id": "000009976",
+    "from_column": "rule_text"
+   }
+  },
+  {
+   "table": "abilities",
+   "id": "det000009978",
+   "side": "attacker",
+   "detachment": null,
+   "name_en": "First Prince of Chaos",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "首位混沌魔王：MURDERER'S COWL / PENUMBRAL PUPPETRY / GLOAM ROT / SHADOW'S CARESS / DISCIPLES OF BE'LAKOR 五条按本单位所属神祇关键词互斥分支——引擎无「己方单位神祇关键词」门载体，裸编任一支（如 Tzeentch 的近战命中 -1、Nurgle 的 S>T 被伤 -1）会对其余三神单位过度施加，宁漏不错不建模"
+   ],
+   "provenance": {
+    "text_sha256": "581e514246b97ef3861e03364903f6a5e2d4397abac6fa066fa27da311ef0b2f"
+   },
+   "encoded_by": "manual-2026-07-21",
+   "weapon_filter": "",
+   "materialize": {
+    "from_table": "detachments",
+    "from_id": "000009978",
+    "from_column": "rule_text"
+   }
+  },
+  {
+   "table": "abilities",
+   "id": "detfp11e-chaosdaemons-cavalcade",
+   "side": "attacker",
+   "detachment": null,
+   "name_en": "Unholy Avalanche",
+   "name_zh": "混沌铁骑",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "亵渎雪崩：MOUNTED 单位撤退后仍可射击/宣告冲锋——移动资格域无载体"
+   ],
+   "provenance": {
+    "text_sha256": "363f04fca6b229727f398e87857f64d70df79f5514afff4ef5be36357c716031"
+   },
+   "encoded_by": "manual-2026-07-21",
+   "weapon_filter": "",
+   "materialize": {
+    "from_table": "detachments",
+    "from_id": "fp11e-chaosdaemons-cavalcade",
+    "from_column": "rule_text"
+   }
+  },
+  {
+   "table": "abilities",
+   "id": "detfp11e-chaosdaemons-lordswarp",
+   "side": "attacker",
+   "detachment": null,
+   "name_en": "Loci of Power",
+   "name_zh": "亚空间领主",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "权柄之座：CHARACTER（排除 MONSTER）+1 Ld 与 +1 OC——领导力与目标控制特征值均无载体"
+   ],
+   "provenance": {
+    "text_sha256": "b586224235fb2abc7270f6b53cd51a9d28d316aeb6cd68f2ed3b0f707351b30d"
+   },
+   "encoded_by": "manual-2026-07-21",
+   "weapon_filter": "",
+   "materialize": {
+    "from_table": "detachments",
+    "from_id": "fp11e-chaosdaemons-lordswarp",
+    "from_column": "rule_text"
+   }
+  },
+  {
+   "table": "abilities",
+   "id": "detfp11e-chaosdaemons-warptide",
+   "side": "attacker",
+   "detachment": null,
+   "name_en": "Shudderblink",
+   "name_zh": "亚空间浪潮",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "颤影闪现：BATTLELINE 加速时远程获 [ASSAULT] 且仍可冲锋——[ASSAULT]/加速与冲锋资格属移动域，无载体"
+   ],
+   "provenance": {
+    "text_sha256": "a0a11b239551a97a247ebd7a62c699b9931b74d6652f7efcdb993854c0263865"
+   },
+   "encoded_by": "manual-2026-07-21",
+   "weapon_filter": "",
+   "materialize": {
+    "from_table": "detachments",
+    "from_id": "fp11e-chaosdaemons-warptide",
+    "from_column": "rule_text"
+   }
+  },
+  {
+   "table": "stratagems",
+   "id": "000009816002",
+   "side": "attacker",
+   "detachment": "Blood Legion",
+   "name_en": "WRATH UNDENIABLE",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "无可否认之怒：被近战摧毁的模型 4+ 延后反打——摧毁后反打（时序域）无载体"
+   ],
+   "provenance": {
+    "text_sha256": "e299f34901b816356d8db45191dedc96e9124757db5ad17ddb21522c8aa5716f"
+   },
+   "encoded_by": "manual-2026-07-21",
+   "weapon_filter": ""
+  },
+  {
+   "table": "stratagems",
+   "id": "000009816003",
+   "side": "attacker",
+   "detachment": "Blood Legion",
+   "name_en": "GORE‑HUNGRY ONSLAUGHT",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "嗜血猛攻：穿越地形移动——移动域无载体"
+   ],
+   "provenance": {
+    "text_sha256": "479622db7f9fdf2f5aada7d61eb1c4fe7d19b5958b0347b8d58775e463401516"
+   },
+   "encoded_by": "manual-2026-07-21",
+   "weapon_filter": ""
+  },
+  {
+   "table": "stratagems",
+   "id": "000009816004",
+   "side": "attacker",
+   "detachment": "Blood Legion",
+   "name_en": "SKULLS BEGET BLOOD",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "颅骨生血：8\" 内敌单位六颗 D6 掷 4+ 各 1 致命伤——致命伤池无载体"
+   ],
+   "provenance": {
+    "text_sha256": "d036c1c1e87ddc3c8042830e5859910ba3dc2a939a2e4a99ff6b0ea6ee287cf5"
+   },
+   "encoded_by": "manual-2026-07-21",
+   "weapon_filter": ""
+  },
+  {
+   "table": "stratagems",
+   "id": "000009816005",
+   "side": "attacker",
+   "detachment": "Blood Legion",
+   "name_en": "BLOOD BEGETS SKULLS",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "血生颅骨：加速回合仍可宣告冲锋——移动资格域无载体"
+   ],
+   "provenance": {
+    "text_sha256": "3df8a981d1a08a974a625a8f247466beb38a021d958593da3a1719efa973659c"
+   },
+   "encoded_by": "manual-2026-07-21",
+   "weapon_filter": ""
+  },
+  {
+   "table": "stratagems",
+   "id": "000009816006",
+   "side": "attacker",
+   "detachment": "Blood Legion",
+   "name_en": "FOOLS’ FLIGHT",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "愚者之逃（11 版重写）：对手移动阶段敌撤退后宣告一次冲锋——冲锋/移动域无载体"
+   ],
+   "provenance": {
+    "text_sha256": "f4838db92c56f764966f03bd9f2c16da1c8acc9810b52023945177887d8256c4"
+   },
+   "encoded_by": "manual-2026-07-21",
+   "weapon_filter": ""
+  },
+  {
+   "table": "stratagems",
+   "id": "000009816007",
+   "side": "attacker",
+   "detachment": "Blood Legion",
+   "name_en": "SHEATHED IN BRASS",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "黄铜裹身：本单位护甲特征值**设定**为 3+——SET（非增量），引擎 (save, sv_improve) 只有增量语义，无载体（沿 PR22 Putrid Carapace 先例）"
+   ],
+   "provenance": {
+    "text_sha256": "d91dad4ac2e78bf66b5a9aab6eb9949e56e877fd7a3c13cf245cbcc5403ec4b5"
+   },
+   "encoded_by": "manual-2026-07-21",
+   "weapon_filter": ""
+  },
+  {
+   "table": "stratagems",
+   "id": "fp11e-chaosdaemons-cavalcade-s1",
+   "side": "attacker",
+   "detachment": "Cavalcade of Chaos",
+   "name_en": "FROM BEYOND THE VEIL",
+   "name_zh": "自帷幕之外",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "自帷幕之外：预备队 ingress 移动——预备队/移动域无载体"
+   ],
+   "provenance": {
+    "text_sha256": "9cd8b9057cadc00642c2c314a0f3da217902936562ee5efb4d05f90f9ed08359"
+   },
+   "encoded_by": "manual-2026-07-21",
+   "weapon_filter": ""
+  },
+  {
+   "table": "stratagems",
+   "id": "fp11e-chaosdaemons-cavalcade-s2",
+   "side": "attacker",
+   "detachment": "Cavalcade of Chaos",
+   "name_en": "WARP-RIDERS",
+   "name_zh": "亚空间骑手",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "亚空间骑手：本单位获 MOBILE——移动域无载体"
+   ],
+   "provenance": {
+    "text_sha256": "61923ed3ea45525e43fb16b3b1d906b35f4756022a70f46ca1234e37aaba715c"
+   },
+   "encoded_by": "manual-2026-07-21",
+   "weapon_filter": ""
+  },
+  {
+   "table": "stratagems",
+   "id": "fp11e-chaosdaemons-cavalcade-s3",
+   "side": "attacker",
+   "detachment": "Cavalcade of Chaos",
+   "name_en": "INESCAPABLE MANIFESTATIONS",
+   "name_zh": "无从遁逃的显现",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "无从遁逃的显现：强制敌撤退走绝望逃脱模式 + 危险骰 -1——绝望逃脱与移动域均无载体"
+   ],
+   "provenance": {
+    "text_sha256": "ebaca0b065a232bba544738cdc43732423d75e19bd6cd697495e728d90660516"
+   },
+   "encoded_by": "manual-2026-07-21",
+   "weapon_filter": ""
+  },
+  {
+   "table": "stratagems",
+   "id": "000008437002",
+   "side": "attacker",
+   "detachment": "Daemonic Incursion",
+   "name_en": "CORRUPT REALSPACE",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "腐化现实：目标点 Corrupted + 6\" 内纳入 Shadow of Chaos——据点与区域态无载体"
+   ],
+   "provenance": {
+    "text_sha256": "e2cac324a62be49518bbf77587b9ccae7938bf093c5437fbb4c53687093af0dc"
+   },
+   "encoded_by": "manual-2026-07-21",
+   "weapon_filter": ""
+  },
+  {
+   "table": "stratagems",
+   "id": "000008437003",
+   "side": "attacker",
+   "detachment": "Daemonic Incursion",
+   "name_en": "WARP SURGE",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "亚空间涌动：加速回合仍可宣告冲锋——移动资格域无载体"
+   ],
+   "provenance": {
+    "text_sha256": "12559d72c592e2fa0b6ee7f1bb258b09af3a6bd01a61026aaea989d3e5949560"
+   },
+   "encoded_by": "manual-2026-07-21",
+   "weapon_filter": ""
+  },
+  {
+   "table": "stratagems",
+   "id": "000008437004",
+   "side": "attacker",
+   "detachment": "Daemonic Incursion",
+   "name_en": "DRAUGHT OF TERROR",
+   "name_zh": null,
+   "status": "partial",
+   "effects": [
+    {
+     "phase": "save",
+     "op": "ap_improve",
+     "params": [
+      1
+     ],
+     "condition": [],
+     "source": "恐惧之饮（本单位武器 AP 特征值改善 1）"
+    }
+   ],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "WHEN=「你的射击阶段**或**战斗阶段」——两相位均适用，不加相位门（过度加门＝欠建模，同属事实错误）",
+    "后半句「对战栗（Battle-shocked）目标可重投致伤骰」不编——引擎无目标战栗态门载体"
+   ],
+   "provenance": {
+    "text_sha256": "39f2a7da5038b1ec510b099e17fcdf37c349d8c7dc95b88c1a4d95f4616ada72"
+   },
+   "encoded_by": "manual-2026-07-21",
+   "weapon_filter": ""
+  },
+  {
+   "table": "stratagems",
+   "id": "000008437005",
+   "side": "attacker",
+   "detachment": "Daemonic Incursion",
+   "name_en": "DENIZENS OF THE WARP",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "亚空间居民：深入打击落点改 6\"——部署域无载体"
+   ],
+   "provenance": {
+    "text_sha256": "84f4d1410f4bee6275e95b7b5b6606a9999d38cabb490a7dd05773f7ea29a6c4"
+   },
+   "encoded_by": "manual-2026-07-21",
+   "weapon_filter": ""
+  },
+  {
+   "table": "stratagems",
+   "id": "000008437006",
+   "side": "attacker",
+   "detachment": "Daemonic Incursion",
+   "name_en": "THE REALM OF CHAOS",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "混沌国度：撤出战场进战略预备队并下回合深入打击——预备队域无载体"
+   ],
+   "provenance": {
+    "text_sha256": "902213c3d28fb408d07a5a21fdd87caf91be7b8cd154e0c43f489748e4317018"
+   },
+   "encoded_by": "manual-2026-07-21",
+   "weapon_filter": ""
+  },
+  {
+   "table": "stratagems",
+   "id": "000008437007",
+   "side": "attacker",
+   "detachment": "Daemonic Incursion",
+   "name_en": "DAEMONIC INVULNERABILITY",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "恶魔无敌：重投无效保护骰的「1」——引擎 (save) 侧无重投通道，且「仅重投 1」（非重投失败）本身无载体"
+   ],
+   "provenance": {
+    "text_sha256": "3a9184406d261229bd78dfe0d67768ac9efff25df1682d162ec932dc8f692c25"
+   },
+   "encoded_by": "manual-2026-07-21",
+   "weapon_filter": ""
+  },
+  {
+   "table": "stratagems",
+   "id": "000009548002",
+   "side": "attacker",
+   "detachment": "Daemonic Incursion",
+   "name_en": "PARTING BLOWS",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "临别一击（登舰行动）：被摧毁模型延后反打——摧毁后反打（时序域）无载体"
+   ],
+   "provenance": {
+    "text_sha256": "dfa102355521a1c61020262845f1055b9dd80094a70151af3af8815e6e55e93c"
+   },
+   "encoded_by": "manual-2026-07-21",
+   "weapon_filter": ""
+  },
+  {
+   "table": "stratagems",
+   "id": "000009548003",
+   "side": "attacker",
+   "detachment": "Daemonic Incursion",
+   "name_en": "UNREAL SPEED",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "非常之速（登舰行动）：加速/撤退回合仍可宣告冲锋——移动资格域无载体"
+   ],
+   "provenance": {
+    "text_sha256": "bc887185d6dbc824a4a2882791b11f12ac77c9abf304ce35e873bc3b7614f45c"
+   },
+   "encoded_by": "manual-2026-07-21",
+   "weapon_filter": ""
+  },
+  {
+   "table": "stratagems",
+   "id": "000009548004",
+   "side": "attacker",
+   "detachment": "Daemonic Incursion",
+   "name_en": "INSUBSTANTIAL ENTITIES",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "虚体存在（登舰行动）：穿墙穿舱门移动（限 6\"）——移动域无载体"
+   ],
+   "provenance": {
+    "text_sha256": "879948b531bc6b820f825d34fd76812613e6290453fdefc0f2861573f310fe02"
+   },
+   "encoded_by": "manual-2026-07-21",
+   "weapon_filter": ""
+  },
+  {
+   "table": "stratagems",
+   "id": "000009548005",
+   "side": "target",
+   "detachment": "Daemonic Incursion",
+   "name_en": "INCORPOREAL TERRORS",
+   "name_zh": null,
+   "status": "encoded",
+   "effects": [
+    {
+     "phase": "hit",
+     "op": "modify",
+     "params": [
+      -1
+     ],
+     "condition": [
+      "phase_shooting"
+     ],
+     "source": "无形恐怖（对手射击阶段，瞄准本单位的攻击命中骰 -1）"
+    }
+   ],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [],
+   "provenance": {
+    "text_sha256": "653ede10c01740f9e9c03e6977c264fbb257f3692176d1e851858e8c23f76483"
+   },
+   "encoded_by": "manual-2026-07-21",
+   "weapon_filter": ""
+  },
+  {
+   "table": "stratagems",
+   "id": "000009573002",
+   "side": "target",
+   "detachment": "Dread Carnival",
+   "name_en": "SEDUCTIVE WHISPERS",
+   "name_zh": null,
+   "status": "partial",
+   "effects": [
+    {
+     "phase": "hit",
+     "op": "modify",
+     "params": [
+      -1
+     ],
+     "condition": [
+      "phase_melee"
+     ],
+     "source": "魅惑低语（战斗阶段瞄准本单位的攻击命中骰 -1）"
+    }
+   ],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "WHEN=战斗阶段——仅近战注入（射击阶段不放行）",
+    "限 SLAANESH LEGIONES DAEMONICA 单位（单位对局假设本单位即 SLAANESH 恶魔）"
+   ],
+   "provenance": {
+    "text_sha256": "efa56349203fb2402df4a7c3ef375dec83161cfc7f812d3448bb76c99b4d8a52"
+   },
+   "encoded_by": "manual-2026-07-21",
+   "weapon_filter": ""
+  },
+  {
+   "table": "stratagems",
+   "id": "000009573003",
+   "side": "attacker",
+   "detachment": "Dread Carnival",
+   "name_en": "SOPORIFIC SCENT",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "催眠气息（登舰行动）：绝望逃脱自动通过 + 免疫轻灵杀手自伤——绝望逃脱与致命伤均无载体"
+   ],
+   "provenance": {
+    "text_sha256": "dbda2e810a027f1480cc7d58a41feb6850e24889ed384ca5be828726851e8423"
+   },
+   "encoded_by": "manual-2026-07-21",
+   "weapon_filter": ""
+  },
+  {
+   "table": "stratagems",
+   "id": "000009573004",
+   "side": "attacker",
+   "detachment": "Dread Carnival",
+   "name_en": "DANCE OF DEATH",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "死亡之舞（登舰行动）：撤退回合仍可射击/宣告冲锋——移动资格域无载体"
+   ],
+   "provenance": {
+    "text_sha256": "a6af90caddb439889956e3e1c7f1ec73050dc93b64ec340b2589ab53fe2e2f3d"
+   },
+   "encoded_by": "manual-2026-07-21",
+   "weapon_filter": ""
+  },
+  {
+   "table": "stratagems",
+   "id": "000009573005",
+   "side": "attacker",
+   "detachment": "Dread Carnival",
+   "name_en": "INSUBSTANTIAL ENTITIES",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "虚体存在（登舰行动）：穿墙穿舱门移动——移动域无载体"
+   ],
+   "provenance": {
+    "text_sha256": "0881899b4f32fee36a0e6c52aaee543d70cdfa3a04b9f9b647b441567a70a943"
+   },
+   "encoded_by": "manual-2026-07-21",
+   "weapon_filter": ""
+  },
+  {
+   "table": "stratagems",
+   "id": "000009556002",
+   "side": "attacker",
+   "detachment": "Infernal Onslaught",
+   "name_en": "UNSTOPPABLE SLAUGHTERERS",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "不可阻挡的屠夫（登舰行动）：把关闭的舱门视作打开以出手——舱门/选靶资格无载体"
+   ],
+   "provenance": {
+    "text_sha256": "8121222a00a0c083f6e7a9303f9ec67df7b66a42b118997aa3e31af46b84464d"
+   },
+   "encoded_by": "manual-2026-07-21",
+   "weapon_filter": ""
+  },
+  {
+   "table": "stratagems",
+   "id": "000009556003",
+   "side": "attacker",
+   "detachment": "Infernal Onslaught",
+   "name_en": "ABJECT HORROR",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "彻底恐惧（登舰行动）：接战敌单位战栗检定 -1——战栗检定域无载体"
+   ],
+   "provenance": {
+    "text_sha256": "8b82e93b2d2527deaef8b44c4f54090718a35ec1fcc025f064355e233dfe0b75"
+   },
+   "encoded_by": "manual-2026-07-21",
+   "weapon_filter": ""
+  },
+  {
+   "table": "stratagems",
+   "id": "000009556004",
+   "side": "attacker",
+   "detachment": "Infernal Onslaught",
+   "name_en": "INSUBSTANTIAL ENTITIES",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "虚体存在（登舰行动）：穿墙穿舱门移动——移动域无载体"
+   ],
+   "provenance": {
+    "text_sha256": "9580bc5b7483b37780cb92548fbd7a7d658556f5d44cf24ef7c14bfb46efb96c"
+   },
+   "encoded_by": "manual-2026-07-21",
+   "weapon_filter": ""
+  },
+  {
+   "table": "stratagems",
+   "id": "000009556005",
+   "side": "attacker",
+   "detachment": "Infernal Onslaught",
+   "name_en": "SWIFT AS MURDER",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "迅疾如杀（登舰行动）：+2\" M——移动域无载体"
+   ],
+   "provenance": {
+    "text_sha256": "3bf790aa7d265614d29913da8fd752074c94e99994c87fa4764e36d0d84447ec"
+   },
+   "encoded_by": "manual-2026-07-21",
+   "weapon_filter": ""
+  },
+  {
+   "table": "stratagems",
+   "id": "000009807002",
+   "side": "attacker",
+   "detachment": "Legion of Excess",
+   "name_en": "THIEVES OF PAIN",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "痛楚窃贼：把本单位失去的伤转成友军单位吃致命伤——伤害转移（异单位）无载体"
+   ],
+   "provenance": {
+    "text_sha256": "737cb386623c97d7e55312168511cc4ad12f8b563f65b6996628dd57e08cf972"
+   },
+   "encoded_by": "manual-2026-07-21",
+   "weapon_filter": ""
+  },
+  {
+   "table": "stratagems",
+   "id": "000009807003",
+   "side": "attacker",
+   "detachment": "Legion of Excess",
+   "name_en": "ARCHAGONISTS",
+   "name_zh": null,
+   "status": "partial",
+   "effects": [
+    {
+     "phase": "wound",
+     "op": "modify",
+     "params": [
+      1
+     ],
+     "condition": [
+      "phase_melee"
+     ],
+     "source": "极致痛师（本单位攻击致伤骰 +1）"
+    }
+   ],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "WHEN=战斗阶段——仅近战注入（射击阶段不放行）",
+    "限 LEGIONES DAEMONICA SLAANESH 单位（单位对局假设本单位即 SLAANESH 恶魔）",
+    "「一个 MONSTER 单位或至多两个非 MONSTER 单位」的点名口径在单位对局中自然收敛为本单位，不单独编"
+   ],
+   "provenance": {
+    "text_sha256": "ff3b766fdaafcc8c38d4ff5a592451dd16e4fc5bd69ac04143d9599cd1fdc67b"
+   },
+   "encoded_by": "manual-2026-07-21",
+   "weapon_filter": ""
+  },
+  {
+   "table": "stratagems",
+   "id": "000009807004",
+   "side": "attacker",
+   "detachment": "Legion of Excess",
+   "name_en": "SENSORY EXCRUCIATION",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "感官凌迟：Shadow of Chaos 内全体战栗检定——战栗检定与区域态无载体"
+   ],
+   "provenance": {
+    "text_sha256": "6938d13b6205af4e6b8bb0e806531c2019a427cb4dbae94ab9855e9cbc530a61"
+   },
+   "encoded_by": "manual-2026-07-21",
+   "weapon_filter": ""
+  },
+  {
+   "table": "stratagems",
+   "id": "000009807005",
+   "side": "attacker",
+   "detachment": "Legion of Excess",
+   "name_en": "PHANTASMAL LONGING",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "幻影渴念：穿越地形移动——移动域无载体"
+   ],
+   "provenance": {
+    "text_sha256": "b6a54b27abdffa95fbbd85f31e7d6f62771ba61b6b918f498d7a4f7524fdfedf"
+   },
+   "encoded_by": "manual-2026-07-21",
+   "weapon_filter": ""
+  },
+  {
+   "table": "stratagems",
+   "id": "000009807006",
+   "side": "attacker",
+   "detachment": "Legion of Excess",
+   "name_en": "CAVALCADE OF BLADES",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "刀刃巡游：冲锋后逐模型掷 D6 造致命伤——致命伤池无载体"
+   ],
+   "provenance": {
+    "text_sha256": "10e7dbd092678ab3874eefe1697904b125a07ebc6eda03fa25a36c6239906b18"
+   },
+   "encoded_by": "manual-2026-07-21",
+   "weapon_filter": ""
+  },
+  {
+   "table": "stratagems",
+   "id": "000009807007",
+   "side": "target",
+   "detachment": "Legion of Excess",
+   "name_en": "OVERWHELMING EXCESS",
+   "name_zh": null,
+   "status": "partial",
+   "effects": [
+    {
+     "phase": "hit",
+     "op": "modify",
+     "params": [
+      -1
+     ],
+     "condition": [],
+     "source": "过度泛滥（瞄准本单位的攻击命中骰 -1）"
+    }
+   ],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "WHEN=「对手射击阶段**或**战斗阶段」——两相位均适用，不加相位门",
+    "限 LEGIONES DAEMONICA SLAANESH 单位（单位对局假设本单位即 SLAANESH 恶魔）"
+   ],
+   "provenance": {
+    "text_sha256": "5df0fb6bc8af39f9551feaa84891705eefe91a14e345459cf845acdcc8c0bd66"
+   },
+   "encoded_by": "manual-2026-07-21",
+   "weapon_filter": ""
+  },
+  {
+   "table": "stratagems",
+   "id": "fp11e-chaosdaemons-lordswarp-s1",
+   "side": "attacker",
+   "detachment": "Lords of the Warp",
+   "name_en": "CARNIVAL OF EXCESS",
+   "name_zh": "过度之狂欢",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "过度之狂欢：本单位获 Fights First 并须为下一个出手单位——出手顺序域无载体"
+   ],
+   "provenance": {
+    "text_sha256": "c1995286ba9af51bd9450cb11b9406e09bb91e7e0ce08ebbe00a5d00896a5890"
+   },
+   "encoded_by": "manual-2026-07-21",
+   "weapon_filter": ""
+  },
+  {
+   "table": "stratagems",
+   "id": "fp11e-chaosdaemons-lordswarp-s2",
+   "side": "attacker",
+   "detachment": "Lords of the Warp",
+   "name_en": "CALL TO MURDER",
+   "name_zh": "屠戮号令",
+   "status": "partial",
+   "effects": [
+    {
+     "phase": "attacks",
+     "op": "modify",
+     "params": [
+      1
+     ],
+     "condition": [
+      "melee_charging"
+     ],
+     "source": "屠戮号令（本单位近战攻击 A 特征值 +1）"
+    }
+   ],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "WHEN=战斗阶段、且目标须**本回合冲锋过**才被选中出手——顺 WHEN 往后推「触发后还剩哪些阶段能生效」＝只剩近战且须冲锋，故落 melee_charging 复合门",
+    "限 LEGIONES DAEMONICA KHORNE CHARACTER 单位且排除 MONSTER——神祇/人物关键词门与负关键词门均无载体，按单位对局假设已满足"
+   ],
+   "provenance": {
+    "text_sha256": "129c5a466848a4ffdc2176fb8bf4bb410b18c04da55b6518e32174a12b1a5677"
+   },
+   "encoded_by": "manual-2026-07-21",
+   "weapon_filter": ""
+  },
+  {
+   "table": "stratagems",
+   "id": "fp11e-chaosdaemons-lordswarp-s3",
+   "side": "attacker",
+   "detachment": "Lords of the Warp",
+   "name_en": "BILIOUS BLESSING",
+   "name_zh": "胆汁祝福",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "胆汁祝福：8\" 内敌单位七颗 D6 掷 4+ 各 1 致命伤——致命伤池无载体"
+   ],
+   "provenance": {
+    "text_sha256": "6c153854c0158ab578a5cdc498f455c0b01f991841a97e7dcd90aebd9da2df0f"
+   },
+   "encoded_by": "manual-2026-07-21",
+   "weapon_filter": ""
+  },
+  {
+   "table": "stratagems",
+   "id": "fp11e-chaosdaemons-lordswarp-s4",
+   "side": "attacker",
+   "detachment": "Lords of the Warp",
+   "name_en": "SKIRLING MAGICKS",
+   "name_zh": "尖啸魔法",
+   "status": "partial",
+   "effects": [
+    {
+     "phase": "hit",
+     "op": "auto_wound",
+     "params": [],
+     "condition": [
+      "phase_shooting"
+     ],
+     "source": "尖啸魔法（本单位远程攻击获 [LETHAL HITS]）"
+    }
+   ],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "WHEN=你的射击阶段、原文明写 ranged attacks——射击门自含，近战不注入",
+    "限 LEGIONES DAEMONICA TZEENTCH CHARACTER 单位且排除 MONSTER——神祇/人物关键词门与负关键词门均无载体，按单位对局假设已满足"
+   ],
+   "provenance": {
+    "text_sha256": "9c46eb4a33fc1f9c98a42003918fca37a2241ba29f4fb197949bbf444caaf7ee"
+   },
+   "encoded_by": "manual-2026-07-21",
+   "weapon_filter": ""
+  },
+  {
+   "table": "stratagems",
+   "id": "000009581002",
+   "side": "attacker",
+   "detachment": "Pandaemoniac Inferno",
+   "name_en": "FATE SYPHONING",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "命运汲取（登舰行动）：重投保存骰的「1」——「仅重投 1」（非重投失败）无载体"
+   ],
+   "provenance": {
+    "text_sha256": "abf79faaf449c85341cfc253e8d8963413dc070364c6ddfe2259480fad689c4b"
+   },
+   "encoded_by": "manual-2026-07-21",
+   "weapon_filter": ""
+  },
+  {
+   "table": "stratagems",
+   "id": "000009581003",
+   "side": "attacker",
+   "detachment": "Pandaemoniac Inferno",
+   "name_en": "FICKLE BLESSINGS",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "无常祝福（登舰行动）：远程武器获 [PISTOL] 与 [HAZARDOUS]——[PISTOL] 属选靶资格、[HAZARDOUS] 属自伤，均无载体"
+   ],
+   "provenance": {
+    "text_sha256": "93feb1cd556bbec49ad5d029aa52f18d39a4f246832972d31bff42333a0c265f"
+   },
+   "encoded_by": "manual-2026-07-21",
+   "weapon_filter": ""
+  },
+  {
+   "table": "stratagems",
+   "id": "000009581004",
+   "side": "attacker",
+   "detachment": "Pandaemoniac Inferno",
+   "name_en": "ILLUSORY PRESENCE",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "虚幻显现（登舰行动）：射击后 D6\" 普通移动——移动域无载体"
+   ],
+   "provenance": {
+    "text_sha256": "bd5eb3515e2a3be12fd548c38dc3e1046a0c1e69a4cbc7e584e3f9dafe879e99"
+   },
+   "encoded_by": "manual-2026-07-21",
+   "weapon_filter": ""
+  },
+  {
+   "table": "stratagems",
+   "id": "000009581005",
+   "side": "attacker",
+   "detachment": "Pandaemoniac Inferno",
+   "name_en": "INSUBSTANTIAL ENTITIES",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "虚体存在（登舰行动）：穿墙穿舱门移动——移动域无载体"
+   ],
+   "provenance": {
+    "text_sha256": "bd5d656c7e8fb6e7d64fb6f834a7801f0405861387df9e7f4a9602127f17564e"
+   },
+   "encoded_by": "manual-2026-07-21",
+   "weapon_filter": ""
+  },
+  {
+   "table": "stratagems",
+   "id": "000009820002",
+   "side": "attacker",
+   "detachment": "Plague Legion",
+   "name_en": "SEEPING VIRULENCE",
+   "name_zh": null,
+   "status": "partial",
+   "effects": [
+    {
+     "phase": "hit",
+     "op": "crit_threshold",
+     "params": [
+      5
+     ],
+     "condition": [
+      "phase_melee"
+     ],
+     "source": "渗漏毒性（未修正命中骰 5+ 即暴击）"
+    }
+   ],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "WHEN=战斗阶段——仅近战注入（射击阶段不放行）",
+    "限 LEGIONES DAEMONICA NURGLE 单位（单位对局假设本单位即 NURGLE 恶魔）"
+   ],
+   "provenance": {
+    "text_sha256": "b623ed457da9a9929630b83f82dea051b027758578c083fba593460d751adc9f"
+   },
+   "encoded_by": "manual-2026-07-21",
+   "weapon_filter": ""
+  },
+  {
+   "table": "stratagems",
+   "id": "000009820003",
+   "side": "attacker",
+   "detachment": "Plague Legion",
+   "name_en": "FEVER VISIONS",
+   "name_zh": null,
+   "status": "partial",
+   "effects": [
+    {
+     "phase": "hit",
+     "op": "modify",
+     "params": [
+      1
+     ],
+     "condition": [],
+     "source": "热病幻象（本单位攻击命中骰 +1）"
+    }
+   ],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "WHEN=「你的射击阶段**或**战斗阶段」——两相位均适用，不加相位门",
+    "后半句「被命中的敌单位须做战栗检定」不编——战栗检定域无载体",
+    "限 LEGIONES DAEMONICA NURGLE 单位（单位对局假设本单位即 NURGLE 恶魔）"
+   ],
+   "provenance": {
+    "text_sha256": "d6e36e0835e67128121c031c6a6c2a13743254c565e59c44b9cebec9fd0a7db1"
+   },
+   "encoded_by": "manual-2026-07-21",
+   "weapon_filter": ""
+  },
+  {
+   "table": "stratagems",
+   "id": "000009820004",
+   "side": "attacker",
+   "detachment": "Plague Legion",
+   "name_en": "FOETID RESURGENCE",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "腐臭复苏：复活模型 / MONSTER 回血 D3+1——复活与治疗域无载体"
+   ],
+   "provenance": {
+    "text_sha256": "4abe53c5bde2898bd10808e40e2c045645c19e283242a88839c30ff207470137"
+   },
+   "encoded_by": "manual-2026-07-21",
+   "weapon_filter": ""
+  },
+  {
+   "table": "stratagems",
+   "id": "000009820005",
+   "side": "attacker",
+   "detachment": "Plague Legion",
+   "name_en": "ROT AND RENEWAL",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "腐朽与新生：穿越地形移动——移动域无载体"
+   ],
+   "provenance": {
+    "text_sha256": "e475b314a52171c93462f55ef3e6223eb487d3df60862697d6a1ab30b431c7a9"
+   },
+   "encoded_by": "manual-2026-07-21",
+   "weapon_filter": ""
+  },
+  {
+   "table": "stratagems",
+   "id": "000009820006",
+   "side": "attacker",
+   "detachment": "Plague Legion",
+   "name_en": "MURKSHADOWS",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "幽影：普通移动 +5\" M——移动域无载体"
+   ],
+   "provenance": {
+    "text_sha256": "0799338fa185e32179dbebc535551f68be6ef993131db836228f77440284a5e7"
+   },
+   "encoded_by": "manual-2026-07-21",
+   "weapon_filter": ""
+  },
+  {
+   "table": "stratagems",
+   "id": "000009820007",
+   "side": "attacker",
+   "detachment": "Plague Legion",
+   "name_en": "PLAGUE OF WOES",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "悲苦瘟疫：追加战栗检定——战栗检定域无载体"
+   ],
+   "provenance": {
+    "text_sha256": "388f2f5f76c988ffdcc390e345b204eedffc3f29a6229db1322ee7817fbe2d7a"
+   },
+   "encoded_by": "manual-2026-07-21",
+   "weapon_filter": ""
+  },
+  {
+   "table": "stratagems",
+   "id": "000009565002",
+   "side": "target",
+   "detachment": "Rotten and Rusted",
+   "name_en": "FOUL RESILIENCE",
+   "name_zh": null,
+   "status": "partial",
+   "effects": [
+    {
+     "phase": "fnp",
+     "op": "fnp",
+     "params": [
+      5
+     ],
+     "condition": [],
+     "source": "污秽韧性（本单位获 Feel No Pain 5+）"
+    }
+   ],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "WHEN=「对手射击阶段**或**战斗阶段」——两相位均适用，不加相位门",
+    "限 NURGLE LEGIONES DAEMONICA 单位且**排除 NURGLINGS**——负关键词门无载体，按已满足（本单位非 NURGLINGS 的 NURGLE 恶魔）建模"
+   ],
+   "provenance": {
+    "text_sha256": "82944006b899cbfbde322a8283974a4f0c1910594b8b068eec856ffe1ebe160c"
+   },
+   "encoded_by": "manual-2026-07-21",
+   "weapon_filter": ""
+  },
+  {
+   "table": "stratagems",
+   "id": "000009565003",
+   "side": "attacker",
+   "detachment": "Rotten and Rusted",
+   "name_en": "SICKLY CONTAMINANTS",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "病态污染物（登舰行动）：自吃致命伤换目标点 Secured——致命伤与据点域无载体"
+   ],
+   "provenance": {
+    "text_sha256": "42ea88cbc6ddae3e06e6975365a9e31a3109ab8175ae5f69a78c60fcca6fdec6"
+   },
+   "encoded_by": "manual-2026-07-21",
+   "weapon_filter": ""
+  },
+  {
+   "table": "stratagems",
+   "id": "000009565004",
+   "side": "attacker",
+   "detachment": "Rotten and Rusted",
+   "name_en": "GLEEFUL INVASION",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "欢欣入侵（登舰行动）：D6\" 普通/撤退移动——移动域无载体"
+   ],
+   "provenance": {
+    "text_sha256": "342883070bec7200fe99814304f710183c05a3112a5d70a1b58ca6c04789dd76"
+   },
+   "encoded_by": "manual-2026-07-21",
+   "weapon_filter": ""
+  },
+  {
+   "table": "stratagems",
+   "id": "000009565005",
+   "side": "attacker",
+   "detachment": "Rotten and Rusted",
+   "name_en": "INSUBSTANTIAL ENTITIES",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "虚体存在（登舰行动）：穿墙穿舱门移动——移动域无载体"
+   ],
+   "provenance": {
+    "text_sha256": "ed9cfb25e9acdf6fc2dce77baf4d6f1028e0f67a3c82734c070affb73bfebe09"
+   },
+   "encoded_by": "manual-2026-07-21",
+   "weapon_filter": ""
+  },
+  {
+   "table": "stratagems",
+   "id": "000009811002",
+   "side": "attacker",
+   "detachment": "Scintillating Legion",
+   "name_en": "IMPOSSIBLE ECLIPSE",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "不可能之蚀：把无人区/对手部署区纳入 Shadow of Chaos——区域态无载体"
+   ],
+   "provenance": {
+    "text_sha256": "270a5c83ff77a2f8b54e9744804e34c3efd5d566aee19e4c0819da3420edc154"
+   },
+   "encoded_by": "manual-2026-07-21",
+   "weapon_filter": ""
+  },
+  {
+   "table": "stratagems",
+   "id": "000009811003",
+   "side": "attacker",
+   "detachment": "Scintillating Legion",
+   "name_en": "PYROGENESIS",
+   "name_zh": null,
+   "status": "partial",
+   "effects": [
+    {
+     "phase": "wound",
+     "op": "s_improve",
+     "params": [
+      2
+     ],
+     "condition": [],
+     "source": "烈焰创生（本单位武器 S 特征值 +2）"
+    }
+   ],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "WHEN=「你的射击阶段**或**战斗阶段」——两相位均适用，不加相位门",
+    "「花费 1 枚 Flux token 改为 +3 S 且 AP 改善 1」的强化分支不编——Flux token 经济无载体，且二选一裸编强支会高估（按基础支 +2 S 编码）"
+   ],
+   "provenance": {
+    "text_sha256": "1b2e82110cfb0361ba4a48196178543939feebba044565b3d5cee81c8370831e"
+   },
+   "encoded_by": "manual-2026-07-21",
+   "weapon_filter": ""
+  },
+  {
+   "table": "stratagems",
+   "id": "000009811004",
+   "side": "attacker",
+   "detachment": "Scintillating Legion",
+   "name_en": "FLICKERING REALITY",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "闪烁现实：掷 D6 定一个未修正命中骰面，该面攻击序列终止——随机阈值 + 「命中序列终止」（非命中减值）无载体"
+   ],
+   "provenance": {
+    "text_sha256": "70f2e71618b1c67c57193e34f7c004a5fc2fdf5c951a678fb3604b4213f80f8c"
+   },
+   "encoded_by": "manual-2026-07-21",
+   "weapon_filter": ""
+  },
+  {
+   "table": "stratagems",
+   "id": "000009811005",
+   "side": "attacker",
+   "detachment": "Scintillating Legion",
+   "name_en": "FATEBORNE NIGHTMARES",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "命定梦魇：穿越地形移动——移动域无载体"
+   ],
+   "provenance": {
+    "text_sha256": "b5a7ca5030e85e6627714e80bde4e42fdab59779025b1f9bb0e33e63bc7e47f2"
+   },
+   "encoded_by": "manual-2026-07-21",
+   "weapon_filter": ""
+  },
+  {
+   "table": "stratagems",
+   "id": "000009811006",
+   "side": "attacker",
+   "detachment": "Scintillating Legion",
+   "name_en": "FICKLEFIRE",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "无常之火：越接战选靶 + 敌模型阵亡时自吃致命伤——选靶资格与致命伤均无载体"
+   ],
+   "provenance": {
+    "text_sha256": "a0132fd0a891e7cfbf24da85e6e5bade250bb13fad129baf3cf06fe2a4fdabb4"
+   },
+   "encoded_by": "manual-2026-07-21",
+   "weapon_filter": ""
+  },
+  {
+   "table": "stratagems",
+   "id": "000009811007",
+   "side": "attacker",
+   "detachment": "Scintillating Legion",
+   "name_en": "DELIRIUM UNMADE",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "谵妄消解：撤出战场进战略预备队——预备队域无载体"
+   ],
+   "provenance": {
+    "text_sha256": "25438f2053af03e8ae8898a07faa4c4ce6f998445dda246b8db3c7070a825257"
+   },
+   "encoded_by": "manual-2026-07-21",
+   "weapon_filter": ""
+  },
+  {
+   "table": "stratagems",
+   "id": "000009979002",
+   "side": "attacker",
+   "detachment": "Shadow Legion",
+   "name_en": "SPITEFUL DEMISE",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "怨毒消亡：被摧毁时对接战敌单位掷 D6 造致命伤——致命伤池与摧毁时点均无载体"
+   ],
+   "provenance": {
+    "text_sha256": "0e0403c4bad1255f0ff138d5f31c056b99283d66e4402332d8d7e4ba65b68e7f"
+   },
+   "encoded_by": "manual-2026-07-21",
+   "weapon_filter": ""
+  },
+  {
+   "table": "stratagems",
+   "id": "000009979003",
+   "side": "attacker",
+   "detachment": "Shadow Legion",
+   "name_en": "CHANNELLED WRATH",
+   "name_zh": null,
+   "status": "partial",
+   "effects": [
+    {
+     "phase": "wound",
+     "op": "modify",
+     "params": [
+      1
+     ],
+     "condition": [
+      "melee_charging"
+     ],
+     "source": "引导之怒（本单位近战武器获 [LANCE]＝冲锋回合致伤骰 +1）"
+    }
+   ],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "WHEN=战斗阶段；[LANCE] 语义＝本回合冲锋过时致伤骰 +1，故落 melee_charging 复合门（非冲锋回合 [LANCE] 无收益，裸 phase_melee 会过度施加）",
+    "后半句「若本单位有 KHORNE 关键词则再改善 AP 1」是己方神祇关键词分支——引擎无该门载体，裸编会对非 KHORNE 单位过度施加，不编"
+   ],
+   "provenance": {
+    "text_sha256": "a0ccf83a2b7b5e80e8afe10a38a47c5288705ab2063d7e4c39117875affb633b"
+   },
+   "encoded_by": "manual-2026-07-21",
+   "weapon_filter": ""
+  },
+  {
+   "table": "stratagems",
+   "id": "000009979004",
+   "side": "attacker",
+   "detachment": "Shadow Legion",
+   "name_en": "DEATH DENIED",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "死亡否决：回血 3 点 + TZEENTCH 复活一个模型——治疗/复活域无载体"
+   ],
+   "provenance": {
+    "text_sha256": "010f0102a16a73fd06675e62d88be8bc0d94a477c38d82934dd3a6356003f760"
+   },
+   "encoded_by": "manual-2026-07-21",
+   "weapon_filter": ""
+  },
+  {
+   "table": "stratagems",
+   "id": "000009979005",
+   "side": "attacker",
+   "detachment": "Shadow Legion",
+   "name_en": "ENCROACHING DARKNESS",
+   "name_zh": null,
+   "status": "partial",
+   "effects": [
+    {
+     "phase": "save",
+     "op": "ignores_cover",
+     "params": [],
+     "condition": [
+      "phase_shooting"
+     ],
+     "source": "逼近黑暗（所选单位武器获 [IGNORES COVER]）"
+    }
+   ],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "WHEN=你的射击阶段——射击门自含，近战不注入",
+    "目标须「本回合自预备队抵达」——预备队抵达态无载体，按已满足建模",
+    "可同时点名一个 HERETIC ASTARTES 单位与一个 LEGIONES DAEMONICA 单位——单位对局只结算被点名的这一个"
+   ],
+   "provenance": {
+    "text_sha256": "5d02d06a00b1bdad17e17396b9651d1e24510af37dbf602ab3cd4678af303a6e"
+   },
+   "encoded_by": "manual-2026-07-21",
+   "weapon_filter": ""
+  },
+  {
+   "table": "stratagems",
+   "id": "000009979006",
+   "side": "attacker",
+   "detachment": "Shadow Legion",
+   "name_en": "SHADE PATH",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "暗影之径（11 版重写）：12\" 内敌单位冲锋骰 -1 + NURGLE 追加战栗检定——冲锋骰与战栗检定均无载体"
+   ],
+   "provenance": {
+    "text_sha256": "346400c734257b91749cd50e9681842dee2adbcc50a88449fd3b2d9b34749d56"
+   },
+   "encoded_by": "manual-2026-07-21",
+   "weapon_filter": ""
+  },
+  {
+   "table": "stratagems",
+   "id": "000009979007",
+   "side": "attacker",
+   "detachment": "Shadow Legion",
+   "name_en": "BINDING SHADOW",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "束缚暗影：撤出战场进战略预备队——预备队域无载体"
+   ],
+   "provenance": {
+    "text_sha256": "83674807f93fc84f775e36dacc4259646ce2c224fbb3b3d580dbd77895542a8d"
+   },
+   "encoded_by": "manual-2026-07-21",
+   "weapon_filter": ""
+  },
+  {
+   "table": "stratagems",
+   "id": "fp11e-chaosdaemons-warptide-s1",
+   "side": "attacker",
+   "detachment": "Warptide",
+   "name_en": "DAEMONIC INFESTATION",
+   "name_zh": "恶魔滋生",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "恶魔滋生：本单位回血 3 点——治疗域无载体"
+   ],
+   "provenance": {
+    "text_sha256": "4f5c7cb80b44d4d29d3ca2bf29d29ec3b0652567b875ea5de34362bf4f2929ed"
+   },
+   "encoded_by": "manual-2026-07-21",
+   "weapon_filter": ""
+  },
+  {
+   "table": "stratagems",
+   "id": "fp11e-chaosdaemons-warptide-s2",
+   "side": "attacker",
+   "detachment": "Warptide",
+   "name_en": "SOULSEEING",
+   "name_zh": "灵视",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "灵视：敌单位 +6\" 侦测范围——侦测范围域无载体"
+   ],
+   "provenance": {
+    "text_sha256": "7d913a41cb3d6f046e0c69f3be37f5dbc7ee18ceb40c567c794864aa99d8630d"
+   },
+   "encoded_by": "manual-2026-07-21",
+   "weapon_filter": ""
+  },
+  {
+   "table": "stratagems",
+   "id": "fp11e-chaosdaemons-warptide-s3",
+   "side": "attacker",
+   "detachment": "Warptide",
+   "name_en": "INCORPOREAL ENTITIES",
+   "name_zh": "无形实体",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "无形实体：瞄准本单位、S>T 的**远程**攻击致伤骰 -1——限远程 × S>T，引擎无 shooting_wound_s_gt_t 复合 tag，裸 wound_s_gt_t 会在近战误放行，不编（沿 PR24 BUILT TO LAST 先例）"
+   ],
+   "provenance": {
+    "text_sha256": "067026b7a31fbdf2b894f9db0db211c00cc8fe03689a09ca3634a1f072805eda"
+   },
+   "encoded_by": "manual-2026-07-21",
+   "weapon_filter": ""
+  },
+  {
+   "table": "enhancements",
+   "id": "000009815002",
+   "side": "attacker",
+   "detachment": "Blood Legion",
+   "name_en": "Slaughterthirst (Aura)",
+   "name_zh": null,
+   "status": "partial",
+   "effects": [
+    {
+     "phase": "wound",
+     "op": "modify",
+     "params": [
+      1
+     ],
+     "condition": [
+      "melee_charging"
+     ],
+     "source": "嗜血渴望（光环：6\" 内友方 KHORNE 单位武器获 [LANCE]＝冲锋回合致伤骰 +1）"
+    }
+   ],
+   "requires_toggles": [
+    "bearer_leading"
+   ],
+   "not_modeled_notes_zh": [
+    "光环授予 6\" 内**友方其它单位**——挂 bearer_leading 开关按「本单位在光环范围内」建模（沿 PR11 Vratine Aquila / PR13 Phasal Subjugator 先例）",
+    "[LANCE] 语义＝本回合冲锋过时致伤骰 +1，故落 melee_charging（非冲锋回合无收益）",
+    "限 KHORNE 单位且排除 MONSTER——神祇门与负关键词门均无载体，按已满足建模"
+   ],
+   "provenance": {
+    "text_sha256": "3f89fdb9f276ec1b7783c94d0861b545465ebc4c4b68de3420ae6642a90f01db"
+   },
+   "encoded_by": "manual-2026-07-21",
+   "weapon_filter": ""
+  },
+  {
+   "table": "enhancements",
+   "id": "000009815003",
+   "side": "attacker",
+   "detachment": "Blood Legion",
+   "name_en": "Fury’s Cage",
+   "name_zh": null,
+   "status": "partial",
+   "effects": [
+    {
+     "phase": "hit",
+     "op": "reroll",
+     "params": [
+      "fail"
+     ],
+     "condition": [
+      "phase_melee"
+     ],
+     "source": "怒火之笼（携带者出手时可重投命中骰）"
+    },
+    {
+     "phase": "wound",
+     "op": "reroll",
+     "params": [
+      "fail"
+     ],
+     "condition": [
+      "phase_melee"
+     ],
+     "source": "怒火之笼（携带者出手时可重投致伤骰）"
+    }
+   ],
+   "requires_toggles": [
+    "bearer_leading"
+   ],
+   "not_modeled_notes_zh": [
+    "WHEN=携带者被选中出手（战斗阶段）——仅近战注入",
+    "代价「携带者吃 D3+1 致命伤」不建模——致命伤池无载体，故本条只含收益，净收益被高估，自查",
+    "限携带者模型（KHORNE LEGIONES DAEMONICA MONSTER）——挂 bearer_leading，单模型口径"
+   ],
+   "provenance": {
+    "text_sha256": "1a277b7f6ecb8425a962173c2bf8f79eb8f81c06e13802ecdb6ea4d20d0819e5"
+   },
+   "encoded_by": "manual-2026-07-21",
+   "weapon_filter": ""
+  },
+  {
+   "table": "enhancements",
+   "id": "000009815004",
+   "side": "attacker",
+   "detachment": "Blood Legion",
+   "name_en": "Brazenmaw",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "黄铜之颚：携带者单位冲锋骰 +2——冲锋骰无载体"
+   ],
+   "provenance": {
+    "text_sha256": "a9507c5821ce818a7cce218db9a78209a5132a5aa1d252d6af053c7e1993dcbf"
+   },
+   "encoded_by": "manual-2026-07-21",
+   "weapon_filter": ""
+  },
+  {
+   "table": "enhancements",
+   "id": "000009815005",
+   "side": "attacker",
+   "detachment": "Blood Legion",
+   "name_en": "Gateway Unto Damnation",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "通往诅咒之门：Deadly Demise 触发面 2+ 与档位提升——覆灭（Deadly Demise）域无载体"
+   ],
+   "provenance": {
+    "text_sha256": "33ee248333f12141c8ce00f183250d8568e6dc59f59115317f34d1b396801437"
+   },
+   "encoded_by": "manual-2026-07-21",
+   "weapon_filter": ""
+  },
+  {
+   "table": "enhancements",
+   "id": "fp11e-chaosdaemons-cavalcade-e1",
+   "side": "attacker",
+   "detachment": "Cavalcade of Chaos",
+   "name_en": "Apocalyptic Steeds",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "末日战驹：本单位 +1\" M——移动域无载体"
+   ],
+   "provenance": {
+    "text_sha256": "93f32afa9a9dd2d44107098ec4f38a7923bd272a846b7844b37296019b454dde"
+   },
+   "encoded_by": "manual-2026-07-21",
+   "weapon_filter": ""
+  },
+  {
+   "table": "enhancements",
+   "id": "fp11e-chaosdaemons-cavalcade-e2",
+   "side": "attacker",
+   "detachment": "Cavalcade of Chaos",
+   "name_en": "Soul-Shattering Charge",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "碎魂冲锋：冲锋后扩大可出手模型判定（3\" 内亦可选靶）——出手资格/接战几何无载体"
+   ],
+   "provenance": {
+    "text_sha256": "6e67e261125d3a738332e3e432d33a0a3214287f345cc8924590e4c3b9991029"
+   },
+   "encoded_by": "manual-2026-07-21",
+   "weapon_filter": ""
+  },
+  {
+   "table": "enhancements",
+   "id": "000008438002",
+   "side": "attacker",
+   "detachment": "Daemonic Incursion",
+   "name_en": "A’rgath, the King of Blades",
+   "name_zh": null,
+   "status": "partial",
+   "effects": [
+    {
+     "phase": "attacks",
+     "op": "modify",
+     "params": [
+      1
+     ],
+     "condition": [
+      "phase_melee"
+     ],
+     "source": "阿尔加斯，刀锋之王（携带者近战武器 A +1）"
+    },
+    {
+     "phase": "wound",
+     "op": "s_improve",
+     "params": [
+      1
+     ],
+     "condition": [
+      "phase_melee"
+     ],
+     "source": "阿尔加斯，刀锋之王（携带者近战武器 S +1）"
+    }
+   ],
+   "requires_toggles": [
+    "bearer_leading"
+   ],
+   "not_modeled_notes_zh": [
+    "限携带者模型的近战武器——挂 bearer_leading 开关，单模型（人物）口径模拟",
+    "「在 Shadow of Chaos 内改为 +2 A / +2 S」不编——区域态无载体，按基线 +1 编码（防高估）",
+    "限 KHORNE LEGIONES DAEMONICA 模型（单位对局假设携带者即 KHORNE 恶魔）"
+   ],
+   "provenance": {
+    "text_sha256": "0450d06e644f029278edb49d6d2246379db2efaa4f03856e61f0cf321c9a251f"
+   },
+   "encoded_by": "manual-2026-07-21",
+   "weapon_filter": ""
+  },
+  {
+   "table": "enhancements",
+   "id": "000008438003",
+   "side": "attacker",
+   "detachment": "Daemonic Incursion",
+   "name_en": "Soulstealer",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "噬魂者：近战摧毁敌模型后掷 D6 回血——治疗与击杀触发均无载体"
+   ],
+   "provenance": {
+    "text_sha256": "ee01c0a38266d9977d57643625c4d901226b3679cf3b0884c754566d49615420"
+   },
+   "encoded_by": "manual-2026-07-21",
+   "weapon_filter": ""
+  },
+  {
+   "table": "enhancements",
+   "id": "000008438004",
+   "side": "target",
+   "detachment": "Daemonic Incursion",
+   "name_en": "The Endless Gift",
+   "name_zh": null,
+   "status": "partial",
+   "effects": [
+    {
+     "phase": "fnp",
+     "op": "fnp",
+     "params": [
+      5
+     ],
+     "condition": [],
+     "source": "无尽馈赠（携带者获 Feel No Pain 5+）"
+    }
+   ],
+   "requires_toggles": [
+    "defender_bearer_leading"
+   ],
+   "not_modeled_notes_zh": [
+    "原文只给**携带者模型**（非整单位）——挂 defender_bearer_leading 开关，单模型口径；整单位模拟会高估",
+    "限 NURGLE LEGIONES DAEMONICA 模型（单位对局假设携带者即 NURGLE 恶魔）"
+   ],
+   "provenance": {
+    "text_sha256": "9c3304eced0f1837cc8ca0c8145a0543c81a049b1a3f2f66f8cb952f6ce81624"
+   },
+   "encoded_by": "manual-2026-07-21",
+   "weapon_filter": ""
+  },
+  {
+   "table": "enhancements",
+   "id": "000008438005",
+   "side": "attacker",
+   "detachment": "Daemonic Incursion",
+   "name_en": "The Everstave",
+   "name_zh": null,
+   "status": "partial",
+   "effects": [
+    {
+     "phase": "wound",
+     "op": "s_improve",
+     "params": [
+      1
+     ],
+     "condition": [
+      "phase_shooting"
+     ],
+     "source": "永恒法杖（携带者远程武器 S +1）"
+    }
+   ],
+   "requires_toggles": [
+    "bearer_leading"
+   ],
+   "not_modeled_notes_zh": [
+    "限携带者模型的远程武器——挂 bearer_leading 开关，单模型口径",
+    "「射程 +3\"」不编——射程/几何域无载体",
+    "「在 Shadow of Chaos 内改为 +2 S、射程 +6\"」不编——区域态无载体，按基线编码",
+    "限 TZEENTCH LEGIONES DAEMONICA 模型（单位对局假设携带者即 TZEENTCH 恶魔）"
+   ],
+   "provenance": {
+    "text_sha256": "15f9fda6953398411969b0f7b7a2238aa0116bbc8dc9420da290a72bce742fd4"
+   },
+   "encoded_by": "manual-2026-07-21",
+   "weapon_filter": ""
+  },
+  {
+   "table": "enhancements",
+   "id": "000009547002",
+   "side": "attacker",
+   "detachment": "Daemonic Incursion",
+   "name_en": "Spite Made Manifest",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "怨毒具现（登舰行动）：敌近战武器打本单位时获 [HAZARDOUS]——攻击方自伤从守方侧无载体（沿 PR16 Aura of Vengeance 先例）"
+   ],
+   "provenance": {
+    "text_sha256": "70f99ca777dd3cb08523062ed4e6a2764a6de328a1209c75649664bbc686f3a6"
+   },
+   "encoded_by": "manual-2026-07-21",
+   "weapon_filter": ""
+  },
+  {
+   "table": "enhancements",
+   "id": "000009547003",
+   "side": "attacker",
+   "detachment": "Daemonic Incursion",
+   "name_en": "Geller Breach",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "盖勒裂隙（登舰行动）：首战斗轮初 6\" 普通移动——移动域无载体"
+   ],
+   "provenance": {
+    "text_sha256": "60e2fddf93659051183730372d5f12b971c9e09d97d9987a9146ff25a138ef5d"
+   },
+   "encoded_by": "manual-2026-07-21",
+   "weapon_filter": ""
+  },
+  {
+   "table": "enhancements",
+   "id": "000009572002",
+   "side": "attacker",
+   "detachment": "Dread Carnival",
+   "name_en": "Fatal Caress",
+   "name_zh": null,
+   "status": "partial",
+   "effects": [
+    {
+     "phase": "wound",
+     "op": "crit_threshold",
+     "params": [
+      5
+     ],
+     "condition": [
+      "phase_melee"
+     ],
+     "source": "致命爱抚（携带者近战未修正致伤骰 5+ 即暴击）"
+    }
+   ],
+   "requires_toggles": [
+    "bearer_leading"
+   ],
+   "not_modeled_notes_zh": [
+    "原文只作用于**携带者**的近战攻击——挂 bearer_leading 开关，单模型口径；整单位模拟会高估"
+   ],
+   "provenance": {
+    "text_sha256": "5911dd9de8c151a3985d668b99eb94cbade93e376dde6a922229775dd9ab5224"
+   },
+   "encoded_by": "manual-2026-07-21",
+   "weapon_filter": ""
+  },
+  {
+   "table": "enhancements",
+   "id": "000009572003",
+   "side": "attacker",
+   "detachment": "Dread Carnival",
+   "name_en": "Horrifying Visage",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "骇人容貌（登舰行动）：领导力检定阻断战术机动/舱门操作——领导力检定与 action/舱门域均无载体"
+   ],
+   "provenance": {
+    "text_sha256": "dddc70c5eb08b6de9587c320998c2afdff08e5ee1d6a648515308def544313ef"
+   },
+   "encoded_by": "manual-2026-07-21",
+   "weapon_filter": ""
+  },
+  {
+   "table": "enhancements",
+   "id": "000009555002",
+   "side": "attacker",
+   "detachment": "Infernal Onslaught",
+   "name_en": "Worthier Skulls",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "更佳的头颅（登舰行动）：敌撤退后携带者 6\" 普通移动——移动域无载体"
+   ],
+   "provenance": {
+    "text_sha256": "7d6bfb7dfc84a88f87cc31e8e2ef925352d0bce78334675d2b982ce25c92d3f6"
+   },
+   "encoded_by": "manual-2026-07-21",
+   "weapon_filter": ""
+  },
+  {
+   "table": "enhancements",
+   "id": "000009555003",
+   "side": "attacker",
+   "detachment": "Infernal Onslaught",
+   "name_en": "Unholy Fury",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "亵渎狂怒（登舰行动）：被近战摧毁后 2+ 延后反打——摧毁后反打（时序域）无载体"
+   ],
+   "provenance": {
+    "text_sha256": "d4aca3e5bd4eba5abb60a72e570b3a842f30420e32cdc51ce5f0e22acc052ad2"
+   },
+   "encoded_by": "manual-2026-07-21",
+   "weapon_filter": ""
+  },
+  {
+   "table": "enhancements",
+   "id": "000009806002",
+   "side": "attacker",
+   "detachment": "Legion of Excess",
+   "name_en": "False Majesty (Aura)",
+   "name_zh": null,
+   "status": "partial",
+   "effects": [
+    {
+     "phase": "wound",
+     "op": "modify",
+     "params": [
+      1
+     ],
+     "condition": [
+      "phase_melee"
+     ],
+     "source": "虚妄威仪（光环：6\" 内友方 SLAANESH 单位近战致伤骰 +1）"
+    }
+   ],
+   "requires_toggles": [
+    "bearer_leading"
+   ],
+   "not_modeled_notes_zh": [
+    "光环授予 6\" 内友方其它单位——挂 bearer_leading 按「本单位在光环范围内」建模",
+    "限 SLAANESH 单位且排除 MONSTER——神祇门与负关键词门均无载体，按已满足建模"
+   ],
+   "provenance": {
+    "text_sha256": "9968238331e17ce561d7233d43ea04abd18561e924749f23854f0bb133c5c185"
+   },
+   "encoded_by": "manual-2026-07-21",
+   "weapon_filter": ""
+  },
+  {
+   "table": "enhancements",
+   "id": "000009806003",
+   "side": "attacker",
+   "detachment": "Legion of Excess",
+   "name_en": "Dreaming Crown (Aura)",
+   "name_zh": null,
+   "status": "partial",
+   "effects": [
+    {
+     "phase": "hit",
+     "op": "modify",
+     "params": [
+      1
+     ],
+     "condition": [
+      "phase_melee"
+     ],
+     "source": "梦寐之冠（光环：6\" 内友方 SLAANESH 单位近战命中骰 +1）"
+    }
+   ],
+   "requires_toggles": [
+    "bearer_leading"
+   ],
+   "not_modeled_notes_zh": [
+    "光环授予 6\" 内友方其它单位——挂 bearer_leading 按「本单位在光环范围内」建模",
+    "限 SLAANESH 单位且排除 MONSTER——神祇门与负关键词门均无载体，按已满足建模"
+   ],
+   "provenance": {
+    "text_sha256": "984939ff2072aa5983b9de54fca10b1ad255b50adb9ead06d9f8d94c9586a877"
+   },
+   "encoded_by": "manual-2026-07-21",
+   "weapon_filter": ""
+  },
+  {
+   "table": "enhancements",
+   "id": "000009806004",
+   "side": "attacker",
+   "detachment": "Legion of Excess",
+   "name_en": "Avatar of Perfection",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "完美化身：孤身时重投加速/冲锋骰、忽略 M 与加速/冲锋修正——移动域无载体"
+   ],
+   "provenance": {
+    "text_sha256": "768305585d17dfb5368bbfdbe9e60067457fe54fd49e01cc68ec3ce1c4f34313"
+   },
+   "encoded_by": "manual-2026-07-21",
+   "weapon_filter": ""
+  },
+  {
+   "table": "enhancements",
+   "id": "000009806005",
+   "side": "attacker",
+   "detachment": "Legion of Excess",
+   "name_en": "Soul Glutton",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "噬魂饕餮：战斗阶段末回血 D3——治疗与击杀触发均无载体"
+   ],
+   "provenance": {
+    "text_sha256": "6191f731bdf5fd06856b8cee71a1a35e3ced2614b6c209c9f586f78c8d548286"
+   },
+   "encoded_by": "manual-2026-07-21",
+   "weapon_filter": ""
+  },
+  {
+   "table": "enhancements",
+   "id": "fp11e-chaosdaemons-lordswarp-e1",
+   "side": "attacker",
+   "detachment": "Lords of the Warp",
+   "name_en": "Swollen with Power",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "力量充盈：本模型 W 特征值 +2——引擎无 Wounds 特征值修正通道"
+   ],
+   "provenance": {
+    "text_sha256": "93b5dbd736314a44440ebc708023991ae1a65cc04d261d47ebf2f65a38b05914"
+   },
+   "encoded_by": "manual-2026-07-21",
+   "weapon_filter": ""
+  },
+  {
+   "table": "enhancements",
+   "id": "000009580002",
+   "side": "target",
+   "detachment": "Pandaemoniac Inferno",
+   "name_en": "Fulgurating Presence",
+   "name_zh": null,
+   "status": "partial",
+   "effects": [
+    {
+     "phase": "hit",
+     "op": "modify",
+     "params": [
+      -1
+     ],
+     "condition": [],
+     "source": "闪耀存在（瞄准携带者的攻击命中骰 -1）"
+    }
+   ],
+   "requires_toggles": [
+    "defender_bearer_leading"
+   ],
+   "not_modeled_notes_zh": [
+    "原文只针对**瞄准携带者**的攻击（非整单位）——挂 defender_bearer_leading 开关，单模型口径；整单位模拟会高估",
+    "原文无相位措辞（each time an attack targets the bearer）——两相位注入，不加相位门"
+   ],
+   "provenance": {
+    "text_sha256": "a3c6c0a0f331b37869ad960b6151c0f58718789416274b5c41cf145bfb6b2711"
+   },
+   "encoded_by": "manual-2026-07-21",
+   "weapon_filter": ""
+  },
+  {
+   "table": "enhancements",
+   "id": "000009580003",
+   "side": "attacker",
+   "detachment": "Pandaemoniac Inferno",
+   "name_en": "Mutagenic Flames",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "诱变火焰（登舰行动）：射击后令被命中敌单位命中 -1 至下个射击阶段——跨阶段持续 + 效果施加于敌方单位（异单位减益），无载体"
+   ],
+   "provenance": {
+    "text_sha256": "c82908a5c2304b91b22ac8402c9b28efd6fab706392a0be6234362ee6c512285"
+   },
+   "encoded_by": "manual-2026-07-21",
+   "weapon_filter": ""
+  },
+  {
+   "table": "enhancements",
+   "id": "000009819002",
+   "side": "attacker",
+   "detachment": "Plague Legion",
+   "name_en": "Cankerblight",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "溃疽枯萎（光环）：6\" 内敌单位战栗检定失败即毁一个模型（排除 MONSTERS/VEHICLES）——战栗检定、直接毁模型、负关键词门三重无载体"
+   ],
+   "provenance": {
+    "text_sha256": "1a378d60fcac987d1e575440340e348b28c14fc8e2a924023f271900f92790b0"
+   },
+   "encoded_by": "manual-2026-07-21",
+   "weapon_filter": ""
+  },
+  {
+   "table": "enhancements",
+   "id": "000009819003",
+   "side": "attacker",
+   "detachment": "Plague Legion",
+   "name_en": "Maggot Maws",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "蛆虫巨口：射击阶段点名 6\" 内敌单位做战栗检定 + 3+ 吃 D3 致命伤——战栗检定与致命伤池均无载体"
+   ],
+   "provenance": {
+    "text_sha256": "2f385815fcdf65b516bd23cca365eb666f200282e821f37e77f47147e9f2e48d"
+   },
+   "encoded_by": "manual-2026-07-21",
+   "weapon_filter": ""
+  },
+  {
+   "table": "enhancements",
+   "id": "000009819004",
+   "side": "attacker",
+   "detachment": "Plague Legion",
+   "name_en": "Droning Shroud (Aura)",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "嗡鸣裹尸布（光环）：6\" 内友方 NURGLE 单位只能被 18\" 内的远程攻击瞄准——选靶资格/射程几何无载体"
+   ],
+   "provenance": {
+    "text_sha256": "b4a9e9107ff8fc72e1694d91d99ebf11387cd5f58725e309a9a4cd2ac47324d3"
+   },
+   "encoded_by": "manual-2026-07-21",
+   "weapon_filter": ""
+  },
+  {
+   "table": "enhancements",
+   "id": "000009819005",
+   "side": "attacker",
+   "detachment": "Plague Legion",
+   "name_en": "Font of Spores (Aura)",
+   "name_zh": null,
+   "status": "partial",
+   "effects": [
+    {
+     "phase": "save",
+     "op": "ap_improve",
+     "params": [
+      1
+     ],
+     "condition": [],
+     "source": "孢子之泉（光环：6\" 内友方 NURGLE 单位武器 AP 特征值改善 1）"
+    }
+   ],
+   "requires_toggles": [
+    "bearer_leading"
+   ],
+   "not_modeled_notes_zh": [
+    "光环授予 6\" 内友方其它单位——挂 bearer_leading 按「本单位在光环范围内」建模",
+    "原文无相位措辞（weapons equipped by models in that unit）——两相位注入，不加相位门",
+    "限 NURGLE 单位、携带者须 MONSTER——神祇/关键词门无载体，按已满足建模"
+   ],
+   "provenance": {
+    "text_sha256": "256b751db6eee445fa118a97c6d2ceda3b5576da64ec9e1a474695b330607fb0"
+   },
+   "encoded_by": "manual-2026-07-21",
+   "weapon_filter": ""
+  },
+  {
+   "table": "enhancements",
+   "id": "000009564002",
+   "side": "attacker",
+   "detachment": "Rotten and Rusted",
+   "name_en": "Virulent Corruption",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "剧毒腐化（登舰行动）：强制敌走绝望逃脱且检定 -1——绝望逃脱域无载体"
+   ],
+   "provenance": {
+    "text_sha256": "e9119a3403a665bceac489ea638f3420ac5770bbefa217b6480ea609213ea408"
+   },
+   "encoded_by": "manual-2026-07-21",
+   "weapon_filter": ""
+  },
+  {
+   "table": "enhancements",
+   "id": "000009564003",
+   "side": "attacker",
+   "detachment": "Rotten and Rusted",
+   "name_en": "Endless Gift",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "无尽馈赠（登舰行动）：携带者 W 特征值 +2——引擎无 Wounds 特征值修正通道"
+   ],
+   "provenance": {
+    "text_sha256": "57b9ab92473a89a4b86319dec1a7b0cf492e89be5160f9c829394454cbe38d0e"
+   },
+   "encoded_by": "manual-2026-07-21",
+   "weapon_filter": ""
+  },
+  {
+   "table": "enhancements",
+   "id": "000009810002",
+   "side": "attacker",
+   "detachment": "Scintillating Legion",
+   "name_en": "Inescapable Eye",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "无从逃避之眼：指挥阶段多得 1 枚 Flux token——token 经济无载体"
+   ],
+   "provenance": {
+    "text_sha256": "8fe4c58d36c61c7d72cc93195eef6b22807867d4ec996bae896f8e5bcb4d304f"
+   },
+   "encoded_by": "manual-2026-07-21",
+   "weapon_filter": ""
+  },
+  {
+   "table": "enhancements",
+   "id": "000009810003",
+   "side": "attacker",
+   "detachment": "Scintillating Legion",
+   "name_en": "Infernal Puppeteer",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "地狱傀儡师：改从友军单位量测射程与视线——射程/视线几何无载体"
+   ],
+   "provenance": {
+    "text_sha256": "b6b2d8105cd7293ea8889c0f7936ba6990c7d02f3733df8fdf1b6479d1a180b3"
+   },
+   "encoded_by": "manual-2026-07-21",
+   "weapon_filter": ""
+  },
+  {
+   "table": "enhancements",
+   "id": "000009810004",
+   "side": "attacker",
+   "detachment": "Scintillating Legion",
+   "name_en": "Neverblade",
+   "name_zh": null,
+   "status": "partial",
+   "effects": [
+    {
+     "phase": "wound",
+     "op": "s_improve",
+     "params": [
+      2
+     ],
+     "condition": [
+      "phase_melee"
+     ],
+     "source": "永恒之刃（携带者近战武器 S +2）"
+    },
+    {
+     "phase": "attacks",
+     "op": "modify",
+     "params": [
+      1
+     ],
+     "condition": [
+      "phase_melee"
+     ],
+     "source": "永恒之刃（携带者近战武器 A +1）"
+    },
+    {
+     "phase": "save",
+     "op": "ap_improve",
+     "params": [
+      1
+     ],
+     "condition": [
+      "phase_melee"
+     ],
+     "source": "永恒之刃（携带者近战武器 AP 改善 1）"
+    },
+    {
+     "phase": "hit",
+     "op": "modify",
+     "params": [
+      1
+     ],
+     "condition": [
+      "phase_melee"
+     ],
+     "source": "永恒之刃（携带者近战攻击命中骰 +1）"
+    }
+   ],
+   "requires_toggles": [
+    "bearer_leading"
+   ],
+   "not_modeled_notes_zh": [
+    "限携带者模型的近战武器——挂 bearer_leading 开关，单模型口径",
+    "限 TZEENTCH LEGIONES DAEMONICA MONSTER 模型（单位对局假设携带者即该型）"
+   ],
+   "provenance": {
+    "text_sha256": "3acaebb83958097322ac38e3d3b669c97f65e9a10bea15e5b5627f235364ed97"
+   },
+   "encoded_by": "manual-2026-07-21",
+   "weapon_filter": ""
+  },
+  {
+   "table": "enhancements",
+   "id": "000009810005",
+   "side": "attacker",
+   "detachment": "Scintillating Legion",
+   "name_en": "Improbable Shield (Aura)",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "非概然之盾（光环）：6\" 内友方 TZEENTCH 单位对**灵能攻击与致命伤**获 Feel No Pain 4+——fnp 通道不分伤害来源，裸编会对所有伤害过度施加（沿 PR22 RUNE-CURSED STRONGHOLD 先例）"
+   ],
+   "provenance": {
+    "text_sha256": "ca94190c49aadf5204db6715086b120c3b3bab136c754c5a3dc350ed2d52a1ec"
+   },
+   "encoded_by": "manual-2026-07-21",
+   "weapon_filter": ""
+  },
+  {
+   "table": "enhancements",
+   "id": "000009980002",
+   "side": "attacker",
+   "detachment": "Shadow Legion",
+   "name_en": "Leaping Shadows",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "跃动暗影：携带者单位获 Scouts 9\"——部署前移动无载体"
+   ],
+   "provenance": {
+    "text_sha256": "d1b6858f396d54101ab9f7075b6cab4789a26c5b1399ccdc88b9a1de7c57c58e"
+   },
+   "encoded_by": "manual-2026-07-21",
+   "weapon_filter": ""
+  },
+  {
+   "table": "enhancements",
+   "id": "000009980003",
+   "side": "attacker",
+   "detachment": "Shadow Legion",
+   "name_en": "Mantle of Gloom (Aura)",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "阴郁之幕（光环）：接战敌单位 OC -1——目标控制特征值无载体"
+   ],
+   "provenance": {
+    "text_sha256": "4142ee163e41fb2618e82c0b1b810a82dc97a7102c19a292a4db4bcaee3a8d5e"
+   },
+   "encoded_by": "manual-2026-07-21",
+   "weapon_filter": ""
+  },
+  {
+   "table": "enhancements",
+   "id": "000009980004",
+   "side": "attacker",
+   "detachment": "Shadow Legion",
+   "name_en": "Fade to Darkness",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "隐入黑暗：战斗阶段末撤出战场进战略预备队——预备队域无载体"
+   ],
+   "provenance": {
+    "text_sha256": "3a903d181fb75ee6bf183d53d03b7f0c146705351bef8d488e76cec16c5c6113"
+   },
+   "encoded_by": "manual-2026-07-21",
+   "weapon_filter": ""
+  },
+  {
+   "table": "enhancements",
+   "id": "000009980005",
+   "side": "attacker",
+   "detachment": "Shadow Legion",
+   "name_en": "Malice Made Manifest",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "恶意具现：战斗阶段初点名接战敌单位掷 D6 造致命伤——致命伤池无载体"
+   ],
+   "provenance": {
+    "text_sha256": "8e03039a1cd8f504383ff253a073ee3c9819735c04a698c86bc9723aabd7a8f8"
+   },
+   "encoded_by": "manual-2026-07-21",
+   "weapon_filter": ""
+  },
+  {
+   "table": "enhancements",
+   "id": "fp11e-chaosdaemons-warptide-e1",
+   "side": "attacker",
+   "detachment": "Warptide",
+   "name_en": "Bane-forged Weapons",
+   "name_zh": null,
+   "status": "partial",
+   "effects": [
+    {
+     "phase": "wound",
+     "op": "s_improve",
+     "params": [
+      1
+     ],
+     "condition": [],
+     "source": "祸铸武装（本单位攻击 S 特征值 +1）"
+    }
+   ],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "原文是 UPGRADE 整单位生效（This unit's attacks），**不挂** bearer 开关",
+    "原文无相位措辞——两相位注入，不加相位门",
+    "限 LEGIONES DAEMONICA BATTLELINE 单位（单位对局假设本单位即 BATTLELINE）"
+   ],
+   "provenance": {
+    "text_sha256": "667fe97ad4e1dca19e04c10d130409e2ff0e4a105d8c20fa2062ab1445abc3c5"
+   },
+   "encoded_by": "manual-2026-07-21",
+   "weapon_filter": ""
+  },
+  {
+   "table": "enhancements",
+   "id": "fp11e-chaosdaemons-warptide-e2",
+   "side": "attacker",
+   "detachment": "Warptide",
+   "name_en": "Soul-hungry Slaughterers",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "饥魂屠戮者：英雄干预/火力守望战略 -1 CP——CP 经济无载体"
+   ],
+   "provenance": {
+    "text_sha256": "62ae3aed7349edc1586c50254885c981f0a76a71bef5ae08793ff345c059d006"
+   },
+   "encoded_by": "manual-2026-07-21",
+   "weapon_filter": ""
+  }
+ ]
+}

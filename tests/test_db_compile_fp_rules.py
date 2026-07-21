@@ -419,8 +419,11 @@ class TestInserts:
         #   Covenant 三全新分队各 1 规则+2 增强+3 战略；FP 页 2/3/4，Wahapedia 未滚入）
         # + 混沌骑士 16 条（PR22：Bastions of Tyranny / Hunting Warpack 两全新分队各
         #   1 规则+2 增强+3 战略；Iconoclast Fiefdom 完整重印新增 2 增强+2 战略）
+        # + 混沌恶魔 18 条（PR26：Cavalcade of Chaos 1 规则+2 增强+3 战略、
+        #   Lords of the Warp 1 规则+1 增强+4 战略、Warptide 1 规则+2 增强+3 战略
+        #   ——三全新分队，FP 页 120/121/122，Wahapedia 未滚入）
         ins = data.get("inserts", [])
-        assert len(ins) == 282
+        assert len(ins) == 300
         ids = {p["values"]["id"] for p in ins}
         assert ids == {"fp11e-tau-aac-det", "fp11e-tau-aac-s1", "fp11e-tau-aac-s2",
                        "fp11e-tau-aac-s3", "fp11e-tau-aux-gbu",
@@ -588,7 +591,26 @@ class TestInserts:
                        "fp11e-chaosknights-iconoclast-e1",
                        "fp11e-chaosknights-iconoclast-e2",
                        "fp11e-chaosknights-iconoclast-s1",
-                       "fp11e-chaosknights-iconoclast-s2"}
+                       "fp11e-chaosknights-iconoclast-s2",
+                       # PR26 混沌恶魔：三全新分队
+                       "fp11e-chaosdaemons-cavalcade",
+                       "fp11e-chaosdaemons-cavalcade-e1",
+                       "fp11e-chaosdaemons-cavalcade-e2",
+                       "fp11e-chaosdaemons-cavalcade-s1",
+                       "fp11e-chaosdaemons-cavalcade-s2",
+                       "fp11e-chaosdaemons-cavalcade-s3",
+                       "fp11e-chaosdaemons-lordswarp",
+                       "fp11e-chaosdaemons-lordswarp-e1",
+                       "fp11e-chaosdaemons-lordswarp-s1",
+                       "fp11e-chaosdaemons-lordswarp-s2",
+                       "fp11e-chaosdaemons-lordswarp-s3",
+                       "fp11e-chaosdaemons-lordswarp-s4",
+                       "fp11e-chaosdaemons-warptide",
+                       "fp11e-chaosdaemons-warptide-e1",
+                       "fp11e-chaosdaemons-warptide-e2",
+                       "fp11e-chaosdaemons-warptide-s1",
+                       "fp11e-chaosdaemons-warptide-s2",
+                       "fp11e-chaosdaemons-warptide-s3"}
         for p in ins:
             assert p.get("fp_source")
             assert p["values"].get("id", "").startswith("fp11e-")
