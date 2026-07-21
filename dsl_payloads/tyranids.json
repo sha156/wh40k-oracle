@@ -1,0 +1,2881 @@
+{
+ "_comment": "P7 阵营技能 DSL 唯一真源（吞噬者 Tyranids，faction='TYR'，P7-PR31）。DB effect_dsl_json/dsl_status 只是投影，由 `python -m db_compile dsl-apply` 写入并挂 restore；A/B 工作单见 docs/superpowers/plans/2026-07-20-p7-pr31-tyranids-worklist.md。覆盖 2 条军规（突触 / 扭曲阴影）+ 14 个分队容器（12 个库内分队 + 2 个 FP 全新分队）的 14 条分队规则 + 67 战略 + 41 增强 = 124 条。三态：16 encoded / 19 partial / 89 not_modeled。零新引擎通道、零新态势开关（只复用既有的 bearer_leading 与 defender_bearer_leading 两个通用假设门）。吞噬者是「突触范围位置态 × 再生复活 × 群体机动」气质阵营：军规与过半分队规则、战略都落在突触范围位置态、治疗与复活域、移动与预备队域、目标点控制、战斗震撼与士气、死后反打，全部无引擎载体，故 not_modeled 占多数。可编子集集中在命中·致伤骰修正与重掷 / AP 改善·恶化 / [IGNORES COVER] / [LETHAL HITS] / [SUSTAINED HITS 1] / 掩体 / FNP / 无效保护 / 伤害减免 / S 加值 / 暴击阈值。阶段门纪律（双向核对）：WHEN 落在单一相位的挂 phase_melee/phase_shooting；WHEN 写「对手射击阶段或近战阶段」「我方射击阶段或近战阶段」或原文根本未限相位的，一律不加门（过度加门＝欠建模，同属事实错误）；ENFILADING EMERGENCE 的持续期「到我方下一个近战阶段结束」跨射击与近战两相位，同样不加门。opt-in 判据（沿 PR29/PR30 既有约定）：战略与增强须被 select_entries 点名才入选，故其 TARGET 段的单位类型与几何/状态前提（「处于我军突触范围内」「位于我方控制的目标点范围内」「本阶段尚未被选定射击」等）由使用者点名时自行满足，不计作未建模残量；反之 EFFECT 段内部的条件分歧（「若……则改为」「若……则同样 +1」）是运行时分歧，必须逐条注记并降 partial。分队规则**非 opt-in**（分队一匹配就自动施加），其「Each time a〈窄关键词〉模型/单位……」限定的是受益者集合而非玩家选择，引擎无攻/守方自关键词门，必须逐条注记并降 partial（半瞥之影 / 战兽领主两条）。防高估：只重掷 1（突袭强攻军规、不可抗拒的意志、噬心饥渴）、单骰重掷（完美适应）、仅对致命伤或特定来源的 FNP（催化生物强化、空无结节）、三选一（超适应、突触指令、捕食指令、指令支配）、攻方自身战损档（狂暴巨兽）、攻方自身编制门（涌动群兽的 15 模型档）、整条效果的唯一开关无载体（反捕猎的 hidden 目标门——不是增量分支而是唯一开关，且近战阶段目标几乎不可能仍 hidden，恒满足化等于全程虚增一档 S 与一档 AP）、「仅暴击致伤的那几发」（穿刺利爪）、[PSYCHIC] 关键词武器 weapon_filter 选不中（虫巢心智之力）、「射击 × 目标关键词」无复合 tag（扰动捕食）、定额致命伤池（重压冲击、窒息之影、噬菌孢子）、死后反打（死亡狂乱、肾上腺屠杀、暴怒后备）——一律不编。fp_rules 侧：Warrior Bioform Onslaught 11 版整页重印（1 规则 + 2 增强 + 3 战略）落 5 条 text_patch + 6 条 removed_11e + 1 条 fp_new（ALIEN PHYSIOLOGY）；RULES UPDATES 真漂移 11 条（其中 Insurmountable Odds / HYPERSENSORY SCILLIA / Biovores 三条来自 PDF 原页——refine 缓存 page_019.md 尾部截断整块漏掉）；Ambush Predators / Talons of the Norn Queen 两个全新分队 12 行 inserts（fp11e-tyranids-*）。",
+ "dsl_version": 1,
+ "faction": "TYR",
+ "entries": [
+  {
+   "table": "abilities",
+   "id": "000000705",
+   "side": "attacker",
+   "detachment": null,
+   "name_en": "Synapse",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "突触（Synapse，11 版吞噬者军规）：受益前提是「本单位处于我军突触范围内」（6\" 内有友军 SYNAPSE 模型）——这是每回合都在变的位置态，引擎无位置域也无该状态开关，零新开关约束下无载体",
+    "第一款「战斗震撼检定改投 3D6」落在战斗震撼域，引擎不建模士气，无载体",
+    "第二款「近战攻击 S+1」本身有 (wound, s_improve) 通道，但它整体挂在突触范围前提下——裸编会对任何吞噬者攻方无条件 +1 S（过度施加），故整条不编"
+   ],
+   "provenance": {
+    "text_sha256": "8dc5d018a6543a8d00ae10b0b7b44ed1175aded74be0ef7423e8b0ed540edd4c"
+   },
+   "encoded_by": "manual-2026-07-21",
+   "weapon_filter": ""
+  },
+  {
+   "table": "abilities",
+   "id": "000000707",
+   "side": "attacker",
+   "detachment": null,
+   "name_en": "Shadow in the Warp",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "扭曲阴影（Shadow in the Warp，11 版吞噬者军规）：每战一次令全场敌军作战斗震撼检定、6\" 内有 SYNAPSE 单位时该检定 -1——纯战斗震撼域，引擎不建模士气与指挥阶段，无载体"
+   ],
+   "provenance": {
+    "text_sha256": "63904f7e0076c88d07759c78cfe9f307955386f04d1d3775c0712fa5ad26fdfd"
+   },
+   "encoded_by": "manual-2026-07-21",
+   "weapon_filter": ""
+  },
+  {
+   "table": "abilities",
+   "id": "det000008356",
+   "side": "attacker",
+   "detachment": "Invasion Fleet",
+   "name_en": "Hyper-adaptations",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "超适应（Hyper-adaptations，入侵舰队）：首轮开始三选一，引擎无「军队级三选一」载体，三项全编会同时施加＝过度施加；零新开关约束下不为一条加开关组",
+    "三项分别是「对 INFANTRY/SWARM 的 [SUSTAINED HITS 1]」「对 MONSTER/VEHICLE 的 [LETHAL HITS]」「对 CHARACTER 暴击时 [PRECISION]」——第三项的 [PRECISION]（打击附着角色）无引擎载体，另两项也须「射击/近战通吃 × 目标关键词」复合 tag，引擎只有近战向的 melee_target_has_keyword，无通相位版本"
+   ],
+   "provenance": {
+    "text_sha256": "33f2669cc25db6b187e9ec7e35abc15c3a67b4f11cbce4ba53aeacc8055d8dbc"
+   },
+   "encoded_by": "manual-2026-07-21",
+   "weapon_filter": "",
+   "materialize": {
+    "from_table": "detachments",
+    "from_id": "000008356",
+    "from_column": "rule_text"
+   }
+  },
+  {
+   "table": "abilities",
+   "id": "det000008403",
+   "side": "attacker",
+   "detachment": "Crusher Stampede",
+   "name_en": "Enraged Behemoths",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "狂暴巨兽（Enraged Behemoths，碾压兽群）：加值前提是「攻方自己所在单位低于满编/半编」——引擎的 target_below_starting/target_below_half 讲的是**守方**战损档，无攻方自身战损档载体（PR30 殷尼德的使者同判），裸编会方向写反",
+    "「满编时 OC +2」落在目标点控制域，无引擎载体"
+   ],
+   "provenance": {
+    "text_sha256": "0a20e41ddd7bb03a2a600606abf1728710bd0abb3ec04ab38bd6740e85412013"
+   },
+   "encoded_by": "manual-2026-07-21",
+   "weapon_filter": "",
+   "materialize": {
+    "from_table": "detachments",
+    "from_id": "000008403",
+    "from_column": "rule_text"
+   }
+  },
+  {
+   "table": "abilities",
+   "id": "det000008407",
+   "side": "attacker",
+   "detachment": "Unending Swarm",
+   "name_en": "Insurmountable Odds",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "不可逾越之势（Insurmountable Odds，无尽虫群，11 版已改写为核心 surge move）：被射击减员后作 D6\" surge move——纯移动域，引擎不建模移动，无载体"
+   ],
+   "provenance": {
+    "text_sha256": "36c83c310e2752273702abc419ec8db6c71ca2fbb3a26265fe1690c79034d82f"
+   },
+   "encoded_by": "manual-2026-07-21",
+   "weapon_filter": "",
+   "materialize": {
+    "from_table": "detachments",
+    "from_id": "000008407",
+    "from_column": "rule_text"
+   }
+  },
+  {
+   "table": "abilities",
+   "id": "det000008411",
+   "side": "attacker",
+   "detachment": "Assimilation Swarm",
+   "name_en": "Feed the Swarm",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "喂养虫群（Feed the Swarm，同化虫群）：指挥阶段由 HARVESTER 单位为友军回血 D3+1 或复活模型——治疗与复活域无引擎载体（引擎只跑单次攻击序列，不建模回合间恢复）"
+   ],
+   "provenance": {
+    "text_sha256": "e4884c5a0f822106f8c520d25cf6cdf8200b9de014b0b1d5f2be9b8cabc7aaff"
+   },
+   "encoded_by": "manual-2026-07-21",
+   "weapon_filter": "",
+   "materialize": {
+    "from_table": "detachments",
+    "from_id": "000008411",
+    "from_column": "rule_text"
+   }
+  },
+  {
+   "table": "abilities",
+   "id": "det000008415",
+   "side": "attacker",
+   "detachment": "Vanguard Onslaught",
+   "name_en": "Questing Tendrils",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "探寻触须（Questing Tendrils，先锋猛攻）：撤退/加速回合仍可宣布冲锋——冲锋资格域无引擎载体"
+   ],
+   "provenance": {
+    "text_sha256": "ba23c252ed9fe769396fb780960bd68afebf69d5fa53285c7b33778b98dcf315"
+   },
+   "encoded_by": "manual-2026-07-21",
+   "weapon_filter": "",
+   "materialize": {
+    "from_table": "detachments",
+    "from_id": "000008415",
+    "from_column": "rule_text"
+   }
+  },
+  {
+   "table": "abilities",
+   "id": "det000008420",
+   "side": "attacker",
+   "detachment": "Synaptic Nexus",
+   "name_en": "Synaptic Imperatives",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "突触指令（Synaptic Imperatives，突触枢纽）：每战斗轮从三道指令中选一道，且只对处于我军突触范围内的单位生效——三选一无载体，突触范围位置态亦无载体",
+    "三道指令分别是 5+ 无效保护 / 加速与冲锋骰 +1 / 近战命中 +1；第一、三项各有通道，但裸编会同时施加三项且忽略突触范围前提，属过度施加"
+   ],
+   "provenance": {
+    "text_sha256": "3e4340272cc229922e3aa8c32e4ae6eb47bc716e7d6dab0f955be837dea949e3"
+   },
+   "encoded_by": "manual-2026-07-21",
+   "weapon_filter": "",
+   "materialize": {
+    "from_table": "detachments",
+    "from_id": "000008420",
+    "from_column": "rule_text"
+   }
+  },
+  {
+   "table": "abilities",
+   "id": "det000009680",
+   "side": "attacker",
+   "detachment": "Tyranid Attack",
+   "name_en": "Xeno-Terror",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "异种恐怖（Xeno-Terror，泰伦突袭）：释放扭曲阴影时敌军战斗震撼检定 -1，检定失败者本回合不能过度警戒——战斗震撼域与射击资格域，均无引擎载体"
+   ],
+   "provenance": {
+    "text_sha256": "e6f6be5e9226fa70dd9bccd2b90d60fc6c8c1051be05070c2449a7e7a8591be7"
+   },
+   "encoded_by": "manual-2026-07-21",
+   "weapon_filter": "",
+   "materialize": {
+    "from_table": "detachments",
+    "from_id": "000009680",
+    "from_column": "rule_text"
+   }
+  },
+  {
+   "table": "abilities",
+   "id": "det000009689",
+   "side": "attacker",
+   "detachment": "Boarding Swarm",
+   "name_en": "Priority Predation",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "优先捕食（Priority Predation，登舰虫群）：敌军脱离接触后本方单位可作 3\" 普通移动——纯移动域，无引擎载体"
+   ],
+   "provenance": {
+    "text_sha256": "40be06b122da107c460f89fc0994a67c16e10342c36b8e6b81de43d29c42b005"
+   },
+   "encoded_by": "manual-2026-07-21",
+   "weapon_filter": "",
+   "materialize": {
+    "from_table": "detachments",
+    "from_id": "000009689",
+    "from_column": "rule_text"
+   }
+  },
+  {
+   "table": "abilities",
+   "id": "det000009698",
+   "side": "attacker",
+   "detachment": "Biotide",
+   "name_en": "Unstoppable Swarm",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "不可阻挡的虫群（Unstoppable Swarm，生物潮）：可穿越友军模型移动、开启舱门的对抗骰 +1——移动域与登舰行动舱门域，均无引擎载体"
+   ],
+   "provenance": {
+    "text_sha256": "2a76258dc30b40410374672cb107f76e163a88098e49364e10e7cd53449ad07a"
+   },
+   "encoded_by": "manual-2026-07-21",
+   "weapon_filter": "",
+   "materialize": {
+    "from_table": "detachments",
+    "from_id": "000009698",
+    "from_column": "rule_text"
+   }
+  },
+  {
+   "table": "abilities",
+   "id": "det000009723",
+   "side": "target",
+   "detachment": "Infestation Swarm",
+   "name_en": "Half-Glimpsed Shadows",
+   "name_zh": null,
+   "status": "partial",
+   "effects": [
+    {
+     "phase": "hit",
+     "op": "modify",
+     "params": [
+      -1
+     ],
+     "condition": [
+      "phase_shooting"
+     ],
+     "source": "半瞥之影（Half-Glimpsed Shadows，虫灾虫群）：瞄准本方 GREAT DEVOURER 单位的远程攻击命中骰 -1（守方向；phase_shooting 门＝原文限远程攻击）"
+    }
+   ],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "原文只在「攻击模型不在该单位 6\" 内」时生效；引擎无「攻方在 X\" 以外」的负向距离门（只有 ranged_within_12 / ranged_within_8 两个正向档），故 6\" 内的近距离射击也会吃到-1，属高估防御",
+    "自关键词门：受益者限本方 GREAT DEVOURER 单位；分队规则非 opt-in（选中分队即自动施加），引擎无守方自关键词门，注入到任何守方都会生效"
+   ],
+   "provenance": {
+    "text_sha256": "82435644ce4c5e16b65aa3bfa778c5973683d5cd060a17501b21b381277cf3db"
+   },
+   "encoded_by": "manual-2026-07-21",
+   "weapon_filter": "",
+   "materialize": {
+    "from_table": "detachments",
+    "from_id": "000009723",
+    "from_column": "rule_text"
+   }
+  },
+  {
+   "table": "abilities",
+   "id": "det000009736",
+   "side": "target",
+   "detachment": "Warrior Bioform Onslaught",
+   "name_en": "Leader-beasts",
+   "name_zh": null,
+   "status": "partial",
+   "effects": [
+    {
+     "phase": "save",
+     "op": "invuln",
+     "params": [
+      5
+     ],
+     "condition": [],
+     "source": "战兽领主（Leader-beasts，战士生体形态猛攻）：TYRANID WARRIORS / Tyranid Prime with Lash Whip / Winged Tyranid Prime 模型 5+ 无效保护（守方向）"
+    }
+   ],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "自关键词门：只有上述三类模型享有 5+ 无效保护；分队规则非 opt-in，引擎无守方自关键词门，注入到任何守方都会生效",
+    "「泰伦战士（远程/近战生体武器）获得 TYRANID WARRIORS 与 BATTLELINE 关键词」是编制/关键词授予，无引擎载体"
+   ],
+   "provenance": {
+    "text_sha256": "1cd03dfbaa154a57c0655427cfb314f9436e619025b204ac9f57b24574619760"
+   },
+   "encoded_by": "manual-2026-07-21",
+   "weapon_filter": "",
+   "materialize": {
+    "from_table": "detachments",
+    "from_id": "000009736",
+    "from_column": "rule_text"
+   }
+  },
+  {
+   "table": "abilities",
+   "id": "det000010146",
+   "side": "attacker",
+   "detachment": "Subterranean Assault",
+   "name_en": "Surprise Assault",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "突袭强攻（Surprise Assault，地底强袭）：全军攻击重掷命中骰 1——「只重掷 1」与引擎的 (hit, reroll)=重掷全部失败骰不等价，裸编会显著高估（防高估既定判据）",
+    "隧道标记的放置、由标记登场、敌军靠近即移除标记，全落在预备队与移动域，无引擎载体"
+   ],
+   "provenance": {
+    "text_sha256": "b9f058bb1c20796b19443ff577f73955d672b2c160d4a1800bdfb411d9d0425d"
+   },
+   "encoded_by": "manual-2026-07-21",
+   "weapon_filter": "",
+   "materialize": {
+    "from_table": "detachments",
+    "from_id": "000010146",
+    "from_column": "rule_text"
+   }
+  },
+  {
+   "table": "abilities",
+   "id": "detfp11e-tyranids-ambush",
+   "side": "attacker",
+   "detachment": "Ambush Predators",
+   "name_en": "Mindhunger",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "噬心饥渴（Mindhunger，伏击捕食者，11 版全新分队）：DEATHLEAPER/LICTOR/NEUROLICTOR 获得深入打击——预备队域无引擎载体",
+    "LICTOR/NEUROLICTOR 瞄准 CHARACTER 单位的攻击重掷命中骰 1——「只重掷 1」无等价通道（防高估既定判据），且「通相位 × 目标关键词」也无复合 tag"
+   ],
+   "provenance": {
+    "text_sha256": "a43ab34a722ccac511616c324899f059774b3957ea75519f2b94df11e96c314b"
+   },
+   "encoded_by": "manual-2026-07-21",
+   "weapon_filter": "",
+   "materialize": {
+    "from_table": "detachments",
+    "from_id": "fp11e-tyranids-ambush",
+    "from_column": "rule_text"
+   }
+  },
+  {
+   "table": "abilities",
+   "id": "detfp11e-tyranids-norn",
+   "side": "attacker",
+   "detachment": "Talons of the Norn Queen",
+   "name_en": "Higher Imperatives",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "更高指令（Higher Imperatives，诺恩女王之爪，11 版全新分队）：NORN EMISSARY/NORN ASSIMILATOR 每战一次可在指挥阶段重选 Singular Purpose——技能重选与指挥阶段状态机无引擎载体"
+   ],
+   "provenance": {
+    "text_sha256": "ed08f868fcb88956c695e848d899e60fa0adc1b73d09e5e67b420703557eec79"
+   },
+   "encoded_by": "manual-2026-07-21",
+   "weapon_filter": "",
+   "materialize": {
+    "from_table": "detachments",
+    "from_id": "fp11e-tyranids-norn",
+    "from_column": "rule_text"
+   }
+  },
+  {
+   "table": "stratagems",
+   "id": "000008349002",
+   "side": "target",
+   "detachment": "Invasion Fleet",
+   "name_en": "RAPID REGENERATION",
+   "name_zh": null,
+   "status": "partial",
+   "effects": [
+    {
+     "phase": "fnp",
+     "op": "fnp",
+     "params": [
+      6
+     ],
+     "condition": [],
+     "source": "快速再生（RAPID REGENERATION）：本单位模型获得 FNP 6+（守方向；WHEN 覆盖对手射击阶段与近战阶段两相位，故不加相位门）"
+    }
+   ],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "EFFECT 段内部分歧「若本单位处于我军突触范围内则改为 FNP 5+」未建模——突触范围是每回合在变的位置态，引擎无载体；本条按基础档 6+ 编码（保守，欠建模）"
+   ],
+   "provenance": {
+    "text_sha256": "4902a51f38fe56b341d87c0ce544452ff27888e0226c43d7db29aec26daddb5a"
+   },
+   "encoded_by": "manual-2026-07-21",
+   "weapon_filter": ""
+  },
+  {
+   "table": "stratagems",
+   "id": "000008349003",
+   "side": "attacker",
+   "detachment": "Invasion Fleet",
+   "name_en": "ADRENAL SURGE",
+   "name_zh": null,
+   "status": "encoded",
+   "effects": [
+    {
+     "phase": "hit",
+     "op": "crit_threshold",
+     "params": [
+      5
+     ],
+     "condition": [
+      "phase_melee"
+     ],
+     "source": "肾上腺激涌（ADRENAL SURGE）：未修正命中骰 5+ 即为暴击命中（WHEN=近战阶段，故挂 phase_melee）"
+    }
+   ],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [],
+   "provenance": {
+    "text_sha256": "3dd789e3ffd38e265a66dad363da6b8a07c24ffcf7defac8a1d9ee66c7c99902"
+   },
+   "encoded_by": "manual-2026-07-21",
+   "weapon_filter": ""
+  },
+  {
+   "table": "stratagems",
+   "id": "000008349004",
+   "side": "attacker",
+   "detachment": "Invasion Fleet",
+   "name_en": "DEATH FRENZY",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "死亡狂乱（DEATH FRENZY）：模型被消灭时 4+ 不移除、可先行还击——死后反打属回合序与移除时机域，引擎串行结算无该载体"
+   ],
+   "provenance": {
+    "text_sha256": "bc3c899138b65104d3d1696fbf2c0d5e5cdafa3ec2a0ff18d3b31f5fe618c212"
+   },
+   "encoded_by": "manual-2026-07-21",
+   "weapon_filter": ""
+  },
+  {
+   "table": "stratagems",
+   "id": "000008349005",
+   "side": "attacker",
+   "detachment": "Invasion Fleet",
+   "name_en": "OVERRUN",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "冲垮（OVERRUN）：巩固额外 3\" 或改作 6\" 普通移动——纯移动域，无引擎载体"
+   ],
+   "provenance": {
+    "text_sha256": "d6eee0375451400091c93f94dfcfaf6efdeaf4c3e83ad782faebb3d79c0c06d3"
+   },
+   "encoded_by": "manual-2026-07-21",
+   "weapon_filter": ""
+  },
+  {
+   "table": "stratagems",
+   "id": "000008349006",
+   "side": "attacker",
+   "detachment": "Invasion Fleet",
+   "name_en": "PREDATORY IMPERATIVE",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "捕食指令（PREDATORY IMPERATIVE）：为选定单位额外激活一项超适应——与军规超适应同判（三选一 + [PRECISION] 无载体 + 通相位关键词门无复合 tag）"
+   ],
+   "provenance": {
+    "text_sha256": "e463d6e337b75ad935f14e60dbda66cf872453ea9a65fd1e36da2f4b835e3898"
+   },
+   "encoded_by": "manual-2026-07-21",
+   "weapon_filter": ""
+  },
+  {
+   "table": "stratagems",
+   "id": "000008349007",
+   "side": "attacker",
+   "detachment": "Invasion Fleet",
+   "name_en": "ENDLESS SWARM",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "无尽虫群（ENDLESS SWARM）：为单位复活至多 D3+3 个模型——复活域无引擎载体"
+   ],
+   "provenance": {
+    "text_sha256": "75886b61d049c9da8f4956e6a40c57d34ebbddad0694abd2ef0c23c7d9bd92f8"
+   },
+   "encoded_by": "manual-2026-07-21",
+   "weapon_filter": ""
+  },
+  {
+   "table": "stratagems",
+   "id": "000008409002",
+   "side": "attacker",
+   "detachment": "Unending Swarm",
+   "name_en": "SYNAPTIC GOADING",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "突触驱策（SYNAPTIC GOADING）：重掷 surge move 距离并改为朝目标点移动——纯移动域，无引擎载体"
+   ],
+   "provenance": {
+    "text_sha256": "2bd9c334b083b3fa427d175a94166c4bc45ae887bad68db6ffc27a595d2ec7a4"
+   },
+   "encoded_by": "manual-2026-07-21",
+   "weapon_filter": ""
+  },
+  {
+   "table": "stratagems",
+   "id": "000008409003",
+   "side": "attacker",
+   "detachment": "Unending Swarm",
+   "name_en": "UNENDING WAVES",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "无尽波涛（UNENDING WAVES）：把被消灭的单位以满编重新加入预备队——复活与预备队域，无引擎载体"
+   ],
+   "provenance": {
+    "text_sha256": "dbc99e21a6a559c5356dd0554f0bc5cfaaa6617134b648c626a7c4a401737147"
+   },
+   "encoded_by": "manual-2026-07-21",
+   "weapon_filter": ""
+  },
+  {
+   "table": "stratagems",
+   "id": "000008409004",
+   "side": "target",
+   "detachment": "Unending Swarm",
+   "name_en": "TEEMING MASSES",
+   "name_zh": null,
+   "status": "encoded",
+   "effects": [
+    {
+     "phase": "hit",
+     "op": "modify",
+     "params": [
+      -1
+     ],
+     "condition": [],
+     "source": "蜂拥成群（TEEMING MASSES）：瞄准本单位的攻击命中骰 -1（守方向；WHEN 覆盖对手射击阶段与近战阶段两相位，故不加相位门）"
+    }
+   ],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [],
+   "provenance": {
+    "text_sha256": "d36d79dd70690880e5993e59f73f9758810e62ea60c0f51c59532cd8882967dd"
+   },
+   "encoded_by": "manual-2026-07-21",
+   "weapon_filter": ""
+  },
+  {
+   "table": "stratagems",
+   "id": "000008409005",
+   "side": "attacker",
+   "detachment": "Unending Swarm",
+   "name_en": "SWARMING MASSES",
+   "name_zh": null,
+   "status": "partial",
+   "effects": [
+    {
+     "phase": "hit",
+     "op": "extra_hits",
+     "params": [
+      1
+     ],
+     "condition": [],
+     "source": "涌动群兽（SWARMING MASSES）：本单位武器获得 [SUSTAINED HITS 1]（WHEN 覆盖我方射击阶段与近战阶段两相位，故不加相位门）"
+    }
+   ],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "「本单位含 15 个以上模型时未修正命中骰 5+ 即为暴击命中」的编制门未建模——引擎无攻方自身模型数门，裸编会对任何编制放行（故只编基础从句，保守）"
+   ],
+   "provenance": {
+    "text_sha256": "dfd3b0e86c829476d5f38904572c2420aba1845a3a5349625ee88a1d57049a62"
+   },
+   "encoded_by": "manual-2026-07-21",
+   "weapon_filter": ""
+  },
+  {
+   "table": "stratagems",
+   "id": "000008409006",
+   "side": "attacker",
+   "detachment": "Unending Swarm",
+   "name_en": "BOUNDING ADVANCE",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "跃进（BOUNDING ADVANCE）：免加速骰、M+6\"——纯移动域，无引擎载体"
+   ],
+   "provenance": {
+    "text_sha256": "b049fa2d2a3fb9085bee84e7d08014cf87a5042d905ca5c31866881b4bc7c63b"
+   },
+   "encoded_by": "manual-2026-07-21",
+   "weapon_filter": ""
+  },
+  {
+   "table": "stratagems",
+   "id": "000008409007",
+   "side": "target",
+   "detachment": "Unending Swarm",
+   "name_en": "PRESERVATION IMPERATIVE",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "存续指令（PRESERVATION IMPERATIVE）：本单位视为不足五个模型以规避 [BLAST]——引擎的 (attacks, blast) 通道只在攻方侧，守方侧无对应消费点，无载体"
+   ],
+   "provenance": {
+    "text_sha256": "db9b4aad75acfed8a28914024669a4da2c5a0b354a93f0a668dbb71d3d7b57bd"
+   },
+   "encoded_by": "manual-2026-07-21",
+   "weapon_filter": ""
+  },
+  {
+   "table": "stratagems",
+   "id": "000008413002",
+   "side": "attacker",
+   "detachment": "Assimilation Swarm",
+   "name_en": "BROODGUARD IMPULSE",
+   "name_zh": null,
+   "status": "partial",
+   "effects": [
+    {
+     "phase": "wound",
+     "op": "modify",
+     "params": [
+      1
+     ],
+     "condition": [],
+     "source": "育种守卫本能（BROODGUARD IMPULSE）：友军吞噬者模型瞄准该敌军单位的攻击致伤骰 +1（原文未限相位，故不加相位门）"
+    }
+   ],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "受益面限「刚消灭本方 HARVESTER 单位的那个敌军单位」——引擎单次对局无「指定敌军单位」载体，按守方即为该单位处理（高估）"
+   ],
+   "provenance": {
+    "text_sha256": "cbb35cc200ee6b9121a546b9ff12c22610510c728115a415b9ac7f33ebdefa57"
+   },
+   "encoded_by": "manual-2026-07-21",
+   "weapon_filter": ""
+  },
+  {
+   "table": "stratagems",
+   "id": "000008413003",
+   "side": "attacker",
+   "detachment": "Assimilation Swarm",
+   "name_en": "RECLAIM BIOMASS",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "回收生物质（RECLAIM BIOMASS）：触发一次喂养虫群的再生——治疗/复活域无引擎载体"
+   ],
+   "provenance": {
+    "text_sha256": "7798354238f0f70f517d96e768eab3843597f4aa1ff0a4a70c3cd3ea5c879843"
+   },
+   "encoded_by": "manual-2026-07-21",
+   "weapon_filter": ""
+  },
+  {
+   "table": "stratagems",
+   "id": "000008413004",
+   "side": "attacker",
+   "detachment": "Assimilation Swarm",
+   "name_en": "TYRANNOFORMED",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "泰伦形变（TYRANNOFORMED）：锁定目标点控制权——目标点域无引擎载体"
+   ],
+   "provenance": {
+    "text_sha256": "db31c55cb46663337bce8738d502659aa2af40baf579bc750ab7089430119c6c"
+   },
+   "encoded_by": "manual-2026-07-21",
+   "weapon_filter": ""
+  },
+  {
+   "table": "stratagems",
+   "id": "000008413005",
+   "side": "target",
+   "detachment": "Assimilation Swarm",
+   "name_en": "ABLATIVE CARAPACE",
+   "name_zh": null,
+   "status": "partial",
+   "effects": [
+    {
+     "phase": "fnp",
+     "op": "fnp",
+     "params": [
+      5
+     ],
+     "condition": [],
+     "source": "剥离甲壳（ABLATIVE CARAPACE）：本单位模型获得 FNP 5+（守方向；WHEN 覆盖对手射击阶段与近战阶段两相位，故不加相位门）"
+    }
+   ],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "EFFECT 段内部分歧「若本单位位于我方控制的目标点范围内则改为 FNP 4+」未建模——目标点范围无引擎载体；本条按基础档 5+ 编码（保守，欠建模）"
+   ],
+   "provenance": {
+    "text_sha256": "37f0e096f8e654b7d8a21a7b4361c8e3ced07379abd89c4d5eb64bfd9cd2a16f"
+   },
+   "encoded_by": "manual-2026-07-21",
+   "weapon_filter": ""
+  },
+  {
+   "table": "stratagems",
+   "id": "000008413006",
+   "side": "attacker",
+   "detachment": "Assimilation Swarm",
+   "name_en": "SECURE BIOMASS",
+   "name_zh": null,
+   "status": "partial",
+   "effects": [
+    {
+     "phase": "hit",
+     "op": "auto_wound",
+     "params": [],
+     "condition": [
+      "phase_melee"
+     ],
+     "source": "确保生物质（SECURE BIOMASS）：本单位近战武器获得 [LETHAL HITS]（WHEN=近战阶段，故挂 phase_melee）"
+    }
+   ],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "EFFECT 段内部分歧「若本单位是 HARVESTER 单位，则未修正命中骰 5+ 也算暴击命中」未建模——引擎无「攻方单位是否具备 HARVESTER 关键词」的判定，裸编暴击阈值会对任何单位放行（故只编基础从句，保守）"
+   ],
+   "provenance": {
+    "text_sha256": "fca1dce306348157cf4d6b75c2fc86a721df2314994b67ee8a1639718a7c3ef5"
+   },
+   "encoded_by": "manual-2026-07-21",
+   "weapon_filter": ""
+  },
+  {
+   "table": "stratagems",
+   "id": "000008413007",
+   "side": "attacker",
+   "detachment": "Assimilation Swarm",
+   "name_en": "RAPACIOUS HUNGER",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "贪婪饥饿（RAPACIOUS HUNGER）：消灭敌军单位后立即再生——治疗/复活域无引擎载体"
+   ],
+   "provenance": {
+    "text_sha256": "80d389091be9f158170f0788a5656ef69610fb26e4cde34bf0650fe2c12e990a"
+   },
+   "encoded_by": "manual-2026-07-21",
+   "weapon_filter": ""
+  },
+  {
+   "table": "stratagems",
+   "id": "000008418002",
+   "side": "attacker",
+   "detachment": "Vanguard Onslaught",
+   "name_en": "SURPRISE ASSAULT",
+   "name_zh": null,
+   "status": "partial",
+   "effects": [
+    {
+     "phase": "hit",
+     "op": "modify",
+     "params": [
+      1
+     ],
+     "condition": [],
+     "source": "突袭强攻（SURPRISE ASSAULT）：瞄准该敌军单位的攻击命中骰 +1（WHEN 覆盖我方射击阶段与近战阶段两相位，故不加相位门）"
+    }
+   ],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "「若该敌军单位战斗震撼检定失败，则致伤骰同样 +1」未建模——战斗震撼检定无引擎载体，裸编致伤 +1 会把条件加值当成恒得（故只编无条件的命中 +1，保守）",
+    "受益面限「被点名的那个敌军单位」——引擎单次对局按守方即为该单位处理（高估）"
+   ],
+   "provenance": {
+    "text_sha256": "9a54e362438316e9951d4e76e52cf2d6b0c365599b918eda4ec99b742100b5b3"
+   },
+   "encoded_by": "manual-2026-07-21",
+   "weapon_filter": ""
+  },
+  {
+   "table": "stratagems",
+   "id": "000008418003",
+   "side": "attacker",
+   "detachment": "Vanguard Onslaught",
+   "name_en": "ASSASSIN BEASTS",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "刺客兽（ASSASSIN BEASTS）：近战武器获得 [PRECISION]——打击附着角色模型属分配域，引擎不建模附着，无载体"
+   ],
+   "provenance": {
+    "text_sha256": "44230678247c78878c381e9a06c3a421f6364592d0f442da294e8ea12ba8fdf3"
+   },
+   "encoded_by": "manual-2026-07-21",
+   "weapon_filter": ""
+  },
+  {
+   "table": "stratagems",
+   "id": "000008418004",
+   "side": "attacker",
+   "detachment": "Vanguard Onslaught",
+   "name_en": "SEEDED BROODS",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "播种虫巢（SEEDED BROODS）：登场轮次视为 +1——预备队域无引擎载体"
+   ],
+   "provenance": {
+    "text_sha256": "6d954cd382f50fa3385fdef8761f22a01e075133a4c1f8835b611985d934d89a"
+   },
+   "encoded_by": "manual-2026-07-21",
+   "weapon_filter": ""
+  },
+  {
+   "table": "stratagems",
+   "id": "000008418005",
+   "side": "attacker",
+   "detachment": "Vanguard Onslaught",
+   "name_en": "HYPERSENSORY SCILLIA",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "超感纤毛（HYPERSENSORY SCILLIA，11 版 TARGET 段 9\"→8\"）：选定单位各作 6\" 普通移动——纯移动域，无引擎载体"
+   ],
+   "provenance": {
+    "text_sha256": "35713d52cd216e657b3d10f8db5fb6c6f40295521639aefefba1d94e9089fa89"
+   },
+   "encoded_by": "manual-2026-07-21",
+   "weapon_filter": ""
+  },
+  {
+   "table": "stratagems",
+   "id": "000008418006",
+   "side": "target",
+   "detachment": "Vanguard Onslaught",
+   "name_en": "UNSEEN LURKERS",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "隐匿潜伏者（UNSEEN LURKERS）：本单位只能被 18\"（孤狼 6\"）内的远程攻击选为目标——选择目标资格域，引擎不建模射程与目标选择，无载体"
+   ],
+   "provenance": {
+    "text_sha256": "a74f4d580d78c5f308ffdae65a7a43ae061dc5a4e0995fd020a51bfb286715c8"
+   },
+   "encoded_by": "manual-2026-07-21",
+   "weapon_filter": ""
+  },
+  {
+   "table": "stratagems",
+   "id": "000008418007",
+   "side": "attacker",
+   "detachment": "Vanguard Onslaught",
+   "name_en": "INVISIBLE HUNTER",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "隐形猎手（INVISIBLE HUNTER）：把单位撤回战略预备队——预备队域无引擎载体"
+   ],
+   "provenance": {
+    "text_sha256": "ff1423599e443cd6a8f3e02164d91e44f5cc2b0c3aceb0253db58095b526ffce"
+   },
+   "encoded_by": "manual-2026-07-21",
+   "weapon_filter": ""
+  },
+  {
+   "table": "stratagems",
+   "id": "000008422002",
+   "side": "attacker",
+   "detachment": "Crusher Stampede",
+   "name_en": "CORROSIVE VISCERA",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "腐蚀内脏（CORROSIVE VISCERA）：致命殒落免骰、自动造成致命伤——殒落触发的致命伤不在攻击序列内，引擎的 (wound, mortal_pool) 只承接暴击致伤转致命伤，无载体"
+   ],
+   "provenance": {
+    "text_sha256": "53671f6361dc4d84f760db167f1f0c120ecf4c8ca8d10d3bed11ceebf77eb882"
+   },
+   "encoded_by": "manual-2026-07-21",
+   "weapon_filter": ""
+  },
+  {
+   "table": "stratagems",
+   "id": "000008422003",
+   "side": "attacker",
+   "detachment": "Crusher Stampede",
+   "name_en": "RAMPAGING MONSTROSITIES",
+   "name_zh": null,
+   "status": "encoded",
+   "effects": [
+    {
+     "phase": "hit",
+     "op": "reroll",
+     "params": [
+      "fail"
+     ],
+     "condition": [
+      "phase_melee"
+     ],
+     "source": "暴走巨兽（RAMPAGING MONSTROSITIES）：本单位攻击可重掷命中骰（WHEN=近战阶段，故挂 phase_melee）"
+    }
+   ],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [],
+   "provenance": {
+    "text_sha256": "a4b9bc8365f938b684a2d6c3bb581cefac74e53f47cd2996f010ebc6c1f8c3f1"
+   },
+   "encoded_by": "manual-2026-07-21",
+   "weapon_filter": ""
+  },
+  {
+   "table": "stratagems",
+   "id": "000008422004",
+   "side": "target",
+   "detachment": "Crusher Stampede",
+   "name_en": "SAVAGE ROAR",
+   "name_zh": null,
+   "status": "partial",
+   "effects": [
+    {
+     "phase": "hit",
+     "op": "modify",
+     "params": [
+      -1
+     ],
+     "condition": [
+      "phase_melee"
+     ],
+     "source": "野性咆哮（SAVAGE ROAR）：该敌军单位瞄准本单位的攻击命中骰 -1（守方向；WHEN=近战阶段，故挂 phase_melee）"
+    }
+   ],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "「若该敌军单位战斗震撼检定失败，则致伤骰同样 -1」未建模——战斗震撼检定无引擎载体，裸编致伤 -1 会把条件减值当成恒得（故只编无条件的命中 -1，保守）"
+   ],
+   "provenance": {
+    "text_sha256": "b7daefc38527e02de6555fd43a5b1a36521a306550c97c35676478827b19dfc4"
+   },
+   "encoded_by": "manual-2026-07-21",
+   "weapon_filter": ""
+  },
+  {
+   "table": "stratagems",
+   "id": "000008422005",
+   "side": "attacker",
+   "detachment": "Crusher Stampede",
+   "name_en": "UNTRAMMELLED FEROCITY",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "肆意凶暴（UNTRAMMELLED FEROCITY）：穿越模型与地形移动——纯移动域，无引擎载体"
+   ],
+   "provenance": {
+    "text_sha256": "b7d846ae9bb7584d9948cc06bb755e36827029b83ca8a09203c6dfe3c85efb16"
+   },
+   "encoded_by": "manual-2026-07-21",
+   "weapon_filter": ""
+  },
+  {
+   "table": "stratagems",
+   "id": "000008422006",
+   "side": "attacker",
+   "detachment": "Crusher Stampede",
+   "name_en": "SWARM-GUIDED SALVOES",
+   "name_zh": null,
+   "status": "encoded",
+   "effects": [
+    {
+     "phase": "save",
+     "op": "ignores_cover",
+     "params": [],
+     "condition": [
+      "phase_shooting"
+     ],
+     "source": "群体导引齐射（SWARM-GUIDED SALVOES）：本单位远程武器获得 [IGNORES COVER]（WHEN=我方射击阶段，故挂 phase_shooting）"
+    },
+    {
+     "phase": "hit",
+     "op": "ignore_hit_mods",
+     "params": [],
+     "condition": [
+      "phase_shooting"
+     ],
+     "source": "群体导引齐射（SWARM-GUIDED SALVOES）：可忽略本单位 BS 与命中骰的任意修正（WHEN=我方射击阶段，故挂 phase_shooting）"
+    }
+   ],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [],
+   "provenance": {
+    "text_sha256": "7ecd323b4664088dfd7849031d950663979c15c51ee405e47e3b4f2e504b5778"
+   },
+   "encoded_by": "manual-2026-07-21",
+   "weapon_filter": ""
+  },
+  {
+   "table": "stratagems",
+   "id": "000008422007",
+   "side": "attacker",
+   "detachment": "Crusher Stampede",
+   "name_en": "MASSIVE IMPACT",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "重压冲击（MASSIVE IMPACT）：冲锋后投六颗 D6，每个 4+ 造成 1 点致命伤——定额致命伤池不依附攻击序列，引擎的 (wound, mortal_pool) 只承接暴击致伤转致命伤，无载体"
+   ],
+   "provenance": {
+    "text_sha256": "17fedfbe2133f04518c8b8f5956caffac5fc9c7c8befa0961f6b11168e8484e8"
+   },
+   "encoded_by": "manual-2026-07-21",
+   "weapon_filter": ""
+  },
+  {
+   "table": "stratagems",
+   "id": "000008556002",
+   "side": "attacker",
+   "detachment": "Synaptic Nexus",
+   "name_en": "THE SMOTHERING SHADOW",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "窒息之影（THE SMOTHERING SHADOW）：敌军战斗震撼失败后投六颗 D6 造成致命伤——定额致命伤池 + 战斗震撼触发，均无引擎载体"
+   ],
+   "provenance": {
+    "text_sha256": "41a59ccde5a6718fce6e2c15942607d5cea7b1c208edb70ecc9edbe3763fa94b"
+   },
+   "encoded_by": "manual-2026-07-21",
+   "weapon_filter": ""
+  },
+  {
+   "table": "stratagems",
+   "id": "000008556003",
+   "side": "attacker",
+   "detachment": "Synaptic Nexus",
+   "name_en": "SYNAPTIC CHANNELLING",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "突触传导（SYNAPTIC CHANNELLING）：把 9\" 内友军纳入我军突触范围——突触范围位置态无引擎载体"
+   ],
+   "provenance": {
+    "text_sha256": "1d3b6c964fae0f7f64eb439c76cd00230562582c2d5e9c217afd0f213c8a2b65"
+   },
+   "encoded_by": "manual-2026-07-21",
+   "weapon_filter": ""
+  },
+  {
+   "table": "stratagems",
+   "id": "000008556004",
+   "side": "attacker",
+   "detachment": "Synaptic Nexus",
+   "name_en": "IRRESISTIBLE WILL",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "不可抗拒的意志（IRRESISTIBLE WILL）：重掷命中骰 1 与致伤骰 1——「只重掷 1」与引擎的重掷全部失败骰不等价，裸编会显著高估（防高估既定判据）"
+   ],
+   "provenance": {
+    "text_sha256": "32950f54fa9f21f8ef56c9e244156bb040c44a596297a248e607ae251bdc920b"
+   },
+   "encoded_by": "manual-2026-07-21",
+   "weapon_filter": ""
+  },
+  {
+   "table": "stratagems",
+   "id": "000008556005",
+   "side": "target",
+   "detachment": "Synaptic Nexus",
+   "name_en": "REINFORCED HIVE NODE",
+   "name_zh": null,
+   "status": "encoded",
+   "effects": [
+    {
+     "phase": "save",
+     "op": "ap_improve",
+     "params": [
+      -1
+     ],
+     "condition": [],
+     "source": "强化虫巢节点（REINFORCED HIVE NODE）：瞄准本单位的攻击 AP 恶化 1（守方向；守方 AP 恶化以负参并入攻方 ap_improve 净算并夹 ≤0；WHEN 覆盖对手射击阶段与近战阶段两相位，故不加相位门）"
+    }
+   ],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [],
+   "provenance": {
+    "text_sha256": "98040d834177a084f3ebd3ca770ccbf573785f33ce9a0faa456c686dfc4e0754"
+   },
+   "encoded_by": "manual-2026-07-21",
+   "weapon_filter": ""
+  },
+  {
+   "table": "stratagems",
+   "id": "000008556006",
+   "side": "attacker",
+   "detachment": "Synaptic Nexus",
+   "name_en": "IMPERATIVE DOMINANCE",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "指令支配（IMPERATIVE DOMINANCE）：为单一单位改选一道突触指令——与分队规则突触指令同判（三选一 + 突触范围位置态无载体）"
+   ],
+   "provenance": {
+    "text_sha256": "c21a996d05dd1cb561b7cc873bc1b2bf92b299868ebf49e625071e4822a68259"
+   },
+   "encoded_by": "manual-2026-07-21",
+   "weapon_filter": ""
+  },
+  {
+   "table": "stratagems",
+   "id": "000008556007",
+   "side": "attacker",
+   "detachment": "Synaptic Nexus",
+   "name_en": "OVERRIDE INSTINCTS",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "覆盖本能（OVERRIDE INSTINCTS）：撤退后仍可射击与宣布冲锋——射击/冲锋资格域无引擎载体"
+   ],
+   "provenance": {
+    "text_sha256": "5d091b50a5170aa45a3acc7bd52edaa4a47cc8f96807879ae31c3ea19ae81150"
+   },
+   "encoded_by": "manual-2026-07-21",
+   "weapon_filter": ""
+  },
+  {
+   "table": "stratagems",
+   "id": "000009682002",
+   "side": "attacker",
+   "detachment": "Tyranid Attack",
+   "name_en": "BIO-ACID SURGE",
+   "name_zh": null,
+   "status": "encoded",
+   "effects": [
+    {
+     "phase": "hit",
+     "op": "extra_hits",
+     "params": [
+      1
+     ],
+     "condition": [
+      "phase_melee"
+     ],
+     "source": "生物酸激涌（BIO-ACID SURGE）：本单位近战武器获得 [SUSTAINED HITS 1]（WHEN=近战阶段，故挂 phase_melee）"
+    }
+   ],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [],
+   "provenance": {
+    "text_sha256": "07f9aad0fbd706b44f48d7e0c9770ecb3b98efee139e0ac2f7aceb0e754755a4"
+   },
+   "encoded_by": "manual-2026-07-21",
+   "weapon_filter": ""
+  },
+  {
+   "table": "stratagems",
+   "id": "000009682003",
+   "side": "attacker",
+   "detachment": "Tyranid Attack",
+   "name_en": "PHAGIC SPORES",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "噬菌孢子（PHAGIC SPORES）：模型被消灭时投 D6 对 3\" 内敌军造成致命伤——死亡触发的定额致命伤池不在攻击序列内，无引擎载体"
+   ],
+   "provenance": {
+    "text_sha256": "3612dc418f731f95d36b6e06f386043d7d249723afb3d2af6a2fd059a3f89e92"
+   },
+   "encoded_by": "manual-2026-07-21",
+   "weapon_filter": ""
+  },
+  {
+   "table": "stratagems",
+   "id": "000009682004",
+   "side": "attacker",
+   "detachment": "Tyranid Attack",
+   "name_en": "EXPENDABLE BIOMASS",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "可弃生物质（EXPENDABLE BIOMASS）：解锁「向已被友军缠斗的敌军射击」，代价是命中 -1 且友军受 D3 致命伤——核心是射击资格域（无引擎载体）；只编那条 -1 命中会把「解锁一次本不可能的射击」表达成纯减益，语义写反，故整条不编"
+   ],
+   "provenance": {
+    "text_sha256": "3dc3596c63eaf9fd72b206ec9ee75f30350dd3a3ff3f0e849ece486e974a321e"
+   },
+   "encoded_by": "manual-2026-07-21",
+   "weapon_filter": ""
+  },
+  {
+   "table": "stratagems",
+   "id": "000009682005",
+   "side": "attacker",
+   "detachment": "Tyranid Attack",
+   "name_en": "HIVE SIGHT",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "虫巢视界（HIVE SIGHT）：可对不可见目标宣布冲锋并 +1 冲锋骰——冲锋域无引擎载体"
+   ],
+   "provenance": {
+    "text_sha256": "955c2a5ead53bc9c2e3281f10a8f24bbc298680d602cd63a46b416c55a0c448c"
+   },
+   "encoded_by": "manual-2026-07-21",
+   "weapon_filter": ""
+  },
+  {
+   "table": "stratagems",
+   "id": "000009691002",
+   "side": "target",
+   "detachment": "Boarding Swarm",
+   "name_en": "LITHE KILLERS",
+   "name_zh": null,
+   "status": "encoded",
+   "effects": [
+    {
+     "phase": "save",
+     "op": "invuln",
+     "params": [
+      5
+     ],
+     "condition": [
+      "phase_melee"
+     ],
+     "source": "灵巧杀手（LITHE KILLERS）：本单位模型获得 5+ 无效保护（守方向；WHEN=近战阶段，故挂 phase_melee）"
+    }
+   ],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [],
+   "provenance": {
+    "text_sha256": "8b10901a1415d774bc6186447bb2ca22b5b752821bd4f1e15b9e6bf440d1f203"
+   },
+   "encoded_by": "manual-2026-07-21",
+   "weapon_filter": ""
+  },
+  {
+   "table": "stratagems",
+   "id": "000009691003",
+   "side": "attacker",
+   "detachment": "Boarding Swarm",
+   "name_en": "ADRENALISED SLAUGHTER",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "肾上腺屠杀（ADRENALISED SLAUGHTER）：模型被消灭时 5+ 不移除、可先行还击——死后反打属移除时机域，无引擎载体"
+   ],
+   "provenance": {
+    "text_sha256": "ecb8bae5597a8b133dab321e01418e324a845ed1061e6d6c95b0beb4c6a19330"
+   },
+   "encoded_by": "manual-2026-07-21",
+   "weapon_filter": ""
+  },
+  {
+   "table": "stratagems",
+   "id": "000009691004",
+   "side": "attacker",
+   "detachment": "Boarding Swarm",
+   "name_en": "TALON-TIP SWARM",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "爪尖虫群（TALON-TIP SWARM）：消灭敌军后 3\" 普通移动并确保目标点——移动域与目标点域，均无引擎载体"
+   ],
+   "provenance": {
+    "text_sha256": "2c85dfc22e4aa6ceddc3cd43408cd9660341868101580129d1a2219d2a1bfcd1"
+   },
+   "encoded_by": "manual-2026-07-21",
+   "weapon_filter": ""
+  },
+  {
+   "table": "stratagems",
+   "id": "000009691005",
+   "side": "attacker",
+   "detachment": "Boarding Swarm",
+   "name_en": "PREDATORY POUNCE",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "捕食猛扑（PREDATORY POUNCE）：向舱门作 3\" 猛扑移动——移动域无引擎载体"
+   ],
+   "provenance": {
+    "text_sha256": "c98b93838cf912671dec596c7a34fe38abf45f7f60229a45a956baec94d6f299"
+   },
+   "encoded_by": "manual-2026-07-21",
+   "weapon_filter": ""
+  },
+  {
+   "table": "stratagems",
+   "id": "000009700002",
+   "side": "attacker",
+   "detachment": "Biotide",
+   "name_en": "LIVING AVALANCHE",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "活体雪崩（LIVING AVALANCHE）：穿越舱门的 3\" 虫群移动——移动域无引擎载体"
+   ],
+   "provenance": {
+    "text_sha256": "0722543d16810dc5398276df5d995bbecda6df172f5ec1fab7ae3f983bc24918"
+   },
+   "encoded_by": "manual-2026-07-21",
+   "weapon_filter": ""
+  },
+  {
+   "table": "stratagems",
+   "id": "000009700003",
+   "side": "attacker",
+   "detachment": "Biotide",
+   "name_en": "SQUIRMING MASSES",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "蠕动群体（SQUIRMING MASSES）：获得深入打击并放宽登场限制——预备队域无引擎载体"
+   ],
+   "provenance": {
+    "text_sha256": "85e66901263308114d3d949db977fbb0082fe7ad36e994979ec0dd17990653c2"
+   },
+   "encoded_by": "manual-2026-07-21",
+   "weapon_filter": ""
+  },
+  {
+   "table": "stratagems",
+   "id": "000009700004",
+   "side": "attacker",
+   "detachment": "Biotide",
+   "name_en": "SWARM HUNTERS",
+   "name_zh": null,
+   "status": "partial",
+   "effects": [
+    {
+     "phase": "hit",
+     "op": "reroll",
+     "params": [
+      "fail"
+     ],
+     "condition": [
+      "phase_shooting"
+     ],
+     "source": "群体猎手（SWARM HUNTERS）：本单位攻击可重掷命中骰（WHEN=我方射击阶段，故挂 phase_shooting）"
+    }
+   ],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "重掷命中的前提是「本单位处于我军突触范围内」——突触范围位置态无引擎载体，按恒满足处理（高估）",
+    "「本单位模型可无视同单位模型判定可见性」落在可见性域，无引擎载体"
+   ],
+   "provenance": {
+    "text_sha256": "97a9708237e85ebffc3493b5301cd4e26dbdc52af8eeaefcf6d29560bff41e3f"
+   },
+   "encoded_by": "manual-2026-07-21",
+   "weapon_filter": ""
+  },
+  {
+   "table": "stratagems",
+   "id": "000009700005",
+   "side": "target",
+   "detachment": "Biotide",
+   "name_en": "ONRUSHING HORDE",
+   "name_zh": null,
+   "status": "encoded",
+   "effects": [
+    {
+     "phase": "hit",
+     "op": "modify",
+     "params": [
+      -1
+     ],
+     "condition": [
+      "phase_shooting"
+     ],
+     "source": "冲锋虫潮（ONRUSHING HORDE）：瞄准本单位的攻击命中骰 -1（守方向；WHEN=对手射击阶段，故挂 phase_shooting）"
+    }
+   ],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [],
+   "provenance": {
+    "text_sha256": "1b303bce534839e6d34a7b0ad639323ceed3331d39fcbb585773dce61f7c053a"
+   },
+   "encoded_by": "manual-2026-07-21",
+   "weapon_filter": ""
+  },
+  {
+   "table": "stratagems",
+   "id": "000009725002",
+   "side": "target",
+   "detachment": "Infestation Swarm",
+   "name_en": "HYPERADRENAL REFLEXES",
+   "name_zh": null,
+   "status": "encoded",
+   "effects": [
+    {
+     "phase": "save",
+     "op": "invuln",
+     "params": [
+      4
+     ],
+     "condition": [
+      "phase_melee"
+     ],
+     "source": "超肾上腺反射（HYPERADRENAL REFLEXES）：本单位模型获得 4+ 无效保护（守方向；WHEN=近战阶段，故挂 phase_melee）"
+    }
+   ],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [],
+   "provenance": {
+    "text_sha256": "f44a6db6b1aee9432ae7e96032f4da5a8e7149c946f0ee7b920e0d6002f107c3"
+   },
+   "encoded_by": "manual-2026-07-21",
+   "weapon_filter": ""
+  },
+  {
+   "table": "stratagems",
+   "id": "000009725003",
+   "side": "attacker",
+   "detachment": "Infestation Swarm",
+   "name_en": "PERVASIVE DREAD",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "弥漫恐惧（PERVASIVE DREAD）：下一个指挥阶段全场敌军战斗震撼检定 -1——战斗震撼域无引擎载体"
+   ],
+   "provenance": {
+    "text_sha256": "950a2847b090a168c685e5065fa5663857f470f4cc0fd26ba1e2f6c5f61f825f"
+   },
+   "encoded_by": "manual-2026-07-21",
+   "weapon_filter": ""
+  },
+  {
+   "table": "stratagems",
+   "id": "000009725004",
+   "side": "attacker",
+   "detachment": "Infestation Swarm",
+   "name_en": "HUNTING GROUNDS",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "狩猎场（HUNTING GROUNDS）：穿越舱门的 3\" 普通移动——移动域无引擎载体"
+   ],
+   "provenance": {
+    "text_sha256": "edf5a558a89ce6813bf2ffdc7001a3964ce3f9e7081d51ce71e23e0edb4c10ba"
+   },
+   "encoded_by": "manual-2026-07-21",
+   "weapon_filter": ""
+  },
+  {
+   "table": "stratagems",
+   "id": "000009725005",
+   "side": "attacker",
+   "detachment": "Infestation Swarm",
+   "name_en": "OUTFLANK",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "包抄（OUTFLANK）：撤回战略预备队并从另一入口区登场——预备队域无引擎载体"
+   ],
+   "provenance": {
+    "text_sha256": "669c327c41bc5b0d09f511b4ec23e31d92736174ea16fea72fea0001ab0db051"
+   },
+   "encoded_by": "manual-2026-07-21",
+   "weapon_filter": ""
+  },
+  {
+   "table": "stratagems",
+   "id": "000009738005",
+   "side": "attacker",
+   "detachment": "Warrior Bioform Onslaught",
+   "name_en": "SYNAPTIC MICRONODES",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "突触微节点（SYNAPTIC MICRONODES，11 版重印）：确保本单位控制的一个目标点——目标点域无引擎载体"
+   ],
+   "provenance": {
+    "text_sha256": "a7a3955b0d085e9c1d43eb3c9f60033911ecbfc9a278fe241b2fc3350976f463"
+   },
+   "encoded_by": "manual-2026-07-21",
+   "weapon_filter": ""
+  },
+  {
+   "table": "stratagems",
+   "id": "000009738006",
+   "side": "attacker",
+   "detachment": "Warrior Bioform Onslaught",
+   "name_en": "PARASITIC PAYLOAD",
+   "name_zh": null,
+   "status": "encoded",
+   "effects": [
+    {
+     "phase": "save",
+     "op": "ignores_cover",
+     "params": [],
+     "condition": [
+      "phase_shooting"
+     ],
+     "source": "寄生载荷（PARASITIC PAYLOAD，11 版重印）：本单位远程攻击获得 [IGNORE COVER]（WHEN=我方射击阶段，故挂 phase_shooting）"
+    }
+   ],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [],
+   "provenance": {
+    "text_sha256": "e9308104956c53fde487f4a0cc62c5ae356474fcb927d17db99d899839bd7eaf"
+   },
+   "encoded_by": "manual-2026-07-21",
+   "weapon_filter": ""
+  },
+  {
+   "table": "stratagems",
+   "id": "fp11e-tyranids-wbo-s1",
+   "side": "target",
+   "detachment": "Warrior Bioform Onslaught",
+   "name_en": "ALIEN PHYSIOLOGY",
+   "name_zh": null,
+   "status": "encoded",
+   "effects": [
+    {
+     "phase": "wound",
+     "op": "modify",
+     "params": [
+      -1
+     ],
+     "condition": [
+      "wound_s_gt_t"
+     ],
+     "source": "异形生理（ALIEN PHYSIOLOGY，11 版全新战略）：S 高于本单位 T 的攻击致伤骰 -1（守方向；wound_s_gt_t 把 S/T 比较延迟到引擎最终 S 处判定；WHEN 覆盖对手射击阶段与近战阶段两相位，故不加相位门）"
+    }
+   ],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [],
+   "provenance": {
+    "text_sha256": "74aacaace2a38569971bf404aa7edd93da98d738837b8272bbfdd530214ccaed"
+   },
+   "encoded_by": "manual-2026-07-21",
+   "weapon_filter": ""
+  },
+  {
+   "table": "stratagems",
+   "id": "000010148002",
+   "side": "attacker",
+   "detachment": "Subterranean Assault",
+   "name_en": "ADAPTIVE OPTIMISATION",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "适应性优化（ADAPTIVE OPTIMISATION）：本单位获得 SYNAPSE 关键词——关键词授予与突触范围位置态，均无引擎载体"
+   ],
+   "provenance": {
+    "text_sha256": "7c2937dc334ab45b9ad9f1fb9cb00ecacc436679d9bd890d43876ee8b5fbd729"
+   },
+   "encoded_by": "manual-2026-07-21",
+   "weapon_filter": ""
+  },
+  {
+   "table": "stratagems",
+   "id": "000010148003",
+   "side": "attacker",
+   "detachment": "Subterranean Assault",
+   "name_en": "REPLENISHING SWARMS",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "补充群兽（REPLENISHING SWARMS）：回复 D3+1 点伤或复活 D3+1 个模型——治疗/复活域无引擎载体"
+   ],
+   "provenance": {
+    "text_sha256": "d45b2b4768e6f415fda01ababae593c07365da23b9092c720df61fae84552638"
+   },
+   "encoded_by": "manual-2026-07-21",
+   "weapon_filter": ""
+  },
+  {
+   "table": "stratagems",
+   "id": "000010148004",
+   "side": "attacker",
+   "detachment": "Subterranean Assault",
+   "name_en": "ENFILADING EMERGENCE",
+   "name_zh": null,
+   "status": "encoded",
+   "effects": [
+    {
+     "phase": "hit",
+     "op": "extra_hits",
+     "params": [
+      1
+     ],
+     "condition": [],
+     "source": "侧射突现（ENFILADING EMERGENCE）：本单位武器获得 [SUSTAINED HITS 1]（持续到我方下一个近战阶段结束，覆盖射击与近战两相位，故不加相位门）"
+    },
+    {
+     "phase": "save",
+     "op": "ignores_cover",
+     "params": [],
+     "condition": [],
+     "source": "侧射突现（ENFILADING EMERGENCE）：本单位武器获得 [IGNORES COVER]（持续到我方下一个近战阶段结束，覆盖射击与近战两相位，故不加相位门）"
+    }
+   ],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [],
+   "provenance": {
+    "text_sha256": "21b736111b882398ffeb55f418d3d254e108a0ff1a90565953912fcf626221fb"
+   },
+   "encoded_by": "manual-2026-07-21",
+   "weapon_filter": ""
+  },
+  {
+   "table": "stratagems",
+   "id": "000010148005",
+   "side": "attacker",
+   "detachment": "Subterranean Assault",
+   "name_en": "TUNNEL NETWORK",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "隧道网络（TUNNEL NETWORK）：由一个隧道标记转移到另一个——移动/重新部署域无引擎载体"
+   ],
+   "provenance": {
+    "text_sha256": "5b0c98a4bb52ec275de29697f5ef18f4bd8e08e1e392b20dee229a09ea1685b1"
+   },
+   "encoded_by": "manual-2026-07-21",
+   "weapon_filter": ""
+  },
+  {
+   "table": "stratagems",
+   "id": "000010148006",
+   "side": "attacker",
+   "detachment": "Subterranean Assault",
+   "name_en": "SWARMING ASSAULT",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "群涌强袭（SWARMING ASSAULT）：6\" 内友军可重掷冲锋骰——冲锋域无引擎载体"
+   ],
+   "provenance": {
+    "text_sha256": "2156f9b690f95ec736f275a8ccc0e8ce442aedeed7ab3cfc6010c3cea94c443f"
+   },
+   "encoded_by": "manual-2026-07-21",
+   "weapon_filter": ""
+  },
+  {
+   "table": "stratagems",
+   "id": "000010148007",
+   "side": "attacker",
+   "detachment": "Subterranean Assault",
+   "name_en": "RETREAT BELOW",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "遁入地底（RETREAT BELOW）：撤回战略预备队——预备队域无引擎载体"
+   ],
+   "provenance": {
+    "text_sha256": "577ce08eca990e837488b14dd62f58471f26e3beb2668d0fdc7e6335d2986c08"
+   },
+   "encoded_by": "manual-2026-07-21",
+   "weapon_filter": ""
+  },
+  {
+   "table": "stratagems",
+   "id": "fp11e-tyranids-ambush-s1",
+   "side": "attacker",
+   "detachment": "Ambush Predators",
+   "name_en": "COUNTERPREDATION",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "反捕猎（COUNTERPREDATION，11 版全新战略）：+1 S 与 +1 AP 只对「瞄准 hidden（隐蔽）状态敌军单位」的攻击生效——这不是「若…则更好」的增量分支，而是**整条效果的唯一开关**；引擎无守方 hidden 状态的攻方向条件 tag（TARGET_TOGGLES 的 defender_hidden 只给守方向条目开闸，攻方注入路径读不到），零新开关约束下无载体",
+    "且 WHEN 是「近战阶段本单位被选定作战」——能被选定作战即已在接战范围内，11 版侦测规则下该目标几乎不可能仍处于 hidden，按恒满足编码等于近乎全程虚增一档 S 与一档 AP（与本载荷对扰动捕食「裸编＝显著高估故不编」同判据）"
+   ],
+   "provenance": {
+    "text_sha256": "f90c37e1cbc05fb3c6c9ae44c6acbf5af70f35908da5cbdb2cf6f4c8c2d4d69e"
+   },
+   "encoded_by": "manual-2026-07-21",
+   "weapon_filter": ""
+  },
+  {
+   "table": "stratagems",
+   "id": "fp11e-tyranids-ambush-s2",
+   "side": "attacker",
+   "detachment": "Ambush Predators",
+   "name_en": "HYPERSENSORY ADAPTATIONS",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "超感适应（HYPERSENSORY ADAPTATIONS，11 版全新战略）：令一个敌军单位侦测距离 +6\"——11 版侦测/隐蔽域无引擎载体"
+   ],
+   "provenance": {
+    "text_sha256": "9a0cd9ad145119710101e13c0d44dce40b53afb8831af77d50987bf8dd175ab4"
+   },
+   "encoded_by": "manual-2026-07-21",
+   "weapon_filter": ""
+  },
+  {
+   "table": "stratagems",
+   "id": "fp11e-tyranids-ambush-s3",
+   "side": "attacker",
+   "detachment": "Ambush Predators",
+   "name_en": "SCANNER GHEIST",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "扫描幽灵（SCANNER GHEIST，11 版全新战略）：把未接战单位放入战略预备队——预备队域无引擎载体"
+   ],
+   "provenance": {
+    "text_sha256": "1b7a9a7289bdd239643e5882d05fbc70118dc42a410192d5c411250afa7c1ad1"
+   },
+   "encoded_by": "manual-2026-07-21",
+   "weapon_filter": ""
+  },
+  {
+   "table": "stratagems",
+   "id": "fp11e-tyranids-norn-s1",
+   "side": "target",
+   "detachment": "Talons of the Norn Queen",
+   "name_en": "CATALYTIC BIOFORTIFICATION",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "催化生物强化（CATALYTIC BIOFORTIFICATION，11 版全新战略）：仅对致命伤的 FNP 4+——引擎的 (fnp, fnp) 通道对全部伤害生效，裸编会把只挡致命伤的 FNP 当成通用 FNP，属显著高估（防高估既定判据）"
+   ],
+   "provenance": {
+    "text_sha256": "45543263c8a277bfb859de6fc865f9ca1aed7e6f22a80546960de0cc5b723160"
+   },
+   "encoded_by": "manual-2026-07-21",
+   "weapon_filter": ""
+  },
+  {
+   "table": "stratagems",
+   "id": "fp11e-tyranids-norn-s2",
+   "side": "attacker",
+   "detachment": "Talons of the Norn Queen",
+   "name_en": "LESSER PREY",
+   "name_zh": null,
+   "status": "encoded",
+   "effects": [
+    {
+     "phase": "wound",
+     "op": "s_improve",
+     "params": [
+      2
+     ],
+     "condition": [
+      "phase_melee"
+     ],
+     "source": "低等猎物（LESSER PREY，11 版全新战略）：本单位近战攻击 S+2（WHEN=近战阶段被选定作战，故挂 phase_melee）"
+    }
+   ],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [],
+   "provenance": {
+    "text_sha256": "9e3903105c4bd737ab66953000e8c1676e95d7463c2e25173a6fcb9c9b3189c3"
+   },
+   "encoded_by": "manual-2026-07-21",
+   "weapon_filter": ""
+  },
+  {
+   "table": "stratagems",
+   "id": "fp11e-tyranids-norn-s3",
+   "side": "attacker",
+   "detachment": "Talons of the Norn Queen",
+   "name_en": "TANGLESTRIKE ROUNDS",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "缠缚弹（TANGLESTRIKE ROUNDS，11 版全新战略）：被命中的敌军单位 M-2\"——移动域无引擎载体"
+   ],
+   "provenance": {
+    "text_sha256": "67f2bca82f3758842bef414049b5dc426480fa4e8e0d7f9d0cc79740006b23ae"
+   },
+   "encoded_by": "manual-2026-07-21",
+   "weapon_filter": ""
+  },
+  {
+   "table": "enhancements",
+   "id": "000008348002",
+   "side": "attacker",
+   "detachment": "Invasion Fleet",
+   "name_en": "Alien Cunning",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "异形狡诈（Alien Cunning）：部署后重新部署至多三个单位并可放进战略预备队——部署与预备队域无引擎载体"
+   ],
+   "provenance": {
+    "text_sha256": "093d62c13b5778a13793639bb7677bd1a312364efb1ed7bfc6d9171580742dd7"
+   },
+   "encoded_by": "manual-2026-07-21",
+   "weapon_filter": ""
+  },
+  {
+   "table": "enhancements",
+   "id": "000008348003",
+   "side": "attacker",
+   "detachment": "Invasion Fleet",
+   "name_en": "Perfectly Adapted",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "完美适应（Perfectly Adapted）：每回合可重掷一次单颗骰（命中/致伤/伤害/加速/冲锋/保护）——引擎的重掷通道是「重掷全部失败骰」，单骰重掷无等价载体，裸编会显著高估"
+   ],
+   "provenance": {
+    "text_sha256": "52f2319b094fe662eb6b0788fba20276e8e9fcacebd0c3d3d9ab0e7c62ceb2a9"
+   },
+   "encoded_by": "manual-2026-07-21",
+   "weapon_filter": ""
+  },
+  {
+   "table": "enhancements",
+   "id": "000008348004",
+   "side": "attacker",
+   "detachment": "Invasion Fleet",
+   "name_en": "Synaptic Linchpin",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "突触支点（Synaptic Linchpin）：把 9\" 内友军纳入我军突触范围——突触范围位置态无引擎载体"
+   ],
+   "provenance": {
+    "text_sha256": "7d9a2015a62ffd4d3b8336e1d3ba77825b2959c245c67eee769d8b5e2055a18c"
+   },
+   "encoded_by": "manual-2026-07-21",
+   "weapon_filter": ""
+  },
+  {
+   "table": "enhancements",
+   "id": "000008348005",
+   "side": "target",
+   "detachment": "Invasion Fleet",
+   "name_en": "Adaptive Biology",
+   "name_zh": null,
+   "status": "partial",
+   "effects": [
+    {
+     "phase": "fnp",
+     "op": "fnp",
+     "params": [
+      5
+     ],
+     "condition": [],
+     "source": "适应性生理（Adaptive Biology）：携带者获得 FNP 5+（守方向；原文未限相位）"
+    }
+   ],
+   "requires_toggles": [
+    "defender_bearer_leading"
+   ],
+   "not_modeled_notes_zh": [
+    "受益面仅限携带者本人（非其所在单位）——引擎守方/攻方 profile 是整单位，多模型单位模拟时会把角色专属加成施加到全单位（高估）；只有把携带者单独建成单模型单位时才等价",
+    "「任一回合开始时若携带者已受伤，则本战余下时间改为 FNP 4+」未建模——引擎不建模回合间的战损累积状态（故按基础档 5+ 编码，保守）"
+   ],
+   "provenance": {
+    "text_sha256": "979cfafe9f2a540119e6e97e866b050c97f736fb40b9957b48b29c063468ee01"
+   },
+   "encoded_by": "manual-2026-07-21",
+   "weapon_filter": ""
+  },
+  {
+   "table": "enhancements",
+   "id": "000008404002",
+   "side": "attacker",
+   "detachment": "Crusher Stampede",
+   "name_en": "Ominous Presence",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "不祥临在（Ominous Presence）：携带者 OC+3——目标点控制域无引擎载体"
+   ],
+   "provenance": {
+    "text_sha256": "86dd627fed1ac4e3e4e9aea1aef57993e5757f133320896df71f154e21bf3de9"
+   },
+   "encoded_by": "manual-2026-07-21",
+   "weapon_filter": ""
+  },
+  {
+   "table": "enhancements",
+   "id": "000008404003",
+   "side": "attacker",
+   "detachment": "Crusher Stampede",
+   "name_en": "Enraged Reserves",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "暴怒后备（Enraged Reserves）：携带者被近战消灭时 3+ 不移除、可先行还击——死后反打属移除时机域，无引擎载体"
+   ],
+   "provenance": {
+    "text_sha256": "6bc32c3e6c9ba3a8442d040c27bb2da3214a9003d6740bd8712a8dfe6a778cf3"
+   },
+   "encoded_by": "manual-2026-07-21",
+   "weapon_filter": ""
+  },
+  {
+   "table": "enhancements",
+   "id": "000008404004",
+   "side": "target",
+   "detachment": "Crusher Stampede",
+   "name_en": "Null Nodules",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "空无结节（Null Nodules）：每战一次，对灵能攻击获得 FNP 5+——仅对特定来源（灵能攻击）的 FNP 无引擎载体，裸编会当成通用 FNP（显著高估）"
+   ],
+   "provenance": {
+    "text_sha256": "b66173ff51aebe016c42c2f4cff74e38598ade084ca58905e8664cd66abc3c14"
+   },
+   "encoded_by": "manual-2026-07-21",
+   "weapon_filter": ""
+  },
+  {
+   "table": "enhancements",
+   "id": "000008404005",
+   "side": "attacker",
+   "detachment": "Crusher Stampede",
+   "name_en": "Monstrous Nemesis",
+   "name_zh": null,
+   "status": "partial",
+   "effects": [
+    {
+     "phase": "wound",
+     "op": "modify",
+     "params": [
+      1
+     ],
+     "condition": [
+      "melee_target_has_keyword",
+      "monster"
+     ],
+     "source": "巨兽宿敌（Monstrous Nemesis）：携带者瞄准 MONSTER 单位的近战攻击致伤骰 +1（melee_target_has_keyword 复合门＝近战阶段 × 目标关键词）"
+    },
+    {
+     "phase": "wound",
+     "op": "modify",
+     "params": [
+      1
+     ],
+     "condition": [
+      "melee_target_has_keyword",
+      "vehicle"
+     ],
+     "source": "巨兽宿敌（Monstrous Nemesis）：携带者瞄准 VEHICLE 单位的近战攻击致伤骰 +1（melee_target_has_keyword 复合门＝近战阶段 × 目标关键词）"
+    }
+   ],
+   "requires_toggles": [
+    "bearer_leading"
+   ],
+   "not_modeled_notes_zh": [
+    "受益面仅限携带者本人（非其所在单位）——引擎守方/攻方 profile 是整单位，多模型单位模拟时会把角色专属加成施加到全单位（高估）；只有把携带者单独建成单模型单位时才等价"
+   ],
+   "provenance": {
+    "text_sha256": "193da4bc2b2cc1b4331228e5b38a7866510d0620a8c9403b465846de65af0b25"
+   },
+   "encoded_by": "manual-2026-07-21",
+   "weapon_filter": ""
+  },
+  {
+   "table": "enhancements",
+   "id": "000008408002",
+   "side": "attacker",
+   "detachment": "Unending Swarm",
+   "name_en": "Relentless Hunger",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "不懈饥饿（Relentless Hunger）：携带者所在单位 M+2\"——移动域无引擎载体"
+   ],
+   "provenance": {
+    "text_sha256": "ad2bacc91e707dbe0e0d68266b8eaef81d3f1b1b8081e6d49ce565fc82436b3f"
+   },
+   "encoded_by": "manual-2026-07-21",
+   "weapon_filter": ""
+  },
+  {
+   "table": "enhancements",
+   "id": "000008408003",
+   "side": "target",
+   "detachment": "Unending Swarm",
+   "name_en": "Naturalised Camouflage",
+   "name_zh": null,
+   "status": "partial",
+   "effects": [
+    {
+     "phase": "save",
+     "op": "cover",
+     "params": [],
+     "condition": [
+      "phase_shooting"
+     ],
+     "source": "自然化伪装（Naturalised Camouflage）：受益单位在被远程攻击瞄准时享有掩体（守方向；phase_shooting 门＝原文限远程攻击）"
+    }
+   ],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "受益者是首个战斗轮开始时在携带者 9\" 内选定的至多三个无尽群兽单位（不一定含携带者所在单位）——引擎无「选定的另一批单位」载体，按守方即为受益单位处理（高估）；故本条不挂 defender_bearer_leading",
+    "只持续到第一个战斗轮结束，之后失效——引擎单次攻击序列不建模轮次，按恒生效处理（高估）"
+   ],
+   "provenance": {
+    "text_sha256": "87fb142d507370652848e5fcb53318c59bb4744185cac082b690c77dc435161d"
+   },
+   "encoded_by": "manual-2026-07-21",
+   "weapon_filter": ""
+  },
+  {
+   "table": "enhancements",
+   "id": "000008408004",
+   "side": "attacker",
+   "detachment": "Unending Swarm",
+   "name_en": "Piercing Talons",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "穿刺利爪（Piercing Talons）：暴击致伤时该攻击 AP 改善 1——引擎的 (save, ap_improve) 无「仅暴击致伤的那几发」条件 tag，裸编会把全部攻击的 AP 都改善 1（显著高估）"
+   ],
+   "provenance": {
+    "text_sha256": "9a21edd579b2ecaf2174c68f47d5618e5db33e1fb9ed83854ca461d8d6b960be"
+   },
+   "encoded_by": "manual-2026-07-21",
+   "weapon_filter": ""
+  },
+  {
+   "table": "enhancements",
+   "id": "000008408005",
+   "side": "attacker",
+   "detachment": "Unending Swarm",
+   "name_en": "Adrenalised Onslaught",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "肾上腺猛攻（Adrenalised Onslaught）：涌入与巩固额外 3\"——移动域无引擎载体"
+   ],
+   "provenance": {
+    "text_sha256": "f570adccdf0c3a7f17b48fc5d315d6ff1dd5c8ead87eba4abb00023f44aa036f"
+   },
+   "encoded_by": "manual-2026-07-21",
+   "weapon_filter": ""
+  },
+  {
+   "table": "enhancements",
+   "id": "000008412002",
+   "side": "attacker",
+   "detachment": "Assimilation Swarm",
+   "name_en": "Regenerating Monstrosity",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "再生怪物（Regenerating Monstrosity）：携带者所在单位每阶段可被再生两次——治疗/复活域无引擎载体"
+   ],
+   "provenance": {
+    "text_sha256": "ee2abb5622c12e3711c0b13d8ade67424e1ef41a18de7d0b93b15fad7e21f9b5"
+   },
+   "encoded_by": "manual-2026-07-21",
+   "weapon_filter": ""
+  },
+  {
+   "table": "enhancements",
+   "id": "000008412003",
+   "side": "attacker",
+   "detachment": "Assimilation Swarm",
+   "name_en": "Instinctive Defence",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "本能防御（Instinctive Defence，11 版已改为 -1 CP）：英勇干预战略降价 + 携带者所在单位获得「先手攻击」——CP 经济与出手顺序域，均无引擎载体（引擎按单向攻击序列结算，先攻由 fight_order 面板独立判定）"
+   ],
+   "provenance": {
+    "text_sha256": "29e592f9674e106d886dae2f6a8d84840f8398794321042c9639301acbb2a6dc"
+   },
+   "encoded_by": "manual-2026-07-21",
+   "weapon_filter": ""
+  },
+  {
+   "table": "enhancements",
+   "id": "000008412004",
+   "side": "attacker",
+   "detachment": "Assimilation Swarm",
+   "name_en": "Biophagic Flow (Aura)",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "噬生流（Biophagic Flow (Aura)）：把 HARVESTER 的再生半径由 6\" 放宽到 9\"——治疗域无引擎载体"
+   ],
+   "provenance": {
+    "text_sha256": "366442c4bde0642ec12d72d876b4494336414fbcdaa780bfa207d826324abf62"
+   },
+   "encoded_by": "manual-2026-07-21",
+   "weapon_filter": ""
+  },
+  {
+   "table": "enhancements",
+   "id": "000008412005",
+   "side": "attacker",
+   "detachment": "Assimilation Swarm",
+   "name_en": "Parasitic Biomorphology",
+   "name_zh": null,
+   "status": "partial",
+   "effects": [
+    {
+     "phase": "wound",
+     "op": "s_improve",
+     "params": [
+      1
+     ],
+     "condition": [
+      "phase_melee"
+     ],
+     "source": "寄生生物形态（Parasitic Biomorphology）：携带者所在单位近战武器 S+1（phase_melee 门＝原文限近战武器）"
+    }
+   ],
+   "requires_toggles": [
+    "bearer_leading"
+   ],
+   "not_modeled_notes_zh": [
+    "「携带者在 HARVESTER 6\" 内且本单位首次于近战阶段消灭敌军单位后，本战余下时间近战武器 A+1」未建模——引擎单次攻击序列不建模战场事件触发的持久增益，裸编 A+1 会把条件加值当成恒得（故只编无条件的 S+1，保守）"
+   ],
+   "provenance": {
+    "text_sha256": "79a0eb6032d748bec986c7e6f99c33570ebdb6c5202f26fa1dfc0acfa631ce2a"
+   },
+   "encoded_by": "manual-2026-07-21",
+   "weapon_filter": ""
+  },
+  {
+   "table": "enhancements",
+   "id": "000008417002",
+   "side": "attacker",
+   "detachment": "Vanguard Onslaught",
+   "name_en": "Hunting Grounds",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "狩猎场（Hunting Grounds）：敌军由预备队登场时 2+ 须作战斗震撼检定——预备队域与战斗震撼域，均无引擎载体"
+   ],
+   "provenance": {
+    "text_sha256": "da2d96d9b8e3493fc119d753d629f3a9335ac86589044db46ad11100bb2eeff6"
+   },
+   "encoded_by": "manual-2026-07-21",
+   "weapon_filter": ""
+  },
+  {
+   "table": "enhancements",
+   "id": "000008417003",
+   "side": "target",
+   "detachment": "Vanguard Onslaught",
+   "name_en": "Chameleonic",
+   "name_zh": null,
+   "status": "encoded",
+   "effects": [
+    {
+     "phase": "save",
+     "op": "cover",
+     "params": [],
+     "condition": [
+      "phase_shooting"
+     ],
+     "source": "变色龙（Chameleonic）：携带者所在单位在被远程攻击瞄准时享有掩体（守方向；11 版掩体落在命中侧，phase_shooting 门＝原文限远程攻击；原文的 Stealth 与本从句同为「远程攻击时享有掩体」，不重复叠加）"
+    }
+   ],
+   "requires_toggles": [
+    "defender_bearer_leading"
+   ],
+   "not_modeled_notes_zh": [],
+   "provenance": {
+    "text_sha256": "81fa1939a5a472e1b852ad6c19e7c0985daebb0a9460857360b95b83f2d51cde"
+   },
+   "encoded_by": "manual-2026-07-21",
+   "weapon_filter": ""
+  },
+  {
+   "table": "enhancements",
+   "id": "000008417004",
+   "side": "attacker",
+   "detachment": "Vanguard Onslaught",
+   "name_en": "Stalker",
+   "name_zh": null,
+   "status": "partial",
+   "effects": [
+    {
+     "phase": "hit",
+     "op": "modify",
+     "params": [
+      1
+     ],
+     "condition": [],
+     "source": "潜行者（Stalker）：携带者瞄准该敌军单位的攻击命中骰 +1（原文未限相位）"
+    },
+    {
+     "phase": "wound",
+     "op": "modify",
+     "params": [
+      1
+     ],
+     "condition": [],
+     "source": "潜行者（Stalker）：携带者瞄准该敌军单位的攻击致伤骰 +1（原文未限相位）"
+    }
+   ],
+   "requires_toggles": [
+    "bearer_leading"
+   ],
+   "not_modeled_notes_zh": [
+    "受益面仅限携带者本人（非其所在单位）——引擎守方/攻方 profile 是整单位，多模型单位模拟时会把角色专属加成施加到全单位（高估）；只有把携带者单独建成单模型单位时才等价",
+    "受益面限「开战时选定的那一个敌军单位」——引擎单次对局按守方即为该单位处理（高估）"
+   ],
+   "provenance": {
+    "text_sha256": "9de3db029b0e6117b4c75efdf6c4e30cb8b04d80c0a8a441deb01b78325abc6b"
+   },
+   "encoded_by": "manual-2026-07-21",
+   "weapon_filter": ""
+  },
+  {
+   "table": "enhancements",
+   "id": "000008417005",
+   "side": "attacker",
+   "detachment": "Vanguard Onslaught",
+   "name_en": "Neuronode",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "神经节点（Neuronode，11 版重印逐字一致）：部署后重新部署至多三个先锋入侵者单位——部署与预备队域无引擎载体"
+   ],
+   "provenance": {
+    "text_sha256": "c4514cbc37331db9a15aeb3d3a66df649a68237811444a89792d23876be23a4c"
+   },
+   "encoded_by": "manual-2026-07-21",
+   "weapon_filter": ""
+  },
+  {
+   "table": "enhancements",
+   "id": "000008421002",
+   "side": "attacker",
+   "detachment": "Synaptic Nexus",
+   "name_en": "Power of the Hive Mind",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "虫巢心智之力（Power of the Hive Mind）：携带者的**灵能武器** S 与 AP 各改善 1——引擎的 weapon_filter 只能按武器名字子串选，选不中按 [PSYCHIC] 关键词界定的武器集合（既有判据），裸编会施加到全部武器（显著高估）"
+   ],
+   "provenance": {
+    "text_sha256": "1648febb7b60538e022d177927935ad2d61bc63d09f1deeb2288f77d287186ab"
+   },
+   "encoded_by": "manual-2026-07-21",
+   "weapon_filter": ""
+  },
+  {
+   "table": "enhancements",
+   "id": "000008421003",
+   "side": "attacker",
+   "detachment": "Synaptic Nexus",
+   "name_en": "Psychostatic Disruption",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "灵能静滞干扰（Psychostatic Disruption）：敌军预备队不得在携带者 12\" 内登场、每战一次 4+ 令敌军预备队本回合无法登场——预备队域无引擎载体"
+   ],
+   "provenance": {
+    "text_sha256": "83fc1e5e0ebbf387f8397f98976cd3c59c35cbe669c818a05b13ef8f176ec3ca"
+   },
+   "encoded_by": "manual-2026-07-21",
+   "weapon_filter": ""
+  },
+  {
+   "table": "enhancements",
+   "id": "000008421004",
+   "side": "target",
+   "detachment": "Synaptic Nexus",
+   "name_en": "Synaptic Control",
+   "name_zh": null,
+   "status": "partial",
+   "effects": [
+    {
+     "phase": "damage",
+     "op": "damage_reduction",
+     "params": [
+      1
+     ],
+     "condition": [],
+     "source": "突触控制（Synaptic Control）：分配到携带者的攻击伤害 -1（守方向；原文未限相位）"
+    }
+   ],
+   "requires_toggles": [
+    "defender_bearer_leading"
+   ],
+   "not_modeled_notes_zh": [
+    "受益面仅限携带者本人（非其所在单位）——引擎守方/攻方 profile 是整单位，多模型单位模拟时会把角色专属加成施加到全单位（高估）；只有把携带者单独建成单模型单位时才等价"
+   ],
+   "provenance": {
+    "text_sha256": "55c40177c8719e4f54971edcdef2975f773b8a4515bf29f3b38db0123849c9fd"
+   },
+   "encoded_by": "manual-2026-07-21",
+   "weapon_filter": ""
+  },
+  {
+   "table": "enhancements",
+   "id": "000008421005",
+   "side": "attacker",
+   "detachment": "Synaptic Nexus",
+   "name_en": "The Dirgeheart of Kharis (Aura)",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "卡里斯的哀心（The Dirgeheart of Kharis (Aura)）：9\" 内敌军 Ld 恶化 1——领导力只在战斗震撼检定里用，引擎不建模士气，无载体"
+   ],
+   "provenance": {
+    "text_sha256": "5f3c8945c01af9a54d402bce315eea65d5ca7251278942540d7a5753de858e51"
+   },
+   "encoded_by": "manual-2026-07-21",
+   "weapon_filter": ""
+  },
+  {
+   "table": "enhancements",
+   "id": "000009681002",
+   "side": "attacker",
+   "detachment": "Tyranid Attack",
+   "name_en": "Synaptic Goad",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "突触刺棒（Synaptic Goad，增强；与无尽虫群战略「突触驱策 SYNAPTIC GOADING」不同条目）：指挥阶段令 6\" 内一个泰伦战士单位 M+2\"——移动域无引擎载体"
+   ],
+   "provenance": {
+    "text_sha256": "1810a7d77adfdbf2c144e3edb53b3f8843017842dba636fe19056a6abe198fa8"
+   },
+   "encoded_by": "manual-2026-07-21",
+   "weapon_filter": ""
+  },
+  {
+   "table": "enhancements",
+   "id": "000009681003",
+   "side": "target",
+   "detachment": "Tyranid Attack",
+   "name_en": "Reinforced Carapace",
+   "name_zh": null,
+   "status": "partial",
+   "effects": [
+    {
+     "phase": "damage",
+     "op": "damage_reduction",
+     "params": [
+      1
+     ],
+     "condition": [],
+     "source": "强化甲壳（Reinforced Carapace）：分配到携带者的攻击伤害 -1（守方向；原文未限相位）"
+    }
+   ],
+   "requires_toggles": [
+    "defender_bearer_leading"
+   ],
+   "not_modeled_notes_zh": [
+    "受益面仅限携带者本人（非其所在单位）——引擎守方/攻方 profile 是整单位，多模型单位模拟时会把角色专属加成施加到全单位（高估）；只有把携带者单独建成单模型单位时才等价；原文括注亦明确「若给予 TYRANID PRIME 模型，只影响该模型本身」"
+   ],
+   "provenance": {
+    "text_sha256": "bb2e431df882f283450a8c73b7dae0a4415161ed92a98ea259b75e9115dbcb74"
+   },
+   "encoded_by": "manual-2026-07-21",
+   "weapon_filter": ""
+  },
+  {
+   "table": "enhancements",
+   "id": "000009690002",
+   "side": "attacker",
+   "detachment": "Boarding Swarm",
+   "name_en": "Monoform Predators",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "单形态捕食者（Monoform Predators）：本分队的吞噬者模型不得携带增强——编制约束条款，非战斗效果，无引擎载体（军表验表层已另行处理编制约束）"
+   ],
+   "provenance": {
+    "text_sha256": "9a69a14e49d8aaefcff676c1fe23a7ec6c9f64b20ae7227ac68967ad674ae8a4"
+   },
+   "encoded_by": "manual-2026-07-21",
+   "weapon_filter": ""
+  },
+  {
+   "table": "enhancements",
+   "id": "000009699002",
+   "side": "attacker",
+   "detachment": "Biotide",
+   "name_en": "Synaptic Beacon",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "突触信标（Synaptic Beacon）：把 9\" 内友军纳入我军突触范围——突触范围位置态无引擎载体"
+   ],
+   "provenance": {
+    "text_sha256": "52b6302312c511a3e2acb6e2504138fca7c011d4ee6144dab29ed4fc0b5c08f1"
+   },
+   "encoded_by": "manual-2026-07-21",
+   "weapon_filter": ""
+  },
+  {
+   "table": "enhancements",
+   "id": "000009699003",
+   "side": "attacker",
+   "detachment": "Biotide",
+   "name_en": "Hypersurge Gland",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "超涌腺（Hypersurge Gland）：每战一次可在对手冲锋阶段结束时宣布冲锋——冲锋域与回合序，均无引擎载体"
+   ],
+   "provenance": {
+    "text_sha256": "50d4d102201b1fc37ada123e84649e4cf0d6232cc71a8301ca729573851bc8c1"
+   },
+   "encoded_by": "manual-2026-07-21",
+   "weapon_filter": ""
+  },
+  {
+   "table": "enhancements",
+   "id": "000009724002",
+   "side": "attacker",
+   "detachment": "Infestation Swarm",
+   "name_en": "Stalking Menace",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "潜行威胁（Stalking Menace）：每战一次撤回战略预备队并以深入打击回场——预备队域无引擎载体"
+   ],
+   "provenance": {
+    "text_sha256": "a20c9214172ac38af239c5ab4fb168866bbda19f20dde50308aee74493ceb3a2"
+   },
+   "encoded_by": "manual-2026-07-21",
+   "weapon_filter": ""
+  },
+  {
+   "table": "enhancements",
+   "id": "000009724003",
+   "side": "attacker",
+   "detachment": "Infestation Swarm",
+   "name_en": "Psi-spoor Sensitivity",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "灵能痕迹感知（Psi-spoor Sensitivity）：可对不可见单位宣布冲锋——冲锋域无引擎载体"
+   ],
+   "provenance": {
+    "text_sha256": "ce886d49efb93e26fa6dc38dc316be47c572dacec5bc19e2d6eb68cf73d37fff"
+   },
+   "encoded_by": "manual-2026-07-21",
+   "weapon_filter": ""
+  },
+  {
+   "table": "enhancements",
+   "id": "000009737003",
+   "side": "attacker",
+   "detachment": "Warrior Bioform Onslaught",
+   "name_en": "Ocular Adaptation",
+   "name_zh": null,
+   "status": "encoded",
+   "effects": [
+    {
+     "phase": "hit",
+     "op": "modify",
+     "params": [
+      1
+     ],
+     "condition": [
+      "phase_melee"
+     ],
+     "source": "视觉适应（Ocular Adaptation，11 版重印后限近战）：携带者所在单位的近战攻击命中骰 +1（phase_melee 门＝原文限近战攻击）"
+    }
+   ],
+   "requires_toggles": [
+    "bearer_leading"
+   ],
+   "not_modeled_notes_zh": [],
+   "provenance": {
+    "text_sha256": "835a06d9d16f5c4408987eae3311307095e262886d8b75747e48392af05a09bd"
+   },
+   "encoded_by": "manual-2026-07-21",
+   "weapon_filter": ""
+  },
+  {
+   "table": "enhancements",
+   "id": "000009737005",
+   "side": "attacker",
+   "detachment": "Warrior Bioform Onslaught",
+   "name_en": "Elevated Might",
+   "name_zh": null,
+   "status": "partial",
+   "effects": [
+    {
+     "phase": "wound",
+     "op": "reroll",
+     "params": [
+      "fail"
+     ],
+     "condition": [
+      "phase_melee"
+     ],
+     "source": "至高伟力（Elevated Might，11 版重印整条改写）：携带者的近战攻击可重掷致伤骰（phase_melee 门＝原文限近战攻击）"
+    },
+    {
+     "phase": "save",
+     "op": "ap_improve",
+     "params": [
+      1
+     ],
+     "condition": [
+      "phase_melee"
+     ],
+     "source": "至高伟力（Elevated Might，11 版重印整条改写）：携带者的近战攻击 AP 改善 1（phase_melee 门＝原文限近战攻击）"
+    }
+   ],
+   "requires_toggles": [
+    "bearer_leading"
+   ],
+   "not_modeled_notes_zh": [
+    "受益面仅限携带者本人（非其所在单位）——引擎守方/攻方 profile 是整单位，多模型单位模拟时会把角色专属加成施加到全单位（高估）；只有把携带者单独建成单模型单位时才等价"
+   ],
+   "provenance": {
+    "text_sha256": "ecef73239093c05320638e339e5a48563cca6d3c63bb1bd577d6cac7f7db4182"
+   },
+   "encoded_by": "manual-2026-07-21",
+   "weapon_filter": ""
+  },
+  {
+   "table": "enhancements",
+   "id": "000010147002",
+   "side": "attacker",
+   "detachment": "Subterranean Assault",
+   "name_en": "Synaptic Strategy",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "突触战略（Synaptic Strategy）：每战一次以 0CP 使用快速突进战略——CP 经济与预备队域，均无引擎载体"
+   ],
+   "provenance": {
+    "text_sha256": "74b411c027b842f2bece93c23123de9149d68f5354cf3604e779eb2fa352cb25"
+   },
+   "encoded_by": "manual-2026-07-21",
+   "weapon_filter": ""
+  },
+  {
+   "table": "enhancements",
+   "id": "000010147003",
+   "side": "attacker",
+   "detachment": "Subterranean Assault",
+   "name_en": "Tremor Senses",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "震颤感知（Tremor Senses）：部署后重新部署至多三个单位并可放进战略预备队——部署与预备队域无引擎载体"
+   ],
+   "provenance": {
+    "text_sha256": "ea5484b11aaa82646df8d07ab744500382ae4ca2d0a28e6a0bcdda7ae054db5f"
+   },
+   "encoded_by": "manual-2026-07-21",
+   "weapon_filter": ""
+  },
+  {
+   "table": "enhancements",
+   "id": "000010147004",
+   "side": "attacker",
+   "detachment": "Subterranean Assault",
+   "name_en": "Vanguard Intellect",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "先锋智识（Vanguard Intellect）：携带者所在单位可在第一、二、三个移动阶段深入打击登场——预备队域无引擎载体"
+   ],
+   "provenance": {
+    "text_sha256": "df273c9d64b89981fdab1d5fc5d264e07ff2ab781011b73563dce25c8958eae6"
+   },
+   "encoded_by": "manual-2026-07-21",
+   "weapon_filter": ""
+  },
+  {
+   "table": "enhancements",
+   "id": "000010147005",
+   "side": "attacker",
+   "detachment": "Subterranean Assault",
+   "name_en": "Trygon Prime",
+   "name_zh": null,
+   "status": "partial",
+   "effects": [
+    {
+     "phase": "wound",
+     "op": "s_improve",
+     "params": [
+      1
+     ],
+     "condition": [
+      "phase_melee"
+     ],
+     "source": "Trygon Prime 增强：携带者近战武器 S+1（phase_melee 门＝原文限近战武器；Trygon 是专有生物名，库内无既定中文译名，此处保留英文不自造）"
+    },
+    {
+     "phase": "hit",
+     "op": "bs_improve",
+     "params": [
+      1
+     ],
+     "condition": [
+      "phase_melee"
+     ],
+     "source": "Trygon Prime 增强：携带者近战武器 WS 改善 1（bs_improve＝特征值改善通道；phase_melee 门＝原文限近战武器）"
+    }
+   ],
+   "requires_toggles": [
+    "bearer_leading"
+   ],
+   "not_modeled_notes_zh": [
+    "受益面仅限携带者本人（非其所在单位）——引擎守方/攻方 profile 是整单位，多模型单位模拟时会把角色专属加成施加到全单位（高估）；只有把携带者单独建成单模型单位时才等价",
+    "「携带者获得 SYNAPSE 关键词」是关键词授予，无引擎载体"
+   ],
+   "provenance": {
+    "text_sha256": "1278ddf20c924efafc8bdf596dbdffc1cef72f0f832caa7f45fc807ad245bb52"
+   },
+   "encoded_by": "manual-2026-07-21",
+   "weapon_filter": ""
+  },
+  {
+   "table": "enhancements",
+   "id": "fp11e-tyranids-ambush-e1",
+   "side": "attacker",
+   "detachment": "Ambush Predators",
+   "name_en": "Encircling Horrors",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "环伺恐怖（Encircling Horrors，11 版全新增强）：对手移动阶段作 D3+3\" 普通移动——移动域无引擎载体"
+   ],
+   "provenance": {
+    "text_sha256": "619a1503628c80149eda6b0d5ce3201c528c8417dbb08a663f04eb52fd73b39e"
+   },
+   "encoded_by": "manual-2026-07-21",
+   "weapon_filter": ""
+  },
+  {
+   "table": "enhancements",
+   "id": "fp11e-tyranids-ambush-e2",
+   "side": "attacker",
+   "detachment": "Ambush Predators",
+   "name_en": "Cryptophotaic Camouflage",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "隐光伪装（Cryptophotaic Camouflage，11 版全新增强）：本单位侦测距离 -3\"——11 版侦测/隐蔽域无引擎载体"
+   ],
+   "provenance": {
+    "text_sha256": "24d85c5e277159ea2b2daca2a6b476a4b76b5bc0287e0f0c93f6d7a138a220c8"
+   },
+   "encoded_by": "manual-2026-07-21",
+   "weapon_filter": ""
+  },
+  {
+   "table": "enhancements",
+   "id": "fp11e-tyranids-norn-e1",
+   "side": "attacker",
+   "detachment": "Talons of the Norn Queen",
+   "name_en": "Destabilising Predation",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "扰动捕食（Destabilising Predation，11 版全新增强）：本单位**远程**攻击获得 [ANTI-CHARACTER 2+]——引擎有 (wound, crit_threshold) 与 target_has_keyword，但没有「射击阶段 × 目标关键词」的复合 tag（只有近战向的 melee_target_has_keyword），裸编会让近战攻击也吃到 2+ 暴击致伤（显著高估），故不编（既定判据）"
+   ],
+   "provenance": {
+    "text_sha256": "8004b4ae0b532ac593161ac1a44a33ca656f04433839ef0cb9054d20787a6418"
+   },
+   "encoded_by": "manual-2026-07-21",
+   "weapon_filter": ""
+  },
+  {
+   "table": "enhancements",
+   "id": "fp11e-tyranids-norn-e2",
+   "side": "target",
+   "detachment": "Talons of the Norn Queen",
+   "name_en": "Synaptoprescience",
+   "name_zh": null,
+   "status": "encoded",
+   "effects": [
+    {
+     "phase": "save",
+     "op": "invuln",
+     "params": [
+      4
+     ],
+     "condition": [],
+     "source": "突触预知（Synaptoprescience，11 版全新增强）：携带者所在单位获得 4+ 无效保护（守方向；原文未限相位）"
+    }
+   ],
+   "requires_toggles": [
+    "defender_bearer_leading"
+   ],
+   "not_modeled_notes_zh": [],
+   "provenance": {
+    "text_sha256": "0f0c3073e03bccc09b6dd301e63ad37ae6270b40aa3e6f3ace6c3b46ff220f6e"
+   },
+   "encoded_by": "manual-2026-07-21",
+   "weapon_filter": ""
+  }
+ ]
+}

@@ -186,6 +186,29 @@ class TestDeactivations:
         rep = apply_fp_rules(db, _deact_patch())
         assert rep["deact_applied"] == 1
 
+    def test_real_patches_file_text_patches_shape(self):
+        """text_patches 总数 + 形状守卫（PR31 自审 LOW-1 补齐）。
+
+        deactivations / inserts 早有 `len(...)` 断言，唯独 text_patches 没有——
+        铺量期一次追加十几条，漏写或重复一条不会被任何测试发现。这里锁总数、
+        锁「同一 (table, id, column) 只许一条」，并要求每条都带溯源与非空目标文本。
+        `from_text` 允许为空串——PR27 的上游空壳行归位（AdM 000010748005 等，
+        库内 text_zh 本就是空）正是靠空 from 做幂等守卫的。
+        """
+        import json
+        from pathlib import Path
+        data = json.loads(Path("db_compile/fp_rules_patches.json").read_text(
+            encoding="utf-8"))
+        patches = data.get("text_patches", [])
+        assert len(patches) == 181          # PR31 吞噬者追加 16 条后
+        keys = [(p["table"], p["id"], p["column"]) for p in patches]
+        assert len(set(keys)) == len(keys), "同一 (表, id, 列) 重复补丁"
+        for p in patches:
+            assert p.get("fp_source"), p.get("id")
+            assert p.get("from_text") is not None, p.get("id")
+            assert p.get("to_text"), p.get("id")
+            assert p["from_text"] != p["to_text"], p.get("id")
+
     def test_real_patches_file_deactivations_shape(self):
         # 真源补丁文件：钛 12 条（战略 9 + 增强 3，2026-07-16 裁 A / PR4）
         # + 吞世者 6 条（PR5：怒火容器完整重印未收录——战略 4 + 增强 2）
@@ -196,12 +219,13 @@ class TestDeactivations:
         # + 混沌星际战士 9 条（PR28：Cabal of Chaos 完整重印未收录——战略 6 + 增强 3）
         # + 星界军 5 条（PR29：Bridgehead Strike 完整重印未收录——战略 3 + 增强 2）
         # + 灵族 5 条（PR30：Armoured Warhost 完整重印未收录——战略 3 + 增强 2）
+        # + 吞噬者 6 条（PR31：Warrior Bioform Onslaught 完整重印未收录——战略 4 + 增强 2）
         import json
         from pathlib import Path
         data = json.loads(Path("db_compile/fp_rules_patches.json").read_text(
             encoding="utf-8"))
         deacts = data.get("deactivations", [])
-        assert len(deacts) == 68
+        assert len(deacts) == 74
         strat = {d["id"] for d in deacts if d["table"] == "stratagems"}
         enh = {d["id"] for d in deacts if d["table"] == "enhancements"}
         assert strat == {
@@ -226,7 +250,9 @@ class TestDeactivations:
             # PR29 星界军：旧 Bridgehead Strike 重印未收录
             "000009802002", "000009802004", "000009802006",
             # PR30 灵族：旧 Armoured Warhost 重印未收录
-            "000009770003", "000009770005", "000009770007"}
+            "000009770003", "000009770005", "000009770007",
+            # PR31 吞噬者：旧 Warrior Bioform Onslaught 重印未收录
+            "000009738002", "000009738003", "000009738004", "000009738007"}
         assert enh == {"000009839004", "000009839005", "000009983005",
                        "000009847003", "000009847004",
                        # PR6 黑色圣堂
@@ -244,7 +270,9 @@ class TestDeactivations:
                        # PR29 星界军
                        "000009801004", "000009801005",
                        # PR30 灵族
-                       "000009769003", "000009769005"}
+                       "000009769003", "000009769005",
+                       # PR31 吞噬者
+                       "000009737002", "000009737004"}
         for d in deacts:
             assert d["status"] == "removed_11e"
             assert d.get("fp_source")
@@ -450,8 +478,11 @@ class TestInserts:
         #   Twilight Flickers 三全新分队各 1 规则+2 增强+3 战略；FP 页 3/4/5，
         #   Wahapedia 未滚入；Acrobatic Onslaught 与库内 Ghosts of the Webway
         #   分队规则同名异体，挂 expect_duplicate_name）
+        # + 吞噬者 13 条（PR31：Ambush Predators / Talons of the Norn Queen 两全新分队
+        #   各 1 规则+2 增强+3 战略；Warrior Bioform Onslaught 完整重印新增 1 战略
+        #   ALIEN PHYSIOLOGY；FP 页 2/3/4，Wahapedia 未滚入）
         ins = data.get("inserts", [])
-        assert len(ins) == 364
+        assert len(ins) == 377
         ids = {p["values"]["id"] for p in ins}
         assert ids == {"fp11e-tau-aac-det", "fp11e-tau-aac-s1", "fp11e-tau-aac-s2",
                        "fp11e-tau-aac-s3", "fp11e-tau-aux-gbu",
@@ -683,7 +714,15 @@ class TestInserts:
                        "fp11e-aeldari-outcast-s2", "fp11e-aeldari-outcast-s3",
                        "fp11e-aeldari-twilight", "fp11e-aeldari-twilight-e1",
                        "fp11e-aeldari-twilight-e2", "fp11e-aeldari-twilight-s1",
-                       "fp11e-aeldari-twilight-s2", "fp11e-aeldari-twilight-s3"}
+                       "fp11e-aeldari-twilight-s2", "fp11e-aeldari-twilight-s3",
+                       # PR31 吞噬者
+                       "fp11e-tyranids-ambush", "fp11e-tyranids-ambush-e1",
+                       "fp11e-tyranids-ambush-e2", "fp11e-tyranids-ambush-s1",
+                       "fp11e-tyranids-ambush-s2", "fp11e-tyranids-ambush-s3",
+                       "fp11e-tyranids-norn", "fp11e-tyranids-norn-e1",
+                       "fp11e-tyranids-norn-e2", "fp11e-tyranids-norn-s1",
+                       "fp11e-tyranids-norn-s2", "fp11e-tyranids-norn-s3",
+                       "fp11e-tyranids-wbo-s1"}
         for p in ins:
             assert p.get("fp_source")
             assert p["values"].get("id", "").startswith("fp11e-")
