@@ -689,6 +689,14 @@
  ],
  "resolved": [
   {
+   "faction": "GC",
+   "unit": "Acolyte Hybrids With Hand Flamers / Goliath Rockgrinder / Goliath Truck / Reductus Saboteur",
+   "weapon": "Demolition charges / Demolition charge cache",
+   "field": "range",
+   "verdict": "DB 正确(8\")不改",
+   "evidence": "FP 原文（PyMuPDF 取自 data/Faction Pack Genestealer Cults.pdf 第 8 页，与 data_refined page_008.md 一致）四处均为「Change the Range characteristic ... to '8\"'」，库现值即 8\" → 免补。PR25 迭代 1 曾据 refine 误读落 8→6 四条补丁，迭代 2 A/B 复核推翻并回滚（含库内 range 值复位）"
+  },
+  {
    "faction": "ORK",
    "unit": "Grot Mega-Tank",
    "weapon": "Twin grotzooka",

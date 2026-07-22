@@ -1,0 +1,2602 @@
+{
+ "_comment": "P7-PR25 基因窃取者教派（Genestealer Cults，faction=GC）全量 DSL 编码。13 分队规则（10 存量 + 3 fp_new）+ 军规 Cult Ambush + 57 战略 + 36 增强 = 107 条（8 encoded / 18 partial / 81 not_modeled）。零新引擎通道、零新态势开关、零新 condition tag——纯编码 PR。录入约定：① 点名型条目（战略/增强）的「限某类单位」前提由玩家点名时声明，不另记未建模残量；② 「携带者本模型」口径的效果一律挂 bearer_leading /defender_bearer_leading 开关并记残量；③ 阶段门按 WHEN 之后本回合还剩哪些阶段能生效推定——双阶段（射击或战斗）与「持续至战斗结束」一律不设阶段门。",
+ "dsl_version": 1,
+ "faction": "GC",
+ "entries": [
+  {
+   "table": "abilities",
+   "id": "000008501",
+   "detachment": null,
+   "name_en": "Cult Ambush",
+   "name_zh": null,
+   "encoded_by": "manual-2026-07-21",
+   "provenance": {
+    "current_text": "db abilities.text_zh id=000008501",
+    "base_text": "Wahapedia 现文（PR25 工作单：FP 未触及或已滚入，11 版仍现行）",
+    "text_sha256": "e8b733534584dade875b0c29b1bd14655b7605ee7e5eda5dbf20e0a1b0428256"
+   },
+   "side": "attacker",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "复苏点（Resurgence points）资源、单位被消灭后按起始编制花费复苏点重生、Cult Ambush 标记的放置/移除与 ingress move——资源/预备队/部署三域，全部在攻击结算链之外"
+   ]
+  },
+  {
+   "table": "abilities",
+   "id": "det000009066",
+   "detachment": "Host of Ascension",
+   "name_en": "A Perfect Ambush",
+   "name_zh": null,
+   "materialize": {
+    "from_table": "detachments",
+    "from_id": "000009066",
+    "from_column": "rule_text"
+   },
+   "encoded_by": "manual-2026-07-21",
+   "provenance": {
+    "current_text": "db detachments.rule_text id=000009066",
+    "base_text": "Wahapedia 现文（PR25 工作单：FP 未触及或已滚入，11 版仍现行）",
+    "text_sha256": "3df5b28000a4d80a9c338d29d407618f1de58ba547f76e6330dd04ff7e656a22",
+    "synthesis": "DSL 投影经 materialize 落 abilities 新行（spec D5）"
+   },
+   "side": "attacker",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "增援登场当回合至下个战斗阶段结束期间单位武器获 [SUSTAINED HITS 1] 与 [IGNORES COVER]——「本回合作为增援登场」的状态无引擎开关载体（参照 PR6 下车态须新增态势开关，本 PR 零新开关），裸编会对全部攻击无条件过度施加，不编"
+   ]
+  },
+  {
+   "table": "abilities",
+   "id": "det000009070",
+   "detachment": "Xenocreed Congregation",
+   "name_en": "Unquestioning Fanaticism",
+   "name_zh": null,
+   "materialize": {
+    "from_table": "detachments",
+    "from_id": "000009070",
+    "from_column": "rule_text"
+   },
+   "encoded_by": "manual-2026-07-21",
+   "provenance": {
+    "current_text": "db detachments.rule_text id=000009070",
+    "base_text": "Wahapedia 现文（PR25 工作单：FP 未触及或已滚入，11 版仍现行）",
+    "text_sha256": "346f1899e7b88162a58400eb7936da1cca3e2bf7cfea1d47af3f6926afd1dcec",
+    "synthesis": "DSL 投影经 materialize 落 abilities 新行（spec D5）"
+   },
+   "side": "target",
+   "status": "partial",
+   "effects": [
+    {
+     "phase": "fnp",
+     "op": "fnp",
+     "params": [
+      3
+     ],
+     "condition": [],
+     "source": "不容置疑的狂信：率领 HYBRIDS 单位的 MAGUS/PRIMUS/ACOLYTE ICONWARD 模型获 Feel No Pain 3+"
+    }
+   ],
+   "requires_toggles": [
+    "defender_bearer_leading"
+   ],
+   "not_modeled_notes_zh": [
+    "FNP 3+ 只给该 CHARACTER 模型本身（非其率领的整支单位）——单人物（该人物）口径模拟准确，整单位注入会高估，故挂 defender_bearer_leading 开关",
+    "进军骰与冲锋骰重投（CHARACTER 率领 ACOLYTE/METAMORPH/NEOPHYTE HYBRIDS 时）——移动/冲锋骰域无战斗链载体"
+   ]
+  },
+  {
+   "table": "abilities",
+   "id": "det000009074",
+   "detachment": "Biosanctic Broodsurge",
+   "name_en": "Hypermorphic Fury",
+   "name_zh": null,
+   "materialize": {
+    "from_table": "detachments",
+    "from_id": "000009074",
+    "from_column": "rule_text"
+   },
+   "encoded_by": "manual-2026-07-21",
+   "provenance": {
+    "current_text": "db detachments.rule_text id=000009074",
+    "base_text": "Wahapedia 现文（PR25 工作单：FP 未触及或已滚入，11 版仍现行）",
+    "text_sha256": "1f356662380744a7f3e33731d86a7d09daa5ff712bcfb9644924a1c7b41a8aeb",
+    "synthesis": "DSL 投影经 materialize 落 abilities 新行（spec D5）"
+   },
+   "side": "attacker",
+   "status": "partial",
+   "effects": [
+    {
+     "phase": "attacks",
+     "op": "modify",
+     "params": [
+      1
+     ],
+     "condition": [
+      "melee_charging"
+     ],
+     "source": "超变狂怒：本回合做过冲锋移动的 ABERRANTS/BIOPHAGUS/PURESTRAIN GENESTEALERS 单位，其近战武器攻击次数 +1"
+    }
+   ],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "冲锋骰 +1 无战斗链载体（冲锋骰域）",
+    "限 ABERRANTS/BIOPHAGUS/PURESTRAIN GENESTEALERS 单位——按所模拟单位属其一的假设施加"
+   ]
+  },
+  {
+   "table": "abilities",
+   "id": "det000009078",
+   "detachment": "Outlander Claw",
+   "name_en": "Rapid Takeover",
+   "name_zh": null,
+   "materialize": {
+    "from_table": "detachments",
+    "from_id": "000009078",
+    "from_column": "rule_text"
+   },
+   "encoded_by": "manual-2026-07-21",
+   "provenance": {
+    "current_text": "db detachments.rule_text id=000009078",
+    "base_text": "Wahapedia 现文（PR25 工作单：FP 未触及或已滚入，11 版仍现行）",
+    "text_sha256": "7d8680d3470229afabfdf5f9a771b4354a3ddec84de40d5083ab0511dbeaf1c7",
+    "synthesis": "DSL 投影经 materialize 落 abilities 新行（spec D5）"
+   },
+   "side": "attacker",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "未受战斗震慑的 MOUNTED/VEHICLE 模型 OC+1、Atalan Jackals 锁定目标点控制权——OC/目标点域无战斗链载体"
+   ]
+  },
+  {
+   "table": "abilities",
+   "id": "det000009082",
+   "detachment": "Brood Brother Auxilia",
+   "name_en": "Integrated Tactics",
+   "name_zh": null,
+   "materialize": {
+    "from_table": "detachments",
+    "from_id": "000009082",
+    "from_column": "rule_text"
+   },
+   "encoded_by": "manual-2026-07-21",
+   "provenance": {
+    "current_text": "db detachments.rule_text id=000009082",
+    "base_text": "Wahapedia 现文（PR25 工作单：FP 未触及或已滚入，11 版仍现行）",
+    "text_sha256": "59f0980e73ad8cb66eb2a48484046887845a4b90ae0575bcf724a444b2203e63",
+    "synthesis": "DSL 投影经 materialize 落 abilities 新行（spec D5）"
+   },
+   "side": "attacker",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "ASTRA MILITARUM 单位射击后令所选敌方单位陷入交叉火力（overlapping fire），其后 GC 远程攻击对其命中 +1——需另一支友军单位先行射击标记的跨单位状态，引擎无该状态载体，裸编会无条件过度施加"
+   ]
+  },
+  {
+   "table": "abilities",
+   "id": "det000009083",
+   "detachment": "Brood Brother Auxilia",
+   "name_en": "BROOD BROTHERS",
+   "name_zh": null,
+   "materialize": {
+    "from_table": "detachments",
+    "from_id": "000009083",
+    "from_column": "rule_text"
+   },
+   "encoded_by": "manual-2026-07-21",
+   "provenance": {
+    "current_text": "db detachments.rule_text id=000009083",
+    "base_text": "Wahapedia 现文（PR25 工作单：FP 未触及或已滚入，11 版仍现行）",
+    "text_sha256": "f8d7b7a03566965be417cd28eff5e26f184534b07834e9c70acabadf4098b824",
+    "synthesis": "DSL 投影经 materialize 落 abilities 新行（spec D5）"
+   },
+   "side": "attacker",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "按战斗规模上限携带 ASTRA MILITARUM 单位、WARLORD 须为 GC 模型、若干关键词禁选——军表编制域，非战斗链"
+   ]
+  },
+  {
+   "table": "abilities",
+   "id": "det000009459",
+   "detachment": "Cult Unveiled",
+   "name_en": "Harassing Fire",
+   "name_zh": null,
+   "materialize": {
+    "from_table": "detachments",
+    "from_id": "000009459",
+    "from_column": "rule_text"
+   },
+   "encoded_by": "manual-2026-07-21",
+   "provenance": {
+    "current_text": "db detachments.rule_text id=000009459",
+    "base_text": "Wahapedia 现文（PR25 工作单：FP 未触及或已滚入，11 版仍现行）",
+    "text_sha256": "ce43f39b18a45c887cd390952eb5b877f0b814acab3eb2c0d03ccd70162254a4",
+    "synthesis": "DSL 投影经 materialize 落 abilities 新行（spec D5）"
+   },
+   "side": "attacker",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "射击阶段末选一未接战单位操作舱门并做 3\" 常规移动（该回合不可宣冲）——移动/地形域，非战斗链"
+   ]
+  },
+  {
+   "table": "abilities",
+   "id": "det000009467",
+   "detachment": "Genespawn Onslaught",
+   "name_en": "Blessed Visages",
+   "name_zh": null,
+   "materialize": {
+    "from_table": "detachments",
+    "from_id": "000009467",
+    "from_column": "rule_text"
+   },
+   "encoded_by": "manual-2026-07-21",
+   "provenance": {
+    "current_text": "db detachments.rule_text id=000009467",
+    "base_text": "Wahapedia 现文（PR25 工作单：FP 未触及或已滚入，11 版仍现行）",
+    "text_sha256": "54028bb80cc6474528ca5f59a49a5158c877493cf306b462a5730449faee95cb",
+    "synthesis": "DSL 投影经 materialize 落 abilities 新行（spec D5）"
+   },
+   "side": "attacker",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "敌方宣布冲锋 GC 单位时须过领导力测验，失败则其攻击命中 -1——领导力测验的随机条件分支无载体（同 DA「恐怖狂热」先例），裸编等于把失败分支当恒成立，不编"
+   ]
+  },
+  {
+   "table": "abilities",
+   "id": "det000009475",
+   "detachment": "Infestation Swarm",
+   "name_en": "Half-Glimpsed Shadows",
+   "name_zh": null,
+   "materialize": {
+    "from_table": "detachments",
+    "from_id": "000009475",
+    "from_column": "rule_text"
+   },
+   "encoded_by": "manual-2026-07-21",
+   "provenance": {
+    "current_text": "db detachments.rule_text id=000009475",
+    "base_text": "Wahapedia 现文（PR25 工作单：FP 未触及或已滚入，11 版仍现行）",
+    "text_sha256": "82435644ce4c5e16b65aa3bfa778c5973683d5cd060a17501b21b381277cf3db",
+    "synthesis": "DSL 投影经 materialize 落 abilities 新行（spec D5）"
+   },
+   "side": "target",
+   "status": "partial",
+   "effects": [
+    {
+     "phase": "hit",
+     "op": "modify",
+     "params": [
+      -1
+     ],
+     "condition": [
+      "phase_shooting"
+     ],
+     "source": "半瞥之影：6\" 外的远程攻击瞄准 GREAT DEVOURER 单位时命中骰 -1"
+    }
+   ],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "「攻击方模型不在 6\" 内」的距离门无载体，按攻击方在 6\" 外的常态假设施加——6\" 内近距射击会高估 1 点命中惩罚",
+    "限 GREAT DEVOURER 单位守方（Purestrain Genestealers / Patriarch 等）——请只在模拟该类单位时选择本分队规则"
+   ]
+  },
+  {
+   "table": "abilities",
+   "id": "det000009826",
+   "detachment": "Final Day",
+   "name_en": "Psionic Parasitism",
+   "name_zh": null,
+   "materialize": {
+    "from_table": "detachments",
+    "from_id": "000009826",
+    "from_column": "rule_text"
+   },
+   "encoded_by": "manual-2026-07-21",
+   "provenance": {
+    "current_text": "db detachments.rule_text id=000009826",
+    "base_text": "Wahapedia 现文（PR25 工作单：FP 未触及或已滚入，11 版仍现行）",
+    "text_sha256": "08f9e9d4969075a7208ea2fd6d792e3711f883773fe1d558e451a0cf508b8616",
+    "synthesis": "DSL 投影经 materialize 落 abilities 新行（spec D5）"
+   },
+   "side": "attacker",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "移动阶段末以 GC 单位承受 D3+1 致命伤换取 TYRANIDS 单位回血与命中 +1、Catalyst 光环（敌方位于本方 TYRANIDS 6\" 内时 GC 攻击命中 +1）、以及 Vanguard Invader 编制条款——致命伤/治疗/跨单位光环/编制四域均无战斗链载体"
+   ]
+  },
+  {
+   "table": "abilities",
+   "id": "detfp11e-genestealercults-heroesuprising",
+   "detachment": "Heroes of the Uprising",
+   "name_en": "Killer Reputation",
+   "name_zh": "杀手威名",
+   "materialize": {
+    "from_table": "detachments",
+    "from_id": "fp11e-genestealercults-heroesuprising",
+    "from_column": "rule_text"
+   },
+   "encoded_by": "manual-2026-07-21",
+   "provenance": {
+    "current_text": "db detachments.rule_text id=fp11e-genestealercults-heroesuprising",
+    "base_text": "Wahapedia 现文（PR25 工作单：FP 未触及或已滚入，11 版仍现行）",
+    "text_sha256": "b29365019b692ac4c04d6b1072c07122270a9e16624ccb26281c2a2d91df87ee",
+    "synthesis": "DSL 投影经 materialize 落 abilities 新行（spec D5）"
+   },
+   "side": "attacker",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "KELERMORPH/LOCUS/REDUCTUS SABOTEUR/SANCTUS 获 KILLER 关键词，KILLER 模型的攻击可重骰命中 1 与致伤 1——引擎重骰通道语义为「重骰失败骰」，「只重骰 1 点」无载体，裸编会显著高估"
+   ]
+  },
+  {
+   "table": "abilities",
+   "id": "detfp11e-genestealercults-purestrainbroodswarm",
+   "detachment": "Purestrain Broodswarm",
+   "name_en": "Enemy Within",
+   "name_zh": "内部之敌",
+   "materialize": {
+    "from_table": "detachments",
+    "from_id": "fp11e-genestealercults-purestrainbroodswarm",
+    "from_column": "rule_text"
+   },
+   "encoded_by": "manual-2026-07-21",
+   "provenance": {
+    "current_text": "db detachments.rule_text id=fp11e-genestealercults-purestrainbroodswarm",
+    "base_text": "Wahapedia 现文（PR25 工作单：FP 未触及或已滚入，11 版仍现行）",
+    "text_sha256": "2b7210f3336b4f09da4600ec18032faaf4695fdbda0fa5ce72469e20983acca1",
+    "synthesis": "DSL 投影经 materialize 落 abilities 新行（spec D5）"
+   },
+   "side": "attacker",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "对手战斗阶段末未接战的 PURESTRAIN GENESTEALERS 可置入战略预备队，外加 PURESTRAIN 分队标签互斥条款——预备队/编制域无战斗链载体"
+   ]
+  },
+  {
+   "table": "abilities",
+   "id": "detfp11e-genestealercults-xenocultmasses",
+   "detachment": "Xenocult Masses",
+   "name_en": "Hordes of the Faithful",
+   "name_zh": "信徒洪流",
+   "materialize": {
+    "from_table": "detachments",
+    "from_id": "fp11e-genestealercults-xenocultmasses",
+    "from_column": "rule_text"
+   },
+   "encoded_by": "manual-2026-07-21",
+   "provenance": {
+    "current_text": "db detachments.rule_text id=fp11e-genestealercults-xenocultmasses",
+    "base_text": "Wahapedia 现文（PR25 工作单：FP 未触及或已滚入，11 版仍现行）",
+    "text_sha256": "5c96ab04b26460687d02656a2a9e6cb868bddf1ba3b4fef9bf465e0755bc2446",
+    "synthesis": "DSL 投影经 materialize 落 abilities 新行（spec D5）"
+   },
+   "side": "attacker",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "指挥阶段地形区内的 NEOPHYTE HYBRIDS 单位回复 3 点伤口，外加 HOSTS 分队标签互斥条款——治疗/编制域无战斗链载体"
+   ]
+  },
+  {
+   "table": "stratagems",
+   "id": "000009076002",
+   "detachment": "Biosanctic Broodsurge",
+   "name_en": "EVASIVE VANGUARD",
+   "name_zh": null,
+   "encoded_by": "manual-2026-07-21",
+   "provenance": {
+    "current_text": "db stratagems.text_zh id=000009076002",
+    "base_text": "Wahapedia 现文（PR25 工作单：FP 未触及或已滚入，11 版仍现行）",
+    "text_sha256": "11030b70c3373631e47c1a403f1c38c05e918ec189cd3e8f73501cb3e645d4b1"
+   },
+   "side": "attacker",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "重新放置 Cult Ambush 标记——部署/标记域"
+   ]
+  },
+  {
+   "table": "stratagems",
+   "id": "000009076003",
+   "detachment": "Biosanctic Broodsurge",
+   "name_en": "SAINTLY PAROXYSM",
+   "name_zh": null,
+   "encoded_by": "manual-2026-07-21",
+   "provenance": {
+    "current_text": "db stratagems.text_zh id=000009076003",
+    "base_text": "Wahapedia 现文（PR25 工作单：FP 未触及或已滚入，11 版仍现行）",
+    "text_sha256": "6e39d9c0cb843d5b21ab160aa0757333c5945dd6152c169c7c8411daf4d026ce"
+   },
+   "side": "attacker",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "GC CHARACTER 被消灭后 D6 2+ 令该敌方单位承受 D3（Abominant/Patriarch 则 2D3）致命伤——攻击序列外的致命伤无载体（wound.mortal_pool 只承接 [DEVASTATING WOUNDS] 的暴击致伤转化）"
+   ]
+  },
+  {
+   "table": "stratagems",
+   "id": "000009076004",
+   "detachment": "Biosanctic Broodsurge",
+   "name_en": "GENE-TWISTED MUSCLE",
+   "name_zh": null,
+   "encoded_by": "manual-2026-07-21",
+   "provenance": {
+    "current_text": "db stratagems.text_zh id=000009076004",
+    "base_text": "Wahapedia 现文（PR25 工作单：FP 未触及或已滚入，11 版仍现行）",
+    "text_sha256": "29245fe5644f6b78b69985a5826ca8d5270a9914f9862c320684ffd71c72692b"
+   },
+   "side": "attacker",
+   "status": "partial",
+   "effects": [
+    {
+     "phase": "wound",
+     "op": "modify",
+     "params": [
+      1
+     ],
+     "condition": [
+      "melee_target_has_keyword",
+      "monster"
+     ],
+     "source": "基因扭曲肌肉：战斗阶段对 MONSTER 目标的攻击致伤骰 +1"
+    },
+    {
+     "phase": "wound",
+     "op": "modify",
+     "params": [
+      1
+     ],
+     "condition": [
+      "melee_target_has_keyword",
+      "vehicle"
+     ],
+     "source": "基因扭曲肌肉：战斗阶段对 VEHICLE 目标的攻击致伤骰 +1"
+    }
+   ],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "MONSTER 或 VEHICLE 二关键字的析取，引擎单关键字 tag 无 OR——拆两条编；同时具两关键字的目标（正常兵牌不并存）的重复叠加由致伤修正 ±1 夹取兜住",
+    "限本阶段尚未选中战斗的 Aberrants/Biophagus/Purestrain Genestealers 单位——点名即声明"
+   ]
+  },
+  {
+   "table": "stratagems",
+   "id": "000009076005",
+   "detachment": "Biosanctic Broodsurge",
+   "name_en": "HYPER-METABOLIC VIGOUR",
+   "name_zh": null,
+   "encoded_by": "manual-2026-07-21",
+   "provenance": {
+    "current_text": "db stratagems.text_zh id=000009076005",
+    "base_text": "Wahapedia 现文（PR25 工作单：FP 未触及或已滚入，11 版仍现行）",
+    "text_sha256": "e89b47464e492baec4bc4a3458279e355b3351957f86bae051038ea7d9996536"
+   },
+   "side": "attacker",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "突进/巩固移动改 6\" 且放宽落点约束——移动域"
+   ]
+  },
+  {
+   "table": "stratagems",
+   "id": "000009076006",
+   "detachment": "Biosanctic Broodsurge",
+   "name_en": "STIMULATED BIO-SURGE",
+   "name_zh": null,
+   "encoded_by": "manual-2026-07-21",
+   "provenance": {
+    "current_text": "db stratagems.text_zh id=000009076006",
+    "base_text": "FP Rules Updates 已刷新为 11 版现行文本（PR25 迭代 1 fp_rules text_patch）",
+    "text_sha256": "bc526d3d2dd7adfc0ff129d651f6cf35e23ffcc01f0606a3f7eb3e574d6d77a7"
+   },
+   "side": "attacker",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "冲锋骰 +2——冲锋骰域无战斗链载体"
+   ]
+  },
+  {
+   "table": "stratagems",
+   "id": "000009076007",
+   "detachment": "Biosanctic Broodsurge",
+   "name_en": "BIO-HORROR REVELATION",
+   "name_zh": null,
+   "encoded_by": "manual-2026-07-21",
+   "provenance": {
+    "current_text": "db stratagems.text_zh id=000009076007",
+    "base_text": "Wahapedia 现文（PR25 工作单：FP 未触及或已滚入，11 版仍现行）",
+    "text_sha256": "c09027e6581d521f39d0b5b90315864bcc3b24667b31b8bed3b7e61430391d49"
+   },
+   "side": "attacker",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "9\" 内敌方单位射击前须过 -1 领导力测验，失败则其对本单位的攻击命中 -1——领导力测验的随机条件分支无载体，不编"
+   ]
+  },
+  {
+   "table": "stratagems",
+   "id": "000009085002",
+   "detachment": "Brood Brother Auxilia",
+   "name_en": "IN THE SHADOW OF IRON",
+   "name_zh": null,
+   "encoded_by": "manual-2026-07-21",
+   "provenance": {
+    "current_text": "db stratagems.text_zh id=000009085002",
+    "base_text": "FP Rules Updates 已刷新为 11 版现行文本（PR25 迭代 1 fp_rules text_patch）",
+    "text_sha256": "de37bfbf98dc4050f407823a22115d56ee775dff0d76c7c9b9571bde846ee49e"
+   },
+   "side": "attacker",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "重新放置 Cult Ambush 标记（敌方 8\" 外且本单位 6\" 内）——部署/标记域"
+   ]
+  },
+  {
+   "table": "stratagems",
+   "id": "000009085003",
+   "detachment": "Brood Brother Auxilia",
+   "name_en": "REGIMENTAL REINFORCEMENTS",
+   "name_zh": null,
+   "encoded_by": "manual-2026-07-21",
+   "provenance": {
+    "current_text": "db stratagems.text_zh id=000009085003",
+    "base_text": "FP Rules Updates 已刷新为 11 版现行文本（PR25 迭代 1 fp_rules text_patch）",
+    "text_sha256": "ada9117e5572b1b4d4c6d104f35df5cd08b4de5a078fc587cba0943cbf1a22b8"
+   },
+   "side": "attacker",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "D6 3+ 放置标记并按起始编制复活被消灭的 ASTRA MILITARUM INFANTRY 单位——复活/预备队域"
+   ]
+  },
+  {
+   "table": "stratagems",
+   "id": "000009085004",
+   "detachment": "Brood Brother Auxilia",
+   "name_en": "SUPPRESS AND OVERWHELM",
+   "name_zh": null,
+   "encoded_by": "manual-2026-07-21",
+   "provenance": {
+    "current_text": "db stratagems.text_zh id=000009085004",
+    "base_text": "Wahapedia 现文（PR25 工作单：FP 未触及或已滚入，11 版仍现行）",
+    "text_sha256": "82d8f4d31ecbbf92279c159ea84c63e27ea4c99b52987f198a11e4fd522b1894"
+   },
+   "side": "attacker",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "所选敌方单位不可被守火战略瞄准，且 GC 对其冲锋可重骰冲锋骰——守火资格/冲锋骰域"
+   ]
+  },
+  {
+   "table": "stratagems",
+   "id": "000009085005",
+   "detachment": "Brood Brother Auxilia",
+   "name_en": "ACCEPTABLE LOSSES",
+   "name_zh": null,
+   "encoded_by": "manual-2026-07-21",
+   "provenance": {
+    "current_text": "db stratagems.text_zh id=000009085005",
+    "base_text": "Wahapedia 现文（PR25 工作单：FP 未触及或已滚入，11 版仍现行）",
+    "text_sha256": "0dd95c46fdf2ed7edaf432b86bfac8cc24760ce744a9048b7c80f81a66fbcc62"
+   },
+   "side": "attacker",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "允许对处于接战范围内的敌方单位射击，代价是友军 GC 单位 5+ 承受 D3+1 致命伤——射击资格/自伤致命伤域"
+   ]
+  },
+  {
+   "table": "stratagems",
+   "id": "000009085006",
+   "detachment": "Brood Brother Auxilia",
+   "name_en": "SYMBIOTIC DESTRUCTION",
+   "name_zh": null,
+   "encoded_by": "manual-2026-07-21",
+   "provenance": {
+    "current_text": "db stratagems.text_zh id=000009085006",
+    "base_text": "Wahapedia 现文（PR25 工作单：FP 未触及或已滚入，11 版仍现行）",
+    "text_sha256": "36ed9be9f1ffda96f49ebfe6e9591c5c72fe3703cf19bfa21498aff5a91a44b1"
+   },
+   "side": "attacker",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "两支单位锁定同一目标并「重骰致伤骰 1 点」——只重骰 1 点无引擎通道（重骰通道语义为重骰失败骰），裸编高估"
+   ]
+  },
+  {
+   "table": "stratagems",
+   "id": "000009085007",
+   "detachment": "Brood Brother Auxilia",
+   "name_en": "A DARK NETWORK",
+   "name_zh": null,
+   "encoded_by": "manual-2026-07-21",
+   "provenance": {
+    "current_text": "db stratagems.text_zh id=000009085007",
+    "base_text": "Wahapedia 现文（PR25 工作单：FP 未触及或已滚入，11 版仍现行）",
+    "text_sha256": "2ae7d666ac7b5cf1b3e160c470ff670cd56d63c78d45ce9bc905e5f35656fc86"
+   },
+   "side": "attacker",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "对手增援落地后本单位做 6\" 常规移动——移动域"
+   ]
+  },
+  {
+   "table": "stratagems",
+   "id": "000009461002",
+   "detachment": "Cult Unveiled",
+   "name_en": "PLANNED EXTRACTION",
+   "name_zh": null,
+   "encoded_by": "manual-2026-07-21",
+   "provenance": {
+    "current_text": "db stratagems.text_zh id=000009461002",
+    "base_text": "Wahapedia 现文（PR25 工作单：FP 未触及或已滚入，11 版仍现行）",
+    "text_sha256": "968da44876a76c390f781b2e81c9eb273479b85d3e60907dc90e408b32ccb450"
+   },
+   "side": "attacker",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "撤退回合仍可射击——射击资格域"
+   ]
+  },
+  {
+   "table": "stratagems",
+   "id": "000009461003",
+   "detachment": "Cult Unveiled",
+   "name_en": "OUT OF HIDING",
+   "name_zh": null,
+   "encoded_by": "manual-2026-07-21",
+   "provenance": {
+    "current_text": "db stratagems.text_zh id=000009461003",
+    "base_text": "Wahapedia 现文（PR25 工作单：FP 未触及或已滚入，11 版仍现行）",
+    "text_sha256": "7462a43de6cf1382feff52092c5eee2023cb7d9a4c982e77dddbda244f6949d5"
+   },
+   "side": "attacker",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "预备队中的 NEOPHYTE HYBRIDS 单位获深空打击——预备队/部署域"
+   ]
+  },
+  {
+   "table": "stratagems",
+   "id": "000009461004",
+   "detachment": "Cult Unveiled",
+   "name_en": "FOR THE BROOD",
+   "name_zh": null,
+   "encoded_by": "manual-2026-07-21",
+   "provenance": {
+    "current_text": "db stratagems.text_zh id=000009461004",
+    "base_text": "Wahapedia 现文（PR25 工作单：FP 未触及或已滚入，11 版仍现行）",
+    "text_sha256": "6f84e8301c6f86c58e24dc1e7ad3c8ad952db93a02d5963306257c7e7900c211"
+   },
+   "side": "attacker",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "允许对接战中的敌方单位射击，代价是友军单位 D6 承受 1-2 点致命伤——射击资格/自伤域"
+   ]
+  },
+  {
+   "table": "stratagems",
+   "id": "000009461005",
+   "detachment": "Cult Unveiled",
+   "name_en": "LURKING MENACE",
+   "name_zh": null,
+   "encoded_by": "manual-2026-07-21",
+   "provenance": {
+    "current_text": "db stratagems.text_zh id=000009461005",
+    "base_text": "Wahapedia 现文（PR25 工作单：FP 未触及或已滚入，11 版仍现行）",
+    "text_sha256": "657c2a47b6112c7e236c9f46c3fede0d001c59b623a819695265af20d994d6ba"
+   },
+   "side": "target",
+   "status": "partial",
+   "effects": [
+    {
+     "phase": "hit",
+     "op": "modify",
+     "params": [
+      -1
+     ],
+     "condition": [
+      "phase_shooting"
+     ],
+     "source": "潜伏威胁：对手射击阶段，3\" 外的攻击瞄准本单位时命中骰 -1"
+    }
+   ],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "「攻击方模型不在 3\" 内」的距离门无载体，按攻击方在 3\" 外的常态假设施加（3\" 内会高估 1 点命中惩罚）",
+    "WHEN=对手射击阶段（phase_shooting 门自含），近战阶段不注入"
+   ]
+  },
+  {
+   "table": "stratagems",
+   "id": "000009828002",
+   "detachment": "Final Day",
+   "name_en": "HYPERFEROCITY",
+   "name_zh": null,
+   "encoded_by": "manual-2026-07-21",
+   "provenance": {
+    "current_text": "db stratagems.text_zh id=000009828002",
+    "base_text": "Wahapedia 现文（PR25 工作单：FP 未触及或已滚入，11 版仍现行）",
+    "text_sha256": "6263885243c302834d2898ee4718b344fb54a75171e8ce4355cf21effd0e215c"
+   },
+   "side": "attacker",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "基础分支「重骰致伤骰 1 点」无引擎通道；升级分支（敌方 6\" 内有友军 TYRANIDS 时改为完整重骰致伤）为二选一的位置条件分支——只编升级分支会在无泰伦在场时高估，不编"
+   ]
+  },
+  {
+   "table": "stratagems",
+   "id": "000009828003",
+   "detachment": "Final Day",
+   "name_en": "PSI SURGE",
+   "name_zh": null,
+   "encoded_by": "manual-2026-07-21",
+   "provenance": {
+    "current_text": "db stratagems.text_zh id=000009828003",
+    "base_text": "Wahapedia 现文（PR25 工作单：FP 未触及或已滚入，11 版仍现行）",
+    "text_sha256": "e5d5a737fa39d7740f4e3dd53257963e92f3c9d4a8a4ede2e02548438dca6df5"
+   },
+   "side": "attacker",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "Catalyst 光环射程 +3\"——光环几何域"
+   ]
+  },
+  {
+   "table": "stratagems",
+   "id": "000009828004",
+   "detachment": "Final Day",
+   "name_en": "AVENGE THE STAR CHILDREN",
+   "name_zh": null,
+   "encoded_by": "manual-2026-07-21",
+   "provenance": {
+    "current_text": "db stratagems.text_zh id=000009828004",
+    "base_text": "Wahapedia 现文（PR25 工作单：FP 未触及或已滚入，11 版仍现行）",
+    "text_sha256": "e03d6fbcf4f8510fa79b12732ccdd779f175b98520b61962b99e05608d833b30"
+   },
+   "side": "attacker",
+   "status": "encoded",
+   "effects": [
+    {
+     "phase": "hit",
+     "op": "modify",
+     "params": [
+      1
+     ],
+     "condition": [],
+     "source": "为星之子复仇：其后 GC 模型对该敌方单位的攻击命中骰 +1（持续至战斗结束，跨全部阶段故不设阶段门）"
+    },
+    {
+     "phase": "wound",
+     "op": "modify",
+     "params": [
+      1
+     ],
+     "condition": [],
+     "source": "为星之子复仇：其后 GC 模型对该敌方单位的攻击致伤骰 +1（持续至战斗结束，跨全部阶段故不设阶段门）"
+    }
+   ],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": []
+  },
+  {
+   "table": "stratagems",
+   "id": "000009828005",
+   "detachment": "Final Day",
+   "name_en": "DIVINE IMPERATIVE",
+   "name_zh": null,
+   "encoded_by": "manual-2026-07-21",
+   "provenance": {
+    "current_text": "db stratagems.text_zh id=000009828005",
+    "base_text": "Wahapedia 现文（PR25 工作单：FP 未触及或已滚入，11 版仍现行）",
+    "text_sha256": "0844a92db049af82d6696688beb92db2e5a3216d476221931619c37c66e40177"
+   },
+   "side": "attacker",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "冲锋骰 +1 且可重骰冲锋骰——冲锋骰域"
+   ]
+  },
+  {
+   "table": "stratagems",
+   "id": "000009828006",
+   "detachment": "Final Day",
+   "name_en": "DARTING ATTACKS",
+   "name_zh": null,
+   "encoded_by": "manual-2026-07-21",
+   "provenance": {
+    "current_text": "db stratagems.text_zh id=000009828006",
+    "base_text": "Wahapedia 现文（PR25 工作单：FP 未触及或已滚入，11 版仍现行）",
+    "text_sha256": "fd78d9d621cc44498fc346b0067a3e9eae733b1b54c496bd428f2e76988df3c4"
+   },
+   "side": "attacker",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "撤退回合仍可射击与宣冲——资格域"
+   ]
+  },
+  {
+   "table": "stratagems",
+   "id": "000009828007",
+   "detachment": "Final Day",
+   "name_en": "RESISTANCE TUNNELS",
+   "name_zh": null,
+   "encoded_by": "manual-2026-07-21",
+   "provenance": {
+    "current_text": "db stratagems.text_zh id=000009828007",
+    "base_text": "Wahapedia 现文（PR25 工作单：FP 未触及或已滚入，11 版仍现行）",
+    "text_sha256": "1b97b1f5a3d09b524ef209807b3e35d9192448d8618b912a86f650773b0ba04d"
+   },
+   "side": "attacker",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "撤出战场置入战略预备队——预备队域"
+   ]
+  },
+  {
+   "table": "stratagems",
+   "id": "000009469002",
+   "detachment": "Genespawn Onslaught",
+   "name_en": "MONSTROUS MOMENTUM",
+   "name_zh": null,
+   "encoded_by": "manual-2026-07-21",
+   "provenance": {
+    "current_text": "db stratagems.text_zh id=000009469002",
+    "base_text": "Wahapedia 现文（PR25 工作单：FP 未触及或已滚入，11 版仍现行）",
+    "text_sha256": "e42b9aa9931581899a1eb133ba518ed7a15d2ed8934a18fe5edefe816c1a27fc"
+   },
+   "side": "attacker",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "巩固移动改朝最近舱门并可操作之——移动/地形域"
+   ]
+  },
+  {
+   "table": "stratagems",
+   "id": "000009469003",
+   "detachment": "Genespawn Onslaught",
+   "name_en": "UNSTOPPABLE BRUTES",
+   "name_zh": null,
+   "encoded_by": "manual-2026-07-21",
+   "provenance": {
+    "current_text": "db stratagems.text_zh id=000009469003",
+    "base_text": "Wahapedia 现文（PR25 工作单：FP 未触及或已滚入，11 版仍现行）",
+    "text_sha256": "21d35edeee78f5e5e9e5c10a5a58c45254d2275db55404e644b955009174faf3"
+   },
+   "side": "attacker",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "可穿越关闭的舱门做移动/宣冲——移动/地形域"
+   ]
+  },
+  {
+   "table": "stratagems",
+   "id": "000009469004",
+   "detachment": "Genespawn Onslaught",
+   "name_en": "SOLDIERS OF THE STAR CHILDREN",
+   "name_zh": null,
+   "encoded_by": "manual-2026-07-21",
+   "provenance": {
+    "current_text": "db stratagems.text_zh id=000009469004",
+    "base_text": "Wahapedia 现文（PR25 工作单：FP 未触及或已滚入，11 版仍现行）",
+    "text_sha256": "692f663134381e6d3f394110a47030eb67cad4be966731dae356b03c6f86e63d"
+   },
+   "side": "attacker",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "所选目标点被本方 Secured——目标点域"
+   ]
+  },
+  {
+   "table": "stratagems",
+   "id": "000009469005",
+   "detachment": "Genespawn Onslaught",
+   "name_en": "GROWING DREAD",
+   "name_zh": null,
+   "encoded_by": "manual-2026-07-21",
+   "provenance": {
+    "current_text": "db stratagems.text_zh id=000009469005",
+    "base_text": "Wahapedia 现文（PR25 工作单：FP 未触及或已滚入，11 版仍现行）",
+    "text_sha256": "e76ab37ec52e114e42285d11c274d5943f62fcc6277ee5fe49917a94eb1fc3e3"
+   },
+   "side": "attacker",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "敌方过 -1 领导力测验，失败则本回合不能执行战术机动——领导力测验/战术机动域"
+   ]
+  },
+  {
+   "table": "stratagems",
+   "id": "fp11e-genestealercults-heroesuprising-s1",
+   "detachment": "Heroes of the Uprising",
+   "name_en": "LIVING UP TO LEGEND",
+   "name_zh": "不负盛名",
+   "encoded_by": "manual-2026-07-21",
+   "provenance": {
+    "current_text": "db stratagems.text_zh id=fp11e-genestealercults-heroesuprising-s1",
+    "base_text": "Faction Pack Genestealer Cults（PR25 迭代 1 fp_rules 补录 fp_new）",
+    "text_sha256": "6cded42d68704d9133176fa43b683b03f84c5af6e8816b2d1b9be755cc7addba"
+   },
+   "side": "attacker",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "12\" 内友军 GC 单位解除战斗震慑状态——士气域"
+   ]
+  },
+  {
+   "table": "stratagems",
+   "id": "fp11e-genestealercults-heroesuprising-s2",
+   "detachment": "Heroes of the Uprising",
+   "name_en": "SURGING BROODWORSHIP",
+   "name_zh": "汹涌巢崇",
+   "encoded_by": "manual-2026-07-21",
+   "provenance": {
+    "current_text": "db stratagems.text_zh id=fp11e-genestealercults-heroesuprising-s2",
+    "base_text": "Faction Pack Genestealer Cults（PR25 迭代 1 fp_rules 补录 fp_new）",
+    "text_sha256": "70e44765be074b9231393282218480b0c1a6eb1e843b0902c187dcec367682a5"
+   },
+   "side": "attacker",
+   "status": "partial",
+   "effects": [
+    {
+     "phase": "wound",
+     "op": "mortal_pool",
+     "params": [],
+     "condition": [],
+     "source": "汹涌巢崇：单位内 KILLER 模型的攻击获 [DEVASTATING WOUNDS]（WHEN=射击阶段或战斗阶段，双阶段故不设阶段门）"
+    }
+   ],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "限单位内 KILLER 模型（KELERMORPH/LOCUS/REDUCTUS SABOTEUR/SANCTUS）的攻击——单人物模拟准确，附属单位整体注入会高估"
+   ]
+  },
+  {
+   "table": "stratagems",
+   "id": "fp11e-genestealercults-heroesuprising-s3",
+   "detachment": "Heroes of the Uprising",
+   "name_en": "LOYAL TO THE END",
+   "name_zh": "至死效忠",
+   "encoded_by": "manual-2026-07-21",
+   "provenance": {
+    "current_text": "db stratagems.text_zh id=fp11e-genestealercults-heroesuprising-s3",
+    "base_text": "Faction Pack Genestealer Cults（PR25 迭代 1 fp_rules 补录 fp_new）",
+    "text_sha256": "225a3b2f85c8c77284ec2b324a53239622a32149d9b1074dc557e5b754625b6c"
+   },
+   "side": "attacker",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "KILLER 模型被消灭时 D6：1 令敌方承受 1 致命伤、2+ 暂不移除该模型——幸存/移除时序与序列外致命伤均无载体"
+   ]
+  },
+  {
+   "table": "stratagems",
+   "id": "000009068002",
+   "detachment": "Host of Ascension",
+   "name_en": "COORDINATED TRAP",
+   "name_zh": null,
+   "encoded_by": "manual-2026-07-21",
+   "provenance": {
+    "current_text": "db stratagems.text_zh id=000009068002",
+    "base_text": "Wahapedia 现文（PR25 工作单：FP 未触及或已滚入，11 版仍现行）",
+    "text_sha256": "80f8770653401f01801c9d4bec936b8825f5d44889184b80569ea1e3f5bf23b6"
+   },
+   "side": "attacker",
+   "status": "encoded",
+   "effects": [
+    {
+     "phase": "wound",
+     "op": "modify",
+     "params": [
+      1
+     ],
+     "condition": [],
+     "source": "协同陷阱：两支单位锁定同一敌方单位，对其攻击致伤骰 +1（WHEN=射击阶段开始或战斗阶段开始，双阶段故不设阶段门）"
+    }
+   ],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": []
+  },
+  {
+   "table": "stratagems",
+   "id": "000009068003",
+   "detachment": "Host of Ascension",
+   "name_en": "PRIMED AND READIED",
+   "name_zh": null,
+   "encoded_by": "manual-2026-07-21",
+   "provenance": {
+    "current_text": "db stratagems.text_zh id=000009068003",
+    "base_text": "Wahapedia 现文（PR25 工作单：FP 未触及或已滚入，11 版仍现行）",
+    "text_sha256": "7ef2bff95188bc625a4a92b6275f99369a5b34e3201529f034fff4af48588236"
+   },
+   "side": "attacker",
+   "status": "encoded",
+   "effects": [
+    {
+     "phase": "hit",
+     "op": "crit_threshold",
+     "params": [
+      5
+     ],
+     "condition": [],
+     "source": "蓄势待发：暴击命中改为未修正命中骰 5+ 即触发（WHEN=射击阶段或战斗阶段，双阶段故不设阶段门）"
+    }
+   ],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": []
+  },
+  {
+   "table": "stratagems",
+   "id": "000009068004",
+   "detachment": "Host of Ascension",
+   "name_en": "TUNNEL CRAWLERS",
+   "name_zh": null,
+   "encoded_by": "manual-2026-07-21",
+   "provenance": {
+    "current_text": "db stratagems.text_zh id=000009068004",
+    "base_text": "Wahapedia 现文（PR25 工作单：FP 未触及或已滚入，11 版仍现行）",
+    "text_sha256": "48002e44fa354e866480b43835fb4596f1d3499b94ed14e5dd1b2e1620f5fb21"
+   },
+   "side": "attacker",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "深空打击落点放宽至敌方 6\" 外——部署域"
+   ]
+  },
+  {
+   "table": "stratagems",
+   "id": "000009068005",
+   "detachment": "Host of Ascension",
+   "name_en": "LYING IN WAIT",
+   "name_zh": null,
+   "encoded_by": "manual-2026-07-21",
+   "provenance": {
+    "current_text": "db stratagems.text_zh id=000009068005",
+    "base_text": "Wahapedia 现文（PR25 工作单：FP 未触及或已滚入，11 版仍现行）",
+    "text_sha256": "dd0480419666890fa08cf3e37ede75c6274b3ab7fd126fb2ae4fb1108b0f27e8"
+   },
+   "side": "attacker",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "经 Cult Ambush 标记展开时可在标记 6\" 内任意落点——部署域"
+   ]
+  },
+  {
+   "table": "stratagems",
+   "id": "000009068006",
+   "detachment": "Host of Ascension",
+   "name_en": "RETURN TO THE SHADOWS",
+   "name_zh": null,
+   "encoded_by": "manual-2026-07-21",
+   "provenance": {
+    "current_text": "db stratagems.text_zh id=000009068006",
+    "base_text": "Wahapedia 现文（PR25 工作单：FP 未触及或已滚入，11 版仍现行）",
+    "text_sha256": "831561b0e13aa8e10d6b23e62c55f02946ba9bfb21887d2ee6d25ac244f1f017"
+   },
+   "side": "attacker",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "撤出战场置入战略预备队——预备队域"
+   ]
+  },
+  {
+   "table": "stratagems",
+   "id": "000009068007",
+   "detachment": "Host of Ascension",
+   "name_en": "A DEADLY SNARE",
+   "name_zh": null,
+   "encoded_by": "manual-2026-07-21",
+   "provenance": {
+    "current_text": "db stratagems.text_zh id=000009068007",
+    "base_text": "Wahapedia 现文（PR25 工作单：FP 未触及或已滚入，11 版仍现行）",
+    "text_sha256": "62b444ae85161ea107c6e272247804773a56ef048aeb715a746a27912d3a7411"
+   },
+   "side": "attacker",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "被宣冲时 D6 令敌方承受 D3/3 点致命伤——攻击序列外的致命伤无载体"
+   ]
+  },
+  {
+   "table": "stratagems",
+   "id": "000009477002",
+   "detachment": "Infestation Swarm",
+   "name_en": "HYPERADRENAL REFLEXES",
+   "name_zh": null,
+   "encoded_by": "manual-2026-07-21",
+   "provenance": {
+    "current_text": "db stratagems.text_zh id=000009477002",
+    "base_text": "Wahapedia 现文（PR25 工作单：FP 未触及或已滚入，11 版仍现行）",
+    "text_sha256": "f44a6db6b1aee9432ae7e96032f4da5a8e7149c946f0ee7b920e0d6002f107c3"
+   },
+   "side": "target",
+   "status": "encoded",
+   "effects": [
+    {
+     "phase": "save",
+     "op": "invuln",
+     "params": [
+      4
+     ],
+     "condition": [
+      "phase_melee"
+     ],
+     "source": "超肾上腺反射：战斗阶段本单位模型获 4+ 无效保护（WHEN=战斗阶段，故挂近战门）"
+    }
+   ],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": []
+  },
+  {
+   "table": "stratagems",
+   "id": "000009477003",
+   "detachment": "Infestation Swarm",
+   "name_en": "PERVASIVE DREAD",
+   "name_zh": null,
+   "encoded_by": "manual-2026-07-21",
+   "provenance": {
+    "current_text": "db stratagems.text_zh id=000009477003",
+    "base_text": "Wahapedia 现文（PR25 工作单：FP 未触及或已滚入，11 版仍现行）",
+    "text_sha256": "950a2847b090a168c685e5065fa5663857f470f4cc0fd26ba1e2f6c5f61f825f"
+   },
+   "side": "target",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "对手下个指挥阶段全体敌方单位过 -1 战斗震慑测验——士气域"
+   ]
+  },
+  {
+   "table": "stratagems",
+   "id": "000009477004",
+   "detachment": "Infestation Swarm",
+   "name_en": "HUNTING GROUNDS",
+   "name_zh": null,
+   "encoded_by": "manual-2026-07-21",
+   "provenance": {
+    "current_text": "db stratagems.text_zh id=000009477004",
+    "base_text": "Wahapedia 现文（PR25 工作单：FP 未触及或已滚入，11 版仍现行）",
+    "text_sha256": "edf5a558a89ce6813bf2ffdc7001a3964ce3f9e7081d51ce71e23e0edb4c10ba"
+   },
+   "side": "attacker",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "开启舱门后做 3\" 常规移动——移动/地形域"
+   ]
+  },
+  {
+   "table": "stratagems",
+   "id": "000009477005",
+   "detachment": "Infestation Swarm",
+   "name_en": "OUTFLANK",
+   "name_zh": null,
+   "encoded_by": "manual-2026-07-21",
+   "provenance": {
+    "current_text": "db stratagems.text_zh id=000009477005",
+    "base_text": "Wahapedia 现文（PR25 工作单：FP 未触及或已滚入，11 版仍现行）",
+    "text_sha256": "669c327c41bc5b0d09f511b4ec23e31d92736174ea16fea72fea0001ab0db051"
+   },
+   "side": "attacker",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "撤出战场置入战略预备队并按 Entry Zone 重新登场——预备队/部署域"
+   ]
+  },
+  {
+   "table": "stratagems",
+   "id": "000009080002",
+   "detachment": "Outlander Claw",
+   "name_en": "ALONG SHADOWED TRAILS",
+   "name_zh": null,
+   "encoded_by": "manual-2026-07-21",
+   "provenance": {
+    "current_text": "db stratagems.text_zh id=000009080002",
+    "base_text": "FP Rules Updates 已刷新为 11 版现行文本（PR25 迭代 1 fp_rules text_patch）",
+    "text_sha256": "f1ccf9e9313c1d87dca4a27fe021b427d8eed3a2beb7ae418202b2a5fc35abb9"
+   },
+   "side": "attacker",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "重新放置 Cult Ambush 标记——部署/标记域"
+   ]
+  },
+  {
+   "table": "stratagems",
+   "id": "000009080003",
+   "detachment": "Outlander Claw",
+   "name_en": "DEVOTED CREW",
+   "name_zh": null,
+   "encoded_by": "manual-2026-07-21",
+   "provenance": {
+    "current_text": "db stratagems.text_zh id=000009080003",
+    "base_text": "Wahapedia 现文（PR25 工作单：FP 未触及或已滚入，11 版仍现行）",
+    "text_sha256": "f420600c4debbe6f743e6012768a48b6be50b1bd913b3d89d1d71641e931f9f6"
+   },
+   "side": "target",
+   "status": "encoded",
+   "effects": [
+    {
+     "phase": "damage",
+     "op": "damage_reduction",
+     "params": [
+      1
+     ],
+     "condition": [],
+     "source": "忠诚车组：瞄准本单位的攻击伤害特征值 -1（WHEN=对手射击阶段或战斗阶段，双阶段故不设阶段门）"
+    }
+   ],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": []
+  },
+  {
+   "table": "stratagems",
+   "id": "000009080004",
+   "detachment": "Outlander Claw",
+   "name_en": "CLOSE-RANGE SHOOT-OUT",
+   "name_zh": null,
+   "encoded_by": "manual-2026-07-21",
+   "provenance": {
+    "current_text": "db stratagems.text_zh id=000009080004",
+    "base_text": "Wahapedia 现文（PR25 工作单：FP 未触及或已滚入，11 版仍现行）",
+    "text_sha256": "9fc7f624dce9e7e9ed65c09154710a453df22605fc436e4d1e1ddc742b636cb8"
+   },
+   "side": "attacker",
+   "status": "partial",
+   "effects": [
+    {
+     "phase": "hit",
+     "op": "auto_wound",
+     "params": [],
+     "condition": [
+      "phase_shooting"
+     ],
+     "source": "近距枪战：本单位远程武器获 [LETHAL HITS]"
+    }
+   ],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "「目标在 18\" 内」的距离门无载体（引擎只有 12\"/8\" 假设档），按距离前提成立假设施加——目标在 18\" 外时本编码高估"
+   ]
+  },
+  {
+   "table": "stratagems",
+   "id": "000009080005",
+   "detachment": "Outlander Claw",
+   "name_en": "RAPID FEINT",
+   "name_zh": null,
+   "encoded_by": "manual-2026-07-21",
+   "provenance": {
+    "current_text": "db stratagems.text_zh id=000009080005",
+    "base_text": "Wahapedia 现文（PR25 工作单：FP 未触及或已滚入，11 版仍现行）",
+    "text_sha256": "b69fb5f79fe0f1127dbdb2d39a84e6ddf95ce7a95fa47befea15fbd9e6032f2d"
+   },
+   "side": "attacker",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "对手移动阶段做 6\" 常规移动——移动域"
+   ]
+  },
+  {
+   "table": "stratagems",
+   "id": "000009080006",
+   "detachment": "Outlander Claw",
+   "name_en": "DEFT MANOEUVRING",
+   "name_zh": null,
+   "encoded_by": "manual-2026-07-21",
+   "provenance": {
+    "current_text": "db stratagems.text_zh id=000009080006",
+    "base_text": "Wahapedia 现文（PR25 工作单：FP 未触及或已滚入，11 版仍现行）",
+    "text_sha256": "cf3a990f24a25fab2d269d4af2013447c4c79c384c663116868e71d083613869"
+   },
+   "side": "target",
+   "status": "encoded",
+   "effects": [
+    {
+     "phase": "save",
+     "op": "invuln",
+     "params": [
+      4
+     ],
+     "condition": [
+      "phase_shooting"
+     ],
+     "source": "灵巧机动：对手射击阶段本单位模型获 4+ 无效保护（WHEN=对手射击阶段，故挂射击门）"
+    }
+   ],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": []
+  },
+  {
+   "table": "stratagems",
+   "id": "000009080007",
+   "detachment": "Outlander Claw",
+   "name_en": "ENCIRCLING THE PREY",
+   "name_zh": null,
+   "encoded_by": "manual-2026-07-21",
+   "provenance": {
+    "current_text": "db stratagems.text_zh id=000009080007",
+    "base_text": "Wahapedia 现文（PR25 工作单：FP 未触及或已滚入，11 版仍现行）",
+    "text_sha256": "dc7783728c1a495e91c2c205d613e9263489b92e83a21bc9d50e821a2bfc2e5b"
+   },
+   "side": "attacker",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "撤出战场置入战略预备队——预备队域"
+   ]
+  },
+  {
+   "table": "stratagems",
+   "id": "fp11e-genestealercults-purestrainbroodswarm-s1",
+   "detachment": "Purestrain Broodswarm",
+   "name_en": "LURK AND STRIKE",
+   "name_zh": "潜伏突袭",
+   "encoded_by": "manual-2026-07-21",
+   "provenance": {
+    "current_text": "db stratagems.text_zh id=fp11e-genestealercults-purestrainbroodswarm-s1",
+    "base_text": "Faction Pack Genestealer Cults（PR25 迭代 1 fp_rules 补录 fp_new）",
+    "text_sha256": "8b958655c6c35ede136b36d35174671fe90ef3eb6543f219f609ec7bc5fe9ec9"
+   },
+   "side": "attacker",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "撤退移动不阻断宣冲资格——移动/资格域"
+   ]
+  },
+  {
+   "table": "stratagems",
+   "id": "fp11e-genestealercults-purestrainbroodswarm-s2",
+   "detachment": "Purestrain Broodswarm",
+   "name_en": "CRAWLING HORROR",
+   "name_zh": "匍行恐怖",
+   "encoded_by": "manual-2026-07-21",
+   "provenance": {
+    "current_text": "db stratagems.text_zh id=fp11e-genestealercults-purestrainbroodswarm-s2",
+    "base_text": "Faction Pack Genestealer Cults（PR25 迭代 1 fp_rules 补录 fp_new）",
+    "text_sha256": "33b0edb18760157780732578898a85497627130fef5dba3d50dfc92ea3f8da7d"
+   },
+   "side": "attacker",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "本单位侦测范围 -6\"——11 版侦测范围（detection range）机制无引擎载体"
+   ]
+  },
+  {
+   "table": "stratagems",
+   "id": "fp11e-genestealercults-purestrainbroodswarm-s3",
+   "detachment": "Purestrain Broodswarm",
+   "name_en": "INHUMAN REACTIONS",
+   "name_zh": "非人反应",
+   "encoded_by": "manual-2026-07-21",
+   "provenance": {
+    "current_text": "db stratagems.text_zh id=fp11e-genestealercults-purestrainbroodswarm-s3",
+    "base_text": "Faction Pack Genestealer Cults（PR25 迭代 1 fp_rules 补录 fp_new）",
+    "text_sha256": "8422cebc7f4b3cb22065e7c793e819a55b7f4864e6f40f21afe9227963bb8864"
+   },
+   "side": "attacker",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "对手移动阶段做 D3+3\" 常规移动——移动域"
+   ]
+  },
+  {
+   "table": "stratagems",
+   "id": "000009072002",
+   "detachment": "Xenocreed Congregation",
+   "name_en": "VENGEANCE FOR THE MARTYR!",
+   "name_zh": null,
+   "encoded_by": "manual-2026-07-21",
+   "provenance": {
+    "current_text": "db stratagems.text_zh id=000009072002",
+    "base_text": "Wahapedia 现文（PR25 工作单：FP 未触及或已滚入，11 版仍现行）",
+    "text_sha256": "8c77ff8d9f01327b12f25fd369ee373b428a226ef46e54f2edbd800fe84f26d8"
+   },
+   "side": "attacker",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "基础分支「重骰命中骰 1 点」无引擎通道；升级分支（被杀者为 Magus/Primus/Acolyte Iconward 时改完整重骰命中）为二选一分支——只编升级分支会高估，不编"
+   ]
+  },
+  {
+   "table": "stratagems",
+   "id": "000009072003",
+   "detachment": "Xenocreed Congregation",
+   "name_en": "FRENZIED DEVOTION",
+   "name_zh": null,
+   "encoded_by": "manual-2026-07-21",
+   "provenance": {
+    "current_text": "db stratagems.text_zh id=000009072003",
+    "base_text": "Wahapedia 现文（PR25 工作单：FP 未触及或已滚入，11 版仍现行）",
+    "text_sha256": "db374d414c5d79c76f27bb5710583d58a666a5b7e05b75e998140e709e4874c6"
+   },
+   "side": "attacker",
+   "status": "partial",
+   "effects": [
+    {
+     "phase": "attacks",
+     "op": "modify",
+     "params": [
+      1
+     ],
+     "condition": [
+      "phase_melee"
+     ],
+     "source": "狂热虔信：本单位近战武器攻击次数 +1"
+    },
+    {
+     "phase": "hit",
+     "op": "bs_improve",
+     "params": [
+      1
+     ],
+     "condition": [
+      "phase_melee"
+     ],
+     "source": "狂热虔信：本单位近战武器 WS 特征值改善 1"
+    }
+   ],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "[HAZARDOUS] 自伤未建模（发动即假设选择使用）",
+    "「不含 CHARACTER 模型」的模型级豁免未建模——单位内人物模型也被整体注入，会略高估"
+   ]
+  },
+  {
+   "table": "stratagems",
+   "id": "000009072004",
+   "detachment": "Xenocreed Congregation",
+   "name_en": "TIRELESS FERVOUR",
+   "name_zh": null,
+   "encoded_by": "manual-2026-07-21",
+   "provenance": {
+    "current_text": "db stratagems.text_zh id=000009072004",
+    "base_text": "FP Rules Updates 已刷新为 11 版现行文本（PR25 迭代 1 fp_rules text_patch）",
+    "text_sha256": "a636f3fd8556a14c57ab5a5a5a440ab0f10c406aa2501dc637a3af11931b8528"
+   },
+   "side": "attacker",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "进军/撤退不阻断宣冲，外加可重骰冲锋骰的分支（代价是必须咬住与友军 CHARACTER 交战的敌方单位）——冲锋骰/资格域"
+   ]
+  },
+  {
+   "table": "stratagems",
+   "id": "000009072005",
+   "detachment": "Xenocreed Congregation",
+   "name_en": "TRANSCENDENT CELERITY",
+   "name_zh": null,
+   "encoded_by": "manual-2026-07-21",
+   "provenance": {
+    "current_text": "db stratagems.text_zh id=000009072005",
+    "base_text": "Wahapedia 现文（PR25 工作单：FP 未触及或已滚入，11 版仍现行）",
+    "text_sha256": "a7d1bdc88479cb5af61fb9b9200b2048caf7c1c02850e568f2059a7ea27501e8"
+   },
+   "side": "attacker",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "远程武器获 [ASSAULT]——进军后射击资格域"
+   ]
+  },
+  {
+   "table": "stratagems",
+   "id": "000009072006",
+   "detachment": "Xenocreed Congregation",
+   "name_en": "THE DOWNTRODDEN RISE",
+   "name_zh": null,
+   "encoded_by": "manual-2026-07-21",
+   "provenance": {
+    "current_text": "db stratagems.text_zh id=000009072006",
+    "base_text": "FP Rules Updates 已刷新为 11 版现行文本（PR25 迭代 1 fp_rules text_patch）",
+    "text_sha256": "9a3bccd4baa2346d5ef2660997687c26afeddbe8d78d75525659e1ded0c21ea5"
+   },
+   "side": "attacker",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "不使用 Cult Ambush 标记直接展开（敌方 6\" 外）——部署域"
+   ]
+  },
+  {
+   "table": "stratagems",
+   "id": "000009072007",
+   "detachment": "Xenocreed Congregation",
+   "name_en": "THE PATH OF ANGUISH",
+   "name_zh": null,
+   "encoded_by": "manual-2026-07-21",
+   "provenance": {
+    "current_text": "db stratagems.text_zh id=000009072007",
+    "base_text": "Wahapedia 现文（PR25 工作单：FP 未触及或已滚入，11 版仍现行）",
+    "text_sha256": "8ef828acf9bc7e3a0da258cfa1c3a6600b0d0d2f32ce1f1e40561adff2e077d8"
+   },
+   "side": "attacker",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "被射击减员后做 D6\" 移动并可进入敌方接战范围——移动域"
+   ]
+  },
+  {
+   "table": "stratagems",
+   "id": "fp11e-genestealercults-xenocultmasses-s1",
+   "detachment": "Xenocult Masses",
+   "name_en": "EYES OF THE CULT",
+   "name_zh": "教派之眼",
+   "encoded_by": "manual-2026-07-21",
+   "provenance": {
+    "current_text": "db stratagems.text_zh id=fp11e-genestealercults-xenocultmasses-s1",
+    "base_text": "Faction Pack Genestealer Cults（PR25 迭代 1 fp_rules 补录 fp_new）",
+    "text_sha256": "d87dacdc46f645699fbb3ce30cf38e66d8bf06be576607881c59a6af449d05af"
+   },
+   "side": "attacker",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "该地形区内敌方单位侦测范围 +6\"——侦测范围机制无引擎载体"
+   ]
+  },
+  {
+   "table": "stratagems",
+   "id": "fp11e-genestealercults-xenocultmasses-s2",
+   "detachment": "Xenocult Masses",
+   "name_en": "FANATICAL HAIL",
+   "name_zh": "狂信弹雨",
+   "encoded_by": "manual-2026-07-21",
+   "provenance": {
+    "current_text": "db stratagems.text_zh id=fp11e-genestealercults-xenocultmasses-s2",
+    "base_text": "Faction Pack Genestealer Cults（PR25 迭代 1 fp_rules 补录 fp_new）",
+    "text_sha256": "a5ea788f2a793b21fd24887a109a5ce084b38d03ce4aa7d116f9395b2df4794d"
+   },
+   "side": "attacker",
+   "status": "encoded",
+   "effects": [
+    {
+     "phase": "hit",
+     "op": "reroll",
+     "params": [
+      "fail"
+     ],
+     "condition": [
+      "phase_shooting"
+     ],
+     "source": "狂信弹雨：NEOPHYTE HYBRIDS 单位对所选敌方单位的远程攻击可重骰命中骰（引擎语义=只重骰失败骰，与「可重骰」的最优策略等价）"
+    }
+   ],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": []
+  },
+  {
+   "table": "stratagems",
+   "id": "fp11e-genestealercults-xenocultmasses-s3",
+   "detachment": "Xenocult Masses",
+   "name_en": "SLUNK FROM THE UNDERBELLY",
+   "name_zh": "自暗腹潜出",
+   "encoded_by": "manual-2026-07-21",
+   "provenance": {
+    "current_text": "db stratagems.text_zh id=fp11e-genestealercults-xenocultmasses-s3",
+    "base_text": "Faction Pack Genestealer Cults（PR25 迭代 1 fp_rules 补录 fp_new）",
+    "text_sha256": "8e890e725b833454e75affa3bd8ba09a5bc5b05de6d2f8d2d833da883599e1ac"
+   },
+   "side": "target",
+   "status": "encoded",
+   "effects": [
+    {
+     "phase": "save",
+     "op": "ap_improve",
+     "params": [
+      -1
+     ],
+     "condition": [
+      "phase_shooting"
+     ],
+     "source": "自暗腹潜出：瞄准本单位的远程攻击 AP 恶化 1（守方负参并入攻方 AP 特征值累计，净算后夹 ≤0）"
+    }
+   ],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": []
+  },
+  {
+   "table": "enhancements",
+   "id": "000009075002",
+   "detachment": "Biosanctic Broodsurge",
+   "name_en": "Predatory Instincts",
+   "name_zh": null,
+   "encoded_by": "manual-2026-07-21",
+   "provenance": {
+    "current_text": "db enhancements.description id=000009075002",
+    "base_text": "FP Rules Updates 已刷新为 11 版现行文本（PR25 迭代 1 fp_rules text_patch）",
+    "text_sha256": "e9f2f503801f791d6c3cd57c4a3da66203244958af4e77a689695e12501359c5"
+   },
+   "side": "attacker",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "Infiltrators 部署能力，外加英雄干预战略 -1CP 且不占用本阶段其他单位使用次数——部署/CP 域"
+   ]
+  },
+  {
+   "table": "enhancements",
+   "id": "000009075003",
+   "detachment": "Biosanctic Broodsurge",
+   "name_en": "Biomorph Adaptation",
+   "name_zh": null,
+   "encoded_by": "manual-2026-07-21",
+   "provenance": {
+    "current_text": "db enhancements.description id=000009075003",
+    "base_text": "Wahapedia 现文（PR25 工作单：FP 未触及或已滚入，11 版仍现行）",
+    "text_sha256": "c60023067a9c1071557618944fac8cda54aefa13bb622e59352fb9a87b26340c"
+   },
+   "side": "attacker",
+   "status": "partial",
+   "effects": [
+    {
+     "phase": "save",
+     "op": "ap_improve",
+     "params": [
+      1
+     ],
+     "condition": [
+      "phase_melee"
+     ],
+     "source": "生物形态适应：携带者近战武器 AP 特征值改善 1"
+    },
+    {
+     "phase": "damage",
+     "op": "modify",
+     "params": [
+      1
+     ],
+     "condition": [
+      "phase_melee"
+     ],
+     "source": "生物形态适应：携带者近战武器伤害特征值 +1"
+    }
+   ],
+   "requires_toggles": [
+    "bearer_leading"
+   ],
+   "not_modeled_notes_zh": [
+    "限携带者模型近战武器——单人物模拟准确，附属单位整体注入会高估（请单列主武器模拟）"
+   ]
+  },
+  {
+   "table": "enhancements",
+   "id": "000009075004",
+   "detachment": "Biosanctic Broodsurge",
+   "name_en": "Mutagenic Regeneration",
+   "name_zh": null,
+   "encoded_by": "manual-2026-07-21",
+   "provenance": {
+    "current_text": "db enhancements.description id=000009075004",
+    "base_text": "Wahapedia 现文（PR25 工作单：FP 未触及或已滚入，11 版仍现行）",
+    "text_sha256": "9c300c1a26679b897c34c2be6cdbbb03a2a86cabed88f3700811251d93199ec3"
+   },
+   "side": "attacker",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "指挥阶段回复 1 点伤口——治疗域"
+   ]
+  },
+  {
+   "table": "enhancements",
+   "id": "000009075005",
+   "detachment": "Biosanctic Broodsurge",
+   "name_en": "Alien Majesty",
+   "name_zh": null,
+   "encoded_by": "manual-2026-07-21",
+   "provenance": {
+    "current_text": "db enhancements.description id=000009075005",
+    "base_text": "Wahapedia 现文（PR25 工作单：FP 未触及或已滚入，11 版仍现行）",
+    "text_sha256": "2708636423d6ef448a3291808ca170a2d1cfd188fc316db381ddc96286ec81df"
+   },
+   "side": "attacker",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "接战范围内敌方模型 OC-1（下限 1）——OC 域"
+   ]
+  },
+  {
+   "table": "enhancements",
+   "id": "000009084002",
+   "detachment": "Brood Brother Auxilia",
+   "name_en": "Martial Espionage",
+   "name_zh": null,
+   "encoded_by": "manual-2026-07-21",
+   "provenance": {
+    "current_text": "db enhancements.description id=000009084002",
+    "base_text": "Wahapedia 现文（PR25 工作单：FP 未触及或已滚入，11 版仍现行）",
+    "text_sha256": "68227f51ebe83d2b29a43bff74fda26d60b7727eec3a3029eca0719810ceab0e"
+   },
+   "side": "attacker",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "令 9\" 内友军 ASTRA MILITARUM 单位的远程武器 AP 改善 1——受益者是携带者之外的另一支单位，引擎无跨单位链路（每回合一次的次数限制亦无载体）"
+   ]
+  },
+  {
+   "table": "enhancements",
+   "id": "000009084003",
+   "detachment": "Brood Brother Auxilia",
+   "name_en": "Adaptive Reprisal",
+   "name_zh": null,
+   "encoded_by": "manual-2026-07-21",
+   "provenance": {
+    "current_text": "db enhancements.description id=000009084003",
+    "base_text": "FP Rules Updates 已刷新为 11 版现行文本（PR25 迭代 1 fp_rules text_patch）",
+    "text_sha256": "5671d1dd623c794da92304fca40965725b396a9cef7970baec790f6a944975c4"
+   },
+   "side": "attacker",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "英雄干预战略 -1CP——CP 域"
+   ]
+  },
+  {
+   "table": "enhancements",
+   "id": "000009084004",
+   "detachment": "Brood Brother Auxilia",
+   "name_en": "The Hero Returned",
+   "name_zh": null,
+   "encoded_by": "manual-2026-07-21",
+   "provenance": {
+    "current_text": "db enhancements.description id=000009084004",
+    "base_text": "Wahapedia 现文（PR25 工作单：FP 未触及或已滚入，11 版仍现行）",
+    "text_sha256": "18f92455cbf0481d312856d683a8747ee2df6a6208a630e049ff0a75695f5241"
+   },
+   "side": "attacker",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "单位 Ld 与 OC 各 +1——领导力/OC 域"
+   ]
+  },
+  {
+   "table": "enhancements",
+   "id": "000009084005",
+   "detachment": "Brood Brother Auxilia",
+   "name_en": "Firepoint Commander",
+   "name_zh": null,
+   "encoded_by": "manual-2026-07-21",
+   "provenance": {
+    "current_text": "db enhancements.description id=000009084005",
+    "base_text": "Wahapedia 现文（PR25 工作单：FP 未触及或已滚入，11 版仍现行）",
+    "text_sha256": "d1e4ee0be13da4e42af3e472fe01872de8a2f5e8da18b38936e868d8a3a025c8"
+   },
+   "side": "attacker",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "守火战略下命中改为未修正 5+——守火（Fire Overwatch）机制无引擎载体"
+   ]
+  },
+  {
+   "table": "enhancements",
+   "id": "000009460002",
+   "detachment": "Cult Unveiled",
+   "name_en": "Master Saboteur",
+   "name_zh": null,
+   "encoded_by": "manual-2026-07-21",
+   "provenance": {
+    "current_text": "db enhancements.description id=000009460002",
+    "base_text": "Wahapedia 现文（PR25 工作单：FP 未触及或已滚入，11 版仍现行）",
+    "text_sha256": "2dab36bca1aff9d0925fc229c8681bfe4490b1d64ff8009c5bf502fcf00d399d"
+   },
+   "side": "attacker",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "每场一次阻止对手 Secure 目标点——目标点域"
+   ]
+  },
+  {
+   "table": "enhancements",
+   "id": "000009460003",
+   "detachment": "Cult Unveiled",
+   "name_en": "Primary Detonator",
+   "name_zh": null,
+   "encoded_by": "manual-2026-07-21",
+   "provenance": {
+    "current_text": "db enhancements.description id=000009460003",
+    "base_text": "Wahapedia 现文（PR25 工作单：FP 未触及或已滚入，11 版仍现行）",
+    "text_sha256": "b1a3e123b4bd838db0fa1105221e1865c9ae48c2ff8497e448761c9191ed09e2"
+   },
+   "side": "attacker",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "敌方开启关闭的舱门时 D6 令其承受 1-2 点致命伤——地形/序列外致命伤域"
+   ]
+  },
+  {
+   "table": "enhancements",
+   "id": "000009827002",
+   "detachment": "Final Day",
+   "name_en": "Synaptic Auger",
+   "name_zh": null,
+   "encoded_by": "manual-2026-07-21",
+   "provenance": {
+    "current_text": "db enhancements.description id=000009827002",
+    "base_text": "Wahapedia 现文（PR25 工作单：FP 未触及或已滚入，11 版仍现行）",
+    "text_sha256": "f0e4b3dcfb13e61989b1de18a827a6807c5a3baf6e199e8efc2ab117b21511d7"
+   },
+   "side": "attacker",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "Psionic Parasitism 回血量翻倍——治疗域"
+   ]
+  },
+  {
+   "table": "enhancements",
+   "id": "000009827003",
+   "detachment": "Final Day",
+   "name_en": "Enraptured Damnation",
+   "name_zh": null,
+   "encoded_by": "manual-2026-07-21",
+   "provenance": {
+    "current_text": "db enhancements.description id=000009827003",
+    "base_text": "Wahapedia 现文（PR25 工作单：FP 未触及或已滚入，11 版仍现行）",
+    "text_sha256": "50519aa50ec20ce21d25a966f27d91cc9071af29e36728b00fcd986f04e29a3c"
+   },
+   "side": "attacker",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "敌方不可用守火战略射击携带者单位——守火机制无引擎载体"
+   ]
+  },
+  {
+   "table": "enhancements",
+   "id": "000009827004",
+   "detachment": "Final Day",
+   "name_en": "Vanguard Tyrant",
+   "name_zh": null,
+   "encoded_by": "manual-2026-07-21",
+   "provenance": {
+    "current_text": "db enhancements.description id=000009827004",
+    "base_text": "Wahapedia 现文（PR25 工作单：FP 未触及或已滚入，11 版仍现行）",
+    "text_sha256": "6a27212b85d5f1793b9c4399e428915d97e1dcc70ed7651929c7f8304af888e8"
+   },
+   "side": "attacker",
+   "status": "partial",
+   "effects": [
+    {
+     "phase": "wound",
+     "op": "s_improve",
+     "params": [
+      1
+     ],
+     "condition": [
+      "phase_melee"
+     ],
+     "source": "先锋暴君：携带者近战武器 S 特征值改善 1"
+    },
+    {
+     "phase": "save",
+     "op": "ap_improve",
+     "params": [
+      1
+     ],
+     "condition": [
+      "phase_melee"
+     ],
+     "source": "先锋暴君：携带者近战武器 AP 特征值改善 1"
+    }
+   ],
+   "requires_toggles": [
+    "bearer_leading"
+   ],
+   "not_modeled_notes_zh": [
+    "限携带者（Winged Hive Tyrant）模型近战武器——单人物模拟准确，附属单位整体注入会高估"
+   ]
+  },
+  {
+   "table": "enhancements",
+   "id": "000009827005",
+   "detachment": "Final Day",
+   "name_en": "Inhuman Integration",
+   "name_zh": null,
+   "encoded_by": "manual-2026-07-21",
+   "provenance": {
+    "current_text": "db enhancements.description id=000009827005",
+    "base_text": "Wahapedia 现文（PR25 工作单：FP 未触及或已滚入，11 版仍现行）",
+    "text_sha256": "0111d989f66146bf000fc8b99158e5f35d7e649861792af83dea5e11ad4ccf4b"
+   },
+   "side": "attacker",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "单位武器在瞄准友军 TYRANIDS 6\" 内的敌方单位时获 [SUSTAINED HITS 1]——跨单位位置门无载体，裸编会无条件过度施加"
+   ]
+  },
+  {
+   "table": "enhancements",
+   "id": "000009468002",
+   "detachment": "Genespawn Onslaught",
+   "name_en": "Spiteful Imp",
+   "name_zh": null,
+   "encoded_by": "manual-2026-07-21",
+   "provenance": {
+    "current_text": "db enhancements.description id=000009468002",
+    "base_text": "Wahapedia 现文（PR25 工作单：FP 未触及或已滚入，11 版仍现行）",
+    "text_sha256": "ab5a38b051ada9a296c0e36e9449150f4b71b50a53a542f4c149679497929c96"
+   },
+   "side": "attacker",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "敌方开启舱门时若携带者在 1\" 内则 D6 令其承受 1-2 点致命伤——地形/序列外致命伤域"
+   ]
+  },
+  {
+   "table": "enhancements",
+   "id": "000009468003",
+   "detachment": "Genespawn Onslaught",
+   "name_en": "Miasmic Fumes",
+   "name_zh": null,
+   "encoded_by": "manual-2026-07-21",
+   "provenance": {
+    "current_text": "db enhancements.description id=000009468003",
+    "base_text": "Wahapedia 现文（PR25 工作单：FP 未触及或已滚入，11 版仍现行）",
+    "text_sha256": "d4eed46f6c2931b601f95389ebd132568f0115d2688e93a359c8008f14e67052"
+   },
+   "side": "target",
+   "status": "partial",
+   "effects": [
+    {
+     "phase": "hit",
+     "op": "modify",
+     "params": [
+      -1
+     ],
+     "condition": [],
+     "source": "瘴气毒雾：瞄准携带者的攻击命中骰 -1（原文无阶段限定，双阶段）"
+    },
+    {
+     "phase": "wound",
+     "op": "modify",
+     "params": [
+      -1
+     ],
+     "condition": [],
+     "source": "瘴气毒雾：瞄准携带者的攻击致伤骰 -1（原文无阶段限定，双阶段）"
+    }
+   ],
+   "requires_toggles": [
+    "defender_bearer_leading"
+   ],
+   "not_modeled_notes_zh": [
+    "仅「瞄准携带者本模型」的攻击受此惩罚——单人物（BIOPHAGUS）口径模拟准确，整单位注入会高估"
+   ]
+  },
+  {
+   "table": "enhancements",
+   "id": "fp11e-genestealercults-heroesuprising-e1",
+   "detachment": "Heroes of the Uprising",
+   "name_en": "Gene-tailored Toxins",
+   "name_zh": null,
+   "encoded_by": "manual-2026-07-21",
+   "provenance": {
+    "current_text": "db enhancements.description id=fp11e-genestealercults-heroesuprising-e1",
+    "base_text": "Faction Pack Genestealer Cults（PR25 迭代 1 fp_rules 补录 fp_new）",
+    "text_sha256": "ab1afc03cfef97a17a7928483e4224edc32e717024b35c9b0ec44fb6d473a792"
+   },
+   "side": "attacker",
+   "status": "partial",
+   "effects": [
+    {
+     "phase": "damage",
+     "op": "modify",
+     "params": [
+      1
+     ],
+     "condition": [],
+     "source": "基因定制毒素：携带者（LOCUS/SANCTUS）的攻击伤害 +1（原文为 This model’s attacks，双阶段故不设阶段门）"
+    }
+   ],
+   "requires_toggles": [
+    "bearer_leading"
+   ],
+   "not_modeled_notes_zh": [
+    "限携带者模型自身的攻击——单人物模拟准确，附属单位整体注入会高估"
+   ]
+  },
+  {
+   "table": "enhancements",
+   "id": "fp11e-genestealercults-heroesuprising-e2",
+   "detachment": "Heroes of the Uprising",
+   "name_en": "Contraband Munitions",
+   "name_zh": null,
+   "encoded_by": "manual-2026-07-21",
+   "provenance": {
+    "current_text": "db enhancements.description id=fp11e-genestealercults-heroesuprising-e2",
+    "base_text": "Faction Pack Genestealer Cults（PR25 迭代 1 fp_rules 补录 fp_new）",
+    "text_sha256": "ccf9b4c1e40179d8d2552002196f0a30b0f5d97b7b01497b5ea50344c94131af"
+   },
+   "side": "attacker",
+   "status": "partial",
+   "effects": [
+    {
+     "phase": "wound",
+     "op": "s_improve",
+     "params": [
+      2
+     ],
+     "condition": [
+      "phase_shooting"
+     ],
+     "source": "违禁军火：携带者（KELERMORPH/REDUCTUS SABOTEUR）所在单位的远程攻击 S 特征值改善 2"
+    }
+   ],
+   "requires_toggles": [
+    "bearer_leading"
+   ],
+   "not_modeled_notes_zh": [
+    "「携带者正率领本单位」为假设开关（引擎无依附建模）；效果面为远程攻击，近战阶段不注入"
+   ]
+  },
+  {
+   "table": "enhancements",
+   "id": "000009067002",
+   "detachment": "Host of Ascension",
+   "name_en": "Prowling Agitant",
+   "name_zh": null,
+   "encoded_by": "manual-2026-07-21",
+   "provenance": {
+    "current_text": "db enhancements.description id=000009067002",
+    "base_text": "FP Rules Updates 已刷新为 11 版现行文本（PR25 迭代 1 fp_rules text_patch）",
+    "text_sha256": "2c6171a0bc03db7537c166ecc49b112c28d1ccdcdadf1e48b36d4c6dcf8e0bf1"
+   },
+   "side": "attacker",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "对手移动阶段敌方在 8\" 内结束移动时做 D6\" 常规移动——移动域"
+   ]
+  },
+  {
+   "table": "enhancements",
+   "id": "000009067003",
+   "detachment": "Host of Ascension",
+   "name_en": "A Chink in Their Armour",
+   "name_zh": null,
+   "encoded_by": "manual-2026-07-21",
+   "provenance": {
+    "current_text": "db enhancements.description id=000009067003",
+    "base_text": "Wahapedia 现文（PR25 工作单：FP 未触及或已滚入，11 版仍现行）",
+    "text_sha256": "6bf121c93cb2d1521ad7ac655275164677666423ff38aaa7a62fd1bd131e24fb"
+   },
+   "side": "attacker",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "携带者作为增援登场后至下个战斗阶段结束，单位远程武器获 [LETHAL HITS]——「本回合作为增援登场」的状态无引擎开关载体，裸编会对全部射击过度施加"
+   ]
+  },
+  {
+   "table": "enhancements",
+   "id": "000009067004",
+   "detachment": "Host of Ascension",
+   "name_en": "Our Time Is Nigh",
+   "name_zh": null,
+   "encoded_by": "manual-2026-07-21",
+   "provenance": {
+    "current_text": "db enhancements.description id=000009067004",
+    "base_text": "Wahapedia 现文（PR25 工作单：FP 未触及或已滚入，11 版仍现行）",
+    "text_sha256": "0afc783525d3843c036de9e9812c7a6fe6e06aa775804638563a64fdf69b3b33"
+   },
+   "side": "attacker",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "每场一次冲锋骰 +2——冲锋骰域"
+   ]
+  },
+  {
+   "table": "enhancements",
+   "id": "000009067005",
+   "detachment": "Host of Ascension",
+   "name_en": "Assassination Edict",
+   "name_zh": null,
+   "encoded_by": "manual-2026-07-21",
+   "provenance": {
+    "current_text": "db enhancements.description id=000009067005",
+    "base_text": "Wahapedia 现文（PR25 工作单：FP 未触及或已滚入，11 版仍现行）",
+    "text_sha256": "01ddcd7de660c86519b99fa41c77d14bf51a1da005329023bfe98c3a95bc02fe"
+   },
+   "side": "attacker",
+   "status": "partial",
+   "effects": [
+    {
+     "phase": "hit",
+     "op": "modify",
+     "params": [
+      1
+     ],
+     "condition": [
+      "target_has_keyword",
+      "character"
+     ],
+     "source": "刺杀敕令：携带者单位对 CHARACTER 单位的攻击命中骰 +1（原文无阶段限定，故用裸 target_has_keyword 覆盖双阶段）"
+    }
+   ],
+   "requires_toggles": [
+    "bearer_leading"
+   ],
+   "not_modeled_notes_zh": [
+    "「携带者正率领本单位」为假设开关（引擎无依附建模）"
+   ]
+  },
+  {
+   "table": "enhancements",
+   "id": "000009476002",
+   "detachment": "Infestation Swarm",
+   "name_en": "Stalking Menace",
+   "name_zh": null,
+   "encoded_by": "manual-2026-07-21",
+   "provenance": {
+    "current_text": "db enhancements.description id=000009476002",
+    "base_text": "Wahapedia 现文（PR25 工作单：FP 未触及或已滚入，11 版仍现行）",
+    "text_sha256": "a20c9214172ac38af239c5ab4fb168866bbda19f20dde50308aee74493ceb3a2"
+   },
+   "side": "attacker",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "每场一次撤出战场置入战略预备队并以深空打击回场——预备队/部署域"
+   ]
+  },
+  {
+   "table": "enhancements",
+   "id": "000009476003",
+   "detachment": "Infestation Swarm",
+   "name_en": "Psi-spoor Sensitivity",
+   "name_zh": null,
+   "encoded_by": "manual-2026-07-21",
+   "provenance": {
+    "current_text": "db enhancements.description id=000009476003",
+    "base_text": "Wahapedia 现文（PR25 工作单：FP 未触及或已滚入，11 版仍现行）",
+    "text_sha256": "ce886d49efb93e26fa6dc38dc316be47c572dacec5bc19e2d6eb68cf73d37fff"
+   },
+   "side": "attacker",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "宣冲可指定不可见的敌方单位——冲锋/可见性域"
+   ]
+  },
+  {
+   "table": "enhancements",
+   "id": "000009079002",
+   "detachment": "Outlander Claw",
+   "name_en": "Serpentine Tactics",
+   "name_zh": null,
+   "encoded_by": "manual-2026-07-21",
+   "provenance": {
+    "current_text": "db enhancements.description id=000009079002",
+    "base_text": "Wahapedia 现文（PR25 工作单：FP 未触及或已滚入，11 版仍现行）",
+    "text_sha256": "66a1547a9ac40bcbbe331f493679263b53f73aad3d8844f4574a5bb5af6b842a"
+   },
+   "side": "attacker",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "撤退回合仍可射击——射击资格域"
+   ]
+  },
+  {
+   "table": "enhancements",
+   "id": "000009079003",
+   "detachment": "Outlander Claw",
+   "name_en": "Cartographic Data-leech",
+   "name_zh": null,
+   "encoded_by": "manual-2026-07-21",
+   "provenance": {
+    "current_text": "db enhancements.description id=000009079003",
+    "base_text": "Wahapedia 现文（PR25 工作单：FP 未触及或已滚入，11 版仍现行）",
+    "text_sha256": "c5c6b238b7dc0c048cf3493dacee389f0602d064b8f74807b6b867c6e2df88a0"
+   },
+   "side": "attacker",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "携带者搭乘的 TRANSPORT 经 Firing Deck 射击时 BS 改善 1——运输载具/射击甲板机制无引擎载体"
+   ]
+  },
+  {
+   "table": "enhancements",
+   "id": "000009079004",
+   "detachment": "Outlander Claw",
+   "name_en": "Starfall Shells",
+   "name_zh": null,
+   "encoded_by": "manual-2026-07-21",
+   "provenance": {
+    "current_text": "db enhancements.description id=000009079004",
+    "base_text": "Wahapedia 现文（PR25 工作单：FP 未触及或已滚入，11 版仍现行）",
+    "text_sha256": "245275262af0392baf73c615d2bf8c20df8fc47e72e7c858ed4eeba00b38e7d7"
+   },
+   "side": "target",
+   "status": "partial",
+   "effects": [
+    {
+     "phase": "hit",
+     "op": "modify",
+     "params": [
+      -1
+     ],
+     "condition": [],
+     "source": "星陨弹：被携带者 cult sniper rifle 命中的敌方单位，其后所有攻击命中骰 -1（持续至本方下个射击阶段开始，故不设阶段门）"
+    }
+   ],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "前提是携带者已于本方射击阶段用 cult sniper rifle 命中该敌方单位（loadout 须含该武器）——点名即假设已满足"
+   ]
+  },
+  {
+   "table": "enhancements",
+   "id": "000009079005",
+   "detachment": "Outlander Claw",
+   "name_en": "Assault Commando",
+   "name_zh": null,
+   "encoded_by": "manual-2026-07-21",
+   "provenance": {
+    "current_text": "db enhancements.description id=000009079005",
+    "base_text": "Wahapedia 现文（PR25 工作单：FP 未触及或已滚入，11 版仍现行）",
+    "text_sha256": "e243f58aed4efd18d3efe8764d0a1a4580e5012286f913d9b0b0af443648d42b"
+   },
+   "side": "attacker",
+   "status": "partial",
+   "effects": [
+    {
+     "phase": "hit",
+     "op": "reroll",
+     "params": [
+      "fail"
+     ],
+     "condition": [
+      "phase_shooting"
+     ],
+     "source": "突击突击队：本回合自 TRANSPORT 下车后，携带者单位的远程攻击可重骰命中骰"
+    }
+   ],
+   "requires_toggles": [
+    "bearer_leading",
+    "disembarked_this_turn"
+   ],
+   "not_modeled_notes_zh": [
+    "下车态用假设开关「本回合已下车」（引擎无运输载具建模）",
+    "「携带者正率领本单位」为假设开关（引擎无依附建模）"
+   ]
+  },
+  {
+   "table": "enhancements",
+   "id": "fp11e-genestealercults-purestrainbroodswarm-e1",
+   "detachment": "Purestrain Broodswarm",
+   "name_en": "Mark of the Star Children",
+   "name_zh": null,
+   "encoded_by": "manual-2026-07-21",
+   "provenance": {
+    "current_text": "db enhancements.description id=fp11e-genestealercults-purestrainbroodswarm-e1",
+    "base_text": "Faction Pack Genestealer Cults（PR25 迭代 1 fp_rules 补录 fp_new）",
+    "text_sha256": "9889a05f0b108a200056916005566a8fea9e1b650b8b1ae31ae8ed9eb92f5398"
+   },
+   "side": "target",
+   "status": "partial",
+   "effects": [
+    {
+     "phase": "wound",
+     "op": "t_improve",
+     "params": [
+      1
+     ],
+     "condition": [],
+     "source": "星之子印记：PURESTRAIN GENESTEALERS 单位 T 特征值 +1"
+    }
+   ],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "「4+ Sv」是绝对值设定，引擎守方护甲通道只有相对改善档（save.sv_improve）——绝对值无法表达，未编码（对 Sv5+ 的纯血基底等价 +1，对其他基底不成立）",
+    "「本单位近战攻击 +1 S」是攻方向效果，与本条目已编的守方向 T+1 分属两侧——单条目只能有一个 side，攻方分量未编码"
+   ]
+  },
+  {
+   "table": "enhancements",
+   "id": "fp11e-genestealercults-purestrainbroodswarm-e2",
+   "detachment": "Purestrain Broodswarm",
+   "name_en": "Talons of the Sire",
+   "name_zh": null,
+   "encoded_by": "manual-2026-07-21",
+   "provenance": {
+    "current_text": "db enhancements.description id=fp11e-genestealercults-purestrainbroodswarm-e2",
+    "base_text": "Faction Pack Genestealer Cults（PR25 迭代 1 fp_rules 补录 fp_new）",
+    "text_sha256": "bb7cd23304c9a14f630eb40db7002f94ccb09cd9faf31bbfe3023f2c3dd792f2"
+   },
+   "side": "attacker",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "本单位攻击可重骰致伤骰 1 点——只重骰 1 点无引擎通道，裸编高估"
+   ]
+  },
+  {
+   "table": "enhancements",
+   "id": "000009071002",
+   "detachment": "Xenocreed Congregation",
+   "name_en": "Gene-sire’s Reliquant",
+   "name_zh": null,
+   "encoded_by": "manual-2026-07-21",
+   "provenance": {
+    "current_text": "db enhancements.description id=000009071002",
+    "base_text": "Wahapedia 现文（PR25 工作单：FP 未触及或已滚入，11 版仍现行）",
+    "text_sha256": "0e84c46166c3f6057834fef43b61ef9bf30dd71fde77a3456464242f526b6ae8"
+   },
+   "side": "attacker",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "重投战斗震慑测验——士气域"
+   ]
+  },
+  {
+   "table": "enhancements",
+   "id": "000009071003",
+   "detachment": "Xenocreed Congregation",
+   "name_en": "Denunciator of Tyrants",
+   "name_zh": null,
+   "encoded_by": "manual-2026-07-21",
+   "provenance": {
+    "current_text": "db enhancements.description id=000009071003",
+    "base_text": "Wahapedia 现文（PR25 工作单：FP 未触及或已滚入，11 版仍现行）",
+    "text_sha256": "efef1a2f502ff4037a5107a404622e10b3715b762da714be41255e301acb77a8"
+   },
+   "side": "attacker",
+   "status": "partial",
+   "effects": [
+    {
+     "phase": "hit",
+     "op": "modify",
+     "params": [
+      1
+     ],
+     "condition": [
+      "target_has_keyword",
+      "character"
+     ],
+     "source": "暴君谴责者：携带者单位对 CHARACTER 单位的攻击命中骰 +1（原文无阶段限定，双阶段）"
+    },
+    {
+     "phase": "wound",
+     "op": "modify",
+     "params": [
+      1
+     ],
+     "condition": [
+      "target_has_keyword",
+      "character"
+     ],
+     "source": "暴君谴责者：携带者单位对 CHARACTER 单位的攻击致伤骰 +1（原文无阶段限定，双阶段）"
+    }
+   ],
+   "requires_toggles": [
+    "bearer_leading"
+   ],
+   "not_modeled_notes_zh": [
+    "「携带者正率领本单位」为假设开关（引擎无依附建模）"
+   ]
+  },
+  {
+   "table": "enhancements",
+   "id": "000009071004",
+   "detachment": "Xenocreed Congregation",
+   "name_en": "Deeds That Speak to the Masses",
+   "name_zh": null,
+   "encoded_by": "manual-2026-07-21",
+   "provenance": {
+    "current_text": "db enhancements.description id=000009071004",
+    "base_text": "Wahapedia 现文（PR25 工作单：FP 未触及或已滚入，11 版仍现行）",
+    "text_sha256": "c2391f8532c654881de2603264e5ba3fa48bf0bcd138567b41754182f3ff9f32"
+   },
+   "side": "attacker",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "开局多 2 点复苏点——资源域"
+   ]
+  },
+  {
+   "table": "enhancements",
+   "id": "000009071005",
+   "detachment": "Xenocreed Congregation",
+   "name_en": "Incendiary Inspiration",
+   "name_zh": null,
+   "encoded_by": "manual-2026-07-21",
+   "provenance": {
+    "current_text": "db enhancements.description id=000009071005",
+    "base_text": "Wahapedia 现文（PR25 工作单：FP 未触及或已滚入，11 版仍现行）",
+    "text_sha256": "010e2419157d244fe44b72eac051a3628e80596bcb09dfb230694bba2344e1ce"
+   },
+   "side": "attacker",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "进军回合仍可宣冲——冲锋资格域"
+   ]
+  },
+  {
+   "table": "enhancements",
+   "id": "fp11e-genestealercults-xenocultmasses-e1",
+   "detachment": "Xenocult Masses",
+   "name_en": "Inspired to Greatness",
+   "name_zh": null,
+   "encoded_by": "manual-2026-07-21",
+   "provenance": {
+    "current_text": "db enhancements.description id=fp11e-genestealercults-xenocultmasses-e1",
+    "base_text": "Faction Pack Genestealer Cults（PR25 迭代 1 fp_rules 补录 fp_new）",
+    "text_sha256": "05141e2e66f08a00af2404ff982753289418ee468b236c14600a30ef2ac1f3b4"
+   },
+   "side": "attacker",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "本单位攻击可重骰伤害骰——伤害骰重骰无引擎通道"
+   ]
+  },
+  {
+   "table": "enhancements",
+   "id": "fp11e-genestealercults-xenocultmasses-e2",
+   "detachment": "Xenocult Masses",
+   "name_en": "Devious Disguises",
+   "name_zh": null,
+   "encoded_by": "manual-2026-07-21",
+   "provenance": {
+    "current_text": "db enhancements.description id=fp11e-genestealercults-xenocultmasses-e2",
+    "base_text": "Faction Pack Genestealer Cults（PR25 迭代 1 fp_rules 补录 fp_new）",
+    "text_sha256": "58f0585883c3b47ef0c4806e28eafc009c4d630da6deb570797c14f68f1066b9"
+   },
+   "side": "attacker",
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "本单位侦测范围 -3\"——侦测范围机制无引擎载体"
+   ]
+  }
+ ]
+}
