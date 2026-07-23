@@ -155,7 +155,16 @@ _DIRECT_PATH_ALIASES: Dict[str, str] = {
     "钛帝国": "factions/钛帝国/index.md",
 }
 
-_WIKILINK_RE = re.compile(r"\[\[([^\]|#]+?)(?:\|([^\]]+?))?\]\]")
+_WIKILINK_RE = re.compile(r"\[\[([^\]|#]+?)(?:\\?\|([^\]]+?))?\]\]")
+
+
+def strip_wikilinks(text: str) -> str:
+    """[[path|显示]]→显示、[[target]]→target——用于摘要等纯文本上下文，防 wikilink 的
+    竖线进入 Markdown 表格单元格断列（模块 6 F7）。目标尾随反斜杠一并剥除。"""
+    def _plain(m: "re.Match[str]") -> str:
+        target, display = m.group(1), m.group(2)
+        return (display or target).strip().rstrip("\\")
+    return _WIKILINK_RE.sub(_plain, text)
 
 
 def _resolve_known_alias(raw_target: str) -> Optional[str]:

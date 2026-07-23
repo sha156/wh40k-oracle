@@ -43,17 +43,35 @@ def _wkey(a, s, ap, d) -> Tuple[str, str, str, str]:
 
 
 def _zh_weapons_indices(zh_weapons: Optional[dict]
-                        ) -> Tuple[Dict, Dict]:
-    """zh weapons_json → (射击 idx, 近战 idx)，各 {(a,s,ap,d):(name,[skills])}。
-    分组避免同侧写跨类碰撞（双联手铳 vs 咬人跳跳 同 2/4/0/1）。"""
+                        ) -> Tuple[Dict, Dict, List[Dict]]:
+    """zh weapons_json → (射击 idx, 近战 idx, 碰撞清单)，各 idx {(a,s,ap,d):(name,[skills])}。
+
+    分组避免同侧写跨类碰撞（双联手铳 vs 咬人跳跳 同 2/4/0/1）。但同侧两把不同武器侧写
+    完全相同时（如通刻警卫矛/堡主战斧的枪管侧写都 2/4/-1/2），(a,s,ap,d) 键碰撞、
+    last-write-wins 会让官方两行套同一个中文名（张冠李戴，全库 89 单位）。此处检测同键
+    异名，把歧义键**删除**——武器行回退官方英文名（不猜中文），碰撞记入返回清单供披露。
+    """
     ranged: Dict = {}
     melee: Dict = {}
+    ambiguous_r: set = set()
+    ambiguous_m: set = set()
     for gname, group in (zh_weapons or {}).items():
-        tgt = melee if "近战" in gname else ranged
+        is_melee = "近战" in gname
+        tgt = melee if is_melee else ranged
+        amb = ambiguous_m if is_melee else ambiguous_r
         for w in group or []:
-            tgt[_wkey(w.get("攻击次数"), w.get("造伤"), w.get("破甲"),
-                      w.get("伤害"))] = (w.get("name"), w.get("skill") or [])
-    return ranged, melee
+            key = _wkey(w.get("攻击次数"), w.get("造伤"), w.get("破甲"), w.get("伤害"))
+            name = w.get("name")
+            if key in tgt and tgt[key][0] != name:
+                amb.add(key)  # 同侧写不同名 → 歧义
+            tgt[key] = (name, w.get("skill") or [])
+    collisions: List[Dict] = []
+    for side, tgt, amb in (("射击", ranged, ambiguous_r), ("近战", melee, ambiguous_m)):
+        for key in amb:
+            collisions.append({"kind": "weapon_name_collision", "side": side,
+                               "statline": "/".join(key)})
+            del tgt[key]  # 歧义键回退英文名，绝不张冠李戴
+    return ranged, melee, collisions
 
 
 def _zh_keywords(intro: Optional[list]) -> Tuple[List[str], List[str]]:
@@ -90,10 +108,28 @@ def _flatten_zh_ability(ab: dict) -> Tuple[str, str]:
     return prefix, "".join(texts)
 
 
+_KY_TAG_RE = re.compile(r"</?ky>")
+
+
+def _clean_desc(desc: str) -> str:
+    """剥 <ky>…</ky> 标签 + 归一空白——用于展示与 frontmatter points 键，
+    防标签原样泄漏进 YAML 键（模块 6 F5）。"""
+    return _KY_TAG_RE.sub("", desc or "").strip()
+
+
 def _zh_model_desc(desc: str) -> str:
-    """'3 models' → '3个模型'。"""
-    m = re.match(r"(\d+)\s*models?", (desc or "").strip())
-    return "{}个模型".format(m.group(1)) if m else desc
+    """'3 models' → '3个模型'；保留档位语境（'(Assigned Agent)' 等）不塌缩，剥 <ky> 标签。
+
+    AoI 15 单位同一模型数有多档价（'1 model' 110 / '1 model (Assigned Agent)' 125 /
+    '1 model (AGENTS OF THE IMPERIUM Detachment)' …），前缀匹配整体替换会把三档全渲成
+    「1个模型」——读者无法知道哪个价对应哪种编制（模块 6 F5）。此处保留档位尾串。
+    """
+    clean = _clean_desc(desc)
+    m = re.match(r"(\d+)\s*models?\b(.*)$", clean, re.IGNORECASE)
+    if not m:
+        return clean
+    suffix = m.group(2).strip()
+    return "{}个模型{}".format(m.group(1), " " + suffix if suffix else "")
 
 
 def _wrap(label: str) -> str:
@@ -105,13 +141,19 @@ def _wrap(label: str) -> str:
 
 # ── 一致性护栏 ─────────────────────────────────────────────────────────
 
-def check_drift(models, weapons, zstats, zw_ranged, zw_melee) -> List[Dict]:
-    """官方结构表 vs 黑图书馆中文层的数值漂移检测（官方值渲染，漂移仅记录披露）。"""
+def check_drift(models, zstats) -> List[Dict]:
+    """官方结构表 vs 黑图书馆中文层的属性漂移检测（官方值渲染，漂移仅记录披露）。
+
+    模型行按下标对齐——多模型单位（如 Ghazghkull 两行）中文层顺序若与官方不同会误报，
+    故仅在两侧模型数一致时逐行比对，否则整单跳过属性漂移（保守，不误报）。
+    """
     drift: List[Dict] = []
+    if len(models) != len(zstats):
+        return drift
     for i, m in enumerate(models):
-        if i >= len(zstats):
-            continue
         z = zstats[i]
+        if not isinstance(z, dict):
+            continue
         for off_k, z_k in [("m", "m"), ("t", "t"), ("sv", "sv"),
                            ("w", "w"), ("ld", "ld"), ("oc", "oc")]:
             ov = re.sub(r'["+\s]', "", str(m[off_k] or ""))
@@ -143,7 +185,7 @@ def render_unit(conn, uid: str, faction_zh: str) -> Tuple[WikiPage, List[Dict]]:
     u, models, weapons, abils, zd = _fetch_unit(conn, uid)
     zstats = json.loads(zd["stats_json"]) if zd and zd["stats_json"] else []
     zabils = json.loads(zd["abilities_json"]) if zd and zd["abilities_json"] else []
-    zw_ranged, zw_melee = _zh_weapons_indices(
+    zw_ranged, zw_melee, zw_collisions = _zh_weapons_indices(
         json.loads(zd["weapons_json"]) if zd and zd["weapons_json"] else {})
     zintro = json.loads(zd["intro_json"]) if zd and zd["intro_json"] else []
     zfac_kw, zkw = _zh_keywords(zintro)
@@ -151,15 +193,17 @@ def render_unit(conn, uid: str, faction_zh: str) -> Tuple[WikiPage, List[Dict]]:
     pj = json.loads(u["points_json"] or "{}")
     kw = json.loads(u["keywords_json"] or "{}")
     fetched = (pj.get("mfm") or {}).get("fetched_at", "")
-    drift = check_drift(models, weapons, zstats, zw_ranged, zw_melee)
+    drift = check_drift(models, zstats) + zw_collisions
 
     L: List[str] = []
     # 属性表（官方数值 + 中文模型名兜底）
     L += ["## 属性表", "| 模型 | M | T | SV | W | LD | OC |",
           "|---|---|---|---|---|---|---|"]
+    model_names: List[str] = []
     for i, m in enumerate(models):
         z = zstats[i] if i < len(zstats) else {}
         mname = (z.get("unitName") if isinstance(z, dict) else None) or m["name"]
+        model_names.append(mname)
 
         def cell(off_val, z_key, unit=""):
             # 官方值优先；官方缺失（-/空，多为 Wahapedia 抽取遗漏）时退回中文层
@@ -170,9 +214,18 @@ def render_unit(conn, uid: str, faction_zh: str) -> Tuple[WikiPage, List[Dict]]:
         L.append("| {} | {} | {} | {} | {} | {} | {} |".format(
             mname, cell(m["m"], "m", "\""), cell(m["t"], "t"), cell(m["sv"], "sv"),
             cell(m["w"], "w"), cell(m["ld"], "ld"), cell(m["oc"], "oc")))
-    invulns = [m["invuln"] for m in models if m["invuln"] not in _EMPTY_INVULN]
-    if invulns:
-        L += ["", "### 特殊保护", "- {}+".format(str(invulns[0]).rstrip("+"))]
+    # 特殊保护：逐模型渲染——多模型单位各模型豁免可能不同（Ghazghkull 碎骨者萨拉卡 4+
+    # / 传奇旗手马卡力 2+），只渲第一个会丢掉后者（模块 6 F6，与官方数据卡不一致）
+    invuln_rows = [(model_names[i], str(m["invuln"]).rstrip("+"))
+                   for i, m in enumerate(models) if m["invuln"] not in _EMPTY_INVULN]
+    if invuln_rows:
+        L += ["", "### 特殊保护"]
+        distinct_vals = {v for _, v in invuln_rows}
+        if len(invuln_rows) == 1 or len(distinct_vals) == 1:
+            L.append("- {}+".format(invuln_rows[0][1]))
+        else:
+            for nm, v in invuln_rows:
+                L.append("- {}：{}+".format(nm, v))
 
     # 武器（官方侧写 + 中文名/技能兜底，USR 裸链）
     def wrows(rows, melee):
@@ -233,7 +286,8 @@ def render_unit(conn, uid: str, faction_zh: str) -> Tuple[WikiPage, List[Dict]]:
           "- **阵营关键词**：{}".format("，".join(_wrap(k) for k in fac_src)),
           "- **普通关键词**：{}".format("，".join(_wrap(k) for k in kw_src))]
 
-    points_fm = {it["desc"]: it["cost"] for it in (pj.get("items") or [])
+    points_fm = {_clean_desc(it["desc"]): it["cost"]
+                 for it in (pj.get("items") or [])
                  if isinstance(it.get("cost"), int)}
     fm = WikiPageFrontmatter(
         id=str(u["id"]), name_zh=u["name_zh"], name_en=u["name_en"],
@@ -264,8 +318,10 @@ def generate_faction(conn, fid: str, wiki_root: Path,
     out_dir = wiki_root / "factions" / faction_zh / "units"
     out_dir.mkdir(parents=True, exist_ok=True)
     conn.row_factory = sqlite3.Row
+    # id 作次序 tiebreak：同名单位（Repulsor×N）哪个拿基础 slug、哪个拿 -N 后缀必须
+    # 确定，否则重跑时可能互换、打乱交叉链接（模块 6 F4）
     uids = [r["id"] for r in conn.execute(
-        "SELECT id FROM units WHERE faction_id=? ORDER BY name_en", (fid,))]
+        "SELECT id FROM units WHERE faction_id=? ORDER BY name_en, id", (fid,))]
     written = 0
     zh_pages = 0
     drift_log: List[Dict] = []

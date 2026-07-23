@@ -155,3 +155,97 @@ class TestGenHashesProtection:
         reps2 = from_db.generate_all(db, wiki)
         assert target.exists() and reps2[0]["conflicts"] == []
         assert "人工批注" not in target.read_text(encoding="utf-8")
+
+
+class TestDataCorrectnessFixes:
+    """gnhf 审查模块 6 F3-F6 数据正确性修复。"""
+
+    def test_weapon_name_collision_falls_back_to_english(self, tmp_path):
+        # F3：同侧两把不同武器侧写完全相同 → 中文名歧义 → 回退英文，不张冠李戴
+        db = tmp_path / "wh40k.sqlite"
+        conn = sqlite3.connect(str(db))
+        conn.executescript(
+            "CREATE TABLE units(id TEXT,faction_id TEXT,name_en TEXT,name_zh TEXT,"
+            "points_json TEXT,keywords_json TEXT,version TEXT);"
+            "CREATE TABLE models(unit_id TEXT,name TEXT,m TEXT,t TEXT,sv TEXT,"
+            "invuln TEXT,w TEXT,ld TEXT,oc TEXT,base TEXT,count_options_json TEXT);"
+            "CREATE TABLE weapons(id TEXT,unit_id TEXT,name_zh TEXT,name_en TEXT,"
+            "range TEXT,a TEXT,bs_ws TEXT,s TEXT,ap TEXT,d TEXT,keywords_json TEXT);"
+            "CREATE TABLE abilities(id TEXT,owner_id TEXT,scope TEXT,condition_json TEXT,"
+            "name_zh TEXT,name_en TEXT,text_zh TEXT,effect_dsl_json TEXT,dsl_status TEXT);"
+            "CREATE TABLE unit_zh_detail(canonical_id TEXT,name_zh TEXT,faction_zh TEXT,"
+            "score TEXT,stats_json TEXT,abilities_json TEXT,weapons_json TEXT,"
+            "intro_json TEXT,source TEXT);")
+        conn.execute("INSERT INTO units VALUES('1','AC','Custodian Wardens','守卫',"
+                     "'{}',?,NULL)", (json.dumps({"keywords": []}),))
+        conn.execute("INSERT INTO models VALUES('1','Warden','5\"','6','2+','4','3',"
+                     "'6+','2','40mm',NULL)")
+        # 两把射击武器同侧写 2/6/-1/2，官方英文名不同
+        conn.execute("INSERT INTO weapons VALUES('w1','1',NULL,'Guardian spear','24',"
+                     "'2','2','6','-1','2',NULL)")
+        conn.execute("INSERT INTO weapons VALUES('w2','1',NULL,'Castellan axe','24',"
+                     "'2','2','6','-1','2',NULL)")
+        # 中文层两把同侧写但名字不同 → 歧义
+        conn.execute("INSERT INTO unit_zh_detail VALUES('1','守卫','卡斯托迪斯','',"
+                     "'[]','[]',?,'[]','blackforum')",
+                     (json.dumps({"射击武器": [
+                         {"name": "卫士之矛", "攻击次数": "2", "造伤": "6",
+                          "破甲": "-1", "伤害": "2"},
+                         {"name": "堡主战斧", "攻击次数": "2", "造伤": "6",
+                          "破甲": "-1", "伤害": "2"}]}),))
+        conn.commit()
+        page, drift = from_db.render_unit(conn, "1", "卡斯托迪斯")
+        conn.close()
+        # 两把武器都回退官方英文名，绝不都套「堡主战斧」
+        assert "Guardian spear" in page.body and "Castellan axe" in page.body
+        assert "卫士之矛" not in page.body and "堡主战斧" not in page.body
+        assert any(d.get("kind") == "weapon_name_collision" for d in drift)
+
+    def test_model_desc_preserves_tier_context(self, tmp_path):
+        from wiki_engine.from_db import _zh_model_desc
+        assert _zh_model_desc("1 model") == "1个模型"
+        assert _zh_model_desc("1 model (Assigned Agent)") == "1个模型 (Assigned Agent)"
+        # F5：<ky> 标签剥除，档位语境保留
+        assert _zh_model_desc("1 model (<ky>AGENTS OF THE IMPERIUM</ky> Detachment)") == \
+            "1个模型 (AGENTS OF THE IMPERIUM Detachment)"
+
+    def test_frontmatter_points_key_strips_ky_tags(self, tmp_path):
+        db = _mkdb(tmp_path, with_zh=False)
+        conn = sqlite3.connect(str(db))
+        conn.execute("UPDATE units SET points_json=? WHERE id='1'",
+                     (json.dumps({"points": 110, "items": [
+                         {"desc": "1 model (<ky>Assigned</ky>)", "cost": 110}]}),))
+        conn.commit()
+        page, _ = from_db.render_unit(conn, "1", "兽人")
+        conn.close()
+        assert page.fm.points is not None
+        assert all("<ky>" not in k for k in page.fm.points)
+
+    def test_multiple_invuln_all_rendered(self, tmp_path):
+        # F6：多模型不同豁免逐行渲染，不只渲第一个
+        db = tmp_path / "wh40k.sqlite"
+        conn = sqlite3.connect(str(db))
+        conn.executescript(
+            "CREATE TABLE units(id TEXT,faction_id TEXT,name_en TEXT,name_zh TEXT,"
+            "points_json TEXT,keywords_json TEXT,version TEXT);"
+            "CREATE TABLE models(unit_id TEXT,name TEXT,m TEXT,t TEXT,sv TEXT,"
+            "invuln TEXT,w TEXT,ld TEXT,oc TEXT,base TEXT,count_options_json TEXT);"
+            "CREATE TABLE weapons(id TEXT,unit_id TEXT,name_zh TEXT,name_en TEXT,"
+            "range TEXT,a TEXT,bs_ws TEXT,s TEXT,ap TEXT,d TEXT,keywords_json TEXT);"
+            "CREATE TABLE abilities(id TEXT,owner_id TEXT,scope TEXT,condition_json TEXT,"
+            "name_zh TEXT,name_en TEXT,text_zh TEXT,effect_dsl_json TEXT,dsl_status TEXT);"
+            "CREATE TABLE unit_zh_detail(canonical_id TEXT,name_zh TEXT,faction_zh TEXT,"
+            "score TEXT,stats_json TEXT,abilities_json TEXT,weapons_json TEXT,"
+            "intro_json TEXT,source TEXT);")
+        conn.execute("INSERT INTO units VALUES('1','ORK','Ghazghkull Thraka','加兹古尔',"
+                     "'{}','{}',NULL)")
+        conn.execute("INSERT INTO models VALUES('1','Ghazghkull Thraka','6\"','9','2+',"
+                     "'4','12','6+','5','80mm',NULL)")
+        conn.execute("INSERT INTO models VALUES('1','Makari','6\"','4','6+','2','4',"
+                     "'6+','1','40mm',NULL)")
+        conn.commit()
+        page, _ = from_db.render_unit(conn, "1", "兽人")
+        conn.close()
+        # 两个不同豁免（4+ 和 2+）都出现，逐模型标注
+        assert "4+" in page.body and "2+" in page.body
+        assert "Ghazghkull Thraka：4+" in page.body and "Makari：2+" in page.body
