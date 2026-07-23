@@ -74,6 +74,64 @@ class TestParseMfmHtml:
         assert all(pts != 888 for _u, _t, _m, pts in rows)
 
 
+# 2026-07 MFM 改版：变价单位表头改成色块（emerald 降价 / red 涨价 / amber 重构），
+# 名字挪进 <span class="text-xl keep-all">；分数档加 class 着色 + ▲/▼ (±N) 变动标记前缀。
+# 旧解析器只认 slate 表头 + 裸 pts span，会静默丢掉整批变价单位（fetch 最该抓到的那批）。
+_UNIT_COLORED = (
+    '<div class="flex flex-row justify-between px-1 py-0.5 {color} font-bold '
+    'text-white"><span class="text-xl keep-all">{name}</span>'
+    '<span class="text-sm self-end pl-2 text-nowrap">▼</span></div>'
+)
+_LI_MARKED = (
+    '<li><span>{models}</span><span class="{color}">{arrow} ({delta}) '
+    '{pts} pts</span></li>'
+)
+
+
+class TestParseMfmHtmlNewFormat:
+    """2026-07 改版后色块表头 + 变动标记分数档的解析（回归）。"""
+
+    def _html(self):
+        return (
+            "<html><body>"
+            '<h3 class="text-4xl font-header p-1">UNITS</h3>'
+            # 降价单位（emerald 表头 + ▼ 标记）——旧解析器完全丢失
+            + _UNIT_COLORED.format(color="bg-emerald-600", name="ANGRON")
+            + _TIER.format(tier="YOUR UNIT COSTS",
+                           lis=_LI_MARKED.format(models="1 model",
+                                                 color="text-emerald-600",
+                                                 arrow="▼", delta="-20", pts=330))
+            # 涨价单位（red 表头 + ▲ 标记）
+            + _UNIT_COLORED.format(color="bg-red-500", name="DEFILER")
+            + _TIER.format(tier="YOUR 2ND + UNIT COSTS",
+                           lis=_LI_MARKED.format(models="1 model",
+                                                 color="text-red-500",
+                                                 arrow="▲", delta="+10", pts=310))
+            # 未变价单位仍走旧式 slate 表头 + 裸 pts span（新旧必须共存）
+            + _UNIT.format(name="CHAOS SPAWN")
+            + _TIER.format(tier="YOUR UNIT COSTS",
+                           lis='<li><span>1 model</span><span>65 pts</span></li>')
+            + "</body></html>"
+        )
+
+    def test_colored_header_decrease_unit_captured(self):
+        rows = parse_mfm_html(self._html())
+        assert ("ANGRON", "YOUR UNIT COSTS", "1 model", 330) in rows
+
+    def test_colored_header_increase_unit_captured(self):
+        rows = parse_mfm_html(self._html())
+        assert ("DEFILER", "YOUR 2ND + UNIT COSTS", "1 model", 310) in rows
+
+    def test_old_style_units_still_parse_alongside(self):
+        rows = parse_mfm_html(self._html())
+        assert ("CHAOS SPAWN", "YOUR UNIT COSTS", "1 model", 65) in rows
+
+    def test_marker_delta_not_mistaken_for_points(self):
+        # ▼ (-20) 的 20 不得被当成分数——只取末尾 330
+        rows = parse_mfm_html(self._html())
+        assert all(pts not in (20, 10) for _u, _t, _m, pts in rows)
+
+
 class TestIsBaseTier:
     def test_base_tiers(self):
         assert is_base_tier("YOUR UNIT COSTS")

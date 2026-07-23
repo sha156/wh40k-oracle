@@ -80,26 +80,44 @@ def _slice_kept_sections(doc: str) -> str:
     return "".join(kept)
 
 
+# 单位名表头：2026-07 MFM 改版后有两种渲染。
+#   旧式（本版未变价单位）：<div class="…bg-slate-500…font-bold text-xl…">NAME</div>
+#   新式（本版变价单位，加涨/降价色块）：
+#     <div class="…bg-{emerald|red|amber}-…font-bold text-white">
+#         <span class="text-xl keep-all">NAME</span>…</div>
+#   稳定信号是 text-xl（slate 直排文本）或 text-xl keep-all（色块内 span），与配色脱钩——
+#   只匹配旧式会漏掉本版所有变价单位（正是 fetch 最该抓到的那批，如降价 20 的 ANGRON）。
+_UNIT_HEADER_RE = re.compile(
+    r'<div class="[^"]*bg-slate-500[^"]*font-bold text-xl[^"]*">([^<]+)</div>'
+    r'|<span class="text-xl keep-all">([^<]+)</span>')
+
+# 分数行：改版给变价档加了 class 着色与 ▲/▼ (±N) 变动标记前缀。
+#   旧式：<li><span>N models</span><span>N pts</span></li>
+#   新式：<li><span>N models</span><span class="text-emerald-600…">▼ (-20) N pts</span></li>
+#   放宽第二个 span 允许任意属性 + 可选箭头前缀，只抓末尾的数字，兼容新旧。
+_LI_PTS_RE = re.compile(
+    r"<li><span>([^<]+)</span>"
+    r'<span[^>]*>(?:[▲▼]\s*\([+\-]?\d+\)\s*)?(\d+) pts</span></li>')
+
+
 def parse_mfm_html(html: str) -> List[MfmRow]:
     """MFM 阵营页 HTML → 去重的 (单位名, 梯度表头, 模型数描述, 分数) 列表。纯函数。
 
     只解析 UNITS/FORTIFICATIONS 小节（自军现行价），排除借调价小节与页面重复渲染。
+    按单位表头（新旧两式）切块，块内按梯度分组解析分数行（新旧两式）。
     """
     doc = _slice_kept_sections(_resolve_rsc_placeholders(html))
-    parts = re.split(
-        r'<div class="px-1 py-0\.5 bg-slate-500[^"]*font-bold text-xl[^"]*">', doc)
+    heads = [(m.start(), (m.group(1) or m.group(2)).strip())
+             for m in _UNIT_HEADER_RE.finditer(doc)]
     rows: List[MfmRow] = []
-    for part in parts[1:]:
-        m = re.match(r"([^<]+)</div>", part)
-        if not m:
-            continue
-        unit = m.group(1).strip()
+    for i, (start, unit) in enumerate(heads):
+        end = heads[i + 1][0] if i + 1 < len(heads) else len(doc)
+        block = doc[start:end]
         # 单位块内按梯度分组：<div ...font-bold...>TIER 表头</div><ul>...li...</ul>
         for tier, ul in re.findall(
                 r'<div class="bg-slate-200[^"]*font-bold[^"]*">([^<]+)</div>'
-                r"<ul[^>]*>([\s\S]*?)</ul>", part):
-            for models, pts in re.findall(
-                    r"<li><span>([^<]+)</span><span>(\d+) pts</span></li>", ul):
+                r"<ul[^>]*>([\s\S]*?)</ul>", block):
+            for models, pts in _LI_PTS_RE.findall(ul):
                 rows.append((unit, tier.strip(), models.strip(), int(pts)))
     return list(dict.fromkeys(rows))
 
