@@ -36,14 +36,21 @@ _FORCE_TOOL_NUDGE = (
 # 触发"空结果 → 降级 rag_search"的工具及判空规则。
 # 未建模工具（simulate_combat 等）不在此列——它们的"未建模"提示本身就是诚实答案，
 # rag_search 兜底对模拟/判定类问题没有意义，不应被此机制吞掉。
+# ⚠️ ambiguous（同名多候选）不是空结果：它带 candidates/preview，是需要 LLM 按
+# 提示词铁律重查消歧的实质性回复（评审 #25 通道）。此前判空谓词不区分 ambiguous，
+# 在 LLM 看到候选之前就降级 classic——整条消歧路径成了死代码（gnhf 审查模块 5 HIGH）。
 _EMPTY_CHECKS: Dict[str, Callable[[Dict[str, Any]], bool]] = {
     "search_wiki": lambda r: not r.get("found"),
-    "get_entity": lambda r: not r.get("found"),
+    "get_entity": lambda r: (not r.get("found")
+                             and (r.get("resolved_via") or {}).get("confidence")
+                             != "ambiguous"),
     "get_keyword_definition": lambda r: not r.get("found"),
-    "entity_resolver": lambda r: not r.get("canonical_id"),
+    "entity_resolver": lambda r: (not r.get("canonical_id")
+                                  and not r.get("candidates")),
     # 数值题优先走 get_datasheet；但俗名/集合名解析不到时必须立即降级 classic 兜底，
     # 否则 LLM 会反复空查后直接宣布「档案缺失」，反而不如老链路（回归 7 题的根因）。
-    "get_datasheet": lambda r: not r.get("found"),
+    "get_datasheet": lambda r: (not r.get("found")
+                                and r.get("reason") != "ambiguous"),
 }
 
 

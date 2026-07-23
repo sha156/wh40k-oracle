@@ -14,13 +14,18 @@ from typing import Any, Dict, List, Optional, Tuple
 from web_api.contract import (CritiqueReportOut, RosterIn, TargetScoreOut,
                               UnitAssessmentOut, ValidationIssueOut,
                               ValidationReportOut)
+from web_api.simulate import LOADOUT_ITEMS_MAX, WEAPON_COUNT_MAX
 
 
 def _to_loadout(raw: List[List[Any]]) -> Tuple[Tuple[str, int], ...]:
     """[[武器名,数量],...] → ((str,int),...)；非法项整体丢弃（不猜半份装配）。
 
     同名武器合并求和（防客户端追加而非替换 loadout 行 → 引擎按 flat list 迭代双计伤害）。
+    数量/行数超上限同样整体丢弃——点评的蒙特卡洛数组宽度随武器数扩张，无上限即 DoS 面
+    （上限常量与模拟器边界共用，见 web_api/simulate.py）。
     """
+    if raw and len(raw) > LOADOUT_ITEMS_MAX:
+        return ()
     merged: "OrderedDict[str, int]" = OrderedDict()
     for item in raw or []:
         if not (isinstance(item, (list, tuple)) and len(item) == 2):
@@ -30,10 +35,12 @@ def _to_loadout(raw: List[List[Any]]) -> Tuple[Tuple[str, int], ...]:
             c = int(cnt)
         except (TypeError, ValueError):
             return ()
-        if not isinstance(name, str) or not name.strip() or c <= 0:
+        if not isinstance(name, str) or not name.strip() or c <= 0 or c > WEAPON_COUNT_MAX:
             return ()
         key = name.strip()
         merged[key] = merged.get(key, 0) + c
+    if any(c > WEAPON_COUNT_MAX for c in merged.values()):
+        return ()
     return tuple(merged.items())
 
 

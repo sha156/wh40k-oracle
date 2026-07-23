@@ -449,6 +449,20 @@ def build_faction_facts(pairs: List[Pair]) -> Dict[str, Dict[str, Any]]:
     return facts
 
 
+# frontmatter 里 version.source: official-db ⇒ 官方结构库（from_db）渲染页
+_OFFICIAL_DB_SRC_RE = re.compile(
+    r"^\s*source:\s*['\"]?official-db['\"]?\s*$", re.MULTILINE)
+
+
+def _is_official_db_page(text: str) -> bool:
+    """页面是否来自官方结构库渲染（只查 frontmatter 区，不扫全文防正文误中）。"""
+    if not text.startswith("---"):
+        return False
+    end = text.find("\n---", 3)
+    head = text[:end] if end != -1 else text[:2000]
+    return bool(_OFFICIAL_DB_SRC_RE.search(head))
+
+
 def synthesize_all(
     pairing_path: Path,
     refined_root: Path,
@@ -498,6 +512,9 @@ def synthesize_all(
         "skipped": 0, "failed": 0, "path_conflicts": 0,
         # H16：被人工编辑保护跳过的页面相对路径列表
         "conflicts": [],
+        # 目标页来自官方结构库（source: official-db）而被拒绝覆盖的列表——
+        # 官方数据页权威高于 LLM 合成，无论 gen_hashes 登记与否一律不覆盖
+        "official_protected": [],
         # 本次实际写入/更新的页面相对路径列表（供 ingest 日志用）
         "written": [],
     }
@@ -577,12 +594,22 @@ def synthesize_all(
                     # H16 冲突检测：仅当该路径有登记值时才可判定"人工改过"
                     # （无登记值 = 登记表启用前的旧文件，保持覆盖旧行为）
                     if file_path.exists():
-                        registered = gen_hashes.get(rel)
                         try:
-                            cur_hash = text_sha256(
-                                file_path.read_text(encoding="utf-8"))
+                            existing = file_path.read_text(encoding="utf-8")
                         except (OSError, UnicodeDecodeError):
-                            cur_hash = None
+                            existing = None
+                        # 官方结构库页硬规则：source: official-db 的页面无条件拒绝
+                        # 被 LLM 合成覆盖——不依赖 gen_hashes 是否存在（权威方向：
+                        # 官方数值 > LLM 合成；gnhf 审查模块 6 F1 的反向失守通道）
+                        if existing is not None and _is_official_db_page(existing):
+                            stats["official_protected"].append(rel)
+                            tqdm.write(
+                                "  ⚠️ 目标页来自官方结构库（source: official-db），"
+                                "LLM 合成不覆盖: {}".format(rel))
+                            continue
+                        registered = gen_hashes.get(rel)
+                        cur_hash = (text_sha256(existing)
+                                    if existing is not None else None)
                         if (registered is not None and cur_hash is not None
                                 and cur_hash != registered):
                             stats["conflicts"].append(rel)

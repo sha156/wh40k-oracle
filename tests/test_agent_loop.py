@@ -349,6 +349,98 @@ class TestIntentClassificationFailsClosed:
         assert result.intent == "查"
 
 
+class TestAmbiguousIsNotEmpty:
+    """gnhf 审查模块 5 HIGH：ambiguous（同名多候选）是需要 LLM 消歧的实质性结果，
+    不许被判空短路降级——否则评审 #25 的 candidates_preview + 提示词重查铁律整条不可达。"""
+
+    def test_get_datasheet_ambiguous_reaches_llm_and_requery_succeeds(self):
+        # ambiguous → 结果写回 messages → LLM 按候选名（含阵营）重查 → 正常作答不降级
+        calls = []
+
+        def fake_datasheet(name_or_id):
+            calls.append(name_or_id)
+            if name_or_id == "Helbrute":
+                return {"found": False, "reason": "ambiguous",
+                        "candidates": ["Helbrute (CSM)", "Helbrute (WE)"],
+                        "candidates_preview": [{"candidate": "Helbrute (CSM)", "t": 9}]}
+            return {"found": True, "datasheet": {"name_en": name_or_id, "T": 9}}
+
+        llm = ScriptedLLM("查", steps=[
+            {"type": "tool_call", "tool": "get_datasheet", "args": {"name_or_id": "Helbrute"}},
+            {"type": "tool_call", "tool": "get_datasheet",
+             "args": {"name_or_id": "Helbrute (CSM)"}},
+            {"type": "final", "content": "CSM 版 Helbrute 的 T 为 9。"},
+        ])
+        loop = AgentLoop(llm=llm, tools=_fake_tools(get_datasheet=fake_datasheet))
+
+        result = loop.run("Helbrute 的韧性是多少？")
+
+        assert result.degraded is False
+        assert calls == ["Helbrute", "Helbrute (CSM)"]
+        assert result.tool_calls == ["get_datasheet", "get_datasheet"]
+        # LLM 确实见到过 ambiguous 候选（写回了 messages）
+        assert any("candidates_preview" in str(m) for m in llm.next_step_calls[-1])
+
+    def test_get_datasheet_plain_not_found_still_degrades(self):
+        # 负向成对：普通查无此单位（无 reason）仍然立即降级 classic 兜底
+        llm = ScriptedLLM("查", steps=[
+            {"type": "tool_call", "tool": "get_datasheet", "args": {"name_or_id": "不存在"}},
+        ])
+        tools = _fake_tools(get_datasheet=lambda name_or_id: {
+            "found": False, "datasheet": None, "note": "库中未找到该单位"})
+        loop = AgentLoop(llm=llm, tools=tools)
+
+        result = loop.run("不存在单位的韧性？")
+
+        assert result.degraded is True
+        assert "rag_search" in result.tool_calls
+
+    def test_get_entity_ambiguous_reaches_llm(self):
+        llm = ScriptedLLM("查", steps=[
+            {"type": "tool_call", "tool": "get_entity", "args": {"name_or_id": "牛头怪"}},
+            {"type": "final", "content": "该译名有多个候选：A、B，请确认指哪一个。"},
+        ])
+        tools = _fake_tools(get_entity=lambda name_or_id: {
+            "found": False, "page": None,
+            "resolved_via": {"confidence": "ambiguous", "candidates": ["A", "B"],
+                             "name_en": None, "canonical_id": None},
+            "note": "译名有多个候选，需向用户反问确认：A、B"})
+        loop = AgentLoop(llm=llm, tools=tools)
+
+        result = loop.run("牛头怪是什么？")
+
+        assert result.degraded is False
+        assert result.tool_calls == ["get_entity"]
+
+    def test_entity_resolver_with_candidates_reaches_llm(self):
+        llm = ScriptedLLM("查", steps=[
+            {"type": "tool_call", "tool": "entity_resolver", "args": {"name": "毒刃"}},
+            {"type": "final", "content": "候选有两个，按上下文取 X。"},
+        ])
+        tools = _fake_tools(entity_resolver=lambda name: {
+            "canonical_id": None, "name_en": None,
+            "confidence": "ambiguous", "candidates": ["X", "Y"]})
+        loop = AgentLoop(llm=llm, tools=tools)
+
+        result = loop.run("毒刃是谁？")
+
+        assert result.degraded is False
+
+    def test_entity_resolver_no_candidates_still_degrades(self):
+        # 负向成对：解析彻底失败（无 id 且无候选）仍降级
+        llm = ScriptedLLM("查", steps=[
+            {"type": "tool_call", "tool": "entity_resolver", "args": {"name": "乱码"}},
+        ])
+        tools = _fake_tools(entity_resolver=lambda name: {
+            "canonical_id": None, "name_en": None,
+            "confidence": "none", "candidates": []})
+        loop = AgentLoop(llm=llm, tools=tools)
+
+        result = loop.run("乱码是谁？")
+
+        assert result.degraded is True
+
+
 class TestUnknownToolName:
     def test_unknown_tool_call_is_reported_back_and_loop_continues(self):
         # 用「闲聊」意图避开零工具门控，专注验证未知工具被回报后循环继续。

@@ -129,3 +129,29 @@ class TestEscapeTablePipes:
     def test_idempotent(self):
         body = "| x | [[a/b.md\\|c]] |"
         assert escape_table_pipes(body) == body
+
+
+class TestGenHashesProtection:
+    """gnhf 审查模块 6 F1：from_db 接入 H16 生成哈希登记表——人工编辑不被静默覆盖。"""
+
+    def test_manual_edit_protected_fresh_page_overwritten(self, tmp_path):
+        db = _mkdb(tmp_path)
+        wiki = tmp_path / "wiki"
+        from_db.generate_all(db, wiki)
+        target = wiki / "factions" / "兽人" / "units" / "warboss.md"
+        assert target.exists()
+        gh = json.loads((wiki / ".gen_hashes.json").read_text(encoding="utf-8"))
+        assert "factions/兽人/units/warboss.md" in gh  # 登记表已建
+
+        # 人工编辑 → 重跑不覆盖 + conflicts 上报
+        target.write_text(target.read_text(encoding="utf-8") + "\n人工批注\n",
+                          encoding="utf-8")
+        reps = from_db.generate_all(db, wiki)
+        assert "人工批注" in target.read_text(encoding="utf-8")
+        assert "factions/兽人/units/warboss.md" in reps[0]["conflicts"]
+
+        # 负向成对：删除该页（等同还原）→ 重跑正常再生成，无冲突
+        target.unlink()
+        reps2 = from_db.generate_all(db, wiki)
+        assert target.exists() and reps2[0]["conflicts"] == []
+        assert "人工批注" not in target.read_text(encoding="utf-8")

@@ -82,7 +82,9 @@ def test_legal_roster():
         RosterUnit(INTERCESSOR, "Intercessor Squad", 5),
     )))
     assert r.legal is True and r.errors == ()
-    assert r.total_points == 150            # Apothecary + Intercessor 5-model
+    # Apothecary 70 + Intercessor 5-model 80 + 强化 Eye of the Primarch 10
+    # ——强化点数必须计入总分（模块 3 审查 F1：曾漏计且被旧期望值 150 钉成规格）
+    assert r.total_points == 160
 
 
 @needs_db
@@ -162,14 +164,45 @@ def test_enhancement_rules():
 
 
 @needs_db
+def test_enhancement_points_push_over_limit():
+    # 竞技压线场景（模块 3 审查 F1）：24×Intercessor(80)=1920 + Apothecary 70 = 1990，
+    # 挂 Hero of the Chapter(20) → 2010 > 2000 必须判超分；卸下强化则合法（成对负向）。
+    units = tuple(
+        [RosterUnit(INTERCESSOR, "Intercessor Squad", 5) for _ in range(24)] +
+        [RosterUnit(APOTHECARY, "Apothecary Biologis", 1, is_warlord=True,
+                    enhancement="Hero of the Chapter")])
+    r = validate(DB, Roster("SM", DET_BASTION, "strike_force", units))
+    assert r.total_points == 2010
+    assert "points_over" in _codes(r) and r.legal is False
+
+    bare = tuple(u if not u.enhancement else
+                 RosterUnit(u.canonical_id, u.name_en, u.models,
+                            is_warlord=u.is_warlord)
+                 for u in units)
+    rb = validate(DB, Roster("SM", DET_BASTION, "strike_force", bare))
+    assert rb.total_points == 1990 and rb.legal is True
+
+
+@needs_db
+def test_enhancement_unpriced_surfaced_not_counted():
+    # 强化点数拿不到（错分队名/无数据）→ enh_unpriced warn 且不计入总分，不静默计 0
+    r = validate(DB, Roster("SM", DET_BASTION, "strike_force", (
+        RosterUnit(APOTHECARY, "Apothecary Biologis", 1, is_warlord=True,
+                   enhancement="NotARealEnhancement"),)))
+    unp = [i for i in r.issues if i.code == "enh_unpriced"]
+    assert unp and unp[0].surfaced_only and unp[0].severity == WARN
+    assert r.total_points == 70             # 只有 Apothecary，本体点数不受影响
+
+
+@needs_db
 def test_unknown_size_surfaced_not_silent():
     # 未知规模档 → warn 显式披露（回退 2000 但不静默；报错消息不撒谎）
     r = validate(DB, Roster("SM", DET_BASTION, "Onslaught", (  # 大小写错
         RosterUnit(INTERCESSOR, "Intercessor Squad", 5, is_warlord=False),)))
     unk = [i for i in r.issues if i.code == "unknown_size"]
     assert unk and unk[0].surfaced_only and unk[0].severity == WARN
-    assert "strike_force(2000)" in " ".join(
-        i.message for i in r.issues if i.code == "points_over") or r.total_points <= 2000
+    # 直接断言回退文案不撒谎（模块 8 F3：原 `or total<=2000` 逃生门使断言恒真）
+    assert "strike_force 2000" in unk[0].message
 
 
 @needs_db

@@ -20,7 +20,8 @@ import sqlite3
 from pathlib import Path
 from typing import Dict, List, Optional, Tuple
 
-from wiki_engine._io import atomic_write_text
+from wiki_engine._io import (atomic_write_text, load_gen_hashes,
+                             save_gen_hashes, text_sha256)
 from wiki_engine.crosslinks import _resolve_known_alias, escape_table_pipes
 from wiki_engine.models import FACTION_NAMES, WikiPage, WikiPageFrontmatter, slugify
 
@@ -251,8 +252,14 @@ def render_unit(conn, uid: str, faction_zh: str) -> Tuple[WikiPage, List[Dict]]:
 
 # ── 批量生成 ───────────────────────────────────────────────────────────
 
-def generate_faction(conn, fid: str, wiki_root: Path) -> Dict:
-    """生成一个阵营的全部单位页 → wiki/factions/<中文名>/units/。"""
+def generate_faction(conn, fid: str, wiki_root: Path,
+                     gen_hashes: Optional[Dict[str, str]] = None) -> Dict:
+    """生成一个阵营的全部单位页 → wiki/factions/<中文名>/units/。
+
+    gen_hashes：H16 生成哈希登记表（None=不参与保护，仅限测试）。目标页有登记值且
+    当前内容 ≠ 登记值 ⇒ 被人工改过 ⇒ 跳过覆盖计入 conflicts——此前 from_db 完全绕过
+    该体系，手工修正会被全量刷新静默抹掉（gnhf 审查模块 6 F1，脚本复现）。
+    """
     faction_zh = FACTION_DIRS.get(fid, fid)
     out_dir = wiki_root / "factions" / faction_zh / "units"
     out_dir.mkdir(parents=True, exist_ok=True)
@@ -262,34 +269,53 @@ def generate_faction(conn, fid: str, wiki_root: Path) -> Dict:
     written = 0
     zh_pages = 0
     drift_log: List[Dict] = []
+    conflicts: List[str] = []
     used_slugs: Dict[str, int] = {}
     for uid in uids:
         page, drift = render_unit(conn, uid, faction_zh)
         base = slugify(page.fm.name_en or page.fm.name_zh or uid)
         used_slugs[base] = used_slugs.get(base, 0) + 1
         slug = base if used_slugs[base] == 1 else "{}-{}".format(base, used_slugs[base])
-        atomic_write_text(out_dir / "{}.md".format(slug), page.to_markdown())
+        target = out_dir / "{}.md".format(slug)
+        rel = "factions/{}/units/{}.md".format(faction_zh, slug)
+        if gen_hashes is not None and target.exists():
+            registered = gen_hashes.get(rel)
+            if registered is not None:
+                try:
+                    cur = text_sha256(target.read_text(encoding="utf-8"))
+                except (OSError, UnicodeDecodeError):
+                    cur = None
+                if cur is not None and cur != registered:
+                    conflicts.append(rel)
+                    continue  # 人工编辑保护：不覆盖，交人工处置
+        new_text = page.to_markdown()
+        atomic_write_text(target, new_text)
+        if gen_hashes is not None:
+            gen_hashes[rel] = text_sha256(new_text)
         written += 1
         if page.fm.name_zh:
             zh_pages += 1
         for d in drift:
             drift_log.append({"unit": page.fm.name_en, **d})
     return {"faction": faction_zh, "fid": fid, "written": written,
-            "zh_pages": zh_pages, "drift": drift_log}
+            "zh_pages": zh_pages, "drift": drift_log, "conflicts": conflicts}
 
 
 def generate_all(db_path: Path, wiki_root: Path,
                  only: Optional[str] = None) -> List[Dict]:
     conn = sqlite3.connect(str(db_path))
+    gen_hashes = load_gen_hashes(wiki_root)
     try:
         conn.row_factory = sqlite3.Row
         fids = [only] if only else [
             r["faction_id"] for r in conn.execute(
                 "SELECT DISTINCT faction_id FROM units "
                 "WHERE faction_id IS NOT NULL ORDER BY faction_id")]
-        return [generate_faction(conn, fid, wiki_root) for fid in fids]
+        return [generate_faction(conn, fid, wiki_root, gen_hashes=gen_hashes)
+                for fid in fids]
     finally:
         conn.close()
+        save_gen_hashes(wiki_root, gen_hashes)
 
 
 def main() -> None:
@@ -302,9 +328,16 @@ def main() -> None:
     total = sum(r["written"] for r in reps)
     total_zh = sum(r["zh_pages"] for r in reps)
     total_drift = sum(len(r["drift"]) for r in reps)
+    all_conflicts = [c for r in reps for c in r.get("conflicts", [])]
     for r in reps:
         print("  {:12}({}) 写 {:>3} 页，中文 {:>3}，数值漂移 {}".format(
             r["faction"], r["fid"], r["written"], r["zh_pages"], len(r["drift"])))
+    if all_conflicts:
+        print("\n⚠️ {} 页检测到人工编辑（内容 ≠ 上次生成登记值），已跳过覆盖：".format(
+            len(all_conflicts)))
+        for c in all_conflicts:
+            print("    " + c)
+        print("  如需重新生成：还原修改或删除该页后重跑。")
     print("\n合计 {} 阵营 / {} 页（中文 {} / 英文兜底 {}），官方↔中文漂移 {} 处".format(
         len(reps), total, total_zh, total - total_zh, total_drift))
     # 持久化漂移清单（官方值已渲染，仅披露供人工核对官网↔黑图书馆分歧）

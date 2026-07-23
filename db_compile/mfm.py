@@ -160,12 +160,46 @@ def fetch_faction(slug: str, max_retries: int = 4,
     raise RuntimeError(f"抓取 {slug} 连续 {max_retries} 次失败: {last}")
 
 
+# 新旧缓存对账阈值：单阵营行数掉幅超 30% 或总行数掉幅超 10% ⇒ 判解析器断裂而非
+# 官方删单位，拒绝覆盖好缓存。2026-07-22 官网改版事故（旧解析器只抓到 16 条、恰好
+# 丢光全部变价单位、静默覆盖）的复盘护栏，落进代码而非只留在记忆里。
+_FACTION_DROP_RATIO = 0.7
+_TOTAL_DROP_RATIO = 0.9
+
+
+def _guard_cache_regression(out_path: Path, data: Dict[str, List[MfmRow]]) -> None:
+    """写盘前与旧缓存逐阵营行数对账；系统性掉行时 raise，保住旧缓存。"""
+    if not out_path.exists():
+        return
+    try:
+        old = json.loads(out_path.read_text(encoding="utf-8")).get("factions") or {}
+    except (ValueError, OSError):
+        return  # 旧缓存本身坏了 → 无对账基准，放行覆盖
+    drops = []
+    for slug, old_rows in old.items():
+        if not old_rows:
+            continue
+        new_n = len(data.get(slug) or [])
+        if new_n < len(old_rows) * _FACTION_DROP_RATIO:
+            drops.append(f"{slug}: {len(old_rows)}→{new_n}")
+    old_total = sum(len(v) for v in old.values())
+    new_total = sum(len(v) for v in data.values())
+    total_drop = old_total and new_total < old_total * _TOTAL_DROP_RATIO
+    if drops or total_drop:
+        raise RuntimeError(
+            f"MFM 抓取行数对旧缓存系统性下降（总 {old_total}→{new_total}"
+            f"{'，掉行阵营: ' + '; '.join(drops) if drops else ''}）——"
+            "多半是官网又改版式导致解析器断裂，已拒绝覆盖旧缓存。"
+            "先用明星单位核实官网真删减；确认无误可用 --force 强制覆盖。")
+
+
 def fetch_all(out_path: Path, sleep_s: float = 1.0,
-              max_retries: int = 3) -> Dict[str, List[MfmRow]]:
+              max_retries: int = 3, force: bool = False) -> Dict[str, List[MfmRow]]:
     """抓全部阵营页 → {slug: rows}，写 JSON 到 out_path。需环境代理（HTTPS_PROXY）。
 
     单页抓取复用 fetch_faction（同一套重试逻辑，不再内联第二份参数不一致的循环）；
-    单阵营抓不下来记入 failed 继续，不拖垮整轮。
+    单阵营抓不下来记入 failed 继续，不拖垮整轮。写盘前与旧缓存逐阵营对账，
+    系统性掉行 raise 不覆盖（force=True 跳过对账——仅限人工核实官网真删减后）。
     """
     home = _fetch(MFM_BASE + "/en")
     slugs = list_faction_slugs(home)
@@ -182,6 +216,8 @@ def fetch_all(out_path: Path, sleep_s: float = 1.0,
         data[slug] = rows
         print(f"  {slug}: {len(rows)} 条", flush=True)
         time.sleep(sleep_s)
+    if not force:
+        _guard_cache_regression(out_path, data)
     out_path.parent.mkdir(parents=True, exist_ok=True)
     out_path.write_text(
         json.dumps({"source": MFM_BASE, "fetched_at": time.strftime("%Y-%m-%d %H:%M"),
@@ -309,6 +345,7 @@ def check_points(db_path, factions: FactionRows) -> Dict:
     compared = agree = 0
     diffs: List[Dict] = []
     mfm_only: List[str] = []
+    unparsed: List[str] = []
     tiered_units = set()
     for (fid, unit_l), rows in by_faction.items():
         for tier, _m, _p in rows:
@@ -324,6 +361,10 @@ def check_points(db_path, factions: FactionRows) -> Dict:
             try:
                 items = (json.loads(pj_raw) or {}).get("items") or []
             except (json.JSONDecodeError, TypeError):
+                # MFM 有价、库行存在但 points_json NULL/损坏——单列 db_unparsed 桶。
+                # 裸 continue 曾让这类行从对账口径里无声蒸发（不进 compared/diffs/
+                # mfm_only），fp_errata 新插单位重建后归 NULL 就靠它藏了三道防线。
+                unparsed.append(name)
                 continue
             costs = {(it.get("desc") or "").strip().lower(): it.get("cost")
                      for it in items if isinstance(it.get("cost"), int)}
@@ -340,7 +381,8 @@ def check_points(db_path, factions: FactionRows) -> Dict:
                     diffs.append({"unit": name, "models": models,
                                   "db": db_cost, "mfm": pts})
     return {"compared": compared, "agree": agree, "diffs": diffs,
-            "mfm_only": sorted(set(mfm_only)), "tiered_units": sorted(tiered_units)}
+            "mfm_only": sorted(set(mfm_only)), "tiered_units": sorted(tiered_units),
+            "db_unparsed": sorted(set(unparsed))}
 
 
 def apply_points(db_path, factions: FactionRows,

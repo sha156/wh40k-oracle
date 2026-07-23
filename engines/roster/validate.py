@@ -27,11 +27,17 @@ def _valid_enhancement_names(db_path, detachment_id: Optional[str]) -> Optional[
 
 
 def validate(db_path, roster: Roster) -> ValidationReport:
-    """军表 → 合法性报告。内部先 recompute（点数为权威真源），再逐条查编制约束。"""
+    """军表 → 合法性报告。内部先 recompute（点数为权威真源），再逐条查编制约束。
+
+    总分 = 单位点数 + 强化点数——MFM 给强化列点数的唯一目的就是计入军队总分，
+    漏计会把压线超分表判合法（gnhf 审查模块 3 F1 HIGH）。
+    """
     priced = recompute(db_path, roster)
     issues: List[ValidationIssue] = []
     limit = size_limit(priced.size)
-    total = total_points(priced)
+    enh_points, enh_point_issues = _enhancement_points(db_path, priced)
+    total = total_points(priced) + enh_points
+    issues.extend(enh_point_issues)
     # 一次性取全部单位关键词（避免按单位 N+1 连库）
     kw_map = unit_keywords_bulk(db_path, [u.canonical_id for u in priced.units])
 
@@ -92,6 +98,32 @@ def validate(db_path, roster: Roster) -> ValidationReport:
     legal = not any(i.severity == ERROR for i in issues)
     return ValidationReport(total_points=total, limit=limit, legal=legal,
                             issues=tuple(issues))
+
+
+def _enhancement_points(db_path, roster: Roster):
+    """强化点数合计 + 无法定价告警（cost NULL 的 131 条与错分队/无分队数据一律
+    surfaced，不静默计 0——诚实降级红线）。"""
+    enhanced = [u for u in roster.units if u.enhancement]
+    if not enhanced:
+        return 0, []
+    catalog = {}
+    if roster.detachment_id:
+        from db_compile.enhancements import list_for_detachment
+        catalog = {e["name"]: e["cost"]
+                   for e in list_for_detachment(db_path, roster.detachment_id)}
+    total = 0
+    issues: List[ValidationIssue] = []
+    for u in enhanced:
+        cost = catalog.get(u.enhancement)
+        if cost is None:
+            issues.append(ValidationIssue(
+                "enh_unpriced", WARN,
+                f"强化「{u.enhancement}」点数未知（无分队数据、不属于当前分队或库中"
+                "缺 cost），未计入总分",
+                surfaced_only=True))
+        else:
+            total += cost
+    return total, issues
 
 
 def _validate_enhancements(db_path, roster: Roster, kw_map,

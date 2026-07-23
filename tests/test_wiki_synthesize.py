@@ -562,3 +562,24 @@ class TestBuildFactionFacts:
         assert "TAU" in facts
         # faction_slug of TAU is "tau"
         assert facts["TAU"]["faction_slug"] == "tau"
+
+
+class TestOfficialDbPageGuard:
+    """gnhf 审查模块 6 F1 反向通道：source: official-db 的官方结构库页
+    无条件拒绝被 LLM 合成覆盖（不依赖 .gen_hashes.json 是否存在）。"""
+
+    def test_official_page_detected(self):
+        from wiki_engine.synthesize import _is_official_db_page
+        official = ("---\nname_en: Warboss\nversion:\n  points: MFM 2026-07-23\n"
+                    "  source: official-db\n---\n\n## 属性表\n")
+        assert _is_official_db_page(official) is True
+
+    def test_body_mention_and_llm_page_not_detected(self):
+        from wiki_engine.synthesize import _is_official_db_page
+        # 正文里出现同字样不算（只查 frontmatter 区）
+        body_only = "---\nname_en: X\n---\n\nsource: official-db\n"
+        assert _is_official_db_page(body_only) is False
+        # 普通 LLM 合成页（无 source: official-db）不受保护，维持原覆盖语义
+        llm_page = "---\nname_en: X\nversion:\n  rules: 11th\n---\n\nbody\n"
+        assert _is_official_db_page(llm_page) is False
+        assert _is_official_db_page("no frontmatter at all") is False
