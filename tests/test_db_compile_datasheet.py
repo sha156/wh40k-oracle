@@ -126,6 +126,16 @@ class TestFindDatasheet:
     def test_find_unknown_returns_none(self, tmp_path):
         assert find_datasheet(_make_db(tmp_path), "No Such Unit") is None
 
+    def test_find_by_canonical_id(self, tmp_path):
+        # gnhf 审查模块 5 M4：Agent 按提示词先 resolver 拿 canonical id 再查表，
+        # 无 id 直查分支时 id 恒 found=False → 被判空降级
+        ds = find_datasheet(_make_db(tmp_path), "000000929")
+        assert ds is not None and ds.name_en == "Chaos Lord"
+
+    def test_find_by_unknown_id_returns_none(self, tmp_path):
+        # 成对负向：不存在的 id 仍诚实报缺（落回名字/别名路径后查无）
+        assert find_datasheet(_make_db(tmp_path), "999999999") is None
+
     def test_rejects_fuzzy_match_to_avoid_confident_wrong_answer(self, tmp_path):
         # "Chaos Lorr"(错别字) 会被 entity_resolver 模糊匹配到 Chaos Lord；
         # 数值权威路径必须拒绝 fuzzy，返回 None 而非错答案。

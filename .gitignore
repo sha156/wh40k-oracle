@@ -21,7 +21,8 @@ __pycache__/
 # Local models and indexes
 opt/
 local_vector_store/
-data/
+# 根锚定：只忽略语料 PDF 目录，别误伤 tests/data/ 等测试固定资产
+/data/
 
 # wiki_compile 流水线中间产物（产出物 wiki/terms.* 是提交的）
 wiki_build/

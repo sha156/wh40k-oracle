@@ -206,6 +206,53 @@ def test_unknown_size_surfaced_not_silent():
 
 
 @needs_db
+def test_unknown_unit_honest_degradation():
+    # gnhf 审查模块 3 F3：过期 id（DB 重建/单位下线 → localStorage 旧军表）不许编造
+    # 「非 CHARACTER」「模型数不在档位内」等事实性断言——只说系统知道的事实
+    r = validate(DB, Roster("SM", DET_BASTION, "strike_force", (
+        RosterUnit("999999999", "Ghost Unit", 5, is_warlord=True,
+                   enhancement=ENH),
+        RosterUnit(APOTHECARY, "Apothecary Biologis", 1),
+    )))
+    codes = _codes(r)
+    nf = [i for i in r.issues if i.code == "unit_not_found"]
+    assert nf and nf[0].surfaced_only and nf[0].severity == WARN
+    assert "999999999" in nf[0].message
+    # 编造类断言全部不出现：warlord 资格 / 档位归因 / 强化 CHARACTER 资格
+    assert "warlord_not_character" not in codes
+    assert "unit_unpriced" not in codes
+    assert "enh_not_character" not in codes
+
+
+@needs_db
+def test_unknown_unit_does_not_suppress_known_unit_checks():
+    # 成对负向：库内单位的断言不因军表里混入未知单位而被跳过
+    r = validate(DB, Roster("SM", DET_BASTION, "strike_force", (
+        RosterUnit("999999999", "Ghost Unit", 5),
+        RosterUnit(INTERCESSOR, "Intercessor Squad", 5, is_warlord=True),
+    )))
+    assert "warlord_not_character" in _codes(r)      # Intercessor 仍被真校验
+    assert "unit_not_found" in _codes(r)
+
+
+@needs_db
+def test_rot_exempt_over_three_surfaced_not_silent():
+    # gnhf 审查模块 3 F2：battleline 超 3 份不再静默豁免——11 版豁免上限未查证
+    # （十版为 6 份），设计文档裁决「不确定的 warn 不 error」
+    rb = validate(DB, Roster("SM", DET_BASTION, "strike_force", tuple(
+        [RosterUnit(INTERCESSOR, "Intercessor Squad", 5) for _ in range(5)] +
+        [RosterUnit(APOTHECARY, "Apothecary Biologis", 1, is_warlord=True)])))
+    ex = [i for i in rb.issues if i.code == "rot_exempt_uncapped"]
+    assert ex and ex[0].surfaced_only and ex[0].severity == WARN
+    assert rb.legal is True                          # warn 不判死刑
+    # 成对负向：3 份以内不发（豁免未生效，无需披露）
+    r3 = validate(DB, Roster("SM", DET_BASTION, "strike_force", tuple(
+        [RosterUnit(INTERCESSOR, "Intercessor Squad", 5) for _ in range(3)] +
+        [RosterUnit(APOTHECARY, "Apothecary Biologis", 1, is_warlord=True)])))
+    assert "rot_exempt_uncapped" not in _codes(r3)
+
+
+@needs_db
 def test_enhancement_unverified_without_detachment():
     # 无 detachment → 强化归属未校验（surfaced_only，不假通过）
     r = validate(DB, Roster("SM", None, "strike_force", (

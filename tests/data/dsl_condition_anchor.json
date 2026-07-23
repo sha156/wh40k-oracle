@@ -1,0 +1,3062 @@
+{
+ "admech:abilities:det000008559": [
+  [
+   "phase_shooting"
+  ]
+ ],
+ "admech:abilities:det000009280": [
+  [
+   "phase_shooting"
+  ]
+ ],
+ "admech:abilities:detfp11e-admech-luminen": [
+  [
+   "phase_shooting"
+  ]
+ ],
+ "admech:enhancements:000008385003": [
+  [
+   "phase_shooting"
+  ]
+ ],
+ "admech:enhancements:000008385004": [
+  [
+   "phase_shooting"
+  ]
+ ],
+ "admech:enhancements:000009745005": [
+  [
+   "phase_melee"
+  ],
+  [
+   "phase_melee"
+  ]
+ ],
+ "admech:enhancements:000010747004": [
+  [
+   "phase_shooting"
+  ]
+ ],
+ "admech:enhancements:000010747005": [
+  [
+   "phase_melee"
+  ],
+  [
+   "phase_melee"
+  ],
+  [
+   "phase_melee"
+  ]
+ ],
+ "admech:enhancements:fp11e-admech-luminen-e2": [
+  [
+   "phase_shooting"
+  ]
+ ],
+ "admech:stratagems:000008386002": [
+  [
+   "phase_melee"
+  ]
+ ],
+ "admech:stratagems:000008386005": [
+  [
+   "phase_shooting"
+  ]
+ ],
+ "admech:stratagems:000008386006": [
+  [
+   "phase_shooting"
+  ]
+ ],
+ "admech:stratagems:000008386007": [
+  [
+   "phase_shooting"
+  ]
+ ],
+ "admech:stratagems:000008561005": [
+  [
+   "phase_shooting"
+  ]
+ ],
+ "admech:stratagems:000008565003": [
+  [
+   "phase_melee"
+  ]
+ ],
+ "admech:stratagems:000008565007": [
+  [
+   "phase_shooting"
+  ]
+ ],
+ "admech:stratagems:000008569005": [
+  [
+   "phase_shooting"
+  ]
+ ],
+ "admech:stratagems:000008569006": [
+  [
+   "phase_shooting"
+  ]
+ ],
+ "admech:stratagems:000008573003": [
+  [
+   "phase_shooting"
+  ]
+ ],
+ "admech:stratagems:000009282003": [
+  [
+   "phase_shooting"
+  ]
+ ],
+ "admech:stratagems:000009282005": [
+  [
+   "phase_shooting"
+  ]
+ ],
+ "admech:stratagems:000009291004": [
+  [
+   "phase_shooting"
+  ]
+ ],
+ "admech:stratagems:000010748002": [
+  [
+   "melee_charging"
+  ]
+ ],
+ "admech:stratagems:fp11e-admech-acquisitus-s1": [
+  [
+   "phase_shooting"
+  ]
+ ],
+ "aeldari:abilities:detfp11e-aeldari-twilight": [
+  [
+   "phase_shooting"
+  ]
+ ],
+ "aeldari:enhancements:000009325002": [
+  [
+   "phase_shooting"
+  ]
+ ],
+ "aeldari:enhancements:000009351003": [
+  [
+   "phase_melee"
+  ]
+ ],
+ "aeldari:enhancements:000009769002": [
+  [
+   "phase_shooting"
+  ]
+ ],
+ "aeldari:enhancements:000009907004": [
+  [
+   "phase_shooting"
+  ]
+ ],
+ "aeldari:enhancements:000009919004": [
+  [
+   "phase_melee"
+  ]
+ ],
+ "aeldari:enhancements:000009919005": [
+  [
+   "phase_melee"
+  ]
+ ],
+ "aeldari:enhancements:000009927002": [
+  [
+   "phase_melee"
+  ]
+ ],
+ "aeldari:enhancements:000009927004": [
+  [
+   "phase_shooting"
+  ]
+ ],
+ "aeldari:enhancements:000010649003": [
+  [
+   "phase_melee"
+  ],
+  [
+   "phase_melee"
+  ]
+ ],
+ "aeldari:enhancements:000010699003": [
+  [
+   "melee_charging"
+  ]
+ ],
+ "aeldari:stratagems:000009326003": [
+  [
+   "melee_charging"
+  ]
+ ],
+ "aeldari:stratagems:000009326005": [
+  [
+   "phase_shooting"
+  ]
+ ],
+ "aeldari:stratagems:000009335003": [
+  [
+   "phase_shooting"
+  ]
+ ],
+ "aeldari:stratagems:000009343002": [
+  [
+   "phase_melee"
+  ]
+ ],
+ "aeldari:stratagems:000009343003": [
+  [
+   "phase_shooting"
+  ],
+  [
+   "phase_shooting"
+  ]
+ ],
+ "aeldari:stratagems:000009352003": [
+  [
+   "phase_melee"
+  ]
+ ],
+ "aeldari:stratagems:000009900005": [
+  [
+   "ranged_within_12"
+  ]
+ ],
+ "aeldari:stratagems:000009904006": [
+  [
+   "phase_shooting"
+  ]
+ ],
+ "aeldari:stratagems:000009904007": [
+  [
+   "phase_shooting"
+  ]
+ ],
+ "aeldari:stratagems:000009908004": [
+  [
+   "phase_melee"
+  ]
+ ],
+ "aeldari:stratagems:000009920006": [
+  [
+   "phase_shooting"
+  ],
+  [
+   "phase_shooting"
+  ]
+ ],
+ "aeldari:stratagems:000009924003": [
+  [
+   "phase_melee"
+  ],
+  [
+   "phase_melee"
+  ]
+ ],
+ "aeldari:stratagems:000009924005": [
+  [
+   "phase_shooting"
+  ]
+ ],
+ "aeldari:stratagems:000010700004": [
+  [
+   "phase_melee"
+  ]
+ ],
+ "aeldari:stratagems:000010705002": [
+  [
+   "phase_melee"
+  ]
+ ],
+ "aeldari:stratagems:000010705004": [
+  [
+   "half_range"
+  ],
+  [
+   "phase_shooting"
+  ],
+  [
+   "phase_shooting"
+  ]
+ ],
+ "aeldari:stratagems:000010705006": [
+  [
+   "phase_shooting"
+  ]
+ ],
+ "aeldari:stratagems:fp11e-aeldari-twilight-s1": [
+  [
+   "melee_charging"
+  ]
+ ],
+ "astramilitarum:abilities:det000009388": [
+  [
+   "phase_shooting"
+  ]
+ ],
+ "astramilitarum:abilities:det000009860": [
+  [
+   "phase_shooting"
+  ]
+ ],
+ "astramilitarum:enhancements:000008380003": [
+  [
+   "stationary"
+  ]
+ ],
+ "astramilitarum:enhancements:000009861003": [
+  [
+   "phase_shooting"
+  ]
+ ],
+ "astramilitarum:stratagems:000008381005": [
+  [
+   "phase_shooting"
+  ]
+ ],
+ "astramilitarum:stratagems:000008381007": [
+  [
+   "phase_shooting"
+  ]
+ ],
+ "astramilitarum:stratagems:000009390002": [
+  [
+   "phase_melee"
+  ],
+  [
+   "phase_melee"
+  ]
+ ],
+ "astramilitarum:stratagems:000009802003": [
+  [
+   "ranged_within_12"
+  ],
+  [
+   "ranged_within_12"
+  ]
+ ],
+ "astramilitarum:stratagems:000009802005": [
+  [
+   "phase_shooting"
+  ]
+ ],
+ "astramilitarum:stratagems:000009858004": [
+  [
+   "ranged_within_12"
+  ]
+ ],
+ "astramilitarum:stratagems:000009858006": [
+  [
+   "half_range"
+  ]
+ ],
+ "astramilitarum:stratagems:000009862004": [
+  [
+   "phase_shooting"
+  ],
+  [
+   "phase_shooting"
+  ]
+ ],
+ "astramilitarum:stratagems:000009866006": [
+  [
+   "ranged_within_12"
+  ]
+ ],
+ "astramilitarum:stratagems:000009866007": [
+  [
+   "phase_shooting"
+  ]
+ ],
+ "astramilitarum:stratagems:000009870005": [
+  [
+   "phase_shooting"
+  ],
+  [
+   "phase_shooting"
+  ]
+ ],
+ "astramilitarum:stratagems:000010638004": [
+  [
+   "phase_shooting"
+  ]
+ ],
+ "astramilitarum:stratagems:000010638005": [
+  [
+   "phase_shooting"
+  ]
+ ],
+ "astramilitarum:stratagems:000010638006": [
+  [
+   "phase_shooting"
+  ]
+ ],
+ "astramilitarum:stratagems:000010638007": [
+  [
+   "phase_shooting"
+  ]
+ ],
+ "astramilitarum:stratagems:000010788002": [
+  [
+   "phase_melee"
+  ],
+  [
+   "phase_melee"
+  ]
+ ],
+ "astramilitarum:stratagems:000010788005": [
+  [
+   "phase_shooting"
+  ]
+ ],
+ "astramilitarum:stratagems:000010788007": [
+  [
+   "phase_shooting"
+  ]
+ ],
+ "astramilitarum:stratagems:000010792006": [
+  [
+   "phase_shooting"
+  ],
+  [
+   "phase_shooting"
+  ]
+ ],
+ "astramilitarum:stratagems:000010792007": [
+  [
+   "phase_shooting"
+  ]
+ ],
+ "astramilitarum:stratagems:fp11e-am-designation-s3": [
+  [
+   "phase_shooting"
+  ]
+ ],
+ "blacktemplars:abilities:000008526": [
+  [
+   "melee_s_lte_t"
+  ]
+ ],
+ "blacktemplars:abilities:det000009842": [
+  [
+   "phase_shooting"
+  ]
+ ],
+ "blacktemplars:abilities:det000010395": [
+  [
+   "wound_s_gt_t"
+  ]
+ ],
+ "blacktemplars:abilities:det000010399": [
+  [
+   "melee_disembarked"
+  ]
+ ],
+ "blacktemplars:enhancements:000009843005": [
+  [
+   "phase_melee"
+  ]
+ ],
+ "blacktemplars:enhancements:000010392002": [
+  [
+   "phase_melee"
+  ]
+ ],
+ "blacktemplars:enhancements:000010392004": [
+  [
+   "phase_melee"
+  ]
+ ],
+ "blacktemplars:enhancements:000010400002": [
+  [
+   "melee_disembarked"
+  ],
+  [
+   "phase_melee"
+  ]
+ ],
+ "blacktemplars:enhancements:000010400004": [
+  [
+   "phase_shooting"
+  ]
+ ],
+ "blacktemplars:enhancements:fp11e-bt-miracle-e1": [
+  [
+   "omen_instrument_vs_character"
+  ],
+  [
+   "omen_momentous_brutality"
+  ]
+ ],
+ "blacktemplars:enhancements:fp11e-bt-wrathful-e1": [
+  [
+   "phase_melee"
+  ]
+ ],
+ "blacktemplars:stratagems:000010397003": [
+  [
+   "phase_melee"
+  ]
+ ],
+ "blacktemplars:stratagems:000010397004": [
+  [],
+  [
+   "phase_shooting"
+  ]
+ ],
+ "blacktemplars:stratagems:000010397006": [
+  [
+   "phase_shooting"
+  ]
+ ],
+ "blacktemplars:stratagems:000010401006": [
+  [
+   "phase_melee"
+  ]
+ ],
+ "blacktemplars:stratagems:000010401007": [
+  [
+   "phase_shooting"
+  ]
+ ],
+ "blacktemplars:stratagems:fp11e-bt-marshals-s1": [
+  [
+   "melee_target_has_keyword",
+   "monster"
+  ],
+  [
+   "melee_target_has_keyword",
+   "vehicle"
+  ]
+ ],
+ "blacktemplars:stratagems:fp11e-bt-wrathful-s1": [
+  [
+   "phase_melee"
+  ]
+ ],
+ "bloodangels:abilities:det000008374": [
+  [
+   "melee_charging"
+  ],
+  [
+   "melee_charging"
+  ]
+ ],
+ "bloodangels:abilities:det000010644": [
+  [
+   "melee_charging"
+  ]
+ ],
+ "bloodangels:enhancements:000008376003": [
+  [
+   "phase_melee"
+  ]
+ ],
+ "bloodangels:enhancements:000009190004": [
+  [
+   "melee_charging"
+  ],
+  [
+   "melee_target_has_keyword",
+   "chaos"
+  ]
+ ],
+ "bloodangels:enhancements:000010645005": [
+  [
+   "melee_target_has_keyword",
+   "character"
+  ],
+  [
+   "melee_target_has_keyword",
+   "monster"
+  ],
+  [
+   "melee_target_has_keyword",
+   "vehicle"
+  ]
+ ],
+ "bloodangels:enhancements:fp11e-ba-doomed-e2": [
+  [
+   "phase_melee"
+  ]
+ ],
+ "bloodangels:enhancements:fp11e-ba-speartip-e1": [
+  [
+   "phase_melee"
+  ]
+ ],
+ "bloodangels:enhancements:fp11e-ba-speartip-e2": [
+  [
+   "phase_melee"
+  ]
+ ],
+ "bloodangels:stratagems:000008375004": [
+  [
+   "phase_melee"
+  ]
+ ],
+ "bloodangels:stratagems:000008375005": [
+  [
+   "phase_melee"
+  ]
+ ],
+ "bloodangels:stratagems:000009187006": [
+  [
+   "phase_melee"
+  ],
+  [
+   "phase_melee"
+  ],
+  [
+   "phase_melee"
+  ]
+ ],
+ "bloodangels:stratagems:000009191005": [
+  [
+   "phase_melee"
+  ]
+ ],
+ "bloodangels:stratagems:000009836003": [
+  [
+   "phase_melee"
+  ]
+ ],
+ "bloodangels:stratagems:000009836005": [
+  [
+   "phase_shooting"
+  ]
+ ],
+ "bloodangels:stratagems:000010646005": [
+  [
+   "melee_charging"
+  ]
+ ],
+ "bloodangels:stratagems:fp11e-ba-grace-s3": [
+  [
+   "phase_shooting"
+  ]
+ ],
+ "bloodangels:stratagems:fp11e-ba-speartip-s3": [
+  [
+   "phase_shooting"
+  ]
+ ],
+ "chaosdaemons:abilities:det000009805": [
+  [
+   "melee_charging"
+  ]
+ ],
+ "chaosdaemons:enhancements:000008438002": [
+  [
+   "phase_melee"
+  ],
+  [
+   "phase_melee"
+  ]
+ ],
+ "chaosdaemons:enhancements:000008438005": [
+  [
+   "phase_shooting"
+  ]
+ ],
+ "chaosdaemons:enhancements:000009572002": [
+  [
+   "phase_melee"
+  ]
+ ],
+ "chaosdaemons:enhancements:000009806002": [
+  [
+   "phase_melee"
+  ]
+ ],
+ "chaosdaemons:enhancements:000009806003": [
+  [
+   "phase_melee"
+  ]
+ ],
+ "chaosdaemons:enhancements:000009810004": [
+  [
+   "phase_melee"
+  ],
+  [
+   "phase_melee"
+  ],
+  [
+   "phase_melee"
+  ],
+  [
+   "phase_melee"
+  ]
+ ],
+ "chaosdaemons:enhancements:000009815002": [
+  [
+   "melee_charging"
+  ]
+ ],
+ "chaosdaemons:enhancements:000009815003": [
+  [
+   "phase_melee"
+  ],
+  [
+   "phase_melee"
+  ]
+ ],
+ "chaosdaemons:stratagems:000009548005": [
+  [
+   "phase_shooting"
+  ]
+ ],
+ "chaosdaemons:stratagems:000009573002": [
+  [
+   "phase_melee"
+  ]
+ ],
+ "chaosdaemons:stratagems:000009807003": [
+  [
+   "phase_melee"
+  ]
+ ],
+ "chaosdaemons:stratagems:000009820002": [
+  [
+   "phase_melee"
+  ]
+ ],
+ "chaosdaemons:stratagems:000009979003": [
+  [
+   "melee_charging"
+  ]
+ ],
+ "chaosdaemons:stratagems:000009979005": [
+  [
+   "phase_shooting"
+  ]
+ ],
+ "chaosdaemons:stratagems:fp11e-chaosdaemons-lordswarp-s2": [
+  [
+   "melee_charging"
+  ]
+ ],
+ "chaosdaemons:stratagems:fp11e-chaosdaemons-lordswarp-s4": [
+  [
+   "phase_shooting"
+  ]
+ ],
+ "chaosknights:enhancements:000008516005": [
+  [
+   "phase_melee"
+  ],
+  [
+   "phase_shooting"
+  ]
+ ],
+ "chaosknights:enhancements:000010304002": [
+  [
+   "phase_melee"
+  ]
+ ],
+ "chaosknights:enhancements:000010308007": [
+  [
+   "phase_shooting"
+  ]
+ ],
+ "chaosknights:enhancements:fp11e-chaosknights-hunting-e2": [
+  [
+   "phase_shooting"
+  ]
+ ],
+ "chaosknights:stratagems:000008517003": [
+  [
+   "melee_charging"
+  ]
+ ],
+ "chaosknights:stratagems:000008517004": [
+  [
+   "phase_melee"
+  ]
+ ],
+ "chaosknights:stratagems:000008517007": [
+  [
+   "phase_shooting"
+  ]
+ ],
+ "chaosknights:stratagems:000010305003": [
+  [
+   "phase_melee"
+  ]
+ ],
+ "chaosknights:stratagems:000010305006": [
+  [
+   "phase_shooting"
+  ]
+ ],
+ "chaosknights:stratagems:000010305007": [
+  [
+   "phase_shooting"
+  ]
+ ],
+ "chaosknights:stratagems:000010313003": [
+  [
+   "phase_melee"
+  ]
+ ],
+ "chaosknights:stratagems:fp11e-chaosknights-hunting-s1": [
+  [
+   "phase_melee"
+  ]
+ ],
+ "chaosknights:stratagems:fp11e-chaosknights-hunting-s3": [
+  [
+   "phase_shooting"
+  ]
+ ],
+ "csm:abilities:det000008984": [
+  [
+   "phase_melee"
+  ],
+  [
+   "phase_shooting"
+  ]
+ ],
+ "csm:abilities:det000010150": [
+  [
+   "phase_melee"
+  ],
+  [
+   "phase_melee"
+  ],
+  [
+   "phase_shooting"
+  ]
+ ],
+ "csm:abilities:det000010640": [
+  [
+   "target_below_half"
+  ]
+ ],
+ "csm:abilities:detfp11e-csm-devotees": [
+  [
+   "stationary"
+  ]
+ ],
+ "csm:enhancements:000008357005": [
+  [
+   "phase_melee"
+  ],
+  [
+   "phase_melee"
+  ]
+ ],
+ "csm:enhancements:000008964002": [
+  [
+   "phase_melee"
+  ]
+ ],
+ "csm:enhancements:000008964004": [
+  [
+   "phase_shooting"
+  ]
+ ],
+ "csm:enhancements:000008968003": [
+  [
+   "phase_melee"
+  ],
+  [
+   "phase_melee"
+  ]
+ ],
+ "csm:enhancements:000008972003": [
+  [
+   "phase_shooting"
+  ]
+ ],
+ "csm:enhancements:000008976003": [
+  [
+   "target_has_keyword",
+   "vehicle"
+  ]
+ ],
+ "csm:enhancements:000009773005": [
+  [
+   "phase_melee"
+  ],
+  [
+   "phase_melee"
+  ]
+ ],
+ "csm:enhancements:000010641002": [
+  [
+   "phase_shooting"
+  ]
+ ],
+ "csm:enhancements:000010694003": [
+  [
+   "phase_shooting"
+  ]
+ ],
+ "csm:enhancements:fp11e-csm-cabal-e1": [
+  [
+   "melee_charging"
+  ]
+ ],
+ "csm:enhancements:fp11e-csm-murdertalon-e2": [
+  [
+   "phase_melee"
+  ]
+ ],
+ "csm:stratagems:000008358007": [
+  [
+   "phase_shooting"
+  ]
+ ],
+ "csm:stratagems:000008961006": [
+  [
+   "phase_shooting"
+  ]
+ ],
+ "csm:stratagems:000008977002": [
+  [
+   "phase_melee"
+  ]
+ ],
+ "csm:stratagems:000008977006": [
+  [
+   "phase_shooting"
+  ]
+ ],
+ "csm:stratagems:000008982004": [
+  [
+   "phase_melee"
+  ]
+ ],
+ "csm:stratagems:000008982005": [
+  [
+   "phase_shooting"
+  ]
+ ],
+ "csm:stratagems:000009504002": [
+  [
+   "melee_s_lte_t"
+  ]
+ ],
+ "csm:stratagems:000009504003": [
+  [
+   "wound_s_gt_t"
+  ]
+ ],
+ "csm:stratagems:000009774004": [
+  [
+   "melee_target_has_keyword",
+   "character"
+  ]
+ ],
+ "csm:stratagems:000010642002": [
+  [
+   "target_below_half"
+  ]
+ ],
+ "csm:stratagems:000010642003": [
+  [
+   "target_below_half"
+  ]
+ ],
+ "csm:stratagems:000010689005": [
+  [
+   "melee_charging"
+  ]
+ ],
+ "csm:stratagems:000010695006": [
+  [
+   "phase_shooting"
+  ]
+ ],
+ "csm:stratagems:000010740003": [
+  [
+   "phase_melee"
+  ]
+ ],
+ "csm:stratagems:000010740006": [
+  [
+   "phase_shooting"
+  ]
+ ],
+ "csm:stratagems:000010744007": [
+  [
+   "phase_shooting"
+  ]
+ ],
+ "csm:stratagems:fp11e-csm-cabal-s3": [
+  [
+   "phase_shooting"
+  ]
+ ],
+ "csm:stratagems:fp11e-csm-devotees-s1": [
+  [
+   "phase_shooting"
+  ],
+  [
+   "phase_shooting"
+  ]
+ ],
+ "csm:stratagems:fp11e-csm-murdertalon-s1": [
+  [
+   "melee_charging"
+  ]
+ ],
+ "custodes:enhancements:000008395004": [
+  [
+   "phase_melee"
+  ]
+ ],
+ "custodes:enhancements:000008395005": [
+  [
+   "phase_shooting"
+  ]
+ ],
+ "custodes:enhancements:000008921004": [
+  [
+   "phase_melee"
+  ]
+ ],
+ "custodes:enhancements:000008926004": [
+  [],
+  [
+   "target_has_keyword",
+   "psyker"
+  ]
+ ],
+ "custodes:enhancements:000008926005": [
+  [
+   "phase_melee"
+  ],
+  [
+   "phase_melee"
+  ]
+ ],
+ "custodes:enhancements:000008930005": [
+  [
+   "phase_melee"
+  ]
+ ],
+ "custodes:enhancements:000009753002": [
+  [
+   "phase_melee"
+  ],
+  [
+   "phase_melee"
+  ]
+ ],
+ "custodes:enhancements:000009987003": [
+  [
+   "phase_shooting"
+  ]
+ ],
+ "custodes:enhancements:000009987005": [
+  [
+   "phase_melee"
+  ],
+  [
+   "phase_melee"
+  ]
+ ],
+ "custodes:stratagems:000008394004": [
+  [
+   "phase_melee"
+  ]
+ ],
+ "custodes:stratagems:000008394007": [
+  [
+   "phase_shooting"
+  ]
+ ],
+ "custodes:stratagems:000008922003": [
+  [
+   "phase_shooting"
+  ],
+  [
+   "phase_shooting"
+  ]
+ ],
+ "custodes:stratagems:000008927004": [
+  [
+   "melee_target_has_keyword",
+   "psyker"
+  ],
+  [
+   "phase_melee"
+  ]
+ ],
+ "custodes:stratagems:000008927007": [
+  [
+   "phase_shooting"
+  ]
+ ],
+ "custodes:stratagems:000008931005": [
+  [
+   "melee_target_has_keyword",
+   "monster"
+  ],
+  [
+   "melee_target_has_keyword",
+   "monster"
+  ],
+  [
+   "melee_target_has_keyword",
+   "vehicle"
+  ],
+  [
+   "melee_target_has_keyword",
+   "vehicle"
+  ]
+ ],
+ "custodes:stratagems:000009274002": [
+  [
+   "phase_melee"
+  ]
+ ],
+ "custodes:stratagems:000009274005": [
+  [
+   "phase_shooting"
+  ]
+ ],
+ "custodes:stratagems:000009754002": [
+  [
+   "wound_s_gt_t"
+  ]
+ ],
+ "custodes:stratagems:000009754007": [
+  [
+   "phase_shooting"
+  ],
+  [
+   "phase_shooting"
+  ]
+ ],
+ "custodes:stratagems:fp11e-ac-moritoi-s1": [
+  [
+   "wound_s_gt_t"
+  ]
+ ],
+ "custodes:stratagems:fp11e-ac-silent-s1": [
+  [
+   "melee_charging"
+  ],
+  [
+   "melee_target_has_keyword",
+   "psyker"
+  ]
+ ],
+ "custodes:stratagems:fp11e-ac-silent-s2": [
+  [
+   "half_range"
+  ],
+  [
+   "phase_shooting"
+  ]
+ ],
+ "darkangels:abilities:det000010154": [
+  [
+   "wound_s_gt_t"
+  ]
+ ],
+ "darkangels:abilities:detfp11e-da-darkflight": [
+  [
+   "phase_shooting"
+  ]
+ ],
+ "darkangels:enhancements:000008771004": [
+  [
+   "phase_melee"
+  ],
+  [
+   "phase_melee"
+  ],
+  [
+   "phase_melee"
+  ]
+ ],
+ "darkangels:enhancements:000008774002": [
+  [
+   "phase_melee"
+  ]
+ ],
+ "darkangels:enhancements:000009733002": [
+  [
+   "phase_melee"
+  ]
+ ],
+ "darkangels:enhancements:000010155003": [
+  [
+   "phase_melee"
+  ],
+  [
+   "phase_melee"
+  ],
+  [
+   "phase_melee"
+  ]
+ ],
+ "darkangels:enhancements:fp11e-da-conclave-e2": [
+  [
+   "phase_shooting"
+  ]
+ ],
+ "darkangels:stratagems:000008389005": [
+  [
+   "phase_shooting"
+  ]
+ ],
+ "darkangels:stratagems:000008389007": [
+  [
+   "phase_melee"
+  ]
+ ],
+ "darkangels:stratagems:000008779006": [
+  [
+   "phase_shooting"
+  ]
+ ],
+ "darkangels:stratagems:000009734006": [
+  [
+   "phase_shooting"
+  ]
+ ],
+ "darkangels:stratagems:000010161006": [
+  [
+   "phase_shooting"
+  ]
+ ],
+ "darkangels:stratagems:fp11e-da-arsenal-s3": [
+  [
+   "phase_shooting"
+  ]
+ ],
+ "darkangels:stratagems:fp11e-da-darkflight-s2": [
+  [
+   "phase_shooting"
+  ]
+ ],
+ "deathguard:abilities:000008396": [
+  [],
+  [
+   "plague_rattlejoint"
+  ]
+ ],
+ "deathguard:enhancements:000010123002": [
+  [
+   "phase_melee"
+  ]
+ ],
+ "deathguard:enhancements:000010123003": [
+  [
+   "phase_melee"
+  ],
+  [
+   "phase_melee"
+  ],
+  [
+   "phase_melee"
+  ]
+ ],
+ "deathguard:enhancements:000010127002": [
+  [
+   "phase_shooting"
+  ]
+ ],
+ "deathguard:enhancements:000010135003": [
+  [
+   "phase_melee"
+  ]
+ ],
+ "deathguard:enhancements:fp11e-dg-paragons-e1": [
+  [
+   "wound_s_gt_t"
+  ]
+ ],
+ "deathguard:stratagems:000009409002": [
+  [
+   "phase_melee"
+  ]
+ ],
+ "deathguard:stratagems:000010124007": [
+  [
+   "phase_shooting"
+  ],
+  [
+   "phase_shooting"
+  ]
+ ],
+ "deathguard:stratagems:000010128004": [
+  [
+   "phase_shooting"
+  ]
+ ],
+ "deathguard:stratagems:000010132003": [
+  [
+   "target_below_starting"
+  ],
+  [
+   "target_below_starting"
+  ]
+ ],
+ "deathguard:stratagems:000010136003": [
+  [
+   "phase_melee"
+  ]
+ ],
+ "deathguard:stratagems:000010140004": [
+  [
+   "phase_melee"
+  ],
+  [
+   "phase_melee"
+  ]
+ ],
+ "deathguard:stratagems:000010144003": [
+  [
+   "phase_melee"
+  ]
+ ],
+ "deathguard:stratagems:000010144006": [
+  [
+   "stationary"
+  ]
+ ],
+ "deathwatch:enhancements:000008522002": [
+  [
+   "phase_melee"
+  ],
+  [
+   "phase_melee"
+  ],
+  [
+   "phase_melee"
+  ]
+ ],
+ "deathwatch:stratagems:000008523005": [
+  [
+   "phase_shooting"
+  ]
+ ],
+ "deathwatch:stratagems:000008523006": [
+  [
+   "phase_shooting"
+  ]
+ ],
+ "drukhari:abilities:det000008714": [
+  [
+   "melee_charging"
+  ],
+  [
+   "phase_shooting"
+  ]
+ ],
+ "drukhari:abilities:det000010583": [
+  [
+   "wound_s_gt_t"
+  ]
+ ],
+ "drukhari:abilities:detfp11e-dru-torment": [
+  [
+   "wound_s_gt_t"
+  ]
+ ],
+ "drukhari:enhancements:000009781004": [
+  [
+   "phase_shooting"
+  ]
+ ],
+ "drukhari:enhancements:000010574004": [
+  [
+   "phase_melee"
+  ],
+  [
+   "phase_melee"
+  ]
+ ],
+ "drukhari:enhancements:000010576002": [
+  [
+   "phase_shooting"
+  ]
+ ],
+ "drukhari:enhancements:000010580005": [
+  [
+   "phase_melee"
+  ]
+ ],
+ "drukhari:enhancements:000010584003": [
+  [
+   "target_has_keyword",
+   "beast"
+  ],
+  [
+   "target_has_keyword",
+   "monster"
+  ]
+ ],
+ "drukhari:enhancements:fp11e-dru-torment-e1": [
+  [
+   "wound_s_gt_t"
+  ]
+ ],
+ "drukhari:stratagems:000009426003": [
+  [
+   "melee_target_has_keyword",
+   "infantry"
+  ]
+ ],
+ "drukhari:stratagems:000009434002": [
+  [
+   "phase_melee"
+  ]
+ ],
+ "drukhari:stratagems:000009434003": [
+  [
+   "phase_shooting"
+  ]
+ ],
+ "drukhari:stratagems:000009451004": [
+  [
+   "phase_melee"
+  ],
+  [
+   "phase_melee"
+  ]
+ ],
+ "drukhari:stratagems:000009782004": [
+  [
+   "phase_melee"
+  ]
+ ],
+ "drukhari:stratagems:000010575004": [
+  [
+   "target_below_half"
+  ]
+ ],
+ "drukhari:stratagems:000010575005": [
+  [
+   "phase_melee"
+  ]
+ ],
+ "drukhari:stratagems:000010577005": [
+  [
+   "phase_shooting"
+  ]
+ ],
+ "drukhari:stratagems:000010577007": [
+  [
+   "phase_shooting"
+  ]
+ ],
+ "drukhari:stratagems:000010581003": [
+  [
+   "melee_charging"
+  ],
+  [
+   "melee_charging"
+  ]
+ ],
+ "drukhari:stratagems:000010581007": [
+  [
+   "phase_shooting"
+  ]
+ ],
+ "drukhari:stratagems:000010589003": [
+  [
+   "phase_melee"
+  ]
+ ],
+ "drukhari:stratagems:000010589006": [
+  [
+   "phase_shooting"
+  ],
+  [
+   "phase_shooting"
+  ]
+ ],
+ "drukhari:stratagems:fp11e-dru-agonysts-s3": [
+  [
+   "phase_shooting"
+  ]
+ ],
+ "drukhari:stratagems:fp11e-dru-exhibition-s1": [
+  [
+   "phase_melee"
+  ]
+ ],
+ "drukhari:stratagems:fp11e-dru-exhibition-s3": [
+  [
+   "phase_shooting"
+  ]
+ ],
+ "emperorschildren:abilities:det000010001": [
+  [
+   "melee_charging"
+  ]
+ ],
+ "emperorschildren:abilities:det000010652": [
+  [
+   "melee_charging"
+  ],
+  [
+   "melee_charging"
+  ]
+ ],
+ "emperorschildren:enhancements:000009998002": [
+  [
+   "target_below_half"
+  ],
+  [
+   "target_below_starting"
+  ]
+ ],
+ "emperorschildren:enhancements:000009998003": [
+  [
+   "melee_wound_s_gt_t"
+  ]
+ ],
+ "emperorschildren:enhancements:000010002004": [
+  [
+   "phase_melee"
+  ],
+  [
+   "phase_melee"
+  ]
+ ],
+ "emperorschildren:enhancements:000010010004": [
+  [
+   "phase_melee"
+  ],
+  [
+   "phase_melee"
+  ],
+  [
+   "phase_melee"
+  ]
+ ],
+ "emperorschildren:enhancements:000010018005": [
+  [
+   "melee_target_has_keyword",
+   "character"
+  ],
+  [
+   "melee_target_has_keyword",
+   "character"
+  ]
+ ],
+ "emperorschildren:enhancements:000010654002": [
+  [
+   "phase_melee"
+  ]
+ ],
+ "emperorschildren:enhancements:000010654005": [
+  [
+   "phase_melee"
+  ],
+  [
+   "phase_melee"
+  ]
+ ],
+ "emperorschildren:enhancements:000010808002": [
+  [
+   "phase_melee"
+  ],
+  [
+   "phase_melee"
+  ],
+  [
+   "phase_melee"
+  ]
+ ],
+ "emperorschildren:enhancements:fp11e-ec-brutes-e1": [
+  [
+   "phase_shooting"
+  ]
+ ],
+ "emperorschildren:enhancements:fp11e-ec-host-e1": [
+  [
+   "phase_melee"
+  ]
+ ],
+ "emperorschildren:enhancements:fp11e-ec-host-e2": [
+  [
+   "phase_shooting"
+  ]
+ ],
+ "emperorschildren:stratagems:000009999002": [
+  [
+   "phase_melee"
+  ]
+ ],
+ "emperorschildren:stratagems:000009999003": [
+  [
+   "phase_melee"
+  ]
+ ],
+ "emperorschildren:stratagems:000009999006": [
+  [
+   "phase_shooting"
+  ]
+ ],
+ "emperorschildren:stratagems:000010003002": [
+  [
+   "phase_melee"
+  ]
+ ],
+ "emperorschildren:stratagems:000010003005": [
+  [
+   "melee_charging"
+  ]
+ ],
+ "emperorschildren:stratagems:000010011006": [
+  [
+   "phase_shooting"
+  ]
+ ],
+ "emperorschildren:stratagems:000010015005": [
+  [
+   "phase_melee"
+  ]
+ ],
+ "emperorschildren:stratagems:000010019002": [
+  [
+   "phase_melee"
+  ]
+ ],
+ "emperorschildren:stratagems:000010655002": [
+  [
+   "wound_s_gt_t"
+  ]
+ ],
+ "emperorschildren:stratagems:000010655003": [
+  [
+   "melee_target_has_keyword",
+   "character"
+  ],
+  [
+   "melee_target_has_keyword",
+   "character"
+  ]
+ ],
+ "emperorschildren:stratagems:000010655005": [
+  [
+   "ranged_within_12"
+  ],
+  [
+   "ranged_within_12"
+  ]
+ ],
+ "emperorschildren:stratagems:000010809002": [
+  [
+   "phase_melee"
+  ]
+ ],
+ "emperorschildren:stratagems:fp11e-ec-brutes-s1": [
+  [
+   "wound_s_gt_t"
+  ]
+ ],
+ "genestealercults:abilities:det000009074": [
+  [
+   "melee_charging"
+  ]
+ ],
+ "genestealercults:abilities:det000009475": [
+  [
+   "phase_shooting"
+  ]
+ ],
+ "genestealercults:enhancements:000009067005": [
+  [
+   "target_has_keyword",
+   "character"
+  ]
+ ],
+ "genestealercults:enhancements:000009071003": [
+  [
+   "target_has_keyword",
+   "character"
+  ],
+  [
+   "target_has_keyword",
+   "character"
+  ]
+ ],
+ "genestealercults:enhancements:000009075003": [
+  [
+   "phase_melee"
+  ],
+  [
+   "phase_melee"
+  ]
+ ],
+ "genestealercults:enhancements:000009079005": [
+  [
+   "phase_shooting"
+  ]
+ ],
+ "genestealercults:enhancements:000009827004": [
+  [
+   "phase_melee"
+  ],
+  [
+   "phase_melee"
+  ]
+ ],
+ "genestealercults:enhancements:fp11e-genestealercults-heroesuprising-e2": [
+  [
+   "phase_shooting"
+  ]
+ ],
+ "genestealercults:stratagems:000009072003": [
+  [
+   "phase_melee"
+  ],
+  [
+   "phase_melee"
+  ]
+ ],
+ "genestealercults:stratagems:000009076004": [
+  [
+   "melee_target_has_keyword",
+   "monster"
+  ],
+  [
+   "melee_target_has_keyword",
+   "vehicle"
+  ]
+ ],
+ "genestealercults:stratagems:000009080004": [
+  [
+   "phase_shooting"
+  ]
+ ],
+ "genestealercults:stratagems:000009080006": [
+  [
+   "phase_shooting"
+  ]
+ ],
+ "genestealercults:stratagems:000009461005": [
+  [
+   "phase_shooting"
+  ]
+ ],
+ "genestealercults:stratagems:000009477002": [
+  [
+   "phase_melee"
+  ]
+ ],
+ "genestealercults:stratagems:fp11e-genestealercults-xenocultmasses-s2": [
+  [
+   "phase_shooting"
+  ]
+ ],
+ "genestealercults:stratagems:fp11e-genestealercults-xenocultmasses-s3": [
+  [
+   "phase_shooting"
+  ]
+ ],
+ "greyknights:enhancements:000009493002": [
+  [
+   "phase_melee"
+  ]
+ ],
+ "greyknights:enhancements:000009777004": [
+  [
+   "phase_shooting"
+  ]
+ ],
+ "greyknights:enhancements:000010352004": [
+  [
+   "phase_melee"
+  ]
+ ],
+ "greyknights:enhancements:000010356004": [
+  [
+   "phase_shooting"
+  ]
+ ],
+ "greyknights:enhancements:000010360005": [
+  [
+   "phase_shooting"
+  ]
+ ],
+ "greyknights:enhancements:000010364002": [
+  [
+   "phase_melee"
+  ]
+ ],
+ "greyknights:enhancements:fp11e-gk-fires-e2": [
+  [
+   "phase_shooting"
+  ]
+ ],
+ "greyknights:enhancements:fp11e-gk-immaterial-e2": [
+  [
+   "phase_shooting"
+  ]
+ ],
+ "greyknights:stratagems:000009486005": [
+  [
+   "melee_charging"
+  ]
+ ],
+ "greyknights:stratagems:000009778006": [
+  [
+   "phase_shooting"
+  ]
+ ],
+ "greyknights:stratagems:000010349004": [
+  [
+   "phase_shooting"
+  ]
+ ],
+ "greyknights:stratagems:000010349006": [
+  [
+   "phase_shooting"
+  ]
+ ],
+ "greyknights:stratagems:000010353002": [
+  [
+   "phase_melee"
+  ]
+ ],
+ "greyknights:stratagems:000010353004": [
+  [
+   "phase_shooting"
+  ]
+ ],
+ "greyknights:stratagems:000010361003": [
+  [
+   "target_has_keyword",
+   "monster"
+  ],
+  [
+   "target_has_keyword",
+   "vehicle"
+  ]
+ ],
+ "greyknights:stratagems:fp11e-gk-fires-s2": [
+  [
+   "phase_shooting"
+  ],
+  [
+   "phase_shooting"
+  ]
+ ],
+ "greyknights:stratagems:fp11e-gk-immaterial-s1": [
+  [
+   "melee_charging"
+  ]
+ ],
+ "imperialagents:abilities:det000009129": [
+  [
+   "phase_shooting"
+  ]
+ ],
+ "imperialagents:enhancements:000009130005": [
+  [
+   "target_has_keyword",
+   "psyker"
+  ]
+ ],
+ "imperialagents:enhancements:000009134002": [
+  [
+   "phase_melee"
+  ]
+ ],
+ "imperialagents:enhancements:000009360003": [
+  [
+   "phase_melee"
+  ],
+  [
+   "phase_melee"
+  ],
+  [
+   "phase_melee"
+  ],
+  [
+   "phase_melee"
+  ],
+  [
+   "phase_melee"
+  ]
+ ],
+ "imperialagents:stratagems:000009127005": [
+  [
+   "phase_shooting"
+  ]
+ ],
+ "imperialagents:stratagems:000009127006": [
+  [
+   "phase_shooting"
+  ]
+ ],
+ "imperialagents:stratagems:000009135007": [
+  [
+   "phase_shooting"
+  ]
+ ],
+ "imperialagents:stratagems:000009139004": [
+  [
+   "ranged_within_12"
+  ],
+  [
+   "ranged_within_12"
+  ]
+ ],
+ "imperialagents:stratagems:000009139006": [
+  [
+   "phase_shooting"
+  ]
+ ],
+ "imperialagents:stratagems:000009370002": [
+  [
+   "phase_melee"
+  ],
+  [
+   "phase_melee"
+  ]
+ ],
+ "imperialagents:stratagems:000009370004": [
+  [
+   "phase_shooting"
+  ]
+ ],
+ "imperialagents:stratagems:000009758004": [
+  [
+   "phase_shooting"
+  ]
+ ],
+ "imperialknights:enhancements:000010502004": [
+  [
+   "phase_melee"
+  ]
+ ],
+ "imperialknights:enhancements:000010755002": [
+  [
+   "phase_melee"
+  ],
+  [
+   "phase_melee"
+  ]
+ ],
+ "imperialknights:enhancements:000010755003": [
+  [
+   "phase_shooting"
+  ]
+ ],
+ "imperialknights:stratagems:000010494002": [
+  [
+   "melee_charging"
+  ]
+ ],
+ "imperialknights:stratagems:000010494003": [
+  [
+   "phase_melee"
+  ]
+ ],
+ "imperialknights:stratagems:000010494005": [
+  [
+   "phase_shooting"
+  ]
+ ],
+ "imperialknights:stratagems:000010494007": [
+  [
+   "phase_shooting"
+  ]
+ ],
+ "imperialknights:stratagems:000010498003": [
+  [
+   "melee_wound_s_gt_t"
+  ]
+ ],
+ "imperialknights:stratagems:000010498004": [
+  [
+   "phase_melee"
+  ]
+ ],
+ "imperialknights:stratagems:000010498006": [
+  [
+   "phase_shooting"
+  ]
+ ],
+ "imperialknights:stratagems:000010507002": [
+  [
+   "phase_melee"
+  ]
+ ],
+ "imperialknights:stratagems:000010507005": [
+  [
+   "half_range"
+  ]
+ ],
+ "imperialknights:stratagems:000010507006": [
+  [
+   "phase_shooting"
+  ]
+ ],
+ "necrons:enhancements:000008372003": [
+  [
+   "phase_shooting"
+  ]
+ ],
+ "necrons:enhancements:000008550003": [
+  [
+   "melee_target_has_keyword",
+   "infantry"
+  ]
+ ],
+ "necrons:enhancements:000008550004": [
+  [
+   "phase_melee"
+  ]
+ ],
+ "necrons:enhancements:000009749003": [
+  [
+   "phase_shooting"
+  ]
+ ],
+ "necrons:enhancements:000010668002": [
+  [
+   "phase_melee"
+  ]
+ ],
+ "necrons:enhancements:fp11e-nec-hand-e2": [
+  [
+   "half_range"
+  ]
+ ],
+ "necrons:stratagems:000008371004": [
+  [
+   "phase_melee"
+  ]
+ ],
+ "necrons:stratagems:000008371006": [
+  [
+   "half_range"
+  ]
+ ],
+ "necrons:stratagems:000008405003": [
+  [
+   "target_below_half"
+  ],
+  [
+   "target_below_starting"
+  ]
+ ],
+ "necrons:stratagems:000009589002": [
+  [
+   "phase_melee"
+  ]
+ ],
+ "necrons:stratagems:000009589003": [
+  [
+   "phase_melee"
+  ]
+ ],
+ "necrons:stratagems:000009589004": [
+  [
+   "phase_shooting"
+  ]
+ ],
+ "necrons:stratagems:000009750003": [
+  [
+   "wound_s_gt_t"
+  ]
+ ],
+ "necrons:stratagems:fp11e-nec-phaeron-s3": [
+  [
+   "phase_shooting"
+  ]
+ ],
+ "orks:abilities:det000008365": [
+  [
+   "phase_melee"
+  ]
+ ],
+ "orks:abilities:det000009614": [
+  [
+   "wound_s_gt_t"
+  ]
+ ],
+ "orks:enhancements:000008367003": [
+  [
+   "phase_melee"
+  ]
+ ],
+ "orks:enhancements:000008868005": [
+  [
+   "wound_s_gt_t"
+  ]
+ ],
+ "orks:enhancements:000008877002": [
+  [
+   "phase_shooting"
+  ]
+ ],
+ "orks:enhancements:000008877004": [
+  [
+   "phase_shooting"
+  ]
+ ],
+ "orks:enhancements:000008881004": [
+  [
+   "phase_melee"
+  ]
+ ],
+ "orks:enhancements:000009795003": [
+  [
+   "phase_shooting"
+  ]
+ ],
+ "orks:enhancements:000009991002": [
+  [
+   "phase_shooting"
+  ]
+ ],
+ "orks:enhancements:000009991003": [
+  [
+   "half_range"
+  ]
+ ],
+ "orks:enhancements:000009991004": [
+  [
+   "phase_shooting"
+  ]
+ ],
+ "orks:enhancements:000010712003": [
+  [
+   "phase_shooting"
+  ]
+ ],
+ "orks:enhancements:000010795005": [
+  [
+   "phase_shooting"
+  ]
+ ],
+ "orks:enhancements:fp11e-ork-rollin-e2": [
+  [
+   "phase_shooting"
+  ]
+ ],
+ "orks:stratagems:000008366004": [
+  [
+   "phase_melee"
+  ]
+ ],
+ "orks:stratagems:000008869002": [
+  [
+   "phase_melee"
+  ]
+ ],
+ "orks:stratagems:000008869006": [
+  [
+   "phase_shooting"
+  ]
+ ],
+ "orks:stratagems:000008873004": [
+  [
+   "phase_shooting"
+  ]
+ ],
+ "orks:stratagems:000008873005": [
+  [
+   "phase_shooting"
+  ]
+ ],
+ "orks:stratagems:000008873006": [
+  [
+   "phase_melee"
+  ]
+ ],
+ "orks:stratagems:000008878002": [
+  [
+   "phase_melee"
+  ]
+ ],
+ "orks:stratagems:000008878007": [
+  [
+   "phase_shooting"
+  ]
+ ],
+ "orks:stratagems:000008886007": [
+  [
+   "phase_shooting"
+  ]
+ ],
+ "orks:stratagems:000009796003": [
+  [
+   "phase_melee"
+  ]
+ ],
+ "orks:stratagems:000009992005": [
+  [
+   "phase_shooting"
+  ]
+ ],
+ "orks:stratagems:000010796005": [
+  [
+   "melee_charging"
+  ]
+ ],
+ "orks:stratagems:000010796006": [
+  [
+   "phase_shooting"
+  ]
+ ],
+ "orks:stratagems:fp11e-ork-rollin-s3": [
+  [
+   "melee_charging"
+  ]
+ ],
+ "sororitas:abilities:det000009028": [
+  [
+   "melee_charging"
+  ],
+  [
+   "melee_charging"
+  ]
+ ],
+ "sororitas:enhancements:000008470003": [
+  [
+   "phase_melee"
+  ],
+  [
+   "phase_melee"
+  ],
+  [
+   "phase_melee"
+  ]
+ ],
+ "sororitas:enhancements:000009037003": [
+  [
+   "phase_melee"
+  ],
+  [
+   "phase_melee"
+  ]
+ ],
+ "sororitas:enhancements:000009831003": [
+  [
+   "phase_melee"
+  ]
+ ],
+ "sororitas:stratagems:000008469004": [
+  [
+   "phase_melee"
+  ]
+ ],
+ "sororitas:stratagems:000009030004": [
+  [
+   "phase_melee"
+  ]
+ ],
+ "sororitas:stratagems:000009034003": [
+  [
+   "phase_melee"
+  ]
+ ],
+ "sororitas:stratagems:000009038004": [
+  [
+   "melee_charging"
+  ]
+ ],
+ "sororitas:stratagems:000009317003": [
+  [
+   "wound_s_gt_t"
+  ]
+ ],
+ "sororitas:stratagems:000009832004": [
+  [
+   "phase_melee"
+  ]
+ ],
+ "sororitas:stratagems:000009832006": [
+  [
+   "phase_melee"
+  ]
+ ],
+ "sororitas:stratagems:fp11e-sororitas-chorus-s2": [
+  [
+   "phase_shooting"
+  ]
+ ],
+ "sororitas:stratagems:fp11e-sororitas-sacred-s1": [
+  [
+   "phase_melee"
+  ],
+  [
+   "phase_melee"
+  ]
+ ],
+ "spacemarines:abilities:det000010367": [
+  [
+   "ranged_within_12"
+  ]
+ ],
+ "spacemarines:enhancements:000010368003": [
+  [
+   "phase_melee"
+  ]
+ ],
+ "spacemarines:enhancements:000010460002": [
+  [
+   "phase_melee"
+  ]
+ ],
+ "spacemarines:enhancements:000010460005": [
+  [
+   "wound_s_gt_t"
+  ]
+ ],
+ "spacemarines:enhancements:000010466004": [
+  [
+   "phase_shooting"
+  ]
+ ],
+ "spacemarines:enhancements:000010623002": [
+  [
+   "phase_melee"
+  ]
+ ],
+ "spacemarines:enhancements:000010629002": [
+  [
+   "phase_melee"
+  ],
+  [
+   "phase_melee"
+  ]
+ ],
+ "spacemarines:enhancements:000010629004": [
+  [
+   "phase_shooting"
+  ],
+  [
+   "phase_shooting"
+  ]
+ ],
+ "spacemarines:enhancements:000010633003": [
+  [
+   "phase_melee"
+  ],
+  [
+   "phase_melee"
+  ]
+ ],
+ "spacemarines:enhancements:000010633005": [
+  [
+   "phase_shooting"
+  ]
+ ],
+ "spacemarines:enhancements:000010676004": [
+  [
+   "phase_melee"
+  ]
+ ],
+ "spacemarines:enhancements:000010759004": [
+  [
+   "phase_shooting"
+  ]
+ ],
+ "spacemarines:enhancements:000010779004": [
+  [
+   "phase_shooting"
+  ]
+ ],
+ "spacemarines:enhancements:000010783004": [
+  [
+   "phase_shooting"
+  ]
+ ],
+ "spacemarines:enhancements:fp11e-spacemarines-fulguris-e2": [
+  [
+   "phase_shooting"
+  ]
+ ],
+ "spacemarines:enhancements:fp11e-spacemarines-subversion-e1": [
+  [
+   "phase_shooting"
+  ]
+ ],
+ "spacemarines:stratagems:000009791004": [
+  [
+   "phase_melee"
+  ]
+ ],
+ "spacemarines:stratagems:000009791005": [
+  [
+   "phase_melee"
+  ]
+ ],
+ "spacemarines:stratagems:000009791007": [
+  [
+   "phase_shooting"
+  ]
+ ],
+ "spacemarines:stratagems:000010461006": [
+  [
+   "phase_shooting"
+  ],
+  [
+   "phase_shooting"
+  ]
+ ],
+ "spacemarines:stratagems:000010624006": [
+  [
+   "phase_melee"
+  ]
+ ],
+ "spacemarines:stratagems:000010630006": [
+  [
+   "phase_shooting"
+  ],
+  [
+   "phase_shooting"
+  ]
+ ],
+ "spacemarines:stratagems:000010634004": [
+  [
+   "melee_charging"
+  ]
+ ],
+ "spacemarines:stratagems:000010634006": [
+  [
+   "phase_shooting"
+  ]
+ ],
+ "spacemarines:stratagems:000010681006": [
+  [
+   "phase_shooting"
+  ]
+ ],
+ "spacemarines:stratagems:000010685003": [
+  [
+   "phase_melee"
+  ]
+ ],
+ "spacemarines:stratagems:000010780007": [
+  [
+   "phase_shooting"
+  ]
+ ],
+ "spacemarines:stratagems:fp11e-spacemarines-bastion-s6": [
+  [
+   "wound_s_gt_t"
+  ]
+ ],
+ "spacewolves:abilities:det000010268": [
+  [
+   "target_has_keyword",
+   "character"
+  ],
+  [
+   "target_has_keyword",
+   "monster"
+  ],
+  [
+   "target_has_keyword",
+   "vehicle"
+  ]
+ ],
+ "spacewolves:enhancements:000010261005": [
+  [
+   "melee_charging"
+  ],
+  [
+   "phase_melee"
+  ]
+ ],
+ "spacewolves:enhancements:000010265002": [
+  [
+   "phase_melee"
+  ]
+ ],
+ "spacewolves:enhancements:000010269004": [
+  [
+   "phase_melee"
+  ]
+ ],
+ "spacewolves:enhancements:000010660005": [
+  [
+   "melee_charging"
+  ]
+ ],
+ "spacewolves:enhancements:fp11e-sw-fang-e1": [
+  [
+   "phase_shooting"
+  ],
+  [
+   "phase_shooting"
+  ]
+ ],
+ "spacewolves:enhancements:fp11e-sw-fenris-e1": [
+  [
+   "phase_melee"
+  ]
+ ],
+ "spacewolves:stratagems:000010262004": [
+  [
+   "phase_melee"
+  ]
+ ],
+ "spacewolves:stratagems:000010266002": [
+  [
+   "phase_melee"
+  ]
+ ],
+ "spacewolves:stratagems:000010266006": [
+  [
+   "phase_shooting"
+  ]
+ ],
+ "spacewolves:stratagems:000010270002": [
+  [
+   "phase_melee"
+  ]
+ ],
+ "spacewolves:stratagems:000010661006": [
+  [
+   "phase_shooting"
+  ]
+ ],
+ "spacewolves:stratagems:fp11e-sw-fenris-s3": [
+  [
+   "phase_shooting"
+  ]
+ ],
+ "tau:abilities:000008439": [
+  [
+   "guided_markerlight"
+  ],
+  [
+   "guided_vs_spotted"
+  ]
+ ],
+ "tau:abilities:det000008441": [
+  [
+   "detachment_rounds_guided"
+  ],
+  [
+   "detachment_rounds_shooting"
+  ]
+ ],
+ "tau:abilities:det000008810": [
+  [
+   "detachment_rounds_guided"
+  ]
+ ],
+ "tau:abilities:det000008814": [
+  [
+   "ranged_within_12"
+  ],
+  [
+   "ranged_within_8"
+  ]
+ ],
+ "tau:abilities:det000008818": [
+  [
+   "target_below_half"
+  ],
+  [
+   "target_below_starting"
+  ]
+ ],
+ "tau:abilities:det000008819": [
+  [
+   "phase_melee"
+  ],
+  [
+   "phase_shooting"
+  ]
+ ],
+ "tau:abilities:det000009635": [
+  [
+   "phase_shooting"
+  ],
+  [
+   "phase_shooting"
+  ]
+ ],
+ "tau:enhancements:000008442003": [
+  [
+   "detachment_rounds_shooting"
+  ],
+  [
+   "phase_shooting"
+  ]
+ ],
+ "tau:enhancements:000008442005": [
+  [
+   "guided_vs_spotted"
+  ]
+ ],
+ "tau:enhancements:000008811002": [
+  [
+   "guided_vs_spotted"
+  ]
+ ],
+ "tau:enhancements:000008815003": [
+  [
+   "phase_shooting"
+  ]
+ ],
+ "tau:enhancements:000008821002": [
+  [
+   "phase_melee"
+  ]
+ ],
+ "tau:enhancements:000008821003": [
+  [
+   "phase_shooting"
+  ]
+ ],
+ "tau:enhancements:000009636002": [
+  [
+   "phase_shooting"
+  ]
+ ],
+ "tau:stratagems:000008443002": [
+  [
+   "phase_shooting"
+  ]
+ ],
+ "tau:stratagems:000008443003": [
+  [
+   "phase_shooting"
+  ]
+ ],
+ "tau:stratagems:000008443004": [
+  [
+   "markerlight_observer"
+  ],
+  [
+   "phase_shooting"
+  ]
+ ],
+ "tau:stratagems:000008812004": [
+  [
+   "phase_shooting"
+  ]
+ ],
+ "tau:stratagems:000008812005": [
+  [
+   "phase_shooting"
+  ]
+ ],
+ "tau:stratagems:000008812007": [
+  [
+   "phase_shooting"
+  ]
+ ],
+ "tau:stratagems:000008816005": [
+  [
+   "shooting_target_models_in_range",
+   6,
+   10
+  ],
+  [
+   "shooting_target_models_in_range",
+   11,
+   9999
+  ]
+ ],
+ "tau:stratagems:000009637004": [
+  [
+   "phase_shooting"
+  ]
+ ],
+ "tau:stratagems:000009646002": [
+  [
+   "phase_melee"
+  ]
+ ],
+ "tau:stratagems:000009984005": [
+  [
+   "phase_shooting"
+  ]
+ ],
+ "tau:stratagems:fp11e-tau-aac-s3": [
+  [
+   "phase_shooting"
+  ]
+ ],
+ "tau:stratagems:fp11e-tau-aux-gbu": [
+  [
+   "phase_shooting"
+  ]
+ ],
+ "thousandsons:abilities:det000009653": [
+  [
+   "phase_shooting"
+  ]
+ ],
+ "thousandsons:enhancements:000010205005": [
+  [
+   "phase_melee"
+  ],
+  [
+   "phase_melee"
+  ]
+ ],
+ "thousandsons:enhancements:fp11e-ts-servants-e2": [
+  [
+   "phase_melee"
+  ],
+  [
+   "phase_melee"
+  ]
+ ],
+ "thousandsons:stratagems:000009655002": [
+  [
+   "phase_melee"
+  ]
+ ],
+ "thousandsons:stratagems:000009742006": [
+  [
+   "phase_shooting"
+  ]
+ ],
+ "thousandsons:stratagems:000009742007": [
+  [
+   "phase_shooting"
+  ]
+ ],
+ "thousandsons:stratagems:000010206006": [
+  [
+   "phase_shooting"
+  ]
+ ],
+ "thousandsons:stratagems:000010206007": [
+  [
+   "phase_melee"
+  ]
+ ],
+ "thousandsons:stratagems:000010210006": [
+  [
+   "phase_shooting"
+  ],
+  [
+   "phase_shooting"
+  ]
+ ],
+ "tyranids:abilities:det000009723": [
+  [
+   "phase_shooting"
+  ]
+ ],
+ "tyranids:enhancements:000008404005": [
+  [
+   "melee_target_has_keyword",
+   "monster"
+  ],
+  [
+   "melee_target_has_keyword",
+   "vehicle"
+  ]
+ ],
+ "tyranids:enhancements:000008408003": [
+  [
+   "phase_shooting"
+  ]
+ ],
+ "tyranids:enhancements:000008412005": [
+  [
+   "phase_melee"
+  ]
+ ],
+ "tyranids:enhancements:000008417003": [
+  [
+   "phase_shooting"
+  ]
+ ],
+ "tyranids:enhancements:000009737003": [
+  [
+   "phase_melee"
+  ]
+ ],
+ "tyranids:enhancements:000009737005": [
+  [
+   "phase_melee"
+  ],
+  [
+   "phase_melee"
+  ]
+ ],
+ "tyranids:enhancements:000010147005": [
+  [
+   "phase_melee"
+  ],
+  [
+   "phase_melee"
+  ]
+ ],
+ "tyranids:stratagems:000008349003": [
+  [
+   "phase_melee"
+  ]
+ ],
+ "tyranids:stratagems:000008413006": [
+  [
+   "phase_melee"
+  ]
+ ],
+ "tyranids:stratagems:000008422003": [
+  [
+   "phase_melee"
+  ]
+ ],
+ "tyranids:stratagems:000008422004": [
+  [
+   "phase_melee"
+  ]
+ ],
+ "tyranids:stratagems:000008422006": [
+  [
+   "phase_shooting"
+  ],
+  [
+   "phase_shooting"
+  ]
+ ],
+ "tyranids:stratagems:000009682002": [
+  [
+   "phase_melee"
+  ]
+ ],
+ "tyranids:stratagems:000009691002": [
+  [
+   "phase_melee"
+  ]
+ ],
+ "tyranids:stratagems:000009700004": [
+  [
+   "phase_shooting"
+  ]
+ ],
+ "tyranids:stratagems:000009700005": [
+  [
+   "phase_shooting"
+  ]
+ ],
+ "tyranids:stratagems:000009725002": [
+  [
+   "phase_melee"
+  ]
+ ],
+ "tyranids:stratagems:000009738006": [
+  [
+   "phase_shooting"
+  ]
+ ],
+ "tyranids:stratagems:fp11e-tyranids-norn-s2": [
+  [
+   "phase_melee"
+  ]
+ ],
+ "tyranids:stratagems:fp11e-tyranids-wbo-s1": [
+  [
+   "wound_s_gt_t"
+  ]
+ ],
+ "votann:abilities:detfp11e-votann-farseekers": [
+  [
+   "ranged_within_12"
+  ]
+ ],
+ "votann:enhancements:000010447003": [
+  [
+   "phase_shooting"
+  ]
+ ],
+ "votann:enhancements:fp11e-votann-trailblazers-e1": [
+  [
+   "phase_shooting"
+  ]
+ ],
+ "votann:stratagems:000009538002": [
+  [
+   "wound_s_gt_t"
+  ]
+ ],
+ "votann:stratagems:000009538003": [
+  [
+   "phase_shooting"
+  ],
+  [
+   "phase_shooting"
+  ]
+ ],
+ "votann:stratagems:000009538005": [
+  [
+   "phase_melee"
+  ]
+ ],
+ "votann:stratagems:000009824007": [
+  [
+   "phase_shooting"
+  ]
+ ],
+ "votann:stratagems:000010436003": [
+  [
+   "phase_melee"
+  ]
+ ],
+ "votann:stratagems:000010436005": [
+  [
+   "phase_shooting"
+  ]
+ ],
+ "votann:stratagems:000010440007": [
+  [
+   "phase_shooting"
+  ]
+ ],
+ "votann:stratagems:000010444006": [
+  [
+   "phase_shooting"
+  ]
+ ],
+ "votann:stratagems:000010452002": [
+  [
+   "phase_shooting"
+  ]
+ ],
+ "votann:stratagems:fp11e-votann-farseekers-s1": [
+  [
+   "phase_shooting"
+  ]
+ ],
+ "votann:stratagems:fp11e-votann-farseekers-s2": [
+  [
+   "phase_shooting"
+  ]
+ ],
+ "votann:stratagems:fp11e-votann-hearthguard-s2": [
+  [
+   "phase_shooting"
+  ]
+ ],
+ "worldeaters:abilities:000008428": [
+  [
+   "blessing_decapitating_strikes_vs_infantry"
+  ],
+  [
+   "blessing_martial_excellence"
+  ],
+  [
+   "blessing_warp_blades"
+  ]
+ ],
+ "worldeaters:abilities:det000008430": [
+  [
+   "melee_charging"
+  ],
+  [
+   "melee_charging"
+  ]
+ ],
+ "worldeaters:abilities:det000009846": [
+  [
+   "phase_melee"
+  ]
+ ],
+ "worldeaters:abilities:det000010085": [
+  [
+   "melee_charging"
+  ]
+ ],
+ "worldeaters:enhancements:000008432002": [
+  [
+   "phase_melee"
+  ],
+  [
+   "phase_melee"
+  ]
+ ],
+ "worldeaters:enhancements:000010078005": [
+  [
+   "phase_melee"
+  ],
+  [
+   "phase_melee"
+  ],
+  [
+   "phase_melee"
+  ]
+ ],
+ "worldeaters:enhancements:fp11e-we-brazeng-e1": [
+  [
+   "phase_melee"
+  ]
+ ],
+ "worldeaters:enhancements:fp11e-we-butchers-e2": [
+  [
+   "phase_melee"
+  ]
+ ],
+ "worldeaters:stratagems:000008431003": [
+  [
+   "melee_charging"
+  ]
+ ],
+ "worldeaters:stratagems:000008431004": [
+  [
+   "phase_melee"
+  ]
+ ],
+ "worldeaters:stratagems:000009709004": [
+  [
+   "phase_shooting"
+  ]
+ ],
+ "worldeaters:stratagems:000009848002": [
+  [
+   "phase_melee"
+  ],
+  [
+   "phase_melee"
+  ]
+ ],
+ "worldeaters:stratagems:000010075006": [
+  [
+   "phase_melee"
+  ]
+ ],
+ "worldeaters:stratagems:000010079003": [
+  [
+   "melee_charging"
+  ]
+ ],
+ "worldeaters:stratagems:000010083003": [
+  [
+   "melee_target_has_keyword",
+   "monster"
+  ],
+  [
+   "melee_target_has_keyword",
+   "vehicle"
+  ]
+ ],
+ "worldeaters:stratagems:fp11e-we-butchers-s1": [
+  [
+   "phase_melee"
+  ]
+ ],
+ "worldeaters:stratagems:fp11e-we-butchers-s2": [
+  [
+   "melee_target_has_keyword",
+   "monster"
+  ],
+  [
+   "melee_target_has_keyword",
+   "vehicle"
+  ]
+ ],
+ "worldeaters:stratagems:fp11e-we-butchers-s3": [
+  [
+   "phase_shooting"
+  ]
+ ]
+}

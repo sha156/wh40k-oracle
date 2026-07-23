@@ -614,11 +614,20 @@ def simulate_combat_resolved(
 
 
 def validate_roster(roster_text: str) -> Dict[str, Any]:
-    return _not_modeled("validate_roster", "军表合法性验证未建模，计划于 P6 实现")
+    # P6 验表引擎已上线（engines/roster + 军表实验室页签）；聊天侧缺的是
+    # 自由文本军表 → 结构化 Roster 的解析层（P6-PR1c，待真实样本）。
+    # 文案不许再说「计划于 P6」——对用户陈述过时假事实（gnhf 审查模块 5 M3）。
+    return _not_modeled(
+        "validate_roster",
+        "聊天侧军表文本解析未建模（无法从自由文本可靠还原单位/模型数/强化）。"
+        "验表功能已上线：请到「军表实验室」页签用图鉴单位搭表，即可实时验证点数与编制约束")
 
 
 def critique_roster(roster_text: str) -> Dict[str, Any]:
-    return _not_modeled("critique_roster", "军表点评（验表+模拟）未建模，计划于 P6 实现")
+    return _not_modeled(
+        "critique_roster",
+        "聊天侧军表文本解析未建模（无法从自由文本可靠还原单位/装配）。"
+        "点评功能已上线：请到「军表实验室」页签搭表并装配武器，即可获得强度点评")
 
 
 def archive_answer(title: str, content: str) -> Dict[str, Any]:
@@ -637,8 +646,8 @@ TOOL_SPECS: List[Dict[str, str]] = [
     {"name": "get_keyword_definition", "description": "USR/核心概念定义"},
     {"name": "judge_fight_order", "description": "战斗顺序判定：给定冲锋/Fights First/Fights Last/Counteroffensive，判谁先打 + 依据（11版 Fight phase）"},
     {"name": "simulate_combat", "description": "蒙特卡洛对战模拟：attacker 打 defender 期望伤害/击杀/团灭率+漏斗+性价比（多模型单位需 options.loadout）"},
-    {"name": "validate_roster", "description": "验表（未建模，P6）"},
-    {"name": "critique_roster", "description": "验表+模拟点评（未建模，P6）"},
+    {"name": "validate_roster", "description": "验表（聊天侧文本解析未建模——引导用户去军表实验室页签）"},
+    {"name": "critique_roster", "description": "验表+模拟点评（聊天侧文本解析未建模——引导用户去军表实验室页签）"},
     {"name": "calc_points", "description": "精确算分"},
     {"name": "get_datasheet", "description": "英文属性块查表：M/T/Sv/W + 武器 A/S/AP/D（数值题首选）"},
     {"name": "archive_answer", "description": "把判定/结论存为 wiki 页（本迭代未接线）"},

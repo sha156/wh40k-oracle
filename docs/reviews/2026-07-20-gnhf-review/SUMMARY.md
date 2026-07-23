@@ -61,15 +61,21 @@
 6. **门控成对性纪律漂移**（M8 F1/F2）：早期阵营 198 条门控载荷零回归锚，是历史五次
    同型 HIGH 的回归通道——建议全局结构锚快照对账。
 
-## 遗留（非阻塞，未修的 MEDIUM/LOW 记录在各模块报告）
+## 遗留处置（2026-07-24 收尾批次全部落地）
 
-- **wiki 数据正确性**（M6 F3-F7）：武器中文名张冠李戴 89 单位、-2 去重页孤儿、AoI 同名
-  档、Ghazghkull invuln 截断、build_outputs 转义漏网——建议合并一个 PR 抽公共
-  `parse_wikilink()`，改完全库重跑 from_db→crosslinks→build→lint 并 diff 对账。
-- **门控全局结构锚**（M8 F1/F2）：dsl_payloads 全量 `(id → condition tuples)` 快照测试。
-- **诚实降级文案**（M3 F3/F5、M5 M3/M4）：数据缺口消息只说系统知道的事实；agent 军表
-  工具「计划于 P6」过期文案。
-- **11 版编制规则查证**（M3 F2）：battleline/DT 豁免上限落常量。
+- ✅ **wiki 数据正确性**（M6 F3-F7）：2026-07-23 修复并全库重跑对账（merge 76f32fc1）。
+- ✅ **门控全局结构锚**（M8 F1/F2）：`scripts/gen_dsl_condition_anchor.py` 生成
+  524 条门控条目 `(faction:table:id → sorted condition tuples)` 快照锁进
+  `tests/data/dsl_condition_anchor.json`，`tests/test_dsl_condition_anchor.py`
+  双向对账（删门/加门/换相位均可检出，负向机械验证过）。
+- ✅ **诚实降级文案**（M3 F3/F5、M5 M3/M4）：validate 对未知 id 发 `unit_not_found`
+  surfaced warn 并跳过关键词/档位类编造断言；critique 区分「loadout 非法已丢弃」与
+  「未指定」；agent 军表工具文案改指军表实验室页签；find_datasheet 加 canonical id
+  直查分支（`get_datasheet("000000882")` 从恒 found=False 修复为直达）。
+- ✅ **11 版编制规则**（M3 F2）：battleline/DT 豁免超 3 份发 `rot_exempt_uncapped`
+  surfaced warn（上限仍未查证——外部源可达时再落常量，warn 不 error 符合设计裁决）。
+
+（各修复的成对测试见对应模块报告的追记。）
 
 ## 本批次（模块 3-8）交付
 

@@ -70,18 +70,28 @@ def validate_roster(db_path: Path, req: RosterIn) -> ValidationReportOut:
 
 def critique_roster(db_path: Path, req: RosterIn, n: int = 1000) -> CritiqueReportOut:
     from engines.roster import critique
-    rep = critique(db_path, _to_engine_roster(req), n=n)
+    roster = _to_engine_roster(req)
+    rep = critique(db_path, roster, n=n)
+    # 归因修正（gnhf 审查模块 3 F5）：入参 loadout 非空但被 _to_loadout 整体丢弃
+    # （非法项/超上限）时，引擎只见到空 loadout、note 会说「未指定」——用户明明填了，
+    # 归因被带偏。此处按输入侧事实改写文案（引擎契约不动）。
+    discarded = [bool(u_in.loadout) and not u_eng.loadout
+                 for u_in, u_eng in zip(req.units, roster.units)]
     return CritiqueReportOut(
         total_points=rep.total_points,
         assessments=[
             UnitAssessmentOut(
                 canonical_id=a.canonical_id, name_en=a.name_en, points=a.points,
-                assessed=a.assessed, phase=a.phase, note=a.note,
+                assessed=a.assessed, phase=a.phase,
+                note=("loadout 含非法项或超出上限，已整体丢弃（不猜半份装配）→ 未评估，"
+                      "请修正装配后重试"
+                      if (not a.assessed and i < len(discarded) and discarded[i])
+                      else a.note),
                 scores=[TargetScoreOut(key=s.key, label=s.label,
                                        expected_damage=s.expected_damage,
                                        damage_per_100=s.damage_per_100)
                         for s in a.scores])
-            for a in rep.assessments],
+            for i, a in enumerate(rep.assessments)],
         summary=list(rep.summary), not_modeled=list(rep.not_modeled))
 
 

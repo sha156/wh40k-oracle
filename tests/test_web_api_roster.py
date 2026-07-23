@@ -140,3 +140,23 @@ def test_critique_assessed_and_surfaced():
     assert "damagePer100" in by_name["Intercessor Squad"]["scores"][0]  # camelCase
     assert by_name["Apothecary Biologis"]["assessed"] is False
     assert "notModeled" in b and len(b["notModeled"]) > 0
+
+
+@needs_db
+def test_critique_discarded_loadout_note_not_misattributed():
+    # gnhf 审查模块 3 F5：非法 loadout 被整体丢弃后，note 不许说「未指定」——
+    # 用户明明填了，归因要如实说「非法已丢弃」
+    c = _client()
+    r = c.post("/roster/critique", json={
+        "factionId": "SM", "detachmentId": DET_BASTION,
+        "units": [
+            {"canonicalId": INTERCESSOR, "nameEn": "Bad Loadout",
+             "models": 5, "loadout": [["Bolt rifle", 0]]},   # 非正数 → 整体丢弃
+            {"canonicalId": APOTHECARY, "nameEn": "No Loadout",
+             "models": 1, "isWarlord": True},                # 真·未提供（负向成对）
+        ]})
+    by_name = {a["nameEn"]: a for a in r.json()["assessments"]}
+    bad, none = by_name["Bad Loadout"], by_name["No Loadout"]
+    assert bad["assessed"] is False and "丢弃" in bad["note"]
+    assert "未指定" not in bad["note"]
+    assert none["assessed"] is False and "未指定" in none["note"]
