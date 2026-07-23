@@ -20,6 +20,14 @@ from web_api.contract import (
 
 # 允许透传给模拟核心的 options 键 → 收敛函数（边界验证，未知键静默丢弃）
 _N_MIN, _N_MAX = 100, 20000
+# 数值入参上限：模拟核心的 numpy 数组宽度 = 武器数×每模型攻击数（含 Blast 按守方
+# 模型数放大），这些入参不封顶会绕过 n 钳制构成算力/内存 DoS。真实兵牌模型数 ≤ ~25、
+# 单位武器总数 ≤ ~60，上限取数倍余量；超限视同非法值丢弃（与 ≤0 同待遇），不静默钳
+# （钳了会悄悄改变模拟语义）。roster 侧（web_api/roster.py、contract.py）共用。
+MODELS_MAX = 100
+WEAPON_COUNT_MAX = 400
+LOADOUT_ITEMS_MAX = 40
+_DMG_REDUCTION_MAX = 6
 
 
 def _as_bool(v: Any) -> bool:
@@ -36,24 +44,26 @@ def _as_bool(v: Any) -> bool:
     return False
 
 
-def _as_pos_int(v: Any) -> Optional[int]:
+def _as_pos_int(v: Any, hi: Optional[int] = None) -> Optional[int]:
     try:
         i = int(v)
     except (TypeError, ValueError):
         return None
-    return i if i > 0 else None
+    if i <= 0 or (hi is not None and i > hi):
+        return None
+    return i
 
 
 def _as_loadout(v: Any) -> Optional[List[Tuple[str, int]]]:
-    """[[武器名, 数量], ...] → [(str, int>0)]；任一项非法则整体丢弃（不猜半份装配）。"""
-    if not isinstance(v, list) or not v:
+    """[[武器名, 数量], ...] → [(str, 0<int≤上限)]；任一项非法则整体丢弃（不猜半份装配）。"""
+    if not isinstance(v, list) or not v or len(v) > LOADOUT_ITEMS_MAX:
         return None
     out: List[Tuple[str, int]] = []
     for item in v:
         if not (isinstance(item, (list, tuple)) and len(item) == 2):
             return None
         name, cnt = item
-        c = _as_pos_int(cnt)
+        c = _as_pos_int(cnt, WEAPON_COUNT_MAX)
         if not isinstance(name, str) or not name.strip() or c is None:
             return None
         out.append((name.strip(), c))
@@ -91,8 +101,9 @@ def sanitize_options(raw: Optional[Dict[str, Any]]) -> Dict[str, Any]:
             toks = [s.strip()[:80] for s in vals if isinstance(s, str) and s.strip()]
             if toks:
                 out[list_key] = toks[:16]
-    for key in ("attacker_models", "defender_models", "damage_reduction", "seed"):
-        v = _as_pos_int(raw.get(key))
+    for key, hi in (("attacker_models", MODELS_MAX), ("defender_models", MODELS_MAX),
+                    ("damage_reduction", _DMG_REDUCTION_MAX), ("seed", None)):
+        v = _as_pos_int(raw.get(key), hi)
         if v is not None:
             out[key] = v
     fnp = _as_pos_int(raw.get("fnp"))

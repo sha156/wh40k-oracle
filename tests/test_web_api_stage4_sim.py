@@ -54,6 +54,32 @@ def test_sanitize_empty():
     assert sanitize_options({}) == {}
 
 
+def test_sanitize_caps_dos_levers():
+    # gnhf 审查模块 7 HIGH：n 有钳制但 models/loadout 数量无上限，可整体绕过
+    # n 钳制把后端当算力用（numpy 数组宽度 = 武器数×攻击数，Blast 随守方模型数放大）。
+    # 超上限视同非法值丢弃（与 ≤0 同待遇），不静默钳。
+    out = sanitize_options({
+        "attacker_models": 10**9, "defender_models": 10**9,
+        "damage_reduction": 100, "loadout": [["gun", 10**9]],
+    })
+    assert "attacker_models" not in out and "defender_models" not in out
+    assert "damage_reduction" not in out
+    assert "loadout" not in out              # 单件数量超限 → 整体拒收
+    # loadout 行数超限 → 整体拒收
+    many = [[f"gun{i}", 1] for i in range(41)]
+    assert "loadout" not in sanitize_options({"loadout": many})
+    # 负向成对：合法值原样通过
+    ok = sanitize_options({
+        "attacker_models": 20, "defender_models": 10,
+        "damage_reduction": 1, "loadout": [["gun", 60]],
+    })
+    assert ok["attacker_models"] == 20 and ok["defender_models"] == 10
+    assert ok["damage_reduction"] == 1
+    assert ok["loadout"] == [("gun", 60)]
+    # seed 是标量不构成 DoS 面，保持不封顶
+    assert sanitize_options({"seed": 10**12})["seed"] == 10**12
+
+
 def test_sanitize_bool_coercion_no_string_footgun():
     # 字符串 "false"/"0" 不当真值（避免 bool("false")==True）
     assert sanitize_options({"charge": "false"})["charge"] is False

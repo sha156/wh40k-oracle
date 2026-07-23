@@ -34,6 +34,31 @@ def test_to_loadout_coercion():
     assert _to_loadout([["Bolt rifle", 1], ["Bolt rifle", 2]]) == (("Bolt rifle", 3),)
 
 
+def test_to_loadout_caps_dos_levers():
+    # gnhf 审查模块 7 HIGH：点评的蒙特卡洛数组宽度随武器数扩张，无上限即 DoS 面
+    assert _to_loadout([["Gun", 10**9]]) == ()               # 单件数量超限 → 拒收
+    assert _to_loadout([[f"g{i}", 1] for i in range(41)]) == ()   # 行数超限 → 拒收
+    # 合并后总量超限同样拒收（防拆行绕过单件上限）
+    assert _to_loadout([["Gun", 300], ["Gun", 300]]) == ()
+    # 负向成对：合法装配不受影响
+    assert _to_loadout([["Gun", 60], ["Blade", 2]]) == (("Gun", 60), ("Blade", 2))
+
+
+def test_roster_contract_caps():
+    # 契约层边界：models 超上限 / units 超上限 → 422 拒收（不静默钳）
+    import pydantic
+    from web_api.contract import RosterUnitIn
+    with pytest.raises(pydantic.ValidationError):
+        RosterUnitIn(canonicalId="000000001", models=10**9)
+    with pytest.raises(pydantic.ValidationError):
+        RosterIn(factionId="SM", units=[
+            RosterUnitIn(canonicalId=f"{i:09d}") for i in range(61)])
+    # 负向成对：合法规模通过
+    assert RosterUnitIn(canonicalId="000000001", models=20).models == 20
+    assert len(RosterIn(factionId="SM", units=[
+        RosterUnitIn(canonicalId=f"{i:09d}") for i in range(40)]).units) == 40
+
+
 def _client():
     from fastapi.testclient import TestClient
     from web_api.main import app

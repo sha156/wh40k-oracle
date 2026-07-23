@@ -234,18 +234,19 @@ class RosterUnitIn(_CamelModel):
     """军表单位入参。loadout=[[武器名,数量],...]（点评用；验表可空）。"""
     canonical_id: str = Field(alias="canonicalId")
     name_en: str = Field(default="", alias="nameEn")
-    models: int = Field(default=1, ge=1)     # 边界拒收 <1（不静默钳成 1）
+    # 边界拒收 <1 与超上限（不静默钳）；上限防蒙特卡洛数组宽度被拉爆（DoS 面）
+    models: int = Field(default=1, ge=1, le=100)
     is_warlord: bool = Field(default=False, alias="isWarlord")
     enhancement: Optional[str] = None
-    loadout: List[List[Any]] = []
+    loadout: List[List[Any]] = Field(default=[], max_length=40)
 
 
 class RosterIn(_CamelModel):
-    """POST /roster/* 请求体。"""
+    """POST /roster/* 请求体。units 上限防点评端点持并发闸跑数百次蒙特卡洛。"""
     faction_id: str = Field(alias="factionId")
     detachment_id: Optional[str] = Field(default=None, alias="detachmentId")
     size: str = "strike_force"
-    units: List[RosterUnitIn] = []
+    units: List[RosterUnitIn] = Field(default=[], max_length=60)
 
 
 class ValidationIssueOut(_CamelModel):
