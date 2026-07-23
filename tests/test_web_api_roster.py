@@ -99,7 +99,8 @@ def test_validate_legal_and_camelcase():
         ]})
     b = r.json()
     assert r.status_code == 200 and b["legal"] is True
-    assert b["totalPoints"] == 150 and b["issues"] == []
+    # 70 + 80 + 强化 10——强化点数计入总分（模块 3 审查 F1）
+    assert b["totalPoints"] == 160 and b["issues"] == []
 
 
 @needs_db
