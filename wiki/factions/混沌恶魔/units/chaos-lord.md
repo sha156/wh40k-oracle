@@ -1,0 +1,50 @@
+---
+id: '000004036'
+name_en: Chaos Lord
+faction: 混沌恶魔
+type: unit
+points:
+  1 model: 90
+tags:
+- unit
+- unit/混沌恶魔
+- 混沌恶魔
+version:
+  source: official-db
+sources:
+- book: 官方结构库 db/wh40k.sqlite（Wahapedia 11版镜像 + MFM 官方点数）
+updated: '2026-07-23'
+---
+
+## 属性表
+| 模型 | M | T | SV | W | LD | OC |
+|---|---|---|---|---|---|---|
+| Chaos [[factions/太空死灵/units/lord.md\|Lord]] | 6" | 4 | 3+ | 5 | 6+ | 1 |
+
+### 特殊保护
+- 4+
+
+## 射击武器
+| 武器 | 射程 | A | BS | S | AP | D | 技能 |
+|---|---|---|---|---|---|---|---|
+| Plasma pistol – standard | 12" | 1 | 2+ | 7 | -2 | 1 | pistol |
+| Plasma pistol – supercharge | 12" | 1 | 2+ | 8 | -3 | 2 | pistol，hazardous |
+
+## 近战武器
+| 武器 | 射程 | A | WS | S | AP | D | 技能 |
+|---|---|---|---|---|---|---|---|
+| Accursed weapon | 近战 | 6 | 2+ | 5 | -2 | 1 | — |
+| Daemon hammer | 近战 | 5 | 3+ | 8 | -2 | 2 | devastating wounds |
+| Power fist | 近战 | 5 | 2+ | 8 | -2 | 2 | — |
+| Astartes chainblade | 近战 | 7 | 2+ | 4 | -1 | 1 | — |
+
+## 技能
+- **Lord of Chaos**：Once per battle round, one unit from your army with this ability can use it when its unit is targeted with a Stratagem. If it does, reduce the CP cost of that use of that Stratagem by 1CP.
+- **Chance for Glory**：Once per battle, at the start of the Fight phase, this model can use this ability. If it does, until the end of the phase, improve the Strength, Attacks, Armour Penetration and Damage characteristics of melee weapons equipped by this model by 1.
+
+## 单位构成
+- **1个模型** — 90 分
+
+## 关键词
+- **阵营关键词**：Legiones Daemonica，Heretic Astartes
+- **普通关键词**：Shadow Legion，Undivided，Chaos Lord，Chaos，[[core-rules/grenades.md|Grenades]]，Undivided，[[core-rules/character.md|Character]]，Chaos Lord，Chaos，Chaos Lord，Undivided，Shadow Legion，[[core-rules/infantry.md|Infantry]]，[[core-rules/character.md|Character]]，[[core-rules/grenades.md|Grenades]]，Chaos，Chaos Lord，Undivided，[[core-rules/grenades.md|Grenades]]，[[core-rules/infantry.md|Infantry]]，[[core-rules/character.md|Character]]，[[core-rules/grenades.md|Grenades]]，Chaos，Chaos Lord，Undivided，Shadow Legion，[[core-rules/infantry.md|Infantry]]，[[core-rules/character.md|Character]]，[[core-rules/grenades.md|Grenades]]，Chaos，Shadow Legion，Shadow Legion，[[core-rules/character.md|Character]]，[[core-rules/infantry.md|Infantry]]，[[core-rules/infantry.md|Infantry]]

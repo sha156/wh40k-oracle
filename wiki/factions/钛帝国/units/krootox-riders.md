@@ -4,17 +4,20 @@ name_zh: 克鲁特猿兽骑兵小队
 name_en: Krootox Riders
 faction: 钛帝国
 type: unit
+points:
+  1 model: 45
+  2 models: 60
+  3 models: 90
 tags:
 - unit
 - unit/钛帝国
 - 钛帝国
+version:
+  points: MFM 2026-07-23 14:17
+  source: official-db
 sources:
-- book: 钛帝国十版CODEX-20251112
-  pages:
-  - 39
-raw:
-- data_refined\钛帝国十版CODEX-20251112\page_039.md
-verify_warn: true
+- book: 官方结构库 db/wh40k.sqlite（Wahapedia 11版镜像 + MFM 官方点数）
+updated: '2026-07-23'
 ---
 
 ## 属性表
@@ -22,29 +25,26 @@ verify_warn: true
 |---|---|---|---|---|---|---|
 | 克鲁特猿兽骑兵 | 7" | 6 | 5+ | 5 | 7+ | 2 |
 
-## 远程武器
+## 射击武器
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| 转轮炮 | 36" | 2 | 4+ | 7 | -1 | 2 | [[core-rules/rapid-fire.md|速射2]] |
-| 纠缠炮 | 36" | D6+1 | 4+ | 6 | 0 | 1 | [[core-rules/blast.md|爆炸]]，[[core-rules/heavy.md|重型]] |
+| 转轮炮 | 36" | 2 | 4+ | 7 | -1 | 2 | [[core-rules/rapid-fire.md\|速射2]] |
+| 纠缠炮 | 36" | D6+1 | 4+ | 6 | 0 | 1 | [[core-rules/blast.md\|爆炸]]，[[core-rules/heavy.md\|重型]] |
 
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| 格斗武器 | 近战 | 2 | 3+ | 4 | 0 | 1 | - |
-| 克鲁特兽拳 | 近战 | 4 | 3+ | 6 | -1 | 2 | [[core-rules/extra-attacks.md|额外攻击]] |
+| 格斗武器 | 近战 | 2 | 3+ | 4 | 0 | 1 | — |
+| 克鲁特兽拳 | 近战 | 4 | 3+ | 6 | -1 | 2 | [[core-rules/extra-attacks.md\|额外攻击]] |
 
 ## 技能
-- **斥候7"（Scout 7"）**：[[core-rules/deployment.md|部署]]后第一回合开始前，此模型可进行一次最多7"的[[core-rules/normal-move.md|常规移动]]。若搭载于[[专用运输工具]]，该运输工具可代替移动。移动结束时须与所有敌方模型保持至少9"水平距离。
-- **猎群队友（Hunting Pack）**：每回合一次，敌方[[core-rules/shooting-phase.md|射击阶段]]中，6"内一个友方[[克鲁特]]步兵单位被选为射击目标时，你军队中一个拥有本能力的单位可使用此技能。结算完敌方单位的射击后，此单位可如同在自己的[[core-rules/shooting-phase.md|射击阶段]]那样对攻击者进行一次射击（该攻击者必须是合法射击目标）。
+- **Kroot Packmates**：Once per turn, in your opponent’s Shooting phase, when a friendly Kroot Infantry unit within 6" of this unit is selected as the target of an attack, one unit from your army with this ability can use it. If it does, after that enemy unit has finished making its attacks, that unit with this ability can shoot as if it were your Shooting phase, but when resolving those attacks it can only target that enemy unit (and only if it is an eligible target).
 
 ## 单位构成
-- 1～3个克鲁特猿兽骑兵（40/60/90分）
-- 每个模型装备：1门转轮炮、格斗武器、克鲁特兽拳。
-
-**装备选项**
-- 可将任意模型的转轮炮替换为1门纠缠炮。
+- **1个模型** — 45 分
+- **2个模型** — 60 分
+- **3个模型** — 90 分
 
 ## 关键词
-- 阵营关键词：**钛帝国**
-- 普通关键词：**骑乘**、**手雷**、**克鲁特**、**克鲁特猿兽骑兵小队**
+- **阵营关键词**：T’au Empire
+- **普通关键词**：[[core-rules/mounted.md|Mounted]]，[[core-rules/grenades.md|Grenades]]，Kroot，Krootox Riders

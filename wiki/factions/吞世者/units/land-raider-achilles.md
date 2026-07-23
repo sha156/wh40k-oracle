@@ -3,56 +3,49 @@ id: 000003609
 name_en: Land Raider Achilles
 faction: 吞世者
 type: unit
+points:
+  1 model: 230
 tags:
 - unit
 - unit/吞世者
 - 吞世者
+version:
+  source: official-db
 sources:
-- book: Faction Pack Space-Marines
-  pages:
-  - 172
-  - 173
-raw:
-- data_refined\Faction Pack Space-Marines\page_172.md
-- data_refined\Faction Pack Space-Marines\page_173.md
-verify_warn: true
+- book: 官方结构库 db/wh40k.sqlite（Wahapedia 11版镜像 + MFM 官方点数）
+updated: '2026-07-23'
 ---
 
 ## 属性表
 | 模型 | M | T | SV | W | LD | OC |
-| --- | --- | --- | --- | --- | --- | --- |
-| 兰德袭击者阿喀琉斯 | 10" | 12 | 2+ | 16 | 6+ | 5 |
+|---|---|---|---|---|---|---|
+| [[factions/星际战士/units/land-raider.md\|Land Raider]] Achilles | 10" | 12 | 2+ | 16 | 6+ | 5 |
 
-## 远程武器
+### 特殊保护
+- 4+
+
+## 射击武器
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
-| --- | --- | --- | --- | --- | --- | --- | --- |
-| 猎杀者导弹（一次性） | 48" | 1 | 2+ | 14 | -3 | D6 | 一次性 |
-| 四联发射器 – 碎裂弹 | 24" | 4 | 3+ | 9 | -2 | 3 | - |
-| 四联发射器 – 雷火弹 | 60" | D6+4 | 3+ | 5 | 0 | 1 | 爆炸，间接射击 |
-| 风暴爆弹枪 | 24" | 2 | 3+ | 4 | 0 | 1 | 速射2 |
-| 双联多管热熔 | 18" | 2 | 3+ | 9 | -4 | D6 | 热熔2，双联 |
-| 双联沃尔基特光枪 | 36" | 4 | 3+ | 6 | 0 | 2 | 毁灭创伤，双联 |
+|---|---|---|---|---|---|---|---|
+| [[factions/星际战士/units/hunter.md\|Hunter]]-killer missile | 48" | 1 | 2+ | 14 | -3 | D6 | one shot |
+| Twin volkite culverin | 36" | 4 | 3+ | 6 | 0 | 2 | devastating wounds，twin-linked |
+| Twin multi-melta | 18" | 2 | 3+ | 9 | -4 | D6 | [[core-rules/melta.md\|melta 2]]，twin-linked |
+| Storm bolter | 24" | 2 | 3+ | 4 | 0 | 1 | [[core-rules/rapid-fire.md\|rapid fire 2]] |
+| Quad launcher – thunderfire shells | 60" | D6+4 | 3+ | 5 | 0 | 1 | blast，indirect fire |
+| Quad launcher – shatter shells | 24" | 4 | 3+ | 9 | -2 | 3 | — |
 
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |
-| --- | --- | --- | --- | --- | --- | --- | --- |
-| 装甲履带 | 近战 | 6 | 4+ | 8 | 0 | 1 | - |
+|---|---|---|---|---|---|---|---|
+| Armoured tracks | 近战 | 6 | 4+ | 8 | 0 | 1 | — |
 
 ## 技能
-- **致命死亡 D6**：[[core-rules/deadly-demise.md|致命死亡]] D6。
-- **破敌誓言**：[[core-rules/oath-of-moment.md|破敌誓言]]。
-- **突击坡道**：每次单位在本模型进行[[core-rules/normal-move.md|普通移动]]后下车，该单位本回合仍可[[core-rules/charge.md|宣言冲锋]]。
-- **损伤（剩余1-5点生命）**：当此模型剩余1-5点生命时，每次它进行攻击，在[[core-rules/hit-roll.md|命中掷骰]]上-1。
-- **无敌豁免**：此模型拥有4+[[core-rules/invulnerable-save.md|无敌豁免]]。
+- **Assault Ramp**：Each time a unit disembarks from this model after it has made a Normal move, that unit is still eligible to declare a charge this turn.
+- **One Shot**：The bearer can only shoot with this weapon once per battle.
 
 ## 单位构成
-- **单位组成**：1 台兰德袭击者阿喀琉斯。装备：四联发射器；2 把双联沃尔基特光枪；装甲履带。
-- **装备选项**：
-  - 可将 2 把双联沃尔基特光枪替换为 2 把双联多管热熔。
-  - 可装备 1 发猎杀者导弹。
-  - 可装备 1 把风暴爆弹枪。
-- **运输容量**：可运输 12 个阿斯塔特修会步兵模型。每个带有跳跃背包、狼人、重装、附魔或终结者关键词的模型占据 2 个名额；每个百夫长或湮灭者模型占据 3 个名额。
+- **1个模型** — 230 分
 
 ## 关键词
-- 阵营关键词：阿斯塔特修会
-- 普通关键词：载具，运输，烟雾，框架，帝国，兰德袭击者阿喀琉斯
+- **阵营关键词**：World Eaters
+- **普通关键词**：[[core-rules/smoke.md|Smoke]]，Chaos，Khorne，Land [[factions/黑暗灵族/units/raider.md|Raider]] Achilles，[[core-rules/smoke.md|Smoke]]，Chaos，[[core-rules/transport.md|Transport]]，Khorne，Land Raider Achilles，[[core-rules/transport.md|Transport]]，Vehicle，Vehicle，Vehicle，[[core-rules/smoke.md|Smoke]]，Chaos，[[core-rules/smoke.md|Smoke]]，[[core-rules/transport.md|Transport]]，Chaos，Khorne，Land Raider Achilles，Vehicle，Khorne，[[core-rules/transport.md|Transport]]，[[core-rules/transport.md|Transport]]，[[core-rules/smoke.md|Smoke]]，Chaos，Khorne，Land Raider Achilles，Land Raider Achilles，Vehicle

@@ -4,53 +4,45 @@ name_zh: 卡纳罗克巨兽
 name_en: Great Knarloc
 faction: 钛帝国
 type: unit
+points:
+  1 model: 100
 tags:
 - unit
 - unit/钛帝国
 - 钛帝国
+version:
+  source: official-db
 sources:
-- book: 钛帝国十版CODEX-20251112
-  pages:
-  - 71
-raw:
-- data_refined\钛帝国十版CODEX-20251112\page_071.md
-verify_warn: true
+- book: 官方结构库 db/wh40k.sqlite（Wahapedia 11版镜像 + MFM 官方点数）
+updated: '2026-07-23'
 ---
 
 ## 属性表
 | 模型 | M | T | SV | W | LD | OC |
 |---|---|---|---|---|---|---|
-| 卡纳罗克巨兽 | 9” | 8 | 4+ | 10 | 7+ | 3 |
+| Great Knarloc | 9" | 8 | 4+ | 10 | 7+ | 3 |
 
-## 远程武器
+## 射击武器
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| 克鲁特连弩 | 12” | 1 | 4+ | 12 | -2 | 3 | [爪钩] |
-| 克鲁特步枪 | 24” | 1 | 4+ | 4 | 0 | 1 | [速射1] |
-| 并联克鲁特炮 | 36” | 2 | 4+ | 7 | 0 | 2 | [双联] |
-
-[爪钩]：每次装备者用本武器成功命中巨兽或载具单位时，直到回合结束前，如果装备者冲锋那个单位，冲锋骰结果+2且目标不可对本装备者使用坚守射击战略能力。
+| Kroot bolt thrower | 12" | 1 | 4+ | 12 | -2 | 3 | hooked |
+| Kroot rifle | 24" | 1 | 4+ | 4 | 0 | 1 | [[core-rules/rapid-fire.md\|rapid fire 1]] |
+| Twin Kroot gun | 36" | 2 | 4+ | 7 | 0 | 2 | twin-linked |
 
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| 卡纳罗克巨兽粉碎喙与剃刀爪 | 近战 | 4 | 3+ | 7 | -1 | 3 | - |
-| 克鲁特步枪 | 近战 | 2 | 3+ | 4 | 0 | 1 | - |
+| Great Knarloc beak and talons | 近战 | 4 | 3+ | 7 | -1 | 3 | extra attacks |
+| Kroot rifle | 近战 | 2 | 3+ | 4 | 0 | 1 | — |
 
 ## 技能
-- **斥候7”**：单位在第一回合开始前可以进行一次最多7"的常规移动。如果单位搭乘一个专用运输工具，那么该专用运输工具可以代替进行移动。必须在所有敌方模型水平距离9"外的位置结束这次移动。
-- **大步流星**：本单位加速移动时不投加速骰，改为直到阶段结束前本单位中的模型M值+6"。
-- **负重背包（光环）**：装备者3寸内的友方克鲁特单位装备着的射击武器获得[连击1]。
+- **Loping Stride**：Each time this model Advances, do not make an Advance roll for it. Instead, until the end of the phase, add 6" to the Move characteristic of this model.
+- **Baggage Harness (Aura)**：While a friendly Kroot unit is within 3" of the bearer, ranged weapons equipped by models in that unit have the [SUSTAINED HITS 1] ability.
+- **Hooked**：Each time the bearer makes an attack with this weapon that targets a <span class="kwb">MONSTER</span> or <span class="kwb">VEHICLE</span> unit, if a hit is scored, until the end of the turn, if the bearer selects that unit as a target of a charge, add 2 to Charge rolls made for the bearer and enemy units cannot use the Fire Overwatch Stratagem to shoot at the bearer.
 
 ## 单位构成
-- 1只卡纳罗克巨兽(100分)
-本模型装备着：卡纳罗克巨兽粉碎喙与剃刀爪。
-装备选项：
-- 本模型可额外装备下列之一：
-  - 1门克鲁特连弩与1把克鲁特步枪
-  - 1门并联克鲁特炮
-  - 1组负重背包
+- **1个模型** — 100 分
 
 ## 关键词
-- 阵营关键词：钛帝国
-- 普通关键词：巨兽，克鲁特，卡纳罗克巨兽
+- **阵营关键词**：T’au Empire
+- **普通关键词**：Kroot，Monster，Great Knarloc

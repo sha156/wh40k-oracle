@@ -1,110 +1,292 @@
 # Lint Report
 
-_Generated: 2026-07-11 10:04 UTC_
+_Generated: 2026-07-23 08:05 UTC_
 
 | Severity | Count |
 |----------|-------|
-| error | 4 |
-| warning | 24 |
-| info | 70 |
+| warning | 277 |
+| info | 4 |
 
-**Total issues:** 98  |  **Auto-fixed:** 0
+**Total issues:** 281  |  **Auto-fixed:** 0
 
-- ❌ **[broken-links]** `factions/钛帝国/units/aunva.md` — 断链: [[近战武器]]
-- ❌ **[broken-links]** `factions/钛帝国/units/kroot-hounds.md` — 断链: [[专用运输工具]]
-- ❌ **[broken-links]** `factions/钛帝国/units/krootox-riders.md` — 断链: [[专用运输工具]]
-- ❌ **[broken-links]** `factions/钛帝国/units/krootox-riders.md` — 断链: [[克鲁特]]
-- ⚠️ **[verify-warn]** `factions/吞世者/units/chaos-thunderhawk.md` — LLM 合成时数字校验发现原文没有的数字，需人工核对
-- ⚠️ **[verify-warn]** `factions/吞世者/units/defiler.md` — LLM 合成时数字校验发现原文没有的数字，需人工核对
-- ⚠️ **[verify-warn]** `factions/吞世者/units/fellblade.md` — LLM 合成时数字校验发现原文没有的数字，需人工核对
-- ⚠️ **[verify-warn]** `factions/吞世者/units/land-raider-achilles.md` — LLM 合成时数字校验发现原文没有的数字，需人工核对
-- ⚠️ **[verify-warn]** `factions/吞世者/units/sicaran-punisher.md` — LLM 合成时数字校验发现原文没有的数字，需人工核对
-- ⚠️ **[verify-warn]** `factions/钛帝国/units/breacher-team.md` — LLM 合成时数字校验发现原文没有的数字，需人工核对
-- ⚠️ **[verify-warn]** `factions/钛帝国/units/drone-sentry-turret.md` — LLM 合成时数字校验发现原文没有的数字，需人工核对
-- ⚠️ **[verify-warn]** `factions/钛帝国/units/ghostkeel-battlesuit.md` — LLM 合成时数字校验发现原文没有的数字，需人工核对
-- ⚠️ **[verify-warn]** `factions/钛帝国/units/great-knarloc.md` — LLM 合成时数字校验发现原文没有的数字，需人工核对
-- ⚠️ **[verify-warn]** `factions/钛帝国/units/knarloc-riders.md` — LLM 合成时数字校验发现原文没有的数字，需人工核对
-- ⚠️ **[verify-warn]** `factions/钛帝国/units/kroot-carnivores.md` — LLM 合成时数字校验发现原文没有的数字，需人工核对
-- ⚠️ **[verify-warn]** `factions/钛帝国/units/kroot-flesh-shaper.md` — LLM 合成时数字校验发现原文没有的数字，需人工核对
-- ⚠️ **[verify-warn]** `factions/钛帝国/units/kroot-hounds.md` — LLM 合成时数字校验发现原文没有的数字，需人工核对
-- ⚠️ **[verify-warn]** `factions/钛帝国/units/kroot-trail-shaper.md` — LLM 合成时数字校验发现原文没有的数字，需人工核对
-- ⚠️ **[verify-warn]** `factions/钛帝国/units/krootox-rampagers.md` — LLM 合成时数字校验发现原文没有的数字，需人工核对
-- ⚠️ **[verify-warn]** `factions/钛帝国/units/krootox-riders.md` — LLM 合成时数字校验发现原文没有的数字，需人工核对
-- ⚠️ **[verify-warn]** `factions/钛帝国/units/manta.md` — LLM 合成时数字校验发现原文没有的数字，需人工核对
-- ⚠️ **[verify-warn]** `factions/钛帝国/units/rvarna-battlesuit.md` — LLM 合成时数字校验发现原文没有的数字，需人工核对
-- ⚠️ **[verify-warn]** `factions/钛帝国/units/sky-ray-gunship.md` — LLM 合成时数字校验发现原文没有的数字，需人工核对
-- ⚠️ **[verify-warn]** `factions/钛帝国/units/stealth-battlesuits.md` — LLM 合成时数字校验发现原文没有的数字，需人工核对
-- ⚠️ **[verify-warn]** `factions/钛帝国/units/strike-team.md` — LLM 合成时数字校验发现原文没有的数字，需人工核对
-- ⚠️ **[verify-warn]** `factions/钛帝国/units/sun-shark-bomber.md` — LLM 合成时数字校验发现原文没有的数字，需人工核对
-- ⚠️ **[verify-warn]** `factions/钛帝国/units/taunar-supremacy-armour.md` — LLM 合成时数字校验发现原文没有的数字，需人工核对
-- ⚠️ **[verify-warn]** `factions/钛帝国/units/the-twin-lance.md` — LLM 合成时数字校验发现原文没有的数字，需人工核对
-- ℹ️ **[missing-points]** `factions/吞世者/units/chaos-thunderhawk.md` — 单位页缺少 points 字段
-- ℹ️ **[missing-points]** `factions/吞世者/units/defiler.md` — 单位页缺少 points 字段
-- ℹ️ **[missing-points]** `factions/吞世者/units/deredeo-dreadnought.md` — 单位页缺少 points 字段
-- ℹ️ **[missing-points]** `factions/吞世者/units/fellblade.md` — 单位页缺少 points 字段
-- ℹ️ **[missing-points]** `factions/吞世者/units/flesh-hounds.md` — 单位页缺少 points 字段
-- ℹ️ **[missing-points]** `factions/吞世者/units/land-raider-achilles.md` — 单位页缺少 points 字段
-- ℹ️ **[missing-points]** `factions/吞世者/units/sicaran-punisher.md` — 单位页缺少 points 字段
-- ℹ️ **[missing-points]** `factions/钛帝国/units/aunshi.md` — 单位页缺少 points 字段
-- ℹ️ **[missing-points]** `factions/钛帝国/units/aunva.md` — 单位页缺少 points 字段
-- ℹ️ **[missing-points]** `factions/钛帝国/units/ax-1-0-tiger-shark.md` — 单位页缺少 points 字段
-- ℹ️ **[missing-points]** `factions/钛帝国/units/barracuda.md` — 单位页缺少 points 字段
-- ℹ️ **[missing-points]** `factions/钛帝国/units/breacher-team.md` — 单位页缺少 points 字段
-- ℹ️ **[missing-points]** `factions/钛帝国/units/broadside-battlesuits.md` — 单位页缺少 points 字段
-- ℹ️ **[missing-points]** `factions/钛帝国/units/cadre-fireblade.md` — 单位页缺少 points 字段
-- ℹ️ **[missing-points]** `factions/钛帝国/units/commander-farsight.md` — 单位页缺少 points 字段
-- ℹ️ **[missing-points]** `factions/钛帝国/units/commander-in-coldstar-battlesuit.md` — 单位页缺少 points 字段
-- ℹ️ **[missing-points]** `factions/钛帝国/units/commander-in-crisis-battlesuit.md` — 单位页缺少 points 字段
-- ℹ️ **[missing-points]** `factions/钛帝国/units/commander-in-enforcer-battlesuit.md` — 单位页缺少 points 字段
-- ℹ️ **[missing-points]** `factions/钛帝国/units/commander-shadowsun.md` — 单位页缺少 points 字段
-- ℹ️ **[missing-points]** `factions/钛帝国/units/crisis-battlesuits.md` — 单位页缺少 points 字段
-- ℹ️ **[missing-points]** `factions/钛帝国/units/crisis-fireknife-battlesuits.md` — 单位页缺少 points 字段
-- ℹ️ **[missing-points]** `factions/钛帝国/units/crisis-starscythe-battlesuits.md` — 单位页缺少 points 字段
-- ℹ️ **[missing-points]** `factions/钛帝国/units/crisis-sunforge-battlesuits.md` — 单位页缺少 points 字段
-- ℹ️ **[missing-points]** `factions/钛帝国/units/darkstrider.md` — 单位页缺少 points 字段
-- ℹ️ **[missing-points]** `factions/钛帝国/units/devilfish.md` — 单位页缺少 points 字段
-- ℹ️ **[missing-points]** `factions/钛帝国/units/drone-sentry-turret.md` — 单位页缺少 points 字段
-- ℹ️ **[missing-points]** `factions/钛帝国/units/ethereal.md` — 单位页缺少 points 字段
-- ℹ️ **[missing-points]** `factions/钛帝国/units/firesight-team.md` — 单位页缺少 points 字段
-- ℹ️ **[missing-points]** `factions/钛帝国/units/ghostkeel-battlesuit.md` — 单位页缺少 points 字段
-- ℹ️ **[missing-points]** `factions/钛帝国/units/great-knarloc.md` — 单位页缺少 points 字段
-- ℹ️ **[missing-points]** `factions/钛帝国/units/hammerhead-gunship.md` — 单位页缺少 points 字段
-- ℹ️ **[missing-points]** `factions/钛帝国/units/heavy-gun-drones.md` — 单位页缺少 points 字段
-- ℹ️ **[missing-points]** `factions/钛帝国/units/knarloc-riders.md` — 单位页缺少 points 字段
-- ℹ️ **[missing-points]** `factions/钛帝国/units/kroot-carnivores.md` — 单位页缺少 points 字段
-- ℹ️ **[missing-points]** `factions/钛帝国/units/kroot-farstalkers.md` — 单位页缺少 points 字段
-- ℹ️ **[missing-points]** `factions/钛帝国/units/kroot-flesh-shaper.md` — 单位页缺少 points 字段
-- ℹ️ **[missing-points]** `factions/钛帝国/units/kroot-hounds.md` — 单位页缺少 points 字段
-- ℹ️ **[missing-points]** `factions/钛帝国/units/kroot-lone-spear.md` — 单位页缺少 points 字段
-- ℹ️ **[missing-points]** `factions/钛帝国/units/kroot-trail-shaper.md` — 单位页缺少 points 字段
-- ℹ️ **[missing-points]** `factions/钛帝国/units/kroot-war-shaper.md` — 单位页缺少 points 字段
-- ℹ️ **[missing-points]** `factions/钛帝国/units/krootox-rampagers.md` — 单位页缺少 points 字段
-- ℹ️ **[missing-points]** `factions/钛帝国/units/krootox-riders.md` — 单位页缺少 points 字段
-- ℹ️ **[missing-points]** `factions/钛帝国/units/longstrike.md` — 单位页缺少 points 字段
-- ℹ️ **[missing-points]** `factions/钛帝国/units/manta.md` — 单位页缺少 points 字段
-- ℹ️ **[missing-points]** `factions/钛帝国/units/orca-dropship.md` — 单位页缺少 points 字段
-- ℹ️ **[missing-points]** `factions/钛帝国/units/pathfinder-team.md` — 单位页缺少 points 字段
-- ℹ️ **[missing-points]** `factions/钛帝国/units/piranhas.md` — 单位页缺少 points 字段
-- ℹ️ **[missing-points]** `factions/钛帝国/units/razorshark-strike-fighter.md` — 单位页缺少 points 字段
-- ℹ️ **[missing-points]** `factions/钛帝国/units/remora-stealth-drones.md` — 单位页缺少 points 字段
-- ℹ️ **[missing-points]** `factions/钛帝国/units/remote-sensor-tower.md` — 单位页缺少 points 字段
-- ℹ️ **[missing-points]** `factions/钛帝国/units/riptide-battlesuit.md` — 单位页缺少 points 字段
-- ℹ️ **[missing-points]** `factions/钛帝国/units/rvarna-battlesuit.md` — 单位页缺少 points 字段
-- ℹ️ **[missing-points]** `factions/钛帝国/units/shaso-ralai.md` — 单位页缺少 points 字段
-- ℹ️ **[missing-points]** `factions/钛帝国/units/sky-ray-gunship.md` — 单位页缺少 points 字段
-- ℹ️ **[missing-points]** `factions/钛帝国/units/stealth-battlesuits.md` — 单位页缺少 points 字段
-- ℹ️ **[missing-points]** `factions/钛帝国/units/stormsurge.md` — 单位页缺少 points 字段
-- ℹ️ **[missing-points]** `factions/钛帝国/units/strike-team.md` — 单位页缺少 points 字段
-- ℹ️ **[missing-points]** `factions/钛帝国/units/sun-shark-bomber.md` — 单位页缺少 points 字段
-- ℹ️ **[missing-points]** `factions/钛帝国/units/tactical-drones.md` — 单位页缺少 points 字段
-- ℹ️ **[missing-points]** `factions/钛帝国/units/taunar-supremacy-armour.md` — 单位页缺少 points 字段
-- ℹ️ **[missing-points]** `factions/钛帝国/units/tetras.md` — 单位页缺少 points 字段
-- ℹ️ **[missing-points]** `factions/钛帝国/units/the-twin-lance.md` — 单位页缺少 points 字段
-- ℹ️ **[missing-points]** `factions/钛帝国/units/tidewall-droneport.md` — 单位页缺少 points 字段
-- ℹ️ **[missing-points]** `factions/钛帝国/units/tidewall-gunrig.md` — 单位页缺少 points 字段
-- ℹ️ **[missing-points]** `factions/钛帝国/units/tidewall-shieldline.md` — 单位页缺少 points 字段
-- ℹ️ **[missing-points]** `factions/钛帝国/units/tiger-shark.md` — 单位页缺少 points 字段
-- ℹ️ **[missing-points]** `factions/钛帝国/units/tx42-piranha.md` — 单位页缺少 points 字段
-- ℹ️ **[missing-points]** `factions/钛帝国/units/vespid-stingwings.md` — 单位页缺少 points 字段
-- ℹ️ **[missing-points]** `factions/钛帝国/units/xv9-hazard-battlesuits.md` — 单位页缺少 points 字段
-- ℹ️ **[missing-points]** `factions/钛帝国/units/yvahra-battlesuit.md` — 单位页缺少 points 字段
+- ⚠️ **[alias-conflicts]** 名称/别名冲突: 'blue horrors' 被 000004128, 000002583 同时使用
+- ⚠️ **[alias-conflicts]** 名称/别名冲突: 'cerberus' 被 000003627, 000003629, 000001153, 000003628, 000003630 同时使用
+- ⚠️ **[alias-conflicts]** 名称/别名冲突: 'chaos land raider' 被 000001025, 000002634, 000004082, 000001049, 000000962 同时使用
+- ⚠️ **[alias-conflicts]** 名称/别名冲突: 'chaos lord on disc of tzeentch' 被 000003597, 000004039, 000000933 同时使用
+- ⚠️ **[alias-conflicts]** 名称/别名冲突: 'chaos predator annihilator' 被 000002501, 000002637, 000001050, 000002572 同时使用
+- ⚠️ **[alias-conflicts]** 名称/别名冲突: 'chaos predator destructor' 被 000001026, 000002636, 000002461, 000000963 同时使用
+- ⚠️ **[alias-conflicts]** 名称/别名冲突: 'chaos rhino' 被 000001022, 000002640, 000004093, 000001047, 000000956 同时使用
+- ⚠️ **[alias-conflicts]** 名称/别名冲突: 'chaos spawn' 被 000001023, 000002633, 000004090, 000001048, 000000960 同时使用
+- ⚠️ **[alias-conflicts]** 名称/别名冲突: 'chaos thunderhawk' 被 000003591, 000003588, 000003585, 000001321 同时使用
+- ⚠️ **[alias-conflicts]** 名称/别名冲突: 'chaos vindicator' 被 000001027, 000000964 同时使用
+- ⚠️ **[alias-conflicts]** 名称/别名冲突: 'defiler' 被 000001030, 000004207, 000004208, 000004209, 000000969 同时使用
+- ⚠️ **[alias-conflicts]** 名称/别名冲突: 'deredeo dreadnought' 被 000003623, 000003625, 000002269, 000003624, 000003626 同时使用
+- ⚠️ **[alias-conflicts]** 名称/别名冲突: 'falchion' 被 000003687, 000003689, 000001666, 000003688, 000003690 同时使用
+- ⚠️ **[alias-conflicts]** 名称/别名冲突: 'fellblade' 被 000003651, 000003653, 000002704, 000003652, 000003654 同时使用
+- ⚠️ **[alias-conflicts]** 名称/别名冲突: 'fire raptor gunship' 被 000003615, 000003617, 000001609, 000003616, 000003618 同时使用
+- ⚠️ **[alias-conflicts]** 名称/别名冲突: 'flamers' 被 000004125, 000001125 同时使用
+- ⚠️ **[alias-conflicts]** 名称/别名冲突: 'forgefiend' 被 000001028, 000002638, 000000967 同时使用
+- ⚠️ **[alias-conflicts]** 名称/别名冲突: 'helbrute' 被 000001021, 000002632, 000001046, 000000954 同时使用
+- ⚠️ **[alias-conflicts]** 名称/别名冲突: 'heldrake' 被 000001024, 000002641, 000004092, 000000961 同时使用
+- ⚠️ **[alias-conflicts]** 名称/别名冲突: 'hell blade' 被 000003598, 000003601, 000003594, 000001317 同时使用
+- ⚠️ **[alias-conflicts]** 名称/别名冲突: 'hell talon' 被 000003599, 000003602, 000003595, 000001318 同时使用
+- ⚠️ **[alias-conflicts]** 名称/别名冲突: 'kairos fateweaver' 被 000004123, 000001117 同时使用
+- ⚠️ **[alias-conflicts]** 名称/别名冲突: 'kratos' 被 000003631, 000003633, 000001175, 000003632, 000003634 同时使用
+- ⚠️ **[alias-conflicts]** 名称/别名冲突: 'land raider achilles' 被 000003607, 000003609, 000001607, 000003608, 000003610 同时使用
+- ⚠️ **[alias-conflicts]** 名称/别名冲突: 'land raider proteus' 被 000003611, 000003613, 000001608, 000003612, 000003614 同时使用
+- ⚠️ **[alias-conflicts]** 名称/别名冲突: 'leviathan dreadnought' 被 000003647, 000003649, 000000131, 000003648, 000003650 同时使用
+- ⚠️ **[alias-conflicts]** 名称/别名冲突: 'lord of change' 被 000004124, 000001120 同时使用
+- ⚠️ **[alias-conflicts]** 名称/别名冲突: 'mastodon' 被 000003643, 000003645, 000001189, 000003644, 000003646 同时使用
+- ⚠️ **[alias-conflicts]** 名称/别名冲突: 'maulerfiend' 被 000001029, 000002639, 000004091, 000000968 同时使用
+- ⚠️ **[alias-conflicts]** 名称/别名冲突: 'pink horrors' 被 000004127, 000002584 同时使用
+- ⚠️ **[alias-conflicts]** 名称/别名冲突: 'rapier carrier' 被 000003667, 000003669, 000000110, 000003668, 000003670 同时使用
+- ⚠️ **[alias-conflicts]** 名称/别名冲突: 'relic contemptor dreadnought' 被 000003655, 000003657, 000002719, 000003656, 000003658 同时使用
+- ⚠️ **[alias-conflicts]** 名称/别名冲突: 'rubric marines' 被 000001020, 000003583 同时使用
+- ⚠️ **[alias-conflicts]** 名称/别名冲突: 'screamers' 被 000004126, 000001127 同时使用
+- ⚠️ **[alias-conflicts]** 名称/别名冲突: 'sicaran battle tank' 被 000003639, 000003641, 000001185, 000003640, 000003642 同时使用
+- ⚠️ **[alias-conflicts]** 名称/别名冲突: 'sicaran punisher' 被 000003683, 000003685, 000000123, 000003684, 000003686 同时使用
+- ⚠️ **[alias-conflicts]** 名称/别名冲突: 'sicaran venator' 被 000003675, 000003677, 000000092, 000003676, 000003678 同时使用
+- ⚠️ **[alias-conflicts]** 名称/别名冲突: 'sokar-pattern stormbird' 被 000003635, 000003637, 000001179, 000003636, 000003638 同时使用
+- ⚠️ **[alias-conflicts]** 名称/别名冲突: 'sorcerer in terminator armour' 被 000001017, 000004072, 000000939 同时使用
+- ⚠️ **[alias-conflicts]** 名称/别名冲突: 'sorcerer' 被 000001016, 000004085, 000004068, 000000938 同时使用
+- ⚠️ **[alias-conflicts]** 名称/别名冲突: 'spartan' 被 000003619, 000003621, 000002252, 000003620, 000003622 同时使用
+- ⚠️ **[alias-conflicts]** 名称/别名冲突: 'storm eagle gunship' 被 000003671, 000003673, 000000113, 000003672, 000003674 同时使用
+- ⚠️ **[alias-conflicts]** 名称/别名冲突: 'terrax-pattern termite' 被 000003603, 000003605, 000001991, 000001533, 000003604, 000003606 同时使用
+- ⚠️ **[alias-conflicts]** 名称/别名冲突: 'typhon' 被 000003679, 000003681, 000000093, 000003680, 000003682 同时使用
+- ⚠️ **[alias-conflicts]** 名称/别名冲突: 'whirlwind scorpius' 被 000003659, 000003661, 000002728, 000003660, 000003662 同时使用
+- ⚠️ **[alias-conflicts]** 名称/别名冲突: 'xiphon interceptor' 被 000003663, 000003665, 000002729, 000003664, 000003666 同时使用
+- ⚠️ **[alias-conflicts]** 名称/别名冲突: 'blood slaughterer' 被 000003587, 000001293 同时使用
+- ⚠️ **[alias-conflicts]** 名称/别名冲突: 'bloodcrushers' 被 000004107, 000001115 同时使用
+- ⚠️ **[alias-conflicts]** 名称/别名冲突: 'bloodletters' 被 000004106, 000001114 同时使用
+- ⚠️ **[alias-conflicts]** 名称/别名冲突: 'bloodthirster' 被 000004105, 000002582 同时使用
+- ⚠️ **[alias-conflicts]** 名称/别名冲突: '歼灭者型猎食者坦克' 被 000002637, 000002714 同时使用
+- ⚠️ **[alias-conflicts]** 名称/别名冲突: '破坏者型猎食者坦克' 被 000002636, 000002715 同时使用
+- ⚠️ **[alias-conflicts]** 名称/别名冲突: '犀牛装甲车' 被 000002640, 000002723 同时使用
+- ⚠️ **[alias-conflicts]** 名称/别名冲突: 'chaos terminators' 被 000002629, 000004081 同时使用
+- ⚠️ **[alias-conflicts]** 名称/别名冲突: 'flesh hounds' 被 000004108, 000001112 同时使用
+- ⚠️ **[alias-conflicts]** 名称/别名冲突: 'greater brass scorpion' 被 000003589, 000001298 同时使用
+- ⚠️ **[alias-conflicts]** 名称/别名冲突: 'khorne berzerkers' 被 000002627, 000003582 同时使用
+- ⚠️ **[alias-conflicts]** 名称/别名冲突: 'khorne lord of skulls' 被 000002642, 000000970 同时使用
+- ⚠️ **[alias-conflicts]** 名称/别名冲突: 'kytan ravager' 被 000003590, 000001297 同时使用
+- ⚠️ **[alias-conflicts]** 名称/别名冲突: 'master of executions' 被 000002626, 000001584 同时使用
+- ⚠️ **[alias-conflicts]** 名称/别名冲突: 'skarbrand' 被 000004104, 000001105 同时使用
+- ⚠️ **[alias-conflicts]** 名称/别名冲突: 'aegis defence line' 被 000003955, 000002619 同时使用
+- ⚠️ **[alias-conflicts]** 名称/别名冲突: 'arkurian stormhammer' 被 000003994, 000000764 同时使用
+- ⚠️ **[alias-conflicts]** 名称/别名冲突: 'armageddon-pattern medusa' 被 000003995, 000000739 同时使用
+- ⚠️ **[alias-conflicts]** 名称/别名冲突: 'armoured sentinels' 被 000003960, 000000691 同时使用
+- ⚠️ **[alias-conflicts]** 名称/别名冲突: 'artillery team' 被 000003961, 000003896 同时使用
+- ⚠️ **[alias-conflicts]** 名称/别名冲突: 'atlas recovery vehicle' 被 000003996, 000000728 同时使用
+- ⚠️ **[alias-conflicts]** 名称/别名冲突: 'attilan rough riders' 被 000003962, 000002616 同时使用
+- ⚠️ **[alias-conflicts]** 名称/别名冲突: 'baneblade' 被 000003963, 000000702 同时使用
+- ⚠️ **[alias-conflicts]** 名称/别名冲突: 'banehammer' 被 000003964, 000000703 同时使用
+- ⚠️ **[alias-conflicts]** 名称/别名冲突: 'banesword' 被 000003965, 000000704 同时使用
+- ⚠️ **[alias-conflicts]** 名称/别名冲突: 'basilisk' 被 000003966, 000000695 同时使用
+- ⚠️ **[alias-conflicts]** 名称/别名冲突: 'cadian castellan' 被 000003938, 000002607 同时使用
+- ⚠️ **[alias-conflicts]** 名称/别名冲突: 'cadian command squad' 被 000003939, 000002609 同时使用
+- ⚠️ **[alias-conflicts]** 名称/别名冲突: 'cadian heavy weapons squad' 被 000003967, 000000686 同时使用
+- ⚠️ **[alias-conflicts]** 名称/别名冲突: 'cadian shock troops' 被 000003948, 000002612 同时使用
+- ⚠️ **[alias-conflicts]** 名称/别名冲突: 'carnodon' 被 000003997, 000001994 同时使用
+- ⚠️ **[alias-conflicts]** 名称/别名冲突: 'catachan command squad' 被 000003940, 000003891 同时使用
+- ⚠️ **[alias-conflicts]** 名称/别名冲突: 'catachan heavy weapons squad' 被 000003968, 000003894 同时使用
+- ⚠️ **[alias-conflicts]** 名称/别名冲突: 'catachan jungle fighters' 被 000003949, 000002614 同时使用
+- ⚠️ **[alias-conflicts]** 名称/别名冲突: 'centaur light carrier' 被 000003998, 000000731 同时使用
+- ⚠️ **[alias-conflicts]** 名称/别名冲突: 'centaur rsv' 被 000004222, 000004220 同时使用
+- ⚠️ **[alias-conflicts]** 名称/别名冲突: 'chimera' 被 000003951, 000000692 同时使用
+- ⚠️ **[alias-conflicts]** 名称/别名冲突: 'colossus' 被 000003999, 000000740 同时使用
+- ⚠️ **[alias-conflicts]** 名称/别名冲突: 'crassus' 被 000004000, 000000766 同时使用
+- ⚠️ **[alias-conflicts]** 名称/别名冲突: 'cyclops demolition vehicle' 被 000003993, 000000741 同时使用
+- ⚠️ **[alias-conflicts]** 名称/别名冲突: 'death korps grenadier squad' 被 000004001, 000002374 同时使用
+- ⚠️ **[alias-conflicts]** 名称/别名冲突: 'death korps of krieg' 被 000003950, 000002613 同时使用
+- ⚠️ **[alias-conflicts]** 名称/别名冲突: 'death rider commissar' 被 000003945, 000002378 同时使用
+- ⚠️ **[alias-conflicts]** 名称/别名冲突: 'death riders' 被 000003969, 000003898 同时使用
+- ⚠️ **[alias-conflicts]** 名称/别名冲突: 'deathleaper' 被 000003877, 000000479 同时使用
+- ⚠️ **[alias-conflicts]** 名称/别名冲突: 'deathstrike' 被 000003970, 000000699 同时使用
+- ⚠️ **[alias-conflicts]** 名称/别名冲突: 'dominus armoured siege bombard' 被 000004002, 000000767 同时使用
+- ⚠️ **[alias-conflicts]** 名称/别名冲突: 'doomhammer' 被 000003971, 000000705 同时使用
+- ⚠️ **[alias-conflicts]** 名称/别名冲突: 'earthshaker carriage battery' 被 000004003, 000000743 同时使用
+- ⚠️ **[alias-conflicts]** 名称/别名冲突: 'earthshaker platform' 被 000003956, 000002739 同时使用
+- ⚠️ **[alias-conflicts]** 名称/别名冲突: 'elysian drop sentinel' 被 000004004, 000002740 同时使用
+- ⚠️ **[alias-conflicts]** 名称/别名冲突: 'elysian sniper squad' 被 000004005, 000002377 同时使用
+- ⚠️ **[alias-conflicts]** 名称/别名冲突: 'field ordnance battery' 被 000003972, 000003897 同时使用
+- ⚠️ **[alias-conflicts]** 名称/别名冲突: 'gargoyles' 被 000003881, 000000484 同时使用
+- ⚠️ **[alias-conflicts]** 名称/别名冲突: 'gorgon heavy transport' 被 000004006, 000000768 同时使用
+- ⚠️ **[alias-conflicts]** 名称/别名冲突: 'griffon mortar carrier' 被 000004007, 000000744 同时使用
+- ⚠️ **[alias-conflicts]** 名称/别名冲突: 'hades breaching drill' 被 000004008, 000000730 同时使用
+- ⚠️ **[alias-conflicts]** 名称/别名冲突: 'heavy mortar team' 被 000004009, 000000745 同时使用
+- ⚠️ **[alias-conflicts]** 名称/别名冲突: 'heavy quad launcher team' 被 000004010, 000000746 同时使用
+- ⚠️ **[alias-conflicts]** 名称/别名冲突: 'hellhammer' 被 000003973, 000000706 同时使用
+- ⚠️ **[alias-conflicts]** 名称/别名冲突: 'hellhound' 被 000003974, 000000694 同时使用
+- ⚠️ **[alias-conflicts]** 名称/别名冲突: 'hell’s last' 被 000003947, 000003922 同时使用
+- ⚠️ **[alias-conflicts]** 名称/别名冲突: 'hippogriff afv' 被 000004223, 000004219 同时使用
+- ⚠️ **[alias-conflicts]** 名称/别名冲突: 'hydra platform' 被 000003957, 000000747 同时使用
+- ⚠️ **[alias-conflicts]** 名称/别名冲突: 'hydra' 被 000003975, 000000696 同时使用
+- ⚠️ **[alias-conflicts]** 名称/别名冲突: 'hyperadapted raveners' 被 000004118, 000004117 同时使用
+- ⚠️ **[alias-conflicts]** 名称/别名冲突: 'kasrkin' 被 000003976, 000002615 同时使用
+- ⚠️ **[alias-conflicts]** 名称/别名冲突: 'krieg combat engineers' 被 000003977, 000003893 同时使用
+- ⚠️ **[alias-conflicts]** 名称/别名冲突: 'krieg command squad' 被 000003941, 000003889 同时使用
+- ⚠️ **[alias-conflicts]** 名称/别名冲突: 'krieg heavy weapons squad' 被 000003978, 000003895 同时使用
+- ⚠️ **[alias-conflicts]** 名称/别名冲突: 'leman russ battle tank' 被 000003979, 000000700 同时使用
+- ⚠️ **[alias-conflicts]** 名称/别名冲突: 'leman russ commander' 被 000003942, 000000680 同时使用
+- ⚠️ **[alias-conflicts]** 名称/别名冲突: 'leman russ demolisher' 被 000003980, 000000701 同时使用
+- ⚠️ **[alias-conflicts]** 名称/别名冲突: 'leman russ eradicator' 被 000003981, 000002741 同时使用
+- ⚠️ **[alias-conflicts]** 名称/别名冲突: 'leman russ executioner' 被 000003982, 000002742 同时使用
+- ⚠️ **[alias-conflicts]** 名称/别名冲突: 'leman russ exterminator' 被 000003983, 000002743 同时使用
+- ⚠️ **[alias-conflicts]** 名称/别名冲突: 'leman russ punisher' 被 000003984, 000002744 同时使用
+- ⚠️ **[alias-conflicts]** 名称/别名冲突: 'leman russ vanquisher' 被 000003985, 000002745 同时使用
+- ⚠️ **[alias-conflicts]** 名称/别名冲突: 'lictor' 被 000003883, 000000473 同时使用
+- ⚠️ **[alias-conflicts]** 名称/别名冲突: 'macharius omega' 被 000004012, 000000770 同时使用
+- ⚠️ **[alias-conflicts]** 名称/别名冲突: 'macharius vanquisher' 被 000004013, 000000771 同时使用
+- ⚠️ **[alias-conflicts]** 名称/别名冲突: 'macharius vulcan' 被 000004014, 000000772 同时使用
+- ⚠️ **[alias-conflicts]** 名称/别名冲突: 'macharius' 被 000004011, 000000769 同时使用
+- ⚠️ **[alias-conflicts]** 名称/别名冲突: 'malcador annihilator' 被 000004016, 000000751 同时使用
+- ⚠️ **[alias-conflicts]** 名称/别名冲突: 'malcador defender' 被 000004017, 000000752 同时使用
+- ⚠️ **[alias-conflicts]** 名称/别名冲突: 'malcador infernus' 被 000004018, 000000754 同时使用
+- ⚠️ **[alias-conflicts]** 名称/别名冲突: 'malcador' 被 000004015, 000000753 同时使用
+- ⚠️ **[alias-conflicts]** 名称/别名冲突: 'manticore platform' 被 000003958, 000000755 同时使用
+- ⚠️ **[alias-conflicts]** 名称/别名冲突: 'manticore' 被 000003986, 000000698 同时使用
+- ⚠️ **[alias-conflicts]** 名称/别名冲突: 'mawloc' 被 000003884, 000000494 同时使用
+- ⚠️ **[alias-conflicts]** 名称/别名冲突: 'medusa carriage battery' 被 000004019, 000000756 同时使用
+- ⚠️ **[alias-conflicts]** 名称/别名冲突: 'minotaur' 被 000004020, 000000775 同时使用
+- ⚠️ **[alias-conflicts]** 名称/别名冲突: 'mukaali riders' 被 000004021, 000001383 同时使用
+- ⚠️ **[alias-conflicts]** 名称/别名冲突: 'munitorum servitors' 被 000004022, 000001397 同时使用
+- ⚠️ **[alias-conflicts]** 名称/别名冲突: 'neurolictor' 被 000003885, 000002753 同时使用
+- ⚠️ **[alias-conflicts]** 名称/别名冲突: 'parasite of mortrex' 被 000003878, 000002529 同时使用
+- ⚠️ **[alias-conflicts]** 名称/别名冲突: 'praetor' 被 000004023, 000000776 同时使用
+- ⚠️ **[alias-conflicts]** 名称/别名冲突: 'primaris psyker' 被 000003943, 000000889 同时使用
+- ⚠️ **[alias-conflicts]** 名称/别名冲突: 'quartermaster cadre squad' 被 000003946, 000002375 同时使用
+- ⚠️ **[alias-conflicts]** 名称/别名冲突: 'rapier laser destroyer battery' 被 000004024, 000000757 同时使用
+- ⚠️ **[alias-conflicts]** 名称/别名冲突: 'raveners' 被 000003886, 000000482 同时使用
+- ⚠️ **[alias-conflicts]** 名称/别名冲突: 'regimental attachés' 被 000004025, 000002610 同时使用
+- ⚠️ **[alias-conflicts]** 名称/别名冲突: 'rogal dorn battle tank' 被 000003987, 000002617 同时使用
+- ⚠️ **[alias-conflicts]** 名称/别名冲突: 'rogal dorn commander' 被 000003944, 000003892 同时使用
+- ⚠️ **[alias-conflicts]** 名称/别名冲突: 'sabre weapons battery' 被 000003959, 000000758 同时使用
+- ⚠️ **[alias-conflicts]** 名称/别名冲突: 'salamander command vehicle' 被 000004026, 000000729 同时使用
+- ⚠️ **[alias-conflicts]** 名称/别名冲突: 'salamander scout vehicle' 被 000004027, 000000735 同时使用
+- ⚠️ **[alias-conflicts]** 名称/别名冲突: 'scout sentinels' 被 000003988, 000000690 同时使用
+- ⚠️ **[alias-conflicts]** 名称/别名冲突: 'sentinel powerlifter' 被 000004028, 000000759 同时使用
+- ⚠️ **[alias-conflicts]** 名称/别名冲突: 'shadowsword' 被 000003989, 000000707 同时使用
+- ⚠️ **[alias-conflicts]** 名称/别名冲突: 'storm chimera' 被 000003954, 000002379 同时使用
+- ⚠️ **[alias-conflicts]** 名称/别名冲突: 'stormblade' 被 000004029, 000000763 同时使用
+- ⚠️ **[alias-conflicts]** 名称/别名冲突: 'stormlord' 被 000003990, 000000708 同时使用
+- ⚠️ **[alias-conflicts]** 名称/别名冲突: 'stormsword' 被 000003991, 000000709 同时使用
+- ⚠️ **[alias-conflicts]** 名称/别名冲突: 'stygies destroyer tank hunter' 被 000004030, 000000760 同时使用
+- ⚠️ **[alias-conflicts]** 名称/别名冲突: 'tarantula battery' 被 000004031, 000000762 同时使用
+- ⚠️ **[alias-conflicts]** 名称/别名冲突: 'tauros assault vehicle' 被 000004032, 000000736 同时使用
+- ⚠️ **[alias-conflicts]** 名称/别名冲突: 'tauros venator' 被 000004033, 000000737 同时使用
+- ⚠️ **[alias-conflicts]** 名称/别名冲突: 'taurox prime' 被 000003953, 000000721 同时使用
+- ⚠️ **[alias-conflicts]** 名称/别名冲突: 'taurox' 被 000003952, 000000693 同时使用
+- ⚠️ **[alias-conflicts]** 名称/别名冲突: 'the red terror' 被 000004226, 000004225 同时使用
+- ⚠️ **[alias-conflicts]** 名称/别名冲突: 'trojan support vehicle' 被 000004034, 000000733 同时使用
+- ⚠️ **[alias-conflicts]** 名称/别名冲突: 'trygon' 被 000003887, 000000493 同时使用
+- ⚠️ **[alias-conflicts]** 名称/别名冲突: 'tyrannocyte' 被 000003882, 000000489 同时使用
+- ⚠️ **[alias-conflicts]** 名称/别名冲突: 'valdor' 被 000004035, 000000777 同时使用
+- ⚠️ **[alias-conflicts]** 名称/别名冲突: 'von ryan’s leapers' 被 000003888, 000002693 同时使用
+- ⚠️ **[alias-conflicts]** 名称/别名冲突: 'winged hive tyrant' 被 000003879, 000002528 同时使用
+- ⚠️ **[alias-conflicts]** 名称/别名冲突: 'winged tyranid prime' 被 000003880, 000002694 同时使用
+- ⚠️ **[alias-conflicts]** 名称/别名冲突: 'wyvern' 被 000003992, 000000697 同时使用
+- ⚠️ **[alias-conflicts]** 名称/别名冲突: 'corvus blackstar' 被 000003817, 000000358 同时使用
+- ⚠️ **[alias-conflicts]** 名称/别名冲突: 'deathwatch terminator squad' 被 000003822, 000003873 同时使用
+- ⚠️ **[alias-conflicts]** 名称/别名冲突: 'fortis kill team' 被 000003825, 000002780 同时使用
+- ⚠️ **[alias-conflicts]** 名称/别名冲突: 'indomitor kill team' 被 000003826, 000002781 同时使用
+- ⚠️ **[alias-conflicts]** 名称/别名冲突: 'kill team cassius' 被 000003821, 000003875 同时使用
+- ⚠️ **[alias-conflicts]** 名称/别名冲突: 'ministorum priest' 被 000003812, 000001553, 000001394 同时使用
+- ⚠️ **[alias-conflicts]** 名称/别名冲突: 'sanctifiers' 被 000004074, 000004075 同时使用
+- ⚠️ **[alias-conflicts]** 名称/别名冲突: '战斗修女小队' 被 000003818, 000000903 同时使用
+- ⚠️ **[alias-conflicts]** 名称/别名冲突: 'spectrus kill team' 被 000003827, 000002779 同时使用
+- ⚠️ **[alias-conflicts]** 名称/别名冲突: 'watch captain artemis' 被 000003814, 000003872 同时使用
+- ⚠️ **[alias-conflicts]** 名称/别名冲突: 'watch master' 被 000003815, 000003871 同时使用
+- ⚠️ **[alias-conflicts]** 名称/别名冲突: 'skitarii marshal' 被 000003841, 000002478 同时使用
+- ⚠️ **[alias-conflicts]** 名称/别名冲突: 'skitarii rangers' 被 000003842, 000000848 同时使用
+- ⚠️ **[alias-conflicts]** 名称/别名冲突: 'skitarii vanguard' 被 000003843, 000000849 同时使用
+- ⚠️ **[alias-conflicts]** 名称/别名冲突: 'tech-priest dominus' 被 000003839, 000000839 同时使用
+- ⚠️ **[alias-conflicts]** 名称/别名冲突: 'tech-priest manipulus' 被 000003840, 000001580 同时使用
+- ⚠️ **[alias-conflicts]** 名称/别名冲突: 'daemonettes' 被 000004095, 000001142 同时使用
+- ⚠️ **[alias-conflicts]** 名称/别名冲突: 'fiends' 被 000004096, 000001143 同时使用
+- ⚠️ **[alias-conflicts]** 名称/别名冲突: 'keeper of secrets' 被 000004097, 000001137 同时使用
+- ⚠️ **[alias-conflicts]** 名称/别名冲突: 'noise marines' 被 000004088, 000004099 同时使用
+- ⚠️ **[alias-conflicts]** 名称/别名冲突: 'seekers' 被 000004098, 000001145 同时使用
+- ⚠️ **[alias-conflicts]** 名称/别名冲突: 'shalaxi helbane' 被 000004094, 000001648 同时使用
+- ⚠️ **[alias-conflicts]** 名称/别名冲突: 'tech-priest enginseer' 被 000001396, 000000840 同时使用
+- ⚠️ **[alias-conflicts]** 名称/别名冲突: 'gladiator lancer' 被 000002787, 000002705 同时使用
+- ⚠️ **[alias-conflicts]** 名称/别名冲突: 'gladiator reaper' 被 000002789, 000001667 同时使用
+- ⚠️ **[alias-conflicts]** 名称/别名冲突: 'gladiator valiant' 被 000002788, 000001825 同时使用
+- ⚠️ **[alias-conflicts]** 名称/别名冲突: 'impulsor' 被 000002786, 000002568 同时使用
+- ⚠️ **[alias-conflicts]** 名称/别名冲突: 'land raider crusader' 被 000004139, 000000066, 000000392 同时使用
+- ⚠️ **[alias-conflicts]** 名称/别名冲突: 'land raider redeemer' 被 000002173, 000000393 同时使用
+- ⚠️ **[alias-conflicts]** 名称/别名冲突: 'land raider' 被 000000065, 000000391 同时使用
+- ⚠️ **[alias-conflicts]** 名称/别名冲突: 'razorback' 被 000000129, 000000395 同时使用
+- ⚠️ **[alias-conflicts]** 名称/别名冲突: 'repulsor' 被 000002791, 000002721 同时使用
+- ⚠️ **[alias-conflicts]** 名称/别名冲突: 'repulsor executioner' 被 000002790, 000002722 同时使用
+- ⚠️ **[alias-conflicts]** 名称/别名冲突: 'rhino' 被 000002723, 000000396 同时使用
+- ⚠️ **[alias-conflicts]** 名称/别名冲突: 'sternguard veteran squad' 被 000004137, 000002255 同时使用
+- ⚠️ **[alias-conflicts]** 名称/别名冲突: 'stormhawk interceptor' 被 000000084, 000001363 同时使用
+- ⚠️ **[alias-conflicts]** 名称/别名冲突: 'stormraven gunship' 被 000001191, 000000398 同时使用
+- ⚠️ **[alias-conflicts]** 名称/别名冲突: 'stormtalon gunship' 被 000001190, 000001364 同时使用
+- ⚠️ **[alias-conflicts]** 名称/别名冲突: 'terminator squad' 被 000004138, 000001183 同时使用
+- ⚠️ **[alias-conflicts]** 名称/别名冲突: 'venerable dreadnought' 被 000002801, 000000400 同时使用
+- ⚠️ **[alias-conflicts]** 名称/别名冲突: 'servitors' 被 000000847, 000000397 同时使用
+- ⚠️ **[alias-conflicts]** 名称/别名冲突: 'beasts of nurgle' 被 000004115, 000001134 同时使用
+- ⚠️ **[alias-conflicts]** 名称/别名冲突: 'chaos lord on palanquin of nurgle' 被 000003592, 000004041, 000000934 同时使用
+- ⚠️ **[alias-conflicts]** 名称/别名冲突: 'gellerpox infected' 被 000003593, 000004055, 000002592, 000003854 同时使用
+- ⚠️ **[alias-conflicts]** 名称/别名冲突: 'great unclean one' 被 000004112, 000001130 同时使用
+- ⚠️ **[alias-conflicts]** 名称/别名冲突: 'greater blight drone' 被 000003586, 000001294 同时使用
+- ⚠️ **[alias-conflicts]** 名称/别名冲突: 'mutoid vermin' 被 000003596, 000004056, 000002591, 000003855 同时使用
+- ⚠️ **[alias-conflicts]** 名称/别名冲突: 'nurglings' 被 000004116, 000001133 同时使用
+- ⚠️ **[alias-conflicts]** 名称/别名冲突: 'plague drones' 被 000004114, 000001135 同时使用
+- ⚠️ **[alias-conflicts]** 名称/别名冲突: 'plague marines' 被 000001044, 000003584 同时使用
+- ⚠️ **[alias-conflicts]** 名称/别名冲突: 'plaguebearers' 被 000004113, 000001132 同时使用
+- ⚠️ **[alias-conflicts]** 名称/别名冲突: 'rotigus' 被 000004111, 000001465 同时使用
+- ⚠️ **[alias-conflicts]** 名称/别名冲突: 'sorcerer on palanquin of nurgle' 被 000003600, 000004070, 000000942 同时使用
+- ⚠️ **[alias-conflicts]** 名称/别名冲突: 'accursed cultists' 被 000004052, 000002571, 000003851 同时使用
+- ⚠️ **[alias-conflicts]** 名称/别名冲突: 'chaos lord in terminator armour' 被 000004037, 000000930 同时使用
+- ⚠️ **[alias-conflicts]** 名称/别名冲突: 'chaos lord on juggernaut' 被 000004040, 000000932 同时使用
+- ⚠️ **[alias-conflicts]** 名称/别名冲突: 'chaos lord on steed of slaanesh' 被 000004042, 000000935 同时使用
+- ⚠️ **[alias-conflicts]** 名称/别名冲突: 'chaos lord with jump pack' 被 000004038, 000003711 同时使用
+- ⚠️ **[alias-conflicts]** 名称/别名冲突: 'chaos lord' 被 000004036, 000000929 同时使用
+- ⚠️ **[alias-conflicts]** 名称/别名冲突: 'chaos terminator squad' 被 000004043, 000000947 同时使用
+- ⚠️ **[alias-conflicts]** 名称/别名冲突: 'chosen' 被 000004044, 000000952 同时使用
+- ⚠️ **[alias-conflicts]** 名称/别名冲突: 'cultist firebrand' 被 000004045, 000003712, 000003844 同时使用
+- ⚠️ **[alias-conflicts]** 名称/别名冲突: 'cultist mob with firearms' 被 000004051, 000003713, 000003850 同时使用
+- ⚠️ **[alias-conflicts]** 名称/别名冲突: 'cultist mob' 被 000004050, 000000946, 000003849 同时使用
+- ⚠️ **[alias-conflicts]** 名称/别名冲突: 'dark apostle' 被 000004062, 000000936 同时使用
+- ⚠️ **[alias-conflicts]** 名称/别名冲突: 'dark commune' 被 000004046, 000002569, 000003845 同时使用
+- ⚠️ **[alias-conflicts]** 名称/别名冲突: 'fellgor beastmen' 被 000004053, 000001604, 000003852 同时使用
+- ⚠️ **[alias-conflicts]** 名称/别名冲突: 'havocs' 被 000004063, 000000966 同时使用
+- ⚠️ **[alias-conflicts]** 名称/别名冲突: 'karanak' 被 000004102, 000001104 同时使用
+- ⚠️ **[alias-conflicts]** 名称/别名冲突: 'legionaries' 被 000004064, 000002570 同时使用
+- ⚠️ **[alias-conflicts]** 名称/别名冲突: 'master of possession' 被 000004065, 000001581 同时使用
+- ⚠️ **[alias-conflicts]** 名称/别名冲突: 'negavolt cultists' 被 000004057, 000001601, 000003856 同时使用
+- ⚠️ **[alias-conflicts]** 名称/别名冲突: 'possessed' 被 000004066, 000000953 同时使用
+- ⚠️ **[alias-conflicts]** 名称/别名冲突: 'raptors' 被 000004067, 000000958 同时使用
+- ⚠️ **[alias-conflicts]** 名称/别名冲突: 'renegade enforcer' 被 000004048, 000002731, 000003847 同时使用
+- ⚠️ **[alias-conflicts]** 名称/别名冲突: 'renegade heavy weapons squad' 被 000004058, 000002732, 000003857 同时使用
+- ⚠️ **[alias-conflicts]** 名称/别名冲突: 'renegade ogryn beast handler' 被 000004059, 000002733, 000003858 同时使用
+- ⚠️ **[alias-conflicts]** 名称/别名冲突: 'renegade ogryn brutes' 被 000004060, 000002734, 000003859 同时使用
+- ⚠️ **[alias-conflicts]** 名称/别名冲突: 'renegade plague ogryns' 被 000004061, 000002735, 000003860 同时使用
+- ⚠️ **[alias-conflicts]** 名称/别名冲突: 'rogue psyker' 被 000004049, 000001600, 000003848 同时使用
+- ⚠️ **[alias-conflicts]** 名称/别名冲突: 'sorcerer on disc of tzeentch' 被 000004069, 000000941 同时使用
+- ⚠️ **[alias-conflicts]** 名称/别名冲突: 'sorcerer on steed of slaanesh' 被 000004071, 000000943 同时使用
+- ⚠️ **[alias-conflicts]** 名称/别名冲突: 'traitor enforcer' 被 000004047, 000002589, 000003846 同时使用
+- ⚠️ **[alias-conflicts]** 名称/别名冲突: 'traitor guardsmen squad' 被 000004054, 000002590, 000003853 同时使用
+- ⚠️ **[alias-conflicts]** 名称/别名冲突: 'warp talons' 被 000004073, 000000959 同时使用
+- ⚠️ **[alias-conflicts]** 名称/别名冲突: 'corsair cloud dancer band' 被 000000629, 000004170 同时使用
+- ⚠️ **[alias-conflicts]** 名称/别名冲突: 'corsair reaver band' 被 000000632, 000004171 同时使用
+- ⚠️ **[alias-conflicts]** 名称/别名冲突: 'corsair skyreaver band' 被 000000633, 000004172 同时使用
+- ⚠️ **[alias-conflicts]** 名称/别名冲突: 'corsair skyreavers' 被 000004196, 000004199 同时使用
+- ⚠️ **[alias-conflicts]** 名称/别名冲突: 'corsair voidreavers' 被 000002531, 000004168 同时使用
+- ⚠️ **[alias-conflicts]** 名称/别名冲突: 'corsair voidscarred' 被 000002532, 000004169 同时使用
+- ⚠️ **[alias-conflicts]** 名称/别名冲突: 'death jester' 被 000002537, 000004158 同时使用
+- ⚠️ **[alias-conflicts]** 名称/别名冲突: 'kharseth' 被 000004194, 000004197 同时使用
+- ⚠️ **[alias-conflicts]** 名称/别名冲突: 'prince yriel' 被 000004193, 000004198 同时使用
+- ⚠️ **[alias-conflicts]** 名称/别名冲突: 'shadowseer' 被 000002535, 000004159 同时使用
+- ⚠️ **[alias-conflicts]** 名称/别名冲突: 'skyweavers' 被 000002539, 000004163 同时使用
+- ⚠️ **[alias-conflicts]** 名称/别名冲突: 'solitaire' 被 000002538, 000004160 同时使用
+- ⚠️ **[alias-conflicts]** 名称/别名冲突: 'starfangs' 被 000004195, 000004200 同时使用
+- ⚠️ **[alias-conflicts]** 名称/别名冲突: 'starweaver' 被 000002541, 000004162 同时使用
+- ⚠️ **[alias-conflicts]** 名称/别名冲突: 'troupe master' 被 000002534, 000004161 同时使用
+- ⚠️ **[alias-conflicts]** 名称/别名冲突: 'troupe' 被 000002536, 000004164 同时使用
+- ⚠️ **[alias-conflicts]** 名称/别名冲突: 'voidweaver' 被 000002540, 000004165 同时使用
+- ℹ️ **[missing-points]** `factions/帝国骑士/units/sir-hekhtur.md` — 单位页缺少 points 字段
+- ℹ️ **[missing-points]** `factions/无阵营工事/units/castellum-stronghold.md` — 单位页缺少 points 字段
+- ℹ️ **[missing-points]** `factions/无阵营工事/units/imperial-fortress-walls.md` — 单位页缺少 points 字段
+- ℹ️ **[missing-points]** `factions/星际战士/units/example-wargear.md` — 单位页缺少 points 字段

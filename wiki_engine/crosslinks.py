@@ -110,6 +110,26 @@ _CORE_TERM_EXACT_ALIASES: Dict[str, str] = {
     "为了上上善道": "for-the-greater-good", "为了上善之道": "for-the-greater-good",
     "为了更伟大的上好": "for-the-greater-good", "观察员": "for-the-greater-good",
     "标记光": "markerlight",
+    # 通用类别关键词（单位类型）→ core-rules 术语页（中英双形，兼容中文页与英文兜底页）
+    "步兵": "infantry", "Infantry": "infantry", "INFANTRY": "infantry",
+    "人物": "character", "Character": "character", "CHARACTER": "character",
+    "手雷": "grenades", "Grenades": "grenades", "GRENADES": "grenades",
+    "运输工具": "transport", "运输载具": "transport", "Transport": "transport",
+    "TRANSPORT": "transport",
+    "专属运输": "dedicated-transport", "Dedicated Transport": "dedicated-transport",
+    "骑乘": "mounted", "Mounted": "mounted", "MOUNTED": "mounted",
+    "史诗英雄": "epic-hero", "Epic Hero": "epic-hero", "EPIC HERO": "epic-hero",
+    "步行者": "walker", "Walker": "walker", "WALKER": "walker",
+    "泰坦级": "titanic", "Titanic": "titanic", "TITANIC": "titanic",
+    "飞行器": "aircraft", "Aircraft": "aircraft", "AIRCRAFT": "aircraft",
+    "灵能者": "psyker", "Psyker": "psyker", "PSYKER": "psyker",
+    "战线": "battleline", "Battleline": "battleline", "BATTLELINE": "battleline",
+    "要塞": "fortification", "Fortification": "fortification",
+    "FORTIFICATION": "fortification",
+    "野兽": "beast", "Beast": "beast", "BEAST": "beast",
+    "蜂群": "swarm", "Swarm": "swarm", "SWARM": "swarm",
+    "高耸": "towering", "Towering": "towering", "TOWERING": "towering",
+    "烟雾": "smoke", "Smoke": "smoke", "SMOKE": "smoke",
 }
 
 # 数值/关键词参数化技能（如"速射1""连击2""反载具3+""斥候7〞"）：
@@ -302,22 +322,23 @@ def inject_wikilinks(
     linked: Set[str] = set()
     modified = False
 
+    def _link_spans(text: str):
+        # 已有 [[...]] 的字符区间——name 落在其中（尤其是路径里）不得再注入，
+        # 否则会把链接嵌套进另一条链接的路径（如 基因窃取者 落在
+        # factions/基因窃取者教派/units/lictor.md 路径里 → 断链的嵌套 wikilink）
+        return [(m.start(), m.end()) for m in re.finditer(r"\[\[[^\]]*\]\]", text)]
+
     for name, path in candidates:
         if name in linked or len(name) < 2:
             continue
-        # 用正则查找 name 在正文中的第一次出现（不在已有 [[...]] 内）
+        # 用正则查找 name 首个「不在任何已有 [[...]] 区间内」的出现处。
         # 不使用 \w 边界（Python 3 中 \w 匹配 CJK 字符，会导致中文匹配失败）
-        pattern = re.compile(
-            r"({})".format(re.escape(name)),
-        )
-        match = pattern.search(body)
+        pattern = re.compile(re.escape(name))
+        spans = _link_spans(body)
+        match = next((m for m in pattern.finditer(body)
+                      if not any(s <= m.start() < e for s, e in spans)), None)
         if match:
-            start, end = match.start(1), match.end(1)
-            # 检查是否已在 wikilink 内（前后 3 字符内有 [[ 或 ]]）
-            before = body[max(0, start - 3):start]
-            after = body[end:end + 3]
-            if "[[" in before or "]]" in after:
-                continue
+            start, end = match.start(), match.end()
             # 注入链接
             link = "[[{}|{}]]".format(path, name)
             body = body[:start] + link + body[end:]
@@ -327,6 +348,22 @@ def inject_wikilinks(
     if modified:
         return WikiPage(fm=page.fm, body=body)
     return page
+
+
+def escape_table_pipes(body: str) -> str:
+    """表格行内 [[路径|别名]] 的别名竖线转义成 \\|，避免与表格列分隔符 | 冲突。
+
+    canonicalize 把裸 [[速射2]] 落成 [[core-rules/rapid-fire.md|速射2]] 后，若该链接
+    在表格单元格里，未转义的 | 会被 Markdown 表格解析器当成列分隔符而断列。幂等。"""
+    def esc_link(m):
+        inner = m.group(1)
+        return m.group(0) if "\\|" in inner else "[[" + inner.replace("|", "\\|") + "]]"
+    out = []
+    for ln in body.split("\n"):
+        if re.match(r"\s*\|", ln):
+            ln = re.sub(r"\[\[([^\]]+)\]\]", esc_link, ln)
+        out.append(ln)
+    return "\n".join(out)
 
 
 def inject_all(
@@ -372,6 +409,9 @@ def inject_all(
         rel = str(md_file.relative_to(pages_dir)).replace("\\", "/")
         result = inject_wikilinks(parsed, dict(targets), term_aliases,
                                   self_path=rel)
+        escaped_body = escape_table_pipes(result.body)
+        if escaped_body != result.body:
+            result = WikiPage(fm=result.fm, body=escaped_body)
         new_text = result.to_markdown()
         if new_text != text:
             md_file.write_text(new_text, encoding="utf-8")

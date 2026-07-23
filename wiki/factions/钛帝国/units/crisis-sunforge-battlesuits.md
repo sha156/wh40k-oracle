@@ -4,58 +4,44 @@ name_zh: 危机日铸战斗服小队
 name_en: Crisis Sunforge Battlesuits
 faction: 钛帝国
 type: unit
+points:
+  3 models: 125
 tags:
 - unit
 - unit/钛帝国
 - 钛帝国
+version:
+  points: MFM 2026-07-23 14:17
+  source: official-db
 sources:
-- book: 钛帝国十版CODEX-20251112
-  pages:
-  - 26
-  - 27
-raw:
-- data_refined\钛帝国十版CODEX-20251112\page_026.md
-- data_refined\钛帝国十版CODEX-20251112\page_027.md
+- book: 官方结构库 db/wh40k.sqlite（Wahapedia 11版镜像 + MFM 官方点数）
+updated: '2026-07-23'
 ---
 
-## (XV8)危机日铸战斗服小队 CRISIS SUNFORGE BATTLESUIT TEAM
-
-### 属性表
+## 属性表
 | 模型 | M | T | SV | W | LD | OC |
-|------|---|---|----|---|---|----|
-| 危机日铸夏司‘瓦 / 危机日铸夏司‘钨 | 10" | 5 | 3+ | 4 | 7+ | 2 |
+|---|---|---|---|---|---|---|
+| (XV8)危机日铸战斗服 | 10" | 5 | 3+ | 4 | 7+ | 2 |
 
-### 远程武器
+### 特殊保护
+- 4+
+
+## 射击武器
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
-|------|------|---|----|---|----|---|------|
-| 融合炮 | 12" | 1 | 4+ | 9 | -4 | D6 | [[core-rules/melta.md|热熔2]] |
-| 并联脉冲卡宾（枪蜂） | 20" | 2 | 5+ | 5 | 0 | 1 | [[core-rules/assault.md|突击]]，[[core-rules/twin-linked.md|双联]] |
+|---|---|---|---|---|---|---|---|
+| 融合炮 | 12" | 1 | 4+ | 9 | -4 | D6 | [[core-rules/melta.md\|热熔2]] |
 
-### 近战武器
+## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |
-|------|------|---|----|---|----|---|------|
-| 战斗服铁拳 | 近战 | 3 | 5+ | 5 | 0 | 1 | - |
+|---|---|---|---|---|---|---|---|
+| 战斗服铁拳 | 近战 | 3 | 5+ | 5 | 0 | 1 | — |
 
-### 技能
-- **核心：深入打击**：在宣布战斗编队步骤中，如果单位中的每个模型都拥有此技能，那么您可以将单位部署在援军中。若这么做，那么在一个己方移动阶段的增援步骤中，您可以将该单位部署在战场上位于所有敌方模型水平距离9"外的任意位置。
-- **阵营：为了上上善道**
-- **普通技能：日铸**：本单位中的模型射击[[core-rules/monster.md|巨兽]]或[[core-rules/vehicle.md|载具]]单位时可重投造伤骰与破坏力骰。
-- **普通技能：标记蜂**：装备者获得[[core-rules/markerlight.md|标记光]]关键词同时可以被选择成为[[core-rules/for-the-greater-good.md|观察员]]，即使装备者本回合进行过[[core-rules/advance.md|加速移动]]。
-- **普通技能：盾蜂**：装备者的W面板值+1。
-- **普通技能：枪蜂**：装备者视为额外装备1门并联脉冲卡宾。
-- **特殊保护**：4+
+## 技能
+- **Sunforge**：Each time a model in this unit makes a ranged attack that targets a <span class="kwb">MONSTER</span> or <span class="kwb">VEHICLE</span> unit, you can re-roll the Wound roll and you can re-roll the Damage roll.
 
-### 单位构成
-- **1个危机日铸夏司‘瓦（140分）**
-- **2个危机日铸夏司‘钨**
-- 每个模型装备着：2把融合炮；战斗服铁拳
+## 单位构成
+- **3个模型** — 125 分
 
-**装备选项**：
-- 任意模型可额外装备下列至多两件，但不可重复选择：
-  - 1个枪蜂
-  - 1个标记蜂
-  - 1个盾蜂
-
-### 关键词
-- 阵营关键词：钛帝国
-- 普通关键词：载具，机甲，飞行，战斗服，危机，日铸
+## 关键词
+- **阵营关键词**：T’au Empire
+- **普通关键词**：[[core-rules/walker.md|Walker]]，Vehicle，Crisis，Sunforge，Battlesuit，Fly

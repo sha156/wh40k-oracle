@@ -4,57 +4,49 @@ name_zh: 遥击
 name_en: Longstrike
 faction: 钛帝国
 type: unit
+points:
+  1 model: 140
 tags:
 - unit
 - unit/钛帝国
 - 钛帝国
+version:
+  source: official-db
 sources:
-- book: 钛帝国十版CODEX-20251112
-  pages:
-  - 61
-raw:
-- data_refined\钛帝国十版CODEX-20251112\page_061.md
+- book: 官方结构库 db/wh40k.sqlite（Wahapedia 11版镜像 + MFM 官方点数）
+updated: '2026-07-23'
 ---
 
 ## 属性表
 | 模型 | M | T | SV | W | LD | OC |
 |---|---|---|---|---|---|---|
-| 遥击 | 10” | 10 | 3+ | 14 | 7+ | 3 |
+| Longstrike | 10" | 10 | 3+ | 14 | 7+ | 3 |
 
-## 远程武器
+## 射击武器
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| 挂载爆裂速射炮 | 18” | 4 | 4+ | 6 | -1 | 1 | - |
-| 离子加农 — 标准 | 60” | D6+3 | 3+ | 7 | -1 | 2 | [爆炸] |
-| 离子加农 — 过载 | 60” | D6+3 | 3+ | 8 | -2 | 3 | [爆炸，危险] |
-| 磁轨炮 | 72” | 1 | 3+ | 20 | -5 | D6+6 | [毁灭伤害，重型] |
-| 寻觅者导弹 | 48” | 1 | 4+ | 14 | -3 | D6+1 | [一次性] |
-| 并联脉冲卡宾 | 20” | 2 | 4+ | 5 | 0 | 1 | [突击，双联] |
-| 智能导弹系统 | 30” | 3 | 4+ | 5 | 0 | 1 | [曲射] |
+| Accelerator burst cannon | 18" | 4 | 4+ | 6 | -1 | 1 | — |
+| Ion cannon – standard | 60" | D6+3 | 3+ | 7 | -1 | 2 | blast |
+| Ion cannon – overcharge | 60" | D6+3 | 3+ | 8 | -2 | 3 | blast，hazardous |
+| Railgun | 72" | 1 | 3+ | 20 | -5 | D6+6 | devastating wounds，heavy |
+| Seeker missile | 48" | 1 | 4+ | 14 | -3 | D6+1 | one shot |
+| Twin pulse carbine | 20" | 2 | 4+ | 5 | 0 | 1 | assault，twin-linked |
+| Smart missile system | 30" | 3 | 4+ | 5 | 0 | 1 | indirect fire |
 
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| 装甲外壳 | 近战 | 3 | 5+ | 6 | 0 | 1 | - |
+| Armoured hull | 近战 | 3 | 5+ | 6 | 0 | 1 | — |
 
 ## 技能
-- **致命破灭D3（核心）**：当该模型被摧毁时，投一颗D6。若结果为6，该模型6"内的每一个单位受到D3点[[core-rules/mortal-wounds.md|致命伤]]。
-- **为了上上善道（阵营）**
-- **装甲猎手**：本模型攻击巨兽或载具时命中骰结果+1。
-- **锁定阵列**：本模型每次选择进行射击时，你可以重投1颗命中骰或者重投1颗造伤骰。
-- **XV02驾驶员战斗服**：你的[[core-rules/command-phase.md|指挥阶段]]中，你可以选择1个12寸内的友方[[factions/钛帝国/units/hammerhead-gunship.md|锤头鲨炮艇]]单位，直到你的下个[[core-rules/command-phase.md|指挥阶段]]，那个单位的射击武器获得[[core-rules/lethal-hits.md|致命一击]]。
-- **受损：剩余1-5W时**：当本模型剩余1-5W时，每次攻击时命中骰结果-1。
+- **Armour [[factions/星际战士/units/hunter.md|Hunter]]**：Each time this model makes an attack that targets a <span class="kwb">MONSTER</span> or <span class="kwb">VEHICLE</span>, add 1 to the Hit roll.
+- **Targeting Array**：Each time this model is selected to shoot, you can re-roll one Hit roll or you can re-roll one Wound roll when resolving its attacks.
+- **XV02 Pilot Battlesuit**：In your Command phase, you can select one friendly [[factions/钛帝国/units/hammerhead-gunship.md|Hammerhead Gunship]] unit within 12". Until the start of your next Command phase, ranged weapons equipped by models in that unit have the [LETHAL HITS] ability.
+- **One Shot**：The bearer can only shoot with this weapon once per battle.
 
 ## 单位构成
-- **1台遥击 — 史诗英雄(140分)**
-  本模型装备着：1门磁轨炮；2门并联脉冲卡宾；装甲外壳。
-- **装备选项**
-  - 本模型的磁轨炮可换为1门离子加农。
-  - 本模型的2门并联脉冲卡宾可换为下列之一：
-    - 2门挂载爆裂速射炮
-    - 2门智能导弹系统
-  - 本模型可额外携带至多2枚寻觅者导弹。
+- **1个模型** — 140 分
 
 ## 关键词
-- 阵营关键词：钛帝国
-- 普通关键词：载具，飞行，人物，史诗英雄，遥击
+- **阵营关键词**：T’au Empire
+- **普通关键词**：Vehicle，Fly，[[core-rules/character.md|Character]]，Longstrike，[[core-rules/epic-hero.md|Epic Hero]]

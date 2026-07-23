@@ -1,68 +1,54 @@
 ---
 id: '000000457'
+name_zh: 蝠鲼
 name_en: Manta
 faction: 钛帝国
 type: unit
+points:
+  1 model: 2100
 tags:
 - unit
 - unit/钛帝国
 - 钛帝国
+version:
+  source: official-db
 sources:
-- book: Faction Pack Tau Empire
-  pages:
-  - 17
-  - 18
-raw:
-- data_refined\Faction Pack Tau Empire\page_017.md
-- data_refined\Faction Pack Tau Empire\page_018.md
-verify_warn: true
+- book: 官方结构库 db/wh40k.sqlite（Wahapedia 11版镜像 + MFM 官方点数）
+updated: '2026-07-23'
 ---
 
 ## 属性表
 | 模型 | M | T | SV | W | LD | OC |
 |---|---|---|---|---|---|---|
-| 1 Manta | 40" | 14 | 2+ / 5+ | 60 | 7+ | - |
+| 蝠鲼 | 40" | 14 | 2+ | 60 | 7+ | 0 |
 
-## 远程武器
+### 特殊保护
+- 5+
+
+## 射击武器
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| 重型磁轨炮 | 120" | 1 | 4+ | 26 | -5 | 12 | [[core-rules/devastating-wounds.md|毁灭创伤]] |
-| 离子炮 – 标准 | 60" | D6+3 | 4+ | 7 | -1 | 2 | [[core-rules/blast.md|爆炸]] |
-| 离子炮 – 过载 | 60" | D6+3 | 4+ | 8 | -2 | 3 | [[core-rules/blast.md|爆炸]], [[core-rules/hazardous.md|危险]] |
-| 长管爆裂炮阵列 | 24" | 32 | 4+ | 6 | -1 | 1 |
-| 导弹吊舱 | 30" | 2 | 4+ | 7 | -1 | 2 |
-| 寻的导弹 | 48" | 1 | 4+ | 14 | -3 | D6+1 | [[core-rules/one-shot.md|单次射击]] |
-
-- 在为该武器选择目标前，选择它的配置之一来进行攻击。
-- [[core-rules/one-shot.md|单次射击]]：持有者每场战斗只能使用此武器射击一次。
+| 重型磁轨加农 | 120" | 1 | 4+ | 26 | -5 | 12 | [[core-rules/devastating-wounds.md\|毁灭伤害]] |
+| 离子加农 — 标准 | 60" | D6+3 | 4+ | 7 | -1 | 2 | [[core-rules/blast.md\|爆炸]] |
+| 离子加农 — 过载 | 60" | D6+3 | 4+ | 8 | -2 | 3 | [[core-rules/blast.md\|爆炸]]，[[core-rules/hazardous.md\|危险]] |
+| 长管爆裂速射炮阵列 | 24" | 32 | 4+ | 6 | -1 | 1 | — |
+| 导弹仓 | 30" | 2 | 4+ | 7 | -1 | 2 | — |
+| [[factions/帝皇之子/units/seekers.md\|寻觅者]]导弹 | 48" | 1 | 4+ | 14 | -3 | D6+1 | [[core-rules/one-shot.md\|一次性]] |
 
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| 装甲外壳 | 近战 | 8 | 5+ | 6 | 0 | 1 |
+| 装甲外壳 | 近战 | 8 | 5+ | 6 | 0 | 1 | — |
 
 ## 技能
-- **核心技能**：
-  - **[[core-rules/deadly-demise.md|致命毁灭]] 3D6**：当此模型被摧毁时，掷3个D6，对范围内的单位造成等量致命伤。
-  - **[[core-rules/hover.md|悬浮]]**：此模型具有悬浮能力。
-- **阵营技能**：
-  - **[[core-rules/for-the-greater-good.md|为了更伟大的上好]]**：适用军队规则。
-- **专属技能**：
-  - **好斗部署**：在你的[[core-rules/shooting-phase.md|射击阶段]]，此模型射击后，选择一个被这些攻击中一次或多次命中的敌方单位。直到该阶段结束，每当一个本回合从此运输工具上离舰的友方模型对该敌方单位进行攻击时，你可以重掷[[core-rules/wound-roll.md|造伤骰]]。
-  - **空军巨像**：每当你以[[core-rules/stratagem.md|计谋]]指定此模型为目标时，你必须支付该计谋所述CP消耗的三倍来这样做。
-  - **受损：剩余1-20点Wounds**：当此模型的剩余Wounds为1-20点时，每次此模型进行攻击时，[[core-rules/hit-roll.md|命中骰]]的结果减1。
+- **阵营：为了上上善道**
+- **火线投送**：你的射击阶段，本模型射击后，选择一个被本模型命中过的敌方单位。直到本阶段结束前，本回合从本运输模型脱离的单位攻击那个敌方单位时可重投造伤骰。
+- **气氏巨构**：如对本模型使用战略技能，需支付3倍原本该战略技能的CP值。
+- **受损：剩余1-20W时 **：当本模型剩余1-20W时，每次攻击时命中骰结果-1
 
 ## 单位构成
-- **装备选项**：无
-- **单位组成**：1 辆 Manta
-- **初始装备**：2门重型磁轨炮; 6门离子炮; 2套长管爆裂炮阵列; 2具导弹吊舱; 10枚寻的导弹; 装甲外壳
-
-## 运输能力
-此模型的运输容量合计为以下所有：
-- 200 个 **帝国卫** **步兵**或**战术无人机** 模型
-- 4 辆 **[[factions/钛帝国/units/devilfish.md|魔鬼鱼]]**、**天光导弹艇**或**锤头鲨** 模型
-- 8 个Wounds属性为9或更低的**战斗服**模型
+- **1个模型** — 2100 分
 
 ## 关键词
-- **阵营关键词**：帝国卫
-- **普通关键词**：载具、飞行器、飞行、构造体、泰坦、运输、标记光、Manta
+- **阵营关键词**：T’au Empire
+- **普通关键词**：Fly，[[core-rules/titanic.md|Titanic]]，[[core-rules/transport.md|Transport]]，Manta，Markerlight，[[core-rules/aircraft.md|Aircraft]]，Vehicle

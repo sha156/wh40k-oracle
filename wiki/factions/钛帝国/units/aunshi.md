@@ -4,22 +4,23 @@ name_zh: 安’史
 name_en: Aun’shi
 faction: 钛帝国
 type: unit
+points:
+  1 model: 50
 tags:
 - unit
 - unit/钛帝国
 - 钛帝国
+version:
+  source: official-db
 sources:
-- book: 钛帝国十版CODEX-20251112
-  pages:
-  - 60
-raw:
-- data_refined\钛帝国十版CODEX-20251112\page_060.md
+- book: 官方结构库 db/wh40k.sqlite（Wahapedia 11版镜像 + MFM 官方点数）
+updated: '2026-07-23'
 ---
 
 ## 属性表
 | 模型 | M | T | SV | W | LD | OC |
 |---|---|---|---|---|---|---|
-| 安’史 | 6” | 3 | 6+ | 3 | 7+ | 1 |
+| Aun’shi | 6" | 3 | 6+ | 3 | 7+ | 1 |
 
 ### 特殊保护
 - 5+
@@ -27,26 +28,15 @@ raw:
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| 忠毅之刃 | 近战 | 6 | 3+ | 5 | -1 | 2 | [[core-rules/sustained-hits.md|连击1]] |
+| Fidelity | 近战 | 6 | 3+ | 5 | -1 | 2 | [[core-rules/sustained-hits.md\|sustained hits 1]] |
 
 ## 技能
-- **核心：领袖**
-- **奋起反击**：当本模型领导一个单位时，单位中的模型OC+1。
-- **武学宗师**：每次本模型将要近战时，选择下列能力中的一个，这次攻击获得对应能力：
-  - 拨刺：忠毅之刃获得[[core-rules/precision.md|精准]]。
-  - 撩劈：忠毅之刃获得[[core-rules/devastating-wounds.md|毁灭伤害]]。
-  - 舞花：忠毅之刃的[[core-rules/sustained-hits.md|连击1]]变成[[core-rules/sustained-hits.md|连击2]]。
+- **Inspirational Defiance**：While this model is leading a unit, add 1 to the Objective Control characteristic of models in that unit.
+- **Martial Warrior**：Each time this model is selected to fight, select one of the following abilities to be active while resolving those attacks: <br><ul><li><b>Direct Grace:</b> Fidelity has the [PRECISION] ability. </li><li><b>Forceful Strike:</b> Fidelity has the [DEVASTATING WOUNDS] ability. </li><li><b>Whirling Stance:</b> Fidelity has the [SUSTAINED HITS 2] ability instead of [SUSTAINED HITS 1].</li></ul>
 
 ## 单位构成
-- **1个安’史** — 史诗英雄(50分)
-- **装备**：忠毅之刃
-- **装备选项**：无
-- **领袖**：本模型可与下列单位合并：
-  - [[factions/钛帝国/units/strike-team.md|打击小队]]
-  - [[factions/钛帝国/units/breacher-team.md|破袭小队]]
-  - 克鲁特食肉者
-  - [[factions/钛帝国/units/kroot-farstalkers.md|克鲁特远猎者小队]]
+- **1个模型** — 50 分
 
 ## 关键词
-- **阵营关键词**：钛帝国
-- **普通关键词**：步兵，人物，史诗英雄，[[factions/钛帝国/units/ethereal.md|以太长老]]，安’史
+- **阵营关键词**：T’au Empire
+- **普通关键词**：Aun’Shi，[[core-rules/infantry.md|Infantry]]，[[core-rules/character.md|Character]]，[[core-rules/epic-hero.md|Epic Hero]]，[[factions/钛帝国/units/ethereal.md|Ethereal]]

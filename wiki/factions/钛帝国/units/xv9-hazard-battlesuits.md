@@ -4,69 +4,47 @@ name_zh: XV9灾害战斗服小队
 name_en: Xv9 Hazard Battlesuits
 faction: 钛帝国
 type: unit
+points:
+  1 model: 55
+  2 models: 110
 tags:
 - unit
 - unit/钛帝国
 - 钛帝国
+version:
+  source: official-db
 sources:
-- book: 钛帝国十版CODEX-20251112
-  pages:
-  - 65
-  - 66
-raw:
-- data_refined\钛帝国十版CODEX-20251112\page_065.md
-- data_refined\钛帝国十版CODEX-20251112\page_066.md
+- book: 官方结构库 db/wh40k.sqlite（Wahapedia 11版镜像 + MFM 官方点数）
+updated: '2026-07-23'
 ---
 
 ## 属性表
 | 模型 | M | T | SV | W | LD | OC |
-|------|---|---|----|---|----|----|
-| XV9灾害战斗服 | 8" | 6 | 3+ | 4 | 7+ | 2 |
+|---|---|---|---|---|---|---|
+| Xv9 Hazard Battlesuits | 8" | 6 | 3+ | 4 | 7+ | 2 |
 
-## 远程武器
+## 射击武器
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
-|------|------|---|----|---|---|---|------|
-| 融合喷射炮 | 12" | 1 | 4+ | 9 | -4 | D6 | [热熔4] |
-| 相控离子枪 | 30" | 4 | 4+ | 6 | -1 | 1 | - |
-| 并联灾害爆裂速射炮 | 24" | 4 | 4+ | 5 | 0 | 1 | [双联] |
-| 并联脉冲卡宾 (枪蜂) | 20" | 2 | 5+ | 5 | 0 | 1 | [突击，双联] |
+|---|---|---|---|---|---|---|---|
+| Fusion cascade | 12" | 1 | 4+ | 9 | -4 | D6 | [[core-rules/melta.md\|melta 4]] |
+| Phased ion gun | 30" | 4 | 4+ | 6 | -1 | 1 | — |
+| Twin hazard burst cannon | 24" | 4 | 4+ | 5 | 0 | 1 | twin-linked |
 
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |
-|------|------|---|----|---|---|---|------|
-| 战斗服铁拳 | 近战 | 3 | 5+ | 5 | 0 | 1 | - |
+|---|---|---|---|---|---|---|---|
+| Battlesuit fists | 近战 | 3 | 5+ | 5 | 0 | 1 | — |
 
 ## 技能
-### 核心技能
-- **深入打击**：在宣布战斗编队步骤中，若单位中每个模型都拥有此技能，则可以将该单位部署在援军中。若如此做，在一个己方移动阶段的增援步骤中，你可以将该单位部署在战场上位于所有敌方模型水平距离9"外的任意位置。
-
-### 阵营技能
-- **为了上上善道**
-
-### 其他技能
-- **光学折射**：你的射击阶段，本单位射击后，选择一个被本单位命中过的敌方步兵单位。直到下一个敌方回合结束前，那个敌方单位处于晕眩状态。晕眩单位M值-2且加速移动骰和冲锋骰结果-2。
-- **战斗服支援系统**：装备者所在单位撤退的当回合可以射击，但是只有携带着本装备的模型可以射击。
-- **护盾发生器**：装备者拥有4+特殊保护。
-- **武器支援系统**：装备者射击时可忽略部分或全部命中骰修正。
-- **标记蜂**：装备者获得标记光关键词，同时可以被选择成为观察员，即使装备者本回合进行过加速移动。
-- **盾蜂**：装备者的W面板值+1。
-- **枪蜂**：装备者视为额外装备1门并联脉冲卡宾（见远程武器表）。
+- **Battlesuit Support System**：The bearer’s unit is eligible to shoot in a turn in which it Fell Back, but when doing so only models equipped with this wargear can make ranged attacks.
+- **Shield Generator**：The bearer has a 4+ invulnerable save.
+- **Weapon Support System**：Each time the bearer makes a ranged attack, you can ignore any or all modifiers to the Hit roll.
+- **Photon Casters**：In your Shooting phase, after this unit has shot, if an enemy <span class="kwb">INFANTRY</span> unit was hit by one or more of those attacks, until the end of your opponent’s next turn, that enemy unit is stunned. While a unit is stunned, subtract 2 from that unit’s Move characteristic, and subtract 2 from Advance and Charge rolls made for that unit.
 
 ## 单位构成
-- **1-2台XV9灾害战斗服 (55-110分)**  
-  每台模型默认装备：1把融合喷射炮；1把并联灾害爆裂速射炮；战斗服铁拳。
-- **装备选项**：
-  - 任意模型的融合喷射炮可替换为：1把相控离子枪 或 1把并联灾害爆裂速射炮。
-  - 任意模型的并联灾害爆裂速射炮可替换为：1把融合喷射炮 或 1把相控离子枪。
-  - 任意模型可额外装备下列之一：
-    - 1组战斗服支援系统
-    - 1面护盾发生器
-    - 1组武器支援系统
-  - 任意模型可额外装备下列至多两件且可重复选择：
-    - 1个枪蜂
-    - 1个标记蜂
-    - 1个盾蜂
+- **1个模型** — 55 分
+- **2个模型** — 110 分
 
 ## 关键词
-- 阵营关键词：钛帝国
-- 普通关键词：载具，机甲，飞行，战斗服，XV9灾害
+- **阵营关键词**：T’au Empire
+- **普通关键词**：XV9 Hazard，Vehicle，Battlesuit，Fly，[[core-rules/walker.md|Walker]]

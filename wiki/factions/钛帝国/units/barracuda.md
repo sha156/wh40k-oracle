@@ -4,58 +4,52 @@ name_zh: 梭鱼
 name_en: Barracuda
 faction: 钛帝国
 type: unit
+points:
+  1 model: 220
 tags:
 - unit
 - unit/钛帝国
 - 钛帝国
+version:
+  source: official-db
 sources:
-- book: 钛帝国十版CODEX-20251112
-  pages:
-  - 75
-raw:
-- data_refined\钛帝国十版CODEX-20251112\page_075.md
+- book: 官方结构库 db/wh40k.sqlite（Wahapedia 11版镜像 + MFM 官方点数）
+updated: '2026-07-23'
 ---
 
 ## 属性表
 | 模型 | M | T | SV | W | LD | OC |
-|------|---|---|----|---|----|----|
-| 梭鱼 | 20+” | 10 | 3+ | 14 | 7+ | 0 |
+|---|---|---|---|---|---|---|
+| Barracuda | 20+" | 10 | 3+ | 14 | 7+ | 0 |
 
-## 远程武器
+### 特殊保护
+- 5+
+
+## 射击武器
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
-|------|------|---|---|----|----|---|------|
-| 循环离子炮 — 标准 | 18” | 3 | 4+ | 7 | -1 | 1 | - |
-| 循环离子炮 — 过载 | 18” | 3 | 4+ | 8 | -2 | 2 | [[core-rules/hazardous.md|危险]] |
-| 离子加农 — 标准 | 60” | D6+3 | 4+ | 7 | -1 | 2 | [[core-rules/blast.md|爆炸]] |
-| 离子加农 — 过载 | 60” | D6+3 | 4+ | 8 | -2 | 3 | [[core-rules/blast.md|爆炸]]，[[core-rules/hazardous.md|危险]] |
-| 长管爆裂速射炮 | 24” | 8 | 4+ | 6 | 0 | 1 | - |
-| 导弹仓 | 30” | 2 | 4+ | 7 | -1 | 2 | - |
-| 寻觅者导弹 | 48” | 1 | 4+ | 14 | -3 | D6+1 | [[core-rules/one-shot.md|一次性]] |
-| 高速爆裂速射炮 | 36” | 16 | 4+ | 6 | -1 | 1 | - |
-| 高速磁轨炮 | 72” | 1 | 4+ | 20 | -5 | D6+6 | [[core-rules/devastating-wounds.md|毁灭伤害]] |
+|---|---|---|---|---|---|---|---|
+| Cyclic ion blaster – standard | 18" | 3 | 4+ | 7 | -1 | 1 | — |
+| Cyclic ion blaster – overcharge | 18" | 3 | 4+ | 8 | -2 | 2 | hazardous |
+| Ion cannon – standard | 60" | D6+3 | 4+ | 7 | -1 | 2 | blast |
+| Ion cannon – overcharge | 60" | D6+3 | 4+ | 8 | -2 | 3 | blast，hazardous |
+| Long-barrelled burst cannon | 24" | 8 | 4+ | 6 | 0 | 1 | — |
+| Missile pod | 30" | 2 | 4+ | 7 | -1 | 2 | — |
+| Seeker missile | 48" | 1 | 4+ | 14 | -3 | D6+1 | one shot |
+| Swiftstrike burst cannon | 36" | 16 | 4+ | 6 | -1 | 1 | — |
+| Swiftstrike railgun | 72" | 1 | 4+ | 20 | -5 | D6+6 | devastating wounds |
 
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |
-|------|------|---|---|----|----|---|------|
-| 装甲外壳 | 近战 | 3 | 5+ | 6 | 0 | 1 | - |
+|---|---|---|---|---|---|---|---|
+| Armoured hull | 近战 | 3 | 5+ | 6 | 0 | 1 | — |
 
 ## 技能
-- **致命破灭D3**：当该模型被摧毁时，投一颗D6。若结果为6，该模型6"内的每一个单位受到D3点[[core-rules/mortal-wounds.md|致命伤]]。
-- **为了上上善道**：（阵营能力）
-- **迅敏歼击机**：本模型对抗攻击时命中骰结果-1。
-- **受损**：当本模型剩余1-5点W时，每次攻击时命中骰结果-1。
-- **特殊保护**：5+
+- **Agile Dogfighter**：Each time an attack targets this model, subtract 1 from the Hit roll.
+- **One Shot**：The bearer can only shoot with this weapon once per battle.
 
 ## 单位构成
-- ■ 1台梭鱼（220分）
-  - 本模型装备着：2门长管爆裂速射炮；1门高速爆裂速射炮；2门导弹仓；装甲外壳。
-  - **装备选项**：
-    - ■ 本模型的2门长管爆裂速射炮可换为2门循环离子炮。
-    - ■ 本模型的高速爆裂速射炮可换为下列之一：
-      - · 1门离子加农
-      - · 1门高速磁轨炮
-    - ■ 本模型可额外携带至多4枚寻觅者导弹。
+- **1个模型** — 220 分
 
 ## 关键词
-- 阵营关键词：钛帝国
-- 普通关键词：载具，飞行器，飞行，梭鱼
+- **阵营关键词**：T’au Empire
+- **普通关键词**：Vehicle，[[core-rules/aircraft.md|Aircraft]]，Fly，Barracuda

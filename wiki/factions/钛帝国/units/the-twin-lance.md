@@ -1,68 +1,58 @@
 ---
 id: '000004203'
+name_zh: 双枪
 name_en: The Twin Lance
 faction: 钛帝国
 type: unit
+points:
+  2 models: 220
 tags:
 - unit
 - unit/钛帝国
 - 钛帝国
+version:
+  points: MFM 2026-07-23 14:17
+  source: official-db
 sources:
-- book: Faction Pack Tau Empire
-  pages:
-  - 5
-  - 6
-raw:
-- data_refined\Faction Pack Tau Empire\page_005.md
-- data_refined\Faction Pack Tau Empire\page_006.md
-verify_warn: true
+- book: 官方结构库 db/wh40k.sqlite（Wahapedia 11版镜像 + MFM 官方点数）
+updated: '2026-07-23'
 ---
-
-# THE TWIN LANCE
 
 ## 属性表
 | 模型 | M | T | SV | W | LD | OC |
 |---|---|---|---|---|---|---|
-| Ri’Lantar | 10" | 6 | 2+ | 8 | 6+ | 2 |
-| Ri’Locai | 10" | 6 | 2+ | 8 | 6+ | 2 |
+| 双枪 | 10" | 6 | 2+ | 8 | 6+ | 2 |
 
-## 远程武器
-武器选择说明：对于离子散射炮，在选择目标前，请选择其一个配置进行攻击。
+### 特殊保护
+- 4+
 
+## 射击武器
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| Fusion eliminater | 18" | 2 | 2+ | 10 | -4 | D6 | [MELTA 2] |
-| Ion scattercannon – standard | 18" | 4 | 2+ | 7 | -2 | 2 | [RAPID FIRE 2] |
-| Ion scattercannon – overcharge | 18" | 4 | 2+ | 8 | -3 | 3 | [HAZARDOUS]，[RAPID FIRE 2] |
-| Shardstorm burst system | 18" | D6 | 2+ | 5 | 0 | 1 | [PISTOL] |
-| Twin pulse blaster | 10" | 2 | 5+ | 6 | -1 | 1 | [ASSAULT]，[TWIN-LINKED] |
-| XV pulse pistol | 12" | 2 | 2+ | 6 | -1 | 2 | [RAPID FIRE 2] |
+| 融合歼灭者 | 18" | 2 | 2+ | 10 | -4 | D6 | [[core-rules/melta.md\|热熔2]] |
+| 离子散射炮-标准 | 18" | 4 | 2+ | 7 | -2 | 2 | [[core-rules/rapid-fire.md\|速射2]] |
+| 离子散射炮-过载 | 18" | 4 | 2+ | 8 | -3 | 3 | [[core-rules/rapid-fire.md\|速射2]]，[[core-rules/hazardous.md\|危险]] |
+| 破片风暴速射系统 | 18" | D6 | 2+ | 5 | 0 | 1 | [[core-rules/pistol.md\|手枪]] |
+| 双联脉冲爆裂枪 | 10" | 2 | 5+ | 6 | -1 | 1 | [[core-rules/assault.md\|突击]]，[[core-rules/twin-linked.md\|双联]] |
+| XV脉冲手枪 | 12" | 2 | 2+ | 6 | -1 | 2 | [[core-rules/rapid-fire.md\|速射2]] |
 
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| Fusion eliminater | Melee | 1 | 4+ | 10 | -4 | D6+2 | [EXTRA ATTACKS] |
-| Ion scattercannon | Melee | 3 | 4+ | 7 | -2 | 2 | [EXTRA ATTACKS] |
-| XV pulse pistol | Melee | 4 | 3+ | 6 | -1 | 2 | - |
+| 融合歼灭者 | 近战 | 1 | 4+ | 10 | -4 | D6+2 | [[core-rules/extra-attacks.md\|额外攻击]] |
+| 离子散射炮 | 近战 | 3 | 4+ | 7 | -2 | 2 | [[core-rules/extra-attacks.md\|额外攻击]] |
+| XV脉冲手枪 | 近战 | 4 | 3+ | 6 | -1 | 2 | — |
 
 ## 技能
-
-### 核心技能
-- **Deep Strike**
-- **Scouts 8"**
-
-### 阵营技能
-- **For the Greater Good**
-
-### 普通技能
-- **Exemplars of Mont'ka**：每次本单位的模型进行远程攻击且目标为最近合法目标时，该攻击获得[[core-rules/sustained-hits.md|SUSTAINED HITS 1]]和[[core-rules/ignores-cover.md|IGNORES COVER]]能力。
-- **Neocapacitor Shields**：在你的对手的[[core-rules/charge-phase.md|冲锋阶段]]开始时，你可以选择本单位12"内的一个敌方单位（怪物和载具单位除外）。该单位必须进行一次[[core-rules/battle-shock-test.md|战斗震惊测试]]，且直到回合结束，该单位的冲锋掷骰结果减1。
-- **Retro-thrusters**：在[[core-rules/fight-phase.md|近战阶段]]结束时，如果本回合本单位有资格进行近战，本单位可以进行一次最多6"的[[core-rules/normal-move.md|普通移动]]或一次[[core-rules/fall-back.md|撤退移动]]。
-- **MV15 Gun Drone**：持有者装备1个双联脉冲爆裂枪。
-- **无敌豁免**：4+
+- **阵营：为了上上善道**
+- **蒙特卡典范**：该单位中的模型对最近的可选目标进行的远程攻击拥有[连击1] 和 [无视掩体] 技能。
+- **新式电容护盾**：在你对手的冲锋阶段中，你可以选择一个位于该单位 12寸内的可见敌方单位（凶兽和载具单位除外）。那个单位必须进行一次战斗震慑测试，并且在该回合结束前，那个单位的冲锋掷骰结果-1。
+- **增强型反冲推进器**：在近战阶段结束时，如果该单位在该阶段可以进行近战，则其可以进行一次最多6寸的常规移动，或一次后撤移动。（维护者备注：“可以进行近战”的定义请参考总规则）
+- **【装备技能】MV15枪蜂**：持有者装备有 1 把双联脉冲爆裂枪。
 
 ## 单位构成
-- 1 Ri’Lantar – Epic Hero
-- 1 Ri’Locai – Epic Hero
+- **2个模型** — 220 分
 
-Ri’Lantar装备：1 fusion elimin
+## 关键词
+- **阵营关键词**：T’au Empire
+- **普通关键词**：Vehicle，[[core-rules/walker.md|Walker]]，Fly，[[core-rules/epic-hero.md|Epic Hero]]，Battlesuit，The Twin Lance，[[core-rules/character.md|Character]]

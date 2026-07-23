@@ -4,40 +4,39 @@ name_zh: 克鲁特猎犬队
 name_en: Kroot Hounds
 faction: 钛帝国
 type: unit
+points:
+  5 models: 45
+  10 models: 65
 tags:
 - unit
 - unit/钛帝国
 - 钛帝国
+version:
+  points: MFM 2026-07-23 14:17
+  source: official-db
 sources:
-- book: 钛帝国十版CODEX-20251112
-  pages:
-  - 41
-raw:
-- data_refined\钛帝国十版CODEX-20251112\page_041.md
-verify_warn: true
+- book: 官方结构库 db/wh40k.sqlite（Wahapedia 11版镜像 + MFM 官方点数）
+updated: '2026-07-23'
 ---
 
 ## 属性表
 | 模型 | M | T | SV | W | LD | OC |
-|------|----|----|----|----|----|----|
+|---|---|---|---|---|---|---|
 | 克鲁特猎犬 | 12" | 3 | 6+ | 1 | 8+ | 0 |
 
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |
-|------|------|---|----|---|----|---|------|
-| 撕裂牙 | 近战 | 3 | 3+ | 3 | 0 | 1 | - |
+|---|---|---|---|---|---|---|---|
+| 撕裂牙 | 近战 | 3 | 3+ | 3 | 0 | 1 | — |
 
 ## 技能
-- **斥候7"**：此单位拥有[[core-rules/scouts.md|斥候]]7"规则——在第一回合开始前可以进行一次最多7"的[[core-rules/normal-move.md|常规移动]]，若搭乘[[专用运输工具]]，则可由该运输工具代替进行。必须在所有敌方模型水平距离9"外的位置结束这次移动。
-- **隐匿**：如果此单位中的每个模型都拥有此技能，那么每当该单位受到[[core-rules/ranged-attack.md|远程攻击]]时，那次攻击的[[core-rules/hit-roll.md|命中掷骰]]结果减少1点。
-- **劲步突袭**：[[core-rules/command-phase.md|指挥阶段]]开始时，如本单位6“内有其他友方**克鲁特步兵**时，直到本回合结束前，本单位[[core-rules/advance.md|加速移动]]后可如常[[core-rules/charge.md|冲锋]]。
-- **狩猎猎犬**：本单位12”内有其他友方**克鲁特人物**时，本单位模型的OC值改为1。
+- **Loping Pounce**：At the start of your Command phase, if this unit is within 6" of one or more friendly Kroot Infantry units, then until the end of the turn, this unit is eligible to declare a charge in a turn in which it Advanced.
+- **Hunting Hounds**：While this unit is within 12" of one or more friendly Kroot Character models, the Objective Control characteristic of models in this unit is 1.
 
 ## 单位构成
-- **5-10个克鲁特猎犬**（每5个模型40分，每10个模型80分）
-- 每个模型装备：撕裂牙
-- 装备选项：无
+- **5个模型** — 45 分
+- **10个模型** — 65 分
 
 ## 关键词
-- 阵营关键词：**钛帝国**
-- 普通关键词：**野兽，克鲁特，猎犬队**
+- **阵营关键词**：T’au Empire
+- **普通关键词**：Hounds，Beasts，Kroot

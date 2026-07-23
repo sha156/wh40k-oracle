@@ -4,55 +4,43 @@ name_zh: 危机星镰战斗服小队
 name_en: Crisis Starscythe Battlesuits
 faction: 钛帝国
 type: unit
+points:
+  3 models: 90
 tags:
 - unit
 - unit/钛帝国
 - 钛帝国
+version:
+  points: MFM 2026-07-23 14:17
+  source: official-db
 sources:
-- book: 钛帝国十版CODEX-20251112
-  pages:
-  - 28
-raw:
-- data_refined\钛帝国十版CODEX-20251112\page_028.md
+- book: 官方结构库 db/wh40k.sqlite（Wahapedia 11版镜像 + MFM 官方点数）
+updated: '2026-07-23'
 ---
 
 ## 属性表
 | 模型 | M | T | SV | W | LD | OC |
-| --- | --- | --- | --- | --- | --- | --- |
-| 危机星镰战斗服小队 | 10" | 5 | 3+ | 4 | 7+ | 2 |
+|---|---|---|---|---|---|---|
+| (XV8)危机星镰战斗服 | 10" | 5 | 3+ | 4 | 7+ | 2 |
 
-## 远程武器
+## 射击武器
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
-| --- | --- | --- | --- | --- | --- | --- | --- |
-| 爆裂速射炮 | 18" | 4 | 4+ | 5 | 0 | 1 | - |
-| 钛式火焰喷射器 | 12" | D6 | N/A | 4 | 0 | 1 | [[core-rules/ignores-cover.md|忽略掩体]]，[[core-rules/torrent.md|喷射]] |
-| 并联脉冲卡宾（枪蜂） | 20" | 2 | 5+ | 5 | 0 | 1 | [[core-rules/assault.md|突击]]，[[core-rules/twin-linked.md|双联]] |
+|---|---|---|---|---|---|---|---|
+| 爆裂速射炮 | 18" | 4 | 4+ | 5 | 0 | 1 | — |
+| 钛式火焰喷射器 | 12" | D6 | N/A | 4 | 0 | 1 | [[core-rules/ignores-cover.md\|忽略掩体]]，[[core-rules/torrent.md\|喷射]] |
 
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |
-| --- | --- | --- | --- | --- | --- | --- | --- |
-| 战斗服铁拳 | 近战 | 3 | 5+ | 5 | 0 | 1 | - |
+|---|---|---|---|---|---|---|---|
+| 战斗服铁拳 | 近战 | 3 | 5+ | 5 | 0 | 1 | — |
 
 ## 技能
-- **深入打击**：在宣布战斗编队步骤中，如果本单位所有模型都拥有此技能，则可将本单位部署在援军中。在己方移动阶段的[[core-rules/reinforcements-step.md|增援步骤]]中，可将本单位部署在战场上，位于所有敌方模型水平距离9"外任意位置。
-- **星镰**：本单位中的模型射击非巨兽非载具单位时AP值增强1点。
-- **战斗服支援系统**：本单位撤退的当回合可如常射击。
-- **为了上上善道**（阵营技能）
+- **Starscythe**：Each time a model in this unit makes a ranged attack (excluding attacks that target <span class="kwb">MONSTERS</span> and <span class="kwb">VEHICLES</span>), improve the Armour Penetration characteristic of that attack by 1.
+- **Battlesuit Support System**：This unit is eligible to shoot in a turn in which it Fell Back.
 
 ## 单位构成
-- **1个危机星镰夏司'瓦**
-- **2个危机星镰夏司'钨**
-- 每个模型装备：1把爆裂速射炮、1把钛式火焰喷射器；战斗服铁拳。
-- **分数：110**
-
-### 装备选项
-- 任意模型可将爆裂速射炮替换为1门钛式火焰喷射器。
-- 任意模型可将钛式火焰喷射器替换为1门爆裂速射炮。
-- 任意模型可额外装备下列至多两件，且不可重复选择：
-  - **枪蜂**：装备者视为额外装备1门并联脉冲卡宾（参见远程武器表）。
-  - **标记蜂**：装备者获得`标记光`关键词，且可以被选择成为[[core-rules/for-the-greater-good.md|观察员]]，即便装备者本回合进行过[[core-rules/advance.md|加速移动]]。
-  - **盾蜂**：装备者的W面板值+1。
+- **3个模型** — 90 分
 
 ## 关键词
-- 阵营关键词：**钛帝国**
-- 普通关键词：**载具**，**机甲**，**飞行**，**战斗服**，**危机**，**星镰**
+- **阵营关键词**：T’au Empire
+- **普通关键词**：Vehicle，Starscythe，Crisis，Battlesuit，Fly，[[core-rules/walker.md|Walker]]

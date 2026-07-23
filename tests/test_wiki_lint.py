@@ -82,6 +82,27 @@ class TestBrokenLinks:
         broken = [i for i in issues if i.rule == "broken-links"]
         assert len(broken) == 0
 
+    def test_escaped_pipe_table_wikilink_not_broken(self, tmp_path):
+        # 表格内 [[path\|别名]] 的转义竖线不得被误判为断链（否则 --fix 会反向去转义
+        # 破坏 Obsidian 表格渲染）——target 应剥掉尾随反斜杠后判存在性
+        wiki = tmp_path / "wiki"
+        cr = wiki / "core-rules"
+        cr.mkdir(parents=True)
+        (cr / "rapid-fire.md").write_text(
+            WikiPage(fm=WikiPageFrontmatter(id="rapid-fire", name_zh="速射",
+                                            type="core-rule"),
+                     body="速射规则。").to_markdown(), encoding="utf-8")
+        units = wiki / "factions" / "orks" / "units"
+        units.mkdir(parents=True)
+        (units / "warboss.md").write_text(
+            WikiPage(fm=WikiPageFrontmatter(id="orks/units/warboss", name_zh="战争头目",
+                                            faction="orks", type="unit"),
+                     body="| 武器 | 技能 |\n|---|---|\n"
+                          "| 枪 | [[core-rules/rapid-fire.md\\|速射2]] |").to_markdown(),
+            encoding="utf-8")
+        broken = [i for i in check_broken_links(wiki) if i.rule == "broken-links"]
+        assert broken == []
+
 
 class TestMissingPoints:
     def test_detects_missing_points(self, tmp_path):

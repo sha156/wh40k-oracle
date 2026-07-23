@@ -4,38 +4,41 @@ name_zh: 战术兵蜂
 name_en: Tactical Drones
 faction: 钛帝国
 type: unit
+points:
+  4 models: 70
+  8 models: 140
+  12 models: 210
 tags:
 - unit
 - unit/钛帝国
 - 钛帝国
+version:
+  source: official-db
 sources:
-- book: 钛帝国十版CODEX-20251112
-  pages:
-  - 72
-raw:
-- data_refined\钛帝国十版CODEX-20251112\page_072.md
+- book: 官方结构库 db/wh40k.sqlite（Wahapedia 11版镜像 + MFM 官方点数）
+updated: '2026-07-23'
 ---
 
 ## 属性表
 | 模型 | M | T | SV | W | LD | OC |
-| 战术兵蜂 | 8” | 3 | 4+ | 1 | 7+ | 0 |
+|---|---|---|---|---|---|---|
+| Tactical Drones | 8" | 3 | 4+ | 1 | 7+ | 0 |
 
-## 远程武器
+## 射击武器
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
-| 并联脉冲卡宾 | 20” | 2 | 5+ | 5 | 0 | 1 | 突击, 双联 |
+|---|---|---|---|---|---|---|---|
+| Twin pulse carbine | 20" | 2 | 5+ | 5 | 0 | 1 | assault，twin-linked |
 
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |
-| 格斗武器 | 近战 | 1 | 6+ | 3 | 0 | 1 | - |
-
-## 技能
-- **深入打击**：在宣布战斗编队步骤中，如果单位中的每个模型都拥有此技能，那么您可以将单位部署在援军中。若这么做，那么在一个己方[[core-rules/movement-phase.md|移动阶段]]的增援步骤中，您可以将该单位部署在战场上位于所有敌方模型水平距离9"外的任意位置。
+|---|---|---|---|---|---|---|---|
+| Close combat weapon | 近战 | 1 | 6+ | 3 | 0 | 1 | — |
 
 ## 单位构成
-- 4-12台战术兵蜂（分数：-/-/-，暂无分数）
-- 每个模型装备：1门并联脉冲卡宾；格斗武器。
-- 装备选项：无
+- **4个模型** — 70 分
+- **8个模型** — 140 分
+- **12个模型** — 210 分
 
 ## 关键词
-- 阵营关键词：钛帝国
-- 普通关键词：兵蜂, 飞行, 战术兵蜂
+- **阵营关键词**：T’au Empire
+- **普通关键词**：Drone，Tactical Drones，Fly

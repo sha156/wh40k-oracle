@@ -4,53 +4,41 @@ name_zh: 逆戟鲸运输机
 name_en: Orca Dropship
 faction: 钛帝国
 type: unit
+points:
+  1 model: 275
 tags:
 - unit
 - unit/钛帝国
 - 钛帝国
+version:
+  source: official-db
 sources:
-- book: 钛帝国十版CODEX-20251112
-  pages:
-  - 76
-raw:
-- data_refined\钛帝国十版CODEX-20251112\page_076.md
+- book: 官方结构库 db/wh40k.sqlite（Wahapedia 11版镜像 + MFM 官方点数）
+updated: '2026-07-23'
 ---
 
 ## 属性表
 | 模型 | M | T | SV | W | LD | OC |
-| :--- | :--- | :--- | :--- | :--- | :--- | :--- |
-| 逆戟鲸运输机 | 20+" | 12 | 3+ | 28 | 7+ | 0 |
+|---|---|---|---|---|---|---|
+| Orca Dropship | 20" | 12 | 3+ | 28 | 7+ | 0 |
 
-## 远程武器
+## 射击武器
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
-| :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
-| 长管爆裂速射炮 | 36" | 4 | 4+ | 5 | 0 | 1 | - |
-| 导弹仓 | 30" | 2 | 4+ | 7 | -1 | 2 | - |
+|---|---|---|---|---|---|---|---|
+| Long-barrelled burst cannon | 36" | 4 | 4+ | 5 | 0 | 1 | — |
+| Missile pod | 30" | 2 | 4+ | 7 | -1 | 2 | — |
 
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |
-| :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
-| 装甲外壳 | 近战 | 3 | 5+ | 8 | 0 | 1 | - |
+|---|---|---|---|---|---|---|---|
+| Armoured hull | 近战 | 3 | 5+ | 8 | 0 | 1 | — |
 
 ## 技能
-- **核心**：致命破灭 D6+2, 悬浮
-
-- **阵营**：为了上上善道
-
-- **悬浮**：游戏开始前，你必须决定模型是否处于悬浮模式；如果一个模型处于悬浮模式，那么直到战斗结束前，模型的M被变为20"，且失去飞行器关键词以及任何与飞行器模型相关的规则。处于悬浮模式的模型在战斗开始时不可位于援军中，你可以直接布置在场上或将其放入战略预备队中。
-
-- **喷气背包着陆**：敌方移动阶段结束时，任意本运输模型运载的单位可脱离，前提是该单位内所有模型拥有深入打击能力。
-
-- **受损**：剩余1-9W时，当本模型剩余1-9W时，每次攻击时命中骰结果-1。
-
-- **运输**：本模型可运载至多48个钛帝国步兵模型。本模型也可运输战斗服模型，占用的运输空间等同于其W值。不可运输克鲁特或胡蜂人小队。
+- **Jet Pack Insertion**：At the end of your opponent’s Movement phase, one or more units embarked within this <span class="kwb">TRANSPORT</span> can disembark from it, provided every model in each of those disembarking units has the Deep Strike ability.
 
 ## 单位构成
-- **1台逆戟鲸运输机** (275分)
-  - 本模型装备着：2门长管爆裂速射炮；1门导弹仓；装甲外壳。
-- **装备选项**
-  - 无
+- **1个模型** — 275 分
 
 ## 关键词
-- 阵营关键词：钛帝国
-- 普通关键词：载具，飞行器，飞行，巨型，运输，逆戟鲸运输机 (若模型在游戏开始时处于悬浮模式，则失去“飞行器”关键词)
+- **阵营关键词**：T’au Empire
+- **普通关键词**：Fly，[[core-rules/titanic.md|Titanic]]，[[core-rules/aircraft.md|Aircraft]]，[[core-rules/transport.md|Transport]]，Orca Dropship，Vehicle

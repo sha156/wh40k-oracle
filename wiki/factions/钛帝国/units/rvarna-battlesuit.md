@@ -4,52 +4,45 @@ name_zh: 燃雨战斗服
 name_en: R’varna Battlesuit
 faction: 钛帝国
 type: unit
+points:
+  1 model: 200
 tags:
 - unit
 - unit/钛帝国
 - 钛帝国
+version:
+  source: official-db
 sources:
-- book: 钛帝国十版CODEX-20251112
-  pages:
-  - 66
-raw:
-- data_refined\钛帝国十版CODEX-20251112\page_066.md
-verify_warn: true
+- book: 官方结构库 db/wh40k.sqlite（Wahapedia 11版镜像 + MFM 官方点数）
+updated: '2026-07-23'
 ---
 
 ## 属性表
 | 模型 | M | T | SV | W | LD | OC |
 |---|---|---|---|---|---|---|
-| 燃雨战斗服 | 8” | 10 | 2+ | 15 | 7+ | 4 |
+| R’varna Battlesuit | 8" | 10 | 2+ | 15 | 7+ | 4 |
 
-## 远程武器
+### 特殊保护
+- 5+
+
+## 射击武器
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| 脉冲霰弹加农 | 60” | D6+2 | 4+ | 8 | -1 | 2 | - |
-| 导弹仓 | 30” | 2 | 5+ | 7 | -1 | 2 | - |
+| Pulse submunitions cannon | 60" | D6+2 | 4+ | 8 | -1 | 2 | blast |
 
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| 战斗服铁拳 | 近战 | 6 | 5+ | 6 | 0 | 2 | - |
+| Battlesuit fists | 近战 | 6 | 5+ | 6 | 0 | 2 | — |
 
 ## 技能
-- **核心：致命破灭D6**：当该模型被摧毁时，投一颗D6。若结果为6，该模型6"内的每一个单位受到D6点致命伤。
-- **阵营：为了上上善道**：根据源文本，具体技能描述未提供。
-- **战斗服支援系统**：装备者所在单位撤退的当回合可以射击。
-- **新星护盾**：一次性能力，当本模型被选择成为射击目标时你可以激活本能力，直到本阶段结束前，每下对本模型进行的攻击如果其S值大于本模型的T值，这下攻击的造伤骰结果-1。
-- **武器支援系统**：装备者射击时可忽略部分或全部命中骰修正。
-- **受损：剩余1-5W时**：当本模型剩余1-5W时，每次攻击时命中骰结果-1。
-
-## 特殊保护
-本模型拥有5+特殊保护。
+- **Battlesuit Support System**：This model is eligible to shoot in a turn in which it Fell Back.
+- **Nova Shielding**：Once per battle, when this model is selected as the target of a ranged attack, it can use this ability. If it does, until the end of the phase, each time an attack targets this model, if the Strength characteristic of that attack is greater than the Toughness characteristic of this model, subtract 1 from the Wound roll.
+- **Weapon Support System**：Each time this model makes a ranged attack, you can ignore any or all modifiers to the Hit roll.
 
 ## 单位构成
-- **1个燃雨战斗服 (200分)**
-  - 每个模型装备着：2门脉冲霰弹加农；战斗服铁拳。
-- **装备选项**:
-  - 本模型可额外装备至多两只导弹蜂。导弹蜂使装备者视为额外装备1门导弹仓。
+- **1个模型** — 200 分
 
 ## 关键词
-- 阵营关键词：**钛帝国**
-- 普通关键词：**载具**、**机甲**、**飞行**、**战斗服**、**燃雨**、**LEGENDS**
+- **阵营关键词**：T’au Empire
+- **普通关键词**：Vehicle，[[core-rules/walker.md|Walker]]，Fly，Battlesuit，R’varna

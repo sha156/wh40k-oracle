@@ -4,45 +4,42 @@ name_zh: 重型枪蜂小队
 name_en: Heavy Gun Drones
 faction: 钛帝国
 type: unit
+points:
+  2 models: 45
 tags:
 - unit
 - unit/钛帝国
 - 钛帝国
+version:
+  source: official-db
 sources:
-- book: 钛帝国十版CODEX-20251112
-  pages:
-  - 73
-raw:
-- data_refined\钛帝国十版CODEX-20251112\page_073.md
+- book: 官方结构库 db/wh40k.sqlite（Wahapedia 11版镜像 + MFM 官方点数）
+updated: '2026-07-23'
 ---
 
 ## 属性表
 | 模型 | M | T | SV | W | LD | OC |
 |---|---|---|---|---|---|---|
-| 重型枪蜂 | 8" | 5 | 4+ | 2 | 8+ | 0 |
+| Heavy Gun Drones | 8" | 5 | 4+ | 2 | 8+ | 0 |
 
-## 远程武器
+## 射击武器
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| 爆裂速射炮 | 18" | 4 | 4+ | 5 | 0 | 1 | - |
-| 并联爆裂速射炮[双联] | 18" | 4 | 5+ | 5 | 0 | 1 | - |
+| Burst cannon | 18" | 4 | 4+ | 5 | 0 | 1 | — |
+| Twin burst cannon | 18" | 4 | 5+ | 5 | 0 | 1 | twin-linked |
 
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| 格斗武器 | 近战 | 1 | 6+ | 3 | 0 | 1 | - |
+| Close combat weapon | 近战 | 1 | 6+ | 3 | 0 | 1 | — |
 
 ## 技能
-- **兵蜂护卫**：每回合一次，在敌方[[core-rules/shooting-phase.md|射击阶段]]中，本单位6寸内的一个友方**钛帝国**单位被选择成为攻击目标时，你军表中一个拥有本能力的单位可以启动此能力。如果你这么做，当该敌方单位完成结算后，你可以如同在你[[core-rules/shooting-phase.md|射击阶段]]中那样对该攻击者进行一轮射击（对手必须是有效目标）。
-- **标记光**：装备者获得**标记光**关键词。
+- **Drone Escort**：Once per turn, in your opponent’s Shooting phase, when a friendly <span class="kwb">T’AU</span> <span class="kwb">EMPIRE</span> unit within 6" of this unit is selected as the target of an attack, one unit from your army with this ability can use it. If it does, after that enemy unit has finished making its attacks, the unit using this ability can shoot as if it were your Shooting phase, but when resolving those attacks it can only target that enemy unit (and only if it is an eligible target).
+- **Markerlight**：The bearer has the Markerlight keyword.
 
 ## 单位构成
-- **2台重型枪蜂（45分）**
-- 每台模型默认装备：1门爆裂速射炮；标记光；格斗武器。
-
-**装备选项**：
-- 任意模型可将爆裂速射炮与标记光一起换为1门并联爆裂速射炮。
+- **2个模型** — 45 分
 
 ## 关键词
-- 阵营关键词：**钛帝国**
-- 普通关键词：**载具**，**飞行**，**重型枪蜂小队**
+- **阵营关键词**：T’au Empire
+- **普通关键词**：Vehicle，Fly，Heavy Gun Drones

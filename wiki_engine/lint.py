@@ -75,9 +75,11 @@ def check_broken_links(wiki_root: Path) -> List[LintIssue]:
         except (OSError, UnicodeDecodeError):
             continue
 
-        # 提取所有 [[target|display]] 或 [[target]]
-        for m in re.finditer(r"\[\[([^\]|#]+?)(?:\|[^\]]+?)?\]\]", text):
-            target = m.group(1).strip()
+        # 提取所有 [[target|display]] 或 [[target]]。表格内的 wikilink 用 \\| 转义别名
+        # 竖线（避免与表格列分隔符冲突），此时 target 会带尾随反斜杠——剥掉再判存在性，
+        # 否则会把全部表格内链接误报为断链并被 --fix 反向去转义（破坏 Obsidian 渲染）。
+        for m in re.finditer(r"\[\[([^\]|#]+?)(?:\\?\|[^\]]+?)?\]\]", text):
+            target = m.group(1).strip().rstrip("\\")
             if target not in all_targets:
                 # 找最相似的文件名用于建议修复
                 suggestion = None

@@ -1,0 +1,119 @@
+# 混沌星际战士
+
+_Last updated: 2026-07-23 08:05 UTC_
+
+## 单位
+
+- [[factions/混沌星际战士/units/accursed-cultists|Accursed Cultists]] — 
+- [[factions/混沌星际战士/units/blood-slaughterer|Blood Slaughterer]] — 
+- [[factions/混沌星际战士/units/cerberus|Cerberus]] — 
+- [[factions/混沌星际战士/units/chaos-deimos-predator|Chaos Deimos Predator]] — 
+- [[factions/混沌星际战士/units/chaos-land-raider|Chaos Land Raider]] — 
+- [[factions/混沌星际战士/units/chaos-lord-on-bike|Chaos Lord On Bike]] — 
+- [[factions/混沌星际战士/units/chaos-lord-on-disc-of-tzeentch|Chaos Lord On Disc Of Tzeentch]] — 
+- [[factions/混沌星际战士/units/chaos-lord-on-juggernaut|Chaos Lord On Juggernaut]] — 
+- [[factions/混沌星际战士/units/chaos-lord-on-palanquin-of-nurgle|Chaos Lord On Palanquin Of Nurgle]] — 
+- [[factions/混沌星际战士/units/chaos-lord-on-steed-of-slaanesh|Chaos Lord On Steed Of Slaanesh]] — 
+- [[factions/混沌星际战士/units/chaos-predator-annihilator|Chaos Predator Annihilator]] — 
+- [[factions/混沌星际战士/units/chaos-predator-destructor|Chaos Predator Destructor]] — 
+- [[factions/混沌星际战士/units/chaos-rhino|Chaos Rhino]] — 
+- [[factions/混沌星际战士/units/chaos-spawn|Chaos Spawn]] — 
+- [[factions/混沌星际战士/units/chaos-thunderhawk|Chaos Thunderhawk]] — 
+- [[factions/混沌星际战士/units/chaos-vindicator|Chaos Vindicator]] — 
+- [[factions/混沌星际战士/units/cultist-firebrand|Cultist Firebrand]] — 
+- [[factions/混沌星际战士/units/cultist-mob|Cultist Mob]] — 
+- [[factions/混沌星际战士/units/cultist-mob-with-firearms|Cultist Mob with Firearms]] — 
+- [[factions/混沌星际战士/units/dark-commune|Dark Commune]] — 
+- [[factions/混沌星际战士/units/decimator|Decimator]] — 
+- [[factions/混沌星际战士/units/defiler|Defiler]] — 
+- [[factions/混沌星际战士/units/deredeo-dreadnought|Deredeo Dreadnought]] — 
+- [[factions/混沌星际战士/units/dreadclaw-drop-pod|Dreadclaw Drop Pod]] — 
+- [[factions/混沌星际战士/units/exalted-champion|Exalted Champion]] — 
+- [[factions/混沌星际战士/units/falchion|Falchion]] — 
+- [[factions/混沌星际战士/units/fellblade|Fellblade]] — 
+- [[factions/混沌星际战士/units/fellgor-beastmen|Fellgor Beastmen]] — 
+- [[factions/混沌星际战士/units/fire-raptor-gunship|Fire Raptor Gunship]] — 
+- [[factions/混沌星际战士/units/forgefiend|Forgefiend]] — 
+- [[factions/混沌星际战士/units/gellerpox-infected|Gellerpox Infected]] — 
+- [[factions/混沌星际战士/units/greater-blight-drone|Greater Blight Drone]] — 
+- [[factions/混沌星际战士/units/greater-brass-scorpion|Greater Brass Scorpion]] — 
+- [[factions/混沌星际战士/units/helbrute|Helbrute]] — 
+- [[factions/混沌星际战士/units/heldrake|Heldrake]] — 
+- [[factions/混沌星际战士/units/hell-blade|Hell Blade]] — 
+- [[factions/混沌星际战士/units/hell-talon|Hell Talon]] — 
+- [[factions/混沌星际战士/units/kharybdis-assault-claw|Kharybdis Assault Claw]] — 
+- [[factions/混沌星际战士/units/khorne-berzerkers|Khorne Berzerkers]] — 
+- [[factions/混沌星际战士/units/khorne-lord-of-skulls|Khorne Lord Of Skulls]] — 
+- [[factions/混沌星际战士/units/kratos|Kratos]] — 
+- [[factions/混沌星际战士/units/kravek-morne|Kravek Morne]] — 
+- [[factions/混沌星际战士/units/kytan-ravager|Kytan Ravager]] — 
+- [[factions/混沌星际战士/units/land-raider-achilles|Land Raider Achilles]] — 
+- [[factions/混沌星际战士/units/land-raider-proteus|Land Raider Proteus]] — 
+- [[factions/混沌星际战士/units/leviathan-dreadnought|Leviathan Dreadnought]] — 
+- [[factions/混沌星际战士/units/master-of-executions|Master Of Executions]] — 
+- [[factions/混沌星际战士/units/mastodon|Mastodon]] — 
+- [[factions/混沌星际战士/units/maulerfiend|Maulerfiend]] — 
+- [[factions/混沌星际战士/units/mutilators-legendary|Mutilators (Legendary)]] — 
+- [[factions/混沌星际战士/units/mutoid-vermin|Mutoid Vermin]] — 
+- [[factions/混沌星际战士/units/negavolt-cultists|Negavolt Cultists]] — 
+- [[factions/混沌星际战士/units/noise-marines|Noise Marines]] — 
+- [[factions/混沌星际战士/units/plague-marines|Plague Marines]] — 
+- [[factions/混沌星际战士/units/rapier-carrier|Rapier Carrier]] — 
+- [[factions/混沌星际战士/units/relic-contemptor-dreadnought|Relic Contemptor Dreadnought]] — 
+- [[factions/混沌星际战士/units/renegade-enforcer|Renegade Enforcer]] — 
+- [[factions/混沌星际战士/units/renegade-heavy-weapons-squad|Renegade Heavy Weapons Squad]] — 
+- [[factions/混沌星际战士/units/renegade-ogryn-beast-handler|Renegade Ogryn Beast Handler]] — 
+- [[factions/混沌星际战士/units/renegade-ogryn-brutes|Renegade Ogryn Brutes]] — 
+- [[factions/混沌星际战士/units/renegade-plague-ogryns|Renegade Plague Ogryns]] — 
+- [[factions/混沌星际战士/units/rogue-psyker|Rogue Psyker]] — 
+- [[factions/混沌星际战士/units/rubric-marines|Rubric Marines]] — 
+- [[factions/混沌星际战士/units/sicaran-battle-tank|Sicaran Battle Tank]] — 
+- [[factions/混沌星际战士/units/sicaran-punisher|Sicaran Punisher]] — 
+- [[factions/混沌星际战士/units/sicaran-venator|Sicaran Venator]] — 
+- [[factions/混沌星际战士/units/sokar-pattern-stormbird|Sokar-pattern Stormbird]] — 
+- [[factions/混沌星际战士/units/sorcerer|Sorcerer]] — 
+- [[factions/混沌星际战士/units/sorcerer-in-terminator-armour|Sorcerer In Terminator Armour]] — 
+- [[factions/混沌星际战士/units/sorcerer-on-bike|Sorcerer On Bike]] — 
+- [[factions/混沌星际战士/units/sorcerer-on-disc-of-tzeentch|Sorcerer On Disc Of Tzeentch]] — 
+- [[factions/混沌星际战士/units/sorcerer-on-palanquin-of-nurgle|Sorcerer On Palanquin Of Nurgle]] — 
+- [[factions/混沌星际战士/units/sorcerer-on-steed-of-slaanesh|Sorcerer On Steed Of Slaanesh]] — 
+- [[factions/混沌星际战士/units/spartan|Spartan]] — 
+- [[factions/混沌星际战士/units/storm-eagle-gunship|Storm Eagle Gunship]] — 
+- [[factions/混沌星际战士/units/terrax-pattern-termite|Terrax-pattern Termite]] — 
+- [[factions/混沌星际战士/units/traitor-enforcer|Traitor Enforcer]] — 
+- [[factions/混沌星际战士/units/traitor-guardsmen-squad|Traitor Guardsmen Squad]] — 
+- [[factions/混沌星际战士/units/typhon|Typhon]] — 
+- [[factions/混沌星际战士/units/whirlwind-scorpius|Whirlwind Scorpius]] — 
+- [[factions/混沌星际战士/units/xiphon-interceptor|Xiphon Interceptor]] — 
+- [[factions/混沌星际战士/units/huron-blackheart|休伦·黑心]] — 
+- [[factions/混沌星际战士/units/legionaries|军团战士]] — 
+- [[factions/混沌星际战士/units/venomcrawler|剧毒爬行者]] — 
+- [[factions/混沌星际战士/units/nemesis-claw|复仇之爪]] — 
+- [[factions/混沌星际战士/units/abaddon-the-despoiler|大掠夺者阿巴顿]] — 
+- [[factions/混沌星际战士/units/masters-of-the-maelstrom|大漩涡之主]] — 
+- [[factions/混沌星际战士/units/haarken-worldclaimer|夺星者哈肯]] — 
+- [[factions/混沌星际战士/units/warp-talons|次元爪]] — 
+- [[factions/混沌星际战士/units/warpsmith|次元铁匠]] — 
+- [[factions/混沌星际战士/units/mutilators|残杀者]] — 
+- [[factions/混沌星际战士/units/fabius-bile|法比乌斯拜尔]] — 
+- [[factions/混沌星际战士/units/obliterators|泯灭者]] — 
+- [[factions/混沌星际战士/units/havocs|浩劫]] — 
+- [[factions/混沌星际战士/units/chaos-bikers|混沌摩托队]] — 
+- [[factions/混沌星际战士/units/chaos-terminator-squad|混沌终结者]] — 
+- [[factions/混沌星际战士/units/chaos-lord|混沌领主]] — 
+- [[factions/混沌星际战士/units/raptors|猛禽]] — 
+- [[factions/混沌星际战士/units/vashtorr-the-arkifane|瓦什托尔]] — 
+- [[factions/混沌星际战士/units/chosen|神选战士]] — 
+- [[factions/混沌星际战士/units/red-corsairs-raiders|红海盗劫掠者]] — 
+- [[factions/混沌星际战士/units/red-corsairs-reave-captain|红海盗掠夺连长]] — 
+- [[factions/混沌星际战士/units/chaos-lord-in-terminator-armour|终结者领主]] — 
+- [[factions/混沌星际战士/units/cypher|赛佛]] — 
+- [[factions/混沌星际战士/units/chaos-lord-with-jump-pack|跳跃背包混沌领主]] — 
+- [[factions/混沌星际战士/units/heretic-astartes-daemon-prince-with-wings|阿斯塔特叛军带翼恶魔亲王]] — 
+- [[factions/混沌星际战士/units/heretic-astartes-daemon-prince|阿斯塔特叛军恶魔亲王]] — 
+- [[factions/混沌星际战士/units/master-of-possession|附魔大师]] — 
+- [[factions/混沌星际战士/units/possessed|附魔战士]] — 
+- [[factions/混沌星际战士/units/lord-discordant-on-helstalker|魔机统领]] — 
+- [[factions/混沌星际战士/units/dark-apostle|黑暗使徒]] — 
+- [[factions/混沌星际战士/units/noctilith-crown|黑石魔冠]] — 
+

@@ -4,44 +4,42 @@ name_zh: 脂鲤小队
 name_en: Tetras
 faction: 钛帝国
 type: unit
+points:
+  2 models: 80
+  4 models: 160
 tags:
 - unit
 - unit/钛帝国
 - 钛帝国
+version:
+  source: official-db
 sources:
-- book: 钛帝国十版CODEX-20251112
-  pages:
-  - 68
-raw:
-- data_refined\钛帝国十版CODEX-20251112\page_068.md
+- book: 官方结构库 db/wh40k.sqlite（Wahapedia 11版镜像 + MFM 官方点数）
+updated: '2026-07-23'
 ---
 
 ## 属性表
 | 模型 | M | T | SV | W | LD | OC |
 |---|---|---|---|---|---|---|
-| 脂鲤 | 14" | 7 | 4+ | 7 | 7+ | 2 |
+| Tetras | 14" | 7 | 4+ | 7 | 7+ | 2 |
 
-## 远程武器
+## 射击武器
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| 脉冲卡宾[速射1] | 30" | 1 | 4+ | 5 | 0 | 1 | - |
+| Pulse rifle | 30" | 1 | 4+ | 5 | 0 | 1 | [[core-rules/rapid-fire.md\|rapid fire 1]] |
 
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| 格斗武器 | 近战 | 2 | 5+ | 3 | 0 | 1 | - |
+| Close combat weapons | 近战 | 2 | 5+ | 3 | 0 | 1 | — |
 
 ## 技能
-- **致命破灭1**：当该模型被摧毁时，投一颗D6。若结果为6，该模型6"内的每一个单位受到1点`[[core-rules/mortal-wounds.md|致命伤]]`。
-- **渗透者**：在部署期间，如果单位中每个模型都拥有此技能，那么您可以将该单位部署在战场上位于敌方降落区和敌方模型水平距离9"外的任意位置。
-- **为了上上善道**（阵营技能）
-- **集束标记光**：每次本单位成为观测员时，直到本阶段结束，对应的射击手单位射击标的单位时可重投命中骰。
+- **High-intensity Markerlights**：Each time this unit is an Observer unit, until the end of the phase, each time a model in its Guided unit makes an attack that targets their Spotted unit, you can re-roll the Hit roll.
 
 ## 单位构成
-- 2-4台脂鲤（80/160分）
-- 每个模型装备着：2门脉冲卡宾；格斗武器。
-- 装备选项：无
+- **2个模型** — 80 分
+- **4个模型** — 160 分
 
 ## 关键词
-- 阵营关键词：钛帝国
-- 普通关键词：载具，飞行，标记光，脂鲤小队
+- **阵营关键词**：T’au Empire
+- **普通关键词**：Fly，Tetras，Markerlight，Vehicle

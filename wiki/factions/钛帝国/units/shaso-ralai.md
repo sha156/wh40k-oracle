@@ -1,20 +1,20 @@
 ---
 id: 000000439
+name_zh: 夏司’欧 R’ALAI
 name_en: Shas’o R’alai
 faction: 钛帝国
 type: unit
+points:
+  1 model: 80
 tags:
 - unit
 - unit/钛帝国
 - 钛帝国
+version:
+  source: official-db
 sources:
-- book: Faction Pack Tau Empire
-  pages:
-  - 31
-  - 32
-raw:
-- data_refined\Faction Pack Tau Empire\page_031.md
-- data_refined\Faction Pack Tau Empire\page_032.md
+- book: 官方结构库 db/wh40k.sqlite（Wahapedia 11版镜像 + MFM 官方点数）
+updated: '2026-07-23'
 ---
 
 ## 属性表
@@ -22,38 +22,28 @@ raw:
 |---|---|---|---|---|---|---|
 | Shas'o R'alai | 8" | 6 | 3+ | 6 | 7+ | 2 |
 
-## 远程武器
-*选择目标前，为本武器选择一种模式进行攻击。*
+### 特殊保护
+- 4+
+
+## 射击武器
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| 实验性脉冲子母弹步枪 – EMP | 24" | 1 | 3+ | 1 | 0 | 3 | [[core-rules/anti.md|反载具 3+]]，[[core-rules/devastating-wounds.md|毁灭伤损]] |
-| 实验性脉冲子母弹步枪 – 离子集束弹 | 24" | D6 | 3+ | 6 | -1 | 1 | [[core-rules/blast.md|爆炸]] |
+| Experimental pulse submunitions rifle – EMP | 24" | 1 | 3+ | 1 | 0 | 3 | [[core-rules/anti.md\|anti-vehicle 3+]]，devastating wounds |
+| Experimental pulse submunitions rifle – ionic | 24" | D6 | 3+ | 6 | -1 | 1 | blast |
 
 ## 近战武器
-| 武器 | 射程 | A | WS | S | AP | D |
-|---|---|---|---|---|---|---|
-| 战斗服铁拳 | 近战 | 3 | 4+ | 5 | 0 | 1 |
+| 武器 | 射程 | A | WS | S | AP | D | 技能 |
+|---|---|---|---|---|---|---|---|
+| Battlesuit fists | 近战 | 3 | 4+ | 5 | 0 | 1 | — |
 
 ## 技能
-**核心技能**：
-- **[[core-rules/deep-strike.md|深入打击]]**
-- **[[core-rules/leader.md|领袖]]**
-
-**阵营技能**：
-- **为了上上善道**
-- **蚀暗力场发生器**：当此模型正在领导一个单位时，该单位中的模型拥有5+无敌豁免。
-- **暗杀者**：每当此模型对一个人物单位进行攻击时，你可以重掷命中掷骰。
-- **无敌豁免**：4+
-
-**战具技能**：
-- **暗光标记无人机**：每场战斗限两次，当此单位是观察员单位时，直至该阶段结束，每当其引导单位中的模型对其锁定单位进行远程攻击时，重掷结果为1的致伤掷骰。
-  *设计师注：在此模型旁放置两个暗光标记无人机指示物，每当此技能被使用一次，移除一个指示物。*
+- **Blacklight Marker Drones**：Twice per battle, when this unit is an Observer unit, until the end of the phase, each time a ranged attack is made by a model in their Guided unit that targets their Spotted unit, re-roll a Wound roll of 1.  <br><br><b>Designer’s Note:</b> <i>Place two Blacklight Marker Drone tokens next to this model, removing one each time this ability has been used.</i>
+- **Eclipse Field Generator**：While this model is leading a unit, models in that unit have a 5+ invulnerable save.
+- **Assassin**：Each time this model makes an attack that targets a Character unit, you can re-roll the Hit roll.
 
 ## 单位构成
-- **1 Shas'o R'alai – 史诗英雄**
-
-此模型装备有：实验性脉冲子母弹步枪；战斗服铁拳；暗光标记无人机。
+- **1个模型** — 80 分
 
 ## 关键词
-- **阵营关键词**：钛帝国
-- **普通关键词**：载具，步行者，飞行，人物，标记光，史诗英雄，战斗服，Shas'o R'alai
+- **阵营关键词**：T’au Empire
+- **普通关键词**：[[core-rules/character.md|Character]]，Markerlight，[[core-rules/epic-hero.md|Epic Hero]]，Battlesuit，Shas'o R'alai，Fly，Vehicle，[[core-rules/walker.md|Walker]]

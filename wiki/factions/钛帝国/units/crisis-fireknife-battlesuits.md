@@ -4,57 +4,43 @@ name_zh: 危机火刃战斗服小队
 name_en: Crisis Fireknife Battlesuits
 faction: 钛帝国
 type: unit
+points:
+  3 models: 100
 tags:
 - unit
 - unit/钛帝国
 - 钛帝国
+version:
+  points: MFM 2026-07-23 14:17
+  source: official-db
 sources:
-- book: 钛帝国十版CODEX-20251112
-  pages:
-  - 27
-raw:
-- data_refined\钛帝国十版CODEX-20251112\page_027.md
+- book: 官方结构库 db/wh40k.sqlite（Wahapedia 11版镜像 + MFM 官方点数）
+updated: '2026-07-23'
 ---
 
 ## 属性表
 | 模型 | M | T | SV | W | LD | OC |
 |---|---|---|---|---|---|---|
-| 危机火刃战斗服 | 10" | 5 | 3+ | 4 | 7+ | 2 |
+| (XV8)危机火刃战斗服 | 10" | 5 | 3+ | 4 | 7+ | 2 |
 
-## 远程武器
+## 射击武器
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| 导弹仓 | 30" | 2 | 4+ | 7 | -1 | 2 | - |
-| 等离子步枪 | 18" | 1 | 4+ | 8 | -3 | 3 | - |
-| 并联脉冲卡宾 | 20" | 2 | 5+ | 5 | 0 | 1 | [突击，双联] |
+| 导弹仓 | 30" | 2 | 4+ | 7 | -1 | 2 | — |
+| 等离子步枪 | 18" | 1 | 4+ | 8 | -3 | 3 | — |
 
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| 战斗服铁拳 | 近战 | 3 | 5+ | 5 | 0 | 1 | - |
+| 战斗服铁拳 | 近战 | 3 | 5+ | 5 | 0 | 1 | — |
 
 ## 技能
-- **深入打击（Deep Strike）**：本模型可以[[core-rules/deep-strike.md|深入打击]]。
-- **为了上上善道（For the Greater Good）**：本单位具有[[core-rules/for-the-greater-good.md|为了上上善道]]能力。
-- **火刃（Fireknife）**：本单位中的模型射击时可重投命中骰中的1，此时如目标为起始数量，则改为重投命中骰。
-- **武器支援系统（Weapon Support System）**：装备者射击时可忽略部分或全部命中骰修正。
+- **Fireknife**：Each time a model in this unit makes a ranged attack, re-roll a Hit roll of 1. If that attack targets a unit that is at its Starting Strength, you can re-roll the Hit roll instead.
+- **Weapon Support System**：Each time a model in this unit makes a ranged attack, you can ignore any or all modifiers to the Hit roll.
 
 ## 单位构成
-- 1个危机火刃夏司‘瓦
-- 2个危机火刃夏司‘钨
-
-每个模型初始装备：1把等离子步枪、1把导弹仓、战斗服铁拳。
-
-装备选项：
-- 任意模型可将等离子步枪替换为1门导弹仓。
-- 任意模型可将导弹仓替换为1门等离子步枪。
-- 任意模型可额外装备下列至多两件，但不可重复选择：
-  - 1个枪蜂（装备者视为额外装备1门并联脉冲卡宾）
-  - 1个标记蜂（装备者获得[[core-rules/markerlight.md|标记光]]关键词，并可被选择成为观察员，即使装备者本回合进行过[[core-rules/advance.md|加速移动]]）
-  - 1个盾蜂（装备者的W面板值+1）
-
-分数：120分
+- **3个模型** — 100 分
 
 ## 关键词
-- 阵营关键词：钛帝国
-- 普通关键词：载具，机甲，飞行，战斗服，危机，火刃
+- **阵营关键词**：T’au Empire
+- **普通关键词**：Vehicle，Fly，Crisis，Fireknife，[[core-rules/walker.md|Walker]]，Battlesuit

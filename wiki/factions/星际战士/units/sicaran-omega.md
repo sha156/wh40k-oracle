@@ -1,0 +1,48 @@
+---
+id: '000001163'
+name_en: Sicaran Omega
+faction: 星际战士
+type: unit
+points:
+  1 model: 180
+tags:
+- unit
+- unit/星际战士
+- 星际战士
+version:
+  source: official-db
+sources:
+- book: 官方结构库 db/wh40k.sqlite（Wahapedia 11版镜像 + MFM 官方点数）
+updated: '2026-07-23'
+---
+
+## 属性表
+| 模型 | M | T | SV | W | LD | OC |
+|---|---|---|---|---|---|---|
+| Sicaran Omega | 10" | 11 | 2+ | 14 | 6+ | 4 |
+
+## 射击武器
+| 武器 | 射程 | A | BS | S | AP | D | 技能 |
+|---|---|---|---|---|---|---|---|
+| Heavy bolter | 36" | 3 | 3+ | 5 | -1 | 2 | [[core-rules/sustained-hits.md\|sustained hits 1]] |
+| [[factions/星际战士/units/hunter.md\|Hunter]]-killer missile | 48" | 1 | 2+ | 14 | -3 | D6 | one shot |
+| Lascannon | 48" | 1 | 3+ | 12 | -3 | D6+1 | — |
+| Omega plasma array – standard | 36" | 6 | 3+ | 9 | -3 | 2 | — |
+| Omega plasma array – supercharge | 36" | 6 | 3+ | 10 | -3 | 3 | hazardous |
+| Storm bolter | 24" | 2 | 3+ | 4 | 0 | 1 | [[core-rules/rapid-fire.md\|rapid fire 2]] |
+
+## 近战武器
+| 武器 | 射程 | A | WS | S | AP | D | 技能 |
+|---|---|---|---|---|---|---|---|
+| Armoured tracks | 近战 | 6 | 4+ | 8 | 0 | 1 | — |
+
+## 技能
+- **Overwhelming Short-range Firepower**：Each time this model makes an attack that targets the closest eligible enemy unit, re-roll a Hit roll of 1 and re-roll a Wound roll or 1.
+- **One Shot**：The bearer can only shoot with this weapon once per battle.
+
+## 单位构成
+- **1个模型** — 180 分
+
+## 关键词
+- **阵营关键词**：Adeptus Astartes
+- **普通关键词**：Sicaran Omega，Vehicle，Imperium，[[core-rules/smoke.md|Smoke]]

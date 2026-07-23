@@ -175,6 +175,16 @@ class TestSelfPathFilter:
             self_path="factions/tau-empire/units/crisis.md")
         assert "[[factions/tau-empire/units/fire-warriors.md|火武士]]" in result.body
 
+    def test_no_nested_link_when_name_inside_existing_link_path(self):
+        # 名称落在已有 [[...]] 的路径里不得再注入（基因窃取者 是
+        # factions/基因窃取者教派/units/lictor.md 路径的子串）——否则嵌套断链
+        page = _make_page(name_zh="潜袭者", name_en="Deathleaper",
+                          body="武器：[[factions/基因窃取者教派/units/lictor.md|Lictor]] 之爪。")
+        targets = {"基因窃取者": "factions/泰伦虫族/units/genestealers.md"}
+        result = inject_wikilinks(page, targets, None)
+        assert "[[factions/[[" not in result.body        # 无嵌套
+        assert result.body.count("[[") == 1              # 仍只有原来那一条链接
+
     def test_inject_all_no_self_link_via_global_alias(self, tmp_path):
         import json
         wiki = tmp_path / "wiki"
