@@ -39,7 +39,7 @@ updated: '2026-07-23'
 | Armoured hull | 近战 | 3 | 5+ | 6 | 0 | 1 | — |
 
 ## 技能
-- **Armour [[factions/星际战士/units/hunter.md|Hunter]]**：Each time this model makes an attack that targets a <span class="kwb">MONSTER</span> or <span class="kwb">VEHICLE</span>, add 1 to the Hit roll.
+- **Armour Hunter**：Each time this model makes an attack that targets a <span class="kwb">MONSTER</span> or <span class="kwb">VEHICLE</span>, add 1 to the Hit roll.
 - **Targeting Array**：Each time this model is selected to shoot, you can re-roll one Hit roll or you can re-roll one Wound roll when resolving its attacks.
 - **XV02 Pilot Battlesuit**：In your Command phase, you can select one friendly [[factions/钛帝国/units/hammerhead-gunship.md|Hammerhead Gunship]] unit within 12". Until the start of your next Command phase, ranged weapons equipped by models in that unit have the [LETHAL HITS] ability.
 - **One Shot**：The bearer can only shoot with this weapon once per battle.

@@ -40,8 +40,8 @@ updated: '2026-07-23'
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
 | 动力武器 | 近战 | 3 | 3+ | 5 | -2 | 1 | [[core-rules/anti.md\|针对步兵 3+]] |
-| 双联折磨工具 | 近战 | 2 | 3+ | 4 | -1 | 1 | [[core-rules/anti.md\|针对步兵4+]]，[[core-rules/twin-linked.md\|双联]] |
-| 双联折磨工具 | 近战 | 2 | 3+ | 4 | -1 | 1 | [[core-rules/anti.md\|针对步兵4+]]，[[core-rules/twin-linked.md\|双联]] |
+| Torturer’s tools | 近战 | 2 | 3+ | 4 | -1 | 1 | [[core-rules/anti.md\|anti-infantry 4+]] |
+| Twin torturer’s tools | 近战 | 2 | 3+ | 4 | -1 | 1 | [[core-rules/anti.md\|anti-infantry 4+]]，twin-linked |
 
 ## 技能
 - **【阵营技能】：痛苦之力**：实验性增强(苦痛):在您的冲锋阶段开始时，您可以花费1枚苦痛标识来强化该单位。若如此做，选择以下一项，直到该阶段结束前，选择的效果应用于该单位：■该单位中非角色模型装备的近战武器的攻击次数属性变为3.■该单位中非角色模型装备的近战武器的攻击次数属性变为4,并拥有[危险]技能。

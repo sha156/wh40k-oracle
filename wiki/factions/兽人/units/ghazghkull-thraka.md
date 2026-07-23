@@ -25,7 +25,8 @@ updated: '2026-07-23'
 | 传奇屁精马卡力 | 5" | 6 | 7+ | 1 | 8+ | 1 |
 
 ### 特殊保护
-- 4+
+- 碎骨者萨拉卡：4+
+- 传奇屁精马卡力：2+
 
 ## 射击武器
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
@@ -40,9 +41,9 @@ updated: '2026-07-23'
 | 马卡力的小刀 | 近战 | 1 | 4+ | 3 | 0 | 1 | [[core-rules/devastating-wounds.md\|毁灭伤害]] |
 
 ## 技能
-- **【核心技能】:领袖**：本单位可以作为领袖加入以下单位：●[[factions/兽人/units/meganobz.md|超重装老大]]●[[factions/兽人/units/boyz.md|小子]]●[[factions/兽人/units/nobz.md|老大队]]●[[factions/兽人/units/breaka-boyz.md|破拆小子]]
+- **【核心技能】:领袖**：本单位可以作为领袖加入以下单位：●[[factions/兽人/units/meganobz.md|超重装老大]]●小子●[[factions/兽人/units/nobz.md|老大队]]●[[factions/兽人/units/breaka-boyz.md|破拆小子]]
 - **【阵营技能】:WAAAGH!**
-- **伟大WAAAGH!的[[factions/艾达灵族/units/farseer.md|先知]]**：本模型所领导的单位近战攻击时命中结果+1,造伤结果+1,并且在你发动WAAAGH!技能的的生效期间内，成功的未修正命中结果为5+就视作暴击
+- **伟大WAAAGH!的先知**：本模型所领导的单位近战攻击时命中结果+1,造伤结果+1,并且在你发动WAAAGH!技能的的生效期间内，成功的未修正命中结果为5+就视作暴击
 - **碎骨者的WAAAGH!战旗【光环】**：马卡力12寸内的友军兽人单位，在你发动WAAAGH!技能的生效期间内，近战武器获得【致命一击】技能
 
 ## 单位构成

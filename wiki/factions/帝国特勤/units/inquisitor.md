@@ -5,7 +5,7 @@ name_en: Inquisitor
 faction: 帝国特勤
 type: unit
 points:
-  1 model (<ky>AGENTS OF THE IMPERIUM</ky> Detachment): 55
+  1 model (AGENTS OF THE IMPERIUM Detachment): 55
   1 model (Assigned Agent): 65
   1 model: 55
 tags:
@@ -23,7 +23,7 @@ updated: '2026-07-23'
 ## 属性表
 | 模型 | M | T | SV | W | LD | OC |
 |---|---|---|---|---|---|---|
-| [[factions/黑暗灵族/units/archon.md\|执政官]] | 6" | 3 | 4+ | 4 | 6+ | 1 |
+| 执政官 | 6" | 3 | 4+ | 4 | 6+ | 1 |
 
 ### 特殊保护
 - 5+
@@ -49,8 +49,8 @@ updated: '2026-07-23'
 - **武器技能-灵能赠礼**：持有者拥有灵能者关键词。
 
 ## 单位构成
-- **1个模型** — 55 分
-- **1个模型** — 65 分
+- **1个模型 (AGENTS OF THE IMPERIUM Detachment)** — 55 分
+- **1个模型 (Assigned Agent)** — 65 分
 - **1个模型** — 55 分
 
 ## 关键词

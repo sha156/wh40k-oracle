@@ -35,10 +35,10 @@ updated: '2026-07-23'
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| 双联赎罪锯 | 近战 | 4 | 4+ | 10 | -3 | 2 | [[core-rules/sustained-hits.md\|连击1]]，[[core-rules/twin-linked.md\|双联]] |
-| 成对忏悔者链枷 | 近战 | 8 | 4+ | 5 | -1 | 1 | [[core-rules/sustained-hits.md\|连击1]]，[[core-rules/twin-linked.md\|双联]] |
-| 双联赎罪锯 | 近战 | 4 | 4+ | 10 | -3 | 2 | [[core-rules/sustained-hits.md\|连击1]]，[[core-rules/twin-linked.md\|双联]] |
-| 成对忏悔者链枷 | 近战 | 8 | 4+ | 5 | -1 | 1 | [[core-rules/sustained-hits.md\|连击1]]，[[core-rules/twin-linked.md\|双联]] |
+| Penitent buzz-blade | 近战 | 4 | 4+ | 10 | -3 | 2 | [[core-rules/sustained-hits.md\|sustained hits 1]] |
+| Penitent flail | 近战 | 8 | 4+ | 5 | -1 | 1 | [[core-rules/sustained-hits.md\|sustained hits 1]] |
+| Twin penitent buzz-blades | 近战 | 4 | 4+ | 10 | -3 | 2 | [[core-rules/sustained-hits.md\|sustained hits 1]]，twin-linked |
+| Twin penitent flails | 近战 | 8 | 4+ | 5 | -1 | 1 | [[core-rules/sustained-hits.md\|sustained hits 1]]，twin-linked |
 
 ## 技能
 - **无尽痛苦**：该单位可以在进行了突进的回合宣布冲锋

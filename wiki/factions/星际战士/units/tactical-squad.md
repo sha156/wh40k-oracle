@@ -26,26 +26,26 @@ updated: '2026-07-23'
 ## 射击武器
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| 复合武器 | 12" | 1 | 3+ | 4 | 0 | 1 | [[core-rules/anti.md\|反步兵 4+]]，[[core-rules/devastating-wounds.md\|毁灭伤害]]，[[core-rules/rapid-fire.md\|速射 1]] |
-| 风暴爆弹枪  | 24" | 2 | 3+ | 4 | 0 | 1 | [[core-rules/rapid-fire.md\|速射 2]] |
-| 复合武器 | 24" | 1 | 4+ | 4 | 0 | 1 | [[core-rules/anti.md\|反步兵 4+]]，[[core-rules/devastating-wounds.md\|毁灭伤害]]，[[core-rules/rapid-fire.md\|速射 1]] |
-| 导弹发射器（破片） | 12" | D6 | N/A | 4 | 0 | 1 | [[core-rules/blast.md\|爆炸]]，[[core-rules/heavy.md\|重型]] |
+| Bolt pistol | 12" | 1 | 3+ | 4 | 0 | 1 | pistol |
+| Boltgun | 24" | 2 | 3+ | 4 | 0 | 1 | — |
+| Combi-weapon | 24" | 1 | 4+ | 4 | 0 | 1 | [[core-rules/anti.md\|ANTI-INFANTRY 4+]]，[[core-rules/devastating-wounds.md\|DEVASTATING WOUNDS]]，[[core-rules/rapid-fire.md\|RAPID FIRE 1]] |
+| Flamer | 12" | D6 | N/A | 4 | 0 | 1 | ignores cover，torrent |
 | Grav-cannon | 24" | 3 | 4+ | 6 | -1 | 3 | [[core-rules/anti.md\|ANTI-VEHICLE 2+]]，[[core-rules/heavy.md\|HEAVY]] |
 | Grav-gun | 18" | 2 | 3+ | 5 | -1 | 2 | [[core-rules/anti.md\|anti-vehicle 2+]] |
 | 重力手枪      | 12" | 1 | 3+ | 4 | -1 | 2 | [[core-rules/anti.md\|反载具 2+]]，[[core-rules/pistol.md\|手枪]] |
 | 重型爆弹枪   | 36" | 3 | 4+ | 5 | -1 | 2 | [[core-rules/heavy.md\|重型]]，[[core-rules/sustained-hits.md\|连击 1]] |
 | Lascannon | 48" | 1 | 4+ | 12 | -3 | D6+1 | [[core-rules/heavy.md\|HEAVY]] |
 | Meltagun | 12" | 1 | 3+ | 9 | -4 | D6 | [[core-rules/melta.md\|melta 2]] |
-| 导弹发射器（破片） | 48" | D6 | 4+ | 4 | 0 | 1 | [[core-rules/blast.md\|爆炸]]，[[core-rules/heavy.md\|重型]] |
+| Missile launcher – frag | 48" | D6 | 4+ | 4 | 0 | 1 | [[core-rules/blast.md\|BLAST]]，[[core-rules/heavy.md\|HEAVY]] |
 | Missile launcher – krak | 48" | 1 | 4+ | 9 | -2 | D6 | [[core-rules/heavy.md\|HEAVY]] |
 | Multi-melta | 18" | 2 | 4+ | 9 | -4 | D6 | [[core-rules/heavy.md\|HEAVY]]，[[core-rules/melta.md\|MELTA 2]] |
 | Plasma cannon – standard | 36" | D3 | 4+ | 7 | -2 | 1 | [[core-rules/blast.md\|BLAST]]，[[core-rules/heavy.md\|HEAVY]] |
 | Plasma cannon – supercharge | 36" | D3 | 4+ | 8 | -3 | 2 | [[core-rules/blast.md\|BLAST]]，[[core-rules/heavy.md\|HEAVY]]，[[core-rules/hazardous.md\|HAZARDOUS]] |
-| 等离子枪（标准） | 24" | 1 | 3+ | 7 | -2 | 1 | [[core-rules/rapid-fire.md\|速射 1]] |
-| 等离子枪（过载）  | 24" | 1 | 3+ | 8 | -3 | 2 | [[core-rules/rapid-fire.md\|速射 1]]，[[core-rules/hazardous.md\|危险]] |
-| 等离子枪（标准） | 12" | 1 | 3+ | 7 | -2 | 1 | [[core-rules/rapid-fire.md\|速射 1]] |
-| 等离子枪（过载）  | 12" | 1 | 3+ | 8 | -3 | 2 | [[core-rules/rapid-fire.md\|速射 1]]，[[core-rules/hazardous.md\|危险]] |
-| 风暴爆弹枪  | 24" | 2 | 3+ | 4 | 0 | 1 | [[core-rules/rapid-fire.md\|速射 2]] |
+| Plasma gun – standard | 24" | 1 | 3+ | 7 | -2 | 1 | [[core-rules/rapid-fire.md\|rapid fire 1]] |
+| Plasma gun – supercharge | 24" | 1 | 3+ | 8 | -3 | 2 | hazardous，[[core-rules/rapid-fire.md\|rapid fire 1]] |
+| Plasma pistol – standard | 12" | 1 | 3+ | 7 | -2 | 1 | PISTOL |
+| Plasma pistol – supercharge | 12" | 1 | 3+ | 8 | -3 | 2 | [[core-rules/hazardous.md\|HAZARDOUS]]，PISTOL |
+| Storm bolter | 24" | 2 | 3+ | 4 | 0 | 1 | [[core-rules/rapid-fire.md\|RAPID FIRE 2]] |
 
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |

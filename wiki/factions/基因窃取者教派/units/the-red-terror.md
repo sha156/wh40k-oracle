@@ -29,7 +29,7 @@ updated: '2026-07-23'
 
 ## 技能
 - **Swallow Whole**：Each time an attack with this model’s gaping maw targets an <span class="kwb">INFANTRY</span>, <span class="kwb">MOUNTED</span> or <span class="kwb">BEASTS</span> unit, each successful unmodified Wound roll is a Critical Wound. Each time an <span class="kwb">INFANTRY</span>, <span class="kwb">MOUNTED</span> or <span class="kwb">BEASTS</span> model is destroyed as a result of an attack made by this model’s gaping maw, this model regains up to D3+2 lost wounds.
-- **Subterranean [[factions/星际战士/units/hunter.md|Hunter]]**：At the end of the Fight phase, if this unit is not within Engagement Range of one or more enemy units, you can remove it from the battlefield and place it into Strategic Reserves.
+- **Subterranean Hunter**：At the end of the Fight phase, if this unit is not within Engagement Range of one or more enemy units, you can remove it from the battlefield and place it into Strategic Reserves.
 - **Serpentine Fiend**：This model can move through terrain features, but cannot end a move within a wall, a floor, etc. This model can be set up or end a move on any floor level of <span class="kwb">RUINS</span>, but if that level is not the ground floor, it can only do so if its base does not overhang the floor at that level.
 
 ## 单位构成

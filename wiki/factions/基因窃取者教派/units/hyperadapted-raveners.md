@@ -25,7 +25,7 @@ updated: '2026-07-23'
 ## 射击武器
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| [[factions/黑暗灵族/units/venom.md\|Venom]] bolt | 12" | D6+3 | N/A | 6 | -1 | 1 | assault，ignores cover，torrent |
+| Venom bolt | 12" | D6+3 | N/A | 6 | -1 | 1 | assault，ignores cover，torrent |
 
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |

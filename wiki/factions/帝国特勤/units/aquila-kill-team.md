@@ -22,7 +22,7 @@ updated: '2026-07-23'
 ## 属性表
 | 模型 | M | T | SV | W | LD | OC |
 |---|---|---|---|---|---|---|
-| 杀戮小队军士·[[factions/星际战士/units/deathwatch-veterans.md\|死亡守望老兵]] | 6" | 4 | 3+ | 2 | 6+ | 2 |
+| 杀戮小队军士·死亡守望老兵 | 6" | 4 | 3+ | 2 | 6+ | 2 |
 | 重装型装甲老兵 | 5" | 6 | 3+ | 3 | 6+ | 2 |
 
 ## 射击武器
@@ -41,7 +41,7 @@ updated: '2026-07-23'
 | Plasma pistol – standard | 12" | 1 | 3+ | 7 | -2 | 1 | PISTOL |
 | Plasma pistol – supercharge | 12" | 1 | 3+ | 8 | -3 | 2 | [[core-rules/hazardous.md\|HAZARDOUS]]，PISTOL |
 | Special-issue bolt pistol | 18" | 1 | 3+ | 4 | -1 | 1 | pistol，precision，lethal hits |
-| [[factions/星际战士/units/stalker.md\|Stalker]] bolt rifle | 30" | 2 | 3+ | 5 | -2 | 2 | heavy，lethal hits，precision |
+| Stalker bolt rifle | 30" | 2 | 3+ | 5 | -2 | 2 | heavy，lethal hits，precision |
 
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |

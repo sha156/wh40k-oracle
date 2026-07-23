@@ -20,7 +20,7 @@ updated: '2026-07-23'
 ## 属性表
 | 模型 | M | T | SV | W | LD | OC |
 |---|---|---|---|---|---|---|
-| 死神军[[factions/黑暗灵族/units/archon.md\|执政官]] | 8" | 3 | 4+ | 4 | 6+ | 1 |
+| 死神军执政官 | 8" | 3 | 4+ | 4 | 6+ | 1 |
 
 ### 特殊保护
 - 2+
@@ -38,7 +38,7 @@ updated: '2026-07-23'
 
 ## 技能
 - **【阵营技能】：战斗专注，殊途同归**
-- **[[factions/太空死灵/units/overlord.md|霸主]]**：当本模型领导一个单位时，当该单位中的模型进行攻击时，你可以重投结果为1 的造伤骰；如果该单位的模型数量低于初始兵力，则可以重投全部造伤骰
+- **霸主**：当本模型领导一个单位时，当该单位中的模型进行攻击时，你可以重投结果为1 的造伤骰；如果该单位的模型数量低于初始兵力，则可以重投全部造伤骰
 - **复生阴谋家**：每个大回合一次，本模型所在的单位被选为战略目标的技能时，一个拥有此能力的模型可以使用此能力，上述战略技能的CP花费减1
 
 ## 单位构成
@@ -46,4 +46,4 @@ updated: '2026-07-23'
 
 ## 关键词
 - **阵营关键词**：Ynnari
-- **普通关键词**：Aeldari，[[core-rules/infantry.md|Infantry]]，[[core-rules/character.md|Character]]，[[factions/黑暗灵族/units/archon.md|Archon]]
+- **普通关键词**：Aeldari，[[core-rules/infantry.md|Infantry]]，[[core-rules/character.md|Character]]，Archon

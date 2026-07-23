@@ -21,7 +21,7 @@ updated: '2026-07-23'
 ## 属性表
 | 模型 | M | T | SV | W | LD | OC |
 |---|---|---|---|---|---|---|
-| 伽拉图斯蔑视者[[factions/星际战士/units/dreadnought.md\|无畏机甲]] | 6" | 9 | 2+ | 10 | 6+ | 3 |
+| 伽拉图斯蔑视者无畏机甲 | 6" | 9 | 2+ | 10 | 6+ | 3 |
 
 ### 特殊保护
 - 4+
@@ -45,4 +45,4 @@ updated: '2026-07-23'
 
 ## 关键词
 - **阵营关键词**：Adeptus Custodes
-- **普通关键词**：Imperium，Contemptor-Galatus [[factions/星际战士/units/dreadnought.md|Dreadnought]]，Vehicle，[[core-rules/walker.md|Walker]]
+- **普通关键词**：Imperium，Contemptor-Galatus Dreadnought，Vehicle，[[core-rules/walker.md|Walker]]

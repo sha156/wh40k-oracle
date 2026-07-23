@@ -29,12 +29,12 @@ updated: '2026-07-23'
 ## 射击武器
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| 双联星镖炮 | 24" | 3 | 3+ | 6 | -1 | 2 | [[core-rules/lethal-hits.md\|致命一击]]，[[core-rules/twin-linked.md\|双联]] |
+| Shuriken cannon | 24" | 3 | 3+ | 6 | -1 | 2 | lethal hits |
 | 双联灵族导弹发射器（击星弹头） | 48" | 1 | 3+ | 10 | -2 | D6 | [[core-rules/twin-linked.md\|双联]] |
 | 双联灵族导弹发射器（阳炎弹头） | 48" | D6 | 3+ | 4 | -1 | 1 | [[core-rules/blast.md\|爆炸]]，[[core-rules/twin-linked.md\|双联]] |
 | 双联光矛 | 36" | 1 | 3+ | 12 | -3 | D6+2 | [[core-rules/twin-linked.md\|双联]] |
 | 双联散射激光 | 36" | 6 | 3+ | 5 | 0 | 1 | [[core-rules/sustained-hits.md\|连击 1]]，[[core-rules/twin-linked.md\|双联]] |
-| 双联星镖炮 | 24" | 3 | 3+ | 6 | -1 | 2 | [[core-rules/lethal-hits.md\|致命一击]]，[[core-rules/twin-linked.md\|双联]] |
+| Twin shuriken cannon | 24" | 3 | 3+ | 6 | -1 | 2 | lethal hits，twin-linked |
 | 双联星镖枪 | 18" | 2 | 3+ | 4 | -1 | 1 | [[core-rules/assault.md\|突击]]，[[core-rules/twin-linked.md\|双联]] |
 | 双联星光炮 | 36" | 2 | 3+ | 8 | -3 | 2 | [[core-rules/twin-linked.md\|双联]] |
 

@@ -34,7 +34,7 @@ updated: '2026-07-23'
 ## 技能
 - **阵营：恐虐祝福**
 - **永恒怒火**：在该模型领导一个单位时，在你的指挥阶段，您可以将 1 个 被摧毁的护卫模型重新加入该单位。
-- **[[factions/混沌星际战士/units/possessed.md|附魔战士]][[factions/太空死灵/units/lord.md|领主]]**：整场游戏一次，在近战阶段开始时可以使用。在该阶段结束 前，本模型装备的近战武器 A+3 并获得 [毁灭伤害] 技能。
+- **附魔战士领主**：整场游戏一次，在近战阶段开始时可以使用。在该阶段结束 前，本模型装备的近战武器 A+3 并获得 [毁灭伤害] 技能。
 - **八缚之主**：如果在宣布战斗编队步骤中，该模型与一个吞世者附魔战士 单位组成联合单位，那么该模型获得 [深入打击] 和 [斥候 6] 技能。
 
 ## 单位构成
@@ -42,4 +42,4 @@ updated: '2026-07-23'
 
 ## 关键词
 - **阵营关键词**：World Eaters
-- **普通关键词**：[[core-rules/infantry.md|Infantry]]，Chaos，Khorne，Daemon，[[factions/混沌恶魔/units/possessed.md|Possessed]]，Slaughterbound，[[core-rules/character.md|Character]]
+- **普通关键词**：[[core-rules/infantry.md|Infantry]]，Chaos，Khorne，Daemon，Possessed，Slaughterbound，[[core-rules/character.md|Character]]

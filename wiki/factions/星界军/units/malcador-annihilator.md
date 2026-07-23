@@ -19,7 +19,7 @@ updated: '2026-07-23'
 ## 属性表
 | 模型 | M | T | SV | W | LD | OC |
 |---|---|---|---|---|---|---|
-| [[factions/基因窃取者教派/units/malcador.md\|Malcador]] Annihilator | 10" | 11 | 2+ | 18 | 7+ | 5 |
+| Malcador Annihilator | 10" | 11 | 2+ | 18 | 7+ | 5 |
 
 ## 射击武器
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
@@ -28,7 +28,7 @@ updated: '2026-07-23'
 | Demolisher cannon | 24" | D6+3 | 4+ | 14 | -3 | D6 | blast |
 | Heavy bolter | 36" | 3 | 4+ | 5 | -1 | 2 | [[core-rules/sustained-hits.md\|sustained hits 1]] |
 | Heavy stubber | 36" | 3 | 4+ | 4 | 0 | 1 | [[core-rules/rapid-fire.md\|rapid fire 3]] |
-| [[factions/星际战士/units/hunter.md\|Hunter]]-killer missile | 48" | 1 | 4+ | 14 | -3 | D6 | one shot |
+| Hunter-killer missile | 48" | 1 | 4+ | 14 | -3 | D6 | one shot |
 | Lascannon | 48" | 1 | 4+ | 12 | -3 | D6+1 | — |
 | Malcador twin lascannon | 48" | 1 | 4+ | 12 | -3 | D6+1 | twin-linked |
 | Storm bolter | 24" | 1 | 4+ | 4 | 0 | 1 | [[core-rules/rapid-fire.md\|rapid fire 2]] |

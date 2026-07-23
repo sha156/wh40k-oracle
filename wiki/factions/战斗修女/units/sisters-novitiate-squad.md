@@ -30,10 +30,10 @@ updated: '2026-07-23'
 ## 射击武器
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| 自动枪 | 12" | 1 | 3+ | 3 | 0 | 1 | [[core-rules/rapid-fire.md\|速射1]] |
-| 自动枪 | 24" | 1 | 3+ | 3 | 0 | 1 | [[core-rules/rapid-fire.md\|速射1]] |
-| 爆弹枪 | 12" | 1 | 3+ | 4 | 0 | 1 | [[core-rules/rapid-fire.md\|速射 1]] |
-| 爆弹枪 | 24" | 1 | 3+ | 4 | 0 | 1 | [[core-rules/rapid-fire.md\|速射 1]] |
+| Autopistol | 12" | 1 | 3+ | 3 | 0 | 1 | pistol |
+| Autogun | 24" | 1 | 3+ | 3 | 0 | 1 | [[core-rules/rapid-fire.md\|rapid fire 1]] |
+| Bolt pistol | 12" | 1 | 3+ | 4 | 0 | 1 | pistol |
+| Boltgun | 24" | 1 | 3+ | 4 | 0 | 1 | [[core-rules/rapid-fire.md\|rapid fire 1]] |
 | 教廷火焰喷射器 | 12" | D6 | N/A | 5 | 0 | 1 | [[core-rules/ignores-cover.md\|忽略掩体]]，[[core-rules/torrent.md\|喷射]] |
 | 等离子手枪(标准) | 12" | 1 | 3+ | 7 | -2 | 1 | [[core-rules/pistol.md\|手枪]] |
 | 等离子手枪(过载) | 12" | 1 | 3+ | 8 | -3 | 2 | [[core-rules/pistol.md\|手枪]]，[[core-rules/hazardous.md\|危险]] |

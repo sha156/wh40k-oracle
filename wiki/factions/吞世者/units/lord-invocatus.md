@@ -21,7 +21,7 @@ updated: '2026-07-23'
 ## 属性表
 | 模型 | M | T | SV | W | LD | OC |
 |---|---|---|---|---|---|---|
-| [[factions/太空死灵/units/lord.md\|Lord]] Invocatus | 10" | 6 | 3+ | 8 | 6+ | 2 |
+| Lord Invocatus | 10" | 6 | 3+ | 8 | 6+ | 2 |
 
 ### 特殊保护
 - 4+

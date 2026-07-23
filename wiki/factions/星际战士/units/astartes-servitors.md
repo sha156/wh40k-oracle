@@ -19,7 +19,7 @@ updated: '2026-07-23'
 ## 属性表
 | 模型 | M | T | SV | W | LD | OC |
 |---|---|---|---|---|---|---|
-| Astartes [[factions/机械修会/units/servitors.md\|Servitors]] | 6" | 4 | 4+ | 1 | 8+ | 0 |
+| Astartes Servitors | 6" | 4 | 4+ | 1 | 8+ | 0 |
 
 ### 特殊保护
 - 6+

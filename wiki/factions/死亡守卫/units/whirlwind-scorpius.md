@@ -19,14 +19,14 @@ updated: '2026-07-23'
 ## 属性表
 | 模型 | M | T | SV | W | LD | OC |
 |---|---|---|---|---|---|---|
-| [[factions/星际战士/units/whirlwind.md\|Whirlwind]] Scorpius | 10" | 10 | 3+ | 11 | 6+ | 3 |
+| Whirlwind Scorpius | 10" | 10 | 3+ | 11 | 6+ | 3 |
 
 ## 射击武器
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
 | Storm bolter | 24" | 2 | 3+ | 4 | 0 | 1 | [[core-rules/rapid-fire.md\|rapid fire 2]] |
 | Scorpius multi-launcher | 48" | 2D3+3 | 3+ | 6 | -1 | 2 | blast，indirect fire |
-| [[factions/星际战士/units/hunter.md\|Hunter]]-killer missile | 48" | 1 | 2+ | 14 | -3 | D6 | one shot |
+| Hunter-killer missile | 48" | 1 | 2+ | 14 | -3 | D6 | one shot |
 
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |

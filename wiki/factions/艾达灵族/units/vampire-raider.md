@@ -19,7 +19,7 @@ updated: '2026-07-23'
 ## 属性表
 | 模型 | M | T | SV | W | LD | OC |
 |---|---|---|---|---|---|---|
-| Vampire [[factions/黑暗灵族/units/raider.md\|Raider]] | 14" | 12 | 3+ | 30 | 6+ | 0 |
+| Vampire Raider | 14" | 12 | 3+ | 30 | 6+ | 0 |
 
 ### 特殊保护
 - 4*+

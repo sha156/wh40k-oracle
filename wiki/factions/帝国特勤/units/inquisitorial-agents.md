@@ -5,8 +5,8 @@ name_en: Inquisitorial Agents
 faction: 帝国特勤
 type: unit
 points:
-  6 models (<ky>AGENTS OF THE IMPERIUM</ky> Detachment): 50
-  12 models (<ky>AGENTS OF THE IMPERIUM</ky> Detachment): 100
+  6 models (AGENTS OF THE IMPERIUM Detachment): 50
+  12 models (AGENTS OF THE IMPERIUM Detachment): 100
   6 models (Assigned Agent): 60
   12 models (Assigned Agent): 120
   6 models: 50
@@ -52,13 +52,13 @@ updated: '2026-07-23'
 - **武器技能-典籍颅骨**：该单位每装备一个典籍颅骨，每场战斗中就有一次机会，在任意阶段开始时，您可以选择一个位于该单位6寸内且处于战斗震慑状态的己方帝国特勤单位或一个位于该单位6寸内的敌方单位。如果您选择了一个己方单位，那个单位不再处于战斗震慑状态，如果您选择了一个敌方单位，那个单位必须进行一次战斗震慑测试。设计者注：在战斗开始时将确切数量的典籍颅骨标识放在该单位旁边，每当使用一次该技能后，移除一个标识。
 
 ## 单位构成
-- **6个模型** — 50 分
-- **12个模型** — 100 分
-- **6个模型** — 60 分
-- **12个模型** — 120 分
+- **6个模型 (AGENTS OF THE IMPERIUM Detachment)** — 50 分
+- **12个模型 (AGENTS OF THE IMPERIUM Detachment)** — 100 分
+- **6个模型 (Assigned Agent)** — 60 分
+- **12个模型 (Assigned Agent)** — 120 分
 - **6个模型** — 50 分
 - **12个模型** — 100 分
 
 ## 关键词
 - **阵营关键词**：Agents of the Imperium
-- **普通关键词**：Retinue，Imperium，[[core-rules/infantry.md|Infantry]]，[[core-rules/grenades.md|Grenades]]，[[factions/帝国特勤/units/inquisitor.md|Inquisitor]]ial Agents
+- **普通关键词**：Retinue，Imperium，[[core-rules/infantry.md|Infantry]]，[[core-rules/grenades.md|Grenades]]，Inquisitorial Agents

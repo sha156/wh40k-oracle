@@ -40,7 +40,7 @@ updated: '2026-07-23'
 | 动力爪 | 近战 | 4 | 3+ | 10 | -2 | 2 | — |
 
 ## 技能
-- **【核心技能】:领袖**：单位可以作为领袖加入以下单位：●[[factions/兽人/units/boyz.md|小子]]●[[factions/兽人/units/nobz.md|老大队]]●[[factions/兽人/units/breaka-boyz.md|破拆小子]]
+- **【核心技能】:领袖**：单位可以作为领袖加入以下单位：●小子●[[factions/兽人/units/nobz.md|老大队]]●[[factions/兽人/units/breaka-boyz.md|破拆小子]]
 - **【阵营技能】:WAAAGH!**
 - **最大最强**：当你发动WAAAGH!技能的生效期间内，本模型的近战武器A+4
 - **力量即正义**：本模型所领导的单位中的模型近战攻击命中结果+1

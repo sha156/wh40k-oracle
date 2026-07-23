@@ -30,8 +30,8 @@ updated: '2026-07-23'
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
 | 死亡纺织者 | 12" | D6 | N/A | 4 | -1 | 1 | [[core-rules/ignores-cover.md\|无视掩体]]，[[core-rules/torrent.md\|喷射]] |
-| 火龙热熔手枪 | 12" | 1 | 2+ | 9 | -4 | D6 | [[core-rules/assault.md\|突击]]，[[core-rules/melta.md\|热熔 3]]，[[core-rules/pistol.md\|手枪]] |
-| 火龙热熔手枪 | 6" | 1 | 2+ | 9 | -4 | D6 | [[core-rules/assault.md\|突击]]，[[core-rules/melta.md\|热熔 3]]，[[core-rules/pistol.md\|手枪]] |
+| Dragon fusion gun | 12" | 1 | 2+ | 9 | -4 | D6 | assault，[[core-rules/melta.md\|melta 3]] |
+| Dragon fusion pistol | 6" | 1 | 2+ | 9 | -4 | D6 | assault，[[core-rules/melta.md\|melta 3]]，pistol |
 | 死神发射器（击星弹头） | 48" | 1 | 3+ | 10 | -2 | 3 | [[core-rules/heavy.md\|重型]]，[[core-rules/ignores-cover.md\|无视掩体]] |
 | 死神发射器（群星弹头） | 48" | 2 | 3+ | 4 | -2 | 1 | [[core-rules/heavy.md\|重型]]，[[core-rules/ignores-cover.md\|无视掩体]] |
 | 星镖手枪 | 12" | 1 | 2+ | 4 | -1 | 1 | [[core-rules/assault.md\|突击]]，[[core-rules/pistol.md\|手枪]] |

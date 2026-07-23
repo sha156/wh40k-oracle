@@ -19,7 +19,7 @@ updated: '2026-07-23'
 ## 属性表
 | 模型 | M | T | SV | W | LD | OC |
 |---|---|---|---|---|---|---|
-| Chaos [[factions/星际战士/units/deimos-predator.md\|Deimos Predator]] | 10" | 10 | 3+ | 11 | 6+ | 3 |
+| Chaos Deimos Predator | 10" | 10 | 3+ | 11 | 6+ | 3 |
 
 ## 射击武器
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
@@ -28,7 +28,7 @@ updated: '2026-07-23'
 | Conversion beam cannon | 24" | 1 | 3+ | 7 | -1 | 3 | conversion，sustained hits d3 |
 | Heavy bolter | 36" | 3 | 3+ | 5 | -1 | 2 | [[core-rules/sustained-hits.md\|sustained hits 1]] |
 | Heavy flamer | 12" | D6 | N/A | 5 | -1 | 1 | ignores cover，torrent |
-| [[factions/星际战士/units/hunter.md\|Hunter]]-killer missile | 48" | 1 | 2+ | 14 | -3 | D6 | one shot |
+| Hunter-killer missile | 48" | 1 | 2+ | 14 | -3 | D6 | one shot |
 | Infernus cannon | 12" | 2D6 | N/A | 6 | -1 | 1 | torrent，ignores cover |
 | Lascannon | 48" | 1 | 3+ | 12 | -3 | D6+1 | — |
 | Magna-melta cannon | 18" | 2 | 3+ | 12 | -4 | D6 | [[core-rules/melta.md\|melta 4]] |

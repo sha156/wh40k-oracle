@@ -20,7 +20,7 @@ updated: '2026-07-23'
 ## 属性表
 | 模型 | M | T | SV | W | LD | OC |
 |---|---|---|---|---|---|---|
-| 护教军[[factions/星际战士/units/marshal.md\|元帅]] | 6" | 3 | 4+ | 3 | 6+ | 1 |
+| 护教军元帅 | 6" | 3 | 4+ | 3 | 6+ | 1 |
 
 ### 特殊保护
 - 5+
@@ -45,4 +45,4 @@ updated: '2026-07-23'
 
 ## 关键词
 - **阵营关键词**：Imperial Knights，Adeptus Mechanicus
-- **普通关键词**：Imperium，[[core-rules/character.md|Character]]，[[factions/星际战士/units/marshal.md|Marshal]]，[[core-rules/infantry.md|Infantry]]，Skitarii
+- **普通关键词**：Imperium，[[core-rules/character.md|Character]]，Marshal，[[core-rules/infantry.md|Infantry]]，Skitarii

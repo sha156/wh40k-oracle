@@ -20,7 +20,7 @@ updated: '2026-07-23'
 ## 属性表
 | 模型 | M | T | SV | W | LD | OC |
 |---|---|---|---|---|---|---|
-| Skitarii [[factions/艾达灵族/units/rangers.md\|Rangers]] | 6" | 3 | 4+ | 1 | 7+ | 2 |
+| Skitarii Rangers | 6" | 3 | 4+ | 1 | 7+ | 2 |
 
 ### 特殊保护
 - 5+

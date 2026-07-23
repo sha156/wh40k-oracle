@@ -20,7 +20,7 @@ updated: '2026-07-23'
 ## 属性表
 | 模型 | M | T | SV | W | LD | OC |
 |---|---|---|---|---|---|---|
-| [[factions/千子/units/sorcerer.md\|Sorcerer]] In Terminator Armour | 5" | 5 | 2+ | 5 | 6+ | 1 |
+| Sorcerer In Terminator Armour | 5" | 5 | 2+ | 5 | 6+ | 1 |
 
 ### 特殊保护
 - 4+

@@ -29,13 +29,13 @@ updated: '2026-07-23'
 | Heavy laser destroyer | 72" | 2 | 3+ | 16 | -4 | D6+4 | heavy |
 | Heavy onslaught gatling cannon | 24" | 12 | 3+ | 6 | 0 | 1 | devastating wounds |
 | 伊卡洛斯火箭巢        | 24" | D3 | 3+ | 8 | -1 | 2 | [[core-rules/anti.md\|反飞行 2+]] |
-| 双联伊卡路斯铁雨重机枪    | 36" | 3 | 3+ | 4 | 0 | 1 | [[core-rules/rapid-fire.md\|速射 3]]，[[core-rules/twin-linked.md\|双联]]，[[core-rules/anti.md\|反飞行 4+]] |
+| Ironhail heavy stubber | 36" | 3 | 3+ | 4 | 0 | 1 | [[core-rules/rapid-fire.md\|rapid fire 3]] |
 | Macro plasma incinerator – standard | 36" | D6+1 | 3+ | 8 | -3 | 2 | blast |
 | Macro plasma incinerator – supercharge | 36" | D6+1 | 3+ | 9 | -4 | 3 | blast，hazardous |
 | Multi-melta | 18" | 2 | 3+ | 9 | -4 | D6 | [[core-rules/melta.md\|melta 2]] |
 | 处决者防御阵列  | 24" | 10 | 3+ | 4 | 0 | 1 | — |
 | Twin heavy bolter | 36" | 3 | 3+ | 5 | -1 | 2 | [[core-rules/sustained-hits.md\|sustained hits 1]]，twin-linked |
-| 双联伊卡路斯铁雨重机枪    | 36" | 3 | 3+ | 4 | 0 | 1 | [[core-rules/rapid-fire.md\|速射 3]]，[[core-rules/twin-linked.md\|双联]]，[[core-rules/anti.md\|反飞行 4+]] |
+| Twin Icarus ironhail heavy stubber | 36" | 3 | 3+ | 4 | 0 | 1 | [[core-rules/anti.md\|anti-fly 4+]]，[[core-rules/rapid-fire.md\|rapid fire 3]]，twin-linked |
 
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |

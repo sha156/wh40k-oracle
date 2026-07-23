@@ -40,7 +40,7 @@ updated: '2026-07-23'
 | Gnashing maw | 近战 | 4 | 3+ | 6 | -1 | 1 | lethal hits |
 
 ## 技能
-- **Tank [[factions/星际战士/units/hunter.md|Hunter]]s**：In your Shooting phase, each time a model in this unit makes an attack that targets a <span class="kwb">MONSTER</span> or <span class="kwb">VEHICLE</span> unit, add 1 to the Hit roll and add 1 to the Wound roll.
+- **Tank Hunters**：In your Shooting phase, each time a model in this unit makes an attack that targets a <span class="kwb">MONSTER</span> or <span class="kwb">VEHICLE</span> unit, add 1 to the Hit roll and add 1 to the Wound roll.
 
 ## 单位构成
 - **1个模型** — 100 分

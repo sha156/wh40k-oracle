@@ -20,13 +20,13 @@ updated: '2026-07-23'
 ## 属性表
 | 模型 | M | T | SV | W | LD | OC |
 |---|---|---|---|---|---|---|
-| Land [[factions/黑暗灵族/units/raider.md\|Raider]] | 10" | 12 | 2+ | 16 | 6+ | 5 |
+| Land Raider | 10" | 12 | 2+ | 16 | 6+ | 5 |
 
 ## 射击武器
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
 | Godhammer lascannon | 48" | 2 | 3+ | 12 | -3 | D6+1 | — |
-| [[factions/星际战士/units/hunter.md\|Hunter]]-killer missile | 48" | 1 | 2+ | 14 | -3 | D6 | one shot |
+| Hunter-killer missile | 48" | 1 | 2+ | 14 | -3 | D6 | one shot |
 | Multi-melta | 18" | 2 | 3+ | 9 | -4 | D6 | [[core-rules/melta.md\|melta 2]] |
 | Storm bolter | 24" | 2 | 3+ | 4 | 0 | 1 | [[core-rules/rapid-fire.md\|rapid fire 2]] |
 | Twin heavy bolter | 36" | 3 | 3+ | 5 | -1 | 2 | [[core-rules/sustained-hits.md\|sustained hits 1]]，twin-linked |

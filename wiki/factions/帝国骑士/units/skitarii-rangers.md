@@ -50,4 +50,4 @@ updated: '2026-07-23'
 
 ## 关键词
 - **阵营关键词**：Imperial Knights，Adeptus Mechanicus
-- **普通关键词**：[[core-rules/infantry.md|Infantry]]，[[core-rules/battleline.md|Battleline]]，Imperium，Skitarii，[[factions/艾达灵族/units/rangers.md|Rangers]]
+- **普通关键词**：[[core-rules/infantry.md|Infantry]]，[[core-rules/battleline.md|Battleline]]，Imperium，Skitarii，Rangers

@@ -20,7 +20,7 @@ updated: '2026-07-23'
 ## 属性表
 | 模型 | M | T | SV | W | LD | OC |
 |---|---|---|---|---|---|---|
-| 暗影[[factions/艾达灵族/units/farseer.md\|先知]] | 8" | 3 | 6+ | 4 | 6+ | 1 |
+| 暗影先知 | 8" | 3 | 6+ | 4 | 6+ | 1 |
 
 ### 特殊保护
 - 4+
@@ -28,7 +28,7 @@ updated: '2026-07-23'
 ## 射击武器
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| 星镖手枪 | 12" | 1 | 2+ | 4 | -2 | 1 | [[core-rules/assault.md\|突击]]，[[core-rules/pistol.md\|手枪]] |
+| Neuro disruptor | 12" | 1 | 2+ | 4 | -2 | 1 | [[core-rules/anti.md\|anti-infantry 2+]]，assault，pistol |
 | Shuriken pistol | 12" | 1 | 2+ | 4 | -1 | 1 | assault，pistol |
 
 ## 近战武器

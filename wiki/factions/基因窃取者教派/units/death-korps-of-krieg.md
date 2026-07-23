@@ -26,19 +26,19 @@ updated: '2026-07-23'
 ## 射击武器
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| 等离子手枪（过载） | 24" | 1 | 4+ | 8 | -3 | 2 | [[core-rules/hazardous.md\|危险]]，[[core-rules/pistol.md\|手枪]] |
+| Plasma gun – supercharge | 24" | 1 | 4+ | 8 | -3 | 2 | hazardous，[[core-rules/rapid-fire.md\|rapid fire 1]] |
 | 火焰喷射器 | 12" | D6 | N/A | 4 | 0 | 1 | [[core-rules/ignores-cover.md\|无视掩体]]，[[core-rules/torrent.md\|洪流]] |
 | 榴弹发射器（破片） | 24" | D3 | 4+ | 4 | 0 | 1 | [[core-rules/blast.md\|爆炸]] |
 | 榴弹发射器（穿甲） | 24" | 1 | 4+ | 9 | -2 | D3 | — |
-| 激光手枪 | 24" | 1 | 4+ | 3 | 0 | 1 | [[core-rules/pistol.md\|手枪]] |
-| 激光手枪 | 12" | 1 | 4+ | 3 | 0 | 1 | [[core-rules/pistol.md\|手枪]] |
+| Lasgun | 24" | 1 | 4+ | 3 | 0 | 1 | [[core-rules/rapid-fire.md\|rapid fire 1]] |
+| Laspistol | 12" | 1 | 4+ | 3 | 0 | 1 | pistol |
 | 狙击步枪 | 36" | 1 | 4+ | 4 | -2 | 2 | [[core-rules/heavy.md\|重型]]，[[core-rules/precision.md\|精准]] |
 | 热熔枪 | 12" | 1 | 4+ | 9 | -4 | D6 | [[core-rules/melta.md\|热熔2]] |
-| 等离子手枪（标准） | 24" | 1 | 4+ | 7 | -2 | 1 | [[core-rules/pistol.md\|手枪]] |
-| 爆弹枪 | 12" | 1 | 4+ | 4 | 0 | 1 | [[core-rules/rapid-fire.md\|速射1]] |
-| 爆弹枪 | 24" | 1 | 4+ | 4 | 0 | 1 | [[core-rules/rapid-fire.md\|速射1]] |
-| 等离子手枪（标准） | 12" | 1 | 4+ | 7 | -2 | 1 | [[core-rules/pistol.md\|手枪]] |
-| 等离子手枪（过载） | 12" | 1 | 4+ | 8 | -3 | 2 | [[core-rules/hazardous.md\|危险]]，[[core-rules/pistol.md\|手枪]] |
+| Plasma gun – standard | 24" | 1 | 4+ | 7 | -2 | 1 | [[core-rules/rapid-fire.md\|rapid fire 1]] |
+| Bolt pistol | 12" | 1 | 4+ | 4 | 0 | 1 | PISTOL |
+| Boltgun | 24" | 1 | 4+ | 4 | 0 | 1 | [[core-rules/rapid-fire.md\|rapid fire 1]] |
+| Plasma pistol – standard | 12" | 1 | 4+ | 7 | -2 | 1 | pistol |
+| Plasma pistol – supercharge | 12" | 1 | 4+ | 8 | -3 | 2 | hazardous，pistol |
 
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |

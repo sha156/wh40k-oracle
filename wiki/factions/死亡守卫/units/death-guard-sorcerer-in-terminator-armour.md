@@ -19,7 +19,7 @@ updated: '2026-07-23'
 ## 属性表
 | 模型 | M | T | SV | W | LD | OC |
 |---|---|---|---|---|---|---|
-| Death Guard [[factions/千子/units/sorcerer-in-terminator-armour.md\|Sorcerer In Terminator Armour]] | 4" | 6 | 2+ | 5 | 6+ | 1 |
+| Death Guard Sorcerer In Terminator Armour | 4" | 6 | 2+ | 5 | 6+ | 1 |
 
 ### 特殊保护
 - 4+
@@ -50,4 +50,4 @@ updated: '2026-07-23'
 
 ## 关键词
 - **阵营关键词**：Death Guard
-- **普通关键词**：[[core-rules/character.md|Character]]，[[core-rules/infantry.md|Infantry]]，[[core-rules/psyker.md|Psyker]]，Chaos，Nurgle，Terminator，[[factions/千子/units/sorcerer.md|Sorcerer]]
+- **普通关键词**：[[core-rules/character.md|Character]]，[[core-rules/infantry.md|Infantry]]，[[core-rules/psyker.md|Psyker]]，Chaos，Nurgle，Terminator，Sorcerer

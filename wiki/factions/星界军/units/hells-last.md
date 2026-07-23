@@ -52,4 +52,4 @@ updated: '2026-07-23'
 
 ## 关键词
 - **阵营关键词**：Astra Militarum
-- **普通关键词**：[[core-rules/character.md|Character]]，Hell’s Last，[[factions/星际战士/units/command-squad.md|Command Squad]]，Platoon，Imperium，[[core-rules/infantry.md|Infantry]]，[[core-rules/grenades.md|Grenades]]，Officer
+- **普通关键词**：[[core-rules/character.md|Character]]，Hell’s Last，Command Squad，Platoon，Imperium，[[core-rules/infantry.md|Infantry]]，[[core-rules/grenades.md|Grenades]]，Officer

@@ -34,7 +34,7 @@ updated: '2026-07-23'
 | Heavy bolter | 36" | 3 | 4+ | 5 | -1 | 2 | [[core-rules/sustained-hits.md\|sustained hits 1]] |
 | Heavy flamer | 12" | D6 | N/A | 5 | -1 | 1 | ignores cover，torrent |
 | Heavy stubber | 36" | 3 | 4+ | 4 | 0 | 1 | [[core-rules/rapid-fire.md\|rapid fire 3]] |
-| [[factions/星际战士/units/hunter.md\|Hunter]]-killer missile | 48" | 1 | 4+ | 14 | -3 | D6 | one shot |
+| Hunter-killer missile | 48" | 1 | 4+ | 14 | -3 | D6 | one shot |
 | Lascannon | 48" | 1 | 4+ | 12 | -3 | D6+1 | — |
 | Leman Russ battle cannon | 48" | D6+3 | 4+ | 10 | -1 | 3 | blast |
 | Multi-melta | 18" | 2 | 4+ | 9 | -4 | D6 | [[core-rules/melta.md\|melta 2]] |

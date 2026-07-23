@@ -41,7 +41,7 @@ updated: '2026-07-23'
 
 ## 技能
 - **Shining Aegis**：The bearer has a Save characteristic of 3+.
-- **Daemon [[factions/太空死灵/units/lord.md|Lord]] of Slaanesh (Aura)**：While a friendly Slaanesh Legiones Daemonica unit is within 6" of this model, improve the Armour Penetration of melee weapons in that unit by 1.
+- **Daemon Lord of Slaanesh (Aura)**：While a friendly Slaanesh Legiones Daemonica unit is within 6" of this model, improve the Armour Penetration of melee weapons in that unit by 1.
 - **Mesmerising Form**：Each time an attack targets this model, subtract 1 from the Hit roll.
 - **Greater Daemon of Slaanesh (Aura)**：While a friendly Slaanesh Legiones Daemonica unit is within 6" of this model, that unit is within your army’s Shadow of Chaos.
 
@@ -50,4 +50,4 @@ updated: '2026-07-23'
 
 ## 关键词
 - **阵营关键词**：Legiones Daemonica
-- **普通关键词**：[[core-rules/psyker.md|Psyker]]，Monster，[[core-rules/character.md|Character]]，Shadow Legion，[[factions/帝皇之子/units/keeper-of-secrets.md|Keeper of Secrets]]，Slaanesh，Daemon，Chaos
+- **普通关键词**：[[core-rules/psyker.md|Psyker]]，Monster，[[core-rules/character.md|Character]]，Shadow Legion，Keeper of Secrets，Slaanesh，Daemon，Chaos

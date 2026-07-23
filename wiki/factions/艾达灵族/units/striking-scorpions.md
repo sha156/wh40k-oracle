@@ -31,8 +31,8 @@ updated: '2026-07-23'
 ## 射击武器
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| 星镖手枪 | 12" | 1 | 3+ | 4 | -1 | 1 | [[core-rules/assault.md\|突击]]，[[core-rules/pistol.md\|手枪]] |
-| 星镖手枪 | 12" | 1 | 3+ | 4 | -1 | 1 | [[core-rules/assault.md\|突击]]，[[core-rules/pistol.md\|手枪]] |
+| Chainsabres | 12" | 1 | 3+ | 4 | -1 | 1 | assault，pistol，twin-linked |
+| Shuriken pistol | 12" | 1 | 3+ | 4 | -1 | 1 | assault，pistol |
 
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |
@@ -52,4 +52,4 @@ updated: '2026-07-23'
 
 ## 关键词
 - **阵营关键词**：Asuryani
-- **普通关键词**：Striking [[factions/艾达灵族/units/scorpion.md|Scorpion]]s，[[core-rules/infantry.md|Infantry]]，Aspect Warriors，Aeldari
+- **普通关键词**：Striking Scorpions，[[core-rules/infantry.md|Infantry]]，Aspect Warriors，Aeldari

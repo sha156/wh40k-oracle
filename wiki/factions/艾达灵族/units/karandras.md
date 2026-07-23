@@ -37,7 +37,7 @@ updated: '2026-07-23'
 
 ## 技能
 - **The [[factions/艾达灵族/units/scorpion.md|Scorpion]]’s Bite**：Melee weapons equipped by the bearer have the [DEVASTATING WOUNDS] ability when targeting units without the <span class="kwb">TITANIC</span> keyword.
-- **Shadow [[factions/星际战士/units/hunter.md|Hunter]]**：While this model is leading a unit, each time a model in that unit makes an attack, add 1 to the Hit roll.
+- **Shadow Hunter**：While this model is leading a unit, each time a model in that unit makes an attack, add 1 to the Hit roll.
 - **Sustained Assault**：Each time this model makes a melee attack, if it made a Charge move this turn, a successful unmodified Hit roll of 4+ scores a Critical Hit.
 
 ## 单位构成
@@ -45,4 +45,4 @@ updated: '2026-07-23'
 
 ## 关键词
 - **阵营关键词**：Asuryani
-- **普通关键词**：[[core-rules/infantry.md|Infantry]]，[[core-rules/character.md|Character]]，[[core-rules/epic-hero.md|Epic Hero]]，[[factions/艾达灵族/units/phoenix.md|Phoenix]] [[factions/太空死灵/units/lord.md|Lord]]，Aeldari，Karandras
+- **普通关键词**：[[core-rules/infantry.md|Infantry]]，[[core-rules/character.md|Character]]，[[core-rules/epic-hero.md|Epic Hero]]，[[factions/艾达灵族/units/phoenix.md|Phoenix]] Lord，Aeldari，Karandras

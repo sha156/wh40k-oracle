@@ -20,7 +20,7 @@ updated: '2026-07-23'
 ## 属性表
 | 模型 | M | T | SV | W | LD | OC |
 |---|---|---|---|---|---|---|
-| 卡迪亚[[factions/星际战士/units/castellan.md\|堡主]] | 6" | 3 | 5+ | 4 | 7+ | 1 |
+| 卡迪亚堡主 | 6" | 3 | 5+ | 4 | 7+ | 1 |
 
 ### 特殊保护
 - 5+
@@ -28,10 +28,10 @@ updated: '2026-07-23'
 ## 射击武器
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| 爆弹手枪 | 24" | 1 | 3+ | 4 | 0 | 1 | [[core-rules/pistol.md\|手枪]] |
+| Boltgun | 24" | 1 | 3+ | 4 | 0 | 1 | [[core-rules/rapid-fire.md\|rapid fire 1]] |
 | 激光手枪 | 12" | 1 | 3+ | 3 | 0 | 1 | [[core-rules/pistol.md\|手枪]] |
 | 等离子手枪（标准） | 12" | 1 | 3+ | 7 | -2 | 1 | [[core-rules/pistol.md\|手枪]] |
-| 爆弹手枪 | 12" | 1 | 3+ | 4 | 0 | 1 | [[core-rules/pistol.md\|手枪]] |
+| Bolt pistol | 12" | 1 | 3+ | 4 | 0 | 1 | pistol |
 | 等离子手枪（过载） | 12" | 1 | 3+ | 8 | -3 | 2 | [[core-rules/hazardous.md\|危险]]，[[core-rules/pistol.md\|手枪]] |
 
 ## 近战武器
@@ -53,4 +53,4 @@ updated: '2026-07-23'
 
 ## 关键词
 - **阵营关键词**：Genestealer Cults，Astra Militarum
-- **普通关键词**：[[core-rules/infantry.md|Infantry]]，[[core-rules/character.md|Character]]，[[core-rules/grenades.md|Grenades]]，Imperium，Cadian [[factions/星际战士/units/castellan.md|Castellan]]，Officer
+- **普通关键词**：[[core-rules/infantry.md|Infantry]]，[[core-rules/character.md|Character]]，[[core-rules/grenades.md|Grenades]]，Imperium，Cadian Castellan，Officer

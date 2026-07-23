@@ -32,15 +32,15 @@ updated: '2026-07-23'
 |---|---|---|---|---|---|---|---|
 | 重型磷火炮 | 36" | 3 | 4+ | 6 | -1 | 2 | [[core-rules/ignores-cover.md\|忽视掩体]] |
 | 焚焰喷射器 | 12" | D6 | N/A | 6 | -1 | 1 | [[core-rules/ignores-cover.md\|忽视掩体]]，[[core-rules/torrent.md\|喷射]] |
-| 双联磷火炮 | 24" | 3 | 4+ | 6 | -1 | 1 | [[core-rules/ignores-cover.md\|忽视掩体]]，[[core-rules/twin-linked.md\|双联]] |
-| 双联磷火炮 | 24" | 3 | 4+ | 6 | -1 | 1 | [[core-rules/ignores-cover.md\|忽视掩体]]，[[core-rules/twin-linked.md\|双联]] |
+| Kastelan phosphor blaster | 24" | 3 | 4+ | 6 | -1 | 1 | ignores cover |
+| Twin Kastelan phosphor blaster | 24" | 3 | 4+ | 6 | -1 | 1 | ignores cover，twin-linked |
 
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
 | 格斗武器 | 近战 | 3 | 4+ | 6 | 0 | 1 | — |
-| 铁拳 | 近战 | 4 | 4+ | 12 | -2 | 3 | — |
-| 铁拳 | 近战 | 4 | 4+ | 12 | -2 | 3 | twin-linked |
+| Kastelan fist | 近战 | 4 | 4+ | 12 | -2 | 3 | — |
+| Twin Kastelan fist | 近战 | 4 | 4+ | 12 | -2 | 3 | twin-linked |
 
 ## 技能
 - **【阵营技能】：机神律令**

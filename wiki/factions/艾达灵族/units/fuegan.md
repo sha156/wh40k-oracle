@@ -47,4 +47,4 @@ updated: '2026-07-23'
 
 ## 关键词
 - **阵营关键词**：Asuryani
-- **普通关键词**：Aeldari，[[core-rules/infantry.md|Infantry]]，[[factions/艾达灵族/units/phoenix.md|Phoenix]] [[factions/太空死灵/units/lord.md|Lord]]，[[core-rules/grenades.md|Grenades]]，Aspect Warrior，[[core-rules/character.md|Character]]，[[core-rules/epic-hero.md|Epic Hero]]，Fuegan
+- **普通关键词**：Aeldari，[[core-rules/infantry.md|Infantry]]，[[factions/艾达灵族/units/phoenix.md|Phoenix]] Lord，[[core-rules/grenades.md|Grenades]]，Aspect Warrior，[[core-rules/character.md|Character]]，[[core-rules/epic-hero.md|Epic Hero]]，Fuegan

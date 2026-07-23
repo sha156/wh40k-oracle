@@ -25,7 +25,7 @@ updated: '2026-07-23'
 ## 射击武器
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| [[factions/战斗修女/units/castigator.md\|Castigator]] gatling cannon | 24" | 12 | 4+ | 5 | 0 | 1 | — |
+| Castigator gatling cannon | 24" | 12 | 4+ | 5 | 0 | 1 | — |
 | Coaxial autocannon | 48" | 2 | 4+ | 9 | -1 | 3 | — |
 | Heavy bolter | 36" | 3 | 4+ | 5 | -1 | 2 | [[core-rules/sustained-hits.md\|sustained hits 1]] |
 | Heavy stubber | 36" | 3 | 4+ | 4 | 0 | 1 | [[core-rules/rapid-fire.md\|rapid fire 3]] |

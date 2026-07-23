@@ -27,8 +27,8 @@ updated: '2026-07-23'
 |---|---|---|---|---|---|---|---|
 | 野战炮 | 48" | D6 | 5+ | 7 | -1 | 2 | [[core-rules/blast.md\|爆炸]]，[[core-rules/heavy.md\|重型]]，间接火力 |
 | 重型激光炮 | 48" | 2 | 5+ | 14 | -3 | D6+1 | [[core-rules/heavy.md\|重型]] |
-| 激光手枪 | 24" | 1 | 4+ | 3 | 0 | 1 | [[core-rules/pistol.md\|手枪]] |
-| 激光手枪 | 12" | 1 | 4+ | 3 | 0 | 1 | [[core-rules/pistol.md\|手枪]] |
+| Lasgun | 24" | 1 | 4+ | 3 | 0 | 1 | [[core-rules/rapid-fire.md\|rapid fire 1]] |
+| Laspistol | 12" | 1 | 4+ | 3 | 0 | 1 | pistol |
 | 多管火箭发射器 | 48" | D6+6 | 5+ | 6 | -1 | 1 | [[core-rules/blast.md\|爆炸]]，[[core-rules/heavy.md\|重型]] |
 
 ## 近战武器

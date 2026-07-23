@@ -19,14 +19,14 @@ updated: '2026-07-23'
 ## 属性表
 | 模型 | M | T | SV | W | LD | OC |
 |---|---|---|---|---|---|---|
-| [[factions/星际战士/units/land-raider.md\|Land Raider]] Proteus | 12" | 12 | 2+ | 16 | 6+ | 5 |
+| Land Raider Proteus | 12" | 12 | 2+ | 16 | 6+ | 5 |
 
 ## 射击武器
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
 | Heavy bolter | 36" | 3 | 3+ | 5 | -1 | 2 | [[core-rules/sustained-hits.md\|sustained hits 1]] |
 | Twin heavy flamer | 12" | D6 | N/A | 5 | -1 | 1 | ignores cover，torrent，twin-linked |
-| [[factions/星际战士/units/hunter.md\|Hunter]]-killer missile | 48" | 1 | 2+ | 14 | -3 | D6 | one shot |
+| Hunter-killer missile | 48" | 1 | 2+ | 14 | -3 | D6 | one shot |
 | Multi-melta | 18" | 2 | 3+ | 9 | -4 | D6 | [[core-rules/melta.md\|melta 2]] |
 | Storm bolter | 24" | 2 | 3+ | 4 | 0 | 1 | [[core-rules/rapid-fire.md\|rapid fire 2]] |
 | Twin heavy bolter | 36" | 3 | 3+ | 5 | -1 | 2 | twin-linked，[[core-rules/sustained-hits.md\|sustained hits 1]] |
@@ -47,4 +47,4 @@ updated: '2026-07-23'
 
 ## 关键词
 - **阵营关键词**：Heretic Astartes
-- **普通关键词**：Land [[factions/黑暗灵族/units/raider.md|Raider]] Proteus，Chaos，[[core-rules/smoke.md|Smoke]]，[[core-rules/transport.md|Transport]]，Vehicle，Land Raider Proteus，Chaos，[[core-rules/transport.md|Transport]]，Vehicle，Vehicle，[[core-rules/smoke.md|Smoke]]，Land Raider Proteus，Chaos，[[core-rules/smoke.md|Smoke]]，[[core-rules/smoke.md|Smoke]]，[[core-rules/transport.md|Transport]]，[[core-rules/transport.md|Transport]]，Chaos，Land Raider Proteus，Vehicle，[[core-rules/transport.md|Transport]]，[[core-rules/smoke.md|Smoke]]，Chaos，Land Raider Proteus，Vehicle
+- **普通关键词**：Land Raider Proteus，Chaos，[[core-rules/smoke.md|Smoke]]，[[core-rules/transport.md|Transport]]，Vehicle，Land Raider Proteus，Chaos，[[core-rules/transport.md|Transport]]，Vehicle，Vehicle，[[core-rules/smoke.md|Smoke]]，Land Raider Proteus，Chaos，[[core-rules/smoke.md|Smoke]]，[[core-rules/smoke.md|Smoke]]，[[core-rules/transport.md|Transport]]，[[core-rules/transport.md|Transport]]，Chaos，Land Raider Proteus，Vehicle，[[core-rules/transport.md|Transport]]，[[core-rules/smoke.md|Smoke]]，Chaos，Land Raider Proteus，Vehicle

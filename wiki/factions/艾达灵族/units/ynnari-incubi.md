@@ -21,7 +21,7 @@ updated: '2026-07-23'
 ## 属性表
 | 模型 | M | T | SV | W | LD | OC |
 |---|---|---|---|---|---|---|
-| 死神军[[factions/黑暗灵族/units/incubi.md\|梦魇剑客]] | 7" | 3 | 3+ | 1 | 6+ | 1 |
+| 死神军梦魇剑客 | 7" | 3 | 3+ | 1 | 6+ | 1 |
 | KLAIVEX | 7" | 3 | 3+ | 2 | 6+ | 1 |
 
 ### 特殊保护
@@ -30,9 +30,9 @@ updated: '2026-07-23'
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| 斩首对剑（重斩） | 近战 | 3 | 3+ | 4 | -2 | 2 | — |
+| Demiklaives – single blade | 近战 | 3 | 3+ | 4 | -2 | 2 | — |
 | 斩首对剑（横扫） | 近战 | 6 | 3+ | 4 | -1 | 1 | twin-linked |
-| 斩首对剑（重斩） | 近战 | 3 | 3+ | 4 | -2 | 2 | — |
+| Klaive | 近战 | 3 | 3+ | 4 | -2 | 2 | — |
 
 ## 技能
 - **【阵营技能】：战斗专注**
@@ -44,4 +44,4 @@ updated: '2026-07-23'
 
 ## 关键词
 - **阵营关键词**：Ynnari
-- **普通关键词**：[[factions/黑暗灵族/units/incubi.md|Incubi]]，Aeldari，[[core-rules/infantry.md|Infantry]]
+- **普通关键词**：Incubi，Aeldari，[[core-rules/infantry.md|Infantry]]

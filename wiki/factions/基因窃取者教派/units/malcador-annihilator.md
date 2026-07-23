@@ -30,7 +30,7 @@ updated: '2026-07-23'
 | Lascannon | 48" | 1 | 4+ | 12 | -3 | D6+1 | — |
 | Demolisher cannon | 24" | D6+3 | 4+ | 14 | -3 | D6 | blast |
 | Heavy bolter | 36" | 3 | 4+ | 5 | -1 | 2 | [[core-rules/sustained-hits.md\|sustained hits 1]] |
-| [[factions/星际战士/units/hunter.md\|Hunter]]-killer missile | 48" | 1 | 4+ | 14 | -3 | D6 | one shot |
+| Hunter-killer missile | 48" | 1 | 4+ | 14 | -3 | D6 | one shot |
 | Heavy stubber | 36" | 3 | 4+ | 4 | 0 | 1 | [[core-rules/rapid-fire.md\|rapid fire 3]] |
 
 ## 近战武器

@@ -38,9 +38,9 @@ updated: '2026-07-23'
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
 | 阿斯塔特链锯剑       | 近战 | 7 | 2+ | 4 | -1 | 1 | — |
-| 雷霆锤      | 近战 | 5 | 2+ | 8 | -2 | 2 | [[core-rules/devastating-wounds.md\|毁灭伤害]] |
+| Power fist | 近战 | 5 | 2+ | 8 | -2 | 2 | — |
 | Relic weapon | 近战 | 6 | 2+ | 5 | -2 | 2 | — |
-| 雷霆锤      | 近战 | 5 | 3+ | 8 | -2 | 2 | [[core-rules/devastating-wounds.md\|毁灭伤害]] |
+| Thunder hammer | 近战 | 5 | 3+ | 8 | -2 | 2 | devastating wounds |
 
 ## 技能
 - **【阵营技能】：破敌重誓**

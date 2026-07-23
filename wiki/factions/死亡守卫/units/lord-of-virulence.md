@@ -21,7 +21,7 @@ updated: '2026-07-23'
 ## 属性表
 | 模型 | M | T | SV | W | LD | OC |
 |---|---|---|---|---|---|---|
-| [[factions/太空死灵/units/lord.md\|Lord]] of Virulence | 5" | 7 | 2+ | 6 | 6+ | 1 |
+| Lord of Virulence | 5" | 7 | 2+ | 6 | 6+ | 1 |
 
 ### 特殊保护
 - 4+

@@ -38,7 +38,7 @@ updated: '2026-07-23'
 | Heirloom weapon | 近战 | 4 | 3+ | 5 | -1 | 1 | — |
 
 ## 技能
-- **[[factions/混沌恶魔/units/chosen.md|Chosen]] Companions**：While a Character model is leading this unit, each time a model in this unit makes an attack, add 1 to the Hit roll.
+- **Chosen Companions**：While a Character model is leading this unit, each time a model in this unit makes an attack, add 1 to the Hit roll.
 - **Storm Shield**：The bearer has a 4+ invulnerable save.
 - **ATTACHED UNIT**：If a Character unit from your army with the Leader ability can be attached to a [[factions/星际战士/units/sternguard-veteran-squad-2.md|Sternguard Veteran Squad]] or [[factions/星际战士/units/vanguard-veteran-squad.md|Vanguard Veteran Squad]], it can instead be attached to this unit instead.
 

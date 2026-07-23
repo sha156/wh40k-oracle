@@ -21,7 +21,7 @@ updated: '2026-07-23'
 ## 属性表
 | 模型 | M | T | SV | W | LD | OC |
 |---|---|---|---|---|---|---|
-| 灭魔教团[[factions/吞世者/units/chaos-rhino.md\|犀牛装甲车]] | 12" | 9 | 3+ | 10 | 6+ | 2 |
+| 灭魔教团犀牛装甲车 | 12" | 9 | 3+ | 10 | 6+ | 2 |
 
 ## 射击武器
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
@@ -43,4 +43,4 @@ updated: '2026-07-23'
 
 ## 关键词
 - **阵营关键词**：Adeptus Custodes
-- **普通关键词**：Anathema Psykana，[[core-rules/dedicated-transport.md|Dedicated Transport]]，Imperium，[[core-rules/smoke.md|Smoke]]，[[core-rules/transport.md|Transport]]，[[factions/星际战士/units/rhino.md|Rhino]]，Vehicle
+- **普通关键词**：Anathema Psykana，[[core-rules/dedicated-transport.md|Dedicated Transport]]，Imperium，[[core-rules/smoke.md|Smoke]]，[[core-rules/transport.md|Transport]]，Rhino，Vehicle

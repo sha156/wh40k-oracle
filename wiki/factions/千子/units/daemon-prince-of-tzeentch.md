@@ -39,7 +39,7 @@ updated: '2026-07-23'
 
 ## 技能
 - **Servile Pawns**：While this model is within 3" of one or more friendly Thousand Sons Infantry units, this model has the Lone Operative ability.
-- **Spirit Snare**：Each time a friendly Thousand Sons Psyker model with the Cabal of [[factions/千子/units/sorcerer.md|Sorcerer]]s ability is destroyed while within 9" of one or more models with this ability, select one of those models with this ability: until the end of the battle, each time the selected model attempts a Ritual, add 1 to the Psychic test result (to a maximum of +2).
+- **Spirit Snare**：Each time a friendly Thousand Sons Psyker model with the Cabal of Sorcerers ability is destroyed while within 9" of one or more models with this ability, select one of those models with this ability: until the end of the battle, each time the selected model attempts a Ritual, add 1 to the Psychic test result (to a maximum of +2).
 - **Glamour of Tzeentch (Aura, Psychic)**：While a friendly Thousand Sons Infantry unit is within 6" of this model, models in that unit have the Stealth ability.
 
 ## 单位构成

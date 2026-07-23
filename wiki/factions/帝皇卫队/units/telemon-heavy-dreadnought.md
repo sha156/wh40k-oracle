@@ -21,7 +21,7 @@ updated: '2026-07-23'
 ## 属性表
 | 模型 | M | T | SV | W | LD | OC |
 |---|---|---|---|---|---|---|
-| 特拉蒙重型[[factions/星际战士/units/dreadnought.md\|无畏机甲]] | 8" | 10 | 2+ | 12 | 6+ | 4 |
+| 特拉蒙重型无畏机甲 | 8" | 10 | 2+ | 12 | 6+ | 4 |
 
 ### 特殊保护
 - 4+
@@ -51,4 +51,4 @@ updated: '2026-07-23'
 
 ## 关键词
 - **阵营关键词**：Adeptus Custodes
-- **普通关键词**：[[core-rules/walker.md|Walker]]，Telemon Heavy [[factions/星际战士/units/dreadnought.md|Dreadnought]]，Imperium，Vehicle
+- **普通关键词**：[[core-rules/walker.md|Walker]]，Telemon Heavy Dreadnought，Imperium，Vehicle

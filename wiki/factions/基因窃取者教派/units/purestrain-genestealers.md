@@ -22,7 +22,7 @@ updated: '2026-07-23'
 ## 属性表
 | 模型 | M | T | SV | W | LD | OC |
 |---|---|---|---|---|---|---|
-| 纯血[[factions/泰伦虫族/units/genestealers.md\|基因窃取者]] | 8" | 4 | 5+ | 2 | 7+ | 1 |
+| 纯血基因窃取者 | 8" | 4 | 5+ | 2 | 7+ | 1 |
 
 ### 特殊保护
 - 5+
@@ -42,4 +42,4 @@ updated: '2026-07-23'
 
 ## 关键词
 - **阵营关键词**：Genestealer Cults
-- **普通关键词**：[[core-rules/infantry.md|Infantry]]，Great Devourer，Purestrain [[factions/泰伦虫族/units/genestealers.md|Genestealers]]
+- **普通关键词**：[[core-rules/infantry.md|Infantry]]，Great Devourer，Purestrain Genestealers

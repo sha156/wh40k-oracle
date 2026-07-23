@@ -19,7 +19,7 @@ updated: '2026-07-23'
 ## 属性表
 | 模型 | M | T | SV | W | LD | OC |
 |---|---|---|---|---|---|---|
-| Death Rider [[factions/星界军/units/commissar.md\|Commissar]] | 12" | 4 | 4+ | 4 | 6+ | 1 |
+| Death Rider Commissar | 12" | 4 | 4+ | 4 | 6+ | 1 |
 
 ### 特殊保护
 - 5+

@@ -39,7 +39,7 @@ updated: '2026-07-23'
 | Missile launcher – frag | 48" | D6 | 4+ | 4 | 0 | 1 | [[core-rules/blast.md\|BLAST]]，[[core-rules/heavy.md\|HEAVY]] |
 | Missile launcher – krak | 48" | 1 | 4+ | 9 | -2 | D6 | [[core-rules/heavy.md\|HEAVY]] |
 | Plasma gun – standard | 24" | 1 | 3+ | 7 | -2 | 1 | [[core-rules/rapid-fire.md\|RAPID FIRE 1]] |
-| [[factions/黑暗灵族/units/reaper.md\|Reaper]] chaincannon | 24" | 8 | 4+ | 5 | 0 | 1 | heavy |
+| Reaper chaincannon | 24" | 8 | 4+ | 5 | 0 | 1 | heavy |
 
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |

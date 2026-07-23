@@ -19,7 +19,7 @@ updated: '2026-07-23'
 ## 属性表
 | 模型 | M | T | SV | W | LD | OC |
 |---|---|---|---|---|---|---|
-| Giant [[factions/千子/units/chaos-spawn.md\|Chaos Spawn]] | 10" | 8 | 4+ | 10 | 7+ | 3 |
+| Giant Chaos Spawn | 10" | 8 | 4+ | 10 | 7+ | 3 |
 
 ### 特殊保护
 - 5+

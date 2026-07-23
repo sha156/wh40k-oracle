@@ -44,7 +44,7 @@ updated: '2026-07-23'
 | Paired accursed weapons | 近战 | 7 | 2+ | 4 | -1 | 1 | twin-linked |
 
 ## 技能
-- **[[factions/太空死灵/units/lord.md|Lord]] of Chaos**：Once per battle round, one unit from your army with this ability can use it when its unit is targeted with a Stratagem. If it does, reduce the CP cost of that use of that Stratagem by 1CP.
+- **Lord of Chaos**：Once per battle round, one unit from your army with this ability can use it when its unit is targeted with a Stratagem. If it does, reduce the CP cost of that use of that Stratagem by 1CP.
 - **Cut Off Their Escape**：Each time an enemy unit (excluding <span class="kwb">MONSTERS</span> and <span class="kwb">VEHICLES</span>) within Engagement Range of this model’s unit is selected to Fall Back, models in that enemy unit must take Desperate Escape tests as if their unit was Battle-shocked. When doing so, if that enemy unit is also Battle-shocked by other means, subtract 1 from each of those Desperate Escape tests.
 
 ## 单位构成

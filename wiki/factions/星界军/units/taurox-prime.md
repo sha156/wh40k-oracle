@@ -20,7 +20,7 @@ updated: '2026-07-23'
 ## 属性表
 | 模型 | M | T | SV | W | LD | OC |
 |---|---|---|---|---|---|---|
-| [[factions/基因窃取者教派/units/taurox.md\|Taurox]] Prime | 12" | 8 | 3+ | 10 | 7+ | 2 |
+| Taurox Prime | 12" | 8 | 3+ | 10 | 7+ | 2 |
 
 ## 射击武器
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |

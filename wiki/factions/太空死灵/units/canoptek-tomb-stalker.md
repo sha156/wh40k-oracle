@@ -20,7 +20,7 @@ updated: '2026-07-23'
 ## 属性表
 | 模型 | M | T | SV | W | LD | OC |
 |---|---|---|---|---|---|---|
-| Canoptek Tomb [[factions/星际战士/units/stalker.md\|Stalker]] | 10" | 9 | 3+ | 9 | 8+ | 3 |
+| Canoptek Tomb Stalker | 10" | 9 | 3+ | 9 | 8+ | 3 |
 
 ### 特殊保护
 - 4+

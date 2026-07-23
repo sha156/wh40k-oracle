@@ -61,4 +61,4 @@ updated: '2026-07-23'
 
 ## 关键词
 - **阵营关键词**：Astra Militarum
-- **普通关键词**：Imperium，[[core-rules/grenades.md|Grenades]]，[[core-rules/infantry.md|Infantry]]，Officer，[[core-rules/character.md|Character]]，[[factions/星际战士/units/command-squad.md|Command Squad]]，Catachan，Platoon
+- **普通关键词**：Imperium，[[core-rules/grenades.md|Grenades]]，[[core-rules/infantry.md|Infantry]]，Officer，[[core-rules/character.md|Character]]，Command Squad，Catachan，Platoon

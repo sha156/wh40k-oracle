@@ -37,7 +37,7 @@ updated: '2026-07-23'
 
 ## 技能
 - **Bringer of the True Death**：While this model is leading a unit, each time a model in that unit makes an attack, you can re-roll the Wound roll.
-- **[[factions/星际战士/units/hunter.md|Hunter]] Unseen**：This model’s unit can only be selected as the target of a ranged attack if the attacking model is within 12".
+- **Hunter Unseen**：This model’s unit can only be selected as the target of a ranged attack if the attacking model is within 12".
 
 ## 单位构成
 - **1个模型** — 70 分

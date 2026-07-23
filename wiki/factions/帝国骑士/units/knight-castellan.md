@@ -21,7 +21,7 @@ updated: '2026-07-23'
 ## 属性表
 | 模型 | M | T | SV | W | LD | OC |
 |---|---|---|---|---|---|---|
-| [[factions/星际战士/units/castellan.md\|堡主]]骑士 | 8" | 12 | 3+ | 28 | 6+ | 10 |
+| 堡主骑士 | 8" | 12 | 3+ | 28 | 6+ | 10 |
 
 ### 特殊保护
 - 5+
@@ -52,4 +52,4 @@ updated: '2026-07-23'
 
 ## 关键词
 - **阵营关键词**：Imperial Knights
-- **普通关键词**：Knight [[factions/星际战士/units/castellan.md|Castellan]]，Imperium，[[core-rules/towering.md|Towering]]，Dominus，[[core-rules/character.md|Character]]，[[core-rules/titanic.md|Titanic]]，[[core-rules/walker.md|Walker]]，Vehicle
+- **普通关键词**：Knight Castellan，Imperium，[[core-rules/towering.md|Towering]]，Dominus，[[core-rules/character.md|Character]]，[[core-rules/titanic.md|Titanic]]，[[core-rules/walker.md|Walker]]，Vehicle

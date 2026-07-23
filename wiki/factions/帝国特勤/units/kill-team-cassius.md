@@ -49,11 +49,11 @@ updated: '2026-07-23'
 | Twin lightning claws | 近战 | 4 | 3+ | 5 | -2 | 1 | twin-linked |
 
 ## 技能
-- **Catechism of Death**：While this unit contains [[factions/星际战士/units/chaplain-cassius.md|Chaplain Cassius]], melee weapons equipped by models in this unit have the [DEVASTATING WOUNDS] ability.
+- **Catechism of Death**：While this unit contains Chaplain Cassius, melee weapons equipped by models in this unit have the [DEVASTATING WOUNDS] ability.
 - **Unflinching**：You can re-roll Battle-shock tests for this unit.
 - **Jump Pack**：The bearer has a Move characteristic of 12" and can move over models and terrain as if they were not there.
 - **Psychic Hood**：Models in the bearer’s unit have the Feel No Pain 4+ ability against Psychic Attacks.
-- **CASSIUS**：Your army cannot contain both [[factions/星际战士/units/chaplain.md|Chaplain]] Cassius and <span class="kwb">KILL</span> <span class="kwb">TEAM</span> <span class="kwb">CASSIUS</span>.
+- **CASSIUS**：Your army cannot contain both Chaplain Cassius and <span class="kwb">KILL</span> <span class="kwb">TEAM</span> <span class="kwb">CASSIUS</span>.
 
 ## 单位构成
 - **11个模型** — 220 分

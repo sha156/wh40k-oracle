@@ -34,7 +34,7 @@ updated: '2026-07-23'
 | Quartermaster’s close combat weapon | 近战 | 2 | 3+ | 4 | -2 | 1 | — |
 
 ## 技能
-- **Medicae Medi-packs**：Whilst this unit contains one or more Medicae [[factions/机械修会/units/servitors.md|Servitors]], models in this unit have the Feel No Pain 5+ ability.
+- **Medicae Medi-packs**：Whilst this unit contains one or more Medicae Servitors, models in this unit have the Feel No Pain 5+ ability.
 - **Mindlock**：While this unit contains a Quartermaster Revenant model, improve the Weapon Skill characteristic of this unit’s Medical scalpels by 1.
 
 ## 单位构成

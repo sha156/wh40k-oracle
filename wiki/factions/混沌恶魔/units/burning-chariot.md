@@ -36,7 +36,7 @@ updated: '2026-07-23'
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
 | Flamer mouths | 近战 | 6 | 4+ | 5 | 0 | 1 | — |
-| [[factions/千子/units/screamers.md\|尖啸魔]]撕咬  | 近战 | 6 | 3+ | 6 | -2 | 2 | [[core-rules/extra-attacks.md\|额外攻击]]，[[core-rules/anti.md\|针对载具4+]]，[[core-rules/anti.md\|针对巨兽4+]] |
+| 尖啸魔撕咬  | 近战 | 6 | 3+ | 6 | -2 | 2 | [[core-rules/extra-attacks.md\|额外攻击]]，[[core-rules/anti.md\|针对载具4+]]，[[core-rules/anti.md\|针对巨兽4+]] |
 
 ## 技能
 - **魔能烈焰(灵能)**：在己方射击阶段中，在该模型完成射击后，选择一个被其攻击命中的敌方单位。直到阶段结束前，那个单位无法获得掩体增益。

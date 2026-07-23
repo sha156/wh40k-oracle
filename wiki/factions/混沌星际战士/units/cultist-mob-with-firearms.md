@@ -20,7 +20,7 @@ updated: '2026-07-23'
 ## 属性表
 | 模型 | M | T | SV | W | LD | OC |
 |---|---|---|---|---|---|---|
-| [[factions/混沌恶魔/units/cultist-mob.md\|Cultist Mob]] with Firearms | 6" | 3 | 6+ | 1 | 7+ | 1 |
+| Cultist Mob with Firearms | 6" | 3 | 6+ | 1 | 7+ | 1 |
 
 ## 射击武器
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |

@@ -28,10 +28,10 @@ updated: '2026-07-23'
 |---|---|---|---|---|---|---|---|
 | 神经干扰枪 | 12" | 1 | 3+ | 4 | -2 | 1 | [[core-rules/anti.md\|反步兵 2+]]，[[core-rules/assault.md\|突击]]，[[core-rules/pistol.md\|手枪]] |
 | 粉碎枪 | 18" | D6 | N/A | 6 | 0 | 1 | [[core-rules/assault.md\|突击]]，[[core-rules/torrent.md\|喷射]] |
-| 星镖步枪 | 24" | 1 | 3+ | 4 | -1 | 1 | [[core-rules/assault.md\|突击]]，[[core-rules/rapid-fire.md\|速射1]] |
+| Shuriken rifle | 24" | 1 | 3+ | 4 | -1 | 1 | assault，[[core-rules/rapid-fire.md\|rapid fire 1]] |
 | 星镖炮 | 24" | 3 | 3+ | 6 | -1 | 2 | [[core-rules/lethal-hits.md\|致命一击]] |
 | 幽冥炮 | 18" | 1 | 3+ | 14 | -4 | D6+1 | — |
-| 星镖步枪 | 12" | 1 | 3+ | 4 | -1 | 1 | [[core-rules/assault.md\|突击]]，[[core-rules/rapid-fire.md\|速射1]] |
+| Shuriken pistol | 12" | 1 | 3+ | 4 | -1 | 1 | assault，pistol |
 | 爆能枪 | 18" | 1 | 3+ | 8 | -4 | D6+1 | [[core-rules/assault.md\|突击]] |
 
 ## 近战武器

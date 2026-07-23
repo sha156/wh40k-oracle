@@ -48,4 +48,4 @@ updated: '2026-07-23'
 
 ## 关键词
 - **阵营关键词**：Imperial Knights
-- **普通关键词**：[[core-rules/walker.md|Walker]]，Knight [[factions/战斗修女/units/castigator.md|Castigator]]，[[core-rules/character.md|Character]]，[[core-rules/titanic.md|Titanic]]，Vehicle，[[core-rules/towering.md|Towering]]，Cerastus，Imperium
+- **普通关键词**：[[core-rules/walker.md|Walker]]，Knight Castigator，[[core-rules/character.md|Character]]，[[core-rules/titanic.md|Titanic]]，Vehicle，[[core-rules/towering.md|Towering]]，Cerastus，Imperium

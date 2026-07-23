@@ -4,7 +4,7 @@ name_en: Watch Master
 faction: 帝国特勤
 type: unit
 points:
-  1 model (<ky>AGENTS OF THE IMPERIUM</ky> Detachment): 95
+  1 model (AGENTS OF THE IMPERIUM Detachment): 95
   1 model (Assigned Agent): 105
   1 model: 95
 tags:
@@ -42,8 +42,8 @@ updated: '2026-07-23'
 - **Rites of Battle**：Once per battle round, one unit from your army with this ability can use it when its unit is targeted with a Stratagem. If it does, reduce the CP cost of that use of that Stratagem by 1CP.
 
 ## 单位构成
-- **1个模型** — 95 分
-- **1个模型** — 105 分
+- **1个模型 (AGENTS OF THE IMPERIUM Detachment)** — 95 分
+- **1个模型 (Assigned Agent)** — 105 分
 - **1个模型** — 95 分
 
 ## 关键词

@@ -39,7 +39,7 @@ updated: '2026-07-23'
 - **Daemonic Icon**：Models in the bearer’s unit have a Leadership characteristic of 6+.
 - **Instrument of Chaos**：Add 1 to Charge rolls made for the bearer’s unit.
 - **Bounding Assault**：Each time this unit ends a Charge move, until the end of the turn, Pox Rider plagueswords equipped by models in this unit have the [LANCE] ability.
-- **GRANDFATHER'S BLESSING**：If a model from your army with the Leader ability can be attached to a [[factions/死亡守卫/units/beasts-of-nurgle.md|Beasts of Nurgle]] unit, it can be attached to this unit instead.
+- **GRANDFATHER'S BLESSING**：If a model from your army with the Leader ability can be attached to a Beasts of Nurgle unit, it can be attached to this unit instead.
 
 ## 单位构成
 - **3个模型** — 160 分

@@ -19,7 +19,7 @@ updated: '2026-07-23'
 ## 属性表
 | 模型 | M | T | SV | W | LD | OC |
 |---|---|---|---|---|---|---|
-| Relic Contemptor [[factions/星际战士/units/dreadnought.md\|Dreadnought]] | 6" | 9 | 2+ | 10 | 6+ | 3 |
+| Relic Contemptor Dreadnought | 6" | 9 | 2+ | 10 | 6+ | 3 |
 
 ### 特殊保护
 - 5+

@@ -30,7 +30,7 @@ updated: '2026-07-23'
 |---|---|---|---|---|---|---|---|
 | 水虎鱼爆裂速射炮 | 18" | 4 | 4+ | 6 | -1 | 1 | — |
 | 水虎鱼融合炮 | 12" | 1 | 4+ | 9 | -4 | D6 | [[core-rules/melta.md\|热熔4]] |
-| [[factions/帝皇之子/units/seekers.md\|寻觅者]]导弹 | 48" | 1 | 4+ | 14 | -3 | D6+1 | [[core-rules/one-shot.md\|一次性]] |
+| 寻觅者导弹 | 48" | 1 | 4+ | 14 | -3 | D6+1 | [[core-rules/one-shot.md\|一次性]] |
 | 并联脉冲卡宾 | 20" | 2 | 4+ | 5 | 0 | 1 | [[core-rules/twin-linked.md\|双联]]，[[core-rules/assault.md\|突击]] |
 
 ## 近战武器

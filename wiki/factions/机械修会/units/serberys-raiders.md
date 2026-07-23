@@ -47,4 +47,4 @@ updated: '2026-07-23'
 
 ## 关键词
 - **阵营关键词**：Adeptus Mechanicus
-- **普通关键词**：[[core-rules/mounted.md|Mounted]]，Imperium，Skitarii，Serberys [[factions/黑暗灵族/units/raider.md|Raider]]s
+- **普通关键词**：[[core-rules/mounted.md|Mounted]]，Imperium，Skitarii，Serberys Raiders

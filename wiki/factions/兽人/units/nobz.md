@@ -27,8 +27,8 @@ updated: '2026-07-23'
 ## 射击武器
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| 手铳 | 24" | 1 | 5+ | 4 | 0 | 1 | [[core-rules/pistol.md\|手枪]] |
-| 手铳 | 12" | 1 | 5+ | 4 | 0 | 1 | [[core-rules/pistol.md\|手枪]] |
+| Kombi-weapon | 24" | 1 | 5+ | 4 | 0 | 1 | [[core-rules/anti.md\|anti-infantry 4+]]，devastating wounds，[[core-rules/rapid-fire.md\|rapid fire 1]] |
+| Slugga | 12" | 1 | 5+ | 4 | 0 | 1 | pistol |
 
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |

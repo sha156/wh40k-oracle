@@ -30,8 +30,8 @@ updated: '2026-07-23'
 ## 射击武器
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| [[factions/星际战士/units/castellan.md\|堡主]]战斧 | 24" | 2 | 2+ | 4 | -1 | 2 | [[core-rules/assault.md\|突击]] |
-| 堡主战斧 | 24" | 2 | 2+ | 4 | -1 | 2 | [[core-rules/assault.md\|突击]] |
+| Castellan axe | 24" | 2 | 2+ | 4 | -1 | 2 | assault |
+| Guardian spear | 24" | 2 | 2+ | 4 | -1 | 2 | assault |
 
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |

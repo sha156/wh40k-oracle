@@ -19,7 +19,7 @@ updated: '2026-07-23'
 ## 属性表
 | 模型 | M | T | SV | W | LD | OC |
 |---|---|---|---|---|---|---|
-| [[factions/基因窃取者教派/units/aegis-defence-line.md\|Aegis Defence Line]] With Weapon Emplacement | - | 12 | 2+ | 10 | 7+ | 0 |
+| Aegis Defence Line With Weapon Emplacement | - | 12 | 2+ | 10 | 7+ | 0 |
 
 ## 射击武器
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |

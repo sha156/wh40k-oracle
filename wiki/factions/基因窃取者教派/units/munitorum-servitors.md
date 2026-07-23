@@ -19,7 +19,7 @@ updated: '2026-07-23'
 ## 属性表
 | 模型 | M | T | SV | W | LD | OC |
 |---|---|---|---|---|---|---|
-| Munitorum [[factions/机械修会/units/servitors.md\|Servitors]] | 6" | 3 | 4+ | 1 | 8+ | 0 |
+| Munitorum Servitors | 6" | 3 | 4+ | 1 | 8+ | 0 |
 
 ### 特殊保护
 - 6+
@@ -39,7 +39,7 @@ updated: '2026-07-23'
 | Servitor’s servo-arm | 近战 | 1 | 5+ | 6 | -2 | 3 | — |
 
 ## 技能
-- **Mindlock**：While a friendly [[factions/星界军/units/tech-priest-enginseer.md|Tech-Priest Enginseer]] model is leading this unit, improve the Ballistic Skill and Weapon Skill characteristics of ranged and melee weapons equipped by <span class="kwb">MUNITORUM</span> <span class="kwb">SERVITOR</span> models in this unit by 1.
+- **Mindlock**：While a friendly Tech-Priest Enginseer model is leading this unit, improve the Ballistic Skill and Weapon Skill characteristics of ranged and melee weapons equipped by <span class="kwb">MUNITORUM</span> <span class="kwb">SERVITOR</span> models in this unit by 1.
 - **SERVITOR RETINUE**：At the start of the Declare Battle Formations step, this unit can join one other unit from your army that is being led by a Regimental Enginseer (a unit cannot have more than one <span class="kwb">MUNITORUM</span> <span class="kwb">SERVITORS</span> unit joined to it). If it does, until the end of the battle, every model in this unit counts as being part of that Bodyguard unit, and that Bodyguard unit’s Starting Strength is increased accordingly.
 
 ## 单位构成

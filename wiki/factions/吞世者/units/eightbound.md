@@ -42,4 +42,4 @@ updated: '2026-07-23'
 
 ## 关键词
 - **阵营关键词**：World Eaters
-- **普通关键词**：Eightbound，[[factions/混沌恶魔/units/possessed.md|Possessed]]，Daemon，Khorne，Chaos，[[core-rules/infantry.md|Infantry]]
+- **普通关键词**：Eightbound，Possessed，Daemon，Khorne，Chaos，[[core-rules/infantry.md|Infantry]]

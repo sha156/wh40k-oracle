@@ -48,4 +48,4 @@ updated: '2026-07-23'
 
 ## 关键词
 - **阵营关键词**：Scintillating Legions
-- **普通关键词**：[[core-rules/character.md|Character]]，Fly，[[core-rules/psyker.md|Psyker]]，Chaos，Daemon，Monster，Tzeentch，Summoned，[[factions/太空死灵/units/lord.md|Lord]] of Change
+- **普通关键词**：[[core-rules/character.md|Character]]，Fly，[[core-rules/psyker.md|Psyker]]，Chaos，Daemon，Monster，Tzeentch，Summoned，Lord of Change

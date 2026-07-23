@@ -19,7 +19,7 @@ updated: '2026-07-23'
 ## 属性表
 | 模型 | M | T | SV | W | LD | OC |
 |---|---|---|---|---|---|---|
-| [[factions/千子/units/sorcerer.md\|Sorcerer]] On Palanquin Of Nurgle | 5" | 5 | 3+ | 7 | 6+ | 2 |
+| Sorcerer On Palanquin Of Nurgle | 5" | 5 | 3+ | 7 | 6+ | 2 |
 
 ## 射击武器
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |

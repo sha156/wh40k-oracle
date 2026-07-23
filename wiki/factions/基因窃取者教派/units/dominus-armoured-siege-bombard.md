@@ -25,7 +25,7 @@ updated: '2026-07-23'
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
 | Storm bolter | 24" | 2 | 4+ | 4 | 0 | 1 | [[core-rules/rapid-fire.md\|rapid fire 2]] |
-| [[factions/星际战士/units/hunter.md\|Hunter]]-killer missile | 48" | 1 | 4+ | 14 | -3 | D6 | one shot |
+| Hunter-killer missile | 48" | 1 | 4+ | 14 | -3 | D6 | one shot |
 | Lascannon | 48" | 1 | 4+ | 12 | -3 | D6+1 | — |
 | Autocannon | 48" | 2 | 4+ | 9 | -1 | 3 | — |
 | Dominus triple bombard | 48" | 2D6 | 4+ | 12 | -2 | 3 | blast，indirect fire |

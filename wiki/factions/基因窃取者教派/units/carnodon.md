@@ -34,7 +34,7 @@ updated: '2026-07-23'
 | Volkite caliver | 24" | 2 | 4+ | 5 | 0 | 2 | devastating wounds |
 | Militarum Multi-laser | 36" | 4 | 4+ | 6 | 0 | 1 | — |
 | Lascannon | 48" | 1 | 4+ | 12 | -3 | D6+1 | — |
-| [[factions/星际战士/units/hunter.md\|Hunter]]-killer missile | 48" | 1 | 4+ | 14 | -3 | D6 | one shot |
+| Hunter-killer missile | 48" | 1 | 4+ | 14 | -3 | D6 | one shot |
 
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |
@@ -42,7 +42,7 @@ updated: '2026-07-23'
 | Armoured tracks | 近战 | 6 | 4+ | 7 | 0 | 1 | — |
 
 ## 技能
-- **[[factions/星际战士/units/ancient.md|Ancient]] Conquest**：Each time this model makes an attack that targets an enemy unit that is within your opponent’s deployment zone, re-roll a Hit roll of 1 and re-roll a Wound roll of 1.
+- **Ancient Conquest**：Each time this model makes an attack that targets an enemy unit that is within your opponent’s deployment zone, re-roll a Hit roll of 1 and re-roll a Wound roll of 1.
 - **One Shot**：The bearer can only shoot with this weapon once per battle.
 
 ## 单位构成

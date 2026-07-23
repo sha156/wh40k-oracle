@@ -20,7 +20,7 @@ updated: '2026-07-23'
 ## 属性表
 | 模型 | M | T | SV | W | LD | OC |
 |---|---|---|---|---|---|---|
-| Sororitas [[factions/星际战士/units/rhino.md\|Rhino]] | 12" | 9 | 3+ | 10 | 7+ | 2 |
+| Sororitas Rhino | 12" | 9 | 3+ | 10 | 7+ | 2 |
 
 ### 特殊保护
 - 6+
@@ -28,7 +28,7 @@ updated: '2026-07-23'
 ## 射击武器
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| [[factions/星际战士/units/hunter.md\|Hunter]]-killer missile | 48" | 1 | 2+ | 14 | -3 | D6 | one shot |
+| Hunter-killer missile | 48" | 1 | 2+ | 14 | -3 | D6 | one shot |
 | Storm bolter | 24" | 2 | 3+ | 4 | 0 | 1 | [[core-rules/rapid-fire.md\|rapid fire 2]] |
 
 ## 近战武器

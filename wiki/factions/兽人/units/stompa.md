@@ -29,12 +29,12 @@ updated: '2026-07-23'
 ## 射击武器
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| 双联大突突枪 | 36" | 3 | 5+ | 5 | 0 | 1 | [[core-rules/rapid-fire.md\|速射2]]，[[core-rules/twin-linked.md\|双联]] |
+| Big shoota | 36" | 3 | 5+ | 5 | 0 | 1 | [[core-rules/rapid-fire.md\|rapid fire 2]] |
 | 死亡加农炮 | 72" | 3D6 | 5+ | 14 | -3 | D6 | [[core-rules/blast.md\|爆炸]] |
 | 大烧枪 | 12" | D6 | N/A | 5 | -1 | 1 | [[core-rules/torrent.md\|洪流]]，[[core-rules/ignores-cover.md\|无视掩体]] |
 | 超级加特林 | 24" | 20 | 5+ | 7 | -1 | 2 | [[core-rules/sustained-hits.md\|连击1]] |
 | 超级火箭 | 100" | D6 | 5+ | 12 | -3 | D6+2 | [[core-rules/blast.md\|爆炸]] |
-| 双联大突突枪 | 36" | 3 | 5+ | 5 | 0 | 1 | [[core-rules/rapid-fire.md\|速射2]]，[[core-rules/twin-linked.md\|双联]] |
+| Twin big shoota | 36" | 3 | 5+ | 5 | 0 | 1 | [[core-rules/rapid-fire.md\|rapid fire 2]]，twin-linked |
 
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |

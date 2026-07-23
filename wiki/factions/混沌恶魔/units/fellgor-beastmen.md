@@ -39,7 +39,7 @@ updated: '2026-07-23'
 | Chainsword | 近战 | 3 | 4+ | 4 | 0 | 1 | — |
 
 ## 技能
-- **Bestial [[factions/黑暗灵族/units/raider.md|Raider]]s**：If this unit starts the game in Strategic Reserves, it can be set up in the Reinforcements step of your first, second or third Movement phase, regardless of any mission rules. If this unit is in Strategic Reserves, for the purposes of setting up this unit on the battlefield, treat the current battle round number as being one higher than it actually is.
+- **Bestial Raiders**：If this unit starts the game in Strategic Reserves, it can be set up in the Reinforcements step of your first, second or third Movement phase, regardless of any mission rules. If this unit is in Strategic Reserves, for the purposes of setting up this unit on the battlefield, treat the current battle round number as being one higher than it actually is.
 
 ## 单位构成
 - **10个模型** — 70 分

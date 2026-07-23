@@ -49,7 +49,7 @@ updated: '2026-07-23'
 
 ## 技能
 - **Reaver Band**：Once per turn, when an enemy unit ends a Normal, Advance or Fall Back move within 9" of this unit, if this unit is not within Engagement Range of one or more enemy units, it can make a Normal move of up to D6".
-- **CORSAIRS**：If a model from your army with the Leader ability can be attached to a [[factions/艾达灵族/units/corsair-voidreavers.md|Corsair Voidreavers]] unit, it can be attached to this unit instead.
+- **CORSAIRS**：If a model from your army with the Leader ability can be attached to a Corsair Voidreavers unit, it can be attached to this unit instead.
 
 ## 单位构成
 - **5个模型** — 125 分

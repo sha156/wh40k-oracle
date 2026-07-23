@@ -35,7 +35,7 @@ updated: '2026-07-23'
 | Blood Reaver | 近战 | 6 | 2+ | 8 | -2 | 3 | [[core-rules/sustained-hits.md\|sustained hits 1]] |
 
 ## 技能
-- **[[factions/太空死灵/units/lord.md|Lord]] of Slaughter**：While this model is leading a unit, that unit is eligible to declare a charge in a turn in which it Advanced.
+- **Lord of Slaughter**：While this model is leading a unit, that unit is eligible to declare a charge in a turn in which it Advanced.
 - **[[factions/星际战士/units/whirlwind.md|Whirlwind]] of Gore**：Each time this model fights, until that fight is resolved, add 1 to the Attacks characteristic of this model’s Blood Reaver for every 5 enemy models within 6" of this model.
 - **FLESH TEARERS**：This model is from the Flesh Tearers Chapter, a successor of the Blood Angels. For all rules purposes, it is treated as a <span class="kwb">BLOOD</span> <span class="kwb">ANGELS</span> model, but cannot be included in an army that includes any other Blood Angels Epic Hero models.
 

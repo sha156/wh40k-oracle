@@ -33,7 +33,7 @@ updated: '2026-07-23'
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| [[factions/基因窃取者教派/units/hydra.md\|Hydra]]ulic vox-ram | 近战 | 3 | 4+ | 6 | -2 | 2 | — |
+| Hydraulic vox-ram | 近战 | 3 | 4+ | 6 | -2 | 2 | — |
 | Power sword | 近战 | 5 | 3+ | 4 | -2 | 1 | — |
 
 ## 技能

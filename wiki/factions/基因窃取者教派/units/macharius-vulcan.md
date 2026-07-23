@@ -27,7 +27,7 @@ updated: '2026-07-23'
 | Macharius vulcan mega-bolter | 48" | 16 | 4+ | 6 | -1 | 2 | [[core-rules/sustained-hits.md\|sustained hits 1]] |
 | Storm bolter | 24" | 2 | 4+ | 4 | 0 | 1 | [[core-rules/rapid-fire.md\|rapid fire 2]] |
 | Heavy stubber | 36" | 3 | 4+ | 4 | 0 | 1 | [[core-rules/rapid-fire.md\|rapid fire 3]] |
-| [[factions/星际战士/units/hunter.md\|Hunter]]-killer missile | 48" | 1 | 4+ | 14 | -3 | D6 | one shot |
+| Hunter-killer missile | 48" | 1 | 4+ | 14 | -3 | D6 | one shot |
 | Twin heavy stubber | 36" | 3 | 4+ | 4 | 0 | 1 | [[core-rules/rapid-fire.md\|rapid fire 3]]，twin-linked |
 | Heavy bolter | 36" | 3 | 4+ | 5 | -1 | 2 | [[core-rules/sustained-hits.md\|sustained hits 1]] |
 | Heavy flamer | 12" | D6 | N/A | 5 | -1 | 1 | ignores cover，torrent |

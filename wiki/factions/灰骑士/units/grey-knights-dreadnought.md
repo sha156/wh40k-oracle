@@ -20,7 +20,7 @@ updated: '2026-07-23'
 ## 属性表
 | 模型 | M | T | SV | W | LD | OC |
 |---|---|---|---|---|---|---|
-| Grey Knights [[factions/星际战士/units/dreadnought.md\|Dreadnought]] | 6" | 9 | 2+ | 8 | 6+ | 3 |
+| Grey Knights Dreadnought | 6" | 9 | 2+ | 8 | 6+ | 3 |
 
 ## 射击武器
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |

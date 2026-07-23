@@ -28,7 +28,7 @@ updated: '2026-07-23'
 | Multi-melta | 18" | 2 | 3+ | 9 | -4 | D6 | [[core-rules/melta.md\|MELTA 2]] |
 | Kratos battle cannon – AP | 36" | 1 | 3+ | 18 | -4 | D6+3 | heavy |
 | Autocannon | 48" | 2 | 3+ | 9 | -1 | 3 | — |
-| [[factions/星际战士/units/hunter.md\|Hunter]]-killer missile | 48" | 1 | 2+ | 14 | -3 | D6 | one shot |
+| Hunter-killer missile | 48" | 1 | 2+ | 14 | -3 | D6 | one shot |
 | Volkite caliver | 24" | 2 | 3+ | 5 | 0 | 2 | devastating wounds |
 | Twin boltgun | 24" | 2 | 3+ | 4 | 0 | 1 | twin-linked |
 | Volkite cardanelle | 36" | 9 | 3+ | 9 | 0 | 3 | devastating wounds |

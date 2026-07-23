@@ -20,7 +20,7 @@ updated: '2026-07-23'
 ## 属性表
 | 模型 | M | T | SV | W | LD | OC |
 |---|---|---|---|---|---|---|
-| Skitarii [[factions/星际战士/units/marshal.md\|Marshal]] | 6" | 3 | 4+ | 3 | 6+ | 1 |
+| Skitarii Marshal | 6" | 3 | 4+ | 3 | 6+ | 1 |
 
 ### 特殊保护
 - 5+

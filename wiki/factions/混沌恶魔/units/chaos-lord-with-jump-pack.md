@@ -39,8 +39,8 @@ updated: '2026-07-23'
 | Accursed weapon | 近战 | 6 | 2+ | 5 | -2 | 1 | — |
 
 ## 技能
-- **[[factions/太空死灵/units/lord.md|Lord]] of Chaos**：Once per battle round, one unit from your army with this ability can use it when its unit is targeted with a Stratagem. If it does, reduce the CP cost of that use of that Stratagem by 1CP.
-- **Cruel [[factions/星际战士/units/hunter.md|Hunter]]**：While this model is leading a unit, each time that unit Piles In or Consolidates, each model in that unit can move up to 6" instead of up to 3".
+- **Lord of Chaos**：Once per battle round, one unit from your army with this ability can use it when its unit is targeted with a Stratagem. If it does, reduce the CP cost of that use of that Stratagem by 1CP.
+- **Cruel Hunter**：While this model is leading a unit, each time that unit Piles In or Consolidates, each model in that unit can move up to 6" instead of up to 3".
 
 ## 单位构成
 - **1个模型** — 80 分

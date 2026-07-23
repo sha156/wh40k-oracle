@@ -26,10 +26,10 @@ updated: '2026-07-23'
 ## 射击武器
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| 导弹炮台支援系统 | 20" | 2 | 4+ | 5 | 0 | 1 | [[core-rules/indirect-fire.md\|曲射]]，[[core-rules/twin-linked.md\|双联]] |
-| 脉冲步枪 | 12" | 1 | 4+ | 5 | 0 | 1 | [[core-rules/rapid-fire.md\|速射1]] |
-| 脉冲步枪 | 30" | 1 | 4+ | 5 | 0 | 1 | [[core-rules/rapid-fire.md\|速射1]] |
-| 导弹炮台支援系统 | 30" | 2 | 5+ | 5 | 0 | 1 | [[core-rules/indirect-fire.md\|曲射]]，[[core-rules/twin-linked.md\|双联]] |
+| Pulse carbine | 20" | 2 | 4+ | 5 | 0 | 1 | — |
+| Pulse pistol | 12" | 1 | 4+ | 5 | 0 | 1 | pistol |
+| Pulse rifle | 30" | 1 | 4+ | 5 | 0 | 1 | [[core-rules/rapid-fire.md\|rapid fire 1]] |
+| Support turret | 30" | 2 | 5+ | 5 | 0 | 1 | indirect fire，twin-linked |
 
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |

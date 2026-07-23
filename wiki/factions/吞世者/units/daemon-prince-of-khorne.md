@@ -37,7 +37,7 @@ updated: '2026-07-23'
 | Hellforged weapons – sweep | 近战 | 16 | 2+ | 6 | -1 | 1 | — |
 
 ## 技能
-- **[[factions/太空死灵/units/lord.md|Lord]] of Murder**：While this model is within 3" of one or more friendly World Eaters Infantry units, this model has the Lone Operative ability.
+- **Lord of Murder**：While this model is within 3" of one or more friendly World Eaters Infantry units, this model has the Lone Operative ability.
 - **Devastating Assault**：Each time this model makes a Charge move, until the end of the turn, its melee weapons have the [DEVASTATING WOUNDS] ability.
 - **Direct the Slaughter**：Once per battle round, one model from your army with this ability can use it when a friendly World Eaters unit within 12" of that model is targeted with a Stratagem. If it does, reduce the CP cost of that usage of that Stratagem by 1CP.
 

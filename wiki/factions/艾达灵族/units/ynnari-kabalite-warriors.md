@@ -19,7 +19,7 @@ updated: '2026-07-23'
 ## 属性表
 | 模型 | M | T | SV | W | LD | OC |
 |---|---|---|---|---|---|---|
-| Ynnari [[factions/黑暗灵族/units/kabalite-warriors.md\|Kabalite Warriors]] | 8" | 3 | 4+ | 1 | 6+ | 2 |
+| Ynnari Kabalite Warriors | 8" | 3 | 4+ | 1 | 6+ | 2 |
 
 ### 特殊保护
 - 6+
@@ -42,7 +42,7 @@ updated: '2026-07-23'
 | Sybarite weapon | 近战 | 3 | 3+ | 3 | -1 | 1 | [[core-rules/anti.md\|anti-infantry 3+]] |
 
 ## 技能
-- **Sadistic [[factions/黑暗灵族/units/raider.md|Raider]]s**：At the end of your Command phase, if you control an objective marker that this unit (or a Transport it is embarked within) is within range of, that objective marker remains under your control until your opponent’s Level of Control over that objective marker is greater than yours at the end of a phase.
+- **Sadistic Raiders**：At the end of your Command phase, if you control an objective marker that this unit (or a Transport it is embarked within) is within range of, that objective marker remains under your control until your opponent’s Level of Control over that objective marker is greater than yours at the end of a phase.
 - **Phantasm Grenade Launcher**：The bearer’s unit has the Grenades keyword.
 
 ## 单位构成

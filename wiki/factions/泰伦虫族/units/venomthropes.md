@@ -22,7 +22,7 @@ updated: '2026-07-23'
 ## 属性表
 | 模型 | M | T | SV | W | LD | OC |
 |---|---|---|---|---|---|---|
-| [[factions/黑暗灵族/units/venom.md\|Venom]]thropes | 6" | 5 | 4+ | 3 | 8+ | 1 |
+| Venomthropes | 6" | 5 | 4+ | 3 | 8+ | 1 |
 
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |

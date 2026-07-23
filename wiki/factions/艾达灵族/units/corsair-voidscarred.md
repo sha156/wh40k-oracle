@@ -46,7 +46,7 @@ updated: '2026-07-23'
 | Witch staff | 近战 | 2 | 2+ | 3 | 0 | D3 | [[core-rules/anti.md\|anti-infantry 2+]]，psychic |
 
 ## 技能
-- **Piratical [[factions/黑暗灵族/units/raider.md|Raider]]s**：At the start of the battle, select one unit from your opponent’s army. Weapons equipped by models in this unit have the [LETHAL HITS] and [PRECISION] abilities while targeting that unit.
+- **Piratical Raiders**：At the start of the battle, select one unit from your opponent’s army. Weapons equipped by models in this unit have the [LETHAL HITS] and [PRECISION] abilities while targeting that unit.
 - **Channeller Stones**：Once per turn, the first time a saving throw is failed for the bearer’s unit, change the Damage characteristic of that attack to 0.
 - **Faolchú**：Ranged weapons equipped by models in the bearer’s unit have the [IGNORES COVER] ability.
 - **Mistshield**：The bearer has a 4+ invulnerable save.

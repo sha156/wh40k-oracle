@@ -20,12 +20,12 @@ updated: '2026-07-23'
 ## 属性表
 | 模型 | M | T | SV | W | LD | OC |
 |---|---|---|---|---|---|---|
-| [[factions/星际战士/units/land-raider.md\|Land Raider]] Crusader | 12" | 12 | 2+ | 16 | 6+ | 5 |
+| Land Raider Crusader | 12" | 12 | 2+ | 16 | 6+ | 5 |
 
 ## 射击武器
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| [[factions/星际战士/units/hunter.md\|Hunter]]-killer missile | 48" | 1 | 2+ | 14 | -3 | D6 | one shot |
+| Hunter-killer missile | 48" | 1 | 2+ | 14 | -3 | D6 | one shot |
 | Hurricane bolter | 24" | 6 | 3+ | 4 | 0 | 1 | [[core-rules/rapid-fire.md\|rapid fire 6]]，twin-linked |
 | Multi-melta | 18" | 2 | 3+ | 9 | -4 | D6 | [[core-rules/melta.md\|melta 2]] |
 | Storm bolter | 24" | 2 | 3+ | 4 | 0 | 1 | [[core-rules/rapid-fire.md\|rapid fire 2]] |
@@ -45,4 +45,4 @@ updated: '2026-07-23'
 
 ## 关键词
 - **阵营关键词**：Grey Knights
-- **普通关键词**：Land [[factions/黑暗灵族/units/raider.md|Raider]]，Imperium，[[core-rules/grenades.md|Grenades]]，[[core-rules/smoke.md|Smoke]]，[[core-rules/transport.md|Transport]]，Vehicle，Crusader
+- **普通关键词**：Land Raider，Imperium，[[core-rules/grenades.md|Grenades]]，[[core-rules/smoke.md|Smoke]]，[[core-rules/transport.md|Transport]]，Vehicle，Crusader

@@ -34,7 +34,7 @@ updated: '2026-07-23'
 ## 技能
 - **Harker’s Hellraisers**：While this model is leading a unit, each time a ranged attack targets that unit, if the attacking model is more than 12" away, subtract 1 from the Hit roll.
 - **Payback Time**：Once per battle, when this model is selected to shoot, it can use this ability. If it does, until the end of the phase, its Payback weapon has an Attacks characteristic of 6 and the [SUSTAINED HITS 3] ability instead of the [SUSTAINED HITS 1] ability.
-- **ORDERS**：This Officer can issue 1 Order to a [[factions/基因窃取者教派/units/catachan-jungle-fighters.md|Catachan Jungle Fighters]] unit.
+- **ORDERS**：This Officer can issue 1 Order to a Catachan Jungle Fighters unit.
 
 ## 单位构成
 - **1个模型** — 40 分

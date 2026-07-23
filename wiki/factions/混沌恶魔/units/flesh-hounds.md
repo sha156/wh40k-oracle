@@ -38,7 +38,7 @@ updated: '2026-07-23'
 
 ## 技能
 - **Collar of Khorne**：The bearer has the Feel No Pain 3+ ability against Psychic Attacks.
-- **[[factions/星际战士/units/hunter.md|Hunter]]s from the Warp**：At the end of your opponent’s turn, if this unit is not within Engagement Range of one or more enemy units, you can remove it from the battlefield and place it into Strategic Reserves.
+- **Hunters from the Warp**：At the end of your opponent’s turn, if this unit is not within Engagement Range of one or more enemy units, you can remove it from the battlefield and place it into Strategic Reserves.
 
 ## 单位构成
 - **5个模型** — 75 分

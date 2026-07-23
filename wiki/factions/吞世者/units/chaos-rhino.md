@@ -28,7 +28,7 @@ updated: '2026-07-23'
 |---|---|---|---|---|---|---|---|
 | 并联爆弹枪  | 24" | 2 | 4+ | 4 | 0 | 1 | [[core-rules/rapid-fire.md\|速射 2]] |
 | 复合武器 | 24" | 1 | 4+ | 4 | 0 | 1 | [[core-rules/anti.md\|反步兵 4+]]，[[core-rules/devastating-wounds.md\|毁灭伤害]]，[[core-rules/rapid-fire.md\|速射 1]] |
-| [[factions/混沌星际战士/units/havocs.md\|浩劫]]发射器  | 48" | D6 | 4+ | 5 | 0 | 1 | [[core-rules/blast.md\|爆炸]] |
+| 浩劫发射器  | 48" | D6 | 4+ | 5 | 0 | 1 | [[core-rules/blast.md\|爆炸]] |
 
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |
@@ -44,4 +44,4 @@ updated: '2026-07-23'
 
 ## 关键词
 - **阵营关键词**：World Eaters
-- **普通关键词**：Khorne，Vehicle，[[core-rules/transport.md|Transport]]，Chaos，[[core-rules/dedicated-transport.md|Dedicated Transport]]，[[factions/星际战士/units/rhino.md|Rhino]]，[[core-rules/smoke.md|Smoke]]
+- **普通关键词**：Khorne，Vehicle，[[core-rules/transport.md|Transport]]，Chaos，[[core-rules/dedicated-transport.md|Dedicated Transport]]，Rhino，[[core-rules/smoke.md|Smoke]]

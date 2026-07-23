@@ -41,7 +41,7 @@ updated: '2026-07-23'
 | Great axe of Khorne – sweep | 近战 | 14 | 2+ | 10 | -2 | 2 | — |
 
 ## 技能
-- **Daemon [[factions/太空死灵/units/lord.md|Lord]] of Khorne (Aura)**：While a friendly Khorne Legiones Daemonica unit is within 6" of this model, each time a model in that unit makes a melee attack, add 1 to the Hit roll.
+- **Daemon Lord of Khorne (Aura)**：While a friendly Khorne Legiones Daemonica unit is within 6" of this model, each time a model in that unit makes a melee attack, add 1 to the Hit roll.
 - **Relentless Carnage**：At the end of the Fight phase, you can select one enemy unit within Engagement Range of this model and roll eight D6: for each 4+, that enemy unit suffers 1 mortal wound.
 - **Greater Daemon of Khorne (Aura)**：While a friendly Khorne Legiones Daemonica unit is within 6" of this model, that unit is within your army’s Shadow of Chaos.
 

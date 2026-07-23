@@ -30,10 +30,10 @@ updated: '2026-07-23'
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
 | 精工风暴爆弹枪 | 24" | 2 | 3+ | 4 | 0 | 2 | [[core-rules/rapid-fire.md\|速射2]]，[[core-rules/assault.md\|突击]] |
-| 降罪者爆弹枪 | 12" | 1 | 3+ | 4 | 0 | 1 | [[core-rules/anti.md\|反灵能者 2+]]，[[core-rules/precision.md\|精准]]，[[core-rules/rapid-fire.md\|速射1]]，[[core-rules/devastating-wounds.md\|毁灭伤害]] |
-| 降罪者爆弹枪 | 24" | 1 | 3+ | 4 | 0 | 1 | [[core-rules/anti.md\|反灵能者 2+]]，[[core-rules/precision.md\|精准]]，[[core-rules/rapid-fire.md\|速射1]]，[[core-rules/devastating-wounds.md\|毁灭伤害]] |
-| 降罪者爆弹枪 | 24" | 1 | 4+ | 4 | 0 | 1 | [[core-rules/anti.md\|反灵能者 2+]]，[[core-rules/precision.md\|精准]]，[[core-rules/rapid-fire.md\|速射1]]，[[core-rules/devastating-wounds.md\|毁灭伤害]] |
-| 降罪者爆弹枪 | 24" | 1 | 3+ | 4 | 0 | 1 | [[core-rules/anti.md\|反灵能者 2+]]，[[core-rules/precision.md\|精准]]，[[core-rules/rapid-fire.md\|速射1]]，[[core-rules/devastating-wounds.md\|毁灭伤害]] |
+| Bolt pistol | 12" | 1 | 3+ | 4 | 0 | 1 | pistol |
+| Boltgun | 24" | 1 | 3+ | 4 | 0 | 1 | assault，[[core-rules/rapid-fire.md\|rapid fire 1]] |
+| Combi-weapon | 24" | 1 | 4+ | 4 | 0 | 1 | [[core-rules/anti.md\|anti-infantry 4+]]，devastating wounds，[[core-rules/rapid-fire.md\|rapid fire 1]] |
+| Condemnor boltgun | 24" | 1 | 3+ | 4 | 0 | 1 | [[core-rules/anti.md\|anti-psyker 2+]]，devastating wounds，precision，[[core-rules/rapid-fire.md\|rapid fire 1]] |
 | 地狱火手枪 | 6" | 1 | 3+ | 8 | -4 | D3 | [[core-rules/melta.md\|热熔2]]，[[core-rules/pistol.md\|手枪]] |
 | 热熔枪 | 12" | 1 | 3+ | 9 | -4 | D6 | [[core-rules/melta.md\|热熔2]]，[[core-rules/assault.md\|突击]] |
 | 教廷火焰喷射器 | 12" | D6 | N/A | 5 | 0 | 1 | [[core-rules/ignores-cover.md\|忽略掩体]]，[[core-rules/torrent.md\|喷射]]，[[core-rules/assault.md\|突击]] |

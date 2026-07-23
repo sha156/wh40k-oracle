@@ -20,7 +20,7 @@ updated: '2026-07-23'
 ## 属性表
 | 模型 | M | T | SV | W | LD | OC |
 |---|---|---|---|---|---|---|
-| Death Guard [[factions/混沌恶魔/units/possessed.md\|Possessed]] | 9" | 6 | 3+ | 3 | 6+ | 1 |
+| Death Guard Possessed | 9" | 6 | 3+ | 3 | 6+ | 1 |
 
 ### 特殊保护
 - 5+

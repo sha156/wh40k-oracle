@@ -21,7 +21,7 @@ updated: '2026-07-23'
 ## 属性表
 | 模型 | M | T | SV | W | LD | OC |
 |---|---|---|---|---|---|---|
-| 噪音[[factions/太空死灵/units/lord.md\|领主]] | 6" | 5 | 2+ | 6 | 6+ | 1 |
+| 噪音领主 | 6" | 5 | 2+ | 6 | 6+ | 1 |
 
 ### 特殊保护
 - 4+
@@ -47,4 +47,4 @@ updated: '2026-07-23'
 
 ## 关键词
 - **阵营关键词**：Emperor’s Children
-- **普通关键词**：[[core-rules/infantry.md|Infantry]]，[[core-rules/character.md|Character]]，[[factions/太空死灵/units/lord.md|Lord]] Kakophonist，[[core-rules/grenades.md|Grenades]]，Chaos，Slaanesh
+- **普通关键词**：[[core-rules/infantry.md|Infantry]]，[[core-rules/character.md|Character]]，Lord Kakophonist，[[core-rules/grenades.md|Grenades]]，Chaos，Slaanesh

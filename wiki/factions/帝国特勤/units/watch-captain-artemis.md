@@ -20,7 +20,7 @@ updated: '2026-07-23'
 ## 属性表
 | 模型 | M | T | SV | W | LD | OC |
 |---|---|---|---|---|---|---|
-| Watch [[factions/星际战士/units/captain.md\|Captain]] Artemis | 6" | 4 | 3+ | 4 | 6+ | 1 |
+| Watch Captain Artemis | 6" | 4 | 3+ | 4 | 6+ | 1 |
 
 ### 特殊保护
 - 4+

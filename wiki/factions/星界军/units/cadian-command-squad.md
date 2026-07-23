@@ -58,4 +58,4 @@ updated: '2026-07-23'
 
 ## 关键词
 - **阵营关键词**：Astra Militarum
-- **普通关键词**：Imperium，[[core-rules/infantry.md|Infantry]]，[[core-rules/grenades.md|Grenades]]，Platoon，Cadian，[[factions/星际战士/units/command-squad.md|Command Squad]]，[[core-rules/character.md|Character]]，Officer
+- **普通关键词**：Imperium，[[core-rules/infantry.md|Infantry]]，[[core-rules/grenades.md|Grenades]]，Platoon，Cadian，Command Squad，[[core-rules/character.md|Character]]，Officer

@@ -28,7 +28,7 @@ updated: '2026-07-23'
 | Barbed ovipositor | 近战 | 1 | 2+ | 3 | -2 | 3 | [[core-rules/anti.md\|anti-infantry 3+]]，extra attacks |
 
 ## 技能
-- **Parasitic Infection**：Each time an <span class="kwb">INFANTRY</span> model is destroyed by an attack made with this model’s barbed ovipositor, after this model has finished making its attacks, you can add one new [[factions/泰伦虫族/units/ripper-swarms.md|Ripper Swarms]] unit to your army consisting of D3 models and set it up within 3" of this model. If you do, that <span class="kwb">RIPPER</span> <span class="kwb">SWARMS</span> unit can be set up within Engagement Range of the destroyed model’s unit (but not within Engagement Range of any other enemy units).
+- **Parasitic Infection**：Each time an <span class="kwb">INFANTRY</span> model is destroyed by an attack made with this model’s barbed ovipositor, after this model has finished making its attacks, you can add one new Ripper Swarms unit to your army consisting of D3 models and set it up within 3" of this model. If you do, that <span class="kwb">RIPPER</span> <span class="kwb">SWARMS</span> unit can be set up within Engagement Range of the destroyed model’s unit (but not within Engagement Range of any other enemy units).
 - **It Itches!**：At the start of the Fight phase, select one enemy unit within Engagement Range of this model. That enemy unit must take a Battle-shock test.
 
 ## 单位构成

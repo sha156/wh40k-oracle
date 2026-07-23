@@ -21,7 +21,7 @@ updated: '2026-07-23'
 ## 属性表
 | 模型 | M | T | SV | W | LD | OC |
 |---|---|---|---|---|---|---|
-| [[factions/混沌恶魔/units/chaos-lord.md\|Chaos Lord]] | 12" | 4 | 3+ | 5 | 6+ | 1 |
+| Chaos Lord | 12" | 4 | 3+ | 5 | 6+ | 1 |
 
 ### 特殊保护
 - 4+
@@ -36,9 +36,9 @@ updated: '2026-07-23'
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| 一对闪电爪 | 近战 | 6 | 2+ | 5 | -2 | 1 | [[core-rules/twin-linked.md\|双联]] |
+| Accursed weapon | 近战 | 6 | 2+ | 5 | -2 | 1 | — |
 | 动力拳  | 近战 | 5 | 2+ | 8 | -2 | 2 | — |
-| 一对闪电爪 | 近战 | 6 | 2+ | 5 | -2 | 1 | [[core-rules/twin-linked.md\|双联]] |
+| Twin lightning claws | 近战 | 6 | 2+ | 5 | -2 | 1 | [[core-rules/twin-linked.md\|TWIN-LINKED]] |
 
 ## 技能
 - **【阵营技能】：黑暗契约**
@@ -50,4 +50,4 @@ updated: '2026-07-23'
 
 ## 关键词
 - **阵营关键词**：Heretic Astartes
-- **普通关键词**：[[core-rules/grenades.md|Grenades]]，Jump Pack，[[core-rules/infantry.md|Infantry]]，[[core-rules/character.md|Character]]，Fly，Chaos，Chaos [[factions/太空死灵/units/lord.md|Lord]]
+- **普通关键词**：[[core-rules/grenades.md|Grenades]]，Jump Pack，[[core-rules/infantry.md|Infantry]]，[[core-rules/character.md|Character]]，Fly，Chaos，Chaos Lord

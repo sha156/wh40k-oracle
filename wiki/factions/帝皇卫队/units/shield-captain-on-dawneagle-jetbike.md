@@ -21,7 +21,7 @@ updated: '2026-07-23'
 ## 属性表
 | 模型 | M | T | SV | W | LD | OC |
 |---|---|---|---|---|---|---|
-| 摩托盾卫[[factions/星际战士/units/captain.md\|连长]] | 12" | 7 | 2+ | 8 | 6+ | 2 |
+| 摩托盾卫连长 | 12" | 7 | 2+ | 8 | 6+ | 2 |
 
 ### 特殊保护
 - 4+
@@ -47,4 +47,4 @@ updated: '2026-07-23'
 
 ## 关键词
 - **阵营关键词**：Adeptus Custodes
-- **普通关键词**：Imperium，[[core-rules/character.md|Character]]，[[core-rules/mounted.md|Mounted]]，Dawneagle Jetbike，Fly，Shield-[[factions/星际战士/units/captain.md|Captain]]
+- **普通关键词**：Imperium，[[core-rules/character.md|Character]]，[[core-rules/mounted.md|Mounted]]，Dawneagle Jetbike，Fly，Shield-Captain

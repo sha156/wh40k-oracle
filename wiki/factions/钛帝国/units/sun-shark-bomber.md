@@ -26,9 +26,9 @@ updated: '2026-07-23'
 ## 射击武器
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| 并联导弹仓 | 30" | 2 | 4+ | 7 | -1 | 2 | [[core-rules/twin-linked.md\|双联]] |
-| 并联导弹仓 | 30" | 2 | 4+ | 7 | -1 | 2 | [[core-rules/twin-linked.md\|双联]] |
-| [[factions/帝皇之子/units/seekers.md\|寻觅者]]导弹 | 48" | 1 | 4+ | 14 | -3 | D6+1 | [[core-rules/one-shot.md\|一次性]] |
+| Missile pod | 30" | 2 | 4+ | 7 | -1 | 2 | — |
+| Twin missile pod | 30" | 2 | 4+ | 7 | -1 | 2 | twin-linked |
+| 寻觅者导弹 | 48" | 1 | 4+ | 14 | -3 | D6+1 | [[core-rules/one-shot.md\|一次性]] |
 | 并联离子步枪 — 标准 | 30" | 3 | 4+ | 7 | -1 | 1 | [[core-rules/twin-linked.md\|双联]] |
 | 并联离子步枪 — 过载 | 30" | 3 | 4+ | 8 | -2 | 2 | [[core-rules/hazardous.md\|危险]]，[[core-rules/twin-linked.md\|双联]] |
 

@@ -20,7 +20,7 @@ updated: '2026-07-23'
 ## 属性表
 | 模型 | M | T | SV | W | LD | OC |
 |---|---|---|---|---|---|---|
-| 死神军[[factions/黑暗灵族/units/wyches.md\|巫灵]] | 8" | 3 | 6+ | 1 | 6+ | 2 |
+| 死神军巫灵 | 8" | 3 | 6+ | 1 | 6+ | 2 |
 
 ### 特殊保护
 - 6+
@@ -46,4 +46,4 @@ updated: '2026-07-23'
 
 ## 关键词
 - **阵营关键词**：Ynnari
-- **普通关键词**：[[core-rules/infantry.md|Infantry]]，[[factions/黑暗灵族/units/wyches.md|Wyches]]，[[core-rules/grenades.md|Grenades]]，Aeldari，[[core-rules/battleline.md|Battleline]]
+- **普通关键词**：[[core-rules/infantry.md|Infantry]]，Wyches，[[core-rules/grenades.md|Grenades]]，Aeldari，[[core-rules/battleline.md|Battleline]]

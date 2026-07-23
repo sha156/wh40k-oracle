@@ -21,7 +21,7 @@ updated: '2026-07-23'
 ## 属性表
 | 模型 | M | T | SV | W | LD | OC |
 |---|---|---|---|---|---|---|
-| Imotekh The [[factions/基因窃取者教派/units/stormlord.md\|Stormlord]] | 5" | 5 | 2+ | 6 | 6+ | 1 |
+| Imotekh The Stormlord | 5" | 5 | 2+ | 6 | 6+ | 1 |
 
 ### 特殊保护
 - 4+

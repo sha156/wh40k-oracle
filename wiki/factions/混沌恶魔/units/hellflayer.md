@@ -35,7 +35,7 @@ updated: '2026-07-23'
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
 | Bladed axle | 近战 | 6 | 3+ | 6 | -1 | 2 | extra attacks |
-| [[factions/帝皇之子/units/seekers.md\|寻觅者]]之舌 | 近战 | 4 | 4+ | 4 | 0 | 1 | [[core-rules/extra-attacks.md\|额外攻击]]，[[core-rules/lethal-hits.md\|致命一击]] |
+| 寻觅者之舌 | 近战 | 4 | 4+ | 4 | 0 | 1 | [[core-rules/extra-attacks.md\|额外攻击]]，[[core-rules/lethal-hits.md\|致命一击]] |
 | Slashing claws | 近战 | 9 | 3+ | 4 | 0 | 1 | devastating wounds |
 
 ## 技能

@@ -21,7 +21,7 @@ updated: '2026-07-23'
 ## 属性表
 | 模型 | M | T | SV | W | LD | OC |
 |---|---|---|---|---|---|---|
-| 神圣[[factions/星际战士/units/land-raider.md\|兰德掠袭者坦克]] | 10" | 12 | 2+ | 16 | 6+ | 5 |
+| 神圣兰德掠袭者坦克 | 10" | 12 | 2+ | 16 | 6+ | 5 |
 
 ## 射击武器
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
@@ -46,4 +46,4 @@ updated: '2026-07-23'
 
 ## 关键词
 - **阵营关键词**：Adeptus Custodes
-- **普通关键词**：Imperium，[[core-rules/transport.md|Transport]]，[[core-rules/smoke.md|Smoke]]，Venerable [[factions/星际战士/units/land-raider.md|Land Raider]]，Vehicle
+- **普通关键词**：Imperium，[[core-rules/transport.md|Transport]]，[[core-rules/smoke.md|Smoke]]，Venerable Land Raider，Vehicle

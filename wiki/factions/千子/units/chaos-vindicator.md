@@ -21,13 +21,13 @@ updated: '2026-07-23'
 ## 属性表
 | 模型 | M | T | SV | W | LD | OC |
 |---|---|---|---|---|---|---|
-| Chaos [[factions/星际战士/units/vindicator.md\|Vindicator]] | 9" | 11 | 2+ | 11 | 6+ | 3 |
+| Chaos Vindicator | 9" | 11 | 2+ | 11 | 6+ | 3 |
 
 ## 射击武器
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
 | 破坏者加农炮 | 24" | D6+3 | 3+ | 14 | -3 | D6 | [[core-rules/blast.md\|爆炸]] |
-| [[factions/混沌星际战士/units/havocs.md\|浩劫]]发射器  | 48" | D6 | 3+ | 5 | 0 | 1 | [[core-rules/blast.md\|爆炸]] |
+| 浩劫发射器  | 48" | D6 | 3+ | 5 | 0 | 1 | [[core-rules/blast.md\|爆炸]] |
 | Inferno combi-bolter | 24" | 2 | 3+ | 4 | -2 | 1 | [[core-rules/rapid-fire.md\|rapid fire 2]] |
 | Inferno combi-weapon | 24" | 1 | 4+ | 4 | -2 | 1 | [[core-rules/anti.md\|anti-infantry 4+]]，devastating wounds，[[core-rules/rapid-fire.md\|rapid fire 1]] |
 

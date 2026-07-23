@@ -29,7 +29,7 @@ updated: '2026-07-23'
 ## 射击武器
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| Fury of the [[factions/星际战士/units/ancient.md\|Ancient]]s – witchfire | 18" | 3 | 2+ | 4 | -1 | D3 | pistol，psychic，[[core-rules/sustained-hits.md\|sustained hits 1]] |
+| Fury of the Ancients – witchfire | 18" | 3 | 2+ | 4 | -1 | D3 | pistol，psychic，[[core-rules/sustained-hits.md\|sustained hits 1]] |
 | Fury of the Ancients – focused witchfire | 18" | 3 | 2+ | 5 | -2 | D3 | hazardous，pistol，psychic，[[core-rules/sustained-hits.md\|sustained hits 3]] |
 | Plasma pistol – standard | 12" | 1 | 2+ | 7 | -2 | 1 | pistol |
 | Plasma pistol – supercharge | 12" | 1 | 2+ | 8 | -3 | 2 | hazardous，pistol |

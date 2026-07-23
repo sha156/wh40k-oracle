@@ -24,7 +24,7 @@ updated: '2026-07-23'
 ## 射击武器
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| [[factions/千子/units/cerberus.md\|Cerberus]] launcher | 18" | D6+3 | 3+ | 4 | 0 | 1 | blast |
+| Cerberus launcher | 18" | D6+3 | 3+ | 4 | 0 | 1 | blast |
 | Heavy bolter | 36" | 3 | 3+ | 5 | -1 | 2 | [[core-rules/sustained-hits.md\|sustained hits 1]] |
 
 ## 近战武器

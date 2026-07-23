@@ -19,7 +19,7 @@ updated: '2026-07-23'
 ## 属性表
 | 模型 | M | T | SV | W | LD | OC |
 |---|---|---|---|---|---|---|
-| Greater Brass [[factions/艾达灵族/units/scorpion.md\|Scorpion]] | 12" | 12 | 3+ | 26 | 6+ | 10 |
+| Greater Brass Scorpion | 12" | 12 | 3+ | 26 | 6+ | 10 |
 
 ### 特殊保护
 - 5+

@@ -40,7 +40,7 @@ updated: '2026-07-23'
 | Fenrisian greataxe – sweep | 近战 | 12 | 3+ | 6 | -2 | 1 | — |
 
 ## 技能
-- **Fervour of the [[factions/星际战士/units/ancient.md|Ancient]]s (Aura)**：While a friendly Space Wolves unit is within 6" of this model, add 1 to Advance and Charge rolls made for that unit.
+- **Fervour of the Ancients (Aura)**：While a friendly Space Wolves unit is within 6" of this model, add 1 to Advance and Charge rolls made for that unit.
 - **Blizzard Shield**：The bearer has a 4+ invulnerable save.
 
 ## 单位构成

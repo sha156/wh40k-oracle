@@ -21,7 +21,7 @@ updated: '2026-07-23'
 ## 属性表
 | 模型 | M | T | SV | W | LD | OC |
 |---|---|---|---|---|---|---|
-| 痘疹[[factions/太空死灵/units/lord.md\|领主]] | 5" | 6 | 3+ | 5 | 6+ | 1 |
+| 痘疹领主 | 5" | 6 | 3+ | 5 | 6+ | 1 |
 
 ### 特殊保护
 - 4+
@@ -47,4 +47,4 @@ updated: '2026-07-23'
 
 ## 关键词
 - **阵营关键词**：Death Guard
-- **普通关键词**：[[core-rules/infantry.md|Infantry]]，Nurgle，[[factions/太空死灵/units/lord.md|Lord]] of Poxes，[[core-rules/character.md|Character]]，[[core-rules/grenades.md|Grenades]]，Chaos
+- **普通关键词**：[[core-rules/infantry.md|Infantry]]，Nurgle，Lord of Poxes，[[core-rules/character.md|Character]]，[[core-rules/grenades.md|Grenades]]，Chaos

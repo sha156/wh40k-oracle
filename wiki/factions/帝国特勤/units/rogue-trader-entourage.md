@@ -5,7 +5,7 @@ name_en: Rogue Trader Entourage
 faction: 帝国特勤
 type: unit
 points:
-  4 models (<ky>AGENTS OF THE IMPERIUM</ky> Detachment): 75
+  4 models (AGENTS OF THE IMPERIUM Detachment): 75
   4 models (Assigned Agent): 105
   4 models: 75
 tags:
@@ -51,8 +51,8 @@ updated: '2026-07-23'
 - **武器技能-治疗药剂**：在您的指挥阶段开始时，如果持有者所在单位低于起始兵力，您可以将D3个被摧毁的模型（角色除外）重新加入持有者所在单位。
 
 ## 单位构成
-- **4个模型** — 75 分
-- **4个模型** — 105 分
+- **4个模型 (AGENTS OF THE IMPERIUM Detachment)** — 75 分
+- **4个模型 (Assigned Agent)** — 105 分
 - **4个模型** — 75 分
 
 ## 关键词

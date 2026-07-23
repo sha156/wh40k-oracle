@@ -5,7 +5,7 @@ name_en: Vindicare Assassin
 faction: 帝国特勤
 type: unit
 points:
-  1 model (<ky>AGENTS OF THE IMPERIUM</ky> Detachment): 110
+  1 model (AGENTS OF THE IMPERIUM Detachment): 110
   1 model (Assigned Agent): 125
   1 model: 110
 tags:
@@ -45,8 +45,8 @@ updated: '2026-07-23'
 - **碎盾者子弹**：每场战斗中您有一次机会，当为该模型的致死步枪选择攻击目标时，可以选择发射碎盾者子弹。如果这样做，在该阶段结束前，每当该模型使用该武器进行攻击时，攻击的致伤掷骰结果加1。并且任何成功的致伤掷骰都视为暴击致伤
 
 ## 单位构成
-- **1个模型** — 110 分
-- **1个模型** — 125 分
+- **1个模型 (AGENTS OF THE IMPERIUM Detachment)** — 110 分
+- **1个模型 (Assigned Agent)** — 125 分
 - **1个模型** — 110 分
 
 ## 关键词

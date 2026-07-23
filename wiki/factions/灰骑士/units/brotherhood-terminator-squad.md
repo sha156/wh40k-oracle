@@ -56,4 +56,4 @@ updated: '2026-07-23'
 
 ## 关键词
 - **阵营关键词**：Grey Knights
-- **普通关键词**：Terminator，[[core-rules/grenades.md|Grenades]]，Imperium，Brotherhood [[factions/星际战士/units/terminator-squad-2.md|Terminator Squad]]，[[core-rules/infantry.md|Infantry]]，[[core-rules/battleline.md|Battleline]]，[[core-rules/psyker.md|Psyker]]
+- **普通关键词**：Terminator，[[core-rules/grenades.md|Grenades]]，Imperium，Brotherhood Terminator Squad，[[core-rules/infantry.md|Infantry]]，[[core-rules/battleline.md|Battleline]]，[[core-rules/psyker.md|Psyker]]

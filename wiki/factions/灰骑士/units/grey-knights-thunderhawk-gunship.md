@@ -20,7 +20,7 @@ updated: '2026-07-23'
 ## 属性表
 | 模型 | M | T | SV | W | LD | OC |
 |---|---|---|---|---|---|---|
-| Grey Knights [[factions/星际战士/units/thunderhawk-gunship.md\|Thunderhawk Gunship]] | 20" | 12 | 2+ | 30 | 6+ | 0 |
+| Grey Knights Thunderhawk Gunship | 20" | 12 | 2+ | 30 | 6+ | 0 |
 
 ## 射击武器
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |

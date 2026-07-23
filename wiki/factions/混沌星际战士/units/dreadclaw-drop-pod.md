@@ -19,7 +19,7 @@ updated: '2026-07-23'
 ## 属性表
 | 模型 | M | T | SV | W | LD | OC |
 |---|---|---|---|---|---|---|
-| Dreadclaw [[factions/星际战士/units/drop-pod.md\|Drop Pod]] | 12" | 7 | 3+ | 9 | 6+ | 2 |
+| Dreadclaw Drop Pod | 12" | 7 | 3+ | 9 | 6+ | 2 |
 
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |

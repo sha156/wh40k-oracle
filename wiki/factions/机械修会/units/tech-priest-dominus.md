@@ -40,7 +40,7 @@ updated: '2026-07-23'
 | Omnissian axe | 近战 | 4 | 3+ | 6 | -2 | 2 | — |
 
 ## 技能
-- **[[factions/太空死灵/units/lord.md|Lord]] of the Machine Cult**：While this model is leading a unit, models in that unit have the Feel No Pain 5+ ability. If that unit has the Electro-Priests keyword, models in that unit have the Feel No Pain 4+ ability instead.
+- **Lord of the Machine Cult**：While this model is leading a unit, models in that unit have the Feel No Pain 5+ ability. If that unit has the Electro-Priests keyword, models in that unit have the Feel No Pain 4+ ability instead.
 - **Data-spike**：At the start of the Fight phase, you can select one enemy <span class="kwb">VEHICLE</span> unit within Engagement Range of this model’s unit and roll one D6: on a 4+, that enemy unit suffers D6 mortal wounds and, until the end of the phase, the Weapon Skill characteristic of melee weapons equipped by that enemy unit is worsened by 1.
 
 ## 单位构成

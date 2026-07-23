@@ -34,11 +34,11 @@ updated: '2026-07-23'
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| 动力拳     | 近战 | 4 | 3+ | 8 | -2 | 2 | [[core-rules/anti.md\|anti-vehicle 3+]] |
+| Chainfist | 近战 | 4 | 3+ | 8 | -2 | 2 | [[core-rules/anti.md\|anti-vehicle 3+]] |
 | 格斗武器    | 近战 | 5 | 2+ | 4 | 0 | 1 | — |
-| 动力拳     | 近战 | 4 | 2+ | 8 | -2 | 2 | — |
+| Power fist | 近战 | 4 | 2+ | 8 | -2 | 2 | — |
 | Power weapon | 近战 | 5 | 2+ | 5 | -2 | 1 | — |
-| 动力拳     | 近战 | 4 | 3+ | 8 | -2 | 2 | devastating wounds |
+| Thunder hammer | 近战 | 4 | 3+ | 8 | -2 | 2 | devastating wounds |
 | Twin lightning claws | 近战 | 6 | 2+ | 5 | -2 | 1 | twin-linked |
 
 ## 技能

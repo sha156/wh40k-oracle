@@ -50,4 +50,4 @@ updated: '2026-07-23'
 
 ## 关键词
 - **阵营关键词**：Chaos Knights
-- **普通关键词**：Abhorrent，[[core-rules/titanic.md|Titanic]]，[[core-rules/walker.md|Walker]]，Vehicle，[[core-rules/psyker.md|Psyker]]，[[core-rules/character.md|Character]]，Chaos，Knight [[factions/基因窃取者教派/units/abominant.md|Abominant]]，[[core-rules/towering.md|Towering]]
+- **普通关键词**：Abhorrent，[[core-rules/titanic.md|Titanic]]，[[core-rules/walker.md|Walker]]，Vehicle，[[core-rules/psyker.md|Psyker]]，[[core-rules/character.md|Character]]，Chaos，Knight Abominant，[[core-rules/towering.md|Towering]]

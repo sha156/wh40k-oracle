@@ -30,7 +30,7 @@ updated: '2026-07-23'
 |---|---|---|---|---|---|---|---|
 | 重型磁轨枪 | 60" | 2 | 4+ | 12 | -4 | D6+1 | [[core-rules/heavy.md\|重型]]，[[core-rules/devastating-wounds.md\|毁灭伤害]] |
 | 集束导弹仓 | 30" | 6 | 4+ | 7 | -1 | 2 | [[core-rules/twin-linked.md\|双联]] |
-| [[factions/帝皇之子/units/seekers.md\|寻觅者]]导弹 | 48" | 1 | 4+ | 14 | -3 | D6+1 | [[core-rules/one-shot.md\|一次性]] |
+| 寻觅者导弹 | 48" | 1 | 4+ | 14 | -3 | D6+1 | [[core-rules/one-shot.md\|一次性]] |
 | 并联等离子步枪 | 18" | 1 | 4+ | 8 | -3 | 3 | [[core-rules/twin-linked.md\|双联]] |
 | Twin smart missile system | 30" | 4 | 4+ | 5 | 0 | 1 | indirect fire，twin-linked |
 

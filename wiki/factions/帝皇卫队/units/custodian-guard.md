@@ -30,8 +30,8 @@ updated: '2026-07-23'
 ## 射击武器
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| 哨兵之剑 | 24" | 2 | 2+ | 4 | -1 | 2 | [[core-rules/assault.md\|突击]]，[[core-rules/pistol.md\|手枪]] |
-| 哨兵之剑 | 12" | 2 | 2+ | 4 | -1 | 2 | [[core-rules/assault.md\|突击]]，[[core-rules/pistol.md\|手枪]] |
+| Guardian spear | 24" | 2 | 2+ | 4 | -1 | 2 | assault |
+| Sentinel blade | 12" | 2 | 2+ | 4 | -1 | 2 | assault，pistol |
 
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |

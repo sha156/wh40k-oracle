@@ -41,7 +41,7 @@ updated: '2026-07-23'
 | Power sword | 近战 | 2 | 3+ | 4 | -2 | 1 | — |
 
 ## 技能
-- **[[factions/黑暗灵族/units/reavers.md|Reavers]] of the Void**：Each time a model in this unit makes an attack, re-roll a Hit roll of 1. If the target of that attack is within range of an objective marker, you can re-roll the Hit roll instead.
+- **Reavers of the Void**：Each time a model in this unit makes an attack, re-roll a Hit roll of 1. If the target of that attack is within range of an objective marker, you can re-roll the Hit roll instead.
 - **Mistshield**：The bearer has a 4+ invulnerable save.
 
 ## 单位构成
