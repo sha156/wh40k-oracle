@@ -246,3 +246,57 @@ class TestLoadLinkTargetsFromFixture:
         assert "Test Unit" in targets
         assert "TU" in targets
         assert "测试" in targets
+
+
+class TestInjectionGuards:
+    """gnhf 审查模块 6 F2：词界/阵营门——1715 单位名全局扫描曾产出 125 处
+    词中注入与跨阵营错链（堡主战斧→SM Castellan、兽人页先知→灵族 Farseer）。"""
+
+    def test_cross_faction_unit_target_not_injected(self):
+        page = _make_page(name_zh="加兹古尔", name_en="Ghazghkull",
+                          body="据说虚空幽龙很强。")
+        targets = {"虚空幽龙": "factions/艾达灵族/units/void-dragon.md"}
+        out = inject_wikilinks(page, targets,
+                               self_path="factions/兽人/units/ghazghkull.md")
+        assert "[[" not in out.body
+
+    def test_same_faction_unit_target_injected(self):
+        # 负向成对：同阵营单位名照常注入
+        page = _make_page(name_zh="加兹古尔", name_en="Ghazghkull",
+                          body="常与战争头目同行。")
+        targets = {"战争头目": "factions/兽人/units/warboss.md"}
+        out = inject_wikilinks(page, targets,
+                               self_path="factions/兽人/units/ghazghkull.md")
+        assert "[[factions/兽人/units/warboss.md|战争头目]]" in out.body
+
+    def test_non_unit_target_not_gated(self):
+        # core-rules 术语页不受阵营门限制
+        page = _make_page(name_zh="加兹古尔", name_en="Ghazghkull",
+                          body="可以深入打击进场。")
+        targets = {"深入打击": "core-rules/deep-strike.md"}
+        out = inject_wikilinks(page, targets,
+                               self_path="factions/兽人/units/ghazghkull.md")
+        assert "[[core-rules/deep-strike.md|深入打击]]" in out.body
+
+    def test_short_pure_cjk_name_not_injected(self):
+        # 两字纯中文名（先知/毒刃/堡主类）同形词遍地，即使同阵营也不注入
+        page = _make_page(name_zh="加兹古尔", name_en="Ghazghkull",
+                          body="伟大WAAAGH!的先知。")
+        targets = {"先知": "factions/兽人/units/weirdboy.md"}
+        out = inject_wikilinks(page, targets,
+                               self_path="factions/兽人/units/ghazghkull.md")
+        assert "[[" not in out.body
+
+    def test_ascii_word_boundary(self):
+        # "Vyper" 不得命中 "Vypers" 的前缀（成对：独立词照常注入）
+        targets = {"Vyper": "factions/艾达灵族/units/vyper.md"}
+        inside = _make_page(name_zh="风行者", name_en="Windrider",
+                            body="Vypers move fast.")
+        out1 = inject_wikilinks(inside, targets,
+                                self_path="factions/艾达灵族/units/windrider.md")
+        assert "[[" not in out1.body
+        alone = _make_page(name_zh="风行者", name_en="Windrider",
+                           body="The Vyper moves fast.")
+        out2 = inject_wikilinks(alone, targets,
+                                self_path="factions/艾达灵族/units/windrider.md")
+        assert "[[factions/艾达灵族/units/vyper.md|Vyper]]" in out2.body

@@ -275,6 +275,31 @@ def load_link_targets(pages_dir: Path) -> Dict[str, str]:
     return targets
 
 
+def _faction_of(rel_path: Optional[str]) -> Optional[str]:
+    """相对路径 → 所属阵营目录名（"factions/<阵营>/…"），非阵营页返回 None。"""
+    if not rel_path:
+        return None
+    parts = rel_path.split("/")
+    if len(parts) >= 2 and parts[0] == "factions":
+        return parts[1]
+    return None
+
+
+def _name_pattern(name: str) -> "re.Pattern":
+    """实体名 → 带边界护栏的匹配正则。
+
+    ASCII 词首/词尾加 (?<![A-Za-z0-9]) / (?![A-Za-z0-9]) 负回溯——防 "Vyper" 命中
+    "Vypers"、"Ork" 命中 "Orkish"。CJK 无词界可用（\\w 在 Py3 匹配 CJK，空格边界
+    对中文恒假），靠调用方的长度门（纯 CJK ≥3）拦短词误注。
+    """
+    pat = re.escape(name)
+    if name[0].isascii() and name[0].isalnum():
+        pat = r"(?<![A-Za-z0-9])" + pat
+    if name[-1].isascii() and name[-1].isalnum():
+        pat = pat + r"(?![A-Za-z0-9])"
+    return re.compile(pat)
+
+
 def inject_wikilinks(
     page: WikiPage,
     link_targets: Dict[str, str],
@@ -288,7 +313,11 @@ def inject_wikilinks(
       - 不链接自身（page.fm 中已有的名称；以及 self_path 指向自身的候选——
         H14：terms.json 全局别名可能不在 fm 名称集里，但目标是本页自己，
         按目标路径过滤才堵得住这类自链）
-      - 用 (?:^|\\s|[(（]) 前缀边界避免子串误匹配
+      - 阵营门：目标是异阵营的单位页（factions/X/units/*）时不注入——1715 个单位名
+        的全局笛卡尔扫描曾把「堡主战斧」切进星际战士 Castellan、把兽人页的「先知」
+        链到灵族 Farseer（gnhf 审查模块 6 F2，产物实测 125 处词中/跨阵营错链）
+      - 纯 CJK 名长度 <3 不注入（先知/毒刃/堡主 类同形短词是重灾区）；
+        ASCII 词边界见 _name_pattern
 
     self_path：当前页面相对 wiki 根的路径（"/"分隔，含 .md），可选。
 
@@ -328,12 +357,21 @@ def inject_wikilinks(
         # factions/基因窃取者教派/units/lictor.md 路径里 → 断链的嵌套 wikilink）
         return [(m.start(), m.end()) for m in re.finditer(r"\[\[[^\]]*\]\]", text)]
 
+    self_faction = _faction_of(self_path)
     for name, path in candidates:
         if name in linked or len(name) < 2:
             continue
-        # 用正则查找 name 首个「不在任何已有 [[...]] 区间内」的出现处。
-        # 不使用 \w 边界（Python 3 中 \w 匹配 CJK 字符，会导致中文匹配失败）
-        pattern = re.compile(re.escape(name))
+        # 纯 CJK 短名（<3 字）误注率极高（同形词遍地），直接不注
+        if len(name) < 3 and all("一" <= c <= "鿿" for c in name):
+            continue
+        # 阵营门：异阵营单位页不作为注入目标（同阵营/非单位页不受限；
+        # 仅在调用方提供了 self_path 语境时生效——inject_all 生产路径恒传）
+        target_faction = _faction_of(path)
+        if (self_path is not None and target_faction is not None
+                and "/units/" in path and target_faction != self_faction):
+            continue
+        # 用正则查找 name 首个「不在任何已有 [[...]] 区间内」的出现处
+        pattern = _name_pattern(name)
         spans = _link_spans(body)
         match = next((m for m in pattern.finditer(body)
                       if not any(s <= m.start() < e for s, e in spans)), None)
