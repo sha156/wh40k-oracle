@@ -201,8 +201,8 @@ def test_unknown_size_surfaced_not_silent():
         RosterUnit(INTERCESSOR, "Intercessor Squad", 5, is_warlord=False),)))
     unk = [i for i in r.issues if i.code == "unknown_size"]
     assert unk and unk[0].surfaced_only and unk[0].severity == WARN
-    assert "strike_force(2000)" in " ".join(
-        i.message for i in r.issues if i.code == "points_over") or r.total_points <= 2000
+    # 直接断言回退文案不撒谎（模块 8 F3：原 `or total<=2000` 逃生门使断言恒真）
+    assert "strike_force 2000" in unk[0].message
 
 
 @needs_db
