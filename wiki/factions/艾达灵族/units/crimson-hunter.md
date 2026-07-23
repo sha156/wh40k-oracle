@@ -48,4 +48,4 @@ updated: '2026-07-23'
 
 ## 关键词
 - **阵营关键词**：Asuryani
-- **普通关键词**：Fly，Aeldari，[[core-rules/aircraft.md|Aircraft]]，Aspect Warrior，Crimson [[factions/星际战士/units/hunter.md|Hunter]]，Vehicle
+- **普通关键词**：Fly，Aeldari，[[core-rules/aircraft.md|Aircraft]]，Aspect Warrior，Crimson Hunter，Vehicle

@@ -19,7 +19,7 @@ updated: '2026-07-23'
 ## 属性表
 | 模型 | M | T | SV | W | LD | OC |
 |---|---|---|---|---|---|---|
-| [[factions/混沌恶魔/units/chaos-lord.md\|Chaos Lord]] On Palanquin Of Nurgle | 5" | 5 | 3+ | 8 | 6+ | 2 |
+| Chaos Lord On Palanquin Of Nurgle | 5" | 5 | 3+ | 8 | 6+ | 2 |
 
 ### 特殊保护
 - 4+
@@ -44,7 +44,7 @@ updated: '2026-07-23'
 | Power fist | 近战 | 5 | 2+ | 8 | -2 | 2 | — |
 
 ## 技能
-- **[[factions/太空死灵/units/lord.md|Lord]] of Chaos**：Once per battle round, one unit from your army with this ability can use it when its unit is targeted with a Stratagem. If it does, reduce the CP cost of that use of that Stratagem by 1CP.
+- **Lord of Chaos**：Once per battle round, one unit from your army with this ability can use it when its unit is targeted with a Stratagem. If it does, reduce the CP cost of that use of that Stratagem by 1CP.
 - **Revolting Regeneration**：At the start of your Command phase, this model regains up to D3 lost wounds.
 
 ## 单位构成

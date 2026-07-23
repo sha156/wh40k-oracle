@@ -28,7 +28,7 @@ updated: '2026-07-23'
 | Lascannon | 48" | 1 | 3+ | 12 | -3 | D6+1 | — |
 | Punisher rotary cannon | 36" | 18 | 4+ | 6 | 0 | 1 | devastating wounds |
 | Heavy bolter | 36" | 3 | 3+ | 5 | -1 | 2 | [[core-rules/sustained-hits.md\|sustained hits 1]] |
-| [[factions/星际战士/units/hunter.md\|Hunter]]-killer missile | 48" | 1 | 2+ | 14 | -3 | D6 | one shot |
+| Hunter-killer missile | 48" | 1 | 2+ | 14 | -3 | D6 | one shot |
 
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |

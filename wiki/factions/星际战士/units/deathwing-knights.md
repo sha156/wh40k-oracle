@@ -29,9 +29,9 @@ updated: '2026-07-23'
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| 动力武器 | 近战 | 5 | 2+ | 6 | -2 | 2 | devastating wounds，[[core-rules/sustained-hits.md\|sustained hits 1]] |
+| Great weapon of the Unforgiven | 近战 | 5 | 2+ | 6 | -2 | 2 | devastating wounds，[[core-rules/sustained-hits.md\|sustained hits 1]] |
 | 赦免之锤 | 近战 | 4 | 2+ | 6 | -2 | 2 | 反巨兽4＋，反载具4＋ |
-| 动力武器 | 近战 | 5 | 2+ | 6 | -2 | 2 | — |
+| Power weapon | 近战 | 5 | 2+ | 6 | -2 | 2 | — |
 | 圣物武器 | 近战 | 6 | 2+ | 7 | -2 | 2 | 致命攻击 |
 
 ## 技能

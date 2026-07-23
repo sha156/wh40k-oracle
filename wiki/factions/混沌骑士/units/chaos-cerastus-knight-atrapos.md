@@ -21,7 +21,7 @@ updated: '2026-07-23'
 ## 属性表
 | 模型 | M | T | SV | W | LD | OC |
 |---|---|---|---|---|---|---|
-| 混沌[[factions/帝国骑士/units/cerastus-knight-atrapos.md\|命运女神型角蝰骑士]] | 12" | 11 | 3+ | 28 | 6+ | 10 |
+| 混沌命运女神型角蝰骑士 | 12" | 11 | 3+ | 28 | 6+ | 10 |
 
 ### 特殊保护
 - 5+
@@ -31,8 +31,8 @@ updated: '2026-07-23'
 |---|---|---|---|---|---|---|---|
 | 激光切割器 — 低功率 | 36" | 2D6 | 3+ | 7 | -1 | 2 | [[core-rules/sustained-hits.md\|连击1]] |
 | 激光切割器 — 高功率 | 24" | D6 | 3+ | 14 | -3 | 4 | [[core-rules/sustained-hits.md\|连击1]] |
-| 引力奇点炮 — 奇点爆发 | 24" | D3 | 3+ | 16 | -4 | D6+1 | [[core-rules/blast.md\|爆炸]]，[[core-rules/devastating-wounds.md\|毁灭伤害]]，[[core-rules/hazardous.md\|危险]] |
-| 引力奇点炮 — 奇点爆发 | 24" | D3 | 3+ | 16 | -4 | D6+1 | [[core-rules/blast.md\|爆炸]]，[[core-rules/devastating-wounds.md\|毁灭伤害]]，[[core-rules/hazardous.md\|危险]] |
+| Graviton singularity cannon – contained | 24" | D3 | 3+ | 16 | -4 | D6+1 | blast |
+| Graviton singularity cannon – singularity | 24" | D3 | 3+ | 16 | -4 | D6+1 | blast，devastating wounds，hazardous |
 
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |

@@ -28,8 +28,8 @@ updated: '2026-07-23'
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
 | 纠缠炸弹发射器 | 24" | D3 | 4+ | 5 | 0 | 1 | [[core-rules/blast.md\|爆炸]] |
-| 克鲁特步枪 | 12" | 1 | 4+ | 4 | 0 | 1 | [[core-rules/rapid-fire.md\|速射1]] |
-| 克鲁特步枪 | 24" | 1 | 4+ | 4 | 0 | 1 | [[core-rules/rapid-fire.md\|速射1]] |
+| Kroot pistol | 12" | 1 | 4+ | 4 | 0 | 1 | Pistol |
+| Kroot rifle | 24" | 1 | 4+ | 4 | 0 | 1 | [[core-rules/rapid-fire.md\|rapid fire 1]] |
 | 克鲁特卡宾枪 | 18" | 1 | 4+ | 4 | 0 | 2 | — |
 
 ## 近战武器

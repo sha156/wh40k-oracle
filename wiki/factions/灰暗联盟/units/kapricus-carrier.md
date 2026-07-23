@@ -26,8 +26,8 @@ updated: '2026-07-23'
 ## 射击武器
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| 双联电磁线圈自动炮 | 24" | 3 | 4+ | 7 | -1 | 2 | [[core-rules/twin-linked.md\|双联]] |
-| 双联电磁线圈自动炮 | 24" | 3 | 4+ | 7 | -1 | 2 | [[core-rules/twin-linked.md\|双联]] |
+| Magna-coil autocannon | 24" | 3 | 4+ | 7 | -1 | 2 | — |
+| Twin magna-coil autocannon | 24" | 3 | 4+ | 7 | -1 | 2 | twin-linked |
 
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |

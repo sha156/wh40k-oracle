@@ -30,7 +30,7 @@ updated: '2026-07-23'
 ## 射击武器
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| 灵[[factions/基因窃取者教派/units/patriarch.md\|族长]]步枪 | 36" | 1 | 2+ | 4 | -1 | 2 | [[core-rules/precision.md\|精准]] |
+| 灵族长步枪 | 36" | 1 | 2+ | 4 | -1 | 2 | [[core-rules/precision.md\|精准]] |
 | 散射激光 | 36" | 6 | 3+ | 5 | 0 | 1 | [[core-rules/sustained-hits.md\|连击1]] |
 | 星镖手枪 | 12" | 1 | 2+ | 4 | -1 | 1 | [[core-rules/assault.md\|突击]]，[[core-rules/pistol.md\|手枪]] |
 

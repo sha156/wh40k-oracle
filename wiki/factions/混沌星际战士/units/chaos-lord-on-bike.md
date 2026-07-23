@@ -19,7 +19,7 @@ updated: '2026-07-23'
 ## 属性表
 | 模型 | M | T | SV | W | LD | OC |
 |---|---|---|---|---|---|---|
-| [[factions/混沌恶魔/units/chaos-lord.md\|Chaos Lord]] On Bike | 12" | 5 | 3+ | 6 | 6+ | 2 |
+| Chaos Lord On Bike | 12" | 5 | 3+ | 6 | 6+ | 2 |
 
 ### 特殊保护
 - 4+
@@ -43,7 +43,7 @@ updated: '2026-07-23'
 | Power fist | 近战 | 5 | 2+ | 8 | -2 | 2 | — |
 
 ## 技能
-- **[[factions/太空死灵/units/lord.md|Lord]] of Chaos**：Once per battle round, one unit from your army with this ability can use it when its unit is targeted with a Stratagem. If it does, reduce the CP cost of that use of that Stratagem by 1CP.
+- **Lord of Chaos**：Once per battle round, one unit from your army with this ability can use it when its unit is targeted with a Stratagem. If it does, reduce the CP cost of that use of that Stratagem by 1CP.
 - **Swift Assault**：While this model is leading a unit, ranged weapons equipped by models in that unit have the [ASSAULT] ability.
 
 ## 单位构成

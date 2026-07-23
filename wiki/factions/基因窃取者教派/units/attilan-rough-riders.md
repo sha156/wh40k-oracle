@@ -26,8 +26,8 @@ updated: '2026-07-23'
 ## 射击武器
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| 激光手枪 | 24" | 1 | 4+ | 3 | 0 | 1 | [[core-rules/pistol.md\|手枪]] |
-| 激光手枪 | 12" | 1 | 4+ | 3 | 0 | 1 | [[core-rules/pistol.md\|手枪]] |
+| Lasgun | 24" | 1 | 4+ | 3 | 0 | 1 | [[core-rules/rapid-fire.md\|rapid fire 1]] |
+| Laspistol | 12" | 1 | 4+ | 3 | 0 | 1 | pistol |
 
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |

@@ -145,3 +145,42 @@ class TestBuildAllOutputs:
         assert (wiki / "index.md").exists()
         assert (wiki / "log.md").exists()
         assert (wiki / "factions" / "tau-empire" / "index.md").exists()
+
+
+class TestDataCorrectnessFixes:
+    """gnhf 审查模块 6 F4/F7：去重页链接目标 + 摘要剥 wikilink。"""
+
+    def test_dedup_page_linked_by_real_path_no_orphan(self, tmp_path):
+        # F4：同名单位第二页 slug 去重成 -2，索引必须链到真实 -2 文件而非从 name 反推
+        wiki = tmp_path / "wiki"
+        d = wiki / "factions" / "space-marines" / "units"
+        d.mkdir(parents=True)
+        for slug, uid in (("repulsor", "000000001"), ("repulsor-2", "000000002")):
+            fm = WikiPageFrontmatter(id=uid, name_zh="反击者", name_en="Repulsor",
+                                     faction="space-marines", type="unit",
+                                     updated="2026-07-23")
+            (d / (slug + ".md")).write_text(
+                WikiPage(fm=fm, body="body").to_markdown(), encoding="utf-8")
+        pages = scan_wiki_pages(wiki)
+        idx = build_global_index(pages, wiki)
+        # 两个真实文件都被链到，无孤儿（此前从 name 反推两个都指向 repulsor.md）
+        assert "space-marines/units/repulsor.md" in idx
+        assert "space-marines/units/repulsor-2.md" in idx
+
+    def test_summary_strips_wikilinks_no_broken_table(self, tmp_path):
+        # F7：正文首段含 [[path|显示]] → 摘要剥成纯文本，竖线不进 index 表格断列
+        wiki = tmp_path / "wiki"
+        d = wiki / "factions" / "orks" / "units"
+        d.mkdir(parents=True)
+        fm = WikiPageFrontmatter(id="x", name_zh="小子", name_en="Boyz",
+                                 faction="orks", type="unit", updated="2026-07-23")
+        body = "会被[[core-rules/precision.md|精准]]武器点名的近战单位。\n\n## 属性表\n"
+        (d / "boyz.md").write_text(WikiPage(fm=fm, body=body).to_markdown(),
+                                   encoding="utf-8")
+        pages = scan_wiki_pages(wiki)
+        idx = build_global_index(pages, wiki)
+        boyz_row = [ln for ln in idx.split("\n")
+                    if "boyz.md" in ln and ln.startswith("|")][0]
+        assert "[[" not in boyz_row and "精准" in boyz_row
+        # 表格行列数正确（表头 4 列 → 前后各一竖线共 5 个分隔）
+        assert boyz_row.count("|") == 5

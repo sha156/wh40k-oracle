@@ -29,10 +29,10 @@ updated: '2026-07-23'
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
 | 大突突枪 | 36" | 3 | 5+ | 5 | 0 | 1 | [[core-rules/rapid-fire.md\|速射2]] |
-| 手铳 | 24" | 1 | 5+ | 4 | 0 | 1 | [[core-rules/pistol.md\|手枪]] |
+| Kombi-weapon | 24" | 1 | 5+ | 4 | 0 | 1 | [[core-rules/anti.md\|anti-infantry 4+]]，devastating wounds，[[core-rules/rapid-fire.md\|rapid fire 1]] |
 | 火箭筒 | 24" | D3 | 5+ | 9 | -2 | 3 | [[core-rules/blast.md\|爆炸]] |
 | 突突枪 | 18" | 2 | 5+ | 4 | 0 | 1 | [[core-rules/rapid-fire.md\|速射1]] |
-| 手铳 | 12" | 1 | 5+ | 4 | 0 | 1 | [[core-rules/pistol.md\|手枪]] |
+| Slugga | 12" | 1 | 5+ | 4 | 0 | 1 | pistol |
 
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |

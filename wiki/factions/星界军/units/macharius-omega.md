@@ -19,7 +19,7 @@ updated: '2026-07-23'
 ## 属性表
 | 模型 | M | T | SV | W | LD | OC |
 |---|---|---|---|---|---|---|
-| [[factions/基因窃取者教派/units/macharius.md\|Macharius]] Omega | 9" | 13 | 2+ | 20 | 7+ | 8 |
+| Macharius Omega | 9" | 13 | 2+ | 20 | 7+ | 8 |
 
 ## 射击武器
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
@@ -28,7 +28,7 @@ updated: '2026-07-23'
 | Heavy bolter | 36" | 3 | 4+ | 5 | -1 | 2 | [[core-rules/sustained-hits.md\|sustained hits 1]] |
 | Heavy flamer | 12" | D6 | N/A | 5 | -1 | 1 | ignores cover，torrent |
 | Heavy stubber | 36" | 3 | 4+ | 4 | 0 | 1 | [[core-rules/rapid-fire.md\|rapid fire 3]] |
-| [[factions/星际战士/units/hunter.md\|Hunter]]-killer missile | 48" | 1 | 4+ | 14 | -3 | D6 | one shot |
+| Hunter-killer missile | 48" | 1 | 4+ | 14 | -3 | D6 | one shot |
 | Omega-pattern plasma blastgun – standard | 60" | 2D6 | 4+ | 8 | -2 | 2 | blast |
 | Omega-pattern plasma blastgun – supercharge | 60" | 2D6 | 4+ | 9 | -3 | 3 | blast，hazardous |
 | Storm bolter | 24" | 2 | 4+ | 4 | 0 | 1 | [[core-rules/rapid-fire.md\|rapid fire 2]] |

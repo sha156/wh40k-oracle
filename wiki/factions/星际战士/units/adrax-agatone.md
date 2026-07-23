@@ -37,7 +37,7 @@ updated: '2026-07-23'
 
 ## 技能
 - **Unto the Anvil**：While this model is leading a unit, each time a model in that unit makes a melee attack, you can re-roll the Wound roll.
-- **[[factions/太空死灵/units/lord.md|Lord]] of the Pyroclasts**：While an enemy unit is within Engagement Range of this model, halve the Objective Control characteristic of models in that enemy unit.
+- **Lord of the Pyroclasts**：While an enemy unit is within Engagement Range of this model, halve the Objective Control characteristic of models in that enemy unit.
 
 ## 单位构成
 - **1个模型** — 85 分

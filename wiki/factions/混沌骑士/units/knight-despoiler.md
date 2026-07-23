@@ -34,7 +34,7 @@ updated: '2026-07-23'
 | 掠夺者战斗炮 | 72" | D6+3 | 3+ | 10 | -1 | 3 | 速射D6+3，[[core-rules/blast.md\|爆炸]] |
 | 掠夺者加特林 | 36" | 18 | 3+ | 6 | -2 | 2 | — |
 | 恶魔重机枪 | 36" | 3 | 3+ | 5 | 0 | 1 | [[core-rules/rapid-fire.md\|速射3]] |
-| [[factions/混沌星际战士/units/havocs.md\|浩劫]]导弹舱 | 48" | D6+1 | 3+ | 5 | 0 | 1 | [[core-rules/blast.md\|爆炸]]，[[core-rules/indirect-fire.md\|曲射]] |
+| 浩劫导弹舱 | 48" | D6+1 | 3+ | 5 | 0 | 1 | [[core-rules/blast.md\|爆炸]]，[[core-rules/indirect-fire.md\|曲射]] |
 | 重型黑焰喷射器 | 12" | D6 | N/A | 5 | -1 | 1 | [[core-rules/ignores-cover.md\|无视掩体]]，[[core-rules/torrent.md\|洪流]] |
 | 地狱风暴自动炮 | 48" | 3 | 3+ | 7 | -1 | 2 | [[core-rules/anti.md\|针对飞行 2+]]，[[core-rules/twin-linked.md\|双联]] |
 | 废墟之矛火箭舱 | 48" | 3 | 3+ | 8 | -2 | D6 | — |

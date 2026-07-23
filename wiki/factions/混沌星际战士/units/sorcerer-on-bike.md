@@ -19,7 +19,7 @@ updated: '2026-07-23'
 ## 属性表
 | 模型 | M | T | SV | W | LD | OC |
 |---|---|---|---|---|---|---|
-| [[factions/千子/units/sorcerer.md\|Sorcerer]] On Bike | 12" | 5 | 3+ | 5 | 6+ | 2 |
+| Sorcerer On Bike | 12" | 5 | 3+ | 5 | 6+ | 2 |
 
 ## 射击武器
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |

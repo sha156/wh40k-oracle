@@ -21,7 +21,7 @@ updated: '2026-07-23'
 ## 属性表
 | 模型 | M | T | SV | W | LD | OC |
 |---|---|---|---|---|---|---|
-| [[factions/黑暗灵族/units/venom.md\|Venom]]crawler | 12" | 9 | 3+ | 9 | 6+ | 3 |
+| Venomcrawler | 12" | 9 | 3+ | 9 | 6+ | 3 |
 
 ### 特殊保护
 - 5+

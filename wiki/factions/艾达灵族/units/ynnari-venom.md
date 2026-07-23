@@ -45,4 +45,4 @@ updated: '2026-07-23'
 
 ## 关键词
 - **阵营关键词**：Ynnari
-- **普通关键词**：[[core-rules/dedicated-transport.md|Dedicated Transport]]，[[core-rules/transport.md|Transport]]，Aeldari，Vehicle，[[factions/黑暗灵族/units/venom.md|Venom]]，Fly
+- **普通关键词**：[[core-rules/dedicated-transport.md|Dedicated Transport]]，[[core-rules/transport.md|Transport]]，Aeldari，Vehicle，Venom，Fly

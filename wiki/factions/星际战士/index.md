@@ -1,6 +1,6 @@
 # 星际战士
 
-_Last updated: 2026-07-23 08:05 UTC_
+_Last updated: 2026-07-23 12:10 UTC_
 
 ## 单位
 
@@ -154,7 +154,7 @@ _Last updated: 2026-07-23 08:05 UTC_
 - [[factions/星际战士/units/land-speeder|兰德速攻艇]] — 
 - [[factions/星际战士/units/inner-circle-companions|内环伙友]] — 
 - [[factions/星际战士/units/storm-speeder-hailstrike|冰雹型风暴速攻艇]] — 
-- [[factions/星际战士/units/impulsor|冲击者突击艇]] — 
+- [[factions/星际战士/units/impulsor-2|冲击者突击艇]] — 
 - [[factions/星际战士/units/kayvaan-shrike|凯万-史瑞克]] — 
 - [[factions/星际战士/units/talonstrike-kill-team|利爪突击杀戮小队]] — 
 - [[factions/星际战士/units/bladeguard-ancient|剑卫旗手]] — 
@@ -162,12 +162,12 @@ _Last updated: 2026-07-23 08:05 UTC_
 - [[factions/星际战士/units/lieutenant|副官]] — 
 - [[factions/星际战士/units/lieutenant-in-reiver-armour|劫掠者副官]] — 
 - [[factions/星际战士/units/reiver-squad|劫掠者小队]] — 
-- [[factions/星际战士/units/land-raider-crusader|十字军型兰德掠袭者坦克]] — 
+- [[factions/星际战士/units/land-raider-crusader-2|十字军型兰德掠袭者坦克]] — 
 - [[factions/星际战士/units/crusader-squad|十字军小队]] — 
 - [[factions/星际战士/units/cato-sicarius|卡托·西卡留斯]] — 
 - [[factions/星际战士/units/caanok-var|卡诺克·瓦尔]] — 
 - [[factions/星际战士/units/suppressor-squad|压制者小队]] — 
-- [[factions/星际战士/units/repulsor|反击者突击艇]] — 
+- [[factions/星际战士/units/repulsor-2|反击者突击艇]] — 
 - [[factions/星际战士/units/the-sanguinor|圣吉列诺]] — 
 - [[factions/星际战士/units/sanguinary-guard|圣血卫队]] — 
 - [[factions/星际战士/units/sanguinary-priest|圣血祭司]] — 
@@ -175,7 +175,7 @@ _Last updated: 2026-07-23 08:05 UTC_
 - [[factions/星际战士/units/hellblaster-squad|地狱轰击者小队]] — 
 - [[factions/星际战士/units/pedro-kantor|坎托战团长]] — 
 - [[factions/星际战士/units/castellan|堡主]] — 
-- [[factions/星际战士/units/repulsor-executioner|处决者型反击者坦克]] — 
+- [[factions/星际战士/units/repulsor-executioner-2|处决者型反击者坦克]] — 
 - [[factions/星际战士/units/land-speeder-vengeance|复仇型兰德飞艇]] — 
 - [[factions/星际战士/units/wardens-of-ultramar|奥特拉玛守望者]] — 
 - [[factions/星际战士/units/watch-master|守望堡主]] — 
@@ -201,7 +201,7 @@ _Last updated: 2026-07-23 08:05 UTC_
 - [[factions/星际战士/units/librarian|智库]] — 
 - [[factions/星际战士/units/murderfang|杀戮牙]] — 
 - [[factions/星际战士/units/ulrik-the-slayer|杀戮者乌尔里克]] — 
-- [[factions/星际战士/units/gladiator-lancer|枪骑兵型角斗者坦克]] — 
+- [[factions/星际战士/units/gladiator-lancer-2|枪骑兵型角斗者坦克]] — 
 - [[factions/星际战士/units/eradicator-squad|根除者小队]] — 
 - [[factions/星际战士/units/chaplain-grimaldus|格瑞马都斯牧师]] — 
 - [[factions/星际战士/units/deathwatch-terminator-squad|死亡守望终结者小队]] — 
@@ -209,7 +209,7 @@ _Last updated: 2026-07-23 08:05 UTC_
 - [[factions/星际战士/units/death-company-marines|死亡连小队]] — 
 - [[factions/星际战士/units/death-company-dreadnought|死亡连无畏]] — 
 - [[factions/星际战士/units/death-company-captain|死亡连连长]] — 
-- [[factions/星际战士/units/gladiator-reaper|死神型角斗者坦克]] — 
+- [[factions/星际战士/units/gladiator-reaper-2|死神型角斗者坦克]] — 
 - [[factions/星际战士/units/deathwing-command-squad|死翼指挥组【传奇】]] — 
 - [[factions/星际战士/units/deathwing-terminator-squad|死翼终结者小队]] — 
 - [[factions/星际战士/units/deathwing-knights|死翼骑士]] — 
@@ -238,14 +238,14 @@ _Last updated: 2026-07-23 08:05 UTC_
 - [[factions/星际战士/units/drop-pod|空降仓]] — 
 - [[factions/星际战士/units/assault-intercessor-squad|突击仲裁者小队]] — 
 - [[factions/星际战士/units/terminator-assault-squad|突击终结者小队]] — 
-- [[factions/星际战士/units/terminator-squad|终结者小队]] — 
+- [[factions/星际战士/units/terminator-squad-2|终结者小队]] — 
 - [[factions/星际战士/units/ancient-in-terminator-armour|终结者旗手]] — 
 - [[factions/星际战士/units/librarian-in-terminator-armour|终结者智库]] — 
 - [[factions/星际战士/units/chaplain-in-terminator-armour|终结者牧师]] — 
 - [[factions/星际战士/units/captain-in-terminator-armour|终结者连长]] — 
 - [[factions/星际战士/units/vindicator|维护者突击炮]] — 
 - [[factions/星际战士/units/roboute-guilliman|罗伯特.基里曼]] — 
-- [[factions/星际战士/units/sternguard-veteran-squad|肃卫老兵小队]] — 
+- [[factions/星际战士/units/sternguard-veteran-squad-2|肃卫老兵小队]] — 
 - [[factions/星际战士/units/fortis-kill-team|至强杀戮小队]] — 
 - [[factions/星际战士/units/high-marshal-helbrecht|至高大元帅赫尔贝茨]] — 
 - [[factions/星际战士/units/aethon-shaan|艾索-沙恩]] — 
@@ -265,7 +265,7 @@ _Last updated: 2026-07-23 08:05 UTC_
 - [[factions/星际战士/units/death-company-marines-with-jump-packs|装备跳跃背包的死亡连小队]] — 
 - [[factions/星际战士/units/death-company-captain-with-jump-pack|装备跳跃背包的死亡连连长]] — 
 - [[factions/星际战士/units/wulfen-with-storm-shields|装备风暴盾的狼人]] — 
-- [[factions/星际战士/units/gladiator-valiant|豪侠型角斗者坦克]] — 
+- [[factions/星际战士/units/gladiator-valiant-2|豪侠型角斗者坦克]] — 
 - [[factions/星际战士/units/razorback|豪猪装甲车]] — 
 - [[factions/星际战士/units/belial|贝利亚大导师]] — 
 - [[factions/星际战士/units/vanguard-veteran-squad-with-jump-packs|跳跃背包先锋老兵小队]] — 

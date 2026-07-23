@@ -21,7 +21,7 @@ updated: '2026-07-23'
 ## 属性表
 | 模型 | M | T | SV | W | LD | OC |
 |---|---|---|---|---|---|---|
-| 太阳[[factions/星际战士/units/marshal.md\|元帅]]雷昂图斯 | 12" | 4 | 3+ | 8 | 6+ | 2 |
+| 太阳元帅雷昂图斯 | 12" | 4 | 3+ | 8 | 6+ | 2 |
 
 ### 特殊保护
 - 4+
@@ -39,7 +39,7 @@ updated: '2026-07-23'
 
 ## 技能
 - **阵营能力-指挥之声**：该军官可以对至多3个兵团  编队或巨型单位下达命令
-- **太阳[[factions/太空死灵/units/lord.md|领主]]**：在你的指挥阶段开始时，如果这个模型在战场上，你获得1CP
+- **太阳领主**：在你的指挥阶段开始时，如果这个模型在战场上，你获得1CP
 - **星算参谋团**：在双方部署军队后，您可以从您的军队中选择最多三个星界军单位并重新部署它们。这样做时，无论战略预备队中已有多少单位，您都可以根据需要将这些单位部署在战略预备队中。
 
 ## 单位构成
@@ -47,4 +47,4 @@ updated: '2026-07-23'
 
 ## 关键词
 - **阵营关键词**：Astra Militarum
-- **普通关键词**：[[core-rules/mounted.md|Mounted]]，[[core-rules/character.md|Character]]，[[core-rules/epic-hero.md|Epic Hero]]，Imperium，Officer，[[factions/太空死灵/units/lord.md|Lord]] Solar Leontus
+- **普通关键词**：[[core-rules/mounted.md|Mounted]]，[[core-rules/character.md|Character]]，[[core-rules/epic-hero.md|Epic Hero]]，Imperium，Officer，Lord Solar Leontus

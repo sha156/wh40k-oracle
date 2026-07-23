@@ -21,7 +21,7 @@ updated: '2026-07-23'
 ## 属性表
 | 模型 | M | T | SV | W | LD | OC |
 |---|---|---|---|---|---|---|
-| 兄弟会[[factions/星际战士/units/librarian.md\|智库]] | 5" | 5 | 2+ | 5 | 6+ | 1 |
+| 兄弟会智库 | 5" | 5 | 2+ | 5 | 6+ | 1 |
 
 ### 特殊保护
 - 4+
@@ -48,4 +48,4 @@ updated: '2026-07-23'
 
 ## 关键词
 - **阵营关键词**：Grey Knights
-- **普通关键词**：Brotherhood [[factions/星际战士/units/librarian.md|Librarian]]，Imperium，[[core-rules/psyker.md|Psyker]]，Terminator，[[core-rules/infantry.md|Infantry]]，[[core-rules/character.md|Character]]
+- **普通关键词**：Brotherhood Librarian，Imperium，[[core-rules/psyker.md|Psyker]]，Terminator，[[core-rules/infantry.md|Infantry]]，[[core-rules/character.md|Character]]

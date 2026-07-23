@@ -36,7 +36,7 @@ updated: '2026-07-23'
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
 | 先锋近战武器 | 近战 | 3 | 4+ | 4 | -1 | 1 | 灵能 |
-| [[factions/千子/units/screamers.md\|尖啸魔]]撕咬  | 近战 | 6 | 3+ | 6 | -2 | 2 | [[core-rules/extra-attacks.md\|额外攻击]]，[[core-rules/anti.md\|针对载具4+]]，[[core-rules/anti.md\|针对巨兽4+]] |
+| 尖啸魔撕咬  | 近战 | 6 | 3+ | 6 | -2 | 2 | [[core-rules/extra-attacks.md\|额外攻击]]，[[core-rules/anti.md\|针对载具4+]]，[[core-rules/anti.md\|针对巨兽4+]] |
 
 ## 技能
 - **窥命者**：该模型领导的单位中模型装备的近战武器拥有[致命一击] 技能。

@@ -21,7 +21,7 @@ updated: '2026-07-23'
 ## 属性表
 | 模型 | M | T | SV | W | LD | OC |
 |---|---|---|---|---|---|---|
-| 终结者盾卫[[factions/星际战士/units/captain.md\|连长]] | 5" | 7 | 2+ | 7 | 6+ | 2 |
+| 终结者盾卫连长 | 5" | 7 | 2+ | 7 | 6+ | 2 |
 
 ### 特殊保护
 - 4+
@@ -30,13 +30,13 @@ updated: '2026-07-23'
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
 | 强弩榴弹发射器 | 18" | D6 | 2+ | 4 | -1 | 1 | [[core-rules/blast.md\|爆炸]] |
-| 卫士之矛 | 24" | 2 | 2+ | 4 | -1 | 2 | [[core-rules/assault.md\|突击]] |
-| 卫士之矛 | 24" | 2 | 2+ | 4 | -1 | 2 | [[core-rules/assault.md\|突击]] |
+| Castellan axe | 24" | 2 | 2+ | 4 | -1 | 2 | assault |
+| Guardian spear | 24" | 2 | 2+ | 4 | -1 | 2 | assault |
 
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| [[factions/星际战士/units/castellan.md\|堡主]]战斧 | 近战 | 6 | 2+ | 9 | -1 | 3 | — |
+| 堡主战斧 | 近战 | 6 | 2+ | 9 | -1 | 3 | — |
 | 卫士之矛 | 近战 | 7 | 2+ | 7 | -2 | 2 | — |
 
 ## 技能
@@ -49,4 +49,4 @@ updated: '2026-07-23'
 
 ## 关键词
 - **阵营关键词**：Adeptus Custodes
-- **普通关键词**：[[core-rules/character.md|Character]]，Terminator，[[core-rules/infantry.md|Infantry]]，Shield-[[factions/星际战士/units/captain.md|Captain]]，Imperium
+- **普通关键词**：[[core-rules/character.md|Character]]，Terminator，[[core-rules/infantry.md|Infantry]]，Shield-Captain，Imperium

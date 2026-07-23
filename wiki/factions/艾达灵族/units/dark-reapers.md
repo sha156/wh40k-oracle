@@ -53,4 +53,4 @@ updated: '2026-07-23'
 
 ## 关键词
 - **阵营关键词**：Asuryani
-- **普通关键词**：[[core-rules/infantry.md|Infantry]]，Aspect Warriors，Dark [[factions/黑暗灵族/units/reaper.md|Reaper]]s，Aeldari
+- **普通关键词**：[[core-rules/infantry.md|Infantry]]，Aspect Warriors，Dark Reapers，Aeldari

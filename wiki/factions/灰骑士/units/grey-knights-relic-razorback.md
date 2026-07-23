@@ -19,12 +19,12 @@ updated: '2026-07-23'
 ## 属性表
 | 模型 | M | T | SV | W | LD | OC |
 |---|---|---|---|---|---|---|
-| Grey Knights [[factions/星际战士/units/relic-razorback.md\|Relic Razorback]] | 12" | 9 | 3+ | 10 | 6+ | 2 |
+| Grey Knights Relic Razorback | 12" | 9 | 3+ | 10 | 6+ | 2 |
 
 ## 射击武器
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| [[factions/星际战士/units/hunter.md\|Hunter]]-killer missile | 48" | 1 | 2+ | 14 | -3 | D6 | one shot |
+| Hunter-killer missile | 48" | 1 | 2+ | 14 | -3 | D6 | one shot |
 | Multi-melta | 18" | 2 | 3+ | 9 | -4 | D6 | [[core-rules/melta.md\|melta 2]] |
 | Storm bolter | 24" | 2 | 3+ | 4 | 0 | 1 | [[core-rules/rapid-fire.md\|rapid fire 2]] |
 | Twin assault cannon | 24" | 6 | 3+ | 6 | 0 | 1 | devastating wounds，twin-linked |
@@ -46,4 +46,4 @@ updated: '2026-07-23'
 
 ## 关键词
 - **阵营关键词**：Grey Knights
-- **普通关键词**：[[core-rules/dedicated-transport.md|Dedicated Transport]]，Relic [[factions/星际战士/units/razorback.md|Razorback]]，Imperium，Vehicle，[[core-rules/smoke.md|Smoke]]，[[core-rules/transport.md|Transport]]
+- **普通关键词**：[[core-rules/dedicated-transport.md|Dedicated Transport]]，Relic Razorback，Imperium，Vehicle，[[core-rules/smoke.md|Smoke]]，[[core-rules/transport.md|Transport]]

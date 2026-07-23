@@ -19,7 +19,7 @@ updated: '2026-07-23'
 ## 属性表
 | 模型 | M | T | SV | W | LD | OC |
 |---|---|---|---|---|---|---|
-| Kytan [[factions/黑暗灵族/units/ravager.md\|Ravager]] | 10" | 12 | 3+ | 24 | 6+ | 10 |
+| Kytan Ravager | 10" | 12 | 3+ | 24 | 6+ | 10 |
 
 ### 特殊保护
 - 5+

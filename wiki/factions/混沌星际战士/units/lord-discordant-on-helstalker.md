@@ -21,7 +21,7 @@ updated: '2026-07-23'
 ## 属性表
 | 模型 | M | T | SV | W | LD | OC |
 |---|---|---|---|---|---|---|
-| [[factions/太空死灵/units/lord.md\|Lord]] Discordant On Helstalker | 14" | 9 | 2+ | 10 | 6+ | 4 |
+| Lord Discordant On Helstalker | 14" | 9 | 2+ | 10 | 6+ | 4 |
 
 ### 特殊保护
 - 4+

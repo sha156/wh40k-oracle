@@ -19,7 +19,7 @@ updated: '2026-07-23'
 ## 属性表
 | 模型 | M | T | SV | W | LD | OC |
 |---|---|---|---|---|---|---|
-| [[factions/艾达灵族/units/firestorm.md\|Firestorm]] Redoubt | - | 13 | 2+ | 18 | 7+ | 0 |
+| Firestorm Redoubt | - | 13 | 2+ | 18 | 7+ | 0 |
 
 ## 射击武器
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |

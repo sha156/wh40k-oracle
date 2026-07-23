@@ -27,9 +27,9 @@ updated: '2026-07-23'
 ## 射击武器
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| 复合武器 | 12" | 1 | 3+ | 4 | 0 | 1 | [[core-rules/anti.md\|反步兵 4+]]，[[core-rules/devastating-wounds.md\|毁灭伤害]]，[[core-rules/rapid-fire.md\|速射 1]] |
+| Bolt pistol | 12" | 1 | 3+ | 4 | 0 | 1 | pistol |
 | 爆弹枪 | 24" | 2 | 3+ | 4 | 0 | 1 | — |
-| 复合武器 | 24" | 1 | 4+ | 4 | 0 | 1 | [[core-rules/anti.md\|反步兵 4+]]，[[core-rules/devastating-wounds.md\|毁灭伤害]]，[[core-rules/rapid-fire.md\|速射 1]] |
+| Combi-weapon | 24" | 1 | 4+ | 4 | 0 | 1 | [[core-rules/anti.md\|ANTI-INFANTRY 4+]]，[[core-rules/devastating-wounds.md\|DEVASTATING WOUNDS]]，[[core-rules/rapid-fire.md\|RAPID FIRE 1]] |
 | Grav-cannon | 24" | 3 | 4+ | 6 | -1 | 3 | [[core-rules/anti.md\|anti-vehicle 2+]]，heavy |
 | 重力手枪      | 12" | 1 | 3+ | 4 | -1 | 2 | [[core-rules/anti.md\|反载具 2+]]，[[core-rules/pistol.md\|手枪]] |
 | 重型爆弹枪   | 36" | 3 | 4+ | 5 | -1 | 2 | [[core-rules/heavy.md\|重型]]，[[core-rules/sustained-hits.md\|连击 1]] |

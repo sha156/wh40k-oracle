@@ -21,7 +21,7 @@ updated: '2026-07-23'
 ## 属性表
 | 模型 | M | T | SV | W | LD | OC |
 |---|---|---|---|---|---|---|
-| 混沌[[factions/帝国骑士/units/cerastus-knight-castigator.md\|惩戒者型角蝰骑士]] | 12" | 11 | 3+ | 28 | 6+ | 10 |
+| 混沌惩戒者型角蝰骑士 | 12" | 11 | 3+ | 28 | 6+ | 10 |
 
 ### 特殊保护
 - 5+
@@ -49,4 +49,4 @@ updated: '2026-07-23'
 
 ## 关键词
 - **阵营关键词**：Chaos Knights
-- **普通关键词**：Chaos，[[core-rules/walker.md|Walker]]，[[core-rules/towering.md|Towering]]，Knight [[factions/战斗修女/units/castigator.md|Castigator]]，Vehicle，[[core-rules/character.md|Character]]，[[core-rules/titanic.md|Titanic]]，Cerastus
+- **普通关键词**：Chaos，[[core-rules/walker.md|Walker]]，[[core-rules/towering.md|Towering]]，Knight Castigator，Vehicle，[[core-rules/character.md|Character]]，[[core-rules/titanic.md|Titanic]]，Cerastus

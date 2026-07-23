@@ -28,7 +28,7 @@ updated: '2026-07-23'
 |---|---|---|---|---|---|---|---|
 | Autocannon | 48" | 2 | 4+ | 9 | -1 | 3 | — |
 | Heavy flamer | 12" | D6 | N/A | 5 | -1 | 1 | ignores cover，torrent |
-| [[factions/星际战士/units/hunter.md\|Hunter]]-killer missile | 48" | 1 | 4+ | 14 | -3 | D6 | one shot |
+| Hunter-killer missile | 48" | 1 | 4+ | 14 | -3 | D6 | one shot |
 | Lascannon | 48" | 1 | 4+ | 12 | -3 | D6+1 | — |
 | Multi-laser | 36" | 4 | 4+ | 6 | 0 | 1 | — |
 | Missile launcher – frag | 48" | D6 | 4+ | 4 | 0 | 1 | blast，heavy |

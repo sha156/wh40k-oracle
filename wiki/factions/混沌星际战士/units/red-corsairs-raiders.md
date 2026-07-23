@@ -36,7 +36,7 @@ updated: '2026-07-23'
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
 | 动力拳 | 近战 | 3 | 3+ | 8 | -2 | 2 | — |
-| [[factions/黑暗灵族/units/reavers.md\|劫掠者]]之刃 | 近战 | 4 | 3+ | 5 | -1 | 1 | — |
+| 劫掠者之刃 | 近战 | 4 | 3+ | 5 | -1 | 1 | — |
 
 ## 技能
 - **【阵营技能】：黑暗契约**
@@ -48,4 +48,4 @@ updated: '2026-07-23'
 
 ## 关键词
 - **阵营关键词**：Heretic Astartes
-- **普通关键词**：Chaos，[[core-rules/grenades.md|Grenades]]，[[core-rules/infantry.md|Infantry]]，Red Corsairs [[factions/黑暗灵族/units/raider.md|Raider]]s
+- **普通关键词**：Chaos，[[core-rules/grenades.md|Grenades]]，[[core-rules/infantry.md|Infantry]]，Red Corsairs Raiders

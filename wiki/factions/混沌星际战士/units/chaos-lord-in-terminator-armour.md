@@ -21,7 +21,7 @@ updated: '2026-07-23'
 ## 属性表
 | 模型 | M | T | SV | W | LD | OC |
 |---|---|---|---|---|---|---|
-| [[factions/混沌恶魔/units/chaos-lord.md\|Chaos Lord]] In Terminator Armour | 5" | 5 | 2+ | 6 | 6+ | 1 |
+| Chaos Lord In Terminator Armour | 5" | 5 | 2+ | 6 | 6+ | 1 |
 
 ### 特殊保护
 - 4+
@@ -50,4 +50,4 @@ updated: '2026-07-23'
 
 ## 关键词
 - **阵营关键词**：Heretic Astartes
-- **普通关键词**：Chaos [[factions/太空死灵/units/lord.md|Lord]]，Chaos，[[core-rules/character.md|Character]]，[[core-rules/infantry.md|Infantry]]，Chaos Lord in Terminator Armour，Terminator
+- **普通关键词**：Chaos Lord，Chaos，[[core-rules/character.md|Character]]，[[core-rules/infantry.md|Infantry]]，Chaos Lord in Terminator Armour，Terminator

@@ -33,7 +33,7 @@ updated: '2026-07-23'
 | 离子加农 — 过载 | 60" | D6+3 | 4+ | 8 | -2 | 3 | [[core-rules/blast.md\|爆炸]]，[[core-rules/hazardous.md\|危险]] |
 | 长管爆裂速射炮阵列 | 24" | 32 | 4+ | 6 | -1 | 1 | — |
 | 导弹仓 | 30" | 2 | 4+ | 7 | -1 | 2 | — |
-| [[factions/帝皇之子/units/seekers.md\|寻觅者]]导弹 | 48" | 1 | 4+ | 14 | -3 | D6+1 | [[core-rules/one-shot.md\|一次性]] |
+| 寻觅者导弹 | 48" | 1 | 4+ | 14 | -3 | D6+1 | [[core-rules/one-shot.md\|一次性]] |
 
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |

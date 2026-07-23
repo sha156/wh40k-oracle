@@ -36,7 +36,7 @@ updated: '2026-07-23'
 
 ## 技能
 - **Pouncing Leap**：You can target this unit with the Heroic Intervention Stratagem for 0CP, and can do so even if you have already used that Stratagem on a different unit this phase.
-- **GRANDFATHER'S BLESSING**：If a model from your army with the Leader ability can be attached to a [[factions/死亡守卫/units/beasts-of-nurgle.md|Beasts of Nurgle]] unit, it can be attached to this unit instead.
+- **GRANDFATHER'S BLESSING**：If a model from your army with the Leader ability can be attached to a Beasts of Nurgle unit, it can be attached to this unit instead.
 
 ## 单位构成
 - **3个模型** — 120 分

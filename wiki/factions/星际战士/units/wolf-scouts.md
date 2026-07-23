@@ -30,10 +30,10 @@ updated: '2026-07-23'
 |---|---|---|---|---|---|---|---|
 | 爆弹手枪  | 12" | 1 | 3+ | 4 | 0 | 1 | [[core-rules/pistol.md\|手枪]] |
 | 煽动者爆弹卡宾枪 | 24" | 1 | 3+ | 4 | -2 | 2 | [[core-rules/precision.md\|精准]] |
-| 等离子手枪 - 标准 | 24" | 1 | 3+ | 7 | -2 | 1 | [[core-rules/pistol.md\|手枪]] |
-| 等离子手枪 - 超载 | 24" | 1 | 3+ | 8 | -3 | 2 | [[core-rules/hazardous.md\|危险]]，[[core-rules/pistol.md\|手枪]] |
-| 等离子手枪 - 标准 | 12" | 1 | 3+ | 7 | -2 | 1 | [[core-rules/pistol.md\|手枪]] |
-| 等离子手枪 - 超载 | 12" | 1 | 3+ | 8 | -3 | 2 | [[core-rules/hazardous.md\|危险]]，[[core-rules/pistol.md\|手枪]] |
+| Plasma gun – standard | 24" | 1 | 3+ | 7 | -2 | 1 | [[core-rules/rapid-fire.md\|rapid fire 1]] |
+| Plasma gun – supercharge | 24" | 1 | 3+ | 8 | -3 | 2 | hazardous，[[core-rules/rapid-fire.md\|rapid fire 1]] |
+| Plasma pistol – standard | 12" | 1 | 3+ | 7 | -2 | 1 | pistol |
+| Plasma pistol – supercharge | 12" | 1 | 3+ | 8 | -3 | 2 | hazardous，pistol |
 | 雷霆冲击 | 12" | D3 | 3+ | 5 | -1 | 2 | [[core-rules/blast.md\|爆炸]]，灵能 |
 
 ## 近战武器
@@ -47,7 +47,7 @@ updated: '2026-07-23'
 ## 技能
 - **【阵营技能】：破敌重誓**
 - **致命追踪者**：当该单位中的模型攻击一个敌方单位 时，如果该目标敌方单位 6" 范围内没有其他敌方单 位，致伤掷骰的结果增加 1 点。
-- **猎犬**：当该单位位于一个或更多己方太空野狼角色 模型（[[factions/星际战士/units/wulfen.md|狼人]]模型除外） 6" 范围内，如果该单位不处 于战斗震慑状态，该单位中狩猎野狼模型的目标控 制属性为 1 点。
+- **猎犬**：当该单位位于一个或更多己方太空野狼角色 模型（狼人模型除外） 6" 范围内，如果该单位不处 于战斗震慑状态，该单位中狩猎野狼模型的目标控 制属性为 1 点。
 - **干扰地雷（武器技能）**：每场战斗限一次，任意阶段开始时，您 可以选择一个位于持有者 3" 内的敌方单位并掷一 枚 D6：若结果为 2+，该敌方单位便受到 D3 处致 命伤；若该敌方单位是载具单位，则改为受到 2D3  处致命伤。
 
 ## 单位构成

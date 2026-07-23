@@ -30,7 +30,7 @@ updated: '2026-07-23'
 | Twin heavy bolter | 36" | 3 | 4+ | 5 | -1 | 2 | [[core-rules/sustained-hits.md\|sustained hits 1]]，twin-linked |
 | Twin heavy flamer | 12" | D6 | N/A | 5 | -1 | 2 | ignores cover，torrent，twin-linked |
 | Twin lascannon | 48" | 1 | 4+ | 12 | -3 | D6+1 | twin-linked |
-| [[factions/星际战士/units/whirlwind.md\|Whirlwind]] castellan launcher | 72" | D6+3 | 4+ | 8 | -2 | 2 | blast，indirect fire |
+| Whirlwind castellan launcher | 72" | D6+3 | 4+ | 8 | -2 | 2 | blast，indirect fire |
 
 ## 技能
 - **Comms Antenna**：In your Command phase, if one or more <span class="kwb">CHARACTER</span> models are embarked within this <span class="kwb">FORTIFICATION</span>, roll one D6: on a 5+, you gain 1CP.

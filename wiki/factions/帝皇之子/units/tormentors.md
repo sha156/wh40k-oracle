@@ -30,10 +30,10 @@ updated: '2026-07-23'
 | 爆弹手枪 | 12" | 1 | 3+ | 4 | 0 | 1 | [[core-rules/pistol.md\|手枪]]，[[core-rules/precision.md\|精准]] |
 | 爆弹枪 | 24" | 2 | 3+ | 4 | 0 | 1 | [[core-rules/precision.md\|精准]] |
 | 热熔枪 | 12" | 1 | 3+ | 9 | -4 | D6 | [[core-rules/melta.md\|热熔2]]，[[core-rules/precision.md\|精准]] |
-| 等离子步枪（普通） | 24" | 1 | 3+ | 7 | -2 | 1 | [[core-rules/rapid-fire.md\|速射1]]，[[core-rules/precision.md\|精准]] |
-| 等离子步枪（过载） | 24" | 1 | 3+ | 8 | -3 | 2 | [[core-rules/rapid-fire.md\|速射 1]]，[[core-rules/precision.md\|精准]]，[[core-rules/hazardous.md\|危险]] |
-| 等离子步枪（普通） | 12" | 1 | 3+ | 7 | -2 | 1 | [[core-rules/rapid-fire.md\|速射1]]，[[core-rules/precision.md\|精准]] |
-| 等离子步枪（过载） | 12" | 1 | 3+ | 8 | -3 | 2 | [[core-rules/rapid-fire.md\|速射 1]]，[[core-rules/precision.md\|精准]]，[[core-rules/hazardous.md\|危险]] |
+| Plasma gun - standard | 24" | 1 | 3+ | 7 | -2 | 1 | precision，[[core-rules/rapid-fire.md\|rapid fire 1]] |
+| Plasma gun - supercharge | 24" | 1 | 3+ | 8 | -3 | 2 | hazardous，precision，[[core-rules/rapid-fire.md\|rapid fire 1]] |
+| Plasma pistol - standard | 12" | 1 | 3+ | 7 | -2 | 1 | pistol，precision |
+| Plasma pistol - supercharge | 12" | 1 | 3+ | 8 | -3 | 2 | hazardous，pistol，precision |
 
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |

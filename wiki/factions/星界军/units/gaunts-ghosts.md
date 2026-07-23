@@ -21,7 +21,7 @@ updated: '2026-07-23'
 ## 属性表
 | 模型 | M | T | SV | W | LD | OC |
 |---|---|---|---|---|---|---|
-| [[factions/星界军/units/commissar.md\|政委]]刚特 | 6" | 3 | 4+ | 3 | 6+ | 1 |
+| 政委刚特 | 6" | 3 | 4+ | 3 | 6+ | 1 |
 | 坦尼斯幽灵 | 6" | 3 | 5+ | 2 | 7+ | 1 |
 
 ### 特殊保护
@@ -34,15 +34,15 @@ updated: '2026-07-23'
 | 爆弹手枪 | 12" | 1 | 2+ | 4 | 0 | 1 | [[core-rules/pistol.md\|手枪]] |
 | 寇贝克的热射卡宾枪 | 24" | 3 | 3+ | 3 | -1 | 1 | [[core-rules/assault.md\|突击]] |
 | 拉金的狙击枪 | 36" | 1 | 2+ | 5 | -2 | 4 | [[core-rules/heavy.md\|重型]]，[[core-rules/precision.md\|精准]] |
-| 拉文的激光卡宾枪 | 24" | 3 | 3+ | 3 | 0 | 1 | [[core-rules/assault.md\|突击]]，[[core-rules/sustained-hits.md\|连击1]] |
-| 拉文的激光卡宾枪 | 24" | 3 | 3+ | 3 | 0 | 1 | [[core-rules/assault.md\|突击]]，[[core-rules/sustained-hits.md\|连击1]] |
+| Lascarbine | 24" | 3 | 3+ | 3 | 0 | 1 | assault |
+| Rawne’s lascarbine | 24" | 3 | 3+ | 3 | 0 | 1 | assault，[[core-rules/sustained-hits.md\|sustained hits 1]] |
 
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| 莫科洛的速银匕首 | 近战 | 5 | 2+ | 3 | -1 | 1 | 毁灭性伤害，[[core-rules/precision.md\|精准]] |
+| Gaunt’s chainsword | 近战 | 5 | 2+ | 3 | -1 | 1 | — |
 | 速银匕首 | 近战 | 3 | 3+ | 3 | 0 | 1 | — |
-| 莫科洛的速银匕首 | 近战 | 5 | 2+ | 3 | -1 | 1 | 毁灭性伤害，[[core-rules/precision.md\|精准]] |
+| Mkoll’s straight silver knife | 近战 | 5 | 2+ | 3 | -1 | 1 | devastating wounds，precision |
 
 ## 技能
 - **阵营能力-指挥之声**：该单位内的军官单位可以对刚特的幽灵或兵团单位下达最多2个命令

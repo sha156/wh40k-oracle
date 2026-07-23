@@ -34,7 +34,7 @@ updated: '2026-07-23'
 | Havoc launcher | 48" | D6 | 3+ | 5 | 0 | 1 | blast |
 | Heavy bolter | 36" | 3 | 3+ | 5 | -1 | 2 | [[core-rules/sustained-hits.md\|SUSTAINED HITS 1]] |
 | Heavy flamer | 12" | D6 | N/A | 5 | -1 | 1 | [[core-rules/ignores-cover.md\|IGNORES COVER]]，TORRENT |
-| [[factions/星际战士/units/hunter.md\|Hunter]]-killer missile | 48" | 1 | 2+ | 14 | -3 | D6 | one shot |
+| Hunter-killer missile | 48" | 1 | 2+ | 14 | -3 | D6 | one shot |
 | Kratos battle cannon – AP | 36" | 1 | 3+ | 18 | -4 | D6+3 | heavy |
 | Kratos battle cannon – HE | 36" | D6+3 | 3+ | 10 | -1 | 3 | blast |
 | Lascannons | 48" | 1 | 3+ | 12 | -3 | D6+1 | — |

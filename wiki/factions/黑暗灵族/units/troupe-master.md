@@ -48,4 +48,4 @@ updated: '2026-07-23'
 
 ## 关键词
 - **阵营关键词**：Harlequins，Drukhari
-- **普通关键词**：[[core-rules/infantry.md|Infantry]]，Aeldari，[[core-rules/grenades.md|Grenades]]，[[core-rules/character.md|Character]]，[[factions/艾达灵族/units/troupe.md|Troupe]] Master
+- **普通关键词**：[[core-rules/infantry.md|Infantry]]，Aeldari，[[core-rules/grenades.md|Grenades]]，[[core-rules/character.md|Character]]，Troupe Master

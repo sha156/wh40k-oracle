@@ -28,7 +28,7 @@ updated: '2026-07-23'
 ## 射击武器
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| [[factions/星际战士/units/castellan.md\|Castellan]] axe | 24" | 2 | 2+ | 4 | -1 | 2 | assault |
+| Castellan axe | 24" | 2 | 2+ | 4 | -1 | 2 | assault |
 | Guardian spear | 24" | 2 | 2+ | 4 | -1 | 2 | assault |
 | Pyrithite spear | 12" | 1 | 2+ | 9 | -4 | D6 | [[core-rules/melta.md\|melta 2]] |
 | Sentinel blade | 12" | 2 | 2+ | 4 | -1 | 2 | assault，pistol |
@@ -51,4 +51,4 @@ updated: '2026-07-23'
 
 ## 关键词
 - **阵营关键词**：Adeptus Custodes
-- **普通关键词**：[[core-rules/infantry.md|Infantry]]，[[core-rules/character.md|Character]]，Imperium，Shield-[[factions/星际战士/units/captain.md|Captain]]
+- **普通关键词**：[[core-rules/infantry.md|Infantry]]，[[core-rules/character.md|Character]]，Imperium，Shield-Captain

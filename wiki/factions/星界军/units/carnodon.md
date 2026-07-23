@@ -30,7 +30,7 @@ updated: '2026-07-23'
 | Carnodon twin multi-laser | 36" | 6 | 4+ | 6 | 0 | 1 | twin-linked |
 | Heavy bolter | 36" | 3 | 4+ | 5 | -1 | 2 | [[core-rules/sustained-hits.md\|sustained hits 1]] |
 | Heavy flamer | 12" | D6 | N/A | 5 | -1 | 1 | ignores cover，torrent |
-| [[factions/星际战士/units/hunter.md\|Hunter]]-killer missile | 48" | 1 | 4+ | 14 | -3 | D6 | one shot |
+| Hunter-killer missile | 48" | 1 | 4+ | 14 | -3 | D6 | one shot |
 | Lascannon | 48" | 1 | 4+ | 12 | -3 | D6+1 | — |
 | Militarum Multi-laser | 36" | 4 | 4+ | 6 | 0 | 1 | — |
 | Volkite caliver | 24" | 2 | 4+ | 5 | 0 | 2 | devastating wounds |
@@ -42,7 +42,7 @@ updated: '2026-07-23'
 | Armoured tracks | 近战 | 6 | 4+ | 7 | 0 | 1 | — |
 
 ## 技能
-- **[[factions/星际战士/units/ancient.md|Ancient]] Conquest**：Each time this model makes an attack that targets an enemy unit that is within your opponent’s deployment zone, re-roll a Hit roll of 1 and re-roll a Wound roll of 1.
+- **Ancient Conquest**：Each time this model makes an attack that targets an enemy unit that is within your opponent’s deployment zone, re-roll a Hit roll of 1 and re-roll a Wound roll of 1.
 - **One Shot**：The bearer can only shoot with this weapon once per battle.
 
 ## 单位构成

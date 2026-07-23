@@ -21,7 +21,7 @@ updated: '2026-07-23'
 ## 属性表
 | 模型 | M | T | SV | W | LD | OC |
 |---|---|---|---|---|---|---|
-| 克罗[[factions/星际战士/units/castellan.md\|堡主]] | 6" | 4 | 2+ | 5 | 6+ | 1 |
+| 克罗堡主 | 6" | 4 | 2+ | 5 | 6+ | 1 |
 
 ### 特殊保护
 - 4+
@@ -47,4 +47,4 @@ updated: '2026-07-23'
 
 ## 关键词
 - **阵营关键词**：Grey Knights
-- **普通关键词**：[[core-rules/infantry.md|Infantry]]，[[core-rules/character.md|Character]]，[[core-rules/epic-hero.md|Epic Hero]]，[[core-rules/psyker.md|Psyker]]，[[core-rules/grenades.md|Grenades]]，Imperium，[[factions/星际战士/units/castellan.md|Castellan]] Crowe
+- **普通关键词**：[[core-rules/infantry.md|Infantry]]，[[core-rules/character.md|Character]]，[[core-rules/epic-hero.md|Epic Hero]]，[[core-rules/psyker.md|Psyker]]，[[core-rules/grenades.md|Grenades]]，Imperium，Castellan Crowe

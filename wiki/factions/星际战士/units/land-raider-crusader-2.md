@@ -47,4 +47,4 @@ updated: '2026-07-23'
 
 ## 关键词
 - **阵营关键词**：Black Templars，Adeptus Astartes
-- **普通关键词**：Imperium，[[core-rules/transport.md|Transport]]，[[core-rules/grenades.md|Grenades]]，Vehicle，[[core-rules/smoke.md|Smoke]]，Land [[factions/黑暗灵族/units/raider.md|Raider]] Crusader，Land Raider
+- **普通关键词**：Imperium，[[core-rules/transport.md|Transport]]，[[core-rules/grenades.md|Grenades]]，Vehicle，[[core-rules/smoke.md|Smoke]]，Land Raider Crusader，Land Raider

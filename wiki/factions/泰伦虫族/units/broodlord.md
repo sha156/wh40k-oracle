@@ -29,7 +29,7 @@ updated: '2026-07-23'
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| 族群[[factions/太空死灵/units/lord.md\|领主]]利爪 | 近战 | 5 | 2+ | 6 | -2 | 2 | [[core-rules/devastating-wounds.md\|毁灭伤害]]，[[core-rules/twin-linked.md\|双联]] |
+| 族群领主利爪 | 近战 | 5 | 2+ | 6 | -2 | 2 | [[core-rules/devastating-wounds.md\|毁灭伤害]]，[[core-rules/twin-linked.md\|双联]] |
 
 ## 技能
 - **【阵营技能】亚空间阴影**

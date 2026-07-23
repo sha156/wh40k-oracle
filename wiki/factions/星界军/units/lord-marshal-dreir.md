@@ -21,7 +21,7 @@ updated: '2026-07-23'
 ## 属性表
 | 模型 | M | T | SV | W | LD | OC |
 |---|---|---|---|---|---|---|
-| 大[[factions/星际战士/units/marshal.md\|元帅]]德雷尔 | 10" | 4 | 4+ | 6 | 7+ | 2 |
+| 大元帅德雷尔 | 10" | 4 | 4+ | 6 | 7+ | 2 |
 
 ### 特殊保护
 - 4+
@@ -48,4 +48,4 @@ updated: '2026-07-23'
 
 ## 关键词
 - **阵营关键词**：Astra Militarum
-- **普通关键词**：[[core-rules/grenades.md|Grenades]]，[[factions/太空死灵/units/lord.md|Lord]] [[factions/星际战士/units/marshal.md|Marshal]] Dreir，Officer，Imperium，[[core-rules/mounted.md|Mounted]]，[[core-rules/character.md|Character]]，[[core-rules/epic-hero.md|Epic Hero]]
+- **普通关键词**：[[core-rules/grenades.md|Grenades]]，Lord Marshal Dreir，Officer，Imperium，[[core-rules/mounted.md|Mounted]]，[[core-rules/character.md|Character]]，[[core-rules/epic-hero.md|Epic Hero]]

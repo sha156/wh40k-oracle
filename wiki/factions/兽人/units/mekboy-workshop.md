@@ -31,4 +31,4 @@ updated: '2026-07-23'
 
 ## 关键词
 - **阵营关键词**：Orks
-- **普通关键词**：Vehicle，[[factions/兽人/units/mek.md|Mek]]boy Workshop，[[core-rules/fortification.md|Fortification]]
+- **普通关键词**：Vehicle，Mekboy Workshop，[[core-rules/fortification.md|Fortification]]

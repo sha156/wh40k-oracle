@@ -42,7 +42,7 @@ updated: '2026-07-23'
 - **Enhanced data-tether**：Each time you select the bearer’s unit as the target of a Stratagem, roll one D6: on a 5+, you gain 1CP
 - **Omnispex**：Ranged weapons equipped by models in the bearer’s unit have the [IGNORES COVER] ability.
 - **Blind Barrage**：In your Shooting phase, after this unit has shot, select one enemy <span class="kwb">INFANTRY</span> unit hit by one or more of those attacks. Until the start of your next turn, while this unit is on the battlefield, that enemy unit is blinded. While a unit is blinded, each time a model in that unit makes an attack, subtract 1 from the Hit roll.
-- **SECUTARII**：If a model from your army with the Leader ability can be attached to a [[factions/帝国骑士/units/skitarii-vanguard.md|Skitarii Vanguard]] unit, it can be attached to this unit instead.
+- **SECUTARII**：If a model from your army with the Leader ability can be attached to a Skitarii Vanguard unit, it can be attached to this unit instead.
 
 ## 单位构成
 - **5个模型** — 50 分

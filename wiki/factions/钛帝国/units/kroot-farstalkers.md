@@ -28,8 +28,8 @@ updated: '2026-07-23'
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
 | 多瓦盖皮腺炮 | 12" | D6 | N/A | 4 | -1 | 1 | [[core-rules/ignores-cover.md\|忽略掩体]]，[[core-rules/torrent.md\|喷射]] |
-| 克鲁特手枪 | 24" | 1 | 4+ | 4 | 0 | 1 | [[core-rules/pistol.md\|手枪]] |
-| 克鲁特手枪 | 12" | 1 | 4+ | 4 | 0 | 1 | [[core-rules/pistol.md\|手枪]] |
+| Farstalker firearm | 24" | 1 | 4+ | 4 | 0 | 1 | [[core-rules/rapid-fire.md\|rapid fire 1]] |
+| Kroot pistol | 12" | 1 | 4+ | 4 | 0 | 1 | pistol |
 | 隆达希三角弩  | 18" | 3 | 5+ | 7 | -1 | 1 | [[core-rules/anti.md\|针对载具4+]]，[[core-rules/devastating-wounds.md\|毁灭伤害]]，[[core-rules/heavy.md\|重型]] |
 | 钛族科技步枪 | 30" | 1 | 4+ | 5 | 0 | 1 | [[core-rules/rapid-fire.md\|速射1]] |
 
@@ -42,7 +42,7 @@ updated: '2026-07-23'
 
 ## 技能
 - **Pech’ra**：Ranged weapons equipped by the bearer’s unit have the [IGNORES COVER] ability.
-- **Bounty [[factions/星际战士/units/hunter.md|Hunter]]s**：At the start of the battle, select one unit from your opponent’s army. Each time a model in this unit makes an attack that targets that unit, that attack has the [LETHAL HITS] and [PRECISION] abilities.
+- **Bounty Hunters**：At the start of the battle, select one unit from your opponent’s army. Each time a model in this unit makes an attack that targets that unit, that attack has the [LETHAL HITS] and [PRECISION] abilities.
 
 ## 单位构成
 - **12个模型** — 75 分

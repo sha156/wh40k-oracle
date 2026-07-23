@@ -6,7 +6,7 @@ faction: 帝国特勤
 type: unit
 points:
   5 models: 100
-  10 models (<ky>AGENTS OF THE IMPERIUM</ky> Detachment): 190
+  10 models (AGENTS OF THE IMPERIUM Detachment): 190
   10 models (Assigned Agent): 200
   10 models: 190
 tags:
@@ -40,11 +40,11 @@ updated: '2026-07-23'
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| 异形相位刃 | 近战 | 4 | 3+ | 5 | -2 | 1 | [[core-rules/devastating-wounds.md\|毁灭伤害]] |
+| Black Shield blades | 近战 | 4 | 3+ | 5 | -2 | 1 | TwIN-lINkED |
 | 格斗武器 | 近战 | 3 | 3+ | 4 | 0 | 1 | — |
 | 死亡守望雷霆锤 | 近战 | 3 | 4+ | 10 | -2 | 3 | [[core-rules/devastating-wounds.md\|毁灭伤害]] |
 | 动力武器 | 近战 | 3 | 3+ | 5 | -2 | 1 | — |
-| 异形相位刃 | 近战 | 4 | 3+ | 5 | -2 | 1 | [[core-rules/devastating-wounds.md\|毁灭伤害]] |
+| Xenophase blade | 近战 | 4 | 3+ | 5 | -2 | 1 | devastating wounds |
 
 ## 技能
 - **【阵营技能】：派遣特工**
@@ -53,8 +53,8 @@ updated: '2026-07-23'
 
 ## 单位构成
 - **5个模型** — 100 分
-- **10个模型** — 190 分
-- **10个模型** — 200 分
+- **10个模型 (AGENTS OF THE IMPERIUM Detachment)** — 190 分
+- **10个模型 (Assigned Agent)** — 200 分
 - **10个模型** — 190 分
 
 ## 关键词

@@ -19,7 +19,7 @@ updated: '2026-07-23'
 ## 属性表
 | 模型 | M | T | SV | W | LD | OC |
 |---|---|---|---|---|---|---|
-| [[factions/混沌恶魔/units/chaos-lord.md\|Chaos Lord]] On Juggernaut | 10" | 6 | 2+ | 7 | 6+ | 2 |
+| Chaos Lord On Juggernaut | 10" | 6 | 2+ | 7 | 6+ | 2 |
 
 ### 特殊保护
 - 4+
@@ -44,7 +44,7 @@ updated: '2026-07-23'
 | Power fist | 近战 | 5 | 2+ | 8 | -2 | 2 | — |
 
 ## 技能
-- **[[factions/太空死灵/units/lord.md|Lord]] of Chaos**：Once per battle round, one unit from your army with this ability can use it when its unit is targeted with a Stratagem. If it does, reduce the CP cost of that use of that Stratagem by 1CP.
+- **Lord of Chaos**：Once per battle round, one unit from your army with this ability can use it when its unit is targeted with a Stratagem. If it does, reduce the CP cost of that use of that Stratagem by 1CP.
 - **Bloody Stampede**：Each time this model’s unit ends a Charge move, select one enemy unit within Engagement Range of this model and roll one D6: on a 2-3, that enemy unit suffers 1 mortal wound; on a 4-5, that enemy unit suffers D3 mortal wounds; on a 6, that enemy unit suffers D3+3 mortal wounds.
 
 ## 单位构成

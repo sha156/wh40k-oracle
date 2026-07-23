@@ -29,20 +29,20 @@ updated: '2026-07-23'
 ## 射击武器
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| 复合武器    | 12" | 1 | 3+ | 4 | 0 | 1 | [[core-rules/anti.md\|反步兵 4+]]，[[core-rules/devastating-wounds.md\|毁灭伤害]]，[[core-rules/rapid-fire.md\|速射 1]] |
-| 风暴爆弹枪    | 24" | 2 | 3+ | 4 | 0 | 1 | [[core-rules/rapid-fire.md\|速射 2]] |
-| 复合武器    | 24" | 1 | 4+ | 4 | 0 | 1 | [[core-rules/anti.md\|反步兵 4+]]，[[core-rules/devastating-wounds.md\|毁灭伤害]]，[[core-rules/rapid-fire.md\|速射 1]] |
+| Bolt pistol | 12" | 1 | 3+ | 4 | 0 | 1 | pistol |
+| Boltgun | 24" | 2 | 3+ | 4 | 0 | 1 | — |
+| Combi-weapon | 24" | 1 | 4+ | 4 | 0 | 1 | [[core-rules/anti.md\|anti-infantry 4+]]，devastating wounds，[[core-rules/rapid-fire.md\|rapid fire 1]] |
 | 重力手枪   | 12" | 1 | 3+ | 4 | -1 | 2 | [[core-rules/anti.md\|反载具 2+]]，[[core-rules/pistol.md\|手枪]] |
 | Hand flamer | 12" | D6 | N/A | 3 | 0 | 1 | ignores cover，pistol，torrent |
 | 狱火手枪   | 6" | 1 | 3+ | 8 | -4 | D3 | [[core-rules/melta.md\|热熔 2]]，[[core-rules/pistol.md\|手枪]] |
 | 等离子手枪（标准）    | 12" | 1 | 3+ | 7 | -2 | 1 | [[core-rules/pistol.md\|手枪]] |
 | 等离子手枪（过载）  | 12" | 1 | 3+ | 8 | -3 | 2 | [[core-rules/pistol.md\|手枪]]，[[core-rules/hazardous.md\|危险]] |
-| 风暴爆弹枪    | 24" | 2 | 3+ | 4 | 0 | 1 | [[core-rules/rapid-fire.md\|速射 2]] |
+| Storm bolter | 24" | 2 | 3+ | 4 | 0 | 1 | [[core-rules/rapid-fire.md\|rapid fire 2]] |
 
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| [[factions/星际战士/units/chaplain.md\|牧师]]权杖     | 近战 | 5 | 2+ | 6 | -1 | 2 | — |
+| 牧师权杖     | 近战 | 5 | 2+ | 6 | -1 | 2 | — |
 | 动力拳    | 近战 | 4 | 2+ | 8 | -2 | 2 | — |
 
 ## 技能

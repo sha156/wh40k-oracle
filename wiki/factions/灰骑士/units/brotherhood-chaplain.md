@@ -46,4 +46,4 @@ updated: '2026-07-23'
 
 ## 关键词
 - **阵营关键词**：Grey Knights
-- **普通关键词**：[[core-rules/infantry.md|Infantry]]，Brotherhood [[factions/星际战士/units/chaplain.md|Chaplain]]，Imperium，Terminator，[[core-rules/psyker.md|Psyker]]，[[core-rules/character.md|Character]]
+- **普通关键词**：[[core-rules/infantry.md|Infantry]]，Brotherhood Chaplain，Imperium，Terminator，[[core-rules/psyker.md|Psyker]]，[[core-rules/character.md|Character]]

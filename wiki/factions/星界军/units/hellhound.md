@@ -28,7 +28,7 @@ updated: '2026-07-23'
 | Chem cannon | 12" | D6+1 | N/A | 2 | -2 | 2 | [[core-rules/anti.md\|anti-infantry 2+]]，torrent |
 | Heavy bolter | 36" | 3 | 4+ | 5 | -1 | 2 | [[core-rules/sustained-hits.md\|sustained hits 1]] |
 | Heavy flamer | 12" | D6 | N/A | 5 | -1 | 1 | ignores cover，torrent |
-| [[factions/星际战士/units/hunter.md\|Hunter]]-killer missile | 48" | 1 | 4+ | 14 | -3 | D6 | one shot |
+| Hunter-killer missile | 48" | 1 | 4+ | 14 | -3 | D6 | one shot |
 | Inferno cannon | 18" | 2D6 | N/A | 6 | -2 | 1 | ignores cover，torrent |
 | Melta cannon | 18" | D3 | 4+ | 9 | -4 | D6 | blast，[[core-rules/melta.md\|melta 4]] |
 | Multi-melta | 18" | 2 | 4+ | 9 | -4 | D6 | [[core-rules/melta.md\|melta 2]] |

@@ -24,7 +24,7 @@ updated: '2026-07-23'
 ## 射击武器
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| [[factions/星际战士/units/hunter.md\|Hunter]]-killer missile | 48" | 1 | 4+ | 14 | -3 | D6 | one shot |
+| Hunter-killer missile | 48" | 1 | 4+ | 14 | -3 | D6 | one shot |
 | Twin multi-laser | 36" | 4 | 4+ | 6 | 0 | 1 | twin-linked |
 | Twin lascannon | 48" | 1 | 4+ | 12 | -3 | D6+1 | twin-linked |
 

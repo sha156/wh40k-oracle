@@ -19,7 +19,7 @@ updated: '2026-07-23'
 ## 属性表
 | 模型 | M | T | SV | W | LD | OC |
 |---|---|---|---|---|---|---|
-| Munitorum [[factions/机械修会/units/servitors.md\|Servitors]] | 6" | 3 | 4+ | 1 | 8+ | 0 |
+| Munitorum Servitors | 6" | 3 | 4+ | 1 | 8+ | 0 |
 
 ### 特殊保护
 - 6+

@@ -36,7 +36,7 @@ updated: '2026-07-23'
 ## 技能
 - **拳打脚踢**：该单位的近战武器拥有 [连击 1] 。
 - **证明实力**：该单位进行的冲锋掷骰结果 +1。
-- **【核心技能】:领袖**：本单位可以作为领袖加入以下单位：●蛮人[[factions/兽人/units/boyz.md|小子]]●[[factions/兽人/units/breaka-boyz.md|破拆小子]]●[[factions/兽人/units/nobz.md|老大队]]
+- **【核心技能】:领袖**：本单位可以作为领袖加入以下单位：●蛮人小子●[[factions/兽人/units/breaka-boyz.md|破拆小子]]●[[factions/兽人/units/nobz.md|老大队]]
 
 ## 单位构成
 - **1个模型** — 55 分

@@ -21,7 +21,7 @@ updated: '2026-07-23'
 ## 属性表
 | 模型 | M | T | SV | W | LD | OC |
 |---|---|---|---|---|---|---|
-| 瓦雷利安[[factions/星际战士/units/captain.md\|连长]] | 6" | 6 | 2+ | 6 | 6+ | 2 |
+| 瓦雷利安连长 | 6" | 6 | 2+ | 6 | 6+ | 2 |
 
 ### 特殊保护
 - 4+
@@ -46,4 +46,4 @@ updated: '2026-07-23'
 
 ## 关键词
 - **阵营关键词**：Adeptus Custodes
-- **普通关键词**：Shield-[[factions/星际战士/units/captain.md|Captain]]，Imperium，[[core-rules/epic-hero.md|Epic Hero]]，[[core-rules/character.md|Character]]，[[core-rules/infantry.md|Infantry]]，Valerian
+- **普通关键词**：Shield-Captain，Imperium，[[core-rules/epic-hero.md|Epic Hero]]，[[core-rules/character.md|Character]]，[[core-rules/infantry.md|Infantry]]，Valerian

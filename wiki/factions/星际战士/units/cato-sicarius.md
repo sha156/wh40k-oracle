@@ -33,7 +33,7 @@ updated: '2026-07-23'
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| 塔拉萨[[factions/基因窃取者教派/units/stormsword.md\|风暴之剑]]-重击 | 近战 | 4 | 2+ | 6 | -3 | 3 | [[core-rules/devastating-wounds.md\|毁灭伤害]] |
+| 塔拉萨风暴之剑-重击 | 近战 | 4 | 2+ | 6 | -3 | 3 | [[core-rules/devastating-wounds.md\|毁灭伤害]] |
 | 塔拉萨风暴之剑-横扫 | 近战 | 9 | 2+ | 5 | -2 | 1 | [[core-rules/sustained-hits.md\|连击1]] |
 | Talassarian tempest blade – coup de grace | 近战 | 6 | 2+ | 5 | -2 | 2 | precision |
 

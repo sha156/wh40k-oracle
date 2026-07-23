@@ -19,7 +19,7 @@ updated: '2026-07-23'
 ## 属性表
 | 模型 | M | T | SV | W | LD | OC |
 |---|---|---|---|---|---|---|
-| Death Guard [[factions/混沌恶魔/units/chaos-lord-in-terminator-armour.md\|Chaos Lord In Terminator Armour]] | 4" | 6 | 2+ | 6 | 6+ | 1 |
+| [[factions/死亡守卫/units/death-guard-chaos-lord.md\|Death Guard Chaos Lord]] In Terminator Armour | 4" | 6 | 2+ | 6 | 6+ | 1 |
 
 ### 特殊保护
 - 4+
@@ -39,7 +39,7 @@ updated: '2026-07-23'
 | Twin lightning claws | 近战 | 7 | 2+ | 5 | -2 | 1 | twin-linked |
 
 ## 技能
-- **[[factions/混沌恶魔/units/chaos-lord.md|Chaos Lord]]**：While this model is leading a unit, each time a model in that unit makes an attack, re-roll a Hit roll of 1.
+- **Chaos Lord**：While this model is leading a unit, each time a model in that unit makes an attack, re-roll a Hit roll of 1.
 - **Desiccation Conduit (Aura)**：While an enemy unit is within Contagion Range of this model, at the end of the turn, roll one D6: on a 4+, that enemy unit suffers D3 mortal wounds.
 
 ## 单位构成
@@ -47,4 +47,4 @@ updated: '2026-07-23'
 
 ## 关键词
 - **阵营关键词**：Death Guard
-- **普通关键词**：[[core-rules/character.md|Character]]，Terminator，Nurgle，Chaos，[[core-rules/infantry.md|Infantry]]，Chaos [[factions/太空死灵/units/lord.md|Lord]]
+- **普通关键词**：[[core-rules/character.md|Character]]，Terminator，Nurgle，Chaos，[[core-rules/infantry.md|Infantry]]，Chaos Lord

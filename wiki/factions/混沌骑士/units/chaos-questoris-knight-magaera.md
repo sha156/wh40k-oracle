@@ -21,7 +21,7 @@ updated: '2026-07-23'
 ## 属性表
 | 模型 | M | T | SV | W | LD | OC |
 |---|---|---|---|---|---|---|
-| 混沌[[factions/帝国骑士/units/questoris-knight-magaera.md\|复仇女神型巡游骑士]] | 10" | 11 | 3+ | 26 | 6+ | 10 |
+| 混沌复仇女神型巡游骑士 | 10" | 11 | 3+ | 26 | 6+ | 10 |
 
 ### 特殊保护
 - 5+
@@ -39,7 +39,7 @@ updated: '2026-07-23'
 | 冥神攻城爪-猛击     | 近战 | 4 | 3+ | 20 | -3 | 8 | — |
 | Hekaton siege claw – sweep | 近战 | 8 | 3+ | 10 | -2 | 3 | — |
 | 死神链锯剑-猛击 | 近战 | 4 | 3+ | 14 | -4 | 6 | — |
-| [[factions/黑暗灵族/units/reaper.md\|Reaper]] chainsword – sweep | 近战 | 12 | 3+ | 9 | -3 | 2 | — |
+| Reaper chainsword – sweep | 近战 | 12 | 3+ | 9 | -3 | 2 | — |
 
 ## 技能
 - **Huntmaster (Aura)**：While a friendly War Dog model is within 6" of this model, ranged weapons equipped by that <span class="kwb">WAR</span> <span class="kwb">DOG</span> model have the [ASSAULT] ability.

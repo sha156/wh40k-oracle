@@ -35,9 +35,9 @@ updated: '2026-07-23'
 | 毒晶卡宾枪 | 18" | 3 | 3+ | 2 | 0 | 1 | [[core-rules/anti.md\|针对步兵3+]]，[[core-rules/assault.md\|突击]] |
 | 撕裂枪 | 18" | D6 | N/A | 6 | 0 | 1 | [[core-rules/assault.md\|突击]]，[[core-rules/torrent.md\|洪流]] |
 | 毒晶炮 | 36" | 3 | 4+ | 3 | -1 | 2 | [[core-rules/anti.md\|针对步兵 3+]]，[[core-rules/heavy.md\|重型]]，[[core-rules/sustained-hits.md\|连击1]] |
-| 毒刺手枪 | 12" | 1 | 3+ | 2 | 0 | 1 | [[core-rules/anti.md\|针对步兵2+]]，[[core-rules/pistol.md\|手枪]] |
+| Splinter pistol | 12" | 1 | 3+ | 2 | 0 | 1 | [[core-rules/anti.md\|anti-infantry 3+]]，assault，pistol |
 | 毒晶步枪 | 24" | 2 | 3+ | 2 | 0 | 1 | [[core-rules/anti.md\|针对步兵 3+]]，[[core-rules/assault.md\|突击]] |
-| 毒刺手枪 | 12" | 1 | 3+ | 2 | 0 | 1 | [[core-rules/anti.md\|针对步兵2+]]，[[core-rules/pistol.md\|手枪]] |
+| Stinger pistol | 12" | 1 | 3+ | 2 | 0 | 1 | [[core-rules/anti.md\|anti-infantry 2+]]，pistol |
 
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |

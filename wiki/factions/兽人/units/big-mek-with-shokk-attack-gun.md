@@ -34,7 +34,7 @@ updated: '2026-07-23'
 | 格斗武器 | 近战 | 4 | 3+ | 5 | 0 | 1 | — |
 
 ## 技能
-- **【核心技能】:领袖**：本单位可以作为领袖加入以下单位：●[[factions/兽人/units/boyz.md|小子]]●[[factions/兽人/units/lootas.md|拾荒小子]]●技师大炮●[[factions/兽人/units/nobz.md|老大队]]●坦爆小子●[[factions/兽人/units/breaka-boyz.md|破拆小子]]
+- **【核心技能】:领袖**：本单位可以作为领袖加入以下单位：●小子●[[factions/兽人/units/lootas.md|拾荒小子]]●技师大炮●[[factions/兽人/units/nobz.md|老大队]]●坦爆小子●[[factions/兽人/units/breaka-boyz.md|破拆小子]]
 - **【阵营技能】:WAAAGH!**
 - **更多哒咔**：本模型所领导的单位中的模型射击攻击时重投结果为1的命中
 - **疯狂鼻涕精出鸡**：在你的射击阶段，本模型射击之后，选择一个本轮攻击命中过的敌方单位，那个敌方单位必须进行一次震慑测试

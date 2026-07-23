@@ -36,7 +36,7 @@ updated: '2026-07-23'
 | Glacius | 近战 | 6 | 2+ | 6 | -2 | 2 | — |
 
 ## 技能
-- **[[factions/太空死灵/units/lord.md|Lord]] of the Wolfkin**：While this model is leading a unit, each time that unit makes a Charge move, until the end of the turn, crushing teeth and claws equipped by models in that unit have the [DEVASTATING WOUNDS] ability.
+- **Lord of the Wolfkin**：While this model is leading a unit, each time that unit makes a Charge move, until the end of the turn, crushing teeth and claws equipped by models in that unit have the [DEVASTATING WOUNDS] ability.
 - **Mantle of the Troll King**：Once per phase, when resolving an attack made against this model, after you make a saving throw for this model, you can change the Damage characteristic of that attack to 0.
 
 ## 单位构成

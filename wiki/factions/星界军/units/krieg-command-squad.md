@@ -53,7 +53,7 @@ updated: '2026-07-23'
 - **Master Vox**：Each time the <span class="kwb">OFFICER</span> in the bearer’s unit issues an Order, it can issue it to an eligible unit up to 24" away.
 - **Alchemyk Counteragents**：The bearer’s unit has the Feel No Pain 6+ ability against mortal wounds.
 - **Regimental Standard**：Add 1 to the Objective Control characteristic of models in the bearer’s unit.
-- **Servo-scribes**：Once per battle, when issuing an Order, the [[factions/太空死灵/units/lord.md|Lord]] [[factions/星界军/units/commissar.md|Commissar]] can issue one additional Order.<br><br><b>Designer’s Note:</b> <i>Place a Servo-scribes token next to the unit, removing it when this ability has been used.</i>
+- **Servo-scribes**：Once per battle, when issuing an Order, the Lord [[factions/星界军/units/commissar.md|Commissar]] can issue one additional Order.<br><br><b>Designer’s Note:</b> <i>Place a Servo-scribes token next to the unit, removing it when this ability has been used.</i>
 - **ORDERS**：This unit’s <span class="kwb">OFFICER</span> can issue 1 Order to a Regiment unit.
 
 ## 单位构成
@@ -61,4 +61,4 @@ updated: '2026-07-23'
 
 ## 关键词
 - **阵营关键词**：Astra Militarum
-- **普通关键词**：[[factions/星际战士/units/command-squad.md|Command Squad]]，[[core-rules/character.md|Character]]，Officer，[[core-rules/infantry.md|Infantry]]，[[core-rules/grenades.md|Grenades]]，Imperium，Platoon，Krieg
+- **普通关键词**：Command Squad，[[core-rules/character.md|Character]]，Officer，[[core-rules/infantry.md|Infantry]]，[[core-rules/grenades.md|Grenades]]，Imperium，Platoon，Krieg

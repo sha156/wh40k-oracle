@@ -1,6 +1,6 @@
 # 混沌恶魔
 
-_Last updated: 2026-07-23 08:05 UTC_
+_Last updated: 2026-07-23 12:10 UTC_
 
 ## 单位
 
@@ -82,7 +82,7 @@ _Last updated: 2026-07-23 08:05 UTC_
 - [[factions/混沌恶魔/units/warp-talons|Warp Talons]] — 
 - [[factions/混沌恶魔/units/zarakynel|Zarakynel]] — 
 - [[factions/混沌恶魔/units/rendmaster-on-blood-throne|乘鲜血王座的裂肉主宰]] — 
-- [[factions/混沌恶魔/units/karanak|卡拉纳克]] — 
+- [[factions/混沌恶魔/units/karanak-2|卡拉纳克]] — 
 - [[factions/混沌恶魔/units/changecaster|变化使]] — 
 - [[factions/混沌恶魔/units/the-changeling|变化灵]] — 
 - [[factions/混沌恶魔/units/horticulous-slimux|园艺师史莱姆克斯]] — 

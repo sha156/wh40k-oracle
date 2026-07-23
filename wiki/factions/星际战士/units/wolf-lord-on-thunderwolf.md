@@ -19,7 +19,7 @@ updated: '2026-07-23'
 ## 属性表
 | 模型 | M | T | SV | W | LD | OC |
 |---|---|---|---|---|---|---|
-| Wolf [[factions/太空死灵/units/lord.md\|Lord]] On Thunderwolf | 10" | 6 | 3+ | 6 | 6+ | 2 |
+| Wolf Lord On Thunderwolf | 10" | 6 | 3+ | 6 | 6+ | 2 |
 
 ### 特殊保护
 - 4+

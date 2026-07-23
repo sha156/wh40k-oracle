@@ -21,7 +21,7 @@ updated: '2026-07-23'
 | 模型 | M | T | SV | W | LD | OC |
 |---|---|---|---|---|---|---|
 | Rubric Marine | 6" | 4 | 3+ | 2 | 7+ | 2 |
-| Aspiring [[factions/千子/units/sorcerer.md\|Sorcerer]] | 6" | 4 | 3+ | 3 | 6+ | 2 |
+| Aspiring Sorcerer | 6" | 4 | 3+ | 3 | 6+ | 2 |
 
 ### 特殊保护
 - 5+

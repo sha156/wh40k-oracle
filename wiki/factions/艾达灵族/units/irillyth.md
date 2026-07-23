@@ -35,7 +35,7 @@ updated: '2026-07-23'
 | Spear of Starlight | 近战 | 4 | 3+ | 5 | -2 | 1 | — |
 
 ## 技能
-- **[[factions/黑暗灵族/units/reaper.md|Reaper]] of Souls**：While this model is leading a unit, each time a model in that unit makes an attack, add 1 to the Hit roll.
+- **Reaper of Souls**：While this model is leading a unit, each time a model in that unit makes an attack, add 1 to the Hit roll.
 - **Shadow of Death (Aura)**：While an enemy unit is within 6" of this model, each time that unit takes a Battle-shock or Leadership test, subtract 1 from that test.
 
 ## 单位构成
@@ -43,4 +43,4 @@ updated: '2026-07-23'
 
 ## 关键词
 - **阵营关键词**：Asuryani
-- **普通关键词**：[[core-rules/infantry.md|Infantry]]，[[core-rules/character.md|Character]]，[[core-rules/epic-hero.md|Epic Hero]]，Fly，Jump Pack，[[factions/艾达灵族/units/phoenix.md|Phoenix]] [[factions/太空死灵/units/lord.md|Lord]]，Aeldari，Irillyth
+- **普通关键词**：[[core-rules/infantry.md|Infantry]]，[[core-rules/character.md|Character]]，[[core-rules/epic-hero.md|Epic Hero]]，Fly，Jump Pack，[[factions/艾达灵族/units/phoenix.md|Phoenix]] Lord，Aeldari，Irillyth

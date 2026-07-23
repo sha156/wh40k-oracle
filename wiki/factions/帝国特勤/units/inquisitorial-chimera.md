@@ -21,7 +21,7 @@ updated: '2026-07-23'
 ## 属性表
 | 模型 | M | T | SV | W | LD | OC |
 |---|---|---|---|---|---|---|
-| 审判庭[[factions/基因窃取者教派/units/chimera.md\|奇美拉装甲车]] | 10" | 9 | 3+ | 11 | 7+ | 2 |
+| 审判庭奇美拉装甲车 | 10" | 9 | 3+ | 11 | 7+ | 2 |
 
 ## 射击武器
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
@@ -48,4 +48,4 @@ updated: '2026-07-23'
 
 ## 关键词
 - **阵营关键词**：Agents of the Imperium
-- **普通关键词**：[[core-rules/transport.md|Transport]]，[[core-rules/smoke.md|Smoke]]，Vehicle，[[factions/帝国特勤/units/inquisitor.md|Inquisitor]]ial [[factions/基因窃取者教派/units/chimera.md|Chimera]]，Imperium，[[core-rules/dedicated-transport.md|Dedicated Transport]]
+- **普通关键词**：[[core-rules/transport.md|Transport]]，[[core-rules/smoke.md|Smoke]]，Vehicle，Inquisitorial Chimera，Imperium，[[core-rules/dedicated-transport.md|Dedicated Transport]]

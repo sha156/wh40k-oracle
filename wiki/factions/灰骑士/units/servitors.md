@@ -40,7 +40,7 @@ updated: '2026-07-23'
 
 ## 技能
 - **Mindlock**：While a [[factions/灰骑士/units/brotherhood-techmarine.md|Brotherhood Techmarine]] model is leading this unit, improve the Ballistic Skill and Weapon Skill characteristics of ranged and melee weapons equipped by <span class="kwb">SERVITOR</span> models in this unit by 1.
-- **Retinue**：While a Brotherhood [[factions/星际战士/units/techmarine.md|Techmarine]] model is leading this unit, models in this unit have the Deep Strike and Teleport Assault abilities.
+- **Retinue**：While a Brotherhood Techmarine model is leading this unit, models in this unit have the Deep Strike and Teleport Assault abilities.
 - **SERVITOR RETINUE**：At the start of the Declare Battle Formations step, this unit can join one other unit from your army that is being led by a Brotherhood Techmarine (a unit cannot have more than one <span class="kwb">SERVITORS</span> unit joined to it). If it does, until the end of the battle, every model in this unit counts as being part of that Bodyguard unit, and that Bodyguard unit’s Starting Strength is increased accordingly.
 
 ## 单位构成

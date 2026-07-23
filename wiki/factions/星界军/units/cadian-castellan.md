@@ -20,7 +20,7 @@ updated: '2026-07-23'
 ## 属性表
 | 模型 | M | T | SV | W | LD | OC |
 |---|---|---|---|---|---|---|
-| Cadian [[factions/星际战士/units/castellan.md\|Castellan]] | 6" | 3 | 5+ | 4 | 7+ | 1 |
+| Cadian Castellan | 6" | 3 | 5+ | 4 | 7+ | 1 |
 
 ### 特殊保护
 - 5+

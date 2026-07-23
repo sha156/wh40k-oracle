@@ -41,7 +41,7 @@ updated: '2026-07-23'
 - **Enhanced data-tether**：Each time you select the bearer’s unit as the target of a Stratagem, roll one D6: on a 5+, you gain 1CP
 - **Omnispex**：Ranged weapons equipped by models in the bearer’s unit have the [IGNORES COVER] ability.
 - **Titan Guard**：You can target this unit with the Heroic Intervention Stratagem for 0CP, and can do so even if you have already targeted a different unit with that Stratagem this phase. When doing so, if there are one or more friendly <span class="kwb">ADEPTUS</span> <span class="kwb">TITANICUS</span> units on the battlefield, you can re-roll the subsequent charge roll.
-- **SECUTARII**：If a model from your army with the Leader ability can be attached to a [[factions/帝国骑士/units/skitarii-vanguard.md|Skitarii Vanguard]] unit, it can be attached to this unit instead.
+- **SECUTARII**：If a model from your army with the Leader ability can be attached to a Skitarii Vanguard unit, it can be attached to this unit instead.
 
 ## 单位构成
 - **5个模型** — 65 分

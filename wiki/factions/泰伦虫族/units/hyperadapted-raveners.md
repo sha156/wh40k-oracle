@@ -21,7 +21,7 @@ updated: '2026-07-23'
 ## 属性表
 | 模型 | M | T | SV | W | LD | OC |
 |---|---|---|---|---|---|---|
-| [[factions/泰伦虫族/units/raveners.md\|蛇虫]]王虫 | 10" | 5 | 4+ | 6 | 7+ | 1 |
+| 蛇虫王虫 | 10" | 5 | 4+ | 6 | 7+ | 1 |
 | 蛇虫 | 10" | 5 | 4+ | 3 | 8+ | 1 |
 
 ## 射击武器
@@ -46,4 +46,4 @@ updated: '2026-07-23'
 
 ## 关键词
 - **阵营关键词**：Tyranids
-- **普通关键词**：Great Devourer，Vanguard Invader，Burrowers，Hyperadapted [[factions/基因窃取者教派/units/raveners.md|Raveners]]，[[core-rules/infantry.md|Infantry]]，[[core-rules/character.md|Character]]，Synapse
+- **普通关键词**：Great Devourer，Vanguard Invader，Burrowers，Hyperadapted Raveners，[[core-rules/infantry.md|Infantry]]，[[core-rules/character.md|Character]]，Synapse

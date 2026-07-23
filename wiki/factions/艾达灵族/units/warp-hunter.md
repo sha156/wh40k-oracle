@@ -19,7 +19,7 @@ updated: '2026-07-23'
 ## 属性表
 | 模型 | M | T | SV | W | LD | OC |
 |---|---|---|---|---|---|---|
-| Warp [[factions/星际战士/units/hunter.md\|Hunter]] | 14" | 9 | 3+ | 12 | 6+ | 3 |
+| Warp Hunter | 14" | 9 | 3+ | 12 | 6+ | 3 |
 
 ## 射击武器
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |

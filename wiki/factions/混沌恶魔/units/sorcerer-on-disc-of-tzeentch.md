@@ -19,7 +19,7 @@ updated: '2026-07-23'
 ## 属性表
 | 模型 | M | T | SV | W | LD | OC |
 |---|---|---|---|---|---|---|
-| [[factions/千子/units/sorcerer.md\|Sorcerer]] On Disc Of Tzeentch | 12" | 4 | 3+ | 5 | 6+ | 1 |
+| Sorcerer On Disc Of Tzeentch | 12" | 4 | 3+ | 5 | 6+ | 1 |
 
 ## 射击武器
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |

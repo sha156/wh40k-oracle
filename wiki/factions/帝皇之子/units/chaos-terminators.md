@@ -20,7 +20,7 @@ updated: '2026-07-23'
 ## 属性表
 | 模型 | M | T | SV | W | LD | OC |
 |---|---|---|---|---|---|---|
-| [[factions/星际战士/units/terminator-squad-2.md\|Terminator Squad]] | 6" | 5 | 2+ | 3 | 6+ | 1 |
+| Terminator Squad | 6" | 5 | 2+ | 3 | 6+ | 1 |
 
 ### 特殊保护
 - 4+
@@ -31,7 +31,7 @@ updated: '2026-07-23'
 | Combi-bolter | 24" | 2 | 3+ | 4 | 0 | 1 | [[core-rules/rapid-fire.md\|rapid fire 2]] |
 | Combi-weapon | 24" | 1 | 4+ | 4 | 0 | 1 | [[core-rules/anti.md\|anti-infantry 4+]]，devastating wounds，[[core-rules/rapid-fire.md\|rapid fire 1]] |
 | Heavy flamer | 12" | D6 | N/A | 5 | -1 | 1 | ignores cover，torrent |
-| [[factions/黑暗灵族/units/reaper.md\|Reaper]] autocannon | 36" | 4 | 3+ | 7 | -1 | 1 | devastating wounds，[[core-rules/sustained-hits.md\|sustained hits 1]] |
+| Reaper autocannon | 36" | 4 | 3+ | 7 | -1 | 1 | devastating wounds，[[core-rules/sustained-hits.md\|sustained hits 1]] |
 
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |

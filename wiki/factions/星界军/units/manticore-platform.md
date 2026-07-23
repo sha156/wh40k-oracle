@@ -19,7 +19,7 @@ updated: '2026-07-23'
 ## 属性表
 | 模型 | M | T | SV | W | LD | OC |
 |---|---|---|---|---|---|---|
-| [[factions/基因窃取者教派/units/manticore.md\|Manticore]] Platform | - | 8 | 3+ | 8 | 7+ | 2 |
+| Manticore Platform | - | 8 | 3+ | 8 | 7+ | 2 |
 
 ## 射击武器
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |

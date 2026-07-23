@@ -31,7 +31,7 @@ updated: '2026-07-23'
 
 ## 技能
 - **Voltagheist Field**：Each time this unit ends a Charge move, select one enemy unit within Engagement Range of it and roll one D6 for each model in this unit: for each 4+, that enemy unit suffers 1 mortal wound.
-- **SERVANTS OF THE ABYSS**：If a unit from your army with the Leader ability can be attached to a [[factions/混沌恶魔/units/cultist-mob.md|Cultist Mob]], it can be attached to this unit instead.
+- **SERVANTS OF THE ABYSS**：If a unit from your army with the Leader ability can be attached to a Cultist Mob, it can be attached to this unit instead.
 
 ## 单位构成
 - **4个模型** — 55 分

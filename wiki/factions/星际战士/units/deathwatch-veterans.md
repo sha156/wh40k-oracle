@@ -38,11 +38,11 @@ updated: '2026-07-23'
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| 异形相位刃 | 近战 | 4 | 3+ | 5 | -2 | 1 | [[core-rules/devastating-wounds.md\|毁灭伤害]] |
+| Black Shield blades | 近战 | 4 | 3+ | 5 | -2 | 1 | twin-linked |
 | 格斗武器 | 近战 | 3 | 3+ | 4 | 0 | 1 | — |
 | 死亡守望雷霆锤 | 近战 | 3 | 4+ | 10 | -2 | 3 | [[core-rules/devastating-wounds.md\|毁灭伤害]] |
 | 动力武器 | 近战 | 3 | 3+ | 5 | -2 | 1 | — |
-| 异形相位刃 | 近战 | 4 | 3+ | 5 | -2 | 1 | [[core-rules/devastating-wounds.md\|毁灭伤害]] |
+| Xenophase blade | 近战 | 4 | 3+ | 5 | -2 | 1 | devastating wounds |
 
 ## 技能
 - **诛杀异形！**：当该单位中的模型进行攻击时，重掷结果为 1 的命中掷骰。如果攻击的目标没有帝国或混沌关键词，您可以重掷命中掷骰。

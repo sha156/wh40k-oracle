@@ -30,7 +30,7 @@ updated: '2026-07-23'
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
 | 恶魔重机枪 | 36" | 3 | 3+ | 5 | 0 | 1 | [[core-rules/rapid-fire.md\|速射3]] |
-| [[factions/混沌星际战士/units/havocs.md\|浩劫]]多管发射器 | 48" | D6 | 3+ | 5 | 0 | 1 | [[core-rules/blast.md\|爆炸]]，[[core-rules/indirect-fire.md\|曲射]] |
+| 浩劫多管发射器 | 48" | D6 | 3+ | 5 | 0 | 1 | [[core-rules/blast.md\|爆炸]]，[[core-rules/indirect-fire.md\|曲射]] |
 
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |

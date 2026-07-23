@@ -49,4 +49,4 @@ updated: '2026-07-23'
 
 ## 关键词
 - **阵营关键词**：Adeptus Custodes
-- **普通关键词**：Vertus [[factions/基因窃取者教派/units/praetor.md|Praetor]]s，Imperium，[[core-rules/mounted.md|Mounted]]，Fly
+- **普通关键词**：Vertus Praetors，Imperium，[[core-rules/mounted.md|Mounted]]，Fly

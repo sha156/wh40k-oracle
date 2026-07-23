@@ -21,7 +21,7 @@ updated: '2026-07-23'
 ## 属性表
 | 模型 | M | T | SV | W | LD | OC |
 |---|---|---|---|---|---|---|
-| 极乐[[factions/太空死灵/units/lord.md\|领主]] | 7" | 4 | 3+ | 5 | 6+ | 1 |
+| 极乐领主 | 7" | 4 | 3+ | 5 | 6+ | 1 |
 
 ### 特殊保护
 - 4+
@@ -54,4 +54,4 @@ updated: '2026-07-23'
 
 ## 关键词
 - **阵营关键词**：Emperor’s Children
-- **普通关键词**：[[core-rules/character.md|Character]]，Slaanesh，[[factions/太空死灵/units/lord.md|Lord]] Exultant，[[core-rules/infantry.md|Infantry]]，Chaos，[[core-rules/grenades.md|Grenades]]
+- **普通关键词**：[[core-rules/character.md|Character]]，Slaanesh，Lord Exultant，[[core-rules/infantry.md|Infantry]]，Chaos，[[core-rules/grenades.md|Grenades]]

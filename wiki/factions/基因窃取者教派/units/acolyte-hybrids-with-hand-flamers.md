@@ -46,4 +46,4 @@ updated: '2026-07-23'
 
 ## 关键词
 - **阵营关键词**：Genestealer Cults
-- **普通关键词**：Acolyte Hybrids With Hand [[factions/千子/units/flamers.md|Flamers]]，[[core-rules/grenades.md|Grenades]]，[[core-rules/battleline.md|Battleline]]，[[core-rules/infantry.md|Infantry]]，Acolyte Hybrids，Great Devourer
+- **普通关键词**：Acolyte Hybrids With Hand Flamers，[[core-rules/grenades.md|Grenades]]，[[core-rules/battleline.md|Battleline]]，[[core-rules/infantry.md|Infantry]]，Acolyte Hybrids，Great Devourer

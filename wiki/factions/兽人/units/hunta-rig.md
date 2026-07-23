@@ -32,7 +32,7 @@ updated: '2026-07-23'
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| 屠夫[[factions/兽人/units/boyz.md\|小子]] | 近战 | 4 | 3+ | 5 | -1 | 1 | [[core-rules/extra-attacks.md\|额外攻击]]，[[core-rules/anti.md\|针对巨兽4+]]，[[core-rules/anti.md\|针对载具4+]] |
+| 屠夫小子 | 近战 | 4 | 3+ | 5 | -1 | 1 | [[core-rules/extra-attacks.md\|额外攻击]]，[[core-rules/anti.md\|针对巨兽4+]]，[[core-rules/anti.md\|针对载具4+]] |
 | 大角撞击 | 近战 | 4 | 4+ | 8 | -1 | 3 | [[core-rules/extra-attacks.md\|额外攻击]]，[[core-rules/lance.md\|迅猛冲锋]] |
 | 电锯刀 | 近战 | 6 | 3+ | 10 | -2 | 2 | — |
 

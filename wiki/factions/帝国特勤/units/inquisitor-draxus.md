@@ -5,7 +5,7 @@ name_en: Inquisitor Draxus
 faction: 帝国特勤
 type: unit
 points:
-  1 model (<ky>AGENTS OF THE IMPERIUM</ky> Detachment): 75
+  1 model (AGENTS OF THE IMPERIUM Detachment): 75
   1 model (Assigned Agent): 110
   1 model: 75
 tags:
@@ -23,7 +23,7 @@ updated: '2026-07-23'
 ## 属性表
 | 模型 | M | T | SV | W | LD | OC |
 |---|---|---|---|---|---|---|
-| 审判[[factions/太空死灵/units/lord.md\|领主]]奇莉亚·德拉克瑟斯 | 6" | 3 | 3+ | 4 | 6+ | 1 |
+| 审判领主奇莉亚·德拉克瑟斯 | 6" | 3 | 3+ | 4 | 6+ | 1 |
 
 ### 特殊保护
 - 5+
@@ -46,8 +46,8 @@ updated: '2026-07-23'
 - **灵能之幕（灵能）**：在您的指挥阶段中，该灵能者可以使用该技能，如果这样做，掷一枚D6；如果掷骰结果为1，该灵能者所在单位受到D3处致命伤，如果掷骰结果为2+，在您的下一个指挥阶段开始前，该灵能者所在单位除非位于攻击模型的18寸内，否则无法被选择成为远程攻击的目标。
 
 ## 单位构成
-- **1个模型** — 75 分
-- **1个模型** — 110 分
+- **1个模型 (AGENTS OF THE IMPERIUM Detachment)** — 75 分
+- **1个模型 (Assigned Agent)** — 110 分
 - **1个模型** — 75 分
 
 ## 关键词

@@ -30,7 +30,7 @@ updated: '2026-07-23'
 | Havoc launcher | 48" | D6 | 3+ | 5 | 0 | 1 | blast |
 | Heavy flamer | 12" | D6 | N/A | 5 | -1 | 1 | [[core-rules/ignores-cover.md\|IGNORES COVER]]，TORRENT |
 | Lascannons | 48" | 1 | 3+ | 12 | -3 | D6+1 | — |
-| [[factions/星际战士/units/hunter.md\|Hunter]]-killer missile | 48" | 1 | 2+ | 14 | -3 | D6 | one shot |
+| Hunter-killer missile | 48" | 1 | 2+ | 14 | -3 | D6 | one shot |
 | Volkite caliver | 24" | 2 | 3+ | 5 | 0 | 2 | devastating wounds |
 | Volkite cardanelle | 36" | 9 | 3+ | 9 | 0 | 3 | devastating wounds |
 | Twin boltgun | 24" | 2 | 3+ | 4 | 0 | 1 | twin-linked |

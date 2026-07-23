@@ -1,6 +1,6 @@
 # WH40K Wiki Index
 
-_Last updated: 2026-07-23 08:05 UTC_
+_Last updated: 2026-07-23 12:10 UTC_
 
 ## 目录
 
@@ -949,7 +949,7 @@ _Last updated: 2026-07-23 08:05 UTC_
 | unit | [兰德速攻艇](factions/星际战士/units/land-speeder.md) |  | 2026-07-23 |
 | unit | [内环伙友](factions/星际战士/units/inner-circle-companions.md) |  | 2026-07-23 |
 | unit | [冰雹型风暴速攻艇](factions/星际战士/units/storm-speeder-hailstrike.md) |  | 2026-07-23 |
-| unit | [冲击者突击艇](factions/星际战士/units/impulsor.md) |  | 2026-07-23 |
+| unit | [冲击者突击艇](factions/星际战士/units/impulsor-2.md) |  | 2026-07-23 |
 | unit | [凯万-史瑞克](factions/星际战士/units/kayvaan-shrike.md) |  | 2026-07-23 |
 | unit | [利爪突击杀戮小队](factions/星际战士/units/talonstrike-kill-team.md) |  | 2026-07-23 |
 | unit | [剑卫旗手](factions/星际战士/units/bladeguard-ancient.md) |  | 2026-07-23 |
@@ -957,12 +957,12 @@ _Last updated: 2026-07-23 08:05 UTC_
 | unit | [副官](factions/星际战士/units/lieutenant.md) |  | 2026-07-23 |
 | unit | [劫掠者副官](factions/星际战士/units/lieutenant-in-reiver-armour.md) |  | 2026-07-23 |
 | unit | [劫掠者小队](factions/星际战士/units/reiver-squad.md) |  | 2026-07-23 |
-| unit | [十字军型兰德掠袭者坦克](factions/星际战士/units/land-raider-crusader.md) |  | 2026-07-23 |
+| unit | [十字军型兰德掠袭者坦克](factions/星际战士/units/land-raider-crusader-2.md) |  | 2026-07-23 |
 | unit | [十字军小队](factions/星际战士/units/crusader-squad.md) |  | 2026-07-23 |
 | unit | [卡托·西卡留斯](factions/星际战士/units/cato-sicarius.md) |  | 2026-07-23 |
 | unit | [卡诺克·瓦尔](factions/星际战士/units/caanok-var.md) |  | 2026-07-23 |
 | unit | [压制者小队](factions/星际战士/units/suppressor-squad.md) |  | 2026-07-23 |
-| unit | [反击者突击艇](factions/星际战士/units/repulsor.md) |  | 2026-07-23 |
+| unit | [反击者突击艇](factions/星际战士/units/repulsor-2.md) |  | 2026-07-23 |
 | unit | [圣吉列诺](factions/星际战士/units/the-sanguinor.md) |  | 2026-07-23 |
 | unit | [圣血卫队](factions/星际战士/units/sanguinary-guard.md) |  | 2026-07-23 |
 | unit | [圣血祭司](factions/星际战士/units/sanguinary-priest.md) |  | 2026-07-23 |
@@ -970,7 +970,7 @@ _Last updated: 2026-07-23 08:05 UTC_
 | unit | [地狱轰击者小队](factions/星际战士/units/hellblaster-squad.md) |  | 2026-07-23 |
 | unit | [坎托战团长](factions/星际战士/units/pedro-kantor.md) |  | 2026-07-23 |
 | unit | [堡主](factions/星际战士/units/castellan.md) |  | 2026-07-23 |
-| unit | [处决者型反击者坦克](factions/星际战士/units/repulsor-executioner.md) |  | 2026-07-23 |
+| unit | [处决者型反击者坦克](factions/星际战士/units/repulsor-executioner-2.md) |  | 2026-07-23 |
 | unit | [复仇型兰德飞艇](factions/星际战士/units/land-speeder-vengeance.md) |  | 2026-07-23 |
 | unit | [奥特拉玛守望者](factions/星际战士/units/wardens-of-ultramar.md) |  | 2026-07-23 |
 | unit | [守望堡主](factions/星际战士/units/watch-master.md) |  | 2026-07-23 |
@@ -996,7 +996,7 @@ _Last updated: 2026-07-23 08:05 UTC_
 | unit | [智库](factions/星际战士/units/librarian.md) |  | 2026-07-23 |
 | unit | [杀戮牙](factions/星际战士/units/murderfang.md) |  | 2026-07-23 |
 | unit | [杀戮者乌尔里克](factions/星际战士/units/ulrik-the-slayer.md) |  | 2026-07-23 |
-| unit | [枪骑兵型角斗者坦克](factions/星际战士/units/gladiator-lancer.md) |  | 2026-07-23 |
+| unit | [枪骑兵型角斗者坦克](factions/星际战士/units/gladiator-lancer-2.md) |  | 2026-07-23 |
 | unit | [根除者小队](factions/星际战士/units/eradicator-squad.md) |  | 2026-07-23 |
 | unit | [格瑞马都斯牧师](factions/星际战士/units/chaplain-grimaldus.md) |  | 2026-07-23 |
 | unit | [死亡守望终结者小队](factions/星际战士/units/deathwatch-terminator-squad.md) |  | 2026-07-23 |
@@ -1004,7 +1004,7 @@ _Last updated: 2026-07-23 08:05 UTC_
 | unit | [死亡连小队](factions/星际战士/units/death-company-marines.md) |  | 2026-07-23 |
 | unit | [死亡连无畏](factions/星际战士/units/death-company-dreadnought.md) |  | 2026-07-23 |
 | unit | [死亡连连长](factions/星际战士/units/death-company-captain.md) |  | 2026-07-23 |
-| unit | [死神型角斗者坦克](factions/星际战士/units/gladiator-reaper.md) |  | 2026-07-23 |
+| unit | [死神型角斗者坦克](factions/星际战士/units/gladiator-reaper-2.md) |  | 2026-07-23 |
 | unit | [死翼指挥组【传奇】](factions/星际战士/units/deathwing-command-squad.md) |  | 2026-07-23 |
 | unit | [死翼终结者小队](factions/星际战士/units/deathwing-terminator-squad.md) |  | 2026-07-23 |
 | unit | [死翼骑士](factions/星际战士/units/deathwing-knights.md) |  | 2026-07-23 |
@@ -1033,14 +1033,14 @@ _Last updated: 2026-07-23 08:05 UTC_
 | unit | [空降仓](factions/星际战士/units/drop-pod.md) |  | 2026-07-23 |
 | unit | [突击仲裁者小队](factions/星际战士/units/assault-intercessor-squad.md) |  | 2026-07-23 |
 | unit | [突击终结者小队](factions/星际战士/units/terminator-assault-squad.md) |  | 2026-07-23 |
-| unit | [终结者小队](factions/星际战士/units/terminator-squad.md) |  | 2026-07-23 |
+| unit | [终结者小队](factions/星际战士/units/terminator-squad-2.md) |  | 2026-07-23 |
 | unit | [终结者旗手](factions/星际战士/units/ancient-in-terminator-armour.md) |  | 2026-07-23 |
 | unit | [终结者智库](factions/星际战士/units/librarian-in-terminator-armour.md) |  | 2026-07-23 |
 | unit | [终结者牧师](factions/星际战士/units/chaplain-in-terminator-armour.md) |  | 2026-07-23 |
 | unit | [终结者连长](factions/星际战士/units/captain-in-terminator-armour.md) |  | 2026-07-23 |
 | unit | [维护者突击炮](factions/星际战士/units/vindicator.md) |  | 2026-07-23 |
 | unit | [罗伯特.基里曼](factions/星际战士/units/roboute-guilliman.md) |  | 2026-07-23 |
-| unit | [肃卫老兵小队](factions/星际战士/units/sternguard-veteran-squad.md) |  | 2026-07-23 |
+| unit | [肃卫老兵小队](factions/星际战士/units/sternguard-veteran-squad-2.md) |  | 2026-07-23 |
 | unit | [至强杀戮小队](factions/星际战士/units/fortis-kill-team.md) |  | 2026-07-23 |
 | unit | [至高大元帅赫尔贝茨](factions/星际战士/units/high-marshal-helbrecht.md) |  | 2026-07-23 |
 | unit | [艾索-沙恩](factions/星际战士/units/aethon-shaan.md) |  | 2026-07-23 |
@@ -1060,7 +1060,7 @@ _Last updated: 2026-07-23 08:05 UTC_
 | unit | [装备跳跃背包的死亡连小队](factions/星际战士/units/death-company-marines-with-jump-packs.md) |  | 2026-07-23 |
 | unit | [装备跳跃背包的死亡连连长](factions/星际战士/units/death-company-captain-with-jump-pack.md) |  | 2026-07-23 |
 | unit | [装备风暴盾的狼人](factions/星际战士/units/wulfen-with-storm-shields.md) |  | 2026-07-23 |
-| unit | [豪侠型角斗者坦克](factions/星际战士/units/gladiator-valiant.md) |  | 2026-07-23 |
+| unit | [豪侠型角斗者坦克](factions/星际战士/units/gladiator-valiant-2.md) |  | 2026-07-23 |
 | unit | [豪猪装甲车](factions/星际战士/units/razorback.md) |  | 2026-07-23 |
 | unit | [贝利亚大导师](factions/星际战士/units/belial.md) |  | 2026-07-23 |
 | unit | [跳跃背包先锋老兵小队](factions/星际战士/units/vanguard-veteran-squad-with-jump-packs.md) |  | 2026-07-23 |
@@ -1106,7 +1106,7 @@ _Last updated: 2026-07-23 08:05 UTC_
 | core-rule | [不知疼痛](core-rules/feel-no-pain.md) | 不知疼痛让模型逐点豁免即将失去的 W 值，是保存之后的最后防线。 | 2026-07-11 |
 | core-rule | [专属运输](core-rules/dedicated-transport.md) | 专属运输是运输工具的一个子类标记：除具备全部运输规则外，还能在满足条件时随搭乘单位一起做斥候移动。 | 2026-07-23 |
 | core-rule | [为了上上善道](core-rules/for-the-greater-good.md) | 钛帝国军队规则：观察员标记目标，射击手打标记目标更准。 | 2026-07-11 |
-| core-rule | [人物](core-rules/character.md) | 人物是军队里的英雄模型：可率领单位、在分配伤害时受保护，但会被[[core-rules/precision.md|精准]]武器点名。 | 2026-07-23 |
+| core-rule | [人物](core-rules/character.md) | 人物是军队里的英雄模型：可率领单位、在分配伤害时受保护，但会被精准武器点名。 | 2026-07-23 |
 | core-rule | [冲锋](core-rules/charge.md) | 冲锋移动让单位扑进近战并获得先攻。 | 2026-07-11 |
 | core-rule | [冲锋阶段](core-rules/charge-phase.md) | 冲锋阶段逐个宣布冲锋、掷 2D6 冲锋骰并进行冲锋移动。 | 2026-07-11 |
 | core-rule | [加速移动](core-rules/advance.md) | 加速移动用 D6 加速骰换取额外移动距离，代价是本回合行动受限。 | 2026-07-11 |
@@ -1457,7 +1457,7 @@ _Last updated: 2026-07-23 08:05 UTC_
 | unit | [Warp Talons](factions/混沌恶魔/units/warp-talons.md) |  | 2026-07-23 |
 | unit | [Zarakynel](factions/混沌恶魔/units/zarakynel.md) |  | 2026-07-23 |
 | unit | [乘鲜血王座的裂肉主宰](factions/混沌恶魔/units/rendmaster-on-blood-throne.md) |  | 2026-07-23 |
-| unit | [卡拉纳克](factions/混沌恶魔/units/karanak.md) |  | 2026-07-23 |
+| unit | [卡拉纳克](factions/混沌恶魔/units/karanak-2.md) |  | 2026-07-23 |
 | unit | [变化使](factions/混沌恶魔/units/changecaster.md) |  | 2026-07-23 |
 | unit | [变化灵](factions/混沌恶魔/units/the-changeling.md) |  | 2026-07-23 |
 | unit | [园艺师史莱姆克斯](factions/混沌恶魔/units/horticulous-slimux.md) |  | 2026-07-23 |

@@ -28,8 +28,8 @@ updated: '2026-07-23'
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
 | 赦免者爆矢手枪 | 18" | 1 | 3+ | 5 | -1 | 2 | [[core-rules/pistol.md\|手枪]] |
-| 激光手枪 | 12" | 1 | 3+ | 4 | -1 | 1 | [[core-rules/pistol.md\|手枪]] |
-| 激光手枪 | 12" | 1 | 3+ | 4 | -1 | 1 | [[core-rules/pistol.md\|手枪]] |
+| Bolt pistol | 12" | 1 | 3+ | 4 | -1 | 1 | pistol |
+| Laspistol | 12" | 1 | 3+ | 4 | -1 | 1 | pistol |
 | 隆达西致残枪 | 18" | 3 | 3+ | 4 | -1 | 1 | [[core-rules/assault.md\|突击]] |
 | 精神扭曲 | 12" | 1 | 2+ | 6 | -2 | D6+1 | [[core-rules/precision.md\|精准]]，灵能 |
 

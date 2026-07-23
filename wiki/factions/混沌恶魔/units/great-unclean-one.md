@@ -41,7 +41,7 @@ updated: '2026-07-23'
 
 ## 技能
 - **Greater Daemon of Nurgle (Aura)**：While a friendly Nurgle Legiones Daemonica unit is within 6" of this model, that unit is within your army’s Shadow of Chaos.
-- **Daemon [[factions/太空死灵/units/lord.md|Lord]] of Nurgle (Aura)**：While a friendly Nurgle Legiones Daemonica unit is within 6" of this model, add 1 to the Toughness characteristic of models in that unit.
+- **Daemon Lord of Nurgle (Aura)**：While a friendly Nurgle Legiones Daemonica unit is within 6" of this model, add 1 to the Toughness characteristic of models in that unit.
 - **Nurgle’s Rot (Psychic)**：At the end of your Movement phase, you can select one enemy unit within 12" of this model. Until the start of your next Movement phase, subtract 1 from the Toughness characteristic of models in that unit.
 - **Reverberating Summons**：Each time a model is destroyed by this weapon, you can select one friendly Plaguebearer’s unit within 12" of the bearer and return 1 destroyed Plaguebearer model to that unit.
 

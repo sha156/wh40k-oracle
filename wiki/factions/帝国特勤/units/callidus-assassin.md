@@ -34,7 +34,7 @@ updated: '2026-07-23'
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| 相位剑与[[factions/基因窃取者教派/units/baneblade.md\|毒刃]] | 近战 | 5 | 2+ | 5 | -4 | 2 | [[core-rules/lethal-hits.md\|致命一击]]，[[core-rules/precision.md\|精准]] |
+| 相位剑与毒刃 | 近战 | 5 | 2+ | 5 | -4 | 2 | [[core-rules/lethal-hits.md\|致命一击]]，[[core-rules/precision.md\|精准]] |
 
 ## 技能
 - **【阵营技能】：派遣特工**

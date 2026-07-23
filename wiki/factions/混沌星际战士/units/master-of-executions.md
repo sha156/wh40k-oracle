@@ -41,4 +41,4 @@ updated: '2026-07-23'
 
 ## 关键词
 - **阵营关键词**：Heretic Astartes
-- **普通关键词**：[[core-rules/character.md|Character]]，[[core-rules/infantry.md|Infantry]]，[[core-rules/grenades.md|Grenades]]，Chaos，[[factions/吞世者/units/master-of-executions.md|Master of Executions]]
+- **普通关键词**：[[core-rules/character.md|Character]]，[[core-rules/infantry.md|Infantry]]，[[core-rules/grenades.md|Grenades]]，Chaos，Master of Executions

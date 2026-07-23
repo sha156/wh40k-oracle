@@ -36,16 +36,23 @@ def scan_wiki_pages(wiki_root: Path) -> List[WikiPage]:
         parsed = WikiPage.from_markdown(text)
         if parsed is None:
             continue
-        # 填充路径信息
+        # 填充路径信息：记真实相对路径（含 slug 去重 -N 后缀），供链接目标使用
         rel = str(md_file.relative_to(wiki_root)).replace("\\", "/")
         parsed.fm.id = parsed.fm.id or rel.replace(".md", "")
+        parsed.source_rel = rel
         pages.append(parsed)
     return pages
 
 
 def _extract_summary(body: str, max_chars: int = 80) -> str:
-    """从 body 首段提取摘要（跳过表格和标题行）。"""
-    lines = body.strip().split("\n")
+    """从 body 首段提取摘要（跳过表格和标题行）。
+
+    先把 [[path|显示]] 剥成纯显示文本再截断——摘要进 index.md 的表格单元格，未剥的
+    wikilink 竖线会被表格解析器当列分隔符断列，截断还可能把 wikilink 拦腰截断
+    （模块 6 F7）。
+    """
+    from wiki_engine.crosslinks import strip_wikilinks
+    lines = strip_wikilinks(body).strip().split("\n")
     summary_parts = []
     for line in lines:
         line = line.strip()
@@ -114,7 +121,13 @@ def build_global_index(pages: List[WikiPage], wiki_root: Path) -> str:
 
 
 def entity_page_path_for_display(wiki_root: Path, page: WikiPage) -> str:
-    """生成用于 index.md 中的显示路径（相对于 wiki/）。"""
+    """生成用于 index.md 中的显示路径（相对于 wiki/）。
+
+    优先用扫描到的真实相对路径（含 slug 去重 -N 后缀）；仅在缺失时（非扫描来源的
+    合成 WikiPage）才从 frontmatter 反推——反推无 -N 概念会链到错页（模块 6 F4）。
+    """
+    if page.source_rel:
+        return page.source_rel
     from wiki_engine.models import entity_page_path as _entity_page_path
     p = _entity_page_path(wiki_root, page.fm)
     return str(p.relative_to(wiki_root)).replace("\\", "/")

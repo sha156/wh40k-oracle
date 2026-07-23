@@ -35,7 +35,7 @@ updated: '2026-07-23'
 | 离子加农 — 标准 | 60" | D6+3 | 4+ | 7 | -1 | 2 | [[core-rules/blast.md\|爆炸]] |
 | 离子加农 — 过载 | 60" | D6+3 | 4+ | 8 | -2 | 3 | [[core-rules/blast.md\|爆炸]]，[[core-rules/hazardous.md\|危险]] |
 | 导弹仓 | 30" | 2 | 4+ | 7 | -1 | 2 | — |
-| [[factions/帝皇之子/units/seekers.md\|寻觅者]]导弹 | 48" | 1 | 4+ | 14 | -3 | D6+1 | [[core-rules/one-shot.md\|一次性]] |
+| 寻觅者导弹 | 48" | 1 | 4+ | 14 | -3 | D6+1 | [[core-rules/one-shot.md\|一次性]] |
 | 空矛导弹发射器 | 72" | D6+1 | 4+ | 6 | -1 | 1 | [[core-rules/anti.md\|针对飞行3+]]，[[core-rules/blast.md\|爆炸]] |
 | 高速爆裂速射炮 | 36" | 16 | 4+ | 6 | -1 | 1 | — |
 | 高速磁轨炮 | 72" | 1 | 4+ | 20 | -5 | D6+6 | [[core-rules/devastating-wounds.md\|毁灭伤害]] |

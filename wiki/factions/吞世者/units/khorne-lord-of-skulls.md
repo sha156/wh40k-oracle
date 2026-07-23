@@ -21,7 +21,7 @@ updated: '2026-07-23'
 ## 属性表
 | 模型 | M | T | SV | W | LD | OC |
 |---|---|---|---|---|---|---|
-| Khorne [[factions/太空死灵/units/lord.md\|Lord]] of Skulls | 12" | 13 | 3+ | 24 | 6+ | 8 |
+| Khorne Lord of Skulls | 12" | 13 | 3+ | 24 | 6+ | 8 |
 
 ### 特殊保护
 - 5+

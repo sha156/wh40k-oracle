@@ -21,7 +21,7 @@ updated: '2026-07-23'
 ## 属性表
 | 模型 | M | T | SV | W | LD | OC |
 |---|---|---|---|---|---|---|
-| Land [[factions/黑暗灵族/units/raider.md\|Raider]] | 10" | 12 | 2+ | 16 | 6+ | 5 |
+| Land Raider | 10" | 12 | 2+ | 16 | 6+ | 5 |
 
 ## 射击武器
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |

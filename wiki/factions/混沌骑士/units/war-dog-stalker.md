@@ -32,7 +32,7 @@ updated: '2026-07-23'
 | 复仇者链炮 | 24" | 12 | 3+ | 6 | -1 | 1 | — |
 | 魔息矛 | 18" | 2 | 3+ | 12 | -4 | D6 | [[core-rules/melta.md\|热熔4]] |
 | 恶魔重机枪 | 36" | 3 | 3+ | 5 | 0 | 1 | [[core-rules/rapid-fire.md\|速射3]] |
-| [[factions/混沌星际战士/units/havocs.md\|浩劫]]多管发射器 | 48" | D6 | 3+ | 5 | 0 | 1 | [[core-rules/blast.md\|爆炸]]，[[core-rules/indirect-fire.md\|曲射]] |
+| 浩劫多管发射器 | 48" | D6 | 3+ | 5 | 0 | 1 | [[core-rules/blast.md\|爆炸]]，[[core-rules/indirect-fire.md\|曲射]] |
 
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |
@@ -51,4 +51,4 @@ updated: '2026-07-23'
 
 ## 关键词
 - **阵营关键词**：Chaos Knights
-- **普通关键词**：[[core-rules/walker.md|Walker]]，Vehicle，Chaos，War Dog，[[factions/星际战士/units/stalker.md|Stalker]]
+- **普通关键词**：[[core-rules/walker.md|Walker]]，Vehicle，Chaos，War Dog，Stalker

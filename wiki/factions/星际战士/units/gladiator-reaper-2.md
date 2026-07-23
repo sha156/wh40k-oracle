@@ -21,7 +21,7 @@ updated: '2026-07-23'
 ## 属性表
 | 模型 | M | T | SV | W | LD | OC |
 |---|---|---|---|---|---|---|
-| Gladiator [[factions/黑暗灵族/units/reaper.md\|Reaper]] | 10" | 10 | 3+ | 12 | 6+ | 3 |
+| Gladiator Reaper | 10" | 10 | 3+ | 12 | 6+ | 3 |
 
 ## 射击武器
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |

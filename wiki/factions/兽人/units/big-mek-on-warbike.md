@@ -47,11 +47,11 @@ updated: '2026-07-23'
 ## 技能
 - **Kustom Force Field**：While the bearer is leading a unit, models in that unit have a 4+ invulnerable save against ranged attacks.
 - **More Dakka**：While this model is leading a unit, each time a model in that unit makes a ranged attack, re-roll a Hit roll of 1.
-- **[[factions/兽人/units/mek.md|Mek]]aniak**：At the end of your Movement phase, you can select one friendly Orks Vehicle model within 3" of this model. That <span class="kwb">VEHICLE</span> model regains up to D3 lost wounds, and, until the start of your next Movement phase, each time that <span class="kwb">VEHICLE</span> model makes an attack, add 1 to the Hit roll. Each model can only be selected for this ability once per turn.
+- **Mekaniak**：At the end of your Movement phase, you can select one friendly Orks Vehicle model within 3" of this model. That <span class="kwb">VEHICLE</span> model regains up to D3 lost wounds, and, until the start of your next Movement phase, each time that <span class="kwb">VEHICLE</span> model makes an attack, add 1 to the Hit roll. Each model can only be selected for this ability once per turn.
 
 ## 单位构成
 - **1个模型** — 105 分
 
 ## 关键词
 - **阵营关键词**：Orks
-- **普通关键词**：Big Mek，[[core-rules/grenades.md|Grenades]]，[[core-rules/character.md|Character]]，Speed Freeks，[[core-rules/mounted.md|Mounted]]，Big Mek on Warbike
+- **普通关键词**：Big [[factions/兽人/units/mek.md|Mek]]，[[core-rules/grenades.md|Grenades]]，[[core-rules/character.md|Character]]，Speed Freeks，[[core-rules/mounted.md|Mounted]]，Big Mek on Warbike

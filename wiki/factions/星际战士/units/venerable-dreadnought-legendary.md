@@ -45,7 +45,7 @@ updated: '2026-07-23'
 | Dreadnought combat weapon | 近战 | 5 | 3+ | 12 | -2 | 3 | — |
 
 ## 技能
-- **Wisdom of the [[factions/星际战士/units/ancient.md|Ancient]]s (Aura)**：While a friendly Adeptus Astartes Infantry unit is within 6" of this model, each time a model in that unit makes an attack, re-roll a Hit roll of 1.
+- **Wisdom of the Ancients (Aura)**：While a friendly Adeptus Astartes Infantry unit is within 6" of this model, each time a model in that unit makes an attack, re-roll a Hit roll of 1.
 
 ## 单位构成
 - **1个模型** — 165 分

@@ -22,7 +22,7 @@ updated: '2026-07-23'
 ## 属性表
 | 模型 | M | T | SV | W | LD | OC |
 |---|---|---|---|---|---|---|
-| Triarch [[factions/基因窃取者教派/units/praetor.md\|Praetor]]ians | 10" | 5 | 3+ | 2 | 7+ | 1 |
+| Triarch Praetorians | 10" | 5 | 3+ | 2 | 7+ | 1 |
 
 ## 射击武器
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |

@@ -19,7 +19,7 @@ updated: '2026-07-23'
 ## 属性表
 | 模型 | M | T | SV | W | LD | OC |
 |---|---|---|---|---|---|---|
-| Stygies Destroyer Tank [[factions/星际战士/units/hunter.md\|Hunter]] | 10" | 11 | 2+ | 13 | 7+ | 3 |
+| Stygies Destroyer Tank Hunter | 10" | 11 | 2+ | 13 | 7+ | 3 |
 
 ## 射击武器
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |

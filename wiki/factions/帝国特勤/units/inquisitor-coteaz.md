@@ -5,7 +5,7 @@ name_en: Inquisitor Coteaz
 faction: 帝国特勤
 type: unit
 points:
-  1 model (<ky>AGENTS OF THE IMPERIUM</ky> Detachment): 75
+  1 model (AGENTS OF THE IMPERIUM Detachment): 75
   1 model (Assigned Agent): 95
   1 model: 75
 tags:
@@ -47,8 +47,8 @@ updated: '2026-07-23'
 - **格罗沃丹灵能雄鹰**：在您的指挥阶段中，您可以选择一个位于持有者18寸内的敌方单位。在您的下一个指挥阶段开始前，那个单位无法获得掩体增益。设计者注：将一个格罗沃丹灵能雄鹰标识放在被选中的单位旁作为提醒。
 
 ## 单位构成
-- **1个模型** — 75 分
-- **1个模型** — 95 分
+- **1个模型 (AGENTS OF THE IMPERIUM Detachment)** — 75 分
+- **1个模型 (Assigned Agent)** — 95 分
 - **1个模型** — 75 分
 
 ## 关键词

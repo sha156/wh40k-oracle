@@ -32,7 +32,7 @@ updated: '2026-07-23'
 | Heavy flamer | 12" | D6 | N/A | 5 | -1 | 1 | ignores cover，torrent |
 | Plasma blaster – standard | 18" | 2 | 3+ | 7 | -2 | 1 | — |
 | Plasma blaster – supercharge | 18" | 2 | 3+ | 8 | -3 | 2 | hazardous |
-| [[factions/黑暗灵族/units/reaper.md\|Reaper]] autocannon | 36" | 4 | 3+ | 7 | -1 | 1 | devastating wounds，[[core-rules/sustained-hits.md\|sustained hits 1]] |
+| Reaper autocannon | 36" | 4 | 3+ | 7 | -1 | 1 | devastating wounds，[[core-rules/sustained-hits.md\|sustained hits 1]] |
 | Volkite charger | 18" | 2 | 3+ | 5 | 0 | 2 | devastating wounds |
 
 ## 近战武器

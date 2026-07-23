@@ -20,7 +20,7 @@ updated: '2026-07-23'
 ## 属性表
 | 模型 | M | T | SV | W | LD | OC |
 |---|---|---|---|---|---|---|
-| Deathwatch [[factions/星际战士/units/terminator-squad-2.md\|Terminator Squad]] | 5" | 5 | 2+ | 3 | 6+ | 1 |
+| Deathwatch Terminator Squad | 5" | 5 | 2+ | 3 | 6+ | 1 |
 
 ### 特殊保护
 - 4+

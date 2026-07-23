@@ -53,4 +53,4 @@ updated: '2026-07-23'
 
 ## 关键词
 - **阵营关键词**：Astra Militarum，Genestealer Cults
-- **普通关键词**：Officer，[[core-rules/character.md|Character]]，Hell’s Last，[[factions/星际战士/units/command-squad.md|Command Squad]]，Imperium，[[core-rules/grenades.md|Grenades]]，[[core-rules/infantry.md|Infantry]]，Platoon
+- **普通关键词**：Officer，[[core-rules/character.md|Character]]，Hell’s Last，Command Squad，Imperium，[[core-rules/grenades.md|Grenades]]，[[core-rules/infantry.md|Infantry]]，Platoon

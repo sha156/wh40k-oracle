@@ -39,7 +39,7 @@ updated: '2026-07-23'
 | Power fist | 近战 | 5 | 2+ | 8 | -2 | 2 | — |
 
 ## 技能
-- **[[factions/太空死灵/units/lord.md|Lord]] of Chaos**：Once per battle round, one unit from your army with this ability can use it when its unit is targeted with a Stratagem. If it does, reduce the CP cost of that use of that Stratagem by 1CP.
+- **Lord of Chaos**：Once per battle round, one unit from your army with this ability can use it when its unit is targeted with a Stratagem. If it does, reduce the CP cost of that use of that Stratagem by 1CP.
 - **Formidably Resilient**：Each time an attack is allocated to this model, halve the Damage characteristic of that attack.
 
 ## 单位构成

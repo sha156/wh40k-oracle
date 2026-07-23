@@ -50,7 +50,7 @@
   再一次性重跑并 diff 对账**（避免混入未审数据重渲染；改动只进 wiki 文件不进 FAISS
   索引，检索侧无影响）。
 
-## F3（MEDIUM，CONFIRMED，仅记录）：武器中文名按 (A,S,AP,D) 侧内配对，碰撞时张冠李戴——89 单位
+## F3（MEDIUM，CONFIRMED，已修复）：武器中文名按 (A,S,AP,D) 侧内配对，碰撞时张冠李戴——89 单位
 
 - **位置**：`from_db.py:44-55`（`_zh_weapons_indices` 同键 last-write-wins）
 - **说明**：同侧两把不同武器侧写完全相同时，中文索引只剩最后一条，官方两行套同一中文
@@ -58,7 +58,7 @@
   数值仍官方，但武器名是翻译层核心交付物。
 - **建议修法**：配对键加入武器名归一比对；同键多值时放弃中文名回退英文并记 drift。
 
-## F4（MEDIUM，CONFIRMED，仅记录）：slug 去重 "-2" 页与 entity_page_path 脱节，索引链错页、去重页全孤儿
+## F4（MEDIUM，CONFIRMED，已修复）：slug 去重 "-2" 页与 entity_page_path 脱节，索引链错页、去重页全孤儿
 
 - **位置**：`from_db.py:268-270`（`used_slugs` 加 -2）vs `models.py:289-293`
   （entity_page_path 无去重概念）
@@ -68,21 +68,21 @@
 - **建议修法**：把实际落盘相对路径写进 frontmatter，或以 id 作确定性去重后缀；
   build/lint 以真实文件路径为链接目标，废弃「从 fm 反推路径」的双源真值。
 
-## F5（MEDIUM，CONFIRMED，仅记录）：`_zh_model_desc` 丢弃档位语境，15 个 AoI 单位渲出同名不同价构成行
+## F5（MEDIUM，CONFIRMED，已修复）：`_zh_model_desc` 丢弃档位语境，15 个 AoI 单位渲出同名不同价构成行
 
 - **位置**：`from_db.py:92-95`（`re.match(r"(\d+)\s*models?")` 前缀命中即整体替换）
 - **说明**：`1 model (Assigned Agent)` 等三种 desc 全塌缩成「1个模型」，读者无法知道
   哪个价对应哪种编制；frontmatter points 键原样泄漏 `<ky>` 标签。
 - **建议修法**：保留括号语境并翻译；frontmatter 键先剥 `<ky>…</ky>`。
 
-## F6（MEDIUM，CONFIRMED，仅记录）：多特殊保护只渲第一个，Ghazghkull 页丢失马卡力 2+ 无敌豁免
+## F6（MEDIUM，CONFIRMED，已修复）：多特殊保护只渲第一个，Ghazghkull 页丢失马卡力 2+ 无敌豁免
 
 - **位置**：`from_db.py:172-174`（`invulns[0]`）
 - **说明**：全库唯一多 invuln 单位 Ghazghkull（4 和 2）只渲 `- 4+`，传奇旗手 2+ 特殊
   保护凭空消失——与官方数据卡不一致的数值内容错误（仅 1 单位，属正确性问题）。
 - **建议修法**：按模型逐行渲染 invuln，或并入属性表。
 
-## F7（MEDIUM，CONFIRMED，仅记录）：build_outputs 是第四处没跟上转义约定的解析器，index.md 表格实际断列
+## F7（MEDIUM，CONFIRMED，已修复）：build_outputs 是第四处没跟上转义约定的解析器，index.md 表格实际断列
 
 - **位置**：`build_outputs.py:46-60,97`（`_extract_summary` 把含 `[[path|显示]]` 的
   正文首段塞进 index.md 表格单元格不转义）
@@ -120,12 +120,31 @@
 |---|---|---|
 | CRITICAL | 0 | — |
 | HIGH | 2 | 均已修复 + 成对测试 |
-| MEDIUM | 5 | 记录在案（F3-F7，数据正确性，待一次性修完全库重刷） |
-| LOW | 4 | 记录在案 |
+| MEDIUM | 5 | **全部已修复 + 成对测试**（F3-F7，全库重跑 diff 对账，实证清零） |
+| LOW | 4 | F9 已随 F7 修复（共用 strip_wikilinks 剥反斜杠）；F8/L3/L4 记录在案 |
+
+## 修复补记（2026-07-23，分支 fix/wiki-data-correctness）
+
+F3-F7 五个 MEDIUM 一并修复，实证全部清零：
+- **F3**：`_zh_weapons_indices` 检测同侧写异名，歧义键删除→回退官方英文名，碰撞记入
+  drift。实证 Custodian Wardens 射击两行渲为 Guardian spear / Castellan axe（不再都套
+  「堡主战斧」）。
+- **F4**：dedup 加 `ORDER BY name_en, id` 确定次序；`WikiPage.source_rel` 记真实扫描
+  路径，build 链接用它而非从 name 反推。实证 repulsor-2.md 有入链、不再孤儿。
+- **F5**：`_zh_model_desc` 保留档位尾串 + `_clean_desc` 剥 `<ky>`；frontmatter points
+  键同步清洗。实证 Vindicare 三档 110/125/110 各带语境不塌缩。
+- **F6**：特殊保护逐模型渲染。实证 Ghazghkull 碎骨者萨拉卡 4+ / 传奇旗手马卡力 2+
+  都在。
+- **F7**：`_extract_summary` 用共用 `strip_wikilinks` 剥链接为纯文本。实证 index.md
+  零断列行。
+- **F9**（LOW）：`_WIKILINK_RE` 加 `\\?` 吸收转义反斜杠 + `strip_wikilinks` rstrip
+  兜底，与 F7 同一处修复。
+- 全库重跑 from_db→crosslinks→build→lint：lint 0 errors，603 页真实内容变更（数据修复
+  + F2 阵营门在产物生效），改动只进 wiki 文件不进 FAISS 索引。
 
 ## 遗留建议
 
-1. F3-F6 数据正确性 + F7-F9 转义统一建议合并一个后续 PR，抽公共 `parse_wikilink()`
-   消灭「多套解析规则」的温床，改完全库重跑 from_db→crosslinks→build→lint 并 diff 对账。
+1. F8（lint --fix 对转义断链 no-op）、L3（canonical.py 非原子下载）、L4（check_drift
+   武器形参已在本次改为只传 models/zstats）后续按需处理。
 2. lint 的 `alias-conflicts` 277 条 warning 大半来自 db 内跨阵营同名单位，建议按「同
    阵营才告警」降噪。

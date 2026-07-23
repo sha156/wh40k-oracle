@@ -19,7 +19,7 @@ updated: '2026-07-23'
 ## 属性表
 | 模型 | M | T | SV | W | LD | OC |
 |---|---|---|---|---|---|---|
-| Winged [[factions/泰伦虫族/units/hive-tyrant.md\|Hive Tyrant]] | 12" | 9 | 2+ | 10 | 7+ | 3 |
+| Winged Hive Tyrant | 12" | 9 | 2+ | 10 | 7+ | 3 |
 
 ### 特殊保护
 - 4+

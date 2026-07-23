@@ -37,7 +37,7 @@ updated: '2026-07-23'
 
 ## 技能
 - **Gargantuan**：Each time this model makes a Normal, Advance or Fall Back move, it can move over models (excluding <span class="kwb">TITANIC</span> models) and terrain features that are 4" or less in height as if they were not there.
-- **Walking [[factions/无阵营工事/units/bastion.md|Bastion]]**：This model does not suffer the penalty to its Hit rolls for making ranged attacks while enemy units are within Engagement Range of it.
+- **Walking Bastion**：This model does not suffer the penalty to its Hit rolls for making ranged attacks while enemy units are within Engagement Range of it.
 
 ## 单位构成
 - **1个模型** — 440 分

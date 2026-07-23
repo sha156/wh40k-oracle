@@ -27,8 +27,8 @@ updated: '2026-07-23'
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
 | 伐木枪 | 24" | 3 | 4+ | 4 | 0 | 1 | [[core-rules/rapid-fire.md\|速射3]] |
-| 激光枪 | 24" | 1 | 4+ | 3 | 0 | 1 | [[core-rules/assault.md\|突击]]，[[core-rules/rapid-fire.md\|速射1]] |
-| 激光枪 | 12" | 1 | 4+ | 3 | 0 | 1 | [[core-rules/assault.md\|突击]]，[[core-rules/rapid-fire.md\|速射1]] |
+| Lasgun | 24" | 1 | 4+ | 3 | 0 | 1 | assault，[[core-rules/rapid-fire.md\|rapid fire 1]] |
+| Laspistol | 12" | 1 | 4+ | 3 | 0 | 1 | pistol |
 | 狙击步枪 | 36" | 1 | 4+ | 4 | -2 | 2 | [[core-rules/heavy.md\|重型]]，[[core-rules/precision.md\|精准]] |
 | 热熔枪 | 12" | 1 | 4+ | 9 | -4 | D6 | [[core-rules/melta.md\|热熔2]] |
 | 导弹发射器-破片 | 48" | D6 | 5+ | 4 | 0 | 1 | [[core-rules/blast.md\|爆炸]]，[[core-rules/heavy.md\|重型]] |

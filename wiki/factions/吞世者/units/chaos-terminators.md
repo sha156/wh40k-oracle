@@ -22,7 +22,7 @@ updated: '2026-07-23'
 ## 属性表
 | 模型 | M | T | SV | W | LD | OC |
 |---|---|---|---|---|---|---|
-| 帝皇之子[[factions/混沌星际战士/units/chaos-terminator-squad.md\|混沌终结者]] | 7" | 5 | 2+ | 3 | 6+ | 1 |
+| 帝皇之子混沌终结者 | 7" | 5 | 2+ | 3 | 6+ | 1 |
 
 ### 特殊保护
 - 4+
@@ -41,7 +41,7 @@ updated: '2026-07-23'
 | 诅咒武器 | 近战 | 4 | 3+ | 5 | -2 | 1 | — |
 | Chainfist | 近战 | 3 | 4+ | 8 | -3 | 2 | [[core-rules/anti.md\|anti-vehicle 3+]] |
 | 成对诅咒武器 | 近战 | 5 | 3+ | 5 | -2 | 1 | [[core-rules/twin-linked.md\|双联]] |
-| 动力拳 | 近战 | 3 | 3+ | 8 | -2 | 2 | — |
+| Power fist | 近战 | 3 | 3+ | 8 | -2 | 2 | — |
 
 ## 技能
 - **【阵营技能】：嗜欲恶徒**
@@ -53,4 +53,4 @@ updated: '2026-07-23'
 
 ## 关键词
 - **阵营关键词**：World Eaters
-- **普通关键词**：Terminator，[[factions/星际战士/units/terminator-squad-2.md|Terminator Squad]]，Chaos，Khorne，[[core-rules/infantry.md|Infantry]]
+- **普通关键词**：Terminator，Terminator Squad，Chaos，Khorne，[[core-rules/infantry.md|Infantry]]

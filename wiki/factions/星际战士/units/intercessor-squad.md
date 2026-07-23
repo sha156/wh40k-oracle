@@ -40,9 +40,9 @@ updated: '2026-07-23'
 |---|---|---|---|---|---|---|---|
 | Astartes chainsword | 近战 | 5 | 3+ | 4 | -1 | 1 | — |
 | 格斗武器   | 近战 | 3 | 3+ | 4 | 0 | 1 | — |
-| 雷霆锤 | 近战 | 3 | 3+ | 8 | -2 | 2 | [[core-rules/devastating-wounds.md\|毁灭伤害]] |
+| Power fist | 近战 | 3 | 3+ | 8 | -2 | 2 | — |
 | 动力武器  | 近战 | 4 | 3+ | 5 | -2 | 1 | — |
-| 雷霆锤 | 近战 | 3 | 4+ | 8 | -2 | 2 | [[core-rules/devastating-wounds.md\|毁灭伤害]] |
+| Thunder hammer | 近战 | 3 | 4+ | 8 | -2 | 2 | devastating wounds |
 
 ## 技能
 - **【阵营技能】：破敌重誓**

@@ -32,7 +32,7 @@ updated: '2026-07-23'
 | Putrid appendages | 近战 | 6 | 4+ | 6 | -1 | 2 | devastating wounds |
 
 ## 技能
-- **Grotesque Regeneration**：At the end of each phase, if a [[factions/死亡守卫/units/beasts-of-nurgle.md|Beasts of Nurgle]] model in this unit has lost any wounds but is not destroyed, that model regains all of its lost wounds.
+- **Grotesque Regeneration**：At the end of each phase, if a Beasts of Nurgle model in this unit has lost any wounds but is not destroyed, that model regains all of its lost wounds.
 
 ## 单位构成
 - **1个模型** — 75 分

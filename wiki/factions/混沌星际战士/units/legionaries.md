@@ -31,16 +31,16 @@ updated: '2026-07-23'
 | Bolt pistol | 12" | 1 | 3+ | 4 | 0 | 1 | pistol |
 | 爆弹枪  | 24" | 2 | 3+ | 4 | 0 | 1 | — |
 | 喷火器   | 12" | D6 | N/A | 4 | 0 | 1 | [[core-rules/ignores-cover.md\|忽视掩体]]，[[core-rules/torrent.md\|喷射]] |
-| [[factions/混沌星际战士/units/havocs.md\|浩劫]]自动炮   | 48" | 2 | 4+ | 9 | -1 | 3 | — |
+| 浩劫自动炮   | 48" | 2 | 4+ | 9 | -1 | 3 | — |
 | 重型爆弹枪 | 36" | 3 | 4+ | 5 | -1 | 2 | [[core-rules/heavy.md\|重型]]，[[core-rules/sustained-hits.md\|连击 1]] |
 | Meltagun | 12" | 1 | 3+ | 9 | -4 | D6 | [[core-rules/melta.md\|melta 2]] |
 | 激光炮       | 48" | 1 | 4+ | 12 | -3 | D6+1 | [[core-rules/heavy.md\|重型]] |
 | 喷火器   | 48" | D6 | 4+ | 4 | 0 | 1 | [[core-rules/ignores-cover.md\|忽视掩体]]，[[core-rules/torrent.md\|喷射]] |
 | 导弹发射器（穿甲） | 48" | 1 | 4+ | 9 | -2 | D6 | [[core-rules/heavy.md\|重型]] |
-| 等离子手枪（标准） | 24" | 1 | 3+ | 7 | -2 | 1 | [[core-rules/pistol.md\|手枪]] |
-| 等离子手枪（过载） | 24" | 1 | 3+ | 8 | -3 | 2 | [[core-rules/pistol.md\|手枪]]，[[core-rules/hazardous.md\|危险]] |
-| 等离子手枪（标准） | 12" | 1 | 3+ | 7 | -2 | 1 | [[core-rules/pistol.md\|手枪]] |
-| 等离子手枪（过载） | 12" | 1 | 3+ | 8 | -3 | 2 | [[core-rules/pistol.md\|手枪]]，[[core-rules/hazardous.md\|危险]] |
+| Plasma gun – standard | 24" | 1 | 3+ | 7 | -2 | 1 | [[core-rules/rapid-fire.md\|RAPID FIRE 1]] |
+| Plasma gun – supercharge | 24" | 1 | 3+ | 8 | -3 | 2 | [[core-rules/hazardous.md\|HAZARDOUS]]，[[core-rules/rapid-fire.md\|RAPID FIRE 1]] |
+| Plasma pistol – standard | 12" | 1 | 3+ | 7 | -2 | 1 | pistol |
+| Plasma pistol – supercharge | 12" | 1 | 3+ | 8 | -3 | 2 | hazardous，pistol |
 | 收割者加特林   | 24" | 8 | 4+ | 5 | 0 | 1 | [[core-rules/heavy.md\|重型]] |
 
 ## 近战武器

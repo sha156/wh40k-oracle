@@ -26,7 +26,7 @@ updated: '2026-07-23'
 |---|---|---|---|---|---|---|---|
 | Venator neutron laser | 48" | 3 | 3+ | 16 | -4 | D3+3 | heavy |
 | Lascannon | 48" | 1 | 3+ | 12 | -3 | D6+1 | — |
-| [[factions/星际战士/units/hunter.md\|Hunter]]-killer missile | 48" | 1 | 2+ | 14 | -3 | D6 | one shot |
+| Hunter-killer missile | 48" | 1 | 2+ | 14 | -3 | D6 | one shot |
 | Storm bolter | 24" | 2 | 3+ | 4 | 0 | 1 | [[core-rules/rapid-fire.md\|rapid fire 2]] |
 | Heavy bolter | 36" | 3 | 3+ | 5 | -1 | 2 | [[core-rules/sustained-hits.md\|sustained hits 1]] |
 

@@ -129,6 +129,9 @@ class WikiPage:
     """完整 wiki 实体页：frontmatter + Markdown body。"""
     fm: WikiPageFrontmatter
     body: str                          # Markdown 正文（不含 frontmatter 外围 ---）
+    # 扫描来源的真实相对路径（"/"分隔，含 .md）。build/lint 用它作链接目标而非从 name
+    # 反推——反推推不出 slug 去重的 -N 后缀，会把索引链到错页、去重页成孤儿（模块 6 F4）。
+    source_rel: Optional[str] = None
 
     def to_markdown(self) -> str:
         """渲染为文件就绪的 .md 文本。"""

@@ -20,7 +20,7 @@ updated: '2026-07-23'
 ## 属性表
 | 模型 | M | T | SV | W | LD | OC |
 |---|---|---|---|---|---|---|
-| Veteran [[factions/星际战士/units/bike-squad.md\|Bike Squad]] | 12" | 5 | 3+ | 3 | 6+ | 2 |
+| Veteran Bike Squad | 12" | 5 | 3+ | 3 | 6+ | 2 |
 
 ## 射击武器
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |

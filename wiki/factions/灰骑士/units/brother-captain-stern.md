@@ -43,4 +43,4 @@ updated: '2026-07-23'
 
 ## 关键词
 - **阵营关键词**：Grey Knights
-- **普通关键词**：[[core-rules/psyker.md|Psyker]]，Imperium，Terminator，Brother-[[factions/星际战士/units/captain.md|Captain]] Stern，[[core-rules/character.md|Character]]，[[core-rules/infantry.md|Infantry]]，[[core-rules/epic-hero.md|Epic Hero]]
+- **普通关键词**：[[core-rules/psyker.md|Psyker]]，Imperium，Terminator，Brother-Captain Stern，[[core-rules/character.md|Character]]，[[core-rules/infantry.md|Infantry]]，[[core-rules/epic-hero.md|Epic Hero]]

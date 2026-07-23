@@ -20,7 +20,7 @@ updated: '2026-07-23'
 ## 属性表
 | 模型 | M | T | SV | W | LD | OC |
 |---|---|---|---|---|---|---|
-| Chaos [[factions/星际战士/units/land-raider.md\|Land Raider]] | 10" | 12 | 2+ | 16 | 6+ | 5 |
+| Chaos Land Raider | 10" | 12 | 2+ | 16 | 6+ | 5 |
 
 ## 射击武器
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
@@ -44,4 +44,4 @@ updated: '2026-07-23'
 
 ## 关键词
 - **阵营关键词**：Thousand Sons
-- **普通关键词**：Vehicle，Land [[factions/黑暗灵族/units/raider.md|Raider]]，Tzeentch，Chaos，[[core-rules/smoke.md|Smoke]]，[[core-rules/transport.md|Transport]]
+- **普通关键词**：Vehicle，Land Raider，Tzeentch，Chaos，[[core-rules/smoke.md|Smoke]]，[[core-rules/transport.md|Transport]]

@@ -30,8 +30,8 @@ updated: '2026-07-23'
 ## 射击武器
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| 灵魂漩涡 | 12" | D6 | N/A | 5 | -1 | 1 | [[core-rules/blast.md\|爆炸]]，[[core-rules/ignores-cover.md\|无视掩体]] |
-| 灵魂漩涡 | 18" | D6 | 3+ | 5 | -1 | 1 | [[core-rules/blast.md\|爆炸]]，[[core-rules/ignores-cover.md\|无视掩体]] |
+| Spirit syphon | 12" | D6 | N/A | 5 | -1 | 1 | ignores cover，torrent |
+| Spirit vortex | 18" | D6 | 3+ | 5 | -1 | 1 | blast，ignores cover |
 
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |

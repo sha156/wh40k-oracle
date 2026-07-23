@@ -20,7 +20,7 @@ updated: '2026-07-23'
 ## 属性表
 | 模型 | M | T | SV | W | LD | OC |
 |---|---|---|---|---|---|---|
-| 死神军[[factions/帝皇之子/units/daemonettes.md\|魅魔]] | 8" | 3 | 6+ | 4 | 6+ | 1 |
+| 死神军魅魔 | 8" | 3 | 6+ | 4 | 6+ | 1 |
 
 ### 特殊保护
 - 4+
@@ -34,7 +34,7 @@ updated: '2026-07-23'
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| [[factions/黑暗灵族/units/succubus.md\|Succubus]] weapons | 近战 | 6 | 2+ | 3 | -2 | 1 | [[core-rules/anti.md\|anti-infantry 3+]] |
+| Succubus weapons | 近战 | 6 | 2+ | 3 | -2 | 1 | [[core-rules/anti.md\|anti-infantry 3+]] |
 
 ## 技能
 - **【阵营技能】：战斗专注，殊途同归**

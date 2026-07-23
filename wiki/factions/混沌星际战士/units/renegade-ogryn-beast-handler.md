@@ -30,7 +30,7 @@ updated: '2026-07-23'
 | Mauler goad and ripper claw | 近战 | 4 | 3+ | 6 | -1 | 2 | — |
 
 ## 技能
-- **[[factions/黑暗灵族/units/beastmaster.md|Beastmaster]]**：While this unit contains an Ogryn Pack Master model, you can re-roll Charge rolls made for this unit, and each time a Chaos Mauler Hound model in this unit makes an attack, re-roll a Hit roll of 1.
+- **Beastmaster**：While this unit contains an Ogryn Pack Master model, you can re-roll Charge rolls made for this unit, and each time a Chaos Mauler Hound model in this unit makes an attack, re-roll a Hit roll of 1.
 
 ## 单位构成
 - **4个模型** — 40 分

@@ -27,7 +27,7 @@ updated: '2026-07-23'
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
 | 挂载爆裂速射炮 | 18" | 4 | 4+ | 6 | -1 | 1 | — |
-| [[factions/帝皇之子/units/seekers.md\|寻觅者]]导弹 | 48" | 1 | 4+ | 14 | -3 | D6+1 | [[core-rules/one-shot.md\|一次性]] |
+| 寻觅者导弹 | 48" | 1 | 4+ | 14 | -3 | D6+1 | [[core-rules/one-shot.md\|一次性]] |
 | 并联脉冲卡宾 | 20" | 2 | 4+ | 5 | 0 | 1 | [[core-rules/assault.md\|突击]]，[[core-rules/twin-linked.md\|双联]] |
 | 智能导弹系统 | 30" | 3 | 4+ | 5 | 0 | 1 | [[core-rules/indirect-fire.md\|曲射]] |
 

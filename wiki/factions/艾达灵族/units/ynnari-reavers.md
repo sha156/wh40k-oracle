@@ -21,7 +21,7 @@ updated: '2026-07-23'
 ## 属性表
 | 模型 | M | T | SV | W | LD | OC |
 |---|---|---|---|---|---|---|
-| 死神军[[factions/黑暗灵族/units/reavers.md\|劫掠者]] | 16" | 4 | 4+ | 2 | 6+ | 2 |
+| 死神军劫掠者 | 16" | 4 | 4+ | 2 | 6+ | 2 |
 
 ### 特殊保护
 - 6+
@@ -50,4 +50,4 @@ updated: '2026-07-23'
 
 ## 关键词
 - **阵营关键词**：Ynnari
-- **普通关键词**：[[factions/黑暗灵族/units/reavers.md|Reavers]]，Aeldari，[[core-rules/mounted.md|Mounted]]，Fly
+- **普通关键词**：Reavers，Aeldari，[[core-rules/mounted.md|Mounted]]，Fly
