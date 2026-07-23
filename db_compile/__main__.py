@@ -29,6 +29,8 @@ def main() -> None:
 
     m = sub.add_parser("mfm", help="官方 MFM 分数：抓取/比对/应用（官方为最高真源）")
     m.add_argument("--fetch", action="store_true", help="联网抓全部阵营页（需代理）")
+    m.add_argument("--force", action="store_true",
+                   help="跳过 fetch 的新旧缓存行数对账（仅限人工核实官网真删减后）")
     m.add_argument("--slug", default=None, help="只补抓指定阵营（如 imperial-agents），合并进 JSON")
     m.add_argument("--check", action="store_true", help="与 units.points_json 比对出过期报告")
     m.add_argument("--apply", action="store_true", help="把 MFM 分数应用进 units.points_json")
@@ -160,7 +162,7 @@ def main() -> None:
         json_path = Path(args.json)
         if args.fetch:
             print("抓取官方 MFM 全部阵营页…")
-            fetch_all(json_path)
+            fetch_all(json_path, force=args.force)
             print(f"写入 {json_path}")
         if args.slug:
             rows = fetch_faction(args.slug)
@@ -194,6 +196,9 @@ def main() -> None:
             print(f"  可比条目 {rep['compared']}  |  一致 {rep['agree']} ({pct}%)  |  "
                   f"过期 {len(rep['diffs'])}  |  MFM 有库里无 {len(rep['mfm_only'])}  |  "
                   f"梯度计价单位 {len(rep.get('tiered_units', []))}")
+            if rep.get("db_unparsed"):
+                print(f"  ⚠️ {len(rep['db_unparsed'])} 个单位 points_json NULL/损坏"
+                      f"未参与对账: {', '.join(rep['db_unparsed'][:10])}")
             if rep["diffs"]:
                 print("\n  过期分数（官方 MFM 为准）：")
                 for d in rep["diffs"][:40]:

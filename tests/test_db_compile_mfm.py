@@ -3,6 +3,8 @@
 import json
 import sqlite3
 
+import pytest
+
 from db_compile.mfm import check_points, is_base_tier, parse_mfm_html
 
 # 模拟 MFM 阵营页：RSC 占位符回填 + 2026 梯度点数（同一单位第 N 份价格不同）
@@ -379,6 +381,78 @@ class TestFetchAll:
         assert data["necrons"] == []  # 失败降级为空行
         saved = json.loads(out.read_text(encoding="utf-8"))
         assert saved["failed"] == ["necrons"]
+
+
+class TestCheckPointsUnparsed:
+    """gnhf 审查模块 4 H1 配套：points_json NULL/损坏的行不许从对账口径无声蒸发。"""
+
+    def test_null_points_json_reported_not_swallowed(self, tmp_path):
+        db = tmp_path / "wh40k.sqlite"
+        conn = sqlite3.connect(str(db))
+        conn.execute(
+            "CREATE TABLE units(id TEXT,faction_id TEXT,name_en TEXT,name_zh TEXT,"
+            "points_json TEXT,keywords_json TEXT,version TEXT)")
+        # fp_errata 新插单位重建后 points_json=NULL 的形态
+        conn.execute(
+            "INSERT INTO units VALUES('1','ORK','Bigboss',NULL,NULL,NULL,NULL)")
+        conn.execute(
+            "INSERT INTO units VALUES('2','ORK','Warboss',NULL,?,NULL,NULL)",
+            (json.dumps({"points": 65, "items": [
+                {"line": "1", "desc": "1 model", "cost": 65}]}),))
+        conn.commit(); conn.close()
+        rep = check_points(db, {"orks": [
+            ("BIGBOSS", "YOUR UNIT COSTS", "1 model", 55),
+            ("WARBOSS", "YOUR UNIT COSTS", "1 model", 65)]})
+        # NULL 行进 db_unparsed 桶（此前裸 continue：不进 compared/diffs/mfm_only）
+        assert rep["db_unparsed"] == ["Bigboss"]
+        assert "BIGBOSS" not in rep["mfm_only"]
+        # 负向成对：健康行不受影响，正常参与对账
+        assert rep["compared"] == 1 and rep["agree"] == 1
+
+
+class TestFetchRegressionGuard:
+    """gnhf 审查模块 4 H2 配套：fetch 写盘前与旧缓存对账，系统性掉行拒绝覆盖
+    （2026-07-22 官网改版事故的护栏从复盘记忆落进代码）。"""
+
+    def _wire(self, monkeypatch, new_rows):
+        import db_compile.mfm as mfm
+        home = '<a href="/en/orks">o</a>'
+        monkeypatch.setattr(mfm, "_fetch", lambda url, timeout=40: home)
+        monkeypatch.setattr(mfm, "fetch_faction",
+                            lambda slug, max_retries=3: list(new_rows))
+        monkeypatch.setattr(mfm.time, "sleep", lambda s: None)
+        return mfm
+
+    def _old_cache(self, tmp_path, n):
+        out = tmp_path / "mfm.json"
+        rows = [["YOUR UNIT COSTS", f"u{i}", "1 model", 10] for i in range(n)]
+        out.write_text(json.dumps({"factions": {"orks": rows}}),
+                       encoding="utf-8")
+        return out
+
+    def test_systematic_drop_refuses_overwrite(self, tmp_path, monkeypatch):
+        # 旧缓存 20 行 → 新抓只剩 2 行（掉 90%）= 解析器断裂形态 → raise 且旧缓存保住
+        mfm = self._wire(monkeypatch, [("YOUR UNIT COSTS", "x", "1 model", 10)] * 2)
+        out = self._old_cache(tmp_path, 20)
+        before = out.read_text(encoding="utf-8")
+        with pytest.raises(RuntimeError, match="拒绝覆盖"):
+            mfm.fetch_all(out, sleep_s=0, max_retries=1)
+        assert out.read_text(encoding="utf-8") == before  # 好缓存未被清
+
+    def test_force_overwrites_after_manual_confirmation(self, tmp_path, monkeypatch):
+        mfm = self._wire(monkeypatch, [("YOUR UNIT COSTS", "x", "1 model", 10)] * 2)
+        out = self._old_cache(tmp_path, 20)
+        mfm.fetch_all(out, sleep_s=0, max_retries=1, force=True)
+        saved = json.loads(out.read_text(encoding="utf-8"))
+        assert len(saved["factions"]["orks"]) == 2  # 显式 --force 才允许覆盖
+
+    def test_small_fluctuation_passes(self, tmp_path, monkeypatch):
+        # 负向成对：小幅波动（20→18，掉 10% 未过阈）正常写盘，不误伤日常刷新
+        mfm = self._wire(monkeypatch, [("YOUR UNIT COSTS", "x", "1 model", 10)] * 18)
+        out = self._old_cache(tmp_path, 20)
+        mfm.fetch_all(out, sleep_s=0, max_retries=1)
+        saved = json.loads(out.read_text(encoding="utf-8"))
+        assert len(saved["factions"]["orks"]) == 18
 
 
 class TestApplyPoints:

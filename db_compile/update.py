@@ -349,6 +349,12 @@ def stage_crosscheck(cfg: UpdateConfig) -> StageResult:
         if rep.skipped_files else None)
 
 
+# 「可比条数」健康下限：正常全库对账约 1200+ 条，跌破即怀疑解析器断裂/缓存被清空，
+# 此时 diffs 为空是「没得比」而非「已对齐」——禁止据此报捷（gnhf 审查模块 4 H2：
+# 构造全空缓存曾得到「可比 0（已完全对齐官方）」的全绿谎言）。
+_MFM_MIN_COMPARED = 1000
+
+
 def stage_mfm_check(cfg: UpdateConfig) -> StageResult:
     """只读：验证 apply 后库内分数已收敛到官方 MFM。"""
     if not cfg.mfm_json.exists():
@@ -357,14 +363,25 @@ def stage_mfm_check(cfg: UpdateConfig) -> StageResult:
     factions, _ = _load_mfm_factions(cfg.mfm_json)
     rep = check_points(cfg.db, factions)
     pct = round(rep["agree"] / rep["compared"] * 100, 1) if rep["compared"] else 0
-    ok = len(rep["diffs"]) == 0
+    unparsed = rep.get("db_unparsed") or []
+    too_few = rep["compared"] < _MFM_MIN_COMPARED
+    ok = len(rep["diffs"]) == 0 and not too_few and not unparsed
+    warnings = []
+    if rep["diffs"]:
+        warnings.append(f"{len(rep['diffs'])} 条分数未收敛到官方")
+    if too_few:
+        warnings.append(f"可比条数异常低（{rep['compared']} < {_MFM_MIN_COMPARED}）："
+                        "解析器可能已断或缓存被清，不能据此判定对齐")
+    if unparsed:
+        warnings.append(f"{len(unparsed)} 个单位 points_json 为 NULL/损坏未参与对账"
+                        f"（如 {', '.join(unparsed[:3])}），需查层序/补丁")
     return StageResult(
         "mfm_check", True,
         f"可比 {rep['compared']}，一致 {rep['agree']} ({pct}%)，过期 {len(rep['diffs'])}"
-        + ("（已完全对齐官方）" if ok else "（仍有过期，检查 apply）"),
+        + ("（已完全对齐官方）" if ok else "（未确认对齐，见 warning）"),
         detail={"compared": rep["compared"], "agree": rep["agree"],
-                "diffs": rep["diffs"]},
-        warning=None if ok else f"{len(rep['diffs'])} 条分数未收敛到官方")
+                "diffs": rep["diffs"], "db_unparsed": unparsed},
+        warning="；".join(warnings) if warnings else None)
 
 
 def stage_downloads_check(cfg: UpdateConfig) -> StageResult:
@@ -398,8 +415,11 @@ _PIPELINE = [
     ("BSData git pull", stage_bsdata_pull, False),
     ("MFM 抓取（官方现行分数）", stage_mfm_fetch, False),
     ("重建整库（Wahapedia CSV → sqlite）", stage_build, True),
-    ("应用官方 MFM 分数", stage_mfm_apply, False),
+    # fp_errata 必须先于 mfm_apply：它插入的 11 版新单位（fpe_* 兽人三件）
+    # points_json 为 NULL，靠随后的 mfm_apply 定价。反过来跑，每次重建后这些
+    # 单位点数归 NULL 且三道校验全静默（gnhf 审查模块 4 H1，DB 副本复现）。
     ("补 Faction Pack 11 版真漂移", stage_fp_errata, False),
+    ("应用官方 MFM 分数", stage_mfm_apply, False),
     ("补 Faction Pack 规则文本真漂移", stage_fp_rules, False),
     ("投影 P7 DSL 真源", stage_dsl_apply, False),
     ("重灌中文别名层", stage_aliases, False),
@@ -415,8 +435,9 @@ _PIPELINE = [
 # build 会 unlink 重建整库，清掉官方 MFM 分数/别名/中文层。这些恢复阶段用本地缓存把它们
 # 补回来（离线可跑），是「单独 build 后必须补跑」的那批（_PIPELINE 的 4-9 阶段）。
 _RESTORE_STAGES = [
-    ("应用官方 MFM 分数", stage_mfm_apply),
+    # 层序与 _PIPELINE 一致：fp_errata 先插 fpe_* 新单位，mfm_apply 再定价
     ("补 Faction Pack 11 版真漂移", stage_fp_errata),
+    ("应用官方 MFM 分数", stage_mfm_apply),
     ("补 Faction Pack 规则文本真漂移", stage_fp_rules),
     ("投影 P7 DSL 真源", stage_dsl_apply),
     ("重灌中文别名层", stage_aliases),
