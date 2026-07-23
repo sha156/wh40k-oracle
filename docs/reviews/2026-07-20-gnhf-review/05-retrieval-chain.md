@@ -59,7 +59,11 @@
 - **建议修法**：去重键改整段内容哈希（md5）或 docstore id；修后把碰撞检查固化成
   pytest（全库同键组数 == 0）。
 
-## MEDIUM-3（CONFIRMED，仅记录）：Agent 工具 validate_roster / critique_roster 仍打桩「未建模，计划于 P6 实现」——P6 已于 2026-07-14 上线
+## MEDIUM-3（CONFIRMED，已修复 2026-07-24）：Agent 工具 validate_roster / critique_roster 仍打桩「未建模，计划于 P6 实现」——P6 已于 2026-07-14 上线
+
+> 追记：文案改为如实说明「聊天侧文本解析未建模（P6-PR1c 待真实样本）」并引导到军表
+> 实验室页签；TOOL_SPECS 同步。测试 `test_roster_stub_note_is_current`。薄封装接线
+> 待 PR1c 文本解析落地后再做（自由文本 → 结构化 Roster 缺可靠解析层，硬接会瞎猜）。
 
 - **位置**：`agent/tools.py:616-621`；对照 `web_api/roster.py`（真实接线）
 - **失效场景**：聊天页贴军表问「帮我验一下」→ 得到「未建模，计划于 P6 实现」——系统对
@@ -67,7 +71,11 @@
   永远无人调用。
 - **建议修法**：薄封装 `engines.roster` 或至少改 note 为「请使用军表实验室页签」。
 
-## MEDIUM-4（CONFIRMED，仅记录）：get_datasheet 按 canonical id 查询实际查不到，参数名与 docstring 承诺失真
+## MEDIUM-4（CONFIRMED，已修复 2026-07-24）：get_datasheet 按 canonical id 查询实际查不到，参数名与 docstring 承诺失真
+
+> 追记：find_datasheet 开头加纯数字 id 直查分支（lookup_datasheet 接线）；机械复现
+> `get_datasheet("000000882")` found=True（Custodian Guard）。测试
+> `test_find_by_canonical_id` + `test_find_by_unknown_id_returns_none`（成对）。
 
 - **位置**：`agent/tools.py:171-179`；根因 `db_compile/datasheet.py:186-216`
   （find_datasheet 无 `units.id` 直查分支）

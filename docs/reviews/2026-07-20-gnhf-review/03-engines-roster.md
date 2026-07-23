@@ -38,7 +38,10 @@
   / 卸下强化合法，成对）、`test_enhancement_unpriced_surfaced_not_counted`（拿不到价
   → warn 且不计入）。web_api 侧 `test_validate_legal_and_camelcase` 同步 160。
 
-## F2（MEDIUM，PLAUSIBLE，仅记录）：Rule of Three 的 BATTLELINE/DT 豁免写成「无上限」，违背设计文档「不确定则 warn」裁决
+## F2（MEDIUM，PLAUSIBLE，已修复 2026-07-24）：Rule of Three 的 BATTLELINE/DT 豁免写成「无上限」，违背设计文档「不确定则 warn」裁决
+
+> 追记：豁免且 >3 份 → `rot_exempt_uncapped` surfaced warn（validate ④），上限查证
+> 前不再静默豁免；测试 `test_rot_exempt_over_three_surfaced_not_silent`（一正一负）。
 
 - **位置**：`engines/roster/compose_rules.py:87-98`
 - **说明**：设计文档写「battleline / dedicated transport 例外，上限更高」（非无上限），
@@ -49,7 +52,11 @@
 - **建议修法**：查证 11 版官方 App/Wahapedia 编制规则后写常量；查证前对超 3 份发
   surfaced_only warn「豁免上限未查证」。
 
-## F3（MEDIUM，CONFIRMED，仅记录）：未知 canonical_id 被编造成事实性 ERROR 断言，违反诚实降级红线
+## F3（MEDIUM，CONFIRMED，已修复 2026-07-24）：未知 canonical_id 被编造成事实性 ERROR 断言，违反诚实降级红线
+
+> 追记：`unit_keywords_bulk` 不再为未知 id 补空集；validate 发 `unit_not_found`
+> surfaced warn 并跳过 warlord 资格/RoT/强化 CHARACTER/档位归因等编造断言。测试
+> `test_unknown_unit_honest_degradation` + `test_unknown_unit_does_not_suppress_known_unit_checks`。
 
 - **位置**：`engines/roster/validate.py`（warlord/强化关键词断言）+
   `compose_rules.py:63`（unit_keywords_bulk 对查不到的 id 补空集）
@@ -66,7 +73,10 @@
 - **建议修法**：最低成本加固定 surfaced_only info「阵营/分队归属未校验」；正解按
   `units.faction_id` 比对发 ERROR。
 
-## F5（LOW，CONFIRMED，仅记录）：非法 loadout 静默清空后，critique 误报「未指定 loadout」
+## F5（LOW，CONFIRMED，已修复 2026-07-24）：非法 loadout 静默清空后，critique 误报「未指定 loadout」
+
+> 追记：web_api critique_roster 按输入侧事实改写 note（「非法已丢弃」vs「未指定」），
+> 引擎契约不动；测试 `test_critique_discarded_loadout_note_not_misattributed`（成对）。
 
 - `_to_loadout` 任一项非法 → 整体 `()`，critique note 却说「未指定 loadout」——用户明明
   填了，归因被带偏。正常前端路径不触发。
@@ -77,7 +87,7 @@
 - 与模块 7 HIGH-1 同根因，已由 `RosterIn.units max_length=60` + models/loadout 封顶
   一并堵上（commit 见模块 7）。
 
-## F7（LOW，CONFIRMED，仅记录）：agent 工具层军表 stub 文案过期（「计划于 P6 实现」）
+## F7（LOW，CONFIRMED，已修复 2026-07-24）：agent 工具层军表 stub 文案过期（「计划于 P6 实现」）
 
 - 与模块 5 MEDIUM-3 同一发现，见该报告。
 

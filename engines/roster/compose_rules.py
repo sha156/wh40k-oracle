@@ -58,12 +58,15 @@ def _parse_keywords(kj) -> Set[str]:
 
 
 def unit_keywords_bulk(db_path, ids) -> Dict[str, Set[str]]:
-    """一次查多个单位的关键词 → {id: set}（避免验表按单位 N+1 连库）。查不到补空集。"""
-    ids = list(ids)
-    out: Dict[str, Set[str]] = {i: set() for i in ids}
+    """一次查多个单位的关键词 → {id: set}（避免验表按单位 N+1 连库）。
+
+    查不到的 id **不出现在返回里**——调用方以此区分「单位不在库」与「有单位但无
+    关键词」。原先给未知 id 补空集，会让 validate 对不存在的单位编造「非 CHARACTER」
+    「模型数不在档位内」等事实性断言（gnhf 审查模块 3 F3，诚实降级红线）。
+    """
     uniq = list(set(ids))
     if not uniq:
-        return out
+        return {}
     conn = sqlite3.connect(str(db_path))
     try:
         ph = ",".join("?" * len(uniq))
@@ -71,9 +74,7 @@ def unit_keywords_bulk(db_path, ids) -> Dict[str, Set[str]]:
             f"SELECT id, keywords_json FROM units WHERE id IN ({ph})", uniq).fetchall()
     finally:
         conn.close()
-    for uid, kj in rows:
-        out[uid] = _parse_keywords(kj)
-    return out
+    return {uid: _parse_keywords(kj) for uid, kj in rows}
 
 
 def is_character(kw: Set[str]) -> bool:

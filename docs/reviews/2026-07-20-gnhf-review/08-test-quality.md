@@ -12,7 +12,11 @@
 
 ---
 
-## F1（MEDIUM，CONFIRMED，仅记录）：早期阵营（PR4-PR25 中 21 文件）门控载荷条目缺任何回归锚——198/524 条零测试引用
+## F1（MEDIUM，CONFIRMED，已修复 2026-07-24）：早期阵营（PR4-PR25 中 21 文件）门控载荷条目缺任何回归锚——198/524 条零测试引用
+
+> 追记：按本报告建议落全局结构锚——`scripts/gen_dsl_condition_anchor.py` 快照 524 条
+> 门控条目到 `tests/data/dsl_condition_anchor.json`，`tests/test_dsl_condition_anchor.py`
+> 双向对账（删门/加门/换相位均检出，F2 一并消掉）。
 
 - **位置**：`test_simulator_dsl_pr4_payload.py`~`pr21`、`pr23`~`pr25`（逐 id condition
   钉死断言计数全 0）；对照 pr22/pr26-pr31 各有逐 id `tuple(f.condition) == (...)`。
@@ -25,7 +29,7 @@
 - **建议修法**：一个全局结构锚测试——遍历 `dsl_payloads/*.json` 把 `(faction, id) →
   sorted(condition tuples)` 快照锁进 checked-in JSON 清单，改动须显式更新清单。
 
-## F2（MEDIUM，CONFIRMED，仅记录）：43 条相位门条目「双保险全缺」
+## F2（MEDIUM，CONFIRMED，已修复 2026-07-24，随 F1 全局结构锚一并消掉）：43 条相位门条目「双保险全缺」
 
 - **机械口径**（三层对抗过滤后）：411 条 phase 门中，108 双向成对、86 单向，剔除错相位
   物理惰性的 23 条 + 所在文件有结构钉死的，剩 43 条「行为测试只有正向 + 无结构钉死 +

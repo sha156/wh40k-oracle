@@ -378,6 +378,15 @@ class TestUnmodeledToolsHonestPlaceholders:
         assert result["modeled"] is False
         assert "未建模" in result["note"] or "未接线" in result["note"]
 
+    @pytest.mark.parametrize("fn", [agent_tools.validate_roster,
+                                    agent_tools.critique_roster])
+    def test_roster_stub_note_is_current(self, fn):
+        # gnhf 审查模块 5 M3：P6 已于 2026-07-14 上线，占位文案不许再说「计划于 P6」
+        # ——要把用户引导到军表实验室页签，而非陈述过时假事实
+        note = fn(roster_text="...")["note"]
+        assert "计划于" not in note
+        assert "军表实验室" in note
+
 
 class TestToolRegistry:
     def test_registry_has_all_tools(self):

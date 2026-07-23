@@ -8,10 +8,10 @@ from __future__ import annotations
 from collections import Counter
 from typing import List, Optional, Set
 
-from engines.roster.compose_rules import (MAX_ENHANCEMENTS, SIZE_LIMITS,
-                                          datasheet_copy_limit, is_character,
-                                          is_epic_hero, size_limit,
-                                          unit_keywords_bulk)
+from engines.roster.compose_rules import (MAX_ENHANCEMENTS, RULE_OF_THREE,
+                                          SIZE_LIMITS, datasheet_copy_limit,
+                                          is_character, is_epic_hero,
+                                          size_limit, unit_keywords_bulk)
 from engines.roster.contracts import (ERROR, WARN, Roster, ValidationIssue,
                                       ValidationReport)
 from engines.roster.points import recompute, total_points
@@ -38,8 +38,20 @@ def validate(db_path, roster: Roster) -> ValidationReport:
     enh_points, enh_point_issues = _enhancement_points(db_path, priced)
     total = total_points(priced) + enh_points
     issues.extend(enh_point_issues)
-    # 一次性取全部单位关键词（避免按单位 N+1 连库）
+    # 一次性取全部单位关键词（避免按单位 N+1 连库）；不在返回里的 id = 单位不在库
     kw_map = unit_keywords_bulk(db_path, [u.canonical_id for u in priced.units])
+
+    # ⓪′ 未知单位：只说系统知道的事实，跳过关键词/档位类断言——对不存在的单位断言
+    # 「非 CHARACTER」「模型数不在档位内」全是编造（gnhf 审查模块 3 F3，诚实降级红线）。
+    # 触发面：DB 重建/单位下线后，前端 localStorage 里的旧军表带过期 id。
+    unknown_ids = {u.canonical_id for u in priced.units if u.canonical_id not in kw_map}
+    for cid in sorted(unknown_ids):
+        name = next(u.name_en for u in priced.units if u.canonical_id == cid)
+        issues.append(ValidationIssue(
+            "unit_not_found", WARN,
+            f"{name}（id {cid}）不在单位库中（可能已随库重建下线），"
+            "点数与编制约束均未校验",
+            surfaced_only=True))
 
     # ⓪ 未知规模档：显式 surface（size_limit 会回退 2000，但不静默——否则报错消息会撒谎）
     size_label = priced.size
@@ -57,9 +69,10 @@ def validate(db_path, roster: Roster) -> ValidationReport:
             f"总分 {total} 超出 {size_label} 上限 {limit}（超 {total - limit}）",
             anchor="11版 军表构筑·点数上限"))
 
-    # ② 无法定价的单位（模型数不在档位内）—— warn，不静默计 0
+    # ② 无法定价的单位（模型数不在档位内）—— warn，不静默计 0。
+    # 未知单位跳过：它没定上价是因为不在库，「模型数不在档位内」的归因是编造的
     for u in priced.units:
-        if u.points is None:
+        if u.points is None and u.canonical_id not in unknown_ids:
             issues.append(ValidationIssue(
                 "unit_unpriced", WARN,
                 f"{u.name_en}（{u.models} 模型）无法定价：该模型数不在点数档位内，未计入总分",
@@ -73,6 +86,8 @@ def validate(db_path, roster: Roster) -> ValidationReport:
             f"须恰好 1 个 WARLORD，当前 {len(warlords)} 个",
             anchor="11版 军表构筑·Warlord"))
     for w in warlords:
+        if w.canonical_id in unknown_ids:
+            continue    # 单位不在库，是否 CHARACTER 无从判定（已由 unit_not_found 披露）
         if not is_character(kw_map.get(w.canonical_id, set())):
             issues.append(ValidationIssue(
                 "warlord_not_character", ERROR,
@@ -82,18 +97,28 @@ def validate(db_path, roster: Roster) -> ValidationReport:
     # ④ Rule of Three：同 datasheet 份数上限（battleline/DT 豁免、epic hero≤1）
     counts = Counter(u.canonical_id for u in priced.units)
     for cid, n in counts.items():
+        if cid in unknown_ids:
+            continue    # 关键词未知 → 豁免与否无从判定（已由 unit_not_found 披露）
         kw = kw_map.get(cid, set())
         cap = datasheet_copy_limit(kw)
+        name = next(u.name_en for u in priced.units if u.canonical_id == cid)
         if cap is not None and n > cap:
-            name = next(u.name_en for u in priced.units if u.canonical_id == cid)
             label = "EPIC HERO 至多 1 份" if is_epic_hero(kw) else f"至多 {cap} 份"
             issues.append(ValidationIssue(
                 "rot_exceeded", ERROR,
                 f"{name} 选了 {n} 份，超编（{label}）",
                 anchor="11版 军表构筑·Rule of Three"))
+        elif cap is None and n > RULE_OF_THREE:
+            # 豁免上限未查证（gnhf 审查模块 3 F2）：11 版编制规则不在语料内，
+            # 十版对应上限为 6 份——设计文档裁决「不确定的 warn 不 error」，不静默豁免
+            issues.append(ValidationIssue(
+                "rot_exempt_uncapped", WARN,
+                f"{name} 选了 {n} 份：BATTLELINE/DEDICATED TRANSPORT 豁免 Rule of "
+                f"Three，但 11 版豁免上限未查证（十版为 6 份），份数合法性未完全校验",
+                surfaced_only=True))
 
     # ⑤ 强化：≤3 个、仅 CHARACTER 非 EPIC HERO、全军唯一、属于本 detachment
-    _validate_enhancements(db_path, priced, kw_map, issues)
+    _validate_enhancements(db_path, priced, kw_map, unknown_ids, issues)
 
     legal = not any(i.severity == ERROR for i in issues)
     return ValidationReport(total_points=total, limit=limit, legal=legal,
@@ -126,7 +151,7 @@ def _enhancement_points(db_path, roster: Roster):
     return total, issues
 
 
-def _validate_enhancements(db_path, roster: Roster, kw_map,
+def _validate_enhancements(db_path, roster: Roster, kw_map, unknown_ids,
                            issues: List[ValidationIssue]) -> None:
     enhanced = [u for u in roster.units if u.enhancement]
     if not enhanced:
@@ -146,8 +171,11 @@ def _validate_enhancements(db_path, roster: Roster, kw_map,
             "enh_duplicate", ERROR, f"强化「{name}」重复挂载（每个强化全军唯一）",
             anchor="11版 军表构筑·Enhancements"))
 
-    # 仅 CHARACTER 非 EPIC HERO
+    # 仅 CHARACTER 非 EPIC HERO（未知单位跳过：是否 CHARACTER 无从判定，
+    # 已由 unit_not_found 披露——对不存在的单位断言「非 CHARACTER」是编造）
     for u in enhanced:
+        if u.canonical_id in unknown_ids:
+            continue
         kw = kw_map.get(u.canonical_id, set())
         if not is_character(kw):
             issues.append(ValidationIssue(

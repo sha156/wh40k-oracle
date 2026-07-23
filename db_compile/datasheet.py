@@ -188,7 +188,14 @@ def find_datasheet(db_path, name: str,
     """中文/英文/俗名 → 解析 canonical id → 属性块。英文名直查优先，兜底走 entity_resolver。
 
     同名跨阵营多命中时抛 AmbiguousUnitName（含阵营限定候选），不静默取一。
+
+    canonical id（纯数字串）直查 units.id——Agent 按提示词先 entity_resolver 拿 id
+    再传进来，无此分支时 id 恒查空 → 被判空降级（gnhf 审查模块 5 M4）。
     """
+    if name.strip().isdigit():
+        ds = lookup_datasheet(db_path, name.strip())
+        if ds is not None:
+            return ds
     conn = sqlite3.connect(str(db_path))
     try:
         hits = conn.execute(
