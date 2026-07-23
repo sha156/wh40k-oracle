@@ -250,6 +250,48 @@ def _load_db_units(conn) -> Dict[Tuple[str, str], List[Tuple[str, str, Optional[
     return out
 
 
+# 官方 MFM 单位名 ↔ 库内 name_en 的兜底匹配：精确名失配后依次尝试
+# ① 显式别名（单复数归一兜不住的不规则改名，如整词换名）② 单复数归一（去尾 s）。
+# 归一兜底只在「同阵营归一后唯一命中」时才认，避免把两个不同单位错配到一起；
+# 变体装配名（如 ERADICATOR SQUAD WITH HEAVY BOLTERS）归一后仍与基础名不同，安全跳过，
+# 不会污染基础单位（那是库未单列的独立装配，本就该留在 mfm_only）。
+# 修复背景：官网 "VYPER"/"WARTRAKK" 对不上库里 "Vypers"/"Wartrakks"，过期分数被静默归入
+# mfm_only 而非 diffs——精确名匹配对单复数零容忍是更新功能的隐性漏检口。
+_MFM_NAME_ALIASES: Dict[str, str] = {}
+
+
+def _norm_unit(name: str) -> str:
+    """单位名归一（小写、压空白、去尾复数 s）——精确名匹配失败后的兜底键。"""
+    n = re.sub(r"\s+", " ", name.strip().lower())
+    return n[:-1] if n.endswith("s") else n
+
+
+def _norm_index(db_map: Dict[Tuple[str, str], List]) -> Dict[Tuple[str, str], set]:
+    """{(fid, name_lower): …} → {(fid, 归一名): {name_lower, …}}，供兜底唯一命中判定。"""
+    idx: Dict[Tuple[str, str], set] = {}
+    for fid, name_l in db_map:
+        idx.setdefault((fid, _norm_unit(name_l)), set()).add(name_l)
+    return idx
+
+
+def _resolve_db_hits(db_map: Dict[Tuple[str, str], List],
+                     norm_index: Dict[Tuple[str, str], set],
+                     fid: str, unit_l: str) -> Optional[List]:
+    """MFM (fid, unit_l) → 库内 hits：精确名 → 显式别名 → 单复数归一（唯一命中才认）。"""
+    exact = db_map.get((fid, unit_l))
+    if exact is not None:
+        return exact
+    alias = _MFM_NAME_ALIASES.get(unit_l)
+    if alias is not None:
+        hit = db_map.get((fid, alias.strip().lower()))
+        if hit is not None:
+            return hit
+    cands = norm_index.get((fid, _norm_unit(unit_l)))
+    if cands and len(cands) == 1:
+        return db_map[(fid, next(iter(cands)))]
+    return None
+
+
 def check_points(db_path, factions: FactionRows) -> Dict:
     """MFM 分数 vs units.points_json 按（阵营+单位+模型数）比对。
 
@@ -262,6 +304,7 @@ def check_points(db_path, factions: FactionRows) -> Dict:
         db_units = _load_db_units(conn)
     finally:
         conn.close()
+    norm_index = _norm_index(db_units)
 
     compared = agree = 0
     diffs: List[Dict] = []
@@ -272,7 +315,7 @@ def check_points(db_path, factions: FactionRows) -> Dict:
             if not is_base_tier(tier):
                 tiered_units.add(unit_l.upper())
                 break
-        hits = db_units.get((fid, unit_l))
+        hits = _resolve_db_hits(db_units, norm_index, fid, unit_l)
         if hits is None:
             mfm_only.append(unit_l.upper())
             continue
@@ -323,8 +366,9 @@ def apply_points(db_path, factions: FactionRows,
                 "WHERE name_en IS NOT NULL"):
             units_map.setdefault(
                 (ufid or "", name.strip().lower()), []).append((uid, pj_raw))
+        norm_index = _norm_index(units_map)
         for (fid, unit_l), rows in by_faction.items():
-            hits = units_map.get((fid, unit_l))
+            hits = _resolve_db_hits(units_map, norm_index, fid, unit_l)
             if not hits:
                 continue
             matched += 1

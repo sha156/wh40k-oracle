@@ -255,6 +255,107 @@ class TestCheckPoints:
         assert stern == []  # 通用页 100 与库一致，战团价不参与
 
 
+class TestNameNormalizationMatching:
+    """精确名匹配失败后的兜底：单复数归一 + 显式别名 + 唯一命中护栏（回归）。
+
+    背景：官网 MFM "VYPER"/"WARTRAKK" 对不上库里 "Vypers"/"Wartrakks"，过期分数
+    被静默归入 mfm_only 而非 diffs——精确名匹配对单复数零容忍是更新的隐性漏检口。
+    """
+
+    def _db_singular_mfm_plural(self, tmp_path):
+        db = tmp_path / "wh40k.sqlite"
+        conn = sqlite3.connect(str(db))
+        conn.execute(
+            "CREATE TABLE units(id TEXT,faction_id TEXT,name_en TEXT,name_zh TEXT,"
+            "points_json TEXT,keywords_json TEXT,version TEXT)")
+        # 库内复数名 Vypers，2 models 残留旧值 150（官方现为 140）
+        conn.execute(
+            "INSERT INTO units VALUES('1','AE','Vypers',NULL,?,NULL,NULL)",
+            (json.dumps({"points": 225, "items": [
+                {"line": "1", "desc": "1 model", "cost": 75},
+                {"line": "2", "desc": "2 models", "cost": 150}]}),))
+        conn.commit(); conn.close()
+        return db
+
+    # 官方页写单数 VYPER，库内是复数 Vypers
+    MFM = {"aeldari": [
+        ("VYPER", "YOUR UNIT COSTS", "1 model", 75),
+        ("VYPER", "YOUR UNIT COSTS", "2 models", 140)]}
+
+    def test_singular_plural_stale_now_detected_by_check(self, tmp_path):
+        rep = check_points(self._db_singular_mfm_plural(tmp_path), self.MFM)
+        assert "VYPER" not in rep["mfm_only"]  # 不再漏进 mfm_only
+        stale = [d for d in rep["diffs"] if d["models"] == "2 models"]
+        assert len(stale) == 1 and (stale[0]["db"], stale[0]["mfm"]) == (150, 140)
+
+    def test_singular_plural_applied(self, tmp_path):
+        from db_compile.mfm import apply_points
+        db = self._db_singular_mfm_plural(tmp_path)
+        apply_points(db, self.MFM, fetched_at="2026-07-23")
+        conn = sqlite3.connect(str(db))
+        pj = json.loads(conn.execute(
+            "SELECT points_json FROM units WHERE name_en='Vypers'").fetchone()[0])
+        conn.close()
+        costs = {it["desc"]: it["cost"] for it in pj["items"]}
+        assert costs["2 models"] == 140  # 归一匹配后 apply 成功刷新
+
+    def test_variant_label_does_not_pollute_base_unit(self, tmp_path):
+        # ERADICATOR SQUAD WITH HEAVY BOLTERS(80) 是独立装配，不得错配到基础
+        # Eradicator Squad(90)——归一后名字仍不同，应留在 mfm_only 不动基础价
+        db = tmp_path / "wh40k.sqlite"
+        conn = sqlite3.connect(str(db))
+        conn.execute(
+            "CREATE TABLE units(id TEXT,faction_id TEXT,name_en TEXT,name_zh TEXT,"
+            "points_json TEXT,keywords_json TEXT,version TEXT)")
+        conn.execute(
+            "INSERT INTO units VALUES('1','SM','Eradicator Squad',NULL,?,NULL,NULL)",
+            (json.dumps({"points": 90, "items": [
+                {"line": "1", "desc": "3 models", "cost": 90}]}),))
+        conn.commit(); conn.close()
+        rep = check_points(db, {"space-marines": [
+            ("ERADICATOR SQUAD WITH HEAVY BOLTERS", "YOUR UNIT COSTS",
+             "3 models", 80)]})
+        assert rep["mfm_only"] == ["ERADICATOR SQUAD WITH HEAVY BOLTERS"]
+        assert rep["diffs"] == []  # 基础 90 未被 80 污染
+
+    def test_ambiguous_normalization_not_matched(self, tmp_path):
+        # 归一后同阵营两个候选（Ravager / Ravagers 同时存在）→ 拒绝兜底，避免错配
+        db = tmp_path / "wh40k.sqlite"
+        conn = sqlite3.connect(str(db))
+        conn.execute(
+            "CREATE TABLE units(id TEXT,faction_id TEXT,name_en TEXT,name_zh TEXT,"
+            "points_json TEXT,keywords_json TEXT,version TEXT)")
+        for uid, nm, cost in [("1", "Ravager", 100), ("2", "Ravagers", 110)]:
+            conn.execute(
+                "INSERT INTO units VALUES(?,'DRU',?,NULL,?,NULL,NULL)",
+                (uid, nm, json.dumps({"points": cost, "items": [
+                    {"line": "1", "desc": "1 model", "cost": cost}]})))
+        conn.commit(); conn.close()
+        # MFM 写 "RAVAGERZ"（都不精确命中）→ 归一 ravagerz≠ravager，且即便撞也两候选
+        rep = check_points(db, {"drukhari": [
+            ("RAVAGERR", "YOUR UNIT COSTS", "1 model", 120)]})
+        assert "RAVAGERR" in rep["mfm_only"]  # 有歧义时安全跳过，不乱配
+
+    def test_explicit_alias_resolves(self, tmp_path, monkeypatch):
+        # 归一兜不住的不规则改名走显式别名表
+        import db_compile.mfm as mfm
+        monkeypatch.setattr(mfm, "_MFM_NAME_ALIASES", {"old mfm name": "New DB Name"})
+        db = tmp_path / "wh40k.sqlite"
+        conn = sqlite3.connect(str(db))
+        conn.execute(
+            "CREATE TABLE units(id TEXT,faction_id TEXT,name_en TEXT,name_zh TEXT,"
+            "points_json TEXT,keywords_json TEXT,version TEXT)")
+        conn.execute(
+            "INSERT INTO units VALUES('1','ORK','New DB Name',NULL,?,NULL,NULL)",
+            (json.dumps({"points": 50, "items": [
+                {"line": "1", "desc": "1 model", "cost": 50}]}),))
+        conn.commit(); conn.close()
+        rep = check_points(db, {"orks": [
+            ("OLD MFM NAME", "YOUR UNIT COSTS", "1 model", 60)]})
+        assert "OLD MFM NAME" not in rep["mfm_only"]
+        assert len(rep["diffs"]) == 1 and rep["diffs"][0]["mfm"] == 60
+
+
 class TestFetchAll:
     def test_reuses_fetch_faction_and_records_failures(self, tmp_path, monkeypatch):
         # fetch_all 的单页抓取已收敛到 fetch_faction（不再有第二份参数不一致的
