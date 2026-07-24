@@ -73,13 +73,15 @@ def is_cached(book_dir: Path, page_no: int, sha256: str, prompt_version: str) ->
 
 
 def verify_numbers(source: str, markdown: str) -> List[str]:
-    """校验生成 Markdown 的数字多重集合 ⊆ 原文，返回超出的 token。"""
-    src_counts = Counter(re.findall(r"\d+", source))
-    bad = []
-    for tok, cnt in Counter(re.findall(r"\d+", markdown)).items():
-        if cnt > src_counts.get(tok, 0):
-            bad.append(tok)
-    return sorted(bad)
+    """校验生成 Markdown 的数字【集合】 ⊆ 原文数字集合，返回原文完全没有的 token。
+
+    只报「纯造数字」——源文本出现 0 次的 token，即 LLM 凭记忆虚构的新数值。数字在原文
+    存在、仅因 markdown 重排（技能名在描述里复述、"1 个X"编制行、武器技能标 [连击1] 等）
+    使某数字计数超源，不算造数：这与告警文案「出现原文没有的数字」的集合语义一致。
+    （历史用多重集判据过严——数字有、只是次数多也报，产生 37 页纯结构性误报。2026-07-24
+    收敛为集合语义，逮真造数不变，误报清零。）"""
+    src = set(re.findall(r"\d+", source))
+    return sorted({tok for tok in re.findall(r"\d+", markdown) if tok not in src})
 
 
 MODEL = "deepseek-v4-pro"

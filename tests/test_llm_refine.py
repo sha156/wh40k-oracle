@@ -51,10 +51,18 @@ def test_verify_numbers_flags_invented_tokens():
     assert verify_numbers(src, md) == ["7"]
 
 
-def test_verify_numbers_flags_excess_count():
+def test_verify_numbers_ignores_benign_recount():
+    # 集合语义：5 原文存在，md 重排使其出现更多次（技能名复述/编制行）不算造数
     src = "W 5"
-    md = "5 5 5"                            # 5 出现次数超过原文
-    assert verify_numbers(src, md) == ["5"]
+    md = "5 5 5"
+    assert verify_numbers(src, md) == []
+
+
+def test_verify_numbers_flags_only_absent_tokens():
+    # 混合：7 原文没有(造数)，10/4 原文有(即使 md 复现多次)只报 7
+    src = "M 10 T 4"
+    md = "| 10 | 4 | 7 |\n| 10 | 4 |"
+    assert verify_numbers(src, md) == ["7"]
 
 
 class _FakeChoice:
