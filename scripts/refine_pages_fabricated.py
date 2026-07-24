@@ -109,12 +109,50 @@ def build_client():
     return OpenAI(api_key=api_key, base_url=R.BASE_URL, http_client=http_client)
 
 
+def reflag() -> int:
+    """用现行 verify_numbers（集合语义）重算所有 verify_ok=False 页的旗标：
+    对现有缓存 md 复验，若已无纯造数字则改 meta.verify_ok=True。不调 API、不改 md，
+    只修正被旧多重集判据误标的元数据。"""
+    flipped = 0
+    for book_dir in sorted(OUT.iterdir()):
+        if not book_dir.is_dir():
+            continue
+        pdf = DATA / (book_dir.name + ".pdf")
+        if not pdf.exists():
+            continue
+        src_by_no = None
+        for meta_path in sorted(book_dir.glob("page_*.meta.json")):
+            try:
+                meta = json.loads(meta_path.read_text(encoding="utf-8"))
+            except (json.JSONDecodeError, OSError):
+                continue
+            if meta.get("verify_ok") is not False:
+                continue
+            if src_by_no is None:
+                src_by_no = {p["page"]: p["text"] for p in R.extract_pages(pdf)}
+            pg = int(meta_path.name[len("page_"):len("page_") + 3])
+            md = (book_dir / ("page_%03d.md" % pg)).read_text(encoding="utf-8")
+            if not R.verify_numbers(src_by_no.get(pg, ""), md):
+                meta["verify_ok"] = True
+                meta_path.write_text(json.dumps(meta, ensure_ascii=False, indent=2),
+                                     encoding="utf-8")
+                flipped += 1
+                print("  ✅ %-40s p%d verify_ok False→True" % (book_dir.name[:40], pg))
+    print("\n=== 重标 %d 页（旧多重集误标，集合语义下无纯造数字）===" % flipped)
+    return 0
+
+
 def main() -> int:
     ap = argparse.ArgumentParser()
     ap.add_argument("--list", action="store_true", help="只列目标，不调 API")
     ap.add_argument("--limit", type=int, default=0, help="只跑前 N 页（样张）")
     ap.add_argument("--book", type=str, default="", help="按书名子串过滤")
+    ap.add_argument("--reflag", action="store_true",
+                    help="不调 API：用集合语义 verify_numbers 重标误标的 verify_ok")
     args = ap.parse_args()
+
+    if args.reflag:
+        return reflag()
 
     targets = find_fabricated()
     if args.book:
