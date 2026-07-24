@@ -46,9 +46,19 @@
   陷阱：points_json 档位解析必须严格 `(\d+)\s*models?` + 纯档优先；装配成功≠有输出
 - **P8 网站化四页签 4/4 收官**：聊天 / 图鉴 / 模拟器 / 军表实验室（Next.js + FastAPI，
   契约真源 `answer.ts` + Pydantic camelCase 镜像）
-- **剩余**：T4 · P7 阵营技能 DSL 逐条编码 + wiki 全量编译（现仅钛帝国/吞世者 2 阵营）+
-  基准扩充（长期滚动）；T5 · Stage 5 部署；T6 · 分支清理。非阻塞遗留：67 个 verify_warn
-  页人工核查、军表 PR1c 文本解析、外部源观察项（BSData-11e / Wahapedia 11版 / 黑图书馆）
+- **T4 · P7 阵营技能 DSL 逐条编码已全量收官**（2026-07-24 确认，PR4–PR31）：**28/28 阵营**
+  全部编码入 `dsl_payloads/*.json`，每条带 encoded/partial/not_modeled 诚实标记；1907 测试绿。
+  编码判据沉淀在 auto-memory `p7-faction-dsl-pilot.md`（阶段门/负关键字门无载体 not_modeled
+  等 30+ 条铺量坑）。**wiki 全量编译已完成**（sqlite 驱动 `wiki_engine/from_db.py`，
+  25 阵营 1715 单位，f09dacfb，官网一致 by construction）
+- **refine 造数已核查修复**（2026-07-24）：verify_warn 逮到 refine 在图片型/被拆分兵牌页
+  凭 40K 记忆虚构数值——硬化 `refine_prompt.py`（v1→v2 铁律：源无数值时只输出名字/编制）
+  + `scripts/refine_pages_fabricated.py` 重跑 30 页清零，verify_warn 67→37（余 37 纯结构性
+  误报，纯造数字=0）。报告 `docs/superpowers/specs/2026-07-24-refine-fabrication-fix.md`
+- **剩余**：T5 · Stage 5 部署（`web/` Next.js + `web_api/` FastAPI 已成型，尚无 Dockerfile/
+  部署配置）；基准扩充（长期滚动，agent gold v3 现 96/96=100.0 零硬错，#41/#42 为固定波动题）。
+  非阻塞遗留：37 页纯结构性 verify_warn 误报（可给 verify_numbers 加白名单降噪）、军表 PR1c
+  文本解析、外部源观察项（BSData-11e / Wahapedia 11版 / 黑图书馆）。T6 分支清理已实际完成
 
 ## 数据事实（2026-07-10 语料重组后）
 
