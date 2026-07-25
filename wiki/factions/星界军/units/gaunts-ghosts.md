@@ -34,15 +34,15 @@ updated: '2026-07-23'
 | 爆弹手枪 | 12" | 1 | 2+ | 4 | 0 | 1 | [[core-rules/pistol.md\|手枪]] |
 | 寇贝克的热射卡宾枪 | 24" | 3 | 3+ | 3 | -1 | 1 | [[core-rules/assault.md\|突击]] |
 | 拉金的狙击枪 | 36" | 1 | 2+ | 5 | -2 | 4 | [[core-rules/heavy.md\|重型]]，[[core-rules/precision.md\|精准]] |
-| Lascarbine | 24" | 3 | 3+ | 3 | 0 | 1 | assault |
-| Rawne’s lascarbine | 24" | 3 | 3+ | 3 | 0 | 1 | assault，[[core-rules/sustained-hits.md\|sustained hits 1]] |
+| 激光卡宾枪 | 24" | 3 | 3+ | 3 | 0 | 1 | [[core-rules/assault.md\|assault]] |
+| 罗恩的激光卡宾枪 | 24" | 3 | 3+ | 3 | 0 | 1 | [[core-rules/assault.md\|assault]]，[[core-rules/sustained-hits.md\|sustained hits 1]] |
 
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| Gaunt’s chainsword | 近战 | 5 | 2+ | 3 | -1 | 1 | — |
+| 高特的链锯剑 | 近战 | 5 | 2+ | 3 | -1 | 1 | — |
 | 速银匕首 | 近战 | 3 | 3+ | 3 | 0 | 1 | — |
-| Mkoll’s straight silver knife | 近战 | 5 | 2+ | 3 | -1 | 1 | devastating wounds，precision |
+| 姆科尔的直银匕首 | 近战 | 5 | 2+ | 3 | -1 | 1 | [[core-rules/devastating-wounds.md\|devastating wounds]]，[[core-rules/precision.md\|precision]] |
 
 ## 技能
 - **阵营能力-指挥之声**：该单位内的军官单位可以对刚特的幽灵或兵团单位下达最多2个命令

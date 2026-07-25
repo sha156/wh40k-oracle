@@ -29,7 +29,7 @@ updated: '2026-07-23'
 ## 射击武器
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| Vashtorr’s claw | 12" | D6 | N/A | 5 | -2 | 1 | [[core-rules/anti.md\|anti-vehicle 4+]]，torrent |
+| 魔爪喷射 | 12" | D6 | N/A | 5 | -2 | 1 | [[core-rules/anti.md\|anti-vehicle 4+]]，[[core-rules/torrent.md\|torrent]] |
 
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |

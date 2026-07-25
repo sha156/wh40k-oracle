@@ -29,13 +29,13 @@ updated: '2026-07-23'
 ## 射击武器
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| 奸奇之火-蓝焰 | 18" | 3 | 3+ | 9 | -3 | 3 | [[core-rules/ignores-cover.md\|无视掩体]]，灵能 |
-| 奸奇之火-粉焰 | 12" | 2D6 | N/A | 5 | -1 | 1 | 灵能，[[core-rules/ignores-cover.md\|无视掩体]]，[[core-rules/torrent.md\|洪流]] |
+| 奸奇之火-蓝焰 | 18" | 3 | 3+ | 9 | -3 | 3 | [[core-rules/ignores-cover.md\|无视掩体]]，[[core-rules/psychic-attacks.md\|灵能]] |
+| 奸奇之火-粉焰 | 12" | 2D6 | N/A | 5 | -1 | 1 | [[core-rules/psychic-attacks.md\|灵能]]，[[core-rules/ignores-cover.md\|无视掩体]]，[[core-rules/torrent.md\|洪流]] |
 
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| Flamer mouths | 近战 | 6 | 4+ | 5 | 0 | 1 | — |
+| 火妖巨口 | 近战 | 6 | 4+ | 5 | 0 | 1 | — |
 | 尖啸魔撕咬  | 近战 | 6 | 3+ | 6 | -2 | 2 | [[core-rules/extra-attacks.md\|额外攻击]]，[[core-rules/anti.md\|针对载具4+]]，[[core-rules/anti.md\|针对巨兽4+]] |
 
 ## 技能

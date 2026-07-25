@@ -27,7 +27,7 @@ updated: '2026-07-23'
 ## 射击武器
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| The Eye of Wrath | 6" | 1 | 2+ | 6 | -3 | 2 | assault |
+| The Eye of Wrath | 6" | 1 | 2+ | 6 | -3 | 2 | [[core-rules/assault.md\|assault]] |
 
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |

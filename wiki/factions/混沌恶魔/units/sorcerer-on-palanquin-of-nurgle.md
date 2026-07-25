@@ -24,22 +24,22 @@ updated: '2026-07-23'
 ## 射击武器
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| Combi-bolter | 24" | 2 | 2+ | 4 | 0 | 1 | [[core-rules/rapid-fire.md\|rapid fire 2]] |
-| Bolt pistol | 12" | 1 | 2+ | 4 | 0 | 1 | pistol |
-| Infernal Gaze – focused witchfire | 24" | D6 | 3+ | 6 | -2 | D3 | devastating wounds，hazardous，psychic |
-| Combi-weapon | 24" | 1 | 4+ | 4 | 0 | 1 | [[core-rules/anti.md\|anti-infantry 4+]]，devastating wounds，[[core-rules/rapid-fire.md\|rapid fire 1]] |
-| Infernal Gaze – witchfire | 24" | D6 | 3+ | 5 | -1 | D3 | psychic |
-| Plasma pistol – supercharge | 12" | 1 | 2+ | 8 | -3 | 2 | hazardous，pistol |
-| Plasma pistol – standard | 12" | 1 | 2+ | 7 | -2 | 1 | pistol |
+| 并联爆弹枪 | 24" | 2 | 2+ | 4 | 0 | 1 | [[core-rules/rapid-fire.md\|rapid fire 2]] |
+| 爆弹手枪 | 12" | 1 | 2+ | 4 | 0 | 1 | [[core-rules/pistol.md\|pistol]] |
+| 地狱凝视（聚焦） | 24" | D6 | 3+ | 6 | -2 | D3 | [[core-rules/devastating-wounds.md\|devastating wounds]]，[[core-rules/hazardous.md\|hazardous]]，[[core-rules/psychic-attacks.md\|psychic]] |
+| 复合武器 | 24" | 1 | 4+ | 4 | 0 | 1 | [[core-rules/anti.md\|anti-infantry 4+]]，[[core-rules/devastating-wounds.md\|devastating wounds]]，[[core-rules/rapid-fire.md\|rapid fire 1]] |
+| 地狱凝视（普通） | 24" | D6 | 3+ | 5 | -1 | D3 | [[core-rules/psychic-attacks.md\|psychic]] |
+| 等离子手枪（过载） | 12" | 1 | 2+ | 8 | -3 | 2 | [[core-rules/hazardous.md\|hazardous]]，[[core-rules/pistol.md\|pistol]] |
+| 等离子手枪（标准） | 12" | 1 | 2+ | 7 | -2 | 1 | [[core-rules/pistol.md\|pistol]] |
 
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| Accursed weapon | 近战 | 4 | 3+ | 5 | -2 | 1 | — |
-| Nurgling’s claws and teeth | 近战 | 4 | 5+ | 2 | 0 | 1 | extra attacks，lethal hits |
-| Power fist | 近战 | 3 | 3+ | 8 | -2 | 2 | — |
-| Force weapon | 近战 | 4 | 3+ | 6 | -1 | D3 | psychic |
-| Astartes chainsword | 近战 | 5 | 3+ | 4 | -1 | 1 | — |
+| 诅咒武器 | 近战 | 4 | 3+ | 5 | -2 | 1 | — |
+| Nurgling’s claws and teeth | 近战 | 4 | 5+ | 2 | 0 | 1 | [[core-rules/extra-attacks.md\|extra attacks]]，[[core-rules/lethal-hits.md\|lethal hits]] |
+| 动力拳 | 近战 | 3 | 3+ | 8 | -2 | 2 | — |
+| 灵能武器 | 近战 | 4 | 3+ | 6 | -1 | D3 | [[core-rules/psychic-attacks.md\|psychic]] |
+| 阿斯塔特链锯剑 | 近战 | 5 | 3+ | 4 | -1 | 1 | — |
 
 ## 技能
 - **Gift of Poxes (Psychic)**：While this model is leading a unit, weapons equipped by models in that unit have the [SUSTAINED HITS 1] ability.

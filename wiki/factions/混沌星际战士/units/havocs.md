@@ -21,7 +21,7 @@ updated: '2026-07-23'
 ## 属性表
 | 模型 | M | T | SV | W | LD | OC |
 |---|---|---|---|---|---|---|
-| [[factions/混沌星际战士/units/dark-apostle.md\|黑暗使徒]] | 5" | 5 | 3+ | 2 | 6+ | 1 |
+| 黑暗使徒 | 5" | 5 | 3+ | 2 | 6+ | 1 |
 
 ## 射击武器
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
@@ -34,19 +34,19 @@ updated: '2026-07-23'
 | 喷火器   | 48" | D6 | 3+ | 4 | 0 | 1 | [[core-rules/ignores-cover.md\|忽视掩体]]，[[core-rules/torrent.md\|喷射]] |
 | 浩劫导弹发射器导弹发射器（穿甲） | 48" | 1 | 3+ | 9 | -2 | D6 | — |
 | 浩劫收割者加特林  | 24" | 8 | 3+ | 5 | 0 | 1 | — |
-| Meltagun | 12" | 1 | 3+ | 9 | -4 | D6 | [[core-rules/melta.md\|MELTA 2]] |
-| Plasma gun – standard | 24" | 1 | 3+ | 7 | -2 | 1 | [[core-rules/rapid-fire.md\|RAPID FIRE 1]] |
-| Plasma gun – supercharge | 24" | 1 | 3+ | 8 | -3 | 2 | [[core-rules/hazardous.md\|HAZARDOUS]]，[[core-rules/rapid-fire.md\|RAPID FIRE 1]] |
-| Plasma pistol – standard | 12" | 1 | 3+ | 7 | -2 | 1 | PISTOL |
-| Plasma pistol – supercharge | 12" | 1 | 3+ | 8 | -3 | 2 | [[core-rules/hazardous.md\|HAZARDOUS]]，PISTOL |
+| 热熔枪 | 12" | 1 | 3+ | 9 | -4 | D6 | [[core-rules/melta.md\|MELTA 2]] |
+| 等离子枪（标准） | 24" | 1 | 3+ | 7 | -2 | 1 | [[core-rules/rapid-fire.md\|RAPID FIRE 1]] |
+| 等离子枪（过载） | 24" | 1 | 3+ | 8 | -3 | 2 | [[core-rules/hazardous.md\|HAZARDOUS]]，[[core-rules/rapid-fire.md\|RAPID FIRE 1]] |
+| 等离子手枪（标准） | 12" | 1 | 3+ | 7 | -2 | 1 | [[core-rules/pistol.md\|PISTOL]] |
+| 等离子手枪（过载） | 12" | 1 | 3+ | 8 | -3 | 2 | [[core-rules/hazardous.md\|HAZARDOUS]]，[[core-rules/pistol.md\|PISTOL]] |
 
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
 | 诅咒武器  | 近战 | 4 | 3+ | 5 | -2 | 1 | — |
-| Astartes chainsword | 近战 | 5 | 3+ | 4 | -1 | 1 | — |
+| 阿斯塔特链锯剑 | 近战 | 5 | 3+ | 4 | -1 | 1 | — |
 | 格斗武器  | 近战 | 3 | 3+ | 4 | 0 | 1 | — |
-| Power fist | 近战 | 3 | 3+ | 8 | -2 | 2 | — |
+| 动力拳 | 近战 | 3 | 3+ | 8 | -2 | 2 | — |
 
 ## 技能
 - **【阵营技能】：黑暗契约**

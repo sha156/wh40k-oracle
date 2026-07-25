@@ -30,7 +30,7 @@ updated: '2026-07-23'
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
 | 丧尼阿锐斯和碾脊者(猛击)     | 近战 | 8 | 2+ | 14 | -3 | D6+2 | [[core-rules/devastating-wounds.md\|毁灭伤害]] |
-| Samni’arius and Spinegrinder – sweep | 近战 | 16 | 2+ | 7 | -2 | 2 | devastating wounds |
+| 丧尼阿锐斯和碾脊者（横扫） | 近战 | 16 | 2+ | 7 | -2 | 2 | [[core-rules/devastating-wounds.md\|devastating wounds]] |
 
 ## 技能
 - **阵营：恐虐祝福**

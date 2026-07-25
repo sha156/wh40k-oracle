@@ -1,5 +1,6 @@
 ---
 id: '000004226'
+name_zh: 红色惧物
 name_en: The Red Terror
 faction: 基因窃取者教派
 type: unit
@@ -19,18 +20,19 @@ updated: '2026-07-23'
 ## 属性表
 | 模型 | M | T | SV | W | LD | OC |
 |---|---|---|---|---|---|---|
-|  | 10" | 8 | 3+ | 9 | 8+ | 3 |
+| 红色惧物 | 10" | 8 | 3+ | 9 | 8+ | 3 |
 
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| Gaping maw | 近战 | 1 | 2+ | 5 | - | D3+2 | extra attacks，devastating wounds，precision |
-| Scything talons | 近战 | 12 | 2+ | 7 | -2 | 2 | — |
+| 巨张之口 | 近战 | 1 | 2+ | 5 | - | D3+2 | [[core-rules/extra-attacks.md\|extra attacks]]，[[core-rules/devastating-wounds.md\|devastating wounds]]，[[core-rules/precision.md\|precision]] |
+| 镰刀爪 | 近战 | 12 | 2+ | 7 | -2 | 2 | — |
 
 ## 技能
-- **Swallow Whole**：Each time an attack with this model’s gaping maw targets an <span class="kwb">INFANTRY</span>, <span class="kwb">MOUNTED</span> or <span class="kwb">BEASTS</span> unit, each successful unmodified Wound roll is a Critical Wound. Each time an <span class="kwb">INFANTRY</span>, <span class="kwb">MOUNTED</span> or <span class="kwb">BEASTS</span> model is destroyed as a result of an attack made by this model’s gaping maw, this model regains up to D3+2 lost wounds.
-- **Subterranean Hunter**：At the end of the Fight phase, if this unit is not within Engagement Range of one or more enemy units, you can remove it from the battlefield and place it into Strategic Reserves.
-- **Serpentine Fiend**：This model can move through terrain features, but cannot end a move within a wall, a floor, etc. This model can be set up or end a move on any floor level of <span class="kwb">RUINS</span>, but if that level is not the ground floor, it can only do so if its base does not overhang the floor at that level.
+- **巨口生吞**：每当该模型使用吞噬巨口对一个步兵，骑乘或野兽单位进行攻击时，每个成功的未修正致伤掷骰即为暴击致伤。每当一个步兵，骑乘或野兽模型被该模型使用吞噬巨口进行的攻击摧毁时，该模型恢复最多 D3+2 点失去的耐伤。
+- **【阵营技能】节点生物**
+- **地底猎手**：在近战阶段结束时，如果该单位不位于一个或更多敌方单位的交战范围内，您可以将该单位从战场上移除，并放入战略预备队中。
+- **蛇形恶魔**：该模型可以移动穿过地形模型，但不能在墙壁、地板等处结束移动。 该模型可以部署在废墟的任意楼层或在其上结束移动，但如果那层不是底层，则该模型的底座不能超出那层的地面。
 
 ## 单位构成
 - **1个模型** — 130 分

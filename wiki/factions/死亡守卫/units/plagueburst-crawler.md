@@ -29,10 +29,10 @@ updated: '2026-07-23'
 ## 射击武器
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| Entropy cannon | 36" | 1 | 3+ | 10 | -3 | D6+1 | lethal hits |
-| Heavy slugger | 36" | 4 | 3+ | 5 | -1 | 1 | lethal hits |
-| Plagueburst mortar | 48" | D6+3 | 3+ | 8 | -1 | 2 | blast，indirect fire，lethal hits |
-| Plaguespitter | 12" | D6 | N/A | 6 | -1 | 1 | [[core-rules/anti.md\|anti-infantry 2+]]，ignores cover，torrent |
+| 熵能炮 | 36" | 1 | 3+ | 10 | -3 | D6+1 | [[core-rules/lethal-hits.md\|lethal hits]] |
+| 重型机炮 | 36" | 4 | 3+ | 5 | -1 | 1 | [[core-rules/lethal-hits.md\|lethal hits]] |
+| 瘟疫爆发臼炮 | 48" | D6+3 | 3+ | 8 | -1 | 2 | [[core-rules/blast.md\|blast]]，[[core-rules/indirect-fire.md\|indirect fire]]，[[core-rules/lethal-hits.md\|lethal hits]] |
+| 疫病喷射器 | 12" | D6 | N/A | 6 | -1 | 1 | [[core-rules/anti.md\|anti-infantry 2+]]，[[core-rules/ignores-cover.md\|ignores cover]]，[[core-rules/torrent.md\|torrent]] |
 | 多管速射炮 | 36" | 3 | 3+ | 5 | 0 | 1 | [[core-rules/lethal-hits.md\|致命一击]]，[[core-rules/rapid-fire.md\|速射 3]] |
 
 ## 近战武器

@@ -35,7 +35,7 @@ updated: '2026-07-23'
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| Big Choppa | 近战 | 4 | 3+ | 6 | -1 | 2 | [[core-rules/anti.md\|anti-monster 4+]]，[[core-rules/anti.md\|anti-vehicle 4+]] |
+| 大砍刀 | 近战 | 4 | 3+ | 6 | -1 | 2 | [[core-rules/anti.md\|anti-monster 4+]]，[[core-rules/anti.md\|anti-vehicle 4+]] |
 | 火箭飞矛 | 近战 | 3 | 3+ | 5 | -1 | 2 | [[core-rules/lance.md\|迅猛冲锋]]，[[core-rules/anti.md\|针对载具4+]]，[[core-rules/anti.md\|针对巨兽4+]] |
 | 跳跳撕咬 | 近战 | 3 | 4+ | 6 | -1 | 2 | [[core-rules/extra-attacks.md\|额外攻击]] |
 

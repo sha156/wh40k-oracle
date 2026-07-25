@@ -29,8 +29,8 @@ updated: '2026-07-23'
 | 天锤导弹 | 48" | 3 | 3+ | 8 | -1 | D3 | [[core-rules/anti.md\|反飞行 2+]]，[[core-rules/twin-linked.md\|双联]] |
 | 双联突击炮   | 24" | 6 | 3+ | 6 | 0 | 1 | [[core-rules/devastating-wounds.md\|毁灭伤害]]，[[core-rules/twin-linked.md\|双联]] |
 | 双联重型爆弹枪   | 36" | 3 | 3+ | 5 | -1 | 2 | [[core-rules/sustained-hits.md\|连击 1]]，[[core-rules/twin-linked.md\|双联]] |
-| Twin lascannon | 48" | 1 | 3+ | 12 | -3 | D6+1 | twin-linked |
-| Typhoon missile launcher – frag | 48" | 2D6 | 3+ | 4 | 0 | 1 | blast |
+| 双联激光炮 | 48" | 1 | 3+ | 12 | -3 | D6+1 | [[core-rules/twin-linked.md\|twin-linked]] |
+| 台风导弹发射器（破片） | 48" | 2D6 | 3+ | 4 | 0 | 1 | [[core-rules/blast.md\|blast]] |
 | 台风导弹发射器（穿甲）     | 48" | 2 | 3+ | 9 | -2 | D6 | — |
 
 ## 近战武器

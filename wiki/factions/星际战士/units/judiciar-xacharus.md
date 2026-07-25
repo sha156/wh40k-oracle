@@ -27,12 +27,12 @@ updated: '2026-07-23'
 ## 射击武器
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| Absolvor bolt pistol | 18" | 1 | 3+ | 5 | -1 | 2 | pistol |
+| 赦免者爆弹手枪 | 18" | 1 | 3+ | 5 | -1 | 2 | [[core-rules/pistol.md\|pistol]] |
 
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| Executioner relic blade | 近战 | 5 | 2+ | 7 | -2 | 2 | devastating wounds，precision |
+| 圣物处刑者巨剑 | 近战 | 5 | 2+ | 7 | -2 | 2 | [[core-rules/devastating-wounds.md\|devastating wounds]]，[[core-rules/precision.md\|precision]] |
 
 ## 技能
 - **Tempormortis**：While this model is leading a unit, that unit has the Fights First ability.

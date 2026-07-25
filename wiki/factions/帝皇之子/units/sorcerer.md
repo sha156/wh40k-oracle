@@ -1,5 +1,6 @@
 ---
 id: 000004085
+name_zh: 巫师
 name_en: Sorcerer
 faction: 帝皇之子
 type: unit
@@ -25,18 +26,19 @@ updated: '2026-07-23'
 ## 射击武器
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| Agonising Energies – witchfire | 18" | D6 | 3+ | 5 | -1 | D3 | psychic |
-| Agonising Energies – focused witchfire | 18" | D6 | 3+ | 6 | -2 | D3 | devastating wounds，hazardous，psychic |
-| Bolt pistol | 12" | 1 | 3+ | 4 | 0 | 1 | pistol |
+| 苦痛能量（巫火） | 18" | D6 | 3+ | 5 | -1 | D3 | [[core-rules/psychic-attacks.md\|psychic]] |
+| 苦痛能量（聚焦巫火） | 18" | D6 | 3+ | 6 | -2 | D3 | [[core-rules/devastating-wounds.md\|devastating wounds]]，[[core-rules/hazardous.md\|hazardous]]，[[core-rules/psychic-attacks.md\|psychic]] |
+| 爆弹手枪 | 12" | 1 | 3+ | 4 | 0 | 1 | [[core-rules/pistol.md\|手枪]] |
 
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| Force weapon | 近战 | 4 | 3+ | 6 | -2 | D3 | psychic |
+| 灵能武器 | 近战 | 4 | 3+ | 6 | -2 | D3 | [[core-rules/psychic-attacks.md\|psychic]] |
 
 ## 技能
-- **Warped Interference (Psychic)**：While this model is leading a unit, each time a ranged attack targets that unit, models in it have the Benefit of Cover against that attack.
-- **Wracking Agonies (Psychic)**：In your Shooting phase, after this model has shot, select one <span class="kwb">INFANTRY</span> unit hit by one or more of those attacks made with its Agonising Energies. Until the start of your next turn, that unit is wracked with agonies. While a unit is wracked with agonies, subtract 2" from its Move characteristic and subtract 2 from Charge rolls made for it.
+- **【阵营技能】：黑暗契约**
+- **预知危险【灵能】**：对本模型所领导单位的攻击命中结果 减1
+- **混沌赠礼【灵能】**：每当本模型被选择进行射击或近战 时，结算完攻击之后，选择本轮攻击中被本模型【灵能】 技能命中过的一个敌方单位，那个单位必须进行一次 LD 测试，如果失败就遭受 D3 点致命伤害
 
 ## 单位构成
 - **1个模型** — 55 分

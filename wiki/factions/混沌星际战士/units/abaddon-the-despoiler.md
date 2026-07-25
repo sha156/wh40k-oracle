@@ -29,13 +29,13 @@ updated: '2026-07-23'
 ## 射击武器
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| Talon of Horus | 24" | 4 | 2+ | 5 | -1 | 2 | [[core-rules/sustained-hits.md\|sustained hits 1]] |
+| 荷鲁斯之爪 | 24" | 4 | 2+ | 5 | -1 | 2 | [[core-rules/sustained-hits.md\|sustained hits 1]] |
 
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| Drach’nyen | 近战 | 8 | 2+ | 14 | -4 | 3 | devastating wounds |
-| Talon of Horus | 近战 | 14 | 2+ | 7 | -3 | 1 | devastating wounds |
+| 魔剑德拉肯尼恩 | 近战 | 8 | 2+ | 14 | -4 | 3 | [[core-rules/devastating-wounds.md\|devastating wounds]] |
+| 荷鲁斯之爪 | 近战 | 14 | 2+ | 7 | -3 | 1 | [[core-rules/devastating-wounds.md\|devastating wounds]] |
 
 ## 技能
 - **【阵营技能】：黑暗契约**

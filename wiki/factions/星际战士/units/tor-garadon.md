@@ -33,7 +33,7 @@ updated: '2026-07-23'
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| Hand of Defiance | 近战 | 5 | 2+ | 12 | -2 | 2 | — |
+| 不屈铁拳 | 近战 | 5 | 2+ | 12 | -2 | 2 | — |
 
 ## 技能
 - **Signum Array**：While this model is leading a unit, ranged weapons equipped by models in that unit have the [IGNORES COVER] ability.

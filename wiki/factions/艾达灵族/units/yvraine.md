@@ -28,7 +28,7 @@ updated: '2026-07-23'
 ## 射击武器
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| Storm of Whispers | 12" | D6+3 | 2+ | 2 | -2 | 1 | [[core-rules/anti.md\|anti-infantry 2+]]，devastating wounds，psychic |
+| 耳语风暴 | 12" | D6+3 | 2+ | 2 | -2 | 1 | [[core-rules/anti.md\|anti-infantry 2+]]，[[core-rules/devastating-wounds.md\|devastating wounds]]，[[core-rules/psychic-attacks.md\|psychic]] |
 
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |

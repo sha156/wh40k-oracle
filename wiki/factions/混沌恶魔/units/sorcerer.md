@@ -1,5 +1,6 @@
 ---
 id: 000004068
+name_zh: 巫师
 name_en: Sorcerer
 faction: 混沌恶魔
 type: unit
@@ -24,18 +25,19 @@ updated: '2026-07-23'
 ## 射击武器
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| Infernal Gaze – witchfire | 24" | D6 | 3+ | 5 | -1 | D3 | psychic |
-| Bolt pistol | 12" | 1 | 3+ | 4 | 0 | 1 | pistol |
-| Infernal Gaze – focused witchfire | 24" | D6 | 3+ | 6 | -2 | D3 | devastating wounds，hazardous，psychic |
+| 地狱凝视（普通） | 24" | D6 | 3+ | 5 | -1 | D3 | [[core-rules/psychic-attacks.md\|psychic]] |
+| 爆弹手枪 | 12" | 1 | 3+ | 4 | 0 | 1 | [[core-rules/pistol.md\|手枪]] |
+| 地狱凝视（聚焦） | 24" | D6 | 3+ | 6 | -2 | D3 | [[core-rules/devastating-wounds.md\|devastating wounds]]，[[core-rules/hazardous.md\|hazardous]]，[[core-rules/psychic-attacks.md\|psychic]] |
 
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| Force weapon | 近战 | 4 | 3+ | 6 | -1 | D3 | psychic |
+| 力场武器 | 近战 | 4 | 3+ | 6 | -1 | D3 | [[core-rules/psychic-attacks.md\|灵能]] |
 
 ## 技能
-- **Prescience (Psychic)**：While this model is leading a unit, each time an attack targets that unit, subtract 1 from the Hit roll.
-- **Gift of Chaos (Psychic)**：Each time this model is selected to shoot or fight, after resolving its attacks, select one enemy unit hit by one or more of those attacks that had the [PSYCHIC] ability. That unit must take a Leadership test: if that test is failed, that unit suffers D3 mortal wounds.
+- **【阵营技能】：黑暗契约**
+- **预知危险【灵能】**：对本模型所领导单位的攻击命中结果 减1
+- **混沌赠礼【灵能】**：每当本模型被选择进行射击或近战 时，结算完攻击之后，选择本轮攻击中被本模型【灵能】 技能命中过的一个敌方单位，那个单位必须进行一次 LD 测试，如果失败就遭受 D3 点致命伤害
 
 ## 单位构成
 - **1个模型** — 60 分

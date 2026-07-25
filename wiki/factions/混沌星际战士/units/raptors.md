@@ -28,21 +28,21 @@ updated: '2026-07-23'
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
 | 爆弹手枪 | 12" | 1 | 3+ | 4 | 0 | 1 | [[core-rules/pistol.md\|手枪]] |
-| Flamer | 12" | D6 | N/A | 4 | 0 | 1 | ignores cover，torrent |
+| 喷火器 | 12" | D6 | N/A | 4 | 0 | 1 | [[core-rules/ignores-cover.md\|ignores cover]]，[[core-rules/torrent.md\|torrent]] |
 | 热熔枪       | 12" | 1 | 3+ | 9 | -4 | D6 | [[core-rules/melta.md\|热熔 2]] |
-| Plasma pistol – standard | 12" | 1 | 3+ | 7 | -2 | 1 | pistol |
-| Plasma pistol – supercharge | 12" | 1 | 3+ | 8 | -3 | 2 | hazardous，pistol |
-| Plasma gun – standard | 24" | 1 | 3+ | 7 | -2 | 1 | [[core-rules/rapid-fire.md\|rapid fire 1]] |
-| Plasma gun – supercharge | 24" | 1 | 3+ | 8 | -3 | 2 | hazardous，[[core-rules/rapid-fire.md\|rapid fire 1]] |
+| 等离子手枪（标准） | 12" | 1 | 3+ | 7 | -2 | 1 | [[core-rules/pistol.md\|pistol]] |
+| 等离子手枪（过载） | 12" | 1 | 3+ | 8 | -3 | 2 | [[core-rules/hazardous.md\|hazardous]]，[[core-rules/pistol.md\|pistol]] |
+| 等离子枪（标准） | 24" | 1 | 3+ | 7 | -2 | 1 | [[core-rules/rapid-fire.md\|rapid fire 1]] |
+| 等离子枪（过载） | 24" | 1 | 3+ | 8 | -3 | 2 | [[core-rules/hazardous.md\|hazardous]]，[[core-rules/rapid-fire.md\|rapid fire 1]] |
 
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| Accursed weapon | 近战 | 4 | 3+ | 5 | -2 | 1 | — |
+| 诅咒武器 | 近战 | 4 | 3+ | 5 | -2 | 1 | — |
 | 阿斯塔特链锯剑 | 近战 | 4 | 3+ | 4 | -1 | 1 | — |
 | 格斗武器  | 近战 | 3 | 3+ | 4 | 0 | 1 | — |
-| Heavy melee weapon | 近战 | 3 | 3+ | 8 | -2 | 2 | — |
-| Mutations | 近战 | 4 | 3+ | 5 | -2 | 1 | — |
+| 重型近战武器 | 近战 | 3 | 3+ | 8 | -2 | 2 | — |
+| 变异肢体 | 近战 | 4 | 3+ | 5 | -2 | 1 | — |
 
 ## 技能
 - **【阵营技能】：黑暗契约**

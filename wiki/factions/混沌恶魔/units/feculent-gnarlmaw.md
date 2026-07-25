@@ -1,5 +1,6 @@
 ---
 id: '000001470'
+name_zh: 污秽瘤木
 name_en: Feculent Gnarlmaw
 faction: 混沌恶魔
 type: unit

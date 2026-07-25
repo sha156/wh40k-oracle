@@ -24,7 +24,7 @@ updated: '2026-07-23'
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| Armoured hull | 近战 | 2 | 4+ | 5 | 0 | 1 | — |
+| 装甲外壳 | 近战 | 2 | 4+ | 5 | 0 | 1 | — |
 
 ## 技能
 - **Aerial Deployment**：If this model starts the game in Hover mode and in Strategic Reserves, it can be set up in the Reinforcements step of your first, second or third Movement phase, regardless of any mission rules.

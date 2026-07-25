@@ -25,14 +25,14 @@ updated: '2026-07-23'
 ## 射击武器
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| 灵能风暴（聚焦巫火） | 18" | D6+1 | 3+ | 6 | -2 | 2 | [[core-rules/blast.md\|爆炸]]，[[core-rules/hazardous.md\|危险]]，毁灭性伤害，灵能 |
+| 灵能风暴（聚焦巫火） | 18" | D6+1 | 3+ | 6 | -2 | 2 | [[core-rules/blast.md\|爆炸]]，[[core-rules/hazardous.md\|危险]]，毁灭性伤害，[[core-rules/psychic-attacks.md\|灵能]] |
 | 激光手枪 | 12" | 1 | 3+ | 3 | 0 | 1 | [[core-rules/pistol.md\|手枪]] |
-| 灵能风暴（巫火） | 18" | D6 | 3+ | 5 | -2 | 1 | [[core-rules/blast.md\|爆炸]]，毁灭性伤害，灵能 |
+| 灵能风暴（巫火） | 18" | D6 | 3+ | 5 | -2 | 1 | [[core-rules/blast.md\|爆炸]]，毁灭性伤害，[[core-rules/psychic-attacks.md\|灵能]] |
 
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| 力场武器 | 近战 | 3 | 4+ | 6 | -1 | D3 | 灵能 |
+| 力场武器 | 近战 | 3 | 4+ | 6 | -1 | D3 | [[core-rules/psychic-attacks.md\|灵能]] |
 
 ## 技能
 - **巫术防御（灵能）**：本模型所领导的单位对抗灵能攻击时获得不知疼痛4+技能

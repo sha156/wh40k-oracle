@@ -25,7 +25,7 @@ updated: '2026-07-23'
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
 | Aquila macro-cannon | 72" | D6+6 | 5+ | 16 | -4 | 4 | — |
-| Heavy bolter | 36" | 3 | 4+ | 5 | -1 | 2 | [[core-rules/sustained-hits.md\|sustained hits 1]] |
+| 重型爆弹枪 | 36" | 3 | 4+ | 5 | -1 | 2 | [[core-rules/sustained-hits.md\|sustained hits 1]] |
 
 ## 技能
 - **Roof Access**：Friendly <span class="kwb">INFANTRY</span> models can be set up or end any type of move on top of the roof section of this <span class="kwb">FORTIFICATION</span>.

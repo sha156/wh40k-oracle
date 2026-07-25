@@ -24,8 +24,8 @@ updated: '2026-07-23'
 ## 射击武器
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| Heavy bolter | 36" | 3 | 4+ | 5 | -1 | 2 | [[core-rules/sustained-hits.md\|sustained hits 1]] |
-| Vortex missile battery | 72" | D6+3 | 5+ | 16 | -4 | D6 | blast，devastating wounds，hazardous，indirect fire |
+| 重型爆弹枪 | 36" | 3 | 4+ | 5 | -1 | 2 | [[core-rules/sustained-hits.md\|sustained hits 1]] |
+| Vortex missile battery | 72" | D6+3 | 5+ | 16 | -4 | D6 | [[core-rules/blast.md\|blast]]，[[core-rules/devastating-wounds.md\|devastating wounds]]，[[core-rules/hazardous.md\|hazardous]]，[[core-rules/indirect-fire.md\|indirect fire]] |
 
 ## 技能
 - **Roof Access**：Friendly <span class="kwb">INFANTRY</span> models can be set up or end any type of move on top of the roof section of this <span class="kwb">FORTIFICATION</span>.

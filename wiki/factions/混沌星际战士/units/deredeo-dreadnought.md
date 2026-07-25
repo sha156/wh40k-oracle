@@ -27,20 +27,20 @@ updated: '2026-07-23'
 ## 射击武器
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| Hellfire plasma cannonade – supercharge | 36" | 6 | 3+ | 8 | -3 | 3 | hazardous |
+| Hellfire plasma cannonade – supercharge | 36" | 6 | 3+ | 8 | -3 | 3 | [[core-rules/hazardous.md\|hazardous]] |
 | Hellfire plasma cannonade – standard | 36" | 6 | 3+ | 7 | -2 | 2 | — |
-| Twin heavy bolter | 36" | 3 | 3+ | 5 | -1 | 2 | [[core-rules/sustained-hits.md\|sustained hits 1]]，twin-linked |
-| Volkite falconet battery | 30" | 6 | 3+ | 9 | 0 | 2 | devastating wounds |
-| Anvilus autocannon battery | 48" | 4 | 3+ | 9 | -1 | 3 | twin-linked |
-| Aiolos missile launcher | 48" | D6+3 | 3+ | 5 | 0 | 1 | blast |
+| 双联重爆弹 | 36" | 3 | 3+ | 5 | -1 | 2 | [[core-rules/sustained-hits.md\|sustained hits 1]]，[[core-rules/twin-linked.md\|twin-linked]] |
+| Volkite falconet battery | 30" | 6 | 3+ | 9 | 0 | 2 | [[core-rules/devastating-wounds.md\|devastating wounds]] |
+| Anvilus autocannon battery | 48" | 4 | 3+ | 9 | -1 | 3 | [[core-rules/twin-linked.md\|twin-linked]] |
+| Aiolos missile launcher | 48" | D6+3 | 3+ | 5 | 0 | 1 | [[core-rules/blast.md\|blast]] |
 | Boreas air defence missiles | 48" | 1 | 3+ | 12 | -3 | D6+1 | [[core-rules/anti.md\|anti-fly 2+]] |
 | Arachnus heavy lascannon battery | 48" | 2 | 3+ | 12 | -3 | D6+1 | — |
-| Twin heavy flamer | 12" | D6 | N/A | 5 | -1 | 1 | ignores cover，torrent，twin-linked |
+| 双联重型火焰喷射器 | 12" | D6 | N/A | 5 | -1 | 1 | [[core-rules/ignores-cover.md\|ignores cover]]，[[core-rules/torrent.md\|torrent]]，[[core-rules/twin-linked.md\|twin-linked]] |
 
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| Armoured feet | 近战 | 5 | 3+ | 6 | 0 | 1 | — |
+| 装甲铁脚 | 近战 | 5 | 3+ | 6 | 0 | 1 | — |
 
 ## 技能
 - **Deredeo Strike**：Each time this model makes a ranged attack that targets a unit that is not Below Half-strength, you can re-roll the Hit roll.

@@ -1,5 +1,6 @@
 ---
 id: '000002625'
+name_zh: 铁甲兽领主
 name_en: Lord on Juggernaut
 faction: 吞世者
 type: unit
@@ -28,14 +29,14 @@ updated: '2026-07-23'
 ## 射击武器
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| Plasma pistol – standard | 12" | 1 | 3+ | 7 | -2 | 1 | pistol |
-| Plasma pistol – supercharge | 12" | 1 | 3+ | 8 | -3 | 2 | hazardous，pistol |
+| 等离子手枪（标准） | 12" | 1 | 3+ | 7 | -2 | 1 | [[core-rules/pistol.md\|pistol]] |
+| 等离子手枪（过载） | 12" | 1 | 3+ | 8 | -3 | 2 | [[core-rules/hazardous.md\|hazardous]]，[[core-rules/pistol.md\|pistol]] |
 
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| Exalted chainblade | 近战 | 7 | 2+ | 6 | -1 | 2 | — |
-| Bladed horn | 近战 | 4 | 3+ | 6 | -1 | 2 | extra attacks，lance |
+| 神尊链锯刃 | 近战 | 7 | 2+ | 6 | -1 | 2 | — |
+| 刃角 | 近战 | 4 | 3+ | 6 | -1 | 2 | [[core-rules/extra-attacks.md\|extra attacks]]，[[core-rules/lance.md\|lance]] |
 
 ## 技能
 - **Aggressive Advance**：While this model is leading a unit, models in that unit have a Move characteristic of 10" and each time a model in that unit makes a Normal, Advance, Fall Back or Charge move, it can move horizontally through terrain features.

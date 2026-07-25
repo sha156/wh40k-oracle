@@ -25,12 +25,12 @@ updated: '2026-07-23'
 ## 射击武器
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| Belly-flamer | 12" | D6 | N/A | 5 | 0 | 1 | ignores cover，torrent |
+| Belly-flamer | 12" | D6 | N/A | 5 | 0 | 1 | [[core-rules/ignores-cover.md\|ignores cover]]，[[core-rules/torrent.md\|torrent]] |
 
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| Hideous mutations | 近战 | 4 | 4+ | 6 | -1 | 2 | — |
+| 骇人异变 | 近战 | 4 | 4+ | 6 | -1 | 2 | — |
 | Brutal weapons | 近战 | 2 | 4+ | 4 | 0 | 1 | — |
 
 ## 技能

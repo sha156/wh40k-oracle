@@ -24,13 +24,13 @@ updated: '2026-07-23'
 ## 射击武器
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| Firefury missile batteries | 36" | 2D6 | 3+ | 6 | -1 | 1 | blast，ignores cover |
-| Twin magna-melta | 18" | 2 | 3+ | 12 | -4 | D6 | [[core-rules/melta.md\|melta 4]]，twin-linked |
+| Firefury missile batteries | 36" | 2D6 | 3+ | 6 | -1 | 1 | [[core-rules/blast.md\|blast]]，[[core-rules/ignores-cover.md\|ignores cover]] |
+| Twin magna-melta | 18" | 2 | 3+ | 12 | -4 | D6 | [[core-rules/melta.md\|melta 4]]，[[core-rules/twin-linked.md\|twin-linked]] |
 
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| Armoured hull | 近战 | 6 | 4+ | 8 | 0 | 1 | lance |
+| 装甲外壳 | 近战 | 6 | 4+ | 8 | 0 | 1 | [[core-rules/lance.md\|lance]] |
 
 ## 技能
 - **Into the Foe**：If a unit disembarks from this <span class="kwb">TRANSPORT</span> before it moves, until the end of the turn, that unit is eligible to charge in a turn in which it Advanced.

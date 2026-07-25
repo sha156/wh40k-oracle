@@ -1,5 +1,6 @@
 ---
 id: 000004099
+name_zh: 音爆战士
 name_en: Noise Marines
 faction: 混沌星际战士
 type: unit
@@ -24,16 +25,16 @@ updated: '2026-07-23'
 ## 射击武器
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| Sonic blaster | 18" | 3 | 3+ | 5 | -1 | 2 | ignores cover |
-| Screamer pistol | 12" | 3 | 3+ | 5 | -1 | 2 | ignores cover，pistol |
-| Blastmaster – varied frequency | 18" | 6 | 3+ | 6 | -2 | 1 | ignores cover |
-| Blastmaster – single frequency | 18" | 3 | 3+ | 10 | -2 | 3 | ignores cover |
+| 音波爆能枪 | 18" | 3 | 3+ | 5 | -1 | 2 | [[core-rules/ignores-cover.md\|ignores cover]] |
+| 音波手枪 | 12" | 3 | 3+ | 5 | -1 | 2 | [[core-rules/ignores-cover.md\|ignores cover]]，[[core-rules/pistol.md\|pistol]] |
+| 音爆炮（变频） | 18" | 6 | 3+ | 6 | -2 | 1 | [[core-rules/ignores-cover.md\|ignores cover]] |
+| 音爆炮（单频） | 18" | 3 | 3+ | 10 | -2 | 3 | [[core-rules/ignores-cover.md\|ignores cover]] |
 
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| Power sword | 近战 | 4 | 3+ | 5 | -2 | 1 | — |
-| Close combat weapon | 近战 | 3 | 3+ | 4 | 0 | 1 | — |
+| 动力剑 | 近战 | 4 | 3+ | 5 | -2 | 1 | — |
+| 格斗武器 | 近战 | 3 | 3+ | 4 | 0 | 1 | — |
 
 ## 技能
 - **Terrifying Crescendo**：In your Shooting phase, after this unit has shot, select one enemy unit hit by one or more of those attacks. Until the start of your next Shooting phase, each time a Battle-shock or Leadership test is taken for that enemy unit, subtract 1 from that test.

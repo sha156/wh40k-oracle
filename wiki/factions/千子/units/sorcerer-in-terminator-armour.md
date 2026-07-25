@@ -29,14 +29,14 @@ updated: '2026-07-23'
 ## 射击武器
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| Gaze of Hate | 18" | 3 | 3+ | 4 | -3 | 2 | [[core-rules/anti.md\|anti-monster 4+]]，[[core-rules/anti.md\|anti-vehicle 4+]]，devastating wounds，psychic |
-| Inferno combi-bolter | 24" | 2 | 3+ | 4 | -2 | 1 | [[core-rules/rapid-fire.md\|rapid fire 2]] |
-| Inferno combi-weapon | 24" | 1 | 4+ | 4 | -2 | 1 | [[core-rules/anti.md\|anti-infantry 4+]]，devastating wounds，[[core-rules/rapid-fire.md\|rapid fire 1]] |
+| 憎恨凝视 | 18" | 3 | 3+ | 4 | -3 | 2 | [[core-rules/anti.md\|anti-monster 4+]]，[[core-rules/anti.md\|anti-vehicle 4+]]，[[core-rules/devastating-wounds.md\|devastating wounds]]，[[core-rules/psychic-attacks.md\|psychic]] |
+| 地狱火复合爆矢枪 | 24" | 2 | 3+ | 4 | -2 | 1 | [[core-rules/rapid-fire.md\|rapid fire 2]] |
+| 地狱火复合武器 | 24" | 1 | 4+ | 4 | -2 | 1 | [[core-rules/anti.md\|anti-infantry 4+]]，[[core-rules/devastating-wounds.md\|devastating wounds]]，[[core-rules/rapid-fire.md\|rapid fire 1]] |
 
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| Force weapon | 近战 | 5 | 3+ | 6 | -1 | D3 | psychic |
+| 灵能武器 | 近战 | 5 | 3+ | 6 | -1 | D3 | [[core-rules/psychic-attacks.md\|psychic]] |
 
 ## 技能
 - **【阵营技能】：黑暗契约**

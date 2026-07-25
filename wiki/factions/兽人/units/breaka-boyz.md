@@ -33,8 +33,8 @@ updated: '2026-07-23'
 |---|---|---|---|---|---|---|---|
 | 砍刀 | 近战 | 4 | 3+ | 5 | -1 | 1 | — |
 | 碎骨爪 | 近战 | 5 | 3+ | 5 | -1 | 1 | 反载具4+,反巨兽4+,双联 |
-| Smash hammer | 近战 | 2 | 3+ | 6 | -2 | 3 | [[core-rules/anti.md\|anti-monster 4+]]，[[core-rules/anti.md\|anti-vehicle 4+]] |
-| Tankhammer | 近战 | 2 | 3+ | 6 | -2 | 3 | [[core-rules/anti.md\|anti-monster 4+]]，[[core-rules/anti.md\|anti-vehicle 4+]]，devastating wounds，hazardous |
+| 粉碎锤 | 近战 | 2 | 3+ | 6 | -2 | 3 | [[core-rules/anti.md\|anti-monster 4+]]，[[core-rules/anti.md\|anti-vehicle 4+]] |
+| 破坦克锤 | 近战 | 2 | 3+ | 6 | -2 | 3 | [[core-rules/anti.md\|anti-monster 4+]]，[[core-rules/anti.md\|anti-vehicle 4+]]，[[core-rules/devastating-wounds.md\|devastating wounds]]，[[core-rules/hazardous.md\|hazardous]] |
 
 ## 技能
 - **炸弹跳跳**：每场战斗中，该单位中每有一个炸弹跳跳，您便有一次机会使用该技能，在该单位结束常规移动后，您可以使用一个炸弹跳跳。若使用，选择一个位于该单位 12" 内且对其可见的敌方单位，并掷一枚 D6，如果掷骰结果为 3+ ，该敌方单位受到 D3 处致命伤。

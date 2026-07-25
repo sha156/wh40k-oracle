@@ -1,5 +1,6 @@
 ---
 id: 000004090
+name_zh: 混沌卵
 name_en: Chaos Spawn
 faction: 帝皇之子
 type: unit
@@ -25,10 +26,11 @@ updated: '2026-07-23'
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| Hideous mutations | 近战 | D6+2 | 4+ | 5 | -1 | 2 | — |
+| 骇人异变 | 近战 | D6+2 | 4+ | 5 | -1 | 2 | — |
 
 ## 技能
-- **Scuttling Horrors**：In your opponent’s Movement phase, if an enemy unit ends a move within 8" of this unit, if this unit is not within Engagement Range of one or more enemy units, this unit can make a Normal move of up to 6".
+- **【阵营技能】：黑暗契约**
+- **可怖变异【光环】**：本单位 3 寸内的非载具敌方单 位中的模型 OC 值-1
 
 ## 单位构成
 - **2个模型** — 70 分

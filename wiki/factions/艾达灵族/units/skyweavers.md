@@ -1,5 +1,6 @@
 ---
 id: 000002539
+name_zh: 织空者摩托
 name_en: Skyweavers
 faction: 艾达灵族
 type: unit
@@ -20,7 +21,7 @@ updated: '2026-07-23'
 ## 属性表
 | 模型 | M | T | SV | W | LD | OC |
 |---|---|---|---|---|---|---|
-| Skyweavers | 14" | 4 | 4+ | 3 | 6+ | 2 |
+| 织空者摩托 | 14" | 4 | 4+ | 3 | 6+ | 2 |
 
 ### 特殊保护
 - 4+
@@ -28,18 +29,19 @@ updated: '2026-07-23'
 ## 射击武器
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| Shuriken cannon | 24" | 3 | 3+ | 6 | -1 | 2 | lethal hits |
-| Skyweaver haywire cannon | 24" | 2 | 3+ | 3 | -1 | 3 | [[core-rules/anti.md\|anti-vehicle 4+]]，devastating wounds |
-| Star bolas | 12" | D3 | 3+ | 7 | -2 | 2 | — |
+| 星镖炮 | 24" | 3 | 3+ | 6 | -1 | 2 | [[core-rules/lethal-hits.md\|致命一击]] |
+| 织空者紊乱炮 | 24" | 2 | 3+ | 3 | -1 | 3 | [[core-rules/anti.md\|反载具 4+]]，[[core-rules/devastating-wounds.md\|毁灭伤害]] |
+| 星光套索 | 12" | D3 | 3+ | 7 | -2 | 2 | — |
 
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| Close combat weapon | 近战 | 4 | 3+ | 3 | 0 | 1 | — |
-| Zephyrglaive | 近战 | 4 | 3+ | 6 | -2 | 2 | — |
+| 格斗武器 | 近战 | 4 | 3+ | 3 | 0 | 1 | — |
+| 微风长刀 | 近战 | 4 | 3+ | 6 | -2 | 2 | — |
 
 ## 技能
-- **Acrobatic Grace**：Each time an attack targets this unit, subtract 1 from the Hit roll.
+- **【阵营技能】：战斗专注**
+- **灵巧身法**：当该单位受到攻击时，该攻击的命 中骰结果减1
 
 ## 单位构成
 - **2个模型** — 95 分

@@ -29,15 +29,15 @@ updated: '2026-07-23'
 ## 射击武器
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| Fury of the Ancients – witchfire | 18" | 3 | 2+ | 4 | -1 | D3 | pistol，psychic，[[core-rules/sustained-hits.md\|sustained hits 1]] |
-| Fury of the Ancients – focused witchfire | 18" | 3 | 2+ | 5 | -2 | D3 | hazardous，pistol，psychic，[[core-rules/sustained-hits.md\|sustained hits 3]] |
-| Plasma pistol – standard | 12" | 1 | 2+ | 7 | -2 | 1 | pistol |
-| Plasma pistol – supercharge | 12" | 1 | 2+ | 8 | -3 | 2 | hazardous，pistol |
+| 远古之怒（巫火） | 18" | 3 | 2+ | 4 | -1 | D3 | [[core-rules/pistol.md\|pistol]]，[[core-rules/psychic-attacks.md\|psychic]]，[[core-rules/sustained-hits.md\|sustained hits 1]] |
+| 远古之怒（聚焦巫火） | 18" | 3 | 2+ | 5 | -2 | D3 | [[core-rules/hazardous.md\|hazardous]]，[[core-rules/pistol.md\|pistol]]，[[core-rules/psychic-attacks.md\|psychic]]，[[core-rules/sustained-hits.md\|sustained hits 3]] |
+| 等离子手枪（标准） | 12" | 1 | 2+ | 7 | -2 | 1 | [[core-rules/pistol.md\|pistol]] |
+| 等离子手枪（过载） | 12" | 1 | 2+ | 8 | -3 | 2 | [[core-rules/hazardous.md\|hazardous]]，[[core-rules/pistol.md\|pistol]] |
 
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| 圣血长剑维塔鲁斯  | 近战 | 6 | 2+ | 9 | -3 | D3 | [[core-rules/lethal-hits.md\|致命一击]]，灵能 |
+| 圣血长剑维塔鲁斯  | 近战 | 6 | 2+ | 9 | -3 | D3 | [[core-rules/lethal-hits.md\|致命一击]]，[[core-rules/psychic-attacks.md\|灵能]] |
 
 ## 技能
 - **【阵营技能】：破敌重誓**

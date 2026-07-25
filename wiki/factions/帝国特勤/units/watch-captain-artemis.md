@@ -1,5 +1,6 @@
 ---
 id: 000003814
+name_zh: 守望连长阿耳忒弥斯
 name_en: Watch Captain Artemis
 faction: 帝国特勤
 type: unit
@@ -20,7 +21,7 @@ updated: '2026-07-23'
 ## 属性表
 | 模型 | M | T | SV | W | LD | OC |
 |---|---|---|---|---|---|---|
-| Watch Captain Artemis | 6" | 4 | 3+ | 4 | 6+ | 1 |
+| 守望连长阿尔忒弥斯 | 6" | 4 | 3+ | 4 | 6+ | 1 |
 
 ### 特殊保护
 - 4+
@@ -28,16 +29,17 @@ updated: '2026-07-23'
 ## 射击武器
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| Hellfire Extremis | 12" | D6 | N/A | 4 | -1 | 1 | [[core-rules/anti.md\|anti-infantry 4+]]，devastating wounds，ignores cover，torrent |
+| 终极地狱火 | 12" | D6 | N/A | 4 | -1 | 1 | [[core-rules/anti.md\|针对步兵 4+]]，[[core-rules/devastating-wounds.md\|毁灭伤害]]，[[core-rules/ignores-cover.md\|无视掩体]]，[[core-rules/torrent.md\|洪流]] |
 
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| Master-crafted power weapon | 近战 | 6 | 2+ | 5 | -2 | 2 | — |
+| 大师级动力武器 | 近战 | 6 | 2+ | 5 | -2 | 2 | — |
 
 ## 技能
-- **Tactical Instinct**：While this model is leading a unit, weapons equipped by models in that unit have the [LETHAL HITS] ability.
-- **Unstoppable Champion**：The first time this model is destroyed, roll one D6 at the end of the phase. On a 2+, set this model back up on the battlefield, as close as possible to where it was destroyed and not within Engagement Range of any enemy units, with 1 wound remaining.
+- **战术直觉**：当该模型领导一个联合单位时，那个单位中模型装备的武器拥有[致命一击]技能。
+- **坚毅勇士**：当该模型第一次被摧毁时，在该阶段结束时掷一枚 D6。 如果掷骰结果为 2+，将该模型重新部署在战场上，尽可能地靠近被摧毁的地点，且不位于任意敌方单位的交战范围内，该模型剩余 1点耐伤。
+- **【阵营技能】：破敌重誓，任务战术**
 
 ## 单位构成
 - **1个模型** — 65 分

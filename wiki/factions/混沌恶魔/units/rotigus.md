@@ -1,5 +1,6 @@
 ---
 id: '000001465'
+name_zh: 烂格斯
 name_en: Rotigus
 faction: 混沌恶魔
 type: unit
@@ -20,7 +21,7 @@ updated: '2026-07-23'
 ## 属性表
 | 模型 | M | T | SV | W | LD | OC |
 |---|---|---|---|---|---|---|
-| Rotigus | 7" | 12 | 5+ | 22 | 6+ | 5 |
+| 烂格斯 | 7" | 12 | 5+ | 22 | 6+ | 5 |
 
 ### 特殊保护
 - 4+
@@ -28,18 +29,19 @@ updated: '2026-07-23'
 ## 射击武器
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| Streams of brackish filth | 12" | 2D6 | N/A | 8 | -2 | 1 | devastating wounds，ignores cover，torrent |
+| 晦物喷射 | 12" | 2D6 | N/A | 8 | -2 | 1 | [[core-rules/devastating-wounds.md\|毁灭伤害]]，[[core-rules/ignores-cover.md\|无视掩体]]，[[core-rules/torrent.md\|洪流]] |
 
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| Gnarlrod – strike | 近战 | 7 | 2+ | 10 | -3 | 3 | lethal hits，psychic |
-| Gnarlrod – sweep | 近战 | 14 | 2+ | 8 | -1 | 1 | lethal hits，psychic |
+| 瘤枝权杖-重击 | 近战 | 7 | 2+ | 10 | -3 | 3 | [[core-rules/psychic-attacks.md\|灵能]]，[[core-rules/lethal-hits.md\|致命一击]] |
+| 瘤枝权杖-横扫 | 近战 | 14 | 2+ | 8 | -1 | 1 | [[core-rules/psychic-attacks.md\|灵能]]，[[core-rules/lethal-hits.md\|致命一击]] |
 
 ## 技能
-- **Greater Daemon of Nurgle (Aura)**：While a friendly Nurgle Legiones Daemonica unit is within 6" of this model, that unit is within your army’s Shadow of Chaos.
-- **Virulent Blessing (Psychic)**：At the start of the Fight phase, you can select one enemy unit within 24" and visible to this model. Until the end of the phase, each time an attack made by a Nurgle Legiones Daemonica model is allocated to a model in that unit, add 1 to the Damage characteristic of that attack.
-- **Deluge of Nurgle (Aura)**：While an enemy unit is within 6" of this model, subtract 2 from the Move characteristic and subtract 1 from the Objective Control characteristic of models in that unit.
+- **疫病祝福(灵能)**：在近战阶段开始时，你可以选择一个位于该模型 24" 内的可见敌方单位。直到阶段结束前，每当一个己方纳垢逆理魔军模型对选择单位中的模型进行攻击时，攻击的伤害属性增加 1 点。
+- **纳垢洪流(光环)**：位于该模型 6" 内的敌方单位中模型的移动属性-2，目标控制属性-1。
+- **高阶纳垢恶魔（光环)**：当一个己方纳垢逆理魔军单位位于该模型的 6" 内时，那个单位位于己方混沌之影中。
+- **受损：剩余 1-7 点耐伤**：当该模型剩余 1-7 点耐伤时，模型攻击的命中掷骰结果减少1点。
 
 ## 单位构成
 - **1个模型** — 280 分

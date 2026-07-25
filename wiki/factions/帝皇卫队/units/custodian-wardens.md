@@ -30,8 +30,8 @@ updated: '2026-07-23'
 ## 射击武器
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| Castellan axe | 24" | 2 | 2+ | 4 | -1 | 2 | assault |
-| Guardian spear | 24" | 2 | 2+ | 4 | -1 | 2 | assault |
+| 堡主战斧 | 24" | 2 | 2+ | 4 | -1 | 2 | [[core-rules/assault.md\|assault]] |
+| 卫士之矛 | 24" | 2 | 2+ | 4 | -1 | 2 | [[core-rules/assault.md\|assault]] |
 
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |

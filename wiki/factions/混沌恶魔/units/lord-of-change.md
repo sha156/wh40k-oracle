@@ -1,5 +1,6 @@
 ---
 id: '000001120'
+name_zh: 变化魔君
 name_en: Lord of Change
 faction: 混沌恶魔
 type: unit
@@ -20,7 +21,7 @@ updated: '2026-07-23'
 ## 属性表
 | 模型 | M | T | SV | W | LD | OC |
 |---|---|---|---|---|---|---|
-| Lord of Change | 12" | 10 | 6+ | 18 | 6+ | 5 |
+| 变化魔君 | 12" | 10 | 6+ | 18 | 6+ | 5 |
 
 ### 特殊保护
 - 4+
@@ -28,20 +29,20 @@ updated: '2026-07-23'
 ## 射击武器
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| Rod of sorcery | 18" | 6 | 2+ | 8 | -1 | 2 | psychic |
-| Bolt of Change – witchfire | 18" | 9 | 2+ | 9 | -1 | 1 | psychic |
-| Bolt of Change – focused witchfire | 18" | 9 | 2+ | 9 | -2 | 3 | hazardous，psychic |
+| 巫术法杖 | 18" | 6 | 2+ | 8 | -1 | 2 | [[core-rules/psychic-attacks.md\|灵能]] |
+| 篡变之矢-巫火 | 18" | 9 | 2+ | 9 | -1 | 1 | [[core-rules/psychic-attacks.md\|灵能]] |
+| 篡变之矢-专注巫火 | 18" | 9 | 2+ | 9 | -2 | 3 | [[core-rules/psychic-attacks.md\|灵能]]，[[core-rules/hazardous.md\|危险]] |
 
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| Baleful sword | 近战 | 3 | 3+ | 7 | -2 | 3 | extra attacks |
-| Staff of Tzeentch | 近战 | 5 | 3+ | 6 | -1 | 3 | psychic |
+| 恶怨之剑 | 近战 | 3 | 3+ | 7 | -2 | 3 | [[core-rules/extra-attacks.md\|额外攻击]] |
+| 奸奇法杖 | 近战 | 5 | 3+ | 6 | -1 | 3 | [[core-rules/psychic-attacks.md\|灵能]] |
 
 ## 技能
-- **Daemon Lord of Tzeentch (Aura)**：While a friendly Tzeentch Legiones Daemonica unit is within 6" of this model, each time a model in that unit makes a ranged attack, add 1 to the Strength characteristic of that attack.
-- **Master of Magicks (Psychic)**：In your Shooting phase, select one of the following abilities: [IGNORES COVER]; [LETHAL HITS]; [SUSTAINED HITS D3]. Until the end of the phase, this model’s Bolt of Change has that ability.
-- **Greater Daemon of Tzeentch (Aura)**：While a friendly Tzeentch Legiones Daemonica unit is within 6" of this model, that unit is within your army’s Shadow of Chaos.
+- **奸奇魔王(光环)**：当该模型 6" 内的己方奸奇逆理魔军单位中的模型进行远程攻击时，攻击的力量属性增加 1 点。
+- **魔法之主（灵能）**：在己方射击阶段中，选择以下一个技能：[无视掩体]；[致命一击]；[连击 D3]。直到阶段结束前，该模型装备的篡变之矢获得选择的技能。
+- **高阶奸奇恶魔（光环)**：当一个己方奸奇逆理魔军单位位于该模型的 6" 内时，那个单位位于己方混沌之影中。
 
 ## 单位构成
 - **1个模型** — 320 分

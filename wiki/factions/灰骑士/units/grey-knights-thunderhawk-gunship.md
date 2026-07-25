@@ -1,5 +1,6 @@
 ---
 id: 000001197
+name_zh: 灰骑士雷鹰炮艇
 name_en: Grey Knights Thunderhawk Gunship
 faction: 灰骑士
 type: unit
@@ -25,16 +26,16 @@ updated: '2026-07-23'
 ## 射击武器
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| Hellstrike missile battery | 72" | 4 | 3+ | 8 | -2 | 3 | [[core-rules/anti.md\|anti-fly 4+]] |
-| Lascannon | 48" | 1 | 3+ | 12 | -3 | D6+1 | — |
-| Thunderhawk heavy cannon | 48" | D6+6 | 3+ | 10 | -2 | 3 | blast |
-| Turbo-laser destructor | 96" | D3+1 | 3+ | 20 | -4 | D6+6 | blast |
-| Twin heavy bolter | 36" | 3 | 3+ | 5 | -1 | 2 | [[core-rules/sustained-hits.md\|sustained hits 1]]，twin-linked |
+| 地狱直击导弹阵列 | 72" | 4 | 3+ | 8 | -2 | 3 | [[core-rules/anti.md\|anti-fly 4+]] |
+| 激光炮 | 48" | 1 | 3+ | 12 | -3 | D6+1 | — |
+| 雷鹰重炮 | 48" | D6+6 | 3+ | 10 | -2 | 3 | [[core-rules/blast.md\|blast]] |
+| 涡轮激光破坏炮 | 96" | D3+1 | 3+ | 20 | -4 | D6+6 | [[core-rules/blast.md\|blast]] |
+| 双联重型爆弹枪 | 36" | 3 | 3+ | 5 | -1 | 2 | [[core-rules/sustained-hits.md\|sustained hits 1]]，[[core-rules/twin-linked.md\|twin-linked]] |
 
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| Armoured hull | 近战 | 6 | 4+ | 8 | 0 | 1 | — |
+| 装甲外壳 | 近战 | 6 | 4+ | 8 | 0 | 1 | — |
 
 ## 技能
 - **Thunderhawk Cluster Bombs**：Each time the bearer ends a Normal move, you can select one enemy unit it moved over during that move and roll six D6: for each 3+, that unit suffers 1 mortal wound.

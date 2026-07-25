@@ -23,14 +23,14 @@ updated: '2026-07-23'
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
 | Castellum air defence missiles | 48" | D6 | 4+ | 9 | -2 | D6 | [[core-rules/anti.md\|anti-fly 2+]] |
-| Castellum battle cannon | 48" | D6+3 | 4+ | 10 | -1 | 3 | blast |
-| Castellum Icarus quad lascannon | 48" | 2 | 4+ | 12 | -3 | D6+1 | [[core-rules/anti.md\|anti-fly 2+]]，twin-linked |
-| Multi-melta | 18" | 2 | 4+ | 9 | -4 | D6 | [[core-rules/melta.md\|melta 2]] |
-| Twin assault cannon | 24" | 6 | 4+ | 6 | 0 | 1 | devastating wounds，twin-linked |
-| Twin heavy bolter | 36" | 3 | 4+ | 5 | -1 | 2 | [[core-rules/sustained-hits.md\|sustained hits 1]]，twin-linked |
-| Twin heavy flamer | 12" | D6 | N/A | 5 | -1 | 2 | ignores cover，torrent，twin-linked |
-| Twin lascannon | 48" | 1 | 4+ | 12 | -3 | D6+1 | twin-linked |
-| Whirlwind castellan launcher | 72" | D6+3 | 4+ | 8 | -2 | 2 | blast，indirect fire |
+| Castellum battle cannon | 48" | D6+3 | 4+ | 10 | -1 | 3 | [[core-rules/blast.md\|blast]] |
+| Castellum Icarus quad lascannon | 48" | 2 | 4+ | 12 | -3 | D6+1 | [[core-rules/anti.md\|anti-fly 2+]]，[[core-rules/twin-linked.md\|twin-linked]] |
+| 多管热熔 | 18" | 2 | 4+ | 9 | -4 | D6 | [[core-rules/melta.md\|melta 2]] |
+| 双联突击炮 | 24" | 6 | 4+ | 6 | 0 | 1 | [[core-rules/devastating-wounds.md\|devastating wounds]]，[[core-rules/twin-linked.md\|twin-linked]] |
+| 双联重型爆弹枪 | 36" | 3 | 4+ | 5 | -1 | 2 | [[core-rules/sustained-hits.md\|sustained hits 1]]，[[core-rules/twin-linked.md\|twin-linked]] |
+| 双联重型火焰喷射器 | 12" | D6 | N/A | 5 | -1 | 2 | [[core-rules/ignores-cover.md\|ignores cover]]，[[core-rules/torrent.md\|torrent]]，[[core-rules/twin-linked.md\|twin-linked]] |
+| 双联激光炮 | 48" | 1 | 4+ | 12 | -3 | D6+1 | [[core-rules/twin-linked.md\|twin-linked]] |
+| Whirlwind castellan launcher | 72" | D6+3 | 4+ | 8 | -2 | 2 | [[core-rules/blast.md\|blast]]，[[core-rules/indirect-fire.md\|indirect fire]] |
 
 ## 技能
 - **Comms Antenna**：In your Command phase, if one or more <span class="kwb">CHARACTER</span> models are embarked within this <span class="kwb">FORTIFICATION</span>, roll one D6: on a 5+, you gain 1CP.

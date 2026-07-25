@@ -22,12 +22,12 @@ updated: '2026-07-23'
 ## 射击武器
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| Hekhtur’s pistol | 12" | 1 | 2+ | 5 | -1 | 2 | pistol |
+| Hekhtur’s pistol | 12" | 1 | 2+ | 5 | -1 | 2 | [[core-rules/pistol.md\|pistol]] |
 
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| Close combat weapon | 近战 | 2 | 2+ | 3 | 0 | 1 | — |
+| 格斗武器 | 近战 | 2 | 2+ | 3 | 0 | 1 | — |
 
 ## 技能
 - **USING SIR HEKHTUR**：If your [[factions/帝国骑士/units/canis-rex.md|Canis Rex]] model is destroyed, this model is treated as a model disembarking from a destroyed <span class="kwb">TRANSPORT</span> and must perform an Emergency Disembarkation. Sir Hekhtur cannot be selected as the target of any of your Stratagems other than Core Stratagems. Your Canis Rex unit is not considered to be destroyed until Sir Hekhtur is also destroyed.

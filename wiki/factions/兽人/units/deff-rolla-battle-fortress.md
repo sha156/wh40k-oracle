@@ -27,19 +27,19 @@ updated: '2026-07-23'
 ## 射击武器
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| Big shoota | 36" | 3 | 5+ | 5 | 0 | 1 | [[core-rules/rapid-fire.md\|rapid fire 2]] |
-| Kannon – frag | 36" | D6 | 5+ | 5 | 0 | 1 | blast |
-| Kannon – shell | 36" | 1 | 5+ | 9 | -2 | D6 | — |
-| Lobba | 48" | D6 | 5+ | 5 | 0 | 1 | blast，indirect fire |
-| Rokkit launcha | 24" | D3 | 5+ | 9 | -2 | 3 | blast |
-| Skorcha | 12" | D6 | N/A | 5 | -1 | 1 | ignores cover，torrent |
-| Twin big shoota | 36" | 3 | 5+ | 5 | 0 | 1 | [[core-rules/rapid-fire.md\|rapid fire 2]]，twin-linked |
-| Zzap gun | 36" | 1 | 5+ | 2D6 | -3 | 3 | devastating wounds |
+| 大突突枪 | 36" | 3 | 5+ | 5 | 0 | 1 | [[core-rules/rapid-fire.md\|rapid fire 2]] |
+| 加农炮（破片弹-与穿甲弹二选一） | 36" | D6 | 5+ | 5 | 0 | 1 | [[core-rules/blast.md\|blast]] |
+| 加农炮（穿甲弹-与破片弹二选一） | 36" | 1 | 5+ | 9 | -2 | D6 | — |
+| 撸巴炮 | 48" | D6 | 5+ | 5 | 0 | 1 | [[core-rules/blast.md\|blast]]，[[core-rules/indirect-fire.md\|indirect fire]] |
+| 火箭筒 | 24" | D3 | 5+ | 9 | -2 | 3 | [[core-rules/blast.md\|blast]] |
+| Skorcha | 12" | D6 | N/A | 5 | -1 | 1 | [[core-rules/ignores-cover.md\|ignores cover]]，[[core-rules/torrent.md\|torrent]] |
+| 双联大突突枪 | 36" | 3 | 5+ | 5 | 0 | 1 | [[core-rules/rapid-fire.md\|rapid fire 2]]，[[core-rules/twin-linked.md\|twin-linked]] |
+| 吱吱炮 | 36" | 1 | 5+ | 2D6 | -3 | 3 | [[core-rules/devastating-wounds.md\|devastating wounds]] |
 
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| Deff rolla | 近战 | 6 | 3+ | 9 | -1 | 2 | — |
+| 死亡滚轮 | 近战 | 6 | 3+ | 9 | -1 | 2 | — |
 
 ## 技能
 - **Rolling Fortress**：Each time a ranged attack is allocated to an <span class="kwb">ORKS</span> model from your army, if that model is not fully visible to every model in the attacking unit because of this <span class="kwb">DEFF</span> <span class="kwb">ROLLA</span> <span class="kwb">BATTLE</span> <span class="kwb">FORTRESS</span> model, that model has the Benefit of Cover against that attack.

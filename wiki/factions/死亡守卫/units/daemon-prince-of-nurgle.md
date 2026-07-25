@@ -1,5 +1,6 @@
 ---
 id: '000001052'
+name_zh: 纳垢恶魔王子
 name_en: Daemon Prince of Nurgle
 faction: 死亡守卫
 type: unit
@@ -28,13 +29,13 @@ updated: '2026-07-23'
 ## 射击武器
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| Infernal cannon | 24" | 3 | 2+ | 5 | -1 | 2 | lethal hits |
+| 狱火加农炮 | 24" | 3 | 2+ | 5 | -1 | 2 | [[core-rules/lethal-hits.md\|lethal hits]] |
 
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| Hellforged weapons – strike | 近战 | 7 | 2+ | 8 | -2 | 3 | lethal hits |
-| Hellforged weapons – sweep | 近战 | 14 | 2+ | 6 | -1 | 1 | lethal hits |
+| 狱铸武器（重击） | 近战 | 7 | 2+ | 8 | -2 | 3 | [[core-rules/lethal-hits.md\|lethal hits]] |
+| 狱铸武器（横扫） | 近战 | 14 | 2+ | 6 | -1 | 1 | [[core-rules/lethal-hits.md\|lethal hits]] |
 
 ## 技能
 - **Death Guard Defenders**：While this model is within 3" of one or more friendly Death Guard Infantry units, this model has the Lone Operative ability.

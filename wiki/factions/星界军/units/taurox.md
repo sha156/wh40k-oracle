@@ -1,5 +1,6 @@
 ---
 id: 000000693
+name_zh: 野牛装甲车
 name_en: Taurox
 faction: 星界军
 type: unit
@@ -20,21 +21,22 @@ updated: '2026-07-23'
 ## 属性表
 | 模型 | M | T | SV | W | LD | OC |
 |---|---|---|---|---|---|---|
-| Taurox | 12" | 8 | 3+ | 10 | 7+ | 2 |
+| 野牛装甲车 | 12" | 8 | 3+ | 10 | 7+ | 2 |
 
 ## 射击武器
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| Twin autocannon | 48" | 2 | 4+ | 9 | -1 | 3 | twin-linked |
-| Storm bolter | 24" | 2 | 4+ | 4 | 0 | 1 | [[core-rules/rapid-fire.md\|rapid fire 2]] |
+| 双联自动炮 | 48" | 2 | 4+ | 9 | -1 | 3 | [[core-rules/twin-linked.md\|双联]] |
+| 风暴爆弹枪 | 24" | 2 | 4+ | 4 | 0 | 1 | [[core-rules/rapid-fire.md\|速射2]] |
 
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| Armoured tracks | 近战 | 3 | 4+ | 6 | 0 | 1 | — |
+| 装甲履带 | 近战 | 3 | 4+ | 6 | 0 | 1 | — |
 
 ## 技能
-- **Rapid Deployment**：Units can disembark from this <span class="kwb">TRANSPORT</span> after it has Advanced. Units that do so count as having made a Normal move that phase, and cannot declare a charge in the same turn, but can otherwise act normally.
+- **快速部署**：该单位突进后，搭载在该模型中的单位依旧可以下车。如果这样做，这样下车的单位视作已经进行了常规移动，本回合不是可冲锋单位单位，但是可以进行其余的常规操作。
+- **运输工具**：该单位可以搭载12个星界军步兵模型。每个欧格林模型占用3个空间。该模型不能运输炮兵模型。
 
 ## 单位构成
 - **1个模型** — 65 分

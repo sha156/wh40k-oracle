@@ -25,15 +25,15 @@ updated: '2026-07-23'
 ## 射击武器
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| Bolt pistol | 12" | 1 | 3+ | 4 | 0 | 1 | pistol |
-| Missile launcher – frag | 48" | D6 | 4+ | 4 | 0 | 1 | blast，heavy |
-| Missile launcher – krak | 48" | 1 | 4+ | 9 | -2 | D6 | heavy |
-| Scout sniper rifle | 36" | 1 | 3+ | 4 | -2 | 2 | heavy，precision |
+| 爆弹手枪 | 12" | 1 | 3+ | 4 | 0 | 1 | [[core-rules/pistol.md\|pistol]] |
+| 导弹发射器（破片） | 48" | D6 | 4+ | 4 | 0 | 1 | [[core-rules/blast.md\|blast]]，[[core-rules/heavy.md\|heavy]] |
+| 导弹发射器（穿甲） | 48" | 1 | 4+ | 9 | -2 | D6 | [[core-rules/heavy.md\|heavy]] |
+| 狙击步枪 | 36" | 1 | 3+ | 4 | -2 | 2 | [[core-rules/heavy.md\|heavy]]，[[core-rules/precision.md\|precision]] |
 
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| Close combat weapon | 近战 | 2 | 3+ | 4 | 0 | 1 | — |
+| 格斗武器 | 近战 | 2 | 3+ | 4 | 0 | 1 | — |
 
 ## 技能
 - **Concealed Positions**：This unit can only be selected as the target of a ranged attack if the attacking model is within 12".

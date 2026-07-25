@@ -28,7 +28,7 @@ updated: '2026-07-23'
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
 | 高斯撕裂枪  | 24" | 1 | 4+ | 4 | 0 | 1 | [[core-rules/lethal-hits.md\|致命一击]]，[[core-rules/rapid-fire.md\|速射 1]] |
-| Gauss reaper | 12" | 2 | 4+ | 4 | -1 | 1 | lethal hits |
+| 高斯收割枪 | 12" | 2 | 4+ | 4 | -1 | 1 | [[core-rules/lethal-hits.md\|lethal hits]] |
 
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |

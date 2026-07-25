@@ -29,7 +29,7 @@ updated: '2026-07-23'
 ## 射击武器
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| Mechanicus pistol | 12" | 1 | 3+ | 6 | 0 | 1 | devastating wounds，pistol |
+| 机械教手枪 | 12" | 1 | 3+ | 6 | 0 | 1 | [[core-rules/devastating-wounds.md\|devastating wounds]]，[[core-rules/pistol.md\|pistol]] |
 
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |

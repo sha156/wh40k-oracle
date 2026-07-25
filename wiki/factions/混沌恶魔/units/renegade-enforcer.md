@@ -27,16 +27,16 @@ updated: '2026-07-23'
 ## 射击武器
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| Enforcer pistol | 12" | 1 | 3+ | 4 | 0 | 1 | pistol |
-| Shotgun | 12" | 2 | 3+ | 4 | 0 | 1 | assault |
-| Lasgun | 24" | 1 | 3+ | 3 | 0 | 1 | [[core-rules/rapid-fire.md\|rapid fire 1]] |
-| Autogun | 24" | 1 | 3+ | 3 | 0 | 1 | [[core-rules/rapid-fire.md\|rapid fire 1]] |
+| Enforcer pistol | 12" | 1 | 3+ | 4 | 0 | 1 | [[core-rules/pistol.md\|pistol]] |
+| Shotgun | 12" | 2 | 3+ | 4 | 0 | 1 | [[core-rules/assault.md\|assault]] |
+| 激光枪 | 24" | 1 | 3+ | 3 | 0 | 1 | [[core-rules/rapid-fire.md\|rapid fire 1]] |
+| 自动枪 | 24" | 1 | 3+ | 3 | 0 | 1 | [[core-rules/rapid-fire.md\|rapid fire 1]] |
 
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| Power weapon | 近战 | 3 | 3+ | 4 | -2 | 1 | — |
-| Power fist | 近战 | 3 | 3+ | 6 | -2 | 2 | — |
+| 动力武器 | 近战 | 3 | 3+ | 4 | -2 | 1 | — |
+| 动力拳 | 近战 | 3 | 3+ | 6 | -2 | 2 | — |
 | Enforcer melee weapon | 近战 | 4 | 3+ | 4 | 0 | 1 | — |
 
 ## 技能

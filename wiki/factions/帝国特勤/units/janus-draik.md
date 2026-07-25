@@ -27,7 +27,7 @@ updated: '2026-07-23'
 ## 射击武器
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| Heirloom pistol | 12" | 1 | 3+ | 4 | -1 | 3 | [[core-rules/anti.md\|anti-infantry 4+]]，pistol |
+| Heirloom pistol | 12" | 1 | 3+ | 4 | -1 | 3 | [[core-rules/anti.md\|anti-infantry 4+]]，[[core-rules/pistol.md\|pistol]] |
 
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |

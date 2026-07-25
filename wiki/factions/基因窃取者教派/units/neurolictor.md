@@ -1,5 +1,6 @@
 ---
 id: 000003885
+name_zh: 神经刀斧虫
 name_en: Neurolictor
 faction: 基因窃取者教派
 type: unit
@@ -27,12 +28,14 @@ updated: '2026-07-23'
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| Piercing claws and talons | 近战 | 6 | 2+ | 6 | -2 | 1 | precision |
+| 穿刺利爪 | 近战 | 6 | 2+ | 6 | -2 | 1 | [[core-rules/precision.md\|精准]] |
 
 ## 技能
-- **Feeder Tendrils**：Each time this model destroys an enemy <span class="kwb">CHARACTER</span> model, you gain 1CP.
-- **Neural Disruption**：In your Command phase, select one enemy unit within 12" of this model. That unit must take a Battle-shock test.
-- **Psychological Saboteur (Aura)**：While an enemy unit is within 12" of this model, if that unit is Battle-shocked:<br><ul><li>Each time a model in that unit makes an attack, subtract 1 from the Hit roll.</li><li>Each time a friendly <span class="kwb">TYRANIDS</span> model makes an attack that targets that unit, add 1 to the Wound roll.</li></ul>
+- **【阵营技能】亚空间阴影**
+- **【阵营技能】节点生物**
+- **吸食触须**：当该模型摧毁一个敌方角色模型时，您获得 1CP。
+- **精神扰乱**：在您的指挥阶段中，选择一个位于该模型 12"内的敌方单位。该敌方单位必须进行一次战斗震慑测试。
+- **心灵破坏者（光环）**：当位于该模型12"内的敌方单位处于战斗震慑状态时:当该敌方单位中的模型进行攻击时，命中掷骰结果减1。当己方泰伦虫族模型对该敌方单位进行攻击时致伤掷骰结果加1。
 
 ## 单位构成
 - **1个模型** — 70 分

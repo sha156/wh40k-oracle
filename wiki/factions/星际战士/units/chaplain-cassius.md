@@ -27,12 +27,12 @@ updated: '2026-07-23'
 ## 射击武器
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| Infernus | 12" | D6 | N/A | 4 | -1 | 1 | [[core-rules/anti.md\|anti-infantry 4+]]，devastating wounds，ignores cover，torrent |
+| Infernus | 12" | D6 | N/A | 4 | -1 | 1 | [[core-rules/anti.md\|anti-infantry 4+]]，[[core-rules/devastating-wounds.md\|devastating wounds]]，[[core-rules/ignores-cover.md\|ignores cover]]，[[core-rules/torrent.md\|torrent]] |
 
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| Artificer crozius | 近战 | 5 | 2+ | 6 | -1 | 2 | — |
+| 精工牧师权杖 | 近战 | 5 | 2+ | 6 | -1 | 2 | — |
 
 ## 技能
 - **Catechism of Death**：While this model is leading a unit, melee weapons equipped by models in that unit have the [DEVASTATING WOUNDS] ability.

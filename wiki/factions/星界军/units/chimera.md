@@ -1,5 +1,6 @@
 ---
 id: 000000692
+name_zh: 奇美拉装甲车
 name_en: Chimera
 faction: 星界军
 type: unit
@@ -20,27 +21,27 @@ updated: '2026-07-23'
 ## 属性表
 | 模型 | M | T | SV | W | LD | OC |
 |---|---|---|---|---|---|---|
-| Chimera | 10" | 9 | 3+ | 11 | 7+ | 2 |
+| 奇美拉装甲车 | 10" | 9 | 3+ | 11 | 7+ | 2 |
 
 ## 射击武器
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| Heavy bolter | 36" | 3 | 4+ | 5 | -1 | 2 | [[core-rules/sustained-hits.md\|sustained hits 1]] |
-| Heavy flamer | 12" | D6 | N/A | 5 | -1 | 1 | ignores cover，torrent |
-| Heavy stubber | 36" | 3 | 4+ | 4 | 0 | 1 | [[core-rules/rapid-fire.md\|rapid fire 3]] |
-| Hunter-killer missile | 48" | 1 | 4+ | 14 | -3 | D6 | one shot |
-| Lasgun array | 24" | 6 | 4+ | 3 | 0 | 1 | [[core-rules/rapid-fire.md\|rapid fire 6]] |
-| Multi-laser | 36" | 4 | 4+ | 6 | 0 | 1 | — |
-| Storm bolter | 24" | 2 | 4+ | 4 | 0 | 1 | [[core-rules/rapid-fire.md\|rapid fire 2]] |
+| 重型爆弹枪 | 36" | 3 | 4+ | 5 | -1 | 2 | [[core-rules/sustained-hits.md\|连击1]] |
+| 重型火焰喷射器 | 12" | D6 | N/A | 5 | -1 | 1 | [[core-rules/ignores-cover.md\|无视掩体]]，[[core-rules/torrent.md\|洪流]] |
+| 重型伐木枪 | 36" | 3 | 4+ | 4 | 0 | 1 | [[core-rules/rapid-fire.md\|速射3]] |
+| 猎杀飞弹 | 48" | 1 | 4+ | 14 | -3 | D6 | [[core-rules/one-shot.md\|单发]] |
+| 激光阵列 | 24" | 6 | 4+ | 3 | 0 | 1 | [[core-rules/rapid-fire.md\|速射6]] |
+| 多管激光 | 36" | 4 | 4+ | 6 | 0 | 1 | — |
+| 风暴爆弹枪 | 24" | 2 | 4+ | 4 | 0 | 1 | [[core-rules/rapid-fire.md\|速射2]] |
 
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| Armoured tracks | 近战 | 3 | 4+ | 6 | 0 | 1 | — |
+| 装甲履带 | 近战 | 3 | 4+ | 6 | 0 | 1 | — |
 
 ## 技能
-- **Mobile Command Vehicle**：In your Command phase, one Officer model embarked within this <span class="kwb">TRANSPORT</span> can issue Orders even though it is not on the battlefield. When doing so, measure distances to and from this <span class="kwb">TRANSPORT</span>.
-- **One Shot**：The bearer can only shoot with this weapon once per battle.
+- **机动指挥车**：在你的指挥阶段，至多一个搭乘在该运输载具上的军官模型，可以不在战场上下达发布命令，从本模型开始计算距离。
+- **运输**：该模型可以运输至多12个星界军步兵模型。每个欧格林模型占用3个模型空间。该模型不能运输炮兵模型。
 
 ## 单位构成
 - **1个模型** — 75 分

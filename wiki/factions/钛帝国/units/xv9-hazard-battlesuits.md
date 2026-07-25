@@ -28,12 +28,12 @@ updated: '2026-07-23'
 |---|---|---|---|---|---|---|---|
 | Fusion cascade | 12" | 1 | 4+ | 9 | -4 | D6 | [[core-rules/melta.md\|melta 4]] |
 | Phased ion gun | 30" | 4 | 4+ | 6 | -1 | 1 | — |
-| Twin hazard burst cannon | 24" | 4 | 4+ | 5 | 0 | 1 | twin-linked |
+| Twin hazard burst cannon | 24" | 4 | 4+ | 5 | 0 | 1 | [[core-rules/twin-linked.md\|twin-linked]] |
 
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| Battlesuit fists | 近战 | 3 | 5+ | 5 | 0 | 1 | — |
+| 战斗服铁拳 | 近战 | 3 | 5+ | 5 | 0 | 1 | — |
 
 ## 技能
 - **Battlesuit Support System**：The bearer’s unit is eligible to shoot in a turn in which it Fell Back, but when doing so only models equipped with this wargear can make ranged attacks.

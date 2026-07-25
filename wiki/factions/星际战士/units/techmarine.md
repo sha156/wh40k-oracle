@@ -32,8 +32,8 @@ updated: '2026-07-23'
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| Omnissian power axe | 近战 | 4 | 3+ | 6 | -2 | 2 | — |
-| Servo-arm | 近战 | 1 | 3+ | 8 | -2 | 3 | extra attacks |
+| 机神动力斧 | 近战 | 4 | 3+ | 6 | -2 | 2 | — |
+| 机械臂 | 近战 | 1 | 3+ | 8 | -2 | 3 | [[core-rules/extra-attacks.md\|extra attacks]] |
 
 ## 技能
 - **【阵营技能】：破敌重誓**

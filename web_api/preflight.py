@@ -123,6 +123,20 @@ def check_assets(root: Optional[Path] = None,
         hint="挂载 ./wiki（仓库内已跟踪，未挂载时用镜像内自带副本）",
     ))
 
+    # 词条索引是离线生成物，且**只能**离线生成：分类判据来自 data/ 下的 11 版速查表
+    # PDF，而 data/ 不挂进容器。缺了就单独核对出来——两个 /codex/keywords 端点会 503，
+    # 不缺一句提示的话，前端只会看到「词条页打不开」而查不到是哪一环没挂。
+    keyword_index = root / "wiki" / "indexes" / "keywords.json"
+    out.append(AssetStatus(
+        name="keyword_index",
+        path=str(keyword_index),
+        ok=keyword_index.exists(),
+        required=False,
+        detail=("" if keyword_index.exists()
+                else "武器词条索引缺失，图鉴词条页（/codex/keywords）503"),
+        hint="宿主机跑 python -m wiki_engine.keyword_index 后随 ./wiki 一并挂载",
+    ))
+
     return out
 
 

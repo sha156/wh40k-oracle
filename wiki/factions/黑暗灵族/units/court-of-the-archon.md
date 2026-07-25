@@ -27,14 +27,14 @@ updated: '2026-07-23'
 ## 射击武器
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| Eyeburst | 12" | D6 | N/A | 6 | -2 | 1 | pistol，torrent |
-| Shardcarbine | 18" | 3 | 3+ | 2 | 0 | 1 | [[core-rules/anti.md\|anti-infantry 3+]]，assault |
-| Splinter pistol | 12" | 1 | 3+ | 2 | 0 | 1 | [[core-rules/anti.md\|anti-infantry 3+]]，assault，pistol |
+| Eyeburst | 12" | D6 | N/A | 6 | -2 | 1 | [[core-rules/pistol.md\|pistol]]，[[core-rules/torrent.md\|torrent]] |
+| 毒晶卡宾枪 | 18" | 3 | 3+ | 2 | 0 | 1 | [[core-rules/anti.md\|anti-infantry 3+]]，[[core-rules/assault.md\|assault]] |
+| 毒晶手枪 | 12" | 1 | 3+ | 2 | 0 | 1 | [[core-rules/anti.md\|anti-infantry 3+]]，[[core-rules/assault.md\|assault]]，[[core-rules/pistol.md\|pistol]] |
 
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| Close combat weapon | 近战 | 2 | 3+ | 3 | 0 | 1 | — |
+| 格斗武器 | 近战 | 2 | 3+ | 3 | 0 | 1 | — |
 | Shaimeshi blade | 近战 | 4 | 3+ | 4 | -2 | 1 | [[core-rules/anti.md\|anti-infantry 2+]] |
 | Sslyth battle-blade | 近战 | 3 | 3+ | 5 | -2 | 2 | — |
 | Ur-ghul talons | 近战 | 6 | 3+ | 4 | 0 | 1 | [[core-rules/sustained-hits.md\|sustained hits 1]] |

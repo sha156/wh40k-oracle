@@ -28,7 +28,7 @@ updated: '2026-07-23'
 |---|---|---|---|---|---|---|---|
 | 自动手枪 | 12" | 1 | 4+ | 3 | 0 | 1 | [[core-rules/pistol.md\|手枪]] |
 | 爆弹手枪 | 12" | 1 | 4+ | 4 | 0 | 1 | [[core-rules/pistol.md\|手枪]] |
-| 爆破炸药 | 6" | D6 | 5+ | 9 | -2 | 2 | [[core-rules/assault.md\|突击]]，[[core-rules/blast.md\|爆炸]]，[[core-rules/hazardous.md\|危险]]，单发 |
+| 爆破炸药 | 6" | D6 | 5+ | 9 | -2 | 2 | [[core-rules/assault.md\|突击]]，[[core-rules/blast.md\|爆炸]]，[[core-rules/hazardous.md\|危险]]，[[core-rules/one-shot.md\|单发]] |
 | 热熔枪 | 12" | 1 | 4+ | 9 | -4 | D6 | [[core-rules/melta.md\|热熔2]] |
 | 海军重型霰弹枪 | 12" | 4 | 4+ | 4 | 0 | 1 | [[core-rules/assault.md\|突击]] |
 | 海军激光齐射枪 | 18" | 4 | 4+ | 6 | 0 | 1 | — |

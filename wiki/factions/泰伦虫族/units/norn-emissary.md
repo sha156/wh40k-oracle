@@ -29,9 +29,9 @@ updated: '2026-07-23'
 ## 射击武器
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| 灵能卷须-神经寄生虫* | 18" | 2 | 2+ | 8 | -2 | D3 | [[core-rules/precision.md\|精准]]，灵能 |
-| 灵能卷须-神经爆炸* | 18" | 2D6 | 2+ | 6 | -2 | 1 | [[core-rules/blast.md\|爆炸]]，灵能 |
-| 灵能卷须-神经之矛* | 18" | 2 | 2+ | 12 | -3 | D6 | [[core-rules/melta.md\|热熔2]]，灵能 |
+| 灵能卷须-神经寄生虫* | 18" | 2 | 2+ | 8 | -2 | D3 | [[core-rules/precision.md\|精准]]，[[core-rules/psychic-attacks.md\|灵能]] |
+| 灵能卷须-神经爆炸* | 18" | 2D6 | 2+ | 6 | -2 | 1 | [[core-rules/blast.md\|爆炸]]，[[core-rules/psychic-attacks.md\|灵能]] |
+| 灵能卷须-神经之矛* | 18" | 2 | 2+ | 12 | -3 | D6 | [[core-rules/melta.md\|热熔2]]，[[core-rules/psychic-attacks.md\|灵能]] |
 
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |

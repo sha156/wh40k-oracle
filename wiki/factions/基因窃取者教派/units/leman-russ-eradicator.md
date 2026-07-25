@@ -27,7 +27,7 @@ updated: '2026-07-23'
 |---|---|---|---|---|---|---|---|
 | 重型火焰喷射器 | 12" | D6 | N/A | 5 | -1 | 1 | [[core-rules/ignores-cover.md\|无视掩体]]，[[core-rules/torrent.md\|洪流]] |
 | 重型伐木枪 | 36" | 3 | 4+ | 4 | 0 | 1 | [[core-rules/rapid-fire.md\|速射3]] |
-| 猎杀飞弹 | 48" | 1 | 4+ | 14 | -3 | D6 | 单发 |
+| 猎杀飞弹 | 48" | 1 | 4+ | 14 | -3 | D6 | [[core-rules/one-shot.md\|单发]] |
 | 等离子炮（过载） | 36" | D3 | 4+ | 8 | -3 | 2 | [[core-rules/hazardous.md\|危险]]，[[core-rules/blast.md\|爆炸]] |
 | 激光炮 | 48" | 1 | 4+ | 12 | -3 | D6+1 | — |
 | 根除者新星炮 | 36" | D3+6 | 4+ | 7 | -1 | 2 | [[core-rules/blast.md\|爆炸]]，[[core-rules/ignores-cover.md\|忽视掩体]] |

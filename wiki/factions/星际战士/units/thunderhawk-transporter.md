@@ -24,13 +24,13 @@ updated: '2026-07-23'
 ## 射击武器
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| Hellstrike missile battery | 72" | 4 | 3+ | 8 | -2 | 3 | [[core-rules/anti.md\|anti-fly 4+]] |
-| Twin heavy bolter | 36" | 3 | 3+ | 5 | -1 | 2 | [[core-rules/sustained-hits.md\|sustained hits 1]]，twin-linked |
+| 地狱直击导弹阵列 | 72" | 4 | 3+ | 8 | -2 | 3 | [[core-rules/anti.md\|anti-fly 4+]] |
+| 双联重型爆弹枪 | 36" | 3 | 3+ | 5 | -1 | 2 | [[core-rules/sustained-hits.md\|sustained hits 1]]，[[core-rules/twin-linked.md\|twin-linked]] |
 
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| Armoured hull | 近战 | 8 | 4+ | 8 | 0 | 1 | — |
+| 装甲外壳 | 近战 | 8 | 4+ | 8 | 0 | 1 | — |
 
 ## 技能
 - **Aerial Deployment**：If this model starts the game in Hover mode and in Strategic Reserves, it can be set up in the Reinforcements step of your first, second or third Movement phase, regardless of any mission rules.

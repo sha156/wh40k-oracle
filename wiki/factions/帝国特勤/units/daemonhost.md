@@ -28,12 +28,12 @@ updated: '2026-07-23'
 ## 射击武器
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| Unholy gaze | 18" | 3 | 4+ | 8 | -2 | D3 | PSYCHIC |
+| Unholy gaze | 18" | 3 | 4+ | 8 | -2 | D3 | [[core-rules/psychic-attacks.md\|PSYCHIC]] |
 
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| Warp grasp | 近战 | 4 | 3+ | 4 | -2 | 1 | LETHAL HITS，PSYCHIC |
+| Warp grasp | 近战 | 4 | 3+ | 4 | -2 | 1 | [[core-rules/lethal-hits.md\|LETHAL HITS]]，[[core-rules/psychic-attacks.md\|PSYCHIC]] |
 
 ## 技能
 - **Malefic Warding**：While an [[factions/帝国特勤/units/inquisitor.md|Inquisitor]] model is leading a unit that includes one or more <span class="kwb">DAEMONHOST</span> models, models in that unit have a 5+ invulnerable save.

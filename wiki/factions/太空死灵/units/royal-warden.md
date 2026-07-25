@@ -26,7 +26,7 @@ updated: '2026-07-23'
 ## 射击武器
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| Relic gauss blaster | 24" | 2 | 3+ | 5 | -1 | 2 | lethal hits，[[core-rules/rapid-fire.md\|rapid fire 2]] |
+| 圣物高斯爆裂枪 | 24" | 2 | 3+ | 5 | -1 | 2 | [[core-rules/lethal-hits.md\|lethal hits]]，[[core-rules/rapid-fire.md\|rapid fire 2]] |
 
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |

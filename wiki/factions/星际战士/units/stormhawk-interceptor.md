@@ -28,10 +28,10 @@ updated: '2026-07-23'
 |---|---|---|---|---|---|---|---|
 | 伊卡路斯风暴炮  | 48" | 6 | 3+ | 7 | -1 | 2 | [[core-rules/anti.md\|反飞行 2+]] |
 | 激光爪     | 36" | 2 | 3+ | 10 | -3 | D6+1 | — |
-| Skyhammer missile launcher | 48" | 3 | 3+ | 8 | -1 | D3 | [[core-rules/anti.md\|anti-fly 2+]] |
+| 天锤导弹 | 48" | 3 | 3+ | 8 | -1 | D3 | [[core-rules/anti.md\|anti-fly 2+]] |
 | 双联突击炮   | 24" | 6 | 3+ | 6 | 0 | 1 | [[core-rules/devastating-wounds.md\|毁灭伤害]]，[[core-rules/twin-linked.md\|双联]] |
 | 双联重型爆弹枪   | 36" | 3 | 3+ | 5 | -1 | 2 | [[core-rules/sustained-hits.md\|连击 1]]，[[core-rules/twin-linked.md\|双联]] |
-| Typhoon missile launcher – frag | 48" | 2D6 | 3+ | 4 | 0 | 1 | blast |
+| 台风导弹发射器（破片） | 48" | 2D6 | 3+ | 4 | 0 | 1 | [[core-rules/blast.md\|blast]] |
 | 台风导弹发射器（穿甲）     | 48" | 2 | 3+ | 9 | -2 | D6 | — |
 
 ## 近战武器

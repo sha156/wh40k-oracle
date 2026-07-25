@@ -29,9 +29,9 @@ updated: '2026-07-23'
 ## 射击武器
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| Fleshmetal guns – focused malice | 18" | D3 | 3+ | 12 | -3 | 4 | [[core-rules/melta.md\|melta 2]] |
-| Fleshmetal guns – ruinous salvo | 24" | D6 | 3+ | 8 | -2 | 2 | blast |
-| Fleshmetal guns – warp hail | 24" | D6+3 | 3+ | 5 | -1 | 1 | [[core-rules/sustained-hits.md\|sustained hits 1]] |
+| 邪钢共生炮（恨意聚焦） | 18" | D3 | 3+ | 12 | -3 | 4 | [[core-rules/melta.md\|melta 2]] |
+| 邪钢共生炮（毁灭齐射） | 24" | D6 | 3+ | 8 | -2 | 2 | [[core-rules/blast.md\|blast]] |
+| 邪钢共生炮（亚空间弹幕） | 24" | D6+3 | 3+ | 5 | -1 | 1 | [[core-rules/sustained-hits.md\|sustained hits 1]] |
 
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |

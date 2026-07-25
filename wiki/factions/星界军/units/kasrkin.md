@@ -1,5 +1,6 @@
 ---
 id: '000002615'
+name_zh: 卡舍津突击队
 name_en: Kasrkin
 faction: 星界军
 type: unit
@@ -20,36 +21,36 @@ updated: '2026-07-23'
 ## 属性表
 | 模型 | M | T | SV | W | LD | OC |
 |---|---|---|---|---|---|---|
-| Kasrkin | 6" | 3 | 4+ | 1 | 7+ | 1 |
+| 卡舍津突击队 | 6" | 3 | 4+ | 1 | 7+ | 1 |
 
 ## 射击武器
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| Bolt pistol | 12" | 1 | 4+ | 4 | 0 | 1 | PISTOL |
-| Flamer | 12" | D6 | N/A | 4 | 0 | 1 | ignores cover，torrent |
-| Grenade launcher – frag | 24" | D3 | 3+ | 4 | 0 | 1 | blast |
-| Grenade launcher – krak | 24" | 1 | 3+ | 9 | -2 | D3 | — |
-| Hot-shot lasgun | 24" | 1 | 3+ | 3 | -1 | 1 | [[core-rules/rapid-fire.md\|rapid fire 1]] |
-| Hot-shot laspistol | 12" | 1 | 3+ | 3 | -1 | 1 | pistol |
-| Hot-shot marksman rifle | 36" | 1 | 3+ | 4 | -2 | 3 | heavy，precision |
-| Hot-shot volley gun | 30" | 2 | 3+ | 4 | -1 | 1 | [[core-rules/rapid-fire.md\|rapid fire 2]] |
-| Meltagun | 12" | 1 | 3+ | 9 | -4 | D6 | [[core-rules/melta.md\|melta 2]] |
-| Plasma gun – standard | 24" | 1 | 3+ | 7 | -2 | 1 | [[core-rules/rapid-fire.md\|rapid fire 1]] |
-| Plasma gun – supercharge | 24" | 1 | 3+ | 8 | -3 | 2 | hazardous，[[core-rules/rapid-fire.md\|rapid fire 1]] |
-| Plasma pistol – standard | 12" | 1 | 4+ | 7 | -2 | 1 | pistol |
-| Plasma pistol – supercharge | 12" | 1 | 4+ | 8 | -3 | 2 | hazardous，pistol |
+| 爆弹手枪 | 12" | 1 | 4+ | 4 | 0 | 1 | [[core-rules/pistol.md\|手枪]] |
+| 火焰喷射器 | 12" | D6 | N/A | 4 | 0 | 1 | [[core-rules/ignores-cover.md\|无视掩体]]，[[core-rules/torrent.md\|洪流]] |
+| 榴弹发射器（破片） | 24" | D3 | 3+ | 4 | 0 | 1 | [[core-rules/blast.md\|爆炸]] |
+| 榴弹发射器（穿甲） | 24" | 1 | 3+ | 9 | -2 | D3 | — |
+| 热射激光枪 | 24" | 1 | 3+ | 3 | -1 | 1 | [[core-rules/rapid-fire.md\|rapid fire 1]] |
+| 热射激光手枪 | 12" | 1 | 3+ | 3 | -1 | 1 | [[core-rules/pistol.md\|pistol]] |
+| 热射狙击步枪 | 36" | 1 | 3+ | 4 | -2 | 3 | [[core-rules/heavy.md\|重型]]，[[core-rules/precision.md\|精准]] |
+| 热射排枪 | 30" | 2 | 3+ | 4 | -1 | 1 | [[core-rules/rapid-fire.md\|速射2]] |
+| 热熔枪 | 12" | 1 | 3+ | 9 | -4 | D6 | [[core-rules/melta.md\|热熔2]] |
+| 等离子枪（标准） | 24" | 1 | 3+ | 7 | -2 | 1 | [[core-rules/rapid-fire.md\|rapid fire 1]] |
+| 等离子枪（过载） | 24" | 1 | 3+ | 8 | -3 | 2 | [[core-rules/hazardous.md\|hazardous]]，[[core-rules/rapid-fire.md\|rapid fire 1]] |
+| 等离子手枪（标准） | 12" | 1 | 4+ | 7 | -2 | 1 | [[core-rules/pistol.md\|pistol]] |
+| 等离子手枪（过载） | 12" | 1 | 4+ | 8 | -3 | 2 | [[core-rules/hazardous.md\|hazardous]]，[[core-rules/pistol.md\|pistol]] |
 
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| Chainsword | 近战 | 4 | 4+ | 3 | 0 | 1 | — |
-| Close combat weapon | 近战 | 2 | 4+ | 3 | 0 | 1 | — |
-| Power weapon | 近战 | 3 | 4+ | 4 | -2 | 1 | — |
+| 链锯剑 | 近战 | 4 | 4+ | 3 | 0 | 1 | — |
+| 格斗武器 | 近战 | 2 | 4+ | 3 | 0 | 1 | — |
+| 动力武器 | 近战 | 3 | 4+ | 4 | -2 | 1 | — |
 
 ## 技能
-- **Warrior Elite**：Once per battle round, at the start of any phase, you can select one Order to affect this unit until the start of your next Command phase, in addition to any other Orders issued to this unit by an Officer model this battle round.
-- **Vox-caster**：Each time you target the bearer’s unit with a Stratagem, roll one D6, adding 1 to the result if there are one or more friendly Officer models within 6": on a 5+, you gain 1CP.
-- **Melta Mine**：Once per battle, at the start of any phase, you can select one enemy unit within 3" of the bearer and roll one D6: on a 2+, that enemy unit suffers D3 mortal wounds, or 2D3 mortal wounds instead if it is a <span class="kwb">VEHICLE</span> unit.
+- **精英战士**：每个游戏大回合一次，在任意阶段开始时，你可以选择一条命令额外对本单位生效，持续到下个你的指挥阶段开始时为止，这不影响本单位正常被下令
+- **步话机**：当持有者所在单位作为你的战略技能的目标时，投D6，若该单位6寸内有一个或多个友军军官模型结果+1，5+得到1CP
+- **热熔地雷**：每场战斗一次，任意阶段开始时，你可以选择一个位于持有者3寸内的敌军单位并投掷一个D6，结果为2+则那个单位遭受D3点致命伤，如果是载具则改为2D3点致命伤。
 
 ## 单位构成
 - **10个模型** — 105 分

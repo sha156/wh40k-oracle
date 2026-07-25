@@ -1,6 +1,6 @@
 # 星际战士
 
-_Last updated: 2026-07-23 12:10 UTC_
+_Last updated: 2026-07-25 11:42 UTC_
 
 ## 单位
 
@@ -31,25 +31,19 @@ _Last updated: 2026-07-23 12:10 UTC_
 - [[factions/星际战士/units/death-company-marines-with-boltguns-and-jump-packs|Death Company Marines with Boltguns and Jump Packs]] — 
 - [[factions/星际战士/units/deathstorm-drop-pod|Deathstorm Drop Pod]] — 
 - [[factions/星际战士/units/deathwing-strikemaster|Deathwing Strikemaster]] — 
-- [[factions/星际战士/units/decimus-kill-team|Decimus Kill Team]] — 
 - [[factions/星际战士/units/deimos-predator|Deimos Predator]] — 
 - [[factions/星际战士/units/deredeo-dreadnought|Deredeo Dreadnought]] — 
 - [[factions/星际战士/units/dreadnought-drop-pod|Dreadnought Drop Pod]] — 
-- [[factions/星际战士/units/emperors-champion|Emperor’s Champion]] — 
 - [[factions/星际战士/units/example-wargear|Example Wargear]] — 
 - [[factions/星际战士/units/falchion|Falchion]] — 
 - [[factions/星际战士/units/fellblade|Fellblade]] — 
 - [[factions/星际战士/units/ferren-areios|Ferren Areios]] — 
 - [[factions/星际战士/units/fire-raptor-gunship|Fire Raptor Gunship]] — 
 - [[factions/星际战士/units/gabriel-seth|Gabriel Seth]] — 
-- [[factions/星际战士/units/gladiator-lancer|Gladiator Lancer]] — 
-- [[factions/星际战士/units/gladiator-reaper|Gladiator Reaper]] — 
-- [[factions/星际战士/units/gladiator-valiant|Gladiator Valiant]] — 
 - [[factions/星际战士/units/harald-deathwolf|Harald Deathwolf]] — 
 - [[factions/星际战士/units/hounds-of-morkai|Hounds Of Morkai]] — 
 - [[factions/星际战士/units/hunter|Hunter]] — 
 - [[factions/星际战士/units/imperial-space-marine|Imperial Space Marine]] — 
-- [[factions/星际战士/units/impulsor|Impulsor]] — 
 - [[factions/星际战士/units/iron-priest-on-thunderwolf|Iron Priest On Thunderwolf]] — 
 - [[factions/星际战士/units/ironclad-dreadnought|Ironclad Dreadnought]] — 
 - [[factions/星际战士/units/javelin-attack-speeder|Javelin Attack Speeder]] — 
@@ -58,7 +52,6 @@ _Last updated: 2026-07-23 12:10 UTC_
 - [[factions/星际战士/units/kratos|Kratos]] — 
 - [[factions/星际战士/units/krom-dragongaze|Krom Dragongaze]] — 
 - [[factions/星际战士/units/land-raider-achilles|Land Raider Achilles]] — 
-- [[factions/星际战士/units/land-raider-crusader|Land Raider Crusader]] — 
 - [[factions/星际战士/units/land-raider-excelsior|Land Raider Excelsior]] — 
 - [[factions/星际战士/units/land-raider-helios|Land Raider Helios]] — 
 - [[factions/星际战士/units/land-raider-prometheus|Land Raider Prometheus]] — 
@@ -82,8 +75,6 @@ _Last updated: 2026-07-23 12:10 UTC_
 - [[factions/星际战士/units/relic-contemptor-dreadnought|Relic Contemptor Dreadnought]] — 
 - [[factions/星际战士/units/relic-razorback|Relic Razorback]] — 
 - [[factions/星际战士/units/relic-terminator-squad|Relic Terminator Squad]] — 
-- [[factions/星际战士/units/repulsor|Repulsor]] — 
-- [[factions/星际战士/units/repulsor-executioner|Repulsor Executioner]] — 
 - [[factions/星际战士/units/rhino-primaris|Rhino Primaris]] — 
 - [[factions/星际战士/units/sanguinary-priest-with-jump-pack|Sanguinary Priest With Jump Pack]] — 
 - [[factions/星际战士/units/sanguinary-priest-on-bike|Sanguinary Priest on Bike]] — 
@@ -100,16 +91,12 @@ _Last updated: 2026-07-23 12:10 UTC_
 - [[factions/星际战士/units/sokar-pattern-stormbird|Sokar-pattern Stormbird]] — 
 - [[factions/星际战士/units/spartan|Spartan]] — 
 - [[factions/星际战士/units/stalker|Stalker]] — 
-- [[factions/星际战士/units/sternguard-veteran-squad|Sternguard Veteran Squad]] — 
 - [[factions/星际战士/units/storm-eagle-gunship|Storm Eagle Gunship]] — 
 - [[factions/星际战士/units/stormfang-gunship|Stormfang Gunship]] — 
-- [[factions/星际战士/units/stormraven-gunship|Stormraven Gunship]] — 
 - [[factions/星际战士/units/stormwolf|Stormwolf]] — 
-- [[factions/星际战士/units/sword-brethren-squad|Sword Brethren Squad]] — 
 - [[factions/星际战士/units/tarantula-air-defence-battery|Tarantula Air Defence Battery]] — 
 - [[factions/星际战士/units/tarantula-sentry-battery|Tarantula Sentry Battery]] — 
 - [[factions/星际战士/units/techmarine-on-bike|Techmarine on Bike]] — 
-- [[factions/星际战士/units/terminator-squad|Terminator Squad]] — 
 - [[factions/星际战士/units/terminus-ultra|Terminus Ultra]] — 
 - [[factions/星际战士/units/terrax-pattern-termite|Terrax-pattern Termite]] — 
 - [[factions/星际战士/units/thunderfire-cannon|Thunderfire Cannon]] — 
@@ -120,7 +107,6 @@ _Last updated: 2026-07-23 12:10 UTC_
 - [[factions/星际战士/units/ultramarines-honour-guard|Ultramarines Honour Guard]] — 
 - [[factions/星际战士/units/uriel-ventris|Uriel Ventris]] — 
 - [[factions/星际战士/units/vanguard-veteran-squad|Vanguard Veteran Squad]] — 
-- [[factions/星际战士/units/venerable-dreadnought|Venerable Dreadnought]] — 
 - [[factions/星际战士/units/venerable-dreadnought-legendary|Venerable Dreadnought (Legendary)]] — 
 - [[factions/星际战士/units/vindicator-laser-destroyer|Vindicator Laser Destroyer]] — 
 - [[factions/星际战士/units/whirlwind-scorpius|Whirlwind Scorpius]] — 
@@ -155,19 +141,23 @@ _Last updated: 2026-07-23 12:10 UTC_
 - [[factions/星际战士/units/inner-circle-companions|内环伙友]] — 
 - [[factions/星际战士/units/storm-speeder-hailstrike|冰雹型风暴速攻艇]] — 
 - [[factions/星际战士/units/impulsor-2|冲击者突击艇]] — 
+- [[factions/星际战士/units/impulsor|冲击者突击艇]] — 
 - [[factions/星际战士/units/kayvaan-shrike|凯万-史瑞克]] — 
 - [[factions/星际战士/units/talonstrike-kill-team|利爪突击杀戮小队]] — 
+- [[factions/星际战士/units/sword-brethren-squad|剑之兄弟小队]] — 
 - [[factions/星际战士/units/bladeguard-ancient|剑卫旗手]] — 
 - [[factions/星际战士/units/bladeguard-veteran-squad|剑卫老兵小队]] — 
 - [[factions/星际战士/units/lieutenant|副官]] — 
 - [[factions/星际战士/units/lieutenant-in-reiver-armour|劫掠者副官]] — 
 - [[factions/星际战士/units/reiver-squad|劫掠者小队]] — 
 - [[factions/星际战士/units/land-raider-crusader-2|十字军型兰德掠袭者坦克]] — 
+- [[factions/星际战士/units/land-raider-crusader|十字军型兰德掠袭者坦克]] — 
 - [[factions/星际战士/units/crusader-squad|十字军小队]] — 
 - [[factions/星际战士/units/cato-sicarius|卡托·西卡留斯]] — 
 - [[factions/星际战士/units/caanok-var|卡诺克·瓦尔]] — 
 - [[factions/星际战士/units/suppressor-squad|压制者小队]] — 
 - [[factions/星际战士/units/repulsor-2|反击者突击艇]] — 
+- [[factions/星际战士/units/repulsor|反击者突击艇]] — 
 - [[factions/星际战士/units/the-sanguinor|圣吉列诺]] — 
 - [[factions/星际战士/units/sanguinary-guard|圣血卫队]] — 
 - [[factions/星际战士/units/sanguinary-priest|圣血祭司]] — 
@@ -176,6 +166,7 @@ _Last updated: 2026-07-23 12:10 UTC_
 - [[factions/星际战士/units/pedro-kantor|坎托战团长]] — 
 - [[factions/星际战士/units/castellan|堡主]] — 
 - [[factions/星际战士/units/repulsor-executioner-2|处决者型反击者坦克]] — 
+- [[factions/星际战士/units/repulsor-executioner|处决者型反击者坦克]] — 
 - [[factions/星际战士/units/land-speeder-vengeance|复仇型兰德飞艇]] — 
 - [[factions/星际战士/units/wardens-of-ultramar|奥特拉玛守望者]] — 
 - [[factions/星际战士/units/watch-master|守望堡主]] — 
@@ -183,7 +174,9 @@ _Last updated: 2026-07-23 12:10 UTC_
 - [[factions/星际战士/units/desolation-squad|寂灭者小队]] — 
 - [[factions/星际战士/units/ballistus-dreadnought|射手型无畏机甲]] — 
 - [[factions/星际战士/units/baal-predator|巴尔掠食者]] — 
+- [[factions/星际战士/units/emperors-champion|帝皇勇士]] — 
 - [[factions/星际战士/units/victrix-honour-guard|常胜护卫]] — 
+- [[factions/星际战士/units/decimus-kill-team|德西姆斯猎杀小队]] — 
 - [[factions/星际战士/units/tactical-squad|战术小队]] — 
 - [[factions/星际战士/units/tor-garadon|托尔连长]] — 
 - [[factions/星际战士/units/execrator|执裁者]] — 
@@ -199,9 +192,11 @@ _Last updated: 2026-07-23 12:10 UTC_
 - [[factions/星际战士/units/spectrus-kill-team|无形杀戮小队]] — 
 - [[factions/星际战士/units/dreadnought|无畏机甲]] — 
 - [[factions/星际战士/units/librarian|智库]] — 
+- [[factions/星际战士/units/stormraven-gunship|暴风渡鸦炮艇]] — 
 - [[factions/星际战士/units/murderfang|杀戮牙]] — 
 - [[factions/星际战士/units/ulrik-the-slayer|杀戮者乌尔里克]] — 
 - [[factions/星际战士/units/gladiator-lancer-2|枪骑兵型角斗者坦克]] — 
+- [[factions/星际战士/units/gladiator-lancer|枪骑兵型角斗者坦克]] — 
 - [[factions/星际战士/units/eradicator-squad|根除者小队]] — 
 - [[factions/星际战士/units/chaplain-grimaldus|格瑞马都斯牧师]] — 
 - [[factions/星际战士/units/deathwatch-terminator-squad|死亡守望终结者小队]] — 
@@ -210,6 +205,7 @@ _Last updated: 2026-07-23 12:10 UTC_
 - [[factions/星际战士/units/death-company-dreadnought|死亡连无畏]] — 
 - [[factions/星际战士/units/death-company-captain|死亡连连长]] — 
 - [[factions/星际战士/units/gladiator-reaper-2|死神型角斗者坦克]] — 
+- [[factions/星际战士/units/gladiator-reaper|死神型角斗者坦克]] — 
 - [[factions/星际战士/units/deathwing-command-squad|死翼指挥组【传奇】]] — 
 - [[factions/星际战士/units/deathwing-terminator-squad|死翼终结者小队]] — 
 - [[factions/星际战士/units/deathwing-knights|死翼骑士]] — 
@@ -239,6 +235,7 @@ _Last updated: 2026-07-23 12:10 UTC_
 - [[factions/星际战士/units/assault-intercessor-squad|突击仲裁者小队]] — 
 - [[factions/星际战士/units/terminator-assault-squad|突击终结者小队]] — 
 - [[factions/星际战士/units/terminator-squad-2|终结者小队]] — 
+- [[factions/星际战士/units/terminator-squad|终结者小队]] — 
 - [[factions/星际战士/units/ancient-in-terminator-armour|终结者旗手]] — 
 - [[factions/星际战士/units/librarian-in-terminator-armour|终结者智库]] — 
 - [[factions/星际战士/units/chaplain-in-terminator-armour|终结者牧师]] — 
@@ -246,11 +243,13 @@ _Last updated: 2026-07-23 12:10 UTC_
 - [[factions/星际战士/units/vindicator|维护者突击炮]] — 
 - [[factions/星际战士/units/roboute-guilliman|罗伯特.基里曼]] — 
 - [[factions/星际战士/units/sternguard-veteran-squad-2|肃卫老兵小队]] — 
+- [[factions/星际战士/units/sternguard-veteran-squad|肃卫老兵小队]] — 
 - [[factions/星际战士/units/fortis-kill-team|至强杀戮小队]] — 
 - [[factions/星际战士/units/high-marshal-helbrecht|至高大元帅赫尔贝茨]] — 
 - [[factions/星际战士/units/aethon-shaan|艾索-沙恩]] — 
 - [[factions/星际战士/units/fenrisian-wolves|芬里斯狼]] — 
 - [[factions/星际战士/units/suboden-khan|苏博登可汗]] — 
+- [[factions/星际战士/units/venerable-dreadnought|荣耀无畏机甲]] — 
 - [[factions/星际战士/units/apothecary|药剂师]] — 
 - [[factions/星际战士/units/darnath-lysander|莱山德连长]] — 
 - [[factions/星际战士/units/lion-eljonson|莱昂艾尔庄森，黑暗天使基因原体]] — 
@@ -266,6 +265,7 @@ _Last updated: 2026-07-23 12:10 UTC_
 - [[factions/星际战士/units/death-company-captain-with-jump-pack|装备跳跃背包的死亡连连长]] — 
 - [[factions/星际战士/units/wulfen-with-storm-shields|装备风暴盾的狼人]] — 
 - [[factions/星际战士/units/gladiator-valiant-2|豪侠型角斗者坦克]] — 
+- [[factions/星际战士/units/gladiator-valiant|豪侠型角斗者坦克]] — 
 - [[factions/星际战士/units/razorback|豪猪装甲车]] — 
 - [[factions/星际战士/units/belial|贝利亚大导师]] — 
 - [[factions/星际战士/units/vanguard-veteran-squad-with-jump-packs|跳跃背包先锋老兵小队]] — 

@@ -24,14 +24,14 @@ updated: '2026-07-23'
 ## 射击武器
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| Hunter-killer missile | 48" | 1 | 2+ | 14 | -3 | D6 | one shot |
-| Skyspear missile launcher | 36" | 1 | 2+ | 10 | -3 | D6+2 | [[core-rules/anti.md\|anti-fly 3+]]，devastating wounds，heavy |
-| Storm bolter | 24" | 2 | 3+ | 4 | 0 | 1 | [[core-rules/rapid-fire.md\|rapid fire 2]] |
+| 猎杀飞弹 | 48" | 1 | 2+ | 14 | -3 | D6 | [[core-rules/one-shot.md\|one shot]] |
+| Skyspear missile launcher | 36" | 1 | 2+ | 10 | -3 | D6+2 | [[core-rules/anti.md\|anti-fly 3+]]，[[core-rules/devastating-wounds.md\|devastating wounds]]，[[core-rules/heavy.md\|heavy]] |
+| 风暴爆弹枪 | 24" | 2 | 3+ | 4 | 0 | 1 | [[core-rules/rapid-fire.md\|rapid fire 2]] |
 
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| Armoured tracks | 近战 | 3 | 4+ | 6 | 0 | 1 | — |
+| 装甲履带 | 近战 | 3 | 4+ | 6 | 0 | 1 | — |
 
 ## 技能
 - **Hunter Missile Targeting**：Each time this model makes an attack with its skyspear missile launcher that targets a <span class="kwb">MONSTER</span> or <span class="kwb">VEHICLE</span> unit, that attack scores a hit on an unmodified Hit roll of 2+.

@@ -28,7 +28,7 @@ updated: '2026-07-23'
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| Fist of Dorn | 近战 | 5 | 2+ | 10 | -3 | 3 | devastating wounds |
+| 多恩之拳 | 近战 | 5 | 2+ | 10 | -3 | 3 | [[core-rules/devastating-wounds.md\|devastating wounds]] |
 
 ## 技能
 - **【阵营技能】：破敌重誓**

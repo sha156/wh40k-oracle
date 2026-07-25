@@ -24,13 +24,13 @@ updated: '2026-07-23'
 ## 射击武器
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| Laspistol | 12" | 1 | 4+ | 3 | 0 | 1 | pistol |
+| 激光手枪 | 12" | 1 | 4+ | 3 | 0 | 1 | [[core-rules/pistol.md\|pistol]] |
 
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| Close combat weapon | 近战 | 1 | 4+ | 3 | 0 | 1 | — |
-| Astropath’s stave | 近战 | 1 | 4+ | 6 | -1 | D3 | psychic |
+| 格斗武器 | 近战 | 1 | 4+ | 3 | 0 | 1 | — |
+| Astropath’s stave | 近战 | 1 | 4+ | 6 | -1 | D3 | [[core-rules/psychic-attacks.md\|psychic]] |
 
 ## 技能
 - **Artillery Commander**：At the start of your Shooting phase, select one enemy unit within 30" of and visible to this unit’s Master of Ordnance model that has not already been selected for this ability this phase. Until the end of the phase, Blast weapons equipped by friendly Astra Militarum Artillery models have the [SUSTAINED HITS 1] ability when targeting that unit.

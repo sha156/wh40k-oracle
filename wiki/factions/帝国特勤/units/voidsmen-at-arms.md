@@ -29,8 +29,8 @@ updated: '2026-07-23'
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
 | 精工级霰弹枪 | 12" | 2 | 4+ | 4 | 0 | 2 | [[core-rules/assault.md\|突击]] |
-| Lasgun | 24" | 1 | 4+ | 3 | 0 | 1 | [[core-rules/rapid-fire.md\|rapid fire 1]] |
-| Laspistol | 12" | 1 | 4+ | 3 | 0 | 1 | pistol |
+| 激光枪 | 24" | 1 | 4+ | 3 | 0 | 1 | [[core-rules/rapid-fire.md\|rapid fire 1]] |
+| 激光手枪 | 12" | 1 | 4+ | 3 | 0 | 1 | [[core-rules/pistol.md\|pistol]] |
 | 船兵转轮炮 | 24" | 6 | 5+ | 6 | 0 | 1 | [[core-rules/sustained-hits.md\|连击1]]，[[core-rules/heavy.md\|重型]] |
 
 ## 近战武器

@@ -27,9 +27,9 @@ updated: '2026-07-23'
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
 | 破片风暴雷  | 18" | D6 | 3+ | 4 | 0 | 1 | [[core-rules/blast.md\|爆炸]] |
-| Heavy bolter | 36" | 3 | 3+ | 5 | -1 | 2 | [[core-rules/sustained-hits.md\|sustained hits 1]] |
-| Incendium cannon | 12" | D6+3 | N/A | 6 | -1 | 1 | ignores cover，torrent |
-| Twin ironhail autocannon | 48" | 3 | 3+ | 9 | -1 | 3 | twin-linked |
+| 重型爆弹枪 | 36" | 3 | 3+ | 5 | -1 | 2 | [[core-rules/sustained-hits.md\|sustained hits 1]] |
+| 焚化炮 | 12" | D6+3 | N/A | 6 | -1 | 1 | [[core-rules/ignores-cover.md\|ignores cover]]，[[core-rules/torrent.md\|torrent]] |
+| 双联铁雨自动炮 | 48" | 3 | 3+ | 9 | -1 | 3 | [[core-rules/twin-linked.md\|twin-linked]] |
 | 双联铁雨重机枪  | 36" | 3 | 3+ | 4 | 0 | 1 | [[core-rules/rapid-fire.md\|速射 3]]，[[core-rules/twin-linked.md\|双联]] |
 
 ## 近战武器

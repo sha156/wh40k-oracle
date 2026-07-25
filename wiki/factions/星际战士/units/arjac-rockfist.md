@@ -34,7 +34,7 @@ updated: '2026-07-23'
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| Foehammer | 近战 | 5 | 2+ | 8 | -2 | 3 | [[core-rules/anti.md\|anti-monster 3+]]，[[core-rules/anti.md\|anti-vehicle 3+]]，precision |
+| 破敌锤 | 近战 | 5 | 2+ | 8 | -2 | 3 | [[core-rules/anti.md\|anti-monster 3+]]，[[core-rules/anti.md\|anti-vehicle 3+]]，[[core-rules/precision.md\|precision]] |
 
 ## 技能
 - **【阵营技能】：破敌重誓**

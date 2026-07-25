@@ -24,17 +24,17 @@ updated: '2026-07-23'
 ## 射击武器
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| Blood Lance – witchfire | 18" | 1 | 3+ | 10 | -3 | D6 | psychic，sustained hits d3 |
-| Blood Lance – focused witchfire | 18" | 1 | 3+ | 12 | -3 | D6+3 | hazardous，psychic，sustained hits d3 |
-| Heavy flamer | 12" | D6 | N/A | 5 | -1 | 1 | ignores cover，torrent |
-| Meltagun | 12" | 1 | 3+ | 9 | -4 | D6 | [[core-rules/melta.md\|melta 2]] |
-| Storm bolter | 24" | 2 | 3+ | 4 | 0 | 1 | [[core-rules/rapid-fire.md\|rapid fire 2]] |
+| Blood Lance – witchfire | 18" | 1 | 3+ | 10 | -3 | D6 | [[core-rules/psychic-attacks.md\|psychic]]，[[core-rules/sustained-hits.md\|sustained hits d3]] |
+| Blood Lance – focused witchfire | 18" | 1 | 3+ | 12 | -3 | D6+3 | [[core-rules/hazardous.md\|hazardous]]，[[core-rules/psychic-attacks.md\|psychic]]，[[core-rules/sustained-hits.md\|sustained hits d3]] |
+| 重型喷火器 | 12" | D6 | N/A | 5 | -1 | 1 | [[core-rules/ignores-cover.md\|ignores cover]]，[[core-rules/torrent.md\|torrent]] |
+| 热熔枪 | 12" | 1 | 3+ | 9 | -4 | D6 | [[core-rules/melta.md\|melta 2]] |
+| 风暴爆弹枪 | 24" | 2 | 3+ | 4 | 0 | 1 | [[core-rules/rapid-fire.md\|rapid fire 2]] |
 
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| Furioso fist | 近战 | 5 | 3+ | 12 | -3 | 3 | — |
-| Furioso force halberd | 近战 | 1 | 2+ | 9 | -3 | D6+3 | extra attacks，psychic |
+| 暴烈重拳 | 近战 | 5 | 3+ | 12 | -3 | 3 | — |
+| Furioso force halberd | 近战 | 1 | 2+ | 9 | -3 | D6+3 | [[core-rules/extra-attacks.md\|extra attacks]]，[[core-rules/psychic-attacks.md\|psychic]] |
 
 ## 技能
 - **Shield of Sanguinius (Aura, Psychic)**：While a friendly <span class="kwb">ADEPTUS</span> <span class="kwb">ASTARTES</span> unit is within 6" of this model, models in that unit have the Feel No Pain 5+ ability against mortal wounds and Psychic Attacks.

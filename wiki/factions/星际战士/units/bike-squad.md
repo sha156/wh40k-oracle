@@ -27,32 +27,32 @@ updated: '2026-07-23'
 ## 射击武器
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| Boltgun | 24" | 2 | 3+ | 4 | 0 | 1 | — |
-| Bolt pistol | 12" | 1 | 3+ | 4 | 0 | 1 | pistol |
-| Combi-weapon | 24" | 1 | 4+ | 4 | 0 | 1 | [[core-rules/anti.md\|ANTI-INFANTRY 4+]]，[[core-rules/devastating-wounds.md\|DEVASTATING WOUNDS]]，[[core-rules/rapid-fire.md\|RAPID FIRE 1]] |
-| Flamer | 12" | D6 | N/A | 4 | -0 | 1 | [[core-rules/ignores-cover.md\|IGNORES COVER]]，TORRENT |
-| Grav-gun | 18" | 2 | 3+ | 5 | -1 | 2 | [[core-rules/anti.md\|ANTI-VEHICLE 2+]] |
-| Grav-pistol | 12" | 1 | 3+ | 4 | -1 | 2 | [[core-rules/anti.md\|anti-vehicle 2+]]，pistol |
-| Hand flamer | 12" | D6 | N/A | 3 | 0 | 1 | ignores cover，pistol，torrent |
-| Heavy bolter | 36" | 3 | 3+ | 5 | -1 | 2 | [[core-rules/sustained-hits.md\|sustained hits 1]] |
-| Inferno pistol | 6" | 1 | 3+ | 8 | -4 | D3 | [[core-rules/melta.md\|melta 2]]，pistol |
-| Meltagun | 12" | 1 | 3+ | 9 | -4 | D6 | [[core-rules/melta.md\|MELTA 2]] |
-| Multi-melta | 18" | 2 | 3+ | 9 | -4 | D6 | [[core-rules/melta.md\|melta 2]] |
-| Plasma gun – standard | 24" | 1 | 3+ | 7 | -2 | 1 | [[core-rules/rapid-fire.md\|RAPID FIRE 1]] |
-| Plasma gun – supercharge | 24" | 1 | 3+ | 8 | -3 | 2 | [[core-rules/hazardous.md\|HAZARDOUS]]，[[core-rules/rapid-fire.md\|RAPID FIRE 1]] |
-| Plasma pistol – standard | 12" | 1 | 3+ | 7 | -2 | 1 | pistol |
-| Plasma pistol – supercharge | 12" | 1 | 3+ | 8 | -3 | 2 | hazardous，pistol |
-| Storm bolter | 24" | 2 | 3+ | 4 | 0 | 1 | [[core-rules/rapid-fire.md\|RAPID FIRE 2]] |
-| Twin boltgun | 24" | 2 | 3+ | 4 | 0 | 1 | twin-linked |
+| 爆弹枪 | 24" | 2 | 3+ | 4 | 0 | 1 | — |
+| 爆弹手枪 | 12" | 1 | 3+ | 4 | 0 | 1 | [[core-rules/pistol.md\|pistol]] |
+| 复合武器 | 24" | 1 | 4+ | 4 | 0 | 1 | [[core-rules/anti.md\|ANTI-INFANTRY 4+]]，[[core-rules/devastating-wounds.md\|DEVASTATING WOUNDS]]，[[core-rules/rapid-fire.md\|RAPID FIRE 1]] |
+| 喷火器 | 12" | D6 | N/A | 4 | -0 | 1 | [[core-rules/ignores-cover.md\|IGNORES COVER]]，[[core-rules/torrent.md\|TORRENT]] |
+| 重力枪 | 18" | 2 | 3+ | 5 | -1 | 2 | [[core-rules/anti.md\|ANTI-VEHICLE 2+]] |
+| 重力手枪 | 12" | 1 | 3+ | 4 | -1 | 2 | [[core-rules/anti.md\|anti-vehicle 2+]]，[[core-rules/pistol.md\|pistol]] |
+| 喷火手枪 | 12" | D6 | N/A | 3 | 0 | 1 | [[core-rules/ignores-cover.md\|ignores cover]]，[[core-rules/pistol.md\|pistol]]，[[core-rules/torrent.md\|torrent]] |
+| 重型爆弹枪 | 36" | 3 | 3+ | 5 | -1 | 2 | [[core-rules/sustained-hits.md\|sustained hits 1]] |
+| 狱火手枪 | 6" | 1 | 3+ | 8 | -4 | D3 | [[core-rules/melta.md\|melta 2]]，[[core-rules/pistol.md\|pistol]] |
+| 热熔枪 | 12" | 1 | 3+ | 9 | -4 | D6 | [[core-rules/melta.md\|MELTA 2]] |
+| 多管热熔 | 18" | 2 | 3+ | 9 | -4 | D6 | [[core-rules/melta.md\|melta 2]] |
+| 等离子枪（标准） | 24" | 1 | 3+ | 7 | -2 | 1 | [[core-rules/rapid-fire.md\|RAPID FIRE 1]] |
+| 等离子枪（过载） | 24" | 1 | 3+ | 8 | -3 | 2 | [[core-rules/hazardous.md\|HAZARDOUS]]，[[core-rules/rapid-fire.md\|RAPID FIRE 1]] |
+| 等离子手枪（标准） | 12" | 1 | 3+ | 7 | -2 | 1 | [[core-rules/pistol.md\|pistol]] |
+| 等离子手枪（过载） | 12" | 1 | 3+ | 8 | -3 | 2 | [[core-rules/hazardous.md\|hazardous]]，[[core-rules/pistol.md\|pistol]] |
+| 风暴爆弹枪 | 24" | 2 | 3+ | 4 | 0 | 1 | [[core-rules/rapid-fire.md\|RAPID FIRE 2]] |
+| Twin boltgun | 24" | 2 | 3+ | 4 | 0 | 1 | [[core-rules/twin-linked.md\|twin-linked]] |
 
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| Astartes chainsword | 近战 | 3 | 3+ | 4 | -1 | 1 | — |
-| Close combat weapon | 近战 | 2 | 3+ | 4 | 0 | 1 | — |
-| Power fist | 近战 | 2 | 3+ | 8 | -2 | 2 | — |
-| Power weapon | 近战 | 3 | 3+ | 5 | -2 | 1 | — |
-| Thunder hammer | 近战 | 2 | 4+ | 8 | -2 | 2 | devastating wounds |
+| 阿斯塔特链锯剑 | 近战 | 3 | 3+ | 4 | -1 | 1 | — |
+| 格斗武器 | 近战 | 2 | 3+ | 4 | 0 | 1 | — |
+| 动力拳 | 近战 | 2 | 3+ | 8 | -2 | 2 | — |
+| 动力武器 | 近战 | 3 | 3+ | 5 | -2 | 1 | — |
+| 雷霆锤 | 近战 | 2 | 4+ | 8 | -2 | 2 | [[core-rules/devastating-wounds.md\|devastating wounds]] |
 
 ## 技能
 - **Turbo-boost**：Each time this unit Advances, do not make an Advance roll for it. Instead, until the end of the phase, add 6" to the Move characteristic of models in this unit.

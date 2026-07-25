@@ -29,10 +29,10 @@ updated: '2026-07-23'
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
 | 高斯炮  | 24" | 3 | 3+ | 5 | -2 | 2 | [[core-rules/lethal-hits.md\|致命一击]] |
-| Particle beamer | 18" | D6 | 3+ | 6 | 0 | 1 | blast，devastating wounds |
+| 粒子射线枪 | 18" | D6 | 3+ | 6 | 0 | 1 | [[core-rules/blast.md\|blast]]，[[core-rules/devastating-wounds.md\|devastating wounds]] |
 | 特斯拉炮  | 24" | 4 | 3+ | 6 | 0 | 1 | [[core-rules/sustained-hits.md\|连击 2]] |
 | 超维奇点阵列（粒子飓风） | 12" | D6+3 | N/A | 6 | -1 | 2 | [[core-rules/ignores-cover.md\|无视掩体]]，[[core-rules/torrent.md\|洪流]] |
-| Tesseract singularity chamber – seismic lash | 36" | D3 | 3+ | 9 | -3 | D6+1 | blast |
+| 超维奇点阵列（地质反冲） | 36" | D3 | 3+ | 9 | -3 | D6+1 | [[core-rules/blast.md\|blast]] |
 
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |

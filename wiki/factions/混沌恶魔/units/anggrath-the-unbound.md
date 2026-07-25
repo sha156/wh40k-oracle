@@ -32,8 +32,8 @@ updated: '2026-07-23'
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| Axe of Khorne – strike | 近战 | 8 | 2+ | 16 | -4 | D6+2 | — |
-| Axe of Khorne – sweep | 近战 | 16 | 2+ | 10 | -2 | 2 | — |
+| 恐虐战斧（重击） | 近战 | 8 | 2+ | 16 | -4 | D6+2 | — |
+| 恐虐战斧（横扫） | 近战 | 16 | 2+ | 10 | -2 | 2 | — |
 
 ## 技能
 - **Emissary of the Blood God (Aura)**：While a friendly Khorne Legiones Daemonica unit is within 6" of this model, you can re-roll Battle-shock tests taken for that unit.

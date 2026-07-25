@@ -29,16 +29,16 @@ updated: '2026-07-23'
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
 | 基岩型爆矢手枪 | 12" | 1 | 3+ | 4 | 0 | 1 | [[core-rules/pistol.md\|手枪]] |
-| Graviton rifle | 18" | 3 | 3+ | 5 | -1 | 3 | [[core-rules/anti.md\|anti-monster 3+]]，[[core-rules/anti.md\|anti-vehicle 3+]] |
-| Las-beam cutter | 6" | 1 | 4+ | 6 | -3 | 1 | — |
+| 重力子步枪 | 18" | 3 | 3+ | 5 | -1 | 3 | [[core-rules/anti.md\|anti-monster 3+]]，[[core-rules/anti.md\|anti-vehicle 3+]] |
+| 激光束切割机 | 6" | 1 | 4+ | 6 | -3 | 1 | — |
 
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
 | 格斗武器 | 近战 | 1 | 4+ | 3 | 0 | 1 | — |
-| Graviton hammer | 近战 | 3 | 4+ | 9 | -1 | 3 | [[core-rules/anti.md\|anti-monster 3+]]，[[core-rules/anti.md\|anti-vehicle 3+]] |
+| 重力子巨锤 | 近战 | 3 | 4+ | 9 | -1 | 3 | [[core-rules/anti.md\|anti-monster 3+]]，[[core-rules/anti.md\|anti-vehicle 3+]] |
 | 伺服机械臂 | 近战 | 3 | 4+ | 3 | 0 | 1 | — |
-| Plasma torch | 近战 | 1 | 4+ | 6 | -3 | 2 | — |
+| 等离子焰炬 | 近战 | 1 | 4+ | 6 | -3 | 2 | — |
 
 ## 技能
 - **阵营:效率为先**

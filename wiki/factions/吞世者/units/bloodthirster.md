@@ -30,7 +30,7 @@ updated: '2026-07-23'
 |---|---|---|---|---|---|---|---|
 | 鲜血连枷  | 12" | 1 | 2+ | 16 | -3 | D6+1 | [[core-rules/devastating-wounds.md\|毁灭伤害]] |
 | 狱火吐息 | 12" | D6 | N/A | 5 | -1 | 1 | [[core-rules/ignores-cover.md\|无视掩体]]，[[core-rules/torrent.md\|洪流]] |
-| Lash of Khorne | 12" | 9 | 2+ | 8 | -1 | 2 | — |
+| 恐虐长鞭 | 12" | 9 | 2+ | 8 | -1 | 2 | — |
 
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |

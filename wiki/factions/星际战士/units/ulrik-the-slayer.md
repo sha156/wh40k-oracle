@@ -35,7 +35,7 @@ updated: '2026-07-23'
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| Artificer crozius arcanum | 近战 | 5 | 2+ | 6 | -2 | 2 | [[core-rules/anti.md\|ANTI-MONSTER 4+]]，[[core-rules/anti.md\|ANTI-VEHICLE 4+]] |
+| 精工牧师权杖 | 近战 | 5 | 2+ | 6 | -2 | 2 | [[core-rules/anti.md\|ANTI-MONSTER 4+]]，[[core-rules/anti.md\|ANTI-VEHICLE 4+]] |
 
 ## 技能
 - **【阵营技能】：破敌重誓**

@@ -26,8 +26,8 @@ updated: '2026-07-23'
 ## 射击武器
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| Hyper blight grenades | 12" | D6 | 3+ | 7 | -1 | 2 | assault，blast，lethal hits |
-| Injector pistol | 3" | 1 | 3+ | 4 | -1 | 3 | [[core-rules/anti.md\|anti-infantry 2+]]，pistol，precision |
+| 枯萎手雷 | 12" | D6 | 3+ | 7 | -1 | 2 | [[core-rules/assault.md\|assault]]，[[core-rules/blast.md\|blast]]，[[core-rules/lethal-hits.md\|lethal hits]] |
+| 毒针手枪 | 3" | 1 | 3+ | 4 | -1 | 3 | [[core-rules/anti.md\|anti-infantry 2+]]，[[core-rules/pistol.md\|pistol]]，[[core-rules/precision.md\|precision]] |
 
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |

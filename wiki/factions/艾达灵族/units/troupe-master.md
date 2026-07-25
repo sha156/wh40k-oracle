@@ -1,5 +1,6 @@
 ---
 id: '000002534'
+name_zh: 丑角剧团长
 name_en: Troupe Master
 faction: 艾达灵族
 type: unit
@@ -19,7 +20,7 @@ updated: '2026-07-23'
 ## 属性表
 | 模型 | M | T | SV | W | LD | OC |
 |---|---|---|---|---|---|---|
-| [[factions/艾达灵族/units/troupe.md\|Troupe]] Master | 8" | 3 | 6+ | 4 | 6+ | 1 |
+| [[factions/艾达灵族/units/troupe.md\|丑角剧团]]长 | 8" | 3 | 6+ | 4 | 6+ | 1 |
 
 ### 特殊保护
 - 4+
@@ -27,25 +28,24 @@ updated: '2026-07-23'
 ## 射击武器
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| Fusion pistol | 6" | 1 | 2+ | 8 | -4 | D6 | assault，[[core-rules/melta.md\|melta 2]]，pistol |
-| Neuro disruptor | 12" | 1 | 2+ | 4 | -2 | 1 | [[core-rules/anti.md\|anti-infantry 2+]]，assault，pistol |
-| Shuriken pistol | 12" | 1 | 2+ | 4 | -1 | 1 | assault，pistol |
+| 热熔手枪 | 6" | 1 | 2+ | 8 | -4 | D6 | [[core-rules/assault.md\|突击]]，[[core-rules/melta.md\|热熔 2]]，[[core-rules/pistol.md\|手枪]] |
+| 神经干扰枪 | 12" | 1 | 2+ | 4 | -2 | 1 | [[core-rules/anti.md\|反步兵 2+]]，[[core-rules/assault.md\|突击]]，[[core-rules/pistol.md\|手枪]] |
+| 星镖手枪 | 12" | 1 | 2+ | 4 | -1 | 1 | [[core-rules/assault.md\|突击]]，[[core-rules/pistol.md\|手枪]] |
 
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| Harlequin’s special weapon | 近战 | 6 | 2+ | 4 | -1 | 2 | devastating wounds |
-| Troupe Master’s blade | 近战 | 5 | 2+ | 5 | -2 | 2 | devastating wounds |
+| 丑角特殊武器 | 近战 | 6 | 2+ | 4 | -1 | 2 | [[core-rules/devastating-wounds.md\|毁灭伤害]] |
+| 剧团长之刃 | 近战 | 5 | 2+ | 5 | -2 | 2 | [[core-rules/devastating-wounds.md\|毁灭伤害]] |
 
 ## 技能
-- **Choreographer of War**：While this model is leading a unit, each time a model in that unit makes a Pile-in or Consolidation move, it can move up to 6" instead of up to 3". In addition, it does not need to end that move closer to the closest enemy model, provided it ends it as close as possible to the closest enemy unit.
-- **Cegorach’s Favour**：Each time this model makes a melee attack, you can re-roll a Hit roll of 1 and add 1 to the Wound roll.
-- **TRAVELLING PLAYERS**：Unless otherwise stated, you cannot include more than one of this model in your army.
-- **Flip Belt**：Each time the bearer’s unit makes a Normal, Advance, Fall Back or Charge move, ignore any vertical distance when determining the total distance the bearer can be moved during that move.
+- **【阵营技能】：战斗专注**
+- **战争编舞**：当本模型领导一个单位时，该单位中的模型在进行跟进或重整移动时可以移动最多6寸而非3寸；此外，上述模型在上述移动结束时不需要更接近最近的敌方模型，只要尽可能接近最近的敌方单位即可
+- **笑神恩惠**：当本模型进行近战攻击时，你可以重投结果 为1的命中骰，造伤骰结果加1
 
 ## 单位构成
 - **1个模型** — 75 分
 
 ## 关键词
 - **阵营关键词**：Harlequins
-- **普通关键词**：Troupe Master，[[core-rules/grenades.md|Grenades]]，[[core-rules/infantry.md|Infantry]]，[[core-rules/character.md|Character]]，Aeldari
+- **普通关键词**：[[factions/艾达灵族/units/troupe.md|Troupe]] Master，[[core-rules/grenades.md|Grenades]]，[[core-rules/infantry.md|Infantry]]，[[core-rules/character.md|Character]]，Aeldari

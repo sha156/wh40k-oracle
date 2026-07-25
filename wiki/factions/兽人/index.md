@@ -1,6 +1,6 @@
 # 兽人
 
-_Last updated: 2026-07-23 12:10 UTC_
+_Last updated: 2026-07-25 11:42 UTC_
 
 ## 单位
 
@@ -16,7 +16,6 @@ _Last updated: 2026-07-23 12:10 UTC_
 - [[factions/兽人/units/deff-rolla-battle-fortress|Deff Rolla Battle Fortress]] — 
 - [[factions/兽人/units/deffkoptas-with-big-shootas|Deffkoptas With Big Shootas]] — 
 - [[factions/兽人/units/fighta-bommer|Fighta-bommer]] — 
-- [[factions/兽人/units/gargantuan-squiggoth|Gargantuan Squiggoth]] — 
 - [[factions/兽人/units/grot-bomm-launcha|Grot Bomm Launcha]] — 
 - [[factions/兽人/units/grot-mega-tank|Grot Mega-tank]] — 
 - [[factions/兽人/units/grot-tanks|Grot Tanks]] — 
@@ -37,7 +36,6 @@ _Last updated: 2026-07-23 12:10 UTC_
 - [[factions/兽人/units/ufthak-blackhawk|Ufthak Blackhawk]] — 
 - [[factions/兽人/units/warboss-on-warbike|Warboss On Warbike]] — 
 - [[factions/兽人/units/warbuggies|Warbuggies]] — 
-- [[factions/兽人/units/wartrakks|Wartrakks]] — 
 - [[factions/兽人/units/beastboss|兽霸头目]] — 
 - [[factions/兽人/units/beast-snagga-boyz|兽霸小子]] — 
 - [[factions/兽人/units/painboss|剧痛头目]] — 
@@ -53,9 +51,11 @@ _Last updated: 2026-07-23 12:10 UTC_
 - [[factions/兽人/units/mek|小技霸]] — 
 - [[factions/兽人/units/gretchin|屁精小队]] — 
 - [[factions/兽人/units/mek-gunz|屁精技师炮]] — 
+- [[factions/兽人/units/gargantuan-squiggoth|巨型斯奎格兽]] — 
 - [[factions/兽人/units/wurrboy|巫术小子]] — 
 - [[factions/兽人/units/mozrog-skragbad|恶疤莫兹罗格]] — 
 - [[factions/兽人/units/warboss|战争头目]] — 
+- [[factions/兽人/units/wartrakks|战履车]] — 
 - [[factions/兽人/units/battlewagon|战斗堡垒]] — 
 - [[factions/兽人/units/bannernob|执旗强蛮人]] — 
 - [[factions/兽人/units/wazbom-blastajet|技霸轰炸机]] — 

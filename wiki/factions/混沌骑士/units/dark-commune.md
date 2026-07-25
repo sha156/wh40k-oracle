@@ -26,14 +26,14 @@ updated: '2026-07-23'
 ## 射击武器
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| Warp Curse – focused witchfire | 18" | 3 | 3+ | 5 | -1 | 2 | hazardous，psychic，[[core-rules/sustained-hits.md\|sustained hits 2]] |
-| Warp Curse – witchfire | 18" | 3 | 3+ | 4 | -1 | 2 | psychic |
+| 亚空间诅咒（聚焦） | 18" | 3 | 3+ | 5 | -1 | 2 | [[core-rules/hazardous.md\|hazardous]]，[[core-rules/psychic-attacks.md\|psychic]]，[[core-rules/sustained-hits.md\|sustained hits 2]] |
+| 亚空间诅咒（普通） | 18" | 3 | 3+ | 4 | -1 | 2 | [[core-rules/psychic-attacks.md\|psychic]] |
 | 自动手枪 | 12" | 1 | 4+ | 3 | 0 | 1 | [[core-rules/pistol.md\|手枪]] |
 
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| Commune blade | 近战 | 2 | 4+ | 4 | -2 | 1 | — |
+| 巫会利刃 | 近战 | 2 | 4+ | 4 | -2 | 1 | — |
 | 巫会法杖     | 近战 | 2 | 4+ | 3 | 0 | D3 | [[core-rules/devastating-wounds.md\|毁灭伤害]] |
 | 格斗武器  | 近战 | 1 | 4+ | 3 | 0 | 1 | — |
 

@@ -1,5 +1,6 @@
 ---
 id: 000002568
+name_zh: 冲击者突击艇
 name_en: Impulsor
 faction: 星际战士
 type: unit
@@ -25,23 +26,22 @@ updated: '2026-07-23'
 ## 射击武器
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| Bellicatus missile array – frag | 48" | D6 | 3+ | 4 | 0 | 1 | blast |
-| Bellicatus missile array – Icarus | 48" | D3 | 3+ | 8 | -1 | 2 | [[core-rules/anti.md\|anti-fly 2+]] |
-| Bellicatus missile array – krak | 48" | 1 | 3+ | 8 | -2 | D6 | — |
-| Fragstorm grenade launcher | 18" | D6 | 3+ | 4 | 0 | 1 | blast |
-| Ironhail heavy stubber | 36" | 3 | 3+ | 4 | 0 | 1 | [[core-rules/rapid-fire.md\|rapid fire 3]] |
-| Ironhail skytalon array | 36" | 8 | 3+ | 4 | 0 | 1 | [[core-rules/anti.md\|anti-fly 4+]]，[[core-rules/sustained-hits.md\|sustained hits 1]] |
-| Storm bolter | 24" | 2 | 3+ | 4 | 0 | 1 | [[core-rules/rapid-fire.md\|rapid fire 2]] |
+| 破片风暴雷 | 48" | D6 | 3+ | 4 | 0 | 1 | [[core-rules/blast.md\|爆炸]] |
+| 贝立凯图导弹阵列（对空） | 48" | D3 | 3+ | 8 | -1 | 2 | [[core-rules/anti.md\|anti-fly 2+]] |
+| 贝立凯图导弹阵列（穿甲） | 48" | 1 | 3+ | 8 | -2 | D6 | — |
+| 破片风暴雷 | 18" | D6 | 3+ | 4 | 0 | 1 | [[core-rules/blast.md\|爆炸]] |
+| 铁雨重机枪    | 36" | 3 | 3+ | 4 | 0 | 1 | [[core-rules/rapid-fire.md\|速射 3]] |
+| 铁雨天爪阵列 | 36" | 8 | 3+ | 4 | 0 | 1 | [[core-rules/anti.md\|anti-fly 4+]]，[[core-rules/sustained-hits.md\|sustained hits 1]] |
+| 风暴爆弹枪   | 24" | 2 | 3+ | 4 | 0 | 1 | [[core-rules/rapid-fire.md\|速射 2]] |
 
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| Armoured hull | 近战 | 3 | 4+ | 6 | 0 | 1 | — |
+| 装甲车体    | 近战 | 3 | 4+ | 6 | 0 | 1 | — |
 
 ## 技能
-- **Assault Vehicle**：Units can disembark from this <span class="kwb">TRANSPORT</span> after it has Advanced. Units that do so count as having made a Normal move, and cannot declare a charge that turn.
-- **Orbital Comms Array (Aura)**：While a friendly <span class="kwb">ADEPTUS</span> <span class="kwb">ASTARTES</span> unit is within 6" of the bearer, each time you target that unit with a Stratagem, roll one D6: on a 5+, you gain 1CP.
-- **Shield Dome**：The bearer has a 5+ invulnerable save.
+- **【阵营技能】：破敌重誓**
+- **快速脱离**：本模型即使本回合进行过加速，其乘客依然可以脱离，这样脱离的单位算作进行过标准移动，但本回合不能发动冲锋
 
 ## 单位构成
 - **1个模型** — 70 分

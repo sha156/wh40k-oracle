@@ -29,13 +29,13 @@ updated: '2026-07-23'
 | 爆弹手枪 | 12" | 1 | 4+ | 4 | 0 | 1 | [[core-rules/pistol.md\|手枪]] |
 | 热射激光卡宾枪 | 18" | 2 | 3+ | 3 | -1 | 1 | [[core-rules/assault.md\|突击]] |
 | 热射激光手枪 | 12" | 1 | 3+ | 3 | -1 | 1 | [[core-rules/pistol.md\|手枪]] |
-| Hot-shot long-las | 36" | 1 | 3+ | 4 | -2 | 3 | [[core-rules/heavy.md\|HEAVY]]，PRECISION |
+| 热射激光狙击枪 | 36" | 1 | 3+ | 4 | -2 | 3 | [[core-rules/heavy.md\|HEAVY]]，[[core-rules/precision.md\|PRECISION]] |
 | 伺服火焰喷射器 | 12" | D6+3 | N/A | 4 | 0 | 1 | [[core-rules/ignores-cover.md\|无视掩体]]，[[core-rules/torrent.md\|洪流]] |
 | 伺服榴弹发射器（破片） | 24" | D3+3 | 4+ | 4 | 0 | 1 | [[core-rules/blast.md\|爆炸]] |
 | 伺服榴弹发射器（穿甲） | 24" | 2 | 4+ | 9 | -2 | D3 | — |
 | 伺服阵列热射枪 | 30" | 4 | 4+ | 4 | -1 | 1 | [[core-rules/rapid-fire.md\|速射4]] |
 | 热熔卡宾枪 | 10" | 1 | 3+ | 9 | -4 | D6 | [[core-rules/assault.md\|突击]]，[[core-rules/melta.md\|热熔2]] |
-| Plasma carbine – standard | 18" | 2 | 3+ | 7 | -2 | 1 | ASSAULT |
+| 等离子卡宾枪（标准） | 18" | 2 | 3+ | 7 | -2 | 1 | [[core-rules/assault.md\|ASSAULT]] |
 | 等离子卡宾枪（过载） | 18" | 2 | 3+ | 8 | -3 | 2 | [[core-rules/assault.md\|突击]]，[[core-rules/hazardous.md\|危险]] |
 
 ## 近战武器

@@ -1,5 +1,6 @@
 ---
 id: '000004062'
+name_zh: 黑暗使徒
 name_en: Dark Apostle
 faction: 混沌恶魔
 type: unit
@@ -19,8 +20,8 @@ updated: '2026-07-23'
 ## 属性表
 | 模型 | M | T | SV | W | LD | OC |
 |---|---|---|---|---|---|---|
-| DARK APOSTLE | 6" | 4 | 3+ | 4 | 5+ | 1 |
-| DARK DISCIPLE | 6" | 4 | 6+ | 1 | 7+ | 1 |
+| 黑暗使徒 | 6" | 4 | 3+ | 4 | 5+ | 1 |
+| 黑暗侍僧 | 6" | 4 | 6+ | 1 | 7+ | 1 |
 
 ### 特殊保护
 - 4+
@@ -28,18 +29,19 @@ updated: '2026-07-23'
 ## 射击武器
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| Bolt pistol | 12" | 1 | 3+ | 4 | 0 | 1 | pistol |
+| 爆弹手枪 | 12" | 1 | 3+ | 4 | 0 | 1 | [[core-rules/pistol.md\|手枪]] |
 
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| Close combat weapon | 近战 | 1 | 4+ | 3 | 0 | 1 | — |
-| Accursed crozius | 近战 | 5 | 2+ | 6 | -1 | 2 | — |
+| 格斗武器  | 近战 | 1 | 4+ | 3 | 0 | 1 | — |
+| 诅咒权杖  | 近战 | 5 | 2+ | 6 | -1 | 2 | — |
 
 ## 技能
-- **Dark Zealotry**：While this unit is leading a unit and contains a <span class="kwb">DARK</span> <span class="kwb">APOSTLE</span> model, each time a model in that unit makes a melee attack, add 1 to the Wound roll.
-- **Demagogue**：Once per battle, at the start of any phase, you can select one friendly <span class="kwb">HERETIC</span> <span class="kwb">ASTARTES</span> unit that is Battle-shocked and within 12" of this unit’s <span class="kwb">DARK</span> <span class="kwb">APOSTLE</span> model. That unit is no longer Battle-shocked.
-- **Malign Sacrifice**：At the start of the Fight phase, if this unit contains one or more Dark Disciple models, you can select one of those models and one enemy unit within Engagement Range of this unit, then roll one D6: on a 2-5, that enemy unit suffers 1 mortal wound; on a 6, that enemy unit suffers D3 mortal wounds. That Dark Disciple model is then destroyed.
+- **【阵营技能】：黑暗契约**
+- **黑暗狂热**：黑暗使徒所领导的单位近战攻击造伤结果+1
+- **聒噪鼓动**：一次性技能，在任意阶段开始时，你可以选择 黑暗使徒 12 寸内一个友军阿斯塔特叛军单位，消除其震慑状态
+- **恶毒祭献**：在近战阶段开始时，如果本单位还有黑暗侍僧 模型存活，则你可以选择其中之一并对本单位接战范围内 一个敌方单位投 D6，2-5 则那个敌方单位遭受 1 点致命伤 害，6 则改为 D3 点致命伤害，然后移除这个黑暗侍僧模型
 
 ## 单位构成
 - **3个模型** — 65 分

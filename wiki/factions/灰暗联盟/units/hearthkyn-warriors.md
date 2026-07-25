@@ -26,23 +26,23 @@ updated: '2026-07-23'
 ## 射击武器
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| 基岩型爆矢手枪 | 12" | 1 | 4+ | 4 | 0 | 1 | pistol |
+| 基岩型爆矢手枪 | 12" | 1 | 4+ | 4 | 0 | 1 | [[core-rules/pistol.md\|pistol]] |
 | 基岩型爆矢枪 | 24" | 2 | 4+ | 4 | 0 | 1 | — |
-| EtaCarn plasma beamer | 18" | 1 | 4+ | 8 | -3 | 2 | sustained hits d3 |
-| HYLas auto rifle | 24" | 3 | 4+ | 6 | -1 | 1 | assault，[[core-rules/rapid-fire.md\|rapid fire 3]] |
+| 艾塔-卡恩等离子光束枪 | 18" | 1 | 4+ | 8 | -3 | 2 | [[core-rules/sustained-hits.md\|sustained hits d3]] |
+| 高能激光自动步枪 | 24" | 3 | 4+ | 6 | -1 | 1 | [[core-rules/assault.md\|assault]]，[[core-rules/rapid-fire.md\|rapid fire 3]] |
 | 高能激光转轮炮   | 24" | 6 | 5+ | 6 | -1 | 1 | [[core-rules/heavy.md\|重型]]，[[core-rules/sustained-hits.md\|连击 1]] |
-| Ion blaster | 18" | 1 | 4+ | 5 | -2 | 1 | — |
+| 离子爆裂枪 | 18" | 1 | 4+ | 5 | -2 | 1 | — |
 | L7 导弹发射器(爆破)  | 24" | D6 | 4+ | 4 | 0 | 1 | [[core-rules/blast.md\|爆炸]] |
-| L7 missile launcher – focused | 24" | 1 | 4+ | 9 | -2 | D6 | — |
-| Magna-rail rifle | 18" | 1 | 5+ | 12 | -3 | D3+3 | devastating wounds，heavy |
+| L7导弹发射器（聚焦） | 24" | 1 | 4+ | 9 | -2 | D6 | — |
+| 磁轨步枪 | 18" | 1 | 5+ | 12 | -3 | D3+3 | [[core-rules/devastating-wounds.md\|devastating wounds]]，[[core-rules/heavy.md\|heavy]] |
 | 炉心头领手枪 | 12" | 1 | 4+ | 8 | -2 | 1 | [[core-rules/pistol.md\|手枪]] |
 
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
 | 格斗武器 | 近战 | 1 | 4+ | 4 | 0 | 1 | — |
-| Plasma knife | 近战 | 2 | 4+ | 4 | -2 | 1 | — |
-| Theyn’s melee weapon | 近战 | 2 | 4+ | 5 | -2 | 2 | — |
+| 等离子匕首 | 近战 | 2 | 4+ | 4 | -2 | 1 | — |
+| 炉心头领近战武器 | 近战 | 2 | 4+ | 5 | -2 | 2 | — |
 
 ## 技能
 - **阵营:效率为先**

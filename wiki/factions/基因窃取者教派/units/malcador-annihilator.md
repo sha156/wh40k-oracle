@@ -24,19 +24,19 @@ updated: '2026-07-23'
 ## 射击武器
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| Autocannon | 48" | 2 | 4+ | 9 | -1 | 3 | — |
-| Malcador twin lascannon | 48" | 1 | 4+ | 12 | -3 | D6+1 | twin-linked |
-| Storm bolter | 24" | 1 | 4+ | 4 | 0 | 1 | [[core-rules/rapid-fire.md\|rapid fire 2]] |
-| Lascannon | 48" | 1 | 4+ | 12 | -3 | D6+1 | — |
-| Demolisher cannon | 24" | D6+3 | 4+ | 14 | -3 | D6 | blast |
-| Heavy bolter | 36" | 3 | 4+ | 5 | -1 | 2 | [[core-rules/sustained-hits.md\|sustained hits 1]] |
-| Hunter-killer missile | 48" | 1 | 4+ | 14 | -3 | D6 | one shot |
+| 自动炮 | 48" | 2 | 4+ | 9 | -1 | 3 | — |
+| Malcador twin lascannon | 48" | 1 | 4+ | 12 | -3 | D6+1 | [[core-rules/twin-linked.md\|twin-linked]] |
+| 风暴爆弹枪 | 24" | 1 | 4+ | 4 | 0 | 1 | [[core-rules/rapid-fire.md\|rapid fire 2]] |
+| 激光炮 | 48" | 1 | 4+ | 12 | -3 | D6+1 | — |
+| 破坏者加农炮 | 24" | D6+3 | 4+ | 14 | -3 | D6 | [[core-rules/blast.md\|blast]] |
+| 重型爆弹枪 | 36" | 3 | 4+ | 5 | -1 | 2 | [[core-rules/sustained-hits.md\|sustained hits 1]] |
+| 猎杀飞弹 | 48" | 1 | 4+ | 14 | -3 | D6 | [[core-rules/one-shot.md\|one shot]] |
 | Heavy stubber | 36" | 3 | 4+ | 4 | 0 | 1 | [[core-rules/rapid-fire.md\|rapid fire 3]] |
 
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| Armoured tracks | 近战 | 6 | 4+ | 7 | 0 | 1 | — |
+| 装甲履带 | 近战 | 6 | 4+ | 7 | 0 | 1 | — |
 
 ## 技能
 - **Battlefield Dominance**：Ranged weapons equipped by this model have the [IGNORES COVER] ability while targeting an enemy unit within half range.

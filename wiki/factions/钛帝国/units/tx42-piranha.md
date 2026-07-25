@@ -25,15 +25,15 @@ updated: '2026-07-23'
 ## 射击武器
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| Fusion blaster | 12" | 1 | 4+ | 9 | -4 | D6 | [[core-rules/melta.md\|melta 2]] |
-| Missile pod | 30" | 2 | 4+ | 7 | -1 | 2 | — |
-| Plasma rifle | 24" | 1 | 4+ | 8 | -3 | 3 | — |
-| Rail rifle | 30" | 1 | 4+ | 10 | -4 | 3 | devastating wounds |
+| 融合炮 | 12" | 1 | 4+ | 9 | -4 | D6 | [[core-rules/melta.md\|melta 2]] |
+| 导弹仓 | 30" | 2 | 4+ | 7 | -1 | 2 | — |
+| 等离子步枪 | 24" | 1 | 4+ | 8 | -3 | 3 | — |
+| 磁轨步枪 | 30" | 1 | 4+ | 10 | -4 | 3 | [[core-rules/devastating-wounds.md\|devastating wounds]] |
 
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| Armoured hull | 近战 | 2 | 5+ | 4 | 0 | 1 | — |
+| 装甲外壳 | 近战 | 2 | 5+ | 4 | 0 | 1 | — |
 
 ## 技能
 - **Outflank**：When this unit arrives from Strategic Reserves, it can be set up within your opponent’s deployment zone (all other restrictions still apply).

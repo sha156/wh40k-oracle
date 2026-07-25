@@ -27,8 +27,8 @@ updated: '2026-07-23'
 ## 射击武器
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| Demolisher cannon | 24" | D6+3 | 3+ | 14 | -3 | D6 | blast |
-| Hellmaw flame cannons | 12" | 2D6 | N/A | 8 | -1 | 1 | ignores cover，torrent |
+| 破坏者加农炮 | 24" | D6+3 | 3+ | 14 | -3 | D6 | [[core-rules/blast.md\|blast]] |
+| Hellmaw flame cannons | 12" | 2D6 | N/A | 8 | -1 | 1 | [[core-rules/ignores-cover.md\|ignores cover]]，[[core-rules/torrent.md\|torrent]] |
 | Scorpion cannon | 36" | 15 | 3+ | 5 | -1 | 2 | [[core-rules/sustained-hits.md\|sustained hits 1]] |
 
 ## 近战武器

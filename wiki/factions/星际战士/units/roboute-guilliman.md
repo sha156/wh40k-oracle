@@ -34,7 +34,7 @@ updated: '2026-07-23'
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
 | 帝皇之剑      | 近战 | 14 | 2+ | 8 | -3 | 2 | [[core-rules/devastating-wounds.md\|毁灭伤害]] |
-| Hand of Dominion | 近战 | 7 | 2+ | 14 | -4 | 4 | lethal hits |
+| 统御之手 | 近战 | 7 | 2+ | 14 | -4 | 4 | [[core-rules/lethal-hits.md\|lethal hits]] |
 
 ## 技能
 - **【阵营技能】：破敌重誓**

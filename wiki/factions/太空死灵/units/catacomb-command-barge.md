@@ -30,14 +30,14 @@ updated: '2026-07-23'
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
 | 高斯炮 | 24" | 3 | 3+ | 5 | -2 | 2 | [[core-rules/lethal-hits.md\|致命一击]] |
-| Staff of light | 18" | 3 | 2+ | 5 | -2 | 1 | — |
+| 光之杖 | 18" | 3 | 2+ | 5 | -2 | 1 | — |
 | 特斯拉炮 | 24" | 4 | 3+ | 6 | 0 | 1 | [[core-rules/sustained-hits.md\|连击 2]] |
 
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| [[factions/太空死灵/units/overlord.md\|Overlord]]’s blade | 近战 | 4 | 2+ | 8 | -3 | 2 | devastating wounds |
-| Staff of light | 近战 | 4 | 3+ | 5 | -2 | 1 | — |
+| 霸主之刃 | 近战 | 4 | 2+ | 8 | -3 | 2 | [[core-rules/devastating-wounds.md\|devastating wounds]] |
+| 光之杖 | 近战 | 4 | 3+ | 5 | -2 | 1 | — |
 
 ## 技能
 - **[阵营]：重生协议**

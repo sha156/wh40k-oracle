@@ -27,14 +27,14 @@ updated: '2026-07-23'
 ## 射击武器
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| Killkannon | 24" | D6+3 | 5+ | 9 | -2 | 2 | — |
+| 杀戮炮 | 24" | D6+3 | 5+ | 9 | -2 | 2 | — |
 
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
 | Dread killsaw | 近战 | 4 | 3+ | 14 | -3 | 4 | — |
 | Dread rippa klaw | 近战 | 6 | 3+ | 12 | -2 | 3 | — |
-| Stompy feet | 近战 | 4 | 3+ | 7 | 0 | 1 | — |
+| 双足践踏 | 近战 | 4 | 3+ | 7 | 0 | 1 | — |
 
 ## 技能
 - **Mekaniak**：At the end of your Movement phase, you can select one friendly Orks Vehicle model within 3" of this model. That <span class="kwb">VEHICLE</span> model regains up to D3 lost wounds, and, until the start of your next Movement phase, each time that <span class="kwb">VEHICLE</span> model makes an attack, add 1 to the Hit roll. Each model can only be selected for this ability once per turn.

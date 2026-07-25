@@ -28,7 +28,7 @@ updated: '2026-07-23'
 ## 射击武器
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| Blast pistol | 6" | 1 | 3+ | 8 | -4 | D3 | pistol |
+| 爆能手枪 | 6" | 1 | 3+ | 8 | -4 | D3 | [[core-rules/pistol.md\|pistol]] |
 | 毒晶手枪 | 12" | 1 | 3+ | 2 | 0 | 1 | [[core-rules/anti.md\|反步兵3+]]，[[core-rules/assault.md\|突击]]，[[core-rules/pistol.md\|手枪]] |
 
 ## 近战武器

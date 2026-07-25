@@ -1,5 +1,6 @@
 ---
 id: '000004207'
+name_zh: 亵渎者
 name_en: Defiler
 faction: 吞世者
 type: unit
@@ -28,22 +29,22 @@ updated: '2026-07-23'
 ## 射击武器
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| Ectoplasma destructor | 36" | D6 | 4+ | 12 | -3 | 3 | blast，[[core-rules/rapid-fire.md\|rapid fire 2]] |
-| Excruciator cannon | 36" | 6 | 4+ | 6 | -1 | 2 | [[core-rules/rapid-fire.md\|rapid fire 3]] |
-| Heavy baleflamer | 12" | D6+3 | N/A | 7 | -2 | 2 | ignores cover，torrent |
-| Hades battle cannon | 48" | D6+3 | 4+ | 10 | -1 | 3 | blast，[[core-rules/rapid-fire.md\|rapid fire 3]] |
-| Hades lascannon | 48" | 2 | 4+ | 12 | -3 | D6+1 | [[core-rules/rapid-fire.md\|rapid fire 1]] |
-| Heavy missile launcher – krak | 48" | 2 | 4+ | 10 | -2 | D6+1 | [[core-rules/rapid-fire.md\|rapid fire 1]] |
-| Heavy missile launcher – frag | 48" | 2D6 | 4+ | 5 | -1 | 1 | blast，[[core-rules/rapid-fire.md\|rapid fire 3]] |
-| Heavy reaper autocannon | 48" | 4 | 4+ | 9 | -1 | 3 | devastating wounds，[[core-rules/rapid-fire.md\|rapid fire 2]]，[[core-rules/sustained-hits.md\|sustained hits 1]] |
-| Magma cutters | 12" | 2 | 4+ | 9 | -4 | D6 | [[core-rules/melta.md\|melta 2]]，[[core-rules/rapid-fire.md\|rapid fire 1]] |
+| 魂浆毁灭炮 | 36" | D6 | 4+ | 12 | -3 | 3 | [[core-rules/blast.md\|blast]]，[[core-rules/rapid-fire.md\|rapid fire 2]] |
+| 拷问者加农炮 | 36" | 6 | 4+ | 6 | -1 | 2 | [[core-rules/rapid-fire.md\|rapid fire 3]] |
+| 重型恶毒之火 | 12" | D6+3 | N/A | 7 | -2 | 2 | [[core-rules/ignores-cover.md\|ignores cover]]，[[core-rules/torrent.md\|torrent]] |
+| 冥神战斗加农炮 | 48" | D6+3 | 4+ | 10 | -1 | 3 | [[core-rules/blast.md\|blast]]，[[core-rules/rapid-fire.md\|rapid fire 3]] |
+| 冥神激光炮 | 48" | 2 | 4+ | 12 | -3 | D6+1 | [[core-rules/rapid-fire.md\|rapid fire 1]] |
+| 重型导弹发射器（穿甲） | 48" | 2 | 4+ | 10 | -2 | D6+1 | [[core-rules/rapid-fire.md\|rapid fire 1]] |
+| 重型导弹发射器（破片） | 48" | 2D6 | 4+ | 5 | -1 | 1 | [[core-rules/blast.md\|blast]]，[[core-rules/rapid-fire.md\|rapid fire 3]] |
+| 重型收割者自动炮 | 48" | 4 | 4+ | 9 | -1 | 3 | [[core-rules/devastating-wounds.md\|devastating wounds]]，[[core-rules/rapid-fire.md\|rapid fire 2]]，[[core-rules/sustained-hits.md\|sustained hits 1]] |
+| 岩浆切割机 | 12" | 2 | 4+ | 9 | -4 | D6 | [[core-rules/melta.md\|melta 2]]，[[core-rules/rapid-fire.md\|rapid fire 1]] |
 
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| Electroscourge | 近战 | 7 | 3+ | 12 | -2 | 2 | extra attacks，[[core-rules/sustained-hits.md\|sustained hits 2]] |
-| Shearing claws – strike | 近战 | 6 | 3+ | 16 | -3 | D6+1 | — |
-| Shearing claws – sweep | 近战 | 12 | 3+ | 6 | -2 | 1 | — |
+| 电鞭 | 近战 | 7 | 3+ | 12 | -2 | 2 | [[core-rules/extra-attacks.md\|extra attacks]]，[[core-rules/sustained-hits.md\|sustained hits 2]] |
+| 剪切利爪（重击） | 近战 | 6 | 3+ | 16 | -3 | D6+1 | — |
+| 剪切利爪（横扫） | 近战 | 12 | 3+ | 6 | -2 | 1 | — |
 
 ## 技能
 - **Scuttling Walker**：Each time this unit makes a Normal, Advance or Fall Back move, it can move through models (excluding <span class="kwb">TITANIC</span> models) and terrain features. When doing so, it can move within Engagement Range of enemy models, but cannot end that move within Engagement Range of them, and any Desperate Escape test is automatically passed.

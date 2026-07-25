@@ -29,13 +29,13 @@ updated: '2026-07-23'
 ## 射击武器
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| 炼狱之火-巫火 | 12" | D6 | N/A | 6 | -1 | 1 | 灵能，[[core-rules/torrent.md\|洪流]]，[[core-rules/ignores-cover.md\|无视掩体]] |
-| 炼狱之火-专注巫火 | 12" | D6+3 | N/A | 6 | -1 | D3 | 灵能，[[core-rules/hazardous.md\|危险]]，[[core-rules/ignores-cover.md\|无视掩体]]，[[core-rules/torrent.md\|洪流]] |
+| 炼狱之火-巫火 | 12" | D6 | N/A | 6 | -1 | 1 | [[core-rules/psychic-attacks.md\|灵能]]，[[core-rules/torrent.md\|洪流]]，[[core-rules/ignores-cover.md\|无视掩体]] |
+| 炼狱之火-专注巫火 | 12" | D6+3 | N/A | 6 | -1 | D3 | [[core-rules/psychic-attacks.md\|灵能]]，[[core-rules/hazardous.md\|危险]]，[[core-rules/ignores-cover.md\|无视掩体]]，[[core-rules/torrent.md\|洪流]] |
 
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| 欺诈者之杖 | 近战 | 3 | 4+ | 4 | -1 | D3 | 灵能 |
+| 欺诈者之杖 | 近战 | 3 | 4+ | 4 | -1 | D3 | [[core-rules/psychic-attacks.md\|灵能]] |
 
 ## 技能
 - **无形妖物**：每当一个敌方单位要将该模型作为攻击目标时，那个单位必须进行一次战斗震慑测试。如果测试失败，那么除了处于战斗震慑状态外，那个敌方单位在当前阶段中不能将该模型作为攻击目标。

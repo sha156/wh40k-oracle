@@ -1,5 +1,6 @@
 ---
 id: '000001650'
+name_zh: 蝎式沙丘运输车
 name_en: Skorpius Dunerider
 faction: 机械修会
 type: unit
@@ -25,12 +26,12 @@ updated: '2026-07-23'
 ## 射击武器
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| Cognis heavy stubber array | 36" | 9 | 4+ | 4 | 0 | 1 | [[core-rules/rapid-fire.md\|rapid fire 9]]，[[core-rules/sustained-hits.md\|sustained hits 1]]，twin-linked |
+| 智能重机枪阵列 | 36" | 9 | 4+ | 4 | 0 | 1 | [[core-rules/rapid-fire.md\|rapid fire 9]]，[[core-rules/sustained-hits.md\|sustained hits 1]]，[[core-rules/twin-linked.md\|twin-linked]] |
 
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| Armoured hull | 近战 | 3 | 4+ | 6 | 0 | 1 | — |
+| 装甲外壳 | 近战 | 3 | 4+ | 6 | 0 | 1 | — |
 
 ## 技能
 - **Broad Spectrum Data-tether**：Each time you target this unit with a Stratagem, roll one D6: on a 5+, you gain 1CP.

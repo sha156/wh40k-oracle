@@ -24,13 +24,13 @@ updated: '2026-07-23'
 ## 射击武器
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| Bolt pistol | 12" | 1 | 3+ | 4 | 0 | 1 | [[core-rules/anti.md\|anti-tyranids 4+]]，pistol |
-| Boltgun | 24" | 2 | 3+ | 4 | 0 | 1 | [[core-rules/anti.md\|anti-tyranids 4+]] |
+| 爆弹手枪 | 12" | 1 | 3+ | 4 | 0 | 1 | [[core-rules/anti.md\|anti-tyranids 4+]]，[[core-rules/pistol.md\|pistol]] |
+| 爆弹枪 | 24" | 2 | 3+ | 4 | 0 | 1 | [[core-rules/anti.md\|anti-tyranids 4+]] |
 
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| Close combat weapon | 近战 | 3 | 3+ | 4 | 0 | 1 | [[core-rules/anti.md\|anti-tyranids 4+]] |
+| 格斗武器 | 近战 | 3 | 3+ | 4 | 0 | 1 | [[core-rules/anti.md\|anti-tyranids 4+]] |
 
 ## 技能
 - **Tyrannic War Veterans**：Weapons equipped by models in this unit are have the [DEVASTATING WOUNDS] ability when targeting <span class="kwb">TYRANIDS</span> units.

@@ -1,5 +1,6 @@
 ---
 id: 000001584
+name_zh: 枭首魔将
 name_en: Master Of Executions
 faction: 混沌星际战士
 type: unit
@@ -25,16 +26,17 @@ updated: '2026-07-23'
 ## 射击武器
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| Bolt pistol | 12" | 1 | 3+ | 4 | 0 | 1 | pistol |
+| 爆弹手枪 | 12" | 1 | 3+ | 4 | 0 | 1 | [[core-rules/pistol.md\|pistol]] |
 
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| Axe of dismemberment | 近战 | 5 | 2+ | 7 | -2 | 2 | devastating wounds，precision |
+| 斩首之斧  | 近战 | 5 | 2+ | 7 | -2 | 2 | [[core-rules/precision.md\|精准]]，[[core-rules/devastating-wounds.md\|毁灭伤害]] |
 
 ## 技能
-- **Warp-sighted Butcher**：While this model is leading a unit, each time a model in that unit makes a melee attack that targets a unit that is below its Starting Strength, you can re-roll the Hit roll. If that unit is Below Half-strength, you can re-roll the Wound roll as well.
-- **Trophy Taker**：Each time this model destroys an enemy <span class="kwb">CHARACTER</span> model, you gain 1CP.
+- **【阵营技能】：黑暗契约**
+- **灵视屠夫**：本模型所领导的单位近战攻击一个【低于起 始】的敌方单位时，可以重投命中结果，如果目标【低于 半数】则还可以重投造伤结果
+- **斩首战功**：每当本模型消灭一个敌方人物模型时，你获得1CP
 
 ## 单位构成
 - **1个模型** — 70 分

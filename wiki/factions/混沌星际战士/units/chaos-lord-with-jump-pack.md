@@ -31,18 +31,18 @@ updated: '2026-07-23'
 |---|---|---|---|---|---|---|---|
 | 爆弹手枪 | 12" | 1 | 2+ | 4 | 0 | 1 | [[core-rules/pistol.md\|手枪]] |
 | 等离子手枪（标准） | 12" | 1 | 2+ | 7 | -2 | 1 | [[core-rules/pistol.md\|手枪]] |
-| Plasma pistol – supercharge | 12" | 1 | 2+ | 8 | -3 | 2 | pistol，hazardous |
+| 等离子手枪（过载） | 12" | 1 | 2+ | 8 | -3 | 2 | [[core-rules/pistol.md\|pistol]]，[[core-rules/hazardous.md\|hazardous]] |
 
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| Accursed weapon | 近战 | 6 | 2+ | 5 | -2 | 1 | — |
+| 诅咒武器 | 近战 | 6 | 2+ | 5 | -2 | 1 | — |
 | 动力拳  | 近战 | 5 | 2+ | 8 | -2 | 2 | — |
-| Twin lightning claws | 近战 | 6 | 2+ | 5 | -2 | 1 | [[core-rules/twin-linked.md\|TWIN-LINKED]] |
+| 一对闪电爪 | 近战 | 6 | 2+ | 5 | -2 | 1 | [[core-rules/twin-linked.md\|TWIN-LINKED]] |
 
 ## 技能
 - **【阵营技能】：黑暗契约**
-- **[[factions/混沌星际战士/units/chaos-lord.md|混沌领主]]**：每个游戏大回合一次，你的军队中最多一个 拥有此技能的单位对自身所在单位使用一个战略技能时 可以减少 1 点 CP 消耗
+- **混沌领主**：每个游戏大回合一次，你的军队中最多一个 拥有此技能的单位对自身所在单位使用一个战略技能时 可以减少 1 点 CP 消耗
 - **残酷猎手**：本模型所领导的单位在跟进或重整移动时可以 最多移动 6 寸
 
 ## 单位构成

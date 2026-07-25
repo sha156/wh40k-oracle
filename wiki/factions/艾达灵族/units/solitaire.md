@@ -1,5 +1,6 @@
 ---
 id: 000002538
+name_zh: 独角
 name_en: Solitaire
 faction: 艾达灵族
 type: unit
@@ -19,7 +20,7 @@ updated: '2026-07-23'
 ## 属性表
 | 模型 | M | T | SV | W | LD | OC |
 |---|---|---|---|---|---|---|
-| Solitaire | 12" | 3 | 6+ | 4 | 6+ | 1 |
+| 独角 | 12" | 3 | 6+ | 4 | 6+ | 1 |
 
 ### 特殊保护
 - 4+
@@ -27,13 +28,12 @@ updated: '2026-07-23'
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| Solitaire weapons | 近战 | 9 | 2+ | 6 | -2 | 2 | precision |
+| 独角武器 | 近战 | 9 | 2+ | 6 | -2 | 2 | [[core-rules/precision.md\|精准]] |
 
 ## 技能
-- **Blitz**：Once per battle, in your Movement phase, before this model makes a Normal move, it can use this ability. If it does, until the end of the turn, add 2D6" to this model’s Move characteristic and add 3 to the Attacks characteristic of this model’s Solitaire weapons.
-- **Blur of Movement**：This model is eligible to declare a charge in a turn in which it Advanced.
-- **PATH OF DAMNATION**：This model cannot be your <span class="kwb">WARLORD</span>.
-- **Flip Belt**：Each time the bearer’s unit makes a Normal, Advance, Fall Back or Charge move, ignore any vertical distance when determining the total distance the bearer can be moved during that move.
+- **【阵营技能】：战斗专注**
+- **闪击**：每场战斗一次，在你的移动阶段，本模型被选中进行常规移动前，你可以使用此技能 ：直到本回合结束，本模型的移动属性（M值）+2D6 ，其装备的独角武器的A值属性+3
+- **移行虚影**：本模型可在进行过加速移动的回合中宣布冲 锋
 
 ## 单位构成
 - **1个模型** — 115 分

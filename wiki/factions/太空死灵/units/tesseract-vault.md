@@ -30,9 +30,9 @@ updated: '2026-07-23'
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
 | 特斯拉球   | 24" | 6 | 3+ | 7 | 0 | 1 | [[core-rules/anti.md\|针对飞行 4+]]，[[core-rules/sustained-hits.md\|连击 2]] |
-| Antimatter Meteor | 24" | D6+3 | 3+ | 10 | -3 | 3 | blast，devastating wounds，indirect fire，c'tan power |
-| Cosmic Fire | 18" | 3D6 | N/A | 6 | -2 | 1 | ignores cover，devastating wounds，torrent，c'tan power |
-| Time’s Arrow | 24" | 1 | 2+ | 3 | -2 | 6 | [[core-rules/anti.md\|anti-character 4+]]，devastating wounds，precision，c'tan power |
+| 反物质陨星 | 24" | D6+3 | 3+ | 10 | -3 | 3 | [[core-rules/blast.md\|blast]]，[[core-rules/devastating-wounds.md\|devastating wounds]]，[[core-rules/indirect-fire.md\|indirect fire]]，c'tan power |
+| 宇宙烈火 | 18" | 3D6 | N/A | 6 | -2 | 1 | [[core-rules/ignores-cover.md\|ignores cover]]，[[core-rules/devastating-wounds.md\|devastating wounds]]，[[core-rules/torrent.md\|torrent]]，c'tan power |
+| 时光之箭 | 24" | 1 | 2+ | 3 | -2 | 6 | [[core-rules/anti.md\|anti-character 4+]]，[[core-rules/devastating-wounds.md\|devastating wounds]]，[[core-rules/precision.md\|precision]]，c'tan power |
 
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |

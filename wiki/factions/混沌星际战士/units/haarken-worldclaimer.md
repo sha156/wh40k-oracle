@@ -29,13 +29,13 @@ updated: '2026-07-23'
 ## 射击武器
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| Helspear | 12" | 1 | 2+ | 8 | -3 | 3 | assault，sustained hits d3 |
+| 地狱之矛 | 12" | 1 | 2+ | 8 | -3 | 3 | [[core-rules/assault.md\|assault]]，[[core-rules/sustained-hits.md\|sustained hits d3]] |
 
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
 | 先锋利爪  | 近战 | 6 | 2+ | 5 | -2 | 2 | [[core-rules/precision.md\|精准]] |
-| Helspear | 近战 | 1 | 2+ | 8 | -3 | 3 | extra attacks，lance，sustained hits d3 |
+| 地狱之矛 | 近战 | 1 | 2+ | 8 | -3 | 3 | [[core-rules/extra-attacks.md\|extra attacks]]，[[core-rules/lance.md\|lance]]，[[core-rules/sustained-hits.md\|sustained hits d3]] |
 
 ## 技能
 - **【阵营技能】：黑暗契约**

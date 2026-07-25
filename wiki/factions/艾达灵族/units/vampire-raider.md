@@ -27,13 +27,13 @@ updated: '2026-07-23'
 ## 射击武器
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| Scatter laser | 36" | 6 | 3+ | 5 | 0 | 1 | — |
-| Twin pulse laser | 48" | 3 | 3+ | 9 | -2 | D6 | twin-linked |
+| 散射激光 | 36" | 6 | 3+ | 5 | 0 | 1 | — |
+| Twin pulse laser | 48" | 3 | 3+ | 9 | -2 | D6 | [[core-rules/twin-linked.md\|twin-linked]] |
 
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| Wraithbone hull | 近战 | 6 | 4+ | 6 | 0 | 1 | — |
+| 灵骨外壳 | 近战 | 6 | 4+ | 6 | 0 | 1 | — |
 
 ## 技能
 - **Into the Foe**：If a unit disembarks from this <span class="kwb">TRANSPORT</span> before it moves, until the end of the turn, that unit is eligible to charge in a turn in which it Advanced.

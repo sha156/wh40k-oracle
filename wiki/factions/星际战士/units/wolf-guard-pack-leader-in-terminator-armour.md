@@ -27,21 +27,21 @@ updated: '2026-07-23'
 ## 射击武器
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| Assault cannon | 24" | 6 | 3+ | 6 | 0 | 1 | devastating wounds |
-| Combi-weapon | 24" | 2 | 3+ | 4 | 0 | 1 | [[core-rules/anti.md\|anti-infantry 4+]]，devastating wounds，ignores cover |
-| Cyclone missile launcher – frag | 36" | 2D6 | 3+ | 4 | 0 | 1 | blast |
+| 突击炮 | 24" | 6 | 3+ | 6 | 0 | 1 | [[core-rules/devastating-wounds.md\|devastating wounds]] |
+| 复合武器 | 24" | 2 | 3+ | 4 | 0 | 1 | [[core-rules/anti.md\|anti-infantry 4+]]，[[core-rules/devastating-wounds.md\|devastating wounds]]，[[core-rules/ignores-cover.md\|ignores cover]] |
+| Cyclone missile launcher – frag | 36" | 2D6 | 3+ | 4 | 0 | 1 | [[core-rules/blast.md\|blast]] |
 | Cyclone missile launcher – krak | 36" | 2 | 3+ | 9 | -2 | D6 | — |
-| Heavy flamer | 12" | D6 | N/A | 5 | -1 | 1 | ignores cover，torrent |
-| Storm bolter | 24" | 2 | 3+ | 4 | 0 | 1 | [[core-rules/rapid-fire.md\|rapid fire 2]] |
+| 重型喷火器 | 12" | D6 | N/A | 5 | -1 | 1 | [[core-rules/ignores-cover.md\|ignores cover]]，[[core-rules/torrent.md\|torrent]] |
+| 风暴爆弹枪 | 24" | 2 | 3+ | 4 | 0 | 1 | [[core-rules/rapid-fire.md\|rapid fire 2]] |
 
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| Chainfist | 近战 | 3 | 4+ | 8 | -2 | 2 | [[core-rules/anti.md\|anti-vehicle 3+]] |
-| Power fist | 近战 | 3 | 3+ | 8 | -2 | 2 | — |
-| Power weapon | 近战 | 4 | 3+ | 5 | -2 | 1 | — |
-| Thunder hammer | 近战 | 3 | 4+ | 8 | -2 | 2 | devastating wounds |
-| Twin lightning claws | 近战 | 5 | 3+ | 5 | -2 | 1 | twin-linked |
+| 链锯拳 | 近战 | 3 | 4+ | 8 | -2 | 2 | [[core-rules/anti.md\|anti-vehicle 3+]] |
+| 动力拳 | 近战 | 3 | 3+ | 8 | -2 | 2 | — |
+| 动力武器 | 近战 | 4 | 3+ | 5 | -2 | 1 | — |
+| 雷霆锤 | 近战 | 3 | 4+ | 8 | -2 | 2 | [[core-rules/devastating-wounds.md\|devastating wounds]] |
+| 一对闪电爪 | 近战 | 5 | 3+ | 5 | -2 | 1 | [[core-rules/twin-linked.md\|twin-linked]] |
 
 ## 技能
 - **Storm Shield**：The bearer has a Wounds characteristic of 4.

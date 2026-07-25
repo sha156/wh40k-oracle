@@ -1,5 +1,6 @@
 ---
 id: 000003879
+name_zh: 有翼虫巢暴君
 name_en: Winged Hive Tyrant
 faction: 基因窃取者教派
 type: unit
@@ -27,19 +28,21 @@ updated: '2026-07-23'
 ## 射击武器
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| Stranglethorn cannon | 36" | D6+1 | 2+ | 7 | -1 | 2 | blast |
-| Heavy venom cannon | 36" | D3 | 2+ | 9 | -2 | 3 | blast |
+| 绞藤炮 | 36" | D6+1 | 2+ | 7 | -1 | 2 | [[core-rules/blast.md\|爆炸]] |
+| 重型毒液炮 | 36" | D3 | 2+ | 9 | -2 | 3 | [[core-rules/blast.md\|爆炸]] |
 
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| Tyrant talons | 近战 | 5 | 2+ | 7 | -2 | 2 | — |
-| Monstrous bonesword and lash whip | 近战 | 6 | 2+ | 9 | -2 | 3 | twin-linked |
-| Monstrous scything talons | 近战 | 4 | 2+ | 7 | -2 | 2 | extra attacks |
+| 暴君利爪 | 近战 | 5 | 2+ | 7 | -2 | 2 | — |
+| 巨型坚骨剑和抽击鞭 | 近战 | 6 | 2+ | 9 | -2 | 3 | [[core-rules/twin-linked.md\|双联]] |
+| 巨型镰刀爪 | 近战 | 4 | 2+ | 7 | -2 | 2 | [[core-rules/extra-attacks.md\|额外攻击]] |
 
 ## 技能
-- **Will of the Hive Mind**：Once per battle round, one model from your army with this ability can use it when a friendly <span class="kwb">TYRANIDS</span> unit within 12" of that model is targeted with a Stratagem. If it does, reduce the CP cost of that usage of that Stratagem by 1CP.
-- **Paroxysm (Psychic)**：At the start of the Fight phase, you can select one enemy unit within 12" of and visible to this model and roll one D6: on a 1, this <span class="kwb">PSYKER</span> suffers D3 mortal wounds; on a 2+, until the end of the phase, subtract 1 from the Attacks characteristic of weapons equipped by models in that unit.
+- **【阵营技能】亚空间阴影**
+- **【阵营技能】节点生物**
+- **虫巢意志**：每个战斗轮次一次，当一个拥有该技能的己方模型的12”范围内，有己方泰伦虫族单位成为一个计谋的目标时，该单位可以使用该技能。若其如此做，本次使用那个计谋的CP花费减少1点。
+- **癫狂（灵能）**：在近战阶段开始时，选中一个位于该模型 12"内且对其可见的敌方单位，随后掷一枚D6：如果掷骰结果为1，该灵能者受到 D3 处致命伤；如果掷骰结果为 2+，在该阶段结束前，该敌方单位中模型装备的武器的攻击属性降低1。
 
 ## 单位构成
 - **1个模型** — 170 分

@@ -28,12 +28,12 @@ updated: '2026-07-23'
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
 | Artificer bolt pistol | 12" | 4 | 3+ | 4 | 0 | 2 | — |
-| Mind Assault | 18" | 2 | 3+ | 5 | -2 | 3 | devastating wounds，precision，psychic，[[core-rules/sustained-hits.md\|sustained hits 1]] |
+| Mind Assault | 18" | 2 | 3+ | 5 | -2 | 3 | [[core-rules/devastating-wounds.md\|devastating wounds]]，[[core-rules/precision.md\|precision]]，[[core-rules/psychic-attacks.md\|psychic]]，[[core-rules/sustained-hits.md\|sustained hits 1]] |
 
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| Runestaff and Barbarisater | 近战 | 5 | 3+ | 6 | -2 | 2 | psychic |
+| Runestaff and Barbarisater | 近战 | 5 | 3+ | 6 | -2 | 2 | [[core-rules/psychic-attacks.md\|psychic]] |
 
 ## 技能
 - **Authority of the Inquisition**：While this model is leading a unit, it can embark within any Transport that its Bodyguard unit can embark within.

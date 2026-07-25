@@ -24,14 +24,14 @@ updated: '2026-07-23'
 ## 射击武器
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| Phoenix missile array | 48" | D6 | 3+ | 6 | -1 | 2 | blast |
+| Phoenix missile array | 48" | D6 | 3+ | 6 | -1 | 2 | [[core-rules/blast.md\|blast]] |
 | Phoenix pulse laser | 48" | 4 | 3+ | 10 | -2 | D6 | — |
-| Twin shuriken cannon | 24" | 3 | 3+ | 6 | -1 | 2 | [[core-rules/sustained-hits.md\|sustained hits 1]]，twin-linked |
+| 双联星镖炮 | 24" | 3 | 3+ | 6 | -1 | 2 | [[core-rules/sustained-hits.md\|sustained hits 1]]，[[core-rules/twin-linked.md\|twin-linked]] |
 
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| Wraithbone hull | 近战 | 3 | 4+ | 6 | 0 | 1 | — |
+| 灵骨外壳 | 近战 | 3 | 4+ | 6 | 0 | 1 | — |
 
 ## 技能
 - **Strafing Run**：Each time this model makes a ranged attack that targets a unit that cannot <span class="kwb">FLY</span>, add 1 to the Hit roll.

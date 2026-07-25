@@ -34,7 +34,7 @@ updated: '2026-07-23'
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| Crackling tendrils | 近战 | 8 | 2+ | 10 | -3 | D6 | [[core-rules/sustained-hits.md\|sustained hits 1]] |
+| 爆裂触须 | 近战 | 8 | 2+ | 10 | -3 | D6 | [[core-rules/sustained-hits.md\|sustained hits 1]] |
 
 ## 技能
 - **[阵营]：重生协议**

@@ -27,7 +27,7 @@ updated: '2026-07-23'
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| Massive scything sickle-talons | 近战 | 10 | 3+ | 9 | -2 | 3 | twin-linked |
+| Massive scything sickle-talons | 近战 | 10 | 3+ | 9 | -2 | 3 | [[core-rules/twin-linked.md\|twin-linked]] |
 
 ## 技能
 - **Digestion Spine**：Each time this model fights, after it has resolved its attacks, if one or more enemy models (excluding <span class="kwb">VEHICLE</span> models) were destroyed as the result of those attacks, this model regains up to D3 wounds.

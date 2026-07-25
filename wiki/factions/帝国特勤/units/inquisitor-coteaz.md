@@ -32,12 +32,12 @@ updated: '2026-07-23'
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
 | 爆弹手枪 | 12" | 1 | 3+ | 4 | 0 | 1 | [[core-rules/pistol.md\|手枪]] |
-| 灵能爆炸 | 18" | D6 | 3+ | 3 | -1 | 1 | [[core-rules/anti.md\|针对恶魔4+]]，[[core-rules/devastating-wounds.md\|毁灭伤害]]，灵能，[[core-rules/anti.md\|针对步兵5+]] |
+| 灵能爆炸 | 18" | D6 | 3+ | 3 | -1 | 1 | [[core-rules/anti.md\|针对恶魔4+]]，[[core-rules/devastating-wounds.md\|毁灭伤害]]，[[core-rules/psychic-attacks.md\|灵能]]，[[core-rules/anti.md\|针对步兵5+]] |
 
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| 天罚恶魔锤 | 近战 | 3 | 3+ | 9 | -3 | 3 | 灵能 |
+| 天罚恶魔锤 | 近战 | 3 | 3+ | 9 | -3 | 3 | [[core-rules/psychic-attacks.md\|灵能]] |
 
 ## 技能
 - **【阵营技能】：派遣特工**

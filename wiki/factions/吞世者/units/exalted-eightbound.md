@@ -30,7 +30,7 @@ updated: '2026-07-23'
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| Chainblades | 近战 | 4 | 3+ | 8 | -3 | 2 | [[core-rules/anti.md\|anti-monster 3+]]，[[core-rules/anti.md\|anti-vehicle 3+]] |
+| 链锯刃 | 近战 | 4 | 3+ | 8 | -3 | 2 | [[core-rules/anti.md\|anti-monster 3+]]，[[core-rules/anti.md\|anti-vehicle 3+]] |
 
 ## 技能
 - **阵营：恐虐祝福**

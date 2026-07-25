@@ -28,13 +28,13 @@ updated: '2026-07-23'
 ## 射击武器
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| Neuro disruptor | 12" | 1 | 2+ | 4 | -2 | 1 | [[core-rules/anti.md\|anti-infantry 2+]]，assault，pistol |
-| Shuriken pistol | 12" | 1 | 2+ | 4 | -1 | 1 | assault，pistol |
+| 神经干扰枪 | 12" | 1 | 2+ | 4 | -2 | 1 | [[core-rules/anti.md\|anti-infantry 2+]]，[[core-rules/assault.md\|assault]]，[[core-rules/pistol.md\|pistol]] |
+| 星镖手枪 | 12" | 1 | 2+ | 4 | -1 | 1 | [[core-rules/assault.md\|assault]]，[[core-rules/pistol.md\|pistol]] |
 
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| 迷雾法杖 | 近战 | 4 | 2+ | 5 | -1 | D3 | 灵能 |
+| 迷雾法杖 | 近战 | 4 | 2+ | 5 | -1 | D3 | [[core-rules/psychic-attacks.md\|灵能]] |
 
 ## 技能
 - **【阵营技能】：战斗专注**

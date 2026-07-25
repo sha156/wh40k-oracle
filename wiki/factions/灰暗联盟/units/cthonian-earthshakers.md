@@ -26,14 +26,14 @@ updated: '2026-07-23'
 ## 射击武器
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| Autoch-pattern bolt pistol | 12" | 1 | 4+ | 4 | 0 | 1 | pistol |
-| Breacher ordnance | 24" | D6+1 | 5+ | 10 | -1 | 2 | blast，heavy，indirect fire |
-| Tremor shells | 36" | D6+4 | 5+ | 6 | -1 | 1 | blast，heavy，indirect fire |
+| 基岩型爆矢手枪 | 12" | 1 | 4+ | 4 | 0 | 1 | [[core-rules/pistol.md\|pistol]] |
+| 钻毁弹 | 24" | D6+1 | 5+ | 10 | -1 | 2 | [[core-rules/blast.md\|blast]]，[[core-rules/heavy.md\|heavy]]，[[core-rules/indirect-fire.md\|indirect fire]] |
+| 震撼弹 | 36" | D6+4 | 5+ | 6 | -1 | 1 | [[core-rules/blast.md\|blast]]，[[core-rules/heavy.md\|heavy]]，[[core-rules/indirect-fire.md\|indirect fire]] |
 
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| Plasma picks | 近战 | 4 | 3+ | 5 | -2 | 1 | — |
+| 等离子镐 | 近战 | 4 | 3+ | 5 | -2 | 1 | — |
 
 ## 技能
 - **阵营:效率为先**

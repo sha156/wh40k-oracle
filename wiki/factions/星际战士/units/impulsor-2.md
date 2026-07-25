@@ -27,12 +27,12 @@ updated: '2026-07-23'
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
 | 破片风暴雷 | 48" | D6 | 3+ | 4 | 0 | 1 | [[core-rules/blast.md\|爆炸]] |
-| Bellicatus missile array – Icarus | 48" | D3 | 3+ | 8 | -1 | 2 | [[core-rules/anti.md\|anti-fly 2+]] |
-| Bellicatus missile array – krak | 48" | 1 | 3+ | 8 | -2 | D6 | — |
+| 贝立凯图导弹阵列（对空） | 48" | D3 | 3+ | 8 | -1 | 2 | [[core-rules/anti.md\|anti-fly 2+]] |
+| 贝立凯图导弹阵列（穿甲） | 48" | 1 | 3+ | 8 | -2 | D6 | — |
 | 破片风暴雷 | 18" | D6 | 3+ | 4 | 0 | 1 | [[core-rules/blast.md\|爆炸]] |
 | 铁雨重机枪    | 36" | 3 | 3+ | 4 | 0 | 1 | [[core-rules/rapid-fire.md\|速射 3]] |
-| Ironhail skytalon array | 36" | 8 | 3+ | 4 | 0 | 1 | [[core-rules/anti.md\|anti-fly 4+]]，[[core-rules/sustained-hits.md\|sustained hits 1]] |
-| Multi-melta | 18" | 2 | 3+ | 9 | -4 | D6 | [[core-rules/melta.md\|melta 2]] |
+| 铁雨天爪阵列 | 36" | 8 | 3+ | 4 | 0 | 1 | [[core-rules/anti.md\|anti-fly 4+]]，[[core-rules/sustained-hits.md\|sustained hits 1]] |
+| 多管热熔 | 18" | 2 | 3+ | 9 | -4 | D6 | [[core-rules/melta.md\|melta 2]] |
 | 风暴爆弹枪   | 24" | 2 | 3+ | 4 | 0 | 1 | [[core-rules/rapid-fire.md\|速射 2]] |
 
 ## 近战武器

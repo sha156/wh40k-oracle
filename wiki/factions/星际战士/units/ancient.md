@@ -27,7 +27,7 @@ updated: '2026-07-23'
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
 | 爆弹手枪   | 12" | 1 | 3+ | 4 | 0 | 1 | [[core-rules/pistol.md\|手枪]] |
-| Bolt rifle | 24" | 2 | 3+ | 4 | -1 | 1 | ASSAULT，[[core-rules/heavy.md\|HEAVY]] |
+| 爆弹步枪 | 24" | 2 | 3+ | 4 | -1 | 1 | [[core-rules/assault.md\|ASSAULT]]，[[core-rules/heavy.md\|HEAVY]] |
 
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |

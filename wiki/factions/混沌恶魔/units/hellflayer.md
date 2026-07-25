@@ -29,14 +29,14 @@ updated: '2026-07-23'
 ## 射击武器
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| Lashes of torment | 6" | 6 | 3+ | 4 | 0 | 1 | [[core-rules/anti.md\|anti-infantry 3+]]，assault，pistol |
+| 折磨之鞭 | 6" | 6 | 3+ | 4 | 0 | 1 | [[core-rules/anti.md\|anti-infantry 3+]]，[[core-rules/assault.md\|assault]]，[[core-rules/pistol.md\|pistol]] |
 
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| Bladed axle | 近战 | 6 | 3+ | 6 | -1 | 2 | extra attacks |
+| 刃轮车轴 | 近战 | 6 | 3+ | 6 | -1 | 2 | [[core-rules/extra-attacks.md\|extra attacks]] |
 | 寻觅者之舌 | 近战 | 4 | 4+ | 4 | 0 | 1 | [[core-rules/extra-attacks.md\|额外攻击]]，[[core-rules/lethal-hits.md\|致命一击]] |
-| Slashing claws | 近战 | 9 | 3+ | 4 | 0 | 1 | devastating wounds |
+| 凶狠利爪 | 近战 | 9 | 3+ | 4 | 0 | 1 | [[core-rules/devastating-wounds.md\|devastating wounds]] |
 
 ## 技能
 - **横扫敌阵**：每当该单位中的模型进行近战攻击时，如果该单位在本回合进行过冲锋，那次攻击的力量和伤害属性都提升 1。

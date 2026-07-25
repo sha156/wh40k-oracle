@@ -25,11 +25,11 @@ updated: '2026-07-23'
 ## 射击武器
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| Grot tank shoota | 36" | 3 | 4+ | 5 | 0 | 1 | devastating wounds，[[core-rules/rapid-fire.md\|rapid fire 2]] |
-| Grotzooka | 18" | D3+3 | 4+ | 6 | -1 | 1 | blast，ignores cover |
-| Kustom mega-blasta | 24" | 2 | 4+ | 9 | -2 | D6 | hazardous |
-| Rokkit launcha | 24" | D3 | 4+ | 9 | -2 | 3 | blast |
-| Skorcha | 12" | D6 | N/A | 5 | -1 | 1 | ignores cover，torrent |
+| Grot tank shoota | 36" | 3 | 4+ | 5 | 0 | 1 | [[core-rules/devastating-wounds.md\|devastating wounds]]，[[core-rules/rapid-fire.md\|rapid fire 2]] |
+| 屁精喷子 | 18" | D3+3 | 4+ | 6 | -1 | 1 | [[core-rules/blast.md\|blast]]，[[core-rules/ignores-cover.md\|ignores cover]] |
+| 魔改米加枪 | 24" | 2 | 4+ | 9 | -2 | D6 | [[core-rules/hazardous.md\|hazardous]] |
+| 火箭筒 | 24" | D3 | 4+ | 9 | -2 | 3 | [[core-rules/blast.md\|blast]] |
+| Skorcha | 12" | D6 | N/A | 5 | -1 | 1 | [[core-rules/ignores-cover.md\|ignores cover]]，[[core-rules/torrent.md\|torrent]] |
 
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |

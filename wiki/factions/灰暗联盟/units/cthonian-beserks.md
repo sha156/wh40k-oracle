@@ -27,7 +27,7 @@ updated: '2026-07-23'
 ## 射击武器
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| Mole grenade launcher | 18" | D6 | 5+ | 5 | -1 | 1 | blast，indirect fire |
+| 鼹鼠钻地榴弹发射器 | 18" | D6 | 5+ | 5 | -1 | 1 | [[core-rules/blast.md\|blast]]，[[core-rules/indirect-fire.md\|indirect fire]] |
 
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |

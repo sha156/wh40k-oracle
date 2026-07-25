@@ -30,7 +30,7 @@ updated: '2026-07-23'
 |---|---|---|---|---|---|---|---|
 | 绝灭射线（聚焦） | 12" | D3 | 3+ | 6 | -2 | 2 | — |
 | 绝灭射线（分散） | 24" | D3 | 3+ | 6 | -1 | 1 | — |
-| Volkite blaster | 24" | 3 | 3+ | 5 | 0 | 2 | devastating wounds |
+| 爆燃爆破枪 | 24" | 3 | 3+ | 5 | 0 | 2 | [[core-rules/devastating-wounds.md\|devastating wounds]] |
 | 磷火转轮枪 | 18" | 1 | 3+ | 5 | -1 | 2 | [[core-rules/ignores-cover.md\|忽视掩体]]，[[core-rules/pistol.md\|手枪]] |
 | 微型冲锋枪 | 12" | 5 | 3+ | 4 | 0 | 1 | [[core-rules/pistol.md\|手枪]] |
 

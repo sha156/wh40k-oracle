@@ -1,5 +1,6 @@
 ---
 id: 000000849
+name_zh: 护教军先锋兵
 name_en: Skitarii Vanguard
 faction: 机械修会
 type: unit
@@ -20,7 +21,7 @@ updated: '2026-07-23'
 ## 属性表
 | 模型 | M | T | SV | W | LD | OC |
 |---|---|---|---|---|---|---|
-| Skitarii Vanguard | 6" | 3 | 4+ | 1 | 7+ | 2 |
+| 护教军先锋兵 | 6" | 3 | 4+ | 1 | 7+ | 2 |
 
 ### 特殊保护
 - 5+
@@ -28,23 +29,22 @@ updated: '2026-07-23'
 ## 射击武器
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| Mechanicus pistol | 12" | 1 | 4+ | 6 | -1 | 1 | devastating wounds，pistol |
-| Arc rifle | 30" | 1 | 4+ | 8 | -1 | D3 | [[core-rules/anti.md\|anti-vehicle 4+]]，devastating wounds，[[core-rules/rapid-fire.md\|rapid fire 1]] |
-| Plasma caliver – standard | 30" | 2 | 4+ | 7 | -2 | 1 | — |
-| Plasma caliver – supercharge | 30" | 2 | 4+ | 8 | -3 | 2 | hazardous |
-| Radium carbine | 18" | 3 | 4+ | 3 | 0 | 1 | [[core-rules/anti.md\|anti-infantry 4+]] |
-| Transuranic arquebus | 36" | 1 | 4+ | 7 | -2 | D3 | heavy，precision |
+| 机械教手枪 | 12" | 1 | 4+ | 6 | -1 | 1 | [[core-rules/devastating-wounds.md\|毁灭伤害]]，[[core-rules/pistol.md\|手枪]] |
+| 电弧步枪 | 30" | 1 | 4+ | 8 | -1 | D3 | [[core-rules/anti.md\|反载具 4+]]，[[core-rules/devastating-wounds.md\|毁灭伤害]]，[[core-rules/rapid-fire.md\|速射1]] |
+| 等离子连发枪（标准） | 30" | 2 | 4+ | 7 | -2 | 1 | — |
+| 等离子连发枪（过载） | 30" | 2 | 4+ | 8 | -3 | 2 | [[core-rules/hazardous.md\|危险]] |
+| 辐射卡宾枪 | 18" | 3 | 4+ | 3 | 0 | 1 | [[core-rules/anti.md\|反步兵4+]] |
+| 超铀元素步枪 | 36" | 1 | 4+ | 7 | -2 | D3 | [[core-rules/heavy.md\|重型]]，[[core-rules/precision.md\|精准]] |
 
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| Alpha combat weapon | 近战 | 2 | 4+ | 5 | -1 | 1 | — |
-| Close combat weapon | 近战 | 1 | 4+ | 3 | 0 | 1 | — |
+| 队长格斗武器 | 近战 | 2 | 4+ | 5 | -1 | 1 | — |
+| 格斗武器 | 近战 | 1 | 4+ | 3 | 0 | 1 | — |
 
 ## 技能
-- **Enhanced data-tether**：Each time you select the bearer’s unit as the target of a Stratagem, roll one D6: on a 5+, you gain 1CP.
-- **Omnispex**：Ranged weapons equipped by models in the bearer’s unit have the [IGNORES COVER] ability.
-- **Rad-saturation (Aura)**：While an enemy unit (excluding <span class="kwb">VEHICLE</span> units) is within 3" of this unit, subtract 1 from the Objective Control characteristic of models in that unit.
+- **【阵营技能】：机神律令**
+- **辐射污染**：本单位 3 寸内的敌方非载具单位 OC 值-1
 
 ## 单位构成
 - **10个模型** — 85 分

@@ -25,12 +25,12 @@ updated: '2026-07-23'
 ## 射击武器
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| Cultist sniper rifle | 36" | 1 | 4+ | 4 | -2 | 2 | heavy，precision |
+| 狙击步枪 | 36" | 1 | 4+ | 4 | -2 | 2 | [[core-rules/heavy.md\|heavy]]，[[core-rules/precision.md\|precision]] |
 | 爆弹枪  | 24" | 1 | 4+ | 4 | 0 | 1 | [[core-rules/rapid-fire.md\|速射 1]] |
 | 腐化手枪   | 12" | 1 | 4+ | 4 | -1 | 1 | [[core-rules/pistol.md\|手枪]] |
-| Cultist grenade launcher – frag | 24" | D3 | 4+ | 4 | 0 | 1 | blast |
+| 榴弹发射器（破片弹） | 24" | D3 | 4+ | 4 | 0 | 1 | [[core-rules/blast.md\|blast]] |
 | 榴弹发射器（穿甲弹）     | 24" | 1 | 4+ | 9 | -2 | D3 | — |
-| Flamer | 12" | D6 | N/A | 4 | 0 | 1 | ignores cover，torrent |
+| 喷火器 | 12" | D6 | N/A | 4 | 0 | 1 | [[core-rules/ignores-cover.md\|ignores cover]]，[[core-rules/torrent.md\|torrent]] |
 | 激光枪   | 24" | 1 | 4+ | 3 | 0 | 1 | [[core-rules/rapid-fire.md\|速射 1]] |
 | 热熔枪       | 12" | 1 | 4+ | 9 | -4 | D6 | [[core-rules/melta.md\|热熔 2]] |
 | 等离子枪（过载） | 24" | 1 | 4+ | 8 | -3 | 2 | [[core-rules/rapid-fire.md\|速射 1]]，[[core-rules/hazardous.md\|危险]] |

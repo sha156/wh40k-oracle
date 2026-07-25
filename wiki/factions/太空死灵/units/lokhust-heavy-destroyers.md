@@ -29,7 +29,7 @@ updated: '2026-07-23'
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
 | 憎火灭绝炮   | 36" | 6 | 3+ | 6 | -1 | 1 | [[core-rules/heavy.md\|重型]]，[[core-rules/rapid-fire.md\|速射 6]]，[[core-rules/sustained-hits.md\|连击 1]] |
-| Gauss destructor | 48" | 1 | 3+ | 14 | -4 | 6 | heavy，lethal hits |
+| 高斯破坏炮 | 48" | 1 | 3+ | 14 | -4 | 6 | [[core-rules/heavy.md\|heavy]]，[[core-rules/lethal-hits.md\|lethal hits]] |
 
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |

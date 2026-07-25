@@ -24,12 +24,12 @@ updated: '2026-07-23'
 ## 射击武器
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| Drone pulse | 18" | 1 | 4+ | 4 | 0 | 1 | pistol |
+| Drone pulse | 18" | 1 | 4+ | 4 | 0 | 1 | [[core-rules/pistol.md\|pistol]] |
 
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| Close combat weapon | 近战 | 1 | 4+ | 3 | 0 | 1 | — |
+| 格斗武器 | 近战 | 1 | 4+ | 3 | 0 | 1 | — |
 
 ## 技能
 - **Threat Level Rising**：Each time a model in this unit makes an attack, add 1 to the Hit roll if this unit is below its Starting Strength, and add 1 to the Wound roll as well if this unit is Below Half-strength.

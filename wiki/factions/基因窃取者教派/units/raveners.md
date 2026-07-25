@@ -1,5 +1,6 @@
 ---
 id: 000003886
+name_zh: 蛇虫
 name_en: Raveners
 faction: 基因窃取者教派
 type: unit
@@ -24,10 +25,11 @@ updated: '2026-07-23'
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| Ravener claws and talons | 近战 | 3 | 3+ | 5 | -2 | 2 | twin-linked |
+| 蛇虫利爪 | 近战 | 3 | 3+ | 5 | -2 | 2 | [[core-rules/twin-linked.md\|双联]] |
 
 ## 技能
-- **Death From Below**：At the end of your opponent’s turn, if this unit is not within Engagement Range of one or more enemy units, you can remove it from the battlefield and place it into Strategic Reserves.
+- **来自地底的死亡**：在您对手的回合结束时，如果该单位不位于一个或更多敌方单位的交战范围内，您可以将该单位从战场上移除，并放入战略预备队中。
+- **【阵营技能】节点生物**
 
 ## 单位构成
 - **5个模型** — 125 分

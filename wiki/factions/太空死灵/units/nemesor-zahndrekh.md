@@ -27,12 +27,12 @@ updated: '2026-07-23'
 ## 射击武器
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| Staff of light | 18" | 3 | 3+ | 5 | -2 | 1 | — |
+| 光之杖 | 18" | 3 | 3+ | 5 | -2 | 1 | — |
 
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| Staff of light | 近战 | 4 | 3+ | 5 | -2 | 1 | — |
+| 光之杖 | 近战 | 4 | 3+ | 5 | -2 | 1 | — |
 
 ## 技能
 - **Transient Madness**：While this model is leading a unit, at the start of your Command phase, roll one D6: until the start of your next Command phase, weapons equipped by models in that unit gain the ability below that corresponds with that roll:<br><ul><li>1-2: [SUSTAINED HITS 1] </li><li>3-4: [LETHAL HITS] </li><li>5-6: [DEVASTATING WOUNDS]</li></ul>

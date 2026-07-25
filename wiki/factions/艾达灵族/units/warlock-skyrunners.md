@@ -1,5 +1,6 @@
 ---
 id: 000000587
+name_zh: 天行者术士
 name_en: Warlock Skyrunners
 faction: 艾达灵族
 type: unit
@@ -29,16 +30,16 @@ updated: '2026-07-23'
 ## 射击武器
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| Destructor | 12" | D6 | N/A | 5 | -1 | 1 | psychic，torrent |
-| Shuriken pistol | 12" | 1 | 3+ | 4 | -1 | 1 | assault，pistol |
-| Singing spear | 12" | 1 | 3+ | 9 | 0 | 3 | assault，psychic |
-| Twin shuriken catapult | 18" | 2 | 3+ | 4 | -1 | 1 | assault，twin-linked |
+| 毁灭咒术 | 12" | D6 | N/A | 5 | -1 | 1 | [[core-rules/psychic-attacks.md\|psychic]]，[[core-rules/torrent.md\|torrent]] |
+| 星镖手枪 | 12" | 1 | 3+ | 4 | -1 | 1 | [[core-rules/assault.md\|assault]]，[[core-rules/pistol.md\|pistol]] |
+| 歌矛 | 12" | 1 | 3+ | 9 | 0 | 3 | [[core-rules/assault.md\|assault]]，[[core-rules/psychic-attacks.md\|psychic]] |
+| 双联星镖枪 | 18" | 2 | 3+ | 4 | -1 | 1 | [[core-rules/assault.md\|assault]]，[[core-rules/twin-linked.md\|twin-linked]] |
 
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| Singing spear | 近战 | 2 | 3+ | 3 | 0 | 3 | psychic |
-| Witchblade | 近战 | 2 | 3+ | 3 | 0 | 2 | [[core-rules/anti.md\|anti-infantry 2+]]，psychic |
+| 歌矛 | 近战 | 2 | 3+ | 3 | 0 | 3 | [[core-rules/psychic-attacks.md\|psychic]] |
+| 巫术之刃 | 近战 | 2 | 3+ | 3 | 0 | 2 | [[core-rules/anti.md\|anti-infantry 2+]]，[[core-rules/psychic-attacks.md\|psychic]] |
 
 ## 技能
 - **Runes of Battle (Psychic)**：Weapons equipped by models in this unit have the [IGNORES COVER] ability.

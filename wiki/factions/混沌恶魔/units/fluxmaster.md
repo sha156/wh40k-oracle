@@ -29,13 +29,13 @@ updated: '2026-07-23'
 ## 射击武器
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| 秘法火球-巫火 | 18" | 3 | 3+ | 5 | -1 | D3 | 灵能 |
-| 秘法火球-专注巫火 | 18" | 3 | 3+ | 6 | -2 | D3 | 灵能，[[core-rules/hazardous.md\|危险]]，[[core-rules/devastating-wounds.md\|毁灭伤害]] |
+| 秘法火球-巫火 | 18" | 3 | 3+ | 5 | -1 | D3 | [[core-rules/psychic-attacks.md\|灵能]] |
+| 秘法火球-专注巫火 | 18" | 3 | 3+ | 6 | -2 | D3 | [[core-rules/psychic-attacks.md\|灵能]]，[[core-rules/hazardous.md\|危险]]，[[core-rules/devastating-wounds.md\|毁灭伤害]] |
 
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| 先锋格斗武器 | 近战 | 3 | 4+ | 4 | -1 | 1 | 灵能 |
+| 先锋格斗武器 | 近战 | 3 | 4+ | 4 | -1 | 1 | [[core-rules/psychic-attacks.md\|灵能]] |
 
 ## 技能
 - **幻变之主**：每当该模型领导的单位中受到攻击时，攻击的命中掷骰结果减少 1 点。

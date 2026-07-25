@@ -24,12 +24,12 @@ updated: '2026-07-23'
 ## 射击武器
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| Hydra quad autocannon | 72" | 4 | 4+ | 9 | -1 | 3 | [[core-rules/anti.md\|anti-fly 2+]]，twin-linked |
+| Hydra quad autocannon | 72" | 4 | 4+ | 9 | -1 | 3 | [[core-rules/anti.md\|anti-fly 2+]]，[[core-rules/twin-linked.md\|twin-linked]] |
 
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| Close combat weapons | 近战 | 3 | 4+ | 3 | 0 | 1 | — |
+| 格斗武器 | 近战 | 3 | 4+ | 3 | 0 | 1 | — |
 
 ## 技能
 - **Flak Battery**：Each time this model makes an attack that targets a unit that can <span class="kwb">FLY</span>, you can re-roll the Hit roll.

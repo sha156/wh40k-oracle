@@ -1,5 +1,6 @@
 ---
 id: '000004037'
+name_zh: 终结者领主
 name_en: Chaos Lord In Terminator Armour
 faction: 混沌恶魔
 type: unit
@@ -27,20 +28,21 @@ updated: '2026-07-23'
 ## 射击武器
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| Combi-bolter | 24" | 2 | 2+ | 4 | 0 | 1 | [[core-rules/rapid-fire.md\|rapid fire 2]] |
-| Combi-weapon | 24" | 1 | 3+ | 4 | 0 | 1 | [[core-rules/anti.md\|anti-infantry 4+]]，devastating wounds，[[core-rules/rapid-fire.md\|rapid fire 1]] |
+| 并联爆弹枪  | 24" | 2 | 2+ | 4 | 0 | 1 | [[core-rules/rapid-fire.md\|速射 2]] |
+| 复合武器  | 24" | 1 | 3+ | 4 | 0 | 1 | [[core-rules/anti.md\|反步兵 4+]]，[[core-rules/devastating-wounds.md\|毁灭伤害]]，[[core-rules/rapid-fire.md\|速射 1]] |
 
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| Exalted weapon | 近战 | 6 | 2+ | 5 | -2 | 2 | — |
-| Chainfist | 近战 | 5 | 3+ | 8 | -2 | 2 | [[core-rules/anti.md\|anti-vehicle 3+]] |
-| Paired accursed weapons | 近战 | 7 | 2+ | 5 | -2 | 1 | twin-linked |
-| Power fist | 近战 | 5 | 2+ | 8 | -2 | 2 | — |
+| 神尊武器  | 近战 | 6 | 2+ | 5 | -2 | 2 | — |
+| 链锯拳 | 近战 | 5 | 3+ | 8 | -2 | 2 | [[core-rules/anti.md\|反载具 3+]] |
+| 一对诅咒武器 | 近战 | 7 | 2+ | 5 | -2 | 1 | [[core-rules/twin-linked.md\|双联]] |
+| 链锯拳 | 近战 | 5 | 2+ | 8 | -2 | 2 | [[core-rules/anti.md\|反载具 3+]] |
 
 ## 技能
-- **Lord of Chaos**：Once per battle round, one unit from your army with this ability can use it when its unit is targeted with a Stratagem. If it does, reduce the CP cost of that use of that Stratagem by 1CP.
-- **Formidably Resilient**：Each time an attack is allocated to this model, halve the Damage characteristic of that attack.
+- **【阵营技能】：黑暗契约**
+- **[[factions/混沌恶魔/units/chaos-lord.md|混沌领主]]**：每个游戏大回合一次，你的军队中最多一个 拥有此技能的单位对自身所在单位使用一个战略技能时 可以减少 1 点 CP 消耗
+- **可怕坚韧**：被分配给本模型的攻击破坏力（D）减半
 
 ## 单位构成
 - **1个模型** — 85 分

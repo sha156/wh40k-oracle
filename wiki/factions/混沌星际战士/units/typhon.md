@@ -24,17 +24,17 @@ updated: '2026-07-23'
 ## 射击武器
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| Storm bolter | 24" | 2 | 3+ | 4 | 0 | 1 | [[core-rules/rapid-fire.md\|rapid fire 2]] |
-| Multi-melta | 18" | 2 | 3+ | 9 | -4 | D6 | [[core-rules/melta.md\|melta 2]] |
-| Lascannon | 48" | 1 | 3+ | 12 | -3 | D6+1 | — |
-| Heavy flamer | 12" | D6 | N/A | 5 | -1 | 1 | torrent，ignores cover |
-| Dreadhammer siege cannon | 24" | D6+6 | 3+ | 14 | -3 | D6 | blast |
-| Heavy bolter | 36" | 3 | 3+ | 5 | -1 | 2 | [[core-rules/sustained-hits.md\|sustained hits 1]] |
+| 风暴爆弹枪 | 24" | 2 | 3+ | 4 | 0 | 1 | [[core-rules/rapid-fire.md\|rapid fire 2]] |
+| 多管热熔 | 18" | 2 | 3+ | 9 | -4 | D6 | [[core-rules/melta.md\|melta 2]] |
+| 激光炮 | 48" | 1 | 3+ | 12 | -3 | D6+1 | — |
+| 重型喷火器 | 12" | D6 | N/A | 5 | -1 | 1 | [[core-rules/torrent.md\|torrent]]，[[core-rules/ignores-cover.md\|ignores cover]] |
+| Dreadhammer siege cannon | 24" | D6+6 | 3+ | 14 | -3 | D6 | [[core-rules/blast.md\|blast]] |
+| 重型爆弹枪 | 36" | 3 | 3+ | 5 | -1 | 2 | [[core-rules/sustained-hits.md\|sustained hits 1]] |
 
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| Armoured tracks | 近战 | 6 | 4+ | 8 | 0 | 1 | — |
+| 装甲履带 | 近战 | 6 | 4+ | 8 | 0 | 1 | — |
 
 ## 技能
 - **Sunderer of Fortresses**：Each time this model makes an attack that targets a <span class="kwb">VEHICLE</span>, improve the Strength and Damage characteristic of that attack by 1 (if that attack targets a <span class="kwb">FORTIFICATION</span> unit, improve the Strength and Damage characteristics of that attack by 2 instead).

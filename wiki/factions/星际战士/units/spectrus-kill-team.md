@@ -28,9 +28,9 @@ updated: '2026-07-23'
 |---|---|---|---|---|---|---|---|
 | 爆矢手枪 | 12" | 1 | 3+ | 4 | 0 | 1 | [[core-rules/pistol.md\|手枪]] |
 | 爆矢狙击步枪 | 36" | 1 | 3+ | 5 | -2 | 3 | [[core-rules/heavy.md\|重型]]，[[core-rules/precision.md\|精准]] |
-| Deathwatch bolt carbine | 24" | 2 | 3+ | 5 | -1 | 1 | lethal hits，precision |
-| Deathwatch marksman bolt carbine | 24" | 2 | 3+ | 5 | -1 | 1 | heavy，lethal hits |
-| Deathwatch occulus bolt carbine | 24" | 2 | 3+ | 5 | -1 | 1 | assault，ignores cover，lethal hits |
+| 死亡守望爆弹卡宾枪 | 24" | 2 | 3+ | 5 | -1 | 1 | [[core-rules/lethal-hits.md\|lethal hits]]，[[core-rules/precision.md\|precision]] |
+| 死亡守望神射手爆矢卡宾枪 | 24" | 2 | 3+ | 5 | -1 | 1 | [[core-rules/heavy.md\|heavy]]，[[core-rules/lethal-hits.md\|lethal hits]] |
+| 死亡守望瞄具爆弹卡宾枪 | 24" | 2 | 3+ | 5 | -1 | 1 | [[core-rules/assault.md\|assault]]，[[core-rules/ignores-cover.md\|ignores cover]]，[[core-rules/lethal-hits.md\|lethal hits]] |
 | 煽动者爆矢卡宾枪 | 24" | 1 | 3+ | 4 | -2 | 2 | [[core-rules/heavy.md\|重型]] |
 | 激光燧发枪 | 36" | 1 | 3+ | 9 | -3 | D6 | [[core-rules/heavy.md\|重型]] |
 | 特种爆矢手枪 | 12" | 1 | 3+ | 4 | -1 | 1 | [[core-rules/pistol.md\|手枪]]，[[core-rules/heavy.md\|重型]] |

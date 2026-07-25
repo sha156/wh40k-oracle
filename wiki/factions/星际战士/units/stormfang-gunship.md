@@ -24,18 +24,18 @@ updated: '2026-07-23'
 ## 射击武器
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| Helfrost destructor – dispersed | 36" | D3 | 3+ | 11 | -3 | 7 | sustained hits d3 |
-| Helfrost destructor – focused | 12" | D6+6 | N/A | 8 | -1 | 2 | torrent |
-| Skyhammer missile launcher | 48" | 3 | 3+ | 8 | -1 | D3 | [[core-rules/anti.md\|anti-fly 2+]] |
-| Twin heavy bolter | 36" | 3 | 3+ | 5 | -1 | 2 | [[core-rules/sustained-hits.md\|sustained hits 1]]，twin-linked |
-| Twin lascannon | 48" | 1 | 3+ | 12 | -3 | D6+1 | twin-linked |
-| Twin multi-melta | 18" | 2 | 3+ | 9 | -4 | D6 | [[core-rules/melta.md\|melta 2]]，twin-linked |
-| Twin stormstrike missile launcher | 48" | 1 | 3+ | 10 | -2 | 3 | twin-linked |
+| Helfrost destructor – dispersed | 36" | D3 | 3+ | 11 | -3 | 7 | [[core-rules/sustained-hits.md\|sustained hits d3]] |
+| Helfrost destructor – focused | 12" | D6+6 | N/A | 8 | -1 | 2 | [[core-rules/torrent.md\|torrent]] |
+| 天锤导弹 | 48" | 3 | 3+ | 8 | -1 | D3 | [[core-rules/anti.md\|anti-fly 2+]] |
+| 双联重型爆弹枪 | 36" | 3 | 3+ | 5 | -1 | 2 | [[core-rules/sustained-hits.md\|sustained hits 1]]，[[core-rules/twin-linked.md\|twin-linked]] |
+| 双联激光炮 | 48" | 1 | 3+ | 12 | -3 | D6+1 | [[core-rules/twin-linked.md\|twin-linked]] |
+| 双联多管热熔 | 18" | 2 | 3+ | 9 | -4 | D6 | [[core-rules/melta.md\|melta 2]]，[[core-rules/twin-linked.md\|twin-linked]] |
+| Twin stormstrike missile launcher | 48" | 1 | 3+ | 10 | -2 | 3 | [[core-rules/twin-linked.md\|twin-linked]] |
 
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| Armoured hull | 近战 | 6 | 4+ | 8 | 0 | 1 | — |
+| 装甲外壳 | 近战 | 6 | 4+ | 8 | 0 | 1 | — |
 
 ## 技能
 - **Frozen Prey**：In your Shooting phase, after this model has shot, if an enemy <span class="kwb">MONSTER</span> or <span class="kwb">VEHICLE</span> unit was hit by one or more of those attacks made with this model’s helfrost destructor, until the end of your opponent’s next turn, that enemy unit is Frozen. While a unit is Frozen, subtract 2 from that unit’s Move characteristic, and subtract 2 from Advance and Charge rolls made for that unit.

@@ -31,8 +31,8 @@ updated: '2026-07-23'
 ## 射击武器
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| Chainsabres | 12" | 1 | 3+ | 4 | -1 | 1 | assault，pistol，twin-linked |
-| Shuriken pistol | 12" | 1 | 3+ | 4 | -1 | 1 | assault，pistol |
+| 链锯双剑 | 12" | 1 | 3+ | 4 | -1 | 1 | [[core-rules/assault.md\|assault]]，[[core-rules/pistol.md\|pistol]]，[[core-rules/twin-linked.md\|twin-linked]] |
+| 星镖手枪 | 12" | 1 | 3+ | 4 | -1 | 1 | [[core-rules/assault.md\|assault]]，[[core-rules/pistol.md\|pistol]] |
 
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |

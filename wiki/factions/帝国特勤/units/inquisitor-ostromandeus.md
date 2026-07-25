@@ -28,13 +28,13 @@ updated: '2026-07-23'
 ## 射击武器
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| Inferno pistol | 6" | 1 | 3+ | 8 | -4 | D3 | [[core-rules/melta.md\|melta 2]]，pistol |
+| 地狱火手枪 | 6" | 1 | 3+ | 8 | -4 | D3 | [[core-rules/melta.md\|melta 2]]，[[core-rules/pistol.md\|pistol]] |
 
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
 | Hydraulic vox-ram | 近战 | 3 | 4+ | 6 | -2 | 2 | — |
-| Power sword | 近战 | 5 | 3+ | 4 | -2 | 1 | — |
+| 动力剑 | 近战 | 5 | 3+ | 4 | -2 | 1 | — |
 
 ## 技能
 - **Authority of the Inquisition**：While this unit is leading a unit, it can embark within any Transport that its Bodyguard unit can embark within.

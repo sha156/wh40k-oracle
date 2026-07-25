@@ -24,17 +24,17 @@ updated: '2026-07-23'
 ## 射击武器
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| Heavy bolter | 36" | 3 | 3+ | 5 | -1 | 2 | [[core-rules/sustained-hits.md\|sustained hits 1]] |
-| [[factions/星际战士/units/hunter.md\|Hunter]]-killer missile | 48" | 1 | 2+ | 14 | -3 | D6 | one shot |
-| Javelin missile launcher – frag | 36" | 3D6 | 3+ | 4 | 0 | 1 | blast |
+| 重型爆弹枪 | 36" | 3 | 3+ | 5 | -1 | 2 | [[core-rules/sustained-hits.md\|sustained hits 1]] |
+| 猎杀飞弹 | 48" | 1 | 2+ | 14 | -3 | D6 | [[core-rules/one-shot.md\|one shot]] |
+| Javelin missile launcher – frag | 36" | 3D6 | 3+ | 4 | 0 | 1 | [[core-rules/blast.md\|blast]] |
 | Javelin missile launcher – krak | 36" | 3 | 3+ | 9 | -2 | D6 | — |
-| Lascannon | 48" | 1 | 3+ | 12 | -3 | D6+1 | — |
-| Multi-melta | 18" | 2 | 3+ | 9 | -4 | D6 | [[core-rules/melta.md\|melta 2]] |
+| 激光炮 | 48" | 1 | 3+ | 12 | -3 | D6+1 | — |
+| 多管热熔 | 18" | 2 | 3+ | 9 | -4 | D6 | [[core-rules/melta.md\|melta 2]] |
 
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| Close combat weapon | 近战 | 4 | 3+ | 4 | 0 | 1 | — |
+| 格斗武器 | 近战 | 4 | 3+ | 4 | 0 | 1 | — |
 
 ## 技能
 - **Fire and Redeploy**：In your Shooting phase, each time this model has shot, if it is not within Engagement Range of any enemy units, it can make a Normal move of up to D6". If it does, until the end of the turn, this model is not eligible to declare a charge.

@@ -29,13 +29,13 @@ updated: '2026-07-23'
 ## 射击武器
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| Baleflamer | 12" | D6+3 | N/A | 6 | -1 | 2 | ignores cover，torrent |
-| Hades autocannon | 36" | 6 | 4+ | 8 | -1 | 2 | [[core-rules/rapid-fire.md\|rapid fire 4]] |
+| 恶毒之火 | 12" | D6+3 | N/A | 6 | -1 | 2 | [[core-rules/ignores-cover.md\|ignores cover]]，[[core-rules/torrent.md\|torrent]] |
+| 冥神自动炮 | 36" | 6 | 4+ | 8 | -1 | 2 | [[core-rules/rapid-fire.md\|rapid fire 4]] |
 
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| Heldrake claws | 近战 | 6 | 3+ | 7 | -1 | 2 | [[core-rules/anti.md\|anti-fly 2+]]，devastating wounds |
+| 地狱龙爪 | 近战 | 6 | 3+ | 7 | -1 | 2 | [[core-rules/anti.md\|anti-fly 2+]]，[[core-rules/devastating-wounds.md\|devastating wounds]] |
 
 ## 技能
 - **【阵营技能】：黑暗契约**

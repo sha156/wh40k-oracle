@@ -27,14 +27,14 @@ updated: '2026-07-23'
 ## 射击武器
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| Grot-guided bomm | 72" | D6 | 4+ | 8 | -2 | 2 | blast，one shot，indirect fire |
-| Twin big shoota | 36" | 3 | 5+ | 5 | 0 | 1 | [[core-rules/rapid-fire.md\|rapid fire 2]]，twin-linked |
-| Wing missiles | 24" | 1 | 5+ | 9 | -2 | 3 | — |
+| Grot-guided bomm | 72" | D6 | 4+ | 8 | -2 | 2 | [[core-rules/blast.md\|blast]]，[[core-rules/one-shot.md\|one shot]]，[[core-rules/indirect-fire.md\|indirect fire]] |
+| 双联大突突枪 | 36" | 3 | 5+ | 5 | 0 | 1 | [[core-rules/rapid-fire.md\|rapid fire 2]]，[[core-rules/twin-linked.md\|twin-linked]] |
+| 圾翼导弹 | 24" | 1 | 5+ | 9 | -2 | 3 | — |
 
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| Armoured hull | 近战 | 3 | 4+ | 6 | 0 | 1 | — |
+| 装甲外壳 | 近战 | 3 | 4+ | 6 | 0 | 1 | — |
 
 ## 技能
 - **Small Bomms**：Each time the bearer ends a Normal move, you can select one enemy unit it moved across during that move and roll three D6: for each 4+, that unit suffers 1 mortal wound.

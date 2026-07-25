@@ -29,13 +29,13 @@ updated: '2026-07-23'
 ## 射击武器
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| 奥术烈焰 | 18" | D6 | N/A | 6 | -2 | D3 | [[core-rules/torrent.md\|洪流]]，灵能，[[core-rules/ignores-cover.md\|无视掩体]] |
+| 奥术烈焰 | 18" | D6 | N/A | 6 | -2 | D3 | [[core-rules/torrent.md\|洪流]]，[[core-rules/psychic-attacks.md\|灵能]]，[[core-rules/ignores-cover.md\|无视掩体]] |
 | 地狱火爆矢手枪 | 12" | 1 | 2+ | 4 | -1 | 1 | [[core-rules/pistol.md\|手枪]] |
 
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| 灵能武器 | 近战 | 5 | 2+ | 6 | -1 | D3 | 灵能 |
+| 灵能武器 | 近战 | 5 | 2+ | 6 | -1 | D3 | [[core-rules/psychic-attacks.md\|灵能]] |
 | 普罗斯佩罗弯刀 | 近战 | 4 | 2+ | 5 | -2 | 2 | — |
 
 ## 技能

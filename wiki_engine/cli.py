@@ -41,6 +41,13 @@ def main() -> None:
     sp = sub.add_parser("build", help="构建 index.md 和阵营索引（流水线⑤）")
     sp.add_argument("--wiki", default="wiki", help="wiki 目录")
 
+    # ── keywords ──
+    sp = sub.add_parser("keywords", help="生成武器词条（USR）索引 indexes/keywords.md")
+    sp.add_argument("--wiki", default="wiki", help="wiki 目录")
+    sp.add_argument("--db", default="db/wh40k.sqlite", help="官方结构库")
+    sp.add_argument("--pdf", default="data/11版40K通用技能速查表.pdf",
+                    help="11 版通用技能速查表（判定通用 USR 的真源）")
+
     # ── lint ──
     sp = sub.add_parser("lint", help="一致性检查（流水线⑥）")
     sp.add_argument("--wiki", default="wiki", help="wiki 目录")
@@ -99,6 +106,15 @@ def main() -> None:
         result = build_all_outputs(Path(args.wiki))
         print("构建完成: index.md + {} 个阵营索引, {} 条日志".format(
             result["faction_indexes"], result["log_entries"]))
+
+    elif args.cmd == "keywords":
+        from wiki_engine.keyword_index import generate as generate_keyword_index
+        rep = generate_keyword_index(Path(args.db), Path(args.wiki), Path(args.pdf))
+        print("词条索引: {} 条（通用 {} / 十版遗留 {} / 单位特有 {}），"
+              "反查 {} 条现役 (词条, 武器) 对 → {}".format(
+                  rep["keywords"], rep["groups"].get("universal", 0),
+                  rep["groups"].get("legacy", 0), rep["groups"].get("unit-specific", 0),
+                  rep["current_weapon_names"], rep["path"]))
 
     elif args.cmd == "lint":
         refined = Path(args.refined) if Path(args.refined).is_dir() else None

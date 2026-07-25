@@ -28,14 +28,14 @@ updated: '2026-07-23'
 ## 射击武器
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| Arc lance | 12" | 1 | 4+ | 5 | -1 | 1 | [[core-rules/anti.md\|anti-vehicle 4+]]，devastating wounds |
-| Archeotech pistol | 12" | 1 | 4+ | 6 | -1 | 1 | devastating wounds，pistol |
+| Arc lance | 12" | 1 | 4+ | 5 | -1 | 1 | [[core-rules/anti.md\|anti-vehicle 4+]]，[[core-rules/devastating-wounds.md\|devastating wounds]] |
+| Archeotech pistol | 12" | 1 | 4+ | 6 | -1 | 1 | [[core-rules/devastating-wounds.md\|devastating wounds]]，[[core-rules/pistol.md\|pistol]] |
 
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
 | Alpha close combat weapon | 近战 | 3 | 4+ | 5 | -1 | 1 | — |
-| Arc lance | 近战 | 2 | 4+ | 5 | -1 | 1 | [[core-rules/anti.md\|anti-vehicle 4+]]，devastating wounds，lance |
+| Arc lance | 近战 | 2 | 4+ | 5 | -1 | 1 | [[core-rules/anti.md\|anti-vehicle 4+]]，[[core-rules/devastating-wounds.md\|devastating wounds]]，[[core-rules/lance.md\|lance]] |
 
 ## 技能
 - **Enhanced data-tether**：Each time you select the bearer’s unit as the target of a Stratagem, roll one D6: on a 5+, you gain 1CP

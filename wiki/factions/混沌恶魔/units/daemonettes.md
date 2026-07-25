@@ -1,5 +1,6 @@
 ---
 id: '000001142'
+name_zh: 魅魔
 name_en: Daemonettes
 faction: 混沌恶魔
 type: unit
@@ -20,7 +21,7 @@ updated: '2026-07-23'
 ## 属性表
 | 模型 | M | T | SV | W | LD | OC |
 |---|---|---|---|---|---|---|
-| Daemonettes | 9" | 3 | 7+ | 1 | 7+ | 2 |
+| 魅魔 | 9" | 3 | 7+ | 1 | 7+ | 2 |
 
 ### 特殊保护
 - 5+
@@ -28,12 +29,12 @@ updated: '2026-07-23'
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| Slashing claws | 近战 | 3 | 3+ | 4 | -1 | 1 | devastating wounds |
+| 凶狠利爪 | 近战 | 3 | 3+ | 4 | -1 | 1 | [[core-rules/devastating-wounds.md\|毁灭伤害]] |
 
 ## 技能
-- **Horrifying Beauty**：At the start of the Fight phase, each enemy unit within Engagement Range of one or more units from your army with this ability must take a Battle-shock test, subtracting 1 from the result if that enemy unit is Below Half-strength.
-- **Daemonic Icon**：Models in the bearer’s unit have a Leadership characteristic of 6+.
-- **Instrument of Chaos**：Add 1 to Charge rolls made for the bearer’s unit.
+- **可怖美貌**：在近战阶段开始时，每个位于拥有该技能单位近战范围内的敌方单位须进行一次震慑测试，如果该敌方单位低于一半战力则震慑测试结果-1。
+- **恶魔徽记**：持有者所属单位中模型的领导力属性为 6+。
+- **混沌乐器**：持有者所属单位进行的冲锋掷骰结果增加 1 点。
 
 ## 单位构成
 - **10个模型** — 90 分

@@ -1,6 +1,6 @@
 # 战斗修女
 
-_Last updated: 2026-07-23 12:10 UTC_
+_Last updated: 2026-07-25 11:42 UTC_
 
 ## 单位
 
@@ -9,9 +9,9 @@ _Last updated: 2026-07-23 12:10 UTC_
 - [[factions/战斗修女/units/crusaders|Crusaders]] — 
 - [[factions/战斗修女/units/death-cult-assassins|Death Cult Assassins]] — 
 - [[factions/战斗修女/units/repressor|Repressor]] — 
-- [[factions/战斗修女/units/sororitas-rhino|Sororitas Rhino]] — 
 - [[factions/战斗修女/units/dialogus|书记修女]] — 
 - [[factions/战斗修女/units/retributor-squad|仇天使小队]] — 
+- [[factions/战斗修女/units/sororitas-rhino|修女会犀牛装甲车]] — 
 - [[factions/战斗修女/units/sanctifiers|净化者杀戮小队]] — 
 - [[factions/战斗修女/units/triumph-of-saint-katherine|凯旋之圣凯瑟琳]] — 
 - [[factions/战斗修女/units/hospitaller|医疗修女]] — 

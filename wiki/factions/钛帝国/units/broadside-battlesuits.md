@@ -32,7 +32,7 @@ updated: '2026-07-23'
 | 集束导弹仓 | 30" | 6 | 4+ | 7 | -1 | 2 | [[core-rules/twin-linked.md\|双联]] |
 | 寻觅者导弹 | 48" | 1 | 4+ | 14 | -3 | D6+1 | [[core-rules/one-shot.md\|一次性]] |
 | 并联等离子步枪 | 18" | 1 | 4+ | 8 | -3 | 3 | [[core-rules/twin-linked.md\|双联]] |
-| Twin smart missile system | 30" | 4 | 4+ | 5 | 0 | 1 | indirect fire，twin-linked |
+| 并联智能导弹系统 | 30" | 4 | 4+ | 5 | 0 | 1 | [[core-rules/indirect-fire.md\|indirect fire]]，[[core-rules/twin-linked.md\|twin-linked]] |
 
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |

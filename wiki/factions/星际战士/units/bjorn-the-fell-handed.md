@@ -30,15 +30,15 @@ updated: '2026-07-23'
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
 | 突击炮   | 24" | 6 | 2+ | 6 | 0 | 1 | [[core-rules/devastating-wounds.md\|毁灭伤害]] |
-| Heavy flamer | 12" | D6 | N/A | 5 | -1 | 1 | ignores cover，torrent |
-| Helfrost cannon – dispersed | 12" | D6 | N/A | 6 | -1 | 2 | torrent |
-| Helfrost cannon – focused | 36" | 1 | 2+ | 10 | -3 | 5 | — |
-| Multi-melta | 18" | 2 | 2+ | 9 | -4 | D6 | [[core-rules/melta.md\|melta 2]] |
+| 重型喷火器 | 12" | D6 | N/A | 5 | -1 | 1 | [[core-rules/ignores-cover.md\|ignores cover]]，[[core-rules/torrent.md\|torrent]] |
+| 霜狱加农炮（分散） | 12" | D6 | N/A | 6 | -1 | 2 | [[core-rules/torrent.md\|torrent]] |
+| 霜狱加农炮（聚焦） | 36" | 1 | 2+ | 10 | -3 | 5 | — |
+| 多管热熔 | 18" | 2 | 2+ | 9 | -4 | D6 | [[core-rules/melta.md\|melta 2]] |
 
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| Trueclaw | 近战 | 6 | 2+ | 12 | -2 | 3 | lethal hits |
+| 真实之爪 | 近战 | 6 | 2+ | 12 | -2 | 3 | [[core-rules/lethal-hits.md\|lethal hits]] |
 
 ## 技能
 - **【阵营技能】：破敌重誓**

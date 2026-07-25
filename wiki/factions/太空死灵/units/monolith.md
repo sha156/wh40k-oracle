@@ -26,7 +26,7 @@ updated: '2026-07-23'
 ## 射击武器
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| Death ray | 24" | 1 | 3+ | 12 | -4 | D6+1 | sustained hits d3 |
+| 死光 | 24" | 1 | 3+ | 12 | -4 | D6+1 | [[core-rules/sustained-hits.md\|sustained hits d3]] |
 | 高斯电弧    | 24" | 3 | 3+ | 6 | -1 | 1 | [[core-rules/lethal-hits.md\|致命一击]]，[[core-rules/rapid-fire.md\|速射 3]] |
 | 粒子长鞭       | 24" | 3D6 | 3+ | 8 | -1 | 2 | [[core-rules/blast.md\|爆炸]]，[[core-rules/devastating-wounds.md\|毁灭伤害]] |
 

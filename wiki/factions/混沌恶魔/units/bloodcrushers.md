@@ -1,5 +1,6 @@
 ---
 id: '000001115'
+name_zh: 碾血骑兵
 name_en: Bloodcrushers
 faction: 混沌恶魔
 type: unit
@@ -21,7 +22,7 @@ updated: '2026-07-23'
 ## 属性表
 | 模型 | M | T | SV | W | LD | OC |
 |---|---|---|---|---|---|---|
-| Bloodcrushers | 10" | 7 | 3+ | 4 | 7+ | 2 |
+| 碾血骑兵 | 10" | 7 | 3+ | 4 | 7+ | 2 |
 
 ### 特殊保护
 - 5+
@@ -29,13 +30,13 @@ updated: '2026-07-23'
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| Hellblade | 近战 | 2 | 3+ | 5 | -2 | 2 | — |
-| Juggernaut’s bladed horn | 近战 | 4 | 4+ | 6 | -1 | 1 | extra attacks，lance |
+| 鲜血之剑 | 近战 | 2 | 3+ | 5 | -2 | 2 | — |
+| 铁甲兽刃角 | 近战 | 4 | 4+ | 6 | -1 | 1 | [[core-rules/extra-attacks.md\|额外攻击]]，[[core-rules/lance.md\|骑枪]] |
 
 ## 技能
-- **Daemonic Icon**：Models in the bearer’s unit have a Leadership characteristic of 6+.
-- **Instrument of Chaos**：Add 1 to Charge rolls made for the bearer’s unit.
-- **Brass Stampede**：Each time this unit ends a Charge move, select one enemy unit within Engagement Range of this unit and roll one D6 for each model in this unit: for each 4+, that enemy unit suffers D3 mortal wounds.
+- **黄铜践踏**：每当该单位完成一次冲锋移动后，选择一个位于其交战范围内的敌方单位，并为该单位中每一个模型掷一枚 D6：每有一个结果为 4+，那个敌方单位便受到 D3 处致命伤
+- **恶魔徽记（武器技能）**：持有者所属单位中模型的领导力属性 为 6+。
+- **混沌乐器（武器技能）**：持有者所属单位进行的冲锋掷骰结果增 加 1 点。
 
 ## 单位构成
 - **3个模型** — 95 分

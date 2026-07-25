@@ -24,10 +24,10 @@ updated: '2026-07-23'
 ## 射击武器
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| Bursta kannon | 36" | 3D6 | 5+ | 14 | -2 | 3 | blast |
+| Bursta kannon | 36" | 3D6 | 5+ | 14 | -2 | 3 | [[core-rules/blast.md\|blast]] |
 | Giga shoota | 48" | 30 | 5+ | 6 | -1 | 1 | [[core-rules/sustained-hits.md\|sustained hits 1]] |
-| Skorcha | 12" | D6 | N/A | 5 | -1 | 1 | ignores cover，torrent |
-| Twin big shoota | 18" | 3 | 5+ | 5 | 0 | 1 | [[core-rules/rapid-fire.md\|rapid fire 2]]，twin-linked |
+| Skorcha | 12" | D6 | N/A | 5 | -1 | 1 | [[core-rules/ignores-cover.md\|ignores cover]]，[[core-rules/torrent.md\|torrent]] |
+| 双联大突突枪 | 18" | 3 | 5+ | 5 | 0 | 1 | [[core-rules/rapid-fire.md\|rapid fire 2]]，[[core-rules/twin-linked.md\|twin-linked]] |
 
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |

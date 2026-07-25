@@ -28,11 +28,11 @@ updated: '2026-07-23'
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
 | Aeldari missile launcher – starshot | 48" | 1 | 3+ | 10 | -2 | D6 | — |
-| Aeldari missile launcher – sunburst | 48" | D6 | 3+ | 4 | -1 | 1 | blast |
-| Bright lance | 36" | 1 | 3+ | 12 | -3 | D6+2 | — |
-| Scatter laser | 36" | 6 | 3+ | 5 | 0 | 1 | — |
-| Shuriken cannon | 24" | 3 | 3+ | 6 | -1 | 2 | [[core-rules/sustained-hits.md\|sustained hits 1]] |
-| Starcannon | 36" | 2 | 3+ | 8 | -3 | 2 | — |
+| Aeldari missile launcher – sunburst | 48" | D6 | 3+ | 4 | -1 | 1 | [[core-rules/blast.md\|blast]] |
+| 光矛 | 36" | 1 | 3+ | 12 | -3 | D6+2 | — |
+| 散射激光 | 36" | 6 | 3+ | 5 | 0 | 1 | — |
+| 星镖炮 | 24" | 3 | 3+ | 6 | -1 | 2 | [[core-rules/sustained-hits.md\|sustained hits 1]] |
+| 星光炮 | 36" | 2 | 3+ | 8 | -3 | 2 | — |
 
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |

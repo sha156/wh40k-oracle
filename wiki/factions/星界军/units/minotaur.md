@@ -24,12 +24,12 @@ updated: '2026-07-23'
 ## 射击武器
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| Minotaur twin earthshaker cannon | 240" | D6+3 | 4+ | 8 | -2 | 2 | blast，indirect fire，twin-linked |
+| Minotaur twin earthshaker cannon | 240" | D6+3 | 4+ | 8 | -2 | 2 | [[core-rules/blast.md\|blast]]，[[core-rules/indirect-fire.md\|indirect fire]]，[[core-rules/twin-linked.md\|twin-linked]] |
 
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| Armoured tracks | 近战 | 3 | 4+ | 6 | 0 | 1 | — |
+| 装甲履带 | 近战 | 3 | 4+ | 6 | 0 | 1 | — |
 
 ## 技能
 - **Armoured Frontis**：Each time an attack is allocated to this model, subtract 1 from the Damage characteristic of that attack.

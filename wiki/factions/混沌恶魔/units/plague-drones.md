@@ -1,5 +1,6 @@
 ---
 id: '000001135'
+name_zh: 瘟疫先蜂
 name_en: Plague Drones
 faction: 混沌恶魔
 type: unit
@@ -21,7 +22,7 @@ updated: '2026-07-23'
 ## 属性表
 | 模型 | M | T | SV | W | LD | OC |
 |---|---|---|---|---|---|---|
-| Plague Drones | 10" | 8 | 6+ | 5 | 7+ | 2 |
+| 瘟疫先蜂 | 10" | 8 | 6+ | 5 | 7+ | 2 |
 
 ### 特殊保护
 - 5+
@@ -29,18 +30,18 @@ updated: '2026-07-23'
 ## 射击武器
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| Death’s heads | 12" | D3 | 4+ | 4 | 0 | 1 | blast，lethal hits |
+| 亡者之颅 | 12" | D3 | 4+ | 4 | 0 | 1 | [[core-rules/blast.md\|爆炸]]，[[core-rules/lethal-hits.md\|致命一击]] |
 
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| Foul mouthparts | 近战 | 2 | 4+ | 5 | -1 | 2 | extra attacks，lethal hits |
-| Plaguesword | 近战 | 2 | 3+ | 4 | -1 | 1 | lethal hits |
+| 秽恶口器 | 近战 | 2 | 4+ | 5 | -1 | 2 | [[core-rules/lethal-hits.md\|致命一击]]，[[core-rules/extra-attacks.md\|额外攻击]] |
+| 瘟疫之剑 | 近战 | 2 | 3+ | 4 | -1 | 1 | [[core-rules/lethal-hits.md\|致命一击]] |
 
 ## 技能
-- **Daemonic Icon**：Models in the bearer’s unit have a Leadership characteristic of 6+.
-- **Instrument of Chaos**：Add 1 to Charge rolls made for the bearer’s unit.
-- **Death’s Heads**：In your Shooting phase, after this unit has shot, select one enemy unit hit by one or more of those attacks. Until the end of the turn, each time a friendly Nurgle Legiones Daemonica unit makes an attack that targets that unit, you can re-roll the Wound roll.
+- **亡者之颅**：在己方射击阶段中，在该单位完成射击后，选择一个被其攻击命中的敌方单位。直到回合结束前，每当一个己方纳垢逆理魔军单位对那个单位进行攻击时，你可以重掷致伤掷骰。
+- **恶魔徽记**：持有者所属单位中模型的领导力属性为 6+。
+- **混沌乐器**：持有者所属单位进行的冲锋掷骰结果增加 1 点。
 
 ## 单位构成
 - **3个模型** — 110 分

@@ -1,5 +1,6 @@
 ---
 id: '000004120'
+name_zh: 有翼奸奇恶魔王子
 name_en: Daemon Prince of Tzeentch with Wings
 faction: 千子
 type: unit
@@ -28,14 +29,14 @@ updated: '2026-07-23'
 ## 射击武器
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| Dark Blessing | 24" | 9 | 2+ | 4 | -1 | 1 | ignores cover，psychic，[[core-rules/sustained-hits.md\|sustained hits 1]] |
-| Infernal cannon | 24" | 3 | 2+ | 5 | -2 | 2 | — |
+| 黑暗赐福 | 24" | 9 | 2+ | 4 | -1 | 1 | [[core-rules/ignores-cover.md\|ignores cover]]，[[core-rules/psychic-attacks.md\|psychic]]，[[core-rules/sustained-hits.md\|sustained hits 1]] |
+| 狱火加农炮 | 24" | 3 | 2+ | 5 | -2 | 2 | — |
 
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| Hellforged weapons – strike | 近战 | 6 | 2+ | 8 | -2 | 3 | devastating wounds，psychic |
-| Hellforged weapons – sweep | 近战 | 12 | 2+ | 6 | -1 | 1 | devastating wounds，psychic |
+| 狱铸武器（重击） | 近战 | 6 | 2+ | 8 | -2 | 3 | [[core-rules/devastating-wounds.md\|devastating wounds]]，[[core-rules/psychic-attacks.md\|psychic]] |
+| 狱铸武器（横扫） | 近战 | 12 | 2+ | 6 | -1 | 1 | [[core-rules/devastating-wounds.md\|devastating wounds]]，[[core-rules/psychic-attacks.md\|psychic]] |
 
 ## 技能
 - **Hunter of Souls**：Each time this model makes an attack that targets a <span class="kwb">CHARACTER</span> unit, re-roll a Hit roll of 1 and re-roll a Wound roll of 1 (if that attack targets a <span class="kwb">PSYKER</span> <span class="kwb">CHARACTER</span> unit, you can re-roll the Hit roll and you can re-roll the Wound roll instead). Each time this model destroys a <span class="kwb">CHARACTER</span> unit, this model regains up to D3 lost wounds (if that <span class="kwb">CHARACTER</span> unit was a <span class="kwb">PSYKER</span> unit, this model regains up to 3 lost wounds instead).

@@ -27,7 +27,7 @@ updated: '2026-07-23'
 |---|---|---|---|---|---|---|---|
 | 撼地炮 | 240" | D6+3 | 4+ | 8 | -2 | 2 | [[core-rules/blast.md\|爆炸]]，间接火力 |
 | 重型火焰喷射器 | 12" | D6 | N/A | 5 | -1 | 1 | [[core-rules/ignores-cover.md\|无视掩体]]，[[core-rules/torrent.md\|洪流]] |
-| 猎杀飞弹 | 48" | 1 | 4+ | 14 | -3 | D6 | 单发 |
+| 猎杀飞弹 | 48" | 1 | 4+ | 14 | -3 | D6 | [[core-rules/one-shot.md\|单发]] |
 | 重型爆弹枪 | 36" | 3 | 4+ | 5 | -1 | 2 | [[core-rules/sustained-hits.md\|连击1]] |
 
 ## 近战武器

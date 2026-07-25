@@ -29,8 +29,8 @@ updated: '2026-07-23'
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
 | 活体长鞭 | 12" | 6 | 2+ | 6 | -1 | 2 | [[core-rules/assault.md\|突击]] |
-| 失心幻境-巫火 | 18" | 6 | 2+ | 6 | -2 | 1 | [[core-rules/devastating-wounds.md\|毁灭伤害]]，灵能 |
-| 失心幻境-专注巫火 | 18" | 9 | 2+ | 6 | -2 | 1 | [[core-rules/devastating-wounds.md\|毁灭伤害]]，灵能，[[core-rules/hazardous.md\|危险]] |
+| 失心幻境-巫火 | 18" | 6 | 2+ | 6 | -2 | 1 | [[core-rules/devastating-wounds.md\|毁灭伤害]]，[[core-rules/psychic-attacks.md\|灵能]] |
+| 失心幻境-专注巫火 | 18" | 9 | 2+ | 6 | -2 | 1 | [[core-rules/devastating-wounds.md\|毁灭伤害]]，[[core-rules/psychic-attacks.md\|灵能]]，[[core-rules/hazardous.md\|危险]] |
 
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |

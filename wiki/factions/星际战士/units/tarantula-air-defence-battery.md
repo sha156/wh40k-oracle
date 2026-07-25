@@ -24,12 +24,12 @@ updated: '2026-07-23'
 ## 射击武器
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| Tarantula air defence missiles | 48" | D6 | 4+ | 7 | -1 | 1 | [[core-rules/anti.md\|anti-fly 2+]]，blast |
+| Tarantula air defence missiles | 48" | D6 | 4+ | 7 | -1 | 1 | [[core-rules/anti.md\|anti-fly 2+]]，[[core-rules/blast.md\|blast]] |
 
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| Armoured hull | 近战 | 1 | 4+ | 4 | 0 | 1 | — |
+| 装甲外壳 | 近战 | 1 | 4+ | 4 | 0 | 1 | — |
 
 ## 技能
 - **Sentry Programming**：You can target this model with the Fire Overwatch Stratagem for 0CP, and can do so even if you have already targeted a different unit with that Stratagem this turn. This model can only be targeted with that Stratagem once per turn.

@@ -28,7 +28,7 @@ updated: '2026-07-23'
 |---|---|---|---|---|---|---|---|
 | 大突突枪 | 36" | 3 | 5+ | 5 | 0 | 1 | [[core-rules/rapid-fire.md\|速射2]] |
 | 毛哥之眼(看渣渣的眼神) | 24" | D6 | 5+ | 5 | 0 | 1 | [[core-rules/rapid-fire.md\|速射2]] |
-| 毛哥之眼(看强者的眼神) | 18" | 1 | 5+ | 12 | -4 | 3 | 连击D3 |
+| 毛哥之眼(看强者的眼神) | 18" | 1 | 5+ | 12 | -4 | 3 | [[core-rules/sustained-hits.md\|连击D3]] |
 
 ## 技能
 - **Ramshackle Cover**：Each time a ranged attack is allocated to a model, if that model is not fully visible to every model in the attacking unit because of this <span class="kwb">FORTIFICATION</span>, that model has the Benefit of Cover against that attack.

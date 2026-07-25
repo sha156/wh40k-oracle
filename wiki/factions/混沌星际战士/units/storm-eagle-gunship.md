@@ -24,18 +24,18 @@ updated: '2026-07-23'
 ## 射击武器
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| Typhoon missile launcher – krak | 48" | 2 | 3+ | 9 | -2 | D6 | — |
-| Vengeance launcher | 48" | 2D6 | 3+ | 6 | 0 | 1 | blast |
-| Typhoon missile launcher – frag | 48" | 2D6 | 3+ | 4 | 0 | 1 | blast |
-| Twin multi-melta | 18" | 2 | 3+ | 9 | -4 | D6 | [[core-rules/melta.md\|melta 2]]，twin-linked |
-| Twin heavy bolter | 36" | 3 | 3+ | 5 | -1 | 2 | [[core-rules/sustained-hits.md\|sustained hits 1]]，twin-linked |
-| Twin lascannon | 48" | 1 | 3+ | 12 | -3 | D6+1 | twin-linked |
-| Twin hellstrike launcher | 72" | 2 | 3+ | 10 | -3 | D6 | [[core-rules/anti.md\|anti-fly 2+]]，twin-linked |
+| 台风导弹发射器（穿甲） | 48" | 2 | 3+ | 9 | -2 | D6 | — |
+| Vengeance launcher | 48" | 2D6 | 3+ | 6 | 0 | 1 | [[core-rules/blast.md\|blast]] |
+| 台风导弹发射器（破片） | 48" | 2D6 | 3+ | 4 | 0 | 1 | [[core-rules/blast.md\|blast]] |
+| 双联多管热熔 | 18" | 2 | 3+ | 9 | -4 | D6 | [[core-rules/melta.md\|melta 2]]，[[core-rules/twin-linked.md\|twin-linked]] |
+| 双联重爆弹 | 36" | 3 | 3+ | 5 | -1 | 2 | [[core-rules/sustained-hits.md\|sustained hits 1]]，[[core-rules/twin-linked.md\|twin-linked]] |
+| 双联激光炮 | 48" | 1 | 3+ | 12 | -3 | D6+1 | [[core-rules/twin-linked.md\|twin-linked]] |
+| Twin hellstrike launcher | 72" | 2 | 3+ | 10 | -3 | D6 | [[core-rules/anti.md\|anti-fly 2+]]，[[core-rules/twin-linked.md\|twin-linked]] |
 
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| Armoured hull | 近战 | 6 | 4+ | 8 | 0 | 1 | — |
+| 装甲外壳 | 近战 | 6 | 4+ | 8 | 0 | 1 | — |
 
 ## 技能
 - **Armoured Resilience**：Each time an attack is allocated to this model, subtract 1 from the Damage characteristic of that attack.

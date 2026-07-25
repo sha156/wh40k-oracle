@@ -31,13 +31,13 @@ updated: '2026-07-23'
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
 | 钟鸣爆弹枪  | 12" | 2 | 3+ | 4 | 0 | 1 | [[core-rules/pistol.md\|手枪]] |
-| Inferno pistol | 6" | 1 | 3+ | 8 | -4 | D3 | [[core-rules/melta.md\|melta 2]]，pistol |
+| 狱火手枪 | 6" | 1 | 3+ | 8 | -4 | D3 | [[core-rules/melta.md\|melta 2]]，[[core-rules/pistol.md\|pistol]] |
 
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
 | 殷红之刃  | 近战 | 4 | 2+ | 6 | -3 | 2 | — |
-| Encarmine spear | 近战 | 4 | 2+ | 6 | -2 | 2 | Lance |
+| 殷红之矛 | 近战 | 4 | 2+ | 6 | -2 | 2 | [[core-rules/lance.md\|Lance]] |
 
 ## 技能
 - **【阵营技能】：破敌重誓**

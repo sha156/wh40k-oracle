@@ -29,14 +29,14 @@ updated: '2026-07-23'
 ## 射击武器
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| Autoch-pattern combi-bolter | 24" | 4 | 2+ | 4 | 0 | 1 | — |
-| Volkanite disintegrator | 24" | 3 | 2+ | 5 | 0 | 1 | devastating wounds |
+| 基岩型复合爆矢枪 | 24" | 4 | 2+ | 4 | 0 | 1 | — |
+| 爆燃解离枪 | 24" | 3 | 2+ | 5 | 0 | 1 | [[core-rules/devastating-wounds.md\|devastating wounds]] |
 
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| Forgewrought plasma axe | 近战 | 4 | 2+ | 5 | -2 | 2 | — |
-| Mass gauntlet | 近战 | 3 | 3+ | 8 | -3 | 3 | — |
+| 炉铸等离子斧 | 近战 | 4 | 2+ | 5 | -2 | 2 | — |
+| 质量拳套 | 近战 | 3 | 3+ | 8 | -3 | 3 | — |
 
 ## 技能
 - **Kindred Hero**：While this model is leading a unit, weapons equipped by models in that unit have the [LETHAL HITS] ability.

@@ -24,13 +24,13 @@ updated: '2026-07-23'
 ## 射击武器
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| Bolt pistol | 12" | 1 | 3+ | 4 | 0 | 1 | pistol |
-| Boltgun | 24" | 2 | 3+ | 4 | 0 | 1 | — |
+| 爆弹手枪 | 12" | 1 | 3+ | 4 | 0 | 1 | [[core-rules/pistol.md\|pistol]] |
+| 爆弹枪 | 24" | 2 | 3+ | 4 | 0 | 1 | — |
 
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| Power weapon | 近战 | 3 | 3+ | 5 | -2 | 2 | — |
+| 动力武器 | 近战 | 3 | 3+ | 5 | -2 | 2 | — |
 
 ## 技能
 - **Honour Guard**：While a [[factions/星际战士/units/captain.md|Captain]] or Chapter Master model is leading this unit, each time an attack targets this unit, subtract 1 from the Wound roll.

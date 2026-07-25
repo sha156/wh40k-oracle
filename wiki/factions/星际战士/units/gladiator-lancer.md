@@ -1,5 +1,6 @@
 ---
 id: '000002705'
+name_zh: 枪骑兵型角斗者坦克
 name_en: Gladiator Lancer
 faction: 星际战士
 type: unit
@@ -25,19 +26,21 @@ updated: '2026-07-23'
 ## 射击武器
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| Fragstorm grenade launcher | 18" | D6 | 3+ | 4 | 0 | 1 | blast |
-| Icarus rocket pod | 24" | D3 | 3+ | 8 | -1 | 2 | [[core-rules/anti.md\|anti-fly 2+]] |
-| Ironhail heavy stubber | 36" | 3 | 3+ | 4 | 0 | 1 | [[core-rules/rapid-fire.md\|rapid fire 3]] |
-| Lancer laser destroyer | 72" | 2 | 3+ | 14 | -4 | D6+3 | heavy |
-| Storm bolter | 24" | 2 | 3+ | 4 | 0 | 1 | [[core-rules/rapid-fire.md\|rapid fire 2]] |
+| 破片风暴雷  | 18" | D6 | 3+ | 4 | 0 | 1 | [[core-rules/blast.md\|爆炸]] |
+| 伊卡洛斯火箭巢 | 24" | D3 | 3+ | 8 | -1 | 2 | [[core-rules/anti.md\|anti-fly 2+]] |
+| 铁雨重机枪 | 36" | 3 | 3+ | 4 | 0 | 1 | [[core-rules/rapid-fire.md\|rapid fire 3]] |
+| 枪骑兵激光毁灭炮 | 72" | 2 | 3+ | 14 | -4 | D6+3 | [[core-rules/heavy.md\|heavy]] |
+| 风暴爆弹枪 | 24" | 2 | 3+ | 4 | 0 | 1 | [[core-rules/rapid-fire.md\|速射 2]] |
 
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| Armoured hull | 近战 | 3 | 4+ | 6 | 0 | 1 | — |
+| 装甲车体  | 近战 | 3 | 4+ | 6 | 0 | 1 | — |
 
 ## 技能
-- **Aquilon Optics**：Each time this model is selected to shoot, you can re-roll one Hit roll, you can re-roll one Wound roll and you can re-roll one Damage roll when resolving those attacks.
+- **【阵营技能】：破敌重誓**
+- **严重损伤**：本模型 W 值为 1-4 时，攻击命中结果-1
+- **天鹰瞄准仪**：每当本模型被选择进行射击攻击时（也就是 每轮射击攻击中），你可以重投一颗命中结果，一颗造伤结果，一颗破坏结果
 
 ## 单位构成
 - **1个模型** — 160 分

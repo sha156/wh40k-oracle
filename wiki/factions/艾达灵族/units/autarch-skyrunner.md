@@ -27,16 +27,16 @@ updated: '2026-07-23'
 ## 射击武器
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| Dragon fusion gun | 12" | 1 | 2+ | 9 | -4 | D6 | assault，[[core-rules/melta.md\|melta 3]] |
-| Laser lance | 6" | 1 | 2+ | 6 | -3 | 2 | assault |
-| Twin shuriken catapult | 18" | 2 | 2+ | 4 | -1 | 1 | assault，twin-linked |
+| 火龙热熔枪 | 12" | 1 | 2+ | 9 | -4 | D6 | [[core-rules/assault.md\|assault]]，[[core-rules/melta.md\|melta 3]] |
+| 激光骑枪 | 6" | 1 | 2+ | 6 | -3 | 2 | [[core-rules/assault.md\|assault]] |
+| 双联星镖枪 | 18" | 2 | 2+ | 4 | -1 | 1 | [[core-rules/assault.md\|assault]]，[[core-rules/twin-linked.md\|twin-linked]] |
 
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| Laser lance | 近战 | 4 | 2+ | 4 | -3 | 2 | lance |
-| Banshee blade | 近战 | 5 | 2+ | 4 | -3 | 1 | — |
-| Close combat weapon | 近战 | 3 | 2+ | 3 | 0 | 1 | — |
+| 激光骑枪 | 近战 | 4 | 2+ | 4 | -3 | 2 | [[core-rules/lance.md\|lance]] |
+| 女妖之刃 | 近战 | 5 | 2+ | 4 | -3 | 1 | — |
+| 格斗武器 | 近战 | 3 | 2+ | 3 | 0 | 1 | — |
 
 ## 技能
 - **Ride the Wind**：While this model is leading a unit, each time that unit Advances, do not make an Advance roll for it. Instead, until the end of the phase, add 6" to the Move characteristic of models in that unit.

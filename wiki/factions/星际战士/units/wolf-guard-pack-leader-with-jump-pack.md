@@ -24,20 +24,20 @@ updated: '2026-07-23'
 ## 射击武器
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| Bolt pistol | 12" | 1 | 3+ | 4 | 0 | 1 | pistol |
-| Combi-weapon | 24" | 1 | 3+ | 4 | 0 | 1 | [[core-rules/anti.md\|anti-infantry 4+]]，devastating wounds，[[core-rules/rapid-fire.md\|rapid fire 1]] |
-| Plasma pistol – standard | 12" | 1 | 3+ | 7 | -2 | 1 | pistol |
-| Plasma pistol – supercharge | 12" | 1 | 3+ | 8 | -3 | 2 | hazardous，pistol |
-| Storm bolter | 24" | 2 | 3+ | 4 | 0 | 1 | [[core-rules/rapid-fire.md\|rapid fire 2]] |
+| 爆弹手枪 | 12" | 1 | 3+ | 4 | 0 | 1 | [[core-rules/pistol.md\|pistol]] |
+| 复合武器 | 24" | 1 | 3+ | 4 | 0 | 1 | [[core-rules/anti.md\|anti-infantry 4+]]，[[core-rules/devastating-wounds.md\|devastating wounds]]，[[core-rules/rapid-fire.md\|rapid fire 1]] |
+| 等离子手枪（标准） | 12" | 1 | 3+ | 7 | -2 | 1 | [[core-rules/pistol.md\|pistol]] |
+| 等离子手枪（过载） | 12" | 1 | 3+ | 8 | -3 | 2 | [[core-rules/hazardous.md\|hazardous]]，[[core-rules/pistol.md\|pistol]] |
+| 风暴爆弹枪 | 24" | 2 | 3+ | 4 | 0 | 1 | [[core-rules/rapid-fire.md\|rapid fire 2]] |
 
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| Astartes chainsword | 近战 | 4 | 3+ | 4 | -1 | 1 | — |
-| Power fist | 近战 | 2 | 3+ | 8 | -2 | 2 | — |
-| Power weapon | 近战 | 3 | 3+ | 5 | -2 | 1 | — |
-| Thunder hammer | 近战 | 2 | 4+ | 8 | -2 | 2 | devastating wounds |
-| Twin lightning claws | 近战 | 4 | 3+ | 5 | -2 | 1 | twin-linked |
+| 阿斯塔特链锯剑 | 近战 | 4 | 3+ | 4 | -1 | 1 | — |
+| 动力拳 | 近战 | 2 | 3+ | 8 | -2 | 2 | — |
+| 动力武器 | 近战 | 3 | 3+ | 5 | -2 | 1 | — |
+| 雷霆锤 | 近战 | 2 | 4+ | 8 | -2 | 2 | [[core-rules/devastating-wounds.md\|devastating wounds]] |
+| 一对闪电爪 | 近战 | 4 | 3+ | 5 | -2 | 1 | [[core-rules/twin-linked.md\|twin-linked]] |
 
 ## 技能
 - **Storm Shield**：The bearer has a 4+ invulnerable save.

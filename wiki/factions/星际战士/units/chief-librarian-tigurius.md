@@ -28,14 +28,14 @@ updated: '2026-07-23'
 ## 射击武器
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| Bolt pistol | 12" | 1 | 2+ | 4 | 0 | 1 | pistol |
-| 帝皇之怒风暴（巫火） | 18" | D6 | 2+ | 6 | -2 | 2 | [[core-rules/blast.md\|爆炸]]，灵能 |
-| Storm of the Emperor’s Wrath – focused witchfire | 18" | 2D6 | 2+ | 6 | -2 | 2 | blast，hazardous，psychic |
+| 爆弹手枪 | 12" | 1 | 2+ | 4 | 0 | 1 | [[core-rules/pistol.md\|pistol]] |
+| 帝皇之怒风暴（巫火） | 18" | D6 | 2+ | 6 | -2 | 2 | [[core-rules/blast.md\|爆炸]]，[[core-rules/psychic-attacks.md\|灵能]] |
+| 帝皇之怒风暴（聚焦巫火） | 18" | 2D6 | 2+ | 6 | -2 | 2 | [[core-rules/blast.md\|blast]]，[[core-rules/hazardous.md\|hazardous]]，[[core-rules/psychic-attacks.md\|psychic]] |
 
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| Rod of Tigurius | 近战 | 5 | 3+ | 7 | -2 | D3 | psychic |
+| 底格里斯之杖 | 近战 | 5 | 3+ | 7 | -2 | D3 | [[core-rules/psychic-attacks.md\|psychic]] |
 
 ## 技能
 - **【阵营技能】：破敌重誓**

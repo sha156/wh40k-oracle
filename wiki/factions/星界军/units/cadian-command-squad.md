@@ -1,5 +1,6 @@
 ---
 id: 000002609
+name_zh: 卡迪安指挥组
 name_en: Cadian Command Squad
 faction: 星界军
 type: unit
@@ -20,38 +21,38 @@ updated: '2026-07-23'
 ## 属性表
 | 模型 | M | T | SV | W | LD | OC |
 |---|---|---|---|---|---|---|
-| CADIAN COMMANDER | 6" | 3 | 5+ | 3 | 7+ | 1 |
-| CADIAN VETERAN GUARDSMAN | 6" | 3 | 5+ | 1 | 7+ | 1 |
+| 卡迪安指挥官 | 6" | 3 | 5+ | 3 | 7+ | 1 |
+| 卡迪安老兵卫军 | 6" | 3 | 5+ | 1 | 7+ | 1 |
 
 ## 射击武器
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| Bolt pistol | 12" | 1 | 4+ | 4 | 0 | 1 | pistol |
-| Flamer | 12" | D6 | N/A | 4 | 0 | 1 | ignores cover，torrent |
-| Grenade launcher – frag | 24" | D3 | 4+ | 4 | 0 | 1 | blast |
-| Grenade launcher – krak | 24" | 1 | 4+ | 9 | -2 | D3 | — |
-| Lasgun | 24" | 1 | 4+ | 3 | 0 | 1 | [[core-rules/rapid-fire.md\|rapid fire 1]] |
-| Laspistol | 12" | 1 | 4+ | 3 | 0 | 1 | pistol |
-| Meltagun | 12" | 1 | 4+ | 9 | -4 | D6 | [[core-rules/melta.md\|melta 2]] |
-| Plasma gun – standard | 24" | 1 | 4+ | 7 | -2 | 1 | [[core-rules/rapid-fire.md\|rapid fire 1]] |
-| Plasma gun – supercharge | 24" | 1 | 4+ | 8 | -3 | 2 | hazardous，[[core-rules/rapid-fire.md\|rapid fire 1]] |
-| Plasma pistol – standard | 12" | 1 | 4+ | 7 | -2 | 1 | pistol |
-| Plasma pistol – supercharge | 12" | 1 | 4+ | 8 | -3 | 2 | hazardous，pistol |
+| 爆弹手枪 | 12" | 1 | 4+ | 4 | 0 | 1 | [[core-rules/pistol.md\|手枪]] |
+| 喷火器 | 12" | D6 | N/A | 4 | 0 | 1 | [[core-rules/ignores-cover.md\|忽视掩体]]，[[core-rules/torrent.md\|洪流]] |
+| 榴弹发射器（破片） | 24" | D3 | 4+ | 4 | 0 | 1 | [[core-rules/blast.md\|爆炸]] |
+| 榴弹发射器（穿甲） | 24" | 1 | 4+ | 9 | -2 | D3 | — |
+| 激光枪 | 24" | 1 | 4+ | 3 | 0 | 1 | [[core-rules/rapid-fire.md\|rapid fire 1]] |
+| 激光手枪 | 12" | 1 | 4+ | 3 | 0 | 1 | [[core-rules/pistol.md\|pistol]] |
+| 热熔枪 | 12" | 1 | 4+ | 9 | -4 | D6 | [[core-rules/melta.md\|热熔2]] |
+| 等离子枪（标准） | 24" | 1 | 4+ | 7 | -2 | 1 | [[core-rules/rapid-fire.md\|rapid fire 1]] |
+| 等离子枪（过载） | 24" | 1 | 4+ | 8 | -3 | 2 | [[core-rules/hazardous.md\|hazardous]]，[[core-rules/rapid-fire.md\|rapid fire 1]] |
+| 等离子手枪（标准） | 12" | 1 | 4+ | 7 | -2 | 1 | [[core-rules/pistol.md\|pistol]] |
+| 等离子手枪（过载） | 12" | 1 | 4+ | 8 | -3 | 2 | [[core-rules/hazardous.md\|hazardous]]，[[core-rules/pistol.md\|pistol]] |
 
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| Chainsword | 近战 | 4 | 4+ | 3 | 0 | 1 | — |
-| Close combat weapon | 近战 | 2 | 4+ | 3 | 0 | 1 | — |
-| Power fist | 近战 | 3 | 4+ | 6 | -2 | 2 | — |
-| Power weapon | 近战 | 3 | 4+ | 4 | -2 | 1 | — |
+| 链锯剑 | 近战 | 4 | 4+ | 3 | 0 | 1 | — |
+| 格斗武器 | 近战 | 2 | 4+ | 3 | 0 | 1 | — |
+| 动力拳 | 近战 | 3 | 4+ | 6 | -2 | 2 | — |
+| 动力武器 | 近战 | 3 | 4+ | 4 | -2 | 1 | — |
 
 ## 技能
-- **Cadia Stands!**：While this unit contains an <span class="kwb">OFFICER</span>, each time a ranged attack targets this unit, if this unit is within range of an objective marker you control, models in this unit have the Benefit of Cover against that attack.
-- **Master Vox**：Each time the <span class="kwb">OFFICER</span> in the bearer’s unit issues an Order, it can issue it to an eligible unit up to 24" away.
-- **Medi-pack**：At the start of your Command phase, if the bearer’s unit is below its Starting Strength, you can return up to D3 destroyed <span class="kwb">PLATOON</span> models (excluding <span class="kwb">CHARACTERS</span>) to this unit.
-- **Regimental Standard**：Add 1 to the Objective Control characteristic of models in the bearer’s unit.
-- **ORDERS**：This unit’s <span class="kwb">OFFICER</span> can issue 1 Order to a Regiment unit.
+- **阵营能力-指挥之声**：该单位的军官可以对兵团单位下达一个命令。
+- **卡迪安屹立不倒！**：若该单位包含一个军官模型，那么在该单位位于一个目标的范围内时，该单位可以重掷战斗震慑掷骰。
+- **【装备技能】步话总机**：当军官在该装备持有者所在单位发布命令时，距离提升至24寸
+- **【装备技能】医疗包**：在你的指挥阶段开始时，如果该持有者所在单位低于初始军力，可以回复D3个被摧毁的排部模型（角色除外）
+- **【装备技能】团旗**：该装备持有者所在单位的模型OC+1
 
 ## 单位构成
 - **5个模型** — 60 分

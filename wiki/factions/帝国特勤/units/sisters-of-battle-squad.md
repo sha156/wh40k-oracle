@@ -32,15 +32,15 @@ updated: '2026-07-23'
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
 | 精工风暴爆弹枪 | 24" | 2 | 3+ | 4 | 0 | 2 | [[core-rules/rapid-fire.md\|速射2]] |
-| Bolt pistol | 12" | 1 | 3+ | 4 | 0 | 1 | pistol |
-| Boltgun | 24" | 1 | 3+ | 4 | 0 | 1 | [[core-rules/rapid-fire.md\|rapid fire 1]] |
-| Combi-weapon | 24" | 1 | 4+ | 4 | 0 | 1 | [[core-rules/anti.md\|ANTI-INFANTRY 4+]]，[[core-rules/devastating-wounds.md\|DEVASTATING WOUNDS]]，[[core-rules/rapid-fire.md\|RAPID FIRE 1]] |
-| Condemnor boltgun | 24" | 1 | 3+ | 4 | 0 | 1 | [[core-rules/anti.md\|ANTI-PSYKER 2+]]，[[core-rules/devastating-wounds.md\|DEVASTATING WOUNDS]]，PRECISION，[[core-rules/rapid-fire.md\|RAPID FIRE 1]] |
+| 爆弹手枪 | 12" | 1 | 3+ | 4 | 0 | 1 | [[core-rules/pistol.md\|pistol]] |
+| 爆弹枪 | 24" | 1 | 3+ | 4 | 0 | 1 | [[core-rules/rapid-fire.md\|rapid fire 1]] |
+| 复合武器 | 24" | 1 | 4+ | 4 | 0 | 1 | [[core-rules/anti.md\|ANTI-INFANTRY 4+]]，[[core-rules/devastating-wounds.md\|DEVASTATING WOUNDS]]，[[core-rules/rapid-fire.md\|RAPID FIRE 1]] |
+| 降罪者爆弹枪 | 24" | 1 | 3+ | 4 | 0 | 1 | [[core-rules/anti.md\|ANTI-PSYKER 2+]]，[[core-rules/devastating-wounds.md\|DEVASTATING WOUNDS]]，[[core-rules/precision.md\|PRECISION]]，[[core-rules/rapid-fire.md\|RAPID FIRE 1]] |
 | 重型爆弹枪 | 36" | 3 | 4+ | 5 | -1 | 2 | [[core-rules/heavy.md\|重型]]，[[core-rules/sustained-hits.md\|连击1]] |
 | 地狱火手枪 | 6" | 1 | 3+ | 8 | -4 | D3 | [[core-rules/melta.md\|热熔2]]，[[core-rules/pistol.md\|手枪]] |
 | 热熔枪 | 12" | 1 | 3+ | 9 | -4 | D6 | [[core-rules/melta.md\|热熔2]] |
-| Ministorum flamer | 12" | D6 | N/A | 5 | 0 | 1 | ignores cover，torrent |
-| Ministorum hand flamer | 12" | D6 | N/A | 4 | 0 | 1 | IGNORES COvER，pISTOl，TORRENT |
+| 教廷火焰喷射器 | 12" | D6 | N/A | 5 | 0 | 1 | [[core-rules/ignores-cover.md\|ignores cover]]，[[core-rules/torrent.md\|torrent]] |
+| 教廷喷火手枪 | 12" | D6 | N/A | 4 | 0 | 1 | [[core-rules/ignores-cover.md\|IGNORES COvER]]，[[core-rules/pistol.md\|pISTOl]]，[[core-rules/torrent.md\|TORRENT]] |
 | 教廷重型火焰喷射器 | 12" | D6 | N/A | 6 | -1 | 1 | [[core-rules/ignores-cover.md\|无视掩体]]，[[core-rules/torrent.md\|洪流]] |
 | 多管热熔 | 18" | 2 | 4+ | 9 | -4 | D6 | [[core-rules/heavy.md\|重型]]，[[core-rules/melta.md\|热熔2]] |
 | 等离子手枪-标准 | 12" | 1 | 3+ | 7 | -2 | 1 | [[core-rules/pistol.md\|手枪]] |

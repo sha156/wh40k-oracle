@@ -27,16 +27,16 @@ updated: '2026-07-23'
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
 | 蛮兽爆弹步枪    | 24" | 4 | 3+ | 4 | -1 | 1 | [[core-rules/twin-linked.md\|双联]] |
-| Twin heavy bolter | 36" | 3 | 3+ | 5 | -1 | 2 | [[core-rules/sustained-hits.md\|sustained hits 1]]，twin-linked |
+| 双联重型爆弹枪 | 36" | 3 | 3+ | 5 | -1 | 2 | [[core-rules/sustained-hits.md\|sustained hits 1]]，[[core-rules/twin-linked.md\|twin-linked]] |
 | 双联伊卡洛斯重机枪   | 36" | 3 | 3+ | 4 | 0 | 1 | [[core-rules/rapid-fire.md\|速射 3]]，[[core-rules/twin-linked.md\|双联]]，[[core-rules/anti.md\|反飞行 4+]] |
-| Twin multi-melta | 18" | 2 | 3+ | 9 | -4 | D6 | [[core-rules/melta.md\|melta 2]]，twin-linked |
+| 双联多管热熔 | 18" | 2 | 3+ | 9 | -4 | D6 | [[core-rules/melta.md\|melta 2]]，[[core-rules/twin-linked.md\|twin-linked]] |
 
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| Brutalis fists | 近战 | 6 | 3+ | 12 | -2 | 3 | twin-linked |
-| Brutalis talons – strike | 近战 | 6 | 3+ | 12 | -2 | 3 | twin-linked |
-| Brutalis talons – sweep | 近战 | 10 | 3+ | 7 | -2 | 1 | twin-linked |
+| 蛮兽重拳 | 近战 | 6 | 3+ | 12 | -2 | 3 | [[core-rules/twin-linked.md\|twin-linked]] |
+| 蛮兽钢爪（重击） | 近战 | 6 | 3+ | 12 | -2 | 3 | [[core-rules/twin-linked.md\|twin-linked]] |
+| 蛮兽钢爪（横扫） | 近战 | 10 | 3+ | 7 | -2 | 1 | [[core-rules/twin-linked.md\|twin-linked]] |
 
 ## 技能
 - **【阵营技能】：破敌重誓**

@@ -29,15 +29,15 @@ updated: '2026-07-23'
 ## 射击武器
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| Staff of light | 18" | 3 | 2+ | 5 | -2 | 1 | — |
-| 超光速粒子箭  | 72" | 1 | 2+ | 16 | -5 | D6+2 | 单发 |
+| 光之杖 | 18" | 3 | 2+ | 5 | -2 | 1 | — |
+| 超光速粒子箭  | 72" | 1 | 2+ | 16 | -5 | D6+2 | [[core-rules/one-shot.md\|单发]] |
 
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| Overlord’s blade | 近战 | 4 | 2+ | 8 | -3 | 2 | devastating wounds |
-| Staff of light | 近战 | 4 | 2+ | 5 | -2 | 1 | — |
-| Voidscythe | 近战 | 3 | 3+ | 12 | -3 | 3 | devastating wounds |
+| 霸主之刃 | 近战 | 4 | 2+ | 8 | -3 | 2 | [[core-rules/devastating-wounds.md\|devastating wounds]] |
+| 光之杖 | 近战 | 4 | 2+ | 5 | -2 | 1 | — |
+| 虚空镰 | 近战 | 3 | 3+ | 12 | -3 | 3 | [[core-rules/devastating-wounds.md\|devastating wounds]] |
 
 ## 技能
 - **[阵营]：重生协议**

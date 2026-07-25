@@ -1,5 +1,6 @@
 ---
 id: 000002619
+name_zh: 神盾防御墙
 name_en: Aegis Defence Line
 faction: 星界军
 type: unit
@@ -20,14 +21,13 @@ updated: '2026-07-23'
 ## 属性表
 | 模型 | M | T | SV | W | LD | OC |
 |---|---|---|---|---|---|---|
-| Aegis Defence Line | - | 12 | 2+ | 10 | 7+ | 0 |
+| Aegis Defence Line | -" | 12 | 2+ | 10 | 7+ | 0 |
 
 ## 技能
-- **Emplacement Platform**：Friendly ASTRA MILITARUM INFANTRY models can be set up or end any type of move on top of the platform section of this <span class="kwb">FORTIFICATION</span>.
-- **Reinforced Cover**：Each time a ranged attack is allocated to a model, if that model is not fully visible to every model in the attacking unit because of this <span class="kwb">FORTIFICATION</span>, that model has the Benefit of Cover against that attack.
-- **Defence Line**：While an ASTRA MILITARUM INFANTRY model has the Benefit of Cover as a result of this terrain feature (see above), that model has a 4+ invulnerable save.
-- **Fortification**：While an enemy unit is only within Engagement Range of one or more FORTIFICATIONS from your army: <br><ul><li>That unit can still be selected as the target of ranged attacks, but each time such an attack is made, unless it is made with a Pistol, subtract 1 from the Hit roll. </li><li>Models in that unit do not need to take Desperate Escape tests due to Falling Back while Battle-shocked, except for those that will move over enemy models when doing so.</li></ul>
-- **DEPLOYMENT**：When this model is set up, it will consist of 1 platform section, up to 5 shield sections, up to 2 broken shield sections, and up to 2 end sections. All sections must be connected to each other to form a continuous defence line; the two broken shield sections can be placed either at the end of the defence line, or in the middle of it such that both are within 1/2" of each other (in this case, these two sections count as being connected to each other). All the sections that have been set up are then treated as a single model for all rules purposes.
+- **工事平台**：己方星界军步兵模型可以被部署在该防御工事平台部分的顶部，或在其上完成任意类型的移动。
+- **加固掩护**：每次将远程攻击分配给一个模型时，如果那个模型由于该防御工事而不对攻击单位中每个模型完全可见，则那个模型获得针对该攻击的掩体增益。
+- **防线墙**：当己方星界军步兵模型因为该地形模型而获得掩体增益(见上方)时，那个模型获得4+无敌豁免。
+- **防御工事**：当一个敌方单位仅位于己方防御工事的交战范围内时：那个单位依旧可以被选择成为远程攻击的目标，但是每次进行攻击时，除非使用的武器是手检，否则命中掷骰的结果减少1点。那个单位中的模型不需要在处于战斗震慑状态的情况下撤退后进行溃逃测试，除非单位需要在这么做时移动越过其他敌方模型。
 
 ## 单位构成
 - **1个模型** — 145 分

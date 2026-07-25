@@ -29,7 +29,7 @@ updated: '2026-07-23'
 ## 射击武器
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| Gauss cannon | 24" | 3 | 3+ | 5 | -2 | 2 | lethal hits |
+| 高斯炮 | 24" | 3 | 3+ | 5 | -2 | 2 | [[core-rules/lethal-hits.md\|lethal hits]] |
 
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |

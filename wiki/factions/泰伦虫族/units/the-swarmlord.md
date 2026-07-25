@@ -29,7 +29,7 @@ updated: '2026-07-23'
 ## 射击武器
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| 突触冲击 | 18" | D6+3 | N/A | 5 | -1 | 2 | 灵能，[[core-rules/torrent.md\|洪流]] |
+| 突触冲击 | 18" | D6+3 | N/A | 5 | -1 | 2 | [[core-rules/psychic-attacks.md\|灵能]]，[[core-rules/torrent.md\|洪流]] |
 
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |

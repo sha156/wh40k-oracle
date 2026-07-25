@@ -27,8 +27,8 @@ updated: '2026-07-23'
 ## 射击武器
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| Shuriken pistol | 12" | 1 | 2+ | 4 | -1 | 1 | assault，pistol |
-| Voidbringer | 48" | 1 | 2+ | 6 | -3 | 3 | devastating wounds，heavy，precision |
+| 星镖手枪 | 12" | 1 | 2+ | 4 | -1 | 1 | [[core-rules/assault.md\|assault]]，[[core-rules/pistol.md\|pistol]] |
+| Voidbringer | 48" | 1 | 2+ | 6 | -3 | 3 | [[core-rules/devastating-wounds.md\|devastating wounds]]，[[core-rules/heavy.md\|heavy]]，[[core-rules/precision.md\|precision]] |
 
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |

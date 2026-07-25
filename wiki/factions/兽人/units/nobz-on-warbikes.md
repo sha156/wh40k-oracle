@@ -27,18 +27,18 @@ updated: '2026-07-23'
 ## 射击武器
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| Slugga | 12" | 1 | 5+ | 4 | 0 | 1 | pistol |
-| Twin dakkagun | 18" | 3 | 5+ | 5 | 0 | 1 | assault，[[core-rules/rapid-fire.md\|rapid fire 2]]，twin-linked |
+| 手铳 | 12" | 1 | 5+ | 4 | 0 | 1 | [[core-rules/pistol.md\|pistol]] |
+| 双联突突枪 | 18" | 3 | 5+ | 5 | 0 | 1 | [[core-rules/assault.md\|assault]]，[[core-rules/rapid-fire.md\|rapid fire 2]]，[[core-rules/twin-linked.md\|twin-linked]] |
 
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| Big choppa | 近战 | 3 | 3+ | 7 | -1 | 2 | — |
-| Choppa | 近战 | 3 | 3+ | 5 | -1 | 1 | — |
-| Close combat weapon | 近战 | 3 | 3+ | 5 | 0 | 1 | — |
-| Killsaw | 近战 | 2 | 4+ | 12 | -3 | 2 | — |
-| Power klaw | 近战 | 3 | 4+ | 9 | -2 | 2 | — |
-| Power stabba | 近战 | 3 | 4+ | 8 | -1 | 2 | lance |
+| 大砍刀 | 近战 | 3 | 3+ | 7 | -1 | 2 | — |
+| 砍刀 | 近战 | 3 | 3+ | 5 | -1 | 1 | — |
+| 格斗武器 | 近战 | 3 | 3+ | 5 | 0 | 1 | — |
+| 杀戮锯 | 近战 | 2 | 4+ | 12 | -3 | 2 | — |
+| 动力爪 | 近战 | 3 | 4+ | 9 | -2 | 2 | — |
+| Power stabba | 近战 | 3 | 4+ | 8 | -1 | 2 | [[core-rules/lance.md\|lance]] |
 
 ## 技能
 - **Drive-by Krumpin'**：Each time this unit Consolidates, each model in this unit can move up to 6" instead of up to 3".

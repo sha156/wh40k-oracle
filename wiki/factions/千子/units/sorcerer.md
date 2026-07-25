@@ -29,14 +29,14 @@ updated: '2026-07-23'
 ## 射击武器
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| Inferno bolt pistol | 12" | 1 | 3+ | 4 | -1 | 1 | pistol |
-| Pandaemonic Delusion | 24" | 6 | 3+ | 5 | -1 | 1 | psychic，[[core-rules/sustained-hits.md\|sustained hits 3]] |
+| 地狱火爆矢手枪 | 12" | 1 | 3+ | 4 | -1 | 1 | [[core-rules/pistol.md\|pistol]] |
+| 群魔幻梦 | 24" | 6 | 3+ | 5 | -1 | 1 | [[core-rules/psychic-attacks.md\|psychic]]，[[core-rules/sustained-hits.md\|sustained hits 3]] |
 
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| 力场武器 | 近战 | 4 | 3+ | 6 | -1 | D3 | 灵能 |
-| Prosperine khopesh | 近战 | 3 | 3+ | 5 | -2 | 2 | — |
+| 力场武器 | 近战 | 4 | 3+ | 6 | -1 | D3 | [[core-rules/psychic-attacks.md\|灵能]] |
+| 普罗斯佩罗弯刀 | 近战 | 3 | 3+ | 5 | -2 | 2 | — |
 
 ## 技能
 - **【阵营技能】：黑暗契约**

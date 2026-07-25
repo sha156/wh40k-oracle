@@ -88,7 +88,7 @@ pip install torch==2.8.0 --index-url https://download.pytorch.org/whl/cpu
 容器化后最阴险的事故是**卷没挂上**：FastAPI 照样起来、端点照样 200，但所有回答
 静默降级成"知识库未构建"——正是本项目最忌讳的失败形态。
 
-`web_api/preflight.py` 在启动时核对四类资产，缺失项在 `docker logs` 里带 `[缺!]`
+`web_api/preflight.py` 在启动时逐项核对资产，缺失项在 `docker logs` 里带 `[缺!]`
 吼出来并给修复命令，同时挂到 `/healthz` 的 `ready` 字段：
 
 ```
@@ -97,8 +97,13 @@ pip install torch==2.8.0 --index-url https://download.pytorch.org/whl/cpu
 [preflight]   [ok ] vector_store    /app/local_vector_store/index.faiss
 [preflight]   [ok ] structured_db   /app/db/wh40k.sqlite
 [preflight]   [ok ] wiki            /app/wiki/index.md
+[preflight]   [ok ] keyword_index   /app/wiki/indexes/keywords.json
 [preflight] 必需资产齐全。
 ```
+
+（`keyword_index` 是图鉴词条页的离线载荷，`required=False`：缺了只让
+`/codex/keywords` 两个端点 503，不拉低 `ready`。清单会随功能增长，
+`tests/test_web_api_stage5_deploy.py` 里的资产名集合是全等比对，加一项就要同步。）
 
 两个细节：
 

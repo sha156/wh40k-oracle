@@ -31,8 +31,8 @@ updated: '2026-07-23'
 |---|---|---|---|---|---|---|---|
 | 命运女神激光切割机-低频率 | 36" | 2D6 | 3+ | 7 | -1 | 2 | [[core-rules/sustained-hits.md\|连击 1]] |
 | 命运女神激光切割机-高频率 | 24" | D6 | 3+ | 14 | -3 | 4 | [[core-rules/sustained-hits.md\|连击 1]] |
-| Graviton singularity cannon – contained | 24" | D3 | 3+ | 16 | -4 | D6+1 | blast |
-| Graviton singularity cannon – singularity | 24" | D3 | 3+ | 16 | -4 | D6+1 | blast，devastating wounds，hazardous |
+| 重力子奇点炮（约束） | 24" | D3 | 3+ | 16 | -4 | D6+1 | [[core-rules/blast.md\|blast]] |
+| 重力子奇点炮（奇点） | 24" | D3 | 3+ | 16 | -4 | D6+1 | [[core-rules/blast.md\|blast]]，[[core-rules/devastating-wounds.md\|devastating wounds]]，[[core-rules/hazardous.md\|hazardous]] |
 
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |

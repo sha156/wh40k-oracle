@@ -29,7 +29,7 @@ updated: '2026-07-23'
 ## 射击武器
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| Tyrant’s Claw heavy flamer | 12" | D6+2 | N/A | 6 | -1 | 1 | ignores cover，pistol，torrent |
+| 暴君之爪重型火焰喷射器 | 12" | D6+2 | N/A | 6 | -1 | 1 | [[core-rules/ignores-cover.md\|ignores cover]]，[[core-rules/pistol.md\|pistol]]，[[core-rules/torrent.md\|torrent]] |
 
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |

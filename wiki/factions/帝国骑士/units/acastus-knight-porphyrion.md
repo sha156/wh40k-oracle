@@ -29,7 +29,7 @@ updated: '2026-07-23'
 ## 射击武器
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| Acastus autocannon | 48" | 2 | 3+ | 9 | -1 | 3 | — |
+| 阿卡斯托斯自动炮 | 48" | 2 | 3+ | 9 | -1 | 3 | — |
 | 巨型钢铁风暴导弹舱 | 48" | D6+6 | 3+ | 5 | 0 | 1 | [[core-rules/heavy.md\|重型]]，[[core-rules/blast.md\|爆炸]]，[[core-rules/indirect-fire.md\|曲射]] |
 | 太阳神防空导弹 | 48" | 3 | 3+ | 10 | -2 | D6 | [[core-rules/anti.md\|反飞行 2+]]，[[core-rules/heavy.md\|重型]] |
 | 激光炮 | 48" | 1 | 3+ | 12 | -3 | D6+1 | — |

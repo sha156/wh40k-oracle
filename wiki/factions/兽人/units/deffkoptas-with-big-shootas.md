@@ -27,16 +27,16 @@ updated: '2026-07-23'
 ## 射击武器
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| Kopta rokkits | 24" | D3 | 5+ | 9 | -2 | 3 | blast，twin-linked |
-| Kustom mega-blasta | 24" | 3 | 5+ | 9 | -2 | D6 | hazardous |
-| Slugga | 12" | 1 | 5+ | 4 | 0 | 1 | pistol |
-| Twin big shoota | 36" | 3 | 5+ | 5 | 0 | 1 | [[core-rules/rapid-fire.md\|rapid fire 2]]，twin-linked |
+| 机载火箭巢 | 24" | D3 | 5+ | 9 | -2 | 3 | [[core-rules/blast.md\|blast]]，[[core-rules/twin-linked.md\|twin-linked]] |
+| 魔改米加枪 | 24" | 3 | 5+ | 9 | -2 | D6 | [[core-rules/hazardous.md\|hazardous]] |
+| 手铳 | 12" | 1 | 5+ | 4 | 0 | 1 | [[core-rules/pistol.md\|pistol]] |
+| 双联大突突枪 | 36" | 3 | 5+ | 5 | 0 | 1 | [[core-rules/rapid-fire.md\|rapid fire 2]]，[[core-rules/twin-linked.md\|twin-linked]] |
 
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| Killsaw | 近战 | 3 | 4+ | 12 | -3 | 2 | — |
-| Spinnin’ blades | 近战 | 6 | 3+ | 5 | 0 | 1 | — |
+| 杀戮锯 | 近战 | 3 | 4+ | 12 | -3 | 2 | — |
+| 旋翼刀刃 | 近战 | 6 | 3+ | 5 | 0 | 1 | — |
 
 ## 技能
 - **Deff from Above**：Each time this unit ends a Normal move, you can select one enemy unit it moved over during that move and roll one D6 for each model in this unit: for each 4+, that enemy unit suffers 1 mortal wound.

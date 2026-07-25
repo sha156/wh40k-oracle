@@ -29,7 +29,7 @@ updated: '2026-07-23'
 ## 射击武器
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| Doomsday blaster | 48" | D6+1 | 4+ | 14 | -3 | 3 | blast，heavy |
+| 末日爆裂炮 | 48" | D6+1 | 4+ | 14 | -3 | 3 | [[core-rules/blast.md\|blast]]，[[core-rules/heavy.md\|heavy]] |
 | 双联高斯撕裂枪   | 24" | 1 | 4+ | 4 | 0 | 1 | [[core-rules/lethal-hits.md\|致命一击]]，[[core-rules/twin-linked.md\|双联]]，[[core-rules/rapid-fire.md\|速射 1]] |
 
 ## 近战武器

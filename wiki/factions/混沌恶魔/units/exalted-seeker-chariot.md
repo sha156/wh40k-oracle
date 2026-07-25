@@ -27,13 +27,13 @@ updated: '2026-07-23'
 ## 射击武器
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| Lashes of torment | 6" | 6 | 3+ | 4 | 0 | 1 | [[core-rules/anti.md\|anti-infantry 3+]]，assault，pistol |
+| 折磨之鞭 | 6" | 6 | 3+ | 4 | 0 | 1 | [[core-rules/anti.md\|anti-infantry 3+]]，[[core-rules/assault.md\|assault]]，[[core-rules/pistol.md\|pistol]] |
 
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| Exalted Seeker tongues | 近战 | 8 | 4+ | 4 | 0 | 1 | extra attacks，lethal hits |
-| Slashing claws | 近战 | 14 | 3+ | 4 | -1 | 1 | devastating wounds |
+| Exalted Seeker tongues | 近战 | 8 | 4+ | 4 | 0 | 1 | [[core-rules/extra-attacks.md\|extra attacks]]，[[core-rules/lethal-hits.md\|lethal hits]] |
+| 凶狠利爪 | 近战 | 14 | 3+ | 4 | -1 | 1 | [[core-rules/devastating-wounds.md\|devastating wounds]] |
 
 ## 技能
 - **Infernal Engines of Torment**：In the Fight phase, after this model has finished making its attacks, if one or more enemy units were destroyed as a result of those attacks, every enemy unit within 6" of this model must take a Battle-shock test.

@@ -29,14 +29,14 @@ updated: '2026-07-23'
 |---|---|---|---|---|---|---|---|
 | 爆弹手枪  | 12" | 1 | 3+ | 4 | 0 | 1 | [[core-rules/pistol.md\|手枪]] |
 | 爆弹枪 | 24" | 2 | 3+ | 4 | 0 | 1 | — |
-| Plasma pistol – standard | 12" | 1 | 3+ | 7 | -2 | 1 | pistol |
-| Plasma pistol – supercharge | 12" | 1 | 3+ | 8 | -3 | 2 | hazardous，pistol |
+| 等离子手枪（标准） | 12" | 1 | 3+ | 7 | -2 | 1 | [[core-rules/pistol.md\|pistol]] |
+| 等离子手枪（过载） | 12" | 1 | 3+ | 8 | -3 | 2 | [[core-rules/hazardous.md\|hazardous]]，[[core-rules/pistol.md\|pistol]] |
 
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| Teeth and claws | 近战 | 3 | 4+ | 5 | -1 | 1 | extra attacks |
-| [[factions/星际战士/units/wolf-guard.md\|Wolf Guard]] weapon | 近战 | 4 | 3+ | 5 | -2 | 2 | — |
+| 尖牙与利爪 | 近战 | 3 | 4+ | 5 | -1 | 1 | [[core-rules/extra-attacks.md\|extra attacks]] |
+| 狼卫武器 | 近战 | 4 | 3+ | 5 | -2 | 2 | — |
 
 ## 技能
 - **【阵营技能】：破敌重誓**

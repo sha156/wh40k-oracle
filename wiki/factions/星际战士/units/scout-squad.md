@@ -30,17 +30,17 @@ updated: '2026-07-23'
 | 阿斯塔特霰弹枪  | 18" | 2 | 3+ | 4 | 0 | 1 | [[core-rules/assault.md\|突击]] |
 | 爆弹手枪   | 12" | 1 | 3+ | 4 | 0 | 1 | [[core-rules/pistol.md\|手枪]] |
 | 阿斯塔特霰弹枪  | 24" | 2 | 3+ | 4 | 0 | 1 | [[core-rules/assault.md\|突击]] |
-| Heavy bolter | 36" | 3 | 4+ | 5 | -1 | 2 | heavy，[[core-rules/sustained-hits.md\|sustained hits 1]] |
+| 重型爆弹枪 | 36" | 3 | 4+ | 5 | -1 | 2 | [[core-rules/heavy.md\|heavy]]，[[core-rules/sustained-hits.md\|sustained hits 1]] |
 | 导弹发射器（破片）    | 48" | D6 | 4+ | 4 | 0 | 1 | [[core-rules/blast.md\|爆炸]]，[[core-rules/heavy.md\|重型]] |
-| Missile launcher – krak | 48" | 1 | 4+ | 9 | -2 | D6 | heavy |
-| Scout sniper rifle | 36" | 1 | 3+ | 4 | -2 | 2 | [[core-rules/heavy.md\|HEAVY]]，PRECISION |
+| 导弹发射器（穿甲） | 48" | 1 | 4+ | 9 | -2 | D6 | [[core-rules/heavy.md\|heavy]] |
+| 狙击步枪 | 36" | 1 | 3+ | 4 | -2 | 2 | [[core-rules/heavy.md\|HEAVY]]，[[core-rules/precision.md\|PRECISION]] |
 
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| Astartes chainsword | 近战 | 4 | 3+ | 4 | -1 | 1 | — |
+| 阿斯塔特链锯剑 | 近战 | 4 | 3+ | 4 | -1 | 1 | — |
 | 格斗武器   | 近战 | 2 | 3+ | 4 | 0 | 1 | — |
-| Combat knife | 近战 | 3 | 3+ | 4 | -1 | 1 | — |
+| 战斗刀 | 近战 | 3 | 3+ | 4 | -1 | 1 | — |
 
 ## 技能
 - **【阵营技能】：破敌重誓**

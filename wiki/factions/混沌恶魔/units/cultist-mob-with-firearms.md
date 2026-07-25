@@ -25,19 +25,19 @@ updated: '2026-07-23'
 ## 射击武器
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| Grenade launcher – krak | 24" | 1 | 4+ | 9 | -2 | D3 | — |
-| Grenade launcher – frag | 24" | D3 | 4+ | 4 | 0 | 1 | blast |
-| Heavy stubber | 36" | 4 | 5+ | 4 | 0 | 1 | heavy，[[core-rules/rapid-fire.md\|rapid fire 3]] |
-| Autopistol | 12" | 1 | 4+ | 3 | 0 | 1 | pistol |
-| Bolt pistol | 12" | 1 | 4+ | 4 | 0 | 1 | pistol |
-| Flamer | 12" | D6 | N/A | 4 | 0 | 1 | ignores cover，torrent |
-| Autogun | 24" | 1 | 4+ | 3 | 0 | 1 | [[core-rules/rapid-fire.md\|rapid fire 1]] |
+| 榴弹发射器（穿甲） | 24" | 1 | 4+ | 9 | -2 | D3 | — |
+| 榴弹发射器（破片） | 24" | D3 | 4+ | 4 | 0 | 1 | [[core-rules/blast.md\|blast]] |
+| Heavy stubber | 36" | 4 | 5+ | 4 | 0 | 1 | [[core-rules/heavy.md\|heavy]]，[[core-rules/rapid-fire.md\|rapid fire 3]] |
+| 自动手枪 | 12" | 1 | 4+ | 3 | 0 | 1 | [[core-rules/pistol.md\|pistol]] |
+| 爆弹手枪 | 12" | 1 | 4+ | 4 | 0 | 1 | [[core-rules/pistol.md\|pistol]] |
+| 喷火器 | 12" | D6 | N/A | 4 | 0 | 1 | [[core-rules/ignores-cover.md\|ignores cover]]，[[core-rules/torrent.md\|torrent]] |
+| 自动枪 | 24" | 1 | 4+ | 3 | 0 | 1 | [[core-rules/rapid-fire.md\|rapid fire 1]] |
 
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| Close combat weapon | 近战 | 1 | 4+ | 3 | 0 | 1 | — |
-| Brutal assault weapon | 近战 | 2 | 4+ | 3 | 0 | 1 | — |
+| 格斗武器 | 近战 | 1 | 4+ | 3 | 0 | 1 | — |
+| 野蛮近战武器 | 近战 | 2 | 4+ | 3 | 0 | 1 | — |
 
 ## 技能
 - **For the Dark Gods**：At the end of your Command phase, if this unit is within range of an objective marker you control, that objective marker remains under your control until your opponent’s Level of Control over that objective marker is greater than yours at the end of a phase.

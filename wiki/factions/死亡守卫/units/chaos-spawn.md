@@ -1,5 +1,6 @@
 ---
 id: 000001048
+name_zh: 混沌卵
 name_en: Chaos Spawn
 faction: 死亡守卫
 type: unit
@@ -25,10 +26,11 @@ updated: '2026-07-23'
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| Hideous mutations | 近战 | D6+2 | 4+ | 5 | -1 | 2 | — |
+| 骇人异变 | 近战 | D6+2 | 4+ | 5 | -1 | 2 | — |
 
 ## 技能
-- **Lethal Ichor**：Each time a melee attack is allocated to a model in this unit, after the attacking unit has finished making its attacks, roll one D6 (to a maximum of six D6 per attacking unit): for each 4+, the attacking unit suffers 1 mortal wound.
+- **【阵营技能】：黑暗契约**
+- **可怖变异【光环】**：本单位 3 寸内的非载具敌方单 位中的模型 OC 值-1
 
 ## 单位构成
 - **2个模型** — 80 分

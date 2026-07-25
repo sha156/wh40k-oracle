@@ -31,13 +31,13 @@ updated: '2026-07-23'
 | 凋零榴弹炮     | 24" | D3 | 3+ | 6 | -1 | 2 | [[core-rules/lethal-hits.md\|致命一击]]，[[core-rules/blast.md\|爆炸]] |
 | 瘟疫爆弹枪 | 24" | 2 | 3+ | 4 | 0 | 1 | [[core-rules/lethal-hits.md\|致命一击]] |
 | 瘟疫爆弹手枪   | 12" | 1 | 3+ | 4 | 0 | 1 | [[core-rules/lethal-hits.md\|致命一击]]，[[core-rules/pistol.md\|手枪]] |
-| Meltagun | 12" | 1 | 3+ | 9 | -4 | D6 | [[core-rules/melta.md\|melta 2]] |
+| 热熔枪 | 12" | 1 | 3+ | 9 | -4 | D6 | [[core-rules/melta.md\|melta 2]] |
 | 瘟疫喷射器 | 12" | D6 | N/A | 4 | 0 | 1 | [[core-rules/ignores-cover.md\|忽视掩体]]，[[core-rules/torrent.md\|喷射]]，[[core-rules/anti.md\|反步兵 4+]] |
-| Plague spewer | 12" | D6 | N/A | 5 | -1 | 1 | [[core-rules/anti.md\|anti-infantry 2+]]，ignores cover，torrent |
-| Plasma gun – standard | 24" | 1 | 3+ | 7 | -2 | 1 | [[core-rules/rapid-fire.md\|rapid fire 1]] |
-| Plasma gun – supercharge | 24" | 1 | 3+ | 8 | -3 | 2 | hazardous，[[core-rules/rapid-fire.md\|rapid fire 1]] |
-| Plasma pistol – standard | 12" | 1 | 3+ | 7 | -2 | 1 | pistol |
-| Plasma pistol – supercharge | 12" | 1 | 3+ | 8 | -3 | 2 | hazardous，pistol |
+| 重型瘟疫喷射器 | 12" | D6 | N/A | 5 | -1 | 1 | [[core-rules/anti.md\|anti-infantry 2+]]，[[core-rules/ignores-cover.md\|ignores cover]]，[[core-rules/torrent.md\|torrent]] |
+| 等离子枪（标准） | 24" | 1 | 3+ | 7 | -2 | 1 | [[core-rules/rapid-fire.md\|rapid fire 1]] |
+| 等离子枪（过载） | 24" | 1 | 3+ | 8 | -3 | 2 | [[core-rules/hazardous.md\|hazardous]]，[[core-rules/rapid-fire.md\|rapid fire 1]] |
+| 等离子手枪（标准） | 12" | 1 | 3+ | 7 | -2 | 1 | [[core-rules/pistol.md\|pistol]] |
+| 等离子手枪（过载） | 12" | 1 | 3+ | 8 | -3 | 2 | [[core-rules/hazardous.md\|hazardous]]，[[core-rules/pistol.md\|pistol]] |
 
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |

@@ -1,5 +1,6 @@
 ---
 id: 000004038
+name_zh: 跳跃背包混沌领主
 name_en: Chaos Lord with Jump Pack
 faction: 混沌恶魔
 type: unit
@@ -27,20 +28,21 @@ updated: '2026-07-23'
 ## 射击武器
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| Plasma pistol – supercharge | 12" | 1 | 2+ | 8 | -3 | 2 | pistol，hazardous |
-| Plasma pistol – standard | 12" | 1 | 2+ | 7 | -2 | 1 | pistol |
-| Bolt pistol | 12" | 1 | 2+ | 4 | 0 | 1 | pistol |
+| 等离子手枪（过载） | 12" | 1 | 2+ | 8 | -3 | 2 | [[core-rules/pistol.md\|pistol]]，[[core-rules/hazardous.md\|hazardous]] |
+| 等离子手枪（标准） | 12" | 1 | 2+ | 7 | -2 | 1 | [[core-rules/pistol.md\|手枪]] |
+| 爆弹手枪 | 12" | 1 | 2+ | 4 | 0 | 1 | [[core-rules/pistol.md\|手枪]] |
 
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| Power fist | 近战 | 5 | 2+ | 8 | -2 | 2 | — |
-| Twin lightning claws | 近战 | 6 | 2+ | 5 | -2 | 1 | [[core-rules/twin-linked.md\|TWIN-LINKED]] |
-| Accursed weapon | 近战 | 6 | 2+ | 5 | -2 | 1 | — |
+| 动力拳  | 近战 | 5 | 2+ | 8 | -2 | 2 | — |
+| 一对闪电爪 | 近战 | 6 | 2+ | 5 | -2 | 1 | [[core-rules/twin-linked.md\|TWIN-LINKED]] |
+| 诅咒武器 | 近战 | 6 | 2+ | 5 | -2 | 1 | — |
 
 ## 技能
-- **Lord of Chaos**：Once per battle round, one unit from your army with this ability can use it when its unit is targeted with a Stratagem. If it does, reduce the CP cost of that use of that Stratagem by 1CP.
-- **Cruel Hunter**：While this model is leading a unit, each time that unit Piles In or Consolidates, each model in that unit can move up to 6" instead of up to 3".
+- **【阵营技能】：黑暗契约**
+- **[[factions/混沌恶魔/units/chaos-lord.md|混沌领主]]**：每个游戏大回合一次，你的军队中最多一个 拥有此技能的单位对自身所在单位使用一个战略技能时 可以减少 1 点 CP 消耗
+- **残酷猎手**：本模型所领导的单位在跟进或重整移动时可以 最多移动 6 寸
 
 ## 单位构成
 - **1个模型** — 80 分

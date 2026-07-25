@@ -1,5 +1,6 @@
 ---
 id: '000002536'
+name_zh: 丑角剧团
 name_en: Troupe
 faction: 艾达灵族
 type: unit
@@ -22,7 +23,7 @@ updated: '2026-07-23'
 ## 属性表
 | 模型 | M | T | SV | W | LD | OC |
 |---|---|---|---|---|---|---|
-| Troupe | 8" | 3 | 6+ | 1 | 6+ | 1 |
+| 丑角剧团 | 8" | 3 | 6+ | 1 | 6+ | 1 |
 
 ### 特殊保护
 - 4+
@@ -30,20 +31,20 @@ updated: '2026-07-23'
 ## 射击武器
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| Fusion pistol | 6" | 1 | 3+ | 8 | -4 | D6 | assault，[[core-rules/melta.md\|melta 2]]，pistol |
-| Neuro disruptor | 12" | 1 | 3+ | 4 | -2 | 1 | [[core-rules/anti.md\|anti-infantry 2+]]，assault，pistol |
-| Shuriken pistol | 12" | 1 | 3+ | 4 | -1 | 1 | assault，pistol |
+| 热熔手枪 | 6" | 1 | 3+ | 8 | -4 | D6 | [[core-rules/assault.md\|突击]]，[[core-rules/melta.md\|热熔 2]]，[[core-rules/pistol.md\|手枪]] |
+| 神经干扰枪 | 12" | 1 | 3+ | 4 | -2 | 1 | [[core-rules/anti.md\|反步兵 2+]]，[[core-rules/assault.md\|突击]]，[[core-rules/pistol.md\|手枪]] |
+| 星镖手枪 | 12" | 1 | 3+ | 4 | -1 | 1 | [[core-rules/assault.md\|突击]]，[[core-rules/pistol.md\|手枪]] |
 
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| Harlequin’s blade | 近战 | 5 | 3+ | 3 | -1 | 1 | devastating wounds |
-| Harlequin’s special weapon | 近战 | 4 | 3+ | 4 | -1 | 1 | devastating wounds |
-| Power sword | 近战 | 5 | 3+ | 4 | -2 | 1 | devastating wounds |
+| 丑角之刃 | 近战 | 5 | 3+ | 3 | -1 | 1 | [[core-rules/devastating-wounds.md\|毁灭伤害]] |
+| 丑角特殊武器 | 近战 | 4 | 3+ | 4 | -1 | 1 | [[core-rules/devastating-wounds.md\|毁灭伤害]] |
+| 灵族动力剑 | 近战 | 5 | 3+ | 4 | -2 | 1 | [[core-rules/devastating-wounds.md\|毁灭伤害]] |
 
 ## 技能
-- **Dance of Death**：At the start of the Fight phase, select one of the following abilities for this unit to gain until the end of the phase:<br><ul><li><b>Hero’s Prowess:</b> Each time a model in this unit makes an attack, re-roll a Hit roll of 1.</li><li><b>Villain’s Doom:</b> Each time a model in this unit makes an attack, add 1 to the Wound roll.</li><li><b>Trickster’s Grace:</b> Each time an attack targets this unit, subtract 1 from the Hit roll.</li></ul>
-- **Flip Belt**：Each time the bearer’s unit makes a Normal, Advance, Fall Back or Charge move, ignore any vertical distance when determining the total distance the bearer can be moved during that move.
+- **【阵营技能】：战斗专注**
+- **死亡之舞**：在近战阶段开始时，选择以下能力之一，直到该阶段结束，本单位获得该能力⚫ 英雄之勇武：当该单位进行攻击时，重投结果为1的命中骰⚫ 恶者之灾劫：当该单位进行攻击时，该攻击的造伤骰结果加1⚫ 诡术师之优雅：当该单位被攻击时，该攻击的命中骰结果减1
 
 ## 单位构成
 - **5个模型** — 85 分

@@ -25,22 +25,22 @@ updated: '2026-07-23'
 ## 射击武器
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| Meltagun | 12" | 1 | 3+ | 9 | -4 | D6 | [[core-rules/melta.md\|melta 2]] |
-| Flamer | 12" | D6 | N/A | 4 | 0 | 1 | ignores cover，torrent |
-| Grenade launcher – frag | 24" | D3 | 3+ | 4 | 0 | 1 | blast |
-| Grenade launcher – krak | 24" | 1 | 3+ | 9 | -2 | D3 | — |
-| Heavy flamer | 12" | D6 | N/A | 5 | -1 | 1 | ignores cover，torrent |
-| Heavy stubber | 36" | 3 | 4+ | 4 | 0 | 1 | heavy，[[core-rules/rapid-fire.md\|rapid fire 3]] |
-| Hot-shot lasgun | 24" | 1 | 3+ | 3 | -1 | 1 | [[core-rules/rapid-fire.md\|rapid fire 1]] |
-| Plasma gun – standard | 24" | 1 | 3+ | 7 | -2 | 1 | [[core-rules/rapid-fire.md\|rapid fire 1]] |
-| Plasma gun – supercharge | 24" | 1 | 3+ | 8 | -3 | 2 | hazardous，[[core-rules/rapid-fire.md\|rapid fire 1]] |
-| Sergeant’s pistol | 12" | 1 | 3+ | 3 | -1 | 1 | pistol |
-| Sniper rifle | 36" | 1 | 3+ | 4 | -2 | 2 | heavy，precision |
+| 热熔枪 | 12" | 1 | 3+ | 9 | -4 | D6 | [[core-rules/melta.md\|melta 2]] |
+| Flamer | 12" | D6 | N/A | 4 | 0 | 1 | [[core-rules/ignores-cover.md\|ignores cover]]，[[core-rules/torrent.md\|torrent]] |
+| 榴弹发射器（破片） | 24" | D3 | 3+ | 4 | 0 | 1 | [[core-rules/blast.md\|blast]] |
+| 榴弹发射器（穿甲） | 24" | 1 | 3+ | 9 | -2 | D3 | — |
+| 重型喷火器 | 12" | D6 | N/A | 5 | -1 | 1 | [[core-rules/ignores-cover.md\|ignores cover]]，[[core-rules/torrent.md\|torrent]] |
+| Heavy stubber | 36" | 3 | 4+ | 4 | 0 | 1 | [[core-rules/heavy.md\|heavy]]，[[core-rules/rapid-fire.md\|rapid fire 3]] |
+| 热射激光枪 | 24" | 1 | 3+ | 3 | -1 | 1 | [[core-rules/rapid-fire.md\|rapid fire 1]] |
+| 等离子枪（标准） | 24" | 1 | 3+ | 7 | -2 | 1 | [[core-rules/rapid-fire.md\|rapid fire 1]] |
+| 等离子枪（过载） | 24" | 1 | 3+ | 8 | -3 | 2 | [[core-rules/hazardous.md\|hazardous]]，[[core-rules/rapid-fire.md\|rapid fire 1]] |
+| Sergeant’s pistol | 12" | 1 | 3+ | 3 | -1 | 1 | [[core-rules/pistol.md\|pistol]] |
+| 狙击步枪 | 36" | 1 | 3+ | 4 | -2 | 2 | [[core-rules/heavy.md\|heavy]]，[[core-rules/precision.md\|precision]] |
 
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| Close combat weapon | 近战 | 1 | 4+ | 3 | 0 | 1 | — |
+| 格斗武器 | 近战 | 1 | 4+ | 3 | 0 | 1 | — |
 | Sergeant’s close combat weapon | 近战 | 2 | 4+ | 4 | -2 | 1 | — |
 
 ## 技能

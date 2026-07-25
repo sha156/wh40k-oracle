@@ -25,7 +25,8 @@ from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import StreamingResponse
 from pydantic import BaseModel, ConfigDict, Field
 
-from web_api.contract import (Answer, CritiqueReportOut, RosterIn, SimResponse,
+from web_api.contract import (Answer, CritiqueReportOut, KeywordDetail,
+                              KeywordIndexResponse, RosterIn, SimResponse,
                               ValidationReportOut)
 from web_api.formatter import format_answer
 from web_api.preflight import (retrieval_enabled, run_preflight,
@@ -250,6 +251,36 @@ def codex_unit(unit_id: str, lang: str = "zh") -> Dict[str, Any]:
     if card is None:
         raise HTTPException(status_code=404, detail="单位不存在")
     return {"card": card.model_dump(by_alias=True)}
+
+
+@app.get("/codex/keywords", response_model=KeywordIndexResponse,
+         response_model_by_alias=True)
+def codex_keywords() -> KeywordIndexResponse:
+    """图鉴：武器词条（USR）索引。
+
+    数据来自离线载荷 `wiki/indexes/keywords.json`（不查库、不读 PDF，容器没挂 data/）。
+    返回的条目不带 weapons 反查表——那占载荷九成体积，索引页一把也用不上。
+    """
+    from web_api import keywords as kw
+    try:
+        items = kw.list_keywords()
+    except kw.KeywordPayloadError as exc:
+        raise HTTPException(status_code=503, detail=str(exc))
+    return KeywordIndexResponse(items=items)
+
+
+@app.get("/codex/keywords/{slug}", response_model=KeywordDetail,
+         response_model_by_alias=True)
+def codex_keyword(slug: str) -> KeywordDetail:
+    """图鉴：单个武器词条详情（含「哪些武器带它」反查表）。未知 slug 404。"""
+    from web_api import keywords as kw
+    try:
+        item = kw.get_keyword(slug)
+    except kw.KeywordPayloadError as exc:
+        raise HTTPException(status_code=503, detail=str(exc))
+    if item is None:
+        raise HTTPException(status_code=404, detail="词条不存在")
+    return KeywordDetail(**item)
 
 
 class SimulateRequest(BaseModel):

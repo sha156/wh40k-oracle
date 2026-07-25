@@ -26,7 +26,7 @@ updated: '2026-07-23'
 ## 射击武器
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| Enmitic disintegrator pistols | 18" | 6 | 2+ | 6 | -2 | 1 | pistol，[[core-rules/ignores-cover.md\|Ignores Cover]] |
+| 憎火裂解者手枪 | 18" | 6 | 2+ | 6 | -2 | 1 | [[core-rules/pistol.md\|pistol]]，[[core-rules/ignores-cover.md\|Ignores Cover]] |
 
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |

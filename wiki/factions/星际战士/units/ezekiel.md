@@ -30,13 +30,13 @@ updated: '2026-07-23'
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
 | 拯救者 | 12" | 1 | 2+ | 4 | -1 | 2 | [[core-rules/pistol.md\|手枪]]，[[core-rules/precision.md\|精准]] |
-| Mind Wipe – witchfire | 12" | 1 | 2+ | 6 | -2 | D6 | devastating wounds，precision，psychic |
-| Mind Wipe – focused witchfire | 12" | 1 | 2+ | 6 | -2 | D6 | [[core-rules/anti.md\|anti-character 4+]]，devastating wounds，hazardous，precision，psychic |
+| 心灵抹除（巫火） | 12" | 1 | 2+ | 6 | -2 | D6 | [[core-rules/devastating-wounds.md\|devastating wounds]]，[[core-rules/precision.md\|precision]]，[[core-rules/psychic-attacks.md\|psychic]] |
+| 心灵抹除（聚焦巫火） | 12" | 1 | 2+ | 6 | -2 | D6 | [[core-rules/anti.md\|anti-character 4+]]，[[core-rules/devastating-wounds.md\|devastating wounds]]，[[core-rules/hazardous.md\|hazardous]]，[[core-rules/precision.md\|precision]]，[[core-rules/psychic-attacks.md\|psychic]] |
 
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| 叛徒之灾 | 近战 | 4 | 2+ | 6 | -2 | D3 | 反混沌2＋，灵能 |
+| 叛徒之灾 | 近战 | 4 | 2+ | 6 | -2 | D3 | 反混沌2＋，[[core-rules/psychic-attacks.md\|灵能]] |
 
 ## 技能
 - **【阵营技能】破敌重誓**

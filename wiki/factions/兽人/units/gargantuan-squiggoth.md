@@ -1,5 +1,6 @@
 ---
 id: 000000059
+name_zh: 巨型斯奎格兽
 name_en: Gargantuan Squiggoth
 faction: 兽人
 type: unit
@@ -25,15 +26,15 @@ updated: '2026-07-23'
 ## 射击武器
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| Kannon – frag | 36" | D6 | 5+ | 5 | 0 | 1 | blast |
-| Kannon – shell | 36" | 1 | 5+ | 9 | -2 | D6 | — |
-| Supa-kannon | 60" | 2D6 | 5+ | 12 | -2 | 3 | blast |
+| 加农炮（破片弹-与穿甲弹二选一） | 36" | D6 | 5+ | 5 | 0 | 1 | [[core-rules/blast.md\|blast]] |
+| 加农炮（穿甲弹-与破片弹二选一） | 36" | 1 | 5+ | 9 | -2 | D6 | — |
+| 超级火炮 | 60" | 2D6 | 5+ | 12 | -2 | 3 | [[core-rules/blast.md\|blast]] |
 
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| Huge tusks – strike | 近战 | 6 | 3+ | 14 | -3 | 12 | lance |
-| Huge tusks – sweep | 近战 | 18 | 3+ | 9 | -2 | 3 | — |
+| 巨型獠牙（重击） | 近战 | 6 | 3+ | 14 | -3 | 12 | [[core-rules/lance.md\|lance]] |
+| 巨型獠牙（横扫） | 近战 | 18 | 3+ | 9 | -2 | 3 | — |
 
 ## 技能
 - **Gargantuan**：Each time this model makes a Normal, Advance or Fall Back move, it can move over models (excluding <span class="kwb">TITANIC</span> models) and terrain features that are 4" or less in height as if they were not there.

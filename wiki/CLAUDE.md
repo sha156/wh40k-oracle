@@ -132,18 +132,24 @@ wiki/
   同时把这些译名全部收进 frontmatter `aliases`。
 - 参数化技能（速射1、热熔2、斥候7"）要给出带例子的解释，见 [[core-rules/rapid-fire.md|速射]] 的写法。
 
-### 4.4 stratagem 页（三节，顺序固定）
+### 4.4 stratagem 页（四节，顺序固定；「限制」可缺）
 
 ```markdown
 ## 使用时机
 ## 使用对象
 ## 效果
+## 限制
 ```
 
-- 三节分别对应官方 **WHEN / TARGET / EFFECT** 三段；库里 `text_zh` 是含 `<b>WHEN:</b>` 的 HTML 单串，
-  由 `wiki_engine/html_md.py` 拆节。**拆不出三段时保留原文整段并标注**，不许硬切（切错等于改规则）。
+- 四节对应官方 **WHEN / TARGET / EFFECT / RESTRICTIONS**；库里 `text_zh` 是含 `<b>WHEN:</b>`
+  的 HTML 单串，由 `wiki_engine/html_md.py` 拆节。实测 1682 条里 **1673 条三段齐全、133 条另有
+  RESTRICTIONS 段**；剩下 9 条是异形（6 条灵族用 `<span class="aeText">TRIGGER:</span>` 图标式排版、
+  2 条段标签没加 `<b>`、1 条是**列错位的垃圾行**）。
+- **拆不出标准段时保留原文整段并在页面显式标注**，不许硬切——切错等于改规则。
 - 导语行格式：`{CP} CP · {阶段} · {容器名} 分队`。
 - 正文里出现的关键词（原文 `<span class="kwb">`）转成 core-rules 链接；转不了的留纯文本，不造红链。
+- 已知脏数据：`stratagems` 有 1 行字段整体错位（`id='Shooting phase'`、`cp_cost` 里装着 9 位 id），
+  生成时**跳过并计入报告**，不许静默丢。
 
 ### 4.5 detachment 页（三节，顺序固定）
 
@@ -156,6 +162,10 @@ wiki/
 - 「增强」「战略」两节是**本分队下属实体的链接清单**（各自单开页），不复制正文。
 - 编制/限制（"每支军队只能带 1 个增强"之类）**本轮不写**：`detachments.enhancements_json` 全表为空，
   库里没有这项数据，写了就是编（§7）。
+- `rule_text` 里有真表格（130 处 `<table>`，如"战斗规模 → 可选单位数"档位表）：转成 markdown 表格，
+  转不了的整段保留原文并标注，不许压成一行。
+- **`<img src=".../d1.png">` 是骰面图标，必须转成数字**（2 个分队的 D6 结果表用它）。
+  静默丢掉会把"结果为 1-2 时"变成"结果为 时"——一条读起来通顺但意思没了的规则。
 
 ### 4.6 enhancement 页（两节，顺序固定）
 

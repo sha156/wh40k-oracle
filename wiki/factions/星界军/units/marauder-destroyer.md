@@ -24,15 +24,15 @@ updated: '2026-07-23'
 ## 射击武器
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| Assault cannon | 24" | 6 | 4+ | 6 | 0 | 1 | devastating wounds |
-| Heavy bolter | 36" | 3 | 4+ | 5 | -1 | 2 | [[core-rules/sustained-hits.md\|sustained hits 1]] |
+| 突击炮 | 24" | 6 | 4+ | 6 | 0 | 1 | [[core-rules/devastating-wounds.md\|devastating wounds]] |
+| 重型爆弹枪 | 36" | 3 | 4+ | 5 | -1 | 2 | [[core-rules/sustained-hits.md\|sustained hits 1]] |
 | Hellstrike missile rack | 48" | 2 | 4+ | 10 | -3 | D6 | [[core-rules/anti.md\|anti-fly 2+]] |
-| Marauder nose autocannons | 48" | 4 | 4+ | 10 | -2 | 3 | twin-linked |
+| Marauder nose autocannons | 48" | 4 | 4+ | 10 | -2 | 3 | [[core-rules/twin-linked.md\|twin-linked]] |
 
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| Armoured hull | 近战 | 6 | 4+ | 8 | 0 | 1 | — |
+| 装甲外壳 | 近战 | 6 | 4+ | 8 | 0 | 1 | — |
 
 ## 技能
 - **Bomb Drop**：Each time this model ends a Normal move, you can select one enemy unit it moved over during that move and roll six D6: for each 3+, that unit suffers 1 mortal wound.

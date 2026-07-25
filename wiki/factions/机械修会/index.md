@@ -1,19 +1,12 @@
 # 机械修会
 
-_Last updated: 2026-07-23 12:10 UTC_
+_Last updated: 2026-07-25 11:42 UTC_
 
 ## 单位
 
 - [[factions/机械修会/units/secutarii-hoplites|Secutarii Hoplites]] — 
 - [[factions/机械修会/units/secutarii-peltasts|Secutarii Peltasts]] — 
 - [[factions/机械修会/units/servitors|Servitors]] — 
-- [[factions/机械修会/units/skitarii-marshal|Skitarii Marshal]] — 
-- [[factions/机械修会/units/skitarii-rangers|Skitarii Rangers]] — 
-- [[factions/机械修会/units/skitarii-vanguard|Skitarii Vanguard]] — 
-- [[factions/机械修会/units/skorpius-dunerider|Skorpius Dunerider]] — 
-- [[factions/机械修会/units/tech-priest-dominus|Tech-priest Dominus]] — 
-- [[factions/机械修会/units/tech-priest-enginseer|Tech-priest Enginseer]] — 
-- [[factions/机械修会/units/tech-priest-manipulus|Tech-priest Manipulus]] — 
 - [[factions/机械修会/units/terrax-pattern-termite|Terrax-pattern Termite]] — 
 - [[factions/机械修会/units/x-101|X-101]] — 
 - [[factions/机械修会/units/kastelan-robots|卡斯特兰机器人]] — 
@@ -28,7 +21,13 @@ _Last updated: 2026-07-23 12:10 UTC_
 - [[factions/机械修会/units/archaeopter-fusilave|始祖鸟燧火轰炸机]] — 
 - [[factions/机械修会/units/archaeopter-transvector|始祖鸟矢量飞梭]] — 
 - [[factions/机械修会/units/ironstrider-ballistarii|巴利斯塔利铁骑兵]] — 
+- [[factions/机械修会/units/tech-priest-enginseer|技术技师机械教士]] — 
+- [[factions/机械修会/units/skitarii-marshal|护教军元帅]] — 
+- [[factions/机械修会/units/skitarii-vanguard|护教军先锋兵]] — 
+- [[factions/机械修会/units/skitarii-rangers|护教军游猎兵]] — 
+- [[factions/机械修会/units/tech-priest-manipulus|控电神甫]] — 
 - [[factions/机械修会/units/cybernetica-datasmith|智控数据技师]] — 
+- [[factions/机械修会/units/tech-priest-dominus|机械主教]] — 
 - [[factions/机械修会/units/kataphron-destroyers|武装奴工毁灭者]] — 
 - [[factions/机械修会/units/kataphron-breachers|武装奴工突破者]] — 
 - [[factions/机械修会/units/onager-dunecrawler|沙丘爬行者机甲]] — 
@@ -36,6 +35,7 @@ _Last updated: 2026-07-23 12:10 UTC_
 - [[factions/机械修会/units/technoarcheologist|科技考古学家]] — 
 - [[factions/机械修会/units/pteraxii-sterylizors|翼龙军净炎兵]] — 
 - [[factions/机械修会/units/pteraxii-skystalkers|翼龙军天猎兵]] — 
+- [[factions/机械修会/units/skorpius-dunerider|蝎式沙丘运输车]] — 
 - [[factions/机械修会/units/sydonian-dragoons-with-taser-lances|装备泰瑟骑枪的西多尼亚龙骑兵]] — 
 - [[factions/机械修会/units/sydonian-dragoons-with-radium-jezzails|装备辐射狙击枪的西多尼亚龙骑兵]] — 
 - [[factions/机械修会/units/sicarian-infiltrators|西卡利安渗透者]] — 

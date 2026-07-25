@@ -1,6 +1,6 @@
 # 泰伦虫族
 
-_Last updated: 2026-07-23 12:10 UTC_
+_Last updated: 2026-07-25 11:42 UTC_
 
 ## 单位
 

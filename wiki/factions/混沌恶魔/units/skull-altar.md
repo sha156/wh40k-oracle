@@ -1,5 +1,6 @@
 ---
 id: 000001588
+name_zh: 颅骨祭坛
 name_en: Skull Altar
 faction: 混沌恶魔
 type: unit

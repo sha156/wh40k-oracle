@@ -1,5 +1,6 @@
 ---
 id: '000002614'
+name_zh: 卡塔昌丛林战士
 name_en: Catachan Jungle Fighters
 faction: 星界军
 type: unit
@@ -21,23 +22,24 @@ updated: '2026-07-23'
 ## 属性表
 | 模型 | M | T | SV | W | LD | OC |
 |---|---|---|---|---|---|---|
-| Catachan Jungle Fighters | 6" | 3 | 5+ | 1 | 7+ | 2 |
+| 卡塔昌丛林战士 | 6" | 3 | 5+ | 1 | 7+ | 2 |
 
 ## 射击武器
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| Flamer | 12" | D6 | N/A | 4 | 0 | 1 | ignores cover，torrent |
-| Lasgun | 24" | 1 | 4+ | 3 | 0 | 1 | [[core-rules/rapid-fire.md\|rapid fire 1]] |
-| Laspistol | 12" | 1 | 4+ | 3 | 0 | 1 | pistol |
+| 火焰喷射器 | 12" | D6 | N/A | 4 | 0 | 1 | [[core-rules/ignores-cover.md\|无视掩体]]，[[core-rules/torrent.md\|洪流]] |
+| 激光枪 | 24" | 1 | 4+ | 3 | 0 | 1 | [[core-rules/rapid-fire.md\|rapid fire 1]] |
+| 激光手枪 | 12" | 1 | 4+ | 3 | 0 | 1 | [[core-rules/pistol.md\|pistol]] |
 
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| Close combat weapon | 近战 | 1 | 4+ | 3 | 0 | 1 | — |
+| 格斗武器 | 近战 | 1 | 4+ | 3 | 0 | 1 | — |
 
 ## 技能
-- **Jungle Fighters**：Each time a model in this unit makes a melee attack, if this unit made a Charge move or was charged this turn, add 1 to the Wound roll.
-- **Vox-caster**：Each time you target the bearer’s unit with a Stratagem, roll one D6, adding 1 to the result if there are one or more friendly Officer models within 6": on a 5+, you gain 1CP.
+- **丛林战士**：如果该单位进行了冲锋移动或者被冲锋，在接下来的那个近战阶段的造伤骰结果+1
+- **步话机**：当持有者所在单位作为你的战略技能的目标时，投D6，若该单位6寸内有一个或多个友军军官模型结果+1，5+得到1CP
+- **单位注释**：该单位可以至多被2个领袖单位领导，这2个领袖单位中至多有一个是指挥组单位。如果该单位被2个领袖单位领导，那么当该单位作为护卫被摧毁的时候，那两个领袖单位分别成为原来的两个拥有初始兵力的单位。
 
 ## 单位构成
 - **10个模型** — 75 分

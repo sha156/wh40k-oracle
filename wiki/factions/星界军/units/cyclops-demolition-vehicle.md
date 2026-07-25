@@ -1,5 +1,6 @@
 ---
 id: '000000741'
+name_zh: 独眼巨人爆破车
 name_en: Cyclops Demolition Vehicle
 faction: 星界军
 type: unit
@@ -20,12 +21,12 @@ updated: '2026-07-23'
 ## 属性表
 | 模型 | M | T | SV | W | LD | OC |
 |---|---|---|---|---|---|---|
-| Cyclops Demolition Vehicle | 8" | 4 | 3+ | 4 | 8+ | 0 |
+| 独眼巨人爆破车 | 8" | 4 | 3+ | 4 | 8+ | 0 |
 
 ## 技能
-- **Demolition Charges**：Each time this model or an enemy unit ends a move, if this model is within 3" of one or more enemy units, select one of those enemy units. This model is destroyed, but instead of rolling for its Deadly Demise ability, roll one D6: on a 2-5, that enemy unit suffers D3 mortal wounds; on a 6, that enemy unit suffers D6 mortal wounds.
-- **Unstable Payload**：When rolling for this model’s Deadly Demise ability, units within 6" suffer mortal wounds on a 4+, instead of on a 6.
-- **COMPACT**：This model can embark within an Astra Militarum Transport model as if it were an Infantry model. If it does, it takes up the space of 7 models.
+- **爆破炸药**：当该模型或敌军一个模型结束移动时，如果该模型3寸内有一个或多个敌军单位，那么可以选择其中一个单位使用该能力。该模型立即被摧毁，但是不结算致命破灭能力，而是投D6，2-5上述敌军单位遭受D3点致命伤，6则改为6点致命伤。
+- **不稳定载荷**：本模型致命破灭时改为4+结果即可对6寸内的单位造成致命伤。
+- **紧凑车体**：本模型可以如同步兵模型那样被星界军运输模型运载，如果你这样做，本模型占据6个运输空间。
 
 ## 单位构成
 - **1个模型** — 40 分

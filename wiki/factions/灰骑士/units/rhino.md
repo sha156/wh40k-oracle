@@ -1,5 +1,6 @@
 ---
 id: 000000396
+name_zh: 犀牛装甲车
 name_en: Rhino
 faction: 灰骑士
 type: unit
@@ -25,17 +26,17 @@ updated: '2026-07-23'
 ## 射击武器
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| Hunter-killer missile | 48" | 1 | 2+ | 14 | -3 | D6 | one shot |
-| Storm bolter | 24" | 2 | 3+ | 4 | 0 | 1 | [[core-rules/rapid-fire.md\|rapid fire 2]] |
+| 猎杀飞弹 | 48" | 1 | 2+ | 14 | -3 | D6 | [[core-rules/one-shot.md\|one shot]] |
+| 风暴爆弹枪 | 24" | 2 | 3+ | 4 | 0 | 1 | [[core-rules/rapid-fire.md\|rapid fire 2]] |
 
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| Armoured tracks | 近战 | 3 | 4+ | 6 | 0 | 1 | — |
+| 装甲履带 | 近战 | 3 | 4+ | 6 | 0 | 1 | — |
 
 ## 技能
-- **Truesilver Aegis (Aura)**：While a friendly Grey Knights unit is wholly within 6" of this unit, models in that unit have the Feel No Pain 6+ ability against mortal wounds.
-- **One Shot**：The bearer can only shoot with this weapon once per battle.
+- **【阵营技能】：破敌重誓**
+- **自行修理**：在每个你的指挥阶段结束时，本模型恢复一点失去的 W 值
 
 ## 单位构成
 - **1个模型** — 70 分

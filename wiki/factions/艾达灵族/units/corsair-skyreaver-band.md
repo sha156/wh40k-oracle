@@ -29,23 +29,23 @@ updated: '2026-07-23'
 |---|---|---|---|---|---|---|---|
 | Aeldari missile launcher – starshot | 48" | 1 | 3+ | 10 | -2 | D6 | — |
 | Aeldari missile launcher – sunburst | 48" | D6 | 3+ | 4 | -1 | 1 | [[core-rules/blast.md\|BLAST]] |
-| Blaster | 18" | 1 | 3+ | 8 | -4 | D6+1 | ASSAULT |
-| Brace of pistols | 12" | 2 | 3+ | 3 | 0 | 1 | assault，pistol |
-| Corsair firearm | 24" | 4 | 3+ | 4 | 0 | 1 | assault，lethal hits |
-| Dark lance | 36" | 1 | 4+ | 12 | -3 | D6+2 | heavy |
-| Dissonance pistol | 12" | 1 | 3+ | 6 | -1 | 1 | devastating wounds，pistol |
-| Flamer | 12" | D6 | N/A | 4 | 0 | 1 | assault，ignores cover，torrent |
-| Fusion gun | 12" | 1 | 3+ | 8 | -4 | D6+1 | assault，[[core-rules/melta.md\|melta 2]] |
-| Shardcarbine | 18" | 3 | 3+ | 2 | 0 | 1 | [[core-rules/anti.md\|anti-infantry 3+]]，assault |
-| Shuriken cannon | 24" | 3 | 3+ | 6 | -1 | 2 | [[core-rules/sustained-hits.md\|sustained hits 1]] |
-| Shuriken catapult | 18" | 2 | 3+ | 4 | -1 | 1 | assault |
-| Splinter cannon | 36" | 3 | 4+ | 3 | -1 | 2 | [[core-rules/anti.md\|anti-infantry 3+]]，heavy，[[core-rules/sustained-hits.md\|sustained hits 1]] |
-| Shredder | 18" | D6 | N/A | 6 | 0 | 1 | ASSAULT，TORRENT |
+| 爆能枪 | 18" | 1 | 3+ | 8 | -4 | D6+1 | [[core-rules/assault.md\|ASSAULT]] |
+| Brace of pistols | 12" | 2 | 3+ | 3 | 0 | 1 | [[core-rules/assault.md\|assault]]，[[core-rules/pistol.md\|pistol]] |
+| Corsair firearm | 24" | 4 | 3+ | 4 | 0 | 1 | [[core-rules/assault.md\|assault]]，[[core-rules/lethal-hits.md\|lethal hits]] |
+| 黑暗光矛 | 36" | 1 | 4+ | 12 | -3 | D6+2 | [[core-rules/heavy.md\|heavy]] |
+| Dissonance pistol | 12" | 1 | 3+ | 6 | -1 | 1 | [[core-rules/devastating-wounds.md\|devastating wounds]]，[[core-rules/pistol.md\|pistol]] |
+| Flamer | 12" | D6 | N/A | 4 | 0 | 1 | [[core-rules/assault.md\|assault]]，[[core-rules/ignores-cover.md\|ignores cover]]，[[core-rules/torrent.md\|torrent]] |
+| Fusion gun | 12" | 1 | 3+ | 8 | -4 | D6+1 | [[core-rules/assault.md\|assault]]，[[core-rules/melta.md\|melta 2]] |
+| 毒晶卡宾枪 | 18" | 3 | 3+ | 2 | 0 | 1 | [[core-rules/anti.md\|anti-infantry 3+]]，[[core-rules/assault.md\|assault]] |
+| 星镖炮 | 24" | 3 | 3+ | 6 | -1 | 2 | [[core-rules/sustained-hits.md\|sustained hits 1]] |
+| 星镖枪 | 18" | 2 | 3+ | 4 | -1 | 1 | [[core-rules/assault.md\|assault]] |
+| 毒晶炮 | 36" | 3 | 4+ | 3 | -1 | 2 | [[core-rules/anti.md\|anti-infantry 3+]]，[[core-rules/heavy.md\|heavy]]，[[core-rules/sustained-hits.md\|sustained hits 1]] |
+| 粉碎枪 | 18" | D6 | N/A | 6 | 0 | 1 | [[core-rules/assault.md\|ASSAULT]]，[[core-rules/torrent.md\|TORRENT]] |
 
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| Close combat weapon | 近战 | 2 | 3+ | 3 | 0 | 1 | — |
+| 格斗武器 | 近战 | 2 | 3+ | 3 | 0 | 1 | — |
 | Spar-glaive | 近战 | 4 | 3+ | 3 | 0 | 1 | — |
 | Void sabre | 近战 | 3 | 3+ | 4 | -2 | 1 | — |
 

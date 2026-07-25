@@ -25,7 +25,7 @@ updated: '2026-07-23'
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
 | Focused death ray | 36" | 6 | 4+ | 8 | -2 | 2 | [[core-rules/sustained-hits.md\|sustained hits 2]] |
-| Gauss exterminator | 48" | 1 | 4+ | 14 | -3 | 6 | lethal hits |
+| Gauss exterminator | 48" | 1 | 4+ | 14 | -3 | 6 | [[core-rules/lethal-hits.md\|lethal hits]] |
 | Heat cannon | 36" | 2 | 4+ | 9 | -4 | D6 | [[core-rules/melta.md\|melta 4]] |
 
 ## 技能

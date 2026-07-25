@@ -27,21 +27,21 @@ updated: '2026-07-23'
 ## 射击武器
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| Plasma pistol – supercharge | 12" | 1 | 2+ | 8 | -3 | 2 | hazardous，pistol |
-| Plasma pistol – standard | 12" | 1 | 2+ | 7 | -2 | 1 | pistol |
-| Bolt pistol | 12" | 1 | 2+ | 4 | 0 | 1 | pistol |
-| Combi-weapon | 24" | 1 | 4+ | 4 | 0 | 1 | [[core-rules/anti.md\|anti-infantry 4+]]，devastating wounds，[[core-rules/rapid-fire.md\|rapid fire 1]] |
-| Combi-bolter | 24" | 2 | 2+ | 4 | 0 | 1 | [[core-rules/rapid-fire.md\|rapid fire 2]] |
+| 等离子手枪（过载） | 12" | 1 | 2+ | 8 | -3 | 2 | [[core-rules/hazardous.md\|hazardous]]，[[core-rules/pistol.md\|pistol]] |
+| 等离子手枪（标准） | 12" | 1 | 2+ | 7 | -2 | 1 | [[core-rules/pistol.md\|pistol]] |
+| 爆弹手枪 | 12" | 1 | 2+ | 4 | 0 | 1 | [[core-rules/pistol.md\|pistol]] |
+| 复合武器 | 24" | 1 | 4+ | 4 | 0 | 1 | [[core-rules/anti.md\|anti-infantry 4+]]，[[core-rules/devastating-wounds.md\|devastating wounds]]，[[core-rules/rapid-fire.md\|rapid fire 1]] |
+| 并联爆弹枪 | 24" | 2 | 2+ | 4 | 0 | 1 | [[core-rules/rapid-fire.md\|rapid fire 2]] |
 
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| Paired accursed weapons | 近战 | 7 | 2+ | 4 | -1 | 1 | twin-linked |
-| Close combat weapon | 近战 | 6 | 2+ | 4 | 0 | 1 | — |
-| Bladed horn | 近战 | 4 | 4+ | 6 | -1 | 1 | extra attacks，lance |
-| Astartes chainsword | 近战 | 7 | 2+ | 4 | -1 | 1 | — |
-| Accursed weapon | 近战 | 6 | 2+ | 5 | -2 | 1 | — |
-| Power fist | 近战 | 5 | 2+ | 8 | -2 | 2 | — |
+| 成对诅咒武器 | 近战 | 7 | 2+ | 4 | -1 | 1 | [[core-rules/twin-linked.md\|twin-linked]] |
+| 格斗武器 | 近战 | 6 | 2+ | 4 | 0 | 1 | — |
+| 刃角 | 近战 | 4 | 4+ | 6 | -1 | 1 | [[core-rules/extra-attacks.md\|extra attacks]]，[[core-rules/lance.md\|lance]] |
+| 阿斯塔特链锯剑 | 近战 | 7 | 2+ | 4 | -1 | 1 | — |
+| 诅咒武器 | 近战 | 6 | 2+ | 5 | -2 | 1 | — |
+| 动力拳 | 近战 | 5 | 2+ | 8 | -2 | 2 | — |
 
 ## 技能
 - **Lord of Chaos**：Once per battle round, one unit from your army with this ability can use it when its unit is targeted with a Stratagem. If it does, reduce the CP cost of that use of that Stratagem by 1CP.

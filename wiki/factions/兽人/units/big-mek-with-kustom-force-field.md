@@ -24,12 +24,12 @@ updated: '2026-07-23'
 ## 射击武器
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| Slugga | 12" | 1 | 5+ | 4 | 0 | 1 | pistol |
+| 手铳 | 12" | 1 | 5+ | 4 | 0 | 1 | [[core-rules/pistol.md\|pistol]] |
 
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| Choppa | 近战 | 4 | 3+ | 5 | -1 | 1 | — |
+| 砍刀 | 近战 | 4 | 3+ | 5 | -1 | 1 | — |
 
 ## 技能
 - **Grot Helper**：Once per battle, the bearer can overcharge its kustom force field one additional time.<br><br><b>Designer’s Note:</b> <i>Place a Grot Helper token next to the bearer, removing it once this ability has been used.</i>

@@ -26,11 +26,11 @@ updated: '2026-07-23'
 ## 射击武器
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| HYLas beam cannon | 24" | 2 | 4+ | 12 | -3 | D6+1 | — |
+| 高能光束炮 | 24" | 2 | 4+ | 12 | -3 | D6+1 | — |
 | L7 导弹发射器（爆破）  | 36" | D6 | 4+ | 4 | 0 | 1 | [[core-rules/blast.md\|爆炸]] |
-| L7 missile launcher – focused | 36" | 1 | 4+ | 9 | -2 | D6 | — |
+| L7导弹发射器（聚焦） | 36" | 1 | 4+ | 9 | -2 | D6 | — |
 | 玛特尔自动炮 | 24" | 6 | 4+ | 7 | -1 | 2 | [[core-rules/assault.md\|突击]]，[[core-rules/sustained-hits.md\|连击 1]] |
-| Sagitaur missile launcher | 36" | 2 | 4+ | 10 | -3 | 3 | — |
+| 人马座导弹发射器 | 36" | 2 | 4+ | 10 | -3 | 3 | — |
 | 双联爆矢炮 | 36" | 3 | 4+ | 6 | -1 | 2 | [[core-rules/sustained-hits.md\|连击 2]]，[[core-rules/twin-linked.md\|双联]] |
 
 ## 近战武器

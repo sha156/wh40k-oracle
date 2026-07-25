@@ -31,7 +31,7 @@ updated: '2026-07-23'
 |---|---|---|---|---|---|---|---|
 | 牛头怪爆燃重炮 | 24" | 6 | 3+ | 6 | 0 | 2 | [[core-rules/devastating-wounds.md\|毁灭伤害]] |
 | 卡拉克诺斯迫击炮阵 | 48" | D6+3 | 3+ | 6 | -1 | 1 | [[core-rules/anti.md\|针对步兵2+]]，[[core-rules/ignores-cover.md\|忽略掩体]]，[[core-rules/indirect-fire.md\|曲射]]，[[core-rules/blast.md\|爆炸]] |
-| 双联转换光束炮 | 48" | 3 | 3+ | 16 | -2 | 6 | 转换，[[core-rules/twin-linked.md\|双联]]，连击D3 |
+| 双联转换光束炮 | 48" | 3 | 3+ | 16 | -2 | 6 | 转换，[[core-rules/twin-linked.md\|双联]]，[[core-rules/sustained-hits.md\|连击D3]] |
 
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |

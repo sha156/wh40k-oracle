@@ -1,6 +1,6 @@
 # 基因窃取者教派
 
-_Last updated: 2026-07-23 12:10 UTC_
+_Last updated: 2026-07-25 11:42 UTC_
 
 ## 单位
 
@@ -13,21 +13,17 @@ _Last updated: 2026-07-23 12:10 UTC_
 - [[factions/基因窃取者教派/units/crassus|Crassus]] — 
 - [[factions/基因窃取者教派/units/death-korps-grenadier-squad|Death Korps Grenadier Squad]] — 
 - [[factions/基因窃取者教派/units/death-rider-commissar|Death Rider Commissar]] — 
-- [[factions/基因窃取者教派/units/deathleaper|Deathleaper]] — 
 - [[factions/基因窃取者教派/units/dominus-armoured-siege-bombard|Dominus Armoured Siege Bombard]] — 
 - [[factions/基因窃取者教派/units/earthshaker-carriage-battery|Earthshaker Carriage Battery]] — 
 - [[factions/基因窃取者教派/units/earthshaker-platform|Earthshaker Platform]] — 
 - [[factions/基因窃取者教派/units/elysian-drop-sentinel|Elysian Drop Sentinel]] — 
 - [[factions/基因窃取者教派/units/elysian-sniper-squad|Elysian Sniper Squad]] — 
-- [[factions/基因窃取者教派/units/gargoyles|Gargoyles]] — 
 - [[factions/基因窃取者教派/units/gorgon-heavy-transport|Gorgon Heavy Transport]] — 
 - [[factions/基因窃取者教派/units/griffon-mortar-carrier|Griffon Mortar Carrier]] — 
 - [[factions/基因窃取者教派/units/hades-breaching-drill|Hades Breaching Drill]] — 
 - [[factions/基因窃取者教派/units/heavy-mortar-team|Heavy Mortar Team]] — 
 - [[factions/基因窃取者教派/units/heavy-quad-launcher-team|Heavy Quad Launcher Team]] — 
 - [[factions/基因窃取者教派/units/hydra-platform|Hydra Platform]] — 
-- [[factions/基因窃取者教派/units/hyperadapted-raveners|Hyperadapted Raveners]] — 
-- [[factions/基因窃取者教派/units/lictor|Lictor]] — 
 - [[factions/基因窃取者教派/units/macharius|Macharius]] — 
 - [[factions/基因窃取者教派/units/macharius-omega|Macharius Omega]] — 
 - [[factions/基因窃取者教派/units/macharius-vanquisher|Macharius Vanquisher]] — 
@@ -37,17 +33,13 @@ _Last updated: 2026-07-23 12:10 UTC_
 - [[factions/基因窃取者教派/units/malcador-defender|Malcador Defender]] — 
 - [[factions/基因窃取者教派/units/malcador-infernus|Malcador Infernus]] — 
 - [[factions/基因窃取者教派/units/manticore-platform|Manticore Platform]] — 
-- [[factions/基因窃取者教派/units/mawloc|Mawloc]] — 
 - [[factions/基因窃取者教派/units/medusa-carriage-battery|Medusa Carriage Battery]] — 
 - [[factions/基因窃取者教派/units/minotaur|Minotaur]] — 
 - [[factions/基因窃取者教派/units/mukaali-riders|Mukaali Riders]] — 
 - [[factions/基因窃取者教派/units/munitorum-servitors|Munitorum Servitors]] — 
-- [[factions/基因窃取者教派/units/neurolictor|Neurolictor]] — 
-- [[factions/基因窃取者教派/units/parasite-of-mortrex|Parasite Of Mortrex]] — 
 - [[factions/基因窃取者教派/units/praetor|Praetor]] — 
 - [[factions/基因窃取者教派/units/quartermaster-cadre-squad|Quartermaster Cadre Squad]] — 
 - [[factions/基因窃取者教派/units/rapier-laser-destroyer-battery|Rapier Laser Destroyer Battery]] — 
-- [[factions/基因窃取者教派/units/raveners|Raveners]] — 
 - [[factions/基因窃取者教派/units/regimental-attachés|Regimental Attachés]] — 
 - [[factions/基因窃取者教派/units/sabre-weapons-battery|Sabre Weapons Battery]] — 
 - [[factions/基因窃取者教派/units/salamander-command-vehicle|Salamander Command Vehicle]] — 
@@ -60,14 +52,8 @@ _Last updated: 2026-07-23 12:10 UTC_
 - [[factions/基因窃取者教派/units/tauros-assault-vehicle|Tauros Assault Vehicle]] — 
 - [[factions/基因窃取者教派/units/tauros-venator|Tauros Venator]] — 
 - [[factions/基因窃取者教派/units/tectonic-fragdrill|Tectonic Fragdrill]] — 
-- [[factions/基因窃取者教派/units/the-red-terror|The Red Terror]] — 
 - [[factions/基因窃取者教派/units/trojan-support-vehicle|Trojan Support Vehicle]] — 
-- [[factions/基因窃取者教派/units/trygon|Trygon]] — 
-- [[factions/基因窃取者教派/units/tyrannocyte|Tyrannocyte]] — 
 - [[factions/基因窃取者教派/units/valdor|Valdor]] — 
-- [[factions/基因窃取者教派/units/von-ryans-leapers|Von Ryan’s Leapers]] — 
-- [[factions/基因窃取者教派/units/winged-hive-tyrant|Winged Hive Tyrant]] — 
-- [[factions/基因窃取者教派/units/winged-tyranid-prime|Winged Tyranid Prime]] — 
 - [[factions/基因窃取者教派/units/hells-last|【传奇】地狱之末]] — 
 - [[factions/基因窃取者教派/units/magus|主教]] — 
 - [[factions/基因窃取者教派/units/hydra|九头蛇高射炮]] — 
@@ -77,6 +63,8 @@ _Last updated: 2026-07-23 12:10 UTC_
 - [[factions/基因窃取者教派/units/krieg-command-squad|克里格指挥组]] — 
 - [[factions/基因窃取者教派/units/death-korps-of-krieg|克里格死兵队]] — 
 - [[factions/基因窃取者教派/units/krieg-heavy-weapons-squad|克里格重型武器小队]] — 
+- [[factions/基因窃取者教派/units/von-ryans-leapers|冯·瑞恩跃袭者]] — 
+- [[factions/基因窃取者教派/units/lictor|刀斧虫]] — 
 - [[factions/基因窃取者教派/units/centaur-rsv|半人马快速突击战车]] — 
 - [[factions/基因窃取者教派/units/catachan-jungle-fighters|卡塔昌丛林战士]] — 
 - [[factions/基因窃取者教派/units/catachan-command-squad|卡塔昌指挥组]] — 
@@ -92,22 +80,29 @@ _Last updated: 2026-07-23 12:10 UTC_
 - [[factions/基因窃取者教派/units/hellhammer|地狱之锤]] — 
 - [[factions/基因窃取者教派/units/hellhound|地狱犬喷射车]] — 
 - [[factions/基因窃取者教派/units/chimera|奇美拉装甲车]] — 
+- [[factions/基因窃取者教派/units/tyrannocyte|孢子舱]] — 
 - [[factions/基因窃取者教派/units/clamavus|宣政使]] — 
 - [[factions/基因窃取者教派/units/shadowsword|影剑]] — 
 - [[factions/基因窃取者教派/units/nexos|指战使]] — 
 - [[factions/基因窃取者教派/units/acolyte-iconward|掌旗侍僧]] — 
+- [[factions/基因窃取者教派/units/trygon|掘蟒]] — 
+- [[factions/基因窃取者教派/units/parasite-of-mortrex|摩崔克斯寄生虫]] — 
 - [[factions/基因窃取者教派/units/locus|教团卫士]] — 
 - [[factions/基因窃取者教派/units/neophyte-hybrids|新血教徒]] — 
 - [[factions/基因窃取者教派/units/patriarch|族长]] — 
+- [[factions/基因窃取者教派/units/winged-tyranid-prime|有翼泰伦王虫]] — 
+- [[factions/基因窃取者教派/units/winged-hive-tyrant|有翼虫巢暴君]] — 
 - [[factions/基因窃取者教派/units/doomhammer|末日之锤]] — 
 - [[factions/基因窃取者教派/units/kelermorph|杀手种]] — 
 - [[factions/基因窃取者教派/units/goliath-truck|歌利亚卡车]] — 
 - [[factions/基因窃取者教派/units/goliath-rockgrinder|歌利亚碎石车]] — 
 - [[factions/基因窃取者教派/units/deathstrike|死亡直击导弹车]] — 
+- [[factions/基因窃取者教派/units/deathleaper|死亡跃袭者]] — 
 - [[factions/基因窃取者教派/units/death-riders|死亡骑兵]] — 
 - [[factions/基因窃取者教派/units/banesword|毁灭之剑]] — 
 - [[factions/基因窃取者教派/units/banehammer|毁灭之锤]] — 
 - [[factions/基因窃取者教派/units/baneblade|毒刃]] — 
+- [[factions/基因窃取者教派/units/mawloc|沙蟒]] — 
 - [[factions/基因窃取者教派/units/acolyte-hybrids-with-hand-flamers|混血侍僧装备手持火焰喷射器]] — 
 - [[factions/基因窃取者教派/units/acolyte-hybrids-with-autopistols|混血侍僧装备自动手枪]] — 
 - [[factions/基因窃取者教派/units/hybrid-metamorphs|混血变种]] — 
@@ -116,14 +111,19 @@ _Last updated: 2026-07-23 12:10 UTC_
 - [[factions/基因窃取者教派/units/cyclops-demolition-vehicle|独眼巨人爆破车]] — 
 - [[factions/基因窃取者教派/units/abominant|畸变主宰]] — 
 - [[factions/基因窃取者教派/units/aberrants|畸变体]] — 
+- [[factions/基因窃取者教派/units/gargoyles|石像鬼]] — 
 - [[factions/基因窃取者教派/units/basilisk|石化蜥蜴自行火炮]] — 
 - [[factions/基因窃取者教派/units/aegis-defence-line|神盾防御墙]] — 
+- [[factions/基因窃取者教派/units/neurolictor|神经刀斧虫]] — 
+- [[factions/基因窃取者教派/units/the-red-terror|红色惧物]] — 
 - [[factions/基因窃取者教派/units/purestrain-genestealers|纯血基因窃取者]] — 
 - [[factions/基因窃取者教派/units/rogal-dorn-battle-tank|罗格多恩坦克]] — 
 - [[factions/基因窃取者教派/units/rogal-dorn-commander|罗格多恩指挥官]] — 
+- [[factions/基因窃取者教派/units/raveners|蛇虫]] — 
 - [[factions/基因窃取者教派/units/manticore|蝎尾狮火箭炮]] — 
 - [[factions/基因窃取者教派/units/armoured-sentinels|装甲哨兵]] — 
 - [[factions/基因窃取者教派/units/jackal-alphus|豺狼猎首]] — 
+- [[factions/基因窃取者教派/units/hyperadapted-raveners|超适应蛇虫]] — 
 - [[factions/基因窃取者教派/units/reductus-saboteur|还原爆破使]] — 
 - [[factions/基因窃取者教派/units/field-ordnance-battery|野战炮兵]] — 
 - [[factions/基因窃取者教派/units/taurox|野牛装甲车]] — 

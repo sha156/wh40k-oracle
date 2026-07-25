@@ -1,5 +1,6 @@
 ---
 id: 000001183
+name_zh: 终结者小队
 name_en: Terminator Squad
 faction: 星际战士
 type: unit
@@ -29,22 +30,23 @@ updated: '2026-07-23'
 ## 射击武器
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| Assault cannon | 24" | 6 | 3+ | 6 | 0 | 1 | devastating wounds |
-| Cyclone missile launcher – frag | 36" | 2D6 | 3+ | 4 | 0 | 1 | blast |
-| Cyclone missile launcher – krak | 36" | 2 | 3+ | 9 | -2 | D6 | — |
-| Heavy flamer | 12" | D6 | N/A | 5 | -1 | 1 | ignores cover，torrent |
-| Storm bolter | 24" | 2 | 3+ | 4 | 0 | 1 | [[core-rules/rapid-fire.md\|rapid fire 2]] |
+| 突击炮  | 24" | 6 | 3+ | 6 | 0 | 1 | [[core-rules/devastating-wounds.md\|毁灭伤害]] |
+| 旋风导弹发射器（破片）  | 36" | 2D6 | 3+ | 4 | 0 | 1 | [[core-rules/blast.md\|爆炸]] |
+| 旋风导弹发射器（穿甲） | 36" | 2 | 3+ | 9 | -2 | D6 | — |
+| 重型喷火器 | 12" | D6 | N/A | 5 | -1 | 1 | [[core-rules/ignores-cover.md\|ignores cover]]，[[core-rules/torrent.md\|torrent]] |
+| 风暴爆弹枪 | 24" | 2 | 3+ | 4 | 0 | 1 | [[core-rules/rapid-fire.md\|速射 2]] |
 
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| Chainfist | 近战 | 3 | 4+ | 8 | -2 | 2 | [[core-rules/anti.md\|anti-vehicle 3+]] |
-| Power fist | 近战 | 3 | 3+ | 8 | -2 | 2 | — |
-| Power weapon | 近战 | 4 | 3+ | 5 | -2 | 1 | — |
+| 动力拳    | 近战 | 3 | 4+ | 8 | -2 | 2 | [[core-rules/anti.md\|anti-vehicle 3+]] |
+| 动力拳    | 近战 | 3 | 3+ | 8 | -2 | 2 | — |
+| 动力武器 | 近战 | 4 | 3+ | 5 | -2 | 1 | — |
 
 ## 技能
-- **Teleport Homer**：At the start of the battle, you can set up one Teleport Homer token for this unit anywhere on the battlefield that is not in your opponent’s deployment zone. If you do, once per battle, you can target this unit with the Rapid Ingress Stratagem for 0CP, but when resolving that Stratagem, you must set this unit up within 3" of that token and not within 9" of any enemy models. That token is then removed.
-- **Fury of the First**：Each time a model in this unit makes an attack that targets your Oath of Moment target, add 1 to the Hit roll.
+- **【阵营技能】：破敌重誓**
+- **传送信标**：游戏开始时，你可以在除了敌方部署区的任意位置放置一个传送信标指示物，整场游戏一次，你可以对 本单位使用【快速响应】战略技能（见总规则）消耗 0CP，但这样做时必须将本单位模型部署于这个传送信标指示物水平 3 寸内，敌方模型水平 8 寸外，之后移除这个标记物
+- **一连之怒**：本单位模型攻击你的【破敌重誓】目标时命中结果+1
 
 ## 单位构成
 - **5个模型** — 160 分

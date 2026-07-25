@@ -1,5 +1,6 @@
 ---
 id: '000004067'
+name_zh: 猛禽
 name_en: Raptors
 faction: 混沌恶魔
 type: unit
@@ -25,26 +26,27 @@ updated: '2026-07-23'
 ## 射击武器
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| Plasma gun – standard | 24" | 1 | 3+ | 7 | -2 | 1 | [[core-rules/rapid-fire.md\|rapid fire 1]] |
-| Plasma gun – supercharge | 24" | 1 | 3+ | 8 | -3 | 2 | hazardous，[[core-rules/rapid-fire.md\|rapid fire 1]] |
-| Flamer | 12" | D6 | N/A | 4 | 0 | 1 | ignores cover，torrent |
-| Plasma pistol – standard | 12" | 1 | 3+ | 7 | -2 | 1 | pistol |
-| Bolt pistol | 12" | 1 | 3+ | 4 | 0 | 1 | pistol |
-| Meltagun | 12" | 1 | 3+ | 9 | -4 | D6 | [[core-rules/melta.md\|melta 2]] |
-| Plasma pistol – supercharge | 12" | 1 | 3+ | 8 | -3 | 2 | hazardous，pistol |
+| 等离子枪（标准） | 24" | 1 | 3+ | 7 | -2 | 1 | [[core-rules/rapid-fire.md\|rapid fire 1]] |
+| 等离子枪（过载） | 24" | 1 | 3+ | 8 | -3 | 2 | [[core-rules/hazardous.md\|hazardous]]，[[core-rules/rapid-fire.md\|rapid fire 1]] |
+| 喷火器 | 12" | D6 | N/A | 4 | 0 | 1 | [[core-rules/ignores-cover.md\|ignores cover]]，[[core-rules/torrent.md\|torrent]] |
+| 等离子手枪（标准） | 12" | 1 | 3+ | 7 | -2 | 1 | [[core-rules/pistol.md\|pistol]] |
+| 爆弹手枪 | 12" | 1 | 3+ | 4 | 0 | 1 | [[core-rules/pistol.md\|手枪]] |
+| 热熔枪       | 12" | 1 | 3+ | 9 | -4 | D6 | [[core-rules/melta.md\|热熔 2]] |
+| 等离子手枪（过载） | 12" | 1 | 3+ | 8 | -3 | 2 | [[core-rules/hazardous.md\|hazardous]]，[[core-rules/pistol.md\|pistol]] |
 
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| Heavy melee weapon | 近战 | 3 | 3+ | 8 | -2 | 2 | — |
-| Close combat weapon | 近战 | 3 | 3+ | 4 | 0 | 1 | — |
-| Astartes chainsword | 近战 | 4 | 3+ | 4 | -1 | 1 | — |
-| Mutations | 近战 | 4 | 3+ | 5 | -2 | 1 | — |
-| Accursed weapon | 近战 | 4 | 3+ | 5 | -2 | 1 | — |
+| 重型近战武器 | 近战 | 3 | 3+ | 8 | -2 | 2 | — |
+| 格斗武器  | 近战 | 3 | 3+ | 4 | 0 | 1 | — |
+| 阿斯塔特链锯剑 | 近战 | 4 | 3+ | 4 | -1 | 1 | — |
+| 变异肢体 | 近战 | 4 | 3+ | 5 | -2 | 1 | — |
+| 诅咒武器 | 近战 | 4 | 3+ | 5 | -2 | 1 | — |
 
 ## 技能
-- **Fearsome (Aura)**：While an enemy unit is within 6" of this unit, each time that enemy unit takes a Battle-shock or Leadership test, subtract 1 from the result.
-- **Terrifying Assault**：At the start of the Fight phase, each enemy unit within Engagement Range of one or more units with this ability must take a Battle-shock test.
+- **【阵营技能】：黑暗契约**
+- **恐怖【光环】**：本单位 6 寸内的敌方单位进行震慑 或 LD 测试时结果-1
+- **惊惧突袭**：在近战阶段开始时，拥有本技能的单位 接战范围内的每个敌方单位必须进行一次震慑测试
 
 ## 单位构成
 - **5个模型** — 110 分

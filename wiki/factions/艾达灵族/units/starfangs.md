@@ -1,5 +1,6 @@
 ---
 id: 000004195
+name_zh: 星牙战机
 name_en: Starfangs
 faction: 艾达灵族
 type: unit
@@ -26,13 +27,13 @@ updated: '2026-07-23'
 ## 射击武器
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| Disintegrator cannon | 36" | 3 | 3+ | 6 | -3 | 2 | assault |
-| Starfang grenade launcher | 36" | D3 | 3+ | 6 | -3 | 2 | assault，blast |
+| 解离炮 | 36" | 3 | 3+ | 6 | -3 | 2 | [[core-rules/assault.md\|assault]] |
+| 星牙榴弹发射器 | 36" | D3 | 3+ | 6 | -3 | 2 | [[core-rules/assault.md\|assault]]，[[core-rules/blast.md\|blast]] |
 
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| Wraithbone hull | 近战 | 3 | 4+ | 6 | 0 | 1 | — |
+| 灵骨外壳 | 近战 | 3 | 4+ | 6 | 0 | 1 | — |
 
 ## 技能
 - **Hallucinogen Grenades**：At the start of your opponent’s Shooting phase, this unit can use this ability. If it does, select one Aeldari Infantry unit from your army visible to and within 36" of this unit: until the end of the phase, that unit has the Stealth ability.

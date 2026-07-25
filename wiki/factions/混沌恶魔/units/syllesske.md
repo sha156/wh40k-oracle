@@ -29,15 +29,15 @@ updated: '2026-07-23'
 ## 射击武器
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| Cacophonic choir – witchfire | 12" | D6 | N/A | 6 | -1 | 1 | devastating wounds，ignores cover，psychic，torrent |
-| Cacophonic choir – focused witchfire | 12" | 2D6 | N/A | 6 | -1 | 1 | psychic，hazardous，ignores cover，devastating wounds，torrent |
-| Scourging whip | 9" | 6 | 3+ | 4 | -1 | 1 | assault |
+| 刺耳合唱（巫火） | 12" | D6 | N/A | 6 | -1 | 1 | [[core-rules/devastating-wounds.md\|devastating wounds]]，[[core-rules/ignores-cover.md\|ignores cover]]，[[core-rules/psychic-attacks.md\|psychic]]，[[core-rules/torrent.md\|torrent]] |
+| 刺耳合唱（聚焦巫火） | 12" | 2D6 | N/A | 6 | -1 | 1 | [[core-rules/psychic-attacks.md\|psychic]]，[[core-rules/hazardous.md\|hazardous]]，[[core-rules/ignores-cover.md\|ignores cover]]，[[core-rules/devastating-wounds.md\|devastating wounds]]，[[core-rules/torrent.md\|torrent]] |
+| 灾祸长鞭 | 9" | 6 | 3+ | 4 | -1 | 1 | [[core-rules/assault.md\|assault]] |
 
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| Axe of Dominion | 近战 | 6 | 3+ | 7 | -2 | 3 | — |
-| Scourging whip | 近战 | 6 | 2+ | 4 | -1 | 1 | extra attacks |
+| 统御之斧 | 近战 | 6 | 3+ | 7 | -2 | 3 | — |
+| 灾祸长鞭 | 近战 | 6 | 2+ | 4 | -1 | 1 | [[core-rules/extra-attacks.md\|extra attacks]] |
 
 ## 技能
 - **色孽亲王**

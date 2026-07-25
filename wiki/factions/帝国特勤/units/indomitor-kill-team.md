@@ -1,5 +1,6 @@
 ---
 id: 000003826
+name_zh: 不屈杀戮小队
 name_en: Indomitor Kill Team
 faction: 帝国特勤
 type: unit
@@ -20,34 +21,32 @@ updated: '2026-07-23'
 ## 属性表
 | 模型 | M | T | SV | W | LD | OC |
 |---|---|---|---|---|---|---|
-| Indomitor Kill Team | 5" | 6 | 3+ | 3 | 6+ | 1 |
+| 杀戮小队重装仲裁者 | 5" | 6 | 3+ | 3 | 6+ | 1 |
 
 ## 射击武器
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| Assault bolters | 18" | 3 | 3+ | 5 | -1 | 2 | assault，pistol，[[core-rules/sustained-hits.md\|sustained hits 2]]，twin-linked |
-| Auto boltstorm gauntlets | 18" | 3 | 3+ | 4 | 0 | 1 | twin-linked |
-| Bolt pistol | 12" | 1 | 3+ | 4 | 0 | 1 | PISTOL |
-| Fragstorm grenade launcher | 18" | D6 | 3+ | 4 | 0 | 1 | blast |
-| Heavy bolt rifle | 30" | 2 | 3+ | 5 | -1 | 1 | assault，heavy |
-| Heavy bolter | 36" | 3 | 4+ | 5 | -1 | 2 | assault，heavy，[[core-rules/sustained-hits.md\|sustained hits 1]] |
-| Flamestorm gauntlets | 12" | D6+1 | N/A | 4 | 0 | 1 | ignores cover，torrent，twin-linked |
-| Melta rifle | 18" | 1 | 3+ | 9 | -4 | D6 | heavy，[[core-rules/melta.md\|melta 2]] |
-| Multi-melta | 18" | 2 | 4+ | 9 | -4 | D6 | heavy，[[core-rules/melta.md\|melta 2]] |
-| Plasma exterminators – standard | 18" | 2 | 3+ | 7 | -2 | 2 | assault，pistol，twin-linked |
-| Plasma exterminators – supercharge | 18" | 2 | 3+ | 8 | -3 | 3 | assault，hazardous，pistol，twin-linked |
+| 突击爆弹枪 | 18" | 3 | 3+ | 5 | -1 | 2 | [[core-rules/assault.md\|assault]]，[[core-rules/pistol.md\|pistol]]，[[core-rules/sustained-hits.md\|sustained hits 2]]，[[core-rules/twin-linked.md\|twin-linked]] |
+| 自动爆矢风暴臂铠  | 18" | 3 | 3+ | 4 | 0 | 1 | [[core-rules/twin-linked.md\|双联]] |
+| 爆矢手枪 | 12" | 1 | 3+ | 4 | 0 | 1 | [[core-rules/pistol.md\|手枪]] |
+| 破片风暴榴弹发射器 | 18" | D6 | 3+ | 4 | 0 | 1 | [[core-rules/blast.md\|爆炸]] |
+| 重型爆弹步枪 | 30" | 2 | 3+ | 5 | -1 | 1 | [[core-rules/assault.md\|assault]]，[[core-rules/heavy.md\|heavy]] |
+| 重型爆弹枪 | 36" | 3 | 4+ | 5 | -1 | 2 | [[core-rules/assault.md\|assault]]，[[core-rules/heavy.md\|heavy]]，[[core-rules/sustained-hits.md\|sustained hits 1]] |
+| 火焰风暴臂铠 | 12" | D6+1 | N/A | 4 | 0 | 1 | [[core-rules/ignores-cover.md\|无视掩体]]，[[core-rules/torrent.md\|洪流]]，[[core-rules/twin-linked.md\|双联]] |
+| 热熔步枪 | 18" | 1 | 3+ | 9 | -4 | D6 | [[core-rules/heavy.md\|重型]]，[[core-rules/melta.md\|热熔 2]] |
+| 多管热熔 | 18" | 2 | 4+ | 9 | -4 | D6 | [[core-rules/heavy.md\|重型]]，[[core-rules/melta.md\|热熔2]] |
+| 等离子绝灭者（标准） | 18" | 2 | 3+ | 7 | -2 | 2 | [[core-rules/assault.md\|assault]]，[[core-rules/pistol.md\|pistol]]，[[core-rules/twin-linked.md\|twin-linked]] |
+| 等离子绝灭者（过载） | 18" | 2 | 3+ | 8 | -3 | 3 | [[core-rules/assault.md\|assault]]，[[core-rules/hazardous.md\|hazardous]]，[[core-rules/pistol.md\|pistol]]，[[core-rules/twin-linked.md\|twin-linked]] |
 
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| Close combat weapon | 近战 | 3 | 3+ | 4 | 0 | 1 | — |
-| Power fists | 近战 | 3 | 4+ | 8 | -2 | 2 | twin-linked |
+| 格斗武器 | 近战 | 3 | 3+ | 4 | 0 | 1 | — |
+| 双联动力拳 | 近战 | 3 | 4+ | 8 | -2 | 2 | [[core-rules/twin-linked.md\|双联]] |
 
 ## 技能
-- **Jump Pack**：The bearer has a Move characteristic of 10" and can move over models and terrain features as if they were not there.
-- **Indomitor Doctrines**：Each time a model in this unit makes an attack, add 1 to the Hit roll if this unit is below its Starting Strength, and add 1 to the Wound roll as well if this unit is Below Half-strength.
-- **ATTACHED UNIT**：If a <span class="kwb">CHARACTER</span> unit from your army can be attached to a [[factions/帝国特勤/units/deathwatch-kill-team.md|Deathwatch Kill Team]], it can be attached to this unit instead.
-- **TRANSPORT**：This unit cannot embark within an [[factions/帝国特勤/units/imperial-rhino.md|Imperial Rhino]].
+- **不屈战术**：当该单位中的模型对最近的可选目标进行远程攻击时，或在进行了冲锋移动的回合中进行近战攻击时，那次攻击的力量属性提升 2。
+- **【阵营技能】：破敌重誓，任务战术**
 
 ## 单位构成
 - **5个模型** — 120 分

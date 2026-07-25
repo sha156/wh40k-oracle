@@ -1,5 +1,6 @@
 ---
 id: '000001134'
+name_zh: 纳垢兽
 name_en: Beasts Of Nurgle
 faction: 混沌恶魔
 type: unit
@@ -21,7 +22,7 @@ updated: '2026-07-23'
 ## 属性表
 | 模型 | M | T | SV | W | LD | OC |
 |---|---|---|---|---|---|---|
-| Beasts Of Nurgle | 6" | 9 | 6+ | 7 | 7+ | 3 |
+| 纳垢兽 | 6" | 9 | 6+ | 7 | 7+ | 3 |
 
 ### 特殊保护
 - 5+
@@ -29,10 +30,10 @@ updated: '2026-07-23'
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| Putrid appendages | 近战 | 6 | 4+ | 6 | -1 | 2 | devastating wounds |
+| 恶臭肢体 | 近战 | 6 | 4+ | 6 | -1 | 2 | [[core-rules/devastating-wounds.md\|毁灭伤害]] |
 
 ## 技能
-- **Grotesque Regeneration**：At the end of each phase, if a Beasts of Nurgle model in this unit has lost any wounds but is not destroyed, that model regains all of its lost wounds.
+- **骇人再生**：在每个阶段结束时，如果该单位中的纳垢兽模型失去了任何耐伤但是没有被摧毁，那么那个模型将回复所有失去的耐伤。
 
 ## 单位构成
 - **1个模型** — 75 分

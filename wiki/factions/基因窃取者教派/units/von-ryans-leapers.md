@@ -1,5 +1,6 @@
 ---
 id: 000003888
+name_zh: 冯·瑞恩跃袭者
 name_en: Von Ryan’s Leapers
 faction: 基因窃取者教派
 type: unit
@@ -28,10 +29,12 @@ updated: '2026-07-23'
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| Leaper’s talons | 近战 | 6 | 3+ | 5 | -1 | 1 | — |
+| 跃袭者利爪 | 近战 | 6 | 3+ | 5 | -1 | 1 | — |
 
 ## 技能
-- **Pouncing Leap**：You can target this unit with the Heroic Intervention Stratagem, regardless of any other uses of that Stratagem this phase. If you do:<br><ul><li>That use is -1 CP.</li><li>That use does not prevent any uses of that Stratagem on other units this phase.</li></ul>
+- **【阵营技能】节点生物**
+- **猛扑**：您可以对该单位使用英勇介入计谋，无论您在本阶段中是否已经使用过这个计谋。若这么做：▪ 那次计谋的消耗 -1 CP。▪ 那次计谋的使用不会阻止您在本阶段中对其他单位使用同样的计谋。”
+- **先攻**
 
 ## 单位构成
 - **3个模型** — 70 分

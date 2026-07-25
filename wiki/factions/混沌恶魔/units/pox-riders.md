@@ -27,13 +27,13 @@ updated: '2026-07-23'
 ## 射击武器
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| Grasping tongue | 9" | D3 | 4+ | 5 | 0 | 1 | lethal hits |
+| 束缚长舌 | 9" | D3 | 4+ | 5 | 0 | 1 | [[core-rules/lethal-hits.md\|lethal hits]] |
 
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| Pox Rider plaguesword | 近战 | 2 | 3+ | 4 | -1 | 1 | extra attacks，lethal hits |
-| Yawning maw | 近战 | 3 | 3+ | 6 | -1 | 2 | lethal hits |
+| Pox Rider plaguesword | 近战 | 2 | 3+ | 4 | -1 | 1 | [[core-rules/extra-attacks.md\|extra attacks]]，[[core-rules/lethal-hits.md\|lethal hits]] |
+| Yawning maw | 近战 | 3 | 3+ | 6 | -1 | 2 | [[core-rules/lethal-hits.md\|lethal hits]] |
 
 ## 技能
 - **Daemonic Icon**：Models in the bearer’s unit have a Leadership characteristic of 6+.

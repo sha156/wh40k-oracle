@@ -29,7 +29,7 @@ updated: '2026-07-23'
 ## 射击武器
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| 转换光线炮 | 24" | 1 | 3+ | 10 | -2 | 3 | 转换，连击D3 |
+| 转换光线炮 | 24" | 1 | 3+ | 10 | -2 | 3 | 转换，[[core-rules/sustained-hits.md\|连击D3]] |
 | 重力脉冲炮 | 24" | D6 | 3+ | 7 | -1 | 2 | [[core-rules/anti.md\|反载具 2+]]，[[core-rules/blast.md\|爆炸]] |
 | 闪电转管枪 | 36" | 6 | 3+ | 8 | 0 | 1 | [[core-rules/sustained-hits.md\|连击 2]] |
 | 辐射喷火器 | 12" | D6 | N/A | 2 | 0 | 1 | [[core-rules/anti.md\|反步兵 2+]]，[[core-rules/torrent.md\|洪流]]，[[core-rules/ignores-cover.md\|无视掩体]] |

@@ -1,5 +1,6 @@
 ---
 id: '000000721'
+name_zh: 金牛装甲车
 name_en: Taurox Prime
 faction: 星界军
 type: unit
@@ -20,26 +21,27 @@ updated: '2026-07-23'
 ## 属性表
 | 模型 | M | T | SV | W | LD | OC |
 |---|---|---|---|---|---|---|
-| Taurox Prime | 12" | 8 | 3+ | 10 | 7+ | 2 |
+| 金牛装甲车 | 12" | 8 | 3+ | 10 | 7+ | 2 |
 
 ## 射击武器
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| Storm bolter | 24" | 2 | 3+ | 4 | 0 | 1 | [[core-rules/rapid-fire.md\|rapid fire 2]] |
-| Taurox battle cannon | 48" | D6 | 3+ | 8 | -1 | 2 | blast |
-| Taurox gatling cannon | 24" | 8 | 3+ | 4 | 0 | 1 | devastating wounds，twin-linked |
-| Taurox missile launcher – frag | 48" | D6 | 3+ | 4 | 0 | 1 | blast，twin-linked |
-| Taurox missile launcher – krak | 48" | 1 | 3+ | 9 | -2 | D6 | twin-linked |
-| Twin autocannon | 48" | 2 | 3+ | 9 | -1 | 3 | twin-linked |
-| Twin Taurox hot-shot volley gun | 30" | 3 | 3+ | 4 | -1 | 1 | [[core-rules/rapid-fire.md\|rapid fire 3]]，twin-linked |
+| 风暴爆弹枪 | 24" | 2 | 3+ | 4 | 0 | 1 | [[core-rules/rapid-fire.md\|速射2]] |
+| 金牛战斗加农炮 | 48" | D6 | 3+ | 8 | -1 | 2 | [[core-rules/blast.md\|爆炸]] |
+| 金牛加特林 | 24" | 8 | 3+ | 4 | 0 | 1 | 毁灭性伤害，[[core-rules/twin-linked.md\|双联]] |
+| 金牛导弹发射器（破片） | 48" | D6 | 3+ | 4 | 0 | 1 | [[core-rules/blast.md\|爆炸]]，[[core-rules/twin-linked.md\|双联]] |
+| 金牛导弹发射器（穿甲） | 48" | 1 | 3+ | 9 | -2 | D6 | [[core-rules/twin-linked.md\|双联]] |
+| 双联自动炮 | 48" | 2 | 3+ | 9 | -1 | 3 | [[core-rules/twin-linked.md\|双联]] |
+| 双联金牛热射排枪 | 30" | 3 | 3+ | 4 | -1 | 1 | [[core-rules/rapid-fire.md\|速射3]]，[[core-rules/twin-linked.md\|双联]] |
 
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| Armoured tracks | 近战 | 3 | 4+ | 6 | 0 | 1 | — |
+| 装甲履带 | 近战 | 3 | 4+ | 6 | 0 | 1 | — |
 
 ## 技能
-- **Transport Support**：In your Shooting phase, after this model has shot, select one enemy unit that was hit by one or more of those attacks. Until the end of the phase, each time a model that disembarked from this <span class="kwb">TRANSPORT</span> this turn makes an attack that targets that enemy unit, you can re-roll the Hit roll.
+- **运输支援**：在你的射击阶段，当该模型射击后你可以选择一个被该模型命中一次或多次的敌军单位。直到本阶段结束前，若有从该运输载具上脱离的单位攻击上述敌军单位，那么这个单位可以重投命中骰。
+- **运输工具**：该单位可以搭载12个界军风暴兵步兵模型或星界军风暴兵指挥官模型。
 
 ## 单位构成
 - **1个模型** — 75 分

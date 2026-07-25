@@ -24,17 +24,17 @@ updated: '2026-07-23'
 ## 射击武器
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| Graviton cannon | 36" | D6 | 3+ | 6 | -2 | 2 | [[core-rules/anti.md\|anti-vehicle 2+]]，blast，heavy |
-| Quad launcher – thunderfire shells | 60" | D6+4 | 3+ | 5 | 0 | 1 | blast，heavy，indirect fire |
-| Quad launcher – shatter shells | 24" | 4 | 3+ | 9 | -2 | 3 | heavy |
-| Quad heavy bolter | 36" | 6 | 3+ | 5 | -1 | 2 | heavy，twin-linked，[[core-rules/sustained-hits.md\|sustained hits 1]] |
-| Laser destroyer | 36" | 3 | 3+ | 14 | -4 | D6+1 | heavy |
-| Boltgun | 24" | 2 | 3+ | 4 | 0 | 1 | — |
+| Graviton cannon | 36" | D6 | 3+ | 6 | -2 | 2 | [[core-rules/anti.md\|anti-vehicle 2+]]，[[core-rules/blast.md\|blast]]，[[core-rules/heavy.md\|heavy]] |
+| Quad launcher – thunderfire shells | 60" | D6+4 | 3+ | 5 | 0 | 1 | [[core-rules/blast.md\|blast]]，[[core-rules/heavy.md\|heavy]]，[[core-rules/indirect-fire.md\|indirect fire]] |
+| Quad launcher – shatter shells | 24" | 4 | 3+ | 9 | -2 | 3 | [[core-rules/heavy.md\|heavy]] |
+| Quad heavy bolter | 36" | 6 | 3+ | 5 | -1 | 2 | [[core-rules/heavy.md\|heavy]]，[[core-rules/twin-linked.md\|twin-linked]]，[[core-rules/sustained-hits.md\|sustained hits 1]] |
+| Laser destroyer | 36" | 3 | 3+ | 14 | -4 | D6+1 | [[core-rules/heavy.md\|heavy]] |
+| 爆弹枪 | 24" | 2 | 3+ | 4 | 0 | 1 | — |
 
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| Close combat weapon | 近战 | 2 | 3+ | 4 | 0 | 1 | — |
+| 格斗武器 | 近战 | 2 | 3+ | 4 | 0 | 1 | — |
 
 ## 技能
 - **Powerful Volley**：Each time this model shoots in your Shooting phase, provided it Remained Stationary this turn, all [HEAVY] weapons equipped by models in this unit have the [LETHAL HITS] ability.

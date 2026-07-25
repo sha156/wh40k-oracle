@@ -1,5 +1,6 @@
 ---
 id: '000001024'
+name_zh: 地狱飞龙
 name_en: Heldrake
 faction: 千子
 type: unit
@@ -28,16 +29,18 @@ updated: '2026-07-23'
 ## 射击武器
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| Baleflamer | 12" | D6+3 | N/A | 6 | -2 | 2 | ignores cover，torrent |
-| Hades autocannon | 36" | 6 | 3+ | 8 | -2 | 2 | — |
+| 恶毒之火 | 12" | D6+3 | N/A | 6 | -2 | 2 | [[core-rules/ignores-cover.md\|ignores cover]]，[[core-rules/torrent.md\|torrent]] |
+| 冥神自动炮 | 36" | 6 | 3+ | 8 | -2 | 2 | — |
 
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| Heldrake claws | 近战 | 5 | 3+ | 7 | -1 | 2 | [[core-rules/anti.md\|anti-fly 2+]]，devastating wounds |
+| 地狱龙爪 | 近战 | 5 | 3+ | 7 | -1 | 2 | [[core-rules/anti.md\|反飞行 2+]]，[[core-rules/devastating-wounds.md\|毁灭伤害]] |
 
 ## 技能
-- **Flame-wreathed**：Each time this model ends a Normal move, select one enemy unit it moved over during that move. Until the end of the turn, models in that unit cannot have the Benefit of Cover.
+- **【阵营技能】：黑暗契约**
+- **空中猎食者**：本模型攻击飞行目标时命中结果+1
+- **严重损伤**：当本模型 W 值为 1-4 时，进行的攻击命 中结果-1
 
 ## 单位构成
 - **1个模型** — 175 分

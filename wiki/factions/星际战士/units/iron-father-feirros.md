@@ -32,7 +32,7 @@ updated: '2026-07-23'
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
 | 齿轮之斧 | 近战 | 6 | 3+ | 7 | -2 | 2 | 无 |
-| Medusan Manipuli | 近战 | 2 | 3+ | 8 | -2 | 3 | extra attacks |
+| 美杜莎机械臂 | 近战 | 2 | 3+ | 8 | -2 | 3 | [[core-rules/extra-attacks.md\|extra attacks]] |
 
 ## 技能
 - **Rites of Tempering**：While this model is leading a unit, models in that unit have the Feel No Pain 5+ ability.

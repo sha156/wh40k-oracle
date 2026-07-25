@@ -1,5 +1,6 @@
 ---
 id: '000004064'
+name_zh: 军团战士
 name_en: Legionaries
 faction: 混沌恶魔
 type: unit
@@ -20,38 +21,39 @@ updated: '2026-07-23'
 ## 属性表
 | 模型 | M | T | SV | W | LD | OC |
 |---|---|---|---|---|---|---|
-| Legionaries | 6" | 4 | 3+ | 2 | 6+ | 2 |
+| [[factions/混沌恶魔/units/dark-apostle.md\|黑暗使徒]] | 6" | 4 | 3+ | 2 | 6+ | 2 |
 
 ## 射击武器
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| Plasma pistol – supercharge | 12" | 1 | 3+ | 8 | -3 | 2 | hazardous，pistol |
-| Plasma gun – supercharge | 24" | 1 | 3+ | 8 | -3 | 2 | [[core-rules/hazardous.md\|HAZARDOUS]]，[[core-rules/rapid-fire.md\|RAPID FIRE 1]] |
-| Balefire tome | 18" | 2 | 3+ | 5 | -1 | 1 | psychic |
-| Plasma pistol – standard | 12" | 1 | 3+ | 7 | -2 | 1 | pistol |
-| Bolt pistol | 12" | 1 | 3+ | 4 | 0 | 1 | pistol |
-| Boltgun | 24" | 2 | 3+ | 4 | 0 | 1 | — |
-| Flamer | 12" | D6 | N/A | 4 | 0 | 1 | ignores cover，torrent |
-| Havoc autocannon | 48" | 2 | 4+ | 9 | -1 | 3 | — |
-| Heavy bolter | 36" | 3 | 4+ | 5 | -1 | 2 | [[core-rules/heavy.md\|HEAVY]]，[[core-rules/sustained-hits.md\|SUSTAINED HITS 1]] |
-| Meltagun | 12" | 1 | 3+ | 9 | -4 | D6 | [[core-rules/melta.md\|melta 2]] |
-| Lascannon | 48" | 1 | 4+ | 12 | -3 | D6+1 | [[core-rules/heavy.md\|HEAVY]] |
-| Missile launcher – frag | 48" | D6 | 4+ | 4 | 0 | 1 | [[core-rules/blast.md\|BLAST]]，[[core-rules/heavy.md\|HEAVY]] |
-| Missile launcher – krak | 48" | 1 | 4+ | 9 | -2 | D6 | [[core-rules/heavy.md\|HEAVY]] |
-| Plasma gun – standard | 24" | 1 | 3+ | 7 | -2 | 1 | [[core-rules/rapid-fire.md\|RAPID FIRE 1]] |
-| Reaper chaincannon | 24" | 8 | 4+ | 5 | 0 | 1 | heavy |
+| 等离子手枪（过载） | 12" | 1 | 3+ | 8 | -3 | 2 | [[core-rules/hazardous.md\|hazardous]]，[[core-rules/pistol.md\|pistol]] |
+| 等离子枪（过载） | 24" | 1 | 3+ | 8 | -3 | 2 | [[core-rules/hazardous.md\|HAZARDOUS]]，[[core-rules/rapid-fire.md\|RAPID FIRE 1]] |
+| 恶火魔典 | 18" | 2 | 3+ | 5 | -1 | 1 | [[core-rules/psychic-attacks.md\|psychic]] |
+| 等离子手枪（标准） | 12" | 1 | 3+ | 7 | -2 | 1 | [[core-rules/pistol.md\|pistol]] |
+| 爆弹手枪 | 12" | 1 | 3+ | 4 | 0 | 1 | [[core-rules/pistol.md\|pistol]] |
+| 爆弹枪  | 24" | 2 | 3+ | 4 | 0 | 1 | — |
+| 喷火器   | 12" | D6 | N/A | 4 | 0 | 1 | [[core-rules/ignores-cover.md\|忽视掩体]]，[[core-rules/torrent.md\|喷射]] |
+| 浩劫自动炮   | 48" | 2 | 4+ | 9 | -1 | 3 | — |
+| 重型爆弹枪 | 36" | 3 | 4+ | 5 | -1 | 2 | [[core-rules/heavy.md\|重型]]，[[core-rules/sustained-hits.md\|连击 1]] |
+| 热熔枪 | 12" | 1 | 3+ | 9 | -4 | D6 | [[core-rules/melta.md\|melta 2]] |
+| 激光炮       | 48" | 1 | 4+ | 12 | -3 | D6+1 | [[core-rules/heavy.md\|重型]] |
+| 喷火器   | 48" | D6 | 4+ | 4 | 0 | 1 | [[core-rules/ignores-cover.md\|忽视掩体]]，[[core-rules/torrent.md\|喷射]] |
+| 导弹发射器（穿甲） | 48" | 1 | 4+ | 9 | -2 | D6 | [[core-rules/heavy.md\|重型]] |
+| 等离子枪（标准） | 24" | 1 | 3+ | 7 | -2 | 1 | [[core-rules/rapid-fire.md\|RAPID FIRE 1]] |
+| 收割者加特林   | 24" | 8 | 4+ | 5 | 0 | 1 | [[core-rules/heavy.md\|重型]] |
 
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| Heavy melee weapon | 近战 | 3 | 3+ | 8 | -2 | 2 | — |
-| Accursed weapon | 近战 | 4 | 3+ | 5 | -2 | 1 | — |
-| Astartes chainsword | 近战 | 4 | 3+ | 4 | -1 | 1 | — |
-| Close combat weapon | 近战 | 3 | 3+ | 4 | 0 | 1 | — |
+| 重型近战武器 | 近战 | 3 | 3+ | 8 | -2 | 2 | — |
+| 诅咒武器  | 近战 | 4 | 3+ | 5 | -2 | 1 | — |
+| 阿斯塔特链锯剑 | 近战 | 4 | 3+ | 4 | -1 | 1 | — |
+| 格斗武器  | 近战 | 3 | 3+ | 4 | 0 | 1 | — |
 
 ## 技能
-- **Veterans of the Long War**：Each time a model in this unit targets an enemy unit with a melee attack, re-roll a Wound roll of 1. If that enemy unit is within range of an objective marker, you can re-roll the Wound roll instead.
-- **Chaos Icon**：Each time the bearer’s unit takes a Leadership test for the Dark Pacts ability, you can re-roll that test.
+- **【阵营技能】：黑暗契约**
+- **万古长战老兵**：本单位模型近战攻击时可以重投造 伤结果中的 1，如果目标敌方单位位于目标点范围 内，则改成本单位模型重投造伤结果
+- **混沌圣旗**：装备者所在单位可以重投为黑暗契约技 能所进行的 LD 测试
 
 ## 单位构成
 - **5个模型** — 90 分

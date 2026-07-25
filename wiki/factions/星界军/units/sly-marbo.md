@@ -31,7 +31,7 @@ updated: '2026-07-23'
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| Envenomed blade | 近战 | 5 | 2+ | 5 | -1 | 2 | [[core-rules/anti.md\|anti-infantry 2+]]，precision |
+| 淬毒刀刃 | 近战 | 5 | 2+ | 5 | -1 | 2 | [[core-rules/anti.md\|anti-infantry 2+]]，[[core-rules/precision.md\|precision]] |
 
 ## 技能
 - **独狼**：该模型拥有5+特殊保护

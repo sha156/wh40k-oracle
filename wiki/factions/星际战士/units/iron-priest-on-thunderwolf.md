@@ -24,17 +24,17 @@ updated: '2026-07-23'
 ## 射击武器
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| Bolt pistol | 12" | 1 | 3+ | 4 | 0 | 1 | pistol |
-| Boltgun | 24" | 2 | 3+ | 4 | 0 | 1 | — |
-| Helfrost pistol – dispersed | 12" | D3 | N/A | 3 | -1 | 1 | pistol，torrent |
-| Helfrost pistol – focused | 12" | 1 | 2+ | 6 | -3 | 3 | pistol |
+| 爆弹手枪 | 12" | 1 | 3+ | 4 | 0 | 1 | [[core-rules/pistol.md\|pistol]] |
+| 爆弹枪 | 24" | 2 | 3+ | 4 | 0 | 1 | — |
+| 霜狱手枪（分散） | 12" | D3 | N/A | 3 | -1 | 1 | [[core-rules/pistol.md\|pistol]]，[[core-rules/torrent.md\|torrent]] |
+| 霜狱手枪（聚焦） | 12" | 1 | 2+ | 6 | -3 | 3 | [[core-rules/pistol.md\|pistol]] |
 
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| Crushing teeth and claws | 近战 | 3 | 4+ | 5 | -1 | 1 | extra attacks |
+| Crushing teeth and claws | 近战 | 3 | 4+ | 5 | -1 | 1 | [[core-rules/extra-attacks.md\|extra attacks]] |
 | Iron Priest hammer | 近战 | 3 | 4+ | 8 | -2 | 3 | — |
-| Servo arm | 近战 | 1 | 3+ | 8 | -2 | 3 | extra attacks |
+| Servo arm | 近战 | 1 | 3+ | 8 | -2 | 3 | [[core-rules/extra-attacks.md\|extra attacks]] |
 
 ## 技能
 - **Iron Priest**：While this model is within 3" of one or more friendly Adeptus Astartes Vehicle units, this model has the Lone Operative ability.

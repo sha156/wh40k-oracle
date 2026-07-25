@@ -30,12 +30,12 @@ updated: '2026-07-23'
 ## 射击武器
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| Stormfrag auto-launcher | 12" | D3 | 4+ | 4 | 0 | 1 | assault，blast |
+| 风暴破片雷发射器 | 12" | D3 | 4+ | 4 | 0 | 1 | [[core-rules/assault.md\|assault]]，[[core-rules/blast.md\|blast]] |
 
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| Thunder hammer | 近战 | 2 | 3+ | 5 | -2 | 3 | [[core-rules/anti.md\|anti-monster 3+]]，[[core-rules/anti.md\|anti-vehicle 3+]] |
+| 雷霆锤 | 近战 | 2 | 3+ | 5 | -2 | 3 | [[core-rules/anti.md\|anti-monster 3+]]，[[core-rules/anti.md\|anti-vehicle 3+]] |
 
 ## 技能
 - **【阵营技能】：破敌重誓**

@@ -288,3 +288,46 @@ class CritiqueReportOut(_CamelModel):
     assessments: List[UnitAssessmentOut] = []
     summary: List[str] = []
     not_modeled: List[str] = Field(default=[], alias="notModeled")
+
+
+# ── 武器词条索引（图鉴 · 词条页，镜像 web/src/lib/keywords.ts）─────────
+
+# 三档分类：通用（11 版速查表在册）/ 十版遗留（库里还有但已被取代）/ 单位特有。
+# 用 Literal 而非 str：载荷冒出第四档时要当场 500 炸出来，别让前端拿到它没有分支
+# 可渲染的 group 值，静默掉进 default 分支显示成「通用」。
+KeywordGroup = Literal["universal", "legacy", "unit-specific"]
+
+
+class KeywordSummary(_CamelModel):
+    """词条索引一行。数量四件套是「现役 / 全库」双口径，与图鉴列表口径一致。"""
+    slug: str
+    base: str                       # 英文基础词条（大写，已剥掉档位参数）
+    name_zh: str = Field(alias="nameZh")
+    group: KeywordGroup
+    # 速查表确有条目漏印节号（实测「连击 SUSTAINED HITS」），此时为 null——
+    # 不按顺序推断补全：推出来的号码看着像真的，其实是我们编的
+    section: Optional[str] = None
+    quickref_zh: Optional[str] = Field(default=None, alias="quickrefZh")
+    params: List[str] = []          # 档位变体（"2" / "4+" / "D6+3"），无参为 []
+    engine: str                     # 数值建模 / 仅标注 / 未纳入（诚实披露，不吹）
+    rule_page: Optional[str] = Field(default=None, alias="rulePage")
+    current_weapons: int = Field(alias="currentWeapons")
+    total_weapons: int = Field(alias="totalWeapons")
+    current_units: int = Field(alias="currentUnits")
+    total_units: int = Field(alias="totalUnits")
+
+
+class KeywordWeapon(BaseModel):
+    """反查表一行：带该词条的武器，及携带它的现役单位。"""
+    name: str
+    units: List[str] = []
+
+
+class KeywordDetail(KeywordSummary):
+    """详情页 = 索引行 + 反查表（哪些武器带这个词条）。"""
+    weapons: List[KeywordWeapon] = []
+
+
+class KeywordIndexResponse(_CamelModel):
+    """GET /codex/keywords 响应。items 刻意**不带** weapons：反查表占载荷九成体积。"""
+    items: List[KeywordSummary] = []

@@ -25,12 +25,12 @@ updated: '2026-07-23'
 ## 射击武器
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| Balefire pike | 12" | D6+3 | N/A | 5 | -1 | 1 | [[core-rules/ignores-cover.md\|IGNORES COVER]]，TORRENT |
+| 毒焰火矛 | 12" | D6+3 | N/A | 5 | -1 | 1 | [[core-rules/ignores-cover.md\|IGNORES COVER]]，[[core-rules/torrent.md\|TORRENT]] |
 
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| Close combat weapon | 近战 | 4 | 4+ | 4 | -1 | 1 | — |
+| 格斗武器 | 近战 | 4 | 4+ | 4 | -1 | 1 | — |
 
 ## 技能
 - **【阵营技能】：黑暗契约**

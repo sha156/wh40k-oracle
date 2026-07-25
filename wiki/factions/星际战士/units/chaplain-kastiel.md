@@ -27,12 +27,12 @@ updated: '2026-07-23'
 ## 射击武器
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| Absolvor bolt pistol | 18" | 1 | 3+ | 5 | -1 | 2 | pistol |
+| 赦免者爆弹手枪 | 18" | 1 | 3+ | 5 | -1 | 2 | [[core-rules/pistol.md\|pistol]] |
 
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| Crozius arcanum | 近战 | 5 | 2+ | 6 | -1 | 2 | — |
+| 牧师权杖 | 近战 | 5 | 2+ | 6 | -1 | 2 | — |
 
 ## 技能
 - **Litany of Hate**：While this model is leading a unit, each time a model in that unit makes a melee attack, add 1 to the Wound roll.

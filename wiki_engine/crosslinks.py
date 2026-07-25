@@ -64,6 +64,28 @@ _CORE_TERM_EXACT_ALIASES: Dict[str, str] = {
     "一次性": "one-shot", "单次射击": "one-shot", "单次使用": "one-shot",
     "One Shot": "one-shot",
     "灵能攻击": "psychic-attacks", "Psychic Attacks": "psychic-attacks",
+    # ── 词条索引补齐（2026-07-25）──────────────────────────────────
+    # 起因：建武器词条索引时逐条实测，46 个基础词条里 39 个从中文或英文一侧解析不出规则页——
+    # `anti.md` 存在却没有任何别名指向它（12 个 ANTI-X 全断），兵牌页的技能列因此大量是纯文本。
+    # 补两类：① 库内实际用词（本 wiki 用「骑枪/单发/无视掩体」，旧表只收了「迅猛冲锋/一次性」）；
+    #        ② 英文大写形态（黑图缺中文时 from_db 直接渲染英文原词）。
+    "PISTOL": "pistol", "Pistol": "pistol",
+    # 11 版 24.07：【手枪】等效替换为【近距离】；页仍名 pistol（改名等于改全部入链，见 §6）
+    "近距离": "pistol", "近身": "pistol",
+    "CLOSE-QUARTERS": "pistol", "Close-Quarters": "pistol", "CLOSE QUARTERS": "pistol",
+    "灵能": "psychic-attacks", "PSYCHIC": "psychic-attacks", "Psychic": "psychic-attacks",
+    "灵能武器": "psychic-attacks",
+    "横扫": "cleave", "CLEAVE": "cleave", "Cleave": "cleave",
+    "ASSAULT": "assault",
+    "EXTRA ATTACKS": "extra-attacks",
+    "LETHAL HITS": "lethal-hits",
+    "PRECISION": "precision",
+    "TORRENT": "torrent",
+    "骑枪": "lance", "LANCE": "lance", "Lance": "lance",
+    "单发": "one-shot", "ONE SHOT": "one-shot", "ONE-SHOT": "one-shot",
+    "速射": "rapid-fire", "RAPID FIRE": "rapid-fire",
+    "连击": "sustained-hits", "SUSTAINED HITS": "sustained-hits",
+    "热熔": "melta", "MELTA": "melta",
     # 通用核心规则概念（总规则10版）
     "致命伤": "mortal-wounds", "致命伤害": "mortal-wounds",
     "特殊保护": "invulnerable-save", "无敌豁免": "invulnerable-save",
@@ -146,7 +168,25 @@ _CORE_TERM_PREFIX_RULES: List[Tuple[Pattern, str]] = [
     (re.compile(r"^不知疼痛\s*\d\+$"), "feel-no-pain"),
     (re.compile(r"^不怕疼\s*\d\+$"), "feel-no-pain"),
     (re.compile(r"^(反|针对|防空)[一-鿿]*\s*\d\+$"), "anti"),
-    (re.compile(r"^ANTI-[A-Z]+\s*\d\+$", re.IGNORECASE), "anti"),
+    # [A-Z' ]* 而非 [A-Z]+：目标关键词可含空格与撇号（ANTI-EPIC HERO 2+ / ANTI-C'TAN 4+）
+    (re.compile(r"^ANTI-[A-Z][A-Z' ]*\s*\d\+$", re.IGNORECASE), "anti"),
+    # ── 词条索引补齐（2026-07-25）──────────────────────────────────
+    # ① 骰子档位：实测库里有【速射D6+3】【连击D3】这类，旧规则只认 \d+
+    (re.compile(r"^速射\s*D\d*(\+\d+)?$"), "rapid-fire"),
+    (re.compile(r"^Rapid Fire\s*D\d*(\+\d+)?$", re.IGNORECASE), "rapid-fire"),
+    (re.compile(r"^连击\s*D\d*(\+\d+)?$"), "sustained-hits"),
+    (re.compile(r"^Sustained Hits\s*D\d*(\+\d+)?$", re.IGNORECASE), "sustained-hits"),
+    (re.compile(r"^热熔\s*D\d*(\+\d+)?$"), "melta"),
+    # ② 11 版新增的带参形态：【爆炸 X】（24.05）与【横扫 X】（24.06）
+    (re.compile(r"^爆炸\s*\d+$"), "blast"),
+    (re.compile(r"^Blast\s*\d+$", re.IGNORECASE), "blast"),
+    (re.compile(r"^横扫\s*\d+$"), "cleave"),
+    (re.compile(r"^Cleave\s*\d+$", re.IGNORECASE), "cleave"),
+    # ③ 不带档位的 ANTI-X 基础形态。中文侧**枚举目标关键词**而不是 `^反.*$`——
+    #    后者会把「反击」「反应」这类普通词也吞进 anti.md（误链比断链更难发现）
+    (re.compile(r"^反(步兵|载具|怪物|飞行|灵能者|角色|泰坦|恶魔|混沌|步行者"
+                r"|史诗英雄|异形|帝国|手雷|骑乘|虫群|泰伦虫族)$"), "anti"),
+    (re.compile(r"^ANTI-[A-Z][A-Z' ]*$", re.IGNORECASE), "anti"),
 ]
 
 # 链接目标字面量直接映射到已存在的其他 wiki 页面（非术语页），
@@ -154,6 +194,15 @@ _CORE_TERM_PREFIX_RULES: List[Tuple[Pattern, str]] = [
 _DIRECT_PATH_ALIASES: Dict[str, str] = {
     "钛帝国": "factions/钛帝国/index.md",
 }
+
+# 大小写折叠镜像：结构库里的词条 token 是**小写**（keywords_json 存 "devastating wounds"），
+# 而上面的表按官方写法登记（"DEVASTATING WOUNDS"/"Devastating Wounds"）。只做精确匹配的
+# 后果实测过：兵牌页技能列里 anti-infantry 2+ 成链（走 IGNORECASE 正则）而同一格的
+# devastating wounds、psychic 是纯文本——同一行一半能点一半不能，比全不能点更像坏了。
+# 中文键折叠是无操作，不会引入歧义。
+_CORE_TERM_FOLDED: Dict[str, str] = {}
+for _alias, _term_id in _CORE_TERM_EXACT_ALIASES.items():
+    _CORE_TERM_FOLDED.setdefault(_alias.strip().lower(), _term_id)
 
 _WIKILINK_RE = re.compile(r"\[\[([^\]|#]+?)(?:\\?\|([^\]]+?))?\]\]")
 
@@ -180,6 +229,9 @@ def _resolve_known_alias(raw_target: str) -> Optional[str]:
         return _DIRECT_PATH_ALIASES[target]
     if target in _CORE_TERM_EXACT_ALIASES:
         return "core-rules/{}.md".format(_CORE_TERM_EXACT_ALIASES[target])
+    folded = _CORE_TERM_FOLDED.get(target.lower())
+    if folded:
+        return "core-rules/{}.md".format(folded)
     for pattern, term_id in _CORE_TERM_PREFIX_RULES:
         if pattern.match(target):
             return "core-rules/{}.md".format(term_id)

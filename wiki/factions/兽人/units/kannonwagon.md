@@ -27,14 +27,14 @@ updated: '2026-07-23'
 ## 射击武器
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| Big shoota | 36" | 3 | 5+ | 5 | 0 | 1 | [[core-rules/rapid-fire.md\|rapid fire 2]] |
-| Supa-kannon – frag | 36" | D6+3 | 5+ | 5 | 0 | 1 | blast |
+| 大突突枪 | 36" | 3 | 5+ | 5 | 0 | 1 | [[core-rules/rapid-fire.md\|rapid fire 2]] |
+| Supa-kannon – frag | 36" | D6+3 | 5+ | 5 | 0 | 1 | [[core-rules/blast.md\|blast]] |
 | Supa-kannon – shell | 36" | 1 | 5+ | 9 | -2 | D3+3 | — |
 
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| Spiked ram | 近战 | 3 | 4+ | 8 | 0 | 1 | — |
+| 带刺轮胎 | 近战 | 3 | 4+ | 8 | 0 | 1 | — |
 
 ## 技能
 - **Big Booms**：In your Shooting phase, just after selecting a target for this model’s supa-kannon, roll one D6 for the target unit and every other unit within 3" of that unit: on a 5+, the unit being rolled for is struck by a concussive wave. After this model has finished making its attacks against that target unit this phase, each unit struck by a concussive wave this phase suffers D3 mortal wounds.

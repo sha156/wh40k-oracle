@@ -27,8 +27,8 @@ updated: '2026-07-23'
 ## 射击武器
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| Autoch-pattern bolter | 24" | 2 | 4+ | 4 | 0 | 1 | pistol |
-| Heavy volkanite disintegrator | 24" | 6 | 4+ | 6 | -1 | 1 | devastating wounds |
+| 基岩型爆矢枪 | 24" | 2 | 4+ | 4 | 0 | 1 | [[core-rules/pistol.md\|pistol]] |
+| 重型爆燃解离枪 | 24" | 6 | 4+ | 6 | -1 | 1 | [[core-rules/devastating-wounds.md\|devastating wounds]] |
 
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |

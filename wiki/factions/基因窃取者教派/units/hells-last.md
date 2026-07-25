@@ -29,17 +29,17 @@ updated: '2026-07-23'
 ## 射击武器
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| Bolt pistol | 12" | 1 | 3+ | 4 | 0 | 1 | pistol |
-| Meltagun | 12" | 1 | 3+ | 9 | -4 | D6 | [[core-rules/melta.md\|melta 2]] |
-| Hot-shot laspistol | 12" | 1 | 3+ | 3 | -1 | 1 | pistol |
-| Demolitions | 6" | D6 | 4+ | 9 | -2 | 2 | blast，one shot |
+| 爆弹手枪 | 12" | 1 | 3+ | 4 | 0 | 1 | [[core-rules/pistol.md\|pistol]] |
+| 热熔枪 | 12" | 1 | 3+ | 9 | -4 | D6 | [[core-rules/melta.md\|melta 2]] |
+| 热射激光手枪 | 12" | 1 | 3+ | 3 | -1 | 1 | [[core-rules/pistol.md\|pistol]] |
+| Demolitions | 6" | D6 | 4+ | 9 | -2 | 2 | [[core-rules/blast.md\|blast]]，[[core-rules/one-shot.md\|one shot]] |
 
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| Dirk | 近战 | 3 | 3+ | 3 | -1 | 1 | precision |
-| Close combat weapon | 近战 | 2 | 4+ | 3 | 0 | 1 | — |
-| Power weapon | 近战 | 4 | 3+ | 4 | -2 | 1 | — |
+| Dirk | 近战 | 3 | 3+ | 3 | -1 | 1 | [[core-rules/precision.md\|precision]] |
+| 格斗武器 | 近战 | 2 | 4+ | 3 | 0 | 1 | — |
+| 动力武器 | 近战 | 4 | 3+ | 4 | -2 | 1 | — |
 
 ## 技能
 - **Heroic Example**：While this unit’s Minka Lesk model is on the battlefield, each time a model in this unit makes an attack, you can re-roll the Hit roll.

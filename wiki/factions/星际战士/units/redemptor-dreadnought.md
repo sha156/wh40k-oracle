@@ -26,13 +26,13 @@ updated: '2026-07-23'
 ## 射击武器
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| Heavy flamer | 12" | D6 | N/A | 5 | -1 | 1 | ignores cover，torrent |
+| 重型喷火器 | 12" | D6 | N/A | 5 | -1 | 1 | [[core-rules/ignores-cover.md\|ignores cover]]，[[core-rules/torrent.md\|torrent]] |
 | 重型突击加特林  | 24" | 12 | 3+ | 6 | 0 | 1 | [[core-rules/devastating-wounds.md\|毁灭伤害]] |
-| Icarus rocket pod | 24" | D3 | 3+ | 8 | -1 | 2 | [[core-rules/anti.md\|anti-fly 2+]] |
-| Macro plasma incinerator – standard | 36" | D6+1 | 3+ | 8 | -3 | 2 | blast |
+| 伊卡洛斯火箭巢 | 24" | D3 | 3+ | 8 | -1 | 2 | [[core-rules/anti.md\|anti-fly 2+]] |
+| 等离子焚焰炮（标准） | 36" | D6+1 | 3+ | 8 | -3 | 2 | [[core-rules/blast.md\|blast]] |
 | 等离子焚焰炮（过载） | 36" | D6+1 | 3+ | 9 | -4 | 3 | [[core-rules/blast.md\|爆炸]]，[[core-rules/hazardous.md\|危险]] |
 | 突击加特林  | 24" | 8 | 3+ | 5 | 0 | 1 | [[core-rules/devastating-wounds.md\|毁灭伤害]] |
-| Twin fragstorm grenade launcher | 18" | D6 | 3+ | 4 | 0 | 1 | blast，twin-linked |
+| 双联破片风暴雷 | 18" | D6 | 3+ | 4 | 0 | 1 | [[core-rules/blast.md\|blast]]，[[core-rules/twin-linked.md\|twin-linked]] |
 | 双联风暴爆弹枪  | 24" | 2 | 3+ | 4 | 0 | 1 | [[core-rules/rapid-fire.md\|速射 2]]，[[core-rules/twin-linked.md\|双联]] |
 
 ## 近战武器

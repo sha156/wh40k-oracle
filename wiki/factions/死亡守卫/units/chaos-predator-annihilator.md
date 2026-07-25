@@ -1,5 +1,6 @@
 ---
 id: '000001050'
+name_zh: 歼灭者型猎食者坦克
 name_en: Chaos Predator Annihilator
 faction: 死亡守卫
 type: unit
@@ -25,20 +26,22 @@ updated: '2026-07-23'
 ## 射击武器
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| Combi-bolter | 24" | 2 | 3+ | 4 | 0 | 1 | lethal hits，[[core-rules/rapid-fire.md\|rapid fire 2]] |
-| Combi-weapon | 24" | 1 | 4+ | 4 | 0 | 1 | [[core-rules/anti.md\|anti-infantry 4+]]，devastating wounds，[[core-rules/rapid-fire.md\|rapid fire 1]] |
-| Heavy bolter | 36" | 3 | 3+ | 5 | -1 | 2 | lethal hits，[[core-rules/sustained-hits.md\|sustained hits 1]] |
-| Havoc launcher | 48" | D6 | 3+ | 5 | 0 | 1 | blast |
-| Lascannon | 48" | 1 | 3+ | 12 | -3 | D6+1 | — |
-| Predator twin lascannon | 48" | 1 | 3+ | 14 | -3 | D6+1 | twin-linked |
+| 并联爆弹枪  | 24" | 2 | 3+ | 4 | 0 | 1 | [[core-rules/rapid-fire.md\|速射 2]] |
+| 复合武器 | 24" | 1 | 4+ | 4 | 0 | 1 | [[core-rules/anti.md\|反步兵 4+]]，[[core-rules/devastating-wounds.md\|毁灭伤害]]，[[core-rules/rapid-fire.md\|速射 1]] |
+| 重型爆弹枪 | 36" | 3 | 3+ | 5 | -1 | 2 | [[core-rules/lethal-hits.md\|lethal hits]]，[[core-rules/sustained-hits.md\|sustained hits 1]] |
+| 浩劫发射器  | 48" | D6 | 3+ | 5 | 0 | 1 | [[core-rules/blast.md\|爆炸]] |
+| 激光炮 | 48" | 1 | 3+ | 12 | -3 | D6+1 | — |
+| 猎食者双联激光炮 | 48" | 1 | 3+ | 14 | -3 | D6+1 | [[core-rules/twin-linked.md\|twin-linked]] |
 
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| Armoured tracks | 近战 | 3 | 4+ | 6 | 0 | 1 | — |
+| 装甲履带 | 近战 | 3 | 4+ | 6 | 0 | 1 | — |
 
 ## 技能
-- **Metalophagic Infection**：In your Shooting phase, after this model has shot, select one enemy <span class="kwb">MONSTER</span> or <span class="kwb">VEHICLE</span> unit hit by one or more of those attacks. Roll one D6, adding 1 to the result if that unit is Afflicted; on a 5+, that unit suffers D3 mortal wounds.
+- **【阵营技能】：黑暗契约**
+- **歼灭者**：该模型对巨兽或载具单位进行远程攻击时，可以重掷伤害掷骰
+- **严重损伤**：本模型 W 值为 1-4 时，攻击命中结果-1
 
 ## 单位构成
 - **1个模型** — 135 分

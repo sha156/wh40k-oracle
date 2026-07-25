@@ -26,10 +26,10 @@ updated: '2026-07-23'
 ## 射击武器
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| Baal flamestorm cannon | 18" | D6+3 | N/A | 6 | -2 | 2 | ASSAULT，[[core-rules/ignores-cover.md\|IGNORES COVER]]，TORRENT |
-| Heavy bolter | 36" | 3 | 3+ | 5 | -1 | 2 | assault，[[core-rules/sustained-hits.md\|sustained hits 1]] |
-| Heavy flamer | 12" | D6 | N/A | 5 | -1 | 1 | assault，ignores cover，torrent |
-| [[factions/星际战士/units/hunter.md\|Hunter]]-killer missile | 48" | 1 | 2+ | 14 | -3 | D6 | one shot |
+| 巴尔火焰风暴炮 | 18" | D6+3 | N/A | 6 | -2 | 2 | [[core-rules/assault.md\|ASSAULT]]，[[core-rules/ignores-cover.md\|IGNORES COVER]]，[[core-rules/torrent.md\|TORRENT]] |
+| 重型爆弹枪 | 36" | 3 | 3+ | 5 | -1 | 2 | [[core-rules/assault.md\|assault]]，[[core-rules/sustained-hits.md\|sustained hits 1]] |
+| 重型喷火器 | 12" | D6 | N/A | 5 | -1 | 1 | [[core-rules/assault.md\|assault]]，[[core-rules/ignores-cover.md\|ignores cover]]，[[core-rules/torrent.md\|torrent]] |
+| 猎杀飞弹 | 48" | 1 | 2+ | 14 | -3 | D6 | [[core-rules/one-shot.md\|one shot]] |
 | 风暴爆弹枪  | 24" | 2 | 3+ | 4 | 0 | 1 | [[core-rules/rapid-fire.md\|速射 2]] |
 | 双联突击炮  | 24" | 6 | 3+ | 6 | 0 | 1 | [[core-rules/assault.md\|突击]]，[[core-rules/twin-linked.md\|双联]]，[[core-rules/devastating-wounds.md\|毁灭伤害]] |
 

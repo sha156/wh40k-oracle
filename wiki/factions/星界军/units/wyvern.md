@@ -1,5 +1,6 @@
 ---
 id: 000000697
+name_zh: 双足飞龙自行火炮
 name_en: Wyvern
 faction: 星界军
 type: unit
@@ -20,24 +21,24 @@ updated: '2026-07-23'
 ## 属性表
 | 模型 | M | T | SV | W | LD | OC |
 |---|---|---|---|---|---|---|
-| Wyvern | 10" | 9 | 3+ | 11 | 7+ | 3 |
+| 飞龙自行火炮 | 10" | 9 | 3+ | 11 | 7+ | 3 |
 
 ## 射击武器
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| Heavy bolter | 36" | 3 | 4+ | 5 | -1 | 2 | [[core-rules/sustained-hits.md\|sustained hits 1]] |
-| Heavy flamer | 12" | D6 | N/A | 5 | -1 | 1 | ignores cover，torrent |
-| Hunter-killer missile | 48" | 1 | 4+ | 14 | -3 | D6 | one shot |
-| Wyvern quad stormshard mortar | 48" | 2D6 | 4+ | 5 | 0 | 1 | blast，indirect fire，twin-linked |
+| 重型爆弹枪 | 36" | 3 | 4+ | 5 | -1 | 2 | [[core-rules/sustained-hits.md\|连击1]] |
+| 重型火焰喷射器 | 12" | D6 | N/A | 5 | -1 | 1 | [[core-rules/ignores-cover.md\|无视掩体]]，[[core-rules/torrent.md\|洪流]] |
+| 猎杀飞弹 | 48" | 1 | 4+ | 14 | -3 | D6 | [[core-rules/one-shot.md\|单发]] |
+| 双足飞龙迫击炮 | 48" | 2D6 | 4+ | 5 | 0 | 1 | [[core-rules/blast.md\|爆炸]]，[[core-rules/twin-linked.md\|双联]]，[[core-rules/ignores-cover.md\|忽视掩体]] |
 
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| Armoured tracks | 近战 | 3 | 4+ | 6 | 0 | 1 | — |
+| 装甲履带 | 近战 | 3 | 4+ | 6 | 0 | 1 | — |
 
 ## 技能
-- **Suppression Bombardment**：In your Shooting phase, after this model has shot, select one enemy unit (excluding <span class="kwb">MONSTERS</span> and <span class="kwb">VEHICLES</span>) that was hit by one or more of those attacks made with this model’s Wyvern quad stormshard mortar. Until the start of your next Shooting phase, that enemy unit is suppressed. While a unit is suppressed, each time a model in that unit makes an attack, subtract 1 from the Hit roll.
-- **One Shot**：The bearer can only shoot with this weapon once per battle.
+- **压制炮击**：在您的射击阶段中，在该模型进行射击后，选择一个被该模型的双足飞龙四联破片风暴迫击炮进行的一次或多次攻击命中的敌方单位（凶兽和载具单位除外）。在你的下一个射击阶段开始前，那个敌方单位被压制。当一个单位被压制时，其中的模型进行攻击时，命中掷骰结果减 1 。
+- **受损：剩余 1-4 点耐伤**：当该模型剩余 1-4 点耐伤，当该模型进行攻击时，命中掷骰结果减 1 。
 
 ## 单位构成
 - **1个模型** — 95 分

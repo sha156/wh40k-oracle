@@ -1,5 +1,6 @@
 ---
 id: '000004046'
+name_zh: 黑暗巫会
 name_en: Dark Commune
 faction: 混沌恶魔
 type: unit
@@ -19,27 +20,28 @@ updated: '2026-07-23'
 ## 属性表
 | 模型 | M | T | SV | W | LD | OC |
 |---|---|---|---|---|---|---|
-| CULT DEMAGOGUE | 6" | 3 | 6+ | 4 | 6+ | 1 |
-| OTHER MODELS | 6" | 3 | 6+ | 1 | 7+ | 1 |
+| 煽动者 | 6" | 3 | 6+ | 4 | 6+ | 1 |
+| 其他模型 | 6" | 3 | 6+ | 1 | 7+ | 1 |
 
 ## 射击武器
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| Autopistol | 12" | 1 | 4+ | 3 | 0 | 1 | pistol |
-| Warp Curse – witchfire | 18" | 3 | 3+ | 4 | -1 | 2 | psychic |
-| Warp Curse – focused witchfire | 18" | 3 | 3+ | 5 | -1 | 2 | hazardous，psychic，[[core-rules/sustained-hits.md\|sustained hits 2]] |
+| 自动手枪 | 12" | 1 | 4+ | 3 | 0 | 1 | [[core-rules/pistol.md\|手枪]] |
+| 亚空间诅咒（普通） | 18" | 3 | 3+ | 4 | -1 | 2 | [[core-rules/psychic-attacks.md\|psychic]] |
+| 亚空间诅咒（聚焦） | 18" | 3 | 3+ | 5 | -1 | 2 | [[core-rules/hazardous.md\|hazardous]]，[[core-rules/psychic-attacks.md\|psychic]]，[[core-rules/sustained-hits.md\|sustained hits 2]] |
 
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| Commune stave | 近战 | 2 | 4+ | 3 | 0 | D3 | devastating wounds |
-| Commune blade | 近战 | 2 | 4+ | 4 | -2 | 1 | — |
-| Close combat weapon | 近战 | 1 | 4+ | 3 | 0 | 1 | — |
+| 巫会法杖     | 近战 | 2 | 4+ | 3 | 0 | D3 | [[core-rules/devastating-wounds.md\|毁灭伤害]] |
+| 巫会利刃 | 近战 | 2 | 4+ | 4 | -2 | 1 | — |
+| 格斗武器  | 近战 | 1 | 4+ | 3 | 0 | 1 | — |
 
 ## 技能
-- **Faithful Flock**：While this unit is leading a unit and contains a <span class="kwb">CULT</span> <span class="kwb">DEMAGOGUE</span> model, models in that unit have a 5+ invulnerable save.
-- **Dark Ritual**：Once per battle, in your Command phase, if this unit contains a <span class="kwb">CULT</span> <span class="kwb">DEMAGOGUE</span> model, it can use this ability. If it does, until the end of the turn, this unit can declare a charge in a turn in which it Advanced and each time a model in this unit makes an attack, add 1 to the Hit roll and add 1 to the Wound roll.
-- **Chaos Icon**：Each time the bearer’s unit takes a Leadership test for the Dark Pacts ability, you can re-roll that test.
+- **【阵营技能】：黑暗契约**
+- **黑暗仪式**：整场游戏一次，在你的指挥阶段中，如果本单 位包含煽动者模型，则可以使用本技能，本回合中，本单 位即使进行过加速也可以发动冲锋，并且攻击命中和造伤结果+1
+- **混沌圣旗**：装备者所在单位可以重投为黑暗契约技能所进 行的 LD 测试
+- **狂热信众**：由煽动者模型所领导的单位获得 5+特殊保护
 
 ## 单位构成
 - **5个模型** — 90 分

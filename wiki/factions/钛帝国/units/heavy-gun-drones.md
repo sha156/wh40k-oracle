@@ -25,13 +25,13 @@ updated: '2026-07-23'
 ## 射击武器
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| Burst cannon | 18" | 4 | 4+ | 5 | 0 | 1 | — |
-| Twin burst cannon | 18" | 4 | 5+ | 5 | 0 | 1 | twin-linked |
+| 爆裂速射炮 | 18" | 4 | 4+ | 5 | 0 | 1 | — |
+| 并联爆裂速射炮 | 18" | 4 | 5+ | 5 | 0 | 1 | [[core-rules/twin-linked.md\|twin-linked]] |
 
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| Close combat weapon | 近战 | 1 | 6+ | 3 | 0 | 1 | — |
+| 格斗武器 | 近战 | 1 | 6+ | 3 | 0 | 1 | — |
 
 ## 技能
 - **Drone Escort**：Once per turn, in your opponent’s Shooting phase, when a friendly <span class="kwb">T’AU</span> <span class="kwb">EMPIRE</span> unit within 6" of this unit is selected as the target of an attack, one unit from your army with this ability can use it. If it does, after that enemy unit has finished making its attacks, the unit using this ability can shoot as if it were your Shooting phase, but when resolving those attacks it can only target that enemy unit (and only if it is an eligible target).

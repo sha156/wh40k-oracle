@@ -31,7 +31,7 @@ updated: '2026-07-23'
 ## 射击武器
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| Phosphor serpenta | 18" | 1 | 4+ | 5 | -1 | 2 | ignores cover，pistol |
+| 磷火短铳 | 18" | 1 | 4+ | 5 | -1 | 2 | [[core-rules/ignores-cover.md\|ignores cover]]，[[core-rules/pistol.md\|pistol]] |
 
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |

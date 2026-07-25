@@ -36,7 +36,7 @@ updated: '2026-07-23'
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| Neural whips | 近战 | 4 | 3+ | 3 | -1 | 1 | [[core-rules/anti.md\|anti-infantry 4+]] |
+| 神经鞭 | 近战 | 4 | 3+ | 3 | -1 | 1 | [[core-rules/anti.md\|anti-infantry 4+]] |
 | 忏悔者开膛剑 | 近战 | 2 | 4+ | 6 | -2 | 2 | [[core-rules/sustained-hits.md\|连击1]] |
 
 ## 技能

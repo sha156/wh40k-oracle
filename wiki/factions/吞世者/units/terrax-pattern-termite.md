@@ -24,9 +24,9 @@ updated: '2026-07-23'
 ## 射击武器
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| Twin volkite charger | 18" | 2 | 3+ | 5 | 0 | 2 | devastating wounds，twin-linked |
-| Combi-bolter | 24" | 2 | 3+ | 4 | 0 | 1 | [[core-rules/rapid-fire.md\|rapid fire 2]] |
-| Heavy flamer | 12" | D6 | N/A | 5 | -1 | 1 | torrent，ignores cover |
+| Twin volkite charger | 18" | 2 | 3+ | 5 | 0 | 2 | [[core-rules/devastating-wounds.md\|devastating wounds]]，[[core-rules/twin-linked.md\|twin-linked]] |
+| 并联爆弹枪 | 24" | 2 | 3+ | 4 | 0 | 1 | [[core-rules/rapid-fire.md\|rapid fire 2]] |
+| 重型喷火器 | 12" | D6 | N/A | 5 | -1 | 1 | [[core-rules/torrent.md\|torrent]]，[[core-rules/ignores-cover.md\|ignores cover]] |
 | Terrax melta cutter | 12" | 5 | 3+ | 9 | -4 | D6 | [[core-rules/melta.md\|melta 2]] |
 
 ## 近战武器

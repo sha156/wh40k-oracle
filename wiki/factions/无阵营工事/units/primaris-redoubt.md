@@ -28,18 +28,18 @@ updated: '2026-07-23'
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
 | Battle cannon | 48" | D6+3 | 4+ | 9 | -1 | 3 | [[core-rules/blast.md\|BLAST]] |
-| Heavy bolter | 36" | 3 | 4+ | 5 | -1 | 2 | [[core-rules/sustained-hits.md\|SUSTAINED HITS 1]] |
-| Multi-melta | 18" | 2 | 4+ | 9 | -4 | D6 | [[core-rules/melta.md\|MELTA 2]] |
+| 重型爆弹枪 | 36" | 3 | 4+ | 5 | -1 | 2 | [[core-rules/sustained-hits.md\|SUSTAINED HITS 1]] |
+| 多管热熔 | 18" | 2 | 4+ | 9 | -4 | D6 | [[core-rules/melta.md\|MELTA 2]] |
 | Primaris Icarus lascannon | 48" | 1 | 4+ | 12 | -3 | D6+1 | [[core-rules/anti.md\|anti-fly 2+]] |
-| Primaris Icarus quad lascannon | 48" | 2 | 4+ | 12 | -3 | D6+1 | [[core-rules/anti.md\|anti-fly 2+]]，twin-linked |
+| Primaris Icarus quad lascannon | 48" | 2 | 4+ | 12 | -3 | D6+1 | [[core-rules/anti.md\|anti-fly 2+]]，[[core-rules/twin-linked.md\|twin-linked]] |
 | Primaris air defence missiles | 48" | D6 | 4+ | 6 | -2 | 2 | [[core-rules/anti.md\|anti-fly 2+]] |
-| Primaris castellan launcher | 72" | D6+1 | 4+ | 6 | 0 | 1 | blast，indirect fire |
+| Primaris castellan launcher | 72" | D6+1 | 4+ | 6 | 0 | 1 | [[core-rules/blast.md\|blast]]，[[core-rules/indirect-fire.md\|indirect fire]] |
 | Primaris quad-gun | 48" | 4 | 4+ | 8 | -1 | 2 | — |
-| Primaris Redoubt turbo-laser destructor | 96" | D3+1 | 4+ | 16 | -3 | D6+3 | blast |
-| Primaris vengeance launcher | 72" | D3+1 | 4+ | 7 | -1 | 2 | blast，indirect fire |
-| Twin heavy bolter | 36" | 3 | 4+ | 5 | -1 | 2 | [[core-rules/sustained-hits.md\|SUSTAINED HITS 1]]，[[core-rules/twin-linked.md\|TWIN-LINKED]] |
-| Twin heavy flamer | 12" | D6 | N/A | 5 | -1 | 1 | [[core-rules/ignores-cover.md\|IGNORES COVER]]，TORRENT，[[core-rules/twin-linked.md\|TWIN-LINKED]] |
-| Twin lascannon | 48" | 1 | 4+ | 12 | -3 | D6+1 | [[core-rules/twin-linked.md\|TWIN-LINKED]] |
+| Primaris Redoubt turbo-laser destructor | 96" | D3+1 | 4+ | 16 | -3 | D6+3 | [[core-rules/blast.md\|blast]] |
+| Primaris vengeance launcher | 72" | D3+1 | 4+ | 7 | -1 | 2 | [[core-rules/blast.md\|blast]]，[[core-rules/indirect-fire.md\|indirect fire]] |
+| 双联重型爆弹枪 | 36" | 3 | 4+ | 5 | -1 | 2 | [[core-rules/sustained-hits.md\|SUSTAINED HITS 1]]，[[core-rules/twin-linked.md\|TWIN-LINKED]] |
+| 双联重型火焰喷射器 | 12" | D6 | N/A | 5 | -1 | 1 | [[core-rules/ignores-cover.md\|IGNORES COVER]]，[[core-rules/torrent.md\|TORRENT]]，[[core-rules/twin-linked.md\|TWIN-LINKED]] |
+| 双联激光炮 | 48" | 1 | 4+ | 12 | -3 | D6+1 | [[core-rules/twin-linked.md\|TWIN-LINKED]] |
 
 ## 技能
 - **Gates**：When this <span class="kwb">FORTIFICATION</span> is first set up on the battlefield, each gate section can be set up with its gate open or closed. In your Command phase, you can open or close the gate of each of this model’s gate sections. While a gate is open, models can move and draw line of sight through it as if it were not there.

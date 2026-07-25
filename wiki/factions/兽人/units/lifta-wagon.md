@@ -27,17 +27,17 @@ updated: '2026-07-23'
 ## 射击武器
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| Big shoota | 36" | 3 | 5+ | 5 | 0 | 1 | [[core-rules/rapid-fire.md\|rapid fire 2]] |
+| 大突突枪 | 36" | 3 | 5+ | 5 | 0 | 1 | [[core-rules/rapid-fire.md\|rapid fire 2]] |
 | Lifta-droppa | 36" | 4 | 5+ | 6 | -3 | D6+1 | [[core-rules/anti.md\|anti-vehicle 3+]] |
-| Rokkit launcha | 24" | D3 | 5+ | 9 | -2 | 3 | blast |
+| 火箭筒 | 24" | D3 | 5+ | 9 | -2 | 3 | [[core-rules/blast.md\|blast]] |
 
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| Deff rolla | 近战 | 6 | 3+ | 9 | -1 | 2 | — |
-| Grabbin’ klaw | 近战 | 2 | 3+ | 8 | -2 | 2 | extra attacks |
-| Tracks and wheels | 近战 | 6 | 4+ | 8 | 0 | 1 | — |
-| Wreckin’ ball | 近战 | 1 | 4+ | 10 | 0 | D6 | extra attacks |
+| 死亡滚轮 | 近战 | 6 | 3+ | 9 | -1 | 2 | — |
+| 抓人钳子 | 近战 | 2 | 3+ | 8 | -2 | 2 | [[core-rules/extra-attacks.md\|extra attacks]] |
+| 车轮滚滚 | 近战 | 6 | 4+ | 8 | 0 | 1 | — |
+| 粉碎链球 | 近战 | 1 | 4+ | 10 | 0 | D6 | [[core-rules/extra-attacks.md\|extra attacks]] |
 
 ## 技能
 - **Da Bigger Dey Are, da Better Dey Drop**：Each time an attack made with this model’s lifta-droppa destroys an enemy model that has the Deadly Demise ability, that model’s Deadly Demise ability inflicts mortal wounds on a D6 roll of 3+ instead of on a 6.

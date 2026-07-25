@@ -36,10 +36,10 @@ updated: '2026-07-23'
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| Penitent buzz-blade | 近战 | 4 | 3+ | 10 | -3 | 2 | [[core-rules/sustained-hits.md\|sustained hits 1]] |
-| Penitent flail | 近战 | 8 | 3+ | 5 | -1 | 1 | [[core-rules/sustained-hits.md\|sustained hits 1]] |
-| Twin penitent buzz-blades | 近战 | 4 | 3+ | 10 | -3 | 2 | [[core-rules/sustained-hits.md\|sustained hits 1]]，twin-linked |
-| Twin penitent flails | 近战 | 8 | 3+ | 5 | -1 | 1 | [[core-rules/sustained-hits.md\|sustained hits 1]]，twin-linked |
+| 忏悔者锯刃 | 近战 | 4 | 3+ | 10 | -3 | 2 | [[core-rules/sustained-hits.md\|sustained hits 1]] |
+| 忏悔者链枷 | 近战 | 8 | 3+ | 5 | -1 | 1 | [[core-rules/sustained-hits.md\|sustained hits 1]] |
+| 成对忏悔者锯刃 | 近战 | 4 | 3+ | 10 | -3 | 2 | [[core-rules/sustained-hits.md\|sustained hits 1]]，[[core-rules/twin-linked.md\|twin-linked]] |
+| 成对忏悔者链枷 | 近战 | 8 | 3+ | 5 | -1 | 1 | [[core-rules/sustained-hits.md\|sustained hits 1]]，[[core-rules/twin-linked.md\|twin-linked]] |
 
 ## 技能
 - **未赎之痛**：每当此单位中的模型被近战攻击摧毁时，如果那个模型在阶段中还没有进行近战，掷一枚D6。若结果为2+，不要将它移出游戏。被摧毁的模型可以在攻击单位完成攻击后立即进行近战，随后再将其移出游戏。

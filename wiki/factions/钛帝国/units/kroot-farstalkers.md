@@ -28,8 +28,8 @@ updated: '2026-07-23'
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
 | 多瓦盖皮腺炮 | 12" | D6 | N/A | 4 | -1 | 1 | [[core-rules/ignores-cover.md\|忽略掩体]]，[[core-rules/torrent.md\|喷射]] |
-| Farstalker firearm | 24" | 1 | 4+ | 4 | 0 | 1 | [[core-rules/rapid-fire.md\|rapid fire 1]] |
-| Kroot pistol | 12" | 1 | 4+ | 4 | 0 | 1 | pistol |
+| 远猎者火枪 | 24" | 1 | 4+ | 4 | 0 | 1 | [[core-rules/rapid-fire.md\|rapid fire 1]] |
+| 克鲁特手枪 | 12" | 1 | 4+ | 4 | 0 | 1 | [[core-rules/pistol.md\|pistol]] |
 | 隆达希三角弩  | 18" | 3 | 5+ | 7 | -1 | 1 | [[core-rules/anti.md\|针对载具4+]]，[[core-rules/devastating-wounds.md\|毁灭伤害]]，[[core-rules/heavy.md\|重型]] |
 | 钛族科技步枪 | 30" | 1 | 4+ | 5 | 0 | 1 | [[core-rules/rapid-fire.md\|速射1]] |
 

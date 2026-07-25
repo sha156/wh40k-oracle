@@ -28,7 +28,7 @@ updated: '2026-07-23'
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
 | 爆弹手枪 | 12" | 1 | 3+ | 4 | 0 | 1 | [[core-rules/pistol.md\|手枪]] |
-| Occulus bolt carbine | 24" | 2 | 3+ | 4 | 0 | 1 | assault，ignores cover |
+| 全知者爆弹卡宾枪 | 24" | 2 | 3+ | 4 | 0 | 1 | [[core-rules/assault.md\|assault]]，[[core-rules/ignores-cover.md\|ignores cover]] |
 
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |

@@ -27,17 +27,17 @@ updated: '2026-07-23'
 ## 射击武器
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| Big shoota | 36" | 3 | 5+ | 5 | 0 | 1 | [[core-rules/rapid-fire.md\|rapid fire 2]] |
-| Deffgun | 48" | 2 | 5+ | 8 | -1 | 2 | [[core-rules/rapid-fire.md\|rapid fire 1]] |
-| Kustom mega-blasta | 24" | 3 | 5+ | 9 | -2 | D6 | hazardous |
+| 大突突枪 | 36" | 3 | 5+ | 5 | 0 | 1 | [[core-rules/rapid-fire.md\|rapid fire 2]] |
+| 死死枪 | 48" | 2 | 5+ | 8 | -1 | 2 | [[core-rules/rapid-fire.md\|rapid fire 1]] |
+| 魔改米加枪 | 24" | 3 | 5+ | 9 | -2 | D6 | [[core-rules/hazardous.md\|hazardous]] |
 | Rattler kannon | 24" | 6 | 5+ | 6 | -1 | 1 | — |
-| Rokkit launcha | 24" | D3 | 5+ | 9 | -2 | 3 | blast |
-| Skorcha | 12" | D6 | N/A | 5 | -1 | 1 | ignores cover，torrent |
+| 火箭筒 | 24" | D3 | 5+ | 9 | -2 | 3 | [[core-rules/blast.md\|blast]] |
+| Skorcha | 12" | D6 | N/A | 5 | -1 | 1 | [[core-rules/ignores-cover.md\|ignores cover]]，[[core-rules/torrent.md\|torrent]] |
 
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| Armoured hull | 近战 | 3 | 4+ | 6 | 0 | 1 | — |
+| 装甲外壳 | 近战 | 3 | 4+ | 6 | 0 | 1 | — |
 
 ## 技能
 - **Big Bomms**：Once per battle, after the bearer ends a Normal move, you can select one enemy unit it moved across during that move and roll six D6: for each 4+, that unit suffers 1 mortal wound.

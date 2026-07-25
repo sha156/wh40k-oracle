@@ -25,13 +25,13 @@ updated: '2026-07-23'
 ## 射击武器
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| Kroot rifle | 24" | 1 | 4+ | 4 | 0 | 1 | [[core-rules/rapid-fire.md\|rapid fire 1]] |
+| 克鲁特步枪 | 24" | 1 | 4+ | 4 | 0 | 1 | [[core-rules/rapid-fire.md\|rapid fire 1]] |
 
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| Knarloc beak and talons | 近战 | 4 | 3+ | 6 | -1 | 1 | extra attacks |
-| Kroot rifle | 近战 | 2 | 3+ | 4 | 0 | 1 | — |
+| Knarloc beak and talons | 近战 | 4 | 3+ | 6 | -1 | 1 | [[core-rules/extra-attacks.md\|extra attacks]] |
+| 克鲁特步枪 | 近战 | 2 | 3+ | 4 | 0 | 1 | — |
 
 ## 技能
 - **Thunderous Pounce**：Each time this unit ends a Charge move, until the end of the turn, Knarloc beak and talons equipped by models in this unit have the [LANCE] ability.

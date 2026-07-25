@@ -27,7 +27,7 @@ updated: '2026-07-23'
 ## 射击武器
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| EtaCarn plasma gun | 24" | 1 | 3+ | 7 | -3 | 2 | [[core-rules/rapid-fire.md\|rapid fire 1]] |
+| 艾塔-卡恩等离子枪 | 24" | 1 | 3+ | 7 | -3 | 2 | [[core-rules/rapid-fire.md\|rapid fire 1]] |
 | 外骨骼装甲榴弹发射器    | 24" | D3 | 3+ | 3 | 0 | 1 | [[core-rules/blast.md\|爆炸]] |
 | 爆燃解离枪 | 24" | 3 | 3+ | 5 | 0 | 1 | [[core-rules/devastating-wounds.md\|毁灭伤害]] |
 
@@ -35,7 +35,7 @@ updated: '2026-07-23'
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
 | 震荡拳甲 | 近战 | 2 | 3+ | 8 | -2 | 2 | — |
-| Graviton hammer | 近战 | 3 | 4+ | 9 | -1 | 3 | [[core-rules/anti.md\|anti-monster 3+]]，[[core-rules/anti.md\|anti-vehicle 3+]] |
+| 重力子巨锤 | 近战 | 3 | 4+ | 9 | -1 | 3 | [[core-rules/anti.md\|anti-monster 3+]]，[[core-rules/anti.md\|anti-vehicle 3+]] |
 | 等离子拳刃 | 近战 | 3 | 3+ | 6 | -2 | 1 | — |
 
 ## 技能

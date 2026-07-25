@@ -28,7 +28,7 @@ updated: '2026-07-23'
 |---|---|---|---|---|---|---|---|
 | 猎杀飞弹    | 48" | 1 | 2+ | 14 | -3 | D6 | 一次性武器 |
 | 风暴爆弹枪 | 24" | 2 | 3+ | 4 | 0 | 1 | [[core-rules/rapid-fire.md\|速射 2]] |
-| Whirlwind vengeance launcher | 72" | D6+3 | 3+ | 8 | -2 | 2 | blast，indirect fire |
+| 旋风复仇火箭 | 72" | D6+3 | 3+ | 8 | -2 | 2 | [[core-rules/blast.md\|blast]]，[[core-rules/indirect-fire.md\|indirect fire]] |
 
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |

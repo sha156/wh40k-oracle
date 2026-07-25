@@ -27,12 +27,12 @@ updated: '2026-07-23'
 ## 射击武器
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| Commissar’s pistol | 12" | 1 | 3+ | 3 | -1 | 1 | pistol |
+| Commissar’s pistol | 12" | 1 | 3+ | 3 | -1 | 1 | [[core-rules/pistol.md\|pistol]] |
 
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| Savage claws | 近战 | 2 | 4+ | 4 | -1 | 1 | extra attacks |
+| 野蛮利爪 | 近战 | 2 | 4+ | 4 | -1 | 1 | [[core-rules/extra-attacks.md\|extra attacks]] |
 | Commissar’s close combat weapon | 近战 | 3 | 3+ | 4 | -2 | 1 | — |
 
 ## 技能

@@ -1,6 +1,6 @@
 # 黑暗灵族
 
-_Last updated: 2026-07-23 12:10 UTC_
+_Last updated: 2026-07-25 11:42 UTC_
 
 ## 单位
 
@@ -12,8 +12,6 @@ _Last updated: 2026-07-23 12:10 UTC_
 - [[factions/黑暗灵族/units/grotesques|Grotesques]] — 
 - [[factions/黑暗灵族/units/raven-strike-fighter|Raven Strike Fighter]] — 
 - [[factions/黑暗灵族/units/reaper|Reaper]] — 
-- [[factions/黑暗灵族/units/scourges-with-heavy-weapons|Scourges with Heavy Weapons]] — 
-- [[factions/黑暗灵族/units/starfangs|Starfangs]] — 
 - [[factions/黑暗灵族/units/tantalus|Tantalus]] — 
 - [[factions/黑暗灵族/units/urien-rakarth|Urien Rakarth]] — 
 - [[factions/黑暗灵族/units/troupe|丑角剧团]] — 
@@ -31,6 +29,7 @@ _Last updated: 2026-07-23 12:10 UTC_
 - [[factions/黑暗灵族/units/archon|执政官]] — 
 - [[factions/黑暗灵族/units/hand-of-the-archon|执政官之手]] — 
 - [[factions/黑暗灵族/units/raider|掠袭者飞艇]] — 
+- [[factions/黑暗灵族/units/starfangs|星牙战机]] — 
 - [[factions/黑暗灵族/units/shadowseer|暗影先知]] — 
 - [[factions/黑暗灵族/units/mandrakes|曼德拉]] — 
 - [[factions/黑暗灵族/units/incubi|梦魇剑客]] — 
@@ -49,6 +48,7 @@ _Last updated: 2026-07-23 12:10 UTC_
 - [[factions/黑暗灵族/units/haemonculus|血伶人]] — 
 - [[factions/黑暗灵族/units/succubus|血腥魔女]] — 
 - [[factions/黑暗灵族/units/scourges-with-shardcarbines|装备毒晶卡宾枪天灾]] — 
+- [[factions/黑暗灵族/units/scourges-with-heavy-weapons|装备重型武器的天灾]] — 
 - [[factions/黑暗灵族/units/drazhar|达扎尔]] — 
 - [[factions/黑暗灵族/units/kabalite-warriors|阴谋团战士]] — 
 

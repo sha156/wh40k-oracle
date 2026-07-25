@@ -1,5 +1,6 @@
 ---
 id: 000000391
+name_zh: 兰德掠袭者坦克
 name_en: Land Raider
 faction: 灰骑士
 type: unit
@@ -25,20 +26,21 @@ updated: '2026-07-23'
 ## 射击武器
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| Godhammer lascannon | 48" | 2 | 3+ | 12 | -3 | D6+1 | — |
-| Hunter-killer missile | 48" | 1 | 2+ | 14 | -3 | D6 | one shot |
-| Multi-melta | 18" | 2 | 3+ | 9 | -4 | D6 | [[core-rules/melta.md\|melta 2]] |
-| Storm bolter | 24" | 2 | 3+ | 4 | 0 | 1 | [[core-rules/rapid-fire.md\|rapid fire 2]] |
-| Twin heavy bolter | 36" | 3 | 3+ | 5 | -1 | 2 | [[core-rules/sustained-hits.md\|sustained hits 1]]，twin-linked |
+| 神锤激光炮 | 48" | 2 | 3+ | 12 | -3 | D6+1 | — |
+| 猎杀飞弹 | 48" | 1 | 2+ | 14 | -3 | D6 | [[core-rules/one-shot.md\|one shot]] |
+| 多管热熔 | 18" | 2 | 3+ | 9 | -4 | D6 | [[core-rules/melta.md\|melta 2]] |
+| 风暴爆弹枪 | 24" | 2 | 3+ | 4 | 0 | 1 | [[core-rules/rapid-fire.md\|rapid fire 2]] |
+| 双联重型爆弹枪 | 36" | 3 | 3+ | 5 | -1 | 2 | [[core-rules/sustained-hits.md\|sustained hits 1]]，[[core-rules/twin-linked.md\|twin-linked]] |
 
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| Armoured tracks | 近战 | 6 | 4+ | 8 | 0 | 1 | — |
+| 精金履带 | 近战 | 6 | 4+ | 8 | 0 | 1 | — |
 
 ## 技能
-- **Assault Ramp**：Each time a unit disembarks from this model after it has made a Normal move, that unit is still eligible to declare a charge this turn.
-- **One Shot**：The bearer can only shoot with this weapon once per battle.
+- **【阵营技能】：破敌重誓**
+- **突击载具**：本模型进行标准移动后，从中脱离的单位本回合依然可以发动冲锋
+- **严重损伤**：本模型 W 值为 1-5 时，攻击命中结果-1
 
 ## 单位构成
 - **1个模型** — 220 分

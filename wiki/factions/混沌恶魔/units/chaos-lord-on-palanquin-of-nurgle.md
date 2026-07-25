@@ -27,21 +27,21 @@ updated: '2026-07-23'
 ## 射击武器
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| Combi-weapon | 24" | 1 | 4+ | 4 | 0 | 1 | [[core-rules/anti.md\|anti-infantry 4+]]，devastating wounds，[[core-rules/rapid-fire.md\|rapid fire 1]] |
-| Combi-bolter | 24" | 2 | 2+ | 4 | 0 | 1 | [[core-rules/rapid-fire.md\|rapid fire 2]] |
-| Bolt pistol | 12" | 1 | 2+ | 4 | 0 | 1 | pistol |
-| Plasma pistol – supercharge | 12" | 1 | 2+ | 8 | -3 | 2 | hazardous，pistol |
-| Plasma pistol – standard | 12" | 1 | 2+ | 7 | -2 | 1 | pistol |
+| 复合武器 | 24" | 1 | 4+ | 4 | 0 | 1 | [[core-rules/anti.md\|anti-infantry 4+]]，[[core-rules/devastating-wounds.md\|devastating wounds]]，[[core-rules/rapid-fire.md\|rapid fire 1]] |
+| 并联爆弹枪 | 24" | 2 | 2+ | 4 | 0 | 1 | [[core-rules/rapid-fire.md\|rapid fire 2]] |
+| 爆弹手枪 | 12" | 1 | 2+ | 4 | 0 | 1 | [[core-rules/pistol.md\|pistol]] |
+| 等离子手枪（过载） | 12" | 1 | 2+ | 8 | -3 | 2 | [[core-rules/hazardous.md\|hazardous]]，[[core-rules/pistol.md\|pistol]] |
+| 等离子手枪（标准） | 12" | 1 | 2+ | 7 | -2 | 1 | [[core-rules/pistol.md\|pistol]] |
 
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| Nurgling’s claws and teeth | 近战 | 4 | 5+ | 2 | 0 | 1 | extra attacks，lethal hits |
-| Paired accursed weapons | 近战 | 7 | 2+ | 4 | -1 | 1 | twin-linked |
-| Astartes chainsword | 近战 | 7 | 2+ | 4 | -1 | 1 | — |
-| Close combat weapon | 近战 | 6 | 2+ | 4 | 0 | 1 | — |
-| Power fist | 近战 | 5 | 2+ | 8 | -2 | 2 | — |
-| Accursed weapon | 近战 | 6 | 2+ | 5 | -2 | 1 | — |
+| Nurgling’s claws and teeth | 近战 | 4 | 5+ | 2 | 0 | 1 | [[core-rules/extra-attacks.md\|extra attacks]]，[[core-rules/lethal-hits.md\|lethal hits]] |
+| 成对诅咒武器 | 近战 | 7 | 2+ | 4 | -1 | 1 | [[core-rules/twin-linked.md\|twin-linked]] |
+| 阿斯塔特链锯剑 | 近战 | 7 | 2+ | 4 | -1 | 1 | — |
+| 格斗武器 | 近战 | 6 | 2+ | 4 | 0 | 1 | — |
+| 动力拳 | 近战 | 5 | 2+ | 8 | -2 | 2 | — |
+| 诅咒武器 | 近战 | 6 | 2+ | 5 | -2 | 1 | — |
 
 ## 技能
 - **Lord of Chaos**：Once per battle round, one unit from your army with this ability can use it when its unit is targeted with a Stratagem. If it does, reduce the CP cost of that use of that Stratagem by 1CP.

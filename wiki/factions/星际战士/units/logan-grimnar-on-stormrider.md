@@ -27,14 +27,14 @@ updated: '2026-07-23'
 ## 射击武器
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| Storm bolter | 24" | 2 | 2+ | 4 | 0 | 1 | [[core-rules/rapid-fire.md\|rapid fire 2]] |
+| 风暴爆弹枪 | 24" | 2 | 2+ | 4 | 0 | 1 | [[core-rules/rapid-fire.md\|rapid fire 2]] |
 
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
 | The Axe Morkai – one-handed | 近战 | 10 | 2+ | 6 | -2 | 1 | — |
 | The Axe Morkai – two-handed | 近战 | 6 | 2+ | 8 | -2 | 3 | — |
-| Flurry of teeth and claws | 近战 | 6 | 4+ | 5 | -1 | 1 | extra attacks |
+| Flurry of teeth and claws | 近战 | 6 | 4+ | 5 | -1 | 1 | [[core-rules/extra-attacks.md\|extra attacks]] |
 
 ## 技能
 - **High King of Fenris**：Once per battle, in your Charge phase, this model can use this ability. If it does, until the end of the turn, you can re-roll Charge rolls made for <span class="kwb">ADEPTUS</span> <span class="kwb">ASTARTES</span> units from your army and, until the end of the turn, each time an <span class="kwb">ADEPTUS</span> <span class="kwb">ASTARTES</span> model from your army makes a melee attack, you can re-roll the Hit roll.

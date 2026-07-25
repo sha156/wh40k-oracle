@@ -27,8 +27,8 @@ updated: '2026-07-23'
 ## 射击武器
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| Blood Song | 24" | 2 | 2+ | 4 | -1 | 2 | [[core-rules/anti.md\|anti-infantry 4+]]，devastating wounds，[[core-rules/melta.md\|melta 2]] |
-| Bolt pistol | 12" | 1 | 2+ | 4 | 0 | 1 | pistol |
+| Blood Song | 24" | 2 | 2+ | 4 | -1 | 2 | [[core-rules/anti.md\|anti-infantry 4+]]，[[core-rules/devastating-wounds.md\|devastating wounds]]，[[core-rules/melta.md\|melta 2]] |
+| 爆弹手枪 | 12" | 1 | 2+ | 4 | 0 | 1 | [[core-rules/pistol.md\|pistol]] |
 
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |

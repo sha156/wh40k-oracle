@@ -29,15 +29,15 @@ updated: '2026-07-23'
 ## 射击武器
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| Heavy bolt pistol | 18" | 1 | 2+ | 4 | -1 | 1 | Pistol |
-| Inferno pistol | 6" | 1 | 2+ | 8 | -4 | D3 | [[core-rules/melta.md\|melta 2]]，pistol |
+| 重型爆弹手枪 | 18" | 1 | 2+ | 4 | -1 | 1 | [[core-rules/pistol.md\|Pistol]] |
+| 狱火手枪 | 6" | 1 | 2+ | 8 | -4 | D3 | [[core-rules/melta.md\|melta 2]]，[[core-rules/pistol.md\|pistol]] |
 
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
 | 精工链锯剑 | 近战 | 7 | 2+ | 4 | -1 | 2 | — |
-| Power fist | 近战 | 5 | 2+ | 8 | -2 | 2 | — |
-| Relic weapon | 近战 | 6 | 2+ | 5 | -2 | 2 | — |
+| 动力拳 | 近战 | 5 | 2+ | 8 | -2 | 2 | — |
+| 圣物武器 | 近战 | 6 | 2+ | 5 | -2 | 2 | — |
 
 ## 技能
 - **【阵营技能】：破敌重誓**

@@ -38,7 +38,7 @@ updated: '2026-07-23'
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| Cavalry arc maul | 近战 | 1 | 4+ | 5 | -1 | 1 | [[core-rules/anti.md\|anti-vehicle 4+]]，devastating wounds，extra attacks |
+| 电弧锤 | 近战 | 1 | 4+ | 5 | -1 | 1 | [[core-rules/anti.md\|anti-vehicle 4+]]，[[core-rules/devastating-wounds.md\|devastating wounds]]，[[core-rules/extra-attacks.md\|extra attacks]] |
 | 利爪 | 近战 | 4 | 4+ | 4 | 0 | 1 | — |
 
 ## 技能

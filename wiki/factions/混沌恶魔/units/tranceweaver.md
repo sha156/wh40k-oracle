@@ -29,7 +29,7 @@ updated: '2026-07-23'
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| Ravaging claws | 近战 | 6 | 2+ | 4 | -1 | 1 | devastating wounds |
+| 凶狠利爪 | 近战 | 6 | 2+ | 4 | -1 | 1 | [[core-rules/devastating-wounds.md\|devastating wounds]] |
 
 ## 技能
 - **织幻者**

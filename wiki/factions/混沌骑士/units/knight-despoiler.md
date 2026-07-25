@@ -31,7 +31,7 @@ updated: '2026-07-23'
 |---|---|---|---|---|---|---|---|
 | 魔息热熔枪 | 12" | 1 | 3+ | 9 | -4 | D6 | [[core-rules/melta.md\|热熔2]] |
 | 魔息热能炮 | 24" | 2D3 | 3+ | 12 | -4 | D6 | [[core-rules/melta.md\|热熔6]]，[[core-rules/blast.md\|爆炸]] |
-| 掠夺者战斗炮 | 72" | D6+3 | 3+ | 10 | -1 | 3 | 速射D6+3，[[core-rules/blast.md\|爆炸]] |
+| 掠夺者战斗炮 | 72" | D6+3 | 3+ | 10 | -1 | 3 | [[core-rules/rapid-fire.md\|速射D6+3]]，[[core-rules/blast.md\|爆炸]] |
 | 掠夺者加特林 | 36" | 18 | 3+ | 6 | -2 | 2 | — |
 | 恶魔重机枪 | 36" | 3 | 3+ | 5 | 0 | 1 | [[core-rules/rapid-fire.md\|速射3]] |
 | 浩劫导弹舱 | 48" | D6+1 | 3+ | 5 | 0 | 1 | [[core-rules/blast.md\|爆炸]]，[[core-rules/indirect-fire.md\|曲射]] |

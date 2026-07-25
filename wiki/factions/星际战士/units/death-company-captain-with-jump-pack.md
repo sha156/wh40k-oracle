@@ -30,16 +30,16 @@ updated: '2026-07-23'
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
 | 喷火手枪 | 12" | D6 | N/A | 3 | 0 | 1 | [[core-rules/ignores-cover.md\|忽视掩体]]，[[core-rules/pistol.md\|手枪]]，[[core-rules/torrent.md\|喷射]] |
-| Heavy bolt pistol | 18" | 1 | 2+ | 4 | -1 | 1 | Pistol |
-| Plasma pistol - standard | 12" | 1 | 2+ | 7 | -2 | 1 | Pistol |
+| 重型爆弹手枪 | 18" | 1 | 2+ | 4 | -1 | 1 | [[core-rules/pistol.md\|Pistol]] |
+| 等离子手枪（标准） | 12" | 1 | 2+ | 7 | -2 | 1 | [[core-rules/pistol.md\|Pistol]] |
 | 等离子手枪（过载） | 12" | 1 | 2+ | 8 | -3 | 2 | [[core-rules/pistol.md\|手枪]]，[[core-rules/hazardous.md\|危险]] |
 
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
 | 阿斯塔特链锯剑 | 近战 | 7 | 2+ | 4 | -1 | 1 | — |
-| Power fist | 近战 | 5 | 2+ | 8 | -2 | 2 | — |
-| Relic weapon | 近战 | 6 | 2+ | 5 | -2 | 2 | — |
+| 动力拳 | 近战 | 5 | 2+ | 8 | -2 | 2 | — |
+| 圣物武器 | 近战 | 6 | 2+ | 5 | -2 | 2 | — |
 
 ## 技能
 - **【阵营技能】：破敌重誓**

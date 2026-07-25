@@ -37,9 +37,9 @@ updated: '2026-07-23'
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
 | 冥神攻城爪-猛击     | 近战 | 4 | 3+ | 20 | -3 | 8 | — |
-| Hekaton siege claw – sweep | 近战 | 8 | 3+ | 10 | -2 | 3 | — |
+| 冥神攻城爪（横扫） | 近战 | 8 | 3+ | 10 | -2 | 3 | — |
 | 死神链锯剑-猛击 | 近战 | 4 | 3+ | 14 | -4 | 6 | — |
-| Reaper chainsword – sweep | 近战 | 12 | 3+ | 9 | -3 | 2 | — |
+| 死神链锯剑（横扫） | 近战 | 12 | 3+ | 9 | -3 | 2 | — |
 
 ## 技能
 - **Huntmaster (Aura)**：While a friendly War Dog model is within 6" of this model, ranged weapons equipped by that <span class="kwb">WAR</span> <span class="kwb">DOG</span> model have the [ASSAULT] ability.

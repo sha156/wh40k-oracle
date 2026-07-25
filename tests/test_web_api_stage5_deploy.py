@@ -156,7 +156,7 @@ def test_preflight_reports_missing_assets(tmp_path):
     statuses = preflight.check_assets(tmp_path)      # 空目录：什么都没有
     assert [s.ok for s in statuses] == [False] * len(statuses)
     assert {s.name for s in statuses} == {
-        "embed_model", "vector_store", "structured_db", "wiki"}
+        "embed_model", "vector_store", "structured_db", "wiki", "keyword_index"}
     # 每条缺失都要给出人话原因和修复办法，不能只报个 False
     assert all(s.detail and s.hint for s in statuses)
     summary = preflight.summary(tmp_path)
@@ -173,6 +173,9 @@ def test_preflight_detects_present_assets(tmp_path):
     (tmp_path / "db" / "wh40k.sqlite").write_bytes(b"")
     (tmp_path / "wiki").mkdir()
     (tmp_path / "wiki" / "index.md").write_text("# index", encoding="utf-8")
+    (tmp_path / "wiki" / "indexes").mkdir()
+    (tmp_path / "wiki" / "indexes" / "keywords.json").write_text(
+        '{"items": []}', encoding="utf-8")
     summary = preflight.summary(tmp_path)
     assert summary["ready"] is True
     assert all(a["ok"] for a in summary["assets"])

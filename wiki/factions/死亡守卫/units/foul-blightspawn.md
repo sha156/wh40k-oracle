@@ -26,7 +26,7 @@ updated: '2026-07-23'
 ## 射击武器
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| Plague sprayer | 12" | D6 | N/A | 7 | -2 | 2 | [[core-rules/anti.md\|anti-infantry 2+]]，ignores cover，torrent |
+| 瘟疫喷枪 | 12" | D6 | N/A | 7 | -2 | 2 | [[core-rules/anti.md\|anti-infantry 2+]]，[[core-rules/ignores-cover.md\|ignores cover]]，[[core-rules/torrent.md\|torrent]] |
 
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |

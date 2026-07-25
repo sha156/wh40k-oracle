@@ -1,5 +1,6 @@
 ---
 id: '000002750'
+name_zh: 徽记手
 name_en: Icon Bearer
 faction: 死亡守卫
 type: unit
@@ -25,12 +26,12 @@ updated: '2026-07-23'
 ## 射击武器
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| Boltgun | 24" | 2 | 3+ | 4 | 0 | 1 | lethal hits |
+| 瘟疫爆弹枪 | 24" | 2 | 3+ | 4 | 0 | 1 | [[core-rules/lethal-hits.md\|lethal hits]] |
 
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| Plague knife | 近战 | 4 | 3+ | 4 | 0 | 1 | lethal hits |
+| 瘟疫匕首 | 近战 | 4 | 3+ | 4 | 0 | 1 | [[core-rules/lethal-hits.md\|lethal hits]] |
 
 ## 技能
 - **Unclean Icon**：While this model is leading a unit, add 1 to the Objective Control characteristic of models in that unit.

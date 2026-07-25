@@ -28,13 +28,13 @@ updated: '2026-07-23'
 ## 射击武器
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| Liquifier gun | 12" | D6 | N/A | 4 | -1 | 1 | [[core-rules/anti.md\|anti-infantry 3+]]，torrent |
+| 液化枪 | 12" | D6 | N/A | 4 | -1 | 1 | [[core-rules/anti.md\|anti-infantry 3+]]，[[core-rules/torrent.md\|torrent]] |
 
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
 | Monstrous weapons | 近战 | 4 | 3+ | 5 | -2 | 2 | — |
-| Paired monstrous weapons | 近战 | 4 | 3+ | 5 | -2 | 2 | twin-linked |
+| Paired monstrous weapons | 近战 | 4 | 3+ | 5 | -2 | 2 | [[core-rules/twin-linked.md\|twin-linked]] |
 
 ## 技能
 - **Macro-steroids (Pain)**：In the Fight phase, when you select this unit to fight, you can spend 1 of your Pain tokens to Empower this unit. While Empowered, melee weapons equipped by models in this unit have a Strength characteristic of 8 and the [LETHAL HITS] ability.

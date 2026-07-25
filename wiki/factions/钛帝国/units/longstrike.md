@@ -25,18 +25,18 @@ updated: '2026-07-23'
 ## 射击武器
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| Accelerator burst cannon | 18" | 4 | 4+ | 6 | -1 | 1 | — |
-| Ion cannon – standard | 60" | D6+3 | 3+ | 7 | -1 | 2 | blast |
-| Ion cannon – overcharge | 60" | D6+3 | 3+ | 8 | -2 | 3 | blast，hazardous |
-| Railgun | 72" | 1 | 3+ | 20 | -5 | D6+6 | devastating wounds，heavy |
-| Seeker missile | 48" | 1 | 4+ | 14 | -3 | D6+1 | one shot |
-| Twin pulse carbine | 20" | 2 | 4+ | 5 | 0 | 1 | assault，twin-linked |
-| Smart missile system | 30" | 3 | 4+ | 5 | 0 | 1 | indirect fire |
+| 挂载爆裂速射炮 | 18" | 4 | 4+ | 6 | -1 | 1 | — |
+| 离子加农—标准 | 60" | D6+3 | 3+ | 7 | -1 | 2 | [[core-rules/blast.md\|blast]] |
+| 离子加农—过载 | 60" | D6+3 | 3+ | 8 | -2 | 3 | [[core-rules/blast.md\|blast]]，[[core-rules/hazardous.md\|hazardous]] |
+| 磁轨炮 | 72" | 1 | 3+ | 20 | -5 | D6+6 | [[core-rules/devastating-wounds.md\|devastating wounds]]，[[core-rules/heavy.md\|heavy]] |
+| 寻觅者导弹 | 48" | 1 | 4+ | 14 | -3 | D6+1 | [[core-rules/one-shot.md\|one shot]] |
+| 并联脉冲卡宾 | 20" | 2 | 4+ | 5 | 0 | 1 | [[core-rules/assault.md\|assault]]，[[core-rules/twin-linked.md\|twin-linked]] |
+| 智能导弹系统 | 30" | 3 | 4+ | 5 | 0 | 1 | [[core-rules/indirect-fire.md\|indirect fire]] |
 
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| Armoured hull | 近战 | 3 | 5+ | 6 | 0 | 1 | — |
+| 装甲外壳 | 近战 | 3 | 5+ | 6 | 0 | 1 | — |
 
 ## 技能
 - **Armour Hunter**：Each time this model makes an attack that targets a <span class="kwb">MONSTER</span> or <span class="kwb">VEHICLE</span>, add 1 to the Hit roll.

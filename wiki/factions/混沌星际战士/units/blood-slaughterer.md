@@ -33,7 +33,7 @@ updated: '2026-07-23'
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
 | Slaughter blade | 近战 | 5 | 3+ | 12 | -3 | 3 | — |
-| Twin slaughter blade | 近战 | 5 | 3+ | 12 | -3 | 3 | twin-linked |
+| Twin slaughter blade | 近战 | 5 | 3+ | 12 | -3 | 3 | [[core-rules/twin-linked.md\|twin-linked]] |
 
 ## 技能
 - **Scuttling Gait**：Each time this unit Advances, do not make an Advance roll for it. Instead, until the end of the phase, add 6" to the Move characteristic of models in this unit.

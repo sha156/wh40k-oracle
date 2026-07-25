@@ -1,5 +1,6 @@
 ---
 id: '000002531'
+name_zh: 虚空劫掠者海盗
 name_en: Corsair Voidreavers
 faction: 艾达灵族
 type: unit
@@ -21,28 +22,28 @@ updated: '2026-07-23'
 ## 属性表
 | 模型 | M | T | SV | W | LD | OC |
 |---|---|---|---|---|---|---|
-| Corsair Voidreavers | 7" | 3 | 4+ | 1 | 7+ | 2 |
+| 虚空劫掠者海盗 | 7" | 3 | 4+ | 1 | 7+ | 2 |
 
 ## 射击武器
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| Blaster | 18" | 1 | 3+ | 8 | -4 | D6+1 | assault |
-| Neuro disruptor | 12" | 1 | 3+ | 4 | -2 | 1 | [[core-rules/anti.md\|anti-infantry 2+]]，assault，pistol |
-| Shredder | 18" | D6 | N/A | 6 | 0 | 1 | assault，torrent |
-| Shuriken cannon | 24" | 3 | 3+ | 6 | -1 | 2 | lethal hits |
-| Shuriken pistol | 12" | 1 | 3+ | 4 | -1 | 1 | assault，pistol |
-| Shuriken rifle | 24" | 1 | 3+ | 4 | -1 | 1 | assault，[[core-rules/rapid-fire.md\|rapid fire 1]] |
-| Wraithcannon | 18" | 1 | 3+ | 14 | -4 | D6+1 | — |
+| 爆能枪 | 18" | 1 | 3+ | 8 | -4 | D6+1 | [[core-rules/assault.md\|突击]] |
+| 神经干扰枪 | 12" | 1 | 3+ | 4 | -2 | 1 | [[core-rules/anti.md\|反步兵 2+]]，[[core-rules/assault.md\|突击]]，[[core-rules/pistol.md\|手枪]] |
+| 粉碎枪 | 18" | D6 | N/A | 6 | 0 | 1 | [[core-rules/assault.md\|突击]]，[[core-rules/torrent.md\|喷射]] |
+| 星镖炮 | 24" | 3 | 3+ | 6 | -1 | 2 | [[core-rules/lethal-hits.md\|致命一击]] |
+| 星镖手枪 | 12" | 1 | 3+ | 4 | -1 | 1 | [[core-rules/assault.md\|assault]]，[[core-rules/pistol.md\|pistol]] |
+| 星镖步枪 | 24" | 1 | 3+ | 4 | -1 | 1 | [[core-rules/assault.md\|assault]]，[[core-rules/rapid-fire.md\|rapid fire 1]] |
+| 幽冥炮 | 18" | 1 | 3+ | 14 | -4 | D6+1 | — |
 
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| Close combat weapon | 近战 | 2 | 3+ | 3 | 0 | 1 | — |
-| Power sword | 近战 | 2 | 3+ | 4 | -2 | 1 | — |
+| 格斗武器 | 近战 | 2 | 3+ | 3 | 0 | 1 | — |
+| 灵族动力剑 | 近战 | 2 | 3+ | 4 | -2 | 1 | — |
 
 ## 技能
-- **Reavers of the Void**：Each time a model in this unit makes an attack, re-roll a Hit roll of 1. If the target of that attack is within range of an objective marker, you can re-roll the Hit roll instead.
-- **Mistshield**：The bearer has a 4+ invulnerable save.
+- **【阵营技能】：战斗专注**
+- **虚空掠夺者**：本单位在进行攻击时可重投结果为1 的命中骰；若本次攻击的目标是位于目标点范围内的敌方单位，则可以重投所有命中骰
 
 ## 单位构成
 - **5个模型** — 65 分

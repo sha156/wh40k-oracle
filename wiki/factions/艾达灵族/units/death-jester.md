@@ -1,5 +1,6 @@
 ---
 id: '000002537'
+name_zh: 告死小丑
 name_en: Death Jester
 faction: 艾达灵族
 type: unit
@@ -19,7 +20,7 @@ updated: '2026-07-23'
 ## 属性表
 | 模型 | M | T | SV | W | LD | OC |
 |---|---|---|---|---|---|---|
-| Death Jester | 8" | 3 | 6+ | 4 | 6+ | 1 |
+| 告死小丑 | 8" | 3 | 6+ | 4 | 6+ | 1 |
 
 ### 特殊保护
 - 4+
@@ -27,18 +28,17 @@ updated: '2026-07-23'
 ## 射击武器
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| Shrieker cannon | 24" | 3 | 2+ | 6 | -2 | 2 | — |
+| 尖啸者加农炮 | 24" | 3 | 2+ | 6 | -2 | 2 | — |
 
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| Jester’s blade | 近战 | 4 | 2+ | 4 | 0 | 1 | — |
+| 小丑之刃 | 近战 | 4 | 2+ | 4 | 0 | 1 | — |
 
 ## 技能
-- **Death is Not Enough**：In your Shooting phase, after this model has shot, select one enemy unit (excluding <span class="kwb">MONSTERS</span> and <span class="kwb">VEHICLES</span>) hit by one or more of those attacks. That enemy unit must take a Battle-shock test. If one or more of those attacks destroyed a model in that enemy unit, subtract 1 from that test.
-- **Cruel Amusement**：In your Shooting phase, each time this model is selected to shoot, select one of the abilities below. Until the end of the phase, this model’s shrieker cannon has that ability.<br><ul><li>[IGNORES COVER]</li><li>[PRECISION]</li><li>[SUSTAINED HITS 3]</li></ul>
-- **Flip Belt**：Each time the bearer’s unit makes a Normal, Advance, Fall Back or Charge move, ignore any vertical distance when determining the total distance the bearer can be moved during that move.
-- **TRAVELLING PLAYERS**：Unless otherwise stated, you cannot include more than one of this model in your army.
+- **【阵营技能】：战斗专注**
+- **“死”犹未尽**：你的射击阶段，本模型射击后，选择一个被本模型命中至少一次的敌方单位（巨兽和载具除外），上述敌方单位必须进行一次战斗震慑测试；如果上述敌方被本模型上述攻击消灭了至少一个模型，战斗震慑测试结果减 1
+- **残忍笑料**：你的射击阶段，当本模型被选中进行射击时，直到该阶段结束，本模型的尖啸者加农炮拥有以下能力之一【无视掩体】【精准】【连击 3】
 
 ## 单位构成
 - **1个模型** — 90 分

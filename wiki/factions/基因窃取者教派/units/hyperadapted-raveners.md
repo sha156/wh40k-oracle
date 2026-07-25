@@ -1,5 +1,6 @@
 ---
 id: 000004118
+name_zh: 超适应蛇虫
 name_en: Hyperadapted Raveners
 faction: 基因窃取者教派
 type: unit
@@ -19,28 +20,29 @@ updated: '2026-07-23'
 ## 属性表
 | 模型 | M | T | SV | W | LD | OC |
 |---|---|---|---|---|---|---|
-| Ravener Prime | 10" | 5 | 4+ | 6 | 7+ | 1 |
-| [[factions/基因窃取者教派/units/raveners.md\|Raveners]] | 10" | 5 | 4+ | 3 | 8+ | 1 |
+| 蛇虫王虫 | 10" | 5 | 4+ | 6 | 7+ | 1 |
+| 蛇虫 | 10" | 5 | 4+ | 3 | 8+ | 1 |
 
 ## 射击武器
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| Venom bolt | 12" | D6+3 | N/A | 6 | -1 | 1 | assault，ignores cover，torrent |
+| 剧毒喷涂 | 12" | D6+3 | N/A | 6 | -1 | 1 | [[core-rules/assault.md\|突击]]，[[core-rules/ignores-cover.md\|无视掩体]]，[[core-rules/torrent.md\|洪流]] |
 
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| Ravener heavy claws and talons | 近战 | 3 | 3+ | 5 | -2 | 2 | [[core-rules/anti.md\|anti-monster 5+]]，[[core-rules/anti.md\|anti-vehicle 5+]]，twin-linked |
-| Prime claws and talons | 近战 | 6 | 3+ | 5 | -2 | 2 | [[core-rules/anti.md\|anti-monster 5+]]，[[core-rules/anti.md\|anti-vehicle 5+]]，twin-linked |
+| 重型蛇虫利爪 | 近战 | 3 | 3+ | 5 | -2 | 2 | [[core-rules/twin-linked.md\|双联]]，[[core-rules/anti.md\|针对凶兽5+]]，[[core-rules/anti.md\|针对载具5+]] |
+| 王虫利爪 | 近战 | 6 | 3+ | 5 | -2 | 2 | [[core-rules/twin-linked.md\|双联]]，[[core-rules/anti.md\|针对凶兽5+]]，[[core-rules/anti.md\|针对载具5+]] |
 
 ## 技能
-- **Shadow In The Warp (Ravener Prime only)**
-- **Alpha Invader**：Weapons equipped by models in this unit have the [SUSTAINED HITS 1] ability.
-- **Hypersensory Array**：Once per battle round, you can target this unit with the Rapid Ingress or Heroic Intervention Stratagem for 0CP, and can do so even if you have already targeted a different unit with that Stratagem this turn.
+- **顶尖入侵者**：该单位中装备的武器拥有【连击1】技能
+- **【阵营技能】节点生物**
+- **亚空间阴影（仅限蛇虫王虫）**
+- **超感官阵列**：每个战斗轮次限一次，您可以消耗0CP对该单位使用快速进场或英勇干预计谋，即使本回合中您已对另一个单位使用过那个计谋，依然可以这么做。
 
 ## 单位构成
 - **5个模型** — 165 分
 
 ## 关键词
 - **阵营关键词**：Genestealer Cults，Tyranids
-- **普通关键词**：Hyperadapted Raveners，[[core-rules/infantry.md|Infantry]]，Great Devourer，Vanguard Invader，Synapse，Burrowers，[[core-rules/character.md|Character]]
+- **普通关键词**：Hyperadapted [[factions/基因窃取者教派/units/raveners.md|Raveners]]，[[core-rules/infantry.md|Infantry]]，Great Devourer，Vanguard Invader，Synapse，Burrowers，[[core-rules/character.md|Character]]

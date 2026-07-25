@@ -32,7 +32,7 @@ updated: '2026-07-23'
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| Master-crafted power sword | 近战 | 6 | 3+ | 6 | -2 | 2 | — |
+| 大师级动力剑 | 近战 | 6 | 3+ | 6 | -2 | 2 | — |
 
 ## 技能
 - **Throne of Judgement (Aura)**：While a friendly unit is within 6" of this model, improve the Leadership characteristic of models in that unit by 1. While an enemy unit is within 6" of this model, worsen the Leadership characteristic of models in that unit by 1.

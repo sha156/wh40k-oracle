@@ -24,16 +24,16 @@ updated: '2026-07-23'
 ## 射击武器
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| Quad heavy bolter | 36" | 6 | 3+ | 5 | -1 | 2 | twin-linked，[[core-rules/sustained-hits.md\|sustained hits 1]] |
-| Twin avenger bolt cannon | 36" | 10 | 3+ | 6 | -1 | 2 | twin-linked |
-| Twin autocannon | 48" | 2 | 3+ | 9 | -1 | 3 | twin-linked |
-| Twin hellstrike launcher | 72" | 2 | 3+ | 10 | -3 | D6 | [[core-rules/anti.md\|anti-fly 2+]]，twin-linked |
-| Twin lascannon | 48" | 1 | 3+ | 12 | -3 | D6+1 | twin-linked |
+| Quad heavy bolter | 36" | 6 | 3+ | 5 | -1 | 2 | [[core-rules/twin-linked.md\|twin-linked]]，[[core-rules/sustained-hits.md\|sustained hits 1]] |
+| Twin avenger bolt cannon | 36" | 10 | 3+ | 6 | -1 | 2 | [[core-rules/twin-linked.md\|twin-linked]] |
+| 双联自动炮 | 48" | 2 | 3+ | 9 | -1 | 3 | [[core-rules/twin-linked.md\|twin-linked]] |
+| Twin hellstrike launcher | 72" | 2 | 3+ | 10 | -3 | D6 | [[core-rules/anti.md\|anti-fly 2+]]，[[core-rules/twin-linked.md\|twin-linked]] |
+| 双联激光炮 | 48" | 1 | 3+ | 12 | -3 | D6+1 | [[core-rules/twin-linked.md\|twin-linked]] |
 
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| Armoured hull | 近战 | 6 | 4+ | 8 | 0 | 1 | — |
+| 装甲外壳 | 近战 | 6 | 4+ | 8 | 0 | 1 | — |
 
 ## 技能
 - **Strafing Run**：Each time this model makes a ranged attack that targets a unit that cannot Fly, add 1 to the Hit roll.

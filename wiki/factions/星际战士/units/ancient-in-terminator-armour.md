@@ -34,12 +34,12 @@ updated: '2026-07-23'
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| Chainfist | 近战 | 4 | 3+ | 8 | -2 | 2 | [[core-rules/anti.md\|anti-vehicle 3+]] |
+| 链锯拳 | 近战 | 4 | 3+ | 8 | -2 | 2 | [[core-rules/anti.md\|anti-vehicle 3+]] |
 | 格斗武器    | 近战 | 5 | 2+ | 4 | 0 | 1 | — |
-| Power fist | 近战 | 4 | 2+ | 8 | -2 | 2 | — |
-| Power weapon | 近战 | 5 | 2+ | 5 | -2 | 1 | — |
-| Thunder hammer | 近战 | 4 | 3+ | 8 | -2 | 2 | devastating wounds |
-| Twin lightning claws | 近战 | 6 | 2+ | 5 | -2 | 1 | twin-linked |
+| 动力拳 | 近战 | 4 | 2+ | 8 | -2 | 2 | — |
+| 动力武器 | 近战 | 5 | 2+ | 5 | -2 | 1 | — |
+| 雷霆锤 | 近战 | 4 | 3+ | 8 | -2 | 2 | [[core-rules/devastating-wounds.md\|devastating wounds]] |
+| 一对闪电爪 | 近战 | 6 | 2+ | 5 | -2 | 1 | [[core-rules/twin-linked.md\|twin-linked]] |
 
 ## 技能
 - **【阵营技能】：破敌重誓**

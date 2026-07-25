@@ -27,22 +27,22 @@ updated: '2026-07-23'
 ## 射击武器
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| Kombi-weapon | 24" | 1 | 5+ | 4 | 0 | 1 | [[core-rules/anti.md\|anti-infantry 4+]]，devastating wounds，[[core-rules/rapid-fire.md\|rapid fire 1]] |
-| Kustom mega-blasta | 24" | 3 | 5+ | 9 | -2 | D6 | hazardous |
-| Kustom mega-slugga | 12" | D3 | 5+ | 8 | -2 | D6 | blast，hazardous |
-| Rokkit launcha | 24" | D3 | 5+ | 9 | -2 | 3 | blast |
-| Shokk attack gun | 60" | D6+1 | 5+ | 9 | -4 | D6 | blast，heavy |
-| Slugga | 12" | 1 | 5+ | 4 | 0 | 1 | pistol |
-| Twin dakkagun | 18" | 3 | 5+ | 5 | 0 | 1 | assault，[[core-rules/rapid-fire.md\|rapid fire 2]]，twin-linked |
+| 强悍武器 | 24" | 1 | 5+ | 4 | 0 | 1 | [[core-rules/anti.md\|anti-infantry 4+]]，[[core-rules/devastating-wounds.md\|devastating wounds]]，[[core-rules/rapid-fire.md\|rapid fire 1]] |
+| 魔改米加枪 | 24" | 3 | 5+ | 9 | -2 | D6 | [[core-rules/hazardous.md\|hazardous]] |
+| 魔改手铳 | 12" | D3 | 5+ | 8 | -2 | D6 | [[core-rules/blast.md\|blast]]，[[core-rules/hazardous.md\|hazardous]] |
+| 火箭筒 | 24" | D3 | 5+ | 9 | -2 | 3 | [[core-rules/blast.md\|blast]] |
+| 次元炮 | 60" | D6+1 | 5+ | 9 | -4 | D6 | [[core-rules/blast.md\|blast]]，[[core-rules/heavy.md\|heavy]] |
+| 手铳 | 12" | 1 | 5+ | 4 | 0 | 1 | [[core-rules/pistol.md\|pistol]] |
+| 双联突突枪 | 18" | 3 | 5+ | 5 | 0 | 1 | [[core-rules/assault.md\|assault]]，[[core-rules/rapid-fire.md\|rapid fire 2]]，[[core-rules/twin-linked.md\|twin-linked]] |
 
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| Big choppa | 近战 | 4 | 3+ | 7 | -1 | 2 | — |
-| Choppa | 近战 | 4 | 3+ | 5 | -1 | 1 | — |
-| Close combat weapon | 近战 | 4 | 3+ | 5 | 0 | 1 | — |
-| Killsaw | 近战 | 3 | 4+ | 12 | -3 | 2 | — |
-| Power klaw | 近战 | 4 | 4+ | 9 | -2 | 2 | — |
+| 大砍刀 | 近战 | 4 | 3+ | 7 | -1 | 2 | — |
+| 砍刀 | 近战 | 4 | 3+ | 5 | -1 | 1 | — |
+| 格斗武器 | 近战 | 4 | 3+ | 5 | 0 | 1 | — |
+| 杀戮锯 | 近战 | 3 | 4+ | 12 | -3 | 2 | — |
+| 动力爪 | 近战 | 4 | 4+ | 9 | -2 | 2 | — |
 
 ## 技能
 - **Kustom Force Field**：While the bearer is leading a unit, models in that unit have a 4+ invulnerable save against ranged attacks.

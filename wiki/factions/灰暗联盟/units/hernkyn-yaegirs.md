@@ -26,7 +26,7 @@ updated: '2026-07-23'
 ## 射击武器
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| APM launcher | 24" | 1 | 4+ | 6 | -2 | D6 | [[core-rules/anti.md\|anti-monster 3+]]，[[core-rules/anti.md\|anti-vehicle 3+]] |
+| APM发射器 | 24" | 1 | 4+ | 6 | -2 | D6 | [[core-rules/anti.md\|anti-monster 3+]]，[[core-rules/anti.md\|anti-vehicle 3+]] |
 | 爆矢左轮手枪 | 12" | 1 | 4+ | 5 | 0 | 1 | [[core-rules/pistol.md\|手枪]] |
 | 爆矢霰弹枪 | 18" | 2 | 4+ | 5 | 0 | 1 | [[core-rules/assault.md\|突击]] |
 | 电磁线圈步枪 | 24" | 1 | 4+ | 5 | -2 | 2 | [[core-rules/ignores-cover.md\|忽视掩体]]，[[core-rules/precision.md\|精准]] |

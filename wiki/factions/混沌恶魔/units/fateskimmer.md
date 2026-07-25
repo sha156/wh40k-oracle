@@ -29,13 +29,13 @@ updated: '2026-07-23'
 ## 射击武器
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| 秘法火球-巫火 | 18" | 3 | 3+ | 5 | -1 | D3 | 灵能 |
-| 秘法火球-专注巫火 | 18" | 3 | 3+ | 6 | -2 | D3 | 灵能，[[core-rules/hazardous.md\|危险]]，[[core-rules/devastating-wounds.md\|毁灭伤害]] |
+| 秘法火球-巫火 | 18" | 3 | 3+ | 5 | -1 | D3 | [[core-rules/psychic-attacks.md\|灵能]] |
+| 秘法火球-专注巫火 | 18" | 3 | 3+ | 6 | -2 | D3 | [[core-rules/psychic-attacks.md\|灵能]]，[[core-rules/hazardous.md\|危险]]，[[core-rules/devastating-wounds.md\|毁灭伤害]] |
 
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| 先锋近战武器 | 近战 | 3 | 4+ | 4 | -1 | 1 | 灵能 |
+| 先锋近战武器 | 近战 | 3 | 4+ | 4 | -1 | 1 | [[core-rules/psychic-attacks.md\|灵能]] |
 | 尖啸魔撕咬  | 近战 | 6 | 3+ | 6 | -2 | 2 | [[core-rules/extra-attacks.md\|额外攻击]]，[[core-rules/anti.md\|针对载具4+]]，[[core-rules/anti.md\|针对巨兽4+]] |
 
 ## 技能

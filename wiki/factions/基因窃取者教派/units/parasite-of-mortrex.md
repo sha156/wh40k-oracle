@@ -1,5 +1,6 @@
 ---
 id: 000003878
+name_zh: 摩崔克斯寄生虫
 name_en: Parasite Of Mortrex
 faction: 基因窃取者教派
 type: unit
@@ -24,12 +25,14 @@ updated: '2026-07-23'
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| Clawed limbs | 近战 | 6 | 2+ | 5 | -1 | 1 | — |
-| Barbed ovipositor | 近战 | 1 | 2+ | 3 | -2 | 3 | [[core-rules/anti.md\|anti-infantry 3+]]，extra attacks |
+| 利爪肢体 | 近战 | 6 | 2+ | 5 | -1 | 1 | — |
+| 产卵针刺 | 近战 | 1 | 2+ | 3 | -2 | 3 | [[core-rules/anti.md\|针对步兵3+]]，[[core-rules/extra-attacks.md\|额外攻击]] |
 
 ## 技能
-- **Parasitic Infection**：Each time an <span class="kwb">INFANTRY</span> model is destroyed by an attack made with this model’s barbed ovipositor, after this model has finished making its attacks, you can add one new Ripper Swarms unit to your army consisting of D3 models and set it up within 3" of this model. If you do, that <span class="kwb">RIPPER</span> <span class="kwb">SWARMS</span> unit can be set up within Engagement Range of the destroyed model’s unit (but not within Engagement Range of any other enemy units).
-- **It Itches!**：At the start of the Fight phase, select one enemy unit within Engagement Range of this model. That enemy unit must take a Battle-shock test.
+- **【阵营技能】节点生物**
+- **【阵营技能】亚空间阴影**
+- **寄生感染**：每当敌方步兵模型被该模型装备的产卵针刺摧毁时，在该模型完成攻击后，您可以将一个拥有 D3 个模型的撕裂虫群单位加入您的军队，并且部署在该模型 3"内。如果您这样做，该撕裂虫群可以部署在被摧毁模型所在单位的交战范围内（但不能在其他敌方单位的交战范围内）。
+- **瘙痒！**：在近战阶段开始时，选择一个位于该模型交战范围内的敌方单位。该敌方单位必须进行一次战斗震慑测试。
 
 ## 单位构成
 - **1个模型** — 80 分

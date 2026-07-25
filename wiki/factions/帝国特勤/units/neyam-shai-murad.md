@@ -27,12 +27,12 @@ updated: '2026-07-23'
 ## 射击武器
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| Negotiator pistol | 12" | 4 | 3+ | 4 | -2 | 1 | precision |
+| Negotiator pistol | 12" | 4 | 3+ | 4 | -2 | 1 | [[core-rules/precision.md\|precision]] |
 
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| Close combat weapon | 近战 | 4 | 3+ | 3 | 0 | 1 | — |
+| 格斗武器 | 近战 | 4 | 3+ | 3 | 0 | 1 | — |
 
 ## 技能
 - **Backroom Deals**：If your army contains one or more units with this ability, during the Declare Battle Formations step, select one of those units. While the selected unit is leading a unit, models in that unit have the Infiltrators ability.

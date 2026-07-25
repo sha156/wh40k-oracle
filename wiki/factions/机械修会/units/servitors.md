@@ -27,10 +27,10 @@ updated: '2026-07-23'
 ## 射击武器
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| Heavy bolter | 36" | 3 | 6+ | 5 | -1 | 2 | heavy，[[core-rules/sustained-hits.md\|sustained hits 1]] |
-| Multi-melta | 18" | 2 | 6+ | 9 | -4 | D6 | heavy，[[core-rules/melta.md\|melta 2]] |
-| Plasma cannon – standard | 36" | D3 | 6+ | 7 | -2 | 1 | heavy，blast |
-| Plasma cannon – supercharge | 36" | D3 | 6+ | 8 | -3 | 2 | heavy，blast，hazardous |
+| 重型爆矢枪 | 36" | 3 | 6+ | 5 | -1 | 2 | [[core-rules/heavy.md\|heavy]]，[[core-rules/sustained-hits.md\|sustained hits 1]] |
+| 多管热熔 | 18" | 2 | 6+ | 9 | -4 | D6 | [[core-rules/heavy.md\|heavy]]，[[core-rules/melta.md\|melta 2]] |
+| 等离子炮（标准） | 36" | D3 | 6+ | 7 | -2 | 1 | [[core-rules/heavy.md\|heavy]]，[[core-rules/blast.md\|blast]] |
+| 等离子炮（过载） | 36" | D3 | 6+ | 8 | -3 | 2 | [[core-rules/heavy.md\|heavy]]，[[core-rules/blast.md\|blast]]，[[core-rules/hazardous.md\|hazardous]] |
 
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |

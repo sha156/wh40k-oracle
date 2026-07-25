@@ -34,7 +34,7 @@ updated: '2026-07-23'
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| Master-crafted chainsword | 近战 | 8 | 2+ | 5 | -1 | 2 | [[core-rules/anti.md\|ANTI-INFANTRY 2+]] |
+| 大师级链锯剑 | 近战 | 8 | 2+ | 5 | -1 | 2 | [[core-rules/anti.md\|ANTI-INFANTRY 2+]] |
 
 ## 技能
 - **【阵营技能】：破敌重誓**

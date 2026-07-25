@@ -27,9 +27,9 @@ updated: '2026-07-23'
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
 | 爆弹手枪 | 12" | 1 | 3+ | 4 | 0 | 1 | [[core-rules/pistol.md\|手枪]] |
-| Multi-melta | 18" | 2 | 3+ | 9 | -4 | D6 | [[core-rules/melta.md\|melta 2]] |
+| 多管热熔 | 18" | 2 | 3+ | 9 | -4 | D6 | [[core-rules/melta.md\|melta 2]] |
 | 突击加特林 | 24" | 8 | 3+ | 5 | 0 | 1 | [[core-rules/devastating-wounds.md\|毁灭伤害]] |
-| Twin bolt rifle | 24" | 2 | 3+ | 4 | -1 | 1 | twin-linked |
+| 双联爆弹步枪 | 24" | 2 | 3+ | 4 | -1 | 1 | [[core-rules/twin-linked.md\|twin-linked]] |
 
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |

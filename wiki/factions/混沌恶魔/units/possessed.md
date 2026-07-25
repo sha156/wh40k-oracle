@@ -1,5 +1,6 @@
 ---
 id: '000004066'
+name_zh: 附魔战士
 name_en: Possessed
 faction: 混沌恶魔
 type: unit
@@ -28,11 +29,12 @@ updated: '2026-07-23'
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| Hideous mutations | 近战 | 4 | 3+ | 5 | -1 | 2 | — |
+| 变异利爪  | 近战 | 4 | 3+ | 5 | -1 | 2 | — |
 
 ## 技能
-- **Unholy Bloodshed**：Once per battle, when this unit makes a Dark Pact, until the end of the phase, weapons equipped by models in this unit have the [DEVASTATING WOUNDS] ability.
-- **Chaos Icon**：Each time the bearer’s unit takes a Leadership test for the Dark Pacts ability, you can re-roll that test.
+- **【阵营技能】：黑暗契约**
+- **不洁血脉**：一次性技能，当本单位使用黑暗契约技 能时，本阶段中其武器额外获得【毁灭伤害】技能
+- **混沌圣旗**：装备者所在单位可以重投为黑暗契约技 能所进行的 LD 测试
 
 ## 单位构成
 - **5个模型** — 120 分

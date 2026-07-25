@@ -28,20 +28,20 @@ updated: '2026-07-23'
 ## 射击武器
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| Combi-bolter | 24" | 2 | 3+ | 4 | 0 | 1 | [[core-rules/rapid-fire.md\|rapid fire 2]] |
-| Heavy flamer | 12" | D6 | N/A | 5 | -1 | 1 | ignores cover，torrent |
+| 并联爆弹枪 | 24" | 2 | 3+ | 4 | 0 | 1 | [[core-rules/rapid-fire.md\|rapid fire 2]] |
+| 重型喷火器 | 12" | D6 | N/A | 5 | -1 | 1 | [[core-rules/ignores-cover.md\|ignores cover]]，[[core-rules/torrent.md\|torrent]] |
 | Plasma blaster – standard | 18" | 2 | 3+ | 7 | -2 | 1 | — |
-| Plasma blaster – supercharge | 18" | 2 | 3+ | 8 | -3 | 2 | hazardous |
-| Reaper autocannon | 36" | 4 | 3+ | 7 | -1 | 1 | devastating wounds，[[core-rules/sustained-hits.md\|sustained hits 1]] |
-| Volkite charger | 18" | 2 | 3+ | 5 | 0 | 2 | devastating wounds |
+| Plasma blaster – supercharge | 18" | 2 | 3+ | 8 | -3 | 2 | [[core-rules/hazardous.md\|hazardous]] |
+| 收割者自动炮 | 36" | 4 | 3+ | 7 | -1 | 1 | [[core-rules/devastating-wounds.md\|devastating wounds]]，[[core-rules/sustained-hits.md\|sustained hits 1]] |
+| Volkite charger | 18" | 2 | 3+ | 5 | 0 | 2 | [[core-rules/devastating-wounds.md\|devastating wounds]] |
 
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| Chainfist | 近战 | 3 | 4+ | 8 | -2 | 2 | [[core-rules/anti.md\|anti-vehicle 3+]] |
-| Power fist | 近战 | 3 | 3+ | 8 | -2 | 2 | — |
-| Power weapon | 近战 | 4 | 3+ | 5 | -2 | 1 | — |
-| Twin lightning claws | 近战 | 5 | 3+ | 5 | -2 | 1 | twin-linked |
+| 链锯拳 | 近战 | 3 | 4+ | 8 | -2 | 2 | [[core-rules/anti.md\|anti-vehicle 3+]] |
+| 动力拳 | 近战 | 3 | 3+ | 8 | -2 | 2 | — |
+| 动力武器 | 近战 | 4 | 3+ | 5 | -2 | 1 | — |
+| 一对闪电爪 | 近战 | 5 | 3+ | 5 | -2 | 1 | [[core-rules/twin-linked.md\|twin-linked]] |
 
 ## 技能
 - **Fury of the First**：Each time a model in this unit makes an attack, you can ignore any or all modifiers to that attack’s Ballistic Skill or Weapon Skill characteristic and/or to the Hit roll. In addition, each time a model in this unit makes an attack that targets the enemy unit you selected for the Oath of Moment ability this turn, add 1 to the Hit roll.

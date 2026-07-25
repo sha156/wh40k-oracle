@@ -32,8 +32,8 @@ updated: '2026-07-23'
 |---|---|---|---|---|---|---|---|
 | 突击炮  | 24" | 6 | 3+ | 6 | 0 | 1 | [[core-rules/devastating-wounds.md\|毁灭伤害]] |
 | 旋风导弹发射器（破片）  | 36" | 2D6 | 3+ | 4 | 0 | 1 | [[core-rules/blast.md\|爆炸]] |
-| Cyclone missile launcher – krak | 36" | 2 | 3+ | 9 | -2 | D6 | — |
-| Heavy flamer | 12" | D6 | N/A | 5 | -1 | 1 | ignores cover，torrent |
+| 旋风导弹发射器（穿甲） | 36" | 2 | 3+ | 9 | -2 | D6 | — |
+| 重型喷火器 | 12" | D6 | N/A | 5 | -1 | 1 | [[core-rules/ignores-cover.md\|ignores cover]]，[[core-rules/torrent.md\|torrent]] |
 | 风暴爆弹枪 | 24" | 2 | 3+ | 4 | 0 | 1 | [[core-rules/rapid-fire.md\|速射 2]] |
 
 ## 近战武器
@@ -41,7 +41,7 @@ updated: '2026-07-23'
 |---|---|---|---|---|---|---|---|
 | 动力拳    | 近战 | 3 | 4+ | 8 | -2 | 2 | [[core-rules/anti.md\|anti-vehicle 3+]] |
 | 动力拳    | 近战 | 3 | 3+ | 8 | -2 | 2 | — |
-| Power weapon | 近战 | 4 | 3+ | 5 | -2 | 1 | — |
+| 动力武器 | 近战 | 4 | 3+ | 5 | -2 | 1 | — |
 
 ## 技能
 - **【阵营技能】：破敌重誓**

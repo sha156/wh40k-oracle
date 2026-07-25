@@ -24,19 +24,19 @@ updated: '2026-07-23'
 ## 射击武器
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| Lascannon | 48" | 1 | 5+ | 12 | -3 | D6+1 | heavy |
-| Heavy stubber | 36" | 4 | 5+ | 4 | 0 | 1 | heavy，[[core-rules/rapid-fire.md\|rapid fire 3]] |
-| Heavy bolter | 36" | 3 | 5+ | 5 | -1 | 2 | heavy，[[core-rules/sustained-hits.md\|sustained hits 1]] |
-| Missile launcher – frag | 48" | D6 | 5+ | 4 | 0 | 1 | blast，heavy |
-| Autocannon | 48" | 2 | 5+ | 9 | -1 | 3 | heavy |
+| 激光炮 | 48" | 1 | 5+ | 12 | -3 | D6+1 | [[core-rules/heavy.md\|heavy]] |
+| Heavy stubber | 36" | 4 | 5+ | 4 | 0 | 1 | [[core-rules/heavy.md\|heavy]]，[[core-rules/rapid-fire.md\|rapid fire 3]] |
+| 重型爆弹枪 | 36" | 3 | 5+ | 5 | -1 | 2 | [[core-rules/heavy.md\|heavy]]，[[core-rules/sustained-hits.md\|sustained hits 1]] |
+| 导弹发射器（破片） | 48" | D6 | 5+ | 4 | 0 | 1 | [[core-rules/blast.md\|blast]]，[[core-rules/heavy.md\|heavy]] |
+| 自动炮 | 48" | 2 | 5+ | 9 | -1 | 3 | [[core-rules/heavy.md\|heavy]] |
 | Renegade firearm | 24" | 1 | 4+ | 3 | 0 | 1 | [[core-rules/rapid-fire.md\|rapid fire 1]] |
-| Mortar | 48" | D6 | 5+ | 5 | 0 | 1 | blast，heavy，indirect fire |
-| Missile launcher – krak | 48" | 1 | 5+ | 9 | -2 | D6 | heavy |
+| 迫击炮 | 48" | D6 | 5+ | 5 | 0 | 1 | [[core-rules/blast.md\|blast]]，[[core-rules/heavy.md\|heavy]]，[[core-rules/indirect-fire.md\|indirect fire]] |
+| 导弹发射器（穿甲） | 48" | 1 | 5+ | 9 | -2 | D6 | [[core-rules/heavy.md\|heavy]] |
 
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| Close combat weapons | 近战 | 2 | 4+ | 3 | 0 | 1 | — |
+| 格斗武器 | 近战 | 2 | 4+ | 3 | 0 | 1 | — |
 
 ## 技能
 - **Covering Fire**：Each time you target this unit with the Fire Overwatch Stratagem, while resolving that Stratagem, hits are scored on unmodified Hit rolls of 5+.

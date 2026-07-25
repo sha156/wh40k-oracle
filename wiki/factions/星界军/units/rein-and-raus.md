@@ -24,14 +24,14 @@ updated: '2026-07-23'
 ## 射击武器
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| Demolition charge | 6" | D6+3 | 4+ | 12 | -2 | 2 | blast，hazardous，one shot |
-| Sniper rifle | 36" | 1 | 3+ | 4 | -2 | 2 | heavy，precision |
-| Stub pistol | 12" | 1 | 3+ | 4 | 0 | 1 | pistol |
+| 爆破炸药 | 6" | D6+3 | 4+ | 12 | -2 | 2 | [[core-rules/blast.md\|blast]]，[[core-rules/hazardous.md\|hazardous]]，[[core-rules/one-shot.md\|one shot]] |
+| Sniper rifle | 36" | 1 | 3+ | 4 | -2 | 2 | [[core-rules/heavy.md\|heavy]]，[[core-rules/precision.md\|precision]] |
+| Stub pistol | 12" | 1 | 3+ | 4 | 0 | 1 | [[core-rules/pistol.md\|pistol]] |
 
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| Close combat weapon | 近战 | 1 | 5+ | 2 | 0 | 1 | — |
+| 格斗武器 | 近战 | 1 | 5+ | 2 | 0 | 1 | — |
 
 ## 技能
 - **Shoot Sharp and Scarper**：In your Shooting phase, after this unit has shot, if it is not within Engagement Range of one or more enemy units, it can make a Normal move. If it does, until the end of the turn, this unit is not eligible to declare a charge.

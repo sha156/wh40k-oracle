@@ -27,9 +27,9 @@ updated: '2026-07-23'
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
 | 喷火触手 | 12" | D6 | N/A | 3 | 0 | 1 | [[core-rules/pistol.md\|手枪]]，[[core-rules/ignores-cover.md\|忽视掩体]]，[[core-rules/torrent.md\|喷射]] |
-| Melta tendril | 6" | 1 | 2+ | 8 | -4 | D3 | pistol，[[core-rules/melta.md\|melta 2]] |
+| 热熔触手 | 6" | 1 | 2+ | 8 | -4 | D3 | [[core-rules/pistol.md\|pistol]]，[[core-rules/melta.md\|melta 2]] |
 | 等离子手枪（标准） | 12" | 1 | 2+ | 7 | -2 | 1 | [[core-rules/pistol.md\|手枪]] |
-| Plasma pistol – supercharge | 12" | 1 | 2+ | 8 | -3 | 2 | pistol，hazardous |
+| 等离子手枪（过载） | 12" | 1 | 2+ | 8 | -3 | 2 | [[core-rules/pistol.md\|pistol]]，[[core-rules/hazardous.md\|hazardous]] |
 
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |

@@ -33,7 +33,7 @@ updated: '2026-07-23'
 | 阿德克斯型近防爆弹炮 | 36" | 6 | 3+ | 6 | -2 | 2 | — |
 | 艾瑞欧克型泰坦动力爪 | 48" | 20 | 3+ | 6 | -1 | 2 | [[core-rules/sustained-hits.md\|连击1]] |
 | 贝利寇萨型火山炮 | 120" | D3+3 | 3+ | 32 | -5 | 18 | [[core-rules/blast.md\|爆炸]] |
-| Laser blaster | 72" | 6 | 3+ | 16 | -4 | D6+3 | blast |
+| 激光爆裂炮 | 72" | 6 | 3+ | 16 | -4 | D6+3 | [[core-rules/blast.md\|blast]] |
 | 加特林宏炮 | 100" | 30 | 3+ | 9 | -2 | 3 | [[core-rules/sustained-hits.md\|连击1]] |
 | 死亡地震炮 | 280" | 3D6 | 3+ | 16 | -4 | 6 | [[core-rules/blast.md\|爆炸]]，[[core-rules/ignores-cover.md\|忽略掩体]] |
 | 日怒离子湮灭炮 — 标准 | 72" | 2D6+6 | 3+ | 10 | -3 | 5 | [[core-rules/blast.md\|爆炸]] |

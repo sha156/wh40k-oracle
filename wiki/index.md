@@ -1,6 +1,6 @@
 # WH40K Wiki Index
 
-_Last updated: 2026-07-23 12:10 UTC_
+_Last updated: 2026-07-25 11:42 UTC_
 
 ## 目录
 
@@ -20,7 +20,6 @@ _Last updated: 2026-07-23 12:10 UTC_
 | unit | [Deff Rolla Battle Fortress](factions/兽人/units/deff-rolla-battle-fortress.md) |  | 2026-07-23 |
 | unit | [Deffkoptas With Big Shootas](factions/兽人/units/deffkoptas-with-big-shootas.md) |  | 2026-07-23 |
 | unit | [Fighta-bommer](factions/兽人/units/fighta-bommer.md) |  | 2026-07-23 |
-| unit | [Gargantuan Squiggoth](factions/兽人/units/gargantuan-squiggoth.md) |  | 2026-07-23 |
 | unit | [Grot Bomm Launcha](factions/兽人/units/grot-bomm-launcha.md) |  | 2026-07-23 |
 | unit | [Grot Mega-tank](factions/兽人/units/grot-mega-tank.md) |  | 2026-07-23 |
 | unit | [Grot Tanks](factions/兽人/units/grot-tanks.md) |  | 2026-07-23 |
@@ -41,7 +40,6 @@ _Last updated: 2026-07-23 12:10 UTC_
 | unit | [Ufthak Blackhawk](factions/兽人/units/ufthak-blackhawk.md) |  | 2026-07-23 |
 | unit | [Warboss On Warbike](factions/兽人/units/warboss-on-warbike.md) |  | 2026-07-23 |
 | unit | [Warbuggies](factions/兽人/units/warbuggies.md) |  | 2026-07-23 |
-| unit | [Wartrakks](factions/兽人/units/wartrakks.md) |  | 2026-07-23 |
 | unit | [兽霸头目](factions/兽人/units/beastboss.md) |  | 2026-07-23 |
 | unit | [兽霸小子](factions/兽人/units/beast-snagga-boyz.md) |  | 2026-07-23 |
 | unit | [剧痛头目](factions/兽人/units/painboss.md) |  | 2026-07-23 |
@@ -57,9 +55,11 @@ _Last updated: 2026-07-23 12:10 UTC_
 | unit | [小技霸](factions/兽人/units/mek.md) |  | 2026-07-23 |
 | unit | [屁精小队](factions/兽人/units/gretchin.md) |  | 2026-07-23 |
 | unit | [屁精技师炮](factions/兽人/units/mek-gunz.md) |  | 2026-07-23 |
+| unit | [巨型斯奎格兽](factions/兽人/units/gargantuan-squiggoth.md) |  | 2026-07-23 |
 | unit | [巫术小子](factions/兽人/units/wurrboy.md) |  | 2026-07-23 |
 | unit | [恶疤莫兹罗格](factions/兽人/units/mozrog-skragbad.md) |  | 2026-07-23 |
 | unit | [战争头目](factions/兽人/units/warboss.md) |  | 2026-07-23 |
+| unit | [战履车](factions/兽人/units/wartrakks.md) |  | 2026-07-23 |
 | unit | [战斗堡垒](factions/兽人/units/battlewagon.md) |  | 2026-07-23 |
 | unit | [执旗强蛮人](factions/兽人/units/bannernob.md) |  | 2026-07-23 |
 | unit | [技霸轰炸机](factions/兽人/units/wazbom-blastajet.md) |  | 2026-07-23 |
@@ -104,23 +104,12 @@ _Last updated: 2026-07-23 12:10 UTC_
 | 类型 | 名称 | 摘要 | Updated |
 |------|------|------|---------|
 | unit | [Cerberus](factions/千子/units/cerberus.md) |  | 2026-07-23 |
-| unit | [Chaos Land Raider](factions/千子/units/chaos-land-raider.md) |  | 2026-07-23 |
 | unit | [Chaos Lord On Disc Of Tzeentch](factions/千子/units/chaos-lord-on-disc-of-tzeentch.md) |  | 2026-07-23 |
-| unit | [Chaos Predator Annihilator](factions/千子/units/chaos-predator-annihilator.md) |  | 2026-07-23 |
-| unit | [Chaos Predator Destructor](factions/千子/units/chaos-predator-destructor.md) |  | 2026-07-23 |
-| unit | [Chaos Rhino](factions/千子/units/chaos-rhino.md) |  | 2026-07-23 |
-| unit | [Chaos Spawn](factions/千子/units/chaos-spawn.md) |  | 2026-07-23 |
 | unit | [Chaos Thunderhawk](factions/千子/units/chaos-thunderhawk.md) |  | 2026-07-23 |
-| unit | [Daemon Prince of Tzeentch](factions/千子/units/daemon-prince-of-tzeentch.md) |  | 2026-07-23 |
-| unit | [Daemon Prince of Tzeentch with Wings](factions/千子/units/daemon-prince-of-tzeentch-with-wings.md) |  | 2026-07-23 |
-| unit | [Defiler](factions/千子/units/defiler.md) |  | 2026-07-23 |
 | unit | [Deredeo Dreadnought](factions/千子/units/deredeo-dreadnought.md) |  | 2026-07-23 |
 | unit | [Falchion](factions/千子/units/falchion.md) |  | 2026-07-23 |
 | unit | [Fellblade](factions/千子/units/fellblade.md) |  | 2026-07-23 |
 | unit | [Fire Raptor Gunship](factions/千子/units/fire-raptor-gunship.md) |  | 2026-07-23 |
-| unit | [Forgefiend](factions/千子/units/forgefiend.md) |  | 2026-07-23 |
-| unit | [Helbrute](factions/千子/units/helbrute.md) |  | 2026-07-23 |
-| unit | [Heldrake](factions/千子/units/heldrake.md) |  | 2026-07-23 |
 | unit | [Hell Blade](factions/千子/units/hell-blade.md) |  | 2026-07-23 |
 | unit | [Hell Talon](factions/千子/units/hell-talon.md) |  | 2026-07-23 |
 | unit | [Kratos](factions/千子/units/kratos.md) |  | 2026-07-23 |
@@ -128,7 +117,6 @@ _Last updated: 2026-07-23 12:10 UTC_
 | unit | [Land Raider Proteus](factions/千子/units/land-raider-proteus.md) |  | 2026-07-23 |
 | unit | [Leviathan Dreadnought](factions/千子/units/leviathan-dreadnought.md) |  | 2026-07-23 |
 | unit | [Mastodon](factions/千子/units/mastodon.md) |  | 2026-07-23 |
-| unit | [Maulerfiend](factions/千子/units/maulerfiend.md) |  | 2026-07-23 |
 | unit | [Rapier Carrier](factions/千子/units/rapier-carrier.md) |  | 2026-07-23 |
 | unit | [Relic Contemptor Dreadnought](factions/千子/units/relic-contemptor-dreadnought.md) |  | 2026-07-23 |
 | unit | [Sicaran Battle Tank](factions/千子/units/sicaran-battle-tank.md) |  | 2026-07-23 |
@@ -142,25 +130,37 @@ _Last updated: 2026-07-23 12:10 UTC_
 | unit | [Whirlwind Scorpius](factions/千子/units/whirlwind-scorpius.md) |  | 2026-07-23 |
 | unit | [Xiphon Interceptor](factions/千子/units/xiphon-interceptor.md) |  | 2026-07-23 |
 | unit | [乘坐奸奇魔碟的高阶巫师](factions/千子/units/exalted-sorcerer-on-disc-of-tzeentch.md) |  | 2026-07-23 |
+| unit | [亵渎者](factions/千子/units/defiler.md) |  | 2026-07-23 |
 | unit | [凯洛斯·织命者](factions/千子/units/kairos-fateweaver.md) |  | 2026-07-23 |
 | unit | [变化魔君](factions/千子/units/lord-of-change.md) |  | 2026-07-23 |
 | unit | [变异漩涡兽](factions/千子/units/mutalith-vortex-beast.md) |  | 2026-07-23 |
 | unit | [圣甲虫终结者](factions/千子/units/scarab-occult-terminators.md) |  | 2026-07-23 |
+| unit | [地狱兽](factions/千子/units/helbrute.md) |  | 2026-07-23 |
+| unit | [地狱飞龙](factions/千子/units/heldrake.md) |  | 2026-07-23 |
 | unit | [塞克塔机器人](factions/千子/units/sekhetar-robots.md) |  | 2026-07-23 |
+| unit | [奸奇恶魔王子](factions/千子/units/daemon-prince-of-tzeentch.md) |  | 2026-07-23 |
 | unit | [奸角兽](factions/千子/units/tzaangors.md) |  | 2026-07-23 |
 | unit | [奸角兽开悟者](factions/千子/units/tzaangor-enlightened.md) |  | 2026-07-23 |
 | unit | [奸角兽萨满](factions/千子/units/tzaangor-shaman.md) |  | 2026-07-23 |
 | unit | [尖啸魔](factions/千子/units/screamers.md) |  | 2026-07-23 |
 | unit | [巫师](factions/千子/units/sorcerer.md) |  | 2026-07-23 |
+| unit | [有翼奸奇恶魔王子](factions/千子/units/daemon-prince-of-tzeentch-with-wings.md) |  | 2026-07-23 |
+| unit | [歼灭者型猎食者坦克](factions/千子/units/chaos-predator-annihilator.md) |  | 2026-07-23 |
+| unit | [混沌兰德掠袭者](factions/千子/units/chaos-land-raider.md) |  | 2026-07-23 |
+| unit | [混沌卵](factions/千子/units/chaos-spawn.md) |  | 2026-07-23 |
 | unit | [混沌维护者突击炮](factions/千子/units/chaos-vindicator.md) |  | 2026-07-23 |
 | unit | [火妖](factions/千子/units/flamers.md) |  | 2026-07-23 |
 | unit | [炼狱之主](factions/千子/units/infernal-master.md) |  | 2026-07-23 |
+| unit | [犀牛装甲车](factions/千子/units/chaos-rhino.md) |  | 2026-07-23 |
+| unit | [破坏者型猎食者坦克](factions/千子/units/chaos-predator-destructor.md) |  | 2026-07-23 |
 | unit | [粉惧妖](factions/千子/units/pink-horrors.md) |  | 2026-07-23 |
 | unit | [红字战士](factions/千子/units/rubric-marines.md) |  | 2026-07-23 |
 | unit | [红魔马格努斯](factions/千子/units/magnus-the-red.md) |  | 2026-07-23 |
 | unit | [终结者巫师](factions/千子/units/sorcerer-in-terminator-armour.md) |  | 2026-07-23 |
 | unit | [蓝惧妖](factions/千子/units/blue-horrors.md) |  | 2026-07-23 |
 | unit | [装备命运掌握者巨弓的奸角兽开悟者](factions/千子/units/tzaangor-enlightened-with-fatecaster-greatbows.md) |  | 2026-07-23 |
+| unit | [重锤魔](factions/千子/units/maulerfiend.md) |  | 2026-07-23 |
+| unit | [铸造魔](factions/千子/units/forgefiend.md) |  | 2026-07-23 |
 | unit | [阿里曼](factions/千子/units/ahriman.md) |  | 2026-07-23 |
 | unit | [高阶巫师](factions/千子/units/exalted-sorcerer.md) |  | 2026-07-23 |
 
@@ -171,9 +171,6 @@ _Last updated: 2026-07-23 12:10 UTC_
 | unit | [Blood Slaughterer](factions/吞世者/units/blood-slaughterer.md) |  | 2026-07-23 |
 | unit | [Cerberus](factions/吞世者/units/cerberus.md) |  | 2026-07-23 |
 | unit | [Chaos Thunderhawk](factions/吞世者/units/chaos-thunderhawk.md) |  | 2026-07-23 |
-| unit | [Daemon Prince of Khorne](factions/吞世者/units/daemon-prince-of-khorne.md) |  | 2026-07-23 |
-| unit | [Daemon Prince of Khorne with Wings](factions/吞世者/units/daemon-prince-of-khorne-with-wings.md) |  | 2026-07-23 |
-| unit | [Defiler](factions/吞世者/units/defiler.md) |  | 2026-07-23 |
 | unit | [Deredeo Dreadnought](factions/吞世者/units/deredeo-dreadnought.md) |  | 2026-07-23 |
 | unit | [Falchion](factions/吞世者/units/falchion.md) |  | 2026-07-23 |
 | unit | [Fellblade](factions/吞世者/units/fellblade.md) |  | 2026-07-23 |
@@ -186,7 +183,6 @@ _Last updated: 2026-07-23 12:10 UTC_
 | unit | [Land Raider Achilles](factions/吞世者/units/land-raider-achilles.md) |  | 2026-07-23 |
 | unit | [Land Raider Proteus](factions/吞世者/units/land-raider-proteus.md) |  | 2026-07-23 |
 | unit | [Leviathan Dreadnought](factions/吞世者/units/leviathan-dreadnought.md) |  | 2026-07-23 |
-| unit | [Lord on Juggernaut](factions/吞世者/units/lord-on-juggernaut.md) |  | 2026-07-23 |
 | unit | [Mastodon](factions/吞世者/units/mastodon.md) |  | 2026-07-23 |
 | unit | [Rapier Carrier](factions/吞世者/units/rapier-carrier.md) |  | 2026-07-23 |
 | unit | [Relic Contemptor Dreadnought](factions/吞世者/units/relic-contemptor-dreadnought.md) |  | 2026-07-23 |
@@ -200,6 +196,7 @@ _Last updated: 2026-07-23 12:10 UTC_
 | unit | [Typhon](factions/吞世者/units/typhon.md) |  | 2026-07-23 |
 | unit | [Whirlwind Scorpius](factions/吞世者/units/whirlwind-scorpius.md) |  | 2026-07-23 |
 | unit | [Xiphon Interceptor](factions/吞世者/units/xiphon-interceptor.md) |  | 2026-07-23 |
+| unit | [亵渎者](factions/吞世者/units/defiler.md) |  | 2026-07-23 |
 | unit | [八缚者](factions/吞世者/units/eightbound.md) |  | 2026-07-23 |
 | unit | [嗜血狂魔](factions/吞世者/units/bloodthirster.md) |  | 2026-07-23 |
 | unit | [因维卡图斯尊主](factions/吞世者/units/lord-invocatus.md) |  | 2026-07-23 |
@@ -207,10 +204,12 @@ _Last updated: 2026-07-23 12:10 UTC_
 | unit | [地狱飞龙](factions/吞世者/units/heldrake.md) |  | 2026-07-23 |
 | unit | [安格隆](factions/吞世者/units/angron.md) |  | 2026-07-23 |
 | unit | [帝皇之子混沌终结者](factions/吞世者/units/chaos-terminators.md) |  | 2026-07-23 |
+| unit | [恐虐恶魔王子](factions/吞世者/units/daemon-prince-of-khorne.md) |  | 2026-07-23 |
 | unit | [恐虐狂战士](factions/吞世者/units/khorne-berzerkers.md) |  | 2026-07-23 |
 | unit | [恐虐颅骨之主](factions/吞世者/units/khorne-lord-of-skulls.md) |  | 2026-07-23 |
 | unit | [放血鬼](factions/吞世者/units/bloodletters.md) |  | 2026-07-23 |
 | unit | [斯卡布兰德](factions/吞世者/units/skarbrand.md) |  | 2026-07-23 |
+| unit | [有翼恐虐恶魔王子](factions/吞世者/units/daemon-prince-of-khorne-with-wings.md) |  | 2026-07-23 |
 | unit | [枭首魔将](factions/吞世者/units/master-of-executions.md) |  | 2026-07-23 |
 | unit | [歼灭者型猎食者坦克](factions/吞世者/units/chaos-predator-annihilator.md) |  | 2026-07-23 |
 | unit | [洒血狂](factions/吞世者/units/goremongers.md) |  | 2026-07-23 |
@@ -224,6 +223,7 @@ _Last updated: 2026-07-23 12:10 UTC_
 | unit | [血猎犬](factions/吞世者/units/flesh-hounds.md) |  | 2026-07-23 |
 | unit | [裂伤者](factions/吞世者/units/jakhals.md) |  | 2026-07-23 |
 | unit | [重锤魔](factions/吞世者/units/maulerfiend.md) |  | 2026-07-23 |
+| unit | [铁甲兽领主](factions/吞世者/units/lord-on-juggernaut.md) |  | 2026-07-23 |
 | unit | [铸造魔](factions/吞世者/units/forgefiend.md) |  | 2026-07-23 |
 | unit | [高阶八缚者](factions/吞世者/units/exalted-eightbound.md) |  | 2026-07-23 |
 
@@ -240,21 +240,17 @@ _Last updated: 2026-07-23 12:10 UTC_
 | unit | [Crassus](factions/基因窃取者教派/units/crassus.md) |  | 2026-07-23 |
 | unit | [Death Korps Grenadier Squad](factions/基因窃取者教派/units/death-korps-grenadier-squad.md) |  | 2026-07-23 |
 | unit | [Death Rider Commissar](factions/基因窃取者教派/units/death-rider-commissar.md) |  | 2026-07-23 |
-| unit | [Deathleaper](factions/基因窃取者教派/units/deathleaper.md) |  | 2026-07-23 |
 | unit | [Dominus Armoured Siege Bombard](factions/基因窃取者教派/units/dominus-armoured-siege-bombard.md) |  | 2026-07-23 |
 | unit | [Earthshaker Carriage Battery](factions/基因窃取者教派/units/earthshaker-carriage-battery.md) |  | 2026-07-23 |
 | unit | [Earthshaker Platform](factions/基因窃取者教派/units/earthshaker-platform.md) |  | 2026-07-23 |
 | unit | [Elysian Drop Sentinel](factions/基因窃取者教派/units/elysian-drop-sentinel.md) |  | 2026-07-23 |
 | unit | [Elysian Sniper Squad](factions/基因窃取者教派/units/elysian-sniper-squad.md) |  | 2026-07-23 |
-| unit | [Gargoyles](factions/基因窃取者教派/units/gargoyles.md) |  | 2026-07-23 |
 | unit | [Gorgon Heavy Transport](factions/基因窃取者教派/units/gorgon-heavy-transport.md) |  | 2026-07-23 |
 | unit | [Griffon Mortar Carrier](factions/基因窃取者教派/units/griffon-mortar-carrier.md) |  | 2026-07-23 |
 | unit | [Hades Breaching Drill](factions/基因窃取者教派/units/hades-breaching-drill.md) |  | 2026-07-23 |
 | unit | [Heavy Mortar Team](factions/基因窃取者教派/units/heavy-mortar-team.md) |  | 2026-07-23 |
 | unit | [Heavy Quad Launcher Team](factions/基因窃取者教派/units/heavy-quad-launcher-team.md) |  | 2026-07-23 |
 | unit | [Hydra Platform](factions/基因窃取者教派/units/hydra-platform.md) |  | 2026-07-23 |
-| unit | [Hyperadapted Raveners](factions/基因窃取者教派/units/hyperadapted-raveners.md) |  | 2026-07-23 |
-| unit | [Lictor](factions/基因窃取者教派/units/lictor.md) |  | 2026-07-23 |
 | unit | [Macharius](factions/基因窃取者教派/units/macharius.md) |  | 2026-07-23 |
 | unit | [Macharius Omega](factions/基因窃取者教派/units/macharius-omega.md) |  | 2026-07-23 |
 | unit | [Macharius Vanquisher](factions/基因窃取者教派/units/macharius-vanquisher.md) |  | 2026-07-23 |
@@ -264,17 +260,13 @@ _Last updated: 2026-07-23 12:10 UTC_
 | unit | [Malcador Defender](factions/基因窃取者教派/units/malcador-defender.md) |  | 2026-07-23 |
 | unit | [Malcador Infernus](factions/基因窃取者教派/units/malcador-infernus.md) |  | 2026-07-23 |
 | unit | [Manticore Platform](factions/基因窃取者教派/units/manticore-platform.md) |  | 2026-07-23 |
-| unit | [Mawloc](factions/基因窃取者教派/units/mawloc.md) |  | 2026-07-23 |
 | unit | [Medusa Carriage Battery](factions/基因窃取者教派/units/medusa-carriage-battery.md) |  | 2026-07-23 |
 | unit | [Minotaur](factions/基因窃取者教派/units/minotaur.md) |  | 2026-07-23 |
 | unit | [Mukaali Riders](factions/基因窃取者教派/units/mukaali-riders.md) |  | 2026-07-23 |
 | unit | [Munitorum Servitors](factions/基因窃取者教派/units/munitorum-servitors.md) |  | 2026-07-23 |
-| unit | [Neurolictor](factions/基因窃取者教派/units/neurolictor.md) |  | 2026-07-23 |
-| unit | [Parasite Of Mortrex](factions/基因窃取者教派/units/parasite-of-mortrex.md) |  | 2026-07-23 |
 | unit | [Praetor](factions/基因窃取者教派/units/praetor.md) |  | 2026-07-23 |
 | unit | [Quartermaster Cadre Squad](factions/基因窃取者教派/units/quartermaster-cadre-squad.md) |  | 2026-07-23 |
 | unit | [Rapier Laser Destroyer Battery](factions/基因窃取者教派/units/rapier-laser-destroyer-battery.md) |  | 2026-07-23 |
-| unit | [Raveners](factions/基因窃取者教派/units/raveners.md) |  | 2026-07-23 |
 | unit | [Regimental Attachés](factions/基因窃取者教派/units/regimental-attachés.md) |  | 2026-07-23 |
 | unit | [Sabre Weapons Battery](factions/基因窃取者教派/units/sabre-weapons-battery.md) |  | 2026-07-23 |
 | unit | [Salamander Command Vehicle](factions/基因窃取者教派/units/salamander-command-vehicle.md) |  | 2026-07-23 |
@@ -287,14 +279,8 @@ _Last updated: 2026-07-23 12:10 UTC_
 | unit | [Tauros Assault Vehicle](factions/基因窃取者教派/units/tauros-assault-vehicle.md) |  | 2026-07-23 |
 | unit | [Tauros Venator](factions/基因窃取者教派/units/tauros-venator.md) |  | 2026-07-23 |
 | unit | [Tectonic Fragdrill](factions/基因窃取者教派/units/tectonic-fragdrill.md) |  | 2026-07-23 |
-| unit | [The Red Terror](factions/基因窃取者教派/units/the-red-terror.md) |  | 2026-07-23 |
 | unit | [Trojan Support Vehicle](factions/基因窃取者教派/units/trojan-support-vehicle.md) |  | 2026-07-23 |
-| unit | [Trygon](factions/基因窃取者教派/units/trygon.md) |  | 2026-07-23 |
-| unit | [Tyrannocyte](factions/基因窃取者教派/units/tyrannocyte.md) |  | 2026-07-23 |
 | unit | [Valdor](factions/基因窃取者教派/units/valdor.md) |  | 2026-07-23 |
-| unit | [Von Ryan’s Leapers](factions/基因窃取者教派/units/von-ryans-leapers.md) |  | 2026-07-23 |
-| unit | [Winged Hive Tyrant](factions/基因窃取者教派/units/winged-hive-tyrant.md) |  | 2026-07-23 |
-| unit | [Winged Tyranid Prime](factions/基因窃取者教派/units/winged-tyranid-prime.md) |  | 2026-07-23 |
 | unit | [【传奇】地狱之末](factions/基因窃取者教派/units/hells-last.md) |  | 2026-07-23 |
 | unit | [主教](factions/基因窃取者教派/units/magus.md) |  | 2026-07-23 |
 | unit | [九头蛇高射炮](factions/基因窃取者教派/units/hydra.md) |  | 2026-07-23 |
@@ -304,6 +290,8 @@ _Last updated: 2026-07-23 12:10 UTC_
 | unit | [克里格指挥组](factions/基因窃取者教派/units/krieg-command-squad.md) |  | 2026-07-23 |
 | unit | [克里格死兵队](factions/基因窃取者教派/units/death-korps-of-krieg.md) |  | 2026-07-23 |
 | unit | [克里格重型武器小队](factions/基因窃取者教派/units/krieg-heavy-weapons-squad.md) |  | 2026-07-23 |
+| unit | [冯·瑞恩跃袭者](factions/基因窃取者教派/units/von-ryans-leapers.md) |  | 2026-07-23 |
+| unit | [刀斧虫](factions/基因窃取者教派/units/lictor.md) |  | 2026-07-23 |
 | unit | [半人马快速突击战车](factions/基因窃取者教派/units/centaur-rsv.md) |  | 2026-07-23 |
 | unit | [卡塔昌丛林战士](factions/基因窃取者教派/units/catachan-jungle-fighters.md) |  | 2026-07-23 |
 | unit | [卡塔昌指挥组](factions/基因窃取者教派/units/catachan-command-squad.md) |  | 2026-07-23 |
@@ -319,22 +307,29 @@ _Last updated: 2026-07-23 12:10 UTC_
 | unit | [地狱之锤](factions/基因窃取者教派/units/hellhammer.md) |  | 2026-07-23 |
 | unit | [地狱犬喷射车](factions/基因窃取者教派/units/hellhound.md) |  | 2026-07-23 |
 | unit | [奇美拉装甲车](factions/基因窃取者教派/units/chimera.md) |  | 2026-07-23 |
+| unit | [孢子舱](factions/基因窃取者教派/units/tyrannocyte.md) |  | 2026-07-23 |
 | unit | [宣政使](factions/基因窃取者教派/units/clamavus.md) |  | 2026-07-23 |
 | unit | [影剑](factions/基因窃取者教派/units/shadowsword.md) |  | 2026-07-23 |
 | unit | [指战使](factions/基因窃取者教派/units/nexos.md) |  | 2026-07-23 |
 | unit | [掌旗侍僧](factions/基因窃取者教派/units/acolyte-iconward.md) |  | 2026-07-23 |
+| unit | [掘蟒](factions/基因窃取者教派/units/trygon.md) |  | 2026-07-23 |
+| unit | [摩崔克斯寄生虫](factions/基因窃取者教派/units/parasite-of-mortrex.md) |  | 2026-07-23 |
 | unit | [教团卫士](factions/基因窃取者教派/units/locus.md) |  | 2026-07-23 |
 | unit | [新血教徒](factions/基因窃取者教派/units/neophyte-hybrids.md) |  | 2026-07-23 |
 | unit | [族长](factions/基因窃取者教派/units/patriarch.md) |  | 2026-07-23 |
+| unit | [有翼泰伦王虫](factions/基因窃取者教派/units/winged-tyranid-prime.md) |  | 2026-07-23 |
+| unit | [有翼虫巢暴君](factions/基因窃取者教派/units/winged-hive-tyrant.md) |  | 2026-07-23 |
 | unit | [末日之锤](factions/基因窃取者教派/units/doomhammer.md) |  | 2026-07-23 |
 | unit | [杀手种](factions/基因窃取者教派/units/kelermorph.md) |  | 2026-07-23 |
 | unit | [歌利亚卡车](factions/基因窃取者教派/units/goliath-truck.md) |  | 2026-07-23 |
 | unit | [歌利亚碎石车](factions/基因窃取者教派/units/goliath-rockgrinder.md) |  | 2026-07-23 |
 | unit | [死亡直击导弹车](factions/基因窃取者教派/units/deathstrike.md) |  | 2026-07-23 |
+| unit | [死亡跃袭者](factions/基因窃取者教派/units/deathleaper.md) |  | 2026-07-23 |
 | unit | [死亡骑兵](factions/基因窃取者教派/units/death-riders.md) |  | 2026-07-23 |
 | unit | [毁灭之剑](factions/基因窃取者教派/units/banesword.md) |  | 2026-07-23 |
 | unit | [毁灭之锤](factions/基因窃取者教派/units/banehammer.md) |  | 2026-07-23 |
 | unit | [毒刃](factions/基因窃取者教派/units/baneblade.md) |  | 2026-07-23 |
+| unit | [沙蟒](factions/基因窃取者教派/units/mawloc.md) |  | 2026-07-23 |
 | unit | [混血侍僧装备手持火焰喷射器](factions/基因窃取者教派/units/acolyte-hybrids-with-hand-flamers.md) |  | 2026-07-23 |
 | unit | [混血侍僧装备自动手枪](factions/基因窃取者教派/units/acolyte-hybrids-with-autopistols.md) |  | 2026-07-23 |
 | unit | [混血变种](factions/基因窃取者教派/units/hybrid-metamorphs.md) |  | 2026-07-23 |
@@ -343,14 +338,19 @@ _Last updated: 2026-07-23 12:10 UTC_
 | unit | [独眼巨人爆破车](factions/基因窃取者教派/units/cyclops-demolition-vehicle.md) |  | 2026-07-23 |
 | unit | [畸变主宰](factions/基因窃取者教派/units/abominant.md) |  | 2026-07-23 |
 | unit | [畸变体](factions/基因窃取者教派/units/aberrants.md) |  | 2026-07-23 |
+| unit | [石像鬼](factions/基因窃取者教派/units/gargoyles.md) |  | 2026-07-23 |
 | unit | [石化蜥蜴自行火炮](factions/基因窃取者教派/units/basilisk.md) |  | 2026-07-23 |
 | unit | [神盾防御墙](factions/基因窃取者教派/units/aegis-defence-line.md) |  | 2026-07-23 |
+| unit | [神经刀斧虫](factions/基因窃取者教派/units/neurolictor.md) |  | 2026-07-23 |
+| unit | [红色惧物](factions/基因窃取者教派/units/the-red-terror.md) |  | 2026-07-23 |
 | unit | [纯血基因窃取者](factions/基因窃取者教派/units/purestrain-genestealers.md) |  | 2026-07-23 |
 | unit | [罗格多恩坦克](factions/基因窃取者教派/units/rogal-dorn-battle-tank.md) |  | 2026-07-23 |
 | unit | [罗格多恩指挥官](factions/基因窃取者教派/units/rogal-dorn-commander.md) |  | 2026-07-23 |
+| unit | [蛇虫](factions/基因窃取者教派/units/raveners.md) |  | 2026-07-23 |
 | unit | [蝎尾狮火箭炮](factions/基因窃取者教派/units/manticore.md) |  | 2026-07-23 |
 | unit | [装甲哨兵](factions/基因窃取者教派/units/armoured-sentinels.md) |  | 2026-07-23 |
 | unit | [豺狼猎首](factions/基因窃取者教派/units/jackal-alphus.md) |  | 2026-07-23 |
+| unit | [超适应蛇虫](factions/基因窃取者教派/units/hyperadapted-raveners.md) |  | 2026-07-23 |
 | unit | [还原爆破使](factions/基因窃取者教派/units/reductus-saboteur.md) |  | 2026-07-23 |
 | unit | [野战炮兵](factions/基因窃取者教派/units/field-ordnance-battery.md) |  | 2026-07-23 |
 | unit | [野牛装甲车](factions/基因窃取者教派/units/taurox.md) |  | 2026-07-23 |
@@ -444,12 +444,8 @@ _Last updated: 2026-07-23 12:10 UTC_
 
 | 类型 | 名称 | 摘要 | Updated |
 |------|------|------|---------|
-| unit | [Corvus Blackstar](factions/帝国特勤/units/corvus-blackstar.md) |  | 2026-07-23 |
 | unit | [Daemonhost](factions/帝国特勤/units/daemonhost.md) |  | 2026-07-23 |
 | unit | [Damned Legionnaires](factions/帝国特勤/units/damned-legionnaires.md) |  | 2026-07-23 |
-| unit | [Deathwatch Terminator Squad](factions/帝国特勤/units/deathwatch-terminator-squad.md) |  | 2026-07-23 |
-| unit | [Fortis Kill Team](factions/帝国特勤/units/fortis-kill-team.md) |  | 2026-07-23 |
-| unit | [Indomitor Kill Team](factions/帝国特勤/units/indomitor-kill-team.md) |  | 2026-07-23 |
 | unit | [Inquisitor Eisenhorn](factions/帝国特勤/units/inquisitor-eisenhorn.md) |  | 2026-07-23 |
 | unit | [Inquisitor In Terminator Armour](factions/帝国特勤/units/inquisitor-in-terminator-armour.md) |  | 2026-07-23 |
 | unit | [Inquisitor Karamazov](factions/帝国特勤/units/inquisitor-karamazov.md) |  | 2026-07-23 |
@@ -457,19 +453,18 @@ _Last updated: 2026-07-23 12:10 UTC_
 | unit | [Janus Draik](factions/帝国特勤/units/janus-draik.md) |  | 2026-07-23 |
 | unit | [Jokaero Weaponsmith](factions/帝国特勤/units/jokaero-weaponsmith.md) |  | 2026-07-23 |
 | unit | [Kill Team Cassius](factions/帝国特勤/units/kill-team-cassius.md) |  | 2026-07-23 |
-| unit | [Ministorum Priest](factions/帝国特勤/units/ministorum-priest.md) |  | 2026-07-23 |
 | unit | [Neyam Shai Murad](factions/帝国特勤/units/neyam-shai-murad.md) |  | 2026-07-23 |
 | unit | [Proteus Kill Team](factions/帝国特勤/units/proteus-kill-team.md) |  | 2026-07-23 |
-| unit | [Sanctifiers](factions/帝国特勤/units/sanctifiers.md) |  | 2026-07-23 |
-| unit | [Spectrus Kill Team](factions/帝国特勤/units/spectrus-kill-team.md) |  | 2026-07-23 |
 | unit | [UR-025](factions/帝国特勤/units/ur-025.md) |  | 2026-07-23 |
 | unit | [Veteran Bike Squad](factions/帝国特勤/units/veteran-bike-squad.md) |  | 2026-07-23 |
-| unit | [Watch Captain Artemis](factions/帝国特勤/units/watch-captain-artemis.md) |  | 2026-07-23 |
-| unit | [Watch Master](factions/帝国特勤/units/watch-master.md) |  | 2026-07-23 |
+| unit | [不屈杀戮小队](factions/帝国特勤/units/indomitor-kill-team.md) |  | 2026-07-23 |
 | unit | [丘里克斯刺客](factions/帝国特勤/units/culexus-assassin.md) |  | 2026-07-23 |
 | unit | [冲覆者小队](factions/帝国特勤/units/subductor-squad.md) |  | 2026-07-23 |
+| unit | [净化者杀戮小队](factions/帝国特勤/units/sanctifiers.md) |  | 2026-07-23 |
 | unit | [卡里杜斯刺客](factions/帝国特勤/units/callidus-assassin.md) |  | 2026-07-23 |
 | unit | [天鹰杀戮小队](factions/帝国特勤/units/aquila-kill-team.md) |  | 2026-07-23 |
+| unit | [守望堡主](factions/帝国特勤/units/watch-master.md) |  | 2026-07-23 |
+| unit | [守望连长阿耳忒弥斯](factions/帝国特勤/units/watch-captain-artemis.md) |  | 2026-07-23 |
 | unit | [审判官](factions/帝国特勤/units/inquisitor.md) |  | 2026-07-23 |
 | unit | [审判官克提兹](factions/帝国特勤/units/inquisitor-coteaz.md) |  | 2026-07-23 |
 | unit | [审判官克罗伊尔](factions/帝国特勤/units/inquisitor-kroyle.md) |  | 2026-07-23 |
@@ -483,13 +478,18 @@ _Last updated: 2026-07-23 12:10 UTC_
 | unit | [强征小队](factions/帝国特勤/units/exaction-squad.md) |  | 2026-07-23 |
 | unit | [战斗修女小队](factions/帝国特勤/units/sisters-of-battle-squad.md) |  | 2026-07-23 |
 | unit | [战斗修女献祭者装甲车](factions/帝国特勤/units/sisters-of-battle-immolator.md) |  | 2026-07-23 |
+| unit | [教廷牧师](factions/帝国特勤/units/ministorum-priest.md) |  | 2026-07-23 |
 | unit | [文迪卡刺客](factions/帝国特勤/units/vindicare-assassin.md) |  | 2026-07-23 |
+| unit | [无形杀戮小队](factions/帝国特勤/units/spectrus-kill-team.md) |  | 2026-07-23 |
 | unit | [武装船兵](factions/帝国特勤/units/voidsmen-at-arms.md) |  | 2026-07-23 |
 | unit | [死亡守望杀戮小队](factions/帝国特勤/units/deathwatch-kill-team.md) |  | 2026-07-23 |
+| unit | [死亡守望终结者小队](factions/帝国特勤/units/deathwatch-terminator-squad.md) |  | 2026-07-23 |
 | unit | [灰骑士终结者小队](factions/帝国特勤/units/grey-knights-terminator-squad.md) |  | 2026-07-23 |
+| unit | [至强杀戮小队](factions/帝国特勤/units/fortis-kill-team.md) |  | 2026-07-23 |
 | unit | [艾弗森刺客](factions/帝国特勤/units/eversor-assassin.md) |  | 2026-07-23 |
 | unit | [行商团队](factions/帝国特勤/units/rogue-trader-entourage.md) |  | 2026-07-23 |
 | unit | [警戒者小队](factions/帝国特勤/units/vigilant-squad.md) |  | 2026-07-23 |
+| unit | [黑星渡鸦](factions/帝国特勤/units/corvus-blackstar.md) |  | 2026-07-23 |
 
 ### 帝国骑士
 
@@ -528,35 +528,34 @@ _Last updated: 2026-07-23 12:10 UTC_
 
 | 类型 | 名称 | 摘要 | Updated |
 |------|------|------|---------|
-| unit | [Chaos Land Raider](factions/帝皇之子/units/chaos-land-raider.md) |  | 2026-07-23 |
-| unit | [Chaos Rhino](factions/帝皇之子/units/chaos-rhino.md) |  | 2026-07-23 |
-| unit | [Chaos Spawn](factions/帝皇之子/units/chaos-spawn.md) |  | 2026-07-23 |
-| unit | [Chaos Terminators](factions/帝皇之子/units/chaos-terminators.md) |  | 2026-07-23 |
-| unit | [Defiler](factions/帝皇之子/units/defiler.md) |  | 2026-07-23 |
-| unit | [Flawless Blades](factions/帝皇之子/units/flawless-blades.md) |  | 2026-07-23 |
-| unit | [Heldrake](factions/帝皇之子/units/heldrake.md) |  | 2026-07-23 |
-| unit | [Maulerfiend](factions/帝皇之子/units/maulerfiend.md) |  | 2026-07-23 |
-| unit | [Noise Marines](factions/帝皇之子/units/noise-marines.md) |  | 2026-07-23 |
-| unit | [Sorcerer](factions/帝皇之子/units/sorcerer.md) |  | 2026-07-23 |
 | unit | [不灭者卢修斯](factions/帝皇之子/units/lucius-the-eternal.md) |  | 2026-07-23 |
+| unit | [亵渎者](factions/帝皇之子/units/defiler.md) |  | 2026-07-23 |
 | unit | [噪音领主](factions/帝皇之子/units/lord-kakophonist.md) |  | 2026-07-23 |
+| unit | [地狱飞龙](factions/帝皇之子/units/heldrake.md) |  | 2026-07-23 |
 | unit | [夏拉希·魔灾](factions/帝皇之子/units/shalaxi-helbane.md) |  | 2026-07-23 |
 | unit | [守密者](factions/帝皇之子/units/keeper-of-secrets.md) |  | 2026-07-23 |
 | unit | [寻觅者](factions/帝皇之子/units/seekers.md) |  | 2026-07-23 |
+| unit | [巫师](factions/帝皇之子/units/sorcerer.md) |  | 2026-07-23 |
+| unit | [帝皇之子混沌终结者](factions/帝皇之子/units/chaos-terminators.md) |  | 2026-07-23 |
 | unit | [施虐者](factions/帝皇之子/units/tormentors.md) |  | 2026-07-23 |
+| unit | [无瑕之刃](factions/帝皇之子/units/flawless-blades.md) |  | 2026-07-23 |
 | unit | [有翼色孽恶魔王子](factions/帝皇之子/units/daemon-prince-of-slaanesh-with-wings.md) |  | 2026-07-23 |
 | unit | [极乐领主](factions/帝皇之子/units/lord-exultant.md) |  | 2026-07-23 |
 | unit | [欢愉魔](factions/帝皇之子/units/fiends.md) |  | 2026-07-23 |
+| unit | [混沌兰德掠袭者](factions/帝皇之子/units/chaos-land-raider.md) |  | 2026-07-23 |
+| unit | [混沌卵](factions/帝皇之子/units/chaos-spawn.md) |  | 2026-07-23 |
+| unit | [犀牛装甲车](factions/帝皇之子/units/chaos-rhino.md) |  | 2026-07-23 |
 | unit | [破戒者](factions/帝皇之子/units/infractors.md) |  | 2026-07-23 |
 | unit | [福格瑞姆，帝皇之子恶魔原体](factions/帝皇之子/units/fulgrim.md) |  | 2026-07-23 |
 | unit | [色孽恶魔王子](factions/帝皇之子/units/daemon-prince-of-slaanesh.md) |  | 2026-07-23 |
+| unit | [重锤魔](factions/帝皇之子/units/maulerfiend.md) |  | 2026-07-23 |
+| unit | [音爆战士](factions/帝皇之子/units/noise-marines.md) |  | 2026-07-23 |
 | unit | [魅魔](factions/帝皇之子/units/daemonettes.md) |  | 2026-07-23 |
 
 ### 帝皇卫队
 
 | 类型 | 名称 | 摘要 | Updated |
 |------|------|------|---------|
-| unit | [Shield-captain](factions/帝皇卫队/units/shield-captain.md) |  | 2026-07-23 |
 | unit | [伽拉图斯蔑视者无畏机甲](factions/帝皇卫队/units/contemptor-galatus-dreadnought.md) |  | 2026-07-23 |
 | unit | [克洛努斯反重力运兵车](factions/帝皇卫队/units/coronus-grav-carrier.md) |  | 2026-07-23 |
 | unit | [剑锋冠军](factions/帝皇卫队/units/blade-champion.md) |  | 2026-07-23 |
@@ -573,6 +572,7 @@ _Last updated: 2026-07-23 12:10 UTC_
 | unit | [猎户座强袭炮艇](factions/帝皇卫队/units/orion-assault-dropship.md) |  | 2026-07-23 |
 | unit | [瓦雷利安连长](factions/帝皇卫队/units/valerian.md) |  | 2026-07-23 |
 | unit | [百骑长](factions/帝皇卫队/units/knight-centura.md) |  | 2026-07-23 |
+| unit | [盾卫连长](factions/帝皇卫队/units/shield-captain.md) |  | 2026-07-23 |
 | unit | [神圣兰德掠袭者坦克](factions/帝皇卫队/units/venerable-land-raider.md) |  | 2026-07-23 |
 | unit | [神圣蔑视者无畏机甲](factions/帝皇卫队/units/venerable-contemptor-dreadnought.md) |  | 2026-07-23 |
 | unit | [神鸟反重力坦克](factions/帝皇卫队/units/caladius-grav-tank.md) |  | 2026-07-23 |
@@ -597,9 +597,9 @@ _Last updated: 2026-07-23 12:10 UTC_
 | unit | [Crusaders](factions/战斗修女/units/crusaders.md) |  | 2026-07-23 |
 | unit | [Death Cult Assassins](factions/战斗修女/units/death-cult-assassins.md) |  | 2026-07-23 |
 | unit | [Repressor](factions/战斗修女/units/repressor.md) |  | 2026-07-23 |
-| unit | [Sororitas Rhino](factions/战斗修女/units/sororitas-rhino.md) |  | 2026-07-23 |
 | unit | [书记修女](factions/战斗修女/units/dialogus.md) |  | 2026-07-23 |
 | unit | [仇天使小队](factions/战斗修女/units/retributor-squad.md) |  | 2026-07-23 |
+| unit | [修女会犀牛装甲车](factions/战斗修女/units/sororitas-rhino.md) |  | 2026-07-23 |
 | unit | [净化者杀戮小队](factions/战斗修女/units/sanctifiers.md) |  | 2026-07-23 |
 | unit | [凯旋之圣凯瑟琳](factions/战斗修女/units/triumph-of-saint-katherine.md) |  | 2026-07-23 |
 | unit | [医疗修女](factions/战斗修女/units/hospitaller.md) |  | 2026-07-23 |
@@ -660,68 +660,28 @@ _Last updated: 2026-07-23 12:10 UTC_
 
 | 类型 | 名称 | 摘要 | Updated |
 |------|------|------|---------|
-| unit | [Aegis Defence Line](factions/星界军/units/aegis-defence-line.md) |  | 2026-07-23 |
 | unit | [Aquila Lander](factions/星界军/units/aquila-lander.md) |  | 2026-07-23 |
 | unit | [Arkurian Stormhammer](factions/星界军/units/arkurian-stormhammer.md) |  | 2026-07-23 |
 | unit | [Armageddon-pattern Medusa](factions/星界军/units/armageddon-pattern-medusa.md) |  | 2026-07-23 |
-| unit | [Armoured Sentinels](factions/星界军/units/armoured-sentinels.md) |  | 2026-07-23 |
-| unit | [Artillery Team](factions/星界军/units/artillery-team.md) |  | 2026-07-23 |
 | unit | [Arvus Lighter](factions/星界军/units/arvus-lighter.md) |  | 2026-07-23 |
 | unit | [Atlas Recovery Vehicle](factions/星界军/units/atlas-recovery-vehicle.md) |  | 2026-07-23 |
-| unit | [Attilan Rough Riders](factions/星界军/units/attilan-rough-riders.md) |  | 2026-07-23 |
-| unit | [Baneblade](factions/星界军/units/baneblade.md) |  | 2026-07-23 |
-| unit | [Banehammer](factions/星界军/units/banehammer.md) |  | 2026-07-23 |
-| unit | [Banesword](factions/星界军/units/banesword.md) |  | 2026-07-23 |
-| unit | [Basilisk](factions/星界军/units/basilisk.md) |  | 2026-07-23 |
-| unit | [Cadian Castellan](factions/星界军/units/cadian-castellan.md) |  | 2026-07-23 |
-| unit | [Cadian Command Squad](factions/星界军/units/cadian-command-squad.md) |  | 2026-07-23 |
-| unit | [Cadian Heavy Weapons Squad](factions/星界军/units/cadian-heavy-weapons-squad.md) |  | 2026-07-23 |
-| unit | [Cadian Shock Troops](factions/星界军/units/cadian-shock-troops.md) |  | 2026-07-23 |
 | unit | [Carnodon](factions/星界军/units/carnodon.md) |  | 2026-07-23 |
-| unit | [Catachan Command Squad](factions/星界军/units/catachan-command-squad.md) |  | 2026-07-23 |
-| unit | [Catachan Heavy Weapons Squad](factions/星界军/units/catachan-heavy-weapons-squad.md) |  | 2026-07-23 |
-| unit | [Catachan Jungle Fighters](factions/星界军/units/catachan-jungle-fighters.md) |  | 2026-07-23 |
 | unit | [Centaur Light Carrier](factions/星界军/units/centaur-light-carrier.md) |  | 2026-07-23 |
-| unit | [Centaur RSV](factions/星界军/units/centaur-rsv.md) |  | 2026-07-23 |
-| unit | [Chimera](factions/星界军/units/chimera.md) |  | 2026-07-23 |
 | unit | [Colossus](factions/星界军/units/colossus.md) |  | 2026-07-23 |
 | unit | [Crassus](factions/星界军/units/crassus.md) |  | 2026-07-23 |
-| unit | [Cyclops Demolition Vehicle](factions/星界军/units/cyclops-demolition-vehicle.md) |  | 2026-07-23 |
 | unit | [Death Korps Grenadier Squad](factions/星界军/units/death-korps-grenadier-squad.md) |  | 2026-07-23 |
-| unit | [Death Korps Of Krieg](factions/星界军/units/death-korps-of-krieg.md) |  | 2026-07-23 |
 | unit | [Death Rider Commissar](factions/星界军/units/death-rider-commissar.md) |  | 2026-07-23 |
-| unit | [Death Riders](factions/星界军/units/death-riders.md) |  | 2026-07-23 |
-| unit | [Deathstrike](factions/星界军/units/deathstrike.md) |  | 2026-07-23 |
 | unit | [Dominus Armoured Siege Bombard](factions/星界军/units/dominus-armoured-siege-bombard.md) |  | 2026-07-23 |
-| unit | [Doomhammer](factions/星界军/units/doomhammer.md) |  | 2026-07-23 |
 | unit | [Earthshaker Carriage Battery](factions/星界军/units/earthshaker-carriage-battery.md) |  | 2026-07-23 |
 | unit | [Earthshaker Platform](factions/星界军/units/earthshaker-platform.md) |  | 2026-07-23 |
 | unit | [Elysian Drop Sentinel](factions/星界军/units/elysian-drop-sentinel.md) |  | 2026-07-23 |
 | unit | [Elysian Sniper Squad](factions/星界军/units/elysian-sniper-squad.md) |  | 2026-07-23 |
-| unit | [Field Ordnance Battery](factions/星界军/units/field-ordnance-battery.md) |  | 2026-07-23 |
 | unit | [Gorgon Heavy Transport](factions/星界军/units/gorgon-heavy-transport.md) |  | 2026-07-23 |
 | unit | [Griffon Mortar Carrier](factions/星界军/units/griffon-mortar-carrier.md) |  | 2026-07-23 |
 | unit | [Hades Breaching Drill](factions/星界军/units/hades-breaching-drill.md) |  | 2026-07-23 |
 | unit | [Heavy Mortar Team](factions/星界军/units/heavy-mortar-team.md) |  | 2026-07-23 |
 | unit | [Heavy Quad Launcher Team](factions/星界军/units/heavy-quad-launcher-team.md) |  | 2026-07-23 |
-| unit | [Hellhammer](factions/星界军/units/hellhammer.md) |  | 2026-07-23 |
-| unit | [Hellhound](factions/星界军/units/hellhound.md) |  | 2026-07-23 |
-| unit | [Hell’s Last](factions/星界军/units/hells-last.md) |  | 2026-07-23 |
-| unit | [Hippogriff AFV](factions/星界军/units/hippogriff-afv.md) |  | 2026-07-23 |
-| unit | [Hydra](factions/星界军/units/hydra.md) |  | 2026-07-23 |
 | unit | [Hydra Platform](factions/星界军/units/hydra-platform.md) |  | 2026-07-23 |
-| unit | [Kasrkin](factions/星界军/units/kasrkin.md) |  | 2026-07-23 |
-| unit | [Krieg Combat Engineers](factions/星界军/units/krieg-combat-engineers.md) |  | 2026-07-23 |
-| unit | [Krieg Command Squad](factions/星界军/units/krieg-command-squad.md) |  | 2026-07-23 |
-| unit | [Krieg Heavy Weapons Squad](factions/星界军/units/krieg-heavy-weapons-squad.md) |  | 2026-07-23 |
-| unit | [Leman Russ Battle Tank](factions/星界军/units/leman-russ-battle-tank.md) |  | 2026-07-23 |
-| unit | [Leman Russ Commander](factions/星界军/units/leman-russ-commander.md) |  | 2026-07-23 |
-| unit | [Leman Russ Demolisher](factions/星界军/units/leman-russ-demolisher.md) |  | 2026-07-23 |
-| unit | [Leman Russ Eradicator](factions/星界军/units/leman-russ-eradicator.md) |  | 2026-07-23 |
-| unit | [Leman Russ Executioner](factions/星界军/units/leman-russ-executioner.md) |  | 2026-07-23 |
-| unit | [Leman Russ Exterminator](factions/星界军/units/leman-russ-exterminator.md) |  | 2026-07-23 |
-| unit | [Leman Russ Punisher](factions/星界军/units/leman-russ-punisher.md) |  | 2026-07-23 |
-| unit | [Leman Russ Vanquisher](factions/星界军/units/leman-russ-vanquisher.md) |  | 2026-07-23 |
 | unit | [Macharius](factions/星界军/units/macharius.md) |  | 2026-07-23 |
 | unit | [Macharius Omega](factions/星界军/units/macharius-omega.md) |  | 2026-07-23 |
 | unit | [Macharius Vanquisher](factions/星界军/units/macharius-vanquisher.md) |  | 2026-07-23 |
@@ -730,70 +690,110 @@ _Last updated: 2026-07-23 12:10 UTC_
 | unit | [Malcador Annihilator](factions/星界军/units/malcador-annihilator.md) |  | 2026-07-23 |
 | unit | [Malcador Defender](factions/星界军/units/malcador-defender.md) |  | 2026-07-23 |
 | unit | [Malcador Infernus](factions/星界军/units/malcador-infernus.md) |  | 2026-07-23 |
-| unit | [Manticore](factions/星界军/units/manticore.md) |  | 2026-07-23 |
 | unit | [Manticore Platform](factions/星界军/units/manticore-platform.md) |  | 2026-07-23 |
 | unit | [Marauder Bomber](factions/星界军/units/marauder-bomber.md) |  | 2026-07-23 |
 | unit | [Marauder Destroyer](factions/星界军/units/marauder-destroyer.md) |  | 2026-07-23 |
 | unit | [Medusa Carriage Battery](factions/星界军/units/medusa-carriage-battery.md) |  | 2026-07-23 |
-| unit | [Ministorum Priest](factions/星界军/units/ministorum-priest.md) |  | 2026-07-23 |
 | unit | [Minotaur](factions/星界军/units/minotaur.md) |  | 2026-07-23 |
 | unit | [Mukaali Riders](factions/星界军/units/mukaali-riders.md) |  | 2026-07-23 |
 | unit | [Munitorum Servitors](factions/星界军/units/munitorum-servitors.md) |  | 2026-07-23 |
 | unit | [Praetor](factions/星界军/units/praetor.md) |  | 2026-07-23 |
-| unit | [Primaris Psyker](factions/星界军/units/primaris-psyker.md) |  | 2026-07-23 |
 | unit | [Provisionally Prepared](factions/星界军/units/provisionally-prepared.md) |  | 2026-07-23 |
 | unit | [Quartermaster Cadre Squad](factions/星界军/units/quartermaster-cadre-squad.md) |  | 2026-07-23 |
 | unit | [Rapier Laser Destroyer Battery](factions/星界军/units/rapier-laser-destroyer-battery.md) |  | 2026-07-23 |
 | unit | [Regimental Attachés](factions/星界军/units/regimental-attachés.md) |  | 2026-07-23 |
 | unit | [Rein And Raus](factions/星界军/units/rein-and-raus.md) |  | 2026-07-23 |
-| unit | [Rogal Dorn Battle Tank](factions/星界军/units/rogal-dorn-battle-tank.md) |  | 2026-07-23 |
-| unit | [Rogal Dorn Commander](factions/星界军/units/rogal-dorn-commander.md) |  | 2026-07-23 |
 | unit | [Sabre Weapons Battery](factions/星界军/units/sabre-weapons-battery.md) |  | 2026-07-23 |
 | unit | [Salamander Command Vehicle](factions/星界军/units/salamander-command-vehicle.md) |  | 2026-07-23 |
 | unit | [Salamander Scout Vehicle](factions/星界军/units/salamander-scout-vehicle.md) |  | 2026-07-23 |
-| unit | [Scout Sentinels](factions/星界军/units/scout-sentinels.md) |  | 2026-07-23 |
 | unit | [Sentinel Powerlifter](factions/星界军/units/sentinel-powerlifter.md) |  | 2026-07-23 |
 | unit | [Sergeant Harker](factions/星界军/units/sergeant-harker.md) |  | 2026-07-23 |
-| unit | [Shadowsword](factions/星界军/units/shadowsword.md) |  | 2026-07-23 |
 | unit | [Storm Chimera](factions/星界军/units/storm-chimera.md) |  | 2026-07-23 |
 | unit | [Stormblade](factions/星界军/units/stormblade.md) |  | 2026-07-23 |
-| unit | [Stormlord](factions/星界军/units/stormlord.md) |  | 2026-07-23 |
-| unit | [Stormsword](factions/星界军/units/stormsword.md) |  | 2026-07-23 |
 | unit | [Stygies Destroyer Tank Hunter](factions/星界军/units/stygies-destroyer-tank-hunter.md) |  | 2026-07-23 |
 | unit | [Tarantula Battery](factions/星界军/units/tarantula-battery.md) |  | 2026-07-23 |
 | unit | [Tauros Assault Vehicle](factions/星界军/units/tauros-assault-vehicle.md) |  | 2026-07-23 |
 | unit | [Tauros Venator](factions/星界军/units/tauros-venator.md) |  | 2026-07-23 |
-| unit | [Taurox](factions/星界军/units/taurox.md) |  | 2026-07-23 |
-| unit | [Taurox Prime](factions/星界军/units/taurox-prime.md) |  | 2026-07-23 |
 | unit | [Trojan Support Vehicle](factions/星界军/units/trojan-support-vehicle.md) |  | 2026-07-23 |
 | unit | [Valdor](factions/星界军/units/valdor.md) |  | 2026-07-23 |
 | unit | [Valkyrie Sky Talon](factions/星界军/units/valkyrie-sky-talon.md) |  | 2026-07-23 |
 | unit | [Vendetta Gunship](factions/星界军/units/vendetta-gunship.md) |  | 2026-07-23 |
 | unit | [Voss-pattern Lightning](factions/星界军/units/voss-pattern-lightning.md) |  | 2026-07-23 |
 | unit | [Vulture Gunship](factions/星界军/units/vulture-gunship.md) |  | 2026-07-23 |
-| unit | [Wyvern](factions/星界军/units/wyvern.md) |  | 2026-07-23 |
 | unit | [‘Iron Hand’ Straken](factions/星界军/units/iron-hand-straken.md) |  | 2026-07-23 |
+| unit | [【传奇】地狱之末](factions/星界军/units/hells-last.md) |  | 2026-07-23 |
+| unit | [九头蛇高射炮](factions/星界军/units/hydra.md) |  | 2026-07-23 |
 | unit | [亚瑞克政委](factions/星界军/units/commissar-yarrick.md) |  | 2026-07-23 |
+| unit | [侦查哨兵](factions/星界军/units/scout-sentinels.md) |  | 2026-07-23 |
 | unit | [保镖诺克](factions/星界军/units/nork-deddog.md) |  | 2026-07-23 |
 | unit | [克里德堡主](factions/星界军/units/ursula-creed.md) |  | 2026-07-23 |
+| unit | [克里格战斗工兵](factions/星界军/units/krieg-combat-engineers.md) |  | 2026-07-23 |
+| unit | [克里格指挥组](factions/星界军/units/krieg-command-squad.md) |  | 2026-07-23 |
+| unit | [克里格死兵队](factions/星界军/units/death-korps-of-krieg.md) |  | 2026-07-23 |
+| unit | [克里格重型武器小队](factions/星界军/units/krieg-heavy-weapons-squad.md) |  | 2026-07-23 |
 | unit | [刚特的幽灵](factions/星界军/units/gaunts-ghosts.md) |  | 2026-07-23 |
+| unit | [半人马快速突击战车](factions/星界军/units/centaur-rsv.md) |  | 2026-07-23 |
+| unit | [卡塔昌丛林战士](factions/星界军/units/catachan-jungle-fighters.md) |  | 2026-07-23 |
+| unit | [卡塔昌指挥组](factions/星界军/units/catachan-command-squad.md) |  | 2026-07-23 |
+| unit | [卡塔昌重型武器小队](factions/星界军/units/catachan-heavy-weapons-squad.md) |  | 2026-07-23 |
+| unit | [卡舍津突击队](factions/星界军/units/kasrkin.md) |  | 2026-07-23 |
 | unit | [卡迪亚侦察小队](factions/星界军/units/cadian-recon-squad.md) |  | 2026-07-23 |
+| unit | [卡迪亚重型武器小队](factions/星界军/units/cadian-heavy-weapons-squad.md) |  | 2026-07-23 |
+| unit | [卡迪安堡主](factions/星界军/units/cadian-castellan.md) |  | 2026-07-23 |
+| unit | [卡迪安指挥组](factions/星界军/units/cadian-command-squad.md) |  | 2026-07-23 |
+| unit | [卡迪安突击队](factions/星界军/units/cadian-shock-troops.md) |  | 2026-07-23 |
+| unit | [双足飞龙自行火炮](factions/星界军/units/wyvern.md) |  | 2026-07-23 |
+| unit | [地狱之锤](factions/星界军/units/hellhammer.md) |  | 2026-07-23 |
+| unit | [地狱犬喷射车](factions/星界军/units/hellhound.md) |  | 2026-07-23 |
 | unit | [复仇者攻击机](factions/星界军/units/avenger-strike-fighter.md) |  | 2026-07-23 |
 | unit | [大元帅德雷尔](factions/星界军/units/lord-marshal-dreir.md) |  | 2026-07-23 |
 | unit | [太阳元帅雷昂图斯](factions/星界军/units/lord-solar-leontus.md) |  | 2026-07-23 |
+| unit | [奇美拉装甲车](factions/星界军/units/chimera.md) |  | 2026-07-23 |
 | unit | [女武神炮艇](factions/星界军/units/valkyrie.md) |  | 2026-07-23 |
+| unit | [影剑](factions/星界军/units/shadowsword.md) |  | 2026-07-23 |
 | unit | [技术技师机械教士](factions/星界军/units/tech-priest-enginseer.md) |  | 2026-07-23 |
 | unit | [政委](factions/星界军/units/commissar.md) |  | 2026-07-23 |
+| unit | [教廷牧师](factions/星界军/units/ministorum-priest.md) |  | 2026-07-23 |
 | unit | [斯莱·马博](factions/星界军/units/sly-marbo.md) |  | 2026-07-23 |
+| unit | [末日之锤](factions/星界军/units/doomhammer.md) |  | 2026-07-23 |
 | unit | [格雷夫斯政委](factions/星界军/units/commissar-graves.md) |  | 2026-07-23 |
 | unit | [欧格林保镖](factions/星界军/units/ogryn-bodyguard.md) |  | 2026-07-23 |
 | unit | [欧格林小队](factions/星界军/units/ogryn-squad.md) |  | 2026-07-23 |
 | unit | [步行的格雷夫斯政委](factions/星界军/units/commissar-graves-on-foot.md) |  | 2026-07-23 |
+| unit | [死亡直击导弹车](factions/星界军/units/deathstrike.md) |  | 2026-07-23 |
+| unit | [死亡骑兵](factions/星界军/units/death-riders.md) |  | 2026-07-23 |
+| unit | [毁灭之剑](factions/星界军/units/banesword.md) |  | 2026-07-23 |
+| unit | [毁灭之锤](factions/星界军/units/banehammer.md) |  | 2026-07-23 |
+| unit | [毒刃](factions/星界军/units/baneblade.md) |  | 2026-07-23 |
+| unit | [灵能导师](factions/星界军/units/primaris-psyker.md) |  | 2026-07-23 |
+| unit | [炮兵小组](factions/星界军/units/artillery-team.md) |  | 2026-07-23 |
 | unit | [牛格林小队](factions/星界军/units/bullgryn-squad.md) |  | 2026-07-23 |
+| unit | [独眼巨人爆破车](factions/星界军/units/cyclops-demolition-vehicle.md) |  | 2026-07-23 |
+| unit | [石化蜥蜴自行火炮](factions/星界军/units/basilisk.md) |  | 2026-07-23 |
+| unit | [神盾防御墙](factions/星界军/units/aegis-defence-line.md) |  | 2026-07-23 |
+| unit | [罗格多恩坦克](factions/星界军/units/rogal-dorn-battle-tank.md) |  | 2026-07-23 |
+| unit | [罗格多恩指挥官](factions/星界军/units/rogal-dorn-commander.md) |  | 2026-07-23 |
 | unit | [莱特林](factions/星界军/units/ratlings.md) |  | 2026-07-23 |
+| unit | [蝎尾狮火箭炮](factions/星界军/units/manticore.md) |  | 2026-07-23 |
+| unit | [装甲哨兵](factions/星界军/units/armoured-sentinels.md) |  | 2026-07-23 |
+| unit | [野战炮兵](factions/星界军/units/field-ordnance-battery.md) |  | 2026-07-23 |
+| unit | [野牛装甲车](factions/星界军/units/taurox.md) |  | 2026-07-23 |
+| unit | [金牛装甲车](factions/星界军/units/taurox-prime.md) |  | 2026-07-23 |
+| unit | [阿提拉蛮骑兵](factions/星界军/units/attilan-rough-riders.md) |  | 2026-07-23 |
+| unit | [风暴之剑](factions/星界军/units/stormsword.md) |  | 2026-07-23 |
 | unit | [风暴兵指挥组](factions/星界军/units/militarum-tempestus-command-squad.md) |  | 2026-07-23 |
 | unit | [风暴天鹰](factions/星界军/units/tempestus-aquilons.md) |  | 2026-07-23 |
 | unit | [风暴忠嗣军小队](factions/星界军/units/tempestus-scions.md) |  | 2026-07-23 |
+| unit | [风暴领主](factions/星界军/units/stormlord.md) |  | 2026-07-23 |
+| unit | [鹫马装甲战车](factions/星界军/units/hippogriff-afv.md) |  | 2026-07-23 |
+| unit | [黎曼鲁斯处决者](factions/星界军/units/leman-russ-executioner.md) |  | 2026-07-23 |
+| unit | [黎曼鲁斯惩罚者](factions/星界军/units/leman-russ-punisher.md) |  | 2026-07-23 |
+| unit | [黎曼鲁斯战斗坦克](factions/星界军/units/leman-russ-battle-tank.md) |  | 2026-07-23 |
+| unit | [黎曼鲁斯指挥官](factions/星界军/units/leman-russ-commander.md) |  | 2026-07-23 |
+| unit | [黎曼鲁斯根除者](factions/星界军/units/leman-russ-eradicator.md) |  | 2026-07-23 |
+| unit | [黎曼鲁斯灭绝者](factions/星界军/units/leman-russ-exterminator.md) |  | 2026-07-23 |
+| unit | [黎曼鲁斯破坏者](factions/星界军/units/leman-russ-demolisher.md) |  | 2026-07-23 |
+| unit | [黎曼鲁斯胜利者](factions/星界军/units/leman-russ-vanquisher.md) |  | 2026-07-23 |
 
 ### 星际战士
 
@@ -826,25 +826,19 @@ _Last updated: 2026-07-23 12:10 UTC_
 | unit | [Death Company Marines with Boltguns and Jump Packs](factions/星际战士/units/death-company-marines-with-boltguns-and-jump-packs.md) |  | 2026-07-23 |
 | unit | [Deathstorm Drop Pod](factions/星际战士/units/deathstorm-drop-pod.md) |  | 2026-07-23 |
 | unit | [Deathwing Strikemaster](factions/星际战士/units/deathwing-strikemaster.md) |  | 2026-07-23 |
-| unit | [Decimus Kill Team](factions/星际战士/units/decimus-kill-team.md) |  | 2026-07-23 |
 | unit | [Deimos Predator](factions/星际战士/units/deimos-predator.md) |  | 2026-07-23 |
 | unit | [Deredeo Dreadnought](factions/星际战士/units/deredeo-dreadnought.md) |  | 2026-07-23 |
 | unit | [Dreadnought Drop Pod](factions/星际战士/units/dreadnought-drop-pod.md) |  | 2026-07-23 |
-| unit | [Emperor’s Champion](factions/星际战士/units/emperors-champion.md) |  | 2026-07-23 |
 | unit | [Example Wargear](factions/星际战士/units/example-wargear.md) |  | 2026-07-23 |
 | unit | [Falchion](factions/星际战士/units/falchion.md) |  | 2026-07-23 |
 | unit | [Fellblade](factions/星际战士/units/fellblade.md) |  | 2026-07-23 |
 | unit | [Ferren Areios](factions/星际战士/units/ferren-areios.md) |  | 2026-07-23 |
 | unit | [Fire Raptor Gunship](factions/星际战士/units/fire-raptor-gunship.md) |  | 2026-07-23 |
 | unit | [Gabriel Seth](factions/星际战士/units/gabriel-seth.md) |  | 2026-07-23 |
-| unit | [Gladiator Lancer](factions/星际战士/units/gladiator-lancer.md) |  | 2026-07-23 |
-| unit | [Gladiator Reaper](factions/星际战士/units/gladiator-reaper.md) |  | 2026-07-23 |
-| unit | [Gladiator Valiant](factions/星际战士/units/gladiator-valiant.md) |  | 2026-07-23 |
 | unit | [Harald Deathwolf](factions/星际战士/units/harald-deathwolf.md) |  | 2026-07-23 |
 | unit | [Hounds Of Morkai](factions/星际战士/units/hounds-of-morkai.md) |  | 2026-07-23 |
 | unit | [Hunter](factions/星际战士/units/hunter.md) |  | 2026-07-23 |
 | unit | [Imperial Space Marine](factions/星际战士/units/imperial-space-marine.md) |  | 2026-07-23 |
-| unit | [Impulsor](factions/星际战士/units/impulsor.md) |  | 2026-07-23 |
 | unit | [Iron Priest On Thunderwolf](factions/星际战士/units/iron-priest-on-thunderwolf.md) |  | 2026-07-23 |
 | unit | [Ironclad Dreadnought](factions/星际战士/units/ironclad-dreadnought.md) |  | 2026-07-23 |
 | unit | [Javelin Attack Speeder](factions/星际战士/units/javelin-attack-speeder.md) |  | 2026-07-23 |
@@ -853,7 +847,6 @@ _Last updated: 2026-07-23 12:10 UTC_
 | unit | [Kratos](factions/星际战士/units/kratos.md) |  | 2026-07-23 |
 | unit | [Krom Dragongaze](factions/星际战士/units/krom-dragongaze.md) |  | 2026-07-23 |
 | unit | [Land Raider Achilles](factions/星际战士/units/land-raider-achilles.md) |  | 2026-07-23 |
-| unit | [Land Raider Crusader](factions/星际战士/units/land-raider-crusader.md) |  | 2026-07-23 |
 | unit | [Land Raider Excelsior](factions/星际战士/units/land-raider-excelsior.md) |  | 2026-07-23 |
 | unit | [Land Raider Helios](factions/星际战士/units/land-raider-helios.md) |  | 2026-07-23 |
 | unit | [Land Raider Prometheus](factions/星际战士/units/land-raider-prometheus.md) |  | 2026-07-23 |
@@ -877,8 +870,6 @@ _Last updated: 2026-07-23 12:10 UTC_
 | unit | [Relic Contemptor Dreadnought](factions/星际战士/units/relic-contemptor-dreadnought.md) |  | 2026-07-23 |
 | unit | [Relic Razorback](factions/星际战士/units/relic-razorback.md) |  | 2026-07-23 |
 | unit | [Relic Terminator Squad](factions/星际战士/units/relic-terminator-squad.md) |  | 2026-07-23 |
-| unit | [Repulsor](factions/星际战士/units/repulsor.md) |  | 2026-07-23 |
-| unit | [Repulsor Executioner](factions/星际战士/units/repulsor-executioner.md) |  | 2026-07-23 |
 | unit | [Rhino Primaris](factions/星际战士/units/rhino-primaris.md) |  | 2026-07-23 |
 | unit | [Sanguinary Priest With Jump Pack](factions/星际战士/units/sanguinary-priest-with-jump-pack.md) |  | 2026-07-23 |
 | unit | [Sanguinary Priest on Bike](factions/星际战士/units/sanguinary-priest-on-bike.md) |  | 2026-07-23 |
@@ -895,16 +886,12 @@ _Last updated: 2026-07-23 12:10 UTC_
 | unit | [Sokar-pattern Stormbird](factions/星际战士/units/sokar-pattern-stormbird.md) |  | 2026-07-23 |
 | unit | [Spartan](factions/星际战士/units/spartan.md) |  | 2026-07-23 |
 | unit | [Stalker](factions/星际战士/units/stalker.md) |  | 2026-07-23 |
-| unit | [Sternguard Veteran Squad](factions/星际战士/units/sternguard-veteran-squad.md) |  | 2026-07-23 |
 | unit | [Storm Eagle Gunship](factions/星际战士/units/storm-eagle-gunship.md) |  | 2026-07-23 |
 | unit | [Stormfang Gunship](factions/星际战士/units/stormfang-gunship.md) |  | 2026-07-23 |
-| unit | [Stormraven Gunship](factions/星际战士/units/stormraven-gunship.md) |  | 2026-07-23 |
 | unit | [Stormwolf](factions/星际战士/units/stormwolf.md) |  | 2026-07-23 |
-| unit | [Sword Brethren Squad](factions/星际战士/units/sword-brethren-squad.md) |  | 2026-07-23 |
 | unit | [Tarantula Air Defence Battery](factions/星际战士/units/tarantula-air-defence-battery.md) |  | 2026-07-23 |
 | unit | [Tarantula Sentry Battery](factions/星际战士/units/tarantula-sentry-battery.md) |  | 2026-07-23 |
 | unit | [Techmarine on Bike](factions/星际战士/units/techmarine-on-bike.md) |  | 2026-07-23 |
-| unit | [Terminator Squad](factions/星际战士/units/terminator-squad.md) |  | 2026-07-23 |
 | unit | [Terminus Ultra](factions/星际战士/units/terminus-ultra.md) |  | 2026-07-23 |
 | unit | [Terrax-pattern Termite](factions/星际战士/units/terrax-pattern-termite.md) |  | 2026-07-23 |
 | unit | [Thunderfire Cannon](factions/星际战士/units/thunderfire-cannon.md) |  | 2026-07-23 |
@@ -915,7 +902,6 @@ _Last updated: 2026-07-23 12:10 UTC_
 | unit | [Ultramarines Honour Guard](factions/星际战士/units/ultramarines-honour-guard.md) |  | 2026-07-23 |
 | unit | [Uriel Ventris](factions/星际战士/units/uriel-ventris.md) |  | 2026-07-23 |
 | unit | [Vanguard Veteran Squad](factions/星际战士/units/vanguard-veteran-squad.md) |  | 2026-07-23 |
-| unit | [Venerable Dreadnought](factions/星际战士/units/venerable-dreadnought.md) |  | 2026-07-23 |
 | unit | [Venerable Dreadnought (Legendary)](factions/星际战士/units/venerable-dreadnought-legendary.md) |  | 2026-07-23 |
 | unit | [Vindicator Laser Destroyer](factions/星际战士/units/vindicator-laser-destroyer.md) |  | 2026-07-23 |
 | unit | [Whirlwind Scorpius](factions/星际战士/units/whirlwind-scorpius.md) |  | 2026-07-23 |
@@ -950,19 +936,23 @@ _Last updated: 2026-07-23 12:10 UTC_
 | unit | [内环伙友](factions/星际战士/units/inner-circle-companions.md) |  | 2026-07-23 |
 | unit | [冰雹型风暴速攻艇](factions/星际战士/units/storm-speeder-hailstrike.md) |  | 2026-07-23 |
 | unit | [冲击者突击艇](factions/星际战士/units/impulsor-2.md) |  | 2026-07-23 |
+| unit | [冲击者突击艇](factions/星际战士/units/impulsor.md) |  | 2026-07-23 |
 | unit | [凯万-史瑞克](factions/星际战士/units/kayvaan-shrike.md) |  | 2026-07-23 |
 | unit | [利爪突击杀戮小队](factions/星际战士/units/talonstrike-kill-team.md) |  | 2026-07-23 |
+| unit | [剑之兄弟小队](factions/星际战士/units/sword-brethren-squad.md) |  | 2026-07-23 |
 | unit | [剑卫旗手](factions/星际战士/units/bladeguard-ancient.md) |  | 2026-07-23 |
 | unit | [剑卫老兵小队](factions/星际战士/units/bladeguard-veteran-squad.md) |  | 2026-07-23 |
 | unit | [副官](factions/星际战士/units/lieutenant.md) |  | 2026-07-23 |
 | unit | [劫掠者副官](factions/星际战士/units/lieutenant-in-reiver-armour.md) |  | 2026-07-23 |
 | unit | [劫掠者小队](factions/星际战士/units/reiver-squad.md) |  | 2026-07-23 |
 | unit | [十字军型兰德掠袭者坦克](factions/星际战士/units/land-raider-crusader-2.md) |  | 2026-07-23 |
+| unit | [十字军型兰德掠袭者坦克](factions/星际战士/units/land-raider-crusader.md) |  | 2026-07-23 |
 | unit | [十字军小队](factions/星际战士/units/crusader-squad.md) |  | 2026-07-23 |
 | unit | [卡托·西卡留斯](factions/星际战士/units/cato-sicarius.md) |  | 2026-07-23 |
 | unit | [卡诺克·瓦尔](factions/星际战士/units/caanok-var.md) |  | 2026-07-23 |
 | unit | [压制者小队](factions/星际战士/units/suppressor-squad.md) |  | 2026-07-23 |
 | unit | [反击者突击艇](factions/星际战士/units/repulsor-2.md) |  | 2026-07-23 |
+| unit | [反击者突击艇](factions/星际战士/units/repulsor.md) |  | 2026-07-23 |
 | unit | [圣吉列诺](factions/星际战士/units/the-sanguinor.md) |  | 2026-07-23 |
 | unit | [圣血卫队](factions/星际战士/units/sanguinary-guard.md) |  | 2026-07-23 |
 | unit | [圣血祭司](factions/星际战士/units/sanguinary-priest.md) |  | 2026-07-23 |
@@ -971,6 +961,7 @@ _Last updated: 2026-07-23 12:10 UTC_
 | unit | [坎托战团长](factions/星际战士/units/pedro-kantor.md) |  | 2026-07-23 |
 | unit | [堡主](factions/星际战士/units/castellan.md) |  | 2026-07-23 |
 | unit | [处决者型反击者坦克](factions/星际战士/units/repulsor-executioner-2.md) |  | 2026-07-23 |
+| unit | [处决者型反击者坦克](factions/星际战士/units/repulsor-executioner.md) |  | 2026-07-23 |
 | unit | [复仇型兰德飞艇](factions/星际战士/units/land-speeder-vengeance.md) |  | 2026-07-23 |
 | unit | [奥特拉玛守望者](factions/星际战士/units/wardens-of-ultramar.md) |  | 2026-07-23 |
 | unit | [守望堡主](factions/星际战士/units/watch-master.md) |  | 2026-07-23 |
@@ -978,7 +969,9 @@ _Last updated: 2026-07-23 12:10 UTC_
 | unit | [寂灭者小队](factions/星际战士/units/desolation-squad.md) |  | 2026-07-23 |
 | unit | [射手型无畏机甲](factions/星际战士/units/ballistus-dreadnought.md) |  | 2026-07-23 |
 | unit | [巴尔掠食者](factions/星际战士/units/baal-predator.md) |  | 2026-07-23 |
+| unit | [帝皇勇士](factions/星际战士/units/emperors-champion.md) |  | 2026-07-23 |
 | unit | [常胜护卫](factions/星际战士/units/victrix-honour-guard.md) |  | 2026-07-23 |
+| unit | [德西姆斯猎杀小队](factions/星际战士/units/decimus-kill-team.md) |  | 2026-07-23 |
 | unit | [战术小队](factions/星际战士/units/tactical-squad.md) |  | 2026-07-23 |
 | unit | [托尔连长](factions/星际战士/units/tor-garadon.md) |  | 2026-07-23 |
 | unit | [执裁者](factions/星际战士/units/execrator.md) |  | 2026-07-23 |
@@ -994,9 +987,11 @@ _Last updated: 2026-07-23 12:10 UTC_
 | unit | [无形杀戮小队](factions/星际战士/units/spectrus-kill-team.md) |  | 2026-07-23 |
 | unit | [无畏机甲](factions/星际战士/units/dreadnought.md) |  | 2026-07-23 |
 | unit | [智库](factions/星际战士/units/librarian.md) |  | 2026-07-23 |
+| unit | [暴风渡鸦炮艇](factions/星际战士/units/stormraven-gunship.md) |  | 2026-07-23 |
 | unit | [杀戮牙](factions/星际战士/units/murderfang.md) |  | 2026-07-23 |
 | unit | [杀戮者乌尔里克](factions/星际战士/units/ulrik-the-slayer.md) |  | 2026-07-23 |
 | unit | [枪骑兵型角斗者坦克](factions/星际战士/units/gladiator-lancer-2.md) |  | 2026-07-23 |
+| unit | [枪骑兵型角斗者坦克](factions/星际战士/units/gladiator-lancer.md) |  | 2026-07-23 |
 | unit | [根除者小队](factions/星际战士/units/eradicator-squad.md) |  | 2026-07-23 |
 | unit | [格瑞马都斯牧师](factions/星际战士/units/chaplain-grimaldus.md) |  | 2026-07-23 |
 | unit | [死亡守望终结者小队](factions/星际战士/units/deathwatch-terminator-squad.md) |  | 2026-07-23 |
@@ -1005,6 +1000,7 @@ _Last updated: 2026-07-23 12:10 UTC_
 | unit | [死亡连无畏](factions/星际战士/units/death-company-dreadnought.md) |  | 2026-07-23 |
 | unit | [死亡连连长](factions/星际战士/units/death-company-captain.md) |  | 2026-07-23 |
 | unit | [死神型角斗者坦克](factions/星际战士/units/gladiator-reaper-2.md) |  | 2026-07-23 |
+| unit | [死神型角斗者坦克](factions/星际战士/units/gladiator-reaper.md) |  | 2026-07-23 |
 | unit | [死翼指挥组【传奇】](factions/星际战士/units/deathwing-command-squad.md) |  | 2026-07-23 |
 | unit | [死翼终结者小队](factions/星际战士/units/deathwing-terminator-squad.md) |  | 2026-07-23 |
 | unit | [死翼骑士](factions/星际战士/units/deathwing-knights.md) |  | 2026-07-23 |
@@ -1034,6 +1030,7 @@ _Last updated: 2026-07-23 12:10 UTC_
 | unit | [突击仲裁者小队](factions/星际战士/units/assault-intercessor-squad.md) |  | 2026-07-23 |
 | unit | [突击终结者小队](factions/星际战士/units/terminator-assault-squad.md) |  | 2026-07-23 |
 | unit | [终结者小队](factions/星际战士/units/terminator-squad-2.md) |  | 2026-07-23 |
+| unit | [终结者小队](factions/星际战士/units/terminator-squad.md) |  | 2026-07-23 |
 | unit | [终结者旗手](factions/星际战士/units/ancient-in-terminator-armour.md) |  | 2026-07-23 |
 | unit | [终结者智库](factions/星际战士/units/librarian-in-terminator-armour.md) |  | 2026-07-23 |
 | unit | [终结者牧师](factions/星际战士/units/chaplain-in-terminator-armour.md) |  | 2026-07-23 |
@@ -1041,11 +1038,13 @@ _Last updated: 2026-07-23 12:10 UTC_
 | unit | [维护者突击炮](factions/星际战士/units/vindicator.md) |  | 2026-07-23 |
 | unit | [罗伯特.基里曼](factions/星际战士/units/roboute-guilliman.md) |  | 2026-07-23 |
 | unit | [肃卫老兵小队](factions/星际战士/units/sternguard-veteran-squad-2.md) |  | 2026-07-23 |
+| unit | [肃卫老兵小队](factions/星际战士/units/sternguard-veteran-squad.md) |  | 2026-07-23 |
 | unit | [至强杀戮小队](factions/星际战士/units/fortis-kill-team.md) |  | 2026-07-23 |
 | unit | [至高大元帅赫尔贝茨](factions/星际战士/units/high-marshal-helbrecht.md) |  | 2026-07-23 |
 | unit | [艾索-沙恩](factions/星际战士/units/aethon-shaan.md) |  | 2026-07-23 |
 | unit | [芬里斯狼](factions/星际战士/units/fenrisian-wolves.md) |  | 2026-07-23 |
 | unit | [苏博登可汗](factions/星际战士/units/suboden-khan.md) |  | 2026-07-23 |
+| unit | [荣耀无畏机甲](factions/星际战士/units/venerable-dreadnought.md) |  | 2026-07-23 |
 | unit | [药剂师](factions/星际战士/units/apothecary.md) |  | 2026-07-23 |
 | unit | [莱山德连长](factions/星际战士/units/darnath-lysander.md) |  | 2026-07-23 |
 | unit | [莱昂艾尔庄森，黑暗天使基因原体](factions/星际战士/units/lion-eljonson.md) |  | 2026-07-23 |
@@ -1061,6 +1060,7 @@ _Last updated: 2026-07-23 12:10 UTC_
 | unit | [装备跳跃背包的死亡连连长](factions/星际战士/units/death-company-captain-with-jump-pack.md) |  | 2026-07-23 |
 | unit | [装备风暴盾的狼人](factions/星际战士/units/wulfen-with-storm-shields.md) |  | 2026-07-23 |
 | unit | [豪侠型角斗者坦克](factions/星际战士/units/gladiator-valiant-2.md) |  | 2026-07-23 |
+| unit | [豪侠型角斗者坦克](factions/星际战士/units/gladiator-valiant.md) |  | 2026-07-23 |
 | unit | [豪猪装甲车](factions/星际战士/units/razorback.md) |  | 2026-07-23 |
 | unit | [贝利亚大导师](factions/星际战士/units/belial.md) |  | 2026-07-23 |
 | unit | [跳跃背包先锋老兵小队](factions/星际战士/units/vanguard-veteran-squad-with-jump-packs.md) |  | 2026-07-23 |
@@ -1136,6 +1136,7 @@ _Last updated: 2026-07-23 12:10 UTC_
 | core-rule | [曲射](core-rules/indirect-fire.md) | 曲射武器越过障碍轰击视线外目标，11 版改为固定命中阈值。 | 2026-07-11 |
 | core-rule | [标准移动](core-rules/normal-move.md) | 标准移动是最基本的移动类型：最多移动 M 值，不得进入交战。 | 2026-07-11 |
 | core-rule | [标记光](core-rules/markerlight.md) | 标记光是钛帝国关键词：由它标记的目标会被友军的攻击忽视掩体。 | 2026-07-11 |
+| core-rule | [横扫](core-rules/cleave.md) | 横扫是近战版的爆炸：打人堆越打越多，但要求这把武器的攻击只指定一个目标。 | 2026-07-25 |
 | core-rule | [步兵](core-rules/infantry.md) | 步兵是徒步作战的单位类型，能穿越密集地形、可在废墟高层设立，并在地形区内获得掩体。 | 2026-07-23 |
 | core-rule | [步行者](core-rules/walker.md) | 步行者是标示双足/多足步行载具的单位类型标记；带此关键词的载具即使非人物也能做英勇干预。 | 2026-07-23 |
 | core-rule | [毁灭伤害](core-rules/devastating-wounds.md) | 毁灭伤害让造伤暴击直接转化为致命伤害，绕过保护与减伤。 | 2026-07-11 |
@@ -1191,13 +1192,6 @@ _Last updated: 2026-07-23 12:10 UTC_
 | unit | [Secutarii Hoplites](factions/机械修会/units/secutarii-hoplites.md) |  | 2026-07-23 |
 | unit | [Secutarii Peltasts](factions/机械修会/units/secutarii-peltasts.md) |  | 2026-07-23 |
 | unit | [Servitors](factions/机械修会/units/servitors.md) |  | 2026-07-23 |
-| unit | [Skitarii Marshal](factions/机械修会/units/skitarii-marshal.md) |  | 2026-07-23 |
-| unit | [Skitarii Rangers](factions/机械修会/units/skitarii-rangers.md) |  | 2026-07-23 |
-| unit | [Skitarii Vanguard](factions/机械修会/units/skitarii-vanguard.md) |  | 2026-07-23 |
-| unit | [Skorpius Dunerider](factions/机械修会/units/skorpius-dunerider.md) |  | 2026-07-23 |
-| unit | [Tech-priest Dominus](factions/机械修会/units/tech-priest-dominus.md) |  | 2026-07-23 |
-| unit | [Tech-priest Enginseer](factions/机械修会/units/tech-priest-enginseer.md) |  | 2026-07-23 |
-| unit | [Tech-priest Manipulus](factions/机械修会/units/tech-priest-manipulus.md) |  | 2026-07-23 |
 | unit | [Terrax-pattern Termite](factions/机械修会/units/terrax-pattern-termite.md) |  | 2026-07-23 |
 | unit | [X-101](factions/机械修会/units/x-101.md) |  | 2026-07-23 |
 | unit | [卡斯特兰机器人](factions/机械修会/units/kastelan-robots.md) |  | 2026-07-23 |
@@ -1212,7 +1206,13 @@ _Last updated: 2026-07-23 12:10 UTC_
 | unit | [始祖鸟燧火轰炸机](factions/机械修会/units/archaeopter-fusilave.md) |  | 2026-07-23 |
 | unit | [始祖鸟矢量飞梭](factions/机械修会/units/archaeopter-transvector.md) |  | 2026-07-23 |
 | unit | [巴利斯塔利铁骑兵](factions/机械修会/units/ironstrider-ballistarii.md) |  | 2026-07-23 |
+| unit | [技术技师机械教士](factions/机械修会/units/tech-priest-enginseer.md) |  | 2026-07-23 |
+| unit | [护教军元帅](factions/机械修会/units/skitarii-marshal.md) |  | 2026-07-23 |
+| unit | [护教军先锋兵](factions/机械修会/units/skitarii-vanguard.md) |  | 2026-07-23 |
+| unit | [护教军游猎兵](factions/机械修会/units/skitarii-rangers.md) |  | 2026-07-23 |
+| unit | [控电神甫](factions/机械修会/units/tech-priest-manipulus.md) |  | 2026-07-23 |
 | unit | [智控数据技师](factions/机械修会/units/cybernetica-datasmith.md) |  | 2026-07-23 |
+| unit | [机械主教](factions/机械修会/units/tech-priest-dominus.md) |  | 2026-07-23 |
 | unit | [武装奴工毁灭者](factions/机械修会/units/kataphron-destroyers.md) |  | 2026-07-23 |
 | unit | [武装奴工突破者](factions/机械修会/units/kataphron-breachers.md) |  | 2026-07-23 |
 | unit | [沙丘爬行者机甲](factions/机械修会/units/onager-dunecrawler.md) |  | 2026-07-23 |
@@ -1220,6 +1220,7 @@ _Last updated: 2026-07-23 12:10 UTC_
 | unit | [科技考古学家](factions/机械修会/units/technoarcheologist.md) |  | 2026-07-23 |
 | unit | [翼龙军净炎兵](factions/机械修会/units/pteraxii-sterylizors.md) |  | 2026-07-23 |
 | unit | [翼龙军天猎兵](factions/机械修会/units/pteraxii-skystalkers.md) |  | 2026-07-23 |
+| unit | [蝎式沙丘运输车](factions/机械修会/units/skorpius-dunerider.md) |  | 2026-07-23 |
 | unit | [装备泰瑟骑枪的西多尼亚龙骑兵](factions/机械修会/units/sydonian-dragoons-with-taser-lances.md) |  | 2026-07-23 |
 | unit | [装备辐射狙击枪的西多尼亚龙骑兵](factions/机械修会/units/sydonian-dragoons-with-radium-jezzails.md) |  | 2026-07-23 |
 | unit | [西卡利安渗透者](factions/机械修会/units/sicarian-infiltrators.md) |  | 2026-07-23 |
@@ -1233,38 +1234,25 @@ _Last updated: 2026-07-23 12:10 UTC_
 | 类型 | 名称 | 摘要 | Updated |
 |------|------|------|---------|
 | unit | [Cerberus](factions/死亡守卫/units/cerberus.md) |  | 2026-07-23 |
-| unit | [Chaos Land Raider](factions/死亡守卫/units/chaos-land-raider.md) |  | 2026-07-23 |
 | unit | [Chaos Lord On Palanquin Of Nurgle](factions/死亡守卫/units/chaos-lord-on-palanquin-of-nurgle.md) |  | 2026-07-23 |
-| unit | [Chaos Predator Annihilator](factions/死亡守卫/units/chaos-predator-annihilator.md) |  | 2026-07-23 |
-| unit | [Chaos Predator Destructor](factions/死亡守卫/units/chaos-predator-destructor.md) |  | 2026-07-23 |
-| unit | [Chaos Rhino](factions/死亡守卫/units/chaos-rhino.md) |  | 2026-07-23 |
-| unit | [Chaos Spawn](factions/死亡守卫/units/chaos-spawn.md) |  | 2026-07-23 |
 | unit | [Chaos Thunderhawk](factions/死亡守卫/units/chaos-thunderhawk.md) |  | 2026-07-23 |
-| unit | [Daemon Prince of Nurgle](factions/死亡守卫/units/daemon-prince-of-nurgle.md) |  | 2026-07-23 |
-| unit | [Daemon Prince of Nurgle with Wings](factions/死亡守卫/units/daemon-prince-of-nurgle-with-wings.md) |  | 2026-07-23 |
 | unit | [Death Guard Chaos Lord In Terminator Armour](factions/死亡守卫/units/death-guard-chaos-lord-in-terminator-armour.md) |  | 2026-07-23 |
 | unit | [Death Guard Cultists](factions/死亡守卫/units/death-guard-cultists.md) |  | 2026-07-23 |
 | unit | [Death Guard Possessed](factions/死亡守卫/units/death-guard-possessed.md) |  | 2026-07-23 |
-| unit | [Death Guard Sorcerer In Terminator Armour](factions/死亡守卫/units/death-guard-sorcerer-in-terminator-armour.md) |  | 2026-07-23 |
-| unit | [Defiler](factions/死亡守卫/units/defiler.md) |  | 2026-07-23 |
 | unit | [Deredeo Dreadnought](factions/死亡守卫/units/deredeo-dreadnought.md) |  | 2026-07-23 |
 | unit | [Falchion](factions/死亡守卫/units/falchion.md) |  | 2026-07-23 |
 | unit | [Fellblade](factions/死亡守卫/units/fellblade.md) |  | 2026-07-23 |
 | unit | [Fire Raptor Gunship](factions/死亡守卫/units/fire-raptor-gunship.md) |  | 2026-07-23 |
-| unit | [Foetid Bloat-drone with Heavy Blight Launcher](factions/死亡守卫/units/foetid-bloat-drone-with-heavy-blight-launcher.md) |  | 2026-07-23 |
 | unit | [Gellerpox Infected](factions/死亡守卫/units/gellerpox-infected.md) |  | 2026-07-23 |
 | unit | [Greater Blight Drone](factions/死亡守卫/units/greater-blight-drone.md) |  | 2026-07-23 |
-| unit | [Helbrute](factions/死亡守卫/units/helbrute.md) |  | 2026-07-23 |
 | unit | [Hell Blade](factions/死亡守卫/units/hell-blade.md) |  | 2026-07-23 |
 | unit | [Hell Talon](factions/死亡守卫/units/hell-talon.md) |  | 2026-07-23 |
-| unit | [Icon Bearer](factions/死亡守卫/units/icon-bearer.md) |  | 2026-07-23 |
 | unit | [Kratos](factions/死亡守卫/units/kratos.md) |  | 2026-07-23 |
 | unit | [Land Raider Achilles](factions/死亡守卫/units/land-raider-achilles.md) |  | 2026-07-23 |
 | unit | [Land Raider Proteus](factions/死亡守卫/units/land-raider-proteus.md) |  | 2026-07-23 |
 | unit | [Leviathan Dreadnought](factions/死亡守卫/units/leviathan-dreadnought.md) |  | 2026-07-23 |
 | unit | [Mastodon](factions/死亡守卫/units/mastodon.md) |  | 2026-07-23 |
 | unit | [Mutoid Vermin](factions/死亡守卫/units/mutoid-vermin.md) |  | 2026-07-23 |
-| unit | [Myphitic Blight-hauler](factions/死亡守卫/units/myphitic-blight-hauler.md) |  | 2026-07-23 |
 | unit | [Rapier Carrier](factions/死亡守卫/units/rapier-carrier.md) |  | 2026-07-23 |
 | unit | [Relic Contemptor Dreadnought](factions/死亡守卫/units/relic-contemptor-dreadnought.md) |  | 2026-07-23 |
 | unit | [Sicaran Battle Tank](factions/死亡守卫/units/sicaran-battle-tank.md) |  | 2026-07-23 |
@@ -1279,17 +1267,27 @@ _Last updated: 2026-07-23 12:10 UTC_
 | unit | [Whirlwind Scorpius](factions/死亡守卫/units/whirlwind-scorpius.md) |  | 2026-07-23 |
 | unit | [Xiphon Interceptor](factions/死亡守卫/units/xiphon-interceptor.md) |  | 2026-07-23 |
 | unit | [丧钟使者](factions/死亡守卫/units/noxious-blightbringer.md) |  | 2026-07-23 |
+| unit | [亵渎者](factions/死亡守卫/units/defiler.md) |  | 2026-07-23 |
 | unit | [凋败记账官](factions/死亡守卫/units/tallyman.md) |  | 2026-07-23 |
 | unit | [凋零霸主终结者](factions/死亡守卫/units/blightlord-terminators.md) |  | 2026-07-23 |
 | unit | [剧毒坩埚](factions/死亡守卫/units/miasmic-malignifier.md) |  | 2026-07-23 |
+| unit | [地狱兽](factions/死亡守卫/units/helbrute.md) |  | 2026-07-23 |
 | unit | [大不净者](factions/死亡守卫/units/great-unclean-one.md) |  | 2026-07-23 |
+| unit | [徽记手](factions/死亡守卫/units/icon-bearer.md) |  | 2026-07-23 |
 | unit | [恶疾使者](factions/死亡守卫/units/malignant-plaguecaster.md) |  | 2026-07-23 |
+| unit | [恶臭疫病拖车](factions/死亡守卫/units/myphitic-blight-hauler.md) |  | 2026-07-23 |
 | unit | [携疫者](factions/死亡守卫/units/plaguebearers.md) |  | 2026-07-23 |
+| unit | [有翼纳垢恶魔王子](factions/死亡守卫/units/daemon-prince-of-nurgle-with-wings.md) |  | 2026-07-23 |
 | unit | [死亡守卫混沌领主](factions/死亡守卫/units/death-guard-chaos-lord.md) |  | 2026-07-23 |
+| unit | [死亡守卫终结者巫师](factions/死亡守卫/units/death-guard-sorcerer-in-terminator-armour.md) |  | 2026-07-23 |
 | unit | [死亡寿衣终结者](factions/死亡守卫/units/deathshroud-terminators.md) |  | 2026-07-23 |
+| unit | [歼灭者型猎食者坦克](factions/死亡守卫/units/chaos-predator-annihilator.md) |  | 2026-07-23 |
 | unit | [泰丰斯](factions/死亡守卫/units/typhus.md) |  | 2026-07-23 |
+| unit | [混沌兰德掠袭者](factions/死亡守卫/units/chaos-land-raider.md) |  | 2026-07-23 |
+| unit | [混沌卵](factions/死亡守卫/units/chaos-spawn.md) |  | 2026-07-23 |
 | unit | [烂格斯](factions/死亡守卫/units/rotigus.md) |  | 2026-07-23 |
 | unit | [烈毒领主](factions/死亡守卫/units/lord-of-virulence.md) |  | 2026-07-23 |
+| unit | [犀牛装甲车](factions/死亡守卫/units/chaos-rhino.md) |  | 2026-07-23 |
 | unit | [疫病领主](factions/死亡守卫/units/lord-of-contagion.md) |  | 2026-07-23 |
 | unit | [病毒精练者](factions/死亡守卫/units/biologus-putrifier.md) |  | 2026-07-23 |
 | unit | [痘疹领主](factions/死亡守卫/units/lord-of-poxes.md) |  | 2026-07-23 |
@@ -1300,9 +1298,12 @@ _Last updated: 2026-07-23 12:10 UTC_
 | unit | [瘟疫机蜂](factions/死亡守卫/units/foetid-bloat-drone.md) |  | 2026-07-23 |
 | unit | [瘟疫行尸](factions/死亡守卫/units/poxwalkers.md) |  | 2026-07-23 |
 | unit | [瘟疫轰炮车](factions/死亡守卫/units/plagueburst-crawler.md) |  | 2026-07-23 |
+| unit | [破坏者型猎食者坦克](factions/死亡守卫/units/chaos-predator-destructor.md) |  | 2026-07-23 |
 | unit | [纳垢兽](factions/死亡守卫/units/beasts-of-nurgle.md) |  | 2026-07-23 |
+| unit | [纳垢恶魔王子](factions/死亡守卫/units/daemon-prince-of-nurgle.md) |  | 2026-07-23 |
 | unit | [纳垢灵](factions/死亡守卫/units/nurglings.md) |  | 2026-07-23 |
 | unit | [莫塔里安](factions/死亡守卫/units/mortarion.md) |  | 2026-07-23 |
+| unit | [装备重型瘟疫榴弹炮的瘟疫机蜂](factions/死亡守卫/units/foetid-bloat-drone-with-heavy-blight-launcher.md) |  | 2026-07-23 |
 
 ### 泰伦虫族
 
@@ -1379,171 +1380,149 @@ _Last updated: 2026-07-23 12:10 UTC_
 
 | 类型 | 名称 | 摘要 | Updated |
 |------|------|------|---------|
-| unit | [Accursed Cultists](factions/混沌恶魔/units/accursed-cultists.md) |  | 2026-07-23 |
 | unit | [Aetaos’rau’keres](factions/混沌恶魔/units/aetaosraukeres.md) |  | 2026-07-23 |
 | unit | [An’ggrath the Unbound](factions/混沌恶魔/units/anggrath-the-unbound.md) |  | 2026-07-23 |
-| unit | [Beasts Of Nurgle](factions/混沌恶魔/units/beasts-of-nurgle.md) |  | 2026-07-23 |
-| unit | [Bloodcrushers](factions/混沌恶魔/units/bloodcrushers.md) |  | 2026-07-23 |
-| unit | [Bloodletters](factions/混沌恶魔/units/bloodletters.md) |  | 2026-07-23 |
-| unit | [Bloodthirster](factions/混沌恶魔/units/bloodthirster.md) |  | 2026-07-23 |
-| unit | [Blue Horrors](factions/混沌恶魔/units/blue-horrors.md) |  | 2026-07-23 |
-| unit | [Chaos Lord](factions/混沌恶魔/units/chaos-lord.md) |  | 2026-07-23 |
-| unit | [Chaos Lord In Terminator Armour](factions/混沌恶魔/units/chaos-lord-in-terminator-armour.md) |  | 2026-07-23 |
 | unit | [Chaos Lord On Disc Of Tzeentch](factions/混沌恶魔/units/chaos-lord-on-disc-of-tzeentch.md) |  | 2026-07-23 |
 | unit | [Chaos Lord On Juggernaut](factions/混沌恶魔/units/chaos-lord-on-juggernaut.md) |  | 2026-07-23 |
 | unit | [Chaos Lord On Palanquin Of Nurgle](factions/混沌恶魔/units/chaos-lord-on-palanquin-of-nurgle.md) |  | 2026-07-23 |
 | unit | [Chaos Lord On Steed Of Slaanesh](factions/混沌恶魔/units/chaos-lord-on-steed-of-slaanesh.md) |  | 2026-07-23 |
-| unit | [Chaos Lord with Jump Pack](factions/混沌恶魔/units/chaos-lord-with-jump-pack.md) |  | 2026-07-23 |
-| unit | [Chaos Terminator Squad](factions/混沌恶魔/units/chaos-terminator-squad.md) |  | 2026-07-23 |
-| unit | [Chosen](factions/混沌恶魔/units/chosen.md) |  | 2026-07-23 |
-| unit | [Cultist Firebrand](factions/混沌恶魔/units/cultist-firebrand.md) |  | 2026-07-23 |
-| unit | [Cultist Mob](factions/混沌恶魔/units/cultist-mob.md) |  | 2026-07-23 |
 | unit | [Cultist Mob with Firearms](factions/混沌恶魔/units/cultist-mob-with-firearms.md) |  | 2026-07-23 |
-| unit | [Daemonettes](factions/混沌恶魔/units/daemonettes.md) |  | 2026-07-23 |
-| unit | [Dark Apostle](factions/混沌恶魔/units/dark-apostle.md) |  | 2026-07-23 |
-| unit | [Dark Commune](factions/混沌恶魔/units/dark-commune.md) |  | 2026-07-23 |
 | unit | [Exalted Seeker Chariot](factions/混沌恶魔/units/exalted-seeker-chariot.md) |  | 2026-07-23 |
-| unit | [Feculent Gnarlmaw](factions/混沌恶魔/units/feculent-gnarlmaw.md) |  | 2026-07-23 |
-| unit | [Fellgor Beastmen](factions/混沌恶魔/units/fellgor-beastmen.md) |  | 2026-07-23 |
-| unit | [Fiends](factions/混沌恶魔/units/fiends.md) |  | 2026-07-23 |
-| unit | [Flamers](factions/混沌恶魔/units/flamers.md) |  | 2026-07-23 |
-| unit | [Flesh Hounds](factions/混沌恶魔/units/flesh-hounds.md) |  | 2026-07-23 |
 | unit | [Furies](factions/混沌恶魔/units/furies.md) |  | 2026-07-23 |
 | unit | [Gellerpox Infected](factions/混沌恶魔/units/gellerpox-infected.md) |  | 2026-07-23 |
 | unit | [Giant Chaos Spawn](factions/混沌恶魔/units/giant-chaos-spawn.md) |  | 2026-07-23 |
-| unit | [Great Unclean One](factions/混沌恶魔/units/great-unclean-one.md) |  | 2026-07-23 |
-| unit | [Havocs](factions/混沌恶魔/units/havocs.md) |  | 2026-07-23 |
-| unit | [Hellflayers](factions/混沌恶魔/units/hellflayers.md) |  | 2026-07-23 |
 | unit | [Herald Of Slaanesh On Steed Of Slaanesh](factions/混沌恶魔/units/herald-of-slaanesh-on-steed-of-slaanesh.md) |  | 2026-07-23 |
-| unit | [Kairos Fateweaver](factions/混沌恶魔/units/kairos-fateweaver.md) |  | 2026-07-23 |
-| unit | [Karanak](factions/混沌恶魔/units/karanak.md) |  | 2026-07-23 |
-| unit | [Keeper Of Secrets](factions/混沌恶魔/units/keeper-of-secrets.md) |  | 2026-07-23 |
-| unit | [Legionaries](factions/混沌恶魔/units/legionaries.md) |  | 2026-07-23 |
-| unit | [Lord of Change](factions/混沌恶魔/units/lord-of-change.md) |  | 2026-07-23 |
-| unit | [Master Of Possession](factions/混沌恶魔/units/master-of-possession.md) |  | 2026-07-23 |
 | unit | [Mutoid Vermin](factions/混沌恶魔/units/mutoid-vermin.md) |  | 2026-07-23 |
 | unit | [Negavolt Cultists](factions/混沌恶魔/units/negavolt-cultists.md) |  | 2026-07-23 |
-| unit | [Nurglings](factions/混沌恶魔/units/nurglings.md) |  | 2026-07-23 |
-| unit | [Pink Horrors](factions/混沌恶魔/units/pink-horrors.md) |  | 2026-07-23 |
-| unit | [Plague Drones](factions/混沌恶魔/units/plague-drones.md) |  | 2026-07-23 |
 | unit | [Plague Toads](factions/混沌恶魔/units/plague-toads.md) |  | 2026-07-23 |
-| unit | [Plaguebearers](factions/混沌恶魔/units/plaguebearers.md) |  | 2026-07-23 |
-| unit | [Possessed](factions/混沌恶魔/units/possessed.md) |  | 2026-07-23 |
 | unit | [Pox Riders](factions/混沌恶魔/units/pox-riders.md) |  | 2026-07-23 |
-| unit | [Raptors](factions/混沌恶魔/units/raptors.md) |  | 2026-07-23 |
 | unit | [Renegade Enforcer](factions/混沌恶魔/units/renegade-enforcer.md) |  | 2026-07-23 |
 | unit | [Renegade Heavy Weapons Squad](factions/混沌恶魔/units/renegade-heavy-weapons-squad.md) |  | 2026-07-23 |
 | unit | [Renegade Ogryn Beast Handler](factions/混沌恶魔/units/renegade-ogryn-beast-handler.md) |  | 2026-07-23 |
 | unit | [Renegade Ogryn Brutes](factions/混沌恶魔/units/renegade-ogryn-brutes.md) |  | 2026-07-23 |
 | unit | [Renegade Plague Ogryns](factions/混沌恶魔/units/renegade-plague-ogryns.md) |  | 2026-07-23 |
 | unit | [Rogue Psyker](factions/混沌恶魔/units/rogue-psyker.md) |  | 2026-07-23 |
-| unit | [Rotigus](factions/混沌恶魔/units/rotigus.md) |  | 2026-07-23 |
 | unit | [Scabeiathrax The Bloated](factions/混沌恶魔/units/scabeiathrax-the-bloated.md) |  | 2026-07-23 |
-| unit | [Screamers](factions/混沌恶魔/units/screamers.md) |  | 2026-07-23 |
 | unit | [Seeker Chariot](factions/混沌恶魔/units/seeker-chariot.md) |  | 2026-07-23 |
-| unit | [Seekers](factions/混沌恶魔/units/seekers.md) |  | 2026-07-23 |
-| unit | [Shalaxi Helbane](factions/混沌恶魔/units/shalaxi-helbane.md) |  | 2026-07-23 |
-| unit | [Skarbrand](factions/混沌恶魔/units/skarbrand.md) |  | 2026-07-23 |
-| unit | [Skull Altar](factions/混沌恶魔/units/skull-altar.md) |  | 2026-07-23 |
-| unit | [Sorcerer](factions/混沌恶魔/units/sorcerer.md) |  | 2026-07-23 |
-| unit | [Sorcerer In Terminator Armour](factions/混沌恶魔/units/sorcerer-in-terminator-armour.md) |  | 2026-07-23 |
 | unit | [Sorcerer On Disc Of Tzeentch](factions/混沌恶魔/units/sorcerer-on-disc-of-tzeentch.md) |  | 2026-07-23 |
 | unit | [Sorcerer On Palanquin Of Nurgle](factions/混沌恶魔/units/sorcerer-on-palanquin-of-nurgle.md) |  | 2026-07-23 |
 | unit | [Sorcerer On Steed Of Slaanesh](factions/混沌恶魔/units/sorcerer-on-steed-of-slaanesh.md) |  | 2026-07-23 |
 | unit | [Spined Chaos Beast](factions/混沌恶魔/units/spined-chaos-beast.md) |  | 2026-07-23 |
 | unit | [Tormentbringer On Exalted Seeker Chariot](factions/混沌恶魔/units/tormentbringer-on-exalted-seeker-chariot.md) |  | 2026-07-23 |
-| unit | [Traitor Enforcer](factions/混沌恶魔/units/traitor-enforcer.md) |  | 2026-07-23 |
-| unit | [Traitor Guardsmen Squad](factions/混沌恶魔/units/traitor-guardsmen-squad.md) |  | 2026-07-23 |
-| unit | [Warp Talons](factions/混沌恶魔/units/warp-talons.md) |  | 2026-07-23 |
 | unit | [Zarakynel](factions/混沌恶魔/units/zarakynel.md) |  | 2026-07-23 |
 | unit | [乘鲜血王座的裂肉主宰](factions/混沌恶魔/units/rendmaster-on-blood-throne.md) |  | 2026-07-23 |
+| unit | [军团战士](factions/混沌恶魔/units/legionaries.md) |  | 2026-07-23 |
+| unit | [凯洛斯·织命者](factions/混沌恶魔/units/kairos-fateweaver.md) |  | 2026-07-23 |
 | unit | [卡拉纳克](factions/混沌恶魔/units/karanak-2.md) |  | 2026-07-23 |
+| unit | [卡拉纳克](factions/混沌恶魔/units/karanak.md) |  | 2026-07-23 |
 | unit | [变化使](factions/混沌恶魔/units/changecaster.md) |  | 2026-07-23 |
 | unit | [变化灵](factions/混沌恶魔/units/the-changeling.md) |  | 2026-07-23 |
+| unit | [变化魔君](factions/混沌恶魔/units/lord-of-change.md) |  | 2026-07-23 |
+| unit | [叛军执法者](factions/混沌恶魔/units/traitor-enforcer.md) |  | 2026-07-23 |
+| unit | [叛变卫队](factions/混沌恶魔/units/traitor-guardsmen-squad.md) |  | 2026-07-23 |
+| unit | [嗜血狂魔](factions/混沌恶魔/units/bloodthirster.md) |  | 2026-07-23 |
 | unit | [园艺师史莱姆克斯](factions/混沌恶魔/units/horticulous-slimux.md) |  | 2026-07-23 |
 | unit | [地狱剥皮机](factions/混沌恶魔/units/hellflayer.md) |  | 2026-07-23 |
+| unit | [地狱剥皮机](factions/混沌恶魔/units/hellflayers.md) |  | 2026-07-23 |
 | unit | [坏疹记账官](factions/混沌恶魔/units/spoilpox-scrivener.md) |  | 2026-07-23 |
+| unit | [夏拉希·魔灾](factions/混沌恶魔/units/shalaxi-helbane.md) |  | 2026-07-23 |
+| unit | [大不净者](factions/混沌恶魔/units/great-unclean-one.md) |  | 2026-07-23 |
 | unit | [夺颅者](factions/混沌恶魔/units/skulltaker.md) |  | 2026-07-23 |
+| unit | [守密者](factions/混沌恶魔/units/keeper-of-secrets.md) |  | 2026-07-23 |
+| unit | [寻觅者](factions/混沌恶魔/units/seekers.md) |  | 2026-07-23 |
+| unit | [尖啸魔](factions/混沌恶魔/units/screamers.md) |  | 2026-07-23 |
+| unit | [巫师](factions/混沌恶魔/units/sorcerer.md) |  | 2026-07-23 |
 | unit | [希尔艾斯克](factions/混沌恶魔/units/syllesske.md) |  | 2026-07-23 |
 | unit | [幻变之主](factions/混沌恶魔/units/fluxmaster.md) |  | 2026-07-23 |
+| unit | [恶角野兽人](factions/混沌恶魔/units/fellgor-beastmen.md) |  | 2026-07-23 |
 | unit | [扭曲魔镜](factions/混沌恶魔/units/contorted-epitome.md) |  | 2026-07-23 |
+| unit | [携疫者](factions/混沌恶魔/units/plaguebearers.md) |  | 2026-07-23 |
+| unit | [放血鬼](factions/混沌恶魔/units/bloodletters.md) |  | 2026-07-23 |
+| unit | [斯卡布兰德](factions/混沌恶魔/units/skarbrand.md) |  | 2026-07-23 |
 | unit | [有翼混沌恶魔王子](factions/混沌恶魔/units/daemon-prince-of-chaos-with-wings.md) |  | 2026-07-23 |
+| unit | [次元爪](factions/混沌恶魔/units/warp-talons.md) |  | 2026-07-23 |
+| unit | [欢愉魔](factions/混沌恶魔/units/fiends.md) |  | 2026-07-23 |
 | unit | [比拉克](factions/混沌恶魔/units/belakor.md) |  | 2026-07-23 |
+| unit | [污秽瘤木](factions/混沌恶魔/units/feculent-gnarlmaw.md) |  | 2026-07-23 |
+| unit | [浩劫](factions/混沌恶魔/units/havocs.md) |  | 2026-07-23 |
 | unit | [混沌恶魔王子](factions/混沌恶魔/units/daemon-prince-of-chaos.md) |  | 2026-07-23 |
+| unit | [混沌终结者](factions/混沌恶魔/units/chaos-terminator-squad.md) |  | 2026-07-23 |
+| unit | [混沌领主](factions/混沌恶魔/units/chaos-lord.md) |  | 2026-07-23 |
+| unit | [火妖](factions/混沌恶魔/units/flamers.md) |  | 2026-07-23 |
 | unit | [炼狱琴魔](factions/混沌恶魔/units/infernal-enrapturess.md) |  | 2026-07-23 |
+| unit | [烂格斯](factions/混沌恶魔/units/rotigus.md) |  | 2026-07-23 |
 | unit | [烂芋笛手](factions/混沌恶魔/units/sloppity-bilepiper.md) |  | 2026-07-23 |
 | unit | [燃烧战车](factions/混沌恶魔/units/burning-chariot.md) |  | 2026-07-23 |
+| unit | [猛禽](factions/混沌恶魔/units/raptors.md) |  | 2026-07-23 |
 | unit | [疱疹使者](factions/混沌恶魔/units/poxbringer.md) |  | 2026-07-23 |
 | unit | [痛苦使者](factions/混沌恶魔/units/tormentbringer.md) |  | 2026-07-23 |
+| unit | [瘟疫先蜂](factions/混沌恶魔/units/plague-drones.md) |  | 2026-07-23 |
+| unit | [碾血骑兵](factions/混沌恶魔/units/bloodcrushers.md) |  | 2026-07-23 |
 | unit | [磨魂者](factions/混沌恶魔/units/soul-grinder.md) |  | 2026-07-23 |
 | unit | [神尊火妖](factions/混沌恶魔/units/exalted-flamer.md) |  | 2026-07-23 |
+| unit | [神选战士](factions/混沌恶魔/units/chosen.md) |  | 2026-07-23 |
 | unit | [窥命者](factions/混沌恶魔/units/fateskimmer.md) |  | 2026-07-23 |
+| unit | [粉惧妖](factions/混沌恶魔/units/pink-horrors.md) |  | 2026-07-23 |
+| unit | [纳垢兽](factions/混沌恶魔/units/beasts-of-nurgle.md) |  | 2026-07-23 |
+| unit | [纳垢灵](factions/混沌恶魔/units/nurglings.md) |  | 2026-07-23 |
 | unit | [织幻者](factions/混沌恶魔/units/tranceweaver.md) |  | 2026-07-23 |
+| unit | [终结者巫师](factions/混沌恶魔/units/sorcerer-in-terminator-armour.md) |  | 2026-07-23 |
+| unit | [终结者领主](factions/混沌恶魔/units/chaos-lord-in-terminator-armour.md) |  | 2026-07-23 |
 | unit | [色孽假面](factions/混沌恶魔/units/the-masque-of-slaanesh.md) |  | 2026-07-23 |
 | unit | [蓝书吏](factions/混沌恶魔/units/the-blue-scribes.md) |  | 2026-07-23 |
+| unit | [蓝惧妖](factions/混沌恶魔/units/blue-horrors.md) |  | 2026-07-23 |
+| unit | [血猎犬](factions/混沌恶魔/units/flesh-hounds.md) |  | 2026-07-23 |
 | unit | [计患官艾皮德缪斯](factions/混沌恶魔/units/epidemius.md) |  | 2026-07-23 |
+| unit | [诅咒教徒](factions/混沌恶魔/units/accursed-cultists.md) |  | 2026-07-23 |
+| unit | [跳跃背包混沌领主](factions/混沌恶魔/units/chaos-lord-with-jump-pack.md) |  | 2026-07-23 |
+| unit | [邪教徒](factions/混沌恶魔/units/cultist-mob.md) |  | 2026-07-23 |
+| unit | [邪教徒纵火者](factions/混沌恶魔/units/cultist-firebrand.md) |  | 2026-07-23 |
+| unit | [附魔大师](factions/混沌恶魔/units/master-of-possession.md) |  | 2026-07-23 |
+| unit | [附魔战士](factions/混沌恶魔/units/possessed.md) |  | 2026-07-23 |
 | unit | [颅骨主宰](factions/混沌恶魔/units/skullmaster.md) |  | 2026-07-23 |
 | unit | [颅骨大炮](factions/混沌恶魔/units/skull-cannon.md) |  | 2026-07-23 |
+| unit | [颅骨祭坛](factions/混沌恶魔/units/skull-altar.md) |  | 2026-07-23 |
+| unit | [魅魔](factions/混沌恶魔/units/daemonettes.md) |  | 2026-07-23 |
 | unit | [鲜血之主](factions/混沌恶魔/units/bloodmaster.md) |  | 2026-07-23 |
+| unit | [黑暗使徒](factions/混沌恶魔/units/dark-apostle.md) |  | 2026-07-23 |
+| unit | [黑暗巫会](factions/混沌恶魔/units/dark-commune.md) |  | 2026-07-23 |
 
 ### 混沌星际战士
 
 | 类型 | 名称 | 摘要 | Updated |
 |------|------|------|---------|
-| unit | [Accursed Cultists](factions/混沌星际战士/units/accursed-cultists.md) |  | 2026-07-23 |
 | unit | [Blood Slaughterer](factions/混沌星际战士/units/blood-slaughterer.md) |  | 2026-07-23 |
 | unit | [Cerberus](factions/混沌星际战士/units/cerberus.md) |  | 2026-07-23 |
 | unit | [Chaos Deimos Predator](factions/混沌星际战士/units/chaos-deimos-predator.md) |  | 2026-07-23 |
-| unit | [Chaos Land Raider](factions/混沌星际战士/units/chaos-land-raider.md) |  | 2026-07-23 |
 | unit | [Chaos Lord On Bike](factions/混沌星际战士/units/chaos-lord-on-bike.md) |  | 2026-07-23 |
 | unit | [Chaos Lord On Disc Of Tzeentch](factions/混沌星际战士/units/chaos-lord-on-disc-of-tzeentch.md) |  | 2026-07-23 |
 | unit | [Chaos Lord On Juggernaut](factions/混沌星际战士/units/chaos-lord-on-juggernaut.md) |  | 2026-07-23 |
 | unit | [Chaos Lord On Palanquin Of Nurgle](factions/混沌星际战士/units/chaos-lord-on-palanquin-of-nurgle.md) |  | 2026-07-23 |
 | unit | [Chaos Lord On Steed Of Slaanesh](factions/混沌星际战士/units/chaos-lord-on-steed-of-slaanesh.md) |  | 2026-07-23 |
-| unit | [Chaos Predator Annihilator](factions/混沌星际战士/units/chaos-predator-annihilator.md) |  | 2026-07-23 |
-| unit | [Chaos Predator Destructor](factions/混沌星际战士/units/chaos-predator-destructor.md) |  | 2026-07-23 |
-| unit | [Chaos Rhino](factions/混沌星际战士/units/chaos-rhino.md) |  | 2026-07-23 |
-| unit | [Chaos Spawn](factions/混沌星际战士/units/chaos-spawn.md) |  | 2026-07-23 |
 | unit | [Chaos Thunderhawk](factions/混沌星际战士/units/chaos-thunderhawk.md) |  | 2026-07-23 |
-| unit | [Chaos Vindicator](factions/混沌星际战士/units/chaos-vindicator.md) |  | 2026-07-23 |
-| unit | [Cultist Firebrand](factions/混沌星际战士/units/cultist-firebrand.md) |  | 2026-07-23 |
-| unit | [Cultist Mob](factions/混沌星际战士/units/cultist-mob.md) |  | 2026-07-23 |
 | unit | [Cultist Mob with Firearms](factions/混沌星际战士/units/cultist-mob-with-firearms.md) |  | 2026-07-23 |
-| unit | [Dark Commune](factions/混沌星际战士/units/dark-commune.md) |  | 2026-07-23 |
 | unit | [Decimator](factions/混沌星际战士/units/decimator.md) |  | 2026-07-23 |
-| unit | [Defiler](factions/混沌星际战士/units/defiler.md) |  | 2026-07-23 |
 | unit | [Deredeo Dreadnought](factions/混沌星际战士/units/deredeo-dreadnought.md) |  | 2026-07-23 |
 | unit | [Dreadclaw Drop Pod](factions/混沌星际战士/units/dreadclaw-drop-pod.md) |  | 2026-07-23 |
 | unit | [Exalted Champion](factions/混沌星际战士/units/exalted-champion.md) |  | 2026-07-23 |
 | unit | [Falchion](factions/混沌星际战士/units/falchion.md) |  | 2026-07-23 |
 | unit | [Fellblade](factions/混沌星际战士/units/fellblade.md) |  | 2026-07-23 |
-| unit | [Fellgor Beastmen](factions/混沌星际战士/units/fellgor-beastmen.md) |  | 2026-07-23 |
 | unit | [Fire Raptor Gunship](factions/混沌星际战士/units/fire-raptor-gunship.md) |  | 2026-07-23 |
-| unit | [Forgefiend](factions/混沌星际战士/units/forgefiend.md) |  | 2026-07-23 |
 | unit | [Gellerpox Infected](factions/混沌星际战士/units/gellerpox-infected.md) |  | 2026-07-23 |
 | unit | [Greater Blight Drone](factions/混沌星际战士/units/greater-blight-drone.md) |  | 2026-07-23 |
 | unit | [Greater Brass Scorpion](factions/混沌星际战士/units/greater-brass-scorpion.md) |  | 2026-07-23 |
-| unit | [Helbrute](factions/混沌星际战士/units/helbrute.md) |  | 2026-07-23 |
-| unit | [Heldrake](factions/混沌星际战士/units/heldrake.md) |  | 2026-07-23 |
 | unit | [Hell Blade](factions/混沌星际战士/units/hell-blade.md) |  | 2026-07-23 |
 | unit | [Hell Talon](factions/混沌星际战士/units/hell-talon.md) |  | 2026-07-23 |
 | unit | [Kharybdis Assault Claw](factions/混沌星际战士/units/kharybdis-assault-claw.md) |  | 2026-07-23 |
-| unit | [Khorne Berzerkers](factions/混沌星际战士/units/khorne-berzerkers.md) |  | 2026-07-23 |
-| unit | [Khorne Lord Of Skulls](factions/混沌星际战士/units/khorne-lord-of-skulls.md) |  | 2026-07-23 |
 | unit | [Kratos](factions/混沌星际战士/units/kratos.md) |  | 2026-07-23 |
-| unit | [Kravek Morne](factions/混沌星际战士/units/kravek-morne.md) |  | 2026-07-23 |
 | unit | [Kytan Ravager](factions/混沌星际战士/units/kytan-ravager.md) |  | 2026-07-23 |
 | unit | [Land Raider Achilles](factions/混沌星际战士/units/land-raider-achilles.md) |  | 2026-07-23 |
 | unit | [Land Raider Proteus](factions/混沌星际战士/units/land-raider-proteus.md) |  | 2026-07-23 |
 | unit | [Leviathan Dreadnought](factions/混沌星际战士/units/leviathan-dreadnought.md) |  | 2026-07-23 |
-| unit | [Master Of Executions](factions/混沌星际战士/units/master-of-executions.md) |  | 2026-07-23 |
 | unit | [Mastodon](factions/混沌星际战士/units/mastodon.md) |  | 2026-07-23 |
-| unit | [Maulerfiend](factions/混沌星际战士/units/maulerfiend.md) |  | 2026-07-23 |
 | unit | [Mutilators (Legendary)](factions/混沌星际战士/units/mutilators-legendary.md) |  | 2026-07-23 |
 | unit | [Mutoid Vermin](factions/混沌星际战士/units/mutoid-vermin.md) |  | 2026-07-23 |
 | unit | [Negavolt Cultists](factions/混沌星际战士/units/negavolt-cultists.md) |  | 2026-07-23 |
-| unit | [Noise Marines](factions/混沌星际战士/units/noise-marines.md) |  | 2026-07-23 |
-| unit | [Plague Marines](factions/混沌星际战士/units/plague-marines.md) |  | 2026-07-23 |
 | unit | [Rapier Carrier](factions/混沌星际战士/units/rapier-carrier.md) |  | 2026-07-23 |
 | unit | [Relic Contemptor Dreadnought](factions/混沌星际战士/units/relic-contemptor-dreadnought.md) |  | 2026-07-23 |
 | unit | [Renegade Enforcer](factions/混沌星际战士/units/renegade-enforcer.md) |  | 2026-07-23 |
@@ -1552,13 +1531,10 @@ _Last updated: 2026-07-23 12:10 UTC_
 | unit | [Renegade Ogryn Brutes](factions/混沌星际战士/units/renegade-ogryn-brutes.md) |  | 2026-07-23 |
 | unit | [Renegade Plague Ogryns](factions/混沌星际战士/units/renegade-plague-ogryns.md) |  | 2026-07-23 |
 | unit | [Rogue Psyker](factions/混沌星际战士/units/rogue-psyker.md) |  | 2026-07-23 |
-| unit | [Rubric Marines](factions/混沌星际战士/units/rubric-marines.md) |  | 2026-07-23 |
 | unit | [Sicaran Battle Tank](factions/混沌星际战士/units/sicaran-battle-tank.md) |  | 2026-07-23 |
 | unit | [Sicaran Punisher](factions/混沌星际战士/units/sicaran-punisher.md) |  | 2026-07-23 |
 | unit | [Sicaran Venator](factions/混沌星际战士/units/sicaran-venator.md) |  | 2026-07-23 |
 | unit | [Sokar-pattern Stormbird](factions/混沌星际战士/units/sokar-pattern-stormbird.md) |  | 2026-07-23 |
-| unit | [Sorcerer](factions/混沌星际战士/units/sorcerer.md) |  | 2026-07-23 |
-| unit | [Sorcerer In Terminator Armour](factions/混沌星际战士/units/sorcerer-in-terminator-armour.md) |  | 2026-07-23 |
 | unit | [Sorcerer On Bike](factions/混沌星际战士/units/sorcerer-on-bike.md) |  | 2026-07-23 |
 | unit | [Sorcerer On Disc Of Tzeentch](factions/混沌星际战士/units/sorcerer-on-disc-of-tzeentch.md) |  | 2026-07-23 |
 | unit | [Sorcerer On Palanquin Of Nurgle](factions/混沌星际战士/units/sorcerer-on-palanquin-of-nurgle.md) |  | 2026-07-23 |
@@ -1566,41 +1542,66 @@ _Last updated: 2026-07-23 12:10 UTC_
 | unit | [Spartan](factions/混沌星际战士/units/spartan.md) |  | 2026-07-23 |
 | unit | [Storm Eagle Gunship](factions/混沌星际战士/units/storm-eagle-gunship.md) |  | 2026-07-23 |
 | unit | [Terrax-pattern Termite](factions/混沌星际战士/units/terrax-pattern-termite.md) |  | 2026-07-23 |
-| unit | [Traitor Enforcer](factions/混沌星际战士/units/traitor-enforcer.md) |  | 2026-07-23 |
-| unit | [Traitor Guardsmen Squad](factions/混沌星际战士/units/traitor-guardsmen-squad.md) |  | 2026-07-23 |
 | unit | [Typhon](factions/混沌星际战士/units/typhon.md) |  | 2026-07-23 |
 | unit | [Whirlwind Scorpius](factions/混沌星际战士/units/whirlwind-scorpius.md) |  | 2026-07-23 |
 | unit | [Xiphon Interceptor](factions/混沌星际战士/units/xiphon-interceptor.md) |  | 2026-07-23 |
+| unit | [亵渎者](factions/混沌星际战士/units/defiler.md) |  | 2026-07-23 |
 | unit | [休伦·黑心](factions/混沌星际战士/units/huron-blackheart.md) |  | 2026-07-23 |
+| unit | [克拉维克·莫恩](factions/混沌星际战士/units/kravek-morne.md) |  | 2026-07-23 |
 | unit | [军团战士](factions/混沌星际战士/units/legionaries.md) |  | 2026-07-23 |
 | unit | [剧毒爬行者](factions/混沌星际战士/units/venomcrawler.md) |  | 2026-07-23 |
+| unit | [叛军执法者](factions/混沌星际战士/units/traitor-enforcer.md) |  | 2026-07-23 |
+| unit | [叛变卫队](factions/混沌星际战士/units/traitor-guardsmen-squad.md) |  | 2026-07-23 |
+| unit | [地狱兽](factions/混沌星际战士/units/helbrute.md) |  | 2026-07-23 |
+| unit | [地狱飞龙](factions/混沌星际战士/units/heldrake.md) |  | 2026-07-23 |
 | unit | [复仇之爪](factions/混沌星际战士/units/nemesis-claw.md) |  | 2026-07-23 |
 | unit | [大掠夺者阿巴顿](factions/混沌星际战士/units/abaddon-the-despoiler.md) |  | 2026-07-23 |
 | unit | [大漩涡之主](factions/混沌星际战士/units/masters-of-the-maelstrom.md) |  | 2026-07-23 |
 | unit | [夺星者哈肯](factions/混沌星际战士/units/haarken-worldclaimer.md) |  | 2026-07-23 |
+| unit | [巫师](factions/混沌星际战士/units/sorcerer.md) |  | 2026-07-23 |
+| unit | [恐虐狂战士](factions/混沌星际战士/units/khorne-berzerkers.md) |  | 2026-07-23 |
+| unit | [恐虐颅骨之主](factions/混沌星际战士/units/khorne-lord-of-skulls.md) |  | 2026-07-23 |
+| unit | [恶角野兽人](factions/混沌星际战士/units/fellgor-beastmen.md) |  | 2026-07-23 |
+| unit | [枭首魔将](factions/混沌星际战士/units/master-of-executions.md) |  | 2026-07-23 |
 | unit | [次元爪](factions/混沌星际战士/units/warp-talons.md) |  | 2026-07-23 |
 | unit | [次元铁匠](factions/混沌星际战士/units/warpsmith.md) |  | 2026-07-23 |
+| unit | [歼灭者型猎食者坦克](factions/混沌星际战士/units/chaos-predator-annihilator.md) |  | 2026-07-23 |
 | unit | [残杀者](factions/混沌星际战士/units/mutilators.md) |  | 2026-07-23 |
 | unit | [法比乌斯拜尔](factions/混沌星际战士/units/fabius-bile.md) |  | 2026-07-23 |
 | unit | [泯灭者](factions/混沌星际战士/units/obliterators.md) |  | 2026-07-23 |
 | unit | [浩劫](factions/混沌星际战士/units/havocs.md) |  | 2026-07-23 |
+| unit | [混沌兰德掠袭者](factions/混沌星际战士/units/chaos-land-raider.md) |  | 2026-07-23 |
+| unit | [混沌卵](factions/混沌星际战士/units/chaos-spawn.md) |  | 2026-07-23 |
 | unit | [混沌摩托队](factions/混沌星际战士/units/chaos-bikers.md) |  | 2026-07-23 |
 | unit | [混沌终结者](factions/混沌星际战士/units/chaos-terminator-squad.md) |  | 2026-07-23 |
+| unit | [混沌维护者突击炮](factions/混沌星际战士/units/chaos-vindicator.md) |  | 2026-07-23 |
 | unit | [混沌领主](factions/混沌星际战士/units/chaos-lord.md) |  | 2026-07-23 |
+| unit | [犀牛装甲车](factions/混沌星际战士/units/chaos-rhino.md) |  | 2026-07-23 |
 | unit | [猛禽](factions/混沌星际战士/units/raptors.md) |  | 2026-07-23 |
 | unit | [瓦什托尔](factions/混沌星际战士/units/vashtorr-the-arkifane.md) |  | 2026-07-23 |
+| unit | [瘟疫战士](factions/混沌星际战士/units/plague-marines.md) |  | 2026-07-23 |
+| unit | [破坏者型猎食者坦克](factions/混沌星际战士/units/chaos-predator-destructor.md) |  | 2026-07-23 |
 | unit | [神选战士](factions/混沌星际战士/units/chosen.md) |  | 2026-07-23 |
+| unit | [红字战士](factions/混沌星际战士/units/rubric-marines.md) |  | 2026-07-23 |
 | unit | [红海盗劫掠者](factions/混沌星际战士/units/red-corsairs-raiders.md) |  | 2026-07-23 |
 | unit | [红海盗掠夺连长](factions/混沌星际战士/units/red-corsairs-reave-captain.md) |  | 2026-07-23 |
+| unit | [终结者巫师](factions/混沌星际战士/units/sorcerer-in-terminator-armour.md) |  | 2026-07-23 |
 | unit | [终结者领主](factions/混沌星际战士/units/chaos-lord-in-terminator-armour.md) |  | 2026-07-23 |
+| unit | [诅咒教徒](factions/混沌星际战士/units/accursed-cultists.md) |  | 2026-07-23 |
 | unit | [赛佛](factions/混沌星际战士/units/cypher.md) |  | 2026-07-23 |
 | unit | [跳跃背包混沌领主](factions/混沌星际战士/units/chaos-lord-with-jump-pack.md) |  | 2026-07-23 |
+| unit | [邪教徒](factions/混沌星际战士/units/cultist-mob.md) |  | 2026-07-23 |
+| unit | [邪教徒纵火者](factions/混沌星际战士/units/cultist-firebrand.md) |  | 2026-07-23 |
+| unit | [重锤魔](factions/混沌星际战士/units/maulerfiend.md) |  | 2026-07-23 |
+| unit | [铸造魔](factions/混沌星际战士/units/forgefiend.md) |  | 2026-07-23 |
 | unit | [阿斯塔特叛军带翼恶魔亲王](factions/混沌星际战士/units/heretic-astartes-daemon-prince-with-wings.md) |  | 2026-07-23 |
 | unit | [阿斯塔特叛军恶魔亲王](factions/混沌星际战士/units/heretic-astartes-daemon-prince.md) |  | 2026-07-23 |
 | unit | [附魔大师](factions/混沌星际战士/units/master-of-possession.md) |  | 2026-07-23 |
 | unit | [附魔战士](factions/混沌星际战士/units/possessed.md) |  | 2026-07-23 |
+| unit | [音爆战士](factions/混沌星际战士/units/noise-marines.md) |  | 2026-07-23 |
 | unit | [魔机统领](factions/混沌星际战士/units/lord-discordant-on-helstalker.md) |  | 2026-07-23 |
 | unit | [黑暗使徒](factions/混沌星际战士/units/dark-apostle.md) |  | 2026-07-23 |
+| unit | [黑暗巫会](factions/混沌星际战士/units/dark-commune.md) |  | 2026-07-23 |
 | unit | [黑石魔冠](factions/混沌星际战士/units/noctilith-crown.md) |  | 2026-07-23 |
 
 ### 混沌骑士
@@ -1678,17 +1679,7 @@ _Last updated: 2026-07-23 12:10 UTC_
 |------|------|------|---------|
 | unit | [Brother-captain Stern](factions/灰骑士/units/brother-captain-stern.md) |  | 2026-07-23 |
 | unit | [Grey Knights Relic Razorback](factions/灰骑士/units/grey-knights-relic-razorback.md) |  | 2026-07-23 |
-| unit | [Grey Knights Thunderhawk Gunship](factions/灰骑士/units/grey-knights-thunderhawk-gunship.md) |  | 2026-07-23 |
-| unit | [Land Raider](factions/灰骑士/units/land-raider.md) |  | 2026-07-23 |
-| unit | [Land Raider Crusader](factions/灰骑士/units/land-raider-crusader.md) |  | 2026-07-23 |
-| unit | [Land Raider Redeemer](factions/灰骑士/units/land-raider-redeemer.md) |  | 2026-07-23 |
-| unit | [Razorback](factions/灰骑士/units/razorback.md) |  | 2026-07-23 |
-| unit | [Rhino](factions/灰骑士/units/rhino.md) |  | 2026-07-23 |
 | unit | [Servitors](factions/灰骑士/units/servitors.md) |  | 2026-07-23 |
-| unit | [Stormhawk Interceptor](factions/灰骑士/units/stormhawk-interceptor.md) |  | 2026-07-23 |
-| unit | [Stormraven Gunship](factions/灰骑士/units/stormraven-gunship.md) |  | 2026-07-23 |
-| unit | [Stormtalon Gunship](factions/灰骑士/units/stormtalon-gunship.md) |  | 2026-07-23 |
-| unit | [Venerable Dreadnought](factions/灰骑士/units/venerable-dreadnought.md) |  | 2026-07-23 |
 | unit | [⼤导师](factions/灰骑士/units/grand-master.md) |  | 2026-07-23 |
 | unit | [兄弟会勇士](factions/灰骑士/units/brotherhood-champion.md) |  | 2026-07-23 |
 | unit | [兄弟会教⼠](factions/灰骑士/units/brotherhood-chaplain.md) |  | 2026-07-23 |
@@ -1697,16 +1688,26 @@ _Last updated: 2026-07-23 12:10 UTC_
 | unit | [兄弟会终结者⼩队](factions/灰骑士/units/brotherhood-terminator-squad.md) |  | 2026-07-23 |
 | unit | [兄弟会连⻓](factions/灰骑士/units/brother-captain.md) |  | 2026-07-23 |
 | unit | [克罗堡主](factions/灰骑士/units/castellan-crowe.md) |  | 2026-07-23 |
+| unit | [兰德掠袭者坦克](factions/灰骑士/units/land-raider.md) |  | 2026-07-23 |
 | unit | [净化者⼩队](factions/灰骑士/units/purifier-squad.md) |  | 2026-07-23 |
+| unit | [十字军型兰德掠袭者坦克](factions/灰骑士/units/land-raider-crusader.md) |  | 2026-07-23 |
 | unit | [卡尔多·德莱戈【传奇】](factions/灰骑士/units/kaldor-draigo.md) |  | 2026-07-23 |
 | unit | [圣骑⼠⼩队](factions/灰骑士/units/paladin-squad.md) |  | 2026-07-23 |
 | unit | [打击者⼩队](factions/灰骑士/units/strike-squad.md) |  | 2026-07-23 |
 | unit | [拦截者⼩队](factions/灰骑士/units/interceptor-squad.md) |  | 2026-07-23 |
+| unit | [救赎者型兰德掠袭者坦克](factions/灰骑士/units/land-raider-redeemer.md) |  | 2026-07-23 |
+| unit | [暴风渡鸦炮艇](factions/灰骑士/units/stormraven-gunship.md) |  | 2026-07-23 |
 | unit | [沃尔达斯⼤导师](factions/灰骑士/units/grand-master-voldus.md) |  | 2026-07-23 |
 | unit | [洗罪者⼩队](factions/灰骑士/units/purgation-squad.md) |  | 2026-07-23 |
 | unit | [涅墨⻄斯骇骑机甲](factions/灰骑士/units/nemesis-dreadknight.md) |  | 2026-07-23 |
 | unit | [涅墨⻄斯骇骑机甲⼤导师](factions/灰骑士/units/grand-master-in-nemesis-dreadknight.md) |  | 2026-07-23 |
 | unit | [灰骑士无畏机甲【传奇】](factions/灰骑士/units/grey-knights-dreadnought.md) |  | 2026-07-23 |
+| unit | [灰骑士雷鹰炮艇](factions/灰骑士/units/grey-knights-thunderhawk-gunship.md) |  | 2026-07-23 |
+| unit | [犀牛装甲车](factions/灰骑士/units/rhino.md) |  | 2026-07-23 |
+| unit | [荣耀无畏机甲](factions/灰骑士/units/venerable-dreadnought.md) |  | 2026-07-23 |
+| unit | [豪猪装甲车](factions/灰骑士/units/razorback.md) |  | 2026-07-23 |
+| unit | [风暴爪炮艇](factions/灰骑士/units/stormtalon-gunship.md) |  | 2026-07-23 |
+| unit | [风暴隼拦截机](factions/灰骑士/units/stormhawk-interceptor.md) |  | 2026-07-23 |
 
 ### 艾达灵族
 
@@ -1719,48 +1720,40 @@ _Last updated: 2026-07-23 12:10 UTC_
 | unit | [Corsair Cloud Dancer Band](factions/艾达灵族/units/corsair-cloud-dancer-band.md) |  | 2026-07-23 |
 | unit | [Corsair Reaver Band](factions/艾达灵族/units/corsair-reaver-band.md) |  | 2026-07-23 |
 | unit | [Corsair Skyreaver Band](factions/艾达灵族/units/corsair-skyreaver-band.md) |  | 2026-07-23 |
-| unit | [Corsair Skyreavers](factions/艾达灵族/units/corsair-skyreavers.md) |  | 2026-07-23 |
-| unit | [Corsair Voidreavers](factions/艾达灵族/units/corsair-voidreavers.md) |  | 2026-07-23 |
-| unit | [Corsair Voidscarred](factions/艾达灵族/units/corsair-voidscarred.md) |  | 2026-07-23 |
-| unit | [Death Jester](factions/艾达灵族/units/death-jester.md) |  | 2026-07-23 |
 | unit | [Firestorm](factions/艾达灵族/units/firestorm.md) |  | 2026-07-23 |
 | unit | [Hornet](factions/艾达灵族/units/hornet.md) |  | 2026-07-23 |
 | unit | [Illic Nightspear](factions/艾达灵族/units/illic-nightspear.md) |  | 2026-07-23 |
 | unit | [Irillyth](factions/艾达灵族/units/irillyth.md) |  | 2026-07-23 |
 | unit | [Karandras](factions/艾达灵族/units/karandras.md) |  | 2026-07-23 |
-| unit | [Kharseth](factions/艾达灵族/units/kharseth.md) |  | 2026-07-23 |
 | unit | [Lynx](factions/艾达灵族/units/lynx.md) |  | 2026-07-23 |
 | unit | [Nightwing](factions/艾达灵族/units/nightwing.md) |  | 2026-07-23 |
 | unit | [Phoenix](factions/艾达灵族/units/phoenix.md) |  | 2026-07-23 |
-| unit | [Prince Yriel](factions/艾达灵族/units/prince-yriel.md) |  | 2026-07-23 |
 | unit | [Prince Yriel (Legendary)](factions/艾达灵族/units/prince-yriel-legendary.md) |  | 2026-07-23 |
 | unit | [Scorpion](factions/艾达灵族/units/scorpion.md) |  | 2026-07-23 |
 | unit | [Shadow Spectres](factions/艾达灵族/units/shadow-spectres.md) |  | 2026-07-23 |
-| unit | [Shadowseer](factions/艾达灵族/units/shadowseer.md) |  | 2026-07-23 |
 | unit | [Skathach Wraithknight](factions/艾达灵族/units/skathach-wraithknight.md) |  | 2026-07-23 |
-| unit | [Skyweavers](factions/艾达灵族/units/skyweavers.md) |  | 2026-07-23 |
-| unit | [Solitaire](factions/艾达灵族/units/solitaire.md) |  | 2026-07-23 |
-| unit | [Starfangs](factions/艾达灵族/units/starfangs.md) |  | 2026-07-23 |
-| unit | [Starweaver](factions/艾达灵族/units/starweaver.md) |  | 2026-07-23 |
-| unit | [Troupe](factions/艾达灵族/units/troupe.md) |  | 2026-07-23 |
-| unit | [Troupe Master](factions/艾达灵族/units/troupe-master.md) |  | 2026-07-23 |
 | unit | [Vampire Hunter](factions/艾达灵族/units/vampire-hunter.md) |  | 2026-07-23 |
 | unit | [Vampire Raider](factions/艾达灵族/units/vampire-raider.md) |  | 2026-07-23 |
-| unit | [Voidweaver](factions/艾达灵族/units/voidweaver.md) |  | 2026-07-23 |
-| unit | [Warlock Skyrunners](factions/艾达灵族/units/warlock-skyrunners.md) |  | 2026-07-23 |
 | unit | [Warp Hunter](factions/艾达灵族/units/warp-hunter.md) |  | 2026-07-23 |
 | unit | [Wasp Assault Walker](factions/艾达灵族/units/wasp-assault-walker.md) |  | 2026-07-23 |
 | unit | [Webway Gate](factions/艾达灵族/units/webway-gate.md) |  | 2026-07-23 |
 | unit | [Wraithseer](factions/艾达灵族/units/wraithseer.md) |  | 2026-07-23 |
 | unit | [Ynnari Kabalite Warriors](factions/艾达灵族/units/ynnari-kabalite-warriors.md) |  | 2026-07-23 |
+| unit | [丑角剧团](factions/艾达灵族/units/troupe.md) |  | 2026-07-23 |
+| unit | [丑角剧团长](factions/艾达灵族/units/troupe-master.md) |  | 2026-07-23 |
 | unit | [伊弗蕾妮](factions/艾达灵族/units/yvraine.md) |  | 2026-07-23 |
+| unit | [伊瑞尔亲王](factions/艾达灵族/units/prince-yriel.md) |  | 2026-07-23 |
 | unit | [先知](factions/艾达灵族/units/farseer.md) |  | 2026-07-23 |
 | unit | [凯恩化身](factions/艾达灵族/units/avatar-of-khaine.md) |  | 2026-07-23 |
+| unit | [卡尔塞斯](factions/艾达灵族/units/kharseth.md) |  | 2026-07-23 |
 | unit | [卫戍守护者](factions/艾达灵族/units/guardian-defenders.md) |  | 2026-07-23 |
 | unit | [司战](factions/艾达灵族/units/autarch.md) |  | 2026-07-23 |
+| unit | [告死小丑](factions/艾达灵族/units/death-jester.md) |  | 2026-07-23 |
 | unit | [因卡恩-伊纳德化身](factions/艾达灵族/units/the-yncarne.md) |  | 2026-07-23 |
 | unit | [埃尔德拉德阿瑟兰](factions/艾达灵族/units/eldrad-ulthran.md) |  | 2026-07-23 |
+| unit | [天空掠夺者海盗](factions/艾达灵族/units/corsair-skyreavers.md) |  | 2026-07-23 |
 | unit | [天行者先知](factions/艾达灵族/units/farseer-skyrunner.md) |  | 2026-07-23 |
+| unit | [天行者术士](factions/艾达灵族/units/warlock-skyrunners.md) |  | 2026-07-23 |
 | unit | [巴哈罗斯](factions/艾达灵族/units/baharroth.md) |  | 2026-07-23 |
 | unit | [帷幕奔行者](factions/艾达灵族/units/shroud-runners.md) |  | 2026-07-23 |
 | unit | [幻影泰坦（疑似删除）](factions/艾达灵族/units/phantom-titan.md) |  | 2026-07-23 |
@@ -1774,6 +1767,8 @@ _Last updated: 2026-07-23 12:10 UTC_
 | unit | [战巫](factions/艾达灵族/units/warlock.md) |  | 2026-07-23 |
 | unit | [战巫议会](factions/艾达灵族/units/warlock-conclave.md) |  | 2026-07-23 |
 | unit | [战行者](factions/艾达灵族/units/war-walkers.md) |  | 2026-07-23 |
+| unit | [星牙战机](factions/艾达灵族/units/starfangs.md) |  | 2026-07-23 |
+| unit | [暗影先知](factions/艾达灵族/units/shadowseer.md) |  | 2026-07-23 |
 | unit | [次元炮平台](factions/艾达灵族/units/d-cannon-platform.md) |  | 2026-07-23 |
 | unit | [次元蜘蛛](factions/艾达灵族/units/warp-spiders.md) |  | 2026-07-23 |
 | unit | [死神军劫掠者](factions/艾达灵族/units/ynnari-reavers.md) |  | 2026-07-23 |
@@ -1790,16 +1785,22 @@ _Last updated: 2026-07-23 12:10 UTC_
 | unit | [烈焰火龙](factions/艾达灵族/units/fire-dragons.md) |  | 2026-07-23 |
 | unit | [狂嚎女妖](factions/艾达灵族/units/howling-banshees.md) |  | 2026-07-23 |
 | unit | [狂暴复仇者](factions/艾达灵族/units/dire-avengers.md) |  | 2026-07-23 |
+| unit | [独角](factions/艾达灵族/units/solitaire.md) |  | 2026-07-23 |
 | unit | [猎鹰坦克](factions/艾达灵族/units/falcon.md) |  | 2026-07-23 |
 | unit | [玛甘 拉](factions/艾达灵族/units/maugan-ra.md) |  | 2026-07-23 |
 | unit | [突击战蝎](factions/艾达灵族/units/striking-scorpions.md) |  | 2026-07-23 |
 | unit | [织夜者坦克](factions/艾达灵族/units/night-spinner.md) |  | 2026-07-23 |
 | unit | [织影炮平台](factions/艾达灵族/units/shadow-weaver-platform.md) |  | 2026-07-23 |
+| unit | [织星者飞艇](factions/艾达灵族/units/starweaver.md) |  | 2026-07-23 |
+| unit | [织空者摩托](factions/艾达灵族/units/skyweavers.md) |  | 2026-07-23 |
 | unit | [绯红猎手](factions/艾达灵族/units/crimson-hunter.md) |  | 2026-07-23 |
 | unit | [维萨奇](factions/艾达灵族/units/the-visarch.md) |  | 2026-07-23 |
 | unit | [翔空司战](factions/艾达灵族/units/autarch-wayleaper.md) |  | 2026-07-23 |
 | unit | [翔鹰](factions/艾达灵族/units/swooping-hawks.md) |  | 2026-07-23 |
 | unit | [莱凯丝](factions/艾达灵族/units/lhykhis.md) |  | 2026-07-23 |
+| unit | [虚空劫掠者海盗](factions/艾达灵族/units/corsair-voidreavers.md) |  | 2026-07-23 |
+| unit | [虚空编织者飞艇](factions/艾达灵族/units/voidweaver.md) |  | 2026-07-23 |
+| unit | [虚空裂痕海盗](factions/艾达灵族/units/corsair-voidscarred.md) |  | 2026-07-23 |
 | unit | [蝮蛇飞艇](factions/艾达灵族/units/vypers.md) |  | 2026-07-23 |
 | unit | [装备幽冥长刀的幽冥骑士](factions/艾达灵族/units/wraithknight-with-ghostglaive.md) |  | 2026-07-23 |
 | unit | [贾因 扎尔](factions/艾达灵族/units/jain-zar.md) |  | 2026-07-23 |
@@ -1890,8 +1891,6 @@ _Last updated: 2026-07-23 12:10 UTC_
 | unit | [Grotesques](factions/黑暗灵族/units/grotesques.md) |  | 2026-07-23 |
 | unit | [Raven Strike Fighter](factions/黑暗灵族/units/raven-strike-fighter.md) |  | 2026-07-23 |
 | unit | [Reaper](factions/黑暗灵族/units/reaper.md) |  | 2026-07-23 |
-| unit | [Scourges with Heavy Weapons](factions/黑暗灵族/units/scourges-with-heavy-weapons.md) |  | 2026-07-23 |
-| unit | [Starfangs](factions/黑暗灵族/units/starfangs.md) |  | 2026-07-23 |
 | unit | [Tantalus](factions/黑暗灵族/units/tantalus.md) |  | 2026-07-23 |
 | unit | [Urien Rakarth](factions/黑暗灵族/units/urien-rakarth.md) |  | 2026-07-23 |
 | unit | [丑角剧团](factions/黑暗灵族/units/troupe.md) |  | 2026-07-23 |
@@ -1909,6 +1908,7 @@ _Last updated: 2026-07-23 12:10 UTC_
 | unit | [执政官](factions/黑暗灵族/units/archon.md) |  | 2026-07-23 |
 | unit | [执政官之手](factions/黑暗灵族/units/hand-of-the-archon.md) |  | 2026-07-23 |
 | unit | [掠袭者飞艇](factions/黑暗灵族/units/raider.md) |  | 2026-07-23 |
+| unit | [星牙战机](factions/黑暗灵族/units/starfangs.md) |  | 2026-07-23 |
 | unit | [暗影先知](factions/黑暗灵族/units/shadowseer.md) |  | 2026-07-23 |
 | unit | [曼德拉](factions/黑暗灵族/units/mandrakes.md) |  | 2026-07-23 |
 | unit | [梦魇剑客](factions/黑暗灵族/units/incubi.md) |  | 2026-07-23 |
@@ -1927,6 +1927,7 @@ _Last updated: 2026-07-23 12:10 UTC_
 | unit | [血伶人](factions/黑暗灵族/units/haemonculus.md) |  | 2026-07-23 |
 | unit | [血腥魔女](factions/黑暗灵族/units/succubus.md) |  | 2026-07-23 |
 | unit | [装备毒晶卡宾枪天灾](factions/黑暗灵族/units/scourges-with-shardcarbines.md) |  | 2026-07-23 |
+| unit | [装备重型武器的天灾](factions/黑暗灵族/units/scourges-with-heavy-weapons.md) |  | 2026-07-23 |
 | unit | [达扎尔](factions/黑暗灵族/units/drazhar.md) |  | 2026-07-23 |
 | unit | [阴谋团战士](factions/黑暗灵族/units/kabalite-warriors.md) |  | 2026-07-23 |
 
@@ -1934,7 +1935,7 @@ _Last updated: 2026-07-23 12:10 UTC_
 
 ## 统计
 
-- **总实体数**: 1796
-- **core-rule**: 81
+- **总实体数**: 1797
+- **core-rule**: 82
 - **unit**: 1715
 

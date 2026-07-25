@@ -1,10 +1,9 @@
 # 帝皇卫队
 
-_Last updated: 2026-07-23 12:10 UTC_
+_Last updated: 2026-07-25 11:42 UTC_
 
 ## 单位
 
-- [[factions/帝皇卫队/units/shield-captain|Shield-captain]] — 
 - [[factions/帝皇卫队/units/contemptor-galatus-dreadnought|伽拉图斯蔑视者无畏机甲]] — 
 - [[factions/帝皇卫队/units/coronus-grav-carrier|克洛努斯反重力运兵车]] — 
 - [[factions/帝皇卫队/units/blade-champion|剑锋冠军]] — 
@@ -21,6 +20,7 @@ _Last updated: 2026-07-23 12:10 UTC_
 - [[factions/帝皇卫队/units/orion-assault-dropship|猎户座强袭炮艇]] — 
 - [[factions/帝皇卫队/units/valerian|瓦雷利安连长]] — 
 - [[factions/帝皇卫队/units/knight-centura|百骑长]] — 
+- [[factions/帝皇卫队/units/shield-captain|盾卫连长]] — 
 - [[factions/帝皇卫队/units/venerable-land-raider|神圣兰德掠袭者坦克]] — 
 - [[factions/帝皇卫队/units/venerable-contemptor-dreadnought|神圣蔑视者无畏机甲]] — 
 - [[factions/帝皇卫队/units/caladius-grav-tank|神鸟反重力坦克]] — 

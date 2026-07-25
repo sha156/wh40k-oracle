@@ -26,19 +26,19 @@ updated: '2026-07-23'
 ## 射击武器
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| Airbursting fragmentation projector | 24" | D6 | 4+ | 3 | 0 | 1 | blast，indirect fire |
-| Burst cannon | 18" | 4 | 4+ | 5 | 0 | 1 | — |
-| Cyclic ion blaster – standard | 18" | 3 | 4+ | 7 | -1 | 1 | — |
-| Cyclic ion blaster – overcharge | 18" | 3 | 4+ | 8 | -2 | 2 | hazardous |
-| Fusion blaster | 12" | 1 | 4+ | 9 | -4 | D6 | [[core-rules/melta.md\|melta 2]] |
-| Missile pod | 30" | 2 | 4+ | 7 | -1 | 2 | — |
-| Plasma rifle | 24" | 1 | 4+ | 8 | -3 | 3 | — |
-| T’au flamer | 12" | D6 | N/A | 4 | 0 | 1 | ignores cover，torrent |
+| 空爆榴弹发射器 | 24" | D6 | 4+ | 3 | 0 | 1 | [[core-rules/blast.md\|blast]]，[[core-rules/indirect-fire.md\|indirect fire]] |
+| 爆裂速射炮 | 18" | 4 | 4+ | 5 | 0 | 1 | — |
+| 循环离子炮—标准 | 18" | 3 | 4+ | 7 | -1 | 1 | — |
+| 循环离子炮—过载 | 18" | 3 | 4+ | 8 | -2 | 2 | [[core-rules/hazardous.md\|hazardous]] |
+| 融合炮 | 12" | 1 | 4+ | 9 | -4 | D6 | [[core-rules/melta.md\|melta 2]] |
+| 导弹仓 | 30" | 2 | 4+ | 7 | -1 | 2 | — |
+| 等离子步枪 | 24" | 1 | 4+ | 8 | -3 | 3 | — |
+| 钛式火焰喷射器 | 12" | D6 | N/A | 4 | 0 | 1 | [[core-rules/ignores-cover.md\|ignores cover]]，[[core-rules/torrent.md\|torrent]] |
 
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| Battlesuit fists | 近战 | 3 | 5+ | 5 | 0 | 1 | — |
+| 战斗服铁拳 | 近战 | 3 | 5+ | 5 | 0 | 1 | — |
 
 ## 技能
 - **Battlesuit Support System**：The bearer’s unit is eligible to shoot in a turn in which it Fell Back, but when doing so only models equipped with this wargear can make ranged attacks.

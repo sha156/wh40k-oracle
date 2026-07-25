@@ -29,7 +29,7 @@ updated: '2026-07-23'
 ## 射击武器
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| Perdition Pistol | 6" | 1 | 2+ | 9 | -4 | D6 | [[core-rules/melta.md\|melta 2]]，pistol，sustained hits d3 |
+| 热熔手枪“永劫” | 6" | 1 | 2+ | 9 | -4 | D6 | [[core-rules/melta.md\|melta 2]]，[[core-rules/pistol.md\|pistol]]，[[core-rules/sustained-hits.md\|sustained hits d3]] |
 
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |

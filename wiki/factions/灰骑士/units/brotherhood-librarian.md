@@ -31,12 +31,12 @@ updated: '2026-07-23'
 |---|---|---|---|---|---|---|---|
 | 复合武器 | 24" | 1 | 4+ | 4 | 0 | 1 | [[core-rules/anti.md\|针对步兵 4+]]，[[core-rules/rapid-fire.md\|速射 1]]，[[core-rules/devastating-wounds.md\|毁灭伤害]] |
 | ⻛暴爆矢枪 | 24" | 2 | 3+ | 4 | 0 | 1 | [[core-rules/rapid-fire.md\|速射 2]] |
-| 毁灭漩涡 | 18" | D6+3 | 3+ | 8 | -2 | 2 | [[core-rules/blast.md\|爆炸]]，灵能 |
+| 毁灭漩涡 | 18" | D6+3 | 3+ | 8 | -2 | 2 | [[core-rules/blast.md\|爆炸]]，[[core-rules/psychic-attacks.md\|灵能]] |
 
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| 天罚灵能武器 | 近战 | 4 | 2+ | 6 | -1 | 2 | 灵能 |
+| 天罚灵能武器 | 近战 | 4 | 2+ | 6 | -1 | 2 | [[core-rules/psychic-attacks.md\|灵能]] |
 
 ## 技能
 - **【阵营技能】无限之门**

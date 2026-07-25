@@ -33,7 +33,7 @@ updated: '2026-07-23'
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| Gauntlets of Ultramar | 近战 | 6 | 2+ | 8 | -3 | 3 | twin-linked |
+| 奥特拉玛之拳 | 近战 | 6 | 2+ | 8 | -3 | 3 | [[core-rules/twin-linked.md\|twin-linked]] |
 
 ## 技能
 - **【阵营技能】：破敌重誓**

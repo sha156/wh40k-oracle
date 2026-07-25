@@ -29,13 +29,13 @@ updated: '2026-07-23'
 ## 射击武器
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| Gauntlet of Fire | 12" | D6 | N/A | 5 | -1 | 1 | ignores cover，torrent |
-| Staff of the Destroyer | 18" | 3 | 2+ | 6 | -3 | 2 | — |
+| 火焰臂铠 | 12" | D6 | N/A | 5 | -1 | 1 | [[core-rules/ignores-cover.md\|ignores cover]]，[[core-rules/torrent.md\|torrent]] |
+| 毁灭者之杖 | 18" | 3 | 2+ | 6 | -3 | 2 | — |
 
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| Staff of the Destroyer | 近战 | 4 | 2+ | 6 | -3 | 2 | devastating wounds |
+| 毁灭者之杖 | 近战 | 4 | 2+ | 6 | -3 | 2 | [[core-rules/devastating-wounds.md\|devastating wounds]] |
 
 ## 技能
 - **[阵营]：重生协议**

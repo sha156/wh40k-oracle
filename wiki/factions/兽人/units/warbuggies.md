@@ -28,13 +28,13 @@ updated: '2026-07-23'
 ## 射击武器
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| Rack of rokkits | 24" | D3+1 | 5+ | 9 | -2 | 3 | blast |
-| Twin big shoota | 36" | 3 | 5+ | 5 | 0 | 1 | [[core-rules/rapid-fire.md\|rapid fire 2]]，twin-linked |
+| 火箭巢 | 24" | D3+1 | 5+ | 9 | -2 | 3 | [[core-rules/blast.md\|blast]] |
+| 双联大突突枪 | 36" | 3 | 5+ | 5 | 0 | 1 | [[core-rules/rapid-fire.md\|rapid fire 2]]，[[core-rules/twin-linked.md\|twin-linked]] |
 
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| Spiked wheels | 近战 | 3 | 4+ | 6 | 0 | 1 | — |
+| 带刺轮胎 | 近战 | 3 | 4+ | 6 | 0 | 1 | — |
 
 ## 技能
 - **Outflank**：When this unit arrives from Strategic Reserves, it can be set up within your opponent’s deployment zone (all other restrictions still apply).
