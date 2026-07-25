@@ -1,0 +1,57 @@
+# docker-compose.yml —— 本地自用全栈（BUILD-PLAN Stage 5）
+#
+#   docker compose up -d          起 api(8000) + web(3000)
+#   docker compose logs -f api    看启动前置校验（缺哪块资产一目了然）
+#   docker compose down           停
+#
+# 端口只绑 127.0.0.1：本项目内含规则书衍生内容，不该暴露到局域网/公网。
+# 变量从仓库根的 .env 读（compose 自动加载），照 .env.example 复制一份即可。
+
+services:
+  api:
+    build:
+      context: .
+      dockerfile: Dockerfile
+      args:
+        # 构建期出网走宿主机 Clash：DOCKER_BUILD_PROXY=http://host.docker.internal:7897
+        HTTP_PROXY: ${DOCKER_BUILD_PROXY:-}
+        HTTPS_PROXY: ${DOCKER_BUILD_PROXY:-}
+    image: wh40k-oracle-api:local
+    environment:
+      # key 只从环境进，永不落镜像层；缺 key 时后端降级但不崩
+      DEEPSEEK_API_KEY: ${DEEPSEEK_API_KEY:-}
+      WEB_API_LLM_PROVIDER: ${WEB_API_LLM_PROVIDER:-DeepSeek}
+      WEB_API_CORS: ${WEB_API_CORS:-http://localhost:3000,http://127.0.0.1:3000}
+      WEB_API_RATE_LIMIT_PER_MIN: ${WEB_API_RATE_LIMIT_PER_MIN:-120}
+      WEB_API_HEAVY_RATE_LIMIT_PER_MIN: ${WEB_API_HEAVY_RATE_LIMIT_PER_MIN:-20}
+      # 直接对外时保持 0：X-Forwarded-For 可伪造，信了等于没限流
+      WEB_API_TRUST_FORWARDED: ${WEB_API_TRUST_FORWARDED:-0}
+      # 启动即后台加载 bge-m3，避免首个提问干等冷启动
+      WEB_API_WARMUP: ${WEB_API_WARMUP:-1}
+      # 设 1 则必需资产缺失时拒绝启动（宁可起不来也不跑降级答案）
+      WEB_API_PREFLIGHT_STRICT: ${WEB_API_PREFLIGHT_STRICT:-0}
+    volumes:
+      # 全部只读：容器不该写宿主机的数据资产（写入一律走宿主机流水线）
+      - ./opt:/app/opt:ro                              # bge-m3 等模型（4.5G）
+      - ./local_vector_store:/app/local_vector_store:ro # FAISS 索引（ingest.py 产出）
+      - ./db:/app/db:ro                                 # 结构库（db_compile 产出）
+      - ./wiki:/app/wiki:ro                             # wiki 页（跟着仓库走，挂载保持最新）
+    ports:
+      - "127.0.0.1:8000:8000"
+    restart: unless-stopped
+
+  web:
+    build:
+      context: ./web
+      dockerfile: Dockerfile
+      args:
+        # 构建期内联进浏览器包：填**浏览器**能访问的地址，不是 compose 服务名
+        NEXT_PUBLIC_API_BASE: ${NEXT_PUBLIC_API_BASE:-http://localhost:8000}
+        HTTP_PROXY: ${DOCKER_BUILD_PROXY:-}
+        HTTPS_PROXY: ${DOCKER_BUILD_PROXY:-}
+    image: wh40k-oracle-web:local
+    ports:
+      - "127.0.0.1:3000:3000"
+    depends_on:
+      - api
+    restart: unless-stopped

@@ -6,11 +6,14 @@
   GET  /wiki/{path} 只读返回 wiki 页（图鉴页 Stage 4 用）。
   GET  /healthz     存活探针。
 
-安全（Stage 5 既定）：key 只读 env（DEEPSEEK_API_KEY）；CORS 白名单；会话内存 session。
+安全（Stage 5 既定）：key 只读 env（DEEPSEEK_API_KEY）；CORS 白名单；限流（见
+`web_api/ratelimit.py`）；会话内存 session。启动做资产前置校验（`web_api/preflight.py`），
+缺卷在日志里吼出来并反映到 /healthz，不静默降级。
 LLM 未配置（无 key）时以 Fake 直答降级，端点仍可用于前端联调，绝不因缺 key 崩溃。
 """
 from __future__ import annotations
 
+import contextlib
 import json
 import os
 import threading
@@ -25,6 +28,8 @@ from pydantic import BaseModel, ConfigDict, Field
 from web_api.contract import (Answer, CritiqueReportOut, RosterIn, SimResponse,
                               ValidationReportOut)
 from web_api.formatter import format_answer
+from web_api.preflight import run_preflight, summary as preflight_summary
+from web_api.ratelimit import install as install_rate_limit
 from web_api.trace import TraceRecorder
 
 # ── 配置（全部从 env 读，不落盘）─────────────────────────────────
@@ -36,7 +41,40 @@ _ALLOWED_ORIGINS = [
 _PROVIDER = os.environ.get("WEB_API_LLM_PROVIDER", "DeepSeek")
 _API_KEY = os.environ.get("DEEPSEEK_API_KEY", "")
 
-app = FastAPI(title="40K 规则专家 API", version="0.3.0")
+# ── 预热：首个 /chat 要现加载 bge-m3（CPU、GB 级），冷启动能等到超时。
+# 容器里 WEB_API_WARMUP=1 让它在后台线程提前加载，状态如实挂到 /healthz。
+_WARMUP: Dict[str, Any] = {"requested": False, "done": False, "error": None}
+
+
+def _warmup_resources() -> None:
+    try:
+        import importlib
+        app_mod = importlib.import_module("app")
+        _embeddings, vectorstore, _r, _w = app_mod.load_resources()
+        _WARMUP["done"] = True
+        _WARMUP["error"] = None
+        print("[warmup] 检索资源就绪（vectorstore={}）".format(
+            "已加载" if vectorstore is not None else "缺索引"), flush=True)
+    except Exception as exc:                      # 预热失败必须吼出来，不吞
+        _WARMUP["error"] = "{}: {}".format(type(exc).__name__, exc)
+        print("[warmup] ⚠ 预热失败：{}（首个请求会现加载并可能再次失败）".format(
+            _WARMUP["error"]), flush=True)
+
+
+@contextlib.asynccontextmanager
+async def _lifespan(_app: "FastAPI"):
+    run_preflight()
+    if os.environ.get("WEB_API_WARMUP", "") == "1":
+        _WARMUP["requested"] = True
+        threading.Thread(target=_warmup_resources, name="warmup",
+                         daemon=True).start()
+    yield
+
+
+app = FastAPI(title="40K 规则专家 API", version="0.4.0", lifespan=_lifespan)
+# 顺序要紧：先挂限流、后挂 CORS，CORS 才在外层——429 响应带得上跨域头，
+# 浏览器 OPTIONS 预检也不会白占配额。
+install_rate_limit(app)
 app.add_middleware(
     CORSMiddleware,
     allow_origins=_ALLOWED_ORIGINS,
@@ -124,7 +162,15 @@ def _stream_answer(answer: Answer):
 
 @app.get("/healthz")
 def healthz() -> Dict[str, Any]:
-    return {"ok": True, "llm_configured": bool(_API_KEY)}
+    """存活 + 就绪。ok 只说进程活着；ready 说必需资产都挂上了，别混用。"""
+    info = preflight_summary()
+    return {
+        "ok": True,
+        "llm_configured": bool(_API_KEY),
+        "ready": info["ready"],
+        "assets": info["assets"],
+        "warmup": dict(_WARMUP),
+    }
 
 
 @app.post("/chat")

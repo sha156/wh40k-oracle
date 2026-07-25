@@ -55,10 +55,17 @@
   凭 40K 记忆虚构数值——硬化 `refine_prompt.py`（v1→v2 铁律：源无数值时只输出名字/编制）
   + `scripts/refine_pages_fabricated.py` 重跑 30 页清零，verify_warn 67→37（余 37 纯结构性
   误报，纯造数字=0）。报告 `docs/superpowers/specs/2026-07-24-refine-fabrication-fix.md`
-- **剩余**：T5 · Stage 5 部署（`web/` Next.js + `web_api/` FastAPI 已成型，尚无 Dockerfile/
-  部署配置）；基准扩充（长期滚动，agent gold v3 现 96/96=100.0 零硬错，#41/#42 为固定波动题）。
-  非阻塞遗留：37 页纯结构性 verify_warn 误报（可给 verify_numbers 加白名单降噪）、军表 PR1c
-  文本解析、外部源观察项（BSData-11e / Wahapedia 11版 / 黑图书馆）。T6 分支清理已实际完成
+- **T5 · Stage 5 部署已落地**（2026-07-25）：`docker compose up` 起 api+web 两服务，
+  镜像只装代码、`opt/`(4.5G)+`local_vector_store/`+`db/`+`wiki/` 全部 `:ro` 挂宿主机，
+  端口只绑 127.0.0.1、非 root、torch 走 CPU 源（否则白背 2G nvidia 依赖）、`workers=1`
+  （模型缓存在进程内）。新增 `web_api/preflight.py`（启动核对资产，缺卷在日志吼+落
+  `/healthz.ready`，防"卷没挂上→全部静默降级"）与 `web_api/ratelimit.py`（两档固定窗口，
+  heavy=/chat+/simulate+/roster/critique，XFF 默认不信；限流须挂在 CORS **之前**）。
+  1936 测试绿。设计与验收 `docs/superpowers/specs/2026-07-25-stage5-deploy.md`。
+  ⚠ **镜像尚未真实构建验证**（本机 Docker Desktop 守护进程未起），验收表最后一行是待办
+- **剩余**：基准扩充（长期滚动，agent gold v3 现 96/96=100.0 零硬错，#41/#42 为固定波动题）。
+  非阻塞遗留：军表 PR1c 文本解析、外部源观察项（BSData-11e / Wahapedia 11版 / 黑图书馆）。
+  T6 分支清理已实际完成
 
 ## 数据事实（2026-07-10 语料重组后）
 

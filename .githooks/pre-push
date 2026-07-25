@@ -11,7 +11,10 @@ for path in .venv opt local_vector_store data; do
   fi
 done
 
-if git diff --cached --name-only | grep -Eq '(^|/)\.env($|\.|/)|(^|/)\.streamlit/secrets\.toml$'; then
+# 同 pre-commit：放行 .env.example（空占位的说明书），其余 .env* 一律拦
+if git diff --cached --name-only \
+  | grep -Ev '(^|/)\.env\.example$' \
+  | grep -Eq '(^|/)\.env($|\.|/)|(^|/)\.streamlit/secrets\.toml$'; then
   echo "Blocked: secrets detected in staged changes." >&2
   exit 1
 fi
