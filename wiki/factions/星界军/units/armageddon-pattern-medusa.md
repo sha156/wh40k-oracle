@@ -1,5 +1,5 @@
 ---
-id: 000000739
+id: '000000739'
 name_en: Armageddon-pattern Medusa
 faction: 星界军
 type: unit

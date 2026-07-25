@@ -1,5 +1,5 @@
 ---
-id: 000000969
+id: '000000969'
 name_zh: 亵渎者
 name_en: Defiler
 faction: 混沌星际战士

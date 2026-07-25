@@ -1,5 +1,5 @@
 ---
-id: 000003970
+id: '000003970'
 name_zh: 死亡直击导弹车
 name_en: Deathstrike
 faction: 基因窃取者教派

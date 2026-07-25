@@ -1,5 +1,5 @@
 ---
-id: 000000039
+id: '000000039'
 name_zh: 战斗堡垒
 name_en: Battlewagon
 faction: 兽人

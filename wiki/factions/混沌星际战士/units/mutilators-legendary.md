@@ -1,5 +1,5 @@
 ---
-id: 000000955
+id: '000000955'
 name_en: Mutilators (Legendary)
 faction: 混沌星际战士
 type: unit
@@ -39,4 +39,4 @@ updated: '2026-07-23'
 
 ## 关键词
 - **阵营关键词**：Heretic Astartes
-- **普通关键词**：[[core-rules/infantry.md|Infantry]]，Mutilators，Daemon，Chaos
+- **普通关键词**：[[core-rules/infantry.md|Infantry]]，[[factions/混沌星际战士/units/mutilators.md|Mutilators]]，Daemon，Chaos

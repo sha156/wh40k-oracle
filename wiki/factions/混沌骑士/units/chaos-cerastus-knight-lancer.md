@@ -1,5 +1,5 @@
 ---
-id: 000001095
+id: '000001095'
 name_zh: 混沌枪骑兵型角蝰骑士
 name_en: Chaos Cerastus Knight Lancer
 faction: 混沌骑士

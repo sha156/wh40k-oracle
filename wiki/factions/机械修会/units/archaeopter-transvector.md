@@ -1,5 +1,5 @@
 ---
-id: 000002085
+id: '000002085'
 name_zh: 始祖鸟矢量飞梭
 name_en: Archaeopter Transvector
 faction: 机械修会

@@ -46,4 +46,4 @@ updated: '2026-07-23'
 
 ## 关键词
 - **阵营关键词**：Legiones Daemonica
-- **普通关键词**：[[core-rules/mounted.md|Mounted]]，Nurgle，Daemon，Chaos，Shadow Legion，Pox Riders
+- **普通关键词**：[[core-rules/mounted.md|Mounted]]，Nurgle，Daemon，Chaos，[[factions/混沌恶魔/detachments/shadow-legion.md|Shadow Legion]]，Pox Riders

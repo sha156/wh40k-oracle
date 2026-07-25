@@ -1,5 +1,5 @@
 ---
-id: 000002584
+id: '000002584'
 name_zh: 粉惧妖
 name_en: Pink Horrors
 faction: 混沌恶魔
@@ -52,4 +52,4 @@ updated: '2026-07-23'
 
 ## 关键词
 - **阵营关键词**：Legiones Daemonica
-- **普通关键词**：Blue，Horrors，Pink，Brimstone，[[core-rules/infantry.md|Infantry]]，Shadow Legion，[[core-rules/battleline.md|Battleline]]，Chaos，Daemon，Tzeentch
+- **普通关键词**：Blue，Horrors，Pink，Brimstone，[[core-rules/infantry.md|Infantry]]，[[factions/混沌恶魔/detachments/shadow-legion.md|Shadow Legion]]，[[core-rules/battleline.md|Battleline]]，Chaos，Daemon，Tzeentch

@@ -1,5 +1,5 @@
 ---
-id: 000001398
+id: '000001398'
 name_zh: 欧格林保镖
 name_en: Ogryn Bodyguard
 faction: 星界军

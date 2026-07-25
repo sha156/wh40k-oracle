@@ -1,5 +1,5 @@
 ---
-id: 000002769
+id: '000002769'
 name_zh: 天命型侍从
 name_en: Armiger Moirax
 faction: 帝国骑士

@@ -1,5 +1,5 @@
 ---
-id: 000003891
+id: '000003891'
 name_zh: 卡塔昌指挥组
 name_en: Catachan Command Squad
 faction: 星界军

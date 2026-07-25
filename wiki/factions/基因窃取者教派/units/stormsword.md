@@ -1,5 +1,5 @@
 ---
-id: 000003991
+id: '000003991'
 name_zh: 风暴之剑
 name_en: Stormsword
 faction: 基因窃取者教派

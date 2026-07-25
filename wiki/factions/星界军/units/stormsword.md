@@ -1,5 +1,5 @@
 ---
-id: 000000709
+id: '000000709'
 name_zh: 风暴之剑
 name_en: Stormsword
 faction: 星界军

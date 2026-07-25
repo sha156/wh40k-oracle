@@ -1,5 +1,5 @@
 ---
-id: 000003990
+id: '000003990'
 name_zh: 风暴领主
 name_en: Stormlord
 faction: 基因窃取者教派

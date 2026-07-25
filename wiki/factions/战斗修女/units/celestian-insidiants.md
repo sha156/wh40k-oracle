@@ -1,5 +1,5 @@
 ---
-id: 000004189
+id: '000004189'
 name_zh: 洁天使隐伏者
 name_en: Celestian Insidiants
 faction: 战斗修女

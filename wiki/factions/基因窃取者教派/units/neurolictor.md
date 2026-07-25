@@ -1,5 +1,5 @@
 ---
-id: 000003885
+id: '000003885'
 name_zh: 神经刀斧虫
 name_en: Neurolictor
 faction: 基因窃取者教派

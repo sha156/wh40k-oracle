@@ -1,5 +1,5 @@
 ---
-id: 000004179
+id: '000004179'
 name_en: Judiciar Xacharus
 faction: 星际战士
 type: unit
@@ -43,4 +43,4 @@ updated: '2026-07-23'
 
 ## 关键词
 - **阵营关键词**：Adeptus Astartes，Blood Ravens
-- **普通关键词**：Xacharus，Tacticus，[[core-rules/infantry.md|Infantry]]，[[core-rules/character.md|Character]]，Imperium，Judiciar，[[core-rules/epic-hero.md|Epic Hero]]
+- **普通关键词**：Xacharus，Tacticus，[[core-rules/infantry.md|Infantry]]，[[core-rules/character.md|Character]]，Imperium，[[factions/星际战士/units/judiciar.md|Judiciar]]，[[core-rules/epic-hero.md|Epic Hero]]

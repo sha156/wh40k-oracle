@@ -1,5 +1,5 @@
 ---
-id: 000000857
+id: '000000857'
 name_zh: 守望骑士
 name_en: Knight Warden
 faction: 帝国骑士

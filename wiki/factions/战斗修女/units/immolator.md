@@ -1,5 +1,5 @@
 ---
-id: 000000911
+id: '000000911'
 name_zh: 献祭者坦克
 name_en: Immolator
 faction: 战斗修女

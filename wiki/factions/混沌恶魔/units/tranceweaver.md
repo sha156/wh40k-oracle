@@ -1,5 +1,5 @@
 ---
-id: 000001138
+id: '000001138'
 name_zh: 织幻者
 name_en: Tranceweaver
 faction: 混沌恶魔
@@ -40,4 +40,4 @@ updated: '2026-07-23'
 
 ## 关键词
 - **阵营关键词**：Legiones Daemonica
-- **普通关键词**：[[core-rules/infantry.md|Infantry]]，Daemon，Chaos，Shadow Legion，Tranceweaver，Slaanesh，[[core-rules/character.md|Character]]，[[core-rules/psyker.md|Psyker]]
+- **普通关键词**：[[core-rules/infantry.md|Infantry]]，Daemon，Chaos，[[factions/混沌恶魔/detachments/shadow-legion.md|Shadow Legion]]，Tranceweaver，Slaanesh，[[core-rules/character.md|Character]]，[[core-rules/psyker.md|Psyker]]

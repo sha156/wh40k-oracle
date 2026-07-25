@@ -44,4 +44,4 @@ updated: '2026-07-23'
 
 ## 关键词
 - **阵营关键词**：Adeptus Astartes
-- **普通关键词**：Lieutenant with Combi-weapon，Lieutenant，Imperium，Phobos，[[core-rules/character.md|Character]]，[[core-rules/infantry.md|Infantry]]，[[core-rules/grenades.md|Grenades]]
+- **普通关键词**：[[factions/星际战士/units/lieutenant.md|Lieutenant]] with Combi-weapon，Lieutenant，Imperium，Phobos，[[core-rules/character.md|Character]]，[[core-rules/infantry.md|Infantry]]，[[core-rules/grenades.md|Grenades]]

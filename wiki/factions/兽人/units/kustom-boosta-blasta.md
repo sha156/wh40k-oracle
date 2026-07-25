@@ -1,5 +1,5 @@
 ---
-id: 000001538
+id: '000001538'
 name_zh: 魔改爆裂车
 name_en: Kustom Boosta-blasta
 faction: 兽人

@@ -1,5 +1,5 @@
 ---
-id: 000000383
+id: '000000383'
 name_zh: 净化者⼩队
 name_en: Purifier Squad
 faction: 灰骑士

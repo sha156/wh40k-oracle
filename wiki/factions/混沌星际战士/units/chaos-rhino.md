@@ -1,5 +1,5 @@
 ---
-id: 000000956
+id: '000000956'
 name_zh: 犀牛装甲车
 name_en: Chaos Rhino
 faction: 混沌星际战士

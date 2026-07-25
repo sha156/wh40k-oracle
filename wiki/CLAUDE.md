@@ -32,6 +32,9 @@ wiki/
 │   └── <english-slug>.md
 ├── indexes/             索引类生成物（不是实体页，禁止手改）
 │   └── keywords.md      武器词条（USR）总索引 + 反查
+├── core-rules/stratagems/  **核心战略**（不属于任何阵营的通用战略，如「指挥重投」
+│                           「疯狂勇气」，实测 28 条）。按 §2 第 1 条，规则类内容归
+│                           core-rules；放进某个阵营目录会谎称它是该阵营专属
 └── factions/<中文阵营名>/
     ├── index.md         阵营索引 —— 生成物
     ├── units/           兵牌页（1 张 Wahapedia datasheet = 1 页）

@@ -1,5 +1,5 @@
 ---
-id: 000004099
+id: '000004099'
 name_zh: 音爆战士
 name_en: Noise Marines
 faction: 混沌星际战士

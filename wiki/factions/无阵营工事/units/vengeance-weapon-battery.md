@@ -1,5 +1,5 @@
 ---
-id: 000000917
+id: '000000917'
 name_en: Vengeance Weapon Battery
 faction: 无阵营工事
 type: unit

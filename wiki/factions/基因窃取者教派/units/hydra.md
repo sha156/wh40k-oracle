@@ -1,5 +1,5 @@
 ---
-id: 000003975
+id: '000003975'
 name_zh: 九头蛇高射炮
 name_en: Hydra
 faction: 基因窃取者教派

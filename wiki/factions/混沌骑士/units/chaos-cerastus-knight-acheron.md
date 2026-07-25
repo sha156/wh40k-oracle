@@ -1,5 +1,5 @@
 ---
-id: 000001094
+id: '000001094'
 name_zh: 混沌黄泉型角蝰骑士
 name_en: Chaos Cerastus Knight Acheron
 faction: 混沌骑士

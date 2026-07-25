@@ -1,5 +1,5 @@
 ---
-id: 000003871
+id: '000003871'
 name_zh: 守望堡主
 name_en: Watch Master
 faction: 星际战士

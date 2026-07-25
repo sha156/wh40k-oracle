@@ -1206,33 +1206,6 @@
    "synthesis": "仅触发距离 9\"→8\"，其余逐字一致"
   },
   {
-   "table": "stratagems",
-   "column": "text_zh",
-   "id": "000010748005",
-   "name_en": "THREAT‑COGITATION TARGETERS",
-   "fp_source": "Faction Pack Adeptus Mechanicus page_006.md（Eradication Cohort – Wargear Stratagem 全文；库内该行 text_zh/detachment/phase 三列皆空）",
-   "from_text": "",
-   "to_text": "<b>WHEN:</b> Your Shooting phase.<br><br><b>TARGET:</b> One Skitarii Vehicle unit from your army that has not been selected to shoot this phase.<br><br><b>EFFECT:</b> Until the end of the phase, each time a ranged attack made by a model in your unit is allocated to a Monster or Vehicle model, you can re‑roll the Damage roll."
-  },
-  {
-   "table": "stratagems",
-   "column": "detachment",
-   "id": "000010748005",
-   "name_en": "THREAT‑COGITATION TARGETERS",
-   "fp_source": "Faction Pack Adeptus Mechanicus page_006.md（同上：所属分队归位）",
-   "from_text": "",
-   "to_text": "Eradication Cohort"
-  },
-  {
-   "table": "stratagems",
-   "column": "phase",
-   "id": "000010748005",
-   "name_en": "THREAT‑COGITATION TARGETERS",
-   "fp_source": "Faction Pack Adeptus Mechanicus page_006.md（同上：阶段归位）",
-   "from_text": "",
-   "to_text": "Shooting phase"
-  },
-  {
    "table": "detachments",
    "column": "rule_text",
    "id": "000010150",

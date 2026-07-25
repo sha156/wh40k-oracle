@@ -1,5 +1,5 @@
 ---
-id: 000000585
+id: '000000585'
 name_zh: 战巫
 name_en: Warlock
 faction: 艾达灵族

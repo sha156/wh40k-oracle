@@ -1,5 +1,5 @@
 ---
-id: 000000845
+id: '000000845'
 name_zh: 卡斯特兰机器人
 name_en: Kastelan Robots
 faction: 机械修会

@@ -1,5 +1,5 @@
 ---
-id: 000002619
+id: '000002619'
 name_zh: 神盾防御墙
 name_en: Aegis Defence Line
 faction: 星界军

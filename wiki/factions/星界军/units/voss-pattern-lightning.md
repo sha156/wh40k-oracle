@@ -1,5 +1,5 @@
 ---
-id: 000000781
+id: '000000781'
 name_en: Voss-pattern Lightning
 faction: 星界军
 type: unit

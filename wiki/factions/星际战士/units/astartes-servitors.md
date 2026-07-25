@@ -40,7 +40,7 @@ updated: '2026-07-23'
 
 ## 技能
 - **Mindlock**：While a [[factions/星际战士/units/techmarine.md|Techmarine]] model is leading this unit, improve the Ballistic Skill and Weapon Skill characteristics of ranged and melee weapons equipped by <span class="kwb">ASTARTES</span> <span class="kwb">SERVITOR</span> models in this unit by 1.
-- **SERVITOR RETINUE**：At the start of the Declare Battle Formations step, this unit can join one other unit from your army that is being led by a Techmarine. If it does, until the end of the battle, every model in this unit counts as being part of that Bodyguard unit, and that Bodyguard unit’s Starting Strength is increased accordingly.
+- **SERVITOR RETINUE**：At the start of the Declare Battle Formations step, this unit can join one other unit from your army that is being led by a [[factions/星际战士/units/techmarine.md|Techmarine]]. If it does, until the end of the battle, every model in this unit counts as being part of that Bodyguard unit, and that Bodyguard unit’s Starting Strength is increased accordingly.
 
 ## 单位构成
 - **4个模型** — 55 分

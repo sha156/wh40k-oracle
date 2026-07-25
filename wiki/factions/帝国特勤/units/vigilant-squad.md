@@ -1,5 +1,5 @@
 ---
-id: 000002683
+id: '000002683'
 name_zh: 警戒者小队
 name_en: Vigilant Squad
 faction: 帝国特勤

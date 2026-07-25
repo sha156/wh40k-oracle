@@ -1,5 +1,5 @@
 ---
-id: 000002588
+id: '000002588'
 name_zh: 克鲁特远猎者小队
 name_en: Kroot Farstalkers
 faction: 钛帝国

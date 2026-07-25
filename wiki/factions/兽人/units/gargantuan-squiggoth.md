@@ -1,5 +1,5 @@
 ---
-id: 000000059
+id: '000000059'
 name_zh: 巨型斯奎格兽
 name_en: Gargantuan Squiggoth
 faction: 兽人
@@ -45,4 +45,4 @@ updated: '2026-07-23'
 
 ## 关键词
 - **阵营关键词**：Orks
-- **普通关键词**：Monster，[[core-rules/titanic.md|Titanic]]，[[core-rules/transport.md|Transport]]，[[core-rules/towering.md|Towering]]，Gargantuan Squiggoth
+- **普通关键词**：Monster，[[core-rules/titanic.md|Titanic]]，[[core-rules/transport.md|Transport]]，[[core-rules/towering.md|Towering]]，Gargantuan [[factions/兽人/units/squiggoth.md|Squiggoth]]

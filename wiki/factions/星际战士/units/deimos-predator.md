@@ -1,5 +1,5 @@
 ---
-id: 000002268
+id: '000002268'
 name_en: Deimos Predator
 faction: 星际战士
 type: unit

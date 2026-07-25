@@ -1,5 +1,5 @@
 ---
-id: 000002569
+id: '000002569'
 name_zh: 黑暗巫会
 name_en: Dark Commune
 faction: 混沌星际战士

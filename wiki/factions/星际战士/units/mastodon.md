@@ -1,5 +1,5 @@
 ---
-id: 000001189
+id: '000001189'
 name_en: Mastodon
 faction: 星际战士
 type: unit

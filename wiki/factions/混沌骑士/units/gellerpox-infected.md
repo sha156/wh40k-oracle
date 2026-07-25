@@ -1,5 +1,5 @@
 ---
-id: 000003854
+id: '000003854'
 name_en: Gellerpox Infected
 faction: 混沌骑士
 type: unit

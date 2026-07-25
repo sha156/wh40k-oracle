@@ -1,5 +1,5 @@
 ---
-id: 000000097
+id: '000000097'
 name_zh: 落锤堡
 name_en: Hammerfall Bunker
 faction: 星际战士

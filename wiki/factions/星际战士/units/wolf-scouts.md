@@ -1,5 +1,5 @@
 ---
-id: 000004182
+id: '000004182'
 name_zh: 狼侦查
 name_en: Wolf Scouts
 faction: 星际战士

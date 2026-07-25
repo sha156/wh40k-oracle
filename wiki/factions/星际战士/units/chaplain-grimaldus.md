@@ -1,5 +1,5 @@
 ---
-id: 000002792
+id: '000002792'
 name_zh: 格瑞马都斯牧师
 name_en: Chaplain Grimaldus
 faction: 星际战士

@@ -1,5 +1,5 @@
 ---
-id: 000003921
+id: '000003921'
 name_zh: 死神军毒灾飞艇
 name_en: Ynnari Venom
 faction: 艾达灵族

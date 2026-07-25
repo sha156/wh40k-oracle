@@ -1,5 +1,5 @@
 ---
-id: 000003977
+id: '000003977'
 name_zh: 克里格战斗工兵
 name_en: Krieg Combat Engineers
 faction: 基因窃取者教派

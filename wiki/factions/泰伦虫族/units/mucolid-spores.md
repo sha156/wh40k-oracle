@@ -1,5 +1,5 @@
 ---
-id: 000000487
+id: '000000487'
 name_zh: 粘液孢子
 name_en: Mucolid Spores
 faction: 泰伦虫族

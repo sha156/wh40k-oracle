@@ -1,5 +1,5 @@
 ---
-id: 000000169
+id: '000000169'
 name_en: Gabriel Seth
 faction: 星际战士
 type: unit

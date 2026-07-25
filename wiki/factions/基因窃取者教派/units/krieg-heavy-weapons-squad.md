@@ -1,5 +1,5 @@
 ---
-id: 000003978
+id: '000003978'
 name_zh: 克里格重型武器小队
 name_en: Krieg Heavy Weapons Squad
 faction: 基因窃取者教派

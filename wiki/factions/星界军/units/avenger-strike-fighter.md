@@ -1,5 +1,5 @@
 ---
-id: 000000780
+id: '000000780'
 name_zh: 复仇者攻击机
 name_en: Avenger Strike Fighter
 faction: 星界军

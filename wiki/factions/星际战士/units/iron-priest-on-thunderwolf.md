@@ -1,5 +1,5 @@
 ---
-id: 000000308
+id: '000000308'
 name_en: Iron Priest On Thunderwolf
 faction: 星际战士
 type: unit
@@ -33,7 +33,7 @@ updated: '2026-07-23'
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
 | Crushing teeth and claws | 近战 | 3 | 4+ | 5 | -1 | 1 | [[core-rules/extra-attacks.md\|extra attacks]] |
-| Iron Priest hammer | 近战 | 3 | 4+ | 8 | -2 | 3 | — |
+| [[factions/星际战士/units/iron-priest.md\|Iron Priest]] hammer | 近战 | 3 | 4+ | 8 | -2 | 3 | — |
 | Servo arm | 近战 | 1 | 3+ | 8 | -2 | 3 | [[core-rules/extra-attacks.md\|extra attacks]] |
 
 ## 技能

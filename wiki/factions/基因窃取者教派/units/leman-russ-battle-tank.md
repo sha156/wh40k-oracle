@@ -1,5 +1,5 @@
 ---
-id: 000003979
+id: '000003979'
 name_zh: 黎曼鲁斯战斗坦克
 name_en: Leman Russ Battle Tank
 faction: 基因窃取者教派

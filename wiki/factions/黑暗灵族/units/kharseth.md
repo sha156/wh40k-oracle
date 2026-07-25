@@ -1,5 +1,5 @@
 ---
-id: 000004197
+id: '000004197'
 name_zh: 卡尔塞斯
 name_en: Kharseth
 faction: 黑暗灵族

@@ -1,5 +1,5 @@
 ---
-id: 000000947
+id: '000000947'
 name_zh: 混沌终结者
 name_en: Chaos Terminator Squad
 faction: 混沌星际战士

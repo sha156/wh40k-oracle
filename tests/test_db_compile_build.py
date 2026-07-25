@@ -6,7 +6,7 @@ import sqlite3
 import pytest
 
 from db_compile.build import EXPECTED_CSV, build_database, _insert_abilities
-from db_compile.schema import ABILITIES_DDL
+from db_compile.schema import ABILITIES_DDL, ensure_columns
 
 
 class TestAbilitiesLinksNotFolded:
@@ -224,6 +224,138 @@ class TestMissingIdColumn:
 
         assert report.row_counts["factions"] == 1
         assert report.skipped["factions"] == 1
+
+
+# 分队规则名（name）与分队容器名（detachment）是两回事——CSV 两列都有，
+# 旧实现只存了规则名。第 2 条复刻真实的裸换行形态（legend 中断行）。
+DETACHMENT_CSV = (
+    "﻿id|faction_id|name|legend|description|detachment|detachment_id|\n"
+    "000008393|AC|Martial Mastery|flavour|rule body|Shield Host|000000861|\n"
+    "000010150|CSM|Dark Pacts|the pact is sealed in\n"
+    "blood|pact body|Pactbound Zealots|000001007|\n"
+)
+
+STRATAGEM_CSV = (
+    "﻿faction_id|name|id|type|cp_cost|legend|turn|phase|detachment|"
+    "detachment_id|description|\n"
+    "AdM|THREAT|000010748005|Eradication Cohort – Wargear Stratagem|1|"
+    "assist in their\n"
+    "rapid elimination.|Your turn|Shooting phase|Eradication Cohort|"
+    "000001143|body text|\n"
+)
+
+
+class TestDetachmentContainerColumns:
+    """回归：分队**容器名**必须入库。
+
+    旧实现只存 name（分队规则名 Martial Mastery），容器名（Shield Host）整列丢失，
+    结果拿 enhancements.detachment_name 去撞 detachments.name_en 命中 0/323；
+    靠 id 邻接反推容器又会指错（Pactbound Zealots 的规则是 Dark Pacts，邻接却
+    指到 Combat Doctrines）。所以只认 CSV 原生的 detachment / detachment_id。
+    """
+
+    def _build(self, tmp_path):
+        csv_dir = _write_fixture_csv_dir(tmp_path)
+        (csv_dir / "Detachment_abilities.csv").write_text(
+            DETACHMENT_CSV, encoding="utf-8")
+        (csv_dir / "Stratagems.csv").write_text(STRATAGEM_CSV, encoding="utf-8")
+        db_path = tmp_path / "wh40k.sqlite"
+        report = build_database(csv_dir, db_path)
+        return report, sqlite3.connect(str(db_path))
+
+    def test_container_name_and_id_stored_separately_from_rule_name(self, tmp_path):
+        _, conn = self._build(tmp_path)
+        try:
+            row = conn.execute(
+                "SELECT name_en, detachment_name, detachment_id FROM detachments "
+                "WHERE id = '000008393'").fetchone()
+        finally:
+            conn.close()
+        assert row == ("Martial Mastery", "Shield Host", "000000861")
+
+    def test_bare_newline_detachment_row_not_split(self, tmp_path):
+        report, conn = self._build(tmp_path)
+        try:
+            n = conn.execute("SELECT COUNT(*) FROM detachments").fetchone()[0]
+            row = conn.execute(
+                "SELECT name_en, rule_text, detachment_name FROM detachments "
+                "WHERE id = '000010150'").fetchone()
+        finally:
+            conn.close()
+        assert n == 2                       # 劈成两行的话会多出一条垃圾行
+        assert row == ("Dark Pacts", "pact body", "Pactbound Zealots")
+        assert report.csv_audit["Detachment_abilities.csv"]["reconciled"]
+
+    def test_stratagem_type_and_turn_stored(self, tmp_path):
+        _, conn = self._build(tmp_path)
+        try:
+            row = conn.execute(
+                "SELECT type, turn, phase, detachment, cp_cost FROM stratagems "
+                "WHERE id = '000010748005'").fetchone()
+            garbage = conn.execute(
+                "SELECT COUNT(*) FROM stratagems WHERE id = 'Shooting phase'"
+            ).fetchone()[0]
+        finally:
+            conn.close()
+        assert row == ("Eradication Cohort – Wargear Stratagem", "Your turn",
+                       "Shooting phase", "Eradication Cohort", "1")
+        assert garbage == 0
+
+    def test_report_exposes_csv_reconciliation(self, tmp_path):
+        report, conn = self._build(tmp_path)
+        conn.close()
+        assert report.unreconciled() == {}
+        audit = report.csv_audit["Stratagems.csv"]
+        assert audit["physical_lines"] == 2 and audit["parsed_rows"] == 1
+
+
+class TestEnsureColumnsMigration:
+    """旧库（建表早于这几列）靠 ALTER TABLE 补齐——`CREATE TABLE IF NOT EXISTS`
+    对已存在的表是空跑，光改 DDL 补不到已经在跑的 db/wh40k.sqlite。"""
+
+    OLD_DETACHMENTS = ("CREATE TABLE detachments (id TEXT PRIMARY KEY, faction TEXT, "
+                       "name_zh TEXT, name_en TEXT, rule_text TEXT, "
+                       "enhancements_json TEXT)")
+    OLD_STRATAGEMS = ("CREATE TABLE stratagems (id TEXT PRIMARY KEY, faction TEXT, "
+                      "detachment TEXT, name_zh TEXT, name_en TEXT, cp_cost TEXT, "
+                      "phase TEXT, text_zh TEXT)")
+
+    def _cols(self, conn, table):
+        return {r[1] for r in conn.execute(f"PRAGMA table_info({table})")}
+
+    def test_adds_missing_columns_and_keeps_existing_rows(self):
+        conn = sqlite3.connect(":memory:")
+        conn.execute(self.OLD_DETACHMENTS)
+        conn.execute(self.OLD_STRATAGEMS)
+        conn.execute("INSERT INTO detachments (id, name_en) VALUES ('d1', 'Martial Mastery')")
+        added = ensure_columns(conn)
+
+        assert set(added) == {"detachments.detachment_name", "detachments.detachment_id",
+                              "stratagems.type", "stratagems.turn"}
+        assert {"detachment_name", "detachment_id"} <= self._cols(conn, "detachments")
+        assert {"type", "turn"} <= self._cols(conn, "stratagems")
+        # 既有行还在，新列为 NULL（补列不造数）
+        assert conn.execute(
+            "SELECT name_en, detachment_name FROM detachments").fetchone() \
+            == ("Martial Mastery", None)
+        conn.close()
+
+    def test_is_idempotent_on_current_schema(self, tmp_path):
+        csv_dir = _write_fixture_csv_dir(tmp_path)
+        db_path = tmp_path / "wh40k.sqlite"
+        build_database(csv_dir, db_path)
+        conn = sqlite3.connect(str(db_path))
+        try:
+            assert ensure_columns(conn) == []      # 新库 DDL 自带，空跑
+        finally:
+            conn.close()
+
+    def test_skips_tables_that_do_not_exist(self):
+        conn = sqlite3.connect(":memory:")
+        assert ensure_columns(conn) == []          # 不越权造表
+        assert not list(conn.execute(
+            "SELECT name FROM sqlite_master WHERE type='table'"))
+        conn.close()
 
 
 class TestAtomicReplace:

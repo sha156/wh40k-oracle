@@ -1,5 +1,5 @@
 ---
-id: 000002359
+id: '000002359'
 name_zh: 灾蝗驱逐者
 name_en: Lokhust Destroyers
 faction: 太空死灵

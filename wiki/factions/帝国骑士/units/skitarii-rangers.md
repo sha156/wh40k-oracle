@@ -1,5 +1,5 @@
 ---
-id: 000003842
+id: '000003842'
 name_zh: 护教军游猎兵
 name_en: Skitarii Rangers
 faction: 帝国骑士

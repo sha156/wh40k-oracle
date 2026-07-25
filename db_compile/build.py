@@ -21,9 +21,9 @@ from dataclasses import dataclass, field
 from pathlib import Path
 from typing import Dict, List, Optional, Tuple
 
-from wiki_compile.canonical import parse_wahapedia_csv
+from wiki_compile.canonical import audit_wahapedia_csv, parse_wahapedia_csv
 
-from db_compile.schema import ALL_DDL
+from db_compile.schema import ALL_DDL, ensure_columns
 
 # Wahapedia 官方导出全集（spec 第四节「~20张关系表」的核心子集）。
 # Wargear.csv 永 404——但 Datasheets_wargear.csv 已内联 name+stats，不影响武器导入。
@@ -51,10 +51,20 @@ class BuildReport:
     missing_csv: List[str] = field(default_factory=list)
     # 因缺 id 被跳过的行数（按表披露），如 {"factions": 2}——不静默丢
     skipped: Dict[str, int] = field(default_factory=dict)
+    # 每个 CSV 的解析对账（文件名 → audit_wahapedia_csv 结果）。裸换行/格式漂移
+    # 让解析行数与文件真实条目数对不上时，reconciled=False 必须吼出来——曾经
+    # Stratagems.csv 一条裸换行就静默换来「多一条垃圾行、少一条真战略」。
+    csv_audit: Dict[str, dict] = field(default_factory=dict)
+
+    def unreconciled(self) -> Dict[str, dict]:
+        return {k: v for k, v in self.csv_audit.items() if not v["reconciled"]}
 
 
-def _read_csv(path: Path) -> List[dict]:
-    return parse_wahapedia_csv(path.read_text(encoding="utf-8"))
+def _read_csv(path: Path, report: Optional[BuildReport] = None) -> List[dict]:
+    text = path.read_text(encoding="utf-8")
+    if report is not None:
+        report.csv_audit[path.name] = audit_wahapedia_csv(text)
+    return parse_wahapedia_csv(text)
 
 
 def _load_name_zh_by_id(terms_path: Optional[Path]) -> Dict[str, str]:
@@ -226,24 +236,42 @@ def _insert_abilities(cur, master_rows: List[dict],
 
 
 def _insert_stratagems(cur, rows: List[dict]) -> int:
+    """Stratagems.csv → stratagems。
+
+    type 是 CSV 原生的战略类别（"Eradication Cohort – Wargear Stratagem"），
+    turn 是可用回合（"Your turn" / "Either player's turn"）——分队页按 type 分组、
+    按 turn 标时机，旧实现两列都没存。
+    """
     cur.executemany(
         """INSERT OR REPLACE INTO stratagems
-           (id, faction, detachment, name_en, cp_cost, phase, text_zh, dsl_status)
-           VALUES (?, ?, ?, ?, ?, ?, ?, 'not_modeled')""",
+           (id, faction, detachment, name_en, cp_cost, phase, text_zh,
+            type, turn, dsl_status)
+           VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, 'not_modeled')""",
         [(r.get("id"), r.get("faction_id"), r.get("detachment"),
           r.get("name"), r.get("cp_cost"), r.get("phase"),
-          r.get("description"))
+          r.get("description"), r.get("type"), r.get("turn"))
          for r in rows if r.get("id")])
     return len(rows)
 
 
 def _insert_detachments(cur, rows: List[dict]) -> int:
+    """Detachment_abilities.csv → detachments。
+
+    CSV 的 name 是**分队规则名**（Martial Mastery），detachment 才是玩家口中的
+    **分队容器名**（Shield Host）——旧实现只存了规则名，容器名整列丢在门外，
+    结果拿 enhancements.detachment_name 去撞 detachments.name_en 命中 0/323。
+    也别想靠 id 邻接反推容器：分队能力 id 与容器 id 是两套独立编号（Pactbound
+    Zealots 的容器 id 是 000000751，承载它的规则行 id 却是 000008362「Marks of
+    Chaos」），邻接推出来的是别家的规则，渲染出去就是一条"自信的错误"。所以原样
+    存 CSV 自带的 detachment / detachment_id 两列，不做任何推断。
+    """
     cur.executemany(
         """INSERT OR REPLACE INTO detachments
-           (id, faction, name_en, rule_text)
-           VALUES (?, ?, ?, ?)""",
+           (id, faction, name_en, rule_text, detachment_name, detachment_id)
+           VALUES (?, ?, ?, ?, ?, ?)""",
         [(r.get("id"), r.get("faction_id"),
-          r.get("name"), r.get("description"))
+          r.get("name"), r.get("description"),
+          r.get("detachment"), r.get("detachment_id"))
          for r in rows if r.get("id")])
     return len(rows)
 
@@ -298,7 +326,8 @@ def build_database(csv_dir: Path, db_path: Path,
     """建表并导入当前已有的 CSV。
 
     缺失的 CSV（Wargear.csv 除外）计入 missing_csv；已有数据的表如实导入行数；
-    缺 id 被跳过的行计入 skipped 披露。
+    缺 id 被跳过的行计入 skipped 披露；每个 CSV 的解析对账进 csv_audit，
+    `report.unreconciled()` 非空即「解析行数与文件真实条目数对不上」，须当故障处理。
 
     原子替换：先写 `<db>.tmp.sqlite`，全部导入成功 commit 后 os.replace 到 db_path；
     中途任何失败删临时文件、旧库保持原样（旧实现先 unlink 旧库，崩溃留残缺 db）。
@@ -321,13 +350,16 @@ def build_database(csv_dir: Path, db_path: Path,
             cur = conn.cursor()
             for ddl in ALL_DDL:
                 cur.execute(ddl)
+            # 新库由 ALL_DDL 自带全部列，这里是空跑；留着是因为它和 DDL 同源，
+            # 将来再加列时只改 schema.LATE_COLUMNS 一处，新旧库都能覆盖
+            ensure_columns(cur)
 
             name_zh_by_id = _load_name_zh_by_id(terms_path)
 
             # 1. Factions
             path = csv_dir / "Factions.csv"
             if path.exists():
-                n, skipped = _insert_factions(cur, _read_csv(path))
+                n, skipped = _insert_factions(cur, _read_csv(path, report))
                 report.row_counts["factions"] = n
                 if skipped:
                     report.skipped["factions"] = skipped
@@ -336,7 +368,7 @@ def build_database(csv_dir: Path, db_path: Path,
             path = csv_dir / "Datasheets.csv"
             if path.exists():
                 n, skipped = _insert_datasheets(
-                    cur, _read_csv(path), name_zh_by_id)
+                    cur, _read_csv(path, report), name_zh_by_id)
                 report.row_counts["datasheets"] = n
                 report.row_counts["units"] = n
                 if skipped:
@@ -346,26 +378,26 @@ def build_database(csv_dir: Path, db_path: Path,
             path = csv_dir / "Datasheets_models.csv"
             if path.exists():
                 report.row_counts["models"] = _insert_models(
-                    cur, _read_csv(path))
+                    cur, _read_csv(path, report))
 
             # 4. Points (回写 units.points_json)
             path = csv_dir / "Datasheets_models_cost.csv"
             if path.exists():
                 report.row_counts["points_updated"] = _insert_points(
-                    cur, _read_csv(path))
+                    cur, _read_csv(path, report))
 
             # 5. Weapons
             path = csv_dir / "Datasheets_wargear.csv"
             if path.exists():
                 report.row_counts["weapons"] = _insert_weapons(
-                    cur, _read_csv(path))
+                    cur, _read_csv(path, report))
 
             # 6. Abilities (主表 + 单位链接)
             path_m = csv_dir / "Abilities.csv"
             path_l = csv_dir / "Datasheets_abilities.csv"
             if path_m.exists() or path_l.exists():
-                master_rows = _read_csv(path_m) if path_m.exists() else []
-                link_rows = _read_csv(path_l) if path_l.exists() else []
+                master_rows = _read_csv(path_m, report) if path_m.exists() else []
+                link_rows = _read_csv(path_l, report) if path_l.exists() else []
                 n_total = _insert_abilities(cur, master_rows, link_rows)
                 report.row_counts["abilities"] = n_total
 
@@ -373,25 +405,25 @@ def build_database(csv_dir: Path, db_path: Path,
             path = csv_dir / "Stratagems.csv"
             if path.exists():
                 report.row_counts["stratagems"] = _insert_stratagems(
-                    cur, _read_csv(path))
+                    cur, _read_csv(path, report))
 
             # 8. Detachments
             path = csv_dir / "Detachment_abilities.csv"
             if path.exists():
                 report.row_counts["detachments"] = _insert_detachments(
-                    cur, _read_csv(path))
+                    cur, _read_csv(path, report))
 
             # 8b. Enhancements（P6 军表验表：按 detachment_id 查合法强化+点数）
             path = csv_dir / "Enhancements.csv"
             if path.exists():
                 report.row_counts["enhancements"] = _insert_enhancements(
-                    cur, _read_csv(path))
+                    cur, _read_csv(path, report))
 
             # 9. Keywords (回写 units.keywords_json)
             path = csv_dir / "Datasheets_keywords.csv"
             if path.exists():
                 report.row_counts["keywords_updated"] = _insert_keywords(
-                    cur, _read_csv(path))
+                    cur, _read_csv(path, report))
 
             conn.commit()
         finally:

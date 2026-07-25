@@ -1,5 +1,5 @@
 ---
-id: 000004192
+id: '000004192'
 name_zh: 红海盗掠夺连长
 name_en: Red Corsairs Reave-Captain
 faction: 混沌星际战士

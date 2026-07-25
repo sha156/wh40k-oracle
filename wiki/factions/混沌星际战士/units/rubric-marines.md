@@ -1,5 +1,5 @@
 ---
-id: 000003583
+id: '000003583'
 name_zh: 红字战士
 name_en: Rubric Marines
 faction: 混沌星际战士

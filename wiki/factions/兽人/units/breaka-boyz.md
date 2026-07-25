@@ -1,5 +1,5 @@
 ---
-id: 000003861
+id: '000003861'
 name_zh: 破拆小子
 name_en: Breaka Boyz
 faction: 兽人

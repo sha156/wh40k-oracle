@@ -1,5 +1,5 @@
 ---
-id: 000001584
+id: '000001584'
 name_zh: 枭首魔将
 name_en: Master Of Executions
 faction: 混沌星际战士

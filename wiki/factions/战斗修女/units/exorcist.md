@@ -1,5 +1,5 @@
 ---
-id: 000000912
+id: '000000912'
 name_zh: 驱魔人导弹车
 name_en: Exorcist
 faction: 战斗修女

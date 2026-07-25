@@ -1,5 +1,5 @@
 ---
-id: 000000538
+id: '000000538'
 name_zh: 剥皮者
 name_en: Flayed Ones
 faction: 太空死灵

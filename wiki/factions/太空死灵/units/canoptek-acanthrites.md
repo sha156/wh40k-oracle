@@ -1,5 +1,5 @@
 ---
-id: 000000559
+id: '000000559'
 name_zh: 冥工针尾幽魂
 name_en: Canoptek Acanthrites
 faction: 太空死灵

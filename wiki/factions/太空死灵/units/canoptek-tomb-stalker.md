@@ -1,5 +1,5 @@
 ---
-id: 000000558
+id: '000000558'
 name_zh: 冥工追猎蜈蚣
 name_en: Canoptek Tomb Stalker
 faction: 太空死灵

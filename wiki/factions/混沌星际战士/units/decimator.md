@@ -1,5 +1,5 @@
 ---
-id: 000001295
+id: '000001295'
 name_en: Decimator
 faction: 混沌星际战士
 type: unit

@@ -1,5 +1,5 @@
 ---
-id: 000000944
+id: '000000944'
 name_zh: 次元铁匠
 name_en: Warpsmith
 faction: 混沌星际战士

@@ -1,5 +1,5 @@
 ---
-id: 000002593
+id: '000002593'
 name_zh: 天命者乌萨尔
 name_en: Ûthar the Destined
 faction: 灰暗联盟

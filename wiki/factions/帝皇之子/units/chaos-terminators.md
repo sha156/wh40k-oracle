@@ -1,5 +1,5 @@
 ---
-id: 000004081
+id: '000004081'
 name_zh: 帝皇之子混沌终结者
 name_en: Chaos Terminators
 faction: 帝皇之子

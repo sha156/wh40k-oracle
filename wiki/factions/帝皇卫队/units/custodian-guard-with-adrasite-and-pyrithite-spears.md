@@ -1,5 +1,5 @@
 ---
-id: 000001559
+id: '000001559'
 name_zh: 装备遗迹长矛或炙烈长矛的禁军卫队
 name_en: Custodian Guard With Adrasite And Pyrithite Spears
 faction: 帝皇卫队

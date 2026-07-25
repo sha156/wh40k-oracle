@@ -1,5 +1,5 @@
 ---
-id: 000004118
+id: '000004118'
 name_zh: 超适应蛇虫
 name_en: Hyperadapted Raveners
 faction: 基因窃取者教派

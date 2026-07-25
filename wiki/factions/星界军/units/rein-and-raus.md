@@ -1,5 +1,5 @@
 ---
-id: 000001596
+id: '000001596'
 name_en: Rein And Raus
 faction: 星界军
 type: unit

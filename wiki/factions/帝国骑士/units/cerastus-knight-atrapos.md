@@ -1,5 +1,5 @@
 ---
-id: 000000862
+id: '000000862'
 name_zh: 命运女神型角蝰骑士
 name_en: Cerastus Knight Atrapos
 faction: 帝国骑士

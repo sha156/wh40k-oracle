@@ -1,5 +1,5 @@
 ---
-id: 000003668
+id: '000003668'
 name_en: Rapier Carrier
 faction: 死亡守卫
 type: unit

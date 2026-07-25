@@ -1,5 +1,5 @@
 ---
-id: 000000869
+id: '000000869'
 name_zh: 战将泰坦
 name_en: Warlord Titan
 faction: 泰坦军团

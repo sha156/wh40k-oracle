@@ -1,5 +1,5 @@
 ---
-id: 000000693
+id: '000000693'
 name_zh: 野牛装甲车
 name_en: Taurox
 faction: 星界军

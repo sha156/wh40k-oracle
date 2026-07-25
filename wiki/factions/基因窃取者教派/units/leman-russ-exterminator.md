@@ -1,5 +1,5 @@
 ---
-id: 000003983
+id: '000003983'
 name_zh: 黎曼鲁斯灭绝者
 name_en: Leman Russ Exterminator
 faction: 基因窃取者教派

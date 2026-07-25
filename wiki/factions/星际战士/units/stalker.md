@@ -1,5 +1,5 @@
 ---
-id: 000002258
+id: '000002258'
 name_en: Stalker
 faction: 星际战士
 type: unit

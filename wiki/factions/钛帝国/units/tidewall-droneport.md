@@ -26,7 +26,7 @@ updated: '2026-07-23'
 ## 射击武器
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| 兵蜂守护者 | 20" | 8 | 5+ | 5 | 0 | 1 | [[core-rules/assault.md\|突击]]，[[core-rules/twin-linked.md\|双联]] |
+| 兵蜂[[factions/帝皇卫队/enhancements/praesidius.md\|守护者]] | 20" | 8 | 5+ | 5 | 0 | 1 | [[core-rules/assault.md\|突击]]，[[core-rules/twin-linked.md\|双联]] |
 
 ## 技能
 - **兵蜂平台**：每次选择该防御工事进行射击时，兵蜂守护者武器将对每个该防御工事可以攻击的敌方单位进行攻击。

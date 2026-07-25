@@ -1,5 +1,5 @@
 ---
-id: 000000768
+id: '000000768'
 name_en: Gorgon Heavy Transport
 faction: 星界军
 type: unit

@@ -1,5 +1,5 @@
 ---
-id: 000000874
+id: '000000874'
 name_zh: 审判官格雷法克斯
 name_en: Inquisitor Greyfax
 faction: 帝国特勤

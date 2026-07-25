@@ -1,5 +1,5 @@
 ---
-id: 000000866
+id: '000000866'
 name_zh: 冥河型巡游骑士
 name_en: Questoris Knight Styrix
 faction: 帝国骑士

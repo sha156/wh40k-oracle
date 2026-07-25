@@ -25,7 +25,7 @@ updated: '2026-07-23'
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
 | 突击炮 | 24" | 6 | 3+ | 6 | 0 | 1 | [[core-rules/devastating-wounds.md\|devastating wounds]] |
-| Dreadnought inferno cannon | 12" | 2D6 | N/A | 6 | -1 | 1 | [[core-rules/ignores-cover.md\|ignores cover]]，[[core-rules/torrent.md\|torrent]] |
+| [[factions/星际战士/units/dreadnought.md\|Dreadnought]] inferno cannon | 12" | 2D6 | N/A | 6 | -1 | 1 | [[core-rules/ignores-cover.md\|ignores cover]]，[[core-rules/torrent.md\|torrent]] |
 | 重型等离子炮（标准） | 36" | D3 | 3+ | 7 | -2 | 2 | [[core-rules/blast.md\|blast]] |
 | 重型等离子炮（过载） | 36" | D3 | 3+ | 8 | -3 | 3 | [[core-rules/blast.md\|blast]]，[[core-rules/hazardous.md\|hazardous]] |
 | 导弹发射器（破片） | 48" | D6 | 3+ | 4 | 0 | 1 | [[core-rules/blast.md\|blast]] |

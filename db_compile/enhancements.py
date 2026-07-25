@@ -88,6 +88,7 @@ def check_enhancements(db_path, rows: List[Dict[str, str]]) -> Dict[str, Any]:
     conn = sqlite3.connect(str(db_path))
     try:
         db_total = conn.execute("SELECT COUNT(*) FROM enhancements").fetchone()[0]
+        db_ids = {r[0] for r in conn.execute("SELECT id FROM enhancements")}
         # 库里 detachments.id 是分队能力 id；强化的 detachment_id 应能在
         # Detachment_abilities 里找到对应分队。库没存 detachment_id，故用 CSV 自校验为主。
         db_dets = conn.execute(
@@ -98,10 +99,18 @@ def check_enhancements(db_path, rows: List[Dict[str, str]]) -> Dict[str, Any]:
     csv_dets = {r.get("detachment_id") for r in rows if r.get("detachment_id")}
     no_cost = [r.get("name") for r in rows
                if _cost_to_int(r.get("cost", "")) is None]
+    # 口径：库 = 上游 CSV 层 + fp_rules 补录层（Faction Pack 新分队的强化，
+    # Wahapedia 无源）。拿 CSV 总数直接比库总数永远差一个补录层的量，报出来的
+    # 「不一致」是恒真的假警报——而假警报的代价是没人再看这个对账。所以只判
+    # 「CSV 的每一行都在库里」，补录层单独作为 db_extra 如实披露、不算差异。
+    missing = sorted(csv_ids - db_ids)
     return {
         "csv_rows": len(csv_ids),
         "db_rows": db_total,
-        "match": len(csv_ids) == db_total,
+        "db_extra_rows": db_total - len(csv_ids & db_ids),
+        "missing_count": len(missing),
+        "missing_sample": missing[:10],
+        "match": not missing,
         "csv_detachments": len(csv_dets),
         "db_detachments": db_dets,
         "no_cost_count": len(no_cost),

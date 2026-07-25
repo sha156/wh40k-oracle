@@ -1,5 +1,5 @@
 ---
-id: 000000889
+id: '000000889'
 name_zh: 灵能导师
 name_en: Primaris Psyker
 faction: 星界军

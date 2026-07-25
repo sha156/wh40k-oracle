@@ -1,5 +1,5 @@
 ---
-id: 000000841
+id: '000000841'
 name_zh: 武装奴工突破者
 name_en: Kataphron Breachers
 faction: 机械修会

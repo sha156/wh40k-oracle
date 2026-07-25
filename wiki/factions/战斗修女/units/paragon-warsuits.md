@@ -1,5 +1,5 @@
 ---
-id: 000002483
+id: '000002483'
 name_zh: 楷模机甲
 name_en: Paragon Warsuits
 faction: 战斗修女

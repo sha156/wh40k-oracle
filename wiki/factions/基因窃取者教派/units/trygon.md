@@ -1,5 +1,5 @@
 ---
-id: 000003887
+id: '000003887'
 name_zh: 掘蟒
 name_en: Trygon
 faction: 基因窃取者教派

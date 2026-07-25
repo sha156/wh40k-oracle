@@ -1,5 +1,5 @@
 ---
-id: 000004084
+id: '000004084'
 name_zh: 噪音领主
 name_en: Lord Kakophonist
 faction: 帝皇之子

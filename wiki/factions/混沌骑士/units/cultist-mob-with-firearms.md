@@ -1,5 +1,5 @@
 ---
-id: 000003850
+id: '000003850'
 name_en: Cultist Mob with Firearms
 faction: 混沌骑士
 type: unit

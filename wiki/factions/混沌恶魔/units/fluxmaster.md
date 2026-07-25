@@ -46,4 +46,4 @@ updated: '2026-07-23'
 
 ## 关键词
 - **阵营关键词**：Legiones Daemonica
-- **普通关键词**：[[core-rules/psyker.md|Psyker]]，Fly，[[core-rules/character.md|Character]]，[[core-rules/mounted.md|Mounted]]，Tzeentch，Shadow Legion，Fluxmaster，Daemon，Chaos
+- **普通关键词**：[[core-rules/psyker.md|Psyker]]，Fly，[[core-rules/character.md|Character]]，[[core-rules/mounted.md|Mounted]]，Tzeentch，[[factions/混沌恶魔/detachments/shadow-legion.md|Shadow Legion]]，Fluxmaster，Daemon，Chaos

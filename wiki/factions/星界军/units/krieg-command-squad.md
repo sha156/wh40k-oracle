@@ -1,5 +1,5 @@
 ---
-id: 000003889
+id: '000003889'
 name_zh: 克里格指挥组
 name_en: Krieg Command Squad
 faction: 星界军

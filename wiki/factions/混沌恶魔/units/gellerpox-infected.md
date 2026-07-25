@@ -41,4 +41,4 @@ updated: '2026-07-23'
 
 ## 关键词
 - **阵营关键词**：Heretic Astartes，Legiones Daemonica
-- **普通关键词**：Nurgle，Shadow Legion，Chaos，[[core-rules/infantry.md|Infantry]]，Chaos，Damned，Undivided，Damned，Nurgle，Gellerpox Infected，Nurgle，Undivided，Shadow Legion，[[core-rules/infantry.md|Infantry]]，Chaos，Damned，Gellerpox Infected，Undivided，Shadow Legion，[[core-rules/infantry.md|Infantry]]，Chaos，Damned，Nurgle，Gellerpox Infected，Undivided，Shadow Legion，Gellerpox Infected，Nurgle，Damned，Chaos，[[core-rules/infantry.md|Infantry]]，[[core-rules/infantry.md|Infantry]]，Shadow Legion，Undivided，Gellerpox Infected
+- **普通关键词**：Nurgle，[[factions/混沌恶魔/detachments/shadow-legion.md|Shadow Legion]]，Chaos，[[core-rules/infantry.md|Infantry]]，Chaos，Damned，Undivided，Damned，Nurgle，Gellerpox Infected，Nurgle，Undivided，Shadow Legion，[[core-rules/infantry.md|Infantry]]，Chaos，Damned，Gellerpox Infected，Undivided，Shadow Legion，[[core-rules/infantry.md|Infantry]]，Chaos，Damned，Nurgle，Gellerpox Infected，Undivided，Shadow Legion，Gellerpox Infected，Nurgle，Damned，Chaos，[[core-rules/infantry.md|Infantry]]，[[core-rules/infantry.md|Infantry]]，Shadow Legion，Undivided，Gellerpox Infected

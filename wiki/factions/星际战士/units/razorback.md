@@ -1,5 +1,5 @@
 ---
-id: 000000129
+id: '000000129'
 name_zh: 豪猪装甲车
 name_en: Razorback
 faction: 星际战士

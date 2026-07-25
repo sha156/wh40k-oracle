@@ -1,5 +1,5 @@
 ---
-id: 000003892
+id: '000003892'
 name_zh: 罗格多恩指挥官
 name_en: Rogal Dorn Commander
 faction: 星界军

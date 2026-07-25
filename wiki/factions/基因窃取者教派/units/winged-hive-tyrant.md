@@ -1,5 +1,5 @@
 ---
-id: 000003879
+id: '000003879'
 name_zh: 有翼虫巢暴君
 name_en: Winged Hive Tyrant
 faction: 基因窃取者教派

@@ -1,5 +1,5 @@
 ---
-id: 000004018
+id: '000004018'
 name_en: Malcador Infernus
 faction: 基因窃取者教派
 type: unit
@@ -47,4 +47,4 @@ updated: '2026-07-23'
 
 ## 关键词
 - **阵营关键词**：Genestealer Cults，Astra Militarum
-- **普通关键词**：Squadron，Malcador Infernus，Imperium，Vehicle，[[core-rules/smoke.md|Smoke]]
+- **普通关键词**：Squadron，[[factions/基因窃取者教派/units/malcador.md|Malcador]] Infernus，Imperium，Vehicle，[[core-rules/smoke.md|Smoke]]

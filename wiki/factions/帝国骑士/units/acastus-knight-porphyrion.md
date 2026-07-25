@@ -1,5 +1,5 @@
 ---
-id: 000000860
+id: '000000860'
 name_zh: 巨人王型阿卡斯托斯骑士
 name_en: Acastus Knight Porphyrion
 faction: 帝国骑士

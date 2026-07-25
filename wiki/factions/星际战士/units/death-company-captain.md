@@ -1,5 +1,5 @@
 ---
-id: 000003832
+id: '000003832'
 name_zh: 死亡连连长
 name_en: Death Company Captain
 faction: 星际战士
@@ -50,4 +50,4 @@ updated: '2026-07-23'
 
 ## 关键词
 - **阵营关键词**：Adeptus Astartes，Blood Angels
-- **普通关键词**：[[core-rules/infantry.md|Infantry]]，[[core-rules/character.md|Character]]，[[core-rules/grenades.md|Grenades]]，Imperium，Death Company，Tacticus，Captain
+- **普通关键词**：[[core-rules/infantry.md|Infantry]]，[[core-rules/character.md|Character]]，[[core-rules/grenades.md|Grenades]]，Imperium，Death Company，Tacticus，[[factions/星际战士/units/captain.md|Captain]]

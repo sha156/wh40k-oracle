@@ -1,5 +1,5 @@
 ---
-id: 000002729
+id: '000002729'
 name_en: Xiphon Interceptor
 faction: 星际战士
 type: unit

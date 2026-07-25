@@ -1,5 +1,5 @@
 ---
-id: 000001338
+id: '000001338'
 name_en: Spined Chaos Beast
 faction: 混沌恶魔
 type: unit
@@ -42,4 +42,4 @@ updated: '2026-07-23'
 
 ## 关键词
 - **阵营关键词**：Legiones Daemonica
-- **普通关键词**：Spined Chaos Beast，Chaos，Shadow Legion，Monster
+- **普通关键词**：Spined Chaos Beast，Chaos，[[factions/混沌恶魔/detachments/shadow-legion.md|Shadow Legion]]，Monster

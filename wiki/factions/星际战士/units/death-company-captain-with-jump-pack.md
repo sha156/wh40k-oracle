@@ -1,5 +1,5 @@
 ---
-id: 000003833
+id: '000003833'
 name_zh: 装备跳跃背包的死亡连连长
 name_en: Death Company Captain with Jump Pack
 faction: 星际战士

@@ -1,5 +1,5 @@
 ---
-id: 000002781
+id: '000002781'
 name_zh: 不屈杀戮小队
 name_en: Indomitor Kill Team
 faction: 星际战士

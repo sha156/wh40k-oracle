@@ -1,5 +1,5 @@
 ---
-id: 000000686
+id: '000000686'
 name_zh: 卡迪亚重型武器小队
 name_en: Cadian Heavy Weapons Squad
 faction: 星界军

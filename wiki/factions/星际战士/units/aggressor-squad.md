@@ -1,5 +1,5 @@
 ---
-id: 000002099
+id: '000002099'
 name_zh: 侵略者小队
 name_en: Aggressor Squad
 faction: 星际战士

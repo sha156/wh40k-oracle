@@ -1,5 +1,5 @@
 ---
-id: 000000599
+id: '000000599'
 name_zh: 波蛇飞艇
 name_en: Wave Serpent
 faction: 艾达灵族

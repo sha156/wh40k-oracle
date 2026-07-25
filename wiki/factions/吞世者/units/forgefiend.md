@@ -1,5 +1,5 @@
 ---
-id: 000002638
+id: '000002638'
 name_zh: 铸造魔
 name_en: Forgefiend
 faction: 吞世者

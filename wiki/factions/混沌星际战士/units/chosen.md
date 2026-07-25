@@ -1,5 +1,5 @@
 ---
-id: 000000952
+id: '000000952'
 name_zh: 神选战士
 name_en: Chosen
 faction: 混沌星际战士

@@ -1,5 +1,5 @@
 ---
-id: 000004068
+id: '000004068'
 name_zh: 巫师
 name_en: Sorcerer
 faction: 混沌恶魔
@@ -44,4 +44,4 @@ updated: '2026-07-23'
 
 ## 关键词
 - **阵营关键词**：Heretic Astartes，Legiones Daemonica
-- **普通关键词**：Shadow Legion，[[core-rules/infantry.md|Infantry]]，[[core-rules/character.md|Character]]，[[core-rules/psyker.md|Psyker]]，[[core-rules/grenades.md|Grenades]]，Chaos，Sorcerer，Undivided，Shadow Legion，[[core-rules/infantry.md|Infantry]]，[[core-rules/character.md|Character]]，[[core-rules/psyker.md|Psyker]]，[[core-rules/grenades.md|Grenades]]，Chaos，Sorcerer，Undivided，Shadow Legion，[[core-rules/infantry.md|Infantry]]，[[core-rules/character.md|Character]]，[[core-rules/psyker.md|Psyker]]，[[core-rules/grenades.md|Grenades]]，Chaos，Sorcerer，Undivided，Shadow Legion，Sorcerer，Undivided，Shadow Legion，[[core-rules/infantry.md|Infantry]]，[[core-rules/character.md|Character]]，[[core-rules/psyker.md|Psyker]]，[[core-rules/grenades.md|Grenades]]，Chaos，Undivided，[[core-rules/infantry.md|Infantry]]，[[core-rules/character.md|Character]]，[[core-rules/psyker.md|Psyker]]，[[core-rules/grenades.md|Grenades]]，Chaos，Sorcerer，Sorcerer，Undivided，Shadow Legion，[[core-rules/infantry.md|Infantry]]，[[core-rules/character.md|Character]]，[[core-rules/psyker.md|Psyker]]，[[core-rules/grenades.md|Grenades]]，Chaos
+- **普通关键词**：[[factions/混沌恶魔/detachments/shadow-legion.md|Shadow Legion]]，[[core-rules/infantry.md|Infantry]]，[[core-rules/character.md|Character]]，[[core-rules/psyker.md|Psyker]]，[[core-rules/grenades.md|Grenades]]，Chaos，Sorcerer，Undivided，Shadow Legion，[[core-rules/infantry.md|Infantry]]，[[core-rules/character.md|Character]]，[[core-rules/psyker.md|Psyker]]，[[core-rules/grenades.md|Grenades]]，Chaos，Sorcerer，Undivided，Shadow Legion，[[core-rules/infantry.md|Infantry]]，[[core-rules/character.md|Character]]，[[core-rules/psyker.md|Psyker]]，[[core-rules/grenades.md|Grenades]]，Chaos，Sorcerer，Undivided，Shadow Legion，Sorcerer，Undivided，Shadow Legion，[[core-rules/infantry.md|Infantry]]，[[core-rules/character.md|Character]]，[[core-rules/psyker.md|Psyker]]，[[core-rules/grenades.md|Grenades]]，Chaos，Undivided，[[core-rules/infantry.md|Infantry]]，[[core-rules/character.md|Character]]，[[core-rules/psyker.md|Psyker]]，[[core-rules/grenades.md|Grenades]]，Chaos，Sorcerer，Sorcerer，Undivided，Shadow Legion，[[core-rules/infantry.md|Infantry]]，[[core-rules/character.md|Character]]，[[core-rules/psyker.md|Psyker]]，[[core-rules/grenades.md|Grenades]]，Chaos

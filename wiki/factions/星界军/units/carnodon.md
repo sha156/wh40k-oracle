@@ -1,5 +1,5 @@
 ---
-id: 000001994
+id: '000001994'
 name_en: Carnodon
 faction: 星界军
 type: unit

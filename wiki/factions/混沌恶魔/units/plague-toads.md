@@ -43,4 +43,4 @@ updated: '2026-07-23'
 
 ## 关键词
 - **阵营关键词**：Legiones Daemonica
-- **普通关键词**：Daemon，Chaos，[[core-rules/beast.md|Beast]]，Nurgle，Shadow Legion，Plague Toads
+- **普通关键词**：Daemon，Chaos，[[core-rules/beast.md|Beast]]，Nurgle，[[factions/混沌恶魔/detachments/shadow-legion.md|Shadow Legion]]，Plague Toads

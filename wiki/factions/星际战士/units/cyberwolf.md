@@ -1,5 +1,5 @@
 ---
-id: 000002805
+id: '000002805'
 name_en: Cyberwolf
 faction: 星际战士
 type: unit

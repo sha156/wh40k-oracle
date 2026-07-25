@@ -1,5 +1,5 @@
 ---
-id: 000000292
+id: '000000292'
 name_zh: 风暴召唤者纳吉奥
 name_en: Njal Stormcaller
 faction: 星际战士

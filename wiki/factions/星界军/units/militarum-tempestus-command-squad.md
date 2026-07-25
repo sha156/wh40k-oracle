@@ -1,5 +1,5 @@
 ---
-id: 000000719
+id: '000000719'
 name_zh: 风暴兵指挥组
 name_en: Militarum Tempestus Command Squad
 faction: 星界军

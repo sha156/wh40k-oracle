@@ -1,5 +1,5 @@
 ---
-id: 000001096
+id: '000001096'
 name_zh: 混沌惩戒者型角蝰骑士
 name_en: Chaos Cerastus Knight Castigator
 faction: 混沌骑士

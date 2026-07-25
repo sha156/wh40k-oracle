@@ -1,5 +1,5 @@
 ---
-id: 000003976
+id: '000003976'
 name_zh: 卡舍津突击队
 name_en: Kasrkin
 faction: 基因窃取者教派

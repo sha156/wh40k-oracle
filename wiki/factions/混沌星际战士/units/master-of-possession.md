@@ -1,5 +1,5 @@
 ---
-id: 000001581
+id: '000001581'
 name_zh: 附魔大师
 name_en: Master Of Possession
 faction: 混沌星际战士

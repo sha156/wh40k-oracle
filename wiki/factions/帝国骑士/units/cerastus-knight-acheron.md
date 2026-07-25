@@ -1,5 +1,5 @@
 ---
-id: 000000861
+id: '000000861'
 name_zh: 黄泉型角蝰骑士
 name_en: Cerastus Knight Acheron
 faction: 帝国骑士

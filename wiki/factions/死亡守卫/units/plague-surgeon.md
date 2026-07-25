@@ -1,5 +1,5 @@
 ---
-id: 000001369
+id: '000001369'
 name_zh: 瘟疫军医
 name_en: Plague Surgeon
 faction: 死亡守卫

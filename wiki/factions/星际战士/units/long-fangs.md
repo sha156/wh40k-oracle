@@ -53,7 +53,7 @@ updated: '2026-07-23'
 | 动力武器 | 近战 | 2 | 3+ | 5 | -2 | 1 | — |
 
 ## 技能
-- **Fire Discipline**：Each time this unit Remains Stationary, if it includes a Long Fang Pack Leader, you can select one enemy unit that is visible to that model. Until the end of the turn, each time a model in this unit makes a ranged attack that targets that enemy unit, re-roll a Hit roll of 1.
+- **[[factions/星际战士/enhancements/fire-discipline.md|Fire Discipline]]**：Each time this unit Remains Stationary, if it includes a Long Fang Pack Leader, you can select one enemy unit that is visible to that model. Until the end of the turn, each time a model in this unit makes a ranged attack that targets that enemy unit, re-roll a Hit roll of 1.
 - **Armorium Cherub**：Once per battle, after making a Hit roll for a model in this unit, you can change that roll to an unmodified 6.<br><br><b>Designer’s Note:</b> <i>Place an Armorium Cherub token next to the unit, removing it once this ability has been used.</i>
 - **ATTACHED UNIT**：If a Character unit from your army with the Leader ability can be attached to a [[factions/星际战士/units/devastator-squad.md|Devastator Squad]], it can instead be attached to this unit.
 

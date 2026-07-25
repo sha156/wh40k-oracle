@@ -57,4 +57,4 @@ updated: '2026-07-23'
 
 ## 关键词
 - **阵营关键词**：Adeptus Astartes
-- **普通关键词**：[[core-rules/grenades.md|Grenades]]，Ravenwing，Scout Bike Squad，Imperium，[[core-rules/smoke.md|Smoke]]，[[core-rules/mounted.md|Mounted]]
+- **普通关键词**：[[core-rules/grenades.md|Grenades]]，Ravenwing，Scout [[factions/星际战士/units/bike-squad.md|Bike Squad]]，Imperium，[[core-rules/smoke.md|Smoke]]，[[core-rules/mounted.md|Mounted]]

@@ -1,5 +1,5 @@
 ---
-id: 000000139
+id: '000000139'
 name_zh: 雷鹰炮艇
 name_en: Thunderhawk Gunship
 faction: 星际战士

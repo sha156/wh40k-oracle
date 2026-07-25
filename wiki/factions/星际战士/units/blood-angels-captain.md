@@ -1,5 +1,5 @@
 ---
-id: 000003831
+id: '000003831'
 name_zh: 圣血连长
 name_en: Blood Angels Captain
 faction: 星际战士
@@ -49,4 +49,4 @@ updated: '2026-07-23'
 
 ## 关键词
 - **阵营关键词**：Adeptus Astartes，Blood Angels
-- **普通关键词**：[[core-rules/infantry.md|Infantry]]，[[core-rules/character.md|Character]]，[[core-rules/grenades.md|Grenades]]，Imperium，Captain，Tacticus
+- **普通关键词**：[[core-rules/infantry.md|Infantry]]，[[core-rules/character.md|Character]]，[[core-rules/grenades.md|Grenades]]，Imperium，[[factions/星际战士/units/captain.md|Captain]]，Tacticus

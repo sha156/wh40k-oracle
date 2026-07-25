@@ -1,5 +1,5 @@
 ---
-id: 000000938
+id: '000000938'
 name_zh: 巫师
 name_en: Sorcerer
 faction: 混沌星际战士

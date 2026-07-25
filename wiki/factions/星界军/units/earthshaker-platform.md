@@ -1,5 +1,5 @@
 ---
-id: 000002739
+id: '000002739'
 name_en: Earthshaker Platform
 faction: 星界军
 type: unit

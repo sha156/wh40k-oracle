@@ -1,5 +1,5 @@
 ---
-id: 000003818
+id: '000003818'
 name_zh: 战斗修女小队
 name_en: Sisters of Battle Squad
 faction: 帝国特勤

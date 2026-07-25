@@ -1,5 +1,5 @@
 ---
-id: 000003598
+id: '000003598'
 name_en: Hell Blade
 faction: 千子
 type: unit

@@ -1,5 +1,5 @@
 ---
-id: 000003856
+id: '000003856'
 name_en: Negavolt Cultists
 faction: 混沌骑士
 type: unit

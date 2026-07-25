@@ -1,5 +1,5 @@
 ---
-id: 000000843
+id: '000000843'
 name_zh: 法身宗电僧
 name_en: Fulgurite Electro-priests
 faction: 机械修会

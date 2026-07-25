@@ -1,5 +1,5 @@
 ---
-id: 000001569
+id: '000001569'
 name_zh: 圣裁者
 name_en: Sanctus
 faction: 基因窃取者教派

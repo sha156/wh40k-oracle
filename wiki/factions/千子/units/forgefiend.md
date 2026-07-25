@@ -1,5 +1,5 @@
 ---
-id: 000001028
+id: '000001028'
 name_zh: 铸造魔
 name_en: Forgefiend
 faction: 千子

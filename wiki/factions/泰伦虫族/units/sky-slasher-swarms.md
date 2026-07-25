@@ -1,5 +1,5 @@
 ---
-id: 000000483
+id: '000000483'
 name_en: Sky-slasher Swarms
 faction: 泰伦虫族
 type: unit

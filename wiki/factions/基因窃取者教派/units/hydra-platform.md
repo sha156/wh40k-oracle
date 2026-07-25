@@ -1,5 +1,5 @@
 ---
-id: 000003957
+id: '000003957'
 name_en: Hydra Platform
 faction: 基因窃取者教派
 type: unit
@@ -24,7 +24,7 @@ updated: '2026-07-23'
 ## 射击武器
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| Hydra quad autocannon | 72" | 4 | 4+ | 9 | -1 | 3 | [[core-rules/anti.md\|anti-fly 2+]]，[[core-rules/twin-linked.md\|twin-linked]] |
+| [[factions/基因窃取者教派/units/hydra.md\|Hydra]] quad autocannon | 72" | 4 | 4+ | 9 | -1 | 3 | [[core-rules/anti.md\|anti-fly 2+]]，[[core-rules/twin-linked.md\|twin-linked]] |
 
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |

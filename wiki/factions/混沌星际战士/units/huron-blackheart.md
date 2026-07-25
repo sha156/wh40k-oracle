@@ -1,5 +1,5 @@
 ---
-id: 000000925
+id: '000000925'
 name_zh: 休伦·黑心
 name_en: Huron Blackheart
 faction: 混沌星际战士

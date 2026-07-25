@@ -1,5 +1,5 @@
 ---
-id: 000003965
+id: '000003965'
 name_zh: 毁灭之剑
 name_en: Banesword
 faction: 基因窃取者教派

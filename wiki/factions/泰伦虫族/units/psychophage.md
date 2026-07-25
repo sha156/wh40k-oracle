@@ -1,5 +1,5 @@
 ---
-id: 000002689
+id: '000002689'
 name_zh: 噬灵虫
 name_en: Psychophage
 faction: 泰伦虫族

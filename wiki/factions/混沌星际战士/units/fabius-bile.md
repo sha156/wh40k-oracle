@@ -1,5 +1,5 @@
 ---
-id: 000000928
+id: '000000928'
 name_zh: 法比乌斯拜尔
 name_en: Fabius Bile
 faction: 混沌星际战士

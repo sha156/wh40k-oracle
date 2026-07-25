@@ -1,5 +1,5 @@
 ---
-id: 000000849
+id: '000000849'
 name_zh: 护教军先锋兵
 name_en: Skitarii Vanguard
 faction: 机械修会

@@ -14,7 +14,7 @@ updated: '2026-07-11'
 
 快速部署是核心计谋：在对手移动阶段结束时让战略预备队提前入场。
 
-## 快速部署 RAPID INGRESS（1CP，核心计谋）
+## 快速部署 [[core-rules/stratagems/rapid-ingress.md|RAPID INGRESS]]（1CP，核心计谋）
 
 - 使用时机：你对手的移动阶段结束时。
 - 使用对象：你军队中一个处于**战略预备队**的单位（**飞行器除外**）。

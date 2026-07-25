@@ -1,5 +1,5 @@
 ---
-id: 000004019
+id: '000004019'
 name_en: Medusa Carriage Battery
 faction: 基因窃取者教派
 type: unit

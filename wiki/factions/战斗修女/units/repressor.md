@@ -1,5 +1,5 @@
 ---
-id: 000001199
+id: '000001199'
 name_en: Repressor
 faction: 战斗修女
 type: unit

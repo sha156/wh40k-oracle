@@ -1,5 +1,5 @@
 ---
-id: 000000288
+id: '000000288'
 name_en: Canis Wolfborn
 faction: 星际战士
 type: unit

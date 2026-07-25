@@ -1,5 +1,5 @@
 ---
-id: 000003999
+id: '000003999'
 name_en: Colossus
 faction: 基因窃取者教派
 type: unit

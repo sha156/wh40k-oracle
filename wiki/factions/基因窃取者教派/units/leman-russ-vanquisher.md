@@ -1,5 +1,5 @@
 ---
-id: 000003985
+id: '000003985'
 name_zh: 黎曼鲁斯胜利者
 name_en: Leman Russ Vanquisher
 faction: 基因窃取者教派

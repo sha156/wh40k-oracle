@@ -1,5 +1,5 @@
 ---
-id: 000000381
+id: '000000381'
 name_zh: 打击者⼩队
 name_en: Strike Squad
 faction: 灰骑士

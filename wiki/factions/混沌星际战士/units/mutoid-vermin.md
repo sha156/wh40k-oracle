@@ -1,5 +1,5 @@
 ---
-id: 000002591
+id: '000002591'
 name_en: Mutoid Vermin
 faction: 混沌星际战士
 type: unit

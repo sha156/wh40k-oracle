@@ -1,5 +1,5 @@
 ---
-id: 000001588
+id: '000001588'
 name_zh: 颅骨祭坛
 name_en: Skull Altar
 faction: 混沌恶魔
@@ -33,4 +33,4 @@ updated: '2026-07-23'
 
 ## 关键词
 - **阵营关键词**：Legiones Daemonica
-- **普通关键词**：Chaos，[[core-rules/fortification.md|Fortification]]，Daemon，Khorne，Skull Altar，Shadow Legion
+- **普通关键词**：Chaos，[[core-rules/fortification.md|Fortification]]，Daemon，Khorne，Skull Altar，[[factions/混沌恶魔/detachments/shadow-legion.md|Shadow Legion]]

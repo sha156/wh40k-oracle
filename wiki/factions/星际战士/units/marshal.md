@@ -1,5 +1,5 @@
 ---
-id: 000002796
+id: '000002796'
 name_zh: 元帅
 name_en: Marshal
 faction: 星际战士

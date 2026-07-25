@@ -1,5 +1,5 @@
 ---
-id: 000003959
+id: '000003959'
 name_en: Sabre Weapons Battery
 faction: 基因窃取者教派
 type: unit

@@ -1,5 +1,5 @@
 ---
-id: 000000960
+id: '000000960'
 name_zh: 混沌卵
 name_en: Chaos Spawn
 faction: 混沌星际战士

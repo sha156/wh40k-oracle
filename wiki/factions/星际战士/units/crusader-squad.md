@@ -1,5 +1,5 @@
 ---
-id: 000002799
+id: '000002799'
 name_zh: 十字军小队
 name_en: Crusader Squad
 faction: 星际战士

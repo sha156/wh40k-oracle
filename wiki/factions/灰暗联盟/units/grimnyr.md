@@ -1,5 +1,5 @@
 ---
-id: 000002596
+id: '000002596'
 name_zh: 格林尼尔贤者
 name_en: Grimnyr
 faction: 灰暗联盟

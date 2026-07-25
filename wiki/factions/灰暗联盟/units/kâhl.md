@@ -1,5 +1,5 @@
 ---
-id: 000002594
+id: '000002594'
 name_zh: 战群统领
 name_en: Kâhl
 faction: 灰暗联盟

@@ -1,5 +1,5 @@
 ---
-id: 000001128
+id: '000001128'
 name_zh: 燃烧战车
 name_en: Burning Chariot
 faction: 混沌恶魔
@@ -46,4 +46,4 @@ updated: '2026-07-23'
 
 ## 关键词
 - **阵营关键词**：Legiones Daemonica
-- **普通关键词**：[[core-rules/mounted.md|Mounted]]，Fly，Chaos，Daemon，Tzeentch，Burning Chariot，Shadow Legion
+- **普通关键词**：[[core-rules/mounted.md|Mounted]]，Fly，Chaos，Daemon，Tzeentch，Burning Chariot，[[factions/混沌恶魔/detachments/shadow-legion.md|Shadow Legion]]

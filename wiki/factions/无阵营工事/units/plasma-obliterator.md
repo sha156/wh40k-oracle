@@ -1,5 +1,5 @@
 ---
-id: 000000919
+id: '000000919'
 name_en: Plasma Obliterator
 faction: 无阵营工事
 type: unit

@@ -1,5 +1,5 @@
 ---
-id: 000003997
+id: '000003997'
 name_en: Carnodon
 faction: 基因窃取者教派
 type: unit

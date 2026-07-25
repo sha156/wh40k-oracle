@@ -1,5 +1,5 @@
 ---
-id: 000000390
+id: '000000390'
 name_zh: 灰骑士无畏机甲【传奇】
 name_en: Grey Knights Dreadnought
 faction: 灰骑士

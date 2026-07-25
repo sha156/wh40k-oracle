@@ -1,5 +1,5 @@
 ---
-id: 000002519
+id: '000002519'
 name_zh: 瓦雷利安连长
 name_en: Valerian
 faction: 帝皇卫队

@@ -1,5 +1,5 @@
 ---
-id: 000000970
+id: '000000970'
 name_zh: 恐虐颅骨之主
 name_en: Khorne Lord Of Skulls
 faction: 混沌星际战士

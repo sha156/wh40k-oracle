@@ -1,5 +1,5 @@
 ---
-id: 000002481
+id: '000002481'
 name_zh: 洁天使圣徒
 name_en: Celestian Sacresants
 faction: 战斗修女

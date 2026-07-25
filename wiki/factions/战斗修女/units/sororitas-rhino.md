@@ -1,5 +1,5 @@
 ---
-id: 000000910
+id: '000000910'
 name_zh: 修女会犀牛装甲车
 name_en: Sororitas Rhino
 faction: 战斗修女

@@ -1,5 +1,5 @@
 ---
-id: 000000758
+id: '000000758'
 name_en: Sabre Weapons Battery
 faction: 星界军
 type: unit

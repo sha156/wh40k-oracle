@@ -35,8 +35,12 @@ _TEXT_TARGETS = {
     ("detachments", "name_en"),         # P7-PR6：完整重印可换分队规则名（BT 祷文升格）
     ("stratagems", "text_zh"),
     ("stratagems", "cp_cost"),          # P7-PR7：完整重印可换 CP（EC 凤凰王庭两战略互换）
-    ("stratagems", "detachment"),       # P7-PR27：上游空壳行归位（AdM THREAT-COGITATION
-    ("stratagems", "phase"),            # TARGETERS 三列皆空，FP 页 6 有全文）
+    ("stratagems", "detachment"),       # P7-PR27 曾靠这两列给「空壳行」归位（AdM
+    ("stratagems", "phase"),            # THREAT-COGITATION TARGETERS 三列皆空）。
+                                        # 那三条补丁已退役——根因是 CSV 裸换行把记录
+                                        # 劈成两行，已在 canonical.parse_wahapedia_csv
+                                        # 续行修好，正文/分队/阶段直接来自上游。
+                                        # 白名单保留：这两列本就该允许外科补丁。
     ("abilities", "text_zh"),
     ("enhancements", "description"),    # P7-PR4：FP p3/p4 重印 + p19 勘误波及增强层
 }
@@ -49,7 +53,11 @@ _DEACTIVATE_STATUSES = {"removed_11e"}
 # 允许补录插行的表白名单（inserts：FP 有、Wahapedia/DB 无的 fp_new 条目，
 # 如 Advanced Acquisition Cadre 整分队；列名拼进 SQL，白名单外一律拒绝）
 _INSERT_COLUMNS = {
-    "detachments": ("id", "faction", "name_zh", "name_en", "rule_text"),
+    # detachment_name/detachment_id：FP 补录的分队行也该带容器名（name_en 只是
+    # 分队**规则**名）。上游 CSV 行由 build 直接灌这两列，synthetic 行得靠补丁给，
+    # 白名单不开就永远填不上——现有 64 条 fp11e 分队行的容器名仍是空的，待补。
+    "detachments": ("id", "faction", "name_zh", "name_en", "rule_text",
+                    "detachment_name", "detachment_id"),
     "stratagems": ("id", "faction", "detachment", "name_zh", "name_en",
                    "cp_cost", "phase", "text_zh"),
     "enhancements": ("id", "faction_id", "detachment_id", "detachment_name",

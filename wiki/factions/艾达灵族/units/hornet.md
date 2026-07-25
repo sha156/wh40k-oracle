@@ -1,5 +1,5 @@
 ---
-id: 000000618
+id: '000000618'
 name_en: Hornet
 faction: 艾达灵族
 type: unit

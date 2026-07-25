@@ -14,7 +14,7 @@ updated: '2026-07-11'
 
 坚守射击是核心计谋：对手移动阶段结束时打一轮只靠未修正 6 命中的应急射击。
 
-## 坚守射击 FIRE OVERWATCH（1CP，核心计谋）
+## 坚守射击 [[core-rules/stratagems/fire-overwatch.md|FIRE OVERWATCH]]（1CP，核心计谋）
 
 - 使用时机：**你对手的移动阶段结束时**。
 - 使用对象：你军队中一个未交战的单位（巨型单位除外）。

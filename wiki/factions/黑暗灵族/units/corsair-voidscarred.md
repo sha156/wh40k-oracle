@@ -1,5 +1,5 @@
 ---
-id: 000004169
+id: '000004169'
 name_zh: 虚空裂痕海盗
 name_en: Corsair Voidscarred
 faction: 黑暗灵族

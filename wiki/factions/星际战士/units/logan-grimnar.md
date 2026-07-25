@@ -1,5 +1,5 @@
 ---
-id: 000000282
+id: '000000282'
 name_zh: 洛根.格里姆纳尔
 name_en: Logan Grimnar
 faction: 星际战士

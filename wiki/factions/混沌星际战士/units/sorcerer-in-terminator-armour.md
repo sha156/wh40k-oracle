@@ -1,5 +1,5 @@
 ---
-id: 000000939
+id: '000000939'
 name_zh: 终结者巫师
 name_en: Sorcerer In Terminator Armour
 faction: 混沌星际战士

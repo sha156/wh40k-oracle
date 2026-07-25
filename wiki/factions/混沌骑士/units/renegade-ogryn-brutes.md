@@ -1,5 +1,5 @@
 ---
-id: 000003859
+id: '000003859'
 name_en: Renegade Ogryn Brutes
 faction: 混沌骑士
 type: unit

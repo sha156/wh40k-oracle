@@ -1,5 +1,5 @@
 ---
-id: 000000628
+id: '000000628'
 name_zh: 幽魂泰坦
 name_en: Revenant Titan
 faction: 艾达灵族

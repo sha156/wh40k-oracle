@@ -1,5 +1,5 @@
 ---
-id: 000002379
+id: '000002379'
 name_en: Storm Chimera
 faction: 星界军
 type: unit

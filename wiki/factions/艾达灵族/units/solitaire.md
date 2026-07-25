@@ -1,5 +1,5 @@
 ---
-id: 000002538
+id: '000002538'
 name_zh: 独角
 name_en: Solitaire
 faction: 艾达灵族

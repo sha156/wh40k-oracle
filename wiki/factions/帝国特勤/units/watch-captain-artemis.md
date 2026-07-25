@@ -1,5 +1,5 @@
 ---
-id: 000003814
+id: '000003814'
 name_zh: 守望连长阿耳忒弥斯
 name_en: Watch Captain Artemis
 faction: 帝国特勤

@@ -1,5 +1,5 @@
 ---
-id: 000002748
+id: '000002748'
 name_zh: 鸦翼指挥小队
 name_en: Ravenwing Command Squad
 faction: 星际战士

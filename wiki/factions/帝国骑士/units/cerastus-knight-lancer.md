@@ -1,5 +1,5 @@
 ---
-id: 000000864
+id: '000000864'
 name_zh: 枪骑兵型角蝰骑士
 name_en: Cerastus Knight Lancer
 faction: 帝国骑士

@@ -38,4 +38,4 @@ updated: '2026-07-23'
 
 ## 关键词
 - **阵营关键词**：Heretic Astartes，Legiones Daemonica
-- **普通关键词**：Negavolt Cultists，Shadow Legion，[[core-rules/infantry.md|Infantry]]，Chaos，Damned，Negavolt Cultists，Undivided，Shadow Legion，[[core-rules/infantry.md|Infantry]]，Chaos，Damned，Chaos，Negavolt Cultists，Damned，Undivided，Shadow Legion，[[core-rules/infantry.md|Infantry]]，Chaos，Negavolt Cultists，Undivided，Shadow Legion，Damned，Undivided，[[core-rules/infantry.md|Infantry]]
+- **普通关键词**：Negavolt Cultists，[[factions/混沌恶魔/detachments/shadow-legion.md|Shadow Legion]]，[[core-rules/infantry.md|Infantry]]，Chaos，Damned，Negavolt Cultists，Undivided，Shadow Legion，[[core-rules/infantry.md|Infantry]]，Chaos，Damned，Chaos，Negavolt Cultists，Damned，Undivided，Shadow Legion，[[core-rules/infantry.md|Infantry]]，Chaos，Negavolt Cultists，Undivided，Shadow Legion，Damned，Undivided，[[core-rules/infantry.md|Infantry]]

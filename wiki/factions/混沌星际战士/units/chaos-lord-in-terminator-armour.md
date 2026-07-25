@@ -1,5 +1,5 @@
 ---
-id: 000000930
+id: '000000930'
 name_zh: 终结者领主
 name_en: Chaos Lord In Terminator Armour
 faction: 混沌星际战士

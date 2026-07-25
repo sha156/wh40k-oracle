@@ -1,5 +1,5 @@
 ---
-id: 000003840
+id: '000003840'
 name_zh: 控电神甫
 name_en: Tech-priest Manipulus
 faction: 帝国骑士

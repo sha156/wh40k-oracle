@@ -1,5 +1,5 @@
 ---
-id: 000003837
+id: '000003837'
 name_en: Death Company Marines with Boltguns and Jump Packs
 faction: 星际战士
 type: unit
@@ -52,4 +52,4 @@ updated: '2026-07-23'
 
 ## 关键词
 - **阵营关键词**：Adeptus Astartes，Blood Angels
-- **普通关键词**：Jump Pack，[[core-rules/grenades.md|Grenades]]，Imperium，Death Company，Death Company Marines with boltguns and Jump Packs，Fly，[[core-rules/infantry.md|Infantry]]
+- **普通关键词**：Jump Pack，[[core-rules/grenades.md|Grenades]]，Imperium，Death Company，[[factions/星际战士/units/death-company-marines.md|Death Company Marines]] with boltguns and Jump Packs，Fly，[[core-rules/infantry.md|Infantry]]

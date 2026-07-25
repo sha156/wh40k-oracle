@@ -256,9 +256,13 @@ class TestDbReconciliation:
         div = con.execute("SELECT text_zh FROM stratagems "
                           "WHERE id='000009746007'").fetchone()[0]
         assert 'within 8" of that enemy unit' in div and 'within 9"' not in div
+        # PR27 时这行是「空壳」（text_zh/detachment/phase 三列皆空），当时靠 fp_rules
+        # 手抄 FP 页 6 补齐。真根因是 Stratagems.csv 的裸换行把这条记录劈成两个物理行，
+        # 解析器续行修好后三列直接来自上游 CSV——所以断言改对着 Wahapedia 原文：
+        # 连字符是普通 '-'（FP 手抄件用的是 U+2011），关键词带 kwb 标记。
         tct = con.execute("SELECT text_zh, detachment, phase FROM stratagems "
                           "WHERE id='000010748005'").fetchone()
-        assert "re‑roll the Damage roll" in tct[0]
+        assert "re-roll the Damage roll" in tct[0] and "MONSTER" in tct[0]
         assert tct[1] == "Eradication Cohort" and tct[2] == "Shooting phase"
         con.close()
 

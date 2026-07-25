@@ -54,4 +54,4 @@ updated: '2026-07-23'
 
 ## 关键词
 - **阵营关键词**：Orks
-- **普通关键词**：Big [[factions/兽人/units/mek.md|Mek]]，[[core-rules/grenades.md|Grenades]]，[[core-rules/character.md|Character]]，Speed Freeks，[[core-rules/mounted.md|Mounted]]，Big Mek on Warbike
+- **普通关键词**：Big [[factions/兽人/units/mek.md|Mek]]，[[core-rules/grenades.md|Grenades]]，[[core-rules/character.md|Character]]，Speed Freeks，[[core-rules/mounted.md|Mounted]]，[[factions/兽人/units/big-mek.md|Big Mek]] on Warbike

@@ -1,5 +1,5 @@
 ---
-id: 000003873
+id: '000003873'
 name_zh: 死亡守望终结者小队
 name_en: Deathwatch Terminator Squad
 faction: 星际战士

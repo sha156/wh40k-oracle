@@ -1,5 +1,5 @@
 ---
-id: 000003896
+id: '000003896'
 name_zh: 炮兵小组
 name_en: Artillery Team
 faction: 星界军

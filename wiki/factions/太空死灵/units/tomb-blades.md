@@ -1,5 +1,5 @@
 ---
-id: 000000548
+id: '000000548'
 name_zh: 古墓飞刃
 name_en: Tomb Blades
 faction: 太空死灵

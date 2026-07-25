@@ -1,5 +1,5 @@
 ---
-id: 000004094
+id: '000004094'
 name_zh: 夏拉希·魔灾
 name_en: Shalaxi Helbane
 faction: 帝皇之子

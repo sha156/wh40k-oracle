@@ -47,4 +47,4 @@ updated: '2026-07-23'
 
 ## 关键词
 - **阵营关键词**：Legiones Daemonica
-- **普通关键词**：Chaos，[[core-rules/mounted.md|Mounted]]，Slaanesh，Shadow Legion，Hellflayer，Daemon
+- **普通关键词**：Chaos，[[core-rules/mounted.md|Mounted]]，Slaanesh，[[factions/混沌恶魔/detachments/shadow-legion.md|Shadow Legion]]，Hellflayer，Daemon

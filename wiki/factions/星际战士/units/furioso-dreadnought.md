@@ -48,4 +48,4 @@ updated: '2026-07-23'
 
 ## 关键词
 - **阵营关键词**：Blood Angels，Adeptus Astartes
-- **普通关键词**：Vehicle，[[core-rules/walker.md|Walker]]，Imperium，Furioso Dreadnought，Dreadnought
+- **普通关键词**：Vehicle，[[core-rules/walker.md|Walker]]，Imperium，Furioso [[factions/星际战士/units/dreadnought.md|Dreadnought]]，Dreadnought

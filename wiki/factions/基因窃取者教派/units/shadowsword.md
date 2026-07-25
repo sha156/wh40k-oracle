@@ -1,5 +1,5 @@
 ---
-id: 000003989
+id: '000003989'
 name_zh: 影剑
 name_en: Shadowsword
 faction: 基因窃取者教派

@@ -1,5 +1,5 @@
 ---
-id: 000001485
+id: '000001485'
 name_zh: 堡主骑士
 name_en: Knight Castellan
 faction: 帝国骑士

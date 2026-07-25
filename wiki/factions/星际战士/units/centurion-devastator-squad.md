@@ -1,5 +1,5 @@
 ---
-id: 000001193
+id: '000001193'
 name_zh: 百夫长破坏小队
 name_en: Centurion Devastator Squad
 faction: 星际战士
@@ -48,4 +48,4 @@ updated: '2026-07-23'
 
 ## 关键词
 - **阵营关键词**：Adeptus Astartes
-- **普通关键词**：[[core-rules/infantry.md|Infantry]]，Imperium，Centurion，Centurion Devastator Squad
+- **普通关键词**：[[core-rules/infantry.md|Infantry]]，Imperium，Centurion，Centurion [[factions/星际战士/units/devastator-squad.md|Devastator Squad]]

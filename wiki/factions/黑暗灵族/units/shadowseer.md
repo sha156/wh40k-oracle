@@ -1,5 +1,5 @@
 ---
-id: 000004159
+id: '000004159'
 name_zh: 暗影先知
 name_en: Shadowseer
 faction: 黑暗灵族

@@ -1,5 +1,5 @@
 ---
-id: 000000528
+id: '000000528'
 name_zh: 禁卫奥比隆
 name_en: Vargard Obyron
 faction: 太空死灵

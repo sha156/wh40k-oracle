@@ -1,5 +1,5 @@
 ---
-id: 000002708
+id: '000002708'
 name_zh: 凯万-史瑞克
 name_en: Kayvaan Shrike
 faction: 星际战士

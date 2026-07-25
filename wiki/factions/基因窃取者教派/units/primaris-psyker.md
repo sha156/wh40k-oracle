@@ -1,5 +1,5 @@
 ---
-id: 000003943
+id: '000003943'
 name_zh: 灵能导师
 name_en: Primaris Psyker
 faction: 基因窃取者教派

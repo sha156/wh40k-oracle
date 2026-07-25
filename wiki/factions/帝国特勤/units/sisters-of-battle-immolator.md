@@ -1,5 +1,5 @@
 ---
-id: 000003819
+id: '000003819'
 name_zh: 战斗修女献祭者装甲车
 name_en: Sisters of Battle Immolator
 faction: 帝国特勤

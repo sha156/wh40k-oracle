@@ -1,5 +1,5 @@
 ---
-id: 000000582
+id: '000000582'
 name_zh: 先知
 name_en: Farseer
 faction: 艾达灵族

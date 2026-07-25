@@ -45,4 +45,4 @@ updated: '2026-07-23'
 
 ## 关键词
 - **阵营关键词**：Adeptus Astartes，Blood Angels
-- **普通关键词**：[[core-rules/grenades.md|Grenades]]，[[core-rules/character.md|Character]]，[[core-rules/infantry.md|Infantry]]，[[core-rules/epic-hero.md|Epic Hero]]，Tycho，Captain，Imperium
+- **普通关键词**：[[core-rules/grenades.md|Grenades]]，[[core-rules/character.md|Character]]，[[core-rules/infantry.md|Infantry]]，[[core-rules/epic-hero.md|Epic Hero]]，Tycho，[[factions/星际战士/units/captain.md|Captain]]，Imperium

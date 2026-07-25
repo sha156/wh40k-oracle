@@ -1,5 +1,5 @@
 ---
-id: 000003918
+id: '000003918'
 name_zh: 死神军梦魇剑客
 name_en: Ynnari Incubi
 faction: 艾达灵族

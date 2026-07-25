@@ -1,5 +1,5 @@
 ---
-id: 000000844
+id: '000000844'
 name_zh: 雷鸣宗电僧
 name_en: Corpuscarii Electro-priests
 faction: 机械修会

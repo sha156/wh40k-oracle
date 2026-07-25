@@ -1,5 +1,5 @@
 ---
-id: 000003588
+id: '000003588'
 name_en: Chaos Thunderhawk
 faction: 吞世者
 type: unit

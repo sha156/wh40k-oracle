@@ -1,5 +1,5 @@
 ---
-id: 000001385
+id: '000001385'
 name_en: Grot Bomm Launcha
 faction: 兽人
 type: unit

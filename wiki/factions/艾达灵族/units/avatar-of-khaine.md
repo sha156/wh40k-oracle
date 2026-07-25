@@ -1,5 +1,5 @@
 ---
-id: 000000581
+id: '000000581'
 name_zh: 凯恩化身
 name_en: Avatar of Khaine
 faction: 艾达灵族

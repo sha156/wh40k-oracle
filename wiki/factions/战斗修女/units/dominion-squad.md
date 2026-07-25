@@ -1,5 +1,5 @@
 ---
-id: 000000909
+id: '000000909'
 name_zh: 御天使小队
 name_en: Dominion Squad
 faction: 战斗修女

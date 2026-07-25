@@ -1,5 +1,5 @@
 ---
-id: 000000396
+id: '000000396'
 name_zh: 犀牛装甲车
 name_en: Rhino
 faction: 灰骑士

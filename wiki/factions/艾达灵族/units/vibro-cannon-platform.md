@@ -1,5 +1,5 @@
 ---
-id: 000003912
+id: '000003912'
 name_zh: 音波炮平台（震击炮平台）
 name_en: Vibro Cannon Platform
 faction: 艾达灵族

@@ -1,5 +1,5 @@
 ---
-id: 000001183
+id: '000001183'
 name_zh: 终结者小队
 name_en: Terminator Squad
 faction: 星际战士

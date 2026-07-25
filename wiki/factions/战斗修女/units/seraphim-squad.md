@@ -1,5 +1,5 @@
 ---
-id: 000000904
+id: '000000904'
 name_zh: 炽天使小队
 name_en: Seraphim Squad
 faction: 战斗修女

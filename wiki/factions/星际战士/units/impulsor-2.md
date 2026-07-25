@@ -1,5 +1,5 @@
 ---
-id: 000002786
+id: '000002786'
 name_zh: 冲击者突击艇
 name_en: Impulsor
 faction: 星际战士

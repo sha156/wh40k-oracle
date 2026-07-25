@@ -47,4 +47,4 @@ updated: '2026-07-23'
 
 ## 关键词
 - **阵营关键词**：Astra Militarum，Genestealer Cults
-- **普通关键词**：Imperium，[[core-rules/smoke.md|Smoke]]，Macharius Omega，Vehicle，[[core-rules/titanic.md|Titanic]]
+- **普通关键词**：Imperium，[[core-rules/smoke.md|Smoke]]，[[factions/基因窃取者教派/units/macharius.md|Macharius]] Omega，Vehicle，[[core-rules/titanic.md|Titanic]]

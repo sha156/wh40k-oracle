@@ -1,5 +1,5 @@
 ---
-id: 000001184
+id: '000001184'
 name_en: Terminus Ultra
 faction: 星际战士
 type: unit

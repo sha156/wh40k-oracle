@@ -1,5 +1,5 @@
 ---
-id: 000000387
+id: '000000387'
 name_zh: 拦截者⼩队
 name_en: Interceptor Squad
 faction: 灰骑士

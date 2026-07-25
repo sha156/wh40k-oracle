@@ -49,4 +49,4 @@ updated: '2026-07-23'
 
 ## 关键词
 - **阵营关键词**：Legiones Daemonica
-- **普通关键词**：[[core-rules/mounted.md|Mounted]]，Fly，Chaos，Nurgle，Plague Drones，Shadow Legion，Daemon
+- **普通关键词**：[[core-rules/mounted.md|Mounted]]，Fly，Chaos，Nurgle，Plague Drones，[[factions/混沌恶魔/detachments/shadow-legion.md|Shadow Legion]]，Daemon

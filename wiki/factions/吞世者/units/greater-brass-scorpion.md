@@ -1,5 +1,5 @@
 ---
-id: 000003589
+id: '000003589'
 name_en: Greater Brass Scorpion
 faction: 吞世者
 type: unit

@@ -1,5 +1,5 @@
 ---
-id: 000000855
+id: '000000855'
 name_zh: 圣堂骑士
 name_en: Knight Paladin
 faction: 帝国骑士

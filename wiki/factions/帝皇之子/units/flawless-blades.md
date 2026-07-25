@@ -1,5 +1,5 @@
 ---
-id: 000004089
+id: '000004089'
 name_zh: 无瑕之刃
 name_en: Flawless Blades
 faction: 帝皇之子

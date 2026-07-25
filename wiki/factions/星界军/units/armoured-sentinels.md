@@ -1,5 +1,5 @@
 ---
-id: 000000691
+id: '000000691'
 name_zh: 装甲哨兵
 name_en: Armoured Sentinels
 faction: 星界军

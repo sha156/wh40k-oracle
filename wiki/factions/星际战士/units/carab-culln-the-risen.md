@@ -1,5 +1,5 @@
 ---
-id: 000000096
+id: '000000096'
 name_en: Carab Culln The Risen
 faction: 星际战士
 type: unit

@@ -1,5 +1,5 @@
 ---
-id: 000000509
+id: '000000509'
 name_zh: 领军
 name_en: Primus
 faction: 基因窃取者教派

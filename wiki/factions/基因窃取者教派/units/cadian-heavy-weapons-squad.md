@@ -1,5 +1,5 @@
 ---
-id: 000003967
+id: '000003967'
 name_zh: 卡迪亚重型武器小队
 name_en: Cadian Heavy Weapons Squad
 faction: 基因窃取者教派

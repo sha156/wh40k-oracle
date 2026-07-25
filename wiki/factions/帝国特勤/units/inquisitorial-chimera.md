@@ -1,5 +1,5 @@
 ---
-id: 000003820
+id: '000003820'
 name_zh: 审判庭奇美拉装甲车
 name_en: Inquisitorial Chimera
 faction: 帝国特勤

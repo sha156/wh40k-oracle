@@ -1,5 +1,5 @@
 ---
-id: 000002482
+id: '000002482'
 name_zh: 教条官
 name_en: Dogmata
 faction: 战斗修女

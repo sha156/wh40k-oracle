@@ -1,5 +1,5 @@
 ---
-id: 000001469
+id: '000001469'
 name_zh: 坏疹记账官
 name_en: Spoilpox Scrivener
 faction: 混沌恶魔
@@ -45,4 +45,4 @@ updated: '2026-07-23'
 
 ## 关键词
 - **阵营关键词**：Legiones Daemonica
-- **普通关键词**：Nurgle，Daemon，[[core-rules/character.md|Character]]，[[core-rules/infantry.md|Infantry]]，Chaos，Shadow Legion，Spoilpox Scrivener
+- **普通关键词**：Nurgle，Daemon，[[core-rules/character.md|Character]]，[[core-rules/infantry.md|Infantry]]，Chaos，[[factions/混沌恶魔/detachments/shadow-legion.md|Shadow Legion]]，Spoilpox Scrivener

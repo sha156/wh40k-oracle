@@ -1,5 +1,5 @@
 ---
-id: 000002092
+id: '000002092'
 name_zh: 启明者萨拉斯
 name_en: Illuminor Szeras
 faction: 太空死灵

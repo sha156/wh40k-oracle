@@ -1,5 +1,5 @@
 ---
-id: 000000382
+id: '000000382'
 name_zh: 兄弟会终结者⼩队
 name_en: Brotherhood Terminator Squad
 faction: 灰骑士

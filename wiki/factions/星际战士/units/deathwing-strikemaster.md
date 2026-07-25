@@ -1,5 +1,5 @@
 ---
-id: 000002468
+id: '000002468'
 name_en: Deathwing Strikemaster
 faction: 星际战士
 type: unit

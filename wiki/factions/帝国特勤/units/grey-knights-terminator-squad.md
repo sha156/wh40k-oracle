@@ -1,5 +1,5 @@
 ---
-id: 000003813
+id: '000003813'
 name_zh: 灰骑士终结者小队
 name_en: Grey Knights Terminator Squad
 faction: 帝国特勤

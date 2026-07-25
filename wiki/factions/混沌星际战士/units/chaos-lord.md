@@ -1,5 +1,5 @@
 ---
-id: 000000929
+id: '000000929'
 name_zh: 混沌领主
 name_en: Chaos Lord
 faction: 混沌星际战士

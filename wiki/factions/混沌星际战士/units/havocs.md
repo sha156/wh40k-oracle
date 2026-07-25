@@ -1,5 +1,5 @@
 ---
-id: 000000966
+id: '000000966'
 name_zh: 浩劫
 name_en: Havocs
 faction: 混沌星际战士

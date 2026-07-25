@@ -1,5 +1,5 @@
 ---
-id: 000001568
+id: '000001568'
 name_zh: 教团卫士
 name_en: Locus
 faction: 基因窃取者教派

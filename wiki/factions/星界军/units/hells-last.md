@@ -1,5 +1,5 @@
 ---
-id: 000003922
+id: '000003922'
 name_zh: 【传奇】地狱之末
 name_en: Hell’s Last
 faction: 星界军
@@ -45,7 +45,7 @@ updated: '2026-07-23'
 - **Heroic Example**：While this unit’s Minka Lesk model is on the battlefield, each time a model in this unit makes an attack, you can re-roll the Hit roll.
 - **Lesk’s Heroes**：Add 1 to the Leadership characteristic of models in this unit and you can re-roll Battle-shock and Leadership tests taken for this unit.
 - **ORDERS**：This unit’s <span class="kwb">OFFICER</span> can issue 2 Orders to Regiment units.
-- **Regimental Banner**：Add 1 to the Objective Control characteristic of models in the bearer’s unit.
+- **[[factions/星界军/enhancements/regimental-banner.md|Regimental Banner]]**：Add 1 to the Objective Control characteristic of models in the bearer’s unit.
 - **One Shot**：The bearer can only shoot with this weapon once per battle.
 
 ## 单位构成

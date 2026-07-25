@@ -1,5 +1,5 @@
 ---
-id: 000000883
+id: '000000883'
 name_zh: 神圣蔑视者无畏机甲
 name_en: Venerable Contemptor Dreadnought
 faction: 帝皇卫队

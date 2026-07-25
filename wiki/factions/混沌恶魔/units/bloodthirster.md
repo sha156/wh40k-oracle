@@ -1,5 +1,5 @@
 ---
-id: 000002582
+id: '000002582'
 name_zh: 嗜血狂魔
 name_en: Bloodthirster
 faction: 混沌恶魔
@@ -51,4 +51,4 @@ updated: '2026-07-23'
 
 ## 关键词
 - **阵营关键词**：Legiones Daemonica
-- **普通关键词**：Daemon，Bloodthirster，Shadow Legion，Fly，Khorne，Chaos，Monster，[[core-rules/character.md|Character]]
+- **普通关键词**：Daemon，Bloodthirster，[[factions/混沌恶魔/detachments/shadow-legion.md|Shadow Legion]]，Fly，Khorne，Chaos，Monster，[[core-rules/character.md|Character]]

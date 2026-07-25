@@ -8,6 +8,8 @@ EXPECTED_TABLES 缺口报告。
 """
 from __future__ import annotations
 
+from typing import Dict, List, Tuple
+
 FACTIONS_DDL = """
 CREATE TABLE IF NOT EXISTS factions (
     id TEXT PRIMARY KEY,
@@ -100,7 +102,9 @@ CREATE TABLE IF NOT EXISTS abilities (
 );
 """
 
-# 待 Stratagems.csv，当前无源数据，仅建表
+# 待 Stratagems.csv，当前无源数据，仅建表。
+# type/turn：CSV 原生列，分队页要用 type（"Eradication Cohort – Wargear Stratagem"）
+# 给战略分类分组，用 turn（"Your turn"/"Either player's turn"）标可用时机。
 STRATAGEMS_DDL = """
 CREATE TABLE IF NOT EXISTS stratagems (
     id TEXT PRIMARY KEY,
@@ -111,6 +115,8 @@ CREATE TABLE IF NOT EXISTS stratagems (
     cp_cost TEXT,
     phase TEXT,
     text_zh TEXT,
+    type TEXT,
+    turn TEXT,
     effect_dsl_json TEXT,
     dsl_status TEXT DEFAULT 'not_modeled',
     fp_status TEXT
@@ -119,7 +125,10 @@ CREATE TABLE IF NOT EXISTS stratagems (
 # fp_status：NULL=现行；'removed_11e'=经 FP 完整重印裁定 11 版已删除（fp_rules
 # deactivations 层写入，2026-07-16 裁 A）。原文保留可回滚；消费/对账应排除该标记行。
 
-# 待 Detachment_abilities.csv，当前无源数据，仅建表
+# 待 Detachment_abilities.csv，当前无源数据，仅建表。
+# ⚠️ name_en 存的是**分队规则名**（Martial Mastery），detachment_name 才是玩家口中
+# 的**分队容器名**（Shield Host）——CSV 本来两列都有，旧实现只取了规则名，容器名
+# 整列丢失。detachment_id 是容器的官方 id，与 enhancements.detachment_id 同一口径。
 DETACHMENTS_DDL = """
 CREATE TABLE IF NOT EXISTS detachments (
     id TEXT PRIMARY KEY,
@@ -127,7 +136,9 @@ CREATE TABLE IF NOT EXISTS detachments (
     name_zh TEXT,
     name_en TEXT,
     rule_text TEXT,
-    enhancements_json TEXT
+    enhancements_json TEXT,
+    detachment_name TEXT,
+    detachment_id TEXT
 );
 """
 
@@ -166,3 +177,32 @@ ALL_DDL = (
     FACTIONS_DDL, DATASHEETS_DDL, UNITS_DDL, MODELS_DDL, WEAPONS_DDL,
     ABILITIES_DDL, STRATAGEMS_DDL, DETACHMENTS_DDL, ENHANCEMENTS_DDL, ALIASES_DDL,
 )
+
+# 晚于建表加进 DDL 的列。新库由 ALL_DDL 自带，旧库（已在跑、没重建过的
+# db/wh40k.sqlite）靠 ensure_columns 幂等 ALTER 补上——`CREATE TABLE IF NOT EXISTS`
+# 对已存在的表是空跑，光改 DDL 补不到旧库。fp_status / effect_dsl_json 这类由
+# fp_rules._ensure_fp_status_column、dsl_apply._ensure_dsl_columns 各自就地补齐
+# （它们要在自己的写路径上先于 UPDATE 生效），不重复列在这里。
+LATE_COLUMNS: Dict[str, Tuple[Tuple[str, str], ...]] = {
+    "detachments": (("detachment_name", "TEXT"), ("detachment_id", "TEXT")),
+    "stratagems": (("type", "TEXT"), ("turn", "TEXT")),
+}
+
+
+def ensure_columns(conn) -> List[str]:
+    """旧库补齐 LATE_COLUMNS（幂等），返回本次真加上的 "表.列" 清单。
+
+    conn 可以是 Connection 也可以是 Cursor（两者都有 execute）。表不存在时跳过，
+    不越权造表——建表是 ALL_DDL 的职责，这里只管补列。
+    """
+    added: List[str] = []
+    for table, cols in LATE_COLUMNS.items():
+        info = list(conn.execute("PRAGMA table_info({})".format(table)))
+        if not info:
+            continue
+        have = {r[1] for r in info}
+        for name, decl in cols:
+            if name not in have:
+                conn.execute("ALTER TABLE {} ADD COLUMN {} {}".format(table, name, decl))
+                added.append("{}.{}".format(table, name))
+    return added

@@ -50,4 +50,4 @@ updated: '2026-07-23'
 
 ## 关键词
 - **阵营关键词**：Adeptus Astartes
-- **普通关键词**：Fly，[[core-rules/grenades.md|Grenades]]，Jump Pack，Imperium，Librarian，[[core-rules/psyker.md|Psyker]]，[[core-rules/infantry.md|Infantry]]，[[core-rules/character.md|Character]]
+- **普通关键词**：Fly，[[core-rules/grenades.md|Grenades]]，Jump Pack，Imperium，[[factions/星际战士/units/librarian.md|Librarian]]，[[core-rules/psyker.md|Psyker]]，[[core-rules/infantry.md|Infantry]]，[[core-rules/character.md|Character]]

@@ -34,4 +34,4 @@ updated: '2026-07-23'
 
 ## 关键词
 - **阵营关键词**：Heretic Astartes，Legiones Daemonica
-- **普通关键词**：[[core-rules/swarm.md|Swarm]]，Shadow Legion，Nurgle，Damned，Chaos，[[core-rules/swarm.md|Swarm]]，Undivided，Mutoid Vermin，Nurgle，Damned，Chaos，[[core-rules/swarm.md|Swarm]]，Undivided，Shadow Legion，Undivided，Mutoid Vermin，Nurgle，Damned，Chaos，[[core-rules/swarm.md|Swarm]]，Shadow Legion，Undivided，Mutoid Vermin，Nurgle，Damned，Chaos，Shadow Legion，Undivided，Mutoid Vermin，Nurgle，Damned，Chaos，[[core-rules/swarm.md|Swarm]]，Shadow Legion，Mutoid Vermin
+- **普通关键词**：[[core-rules/swarm.md|Swarm]]，[[factions/混沌恶魔/detachments/shadow-legion.md|Shadow Legion]]，Nurgle，Damned，Chaos，[[core-rules/swarm.md|Swarm]]，Undivided，Mutoid Vermin，Nurgle，Damned，Chaos，[[core-rules/swarm.md|Swarm]]，Undivided，Shadow Legion，Undivided，Mutoid Vermin，Nurgle，Damned，Chaos，[[core-rules/swarm.md|Swarm]]，Shadow Legion，Undivided，Mutoid Vermin，Nurgle，Damned，Chaos，Shadow Legion，Undivided，Mutoid Vermin，Nurgle，Damned，Chaos，[[core-rules/swarm.md|Swarm]]，Shadow Legion，Mutoid Vermin

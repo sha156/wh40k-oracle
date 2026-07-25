@@ -1,5 +1,5 @@
 ---
-id: 000002081
+id: '000002081'
 name_zh: 塞波利斯硫磺猎手
 name_en: Serberys Sulphurhounds
 faction: 机械修会

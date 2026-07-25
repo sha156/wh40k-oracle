@@ -1,5 +1,5 @@
 ---
-id: 000003915
+id: '000003915'
 name_zh: 死神军魅魔
 name_en: Ynnari Succubus
 faction: 艾达灵族

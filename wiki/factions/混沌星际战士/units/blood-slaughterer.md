@@ -1,5 +1,5 @@
 ---
-id: 000001293
+id: '000001293'
 name_en: Blood Slaughterer
 faction: 混沌星际战士
 type: unit

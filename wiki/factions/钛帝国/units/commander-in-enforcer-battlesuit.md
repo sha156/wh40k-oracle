@@ -1,5 +1,5 @@
 ---
-id: 000001478
+id: '000001478'
 name_zh: 强执战斗服指挥官
 name_en: Commander In Enforcer Battlesuit
 faction: 钛帝国

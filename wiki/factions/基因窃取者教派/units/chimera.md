@@ -1,5 +1,5 @@
 ---
-id: 000003951
+id: '000003951'
 name_zh: 奇美拉装甲车
 name_en: Chimera
 faction: 基因窃取者教派

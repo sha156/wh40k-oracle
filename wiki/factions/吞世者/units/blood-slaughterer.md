@@ -1,5 +1,5 @@
 ---
-id: 000003587
+id: '000003587'
 name_en: Blood Slaughterer
 faction: 吞世者
 type: unit

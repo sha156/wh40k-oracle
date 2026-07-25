@@ -1,5 +1,5 @@
 ---
-id: 000001583
+id: '000001583'
 name_zh: 魔机统领
 name_en: Lord Discordant On Helstalker
 faction: 混沌星际战士

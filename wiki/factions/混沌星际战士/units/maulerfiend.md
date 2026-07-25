@@ -1,5 +1,5 @@
 ---
-id: 000000968
+id: '000000968'
 name_zh: 重锤魔
 name_en: Maulerfiend
 faction: 混沌星际战士

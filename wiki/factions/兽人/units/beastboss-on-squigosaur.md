@@ -1,5 +1,5 @@
 ---
-id: 000002490
+id: '000002490'
 name_zh: 骑乘跳龙的兽霸头目
 name_en: Beastboss On Squigosaur
 faction: 兽人
@@ -49,4 +49,4 @@ updated: '2026-07-23'
 
 ## 关键词
 - **阵营关键词**：兽人
-- **普通关键词**：[[core-rules/mounted.md|骑乘]]，[[core-rules/character.md|人物]]，兽霸，[[factions/兽人/units/warboss.md|战争头目]]，骑乘跳龙的兽霸头目
+- **普通关键词**：[[core-rules/mounted.md|骑乘]]，[[core-rules/character.md|人物]]，兽霸，[[factions/兽人/units/warboss.md|战争头目]]，骑乘跳龙的[[factions/兽人/units/beastboss.md|兽霸头目]]

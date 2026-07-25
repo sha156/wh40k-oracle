@@ -1,5 +1,5 @@
 ---
-id: 000003982
+id: '000003982'
 name_zh: 黎曼鲁斯处决者
 name_en: Leman Russ Executioner
 faction: 基因窃取者教派

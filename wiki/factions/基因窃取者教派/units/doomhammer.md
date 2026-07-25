@@ -1,5 +1,5 @@
 ---
-id: 000003971
+id: '000003971'
 name_zh: 末日之锤
 name_en: Doomhammer
 faction: 基因窃取者教派

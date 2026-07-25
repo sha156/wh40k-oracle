@@ -1,5 +1,5 @@
 ---
-id: 000001048
+id: '000001048'
 name_zh: 混沌卵
 name_en: Chaos Spawn
 faction: 死亡守卫

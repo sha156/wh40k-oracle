@@ -1,5 +1,5 @@
 ---
-id: 000000079
+id: '000000079'
 name_zh: 终结者智库
 name_en: Librarian In Terminator Armour
 faction: 星际战士
@@ -49,4 +49,4 @@ updated: '2026-07-23'
 
 ## 关键词
 - **阵营关键词**：Adeptus Astartes
-- **普通关键词**：Librarian，Deathwing，[[core-rules/character.md|Character]]，[[core-rules/psyker.md|Psyker]]，[[core-rules/infantry.md|Infantry]]，Imperium，Terminator
+- **普通关键词**：[[factions/星际战士/units/librarian.md|Librarian]]，Deathwing，[[core-rules/character.md|Character]]，[[core-rules/psyker.md|Psyker]]，[[core-rules/infantry.md|Infantry]]，Imperium，Terminator

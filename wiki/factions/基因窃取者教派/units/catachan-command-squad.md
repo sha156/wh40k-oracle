@@ -1,5 +1,5 @@
 ---
-id: 000003940
+id: '000003940'
 name_zh: 卡塔昌指挥组
 name_en: Catachan Command Squad
 faction: 基因窃取者教派

@@ -51,4 +51,4 @@ updated: '2026-07-23'
 
 ## 关键词
 - **阵营关键词**：Adeptus Astartes
-- **普通关键词**：Deathwing，Repulsor Executioner，Imperium，[[core-rules/transport.md|Transport]]，[[core-rules/smoke.md|Smoke]]，Vehicle
+- **普通关键词**：Deathwing，[[factions/星际战士/units/repulsor-2.md|Repulsor]] Executioner，Imperium，[[core-rules/transport.md|Transport]]，[[core-rules/smoke.md|Smoke]]，Vehicle

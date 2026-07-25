@@ -1,5 +1,5 @@
 ---
-id: 000000954
+id: '000000954'
 name_zh: 地狱兽
 name_en: Helbrute
 faction: 混沌星际战士

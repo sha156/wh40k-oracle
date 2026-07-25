@@ -1,5 +1,5 @@
 ---
-id: 000000598
+id: '000000598'
 name_zh: 幽冥之刃
 name_en: Wraithblades
 faction: 艾达灵族

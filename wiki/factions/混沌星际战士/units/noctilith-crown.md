@@ -1,5 +1,5 @@
 ---
-id: 000001587
+id: '000001587'
 name_zh: 黑石魔冠
 name_en: Noctilith Crown
 faction: 混沌星际战士

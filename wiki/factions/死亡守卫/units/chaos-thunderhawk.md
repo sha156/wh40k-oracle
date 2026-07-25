@@ -1,5 +1,5 @@
 ---
-id: 000003585
+id: '000003585'
 name_en: Chaos Thunderhawk
 faction: 死亡守卫
 type: unit

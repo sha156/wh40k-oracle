@@ -1,5 +1,5 @@
 ---
-id: 000000459
+id: '000000459'
 name_zh: 兵蜂哨戒炮
 name_en: Drone Sentry Turret
 faction: 钛帝国

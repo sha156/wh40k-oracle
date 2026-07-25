@@ -1,5 +1,5 @@
 ---
-id: 000004119
+id: '000004119'
 name_zh: 奴工战斗支队
 name_en: Servitor Battleclade
 faction: 机械修会

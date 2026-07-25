@@ -1,5 +1,5 @@
 ---
-id: 000002790
+id: '000002790'
 name_zh: 处决者型反击者坦克
 name_en: Repulsor Executioner
 faction: 星际战士
@@ -52,4 +52,4 @@ updated: '2026-07-23'
 
 ## 关键词
 - **阵营关键词**：Black Templars，Adeptus Astartes
-- **普通关键词**：Vehicle，[[core-rules/smoke.md|Smoke]]，[[core-rules/transport.md|Transport]]，Imperium，Repulsor Executioner
+- **普通关键词**：Vehicle，[[core-rules/smoke.md|Smoke]]，[[core-rules/transport.md|Transport]]，Imperium，[[factions/星际战士/units/repulsor-2.md|Repulsor]] Executioner

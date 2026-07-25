@@ -1,5 +1,5 @@
 ---
-id: 000002789
+id: '000002789'
 name_zh: 死神型角斗者坦克
 name_en: Gladiator Reaper
 faction: 星际战士

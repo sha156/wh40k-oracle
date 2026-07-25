@@ -1,5 +1,5 @@
 ---
-id: 000000587
+id: '000000587'
 name_zh: 天行者术士
 name_en: Warlock Skyrunners
 faction: 艾达灵族
@@ -43,7 +43,7 @@ updated: '2026-07-23'
 
 ## 技能
 - **Runes of Battle (Psychic)**：Weapons equipped by models in this unit have the [IGNORES COVER] ability.
-- **Psychic Communion (Psychic)**：Each time this unit is selected to shoot, for each Warlock model in this unit, until the end of the phase, add 1 to the Attacks and Strength characteristics of that model’s Destructor weapon for each other friendly Aeldari Psyker model within 6" of that model (to a maximum of +2).
+- **Psychic Communion (Psychic)**：Each time this unit is selected to shoot, for each [[factions/艾达灵族/units/warlock.md|Warlock]] model in this unit, until the end of the phase, add 1 to the Attacks and Strength characteristics of that model’s Destructor weapon for each other friendly Aeldari Psyker model within 6" of that model (to a maximum of +2).
 
 ## 单位构成
 - **1个模型** — 55 分

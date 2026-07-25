@@ -1,5 +1,5 @@
 ---
-id: 000003909
+id: '000003909'
 name_zh: 莱凯丝
 name_en: Lhykhis
 faction: 艾达灵族

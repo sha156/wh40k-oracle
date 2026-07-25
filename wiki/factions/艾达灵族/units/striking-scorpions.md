@@ -1,5 +1,5 @@
 ---
-id: 000000595
+id: '000000595'
 name_zh: 突击战蝎
 name_en: Striking Scorpions
 faction: 艾达灵族

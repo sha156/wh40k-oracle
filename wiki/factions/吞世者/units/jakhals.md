@@ -1,5 +1,5 @@
 ---
-id: 000002628
+id: '000002628'
 name_zh: 裂伤者
 name_en: Jakhals
 faction: 吞世者

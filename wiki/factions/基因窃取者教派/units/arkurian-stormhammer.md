@@ -1,5 +1,5 @@
 ---
-id: 000003994
+id: '000003994'
 name_en: Arkurian Stormhammer
 faction: 基因窃取者教派
 type: unit

@@ -1,5 +1,5 @@
 ---
-id: 000001387
+id: '000001387'
 name_en: Fighta-bommer
 faction: 兽人
 type: unit

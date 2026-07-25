@@ -1,5 +1,5 @@
 ---
-id: 000003968
+id: '000003968'
 name_zh: 卡塔昌重型武器小队
 name_en: Catachan Heavy Weapons Squad
 faction: 基因窃取者教派

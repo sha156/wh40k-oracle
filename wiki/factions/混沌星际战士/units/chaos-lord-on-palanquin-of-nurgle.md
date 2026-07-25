@@ -1,5 +1,5 @@
 ---
-id: 000000934
+id: '000000934'
 name_en: Chaos Lord On Palanquin Of Nurgle
 faction: 混沌星际战士
 type: unit
@@ -45,7 +45,7 @@ updated: '2026-07-23'
 
 ## 技能
 - **Lord of Chaos**：Once per battle round, one unit from your army with this ability can use it when its unit is targeted with a Stratagem. If it does, reduce the CP cost of that use of that Stratagem by 1CP.
-- **Revolting Regeneration**：At the start of your Command phase, this model regains up to D3 lost wounds.
+- **[[factions/死亡守卫/enhancements/revolting-regeneration.md|Revolting Regeneration]]**：At the start of your Command phase, this model regains up to D3 lost wounds.
 
 ## 单位构成
 - **1个模型** — 90 分

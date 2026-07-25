@@ -1,5 +1,5 @@
 ---
-id: 000001390
+id: '000001390'
 name_en: Raven Strike Fighter
 faction: 黑暗灵族
 type: unit

@@ -1,5 +1,5 @@
 ---
-id: 000003960
+id: '000003960'
 name_zh: 装甲哨兵
 name_en: Armoured Sentinels
 faction: 基因窃取者教派

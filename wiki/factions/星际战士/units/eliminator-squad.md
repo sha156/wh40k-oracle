@@ -1,5 +1,5 @@
 ---
-id: 000001668
+id: '000001668'
 name_zh: 歼灭者小队
 name_en: Eliminator Squad
 faction: 星际战士

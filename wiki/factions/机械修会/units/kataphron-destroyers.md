@@ -1,5 +1,5 @@
 ---
-id: 000000842
+id: '000000842'
 name_zh: 武装奴工毁灭者
 name_en: Kataphron Destroyers
 faction: 机械修会

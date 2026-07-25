@@ -1,5 +1,5 @@
 ---
-id: 000003834
+id: '000003834'
 name_zh: 风暴天鹰
 name_en: Tempestus Aquilons
 faction: 星界军

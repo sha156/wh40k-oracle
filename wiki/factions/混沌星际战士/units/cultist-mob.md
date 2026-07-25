@@ -1,5 +1,5 @@
 ---
-id: 000000946
+id: '000000946'
 name_zh: 邪教徒
 name_en: Cultist Mob
 faction: 混沌星际战士

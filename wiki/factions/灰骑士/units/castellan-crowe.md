@@ -1,5 +1,5 @@
 ---
-id: 000000380
+id: '000000380'
 name_zh: 克罗堡主
 name_en: Castellan Crowe
 faction: 灰骑士

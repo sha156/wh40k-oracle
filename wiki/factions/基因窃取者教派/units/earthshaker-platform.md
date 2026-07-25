@@ -1,5 +1,5 @@
 ---
-id: 000003956
+id: '000003956'
 name_en: Earthshaker Platform
 faction: 基因窃取者教派
 type: unit

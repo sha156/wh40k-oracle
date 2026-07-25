@@ -1,5 +1,5 @@
 ---
-id: 000000284
+id: '000000284'
 name_en: Wolf Lord on Thunderwolf
 faction: 星际战士
 type: unit

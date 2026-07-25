@@ -1,5 +1,5 @@
 ---
-id: 000003969
+id: '000003969'
 name_zh: 死亡骑兵
 name_en: Death Riders
 faction: 基因窃取者教派

@@ -1,5 +1,5 @@
 ---
-id: 000000696
+id: '000000696'
 name_zh: 九头蛇高射炮
 name_en: Hydra
 faction: 星界军

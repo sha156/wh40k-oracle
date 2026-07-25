@@ -1,5 +1,5 @@
 ---
-id: 000001396
+id: '000001396'
 name_zh: 技术技师机械教士
 name_en: Tech-Priest Enginseer
 faction: 星界军

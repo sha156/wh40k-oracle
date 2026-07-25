@@ -44,4 +44,4 @@ updated: '2026-07-23'
 
 ## 关键词
 - **阵营关键词**：Legiones Daemonica
-- **普通关键词**：Shadow Legion，Bloodcrushers，Daemon，[[core-rules/mounted.md|Mounted]]，Chaos，Khorne
+- **普通关键词**：[[factions/混沌恶魔/detachments/shadow-legion.md|Shadow Legion]]，Bloodcrushers，Daemon，[[core-rules/mounted.md|Mounted]]，Chaos，Khorne

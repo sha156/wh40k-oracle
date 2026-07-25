@@ -1,5 +1,5 @@
 ---
-id: 000004080
+id: '000004080'
 name_zh: 破戒者
 name_en: Infractors
 faction: 帝皇之子

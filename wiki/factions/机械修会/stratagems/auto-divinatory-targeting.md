@@ -1,0 +1,31 @@
+---
+id: '000008573003'
+name_en: AUTO-DIVINATORY TARGETING
+faction: 机械修会
+type: stratagem
+detachment: Cohort Cybernetica
+cp: 1
+phase: Command phase
+stratagem_type: Cohort Cybernetica – Battle Tactic Stratagem
+tags:
+- stratagem
+- stratagem/机械修会
+- 机械修会
+sources:
+- book: 官方结构库 db/wh40k.sqlite（Wahapedia 11 版镜像）
+updated: '2026-07-25'
+---
+
+1 CP、Command phase、[[factions/机械修会/detachments/cohort-cybernetica.md|Cohort Cybernetica]] 分队、Battle Tactic Stratagem。
+
+## 使用时机
+
+Your Command phase.
+
+## 使用对象
+
+One LEGIO CYBERNETICA or ADEPTUS MECHANICUS VEHICLE unit from your army, and one objective marker.
+
+## 效果
+
+Until the start of your next Command phase, ranged weapons equipped by models in your unit have a Ballistic Skill characteristic of 3+ and the [IGNORES COVER] ability, but they can only target units within range of the selected objective marker.

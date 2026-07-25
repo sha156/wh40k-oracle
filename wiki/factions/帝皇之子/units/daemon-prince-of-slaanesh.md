@@ -1,5 +1,5 @@
 ---
-id: 000004086
+id: '000004086'
 name_zh: 色孽恶魔王子
 name_en: Daemon Prince of Slaanesh
 faction: 帝皇之子

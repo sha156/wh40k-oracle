@@ -1,5 +1,5 @@
 ---
-id: 000000588
+id: '000000588'
 name_zh: 灵魂先知
 name_en: Spiritseer
 faction: 艾达灵族

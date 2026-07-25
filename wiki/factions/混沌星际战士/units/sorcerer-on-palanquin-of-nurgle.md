@@ -1,5 +1,5 @@
 ---
-id: 000000942
+id: '000000942'
 name_en: Sorcerer On Palanquin Of Nurgle
 faction: 混沌星际战士
 type: unit

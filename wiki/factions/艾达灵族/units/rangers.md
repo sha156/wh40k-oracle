@@ -1,5 +1,5 @@
 ---
-id: 000000592
+id: '000000592'
 name_zh: 游侠
 name_en: Rangers
 faction: 艾达灵族

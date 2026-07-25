@@ -1,5 +1,5 @@
 ---
-id: 000001178
+id: '000001178'
 name_en: Vindicator Laser Destroyer
 faction: 星际战士
 type: unit
@@ -43,4 +43,4 @@ updated: '2026-07-23'
 
 ## 关键词
 - **阵营关键词**：Adeptus Astartes
-- **普通关键词**：[[core-rules/smoke.md|Smoke]]，Vehicle，Imperium，Vindicator Laser Destroyer
+- **普通关键词**：[[core-rules/smoke.md|Smoke]]，Vehicle，Imperium，[[factions/星际战士/units/vindicator.md|Vindicator]] Laser Destroyer

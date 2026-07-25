@@ -1,5 +1,5 @@
 ---
-id: 000003596
+id: '000003596'
 name_en: Mutoid Vermin
 faction: 死亡守卫
 type: unit

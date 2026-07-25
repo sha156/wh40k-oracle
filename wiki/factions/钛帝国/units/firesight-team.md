@@ -1,5 +1,5 @@
 ---
-id: 000000428
+id: '000000428'
 name_zh: 神射手小队
 name_en: Firesight Team
 faction: 钛帝国

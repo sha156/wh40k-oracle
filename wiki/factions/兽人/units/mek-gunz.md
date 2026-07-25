@@ -1,5 +1,5 @@
 ---
-id: 000000038
+id: '000000038'
 name_zh: 屁精技师炮
 name_en: Mek Gunz
 faction: 兽人

@@ -1,5 +1,5 @@
 ---
-id: 000001098
+id: '000001098'
 name_zh: 混沌复仇女神型巡游骑士
 name_en: Chaos Questoris Knight Magaera
 faction: 混沌骑士

@@ -1,5 +1,5 @@
 ---
-id: 000000594
+id: '000000594'
 name_zh: 狂嚎女妖
 name_en: Howling Banshees
 faction: 艾达灵族

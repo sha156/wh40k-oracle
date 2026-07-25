@@ -1,5 +1,5 @@
 ---
-id: 000001479
+id: '000001479'
 name_zh: 特拉蒙重型无畏机甲
 name_en: Telemon Heavy Dreadnought
 faction: 帝皇卫队

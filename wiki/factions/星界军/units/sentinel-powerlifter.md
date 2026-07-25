@@ -1,5 +1,5 @@
 ---
-id: 000000759
+id: '000000759'
 name_en: Sentinel Powerlifter
 faction: 星界军
 type: unit

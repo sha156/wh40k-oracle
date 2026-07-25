@@ -1,5 +1,5 @@
 ---
-id: 000003860
+id: '000003860'
 name_en: Renegade Plague Ogryns
 faction: 混沌骑士
 type: unit

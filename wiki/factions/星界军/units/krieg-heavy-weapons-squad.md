@@ -1,5 +1,5 @@
 ---
-id: 000003895
+id: '000003895'
 name_zh: 克里格重型武器小队
 name_en: Krieg Heavy Weapons Squad
 faction: 星界军

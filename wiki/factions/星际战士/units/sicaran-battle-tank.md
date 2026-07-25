@@ -1,5 +1,5 @@
 ---
-id: 000001185
+id: '000001185'
 name_en: Sicaran Battle Tank
 faction: 星际战士
 type: unit

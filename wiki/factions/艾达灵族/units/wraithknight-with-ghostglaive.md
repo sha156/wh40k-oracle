@@ -1,5 +1,5 @@
 ---
-id: 000003913
+id: '000003913'
 name_zh: 装备幽冥长刀的幽冥骑士
 name_en: Wraithknight with Ghostglaive
 faction: 艾达灵族

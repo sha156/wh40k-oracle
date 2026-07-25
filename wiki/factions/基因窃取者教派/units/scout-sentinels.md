@@ -1,5 +1,5 @@
 ---
-id: 000003988
+id: '000003988'
 name_zh: 侦查哨兵
 name_en: Scout Sentinels
 faction: 基因窃取者教派

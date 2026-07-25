@@ -1,5 +1,5 @@
 ---
-id: 000004109
+id: '000004109'
 name_zh: 痘疹领主
 name_en: Lord of Poxes
 faction: 死亡守卫

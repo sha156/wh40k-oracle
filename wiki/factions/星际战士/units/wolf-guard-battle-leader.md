@@ -51,4 +51,4 @@ updated: '2026-07-23'
 
 ## 关键词
 - **阵营关键词**：Adeptus Astartes，Space Wolves
-- **普通关键词**：[[core-rules/character.md|Character]]，Imperium，Tacticus，Wolf Guard，Battle Leader，[[core-rules/infantry.md|Infantry]]
+- **普通关键词**：[[core-rules/character.md|Character]]，Imperium，Tacticus，[[factions/星际战士/units/wolf-guard.md|Wolf Guard]]，Battle Leader，[[core-rules/infantry.md|Infantry]]

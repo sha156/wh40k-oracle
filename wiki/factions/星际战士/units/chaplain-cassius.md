@@ -1,5 +1,5 @@
 ---
-id: 000002678
+id: '000002678'
 name_en: Chaplain Cassius
 faction: 星际战士
 type: unit
@@ -43,4 +43,4 @@ updated: '2026-07-23'
 
 ## 关键词
 - **阵营关键词**：Ultramarines，Adeptus Astartes
-- **普通关键词**：Imperium，[[core-rules/character.md|Character]]，Chaplain Cassius，[[core-rules/epic-hero.md|Epic Hero]]，[[core-rules/infantry.md|Infantry]]
+- **普通关键词**：Imperium，[[core-rules/character.md|Character]]，[[factions/星际战士/units/chaplain.md|Chaplain]] Cassius，[[core-rules/epic-hero.md|Epic Hero]]，[[core-rules/infantry.md|Infantry]]

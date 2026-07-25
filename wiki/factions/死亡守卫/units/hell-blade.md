@@ -1,5 +1,5 @@
 ---
-id: 000003594
+id: '000003594'
 name_en: Hell Blade
 faction: 死亡守卫
 type: unit

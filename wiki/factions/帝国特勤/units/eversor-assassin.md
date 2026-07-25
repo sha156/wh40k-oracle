@@ -1,5 +1,5 @@
 ---
-id: 000000872
+id: '000000872'
 name_zh: 艾弗森刺客
 name_en: Eversor Assassin
 faction: 帝国特勤

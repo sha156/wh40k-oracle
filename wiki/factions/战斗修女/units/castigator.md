@@ -1,5 +1,5 @@
 ---
-id: 000002484
+id: '000002484'
 name_zh: 惩罚者坦克
 name_en: Castigator
 faction: 战斗修女

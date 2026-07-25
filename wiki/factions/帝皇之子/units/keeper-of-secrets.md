@@ -1,5 +1,5 @@
 ---
-id: 000004097
+id: '000004097'
 name_zh: 守密者
 name_en: Keeper of Secrets
 faction: 帝皇之子

@@ -1,5 +1,5 @@
 ---
-id: 000001391
+id: '000001391'
 name_zh: 卡纳罗克骑兵队
 name_en: Knarloc Riders
 faction: 钛帝国

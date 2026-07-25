@@ -1,5 +1,5 @@
 ---
-id: 000003683
+id: '000003683'
 name_en: Sicaran Punisher
 faction: 千子
 type: unit

@@ -1,5 +1,5 @@
 ---
-id: 000003846
+id: '000003846'
 name_zh: 叛军执法者
 name_en: Traitor Enforcer
 faction: 混沌骑士

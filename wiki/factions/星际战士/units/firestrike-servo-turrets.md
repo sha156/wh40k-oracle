@@ -1,5 +1,5 @@
 ---
-id: 000000086
+id: '000000086'
 name_zh: 烈火炮台
 name_en: Firestrike Servo-turrets
 faction: 星际战士

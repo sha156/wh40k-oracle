@@ -1,5 +1,5 @@
 ---
-id: 000000914
+id: '000000914'
 name_en: Bastion
 faction: 无阵营工事
 type: unit

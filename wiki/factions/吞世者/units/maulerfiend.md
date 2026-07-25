@@ -1,5 +1,5 @@
 ---
-id: 000002639
+id: '000002639'
 name_zh: 重锤魔
 name_en: Maulerfiend
 faction: 吞世者

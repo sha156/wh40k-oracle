@@ -1,5 +1,5 @@
 ---
-id: 000003973
+id: '000003973'
 name_zh: 地狱之锤
 name_en: Hellhammer
 faction: 基因窃取者教派

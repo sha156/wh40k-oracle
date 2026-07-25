@@ -1,5 +1,5 @@
 ---
-id: 000000439
+id: '000000439'
 name_zh: 夏司’欧 R’ALAI
 name_en: Shas’o R’alai
 faction: 钛帝国

@@ -1,5 +1,5 @@
 ---
-id: 000002496
+id: '000002496'
 name_zh: 跳跳猪小子
 name_en: Squighog Boyz
 faction: 兽人

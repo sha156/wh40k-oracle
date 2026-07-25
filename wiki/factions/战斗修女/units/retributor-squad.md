@@ -1,5 +1,5 @@
 ---
-id: 000000908
+id: '000000908'
 name_zh: 仇天使小队
 name_en: Retributor Squad
 faction: 战斗修女

@@ -1,5 +1,5 @@
 ---
-id: 000003942
+id: '000003942'
 name_zh: 黎曼鲁斯指挥官
 name_en: Leman Russ Commander
 faction: 基因窃取者教派

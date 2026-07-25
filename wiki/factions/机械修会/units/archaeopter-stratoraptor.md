@@ -1,5 +1,5 @@
 ---
-id: 000002086
+id: '000002086'
 name_zh: 始祖鸟层云猛禽
 name_en: Archaeopter Stratoraptor
 faction: 机械修会

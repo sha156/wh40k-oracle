@@ -1,5 +1,5 @@
 ---
-id: 000003681
+id: '000003681'
 name_en: Typhon
 faction: 吞世者
 type: unit

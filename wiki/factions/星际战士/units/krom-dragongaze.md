@@ -1,5 +1,5 @@
 ---
-id: 000000286
+id: '000000286'
 name_en: Krom Dragongaze
 faction: 星际战士
 type: unit

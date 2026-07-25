@@ -1,5 +1,5 @@
 ---
-id: 000000418
+id: '000000418'
 name_zh: 危机战斗服小队
 name_en: Crisis Battlesuits
 faction: 钛帝国

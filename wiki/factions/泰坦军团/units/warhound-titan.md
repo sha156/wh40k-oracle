@@ -1,5 +1,5 @@
 ---
-id: 000000867
+id: '000000867'
 name_zh: 战犬泰坦
 name_en: Warhound Titan
 faction: 泰坦军团

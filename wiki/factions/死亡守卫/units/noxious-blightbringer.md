@@ -1,5 +1,5 @@
 ---
-id: 000001058
+id: '000001058'
 name_zh: 丧钟使者
 name_en: Noxious Blightbringer
 faction: 死亡守卫

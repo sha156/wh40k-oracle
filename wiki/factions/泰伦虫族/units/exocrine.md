@@ -1,5 +1,5 @@
 ---
-id: 000000495
+id: '000000495'
 name_zh: 离子炮兽
 name_en: Exocrine
 faction: 泰伦虫族

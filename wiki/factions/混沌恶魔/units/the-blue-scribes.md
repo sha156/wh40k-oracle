@@ -1,5 +1,5 @@
 ---
-id: 000001119
+id: '000001119'
 name_zh: 蓝书吏
 name_en: The Blue Scribes
 faction: 混沌恶魔

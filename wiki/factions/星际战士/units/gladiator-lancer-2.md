@@ -1,5 +1,5 @@
 ---
-id: 000002787
+id: '000002787'
 name_zh: 枪骑兵型角斗者坦克
 name_en: Gladiator Lancer
 faction: 星际战士

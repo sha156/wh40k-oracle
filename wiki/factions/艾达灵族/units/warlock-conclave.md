@@ -1,5 +1,5 @@
 ---
-id: 000000584
+id: '000000584'
 name_zh: 战巫议会
 name_en: Warlock Conclave
 faction: 艾达灵族

@@ -1,5 +1,5 @@
 ---
-id: 000001029
+id: '000001029'
 name_zh: 重锤魔
 name_en: Maulerfiend
 faction: 千子

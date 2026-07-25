@@ -1,5 +1,5 @@
 ---
-id: 000000907
+id: '000000907'
 name_zh: 忏悔修女小队
 name_en: Repentia Squad
 faction: 战斗修女

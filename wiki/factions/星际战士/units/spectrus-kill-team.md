@@ -1,5 +1,5 @@
 ---
-id: 000002779
+id: '000002779'
 name_zh: 无形杀戮小队
 name_en: Spectrus Kill Team
 faction: 星际战士

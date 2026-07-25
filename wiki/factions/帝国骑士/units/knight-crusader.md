@@ -1,5 +1,5 @@
 ---
-id: 000000859
+id: '000000859'
 name_zh: 远征骑士
 name_en: Knight Crusader
 faction: 帝国骑士

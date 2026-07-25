@@ -1,5 +1,5 @@
 ---
-id: 000002791
+id: '000002791'
 name_zh: 反击者突击艇
 name_en: Repulsor
 faction: 星际战士

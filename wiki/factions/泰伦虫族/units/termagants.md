@@ -1,5 +1,5 @@
 ---
-id: 000000468
+id: '000000468'
 name_zh: 枪虫
 name_en: Termagants
 faction: 泰伦虫族

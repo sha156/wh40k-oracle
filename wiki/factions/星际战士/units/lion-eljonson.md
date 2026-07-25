@@ -1,5 +1,5 @@
 ---
-id: 000002682
+id: '000002682'
 name_zh: 莱昂艾尔庄森，黑暗天使基因原体
 name_en: Lion El’jonson
 faction: 星际战士

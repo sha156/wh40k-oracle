@@ -1,5 +1,5 @@
 ---
-id: 000000898
+id: '000000898'
 name_zh: 圣塞莱斯汀
 name_en: Saint Celestine
 faction: 战斗修女

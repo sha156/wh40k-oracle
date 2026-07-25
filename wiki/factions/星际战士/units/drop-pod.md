@@ -1,5 +1,5 @@
 ---
-id: 000000087
+id: '000000087'
 name_zh: 空降仓
 name_en: Drop Pod
 faction: 星际战士

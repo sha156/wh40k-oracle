@@ -1,5 +1,5 @@
 ---
-id: 000003874
+id: '000003874'
 name_zh: 利爪突击杀戮小队
 name_en: Talonstrike Kill Team
 faction: 星际战士

@@ -1,5 +1,5 @@
 ---
-id: 000004083
+id: '000004083'
 name_zh: 不灭者卢修斯
 name_en: Lucius the Eternal
 faction: 帝皇之子

@@ -1,5 +1,5 @@
 ---
-id: 000003949
+id: '000003949'
 name_zh: 卡塔昌丛林战士
 name_en: Catachan Jungle Fighters
 faction: 基因窃取者教派

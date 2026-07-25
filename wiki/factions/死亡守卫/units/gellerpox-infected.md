@@ -1,5 +1,5 @@
 ---
-id: 000003593
+id: '000003593'
 name_en: Gellerpox Infected
 faction: 死亡守卫
 type: unit

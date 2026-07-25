@@ -1,5 +1,5 @@
 ---
-id: 000000019
+id: '000000019'
 name_zh: 烧烤小子
 name_en: Burna Boyz
 faction: 兽人
@@ -46,7 +46,7 @@ updated: '2026-07-23'
 
 ## 单位构成
 - **1 Spanner and 4 Burna [[factions/兽人/units/boyz.md|Boyz]]** — 60 分
-- **2 Spanners and 8 Burna Boyz** — 120 分
+- **2 Spanners and 8 Burna [[factions/兽人/units/boyz.md|Boyz]]** — 120 分
 - **5个模型** — 60 分
 - **10个模型** — 120 分
 

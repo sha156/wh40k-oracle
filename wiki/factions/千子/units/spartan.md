@@ -1,5 +1,5 @@
 ---
-id: 000003619
+id: '000003619'
 name_en: Spartan
 faction: 千子
 type: unit

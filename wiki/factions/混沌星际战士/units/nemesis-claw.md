@@ -1,5 +1,5 @@
 ---
-id: 000003876
+id: '000003876'
 name_zh: 复仇之爪
 name_en: Nemesis Claw
 faction: 混沌星际战士

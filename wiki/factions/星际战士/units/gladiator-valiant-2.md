@@ -1,5 +1,5 @@
 ---
-id: 000002788
+id: '000002788'
 name_zh: 豪侠型角斗者坦克
 name_en: Gladiator Valiant
 faction: 星际战士

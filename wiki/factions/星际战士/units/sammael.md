@@ -1,5 +1,5 @@
 ---
-id: 000002291
+id: '000002291'
 name_zh: 萨穆尔大导师
 name_en: Sammael
 faction: 星际战士

@@ -1,5 +1,5 @@
 ---
-id: 000002491
+id: '000002491'
 name_zh: 剧痛头目
 name_en: Painboss
 faction: 兽人

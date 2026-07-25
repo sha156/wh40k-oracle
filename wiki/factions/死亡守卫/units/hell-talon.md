@@ -1,5 +1,5 @@
 ---
-id: 000003595
+id: '000003595'
 name_en: Hell Talon
 faction: 死亡守卫
 type: unit

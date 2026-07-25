@@ -1,5 +1,5 @@
 ---
-id: 000003894
+id: '000003894'
 name_zh: 卡塔昌重型武器小队
 name_en: Catachan Heavy Weapons Squad
 faction: 星界军

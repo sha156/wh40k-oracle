@@ -1,5 +1,5 @@
 ---
-id: 000004048
+id: '000004048'
 name_en: Renegade Enforcer
 faction: 混沌恶魔
 type: unit
@@ -48,4 +48,4 @@ updated: '2026-07-23'
 
 ## 关键词
 - **阵营关键词**：Legiones Daemonica，Heretic Astartes
-- **普通关键词**：[[core-rules/character.md|Character]]，Renegade Enforcer，Shadow Legion，[[core-rules/infantry.md|Infantry]]，Chaos，Damned，[[core-rules/grenades.md|Grenades]]，[[core-rules/character.md|Character]]，Renegade Enforcer，Undivided，Shadow Legion，[[core-rules/infantry.md|Infantry]]，Chaos，Damned，[[core-rules/grenades.md|Grenades]]，[[core-rules/character.md|Character]]，Renegade Enforcer，Undivided，Undivided，Shadow Legion，Shadow Legion，Chaos，Undivided，Renegade Enforcer，[[core-rules/infantry.md|Infantry]]，[[core-rules/character.md|Character]]，[[core-rules/grenades.md|Grenades]]，[[core-rules/infantry.md|Infantry]]，Damned，[[core-rules/infantry.md|Infantry]]，[[core-rules/character.md|Character]]，Damned，[[core-rules/grenades.md|Grenades]]，[[core-rules/character.md|Character]]，Renegade Enforcer，Undivided，Shadow Legion，Chaos，Damned，[[core-rules/grenades.md|Grenades]]，Chaos，Renegade Enforcer，Undivided，Shadow Legion，[[core-rules/infantry.md|Infantry]]，Chaos，Damned，[[core-rules/grenades.md|Grenades]]
+- **普通关键词**：[[core-rules/character.md|Character]]，Renegade Enforcer，[[factions/混沌恶魔/detachments/shadow-legion.md|Shadow Legion]]，[[core-rules/infantry.md|Infantry]]，Chaos，Damned，[[core-rules/grenades.md|Grenades]]，[[core-rules/character.md|Character]]，Renegade Enforcer，Undivided，Shadow Legion，[[core-rules/infantry.md|Infantry]]，Chaos，Damned，[[core-rules/grenades.md|Grenades]]，[[core-rules/character.md|Character]]，Renegade Enforcer，Undivided，Undivided，Shadow Legion，Shadow Legion，Chaos，Undivided，Renegade Enforcer，[[core-rules/infantry.md|Infantry]]，[[core-rules/character.md|Character]]，[[core-rules/grenades.md|Grenades]]，[[core-rules/infantry.md|Infantry]]，Damned，[[core-rules/infantry.md|Infantry]]，[[core-rules/character.md|Character]]，Damned，[[core-rules/grenades.md|Grenades]]，[[core-rules/character.md|Character]]，Renegade Enforcer，Undivided，Shadow Legion，Chaos，Damned，[[core-rules/grenades.md|Grenades]]，Chaos，Renegade Enforcer，Undivided，Shadow Legion，[[core-rules/infantry.md|Infantry]]，Chaos，Damned，[[core-rules/grenades.md|Grenades]]

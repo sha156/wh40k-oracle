@@ -1,5 +1,5 @@
 ---
-id: 000000393
+id: '000000393'
 name_zh: 救赎者型兰德掠袭者坦克
 name_en: Land Raider Redeemer
 faction: 灰骑士

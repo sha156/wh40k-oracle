@@ -1,5 +1,5 @@
 ---
-id: 000003981
+id: '000003981'
 name_zh: 黎曼鲁斯根除者
 name_en: Leman Russ Eradicator
 faction: 基因窃取者教派

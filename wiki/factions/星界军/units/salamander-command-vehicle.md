@@ -1,5 +1,5 @@
 ---
-id: 000000729
+id: '000000729'
 name_en: Salamander Command Vehicle
 faction: 星界军
 type: unit

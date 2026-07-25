@@ -1,5 +1,5 @@
 ---
-id: 000002509
+id: '000002509'
 name_zh: 武装船兵
 name_en: Voidsmen-at-arms
 faction: 帝国特勤

@@ -1,5 +1,5 @@
 ---
-id: 000002296
+id: '000002296'
 name_zh: 拉撒路导师
 name_en: Lazarus
 faction: 星际战士

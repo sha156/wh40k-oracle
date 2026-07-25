@@ -1,5 +1,5 @@
 ---
-id: 000001997
+id: '000001997'
 name_zh: 死亡连小队
 name_en: Death Company Marines
 faction: 星际战士

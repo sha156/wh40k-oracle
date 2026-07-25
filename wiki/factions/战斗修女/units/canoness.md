@@ -1,5 +1,5 @@
 ---
-id: 000000899
+id: '000000899'
 name_zh: 大修女
 name_en: Canoness
 faction: 战斗修女

@@ -1,5 +1,5 @@
 ---
-id: 000001993
+id: '000001993'
 name_en: Da Red Gobbo
 faction: 兽人
 type: unit

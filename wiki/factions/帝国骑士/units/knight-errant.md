@@ -1,5 +1,5 @@
 ---
-id: 000000856
+id: '000000856'
 name_zh: 游侠骑士
 name_en: Knight Errant
 faction: 帝国骑士

@@ -1,5 +1,5 @@
 ---
-id: 000000408
+id: '000000408'
 name_zh: 安’史
 name_en: Aun’shi
 faction: 钛帝国

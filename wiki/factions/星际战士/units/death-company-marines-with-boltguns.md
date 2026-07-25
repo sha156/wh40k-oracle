@@ -1,5 +1,5 @@
 ---
-id: 000003836
+id: '000003836'
 name_en: Death Company Marines with Boltguns
 faction: 星际战士
 type: unit
@@ -44,7 +44,7 @@ updated: '2026-07-23'
 ## 技能
 - **黑怒**：Each time a model in this unit makes an attack, you can re-roll the Hit roll. While this unit is not within 12" of one or more friendly <span class="kwb">CHAPLAIN</span> models, it cannot be selected to Fall Back and the Objective Control characteristic of models in this unit is 0.
 - **An Honourable Death in Combat**：Each time a model in this unit makes an attack, that attack has the [SUSTAINED HITS 1] ability if this unit is below its Starting Strength, or the [SUSTAINED HITS 2] ability if this unit is Below Half-strength.
-- **DEATH COMPANY**：If a [[factions/星际战士/units/chaplain.md|Chaplain]] model from your army with the Leader ability can be attached to a [[factions/星际战士/units/tactical-squad.md|Tactical Squad]], it can be attached to this unit instead.<br><br>If a Character unit from your army with the Leader ability can be attached to a Death Company Marines unit, it can be attached to this unit instead.
+- **DEATH COMPANY**：If a [[factions/星际战士/units/chaplain.md|Chaplain]] model from your army with the Leader ability can be attached to a [[factions/星际战士/units/tactical-squad.md|Tactical Squad]], it can be attached to this unit instead.<br><br>If a Character unit from your army with the Leader ability can be attached to a [[factions/星际战士/units/death-company-marines.md|Death Company Marines]] unit, it can be attached to this unit instead.
 
 ## 单位构成
 - **5个模型** — 125 分

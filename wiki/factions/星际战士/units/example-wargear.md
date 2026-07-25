@@ -1,5 +1,5 @@
 ---
-id: 000003708
+id: '000003708'
 name_en: Example Wargear
 faction: 星际战士
 type: unit

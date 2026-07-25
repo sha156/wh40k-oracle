@@ -1,5 +1,5 @@
 ---
-id: 000003893
+id: '000003893'
 name_zh: 克里格战斗工兵
 name_en: Krieg Combat Engineers
 faction: 星界军

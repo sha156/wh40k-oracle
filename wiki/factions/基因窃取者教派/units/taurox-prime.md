@@ -1,5 +1,5 @@
 ---
-id: 000003953
+id: '000003953'
 name_zh: 金牛装甲车
 name_en: Taurox Prime
 faction: 基因窃取者教派

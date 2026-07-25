@@ -1,5 +1,5 @@
 ---
-id: 000003939
+id: '000003939'
 name_zh: 卡迪安指挥组
 name_en: Cadian Command Squad
 faction: 基因窃取者教派

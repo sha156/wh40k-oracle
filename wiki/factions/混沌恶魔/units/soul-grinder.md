@@ -55,4 +55,4 @@ updated: '2026-07-23'
 
 ## 关键词
 - **阵营关键词**：Legiones Daemonica
-- **普通关键词**：[[core-rules/walker.md|Walker]]，Chaos，Daemon，Soul Grinder，Vehicle，Shadow Legion
+- **普通关键词**：[[core-rules/walker.md|Walker]]，Chaos，Daemon，Soul Grinder，Vehicle，[[factions/混沌恶魔/detachments/shadow-legion.md|Shadow Legion]]

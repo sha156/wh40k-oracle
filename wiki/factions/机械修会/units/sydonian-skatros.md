@@ -1,5 +1,5 @@
 ---
-id: 000003695
+id: '000003695'
 name_zh: 西多尼亚哨兵
 name_en: Sydonian Skatros
 faction: 机械修会

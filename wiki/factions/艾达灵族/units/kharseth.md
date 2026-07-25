@@ -1,5 +1,5 @@
 ---
-id: 000004194
+id: '000004194'
 name_zh: 卡尔塞斯
 name_en: Kharseth
 faction: 艾达灵族

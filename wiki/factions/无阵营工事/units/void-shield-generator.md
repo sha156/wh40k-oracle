@@ -1,5 +1,5 @@
 ---
-id: 000000922
+id: '000000922'
 name_en: Void Shield Generator
 faction: 无阵营工事
 type: unit

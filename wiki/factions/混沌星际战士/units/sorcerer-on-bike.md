@@ -1,5 +1,5 @@
 ---
-id: 000000940
+id: '000000940'
 name_en: Sorcerer On Bike
 faction: 混沌星际战士
 type: unit
@@ -41,7 +41,7 @@ updated: '2026-07-23'
 | 动力拳 | 近战 | 3 | 3+ | 8 | -2 | 2 | — |
 
 ## 技能
-- **Prescience (Psychic)**：While this model is leading a unit, each time an attack targets that unit, subtract 1 from the Hit roll.
+- **[[factions/星际战士/enhancements/prescience.md|Prescience]] (Psychic)**：While this model is leading a unit, each time an attack targets that unit, subtract 1 from the Hit roll.
 - **Unholy Power**：Each time this model’s unit makes a Dark Pact, until the end of the phase, each time this model makes a Psychic Attack, add 1 to the Wound roll.
 
 ## 单位构成

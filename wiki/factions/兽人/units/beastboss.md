@@ -1,5 +1,5 @@
 ---
-id: 000002489
+id: '000002489'
 name_zh: 兽霸头目
 name_en: Beastboss
 faction: 兽人

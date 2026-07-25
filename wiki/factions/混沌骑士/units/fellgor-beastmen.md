@@ -1,5 +1,5 @@
 ---
-id: 000003852
+id: '000003852'
 name_zh: 恶角野兽人
 name_en: Fellgor Beastmen
 faction: 混沌骑士

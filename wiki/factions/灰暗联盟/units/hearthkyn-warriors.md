@@ -1,5 +1,5 @@
 ---
-id: 000002598
+id: '000002598'
 name_zh: 炉心战士
 name_en: Hearthkyn Warriors
 faction: 灰暗联盟

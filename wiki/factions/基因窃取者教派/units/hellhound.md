@@ -1,5 +1,5 @@
 ---
-id: 000003974
+id: '000003974'
 name_zh: 地狱犬喷射车
 name_en: Hellhound
 faction: 基因窃取者教派

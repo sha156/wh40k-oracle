@@ -1,5 +1,5 @@
 ---
-id: 000004191
+id: '000004191'
 name_zh: 红海盗劫掠者
 name_en: Red Corsairs Raiders
 faction: 混沌星际战士

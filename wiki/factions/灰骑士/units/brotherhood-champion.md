@@ -1,5 +1,5 @@
 ---
-id: 000000379
+id: '000000379'
 name_zh: 兄弟会勇士
 name_en: Brotherhood Champion
 faction: 灰骑士

@@ -1,5 +1,5 @@
 ---
-id: 000002087
+id: '000002087'
 name_zh: 始祖鸟燧火轰炸机
 name_en: Archaeopter Fusilave
 faction: 机械修会

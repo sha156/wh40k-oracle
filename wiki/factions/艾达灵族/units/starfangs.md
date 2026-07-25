@@ -1,5 +1,5 @@
 ---
-id: 000004195
+id: '000004195'
 name_zh: 星牙战机
 name_en: Starfangs
 faction: 艾达灵族

@@ -1,5 +1,5 @@
 ---
-id: 000002807
+id: '000002807'
 name_en: Castellum Stronghold
 faction: 无阵营工事
 type: unit

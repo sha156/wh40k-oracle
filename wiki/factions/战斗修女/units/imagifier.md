@@ -1,5 +1,5 @@
 ---
-id: 000000900
+id: '000000900'
 name_zh: 持像者
 name_en: Imagifier
 faction: 战斗修女

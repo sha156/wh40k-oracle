@@ -51,4 +51,4 @@ updated: '2026-07-23'
 
 ## 关键词
 - **阵营关键词**：Adeptus Astartes
-- **普通关键词**：[[core-rules/character.md|Character]]，[[core-rules/grenades.md|Grenades]]，Imperium，Gravis，Captain，[[core-rules/infantry.md|Infantry]]
+- **普通关键词**：[[core-rules/character.md|Character]]，[[core-rules/grenades.md|Grenades]]，Imperium，Gravis，[[factions/星际战士/units/captain.md|Captain]]，[[core-rules/infantry.md|Infantry]]

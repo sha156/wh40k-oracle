@@ -1,5 +1,5 @@
 ---
-id: 000002728
+id: '000002728'
 name_en: Whirlwind Scorpius
 faction: 星际战士
 type: unit
@@ -42,4 +42,4 @@ updated: '2026-07-23'
 
 ## 关键词
 - **阵营关键词**：Adeptus Astartes
-- **普通关键词**：Vehicle，[[core-rules/smoke.md|Smoke]]，Imperium，Whirlwind Scorpius
+- **普通关键词**：Vehicle，[[core-rules/smoke.md|Smoke]]，Imperium，[[factions/星际战士/units/whirlwind.md|Whirlwind]] Scorpius

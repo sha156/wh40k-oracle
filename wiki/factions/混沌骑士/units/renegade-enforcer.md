@@ -1,5 +1,5 @@
 ---
-id: 000003847
+id: '000003847'
 name_en: Renegade Enforcer
 faction: 混沌骑士
 type: unit

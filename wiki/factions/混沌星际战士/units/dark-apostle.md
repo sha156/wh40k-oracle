@@ -1,5 +1,5 @@
 ---
-id: 000000936
+id: '000000936'
 name_zh: 黑暗使徒
 name_en: Dark Apostle
 faction: 混沌星际战士

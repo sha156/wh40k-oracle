@@ -1,5 +1,5 @@
 ---
-id: 000002497
+id: '000002497'
 name_zh: 杀戮战车
 name_en: Kill Rig
 faction: 兽人

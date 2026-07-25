@@ -1,5 +1,5 @@
 ---
-id: 000002480
+id: '000002480'
 name_zh: 阿斯垂德·瑟加和阿加瑟·多兰
 name_en: Aestred Thurga And Agathae Dolan
 faction: 战斗修女

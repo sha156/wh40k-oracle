@@ -1,5 +1,5 @@
 ---
-id: 000000901
+id: '000000901'
 name_zh: 医疗修女
 name_en: Hospitaller
 faction: 战斗修女

@@ -1,5 +1,5 @@
 ---
-id: 000002590
+id: '000002590'
 name_zh: 叛变卫队
 name_en: Traitor Guardsmen Squad
 faction: 混沌星际战士

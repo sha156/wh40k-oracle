@@ -1,5 +1,5 @@
 ---
-id: 000004078
+id: '000004078'
 name_zh: 极乐领主
 name_en: Lord Exultant
 faction: 帝皇之子

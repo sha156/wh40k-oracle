@@ -1,5 +1,5 @@
 ---
-id: 000003897
+id: '000003897'
 name_zh: 野战炮兵
 name_en: Field Ordnance Battery
 faction: 星界军

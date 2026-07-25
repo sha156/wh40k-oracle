@@ -1,5 +1,5 @@
 ---
-id: 000003995
+id: '000003995'
 name_en: Armageddon-pattern Medusa
 faction: 基因窃取者教派
 type: unit

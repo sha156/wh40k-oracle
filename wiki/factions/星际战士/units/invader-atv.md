@@ -1,5 +1,5 @@
 ---
-id: 000001158
+id: '000001158'
 name_zh: ATV 突击车
 name_en: Invader ATV
 faction: 星际战士

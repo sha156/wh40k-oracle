@@ -1,5 +1,5 @@
 ---
-id: 000000609
+id: '000000609'
 name_zh: 猎鹰坦克
 name_en: Falcon
 faction: 艾达灵族

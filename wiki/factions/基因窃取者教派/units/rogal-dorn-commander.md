@@ -1,5 +1,5 @@
 ---
-id: 000003944
+id: '000003944'
 name_zh: 罗格多恩指挥官
 name_en: Rogal Dorn Commander
 faction: 基因窃取者教派

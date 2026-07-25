@@ -1,5 +1,5 @@
 ---
-id: 000004088
+id: '000004088'
 name_zh: 音爆战士
 name_en: Noise Marines
 faction: 帝皇之子

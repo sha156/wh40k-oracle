@@ -47,4 +47,4 @@ updated: '2026-07-23'
 
 ## 关键词
 - **阵营关键词**：Adeptus Astartes
-- **普通关键词**：Imperium，[[core-rules/infantry.md|Infantry]]，Centurion，Centurion Assault Squad
+- **普通关键词**：Imperium，[[core-rules/infantry.md|Infantry]]，Centurion，Centurion [[factions/星际战士/units/assault-squad.md|Assault Squad]]

@@ -1,5 +1,5 @@
 ---
-id: 000002684
+id: '000002684'
 name_zh: 冲覆者小队
 name_en: Subductor Squad
 faction: 帝国特勤

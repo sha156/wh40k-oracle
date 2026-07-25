@@ -28,7 +28,7 @@ updated: '2026-07-11'
 
 - 只对远程攻击生效，近战不受影响。
 - 可被攻方的[[core-rules/ignores-cover.md|忽视掩体]]武器抵消（24.18）。
-- [[core-rules/stealth.md|隐蔽]]、烟幕（SMOKESCREEN 计谋）等规则也会授予掩体效果。
+- [[core-rules/stealth.md|隐蔽]]、烟幕（[[core-rules/stratagems/smokescreen.md|SMOKESCREEN]] 计谋）等规则也会授予掩体效果。
 
 > 11 版变更（2026-06-20 起）：效果从十版"护甲保护骰 +1（特殊保护除外，且 AP0 攻击对 3+ 护甲无效）"整体改为"攻击 BS 恶化 1"——从保存侧挪到了命中侧，十版的 AP0/3+ 例外条款随之消失；获得条件也改为按 13.08 的两类情形判定。[11版 Core Rules 13.08]
 

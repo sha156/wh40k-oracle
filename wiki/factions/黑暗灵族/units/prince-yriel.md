@@ -1,5 +1,5 @@
 ---
-id: 000004198
+id: '000004198'
 name_zh: 伊瑞尔亲王
 name_en: Prince Yriel
 faction: 黑暗灵族

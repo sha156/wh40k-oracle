@@ -1,5 +1,5 @@
 ---
-id: 000003628
+id: '000003628'
 name_en: Cerberus
 faction: 死亡守卫
 type: unit

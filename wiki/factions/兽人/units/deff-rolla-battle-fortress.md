@@ -1,5 +1,5 @@
 ---
-id: 000001388
+id: '000001388'
 name_en: Deff Rolla Battle Fortress
 faction: 兽人
 type: unit

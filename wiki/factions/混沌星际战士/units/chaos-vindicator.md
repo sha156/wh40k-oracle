@@ -1,5 +1,5 @@
 ---
-id: 000000964
+id: '000000964'
 name_zh: 混沌维护者突击炮
 name_en: Chaos Vindicator
 faction: 混沌星际战士

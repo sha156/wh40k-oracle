@@ -1,5 +1,5 @@
 ---
-id: 000000961
+id: '000000961'
 name_zh: 地狱飞龙
 name_en: Heldrake
 faction: 混沌星际战士

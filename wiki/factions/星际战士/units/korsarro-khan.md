@@ -1,5 +1,5 @@
 ---
-id: 000002709
+id: '000002709'
 name_zh: 阔萨罗可汗
 name_en: Kor’sarro Khan
 faction: 星际战士

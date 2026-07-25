@@ -1,5 +1,5 @@
 ---
-id: 000004085
+id: '000004085'
 name_zh: 巫师
 name_en: Sorcerer
 faction: 帝皇之子

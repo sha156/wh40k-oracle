@@ -1,5 +1,5 @@
 ---
-id: 000004129
+id: '000004129'
 name_zh: 狼牧师
 name_en: Wolf Priest
 faction: 星际战士

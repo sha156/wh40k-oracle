@@ -18,6 +18,11 @@ def main() -> None:
     p.add_argument("--no-restore", action="store_true",
                    help="只重建骨架，不补回官方 MFM 分数/别名/中文层（危险：会留下降级库）")
 
+    mg = sub.add_parser(
+        "migrate",
+        help="旧库补齐后加的列（detachments 容器名/stratagems type+turn），幂等")
+    mg.add_argument("--db", default="db/wh40k.sqlite")
+
     x = sub.add_parser("crosscheck", help="BSData ↔ Wahapedia 英文属性交叉校验")
     x.add_argument("--bsdata", default="db_sources/bsdata")
     x.add_argument("--db", default="db/wh40k.sqlite")
@@ -111,6 +116,15 @@ def main() -> None:
         print("行数:", report.row_counts)
         if report.skipped:
             print("⚠️  缺 id 跳过行数:", report.skipped)
+        # 解析对账：裸换行/格式漂移会让解析行数与文件真实条目数对不上，必须吼出来
+        bad = report.unreconciled()
+        if bad:
+            print("\n⚠️  CSV 解析对账不平（解析行数 ≠ 文件真实条目数，疑格式漂移）：")
+            for name, a in sorted(bad.items()):
+                print(f"    {name}: 解析 {a['parsed_rows']} vs 真实 "
+                      f"{a['expected_rows']}（物理行 {a['physical_lines']}）")
+        else:
+            print(f"CSV 解析对账：{len(report.csv_audit)} 个文件差额全为 0 ✅")
         if report.missing_csv:
             print("待下载 CSV：", ", ".join(report.missing_csv))
         if args.no_restore:
@@ -122,6 +136,19 @@ def main() -> None:
             from db_compile.update import UpdateConfig, restore_authority_layers
             restore_authority_layers(UpdateConfig(
                 db=Path(args.db), csv_dir=Path(args.csv_dir), terms=Path(args.terms)))
+    elif args.cmd == "migrate":
+        import sqlite3
+
+        from db_compile.schema import ensure_columns
+
+        conn = sqlite3.connect(args.db)
+        try:
+            added = ensure_columns(conn)
+            conn.commit()
+        finally:
+            conn.close()
+        print(f"补列：{'、'.join(added) if added else '无（已是最新结构）'}")
+        print("  注意：补出来的列是空的，数据要靠 `db_compile build` 从 CSV 重灌")
     elif args.cmd == "crosscheck":
         import json
 
@@ -345,8 +372,11 @@ def main() -> None:
         if args.check:
             rep = check_enhancements(Path(args.db), load_rows(csv_path))
             flag = "✓" if rep["match"] else "✗"
-            print(f"\n强化对账 {flag}：CSV {rep['csv_rows']} vs 库 {rep['db_rows']} "
-                  f"（{'一致' if rep['match'] else '不一致'}）")
+            print(f"\n强化对账 {flag}：CSV {rep['csv_rows']} 行全部在库 "
+                  f"（缺 {rep['missing_count']}）；库共 {rep['db_rows']} 行，"
+                  f"其中 {rep['db_extra_rows']} 条为 fp_rules 补录层（Wahapedia 无源）")
+            if rep["missing_count"]:
+                print(f"  ⚠️ CSV 有库里没有：{'、'.join(rep['missing_sample'][:5])}")
             print(f"  分队：CSV {rep['csv_detachments']} / 库 {rep['db_detachments']}")
             if rep["no_cost_count"]:
                 print(f"  ⚠️ {rep['no_cost_count']} 条无点数（cost=NULL 诚实标注）："

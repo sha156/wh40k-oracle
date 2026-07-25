@@ -1,5 +1,5 @@
 ---
-id: 000000882
+id: '000000882'
 name_zh: 禁军盾卫
 name_en: Custodian Guard
 faction: 帝皇卫队

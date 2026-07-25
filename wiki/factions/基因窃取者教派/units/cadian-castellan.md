@@ -1,5 +1,5 @@
 ---
-id: 000003938
+id: '000003938'
 name_zh: 卡迪安堡主
 name_en: Cadian Castellan
 faction: 基因窃取者教派

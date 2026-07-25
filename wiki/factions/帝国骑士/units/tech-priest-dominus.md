@@ -1,5 +1,5 @@
 ---
-id: 000003839
+id: '000003839'
 name_zh: 机械主教
 name_en: Tech-priest Dominus
 faction: 帝国骑士

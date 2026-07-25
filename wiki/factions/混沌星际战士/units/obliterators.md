@@ -1,5 +1,5 @@
 ---
-id: 000000965
+id: '000000965'
 name_zh: 泯灭者
 name_en: Obliterators
 faction: 混沌星际战士

@@ -1,5 +1,5 @@
 ---
-id: 000003687
+id: '000003687'
 name_en: Falchion
 faction: 千子
 type: unit

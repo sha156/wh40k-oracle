@@ -1,5 +1,5 @@
 ---
-id: 000002780
+id: '000002780'
 name_zh: 至强杀戮小队
 name_en: Fortis Kill Team
 faction: 星际战士

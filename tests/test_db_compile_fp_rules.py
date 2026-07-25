@@ -192,15 +192,16 @@ class TestDeactivations:
         deactivations / inserts 早有 `len(...)` 断言，唯独 text_patches 没有——
         铺量期一次追加十几条，漏写或重复一条不会被任何测试发现。这里锁总数、
         锁「同一 (table, id, column) 只许一条」，并要求每条都带溯源与非空目标文本。
-        `from_text` 允许为空串——PR27 的上游空壳行归位（AdM 000010748005 等，
-        库内 text_zh 本就是空）正是靠空 from 做幂等守卫的。
+        `from_text` 仍允许空串（真出现「库里该列本就是空」的漂移时还得靠它），
+        但当前一条都不该有：PR27 那三条空 from 的 AdM 000010748005 归位补丁是在
+        给 CSV 裸换行解析 bug 擦屁股，根因修掉后它们已退役。
         """
         import json
         from pathlib import Path
         data = json.loads(Path("db_compile/fp_rules_patches.json").read_text(
             encoding="utf-8"))
         patches = data.get("text_patches", [])
-        assert len(patches) == 198          # +基因窃取者教派 PR25 并入（origin #58 merge 2026-07-22）
+        assert len(patches) == 195          # -3：PR27 空壳行归位补丁随解析器修复退役
         keys = [(p["table"], p["id"], p["column"]) for p in patches]
         assert len(set(keys)) == len(keys), "同一 (表, id, 列) 重复补丁"
         for p in patches:

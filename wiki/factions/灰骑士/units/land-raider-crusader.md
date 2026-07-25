@@ -1,5 +1,5 @@
 ---
-id: 000000392
+id: '000000392'
 name_zh: 十字军型兰德掠袭者坦克
 name_en: Land Raider Crusader
 faction: 灰骑士

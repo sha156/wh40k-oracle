@@ -1,5 +1,5 @@
 ---
-id: 000003882
+id: '000003882'
 name_zh: 孢子舱
 name_en: Tyrannocyte
 faction: 基因窃取者教派

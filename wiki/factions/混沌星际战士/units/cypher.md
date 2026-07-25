@@ -1,5 +1,5 @@
 ---
-id: 000000926
+id: '000000926'
 name_zh: 赛佛
 name_en: Cypher
 faction: 混沌星际战士

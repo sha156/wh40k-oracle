@@ -1,0 +1,27 @@
+---
+id: '000010787003'
+name_en: Titan Killer
+faction: 星界军
+type: enhancement
+detachment: Steel Hammer
+cost: 20
+tags:
+- enhancement
+- enhancement/星界军
+- 星界军
+sources:
+- book: 官方结构库 db/wh40k.sqlite（Wahapedia 11 版镜像）
+updated: '2026-07-25'
+---
+
+20 分、[[factions/星界军/detachments/steel-hammer.md|Steel Hammer]] 分队。
+
+## 效果
+
+Each time the bearer makes a ranged attack, you can re-roll the Damage roll.
+
+**分数**：20 分
+
+## 携带限制
+
+Astra Militarum Titanic Character model only.

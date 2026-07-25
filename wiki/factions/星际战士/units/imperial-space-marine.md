@@ -1,5 +1,5 @@
 ---
-id: 000000148
+id: '000000148'
 name_en: Imperial Space Marine
 faction: 星际战士
 type: unit

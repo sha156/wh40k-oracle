@@ -1,5 +1,5 @@
 ---
-id: 000000395
+id: '000000395'
 name_zh: 豪猪装甲车
 name_en: Razorback
 faction: 灰骑士

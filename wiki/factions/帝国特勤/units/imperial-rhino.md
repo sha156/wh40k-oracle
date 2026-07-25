@@ -1,5 +1,5 @@
 ---
-id: 000003830
+id: '000003830'
 name_zh: 帝国犀牛装甲车
 name_en: Imperial Rhino
 faction: 帝国特勤

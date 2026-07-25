@@ -1,5 +1,5 @@
 ---
-id: 000000458
+id: '000000458'
 name_zh: 遥感哨塔
 name_en: Remote Sensor Tower
 faction: 钛帝国

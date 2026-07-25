@@ -1,5 +1,5 @@
 ---
-id: 000003952
+id: '000003952'
 name_zh: 野牛装甲车
 name_en: Taurox
 faction: 基因窃取者教派

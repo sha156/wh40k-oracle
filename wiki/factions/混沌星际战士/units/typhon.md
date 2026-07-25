@@ -1,5 +1,5 @@
 ---
-id: 000003682
+id: '000003682'
 name_en: Typhon
 faction: 混沌星际战士
 type: unit

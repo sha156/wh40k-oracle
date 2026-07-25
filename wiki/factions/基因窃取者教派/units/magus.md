@@ -1,5 +1,5 @@
 ---
-id: 000000508
+id: '000000508'
 name_zh: 主教
 name_en: Magus
 faction: 基因窃取者教派

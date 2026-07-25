@@ -1,5 +1,5 @@
 ---
-id: 000000583
+id: '000000583'
 name_zh: 天行者先知
 name_en: Farseer Skyrunner
 faction: 艾达灵族
@@ -50,4 +50,4 @@ updated: '2026-07-23'
 
 ## 关键词
 - **阵营关键词**：Asuryani
-- **普通关键词**：[[core-rules/mounted.md|Mounted]]，[[core-rules/character.md|Character]]，[[factions/艾达灵族/units/farseer.md|Farseer]] Skyrunner，Aeldari，Fly，[[core-rules/psyker.md|Psyker]]，Farseer
+- **普通关键词**：[[core-rules/mounted.md|Mounted]]，[[core-rules/character.md|Character]]，[[factions/艾达灵族/units/farseer.md|Farseer]] Skyrunner，Aeldari，Fly，[[core-rules/psyker.md|Psyker]]，[[factions/艾达灵族/units/farseer.md|Farseer]]

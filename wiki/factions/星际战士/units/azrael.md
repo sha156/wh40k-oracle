@@ -1,5 +1,5 @@
 ---
-id: 000000218
+id: '000000218'
 name_zh: 阿兹瑞尔大导师
 name_en: Azrael
 faction: 星际战士

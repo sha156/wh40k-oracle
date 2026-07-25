@@ -1,5 +1,5 @@
 ---
-id: 000003972
+id: '000003972'
 name_zh: 野战炮兵
 name_en: Field Ordnance Battery
 faction: 基因窃取者教派

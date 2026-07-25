@@ -1,5 +1,5 @@
 ---
-id: 000003962
+id: '000003962'
 name_zh: 阿提拉蛮骑兵
 name_en: Attilan Rough Riders
 faction: 基因窃取者教派

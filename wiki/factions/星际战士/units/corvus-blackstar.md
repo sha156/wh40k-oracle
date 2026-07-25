@@ -1,5 +1,5 @@
 ---
-id: 000000358
+id: '000000358'
 name_zh: 黑星渡鸦
 name_en: Corvus Blackstar
 faction: 星际战士

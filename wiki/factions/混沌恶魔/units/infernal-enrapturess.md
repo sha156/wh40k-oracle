@@ -1,5 +1,5 @@
 ---
-id: 000001589
+id: '000001589'
 name_zh: 炼狱琴魔
 name_en: Infernal Enrapturess
 faction: 混沌恶魔
@@ -46,4 +46,4 @@ updated: '2026-07-23'
 
 ## 关键词
 - **阵营关键词**：Legiones Daemonica
-- **普通关键词**：Shadow Legion，[[core-rules/infantry.md|Infantry]]，[[core-rules/character.md|Character]]，Daemon，Slaanesh，Infernal Enrapturess，Chaos
+- **普通关键词**：[[factions/混沌恶魔/detachments/shadow-legion.md|Shadow Legion]]，[[core-rules/infantry.md|Infantry]]，[[core-rules/character.md|Character]]，Daemon，Slaanesh，Infernal Enrapturess，Chaos

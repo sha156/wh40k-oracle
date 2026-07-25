@@ -1,14 +1,26 @@
 # Lint Report
 
-_Generated: 2026-07-25 12:21 UTC_
+_Generated: 2026-07-25 13:27 UTC_
 
 | Severity | Count |
 |----------|-------|
-| warning | 447 |
+| warning | 553 |
 | info | 4 |
 
-**Total issues:** 451  |  **Auto-fixed:** 0
+**Total issues:** 557  |  **Auto-fixed:** 0
 
+- ⚠️ **[alias-conflicts]** 名称/别名冲突: 'fire overwatch' 被 fire-overwatch, 000008335009 同时使用
+- ⚠️ **[alias-conflicts]** 名称/别名冲突: 'rapid ingress' 被 rapid-ingress, 000008335008 同时使用
+- ⚠️ **[alias-conflicts]** 名称/别名冲突: 'burst of speed' 被 000010247002, 000010792004 同时使用
+- ⚠️ **[alias-conflicts]** 名称/别名冲突: 'command re-roll' 被 000009218002, 000008335002 同时使用
+- ⚠️ **[alias-conflicts]** 名称/别名冲突: 'counter-offensive' 被 000009218004, 000008335003 同时使用
+- ⚠️ **[alias-conflicts]** 名称/别名冲突: 'insane bravery' 被 000009218005, 000008335005 同时使用
+- ⚠️ **[alias-conflicts]** 名称/别名冲突: 'new orders' 被 000009063002, 000010245002, 000008539002 同时使用
+- ⚠️ **[alias-conflicts]** 名称/别名冲突: '传送器（kaptin）' 被 000008885005, 000009623002 同时使用
+- ⚠️ **[alias-conflicts]** 名称/别名冲突: 'tellyporta' 被 000008885005, 000009623002 同时使用
+- ⚠️ **[alias-conflicts]** 名称/别名冲突: '挤过去' 被 000009624003, 000009616002 同时使用
+- ⚠️ **[alias-conflicts]** 名称/别名冲突: 'pile through' 被 000009624003, 000009616002 同时使用
+- ⚠️ **[alias-conflicts]** 名称/别名冲突: 'wrath of the doomed' 被 000009742003, container-wrath-of-the-doomed 同时使用
 - ⚠️ **[alias-conflicts]** 名称/别名冲突: '蓝惧妖' 被 000004128, 000002583 同时使用
 - ⚠️ **[alias-conflicts]** 名称/别名冲突: 'blue horrors' 被 000004128, 000002583 同时使用
 - ⚠️ **[alias-conflicts]** 名称/别名冲突: 'cerberus' 被 000003627, 000003629, 000001153, 000003628, 000003630 同时使用
@@ -96,6 +108,13 @@ _Generated: 2026-07-25 12:21 UTC_
 - ⚠️ **[alias-conflicts]** 名称/别名冲突: 'master of executions' 被 000002626, 000001584 同时使用
 - ⚠️ **[alias-conflicts]** 名称/别名冲突: '斯卡布兰德' 被 000004104, 000001105 同时使用
 - ⚠️ **[alias-conflicts]** 名称/别名冲突: 'skarbrand' 被 000004104, 000001105 同时使用
+- ⚠️ **[alias-conflicts]** 名称/别名冲突: 'infestation swarm' 被 000009475, 000009723 同时使用
+- ⚠️ **[alias-conflicts]** 名称/别名冲突: 'psi-spoor sensitivity' 被 000009476003, 000009724003 同时使用
+- ⚠️ **[alias-conflicts]** 名称/别名冲突: 'stalking menace' 被 000009476002, 000009724002 同时使用
+- ⚠️ **[alias-conflicts]** 名称/别名冲突: 'hunting grounds' 被 000009477004, 000008417002, 000009725004 同时使用
+- ⚠️ **[alias-conflicts]** 名称/别名冲突: 'hyperadrenal reflexes' 被 000009477002, 000009725002 同时使用
+- ⚠️ **[alias-conflicts]** 名称/别名冲突: 'outflank' 被 000009477005, 000009725005 同时使用
+- ⚠️ **[alias-conflicts]** 名称/别名冲突: 'pervasive dread' 被 000009477003, 000009725003 同时使用
 - ⚠️ **[alias-conflicts]** 名称/别名冲突: '神盾防御墙' 被 000003955, 000002619 同时使用
 - ⚠️ **[alias-conflicts]** 名称/别名冲突: 'aegis defence line' 被 000003955, 000002619 同时使用
 - ⚠️ **[alias-conflicts]** 名称/别名冲突: 'arkurian stormhammer' 被 000003994, 000000764 同时使用
@@ -275,6 +294,17 @@ _Generated: 2026-07-25 12:21 UTC_
 - ⚠️ **[alias-conflicts]** 名称/别名冲突: 'winged tyranid prime' 被 000003880, 000002694 同时使用
 - ⚠️ **[alias-conflicts]** 名称/别名冲突: '双足飞龙自行火炮' 被 000003992, 000000697 同时使用
 - ⚠️ **[alias-conflicts]** 名称/别名冲突: 'wyvern' 被 000003992, 000000697 同时使用
+- ⚠️ **[alias-conflicts]** 名称/别名冲突: '死亡面具' 被 000008405002, 000009190003 同时使用
+- ⚠️ **[alias-conflicts]** 名称/别名冲突: '无情猎手' 被 000008405005, 000008973004 同时使用
+- ⚠️ **[alias-conflicts]** 名称/别名冲突: 'pitiless hunters' 被 000008405005, 000008973004 同时使用
+- ⚠️ **[alias-conflicts]** 名称/别名冲突: 'beacon angelis' 被 000009126003, 000008522004 同时使用
+- ⚠️ **[alias-conflicts]** 名称/别名冲突: 'adaptive tactics' 被 000009127003, 000008523003 同时使用
+- ⚠️ **[alias-conflicts]** 名称/别名冲突: '蔑视甲胄' 被 000009127002, 000008495002, 000009836002, 000008475002, 000010780003, 000008523002, 000010634002, 000010760004, 000009852003, 000008779003, 000010461002, 000008483002, 000010369002, 000008352002, 000010624002, 000010784002, 000008775002, 000008479003, 000008375003, 000009791003, 000009734003, 000010646003, 000010467002, 000010630002, 000008487002, 000009191003, 000009187003, 000008389002, 000008491003, 000010161004 同时使用
+- ⚠️ **[alias-conflicts]** 名称/别名冲突: 'armour of contempt' 被 000009127002, 000008495002, 000009836002, 000008475002, 000010780003, 000008523002, 000010634002, 000010760004, 000009852003, 000008779003, 000010461002, 000008483002, 000010369002, 000008352002, 000010624002, 000010784002, 000008775002, 000008479003, 000008375003, 000009791003, 000009734003, 000010646003, 000010467002, 000010630002, 000008487002, 000009191003, 000009187003, 000008389002, 000008491003, 000010161004, 000009844003 同时使用
+- ⚠️ **[alias-conflicts]** 名称/别名冲突: 'dragonfire rounds' 被 000009127005, 000008523006 同时使用
+- ⚠️ **[alias-conflicts]** 名称/别名冲突: 'hellfire rounds' 被 000009127004, 000008523004 同时使用
+- ⚠️ **[alias-conflicts]** 名称/别名冲突: 'kraken rounds' 被 000009127006, 000008523005 同时使用
+- ⚠️ **[alias-conflicts]** 名称/别名冲突: 'psybolt ammunition' 被 000009135007, 000009494005 同时使用
 - ⚠️ **[alias-conflicts]** 名称/别名冲突: '黑星渡鸦' 被 000003817, 000000358 同时使用
 - ⚠️ **[alias-conflicts]** 名称/别名冲突: 'corvus blackstar' 被 000003817, 000000358 同时使用
 - ⚠️ **[alias-conflicts]** 名称/别名冲突: '死亡守望终结者小队' 被 000003822, 000003873 同时使用
@@ -295,6 +325,9 @@ _Generated: 2026-07-25 12:21 UTC_
 - ⚠️ **[alias-conflicts]** 名称/别名冲突: 'watch captain artemis' 被 000003814, 000003872 同时使用
 - ⚠️ **[alias-conflicts]** 名称/别名冲突: '守望堡主' 被 000003815, 000003871 同时使用
 - ⚠️ **[alias-conflicts]** 名称/别名冲突: 'watch master' 被 000003815, 000003871 同时使用
+- ⚠️ **[alias-conflicts]** 名称/别名冲突: 'hunter’s eye' 被 000010755003, 000010629004 同时使用
+- ⚠️ **[alias-conflicts]** 名称/别名冲突: 'full tilt' 被 000010756004, 000010494004 同时使用
+- ⚠️ **[alias-conflicts]** 名称/别名冲突: 'titanic duel' 被 000010503003, 000010309005 同时使用
 - ⚠️ **[alias-conflicts]** 名称/别名冲突: '护教军元帅' 被 000003841, 000002478 同时使用
 - ⚠️ **[alias-conflicts]** 名称/别名冲突: 'skitarii marshal' 被 000003841, 000002478 同时使用
 - ⚠️ **[alias-conflicts]** 名称/别名冲突: '护教军游猎兵' 被 000003842, 000000848 同时使用
@@ -305,6 +338,11 @@ _Generated: 2026-07-25 12:21 UTC_
 - ⚠️ **[alias-conflicts]** 名称/别名冲突: 'tech-priest dominus' 被 000003839, 000000839 同时使用
 - ⚠️ **[alias-conflicts]** 名称/别名冲突: '控电神甫' 被 000003840, 000001580 同时使用
 - ⚠️ **[alias-conflicts]** 名称/别名冲突: 'tech-priest manipulus' 被 000003840, 000001580 同时使用
+- ⚠️ **[alias-conflicts]** 名称/别名冲突: 'carnival of excess' 被 000010009, fp11e-chaosdaemons-lordswarp-s1 同时使用
+- ⚠️ **[alias-conflicts]** 名称/别名冲突: 'slayer of champions' 被 000010018005, 000008931002 同时使用
+- ⚠️ **[alias-conflicts]** 名称/别名冲突: '轻蔑无视' 被 000010655002, 000008961003 同时使用
+- ⚠️ **[alias-conflicts]** 名称/别名冲突: 'contemptuous disregard' 被 000010655002, 000008961003 同时使用
+- ⚠️ **[alias-conflicts]** 名称/别名冲突: '黑暗活力' 被 000009999005, 000010574002 同时使用
 - ⚠️ **[alias-conflicts]** 名称/别名冲突: '魅魔' 被 000004095, 000001142 同时使用
 - ⚠️ **[alias-conflicts]** 名称/别名冲突: 'daemonettes' 被 000004095, 000001142 同时使用
 - ⚠️ **[alias-conflicts]** 名称/别名冲突: '欢愉魔' 被 000004096, 000001143 同时使用
@@ -317,8 +355,39 @@ _Generated: 2026-07-25 12:21 UTC_
 - ⚠️ **[alias-conflicts]** 名称/别名冲突: 'seekers' 被 000004098, 000001145 同时使用
 - ⚠️ **[alias-conflicts]** 名称/别名冲突: '夏拉希·魔灾' 被 000004094, 000001648 同时使用
 - ⚠️ **[alias-conflicts]** 名称/别名冲突: 'shalaxi helbane' 被 000004094, 000001648 同时使用
+- ⚠️ **[alias-conflicts]** 名称/别名冲突: '无瑕造物' 被 fp11e-ac-moritoi-s1, 000009754002 同时使用
+- ⚠️ **[alias-conflicts]** 名称/别名冲突: 'flawless construction' 被 fp11e-ac-moritoi-s1, 000009754002 同时使用
+- ⚠️ **[alias-conflicts]** 名称/别名冲突: '释放雄狮' 被 000009988005, fp11e-ac-tharanatoi-s2 同时使用
+- ⚠️ **[alias-conflicts]** 名称/别名冲突: 'unleash the lions' 被 000009988005, fp11e-ac-tharanatoi-s2 同时使用
+- ⚠️ **[alias-conflicts]** 名称/别名冲突: '势不可挡' 被 000009754005, 000009844006 同时使用
+- ⚠️ **[alias-conflicts]** 名称/别名冲突: '永恒警戒' 被 000008931006, 000008394006 同时使用
+- ⚠️ **[alias-conflicts]** 名称/别名冲突: '猎巫者' 被 000008927003, 000002523 同时使用
+- ⚠️ **[alias-conflicts]** 名称/别名冲突: 'immolator' 被 000000911, 000010368002 同时使用
+- ⚠️ **[alias-conflicts]** 名称/别名冲突: 'grand strategist' 被 000010791005, 000008380004 同时使用
+- ⚠️ **[alias-conflicts]** 名称/别名冲突: 'coordinated strike' 被 000009390003, 000010270007 同时使用
 - ⚠️ **[alias-conflicts]** 名称/别名冲突: '技术技师机械教士' 被 000001396, 000000840 同时使用
 - ⚠️ **[alias-conflicts]** 名称/别名冲突: 'tech-priest enginseer' 被 000001396, 000000840 同时使用
+- ⚠️ **[alias-conflicts]** 名称/别名冲突: 'adamantine mantle' 被 000009240002, 000008482005, 000010368005 同时使用
+- ⚠️ **[alias-conflicts]** 名称/别名冲突: 'celerity' 被 000009785003, 000010357005 同时使用
+- ⚠️ **[alias-conflicts]** 名称/别名冲突: 'deathwing assault' 被 000008774005, 000010155004 同时使用
+- ⚠️ **[alias-conflicts]** 名称/别名冲突: 'fire discipline' 被 000008353005, 000008389005 同时使用
+- ⚠️ **[alias-conflicts]** 名称/别名冲突: 'forged in battle' 被 000008482004, 000010368004 同时使用
+- ⚠️ **[alias-conflicts]** 名称/别名冲突: '预言之赐' 被 000008376005, 000009899004 同时使用
+- ⚠️ **[alias-conflicts]** 名称/别名冲突: 'gift of foresight' 被 000008376005, 000009899004 同时使用
+- ⚠️ **[alias-conflicts]** 名称/别名冲突: 'hunter’s instincts' 被 000010466005, 000008486005, 000010630005 同时使用
+- ⚠️ **[alias-conflicts]** 名称/别名冲突: 'war-tempered artifice' 被 000008482003, 000010368003 同时使用
+- ⚠️ **[alias-conflicts]** 名称/别名冲突: 'bounding advance' 被 000010262006, 000008409006 同时使用
+- ⚠️ **[alias-conflicts]** 名称/别名冲突: 'burning vengeance' 被 000008483007, 000010369006 同时使用
+- ⚠️ **[alias-conflicts]** 名称/别名冲突: 'chilling howl' 被 000009852005, fp11e-sw-legends-s2 同时使用
+- ⚠️ **[alias-conflicts]** 名称/别名冲突: 'crucible of battle' 被 000008483003, 000010369003 同时使用
+- ⚠️ **[alias-conflicts]** 名称/别名冲突: 'dropship extraction' 被 000010461007, 000010624007 同时使用
+- ⚠️ **[alias-conflicts]** 名称/别名冲突: 'hunters’ trail' 被 000008779002, 000010262002 同时使用
+- ⚠️ **[alias-conflicts]** 名称/别名冲突: 'immolation protocols' 被 000008483005, 000010369005 同时使用
+- ⚠️ **[alias-conflicts]** 名称/别名冲突: 'rapid embarkation' 被 000010780004, 000008483004 同时使用
+- ⚠️ **[alias-conflicts]** 名称/别名冲突: 'runes of claiming' 被 fp11e-sw-fenris-s2, 000009852004 同时使用
+- ⚠️ **[alias-conflicts]** 名称/别名冲突: '暗影狙杀' 被 fp11e-spacemarines-subversion-s2, 000008491005 同时使用
+- ⚠️ **[alias-conflicts]** 名称/别名冲突: 'strike from the shadows' 被 fp11e-spacemarines-subversion-s2, 000008491005 同时使用
+- ⚠️ **[alias-conflicts]** 名称/别名冲突: '药剂师' 被 000002773, 000010580002 同时使用
 - ⚠️ **[alias-conflicts]** 名称/别名冲突: '枪骑兵型角斗者坦克' 被 000002787, 000002705 同时使用
 - ⚠️ **[alias-conflicts]** 名称/别名冲突: 'gladiator lancer' 被 000002787, 000002705 同时使用
 - ⚠️ **[alias-conflicts]** 名称/别名冲突: '死神型角斗者坦克' 被 000002789, 000001667 同时使用
@@ -340,6 +409,7 @@ _Generated: 2026-07-25 12:21 UTC_
 - ⚠️ **[alias-conflicts]** 名称/别名冲突: '处决者型反击者坦克' 被 000002790, 000002722 同时使用
 - ⚠️ **[alias-conflicts]** 名称/别名冲突: 'repulsor executioner' 被 000002790, 000002722 同时使用
 - ⚠️ **[alias-conflicts]** 名称/别名冲突: 'rhino' 被 000002723, 000000396 同时使用
+- ⚠️ **[alias-conflicts]** 名称/别名冲突: 'stalker' 被 000002258, 000008417004 同时使用
 - ⚠️ **[alias-conflicts]** 名称/别名冲突: '肃卫老兵小队' 被 000004137, 000002255 同时使用
 - ⚠️ **[alias-conflicts]** 名称/别名冲突: 'sternguard veteran squad' 被 000004137, 000002255 同时使用
 - ⚠️ **[alias-conflicts]** 名称/别名冲突: '风暴隼拦截机' 被 000000084, 000001363 同时使用
@@ -353,6 +423,9 @@ _Generated: 2026-07-25 12:21 UTC_
 - ⚠️ **[alias-conflicts]** 名称/别名冲突: '荣耀无畏机甲' 被 000002801, 000000400 同时使用
 - ⚠️ **[alias-conflicts]** 名称/别名冲突: 'venerable dreadnought' 被 000002801, 000000400 同时使用
 - ⚠️ **[alias-conflicts]** 名称/别名冲突: 'servitors' 被 000000847, 000000397 同时使用
+- ⚠️ **[alias-conflicts]** 名称/别名冲突: '活化蝇群' 被 000009729004, fp11e-dg-paragons-e1 同时使用
+- ⚠️ **[alias-conflicts]** 名称/别名冲突: 'rejuvenating swarm' 被 000009729004, fp11e-dg-paragons-e1 同时使用
+- ⚠️ **[alias-conflicts]** 名称/别名冲突: '瘟疫爆发' 被 000010144002, 000010124004 同时使用
 - ⚠️ **[alias-conflicts]** 名称/别名冲突: '纳垢兽' 被 000004115, 000001134 同时使用
 - ⚠️ **[alias-conflicts]** 名称/别名冲突: 'beasts of nurgle' 被 000004115, 000001134 同时使用
 - ⚠️ **[alias-conflicts]** 名称/别名冲突: 'chaos lord on palanquin of nurgle' 被 000003592, 000004041, 000000934 同时使用
@@ -372,6 +445,9 @@ _Generated: 2026-07-25 12:21 UTC_
 - ⚠️ **[alias-conflicts]** 名称/别名冲突: '烂格斯' 被 000004111, 000001465 同时使用
 - ⚠️ **[alias-conflicts]** 名称/别名冲突: 'rotigus' 被 000004111, 000001465 同时使用
 - ⚠️ **[alias-conflicts]** 名称/别名冲突: 'sorcerer on palanquin of nurgle' 被 000003600, 000004070, 000000942 同时使用
+- ⚠️ **[alias-conflicts]** 名称/别名冲突: 'swollen with power' 被 fp11e-chaosdaemons-lordswarp-e1, 000009503003 同时使用
+- ⚠️ **[alias-conflicts]** 名称/别名冲突: 'insubstantial entities' 被 000009548004, 000009573005, 000009556004, 000009581005, 000009565005 同时使用
+- ⚠️ **[alias-conflicts]** 名称/别名冲突: 'spiteful demise' 被 000009979002, 000010309003, 000009425003 同时使用
 - ⚠️ **[alias-conflicts]** 名称/别名冲突: '诅咒教徒' 被 000004052, 000002571, 000003851 同时使用
 - ⚠️ **[alias-conflicts]** 名称/别名冲突: 'accursed cultists' 被 000004052, 000002571, 000003851 同时使用
 - ⚠️ **[alias-conflicts]** 名称/别名冲突: '终结者领主' 被 000004037, 000000930 同时使用
@@ -425,6 +501,30 @@ _Generated: 2026-07-25 12:21 UTC_
 - ⚠️ **[alias-conflicts]** 名称/别名冲突: 'traitor guardsmen squad' 被 000004054, 000002590, 000003853 同时使用
 - ⚠️ **[alias-conflicts]** 名称/别名冲突: '次元爪' 被 000004073, 000000959 同时使用
 - ⚠️ **[alias-conflicts]** 名称/别名冲突: 'warp talons' 被 000004073, 000000959 同时使用
+- ⚠️ **[alias-conflicts]** 名称/别名冲突: 'warp-fuelled thrusters' 被 000008972004, 000010641003 同时使用
+- ⚠️ **[alias-conflicts]** 名称/别名冲突: 'imperious advance' 被 000009521002, 000008517006 同时使用
+- ⚠️ **[alias-conflicts]** 名称/别名冲突: 'relentless terror' 被 000008973005, 000010642006 同时使用
+- ⚠️ **[alias-conflicts]** 名称/别名冲突: 'undying hatred' 被 fp11e-csm-devotees-s3, 000010695004 同时使用
+- ⚠️ **[alias-conflicts]** 名称/别名冲突: 'high kâhl' 被 000009823005, fp11e-votann-hearthguard-e1 同时使用
+- ⚠️ **[alias-conflicts]** 名称/别名冲突: 'ironskein' 被 000009823004, fp11e-votann-hearthguard-e2 同时使用
+- ⚠️ **[alias-conflicts]** 名称/别名冲突: '护盾结界' 被 000009824002, fp11e-votann-hearthguard-s1 同时使用
+- ⚠️ **[alias-conflicts]** 名称/别名冲突: 'brëkkeknots' 被 000009824002, fp11e-votann-hearthguard-s1 同时使用
+- ⚠️ **[alias-conflicts]** 名称/别名冲突: '炉火之怒' 被 000009824007, fp11e-votann-hearthguard-s2 同时使用
+- ⚠️ **[alias-conflicts]** 名称/别名冲突: 'fury of the hearth' 被 000009824007, fp11e-votann-hearthguard-s2 同时使用
+- ⚠️ **[alias-conflicts]** 名称/别名冲突: '物质化矩阵' 被 000009824006, fp11e-votann-hearthguard-s3 同时使用
+- ⚠️ **[alias-conflicts]** 名称/别名冲突: 'materialisation matrices' 被 000009824006, fp11e-votann-hearthguard-s3 同时使用
+- ⚠️ **[alias-conflicts]** 名称/别名冲突: 'a foot in the future' 被 000010364004, fp11e-aeldari-fateful-e1 同时使用
+- ⚠️ **[alias-conflicts]** 名称/别名冲突: 'armoured aegis' 被 000009494002, 000010361004 同时使用
+- ⚠️ **[alias-conflicts]** 名称/别名冲突: '首袭者' 被 000010704004, 000009781002 同时使用
+- ⚠️ **[alias-conflicts]** 名称/别名冲突: 'archraider' 被 000010704004, 000009781002 同时使用
+- ⚠️ **[alias-conflicts]** 名称/别名冲突: 'mistweave' 被 fp11e-aeldari-fateful-e2, 000009915005 同时使用
+- ⚠️ **[alias-conflicts]** 名称/别名冲突: '退场' 被 fp11e-aeldari-fateful-s2, 000009916007 同时使用
+- ⚠️ **[alias-conflicts]** 名称/别名冲突: 'exit the stage' 被 fp11e-aeldari-fateful-s2, 000009916007 同时使用
+- ⚠️ **[alias-conflicts]** 名称/别名冲突: '英雄的谢幕' 被 fp11e-aeldari-fateful-s1, 000009916003 同时使用
+- ⚠️ **[alias-conflicts]** 名称/别名冲突: 'heroes’ fall' 被 fp11e-aeldari-fateful-s1, 000009916003 同时使用
+- ⚠️ **[alias-conflicts]** 名称/别名冲突: 'skyborne sanctuary' 被 000009928004, 000009900003 同时使用
+- ⚠️ **[alias-conflicts]** 名称/别名冲突: 'soulsight' 被 000009770006, 000009920006 同时使用
+- ⚠️ **[alias-conflicts]** 名称/别名冲突: 'void ghosts' 被 000009326002, 000009335002, 000009352002 同时使用
 - ⚠️ **[alias-conflicts]** 名称/别名冲突: 'corsair cloud dancer band' 被 000000629, 000004170 同时使用
 - ⚠️ **[alias-conflicts]** 名称/别名冲突: 'corsair reaver band' 被 000000632, 000004171 同时使用
 - ⚠️ **[alias-conflicts]** 名称/别名冲突: 'corsair skyreaver band' 被 000000633, 000004172 同时使用
@@ -456,6 +556,12 @@ _Generated: 2026-07-25 12:21 UTC_
 - ⚠️ **[alias-conflicts]** 名称/别名冲突: 'troupe' 被 000002536, 000004164 同时使用
 - ⚠️ **[alias-conflicts]** 名称/别名冲突: '虚空编织者飞艇' 被 000002540, 000004165 同时使用
 - ⚠️ **[alias-conflicts]** 名称/别名冲突: 'voidweaver' 被 000002540, 000004165 同时使用
+- ⚠️ **[alias-conflicts]** 名称/别名冲突: '折磨护符' 被 fp11e-dru-exhibition-e1, 000010580004 同时使用
+- ⚠️ **[alias-conflicts]** 名称/别名冲突: 'periapt of torments' 被 fp11e-dru-exhibition-e1, 000010580004 同时使用
+- ⚠️ **[alias-conflicts]** 名称/别名冲突: '高耸傲慢' 被 fp11e-dru-agonysts-e1, 000010588005 同时使用
+- ⚠️ **[alias-conflicts]** 名称/别名冲突: 'towering arrogance' 被 fp11e-dru-agonysts-e1, 000010588005 同时使用
+- ⚠️ **[alias-conflicts]** 名称/别名冲突: '杂技表演' 被 fp11e-dru-exhibition-s3, 000010581007 同时使用
+- ⚠️ **[alias-conflicts]** 名称/别名冲突: 'acrobatic display' 被 fp11e-dru-exhibition-s3, 000010581007 同时使用
 - ℹ️ **[missing-points]** `factions/帝国骑士/units/sir-hekhtur.md` — 单位页缺少 points 字段
 - ℹ️ **[missing-points]** `factions/无阵营工事/units/castellum-stronghold.md` — 单位页缺少 points 字段
 - ℹ️ **[missing-points]** `factions/无阵营工事/units/imperial-fortress-walls.md` — 单位页缺少 points 字段

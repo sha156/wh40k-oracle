@@ -1,5 +1,5 @@
 ---
-id: 000003881
+id: '000003881'
 name_zh: 石像鬼
 name_en: Gargoyles
 faction: 基因窃取者教派

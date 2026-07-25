@@ -1,5 +1,5 @@
 ---
-id: 000003584
+id: '000003584'
 name_zh: 瘟疫战士
 name_en: Plague Marines
 faction: 混沌星际战士

@@ -1,5 +1,5 @@
 ---
-id: 000003816
+id: '000003816'
 name_zh: 死亡守望杀戮小队
 name_en: Deathwatch Kill Team
 faction: 帝国特勤

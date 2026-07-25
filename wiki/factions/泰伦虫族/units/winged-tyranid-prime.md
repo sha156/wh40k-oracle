@@ -1,5 +1,5 @@
 ---
-id: 000002694
+id: '000002694'
 name_zh: 有翼泰伦王虫
 name_en: Winged Tyranid Prime
 faction: 泰伦虫族

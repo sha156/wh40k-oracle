@@ -1,5 +1,5 @@
 ---
-id: 000004148
+id: '000004148'
 name_zh: 艾索-沙恩
 name_en: Aethon Shaan
 faction: 星际战士

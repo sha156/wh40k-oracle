@@ -1,5 +1,5 @@
 ---
-id: 000004092
+id: '000004092'
 name_zh: 地狱飞龙
 name_en: Heldrake
 faction: 帝皇之子

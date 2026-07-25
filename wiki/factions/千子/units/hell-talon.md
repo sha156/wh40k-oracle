@@ -1,5 +1,5 @@
 ---
-id: 000003599
+id: '000003599'
 name_en: Hell Talon
 faction: 千子
 type: unit

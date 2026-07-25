@@ -1,5 +1,5 @@
 ---
-id: 000001169
+id: '000001169'
 name_en: Land Speeder Tornado
 faction: 星际战士
 type: unit
@@ -42,4 +42,4 @@ updated: '2026-07-23'
 
 ## 关键词
 - **阵营关键词**：Adeptus Astartes
-- **普通关键词**：Fly，Imperium，Ravenwing，Land Speeder Tornado，Vehicle
+- **普通关键词**：Fly，Imperium，Ravenwing，[[factions/星际战士/units/land-speeder.md|Land Speeder]] Tornado，Vehicle

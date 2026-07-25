@@ -1,5 +1,5 @@
 ---
-id: 000003880
+id: '000003880'
 name_zh: 有翼泰伦王虫
 name_en: Winged Tyranid Prime
 faction: 基因窃取者教派

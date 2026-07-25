@@ -1,5 +1,5 @@
 ---
-id: 000003694
+id: '000003694'
 name_zh: 装备辐射狙击枪的西多尼亚龙骑兵
 name_en: Sydonian Dragoons With Radium Jezzails
 faction: 机械修会

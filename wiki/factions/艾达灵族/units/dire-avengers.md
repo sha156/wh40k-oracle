@@ -1,5 +1,5 @@
 ---
-id: 000000593
+id: '000000593'
 name_zh: 狂暴复仇者
 name_en: Dire Avengers
 faction: 艾达灵族

@@ -1,5 +1,5 @@
 ---
-id: 000002798
+id: '000002798'
 name_zh: 剑之兄弟小队
 name_en: Sword Brethren Squad
 faction: 星际战士

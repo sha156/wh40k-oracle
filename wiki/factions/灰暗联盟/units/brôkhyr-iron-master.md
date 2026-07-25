@@ -1,5 +1,5 @@
 ---
-id: 000002597
+id: '000002597'
 name_zh: 机锻钢铁之主
 name_en: Brôkhyr Iron-master
 faction: 灰暗联盟

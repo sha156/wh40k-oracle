@@ -1,5 +1,5 @@
 ---
-id: 000003963
+id: '000003963'
 name_zh: 毒刃
 name_en: Baneblade
 faction: 基因窃取者教派

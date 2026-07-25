@@ -1,5 +1,5 @@
 ---
-id: 000000680
+id: '000000680'
 name_zh: 黎曼鲁斯指挥官
 name_en: Leman Russ Commander
 faction: 星界军

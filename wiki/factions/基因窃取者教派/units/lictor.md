@@ -1,5 +1,5 @@
 ---
-id: 000003883
+id: '000003883'
 name_zh: 刀斧虫
 name_en: Lictor
 faction: 基因窃取者教派

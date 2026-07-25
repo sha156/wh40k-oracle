@@ -1,5 +1,5 @@
 ---
-id: 000001389
+id: '000001389'
 name_en: Kill Krusha
 faction: 兽人
 type: unit

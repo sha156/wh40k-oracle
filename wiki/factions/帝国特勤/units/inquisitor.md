@@ -1,5 +1,5 @@
 ---
-id: 000000877
+id: '000000877'
 name_zh: 审判官
 name_en: Inquisitor
 faction: 帝国特勤

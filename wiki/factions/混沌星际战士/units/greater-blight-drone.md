@@ -1,5 +1,5 @@
 ---
-id: 000001294
+id: '000001294'
 name_en: Greater Blight Drone
 faction: 混沌星际战士
 type: unit

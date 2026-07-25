@@ -1,5 +1,5 @@
 ---
-id: 000001580
+id: '000001580'
 name_zh: 控电神甫
 name_en: Tech-priest Manipulus
 faction: 机械修会

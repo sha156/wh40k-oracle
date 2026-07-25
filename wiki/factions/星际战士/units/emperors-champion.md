@@ -1,5 +1,5 @@
 ---
-id: 000002795
+id: '000002795'
 name_zh: 帝皇勇士
 name_en: Emperor’s Champion
 faction: 星际战士

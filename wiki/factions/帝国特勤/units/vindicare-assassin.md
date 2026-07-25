@@ -1,5 +1,5 @@
 ---
-id: 000000870
+id: '000000870'
 name_zh: 文迪卡刺客
 name_en: Vindicare Assassin
 faction: 帝国特勤

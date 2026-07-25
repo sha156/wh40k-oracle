@@ -1,5 +1,5 @@
 ---
-id: 000003877
+id: '000003877'
 name_zh: 死亡跃袭者
 name_en: Deathleaper
 faction: 基因窃取者教派

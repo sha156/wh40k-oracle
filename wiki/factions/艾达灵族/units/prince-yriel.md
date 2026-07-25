@@ -1,5 +1,5 @@
 ---
-id: 000004193
+id: '000004193'
 name_zh: 伊瑞尔亲王
 name_en: Prince Yriel
 faction: 艾达灵族

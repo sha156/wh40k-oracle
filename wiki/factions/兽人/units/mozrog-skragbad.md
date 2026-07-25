@@ -1,5 +1,5 @@
 ---
-id: 000002493
+id: '000002493'
 name_zh: 恶疤莫兹罗格
 name_en: Mozrog Skragbad
 faction: 兽人

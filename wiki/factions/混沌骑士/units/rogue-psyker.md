@@ -1,5 +1,5 @@
 ---
-id: 000003848
+id: '000003848'
 name_en: Rogue Psyker
 faction: 混沌骑士
 type: unit

@@ -1,5 +1,5 @@
 ---
-id: 000000918
+id: '000000918'
 name_en: Firestorm Redoubt
 faction: 无阵营工事
 type: unit

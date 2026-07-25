@@ -1,5 +1,5 @@
 ---
-id: 000000119
+id: '000000119'
 name_zh: 先锋军智库
 name_en: Librarian In Phobos Armour
 faction: 星际战士
@@ -45,4 +45,4 @@ updated: '2026-07-23'
 
 ## 关键词
 - **阵营关键词**：Adeptus Astartes
-- **普通关键词**：[[core-rules/infantry.md|Infantry]]，[[core-rules/character.md|Character]]，[[core-rules/grenades.md|Grenades]]，[[core-rules/psyker.md|Psyker]]，Imperium，Phobos，Librarian
+- **普通关键词**：[[core-rules/infantry.md|Infantry]]，[[core-rules/character.md|Character]]，[[core-rules/grenades.md|Grenades]]，[[core-rules/psyker.md|Psyker]]，Imperium，Phobos，[[factions/星际战士/units/librarian.md|Librarian]]

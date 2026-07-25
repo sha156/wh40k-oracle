@@ -1,5 +1,5 @@
 ---
-id: 000000895
+id: '000000895'
 name_en: Death Cult Assassins
 faction: 战斗修女
 type: unit

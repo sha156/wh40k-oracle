@@ -1,5 +1,5 @@
 ---
-id: 000003964
+id: '000003964'
 name_zh: 毁灭之锤
 name_en: Banehammer
 faction: 基因窃取者教派

@@ -1,5 +1,5 @@
 ---
-id: 000000694
+id: '000000694'
 name_zh: 地狱犬喷射车
 name_en: Hellhound
 faction: 星界军

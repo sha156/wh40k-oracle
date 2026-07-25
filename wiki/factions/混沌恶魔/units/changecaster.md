@@ -46,4 +46,4 @@ updated: '2026-07-23'
 
 ## 关键词
 - **阵营关键词**：Legiones Daemonica
-- **普通关键词**：[[core-rules/psyker.md|Psyker]]，[[core-rules/infantry.md|Infantry]]，[[core-rules/character.md|Character]]，Shadow Legion，Changecaster，Tzeentch，Daemon，Chaos
+- **普通关键词**：[[core-rules/psyker.md|Psyker]]，[[core-rules/infantry.md|Infantry]]，[[core-rules/character.md|Character]]，[[factions/混沌恶魔/detachments/shadow-legion.md|Shadow Legion]]，Changecaster，Tzeentch，Daemon，Chaos

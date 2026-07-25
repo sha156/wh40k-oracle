@@ -1,5 +1,5 @@
 ---
-id: 000002749
+id: '000002749'
 name_zh: 有翼纳垢恶魔王子
 name_en: Daemon Prince of Nurgle with Wings
 faction: 死亡守卫
@@ -38,7 +38,7 @@ updated: '2026-07-23'
 | 狱铸武器（横扫） | 近战 | 14 | 2+ | 6 | -1 | 1 | [[core-rules/lethal-hits.md\|lethal hits]] |
 
 ## 技能
-- **Horrifying Visage**：Each time this model ends a Charge move, select one enemy unit within Engagement Range of it. That unit must take a Battle-shock test, subtracting 1 from that test.
+- **[[factions/混沌恶魔/enhancements/horrifying-visage.md|Horrifying Visage]]**：Each time this model ends a Charge move, select one enemy unit within Engagement Range of it. That unit must take a Battle-shock test, subtracting 1 from that test.
 - **Enfeebling Miasma (Aura)**：While an enemy unit (excluding <span class="kwb">MONSTERS</span> and <span class="kwb">VEHICLES</span>) is within 6" of this model, each time that unit is selected to Fall Back, models in that enemy unit must take Desperate Escape tests. When doing so, if that enemy unit is Battle-shocked, subtract 1 from each of those Desperate Escape tests.
 
 ## 单位构成

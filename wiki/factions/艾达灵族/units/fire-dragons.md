@@ -1,5 +1,5 @@
 ---
-id: 000000596
+id: '000000596'
 name_zh: 烈焰火龙
 name_en: Fire Dragons
 faction: 艾达灵族

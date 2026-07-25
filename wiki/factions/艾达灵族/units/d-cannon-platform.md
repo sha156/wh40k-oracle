@@ -1,5 +1,5 @@
 ---
-id: 000003910
+id: '000003910'
 name_zh: 次元炮平台
 name_en: D-cannon Platform
 faction: 艾达灵族

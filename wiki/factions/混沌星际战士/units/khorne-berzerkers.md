@@ -1,5 +1,5 @@
 ---
-id: 000003582
+id: '000003582'
 name_zh: 恐虐狂战士
 name_en: Khorne Berzerkers
 faction: 混沌星际战士

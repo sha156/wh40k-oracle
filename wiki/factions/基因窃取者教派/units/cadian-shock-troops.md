@@ -1,5 +1,5 @@
 ---
-id: 000003948
+id: '000003948'
 name_zh: 卡迪安突击队
 name_en: Cadian Shock Troops
 faction: 基因窃取者教派

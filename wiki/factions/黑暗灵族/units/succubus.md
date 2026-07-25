@@ -1,5 +1,5 @@
 ---
-id: 000000639
+id: '000000639'
 name_zh: 血腥魔女
 name_en: Succubus
 faction: 黑暗灵族

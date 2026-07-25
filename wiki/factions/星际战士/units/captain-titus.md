@@ -1,5 +1,5 @@
 ---
-id: 000004187
+id: '000004187'
 name_zh: 泰图斯连长
 name_en: Captain Titus
 faction: 星际战士

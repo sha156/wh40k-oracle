@@ -1,5 +1,5 @@
 ---
-id: 000000692
+id: '000000692'
 name_zh: 奇美拉装甲车
 name_en: Chimera
 faction: 星界军

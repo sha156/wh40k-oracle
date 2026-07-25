@@ -1,5 +1,5 @@
 ---
-id: 000000896
+id: '000000896'
 name_zh: 鞭挞苦修者
 name_en: Arco-flagellants
 faction: 战斗修女

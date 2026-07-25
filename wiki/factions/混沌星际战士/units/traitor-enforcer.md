@@ -1,5 +1,5 @@
 ---
-id: 000002589
+id: '000002589'
 name_zh: 叛军执法者
 name_en: Traitor Enforcer
 faction: 混沌星际战士

@@ -43,4 +43,4 @@ updated: '2026-07-23'
 
 ## 关键词
 - **阵营关键词**：Adeptus Astartes
-- **普通关键词**：Lieutenant in Reiver Armour，[[core-rules/infantry.md|Infantry]]，Phobos，Imperium，[[core-rules/grenades.md|Grenades]]，[[core-rules/smoke.md|Smoke]]，[[core-rules/character.md|Character]]，Lieutenant
+- **普通关键词**：[[factions/星际战士/units/lieutenant.md|Lieutenant]] in Reiver Armour，[[core-rules/infantry.md|Infantry]]，Phobos，Imperium，[[core-rules/grenades.md|Grenades]]，[[core-rules/smoke.md|Smoke]]，[[core-rules/character.md|Character]]，Lieutenant

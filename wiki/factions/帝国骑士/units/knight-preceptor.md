@@ -1,5 +1,5 @@
 ---
-id: 000001483
+id: '000001483'
 name_zh: 教导骑士
 name_en: Knight Preceptor
 faction: 帝国骑士

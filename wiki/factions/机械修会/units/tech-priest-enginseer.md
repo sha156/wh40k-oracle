@@ -1,5 +1,5 @@
 ---
-id: 000000840
+id: '000000840'
 name_zh: 技术技师机械教士
 name_en: Tech-priest Enginseer
 faction: 机械修会

@@ -1,5 +1,5 @@
 ---
-id: 000003857
+id: '000003857'
 name_en: Renegade Heavy Weapons Squad
 faction: 混沌骑士
 type: unit

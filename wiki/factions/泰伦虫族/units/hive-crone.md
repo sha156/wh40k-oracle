@@ -1,5 +1,5 @@
 ---
-id: 000000486
+id: '000000486'
 name_zh: 虫巢天妪
 name_en: Hive Crone
 faction: 泰伦虫族

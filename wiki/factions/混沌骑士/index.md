@@ -1,6 +1,17 @@
 # 混沌骑士
 
-_Last updated: 2026-07-25 11:42 UTC_
+_Last updated: 2026-07-25 13:27 UTC_
+
+## 分队
+
+- [[factions/混沌骑士/detachments/bastions-of-tyranny|Bastions of Tyranny]] — 混沌骑士的分队。
+- [[factions/混沌骑士/detachments/helhunt-lance|Helhunt Lance]] — 混沌骑士的分队，分队规则「Masters of the Pack」。
+- [[factions/混沌骑士/detachments/houndpack-lance|Houndpack Lance]] — 混沌骑士的分队，分队规则「Marked Prey」。
+- [[factions/混沌骑士/detachments/hunting-warpack|Hunting Warpack]] — 混沌骑士的分队。
+- [[factions/混沌骑士/detachments/iconoclast-fiefdom|Iconoclast Fiefdom]] — 混沌骑士的分队，分队规则「Wretched Thralls」。
+- [[factions/混沌骑士/detachments/infernal-lance|Infernal Lance]] — 混沌骑士的分队，分队规则「Malefic Surge」。
+- [[factions/混沌骑士/detachments/lords-of-dread|Lords of Dread]] — 混沌骑士的分队，分队规则「Tyrannical Court」。
+- [[factions/混沌骑士/detachments/traitoris-lance|Traitoris Lance]] — 混沌骑士的分队，分队规则「Paragons of Terror」。
 
 ## 单位
 
@@ -41,4 +52,86 @@ _Last updated: 2026-07-25 11:42 UTC_
 - [[factions/混沌骑士/units/cultist-mob|邪教徒]] — 
 - [[factions/混沌骑士/units/cultist-firebrand|邪教徒纵火者]] — 
 - [[factions/混沌骑士/units/dark-commune|黑暗巫会]] — 
+
+## 策略技能
+
+- [[factions/混沌骑士/stratagems/a-long-leash|A LONG LEASH]] — 1 CP、Command phase、Traitoris Lance 分队、Strategic Ploy Stratag...
+- [[factions/混沌骑士/stratagems/animalistic-rage|ANIMALISTIC RAGE]] — 1 CP、Shooting or Fight phase、Houndpack Lance 分队、Battle Tacti...
+- [[factions/混沌骑士/stratagems/avenge-the-masters|AVENGE THE MASTERS!]] — 1 CP、Any phase、Iconoclast Fiefdom 分队、Strategic Ploy Stratage...
+- [[factions/混沌骑士/stratagems/beasthide-manifestation|BEASTHIDE MANIFESTATION]] — 1 CP、Shooting or Fight phase、Helhunt Lance 分队、Battle Tactic...
+- [[factions/混沌骑士/stratagems/claimed-for-the-dark-gods|CLAIMED FOR THE DARK GODS]] — 1 CP、Command phase、Lords of Dread 分队、Epic Deed Stratagem。
+- [[factions/混沌骑士/stratagems/conquerors-without-mercy|CONQUERORS WITHOUT MERCY]] — 1 CP、Fight phase、Traitoris Lance 分队、Battle Tactic Stratagem。
+- [[factions/混沌骑士/stratagems/contemptuous-volleys|CONTEMPTUOUS VOLLEYS]] — 1 CP、Movement phase、Helhunt Lance 分队、Strategic Ploy Stratage...
+- [[factions/混沌骑士/stratagems/corrupting-taint|CORRUPTING TAINT]] — 1 CP、Command phase、Infernal Lance 分队、Epic Deed Stratagem。
+- [[factions/混沌骑士/stratagems/crushed-like-vermin|CRUSHED LIKE VERMIN]] — 1 CP、Movement phase、Lords of Dread 分队、Epic Deed Stratagem。
+- [[factions/混沌骑士/stratagems/cunning-hunter|CUNNING HUNTER]] — 1 CP、Movement phase、Houndpack Lance 分队、Strategic Ploy Strata...
+- [[factions/混沌骑士/stratagems/diabolic-bulwark|DIABOLIC BULWARK]] — 1 CP、Shooting phase、Infernal Lance 分队、Wargear Stratagem。
+- [[factions/混沌骑士/stratagems/disdain-for-the-weak|DISDAIN FOR THE WEAK]] — 1 CP、Fight phase、Traitoris Lance 分队、Strategic Ploy Stratagem...
+- [[factions/混沌骑士/stratagems/encircling-pack|ENCIRCLING PACK]] — 1 CP、Fight phase、Houndpack Lance 分队、Strategic Ploy Stratagem...
+- [[factions/混沌骑士/stratagems/feral-arrogance|FERAL ARROGANCE]] — 1 CP、Any phase、Helhunt Lance 分队、Strategic Ploy Stratagem。
+- [[factions/混沌骑士/stratagems/flush-the-quarry|FLUSH THE QUARRY]] — 1 CP、Movement phase、Helhunt Lance 分队、Battle Tactic Stratagem...
+- [[factions/混沌骑士/stratagems/goaded-beast|GOADED BEAST]] — 1 CP、Shooting phase、Helhunt Lance 分队、Strategic Ploy Stratage...
+- [[factions/混沌骑士/stratagems/harrying-hounds|HARRYING HOUNDS]] — 1 CP、Movement phase、Houndpack Lance 分队、Strategic Ploy Strata...
+- [[factions/混沌骑士/stratagems/hellforged-construction|HELLFORGED CONSTRUCTION]] — 1 CP、Fight phase、Infernal Lance 分队、Battle Tactic Stratagem。
+- [[factions/混沌骑士/stratagems/hungry-for-combat|HUNGRY FOR COMBAT]] — 1 CP、Fight phase、Houndpack Lance 分队、Battle Tactic Stratagem。
+- [[factions/混沌骑士/stratagems/imperious-advance|IMPERIOUS ADVANCE]] — 1 CP、Movement or Charge phase、Traitoris Lance 分队、Epic Deed S...
+- [[factions/混沌骑士/stratagems/merciless-fusillade|MERCILESS FUSILLADE]] — 1 CP、Shooting or Fight phase、Helhunt Lance 分队、Battle Tactic...
+- [[factions/混沌骑士/stratagems/preserve-the-idols|PRESERVE THE IDOLS]] — 1 CP、Movement phase、Iconoclast Fiefdom 分队、Strategic Ploy Str...
+- [[factions/混沌骑士/stratagems/profane-symbiosis|PROFANE SYMBIOSIS]] — 1 CP、Any phase、Infernal Lance 分队、Battle Tactic Stratagem。
+- [[factions/混沌骑士/stratagems/pterrorshades|PTERRORSHADES]] — 1 CP、Any phase、Traitoris Lance 分队、Wargear Stratagem。
+- [[factions/混沌骑士/stratagems/runes-of-disdain|RUNES OF DISDAIN]] — 2 CP、Shooting or Fight phase、Lords of Dread 分队、Epic Deed Str...
+- [[factions/混沌骑士/stratagems/soul-hunger|SOUL HUNGER]] — 1 CP、Fight phase、Iconoclast Fiefdom 分队、Battle Tactic Stratag...
+- [[factions/混沌骑士/stratagems/spiteful-demise|SPITEFUL DEMISE]] — 1 CP、Any phase、Lords of Dread 分队、Epic Deed Stratagem。
+- [[factions/混沌骑士/stratagems/storm-of-darkness|STORM OF DARKNESS]] — 1 CP、Shooting phase、Traitoris Lance 分队、Strategic Ploy Strata...
+- [[factions/混沌骑士/stratagems/titanic-duel|TITANIC DUEL]] — 1 CP、Shooting or Fight phase、Lords of Dread 分队、Epic Deed Str...
+- [[factions/混沌骑士/stratagems/trophy-hunter|TROPHY HUNTER]] — 1 CP、Fight phase、Lords of Dread 分队、Epic Deed Stratagem。
+- [[factions/混沌骑士/stratagems/unleash-balefire|UNLEASH BALEFIRE]] — 1 CP、Shooting phase、Infernal Lance 分队、Wargear Stratagem。
+- [[factions/混沌骑士/stratagems/unrestrained-rage|UNRESTRAINED RAGE]] — 1 CP、Movement phase、Iconoclast Fiefdom 分队、Strategic Ploy Str...
+- [[factions/混沌骑士/stratagems/vox-howl|VOX-HOWL]] — 2 CP、Shooting or Fight phase、Houndpack Lance 分队、Battle Tacti...
+- [[factions/混沌骑士/stratagems/warp-vision|WARP VISION]] — 1 CP、Shooting phase、Infernal Lance 分队、Wargear Stratagem。
+- [[factions/混沌骑士/stratagems/worthless-chattel|WORTHLESS CHATTEL]] — 1 CP、Shooting phase、Iconoclast Fiefdom 分队、Strategic Ploy Str...
+- [[factions/混沌骑士/stratagems/wretched-masses|WRETCHED MASSES]] — 2 CP、Any phase、Iconoclast Fiefdom 分队、Battle Tactic Stratagem...
+- [[factions/混沌骑士/stratagems/leash-of-the-masters|主宰束链]] — 1 CP、Shooting phase、Hunting Warpack 分队。
+- [[factions/混沌骑士/stratagems/intimidating-reminder|威慑警示]] — 1 CP、Shooting phase、Bastions of Tyranny 分队。
+- [[factions/混沌骑士/stratagems/pitiless-focus|无情专注]] — 1 CP、Movement phase、Bastions of Tyranny 分队。
+- [[factions/混沌骑士/stratagems/stalking-focus|潜行专注]] — 1 CP、Shooting phase、Hunting Warpack 分队。
+- [[factions/混沌骑士/stratagems/insensate-bloodthirst|狂乱嗜血]] — 1 CP、Fight phase、Hunting Warpack 分队。
+- [[factions/混沌骑士/stratagems/rune-cursed-stronghold|符咒堡垒]] — 1 CP、Any phase、Bastions of Tyranny 分队。
+- [[factions/混沌骑士/stratagems/coursing-thralls|追猎奴众]] — 1 CP、Shooting phase、Iconoclast Fiefdom 分队。
+- [[factions/混沌骑士/stratagems/dark-sacrifice|黑暗献祭]] — 1 CP、Command phase、Iconoclast Fiefdom 分队。
+
+## 强化
+
+- [[factions/混沌骑士/enhancements/aspect-of-the-beast|Aspect of the Beast]] — 30 分、Helhunt Lance 分队。
+- [[factions/混沌骑士/enhancements/bestial-aspect|Bestial Aspect]] — 20 分、Infernal Lance 分队。
+- [[factions/混沌骑士/enhancements/blade-of-celerity|Blade of Celerity]] — 35 分、Lords of Dread 分队。
+- [[factions/混沌骑士/enhancements/blasphemous-engine|Blasphemous Engine]] — 35 分、Infernal Lance 分队。
+- [[factions/混沌骑士/enhancements/blessing-of-the-dark-master|Blessing of the Dark Master]] — 20 分、Lords of Dread 分队。
+- [[factions/混沌骑士/enhancements/cruel-lashmaster-aura|Cruel Lashmaster (Aura)]] — 分数未知、Iconoclast Fiefdom 分队。
+- [[factions/混沌骑士/enhancements/diabolical-resilience|Diabolical Resilience]] — 35 分、Iconoclast Fiefdom 分队。
+- [[factions/混沌骑士/enhancements/final-howl-aura|Final Howl (Aura)]] — 20 分、Houndpack Lance 分队。
+- [[factions/混沌骑士/enhancements/fleshmetal-fusion|Fleshmetal Fusion]] — 35 分、Infernal Lance 分队。
+- [[factions/混沌骑士/enhancements/hate-filled-dominion|Hate-filled Dominion]] — 分数未知、Bastions of Tyranny 分队。
+- [[factions/混沌骑士/enhancements/hunters-helm|Hunter’s Helm]] — 15 分、Helhunt Lance 分队。
+- [[factions/混沌骑士/enhancements/iconoclast-idol-aura|Iconoclast Idol (Aura)]] — 分数未知、Iconoclast Fiefdom 分队。
+- [[factions/混沌骑士/enhancements/knight-diabolus|Knight Diabolus]] — 25 分、Infernal Lance 分队。
+- [[factions/混沌骑士/enhancements/loping-predator|Loping Predator]] — 10 分、Houndpack Lance 分队。
+- [[factions/混沌骑士/enhancements/malevolent-heraldry|Malevolent Heraldry]] — 30 分、Traitoris Lance 分队。
+- [[factions/混沌骑士/enhancements/mirror-of-fates|Mirror of Fates]] — 30 分、Lords of Dread 分队。
+- [[factions/混沌骑士/enhancements/nightmares-master|Nightmare’s Master]] — 20 分、Traitoris Lance 分队。
+- [[factions/混沌骑士/enhancements/octagram-of-conjuration|Octagram of Conjuration]] — 40 分、Helhunt Lance 分队。
+- [[factions/混沌骑士/enhancements/panoply-of-the-cursed-knight|Panoply of the Cursed Knight]] — 15 分、Houndpack Lance 分队。
+- [[factions/混沌骑士/enhancements/pave-the-way|Pave the Way]] — 15 分、Iconoclast Fiefdom 分队。
+- [[factions/混沌骑士/enhancements/preyslayers-mantle|Preyslayer’s Mantle]] — 15 分、Houndpack Lance 分队。
+- [[factions/混沌骑士/enhancements/profane-altar|Profane Altar]] — 20 分、Iconoclast Fiefdom 分队。
+- [[factions/混沌骑士/enhancements/pterrorshade-rookery|Pterrorshade Rookery]] — 分数未知、Bastions of Tyranny 分队。
+- [[factions/混沌骑士/enhancements/putrid-carapace|Putrid Carapace]] — 30 分、Lords of Dread 分队。
+- [[factions/混沌骑士/enhancements/snarling-rivalry|Snarling Rivalry]] — 分数未知、Hunting Warpack 分队。
+- [[factions/混沌骑士/enhancements/soul-spoor-auspicator|Soul-spoor Auspicator]] — 分数未知、Hunting Warpack 分队。
+- [[factions/混沌骑士/enhancements/throne-mechanicum-of-skulls|Throne Mechanicum of Skulls]] — 25 分、Lords of Dread 分队。
+- [[factions/混沌骑士/enhancements/throne-tyrannicus|Throne Tyrannicus]] — 25 分、Helhunt Lance 分队。
+- [[factions/混沌骑士/enhancements/tyrants-banner|Tyrant’s Banner]] — 5 分、Iconoclast Fiefdom 分队。
+- [[factions/混沌骑士/enhancements/tyrants-shadow|Tyrant’s Shadow]] — 25 分、Traitoris Lance 分队。
+- [[factions/混沌骑士/enhancements/veil-of-medrengard|Veil of Medrengard]] — 35 分、Traitoris Lance 分队。
+- [[factions/混沌骑士/enhancements/warp-borne-stalker|Warp-borne Stalker]] — 25 分、Lords of Dread 分队。
 

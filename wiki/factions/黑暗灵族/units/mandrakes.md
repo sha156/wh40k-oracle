@@ -1,5 +1,5 @@
 ---
-id: 000000649
+id: '000000649'
 name_zh: 曼德拉
 name_en: Mandrakes
 faction: 黑暗灵族

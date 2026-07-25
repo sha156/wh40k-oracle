@@ -1,5 +1,5 @@
 ---
-id: 000002679
+id: '000002679'
 name_zh: 瓦什托尔
 name_en: Vashtorr The Arkifane
 faction: 混沌星际战士

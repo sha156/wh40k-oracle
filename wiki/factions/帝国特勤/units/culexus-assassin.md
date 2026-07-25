@@ -1,5 +1,5 @@
 ---
-id: 000000873
+id: '000000873'
 name_zh: 丘里克斯刺客
 name_en: Culexus Assassin
 faction: 帝国特勤

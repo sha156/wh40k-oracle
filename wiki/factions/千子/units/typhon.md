@@ -1,5 +1,5 @@
 ---
-id: 000003679
+id: '000003679'
 name_en: Typhon
 faction: 千子
 type: unit

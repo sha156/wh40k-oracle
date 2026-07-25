@@ -1,5 +1,5 @@
 ---
-id: 000003851
+id: '000003851'
 name_zh: 诅咒教徒
 name_en: Accursed Cultists
 faction: 混沌骑士

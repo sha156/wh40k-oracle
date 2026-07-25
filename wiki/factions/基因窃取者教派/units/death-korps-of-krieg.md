@@ -1,5 +1,5 @@
 ---
-id: 000003950
+id: '000003950'
 name_zh: 克里格死兵队
 name_en: Death Korps Of Krieg
 faction: 基因窃取者教派

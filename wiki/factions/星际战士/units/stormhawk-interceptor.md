@@ -1,5 +1,5 @@
 ---
-id: 000000084
+id: '000000084'
 name_zh: 风暴隼拦截机
 name_en: Stormhawk Interceptor
 faction: 星际战士

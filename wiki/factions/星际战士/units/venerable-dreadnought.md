@@ -1,5 +1,5 @@
 ---
-id: 000002801
+id: '000002801'
 name_zh: 荣耀无畏机甲
 name_en: Venerable Dreadnought
 faction: 星际战士
@@ -49,4 +49,4 @@ updated: '2026-07-23'
 
 ## 关键词
 - **阵营关键词**：Space Wolves，Adeptus Astartes
-- **普通关键词**：Venerable Dreadnought，Dreadnought，Vehicle，[[core-rules/walker.md|Walker]]，[[core-rules/smoke.md|Smoke]]，Imperium
+- **普通关键词**：Venerable [[factions/星际战士/units/dreadnought.md|Dreadnought]]，Dreadnought，Vehicle，[[core-rules/walker.md|Walker]]，[[core-rules/smoke.md|Smoke]]，Imperium

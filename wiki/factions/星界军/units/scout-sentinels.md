@@ -1,5 +1,5 @@
 ---
-id: 000000690
+id: '000000690'
 name_zh: 侦查哨兵
 name_en: Scout Sentinels
 faction: 星界军

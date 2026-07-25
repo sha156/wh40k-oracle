@@ -1,5 +1,5 @@
 ---
-id: 000001139
+id: '000001139'
 name_en: Herald Of Slaanesh On Steed Of Slaanesh
 faction: 混沌恶魔
 type: unit
@@ -39,4 +39,4 @@ updated: '2026-07-23'
 
 ## 关键词
 - **阵营关键词**：Legiones Daemonica
-- **普通关键词**：[[core-rules/psyker.md|Psyker]]，Shadow Legion，Herald of Slaanesh，Slaanesh，Daemon，Chaos，[[core-rules/character.md|Character]]，[[core-rules/mounted.md|Mounted]]
+- **普通关键词**：[[core-rules/psyker.md|Psyker]]，[[factions/混沌恶魔/detachments/shadow-legion.md|Shadow Legion]]，Herald of Slaanesh，Slaanesh，Daemon，Chaos，[[core-rules/character.md|Character]]，[[core-rules/mounted.md|Mounted]]

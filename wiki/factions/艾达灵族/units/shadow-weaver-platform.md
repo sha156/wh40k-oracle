@@ -1,5 +1,5 @@
 ---
-id: 000003911
+id: '000003911'
 name_zh: 织影炮平台
 name_en: Shadow Weaver Platform
 faction: 艾达灵族

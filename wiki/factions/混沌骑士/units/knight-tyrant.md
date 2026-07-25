@@ -1,5 +1,5 @@
 ---
-id: 000001659
+id: '000001659'
 name_zh: 暴君骑士
 name_en: Knight Tyrant
 faction: 混沌骑士

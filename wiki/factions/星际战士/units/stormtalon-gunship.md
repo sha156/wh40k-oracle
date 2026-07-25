@@ -1,5 +1,5 @@
 ---
-id: 000001190
+id: '000001190'
 name_zh: 风暴爪炮艇
 name_en: Stormtalon Gunship
 faction: 星际战士

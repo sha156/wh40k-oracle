@@ -1,5 +1,5 @@
 ---
-id: 000003955
+id: '000003955'
 name_zh: 神盾防御墙
 name_en: Aegis Defence Line
 faction: 基因窃取者教派

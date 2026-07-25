@@ -42,7 +42,7 @@ updated: '2026-07-23'
 
 ## 技能
 - **纳垢恶魔领主(光环)**：位于该模型 6" 内的己方纳垢逆理魔军单位中的模型的T+1。
-- **纳垢腐疫(灵能)**：在己方移动阶段结束时，你可以选择一个位于该模型 12" 内的敌方模型。直到下一个己方移动阶段开始前，那个单位中模型的韧性属性减少 1 点。
+- **纳垢腐疫(灵能)**：在己方移动阶段结束时，你可以选择一个位于该模型 12" 内的敌方模型。直到[[factions/兽人/stratagems/on-to-da-next.md|下一个]]己方移动阶段开始前，那个单位中模型的韧性属性减少 1 点。
 - **高阶纳垢恶魔（光环)**：当一个己方纳垢逆理魔军单位位于该模型的 6" 内时，那个单位位于己方混沌之影中。
 - **末日手铃-回响召唤**：每当一个模型被该武器摧毁时，你可以选择一个位于持有者 12" 内的己方负瘟者单位并让一个被摧毁的负瘟者模型返回至那个单位中。
 - **受损：剩余 1-7 点耐伤**：该模型剩余 1-7 点耐伤时，每当该模型进行攻击，命中掷骰结果减少1点。
@@ -52,4 +52,4 @@ updated: '2026-07-23'
 
 ## 关键词
 - **阵营关键词**：Legiones Daemonica
-- **普通关键词**：Nurgle，Daemon，Chaos，[[core-rules/psyker.md|Psyker]]，[[core-rules/character.md|Character]]，Shadow Legion，Great Unclean One，Monster
+- **普通关键词**：Nurgle，Daemon，Chaos，[[core-rules/psyker.md|Psyker]]，[[core-rules/character.md|Character]]，[[factions/混沌恶魔/detachments/shadow-legion.md|Shadow Legion]]，Great Unclean One，Monster

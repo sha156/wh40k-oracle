@@ -1,5 +1,5 @@
 ---
-id: 000001318
+id: '000001318'
 name_en: Hell Talon
 faction: 混沌星际战士
 type: unit

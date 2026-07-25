@@ -38,7 +38,7 @@ updated: '2026-07-23'
 ## 技能
 - **Talonmaster**：While this model is within 3" of one or more other friendly Adeptus Astartes Mounted or Adeptus Astartes Fly Vehicle units, this model has the Lone Operative ability.
 - **Nowhere to Hide**：While a friendly Adeptus Astartes Mounted or Adeptus Astartes Fly Vehicle unit is within 6" of this model, ranged weapons equipped by models in that unit have the [IGNORES COVER] ability.
-- **Master of Manoeuvre**：Once per turn, when an enemy unit ends a Normal, Advance or Fall Back move within 9" of this model, if this model is not within Engagement Range of one or more enemy units, this model can make a Normal move of up to 6".
+- **[[factions/星际战士/enhancements/master-of-manoeuvre.md|Master of Manoeuvre]]**：Once per turn, when an enemy unit ends a Normal, Advance or Fall Back move within 9" of this model, if this model is not within Engagement Range of one or more enemy units, this model can make a Normal move of up to 6".
 
 ## 单位构成
 - **1个模型** — 105 分

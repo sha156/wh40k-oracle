@@ -1,5 +1,5 @@
 ---
-id: 000001648
+id: '000001648'
 name_zh: 夏拉希·魔灾
 name_en: Shalaxi Helbane
 faction: 混沌恶魔

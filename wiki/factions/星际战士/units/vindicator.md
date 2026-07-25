@@ -1,5 +1,5 @@
 ---
-id: 000001188
+id: '000001188'
 name_zh: 维护者突击炮
 name_en: Vindicator
 faction: 星际战士

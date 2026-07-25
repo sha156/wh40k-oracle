@@ -1,5 +1,5 @@
 ---
-id: 000002595
+id: '000002595'
 name_zh: 断角勇士
 name_en: Einhyr Champion
 faction: 灰暗联盟

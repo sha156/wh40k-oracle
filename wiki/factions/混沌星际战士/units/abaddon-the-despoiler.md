@@ -1,5 +1,5 @@
 ---
-id: 000000924
+id: '000000924'
 name_zh: 大掠夺者阿巴顿
 name_en: Abaddon The Despoiler
 faction: 混沌星际战士

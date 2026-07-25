@@ -1,5 +1,5 @@
 ---
-id: 000000158
+id: '000000158'
 name_zh: 圣血祭司
 name_en: Sanguinary Priest
 faction: 星际战士

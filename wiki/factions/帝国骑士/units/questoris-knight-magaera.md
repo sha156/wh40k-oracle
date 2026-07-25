@@ -1,5 +1,5 @@
 ---
-id: 000000865
+id: '000000865'
 name_zh: 复仇女神型巡游骑士
 name_en: Questoris Knight Magaera
 faction: 帝国骑士

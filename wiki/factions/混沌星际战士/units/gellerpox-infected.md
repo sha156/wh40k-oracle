@@ -1,5 +1,5 @@
 ---
-id: 000002592
+id: '000002592'
 name_en: Gellerpox Infected
 faction: 混沌星际战士
 type: unit

@@ -1,5 +1,5 @@
 ---
-id: 000000963
+id: '000000963'
 name_zh: 破坏者型猎食者坦克
 name_en: Chaos Predator Destructor
 faction: 混沌星际战士

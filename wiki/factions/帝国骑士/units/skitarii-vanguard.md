@@ -1,5 +1,5 @@
 ---
-id: 000003843
+id: '000003843'
 name_zh: 护教军先锋兵
 name_en: Skitarii Vanguard
 faction: 帝国骑士

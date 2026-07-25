@@ -1,6 +1,23 @@
 # 兽人
 
-_Last updated: 2026-07-25 11:42 UTC_
+_Last updated: 2026-07-25 13:27 UTC_
+
+## 分队
+
+- [[factions/兽人/detachments/blitz-brigade|Blitz Brigade]] — 兽人的分队，分队规则「渴战」。
+- [[factions/兽人/detachments/bully-boyz|Bully Boyz]] — 兽人的分队，分队规则「老大在看」。
+- [[factions/兽人/detachments/da-big-hunt|Da Big Hunt]] — 兽人的分队，分队规则「追猎开始」。
+- [[factions/兽人/detachments/dread-mob|Dread Mob]] — 兽人的分队，分队规则「试试这按钮」。
+- [[factions/兽人/detachments/freebooter-krew|Freebooter Krew]] — 兽人的分队，分队规则「此处有战利品」。
+- [[factions/兽人/detachments/green-tide|Green Tide]] — 兽人的分队，分队规则「群体心理」。
+- [[factions/兽人/detachments/kaptin-killers|Kaptin Killers]] — 兽人的分队，分队规则「冲过来」。
+- [[factions/兽人/detachments/kult-of-speed|Kult of Speed]] — 兽人的分队，分队规则「肾上腺瘾君子」。
+- [[factions/兽人/detachments/more-dakka|More Dakka!]] — 兽人的分队，分队规则「哒哒哒」。
+- [[factions/兽人/detachments/ramship-raiders|Ramship Raiders]] — 兽人的分队，分队规则「好战登舰者」。
+- [[factions/兽人/detachments/rollin-deff|Rollin' Deff]] — 兽人的分队。
+- [[factions/兽人/detachments/speedwaaagh|Speedwaaagh!]] — 兽人的分队，分队规则「涡轮加速」。
+- [[factions/兽人/detachments/taktikal-brigade|Taktikal Brigade]] — 兽人的分队，分队规则「听好了」。
+- [[factions/兽人/detachments/war-horde|War Horde]] — 兽人的分队，分队规则「深陷苦战」。
 
 ## 单位
 
@@ -94,4 +111,137 @@ _Last updated: 2026-07-25 11:42 UTC_
 - [[factions/兽人/units/beastboss-on-squigosaur|骑乘跳龙的兽霸头目]] — 
 - [[factions/兽人/units/boss-snikrot|鬼祟鼠]] — 
 - [[factions/兽人/units/kustom-boosta-blasta|魔改爆裂车]] — 
+
+## 策略技能
+
+- [[factions/兽人/stratagems/go-get-em|上去干他们]] — 1 CP、Shooting phase、Green Tide 分队、Strategic Ploy Stratagem。
+- [[factions/兽人/stratagems/come-on-ladz|上啊小子]] — 1 CP、Command phase、Green Tide 分队、Strategic Ploy Stratagem。
+- [[factions/兽人/stratagems/get-stuck-in-ladz|上啊小子（More Dakka）]] — 2 CP、Command phase、More Dakka! 分队、Epic Deed Stratagem。
+- [[factions/兽人/stratagems/on-da-move|上路]] — 1 CP、Movement phase、Speedwaaagh! 分队、Strategic Ploy Stratagem...
+- [[factions/兽人/stratagems/mount-up-ladz|上车吧小子]] — 1 CP、Fight phase、Blitz Brigade 分队、Strategic Ploy Stratagem。
+- [[factions/兽人/stratagems/on-to-da-next|下一个]] — 1 CP、Movement phase、Taktikal Brigade 分队、Strategic Ploy Strat...
+- [[factions/兽人/stratagems/unstoppable-momentum|不可阻挡的势头]] — 1 CP、Charge phase、Da Big Hunt 分队、Strategic Ploy Stratagem。
+- [[factions/兽人/stratagems/where-dya-fink-youre-going|你想去哪]] — 1 CP、Movement phase、Da Big Hunt 分队、Strategic Ploy Stratagem。
+- [[factions/兽人/stratagems/yooz-in-trouble-now|你有麻烦了]] — 1 CP、Shooting phase、Blitz Brigade 分队、Strategic Ploy Stratage...
+- [[factions/兽人/stratagems/too-arrogant-to-die|傲慢不死]] — 1 CP、Shooting or Fight phase、Bully Boyz 分队、Strategic Ploy St...
+- [[factions/兽人/stratagems/full-throttle|全速前进]] — 1 CP、Charge phase、Kult of Speed 分队、Battle Tactic Stratagem。
+- [[factions/兽人/stratagems/orks-is-never-beaten|兽人永不言败]] — 2 CP、Fight phase、War Horde 分队、Epic Deed Stratagem。
+- [[factions/兽人/stratagems/orks-is-still-orks|兽人还是兽人]] — 1 CP、Fight phase、More Dakka! 分队、Battle Tactic Stratagem。
+- [[factions/兽人/stratagems/impervious|刀枪不入]] — 1 CP、Shooting phase、Blitz Brigade 分队、Strategic Ploy Stratage...
+- [[factions/兽人/stratagems/braggin-rights|吹嘘权]] — 1 CP、Command phase、Green Tide 分队、Strategic Ploy Stratagem。
+- [[factions/兽人/stratagems/klankin-klaws|咔嗒钳爪]] — 1 CP、Fight phase、Dread Mob 分队、Battle Tactic Stratagem。
+- [[factions/兽人/stratagems/dakka-dakka-dakka|哒哒哒（Dread Mob）]] — 1 CP、Shooting phase、Dread Mob 分队、Battle Tactic Stratagem。
+- [[factions/兽人/stratagems/cornered-and-krumped|困兽之斗]] — 1 CP、Movement phase、Kaptin Killers 分队、Battle Tactic Stratage...
+- [[factions/兽人/stratagems/ard-as-nails|坚如磐石]] — 1 CP、Shooting or Fight phase、War Horde 分队、Battle Tactic Stra...
+- [[factions/兽人/stratagems/bigger-shells-for-bigger-gitz|大个子用大炮弹]] — 1 CP、Shooting phase、Dread Mob 分队、Battle Tactic Stratagem。
+- [[factions/兽人/stratagems/huge-show-offs|大炫耀]] — 1 CP、Command phase、More Dakka! 分队、Epic Deed Stratagem。
+- [[factions/兽人/stratagems/grab-and-bash|夺取]] — 1 CP、Command phase、Freebooter Krew 分队、Strategic Ploy Stratag...
+- [[factions/兽人/stratagems/fight-proppa|好好打]] — 1 CP、Fight phase、Taktikal Brigade 分队、Battle Tactic Stratagem...
+- [[factions/兽人/stratagems/competitive-streak|好胜心]] — 1 CP、Fight phase、Green Tide 分队、Battle Tactic Stratagem。
+- [[factions/兽人/stratagems/dust-trails|尘迹]] — 1 CP、Shooting phase、Speedwaaagh! 分队、Strategic Ploy Stratagem...
+- [[factions/兽人/stratagems/hulking-brutes|巨兽蛮汉]] — 1 CP、Shooting phase、Bully Boyz 分队、Battle Tactic Stratagem。
+- [[factions/兽人/stratagems/careen|急冲]] — 1 CP、Any phase、War Horde 分队、Epic Deed Stratagem。
+- [[factions/兽人/stratagems/always-lookin-fer-a-fight|总想打架]] — 1 CP、Fight phase、Bully Boyz 分队、Strategic Ploy Stratagem。
+- [[factions/兽人/stratagems/ere-we-go|我们上]] — 1 CP、Movement phase、War Horde 分队、Battle Tactic Stratagem。
+- [[factions/兽人/stratagems/taktikal-retreat|战术撤退]] — 1 CP、Movement phase、Taktikal Brigade 分队、Strategic Ploy Strat...
+- [[factions/兽人/stratagems/bash-and-grab|抢夺]] — 1 CP、Fight phase、Freebooter Krew 分队、Battle Tactic Stratagem。
+- [[factions/兽人/stratagems/drag-it-down|拽下来]] — 1 CP、Fight phase、Da Big Hunt 分队、Battle Tactic Stratagem。
+- [[factions/兽人/stratagems/pile-through-kaptin-killers|挤过去]] — 1 CP、Movement phase、Kaptin Killers 分队、Strategic Ploy Stratag...
+- [[factions/兽人/stratagems/pile-through-ramship-raiders|挤过去]] — 1 CP、Movement phase、Ramship Raiders 分队、Strategic Ploy Strata...
+- [[factions/兽人/stratagems/bulldozer-brutality|推土机残暴]] — 1 CP、Fight phase、Green Tide 分队、Battle Tactic Stratagem。
+- [[factions/兽人/stratagems/squig-flingin|掷菌兽]] — 1 CP、Movement phase、Kult of Speed 分队、Strategic Ploy Stratage...
+- [[factions/兽人/stratagems/ramboyz-rampage|撞车小子暴走]] — 1 CP、Movement phase、Ramship Raiders 分队、Strategic Ploy Strata...
+- [[factions/兽人/stratagems/pit-fighter|斗士]] — 1 CP、Charge phase、Kaptin Killers 分队、Epic Deed Stratagem。
+- [[factions/兽人/stratagems/unbridled-carnage|无节制杀戮]] — 1 CP、Fight phase、War Horde 分队、Battle Tactic Stratagem。
+- [[factions/兽人/stratagems/mob-rule|暴民法则]] — 1 CP、Command phase、War Horde 分队、Battle Tactic Stratagem。
+- [[factions/兽人/stratagems/more-gitz-over-ere|更多小子在这]] — 1 CP、Movement phase、Kult of Speed 分队、Strategic Ploy Stratage...
+- [[factions/兽人/stratagems/speediest-freeks|最速狂飙]] — 1 CP、Shooting or Fight phase、Kult of Speed 分队、Strategic Ploy...
+- [[factions/兽人/stratagems/instinctive-hunters|本能猎手]] — 1 CP、Fight phase、Da Big Hunt 分队、Strategic Ploy Stratagem。
+- [[factions/兽人/stratagems/mobile-dakkastorm|机动达卡风暴]] — 1 CP、Shooting phase、Speedwaaagh! 分队、Strategic Ploy Stratagem...
+- [[factions/兽人/stratagems/mekanised-brutality|机械化残暴]] — 1 CP、Movement phase、Blitz Brigade 分队、Strategic Ploy Stratage...
+- [[factions/兽人/stratagems/armed-to-dateef|武装到牙齿]] — 1 CP、Shooting or Fight phase、Bully Boyz 分队、Battle Tactic Str...
+- [[factions/兽人/stratagems/ded-sneaky|死鬼祟]] — 1 CP、Fight phase、Taktikal Brigade 分队、Strategic Ploy Stratage...
+- [[factions/兽人/stratagems/brutal-broadside|残暴齐射]] — 1 CP、Shooting phase、Rollin' Deff 分队。
+- [[factions/兽人/stratagems/devastating-drift|毁灭漂移]] — 1 CP、Fight phase、Rollin' Deff 分队。
+- [[factions/兽人/stratagems/eager-to-fight|渴望战斗]] — 1 CP、Movement phase、Ramship Raiders 分队、Strategic Ploy Strata...
+- [[factions/兽人/stratagems/rolling-loot-heap|滚动战利品堆]] — 1 CP、Shooting phase、Freebooter Krew 分队、Strategic Ploy Strata...
+- [[factions/兽人/stratagems/stalkin-taktiks|潜行战术]] — 1 CP、Shooting phase、Da Big Hunt 分队、Battle Tactic Stratagem。
+- [[factions/兽人/stratagems/speshul-ammo|特制弹药]] — 1 CP、Shooting phase、Speedwaaagh! 分队、Wargear Stratagem。
+- [[factions/兽人/stratagems/speshul-shells|特制炮弹]] — 1 CP、Shooting phase、More Dakka! 分队、Wargear Stratagem。
+- [[factions/兽人/stratagems/enraged-rush|狂怒冲锋]] — 1 CP、Shooting phase、Ramship Raiders 分队、Strategic Ploy Strata...
+- [[factions/兽人/stratagems/conniving-runts|狡诈跑腿]] — 1 CP、Movement phase、Dread Mob 分队、Strategic Ploy Stratagem。
+- [[factions/兽人/stratagems/deck-fraggers|甲板破片]] — 1 CP、Shooting phase、Freebooter Krew 分队、Strategic Ploy Strata...
+- [[factions/兽人/stratagems/boardin-rush|登舰冲锋]] — 1 CP、Movement phase、Freebooter Krew 分队、Battle Tactic Stratag...
+- [[factions/兽人/stratagems/cutem-down|砍倒他们]] — 1 CP、Movement phase、Bully Boyz 分队、Battle Tactic Stratagem。
+- [[factions/兽人/stratagems/krump-and-run|砸完就跑]] — 1 CP、Movement phase、Freebooter Krew 分队、Strategic Ploy Strata...
+- [[factions/兽人/stratagems/crushing-impact|碾压冲击]] — 1 CP、Charge phase、Bully Boyz 分队、Epic Deed Stratagem。
+- [[factions/兽人/stratagems/krunchin-descent|碾压降临]] — 1 CP、Charge phase、Taktikal Brigade 分队、Battle Tactic Stratage...
+- [[factions/兽人/stratagems/run-em-down|碾过去]] — 1 CP、Movement phase、Blitz Brigade 分队、Strategic Ploy Stratage...
+- [[factions/兽人/stratagems/loot-on-the-move|移动中劫掠]] — 1 CP、Movement phase、Kaptin Killers 分队、Strategic Ploy Stratag...
+- [[factions/兽人/stratagems/tide-of-muscle|肌肉浪潮]] — 1 CP、Charge phase、Green Tide 分队、Epic Deed Stratagem。
+- [[factions/兽人/stratagems/ded-killy-construction|致命构造]] — 1 CP、Fight phase、Speedwaaagh! 分队、Strategic Ploy Stratagem。
+- [[factions/兽人/stratagems/armoured-duellists|装甲决斗者]] — 1 CP、Shooting phase、Blitz Brigade 分队、Battle Tactic Stratagem...
+- [[factions/兽人/stratagems/superfuelled-boiler|超燃锅炉]] — 1 CP、Movement phase、Dread Mob 分队、Strategic Ploy Stratagem。
+- [[factions/兽人/stratagems/dakkastorm|达卡风暴]] — 1 CP、Shooting phase、Kult of Speed 分队、Battle Tactic Stratagem...
+- [[factions/兽人/stratagems/call-dat-dakka|这也叫达卡？]] — 1 CP、Shooting phase、More Dakka! 分队、Strategic Ploy Stratagem。
+- [[factions/兽人/stratagems/impending-crunch|迫近碾压]] — 1 CP、Charge phase、Rollin' Deff 分队。
+- [[factions/兽人/stratagems/dat-ones-even-bigga|那个更大]] — 1 CP、Charge phase、Da Big Hunt 分队、Strategic Ploy Stratagem。
+- [[factions/兽人/stratagems/dats-ours|那是我们的]] — 1 CP、Command phase、Taktikal Brigade 分队、Strategic Ploy Strata...
+- [[factions/兽人/stratagems/long-uncontrolled-bursts|长时间失控射击]] — 1 CP、Shooting phase、More Dakka! 分队、Battle Tactic Stratagem。
+- [[factions/兽人/stratagems/blitza-fire|闪电射击]] — 1 CP、Shooting phase、Kult of Speed 分队、Battle Tactic Stratagem...
+- [[factions/兽人/stratagems/evasive-manoova|闪避机动]] — 1 CP、Fight phase、Speedwaaagh! 分队、Strategic Ploy Stratagem。
+- [[factions/兽人/stratagems/extra-gubbinz|额外配件]] — 1 CP、Shooting phase、Dread Mob 分队、Battle Tactic Stratagem。
+
+## 强化
+
+- [[factions/兽人/enhancements/bionik-workshop|仿生工坊]] — 15 分、Freebooter Krew 分队。
+- [[factions/兽人/enhancements/tellyporta-bully-boyz|传送器（Kaptin）]] — 25 分、Bully Boyz 分队。
+- [[factions/兽人/enhancements/tellyporta-kaptin-killers|传送器（Kaptin）]] — 0 分、Kaptin Killers 分队。
+- [[factions/兽人/enhancements/scarred-brute|伤痕蛮兽]] — 0 分、Ramship Raiders 分队。
+- [[factions/兽人/enhancements/ferocious-show-off|凶猛炫耀者]] — 10 分、Green Tide 分队。
+- [[factions/兽人/enhancements/skrag-every-stash|劫掠每个藏匿处]] — 25 分、Da Big Hunt 分队。
+- [[factions/兽人/enhancements/gnasher-squig-crates|咬牙菌箱]] — 0 分、Kaptin Killers 分队。
+- [[factions/兽人/enhancements/raucous-warcaller|喧闹战嚎者]] — 20 分、Green Tide 分队。
+- [[factions/兽人/enhancements/bloodthirsty-belligerence|嗜血好战]] — 15 分、Green Tide 分队。
+- [[factions/兽人/enhancements/surly-as-a-squiggoth|壮如刺角兽]] — 20 分、Da Big Hunt 分队。
+- [[factions/兽人/enhancements/big-gob|大嘴]] — 20 分、Bully Boyz 分队。
+- [[factions/兽人/enhancements/master-meknologist|大师技工]] — 20 分、Speedwaaagh! 分队。
+- [[factions/兽人/enhancements/kustom-shokk-box|定制冲击箱]] — 10 分、Speedwaaagh! 分队。
+- [[factions/兽人/enhancements/skwad-leader|小队长]] — 15 分、Taktikal Brigade 分队。
+- [[factions/兽人/enhancements/da-gobshot-thunderbuss|戈布肖特雷鸣铳]] — 15 分、More Dakka! 分队。
+- [[factions/兽人/enhancements/gob-boomer|戈布轰炸机]] — 10 分、Taktikal Brigade 分队。
+- [[factions/兽人/enhancements/git-spotter-squig|找子菌]] — 20 分、Freebooter Krew 分队。
+- [[factions/兽人/enhancements/gitfinder-googlez|找目标护目镜]] — 10 分、Dread Mob 分队。
+- [[factions/兽人/enhancements/mek-kaptin|技工队长]] — 45 分、Taktikal Brigade 分队。
+- [[factions/兽人/enhancements/razgits-magik-map|拉兹吉特魔法地图]] — 25 分、Freebooter Krew 分队。
+- [[factions/兽人/enhancements/press-it-fasta|按快点]] — 35 分、Dread Mob 分队。
+- [[factions/兽人/enhancements/headwoppas-killchoppa|断头者砍刀]] — 20 分、War Horde 分队。
+- [[factions/兽人/enhancements/da-biggest-boss|最大老大]] — 15 分、Bully Boyz 分队。
+- [[factions/兽人/enhancements/brutal-but-kunnin|残暴又狡猾]] — 25 分、Green Tide 分队。
+- [[factions/兽人/enhancements/fasta-than-yooz|比你快]] — 35 分、Kult of Speed 分队。
+- [[factions/兽人/enhancements/living-battering-ram|活体撞锤]] — 0 分、Ramship Raiders 分队。
+- [[factions/兽人/enhancements/zog-off-and-eat-dakka|滚开吃达卡]] — 10 分、More Dakka! 分队。
+- [[factions/兽人/enhancements/smoky-gubbinz|烟雾配件]] — 15 分、Dread Mob 分队。
+- [[factions/兽人/enhancements/eadstompa|爆头者]] — 10 分、Bully Boyz 分队。
+- [[factions/兽人/enhancements/kunnin-but-brutal|狡猾又残暴]] — 15 分、War Horde 分队。
+- [[factions/兽人/enhancements/wazblasta|瓦兹炮]] — 10 分、Kult of Speed 分队。
+- [[factions/兽人/enhancements/boarding-ramps|登舰坡道]] — 分数未知、Rollin' Deff 分队。
+- [[factions/兽人/enhancements/proper-killy|真能杀]] — 15 分、Da Big Hunt 分队。
+- [[factions/兽人/enhancements/targetin-squigs|瞄准菌]] — 15 分、More Dakka! 分队。
+- [[factions/兽人/enhancements/targetin-gizmos|瞄准装置]] — 分数未知、Rollin' Deff 分队。
+- [[factions/兽人/enhancements/tuff-git|硬汉]] — 5 分、Blitz Brigade 分队。
+- [[factions/兽人/enhancements/glory-hog|荣耀猪]] — 30 分、Da Big Hunt 分队。
+- [[factions/兽人/enhancements/morks-kunnin|莫克的狡诈]] — 15 分、Taktikal Brigade 分队。
+- [[factions/兽人/enhancements/squig-hide-tyres|菌皮轮胎]] — 15 分、Kult of Speed 分队。
+- [[factions/兽人/enhancements/supa-glowy-fing|超亮玩意]] — 20 分、Dread Mob 分队。
+- [[factions/兽人/enhancements/supercharged-squig-oil|超充菌油]] — 10 分、Blitz Brigade 分队。
+- [[factions/兽人/enhancements/supa-burny-fuel|超燃燃料]] — 15 分、Speedwaaagh! 分队。
+- [[factions/兽人/enhancements/supa-cybork-body|超级赛博兽人身躯]] — 15 分、War Horde 分队。
+- [[factions/兽人/enhancements/runnin-boots|跑鞋]] — 10 分、Blitz Brigade 分队。
+- [[factions/兽人/enhancements/follow-me-ladz|跟我上小子]] — 25 分、War Horde 分队。
+- [[factions/兽人/enhancements/dakkamek|达卡技工]] — 25 分、Speedwaaagh! 分队。
+- [[factions/兽人/enhancements/speed-makes-right|速度即真理]] — 25 分、Kult of Speed 分队。
+- [[factions/兽人/enhancements/dead-shiny-shootas|闪亮射手]] — 35 分、More Dakka! 分队。
+- [[factions/兽人/enhancements/blitzkaptin|闪电队长]] — 25 分、Blitz Brigade 分队。
+- [[factions/兽人/enhancements/da-kaptin|队长]] — 10 分、Freebooter Krew 分队。
 

@@ -1,5 +1,5 @@
 ---
-id: 000001148
+id: '000001148'
 name_zh: 比拉克
 name_en: Be’lakor
 faction: 混沌恶魔
@@ -50,4 +50,4 @@ updated: '2026-07-23'
 
 ## 关键词
 - **阵营关键词**：Legiones Daemonica
-- **普通关键词**：[[core-rules/psyker.md|Psyker]]，[[core-rules/character.md|Character]]，[[core-rules/epic-hero.md|Epic Hero]]，Fly，Monster，Shadow Legion，Be’lakor，Daemon，Chaos
+- **普通关键词**：[[core-rules/psyker.md|Psyker]]，[[core-rules/character.md|Character]]，[[core-rules/epic-hero.md|Epic Hero]]，Fly，Monster，[[factions/混沌恶魔/detachments/shadow-legion.md|Shadow Legion]]，Be’lakor，Daemon，Chaos

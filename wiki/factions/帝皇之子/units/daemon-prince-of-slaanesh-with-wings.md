@@ -1,5 +1,5 @@
 ---
-id: 000004087
+id: '000004087'
 name_zh: 有翼色孽恶魔王子
 name_en: Daemon Prince of Slaanesh with Wings
 faction: 帝皇之子

@@ -1,5 +1,5 @@
 ---
-id: 000004128
+id: '000004128'
 name_zh: 蓝惧妖
 name_en: Blue Horrors
 faction: 千子

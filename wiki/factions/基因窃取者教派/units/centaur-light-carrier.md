@@ -1,5 +1,5 @@
 ---
-id: 000003998
+id: '000003998'
 name_en: Centaur Light Carrier
 faction: 基因窃取者教派
 type: unit

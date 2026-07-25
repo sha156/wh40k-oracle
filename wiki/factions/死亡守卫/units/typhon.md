@@ -1,5 +1,5 @@
 ---
-id: 000003680
+id: '000003680'
 name_en: Typhon
 faction: 死亡守卫
 type: unit

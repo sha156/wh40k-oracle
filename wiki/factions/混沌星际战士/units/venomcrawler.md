@@ -1,5 +1,5 @@
 ---
-id: 000001586
+id: '000001586'
 name_zh: 剧毒爬行者
 name_en: Venomcrawler
 faction: 混沌星际战士

@@ -29,7 +29,7 @@ updated: '2026-07-23'
 ## 射击武器
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| 黑暗赐福 | 24" | 9 | 2+ | 4 | -1 | 1 | [[core-rules/ignores-cover.md\|ignores cover]]，[[core-rules/psychic-attacks.md\|psychic]]，[[core-rules/sustained-hits.md\|sustained hits 1]] |
+| [[factions/帝皇之子/enhancements/dark-blessings.md\|黑暗赐福]] | 24" | 9 | 2+ | 4 | -1 | 1 | [[core-rules/ignores-cover.md\|ignores cover]]，[[core-rules/psychic-attacks.md\|psychic]]，[[core-rules/sustained-hits.md\|sustained hits 1]] |
 | 狱火加农炮 | 24" | 3 | 2+ | 5 | -2 | 2 | — |
 
 ## 近战武器

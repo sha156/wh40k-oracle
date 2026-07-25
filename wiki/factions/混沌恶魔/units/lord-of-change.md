@@ -41,7 +41,7 @@ updated: '2026-07-23'
 
 ## 技能
 - **奸奇魔王(光环)**：当该模型 6" 内的己方奸奇逆理魔军单位中的模型进行远程攻击时，攻击的力量属性增加 1 点。
-- **魔法之主（灵能）**：在己方射击阶段中，选择以下一个技能：[无视掩体]；[致命一击]；[连击 D3]。直到阶段结束前，该模型装备的篡变之矢获得选择的技能。
+- **魔法之主（灵能）**：在己方射击阶段中，选择以[[factions/兽人/stratagems/on-to-da-next.md|下一个]]技能：[无视掩体]；[致命一击]；[连击 D3]。直到阶段结束前，该模型装备的篡变之矢获得选择的技能。
 - **高阶奸奇恶魔（光环)**：当一个己方奸奇逆理魔军单位位于该模型的 6" 内时，那个单位位于己方混沌之影中。
 
 ## 单位构成
@@ -49,4 +49,4 @@ updated: '2026-07-23'
 
 ## 关键词
 - **阵营关键词**：Legiones Daemonica
-- **普通关键词**：[[core-rules/character.md|Character]]，Monster，Tzeentch，Lord of Change，Shadow Legion，[[core-rules/psyker.md|Psyker]]，Fly，Chaos，Daemon
+- **普通关键词**：[[core-rules/character.md|Character]]，Monster，Tzeentch，Lord of Change，[[factions/混沌恶魔/detachments/shadow-legion.md|Shadow Legion]]，[[core-rules/psyker.md|Psyker]]，Fly，Chaos，Daemon

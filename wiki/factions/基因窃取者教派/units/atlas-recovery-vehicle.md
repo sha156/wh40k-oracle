@@ -1,5 +1,5 @@
 ---
-id: 000003996
+id: '000003996'
 name_en: Atlas Recovery Vehicle
 faction: 基因窃取者教派
 type: unit

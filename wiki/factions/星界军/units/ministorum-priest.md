@@ -1,5 +1,5 @@
 ---
-id: 000001394
+id: '000001394'
 name_zh: 教廷牧师
 name_en: Ministorum Priest
 faction: 星界军

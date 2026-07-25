@@ -1,5 +1,5 @@
 ---
-id: 000003845
+id: '000003845'
 name_zh: 黑暗巫会
 name_en: Dark Commune
 faction: 混沌骑士

@@ -41,4 +41,4 @@ updated: '2026-07-23'
 
 ## 关键词
 - **阵营关键词**：Legiones Daemonica
-- **普通关键词**：Fiends，Slaanesh，Daemon，Chaos，[[core-rules/beast.md|Beast]]，Shadow Legion
+- **普通关键词**：Fiends，Slaanesh，Daemon，Chaos，[[core-rules/beast.md|Beast]]，[[factions/混沌恶魔/detachments/shadow-legion.md|Shadow Legion]]

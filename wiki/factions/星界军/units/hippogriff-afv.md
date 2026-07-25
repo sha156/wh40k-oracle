@@ -1,5 +1,5 @@
 ---
-id: 000004219
+id: '000004219'
 name_zh: 鹫马装甲战车
 name_en: Hippogriff AFV
 faction: 星界军

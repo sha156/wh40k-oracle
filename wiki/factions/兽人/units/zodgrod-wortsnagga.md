@@ -1,5 +1,5 @@
 ---
-id: 000002488
+id: '000002488'
 name_zh: 超级屁精老大监工佐德格罗德·沃茨纳加
 name_en: Zodgrod Wortsnagga
 faction: 兽人

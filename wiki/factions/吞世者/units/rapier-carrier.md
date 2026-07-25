@@ -1,5 +1,5 @@
 ---
-id: 000003669
+id: '000003669'
 name_en: Rapier Carrier
 faction: 吞世者
 type: unit

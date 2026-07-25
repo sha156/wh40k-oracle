@@ -1,5 +1,5 @@
 ---
-id: 000000967
+id: '000000967'
 name_zh: 铸造魔
 name_en: Forgefiend
 faction: 混沌星际战士

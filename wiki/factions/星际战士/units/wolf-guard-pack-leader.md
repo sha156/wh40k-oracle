@@ -1,5 +1,5 @@
 ---
-id: 000002804
+id: '000002804'
 name_en: Wolf Guard Pack Leader
 faction: 星际战士
 type: unit
@@ -51,4 +51,4 @@ updated: '2026-07-23'
 
 ## 关键词
 - **阵营关键词**：Adeptus Astartes，Space Wolves
-- **普通关键词**：Pack Leader，Imperium，[[core-rules/infantry.md|Infantry]]，[[core-rules/character.md|Character]]，[[core-rules/grenades.md|Grenades]]，Wolf Guard Pack Leader
+- **普通关键词**：Pack Leader，Imperium，[[core-rules/infantry.md|Infantry]]，[[core-rules/character.md|Character]]，[[core-rules/grenades.md|Grenades]]，[[factions/星际战士/units/wolf-guard.md|Wolf Guard]] Pack Leader

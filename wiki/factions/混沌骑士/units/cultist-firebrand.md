@@ -1,5 +1,5 @@
 ---
-id: 000003844
+id: '000003844'
 name_zh: 邪教徒纵火者
 name_en: Cultist Firebrand
 faction: 混沌骑士

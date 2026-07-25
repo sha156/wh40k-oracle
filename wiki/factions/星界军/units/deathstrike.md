@@ -1,5 +1,5 @@
 ---
-id: 000000699
+id: '000000699'
 name_zh: 死亡直击导弹车
 name_en: Deathstrike
 faction: 星界军

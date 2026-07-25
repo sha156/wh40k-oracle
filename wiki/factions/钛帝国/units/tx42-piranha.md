@@ -1,5 +1,5 @@
 ---
-id: 000000448
+id: '000000448'
 name_zh: TX-42水虎鱼
 name_en: Tx42 Piranha
 faction: 钛帝国

@@ -1,5 +1,5 @@
 ---
-id: 000000098
+id: '000000098'
 name_en: Tarantula Sentry Battery
 faction: 星际战士
 type: unit

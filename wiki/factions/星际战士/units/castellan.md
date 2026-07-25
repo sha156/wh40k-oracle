@@ -1,5 +1,5 @@
 ---
-id: 000002793
+id: '000002793'
 name_zh: 堡主
 name_en: Castellan
 faction: 星际战士

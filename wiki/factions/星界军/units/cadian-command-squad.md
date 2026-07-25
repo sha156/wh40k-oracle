@@ -1,5 +1,5 @@
 ---
-id: 000002609
+id: '000002609'
 name_zh: 卡迪安指挥组
 name_en: Cadian Command Squad
 faction: 星界军

@@ -1,5 +1,5 @@
 ---
-id: 000003826
+id: '000003826'
 name_zh: 不屈杀戮小队
 name_en: Indomitor Kill Team
 faction: 帝国特勤

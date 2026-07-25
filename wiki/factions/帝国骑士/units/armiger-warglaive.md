@@ -1,5 +1,5 @@
 ---
-id: 000001482
+id: '000001482'
 name_zh: 战刃侍从
 name_en: Armiger Warglaive
 faction: 帝国骑士

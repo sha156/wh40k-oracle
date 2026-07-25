@@ -45,4 +45,4 @@ updated: '2026-07-23'
 
 ## 关键词
 - **阵营关键词**：Drukhari
-- **普通关键词**：[[core-rules/epic-hero.md|Epic Hero]]，[[core-rules/character.md|Character]]，[[factions/黑暗灵族/units/haemonculus.md|Haemonculus]] Covens，Urien Rakarth，[[core-rules/infantry.md|Infantry]]，Haemonculus，Aeldari
+- **普通关键词**：[[core-rules/epic-hero.md|Epic Hero]]，[[core-rules/character.md|Character]]，[[factions/黑暗灵族/units/haemonculus.md|Haemonculus]] Covens，Urien Rakarth，[[core-rules/infantry.md|Infantry]]，[[factions/黑暗灵族/units/haemonculus.md|Haemonculus]]，Aeldari

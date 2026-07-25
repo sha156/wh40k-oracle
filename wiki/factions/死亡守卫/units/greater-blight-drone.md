@@ -1,5 +1,5 @@
 ---
-id: 000003586
+id: '000003586'
 name_en: Greater Blight Drone
 faction: 死亡守卫
 type: unit

@@ -1,5 +1,5 @@
 ---
-id: 000000297
+id: '000000297'
 name_zh: 杀戮者乌尔里克
 name_en: Ulrik The Slayer
 faction: 星际战士

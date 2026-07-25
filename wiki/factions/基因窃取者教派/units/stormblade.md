@@ -1,5 +1,5 @@
 ---
-id: 000004029
+id: '000004029'
 name_en: Stormblade
 faction: 基因窃取者教派
 type: unit

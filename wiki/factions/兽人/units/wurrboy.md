@@ -1,5 +1,5 @@
 ---
-id: 000002492
+id: '000002492'
 name_zh: 巫术小子
 name_en: Wurrboy
 faction: 兽人

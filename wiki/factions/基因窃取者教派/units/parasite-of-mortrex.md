@@ -1,5 +1,5 @@
 ---
-id: 000003878
+id: '000003878'
 name_zh: 摩崔克斯寄生虫
 name_en: Parasite Of Mortrex
 faction: 基因窃取者教派

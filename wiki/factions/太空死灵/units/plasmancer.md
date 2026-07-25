@@ -1,5 +1,5 @@
 ---
-id: 000002108
+id: '000002108'
 name_zh: 离子技师
 name_en: Plasmancer
 faction: 太空死灵

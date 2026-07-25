@@ -1,5 +1,5 @@
 ---
-id: 000001448
+id: '000001448'
 name_zh: 终结者盾卫连长
 name_en: Shield-captain In Allarus Terminator Armour
 faction: 帝皇卫队

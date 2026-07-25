@@ -1,5 +1,5 @@
 ---
-id: 000002098
+id: '000002098'
 name_zh: 地狱轰击者小队
 name_en: Hellblaster Squad
 faction: 星际战士

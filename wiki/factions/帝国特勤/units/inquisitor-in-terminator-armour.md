@@ -49,4 +49,4 @@ updated: '2026-07-23'
 
 ## 关键词
 - **阵营关键词**：Agents of the Imperium
-- **普通关键词**：[[core-rules/character.md|Character]]，[[core-rules/infantry.md|Infantry]]，Terminator，Imperium，[[core-rules/grenades.md|Grenades]]，Inquisitor
+- **普通关键词**：[[core-rules/character.md|Character]]，[[core-rules/infantry.md|Infantry]]，Terminator，Imperium，[[core-rules/grenades.md|Grenades]]，[[factions/帝国特勤/units/inquisitor.md|Inquisitor]]

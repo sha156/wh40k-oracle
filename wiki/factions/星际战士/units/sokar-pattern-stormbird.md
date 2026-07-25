@@ -1,5 +1,5 @@
 ---
-id: 000001179
+id: '000001179'
 name_en: Sokar-pattern Stormbird
 faction: 星际战士
 type: unit

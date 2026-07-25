@@ -1,5 +1,5 @@
 ---
-id: 000001298
+id: '000001298'
 name_en: Greater Brass Scorpion
 faction: 混沌星际战士
 type: unit

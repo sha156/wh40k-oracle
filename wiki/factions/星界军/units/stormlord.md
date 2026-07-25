@@ -1,5 +1,5 @@
 ---
-id: 000000708
+id: '000000708'
 name_zh: 风暴领主
 name_en: Stormlord
 faction: 星界军

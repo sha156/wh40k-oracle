@@ -1,5 +1,5 @@
 ---
-id: 000000728
+id: '000000728'
 name_en: Atlas Recovery Vehicle
 faction: 星界军
 type: unit

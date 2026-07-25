@@ -1,5 +1,5 @@
 ---
-id: 000001393
+id: '000001393'
 name_en: Firestorm
 faction: 艾达灵族
 type: unit

@@ -1,5 +1,5 @@
 ---
-id: 000000858
+id: '000000858'
 name_zh: 勇武骑士
 name_en: Knight Gallant
 faction: 帝国骑士

@@ -1,5 +1,5 @@
 ---
-id: 000000848
+id: '000000848'
 name_zh: 护教军游猎兵
 name_en: Skitarii Rangers
 faction: 机械修会

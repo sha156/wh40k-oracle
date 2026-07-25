@@ -1,5 +1,5 @@
 ---
-id: 000003898
+id: '000003898'
 name_zh: 死亡骑兵
 name_en: Death Riders
 faction: 星界军

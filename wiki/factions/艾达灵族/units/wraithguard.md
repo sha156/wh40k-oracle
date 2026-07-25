@@ -1,5 +1,5 @@
 ---
-id: 000000597
+id: '000000597'
 name_zh: 幽冥护卫
 name_en: Wraithguard
 faction: 艾达灵族

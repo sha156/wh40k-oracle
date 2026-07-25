@@ -1,5 +1,5 @@
 ---
-id: 000000384
+id: '000000384'
 name_zh: 圣骑⼠⼩队
 name_en: Paladin Squad
 faction: 灰骑士

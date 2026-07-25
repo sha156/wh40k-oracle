@@ -1,5 +1,5 @@
 ---
-id: 000001486
+id: '000001486'
 name_zh: 英勇骑士
 name_en: Knight Valiant
 faction: 帝国骑士

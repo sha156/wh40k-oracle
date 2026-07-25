@@ -1,5 +1,5 @@
 ---
-id: 000003946
+id: '000003946'
 name_en: Quartermaster Cadre Squad
 faction: 基因窃取者教派
 type: unit

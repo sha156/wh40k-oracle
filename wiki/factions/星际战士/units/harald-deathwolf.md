@@ -1,5 +1,5 @@
 ---
-id: 000000287
+id: '000000287'
 name_en: Harald Deathwolf
 faction: 星际战士
 type: unit

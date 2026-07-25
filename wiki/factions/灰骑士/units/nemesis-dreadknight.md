@@ -1,5 +1,5 @@
 ---
-id: 000000389
+id: '000000389'
 name_zh: 涅墨⻄斯骇骑机甲
 name_en: Nemesis Dreadknight
 faction: 灰骑士

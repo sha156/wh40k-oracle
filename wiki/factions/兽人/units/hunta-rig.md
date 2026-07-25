@@ -1,5 +1,5 @@
 ---
-id: 000002498
+id: '000002498'
 name_zh: 狩猎战车
 name_en: Hunta Rig
 faction: 兽人

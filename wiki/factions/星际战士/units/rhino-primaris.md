@@ -1,5 +1,5 @@
 ---
-id: 000000085
+id: '000000085'
 name_en: Rhino Primaris
 faction: 星际战士
 type: unit
@@ -43,4 +43,4 @@ updated: '2026-07-23'
 
 ## 关键词
 - **阵营关键词**：Adeptus Astartes
-- **普通关键词**：[[core-rules/smoke.md|Smoke]]，Vehicle，[[core-rules/transport.md|Transport]]，Imperium，Rhino Primaris
+- **普通关键词**：[[core-rules/smoke.md|Smoke]]，Vehicle，[[core-rules/transport.md|Transport]]，Imperium，[[factions/星际战士/units/rhino.md|Rhino]] Primaris

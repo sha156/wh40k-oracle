@@ -1,5 +1,5 @@
 ---
-id: 000002692
+id: '000002692'
 name_zh: 生化喷吐泰伦武士
 name_en: Tyranid Warriors With Ranged Bio-weapons
 faction: 泰伦虫族

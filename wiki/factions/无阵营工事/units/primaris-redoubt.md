@@ -1,5 +1,5 @@
 ---
-id: 000000786
+id: '000000786'
 name_en: Primaris Redoubt
 faction: 无阵营工事
 type: unit

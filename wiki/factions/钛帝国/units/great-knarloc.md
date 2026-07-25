@@ -1,5 +1,5 @@
 ---
-id: 000001392
+id: '000001392'
 name_zh: 卡纳罗克巨兽
 name_en: Great Knarloc
 faction: 钛帝国

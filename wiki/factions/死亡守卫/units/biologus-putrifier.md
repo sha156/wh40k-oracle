@@ -1,5 +1,5 @@
 ---
-id: 000001368
+id: '000001368'
 name_zh: 病毒精练者
 name_en: Biologus Putrifier
 faction: 死亡守卫

@@ -1,5 +1,5 @@
 ---
-id: 000004090
+id: '000004090'
 name_zh: 混沌卵
 name_en: Chaos Spawn
 faction: 帝皇之子

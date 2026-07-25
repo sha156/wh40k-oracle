@@ -1,5 +1,5 @@
 ---
-id: 000003941
+id: '000003941'
 name_zh: 克里格指挥组
 name_en: Krieg Command Squad
 faction: 基因窃取者教派

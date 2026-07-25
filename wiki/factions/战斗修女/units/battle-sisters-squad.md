@@ -1,5 +1,5 @@
 ---
-id: 000000903
+id: '000000903'
 name_zh: 战斗修女小队
 name_en: Battle Sisters Squad
 faction: 战斗修女

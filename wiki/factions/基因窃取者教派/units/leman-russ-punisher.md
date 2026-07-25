@@ -1,5 +1,5 @@
 ---
-id: 000003984
+id: '000003984'
 name_zh: 黎曼鲁斯惩罚者
 name_en: Leman Russ Punisher
 faction: 基因窃取者教派

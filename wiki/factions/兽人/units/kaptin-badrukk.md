@@ -1,5 +1,5 @@
 ---
-id: 000000009
+id: '000000009'
 name_en: Kaptin Badrukk
 faction: 兽人
 type: unit

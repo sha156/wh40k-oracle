@@ -1,5 +1,5 @@
 ---
-id: 000003916
+id: '000003916'
 name_en: Ynnari Kabalite Warriors
 faction: 艾达灵族
 type: unit

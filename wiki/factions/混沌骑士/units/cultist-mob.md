@@ -1,5 +1,5 @@
 ---
-id: 000003849
+id: '000003849'
 name_zh: 邪教徒
 name_en: Cultist Mob
 faction: 混沌骑士

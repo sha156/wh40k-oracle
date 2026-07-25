@@ -1,5 +1,5 @@
 ---
-id: 000002378
+id: '000002378'
 name_en: Death Rider Commissar
 faction: 星界军
 type: unit
@@ -27,7 +27,7 @@ updated: '2026-07-23'
 ## 射击武器
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| Commissar’s pistol | 12" | 1 | 3+ | 3 | -1 | 1 | [[core-rules/pistol.md\|pistol]] |
+| [[factions/星界军/units/commissar.md\|Commissar]]’s pistol | 12" | 1 | 3+ | 3 | -1 | 1 | [[core-rules/pistol.md\|pistol]] |
 
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |

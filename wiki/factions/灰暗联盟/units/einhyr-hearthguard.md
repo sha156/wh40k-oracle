@@ -1,5 +1,5 @@
 ---
-id: 000002599
+id: '000002599'
 name_zh: 断角炉卫
 name_en: Einhyr Hearthguard
 faction: 灰暗联盟

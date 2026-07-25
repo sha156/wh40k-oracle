@@ -55,6 +55,20 @@ FACTION_NAMES: Dict[str, str] = {
 
 # ── 数据模型 ──────────────────────────────────────────────────────────
 
+class _ForceQuoted(str):
+    """标记「这个字符串必须带引号输出」，供下面的 Dumper 识别。"""
+
+
+class _FrontmatterDumper(yaml.SafeDumper):
+    """只作用于 frontmatter 序列化的 Dumper——不污染全局 yaml.SafeDumper。"""
+
+
+_FrontmatterDumper.add_representer(
+    _ForceQuoted,
+    lambda dumper, data: dumper.represent_scalar("tag:yaml.org,2002:str", str(data),
+                                                 style="'"))
+
+
 @dataclass
 class WikiPageFrontmatter:
     """实体页 YAML frontmatter。
@@ -75,25 +89,49 @@ class WikiPageFrontmatter:
     raw: List[str] = field(default_factory=list)   # data_refined 相对路径回链
     updated: str = ""                # ISO 日期
     verify_warn: bool = False        # LLM 合成时数字校验发现幻觉数字
+    # ── 类型专属字段（宪法 §3.1）。三类实体页 2026-07-25 上线时加。
+    # 为什么不塞进通用字段：cp/cost 是**机器真源**，下游按名取值；
+    # 混进 points 或 version 会让「战略花几 CP」和「单位多少分」共用一个键名。
+    detachment: str = ""             # 所属分队**容器名**（≠ 分队规则名，见 §3.1）
+    cp: Optional[int] = None         # stratagem：CP 消耗
+    phase: str = ""                  # stratagem：使用阶段原文
+    stratagem_type: str = ""         # stratagem：官方类别（战斗战术/传奇伟业/装备…）
+    cost: Optional[int] = None       # enhancement：点数（可为 0，与"没有"不同）
 
     def to_yaml_text(self) -> str:
         """序列化为 YAML frontmatter 文本（不含外围 ---）。"""
         fm_dict: Dict[str, object] = {}
         field_order = [
             "id", "name_zh", "name_en", "aliases", "faction", "type",
+            "detachment", "cp", "phase", "stratagem_type", "cost",
             "points", "keywords", "tags", "version", "sources", "raw",
             "updated", "verify_warn",
         ]
         for fname in field_order:
             val = getattr(self, fname, None)
             # 跳过空值（verify_warn 仅在 True 时输出，避免全量页面噪音）
+            # 例外：cp/cost 的 0 是**真值**（0 CP 战略、0 分增强都存在），
+            # 按"空值"跳过会让页面看起来像缺数据，而不是「就是 0」
+            if fname in ("cp", "cost") and val == 0:
+                fm_dict[fname] = val
+                continue
             if val is None or val == "" or val == [] or val == {}:
                 continue
             if fname == "verify_warn" and not val:
                 continue
             fm_dict[fname] = val
-        return yaml.safe_dump(
+        # id 强制加引号：数字型 id 不加引号会被 YAML 解析成数——实测
+        # `id: 000000412` → int 266（全是合法八进制位），而 `id: 000009218006`
+        # 因含 8/9 反而安全。PyYAML dump 时会替前者加引号、后者不加，于是同一份
+        # wiki 里两种写法并存。统一强制加引号，既符合宪法 §3 也断掉这类隐患。
+        # 只处理**纯数字** id：slug 型 id（tau-empire/units/…）没有这个隐患，
+        # 一并加引号只会让 1800 页存量页面凭空产生 diff。
+        _id = fm_dict.get("id")
+        if isinstance(_id, str) and _id.isdigit():
+            fm_dict["id"] = _ForceQuoted(_id)
+        return yaml.dump(
             fm_dict,
+            Dumper=_FrontmatterDumper,
             allow_unicode=True,
             sort_keys=False,
             default_flow_style=False,
@@ -293,9 +331,13 @@ def entity_page_path(wiki_root: Path, fm: WikiPageFrontmatter) -> Path:
     if fm.type == "core-rule":
         return wiki_root / "core-rules" / "{}.md".format(slugify(fm.id))
     if fm.type in ("unit", "stratagem", "detachment", "enhancement"):
-        fs = faction_slug(fm.faction)
         type_dir = "{0}s".format(fm.type)  # units, stratagems, detachments, enhancements
         name = fm.name_en or fm.name_zh or fm.id
+        if not fm.faction:
+            # 无阵营实体 = 核心战略（指挥重投/疯狂勇气这类每支军队都能用的，实测 28 条）。
+            # 归 core-rules 而不是硬塞进某个阵营目录——后者会谎称它是该阵营专属。
+            return wiki_root / "core-rules" / type_dir / "{}.md".format(slugify(name))
+        fs = faction_slug(fm.faction)
         return wiki_root / "factions" / fs / type_dir / "{}.md".format(slugify(name))
     # fallback
     return wiki_root / "{}.md".format(slugify(fm.id))

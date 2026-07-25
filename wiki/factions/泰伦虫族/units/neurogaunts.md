@@ -1,5 +1,5 @@
 ---
-id: 000002687
+id: '000002687'
 name_zh: 神经虫
 name_en: Neurogaunts
 faction: 泰伦虫族

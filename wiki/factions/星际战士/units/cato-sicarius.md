@@ -1,5 +1,5 @@
 ---
-id: 000004184
+id: '000004184'
 name_zh: 卡托·西卡留斯
 name_en: Cato Sicarius
 faction: 星际战士

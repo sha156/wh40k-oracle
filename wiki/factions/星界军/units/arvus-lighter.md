@@ -1,5 +1,5 @@
 ---
-id: 000000779
+id: '000000779'
 name_en: Arvus Lighter
 faction: 星界军
 type: unit

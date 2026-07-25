@@ -1,5 +1,5 @@
 ---
-id: 000002691
+id: '000002691'
 name_zh: 装备近战活体武器的泰伦武士
 name_en: Tyranid Warriors With Melee Bio-weapons
 faction: 泰伦虫族

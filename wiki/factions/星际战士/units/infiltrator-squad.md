@@ -1,5 +1,5 @@
 ---
-id: 000000128
+id: '000000128'
 name_zh: 渗透者小队
 name_en: Infiltrator Squad
 faction: 星际战士

@@ -1,5 +1,5 @@
 ---
-id: 000004028
+id: '000004028'
 name_en: Sentinel Powerlifter
 faction: 基因窃取者教派
 type: unit

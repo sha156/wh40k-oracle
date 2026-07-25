@@ -1,5 +1,5 @@
 ---
-id: 000001386
+id: '000001386'
 name_en: Attack Fighta
 faction: 兽人
 type: unit

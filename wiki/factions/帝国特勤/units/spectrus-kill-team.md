@@ -1,5 +1,5 @@
 ---
-id: 000003827
+id: '000003827'
 name_zh: 无形杀戮小队
 name_en: Spectrus Kill Team
 faction: 帝国特勤

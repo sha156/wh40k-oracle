@@ -1,5 +1,5 @@
 ---
-id: 000001484
+id: '000001484'
 name_zh: 狼王号
 name_en: Canis Rex
 faction: 帝国骑士

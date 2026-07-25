@@ -1,5 +1,5 @@
 ---
-id: 000003824
+id: '000003824'
 name_en: Proteus Kill Team
 faction: 帝国特勤
 type: unit

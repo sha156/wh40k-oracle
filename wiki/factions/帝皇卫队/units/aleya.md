@@ -1,5 +1,5 @@
 ---
-id: 000002088
+id: '000002088'
 name_zh: 艾雷雅
 name_en: Aleya
 faction: 帝皇卫队

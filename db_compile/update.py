@@ -158,11 +158,20 @@ def stage_build(cfg: UpdateConfig) -> StageResult:
     if rep.skipped:
         warnings.append("缺 id 跳过行数：" + "，".join(
             f"{k} {v}" for k, v in rep.skipped.items()))
+    # CSV 解析对账：解析行数 ≠ 文件真实条目数 = 上游换了版式，行正在被静默合并/丢弃。
+    # 这条必须走 warning 而不是只留在 detail 里——`build` 子命令自己会打印对账，但
+    # 整条 update 管线只显示 summary+warning，不吼就等于没这个门（Stratagems 那条
+    # 裸换行当初就是这样静默换来「多一条垃圾行、少一条真战略」）。
+    bad = rep.unreconciled()
+    if bad:
+        warnings.append("CSV 解析对账不平：" + "，".join(
+            f"{n} 解析 {a['parsed_rows']} vs 真实 {a['expected_rows']}"
+            for n, a in sorted(bad.items())))
     return StageResult(
         "build", True,
         "重建 " + "，".join(f"{k} {v}" for k, v in rep.row_counts.items()),
         detail={"row_counts": rep.row_counts, "missing_csv": rep.missing_csv,
-                "skipped": rep.skipped},
+                "skipped": rep.skipped, "csv_unreconciled": bad},
         warning="；".join(warnings) if warnings else None)
 
 
