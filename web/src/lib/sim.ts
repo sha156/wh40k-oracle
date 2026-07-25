@@ -116,8 +116,10 @@ export interface SimDslEntry {
 
 export interface SimResponse {
   ok: boolean;
-  /** ok=false 时：not_found | loadout_required | defender_loadout_required | error
-   *  （loadout_required=攻方装配，defender_loadout_required=守方反打装配，都附 weaponPool） */
+  /** ok=false 时：not_found | loadout_required | defender_loadout_required |
+   *  no_weapon_for_phase | defender_no_weapon_for_phase | error
+   *  （*_loadout_required=需装配，附 weaponPool 选项池；*_no_weapon_for_phase=该阶段
+   *  没有可开火武器，装配无解，得换阶段/关反打，weaponPool 是完整池仅供展示） */
   reason?: string | null;
   note?: string | null;
   warning?: string | null;

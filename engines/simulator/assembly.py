@@ -5,6 +5,13 @@
   · parse_model_tiers：从 points desc 解析每档模型数（干净可测）
   · assemble_attacker：给定手动 loadout → 组装 AttackerProfile；未给 loadout → 返回
     ambiguous + 武器池，让调用方选（P4 不猜默认装配，见 spec headline 收敛）。
+
+2026-07-25 修：武器池按**阶段**收窄（`usable_in_phase`）。"不猜默认装配"的理由是选项池
+含互斥选项——本阶段可开火武器只剩 1 把时并无选项，逼用户装配等于让他"选唯一项"，且
+射击阶段列出近战武器会诱导出全 0 报告。故：
+  · 该阶段 0 把可开火 → no_phase_weapon（该切阶段，不是该装配）
+  · 该阶段 1 把可开火 → auto_assembled 直接装配（count=模型数），note 披露此假设
+  · ≥2 把 → 照旧 ambiguous，且 weapon_pool 只给该阶段能用的
 """
 from __future__ import annotations
 
@@ -48,6 +55,18 @@ def default_model_count(points_json: Optional[str]) -> Optional[int]:
     return tiers[0]["models"] if tiers else None
 
 
+def usable_in_phase(weapons, phase: Optional[str]) -> List[WeaponProfile]:
+    """该阶段真能开火的武器（melee→近战 / shooting→远程）；phase 未给则原样返回。
+
+    装配层不按阶段滤武器、序列层才滤——纯近战 loadout 打射击阶段会装配成功却 0 攻击
+    （P6 军表侧踩过同一个陷阱）。本函数是装配层/军表点评/模拟入口共用的判据。
+    """
+    if phase not in ("shooting", "melee"):
+        return list(weapons)
+    want_melee = phase == "melee"
+    return [w for w in weapons if w.is_melee == want_melee]
+
+
 @dataclass
 class AssemblyResult:
     """装配结果。ambiguous=True 时 attacker=None，需调用方据 weapon_pool 指定 loadout。"""
@@ -55,11 +74,14 @@ class AssemblyResult:
     name_en: str
     models: int
     tiers: List[Dict]
-    weapon_pool: List[WeaponProfile]
+    weapon_pool: List[WeaponProfile]     # 按 phase 收窄后的可选池（调用方该从这里选）
     attacker: Optional[AttackerProfile] = None
     ambiguous: bool = False
     note: str = ""
     errors: List[str] = field(default_factory=list)
+    full_pool: List[WeaponProfile] = field(default_factory=list)  # 未按阶段过滤的全池
+    no_phase_weapon: bool = False        # 该阶段无可开火武器（该切阶段，不是该装配）
+    auto_assembled: bool = False         # 该阶段唯一武器 → 自动装配（note 披露件数假设）
 
 
 def _match_weapon(pool: List[WeaponProfile], name: str,
@@ -95,14 +117,48 @@ def assemble_attacker(
     resolved_models = (models if models is not None
                        else (tiers[0]["models"] if tiers else 1))
 
+    pool_phase = usable_in_phase(pool, phase)
+
     base = AssemblyResult(
         canonical_id=header.canonical_id, name_en=header.name_en,
-        models=resolved_models, tiers=tiers, weapon_pool=pool)
+        models=resolved_models, tiers=tiers, weapon_pool=pool_phase,
+        full_pool=pool)
+
+    def _mk_attacker(chosen: List[WeaponProfile]) -> AttackerProfile:
+        return AttackerProfile(
+            canonical_id=header.canonical_id, name_en=header.name_en,
+            name_zh=header.name_zh, models=resolved_models,
+            loadout=tuple(chosen), keywords=header.keywords)
 
     if not loadout:
+        here = "近战" if phase == "melee" else "射击"
+        other = "射击" if phase == "melee" else "近战"
+        if not pool:
+            base.ambiguous = True
+            base.note = "该单位武器表为空（数据缺口），无法装配"
+            return base
+        if not pool_phase:
+            # 全池非空但本阶段无可开火武器：要求装配是无解的（填任何数量都 0 攻击）
+            base.ambiguous = True
+            base.no_phase_weapon = True
+            base.note = (
+                f"该单位在{here}阶段没有可开火武器——武器池里只有{other}武器"
+                f"（{'、'.join(w.name_en for w in pool[:6])}）。请切到{other}阶段再模拟。")
+            return base
+        if len(pool_phase) == 1:
+            # 该阶段只有一把武器 ⇒ 无互斥选项可选，逼用户装配纯属卡住；件数按满编假设并披露
+            only = pool_phase[0]
+            base.attacker = _mk_attacker([replace(only, count=resolved_models)])
+            base.auto_assembled = True
+            base.note = (
+                f"{here}阶段武器池只有 1 把（{only.name_en}），无可选项 → 已按每个模型各带"
+                f" 1 件自动装配（{resolved_models} 件）；要改件数请显式指定 loadout")
+            return base
         base.ambiguous = True
         base.note = ("武器表是选项池（含互斥选项），P4 不猜默认装配；"
                      "请据 weapon_pool 指定 loadout=[(武器名,数量),...]")
+        if len(pool_phase) < len(pool):
+            base.note += f"（已按{here}阶段过滤，另有 {len(pool) - len(pool_phase)} 把{other}武器）"
         return base
 
     chosen: List[WeaponProfile] = []
@@ -123,9 +179,6 @@ def assemble_attacker(
         base.note = "loadout 存在无法匹配的武器，见 errors"
         return base
 
-    base.attacker = AttackerProfile(
-        canonical_id=header.canonical_id, name_en=header.name_en,
-        name_zh=header.name_zh, models=resolved_models,
-        loadout=tuple(chosen), keywords=header.keywords)
+    base.attacker = _mk_attacker(chosen)
     base.note = "ok"
     return base

@@ -201,9 +201,20 @@ export default function SimulatorPage() {
   const needLoadout = resp != null && !resp.ok && resp.reason === "loadout_required";
   const needDefLoadout =
     resp != null && !resp.ok && resp.reason === "defender_loadout_required";
+  // 该阶段没有可开火武器（如只有近战武器的单位在射击阶段）——装配救不了，得换阶段
+  const wrongPhase = resp != null && !resp.ok && resp.reason === "no_weapon_for_phase";
+  // 守方在反打阶段（恒近战）没有可开火武器——只能关掉反打看单向
+  const defWrongPhase =
+    resp != null && !resp.ok && resp.reason === "defender_no_weapon_for_phase";
   const failedOther =
     resp != null && !resp.ok &&
     resp.reason !== "loadout_required" && resp.reason !== "defender_loadout_required";
+  // 「全员」一键填件数用的模型数：手填优先，否则取后端返回的最小点数档
+  const fillOf = (input: string) => {
+    const n = parseInt(input, 10);
+    if (n > 0) return n;
+    return resp?.modelTiers?.[0]?.models ?? 1;
+  };
   const atkLabel = atk.unit ? (atk.unit.nameZh ?? atk.unit.nameEn) : "";
   const dfdLabel = dfd.unit ? (dfd.unit.nameZh ?? dfd.unit.nameEn) : "";
 
@@ -331,6 +342,7 @@ export default function SimulatorPage() {
             loadout={loadout}
             onChange={(w, c) => setLoadout((prev) => ({ ...prev, [w]: c }))}
             accent="gold"
+            fillCount={fillOf(aModels)}
           />
         ) : null}
 
@@ -344,13 +356,32 @@ export default function SimulatorPage() {
             loadout={defLoadout}
             onChange={(w, c) => setDefLoadout((prev) => ({ ...prev, [w]: c }))}
             accent="cyan"
+            fillCount={fillOf(dModels)}
           />
         ) : null}
 
         {failedOther ? (
-          <p className="mt-4 border border-redfont/40 bg-[#1a0d0d] px-4 py-3 text-[13px] text-[#d99]">
-            {resp?.note || "模拟失败"}
-          </p>
+          <div className="mt-4 flex flex-wrap items-center gap-3 border border-redfont/40 bg-[#1a0d0d] px-4 py-3 text-[13px] text-[#d99]">
+            <p>{resp?.note || "模拟失败"}</p>
+            {wrongPhase ? (
+              <button
+                type="button"
+                onClick={() => switchPhase(phase === "shooting" ? "melee" : "shooting")}
+                className="clip-slant-8 border border-redfont/60 px-3 py-0.5 font-cond text-[12.5px] tracking-[1px] text-bone hover:bg-redfont/20"
+              >
+                切到{phase === "shooting" ? "近战" : "射击"}阶段
+              </button>
+            ) : null}
+            {defWrongPhase ? (
+              <button
+                type="button"
+                onClick={() => toggleReverse(false)}
+                className="clip-slant-8 border border-redfont/60 px-3 py-0.5 font-cond text-[12.5px] tracking-[1px] text-bone hover:bg-redfont/20"
+              >
+                关闭守方反打
+              </button>
+            ) : null}
+          </div>
         ) : null}
 
         <div className="mt-4">

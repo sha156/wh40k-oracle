@@ -64,10 +64,11 @@ class CritiqueReport:
 
 def _has_phase_weapons(attacker, phase: str) -> bool:
     """该阶段是否真有可开火武器——防「纯近战 loadout 在射击阶段装配成功但 0 攻击」的
-    静默 0 伤陷阱（装配层不按阶段滤武器，序列层才滤；此处提前判）。"""
-    if phase == "melee":
-        return any(w.is_melee for w in attacker.loadout)
-    return any(not w.is_melee for w in attacker.loadout)
+    静默 0 伤陷阱（装配层不按阶段滤武器，序列层才滤；此处提前判）。
+
+    判据与装配层/模拟入口共用 assembly.usable_in_phase，避免三处各写一份滤法。"""
+    from engines.simulator.assembly import usable_in_phase
+    return bool(usable_in_phase(attacker.loadout, phase))
 
 
 def _assemble_phases(db_path, unit):

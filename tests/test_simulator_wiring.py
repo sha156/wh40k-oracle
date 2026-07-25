@@ -174,14 +174,18 @@ def test_mirror_matchup_respects_fight_order():
     B 先手时 A 以幸存者出手，bias_notes 必含『B 先手满编反打』。
     """
     from agent.tools import simulate_combat
+    # 近战阶段两侧都必须拿近战武器：原来这里填 Bolt rifle（射击武器）会被序列层滤成
+    # 0 攻击，只是"顺序注记"仍在，属于假成功；现在装配层显式拒收（no_weapon_for_phase）
     res = simulate_combat(
         "Intercessor Squad", "Intercessor Squad",
-        {"loadout": [["Bolt rifle", 5]], "defender_loadout": [["Bolt rifle", 5]],
+        {"loadout": [["Close combat weapon", 5]],
+         "defender_loadout": [["Close combat weapon", 5]],
          "phase": "melee", "charge": False, "defender_fights_first": True,
          "n": 2000})
-    assert res["ok"]
+    assert res["ok"], res.get("note")
     notes = res["report"]["bias_notes"]
     assert any("B 先手满编" in nm for nm in notes)
+    assert res["report"]["funnel"]["attacks"] > 0      # 真有近战攻击，不是 0 攻击空转
 
 
 @pytestmark_db
