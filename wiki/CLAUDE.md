@@ -30,20 +30,23 @@ wiki/
 ├── .obsidian/           本地 Obsidian 配置，不提交 git
 ├── core-rules/          全部"规则类"页面（含阵营机制，见 §2）
 │   └── <english-slug>.md
+├── indexes/             索引类生成物（不是实体页，禁止手改）
+│   └── keywords.md      武器词条（USR）总索引 + 反查
 └── factions/<中文阵营名>/
     ├── index.md         阵营索引 —— 生成物
     ├── units/           兵牌页（1 张 Wahapedia datasheet = 1 页）
-    ├── stratagems/      计谋（目录未建，命名已预留）
-    ├── detachments/     分队（预留）
-    └── enhancements/    强化（预留）
+    ├── stratagems/      战略（1 条 stratagem = 1 页）
+    ├── detachments/     分队（1 个分队容器 = 1 页）
+    └── enhancements/    增强（1 条 enhancement = 1 页）
 
 未来扩展（见 §10 扩展协议，未走完协议前不得建目录）：
     missions/            任务/部署图
     maps/                地形/战场
+    faq/                 官方 FAQ / 勘误（源已备齐，尚未立项）
 ```
 
 - **阵营目录名 = 中文阵营名**，且必须取自 `wiki_engine/models.py` 的 `FACTION_NAMES` 映射（钛帝国、吞世者、星际战士……21 个）。新阵营先在 `FACTION_NAMES` 登记，再建目录。
-- 生成物清单（禁止手工编辑，改了也会被下次 build 覆盖）：`index.md`、`factions/*/index.md`、`lint-report.md`、`terms.md`、`terms.json`、`review_needed.md`。**想改索引里的内容 = 去改实体页，然后重跑 build。**
+- 生成物清单（禁止手工编辑，改了也会被下次 build 覆盖）：`index.md`、`factions/*/index.md`、`indexes/keywords.md`、`lint-report.md`、`terms.md`、`terms.json`、`review_needed.md`。**想改索引里的内容 = 去改实体页，然后重跑 build。**
 
 ## 2. 内容放哪里：分层判定
 
@@ -72,6 +75,21 @@ wiki/
 | `raw` | ✅（流水线页） | `data_refined/` 回链，人工手写页可缺但要在 sources 里写全 |
 | `updated` | ✅ | ISO 日期字符串（加引号防 YAML 解析成 date 对象） |
 | `verify_warn` | 仅 True 时写 | LLM 合成数字校验未通过的标记，人工核对流程见 §7 |
+
+### 3.1 类型专属字段（stratagem / detachment / enhancement）
+
+三类都由 `wiki_engine/from_db.py` 从 `db/wh40k.sqlite` 确定性渲染，`id` 用库主键（字符串，YAML 加引号）。
+
+| 类型 | 附加必填 | 说明 |
+|------|----------|------|
+| `stratagem` | `cp`、`phase`、`detachment` | `cp` 取 `stratagems.cp_cost`（整数）；`phase` 取原文阶段串；`detachment` 是**容器名**（`stratagems.detachment`），不是分队规则名——两者在库里是不同的东西，见下 |
+| `detachment` | `detachment`（容器名，与自身 `name_en` 同值） | `rule_text` 是分队规则正文。⚠️ `detachments` 表存的是**规则名**；容器名的真源是 `enhancements.detachment_name` ∪ `stratagems.detachment`（实测交集 321 = 真容器数） |
+| `enhancement` | `cost`、`detachment` | `cost` 取 `enhancements.cost`（点数，可为 0）；927/1058 非空，缺的照实留空不猜 |
+
+**中文名策略（2026-07-25 用户裁决：与官网保持一致）**：`name_zh` 只用于**名称**，来源限于库内
+`name_zh` 与 `dsl_payloads/*.json`（11 版 Faction Pack 编码时的人工译名）。
+**正文一律官方英文原文**，不叠十版汉化译本——译本与 11 版存在漂移（FP added_11e 200 / removed_11e 47），
+叠上去会得到「读着通顺但与官网不一致」的页面。缺中文名时留英文，不机翻。
 
 ## 4. 页面正文模板
 
@@ -113,6 +131,41 @@ wiki/
   `> 部分汉化版本译作"××"，与"△△"为同一概念 Xxx Yyy 的不同译名。`
   同时把这些译名全部收进 frontmatter `aliases`。
 - 参数化技能（速射1、热熔2、斥候7"）要给出带例子的解释，见 [[core-rules/rapid-fire.md|速射]] 的写法。
+
+### 4.4 stratagem 页（三节，顺序固定）
+
+```markdown
+## 使用时机
+## 使用对象
+## 效果
+```
+
+- 三节分别对应官方 **WHEN / TARGET / EFFECT** 三段；库里 `text_zh` 是含 `<b>WHEN:</b>` 的 HTML 单串，
+  由 `wiki_engine/html_md.py` 拆节。**拆不出三段时保留原文整段并标注**，不许硬切（切错等于改规则）。
+- 导语行格式：`{CP} CP · {阶段} · {容器名} 分队`。
+- 正文里出现的关键词（原文 `<span class="kwb">`）转成 core-rules 链接；转不了的留纯文本，不造红链。
+
+### 4.5 detachment 页（三节，顺序固定）
+
+```markdown
+## 分队规则
+## 增强
+## 战略
+```
+
+- 「增强」「战略」两节是**本分队下属实体的链接清单**（各自单开页），不复制正文。
+- 编制/限制（"每支军队只能带 1 个增强"之类）**本轮不写**：`detachments.enhancements_json` 全表为空，
+  库里没有这项数据，写了就是编（§7）。
+
+### 4.6 enhancement 页（两节，顺序固定）
+
+```markdown
+## 效果
+## 携带限制
+```
+
+- `**分数**：N 分` 行放在「效果」节末尾，数值必须与 frontmatter `cost` 一致。
+- 「携带限制」写原文里的关键词限定（如 `ADEPTUS CUSTODES model only`）；原文没写就写"（源文本未提供）"。
 
 ## 5. 链接规范（断链是本 wiki 的头号腐化源）
 

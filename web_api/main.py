@@ -346,9 +346,13 @@ def roster_critique(req: RosterIn) -> CritiqueReportOut:
 def wiki(path: str) -> Dict[str, Any]:
     """只读返回 wiki 页 markdown（图鉴页 Stage 4 用）。"""
     from pathlib import Path
-    wiki_root = Path(__file__).resolve().parent.parent / "wiki"
-    # 防目录穿越：解析后必须仍在 wiki_root 内
+    wiki_root = (Path(__file__).resolve().parent.parent / "wiki").resolve()
+    # 防目录穿越：解析后必须仍在 wiki_root **内**。
+    # 旧实现用 str.startswith 比前缀——`../wiki_engine/from_db` 解析成
+    # `…/RAG/wiki_engine/from_db.md`，字符串仍以 `…/RAG/wiki` 开头，守卫形同虚设
+    # （同前缀兄弟目录 wiki_engine/wiki_build/wiki_compile 的 .md 全可读）。
+    # 改按路径分量判定：is_relative_to（Python 3.9+）不吃前缀巧合。
     target = (wiki_root / (path + ".md")).resolve()
-    if not str(target).startswith(str(wiki_root.resolve())) or not target.exists():
+    if not target.is_relative_to(wiki_root) or not target.is_file():
         raise HTTPException(status_code=404, detail="wiki 页不存在")
     return {"path": path, "markdown": target.read_text(encoding="utf-8")}

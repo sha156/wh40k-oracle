@@ -20,7 +20,10 @@ import yaml
 # ——lint 曾扫描自己生成的 lint-report.md，把报告里的 [[断链示例]] 当成新断链，
 # 假阳性永久自我复现（H15）。
 GENERATED_MD_NAMES = frozenset({"index.md", "log.md", "terms.md", "lint-report.md",
-                                "_from_db_drift.md"})
+                                "_from_db_drift.md",
+                                # indexes/keywords.md：武器词条总索引，与 index.md 同类
+                                # （生成物、无实体 frontmatter），不参与实体扫描与断链检查
+                                "keywords.md"})
 
 # faction_id（Wahapedia 缩写，见 db_sources/wahapedia/Factions.csv）→ 中文阵营名。
 # 覆盖 pairing.json 实际出现的 21 个 faction_id；fm.faction / wiki 目录名用它，

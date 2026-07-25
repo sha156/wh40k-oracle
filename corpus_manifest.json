@@ -10,6 +10,10 @@
     "6月4日分数中文": { "edition": "11", "layer": "points" },
     "6月4日平衡版中午": { "edition": "11", "layer": "balance" },
     "Misc - Terrain Area Footprints": { "edition": "11", "layer": "reference" },
+    "11版40K通用技能速查表": {
+      "edition": "11", "layer": "reference",
+      "_note": "11 版核心规则第 24 章（通用技能）的中文民间译本，5 页，带官方节号 24.01–24.38。未登记时按 defaults 落成「十版·codex兵牌基底」——一本 11 版规则文档被标成十版兵牌基底。层取 reference 而非 rules：内容确属现行版本规则，但它是汉化组译本，不该进「规则问题唯一真源」的保底注入（app.py 按 layer=rules 强塞上下文）。它在本项目的正用法是 wiki 词条页的中文正文源。"
+    },
     "黑图书馆": { "edition": "10", "layer": "codex-base" }
   }
 }

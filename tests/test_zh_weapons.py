@@ -241,4 +241,78 @@ def test_keyword_rules_are_consistent_within_family():
     assert _rule_translate("RAPID FIRE D6+3") == "速射D6+3"
     assert _rule_translate("MELTA 6") == "热熔6"
     assert _rule_translate("SUSTAINED HITS 3") == "连击3"
+    # CLEAVE 是 11 版新增，同样走规则（源：11版40K通用技能速查表 24.06）
+    assert _rule_translate("CLEAVE 1") == "横扫1"
+    assert _rule_translate("CLEAVE 2") == "横扫2"
     assert _rule_translate("PISTOL") is None          # 非参数化的走学习/人工层
+
+
+# ── 撞名护栏（防「看起来是中文的错译」）────────────────────────────
+
+def _collision_db(tmp_path: Path) -> Path:
+    """一把武器带自造关键词 TESTKW，黑图中文层却写「手枪」——
+    学出来会与 PISTOL 的人工真源撞名，正是 HARPOONED→额外攻击 那类错配的形状。"""
+    db = tmp_path / "c.sqlite"
+    conn = sqlite3.connect(str(db))
+    conn.execute("CREATE TABLE units (id TEXT PRIMARY KEY, faction_id TEXT, "
+                 "points_json TEXT)")
+    conn.execute("CREATE TABLE weapons (id TEXT, unit_id TEXT, name_en TEXT, "
+                 "name_zh TEXT, range TEXT, a TEXT, bs_ws TEXT, s TEXT, ap TEXT, "
+                 "d TEXT, keywords_json TEXT)")
+    conn.execute("CREATE TABLE unit_zh_detail (canonical_id TEXT PRIMARY KEY, "
+                 "weapons_json TEXT)")
+    conn.execute("INSERT INTO units VALUES ('U1','AS',NULL)")
+    conn.execute("INSERT INTO weapons VALUES ('w1','U1','Odd gun',NULL,'12','1',"
+                 "'3','4','0','1','[\"testkw\"]')")
+    zh = {"射击武器": [
+        {"name": "怪枪", "射程": "12", "攻击次数": "1", "命中": "3+",
+         "造伤": "4", "破甲": "0", "伤害": "1", "skill": ["手枪"]},
+    ]}
+    conn.execute("INSERT INTO unit_zh_detail VALUES ('U1', ?)",
+                 (json.dumps(zh, ensure_ascii=False),))
+    conn.commit()
+    conn.close()
+    return db
+
+
+def test_learned_value_colliding_with_authoritative_is_dropped(tmp_path):
+    """单次观测学出的译名撞上人工真源 → 丢弃学习值，宁可显英文。
+
+    留着它的后果比缺译更糟：用户看到一个**像模像样的中文词**，不会起疑。
+    """
+    db = _collision_db(tmp_path)
+    build_zh_weapon_names(db)
+    rep = build_keyword_glossary(db)
+    assert ("TESTKW", "手枪") in rep["dropped_collisions"]
+    conn = sqlite3.connect(str(db))
+    gloss = dict(conn.execute("SELECT term_en, term_zh FROM zh_keyword_glossary"))
+    conn.close()
+    assert "TESTKW" not in gloss
+    assert gloss["PISTOL"] == "手枪"          # 权威值留下
+
+
+@needs_db
+def test_glossary_has_no_duplicate_chinese_names():
+    """一个中文名只能属于一个词条——重名意味着至少有一边是错的。"""
+    conn = sqlite3.connect(str(DB))
+    dupes = conn.execute(
+        "SELECT term_zh, GROUP_CONCAT(term_en) FROM zh_keyword_glossary "
+        "GROUP BY term_zh HAVING COUNT(*) > 1").fetchall()
+    conn.close()
+    assert not dupes, f"中文名撞车：{dupes}"
+
+
+@needs_db
+def test_11e_keyword_names_follow_official_quickref():
+    """11 版新增词条的译名以 data/11版40K通用技能速查表.pdf 为准。
+
+    这两个词在黑图十版语料里不存在，学习值必然是错配（CLEAVE 曾学成「劈砍1」）。
+    HARPOONED 则是被学成了 EXTRA ATTACKS 的中文名。
+    """
+    conn = sqlite3.connect(str(DB))
+    gloss = dict(conn.execute("SELECT term_en, term_zh FROM zh_keyword_glossary"))
+    conn.close()
+    assert gloss.get("CLEAVE 1") == "横扫1"          # 24.06
+    assert gloss.get("CLOSE-QUARTERS") == "近距离"   # 24.07
+    assert gloss.get("EXTRA ATTACKS") == "额外攻击"  # 24.11
+    assert gloss.get("HARPOONED") not in (None, "额外攻击")

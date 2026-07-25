@@ -53,6 +53,9 @@ _PARAM_RULES = [
     (re.compile(r"^RAPID FIRE (.+)$"), lambda m: "速射" + m.group(1).replace(" ", "")),
     (re.compile(r"^MELTA (.+)$"), lambda m: "热熔" + m.group(1).replace(" ", "")),
     (re.compile(r"^SUSTAINED HITS (.+)$"), lambda m: "连击" + m.group(1).replace(" ", "")),
+    # CLEAVE 是 11 版新增（近战版爆炸），黑图十版语料没有它——学习值必然错配，
+    # 只能走规则 + 人工真源（译名据 data/11版40K通用技能速查表.pdf 24.06「横扫」）
+    (re.compile(r"^CLEAVE (.+)$"), lambda m: "横扫" + m.group(1).replace(" ", "")),
 ]
 
 
@@ -415,6 +418,29 @@ def build_keyword_glossary(db_path, apply: bool = True) -> Dict[str, Any]:
         for term, zh in overrides.items():
             picked[term] = (clean_zh_name(zh), 0)
 
+        # 撞名护栏：一个中文名只能属于一个英文词条。两个词条撞同一个中文名时，
+        # 权威来源（obs=0，来自参数化规则或人工真源）留下，学习值（obs>0）丢弃。
+        #
+        # 为什么需要：单对单学习在**两源本身有漂移**的单位上会学出「张冠李戴」——
+        # 泰伦 Norn Assimilator 的 Toxinjector Harpoon 英文带 HARPOONED，而黑图那张
+        # 中文兵牌同位置写的是「额外攻击」，于是 HARPOONED→额外攻击 被当成 1 次观测
+        # 学了下来，与 EXTRA ATTACKS 撞名。单次观测 + 撞名 = 几乎必错，且这种错
+        # **看起来是中文的**，比留英文更难被发现（用户看到「额外攻击」不会起疑）。
+        dropped: List[Tuple[str, str]] = []
+        by_zh: Dict[str, List[str]] = defaultdict(list)
+        for en, (zh, _n) in picked.items():
+            by_zh[zh].append(en)
+        for zh, terms in by_zh.items():
+            if len(terms) < 2:
+                continue
+            authoritative = [t for t in terms if picked[t][1] == 0]
+            if not authoritative:
+                continue          # 全是学习值：无从裁决，保留并交给 report 披露
+            for t in terms:
+                if picked[t][1] > 0:
+                    dropped.append((t, zh))
+                    del picked[t]
+
         if apply:
             conn.execute("DELETE FROM zh_keyword_glossary")
             conn.executemany(
@@ -423,6 +449,7 @@ def build_keyword_glossary(db_path, apply: bool = True) -> Dict[str, Any]:
             conn.commit()
         return {"terms": len(picked), "candidates": len(pairs),
                 "by_rule": n_rule, "by_override": len(overrides),
+                "dropped_collisions": sorted(dropped),
                 "untranslated": sorted(seen - set(picked))[:40]}
     finally:
         conn.close()
