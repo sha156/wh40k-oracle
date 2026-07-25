@@ -32,34 +32,37 @@ export default function CodexPage() {
   const [error, setError] = useState<string | null>(null);
   const [loadingUnits, setLoadingUnits] = useState(false);
   const [loadingCard, setLoadingCard] = useState(false);
+  // 传承条目（Legends/福基世界/退环境）默认归档不列——比赛摆不上桌，占满图鉴只是噪声
+  const [showLegacy, setShowLegacy] = useState(false);
 
   useEffect(() => {
     const ctrl = new AbortController();
-    fetchFactions(ctrl.signal)
+    fetchFactions(ctrl.signal, showLegacy)
       .then((fs) => {
         setFactions(fs);
-        if (fs[0]) {
-          setLoadingUnits(true);
-          setFactionId(fs[0].id);
-        }
+        setFactionId((cur) => {
+          if (cur) return cur;
+          if (fs[0]) setLoadingUnits(true);
+          return fs[0]?.id ?? null;
+        });
       })
       .catch((e) => {
         if ((e as Error).name !== "AbortError") setError(BACKEND_HINT);
       });
     return () => ctrl.abort();
-  }, []);
+  }, [showLegacy]);
 
   useEffect(() => {
     if (!factionId) return;
     const ctrl = new AbortController();
-    fetchUnits(factionId, ctrl.signal)
+    fetchUnits(factionId, ctrl.signal, showLegacy)
       .then(setUnits)
       .catch((e) => {
         if ((e as Error).name !== "AbortError") setError(BACKEND_HINT);
       })
       .finally(() => setLoadingUnits(false));
     return () => ctrl.abort();
-  }, [factionId]);
+  }, [factionId, showLegacy]);
 
   // 切换阵营：在事件里重置从属状态 + 开 loading（不在 effect 同步 setState，避免额外渲染）
   const selectFaction = (id: string) => {
@@ -147,6 +150,18 @@ export default function CodexPage() {
           >
             {lang === "zh" ? "中 → EN" : "EN → 中"}
           </button>
+          <button
+            type="button"
+            onClick={() => setShowLegacy((v) => !v)}
+            title="传承条目 = Legends / 福基世界 / 退环境单位，比赛摆不上桌，默认归档不列"
+            className={`clip-slant-8 flex-none border px-3.5 py-1.5 font-cond text-[13px] tracking-[1.5px] uppercase hover:brightness-125 ${
+              showLegacy
+                ? "border-tau/60 bg-[#0d2a30] text-cyan-glow"
+                : "border-[#2b423d] bg-[#101b1e] text-[#a9bcb6]"
+            }`}
+          >
+            {showLegacy ? "传承 · 显示中" : "含传承条目"}
+          </button>
         </div>
 
         <div className="grid grid-cols-[300px_1fr] gap-4 max-wide:grid-cols-1">
@@ -191,6 +206,14 @@ export default function CodexPage() {
                           </span>
                         ) : null}
                       </span>
+                      {u.legacy ? (
+                        <span
+                          className="flex-none border border-[#4a4326] px-1 font-cond text-[10px] tracking-[1px] text-[#8a7f60] uppercase"
+                          title="传承条目：不在现行点数表，比赛不可用"
+                        >
+                          传承
+                        </span>
+                      ) : null}
                       {u.pts ? (
                         <span className="flex-none font-cond text-[11.5px] text-gold">
                           {u.pts}

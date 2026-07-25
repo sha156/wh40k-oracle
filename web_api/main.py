@@ -214,23 +214,28 @@ DB_PATH = Path(__file__).resolve().parent.parent / "db" / "wh40k.sqlite"
 
 
 @app.get("/codex/factions")
-def codex_factions() -> Dict[str, Any]:
-    """图鉴：有单位的阵营列表（Stage 4）。"""
+def codex_factions(include_legacy: bool = False) -> Dict[str, Any]:
+    """图鉴：有单位的阵营列表（Stage 4）。
+
+    默认只数现役单位；include_legacy=1 把 Legends/福基世界等传承条目一并计入。
+    """
     from web_api import codex
     if not DB_PATH.exists():
         raise HTTPException(status_code=503, detail="结构库未构建")
-    return {"factions": codex.list_factions(DB_PATH)}
+    return {"factions": codex.list_factions(DB_PATH, include_legacy=include_legacy)}
 
 
 @app.get("/codex/factions/{faction_id}/units")
-def codex_units(faction_id: str) -> Dict[str, Any]:
-    """图鉴：某阵营单位列表。"""
+def codex_units(faction_id: str, include_legacy: bool = False) -> Dict[str, Any]:
+    """图鉴：某阵营单位列表。默认只列现役，传承条目需 include_legacy=1。"""
     from web_api import codex
     if not DB_PATH.exists():
         raise HTTPException(status_code=503, detail="结构库未构建")
     if not codex.faction_exists(DB_PATH, faction_id):
         raise HTTPException(status_code=404, detail="阵营不存在")
-    return {"faction_id": faction_id, "units": codex.list_units(DB_PATH, faction_id)}
+    return {"faction_id": faction_id,
+            "units": codex.list_units(DB_PATH, faction_id,
+                                      include_legacy=include_legacy)}
 
 
 @app.get("/codex/units/{unit_id}")

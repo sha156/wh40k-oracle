@@ -332,6 +332,31 @@ def stage_zh_details(cfg: UpdateConfig) -> StageResult:
         detail={**det_rep, "name_zh_filled": name_rep["filled"]})
 
 
+def stage_zh_weapons(cfg: UpdateConfig) -> StageResult:
+    """中文武器名投影：黑图中文兵牌 × 库内英文武器，按数值指纹离线配对落 weapons.name_zh。
+
+    必须排在 zh_details 之后（吃它的产物）。整列是投影，每次重建；人工译名走
+    db_compile/zh_weapon_overrides.json（git 真源）在最后叠加。
+    """
+    from db_compile.zh_weapons import (build_keyword_glossary,
+                                       build_zh_weapon_names, coverage_report,
+                                       leftover_radicals)
+    rep = build_zh_weapon_names(cfg.db)
+    kw = build_keyword_glossary(cfg.db)
+    cov = coverage_report(cfg.db)
+    left = leftover_radicals(cfg.db)
+    warn = None
+    if left:
+        warn = f"归一后仍残留部首兼容字 {left} —— 需在 zh_weapons._RADICAL_FALLBACK 补对照"
+    return StageResult(
+        "zh_weapons", True,
+        f"中文武器名 {cov['all'][0]}/{cov['all'][1]}（现役 {cov['current'][0]}/"
+        f"{cov['current'][1]}）：指纹配对 {rep['paired_direct']}、术语表 "
+        f"{rep['paired_glossary']}、人工 {rep['overrides_applied']}、"
+        f"撞名撤回 {rep['dropped_by_dedupe']}；USR 关键词表 {kw['terms']} 条",
+        warning=warn, detail={**rep, "coverage": cov})
+
+
 def stage_crosscheck(cfg: UpdateConfig) -> StageResult:
     """只读：BSData ↔ Wahapedia 英文属性交叉校验。"""
     from db_compile.crosscheck import run
@@ -426,6 +451,7 @@ _PIPELINE = [
     ("补黑图书馆中英别名", stage_aliases_blackforum, False),
     ("补社区俗名层", stage_aliases_community, False),
     ("灌黑图书馆中文 datasheet 层", stage_zh_details, False),
+    ("配中文武器名（数值指纹）", stage_zh_weapons, False),
     ("交叉校验 BSData ↔ 库", stage_crosscheck, False),
     ("校验分数收敛", stage_mfm_check, False),
     ("监控官方下载页版本", stage_downloads_check, False),
@@ -444,6 +470,7 @@ _RESTORE_STAGES = [
     ("补黑图书馆中英别名", stage_aliases_blackforum),
     ("补社区俗名层", stage_aliases_community),
     ("灌黑图书馆中文 datasheet 层", stage_zh_details),
+    ("配中文武器名（数值指纹）", stage_zh_weapons),
 ]
 
 

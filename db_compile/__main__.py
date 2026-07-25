@@ -64,6 +64,14 @@ def main() -> None:
     en.add_argument("--csv", default="db_sources/wahapedia/Enhancements.csv")
     en.add_argument("--db", default="db/wh40k.sqlite")
 
+    zw = sub.add_parser(
+        "zh-weapons",
+        help="中文武器名：黑图中文兵牌 × 库内英文武器按数值指纹配对 → weapons.name_zh")
+    zw.add_argument("--db", default="db/wh40k.sqlite")
+    zw.add_argument("--dry-run", action="store_true", help="只统计不写库")
+    zw.add_argument("--missing", action="store_true",
+                    help="列出现役单位里仍缺中文名的武器（按出现次数排序，供补译）")
+
     d = sub.add_parser(
         "downloads",
         help="官方下载页版本监控：harvest 建基线 / check 比对报改版（需 3.11+scrapling 渲染）")
@@ -338,6 +346,30 @@ def main() -> None:
             if rep["no_cost_count"]:
                 print(f"  ⚠️ {rep['no_cost_count']} 条无点数（cost=NULL 诚实标注）："
                       f"{'、'.join(rep['no_cost_sample'][:5])}")
+    elif args.cmd == "zh-weapons":
+        from db_compile.zh_weapons import (build_keyword_glossary,
+                                           build_zh_weapon_names, coverage_report,
+                                           leftover_radicals, missing_terms)
+
+        if args.missing:
+            terms = missing_terms(Path(args.db))
+            print(f"\n现役单位缺中文名的武器（{len(terms)} 个不同名字）：")
+            for en, n, sample in terms:
+                print(f"  {n:4d}×  {en:44s} 例：{sample}")
+        else:
+            rep = build_zh_weapon_names(Path(args.db), apply=not args.dry_run)
+            kw = build_keyword_glossary(Path(args.db), apply=not args.dry_run)
+            cov = coverage_report(Path(args.db))
+            print("\n中文武器名投影：")
+            print(f"  指纹配对 {rep['paired_direct']} / 术语表 {rep['paired_glossary']} / "
+                  f"人工译名 {rep['overrides_applied']} / 撞名撤回 {rep['dropped_by_dedupe']}")
+            print(f"  覆盖：全库 {cov['all'][0]}/{cov['all'][1]}"
+                  f"、现役 {cov['current'][0]}/{cov['current'][1]}")
+            print(f"  USR 关键词对照表 {kw['terms']} 条（候选 {kw['candidates']}）")
+            left = leftover_radicals(Path(args.db))
+            if left:
+                print(f"  ⚠️ 残留部首兼容字 {left}——补 _RADICAL_FALLBACK 对照")
+            print("\n  注意：build 重建会清空，已挂进 restore_authority_layers 自动补跑")
     elif args.cmd == "downloads":
         from db_compile.downloads import (harvest, write_manifest, check,
                                           print_diffs)

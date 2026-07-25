@@ -39,6 +39,9 @@ class Weapon:
     ap: str
     d: str
     keywords: List[str] = field(default_factory=list)
+    # 中文武器名：db_compile/zh_weapons.py 按数值指纹离线配好落库的投影，可为 None。
+    # 渲染层直接取用，**不要**再在渲染时按位置去猜（那正是错位 bug 的来源）
+    name_zh: Optional[str] = None
 
 
 @dataclass
@@ -117,9 +120,10 @@ def lookup_datasheet(db_path, unit_id: str) -> Optional[Datasheet]:
         weapons = [
             Weapon(name=w[0], kind=_weapon_kind(w[1]), range=w[1], a=w[2],
                    bs_ws=w[3], s=w[4], ap=w[5], d=w[6],
-                   keywords=_parse_weapon_keywords(w[7]))
+                   keywords=_parse_weapon_keywords(w[7]),
+                   name_zh=(w[8] or None))
             for w in conn.execute(
-                "SELECT name_en, range, a, bs_ws, s, ap, d, keywords_json "
+                "SELECT name_en, range, a, bs_ws, s, ap, d, keywords_json, name_zh "
                 "FROM weapons WHERE unit_id = ? ORDER BY id", (unit_id,))
         ]
         return Datasheet(

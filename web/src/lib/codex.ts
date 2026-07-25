@@ -8,7 +8,10 @@ export interface FactionRow {
   id: string;
   name: string;
   nameZh: string | null;
+  /** 现役单位数（includeLegacy 时为含传承的总数） */
   count: number;
+  /** 该阵营被归档的传承条目数（Legends/福基世界/退环境） */
+  legacyCount?: number;
 }
 
 export interface UnitRow {
@@ -16,6 +19,8 @@ export interface UnitRow {
   nameEn: string;
   nameZh: string | null;
   pts: string | null;
+  /** true=传承条目（比赛摆不上桌，默认不列；归档不是删除，直链仍可看） */
+  legacy?: boolean;
 }
 
 async function getJson<T>(path: string, signal?: AbortSignal): Promise<T> {
@@ -24,8 +29,12 @@ async function getJson<T>(path: string, signal?: AbortSignal): Promise<T> {
   return (await resp.json()) as T;
 }
 
-export function fetchFactions(signal?: AbortSignal): Promise<FactionRow[]> {
-  return getJson<{ factions: FactionRow[] }>("/codex/factions", signal).then(
+export function fetchFactions(
+  signal?: AbortSignal,
+  includeLegacy = false,
+): Promise<FactionRow[]> {
+  const q = includeLegacy ? "?include_legacy=1" : "";
+  return getJson<{ factions: FactionRow[] }>(`/codex/factions${q}`, signal).then(
     (d) => d.factions,
   );
 }
@@ -33,9 +42,11 @@ export function fetchFactions(signal?: AbortSignal): Promise<FactionRow[]> {
 export function fetchUnits(
   factionId: string,
   signal?: AbortSignal,
+  includeLegacy = false,
 ): Promise<UnitRow[]> {
+  const q = includeLegacy ? "?include_legacy=1" : "";
   return getJson<{ units: UnitRow[] }>(
-    `/codex/factions/${encodeURIComponent(factionId)}/units`,
+    `/codex/factions/${encodeURIComponent(factionId)}/units${q}`,
     signal,
   ).then((d) => d.units);
 }
