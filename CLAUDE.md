@@ -63,7 +63,22 @@
   heavy=/chat+/simulate+/roster/critique，XFF 默认不信；限流须挂在 CORS **之前**）。
   1936 测试绿。设计与验收 `docs/superpowers/specs/2026-07-25-stage5-deploy.md`。
   ⚠ **镜像尚未真实构建验证**（本机 Docker Desktop 守护进程未起），验收表最后一行是待办
+- **codex 扩成真 wiki 已收官**（2026-07-25，分支 `feat/codex-wiki`，PR-0/1/2/4/5）：
+  wiki 从「只有兵牌页」扩到 **7900+ 页**——武器词条索引（46 词条 / 2731 条现役反查，
+  `wiki/indexes/keywords.{md,json}`，判据来自 `data/11版40K通用技能速查表.pdf`）、
+  分队/战略/增强三类实体页（324/1681/1058，`wiki_engine/entity_pages.py` + `html_md.py`）、
+  11 版核心规则全文 24 章 137 节（`wiki/core-rules/sections/`，`core_rules.py`）；
+  web `/codex` 加「武器词条」「分队」两个二级页签（`wiki_blocks.py` 把 md 编译成块级契约，
+  前端零解析、不引 markdown 库）。**正文一律官方英文**（用户裁决：宁可英文也要与官网一致，
+  不叠十版汉化译本），中文只用于名称。2125 测试绿、lint 0 error。
+  设计与决策见 `docs/superpowers/plans/2026-07-25-codex-wiki-expansion.md`。
+  **三个必知坑**：① `detachments` 表存的是分队**规则名**不是**容器名**（容器名真源在官方
+  CSV 的 detachment 列，曾入库丢失；**禁止按 id 邻接反推**）；② 从半结构化文本抽条目
+  必须配反向对账（核心规则切章三轮漏切每次都报"成功"）；③ PDF 残留控制字符（0x08）
+  会让行尾匹配静默失败
 - **剩余**：基准扩充（长期滚动，agent gold v3 现 96/96=100.0 零硬错，#41/#42 为固定波动题）。
+  wiki 收尾候选：核心规则章节页接进网页；lint 的 553 条 alias-conflicts 占满 warning 通道，
+  宜聚合成摘要 + 单独重名报告。
   非阻塞遗留：军表 PR1c 文本解析、外部源观察项（BSData-11e / Wahapedia 11版 / 黑图书馆）。
   T6 分支清理已实际完成
 
