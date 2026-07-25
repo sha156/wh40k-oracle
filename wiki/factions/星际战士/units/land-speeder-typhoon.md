@@ -24,9 +24,9 @@ updated: '2026-07-23'
 ## 射击武器
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| 重型爆弹枪 | 36" | 3 | 3+ | 5 | -1 | 2 | [[core-rules/sustained-hits.md\|sustained hits 1]] |
-| 多管热熔 | 18" | 2 | 3+ | 9 | -4 | D6 | [[core-rules/melta.md\|melta 2]] |
-| 台风导弹发射器（破片） | 48" | 2D6 | 3+ | 4 | 0 | 1 | [[core-rules/blast.md\|blast]] |
+| 重型爆弹枪 | 36" | 3 | 3+ | 5 | -1 | 2 | [[core-rules/sustained-hits.md\|连击1]] |
+| 多管热熔 | 18" | 2 | 3+ | 9 | -4 | D6 | [[core-rules/melta.md\|热熔2]] |
+| 台风导弹发射器（破片） | 48" | 2D6 | 3+ | 4 | 0 | 1 | [[core-rules/blast.md\|爆炸]] |
 | 台风导弹发射器（穿甲） | 48" | 2 | 3+ | 9 | -2 | D6 | — |
 
 ## 近战武器
@@ -42,4 +42,4 @@ updated: '2026-07-23'
 
 ## 关键词
 - **阵营关键词**：Adeptus Astartes
-- **普通关键词**：Ravenwing，[[factions/星际战士/units/land-speeder.md|Land Speeder]] Typhoon，Imperium，Fly，Vehicle
+- **普通关键词**：Ravenwing，Land Speeder Typhoon，Imperium，Fly，Vehicle

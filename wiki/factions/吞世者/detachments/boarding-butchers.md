@@ -17,7 +17,7 @@ updated: '2026-07-25'
 
 ## 分队规则
 
-### 凶性专注 Focused Ferocity
+### [[factions/吞世者/stratagems/focused-ferocity.md|凶性专注]] Focused Ferocity
 
 Each time a WORLD EATERS unit from your army declares a charge, each target of that charge must take a Battle-shock test.
 

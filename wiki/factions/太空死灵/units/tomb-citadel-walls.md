@@ -27,8 +27,8 @@ updated: '2026-07-23'
 ## 射击武器
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| Gauss exterminator | 48" | 1 | 4+ | 14 | -3 | 6 | [[core-rules/lethal-hits.md\|lethal hits]] |
-| 双联特斯拉毁灭者 | 36" | 6 | 3+ | 8 | 0 | 2 | [[core-rules/sustained-hits.md\|sustained hits 2]]，[[core-rules/twin-linked.md\|twin-linked]] |
+| Gauss exterminator | 48" | 1 | 4+ | 14 | -3 | 6 | [[core-rules/lethal-hits.md\|致命一击]] |
+| 双联特斯拉毁灭者 | 36" | 6 | 3+ | 8 | 0 | 2 | [[core-rules/sustained-hits.md\|连击2]]，[[core-rules/twin-linked.md\|双联]] |
 
 ## 技能
 - **Ziggurat Dock**：One friendly [[factions/太空死灵/units/monolith.md|Monolith]], [[factions/太空死灵/units/obelisk.md|Obelisk]], [[factions/太空死灵/units/tesseract-vault.md|Tesseract Vault]] or [[factions/太空死灵/units/sentry-pylon.md|Sentry Pylon]] model can start the battle on top of this <span class="kwb">FORTIFICATION</span>’s ziggurat platform. While such a model is on this platform, that model’s ranged weapons have the [HEAVY] ability. Any friendly model can be set up or end any type of move on the ramps or platform sections of this <span class="kwb">FORTIFICATION</span>.

@@ -28,9 +28,9 @@ updated: '2026-07-23'
 |---|---|---|---|---|---|---|---|
 | 自动手枪 | 12" | 1 | 4+ | 3 | 0 | 1 | [[core-rules/pistol.md\|手枪]] |
 | 爆弹手枪 | 12" | 1 | 4+ | 4 | 0 | 1 | [[core-rules/pistol.md\|手枪]] |
-| 腐化法杖 | 18" | D3 | 4+ | 5 | -1 | 1 | [[core-rules/devastating-wounds.md\|devastating wounds]]，[[core-rules/psychic-attacks.md\|psychic]] |
+| 腐化法杖 | 18" | D3 | 4+ | 5 | -1 | 1 | [[core-rules/devastating-wounds.md\|毁灭伤害]]，[[core-rules/psychic-attacks.md\|灵能]] |
 | 等离子手枪（标准） | 12" | 1 | 4+ | 7 | -2 | 1 | [[core-rules/pistol.md\|手枪]] |
-| 等离子手枪（过载） | 12" | 1 | 4+ | 8 | -3 | 2 | [[core-rules/pistol.md\|手枪]]，[[core-rules/hazardous.md\|危险]] |
+| 等离子手枪（过载） | 12" | 1 | 4+ | 8 | -3 | 2 | [[core-rules/hazardous.md\|危险]]，[[core-rules/pistol.md\|手枪]] |
 
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |

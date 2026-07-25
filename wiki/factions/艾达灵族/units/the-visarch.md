@@ -30,7 +30,7 @@ updated: '2026-07-23'
 |---|---|---|---|---|---|---|---|
 | 阿苏瓦 · 无声尖啸者（流银） | 近战 | 8 | 2+ | 4 | -1 | 1 | [[core-rules/sustained-hits.md\|连击2]] |
 | 阿苏瓦 · 无声尖啸者（断生） | 近战 | 6 | 2+ | 5 | -2 | 2 | [[core-rules/devastating-wounds.md\|毁灭伤害]]，[[core-rules/precision.md\|精准]] |
-| 阿苏瓦 · 无声尖啸者（诛神） | 近战 | 4 | 2+ | 3 | -4 | 3 | [[core-rules/anti.md\|反史诗英雄2+]]，[[core-rules/precision.md\|精准]] |
+| 阿苏瓦 · 无声尖啸者（诛神） | 近战 | 4 | 2+ | 3 | -4 | 3 | [[core-rules/anti.md\|针对史诗英雄2+]]，[[core-rules/precision.md\|精准]] |
 
 ## 技能
 - **【阵营技能】：战斗专注**

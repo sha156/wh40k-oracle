@@ -27,14 +27,14 @@ updated: '2026-07-23'
 ## 射击武器
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| Bolt of Tzeentch – focused witchfire | 24" | 9 | 2+ | 10 | -2 | D3 | [[core-rules/hazardous.md\|hazardous]]，[[core-rules/psychic-attacks.md\|psychic]] |
-| Bolt of Tzeentch – witchfire | 24" | 9 | 2+ | 10 | -1 | 1 | [[core-rules/psychic-attacks.md\|psychic]] |
+| Bolt of Tzeentch – focused witchfire | 24" | 9 | 2+ | 10 | -2 | D3 | [[core-rules/hazardous.md\|危险]]，[[core-rules/psychic-attacks.md\|灵能]] |
+| Bolt of Tzeentch – witchfire | 24" | 9 | 2+ | 10 | -1 | 1 | [[core-rules/psychic-attacks.md\|灵能]] |
 
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| Staff of cataclysm | 近战 | 6 | 3+ | 8 | -2 | 3 | [[core-rules/psychic-attacks.md\|psychic]] |
-| Warpfire talons | 近战 | 12 | 3+ | 4 | -1 | 1 | [[core-rules/psychic-attacks.md\|psychic]] |
+| Staff of cataclysm | 近战 | 6 | 3+ | 8 | -2 | 3 | [[core-rules/psychic-attacks.md\|灵能]] |
+| Warpfire talons | 近战 | 12 | 3+ | 4 | -1 | 1 | [[core-rules/psychic-attacks.md\|灵能]] |
 
 ## 技能
 - **Emissary of the Great Mutator (Aura)**：While a friendly Tzeentch Legiones Daemonica unit is within 6" of this model, you can re-roll Battle-shock tests taken for that unit.

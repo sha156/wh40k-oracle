@@ -30,7 +30,7 @@ updated: '2026-07-23'
 ## 射击武器
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| Prism rifle – dispersed | 18" | D6 | 3+ | 4 | -1 | 1 | [[core-rules/blast.md\|blast]] |
+| Prism rifle – dispersed | 18" | D6 | 3+ | 4 | -1 | 1 | [[core-rules/blast.md\|爆炸]] |
 | Prism rifle – focused | 24" | 1 | 3+ | 6 | -2 | 3 | — |
 
 ## 近战武器

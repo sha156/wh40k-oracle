@@ -29,7 +29,7 @@ updated: '2026-07-23'
 ## 射击武器
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| 奇点发生器 | 36" | 2D6 | 3+ | 10 | -3 | 4 | [[core-rules/blast.md\|blast]]，[[core-rules/devastating-wounds.md\|devastating wounds]] |
+| 奇点发生器 | 36" | 2D6 | 3+ | 10 | -3 | 4 | [[core-rules/blast.md\|爆炸]]，[[core-rules/devastating-wounds.md\|毁灭伤害]] |
 | 超维投射炮 | 48" | 8 | 3+ | 5 | -1 | 2 | [[core-rules/sustained-hits.md\|连击2]] |
 | 神经湮灭炮 | 48" | 2 | 3+ | 24 | -4 | D6+4 | — |
 

@@ -24,4 +24,4 @@ While an enemy unit is within Engagement Range of the bearer’s unit, subtract 
 
 ## 携带限制
 
-Shadow Legion model only.
+[[factions/混沌恶魔/detachments/shadow-legion.md|Shadow Legion]] model only.

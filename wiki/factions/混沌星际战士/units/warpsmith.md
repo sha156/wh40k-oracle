@@ -26,15 +26,15 @@ updated: '2026-07-23'
 ## 射击武器
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| 喷火触手 | 12" | D6 | N/A | 3 | 0 | 1 | [[core-rules/pistol.md\|手枪]]，[[core-rules/ignores-cover.md\|忽视掩体]]，[[core-rules/torrent.md\|喷射]] |
-| 热熔触手 | 6" | 1 | 2+ | 8 | -4 | D3 | [[core-rules/pistol.md\|pistol]]，[[core-rules/melta.md\|melta 2]] |
+| 喷火触手 | 12" | D6 | N/A | 3 | 0 | 1 | [[core-rules/pistol.md\|手枪]]，[[core-rules/torrent.md\|洪流]]，[[core-rules/ignores-cover.md\|无视掩体]] |
+| 热熔触手 | 6" | 1 | 2+ | 8 | -4 | D3 | [[core-rules/pistol.md\|手枪]]，[[core-rules/melta.md\|热熔2]] |
 | 等离子手枪（标准） | 12" | 1 | 2+ | 7 | -2 | 1 | [[core-rules/pistol.md\|手枪]] |
-| 等离子手枪（过载） | 12" | 1 | 2+ | 8 | -3 | 2 | [[core-rules/pistol.md\|pistol]]，[[core-rules/hazardous.md\|hazardous]] |
+| 等离子手枪（过载） | 12" | 1 | 2+ | 8 | -3 | 2 | [[core-rules/pistol.md\|手枪]]，[[core-rules/hazardous.md\|危险]] |
 
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| 魔铸武器 | 近战 | 4 | 3+ | 6 | -2 | 2 | [[core-rules/anti.md\|反载具 4+]] |
+| 魔铸武器 | 近战 | 4 | 3+ | 6 | -2 | 2 | [[core-rules/anti.md\|针对载具4+]] |
 
 ## 技能
 - **【阵营技能】：黑暗契约**

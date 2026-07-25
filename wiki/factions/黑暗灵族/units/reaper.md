@@ -28,13 +28,13 @@ updated: '2026-07-23'
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
 | Storm vortex projector – beam | 36" | 3 | 3+ | 12 | -3 | D6 | — |
-| Storm vortex projector – blast | 24" | D6+3 | 3+ | 6 | -2 | 2 | [[core-rules/blast.md\|blast]] |
+| Storm vortex projector – blast | 24" | D6+3 | 3+ | 6 | -2 | 2 | [[core-rules/blast.md\|爆炸]] |
 
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
 | 锋刃翼 | 近战 | 3 | 4+ | 6 | -1 | 1 | — |
-| Prow blade | 近战 | 1 | 4+ | 8 | -2 | 2 | [[core-rules/extra-attacks.md\|extra attacks]]，[[core-rules/lance.md\|lance]]，[[core-rules/sustained-hits.md\|sustained hits 3]] |
+| Prow blade | 近战 | 1 | 4+ | 8 | -2 | 2 | [[core-rules/extra-attacks.md\|额外攻击]]，[[core-rules/lance.md\|骑枪]]，[[core-rules/sustained-hits.md\|连击3]] |
 
 ## 技能
 - **Electromagentic Cascade (Pain)**：In your Shooting phase, when you select this model to shoot, you can spend 1 Pain token to Empower this model. While Empowered:<br><ul><li>Each time this model makes a ranged attack that targets a <span class="kwb">VEHICLE</span> unit, that attack has the [SUSTAINED HITS 2] ability.</li><li>Each time this model makes a ranged attack that targets a non-<span class="kwb">VEHICLE</span> unit, that attack has the [SUSTAINED HITS 1] ability.</li></ul>

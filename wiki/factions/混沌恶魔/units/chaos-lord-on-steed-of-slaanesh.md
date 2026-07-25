@@ -27,11 +27,11 @@ updated: '2026-07-23'
 ## 射击武器
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| 复合武器 | 24" | 1 | 4+ | 4 | 0 | 1 | [[core-rules/anti.md\|anti-infantry 4+]]，[[core-rules/devastating-wounds.md\|devastating wounds]]，[[core-rules/rapid-fire.md\|rapid fire 1]] |
-| 并联爆弹枪 | 24" | 2 | 2+ | 4 | 0 | 1 | [[core-rules/rapid-fire.md\|rapid fire 2]] |
-| 爆弹手枪 | 12" | 1 | 2+ | 4 | 0 | 1 | [[core-rules/pistol.md\|pistol]] |
-| 等离子手枪（标准） | 12" | 1 | 2+ | 7 | -2 | 1 | [[core-rules/pistol.md\|pistol]] |
-| 等离子手枪（过载） | 12" | 1 | 2+ | 8 | -3 | 2 | [[core-rules/hazardous.md\|hazardous]]，[[core-rules/pistol.md\|pistol]] |
+| 复合武器 | 24" | 1 | 4+ | 4 | 0 | 1 | [[core-rules/anti.md\|针对步兵4+]]，[[core-rules/devastating-wounds.md\|毁灭伤害]]，[[core-rules/rapid-fire.md\|速射1]] |
+| 并联爆弹枪 | 24" | 2 | 2+ | 4 | 0 | 1 | [[core-rules/rapid-fire.md\|速射2]] |
+| 爆弹手枪 | 12" | 1 | 2+ | 4 | 0 | 1 | [[core-rules/pistol.md\|手枪]] |
+| 等离子手枪（标准） | 12" | 1 | 2+ | 7 | -2 | 1 | [[core-rules/pistol.md\|手枪]] |
+| 等离子手枪（过载） | 12" | 1 | 2+ | 8 | -3 | 2 | [[core-rules/hazardous.md\|危险]]，[[core-rules/pistol.md\|手枪]] |
 
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |
@@ -40,8 +40,8 @@ updated: '2026-07-23'
 | 格斗武器 | 近战 | 6 | 2+ | 4 | 0 | 1 | — |
 | 阿斯塔特链锯剑 | 近战 | 7 | 2+ | 4 | -1 | 1 | — |
 | 诅咒武器 | 近战 | 6 | 2+ | 5 | -2 | 1 | — |
-| 鞭击长舌 | 近战 | 2 | 4+ | 4 | 0 | 1 | [[core-rules/extra-attacks.md\|extra attacks]]，[[core-rules/lethal-hits.md\|lethal hits]] |
-| 成对诅咒武器 | 近战 | 7 | 2+ | 4 | -1 | 1 | [[core-rules/twin-linked.md\|twin-linked]] |
+| 鞭击长舌 | 近战 | 2 | 4+ | 4 | 0 | 1 | [[core-rules/extra-attacks.md\|额外攻击]]，[[core-rules/lethal-hits.md\|致命一击]] |
+| 成对诅咒武器 | 近战 | 7 | 2+ | 4 | -1 | 1 | [[core-rules/twin-linked.md\|双联]] |
 
 ## 技能
 - **Lord of Chaos**：Once per battle round, one unit from your army with this ability can use it when its unit is targeted with a Stratagem. If it does, reduce the CP cost of that use of that Stratagem by 1CP.
@@ -52,4 +52,4 @@ updated: '2026-07-23'
 
 ## 关键词
 - **阵营关键词**：Heretic Astartes，Legiones Daemonica
-- **普通关键词**：[[factions/混沌恶魔/units/chaos-lord.md|Chaos Lord]]，Steed of Slaanesh，Undivided，[[factions/混沌恶魔/detachments/shadow-legion.md|Shadow Legion]]，[[core-rules/mounted.md|Mounted]]，[[core-rules/character.md|Character]]，[[core-rules/grenades.md|Grenades]]，Slaanesh，Chaos Lord，Steed of Slaanesh，Undivided，Shadow Legion，[[core-rules/mounted.md|Mounted]]，[[core-rules/character.md|Character]]，[[core-rules/grenades.md|Grenades]]，Chaos，Slaanesh，Chaos Lord，Steed of Slaanesh，Undivided，Shadow Legion，[[core-rules/character.md|Character]]，Chaos，[[core-rules/mounted.md|Mounted]]，[[core-rules/character.md|Character]]，[[core-rules/grenades.md|Grenades]]，Chaos，Slaanesh，Chaos Lord，Steed of Slaanesh，Undivided，Shadow Legion，[[core-rules/mounted.md|Mounted]]，[[core-rules/character.md|Character]]，[[core-rules/grenades.md|Grenades]]，Chaos，Slaanesh，Chaos Lord，Steed of Slaanesh，Undivided，Shadow Legion，[[core-rules/mounted.md|Mounted]]，[[core-rules/character.md|Character]]，[[core-rules/grenades.md|Grenades]]，Chaos，Slaanesh，Chaos Lord，Steed of Slaanesh，Undivided，Shadow Legion，[[core-rules/mounted.md|Mounted]]，[[core-rules/grenades.md|Grenades]]，Chaos，Slaanesh，Chaos Lord，Steed of Slaanesh，Undivided，Shadow Legion，[[core-rules/mounted.md|Mounted]]，[[core-rules/character.md|Character]]，[[core-rules/grenades.md|Grenades]]，Chaos，Slaanesh
+- **普通关键词**：Chaos Lord，Steed of Slaanesh，Undivided，[[factions/混沌恶魔/detachments/shadow-legion.md|Shadow Legion]]，[[core-rules/mounted.md|Mounted]]，[[core-rules/character.md|Character]]，[[core-rules/grenades.md|Grenades]]，Slaanesh，Chaos Lord，Steed of Slaanesh，Undivided，Shadow Legion，[[core-rules/mounted.md|Mounted]]，[[core-rules/character.md|Character]]，[[core-rules/grenades.md|Grenades]]，Chaos，Slaanesh，Chaos Lord，Steed of Slaanesh，Undivided，Shadow Legion，[[core-rules/character.md|Character]]，Chaos，[[core-rules/mounted.md|Mounted]]，[[core-rules/character.md|Character]]，[[core-rules/grenades.md|Grenades]]，Chaos，Slaanesh，Chaos Lord，Steed of Slaanesh，Undivided，Shadow Legion，[[core-rules/mounted.md|Mounted]]，[[core-rules/character.md|Character]]，[[core-rules/grenades.md|Grenades]]，Chaos，Slaanesh，Chaos Lord，Steed of Slaanesh，Undivided，Shadow Legion，[[core-rules/mounted.md|Mounted]]，[[core-rules/character.md|Character]]，[[core-rules/grenades.md|Grenades]]，Chaos，Slaanesh，Chaos Lord，Steed of Slaanesh，Undivided，Shadow Legion，[[core-rules/mounted.md|Mounted]]，[[core-rules/grenades.md|Grenades]]，Chaos，Slaanesh，Chaos Lord，Steed of Slaanesh，Undivided，Shadow Legion，[[core-rules/mounted.md|Mounted]]，[[core-rules/character.md|Character]]，[[core-rules/grenades.md|Grenades]]，Chaos，Slaanesh

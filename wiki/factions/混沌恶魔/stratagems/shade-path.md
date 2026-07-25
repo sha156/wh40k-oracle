@@ -24,7 +24,7 @@ Start of your opponent’s Charge phase.
 
 ## 使用对象
 
-One friendly Shadow Legion unit.
+One friendly [[factions/混沌恶魔/detachments/shadow-legion.md|Shadow Legion]] unit.
 
 ## 效果
 

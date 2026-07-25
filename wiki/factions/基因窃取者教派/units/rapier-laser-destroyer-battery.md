@@ -26,7 +26,7 @@ updated: '2026-07-23'
 ## 射击武器
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| Laser destroyer | 36" | 2 | 5+ | 12 | -2 | D6+1 | [[core-rules/heavy.md\|heavy]]，[[core-rules/twin-linked.md\|twin-linked]] |
+| Laser destroyer | 36" | 2 | 5+ | 12 | -2 | D6+1 | [[core-rules/heavy.md\|重型]]，[[core-rules/twin-linked.md\|双联]] |
 
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |

@@ -19,7 +19,7 @@ updated: '2026-07-25'
 
 ## 效果
 
-During the Declare Battle Formations step, the bearer can be attached to a [[factions/兽人/units/kommandos.md|Kommandos]] unit. While leading a Kommandos unit, it has the Infiltrators and Stealth abilities.
+During the Declare Battle Formations step, the bearer can be attached to a [[factions/兽人/units/kommandos.md|Kommandos]] unit. While leading a [[factions/兽人/units/kommandos.md|Kommandos]] unit, it has the Infiltrators and Stealth abilities.
 
 **分数**：15 分
 

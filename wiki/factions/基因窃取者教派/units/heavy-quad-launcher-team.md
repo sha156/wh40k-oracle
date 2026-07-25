@@ -24,7 +24,7 @@ updated: '2026-07-23'
 ## 射击武器
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| 重型四管迫击炮 | 48" | 2D6 | 4+ | 5 | 0 | 1 | [[core-rules/blast.md\|blast]]，[[core-rules/indirect-fire.md\|indirect fire]] |
+| 重型四管迫击炮 | 48" | 2D6 | 4+ | 5 | 0 | 1 | [[core-rules/blast.md\|爆炸]]，[[core-rules/indirect-fire.md\|曲射]] |
 
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |

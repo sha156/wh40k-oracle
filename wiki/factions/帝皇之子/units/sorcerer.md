@@ -26,14 +26,14 @@ updated: '2026-07-23'
 ## 射击武器
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| 苦痛能量（巫火） | 18" | D6 | 3+ | 5 | -1 | D3 | [[core-rules/psychic-attacks.md\|psychic]] |
-| 苦痛能量（聚焦巫火） | 18" | D6 | 3+ | 6 | -2 | D3 | [[core-rules/devastating-wounds.md\|devastating wounds]]，[[core-rules/hazardous.md\|hazardous]]，[[core-rules/psychic-attacks.md\|psychic]] |
+| 苦痛能量（巫火） | 18" | D6 | 3+ | 5 | -1 | D3 | [[core-rules/psychic-attacks.md\|灵能]] |
+| 苦痛能量（聚焦巫火） | 18" | D6 | 3+ | 6 | -2 | D3 | [[core-rules/devastating-wounds.md\|毁灭伤害]]，[[core-rules/hazardous.md\|危险]]，[[core-rules/psychic-attacks.md\|灵能]] |
 | 爆弹手枪 | 12" | 1 | 3+ | 4 | 0 | 1 | [[core-rules/pistol.md\|手枪]] |
 
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| 灵能武器 | 近战 | 4 | 3+ | 6 | -2 | D3 | [[core-rules/psychic-attacks.md\|psychic]] |
+| 灵能武器 | 近战 | 4 | 3+ | 6 | -2 | D3 | [[core-rules/psychic-attacks.md\|灵能]] |
 
 ## 技能
 - **【阵营技能】：黑暗契约**

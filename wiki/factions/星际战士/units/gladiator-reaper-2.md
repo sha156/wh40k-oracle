@@ -26,11 +26,11 @@ updated: '2026-07-23'
 ## 射击武器
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| 伊卡洛斯火箭巢 | 24" | D3 | 3+ | 8 | -1 | 2 | [[core-rules/anti.md\|anti-fly 2+]] |
-| 铁雨重机枪 | 36" | 3 | 3+ | 4 | 0 | 1 | [[core-rules/rapid-fire.md\|rapid fire 3]] |
-| 多管热熔 | 18" | 2 | 3+ | 9 | -4 | D6 | [[core-rules/melta.md\|melta 2]] |
-| 旋风爆弹枪  | 24" | 4 | 3+ | 4 | -1 | 1 | [[core-rules/rapid-fire.md\|速射 4]] |
-| 双联重型突击加特林 | 24" | 12 | 3+ | 6 | 0 | 1 | [[core-rules/devastating-wounds.md\|devastating wounds]]，[[core-rules/twin-linked.md\|twin-linked]] |
+| 伊卡洛斯火箭巢 | 24" | D3 | 3+ | 8 | -1 | 2 | [[core-rules/anti.md\|针对飞行2+]] |
+| 铁雨重机枪 | 36" | 3 | 3+ | 4 | 0 | 1 | [[core-rules/rapid-fire.md\|速射3]] |
+| 多管热熔 | 18" | 2 | 3+ | 9 | -4 | D6 | [[core-rules/melta.md\|热熔2]] |
+| 旋风爆弹枪  | 24" | 4 | 3+ | 4 | -1 | 1 | [[core-rules/rapid-fire.md\|速射4]] |
+| 双联重型突击加特林 | 24" | 12 | 3+ | 6 | 0 | 1 | [[core-rules/devastating-wounds.md\|毁灭伤害]]，[[core-rules/twin-linked.md\|双联]] |
 
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |

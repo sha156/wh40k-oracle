@@ -27,10 +27,10 @@ updated: '2026-07-23'
 ## 射击武器
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| 重型爆矢枪 | 36" | 3 | 6+ | 5 | -1 | 2 | [[core-rules/heavy.md\|heavy]]，[[core-rules/sustained-hits.md\|sustained hits 1]] |
-| 多管热熔 | 18" | 2 | 6+ | 9 | -4 | D6 | [[core-rules/heavy.md\|heavy]]，[[core-rules/melta.md\|melta 2]] |
-| 等离子炮（标准） | 36" | D3 | 6+ | 7 | -2 | 1 | [[core-rules/heavy.md\|heavy]]，[[core-rules/blast.md\|blast]] |
-| 等离子炮（过载） | 36" | D3 | 6+ | 8 | -3 | 2 | [[core-rules/heavy.md\|heavy]]，[[core-rules/blast.md\|blast]]，[[core-rules/hazardous.md\|hazardous]] |
+| 重型爆矢枪 | 36" | 3 | 6+ | 5 | -1 | 2 | [[core-rules/heavy.md\|重型]]，[[core-rules/sustained-hits.md\|连击1]] |
+| 多管热熔 | 18" | 2 | 6+ | 9 | -4 | D6 | [[core-rules/heavy.md\|重型]]，[[core-rules/melta.md\|热熔2]] |
+| 等离子炮（标准） | 36" | D3 | 6+ | 7 | -2 | 1 | [[core-rules/heavy.md\|重型]]，[[core-rules/blast.md\|爆炸]] |
+| 等离子炮（过载） | 36" | D3 | 6+ | 8 | -3 | 2 | [[core-rules/heavy.md\|重型]]，[[core-rules/blast.md\|爆炸]]，[[core-rules/hazardous.md\|危险]] |
 
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |

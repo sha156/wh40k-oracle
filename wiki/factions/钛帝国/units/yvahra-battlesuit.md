@@ -29,9 +29,9 @@ updated: '2026-07-23'
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
 | Flechette pod | 12" | 5 | 4+ | 3 | 0 | 1 | — |
-| Ionic discharge cannon – standard | 18" | D6+1 | 4+ | 7 | -1 | 2 | [[core-rules/blast.md\|blast]] |
-| Ionic discharge cannon – overcharge | 18" | D6+1 | 4+ | 8 | -2 | 3 | [[core-rules/blast.md\|blast]]，[[core-rules/hazardous.md\|hazardous]] |
-| Phased plasma-flamer | 12" | 10 | N/A | 6 | -1 | 1 | [[core-rules/ignores-cover.md\|ignores cover]]，[[core-rules/torrent.md\|torrent]] |
+| Ionic discharge cannon – standard | 18" | D6+1 | 4+ | 7 | -1 | 2 | [[core-rules/blast.md\|爆炸]] |
+| Ionic discharge cannon – overcharge | 18" | D6+1 | 4+ | 8 | -2 | 3 | [[core-rules/blast.md\|爆炸]]，[[core-rules/hazardous.md\|危险]] |
+| Phased plasma-flamer | 12" | 10 | N/A | 6 | -1 | 1 | [[core-rules/ignores-cover.md\|无视掩体]]，[[core-rules/torrent.md\|洪流]] |
 
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |

@@ -30,13 +30,13 @@ updated: '2026-07-23'
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
 | 爆弹手枪 | 12" | 1 | 3+ | 4 | 0 | 1 | [[core-rules/pistol.md\|手枪]] |
-| 活体闪电（巫火） | 24" | D6 | 3+ | 7 | -1 | 1 | [[core-rules/psychic-attacks.md\|psychic]]，[[core-rules/sustained-hits.md\|sustained hits 2]] |
-| 活体闪电（聚焦巫火） | 24" | 2D6 | 3+ | 7 | -1 | 1 | [[core-rules/hazardous.md\|hazardous]]，[[core-rules/psychic-attacks.md\|psychic]]，[[core-rules/sustained-hits.md\|sustained hits 2]] |
+| 活体闪电（巫火） | 24" | D6 | 3+ | 7 | -1 | 1 | [[core-rules/psychic-attacks.md\|灵能]]，[[core-rules/sustained-hits.md\|连击2]] |
+| 活体闪电（聚焦巫火） | 24" | 2D6 | 3+ | 7 | -1 | 1 | [[core-rules/hazardous.md\|危险]]，[[core-rules/psychic-attacks.md\|灵能]]，[[core-rules/sustained-hits.md\|连击2]] |
 
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| 呼风者之杖 | 近战 | 4 | 3+ | 7 | -1 | D3 | [[core-rules/psychic-attacks.md\|psychic]]，[[core-rules/sustained-hits.md\|sustained hits 2]] |
+| 呼风者之杖 | 近战 | 4 | 3+ | 7 | -1 | D3 | [[core-rules/psychic-attacks.md\|灵能]]，[[core-rules/sustained-hits.md\|连击2]] |
 
 ## 技能
 - **【阵营技能】：破敌重誓**

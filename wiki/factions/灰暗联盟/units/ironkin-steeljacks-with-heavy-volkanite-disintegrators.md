@@ -27,14 +27,14 @@ updated: '2026-07-23'
 ## 射击武器
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| 基岩型爆矢枪 | 24" | 2 | 4+ | 4 | 0 | 1 | [[core-rules/pistol.md\|pistol]] |
-| 重型爆燃解离枪 | 24" | 6 | 4+ | 6 | -1 | 1 | [[core-rules/devastating-wounds.md\|devastating wounds]] |
+| 基岩型爆矢枪 | 24" | 2 | 4+ | 4 | 0 | 1 | [[core-rules/pistol.md\|手枪]] |
+| 重型爆燃解离枪 | 24" | 6 | 4+ | 6 | -1 | 1 | [[core-rules/devastating-wounds.md\|毁灭伤害]] |
 
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
 | 等离子匕首 | 近战 | 2 | 3+ | 6 | -2 | 1 | — |
-| 等离子剑   | 近战 | 6 | 3+ | 6 | -2 | 1 | [[core-rules/sustained-hits.md\|连击 1]] |
+| 等离子剑   | 近战 | 6 | 3+ | 6 | -2 | 1 | [[core-rules/sustained-hits.md\|连击1]] |
 
 ## 技能
 - **阵营:效率为先**

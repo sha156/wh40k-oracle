@@ -27,7 +27,7 @@ updated: '2026-07-23'
 ## 射击武器
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| Grot-guided bomms | 72" | D6 | 4+ | 8 | -2 | 2 | [[core-rules/blast.md\|blast]]，[[core-rules/one-shot.md\|one shot]]，[[core-rules/indirect-fire.md\|indirect fire]] |
+| Grot-guided bomms | 72" | D6 | 4+ | 8 | -2 | 2 | [[core-rules/blast.md\|爆炸]]，[[core-rules/one-shot.md\|单发]]，[[core-rules/indirect-fire.md\|曲射]] |
 
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |

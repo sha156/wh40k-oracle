@@ -27,11 +27,11 @@ updated: '2026-07-23'
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
 | 破片风暴雷  | 18" | D6 | 3+ | 4 | 0 | 1 | [[core-rules/blast.md\|爆炸]] |
-| 伊卡洛斯火箭巢 | 24" | D3 | 3+ | 8 | -1 | 2 | [[core-rules/anti.md\|anti-fly 2+]] |
-| 铁雨重机枪 | 36" | 3 | 3+ | 4 | 0 | 1 | [[core-rules/rapid-fire.md\|rapid fire 3]] |
-| 枪骑兵激光毁灭炮 | 72" | 2 | 3+ | 14 | -4 | D6+3 | [[core-rules/heavy.md\|heavy]] |
-| 多管热熔 | 18" | 2 | 3+ | 9 | -4 | D6 | [[core-rules/melta.md\|melta 2]] |
-| 风暴爆弹枪 | 24" | 2 | 3+ | 4 | 0 | 1 | [[core-rules/rapid-fire.md\|速射 2]] |
+| 伊卡洛斯火箭巢 | 24" | D3 | 3+ | 8 | -1 | 2 | [[core-rules/anti.md\|针对飞行2+]] |
+| 铁雨重机枪 | 36" | 3 | 3+ | 4 | 0 | 1 | [[core-rules/rapid-fire.md\|速射3]] |
+| 枪骑兵激光毁灭炮 | 72" | 2 | 3+ | 14 | -4 | D6+3 | [[core-rules/heavy.md\|重型]] |
+| 多管热熔 | 18" | 2 | 3+ | 9 | -4 | D6 | [[core-rules/melta.md\|热熔2]] |
+| 风暴爆弹枪 | 24" | 2 | 3+ | 4 | 0 | 1 | [[core-rules/rapid-fire.md\|速射2]] |
 
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |

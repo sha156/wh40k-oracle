@@ -29,7 +29,7 @@ updated: '2026-07-23'
 ## 射击武器
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| 憎火歼灭炮 | 18" | 2 | 2+ | 6 | -1 | 1 | [[core-rules/rapid-fire.md\|rapid fire 2]] |
+| 憎火歼灭炮 | 18" | 2 | 2+ | 6 | -1 | 1 | [[core-rules/rapid-fire.md\|速射2]] |
 
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |
@@ -47,4 +47,4 @@ updated: '2026-07-23'
 
 ## 关键词
 - **阵营关键词**：Necrons
-- **普通关键词**：Destroyer Cult，[[core-rules/character.md|Character]]，[[core-rules/infantry.md|Infantry]]，Skorpekh [[factions/太空死灵/units/lord.md|Lord]]
+- **普通关键词**：Destroyer Cult，[[core-rules/character.md|Character]]，[[core-rules/infantry.md|Infantry]]，Skorpekh Lord

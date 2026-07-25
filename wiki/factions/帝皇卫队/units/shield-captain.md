@@ -29,10 +29,10 @@ updated: '2026-07-23'
 ## 射击武器
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| 堡主战斧 | 24" | 2 | 2+ | 4 | -1 | 2 | [[core-rules/assault.md\|assault]] |
-| 卫士之矛 | 24" | 2 | 2+ | 4 | -1 | 2 | [[core-rules/assault.md\|assault]] |
+| 堡主战斧 | 24" | 2 | 2+ | 4 | -1 | 2 | [[core-rules/assault.md\|突击]] |
+| 卫士之矛 | 24" | 2 | 2+ | 4 | -1 | 2 | [[core-rules/assault.md\|突击]] |
 | 热熔长矛 | 12" | 1 | 2+ | 9 | -4 | D6 | [[core-rules/melta.md\|热熔2]] |
-| 哨兵之剑 | 12" | 2 | 2+ | 4 | -1 | 2 | [[core-rules/assault.md\|assault]]，[[core-rules/pistol.md\|pistol]] |
+| 哨兵之剑 | 12" | 2 | 2+ | 4 | -1 | 2 | [[core-rules/assault.md\|突击]]，[[core-rules/pistol.md\|手枪]] |
 
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |

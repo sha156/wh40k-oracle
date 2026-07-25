@@ -28,13 +28,13 @@ updated: '2026-07-23'
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
 | 爆弹风暴臂甲  | 18" | 3 | 3+ | 4 | 0 | 1 | [[core-rules/twin-linked.md\|双联]] |
-| 烈焰风暴臂甲 | 12" | D6+1 | N/A | 4 | 0 | 1 | [[core-rules/ignores-cover.md\|ignores cover]]，[[core-rules/torrent.md\|torrent]]，[[core-rules/twin-linked.md\|twin-linked]] |
-| 破片风暴雷 | 18" | D6 | 3+ | 4 | 0 | 1 | [[core-rules/blast.md\|blast]] |
+| 烈焰风暴臂甲 | 12" | D6+1 | N/A | 4 | 0 | 1 | [[core-rules/ignores-cover.md\|无视掩体]]，[[core-rules/torrent.md\|洪流]]，[[core-rules/twin-linked.md\|双联]] |
+| 破片风暴雷 | 18" | D6 | 3+ | 4 | 0 | 1 | [[core-rules/blast.md\|爆炸]] |
 
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| 一对动力拳 | 近战 | 3 | 3+ | 8 | -2 | 2 | [[core-rules/twin-linked.md\|twin-linked]] |
+| 一对动力拳 | 近战 | 3 | 3+ | 8 | -2 | 2 | [[core-rules/twin-linked.md\|双联]] |
 
 ## 技能
 - **近距离火力**：如果本单位中模型的射击目标是当前最近的可选目标，则本轮攻击中 AP 值增强 1 点

@@ -47,4 +47,4 @@ updated: '2026-07-23'
 
 ## 关键词
 - **阵营关键词**：兽人
-- **普通关键词**：[[core-rules/infantry.md|步兵]]，[[core-rules/character.md|人物]]，超重装护甲，[[factions/兽人/units/warboss.md|战争头目]]，超重装战争头目
+- **普通关键词**：[[core-rules/infantry.md|步兵]]，[[core-rules/character.md|人物]]，超重装护甲，战争头目，超重装战争头目

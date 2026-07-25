@@ -24,4 +24,4 @@ At the start of the Fight phase, select one enemy unit within Engagement Range o
 
 ## 携带限制
 
-Shadow Legion model only.
+[[factions/混沌恶魔/detachments/shadow-legion.md|Shadow Legion]] model only.

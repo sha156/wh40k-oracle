@@ -26,7 +26,7 @@ updated: '2026-07-23'
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
 | 金牛战斗加农炮 | 48" | D6 | 3+ | 8 | -1 | 2 | [[core-rules/blast.md\|爆炸]] |
-| 金牛加特林 | 24" | 8 | 3+ | 4 | 0 | 1 | 毁灭性伤害，[[core-rules/twin-linked.md\|双联]] |
+| 金牛加特林 | 24" | 8 | 3+ | 4 | 0 | 1 | [[core-rules/devastating-wounds.md\|毁灭伤害]]，[[core-rules/twin-linked.md\|双联]] |
 | 金牛导弹发射器（破片） | 48" | D6 | 3+ | 4 | 0 | 1 | [[core-rules/blast.md\|爆炸]]，[[core-rules/twin-linked.md\|双联]] |
 | 金牛导弹发射器（穿甲） | 48" | 1 | 3+ | 9 | -2 | D6 | [[core-rules/twin-linked.md\|双联]] |
 | 双联金牛热射排枪 | 30" | 3 | 3+ | 4 | -1 | 1 | [[core-rules/rapid-fire.md\|速射3]]，[[core-rules/twin-linked.md\|双联]] |

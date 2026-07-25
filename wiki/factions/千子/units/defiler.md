@@ -29,20 +29,20 @@ updated: '2026-07-23'
 ## 射击武器
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| 魂浆毁灭炮 | 36" | D6 | 3+ | 12 | -3 | 3 | [[core-rules/blast.md\|blast]] |
+| 魂浆毁灭炮 | 36" | D6 | 3+ | 12 | -3 | 3 | [[core-rules/blast.md\|爆炸]] |
 | 拷问者加农炮 | 36" | 6 | 3+ | 6 | -2 | 2 | — |
-| 冥神战斗加农炮 | 48" | D6+3 | 3+ | 10 | -1 | 3 | [[core-rules/blast.md\|blast]] |
+| 冥神战斗加农炮 | 48" | D6+3 | 3+ | 10 | -1 | 3 | [[core-rules/blast.md\|爆炸]] |
 | 冥神激光炮 | 48" | 2 | 3+ | 12 | -3 | D6+1 | — |
-| 重型恶毒之火 | 12" | D6+3 | N/A | 7 | -2 | 2 | [[core-rules/ignores-cover.md\|ignores cover]]，[[core-rules/torrent.md\|torrent]] |
+| 重型恶毒之火 | 12" | D6+3 | N/A | 7 | -2 | 2 | [[core-rules/ignores-cover.md\|无视掩体]]，[[core-rules/torrent.md\|洪流]] |
 | 重型导弹发射器（穿甲） | 48" | 2 | 3+ | 10 | -2 | D6+1 | — |
-| 重型导弹发射器（破片） | 48" | 2D6 | 3+ | 5 | -1 | 1 | [[core-rules/blast.md\|blast]] |
-| 重型收割者自动炮 | 48" | 4 | 3+ | 9 | -2 | 3 | [[core-rules/devastating-wounds.md\|devastating wounds]]，[[core-rules/sustained-hits.md\|sustained hits 1]] |
-| 焰流岩浆切割器 | 12" | 2 | 3+ | 10 | -4 | D6 | [[core-rules/melta.md\|melta 2]] |
+| 重型导弹发射器（破片） | 48" | 2D6 | 3+ | 5 | -1 | 1 | [[core-rules/blast.md\|爆炸]] |
+| 重型收割者自动炮 | 48" | 4 | 3+ | 9 | -2 | 3 | [[core-rules/devastating-wounds.md\|毁灭伤害]]，[[core-rules/sustained-hits.md\|连击1]] |
+| 焰流岩浆切割器 | 12" | 2 | 3+ | 10 | -4 | D6 | [[core-rules/melta.md\|热熔2]] |
 
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| 电鞭 | 近战 | 5 | 3+ | 12 | -2 | 2 | [[core-rules/extra-attacks.md\|extra attacks]]，[[core-rules/sustained-hits.md\|sustained hits 2]] |
+| 电鞭 | 近战 | 5 | 3+ | 12 | -2 | 2 | [[core-rules/extra-attacks.md\|额外攻击]]，[[core-rules/sustained-hits.md\|连击2]] |
 | 剪切利爪（重击） | 近战 | 5 | 3+ | 16 | -3 | D6+1 | — |
 | 剪切利爪（横扫） | 近战 | 10 | 3+ | 6 | -2 | 1 | — |
 

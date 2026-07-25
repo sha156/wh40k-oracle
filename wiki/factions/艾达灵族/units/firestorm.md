@@ -24,9 +24,9 @@ updated: '2026-07-23'
 ## 射击武器
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| Firestorm scatter laser | 36" | 16 | 3+ | 5 | 0 | 1 | [[core-rules/anti.md\|anti-fly 2+]] |
-| 星镖炮 | 24" | 3 | 3+ | 6 | -1 | 2 | [[core-rules/sustained-hits.md\|sustained hits 1]] |
-| 双联星镖枪 | 18" | 2 | 3+ | 4 | -3 | 1 | [[core-rules/assault.md\|assault]]，[[core-rules/twin-linked.md\|twin-linked]] |
+| Firestorm scatter laser | 36" | 16 | 3+ | 5 | 0 | 1 | [[core-rules/anti.md\|针对飞行2+]] |
+| 星镖炮 | 24" | 3 | 3+ | 6 | -1 | 2 | [[core-rules/sustained-hits.md\|连击1]] |
+| 双联星镖枪 | 18" | 2 | 3+ | 4 | -3 | 1 | [[core-rules/assault.md\|突击]]，[[core-rules/twin-linked.md\|双联]] |
 
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |

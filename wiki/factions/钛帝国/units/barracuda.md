@@ -29,14 +29,14 @@ updated: '2026-07-23'
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
 | 循环离子炮—标准 | 18" | 3 | 4+ | 7 | -1 | 1 | — |
-| 循环离子炮—过载 | 18" | 3 | 4+ | 8 | -2 | 2 | [[core-rules/hazardous.md\|hazardous]] |
-| 离子加农—标准 | 60" | D6+3 | 4+ | 7 | -1 | 2 | [[core-rules/blast.md\|blast]] |
-| 离子加农—过载 | 60" | D6+3 | 4+ | 8 | -2 | 3 | [[core-rules/blast.md\|blast]]，[[core-rules/hazardous.md\|hazardous]] |
+| 循环离子炮—过载 | 18" | 3 | 4+ | 8 | -2 | 2 | [[core-rules/hazardous.md\|危险]] |
+| 离子加农—标准 | 60" | D6+3 | 4+ | 7 | -1 | 2 | [[core-rules/blast.md\|爆炸]] |
+| 离子加农—过载 | 60" | D6+3 | 4+ | 8 | -2 | 3 | [[core-rules/blast.md\|爆炸]]，[[core-rules/hazardous.md\|危险]] |
 | Long-barrelled burst cannon | 24" | 8 | 4+ | 6 | 0 | 1 | — |
 | 导弹仓 | 30" | 2 | 4+ | 7 | -1 | 2 | — |
-| 寻觅者导弹 | 48" | 1 | 4+ | 14 | -3 | D6+1 | [[core-rules/one-shot.md\|one shot]] |
+| 寻觅者导弹 | 48" | 1 | 4+ | 14 | -3 | D6+1 | [[core-rules/one-shot.md\|单发]] |
 | 高速爆裂速射炮 | 36" | 16 | 4+ | 6 | -1 | 1 | — |
-| 高速磁轨炮 | 72" | 1 | 4+ | 20 | -5 | D6+6 | [[core-rules/devastating-wounds.md\|devastating wounds]] |
+| 高速磁轨炮 | 72" | 1 | 4+ | 20 | -5 | D6+6 | [[core-rules/devastating-wounds.md\|毁灭伤害]] |
 
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |

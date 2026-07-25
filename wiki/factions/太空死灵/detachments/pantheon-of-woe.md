@@ -21,9 +21,9 @@ updated: '2026-07-25'
 
 Necrons Monster units from your army have the following ability:
 
-**Distortion Fields (Aura):** While an enemy unit is within 6" of this unit, it is unravelling. While an enemy unit is unravelling, each time an attack targets that unit, improve the Armour Penetration characteristic of that attack by 1.
+**[[factions/帝皇之子/enhancements/distortion.md|Distortion]] Fields (Aura):** While an enemy unit is within 6" of this unit, it is unravelling. While an enemy unit is unravelling, each time an attack targets that unit, improve the Armour Penetration characteristic of that attack by 1.
 
-At the start of each phase, for each NECRONS MONSTER unit from your army, that unit can suffer 3 mortal wounds. If it does, until the end of the phase, the range of that unit’s Distortion Fields Aura ability is increased to 9".
+At the start of each phase, for each NECRONS MONSTER unit from your army, that unit can suffer 3 mortal wounds. If it does, until the end of the phase, the range of that unit’s [[factions/帝皇之子/enhancements/distortion.md|Distortion]] Fields Aura ability is increased to 9".
 
 **Designer’s Note:** *If your army contains more than one [[factions/太空死灵/units/transcendent-ctan.md|Transcendent C’tan]] unit, each of those units must take the [[factions/太空死灵/enhancements/reletavistic-tether.md|Reletavistic Tether]] ability.*
 

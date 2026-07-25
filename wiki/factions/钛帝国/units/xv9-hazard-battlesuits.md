@@ -26,9 +26,9 @@ updated: '2026-07-23'
 ## 射击武器
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| Fusion cascade | 12" | 1 | 4+ | 9 | -4 | D6 | [[core-rules/melta.md\|melta 4]] |
+| Fusion cascade | 12" | 1 | 4+ | 9 | -4 | D6 | [[core-rules/melta.md\|热熔4]] |
 | Phased ion gun | 30" | 4 | 4+ | 6 | -1 | 1 | — |
-| Twin hazard burst cannon | 24" | 4 | 4+ | 5 | 0 | 1 | [[core-rules/twin-linked.md\|twin-linked]] |
+| Twin hazard burst cannon | 24" | 4 | 4+ | 5 | 0 | 1 | [[core-rules/twin-linked.md\|双联]] |
 
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |

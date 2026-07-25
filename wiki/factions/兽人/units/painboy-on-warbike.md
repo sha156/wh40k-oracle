@@ -27,14 +27,14 @@ updated: '2026-07-23'
 ## 射击武器
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| 双联突突枪 | 18" | 3 | 5+ | 5 | 0 | 1 | [[core-rules/assault.md\|assault]]，[[core-rules/rapid-fire.md\|rapid fire 2]]，[[core-rules/twin-linked.md\|twin-linked]] |
+| 双联突突枪 | 18" | 3 | 5+ | 5 | 0 | 1 | [[core-rules/assault.md\|突击]]，[[core-rules/rapid-fire.md\|速射2]]，[[core-rules/twin-linked.md\|双联]] |
 
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
 | 杀戮锯 | 近战 | 2 | 4+ | 12 | -3 | 2 | — |
 | 动力爪 | 近战 | 3 | 4+ | 9 | -2 | 2 | — |
-| 屁精大针头 | 近战 | 1 | 3+ | 2 | 0 | 1 | [[core-rules/anti.md\|anti-infantry 4+]]，[[core-rules/extra-attacks.md\|extra attacks]]，[[core-rules/precision.md\|precision]] |
+| 屁精大针头 | 近战 | 1 | 3+ | 2 | 0 | 1 | [[core-rules/anti.md\|针对步兵4+]]，[[core-rules/extra-attacks.md\|额外攻击]]，[[core-rules/precision.md\|精准]] |
 
 ## 技能
 - **Dok’s Toolz**：While this model is leading a unit, models in that unit have the Feel No Pain 5+ ability.
@@ -45,4 +45,4 @@ updated: '2026-07-23'
 
 ## 关键词
 - **阵营关键词**：Orks
-- **普通关键词**：[[core-rules/mounted.md|Mounted]]，[[factions/兽人/units/painboy.md|Painboy]] on Warbike，[[core-rules/character.md|Character]]，Speed Freeks
+- **普通关键词**：[[core-rules/mounted.md|Mounted]]，Painboy on Warbike，[[core-rules/character.md|Character]]，Speed Freeks

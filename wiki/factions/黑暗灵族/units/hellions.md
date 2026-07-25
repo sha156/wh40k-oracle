@@ -30,14 +30,14 @@ updated: '2026-07-23'
 ## 射击武器
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| 毒晶手枪 | 12" | 1 | 3+ | 2 | 0 | 1 | [[core-rules/anti.md\|针对步兵 3+]]，[[core-rules/assault.md\|突击]]，[[core-rules/pistol.md\|手枪]] |
-| 毒晶匣枪 | 18" | 2 | 3+ | 2 | 0 | 1 | [[core-rules/anti.md\|针对步兵 3+]]，[[core-rules/assault.md\|突击]]，[[core-rules/twin-linked.md\|双联]] |
+| 毒晶手枪 | 12" | 1 | 3+ | 2 | 0 | 1 | [[core-rules/anti.md\|针对步兵3+]]，[[core-rules/assault.md\|突击]]，[[core-rules/pistol.md\|手枪]] |
+| 毒晶匣枪 | 18" | 2 | 3+ | 2 | 0 | 1 | [[core-rules/anti.md\|针对步兵3+]]，[[core-rules/assault.md\|突击]]，[[core-rules/twin-linked.md\|双联]] |
 
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| 地狱长刀 | 近战 | 3 | 3+ | 4 | -1 | 2 | [[core-rules/sustained-hits.md\|连击1]]，[[core-rules/lance.md\|骑枪]] |
-| 动力武器 | 近战 | 4 | 3+ | 3 | -2 | 1 | [[core-rules/anti.md\|针对步兵 3+]]，[[core-rules/sustained-hits.md\|连击1]]，[[core-rules/lance.md\|骑枪]] |
+| 地狱长刀 | 近战 | 3 | 3+ | 4 | -1 | 2 | [[core-rules/lance.md\|骑枪]]，[[core-rules/sustained-hits.md\|连击1]] |
+| 动力武器 | 近战 | 4 | 3+ | 3 | -2 | 1 | [[core-rules/anti.md\|针对步兵3+]]，[[core-rules/lance.md\|骑枪]]，[[core-rules/sustained-hits.md\|连击1]] |
 | 眩晕利爪 | 近战 | 4 | 3+ | 3 | -1 | 1 | [[core-rules/devastating-wounds.md\|毁灭伤害]]，[[core-rules/lance.md\|骑枪]]，[[core-rules/precision.md\|精准]] |
 
 ## 技能

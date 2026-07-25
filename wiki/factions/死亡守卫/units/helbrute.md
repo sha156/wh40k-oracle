@@ -26,15 +26,15 @@ updated: '2026-07-23'
 ## 射击武器
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| 并联爆弹枪 | 24" | 2 | 3+ | 4 | 0 | 1 | [[core-rules/rapid-fire.md\|速射 2]] |
-| 重型喷火器 | 12" | D6 | N/A | 5 | -1 | 1 | [[core-rules/ignores-cover.md\|ignores cover]]，[[core-rules/torrent.md\|torrent]] |
-| 导弹发射器（破片） | 48" | D6 | 3+ | 4 | 0 | 1 | [[core-rules/blast.md\|blast]] |
+| 并联爆弹枪 | 24" | 2 | 3+ | 4 | 0 | 1 | [[core-rules/lethal-hits.md\|致命一击]]，[[core-rules/rapid-fire.md\|速射2]] |
+| 重型喷火器 | 12" | D6 | N/A | 5 | -1 | 1 | [[core-rules/ignores-cover.md\|无视掩体]]，[[core-rules/torrent.md\|洪流]] |
+| 导弹发射器（破片） | 48" | D6 | 3+ | 4 | 0 | 1 | [[core-rules/blast.md\|爆炸]] |
 | 爆炸导弹发射器（穿甲弹）  | 48" | 1 | 3+ | 9 | -2 | D6 | — |
-| 多管热熔  | 18" | 2 | 3+ | 9 | -4 | D6 | [[core-rules/melta.md\|热熔 2]] |
-| 地狱兽等离子炮 | 36" | D3 | 3+ | 8 | -3 | 3 | [[core-rules/blast.md\|blast]]，[[core-rules/hazardous.md\|hazardous]]，[[core-rules/lethal-hits.md\|lethal hits]] |
-| 双联自动炮 | 48" | 2 | 3+ | 10 | -1 | 3 | [[core-rules/twin-linked.md\|twin-linked]]，[[core-rules/lethal-hits.md\|lethal hits]] |
-| 双联重爆弹 | 36" | 3 | 3+ | 5 | -1 | 2 | [[core-rules/sustained-hits.md\|连击 1]]，[[core-rules/twin-linked.md\|双联]] |
-| 双联激光炮 | 48" | 1 | 3+ | 12 | -3 | D6+1 | [[core-rules/twin-linked.md\|twin-linked]] |
+| 多管热熔  | 18" | 2 | 3+ | 9 | -4 | D6 | [[core-rules/melta.md\|热熔2]]，[[core-rules/lethal-hits.md\|致命一击]] |
+| 地狱兽等离子炮 | 36" | D3 | 3+ | 8 | -3 | 3 | [[core-rules/blast.md\|爆炸]]，[[core-rules/hazardous.md\|危险]]，[[core-rules/lethal-hits.md\|致命一击]] |
+| 双联自动炮 | 48" | 2 | 3+ | 10 | -1 | 3 | [[core-rules/twin-linked.md\|双联]]，[[core-rules/lethal-hits.md\|致命一击]] |
+| 双联重爆弹 | 36" | 3 | 3+ | 5 | -1 | 2 | [[core-rules/lethal-hits.md\|致命一击]]，[[core-rules/sustained-hits.md\|连击1]]，[[core-rules/twin-linked.md\|双联]] |
+| 双联激光炮 | 48" | 1 | 3+ | 12 | -3 | D6+1 | [[core-rules/twin-linked.md\|双联]] |
 
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |

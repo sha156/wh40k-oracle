@@ -29,10 +29,10 @@ updated: '2026-07-23'
 ## 射击武器
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| 惩罚者自动炮 | 48" | 4 | 3+ | 9 | -1 | 3 | [[core-rules/twin-linked.md\|双联]]，[[core-rules/rapid-fire.md\|速射4]] |
-| 惩罚者加农炮 | 48" | D6+3 | 3+ | 10 | -1 | 3 | [[core-rules/blast.md\|爆炸]]，[[core-rules/ignores-cover.md\|忽视掩体]] |
+| 惩罚者自动炮 | 48" | 4 | 3+ | 9 | -1 | 3 | [[core-rules/rapid-fire.md\|速射4]]，[[core-rules/twin-linked.md\|双联]] |
+| 惩罚者加农炮 | 48" | D6+3 | 3+ | 10 | -1 | 3 | [[core-rules/blast.md\|爆炸]]，[[core-rules/ignores-cover.md\|无视掩体]] |
 | 重型爆弹枪 | 36" | 3 | 3+ | 5 | -1 | 2 | [[core-rules/sustained-hits.md\|连击1]] |
-| 猎杀飞弹 | 48" | 1 | 2+ | 14 | -3 | D6 | [[core-rules/one-shot.md\|一次性]] |
+| 猎杀飞弹 | 48" | 1 | 2+ | 14 | -3 | D6 | [[core-rules/one-shot.md\|单发]] |
 | 风暴爆弹枪 | 24" | 2 | 3+ | 4 | 0 | 1 | [[core-rules/rapid-fire.md\|速射2]] |
 
 ## 近战武器

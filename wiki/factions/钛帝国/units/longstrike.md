@@ -26,12 +26,12 @@ updated: '2026-07-23'
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
 | 挂载爆裂速射炮 | 18" | 4 | 4+ | 6 | -1 | 1 | — |
-| 离子加农—标准 | 60" | D6+3 | 3+ | 7 | -1 | 2 | [[core-rules/blast.md\|blast]] |
-| 离子加农—过载 | 60" | D6+3 | 3+ | 8 | -2 | 3 | [[core-rules/blast.md\|blast]]，[[core-rules/hazardous.md\|hazardous]] |
-| 磁轨炮 | 72" | 1 | 3+ | 20 | -5 | D6+6 | [[core-rules/devastating-wounds.md\|devastating wounds]]，[[core-rules/heavy.md\|heavy]] |
-| 寻觅者导弹 | 48" | 1 | 4+ | 14 | -3 | D6+1 | [[core-rules/one-shot.md\|one shot]] |
-| 并联脉冲卡宾 | 20" | 2 | 4+ | 5 | 0 | 1 | [[core-rules/assault.md\|assault]]，[[core-rules/twin-linked.md\|twin-linked]] |
-| 智能导弹系统 | 30" | 3 | 4+ | 5 | 0 | 1 | [[core-rules/indirect-fire.md\|indirect fire]] |
+| 离子加农—标准 | 60" | D6+3 | 3+ | 7 | -1 | 2 | [[core-rules/blast.md\|爆炸]] |
+| 离子加农—过载 | 60" | D6+3 | 3+ | 8 | -2 | 3 | [[core-rules/blast.md\|爆炸]]，[[core-rules/hazardous.md\|危险]] |
+| 磁轨炮 | 72" | 1 | 3+ | 20 | -5 | D6+6 | [[core-rules/devastating-wounds.md\|毁灭伤害]]，[[core-rules/heavy.md\|重型]] |
+| 寻觅者导弹 | 48" | 1 | 4+ | 14 | -3 | D6+1 | [[core-rules/one-shot.md\|单发]] |
+| 并联脉冲卡宾 | 20" | 2 | 4+ | 5 | 0 | 1 | [[core-rules/assault.md\|突击]]，[[core-rules/twin-linked.md\|双联]] |
+| 智能导弹系统 | 30" | 3 | 4+ | 5 | 0 | 1 | [[core-rules/indirect-fire.md\|曲射]] |
 
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |

@@ -33,9 +33,9 @@ updated: '2026-07-23'
 |---|---|---|---|---|---|---|---|
 | 地狱火爆矢手枪 | 12" | 1 | 3+ | 4 | -1 | 1 | [[core-rules/pistol.md\|手枪]] |
 | 地狱火爆矢枪 | 24" | 2 | 3+ | 4 | -2 | 1 | — |
-| 凶煞诅咒 | 24" | 3 | 3+ | 4 | -3 | 1 | [[core-rules/anti.md\|针对步兵 4+]]，[[core-rules/psychic-attacks.md\|灵能]]，[[core-rules/devastating-wounds.md\|毁灭伤害]] |
+| 凶煞诅咒 | 24" | 3 | 3+ | 4 | -3 | 1 | [[core-rules/anti.md\|针对步兵4+]]，[[core-rules/devastating-wounds.md\|毁灭伤害]]，[[core-rules/psychic-attacks.md\|灵能]] |
 | 灵魂收割者炮 | 24" | 6 | 3+ | 6 | -2 | 1 | [[core-rules/devastating-wounds.md\|毁灭伤害]] |
-| 亚空间炽焰手枪 | 12" | D6 | N/A | 3 | -1 | 1 | [[core-rules/pistol.md\|手枪]]，[[core-rules/ignores-cover.md\|无视掩体]]，[[core-rules/torrent.md\|洪流]] |
+| 亚空间炽焰手枪 | 12" | D6 | N/A | 3 | -1 | 1 | [[core-rules/ignores-cover.md\|无视掩体]]，[[core-rules/pistol.md\|手枪]]，[[core-rules/torrent.md\|洪流]] |
 | 亚空间火焰喷射器 | 12" | D6 | N/A | 4 | -1 | 1 | [[core-rules/ignores-cover.md\|无视掩体]]，[[core-rules/torrent.md\|洪流]] |
 
 ## 近战武器

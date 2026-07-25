@@ -31,14 +31,14 @@ updated: '2026-07-23'
 |---|---|---|---|---|---|---|---|
 | 爆弹手枪 | 12" | 1 | 2+ | 4 | 0 | 1 | [[core-rules/pistol.md\|手枪]] |
 | 等离子手枪（标准） | 12" | 1 | 2+ | 7 | -2 | 1 | [[core-rules/pistol.md\|手枪]] |
-| 等离子手枪（过载） | 12" | 1 | 2+ | 8 | -3 | 2 | [[core-rules/pistol.md\|pistol]]，[[core-rules/hazardous.md\|hazardous]] |
+| 等离子手枪（过载） | 12" | 1 | 2+ | 8 | -3 | 2 | [[core-rules/pistol.md\|手枪]]，[[core-rules/hazardous.md\|危险]] |
 
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
 | 诅咒武器 | 近战 | 6 | 2+ | 5 | -2 | 1 | — |
 | 动力拳  | 近战 | 5 | 2+ | 8 | -2 | 2 | — |
-| 一对闪电爪 | 近战 | 6 | 2+ | 5 | -2 | 1 | [[core-rules/twin-linked.md\|TWIN-LINKED]] |
+| 一对闪电爪 | 近战 | 6 | 2+ | 5 | -2 | 1 | [[core-rules/twin-linked.md\|双联]] |
 
 ## 技能
 - **【阵营技能】：黑暗契约**

@@ -29,14 +29,14 @@ updated: '2026-07-23'
 ## 射击武器
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| 折磨之鞭 | 12" | 6 | 2+ | 4 | -1 | 2 | [[core-rules/anti.md\|anti-infantry 3+]]，[[core-rules/assault.md\|assault]]，[[core-rules/pistol.md\|pistol]] |
+| 折磨之鞭 | 12" | 6 | 2+ | 4 | -1 | 2 | [[core-rules/anti.md\|针对步兵3+]]，[[core-rules/assault.md\|突击]]，[[core-rules/pistol.md\|手枪]] |
 
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| 折磨之鞭 | 近战 | 6 | 2+ | 4 | -1 | 2 | [[core-rules/anti.md\|anti-infantry 3+]]，[[core-rules/extra-attacks.md\|extra attacks]] |
+| 折磨之鞭 | 近战 | 6 | 2+ | 4 | -1 | 2 | [[core-rules/anti.md\|针对步兵3+]]，[[core-rules/extra-attacks.md\|额外攻击]] |
 | 寻觅者之舌 | 近战 | 4 | 4+ | 4 | 0 | 1 | [[core-rules/extra-attacks.md\|额外攻击]]，[[core-rules/lethal-hits.md\|致命一击]] |
-| 凶狠利爪 | 近战 | 8 | 3+ | 4 | -1 | 1 | [[core-rules/devastating-wounds.md\|devastating wounds]] |
+| 凶狠利爪 | 近战 | 8 | 3+ | 4 | -1 | 1 | [[core-rules/devastating-wounds.md\|毁灭伤害]] |
 
 ## 技能
 - **痛苦使者(光环)**

@@ -159,10 +159,10 @@ def main() -> None:
     elif args.cmd == "keywords":
         from wiki_engine.keyword_index import generate as generate_keyword_index
         rep = generate_keyword_index(Path(args.db), Path(args.wiki), Path(args.pdf))
-        print("词条索引: {} 条（通用 {} / 十版遗留 {} / 单位特有 {}），"
+        print("词条索引: {} 条（通用 {} / 过渡期 {} / 单位特有 {}），"
               "反查 {} 条现役 (词条, 武器) 对 → {}".format(
                   rep["keywords"], rep["groups"].get("universal", 0),
-                  rep["groups"].get("legacy", 0), rep["groups"].get("unit-specific", 0),
+                  rep["groups"].get("transitional", 0), rep["groups"].get("unit-specific", 0),
                   rep["current_weapon_names"], rep["path"]))
 
     elif args.cmd == "lint":

@@ -29,13 +29,13 @@ updated: '2026-07-23'
 ## 射击武器
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| 冥灯 | 24" | 1 | 2+ | 10 | -3 | 3 | [[core-rules/pistol.md\|pistol]]，[[core-rules/sustained-hits.md\|sustained hits d3]] |
-| 腐败之风 | 24" | D6+3 | 2+ | 7 | -2 | 1 | [[core-rules/blast.md\|blast]]，[[core-rules/devastating-wounds.md\|devastating wounds]]，[[core-rules/lethal-hits.md\|lethal hits]]，[[core-rules/psychic-attacks.md\|psychic]] |
+| 冥灯 | 24" | 1 | 2+ | 10 | -3 | 3 | [[core-rules/pistol.md\|手枪]]，[[core-rules/sustained-hits.md\|连击D3]] |
+| 腐败之风 | 24" | D6+3 | 2+ | 7 | -2 | 1 | [[core-rules/blast.md\|爆炸]]，[[core-rules/devastating-wounds.md\|毁灭伤害]]，[[core-rules/lethal-hits.md\|致命一击]]，[[core-rules/psychic-attacks.md\|灵能]] |
 
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| 寂灭（重击） | 近战 | 5 | 2+ | 14 | -3 | D6+1 | [[core-rules/devastating-wounds.md\|devastating wounds]]，[[core-rules/lethal-hits.md\|lethal hits]] |
+| 寂灭（重击） | 近战 | 5 | 2+ | 14 | -3 | D6+1 | [[core-rules/devastating-wounds.md\|毁灭伤害]]，[[core-rules/lethal-hits.md\|致命一击]] |
 | 寂灭（横扫）  | 近战 | 15 | 2+ | 8 | -2 | 2 | [[core-rules/lethal-hits.md\|致命一击]]，[[core-rules/sustained-hits.md\|连击1]] |
 
 ## 技能

@@ -28,12 +28,12 @@ updated: '2026-07-23'
 ## 射击武器
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| 超光速粒子箭 | 72" | 1 | 2+ | 16 | -5 | D6+2 | [[core-rules/one-shot.md\|one shot]] |
+| 超光速粒子箭 | 72" | 1 | 2+ | 16 | -5 | D6+2 | [[core-rules/one-shot.md\|单发]] |
 
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| 战镰 | 近战 | 4 | 2+ | 8 | -3 | 2 | [[core-rules/devastating-wounds.md\|devastating wounds]] |
+| 战镰 | 近战 | 4 | 2+ | 8 | -3 | 2 | [[core-rules/devastating-wounds.md\|毁灭伤害]] |
 
 ## 技能
 - **[阵营]：重生协议**

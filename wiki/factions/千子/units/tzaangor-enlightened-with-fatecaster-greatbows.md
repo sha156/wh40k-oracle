@@ -46,4 +46,4 @@ updated: '2026-07-23'
 
 ## 关键词
 - **阵营关键词**：Thousand Sons
-- **普通关键词**：[[factions/千子/units/tzaangor-enlightened.md|Tzaangor Enlightened]] with Fatecaster Greatbows，[[factions/千子/units/tzaangor-enlightened.md|Tzaangor Enlightened]]，Mutant，Tzeentch，Fly，Chaos，[[core-rules/mounted.md|Mounted]]
+- **普通关键词**：[[factions/千子/units/tzaangor-enlightened.md|Tzaangor Enlightened]] with Fatecaster Greatbows，Tzaangor Enlightened，Mutant，Tzeentch，Fly，Chaos，[[core-rules/mounted.md|Mounted]]

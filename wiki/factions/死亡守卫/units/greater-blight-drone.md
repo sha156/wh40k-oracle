@@ -27,13 +27,13 @@ updated: '2026-07-23'
 ## 射击武器
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| Blightreaper cannon | 36" | 6 | 3+ | 8 | -2 | 2 | [[core-rules/lethal-hits.md\|lethal hits]] |
-| Bile maw | 12" | 3 | 3+ | 5 | 0 | 1 | [[core-rules/lethal-hits.md\|lethal hits]] |
+| Blightreaper cannon | 36" | 6 | 3+ | 8 | -2 | 2 | [[core-rules/lethal-hits.md\|致命一击]] |
+| Bile maw | 12" | 3 | 3+ | 5 | 0 | 1 | [[core-rules/lethal-hits.md\|致命一击]] |
 
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| Greater plague probe | 近战 | 4 | 3+ | 6 | -1 | 1 | [[core-rules/lethal-hits.md\|lethal hits]] |
+| Greater plague probe | 近战 | 4 | 3+ | 6 | -1 | 1 | [[core-rules/lethal-hits.md\|致命一击]] |
 
 ## 技能
 - **Hovering Death**：This model is eligible to shoot and declare a charge in a turn in which it Fell Back.

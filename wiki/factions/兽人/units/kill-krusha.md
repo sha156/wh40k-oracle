@@ -27,11 +27,11 @@ updated: '2026-07-23'
 ## 射击武器
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| Krusha kannon – blast burna | 48" | 3D6 | 5+ | 6 | -1 | 1 | [[core-rules/blast.md\|blast]] |
-| Krusha kannon – tankhamma shell | 60" | 1 | 5+ | 16 | -3 | 6 | [[core-rules/heavy.md\|heavy]] |
-| 火箭筒 | 24" | D3 | 5+ | 9 | -2 | 3 | [[core-rules/blast.md\|blast]] |
-| Skorcha | 12" | D6 | N/A | 5 | -1 | 1 | [[core-rules/ignores-cover.md\|ignores cover]]，[[core-rules/torrent.md\|torrent]] |
-| 双联大突突枪 | 36" | 3 | 5+ | 5 | 0 | 1 | [[core-rules/rapid-fire.md\|rapid fire 2]]，[[core-rules/twin-linked.md\|twin-linked]] |
+| Krusha kannon – blast burna | 48" | 3D6 | 5+ | 6 | -1 | 1 | [[core-rules/blast.md\|爆炸]] |
+| Krusha kannon – tankhamma shell | 60" | 1 | 5+ | 16 | -3 | 6 | [[core-rules/heavy.md\|重型]] |
+| 火箭筒 | 24" | D3 | 5+ | 9 | -2 | 3 | [[core-rules/blast.md\|爆炸]] |
+| Skorcha | 12" | D6 | N/A | 5 | -1 | 1 | [[core-rules/ignores-cover.md\|无视掩体]]，[[core-rules/torrent.md\|洪流]] |
+| 双联大突突枪 | 36" | 3 | 5+ | 5 | 0 | 1 | [[core-rules/rapid-fire.md\|速射2]]，[[core-rules/twin-linked.md\|双联]] |
 
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |

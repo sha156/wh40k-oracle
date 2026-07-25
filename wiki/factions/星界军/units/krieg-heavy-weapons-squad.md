@@ -27,7 +27,7 @@ updated: '2026-07-23'
 ## 射击武器
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| 克里格重型火焰喷射器 | 18" | D6 | N/A | 5 | -1 | 2 | [[core-rules/ignores-cover.md\|忽视掩体]]，[[core-rules/torrent.md\|洪流]] |
+| 克里格重型火焰喷射器 | 18" | D6 | N/A | 5 | -1 | 2 | [[core-rules/ignores-cover.md\|无视掩体]]，[[core-rules/torrent.md\|洪流]] |
 | 激光炮 | 48" | 1 | 5+ | 12 | -3 | D6+1 | [[core-rules/heavy.md\|重型]] |
 | 激光手枪 | 12" | 1 | 4+ | 3 | 0 | 1 | [[core-rules/pistol.md\|手枪]] |
 | 双联克里格重型伐木枪 | 48" | 3 | 5+ | 6 | -1 | 1 | [[core-rules/heavy.md\|重型]]，[[core-rules/rapid-fire.md\|速射3]]，[[core-rules/twin-linked.md\|双联]] |

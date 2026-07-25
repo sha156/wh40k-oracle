@@ -27,19 +27,19 @@ updated: '2026-07-23'
 ## 射击武器
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| 爆能手枪 | 6" | 1 | 3+ | 8 | -3 | D3 | [[core-rules/pistol.md\|pistol]] |
-| 爆能枪 | 18" | 1 | 3+ | 8 | -4 | D6+1 | [[core-rules/assault.md\|assault]] |
-| 黑暗光矛 | 36" | 1 | 4+ | 12 | -3 | D6+2 | [[core-rules/heavy.md\|heavy]] |
-| 粉碎枪 | 18" | D6 | N/A | 6 | 0 | 1 | [[core-rules/assault.md\|assault]]，[[core-rules/torrent.md\|torrent]] |
-| 毒晶炮 | 36" | 3 | 4+ | 3 | -1 | 2 | [[core-rules/anti.md\|anti-infantry 3+]]，[[core-rules/heavy.md\|heavy]]，[[core-rules/sustained-hits.md\|sustained hits 1]] |
-| 毒晶手枪 | 12" | 1 | 3+ | 2 | 0 | 1 | [[core-rules/anti.md\|anti-infantry 3+]]，[[core-rules/assault.md\|assault]]，[[core-rules/pistol.md\|pistol]] |
-| 毒晶步枪 | 24" | 2 | 3+ | 2 | 0 | 1 | [[core-rules/anti.md\|anti-infantry 3+]]，[[core-rules/assault.md\|assault]] |
+| 爆能手枪 | 6" | 1 | 3+ | 8 | -3 | D3 | [[core-rules/pistol.md\|手枪]] |
+| 爆能枪 | 18" | 1 | 3+ | 8 | -4 | D6+1 | [[core-rules/assault.md\|突击]] |
+| 黑暗光矛 | 36" | 1 | 4+ | 12 | -3 | D6+2 | [[core-rules/heavy.md\|重型]] |
+| 粉碎枪 | 18" | D6 | N/A | 6 | 0 | 1 | [[core-rules/assault.md\|突击]]，[[core-rules/torrent.md\|洪流]] |
+| 毒晶炮 | 36" | 3 | 4+ | 3 | -1 | 2 | [[core-rules/anti.md\|针对步兵3+]]，[[core-rules/heavy.md\|重型]]，[[core-rules/sustained-hits.md\|连击1]] |
+| 毒晶手枪 | 12" | 1 | 3+ | 2 | 0 | 1 | [[core-rules/anti.md\|针对步兵3+]]，[[core-rules/assault.md\|突击]]，[[core-rules/pistol.md\|手枪]] |
+| 毒晶步枪 | 24" | 2 | 3+ | 2 | 0 | 1 | [[core-rules/anti.md\|针对步兵3+]]，[[core-rules/assault.md\|突击]] |
 
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
 | 格斗武器 | 近战 | 2 | 3+ | 3 | 0 | 1 | — |
-| Sybarite weapon | 近战 | 3 | 3+ | 3 | -1 | 1 | [[core-rules/anti.md\|anti-infantry 3+]] |
+| Sybarite weapon | 近战 | 3 | 3+ | 3 | -1 | 1 | [[core-rules/anti.md\|针对步兵3+]] |
 
 ## 技能
 - **Sadistic Raiders**：At the end of your Command phase, if you control an objective marker that this unit (or a Transport it is embarked within) is within range of, that objective marker remains under your control until your opponent’s Level of Control over that objective marker is greater than yours at the end of a phase.

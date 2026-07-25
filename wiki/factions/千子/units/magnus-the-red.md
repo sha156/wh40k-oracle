@@ -30,12 +30,12 @@ updated: '2026-07-23'
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
 | 马格努斯凝视 | 24" | 3D3 | 2+ | 11 | -2 | 3 | [[core-rules/devastating-wounds.md\|毁灭伤害]]，[[core-rules/psychic-attacks.md\|灵能]] |
-| 奸奇火焰风暴 | 24" | D6+3 | 2+ | 6 | -1 | 2 | [[core-rules/blast.md\|爆炸]]，[[core-rules/psychic-attacks.md\|灵能]]，[[core-rules/ignores-cover.md\|无视掩体]] |
+| 奸奇火焰风暴 | 24" | D6+3 | 2+ | 6 | -1 | 2 | [[core-rules/blast.md\|爆炸]]，[[core-rules/ignores-cover.md\|无视掩体]]，[[core-rules/psychic-attacks.md\|灵能]] |
 
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| 马格努斯之刃 — 猛击 | 近战 | 7 | 2+ | 16 | -3 | 3 | [[core-rules/psychic-attacks.md\|灵能]]，[[core-rules/devastating-wounds.md\|毁灭伤害]] |
+| 马格努斯之刃 — 猛击 | 近战 | 7 | 2+ | 16 | -3 | 3 | [[core-rules/devastating-wounds.md\|毁灭伤害]]，[[core-rules/psychic-attacks.md\|灵能]] |
 | 马格努斯之刃 — 横扫 | 近战 | 14 | 2+ | 8 | -1 | 2 | [[core-rules/psychic-attacks.md\|灵能]] |
 
 ## 技能

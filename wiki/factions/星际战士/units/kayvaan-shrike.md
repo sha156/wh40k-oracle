@@ -28,7 +28,7 @@ updated: '2026-07-23'
 ## 射击武器
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| 灭灯 | 18" | 2 | 2+ | 5 | -1 | 2 | [[core-rules/pistol.md\|pistol]]，[[core-rules/precision.md\|precision]] |
+| 灭灯 | 18" | 2 | 2+ | 5 | -1 | 2 | [[core-rules/pistol.md\|手枪]]，[[core-rules/precision.md\|精准]] |
 
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |

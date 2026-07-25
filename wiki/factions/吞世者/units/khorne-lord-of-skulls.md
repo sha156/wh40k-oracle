@@ -29,11 +29,11 @@ updated: '2026-07-23'
 ## 射击武器
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| 魔血大炮 | 18" | D6 | 4+ | 14 | -4 | D6+2 | [[core-rules/blast.md\|blast]]，[[core-rules/rapid-fire.md\|rapid fire 3]] |
-| 血污风暴炮 | 24" | D6+3 | 4+ | 10 | -2 | 3 | [[core-rules/blast.md\|blast]]，[[core-rules/rapid-fire.md\|rapid fire 3]] |
-| 冥神加特林炮 | 48" | 12 | 4+ | 8 | -2 | 2 | [[core-rules/sustained-hits.md\|连击1]]，[[core-rules/rapid-fire.md\|速射6]] |
-| 脓血大炮 | 48" | 2D6 | 4+ | 7 | -2 | 2 | [[core-rules/blast.md\|blast]]，[[core-rules/rapid-fire.md\|rapid fire 4]] |
-| 掷颅炮 | 60" | 2D6 | 4+ | 14 | -3 | 3 | [[core-rules/rapid-fire.md\|rapid fire 3]] |
+| 魔血大炮 | 18" | D6 | 4+ | 14 | -4 | D6+2 | [[core-rules/blast.md\|爆炸]]，[[core-rules/rapid-fire.md\|速射3]] |
+| 血污风暴炮 | 24" | D6+3 | 4+ | 10 | -2 | 3 | [[core-rules/blast.md\|爆炸]]，[[core-rules/rapid-fire.md\|速射3]] |
+| 冥神加特林炮 | 48" | 12 | 4+ | 8 | -2 | 2 | [[core-rules/rapid-fire.md\|速射6]]，[[core-rules/sustained-hits.md\|连击1]] |
+| 脓血大炮 | 48" | 2D6 | 4+ | 7 | -2 | 2 | [[core-rules/blast.md\|爆炸]]，[[core-rules/rapid-fire.md\|速射4]] |
+| 掷颅炮 | 60" | 2D6 | 4+ | 14 | -3 | 3 | [[core-rules/rapid-fire.md\|速射3]] |
 
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |

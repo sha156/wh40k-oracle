@@ -24,8 +24,8 @@ updated: '2026-07-23'
 ## 射击武器
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| Deathstorm cannon array | 18" | 12 | 4+ | 6 | 0 | 1 | [[core-rules/sustained-hits.md\|sustained hits 2]] |
-| Deathstorm missile array | 18" | 2D6 | 4+ | 8 | -2 | 2 | [[core-rules/blast.md\|blast]] |
+| Deathstorm cannon array | 18" | 12 | 4+ | 6 | 0 | 1 | [[core-rules/sustained-hits.md\|连击2]] |
+| Deathstorm missile array | 18" | 2D6 | 4+ | 8 | -2 | 2 | [[core-rules/blast.md\|爆炸]] |
 
 ## 技能
 - **Deathstorm Assault**：This model must start the battle in Reserves, but it is not counted towards any limits placed on the maximum number of Reserves units you can start the battle with. This model can be set up in the Reinforcements step of your first, second or third Movement phase, regardless of any mission rules.
@@ -35,4 +35,4 @@ updated: '2026-07-23'
 
 ## 关键词
 - **阵营关键词**：Adeptus Astartes
-- **普通关键词**：Imperium，Vehicle，Deathstorm [[factions/星际战士/units/drop-pod.md|Drop Pod]]
+- **普通关键词**：Imperium，Vehicle，Deathstorm Drop Pod

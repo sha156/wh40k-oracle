@@ -25,7 +25,7 @@ updated: '2026-07-23'
 ## 射击武器
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| 化学炮 | 12" | D6+1 | N/A | 2 | -2 | 2 | [[core-rules/anti.md\|反步兵2+]]，[[core-rules/torrent.md\|洪流]] |
+| 化学炮 | 12" | D6+1 | N/A | 2 | -2 | 2 | [[core-rules/anti.md\|针对步兵2+]]，[[core-rules/torrent.md\|洪流]] |
 | 热熔炮 | 18" | D3 | 4+ | 9 | -4 | D6 | [[core-rules/blast.md\|爆炸]]，[[core-rules/melta.md\|热熔4]] |
 | 多管热熔 | 18" | 2 | 4+ | 9 | -4 | D6 | [[core-rules/melta.md\|热熔2]] |
 | 地狱炮 | 18" | 2D6 | N/A | 6 | -2 | 1 | [[core-rules/ignores-cover.md\|无视掩体]]，[[core-rules/torrent.md\|洪流]] |

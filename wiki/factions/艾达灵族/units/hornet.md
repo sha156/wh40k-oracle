@@ -25,11 +25,11 @@ updated: '2026-07-23'
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
 | Aeldari missile launcher – starshot | 48" | 1 | 3+ | 10 | -2 | D6 | — |
-| Aeldari missile launcher – sunburst | 48" | D6 | 3+ | 4 | -1 | 1 | [[core-rules/blast.md\|blast]] |
+| Aeldari missile launcher – sunburst | 48" | D6 | 3+ | 4 | -1 | 1 | [[core-rules/blast.md\|爆炸]] |
 | 光矛 | 36" | 1 | 3+ | 12 | -3 | D6+2 | — |
 | Hornet pulse laser | 36" | 2 | 3+ | 9 | -2 | D3 | — |
 | 散射激光 | 36" | 6 | 3+ | 5 | 0 | 1 | — |
-| 星镖炮 | 24" | 3 | 3+ | 6 | -1 | 2 | [[core-rules/sustained-hits.md\|sustained hits 1]] |
+| 星镖炮 | 24" | 3 | 3+ | 6 | -1 | 2 | [[core-rules/sustained-hits.md\|连击1]] |
 | 星光炮 | 36" | 2 | 3+ | 8 | -3 | 2 | — |
 
 ## 近战武器

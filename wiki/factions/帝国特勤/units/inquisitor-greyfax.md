@@ -29,7 +29,7 @@ updated: '2026-07-23'
 ## 射击武器
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| 惩戒 | 18" | 1 | 3+ | 8 | -2 | 3 | [[core-rules/anti.md\|针对角色4+]]，[[core-rules/precision.md\|精准]]，[[core-rules/devastating-wounds.md\|毁灭伤害]]，[[core-rules/psychic-attacks.md\|灵能]] |
+| 惩戒 | 18" | 1 | 3+ | 8 | -2 | 3 | [[core-rules/anti.md\|针对角色4+]]，[[core-rules/devastating-wounds.md\|毁灭伤害]]，[[core-rules/precision.md\|精准]]，[[core-rules/psychic-attacks.md\|灵能]] |
 | 降罪者之柱 | 24" | 1 | 3+ | 4 | 0 | 1 | [[core-rules/anti.md\|针对灵能者2+]]，[[core-rules/devastating-wounds.md\|毁灭伤害]]，[[core-rules/precision.md\|精准]]，[[core-rules/rapid-fire.md\|速射1]] |
 
 ## 近战武器

@@ -27,13 +27,13 @@ updated: '2026-07-23'
 ## 射击武器
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| 强悍武器 | 24" | 1 | 5+ | 4 | 0 | 1 | [[core-rules/anti.md\|anti-infantry 4+]]，[[core-rules/devastating-wounds.md\|devastating wounds]]，[[core-rules/rapid-fire.md\|rapid fire 1]] |
-| 魔改米加枪 | 24" | 3 | 5+ | 9 | -2 | D6 | [[core-rules/hazardous.md\|hazardous]] |
-| 魔改手铳 | 12" | D3 | 5+ | 8 | -2 | D6 | [[core-rules/blast.md\|blast]]，[[core-rules/hazardous.md\|hazardous]] |
-| 火箭筒 | 24" | D3 | 5+ | 9 | -2 | 3 | [[core-rules/blast.md\|blast]] |
-| 次元炮 | 60" | D6+1 | 5+ | 9 | -4 | D6 | [[core-rules/blast.md\|blast]]，[[core-rules/heavy.md\|heavy]] |
-| 手铳 | 12" | 1 | 5+ | 4 | 0 | 1 | [[core-rules/pistol.md\|pistol]] |
-| 双联突突枪 | 18" | 3 | 5+ | 5 | 0 | 1 | [[core-rules/assault.md\|assault]]，[[core-rules/rapid-fire.md\|rapid fire 2]]，[[core-rules/twin-linked.md\|twin-linked]] |
+| 强悍武器 | 24" | 1 | 5+ | 4 | 0 | 1 | [[core-rules/anti.md\|针对步兵4+]]，[[core-rules/devastating-wounds.md\|毁灭伤害]]，[[core-rules/rapid-fire.md\|速射1]] |
+| 魔改米加枪 | 24" | 3 | 5+ | 9 | -2 | D6 | [[core-rules/hazardous.md\|危险]] |
+| 魔改手铳 | 12" | D3 | 5+ | 8 | -2 | D6 | [[core-rules/blast.md\|爆炸]]，[[core-rules/hazardous.md\|危险]] |
+| 火箭筒 | 24" | D3 | 5+ | 9 | -2 | 3 | [[core-rules/blast.md\|爆炸]] |
+| 次元炮 | 60" | D6+1 | 5+ | 9 | -4 | D6 | [[core-rules/blast.md\|爆炸]]，[[core-rules/heavy.md\|重型]] |
+| 手铳 | 12" | 1 | 5+ | 4 | 0 | 1 | [[core-rules/pistol.md\|手枪]] |
+| 双联突突枪 | 18" | 3 | 5+ | 5 | 0 | 1 | [[core-rules/assault.md\|突击]]，[[core-rules/rapid-fire.md\|速射2]]，[[core-rules/twin-linked.md\|双联]] |
 
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |
@@ -54,4 +54,4 @@ updated: '2026-07-23'
 
 ## 关键词
 - **阵营关键词**：Orks
-- **普通关键词**：Big [[factions/兽人/units/mek.md|Mek]]，[[core-rules/grenades.md|Grenades]]，[[core-rules/character.md|Character]]，Speed Freeks，[[core-rules/mounted.md|Mounted]]，[[factions/兽人/units/big-mek.md|Big Mek]] on Warbike
+- **普通关键词**：Big [[factions/兽人/units/mek.md|Mek]]，[[core-rules/grenades.md|Grenades]]，[[core-rules/character.md|Character]]，Speed Freeks，[[core-rules/mounted.md|Mounted]]，Big Mek on Warbike

@@ -29,8 +29,8 @@ updated: '2026-07-23'
 ## 射击武器
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| 弑主之影-巫火 | 18" | 9 | 2+ | 5 | -2 | 1 | [[core-rules/devastating-wounds.md\|毁灭伤害]]，[[core-rules/psychic-attacks.md\|灵能]]，[[core-rules/ignores-cover.md\|无视掩体]] |
-| 弑主之影-专注巫火 | 18" | 12 | 2+ | 6 | -3 | 1 | [[core-rules/devastating-wounds.md\|毁灭伤害]]，[[core-rules/ignores-cover.md\|无视掩体]]，[[core-rules/psychic-attacks.md\|灵能]]，[[core-rules/hazardous.md\|危险]] |
+| 弑主之影-巫火 | 18" | 9 | 2+ | 5 | -2 | 1 | [[core-rules/devastating-wounds.md\|毁灭伤害]]，[[core-rules/ignores-cover.md\|无视掩体]]，[[core-rules/psychic-attacks.md\|灵能]] |
+| 弑主之影-专注巫火 | 18" | 12 | 2+ | 6 | -3 | 1 | [[core-rules/devastating-wounds.md\|毁灭伤害]]，[[core-rules/hazardous.md\|危险]]，[[core-rules/ignores-cover.md\|无视掩体]]，[[core-rules/psychic-attacks.md\|灵能]] |
 
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |

@@ -32,7 +32,7 @@ updated: '2026-07-23'
 | 转换光线炮 | 24" | 1 | 3+ | 10 | -2 | 3 | 转换，[[core-rules/sustained-hits.md\|连击D3]] |
 | 重力脉冲炮 | 24" | D6 | 3+ | 7 | -1 | 2 | [[core-rules/anti.md\|针对载具2+]]，[[core-rules/blast.md\|爆炸]] |
 | 闪电转管枪 | 36" | 6 | 3+ | 8 | 0 | 1 | [[core-rules/sustained-hits.md\|连击2]] |
-| 辐射喷火器 | 12" | D6 | N/A | 2 | 0 | 1 | [[core-rules/anti.md\|反步兵 2+]]，[[core-rules/ignores-cover.md\|忽略掩体]]，[[core-rules/torrent.md\|洪流]] |
+| 辐射喷火器 | 12" | D6 | N/A | 2 | 0 | 1 | [[core-rules/anti.md\|针对步兵2+]]，[[core-rules/ignores-cover.md\|无视掩体]]，[[core-rules/torrent.md\|洪流]] |
 | 爆燃后膛炮 | 36" | 4 | 3+ | 8 | 0 | 2 | [[core-rules/devastating-wounds.md\|毁灭伤害]] |
 
 ## 近战武器

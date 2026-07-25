@@ -24,14 +24,14 @@ updated: '2026-07-23'
 ## 射击武器
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| 重型伐木枪 | 36" | 3 | 4+ | 4 | 0 | 1 | [[core-rules/rapid-fire.md\|rapid fire 3]] |
-| 猎杀飞弹 | 48" | 1 | 4+ | 14 | -3 | D6 | [[core-rules/one-shot.md\|one shot]] |
+| 重型伐木枪 | 36" | 3 | 4+ | 4 | 0 | 1 | [[core-rules/rapid-fire.md\|速射3]] |
+| 猎杀飞弹 | 48" | 1 | 4+ | 14 | -3 | D6 | [[core-rules/one-shot.md\|单发]] |
 | 激光炮 | 48" | 1 | 4+ | 12 | -3 | D6+1 | — |
-| 风暴爆弹枪 | 24" | 1 | 4+ | 4 | 0 | 1 | [[core-rules/rapid-fire.md\|rapid fire 2]] |
-| Stormblade plasma blastgun – standard | 48" | D6+3 | 4+ | 9 | -2 | 3 | [[core-rules/blast.md\|blast]] |
-| Stormblade plasma blastgun – supercharge | 48" | D6+3 | 4+ | 10 | -3 | 4 | [[core-rules/blast.md\|blast]]，[[core-rules/hazardous.md\|hazardous]] |
-| 双联重型爆弹枪 | 36" | 3 | 4+ | 5 | -1 | 2 | [[core-rules/sustained-hits.md\|sustained hits 1]]，[[core-rules/twin-linked.md\|twin-linked]] |
-| 双联重型火焰喷射器 | 12" | D6 | N/A | 5 | -1 | 1 | [[core-rules/ignores-cover.md\|ignores cover]]，[[core-rules/torrent.md\|torrent]]，[[core-rules/twin-linked.md\|twin-linked]] |
+| 风暴爆弹枪 | 24" | 1 | 4+ | 4 | 0 | 1 | [[core-rules/rapid-fire.md\|速射2]] |
+| Stormblade plasma blastgun – standard | 48" | D6+3 | 4+ | 9 | -2 | 3 | [[core-rules/blast.md\|爆炸]] |
+| Stormblade plasma blastgun – supercharge | 48" | D6+3 | 4+ | 10 | -3 | 4 | [[core-rules/blast.md\|爆炸]]，[[core-rules/hazardous.md\|危险]] |
+| 双联重型爆弹枪 | 36" | 3 | 4+ | 5 | -1 | 2 | [[core-rules/sustained-hits.md\|连击1]]，[[core-rules/twin-linked.md\|双联]] |
+| 双联重型火焰喷射器 | 12" | D6 | N/A | 5 | -1 | 1 | [[core-rules/ignores-cover.md\|无视掩体]]，[[core-rules/torrent.md\|洪流]]，[[core-rules/twin-linked.md\|双联]] |
 
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |

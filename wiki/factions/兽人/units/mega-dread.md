@@ -27,7 +27,7 @@ updated: '2026-07-23'
 ## 射击武器
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| Boombits | 12" | D6 | N/A | 5 | 0 | 1 | [[core-rules/torrent.md\|torrent]] |
+| Boombits | 12" | D6 | N/A | 5 | 0 | 1 | [[core-rules/torrent.md\|洪流]] |
 | 杀戮炮 | 24" | D6+3 | 5+ | 9 | -2 | 2 | — |
 
 ## 近战武器

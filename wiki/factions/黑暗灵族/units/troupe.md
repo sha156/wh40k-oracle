@@ -31,8 +31,8 @@ updated: '2026-07-23'
 ## 射击武器
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| 热熔手枪 | 6" | 1 | 3+ | 8 | -4 | D6 | [[core-rules/assault.md\|突击]]，[[core-rules/melta.md\|热熔 2]]，[[core-rules/pistol.md\|手枪]] |
-| 神经干扰枪 | 12" | 1 | 3+ | 4 | -2 | 1 | [[core-rules/anti.md\|反步兵 2+]]，[[core-rules/assault.md\|突击]]，[[core-rules/pistol.md\|手枪]] |
+| 热熔手枪 | 6" | 1 | 3+ | 8 | -4 | D6 | [[core-rules/assault.md\|突击]]，[[core-rules/melta.md\|热熔2]]，[[core-rules/pistol.md\|手枪]] |
+| 神经干扰枪 | 12" | 1 | 3+ | 4 | -2 | 1 | [[core-rules/anti.md\|针对步兵2+]]，[[core-rules/assault.md\|突击]]，[[core-rules/pistol.md\|手枪]] |
 | 星镖手枪 | 12" | 1 | 3+ | 4 | -1 | 1 | [[core-rules/assault.md\|突击]]，[[core-rules/pistol.md\|手枪]] |
 
 ## 近战武器

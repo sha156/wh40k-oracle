@@ -26,10 +26,10 @@ updated: '2026-07-23'
 ## 射击武器
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| 远古科技激光手枪 | 12" | 1 | 3+ | 4 | -1 | 1 | [[core-rules/pistol.md\|pistol]] |
+| 远古科技激光手枪 | 12" | 1 | 3+ | 4 | -1 | 1 | [[core-rules/pistol.md\|手枪]] |
 | 星语者冲击波 | 12" | D6 | 3+ | 4 | -1 | 1 | [[core-rules/blast.md\|爆炸]]，[[core-rules/psychic-attacks.md\|灵能]] |
 | 爆矢步枪 | 24" | 2 | 3+ | 4 | -1 | 1 | [[core-rules/assault.md\|突击]]，[[core-rules/heavy.md\|重型]] |
-| 重型爆矢手枪 | 18" | 1 | 3+ | 4 | -1 | 1 | [[core-rules/pistol.md\|pistol]] |
+| 重型爆矢手枪 | 18" | 1 | 3+ | 4 | -1 | 1 | [[core-rules/pistol.md\|手枪]] |
 
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |

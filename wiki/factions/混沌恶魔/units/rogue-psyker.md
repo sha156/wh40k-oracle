@@ -24,14 +24,14 @@ updated: '2026-07-23'
 ## 射击武器
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| 激光手枪 | 12" | 1 | 4+ | 3 | 0 | 1 | [[core-rules/pistol.md\|pistol]] |
-| Psychic Strike – witchfire | 12" | D6 | 3+ | 6 | -2 | 1 | [[core-rules/blast.md\|blast]]，[[core-rules/devastating-wounds.md\|devastating wounds]]，[[core-rules/psychic-attacks.md\|psychic]] |
-| Psychic Strike – focused witchfire | 12" | D6+3 | 3+ | 6 | -2 | 2 | [[core-rules/blast.md\|blast]]，[[core-rules/devastating-wounds.md\|devastating wounds]]，[[core-rules/hazardous.md\|hazardous]]，[[core-rules/psychic-attacks.md\|psychic]] |
+| 激光手枪 | 12" | 1 | 4+ | 3 | 0 | 1 | [[core-rules/pistol.md\|手枪]] |
+| Psychic Strike – witchfire | 12" | D6 | 3+ | 6 | -2 | 1 | [[core-rules/blast.md\|爆炸]]，[[core-rules/devastating-wounds.md\|毁灭伤害]]，[[core-rules/psychic-attacks.md\|灵能]] |
+| Psychic Strike – focused witchfire | 12" | D6+3 | 3+ | 6 | -2 | 2 | [[core-rules/blast.md\|爆炸]]，[[core-rules/devastating-wounds.md\|毁灭伤害]]，[[core-rules/hazardous.md\|危险]]，[[core-rules/psychic-attacks.md\|灵能]] |
 
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| Chaos stave | 近战 | 1 | 4+ | 6 | -1 | D3 | [[core-rules/psychic-attacks.md\|psychic]] |
+| Chaos stave | 近战 | 1 | 4+ | 6 | -1 | D3 | [[core-rules/psychic-attacks.md\|灵能]] |
 
 ## 技能
 - **Cursed Wardings (Psychic)**：While this model is leading a unit, models in that unit have the Feel No Pain 4+ ability against Psychic Attacks.

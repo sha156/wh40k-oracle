@@ -26,17 +26,17 @@ updated: '2026-07-23'
 ## 射击武器
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| 激光手枪 | 12" | 1 | 4+ | 3 | 0 | 1 | [[core-rules/pistol.md\|pistol]] |
-| 激光枪 | 24" | 1 | 4+ | 3 | 0 | 1 | [[core-rules/rapid-fire.md\|rapid fire 1]] |
+| 激光手枪 | 12" | 1 | 4+ | 3 | 0 | 1 | [[core-rules/pistol.md\|手枪]] |
+| 激光枪 | 24" | 1 | 4+ | 3 | 0 | 1 | [[core-rules/rapid-fire.md\|速射1]] |
 | 榴弹发射器（穿甲） | 24" | 1 | 4+ | 9 | -2 | D3 | — |
-| 喷火器 | 12" | D6 | N/A | 4 | 0 | 1 | [[core-rules/ignores-cover.md\|忽视掩体]]，[[core-rules/torrent.md\|洪流]] |
+| 喷火器 | 12" | D6 | N/A | 4 | 0 | 1 | [[core-rules/ignores-cover.md\|无视掩体]]，[[core-rules/torrent.md\|洪流]] |
 | 榴弹发射器（破片） | 24" | D3 | 4+ | 4 | 0 | 1 | [[core-rules/blast.md\|爆炸]] |
-| 等离子枪（标准） | 24" | 1 | 4+ | 7 | -2 | 1 | [[core-rules/rapid-fire.md\|rapid fire 1]] |
-| 等离子枪（过载） | 24" | 1 | 4+ | 8 | -3 | 2 | [[core-rules/hazardous.md\|hazardous]]，[[core-rules/rapid-fire.md\|rapid fire 1]] |
+| 等离子枪（标准） | 24" | 1 | 4+ | 7 | -2 | 1 | [[core-rules/rapid-fire.md\|速射1]] |
+| 等离子枪（过载） | 24" | 1 | 4+ | 8 | -3 | 2 | [[core-rules/hazardous.md\|危险]]，[[core-rules/rapid-fire.md\|速射1]] |
 | 热熔枪 | 12" | 1 | 4+ | 9 | -4 | D6 | [[core-rules/melta.md\|热熔2]] |
 | 爆弹手枪 | 12" | 1 | 4+ | 4 | 0 | 1 | [[core-rules/pistol.md\|手枪]] |
-| 等离子手枪（标准） | 12" | 1 | 4+ | 7 | -2 | 1 | [[core-rules/pistol.md\|pistol]] |
-| 等离子手枪（过载） | 12" | 1 | 4+ | 8 | -3 | 2 | [[core-rules/hazardous.md\|hazardous]]，[[core-rules/pistol.md\|pistol]] |
+| 等离子手枪（标准） | 12" | 1 | 4+ | 7 | -2 | 1 | [[core-rules/pistol.md\|手枪]] |
+| 等离子手枪（过载） | 12" | 1 | 4+ | 8 | -3 | 2 | [[core-rules/hazardous.md\|危险]]，[[core-rules/pistol.md\|手枪]] |
 
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |

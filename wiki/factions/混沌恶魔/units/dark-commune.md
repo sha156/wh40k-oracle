@@ -27,8 +27,8 @@ updated: '2026-07-23'
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
 | 自动手枪 | 12" | 1 | 4+ | 3 | 0 | 1 | [[core-rules/pistol.md\|手枪]] |
-| 亚空间诅咒（普通） | 18" | 3 | 3+ | 4 | -1 | 2 | [[core-rules/psychic-attacks.md\|psychic]] |
-| 亚空间诅咒（聚焦） | 18" | 3 | 3+ | 5 | -1 | 2 | [[core-rules/hazardous.md\|hazardous]]，[[core-rules/psychic-attacks.md\|psychic]]，[[core-rules/sustained-hits.md\|sustained hits 2]] |
+| 亚空间诅咒（普通） | 18" | 3 | 3+ | 4 | -1 | 2 | [[core-rules/psychic-attacks.md\|灵能]] |
+| 亚空间诅咒（聚焦） | 18" | 3 | 3+ | 5 | -1 | 2 | [[core-rules/hazardous.md\|危险]]，[[core-rules/psychic-attacks.md\|灵能]]，[[core-rules/sustained-hits.md\|连击2]] |
 
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |

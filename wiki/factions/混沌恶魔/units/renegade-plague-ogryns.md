@@ -24,7 +24,7 @@ updated: '2026-07-23'
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| Ogryn plague claws | 近战 | 3 | 3+ | 6 | -1 | 2 | [[core-rules/lethal-hits.md\|lethal hits]] |
+| Ogryn plague claws | 近战 | 3 | 3+ | 6 | -1 | 2 | [[core-rules/lethal-hits.md\|致命一击]] |
 
 ## 技能
 - **Wall of Muscle**：Each time an attack is allocated to a model in this unit, subtract 1 from the Damage characteristic of that attack.

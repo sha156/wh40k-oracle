@@ -33,7 +33,7 @@ updated: '2026-07-23'
 | 榴弹发射器（穿甲） | 24" | 1 | 3+ | 9 | -2 | D3 | — |
 | 爆弹手枪 | 12" | 1 | 3+ | 4 | 0 | 1 | [[core-rules/pistol.md\|手枪]] |
 | 等离子爪（标准） | 18" | 2 | 3+ | 7 | -2 | 1 | [[core-rules/rapid-fire.md\|速射1]] |
-| 等离子爪 | 18" | 2 | 3+ | 8 | -3 | 2 | [[core-rules/rapid-fire.md\|速射1]]，[[core-rules/hazardous.md\|危险]] |
+| 等离子爪 | 18" | 2 | 3+ | 8 | -3 | 2 | [[core-rules/hazardous.md\|危险]]，[[core-rules/rapid-fire.md\|速射1]] |
 
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |

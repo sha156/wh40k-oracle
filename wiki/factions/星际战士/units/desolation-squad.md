@@ -27,9 +27,9 @@ updated: '2026-07-23'
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
 | 爆弹手枪 | 12" | 1 | 3+ | 4 | 0 | 1 | [[core-rules/pistol.md\|手枪]] |
-| 堡主火箭发射器 | 36" | D3 | 3+ | 4 | 0 | 1 | [[core-rules/blast.md\|blast]]，[[core-rules/indirect-fire.md\|indirect fire]] |
-| 高能破片火箭 | 48" | D6+1 | 4+ | 5 | 0 | 1 | [[core-rules/blast.md\|blast]]，[[core-rules/heavy.md\|heavy]] |
-| 高能穿甲火箭 | 48" | 1 | 4+ | 10 | -2 | D6+1 | [[core-rules/heavy.md\|heavy]] |
+| 堡主火箭发射器 | 36" | D3 | 3+ | 4 | 0 | 1 | [[core-rules/blast.md\|爆炸]]，[[core-rules/indirect-fire.md\|曲射]] |
+| 高能破片火箭 | 48" | D6+1 | 4+ | 5 | 0 | 1 | [[core-rules/blast.md\|爆炸]]，[[core-rules/heavy.md\|重型]] |
+| 高能穿甲火箭 | 48" | 1 | 4+ | 10 | -2 | D6+1 | [[core-rules/heavy.md\|重型]] |
 | 威格尔火箭  | 48" | D6 | 2+ | 7 | -1 | 2 | [[core-rules/blast.md\|爆炸]]，[[core-rules/indirect-fire.md\|曲射]] |
 
 ## 近战武器

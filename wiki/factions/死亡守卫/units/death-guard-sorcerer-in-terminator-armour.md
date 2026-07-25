@@ -28,17 +28,17 @@ updated: '2026-07-23'
 ## 射击武器
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| 复合武器    | 24" | 1 | 4+ | 4 | 0 | 1 | [[core-rules/anti.md\|反步兵 4+]]，[[core-rules/devastating-wounds.md\|毁灭伤害]]，[[core-rules/rapid-fire.md\|速射 1]] |
-| 麻风诅咒（标准） | 24" | D6 | 3+ | 6 | -1 | 1 | [[core-rules/psychic-attacks.md\|psychic]] |
-| 麻风诅咒（过载） | 24" | 2D6 | 3+ | 6 | -2 | 1 | [[core-rules/hazardous.md\|hazardous]]，[[core-rules/psychic-attacks.md\|psychic]] |
-| 瘟疫并联爆弹枪 | 24" | 2 | 3+ | 4 | 0 | 1 | [[core-rules/lethal-hits.md\|致命一击]]，[[core-rules/rapid-fire.md\|速射 2]] |
+| 复合武器    | 24" | 1 | 4+ | 4 | 0 | 1 | [[core-rules/anti.md\|针对步兵4+]]，[[core-rules/devastating-wounds.md\|毁灭伤害]]，[[core-rules/rapid-fire.md\|速射1]] |
+| 麻风诅咒（标准） | 24" | D6 | 3+ | 6 | -1 | 1 | [[core-rules/psychic-attacks.md\|灵能]] |
+| 麻风诅咒（过载） | 24" | 2D6 | 3+ | 6 | -2 | 1 | [[core-rules/hazardous.md\|危险]]，[[core-rules/psychic-attacks.md\|灵能]] |
+| 瘟疫并联爆弹枪 | 24" | 2 | 3+ | 4 | 0 | 1 | [[core-rules/lethal-hits.md\|致命一击]]，[[core-rules/rapid-fire.md\|速射2]] |
 
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| 链锯拳 | 近战 | 3 | 4+ | 8 | -2 | 2 | [[core-rules/anti.md\|anti-vehicle 3+]] |
-| 灵能武器 | 近战 | 4 | 3+ | 6 | -1 | D3 | [[core-rules/psychic-attacks.md\|psychic]] |
-| 瘟疫拳 | 近战 | 3 | 3+ | 8 | -2 | 2 | [[core-rules/lethal-hits.md\|lethal hits]] |
+| 链锯拳 | 近战 | 3 | 4+ | 8 | -2 | 2 | [[core-rules/anti.md\|针对载具3+]] |
+| 灵能武器 | 近战 | 4 | 3+ | 6 | -1 | D3 | [[core-rules/psychic-attacks.md\|灵能]] |
+| 瘟疫拳 | 近战 | 3 | 3+ | 8 | -2 | 2 | [[core-rules/lethal-hits.md\|致命一击]] |
 | 瘟疫神尊武器    | 近战 | 4 | 3+ | 5 | -2 | 1 | [[core-rules/lethal-hits.md\|致命一击]] |
 | 一对闪电爪 | 近战 | 5 | 3+ | 5 | -2 | 1 | [[core-rules/twin-linked.md\|双联]] |
 

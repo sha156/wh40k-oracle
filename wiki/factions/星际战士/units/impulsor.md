@@ -27,12 +27,12 @@ updated: '2026-07-23'
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
 | 破片风暴雷 | 48" | D6 | 3+ | 4 | 0 | 1 | [[core-rules/blast.md\|爆炸]] |
-| 贝立凯图导弹阵列（对空） | 48" | D3 | 3+ | 8 | -1 | 2 | [[core-rules/anti.md\|anti-fly 2+]] |
+| 贝立凯图导弹阵列（对空） | 48" | D3 | 3+ | 8 | -1 | 2 | [[core-rules/anti.md\|针对飞行2+]] |
 | 贝立凯图导弹阵列（穿甲） | 48" | 1 | 3+ | 8 | -2 | D6 | — |
 | 破片风暴雷 | 18" | D6 | 3+ | 4 | 0 | 1 | [[core-rules/blast.md\|爆炸]] |
-| 铁雨重机枪    | 36" | 3 | 3+ | 4 | 0 | 1 | [[core-rules/rapid-fire.md\|速射 3]] |
-| 铁雨天爪阵列 | 36" | 8 | 3+ | 4 | 0 | 1 | [[core-rules/anti.md\|anti-fly 4+]]，[[core-rules/sustained-hits.md\|sustained hits 1]] |
-| 风暴爆弹枪   | 24" | 2 | 3+ | 4 | 0 | 1 | [[core-rules/rapid-fire.md\|速射 2]] |
+| 铁雨重机枪    | 36" | 3 | 3+ | 4 | 0 | 1 | [[core-rules/rapid-fire.md\|速射3]] |
+| 铁雨天爪阵列 | 36" | 8 | 3+ | 4 | 0 | 1 | [[core-rules/anti.md\|针对飞行4+]]，[[core-rules/sustained-hits.md\|连击1]] |
+| 风暴爆弹枪   | 24" | 2 | 3+ | 4 | 0 | 1 | [[core-rules/rapid-fire.md\|速射2]] |
 
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |

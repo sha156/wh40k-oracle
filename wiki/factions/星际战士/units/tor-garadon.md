@@ -28,7 +28,7 @@ updated: '2026-07-23'
 ## 射击武器
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| 精工重力枪     | 18" | 2 | 2+ | 5 | -1 | 2 | [[core-rules/anti.md\|反载具 2+]] |
+| 精工重力枪     | 18" | 2 | 2+ | 5 | -1 | 2 | [[core-rules/anti.md\|针对载具2+]] |
 
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |
@@ -44,4 +44,4 @@ updated: '2026-07-23'
 
 ## 关键词
 - **阵营关键词**：Imperial Fists，Adeptus Astartes
-- **普通关键词**：[[core-rules/character.md|Character]]，[[core-rules/infantry.md|Infantry]]，[[factions/星际战士/units/captain.md|Captain]]，Tor Garadon，Gravis，Imperium，[[core-rules/epic-hero.md|Epic Hero]]
+- **普通关键词**：[[core-rules/character.md|Character]]，[[core-rules/infantry.md|Infantry]]，Captain，Tor Garadon，Gravis，Imperium，[[core-rules/epic-hero.md|Epic Hero]]

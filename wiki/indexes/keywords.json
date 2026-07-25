@@ -4,7 +4,7 @@
   {
    "slug": "anti-chaos",
    "base": "ANTI-CHAOS",
-   "nameZh": "反混沌",
+   "nameZh": "针对混沌",
    "group": "universal",
    "section": "24.03",
    "quickrefZh": "针对性攻击",
@@ -35,7 +35,7 @@
   {
    "slug": "anti-character",
    "base": "ANTI-CHARACTER",
-   "nameZh": "反角色",
+   "nameZh": "针对角色",
    "group": "universal",
    "section": "24.03",
    "quickrefZh": "针对性攻击",
@@ -111,7 +111,7 @@
   {
    "slug": "anti-daemon",
    "base": "ANTI-DAEMON",
-   "nameZh": "反恶魔",
+   "nameZh": "针对恶魔",
    "group": "universal",
    "section": "24.03",
    "quickrefZh": "针对性攻击",
@@ -149,7 +149,7 @@
   {
    "slug": "anti-epic-hero",
    "base": "ANTI-EPIC HERO",
-   "nameZh": "反史诗英雄",
+   "nameZh": "针对史诗英雄",
    "group": "universal",
    "section": "24.03",
    "quickrefZh": "针对性攻击",
@@ -174,7 +174,7 @@
   {
    "slug": "anti-fly",
    "base": "ANTI-FLY",
-   "nameZh": "反飞行",
+   "nameZh": "针对飞行",
    "group": "universal",
    "section": "24.03",
    "quickrefZh": "针对性攻击",
@@ -358,7 +358,7 @@
   {
    "slug": "anti-infantry",
    "base": "ANTI-INFANTRY",
-   "nameZh": "反步兵",
+   "nameZh": "针对步兵",
    "group": "universal",
    "section": "24.03",
    "quickrefZh": "针对性攻击",
@@ -1031,7 +1031,7 @@
   {
    "slug": "anti-monster",
    "base": "ANTI-MONSTER",
-   "nameZh": "反怪物",
+   "nameZh": "针对怪物",
    "group": "universal",
    "section": "24.03",
    "quickrefZh": "针对性攻击",
@@ -1264,7 +1264,7 @@
   {
    "slug": "anti-psyker",
    "base": "ANTI-PSYKER",
-   "nameZh": "反灵能者",
+   "nameZh": "针对灵能者",
    "group": "universal",
    "section": "24.03",
    "quickrefZh": "针对性攻击",
@@ -1391,7 +1391,7 @@
   {
    "slug": "anti-titanic",
    "base": "ANTI-TITANIC",
-   "nameZh": "反泰坦",
+   "nameZh": "针对泰坦",
    "group": "universal",
    "section": "24.03",
    "quickrefZh": "针对性攻击",
@@ -1423,7 +1423,7 @@
   {
    "slug": "anti-tyranids",
    "base": "ANTI-TYRANIDS",
-   "nameZh": "反泰伦虫族",
+   "nameZh": "针对泰伦虫族",
    "group": "universal",
    "section": "24.03",
    "quickrefZh": "针对性攻击",
@@ -1441,7 +1441,7 @@
   {
    "slug": "anti-vehicle",
    "base": "ANTI-VEHICLE",
-   "nameZh": "反载具",
+   "nameZh": "针对载具",
    "group": "universal",
    "section": "24.03",
    "quickrefZh": "针对性攻击",
@@ -1885,7 +1885,7 @@
   {
    "slug": "anti-walker",
    "base": "ANTI-WALKER",
-   "nameZh": "反步行者",
+   "nameZh": "针对步行者",
    "group": "universal",
    "section": "24.03",
    "quickrefZh": "针对性攻击",
@@ -4919,7 +4919,7 @@
   {
    "slug": "cleave",
    "base": "CLEAVE",
-   "nameZh": "横扫",
+   "nameZh": "劈砍",
    "group": "universal",
    "section": "24.06",
    "quickrefZh": "横扫",
@@ -11855,7 +11855,7 @@
    "slug": "pistol",
    "base": "PISTOL",
    "nameZh": "手枪",
-   "group": "legacy",
+   "group": "transitional",
    "section": null,
    "quickrefZh": null,
    "params": [],

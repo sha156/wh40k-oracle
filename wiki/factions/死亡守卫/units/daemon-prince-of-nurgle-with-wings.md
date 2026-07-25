@@ -29,13 +29,13 @@ updated: '2026-07-23'
 ## 射击武器
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| 狱火加农炮 | 24" | 3 | 2+ | 7 | -1 | 2 | [[core-rules/lethal-hits.md\|lethal hits]] |
+| 狱火加农炮 | 24" | 3 | 2+ | 7 | -1 | 2 | [[core-rules/lethal-hits.md\|致命一击]] |
 
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| 狱铸武器（重击） | 近战 | 7 | 2+ | 8 | -2 | 3 | [[core-rules/lethal-hits.md\|lethal hits]] |
-| 狱铸武器（横扫） | 近战 | 14 | 2+ | 6 | -1 | 1 | [[core-rules/lethal-hits.md\|lethal hits]] |
+| 狱铸武器（重击） | 近战 | 7 | 2+ | 8 | -2 | 3 | [[core-rules/lethal-hits.md\|致命一击]] |
+| 狱铸武器（横扫） | 近战 | 14 | 2+ | 6 | -1 | 1 | [[core-rules/lethal-hits.md\|致命一击]] |
 
 ## 技能
 - **[[factions/混沌恶魔/enhancements/horrifying-visage.md|Horrifying Visage]]**：Each time this model ends a Charge move, select one enemy unit within Engagement Range of it. That unit must take a Battle-shock test, subtracting 1 from that test.

@@ -32,7 +32,7 @@ updated: '2026-07-23'
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
 | 哀悼歌者 | 18" | 4 | 3+ | 4 | 0 | 2 | [[core-rules/anti.md\|针对步兵4+]]，[[core-rules/assault.md\|突击]]，[[core-rules/devastating-wounds.md\|毁灭伤害]] |
-| 灵能风暴 | 18" | 6 | 3+ | 6 | 0 | 2 | [[core-rules/sustained-hits.md\|连击2]]，[[core-rules/psychic-attacks.md\|灵能]] |
+| 灵能风暴 | 18" | 6 | 3+ | 6 | 0 | 2 | [[core-rules/psychic-attacks.md\|灵能]]，[[core-rules/sustained-hits.md\|连击2]] |
 
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |

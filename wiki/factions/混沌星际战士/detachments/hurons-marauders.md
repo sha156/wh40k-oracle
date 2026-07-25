@@ -21,9 +21,9 @@ updated: '2026-07-25'
 
 In your Command phase, select one of the following abilities. Until the start of your next Command phase, each Heretic Astartes Infantry unit from your army has that ability. At the start of each phase, if such a unit is visible to a friendly [[factions/混沌星际战士/units/huron-blackheart.md|Huron Blackheart]] model, until the end of the phase, it has both of the following abilities.
 
-Huron’s Elite Hand-picked by Huron Blackheart himself, these warriors strive to retain his favour with feats of arms. Each time a model in this unit makes an attack, add 1 to the Hit roll.
+Huron’s Elite Hand-picked by [[factions/混沌星际战士/units/huron-blackheart.md|Huron Blackheart]] himself, these warriors strive to retain his favour with feats of arms. Each time a model in this unit makes an attack, add 1 to the Hit roll.
 
-Mobile Marauders The Red Corsairs utilise a highly mobile form of warfare and, under Huron’s watch, are relentless in their aggression. This unit is eligible to shoot and declare a charge in a turn in which it Fell Back. **Designer’s Note:** *If a unit is gaining eligibility to shoot and declare a charge in a turn in which it Fell Back as a result of being visible to Huron Blackheart, but after making a Fall Back move it is no longer visible to Huron Blackheart, that unit will not be eligible to shoot in your Shooting phase or to declare a charge in your Charge phase unless it is visible again at the start of the respective phase.*
+Mobile Marauders The Red Corsairs utilise a highly mobile form of warfare and, under Huron’s watch, are relentless in their aggression. This unit is eligible to shoot and declare a charge in a turn in which it Fell Back. **Designer’s Note:** *If a unit is gaining eligibility to shoot and declare a charge in a turn in which it Fell Back as a result of being visible to [[factions/混沌星际战士/units/huron-blackheart.md|Huron Blackheart]], but after making a Fall Back move it is no longer visible to Huron Blackheart, that unit will not be eligible to shoot in your Shooting phase or to declare a charge in your Charge phase unless it is visible again at the start of the respective phase.*
 
 ## 增强
 

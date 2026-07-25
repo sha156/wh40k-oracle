@@ -24,7 +24,7 @@ Start of your opponent’s Shooting phase.
 
 ## 使用对象
 
-One Heretic Astartes Psyker, [[factions/混沌星际战士/units/heretic-astartes-daemon-prince.md|Heretic Astartes Daemon Prince]] or Heretic Astartes Daemon Prince with Wings unit from your army.
+One Heretic Astartes Psyker, [[factions/混沌星际战士/units/heretic-astartes-daemon-prince.md|Heretic Astartes Daemon Prince]] or [[factions/混沌星际战士/units/heretic-astartes-daemon-prince.md|Heretic Astartes Daemon Prince]] with Wings unit from your army.
 
 ## 效果
 

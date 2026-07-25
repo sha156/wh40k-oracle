@@ -30,8 +30,8 @@ updated: '2026-07-23'
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
 | 机械教手枪 | 12" | 1 | 3+ | 6 | -1 | 1 | [[core-rules/devastating-wounds.md\|毁灭伤害]]，[[core-rules/pistol.md\|手枪]] |
-| 辐射长管枪 | 36" | 1 | 3+ | 5 | -2 | 3 | [[core-rules/anti.md\|反步兵 3+]]，[[core-rules/heavy.md\|重型]]，[[core-rules/precision.md\|精准]] |
-| 超铀元素步枪 | 36" | 1 | 3+ | 7 | -2 | D3 | [[core-rules/anti.md\|反巨兽 4+]]，重 型，[[core-rules/anti.md\|反载具 4+]]，[[core-rules/precision.md\|精准]] |
+| 辐射长管枪 | 36" | 1 | 3+ | 5 | -2 | 3 | [[core-rules/anti.md\|针对步兵3+]]，[[core-rules/heavy.md\|重型]]，[[core-rules/precision.md\|精准]] |
+| 超铀元素步枪 | 36" | 1 | 3+ | 7 | -2 | D3 | [[core-rules/anti.md\|针对怪物4+]]，[[core-rules/anti.md\|针对载具4+]]，[[core-rules/heavy.md\|重型]]，[[core-rules/precision.md\|精准]] |
 
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |

@@ -34,7 +34,7 @@ updated: '2026-07-23'
 | 风暴爆弹枪 | 24" | 2 | 4+ | 4 | 0 | 1 | [[core-rules/rapid-fire.md\|速射2]] |
 | 激光炮 | 48" | 1 | 4+ | 12 | -3 | D6+1 | — |
 | 破坏者战斗加农炮 | 24" | D6+1 | 4+ | 14 | -3 | D6 | [[core-rules/blast.md\|爆炸]] |
-| 根除者新星炮 | 36" | D3+6 | 4+ | 7 | -1 | 2 | [[core-rules/blast.md\|爆炸]]，[[core-rules/ignores-cover.md\|忽视掩体]] |
+| 根除者新星炮 | 36" | D3+6 | 4+ | 7 | -1 | 2 | [[core-rules/blast.md\|爆炸]]，[[core-rules/ignores-cover.md\|无视掩体]] |
 | 处决者等离子炮（标准） | 36" | D6+3 | 4+ | 7 | -2 | 2 | [[core-rules/blast.md\|爆炸]] |
 | 处决者等离子炮（过载） | 36" | D6+3 | 4+ | 8 | -3 | 3 | [[core-rules/blast.md\|爆炸]]，[[core-rules/hazardous.md\|危险]] |
 | 灭绝者自动炮 | 48" | 4 | 4+ | 9 | -1 | 3 | [[core-rules/rapid-fire.md\|速射4]]，[[core-rules/twin-linked.md\|双联]] |

@@ -31,7 +31,7 @@ updated: '2026-07-23'
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
 | 突击炮 | 24" | 6 | 2+ | 6 | 0 | 1 | [[core-rules/devastating-wounds.md\|毁灭伤害]] |
-| 风暴爆弹枪  | 24" | 2 | 2+ | 4 | 0 | 1 | [[core-rules/rapid-fire.md\|速射 2]] |
+| 风暴爆弹枪  | 24" | 2 | 2+ | 4 | 0 | 1 | [[core-rules/rapid-fire.md\|速射2]] |
 
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |
@@ -52,4 +52,4 @@ updated: '2026-07-23'
 
 ## 关键词
 - **阵营关键词**：Space Wolves，Adeptus Astartes
-- **普通关键词**：[[core-rules/infantry.md|Infantry]]，Imperium，Terminator，[[factions/星际战士/units/wolf-guard.md|Wolf Guard]]，Wolf Guard Terminators
+- **普通关键词**：[[core-rules/infantry.md|Infantry]]，Imperium，Terminator，Wolf Guard，Wolf Guard Terminators

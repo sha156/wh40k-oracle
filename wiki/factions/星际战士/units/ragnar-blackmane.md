@@ -34,7 +34,7 @@ updated: '2026-07-23'
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| 霜牙 | 近战 | 8 | 2+ | 6 | -3 | 2 | [[core-rules/sustained-hits.md\|sustained hits 1]] |
+| 霜牙 | 近战 | 8 | 2+ | 6 | -3 | 2 | [[core-rules/sustained-hits.md\|连击1]] |
 
 ## 技能
 - **【阵营技能】：破敌重誓**

@@ -27,9 +27,9 @@ updated: '2026-07-23'
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
 | 神锤激光炮 | 48" | 2 | 2+ | 12 | -3 | D6+1 | — |
-| 猎杀飞弹 | 48" | 1 | 2+ | 14 | -3 | D6 | [[core-rules/one-shot.md\|一次性]] |
+| 猎杀飞弹 | 48" | 1 | 2+ | 14 | -3 | D6 | [[core-rules/one-shot.md\|单发]] |
 | 风暴爆弹枪 | 24" | 2 | 2+ | 4 | 0 | 1 | [[core-rules/rapid-fire.md\|速射2]] |
-| 双联重型爆弹枪 | 36" | 3 | 2+ | 5 | -1 | 2 | [[core-rules/sustained-hits.md\|连击 1]]，[[core-rules/twin-linked.md\|双联]] |
+| 双联重型爆弹枪 | 36" | 3 | 2+ | 5 | -1 | 2 | [[core-rules/sustained-hits.md\|连击1]]，[[core-rules/twin-linked.md\|双联]] |
 
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |

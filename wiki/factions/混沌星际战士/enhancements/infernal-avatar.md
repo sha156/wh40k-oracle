@@ -18,7 +18,7 @@ updated: '2026-07-25'
 
 ## 效果
 
-[[factions/混沌星际战士/units/heretic-astartes-daemon-prince.md|Heretic Astartes Daemon Prince]] or Heretic Astartes Daemon Prince with Wings model only. Improve the Strength characteristic of melee weapons equipped by the bearer by 2, and improve the Armour Penetration characteristic of those weapons by 1.
+[[factions/混沌星际战士/units/heretic-astartes-daemon-prince.md|Heretic Astartes Daemon Prince]] or [[factions/混沌星际战士/units/heretic-astartes-daemon-prince.md|Heretic Astartes Daemon Prince]] with Wings model only. Improve the Strength characteristic of melee weapons equipped by the bearer by 2, and improve the Armour Penetration characteristic of those weapons by 1.
 
 **分数**：20 分
 

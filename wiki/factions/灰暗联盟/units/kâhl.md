@@ -30,7 +30,7 @@ updated: '2026-07-23'
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
 | 基岩型复合爆矢枪 | 24" | 4 | 2+ | 4 | 0 | 1 | — |
-| 爆燃解离枪 | 24" | 3 | 2+ | 5 | 0 | 1 | [[core-rules/devastating-wounds.md\|devastating wounds]] |
+| 爆燃解离枪 | 24" | 3 | 2+ | 5 | 0 | 1 | [[core-rules/devastating-wounds.md\|毁灭伤害]] |
 
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |

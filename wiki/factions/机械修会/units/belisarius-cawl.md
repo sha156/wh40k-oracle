@@ -34,7 +34,7 @@ updated: '2026-07-23'
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| 电弧长鞭 | 近战 | 4 | 2+ | 5 | -1 | 1 | [[core-rules/anti.md\|反载具 4+]]，[[core-rules/devastating-wounds.md\|毁灭伤害]]，额外攻 击 |
+| 电弧长鞭 | 近战 | 4 | 2+ | 5 | -1 | 1 | [[core-rules/anti.md\|针对载具4+]]，[[core-rules/devastating-wounds.md\|毁灭伤害]]，[[core-rules/extra-attacks.md\|额外攻击]] |
 | 机神战斧 | 近战 | 4 | 2+ | 8 | -2 | 2 | — |
 | 机械蜂巢 | 近战 | 2D6 | 3+ | 4 | 0 | 1 | [[core-rules/extra-attacks.md\|额外攻击]] |
 

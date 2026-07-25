@@ -30,7 +30,7 @@ updated: '2026-07-23'
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
 | 鞭击长舌 | 近战 | 2 | 4+ | 4 | 0 | 1 | [[core-rules/extra-attacks.md\|额外攻击]]，[[core-rules/lethal-hits.md\|致命一击]] |
-| 凶狠利爪 | 近战 | 3 | 3+ | 4 | -1 | 1 | [[core-rules/devastating-wounds.md\|devastating wounds]] |
+| 凶狠利爪 | 近战 | 3 | 3+ | 4 | -1 | 1 | [[core-rules/devastating-wounds.md\|毁灭伤害]] |
 
 ## 技能
 - **不洁之速**

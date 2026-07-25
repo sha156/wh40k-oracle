@@ -24,7 +24,7 @@ Fight phase.
 
 ## 使用对象
 
-One Shadow Legion unit from your army that has not been selected to fight this phase.
+One [[factions/混沌恶魔/detachments/shadow-legion.md|Shadow Legion]] unit from your army that has not been selected to fight this phase.
 
 ## 效果
 

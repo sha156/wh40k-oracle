@@ -38,7 +38,11 @@ _GLOBAL_MIN_OBS = 3
 OVERRIDES_PATH = Path(__file__).resolve().parent / "zh_weapon_overrides.json"
 KEYWORD_OVERRIDES_PATH = Path(__file__).resolve().parent / "zh_keyword_overrides.json"
 
-# 参数化 USR：同一族的写法必须整齐（黑图自己混用"反步兵/针对步兵"，我们统一取多数派"反X"）
+# 参数化 USR：同一族的写法必须整齐。
+# **2026-07-26 改用 GW 官方中文**：官方 11 版核心规则（data/官方中文/，24.03）写作
+# 「[针对载具 4+]」。此前按黑图多数派取的「反X」是汉化组用法，宪法 §6 定
+# 「GW 官方中文 > 汉化组译名」，故全族改「针对X」，旧写法降为检索别名。
+# 参数间距保持库内紧凑写法（针对载具4+ / 速射2），官方 PDF 里的空格是排版而非译法。
 _ANTI_TARGET = {
     "INFANTRY": "步兵", "VEHICLE": "载具", "MONSTER": "怪物", "FLY": "飞行",
     "PSYKER": "灵能者", "CHARACTER": "角色", "TITANIC": "泰坦", "DAEMON": "恶魔",
@@ -48,14 +52,15 @@ _ANTI_TARGET = {
 }
 _PARAM_RULES = [
     (re.compile(r"^ANTI-(.+?)\s+(\d\+)$"), lambda m: (
-        "反" + _ANTI_TARGET[m.group(1).strip()] + m.group(2)
+        "针对" + _ANTI_TARGET[m.group(1).strip()] + m.group(2)
         if m.group(1).strip() in _ANTI_TARGET else None)),
     (re.compile(r"^RAPID FIRE (.+)$"), lambda m: "速射" + m.group(1).replace(" ", "")),
     (re.compile(r"^MELTA (.+)$"), lambda m: "热熔" + m.group(1).replace(" ", "")),
     (re.compile(r"^SUSTAINED HITS (.+)$"), lambda m: "连击" + m.group(1).replace(" ", "")),
-    # CLEAVE 是 11 版新增（近战版爆炸），黑图十版语料没有它——学习值必然错配，
-    # 只能走规则 + 人工真源（译名据 data/11版40K通用技能速查表.pdf 24.06「横扫」）
-    (re.compile(r"^CLEAVE (.+)$"), lambda m: "横扫" + m.group(1).replace(" ", "")),
+    # CLEAVE 是 11 版新增（近战版爆炸）。译名以 **GW 官方中文**为准＝「劈砍」
+    # （data/官方中文/ 核心规则 24.06）。此前按汉化组速查表取的「横扫」已作废——
+    # 汉化组与官方在这条上不一致，宪法 §6 官方优先。
+    (re.compile(r"^CLEAVE (.+)$"), lambda m: "劈砍" + m.group(1).replace(" ", "")),
 ]
 
 

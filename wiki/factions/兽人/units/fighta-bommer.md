@@ -27,8 +27,8 @@ updated: '2026-07-23'
 ## 射击武器
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| Grot-guided bomm | 72" | D6 | 4+ | 8 | -2 | 2 | [[core-rules/blast.md\|blast]]，[[core-rules/one-shot.md\|one shot]]，[[core-rules/indirect-fire.md\|indirect fire]] |
-| 双联大突突枪 | 36" | 3 | 5+ | 5 | 0 | 1 | [[core-rules/rapid-fire.md\|rapid fire 2]]，[[core-rules/twin-linked.md\|twin-linked]] |
+| Grot-guided bomm | 72" | D6 | 4+ | 8 | -2 | 2 | [[core-rules/blast.md\|爆炸]]，[[core-rules/one-shot.md\|单发]]，[[core-rules/indirect-fire.md\|曲射]] |
+| 双联大突突枪 | 36" | 3 | 5+ | 5 | 0 | 1 | [[core-rules/rapid-fire.md\|速射2]]，[[core-rules/twin-linked.md\|双联]] |
 | 圾翼导弹 | 24" | 1 | 5+ | 9 | -2 | 3 | — |
 
 ## 近战武器

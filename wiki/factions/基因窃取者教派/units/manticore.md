@@ -28,7 +28,7 @@ updated: '2026-07-23'
 | 重型爆弹枪 | 36" | 3 | 4+ | 5 | -1 | 2 | [[core-rules/sustained-hits.md\|连击1]] |
 | 重型火焰喷射器 | 12" | D6 | N/A | 5 | -1 | 1 | [[core-rules/ignores-cover.md\|无视掩体]]，[[core-rules/torrent.md\|洪流]] |
 | 猎杀飞弹 | 48" | 1 | 4+ | 14 | -3 | D6 | [[core-rules/one-shot.md\|单发]] |
-| 风暴鹰火箭 | 120" | D6 | 4+ | 7 | -2 | 3 | [[core-rules/blast.md\|爆炸]]，[[core-rules/anti.md\|针对步兵2+]]，[[core-rules/indirect-fire.md\|曲射]] |
+| 风暴鹰火箭 | 120" | D6 | 4+ | 7 | -2 | 3 | [[core-rules/anti.md\|针对步兵2+]]，[[core-rules/blast.md\|爆炸]]，[[core-rules/indirect-fire.md\|曲射]] |
 
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |

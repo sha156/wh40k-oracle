@@ -24,14 +24,14 @@ updated: '2026-07-23'
 ## 射击武器
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| Omega-pattern plasma blastgun – standard | 60" | 2D6 | 4+ | 8 | -2 | 2 | [[core-rules/blast.md\|blast]] |
-| 猎杀飞弹 | 48" | 1 | 4+ | 14 | -3 | D6 | [[core-rules/one-shot.md\|one shot]] |
-| Heavy stubber | 36" | 3 | 4+ | 4 | 0 | 1 | [[core-rules/rapid-fire.md\|rapid fire 3]] |
-| 重型喷火器 | 12" | D6 | N/A | 5 | -1 | 1 | [[core-rules/ignores-cover.md\|ignores cover]]，[[core-rules/torrent.md\|torrent]] |
-| 重型爆弹枪 | 36" | 3 | 4+ | 5 | -1 | 2 | [[core-rules/sustained-hits.md\|sustained hits 1]] |
+| Omega-pattern plasma blastgun – standard | 60" | 2D6 | 4+ | 8 | -2 | 2 | [[core-rules/blast.md\|爆炸]] |
+| 猎杀飞弹 | 48" | 1 | 4+ | 14 | -3 | D6 | [[core-rules/one-shot.md\|单发]] |
+| Heavy stubber | 36" | 3 | 4+ | 4 | 0 | 1 | [[core-rules/rapid-fire.md\|速射3]] |
+| 重型喷火器 | 12" | D6 | N/A | 5 | -1 | 1 | [[core-rules/ignores-cover.md\|无视掩体]]，[[core-rules/torrent.md\|洪流]] |
+| 重型爆弹枪 | 36" | 3 | 4+ | 5 | -1 | 2 | [[core-rules/sustained-hits.md\|连击1]] |
 | 自动炮 | 48" | 2 | 4+ | 9 | -1 | 3 | — |
-| 风暴爆弹枪 | 24" | 2 | 4+ | 4 | 0 | 1 | [[core-rules/rapid-fire.md\|rapid fire 2]] |
-| Omega-pattern plasma blastgun – supercharge | 60" | 2D6 | 4+ | 9 | -3 | 3 | [[core-rules/blast.md\|blast]]，[[core-rules/hazardous.md\|hazardous]] |
+| 风暴爆弹枪 | 24" | 2 | 4+ | 4 | 0 | 1 | [[core-rules/rapid-fire.md\|速射2]] |
+| Omega-pattern plasma blastgun – supercharge | 60" | 2D6 | 4+ | 9 | -3 | 3 | [[core-rules/blast.md\|爆炸]]，[[core-rules/hazardous.md\|危险]] |
 
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |
@@ -47,4 +47,4 @@ updated: '2026-07-23'
 
 ## 关键词
 - **阵营关键词**：Astra Militarum，Genestealer Cults
-- **普通关键词**：Imperium，[[core-rules/smoke.md|Smoke]]，[[factions/基因窃取者教派/units/macharius.md|Macharius]] Omega，Vehicle，[[core-rules/titanic.md|Titanic]]
+- **普通关键词**：Imperium，[[core-rules/smoke.md|Smoke]]，Macharius Omega，Vehicle，[[core-rules/titanic.md|Titanic]]

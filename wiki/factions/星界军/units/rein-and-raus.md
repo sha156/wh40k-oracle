@@ -24,9 +24,9 @@ updated: '2026-07-23'
 ## 射击武器
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| 爆破炸药 | 6" | D6+3 | 4+ | 12 | -2 | 2 | [[core-rules/blast.md\|blast]]，[[core-rules/hazardous.md\|hazardous]]，[[core-rules/one-shot.md\|one shot]] |
-| Sniper rifle | 36" | 1 | 3+ | 4 | -2 | 2 | [[core-rules/heavy.md\|heavy]]，[[core-rules/precision.md\|precision]] |
-| Stub pistol | 12" | 1 | 3+ | 4 | 0 | 1 | [[core-rules/pistol.md\|pistol]] |
+| 爆破炸药 | 6" | D6+3 | 4+ | 12 | -2 | 2 | [[core-rules/blast.md\|爆炸]]，[[core-rules/hazardous.md\|危险]]，[[core-rules/one-shot.md\|单发]] |
+| Sniper rifle | 36" | 1 | 3+ | 4 | -2 | 2 | [[core-rules/heavy.md\|重型]]，[[core-rules/precision.md\|精准]] |
+| Stub pistol | 12" | 1 | 3+ | 4 | 0 | 1 | [[core-rules/pistol.md\|手枪]] |
 
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |

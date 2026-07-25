@@ -28,17 +28,17 @@ updated: '2026-07-23'
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
 | Decimator butcher cannon | 36" | 4 | 3+ | 9 | -1 | 2 | — |
-| Decimator conversion beamer | 24" | 1 | 3+ | 7 | -1 | 3 | conversion，[[core-rules/sustained-hits.md\|sustained hits d3]] |
-| Hellflamer | 12" | D6 | N/A | 5 | -1 | 1 | [[core-rules/anti.md\|anti-infantry 4+]]，[[core-rules/ignores-cover.md\|ignores cover]]，[[core-rules/torrent.md\|torrent]] |
-| Soulburner petard | 24" | 4 | 3+ | 2 | 0 | 1 | [[core-rules/anti.md\|anti-infantry 3+]]，[[core-rules/devastating-wounds.md\|devastating wounds]]，[[core-rules/hazardous.md\|hazardous]] |
-| Storm laser | 36" | 8 | 3+ | 6 | -1 | 1 | [[core-rules/sustained-hits.md\|sustained hits 1]] |
+| Decimator conversion beamer | 24" | 1 | 3+ | 7 | -1 | 3 | 转换，[[core-rules/sustained-hits.md\|连击D3]] |
+| Hellflamer | 12" | D6 | N/A | 5 | -1 | 1 | [[core-rules/anti.md\|针对步兵4+]]，[[core-rules/ignores-cover.md\|无视掩体]]，[[core-rules/torrent.md\|洪流]] |
+| Soulburner petard | 24" | 4 | 3+ | 2 | 0 | 1 | [[core-rules/anti.md\|针对步兵3+]]，[[core-rules/devastating-wounds.md\|毁灭伤害]]，[[core-rules/hazardous.md\|危险]] |
+| Storm laser | 36" | 8 | 3+ | 6 | -1 | 1 | [[core-rules/sustained-hits.md\|连击1]] |
 
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
 | 装甲铁脚 | 近战 | 5 | 3+ | 6 | 0 | 1 | — |
 | Decimator claw | 近战 | 5 | 3+ | 14 | -3 | 3 | — |
-| Twin Decimator claws | 近战 | 5 | 3+ | 14 | -3 | 3 | [[core-rules/twin-linked.md\|twin-linked]] |
+| Twin Decimator claws | 近战 | 5 | 3+ | 14 | -3 | 3 | [[core-rules/twin-linked.md\|双联]] |
 
 ## 技能
 - **Infernal Regeneration**：The first time this model is destroyed, remove it from play without resolving its Deadly Demise ability. Then, at the end of the phase, roll one D6: on a 2+, set this model back up on the battlefield as close as possible to where it was destroyed and not within Engagement Range of any enemy units, with D6 wounds remaining.

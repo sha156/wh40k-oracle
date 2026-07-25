@@ -1,9 +1,15 @@
 """wiki_engine/from_db.py — 从官方结构库 db/wh40k.sqlite 渲染单位 wiki 页。
 
-与 synthesize（LLM 从 PDF 合成）互补：本模块**所有游戏数值取自官方结构表**
+与 synthesize（LLM 从 PDF 合成）互补：本模块**所有游戏数值与武器关键词取自官方结构表**
 （units/models/weapons/abilities/points_json，已同步官方 MFM + 11 版），
-数值与官网一致 by construction；中文名称/技能文本/武器中文名取自 unit_zh_detail
-（黑图书馆中文层，仅作翻译层，其数值不覆盖官方——有漂移时官方值胜出并记日志）。
+数值与官网一致 by construction。
+
+中文分两层，别混：
+  · **武器关键词**（技能列）走 `zh_keyword_glossary`＝**GW 官方简体中文**（2026-07-26 起）。
+    此前用黑图书馆的技能串，实测有三类偏差：用词非官方（反载具 vs 官方针对载具）、
+    词条本身就错（Power fist 挂「毁灭伤害」）、甚至混进译者批注。已弃用。
+  · **单位名 / 武器名 / 技能正文**仍取 unit_zh_detail（黑图书馆层，唯一的中文来源），
+    其数值不覆盖官方——有漂移时官方值胜出并记日志。
 
 识别到的 USR/关键词输出成裸 [[label]]，交给 crosslinks.canonicalize_known_terms
 落成 [[core-rules/…|label]] 可点链接；表格单元格内的 wikilink 竖线转义成 \\|
@@ -132,6 +138,30 @@ def _zh_model_desc(desc: str) -> str:
     return "{}个模型{}".format(m.group(1), " " + suffix if suffix else "")
 
 
+# 黑图技能正文里的旧译名 → GW 官方译名。**只处理带数值门槛的词条形态**：
+# 实测「横扫」出现在武器名里（利爪横扫 / 长枪-横扫 / 骑枪-横扫，102 页）、
+# 「悬浮死神」是技能名——无参形态一律不动，盲替会把武器和技能改名。
+# 无参旧译名已作为别名可检索，读者搜哪个都找得到。
+# 门槛里的加号**半角全角都有**：黑图正文混用 `4+` 与 `4＋`（U+FF0B）。只认半角会漏一部分，
+# 而漏掉的那几处和改好的看起来一模一样——不逐条对账根本发现不了。
+_PLUS = r"(\s*\d[+＋])"
+_OFFICIAL_TERM_RULES = [
+    (re.compile("不知疼痛" + _PLUS), r"不觉疼痛\1"),
+    (re.compile("反载具" + _PLUS), r"针对载具\1"),
+    (re.compile("反步兵" + _PLUS), r"针对步兵\1"),
+    (re.compile("反巨兽" + _PLUS), r"针对怪物\1"),   # 黑图「巨兽」＝官方 MONSTER
+    (re.compile("反怪物" + _PLUS), r"针对怪物\1"),
+]
+
+
+def official_terms(text: str) -> str:
+    """技能正文里的词条用旧译名 → 官方译名（其余原样）。"""
+    out = text or ""
+    for pat, rep in _OFFICIAL_TERM_RULES:
+        out = pat.sub(rep, out)
+    return out
+
+
 def _wrap(label: str) -> str:
     """已知 USR/核心术语 → 裸 [[label]]（交 canonicalize 落 core-rules 链接）；
     无法解析的保持纯文本，避免制造断链。"""
@@ -180,8 +210,22 @@ def _fetch_unit(conn, uid):
     return u, models, weapons, abils, zd
 
 
-def render_unit(conn, uid: str, faction_zh: str) -> Tuple[WikiPage, List[Dict]]:
-    """渲染单个单位为 WikiPage（数值官方、中文黑图书馆、USR/关键词裸链）。"""
+def load_keyword_zh(conn) -> Dict[str, str]:
+    """武器关键词英→中（GW 官方中文，见 db_compile/zh_keyword_overrides.json）。
+
+    老库没有这张表时返回空 dict：技能列退回英文，诚实但不炸。
+    """
+    try:
+        return {en: zh for en, zh in conn.execute(
+            "SELECT term_en, term_zh FROM zh_keyword_glossary")}
+    except sqlite3.OperationalError:
+        return {}
+
+
+def render_unit(conn, uid: str, faction_zh: str,
+                zh_kw: Optional[Dict[str, str]] = None) -> Tuple[WikiPage, List[Dict]]:
+    """渲染单个单位为 WikiPage（数值与关键词官方、单位/武器中文名取黑图层）。"""
+    zh_kw = load_keyword_zh(conn) if zh_kw is None else zh_kw
     u, models, weapons, abils, zd = _fetch_unit(conn, uid)
     zstats = json.loads(zd["stats_json"]) if zd and zd["stats_json"] else []
     zabils = json.loads(zd["abilities_json"]) if zd and zd["abilities_json"] else []
@@ -239,15 +283,18 @@ def render_unit(conn, uid: str, faction_zh: str) -> Tuple[WikiPage, List[Dict]]:
             name = zname or w["name_zh"] or w["name_en"]
             rng = "近战" if melee else "{}\"".format(w["range"])
             bs = "{}+".format(w["bs_ws"]) if str(w["bs_ws"]).isdigit() else w["bs_ws"]
-            if zskill:
-                skills = "，".join(_wrap(s) for s in zskill)
-            else:
-                kj = json.loads(w["keywords_json"]) if w["keywords_json"] else []
-                # keywords_json 常是 ["a, b, c"] 单串——拆开逐个包链
-                flat = []
-                for item in kj:
-                    flat += [p.strip() for p in str(item).split(",") if p.strip()]
-                skills = "，".join(_wrap(s) for s in flat) if flat else "—"
+            # 技能列一律走**官方关键词 + 官方中文词表**，不再用黑图的技能串。
+            # 为什么（2026-07-26 实测）：黑图那串是十版中文，与 11 版官方数据卡有三类偏差
+            #   ① 用词非官方：「反载具4+/反巨兽4+」，官方是「针对载具4+/针对怪物4+」
+            #   ② 词条本身就错：Power fist 挂「毁灭伤害」、Boltgun 挂「突击」
+            #   ③ 甚至混进译者批注：有一条写着「注：中文4+英文3+以英文为准」
+            # 只有 10 把武器是「黑图有、官方无」，且样例全属②③——丢掉它是纠错不是丢数据。
+            kj = json.loads(w["keywords_json"]) if w["keywords_json"] else []
+            # keywords_json 常是 ["a, b, c"] 单串——拆开逐个译再包链
+            flat = []
+            for item in kj:
+                flat += [p.strip() for p in str(item).split(",") if p.strip()]
+            skills = "，".join(_wrap(zh_kw.get(s.upper(), s)) for s in flat) or "—"
             out.append("| {} | {} | {} | {} | {} | {} | {} | {} |".format(
                 name, rng, w["a"], bs, w["s"], w["ap"], w["d"], skills))
         return out
@@ -263,6 +310,9 @@ def render_unit(conn, uid: str, faction_zh: str) -> Tuple[WikiPage, List[Dict]]:
         L += ["", "## 技能"]
         for ab in zabils:
             prefix, text = _flatten_zh_ability(ab)
+            # 技能正文是黑图译文，里面的词条用旧译名——归一成官方译名，
+            # 否则同一页上武器表写「针对载具4+」、技能正文写「反载具4+」，读者会当成 bug
+            text = official_terms(text)
             L.append("- **{}**：{}".format(prefix, text) if text
                      else "- **{}**".format(prefix))
     elif abils:
@@ -327,8 +377,9 @@ def generate_faction(conn, fid: str, wiki_root: Path,
     drift_log: List[Dict] = []
     conflicts: List[str] = []
     used_slugs: Dict[str, int] = {}
+    zh_kw = load_keyword_zh(conn)          # 全阵营共用一份，别每个单位查一次
     for uid in uids:
-        page, drift = render_unit(conn, uid, faction_zh)
+        page, drift = render_unit(conn, uid, faction_zh, zh_kw)
         base = slugify(page.fm.name_en or page.fm.name_zh or uid)
         used_slugs[base] = used_slugs.get(base, 0) + 1
         slug = base if used_slugs[base] == 1 else "{}-{}".format(base, used_slugs[base])

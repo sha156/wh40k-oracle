@@ -24,8 +24,8 @@ updated: '2026-07-23'
 ## 射击武器
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| Destroyer pulse | 18" | 1 | 4+ | 8 | -2 | 2 | [[core-rules/pistol.md\|pistol]] |
-| Guardian salvo launchers | 24" | D6 | 4+ | 5 | -1 | 1 | [[core-rules/blast.md\|blast]] |
+| Destroyer pulse | 18" | 1 | 4+ | 8 | -2 | 2 | [[core-rules/pistol.md\|手枪]] |
+| Guardian salvo launchers | 24" | D6 | 4+ | 5 | -1 | 1 | [[core-rules/blast.md\|爆炸]] |
 
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |

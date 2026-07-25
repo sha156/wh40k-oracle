@@ -27,13 +27,13 @@ updated: '2026-07-23'
 ## 射击武器
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| [[factions/星界军/units/commissar.md\|Commissar]]’s pistol | 12" | 1 | 3+ | 3 | -1 | 1 | [[core-rules/pistol.md\|pistol]] |
+| Commissar’s pistol | 12" | 1 | 3+ | 3 | -1 | 1 | [[core-rules/pistol.md\|手枪]] |
 
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
 | Commissar’s close combat weapon | 近战 | 3 | 3+ | 4 | -2 | 1 | — |
-| 野蛮利爪 | 近战 | 2 | 4+ | 4 | -1 | 1 | [[core-rules/extra-attacks.md\|extra attacks]] |
+| 野蛮利爪 | 近战 | 2 | 4+ | 4 | -1 | 1 | [[core-rules/extra-attacks.md\|额外攻击]] |
 
 ## 技能
 - **Summary Execution**：Once per battle round, at the start of any phase, you can select one friendly Astra Militarum Infantry or Astra Militarum Mounted unit that is Battle-shocked and within 12" of this model. If you do, one model in that unit is destroyed, and that unit is then no longer Battle-shocked.

@@ -27,10 +27,10 @@ updated: '2026-07-23'
 ## 射击武器
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| 机载火箭巢 | 24" | D3 | 5+ | 9 | -2 | 3 | [[core-rules/blast.md\|blast]]，[[core-rules/twin-linked.md\|twin-linked]] |
-| 魔改米加枪 | 24" | 3 | 5+ | 9 | -2 | D6 | [[core-rules/hazardous.md\|hazardous]] |
-| 手铳 | 12" | 1 | 5+ | 4 | 0 | 1 | [[core-rules/pistol.md\|pistol]] |
-| 双联大突突枪 | 36" | 3 | 5+ | 5 | 0 | 1 | [[core-rules/rapid-fire.md\|rapid fire 2]]，[[core-rules/twin-linked.md\|twin-linked]] |
+| 机载火箭巢 | 24" | D3 | 5+ | 9 | -2 | 3 | [[core-rules/blast.md\|爆炸]]，[[core-rules/twin-linked.md\|双联]] |
+| 魔改米加枪 | 24" | 3 | 5+ | 9 | -2 | D6 | [[core-rules/hazardous.md\|危险]] |
+| 手铳 | 12" | 1 | 5+ | 4 | 0 | 1 | [[core-rules/pistol.md\|手枪]] |
+| 双联大突突枪 | 36" | 3 | 5+ | 5 | 0 | 1 | [[core-rules/rapid-fire.md\|速射2]]，[[core-rules/twin-linked.md\|双联]] |
 
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |
@@ -46,4 +46,4 @@ updated: '2026-07-23'
 
 ## 关键词
 - **阵营关键词**：Orks
-- **普通关键词**：[[core-rules/grenades.md|Grenades]]，Vehicle，Fly，[[factions/兽人/units/deffkoptas.md|Deffkoptas]] with Big Shootas
+- **普通关键词**：[[core-rules/grenades.md|Grenades]]，Vehicle，Fly，Deffkoptas with Big Shootas

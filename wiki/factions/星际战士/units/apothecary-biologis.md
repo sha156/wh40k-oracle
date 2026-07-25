@@ -43,4 +43,4 @@ updated: '2026-07-23'
 
 ## 关键词
 - **阵营关键词**：Adeptus Astartes
-- **普通关键词**：[[factions/星际战士/units/apothecary.md|Apothecary]]，[[core-rules/infantry.md|Infantry]]，[[core-rules/character.md|Character]]，Imperium，Gravis，Biologis
+- **普通关键词**：Apothecary，[[core-rules/infantry.md|Infantry]]，[[core-rules/character.md|Character]]，Imperium，Gravis，Biologis

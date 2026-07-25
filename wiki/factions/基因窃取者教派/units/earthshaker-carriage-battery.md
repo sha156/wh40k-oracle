@@ -24,7 +24,7 @@ updated: '2026-07-23'
 ## 射击武器
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| 撼地炮 | 240" | D6+3 | 5+ | 8 | -2 | 2 | [[core-rules/blast.md\|blast]]，[[core-rules/heavy.md\|heavy]]，[[core-rules/indirect-fire.md\|indirect fire]] |
+| 撼地炮 | 240" | D6+3 | 5+ | 8 | -2 | 2 | [[core-rules/blast.md\|爆炸]]，[[core-rules/heavy.md\|重型]]，[[core-rules/indirect-fire.md\|曲射]] |
 
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |

@@ -27,7 +27,7 @@ updated: '2026-07-23'
 ## 射击武器
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| 灵族火焰喷射器 | 12" | D6 | N/A | 4 | 0 | 1 | [[core-rules/assault.md\|突击]]，[[core-rules/ignores-cover.md\|无视掩体]]，[[core-rules/torrent.md\|喷射]] |
+| 灵族火焰喷射器 | 12" | D6 | N/A | 4 | 0 | 1 | [[core-rules/assault.md\|突击]]，[[core-rules/ignores-cover.md\|无视掩体]]，[[core-rules/torrent.md\|洪流]] |
 | 热熔枪 | 12" | 1 | 3+ | 8 | -4 | D6 | [[core-rules/assault.md\|突击]]，[[core-rules/melta.md\|热熔2]] |
 | 星镖手枪 | 12" | 1 | 3+ | 4 | -1 | 1 | [[core-rules/assault.md\|突击]]，[[core-rules/pistol.md\|手枪]] |
 

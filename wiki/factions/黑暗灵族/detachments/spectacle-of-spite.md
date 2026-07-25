@@ -17,7 +17,7 @@ updated: '2026-07-25'
 
 ## 分队规则
 
-### 战斗药剂 Combat Drugs
+### [[factions/帝皇之子/stratagems/combat-stimms.md|战斗药剂]] Combat Drugs
 
 At the start of your Command phase, select which Combat Drugs will be active for your army until the start of your next Command phase. To do so, either select one from the list below (you cannot select the same Combat Drug more than once per battle), or randomly select two by rolling two D6. When doing so randomly, Combat Drugs you have previously selected can become active again, but if you randomly select one that is already active for your army, it has no additional effect.
 

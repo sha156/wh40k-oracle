@@ -24,16 +24,16 @@ updated: '2026-07-23'
 ## 射击武器
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| 爆弹手枪 | 12" | 1 | 2+ | 4 | 0 | 1 | [[core-rules/pistol.md\|pistol]] |
-| 喷火器 | 12" | D6 | N/A | 4 | 0 | 1 | [[core-rules/ignores-cover.md\|ignores cover]]，[[core-rules/torrent.md\|torrent]] |
-| Thunderfire cannon | 48" | D6+4 | 3+ | 5 | 0 | 1 | [[core-rules/blast.md\|blast]]，[[core-rules/indirect-fire.md\|indirect fire]] |
+| 爆弹手枪 | 12" | 1 | 2+ | 4 | 0 | 1 | [[core-rules/pistol.md\|手枪]] |
+| 喷火器 | 12" | D6 | N/A | 4 | 0 | 1 | [[core-rules/ignores-cover.md\|无视掩体]]，[[core-rules/torrent.md\|洪流]] |
+| Thunderfire cannon | 48" | D6+4 | 3+ | 5 | 0 | 1 | [[core-rules/blast.md\|爆炸]]，[[core-rules/indirect-fire.md\|曲射]] |
 
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
 | 格斗武器 | 近战 | 3 | 3+ | 4 | 0 | 1 | — |
-| Gunner’s servo-arms | 近战 | 2 | 3+ | 8 | -2 | 3 | [[core-rules/extra-attacks.md\|extra attacks]] |
-| Plasma cutter | 近战 | 2 | 3+ | 8 | -2 | 1 | [[core-rules/extra-attacks.md\|extra attacks]] |
+| Gunner’s servo-arms | 近战 | 2 | 3+ | 8 | -2 | 3 | [[core-rules/extra-attacks.md\|额外攻击]] |
+| Plasma cutter | 近战 | 2 | 3+ | 8 | -2 | 1 | [[core-rules/extra-attacks.md\|额外攻击]] |
 
 ## 技能
 - **Tremor Shells**：In your Shooting phase, after this unit has shot, if an enemy <span class="kwb">INFANTRY</span> unit was hit by one or more attacks made by this unit’s thunderfire cannon this phase, until the end of your opponent’s next turn, that enemy unit is shaken. While a unit is shaken, subtract 2 from that unit’s Move characteristic, and subtract 2 from Advance and Charge rolls made for that unit.

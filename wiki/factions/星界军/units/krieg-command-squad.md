@@ -27,18 +27,18 @@ updated: '2026-07-23'
 ## 射击武器
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| 爆弹枪 | 24" | 1 | 4+ | 4 | 0 | 1 | [[core-rules/rapid-fire.md\|rapid fire 1]] |
-| 爆弹手枪 | 12" | 1 | 4+ | 4 | 0 | 1 | [[core-rules/pistol.md\|pistol]] |
-| 喷火器 | 12" | D6 | N/A | 4 | 0 | 1 | [[core-rules/ignores-cover.md\|忽视掩体]]，[[core-rules/torrent.md\|洪流]] |
+| 爆弹枪 | 24" | 1 | 4+ | 4 | 0 | 1 | [[core-rules/rapid-fire.md\|速射1]] |
+| 爆弹手枪 | 12" | 1 | 4+ | 4 | 0 | 1 | [[core-rules/pistol.md\|手枪]] |
+| 喷火器 | 12" | D6 | N/A | 4 | 0 | 1 | [[core-rules/ignores-cover.md\|无视掩体]]，[[core-rules/torrent.md\|洪流]] |
 | 榴弹发射器（破片） | 24" | D3 | 4+ | 4 | 0 | 1 | [[core-rules/blast.md\|爆炸]] |
 | 榴弹发射器（穿甲） | 24" | 1 | 4+ | 9 | -2 | D3 | — |
-| 激光枪 | 24" | 1 | 4+ | 3 | 0 | 1 | [[core-rules/rapid-fire.md\|rapid fire 1]] |
-| 激光手枪 | 12" | 1 | 4+ | 3 | 0 | 1 | [[core-rules/pistol.md\|pistol]] |
+| 激光枪 | 24" | 1 | 4+ | 3 | 0 | 1 | [[core-rules/rapid-fire.md\|速射1]] |
+| 激光手枪 | 12" | 1 | 4+ | 3 | 0 | 1 | [[core-rules/pistol.md\|手枪]] |
 | 热熔枪 | 12" | 1 | 4+ | 9 | -4 | D6 | [[core-rules/melta.md\|热熔2]] |
-| 等离子枪（标准） | 24" | 1 | 4+ | 7 | -2 | 1 | [[core-rules/rapid-fire.md\|rapid fire 1]] |
-| 等离子枪（过载） | 24" | 1 | 4+ | 8 | -3 | 2 | [[core-rules/hazardous.md\|hazardous]]，[[core-rules/rapid-fire.md\|rapid fire 1]] |
-| 等离子手枪（标准） | 12" | 1 | 4+ | 7 | -2 | 1 | [[core-rules/pistol.md\|pistol]] |
-| 等离子手枪（过载） | 12" | 1 | 4+ | 8 | -3 | 2 | [[core-rules/hazardous.md\|hazardous]]，[[core-rules/pistol.md\|pistol]] |
+| 等离子枪（标准） | 24" | 1 | 4+ | 7 | -2 | 1 | [[core-rules/rapid-fire.md\|速射1]] |
+| 等离子枪（过载） | 24" | 1 | 4+ | 8 | -3 | 2 | [[core-rules/hazardous.md\|危险]]，[[core-rules/rapid-fire.md\|速射1]] |
+| 等离子手枪（标准） | 12" | 1 | 4+ | 7 | -2 | 1 | [[core-rules/pistol.md\|手枪]] |
+| 等离子手枪（过载） | 12" | 1 | 4+ | 8 | -3 | 2 | [[core-rules/hazardous.md\|危险]]，[[core-rules/pistol.md\|手枪]] |
 
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |
@@ -52,7 +52,7 @@ updated: '2026-07-23'
 ## 技能
 - **阵营能力-指挥之声**：该单位的军官可以对兵团单位下达一个命令。
 - **步话总机**：当军官在该装备持有者所在单位发布命令时，距离提升至24寸
-- **炼金药剂**：持有者所在单位获得针对致命伤害不知疼痛6+能力
+- **炼金药剂**：持有者所在单位获得针对致命伤害不觉疼痛6+能力
 - **团旗**：该装备持有者所在单位的模型OC+1
 - **伺服卷轴**：每场战斗一次，当下达命令时高阶政委可以多发布一个命令
 - **冷酷坚定**：当该单位包含军官模型时，即便该单位处于战斗震慑状态，你依旧可以对本单位使用战略能力。

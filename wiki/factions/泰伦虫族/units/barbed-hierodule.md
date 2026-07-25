@@ -24,7 +24,7 @@ updated: '2026-07-23'
 ## 射击武器
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| Bio-cannon | 48" | D6+3 | 3+ | 9 | -2 | 2 | [[core-rules/blast.md\|blast]] |
+| Bio-cannon | 48" | D6+3 | 3+ | 9 | -2 | 2 | [[core-rules/blast.md\|爆炸]] |
 
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |

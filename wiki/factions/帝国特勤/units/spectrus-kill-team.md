@@ -26,21 +26,21 @@ updated: '2026-07-23'
 ## 射击武器
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| 加速自动炮 | 48" | 3 | 4+ | 8 | -1 | 2 | [[core-rules/heavy.md\|heavy]] |
+| 加速自动炮 | 48" | 3 | 4+ | 8 | -1 | 2 | [[core-rules/heavy.md\|重型]] |
 | 爆矢手枪 | 12" | 1 | 3+ | 4 | 0 | 1 | [[core-rules/pistol.md\|手枪]] |
-| 爆弹卡宾枪 | 24" | 2 | 3+ | 4 | 0 | 1 | [[core-rules/precision.md\|precision]] |
+| 爆弹卡宾枪 | 24" | 2 | 3+ | 4 | 0 | 1 | [[core-rules/precision.md\|精准]] |
 | 爆矢狙击步枪 | 36" | 1 | 3+ | 5 | -2 | 3 | [[core-rules/heavy.md\|重型]]，[[core-rules/precision.md\|精准]] |
 | 激光燧发枪 | 36" | 1 | 3+ | 9 | -3 | D6 | [[core-rules/heavy.md\|重型]] |
-| 神射手爆弹卡宾枪 | 24" | 2 | 3+ | 4 | 0 | 1 | [[core-rules/heavy.md\|heavy]] |
-| 全知者爆弹卡宾枪 | 24" | 2 | 3+ | 4 | 0 | 1 | [[core-rules/assault.md\|assault]]，[[core-rules/ignores-cover.md\|ignores cover]] |
-| 特种爆矢手枪 | 12" | 1 | 3+ | 4 | -1 | 1 | [[core-rules/pistol.md\|手枪]]，[[core-rules/heavy.md\|重型]] |
+| 神射手爆弹卡宾枪 | 24" | 2 | 3+ | 4 | 0 | 1 | [[core-rules/heavy.md\|重型]] |
+| 全知者爆弹卡宾枪 | 24" | 2 | 3+ | 4 | 0 | 1 | [[core-rules/assault.md\|突击]]，[[core-rules/ignores-cover.md\|无视掩体]] |
+| 特种爆矢手枪 | 12" | 1 | 3+ | 4 | -1 | 1 | [[core-rules/pistol.md\|手枪]]，[[core-rules/precision.md\|精准]] |
 
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
 | 格斗武器 | 近战 | 3 | 3+ | 4 | 0 | 1 | — |
-| 战斗刀 | 近战 | 4 | 3+ | 4 | 0 | 1 | [[core-rules/precision.md\|precision]] |
-| 格斗武器 | 近战 | 3 | 3+ | 4 | 0 | 1 | [[core-rules/sustained-hits.md\|sustained hits 1]] |
+| 战斗刀 | 近战 | 4 | 3+ | 4 | 0 | 1 | [[core-rules/precision.md\|精准]] |
+| 格斗武器 | 近战 | 3 | 3+ | 4 | 0 | 1 | [[core-rules/sustained-hits.md\|连击1]] |
 
 ## 技能
 - **无形战术**：在您对手的回合结束时，如果该单位位于所有敌方单位 6" 外，您可以将该单位从战场上移除并放入战略预备队。

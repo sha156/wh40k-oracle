@@ -24,8 +24,8 @@ updated: '2026-07-23'
 ## 射击武器
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| 地狱直击导弹阵列 | 72" | 4 | 3+ | 8 | -2 | 3 | [[core-rules/anti.md\|anti-fly 4+]] |
-| 双联重型爆弹枪 | 36" | 3 | 3+ | 5 | -1 | 2 | [[core-rules/sustained-hits.md\|sustained hits 1]]，[[core-rules/twin-linked.md\|twin-linked]] |
+| 地狱直击导弹阵列 | 72" | 4 | 3+ | 8 | -2 | 3 | [[core-rules/anti.md\|针对飞行4+]] |
+| 双联重型爆弹枪 | 36" | 3 | 3+ | 5 | -1 | 2 | [[core-rules/sustained-hits.md\|连击1]]，[[core-rules/twin-linked.md\|双联]] |
 
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |

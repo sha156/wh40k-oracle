@@ -29,13 +29,13 @@ updated: '2026-07-23'
 ## 射击武器
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| 瘟疫喷射炮 | 12" | D6 | N/A | 6 | -1 | 1 | [[core-rules/anti.md\|anti-infantry 2+]]，[[core-rules/ignores-cover.md\|ignores cover]]，[[core-rules/torrent.md\|torrent]] |
+| 瘟疫喷射炮 | 12" | D6 | N/A | 6 | -1 | 1 | [[core-rules/anti.md\|针对步兵2+]]，[[core-rules/ignores-cover.md\|无视掩体]]，[[core-rules/torrent.md\|洪流]] |
 
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| 碎肉机 | 近战 | 10 | 3+ | 7 | -1 | 2 | [[core-rules/lethal-hits.md\|lethal hits]] |
-| 瘟疫刺针 | 近战 | 3 | 3+ | 6 | -1 | 1 | [[core-rules/lethal-hits.md\|lethal hits]] |
+| 碎肉机 | 近战 | 10 | 3+ | 7 | -1 | 2 | [[core-rules/lethal-hits.md\|致命一击]] |
+| 瘟疫刺针 | 近战 | 3 | 3+ | 6 | -1 | 1 | [[core-rules/lethal-hits.md\|致命一击]] |
 
 ## 技能
 - **【阵营技能】：纳垢赐福【光环】**

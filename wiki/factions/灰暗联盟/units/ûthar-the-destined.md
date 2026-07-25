@@ -29,12 +29,12 @@ updated: '2026-07-23'
 ## 射击武器
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| 爆燃解离枪 | 24" | 3 | 2+ | 5 | 0 | 1 | [[core-rules/devastating-wounds.md\|devastating wounds]] |
+| 爆燃解离枪 | 24" | 3 | 2+ | 5 | 0 | 1 | [[core-rules/devastating-wounds.md\|毁灭伤害]] |
 
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| 先祖之刃 | 近战 | 5 | 2+ | 6 | -3 | 2 | [[core-rules/devastating-wounds.md\|devastating wounds]] |
+| 先祖之刃 | 近战 | 5 | 2+ | 6 | -3 | 2 | [[core-rules/devastating-wounds.md\|毁灭伤害]] |
 
 ## 技能
 - **Ancestral Fortune**：Once per turn, you can spend 1YP to change one Hit roll, one Wound roll or one saving throw made for this model to an unmodified 6.

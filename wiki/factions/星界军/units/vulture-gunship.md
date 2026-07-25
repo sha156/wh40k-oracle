@@ -24,10 +24,10 @@ updated: '2026-07-23'
 ## 射击武器
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| 重型爆弹枪 | 36" | 3 | 4+ | 5 | -1 | 2 | [[core-rules/sustained-hits.md\|sustained hits 1]] |
-| 多管火箭发射器 | 36" | D6 | 4+ | 6 | 0 | 1 | [[core-rules/blast.md\|blast]] |
-| Vulture gatling cannon | 24" | 18 | 4+ | 5 | 0 | 1 | [[core-rules/sustained-hits.md\|sustained hits 1]] |
-| Vulture hellstrike rack | 48" | 2 | 4+ | 10 | -3 | D6 | [[core-rules/anti.md\|anti-fly 2+]] |
+| 重型爆弹枪 | 36" | 3 | 4+ | 5 | -1 | 2 | [[core-rules/sustained-hits.md\|连击1]] |
+| 多管火箭发射器 | 36" | D6 | 4+ | 6 | 0 | 1 | [[core-rules/blast.md\|爆炸]] |
+| Vulture gatling cannon | 24" | 18 | 4+ | 5 | 0 | 1 | [[core-rules/sustained-hits.md\|连击1]] |
+| Vulture hellstrike rack | 48" | 2 | 4+ | 10 | -3 | D6 | [[core-rules/anti.md\|针对飞行2+]] |
 
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |

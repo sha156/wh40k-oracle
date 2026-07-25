@@ -29,15 +29,15 @@ updated: '2026-07-23'
 ## 射击武器
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| 破链者激光脉冲炮-高频率 | 24" | D6 | 2+ | 14 | -3 | 4 | [[core-rules/blast.md\|爆炸]]，[[core-rules/sustained-hits.md\|连击 1]] |
-| 破链者激光脉冲炮-低频率 | 36" | 2D6 | 2+ | 7 | -1 | 2 | [[core-rules/blast.md\|爆炸]]，[[core-rules/sustained-hits.md\|连击 1]] |
-| 破链者多管激光 | 36" | 4 | 2+ | 6 | 0 | 1 | [[core-rules/sustained-hits.md\|连击 1]] |
+| 破链者激光脉冲炮-高频率 | 24" | D6 | 2+ | 14 | -3 | 4 | [[core-rules/blast.md\|爆炸]]，[[core-rules/sustained-hits.md\|连击1]] |
+| 破链者激光脉冲炮-低频率 | 36" | 2D6 | 2+ | 7 | -1 | 2 | [[core-rules/blast.md\|爆炸]]，[[core-rules/sustained-hits.md\|连击1]] |
+| 破链者多管激光 | 36" | 4 | 2+ | 6 | 0 | 1 | [[core-rules/sustained-hits.md\|连击1]] |
 
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| 自由之手-重击 | 近战 | 5 | 2+ | 20 | -3 | 9 | [[core-rules/sustained-hits.md\|连击 1]] |
-| 自由之手-横扫 | 近战 | 10 | 2+ | 10 | -2 | 3 | [[core-rules/sustained-hits.md\|连击 1]] |
+| 自由之手-重击 | 近战 | 5 | 2+ | 20 | -3 | 9 | [[core-rules/sustained-hits.md\|连击1]] |
+| 自由之手-横扫 | 近战 | 10 | 2+ | 10 | -2 | 3 | [[core-rules/sustained-hits.md\|连击1]] |
 
 ## 技能
 - **破链者**：一场战斗仅一次，在任意阶段开始时，您可以选择一个位于本模型 12 寸内，并且被战斗震慑的您的帝国单位，那个单位不再被战斗震慑。

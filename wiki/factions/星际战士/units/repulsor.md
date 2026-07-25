@@ -26,12 +26,12 @@ updated: '2026-07-23'
 ## 射击武器
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| 重型突击加特林 | 24" | 12 | 3+ | 6 | 0 | 1 | [[core-rules/devastating-wounds.md\|devastating wounds]] |
-| 屠猎飞弹 | 48" | 1 | 2+ | 14 | -3 | D6 | [[core-rules/indirect-fire.md\|indirect fire]]，[[core-rules/one-shot.md\|one shot]] |
+| 重型突击加特林 | 24" | 12 | 3+ | 6 | 0 | 1 | [[core-rules/devastating-wounds.md\|毁灭伤害]] |
+| 屠猎飞弹 | 48" | 1 | 2+ | 14 | -3 | D6 | [[core-rules/indirect-fire.md\|曲射]]，[[core-rules/one-shot.md\|单发]] |
 | 激光爪 | 36" | 2 | 3+ | 10 | -3 | D6+1 | — |
 | 反击者防御阵列 | 24" | 18 | 3+ | 4 | 0 | 1 | — |
-| 双联重型爆弹枪 | 36" | 3 | 3+ | 5 | -1 | 2 | [[core-rules/sustained-hits.md\|sustained hits 1]]，[[core-rules/twin-linked.md\|twin-linked]] |
-| 双联激光炮 | 48" | 1 | 3+ | 12 | -3 | D6+1 | [[core-rules/twin-linked.md\|twin-linked]] |
+| 双联重型爆弹枪 | 36" | 3 | 3+ | 5 | -1 | 2 | [[core-rules/sustained-hits.md\|连击1]]，[[core-rules/twin-linked.md\|双联]] |
+| 双联激光炮 | 48" | 1 | 3+ | 12 | -3 | D6+1 | [[core-rules/twin-linked.md\|双联]] |
 
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |

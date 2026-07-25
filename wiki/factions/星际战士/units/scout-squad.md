@@ -29,11 +29,11 @@ updated: '2026-07-23'
 |---|---|---|---|---|---|---|---|
 | 阿斯塔特霰弹枪  | 18" | 2 | 3+ | 4 | 0 | 1 | [[core-rules/assault.md\|突击]] |
 | 爆弹手枪   | 12" | 1 | 3+ | 4 | 0 | 1 | [[core-rules/pistol.md\|手枪]] |
-| 阿斯塔特霰弹枪  | 24" | 2 | 3+ | 4 | 0 | 1 | [[core-rules/assault.md\|突击]] |
-| 重型爆弹枪 | 36" | 3 | 4+ | 5 | -1 | 2 | [[core-rules/heavy.md\|heavy]]，[[core-rules/sustained-hits.md\|sustained hits 1]] |
+| 阿斯塔特霰弹枪  | 24" | 2 | 3+ | 4 | 0 | 1 | — |
+| 重型爆弹枪 | 36" | 3 | 4+ | 5 | -1 | 2 | [[core-rules/heavy.md\|重型]]，[[core-rules/sustained-hits.md\|连击1]] |
 | 导弹发射器（破片）    | 48" | D6 | 4+ | 4 | 0 | 1 | [[core-rules/blast.md\|爆炸]]，[[core-rules/heavy.md\|重型]] |
-| 导弹发射器（穿甲） | 48" | 1 | 4+ | 9 | -2 | D6 | [[core-rules/heavy.md\|heavy]] |
-| 狙击步枪 | 36" | 1 | 3+ | 4 | -2 | 2 | [[core-rules/heavy.md\|HEAVY]]，[[core-rules/precision.md\|PRECISION]] |
+| 导弹发射器（穿甲） | 48" | 1 | 4+ | 9 | -2 | D6 | [[core-rules/heavy.md\|重型]] |
+| 狙击步枪 | 36" | 1 | 3+ | 4 | -2 | 2 | [[core-rules/heavy.md\|重型]]，[[core-rules/precision.md\|精准]] |
 
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |

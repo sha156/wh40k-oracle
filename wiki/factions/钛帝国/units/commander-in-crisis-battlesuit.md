@@ -25,14 +25,14 @@ updated: '2026-07-23'
 ## 射击武器
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| 空爆榴弹发射器 | 24" | D6 | 3+ | 3 | 0 | 1 | [[core-rules/blast.md\|blast]]，[[core-rules/indirect-fire.md\|indirect fire]] |
+| 空爆榴弹发射器 | 24" | D6 | 3+ | 3 | 0 | 1 | [[core-rules/blast.md\|爆炸]]，[[core-rules/indirect-fire.md\|曲射]] |
 | 爆裂速射炮 | 18" | 4 | 3+ | 5 | 0 | 1 | — |
 | 循环离子炮—标准 | 18" | 3 | 3+ | 7 | -1 | 1 | — |
-| 循环离子炮—过载 | 18" | 3 | 3+ | 8 | -2 | 2 | [[core-rules/hazardous.md\|hazardous]] |
-| 融合炮 | 12" | 1 | 3+ | 9 | -4 | D6 | [[core-rules/melta.md\|melta 2]] |
+| 循环离子炮—过载 | 18" | 3 | 3+ | 8 | -2 | 2 | [[core-rules/hazardous.md\|危险]] |
+| 融合炮 | 12" | 1 | 3+ | 9 | -4 | D6 | [[core-rules/melta.md\|热熔2]] |
 | 导弹仓 | 30" | 2 | 3+ | 7 | -1 | 2 | — |
 | 等离子步枪 | 24" | 1 | 3+ | 8 | -3 | 3 | — |
-| 钛式火焰喷射器 | 12" | D6 | N/A | 4 | 0 | 1 | [[core-rules/ignores-cover.md\|ignores cover]]，[[core-rules/torrent.md\|torrent]] |
+| 钛式火焰喷射器 | 12" | D6 | N/A | 4 | 0 | 1 | [[core-rules/ignores-cover.md\|无视掩体]]，[[core-rules/torrent.md\|洪流]] |
 
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |

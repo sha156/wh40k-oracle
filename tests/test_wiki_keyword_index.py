@@ -56,7 +56,10 @@ def test_parse_quickref_covers_11e_keywords():
     for name in ("CLEAVE", "CLOSE-QUARTERS", "PSYCHIC", "SUSTAINED HITS",
                  "ONE SHOT", "BLAST", "RAPID FIRE"):
         assert name in qr, "速查表漏了 {}".format(name)
-    assert qr["CLEAVE"].name_zh == "横扫"          # 24.06，不是学习值「劈砍」
+    # 速查表（汉化组）写「横扫」；这里断言的是**解析器读对了 PDF**，
+    # 不是断言译名政策——全库译名以 GW 官方中文为准（官方 24.06 是「劈砍」），
+    # 差异在 wiki/indexes/keywords.md 的「译名差异」节里如实披露
+    assert qr["CLEAVE"].name_zh == "横扫"
     assert qr["CLEAVE"].section == "24.06"
     assert qr["CLOSE-QUARTERS"].section == "24.07"
     assert qr["PSYCHIC"].section == "24.29"
@@ -97,7 +100,8 @@ def test_classify_three_buckets():
     qr = parse_quickref(PDF)
     assert classify("BLAST", qr) == "universal"
     assert classify("ANTI-VEHICLE", qr) == "universal"      # ANTI-X 全族归 ANTI
-    assert classify("PISTOL", qr) == "legacy"               # 11 版被 CLOSE-QUARTERS 取代
+    # 官方 24.27 [手枪] 仍在册、与 24.07 [近距离] 规则等同，正被逐步取代 → 过渡期
+    assert classify("PISTOL", qr) == "transitional"
     assert classify("BUBBLECHUKKA", qr) == "unit-specific"
     assert classify("C'TAN POWER", qr) == "unit-specific"
 
@@ -118,7 +122,7 @@ def test_rule_page_follows_alias_not_only_slug():
     [CLOSE-QUARTERS] 的页仍叫 pistol。只按 slug 找会误判成「没有规则页」。"""
     assert _rule_page("PSYCHIC", WIKI, "灵能") == "core-rules/psychic-attacks.md"
     assert _rule_page("CLOSE-QUARTERS", WIKI, "近距离") == "core-rules/pistol.md"
-    assert _rule_page("ANTI-VEHICLE", WIKI, "反载具") == "core-rules/anti.md"
+    assert _rule_page("ANTI-VEHICLE", WIKI, "针对载具") == "core-rules/anti.md"
     assert _rule_page("BUBBLECHUKKA", WIKI, "泡泡炮") is None   # 无页就是无页，不造红链
 
 
@@ -136,11 +140,11 @@ def test_generate_index_is_complete_and_linked(tmp_path):
     assert rep["groups"]["universal"] >= 30
 
     # 三档小节都在
-    for title in ("通用武器词条", "十版遗留词条", "单位特有词条", "反查：哪些武器带这个词条"):
+    for title in ("通用武器词条", "过渡期词条", "单位特有词条", "反查：哪些武器带这个词条"):
         assert "## {}".format(title) in text or "## {}（".format(title) in text
 
     # 每个通用词条都链到真实存在的规则页
-    section = text.split("## 通用武器词条")[1].split("## 十版遗留")[0]
+    section = text.split("## 通用武器词条")[1].split("## 过渡期")[0]
     rows = [l for l in section.splitlines()
             if l.startswith("| ") and not l.startswith("| 词条") and not l.startswith("|---")]
     assert len(rows) >= 30

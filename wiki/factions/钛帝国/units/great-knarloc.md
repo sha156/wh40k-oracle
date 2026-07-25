@@ -25,14 +25,14 @@ updated: '2026-07-23'
 ## 射击武器
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| Kroot bolt thrower | 12" | 1 | 4+ | 12 | -2 | 3 | hooked |
-| 克鲁特步枪 | 24" | 1 | 4+ | 4 | 0 | 1 | [[core-rules/rapid-fire.md\|rapid fire 1]] |
-| Twin Kroot gun | 36" | 2 | 4+ | 7 | 0 | 2 | [[core-rules/twin-linked.md\|twin-linked]] |
+| Kroot bolt thrower | 12" | 1 | 4+ | 12 | -2 | 3 | 钩挂 |
+| 克鲁特步枪 | 24" | 1 | 4+ | 4 | 0 | 1 | [[core-rules/rapid-fire.md\|速射1]] |
+| Twin Kroot gun | 36" | 2 | 4+ | 7 | 0 | 2 | [[core-rules/twin-linked.md\|双联]] |
 
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| Great Knarloc beak and talons | 近战 | 4 | 3+ | 7 | -1 | 3 | [[core-rules/extra-attacks.md\|extra attacks]] |
+| Great Knarloc beak and talons | 近战 | 4 | 3+ | 7 | -1 | 3 | [[core-rules/extra-attacks.md\|额外攻击]] |
 | 克鲁特步枪 | 近战 | 2 | 3+ | 4 | 0 | 1 | — |
 
 ## 技能

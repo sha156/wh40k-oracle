@@ -29,8 +29,8 @@ updated: '2026-07-23'
 ## 射击武器
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| 地狱火爆矢手枪 | 12" | 1 | 3+ | 4 | -1 | 1 | [[core-rules/pistol.md\|pistol]] |
-| 群魔幻梦 | 24" | 6 | 3+ | 5 | -1 | 1 | [[core-rules/psychic-attacks.md\|psychic]]，[[core-rules/sustained-hits.md\|sustained hits 3]] |
+| 地狱火爆矢手枪 | 12" | 1 | 3+ | 4 | -1 | 1 | [[core-rules/pistol.md\|手枪]] |
+| 群魔幻梦 | 24" | 6 | 3+ | 5 | -1 | 1 | [[core-rules/psychic-attacks.md\|灵能]]，[[core-rules/sustained-hits.md\|连击3]] |
 
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |

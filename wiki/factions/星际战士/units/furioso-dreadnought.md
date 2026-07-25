@@ -35,7 +35,7 @@ updated: '2026-07-23'
 |---|---|---|---|---|---|---|---|
 | 血腥双爪 | 近战 | 7 | 3+ | 8 | -2 | 3 | [[core-rules/twin-linked.md\|双联]] |
 | 暴烈重拳 | 近战 | 5 | 3+ | 12 | -3 | 3 | — |
-| 暴烈双拳 | 近战 | 5 | 3+ | 12 | -3 | 3 | [[core-rules/twin-linked.md\|twin-linked]] |
+| 暴烈双拳 | 近战 | 5 | 3+ | 12 | -3 | 3 | [[core-rules/twin-linked.md\|双联]] |
 
 ## 技能
 - **【阵营技能】：破敌重誓**
@@ -48,4 +48,4 @@ updated: '2026-07-23'
 
 ## 关键词
 - **阵营关键词**：Blood Angels，Adeptus Astartes
-- **普通关键词**：Vehicle，[[core-rules/walker.md|Walker]]，Imperium，Furioso [[factions/星际战士/units/dreadnought.md|Dreadnought]]，Dreadnought
+- **普通关键词**：Vehicle，[[core-rules/walker.md|Walker]]，Imperium，Furioso Dreadnought，Dreadnought

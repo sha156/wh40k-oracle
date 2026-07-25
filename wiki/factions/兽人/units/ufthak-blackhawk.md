@@ -27,13 +27,13 @@ updated: '2026-07-23'
 ## 射击武器
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| Shokk rifle | 24" | 1 | 4+ | 8 | -2 | D6+1 | [[core-rules/devastating-wounds.md\|devastating wounds]]，[[core-rules/hazardous.md\|hazardous]]，[[core-rules/precision.md\|precision]] |
+| Shokk rifle | 24" | 1 | 4+ | 8 | -2 | D6+1 | [[core-rules/devastating-wounds.md\|毁灭伤害]]，[[core-rules/hazardous.md\|危险]]，[[core-rules/precision.md\|精准]] |
 
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| Princess’ jaws | 近战 | 2 | 4+ | 4 | 0 | 1 | [[core-rules/extra-attacks.md\|extra attacks]] |
-| Snazzhammer | 近战 | 4 | 3+ | 10 | -2 | 2 | [[core-rules/devastating-wounds.md\|devastating wounds]] |
+| Princess’ jaws | 近战 | 2 | 4+ | 4 | 0 | 1 | [[core-rules/extra-attacks.md\|额外攻击]] |
+| Snazzhammer | 近战 | 4 | 3+ | 10 | -2 | 2 | [[core-rules/devastating-wounds.md\|毁灭伤害]] |
 
 ## 技能
 - **[[factions/兽人/enhancements/tellyporta-bully-boyz.md|Tellyporta]] Tech**：While this model is leading a unit, models in that unit have the Deep Strike ability.

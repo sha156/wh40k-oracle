@@ -30,7 +30,7 @@ updated: '2026-07-23'
 | 中子爆破枪 | 18" | 2 | 4+ | 5 | -2 | 2 | [[core-rules/assault.md\|突击]] |
 | 中子榴弹发射器 | 18" | D6 | 4+ | 4 | -1 | 2 | [[core-rules/anti.md\|针对步兵3+]]，[[core-rules/blast.md\|爆炸]] |
 | 中子磁轨步枪 | 30" | 1 | 4+ | 10 | -4 | 3 | [[core-rules/devastating-wounds.md\|毁灭伤害]] |
-| 钛式火焰喷射器 | 12" | D6 | N/A | 4 | 0 | 1 | [[core-rules/ignores-cover.md\|忽略掩体]]，[[core-rules/torrent.md\|喷射]] |
+| 钛式火焰喷射器 | 12" | D6 | N/A | 4 | 0 | 1 | [[core-rules/ignores-cover.md\|无视掩体]]，[[core-rules/torrent.md\|洪流]] |
 
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |

@@ -30,7 +30,7 @@ updated: '2026-07-23'
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
 | 电磁长枪 | 36" | 1 | 3+ | 7 | -2 | 3 | [[core-rules/heavy.md\|重型]] |
-| 超音波炮 | 12" | D6 | N/A | 4 | 0 | 2 | [[core-rules/devastating-wounds.md\|毁灭伤害]]，[[core-rules/torrent.md\|喷射]] |
+| 超音波炮 | 12" | D6 | N/A | 4 | 0 | 2 | [[core-rules/devastating-wounds.md\|毁灭伤害]]，[[core-rules/torrent.md\|洪流]] |
 
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |

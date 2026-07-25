@@ -25,16 +25,16 @@ updated: '2026-07-23'
 ## 射击武器
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| 爆弹手枪 | 12" | 1 | 3+ | 4 | 0 | 1 | [[core-rules/pistol.md\|pistol]] |
-| 长守远程武器 | 24" | 1 | 4+ | 4 | 0 | 1 | [[core-rules/anti.md\|anti-infantry 4+]]，[[core-rules/devastating-wounds.md\|devastating wounds]]，[[core-rules/rapid-fire.md\|rapid fire 1]] |
-| Twin boltgun | 24" | 2 | 3+ | 4 | 0 | 1 | [[core-rules/twin-linked.md\|twin-linked]] |
+| 爆弹手枪 | 12" | 1 | 3+ | 4 | 0 | 1 | [[core-rules/pistol.md\|手枪]] |
+| 长守远程武器 | 24" | 1 | 4+ | 4 | 0 | 1 | [[core-rules/anti.md\|针对步兵4+]]，[[core-rules/devastating-wounds.md\|毁灭伤害]]，[[core-rules/rapid-fire.md\|速射1]] |
+| Twin boltgun | 24" | 2 | 3+ | 4 | 0 | 1 | [[core-rules/twin-linked.md\|双联]] |
 
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
 | 格斗武器 | 近战 | 3 | 3+ | 4 | 0 | 1 | — |
 | 长守近战武器 | 近战 | 3 | 3+ | 5 | -2 | 1 | — |
-| 异形相位刃 | 近战 | 4 | 3+ | 5 | -2 | 1 | [[core-rules/devastating-wounds.md\|devastating wounds]] |
+| 异形相位刃 | 近战 | 4 | 3+ | 5 | -2 | 1 | [[core-rules/devastating-wounds.md\|毁灭伤害]] |
 
 ## 技能
 - **Turbo-boost**：Each time this unit Advances, do not make an Advance roll for it. Instead, until the end of the phase, add 6" to the Move characteristic of models in this unit.

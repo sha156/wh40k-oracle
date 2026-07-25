@@ -236,14 +236,17 @@ def test_keyword_rules_are_consistent_within_family():
     """同族 USR 必须整齐：ANTI-X N+ 一律「反X N+」，不能混「针对X」。"""
     from db_compile.zh_weapons import _rule_translate
 
-    assert _rule_translate("ANTI-INFANTRY 2+") == "反步兵2+"
-    assert _rule_translate("ANTI-VEHICLE 4+") == "反载具4+"
+    # 2026-07-26 起以 GW 官方简体中文为准：官方核心规则 24.03 写作「[针对载具 4+]」，
+    # 此前按黑图多数派取的「反X」降为检索别名（宪法 §6 官方 > 汉化组）
+    assert _rule_translate("ANTI-INFANTRY 2+") == "针对步兵2+"
+    assert _rule_translate("ANTI-VEHICLE 4+") == "针对载具4+"
     assert _rule_translate("RAPID FIRE D6+3") == "速射D6+3"
     assert _rule_translate("MELTA 6") == "热熔6"
     assert _rule_translate("SUSTAINED HITS 3") == "连击3"
-    # CLEAVE 是 11 版新增，同样走规则（源：11版40K通用技能速查表 24.06）
-    assert _rule_translate("CLEAVE 1") == "横扫1"
-    assert _rule_translate("CLEAVE 2") == "横扫2"
+    # CLEAVE 走规则，译名取**官方**核心规则 24.06「[劈砍]」。
+    # 曾按汉化组速查表定成「横扫」——官方与汉化组在这条上不一致，官方优先。
+    assert _rule_translate("CLEAVE 1") == "劈砍1"
+    assert _rule_translate("CLEAVE 2") == "劈砍2"
     assert _rule_translate("PISTOL") is None          # 非参数化的走学习/人工层
 
 
@@ -303,16 +306,24 @@ def test_glossary_has_no_duplicate_chinese_names():
 
 
 @needs_db
-def test_11e_keyword_names_follow_official_quickref():
-    """11 版新增词条的译名以 data/11版40K通用技能速查表.pdf 为准。
+def test_keyword_names_follow_official_chinese():
+    """译名以 **GW 官方简体中文**为准（data/官方中文/ 核心规则第 24 章）。
 
-    这两个词在黑图十版语料里不存在，学习值必然是错配（CLEAVE 曾学成「劈砍1」）。
-    HARPOONED 则是被学成了 EXTRA ATTACKS 的中文名。
+    宪法 §6：GW 官方中文 > 汉化组译名 > 社区译名。2026-07-26 拿到官方中文版后
+    逐条核对：20 条与库内一致、1 条冲突——**CLEAVE 官方是「劈砍」不是「横扫」**
+    （此前只有汉化组速查表可依据，取了「横扫」）。旧译名一律降为检索别名，
+    不删除，所以搜哪个都找得到。
     """
     conn = sqlite3.connect(str(DB))
     gloss = dict(conn.execute("SELECT term_en, term_zh FROM zh_keyword_glossary"))
     conn.close()
-    assert gloss.get("CLEAVE 1") == "横扫1"          # 24.06
-    assert gloss.get("CLOSE-QUARTERS") == "近距离"   # 24.07
-    assert gloss.get("EXTRA ATTACKS") == "额外攻击"  # 24.11
+    assert gloss.get("CLEAVE 1") == "劈砍1"            # 官方 24.06
+    assert gloss.get("ANTI-VEHICLE 4+") == "针对载具4+"  # 官方 24.03
+    assert gloss.get("CLOSE-QUARTERS") == "近距离"     # 官方 24.07
+    assert gloss.get("EXTRA ATTACKS") == "额外攻击"    # 官方 24.11
+    # 这三条曾被汉化组速查表判为「忽视掩体 / 迅猛冲锋 / 喷射」，
+    # 官方核对下来**库内原值才是对的**——留成断言防止有人照速查表改回去
+    assert gloss.get("IGNORES COVER") == "无视掩体"    # 官方 24.18
+    assert gloss.get("LANCE") == "骑枪"               # 官方 24.21
+    assert gloss.get("TORRENT") == "洪流"             # 官方 24.37
     assert gloss.get("HARPOONED") not in (None, "额外攻击")

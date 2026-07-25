@@ -29,7 +29,7 @@ updated: '2026-07-23'
 ## 射击武器
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| 解放者自动枪 | 12" | 6 | 2+ | 6 | -2 | 1 | [[core-rules/pistol.md\|手枪]]，[[core-rules/devastating-wounds.md\|毁灭伤害]] |
+| 解放者自动枪 | 12" | 6 | 2+ | 6 | -2 | 1 | [[core-rules/devastating-wounds.md\|毁灭伤害]]，[[core-rules/pistol.md\|手枪]] |
 
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |

@@ -35,7 +35,7 @@ updated: '2026-07-23'
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| 秽恶口器 | 近战 | 2 | 4+ | 5 | -1 | 2 | [[core-rules/lethal-hits.md\|致命一击]]，[[core-rules/extra-attacks.md\|额外攻击]] |
+| 秽恶口器 | 近战 | 2 | 4+ | 5 | -1 | 2 | [[core-rules/extra-attacks.md\|额外攻击]]，[[core-rules/lethal-hits.md\|致命一击]] |
 | 瘟疫之剑 | 近战 | 2 | 3+ | 4 | -1 | 1 | [[core-rules/lethal-hits.md\|致命一击]] |
 
 ## 技能

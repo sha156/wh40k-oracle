@@ -27,8 +27,8 @@ updated: '2026-07-23'
 ## 射击武器
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| 手铳 | 12" | 1 | 5+ | 4 | 0 | 1 | [[core-rules/pistol.md\|pistol]] |
-| 双联突突枪 | 18" | 3 | 5+ | 5 | 0 | 1 | [[core-rules/assault.md\|assault]]，[[core-rules/rapid-fire.md\|rapid fire 2]]，[[core-rules/twin-linked.md\|twin-linked]] |
+| 手铳 | 12" | 1 | 5+ | 4 | 0 | 1 | [[core-rules/pistol.md\|手枪]] |
+| 双联突突枪 | 18" | 3 | 5+ | 5 | 0 | 1 | [[core-rules/assault.md\|突击]]，[[core-rules/rapid-fire.md\|速射2]]，[[core-rules/twin-linked.md\|双联]] |
 
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |
@@ -38,7 +38,7 @@ updated: '2026-07-23'
 | 格斗武器 | 近战 | 3 | 3+ | 5 | 0 | 1 | — |
 | 杀戮锯 | 近战 | 2 | 4+ | 12 | -3 | 2 | — |
 | 动力爪 | 近战 | 3 | 4+ | 9 | -2 | 2 | — |
-| Power stabba | 近战 | 3 | 4+ | 8 | -1 | 2 | [[core-rules/lance.md\|lance]] |
+| Power stabba | 近战 | 3 | 4+ | 8 | -1 | 2 | [[core-rules/lance.md\|骑枪]] |
 
 ## 技能
 - **Drive-by Krumpin'**：Each time this unit Consolidates, each model in this unit can move up to 6" instead of up to 3".
@@ -49,4 +49,4 @@ updated: '2026-07-23'
 
 ## 关键词
 - **阵营关键词**：Orks
-- **普通关键词**：[[core-rules/mounted.md|Mounted]]，Speed Freeks，[[factions/兽人/units/nobz.md|Nobz]] on Warbikes，[[core-rules/grenades.md|Grenades]]
+- **普通关键词**：[[core-rules/mounted.md|Mounted]]，Speed Freeks，Nobz on Warbikes，[[core-rules/grenades.md|Grenades]]

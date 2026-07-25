@@ -24,8 +24,8 @@ updated: '2026-07-23'
 ## 射击武器
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| Icarus lascannon | 48" | 1 | 5+ | 12 | -3 | D6+1 | [[core-rules/anti.md\|anti-fly 2+]] |
-| Quad-gun | 48" | 4 | 5+ | 9 | -1 | 3 | [[core-rules/anti.md\|anti-fly 3+]]，[[core-rules/twin-linked.md\|twin-linked]] |
+| Icarus lascannon | 48" | 1 | 5+ | 12 | -3 | D6+1 | [[core-rules/anti.md\|针对飞行2+]] |
+| Quad-gun | 48" | 4 | 5+ | 9 | -1 | 3 | [[core-rules/anti.md\|针对飞行3+]]，[[core-rules/twin-linked.md\|双联]] |
 
 ## 技能
 - **Defence Line**：When this <span class="kwb">FORTIFICATION</span> is set up, all parts of it must be set up within 1" of another part. While an <span class="kwb">INFANTRY</span> model has the Benefit of Cover as a result of this <span class="kwb">FORTIFICATION</span> (see below), that model has a 4+ invulnerable save.

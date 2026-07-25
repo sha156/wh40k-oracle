@@ -30,14 +30,14 @@ updated: '2026-07-23'
 ## 射击武器
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| 先祖之怒（巫火） | 24" | 3 | 3+ | 6 | -2 | D3 | [[core-rules/psychic-attacks.md\|psychic]] |
-| 先祖之怒（聚焦） | 24" | 6 | 3+ | 6 | -2 | D3 | [[core-rules/hazardous.md\|hazardous]]，[[core-rules/psychic-attacks.md\|psychic]] |
+| 先祖之怒（巫火） | 24" | 3 | 3+ | 6 | -2 | D3 | [[core-rules/psychic-attacks.md\|灵能]] |
+| 先祖之怒（聚焦） | 24" | 6 | 3+ | 6 | -2 | D3 | [[core-rules/hazardous.md\|危险]]，[[core-rules/psychic-attacks.md\|灵能]] |
 | 基岩型爆矢枪 | 24" | 2 | 4+ | 4 | 0 | 1 | — |
 
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| 先祖护灵杖 | 近战 | 2 | 3+ | 7 | -1 | D3 | [[core-rules/psychic-attacks.md\|psychic]] |
+| 先祖护灵杖 | 近战 | 2 | 3+ | 7 | -1 | D3 | [[core-rules/psychic-attacks.md\|灵能]] |
 | 格斗武器 | 近战 | 1 | 4+ | 3 | 0 | 1 | — |
 
 ## 技能

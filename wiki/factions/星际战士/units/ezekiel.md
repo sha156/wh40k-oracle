@@ -30,17 +30,17 @@ updated: '2026-07-23'
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
 | 拯救者 | 12" | 1 | 2+ | 4 | -1 | 2 | [[core-rules/pistol.md\|手枪]]，[[core-rules/precision.md\|精准]] |
-| 心灵抹除（巫火） | 12" | 1 | 2+ | 6 | -2 | D6 | [[core-rules/devastating-wounds.md\|devastating wounds]]，[[core-rules/precision.md\|precision]]，[[core-rules/psychic-attacks.md\|psychic]] |
-| 心灵抹除（聚焦巫火） | 12" | 1 | 2+ | 6 | -2 | D6 | [[core-rules/anti.md\|anti-character 4+]]，[[core-rules/devastating-wounds.md\|devastating wounds]]，[[core-rules/hazardous.md\|hazardous]]，[[core-rules/precision.md\|precision]]，[[core-rules/psychic-attacks.md\|psychic]] |
+| 心灵抹除（巫火） | 12" | 1 | 2+ | 6 | -2 | D6 | [[core-rules/devastating-wounds.md\|毁灭伤害]]，[[core-rules/precision.md\|精准]]，[[core-rules/psychic-attacks.md\|灵能]] |
+| 心灵抹除（聚焦巫火） | 12" | 1 | 2+ | 6 | -2 | D6 | [[core-rules/anti.md\|针对角色4+]]，[[core-rules/devastating-wounds.md\|毁灭伤害]]，[[core-rules/hazardous.md\|危险]]，[[core-rules/precision.md\|精准]]，[[core-rules/psychic-attacks.md\|灵能]] |
 
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| 叛徒之灾 | 近战 | 4 | 2+ | 6 | -2 | D3 | 反混沌2＋，[[core-rules/psychic-attacks.md\|灵能]] |
+| 叛徒之灾 | 近战 | 4 | 2+ | 6 | -2 | D3 | [[core-rules/anti.md\|针对混沌2+]]，[[core-rules/psychic-attacks.md\|灵能]] |
 
 ## 技能
 - **【阵营技能】破敌重誓**
-- **灵能头冠**：本模型所领导的单位中模型对抗灵能攻击时拥有【不知疼痛4+】技能
+- **灵能头冠**：本模型所领导的单位中模型对抗灵能攻击时拥有【不觉疼痛4+】技能
 - **恐惧缠身【灵能】**：你的射击阶段中，可以选择本模型 18 寸内的一个敌方单位，那个单位必须进行一次震慑测试
 - **救赎之书**：本模型所领导的单位所装备的近战武器A+1，但是当本模型被消灭时，本模型 6 寸内每个友军阿斯塔特修会单位要进行一次震慑测试
 

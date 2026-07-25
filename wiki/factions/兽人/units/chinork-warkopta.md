@@ -27,12 +27,12 @@ updated: '2026-07-23'
 ## 射击武器
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| 大突突枪 | 36" | 3 | 5+ | 5 | 0 | 1 | [[core-rules/rapid-fire.md\|rapid fire 2]] |
-| 死死枪 | 48" | 2 | 5+ | 8 | -1 | 2 | [[core-rules/rapid-fire.md\|rapid fire 1]] |
-| 魔改米加枪 | 24" | 3 | 5+ | 9 | -2 | D6 | [[core-rules/hazardous.md\|hazardous]] |
+| 大突突枪 | 36" | 3 | 5+ | 5 | 0 | 1 | [[core-rules/rapid-fire.md\|速射2]] |
+| 死死枪 | 48" | 2 | 5+ | 8 | -1 | 2 | [[core-rules/rapid-fire.md\|速射1]] |
+| 魔改米加枪 | 24" | 3 | 5+ | 9 | -2 | D6 | [[core-rules/hazardous.md\|危险]] |
 | Rattler kannon | 24" | 6 | 5+ | 6 | -1 | 1 | — |
-| 火箭筒 | 24" | D3 | 5+ | 9 | -2 | 3 | [[core-rules/blast.md\|blast]] |
-| Skorcha | 12" | D6 | N/A | 5 | -1 | 1 | [[core-rules/ignores-cover.md\|ignores cover]]，[[core-rules/torrent.md\|torrent]] |
+| 火箭筒 | 24" | D3 | 5+ | 9 | -2 | 3 | [[core-rules/blast.md\|爆炸]] |
+| Skorcha | 12" | D6 | N/A | 5 | -1 | 1 | [[core-rules/ignores-cover.md\|无视掩体]]，[[core-rules/torrent.md\|洪流]] |
 
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |

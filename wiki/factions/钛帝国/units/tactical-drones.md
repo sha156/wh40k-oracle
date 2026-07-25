@@ -27,7 +27,7 @@ updated: '2026-07-23'
 ## 射击武器
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| 并联脉冲卡宾 | 20" | 2 | 5+ | 5 | 0 | 1 | [[core-rules/assault.md\|assault]]，[[core-rules/twin-linked.md\|twin-linked]] |
+| 并联脉冲卡宾 | 20" | 2 | 5+ | 5 | 0 | 1 | [[core-rules/assault.md\|突击]]，[[core-rules/twin-linked.md\|双联]] |
 
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |

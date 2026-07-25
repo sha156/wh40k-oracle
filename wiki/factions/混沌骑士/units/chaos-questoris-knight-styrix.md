@@ -29,8 +29,8 @@ updated: '2026-07-23'
 ## 射击武器
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| 引力粉碎炮 | 18" | 3 | 3+ | 6 | -1 | 2 | [[core-rules/anti.md\|针对载具 2+]]，[[core-rules/blast.md\|爆炸]] |
-| 双联辐射喷火器 | 12" | D6 | N/A | 2 | 0 | 1 | [[core-rules/torrent.md\|洪流]]，[[core-rules/ignores-cover.md\|忽略掩体]]，[[core-rules/anti.md\|针对步兵2+]]，[[core-rules/twin-linked.md\|双联]] |
+| 引力粉碎炮 | 18" | 3 | 3+ | 6 | -1 | 2 | [[core-rules/anti.md\|针对载具2+]]，[[core-rules/blast.md\|爆炸]] |
+| 双联辐射喷火器 | 12" | D6 | N/A | 2 | 0 | 1 | [[core-rules/anti.md\|针对步兵2+]]，[[core-rules/ignores-cover.md\|无视掩体]]，[[core-rules/torrent.md\|洪流]]，[[core-rules/twin-linked.md\|双联]] |
 | 爆燃喷射器 | 30" | 12 | 3+ | 12 | 0 | 3 | [[core-rules/devastating-wounds.md\|毁灭伤害]] |
 
 ## 近战武器

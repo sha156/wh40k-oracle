@@ -25,12 +25,12 @@ updated: '2026-07-23'
 ## 射击武器
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| 克鲁特步枪 | 24" | 1 | 4+ | 4 | 0 | 1 | [[core-rules/rapid-fire.md\|rapid fire 1]] |
+| 克鲁特步枪 | 24" | 1 | 4+ | 4 | 0 | 1 | [[core-rules/rapid-fire.md\|速射1]] |
 
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| Knarloc beak and talons | 近战 | 4 | 3+ | 6 | -1 | 1 | [[core-rules/extra-attacks.md\|extra attacks]] |
+| Knarloc beak and talons | 近战 | 4 | 3+ | 6 | -1 | 1 | [[core-rules/extra-attacks.md\|额外攻击]] |
 | 克鲁特步枪 | 近战 | 2 | 3+ | 4 | 0 | 1 | — |
 
 ## 技能

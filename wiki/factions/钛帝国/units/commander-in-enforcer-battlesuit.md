@@ -33,7 +33,7 @@ updated: '2026-07-23'
 | 融合炮 | 12" | 1 | 3+ | 9 | -4 | D6 | [[core-rules/melta.md\|热熔2]] |
 | 导弹仓 | 30" | 2 | 3+ | 7 | -1 | 2 | — |
 | 等离子步枪 | 18" | 1 | 3+ | 8 | -3 | 3 | — |
-| 钛式火焰喷射器 | 12" | D6 | N/A | 4 | 0 | 1 | [[core-rules/ignores-cover.md\|忽略掩体]]，[[core-rules/torrent.md\|喷射]] |
+| 钛式火焰喷射器 | 12" | D6 | N/A | 4 | 0 | 1 | [[core-rules/ignores-cover.md\|无视掩体]]，[[core-rules/torrent.md\|洪流]] |
 
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |

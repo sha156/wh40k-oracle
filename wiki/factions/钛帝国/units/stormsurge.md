@@ -37,7 +37,7 @@ updated: '2026-07-23'
 | 并联空爆榴弹发射器  | 24" | D6 | 4+ | 3 | 0 | 1 | [[core-rules/blast.md\|爆炸]]，[[core-rules/heavy.md\|重型]]，[[core-rules/indirect-fire.md\|曲射]]，[[core-rules/twin-linked.md\|双联]] |
 | 并联爆裂速射炮 | 18" | 4 | 4+ | 5 | 0 | 1 | [[core-rules/heavy.md\|重型]]，[[core-rules/twin-linked.md\|双联]] |
 | 并联智能导弹系统 | 30" | 3 | 4+ | 5 | 0 | 1 | [[core-rules/heavy.md\|重型]]，[[core-rules/indirect-fire.md\|曲射]]，[[core-rules/twin-linked.md\|双联]] |
-| 并联钛式火焰喷射器 | 12" | D6 | N/A | 4 | 0 | 1 | [[core-rules/ignores-cover.md\|忽略掩体]]，[[core-rules/torrent.md\|喷射]]，[[core-rules/twin-linked.md\|双联]] |
+| 并联钛式火焰喷射器 | 12" | D6 | N/A | 4 | 0 | 1 | [[core-rules/ignores-cover.md\|无视掩体]]，[[core-rules/torrent.md\|洪流]]，[[core-rules/twin-linked.md\|双联]] |
 
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |

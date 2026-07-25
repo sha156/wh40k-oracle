@@ -27,7 +27,7 @@ updated: '2026-07-23'
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| Psytronome shaper | 近战 | 2 | 2+ | 3 | 0 | D3 | [[core-rules/psychic-attacks.md\|psychic]] |
+| Psytronome shaper | 近战 | 2 | 2+ | 3 | 0 | D3 | [[core-rules/psychic-attacks.md\|灵能]] |
 
 ## 技能
 - **Way of the Shaper (Psychic)**：While this model is leading a unit, Wraith Construct models in that unit have the Feel No Pain 6+ ability.

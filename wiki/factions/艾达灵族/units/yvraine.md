@@ -28,7 +28,7 @@ updated: '2026-07-23'
 ## 射击武器
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| 耳语风暴 | 12" | D6+3 | 2+ | 2 | -2 | 1 | [[core-rules/anti.md\|anti-infantry 2+]]，[[core-rules/devastating-wounds.md\|devastating wounds]]，[[core-rules/psychic-attacks.md\|psychic]] |
+| 耳语风暴 | 12" | D6+3 | 2+ | 2 | -2 | 1 | [[core-rules/anti.md\|针对步兵2+]]，[[core-rules/devastating-wounds.md\|毁灭伤害]]，[[core-rules/psychic-attacks.md\|灵能]] |
 
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |

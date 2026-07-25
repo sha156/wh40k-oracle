@@ -24,4 +24,4 @@ Models in the bearer’s unit have the Scouts 9" ability.
 
 ## 携带限制
 
-Shadow Legion model only.
+[[factions/混沌恶魔/detachments/shadow-legion.md|Shadow Legion]] model only.

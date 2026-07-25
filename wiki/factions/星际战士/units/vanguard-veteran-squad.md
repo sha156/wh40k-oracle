@@ -25,12 +25,12 @@ updated: '2026-07-23'
 ## 射击武器
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| 爆弹手枪 | 12" | 1 | 3+ | 4 | 0 | 1 | [[core-rules/pistol.md\|pistol]] |
-| 重力手枪 | 12" | 1 | 3+ | 4 | -1 | 2 | [[core-rules/anti.md\|anti-vehicle 2+]]，[[core-rules/pistol.md\|pistol]] |
-| 喷火手枪 | 12" | D6 | N/A | 3 | 0 | 1 | [[core-rules/ignores-cover.md\|ignores cover]]，[[core-rules/pistol.md\|pistol]]，[[core-rules/torrent.md\|torrent]] |
-| 狱火手枪 | 6" | 1 | 3+ | 8 | -4 | D3 | [[core-rules/melta.md\|melta 2]]，[[core-rules/pistol.md\|pistol]] |
-| 等离子手枪（标准） | 12" | 1 | 3+ | 7 | -2 | 1 | [[core-rules/pistol.md\|pistol]] |
-| 等离子手枪（过载） | 12" | 1 | 3+ | 8 | -3 | 2 | [[core-rules/hazardous.md\|hazardous]]，[[core-rules/pistol.md\|pistol]] |
+| 爆弹手枪 | 12" | 1 | 3+ | 4 | 0 | 1 | [[core-rules/pistol.md\|手枪]] |
+| 重力手枪 | 12" | 1 | 3+ | 4 | -1 | 2 | [[core-rules/anti.md\|针对载具2+]]，[[core-rules/pistol.md\|手枪]] |
+| 喷火手枪 | 12" | D6 | N/A | 3 | 0 | 1 | [[core-rules/ignores-cover.md\|无视掩体]]，[[core-rules/pistol.md\|手枪]]，[[core-rules/torrent.md\|洪流]] |
+| 狱火手枪 | 6" | 1 | 3+ | 8 | -4 | D3 | [[core-rules/melta.md\|热熔2]]，[[core-rules/pistol.md\|手枪]] |
+| 等离子手枪（标准） | 12" | 1 | 3+ | 7 | -2 | 1 | [[core-rules/pistol.md\|手枪]] |
+| 等离子手枪（过载） | 12" | 1 | 3+ | 8 | -3 | 2 | [[core-rules/hazardous.md\|危险]]，[[core-rules/pistol.md\|手枪]] |
 
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |

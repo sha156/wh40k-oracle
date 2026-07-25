@@ -30,7 +30,7 @@ updated: '2026-07-23'
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
 | 末日炮 | 72" | D6+1 | 3+ | 18 | -4 | 4 | [[core-rules/blast.md\|爆炸]]，[[core-rules/heavy.md\|重型]] |
-| 高斯撕裂阵列  | 24" | 5 | 3+ | 4 | 0 | 1 | [[core-rules/lethal-hits.md\|致命一击]]，[[core-rules/rapid-fire.md\|速射 5]] |
+| 高斯撕裂阵列  | 24" | 5 | 3+ | 4 | 0 | 1 | [[core-rules/lethal-hits.md\|致命一击]]，[[core-rules/rapid-fire.md\|速射5]] |
 
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |

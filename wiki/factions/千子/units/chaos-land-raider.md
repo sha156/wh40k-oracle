@@ -27,10 +27,10 @@ updated: '2026-07-23'
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
 | 浩劫发射器  | 48" | D6 | 3+ | 5 | 0 | 1 | [[core-rules/blast.md\|爆炸]] |
-| 地狱火复合爆矢枪 | 24" | 2 | 3+ | 4 | -2 | 1 | [[core-rules/rapid-fire.md\|rapid fire 2]] |
-| 地狱火复合武器 | 24" | 1 | 4+ | 4 | -2 | 1 | [[core-rules/anti.md\|anti-infantry 4+]]，[[core-rules/devastating-wounds.md\|devastating wounds]]，[[core-rules/rapid-fire.md\|rapid fire 1]] |
+| 地狱火复合爆矢枪 | 24" | 2 | 3+ | 4 | -2 | 1 | [[core-rules/rapid-fire.md\|速射2]] |
+| 地狱火复合武器 | 24" | 1 | 4+ | 4 | -2 | 1 | [[core-rules/anti.md\|针对步兵4+]]，[[core-rules/devastating-wounds.md\|毁灭伤害]]，[[core-rules/rapid-fire.md\|速射1]] |
 | 碎魂激光炮 | 48" | 2 | 3+ | 12 | -3 | D6+1 | — |
-| 双联地狱火重型爆弹枪 | 36" | 3 | 3+ | 5 | -2 | 2 | [[core-rules/sustained-hits.md\|sustained hits 1]]，[[core-rules/twin-linked.md\|twin-linked]] |
+| 双联地狱火重型爆弹枪 | 36" | 3 | 3+ | 5 | -2 | 2 | [[core-rules/sustained-hits.md\|连击1]]，[[core-rules/twin-linked.md\|双联]] |
 
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |

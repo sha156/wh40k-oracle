@@ -34,7 +34,7 @@ updated: '2026-07-23'
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| 瘟疫刺针 | 近战 | 3 | 3+ | 6 | -1 | 1 | [[core-rules/lethal-hits.md\|lethal hits]] |
+| 瘟疫刺针 | 近战 | 3 | 3+ | 6 | -1 | 1 | [[core-rules/lethal-hits.md\|致命一击]] |
 
 ## 技能
 - **【阵营技能】：纳垢赐福【光环】**
@@ -45,4 +45,4 @@ updated: '2026-07-23'
 
 ## 关键词
 - **阵营关键词**：Death Guard
-- **普通关键词**：Vehicle，Nurgle，Chaos，Fly，[[factions/死亡守卫/units/foetid-bloat-drone.md|Foetid Bloat-drone]] with Heavy Blight Launcher，Daemon
+- **普通关键词**：Vehicle，Nurgle，Chaos，Fly，Foetid Bloat-drone with Heavy Blight Launcher，Daemon

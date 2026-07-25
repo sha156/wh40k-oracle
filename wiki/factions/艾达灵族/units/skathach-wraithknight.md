@@ -24,11 +24,11 @@ updated: '2026-07-23'
 ## 射击武器
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| Deathshroud cannon – dispersed | 12" | 3D6 | 3+ | 6 | -1 | 1 | [[core-rules/blast.md\|blast]]，[[core-rules/devastating-wounds.md\|devastating wounds]] |
-| Deathshroud cannon – focused | 48" | D6 | 3+ | 10 | -3 | 2 | [[core-rules/blast.md\|blast]]，[[core-rules/devastating-wounds.md\|devastating wounds]] |
-| Inferno lance | 24" | 4 | 3+ | 12 | -4 | D6 | [[core-rules/melta.md\|melta 2]] |
+| Deathshroud cannon – dispersed | 12" | 3D6 | 3+ | 6 | -1 | 1 | [[core-rules/blast.md\|爆炸]]，[[core-rules/devastating-wounds.md\|毁灭伤害]] |
+| Deathshroud cannon – focused | 48" | D6 | 3+ | 10 | -3 | 2 | [[core-rules/blast.md\|爆炸]]，[[core-rules/devastating-wounds.md\|毁灭伤害]] |
+| Inferno lance | 24" | 4 | 3+ | 12 | -4 | D6 | [[core-rules/melta.md\|热熔2]] |
 | 散射激光 | 36" | 6 | 3+ | 5 | 0 | 1 | — |
-| 星镖炮 | 24" | 3 | 3+ | 6 | -1 | 2 | [[core-rules/sustained-hits.md\|sustained hits 1]] |
+| 星镖炮 | 24" | 3 | 3+ | 6 | -1 | 2 | [[core-rules/sustained-hits.md\|连击1]] |
 | 星光炮 | 36" | 2 | 3+ | 8 | -3 | 2 | — |
 
 ## 近战武器
@@ -46,4 +46,4 @@ updated: '2026-07-23'
 
 ## 关键词
 - **阵营关键词**：Asuryani
-- **普通关键词**：[[core-rules/titanic.md|Titanic]]，[[core-rules/towering.md|Towering]]，Wraith Construct，Monster，[[core-rules/walker.md|Walker]]，Skathach [[factions/艾达灵族/units/wraithknight.md|Wraithknight]]，Aeldari
+- **普通关键词**：[[core-rules/titanic.md|Titanic]]，[[core-rules/towering.md|Towering]]，Wraith Construct，Monster，[[core-rules/walker.md|Walker]]，Skathach Wraithknight，Aeldari

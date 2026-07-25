@@ -24,7 +24,7 @@ updated: '2026-07-23'
 ## 射击武器
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| 风暴鹰火箭 | 120" | D6+1 | 4+ | 10 | -2 | 3 | [[core-rules/blast.md\|blast]]，[[core-rules/indirect-fire.md\|indirect fire]] |
+| 风暴鹰火箭 | 120" | D6+1 | 4+ | 10 | -2 | 3 | [[core-rules/blast.md\|爆炸]]，[[core-rules/indirect-fire.md\|曲射]] |
 
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |

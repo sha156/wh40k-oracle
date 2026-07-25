@@ -50,7 +50,7 @@ use that stratagem.
 ### CORE STRATAGEMS
 All players can use core stratagems (see overleaf). Additional 
 stratagems can be found in Codexes and other publications.
-## HEROIC INTERVENTION 15.11 (1CP)
+## [[core-rules/stratagems/heroic-intervention.md|HEROIC INTERVENTION]] 15.11 (1CP)
 **Source**: Core Stratagem
 **Timing**: End of your opponent’s Charge phase.
 **Target**: One friendly unengaged unit within 12" of one or more enemy units. You can only select a VEHICLE unit if it is a CHARACTER/WALKER unit.
@@ -75,7 +75,7 @@ Stratagems are presented as shown above. Some feature optional conditions that c
 STRATAGEMS KEY
 Used in: Either player’s turn
 Used in: Opponent’s turn
-## COMMAND RE-ROLL 15.02 (1CP)
+## [[core-rules/stratagems/command-re-roll-boarding-actions.md|COMMAND RE-ROLL]] 15.02 (1CP)
 **CORE STRATAGEM**
 *A great commander can bend even the vagaries of fate and fortune to their will, the better to ensure victory.*
 **WHEN**: Any phase, just after you make one of the following rolls for a friendly unit or model:
@@ -90,14 +90,14 @@ Used in: Opponent’s turn
 **TARGET**: That unit or model.
 **EFFECT**: You re‑roll that roll. If you are rolling more than one dice together, select one of those dice to re‑roll (excluding charge rolls, which you must re-roll in full).
 
-## EPIC CHALLENGE 15.03 (1CP)
+## [[core-rules/stratagems/epic-challenge.md|EPIC CHALLENGE]] 15.03 (1CP)
 **CORE STRATAGEM**
 *The legends of the 41st millennium are replete with deadly duels between mighty champions.*
 **WHEN**: Fight phase, just after a friendly CHARACTER unit is selected to fight.
 **TARGET**: That CHARACTER unit.
 **EFFECT**: Select one CHARACTER model in your unit. Until the end of the phase, that model’s melee weapons have the [PRECISION] ability.
 
-## INSANE BRAVERY 15.04 (1CP)
+## [[core-rules/stratagems/insane-bravery-boarding-actions.md|INSANE BRAVERY]] 15.04 (1CP)
 **CORE STRATAGEM**
 *Indifferent to their own survival, these warriors hold their ground against seemingly impossible odds.*
 **WHEN**: Battle‑shock step of your Command phase, just before you make a battle-shock roll for a friendly unit.
@@ -115,7 +115,7 @@ Used in: Opponent’s turn
 2. Select one unengaged enemy unit within 8" of and visible to that model.
 3. Roll six D6: for each 4+, that enemy unit suffers 1 mortal wound (06.02).
 
-## CRUSHING IMPACT 15.06 (1CP)
+## [[factions/兽人/stratagems/crushing-impact.md|CRUSHING IMPACT]] 15.06 (1CP)
 **CORE STRATAGEM**
 *In extremis, armoured vehicles and rampaging monsters can use their sheer size as a weapon, ramming and crushing enemies beneath their colossal bulk, though doing so risks sustaining damage in return.*
 **WHEN**: Your Charge phase, just after a friendly MONSTER/VEHICLE unit ends a charge move.
@@ -124,14 +124,14 @@ Used in: Opponent’s turn
 1. Select one enemy unit engaged with your unit.
 2. Select one model in your unit engaged with that enemy unit.
 3. Roll a number of D6 equal to the T characteristic of that model: for each 1, your unit suffers 1 mortal wound; for each 5+, that enemy unit suffers 1 mortal wound (to a maximum of 6 mortal wounds per unit).
-## RAPID INGRESS (1CP)
+## [[core-rules/stratagems/rapid-ingress.md|RAPID INGRESS]] (1CP)
 **Type**: CORE STRATAGEM
 **When**: End of your opponent’s Movement phase.
 **Target**: One friendly unit that is in strategic reserves (excluding AIRCRAFT).
 **Effect**: Your unit makes an ingress move (20.04).
 **Restrictions**: You cannot use this stratagem during the first battle round.
 
-## FIRE OVERWATCH (1CP)
+## [[core-rules/stratagems/fire-overwatch.md|FIRE OVERWATCH]] (1CP)
 **Type**: CORE STRATAGEM
 **When**: End of your opponent’s Movement phase.
 **Target**: One friendly unengaged unit (excluding TITANIC units).
@@ -147,13 +147,13 @@ Used in: Opponent’s turn
 
 **After Shooting**: Until the end of the phase, your unit is not eligible to start an action.
 
-## SMOKESCREEN (1CP)
+## [[core-rules/stratagems/smokescreen.md|SMOKESCREEN]] (1CP)
 **Type**: CORE STRATAGEM
 **When**: Start of your opponent’s Shooting phase.
 **Target**: One friendly SMOKE unit.
 **Effect**: Until the end of the phase, each time an attack targets either your SMOKE unit, or a unit that is not fully visible to the attacking model because of one or more models in your SMOKE unit, the target has the benefit of cover against that attack (13.08).
 
-## HEROIC INTERVENTION (1CP)
+## [[core-rules/stratagems/heroic-intervention.md|HEROIC INTERVENTION]] (1CP)
 **Type**: CORE STRATAGEM
 **When**: End of your opponent’s Charge phase.
 **Target**: One friendly unengaged unit within 12" of one or more enemy units. You can only select a VEHICLE unit if it is a CHARACTER/WALKER unit.

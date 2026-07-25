@@ -32,7 +32,7 @@ updated: '2026-07-23'
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
 | 爆弹手枪 | 12" | 1 | 3+ | 4 | 0 | 1 | [[core-rules/pistol.md\|手枪]] |
-| 灵能爆炸 | 18" | D6 | 3+ | 3 | -1 | 1 | [[core-rules/anti.md\|针对恶魔4+]]，[[core-rules/devastating-wounds.md\|毁灭伤害]]，[[core-rules/psychic-attacks.md\|灵能]]，[[core-rules/anti.md\|针对步兵5+]] |
+| 灵能爆炸 | 18" | D6 | 3+ | 3 | -1 | 1 | [[core-rules/anti.md\|针对恶魔4+]]，[[core-rules/anti.md\|针对步兵5+]]，[[core-rules/devastating-wounds.md\|毁灭伤害]]，[[core-rules/psychic-attacks.md\|灵能]] |
 
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |

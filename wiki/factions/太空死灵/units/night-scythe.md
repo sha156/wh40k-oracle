@@ -26,7 +26,7 @@ updated: '2026-07-23'
 ## 射击武器
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| 双联特斯拉毁灭者  | 36" | 6 | 3+ | 8 | 0 | 2 | [[core-rules/sustained-hits.md\|连击 2]]，[[core-rules/twin-linked.md\|双联]] |
+| 双联特斯拉毁灭者  | 36" | 6 | 3+ | 8 | 0 | 2 | [[core-rules/sustained-hits.md\|连击2]]，[[core-rules/twin-linked.md\|双联]] |
 
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |

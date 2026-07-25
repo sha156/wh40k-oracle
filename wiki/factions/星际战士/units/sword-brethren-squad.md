@@ -29,18 +29,18 @@ updated: '2026-07-23'
 ## 射击武器
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| 重型爆弹手枪 | 18" | 1 | 3+ | 4 | -1 | 1 | [[core-rules/pistol.md\|pistol]] |
-| 等离子手枪（标准） | 12" | 1 | 3+ | 7 | -2 | 1 | [[core-rules/pistol.md\|pistol]] |
-| 等离子手枪（过载） | 12" | 1 | 3+ | 8 | -3 | 2 | [[core-rules/hazardous.md\|hazardous]]，[[core-rules/pistol.md\|pistol]] |
-| 喷火手枪 | 12" | D6 | N/A | 4 | 0 | 1 | [[core-rules/ignores-cover.md\|ignores cover]]，[[core-rules/pistol.md\|pistol]]，[[core-rules/torrent.md\|torrent]] |
+| 重型爆弹手枪 | 18" | 1 | 3+ | 4 | -1 | 1 | [[core-rules/pistol.md\|手枪]] |
+| 等离子手枪（标准） | 12" | 1 | 3+ | 7 | -2 | 1 | [[core-rules/pistol.md\|手枪]] |
+| 等离子手枪（过载） | 12" | 1 | 3+ | 8 | -3 | 2 | [[core-rules/hazardous.md\|危险]]，[[core-rules/pistol.md\|手枪]] |
+| 喷火手枪 | 12" | D6 | N/A | 4 | 0 | 1 | [[core-rules/ignores-cover.md\|无视掩体]]，[[core-rules/pistol.md\|手枪]]，[[core-rules/torrent.md\|洪流]] |
 
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| 阿斯塔特链锯剑 | 近战 | 6 | 2+ | 4 | -1 | 1 | [[core-rules/sustained-hits.md\|sustained hits 1]] |
-| 精工动力武器 | 近战 | 3 | 2+ | 5 | -2 | 2 | [[core-rules/lethal-hits.md\|lethal hits]] |
-| 雷霆锤 | 近战 | 3 | 3+ | 8 | -2 | 2 | [[core-rules/devastating-wounds.md\|devastating wounds]] |
-| 一对闪电爪 | 近战 | 5 | 2+ | 5 | -2 | 1 | [[core-rules/twin-linked.md\|twin-linked]] |
+| 阿斯塔特链锯剑 | 近战 | 6 | 2+ | 4 | -1 | 1 | [[core-rules/sustained-hits.md\|连击1]] |
+| 精工动力武器 | 近战 | 3 | 2+ | 5 | -2 | 2 | [[core-rules/lethal-hits.md\|致命一击]] |
+| 雷霆锤 | 近战 | 3 | 3+ | 8 | -2 | 2 | [[core-rules/devastating-wounds.md\|毁灭伤害]] |
+| 一对闪电爪 | 近战 | 5 | 2+ | 5 | -2 | 1 | [[core-rules/twin-linked.md\|双联]] |
 
 ## 技能
 - **Exploit Their Cowardice**：Each time an enemy unit within Engagement Range of this unit is selected to Fall Back, after it ends that Fall Back move, if this unit is not within Engagement Range of one or more enemy units, this unit can make a Normal move.

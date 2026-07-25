@@ -24,8 +24,8 @@ updated: '2026-07-23'
 ## 射击武器
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| 突击炮 | 24" | 6 | 3+ | 6 | 0 | 1 | [[core-rules/devastating-wounds.md\|devastating wounds]] |
-| Tempest salvo launcher – frag | 36" | 2D6 | 3+ | 4 | 0 | 1 | [[core-rules/blast.md\|blast]] |
+| 突击炮 | 24" | 6 | 3+ | 6 | 0 | 1 | [[core-rules/devastating-wounds.md\|毁灭伤害]] |
+| Tempest salvo launcher – frag | 36" | 2D6 | 3+ | 4 | 0 | 1 | [[core-rules/blast.md\|爆炸]] |
 | Tempest salvo launcher – krak | 36" | 2 | 3+ | 9 | -2 | D6 | — |
 
 ## 近战武器
@@ -41,4 +41,4 @@ updated: '2026-07-23'
 
 ## 关键词
 - **阵营关键词**：Adeptus Astartes
-- **普通关键词**：Ravenwing，[[factions/星际战士/units/land-speeder.md|Land Speeder]] Tempest，Imperium，Vehicle，Fly
+- **普通关键词**：Ravenwing，Land Speeder Tempest，Imperium，Vehicle，Fly

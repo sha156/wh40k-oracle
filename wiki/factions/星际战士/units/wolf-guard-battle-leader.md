@@ -30,15 +30,15 @@ updated: '2026-07-23'
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
 | 大师级爆矢卡宾枪 | 24" | 2 | 3+ | 4 | 0 | 2 | — |
-| 精工重型爆弹手枪 | 18" | 1 | 3+ | 4 | -1 | 2 | [[core-rules/pistol.md\|pistol]] |
+| 精工重型爆弹手枪 | 18" | 1 | 3+ | 4 | -1 | 2 | [[core-rules/pistol.md\|手枪]] |
 | 等离子手枪（标准） | 12" | 1 | 3+ | 7 | -2 | 1 | [[core-rules/pistol.md\|手枪]] |
-| 等离子手枪（过载）  | 12" | 1 | 3+ | 8 | -3 | 2 | [[core-rules/pistol.md\|手枪]]，[[core-rules/hazardous.md\|危险]] |
+| 等离子手枪（过载）  | 12" | 1 | 3+ | 8 | -3 | 2 | [[core-rules/hazardous.md\|危险]]，[[core-rules/pistol.md\|手枪]] |
 
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
 | 精工动力武器 | 近战 | 7 | 2+ | 5 | -2 | 2 | — |
-| 雷霆锤 | 近战 | 5 | 3+ | 8 | -2 | 2 | [[core-rules/devastating-wounds.md\|devastating wounds]] |
+| 雷霆锤 | 近战 | 5 | 3+ | 8 | -2 | 2 | [[core-rules/devastating-wounds.md\|毁灭伤害]] |
 
 ## 技能
 - **【阵营技能】：破敌重誓**
@@ -51,4 +51,4 @@ updated: '2026-07-23'
 
 ## 关键词
 - **阵营关键词**：Adeptus Astartes，Space Wolves
-- **普通关键词**：[[core-rules/character.md|Character]]，Imperium，Tacticus，[[factions/星际战士/units/wolf-guard.md|Wolf Guard]]，Battle Leader，[[core-rules/infantry.md|Infantry]]
+- **普通关键词**：[[core-rules/character.md|Character]]，Imperium，Tacticus，Wolf Guard，Battle Leader，[[core-rules/infantry.md|Infantry]]

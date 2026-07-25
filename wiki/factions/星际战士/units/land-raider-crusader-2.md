@@ -26,10 +26,10 @@ updated: '2026-07-23'
 ## 射击武器
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| 猎杀飞弹 | 48" | 1 | 2+ | 14 | -3 | D6 | [[core-rules/one-shot.md\|one shot]] |
-| 飓风爆弹阵列 | 24" | 6 | 3+ | 4 | 0 | 1 | [[core-rules/rapid-fire.md\|速射 6]]，[[core-rules/twin-linked.md\|双联]] |
-| 多管热熔 | 18" | 2 | 3+ | 9 | -4 | D6 | [[core-rules/melta.md\|melta 2]] |
-| 风暴爆弹枪 | 24" | 2 | 3+ | 4 | 0 | 1 | [[core-rules/rapid-fire.md\|rapid fire 2]] |
+| 猎杀飞弹 | 48" | 1 | 2+ | 14 | -3 | D6 | [[core-rules/one-shot.md\|单发]] |
+| 飓风爆弹阵列 | 24" | 6 | 3+ | 4 | 0 | 1 | [[core-rules/rapid-fire.md\|速射6]]，[[core-rules/twin-linked.md\|双联]] |
+| 多管热熔 | 18" | 2 | 3+ | 9 | -4 | D6 | [[core-rules/melta.md\|热熔2]] |
+| 风暴爆弹枪 | 24" | 2 | 3+ | 4 | 0 | 1 | [[core-rules/rapid-fire.md\|速射2]] |
 | 双联突击炮 | 24" | 6 | 3+ | 6 | 0 | 1 | [[core-rules/devastating-wounds.md\|毁灭伤害]]，[[core-rules/twin-linked.md\|双联]] |
 
 ## 近战武器
@@ -47,4 +47,4 @@ updated: '2026-07-23'
 
 ## 关键词
 - **阵营关键词**：Black Templars，Adeptus Astartes
-- **普通关键词**：Imperium，[[core-rules/transport.md|Transport]]，[[core-rules/grenades.md|Grenades]]，Vehicle，[[core-rules/smoke.md|Smoke]]，[[factions/星际战士/units/land-raider.md|Land Raider]] Crusader，Land Raider
+- **普通关键词**：Imperium，[[core-rules/transport.md|Transport]]，[[core-rules/grenades.md|Grenades]]，Vehicle，[[core-rules/smoke.md|Smoke]]，Land Raider Crusader，Land Raider

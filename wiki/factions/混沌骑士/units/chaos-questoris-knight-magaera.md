@@ -29,9 +29,9 @@ updated: '2026-07-23'
 ## 射击武器
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| 闪电炮 | 48" | 12 | 3+ | 9 | 0 | 2 | [[core-rules/sustained-hits.md\|连击 2]] |
-| 次元离子燧发枪 | 24" | 2 | 3+ | 8 | -3 | 2 | [[core-rules/rapid-fire.md\|速射 2]] |
-| 双联辐射喷火器  | 12" | D6 | N/A | 2 | 0 | 1 | [[core-rules/anti.md\|针对步兵 2+]]，[[core-rules/ignores-cover.md\|无视掩体]]，[[core-rules/torrent.md\|洪流]]，[[core-rules/twin-linked.md\|双联]] |
+| 闪电炮 | 48" | 12 | 3+ | 9 | 0 | 2 | [[core-rules/sustained-hits.md\|连击2]] |
+| 次元离子燧发枪 | 24" | 2 | 3+ | 8 | -3 | 2 | [[core-rules/rapid-fire.md\|速射2]] |
+| 双联辐射喷火器  | 12" | D6 | N/A | 2 | 0 | 1 | [[core-rules/anti.md\|针对步兵2+]]，[[core-rules/ignores-cover.md\|无视掩体]]，[[core-rules/torrent.md\|洪流]]，[[core-rules/twin-linked.md\|双联]] |
 
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |

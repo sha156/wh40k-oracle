@@ -78,9 +78,9 @@ Terrain Objective
 Terrain Objective
 ## FIGHT PHASE
 
-### ++ ONLY IN DEATH DOES DUTY END ++
+### ++ [[factions/星际战士/stratagems/only-in-death-does-duty-end.md|ONLY IN DEATH DOES DUTY END]] ++
 
-### OVERRUN FIGHTS
+### [[factions/泰伦虫族/stratagems/overrun.md|OVERRUN]] FIGHTS
 When a unit makes an overrun fight, its models can be moved such that enemy units that were unengaged become engaged. Such enemy units become eligible to fight this phase (and may even be able to fight next if they are Fights First units).
 
 ## FIGHT 12.04
@@ -109,13 +109,13 @@ Each time a unit is selected to fight, select one fight type that unit is eligib
 ELIGIBLE IF: Your unit is engaged.
 EFFECT: Your unit fights as described in Making Attacks (04).
 
-## OVERRUN FIGHT 12.06
+## [[factions/泰伦虫族/stratagems/overrun.md|OVERRUN]] FIGHT 12.06
 
 ELIGIBLE IF: Your unit is unengaged, or was unengaged at the start of the Fight step but became engaged during the Fight phase.
 EFFECT: Your unit can make one additional pile-in move, then fights as described in Making Attacks (04).
 Fight types are marked with this icon.
 
-OVERRUN FIGHT
+[[factions/泰伦虫族/stratagems/overrun.md|OVERRUN]] FIGHT
 NORMAL FIGHT
 
 Players alternate selecting units to fight. Fights First units must be selected before any other eligible units.

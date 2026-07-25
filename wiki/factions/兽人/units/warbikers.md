@@ -32,7 +32,7 @@ updated: '2026-07-23'
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
 | 手铳 | 12" | 1 | 5+ | 4 | 0 | 1 | [[core-rules/pistol.md\|手枪]] |
-| 双联突突枪 | 18" | 3 | 5+ | 5 | 0 | 1 | [[core-rules/assault.md\|突击]]，[[core-rules/twin-linked.md\|双联]]，[[core-rules/rapid-fire.md\|速射2]] |
+| 双联突突枪 | 18" | 3 | 5+ | 5 | 0 | 1 | [[core-rules/assault.md\|突击]]，[[core-rules/rapid-fire.md\|速射2]]，[[core-rules/twin-linked.md\|双联]] |
 
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |

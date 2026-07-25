@@ -20,7 +20,7 @@ updated: '2026-07-25'
 
 ## 使用时机
 
-Any phase, just after a Shadow Legion unit from your army is destroyed, before removing the last model in that unit from the battlefield and before rolling any dice for the Deadly Demise ability.
+Any phase, just after a [[factions/混沌恶魔/detachments/shadow-legion.md|Shadow Legion]] unit from your army is destroyed, before removing the last model in that unit from the battlefield and before rolling any dice for the Deadly Demise ability.
 
 ## 使用对象
 

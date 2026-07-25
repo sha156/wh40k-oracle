@@ -28,7 +28,7 @@ updated: '2026-07-23'
 ## 射击武器
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| 等离子手枪（过载） | 12" | 1 | 2+ | 8 | -3 | 2 | [[core-rules/pistol.md\|pistol]]，[[core-rules/hazardous.md\|hazardous]] |
+| 等离子手枪（过载） | 12" | 1 | 2+ | 8 | -3 | 2 | [[core-rules/pistol.md\|手枪]]，[[core-rules/hazardous.md\|危险]] |
 | 等离子手枪（标准） | 12" | 1 | 2+ | 7 | -2 | 1 | [[core-rules/pistol.md\|手枪]] |
 | 爆弹手枪 | 12" | 1 | 2+ | 4 | 0 | 1 | [[core-rules/pistol.md\|手枪]] |
 
@@ -36,7 +36,7 @@ updated: '2026-07-23'
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
 | 动力拳  | 近战 | 5 | 2+ | 8 | -2 | 2 | — |
-| 一对闪电爪 | 近战 | 6 | 2+ | 5 | -2 | 1 | [[core-rules/twin-linked.md\|TWIN-LINKED]] |
+| 一对闪电爪 | 近战 | 6 | 2+ | 5 | -2 | 1 | [[core-rules/twin-linked.md\|双联]] |
 | 诅咒武器 | 近战 | 6 | 2+ | 5 | -2 | 1 | — |
 
 ## 技能
@@ -49,4 +49,4 @@ updated: '2026-07-23'
 
 ## 关键词
 - **阵营关键词**：Heretic Astartes，Legiones Daemonica
-- **普通关键词**：[[factions/混沌恶魔/detachments/shadow-legion.md|Shadow Legion]]，[[core-rules/infantry.md|Infantry]]，[[core-rules/character.md|Character]]，Jump Pack，Fly，[[core-rules/grenades.md|Grenades]]，Chaos，[[factions/混沌恶魔/units/chaos-lord.md|Chaos Lord]]，Undivided，Shadow Legion，[[core-rules/infantry.md|Infantry]]，[[core-rules/character.md|Character]]，Jump Pack，Fly，[[core-rules/grenades.md|Grenades]]，Chaos，Chaos Lord，Undivided，Shadow Legion，Chaos Lord，Chaos，[[core-rules/grenades.md|Grenades]]，Fly，Jump Pack，[[core-rules/character.md|Character]]，[[core-rules/infantry.md|Infantry]]，Shadow Legion，Undivided，Chaos Lord，Chaos，[[core-rules/grenades.md|Grenades]]，Fly，Chaos，Jump Pack，[[core-rules/character.md|Character]]，[[core-rules/infantry.md|Infantry]]，Shadow Legion，Chaos Lord，Chaos Lord，Chaos，[[core-rules/grenades.md|Grenades]]，Fly，Jump Pack，[[core-rules/character.md|Character]]，[[core-rules/infantry.md|Infantry]]，Undivided，Undivided，[[core-rules/grenades.md|Grenades]]，Fly，Jump Pack，[[core-rules/character.md|Character]]，[[core-rules/infantry.md|Infantry]]，Shadow Legion，Undivided，Chaos Lord，Chaos，[[core-rules/grenades.md|Grenades]]，Fly，Jump Pack，[[core-rules/character.md|Character]]，[[core-rules/infantry.md|Infantry]]，Shadow Legion，Undivided
+- **普通关键词**：[[factions/混沌恶魔/detachments/shadow-legion.md|Shadow Legion]]，[[core-rules/infantry.md|Infantry]]，[[core-rules/character.md|Character]]，Jump Pack，Fly，[[core-rules/grenades.md|Grenades]]，Chaos，Chaos Lord，Undivided，Shadow Legion，[[core-rules/infantry.md|Infantry]]，[[core-rules/character.md|Character]]，Jump Pack，Fly，[[core-rules/grenades.md|Grenades]]，Chaos，Chaos Lord，Undivided，Shadow Legion，Chaos Lord，Chaos，[[core-rules/grenades.md|Grenades]]，Fly，Jump Pack，[[core-rules/character.md|Character]]，[[core-rules/infantry.md|Infantry]]，Shadow Legion，Undivided，Chaos Lord，Chaos，[[core-rules/grenades.md|Grenades]]，Fly，Chaos，Jump Pack，[[core-rules/character.md|Character]]，[[core-rules/infantry.md|Infantry]]，Shadow Legion，Chaos Lord，Chaos Lord，Chaos，[[core-rules/grenades.md|Grenades]]，Fly，Jump Pack，[[core-rules/character.md|Character]]，[[core-rules/infantry.md|Infantry]]，Undivided，Undivided，[[core-rules/grenades.md|Grenades]]，Fly，Jump Pack，[[core-rules/character.md|Character]]，[[core-rules/infantry.md|Infantry]]，Shadow Legion，Undivided，Chaos Lord，Chaos，[[core-rules/grenades.md|Grenades]]，Fly，Jump Pack，[[core-rules/character.md|Character]]，[[core-rules/infantry.md|Infantry]]，Shadow Legion，Undivided

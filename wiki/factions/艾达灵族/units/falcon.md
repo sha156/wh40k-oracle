@@ -30,7 +30,7 @@ updated: '2026-07-23'
 | 灵族导弹发射器（击星弹头） | 48" | 1 | 3+ | 10 | -2 | D6 | — |
 | 灵族导弹发射器（阳炎弹头） | 48" | D6 | 3+ | 4 | -1 | 1 | [[core-rules/blast.md\|爆炸]] |
 | 脉冲激光 | 48" | 3 | 3+ | 9 | -2 | D6 | — |
-| 散射激光 | 36" | 6 | 3+ | 5 | 0 | 1 | [[core-rules/sustained-hits.md\|连击 1]] |
+| 散射激光 | 36" | 6 | 3+ | 5 | 0 | 1 | [[core-rules/sustained-hits.md\|连击1]] |
 | 星镖炮 | 24" | 3 | 3+ | 6 | -1 | 2 | [[core-rules/lethal-hits.md\|致命一击]] |
 | 星光炮 | 36" | 2 | 3+ | 8 | -3 | 2 | — |
 | 双联星镖枪 | 18" | 2 | 3+ | 4 | -1 | 1 | [[core-rules/assault.md\|突击]]，[[core-rules/twin-linked.md\|双联]] |

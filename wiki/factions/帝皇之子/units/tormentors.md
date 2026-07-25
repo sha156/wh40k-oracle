@@ -30,10 +30,10 @@ updated: '2026-07-23'
 | 爆弹手枪 | 12" | 1 | 3+ | 4 | 0 | 1 | [[core-rules/pistol.md\|手枪]]，[[core-rules/precision.md\|精准]] |
 | 爆弹枪 | 24" | 2 | 3+ | 4 | 0 | 1 | [[core-rules/precision.md\|精准]] |
 | 热熔枪 | 12" | 1 | 3+ | 9 | -4 | D6 | [[core-rules/melta.md\|热熔2]]，[[core-rules/precision.md\|精准]] |
-| 等离子步枪（普通） | 24" | 1 | 3+ | 7 | -2 | 1 | [[core-rules/precision.md\|precision]]，[[core-rules/rapid-fire.md\|rapid fire 1]] |
-| 等离子步枪（过载） | 24" | 1 | 3+ | 8 | -3 | 2 | [[core-rules/hazardous.md\|hazardous]]，[[core-rules/precision.md\|precision]]，[[core-rules/rapid-fire.md\|rapid fire 1]] |
-| 等离子手枪（标准） | 12" | 1 | 3+ | 7 | -2 | 1 | [[core-rules/pistol.md\|pistol]]，[[core-rules/precision.md\|precision]] |
-| 等离子手枪（过载） | 12" | 1 | 3+ | 8 | -3 | 2 | [[core-rules/hazardous.md\|hazardous]]，[[core-rules/pistol.md\|pistol]]，[[core-rules/precision.md\|precision]] |
+| 等离子步枪（普通） | 24" | 1 | 3+ | 7 | -2 | 1 | [[core-rules/precision.md\|精准]]，[[core-rules/rapid-fire.md\|速射1]] |
+| 等离子步枪（过载） | 24" | 1 | 3+ | 8 | -3 | 2 | [[core-rules/hazardous.md\|危险]]，[[core-rules/precision.md\|精准]]，[[core-rules/rapid-fire.md\|速射1]] |
+| 等离子手枪（标准） | 12" | 1 | 3+ | 7 | -2 | 1 | [[core-rules/pistol.md\|手枪]]，[[core-rules/precision.md\|精准]] |
+| 等离子手枪（过载） | 12" | 1 | 3+ | 8 | -3 | 2 | [[core-rules/hazardous.md\|危险]]，[[core-rules/pistol.md\|手枪]]，[[core-rules/precision.md\|精准]] |
 
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |

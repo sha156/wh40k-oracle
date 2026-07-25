@@ -31,7 +31,7 @@ updated: '2026-07-23'
 |---|---|---|---|---|---|---|---|
 | 融合歼灭者 | 18" | 2 | 2+ | 10 | -4 | D6 | [[core-rules/melta.md\|热熔2]] |
 | 离子散射炮-标准 | 18" | 4 | 2+ | 7 | -2 | 2 | [[core-rules/rapid-fire.md\|速射2]] |
-| 离子散射炮-过载 | 18" | 4 | 2+ | 8 | -3 | 3 | [[core-rules/rapid-fire.md\|速射2]]，[[core-rules/hazardous.md\|危险]] |
+| 离子散射炮-过载 | 18" | 4 | 2+ | 8 | -3 | 3 | [[core-rules/hazardous.md\|危险]]，[[core-rules/rapid-fire.md\|速射2]] |
 | 破片风暴速射系统 | 18" | D6 | 2+ | 5 | 0 | 1 | [[core-rules/pistol.md\|手枪]] |
 | 双联脉冲爆裂枪 | 10" | 2 | 5+ | 6 | -1 | 1 | [[core-rules/assault.md\|突击]]，[[core-rules/twin-linked.md\|双联]] |
 | XV脉冲手枪 | 12" | 2 | 2+ | 6 | -1 | 2 | [[core-rules/rapid-fire.md\|速射2]] |

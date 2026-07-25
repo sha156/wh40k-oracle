@@ -12,9 +12,14 @@
   · `engines/simulator/{parse,keywords}.py` —— 引擎建模状态（诚实披露，不吹）
 
 **词条分三档**，混在一起列会骗读者：
-  通用     —— 11 版速查表在册（ANTI/爆炸/速射…），任何单位都可能带
-  十版遗留 —— 库里还大量存在、但 11 版已被取代（PISTOL → CLOSE-QUARTERS，速查表 24.07 明示）
-  单位特有 —— 速查表查无此条，是某个单位数据卡上的专属词条（泡泡炮、星神之力…）
+  通用     —— 11 版通用技能表在册（针对/爆炸/速射…），任何单位都可能带
+  过渡期   —— 官方仍在册、但正被另一词条取代：[手枪]24.27 ↔ [近距离]24.07
+              （官方原文「在所有规则中都被视为同一个规则」+ 设计师注「将随本版演进被替代」）
+  单位特有 —— 通用技能表查无此条，是某个单位数据卡上的专属词条（泡泡炮、星神之力…）
+
+⚠️ 中文名的权威是 **GW 官方简体中文**（data/官方中文/，宪法 §6），不是汉化组速查表——
+两者实测有分歧（官方 24.06 是「劈砍」、速查表写「横扫」）。速查表在此只用于
+「这条是不是通用词条」的分档判断，译名一律走 zh_keyword_glossary。
 
 CLI：python -m wiki_engine.keyword_index [--db …] [--wiki wiki] [--pdf …]
 """
@@ -261,21 +266,27 @@ def _rule_page(base: str, wiki_root: Path, zh: str = "") -> Optional[str]:
 # ── 渲染 ───────────────────────────────────────────────────────────
 
 def classify(base: str, quickref: Dict[str, QuickRefEntry]) -> str:
-    """通用 / 十版遗留 / 单位特有。"""
+    """通用 / 过渡期 / 单位特有。"""
     if base == "PISTOL":
-        # 速查表 24.07 原文：「旧规则中的【手枪】技能等效替换为本技能（CLOSE-QUARTERS）」。
-        # 库里 1004 行 PISTOL 是十版骨架残留，不标出来会让读者以为 11 版还有这个词条。
-        return "legacy"
+        # ⚠️ 2026-07-26 依 **GW 官方中文核心规则**修正过一次分档。
+        # 此前只有汉化组速查表可依据（24.07「旧规则中的【手枪】技能等效替换为本技能」），
+        # 据此判成「十版遗留、已被取代」——**说过头了**。
+        # 官方 11 版核心规则里 24.07[近距离] 与 24.27[手枪] **并列在册**，原文：
+        #   「[手枪]和[近距离]在所有规则中都被视为同一个规则。」
+        #   设计师注：「[手枪]是一个预先存在的技能，它将随着这次版本的发展被[近距离]替代。」
+        # 即：**规则上完全等同，正在被逐步取代，但此刻仍是现行词条**。
+        return "transitional"
     key = "ANTI" if base.startswith("ANTI-") else base
     return "universal" if key in quickref else "unit-specific"
 
 
 _GROUP_TITLES = [
     ("universal", "通用武器词条", "11 版《通用技能速查表》在册，任何单位都可能带。"),
-    ("legacy", "十版遗留词条",
-     "库里仍大量存在，但 11 版已被取代：**[PISTOL] → [CLOSE-QUARTERS]**"
-     "（速查表 24.07 原文：「旧规则中的【手枪】技能等效替换为本技能」）。"
-     "结构库还是十版骨架，所以这些行仍写作 PISTOL——读到时按 CLOSE-QUARTERS 理解。"),
+    ("transitional", "过渡期词条",
+     "官方 11 版核心规则里**仍然在册**，但正被另一个词条取代：**[手枪]（24.27）↔ "
+     "[近距离]（24.07）**。官方原文「[手枪]和[近距离]在所有规则中都被视为同一个规则」，"
+     "设计师注明「[手枪]是一个预先存在的技能，它将随着这次版本的发展被[近距离]替代」。"
+     "所以读到 PISTOL 时按[近距离]理解即可，但它**不是**已经作废的十版残留。"),
     ("unit-specific", "单位特有词条",
      "速查表查无此条，是某个单位数据卡上的专属词条，只在该单位身上出现。"),
 ]
@@ -334,10 +345,11 @@ def render_index(stats: Dict[str, KeywordStat], quickref: Dict[str, QuickRefEntr
         if qr and zh and qr.name_zh != zh and not st.base.startswith("ANTI-"):
             diffs.append((st.base, zh, qr.name_zh))
     if diffs:
-        L += ["## 译名差异（本 wiki 用词 ↔ 11 版速查表用词）", "",
-              "两边都是汉化组译名、都不是 GW 官方中文。本 wiki 统一用左列"
-              "（与兵牌页一致，取自黑图语料多数写法），右列同样收进检索别名，搜哪个都找得到。", "",
-              "| 英文 | 本 wiki | 11 版速查表 |", "|---|---|---|"]
+        L += ["## 译名差异（GW 官方中文 ↔ 汉化组速查表）", "",
+              "左列是 **GW 官方简体中文**（`data/官方中文/` 核心规则第 24 章），"
+              "全 wiki 统一用它——宪法 §6：GW 官方中文 > 汉化组译名 > 社区译名。"
+              "右列是汉化组速查表的写法，**同样收进检索别名，搜哪个都找得到**。", "",
+              "| 英文 | GW 官方 | 汉化组速查表 |", "|---|---|---|"]
         for en, ours, theirs in sorted(diffs):
             L.append("| {} | {} | {} |".format(en, ours, theirs))
         L.append("")
@@ -443,9 +455,9 @@ def main() -> None:
     ap.add_argument("--pdf", default=str(DEFAULT_PDF))
     args = ap.parse_args()
     rep = generate(Path(args.db), Path(args.wiki), Path(args.pdf))
-    print("速查表条目 {}；基础词条 {}（通用 {} / 十版遗留 {} / 单位特有 {}）".format(
+    print("速查表条目 {}；基础词条 {}（通用 {} / 过渡期 {} / 单位特有 {}）".format(
         rep["quickref_entries"], rep["keywords"],
-        rep["groups"].get("universal", 0), rep["groups"].get("legacy", 0),
+        rep["groups"].get("universal", 0), rep["groups"].get("transitional", 0),
         rep["groups"].get("unit-specific", 0)))
     print("(武器行, 词条) 对 {}；去重 (词条, 武器名) 对 {}（现役 {}）".format(
         rep["pairs"], rep["distinct_weapon_names"], rep["current_weapon_names"]))

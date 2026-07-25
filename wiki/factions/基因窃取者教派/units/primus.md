@@ -29,13 +29,13 @@ updated: '2026-07-23'
 ## 射击武器
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| 精准射针枪 | 18" | 1 | 2+ | 1 | 0 | D3 | [[core-rules/anti.md\|反步兵 2+]]，[[core-rules/ignores-cover.md\|忽视掩体]]，[[core-rules/pistol.md\|手枪]] |
+| 精准射针枪 | 18" | 1 | 2+ | 1 | 0 | D3 | [[core-rules/anti.md\|针对步兵2+]]，[[core-rules/ignores-cover.md\|无视掩体]]，[[core-rules/pistol.md\|手枪]] |
 
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
 | 教团骨刃 | 近战 | 5 | 2+ | 5 | -2 | 1 | — |
-| 毒素注射爪 | 近战 | 2 | 2+ | 2 | 0 | D3 | [[core-rules/anti.md\|反步兵 2+]]，[[core-rules/extra-attacks.md\|额外攻击]] |
+| 毒素注射爪 | 近战 | 2 | 2+ | 2 | 0 | D3 | [[core-rules/anti.md\|针对步兵2+]]，[[core-rules/extra-attacks.md\|额外攻击]] |
 
 ## 技能
 - **教团喉舌**：当该模型领导一个联合单位时，每当那个单位中的模型进行攻击:时，您可以将命中掷骰结果提升1点。

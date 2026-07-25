@@ -25,7 +25,7 @@ Lethal Intent At the end of your opponent’s Shooting phase, if one or more YNN
 
 Lethal Surge Once per turn, when a YNNARI unit from your army performs the Fade Back Agile Manoeuvre, it can make a surge move of up to D6+1" instead of a Normal move.
 
-Lethal Reprisal At the start of the Fight phase, select one YNNARI unit from your army (excluding [[core-rules/titanic.md|TITANIC]] units) that is below its Starting Strength. Until the end of the phase, that unit has the Fights First ability.
+Lethal Reprisal At the start of the Fight phase, select one YNNARI unit from your army (excluding [[core-rules/titanic.md|TITANIC]] units) that is below its Starting Strength. Until the end of the phase, that unit has the [[core-rules/fights-first.md|Fights First]] ability.
 
 SERVANTS OF THE WHISPERING GOD
 

@@ -24,13 +24,13 @@ updated: '2026-07-23'
 ## 射击武器
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| 双联多管热熔 | 18" | 2 | 3+ | 9 | -4 | D6 | [[core-rules/melta.md\|melta 2]]，[[core-rules/twin-linked.md\|twin-linked]] |
-| 台风导弹发射器（破片） | 48" | 2D6 | 3+ | 4 | 0 | 1 | [[core-rules/blast.md\|blast]] |
+| 双联多管热熔 | 18" | 2 | 3+ | 9 | -4 | D6 | [[core-rules/melta.md\|热熔2]]，[[core-rules/twin-linked.md\|双联]] |
+| 台风导弹发射器（破片） | 48" | 2D6 | 3+ | 4 | 0 | 1 | [[core-rules/blast.md\|爆炸]] |
 | 台风导弹发射器（穿甲） | 48" | 2 | 3+ | 9 | -2 | D6 | — |
-| Vengeance launcher | 48" | 2D6 | 3+ | 6 | 0 | 1 | [[core-rules/blast.md\|blast]] |
-| 双联重型爆弹枪 | 36" | 3 | 3+ | 5 | -1 | 2 | [[core-rules/sustained-hits.md\|sustained hits 1]]，[[core-rules/twin-linked.md\|twin-linked]] |
-| Twin hellstrike launcher | 72" | 2 | 3+ | 10 | -3 | D6 | [[core-rules/anti.md\|anti-fly 2+]]，[[core-rules/twin-linked.md\|twin-linked]] |
-| 双联激光炮 | 48" | 1 | 3+ | 12 | -3 | D6+1 | [[core-rules/twin-linked.md\|twin-linked]] |
+| Vengeance launcher | 48" | 2D6 | 3+ | 6 | 0 | 1 | [[core-rules/blast.md\|爆炸]] |
+| 双联重型爆弹枪 | 36" | 3 | 3+ | 5 | -1 | 2 | [[core-rules/sustained-hits.md\|连击1]]，[[core-rules/twin-linked.md\|双联]] |
+| Twin hellstrike launcher | 72" | 2 | 3+ | 10 | -3 | D6 | [[core-rules/anti.md\|针对飞行2+]]，[[core-rules/twin-linked.md\|双联]] |
+| 双联激光炮 | 48" | 1 | 3+ | 12 | -3 | D6+1 | [[core-rules/twin-linked.md\|双联]] |
 
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |

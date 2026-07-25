@@ -30,11 +30,11 @@ updated: '2026-07-23'
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
 | 爆弹手枪       | 12" | 1 | 2+ | 4 | 0 | 1 | [[core-rules/pistol.md\|手枪]] |
-| 重型爆弹手枪 | 18" | 1 | 2+ | 4 | -1 | 1 | [[core-rules/pistol.md\|Pistol]] |
+| 重型爆弹手枪 | 18" | 1 | 2+ | 4 | -1 | 1 | [[core-rules/pistol.md\|手枪]] |
 | 精工爆弹枪 | 24" | 2 | 2+ | 4 | -1 | 2 | — |
-| 强能爆燃手枪    | 12" | 1 | 2+ | 5 | 0 | 2 | [[core-rules/pistol.md\|手枪]]，[[core-rules/devastating-wounds.md\|毁灭伤害]] |
-| 等离子手枪（标准） | 12" | 1 | 2+ | 7 | -2 | 1 | [[core-rules/pistol.md\|pistol]] |
-| 等离子手枪（过载）       | 12" | 1 | 2+ | 8 | -3 | 2 | [[core-rules/pistol.md\|手枪]]，[[core-rules/hazardous.md\|危险]] |
+| 强能爆燃手枪    | 12" | 1 | 2+ | 5 | 0 | 2 | [[core-rules/devastating-wounds.md\|毁灭伤害]]，[[core-rules/pistol.md\|手枪]] |
+| 等离子手枪（标准） | 12" | 1 | 2+ | 7 | -2 | 1 | [[core-rules/pistol.md\|手枪]] |
+| 等离子手枪（过载）       | 12" | 1 | 2+ | 8 | -3 | 2 | [[core-rules/hazardous.md\|危险]]，[[core-rules/pistol.md\|手枪]] |
 
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |

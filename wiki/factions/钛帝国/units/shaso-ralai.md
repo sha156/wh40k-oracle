@@ -28,8 +28,8 @@ updated: '2026-07-23'
 ## 射击武器
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| Experimental pulse submunitions rifle – EMP | 24" | 1 | 3+ | 1 | 0 | 3 | [[core-rules/anti.md\|anti-vehicle 3+]]，[[core-rules/devastating-wounds.md\|devastating wounds]] |
-| Experimental pulse submunitions rifle – ionic | 24" | D6 | 3+ | 6 | -1 | 1 | [[core-rules/blast.md\|blast]] |
+| Experimental pulse submunitions rifle – EMP | 24" | 1 | 3+ | 1 | 0 | 3 | [[core-rules/anti.md\|针对载具3+]]，[[core-rules/devastating-wounds.md\|毁灭伤害]] |
+| Experimental pulse submunitions rifle – ionic | 24" | D6 | 3+ | 6 | -1 | 1 | [[core-rules/blast.md\|爆炸]] |
 
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |

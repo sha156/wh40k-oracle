@@ -33,7 +33,7 @@ updated: '2026-07-23'
 | 黎曼鲁斯战斗加农炮 | 48" | D6+3 | 4+ | 10 | -1 | 3 | [[core-rules/blast.md\|爆炸]] |
 | 多管热熔 | 18" | 2 | 4+ | 9 | -4 | D6 | [[core-rules/melta.md\|热熔2]] |
 | 等离子炮（标准） | 36" | D3 | 4+ | 7 | -2 | 1 | [[core-rules/blast.md\|爆炸]] |
-| 等离子炮（过载） | 36" | D3 | 4+ | 8 | -3 | 2 | [[core-rules/hazardous.md\|危险]]，[[core-rules/blast.md\|爆炸]] |
+| 等离子炮（过载） | 36" | D3 | 4+ | 8 | -3 | 2 | [[core-rules/blast.md\|爆炸]]，[[core-rules/hazardous.md\|危险]] |
 | 风暴爆弹枪 | 24" | 2 | 4+ | 4 | 0 | 1 | [[core-rules/rapid-fire.md\|速射2]] |
 
 ## 近战武器

@@ -34,7 +34,7 @@ updated: '2026-07-23'
 | 教廷火焰喷射器 | 12" | D6 | N/A | 5 | 0 | 1 | [[core-rules/ignores-cover.md\|无视掩体]]，[[core-rules/torrent.md\|洪流]] |
 | 教廷喷火手枪 | 12" | D6 | N/A | 4 | 0 | 1 | [[core-rules/ignores-cover.md\|无视掩体]]，[[core-rules/pistol.md\|手枪]]，[[core-rules/torrent.md\|洪流]] |
 | 等离子枪(标准) | 24" | 1 | 4+ | 7 | -2 | 1 | [[core-rules/rapid-fire.md\|速射1]] |
-| 等离子枪(过载) | 24" | 1 | 4+ | 8 | -3 | 2 | [[core-rules/rapid-fire.md\|速射1]]，[[core-rules/hazardous.md\|危险]] |
+| 等离子枪(过载) | 24" | 1 | 4+ | 8 | -3 | 2 | [[core-rules/hazardous.md\|危险]]，[[core-rules/rapid-fire.md\|速射1]] |
 
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |

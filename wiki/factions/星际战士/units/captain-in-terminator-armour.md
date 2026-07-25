@@ -29,8 +29,8 @@ updated: '2026-07-23'
 ## 射击武器
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| 风暴爆弹枪    | 24" | 2 | 2+ | 4 | 0 | 1 | [[core-rules/rapid-fire.md\|速射 2]] |
-| 复合武器  | 24" | 1 | 3+ | 4 | 0 | 1 | [[core-rules/anti.md\|反步兵 4+]]，[[core-rules/devastating-wounds.md\|毁灭伤害]]，[[core-rules/rapid-fire.md\|速射 1]] |
+| 风暴爆弹枪    | 24" | 2 | 2+ | 4 | 0 | 1 | [[core-rules/rapid-fire.md\|速射2]] |
+| 复合武器  | 24" | 1 | 3+ | 4 | 0 | 1 | [[core-rules/anti.md\|针对步兵4+]]，[[core-rules/devastating-wounds.md\|毁灭伤害]]，[[core-rules/rapid-fire.md\|速射1]] |
 
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |
@@ -48,4 +48,4 @@ updated: '2026-07-23'
 
 ## 关键词
 - **阵营关键词**：Adeptus Astartes
-- **普通关键词**：[[core-rules/infantry.md|Infantry]]，[[core-rules/character.md|Character]]，Imperium，Terminator，[[factions/星际战士/units/captain.md|Captain]]，Deathwing
+- **普通关键词**：[[core-rules/infantry.md|Infantry]]，[[core-rules/character.md|Character]]，Imperium，Terminator，Captain，Deathwing

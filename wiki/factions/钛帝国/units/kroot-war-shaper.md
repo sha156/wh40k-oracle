@@ -26,7 +26,7 @@ updated: '2026-07-23'
 ## 射击武器
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| 三刃镖弓 | 24" | D3+1 | 4+ | 4 | 0 | 2 | [[core-rules/assault.md\|突击]]，[[core-rules/anti.md\|针对步兵3+]]，[[core-rules/heavy.md\|重型]] |
+| 三刃镖弓 | 24" | D3+1 | 4+ | 4 | 0 | 2 | [[core-rules/anti.md\|针对步兵3+]]，[[core-rules/assault.md\|突击]]，[[core-rules/heavy.md\|重型]] |
 | 克鲁特手枪 | 12" | 1 | 4+ | 4 | 0 | 1 | [[core-rules/pistol.md\|手枪]] |
 
 ## 近战武器

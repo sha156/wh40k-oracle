@@ -39,9 +39,9 @@ updated: '2026-07-23'
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| 激光骑枪 | 近战 | 3 | 3+ | 5 | -2 | 3 | [[core-rules/anti.md\|反巨兽3+]]，[[core-rules/anti.md\|反载具3+]]，[[core-rules/lance.md\|骑枪]] |
+| 激光骑枪 | 近战 | 3 | 3+ | 5 | -2 | 3 | [[core-rules/anti.md\|针对怪物3+]]，[[core-rules/anti.md\|针对载具3+]]，[[core-rules/lance.md\|骑枪]] |
 | 英杰剑 | 近战 | 6 | 3+ | 5 | -2 | 2 | — |
-| 星光骑枪 | 近战 | 4 | 3+ | 5 | -3 | 3 | [[core-rules/anti.md\|反巨兽3+]]，[[core-rules/anti.md\|反载具3+]]，[[core-rules/lance.md\|骑枪]] |
+| 星光骑枪 | 近战 | 4 | 3+ | 5 | -3 | 3 | [[core-rules/anti.md\|针对怪物3+]]，[[core-rules/anti.md\|针对载具3+]]，[[core-rules/lance.md\|骑枪]] |
 
 ## 技能
 - **【阵营技能】：战斗专注**

@@ -32,10 +32,10 @@ updated: '2026-07-23'
 | 暗黑光矛 | 36" | 1 | 3+ | 12 | -3 | D6+2 | — |
 | 分解炮 | 36" | 3 | 3+ | 6 | -3 | 2 | — |
 | 刃翼导弹 – 单镰导弹 | 48" | D6 | 3+ | 6 | -1 | 2 | [[core-rules/blast.md\|爆炸]] |
-| 刃翼导弹 – 神经毒素导弹 | 48" | D6+3 | 3+ | 2 | 0 | 1 | [[core-rules/anti.md\|针对步兵 2+]]，[[core-rules/blast.md\|爆炸]] |
+| 刃翼导弹 – 神经毒素导弹 | 48" | D6+3 | 3+ | 2 | 0 | 1 | [[core-rules/anti.md\|针对步兵2+]]，[[core-rules/blast.md\|爆炸]] |
 | 刃翼导弹 – 粉碎场导弹 | 48" | D6 | 3+ | 7 | -2 | 1 | [[core-rules/blast.md\|爆炸]] |
-| 毒晶炮 | 36" | 3 | 3+ | 3 | -1 | 2 | [[core-rules/anti.md\|针对步兵 3+]]，[[core-rules/sustained-hits.md\|连击1]] |
-| 双联毒晶步枪 | 24" | 2 | 3+ | 2 | 0 | 1 | [[core-rules/anti.md\|针对步兵 3+]]，[[core-rules/assault.md\|突击]]，[[core-rules/rapid-fire.md\|速射 1]]，[[core-rules/twin-linked.md\|双联]] |
+| 毒晶炮 | 36" | 3 | 3+ | 3 | -1 | 2 | [[core-rules/anti.md\|针对步兵3+]]，[[core-rules/sustained-hits.md\|连击1]] |
+| 双联毒晶步枪 | 24" | 2 | 3+ | 2 | 0 | 1 | [[core-rules/anti.md\|针对步兵3+]]，[[core-rules/assault.md\|突击]]，[[core-rules/rapid-fire.md\|速射2]]，[[core-rules/twin-linked.md\|双联]] |
 
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |

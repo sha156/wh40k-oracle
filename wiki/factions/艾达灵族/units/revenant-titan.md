@@ -30,7 +30,7 @@ updated: '2026-07-23'
 |---|---|---|---|---|---|---|---|
 | 云爆导弹发射器 | 36" | 2D6 | 3+ | 8 | -2 | 2 | [[core-rules/blast.md\|爆炸]] |
 | 幽魂脉冲炮 | 60" | 6 | 3+ | 14 | -3 | 4 | [[core-rules/assault.md\|突击]] |
-| 音波矛 | 18" | D6+6 | N/A | 8 | -3 | 2 | [[core-rules/anti.md\|反巨兽4+]]，[[core-rules/anti.md\|反载具4+]]，[[core-rules/torrent.md\|喷射]] |
+| 音波矛 | 18" | D6+6 | N/A | 8 | -3 | 2 | [[core-rules/anti.md\|针对怪物4+]]，[[core-rules/anti.md\|针对载具4+]]，[[core-rules/assault.md\|突击]]，[[core-rules/torrent.md\|洪流]] |
 
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |

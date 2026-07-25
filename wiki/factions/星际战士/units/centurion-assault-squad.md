@@ -27,9 +27,9 @@ updated: '2026-07-23'
 ## 射击武器
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| 百夫长爆弹枪     | 24" | 3 | 3+ | 4 | 0 | 1 | [[core-rules/rapid-fire.md\|速射 3]]，[[core-rules/twin-linked.md\|双联]] |
-| 双联喷火器 | 12" | D6 | N/A | 4 | 0 | 1 | [[core-rules/ignores-cover.md\|ignores cover]]，[[core-rules/torrent.md\|torrent]]，[[core-rules/twin-linked.md\|twin-linked]] |
-| 双联热熔枪 | 12" | 1 | 3+ | 9 | -4 | D6 | [[core-rules/melta.md\|melta 2]]，[[core-rules/twin-linked.md\|twin-linked]] |
+| 百夫长爆弹枪     | 24" | 3 | 3+ | 4 | 0 | 1 | [[core-rules/rapid-fire.md\|速射3]]，[[core-rules/twin-linked.md\|双联]] |
+| 双联喷火器 | 12" | D6 | N/A | 4 | 0 | 1 | [[core-rules/ignores-cover.md\|无视掩体]]，[[core-rules/torrent.md\|洪流]]，[[core-rules/twin-linked.md\|双联]] |
+| 双联热熔枪 | 12" | 1 | 3+ | 9 | -4 | D6 | [[core-rules/melta.md\|热熔2]]，[[core-rules/twin-linked.md\|双联]] |
 
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |
@@ -47,4 +47,4 @@ updated: '2026-07-23'
 
 ## 关键词
 - **阵营关键词**：Adeptus Astartes
-- **普通关键词**：Imperium，[[core-rules/infantry.md|Infantry]]，Centurion，Centurion [[factions/星际战士/units/assault-squad.md|Assault Squad]]
+- **普通关键词**：Imperium，[[core-rules/infantry.md|Infantry]]，Centurion，Centurion Assault Squad

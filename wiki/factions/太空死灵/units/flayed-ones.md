@@ -27,7 +27,7 @@ updated: '2026-07-23'
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| 剥皮利爪  | 近战 | 4 | 3+ | 4 | -1 | 1 | [[core-rules/sustained-hits.md\|连击 1]]，[[core-rules/twin-linked.md\|双联]] |
+| 剥皮利爪  | 近战 | 4 | 3+ | 4 | -1 | 1 | [[core-rules/sustained-hits.md\|连击1]]，[[core-rules/twin-linked.md\|双联]] |
 
 ## 技能
 - **[阵营]：重生协议**

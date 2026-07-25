@@ -24,12 +24,12 @@ updated: '2026-07-23'
 ## 射击武器
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| 重型爆弹枪 | 36" | 3 | 3+ | 5 | -1 | 2 | [[core-rules/sustained-hits.md\|sustained hits 1]] |
-| 重型喷火器 | 12" | D6 | N/A | 5 | -1 | 1 | [[core-rules/ignores-cover.md\|ignores cover]]，[[core-rules/torrent.md\|torrent]] |
+| 重型爆弹枪 | 36" | 3 | 3+ | 5 | -1 | 2 | [[core-rules/sustained-hits.md\|连击1]] |
+| 重型喷火器 | 12" | D6 | N/A | 5 | -1 | 1 | [[core-rules/ignores-cover.md\|无视掩体]]，[[core-rules/torrent.md\|洪流]] |
 | 激光炮 | 48" | 1 | 3+ | 12 | -3 | D6+1 | — |
-| Siege melta array | 24" | 6 | 3+ | 9 | -4 | D6 | [[core-rules/melta.md\|melta 2]] |
-| Skyreaper battery | 48" | 8 | 3+ | 7 | -1 | 2 | [[core-rules/anti.md\|anti-fly 4+]] |
-| Volkite culverin | 36" | 4 | 3+ | 6 | 0 | 2 | [[core-rules/devastating-wounds.md\|devastating wounds]] |
+| Siege melta array | 24" | 6 | 3+ | 9 | -4 | D6 | [[core-rules/melta.md\|热熔2]] |
+| Skyreaper battery | 48" | 8 | 3+ | 7 | -1 | 2 | [[core-rules/anti.md\|针对飞行4+]] |
+| Volkite culverin | 36" | 4 | 3+ | 6 | 0 | 2 | [[core-rules/devastating-wounds.md\|毁灭伤害]] |
 
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |

@@ -26,10 +26,10 @@ updated: '2026-07-23'
 ## 射击武器
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| 爆弹手枪 | 12" | 1 | 3+ | 4 | 0 | 1 | [[core-rules/pistol.md\|pistol]] |
-| 重型爆弹枪 | 36" | 3 | 3+ | 5 | -1 | 2 | [[core-rules/sustained-hits.md\|sustained hits 1]] |
-| 多管热熔 | 18" | 2 | 3+ | 9 | -4 | D6 | [[core-rules/melta.md\|melta 2]] |
-| Twin boltgun | 24" | 2 | 3+ | 4 | 0 | 1 | [[core-rules/twin-linked.md\|twin-linked]] |
+| 爆弹手枪 | 12" | 1 | 3+ | 4 | 0 | 1 | [[core-rules/pistol.md\|手枪]] |
+| 重型爆弹枪 | 36" | 3 | 3+ | 5 | -1 | 2 | [[core-rules/sustained-hits.md\|连击1]] |
+| 多管热熔 | 18" | 2 | 3+ | 9 | -4 | D6 | [[core-rules/melta.md\|热熔2]] |
+| Twin boltgun | 24" | 2 | 3+ | 4 | 0 | 1 | [[core-rules/twin-linked.md\|双联]] |
 
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |
@@ -46,4 +46,4 @@ updated: '2026-07-23'
 
 ## 关键词
 - **阵营关键词**：Adeptus Astartes
-- **普通关键词**：[[core-rules/mounted.md|Mounted]]，Imperium，[[core-rules/grenades.md|Grenades]]，Attack [[factions/星际战士/units/bike-squad.md|Bike Squad]]，Ravenwing
+- **普通关键词**：[[core-rules/mounted.md|Mounted]]，Imperium，[[core-rules/grenades.md|Grenades]]，Attack Bike Squad，Ravenwing

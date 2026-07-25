@@ -30,11 +30,11 @@ updated: '2026-07-23'
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
 | 钢铁风暴导弹舱 | 48" | D6+1 | 3+ | 5 | 0 | 1 | [[core-rules/blast.md\|爆炸]]，[[core-rules/indirect-fire.md\|曲射]] |
-| 热熔枪 | 12" | 1 | 3+ | 9 | -4 | D6 | [[core-rules/melta.md\|热熔 2]] |
-| 封臣重机枪 | 36" | 3 | 3+ | 4 | -1 | 1 | [[core-rules/rapid-fire.md\|速射 3]] |
-| 速射战斗炮 | 72" | D6+3 | 3+ | 10 | -1 | 3 | [[core-rules/blast.md\|爆炸]]，[[core-rules/rapid-fire.md\|速射 D6+3]] |
+| 热熔枪 | 12" | 1 | 3+ | 9 | -4 | D6 | [[core-rules/melta.md\|热熔2]] |
+| 封臣重机枪 | 36" | 3 | 3+ | 4 | -1 | 1 | [[core-rules/rapid-fire.md\|速射3]] |
+| 速射战斗炮 | 72" | D6+3 | 3+ | 10 | -1 | 3 | [[core-rules/blast.md\|爆炸]]，[[core-rules/rapid-fire.md\|速射D6+3]] |
 | 风暴之矛火箭舱 | 48" | 3 | 3+ | 8 | -2 | D6 | — |
-| 伊卡洛斯自动炮 | 48" | 3 | 3+ | 7 | -1 | 2 | [[core-rules/anti.md\|反飞行 2+]]，[[core-rules/twin-linked.md\|双联]] |
+| 伊卡洛斯自动炮 | 48" | 3 | 3+ | 7 | -1 | 2 | [[core-rules/anti.md\|针对飞行2+]]，[[core-rules/twin-linked.md\|双联]] |
 
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |

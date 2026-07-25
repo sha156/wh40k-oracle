@@ -30,7 +30,7 @@ updated: '2026-07-23'
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
 | 秘法火球-巫火 | 18" | 3 | 3+ | 5 | -1 | D3 | [[core-rules/psychic-attacks.md\|灵能]] |
-| 秘法火球-专注巫火 | 18" | 3 | 3+ | 6 | -2 | D3 | [[core-rules/psychic-attacks.md\|灵能]]，[[core-rules/hazardous.md\|危险]]，[[core-rules/devastating-wounds.md\|毁灭伤害]] |
+| 秘法火球-专注巫火 | 18" | 3 | 3+ | 6 | -2 | D3 | [[core-rules/devastating-wounds.md\|毁灭伤害]]，[[core-rules/hazardous.md\|危险]]，[[core-rules/psychic-attacks.md\|灵能]] |
 
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |

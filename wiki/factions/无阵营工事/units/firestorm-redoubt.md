@@ -24,11 +24,11 @@ updated: '2026-07-23'
 ## 射击武器
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| Battle cannon | 48" | D6+3 | 5+ | 9 | -1 | 3 | [[core-rules/blast.md\|blast]] |
-| Icarus lascannon | 48" | 1 | 5+ | 12 | -3 | D6+1 | [[core-rules/anti.md\|anti-fly 2+]] |
+| Battle cannon | 48" | D6+3 | 5+ | 9 | -1 | 3 | [[core-rules/blast.md\|爆炸]] |
+| Icarus lascannon | 48" | 1 | 5+ | 12 | -3 | D6+1 | [[core-rules/anti.md\|针对飞行2+]] |
 | 惩罚者加特林 | 24" | 20 | 5+ | 6 | 0 | 1 | — |
-| Quad-gun | 48" | 4 | 5+ | 9 | -1 | 3 | [[core-rules/anti.md\|anti-fly 3+]]，[[core-rules/twin-linked.md\|twin-linked]] |
-| Quad lascannon | 48" | 2 | 5+ | 12 | -3 | D6+1 | [[core-rules/anti.md\|anti-fly 2+]]，[[core-rules/twin-linked.md\|twin-linked]] |
+| Quad-gun | 48" | 4 | 5+ | 9 | -1 | 3 | [[core-rules/anti.md\|针对飞行3+]]，[[core-rules/twin-linked.md\|双联]] |
+| Quad lascannon | 48" | 2 | 5+ | 12 | -3 | D6+1 | [[core-rules/anti.md\|针对飞行2+]]，[[core-rules/twin-linked.md\|双联]] |
 
 ## 技能
 - **Roof Access**：Friendly <span class="kwb">INFANTRY</span> models can be set up or end any type of move on top of the roof section of this <span class="kwb">FORTIFICATION</span>.

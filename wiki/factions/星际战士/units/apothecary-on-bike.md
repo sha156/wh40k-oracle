@@ -24,8 +24,8 @@ updated: '2026-07-23'
 ## 射击武器
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| 爆弹手枪 | 12" | 1 | 3+ | 4 | 0 | 1 | [[core-rules/pistol.md\|pistol]] |
-| Twin boltgun | 24" | 2 | 3+ | 4 | 0 | 1 | [[core-rules/twin-linked.md\|twin-linked]] |
+| 爆弹手枪 | 12" | 1 | 3+ | 4 | 0 | 1 | [[core-rules/pistol.md\|手枪]] |
+| Twin boltgun | 24" | 2 | 3+ | 4 | 0 | 1 | [[core-rules/twin-linked.md\|双联]] |
 
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |
@@ -41,4 +41,4 @@ updated: '2026-07-23'
 
 ## 关键词
 - **阵营关键词**：Adeptus Astartes
-- **普通关键词**：[[factions/星际战士/units/apothecary.md|Apothecary]]，Ravenwing，[[core-rules/mounted.md|Mounted]]，[[core-rules/character.md|Character]]，[[core-rules/grenades.md|Grenades]]，Imperium
+- **普通关键词**：Apothecary，Ravenwing，[[core-rules/mounted.md|Mounted]]，[[core-rules/character.md|Character]]，[[core-rules/grenades.md|Grenades]]，Imperium

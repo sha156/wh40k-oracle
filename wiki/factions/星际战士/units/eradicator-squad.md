@@ -28,8 +28,8 @@ updated: '2026-07-23'
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
 | 爆弹手枪  | 12" | 1 | 3+ | 4 | 0 | 1 | [[core-rules/pistol.md\|手枪]] |
-| 热熔步枪 | 18" | 1 | 3+ | 9 | -4 | D6 | [[core-rules/heavy.md\|heavy]]，[[core-rules/melta.md\|melta 2]] |
-| 多管热熔 | 18" | 2 | 4+ | 9 | -4 | D6 | [[core-rules/heavy.md\|heavy]]，[[core-rules/melta.md\|melta 2]] |
+| 热熔步枪 | 18" | 1 | 3+ | 9 | -4 | D6 | [[core-rules/heavy.md\|重型]]，[[core-rules/melta.md\|热熔2]] |
+| 多管热熔 | 18" | 2 | 4+ | 9 | -4 | D6 | [[core-rules/heavy.md\|重型]]，[[core-rules/melta.md\|热熔2]] |
 
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |

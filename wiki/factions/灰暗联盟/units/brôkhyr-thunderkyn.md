@@ -27,9 +27,9 @@ updated: '2026-07-23'
 ## 射击武器
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| 爆矢炮 | 36" | 3 | 4+ | 6 | -1 | 2 | [[core-rules/sustained-hits.md\|sustained hits 2]] |
-| 重力子轰击炮 | 24" | 3 | 4+ | 5 | -2 | 3 | [[core-rules/anti.md\|anti-monster 3+]]，[[core-rules/anti.md\|anti-vehicle 3+]] |
-| 聚能转换光束炮 | 24" | 2 | 4+ | 7 | -2 | 3 | conversion，[[core-rules/lethal-hits.md\|lethal hits]] |
+| 爆矢炮 | 36" | 3 | 4+ | 6 | -1 | 2 | [[core-rules/sustained-hits.md\|连击2]] |
+| 重力子轰击炮 | 24" | 3 | 4+ | 5 | -2 | 3 | [[core-rules/anti.md\|针对怪物3+]]，[[core-rules/anti.md\|针对载具3+]] |
+| 聚能转换光束炮 | 24" | 2 | 4+ | 7 | -2 | 3 | 转换，[[core-rules/lethal-hits.md\|致命一击]] |
 
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |

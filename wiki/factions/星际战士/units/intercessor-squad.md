@@ -27,13 +27,13 @@ updated: '2026-07-23'
 ## 射击武器
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| 阿斯塔特榴弹发射器（破片）     | 24" | D3 | 3+ | 4 | 0 | 1 | [[core-rules/blast.md\|爆炸1]] |
+| 阿斯塔特榴弹发射器（破片）     | 24" | D3 | 3+ | 4 | 0 | 1 | [[core-rules/blast.md\|爆炸]] |
 | 阿斯塔特榴弹发射器（穿甲） | 24" | 1 | 3+ | 9 | -2 | D3 | — |
 | 爆弹手枪    | 12" | 1 | 3+ | 4 | 0 | 1 | [[core-rules/pistol.md\|手枪]] |
 | 爆弹步枪    | 24" | 2 | 3+ | 4 | -1 | 1 | [[core-rules/assault.md\|突击]]，[[core-rules/heavy.md\|重型]] |
-| 喷火手枪     | 12" | D6 | N/A | 3 | 0 | 1 | [[core-rules/ignores-cover.md\|忽视掩体]]，[[core-rules/pistol.md\|手枪]]，[[core-rules/torrent.md\|喷射]] |
+| 喷火手枪     | 12" | D6 | N/A | 3 | 0 | 1 | [[core-rules/ignores-cover.md\|无视掩体]]，[[core-rules/pistol.md\|手枪]]，[[core-rules/torrent.md\|洪流]] |
 | 等离子手枪（标准）  | 12" | 1 | 3+ | 7 | -2 | 1 | [[core-rules/pistol.md\|手枪]] |
-| 等离子手枪（过载） | 12" | 1 | 3+ | 8 | -3 | 2 | [[core-rules/hazardous.md\|hazardous]]，[[core-rules/pistol.md\|pistol]] |
+| 等离子手枪（过载） | 12" | 1 | 3+ | 8 | -3 | 2 | [[core-rules/hazardous.md\|危险]]，[[core-rules/pistol.md\|手枪]] |
 
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |
@@ -42,7 +42,7 @@ updated: '2026-07-23'
 | 格斗武器   | 近战 | 3 | 3+ | 4 | 0 | 1 | — |
 | 动力拳 | 近战 | 3 | 3+ | 8 | -2 | 2 | — |
 | 动力武器  | 近战 | 4 | 3+ | 5 | -2 | 1 | — |
-| 雷霆锤 | 近战 | 3 | 4+ | 8 | -2 | 2 | [[core-rules/devastating-wounds.md\|devastating wounds]] |
+| 雷霆锤 | 近战 | 3 | 4+ | 8 | -2 | 2 | [[core-rules/devastating-wounds.md\|毁灭伤害]] |
 
 ## 技能
 - **【阵营技能】：破敌重誓**

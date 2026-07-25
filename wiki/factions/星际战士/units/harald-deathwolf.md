@@ -27,12 +27,12 @@ updated: '2026-07-23'
 ## 射击武器
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| 爆弹手枪 | 12" | 1 | 2+ | 4 | 0 | 1 | [[core-rules/pistol.md\|pistol]] |
+| 爆弹手枪 | 12" | 1 | 2+ | 4 | 0 | 1 | [[core-rules/pistol.md\|手枪]] |
 
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| Crushing teeth and claws | 近战 | 3 | 3+ | 5 | -1 | 1 | [[core-rules/extra-attacks.md\|extra attacks]] |
+| Crushing teeth and claws | 近战 | 3 | 3+ | 5 | -1 | 1 | [[core-rules/extra-attacks.md\|额外攻击]] |
 | Glacius | 近战 | 6 | 2+ | 6 | -2 | 2 | — |
 
 ## 技能

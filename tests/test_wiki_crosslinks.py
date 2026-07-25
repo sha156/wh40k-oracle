@@ -343,8 +343,26 @@ class TestKeywordAliasResolution:
         assert _resolve_known_alias("反载具") == "core-rules/anti.md"
 
     def test_does_not_swallow_ordinary_words(self):
-        """误链比断链更难发现：ANTI 的中文侧按目标关键词枚举，不用 `^反.*$`。"""
+        """误链比断链更难发现：ANTI 的中文侧按目标关键词枚举，不用 `^反.*$`/`^针对.*$`。"""
         from wiki_engine.crosslinks import _resolve_known_alias
 
-        for word in ("反击", "反应", "反正", "针对", "Anti", "爆炸性", "速射手"):
+        for word in ("反击", "反应", "反正", "针对性", "针对那次攻击",
+                     "爆炸性", "速射手", "劈砍刀"):
             assert _resolve_known_alias(word) is None, word
+
+    def test_bare_official_anti_name_resolves(self):
+        """「针对」是官方词条名（24.03），必须能解析——它同时又是极常见的中文词。
+
+        为什么这样不会把正文里的「针对那次攻击」变成链接：本表只在两处被查——
+        ① `canonicalize_known_terms` 重写**已经写成 [[…]] 的**目标；
+        ② `from_db._wrap` 决定要不要把武器技能列里的词条包成裸链。
+        两处都是「先有明确的词条边界，再来查表」，不是拿它去正文里做子串匹配。
+        往正文里注入链接的是 `inject_wikilinks`，走的是另一张按实体名建的表。
+        """
+        from wiki_engine.crosslinks import _resolve_known_alias
+
+        assert _resolve_known_alias("针对") == "core-rules/anti.md"
+        assert _resolve_known_alias("针对载具4+") == "core-rules/anti.md"
+        # 英文侧同理：ANTI 是官方词条名，不是普通词
+        assert _resolve_known_alias("ANTI") == "core-rules/anti.md"
+        assert _resolve_known_alias("Anti") == "core-rules/anti.md"

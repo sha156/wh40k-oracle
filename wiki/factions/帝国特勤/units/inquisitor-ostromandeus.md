@@ -28,7 +28,7 @@ updated: '2026-07-23'
 ## 射击武器
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| 地狱火手枪 | 6" | 1 | 3+ | 8 | -4 | D3 | [[core-rules/melta.md\|melta 2]]，[[core-rules/pistol.md\|pistol]] |
+| 地狱火手枪 | 6" | 1 | 3+ | 8 | -4 | D3 | [[core-rules/melta.md\|热熔2]]，[[core-rules/pistol.md\|手枪]] |
 
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |
@@ -47,4 +47,4 @@ updated: '2026-07-23'
 
 ## 关键词
 - **阵营关键词**：Agents of the Imperium
-- **普通关键词**：[[core-rules/infantry.md|Infantry]]，[[core-rules/character.md|Character]]，[[core-rules/grenades.md|Grenades]]，[[core-rules/epic-hero.md|Epic Hero]]，Imperium，[[factions/帝国特勤/units/inquisitor.md|Inquisitor]] Ostromandeus
+- **普通关键词**：[[core-rules/infantry.md|Infantry]]，[[core-rules/character.md|Character]]，[[core-rules/grenades.md|Grenades]]，[[core-rules/epic-hero.md|Epic Hero]]，Imperium，Inquisitor Ostromandeus

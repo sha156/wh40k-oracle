@@ -27,27 +27,27 @@ updated: '2026-07-23'
 ## 射击武器
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| Graviton blaster | 18" | 2 | 3+ | 5 | -1 | 1 | [[core-rules/anti.md\|anti-vehicle 2+]] |
-| 并联爆弹枪 | 24" | 2 | 3+ | 4 | 0 | 1 | [[core-rules/rapid-fire.md\|rapid fire 2]] |
-| 凯瑞斯突击炮 | 24" | 6 | 3+ | 7 | -1 | 1 | [[core-rules/devastating-wounds.md\|devastating wounds]] |
-| 转换光线炮 | 24" | 1 | 3+ | 7 | -1 | 3 | conversion，[[core-rules/sustained-hits.md\|sustained hits d3]] |
-| Cyclone missile launcher – frag | 36" | 2D6 | 3+ | 4 | 0 | 1 | [[core-rules/blast.md\|BLAST]] |
+| Graviton blaster | 18" | 2 | 3+ | 5 | -1 | 1 | [[core-rules/anti.md\|针对载具2+]] |
+| 并联爆弹枪 | 24" | 2 | 3+ | 4 | 0 | 1 | [[core-rules/rapid-fire.md\|速射2]] |
+| 凯瑞斯突击炮 | 24" | 6 | 3+ | 7 | -1 | 1 | [[core-rules/devastating-wounds.md\|毁灭伤害]] |
+| 转换光线炮 | 24" | 1 | 3+ | 7 | -1 | 3 | 转换，[[core-rules/sustained-hits.md\|连击D3]] |
+| Cyclone missile launcher – frag | 36" | 2D6 | 3+ | 4 | 0 | 1 | [[core-rules/blast.md\|爆炸]] |
 | Cyclone missile launcher – krak | 36" | 2 | 3+ | 9 | -2 | D6 | — |
-| 双联自动炮 | 48" | 2 | 3+ | 9 | -1 | 3 | [[core-rules/twin-linked.md\|TWIN-LINKED]] |
-| Twin volkite culverin | 36" | 4 | 3+ | 6 | 0 | 2 | [[core-rules/devastating-wounds.md\|devastating wounds]]，[[core-rules/twin-linked.md\|twin-linked]] |
-| Plasma blaster – supercharge | 18" | 2 | 3+ | 8 | -3 | 2 | [[core-rules/hazardous.md\|HAZARDOUS]] |
+| 双联自动炮 | 48" | 2 | 3+ | 9 | -1 | 3 | [[core-rules/twin-linked.md\|双联]] |
+| Twin volkite culverin | 36" | 4 | 3+ | 6 | 0 | 2 | [[core-rules/devastating-wounds.md\|毁灭伤害]]，[[core-rules/twin-linked.md\|双联]] |
+| Plasma blaster – supercharge | 18" | 2 | 3+ | 8 | -3 | 2 | [[core-rules/hazardous.md\|危险]] |
 | Plasma blaster – standard | 18" | 2 | 3+ | 7 | -2 | 1 | — |
-| 双联重爆弹 | 36" | 3 | 3+ | 5 | -1 | 2 | [[core-rules/twin-linked.md\|TWIN-LINKED]]，[[core-rules/sustained-hits.md\|SUSTAINED HITS 1]] |
-| 双联激光炮 | 48" | 1 | 3+ | 12 | -3 | D6+1 | [[core-rules/twin-linked.md\|TWIN-LINKED]] |
-| 重型喷火器 | 12" | D6 | N/A | 5 | -1 | 1 | [[core-rules/ignores-cover.md\|IGNORES COVER]]，[[core-rules/torrent.md\|TORRENT]] |
-| Heavy plasma cannon – supercharge | 36" | D3 | 3+ | 8 | -3 | 3 | [[core-rules/blast.md\|blast]]，[[core-rules/hazardous.md\|hazardous]] |
-| 多管热熔 | 18" | 2 | 3+ | 9 | -4 | D6 | [[core-rules/melta.md\|MELTA 2]] |
-| Heavy plasma cannon – standard | 36" | D3 | 3+ | 7 | -2 | 2 | [[core-rules/blast.md\|blast]] |
+| 双联重爆弹 | 36" | 3 | 3+ | 5 | -1 | 2 | [[core-rules/twin-linked.md\|双联]]，[[core-rules/sustained-hits.md\|连击1]] |
+| 双联激光炮 | 48" | 1 | 3+ | 12 | -3 | D6+1 | [[core-rules/twin-linked.md\|双联]] |
+| 重型喷火器 | 12" | D6 | N/A | 5 | -1 | 1 | [[core-rules/ignores-cover.md\|无视掩体]]，[[core-rules/torrent.md\|洪流]] |
+| Heavy plasma cannon – supercharge | 36" | D3 | 3+ | 8 | -3 | 3 | [[core-rules/blast.md\|爆炸]]，[[core-rules/hazardous.md\|危险]] |
+| 多管热熔 | 18" | 2 | 3+ | 9 | -4 | D6 | [[core-rules/melta.md\|热熔2]] |
+| Heavy plasma cannon – standard | 36" | D3 | 3+ | 7 | -2 | 2 | [[core-rules/blast.md\|爆炸]] |
 
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| Dreadnought chainfist | 近战 | 4 | 3+ | 12 | -2 | 3 | [[core-rules/anti.md\|anti-vehicle 3+]] |
+| Dreadnought chainfist | 近战 | 4 | 3+ | 12 | -2 | 3 | [[core-rules/anti.md\|针对载具3+]] |
 | 无畏格斗武器 | 近战 | 5 | 3+ | 12 | -2 | 3 | — |
 | 装甲铁脚 | 近战 | 5 | 3+ | 6 | 0 | 1 | — |
 

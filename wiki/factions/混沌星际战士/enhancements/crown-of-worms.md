@@ -24,4 +24,4 @@ Add 3" to the range of the bearer’s [[factions/混沌星际战士/units/warpsm
 
 ## 携带限制
 
-Warpsmith model only.
+[[factions/混沌星际战士/units/warpsmith.md|Warpsmith]] model only.

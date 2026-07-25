@@ -26,7 +26,7 @@ updated: '2026-07-23'
 ## 射击武器
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| 特斯拉球   | 24" | 6 | 3+ | 7 | 0 | 1 | [[core-rules/anti.md\|针对飞行 4+]]，[[core-rules/sustained-hits.md\|连击 2]] |
+| 特斯拉球   | 24" | 6 | 3+ | 7 | 0 | 1 | [[core-rules/anti.md\|针对飞行4+]]，[[core-rules/sustained-hits.md\|连击2]] |
 
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |

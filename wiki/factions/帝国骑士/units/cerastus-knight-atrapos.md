@@ -29,16 +29,16 @@ updated: '2026-07-23'
 ## 射击武器
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| 命运女神激光切割机-低频率 | 36" | 2D6 | 3+ | 7 | -1 | 2 | [[core-rules/sustained-hits.md\|连击 1]] |
-| 命运女神激光切割机-高频率 | 24" | D6 | 3+ | 14 | -3 | 4 | [[core-rules/sustained-hits.md\|连击 1]] |
-| 重力子奇点炮（约束） | 24" | D3 | 3+ | 16 | -4 | D6+1 | [[core-rules/blast.md\|blast]] |
-| 重力子奇点炮（奇点） | 24" | D3 | 3+ | 16 | -4 | D6+1 | [[core-rules/blast.md\|blast]]，[[core-rules/devastating-wounds.md\|devastating wounds]]，[[core-rules/hazardous.md\|hazardous]] |
+| 命运女神激光切割机-低频率 | 36" | 2D6 | 3+ | 7 | -1 | 2 | [[core-rules/sustained-hits.md\|连击1]] |
+| 命运女神激光切割机-高频率 | 24" | D6 | 3+ | 14 | -3 | 4 | [[core-rules/sustained-hits.md\|连击1]] |
+| 重力子奇点炮（约束） | 24" | D3 | 3+ | 16 | -4 | D6+1 | [[core-rules/blast.md\|爆炸]] |
+| 重力子奇点炮（奇点） | 24" | D3 | 3+ | 16 | -4 | D6+1 | [[core-rules/blast.md\|爆炸]]，[[core-rules/devastating-wounds.md\|毁灭伤害]]，[[core-rules/hazardous.md\|危险]] |
 
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| 命运女神激光切割机-低频率 | 近战 | 12 | 3+ | 7 | -1 | 2 | [[core-rules/sustained-hits.md\|连击 1]] |
-| 命运女神激光切割机-高频率 | 近战 | 6 | 3+ | 14 | -3 | 4 | [[core-rules/sustained-hits.md\|连击 1]] |
+| 命运女神激光切割机-低频率 | 近战 | 12 | 3+ | 7 | -1 | 2 | [[core-rules/sustained-hits.md\|连击1]] |
+| 命运女神激光切割机-高频率 | 近战 | 6 | 3+ | 14 | -3 | 4 | [[core-rules/sustained-hits.md\|连击1]] |
 
 ## 技能
 - **骑士守则**

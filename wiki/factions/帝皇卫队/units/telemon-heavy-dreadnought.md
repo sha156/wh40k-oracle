@@ -32,7 +32,7 @@ updated: '2026-07-23'
 | 阿拉克努斯风暴炮 | 24" | 12 | 2+ | 6 | -1 | 1 | [[core-rules/devastating-wounds.md\|毁灭伤害]] |
 | 利亚斯图斯加速重炮 | 48" | 4 | 2+ | 9 | -1 | 3 | — |
 | 斯皮库鲁斯爆弹巢 | 36" | D6+3 | 2+ | 5 | 0 | 1 | [[core-rules/blast.md\|爆炸]] |
-| 并联离子喷焰器 | 12" | D3 | N/A | 7 | -2 | 1 | [[core-rules/torrent.md\|喷射]]，[[core-rules/twin-linked.md\|双联]] |
+| 并联离子喷焰器 | 12" | D3 | N/A | 7 | -2 | 1 | [[core-rules/torrent.md\|洪流]]，[[core-rules/twin-linked.md\|双联]] |
 
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |

@@ -31,8 +31,8 @@ updated: '2026-07-23'
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| 重型蛇虫利爪 | 近战 | 3 | 3+ | 5 | -2 | 2 | [[core-rules/twin-linked.md\|双联]]，[[core-rules/anti.md\|针对凶兽5+]]，[[core-rules/anti.md\|针对载具5+]] |
-| 王虫利爪 | 近战 | 6 | 3+ | 5 | -2 | 2 | [[core-rules/twin-linked.md\|双联]]，[[core-rules/anti.md\|针对凶兽5+]]，[[core-rules/anti.md\|针对载具5+]] |
+| 重型蛇虫利爪 | 近战 | 3 | 3+ | 5 | -2 | 2 | [[core-rules/anti.md\|针对怪物5+]]，[[core-rules/anti.md\|针对载具5+]]，[[core-rules/twin-linked.md\|双联]] |
+| 王虫利爪 | 近战 | 6 | 3+ | 5 | -2 | 2 | [[core-rules/anti.md\|针对怪物5+]]，[[core-rules/anti.md\|针对载具5+]]，[[core-rules/twin-linked.md\|双联]] |
 
 ## 技能
 - **顶尖入侵者**：该单位中装备的武器拥有【连击1】技能

@@ -27,17 +27,17 @@ updated: '2026-07-23'
 ## 射击武器
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| 爆弹手枪 | 12" | 1 | 3+ | 4 | 0 | 1 | [[core-rules/pistol.md\|pistol]] |
+| 爆弹手枪 | 12" | 1 | 3+ | 4 | 0 | 1 | [[core-rules/pistol.md\|手枪]] |
 | 爆弹枪  | 24" | 2 | 3+ | 4 | 0 | 1 | — |
-| 喷火器   | 12" | D6 | N/A | 4 | 0 | 1 | [[core-rules/ignores-cover.md\|忽视掩体]]，[[core-rules/torrent.md\|喷射]] |
-| 重型爆弹枪 | 36" | 3 | 4+ | 5 | -1 | 2 | [[core-rules/heavy.md\|重型]]，[[core-rules/sustained-hits.md\|连击 1]] |
-| 热熔枪 | 12" | 1 | 3+ | 9 | -4 | D6 | [[core-rules/melta.md\|melta 2]] |
-| 喷火器   | 48" | D6 | 4+ | 4 | 0 | 1 | [[core-rules/ignores-cover.md\|忽视掩体]]，[[core-rules/torrent.md\|喷射]] |
+| 喷火器   | 12" | D6 | N/A | 4 | 0 | 1 | [[core-rules/ignores-cover.md\|无视掩体]]，[[core-rules/torrent.md\|洪流]] |
+| 重型爆弹枪 | 36" | 3 | 4+ | 5 | -1 | 2 | [[core-rules/heavy.md\|重型]]，[[core-rules/sustained-hits.md\|连击1]] |
+| 热熔枪 | 12" | 1 | 3+ | 9 | -4 | D6 | [[core-rules/melta.md\|热熔2]] |
+| 喷火器   | 48" | D6 | 4+ | 4 | 0 | 1 | [[core-rules/blast.md\|爆炸]]，[[core-rules/heavy.md\|重型]] |
 | 导弹发射器（穿甲） | 48" | 1 | 4+ | 9 | -2 | D6 | [[core-rules/heavy.md\|重型]] |
-| 等离子枪（标准） | 24" | 1 | 3+ | 7 | -2 | 1 | [[core-rules/rapid-fire.md\|RAPID FIRE 1]] |
-| 等离子枪（过载） | 24" | 1 | 3+ | 8 | -3 | 2 | [[core-rules/hazardous.md\|HAZARDOUS]]，[[core-rules/rapid-fire.md\|RAPID FIRE 1]] |
-| 等离子手枪（标准） | 12" | 1 | 3+ | 7 | -2 | 1 | [[core-rules/pistol.md\|pistol]] |
-| 等离子手枪（过载） | 12" | 1 | 3+ | 8 | -3 | 2 | [[core-rules/hazardous.md\|hazardous]]，[[core-rules/pistol.md\|pistol]] |
+| 等离子枪（标准） | 24" | 1 | 3+ | 7 | -2 | 1 | [[core-rules/rapid-fire.md\|速射1]] |
+| 等离子枪（过载） | 24" | 1 | 3+ | 8 | -3 | 2 | [[core-rules/hazardous.md\|危险]]，[[core-rules/rapid-fire.md\|速射1]] |
+| 等离子手枪（标准） | 12" | 1 | 3+ | 7 | -2 | 1 | [[core-rules/pistol.md\|手枪]] |
+| 等离子手枪（过载） | 12" | 1 | 3+ | 8 | -3 | 2 | [[core-rules/hazardous.md\|危险]]，[[core-rules/pistol.md\|手枪]] |
 
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |
@@ -45,9 +45,9 @@ updated: '2026-07-23'
 | 诅咒武器  | 近战 | 4 | 3+ | 5 | -2 | 1 | — |
 | 阿斯塔特链锯剑 | 近战 | 4 | 3+ | 4 | -1 | 1 | — |
 | 格斗武器  | 近战 | 3 | 3+ | 4 | 0 | 1 | — |
-| 诺斯特拉莫链锯刃 | 近战 | 5 | 3+ | 4 | -1 | 1 | [[core-rules/sustained-hits.md\|sustained hits 1]] |
-| 诺斯特拉莫链锯长刀    | 近战 | 4 | 3+ | 8 | -2 | 1 | [[core-rules/sustained-hits.md\|连击 1]] |
-| 诅咒武器  | 近战 | 4 | 3+ | 5 | -2 | 1 | [[core-rules/twin-linked.md\|twin-linked]] |
+| 诺斯特拉莫链锯刃 | 近战 | 5 | 3+ | 4 | -1 | 1 | [[core-rules/sustained-hits.md\|连击1]] |
+| 诺斯特拉莫链锯长刀    | 近战 | 4 | 3+ | 8 | -2 | 1 | [[core-rules/sustained-hits.md\|连击1]] |
+| 诅咒武器  | 近战 | 4 | 3+ | 5 | -2 | 1 | [[core-rules/twin-linked.md\|双联]] |
 | 动力拳 | 近战 | 3 | 3+ | 8 | -2 | 2 | — |
 
 ## 技能

@@ -30,8 +30,8 @@ updated: '2026-07-23'
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
 | 强弩榴弹发射器 | 18" | D6 | 2+ | 4 | -1 | 1 | [[core-rules/blast.md\|爆炸]] |
-| 堡主战斧 | 24" | 2 | 2+ | 4 | -1 | 2 | [[core-rules/assault.md\|assault]] |
-| 卫士之矛 | 24" | 2 | 2+ | 4 | -1 | 2 | [[core-rules/assault.md\|assault]] |
+| 堡主战斧 | 24" | 2 | 2+ | 4 | -1 | 2 | [[core-rules/assault.md\|突击]] |
+| 卫士之矛 | 24" | 2 | 2+ | 4 | -1 | 2 | [[core-rules/assault.md\|突击]] |
 
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |

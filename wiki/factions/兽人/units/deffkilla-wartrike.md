@@ -30,7 +30,7 @@ updated: '2026-07-23'
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
 | 集束棒棒雷 | 12" | 6 | 5+ | 5 | 0 | 1 | [[core-rules/assault.md\|突击]] |
-| 杀戮喷射(火焰) | 12" | D6 | N/A | 5 | -1 | 1 | [[core-rules/torrent.md\|洪流]]，[[core-rules/ignores-cover.md\|无视掩体]] |
+| 杀戮喷射(火焰) | 12" | D6 | N/A | 5 | -1 | 1 | [[core-rules/ignores-cover.md\|无视掩体]]，[[core-rules/torrent.md\|洪流]] |
 | 杀戮喷射(热熔) | 12" | 1 | 5+ | 9 | -4 | D6 | [[core-rules/melta.md\|热熔2]] |
 
 ## 近战武器

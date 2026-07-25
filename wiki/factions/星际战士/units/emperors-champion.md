@@ -29,12 +29,12 @@ updated: '2026-07-23'
 ## 射击武器
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| 爆弹手枪 | 12" | 1 | 2+ | 4 | 0 | 1 | [[core-rules/pistol.md\|pistol]] |
+| 爆弹手枪 | 12" | 1 | 2+ | 4 | 0 | 1 | [[core-rules/pistol.md\|手枪]] |
 
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| 黑剑（重击） | 近战 | 6 | 2+ | 8 | -3 | 3 | [[core-rules/anti.md\|anti-character 5+]]，[[core-rules/precision.md\|precision]] |
+| 黑剑（重击） | 近战 | 6 | 2+ | 8 | -3 | 3 | [[core-rules/anti.md\|针对角色5+]]，[[core-rules/precision.md\|精准]] |
 | 黑剑（横扫） | 近战 | 10 | 2+ | 6 | -2 | 1 | — |
 
 ## 技能

@@ -28,7 +28,7 @@ updated: '2026-07-23'
 ## 射击武器
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| 电弧步枪 | 30" | 1 | 4+ | 8 | -1 | D3 | [[core-rules/anti.md\|反载具 4+]]，[[core-rules/devastating-wounds.md\|毁灭伤害]]，[[core-rules/rapid-fire.md\|速射1]] |
+| 电弧步枪 | 30" | 1 | 4+ | 8 | -1 | D3 | [[core-rules/anti.md\|针对载具4+]]，[[core-rules/devastating-wounds.md\|毁灭伤害]]，[[core-rules/rapid-fire.md\|速射1]] |
 | 流电步枪 | 30" | 2 | 4+ | 4 | 0 | 1 | — |
 | 超铀元素步枪 | 36" | 1 | 4+ | 7 | -2 | D3 | [[core-rules/heavy.md\|重型]]，[[core-rules/precision.md\|精准]] |
 | 机械教手枪 | 12" | 1 | 4+ | 6 | -1 | 1 | [[core-rules/devastating-wounds.md\|毁灭伤害]]，[[core-rules/pistol.md\|手枪]] |

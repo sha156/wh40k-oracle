@@ -26,11 +26,11 @@ updated: '2026-07-23'
 ## 射击武器
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| 转轮离子炮 | 24" | D6+2 | 4+ | 7 | -2 | 2 | [[core-rules/blast.md\|blast]] |
-| 重型磁轨炮 | 30" | 2 | 4+ | 18 | -4 | D6+4 | [[core-rules/heavy.md\|重型]]，[[core-rules/devastating-wounds.md\|毁灭伤害]] |
-| 赫卡顿弹头 | 36" | D6+3 | 4+ | 7 | -2 | 2 | [[core-rules/blast.md\|blast]]，[[core-rules/one-shot.md\|one shot]] |
-| 玛特尔自动炮 | 24" | 6 | 4+ | 7 | -1 | 2 | [[core-rules/assault.md\|assault]]，[[core-rules/sustained-hits.md\|sustained hits 1]] |
-| 重型聚能转换光束炮 | 24" | 4 | 4+ | 10 | -2 | 4 | conversion，[[core-rules/lethal-hits.md\|lethal hits]] |
+| 转轮离子炮 | 24" | D6+2 | 4+ | 7 | -2 | 2 | [[core-rules/blast.md\|爆炸]] |
+| 重型磁轨炮 | 30" | 2 | 4+ | 18 | -4 | D6+4 | [[core-rules/devastating-wounds.md\|毁灭伤害]]，[[core-rules/heavy.md\|重型]] |
+| 赫卡顿弹头 | 36" | D6+3 | 4+ | 7 | -2 | 2 | [[core-rules/blast.md\|爆炸]]，[[core-rules/one-shot.md\|单发]] |
+| 玛特尔自动炮 | 24" | 6 | 4+ | 7 | -1 | 2 | [[core-rules/assault.md\|突击]]，[[core-rules/sustained-hits.md\|连击1]] |
+| 重型聚能转换光束炮 | 24" | 4 | 4+ | 10 | -2 | 4 | 转换，[[core-rules/lethal-hits.md\|致命一击]] |
 | 双联爆矢炮 | 36" | 3 | 4+ | 6 | -1 | 2 | [[core-rules/sustained-hits.md\|连击2]]，[[core-rules/twin-linked.md\|双联]] |
 | 双联离子炮 | 18" | D3+1 | 4+ | 8 | -2 | 1 | [[core-rules/blast.md\|爆炸]]，[[core-rules/twin-linked.md\|双联]] |
 

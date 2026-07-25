@@ -29,12 +29,12 @@ updated: '2026-07-23'
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
 | 爆能手枪 | 6" | 1 | 2+ | 8 | -3 | D3 | [[core-rules/pistol.md\|手枪]] |
-| 毒晶手枪 | 12" | 1 | 2+ | 2 | 0 | 1 | [[core-rules/anti.md\|反步兵3+]]，[[core-rules/assault.md\|突击]]，[[core-rules/pistol.md\|手枪]] |
+| 毒晶手枪 | 12" | 1 | 2+ | 2 | 0 | 1 | [[core-rules/anti.md\|针对步兵3+]]，[[core-rules/assault.md\|突击]]，[[core-rules/pistol.md\|手枪]] |
 
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| 尸魂利刃 | 近战 | 5 | 2+ | 3 | -2 | 2 | [[core-rules/anti.md\|反步兵3+]] |
+| 尸魂利刃 | 近战 | 5 | 2+ | 3 | -2 | 2 | [[core-rules/anti.md\|针对步兵3+]] |
 
 ## 技能
 - **【阵营技能】：战斗专注，殊途同归**

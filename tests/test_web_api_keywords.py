@@ -36,7 +36,7 @@ DETAIL_KEYS = SUMMARY_KEYS | {"weapons"}
 # 实测分布（11 版 46 条）。数字变了说明离线生成器重跑且结果变了——先确认是有意的
 # （换版 / 换库）再改这里，别顺手对齐成"测试通过"。
 EXPECTED_TOTAL = 46
-EXPECTED_GROUPS = {"universal": 32, "legacy": 1, "unit-specific": 13}
+EXPECTED_GROUPS = {"universal": 32, "transitional": 1, "unit-specific": 13}
 
 
 @pytest.fixture(scope="module")

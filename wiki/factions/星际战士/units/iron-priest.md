@@ -26,7 +26,7 @@ updated: '2026-07-23'
 ## 射击武器
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| 霜狱手枪（分散） | 12" | D6 | N/A | 4 | -1 | 1 | [[core-rules/pistol.md\|手枪]]，[[core-rules/torrent.md\|喷射]] |
+| 霜狱手枪（分散） | 12" | D6 | N/A | 4 | -1 | 1 | [[core-rules/pistol.md\|手枪]]，[[core-rules/torrent.md\|洪流]] |
 | 霜狱手枪（聚焦） | 12" | 1 | 2+ | 6 | -3 | 3 | [[core-rules/pistol.md\|手枪]] |
 
 ## 近战武器

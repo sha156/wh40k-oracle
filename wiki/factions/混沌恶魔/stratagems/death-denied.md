@@ -24,7 +24,7 @@ Your Command phase.
 
 ## 使用对象
 
-One Shadow Legion unit from your army.
+One [[factions/混沌恶魔/detachments/shadow-legion.md|Shadow Legion]] unit from your army.
 
 ## 效果
 

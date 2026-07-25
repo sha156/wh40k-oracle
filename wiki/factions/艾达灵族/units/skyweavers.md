@@ -30,7 +30,7 @@ updated: '2026-07-23'
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
 | 星镖炮 | 24" | 3 | 3+ | 6 | -1 | 2 | [[core-rules/lethal-hits.md\|致命一击]] |
-| 织空者紊乱炮 | 24" | 2 | 3+ | 3 | -1 | 3 | [[core-rules/anti.md\|反载具 4+]]，[[core-rules/devastating-wounds.md\|毁灭伤害]] |
+| 织空者紊乱炮 | 24" | 2 | 3+ | 3 | -1 | 3 | [[core-rules/anti.md\|针对载具4+]]，[[core-rules/devastating-wounds.md\|毁灭伤害]] |
 | 星光套索 | 12" | D3 | 3+ | 7 | -2 | 2 | — |
 
 ## 近战武器

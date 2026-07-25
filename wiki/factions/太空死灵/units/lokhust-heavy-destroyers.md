@@ -28,8 +28,8 @@ updated: '2026-07-23'
 ## 射击武器
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| 憎火灭绝炮   | 36" | 6 | 3+ | 6 | -1 | 1 | [[core-rules/heavy.md\|重型]]，[[core-rules/rapid-fire.md\|速射 6]]，[[core-rules/sustained-hits.md\|连击 1]] |
-| 高斯破坏炮 | 48" | 1 | 3+ | 14 | -4 | 6 | [[core-rules/heavy.md\|heavy]]，[[core-rules/lethal-hits.md\|lethal hits]] |
+| 憎火灭绝炮   | 36" | 6 | 3+ | 6 | -1 | 1 | [[core-rules/heavy.md\|重型]]，[[core-rules/rapid-fire.md\|速射6]]，[[core-rules/sustained-hits.md\|连击1]] |
+| 高斯破坏炮 | 48" | 1 | 3+ | 14 | -4 | 6 | [[core-rules/heavy.md\|重型]]，[[core-rules/lethal-hits.md\|致命一击]] |
 
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |

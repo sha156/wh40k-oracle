@@ -28,7 +28,7 @@ updated: '2026-07-23'
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| Fidelity | 近战 | 6 | 3+ | 5 | -1 | 2 | [[core-rules/sustained-hits.md\|sustained hits 1]] |
+| Fidelity | 近战 | 6 | 3+ | 5 | -1 | 2 | [[core-rules/sustained-hits.md\|连击1]] |
 
 ## 技能
 - **Inspirational Defiance**：While this model is leading a unit, add 1 to the Objective Control characteristic of models in that unit.

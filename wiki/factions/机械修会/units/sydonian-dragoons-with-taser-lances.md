@@ -31,12 +31,12 @@ updated: '2026-07-23'
 ## 射击武器
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| 磷火短铳 | 18" | 1 | 4+ | 5 | -1 | 2 | [[core-rules/ignores-cover.md\|ignores cover]]，[[core-rules/pistol.md\|pistol]] |
+| 磷火短铳 | 18" | 1 | 4+ | 5 | -1 | 2 | [[core-rules/ignores-cover.md\|无视掩体]]，[[core-rules/pistol.md\|手枪]] |
 
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| 泰瑟骑枪 | 近战 | 4 | 4+ | 7 | -2 | 2 | [[core-rules/anti.md\|反机甲 2+]]，[[core-rules/lance.md\|迅猛冲锋]]，[[core-rules/sustained-hits.md\|连击 2]] |
+| 泰瑟骑枪 | 近战 | 4 | 4+ | 7 | -2 | 2 | [[core-rules/anti.md\|针对步行者2+]]，[[core-rules/lance.md\|骑枪]]，[[core-rules/sustained-hits.md\|连击2]] |
 
 ## 技能
 - **【阵营技能】：机神律令**

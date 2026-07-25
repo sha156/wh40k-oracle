@@ -27,13 +27,13 @@ updated: '2026-07-23'
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
 | 重型撸巴炮 | 48" | D6 | 5+ | 6 | 0 | 2 | [[core-rules/blast.md\|爆炸]]，[[core-rules/indirect-fire.md\|曲射]] |
-| 鱼叉炮 | 12" | 1 | 5+ | 12 | -2 | 3 | [[core-rules/anti.md\|针对巨兽2+]]，[[core-rules/anti.md\|针对载具2+]] |
+| 鱼叉炮 | 12" | 1 | 5+ | 12 | -2 | 3 | [[core-rules/anti.md\|针对怪物2+]]，[[core-rules/anti.md\|针对载具2+]]，钩缠 |
 
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| 屠夫小子 | 近战 | 4 | 3+ | 5 | -1 | 1 | [[core-rules/extra-attacks.md\|额外攻击]]，[[core-rules/anti.md\|针对巨兽4+]]，[[core-rules/anti.md\|针对载具4+]] |
-| 大角撞击 | 近战 | 4 | 4+ | 8 | -1 | 3 | [[core-rules/extra-attacks.md\|额外攻击]]，[[core-rules/lance.md\|迅猛冲锋]] |
+| 屠夫小子 | 近战 | 4 | 3+ | 5 | -1 | 1 | [[core-rules/extra-attacks.md\|额外攻击]]，[[core-rules/anti.md\|针对怪物4+]]，[[core-rules/anti.md\|针对载具4+]] |
+| 大角撞击 | 近战 | 4 | 4+ | 8 | -1 | 3 | [[core-rules/extra-attacks.md\|额外攻击]]，[[core-rules/lance.md\|骑枪]] |
 | 电锯刀 | 近战 | 6 | 3+ | 10 | -2 | 2 | — |
 
 ## 技能

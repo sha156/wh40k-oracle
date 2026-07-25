@@ -31,7 +31,7 @@ updated: '2026-07-23'
 | 光棱炮（散射脉冲） | 24" | 2D6 | 3+ | 4 | 0 | 1 | [[core-rules/blast.md\|爆炸]] |
 | 光棱炮（聚焦光矛） | 24" | 2 | 3+ | 12 | -3 | 4 | — |
 | 星镖炮 | 24" | 3 | 3+ | 6 | -1 | 2 | [[core-rules/lethal-hits.md\|致命一击]] |
-| 虚空编织者紊乱炮 | 24" | 3 | 3+ | 4 | -1 | 3 | [[core-rules/anti.md\|反载具 4+]]，[[core-rules/devastating-wounds.md\|毁灭伤害]] |
+| 虚空编织者紊乱炮 | 24" | 3 | 3+ | 4 | -1 | 3 | [[core-rules/anti.md\|针对载具4+]]，[[core-rules/devastating-wounds.md\|毁灭伤害]] |
 
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |

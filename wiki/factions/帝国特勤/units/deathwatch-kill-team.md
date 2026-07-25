@@ -40,11 +40,11 @@ updated: '2026-07-23'
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| 黑盾利刃 | 近战 | 4 | 3+ | 5 | -2 | 1 | [[core-rules/twin-linked.md\|TwIN-lINkED]] |
+| 黑盾利刃 | 近战 | 4 | 3+ | 5 | -2 | 1 | [[core-rules/twin-linked.md\|双联]] |
 | 格斗武器 | 近战 | 3 | 3+ | 4 | 0 | 1 | — |
 | 死亡守望雷霆锤 | 近战 | 3 | 4+ | 10 | -2 | 3 | [[core-rules/devastating-wounds.md\|毁灭伤害]] |
 | 动力武器 | 近战 | 3 | 3+ | 5 | -2 | 1 | — |
-| 异形相位刃 | 近战 | 4 | 3+ | 5 | -2 | 1 | [[core-rules/devastating-wounds.md\|devastating wounds]] |
+| 异形相位刃 | 近战 | 4 | 3+ | 5 | -2 | 1 | [[core-rules/devastating-wounds.md\|毁灭伤害]] |
 
 ## 技能
 - **【阵营技能】：派遣特工**

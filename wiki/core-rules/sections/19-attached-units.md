@@ -58,7 +58,7 @@ Abilities/rules that affect a single specified model (e.g. from an enhancement o
 
 In all of the above cases, if that last model was destroyed as the result of an attack, the ability it was conferring upon the attached unit applies until the attacking unit has resolved all of its attacks.
 
-> **ONLY IN DEATH DOES DUTY END**
+> **[[factions/星际战士/stratagems/only-in-death-does-duty-end.md|ONLY IN DEATH DOES DUTY END]]**
 >
 > Leader and support units often have abilities that make the models they are leading more powerful. In the same way, some bodyguard units’ abilities can enhance the power of those leading them. The rules on the left mean that once the models conferring such effects are destroyed, that attached unit does not continue to benefit from them. Should those models later be revived, however, those abilities will once more apply to their attached unit.
 >

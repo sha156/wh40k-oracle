@@ -29,10 +29,10 @@ updated: '2026-07-23'
 ## 射击武器
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| 灼热射线（散射） | 12" | 2D6 | N/A | 5 | -1 | 1 | [[core-rules/ignores-cover.md\|ignores cover]]，[[core-rules/torrent.md\|torrent]] |
-| 灼热射线(聚焦)      | 18" | 2 | 3+ | 9 | -4 | D6 | [[core-rules/melta.md\|热熔 4]] |
-| 粒子粉碎炮 | 18" | D6+6 | 2+ | 7 | 0 | 1 | [[core-rules/blast.md\|blast]]，[[core-rules/devastating-wounds.md\|devastating wounds]] |
-| 双联重型高斯炮 | 24" | 6 | 3+ | 8 | -2 | 2 | [[core-rules/lethal-hits.md\|lethal hits]] |
+| 灼热射线（散射） | 12" | 2D6 | N/A | 5 | -1 | 1 | [[core-rules/ignores-cover.md\|无视掩体]]，[[core-rules/torrent.md\|洪流]] |
+| 灼热射线(聚焦)      | 18" | 2 | 3+ | 9 | -4 | D6 | [[core-rules/melta.md\|热熔4]] |
+| 粒子粉碎炮 | 18" | D6+6 | 2+ | 7 | 0 | 1 | [[core-rules/blast.md\|爆炸]]，[[core-rules/devastating-wounds.md\|毁灭伤害]] |
+| 双联重型高斯炮 | 24" | 6 | 3+ | 8 | -2 | 2 | [[core-rules/lethal-hits.md\|致命一击]] |
 
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |

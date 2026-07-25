@@ -1,9 +1,9 @@
 {
  "_note": "武器关键词（USR）中文名的人工真源。db_compile/zh_weapons.build_keyword_glossary 在「数据学习 + 参数化规则」之后叠加它，优先级最高。改完跑 python -m db_compile zh-weapons。",
- "_how": "取值优先照黑图语料里的多数写法（实测：无视掩体 192 > 忽视掩体 137 > 忽略掩体 35；洪流 216 > 喷射 140；反X N+ 合计 122 > 针对X N+ 合计 44；单发 38 > 一次性 23）。参数化的 ANTI-X N+ / RAPID FIRE X / MELTA X / SUSTAINED HITS X / CLEAVE X 由规则统一生成，不列在这里。",
- "_11e_source": "CLEAVE=横扫、CLOSE-QUARTERS=近距离 取自 data/11版40K通用技能速查表.pdf（24.06 / 24.07），11 版新增词条，黑图十版语料里没有对应写法——学习值必然是错配（曾学成「劈砍1」）。HARPOONED/LINKED FIRE 是单位特有词条（泰伦 Norn 鱼叉 / 灵族 Fire Prism），黑图无对应，按同族人工补译（HOOKED 钩挂 / SNAGGED 钩缠 / IMPALED 穿刺）。",
+ "_how": "**2026-07-26 起以 GW 官方简体中文为准**（data/官方中文/ 核心规则第 24 章，宪法 §6：GW 官方中文 > 汉化组译名 > 社区译名）。实测官方与库内原值 20 条一致、1 条冲突（CLEAVE）；此前按黑图多数派定的「无视掩体 / 骑枪 / 洪流 / 单发」经官方核对**全部正确**，反倒是汉化组速查表的「忽视掩体 / 迅猛冲锋 / 喷射」是异类。参数化的 ANTI-X N+ / RAPID FIRE X / MELTA X / SUSTAINED HITS X / CLEAVE X 由规则统一生成，不列在这里。",
+ "_11e_source": "官方核心规则 24.03「[针对]」→ 全族由 _ANTI_TARGET 生成「针对X N+」（旧写法「反X N+」降为检索别名）；24.06「[劈砍]」（此前按汉化组速查表误取「横扫」，已作废）；24.07「[近距离]」；24.27「[手枪]」——官方注明手枪与近距离规则等同、手枪将在本版演进中被逐步取代，**不是已经取代**。HARPOONED/LINKED FIRE 是单位特有词条（泰伦 Norn 鱼叉 / 灵族 Fire Prism），官方核心规则无此条，按同族人工补译（HOOKED 钩挂 / SNAGGED 钩缠 / IMPALED 穿刺）。",
  "keywords": {
-  "CLEAVE": "横扫",
+  "CLEAVE": "劈砍",
   "CLOSE-QUARTERS": "近距离",
   "HARPOONED": "鱼叉钩中",
   "LINKED FIRE": "连锁火力",

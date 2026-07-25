@@ -295,7 +295,7 @@ class CritiqueReportOut(_CamelModel):
 # 三档分类：通用（11 版速查表在册）/ 十版遗留（库里还有但已被取代）/ 单位特有。
 # 用 Literal 而非 str：载荷冒出第四档时要当场 500 炸出来，别让前端拿到它没有分支
 # 可渲染的 group 值，静默掉进 default 分支显示成「通用」。
-KeywordGroup = Literal["universal", "legacy", "unit-specific"]
+KeywordGroup = Literal["universal", "transitional", "unit-specific"]
 
 
 class KeywordSummary(_CamelModel):

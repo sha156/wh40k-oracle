@@ -34,7 +34,7 @@ updated: '2026-07-23'
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| 拥夜者之镰（重击） | 近战 | 6 | 2+ | 14 | -4 | D6+2 | [[core-rules/devastating-wounds.md\|devastating wounds]] |
+| 拥夜者之镰（重击） | 近战 | 6 | 2+ | 14 | -4 | D6+2 | [[core-rules/devastating-wounds.md\|毁灭伤害]] |
 | 拥夜者之镰（横扫） | 近战 | 14 | 2+ | 8 | -2 | 2 | — |
 
 ## 技能

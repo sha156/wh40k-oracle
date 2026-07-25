@@ -31,14 +31,14 @@ updated: '2026-07-23'
 ## 射击武器
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| 金达里剧毒循环枪 | 36" | 1 | 2+ | 6 | -2 | 2 | [[core-rules/anti.md\|anti-monster 2+]]，[[core-rules/heavy.md\|heavy]]，[[core-rules/precision.md\|precision]] |
-| 微型卡宾枪 | 12" | 2 | 2+ | 5 | -2 | 2 | [[core-rules/pistol.md\|pistol]] |
+| 金达里剧毒循环枪 | 36" | 1 | 2+ | 6 | -2 | 2 | [[core-rules/anti.md\|针对怪物2+]]，[[core-rules/heavy.md\|重型]]，[[core-rules/precision.md\|精准]] |
+| 微型卡宾枪 | 12" | 2 | 2+ | 5 | -2 | 2 | [[core-rules/pistol.md\|手枪]] |
 
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
 | 屠夫之刃 | 近战 | 5 | 3+ | 4 | -2 | 1 | — |
-| 利爪巨蜥的尖牙利爪 | 近战 | 4 | 4+ | 5 | -1 | 1 | [[core-rules/extra-attacks.md\|extra attacks]] |
+| 利爪巨蜥的尖牙利爪 | 近战 | 4 | 4+ | 5 | -1 | 1 | [[core-rules/extra-attacks.md\|额外攻击]] |
 
 ## 技能
 - **看我的标记，开火！**：在该单位射击后，您可以选择一个被上述攻击命中的敌方单位。在该阶段结束前，当一个己方帝国特勤或帝国步兵战线模型以那个敌方单位为目标进行攻击时，您可以重掷命中掷骰。

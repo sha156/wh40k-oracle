@@ -19,9 +19,9 @@ const GROUPS: ReadonlyArray<{ id: KeywordGroup; title: string; note: string }> =
     note: "11 版《核心规则》武器词条速查表在册：哪张兵牌印上它，都按同一条规则结算。",
   },
   {
-    id: "legacy",
-    title: "十版遗留",
-    note: "十版的 PISTOL——11 版已由 CLOSE-QUARTERS 取代，旧兵牌上仍印着，按新词条读。",
+    id: "transitional",
+    title: "过渡期",
+    note: "官方 11 版仍在册、但正被取代：[手枪]（24.27）与[近距离]（24.07）规则完全等同，官方注明手枪会随本版演进被取代——读到它按[近距离]理解，但它不是作废条目。",
   },
   {
     id: "unit-specific",
@@ -166,7 +166,7 @@ interface KeywordIndexProps {
 }
 
 /**
- * 图鉴 · 武器词条页签：46 个词条按通用 / 十版遗留 / 单位特有 分区，
+ * 图鉴 · 武器词条页签：46 个词条按通用 / 过渡期 / 单位特有 分区，
  * 点行展开该词条的武器反查清单（详情单独取，索引不驮 364KB 的 weapons）。
  */
 export function KeywordIndex({ onError }: KeywordIndexProps) {

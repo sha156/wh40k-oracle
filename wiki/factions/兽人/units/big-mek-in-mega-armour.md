@@ -26,7 +26,7 @@ updated: '2026-07-23'
 ## 射击武器
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| 强焊武器 | 24" | 1 | 5+ | 4 | 0 | 1 | [[core-rules/anti.md\|针对步兵4+]]，[[core-rules/rapid-fire.md\|速射1]]，[[core-rules/devastating-wounds.md\|毁灭伤害]] |
+| 强焊武器 | 24" | 1 | 5+ | 4 | 0 | 1 | [[core-rules/anti.md\|针对步兵4+]]，[[core-rules/devastating-wounds.md\|毁灭伤害]]，[[core-rules/rapid-fire.md\|速射1]] |
 | 魔改米加枪 | 24" | 3 | 5+ | 9 | -2 | D6 | [[core-rules/hazardous.md\|危险]] |
 | 魔改突突枪 | 18" | 4 | 5+ | 4 | 0 | 1 | [[core-rules/rapid-fire.md\|速射2]] |
 | 传送光束炮 | 12" | 3 | 5+ | 8 | -1 | 3 | [[core-rules/blast.md\|爆炸]] |
@@ -50,4 +50,4 @@ updated: '2026-07-23'
 
 ## 关键词
 - **阵营关键词**：兽人
-- **普通关键词**：[[core-rules/infantry.md|步兵]]，[[core-rules/character.md|人物]]，超重装甲，技师，超重装[[factions/兽人/units/big-mek.md|大技霸]]
+- **普通关键词**：[[core-rules/infantry.md|步兵]]，[[core-rules/character.md|人物]]，超重装甲，技师，超重装大技霸

@@ -34,7 +34,7 @@ updated: '2026-07-23'
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| 领主之刃 | 近战 | 4 | 2+ | 8 | -3 | 2 | [[core-rules/devastating-wounds.md\|devastating wounds]] |
+| 领主之刃 | 近战 | 4 | 2+ | 8 | -3 | 2 | [[core-rules/devastating-wounds.md\|毁灭伤害]] |
 | 光之杖 | 近战 | 4 | 2+ | 5 | -2 | 1 | — |
 
 ## 技能
@@ -47,4 +47,4 @@ updated: '2026-07-23'
 
 ## 关键词
 - **阵营关键词**：Necrons
-- **普通关键词**：[[core-rules/mounted.md|Mounted]]，[[core-rules/character.md|Character]]，Fly，Destroyer Cult，Lokhust [[factions/太空死灵/units/lord.md|Lord]]
+- **普通关键词**：[[core-rules/mounted.md|Mounted]]，[[core-rules/character.md|Character]]，Fly，Destroyer Cult，Lokhust Lord

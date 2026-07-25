@@ -27,12 +27,12 @@ updated: '2026-07-23'
 ## 射击武器
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| Heirloom pistol | 12" | 1 | 3+ | 4 | -1 | 3 | [[core-rules/anti.md\|anti-infantry 4+]]，[[core-rules/pistol.md\|pistol]] |
+| Heirloom pistol | 12" | 1 | 3+ | 4 | -1 | 3 | [[core-rules/anti.md\|针对步兵4+]]，[[core-rules/pistol.md\|手枪]] |
 
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| Monomolecular rapier | 近战 | 4 | 3+ | 3 | -2 | 1 | [[core-rules/sustained-hits.md\|sustained hits 1]] |
+| Monomolecular rapier | 近战 | 4 | 3+ | 3 | -2 | 1 | [[core-rules/sustained-hits.md\|连击1]] |
 
 ## 技能
 - **Backroom Deals**：If your army contains one or more units with this ability, during the Declare Battle Formations step, select one of those units. While the selected unit is leading a unit, models in that unit have the Infiltrators ability.

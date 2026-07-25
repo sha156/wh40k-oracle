@@ -24,7 +24,7 @@ updated: '2026-07-23'
 ## 射击武器
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| Minotaur twin earthshaker cannon | 240" | D6+3 | 4+ | 8 | -2 | 2 | [[core-rules/blast.md\|blast]]，[[core-rules/indirect-fire.md\|indirect fire]]，[[core-rules/twin-linked.md\|twin-linked]] |
+| Minotaur twin earthshaker cannon | 240" | D6+3 | 4+ | 8 | -2 | 2 | [[core-rules/blast.md\|爆炸]]，[[core-rules/indirect-fire.md\|曲射]]，[[core-rules/twin-linked.md\|双联]] |
 
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |

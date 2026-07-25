@@ -26,7 +26,7 @@ In your Command phase, you can select up to 3 Adepta Sororitas units from your a
 - Improve the Weapon Skill and Ballistic Skill characteristics of weapons equipped by [[factions/战斗修女/units/battle-sisters-squad.md|Battle Sisters Squad]], [[factions/战斗修女/units/celestian-sacresants.md|Celestian Sacresants]] and [[factions/战斗修女/units/paragon-warsuits.md|Paragon Warsuits]] models in that unit by 1.
 
 Keywords
-While a CELESTIAN SACRESANTS unit from your army is not Battle-shocked, add 1 to the Objective Control characteristic of Celestian Sacresants models in that unit.
+While a CELESTIAN SACRESANTS unit from your army is not Battle-shocked, add 1 to the Objective Control characteristic of [[factions/战斗修女/units/celestian-sacresants.md|Celestian Sacresants]] models in that unit.
 
 ## 增强
 

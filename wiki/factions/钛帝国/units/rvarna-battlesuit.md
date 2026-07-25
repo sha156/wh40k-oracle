@@ -28,7 +28,7 @@ updated: '2026-07-23'
 ## 射击武器
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| Pulse submunitions cannon | 60" | D6+2 | 4+ | 8 | -1 | 2 | [[core-rules/blast.md\|blast]] |
+| Pulse submunitions cannon | 60" | D6+2 | 4+ | 8 | -1 | 2 | [[core-rules/blast.md\|爆炸]] |
 
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |

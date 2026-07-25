@@ -29,12 +29,12 @@ updated: '2026-07-23'
 ## 射击武器
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| 教团狙击枪 | 36" | 1 | 3+ | 7 | -2 | 3 | [[core-rules/anti.md\|反灵能者2+]]，[[core-rules/heavy.md\|重型]]，[[core-rules/precision.md\|精准]] |
+| 教团狙击枪 | 36" | 1 | 3+ | 7 | -2 | 3 | [[core-rules/anti.md\|针对灵能者2+]]，[[core-rules/heavy.md\|重型]]，[[core-rules/precision.md\|精准]] |
 
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| 圣裁生物匕首 | 近战 | 6 | 2+ | 3 | -2 | 2 | [[core-rules/anti.md\|反步兵3+]]，[[core-rules/precision.md\|精准]] |
+| 圣裁生物匕首 | 近战 | 6 | 2+ | 3 | -2 | 2 | [[core-rules/anti.md\|针对步兵3+]]，[[core-rules/precision.md\|精准]] |
 | 近战武器 | 近战 | 2 | 3+ | 3 | 0 | 1 | — |
 
 ## 技能

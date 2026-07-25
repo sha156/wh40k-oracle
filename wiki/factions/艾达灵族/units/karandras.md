@@ -27,13 +27,13 @@ updated: '2026-07-23'
 ## 射击武器
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| Arhra’s Bane | 12" | 2 | 2+ | 5 | -1 | 2 | [[core-rules/assault.md\|assault]]，[[core-rules/pistol.md\|pistol]] |
+| Arhra’s Bane | 12" | 2 | 2+ | 5 | -1 | 2 | [[core-rules/assault.md\|突击]]，[[core-rules/pistol.md\|手枪]] |
 
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| Arhra’s Bane | 近战 | 5 | 2+ | 8 | -3 | 2 | [[core-rules/sustained-hits.md\|sustained hits 1]] |
-| Isirmathil | 近战 | 8 | 2+ | 6 | -1 | 1 | [[core-rules/sustained-hits.md\|sustained hits 1]] |
+| Arhra’s Bane | 近战 | 5 | 2+ | 8 | -3 | 2 | [[core-rules/sustained-hits.md\|连击1]] |
+| Isirmathil | 近战 | 8 | 2+ | 6 | -1 | 1 | [[core-rules/sustained-hits.md\|连击1]] |
 
 ## 技能
 - **The [[factions/艾达灵族/units/scorpion.md|Scorpion]]’s Bite**：Melee weapons equipped by the bearer have the [DEVASTATING WOUNDS] ability when targeting units without the <span class="kwb">TITANIC</span> keyword.

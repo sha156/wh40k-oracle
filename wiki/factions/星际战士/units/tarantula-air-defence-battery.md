@@ -24,7 +24,7 @@ updated: '2026-07-23'
 ## 射击武器
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| Tarantula air defence missiles | 48" | D6 | 4+ | 7 | -1 | 1 | [[core-rules/anti.md\|anti-fly 2+]]，[[core-rules/blast.md\|blast]] |
+| Tarantula air defence missiles | 48" | D6 | 4+ | 7 | -1 | 1 | [[core-rules/anti.md\|针对飞行2+]]，[[core-rules/blast.md\|爆炸]] |
 
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |

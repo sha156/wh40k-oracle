@@ -28,7 +28,7 @@ updated: '2026-07-23'
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| Death Cult power blades | 近战 | 4 | 2+ | 4 | -2 | 1 | [[core-rules/precision.md\|precision]] |
+| Death Cult power blades | 近战 | 4 | 2+ | 4 | -2 | 1 | [[core-rules/precision.md\|精准]] |
 
 ## 技能
 - **Death Cult**：Each time a model in this unit makes an attack that targets a <span class="kwb">CHARACTER</span> unit, re-roll a Wound roll.

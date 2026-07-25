@@ -27,9 +27,9 @@ updated: '2026-07-23'
 ## 射击武器
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| 突击爆弹枪 | 18" | 3 | 3+ | 5 | -1 | 2 | [[core-rules/pistol.md\|手枪]]，[[core-rules/assault.md\|突击]]，[[core-rules/sustained-hits.md\|连击 2]]，[[core-rules/twin-linked.md\|双联]] |
-| 等离子绝灭者（标准） | 18" | 2 | 3+ | 7 | -2 | 2 | [[core-rules/pistol.md\|手枪]]，[[core-rules/assault.md\|突击]]，[[core-rules/twin-linked.md\|双联]] |
-| 等离子绝灭者（过载）  | 18" | 2 | 3+ | 8 | -3 | 3 | [[core-rules/pistol.md\|手枪]]，[[core-rules/hazardous.md\|危险]]，[[core-rules/assault.md\|突击]]，[[core-rules/twin-linked.md\|双联]] |
+| 突击爆弹枪 | 18" | 3 | 3+ | 5 | -1 | 2 | [[core-rules/assault.md\|突击]]，[[core-rules/pistol.md\|手枪]]，[[core-rules/sustained-hits.md\|连击2]]，[[core-rules/twin-linked.md\|双联]] |
+| 等离子绝灭者（标准） | 18" | 2 | 3+ | 7 | -2 | 2 | [[core-rules/assault.md\|突击]]，[[core-rules/pistol.md\|手枪]]，[[core-rules/twin-linked.md\|双联]] |
+| 等离子绝灭者（过载）  | 18" | 2 | 3+ | 8 | -3 | 3 | [[core-rules/assault.md\|突击]]，[[core-rules/pistol.md\|手枪]]，[[core-rules/hazardous.md\|危险]]，[[core-rules/twin-linked.md\|双联]] |
 
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |

@@ -30,9 +30,9 @@ updated: '2026-07-23'
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
 | 焚灭炮 | 18" | 3D6 | N/A | 8 | -1 | 2 | [[core-rules/ignores-cover.md\|无视掩体]]，[[core-rules/torrent.md\|洪流]] |
-| 碎盾者导弹发射器 | 72" | 1 | 3+ | 12 | -6 | D6+1 | [[core-rules/anti.md\|反巨型 4+]]，[[core-rules/devastating-wounds.md\|毁灭伤害]] |
+| 碎盾者导弹发射器 | 72" | 1 | 3+ | 12 | -6 | D6+1 | [[core-rules/anti.md\|针对泰坦4+]]，[[core-rules/devastating-wounds.md\|毁灭伤害]] |
 | 雷霆鱼叉 | 12" | D3 | 3+ | 24 | -6 | 10 | [[core-rules/blast.md\|爆炸]]，[[core-rules/devastating-wounds.md\|毁灭伤害]] |
-| 双联热熔枪 | 12" | 1 | 3+ | 9 | -4 | D6 | [[core-rules/melta.md\|热熔 2]]，[[core-rules/twin-linked.md\|双联]] |
+| 双联热熔枪 | 12" | 1 | 3+ | 9 | -4 | D6 | [[core-rules/melta.md\|热熔2]]，[[core-rules/twin-linked.md\|双联]] |
 | 双联破城炮 | 36" | D6 | 3+ | 6 | 0 | 1 | [[core-rules/blast.md\|爆炸]]，[[core-rules/twin-linked.md\|双联]] |
 
 ## 近战武器

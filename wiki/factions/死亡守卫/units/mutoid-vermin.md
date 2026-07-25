@@ -24,7 +24,7 @@ updated: '2026-07-23'
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| Diseased claws and fangs | 近战 | 2 | 4+ | 2 | 0 | 1 | [[core-rules/lethal-hits.md\|lethal hits]] |
+| Diseased claws and fangs | 近战 | 2 | 4+ | 2 | 0 | 1 | [[core-rules/lethal-hits.md\|致命一击]] |
 
 ## 技能
 - **Mischief Makers (Aura)**：While an enemy unit (excluding <span class="kwb">MONSTERS</span> and <span class="kwb">VEHICLES</span>) is within 6" of this unit, each time a model in that unit makes a melee attack, subtract 1 from the Hit roll.

@@ -27,13 +27,13 @@ updated: '2026-07-23'
 ## 射击武器
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| 手铳 | 12" | 1 | 5+ | 4 | 0 | 1 | [[core-rules/pistol.md\|pistol]] |
+| 手铳 | 12" | 1 | 5+ | 4 | 0 | 1 | [[core-rules/pistol.md\|手枪]] |
 
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| 动力爪 | 近战 | 4 | 3+ | 9 | -2 | 2 | [[core-rules/sustained-hits.md\|sustained hits 1]] |
-| 屁精大针头 | 近战 | 1 | 3+ | 2 | 0 | 1 | [[core-rules/anti.md\|anti-infantry 4+]]，[[core-rules/extra-attacks.md\|extra attacks]]，[[core-rules/precision.md\|precision]] |
+| 动力爪 | 近战 | 4 | 3+ | 9 | -2 | 2 | [[core-rules/sustained-hits.md\|连击1]] |
+| 屁精大针头 | 近战 | 1 | 3+ | 2 | 0 | 1 | [[core-rules/anti.md\|针对步兵4+]]，[[core-rules/extra-attacks.md\|额外攻击]]，[[core-rules/precision.md\|精准]] |
 
 ## 技能
 - **Mad Dok**：While this model is leading a unit, models in that unit have the Feel No Pain 5+ ability.

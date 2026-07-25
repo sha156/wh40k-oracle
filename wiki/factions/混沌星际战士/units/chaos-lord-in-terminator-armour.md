@@ -29,16 +29,16 @@ updated: '2026-07-23'
 ## 射击武器
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| 并联爆弹枪  | 24" | 2 | 2+ | 4 | 0 | 1 | [[core-rules/rapid-fire.md\|速射 2]] |
-| 复合武器  | 24" | 1 | 3+ | 4 | 0 | 1 | [[core-rules/anti.md\|反步兵 4+]]，[[core-rules/devastating-wounds.md\|毁灭伤害]]，[[core-rules/rapid-fire.md\|速射 1]] |
+| 并联爆弹枪  | 24" | 2 | 2+ | 4 | 0 | 1 | [[core-rules/rapid-fire.md\|速射2]] |
+| 复合武器  | 24" | 1 | 3+ | 4 | 0 | 1 | [[core-rules/anti.md\|针对步兵4+]]，[[core-rules/devastating-wounds.md\|毁灭伤害]]，[[core-rules/rapid-fire.md\|速射1]] |
 
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| 链锯拳 | 近战 | 5 | 3+ | 8 | -2 | 2 | [[core-rules/anti.md\|反载具 3+]] |
+| 链锯拳 | 近战 | 5 | 3+ | 8 | -2 | 2 | [[core-rules/anti.md\|针对载具3+]] |
 | 神尊武器  | 近战 | 6 | 2+ | 5 | -2 | 2 | — |
 | 一对诅咒武器 | 近战 | 7 | 2+ | 5 | -2 | 1 | [[core-rules/twin-linked.md\|双联]] |
-| 链锯拳 | 近战 | 5 | 2+ | 8 | -2 | 2 | [[core-rules/anti.md\|反载具 3+]] |
+| 链锯拳 | 近战 | 5 | 2+ | 8 | -2 | 2 | — |
 
 ## 技能
 - **【阵营技能】：黑暗契约**

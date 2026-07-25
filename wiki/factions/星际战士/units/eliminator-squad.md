@@ -27,7 +27,7 @@ updated: '2026-07-23'
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
 | 爆弹手枪 | 12" | 1 | 3+ | 4 | 0 | 1 | [[core-rules/pistol.md\|手枪]] |
-| 爆弹狙击步枪 | 36" | 1 | 3+ | 5 | -2 | 3 | [[core-rules/heavy.md\|heavy]]，[[core-rules/precision.md\|precision]] |
+| 爆弹狙击步枪 | 36" | 1 | 3+ | 5 | -2 | 3 | [[core-rules/heavy.md\|重型]]，[[core-rules/precision.md\|精准]] |
 | 煽动者爆弹卡宾枪 | 24" | 1 | 3+ | 4 | -2 | 2 | [[core-rules/precision.md\|精准]] |
 | 激光燧发炮      | 36" | 1 | 3+ | 9 | -3 | D6 | [[core-rules/heavy.md\|重型]] |
 

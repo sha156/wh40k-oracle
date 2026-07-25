@@ -34,7 +34,7 @@ updated: '2026-07-23'
 | 重型亚空间火焰喷射器 | 12" | D6 | N/A | 5 | -2 | 1 | [[core-rules/ignores-cover.md\|无视掩体]]，[[core-rules/torrent.md\|洪流]] |
 | 地狱火导弹架 | 36" | 2 | 3+ | 10 | -2 | 3 | — |
 | 地狱火复合爆矢枪 | 24" | 2 | 3+ | 4 | -2 | 1 | [[core-rules/rapid-fire.md\|速射2]] |
-| 凶煞诅咒 | 24" | 3 | 3+ | 4 | -3 | 1 | [[core-rules/anti.md\|针对步兵 4+]]，[[core-rules/psychic-attacks.md\|灵能]]，[[core-rules/devastating-wounds.md\|毁灭伤害]] |
+| 凶煞诅咒 | 24" | 3 | 3+ | 4 | -3 | 1 | [[core-rules/anti.md\|针对步兵4+]]，[[core-rules/devastating-wounds.md\|毁灭伤害]]，[[core-rules/psychic-attacks.md\|灵能]] |
 | 灵魂收割者炮 | 24" | 6 | 3+ | 6 | -2 | 1 | [[core-rules/devastating-wounds.md\|毁灭伤害]] |
 
 ## 近战武器

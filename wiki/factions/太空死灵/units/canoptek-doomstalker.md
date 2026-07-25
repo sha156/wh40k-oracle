@@ -29,8 +29,8 @@ updated: '2026-07-23'
 ## 射击武器
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| 末日爆裂炮 | 48" | D6+1 | 4+ | 14 | -3 | 3 | [[core-rules/blast.md\|blast]]，[[core-rules/heavy.md\|heavy]] |
-| 双联高斯撕裂枪   | 24" | 1 | 4+ | 4 | 0 | 1 | [[core-rules/lethal-hits.md\|致命一击]]，[[core-rules/twin-linked.md\|双联]]，[[core-rules/rapid-fire.md\|速射 1]] |
+| 末日爆裂炮 | 48" | D6+1 | 4+ | 14 | -3 | 3 | [[core-rules/blast.md\|爆炸]]，[[core-rules/heavy.md\|重型]] |
+| 双联高斯撕裂枪   | 24" | 1 | 4+ | 4 | 0 | 1 | [[core-rules/lethal-hits.md\|致命一击]]，[[core-rules/rapid-fire.md\|速射1]]，[[core-rules/twin-linked.md\|双联]] |
 
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |

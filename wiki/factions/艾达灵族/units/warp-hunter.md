@@ -24,10 +24,10 @@ updated: '2026-07-23'
 ## 射击武器
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| D-flail – blast | 24" | D3 | 3+ | 12 | -4 | 3 | [[core-rules/blast.md\|blast]]，[[core-rules/devastating-wounds.md\|devastating wounds]] |
-| D-flail – rift | 12" | D3 | N/A | 12 | -4 | 3 | [[core-rules/devastating-wounds.md\|devastating wounds]]，[[core-rules/torrent.md\|torrent]] |
-| 星镖炮 | 24" | 3 | 3+ | 6 | -1 | 2 | [[core-rules/sustained-hits.md\|sustained hits 1]] |
-| 双联星镖枪 | 18" | 2 | 3+ | 4 | -3 | 1 | [[core-rules/assault.md\|assault]]，[[core-rules/twin-linked.md\|twin-linked]] |
+| D-flail – blast | 24" | D3 | 3+ | 12 | -4 | 3 | [[core-rules/blast.md\|爆炸]]，[[core-rules/devastating-wounds.md\|毁灭伤害]] |
+| D-flail – rift | 12" | D3 | N/A | 12 | -4 | 3 | [[core-rules/devastating-wounds.md\|毁灭伤害]]，[[core-rules/torrent.md\|洪流]] |
+| 星镖炮 | 24" | 3 | 3+ | 6 | -1 | 2 | [[core-rules/sustained-hits.md\|连击1]] |
+| 双联星镖枪 | 18" | 2 | 3+ | 4 | -3 | 1 | [[core-rules/assault.md\|突击]]，[[core-rules/twin-linked.md\|双联]] |
 
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |

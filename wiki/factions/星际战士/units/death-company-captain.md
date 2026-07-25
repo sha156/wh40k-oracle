@@ -29,8 +29,8 @@ updated: '2026-07-23'
 ## 射击武器
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| 重型爆弹手枪 | 18" | 1 | 2+ | 4 | -1 | 1 | [[core-rules/pistol.md\|Pistol]] |
-| 狱火手枪 | 6" | 1 | 2+ | 8 | -4 | D3 | [[core-rules/melta.md\|melta 2]]，[[core-rules/pistol.md\|pistol]] |
+| 重型爆弹手枪 | 18" | 1 | 2+ | 4 | -1 | 1 | [[core-rules/pistol.md\|手枪]] |
+| 狱火手枪 | 6" | 1 | 2+ | 8 | -4 | D3 | [[core-rules/melta.md\|热熔2]]，[[core-rules/pistol.md\|手枪]] |
 
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |
@@ -50,4 +50,4 @@ updated: '2026-07-23'
 
 ## 关键词
 - **阵营关键词**：Adeptus Astartes，Blood Angels
-- **普通关键词**：[[core-rules/infantry.md|Infantry]]，[[core-rules/character.md|Character]]，[[core-rules/grenades.md|Grenades]]，Imperium，Death Company，Tacticus，[[factions/星际战士/units/captain.md|Captain]]
+- **普通关键词**：[[core-rules/infantry.md|Infantry]]，[[core-rules/character.md|Character]]，[[core-rules/grenades.md|Grenades]]，Imperium，Death Company，Tacticus，Captain

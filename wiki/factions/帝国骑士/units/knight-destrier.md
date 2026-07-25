@@ -30,7 +30,7 @@ updated: '2026-07-23'
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
 | 惩戒者加特林炮 | 24" | 12 | 3+ | 6 | -1 | 2 | [[core-rules/assault.md\|突击]] |
-| 破片轰击炮 | 24" | D6+3 | 3+ | 7 | -1 | 2 | [[core-rules/blast.md\|爆炸]]，[[core-rules/assault.md\|突击]]，[[core-rules/rapid-fire.md\|速射D6+3]] |
+| 破片轰击炮 | 24" | D6+3 | 3+ | 7 | -1 | 2 | [[core-rules/assault.md\|突击]]，[[core-rules/blast.md\|爆炸]]，[[core-rules/rapid-fire.md\|速射D6+3]] |
 | 封臣重机枪 | 36" | 6 | 3+ | 4 | -1 | 1 | [[core-rules/assault.md\|突击]]，[[core-rules/rapid-fire.md\|速射3]] |
 
 ## 近战武器

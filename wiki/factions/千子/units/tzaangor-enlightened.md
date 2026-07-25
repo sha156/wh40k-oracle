@@ -35,7 +35,7 @@ updated: '2026-07-23'
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| 链锯剑 | 近战 | 6 | 4+ | 4 | 0 | 1 | [[core-rules/precision.md\|precision]] |
+| 链锯剑 | 近战 | 6 | 4+ | 4 | 0 | 1 | [[core-rules/precision.md\|精准]] |
 | 窥测之矛 | 近战 | 3 | 4+ | 5 | -1 | 2 | [[core-rules/lance.md\|骑枪]]，[[core-rules/precision.md\|精准]] |
 
 ## 技能

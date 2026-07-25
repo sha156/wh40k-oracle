@@ -24,10 +24,10 @@ updated: '2026-07-23'
 ## 射击武器
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| 突击炮 | 24" | 6 | 4+ | 6 | 0 | 1 | [[core-rules/devastating-wounds.md\|devastating wounds]] |
-| 重型爆弹枪 | 36" | 3 | 4+ | 5 | -1 | 2 | [[core-rules/sustained-hits.md\|sustained hits 1]] |
-| Hellstrike missile rack | 48" | 2 | 4+ | 10 | -3 | D6 | [[core-rules/anti.md\|anti-fly 2+]] |
-| Marauder nose autocannons | 48" | 4 | 4+ | 10 | -2 | 3 | [[core-rules/twin-linked.md\|twin-linked]] |
+| 突击炮 | 24" | 6 | 4+ | 6 | 0 | 1 | [[core-rules/devastating-wounds.md\|毁灭伤害]] |
+| 重型爆弹枪 | 36" | 3 | 4+ | 5 | -1 | 2 | [[core-rules/sustained-hits.md\|连击1]] |
+| Hellstrike missile rack | 48" | 2 | 4+ | 10 | -3 | D6 | [[core-rules/anti.md\|针对飞行2+]] |
+| Marauder nose autocannons | 48" | 4 | 4+ | 10 | -2 | 3 | [[core-rules/twin-linked.md\|双联]] |
 
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |

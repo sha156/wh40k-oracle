@@ -10,8 +10,9 @@
 const API_BASE =
   process.env.NEXT_PUBLIC_API_BASE?.replace(/\/$/, "") ?? "http://localhost:8000";
 
-/** universal=11 版速查表在册；legacy=十版遗留；unit-specific=某单位专属 */
-export type KeywordGroup = "universal" | "legacy" | "unit-specific";
+/** universal=官方核心规则在册；transitional=在册但正被取代（手枪→近距离）；
+ *  unit-specific=某单位专属 */
+export type KeywordGroup = "universal" | "transitional" | "unit-specific";
 
 export interface KeywordSummary {
   /** "rapid-fire" / "anti-infantry" / "c-tan-power" */

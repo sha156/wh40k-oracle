@@ -26,12 +26,12 @@ updated: '2026-07-23'
 ## 射击武器
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| 瘟疫爆弹枪 | 24" | 2 | 3+ | 4 | 0 | 1 | [[core-rules/lethal-hits.md\|lethal hits]] |
+| 瘟疫爆弹枪 | 24" | 2 | 3+ | 4 | 0 | 1 | [[core-rules/lethal-hits.md\|致命一击]] |
 
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| 瘟疫匕首 | 近战 | 4 | 3+ | 4 | 0 | 1 | [[core-rules/lethal-hits.md\|lethal hits]] |
+| 瘟疫匕首 | 近战 | 4 | 3+ | 4 | 0 | 1 | [[core-rules/lethal-hits.md\|致命一击]] |
 
 ## 技能
 - **Unclean Icon**：While this model is leading a unit, add 1 to the Objective Control characteristic of models in that unit.

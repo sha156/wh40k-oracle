@@ -38,7 +38,7 @@ updated: '2026-07-23'
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
 | 歌矛 | 近战 | 2 | 2+ | 3 | 0 | 3 | [[core-rules/psychic-attacks.md\|灵能]] |
-| 巫术之刃 | 近战 | 2 | 2+ | 3 | 0 | 2 | [[core-rules/anti.md\|反步兵 2+]]，[[core-rules/psychic-attacks.md\|灵能]] |
+| 巫术之刃 | 近战 | 2 | 2+ | 3 | 0 | 2 | [[core-rules/anti.md\|针对步兵2+]]，[[core-rules/psychic-attacks.md\|灵能]] |
 
 ## 技能
 - **分歧命运（灵能）**：当本模型领导一个单位时，每个阶段一次，你可以将该单位中的一个模型（支援武器除外）的一个命中骰结果、一个造伤骰结果或一个伤害骰结果改为未修正的 6
@@ -50,4 +50,4 @@ updated: '2026-07-23'
 
 ## 关键词
 - **阵营关键词**：Asuryani
-- **普通关键词**：[[core-rules/mounted.md|Mounted]]，[[core-rules/character.md|Character]]，[[factions/艾达灵族/units/farseer.md|Farseer]] Skyrunner，Aeldari，Fly，[[core-rules/psyker.md|Psyker]]，[[factions/艾达灵族/units/farseer.md|Farseer]]
+- **普通关键词**：[[core-rules/mounted.md|Mounted]]，[[core-rules/character.md|Character]]，[[factions/艾达灵族/units/farseer.md|Farseer]] Skyrunner，Aeldari，Fly，[[core-rules/psyker.md|Psyker]]，Farseer

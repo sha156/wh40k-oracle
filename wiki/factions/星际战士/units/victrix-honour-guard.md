@@ -31,7 +31,7 @@ updated: '2026-07-23'
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| 荣誉之刃 | 近战 | 6 | 2+ | 5 | -2 | 2 | [[core-rules/twin-linked.md\|双联]]，[[core-rules/precision.md\|精准]] |
+| 荣誉之刃 | 近战 | 6 | 2+ | 5 | -2 | 2 | [[core-rules/precision.md\|精准]]，[[core-rules/twin-linked.md\|双联]] |
 | 大师级动力武器 | 近战 | 5 | 2+ | 5 | -2 | 2 | — |
 
 ## 技能

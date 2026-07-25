@@ -25,8 +25,8 @@ updated: '2026-07-23'
 ## 射击武器
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| Remora seeker missile | 48" | 1 | 4+ | 14 | -3 | D6+1 | [[core-rules/one-shot.md\|one shot]] |
-| Twin long-barrelled burst cannon | 24" | 4 | 4+ | 6 | -1 | 1 | [[core-rules/twin-linked.md\|twin-linked]] |
+| Remora seeker missile | 48" | 1 | 4+ | 14 | -3 | D6+1 | [[core-rules/one-shot.md\|单发]] |
+| Twin long-barrelled burst cannon | 24" | 4 | 4+ | 6 | -1 | 1 | [[core-rules/twin-linked.md\|双联]] |
 
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |

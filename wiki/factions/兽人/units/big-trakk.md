@@ -27,10 +27,10 @@ updated: '2026-07-23'
 ## 射击武器
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| 大突突枪 | 36" | 3 | 5+ | 5 | 0 | 1 | [[core-rules/rapid-fire.md\|rapid fire 2]] |
-| 加农炮（破片弹-与穿甲弹二选一） | 36" | D6 | 5+ | 5 | 0 | 1 | [[core-rules/blast.md\|blast]] |
+| 大突突枪 | 36" | 3 | 5+ | 5 | 0 | 1 | [[core-rules/rapid-fire.md\|速射2]] |
+| 加农炮（破片弹-与穿甲弹二选一） | 36" | D6 | 5+ | 5 | 0 | 1 | [[core-rules/blast.md\|爆炸]] |
 | 加农炮（穿甲弹-与破片弹二选一） | 36" | 1 | 5+ | 9 | -2 | D6 | — |
-| Supa-kannon – frag | 36" | D6+3 | 5+ | 5 | 0 | 1 | [[core-rules/blast.md\|blast]] |
+| Supa-kannon – frag | 36" | D6+3 | 5+ | 5 | 0 | 1 | [[core-rules/blast.md\|爆炸]] |
 | Supa-kannon – shell | 36" | 1 | 5+ | 9 | -2 | D3+3 | — |
 
 ## 近战武器

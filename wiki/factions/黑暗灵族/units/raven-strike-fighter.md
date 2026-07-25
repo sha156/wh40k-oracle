@@ -28,7 +28,7 @@ updated: '2026-07-23'
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
 | 暗黑光矛 | 36" | 1 | 3+ | 12 | -3 | D6+2 | — |
-| Splinterstorm cannon | 36" | 8 | 3+ | 3 | -1 | 2 | [[core-rules/anti.md\|anti-infantry 3+]]，[[core-rules/sustained-hits.md\|sustained hits 2]] |
+| Splinterstorm cannon | 36" | 8 | 3+ | 3 | -1 | 2 | [[core-rules/anti.md\|针对步兵3+]]，[[core-rules/sustained-hits.md\|连击2]] |
 
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |

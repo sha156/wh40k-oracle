@@ -30,7 +30,7 @@ updated: '2026-07-23'
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
 | 灼热赞歌（聚焦光束） | 12" | 3 | 2+ | 8 | -3 | 2 | [[core-rules/assault.md\|突击]]，[[core-rules/melta.md\|热熔1]]，[[core-rules/sustained-hits.md\|连击2]] |
-| 灼热赞歌（热熔矛） | 18" | 1 | 2+ | 14 | -4 | D6 | [[core-rules/assault.md\|突击]]，[[core-rules/melta.md\|热熔 6]] |
+| 灼热赞歌（热熔矛） | 18" | 1 | 2+ | 14 | -4 | D6 | [[core-rules/assault.md\|突击]]，[[core-rules/melta.md\|热熔6]] |
 
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |

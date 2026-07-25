@@ -29,7 +29,7 @@ updated: '2026-07-23'
 ## 射击武器
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| 岩浆切割机 | 6" | 2 | 4+ | 9 | -4 | D6 | [[core-rules/melta.md\|melta 2]]，[[core-rules/rapid-fire.md\|rapid fire 1]] |
+| 岩浆切割机 | 6" | 2 | 4+ | 9 | -4 | D6 | [[core-rules/melta.md\|热熔2]]，[[core-rules/rapid-fire.md\|速射1]] |
 
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |

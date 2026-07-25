@@ -29,7 +29,7 @@ updated: '2026-07-23'
 ## 射击武器
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| 冲击骑枪 | 12" | 6 | 3+ | 6 | 0 | 2 | [[core-rules/assault.md\|突击]]，[[core-rules/sustained-hits.md\|连击 2]] |
+| 冲击骑枪 | 12" | 6 | 3+ | 6 | 0 | 2 | [[core-rules/assault.md\|突击]]，[[core-rules/sustained-hits.md\|连击2]] |
 
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |

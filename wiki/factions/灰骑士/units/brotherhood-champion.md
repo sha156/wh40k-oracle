@@ -29,12 +29,12 @@ updated: '2026-07-23'
 ## 射击武器
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| ⻛暴爆矢枪 | 24" | 2 | 2+ | 4 | 0 | 1 | [[core-rules/rapid-fire.md\|速射 2]] |
+| ⻛暴爆矢枪 | 24" | 2 | 2+ | 4 | 0 | 1 | [[core-rules/rapid-fire.md\|速射2]] |
 
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| 天罚灵能武器 | 近战 | 5 | 2+ | 6 | -2 | 2 | [[core-rules/psychic-attacks.md\|灵能]]，[[core-rules/precision.md\|精准]] |
+| 天罚灵能武器 | 近战 | 5 | 2+ | 6 | -2 | 2 | [[core-rules/precision.md\|精准]]，[[core-rules/psychic-attacks.md\|灵能]] |
 
 ## 技能
 - **【阵营技能】无限之门**

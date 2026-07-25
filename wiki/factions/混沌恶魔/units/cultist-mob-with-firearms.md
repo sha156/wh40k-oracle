@@ -26,12 +26,12 @@ updated: '2026-07-23'
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
 | 榴弹发射器（穿甲） | 24" | 1 | 4+ | 9 | -2 | D3 | — |
-| 榴弹发射器（破片） | 24" | D3 | 4+ | 4 | 0 | 1 | [[core-rules/blast.md\|blast]] |
-| Heavy stubber | 36" | 4 | 5+ | 4 | 0 | 1 | [[core-rules/heavy.md\|heavy]]，[[core-rules/rapid-fire.md\|rapid fire 3]] |
-| 自动手枪 | 12" | 1 | 4+ | 3 | 0 | 1 | [[core-rules/pistol.md\|pistol]] |
-| 爆弹手枪 | 12" | 1 | 4+ | 4 | 0 | 1 | [[core-rules/pistol.md\|pistol]] |
-| 喷火器 | 12" | D6 | N/A | 4 | 0 | 1 | [[core-rules/ignores-cover.md\|ignores cover]]，[[core-rules/torrent.md\|torrent]] |
-| 自动枪 | 24" | 1 | 4+ | 3 | 0 | 1 | [[core-rules/rapid-fire.md\|rapid fire 1]] |
+| 榴弹发射器（破片） | 24" | D3 | 4+ | 4 | 0 | 1 | [[core-rules/blast.md\|爆炸]] |
+| Heavy stubber | 36" | 4 | 5+ | 4 | 0 | 1 | [[core-rules/heavy.md\|重型]]，[[core-rules/rapid-fire.md\|速射3]] |
+| 自动手枪 | 12" | 1 | 4+ | 3 | 0 | 1 | [[core-rules/pistol.md\|手枪]] |
+| 爆弹手枪 | 12" | 1 | 4+ | 4 | 0 | 1 | [[core-rules/pistol.md\|手枪]] |
+| 喷火器 | 12" | D6 | N/A | 4 | 0 | 1 | [[core-rules/ignores-cover.md\|无视掩体]]，[[core-rules/torrent.md\|洪流]] |
+| 自动枪 | 24" | 1 | 4+ | 3 | 0 | 1 | [[core-rules/rapid-fire.md\|速射1]] |
 
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |
@@ -48,4 +48,4 @@ updated: '2026-07-23'
 
 ## 关键词
 - **阵营关键词**：Heretic Astartes，Legiones Daemonica
-- **普通关键词**：Undivided，[[factions/混沌恶魔/units/cultist-mob.md|Cultist Mob]] with Firearms，Damned，Chaos，[[core-rules/grenades.md|Grenades]]，[[core-rules/battleline.md|Battleline]]，[[core-rules/infantry.md|Infantry]]，[[factions/混沌恶魔/detachments/shadow-legion.md|Shadow Legion]]，Undivided，Cultist Mob with Firearms，Damned，Chaos，[[core-rules/grenades.md|Grenades]]，[[core-rules/battleline.md|Battleline]]，[[core-rules/infantry.md|Infantry]]，Damned，Shadow Legion，Undivided，Cultist Mob with Firearms，Chaos，[[core-rules/grenades.md|Grenades]]，[[core-rules/battleline.md|Battleline]]，[[core-rules/infantry.md|Infantry]]，Shadow Legion，Undivided，Cultist Mob with Firearms，Damned，Chaos，[[core-rules/grenades.md|Grenades]]，[[core-rules/battleline.md|Battleline]]，[[core-rules/infantry.md|Infantry]]，Shadow Legion，Undivided，Cultist Mob with Firearms，Damned，Chaos，[[core-rules/grenades.md|Grenades]]，[[core-rules/battleline.md|Battleline]]，[[core-rules/infantry.md|Infantry]]，Shadow Legion，Undivided，Cultist Mob with Firearms，Damned，Chaos，[[core-rules/grenades.md|Grenades]]，[[core-rules/battleline.md|Battleline]]，[[core-rules/infantry.md|Infantry]]，Shadow Legion
+- **普通关键词**：Undivided，Cultist Mob with Firearms，Damned，Chaos，[[core-rules/grenades.md|Grenades]]，[[core-rules/battleline.md|Battleline]]，[[core-rules/infantry.md|Infantry]]，[[factions/混沌恶魔/detachments/shadow-legion.md|Shadow Legion]]，Undivided，Cultist Mob with Firearms，Damned，Chaos，[[core-rules/grenades.md|Grenades]]，[[core-rules/battleline.md|Battleline]]，[[core-rules/infantry.md|Infantry]]，Damned，Shadow Legion，Undivided，Cultist Mob with Firearms，Chaos，[[core-rules/grenades.md|Grenades]]，[[core-rules/battleline.md|Battleline]]，[[core-rules/infantry.md|Infantry]]，Shadow Legion，Undivided，Cultist Mob with Firearms，Damned，Chaos，[[core-rules/grenades.md|Grenades]]，[[core-rules/battleline.md|Battleline]]，[[core-rules/infantry.md|Infantry]]，Shadow Legion，Undivided，Cultist Mob with Firearms，Damned，Chaos，[[core-rules/grenades.md|Grenades]]，[[core-rules/battleline.md|Battleline]]，[[core-rules/infantry.md|Infantry]]，Shadow Legion，Undivided，Cultist Mob with Firearms，Damned，Chaos，[[core-rules/grenades.md|Grenades]]，[[core-rules/battleline.md|Battleline]]，[[core-rules/infantry.md|Infantry]]，Shadow Legion

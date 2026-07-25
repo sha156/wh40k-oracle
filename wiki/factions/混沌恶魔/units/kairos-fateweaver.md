@@ -30,7 +30,7 @@ updated: '2026-07-23'
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
 | 火狱之门-巫火 | 24" | D6+3 | 2+ | 9 | -2 | D3 | [[core-rules/blast.md\|爆炸]]，[[core-rules/indirect-fire.md\|曲射]]，[[core-rules/psychic-attacks.md\|灵能]] |
-| 火狱之门-专注巫火 | 24" | D3+6 | 2+ | 9 | -2 | 3 | [[core-rules/blast.md\|爆炸]]，[[core-rules/indirect-fire.md\|曲射]]，[[core-rules/psychic-attacks.md\|灵能]]，[[core-rules/hazardous.md\|危险]] |
+| 火狱之门-专注巫火 | 24" | D3+6 | 2+ | 9 | -2 | 3 | [[core-rules/blast.md\|爆炸]]，[[core-rules/indirect-fire.md\|曲射]]，[[core-rules/hazardous.md\|危险]]，[[core-rules/psychic-attacks.md\|灵能]] |
 
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |

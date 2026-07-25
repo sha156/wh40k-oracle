@@ -35,9 +35,9 @@ updated: '2026-07-23'
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| 霸主之刃 | 近战 | 4 | 2+ | 8 | -3 | 2 | [[core-rules/devastating-wounds.md\|devastating wounds]] |
+| 霸主之刃 | 近战 | 4 | 2+ | 8 | -3 | 2 | [[core-rules/devastating-wounds.md\|毁灭伤害]] |
 | 光之杖 | 近战 | 4 | 2+ | 5 | -2 | 1 | — |
-| 虚空镰 | 近战 | 3 | 3+ | 12 | -3 | 3 | [[core-rules/devastating-wounds.md\|devastating wounds]] |
+| 虚空镰 | 近战 | 3 | 3+ | 12 | -3 | 3 | [[core-rules/devastating-wounds.md\|毁灭伤害]] |
 
 ## 技能
 - **[阵营]：重生协议**

@@ -27,7 +27,7 @@ updated: '2026-07-23'
 ## 射击武器
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| 爆弹卡宾枪 | 24" | 2 | 3+ | 4 | 0 | 1 | [[core-rules/precision.md\|precision]] |
+| 爆弹卡宾枪 | 24" | 2 | 3+ | 4 | 0 | 1 | [[core-rules/precision.md\|精准]] |
 | 特殊弹药爆弹手枪 | 12" | 1 | 3+ | 4 | -1 | 1 | [[core-rules/pistol.md\|手枪]]，[[core-rules/precision.md\|精准]] |
 
 ## 近战武器

@@ -31,7 +31,7 @@ updated: '2026-07-23'
 ## 射击武器
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| 致死手枪 | 12" | 3 | 2+ | 6 | -2 | 3 | [[core-rules/precision.md\|精准]]，[[core-rules/ignores-cover.md\|无视掩体]]，[[core-rules/pistol.md\|手枪]]，[[core-rules/devastating-wounds.md\|毁灭伤害]] |
+| 致死手枪 | 12" | 3 | 2+ | 6 | -2 | 3 | [[core-rules/devastating-wounds.md\|毁灭伤害]]，[[core-rules/ignores-cover.md\|无视掩体]]，[[core-rules/pistol.md\|手枪]]，[[core-rules/precision.md\|精准]] |
 | 致死步枪 | 48" | 1 | 2+ | 8 | -3 | D3+3 | [[core-rules/devastating-wounds.md\|毁灭伤害]]，[[core-rules/heavy.md\|重型]]，[[core-rules/ignores-cover.md\|无视掩体]]，[[core-rules/precision.md\|精准]] |
 
 ## 近战武器

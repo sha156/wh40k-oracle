@@ -1,21 +1,24 @@
 ---
 id: stealth
-name_zh: 隐蔽
+name_zh: 隐匿
 name_en: Stealth
 aliases:
-- 隐匿
 - 潜行
+- 隐蔽
 type: core-rule
 sources:
 - book: Core Rules - New 40K Core Rules
   pages:
   - 85
-updated: '2026-07-11'
+- book: 官方中文核心规则（GW 简体中文下载版）
+  pages:
+  - '24.33'
+updated: '2026-07-26'
 ---
 
-隐蔽让单位在远程火力下如同贴地披上掩体，11 版起机制彻底改变。
+隐匿让单位在远程火力下如同贴地披上掩体，11 版起机制彻底改变。
 
-## 隐蔽 STEALTH
+## 隐匿 STEALTH
 
 如果你的某个单位全体模型都拥有此技能，则每次远程攻击以本单位为目标时，本单位对该次攻击享受**掩体收益**（benefit of cover，13.08）。
 

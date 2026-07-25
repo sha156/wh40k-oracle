@@ -30,13 +30,13 @@ updated: '2026-07-23'
 |---|---|---|---|---|---|---|---|
 | 活体长鞭 | 12" | 6 | 2+ | 6 | -1 | 2 | [[core-rules/assault.md\|突击]] |
 | 失心幻境-巫火 | 18" | 6 | 2+ | 6 | -2 | 1 | [[core-rules/devastating-wounds.md\|毁灭伤害]]，[[core-rules/psychic-attacks.md\|灵能]] |
-| 失心幻境-专注巫火 | 18" | 9 | 2+ | 6 | -2 | 1 | [[core-rules/devastating-wounds.md\|毁灭伤害]]，[[core-rules/psychic-attacks.md\|灵能]]，[[core-rules/hazardous.md\|危险]] |
+| 失心幻境-专注巫火 | 18" | 9 | 2+ | 6 | -2 | 1 | [[core-rules/devastating-wounds.md\|毁灭伤害]]，[[core-rules/hazardous.md\|危险]]，[[core-rules/psychic-attacks.md\|灵能]] |
 
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
 | 仪式匕首 | 近战 | 3 | 2+ | 6 | -2 | 2 | [[core-rules/extra-attacks.md\|额外攻击]] |
-| 魔爪钳击 | 近战 | 4 | 2+ | 6 | -2 | 3 | [[core-rules/extra-attacks.md\|额外攻击]]，[[core-rules/devastating-wounds.md\|毁灭伤害]] |
+| 魔爪钳击 | 近战 | 4 | 2+ | 6 | -2 | 3 | [[core-rules/devastating-wounds.md\|毁灭伤害]]，[[core-rules/extra-attacks.md\|额外攻击]] |
 | 丧心之剑 | 近战 | 6 | 2+ | 8 | -2 | 3 | — |
 
 ## 技能

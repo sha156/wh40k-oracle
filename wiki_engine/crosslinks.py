@@ -75,7 +75,20 @@ _CORE_TERM_EXACT_ALIASES: Dict[str, str] = {
     "CLOSE-QUARTERS": "pistol", "Close-Quarters": "pistol", "CLOSE QUARTERS": "pistol",
     "灵能": "psychic-attacks", "PSYCHIC": "psychic-attacks", "Psychic": "psychic-attacks",
     "灵能武器": "psychic-attacks",
-    "横扫": "cleave", "CLEAVE": "cleave", "Cleave": "cleave",
+    # 2026-07-26：改用 GW 官方中文（核心规则 24.06「[劈砍]」）。「横扫」是汉化组
+    # 速查表的写法，与官方不一致，降为别名保留检索。
+    "劈砍": "cleave", "横扫": "cleave", "CLEAVE": "cleave", "Cleave": "cleave",
+    # 官方 24.03「[针对]」；旧写法「反X / 针对性攻击」保留为别名
+    "针对": "anti", "针对性攻击": "anti", "ANTI": "anti",
+    # 官方 24.12/24.17/24.20/24.33 与库内旧译名的对照（旧名同样保留）
+    "不觉疼痛": "feel-no-pain", "悬停": "hover", "渗透者": "infiltrators",
+    "隐匿": "stealth",
+    # 2026-07-26 依官方核心规则补的 4 页（此前 wiki 无对应页）
+    "先攻": "fights-first", "先手": "fights-first", "FIGHTS FIRST": "fights-first",
+    "火力平台": "firing-deck", "开火口": "firing-deck", "FIRING DECK": "firing-deck",
+    "辅助": "support", "支援": "support", "SUPPORT": "support",
+    "超重型机甲": "super-heavy-walker", "超重型步行者": "super-heavy-walker",
+    "SUPER-HEAVY WALKER": "super-heavy-walker",
     "ASSAULT": "assault",
     "EXTRA ATTACKS": "extra-attacks",
     "LETHAL HITS": "lethal-hits",
@@ -180,11 +193,14 @@ _CORE_TERM_PREFIX_RULES: List[Tuple[Pattern, str]] = [
     # ② 11 版新增的带参形态：【爆炸 X】（24.05）与【横扫 X】（24.06）
     (re.compile(r"^爆炸\s*\d+$"), "blast"),
     (re.compile(r"^Blast\s*\d+$", re.IGNORECASE), "blast"),
-    (re.compile(r"^横扫\s*\d+$"), "cleave"),
+    (re.compile(r"^劈砍\s*\d+$"), "cleave"),          # 官方 24.06
+    (re.compile(r"^横扫\s*\d+$"), "cleave"),          # 汉化组旧写法，保留检索
     (re.compile(r"^Cleave\s*\d+$", re.IGNORECASE), "cleave"),
     # ③ 不带档位的 ANTI-X 基础形态。中文侧**枚举目标关键词**而不是 `^反.*$`——
     #    后者会把「反击」「反应」这类普通词也吞进 anti.md（误链比断链更难发现）
-    (re.compile(r"^反(步兵|载具|怪物|飞行|灵能者|角色|泰坦|恶魔|混沌|步行者"
+    # 官方写法「针对X」与旧写法「反X」都要认（目标关键词枚举，不用 `^反.*$`——
+    # 那会把「反击」「反应」也吞进 anti.md，误链比断链更难发现）
+    (re.compile(r"^(反|针对)(步兵|载具|怪物|飞行|灵能者|角色|泰坦|恶魔|混沌|步行者"
                 r"|史诗英雄|异形|帝国|手雷|骑乘|虫群|泰伦虫族)$"), "anti"),
     (re.compile(r"^ANTI-[A-Z][A-Z' ]*$", re.IGNORECASE), "anti"),
 ]

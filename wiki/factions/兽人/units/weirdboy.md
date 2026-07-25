@@ -26,7 +26,7 @@ updated: '2026-07-23'
 ## 射击武器
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| 大脑爆裂 | 24" | 1 | 4+ | 6 | -3 | 1 | [[core-rules/psychic-attacks.md\|灵能]]，[[core-rules/precision.md\|精准]] |
+| 大脑爆裂 | 24" | 1 | 4+ | 6 | -3 | 1 | [[core-rules/precision.md\|精准]]，[[core-rules/psychic-attacks.md\|灵能]] |
 
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |

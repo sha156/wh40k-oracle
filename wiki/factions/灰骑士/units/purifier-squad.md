@@ -27,11 +27,11 @@ updated: '2026-07-23'
 ## 射击武器
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| 焚化炮 | 12" | D6 | N/A | 6 | -1 | 1 | ⽆视掩体，[[core-rules/torrent.md\|洪流]] |
-| 消灵炮 | 24" | 6 | 3+ | 5 | 0 | 1 | [[core-rules/psychic-attacks.md\|灵能]]，[[core-rules/sustained-hits.md\|连击 1]]，[[core-rules/precision.md\|精准]] |
+| 焚化炮 | 12" | D6 | N/A | 6 | -1 | 1 | [[core-rules/ignores-cover.md\|无视掩体]]，[[core-rules/torrent.md\|洪流]] |
+| 消灵炮 | 24" | 6 | 3+ | 5 | 0 | 1 | [[core-rules/precision.md\|精准]]，[[core-rules/psychic-attacks.md\|灵能]]，[[core-rules/sustained-hits.md\|连击1]] |
 | 灵能炮 | 24" | 3 | 3+ | 8 | -1 | 2 | [[core-rules/psychic-attacks.md\|灵能]] |
-| 净化烈焰 | 18" | 1 | 3+ | 4 | -2 | 1 | [[core-rules/anti.md\|反步兵2+]]，⽆视掩体，[[core-rules/psychic-attacks.md\|灵能]] |
-| ⻛暴爆矢枪 | 24" | 2 | 3+ | 4 | 0 | 1 | [[core-rules/rapid-fire.md\|速射 2]] |
+| 净化烈焰 | 18" | 1 | 3+ | 4 | -2 | 1 | [[core-rules/anti.md\|针对步兵2+]]，[[core-rules/ignores-cover.md\|无视掩体]]，[[core-rules/psychic-attacks.md\|灵能]] |
+| ⻛暴爆矢枪 | 24" | 2 | 3+ | 4 | 0 | 1 | [[core-rules/rapid-fire.md\|速射2]] |
 
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |

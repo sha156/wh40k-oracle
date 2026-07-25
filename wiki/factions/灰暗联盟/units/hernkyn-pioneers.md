@@ -29,8 +29,8 @@ updated: '2026-07-23'
 |---|---|---|---|---|---|---|---|
 | 爆矢左轮手枪 | 12" | 1 | 4+ | 5 | 0 | 1 | [[core-rules/pistol.md\|手枪]] |
 | 爆矢霰弹枪 | 18" | 2 | 4+ | 5 | 0 | 1 | [[core-rules/assault.md\|突击]] |
-| 高能激光转轮炮 | 24" | 6 | 4+ | 6 | -1 | 1 | [[core-rules/sustained-hits.md\|sustained hits 1]] |
-| 离子光束炮 | 18" | D3+1 | 4+ | 8 | -2 | 1 | [[core-rules/blast.md\|blast]] |
+| 高能激光转轮炮 | 24" | 6 | 4+ | 6 | -1 | 1 | [[core-rules/sustained-hits.md\|连击1]] |
+| 离子光束炮 | 18" | D3+1 | 4+ | 8 | -2 | 1 | [[core-rules/blast.md\|爆炸]] |
 | 电磁线圈自动炮 | 24" | 3 | 4+ | 7 | -1 | 2 | — |
 
 ## 近战武器

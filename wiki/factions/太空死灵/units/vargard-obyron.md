@@ -25,7 +25,7 @@ updated: '2026-07-23'
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| 战镰 | 近战 | 4 | 2+ | 8 | -3 | 2 | [[core-rules/devastating-wounds.md\|devastating wounds]]，[[core-rules/precision.md\|precision]] |
+| 战镰 | 近战 | 4 | 2+ | 8 | -3 | 2 | [[core-rules/devastating-wounds.md\|毁灭伤害]]，[[core-rules/precision.md\|精准]] |
 
 ## 技能
 - **[阵营]：重生协议**

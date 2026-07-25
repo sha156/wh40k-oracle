@@ -27,7 +27,7 @@ updated: '2026-07-23'
 ## 射击武器
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| Jokaero weapons – scattered | 12" | D6 | N/A | 4 | 0 | 1 | [[core-rules/torrent.md\|TORRENT]] |
+| Jokaero weapons – scattered | 12" | D6 | N/A | 4 | 0 | 1 | [[core-rules/torrent.md\|洪流]] |
 | Jokaero weapons – focused | 24" | 1 | 4+ | 10 | -1 | 3 | — |
 
 ## 近战武器

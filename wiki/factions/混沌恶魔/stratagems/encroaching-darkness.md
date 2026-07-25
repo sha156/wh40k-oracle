@@ -24,7 +24,7 @@ Your Shooting phase.
 
 ## 使用对象
 
-Up to one Shadow Legion Heretic Astartes unit from your army and up to one Shadow Legion Legiones Daemonica unit from your army. You can only select units that arrived from Reserves this turn.
+Up to one [[factions/混沌恶魔/detachments/shadow-legion.md|Shadow Legion]] Heretic Astartes unit from your army and up to one [[factions/混沌恶魔/detachments/shadow-legion.md|Shadow Legion]] Legiones Daemonica unit from your army. You can only select units that arrived from Reserves this turn.
 
 ## 效果
 

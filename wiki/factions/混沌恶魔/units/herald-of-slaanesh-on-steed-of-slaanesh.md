@@ -27,8 +27,8 @@ updated: '2026-07-23'
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| 鞭击长舌 | 近战 | 2 | 4+ | 4 | 0 | 1 | [[core-rules/extra-attacks.md\|extra attacks]]，[[core-rules/lethal-hits.md\|lethal hits]] |
-| 凶狠利爪 | 近战 | 6 | 2+ | 4 | -1 | 1 | [[core-rules/devastating-wounds.md\|devastating wounds]] |
+| 鞭击长舌 | 近战 | 2 | 4+ | 4 | 0 | 1 | [[core-rules/extra-attacks.md\|额外攻击]]，[[core-rules/lethal-hits.md\|致命一击]] |
+| 凶狠利爪 | 近战 | 6 | 2+ | 4 | -1 | 1 | [[core-rules/devastating-wounds.md\|毁灭伤害]] |
 
 ## 技能
 - **Lethal Caress**：While this model is leading a unit, improve the Armour Penetration characteristic of melee weapons equipped by models in that unit by 1.

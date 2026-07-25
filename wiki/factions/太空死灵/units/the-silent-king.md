@@ -31,14 +31,14 @@ updated: '2026-07-23'
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
 | 湮灭光束 | 24" | 1 | 2+ | 14 | -4 | 6 | — |
-| 永世荣光节杖 | 24" | 2 | 2+ | 10 | -3 | 3 | [[core-rules/devastating-wounds.md\|devastating wounds]] |
+| 永世荣光节杖 | 24" | 2 | 2+ | 10 | -3 | 3 | [[core-rules/devastating-wounds.md\|毁灭伤害]] |
 | 星辉之杖        | 24" | 12 | 2+ | 6 | -1 | 1 | [[core-rules/indirect-fire.md\|曲射]] |
 
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
 | 装甲船体 | 近战 | 1 | 4+ | 4 | 0 | 1 | — |
-| 最后的三圣议会武器 | 近战 | 12 | 2+ | 8 | -3 | 2 | [[core-rules/lethal-hits.md\|lethal hits]] |
+| 最后的三圣议会武器 | 近战 | 12 | 2+ | 8 | -3 | 2 | [[core-rules/lethal-hits.md\|致命一击]] |
 
 ## 技能
 - **【阵营】重生协议**

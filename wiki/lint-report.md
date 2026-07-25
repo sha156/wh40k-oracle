@@ -1,21 +1,25 @@
 # Lint Report
 
-_Generated: 2026-07-25 14:26 UTC_
+_Generated: 2026-07-25 17:23 UTC_
 
 | Severity | Count |
 |----------|-------|
-| warning | 553 |
+| warning | 557 |
 | info | 4 |
 
-**Total issues:** 557  |  **Auto-fixed:** 0
+**Total issues:** 561  |  **Auto-fixed:** 0
 
+- ⚠️ **[alias-conflicts]** 名称/别名冲突: 'fights first' 被 fights-first, fights-first 同时使用
 - ⚠️ **[alias-conflicts]** 名称/别名冲突: 'fire overwatch' 被 fire-overwatch, 000008335009 同时使用
+- ⚠️ **[alias-conflicts]** 名称/别名冲突: 'firing deck' 被 firing-deck, firing-deck 同时使用
 - ⚠️ **[alias-conflicts]** 名称/别名冲突: 'rapid ingress' 被 rapid-ingress, 000008335008 同时使用
 - ⚠️ **[alias-conflicts]** 名称/别名冲突: 'burst of speed' 被 000010247002, 000010792004 同时使用
 - ⚠️ **[alias-conflicts]** 名称/别名冲突: 'command re-roll' 被 000009218002, 000008335002 同时使用
 - ⚠️ **[alias-conflicts]** 名称/别名冲突: 'counter-offensive' 被 000009218004, 000008335003 同时使用
 - ⚠️ **[alias-conflicts]** 名称/别名冲突: 'insane bravery' 被 000009218005, 000008335005 同时使用
 - ⚠️ **[alias-conflicts]** 名称/别名冲突: 'new orders' 被 000009063002, 000010245002, 000008539002 同时使用
+- ⚠️ **[alias-conflicts]** 名称/别名冲突: 'super-heavy walker' 被 super-heavy-walker, super-heavy-walker 同时使用
+- ⚠️ **[alias-conflicts]** 名称/别名冲突: 'support' 被 support, support 同时使用
 - ⚠️ **[alias-conflicts]** 名称/别名冲突: '传送器（kaptin）' 被 000008885005, 000009623002 同时使用
 - ⚠️ **[alias-conflicts]** 名称/别名冲突: 'tellyporta' 被 000008885005, 000009623002 同时使用
 - ⚠️ **[alias-conflicts]** 名称/别名冲突: '挤过去' 被 000009624003, 000009616002 同时使用

@@ -29,13 +29,13 @@ updated: '2026-07-23'
 ## 射击武器
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| 恶毒之火 | 12" | D6+3 | N/A | 6 | -2 | 2 | [[core-rules/ignores-cover.md\|ignores cover]]，[[core-rules/torrent.md\|torrent]] |
+| 恶毒之火 | 12" | D6+3 | N/A | 6 | -2 | 2 | [[core-rules/ignores-cover.md\|无视掩体]]，[[core-rules/torrent.md\|洪流]] |
 | 冥神自动炮 | 36" | 6 | 3+ | 8 | -2 | 2 | — |
 
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| 地狱龙爪 | 近战 | 5 | 3+ | 7 | -1 | 2 | [[core-rules/anti.md\|反飞行 2+]]，[[core-rules/devastating-wounds.md\|毁灭伤害]] |
+| 地狱龙爪 | 近战 | 5 | 3+ | 7 | -1 | 2 | [[core-rules/anti.md\|针对飞行2+]]，[[core-rules/devastating-wounds.md\|毁灭伤害]] |
 
 ## 技能
 - **【阵营技能】：黑暗契约**

@@ -27,8 +27,8 @@ updated: '2026-07-23'
 ## 射击武器
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| 星镖手枪 | 12" | 1 | 2+ | 4 | -1 | 1 | [[core-rules/assault.md\|assault]]，[[core-rules/pistol.md\|pistol]] |
-| Voidbringer | 48" | 1 | 2+ | 6 | -3 | 3 | [[core-rules/devastating-wounds.md\|devastating wounds]]，[[core-rules/heavy.md\|heavy]]，[[core-rules/precision.md\|precision]] |
+| 星镖手枪 | 12" | 1 | 2+ | 4 | -1 | 1 | [[core-rules/assault.md\|突击]]，[[core-rules/pistol.md\|手枪]] |
+| Voidbringer | 48" | 1 | 2+ | 6 | -3 | 3 | [[core-rules/devastating-wounds.md\|毁灭伤害]]，[[core-rules/heavy.md\|重型]]，[[core-rules/precision.md\|精准]] |
 
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |

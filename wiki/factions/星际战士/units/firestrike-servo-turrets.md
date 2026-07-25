@@ -28,7 +28,7 @@ updated: '2026-07-23'
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
 | 双联烈火自动炮       | 48" | 3 | 2+ | 9 | -1 | 3 | [[core-rules/twin-linked.md\|双联]] |
-| 双联烈火激光爪 | 36" | 2 | 2+ | 10 | -3 | D6+1 | [[core-rules/twin-linked.md\|twin-linked]] |
+| 双联烈火激光爪 | 36" | 2 | 2+ | 10 | -3 | D6+1 | [[core-rules/twin-linked.md\|双联]] |
 
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |

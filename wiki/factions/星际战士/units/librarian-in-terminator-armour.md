@@ -29,10 +29,10 @@ updated: '2026-07-23'
 ## 射击武器
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| 复合武器 | 24" | 1 | 4+ | 4 | 0 | 1 | [[core-rules/anti.md\|反步兵 4+]]，[[core-rules/devastating-wounds.md\|毁灭伤害]]，[[core-rules/rapid-fire.md\|速射 1]] |
-| 惩击（巫火） | 24" | D6 | 3+ | 5 | -1 | D3 | [[core-rules/psychic-attacks.md\|psychic]] |
-| 惩击（聚焦） | 24" | D6 | 3+ | 6 | -2 | D3 | [[core-rules/devastating-wounds.md\|devastating wounds]]，[[core-rules/hazardous.md\|hazardous]]，[[core-rules/psychic-attacks.md\|psychic]] |
-| 风暴爆弹枪 | 24" | 2 | 3+ | 4 | 0 | 1 | [[core-rules/rapid-fire.md\|rapid fire 2]] |
+| 复合武器 | 24" | 1 | 4+ | 4 | 0 | 1 | [[core-rules/anti.md\|针对步兵4+]]，[[core-rules/devastating-wounds.md\|毁灭伤害]]，[[core-rules/rapid-fire.md\|速射1]] |
+| 惩击（巫火） | 24" | D6 | 3+ | 5 | -1 | D3 | [[core-rules/psychic-attacks.md\|灵能]] |
+| 惩击（聚焦） | 24" | D6 | 3+ | 6 | -2 | D3 | [[core-rules/devastating-wounds.md\|毁灭伤害]]，[[core-rules/hazardous.md\|危险]]，[[core-rules/psychic-attacks.md\|灵能]] |
+| 风暴爆弹枪 | 24" | 2 | 3+ | 4 | 0 | 1 | [[core-rules/rapid-fire.md\|速射2]] |
 
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |
@@ -41,7 +41,7 @@ updated: '2026-07-23'
 
 ## 技能
 - **【阵营技能】：破敌重誓**
-- **灵能头冠**：本模型所领导的单位，其中的模型遭到【灵 能】攻击时获得【不知疼痛 4+】技能
+- **灵能头冠**：本模型所领导的单位，其中的模型遭到【灵 能】攻击时获得【不觉疼痛 4+】技能
 - **时间帷幕【灵能】**：本模型所领导的单位，其中的模型所装备的武器拥有【连击 1】技能
 
 ## 单位构成
@@ -49,4 +49,4 @@ updated: '2026-07-23'
 
 ## 关键词
 - **阵营关键词**：Adeptus Astartes
-- **普通关键词**：[[factions/星际战士/units/librarian.md|Librarian]]，Deathwing，[[core-rules/character.md|Character]]，[[core-rules/psyker.md|Psyker]]，[[core-rules/infantry.md|Infantry]]，Imperium，Terminator
+- **普通关键词**：Librarian，Deathwing，[[core-rules/character.md|Character]]，[[core-rules/psyker.md|Psyker]]，[[core-rules/infantry.md|Infantry]]，Imperium，Terminator

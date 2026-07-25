@@ -28,10 +28,10 @@ updated: '2026-07-23'
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
 | 喀戎加特林 | 24" | 12 | 4+ | 5 | 0 | 1 | [[core-rules/assault.md\|突击]] |
-| 重机枪 | 36" | 3 | 4+ | 4 | 0 | 1 | [[core-rules/rapid-fire.md\|速射3]]，[[core-rules/assault.md\|突击]] |
+| 重机枪 | 36" | 3 | 4+ | 4 | 0 | 1 | [[core-rules/assault.md\|突击]]，[[core-rules/rapid-fire.md\|速射3]] |
 | 激光炮 | 48" | 1 | 4+ | 12 | -3 | D6+1 | [[core-rules/assault.md\|突击]] |
-| 热熔炮 | 18" | 2 | 4+ | 9 | -4 | D6 | [[core-rules/melta.md\|热熔2]]，[[core-rules/assault.md\|突击]] |
-| 热熔枪 | 12" | 1 | 4+ | 9 | -4 | D6 | [[core-rules/melta.md\|热熔2]]，[[core-rules/assault.md\|突击]] |
+| 热熔炮 | 18" | 2 | 4+ | 9 | -4 | D6 | [[core-rules/assault.md\|突击]]，[[core-rules/melta.md\|热熔2]] |
+| 热熔枪 | 12" | 1 | 4+ | 9 | -4 | D6 | [[core-rules/assault.md\|突击]]，[[core-rules/melta.md\|热熔2]] |
 | 警戒炮 | 36" | D6 | 4+ | 8 | -1 | 2 | [[core-rules/assault.md\|突击]]，[[core-rules/blast.md\|爆炸]] |
 
 ## 近战武器

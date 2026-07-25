@@ -28,7 +28,7 @@ updated: '2026-07-23'
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
 | 散射激光 | 36" | 6 | 3+ | 5 | 0 | 1 | — |
-| Twin pulse laser | 48" | 3 | 3+ | 9 | -2 | D6 | [[core-rules/twin-linked.md\|twin-linked]] |
+| Twin pulse laser | 48" | 3 | 3+ | 9 | -2 | D6 | [[core-rules/twin-linked.md\|双联]] |
 
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |

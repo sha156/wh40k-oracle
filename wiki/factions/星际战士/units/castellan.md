@@ -26,7 +26,7 @@ updated: '2026-07-23'
 ## 射击武器
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| 复合武器 | 24" | 1 | 3+ | 4 | 0 | 1 | [[core-rules/anti.md\|针对步兵 4+]]，[[core-rules/devastating-wounds.md\|毁灭伤害]]，[[core-rules/rapid-fire.md\|速射 1]] |
+| 复合武器 | 24" | 1 | 3+ | 4 | 0 | 1 | [[core-rules/anti.md\|针对步兵4+]]，[[core-rules/devastating-wounds.md\|毁灭伤害]]，[[core-rules/rapid-fire.md\|速射1]] |
 | 重型爆弹手枪 | 18" | 1 | 2+ | 4 | -1 | 1 | [[core-rules/pistol.md\|手枪]] |
 
 ## 近战武器

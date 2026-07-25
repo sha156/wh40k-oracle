@@ -28,12 +28,12 @@ updated: '2026-07-23'
 ## 射击武器
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| Morkai bolt pistol | 12" | 1 | 3+ | 4 | -1 | 1 | [[core-rules/anti.md\|anti-psyker 4+]]，[[core-rules/devastating-wounds.md\|devastating wounds]]，[[core-rules/pistol.md\|pistol]]，[[core-rules/precision.md\|precision]] |
+| Morkai bolt pistol | 12" | 1 | 3+ | 4 | -1 | 1 | [[core-rules/anti.md\|针对灵能者4+]]，[[core-rules/devastating-wounds.md\|毁灭伤害]]，[[core-rules/pistol.md\|手枪]]，[[core-rules/precision.md\|精准]] |
 
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| Morkai combat knife | 近战 | 4 | 3+ | 4 | 0 | 1 | [[core-rules/anti.md\|anti-psyker 4+]]，[[core-rules/devastating-wounds.md\|devastating wounds]]，[[core-rules/precision.md\|precision]] |
+| Morkai combat knife | 近战 | 4 | 3+ | 4 | 0 | 1 | [[core-rules/anti.md\|针对灵能者4+]]，[[core-rules/devastating-wounds.md\|毁灭伤害]]，[[core-rules/precision.md\|精准]] |
 
 ## 技能
 - **Morkai’s Howl**：In your Shooting phase, you can select one enemy unit within 12" of this unit (if a [[factions/星际战士/units/lieutenant.md|Lieutenant]] in Reiver Armour is leading this unit, you can select one enemy unit within 18" instead). That unit must take a Battle-shock test, subtracting 1 from the result if it is a <span class="kwb">PSYKER</span> unit. If that test is failed, in addition to being Battle-shocked, that unit is Stunned until the start of your next Shooting phase. While a unit is Stunned, each time a model in that unit makes a Psychic Attack, subtract 1 from the Hit roll.

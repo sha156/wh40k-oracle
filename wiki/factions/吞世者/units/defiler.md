@@ -29,20 +29,20 @@ updated: '2026-07-23'
 ## 射击武器
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| 魂浆毁灭炮 | 36" | D6 | 4+ | 12 | -3 | 3 | [[core-rules/blast.md\|blast]]，[[core-rules/rapid-fire.md\|rapid fire 2]] |
-| 拷问者加农炮 | 36" | 6 | 4+ | 6 | -1 | 2 | [[core-rules/rapid-fire.md\|rapid fire 3]] |
-| 重型恶毒之火 | 12" | D6+3 | N/A | 7 | -2 | 2 | [[core-rules/ignores-cover.md\|ignores cover]]，[[core-rules/torrent.md\|torrent]] |
-| 冥神战斗加农炮 | 48" | D6+3 | 4+ | 10 | -1 | 3 | [[core-rules/blast.md\|blast]]，[[core-rules/rapid-fire.md\|rapid fire 3]] |
-| 冥神激光炮 | 48" | 2 | 4+ | 12 | -3 | D6+1 | [[core-rules/rapid-fire.md\|rapid fire 1]] |
-| 重型导弹发射器（穿甲） | 48" | 2 | 4+ | 10 | -2 | D6+1 | [[core-rules/rapid-fire.md\|rapid fire 1]] |
-| 重型导弹发射器（破片） | 48" | 2D6 | 4+ | 5 | -1 | 1 | [[core-rules/blast.md\|blast]]，[[core-rules/rapid-fire.md\|rapid fire 3]] |
-| 重型收割者自动炮 | 48" | 4 | 4+ | 9 | -1 | 3 | [[core-rules/devastating-wounds.md\|devastating wounds]]，[[core-rules/rapid-fire.md\|rapid fire 2]]，[[core-rules/sustained-hits.md\|sustained hits 1]] |
-| 岩浆切割机 | 12" | 2 | 4+ | 9 | -4 | D6 | [[core-rules/melta.md\|melta 2]]，[[core-rules/rapid-fire.md\|rapid fire 1]] |
+| 魂浆毁灭炮 | 36" | D6 | 4+ | 12 | -3 | 3 | [[core-rules/blast.md\|爆炸]]，[[core-rules/rapid-fire.md\|速射2]] |
+| 拷问者加农炮 | 36" | 6 | 4+ | 6 | -1 | 2 | [[core-rules/rapid-fire.md\|速射3]] |
+| 重型恶毒之火 | 12" | D6+3 | N/A | 7 | -2 | 2 | [[core-rules/ignores-cover.md\|无视掩体]]，[[core-rules/torrent.md\|洪流]] |
+| 冥神战斗加农炮 | 48" | D6+3 | 4+ | 10 | -1 | 3 | [[core-rules/blast.md\|爆炸]]，[[core-rules/rapid-fire.md\|速射3]] |
+| 冥神激光炮 | 48" | 2 | 4+ | 12 | -3 | D6+1 | [[core-rules/rapid-fire.md\|速射1]] |
+| 重型导弹发射器（穿甲） | 48" | 2 | 4+ | 10 | -2 | D6+1 | [[core-rules/rapid-fire.md\|速射1]] |
+| 重型导弹发射器（破片） | 48" | 2D6 | 4+ | 5 | -1 | 1 | [[core-rules/blast.md\|爆炸]]，[[core-rules/rapid-fire.md\|速射3]] |
+| 重型收割者自动炮 | 48" | 4 | 4+ | 9 | -1 | 3 | [[core-rules/devastating-wounds.md\|毁灭伤害]]，[[core-rules/rapid-fire.md\|速射2]]，[[core-rules/sustained-hits.md\|连击1]] |
+| 岩浆切割机 | 12" | 2 | 4+ | 9 | -4 | D6 | [[core-rules/melta.md\|热熔2]]，[[core-rules/rapid-fire.md\|速射1]] |
 
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| 电鞭 | 近战 | 7 | 3+ | 12 | -2 | 2 | [[core-rules/extra-attacks.md\|extra attacks]]，[[core-rules/sustained-hits.md\|sustained hits 2]] |
+| 电鞭 | 近战 | 7 | 3+ | 12 | -2 | 2 | [[core-rules/extra-attacks.md\|额外攻击]]，[[core-rules/sustained-hits.md\|连击2]] |
 | 剪切利爪（重击） | 近战 | 6 | 3+ | 16 | -3 | D6+1 | — |
 | 剪切利爪（横扫） | 近战 | 12 | 3+ | 6 | -2 | 1 | — |
 

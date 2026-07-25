@@ -27,11 +27,11 @@ updated: '2026-07-23'
 ## 射击武器
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| 复合武器 | 24" | 1 | 4+ | 4 | 0 | 1 | [[core-rules/anti.md\|anti-infantry 4+]]，[[core-rules/devastating-wounds.md\|devastating wounds]]，[[core-rules/rapid-fire.md\|rapid fire 1]] |
-| 焚焰炮 | 12" | D6+1 | N/A | 6 | -1 | 1 | [[core-rules/ignores-cover.md\|IGNORES COVER]]，[[core-rules/torrent.md\|TORRENT]] |
-| 肃卫爆弹手枪 | 12" | 1 | 3+ | 4 | 0 | 1 | [[core-rules/devastating-wounds.md\|devastating wounds]]，[[core-rules/pistol.md\|pistol]] |
-| 肃卫爆弹步枪 | 24" | 2 | 3+ | 4 | -1 | 1 | [[core-rules/assault.md\|突击]]，[[core-rules/heavy.md\|重型]]，[[core-rules/rapid-fire.md\|速射 1]]，[[core-rules/devastating-wounds.md\|毁灭伤害]] |
-| 肃卫重型爆弹枪  | 36" | 3 | 4+ | 5 | -1 | 2 | [[core-rules/heavy.md\|重型]]，[[core-rules/sustained-hits.md\|连击 1]]，[[core-rules/devastating-wounds.md\|毁灭伤害]] |
+| 复合武器 | 24" | 1 | 4+ | 4 | 0 | 1 | [[core-rules/anti.md\|针对步兵4+]]，[[core-rules/devastating-wounds.md\|毁灭伤害]]，[[core-rules/rapid-fire.md\|速射1]] |
+| 焚焰炮 | 12" | D6+1 | N/A | 6 | -1 | 1 | [[core-rules/ignores-cover.md\|无视掩体]]，[[core-rules/torrent.md\|洪流]] |
+| 肃卫爆弹手枪 | 12" | 1 | 3+ | 4 | 0 | 1 | [[core-rules/devastating-wounds.md\|毁灭伤害]]，[[core-rules/pistol.md\|手枪]] |
+| 肃卫爆弹步枪 | 24" | 2 | 3+ | 4 | -1 | 1 | [[core-rules/assault.md\|突击]]，[[core-rules/devastating-wounds.md\|毁灭伤害]]，[[core-rules/heavy.md\|重型]]，[[core-rules/rapid-fire.md\|速射1]] |
+| 肃卫重型爆弹枪  | 36" | 3 | 4+ | 5 | -1 | 2 | [[core-rules/devastating-wounds.md\|毁灭伤害]]，[[core-rules/heavy.md\|重型]]，[[core-rules/sustained-hits.md\|连击1]] |
 
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |

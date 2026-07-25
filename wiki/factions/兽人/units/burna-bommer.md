@@ -31,7 +31,7 @@ updated: '2026-07-23'
 |---|---|---|---|---|---|---|---|
 | 双联大突突枪 | 36" | 3 | 5+ | 5 | 0 | 1 | [[core-rules/rapid-fire.md\|速射2]]，[[core-rules/twin-linked.md\|双联]] |
 | 双联超级突突炮 | 36" | 4 | 5+ | 6 | -1 | 1 | [[core-rules/rapid-fire.md\|速射2]]，[[core-rules/sustained-hits.md\|连击1]]，[[core-rules/twin-linked.md\|双联]] |
-| 燃烧火箭弹 | 36" | 2D6 | 5+ | 5 | -1 | 1 | [[core-rules/blast.md\|blast]]，[[core-rules/ignores-cover.md\|ignores cover]] |
+| 燃烧火箭弹 | 36" | 2D6 | 5+ | 5 | -1 | 1 | [[core-rules/blast.md\|爆炸]]，[[core-rules/ignores-cover.md\|无视掩体]] |
 
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |

@@ -28,7 +28,7 @@ updated: '2026-07-23'
 |---|---|---|---|---|---|---|---|
 | 风暴之怒导弹 | 48" | 1 | 2+ | 12 | -3 | D6+1 | — |
 | 雷霆激光爪 | 36" | 2 | 2+ | 9 | -3 | D6+1 | — |
-| 双联伊卡洛斯火箭巢 | 24" | D3 | 3+ | 8 | -1 | 2 | [[core-rules/anti.md\|anti-fly 2+]]，[[core-rules/twin-linked.md\|twin-linked]] |
+| 双联伊卡洛斯火箭巢 | 24" | D3 | 3+ | 8 | -1 | 2 | [[core-rules/anti.md\|针对飞行2+]]，[[core-rules/twin-linked.md\|双联]] |
 
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |

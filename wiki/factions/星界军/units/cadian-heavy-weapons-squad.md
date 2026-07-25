@@ -29,10 +29,10 @@ updated: '2026-07-23'
 | 自动炮 | 48" | 2 | 5+ | 9 | -1 | 3 | [[core-rules/heavy.md\|重型]] |
 | 重型爆弹枪 | 36" | 3 | 5+ | 5 | -1 | 2 | [[core-rules/heavy.md\|重型]]，[[core-rules/sustained-hits.md\|连击1]] |
 | 激光炮 | 48" | 1 | 5+ | 12 | -3 | D6+1 | [[core-rules/heavy.md\|重型]] |
-| 激光手枪 | 12" | 2 | 4+ | 3 | 0 | 1 | [[core-rules/pistol.md\|pistol]] |
-| 导弹发射器（破片） | 48" | D6 | 5+ | 4 | 0 | 1 | [[core-rules/heavy.md\|重型]]，[[core-rules/blast.md\|爆炸]] |
+| 激光手枪 | 12" | 2 | 4+ | 3 | 0 | 1 | [[core-rules/pistol.md\|手枪]] |
+| 导弹发射器（破片） | 48" | D6 | 5+ | 4 | 0 | 1 | [[core-rules/blast.md\|爆炸]]，[[core-rules/heavy.md\|重型]] |
 | 导弹发射器（穿甲） | 48" | 1 | 5+ | 9 | -2 | D6 | [[core-rules/heavy.md\|重型]] |
-| 迫击炮 | 48" | D6 | 5+ | 5 | 0 | 1 | [[core-rules/heavy.md\|重型]]，[[core-rules/blast.md\|爆炸]]，间接火力 |
+| 迫击炮 | 48" | D6 | 5+ | 5 | 0 | 1 | [[core-rules/blast.md\|爆炸]]，[[core-rules/heavy.md\|重型]]，[[core-rules/indirect-fire.md\|曲射]] |
 
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |

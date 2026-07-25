@@ -24,11 +24,11 @@ updated: '2026-07-23'
 ## 射击武器
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| 重型爆弹枪 | 36" | 3 | 4+ | 5 | -1 | 2 | [[core-rules/sustained-hits.md\|sustained hits 1]] |
-| Heavy stubber | 36" | 3 | 4+ | 4 | 0 | 1 | [[core-rules/rapid-fire.md\|rapid fire 3]] |
-| Praetor launcher – firestorm | 120" | 2D6 | 4+ | 6 | -1 | 2 | [[core-rules/blast.md\|blast]]，[[core-rules/heavy.md\|heavy]]，[[core-rules/ignores-cover.md\|ignores cover]]，[[core-rules/indirect-fire.md\|indirect fire]] |
-| Praetor launcher – foehammer | 120" | D6+1 | 4+ | 4 | -2 | 3 | [[core-rules/anti.md\|anti-monster 4+]]，[[core-rules/anti.md\|anti-vehicle 4+]]，[[core-rules/blast.md\|blast]]，[[core-rules/heavy.md\|heavy]]，[[core-rules/indirect-fire.md\|indirect fire]] |
-| 风暴爆弹枪 | 24" | 2 | 4+ | 4 | 0 | 1 | [[core-rules/rapid-fire.md\|rapid fire 2]] |
+| 重型爆弹枪 | 36" | 3 | 4+ | 5 | -1 | 2 | [[core-rules/sustained-hits.md\|连击1]] |
+| Heavy stubber | 36" | 3 | 4+ | 4 | 0 | 1 | [[core-rules/rapid-fire.md\|速射3]] |
+| Praetor launcher – firestorm | 120" | 2D6 | 4+ | 6 | -1 | 2 | [[core-rules/blast.md\|爆炸]]，[[core-rules/heavy.md\|重型]]，[[core-rules/ignores-cover.md\|无视掩体]]，[[core-rules/indirect-fire.md\|曲射]] |
+| Praetor launcher – foehammer | 120" | D6+1 | 4+ | 4 | -2 | 3 | [[core-rules/anti.md\|针对怪物4+]]，[[core-rules/anti.md\|针对载具4+]]，[[core-rules/blast.md\|爆炸]]，[[core-rules/heavy.md\|重型]]，[[core-rules/indirect-fire.md\|曲射]] |
+| 风暴爆弹枪 | 24" | 2 | 4+ | 4 | 0 | 1 | [[core-rules/rapid-fire.md\|速射2]] |
 
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |

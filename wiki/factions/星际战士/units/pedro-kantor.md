@@ -28,7 +28,7 @@ updated: '2026-07-23'
 ## 射击武器
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| 多恩之箭 | 24" | 2 | 2+ | 5 | -1 | 2 | [[core-rules/rapid-fire.md\|速射 2]]，[[core-rules/sustained-hits.md\|连击 1]] |
+| 多恩之箭 | 24" | 2 | 2+ | 5 | -1 | 2 | [[core-rules/rapid-fire.md\|速射2]]，[[core-rules/sustained-hits.md\|连击1]] |
 
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |

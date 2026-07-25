@@ -27,8 +27,8 @@ updated: '2026-07-23'
 ## 射击武器
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| 解离炮 | 36" | 3 | 3+ | 6 | -3 | 2 | [[core-rules/assault.md\|assault]] |
-| 星牙榴弹发射器 | 36" | D3 | 3+ | 6 | -3 | 2 | [[core-rules/assault.md\|assault]]，[[core-rules/blast.md\|blast]] |
+| 解离炮 | 36" | 3 | 3+ | 6 | -3 | 2 | [[core-rules/assault.md\|突击]] |
+| 星牙榴弹发射器 | 36" | D3 | 3+ | 6 | -3 | 2 | [[core-rules/assault.md\|突击]]，[[core-rules/blast.md\|爆炸]] |
 
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |

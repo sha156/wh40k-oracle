@@ -27,12 +27,12 @@ updated: '2026-07-23'
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
 | 等离子手枪（标准） | 12" | 1 | 3+ | 7 | -2 | 1 | [[core-rules/pistol.md\|手枪]] |
-| 等离子手枪（过载） | 12" | 1 | 3+ | 8 | -3 | 2 | [[core-rules/pistol.md\|pistol]]，[[core-rules/hazardous.md\|hazardous]] |
+| 等离子手枪（过载） | 12" | 1 | 3+ | 8 | -3 | 2 | [[core-rules/pistol.md\|手枪]]，[[core-rules/hazardous.md\|危险]] |
 
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| 诅咒丧钟  | 近战 | 5 | 3+ | 4 | 0 | 2 | [[core-rules/lethal-hits.md\|致命一击]]，[[core-rules/anti.md\|反灵能者2+]] |
+| 诅咒丧钟  | 近战 | 5 | 3+ | 4 | 0 | 2 | [[core-rules/anti.md\|针对灵能者2+]]，[[core-rules/lethal-hits.md\|致命一击]] |
 
 ## 技能
 - **【阵营技能】：纳垢赐福【光环】**

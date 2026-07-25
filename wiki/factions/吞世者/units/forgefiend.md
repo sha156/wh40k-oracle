@@ -29,8 +29,8 @@ updated: '2026-07-23'
 ## 射击武器
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| 幽冥等离子炮 | 36" | D3 | 4+ | 10 | -3 | 3 | [[core-rules/blast.md\|blast]]，[[core-rules/rapid-fire.md\|rapid fire 1]] |
-| 冥神自动炮 | 36" | 6 | 4+ | 8 | -1 | 2 | [[core-rules/rapid-fire.md\|rapid fire 4]] |
+| 幽冥等离子炮 | 36" | D3 | 4+ | 10 | -3 | 3 | [[core-rules/blast.md\|爆炸]]，[[core-rules/rapid-fire.md\|速射1]] |
+| 冥神自动炮 | 36" | 6 | 4+ | 8 | -1 | 2 | [[core-rules/rapid-fire.md\|速射4]] |
 
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |

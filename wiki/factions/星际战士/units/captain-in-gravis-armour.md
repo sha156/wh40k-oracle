@@ -29,8 +29,8 @@ updated: '2026-07-23'
 ## 射击武器
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| 风暴爆弹臂铠 | 12" | 3 | 2+ | 4 | -1 | 1 | [[core-rules/pistol.md\|pistol]] |
-| 重型爆弹步枪 | 30" | 2 | 2+ | 5 | -1 | 3 | [[core-rules/assault.md\|assault]]，[[core-rules/heavy.md\|heavy]] |
+| 风暴爆弹臂铠 | 12" | 3 | 2+ | 4 | -1 | 1 | [[core-rules/pistol.md\|手枪]] |
+| 重型爆弹步枪 | 30" | 2 | 2+ | 5 | -1 | 3 | [[core-rules/assault.md\|突击]]，[[core-rules/heavy.md\|重型]] |
 
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |
@@ -38,7 +38,7 @@ updated: '2026-07-23'
 | 精工动力武器        | 近战 | 6 | 2+ | 5 | -2 | 2 | — |
 | 动力拳 | 近战 | 5 | 2+ | 8 | -2 | 2 | — |
 | 传世之刃     | 近战 | 2 | 2+ | 5 | -2 | 2 | [[core-rules/extra-attacks.md\|额外攻击]] |
-| 传世链锯剑 | 近战 | 3 | 2+ | 4 | -1 | 2 | [[core-rules/extra-attacks.md\|extra attacks]] |
+| 传世链锯剑 | 近战 | 3 | 2+ | 4 | -1 | 2 | [[core-rules/extra-attacks.md\|额外攻击]] |
 | 传世动力拳        | 近战 | 1 | 2+ | 8 | -2 | 2 | [[core-rules/extra-attacks.md\|额外攻击]] |
 
 ## 技能
@@ -51,4 +51,4 @@ updated: '2026-07-23'
 
 ## 关键词
 - **阵营关键词**：Adeptus Astartes
-- **普通关键词**：[[core-rules/character.md|Character]]，[[core-rules/grenades.md|Grenades]]，Imperium，Gravis，[[factions/星际战士/units/captain.md|Captain]]，[[core-rules/infantry.md|Infantry]]
+- **普通关键词**：[[core-rules/character.md|Character]]，[[core-rules/grenades.md|Grenades]]，Imperium，Gravis，Captain，[[core-rules/infantry.md|Infantry]]

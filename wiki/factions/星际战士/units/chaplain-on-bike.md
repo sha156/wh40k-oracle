@@ -47,4 +47,4 @@ updated: '2026-07-23'
 
 ## 关键词
 - **阵营关键词**：Adeptus Astartes
-- **普通关键词**：Ravenwing，[[core-rules/mounted.md|Mounted]]，[[factions/星际战士/units/chaplain.md|Chaplain]]，Imperium，[[core-rules/grenades.md|Grenades]]，[[core-rules/character.md|Character]]
+- **普通关键词**：Ravenwing，[[core-rules/mounted.md|Mounted]]，Chaplain，Imperium，[[core-rules/grenades.md|Grenades]]，[[core-rules/character.md|Character]]

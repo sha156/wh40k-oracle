@@ -27,7 +27,7 @@ updated: '2026-07-23'
 ## 射击武器
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| 赦免者爆弹手枪 | 18" | 1 | 3+ | 5 | -1 | 2 | [[core-rules/pistol.md\|pistol]] |
+| 赦免者爆弹手枪 | 18" | 1 | 3+ | 5 | -1 | 2 | [[core-rules/pistol.md\|手枪]] |
 
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |
@@ -43,4 +43,4 @@ updated: '2026-07-23'
 
 ## 关键词
 - **阵营关键词**：Adeptus Astartes，Blood Ravens
-- **普通关键词**：Tacticus，[[core-rules/epic-hero.md|Epic Hero]]，[[core-rules/grenades.md|Grenades]]，Imperium，[[core-rules/character.md|Character]]，[[core-rules/infantry.md|Infantry]]，[[factions/星际战士/units/chaplain.md|Chaplain]]，Kastiel
+- **普通关键词**：Tacticus，[[core-rules/epic-hero.md|Epic Hero]]，[[core-rules/grenades.md|Grenades]]，Imperium，[[core-rules/character.md|Character]]，[[core-rules/infantry.md|Infantry]]，Chaplain，Kastiel

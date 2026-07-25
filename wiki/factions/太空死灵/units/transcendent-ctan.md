@@ -29,12 +29,12 @@ updated: '2026-07-23'
 ## 射击武器
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| 震荡突击     | 12" | 6 | 2+ | 8 | -2 | 2 | [[core-rules/assault.md\|突击]]，[[core-rules/sustained-hits.md\|连击 1]] |
+| 震荡突击     | 12" | 6 | 2+ | 8 | -2 | 2 | [[core-rules/assault.md\|突击]]，[[core-rules/sustained-hits.md\|连击1]] |
 
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| 爆裂触须 | 近战 | 8 | 2+ | 10 | -3 | D6 | [[core-rules/sustained-hits.md\|sustained hits 1]] |
+| 爆裂触须 | 近战 | 8 | 2+ | 10 | -3 | D6 | [[core-rules/sustained-hits.md\|连击1]] |
 
 ## 技能
 - **[阵营]：重生协议**

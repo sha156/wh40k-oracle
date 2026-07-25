@@ -27,8 +27,8 @@ updated: '2026-07-23'
 ## 射击武器
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| Blood Song | 24" | 2 | 2+ | 4 | -1 | 2 | [[core-rules/anti.md\|anti-infantry 4+]]，[[core-rules/devastating-wounds.md\|devastating wounds]]，[[core-rules/melta.md\|melta 2]] |
-| 爆弹手枪 | 12" | 1 | 2+ | 4 | 0 | 1 | [[core-rules/pistol.md\|pistol]] |
+| Blood Song | 24" | 2 | 2+ | 4 | -1 | 2 | [[core-rules/anti.md\|针对步兵4+]]，[[core-rules/devastating-wounds.md\|毁灭伤害]]，[[core-rules/melta.md\|热熔2]] |
+| 爆弹手枪 | 12" | 1 | 2+ | 4 | 0 | 1 | [[core-rules/pistol.md\|手枪]] |
 
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |
@@ -45,4 +45,4 @@ updated: '2026-07-23'
 
 ## 关键词
 - **阵营关键词**：Adeptus Astartes，Blood Angels
-- **普通关键词**：[[core-rules/grenades.md|Grenades]]，[[core-rules/character.md|Character]]，[[core-rules/infantry.md|Infantry]]，[[core-rules/epic-hero.md|Epic Hero]]，Tycho，[[factions/星际战士/units/captain.md|Captain]]，Imperium
+- **普通关键词**：[[core-rules/grenades.md|Grenades]]，[[core-rules/character.md|Character]]，[[core-rules/infantry.md|Infantry]]，[[core-rules/epic-hero.md|Epic Hero]]，Tycho，Captain，Imperium

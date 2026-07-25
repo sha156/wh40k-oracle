@@ -30,7 +30,7 @@ updated: '2026-07-23'
 ## 射击武器
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| 毁灭咒术 | 12" | D6 | N/A | 5 | -1 | 1 | [[core-rules/psychic-attacks.md\|灵能]]，[[core-rules/torrent.md\|喷射]] |
+| 毁灭咒术 | 12" | D6 | N/A | 5 | -1 | 1 | [[core-rules/psychic-attacks.md\|灵能]]，[[core-rules/torrent.md\|洪流]] |
 | 星镖手枪 | 12" | 1 | 3+ | 4 | -1 | 1 | [[core-rules/assault.md\|突击]]，[[core-rules/pistol.md\|手枪]] |
 | 歌矛 | 12" | 1 | 3+ | 9 | 0 | 3 | [[core-rules/assault.md\|突击]]，[[core-rules/psychic-attacks.md\|灵能]] |
 
@@ -38,7 +38,7 @@ updated: '2026-07-23'
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
 | 歌矛 | 近战 | 2 | 3+ | 3 | 0 | 3 | [[core-rules/psychic-attacks.md\|灵能]] |
-| 巫术之刃 | 近战 | 2 | 3+ | 3 | 0 | 2 | [[core-rules/psychic-attacks.md\|灵能]]，[[core-rules/anti.md\|反步兵2+]] |
+| 巫术之刃 | 近战 | 2 | 3+ | 3 | 0 | 2 | [[core-rules/anti.md\|针对步兵2+]]，[[core-rules/psychic-attacks.md\|灵能]] |
 
 ## 技能
 - **【阵营技能】：战斗专注**

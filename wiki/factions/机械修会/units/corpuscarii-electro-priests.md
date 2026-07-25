@@ -30,7 +30,7 @@ updated: '2026-07-23'
 ## 射击武器
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| 雷鸣电掌 | 12" | 3 | 3+ | 5 | 0 | 1 | [[core-rules/sustained-hits.md\|连击2]]，[[core-rules/pistol.md\|手枪]] |
+| 雷鸣电掌 | 12" | 3 | 3+ | 5 | 0 | 1 | [[core-rules/pistol.md\|手枪]]，[[core-rules/sustained-hits.md\|连击2]] |
 
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |

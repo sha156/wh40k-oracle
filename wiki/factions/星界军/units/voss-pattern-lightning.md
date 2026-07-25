@@ -25,7 +25,7 @@ updated: '2026-07-23'
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
 | 激光炮 | 48" | 1 | 4+ | 12 | -3 | D6+1 | — |
-| Lightning hellstrike rack | 48" | 2 | 4+ | 10 | -3 | D6 | [[core-rules/anti.md\|anti-fly 2+]] |
+| Lightning hellstrike rack | 48" | 2 | 4+ | 10 | -3 | D6 | [[core-rules/anti.md\|针对飞行2+]] |
 
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |

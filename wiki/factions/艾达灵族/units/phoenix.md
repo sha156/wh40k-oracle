@@ -24,9 +24,9 @@ updated: '2026-07-23'
 ## 射击武器
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| Phoenix missile array | 48" | D6 | 3+ | 6 | -1 | 2 | [[core-rules/blast.md\|blast]] |
+| Phoenix missile array | 48" | D6 | 3+ | 6 | -1 | 2 | [[core-rules/blast.md\|爆炸]] |
 | Phoenix pulse laser | 48" | 4 | 3+ | 10 | -2 | D6 | — |
-| 双联星镖炮 | 24" | 3 | 3+ | 6 | -1 | 2 | [[core-rules/sustained-hits.md\|sustained hits 1]]，[[core-rules/twin-linked.md\|twin-linked]] |
+| 双联星镖炮 | 24" | 3 | 3+ | 6 | -1 | 2 | [[core-rules/sustained-hits.md\|连击1]]，[[core-rules/twin-linked.md\|双联]] |
 
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |

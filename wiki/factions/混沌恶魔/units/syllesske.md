@@ -29,15 +29,15 @@ updated: '2026-07-23'
 ## 射击武器
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| 刺耳合唱（巫火） | 12" | D6 | N/A | 6 | -1 | 1 | [[core-rules/devastating-wounds.md\|devastating wounds]]，[[core-rules/ignores-cover.md\|ignores cover]]，[[core-rules/psychic-attacks.md\|psychic]]，[[core-rules/torrent.md\|torrent]] |
-| 刺耳合唱（聚焦巫火） | 12" | 2D6 | N/A | 6 | -1 | 1 | [[core-rules/psychic-attacks.md\|psychic]]，[[core-rules/hazardous.md\|hazardous]]，[[core-rules/ignores-cover.md\|ignores cover]]，[[core-rules/devastating-wounds.md\|devastating wounds]]，[[core-rules/torrent.md\|torrent]] |
-| 灾祸长鞭 | 9" | 6 | 3+ | 4 | -1 | 1 | [[core-rules/assault.md\|assault]] |
+| 刺耳合唱（巫火） | 12" | D6 | N/A | 6 | -1 | 1 | [[core-rules/devastating-wounds.md\|毁灭伤害]]，[[core-rules/ignores-cover.md\|无视掩体]]，[[core-rules/psychic-attacks.md\|灵能]]，[[core-rules/torrent.md\|洪流]] |
+| 刺耳合唱（聚焦巫火） | 12" | 2D6 | N/A | 6 | -1 | 1 | [[core-rules/psychic-attacks.md\|灵能]]，[[core-rules/hazardous.md\|危险]]，[[core-rules/ignores-cover.md\|无视掩体]]，[[core-rules/devastating-wounds.md\|毁灭伤害]]，[[core-rules/torrent.md\|洪流]] |
+| 灾祸长鞭 | 9" | 6 | 3+ | 4 | -1 | 1 | [[core-rules/assault.md\|突击]] |
 
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
 | 统御之斧 | 近战 | 6 | 3+ | 7 | -2 | 3 | — |
-| 灾祸长鞭 | 近战 | 6 | 2+ | 4 | -1 | 1 | [[core-rules/extra-attacks.md\|extra attacks]] |
+| 灾祸长鞭 | 近战 | 6 | 2+ | 4 | -1 | 1 | [[core-rules/extra-attacks.md\|额外攻击]] |
 
 ## 技能
 - **色孽亲王**

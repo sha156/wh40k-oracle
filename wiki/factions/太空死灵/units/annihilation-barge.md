@@ -30,8 +30,8 @@ updated: '2026-07-23'
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
 | 高斯炮 | 24" | 3 | 3+ | 5 | -2 | 2 | [[core-rules/lethal-hits.md\|致命一击]] |
-| 特斯拉炮 | 24" | 4 | 3+ | 6 | 0 | 1 | [[core-rules/sustained-hits.md\|连击 2]] |
-| 双联特斯拉毁灭者  | 36" | 6 | 3+ | 8 | 0 | 2 | [[core-rules/sustained-hits.md\|连击 2]]，[[core-rules/twin-linked.md\|双联]] |
+| 特斯拉炮 | 24" | 4 | 3+ | 6 | 0 | 1 | [[core-rules/sustained-hits.md\|连击2]] |
+| 双联特斯拉毁灭者  | 36" | 6 | 3+ | 8 | 0 | 2 | [[core-rules/sustained-hits.md\|连击2]]，[[core-rules/twin-linked.md\|双联]] |
 
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |

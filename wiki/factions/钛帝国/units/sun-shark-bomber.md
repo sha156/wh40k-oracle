@@ -27,8 +27,8 @@ updated: '2026-07-23'
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
 | 导弹仓 | 30" | 2 | 4+ | 7 | -1 | 2 | — |
-| 双联导弹仓 | 30" | 2 | 4+ | 7 | -1 | 2 | [[core-rules/twin-linked.md\|twin-linked]] |
-| 寻觅者导弹 | 48" | 1 | 4+ | 14 | -3 | D6+1 | [[core-rules/one-shot.md\|一次性]] |
+| 双联导弹仓 | 30" | 2 | 4+ | 7 | -1 | 2 | [[core-rules/twin-linked.md\|双联]] |
+| 寻觅者导弹 | 48" | 1 | 4+ | 14 | -3 | D6+1 | [[core-rules/one-shot.md\|单发]] |
 | 并联离子步枪 — 标准 | 30" | 3 | 4+ | 7 | -1 | 1 | [[core-rules/twin-linked.md\|双联]] |
 | 并联离子步枪 — 过载 | 30" | 3 | 4+ | 8 | -2 | 2 | [[core-rules/hazardous.md\|危险]]，[[core-rules/twin-linked.md\|双联]] |
 

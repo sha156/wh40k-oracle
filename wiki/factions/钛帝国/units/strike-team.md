@@ -27,9 +27,9 @@ updated: '2026-07-23'
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
 | 脉冲卡宾 | 20" | 2 | 4+ | 5 | 0 | 1 | — |
-| 脉冲手枪 | 12" | 1 | 4+ | 5 | 0 | 1 | [[core-rules/pistol.md\|pistol]] |
-| 脉冲步枪 | 30" | 1 | 4+ | 5 | 0 | 1 | [[core-rules/rapid-fire.md\|rapid fire 1]] |
-| 导弹炮台支援系统 | 30" | 2 | 5+ | 5 | 0 | 1 | [[core-rules/indirect-fire.md\|indirect fire]]，[[core-rules/twin-linked.md\|twin-linked]] |
+| 脉冲手枪 | 12" | 1 | 4+ | 5 | 0 | 1 | [[core-rules/pistol.md\|手枪]] |
+| 脉冲步枪 | 30" | 1 | 4+ | 5 | 0 | 1 | [[core-rules/rapid-fire.md\|速射1]] |
+| 导弹炮台支援系统 | 30" | 2 | 5+ | 5 | 0 | 1 | [[core-rules/indirect-fire.md\|曲射]]，[[core-rules/twin-linked.md\|双联]] |
 
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |

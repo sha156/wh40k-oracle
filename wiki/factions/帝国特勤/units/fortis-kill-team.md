@@ -28,20 +28,20 @@ updated: '2026-07-23'
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
 | 爆矢手枪 | 12" | 1 | 3+ | 4 | 0 | 1 | [[core-rules/pistol.md\|手枪]] |
-| 爆弹步枪 | 24" | 2 | 3+ | 4 | -1 | 1 | [[core-rules/assault.md\|assault]]，[[core-rules/heavy.md\|heavy]] |
-| 喷火手枪 | 12" | D6 | N/A | 3 | 0 | 1 | [[core-rules/ignores-cover.md\|无视掩体]]，[[core-rules/torrent.md\|洪流]] |
+| 爆弹步枪 | 24" | 2 | 3+ | 4 | -1 | 1 | [[core-rules/assault.md\|突击]]，[[core-rules/heavy.md\|重型]] |
+| 喷火手枪 | 12" | D6 | N/A | 3 | 0 | 1 | [[core-rules/ignores-cover.md\|无视掩体]]，[[core-rules/pistol.md\|手枪]]，[[core-rules/torrent.md\|洪流]] |
 | 重型爆矢手枪 | 18" | 1 | 3+ | 4 | -1 | 1 | [[core-rules/pistol.md\|手枪]] |
-| 爆矢手枪 | 24" | 1 | 4+ | 4 | 0 | 1 | [[core-rules/pistol.md\|手枪]] |
+| 爆矢手枪 | 24" | 1 | 4+ | 4 | 0 | 1 | [[core-rules/anti.md\|针对步兵4+]]，[[core-rules/devastating-wounds.md\|毁灭伤害]]，[[core-rules/rapid-fire.md\|速射1]] |
 | 等离子手枪 - 标准 | 12" | 1 | 3+ | 7 | -2 | 1 | [[core-rules/pistol.md\|手枪]] |
 | 等离子手枪 - 过载 | 12" | 1 | 3+ | 8 | -3 | 2 | [[core-rules/hazardous.md\|危险]]，[[core-rules/pistol.md\|手枪]] |
 | 等离子焚化枪 - 标准 | 24" | 2 | 3+ | 7 | -2 | 1 | [[core-rules/assault.md\|突击]]，[[core-rules/heavy.md\|重型]] |
 | 等离子焚化枪 - 过载 | 24" | 2 | 3+ | 8 | -3 | 2 | [[core-rules/assault.md\|突击]]，[[core-rules/hazardous.md\|危险]]，[[core-rules/heavy.md\|重型]] |
-| 双联爆弹步枪 | 24" | 2 | 3+ | 4 | -1 | 1 | [[core-rules/twin-linked.md\|twin-linked]] |
+| 双联爆弹步枪 | 24" | 2 | 3+ | 4 | -1 | 1 | [[core-rules/twin-linked.md\|双联]] |
 
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| 阿斯塔特链锯剑 | 近战 | 4 | 4+ | 4 | -1 | 1 | 注：中文4+英文3+以英文为准 |
+| 阿斯塔特链锯剑 | 近战 | 4 | 4+ | 4 | -1 | 1 | — |
 | 格斗武器 | 近战 | 3 | 3+ | 4 | 0 | 1 | — |
 | 长守近战武器 | 近战 | 3 | 3+ | 5 | -2 | 1 | — |
 

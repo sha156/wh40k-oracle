@@ -25,10 +25,10 @@ updated: '2026-07-23'
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
 | 激光炮 | 48" | 1 | 3+ | 12 | -3 | D6+1 | — |
-| 雷鹰重炮 | 48" | D6+6 | 3+ | 10 | -2 | 3 | [[core-rules/blast.md\|blast]] |
-| 涡轮激光破坏炮 | 96" | D3+1 | 3+ | 20 | -4 | D6+6 | [[core-rules/blast.md\|blast]] |
-| 双联重爆弹 | 36" | 3 | 3+ | 5 | -1 | 2 | [[core-rules/sustained-hits.md\|sustained hits 1]]，[[core-rules/twin-linked.md\|twin-linked]] |
-| 地狱直击导弹阵列 | 72" | 4 | 3+ | 8 | -2 | 3 | [[core-rules/anti.md\|anti-fly 4+]] |
+| 雷鹰重炮 | 48" | D6+6 | 3+ | 10 | -2 | 3 | [[core-rules/blast.md\|爆炸]] |
+| 涡轮激光破坏炮 | 96" | D3+1 | 3+ | 20 | -4 | D6+6 | [[core-rules/blast.md\|爆炸]] |
+| 双联重爆弹 | 36" | 3 | 3+ | 5 | -1 | 2 | [[core-rules/sustained-hits.md\|连击1]]，[[core-rules/twin-linked.md\|双联]] |
+| 地狱直击导弹阵列 | 72" | 4 | 3+ | 8 | -2 | 3 | [[core-rules/anti.md\|针对飞行4+]] |
 
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |

@@ -27,14 +27,14 @@ updated: '2026-07-23'
 ## 射击武器
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| 火龙热熔枪 | 12" | 1 | 2+ | 9 | -4 | D6 | [[core-rules/assault.md\|assault]]，[[core-rules/melta.md\|melta 3]] |
-| 激光骑枪 | 6" | 1 | 2+ | 6 | -3 | 2 | [[core-rules/assault.md\|assault]] |
-| 双联星镖枪 | 18" | 2 | 2+ | 4 | -1 | 1 | [[core-rules/assault.md\|assault]]，[[core-rules/twin-linked.md\|twin-linked]] |
+| 火龙热熔枪 | 12" | 1 | 2+ | 9 | -4 | D6 | [[core-rules/assault.md\|突击]]，[[core-rules/melta.md\|热熔3]] |
+| 激光骑枪 | 6" | 1 | 2+ | 6 | -3 | 2 | [[core-rules/assault.md\|突击]] |
+| 双联星镖枪 | 18" | 2 | 2+ | 4 | -1 | 1 | [[core-rules/assault.md\|突击]]，[[core-rules/twin-linked.md\|双联]] |
 
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| 激光骑枪 | 近战 | 4 | 2+ | 4 | -3 | 2 | [[core-rules/lance.md\|lance]] |
+| 激光骑枪 | 近战 | 4 | 2+ | 4 | -3 | 2 | [[core-rules/lance.md\|骑枪]] |
 | 女妖之刃 | 近战 | 5 | 2+ | 4 | -3 | 1 | — |
 | 格斗武器 | 近战 | 3 | 2+ | 3 | 0 | 1 | — |
 
@@ -47,4 +47,4 @@ updated: '2026-07-23'
 
 ## 关键词
 - **阵营关键词**：Asuryani
-- **普通关键词**：[[core-rules/character.md|Character]]，Fly，Aeldari，[[factions/艾达灵族/units/autarch.md|Autarch]]，[[core-rules/mounted.md|Mounted]]，Autarch Skyrunner
+- **普通关键词**：[[core-rules/character.md|Character]]，Fly，Aeldari，Autarch，[[core-rules/mounted.md|Mounted]]，Autarch Skyrunner

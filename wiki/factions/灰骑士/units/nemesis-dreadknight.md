@@ -30,8 +30,8 @@ updated: '2026-07-23'
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
 | 加特林消灵炮 | 24" | 12 | 3+ | 6 | 0 | 1 | [[core-rules/psychic-attacks.md\|灵能]]，[[core-rules/sustained-hits.md\|连击1]] |
-| 焚化炮 | 18" | 2D6 | N/A | 6 | -1 | 1 | ⽆视掩体，[[core-rules/torrent.md\|洪流]] |
-| 重型灵能炮 | 24" | 6 | 3+ | 10 | -2 | 3 | [[core-rules/psychic-attacks.md\|灵能]]，⽆视掩体 |
+| 焚化炮 | 18" | 2D6 | N/A | 6 | -1 | 1 | [[core-rules/ignores-cover.md\|无视掩体]]，[[core-rules/torrent.md\|洪流]] |
+| 重型灵能炮 | 24" | 6 | 3+ | 10 | -2 | 3 | [[core-rules/ignores-cover.md\|无视掩体]]，[[core-rules/psychic-attacks.md\|灵能]] |
 
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |

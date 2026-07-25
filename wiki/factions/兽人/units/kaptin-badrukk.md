@@ -27,9 +27,9 @@ updated: '2026-07-23'
 ## 射击武器
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| Da Rippa – standard | 24" | 3 | 5+ | 7 | -2 | 2 | [[core-rules/heavy.md\|heavy]]，[[core-rules/sustained-hits.md\|sustained hits 1]] |
-| Da Rippa – supercharge | 24" | 3 | 5+ | 8 | -3 | 3 | [[core-rules/hazardous.md\|hazardous]]，[[core-rules/heavy.md\|heavy]]，[[core-rules/sustained-hits.md\|sustained hits 1]] |
-| 手铳 | 12" | 1 | 4+ | 4 | 0 | 1 | [[core-rules/pistol.md\|pistol]] |
+| Da Rippa – standard | 24" | 3 | 5+ | 7 | -2 | 2 | [[core-rules/heavy.md\|重型]]，[[core-rules/sustained-hits.md\|连击1]] |
+| Da Rippa – supercharge | 24" | 3 | 5+ | 8 | -3 | 3 | [[core-rules/hazardous.md\|危险]]，[[core-rules/heavy.md\|重型]]，[[core-rules/sustained-hits.md\|连击1]] |
+| 手铳 | 12" | 1 | 4+ | 4 | 0 | 1 | [[core-rules/pistol.md\|手枪]] |
 
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |

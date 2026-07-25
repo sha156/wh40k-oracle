@@ -29,7 +29,7 @@ updated: '2026-07-23'
 ## 射击武器
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| 音波手枪 | 12" | 3 | 2+ | 5 | -1 | 2 | [[core-rules/pistol.md\|手枪]]，[[core-rules/ignores-cover.md\|忽视掩体]] |
+| 音波手枪 | 12" | 3 | 2+ | 5 | -1 | 2 | [[core-rules/ignores-cover.md\|无视掩体]]，[[core-rules/pistol.md\|手枪]] |
 
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |

@@ -26,7 +26,7 @@ updated: '2026-07-23'
 ## 射击武器
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| 烧夷焚化者 | 12" | 2D6 | N/A | 6 | -1 | 1 | [[core-rules/ignores-cover.md\|忽略掩体]]，[[core-rules/torrent.md\|喷射]] |
+| 烧夷焚化者 | 12" | 2D6 | N/A | 6 | -1 | 1 | [[core-rules/ignores-cover.md\|无视掩体]]，[[core-rules/torrent.md\|洪流]] |
 | 炸药包 | 8" | D6 | 5+ | 9 | -2 | 2 | [[core-rules/assault.md\|突击]]，[[core-rules/blast.md\|爆炸]]，[[core-rules/hazardous.md\|危险]] |
 | 重型采矿激光 | 36" | D3 | 4+ | 12 | -3 | D6+1 | [[core-rules/blast.md\|爆炸]] |
 | 重型地震炮 | 24" | 4 | 4+ | 8 | -2 | D3 | [[core-rules/rapid-fire.md\|速射2]] |

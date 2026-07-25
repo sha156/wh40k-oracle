@@ -30,13 +30,13 @@ updated: '2026-07-23'
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
 | 赦免者爆弹手枪 | 18" | 1 | 3+ | 5 | -1 | 2 | [[core-rules/pistol.md\|手枪]] |
-| 喷火手枪 | 12" | D6 | N/A | 4 | 0 | 1 | [[core-rules/torrent.md\|洪流]]，[[core-rules/ignores-cover.md\|无视掩体]]，[[core-rules/pistol.md\|手枪]] |
+| 喷火手枪 | 12" | D6 | N/A | 4 | 0 | 1 | [[core-rules/ignores-cover.md\|无视掩体]]，[[core-rules/pistol.md\|手枪]]，[[core-rules/torrent.md\|洪流]] |
 
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
 | 牧师权杖 | 近战 | 5 | 2+ | 6 | -1 | 2 | — |
-| 精工动力武器 | 近战 | 3 | 2+ | 5 | -2 | 2 | [[core-rules/lethal-hits.md\|致命一击]]，[[core-rules/extra-attacks.md\|额外攻击]] |
+| 精工动力武器 | 近战 | 3 | 2+ | 5 | -2 | 2 | [[core-rules/extra-attacks.md\|额外攻击]]，[[core-rules/lethal-hits.md\|致命一击]] |
 
 ## 技能
 - **【阵营技能】：圣堂誓言**

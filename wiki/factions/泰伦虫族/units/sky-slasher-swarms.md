@@ -24,12 +24,12 @@ updated: '2026-07-23'
 ## 射击武器
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| 尖刺利齿 | 6" | 4 | 5+ | 3 | 0 | 1 | [[core-rules/pistol.md\|pistol]] |
+| 尖刺利齿 | 6" | 4 | 5+ | 3 | 0 | 1 | [[core-rules/pistol.md\|手枪]] |
 
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| Claws and teeth | 近战 | 6 | 5+ | 2 | 0 | 1 | [[core-rules/sustained-hits.md\|sustained hits 1]] |
+| Claws and teeth | 近战 | 6 | 5+ | 2 | 0 | 1 | [[core-rules/sustained-hits.md\|连击1]] |
 
 ## 技能
 - **Chitinous Horrors**：While an enemy unit is within Engagement Range of one or more units with this ability, halve the Objective Control characteristic of models in that enemy unit.

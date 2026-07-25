@@ -27,7 +27,7 @@ updated: '2026-07-23'
 ## 射击武器
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| The Eye of Wrath | 6" | 1 | 2+ | 6 | -3 | 2 | [[core-rules/assault.md\|assault]] |
+| The Eye of Wrath | 6" | 1 | 2+ | 6 | -3 | 2 | [[core-rules/assault.md\|突击]] |
 
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |
@@ -43,4 +43,4 @@ updated: '2026-07-23'
 
 ## 关键词
 - **阵营关键词**：Asuryani
-- **普通关键词**：[[factions/艾达灵族/units/prince-yriel.md|Prince Yriel]]，Aeldari，[[core-rules/epic-hero.md|Epic Hero]]，[[core-rules/character.md|Character]]，[[core-rules/infantry.md|Infantry]]
+- **普通关键词**：Prince Yriel，Aeldari，[[core-rules/epic-hero.md|Epic Hero]]，[[core-rules/character.md|Character]]，[[core-rules/infantry.md|Infantry]]

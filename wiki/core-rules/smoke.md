@@ -22,4 +22,4 @@ updated: '2026-07-23'
 11 版核心规则本身不含独立的"释放烟雾"技能条目——【烟雾】纯粹作为烟幕计谋的目标资格关键词存在。
 
 > 关联：[[core-rules/benefit-of-cover.md|掩体优势]]。
-> 依据：[11版 Core Rules 烟幕计谋 SMOKESCREEN p57]
+> 依据：[11版 Core Rules 烟幕计谋 [[core-rules/stratagems/smokescreen.md|SMOKESCREEN]] p57]

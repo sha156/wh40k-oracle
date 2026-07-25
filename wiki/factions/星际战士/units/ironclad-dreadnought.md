@@ -24,16 +24,16 @@ updated: '2026-07-23'
 ## 射击武器
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| 重型喷火器 | 12" | D6 | N/A | 5 | -1 | 1 | [[core-rules/ignores-cover.md\|ignores cover]]，[[core-rules/torrent.md\|torrent]] |
-| 猎杀飞弹 | 48" | 1 | 2+ | 14 | -3 | D6 | [[core-rules/one-shot.md\|one shot]] |
-| 飓风爆弹阵列 | 24" | 6 | 3+ | 4 | 0 | 1 | [[core-rules/rapid-fire.md\|rapid fire 6]]，[[core-rules/twin-linked.md\|twin-linked]] |
-| 热熔枪 | 12" | 1 | 3+ | 9 | -4 | D6 | [[core-rules/melta.md\|melta 2]] |
-| 风暴爆弹枪 | 24" | 2 | 3+ | 4 | 0 | 1 | [[core-rules/rapid-fire.md\|rapid fire 2]] |
+| 重型喷火器 | 12" | D6 | N/A | 5 | -1 | 1 | [[core-rules/ignores-cover.md\|无视掩体]]，[[core-rules/torrent.md\|洪流]] |
+| 猎杀飞弹 | 48" | 1 | 2+ | 14 | -3 | D6 | [[core-rules/one-shot.md\|单发]] |
+| 飓风爆弹阵列 | 24" | 6 | 3+ | 4 | 0 | 1 | [[core-rules/rapid-fire.md\|速射6]]，[[core-rules/twin-linked.md\|双联]] |
+| 热熔枪 | 12" | 1 | 3+ | 9 | -4 | D6 | [[core-rules/melta.md\|热熔2]] |
+| 风暴爆弹枪 | 24" | 2 | 3+ | 4 | 0 | 1 | [[core-rules/rapid-fire.md\|速射2]] |
 
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| [[factions/星际战士/units/dreadnought.md\|Dreadnought]] chainfist | 近战 | 4 | 3+ | 12 | -2 | 3 | [[core-rules/anti.md\|anti-vehicle 3+]] |
+| Dreadnought chainfist | 近战 | 4 | 3+ | 12 | -2 | 3 | [[core-rules/anti.md\|针对载具3+]] |
 | 无畏格斗武器 | 近战 | 5 | 3+ | 12 | -2 | 3 | — |
 | Seismic hammer | 近战 | 3 | 3+ | 14 | -3 | D6+2 | — |
 

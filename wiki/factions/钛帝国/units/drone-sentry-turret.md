@@ -25,10 +25,10 @@ updated: '2026-07-23'
 ## 射击武器
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| 并联爆裂速射炮 | 18" | 4 | 5+ | 5 | 0 | 1 | [[core-rules/twin-linked.md\|twin-linked]] |
-| 并联融合炮 | 12" | 1 | 5+ | 9 | -4 | D6 | [[core-rules/melta.md\|melta 2]]，[[core-rules/twin-linked.md\|twin-linked]] |
-| 双联导弹仓 | 30" | 2 | 5+ | 7 | -1 | 2 | [[core-rules/twin-linked.md\|twin-linked]] |
-| 并联等离子步枪 | 24" | 1 | 5+ | 8 | -3 | 3 | [[core-rules/twin-linked.md\|twin-linked]] |
+| 并联爆裂速射炮 | 18" | 4 | 5+ | 5 | 0 | 1 | [[core-rules/twin-linked.md\|双联]] |
+| 并联融合炮 | 12" | 1 | 5+ | 9 | -4 | D6 | [[core-rules/melta.md\|热熔2]]，[[core-rules/twin-linked.md\|双联]] |
+| 双联导弹仓 | 30" | 2 | 5+ | 7 | -1 | 2 | [[core-rules/twin-linked.md\|双联]] |
+| 并联等离子步枪 | 24" | 1 | 5+ | 8 | -3 | 3 | [[core-rules/twin-linked.md\|双联]] |
 
 ## 技能
 - **Sentinel Protocols**：Each time you select this <span class="kwb">FORTIFICATION</span> for the Fire Overwatch Stratagem, hits are scored on unmodified Hit rolls of 5+ when resolving that Stratagem.

@@ -30,8 +30,8 @@ updated: '2026-07-23'
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
 | 阿卡斯托斯自动炮 | 48" | 2 | 3+ | 9 | -1 | 3 | — |
-| 巨型钢铁风暴导弹舱 | 48" | D6+6 | 3+ | 5 | 0 | 1 | [[core-rules/heavy.md\|重型]]，[[core-rules/blast.md\|爆炸]]，[[core-rules/indirect-fire.md\|曲射]] |
-| 太阳神防空导弹 | 48" | 3 | 3+ | 10 | -2 | D6 | [[core-rules/anti.md\|反飞行 2+]]，[[core-rules/heavy.md\|重型]] |
+| 巨型钢铁风暴导弹舱 | 48" | D6+6 | 3+ | 5 | 0 | 1 | [[core-rules/blast.md\|爆炸]]，[[core-rules/heavy.md\|重型]]，[[core-rules/indirect-fire.md\|曲射]] |
+| 太阳神防空导弹 | 48" | 3 | 3+ | 10 | -2 | D6 | [[core-rules/anti.md\|针对飞行2+]]，[[core-rules/heavy.md\|重型]] |
 | 激光炮 | 48" | 1 | 3+ | 12 | -3 | D6+1 | — |
 | 并联电磁激光炮 | 72" | D6 | 3+ | 18 | -4 | D6+6 | [[core-rules/blast.md\|爆炸]]，[[core-rules/twin-linked.md\|双联]] |
 

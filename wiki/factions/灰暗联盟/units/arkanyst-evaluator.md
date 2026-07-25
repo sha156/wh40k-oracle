@@ -28,7 +28,7 @@ updated: '2026-07-23'
 |---|---|---|---|---|---|---|---|
 | 物质转换逆变器 -半载 | 12" | 3 | 2+ | 8 | -1 | 1 | [[core-rules/rapid-fire.md\|速射1]] |
 | 物质转换逆变器 -全载 | 18" | 3 | 2+ | 8 | -2 | 2 | [[core-rules/hazardous.md\|危险]]，[[core-rules/rapid-fire.md\|速射2]] |
-| 物质转换逆变器 -超载 | 24" | 3 | 2+ | 8 | -3 | 3 | [[core-rules/hazardous.md\|危险]]，超载，[[core-rules/rapid-fire.md\|速射3]] |
+| 物质转换逆变器 -超载 | 24" | 3 | 2+ | 8 | -3 | 3 | [[core-rules/hazardous.md\|危险]]，过载，[[core-rules/rapid-fire.md\|速射3]] |
 
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |

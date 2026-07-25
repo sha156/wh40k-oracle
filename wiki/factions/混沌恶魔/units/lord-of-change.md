@@ -31,7 +31,7 @@ updated: '2026-07-23'
 |---|---|---|---|---|---|---|---|
 | 巫术法杖 | 18" | 6 | 2+ | 8 | -1 | 2 | [[core-rules/psychic-attacks.md\|灵能]] |
 | 篡变之矢-巫火 | 18" | 9 | 2+ | 9 | -1 | 1 | [[core-rules/psychic-attacks.md\|灵能]] |
-| 篡变之矢-专注巫火 | 18" | 9 | 2+ | 9 | -2 | 3 | [[core-rules/psychic-attacks.md\|灵能]]，[[core-rules/hazardous.md\|危险]] |
+| 篡变之矢-专注巫火 | 18" | 9 | 2+ | 9 | -2 | 3 | [[core-rules/hazardous.md\|危险]]，[[core-rules/psychic-attacks.md\|灵能]] |
 
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |

@@ -27,7 +27,7 @@ updated: '2026-07-23'
 ## 射击武器
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| Negotiator pistol | 12" | 4 | 3+ | 4 | -2 | 1 | [[core-rules/precision.md\|precision]] |
+| Negotiator pistol | 12" | 4 | 3+ | 4 | -2 | 1 | [[core-rules/precision.md\|精准]] |
 
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |

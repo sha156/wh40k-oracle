@@ -30,7 +30,7 @@ updated: '2026-07-23'
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
 | 耶利哥级转化谐振器 - 巨型冲击 | 24" | 2 | 2+ | 12 | -3 | D6+2 | [[core-rules/devastating-wounds.md\|毁灭伤害]] |
-| 耶利哥级转化谐振器-震荡波 | 24" | D6+2 | 2+ | 6 | -2 | 1 | [[core-rules/blast.md\|blast]]，[[core-rules/sustained-hits.md\|sustained hits 1]] |
+| 耶利哥级转化谐振器-震荡波 | 24" | D6+2 | 2+ | 6 | -2 | 1 | [[core-rules/blast.md\|爆炸]]，[[core-rules/sustained-hits.md\|连击1]] |
 
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |

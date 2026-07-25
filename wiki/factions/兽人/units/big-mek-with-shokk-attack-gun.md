@@ -45,4 +45,4 @@ updated: '2026-07-23'
 
 ## 关键词
 - **阵营关键词**：兽人
-- **普通关键词**：[[core-rules/infantry.md|步兵]]，[[core-rules/character.md|人物]]，[[core-rules/grenades.md|手雷]]，技师，次元炮[[factions/兽人/units/big-mek.md|大技霸]]
+- **普通关键词**：[[core-rules/infantry.md|步兵]]，[[core-rules/character.md|人物]]，[[core-rules/grenades.md|手雷]]，技师，次元炮大技霸

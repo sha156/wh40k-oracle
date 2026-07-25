@@ -24,7 +24,7 @@ updated: '2026-07-23'
 ## 射击武器
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| 爆弹手枪 | 12" | 1 | 2+ | 4 | 0 | 1 | [[core-rules/pistol.md\|pistol]] |
+| 爆弹手枪 | 12" | 1 | 2+ | 4 | 0 | 1 | [[core-rules/pistol.md\|手枪]] |
 
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |
@@ -32,7 +32,7 @@ updated: '2026-07-23'
 | 阿斯塔特链锯剑 | 近战 | 5 | 2+ | 4 | -1 | 1 | — |
 
 ## 技能
-- **[[factions/星际战士/units/sanguinary-priest.md|Sanguinary Priest]]**：While this model is leading a unit, models in that unit have the Feel No Pain 5+ ability.
+- **Sanguinary Priest**：While this model is leading a unit, models in that unit have the Feel No Pain 5+ ability.
 - **Blood Chalice**：While this model is leading a unit, improve the Armour Penetration characteristic of melee weapons equipped by models in that unit by 1.
 
 ## 单位构成

@@ -24,16 +24,16 @@ updated: '2026-07-23'
 ## 射击武器
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| 转换光线炮 | 24" | 1 | 3+ | 7 | -1 | 3 | conversion，[[core-rules/sustained-hits.md\|sustained hits d3]] |
-| 重型爆弹枪 | 36" | 3 | 3+ | 5 | -1 | 2 | [[core-rules/sustained-hits.md\|SUSTAINED HITS 1]] |
-| 重型喷火器 | 12" | D6 | N/A | 5 | -1 | 1 | [[core-rules/ignores-cover.md\|IGNORES COVER]]，[[core-rules/torrent.md\|TORRENT]] |
-| 猎杀飞弹 | 48" | 1 | 2+ | 14 | -3 | D6 | [[core-rules/one-shot.md\|one shot]] |
-| Infernus cannon | 12" | 2D6 | N/A | 6 | -1 | 1 | [[core-rules/ignores-cover.md\|ignores cover]]，[[core-rules/torrent.md\|torrent]] |
+| 转换光线炮 | 24" | 1 | 3+ | 7 | -1 | 3 | 转换，[[core-rules/sustained-hits.md\|连击D3]] |
+| 重型爆弹枪 | 36" | 3 | 3+ | 5 | -1 | 2 | [[core-rules/sustained-hits.md\|连击1]] |
+| 重型喷火器 | 12" | D6 | N/A | 5 | -1 | 1 | [[core-rules/ignores-cover.md\|无视掩体]]，[[core-rules/torrent.md\|洪流]] |
+| 猎杀飞弹 | 48" | 1 | 2+ | 14 | -3 | D6 | [[core-rules/one-shot.md\|单发]] |
+| Infernus cannon | 12" | 2D6 | N/A | 6 | -1 | 1 | [[core-rules/ignores-cover.md\|无视掩体]]，[[core-rules/torrent.md\|洪流]] |
 | 激光炮 | 48" | 1 | 3+ | 12 | -3 | D6+1 | — |
-| Magna-melta cannon | 18" | 2 | 3+ | 12 | -4 | D6 | [[core-rules/melta.md\|melta 4]] |
-| Plasma destroyer – standard | 36" | D3 | 3+ | 8 | -2 | 2 | [[core-rules/blast.md\|blast]] |
-| Plasma destroyer – supercharge | 36" | D3 | 3+ | 9 | -3 | 3 | [[core-rules/blast.md\|blast]]，[[core-rules/hazardous.md\|hazardous]] |
-| 风暴爆弹枪 | 24" | 2 | 3+ | 4 | 0 | 1 | [[core-rules/rapid-fire.md\|rapid fire 2]] |
+| Magna-melta cannon | 18" | 2 | 3+ | 12 | -4 | D6 | [[core-rules/melta.md\|热熔4]] |
+| Plasma destroyer – standard | 36" | D3 | 3+ | 8 | -2 | 2 | [[core-rules/blast.md\|爆炸]] |
+| Plasma destroyer – supercharge | 36" | D3 | 3+ | 9 | -3 | 3 | [[core-rules/blast.md\|爆炸]]，[[core-rules/hazardous.md\|危险]] |
+| 风暴爆弹枪 | 24" | 2 | 3+ | 4 | 0 | 1 | [[core-rules/rapid-fire.md\|速射2]] |
 
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |

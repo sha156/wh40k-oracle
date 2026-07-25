@@ -27,8 +27,8 @@ updated: '2026-07-23'
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
 | 瘟疫爆弹手枪  | 12" | 1 | 3+ | 4 | 0 | 1 | [[core-rules/lethal-hits.md\|致命一击]]，[[core-rules/pistol.md\|手枪]] |
-| 瘟疫之风（标准） | 12" | D6 | N/A | 4 | -1 | D3 | [[core-rules/psychic-attacks.md\|psychic]]，[[core-rules/torrent.md\|torrent]] |
-| 瘟疫之风（过载）   | 12" | D6+3 | N/A | 6 | -2 | D3 | [[core-rules/psychic-attacks.md\|灵能]]，[[core-rules/torrent.md\|喷射]]，[[core-rules/hazardous.md\|危险]] |
+| 瘟疫之风（标准） | 12" | D6 | N/A | 4 | -1 | D3 | [[core-rules/psychic-attacks.md\|灵能]]，[[core-rules/torrent.md\|洪流]] |
+| 瘟疫之风（过载）   | 12" | D6+3 | N/A | 6 | -2 | D3 | [[core-rules/hazardous.md\|危险]]，[[core-rules/psychic-attacks.md\|灵能]]，[[core-rules/torrent.md\|洪流]] |
 
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |

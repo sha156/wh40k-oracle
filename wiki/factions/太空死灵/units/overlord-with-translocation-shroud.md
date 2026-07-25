@@ -29,7 +29,7 @@ updated: '2026-07-23'
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| 霸主之刃 | 近战 | 4 | 2+ | 8 | -3 | 2 | [[core-rules/devastating-wounds.md\|devastating wounds]] |
+| 霸主之刃 | 近战 | 4 | 2+ | 8 | -3 | 2 | [[core-rules/devastating-wounds.md\|毁灭伤害]] |
 
 ## 技能
 - **[阵营]：重生协议**
@@ -41,4 +41,4 @@ updated: '2026-07-23'
 
 ## 关键词
 - **阵营关键词**：Necrons
-- **普通关键词**：[[factions/太空死灵/units/overlord.md|Overlord]] with translocation shroud，[[core-rules/infantry.md|Infantry]]，Noble，[[factions/太空死灵/units/overlord.md|Overlord]]，[[core-rules/character.md|Character]]
+- **普通关键词**：[[factions/太空死灵/units/overlord.md|Overlord]] with translocation shroud，[[core-rules/infantry.md|Infantry]]，Noble，Overlord，[[core-rules/character.md|Character]]

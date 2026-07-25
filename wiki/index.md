@@ -1,6 +1,6 @@
 # WH40K Wiki Index
 
-_Last updated: 2026-07-25 14:26 UTC_
+_Last updated: 2026-07-25 17:23 UTC_
 
 ## 目录
 
@@ -2790,12 +2790,14 @@ _Last updated: 2026-07-25 14:26 UTC_
 | 类型 | 名称 | 摘要 | Updated |
 |------|------|------|---------|
 | core-rule | [一次性](core-rules/one-shot.md) | 一次性武器整场对战只能开火一次，多为导弹、单发炸弹类装备。 | 2026-07-11 |
-| core-rule | [不知疼痛](core-rules/feel-no-pain.md) | 不知疼痛让模型逐点豁免即将失去的 W 值，是保存之后的最后防线。 | 2026-07-11 |
+| core-rule | [不觉疼痛](core-rules/feel-no-pain.md) | 不觉疼痛让模型逐点豁免即将失去的 W 值，是保存之后的最后防线。 | 2026-07-26 |
 | core-rule | [专属运输](core-rules/dedicated-transport.md) | 专属运输是运输工具的一个子类标记：除具备全部运输规则外，还能在满足条件时随搭乘单位一起做斥候移动。 | 2026-07-23 |
 | core-rule | [为了上上善道](core-rules/for-the-greater-good.md) | 钛帝国军队规则：观察员标记目标，射击手打标记目标更准。 | 2026-07-11 |
 | core-rule | [人物](core-rules/character.md) | 人物是军队里的英雄模型：可率领单位、在分配伤害时受保护，但会被精准武器点名。 | 2026-07-23 |
+| core-rule | [先攻](core-rules/fights-first.md) | 拥有先攻的单位在近战阶段先于普通单位出手。 | 2026-07-26 |
 | core-rule | [冲锋](core-rules/charge.md) | 冲锋移动让单位扑进近战并获得先攻。 | 2026-07-11 |
 | core-rule | [冲锋阶段](core-rules/charge-phase.md) | 冲锋阶段逐个宣布冲锋、掷 2D6 冲锋骰并进行冲锋移动。 | 2026-07-11 |
+| core-rule | [劈砍](core-rules/cleave.md) | 劈砍是近战版的爆炸：打人堆越打越多，但要求这把武器的攻击只指定一个目标。 | 2026-07-26 |
 | core-rule | [加速移动](core-rules/advance.md) | 加速移动用 D6 加速骰换取额外移动距离，代价是本回合行动受限。 | 2026-07-11 |
 | core-rule | [危险](core-rules/hazardous.md) | 危险武器威力不稳定，开火后要掷危险骰，可能反噬自身单位。 | 2026-07-11 |
 | core-rule | [双联](core-rules/twin-linked.md) | 双联武器共享火控系统，造伤骰可以重掷。 | 2026-07-11 |
@@ -2808,7 +2810,7 @@ _Last updated: 2026-07-25 14:26 UTC_
 | core-rule | [巨兽](core-rules/monster.md) | 巨兽体型庞大，移动可碾过普通模型，交战中仍能开火与被射击。 | 2026-07-11 |
 | core-rule | [快速部署](core-rules/rapid-ingress.md) | 快速部署是核心计谋：在对手移动阶段结束时让战略预备队提前入场。 | 2026-07-11 |
 | core-rule | [忽视掩体](core-rules/ignores-cover.md) | 忽视掩体专治龟缩在工事里的目标。 | 2026-07-11 |
-| core-rule | [悬浮](core-rules/hover.md) | 悬浮单位翱翔时不必支付 2" 的距离代价。 | 2026-07-11 |
+| core-rule | [悬停](core-rules/hover.md) | 悬停单位翱翔时不必支付 2" 的距离代价。 | 2026-07-26 |
 | core-rule | [战斗震慑测试](core-rules/battle-shock-test.md) | 战斗震慑衡量部队士气，失败的单位控场能力与计谋支援尽失。 | 2026-07-11 |
 | core-rule | [战略预备队](core-rules/strategic-reserves.md) | 战略预备队把单位留在场外择机入场，11 版上限放宽到全军一半分数。 | 2026-07-11 |
 | core-rule | [战线](core-rules/battleline.md) | 战线是标示军队骨干步兵单位的类型标记；其建军编制加成不在本册核心规则内，无独立通用规则条文。 | 2026-07-23 |
@@ -2847,7 +2849,6 @@ _Last updated: 2026-07-25 14:26 UTC_
 | core-rule | [核心规则第 7 章](core-rules/sections/07-the-battle-round.md) | 11 版核心规则第 07 章《THE BATTLE ROUND》全文，共 3 节，官方节号 07.01–07.03。 | 2026-07-25 |
 | core-rule | [核心规则第 8 章](core-rules/sections/08-command-phase.md) | 11 版核心规则第 08 章《COMMAND PHASE》全文，共 5 节，官方节号 08.01–08.05。 | 2026-07-25 |
 | core-rule | [核心规则第 9 章](core-rules/sections/09-movement-phase.md) | 11 版核心规则第 09 章《MOVEMENT PHASE》全文，共 7 节，官方节号 09.01–09.07。 | 2026-07-25 |
-| core-rule | [横扫](core-rules/cleave.md) | 横扫是近战版的爆炸：打人堆越打越多，但要求这把武器的攻击只指定一个目标。 | 2026-07-25 |
 | core-rule | [步兵](core-rules/infantry.md) | 步兵是徒步作战的单位类型，能穿越密集地形、可在废墟高层设立，并在地形区内获得掩体。 | 2026-07-23 |
 | core-rule | [步行者](core-rules/walker.md) | 步行者是标示双足/多足步行载具的单位类型标记；带此关键词的载具即使非人物也能做英勇干预。 | 2026-07-23 |
 | core-rule | [毁灭伤害](core-rules/devastating-wounds.md) | 毁灭伤害让造伤暴击直接转化为致命伤害，绕过保护与减伤。 | 2026-07-11 |
@@ -2855,7 +2856,8 @@ _Last updated: 2026-07-25 14:26 UTC_
 | core-rule | [泰坦级](core-rules/titanic.md) | 泰坦级标示战场上的超巨型战争引擎；它在行动、交战射击与被碾压方面享有一系列不受常规限制的例外。 | 2026-07-23 |
 | core-rule | [深入打击](core-rules/deep-strike.md) | 深入打击让单位经隧道、传送等方式空降战场，是最常见的预备队入场技能。 | 2026-07-11 |
 | core-rule | [混沌之影](core-rules/shadow-of-chaos.md) | 混沌恶魔军队规则：己方控制的区域被混沌之影笼罩，恶魔获益、敌军受慑。 | 2026-07-11 |
-| core-rule | [渗透](core-rules/infiltrators.md) | 渗透允许侦察部队在部署阶段直接埋伏到战场中立区。 | 2026-07-11 |
+| core-rule | [渗透者](core-rules/infiltrators.md) | 渗透者允许侦察部队在部署阶段直接埋伏到战场中立区。 | 2026-07-26 |
+| core-rule | [火力平台](core-rules/firing-deck.md) | 运输工具射击时，可以借用车内乘客的远程武器开火。 | 2026-07-26 |
 | core-rule | [灵能攻击](core-rules/psychic-attacks.md) | 灵能武器汲取使用者的灵能之力，11 版起可以无视命中修正。 | 2026-07-11 |
 | core-rule | [灵能者](core-rules/psyker.md) | 灵能者是能施展灵能能力的单位类型；带此关键词会成为反灵能武器的克制目标，并在合并单位中把关键词传给整队。 | 2026-07-23 |
 | core-rule | [烟雾](core-rules/smoke.md) | 烟雾是一个单位类型标记：带【烟雾】关键词的单位可动用"烟幕"核心计谋，为自身或被其遮挡的友军提供掩体。 | 2026-07-23 |
@@ -2874,7 +2876,9 @@ _Last updated: 2026-07-25 14:26 UTC_
 | core-rule | [蜂群](core-rules/swarm.md) | 蜂群是单位类型标记；在地形穿越、掩体与隐蔽上与步兵、野兽享受同等待遇。 | 2026-07-23 |
 | core-rule | [要塞](core-rules/fortification.md) | 要塞是固定式防御工事型单位；它不能放入战略预备、也不能执行行动，是几乎不移动的战场据点。 | 2026-07-23 |
 | core-rule | [计谋](core-rules/stratagem.md) | 计谋消耗 CP 换取战术优势，11 版收紧为同一单位每阶段只能吃一个计谋。 | 2026-07-11 |
+| core-rule | [超重型机甲](core-rules/super-heavy-walker.md) | 超重型机甲移动时可以跨过其他模型与低矮地形，还能选择临时获得机动关键词。 | 2026-07-26 |
 | core-rule | [载具](core-rules/vehicle.md) | 载具与巨兽共用一套附加规则：碾过普通模型、交战中可开火可被射击。 | 2026-07-11 |
+| core-rule | [辅助](core-rules/support.md) | 辅助单位可以像领袖一样并入其他单位，组成联合单位。 | 2026-07-26 |
 | core-rule | [迅猛冲锋](core-rules/lance.md) | 迅猛冲锋武器借冲锋之势造伤更狠。 | 2026-07-11 |
 | core-rule | [运输工具](core-rules/transport.md) | 运输工具可搭载友军模型穿越战场：单位可搭乘（embark）与下车（disembark），下车方式与运具的移动状态挂钩。 | 2026-07-23 |
 | core-rule | [近战阶段](core-rules/fight-phase.md) | 近战阶段双方统一跟进、轮流战斗、统一重整，11 版结构整体重做。 | 2026-07-11 |
@@ -2885,8 +2889,8 @@ _Last updated: 2026-07-25 14:26 UTC_
 | core-rule | [部署](core-rules/deployment.md) | 部署是开战前按任务规定把军队放上战场，核心动作是"放置单位"。 | 2026-07-11 |
 | core-rule | [重型](core-rules/heavy.md) | 重型武器架稳了打更准，11 版起小幅挪动不再取消加成。 | 2026-07-11 |
 | core-rule | [野兽](core-rules/beast.md) | 野兽是单位类型标记；在地形穿越、掩体与隐蔽上与步兵享受同等待遇（关键词写作 BEASTS）。 | 2026-07-23 |
-| core-rule | [针对性攻击](core-rules/anti.md) | 针对性攻击让武器面对特定关键词的目标更容易打出造伤暴击。 | 2026-07-11 |
-| core-rule | [隐蔽](core-rules/stealth.md) | 隐蔽让单位在远程火力下如同贴地披上掩体，11 版起机制彻底改变。 | 2026-07-11 |
+| core-rule | [针对](core-rules/anti.md) | 针对让武器面对特定关键词的目标更容易打出造伤暴击。 | 2026-07-26 |
+| core-rule | [隐匿](core-rules/stealth.md) | 隐匿让单位在远程火力下如同贴地披上掩体，11 版起机制彻底改变。 | 2026-07-26 |
 | core-rule | [领导力测试](core-rules/leadership-test.md) | 领导力测试用 2D6 对比单位 LD 值检验部队的意志。 | 2026-07-11 |
 | core-rule | [领袖](core-rules/leader.md) | 领袖技能让英雄单位带领保镖单位组成联合单位，11 版规则集中在第 19 章。 | 2026-07-11 |
 | core-rule | [额外攻击](core-rules/extra-attacks.md) | 额外攻击武器在其他近战武器之外追加出手，坐骑践踏、附肢乱击都属此类。 | 2026-07-11 |
@@ -5022,8 +5026,8 @@ _Last updated: 2026-07-25 14:26 UTC_
 
 ## 统计
 
-- **总实体数**: 4884
-- **core-rule**: 106
+- **总实体数**: 4888
+- **core-rule**: 110
 - **detachment**: 324
 - **enhancement**: 1058
 - **stratagem**: 1681

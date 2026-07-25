@@ -30,13 +30,13 @@ updated: '2026-07-23'
 |---|---|---|---|---|---|---|---|
 | 简陋投掷武器 | 9" | 1 | 4+ | 3 | 0 | 1 | [[core-rules/assault.md\|突击]] |
 | 手铳 | 12" | 1 | 5+ | 4 | 0 | 1 | [[core-rules/pistol.md\|手枪]] |
-| 火箭飞矛 | 9" | 1 | 5+ | 5 | -1 | 2 | [[core-rules/assault.md\|突击]]，[[core-rules/anti.md\|针对巨兽4+]]，[[core-rules/anti.md\|针对载具4+]] |
+| 火箭飞矛 | 9" | 1 | 5+ | 5 | -1 | 2 | [[core-rules/assault.md\|突击]]，[[core-rules/anti.md\|针对怪物4+]]，[[core-rules/anti.md\|针对载具4+]] |
 
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| 大砍刀 | 近战 | 4 | 3+ | 6 | -1 | 2 | [[core-rules/anti.md\|anti-monster 4+]]，[[core-rules/anti.md\|anti-vehicle 4+]] |
-| 火箭飞矛 | 近战 | 3 | 3+ | 5 | -1 | 2 | [[core-rules/lance.md\|迅猛冲锋]]，[[core-rules/anti.md\|针对载具4+]]，[[core-rules/anti.md\|针对巨兽4+]] |
+| 大砍刀 | 近战 | 4 | 3+ | 6 | -1 | 2 | [[core-rules/anti.md\|针对怪物4+]]，[[core-rules/anti.md\|针对载具4+]] |
+| 火箭飞矛 | 近战 | 3 | 3+ | 5 | -1 | 2 | [[core-rules/anti.md\|针对怪物4+]]，[[core-rules/anti.md\|针对载具4+]]，[[core-rules/lance.md\|骑枪]] |
 | 跳跳撕咬 | 近战 | 3 | 4+ | 6 | -1 | 2 | [[core-rules/extra-attacks.md\|额外攻击]] |
 
 ## 技能

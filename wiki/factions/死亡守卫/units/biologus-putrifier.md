@@ -26,8 +26,8 @@ updated: '2026-07-23'
 ## 射击武器
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| 枯萎手雷 | 12" | D6 | 3+ | 7 | -1 | 2 | [[core-rules/assault.md\|assault]]，[[core-rules/blast.md\|blast]]，[[core-rules/lethal-hits.md\|lethal hits]] |
-| 毒针手枪 | 3" | 1 | 3+ | 4 | -1 | 3 | [[core-rules/anti.md\|anti-infantry 2+]]，[[core-rules/pistol.md\|pistol]]，[[core-rules/precision.md\|precision]] |
+| 枯萎手雷 | 12" | D6 | 3+ | 7 | -1 | 2 | [[core-rules/assault.md\|突击]]，[[core-rules/blast.md\|爆炸]]，[[core-rules/lethal-hits.md\|致命一击]] |
+| 毒针手枪 | 3" | 1 | 3+ | 4 | -1 | 3 | [[core-rules/anti.md\|针对步兵2+]]，[[core-rules/pistol.md\|手枪]]，[[core-rules/precision.md\|精准]] |
 
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |

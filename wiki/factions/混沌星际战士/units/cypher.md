@@ -29,13 +29,13 @@ updated: '2026-07-23'
 ## 射击武器
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| 赛佛的爆弹手枪 | 12" | 6 | 2+ | 4 | -1 | 1 | [[core-rules/assault.md\|assault]]，[[core-rules/pistol.md\|pistol]]，[[core-rules/sustained-hits.md\|sustained hits 1]] |
-| 赛佛的等离子手枪 | 12" | 3 | 2+ | 8 | -3 | 2 | [[core-rules/assault.md\|assault]]，[[core-rules/pistol.md\|pistol]]，[[core-rules/sustained-hits.md\|sustained hits 1]] |
+| 赛佛的爆弹手枪 | 12" | 6 | 2+ | 4 | -1 | 1 | [[core-rules/assault.md\|突击]]，[[core-rules/pistol.md\|手枪]]，[[core-rules/sustained-hits.md\|连击1]] |
+| 赛佛的等离子手枪 | 12" | 3 | 2+ | 8 | -3 | 2 | [[core-rules/assault.md\|突击]]，[[core-rules/pistol.md\|手枪]]，[[core-rules/sustained-hits.md\|连击1]] |
 
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| 赛佛的爆弹手枪 | 近战 | 6 | 2+ | 4 | -1 | 1 | [[core-rules/sustained-hits.md\|连击 1]] |
+| 赛佛的爆弹手枪 | 近战 | 6 | 2+ | 4 | -1 | 1 | [[core-rules/sustained-hits.md\|连击1]] |
 | 赛佛的等离子手枪  | 近战 | 3 | 2+ | 8 | -3 | 2 | [[core-rules/extra-attacks.md\|额外攻击]] |
 
 ## 技能

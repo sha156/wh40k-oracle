@@ -26,10 +26,10 @@ updated: '2026-07-23'
 ## 射击武器
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| 音爆炮（单频） | 18" | 3 | 3+ | 10 | -2 | 3 | [[core-rules/ignores-cover.md\|ignores cover]] |
-| 音爆炮（变频） | 18" | 6 | 3+ | 6 | -2 | 1 | [[core-rules/ignores-cover.md\|ignores cover]] |
-| 音波手枪 | 12" | 3 | 3+ | 5 | -1 | 2 | [[core-rules/ignores-cover.md\|ignores cover]]，[[core-rules/pistol.md\|pistol]] |
-| 音波爆能枪 | 18" | 3 | 3+ | 5 | -1 | 2 | [[core-rules/ignores-cover.md\|ignores cover]] |
+| 音爆炮（单频） | 18" | 3 | 3+ | 10 | -2 | 3 | [[core-rules/ignores-cover.md\|无视掩体]] |
+| 音爆炮（变频） | 18" | 6 | 3+ | 6 | -2 | 1 | [[core-rules/ignores-cover.md\|无视掩体]] |
+| 音波手枪 | 12" | 3 | 3+ | 5 | -1 | 2 | [[core-rules/ignores-cover.md\|无视掩体]]，[[core-rules/pistol.md\|手枪]] |
+| 音波爆能枪 | 18" | 3 | 3+ | 5 | -1 | 2 | [[core-rules/ignores-cover.md\|无视掩体]] |
 
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |

@@ -27,12 +27,12 @@ updated: '2026-07-23'
 ## 射击武器
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| 鼹鼠钻地榴弹发射器 | 18" | D6 | 5+ | 5 | -1 | 1 | [[core-rules/blast.md\|blast]]，[[core-rules/indirect-fire.md\|indirect fire]] |
+| 鼹鼠钻地榴弹发射器 | 18" | D6 | 5+ | 5 | -1 | 1 | [[core-rules/blast.md\|爆炸]]，[[core-rules/indirect-fire.md\|曲射]] |
 
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| 震荡锤 | 近战 | 3 | 4+ | 5 | -2 | 3 | [[core-rules/anti.md\|反巨兽 3+]]，[[core-rules/anti.md\|反载具 3+]] |
+| 震荡锤 | 近战 | 3 | 4+ | 5 | -2 | 3 | [[core-rules/anti.md\|针对怪物3+]]，[[core-rules/anti.md\|针对载具3+]] |
 | 重型等离子战斧 | 近战 | 3 | 4+ | 7 | -2 | 3 | — |
 | 双震荡拳甲 | 近战 | 4 | 4+ | 9 | -2 | 2 | [[core-rules/twin-linked.md\|双联]] |
 

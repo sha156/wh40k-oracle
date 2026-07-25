@@ -24,7 +24,7 @@ End of your opponent’s Fight phase.
 
 ## 使用对象
 
-Up to one Shadow Legion Heretic Astartes unit from your army and up to one Shadow Legion Legiones Daemonica unit from your army. You can only select units that are not within Engagement Range of one or more enemy units.
+Up to one [[factions/混沌恶魔/detachments/shadow-legion.md|Shadow Legion]] Heretic Astartes unit from your army and up to one [[factions/混沌恶魔/detachments/shadow-legion.md|Shadow Legion]] Legiones Daemonica unit from your army. You can only select units that are not within Engagement Range of one or more enemy units.
 
 ## 效果
 

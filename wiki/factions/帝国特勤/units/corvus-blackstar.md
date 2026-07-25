@@ -27,7 +27,7 @@ updated: '2026-07-23'
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
 | 黑星火箭发射器 | 30" | D6+1 | 3+ | 5 | 0 | 1 | [[core-rules/blast.md\|爆炸]] |
-| 飓风爆矢枪 | 24" | 6 | 3+ | 4 | 0 | 1 | [[core-rules/rapid-fire.md\|速射 6]]，[[core-rules/twin-linked.md\|双联]] |
+| 飓风爆矢枪 | 24" | 6 | 3+ | 4 | 0 | 1 | [[core-rules/rapid-fire.md\|速射6]]，[[core-rules/twin-linked.md\|双联]] |
 | 风暴突击导弹发射器 | 48" | 1 | 3+ | 10 | -2 | 3 | — |
 | 双联突击炮 | 24" | 6 | 3+ | 6 | 0 | 1 | [[core-rules/devastating-wounds.md\|毁灭伤害]]，[[core-rules/twin-linked.md\|双联]] |
 | 双联激光炮 | 48" | 1 | 3+ | 12 | -3 | D6+1 | [[core-rules/twin-linked.md\|双联]] |

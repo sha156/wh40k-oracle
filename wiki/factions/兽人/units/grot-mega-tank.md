@@ -24,12 +24,12 @@ updated: '2026-07-23'
 ## 射击武器
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| Mega-tank weapons | 18" | 10 | 4+ | 5 | 0 | 1 | [[core-rules/rapid-fire.md\|rapid fire 10]] |
-| 双联大突突枪 | 18" | 3 | 4+ | 5 | 0 | 1 | [[core-rules/rapid-fire.md\|rapid fire 2]]，[[core-rules/twin-linked.md\|twin-linked]] |
-| Twin grotzooka | 18" | D3+3 | 4+ | 6 | -1 | 1 | [[core-rules/blast.md\|blast]]，[[core-rules/twin-linked.md\|twin-linked]] |
-| Twin kustom mega-blasta | 24" | 2 | 4+ | 9 | -2 | D6 | [[core-rules/hazardous.md\|hazardous]]，[[core-rules/twin-linked.md\|twin-linked]] |
-| Twin rokkit launcha | 24" | D3 | 4+ | 9 | -2 | 3 | [[core-rules/blast.md\|blast]]，[[core-rules/twin-linked.md\|twin-linked]] |
-| Twin skorcha | 12" | D6 | N/A | 5 | -1 | 1 | [[core-rules/ignores-cover.md\|ignores cover]]，[[core-rules/torrent.md\|torrent]]，[[core-rules/twin-linked.md\|twin-linked]] |
+| Mega-tank weapons | 18" | 10 | 4+ | 5 | 0 | 1 | [[core-rules/rapid-fire.md\|速射10]] |
+| 双联大突突枪 | 18" | 3 | 4+ | 5 | 0 | 1 | [[core-rules/rapid-fire.md\|速射2]]，[[core-rules/twin-linked.md\|双联]] |
+| Twin grotzooka | 18" | D3+3 | 4+ | 6 | -1 | 1 | [[core-rules/blast.md\|爆炸]]，[[core-rules/twin-linked.md\|双联]] |
+| Twin kustom mega-blasta | 24" | 2 | 4+ | 9 | -2 | D6 | [[core-rules/hazardous.md\|危险]]，[[core-rules/twin-linked.md\|双联]] |
+| Twin rokkit launcha | 24" | D3 | 4+ | 9 | -2 | 3 | [[core-rules/blast.md\|爆炸]]，[[core-rules/twin-linked.md\|双联]] |
+| Twin skorcha | 12" | D6 | N/A | 5 | -1 | 1 | [[core-rules/ignores-cover.md\|无视掩体]]，[[core-rules/torrent.md\|洪流]]，[[core-rules/twin-linked.md\|双联]] |
 
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |

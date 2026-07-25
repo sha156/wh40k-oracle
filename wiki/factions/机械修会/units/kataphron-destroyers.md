@@ -30,11 +30,11 @@ updated: '2026-07-23'
 ## 射击武器
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| 智能喷火器 | 12" | D6 | N/A | 4 | 0 | 1 | [[core-rules/ignores-cover.md\|忽视掩体]]，[[core-rules/torrent.md\|喷射]] |
-| 重型重力炮 | 30" | 4 | 4+ | 6 | -1 | 2 | [[core-rules/anti.md\|反载具 2+]] |
+| 智能喷火器 | 12" | D6 | N/A | 4 | 0 | 1 | [[core-rules/ignores-cover.md\|无视掩体]]，[[core-rules/torrent.md\|洪流]] |
+| 重型重力炮 | 30" | 4 | 4+ | 6 | -1 | 2 | [[core-rules/anti.md\|针对载具2+]] |
 | 等离子长管炮（标准） | 36" | 4 | 4+ | 7 | -2 | 1 | — |
 | 等离子长管炮（过载） | 36" | 4 | 4+ | 8 | -3 | 2 | [[core-rules/hazardous.md\|危险]] |
-| 磷火枪 | 24" | 1 | 4+ | 5 | 0 | 1 | [[core-rules/ignores-cover.md\|忽视掩体]]，[[core-rules/rapid-fire.md\|速射 1]] |
+| 磷火枪 | 24" | 1 | 4+ | 5 | 0 | 1 | [[core-rules/ignores-cover.md\|无视掩体]]，[[core-rules/rapid-fire.md\|速射1]] |
 
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |

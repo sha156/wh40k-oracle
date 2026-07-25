@@ -24,4 +24,4 @@ At the end of the Fight phase, if the bearer’s unit destroyed one or more enem
 
 ## 携带限制
 
-Shadow Legion model only.
+[[factions/混沌恶魔/detachments/shadow-legion.md|Shadow Legion]] model only.
