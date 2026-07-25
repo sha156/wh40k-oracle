@@ -30,9 +30,11 @@ jobs:
           python-version: "3.10"
           cache: pip
       - name: 装轻量依赖（同 requirements-server.txt + 测试用）
+        # 后四个是测试期才用到的：httpx=TestClient、pymupdf=conftest 造 PDF、
+        # tqdm=wiki_engine 进度条、openai=llm_refine/wiki_pair 的客户端（只 mock 不真调）
         run: |
           python -m pip install --upgrade pip
-          pip install -r requirements-server.txt pytest httpx pymupdf tqdm
+          pip install -r requirements-server.txt pytest httpx pymupdf tqdm openai
       - name: pytest
         # 排除的三个文件需要 langchain/torch 那套重依赖（数据管线，只在本地跑）
         run: |
