@@ -39,3 +39,9 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# playwright（浏览器冒烟的失败产物：截图/trace/report，不入库）
+/test-results/
+/playwright-report/
+/blob-report/
+/.playwright-artifacts-*

@@ -90,6 +90,7 @@ export function LoadoutPanel({
             <button
               type="button"
               onClick={() => onChange(w, fill)}
+              aria-label={`${w} 全员装配`}
               title={`全员携带：${fill} 件（每个模型各 1 件）`}
               className={`clip-slant-8 border ${c.fill} px-2 py-0.5 font-cond text-[11.5px] tracking-[1px]`}
             >

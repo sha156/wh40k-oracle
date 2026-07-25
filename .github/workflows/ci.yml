@@ -1,0 +1,68 @@
+name: CI
+
+# 两个门：Python 引擎/后端测试 + 前端类型/规则/构建。
+#
+# 诚实的覆盖边界（别把绿灯当成"全都验过了"）：
+#   · db/wh40k.sqlite、opt/ 模型、local_vector_store/ 索引都不在版本库里 → 依赖它们的
+#     测试会自动 skip（约 50 个测试文件带 `skipif(not DB.exists())`）。跑完看 summary 里的
+#     skipped 数就知道这次实际验了多少。
+#   · 数据管线的重依赖（torch / langchain / streamlit）不装 → 三个测试文件显式排除，
+#     它们只能本地跑。
+#   · 浏览器冒烟（web/e2e，Playwright）也不在 CI：需要真 DB + 后端进程，本地 `npm run
+#     test:e2e` 是它的门。
+# 也就是说：CI 逮的是「导入炸了 / 纯逻辑回归 / 类型和构建坏了」，逮不到数据相关的错。
+
+on:
+  push:
+    branches: ["**"]
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  python:
+    name: pytest（无 DB 环境）
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          # 服务器跑 3.10.12，本地 .venv 是 3.9——按服务器版本验
+          python-version: "3.10"
+          cache: pip
+      - name: 装轻量依赖（同 requirements-server.txt + 测试用）
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements-server.txt pytest httpx pymupdf tqdm
+      - name: pytest
+        # 排除的三个文件需要 langchain/torch 那套重依赖（数据管线，只在本地跑）
+        run: |
+          pytest -q \
+            --ignore=tests/test_app_retrieval.py \
+            --ignore=tests/test_ingest_pages.py \
+            --ignore=tests/test_md_chunker.py
+
+  frontend:
+    name: tsc + eslint + next build
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: web
+    env:
+      # 只要类型/规则/构建，不需要浏览器二进制（e2e 在本地跑）
+      PLAYWRIGHT_SKIP_BROWSER_DOWNLOAD: "1"
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+          cache: npm
+          cache-dependency-path: web/package-lock.json
+      - run: npm ci
+      - name: 类型检查（漏传 props 这类错就在这一步现形）
+        run: npx tsc --noEmit
+      - run: npx eslint .
+      - name: 静态导出构建（与部署同参数）
+        env:
+          NEXT_OUTPUT: export
+          NEXT_PUBLIC_API_BASE: /api
+        run: npm run build
