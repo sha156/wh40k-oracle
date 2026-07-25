@@ -25,7 +25,8 @@ from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import StreamingResponse
 from pydantic import BaseModel, ConfigDict, Field
 
-from web_api.contract import (Answer, CritiqueReportOut, KeywordDetail,
+from web_api.contract import (Answer, CritiqueReportOut, DetachmentDetail,
+                              DetachmentListResponse, KeywordDetail,
                               KeywordIndexResponse, RosterIn, SimResponse,
                               ValidationReportOut)
 from web_api.formatter import format_answer
@@ -371,6 +372,40 @@ def roster_critique(req: RosterIn) -> CritiqueReportOut:
         return critique_roster(DB_PATH, req)
     finally:
         _SIM_SEMAPHORE.release()
+
+
+@app.get("/codex/factions/{faction_id}/detachments",
+         response_model=DetachmentListResponse, response_model_by_alias=True)
+def codex_detachments(faction_id: str) -> DetachmentListResponse:
+    """图鉴：某阵营的分队列表（数据源是 wiki/ 下已发布的 .md，不查 sqlite）。
+
+    未知阵营 404；wiki 卷没挂上/产物残缺 503——**不返回空列表**，那在前端长得跟
+    「这个阵营没有分队」一模一样。真没有分队的阵营（泰坦军团、无阵营工事）才给空。
+    """
+    from web_api import wiki_browse
+    try:
+        return DetachmentListResponse(items=wiki_browse.list_detachments(faction_id))
+    except wiki_browse.NotFound as exc:
+        raise HTTPException(status_code=404, detail=str(exc))
+    except wiki_browse.WikiUnavailable as exc:
+        raise HTTPException(status_code=503, detail=str(exc))
+
+
+@app.get("/codex/factions/{faction_id}/detachments/{slug}",
+         response_model=DetachmentDetail, response_model_by_alias=True)
+def codex_detachment(faction_id: str, slug: str) -> DetachmentDetail:
+    """图鉴：分队详情，增强与战略内联返回（免前端为一页打八次请求）。
+
+    路由必须带 faction_id：同名分队跨阵营存在（Infestation Swarm 在 GC 与 TYR 各一个）。
+    子页对不上账（清单列了 N 条、读到 M 条）走 503 并在日志点名，不悄悄少给。
+    """
+    from web_api import wiki_browse
+    try:
+        return wiki_browse.detachment_detail(faction_id, slug)
+    except wiki_browse.NotFound as exc:
+        raise HTTPException(status_code=404, detail=str(exc))
+    except wiki_browse.WikiUnavailable as exc:
+        raise HTTPException(status_code=503, detail=str(exc))
 
 
 @app.get("/wiki/{path:path}")

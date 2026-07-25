@@ -7,7 +7,7 @@ Python 3.9：不用 `X | Y` 联合语法，一律 Optional/List/Union/Literal。
 """
 from __future__ import annotations
 
-from typing import Any, Dict, List, Literal, Optional, Union
+from typing import Annotated, Any, Dict, List, Literal, Optional, Union
 
 from pydantic import BaseModel, ConfigDict, Field
 
@@ -331,3 +331,114 @@ class KeywordDetail(KeywordSummary):
 class KeywordIndexResponse(_CamelModel):
     """GET /codex/keywords 响应。items 刻意**不带** weapons：反查表占载荷九成体积。"""
     items: List[KeywordSummary] = []
+
+
+# ── 图鉴 · 分队浏览（镜像 web/src/lib/wiki.ts）─────────────────────────
+#
+# 正文以**块数组**下发，前端零解析：它没有 markdown 渲染器，也不该为了几页规则引一个。
+# 块的形态由 `web_api/wiki_blocks.py` 从 wiki/ 下的 .md 确定性编译而来。
+
+class WikiParagraph(BaseModel):
+    t: Literal["p"] = "p"
+    inline: RichText = []
+
+
+class WikiListBlock(BaseModel):
+    """无序/有序列表。两种只差 t，共用一个模型——出参 JSON 与契约里的两个变体一致。"""
+    t: Literal["ul", "ol"]
+    items: List[RichText] = []
+
+
+class WikiTable(BaseModel):
+    """表格。单元格是**纯字符串**（不是 RichText）：库里的表全是「战斗规模 → 可选
+    单位数」这类档位表，格子里没有引用编号，上 RichText 只是徒增前端分支。"""
+    t: Literal["table"] = "table"
+    head: List[str] = []
+    rows: List[List[str]] = []
+
+
+class WikiHeading(BaseModel):
+    """小节内标题（实际只出现 level 3）。level 照实给，不钳到 3——钳了就看不出源页异常。"""
+    t: Literal["h"] = "h"
+    level: int
+    text: str
+
+
+class WikiQuote(BaseModel):
+    """`> ` 引用块。页面里的诚实披露（「本分队名下有 2 条规则，以下全部列出」）走它。"""
+    t: Literal["quote"] = "quote"
+    inline: RichText = []
+
+
+# 判别式联合：t 是标签。不用裸 Union——裸 Union 校验时按顺序试，
+# 一个少了 head 的表格会被悄悄当成别的块型收下，错误要到前端才显形。
+WikiBlock = Annotated[
+    Union[WikiParagraph, WikiListBlock, WikiTable, WikiHeading, WikiQuote],
+    Field(discriminator="t"),
+]
+
+
+class WikiSection(BaseModel):
+    """一个 `## 小节`。title 就是页面上的小节名（使用时机 / 效果 / 分队规则…）。"""
+    title: str
+    blocks: List[WikiBlock] = []
+
+
+class StratagemBrief(_CamelModel):
+    """分队详情里内联的一条战略。
+
+    cp 用 Optional[int]：**0 CP 是真值**（核心战略里有），null 才是"库里没这项数据"
+    （艾达灵族 6 条挂在 Army Rules 下的战略就没有 cp）。前端两者不能混着显示成「未知」。
+    """
+    id: str
+    slug: str
+    name_en: str = Field(alias="nameEn")
+    name_zh: Optional[str] = Field(default=None, alias="nameZh")
+    cp: Optional[int] = None
+    phase: str = ""
+    stratagem_type: str = Field(default="", alias="stratagemType")
+    sections: List[WikiSection] = []
+
+
+class EnhancementBrief(_CamelModel):
+    """分队详情里内联的一条增强。cost 同 cp：0 分是真值（实测 117 条），null 是未知。"""
+    id: str
+    slug: str
+    name_en: str = Field(alias="nameEn")
+    name_zh: Optional[str] = Field(default=None, alias="nameZh")
+    cost: Optional[int] = None
+    sections: List[WikiSection] = []
+
+
+class DetachmentSummary(_CamelModel):
+    """分队列表一行。
+
+    `ruleName` 是**分队规则名**，与分队名不是一回事：Awakened Dynasty（分队/容器名）
+    名下的规则叫 Command Protocols。库里 `detachments` 表存的是规则名、容器名的真源
+    是 enhancements/stratagems 的 detachment 列——搞反了整页都在说另一件事。
+    没有绑定规则行的分队（实测 64 个）为 null，不拿分队名顶替。
+    """
+    slug: str
+    name_en: str = Field(alias="nameEn")
+    name_zh: Optional[str] = Field(default=None, alias="nameZh")
+    rule_name: Optional[str] = Field(default=None, alias="ruleName")
+    stratagem_count: int = Field(default=0, alias="stratagemCount")
+    enhancement_count: int = Field(default=0, alias="enhancementCount")
+
+
+class DetachmentDetail(DetachmentSummary):
+    """分队详情：增强与战略**内联**返回。
+
+    为什么内联而不是让前端按 id 逐个拉：容器只有 324 个，挂在它们下面的战略有 1653 条、
+    增强 1058 条，一个分队平均 5 战略 + 3 增强——不内联就是开一页打八次请求。
+    """
+    faction_id: str = Field(alias="factionId")
+    faction_zh: Optional[str] = Field(default=None, alias="factionZh")
+    rule_sections: List[WikiSection] = Field(default=[], alias="ruleSections")
+    enhancements: List[EnhancementBrief] = []
+    stratagems: List[StratagemBrief] = []
+
+
+class DetachmentListResponse(_CamelModel):
+    """GET /codex/factions/{faction_id}/detachments 响应。"""
+    items: List[DetachmentSummary] = []

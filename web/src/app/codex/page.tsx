@@ -4,6 +4,7 @@ import { useCallback, useEffect, useMemo, useState } from "react";
 
 import { Datasheet } from "@/components/chat/Datasheet";
 import { SiteHeader } from "@/components/chat/SiteHeader";
+import { DetachmentBrowser } from "@/components/codex/DetachmentBrowser";
 import { KeywordIndex } from "@/components/codex/KeywordIndex";
 import type { EntityCard } from "@/lib/answer";
 import {
@@ -18,12 +19,13 @@ import {
 const BACKEND_HINT =
   "无法连接后端。请确认 web_api 已启动：.venv\\Scripts\\python.exe -m uvicorn web_api.main:app --port 8000";
 
-/** 图鉴内部的二级页签：顶栏 NAV_ITEMS 再加第 5 项会挤爆 max-w-[1100px]，词条只能收在页内 */
-type CodexTab = "units" | "keywords";
+/** 图鉴内部的二级页签：顶栏 NAV_ITEMS 再加第 5 项会挤爆 max-w-[1100px]，词条/分队只能收在页内 */
+type CodexTab = "units" | "keywords" | "detachments";
 
 const TABS: ReadonlyArray<{ id: CodexTab; label: string }> = [
   { id: "units", label: "单位" },
   { id: "keywords", label: "武器词条" },
+  { id: "detachments", label: "分队" },
 ];
 
 /**
@@ -32,9 +34,10 @@ const TABS: ReadonlyArray<{ id: CodexTab; label: string }> = [
  */
 export default function CodexPage() {
   const [tab, setTab] = useState<CodexTab>("units");
-  // 词条页签首次打开才挂载（不看词条的人不该白拉一次索引），之后常驻：
+  // 词条/分队页签首次打开才挂载（不看的人不该白拉一次索引），之后常驻：
   // 用 hidden 切换而非卸载，来回切页签不丢已选阵营/已展开的反查清单
   const [keywordsMounted, setKeywordsMounted] = useState(false);
+  const [detachmentsMounted, setDetachmentsMounted] = useState(false);
   const [factions, setFactions] = useState<FactionRow[]>([]);
   const [factionId, setFactionId] = useState<string | null>(null);
   const [units, setUnits] = useState<UnitRow[]>([]);
@@ -107,10 +110,11 @@ export default function CodexPage() {
   const selectTab = (t: CodexTab) => {
     setTab(t);
     if (t === "keywords") setKeywordsMounted(true);
+    if (t === "detachments") setDetachmentsMounted(true);
   };
 
-  // 词条详情取数失败时复用同一条后端提示；保持引用稳定，免得它日后进 effect 依赖里反复重拉
-  const onKeywordError = useCallback(() => setError(BACKEND_HINT), []);
+  // 词条/分队详情取数失败时复用同一条后端提示；保持引用稳定，免得它日后进 effect 依赖里反复重拉
+  const onBackendError = useCallback(() => setError(BACKEND_HINT), []);
 
   const toggleLang = () => {
     const next: CodexLang = lang === "zh" ? "en" : "zh";
@@ -132,9 +136,11 @@ export default function CodexPage() {
   const context =
     tab === "keywords"
       ? "图鉴 · 武器词条"
-      : activeFaction
-        ? `图鉴 · ${lang === "zh" ? (activeFaction.nameZh ?? activeFaction.name) : activeFaction.name}`
-        : "图鉴 · CODEX";
+      : tab === "detachments"
+        ? "图鉴 · 分队"
+        : activeFaction
+          ? `图鉴 · ${lang === "zh" ? (activeFaction.nameZh ?? activeFaction.name) : activeFaction.name}`
+          : "图鉴 · CODEX";
 
   return (
     <>
@@ -294,7 +300,15 @@ export default function CodexPage() {
 
         {keywordsMounted ? (
           <div className={tab === "keywords" ? "" : "hidden"}>
-            <KeywordIndex onError={onKeywordError} />
+            <KeywordIndex onError={onBackendError} />
+          </div>
+        ) : null}
+
+        {/* 分队页签复用本页已取的阵营清单（/codex/factions 只拉一次）；
+            分队与传承条目无关，showLegacy 只影响单位计数，这里照单全收 */}
+        {detachmentsMounted ? (
+          <div className={tab === "detachments" ? "" : "hidden"}>
+            <DetachmentBrowser factions={factions} onError={onBackendError} />
           </div>
         ) : null}
       </main>
