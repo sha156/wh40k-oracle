@@ -188,6 +188,45 @@ def test_preflight_rejects_half_downloaded_snapshot(tmp_path):
     assert embed.ok is False
 
 
+def test_retrieval_off_demotes_model_and_index_to_optional(tmp_path, monkeypatch):
+    """轻量部署（WEB_API_RETRIEVAL=off）下模型与索引按设计不该在场：
+    它们必须降为非必需，否则 ready 天天 false，人就学会无视它。"""
+    monkeypatch.setenv("WEB_API_RETRIEVAL", "off")
+    (tmp_path / "db").mkdir()
+    (tmp_path / "db" / "wh40k.sqlite").write_bytes(b"")
+    (tmp_path / "wiki").mkdir()
+    (tmp_path / "wiki" / "index.md").write_text("# index", encoding="utf-8")
+    info = preflight.summary(tmp_path)
+    assert info["retrieval"] is False
+    assert info["ready"] is True, "只缺检索资产时轻量部署应判就绪"
+    by_name = {a["name"]: a for a in info["assets"]}
+    assert by_name["embed_model"]["required"] is False
+    assert by_name["vector_store"]["required"] is False
+    # 但仍如实报告"不在场"，并说明是没开而不是坏了
+    assert by_name["embed_model"]["ok"] is False
+    assert "未启用" in by_name["embed_model"]["detail"]
+    # 结构库仍是硬要求——三个页签全靠它
+    assert by_name["structured_db"]["required"] is True
+
+
+def test_retrieval_off_still_fails_on_missing_db(tmp_path, monkeypatch):
+    monkeypatch.setenv("WEB_API_RETRIEVAL", "off")
+    assert preflight.summary(tmp_path)["ready"] is False
+
+
+def test_retrieval_on_is_the_default(tmp_path, monkeypatch):
+    monkeypatch.delenv("WEB_API_RETRIEVAL", raising=False)
+    assert preflight.retrieval_enabled() is True
+    assert preflight.summary(tmp_path)["retrieval"] is True
+
+
+def test_report_marks_skipped_assets_differently_from_missing(monkeypatch):
+    """[略] 与 [缺!] 必须分得开——否则轻量部署的日志读起来像坏了。"""
+    monkeypatch.setenv("WEB_API_RETRIEVAL", "off")
+    report = preflight.format_report(preflight.check_assets(REPO / "no-such-dir"))
+    assert "[略 ]" in report and "检索关" in report
+
+
 def test_preflight_strict_mode_refuses_to_start(tmp_path, monkeypatch):
     monkeypatch.setenv("WEB_API_PREFLIGHT_STRICT", "1")
     with pytest.raises(RuntimeError):
@@ -204,7 +243,10 @@ def test_preflight_report_marks_missing_required():
 
 DEPLOY_FILES = ["Dockerfile", ".dockerignore", "docker-compose.yml",
                 ".env.example", "requirements-docker.txt",
-                "web/Dockerfile", "web/.dockerignore"]
+                "requirements-server.txt",
+                "web/Dockerfile", "web/.dockerignore",
+                "deploy/wh40k-api.service", "deploy/openresty-site.conf",
+                "deploy/deploy.sh"]
 
 
 @pytest.mark.parametrize("rel", DEPLOY_FILES)
@@ -262,8 +304,12 @@ def test_env_example_documents_every_env_var_the_code_reads():
     assert not missing, "这些变量没写进 .env.example：{}".format(missing)
 
 
-def test_next_config_enables_standalone_output():
-    """web/Dockerfile 只拷 .next/standalone；配置没开 standalone 的话，
-    镜像构建会在 COPY 阶段才失败。"""
+def test_next_config_supports_both_output_modes():
+    """两种部署形态都要在配置里立得住：
+    - standalone（默认）：web/Dockerfile 只拷 .next/standalone，没开就在 COPY 阶段炸
+    - export：静态产物 out/ 交给服务器已有的 openresty 托管，省掉 node 进程
+    """
     cfg = (REPO / "web" / "next.config.ts").read_text(encoding="utf-8")
-    assert 'output: "standalone"' in cfg
+    assert 'NEXT_OUTPUT === "export"' in cfg, "缺静态导出分支"
+    assert '"standalone"' in cfg, "缺 standalone 默认值"
+    assert "output," in cfg or "output:" in cfg

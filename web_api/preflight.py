@@ -52,19 +52,43 @@ def _embed_snapshot(root: Path) -> Optional[Path]:
     return None
 
 
-def check_assets(root: Optional[Path] = None) -> List[AssetStatus]:
-    """核对四类运行期资产，按「先必需后可选」返回。"""
+def retrieval_enabled() -> bool:
+    """本部署是否启用本地检索（bge-m3 + FAISS）。
+
+    小内存服务器上只跑图鉴/模拟器/军表三个零 LLM 页签时设 `WEB_API_RETRIEVAL=off`：
+    实测检索栈常驻 3.2 GB，2 核 3.3 G 的机器塞不下。关掉后模型与索引**按设计**
+    就不该在场，前置校验不能再把它们报成缺失——否则天天报缺，人就学会无视 ready，
+    真出事那次也照样无视。
+    """
+    return os.environ.get("WEB_API_RETRIEVAL", "on").strip().lower() != "off"
+
+
+def check_assets(root: Optional[Path] = None,
+                 retrieval: Optional[bool] = None) -> List[AssetStatus]:
+    """核对四类运行期资产，按「先必需后可选」返回。
+
+    `retrieval=False` 时模型与索引降为「按设计不需要」（required=False），
+    其余两项不受影响。
+    """
     root = root or REPO_ROOT
+    want_retrieval = retrieval_enabled() if retrieval is None else retrieval
     out: List[AssetStatus] = []
+
+    # 检索关掉时的说明：写清楚"不是坏了，是没开"，并给打开的办法
+    off_note = "本部署未启用本地检索（WEB_API_RETRIEVAL=off），按设计不需要"
+    off_hint = "要开启检索：确保内存 ≥4G，传模型/索引并去掉 WEB_API_RETRIEVAL=off"
 
     snap = _embed_snapshot(root)
     out.append(AssetStatus(
         name="embed_model",
         path=str(snap) if snap else str(root / "opt" / "models--BAAI--bge-m3"),
         ok=snap is not None,
-        required=True,
-        detail="" if snap else "bge-m3 本地快照缺失或不完整（无 modules.json）",
-        hint="挂载宿主机 ./opt 到 /app/opt（compose 卷 opt:ro）",
+        required=want_retrieval,
+        detail=("" if snap else
+                ("bge-m3 本地快照缺失或不完整（无 modules.json）" if want_retrieval
+                 else off_note)),
+        hint=("挂载宿主机 ./opt 到 /app/opt（compose 卷 opt:ro）" if want_retrieval
+              else off_hint),
     ))
 
     faiss_index = root / "local_vector_store" / "index.faiss"
@@ -72,9 +96,11 @@ def check_assets(root: Optional[Path] = None) -> List[AssetStatus]:
         name="vector_store",
         path=str(faiss_index),
         ok=faiss_index.exists(),
-        required=True,
-        detail="" if faiss_index.exists() else "FAISS 索引缺失，混合检索会全量落空",
-        hint="宿主机跑 .\\.venv\\Scripts\\python.exe ingest.py 后挂载 ./local_vector_store",
+        required=want_retrieval,
+        detail=("" if faiss_index.exists() else
+                ("FAISS 索引缺失，混合检索会全量落空" if want_retrieval else off_note)),
+        hint=("宿主机跑 .\\.venv\\Scripts\\python.exe ingest.py 后挂载 ./local_vector_store"
+              if want_retrieval else off_hint),
     ))
 
     db = root / "db" / "wh40k.sqlite"
@@ -102,9 +128,10 @@ def check_assets(root: Optional[Path] = None) -> List[AssetStatus]:
 
 def format_report(statuses: List[AssetStatus]) -> str:
     """启动日志用的多行报告；缺失项带 [缺] 前缀，方便 docker logs 一眼看到。"""
-    lines = ["[preflight] 运行期资产核对："]
+    lines = ["[preflight] 运行期资产核对（检索{}）：".format(
+        "开" if retrieval_enabled() else "关")]
     for s in statuses:
-        mark = "ok " if s.ok else ("缺!" if s.required else "缺 ")
+        mark = "ok " if s.ok else ("缺!" if s.required else "略 ")
         lines.append("[preflight]   [{}] {:<15} {}".format(mark, s.name, s.path))
         if not s.ok:
             lines.append("[preflight]        ↳ {}；修复：{}".format(s.detail, s.hint))
@@ -123,6 +150,7 @@ def summary(root: Optional[Path] = None) -> Dict[str, Any]:
     statuses = check_assets(root)
     return {
         "ready": all(s.ok for s in statuses if s.required),
+        "retrieval": retrieval_enabled(),
         "assets": [s.to_dict() for s in statuses],
     }
 
@@ -142,5 +170,6 @@ def run_preflight(root: Optional[Path] = None, echo: bool = True) -> Dict[str, A
             "preflight 严格模式：必需资产缺失 {}，拒绝启动".format(missing_required))
     return {
         "ready": not missing_required,
+        "retrieval": retrieval_enabled(),
         "assets": [s.to_dict() for s in statuses],
     }

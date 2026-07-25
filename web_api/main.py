@@ -28,7 +28,8 @@ from pydantic import BaseModel, ConfigDict, Field
 from web_api.contract import (Answer, CritiqueReportOut, RosterIn, SimResponse,
                               ValidationReportOut)
 from web_api.formatter import format_answer
-from web_api.preflight import run_preflight, summary as preflight_summary
+from web_api.preflight import (retrieval_enabled, run_preflight,
+                               summary as preflight_summary)
 from web_api.ratelimit import install as install_rate_limit
 from web_api.trace import TraceRecorder
 
@@ -64,7 +65,7 @@ def _warmup_resources() -> None:
 @contextlib.asynccontextmanager
 async def _lifespan(_app: "FastAPI"):
     run_preflight()
-    if os.environ.get("WEB_API_WARMUP", "") == "1":
+    if os.environ.get("WEB_API_WARMUP", "") == "1" and retrieval_enabled():
         _WARMUP["requested"] = True
         threading.Thread(target=_warmup_resources, name="warmup",
                          daemon=True).start()
@@ -105,22 +106,40 @@ def _make_clients():
     return llm, structurer
 
 
-def _degraded_answer(question: str, note: str) -> Answer:
-    """无 LLM 可用时的诚实降级回答（不编造）。"""
+_NO_LLM_MSG = "后端未配置 LLM（DEEPSEEK_API_KEY 缺失），暂无法生成回答。"
+
+
+def _degraded_answer(question: str, message: Optional[str] = None) -> Answer:
+    """诚实降级回答（不编造）。
+
+    `message` 是**完整**说明而非后缀：降级原因不止"缺 key"一种，措辞必须指向
+    这次真正的原因。轻量部署里主因是没开检索，却先甩一句"key 缺失"，等于把人
+    往错方向引。
+    """
     from agent.loop import AgentResult
     from web_api.formatter import format_answer as _ff
     from web_api.trace import TraceRecorder as _TR
     rec = _TR({})
     res = AgentResult(
-        answer="后端未配置 LLM（DEEPSEEK_API_KEY 缺失），暂无法生成回答。" + note,
+        answer=message or _NO_LLM_MSG,
         intent="查", tool_calls=[], degraded=True, sources=[])
     return _ff(question, res, rec, structurer=None)
 
 
 def _run_answer(req: ChatRequest) -> Answer:
+    # 小内存部署（WEB_API_RETRIEVAL=off）只上三个零 LLM 页签：检索栈实测常驻 3.2 GB。
+    # 这里必须**提前**明确降级——不拦的话 agent 会一路跑到 rag_search 才因缺 torch 抛错，
+    # 被 except 吞成"未检索到相关段落"，看起来像"库里没有"，而真相是"这台机器没装检索"。
+    if not retrieval_enabled():
+        return _degraded_answer(
+            req.question,
+            "本站为轻量部署，规则问答未启用：它依赖 bge-m3 向量检索，"
+            "实测常驻内存超过 3 GB，超出本机规格。"
+            "图鉴 / 模拟器 / 军表实验室三个页签是纯引擎计算，功能完整可用，"
+            "数值与官方 11 版一致。")
     llm, structurer = _make_clients()
     if llm is None:
-        return _degraded_answer(req.question, "")
+        return _degraded_answer(req.question)
     from agent.tools import TOOLS
     recorder = TraceRecorder(TOOLS)
     from agent.loop import AgentLoop
@@ -167,6 +186,7 @@ def healthz() -> Dict[str, Any]:
     return {
         "ok": True,
         "llm_configured": bool(_API_KEY),
+        "retrieval": info["retrieval"],
         "ready": info["ready"],
         "assets": info["assets"],
         "warmup": dict(_WARMUP),

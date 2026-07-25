@@ -1,0 +1,22 @@
+# requirements-server.txt —— 轻量服务器部署的依赖（WEB_API_RETRIEVAL=off）
+#
+# 只上 图鉴 / 模拟器 / 军表实验室 三个**零 LLM 零检索**页签，它们是纯 sqlite +
+# 引擎计算。**不装** torch / sentence-transformers / faiss / langchain / streamlit
+# ——那一套实测常驻 3.2 GB，2 核 3.3 G 的机器塞不下（见 docs/.../2026-07-25-server-deploy.md）。
+#
+# 这份清单不是拍脑袋列的：跑 TestClient 把三个页签的全部端点打一遍，
+# 再列 sys.modules 里的第三方模块反推出来的。加新端点时用同样的办法复核。
+#
+# 版本钉到本地 .venv（Python 3.9.1）实测通过的版本；服务器是 Python 3.10.12，
+# 代码按 3.9 语法写，向上兼容。
+
+fastapi==0.128.8
+uvicorn[standard]==0.39.0
+pydantic==2.12.5
+
+# engines/ 的骰面分布与统计计算
+numpy==1.26.4
+
+# wiki_engine / db_compile 的只读路径会 import 到
+requests==2.32.5
+PyYAML==6.0.3

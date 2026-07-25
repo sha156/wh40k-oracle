@@ -1,0 +1,47 @@
+# deploy/wh40k-api.service —— FastAPI 后端的 systemd 单元
+#
+# 安装：
+#   sudo cp /home/ubuntu/wh40k/deploy/wh40k-api.service /etc/systemd/system/
+#   sudo systemctl daemon-reload && sudo systemctl enable --now wh40k-api
+# 查看：
+#   systemctl status wh40k-api ; journalctl -u wh40k-api -n 50 --no-pager
+#
+# 同机还有 mygf(systemd) / elina-bot(pm2) / SpeakingLab(openresty 静态)，
+# 内存共 3.3 G 且无 swap——MemoryMax 是给它们留活路的硬闸，别去掉。
+
+[Unit]
+Description=wh40k-oracle API (FastAPI, 轻量模式：图鉴/模拟器/军表)
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=simple
+User=ubuntu
+Group=ubuntu
+WorkingDirectory=/home/ubuntu/wh40k
+EnvironmentFile=/home/ubuntu/wh40k/.env
+# 只监听回环：对外一律经 openresty 反代，不直接暴露端口（省得再开安全组）
+ExecStart=/home/ubuntu/wh40k/.venv/bin/python -m uvicorn web_api.main:app \
+    --host 127.0.0.1 --port 8210 --workers 1 --timeout-keep-alive 75
+Restart=on-failure
+RestartSec=5
+
+# ── 资源闸：这台机器 3.3G 无 swap，本服务失控会连累 mygf/elina/SpeakingLab ──
+# 轻量模式实测常驻约 150-250 MB，600M 留足余量又能在异常膨胀时先杀自己
+MemoryMax=600M
+MemoryHigh=450M
+CPUQuota=150%
+
+# ── 最小权限 ──
+NoNewPrivileges=true
+PrivateTmp=true
+ProtectSystem=full
+ProtectHome=read-only
+ReadWritePaths=/home/ubuntu/wh40k
+
+StandardOutput=journal
+StandardError=journal
+SyslogIdentifier=wh40k-api
+
+[Install]
+WantedBy=multi-user.target
