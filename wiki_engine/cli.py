@@ -47,6 +47,14 @@ def main() -> None:
     sp.add_argument("--wiki", default="wiki", help="wiki 目录")
     sp.add_argument("--db", default="db/wh40k.sqlite", help="官方结构库")
 
+    # ── core-rules ──
+    sp = sub.add_parser("core-rules",
+                        help="从 data_refined 生成 11 版核心规则章节页")
+    sp.add_argument("--wiki", default="wiki", help="wiki 目录")
+    sp.add_argument("--refined",
+                    default="data_refined/Core Rules - New 40K Core Rules",
+                    help="官方英文核心规则的 refine 产物目录")
+
     # ── keywords ──
     sp = sub.add_parser("keywords", help="生成武器词条（USR）索引 indexes/keywords.md")
     sp.add_argument("--wiki", default="wiki", help="wiki 目录")
@@ -132,6 +140,21 @@ def main() -> None:
         if rep["warnings"]:
             print("⚠️ {} 条实体带解析警告（详见 wiki/log.md 或重跑取报告）".format(
                 len(rep["warnings"])))
+
+    elif args.cmd == "core-rules":
+        from wiki_engine.core_rules import generate_all as generate_core_rules
+        from wiki_engine.core_rules import unextracted_hints
+        rep = generate_core_rules(Path(args.refined), Path(args.wiki))
+        print("核心规则：目录 {} 章 / 正文切出 {} 节 → 写 {} 页".format(
+            rep["chapters"], rep["sections"], rep["written"]))
+        if rep["empty_chapters"]:
+            print("⚠️ {} 章一节都没切出来（排版变体？）：{}".format(
+                len(rep["empty_chapters"]), "、".join(rep["empty_chapters"])))
+        miss = unextracted_hints(Path(args.refined))
+        if miss:
+            print("⚠️ 行尾带节号却没切出来的：{}".format(miss))
+        if rep["conflicts"]:
+            print("⚠️ {} 页检测到人工编辑，已跳过覆盖".format(len(rep["conflicts"])))
 
     elif args.cmd == "keywords":
         from wiki_engine.keyword_index import generate as generate_keyword_index

@@ -1,6 +1,6 @@
 # WH40K Wiki Index
 
-_Last updated: 2026-07-25 13:27 UTC_
+_Last updated: 2026-07-25 14:26 UTC_
 
 ## 目录
 
@@ -2823,6 +2823,30 @@ _Last updated: 2026-07-25 13:27 UTC_
 | core-rule | [曲射](core-rules/indirect-fire.md) | 曲射武器越过障碍轰击视线外目标，11 版改为固定命中阈值。 | 2026-07-11 |
 | core-rule | [标准移动](core-rules/normal-move.md) | 标准移动是最基本的移动类型：最多移动 M 值，不得进入交战。 | 2026-07-11 |
 | core-rule | [标记光](core-rules/markerlight.md) | 标记光是钛帝国关键词：由它标记的目标会被友军的攻击忽视掩体。 | 2026-07-11 |
+| core-rule | [核心规则第 1 章](core-rules/sections/01-core-concepts.md) | 11 版核心规则第 01 章《CORE CONCEPTS》全文，共 7 节，官方节号 01.01–01.07。 | 2026-07-25 |
+| core-rule | [核心规则第 10 章](core-rules/sections/10-shooting-phase.md) | 11 版核心规则第 10 章《SHOOTING PHASE》全文，共 7 节，官方节号 10.01–10.07。 | 2026-07-25 |
+| core-rule | [核心规则第 11 章](core-rules/sections/11-charge-phase.md) | 11 版核心规则第 11 章《CHARGE PHASE》全文，共 4 节，官方节号 11.01–11.04。 | 2026-07-25 |
+| core-rule | [核心规则第 12 章](core-rules/sections/12-fight-phase.md) | 11 版核心规则第 12 章《FIGHT PHASE》全文，共 9 节，官方节号 12.01–12.09。 | 2026-07-25 |
+| core-rule | [核心规则第 13 章](core-rules/sections/13-terrain.md) | 11 版核心规则第 13 章《TERRAIN》全文，共 7 节，官方节号 13.01–13.11。 | 2026-07-25 |
+| core-rule | [核心规则第 14 章](core-rules/sections/14-objectives.md) | 11 版核心规则第 14 章《OBJECTIVES》全文，共 3 节，官方节号 14.01–14.03。 | 2026-07-25 |
+| core-rule | [核心规则第 15 章](core-rules/sections/15-stratagems.md) | 11 版核心规则第 15 章《STRATAGEMS》全文，共 1 节，官方节号 15.01–15.01。 | 2026-07-25 |
+| core-rule | [核心规则第 16 章](core-rules/sections/16-actions.md) | 11 版核心规则第 16 章《ACTIONS》全文，共 1 节，官方节号 16.01–16.01。 | 2026-07-25 |
+| core-rule | [核心规则第 17 章](core-rules/sections/17-monsters-and-vehicles.md) | 11 版核心规则第 17 章《MONSTERS AND VEHICLES》全文，共 3 节，官方节号 17.01–17.03。 | 2026-07-25 |
+| core-rule | [核心规则第 18 章](core-rules/sections/18-transports.md) | 11 版核心规则第 18 章《TRANSPORTS》全文，共 5 节，官方节号 18.01–18.05。 | 2026-07-25 |
+| core-rule | [核心规则第 19 章](core-rules/sections/19-attached-units.md) | 11 版核心规则第 19 章《ATTACHED UNITS》全文，共 4 节，官方节号 19.01–19.04。 | 2026-07-25 |
+| core-rule | [核心规则第 2 章](core-rules/sections/02-datasheets.md) | 11 版核心规则第 02 章《DATASHEETS》全文，共 5 节，官方节号 02.01–02.05。 | 2026-07-25 |
+| core-rule | [核心规则第 20 章](core-rules/sections/20-strategic-reserves.md) | 11 版核心规则第 20 章《STRATEGIC RESERVES》全文，共 4 节，官方节号 20.01–20.04。 | 2026-07-25 |
+| core-rule | [核心规则第 21 章](core-rules/sections/21-flying-and-surging.md) | 11 版核心规则第 21 章《FLYING AND SURGING》全文，共 3 节，官方节号 21.01–21.03。 | 2026-07-25 |
+| core-rule | [核心规则第 22 章](core-rules/sections/22-other-rules-and-abilities.md) | 11 版核心规则第 22 章《OTHER RULES AND ABILITIES》全文，共 5 节，官方节号 22.01–22.05。 | 2026-07-25 |
+| core-rule | [核心规则第 23 章](core-rules/sections/23-aircraft.md) | 11 版核心规则第 23 章《AIRCRAFT》全文，共 4 节，官方节号 23.01–23.04。 | 2026-07-25 |
+| core-rule | [核心规则第 24 章](core-rules/sections/24-core-abilities.md) | 11 版核心规则第 24 章《CORE ABILITIES》全文，共 38 节，官方节号 24.01–24.38。 | 2026-07-25 |
+| core-rule | [核心规则第 3 章](core-rules/sections/03-moving.md) | 11 版核心规则第 03 章《MOVING》全文，共 4 节，官方节号 03.01–03.04。 | 2026-07-25 |
+| core-rule | [核心规则第 4 章](core-rules/sections/04-making-attacks.md) | 11 版核心规则第 04 章《MAKING ATTACKS》全文，共 1 节，官方节号 04.03–04.03。 | 2026-07-25 |
+| core-rule | [核心规则第 5 章](core-rules/sections/05-attack-sequence.md) | 11 版核心规则第 05 章《ATTACK SEQUENCE》全文，共 4 节，官方节号 05.01–05.04。 | 2026-07-25 |
+| core-rule | [核心规则第 6 章](core-rules/sections/06-other-concepts.md) | 11 版核心规则第 06 章《OTHER CONCEPTS》全文，共 3 节，官方节号 06.01–06.03。 | 2026-07-25 |
+| core-rule | [核心规则第 7 章](core-rules/sections/07-the-battle-round.md) | 11 版核心规则第 07 章《THE BATTLE ROUND》全文，共 3 节，官方节号 07.01–07.03。 | 2026-07-25 |
+| core-rule | [核心规则第 8 章](core-rules/sections/08-command-phase.md) | 11 版核心规则第 08 章《COMMAND PHASE》全文，共 5 节，官方节号 08.01–08.05。 | 2026-07-25 |
+| core-rule | [核心规则第 9 章](core-rules/sections/09-movement-phase.md) | 11 版核心规则第 09 章《MOVEMENT PHASE》全文，共 7 节，官方节号 09.01–09.07。 | 2026-07-25 |
 | core-rule | [横扫](core-rules/cleave.md) | 横扫是近战版的爆炸：打人堆越打越多，但要求这把武器的攻击只指定一个目标。 | 2026-07-25 |
 | core-rule | [步兵](core-rules/infantry.md) | 步兵是徒步作战的单位类型，能穿越密集地形、可在废墟高层设立，并在地形区内获得掩体。 | 2026-07-23 |
 | core-rule | [步行者](core-rules/walker.md) | 步行者是标示双足/多足步行载具的单位类型标记；带此关键词的载具即使非人物也能做英勇干预。 | 2026-07-23 |
@@ -4998,8 +5022,8 @@ _Last updated: 2026-07-25 13:27 UTC_
 
 ## 统计
 
-- **总实体数**: 4860
-- **core-rule**: 82
+- **总实体数**: 4884
+- **core-rule**: 106
 - **detachment**: 324
 - **enhancement**: 1058
 - **stratagem**: 1681

@@ -35,6 +35,9 @@ wiki/
 ├── core-rules/stratagems/  **核心战略**（不属于任何阵营的通用战略，如「指挥重投」
 │                           「疯狂勇气」，实测 28 条）。按 §2 第 1 条，规则类内容归
 │                           core-rules；放进某个阵营目录会谎称它是该阵营专属
+├── core-rules/sections/    **11 版核心规则全文**，按官方章节切（24 章 137 节，
+│                           `<NN>-<英文章名 slug>.md`）。章名与分卷取自官方目录页
+│                           `data_refined/Core Rules…/page_002.md`，不靠记忆补
 └── factions/<中文阵营名>/
     ├── index.md         阵营索引 —— 生成物
     ├── units/           兵牌页（1 张 Wahapedia datasheet = 1 页）
