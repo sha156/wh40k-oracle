@@ -82,6 +82,14 @@ def main() -> None:
         help="单位中文名人工补译层：zh_unit_overrides.json → units.name_zh（黑图没收录的现役单位）")
     zu.add_argument("--db", default="db/wh40k.sqlite")
 
+    oz = sub.add_parser(
+        "official-zh",
+        help="GW 官方中文包（data/官方中文/）× 库内英文按数值指纹配对 → "
+             "official_zh_names.json（只出映射文件，不写库）")
+    oz.add_argument("--pdf-dir", default="data/官方中文")
+    oz.add_argument("--db", default="db/wh40k.sqlite")
+    oz.add_argument("--out", default="db_compile/official_zh_names.json")
+
     d = sub.add_parser(
         "downloads",
         help="官方下载页版本监控：harvest 建基线 / check 比对报改版（需 3.11+scrapling 渲染）")
@@ -411,6 +419,24 @@ def main() -> None:
         rep = apply_unit_name_overrides(Path(args.db))
         print(f"\n单位中文名人工译名：{rep['terms']} 条 → 命中 {rep['filled']} 行")
         print("\n  注意：build 重建会覆盖，已挂进 stage_zh_details（restore 自动补跑）")
+    elif args.cmd == "official-zh":
+        from db_compile.official_zh import write_official_zh
+
+        data = write_official_zh(out_path=Path(args.out), pdf_dir=Path(args.pdf_dir),
+                                 db_path=Path(args.db))
+        rep = data["_report"]
+        m, z = rep["matched"], rep["zh_parsed"]
+        print(f"\n官方中文映射 → {args.out}")
+        print(f"  战略 {m['stratagems']}/{z['stratagems']} 命中"
+              f"（全阵营唯一 {m['stratagems_pass_a_faction_unique']} +"
+              f" 分遣队内 {m['stratagems_pass_b_within_detachment']}）")
+        print(f"  强化 {m['enhancements']}/{z['enhancements']} 命中")
+        print(f"  分遣队 {m['detachments']} 对")
+        print(f"  未命中：战略 {rep['unmatched_sample']['stratagems_total']}、"
+              f"强化 {rep['unmatched_sample']['enhancements_total']}（一律留空）")
+        if rep["detachment_conflicts_total"]:
+            print(f"  ⚠️ 跨分遣队配对已拦下 {rep['detachment_conflicts_total']} 条，"
+                  f"详见 _report.detachment_conflicts")
     elif args.cmd == "downloads":
         from db_compile.downloads import (harvest, write_manifest, check,
                                           print_diffs)
