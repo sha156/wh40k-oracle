@@ -72,6 +72,11 @@ def main() -> None:
     zw.add_argument("--missing", action="store_true",
                     help="列出现役单位里仍缺中文名的武器（按出现次数排序，供补译）")
 
+    zu = sub.add_parser(
+        "zh-units",
+        help="单位中文名人工补译层：zh_unit_overrides.json → units.name_zh（黑图没收录的现役单位）")
+    zu.add_argument("--db", default="db/wh40k.sqlite")
+
     d = sub.add_parser(
         "downloads",
         help="官方下载页版本监控：harvest 建基线 / check 比对报改版（需 3.11+scrapling 渲染）")
@@ -370,6 +375,12 @@ def main() -> None:
             if left:
                 print(f"  ⚠️ 残留部首兼容字 {left}——补 _RADICAL_FALLBACK 对照")
             print("\n  注意：build 重建会清空，已挂进 restore_authority_layers 自动补跑")
+    elif args.cmd == "zh-units":
+        from db_compile.blacklibrary import apply_unit_name_overrides
+
+        rep = apply_unit_name_overrides(Path(args.db))
+        print(f"\n单位中文名人工译名：{rep['terms']} 条 → 命中 {rep['filled']} 行")
+        print("\n  注意：build 重建会覆盖，已挂进 stage_zh_details（restore 自动补跑）")
     elif args.cmd == "downloads":
         from db_compile.downloads import (harvest, write_manifest, check,
                                           print_diffs)

@@ -118,7 +118,9 @@ def test_no_intra_unit_duplicate_translations():
             "AND name_zh IS NOT NULL AND name_zh <> ''", (uid,)).fetchall()
         by_zh = {}
         for en, zh in rows:
-            by_zh.setdefault(zh, set()).add(en)
+            # 与 _dedupe_within_unit 同口径：忽略大小写——库里存在同一把武器两行只差
+            # 大小写的情况（Toxinjector Harpoon / harpoon），它们同名是对的
+            by_zh.setdefault(zh, set()).add((en or "").strip().lower())
         bad += [(uid, zh, ens) for zh, ens in by_zh.items() if len(ens) > 1]
     conn.close()
     assert not bad, f"撞名：{bad[:5]}"
@@ -139,3 +141,60 @@ def test_missing_terms_is_a_worklist():
     if terms:
         en, n, sample = terms[0]
         assert isinstance(en, str) and n >= 1
+
+
+# ── 人工译名真源（overrides）────────────────────────────────────
+
+def test_weapon_overrides_file_is_wellformed():
+    """人工译名真源：键值都非空、中文里不残留拉丁字母、同名不撞（同一中文对多英文）。"""
+    import json as _json
+    from db_compile.zh_weapons import OVERRIDES_PATH
+
+    data = _json.loads(OVERRIDES_PATH.read_text(encoding="utf-8"))
+    terms = data["weapons"]
+    assert len(terms) > 400
+    by_zh = {}
+    for en, zh in terms.items():
+        assert en.strip() and zh.strip(), f"空条目 {en!r}→{zh!r}"
+        assert not __import__("re").search(r"[A-Za-z]", zh), f"{en} 的译名残留英文：{zh}"
+        by_zh.setdefault(zh, []).append(en)
+    # 允许的撞名：同一把武器的不同英文写法（大小写/词序），逐条列白名单
+    allowed = {"动力爪", "大砍刀", "搞哥巨爪（重击）", "搞哥巨爪（横扫）"}
+    dup = {zh: ens for zh, ens in by_zh.items() if len(ens) > 1 and zh not in allowed}
+    assert not dup, f"未登记的撞名：{list(dup.items())[:5]}"
+
+
+def test_unit_overrides_file_is_wellformed():
+    import json as _json
+    from db_compile.blacklibrary import UNIT_OVERRIDES_PATH
+
+    data = _json.loads(UNIT_OVERRIDES_PATH.read_text(encoding="utf-8"))
+    units = data["units"]
+    assert len(units) >= 25
+    for en, zh in units.items():
+        assert en.strip() and zh.strip()
+        assert not __import__("re").search(r"[A-Za-z]", zh), f"{en} 的译名残留英文：{zh}"
+
+
+@needs_db
+def test_current_units_fully_localized():
+    """现役单位（图鉴默认列的那批）的单位名与武器名都该有中文——这是本轮补译的验收线。"""
+    import json as _json
+
+    conn = sqlite3.connect(str(DB))
+    cur = set()
+    for uid, pj in conn.execute("SELECT id, points_json FROM units"):
+        try:
+            if pj and (_json.loads(pj) or {}).get("mfm"):
+                cur.add(uid)
+        except _json.JSONDecodeError:
+            continue
+    for (uid,) in conn.execute("SELECT canonical_id FROM unit_zh_detail"):
+        cur.add(uid)
+    miss_units = [n for uid, n, zh in conn.execute("SELECT id, name_en, name_zh FROM units")
+                  if uid in cur and not (zh or "").strip()]
+    miss_weapons = [n for uid, n, zh in conn.execute(
+        "SELECT unit_id, name_en, name_zh FROM weapons") if uid in cur and not (zh or "").strip()]
+    conn.close()
+    assert not miss_units, f"现役单位缺中文名：{miss_units[:5]}"
+    assert not miss_weapons, f"现役武器缺中文名：{miss_weapons[:5]}"

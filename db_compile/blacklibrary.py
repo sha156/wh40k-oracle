@@ -332,3 +332,45 @@ def load_zh_detail(db_path, canonical_id: str) -> Optional[dict]:
         }
     finally:
         conn.close()
+
+
+# ── 单位中文名的人工补译层（黑图没收录的现役单位）────────────────────
+
+UNIT_OVERRIDES_PATH = Path(__file__).resolve().parent / "zh_unit_overrides.json"
+
+
+def load_unit_overrides(path: Optional[Path] = None) -> Dict[str, str]:
+    """{英文单位名: 中文名}。文件缺失＝还没补译，不是错误。"""
+    p = Path(path) if path else UNIT_OVERRIDES_PATH
+    if not p.exists():
+        return {}
+    try:
+        data = json.loads(p.read_text(encoding="utf-8"))
+    except (json.JSONDecodeError, OSError):
+        return {}
+    terms = data.get("units") if isinstance(data, dict) else None
+    return {str(k): str(v) for k, v in (terms or {}).items() if k and v}
+
+
+def apply_unit_name_overrides(db_path, overrides: Optional[Dict[str, str]] = None
+                              ) -> Dict[str, int]:
+    """人工译名盖到 units.name_zh（同名多行全填）。优先级最高——黑图没有的才在这。
+
+    与 fill_name_zh 一样按归一化英文名匹配，所以大小写/连字符写法不影响命中。
+    """
+    terms = overrides if overrides is not None else load_unit_overrides()
+    if not terms:
+        return {"terms": 0, "filled": 0}
+    conn = sqlite3.connect(str(db_path))
+    try:
+        en2ids = _en_to_ids(conn)
+        filled = 0
+        for en, zh in terms.items():
+            for cid in en2ids.get(_norm_en(en), []):
+                cur = conn.execute(
+                    "UPDATE units SET name_zh = ? WHERE id = ?", (zh, cid))
+                filled += cur.rowcount
+        conn.commit()
+        return {"terms": len(terms), "filled": filled}
+    finally:
+        conn.close()

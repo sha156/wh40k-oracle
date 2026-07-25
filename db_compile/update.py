@@ -315,21 +315,26 @@ def stage_zh_details(cfg: UpdateConfig) -> StageResult:
     从缓存 details.json 灌（detail 抓取慢，不进周更；刷新走 fetch_blacklibrary_details.py）。
     英文=权威真值不动，本表是叠加的中文内容层。
     """
-    from db_compile.blacklibrary import (fill_name_zh, load_details,
-                                         load_or_fetch_units, populate_zh_details)
+    from db_compile.blacklibrary import (apply_unit_name_overrides, fill_name_zh,
+                                         load_details, load_or_fetch_units,
+                                         populate_zh_details)
     units, _ = load_or_fetch_units(cfg.blacklibrary_cache, offline=cfg.offline)
     name_rep = fill_name_zh(cfg.db, units) if units else {"filled": 0}
+    # 黑图没收录的现役单位（新品/改名）走人工译名真源，优先级最高
+    ov_rep = apply_unit_name_overrides(cfg.db)
     details = load_details(cfg.blacklibrary_details)
     if not details:
         return StageResult("zh_details", True,
-                           f"填 name_zh {name_rep['filled']}；无 details 缓存，跳过中文表",
+                           f"填 name_zh {name_rep['filled']}"
+                           f"（人工译名 {ov_rep['filled']} 行）；无 details 缓存，跳过中文表",
                            warning="details.json 缺失，中文 datasheet 层未灌")
     det_rep = populate_zh_details(cfg.db, details)
     return StageResult(
         "zh_details", True,
-        f"填 name_zh {name_rep['filled']}；unit_zh_detail 入库 {det_rep['matched']} "
-        f"（无匹配 {det_rep['unmatched']}）",
-        detail={**det_rep, "name_zh_filled": name_rep["filled"]})
+        f"填 name_zh {name_rep['filled']}（人工译名 {ov_rep['filled']} 行）；"
+        f"unit_zh_detail 入库 {det_rep['matched']}（无匹配 {det_rep['unmatched']}）",
+        detail={**det_rep, "name_zh_filled": name_rep["filled"],
+                "overrides": ov_rep})
 
 
 def stage_zh_weapons(cfg: UpdateConfig) -> StageResult:
