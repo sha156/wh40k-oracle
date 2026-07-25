@@ -7,6 +7,13 @@
 #   bash deploy/deploy.sh data     # 只推 db/ 与 wiki/（本地重建库之后）
 #   bash deploy/deploy.sh verify   # 只跑验收，不推任何东西
 #
+# ── 规则问答（检索链）上线，只在换到大机器后用 ──
+#   bash deploy/deploy.sh assets   # 推 opt/ 模型(4.5G) + local_vector_store/ 索引(29M)
+#   bash deploy/deploy.sh retrieval-on   # 装重依赖 + 打开 WEB_API_RETRIEVAL + 抬内存闸
+#   bash deploy/deploy.sh retrieval-off  # 退回轻量模式（不删资产）
+# 现役 2 核 3.3G 机器**跑不动**：检索栈实测常驻 3.2G（无 swap），且 opt/ 要 4.5G 磁盘。
+# 换机门槛与整套步骤见 docs/superpowers/specs/2026-07-25-retrieval-online-readiness.md
+#
 # 前提：~/.ssh/config 里有 mygf 别名；服务器已按
 # docs/superpowers/specs/2026-07-25-server-deploy.md §3 做过一次性初始化。
 #
@@ -79,6 +86,133 @@ restart_api() {
   ssh "$HOST" "sudo systemctl restart wh40k-api && sleep 4 && systemctl is-active wh40k-api"
 }
 
+# ── 规则问答（检索链）上线：只在换到大机器后用 ─────────────────────────
+# 门槛（实测值，别拍脑袋）：内存 ≥8G（检索栈常驻 3.2G，且要留给 mygf 等同机服务）、
+# 磁盘 ≥12G 空闲（opt/ 4.5G + 索引 29M + 重依赖 venv ~3G + 余量）。
+REQ_MEM_MB=7000
+REQ_DISK_GB=12
+
+# 换机门槛核对：不够就明说不够、拒绝往下走，不做"推一半发现塞不下"
+check_retrieval_capacity() {
+  say "换机门槛核对（内存/磁盘）"
+  ssh "$HOST" "
+    mem=\$(free -m | awk '/^Mem:/{print \$2}')
+    disk=\$(df -BG --output=avail /home | tail -1 | tr -dc '0-9')
+    printf '  内存 %s MB（需 ≥%s）\n' \"\$mem\" '$REQ_MEM_MB'
+    printf '  /home 可用 %s GB（需 ≥%s）\n' \"\$disk\" '$REQ_DISK_GB'
+    fail=0
+    [ \"\$mem\"  -ge $REQ_MEM_MB  ] || { echo '  ✗ 内存不足：检索栈实测常驻 3.2G，本机塞不下' >&2; fail=1; }
+    [ \"\$disk\" -ge $REQ_DISK_GB ] || { echo '  ✗ 磁盘不足：opt/ 模型就要 4.5G' >&2; fail=1; }
+    [ \$fail -eq 0 ] || exit 1
+    echo '  ok'
+  "
+}
+
+# 资产：4.5G 模型 + 索引。走 tar-over-ssh 单连接（本地无 rsync），传完对 sha256。
+# 传输约十几分钟，别在不稳定的网络上开始。
+push_assets() {
+  check_retrieval_capacity
+  [ -d opt ] && [ -d local_vector_store ] || {
+    echo "本地缺 opt/ 或 local_vector_store/：模型和索引只在本地生产（服务器跑不动嵌入）" >&2
+    exit 1
+  }
+  say "推模型与索引（约 4.5G，十几分钟）"
+  tar czf - --exclude='__pycache__' opt local_vector_store \
+    | ssh "$HOST" "tar xzf - -C $REMOTE"
+  say "校验索引 sha256"
+  local l r
+  l=$(sha256sum local_vector_store/index.faiss | cut -d' ' -f1)
+  r=$(ssh "$HOST" "sha256sum $REMOTE/local_vector_store/index.faiss | cut -d' ' -f1")
+  [ "$l" = "$r" ] || { echo "  ✗ 索引 sha256 不一致（${l:0:16} vs ${r:0:16}）" >&2; exit 1; }
+  echo "  ok（索引 sha256 一致 ${l:0:16}）"
+  say "核对模型快照目录在位"
+  ssh "$HOST" "ls -d $REMOTE/opt/models--BAAI--bge-m3/snapshots/*/ | head -1 && du -sh $REMOTE/opt"
+}
+
+# 开检索：装重依赖 + 抬内存闸 + 翻 .env 开关。**幂等**，可重复跑。
+retrieval_on() {
+  check_retrieval_capacity
+  say "装检索链依赖（torch CPU 源，否则白背 2G nvidia 依赖）"
+  ssh "$HOST" "
+    set -e
+    cd $REMOTE
+    .venv/bin/python -m pip install -q --upgrade pip
+    .venv/bin/python -m pip install -q torch --index-url https://download.pytorch.org/whl/cpu
+    .venv/bin/python -m pip install -q -r requirements.txt
+    .venv/bin/python -c 'import torch, faiss, langchain_huggingface; print(\"  重依赖就位\")'
+  "
+  say "翻开关：WEB_API_RETRIEVAL=on（缺 DEEPSEEK_API_KEY 只会 Fake 直答降级，不崩）"
+  ssh "$HOST" "
+    set -e
+    cd $REMOTE
+    sed -i 's/^WEB_API_RETRIEVAL=.*/WEB_API_RETRIEVAL=on/' .env
+    grep -q '^WEB_API_RETRIEVAL=' .env || echo 'WEB_API_RETRIEVAL=on' >> .env
+    sed -i 's/^WEB_API_WARMUP=.*/WEB_API_WARMUP=1/' .env
+    grep -q '^WEB_API_WARMUP=' .env || echo 'WEB_API_WARMUP=1' >> .env
+    grep -E '^WEB_API_(RETRIEVAL|WARMUP)=' .env
+  "
+  say "抬 systemd 内存闸（600M→5G：检索栈常驻 3.2G）"
+  ssh "$HOST" "
+    set -e
+    sudo mkdir -p /etc/systemd/system/wh40k-api.service.d
+    printf '[Service]\nMemoryMax=5G\nMemoryHigh=4G\n' \
+      | sudo tee /etc/systemd/system/wh40k-api.service.d/retrieval.conf >/dev/null
+    sudo systemctl daemon-reload
+  "
+  restart_api
+  verify_retrieval
+}
+
+# 关检索：退回轻量模式（资产留着，随时能再开）
+retrieval_off() {
+  say "关检索 → 轻量模式（不删 opt/ 与索引）"
+  ssh "$HOST" "
+    set -e
+    cd $REMOTE
+    sed -i 's/^WEB_API_RETRIEVAL=.*/WEB_API_RETRIEVAL=off/' .env
+    sed -i 's/^WEB_API_WARMUP=.*/WEB_API_WARMUP=0/' .env
+    sudo rm -f /etc/systemd/system/wh40k-api.service.d/retrieval.conf
+    sudo systemctl daemon-reload
+  "
+  restart_api
+  verify
+}
+
+# 检索专项验收：只看 200 不够——必须确认 retrieval=true、资产不缺、真能答出带引用的答案。
+# 静默降级（开关开着但模型没挂上 → 检索悄悄关掉）就是靠这一步拦住的。
+verify_retrieval() {
+  say "检索验收"
+  ssh "$HOST" "
+    set -e
+    echo '就绪状态：'
+    curl -fsS '$BASE/api/healthz' | python3 -c '
+import json,sys
+d=json.load(sys.stdin)
+miss=[a[\"name\"] for a in d[\"assets\"] if a[\"required\"] and not a[\"ok\"]]
+print(\"  ready=%s retrieval=%s llm=%s 缺失必需资产=%s\" % (
+    d[\"ready\"], d[\"retrieval\"], d[\"llm_configured\"], miss or \"无\"))
+w=d.get(\"warmup\") or {}
+print(\"  预热 requested=%s done=%s error=%s\" % (w.get(\"requested\"), w.get(\"done\"), w.get(\"error\")))
+assert d[\"retrieval\"] is True, \"retrieval 仍是 false：开关没生效或资产没挂上（看 journalctl -u wh40k-api）\"
+assert not miss, \"必需资产缺失：%s\" % miss
+'
+    echo '真问一句（零分数题，看能否检索到规则层并给引用）：'
+    curl -fsS -X POST '$BASE/api/chat/sync' -H 'Content-Type: application/json' \
+      -d '{\"question\":\"冲锋后还能射击吗\"}' \
+      | python3 -c '
+import json,sys
+d=json.load(sys.stdin)
+cites=d.get(\"cites\") or []
+summ=(d.get(\"summary\") or {}).get(\"text\") or str(d)[:120]
+print(\"  引用条数=%d\" % len(cites))
+print(\"  摘要=%s\" % summ[:120])
+assert cites, \"零引用：检索链没真正参与（LLM 直答）\"
+'
+    echo '内存占用（检索栈常驻实测 3.2G 上下）：'
+    ps -o rss= -p \$(systemctl show -p MainPID --value wh40k-api) | awk '{printf \"  %.0f MB\n\", \$1/1024}'
+  "
+}
+
 verify() {
   say "验收"
   ssh "$HOST" "
@@ -108,7 +242,15 @@ case "$MODE" in
   web)    push_web; verify ;;
   verify) verify ;;
   all)    push_code; push_data; push_web; restart_api; verify ;;
-  *) echo "用法: bash deploy/deploy.sh [all|code|data|web|verify]" >&2; exit 2 ;;
+  # 规则问答（换大机器后）
+  capacity)      check_retrieval_capacity ;;
+  assets)        push_assets ;;
+  retrieval-on)  retrieval_on ;;
+  retrieval-off) retrieval_off ;;
+  verify-retrieval) verify_retrieval ;;
+  *) echo "用法: bash deploy/deploy.sh [all|code|data|web|verify]" >&2
+     echo "      规则问答: [capacity|assets|retrieval-on|retrieval-off|verify-retrieval]" >&2
+     exit 2 ;;
 esac
 
 say "完成"
