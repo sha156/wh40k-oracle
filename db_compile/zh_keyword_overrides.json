@@ -1,0 +1,33 @@
+{
+ "_note": "武器关键词（USR）中文名的人工真源。db_compile/zh_weapons.build_keyword_glossary 在「数据学习 + 参数化规则」之后叠加它，优先级最高。改完跑 python -m db_compile zh-weapons。",
+ "_how": "取值优先照黑图语料里的多数写法（实测：无视掩体 192 > 忽视掩体 137 > 忽略掩体 35；洪流 216 > 喷射 140；反X N+ 合计 122 > 针对X N+ 合计 44；单发 38 > 一次性 23）。参数化的 ANTI-X N+ / RAPID FIRE X / MELTA X / SUSTAINED HITS X 由规则统一生成，不列在这里。",
+ "keywords": {
+  "IGNORES COVER": "无视掩体",
+  "TORRENT": "洪流",
+  "EXTRA ATTACKS": "额外攻击",
+  "ONE SHOT": "单发",
+  "LANCE": "骑枪",
+  "CONVERSION": "转换",
+  "PSYCHIC ASSASSIN": "灵能刺客",
+  "C'TAN POWER": "星神之力",
+  "PLASMA WARHEAD": "等离子弹头",
+  "REVERBERATING SUMMONS": "回响召唤",
+  "OVERCHARGE": "过载",
+  "SNAGGED": "钩缠",
+  "DEAD CHOPPY": "劈砍狠",
+  "BUBBLECHUKKA": "泡泡炮",
+  "HEAVY": "重型",
+  "PISTOL": "手枪",
+  "BLAST": "爆炸",
+  "PRECISION": "精准",
+  "HAZARDOUS": "危险",
+  "INDIRECT FIRE": "曲射",
+  "TWIN-LINKED": "双联",
+  "LETHAL HITS": "致命一击",
+  "DEVASTATING WOUNDS": "毁灭伤害",
+  "PSYCHIC": "灵能",
+  "ASSAULT": "突击",
+  "HOOKED": "钩挂",
+  "IMPALED": "穿刺"
+ }
+}

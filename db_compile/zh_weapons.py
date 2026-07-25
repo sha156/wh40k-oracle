@@ -36,6 +36,46 @@ _GLOBAL_MIN_OBS = 3
 
 # 人工译名真源（黑图没有的词，人工按黑图风格补译）——git 跟踪，DB 里只是投影
 OVERRIDES_PATH = Path(__file__).resolve().parent / "zh_weapon_overrides.json"
+KEYWORD_OVERRIDES_PATH = Path(__file__).resolve().parent / "zh_keyword_overrides.json"
+
+# 参数化 USR：同一族的写法必须整齐（黑图自己混用"反步兵/针对步兵"，我们统一取多数派"反X"）
+_ANTI_TARGET = {
+    "INFANTRY": "步兵", "VEHICLE": "载具", "MONSTER": "怪物", "FLY": "飞行",
+    "PSYKER": "灵能者", "CHARACTER": "角色", "TITANIC": "泰坦", "DAEMON": "恶魔",
+    "CHAOS": "混沌", "WALKER": "步行者", "EPIC HERO": "史诗英雄", "XENOS": "异形",
+    "IMPERIUM": "帝国", "GRENADES": "手雷", "MOUNTED": "骑乘", "SWARM": "虫群",
+    "TYRANIDS": "泰伦虫族",
+}
+_PARAM_RULES = [
+    (re.compile(r"^ANTI-(.+?)\s+(\d\+)$"), lambda m: (
+        "反" + _ANTI_TARGET[m.group(1).strip()] + m.group(2)
+        if m.group(1).strip() in _ANTI_TARGET else None)),
+    (re.compile(r"^RAPID FIRE (.+)$"), lambda m: "速射" + m.group(1).replace(" ", "")),
+    (re.compile(r"^MELTA (.+)$"), lambda m: "热熔" + m.group(1).replace(" ", "")),
+    (re.compile(r"^SUSTAINED HITS (.+)$"), lambda m: "连击" + m.group(1).replace(" ", "")),
+]
+
+
+def _rule_translate(term_en: str) -> Optional[str]:
+    """参数化 USR（ANTI-X N+ / RAPID FIRE X / MELTA X / SUSTAINED HITS X）→ 中文。"""
+    for pat, fn in _PARAM_RULES:
+        m = pat.match(term_en.strip().upper())
+        if m:
+            got = fn(m)
+            if got:
+                return got
+    return None
+
+
+def _load_keyword_overrides() -> Dict[str, str]:
+    if not KEYWORD_OVERRIDES_PATH.exists():
+        return {}
+    try:
+        data = json.loads(KEYWORD_OVERRIDES_PATH.read_text(encoding="utf-8"))
+    except (json.JSONDecodeError, OSError):
+        return {}
+    terms = data.get("keywords") if isinstance(data, dict) else None
+    return {str(k).upper(): str(v) for k, v in (terms or {}).items() if k and v}
 
 
 # CJK Radicals Supplement（U+2E80–U+2EF3）没有 NFKC 分解，只能显式对照。
@@ -355,13 +395,35 @@ def build_keyword_glossary(db_path, apply: bool = True) -> Dict[str, Any]:
             tot = sum(cnt.values())
             if len(cnt) == 1 or n / tot >= _GLOBAL_MAJORITY:
                 picked[en] = (zh, tot)
+        # 库里出现过的全部关键词都要有着落：先规则、再人工层（都盖过学习值，保证同族整齐）
+        seen: set = set()
+        for (kj,) in conn.execute("SELECT keywords_json FROM weapons"):
+            try:
+                for k in json.loads(kj or "[]") or []:
+                    for t in str(k).split(","):
+                        if t.strip():
+                            seen.add(t.strip().upper())
+            except (json.JSONDecodeError, TypeError):
+                continue
+        n_rule = 0
+        for term in seen:
+            got = _rule_translate(term)
+            if got:
+                picked[term] = (got, 0)
+                n_rule += 1
+        overrides = _load_keyword_overrides()
+        for term, zh in overrides.items():
+            picked[term] = (clean_zh_name(zh), 0)
+
         if apply:
             conn.execute("DELETE FROM zh_keyword_glossary")
             conn.executemany(
                 "INSERT INTO zh_keyword_glossary (term_en, term_zh, obs) VALUES (?,?,?)",
-                [(en, zh, n) for en, (zh, n) in picked.items()])
+                [(en, clean_zh_name(zh), n) for en, (zh, n) in picked.items()])
             conn.commit()
-        return {"terms": len(picked), "candidates": len(pairs)}
+        return {"terms": len(picked), "candidates": len(pairs),
+                "by_rule": n_rule, "by_override": len(overrides),
+                "untranslated": sorted(seen - set(picked))[:40]}
     finally:
         conn.close()
 

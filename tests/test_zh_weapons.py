@@ -198,3 +198,47 @@ def test_current_units_fully_localized():
     conn.close()
     assert not miss_units, f"现役单位缺中文名：{miss_units[:5]}"
     assert not miss_weapons, f"现役武器缺中文名：{miss_weapons[:5]}"
+
+
+@needs_db
+def test_all_current_weapon_keywords_localized():
+    """现役武器的 USR 关键词也要全有中文——中英混排（[IGNORES COVER，手枪]）是半成品。"""
+    import json as _json
+
+    conn = sqlite3.connect(str(DB))
+    cur = set()
+    for uid, pj in conn.execute("SELECT id, points_json FROM units"):
+        try:
+            if pj and (_json.loads(pj) or {}).get("mfm"):
+                cur.add(uid)
+        except _json.JSONDecodeError:
+            continue
+    for (uid,) in conn.execute("SELECT canonical_id FROM unit_zh_detail"):
+        cur.add(uid)
+    gloss = {en for (en,) in conn.execute("SELECT term_en FROM zh_keyword_glossary")}
+    missing = set()
+    for uid, kj in conn.execute("SELECT unit_id, keywords_json FROM weapons"):
+        if uid not in cur or not kj:
+            continue
+        try:
+            for k in _json.loads(kj) or []:
+                for tok in str(k).split(","):
+                    t = tok.strip().upper()
+                    if t and t not in gloss:
+                        missing.add(t)
+        except _json.JSONDecodeError:
+            continue
+    conn.close()
+    assert not missing, f"未翻译的关键词：{sorted(missing)[:10]}"
+
+
+def test_keyword_rules_are_consistent_within_family():
+    """同族 USR 必须整齐：ANTI-X N+ 一律「反X N+」，不能混「针对X」。"""
+    from db_compile.zh_weapons import _rule_translate
+
+    assert _rule_translate("ANTI-INFANTRY 2+") == "反步兵2+"
+    assert _rule_translate("ANTI-VEHICLE 4+") == "反载具4+"
+    assert _rule_translate("RAPID FIRE D6+3") == "速射D6+3"
+    assert _rule_translate("MELTA 6") == "热熔6"
+    assert _rule_translate("SUSTAINED HITS 3") == "连击3"
+    assert _rule_translate("PISTOL") is None          # 非参数化的走学习/人工层
