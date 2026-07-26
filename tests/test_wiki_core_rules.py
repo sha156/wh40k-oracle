@@ -11,12 +11,17 @@ from pathlib import Path
 import pytest
 
 from wiki_engine.core_rules import (REFINED_DIR, _SECTION, collect_sections,
-                                    generate_all, parse_toc, unextracted_hints)
+                                    generate_all, looks_like_table,
+                                    merge_bilingual, parse_toc,
+                                    unextracted_hints)
+from wiki_engine.core_rules_zh import ZH_PDF
 
 REPO = Path(__file__).resolve().parent.parent
 REFINED = REPO / REFINED_DIR
 needs_refined = pytest.mark.skipif(
     not (REFINED / "page_002.md").exists(), reason="需要核心规则 refine 产物")
+needs_zh_pdf = pytest.mark.skipif(
+    not (REPO / ZH_PDF).exists(), reason="需要 GW 官方中文核心规则 PDF")
 
 
 # ── 小节标题的排版变体（每一条都是实测踩出来的）────────────────────
@@ -29,6 +34,11 @@ needs_refined = pytest.mark.skipif(
     ("1.  **START OF CHARGE PHASE 11.01**", "START OF CHARGE PHASE", "11", "01"),
     ("**1. START OF SHOOTING PHASE 10.01**", "START OF SHOOTING PHASE", "10", "01"),
     ("## 21 SURGE MOVES 21.01", "SURGE MOVES", "21", "01"),
+    # 第 15 章 11 条核心计谋全是这个形态：节号后面还挂着 CP 花费。
+    # 漏掉它整章只剩 1 节，而 unextracted_hints() 也看不见——探测器
+    # 与本正则共用「节号在行尾」的假设，一起瞎。
+    ("## COMMAND RE-ROLL 15.02 (1CP)", "COMMAND RE-ROLL", "15", "02"),
+    ("## HEROIC INTERVENTION 15.11 (2CP)", "HEROIC INTERVENTION", "15", "11"),
 ])
 def test_section_heading_variants(line, title, chapter, sec):
     m = _SECTION.match(line)
@@ -101,6 +111,11 @@ def test_known_chapter_shapes():
     assert len(sections["24"]) == 38     # 曾只切出 28 节（行尾控制字符）
     nums = [s.num for s in sections["24"]]
     assert "24.07" in nums, "[CLOSE-QUARTERS] 又丢了（行尾 0x08 退格符）"
+    # 第 15 章曾只切出 15.01——11 条核心计谋的标题带 (1CP) 后缀，正则不认。
+    # refine 产物本身还丢了 15.07–15.10/15.12 的节号，那 5 节走 PDF 兜底，
+    # 所以这里断言的是 refine 侧能切出的 7 条。
+    assert {s.num for s in sections["15"]} == {
+        "15.01", "15.02", "15.03", "15.04", "15.05", "15.06", "15.11"}
 
 
 @needs_refined
@@ -123,14 +138,32 @@ def test_sections_carry_source_pages():
 
 
 @needs_refined
+@needs_zh_pdf
 def test_generate_writes_24_pages(tmp_path):
     rep = generate_all(REFINED, tmp_path)
     assert rep["chapters"] == 24 and rep["written"] == 24
     assert not rep["empty_chapters"] and not rep["orphan_chapters"]
+    # 每一节都要配到英文原文：只有中文的节意味着某一侧解析漏了，
+    # 而页面上只会表现为「这一节没有英文可展开」，不会报错
+    assert rep["sections_without_en"] == []
     page = (tmp_path / "core-rules" / "sections" / "11-charge-phase.md").read_text(
         encoding="utf-8")
     assert "id: core-rules-11" in page
-    assert "## START OF CHARGE PHASE 11.01" in page
-    assert "## CHARGE MOVE 11.04" in page
-    # 语言口径要写在页面上，读者才知道为什么是英文
-    assert "正文为官方英文原文" in page
+    # 中文标题在前、英文原名在下，正文中文、英文进折叠块
+    assert "## 1. 冲锋阶段开始 11.01" in page
+    assert "*START OF CHARGE PHASE*" in page
+    assert "<summary>官方英文原文" in page
+    # 语言口径要写在页面上，读者才知道判定以哪一份为准
+    assert "GW 官方简体中文版" in page and "判定规则以英文原文为准" in page
+
+
+@needs_refined
+@needs_zh_pdf
+def test_chapter_15_regains_all_twelve_stratagems(tmp_path):
+    """第 15 章曾经只剩 1 节：11 条核心计谋因标题带 (1CP) 后缀被整体漏切。"""
+    generate_all(REFINED, tmp_path)
+    page = (tmp_path / "core-rules" / "sections" / "15-stratagems.md").read_text(
+        encoding="utf-8")
+    for num in ["15.0{}".format(i) for i in range(1, 10)] + ["15.10", "15.11", "15.12"]:
+        assert " {}\n".format(num) in page, "第 15 章又丢了 {}".format(num)
+    assert "迅速入场 15.07" in page and "*RAPID INGRESS*" in page

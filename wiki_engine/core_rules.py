@@ -1,4 +1,4 @@
-"""wiki_engine/core_rules.py — 11 版核心规则全文 → 按官方章节切成 wiki 页。
+"""wiki_engine/core_rules.py — 11 版核心规则全文 → 按官方章节切成**中英对照** wiki 页。
 
 源是 `data_refined/Core Rules - New 40K Core Rules/`（官方英文核心规则的逐页 refine 产物）。
 两样东西都来自源文件本身，**没有一处是按记忆补的**：
@@ -11,10 +11,21 @@
 **为什么先拼再切**：小节会跨页续行（refine 产物用 `<!--CONT-->` 标记接续页）。
 按页切会把一条规则拦腰截断，读者看到的是半句话。所以先按页序拼成整份文档再切小节。
 
-正文语言：**官方英文**。这是 2026-07-25 的用户裁决——仓库里有十版中文总规则
-（`data_refined/战锤40K总规则10版老湿腐版1.11`），但那是十版译本，叠上去会得到
-"读着通顺但与官网不一致"的规则页。中文停留在**术语层**：每个 USR 的中文解释在
-`core-rules/<slug>.md`，中文名与反查在 `indexes/keywords.md`。
+正文语言：**中文为主、英文原文可展开对照**（2026-07-26）。中文来自
+`data/官方中文/chi_01-06_..._core_rules-*.pdf`，是 **GW 官方 11 版简体中文全译本**，
+按 wiki 宪法 §6 与英文原版同档权威。
+
+这与 2026-07-25「正文一律官方英文」的裁决不冲突：那条裁决拒的是
+`data_refined/战锤40K总规则10版老湿腐版1.11` 这类**十版民间汉化**（版本已漂移），
+不是 GW 自己发的 11 版官方中文。三类实体页（分队/战略/增强）仍是英文正文，
+因为官方没有对应的中文语料。
+
+**三个正文源，各司其职**：
+  · 中文正文与中文小节名 ← 官方中文 PDF（`core_rules_zh.py`）
+  · 英文正文 ← refine 产物（LLM 清洗过，排版最好），共 143 节
+  · 英文正文兜底 ← 英文 PDF 直提，补 refine **丢了节号**的 13 节
+    （`1. SELECT WEAPONS 04.01` 被 refine 改写成 `**1. SELECT WEAPONS**:`，
+     节号没了就配不上中文，那 13 节会只剩中文没有英文对照）
 
 CLI：python -m wiki_engine core-rules
 """
@@ -27,6 +38,7 @@ from typing import Dict, List, Optional, Tuple
 
 from wiki_engine._io import (atomic_write_text, load_gen_hashes,
                              save_gen_hashes, text_sha256)
+from wiki_engine.core_rules_zh import ZH_BOOK
 from wiki_engine.crosslinks import escape_table_pipes
 from wiki_engine.models import WikiPage, WikiPageFrontmatter, slugify
 
@@ -48,14 +60,21 @@ _TOC_PART = re.compile(r"^##\s+([A-Z][A-Z \-'&/]+)\s*$", re.M)
 #      不认它的话「冲锋阶段」只剩 1 节而不是 4 节，页面看着完整、内容缺三节）
 #   `**1. START OF SHOOTING PHASE 10.01**` 粗体在序号**外面**（第 10 章前三节）
 #   `## 21 SURGE MOVES 21.01`             标题自身以数字开头
+#   `## COMMAND RE-ROLL 15.02 (1CP)`      节号**后面还有 CP 花费**（第 15 章 11 条
+#      核心计谋全是这个形态）。这是第四次同型漏切，也是最阴的一次：前三次靠
+#      `unextracted_hints()` 逮到，这次连探测器一起瞎了——它同样要求行尾是节号。
+#      教训是探测器与被测正则不能共用同一条"行尾"假设，否则它只能发现
+#      "我已经想到的形态"。真正逮到这 11 节的是**中文版节号清单**这个外部对账源。
+_SECTION_SUFFIX = r"(?:[ \t]*\(\d+\s*CP\))?"
 _SECTION = re.compile(
     r"^[ \t]*(?:#{1,4}[ \t]*)?\*{0,2}[ \t]*(?:\d+[.\s][ \t]*)?\*{0,2}[ \t]*"
     r"(\[?[A-Z][A-Za-z0-9 \-'’&/\[\]‑]*?\]?)[ \t]*"
-    r"\(?(\d{2})\.(\d{2})\)?[ \t]*\*{0,2}[ \t]*$", re.M)
+    r"\(?(\d{2})\.(\d{2})\)?" + _SECTION_SUFFIX + r"[ \t]*\*{0,2}[ \t]*$", re.M)
 
-# 对账用：任何"行尾带 NN.NN"的行都疑似小节标题。抽不到的要报出来，
+# 对账用：任何"行尾带 NN.NN（可带 CP 花费）"的行都疑似小节标题。抽不到的要报出来，
 # 不能等读者发现某章少了三节
-_SECTION_HINT = re.compile(r"^.{0,80}?\b(\d{2})\.(\d{2})\b[*)\s]*$", re.M)
+_SECTION_HINT = re.compile(
+    r"^.{0,80}?\b(\d{2})\.(\d{2})\b" + _SECTION_SUFFIX + r"[*)\s]*$", re.M)
 
 _CONT_MARK = re.compile(r"^<!--CONT-->\s*$", re.M)
 # 除换行与制表符外的控制字符：PDF 提取残留（实测 0x08 退格符挂在
@@ -188,16 +207,90 @@ def unextracted_hints(refined_dir: Path = REFINED_DIR) -> List[str]:
                   if "01" <= n.split(".")[0] <= "24" and not n.endswith(".00"))
 
 
+# ── 三源合并 ───────────────────────────────────────────────────────
+
+@dataclass
+class BilingualSection:
+    """一节的中英两份正文。中文为主，英文供对照。"""
+    num: str
+    title_zh: str
+    title_en: str
+    body_zh: str
+    body_en: str
+    asides_zh: List[str] = field(default_factory=list)
+    en_from_pdf: bool = False        # 英文正文是否来自 PDF 兜底（refine 丢了这节）
+    source_pages: List[str] = field(default_factory=list)
+    zh_page: int = 0
+
+
+def merge_bilingual(refined_dir: Path = REFINED_DIR) -> Dict[str, List[BilingualSection]]:
+    """{章号: [BilingualSection]}。以**官方节号**为唯一配对键。
+
+    不按顺序配、也不按标题文本配：中英两版的小节顺序在版面上一致，
+    但任何一侧多切或少切一节，顺序配对就会整体错位且毫无征兆。
+    """
+    from wiki_engine.core_rules_zh import (format_zh_body, load_en_pdf_sections,
+                                           load_zh_sections, useful_asides)
+
+    refined = {s.num: s for lst in collect_sections(refined_dir).values() for s in lst}
+    zh = load_zh_sections()
+    en_pdf = load_en_pdf_sections()
+
+    out: Dict[str, List[BilingualSection]] = {}
+    for num in sorted(zh):
+        chapter = num.split(".")[0]
+        zh_sec = zh[num]
+        ref = refined.get(num)
+        pdf_en = en_pdf.get(num)
+        # refine 命中但正文为空也要回退到 PDF——08.03「战斗震慑」就是这样：
+        # 节号在，正文被 refine 归到了相邻小节，只看 `is not None` 会留下一节空白英文。
+        if ref is not None and ref.body.strip():
+            body_en, title_en, from_pdf = ref.body, ref.title, False
+            pages = list(ref.source_pages)
+        elif pdf_en is not None:
+            body_en, title_en, from_pdf = pdf_en.body, pdf_en.title, True
+            pages = ["page_{:03d}".format(pdf_en.page)]
+        else:
+            body_en, title_en, from_pdf, pages = "", "", False, []
+        out.setdefault(chapter, []).append(BilingualSection(
+            num=num,
+            title_zh=zh_sec.title,
+            title_en=title_en,
+            body_zh=format_zh_body(zh_sec),
+            body_en=body_en,
+            asides_zh=useful_asides(zh_sec),
+            en_from_pdf=from_pdf,
+            source_pages=pages,
+            zh_page=zh_sec.page,
+        ))
+    for lst in out.values():
+        lst.sort(key=lambda s: s.num)
+    return out
+
+
 # ── 渲染 ───────────────────────────────────────────────────────────
 
 _KEYWORD_CHAPTER = "24"
 
+# 表格失真探测：PDF 文本层没有表格结构，致伤表这类内容会被拆成
+# 「力量大于韧性」「+」「失败」一地碎片。碎片多且短 = 原文是张表，
+# 中文这一侧必然失真，要在页面上说清楚而不是让读者以为规则就长这样。
+_TABLE_MIN_BLOCKS, _TABLE_MAX_AVG = 6, 9.0
 
-def render_chapter(chapter: Chapter, sections: List[Section]) -> WikiPage:
+
+def looks_like_table(body_zh: str) -> bool:
+    blocks = [b for b in body_zh.split("\n\n") if b.strip()]
+    if len(blocks) < _TABLE_MIN_BLOCKS:
+        return False
+    return sum(len(b) for b in blocks) / len(blocks) < _TABLE_MAX_AVG
+
+
+def render_chapter(chapter: Chapter, sections: List[BilingualSection],
+                   title_zh: str = "") -> Tuple[WikiPage, str]:
     slug = "{}-{}".format(chapter.num, slugify(chapter.title))
     L: List[str] = [
-        "11 版核心规则第 {} 章《{}》全文，共 {} 节，官方节号 {}。".format(
-            chapter.num, chapter.title, len(sections),
+        "11 版核心规则第 {} 章《{}》（{}）全文，共 {} 节，官方节号 {}。".format(
+            chapter.num, title_zh or chapter.title, chapter.title, len(sections),
             "–".join([sections[0].num, sections[-1].num]) if sections else "—"),
         "",
     ]
@@ -206,24 +299,45 @@ def render_chapter(chapter: Chapter, sections: List[Section]) -> WikiPage:
         L += ["> 本章每个词条的中文解释见 `core-rules/` 下的同名页，"
               "中文名、官方节号与「哪些武器带它」的反查见 "
               "[[indexes/keywords.md\\|武器词条索引]]。", ""]
-    L += ["> 正文为官方英文原文。中文停留在术语层——"
-          "叠十版汉化译本会得到读着通顺但与官网不一致的规则页。", ""]
+    L += ["> 正文为 **GW 官方简体中文版**；每节可展开对照官方英文原文。"
+          "中文由官方 PDF 文本层直提，表格与版式会有失真——"
+          "**判定规则以英文原文为准**。", ""]
     for s in sections:
-        L += ["## {} {}".format(s.title, s.num), "", s.body or "（源文本未提供）", ""]
+        title = "## {} {}".format(s.title_zh or s.title_en or "（未命名）", s.num)
+        L += [title, ""]
+        if s.title_en and s.title_zh:
+            L += ["*{}*".format(s.title_en), ""]
+        L += [s.body_zh or "（官方中文 PDF 未提供本节正文）", ""]
+        if looks_like_table(s.body_zh):
+            L += ["> ⚠ 本节原文是表格，中文由 PDF 文本层直提、结构已散，"
+                  "请以下方英文原文为准。", ""]
+        for aside in s.asides_zh:
+            L += ["> **边栏**：{}".format(aside.replace("\n", " ")), ""]
+        if s.body_en:
+            note = "（英文由 PDF 直提）" if s.en_from_pdf else ""
+            L += ["<details>",
+                  "<summary>官方英文原文{}</summary>".format(note), "",
+                  s.body_en, "", "</details>", ""]
 
     pages = sorted({p for s in sections for p in s.source_pages})
     # 命名要与既有的同名概念页区分开：`core-rules/charge-phase.md` 讲的是「冲锋阶段
     # 是什么」，本页是「官方第 11 章全文」——两类不同的东西。直接用章名当页名会
     # 撞成 alias-conflict，也会让读者以为是重复页。
+    sources = [{"book": BOOK_NAME, "pages": pages}]
+    zh_pages = sorted({s.zh_page for s in sections if s.zh_page})
+    if zh_pages:
+        sources.append({"book": ZH_BOOK,
+                        "pages": ["page_{:03d}".format(p) for p in zh_pages]})
     fm = WikiPageFrontmatter(
         id="core-rules-{}".format(chapter.num),
-        name_zh="核心规则第 {} 章".format(int(chapter.num)),
+        name_zh="核心规则第 {} 章{}".format(
+            int(chapter.num), "《{}》".format(title_zh) if title_zh else ""),
         name_en="Core Rules {}: {}".format(chapter.num, chapter.title),
         type="core-rule",
         aliases=["核心规则 {}".format(chapter.num)],
-        sources=[{"book": BOOK_NAME, "pages": pages}],
+        sources=sources,
         version={"rules": "11版 Core Rules（{}）".format(chapter.part)},
-        updated="2026-07-25",
+        updated="2026-07-26",
     )
     fm.generate_tags()
     return WikiPage(fm=fm, body=escape_table_pipes("\n".join(L).rstrip() + "\n")), slug
@@ -231,12 +345,16 @@ def render_chapter(chapter: Chapter, sections: List[Section]) -> WikiPage:
 
 def generate_all(refined_dir: Path = REFINED_DIR,
                  wiki_root: Path = Path("wiki")) -> Dict[str, object]:
+    from wiki_engine.core_rules_zh import parse_toc_zh
+
     chapters = parse_toc(refined_dir)
-    by_chapter = collect_sections(refined_dir)
+    by_chapter = merge_bilingual(refined_dir)
+    zh_titles = {c.num: c.title for c in parse_toc_zh()}
     gen_hashes = load_gen_hashes(wiki_root)
     written = 0
     conflicts: List[str] = []
     empty: List[str] = []
+    missing_en = [s.num for lst in by_chapter.values() for s in lst if not s.body_en]
     try:
         for ch in chapters:
             sections = by_chapter.get(ch.num, [])
@@ -244,7 +362,7 @@ def generate_all(refined_dir: Path = REFINED_DIR,
                 # 一章都切不出来必须报出来：可能是排版变体没被认出，不是"这章没内容"
                 empty.append("{} {}".format(ch.num, ch.title))
                 continue
-            page, slug = render_chapter(ch, sections)
+            page, slug = render_chapter(ch, sections, zh_titles.get(ch.num, ""))
             rel = "{}/{}.md".format(OUT_SUBDIR, slug)
             target = wiki_root / rel
             text = page.to_markdown()
@@ -266,6 +384,9 @@ def generate_all(refined_dir: Path = REFINED_DIR,
         "sections": sum(len(v) for v in by_chapter.values()),
         "empty_chapters": empty, "conflicts": conflicts,
         "orphan_chapters": extra,        # 正文里有、目录里没有的章号
+        "sections_without_en": missing_en,   # 只有中文、配不到英文原文的节
+        "en_from_pdf": sum(1 for lst in by_chapter.values()
+                           for s in lst if s.en_from_pdf),
     }
 
 
@@ -276,8 +397,11 @@ def main() -> None:
     ap.add_argument("--wiki", default="wiki")
     args = ap.parse_args()
     rep = generate_all(Path(args.refined), Path(args.wiki))
-    print("目录 {} 章 / 正文切出 {} 节 → 写 {} 页".format(
-        rep["chapters"], rep["sections"], rep["written"]))
+    print("目录 {} 章 / 中英配对 {} 节 → 写 {} 页（其中 {} 节英文走 PDF 兜底）".format(
+        rep["chapters"], rep["sections"], rep["written"], rep["en_from_pdf"]))
+    if rep["sections_without_en"]:
+        print("⚠️ {} 节只有中文、配不到英文原文：{}".format(
+            len(rep["sections_without_en"]), rep["sections_without_en"]))
     if rep["empty_chapters"]:
         print("⚠️ {} 章一节都没切出来（排版变体？先核对再发布）：{}".format(
             len(rep["empty_chapters"]), "、".join(rep["empty_chapters"])))

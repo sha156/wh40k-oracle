@@ -55,6 +55,13 @@ def main() -> None:
                     default="data_refined/Core Rules - New 40K Core Rules",
                     help="官方英文核心规则的 refine 产物目录")
 
+    # ── changelog ──
+    sp = sub.add_parser("changelog",
+                        help="从官方阵营包的「规则更新」章节生成规则变更清单")
+    sp.add_argument("--wiki", default="wiki", help="wiki 目录")
+    sp.add_argument("--zh-dir", default="data/官方中文",
+                    help="GW 官方简体中文 PDF 目录")
+
     # ── keywords ──
     sp = sub.add_parser("keywords", help="生成武器词条（USR）索引 indexes/keywords.md")
     sp.add_argument("--wiki", default="wiki", help="wiki 目录")
@@ -155,6 +162,25 @@ def main() -> None:
         miss = unextracted_hints(Path(args.refined))
         if miss:
             print("⚠️ 行尾带节号却没切出来的：{}".format(miss))
+        if rep["conflicts"]:
+            print("⚠️ {} 页检测到人工编辑，已跳过覆盖".format(len(rep["conflicts"])))
+
+    elif args.cmd == "changelog":
+        from wiki_engine.changelog import generate_all as generate_changelog
+        rep = generate_changelog(Path(args.zh_dir), Path(args.wiki))
+        print("规则变更清单：{} 个阵营包 / {} 条改动（{} 条为初版后新增）"
+              " + {} 条通用更新 → 写 {} 页".format(
+                  rep["packs"], rep["entries"], rep["new_in_latest"],
+                  rep["universal"], rep["written"]))
+        if rep["no_chapter"]:
+            print("· {} 个包没有「规则更新」章节（首版）：{}".format(
+                len(rep["no_chapter"]), "、".join(rep["no_chapter"])))
+        if rep["empty_chapter"]:
+            print("· {} 个包有章节但官方未列改动：{}".format(
+                len(rep["empty_chapter"]), "、".join(rep["empty_chapter"])))
+        if rep["orphan_lines"]:
+            print("⚠️ 有行没归进任何条目（排版变体？先核对再发布）：{}".format(
+                {k: len(v) for k, v in rep["orphan_lines"].items()}))
         if rep["conflicts"]:
             print("⚠️ {} 页检测到人工编辑，已跳过覆盖".format(len(rep["conflicts"])))
 

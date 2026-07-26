@@ -1,6 +1,6 @@
 # WH40K Wiki Index
 
-_Last updated: 2026-07-26 05:42 UTC_
+_Last updated: 2026-07-26 08:40 UTC_
 
 ## 目录
 
@@ -2789,6 +2789,34 @@ _Last updated: 2026-07-26 05:42 UTC_
 
 | 类型 | 名称 | 摘要 | Updated |
 |------|------|------|---------|
+| changelog | [deathwatch 规则更新](changelog/factions/deathwatch.md) | 《deathwatch》阵营包 v1.0 的官方「规则更新」章节，共 0 条改动，其中 0 条是初版发布之后新增的（标 🆕）。 | 2026-07-26 |
+| changelog | [修女会 规则更新](changelog/factions/adepta-sororitas.md) | 《修女会》阵营包 v1.1 的官方「规则更新」章节，共 22 条改动，其中 5 条是初版发布之后新增的（标 🆕）。 | 2026-07-26 |
+| changelog | [千子 规则更新](changelog/factions/thousand-sons.md) | 《千子》阵营包 v1.1 的官方「规则更新」章节，共 35 条改动，其中 5 条是初版发布之后新增的（标 🆕）。 | 2026-07-26 |
+| changelog | [吞世者 规则更新](changelog/factions/world-eaters.md) | 《吞世者》阵营包 v1.1 的官方「规则更新」章节，共 19 条改动，其中 2 条是初版发布之后新增的（标 🆕）。 | 2026-07-26 |
+| changelog | [圣血天使 规则更新](changelog/factions/blood-angels.md) | 《圣血天使》阵营包 v1.1 的官方「规则更新」章节，共 13 条改动，其中 3 条是初版发布之后新增的（标 🆕）。 | 2026-07-26 |
+| changelog | [基因窃取者教派 规则更新](changelog/factions/genestealer-cults.md) | 《基因窃取者教派》阵营包 v1.1 的官方「规则更新」章节，共 37 条改动，其中 5 条是初版发布之后新增的（标 🆕）。 | 2026-07-26 |
+| changelog | [太空死灵 规则更新](changelog/factions/necrons.md) | 《太空死灵》阵营包 v1.1 的官方「规则更新」章节，共 26 条改动，其中 13 条是初版发布之后新增的（标 🆕）。 | 2026-07-26 |
+| changelog | [太空野狼 规则更新](changelog/factions/space-wolves.md) | 《太空野狼》阵营包 v1.1 的官方「规则更新」章节，共 9 条改动，其中 3 条是初版发布之后新增的（标 🆕）。 | 2026-07-26 |
+| changelog | [帝国特勤 规则更新](changelog/factions/imperia-agents.md) | 《帝国特勤》阵营包 v1.1 的官方「规则更新」章节，共 16 条改动，其中 2 条是初版发布之后新增的（标 🆕）。 | 2026-07-26 |
+| changelog | [帝国骑士 规则更新](changelog/factions/imperia-knights.md) | 《帝国骑士》阵营包 v1.1 的官方「规则更新」章节，共 9 条改动，其中 1 条是初版发布之后新增的（标 🆕）。 | 2026-07-26 |
+| changelog | [帝皇之子 规则更新](changelog/factions/emperor-s-children.md) | 《帝皇之子》阵营包 v1.1 的官方「规则更新」章节，共 18 条改动，其中 1 条是初版发布之后新增的（标 🆕）。 | 2026-07-26 |
+| changelog | [帝皇禁军 规则更新](changelog/factions/adeptus-custodes.md) | 《帝皇禁军》阵营包 v1.1 的官方「规则更新」章节，共 12 条改动，其中 2 条是初版发布之后新增的（标 🆕）。 | 2026-07-26 |
+| changelog | [星界军 规则更新](changelog/factions/astra-militarum.md) | 《星界军》阵营包 v1.1 的官方「规则更新」章节，共 24 条改动，其中 7 条是初版发布之后新增的（标 🆕）。 | 2026-07-26 |
+| changelog | [星际战士 规则更新](changelog/factions/space-marines.md) | 《星际战士》阵营包 v1.1 的官方「规则更新」章节，共 57 条改动，其中 10 条是初版发布之后新增的（标 🆕）。 | 2026-07-26 |
+| changelog | [机械修会 规则更新](changelog/factions/adeptus-mechanicus.md) | 《机械修会》阵营包 v1.1 的官方「规则更新」章节，共 30 条改动，其中 9 条是初版发布之后新增的（标 🆕）。 | 2026-07-26 |
+| changelog | [欧克蛮人 规则更新](changelog/factions/orkss.md) | 《欧克蛮人》阵营包 v1.1 的官方「规则更新」章节，共 43 条改动，其中 11 条是初版发布之后新增的（标 🆕）。 | 2026-07-26 |
+| changelog | [死亡守卫 规则更新](changelog/factions/death-guard.md) | 《死亡守卫》阵营包 v1.1 的官方「规则更新」章节，共 9 条改动，其中 4 条是初版发布之后新增的（标 🆕）。 | 2026-07-26 |
+| changelog | [沃坦联盟 规则更新](changelog/factions/leagues-of-votann.md) | 《沃坦联盟》阵营包 v1.1 的官方「规则更新」章节，共 12 条改动，其中 2 条是初版发布之后新增的（标 🆕）。 | 2026-07-26 |
+| changelog | [泰伦虫族 规则更新](changelog/factions/tyranids.md) | 《泰伦虫族》阵营包 v1.1 的官方「规则更新」章节，共 30 条改动，其中 4 条是初版发布之后新增的（标 🆕）。 | 2026-07-26 |
+| changelog | [混沌恶魔 规则更新](changelog/factions/chaos-daemons.md) | 《混沌恶魔》阵营包 v1.1 的官方「规则更新」章节，共 0 条改动，其中 0 条是初版发布之后新增的（标 🆕）。 | 2026-07-26 |
+| changelog | [混沌星际战士 规则更新](changelog/factions/chaos-space-marines.md) | 《混沌星际战士》阵营包 v1.1 的官方「规则更新」章节，共 35 条改动，其中 0 条是初版发布之后新增的（标 🆕）。 | 2026-07-26 |
+| changelog | [混沌骑士 规则更新](changelog/factions/chaos-knights.md) | 《混沌骑士》阵营包 v1.1 的官方「规则更新」章节，共 12 条改动，其中 4 条是初版发布之后新增的（标 🆕）。 | 2026-07-26 |
+| changelog | [灰骑士 规则更新](changelog/factions/grey-knights.md) | 《灰骑士》阵营包 v1.1 的官方「规则更新」章节，共 14 条改动，其中 8 条是初版发布之后新增的（标 🆕）。 | 2026-07-26 |
+| changelog | [艾达灵族 规则更新](changelog/factions/aeldari.md) | 《艾达灵族》阵营包 v1.1 的官方「规则更新」章节，共 34 条改动，其中 8 条是初版发布之后新增的（标 🆕）。 | 2026-07-26 |
+| changelog | [钛帝国 规则更新](changelog/factions/tau-empire.md) | 《钛帝国》阵营包 v1.1 的官方「规则更新」章节，共 25 条改动，其中 2 条是初版发布之后新增的（标 🆕）。 | 2026-07-26 |
+| changelog | [黑暗天使 规则更新](changelog/factions/dark-angels.md) | 《黑暗天使》阵营包 v1.1 的官方「规则更新」章节，共 26 条改动，其中 12 条是初版发布之后新增的（标 🆕）。 | 2026-07-26 |
+| changelog | [黑暗灵族 规则更新](changelog/factions/drukhari.md) | 《黑暗灵族》阵营包 v1.1 的官方「规则更新」章节，共 15 条改动，其中 4 条是初版发布之后新增的（标 🆕）。 | 2026-07-26 |
+| changelog | [黑色圣堂 规则更新](changelog/factions/black-templars.md) | 《黑色圣堂》阵营包 v1.1 的官方「规则更新」章节，共 10 条改动，其中 1 条是初版发布之后新增的（标 🆕）。 | 2026-07-26 |
 | core-rule | [一次性](core-rules/one-shot.md) | 一次性武器整场对战只能开火一次，多为导弹、单发炸弹类装备。 | 2026-07-11 |
 | core-rule | [不觉疼痛](core-rules/feel-no-pain.md) | 不觉疼痛让模型逐点豁免即将失去的 W 值，是保存之后的最后防线。 | 2026-07-26 |
 | core-rule | [专属运输](core-rules/dedicated-transport.md) | 专属运输是运输工具的一个子类标记：除具备全部运输规则外，还能在满足条件时随搭乘单位一起做斥候移动。 | 2026-07-23 |
@@ -2825,30 +2853,30 @@ _Last updated: 2026-07-26 05:42 UTC_
 | core-rule | [曲射](core-rules/indirect-fire.md) | 曲射武器越过障碍轰击视线外目标，11 版改为固定命中阈值。 | 2026-07-11 |
 | core-rule | [标准移动](core-rules/normal-move.md) | 标准移动是最基本的移动类型：最多移动 M 值，不得进入交战。 | 2026-07-11 |
 | core-rule | [标记光](core-rules/markerlight.md) | 标记光是钛帝国关键词：由它标记的目标会被友军的攻击忽视掩体。 | 2026-07-11 |
-| core-rule | [核心规则第 1 章](core-rules/sections/01-core-concepts.md) | 11 版核心规则第 01 章《CORE CONCEPTS》全文，共 7 节，官方节号 01.01–01.07。 | 2026-07-25 |
-| core-rule | [核心规则第 10 章](core-rules/sections/10-shooting-phase.md) | 11 版核心规则第 10 章《SHOOTING PHASE》全文，共 7 节，官方节号 10.01–10.07。 | 2026-07-25 |
-| core-rule | [核心规则第 11 章](core-rules/sections/11-charge-phase.md) | 11 版核心规则第 11 章《CHARGE PHASE》全文，共 4 节，官方节号 11.01–11.04。 | 2026-07-25 |
-| core-rule | [核心规则第 12 章](core-rules/sections/12-fight-phase.md) | 11 版核心规则第 12 章《FIGHT PHASE》全文，共 9 节，官方节号 12.01–12.09。 | 2026-07-25 |
-| core-rule | [核心规则第 13 章](core-rules/sections/13-terrain.md) | 11 版核心规则第 13 章《TERRAIN》全文，共 7 节，官方节号 13.01–13.11。 | 2026-07-25 |
-| core-rule | [核心规则第 14 章](core-rules/sections/14-objectives.md) | 11 版核心规则第 14 章《OBJECTIVES》全文，共 3 节，官方节号 14.01–14.03。 | 2026-07-25 |
-| core-rule | [核心规则第 15 章](core-rules/sections/15-stratagems.md) | 11 版核心规则第 15 章《STRATAGEMS》全文，共 1 节，官方节号 15.01–15.01。 | 2026-07-25 |
-| core-rule | [核心规则第 16 章](core-rules/sections/16-actions.md) | 11 版核心规则第 16 章《ACTIONS》全文，共 1 节，官方节号 16.01–16.01。 | 2026-07-25 |
-| core-rule | [核心规则第 17 章](core-rules/sections/17-monsters-and-vehicles.md) | 11 版核心规则第 17 章《MONSTERS AND VEHICLES》全文，共 3 节，官方节号 17.01–17.03。 | 2026-07-25 |
-| core-rule | [核心规则第 18 章](core-rules/sections/18-transports.md) | 11 版核心规则第 18 章《TRANSPORTS》全文，共 5 节，官方节号 18.01–18.05。 | 2026-07-25 |
-| core-rule | [核心规则第 19 章](core-rules/sections/19-attached-units.md) | 11 版核心规则第 19 章《ATTACHED UNITS》全文，共 4 节，官方节号 19.01–19.04。 | 2026-07-25 |
-| core-rule | [核心规则第 2 章](core-rules/sections/02-datasheets.md) | 11 版核心规则第 02 章《DATASHEETS》全文，共 5 节，官方节号 02.01–02.05。 | 2026-07-25 |
-| core-rule | [核心规则第 20 章](core-rules/sections/20-strategic-reserves.md) | 11 版核心规则第 20 章《STRATEGIC RESERVES》全文，共 4 节，官方节号 20.01–20.04。 | 2026-07-25 |
-| core-rule | [核心规则第 21 章](core-rules/sections/21-flying-and-surging.md) | 11 版核心规则第 21 章《FLYING AND SURGING》全文，共 3 节，官方节号 21.01–21.03。 | 2026-07-25 |
-| core-rule | [核心规则第 22 章](core-rules/sections/22-other-rules-and-abilities.md) | 11 版核心规则第 22 章《OTHER RULES AND ABILITIES》全文，共 5 节，官方节号 22.01–22.05。 | 2026-07-25 |
-| core-rule | [核心规则第 23 章](core-rules/sections/23-aircraft.md) | 11 版核心规则第 23 章《AIRCRAFT》全文，共 4 节，官方节号 23.01–23.04。 | 2026-07-25 |
-| core-rule | [核心规则第 24 章](core-rules/sections/24-core-abilities.md) | 11 版核心规则第 24 章《CORE ABILITIES》全文，共 38 节，官方节号 24.01–24.38。 | 2026-07-25 |
-| core-rule | [核心规则第 3 章](core-rules/sections/03-moving.md) | 11 版核心规则第 03 章《MOVING》全文，共 4 节，官方节号 03.01–03.04。 | 2026-07-25 |
-| core-rule | [核心规则第 4 章](core-rules/sections/04-making-attacks.md) | 11 版核心规则第 04 章《MAKING ATTACKS》全文，共 1 节，官方节号 04.03–04.03。 | 2026-07-25 |
-| core-rule | [核心规则第 5 章](core-rules/sections/05-attack-sequence.md) | 11 版核心规则第 05 章《ATTACK SEQUENCE》全文，共 4 节，官方节号 05.01–05.04。 | 2026-07-25 |
-| core-rule | [核心规则第 6 章](core-rules/sections/06-other-concepts.md) | 11 版核心规则第 06 章《OTHER CONCEPTS》全文，共 3 节，官方节号 06.01–06.03。 | 2026-07-25 |
-| core-rule | [核心规则第 7 章](core-rules/sections/07-the-battle-round.md) | 11 版核心规则第 07 章《THE BATTLE ROUND》全文，共 3 节，官方节号 07.01–07.03。 | 2026-07-25 |
-| core-rule | [核心规则第 8 章](core-rules/sections/08-command-phase.md) | 11 版核心规则第 08 章《COMMAND PHASE》全文，共 5 节，官方节号 08.01–08.05。 | 2026-07-25 |
-| core-rule | [核心规则第 9 章](core-rules/sections/09-movement-phase.md) | 11 版核心规则第 09 章《MOVEMENT PHASE》全文，共 7 节，官方节号 09.01–09.07。 | 2026-07-25 |
+| core-rule | [核心规则第 1 章《核心概念》](core-rules/sections/01-core-concepts.md) | 11 版核心规则第 01 章《核心概念》（CORE CONCEPTS）全文，共 7 节，官方节号 01.01–01.07。 | 2026-07-26 |
+| core-rule | [核心规则第 10 章《射击阶段》](core-rules/sections/10-shooting-phase.md) | 11 版核心规则第 10 章《射击阶段》（SHOOTING PHASE）全文，共 7 节，官方节号 10.01–10.07。 | 2026-07-26 |
+| core-rule | [核心规则第 11 章《冲锋阶段》](core-rules/sections/11-charge-phase.md) | 11 版核心规则第 11 章《冲锋阶段》（CHARGE PHASE）全文，共 4 节，官方节号 11.01–11.04。 | 2026-07-26 |
+| core-rule | [核心规则第 12 章《近战阶段》](core-rules/sections/12-fight-phase.md) | 11 版核心规则第 12 章《近战阶段》（FIGHT PHASE）全文，共 9 节，官方节号 12.01–12.09。 | 2026-07-26 |
+| core-rule | [核心规则第 13 章《地形》](core-rules/sections/13-terrain.md) | 11 版核心规则第 13 章《地形》（TERRAIN）全文，共 11 节，官方节号 13.01–13.11。 | 2026-07-26 |
+| core-rule | [核心规则第 14 章《目标》](core-rules/sections/14-objectives.md) | 11 版核心规则第 14 章《目标》（OBJECTIVES）全文，共 3 节，官方节号 14.01–14.03。 | 2026-07-26 |
+| core-rule | [核心规则第 15 章《计谋》](core-rules/sections/15-stratagems.md) | 11 版核心规则第 15 章《计谋》（STRATAGEMS）全文，共 12 节，官方节号 15.01–15.12。 | 2026-07-26 |
+| core-rule | [核心规则第 16 章《行动》](core-rules/sections/16-actions.md) | 11 版核心规则第 16 章《行动》（ACTIONS）全文，共 1 节，官方节号 16.01–16.01。 | 2026-07-26 |
+| core-rule | [核心规则第 17 章《凶兽和载具》](core-rules/sections/17-monsters-and-vehicles.md) | 11 版核心规则第 17 章《凶兽和载具》（MONSTERS AND VEHICLES）全文，共 3 节，官方节号 17.01–17.03。 | 2026-07-26 |
+| core-rule | [核心规则第 18 章《运输工具》](core-rules/sections/18-transports.md) | 11 版核心规则第 18 章《运输工具》（TRANSPORTS）全文，共 5 节，官方节号 18.01–18.05。 | 2026-07-26 |
+| core-rule | [核心规则第 19 章《联合单位》](core-rules/sections/19-attached-units.md) | 11 版核心规则第 19 章《联合单位》（ATTACHED UNITS）全文，共 4 节，官方节号 19.01–19.04。 | 2026-07-26 |
+| core-rule | [核心规则第 2 章《数据表》](core-rules/sections/02-datasheets.md) | 11 版核心规则第 02 章《数据表》（DATASHEETS）全文，共 7 节，官方节号 02.01–02.07。 | 2026-07-26 |
+| core-rule | [核心规则第 20 章《战略预备队》](core-rules/sections/20-strategic-reserves.md) | 11 版核心规则第 20 章《战略预备队》（STRATEGIC RESERVES）全文，共 4 节，官方节号 20.01–20.04。 | 2026-07-26 |
+| core-rule | [核心规则第 21 章《飞行和迸发》](core-rules/sections/21-flying-and-surging.md) | 11 版核心规则第 21 章《飞行和迸发》（FLYING AND SURGING）全文，共 3 节，官方节号 21.01–21.03。 | 2026-07-26 |
+| core-rule | [核心规则第 22 章《其他规则和技能》](core-rules/sections/22-other-rules-and-abilities.md) | 11 版核心规则第 22 章《其他规则和技能》（OTHER RULES AND ABILITIES）全文，共 5 节，官方节号 22.01–22.05。 | 2026-07-26 |
+| core-rule | [核心规则第 23 章《飞行器》](core-rules/sections/23-aircraft.md) | 11 版核心规则第 23 章《飞行器》（AIRCRAFT）全文，共 4 节，官方节号 23.01–23.04。 | 2026-07-26 |
+| core-rule | [核心规则第 24 章《核心技能》](core-rules/sections/24-core-abilities.md) | 11 版核心规则第 24 章《核心技能》（CORE ABILITIES）全文，共 38 节，官方节号 24.01–24.38。 | 2026-07-26 |
+| core-rule | [核心规则第 3 章《移动》](core-rules/sections/03-moving.md) | 11 版核心规则第 03 章《移动》（MOVING）全文，共 4 节，官方节号 03.01–03.04。 | 2026-07-26 |
+| core-rule | [核心规则第 4 章《进行攻击》](core-rules/sections/04-making-attacks.md) | 11 版核心规则第 04 章《进行攻击》（MAKING ATTACKS）全文，共 3 节，官方节号 04.01–04.03。 | 2026-07-26 |
+| core-rule | [核心规则第 5 章《攻击流程》](core-rules/sections/05-attack-sequence.md) | 11 版核心规则第 05 章《攻击流程》（ATTACK SEQUENCE）全文，共 4 节，官方节号 05.01–05.04。 | 2026-07-26 |
+| core-rule | [核心规则第 6 章《其他概念》](core-rules/sections/06-other-concepts.md) | 11 版核心规则第 06 章《其他概念》（OTHER CONCEPTS）全文，共 3 节，官方节号 06.01–06.03。 | 2026-07-26 |
+| core-rule | [核心规则第 7 章《战斗轮次》](core-rules/sections/07-the-battle-round.md) | 11 版核心规则第 07 章《战斗轮次》（THE BATTLE ROUND）全文，共 3 节，官方节号 07.01–07.03。 | 2026-07-26 |
+| core-rule | [核心规则第 8 章《指挥阶段》](core-rules/sections/08-command-phase.md) | 11 版核心规则第 08 章《指挥阶段》（COMMAND PHASE）全文，共 5 节，官方节号 08.01–08.05。 | 2026-07-26 |
+| core-rule | [核心规则第 9 章《移动阶段》](core-rules/sections/09-movement-phase.md) | 11 版核心规则第 09 章《移动阶段》（MOVEMENT PHASE）全文，共 7 节，官方节号 09.01–09.07。 | 2026-07-26 |
 | core-rule | [步兵](core-rules/infantry.md) | 步兵是徒步作战的单位类型，能穿越密集地形、可在废墟高层设立，并在地形区内获得掩体。 | 2026-07-23 |
 | core-rule | [步行者](core-rules/walker.md) | 步行者是标示双足/多足步行载具的单位类型标记；带此关键词的载具即使非人物也能做英勇干预。 | 2026-07-23 |
 | core-rule | [毁灭伤害](core-rules/devastating-wounds.md) | 毁灭伤害让造伤暴击直接转化为致命伤害，绕过保护与减伤。 | 2026-07-11 |
@@ -5026,7 +5054,8 @@ _Last updated: 2026-07-26 05:42 UTC_
 
 ## 统计
 
-- **总实体数**: 4888
+- **总实体数**: 4916
+- **changelog**: 28
 - **core-rule**: 110
 - **detachment**: 324
 - **enhancement**: 1058

@@ -7,13 +7,14 @@
 
 | 项 | 值 |
 |---|---|
-| 分支 | `feat/codex-wiki`（已推 origin，**未合 main**；领先 main 20 个提交） |
-| HEAD | `609be102`（2026-07-26 官方中文名落库 + 3063 实体页重生成） |
-| 工作区 | 干净（0 脏文件、0 未推送） |
-| 测试 | **2199 passed**（本线开工前基线 1968；2026-07-26 官方中文层 +30 条） |
+| 分支 | `feat/codex-wiki`（已推 origin，**未合 main**） |
+| HEAD | 2026-07-26 核心规则中文化 + 规则变更清单 |
+| 测试 | **2234 passed**（本线开工前基线 1968；核心规则中文化 +22、变更清单 +13） |
 | wiki lint | **0 error** / 593 warning（全是 alias-conflicts）/ 4 info |
-| wiki 规模 | **4921 页**（开工前 1828） |
+| wiki 规模 | **4950 页**（开工前 1828） |
 | 中文名覆盖 | 战略 989/1681、增强 547/1058、分队容器 123/324（2026-07-26 官方中文层） |
+| 核心规则 | 24 章 **156 节**（原 137，补回 19 节），中文正文 + 英文折叠 |
+| 规则变更清单 | **592 条**官方改动，其中 **128 条**为 v1.0→v1.1 增量 |
 
 本线 6 个提交，按依赖顺序：
 
@@ -41,15 +42,17 @@ ddd442ee  GW 官方简体中文语料落地（34 个 PDF）+ 全库译名改用�
 
 .\.venv\Scripts\python.exe -m wiki_engine keywords     # 词条索引 → indexes/keywords.{md,json}
 .\.venv\Scripts\python.exe -m wiki_engine entities     # 分队/战略/增强 3063 页
-.\.venv\Scripts\python.exe -m wiki_engine core-rules   # 核心规则 24 章
+.\.venv\Scripts\python.exe -m wiki_engine core-rules   # 核心规则 24 章（中文正文 + 英文折叠）
+.\.venv\Scripts\python.exe -m wiki_engine changelog    # 规则变更清单 index + 28 阵营页
 .\.venv\Scripts\python.exe -m wiki_engine crosslinks   # 注入交叉链接（⚠ 4900 页约 15 分钟）
 .\.venv\Scripts\python.exe -m wiki_engine build        # 重建 index.md + 阵营索引
 .\.venv\Scripts\python.exe -m wiki_engine lint         # 体检，必须 0 error
 ```
 
-验收基线：`pytest -q` ≥ **2125 passed**；lint **0 error**；
-`find wiki -name '*.md' | wc -l` = **4917**（units 1715 / stratagems 1681 /
-enhancements 1058 / detachments 324 / core-rules 概念页 82 / sections 24）。
+验收基线：`pytest -q` ≥ **2234 passed**；lint **0 error**；
+`find wiki -name '*.md' | wc -l` = **4950**（units 1715 / stratagems 1681 /
+enhancements 1058 / detachments 324 / core-rules 概念页 82 / sections 24 /
+changelog 29）。
 
 ## 3. 产物路径
 
@@ -58,15 +61,18 @@ enhancements 1058 / detachments 324 / core-rules 概念页 82 / sections 24）�
 | 武器词条索引 + 反查 | `wiki_engine/keyword_index.py` | `wiki/indexes/keywords.md`（人读）+ `.json`（web 层数据源） |
 | HTML → Markdown | `wiki_engine/html_md.py` | —（被下面两个复用） |
 | 分队/战略/增强 | `wiki_engine/entity_pages.py` | `wiki/factions/<阵营>/{detachments,stratagems,enhancements}/`、`wiki/core-rules/stratagems/`（28 条核心战略） |
-| 核心规则全文 | `wiki_engine/core_rules.py` | `wiki/core-rules/sections/<NN>-<slug>.md` |
+| 核心规则全文（中英） | `wiki_engine/core_rules.py` + `core_rules_zh.py` + `pdf_sections.py` | `wiki/core-rules/sections/<NN>-<slug>.md` |
+| 规则变更清单 | `wiki_engine/changelog.py` | `wiki/changelog/index.md` + `changelog/factions/<slug>.md` |
 | web 块级渲染 | `web_api/wiki_blocks.py` + `wiki_browse.py` | 路由 `/codex/factions/{fid}/detachments[/{slug}]` |
 | web 词条 | `web_api/keywords.py` | 路由 `/codex/keywords[/{slug}]` |
 | 前端 | `web/src/components/codex/{KeywordIndex,DetachmentBrowser,Blocks}.tsx` | `/codex` 三个二级页签 |
 
 ## 4. 还剩什么（全部非阻塞）
 
-1. **核心规则章节页没接进网页**。PR-4 的块级渲染器（`wiki_blocks.py`）已经通用，
-   加一条 `/codex/rules/{chapter}` 路由 + 前端一个页签即可，是最短的一块收尾。
+1. **核心规则章节页与规则变更清单都没接进网页**。PR-4 的块级渲染器（`wiki_blocks.py`）
+   已经通用，加 `/codex/rules/{chapter}` 与 `/codex/changelog` 两条路由 + 前端页签即可，
+   是最短的一块收尾。注意核心规则页正文里有 `<details>` 折叠块，
+   块级契约要么支持它、要么把中英拆成两个块。
 2. **lint 的 593 条 alias-conflicts 占满了整个 warning 通道**（100%；官方中文名铺开后
    由 553 涨到 593，新增的 36 条全是同一条战略在多个阵营各有一页、中文名自然重名）。
    基本不可行动。建议聚合成 1 条摘要 warning + 单出一份重名报告，
@@ -84,29 +90,65 @@ enhancements 1058 / detachments 324 / core-rules 概念页 82 / sections 24）�
    如果要让规则问答检索到这些页，需另行 ingest（注意：wiki 是 L2 层，
    FAISS 索引的是 L0/L1 的 PDF，两者是不同的层，改动前先想清楚要不要混）。
 
-## 4b. 官方中文这条线剩下的两件（2026-07-26 收工时的下一步）
+## 4b. 官方中文这条线的三件——**已全部完成**（2026-07-26）
 
-用户当时列的三件，第 1 件（映射落库 + 重生成实体页）已完成于 `609be102`；剩下两件都没动：
+第 1 件（映射落库 + 重生成实体页）完成于 `609be102`；第 2、3 件本轮完成。
 
-1. **核心规则 24 章中文化**。语料已在手：`data/官方中文/chi_01-06_..._core_rules-*.pdf`
-   是官方 88 页中文全译本，与英文版**同样带 NN.NN 节号**（24.07 这种），
-   所以配对键是现成的——按节号配，不是按顺序也不是按标题文本。
-   现状：`wiki/core-rules/sections/` 24 章 137 节正文**全英文**（`wiki_engine/core_rules.py`
-   从 `data_refined/Core Rules - New 40K Core Rules` 生成）。
-   ⚠ 这件事与「正文一律官方英文」的用户裁决**不冲突**：那条裁决拒的是**十版汉化组译本**
-   （与 11 版有漂移），而这份是 **GW 官方 11 版中文**，权威级别与英文原版同档。
-   动手前先确认这个前提，别把裁决套过来一票否决。
-   已知坑：官方 PDF 文本层有控制字符与零宽字符（本仓库撞过三次），解析前先清；
-   切章必配反向对账（`unextracted_hints()` 那套），三轮漏切每次都报"成功"。
-2. **规则变更清单**。素材：28 个阵营包 v1.1（2026-07-22 生效）+ `data/官方中文/` 里的
-   「通用规则更新」。要的是**真改动**（如某计谋 CP 从 2 改 1、某单位属性变更），
-   不是版本号 diff。可交叉的既有证据：`db_compile/fp_errata_patches.json` 与
-   `fp_rules_patches.json` 已记了一批 11 版真漂移；配对阶段还留下一条硬线索——
-   `official_zh_names.json` 的 `_report` 里，**CP 两侧皆知的 477 条中有 2 条不等**，
-   已回 PDF 版面几何验到底，是**库里 CP 没跟上官方 v1.1**（不是解析错），
-   那 2 条就是现成的变更样本。引擎跟进（DSL/模拟器）另立项，不在这一件里。
+### 第 2 件 · 核心规则 24 章中文化 ✅
 
-## 5. 下次动这块之前必须知道的三件事
+`wiki/core-rules/sections/` 24 章现在是**中文正文 + 英文原文折叠**（`<details>`）。
+中文来自官方 88 页全译本，与「正文一律官方英文」的裁决不冲突——那条拒的是**十版汉化组**
+译本，这份是 **GW 官方 11 版中文**，同档权威。
+
+新增两个模块：
+
+| 模块 | 职责 |
+|---|---|
+| `wiki_engine/pdf_sections.py` | 官方 PDF → 按 `NN.NN` 节号切分，中英共用；侧边栏剥离、分栏、跨行标题 |
+| `wiki_engine/core_rules_zh.py` | 中文 88 页 → 156 节 + 中文目录 24 章；`format_zh_text` 把 PDF 折行还原成段落 |
+
+**跨语言对账逮出了英文侧积压的 19 节缺失**。中英两版是同一套官方编号，
+`cross_check_report()` 要求两侧节号集合完全相等（实测 156 = 156、双向差集空）。
+这条对账不依赖任何单侧的排版假设，因此发现了 `unextracted_hints()` **完全无感**的两类缺失：
+
+- **切分正则漏 6 节**：`## COMMAND RE-ROLL 15.02 (1CP)` 节号后还挂着 CP 花费，
+  而 `_SECTION` 与 `_SECTION_HINT` 都要求「节号在行尾」——**探测器与被测正则共用同一条
+  假设，一起瞎**。第 15 章 11 条核心计谋当时只切出 1 条。
+- **refine 产物丢节号 13 节**：`1. SELECT WEAPONS 04.01` 被 refine 改写成
+  `**1. SELECT WEAPONS**:`，节号没了就配不上中文。这 13 节的英文改用**英文 PDF 直提**兜底
+  （`merge_bilingual` 里标 `en_from_pdf`，页面上注明）。
+
+### 第 3 件 · 规则变更清单 ✅
+
+`wiki_engine/changelog.py` → `wiki/changelog/`（index + 28 个阵营页），
+CLI `python -m wiki_engine changelog`。**592 条官方改动，其中 128 条标 🆕**。
+
+真源是每个阵营包自带的「规则更新」章节，逐条照抄、不作推断。
+**v1.1 增量的判据是 PDF span 的红色**（`0xa31418`）——官方导言写明「凡是在本阵营包初版
+发布之后所作的修订，均将以红色高亮显示」。手上只有 v1.1 一版、没有 v1.0 可 diff，
+红色是唯一的一手证据。版式判据全部来自 PDF 自身的字号/字体/字色，不靠正则猜标题。
+
+口径要分清：本页收的是官方**文字**改动；兵牌数值与规则文本的 10→11 漂移是另一条线，
+早已落在 `db_compile/fp_errata_patches.json` 与 `fp_rules_patches.json`，两者不要混读。
+（交接文档提到的「CP 两侧皆知 477 条中有 2 条不等」属于后者的口径，未并入本清单。）
+
+## 5. 下次动这块之前必须知道的（原三件 + 中文化踩出来的四条）
+
+### 中文 PDF 直提这条线（2026-07-26 新增）
+
+4. **分栏必须按 x0 聚类，不能按页宽等分**。第 16 页侧边栏在 x0≈107、正文在 x0≈187，
+   页宽 454 等分的分界是 227，两者都落进左半列，按 y 一排就把侧边栏逐行插进了正文。
+5. **「侧边栏」的判据是栏宽占页宽的比例，基准不能取最宽栏**。计谋页是双栏卡片、
+   两栏都是正文；而第 57 页的页脚横幅横跨整页 323pt，取它当基准会让 176pt 的
+   计谋正文栏只剩 0.55 被判成侧栏——**29 个小节的正文整段跑进侧边栏，页面上只剩标题**。
+6. **页眉页脚只能按长度滤，不能按页边位置滤**。计谋卡片标题在 y=29.8、页码在 y=28.3，
+   相差 1.5pt，几何上分不开；按 6% 页高划页眉带会连着切掉 9 个真小节。
+7. **找小节标题前要先遮蔽侧边栏内容**。侧栏里的「另请参见」整列都是 `▪[额外攻击] 24.11`
+   这样的节号引用，被版式折行的第二行不带项目符号、长得和真标题一模一样——
+   `3.结算攻击 04.03` 的正文范围因此被截断在它自己的侧边栏里，**整节正文变成空字符串**，
+   而且中英两版一起空、对账也发现不了。
+
+### 原有三件
 
 1. **`detachments` 表存的是「分队规则名」不是「分队容器名」**。容器名的真源是官方
    `Detachment_abilities.csv` 的 `detachment` 列（已恢复成 `detachment_name` 列）。

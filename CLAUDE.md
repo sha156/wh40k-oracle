@@ -90,10 +90,22 @@
   ② 落库以行级 `*_by_id` 为准，英文名键表达不了「同一英文名在不同包里不同官方译名」
   （蔑视战甲 / 蔑视甲胄），只能整条丢；③ `db_compile enhancements --apply` 的
   INSERT OR REPLACE 会清空 name_zh/DSL 投影列（已改成报数并提示补跑两条投影命令）
+- **核心规则 24 章中文化 + 规则变更清单已完成**（2026-07-26，分支 `feat/codex-wiki`）：
+  新增 `wiki_engine/pdf_sections.py`（官方 PDF → 按节号切分，中英共用）、
+  `core_rules_zh.py`（官方中文 88 页全译本，156 节）、`changelog.py`（规则变更清单）。
+  ① **核心规则页改为中文正文 + 英文原文折叠**：配对键是官方节号，
+  `cross_check` 实测中英各 156 节、双向差集为空。这条**跨语言对账**顺带逮出英文侧
+  积压的 **19 节缺失**——切分正则漏 6（`## COMMAND RE-ROLL 15.02 (1CP)` 节号后带 CP
+  花费，第 15 章 11 条核心计谋只切出 1 条）＋ refine 产物丢节号 13（`1. SELECT WEAPONS
+  04.01` 被改写成 `**1. SELECT WEAPONS**:`），后者用英文 PDF 直提兜底。
+  ② **规则变更清单** `wiki/changelog/`（index + 28 阵营页）：592 条官方改动，
+  其中 **128 条标 🆕 = v1.0→v1.1 增量**——判据是 PDF span 的**红色**（`0xa31418`），
+  官方导言写明「初版发布之后所作的修订均以红色高亮显示」，不是靠 diff 两版猜的
+  （手上只有 v1.1）。CLI `python -m wiki_engine changelog`。
+  wiki 4921→**4950 页**，2234 测试绿，lint 0 error / 593 warning（与基线持平）。
 - **剩余**：基准扩充（长期滚动，agent gold v3 现 96/96=100.0 零硬错，#41/#42 为固定波动题）。
-  wiki 收尾候选：核心规则章节页接进网页；核心规则 24 章中文化（官方 88 页中文全译本在手）；
-  规则变更清单（v1.1 + 通用规则更新的真改动）；lint 的 alias-conflicts 占满 warning 通道
-  （官方中文名铺开后更多），宜聚合成摘要 + 单独重名报告。
+  wiki 收尾候选：核心规则章节页与 changelog 接进网页；lint 的 alias-conflicts 占满
+  warning 通道（官方中文名铺开后更多），宜聚合成摘要 + 单独重名报告。
   非阻塞遗留：军表 PR1c 文本解析、外部源观察项（BSData-11e / Wahapedia 11版 / 黑图书馆）。
   T6 分支清理已实际完成
 
