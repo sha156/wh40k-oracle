@@ -1,5 +1,5 @@
 ---
-id: 000003988
+id: '000003988'
 name_zh: 侦查哨兵
 name_en: Scout Sentinels
 faction: 基因窃取者教派
@@ -26,8 +26,8 @@ updated: '2026-07-23'
 ## 射击武器
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| 重型喷火器 | 12" | D6 | N/A | 5 | -1 | 1 | [[core-rules/ignores-cover.md\|忽视掩体]]，[[core-rules/torrent.md\|洪流]] |
-| 猎杀飞弹 | 48" | 1 | 4+ | 14 | -3 | D6 | [[core-rules/one-shot.md\|一次性]] |
+| 重型喷火器 | 12" | D6 | N/A | 5 | -1 | 1 | [[core-rules/ignores-cover.md\|无视掩体]]，[[core-rules/torrent.md\|洪流]] |
+| 猎杀飞弹 | 48" | 1 | 4+ | 14 | -3 | D6 | [[core-rules/one-shot.md\|单发]] |
 | 激光炮 | 48" | 1 | 4+ | 12 | -3 | D6+1 | — |
 | 多管激光 | 36" | 4 | 4+ | 6 | 0 | 1 | — |
 | 导弹发射器（破片） | 48" | D6 | 4+ | 4 | 0 | 1 | [[core-rules/blast.md\|爆炸]]，[[core-rules/heavy.md\|重型]] |

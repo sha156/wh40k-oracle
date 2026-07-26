@@ -1,5 +1,5 @@
 ---
-id: 000004182
+id: '000004182'
 name_zh: 狼侦查
 name_en: Wolf Scouts
 faction: 星际战士
@@ -30,18 +30,18 @@ updated: '2026-07-23'
 |---|---|---|---|---|---|---|---|
 | 爆弹手枪  | 12" | 1 | 3+ | 4 | 0 | 1 | [[core-rules/pistol.md\|手枪]] |
 | 煽动者爆弹卡宾枪 | 24" | 1 | 3+ | 4 | -2 | 2 | [[core-rules/precision.md\|精准]] |
-| Plasma gun – standard | 24" | 1 | 3+ | 7 | -2 | 1 | [[core-rules/rapid-fire.md\|rapid fire 1]] |
-| Plasma gun – supercharge | 24" | 1 | 3+ | 8 | -3 | 2 | hazardous，[[core-rules/rapid-fire.md\|rapid fire 1]] |
-| Plasma pistol – standard | 12" | 1 | 3+ | 7 | -2 | 1 | pistol |
-| Plasma pistol – supercharge | 12" | 1 | 3+ | 8 | -3 | 2 | hazardous，pistol |
-| 雷霆冲击 | 12" | D3 | 3+ | 5 | -1 | 2 | [[core-rules/blast.md\|爆炸]]，灵能 |
+| 等离子枪–标准 | 24" | 1 | 3+ | 7 | -2 | 1 | [[core-rules/rapid-fire.md\|速射1]] |
+| 等离子枪–超载 | 24" | 1 | 3+ | 8 | -3 | 2 | [[core-rules/hazardous.md\|危险]]，[[core-rules/rapid-fire.md\|速射1]] |
+| 等离子手枪-标准 | 12" | 1 | 3+ | 7 | -2 | 1 | [[core-rules/pistol.md\|手枪]] |
+| 等离子手枪-超载 | 12" | 1 | 3+ | 8 | -3 | 2 | [[core-rules/hazardous.md\|危险]]，[[core-rules/pistol.md\|手枪]] |
+| 雷霆冲击 | 12" | D3 | 3+ | 5 | -1 | 2 | [[core-rules/blast.md\|爆炸]]，[[core-rules/psychic-attacks.md\|灵能]] |
 
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| Combat blade | 近战 | 4 | 3+ | 4 | -1 | 1 | — |
+| 格斗刀 | 近战 | 4 | 3+ | 4 | -1 | 1 | — |
 | 动力武器 | 近战 | 4 | 3+ | 5 | -2 | 1 | — |
-| 符文杖 | 近战 | 3 | 3+ | 6 | -1 | D3 | 灵能 |
+| 符文杖 | 近战 | 3 | 3+ | 6 | -1 | D3 | [[core-rules/psychic-attacks.md\|灵能]] |
 | 尖牙利爪 | 近战 | 2 | 4+ | 4 | 0 | 1 | — |
 
 ## 技能

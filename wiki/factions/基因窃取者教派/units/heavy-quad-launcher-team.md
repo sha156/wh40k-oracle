@@ -24,12 +24,12 @@ updated: '2026-07-23'
 ## 射击武器
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| Heavy quad launcher | 48" | 2D6 | 4+ | 5 | 0 | 1 | blast，indirect fire |
+| 重型四管迫击炮 | 48" | 2D6 | 4+ | 5 | 0 | 1 | [[core-rules/blast.md\|爆炸]]，[[core-rules/indirect-fire.md\|曲射]] |
 
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| Close combat weapons | 近战 | 3 | 4+ | 3 | 0 | 1 | — |
+| 格斗武器 | 近战 | 3 | 4+ | 3 | 0 | 1 | — |
 
 ## 技能
 - **Suppression Bombardment**：In your Shooting phase, after this model has shot, select one enemy unit (excluding <span class="kwb">MONSTER</span> and <span class="kwb">VEHICLE</span> units) hit by one or more of those attacks. Unit the start of your next turn, that enemy unit is suppressed. While a unit is suppressed, each time a model in that unit makes an attack, subtract 1 from the Hit roll.

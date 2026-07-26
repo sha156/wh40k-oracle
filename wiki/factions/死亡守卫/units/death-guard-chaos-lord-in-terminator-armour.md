@@ -1,5 +1,5 @@
 ---
-id: 000001038
+id: '000001038'
 name_en: Death Guard Chaos Lord In Terminator Armour
 faction: 死亡守卫
 type: unit
@@ -27,16 +27,16 @@ updated: '2026-07-23'
 ## 射击武器
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| Combi-weapon | 24" | 1 | 3+ | 4 | 0 | 1 | [[core-rules/anti.md\|anti-infantry 4+]]，devastating wounds，[[core-rules/rapid-fire.md\|rapid fire 1]] |
-| Plague combi-bolter | 24" | 2 | 2+ | 4 | 0 | 1 | lethal hits，[[core-rules/rapid-fire.md\|rapid fire 2]] |
+| 复合武器 | 24" | 1 | 3+ | 4 | 0 | 1 | [[core-rules/anti.md\|针对步兵4+]]，[[core-rules/devastating-wounds.md\|毁灭伤害]]，[[core-rules/rapid-fire.md\|速射1]] |
+| 瘟疫并联爆弹枪 | 24" | 2 | 2+ | 4 | 0 | 1 | [[core-rules/lethal-hits.md\|致命一击]]，[[core-rules/rapid-fire.md\|速射2]] |
 
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| Chainfist | 近战 | 5 | 3+ | 8 | -2 | 2 | [[core-rules/anti.md\|anti-vehicle 3+]] |
-| Plague fist | 近战 | 5 | 2+ | 8 | -2 | 2 | lethal hits |
-| Plague-encrusted exalted weapon | 近战 | 6 | 2+ | 5 | -2 | 1 | lethal hits |
-| Twin lightning claws | 近战 | 7 | 2+ | 5 | -2 | 1 | twin-linked |
+| 链锯拳 | 近战 | 5 | 3+ | 8 | -2 | 2 | [[core-rules/anti.md\|针对载具3+]] |
+| 瘟疫拳 | 近战 | 5 | 2+ | 8 | -2 | 2 | [[core-rules/lethal-hits.md\|致命一击]] |
+| 瘟疫神尊武器 | 近战 | 6 | 2+ | 5 | -2 | 1 | [[core-rules/lethal-hits.md\|致命一击]] |
+| 一对闪电爪 | 近战 | 7 | 2+ | 5 | -2 | 1 | [[core-rules/twin-linked.md\|双联]] |
 
 ## 技能
 - **Chaos Lord**：While this model is leading a unit, each time a model in that unit makes an attack, re-roll a Hit roll of 1.

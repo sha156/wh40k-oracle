@@ -1,5 +1,5 @@
 ---
-id: 000004048
+id: '000004048'
 name_en: Renegade Enforcer
 faction: 混沌恶魔
 type: unit
@@ -27,16 +27,16 @@ updated: '2026-07-23'
 ## 射击武器
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| Enforcer pistol | 12" | 1 | 3+ | 4 | 0 | 1 | pistol |
-| Shotgun | 12" | 2 | 3+ | 4 | 0 | 1 | assault |
-| Lasgun | 24" | 1 | 3+ | 3 | 0 | 1 | [[core-rules/rapid-fire.md\|rapid fire 1]] |
-| Autogun | 24" | 1 | 3+ | 3 | 0 | 1 | [[core-rules/rapid-fire.md\|rapid fire 1]] |
+| Enforcer pistol | 12" | 1 | 3+ | 4 | 0 | 1 | [[core-rules/pistol.md\|手枪]] |
+| Shotgun | 12" | 2 | 3+ | 4 | 0 | 1 | [[core-rules/assault.md\|突击]] |
+| 激光枪 | 24" | 1 | 3+ | 3 | 0 | 1 | [[core-rules/rapid-fire.md\|速射1]] |
+| 自动枪 | 24" | 1 | 3+ | 3 | 0 | 1 | [[core-rules/rapid-fire.md\|速射1]] |
 
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| Power weapon | 近战 | 3 | 3+ | 4 | -2 | 1 | — |
-| Power fist | 近战 | 3 | 3+ | 6 | -2 | 2 | — |
+| 动力武器 | 近战 | 3 | 3+ | 4 | -2 | 1 | — |
+| 动力拳 | 近战 | 3 | 3+ | 6 | -2 | 2 | — |
 | Enforcer melee weapon | 近战 | 4 | 3+ | 4 | 0 | 1 | — |
 
 ## 技能
@@ -48,4 +48,4 @@ updated: '2026-07-23'
 
 ## 关键词
 - **阵营关键词**：Legiones Daemonica，Heretic Astartes
-- **普通关键词**：[[core-rules/character.md|Character]]，Renegade Enforcer，Shadow Legion，[[core-rules/infantry.md|Infantry]]，Chaos，Damned，[[core-rules/grenades.md|Grenades]]，[[core-rules/character.md|Character]]，Renegade Enforcer，Undivided，Shadow Legion，[[core-rules/infantry.md|Infantry]]，Chaos，Damned，[[core-rules/grenades.md|Grenades]]，[[core-rules/character.md|Character]]，Renegade Enforcer，Undivided，Undivided，Shadow Legion，Shadow Legion，Chaos，Undivided，Renegade Enforcer，[[core-rules/infantry.md|Infantry]]，[[core-rules/character.md|Character]]，[[core-rules/grenades.md|Grenades]]，[[core-rules/infantry.md|Infantry]]，Damned，[[core-rules/infantry.md|Infantry]]，[[core-rules/character.md|Character]]，Damned，[[core-rules/grenades.md|Grenades]]，[[core-rules/character.md|Character]]，Renegade Enforcer，Undivided，Shadow Legion，Chaos，Damned，[[core-rules/grenades.md|Grenades]]，Chaos，Renegade Enforcer，Undivided，Shadow Legion，[[core-rules/infantry.md|Infantry]]，Chaos，Damned，[[core-rules/grenades.md|Grenades]]
+- **普通关键词**：[[core-rules/character.md|Character]]，Renegade Enforcer，[[factions/混沌恶魔/detachments/shadow-legion.md|Shadow Legion]]，[[core-rules/infantry.md|Infantry]]，Chaos，Damned，[[core-rules/grenades.md|Grenades]]，[[core-rules/character.md|Character]]，Renegade Enforcer，Undivided，[[factions/混沌恶魔/detachments/shadow-legion.md|Shadow Legion]]，[[core-rules/infantry.md|Infantry]]，Chaos，Damned，[[core-rules/grenades.md|Grenades]]，[[core-rules/character.md|Character]]，Renegade Enforcer，Undivided，Undivided，Shadow Legion，Shadow Legion，Chaos，Undivided，Renegade Enforcer，[[core-rules/infantry.md|Infantry]]，[[core-rules/character.md|Character]]，[[core-rules/grenades.md|Grenades]]，[[core-rules/infantry.md|Infantry]]，Damned，[[core-rules/infantry.md|Infantry]]，[[core-rules/character.md|Character]]，Damned，[[core-rules/grenades.md|Grenades]]，[[core-rules/character.md|Character]]，Renegade Enforcer，Undivided，Shadow Legion，Chaos，Damned，[[core-rules/grenades.md|Grenades]]，Chaos，Renegade Enforcer，Undivided，Shadow Legion，[[core-rules/infantry.md|Infantry]]，Chaos，Damned，[[core-rules/grenades.md|Grenades]]

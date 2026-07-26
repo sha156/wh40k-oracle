@@ -1,5 +1,6 @@
 ---
-id: 000001394
+id: '000001394'
+name_zh: 教廷牧师
 name_en: Ministorum Priest
 faction: 星界军
 type: unit
@@ -20,7 +21,7 @@ updated: '2026-07-23'
 ## 属性表
 | 模型 | M | T | SV | W | LD | OC |
 |---|---|---|---|---|---|---|
-| Ministorum Priest | 6" | 3 | 6+ | 3 | 7+ | 1 |
+| 教廷牧师 | 6" | 3 | 6+ | 3 | 7+ | 1 |
 
 ### 特殊保护
 - 4+
@@ -28,18 +29,20 @@ updated: '2026-07-23'
 ## 射击武器
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| Holy pistol | 12" | 3 | 4+ | 4 | 0 | 1 | pistol |
-| Zealot’s vindictor | 12" | D6 | N/A | 5 | 0 | 1 | ignores cover，torrent |
+| 神圣手枪 | 12" | 3 | 4+ | 4 | 0 | 1 | [[core-rules/pistol.md\|手枪]] |
+| 狂信徒的惩戒焰炬 | 12" | D6 | N/A | 5 | 0 | 1 | [[core-rules/ignores-cover.md\|无视掩体]]，[[core-rules/torrent.md\|洪流]] |
 
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| Power weapon | 近战 | 3 | 3+ | 4 | -2 | 1 | — |
-| Zealot’s vindictor | 近战 | 3 | 4+ | 5 | -1 | 2 | — |
+| 动力武器 | 近战 | 3 | 3+ | 4 | -2 | 1 | — |
+| 狂信徒的惩戒焰炬 | 近战 | 3 | 4+ | 5 | -1 | 2 | — |
 
 ## 技能
-- **War Hymns**：While this model is leading a unit, melee weapons equipped by models in that unit have the [SUSTAINED HITS 1] ability.
-- **Holy Piety**：Each time this model makes a melee attack, unless this model’s unit is Battle-shocked, you can re-roll the Hit roll.
+- **【阵营技能】：信仰之举**
+- **正义惩戒**：当该模型领导单位时，那个单位中所有的模型在进行近战攻击时造伤骰结果+1。
+- **狂信徒**：一场战斗仅一次，近战阶段中，该模型可以使用本能力。如果你这么做，直到当前阶段结束前，该模型装备的近战武器 A +3，S +3。
+- **神圣任务**：如果该模型加入御天使小队，则该模型获得【斥候 6】。如果该模型加入见习修女小队，则该模型获得【渗透】。
 
 ## 单位构成
 - **1个模型** — 35 分

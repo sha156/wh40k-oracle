@@ -1,5 +1,5 @@
 ---
-id: 000002690
+id: '000002690'
 name_zh: 尖啸杀手
 name_en: Screamer-killer
 faction: 泰伦虫族

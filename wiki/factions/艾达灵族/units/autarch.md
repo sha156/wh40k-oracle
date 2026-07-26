@@ -29,9 +29,9 @@ updated: '2026-07-23'
 ## 射击武器
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| 死亡纺织者 | 12" | D6 | N/A | 4 | -1 | 1 | [[core-rules/ignores-cover.md\|无视掩体]]，[[core-rules/torrent.md\|喷射]] |
-| Dragon fusion gun | 12" | 1 | 2+ | 9 | -4 | D6 | assault，[[core-rules/melta.md\|melta 3]] |
-| Dragon fusion pistol | 6" | 1 | 2+ | 9 | -4 | D6 | assault，[[core-rules/melta.md\|melta 3]]，pistol |
+| 死亡纺织者 | 12" | D6 | N/A | 4 | -1 | 1 | [[core-rules/ignores-cover.md\|无视掩体]]，[[core-rules/torrent.md\|洪流]] |
+| 火龙热熔枪 | 12" | 1 | 2+ | 9 | -4 | D6 | [[core-rules/assault.md\|突击]]，[[core-rules/melta.md\|热熔3]] |
+| 火龙热熔手枪 | 6" | 1 | 2+ | 9 | -4 | D6 | [[core-rules/assault.md\|突击]]，[[core-rules/melta.md\|热熔3]]，[[core-rules/pistol.md\|手枪]] |
 | 死神发射器（击星弹头） | 48" | 1 | 3+ | 10 | -2 | 3 | [[core-rules/heavy.md\|重型]]，[[core-rules/ignores-cover.md\|无视掩体]] |
 | 死神发射器（群星弹头） | 48" | 2 | 3+ | 4 | -2 | 1 | [[core-rules/heavy.md\|重型]]，[[core-rules/ignores-cover.md\|无视掩体]] |
 | 星镖手枪 | 12" | 1 | 2+ | 4 | -1 | 1 | [[core-rules/assault.md\|突击]]，[[core-rules/pistol.md\|手枪]] |
@@ -39,7 +39,7 @@ updated: '2026-07-23'
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| 女妖之刃 | 近战 | 5 | 2+ | 4 | -2 | 2 | [[core-rules/anti.md\|反步兵3+]] |
+| 女妖之刃 | 近战 | 5 | 2+ | 4 | -2 | 2 | [[core-rules/anti.md\|针对步兵3+]] |
 | 战蝎链锯剑 | 近战 | 7 | 2+ | 4 | -1 | 1 | [[core-rules/sustained-hits.md\|连击1]] |
 | 星光长刀 | 近战 | 4 | 2+ | 6 | -3 | 3 | — |
 

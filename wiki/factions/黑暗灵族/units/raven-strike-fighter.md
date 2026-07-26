@@ -1,5 +1,5 @@
 ---
-id: 000001390
+id: '000001390'
 name_en: Raven Strike Fighter
 faction: 黑暗灵族
 type: unit
@@ -27,13 +27,13 @@ updated: '2026-07-23'
 ## 射击武器
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| Dark lance | 36" | 1 | 3+ | 12 | -3 | D6+2 | — |
-| Splinterstorm cannon | 36" | 8 | 3+ | 3 | -1 | 2 | [[core-rules/anti.md\|anti-infantry 3+]]，[[core-rules/sustained-hits.md\|sustained hits 2]] |
+| 暗黑光矛 | 36" | 1 | 3+ | 12 | -3 | D6+2 | — |
+| Splinterstorm cannon | 36" | 8 | 3+ | 3 | -1 | 2 | [[core-rules/anti.md\|针对步兵3+]]，[[core-rules/sustained-hits.md\|连击2]] |
 
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| Bladed wings | 近战 | 3 | 4+ | 6 | -1 | 1 | — |
+| 锋利飞翼 | 近战 | 3 | 4+ | 6 | -1 | 1 | — |
 
 ## 技能
 - **Shredding Fire (Pain)**：In your Shooting phase, when you select this unit to shoot, you can spend 1 Pain token to Empower this unit. While Empowered, the Armour Penetration characteristic of its ranged weapons is increased by 1.

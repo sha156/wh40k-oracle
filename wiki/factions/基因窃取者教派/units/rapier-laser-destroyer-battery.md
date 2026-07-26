@@ -26,12 +26,12 @@ updated: '2026-07-23'
 ## 射击武器
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| Laser destroyer | 36" | 2 | 5+ | 12 | -2 | D6+1 | heavy，twin-linked |
+| Laser destroyer | 36" | 2 | 5+ | 12 | -2 | D6+1 | [[core-rules/heavy.md\|重型]]，[[core-rules/twin-linked.md\|双联]] |
 
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| Close combat weapon | 近战 | 2 | 4+ | 3 | 0 | 1 | — |
+| 格斗武器 | 近战 | 2 | 4+ | 3 | 0 | 1 | — |
 
 ## 技能
 - **Powerful Volley**：While this unit is being affected by an Order, provided it Remained Stationary this turn, Heavy weapons equipped by models in this unit have the [LETHAL HITS] ability.

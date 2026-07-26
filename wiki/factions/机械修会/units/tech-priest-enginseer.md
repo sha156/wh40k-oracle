@@ -1,5 +1,6 @@
 ---
-id: 000000840
+id: '000000840'
+name_zh: 技术技师机械教士
 name_en: Tech-priest Enginseer
 faction: 机械修会
 type: unit
@@ -20,7 +21,7 @@ updated: '2026-07-23'
 ## 属性表
 | 模型 | M | T | SV | W | LD | OC |
 |---|---|---|---|---|---|---|
-| Tech-priest Enginseer | 6" | 4 | 3+ | 3 | 7+ | 1 |
+| 工造修士 | 6" | 4 | 3+ | 3 | 7+ | 1 |
 
 ### 特殊保护
 - 5+
@@ -28,18 +29,19 @@ updated: '2026-07-23'
 ## 射击武器
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| Mechanicus pistol | 12" | 1 | 3+ | 6 | -1 | 1 | devastating wounds，pistol |
+| 机械教手枪 | 12" | 1 | 3+ | 6 | -1 | 1 | [[core-rules/devastating-wounds.md\|毁灭伤害]]，[[core-rules/pistol.md\|手枪]] |
 
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| Omnissian axe | 近战 | 3 | 4+ | 6 | -2 | 2 | — |
-| Servo-arm | 近战 | 1 | 4+ | 6 | -2 | 2 | extra attacks |
+| 机神战斧 | 近战 | 3 | 4+ | 6 | -2 | 2 | — |
+| 机械臂 | 近战 | 1 | 4+ | 6 | -2 | 2 | [[core-rules/extra-attacks.md\|额外攻击]] |
 
 ## 技能
-- **Enginseer**：While this model is within 3" of one or more friendly Adeptus Mechanicus Vehicle units, unless it is leading a unit, this model has the Lone Operative ability.
-- **Omnissiah’s Blessing**：In your Command phase, select one friendly <span class="kwb">ADEPTUS</span> <span class="kwb">MECHANICUS</span> model within 3" of this model. That model regains up to D3 lost wounds and, if it is a VEHICLE model, until the start of your next Command phase, that model has the Feel No Pain 5+ ability. Each model can only be selected for this ability once per Command phase.
-- **Vengeance for the Omnissiah**：If a friendly Adeptus Mechanicus Vehicle model is destroyed within 12" of this model, until the end of the battle, this model’s Omnissian axe has an Attacks characteristic of 6.
+- **【阵营技能】：机神律令**
+- **工造修士**：如果本模型 3 寸内有至少一个友军机械修会载具单位，则本模型获得【独行特工】技能
+- **机神祝福**：在你的指挥阶段中，你可以选择本模型 3 寸内一个友军机械修会模型，这个模型恢复 D3 点损失的 W值，如果这个模型是载具，直到下个你的指挥阶段开始时，这个载具模型获得【不觉疼痛 5+】。每个模型在每个指挥阶段中只能被此技能选择一次
+- **机神复仇**：如果一个友军机械修会载具模型在本模型 12寸内被消灭，则本模型的机神战斧在本场游戏中 A 变为 6
 
 ## 单位构成
 - **1个模型** — 55 分

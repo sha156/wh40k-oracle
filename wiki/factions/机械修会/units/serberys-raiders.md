@@ -1,5 +1,5 @@
 ---
-id: 000002082
+id: '000002082'
 name_zh: 塞波利斯掠夺者
 name_en: Serberys Raiders
 faction: 机械修会
@@ -30,7 +30,7 @@ updated: '2026-07-23'
 ## 射击武器
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| 机械教手枪 | 12" | 1 | 4+ | 6 | -1 | 1 | [[core-rules/pistol.md\|手枪]]，[[core-rules/devastating-wounds.md\|毁灭伤害]] |
+| 机械教手枪 | 12" | 1 | 4+ | 6 | -1 | 1 | [[core-rules/devastating-wounds.md\|毁灭伤害]]，[[core-rules/pistol.md\|手枪]] |
 | 流电卡宾枪 | 18" | 3 | 4+ | 4 | 0 | 1 | [[core-rules/devastating-wounds.md\|毁灭伤害]] |
 
 ## 近战武器

@@ -24,17 +24,17 @@ updated: '2026-07-23'
 ## 射击武器
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| Skyhammer missile launcher | 48" | 3 | 3+ | 8 | -1 | D3 | [[core-rules/anti.md\|anti-fly 2+]] |
-| Twin heavy bolter | 36" | 3 | 3+ | 5 | -1 | 2 | [[core-rules/sustained-hits.md\|sustained hits 1]]，twin-linked |
-| Twin helfrost cannon – dispersed | 12" | D6 | N/A | 6 | -1 | 2 | torrent，twin-linked |
-| Twin helfrost cannon – focused | 36" | 1 | 3+ | 9 | -3 | 5 | twin-linked |
-| Twin lascannon | 48" | 1 | 3+ | 12 | -3 | D6+1 | twin-linked |
-| Twin multi-melta | 18" | 2 | 3+ | 9 | -4 | D6 | [[core-rules/melta.md\|melta 2]]，twin-linked |
+| 天锤导弹 | 48" | 3 | 3+ | 8 | -1 | D3 | [[core-rules/anti.md\|针对飞行2+]] |
+| 双联重型爆弹枪 | 36" | 3 | 3+ | 5 | -1 | 2 | [[core-rules/sustained-hits.md\|连击1]]，[[core-rules/twin-linked.md\|双联]] |
+| Twin helfrost cannon – dispersed | 12" | D6 | N/A | 6 | -1 | 2 | [[core-rules/torrent.md\|洪流]]，[[core-rules/twin-linked.md\|双联]] |
+| Twin helfrost cannon – focused | 36" | 1 | 3+ | 9 | -3 | 5 | [[core-rules/twin-linked.md\|双联]] |
+| 双联激光炮 | 48" | 1 | 3+ | 12 | -3 | D6+1 | [[core-rules/twin-linked.md\|双联]] |
+| 双联多管热熔 | 18" | 2 | 3+ | 9 | -4 | D6 | [[core-rules/melta.md\|热熔2]]，[[core-rules/twin-linked.md\|双联]] |
 
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| Armoured hull | 近战 | 6 | 4+ | 8 | 0 | 1 | — |
+| 装甲外壳 | 近战 | 6 | 4+ | 8 | 0 | 1 | — |
 
 ## 技能
 - **Into the Foe**：If a unit disembarks from this Transport before it moves, until the end of the turn, that unit is eligible to charge in a turn in which it Advanced.

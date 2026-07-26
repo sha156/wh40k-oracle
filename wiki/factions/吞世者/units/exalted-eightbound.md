@@ -30,7 +30,7 @@ updated: '2026-07-23'
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| Chainblades | 近战 | 4 | 3+ | 8 | -3 | 2 | [[core-rules/anti.md\|anti-monster 3+]]，[[core-rules/anti.md\|anti-vehicle 3+]] |
+| 链锯刃 | 近战 | 4 | 3+ | 8 | -3 | 2 | [[core-rules/anti.md\|针对怪物3+]]，[[core-rules/anti.md\|针对载具3+]] |
 
 ## 技能
 - **阵营：恐虐祝福**
@@ -42,4 +42,4 @@ updated: '2026-07-23'
 
 ## 关键词
 - **阵营关键词**：World Eaters
-- **普通关键词**：Khorne，Chaos，[[core-rules/infantry.md|Infantry]]，Exalted Eightbound，Daemon，Possessed
+- **普通关键词**：Khorne，Chaos，[[core-rules/infantry.md|Infantry]]，Exalted [[factions/吞世者/units/eightbound.md|Eightbound]]，Daemon，Possessed

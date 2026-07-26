@@ -28,16 +28,16 @@ updated: '2026-07-23'
 |---|---|---|---|---|---|---|---|
 | 爆弹手枪    | 12" | 1 | 2+ | 4 | 0 | 1 | [[core-rules/pistol.md\|手枪]] |
 | 重型爆弹手枪        | 18" | 1 | 3+ | 4 | -1 | 1 | [[core-rules/pistol.md\|手枪]] |
-| Master-crafted bolter | 24" | 2 | 2+ | 4 | -1 | 2 | — |
-| Neo-volkite pistol | 12" | 1 | 2+ | 5 | 0 | 2 | [[core-rules/devastating-wounds.md\|DEVASTATING WOUNDS]]，PISTOL |
-| Plasma pistol – standard | 12" | 1 | 2+ | 7 | -2 | 1 | pistol |
-| Plasma pistol – supercharge | 12" | 1 | 2+ | 8 | -3 | 2 | hazardous，pistol |
+| 精工爆弹枪 | 24" | 2 | 2+ | 4 | -1 | 2 | — |
+| 强能爆燃手枪 | 12" | 1 | 2+ | 5 | 0 | 2 | [[core-rules/devastating-wounds.md\|毁灭伤害]]，[[core-rules/pistol.md\|手枪]] |
+| 等离子手枪（标准） | 12" | 1 | 2+ | 7 | -2 | 1 | [[core-rules/pistol.md\|手枪]] |
+| 等离子手枪（过载） | 12" | 1 | 2+ | 8 | -3 | 2 | [[core-rules/hazardous.md\|危险]]，[[core-rules/pistol.md\|手枪]] |
 
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| Close combat weapon | 近战 | 5 | 2+ | 4 | 0 | 1 | — |
-| Master-crafted power weapon | 近战 | 5 | 2+ | 5 | -2 | 2 | — |
+| 格斗武器 | 近战 | 5 | 2+ | 4 | 0 | 1 | — |
+| 精工动力武器 | 近战 | 5 | 2+ | 5 | -2 | 2 | — |
 | 动力拳        | 近战 | 4 | 2+ | 8 | -2 | 2 | — |
 
 ## 技能

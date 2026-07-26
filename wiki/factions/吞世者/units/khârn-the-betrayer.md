@@ -29,8 +29,8 @@ updated: '2026-07-23'
 ## 射击武器
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| Plasma pistol – standard | 12" | 1 | 3+ | 7 | -2 | 1 | pistol |
-| 等离子手枪 -过载 | 12" | 1 | 3+ | 8 | -3 | 2 | [[core-rules/pistol.md\|手枪]]，[[core-rules/hazardous.md\|危险]] |
+| 等离子手枪-标准 | 12" | 1 | 3+ | 7 | -2 | 1 | [[core-rules/pistol.md\|手枪]] |
+| 等离子手枪 -过载 | 12" | 1 | 3+ | 8 | -3 | 2 | [[core-rules/hazardous.md\|危险]]，[[core-rules/pistol.md\|手枪]] |
 
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |

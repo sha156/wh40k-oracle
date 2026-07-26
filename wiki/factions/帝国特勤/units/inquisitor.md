@@ -1,5 +1,5 @@
 ---
-id: 000000877
+id: '000000877'
 name_zh: 审判官
 name_en: Inquisitor
 faction: 帝国特勤
@@ -33,13 +33,13 @@ updated: '2026-07-23'
 |---|---|---|---|---|---|---|---|
 | 爆弹手枪 | 12" | 1 | 3+ | 4 | 0 | 1 | [[core-rules/pistol.md\|手枪]] |
 | 复合武器 | 24" | 1 | 3+ | 4 | -2 | 1 | [[core-rules/anti.md\|针对步兵4+]]，[[core-rules/devastating-wounds.md\|毁灭伤害]]，[[core-rules/rapid-fire.md\|速射1]] |
-| 灵能冲击波 | 18" | 2D6 | N/A | 3 | -2 | 1 | [[core-rules/devastating-wounds.md\|毁灭伤害]]，灵能，[[core-rules/torrent.md\|洪流]] |
+| 灵能冲击波 | 18" | 2D6 | N/A | 3 | -2 | 1 | [[core-rules/devastating-wounds.md\|毁灭伤害]]，[[core-rules/psychic-attacks.md\|灵能]]，[[core-rules/torrent.md\|洪流]] |
 
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
 | 审判庭近战武器 | 近战 | 5 | 3+ | 4 | -2 | 1 | — |
-| 灵能武器 | 近战 | 4 | 3+ | 5 | -2 | D3 | 灵能 |
+| 灵能武器 | 近战 | 4 | 3+ | 5 | -2 | D3 | [[core-rules/psychic-attacks.md\|灵能]] |
 
 ## 技能
 - **【阵营技能】：派遣特工**

@@ -1,5 +1,5 @@
 ---
-id: 000004096
+id: '000004096'
 name_zh: 欢愉魔
 name_en: Fiends
 faction: 帝皇之子

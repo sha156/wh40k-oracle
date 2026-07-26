@@ -1,5 +1,5 @@
 ---
-id: 000001485
+id: '000001485'
 name_zh: 堡主骑士
 name_en: Knight Castellan
 faction: 帝国骑士
@@ -31,8 +31,8 @@ updated: '2026-07-23'
 |---|---|---|---|---|---|---|---|
 | 等离子屠戮炮-标准 | 48" | D6+3 | 3+ | 8 | -3 | 2 | [[core-rules/blast.md\|爆炸]] |
 | 等离子屠戮炮-危险 | 48" | D6+3 | 3+ | 9 | -4 | 3 | [[core-rules/blast.md\|爆炸]]，[[core-rules/hazardous.md\|危险]] |
-| 碎盾者导弹发射器 | 72" | 1 | 3+ | 12 | -6 | D6+1 | [[core-rules/anti.md\|反巨型 4+]]，[[core-rules/devastating-wounds.md\|毁灭伤害]] |
-| 双联热熔枪 | 12" | 1 | 3+ | 9 | -4 | D6 | [[core-rules/melta.md\|热熔 2]]，[[core-rules/twin-linked.md\|双联]] |
+| 碎盾者导弹发射器 | 72" | 1 | 3+ | 12 | -6 | D6+1 | [[core-rules/anti.md\|针对泰坦4+]]，[[core-rules/devastating-wounds.md\|毁灭伤害]] |
+| 双联热熔枪 | 12" | 1 | 3+ | 9 | -4 | D6 | [[core-rules/melta.md\|热熔2]]，[[core-rules/twin-linked.md\|双联]] |
 | 双联破城炮 | 36" | D6 | 3+ | 6 | 0 | 1 | [[core-rules/blast.md\|爆炸]]，[[core-rules/twin-linked.md\|双联]] |
 | 火山光矛 | 72" | D3 | 3+ | 18 | -5 | D6+8 | [[core-rules/blast.md\|爆炸]] |
 

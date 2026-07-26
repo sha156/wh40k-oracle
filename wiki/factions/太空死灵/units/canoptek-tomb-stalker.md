@@ -1,5 +1,5 @@
 ---
-id: 000000558
+id: '000000558'
 name_zh: 冥工追猎蜈蚣
 name_en: Canoptek Tomb Stalker
 faction: 太空死灵
@@ -33,7 +33,7 @@ updated: '2026-07-23'
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| 追猎机械利爪 | 近战 | 6 | 4+ | 6 | -1 | 2 | [[core-rules/sustained-hits.md\|连击 1]] |
+| 追猎机械利爪 | 近战 | 6 | 4+ | 6 | -1 | 2 | [[core-rules/sustained-hits.md\|连击1]] |
 
 ## 技能
 - **[阵营]：重生协议**

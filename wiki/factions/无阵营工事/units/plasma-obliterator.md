@@ -1,5 +1,5 @@
 ---
-id: 000000919
+id: '000000919'
 name_en: Plasma Obliterator
 faction: 无阵营工事
 type: unit
@@ -24,8 +24,8 @@ updated: '2026-07-23'
 ## 射击武器
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| Plasma obliterator – standard | 48" | D6+3 | 5+ | 9 | -3 | 3 | blast |
-| Plasma obliterator – supercharge | 48" | D6+3 | 5+ | 10 | -4 | 4 | blast，hazardous |
+| Plasma obliterator – standard | 48" | D6+3 | 5+ | 9 | -3 | 3 | [[core-rules/blast.md\|爆炸]] |
+| Plasma obliterator – supercharge | 48" | D6+3 | 5+ | 10 | -4 | 4 | [[core-rules/blast.md\|爆炸]]，[[core-rules/hazardous.md\|危险]] |
 
 ## 技能
 - **Emergency Plasma Vents**：Each time this <span class="kwb">FORTIFICATION</span> suffers a mortal wound as the result of a failed Hazardous test, roll one D6: on a 4+, that wound is not lost.

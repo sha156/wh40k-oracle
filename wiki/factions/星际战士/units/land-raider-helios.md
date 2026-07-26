@@ -25,14 +25,14 @@ updated: '2026-07-23'
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
 | Godhammer lascannons | 48" | 2 | 3+ | 12 | -3 | D6+1 | — |
-| Helios launcher | 48" | 3 | 3+ | 9 | -1 | 3 | [[core-rules/anti.md\|anti-fly 3+]] |
-| [[factions/星际战士/units/hunter.md\|Hunter]]-killer missile | 48" | 1 | 2+ | 14 | -3 | D6 | one shot |
-| Storm bolter | 24" | 2 | 3+ | 4 | 0 | 1 | [[core-rules/rapid-fire.md\|rapid fire 2]] |
+| Helios launcher | 48" | 3 | 3+ | 9 | -1 | 3 | [[core-rules/anti.md\|针对飞行3+]] |
+| 猎杀飞弹 | 48" | 1 | 2+ | 14 | -3 | D6 | [[core-rules/one-shot.md\|单发]] |
+| 风暴爆弹枪 | 24" | 2 | 3+ | 4 | 0 | 1 | [[core-rules/rapid-fire.md\|速射2]] |
 
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| Armoured tracks | 近战 | 6 | 4+ | 8 | 0 | 1 | — |
+| 装甲履带 | 近战 | 6 | 4+ | 8 | 0 | 1 | — |
 
 ## 技能
 - **Assault Ramp**：Each time a unit disembarks from this model after it has made a Normal move, that unit is still eligible to declare a charge this turn.
@@ -43,4 +43,4 @@ updated: '2026-07-23'
 
 ## 关键词
 - **阵营关键词**：Adeptus Astartes
-- **普通关键词**：Vehicle，[[core-rules/smoke.md|Smoke]]，[[core-rules/transport.md|Transport]]，Imperium，Land Raider Helios
+- **普通关键词**：Vehicle，[[core-rules/smoke.md|Smoke]]，[[core-rules/transport.md|Transport]]，Imperium，[[factions/星际战士/units/land-raider.md|Land Raider]] Helios

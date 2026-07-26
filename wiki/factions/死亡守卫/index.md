@@ -1,42 +1,44 @@
 # 死亡守卫
 
-_Last updated: 2026-07-23 12:10 UTC_
+_Last updated: 2026-07-26 08:40 UTC_
+
+## 分队
+
+- [[factions/死亡守卫/detachments/arch-contaminators|Arch-Contaminators]] — 死亡守卫的分队「Arch-Contaminators」，分队规则「Inescapable Corruption」。
+- [[factions/死亡守卫/detachments/champions-of-contagion|Champions of Contagion]] — 死亡守卫的分队「Champions of Contagion」，分队规则「多重感染」。
+- [[factions/死亡守卫/detachments/death-lords-chosen|Death Lord’s Chosen]] — 死亡守卫的分队「Death Lord’s Chosen」，分队规则「致命发作」。
+- [[factions/死亡守卫/detachments/mortarions-hammer|Mortarion’s Hammer]] — 死亡守卫的分队「Mortarion’s Hammer」，分队规则「毒雾轰炸」。
+- [[factions/死亡守卫/detachments/shamblerot-vectorium|Shamblerot Vectorium]] — 死亡守卫的分队「Shamblerot Vectorium」，分队规则「无尽尸群」。
+- [[factions/死亡守卫/detachments/tallyband-summoners|Tallyband Summoners]] — 死亡守卫的分队「Tallyband Summoners」，分队规则「瘟疫军团」。
+- [[factions/死亡守卫/detachments/unclean-uprising|Unclean Uprising]] — 死亡守卫的分队「Unclean Uprising」，分队规则「Relentless Spread」。
+- [[factions/死亡守卫/detachments/vectors-of-decay|Vectors of Decay]] — 死亡守卫的分队「Vectors of Decay」，分队规则「Sevenfold Offerings」。
+- [[factions/死亡守卫/detachments/virulent-vectorium|Virulent Vectorium]] — 死亡守卫的分队「Virulent Vectorium」，分队规则「世界之瘟」。
+- [[factions/死亡守卫/detachments/contagion-engines|传瘟机械]] — 死亡守卫的分队「传瘟机械」。
+- [[factions/死亡守卫/detachments/flyblown-host|吹蝇军]] — 死亡守卫的分队「吹蝇军」，分队规则「虫害毒雾」。
+- [[factions/死亡守卫/detachments/paragons-of-putrescence|腐坏楷模]] — 死亡守卫的分队「腐坏楷模」。
 
 ## 单位
 
 - [[factions/死亡守卫/units/cerberus|Cerberus]] — 
-- [[factions/死亡守卫/units/chaos-land-raider|Chaos Land Raider]] — 
 - [[factions/死亡守卫/units/chaos-lord-on-palanquin-of-nurgle|Chaos Lord On Palanquin Of Nurgle]] — 
-- [[factions/死亡守卫/units/chaos-predator-annihilator|Chaos Predator Annihilator]] — 
-- [[factions/死亡守卫/units/chaos-predator-destructor|Chaos Predator Destructor]] — 
-- [[factions/死亡守卫/units/chaos-rhino|Chaos Rhino]] — 
-- [[factions/死亡守卫/units/chaos-spawn|Chaos Spawn]] — 
 - [[factions/死亡守卫/units/chaos-thunderhawk|Chaos Thunderhawk]] — 
-- [[factions/死亡守卫/units/daemon-prince-of-nurgle|Daemon Prince of Nurgle]] — 
-- [[factions/死亡守卫/units/daemon-prince-of-nurgle-with-wings|Daemon Prince of Nurgle with Wings]] — 
 - [[factions/死亡守卫/units/death-guard-chaos-lord-in-terminator-armour|Death Guard Chaos Lord In Terminator Armour]] — 
 - [[factions/死亡守卫/units/death-guard-cultists|Death Guard Cultists]] — 
 - [[factions/死亡守卫/units/death-guard-possessed|Death Guard Possessed]] — 
-- [[factions/死亡守卫/units/death-guard-sorcerer-in-terminator-armour|Death Guard Sorcerer In Terminator Armour]] — 
-- [[factions/死亡守卫/units/defiler|Defiler]] — 
 - [[factions/死亡守卫/units/deredeo-dreadnought|Deredeo Dreadnought]] — 
 - [[factions/死亡守卫/units/falchion|Falchion]] — 
 - [[factions/死亡守卫/units/fellblade|Fellblade]] — 
 - [[factions/死亡守卫/units/fire-raptor-gunship|Fire Raptor Gunship]] — 
-- [[factions/死亡守卫/units/foetid-bloat-drone-with-heavy-blight-launcher|Foetid Bloat-drone with Heavy Blight Launcher]] — 
 - [[factions/死亡守卫/units/gellerpox-infected|Gellerpox Infected]] — 
 - [[factions/死亡守卫/units/greater-blight-drone|Greater Blight Drone]] — 
-- [[factions/死亡守卫/units/helbrute|Helbrute]] — 
 - [[factions/死亡守卫/units/hell-blade|Hell Blade]] — 
 - [[factions/死亡守卫/units/hell-talon|Hell Talon]] — 
-- [[factions/死亡守卫/units/icon-bearer|Icon Bearer]] — 
 - [[factions/死亡守卫/units/kratos|Kratos]] — 
 - [[factions/死亡守卫/units/land-raider-achilles|Land Raider Achilles]] — 
 - [[factions/死亡守卫/units/land-raider-proteus|Land Raider Proteus]] — 
 - [[factions/死亡守卫/units/leviathan-dreadnought|Leviathan Dreadnought]] — 
 - [[factions/死亡守卫/units/mastodon|Mastodon]] — 
 - [[factions/死亡守卫/units/mutoid-vermin|Mutoid Vermin]] — 
-- [[factions/死亡守卫/units/myphitic-blight-hauler|Myphitic Blight-hauler]] — 
 - [[factions/死亡守卫/units/rapier-carrier|Rapier Carrier]] — 
 - [[factions/死亡守卫/units/relic-contemptor-dreadnought|Relic Contemptor Dreadnought]] — 
 - [[factions/死亡守卫/units/sicaran-battle-tank|Sicaran Battle Tank]] — 
@@ -51,17 +53,27 @@ _Last updated: 2026-07-23 12:10 UTC_
 - [[factions/死亡守卫/units/whirlwind-scorpius|Whirlwind Scorpius]] — 
 - [[factions/死亡守卫/units/xiphon-interceptor|Xiphon Interceptor]] — 
 - [[factions/死亡守卫/units/noxious-blightbringer|丧钟使者]] — 
+- [[factions/死亡守卫/units/defiler|亵渎者]] — 
 - [[factions/死亡守卫/units/tallyman|凋败记账官]] — 
 - [[factions/死亡守卫/units/blightlord-terminators|凋零霸主终结者]] — 
 - [[factions/死亡守卫/units/miasmic-malignifier|剧毒坩埚]] — 
+- [[factions/死亡守卫/units/helbrute|地狱兽]] — 
 - [[factions/死亡守卫/units/great-unclean-one|大不净者]] — 
+- [[factions/死亡守卫/units/icon-bearer|徽记手]] — 
 - [[factions/死亡守卫/units/malignant-plaguecaster|恶疾使者]] — 
+- [[factions/死亡守卫/units/myphitic-blight-hauler|恶臭疫病拖车]] — 
 - [[factions/死亡守卫/units/plaguebearers|携疫者]] — 
+- [[factions/死亡守卫/units/daemon-prince-of-nurgle-with-wings|有翼纳垢恶魔王子]] — 
 - [[factions/死亡守卫/units/death-guard-chaos-lord|死亡守卫混沌领主]] — 
+- [[factions/死亡守卫/units/death-guard-sorcerer-in-terminator-armour|死亡守卫终结者巫师]] — 
 - [[factions/死亡守卫/units/deathshroud-terminators|死亡寿衣终结者]] — 
+- [[factions/死亡守卫/units/chaos-predator-annihilator|歼灭者型猎食者坦克]] — 
 - [[factions/死亡守卫/units/typhus|泰丰斯]] — 
+- [[factions/死亡守卫/units/chaos-land-raider|混沌兰德掠袭者]] — 
+- [[factions/死亡守卫/units/chaos-spawn|混沌卵]] — 
 - [[factions/死亡守卫/units/rotigus|烂格斯]] — 
 - [[factions/死亡守卫/units/lord-of-virulence|烈毒领主]] — 
+- [[factions/死亡守卫/units/chaos-rhino|犀牛装甲车]] — 
 - [[factions/死亡守卫/units/lord-of-contagion|疫病领主]] — 
 - [[factions/死亡守卫/units/biologus-putrifier|病毒精练者]] — 
 - [[factions/死亡守卫/units/lord-of-poxes|痘疹领主]] — 
@@ -72,7 +84,114 @@ _Last updated: 2026-07-23 12:10 UTC_
 - [[factions/死亡守卫/units/foetid-bloat-drone|瘟疫机蜂]] — 
 - [[factions/死亡守卫/units/poxwalkers|瘟疫行尸]] — 
 - [[factions/死亡守卫/units/plagueburst-crawler|瘟疫轰炮车]] — 
+- [[factions/死亡守卫/units/chaos-predator-destructor|破坏者型猎食者坦克]] — 
 - [[factions/死亡守卫/units/beasts-of-nurgle|纳垢兽]] — 
+- [[factions/死亡守卫/units/daemon-prince-of-nurgle|纳垢恶魔王子]] — 
 - [[factions/死亡守卫/units/nurglings|纳垢灵]] — 
 - [[factions/死亡守卫/units/mortarion|莫塔里安]] — 
+- [[factions/死亡守卫/units/foetid-bloat-drone-with-heavy-blight-launcher|装备重型瘟疫榴弹炮的瘟疫机蜂]] — 
+
+## 策略技能
+
+- [[factions/死亡守卫/stratagems/all-is-rot|万物皆朽]] — 1 CP、Shooting phase、Tallyband Summoners 分队、Strategic Ploy St...
+- [[factions/死亡守卫/stratagems/undying-spite|不死怨念]] — 1 CP、Fight phase、Death Lord’s Chosen 分队、Strategic Ploy Strat...
+- [[factions/死亡守卫/stratagems/the-dead-rise|亡者复起]] — 1 CP、Movement phase、Unclean Uprising 分队、Strategic Ploy Strat...
+- [[factions/死亡守卫/stratagems/deaths-heads|亡者颅骨]] — 1 CP、Shooting phase、Champions of Contagion 分队、Wargear Strata...
+- [[factions/死亡守卫/stratagems/fresh-vectors|全新介体]] — 1 CP、Shooting or Fight phase、传瘟机械 分队。
+- [[factions/死亡守卫/stratagems/myphitic-invigoration|凋败滋养]] — 1 CP、Shooting phase、吹蝇军 分队、Battle Tactic Stratagem。
+- [[factions/死亡守卫/stratagems/blighted-land|凋零大地]] — 2 CP、Movement phase、Mortarion’s Hammer 分队、Strategic Ploy Str...
+- [[factions/死亡守卫/stratagems/aggravus-spasms|加剧阵痛]] — 1 CP、Shooting phase、腐坏楷模 分队。
+- [[factions/死亡守卫/stratagems/mortarions-teachings|原体教诲]] — 1 CP、Shooting phase、Death Lord’s Chosen 分队、Strategic Ploy St...
+- [[factions/死亡守卫/stratagems/disgustingly-resilient|可憎坚韧]] — 2 CP、Shooting or Fight phase、Virulent Vectorium 分队、Battle Ta...
+- [[factions/死亡守卫/stratagems/simultaneous-contamination|同时感染]] — 1 CP、Shooting phase、腐坏楷模 分队。
+- [[factions/死亡守卫/stratagems/leechspore-eruption|吸血孢子]] — 1 CP、Command phase、Virulent Vectorium 分队、Epic Deed Stratagem...
+- [[factions/死亡守卫/stratagems/territorial-infection|地区感染]] — 1 CP、Command phase、腐坏楷模 分队。
+- [[factions/死亡守卫/stratagems/signal-pox|定点感染]] — 1 CP、Command phase、Death Lord’s Chosen 分队、Epic Deed Stratage...
+- [[factions/死亡守卫/stratagems/vermin-cloud|害虫毒云]] — 1 CP、Fight phase、吹蝇军 分队、Battle Tactic Stratagem。
+- [[factions/死亡守卫/stratagems/grotesque-fortitude|怪诞坚韧]] — 1 CP、Shooting or Fight phase、Champions of Contagion 分队、Battl...
+- [[factions/死亡守卫/stratagems/grotesque-demise|怪诞灭亡]] — 1 CP、Shooting or Fight phase、Vectors of Decay 分队、Strategic P...
+- [[factions/死亡守卫/stratagems/shock-and-horror|恐怖冲击]] — 1 CP、Charge phase、Shamblerot Vectorium 分队、Strategic Ploy Str...
+- [[factions/死亡守卫/stratagems/nauseating-paroxysms|恶心发作]] — 1 CP、Fight phase、吹蝇军 分队、Strategic Ploy Stratagem。
+- [[factions/死亡守卫/stratagems/malignance-magnified|恶疾发作]] — 2 CP、Shooting or Fight phase、Champions of Contagion 分队、Battl...
+- [[factions/死亡守卫/stratagems/sickening-impact|恶臭冲击]] — 1 CP、Charge phase、Death Lord’s Chosen 分队、Strategic Ploy Stra...
+- [[factions/死亡守卫/stratagems/grim-reapers|无情收割]] — 1 CP、Fight phase、Death Lord’s Chosen 分队、Battle Tactic Strata...
+- [[factions/死亡守卫/stratagems/relentless-grind|无情碾碎]] — 1 CP、Movement or Charge phase、Mortarion’s Hammer 分队、Strategi...
+- [[factions/死亡守卫/stratagems/creeping-blight|日渐凋零]] — 1 CP、Shooting phase、Virulent Vectorium 分队、Wargear Stratagem。
+- [[factions/死亡守卫/stratagems/font-of-filth|污秽之源]] — 1 CP、Shooting phase、Mortarion’s Hammer 分队、Strategic Ploy Str...
+- [[factions/死亡守卫/stratagems/mobile-vector|污秽传承]] — 1 CP、Movement phase、Champions of Contagion 分队、Strategic Ploy...
+- [[factions/死亡守卫/stratagems/smeared-with-filth|污秽感染]] — 1 CP、Fight phase、Shamblerot Vectorium 分队、Strategic Ploy Stra...
+- [[factions/死亡守卫/stratagems/blessings-of-filth|污秽赐福]] — 1 CP、Shooting or Fight phase、Champions of Contagion 分队、Battl...
+- [[factions/死亡守卫/stratagems/seeping-corrosion|渗漏腐蚀]] — 1 CP、Movement phase、Vectors of Decay 分队、Strategic Ploy Strat...
+- [[factions/死亡守卫/stratagems/hidden-amongst-the-dead|潜伏于尸群]] — 1 CP、Movement phase、Shamblerot Vectorium 分队、Strategic Ploy S...
+- [[factions/死亡守卫/stratagems/mireslick|烂泥缠身]] — 1 CP、Movement phase、Tallyband Summoners 分队、Strategic Ploy St...
+- [[factions/死亡守卫/stratagems/allies-of-entropy|熵灭之友]] — 1 CP、Shooting phase、Arch-Contaminators 分队、Strategic Ploy Str...
+- [[factions/死亡守卫/stratagems/rabid-infusion|狂暴轰入]] — 1 CP、Fight phase、Champions of Contagion 分队、Strategic Ploy St...
+- [[factions/死亡守卫/stratagems/chinks-in-the-armour|甲缝之隙]] — 1 CP、Shooting or Fight phase、Vectors of Decay 分队、Battle Tact...
+- [[factions/死亡守卫/stratagems/infestation|疫巢盘踞]] — 1 CP、Any phase、Vectors of Decay 分队、Strategic Ploy Stratagem。
+- [[factions/死亡守卫/stratagems/persistent-pests|疫病魔宠]] — 1 CP、Any phase、Tallyband Summoners 分队、Strategic Ploy Stratag...
+- [[factions/死亡守卫/stratagems/path-of-pestilence|疫途]] — 1 CP、Movement phase、Unclean Uprising 分队、Strategic Ploy Strat...
+- [[factions/死亡守卫/stratagems/blooming-pestilence|瘟疫爆发]] — 1 CP、Any phase、Death Lord’s Chosen 分队、Epic Deed Stratagem。
+- [[factions/死亡守卫/stratagems/plaguesurge|瘟疫爆发]] — 2 CP、Command phase、Virulent Vectorium 分队、Epic Deed Stratagem...
+- [[factions/死亡守卫/stratagems/overwhelming-generosity|盛情款待]] — 1 CP、Shooting phase、Virulent Vectorium 分队、Wargear Stratagem。
+- [[factions/死亡守卫/stratagems/drawn-to-despair|绝望沉沦]] — 1 CP、Shooting phase、Mortarion’s Hammer 分队、Battle Tactic Stra...
+- [[factions/死亡守卫/stratagems/fleshy-avalanche|肉山冲击]] — 1 CP、Movement or Charge phase、Tallyband Summoners 分队、Strateg...
+- [[factions/死亡守卫/stratagems/pox-flare|脓疱闪耀]] — 1 CP、Fight phase、Unclean Uprising 分队、Battle Tactic Stratagem...
+- [[factions/死亡守卫/stratagems/seed-of-corruption|腐化之种]] — 1 CP、Shooting phase、Arch-Contaminators 分队、Strategic Ploy Str...
+- [[factions/死亡守卫/stratagems/avatars-of-decay|腐朽化身]] — 1 CP、Shooting phase、Tallyband Summoners 分队、Strategic Ploy St...
+- [[factions/死亡守卫/stratagems/stinking-mire|腐臭泥潭]] — 1 CP、Charge phase、Mortarion’s Hammer 分队、Strategic Ploy Strat...
+- [[factions/死亡守卫/stratagems/clutching-corruption|腐蚀之握]] — 1 CP、Fight phase、Tallyband Summoners 分队、Battle Tactic Strata...
+- [[factions/死亡守卫/stratagems/corrosive-curse|腐蚀诅咒]] — 1 CP、Shooting phase、Arch-Contaminators 分队、Strategic Ploy Str...
+- [[factions/死亡守卫/stratagems/putrid-detonation|腐败爆破]] — 1 CP、Any phase、Virulent Vectorium 分队、Strategic Ploy Stratage...
+- [[factions/死亡守卫/stratagems/soulrot-flux|腐魂爆发]] — 1 CP、Movement phase、传瘟机械 分队。
+- [[factions/死亡守卫/stratagems/enervating-onslaught|致衰猛攻]] — 1 CP、Charge phase、吹蝇军 分队、Strategic Ploy Stratagem。
+- [[factions/死亡守卫/stratagems/eye-of-the-swarm|虫群之眼]] — 1 CP、Shooting phase、吹蝇军 分队、Strategic Ploy Stratagem。
+- [[factions/死亡守卫/stratagems/cloud-of-flies|蝇群蔽体]] — 1 CP、Shooting phase、Arch-Contaminators 分队、Battle Tactic Stra...
+- [[factions/死亡守卫/stratagems/bloodrust-deluge|血锈洪流]] — 1 CP、Shooting phase、传瘟机械 分队。
+- [[factions/死亡守卫/stratagems/grip-of-the-walking-pox|行尸之触]] — 1 CP、Fight phase、Shamblerot Vectorium 分队、Strategic Ploy Stra...
+- [[factions/死亡守卫/stratagems/shambling-onslaught|蹒跚猛攻]] — 1 CP、Movement phase、Unclean Uprising 分队、Strategic Ploy Strat...
+- [[factions/死亡守卫/stratagems/shambling-wall|蹒跚肉墙]] — 1 CP、Shooting phase、Shamblerot Vectorium 分队、Strategic Ploy S...
+- [[factions/死亡守卫/stratagems/eyestinger-storm|遮天蔽目]] — 1 CP、Command phase、Mortarion’s Hammer 分队、Strategic Ploy Stra...
+- [[factions/死亡守卫/stratagems/gnawing-hunger|饥饿折磨]] — 1 CP、Command phase、Shamblerot Vectorium 分队、Battle Tactic Str...
+- [[factions/死亡守卫/stratagems/droning-horror|鸣叫恐惧]] — 1 CP、Shooting phase、吹蝇军 分队、Battle Tactic Stratagem。
+
+## 强化
+
+- [[factions/死亡守卫/enhancements/droning-chorus|Droning Chorus]] — 15 分、吹蝇军 分队。
+- [[factions/死亡守卫/enhancements/warprot-talisman|亚空间护符]] — 30 分、Death Lord’s Chosen 分队。
+- [[factions/死亡守卫/enhancements/talisman-of-burgeoning|再生护符]] — 25 分、Shamblerot Vectorium 分队。
+- [[factions/死亡守卫/enhancements/beckoning-blight|召唤凋零]] — 20 分、Tallyband Summoners 分队。
+- [[factions/死亡守卫/enhancements/revolting-regeneration|可怖再生]] — 20 分、Virulent Vectorium 分队。
+- [[factions/死亡守卫/enhancements/fountaining-filth|喷涌污秽]] — 0 分、Vectors of Decay 分队。
+- [[factions/死亡守卫/enhancements/rejuvenating-swarm-flyblown-host|回复虫群]] — 10 分、吹蝇军 分队。
+- [[factions/死亡守卫/enhancements/rejuvenating-swarm-paragons-of-putrescence|回复虫群]] — 分数未知、腐坏楷模 分队。
+- [[factions/死亡守卫/enhancements/parasitic-woe-reaper|寄生收割]] — 分数未知、传瘟机械 分队。
+- [[factions/死亡守卫/enhancements/insectile-murmuration|密集虫群]] — 20 分、吹蝇军 分队。
+- [[factions/死亡守卫/enhancements/shriekworm-familiar|尖啸虫使]] — 15 分、Mortarion’s Hammer 分队。
+- [[factions/死亡守卫/enhancements/entropic-knell|恐怖丧钟]] — 15 分、Tallyband Summoners 分队。
+- [[factions/死亡守卫/enhancements/disgusting-reinvigoration|恶心复元]] — 0 分、Arch-Contaminators 分队。
+- [[factions/死亡守卫/enhancements/visions-of-virulence|恶毒预示]] — 15 分、Champions of Contagion 分队。
+- [[factions/死亡守卫/enhancements/sorrowsyphon|悲痛虹吸]] — 10 分、Shamblerot Vectorium 分队。
+- [[factions/死亡守卫/enhancements/eye-of-affliction|折磨之眼]] — 20 分、Mortarion’s Hammer 分队。
+- [[factions/死亡守卫/enhancements/final-ingredient|最终素材]] — 20 分、Champions of Contagion 分队。
+- [[factions/死亡守卫/enhancements/face-of-death|死亡之面]] — 10 分、Death Lord’s Chosen 分队。
+- [[factions/死亡守卫/enhancements/fell-harvester|残暴收割]] — 10 分、Tallyband Summoners 分队。
+- [[factions/死亡守卫/enhancements/foul-constitution|污秽体质]] — 0 分、Vectors of Decay 分队。
+- [[factions/死亡守卫/enhancements/host-of-the-hybridised-pox|混合瘟疫宿主]] — 分数未知、腐坏楷模 分队。
+- [[factions/死亡守卫/enhancements/pox-bearer|瘟疫使者]] — 0 分、Unclean Uprising 分队。
+- [[factions/死亡守卫/enhancements/plagueveil|瘟疫烟幕]] — 25 分、吹蝇军 分队。
+- [[factions/死亡守卫/enhancements/furnace-of-plagues|瘟疫熔炉]] — 25 分、Virulent Vectorium 分队。
+- [[factions/死亡守卫/enhancements/miasmic-odour|瘴气恶臭]] — 0 分、Arch-Contaminators 分队。
+- [[factions/死亡守卫/enhancements/lancet-of-the-worldsore|穿刺世界之疮]] — 分数未知、传瘟机械 分队。
+- [[factions/死亡守卫/enhancements/needle-of-nurgle|精华注射]] — 25 分、Champions of Contagion 分队。
+- [[factions/死亡守卫/enhancements/tendrilous-emissions|索敌毒云]] — 30 分、Mortarion’s Hammer 分队。
+- [[factions/死亡守卫/enhancements/hand-of-nurgle|纳垢之手]] — 0 分、Unclean Uprising 分队。
+- [[factions/死亡守卫/enhancements/daemon-weapon-of-nurgle|纳垢武器]] — 10 分、Virulent Vectorium 分队。
+- [[factions/死亡守卫/enhancements/bilemaw-blight|腐瘟喷吐]] — 10 分、Mortarion’s Hammer 分队。
+- [[factions/死亡守卫/enhancements/helm-of-the-fly-king|蝇王之盔]] — 20 分、Death Lord’s Chosen 分队。
+- [[factions/死亡守卫/enhancements/lord-of-the-walking-pox|行尸之主]] — 15 分、Shamblerot Vectorium 分队。
+- [[factions/死亡守卫/enhancements/tome-of-bounteous-blessings|赐福魔典]] — 20 分、Tallyband Summoners 分队。
+- [[factions/死亡守卫/enhancements/arch-contaminator|超级病源]] — 25 分、Virulent Vectorium 分队。
+- [[factions/死亡守卫/enhancements/vile-vigour|邪恶活力]] — 15 分、Death Lord’s Chosen 分队。
+- [[factions/死亡守卫/enhancements/witherbone-pipes|驱尸灵笛]] — 25 分、Shamblerot Vectorium 分队。
+- [[factions/死亡守卫/enhancements/cornucophagus|魔尘熏香]] — 35 分、Champions of Contagion 分队。
 

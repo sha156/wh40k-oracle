@@ -29,8 +29,8 @@ updated: '2026-07-23'
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| Coiled tentacles | 近战 | D6 | 4+ | 5 | -1 | 2 | extra attacks |
-| Ravaging claws | 近战 | 8 | 2+ | 4 | -1 | 1 | devastating wounds |
+| 卷曲触手 | 近战 | D6 | 4+ | 5 | -1 | 2 | [[core-rules/extra-attacks.md\|额外攻击]] |
+| 凶狠利爪 | 近战 | 8 | 2+ | 4 | -1 | 1 | [[core-rules/devastating-wounds.md\|毁灭伤害]] |
 
 ## 技能
 - **吞噬能量(灵能)**
@@ -41,4 +41,4 @@ updated: '2026-07-23'
 
 ## 关键词
 - **阵营关键词**：Legiones Daemonica
-- **普通关键词**：Slaanesh，Contorted Epitome，Shadow Legion，[[core-rules/character.md|Character]]，[[core-rules/infantry.md|Infantry]]，[[core-rules/psyker.md|Psyker]]，Chaos
+- **普通关键词**：Slaanesh，Contorted Epitome，[[factions/混沌恶魔/detachments/shadow-legion.md|Shadow Legion]]，[[core-rules/character.md|Character]]，[[core-rules/infantry.md|Infantry]]，[[core-rules/psyker.md|Psyker]]，Chaos

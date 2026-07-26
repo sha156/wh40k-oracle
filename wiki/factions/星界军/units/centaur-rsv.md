@@ -1,5 +1,6 @@
 ---
 id: '000004220'
+name_zh: 半人马快速突击战车
 name_en: Centaur RSV
 faction: 星界军
 type: unit
@@ -20,20 +21,20 @@ updated: '2026-07-23'
 ## 属性表
 | 模型 | M | T | SV | W | LD | OC |
 |---|---|---|---|---|---|---|
-| Centaur RSV | 12" | 7 | 3+ | 10 | 7+ | 2 |
+| 半人马快速突击战车 | 12" | 7 | 3+ | 10 | 7+ | 2 |
 
 ## 射击武器
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| Pintle-mounted heavy stubber | 36" | 3 | 4+ | 4 | 0 | 1 | [[core-rules/rapid-fire.md\|rapid fire 3]] |
+| 车顶重机枪 | 36" | 3 | 4+ | 4 | 0 | 1 | [[core-rules/rapid-fire.md\|速射3]] |
 
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| Armoured hull | 近战 | 3 | 4+ | 6 | 0 | 1 | — |
+| 装甲车体 | 近战 | 3 | 4+ | 6 | 0 | 1 | — |
 
 ## 技能
-- **Rapid Strike Vehicle**：While one or more units are embarked within this model, unless this model is Battle-shocked, add 1 to this model’s Objective Control characteristic for every 3 models (rounding down) embarked within it.
+- **快速打击载具**：当有一个或更多单位搭乘该模型时，除该模型处于战斗震慑状态的情况外，每搭载3个（向下取整）模型，该模型的目标控制属性便提高1点。
 
 ## 单位构成
 - **1个模型** — 65 分

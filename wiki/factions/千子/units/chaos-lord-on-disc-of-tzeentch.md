@@ -1,5 +1,5 @@
 ---
-id: 000003597
+id: '000003597'
 name_en: Chaos Lord On Disc Of Tzeentch
 faction: 千子
 type: unit
@@ -27,20 +27,20 @@ updated: '2026-07-23'
 ## 射击武器
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| Plasma pistol – supercharge | 12" | 1 | 2+ | 8 | -3 | 2 | hazardous，pistol |
-| Plasma pistol – standard | 12" | 1 | 2+ | 7 | -2 | 1 | pistol |
-| Combi-bolter | 24" | 2 | 2+ | 4 | 0 | 1 | [[core-rules/rapid-fire.md\|rapid fire 2]] |
-| Bolt pistol | 12" | 1 | 2+ | 4 | 0 | 1 | pistol |
-| Combi-weapon | 24" | 1 | 4+ | 4 | 0 | 1 | [[core-rules/anti.md\|anti-infantry 4+]]，devastating wounds，[[core-rules/rapid-fire.md\|rapid fire 1]] |
+| 等离子手枪（过载） | 12" | 1 | 2+ | 8 | -3 | 2 | [[core-rules/hazardous.md\|危险]]，[[core-rules/pistol.md\|手枪]] |
+| 等离子手枪（标准） | 12" | 1 | 2+ | 7 | -2 | 1 | [[core-rules/pistol.md\|手枪]] |
+| 并联爆弹枪 | 24" | 2 | 2+ | 4 | 0 | 1 | [[core-rules/rapid-fire.md\|速射2]] |
+| 爆弹手枪 | 12" | 1 | 2+ | 4 | 0 | 1 | [[core-rules/pistol.md\|手枪]] |
+| 复合武器 | 24" | 1 | 4+ | 4 | 0 | 1 | [[core-rules/anti.md\|针对步兵4+]]，[[core-rules/devastating-wounds.md\|毁灭伤害]]，[[core-rules/rapid-fire.md\|速射1]] |
 
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| Accursed weapon | 近战 | 6 | 2+ | 5 | -2 | 1 | — |
-| Power fist | 近战 | 5 | 2+ | 8 | -2 | 2 | — |
-| Paired accursed weapons | 近战 | 7 | 2+ | 4 | -1 | 1 | twin-linked |
-| Close combat weapon | 近战 | 6 | 2+ | 4 | 0 | 1 | — |
-| Astartes chainsword | 近战 | 7 | 2+ | 4 | -1 | 1 | — |
+| 诅咒武器 | 近战 | 6 | 2+ | 5 | -2 | 1 | — |
+| 动力拳 | 近战 | 5 | 2+ | 8 | -2 | 2 | — |
+| 成对诅咒武器 | 近战 | 7 | 2+ | 4 | -1 | 1 | [[core-rules/twin-linked.md\|双联]] |
+| 格斗武器 | 近战 | 6 | 2+ | 4 | 0 | 1 | — |
+| 阿斯塔特链锯剑 | 近战 | 7 | 2+ | 4 | -1 | 1 | — |
 
 ## 技能
 - **Lord of Chaos**：Once per battle round, one unit from your army with this ability can use it when its unit is targeted with a Stratagem. If it does, reduce the CP cost of that use of that Stratagem by 1CP.

@@ -9,6 +9,7 @@ fetch 结果缓存到 db_sources/blacklibrary/units.json，供 --offline 重建�
 from __future__ import annotations
 
 import json
+import re
 import sqlite3
 import time
 from pathlib import Path
@@ -120,9 +121,28 @@ def _clean_stats(detail: dict) -> list:
     return out
 
 
-def _en_to_id_map(conn: sqlite3.Connection) -> Dict[str, str]:
-    return {(n or "").strip().lower(): c
-            for c, n in conn.execute("SELECT id, name_en FROM units") if n}
+def _norm_en(name: Optional[str]) -> str:
+    """英文名归一化匹配键：只留字母数字。
+
+    黑图的 name_en 是**全大写、且常丢连字符**（'SHIELD CAPTAIN' vs 库里
+    'Shield-captain'），旧的 `.strip().lower()` 对不上——143 个单位因此没拿到中文名。
+    """
+    return re.sub(r"[^a-z0-9]", "", (name or "").lower())
+
+
+def _en_to_ids(conn: sqlite3.Connection) -> Dict[str, List[str]]:
+    """归一化英文名 → **全部**同名 unit id。
+
+    同一张兵牌会被 Wahapedia 挂在多个阵营下（如 Skitarii Rangers 同时在 AdM 与 QI）。
+    旧实现是 {名字: 单个id}，字典后写覆盖前写 → 只有一行拿到中文，另一行在图鉴里
+    显示英文。这里返回列表，调用方对每一行都回填。
+    """
+    out: Dict[str, List[str]] = {}
+    for cid, name in conn.execute("SELECT id, name_en FROM units"):
+        key = _norm_en(name)
+        if key:
+            out.setdefault(key, []).append(cid)
+    return out
 
 
 def populate_zh_details(db_path, details: List[dict]) -> Dict[str, int]:
@@ -146,28 +166,30 @@ def populate_zh_details(db_path, details: List[dict]) -> Dict[str, int]:
                 source       TEXT DEFAULT 'blackforum'
             )""")
         conn.execute("DELETE FROM unit_zh_detail WHERE source = 'blackforum'")
-        en2id = _en_to_id_map(conn)
+        en2ids = _en_to_ids(conn)
         matched = no_detail = 0
         for r in details:
-            en = (r.get("name_en") or "").strip().lower()
-            cid = en2id.get(en)
-            if not cid:
+            cids = en2ids.get(_norm_en(r.get("name_en")))
+            if not cids:
                 continue
             det = r.get("detail")
             if not det:
                 no_detail += 1
                 continue
             weapons = {"射击武器": det.get("射击武器"), "近战武器": det.get("近战武器")}
-            conn.execute(
-                "INSERT OR REPLACE INTO unit_zh_detail "
-                "(canonical_id, name_zh, faction_zh, score, stats_json, "
-                " abilities_json, weapons_json, intro_json, source) "
-                "VALUES (?,?,?,?,?,?,?,?, 'blackforum')",
-                (cid, r.get("name_zh"), r.get("faction_zh"), r.get("score"),
-                 json.dumps(_clean_stats(det), ensure_ascii=False),
-                 json.dumps(det.get("能力"), ensure_ascii=False),
-                 json.dumps(weapons, ensure_ascii=False),
-                 json.dumps(det.get("简介"), ensure_ascii=False)))
+            # 同名多行＝同一张兵牌的多阵营副本，每行都灌；武器名后续由
+            # zh_weapons 按数值指纹逐行配对，配不上就留英文，不会因此错配
+            for cid in cids:
+                conn.execute(
+                    "INSERT OR REPLACE INTO unit_zh_detail "
+                    "(canonical_id, name_zh, faction_zh, score, stats_json, "
+                    " abilities_json, weapons_json, intro_json, source) "
+                    "VALUES (?,?,?,?,?,?,?,?, 'blackforum')",
+                    (cid, r.get("name_zh"), r.get("faction_zh"), r.get("score"),
+                     json.dumps(_clean_stats(det), ensure_ascii=False),
+                     json.dumps(det.get("能力"), ensure_ascii=False),
+                     json.dumps(weapons, ensure_ascii=False),
+                     json.dumps(det.get("简介"), ensure_ascii=False)))
             matched += 1
         conn.commit()
         return {"records": len(details), "matched": matched,
@@ -180,18 +202,18 @@ def fill_name_zh(db_path, units: List[dict]) -> Dict[str, int]:
     """用黑图书馆中文名补 units.name_zh 的空缺（不覆盖已有值，英文权威不动）。"""
     conn = sqlite3.connect(str(db_path))
     try:
-        en2id = _en_to_id_map(conn)
+        en2ids = _en_to_ids(conn)
         filled = 0
         for u in units:
-            en = (u.get("unitEnglishName") or "").strip().lower()
             zh = (u.get("unitName") or "").strip()
-            cid = en2id.get(en)
-            if not cid or not zh:
+            cids = en2ids.get(_norm_en(u.get("unitEnglishName")))
+            if not cids or not zh:
                 continue
-            cur = conn.execute(
-                "UPDATE units SET name_zh = ? "
-                "WHERE id = ? AND (name_zh IS NULL OR name_zh = '')", (zh, cid))
-            filled += cur.rowcount
+            for cid in cids:      # 同名多行全填（名字就是名字，与挂在哪个阵营无关）
+                cur = conn.execute(
+                    "UPDATE units SET name_zh = ? "
+                    "WHERE id = ? AND (name_zh IS NULL OR name_zh = '')", (zh, cid))
+                filled += cur.rowcount
         conn.commit()
         return {"filled": filled}
     finally:
@@ -308,5 +330,47 @@ def load_zh_detail(db_path, canonical_id: str) -> Optional[dict]:
             "能力": json.loads(row[3]) if row[3] else None,
             "武器": json.loads(row[4]) if row[4] else None,
         }
+    finally:
+        conn.close()
+
+
+# ── 单位中文名的人工补译层（黑图没收录的现役单位）────────────────────
+
+UNIT_OVERRIDES_PATH = Path(__file__).resolve().parent / "zh_unit_overrides.json"
+
+
+def load_unit_overrides(path: Optional[Path] = None) -> Dict[str, str]:
+    """{英文单位名: 中文名}。文件缺失＝还没补译，不是错误。"""
+    p = Path(path) if path else UNIT_OVERRIDES_PATH
+    if not p.exists():
+        return {}
+    try:
+        data = json.loads(p.read_text(encoding="utf-8"))
+    except (json.JSONDecodeError, OSError):
+        return {}
+    terms = data.get("units") if isinstance(data, dict) else None
+    return {str(k): str(v) for k, v in (terms or {}).items() if k and v}
+
+
+def apply_unit_name_overrides(db_path, overrides: Optional[Dict[str, str]] = None
+                              ) -> Dict[str, int]:
+    """人工译名盖到 units.name_zh（同名多行全填）。优先级最高——黑图没有的才在这。
+
+    与 fill_name_zh 一样按归一化英文名匹配，所以大小写/连字符写法不影响命中。
+    """
+    terms = overrides if overrides is not None else load_unit_overrides()
+    if not terms:
+        return {"terms": 0, "filled": 0}
+    conn = sqlite3.connect(str(db_path))
+    try:
+        en2ids = _en_to_ids(conn)
+        filled = 0
+        for en, zh in terms.items():
+            for cid in en2ids.get(_norm_en(en), []):
+                cur = conn.execute(
+                    "UPDATE units SET name_zh = ? WHERE id = ?", (zh, cid))
+                filled += cur.rowcount
+        conn.commit()
+        return {"terms": len(terms), "filled": filled}
     finally:
         conn.close()

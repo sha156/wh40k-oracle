@@ -29,17 +29,17 @@ updated: '2026-07-23'
 ## 射击武器
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| 风暴爆弹枪    | 24" | 2 | 3+ | 4 | 0 | 1 | [[core-rules/rapid-fire.md\|速射 2]] |
+| 风暴爆弹枪    | 24" | 2 | 3+ | 4 | 0 | 1 | [[core-rules/rapid-fire.md\|速射2]] |
 
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| Chainfist | 近战 | 4 | 3+ | 8 | -2 | 2 | [[core-rules/anti.md\|anti-vehicle 3+]] |
+| 链锯拳 | 近战 | 4 | 3+ | 8 | -2 | 2 | [[core-rules/anti.md\|针对载具3+]] |
 | 格斗武器    | 近战 | 5 | 2+ | 4 | 0 | 1 | — |
-| Power fist | 近战 | 4 | 2+ | 8 | -2 | 2 | — |
-| Power weapon | 近战 | 5 | 2+ | 5 | -2 | 1 | — |
-| Thunder hammer | 近战 | 4 | 3+ | 8 | -2 | 2 | devastating wounds |
-| Twin lightning claws | 近战 | 6 | 2+ | 5 | -2 | 1 | twin-linked |
+| 动力拳 | 近战 | 4 | 2+ | 8 | -2 | 2 | — |
+| 动力武器 | 近战 | 5 | 2+ | 5 | -2 | 1 | — |
+| 雷霆锤 | 近战 | 4 | 3+ | 8 | -2 | 2 | [[core-rules/devastating-wounds.md\|毁灭伤害]] |
+| 一对闪电爪 | 近战 | 6 | 2+ | 5 | -2 | 1 | [[core-rules/twin-linked.md\|双联]] |
 
 ## 技能
 - **【阵营技能】：破敌重誓**
@@ -51,4 +51,4 @@ updated: '2026-07-23'
 
 ## 关键词
 - **阵营关键词**：Adeptus Astartes
-- **普通关键词**：[[core-rules/infantry.md|Infantry]]，Imperium，Terminator，[[core-rules/character.md|Character]]，Deathwing，Ancient
+- **普通关键词**：[[core-rules/infantry.md|Infantry]]，Imperium，Terminator，[[core-rules/character.md|Character]]，Deathwing，[[factions/星际战士/units/ancient.md|Ancient]]

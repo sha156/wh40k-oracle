@@ -32,7 +32,7 @@ updated: '2026-07-23'
 | 突击炮 | 24" | 6 | 3+ | 6 | 0 | 1 | [[core-rules/devastating-wounds.md\|毁灭伤害]] |
 | 台风导弹发射器 — 破片弹 | 36" | 2D6 | 3+ | 4 | 0 | 1 | [[core-rules/blast.md\|爆炸]] |
 | 台风导弹发射器 — 穿甲弹 | 36" | 2 | 3+ | 9 | -2 | D6 | — |
-| 重型火焰喷射器 | 12" | D6 | N/A | 5 | -1 | 1 | [[core-rules/ignores-cover.md\|忽略掩体]]，[[core-rules/torrent.md\|喷射]] |
+| 重型火焰喷射器 | 12" | D6 | N/A | 5 | -1 | 1 | [[core-rules/ignores-cover.md\|无视掩体]]，[[core-rules/torrent.md\|洪流]] |
 | 等离子炮 — 标准 | 36" | D3 | 3+ | 7 | -2 | 1 | [[core-rules/blast.md\|爆炸]] |
 | 等离子炮 — 过载 | 36" | D3 | 3+ | 8 | -3 | 2 | [[core-rules/blast.md\|爆炸]]，[[core-rules/hazardous.md\|危险]] |
 | 风暴爆弹枪 | 24" | 2 | 3+ | 4 | 0 | 1 | [[core-rules/rapid-fire.md\|速射2]] |
@@ -40,11 +40,11 @@ updated: '2026-07-23'
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| Chainfist | 近战 | 3 | 4+ | 8 | -2 | 2 | [[core-rules/anti.md\|anti-vehicle 3+]] |
-| 卡利班战戟 | 近战 | 5 | 3+ | 6 | -2 | 2 | precision |
-| Power fist | 近战 | 3 | 3+ | 8 | -2 | 2 | — |
+| 链锯拳 | 近战 | 3 | 4+ | 8 | -2 | 2 | [[core-rules/anti.md\|针对载具3+]] |
+| 卡利班战戟 | 近战 | 5 | 3+ | 6 | -2 | 2 | [[core-rules/precision.md\|精准]] |
+| 动力拳 | 近战 | 3 | 3+ | 8 | -2 | 2 | — |
 | 动力武器 | 近战 | 4 | 3+ | 5 | -2 | 1 | — |
-| Thunder hammer | 近战 | 3 | 4+ | 8 | -2 | 2 | devastating wounds |
+| 雷霆锤 | 近战 | 3 | 4+ | 8 | -2 | 2 | [[core-rules/devastating-wounds.md\|毁灭伤害]] |
 | 双闪电爪 | 近战 | 5 | 3+ | 5 | -2 | 1 | [[core-rules/twin-linked.md\|双联]] |
 
 ## 技能
@@ -53,7 +53,7 @@ updated: '2026-07-23'
 - **阿斯塔特旗帜**：当本单位中包含旗手时，本单位中模型的OC值加1
 - **荣耀之死**：当本单位中包含连队冠军时，本单位的加速骰和冲锋骰结果+1并且你可以0CP对本单位使用英勇介入战略能力
 - **【装备能力】风暴盾**：装备者W值变为4
-- **【装备能力】黑暗守望者**：一次性技能，任意阶段中，本单位可召唤黑暗守望者，如这样做，本单位对抗致命伤时获得不知疼痛4+
+- **【装备能力】黑暗守望者**：一次性技能，任意阶段中，本单位可召唤黑暗守望者，如这样做，本单位对抗致命伤时获得不觉疼痛4+
 
 ## 单位构成
 - **5个模型** — 200 分
@@ -61,4 +61,4 @@ updated: '2026-07-23'
 
 ## 关键词
 - **阵营关键词**：Dark Angels，Adeptus Astartes
-- **普通关键词**：Imperium，[[core-rules/infantry.md|Infantry]]，Deathwing，Deathwing Command Squad，Terminator
+- **普通关键词**：Imperium，[[core-rules/infantry.md|Infantry]]，Deathwing，Deathwing [[factions/星际战士/units/command-squad.md|Command Squad]]，Terminator

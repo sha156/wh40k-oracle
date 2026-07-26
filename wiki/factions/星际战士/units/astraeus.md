@@ -33,8 +33,8 @@ updated: '2026-07-23'
 | 铁幕重机枪 | 36" | 3 | 3+ | 4 | 0 | 1 | [[core-rules/rapid-fire.md\|速射3]] |
 | 等离子根除者 — 标准 | 36" | D6 | 3+ | 7 | -2 | 2 | [[core-rules/blast.md\|爆炸]] |
 | 等离子根除者 — 过载 | 36" | D6 | 3+ | 8 | -3 | 3 | [[core-rules/blast.md\|爆炸]]，[[core-rules/hazardous.md\|危险]] |
-| Storm bolter | 24" | 2 | 3+ | 4 | 0 | 1 | [[core-rules/rapid-fire.md\|rapid fire 2]] |
-| Twin heavy bolter | 36" | 3 | 3+ | 5 | -1 | 2 | [[core-rules/sustained-hits.md\|sustained hits 1]]，twin-linked |
+| 风暴爆弹枪 | 24" | 2 | 3+ | 4 | 0 | 1 | [[core-rules/rapid-fire.md\|速射2]] |
+| 双联重型爆弹枪 | 36" | 3 | 3+ | 5 | -1 | 2 | [[core-rules/sustained-hits.md\|连击1]]，[[core-rules/twin-linked.md\|双联]] |
 | 并联激光炮 | 48" | 1 | 3+ | 12 | -3 | D6+1 | [[core-rules/twin-linked.md\|双联]] |
 | 并联巨型高速炮 | 72" | 12 | 3+ | 9 | -1 | 3 | [[core-rules/sustained-hits.md\|连击1]]，[[core-rules/twin-linked.md\|双联]] |
 
@@ -45,7 +45,7 @@ updated: '2026-07-23'
 
 ## 技能
 - **【阵营技能】：破敌重誓**
-- **压制火力**：你的射击阶段，本模型射击后，选择一个被本模型并联巨型高速炮命中过的敌方单位。直到你的下一个回合开始前，只要本单位还继续留在场上，那个敌方单位就处于被压制状态。被压制单位中的模型攻击时命中骰结果-1。
+- **压制火力**：你的射击阶段，本模型射击后，选择一个被本模型并联巨型高速炮命中过的敌方单位。直到你的[[factions/兽人/stratagems/on-to-da-next.md|下一个]]回合开始前，只要本单位还继续留在场上，那个敌方单位就处于被压制状态。被压制单位中的模型攻击时命中骰结果-1。
 - **严重损伤**：当本模型剩余1-8W时，本模型的OC值-4，每次攻击时命中骰结果-1。
 
 ## 单位构成

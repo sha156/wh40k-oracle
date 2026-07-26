@@ -24,12 +24,12 @@ updated: '2026-07-23'
 ## 射击武器
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| Medusa siege cannon | 36" | D6 | 5+ | 10 | -3 | 3 | blast，heavy，indirect fire |
+| Medusa siege cannon | 36" | D6 | 5+ | 10 | -3 | 3 | [[core-rules/blast.md\|爆炸]]，[[core-rules/heavy.md\|重型]]，[[core-rules/indirect-fire.md\|曲射]] |
 
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| Battery close combat weapons | 近战 | 5 | 4+ | 3 | 0 | 1 | — |
+| 炮组格斗武器 | 近战 | 5 | 4+ | 3 | 0 | 1 | — |
 
 ## 技能
 - **Siege Bombardment**：In your Shooting phase, after this unit has shot, select one enemy unit hit by one or more of those attacks. That enemy unit must take a Battle-shock test.

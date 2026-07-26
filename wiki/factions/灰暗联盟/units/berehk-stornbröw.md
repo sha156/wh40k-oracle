@@ -29,7 +29,7 @@ updated: '2026-07-23'
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| Kromlôk’s Revenge – graviton strikes | 近战 | 4 | 2+ | 10 | -2 | 4 | [[core-rules/anti.md\|anti-monster 3+]]，[[core-rules/anti.md\|anti-vehicle 3+]] |
+| 克罗姆洛克的复仇-重力子轰击 | 近战 | 4 | 2+ | 10 | -2 | 4 | [[core-rules/anti.md\|针对怪物3+]]，[[core-rules/anti.md\|针对载具3+]] |
 | 克罗姆洛克的复仇 - 等离子横扫 | 近战 | 8 | 2+ | 7 | -2 | 2 | — |
 | 战铸拳套 | 近战 | 2 | 2+ | 6 | -2 | 1 | [[core-rules/extra-attacks.md\|额外攻击]] |
 

@@ -1,5 +1,5 @@
 ---
-id: 000000882
+id: '000000882'
 name_zh: 禁军盾卫
 name_en: Custodian Guard
 faction: 帝皇卫队
@@ -30,8 +30,8 @@ updated: '2026-07-23'
 ## 射击武器
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| Guardian spear | 24" | 2 | 2+ | 4 | -1 | 2 | assault |
-| Sentinel blade | 12" | 2 | 2+ | 4 | -1 | 2 | assault，pistol |
+| 卫士之矛 | 24" | 2 | 2+ | 4 | -1 | 2 | [[core-rules/assault.md\|突击]] |
+| 哨兵之剑 | 12" | 2 | 2+ | 4 | -1 | 2 | [[core-rules/assault.md\|突击]]，[[core-rules/pistol.md\|手枪]] |
 
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |

@@ -1,5 +1,5 @@
 ---
-id: 000003984
+id: '000003984'
 name_zh: 黎曼鲁斯惩罚者
 name_en: Leman Russ Punisher
 faction: 基因窃取者教派
@@ -26,10 +26,10 @@ updated: '2026-07-23'
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
 | 等离子炮（标准） | 36" | D3 | 4+ | 7 | -2 | 1 | [[core-rules/blast.md\|爆炸]] |
-| 等离子炮（过载） | 36" | D3 | 4+ | 8 | -3 | 2 | [[core-rules/hazardous.md\|危险]]，[[core-rules/blast.md\|爆炸]] |
+| 等离子炮（过载） | 36" | D3 | 4+ | 8 | -3 | 2 | [[core-rules/blast.md\|爆炸]]，[[core-rules/hazardous.md\|危险]] |
 | 惩罚者加特林 | 24" | 20 | 4+ | 6 | 0 | 1 | — |
 | 风暴爆弹枪 | 24" | 2 | 4+ | 4 | 0 | 1 | [[core-rules/rapid-fire.md\|速射2]] |
-| 猎杀飞弹 | 48" | 1 | 4+ | 14 | -3 | D6 | 单发 |
+| 猎杀飞弹 | 48" | 1 | 4+ | 14 | -3 | D6 | [[core-rules/one-shot.md\|单发]] |
 | 重型爆弹枪 | 36" | 3 | 4+ | 5 | -1 | 2 | [[core-rules/sustained-hits.md\|连击1]] |
 | 重型火焰喷射器 | 12" | D6 | N/A | 5 | -1 | 1 | [[core-rules/ignores-cover.md\|无视掩体]]，[[core-rules/torrent.md\|洪流]] |
 | 重型伐木枪 | 36" | 3 | 4+ | 4 | 0 | 1 | [[core-rules/rapid-fire.md\|速射3]] |

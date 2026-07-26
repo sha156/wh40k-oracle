@@ -1,5 +1,5 @@
 ---
-id: 000001482
+id: '000001482'
 name_zh: 战刃侍从
 name_en: Armiger Warglaive
 faction: 帝国骑士
@@ -29,9 +29,9 @@ updated: '2026-07-23'
 ## 射击武器
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| 热熔枪 | 12" | 1 | 3+ | 9 | -4 | D6 | [[core-rules/melta.md\|热熔 2]] |
-| 封臣重机枪 | 36" | 3 | 3+ | 4 | -1 | 1 | [[core-rules/rapid-fire.md\|速射 3]] |
-| 热能矛 | 18" | 2 | 3+ | 12 | -4 | D6 | [[core-rules/melta.md\|热熔 4]] |
+| 热熔枪 | 12" | 1 | 3+ | 9 | -4 | D6 | [[core-rules/melta.md\|热熔2]] |
+| 封臣重机枪 | 36" | 3 | 3+ | 4 | -1 | 1 | [[core-rules/rapid-fire.md\|速射3]] |
+| 热能矛 | 18" | 2 | 3+ | 12 | -4 | D6 | [[core-rules/melta.md\|热熔4]] |
 
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |

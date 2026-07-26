@@ -1,5 +1,5 @@
 ---
-id: 000003816
+id: '000003816'
 name_zh: 死亡守望杀戮小队
 name_en: Deathwatch Kill Team
 faction: 帝国特勤
@@ -30,7 +30,7 @@ updated: '2026-07-23'
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
 | 爆弹枪 | 24" | 2 | 3+ | 4 | 0 | 1 | — |
-| 破片炮 | 18" | D3 | 4+ | 7 | -1 | 2 | [[core-rules/blast.md\|爆炸]]，[[core-rules/heavy.md\|重型]]，速射D3 |
+| 破片炮 | 18" | D3 | 4+ | 7 | -1 | 2 | [[core-rules/blast.md\|爆炸]]，[[core-rules/heavy.md\|重型]]，[[core-rules/rapid-fire.md\|速射D3]] |
 | 地狱火重型爆弹枪-重型爆弹枪 | 36" | 3 | 4+ | 5 | -1 | 2 | [[core-rules/heavy.md\|重型]]，[[core-rules/sustained-hits.md\|连击1]] |
 | 地狱火重型爆弹枪-重型火焰喷射器 | 12" | D6 | N/A | 5 | -1 | 1 | [[core-rules/ignores-cover.md\|无视掩体]]，[[core-rules/torrent.md\|洪流]] |
 | 复合武器 | 24" | 1 | 4+ | 4 | 0 | 1 | [[core-rules/anti.md\|针对步兵4+]]，[[core-rules/devastating-wounds.md\|毁灭伤害]]，[[core-rules/rapid-fire.md\|速射1]] |
@@ -40,11 +40,11 @@ updated: '2026-07-23'
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| Black Shield blades | 近战 | 4 | 3+ | 5 | -2 | 1 | TwIN-lINkED |
+| 黑盾利刃 | 近战 | 4 | 3+ | 5 | -2 | 1 | [[core-rules/twin-linked.md\|双联]] |
 | 格斗武器 | 近战 | 3 | 3+ | 4 | 0 | 1 | — |
 | 死亡守望雷霆锤 | 近战 | 3 | 4+ | 10 | -2 | 3 | [[core-rules/devastating-wounds.md\|毁灭伤害]] |
 | 动力武器 | 近战 | 3 | 3+ | 5 | -2 | 1 | — |
-| Xenophase blade | 近战 | 4 | 3+ | 5 | -2 | 1 | devastating wounds |
+| 异形相位刃 | 近战 | 4 | 3+ | 5 | -2 | 1 | [[core-rules/devastating-wounds.md\|毁灭伤害]] |
 
 ## 技能
 - **【阵营技能】：派遣特工**

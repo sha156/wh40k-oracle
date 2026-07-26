@@ -1,5 +1,6 @@
 ---
 id: '000001023'
+name_zh: 混沌卵
 name_en: Chaos Spawn
 faction: 千子
 type: unit
@@ -28,10 +29,11 @@ updated: '2026-07-23'
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| Hideous mutations | 近战 | D6+2 | 4+ | 5 | -1 | 2 | — |
+| 骇人异变 | 近战 | D6+2 | 4+ | 5 | -1 | 2 | — |
 
 ## 技能
-- **Regenerating Monstrosities**：At the start of each player’s Command phase, one model in this unit regains up to 3 lost wounds.
+- **【阵营技能】：黑暗契约**
+- **可怖变异【光环】**：本单位 3 寸内的非载具敌方单 位中的模型 OC 值-1
 
 ## 单位构成
 - **2个模型** — 65 分

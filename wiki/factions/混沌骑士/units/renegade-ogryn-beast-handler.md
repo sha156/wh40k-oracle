@@ -1,5 +1,5 @@
 ---
-id: 000003858
+id: '000003858'
 name_en: Renegade Ogryn Beast Handler
 faction: 混沌骑士
 type: unit

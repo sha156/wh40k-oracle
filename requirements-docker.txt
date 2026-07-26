@@ -1,0 +1,58 @@
+# requirements-docker.txt —— 容器镜像用的**钉版**依赖（Stage 5 部署）
+#
+# 与 requirements.txt 的分工：
+#   requirements.txt        开发用，宽松版本区间，跟着本地 .venv 走
+#   requirements-docker.txt 部署用，钉到本地 .venv 实测通过的确切版本
+#
+# 版本来源：2026-07-25 从 .venv（Python 3.9.1）`pip freeze` 取直接依赖。
+# ⚠ 镜像跑的是 Python 3.11（torch 2.8 的 cp39 linux 轮子不确定存在），与本地 3.9
+#   有版本差——代码本身按 3.9 语法写（`from __future__ import annotations`），向上兼容；
+#   镜像里另跑一遍 pytest 作为交叉验证，见 docs/superpowers/specs/2026-07-25-stage5-deploy.md
+#
+# torch 单独装：Dockerfile 里先从 download.pytorch.org/whl/cpu 装 CPU 轮子，
+# 否则 PyPI 默认拉 CUDA 版，凭空多 2GB+ 的 nvidia-* 依赖（本项目纯 CPU 推理）。
+
+# 核心框架
+langchain==0.3.28
+langchain-community==0.3.31
+langchain-core==0.3.84
+langchain-openai==0.3.35
+langchain-experimental==0.3.4
+langchain-text-splitters==0.3.11
+langchain-huggingface==0.3.1
+
+# 向量库
+faiss-cpu==1.13.0
+
+# 嵌入 & Rerank（flashrank 默认不启用，但 app.py 顶层 import 它，必须装）
+torch==2.8.0
+sentence-transformers==5.1.2
+transformers==4.57.3
+FlashRank==0.2.10
+
+# PyTorch 1.11 不兼容 NumPy 2.x
+numpy==1.26.4
+
+# BM25 关键词检索
+rank-bm25==0.2.2
+jieba==0.42.1
+
+# PDF 处理
+pymupdf==1.26.5
+
+# LLM 提供商
+zhipuai==2.1.5.20250825
+
+# 界面（agent 的兜底检索只读调用 app.py，而 app.py 顶层 import streamlit）
+streamlit==1.35.0
+
+# Web API 后端
+fastapi==0.128.8
+uvicorn[standard]==0.39.0
+sse-starlette==3.3.0
+
+# 工具
+python-dotenv==1.2.1
+pytest==8.4.2
+# TestClient 依赖（镜像内跑 web_api 契约测试用）
+httpx==0.28.1

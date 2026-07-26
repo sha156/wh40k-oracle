@@ -1,5 +1,5 @@
 ---
-id: 000000596
+id: '000000596'
 name_zh: 烈焰火龙
 name_en: Fire Dragons
 faction: 艾达灵族
@@ -31,11 +31,11 @@ updated: '2026-07-23'
 ## 射击武器
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| Dragon fusion gun | 12" | 1 | 3+ | 9 | -4 | D6 | assault，[[core-rules/melta.md\|melta 3]] |
-| Dragon fusion pistol | 6" | 1 | 3+ | 9 | -4 | D6 | assault，[[core-rules/melta.md\|melta 3]]，pistol |
-| 龙息喷火器 | 12" | D6+2 | N/A | 6 | -2 | 1 | [[core-rules/assault.md\|突击]]，[[core-rules/ignores-cover.md\|无视掩体]]，[[core-rules/torrent.md\|喷射]] |
-| Exarch’s Dragon fusion gun | 12" | 1 | 3+ | 9 | -4 | D6 | assault，[[core-rules/melta.md\|melta 6]] |
-| 烈焰之矛 | 18" | 1 | 3+ | 12 | -4 | D6 | [[core-rules/assault.md\|突击]]，[[core-rules/melta.md\|热熔 3]] |
+| 火龙热熔枪 | 12" | 1 | 3+ | 9 | -4 | D6 | [[core-rules/assault.md\|突击]]，[[core-rules/melta.md\|热熔3]] |
+| 火龙热熔手枪 | 6" | 1 | 3+ | 9 | -4 | D6 | [[core-rules/assault.md\|突击]]，[[core-rules/melta.md\|热熔3]]，[[core-rules/pistol.md\|手枪]] |
+| 龙息喷火器 | 12" | D6+2 | N/A | 6 | -2 | 1 | [[core-rules/assault.md\|突击]]，[[core-rules/ignores-cover.md\|无视掩体]]，[[core-rules/torrent.md\|洪流]] |
+| 首席的火龙热熔枪 | 12" | 1 | 3+ | 9 | -4 | D6 | [[core-rules/assault.md\|突击]]，[[core-rules/melta.md\|热熔6]] |
+| 烈焰之矛 | 18" | 1 | 3+ | 12 | -4 | D6 | [[core-rules/assault.md\|突击]]，[[core-rules/melta.md\|热熔3]] |
 
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |

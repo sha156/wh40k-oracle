@@ -1,5 +1,5 @@
 ---
-id: 000002708
+id: '000002708'
 name_zh: 凯万-史瑞克
 name_en: Kayvaan Shrike
 faction: 星际战士
@@ -28,7 +28,7 @@ updated: '2026-07-23'
 ## 射击武器
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| Blackout | 18" | 2 | 2+ | 5 | -1 | 2 | pistol，precision |
+| 灭灯 | 18" | 2 | 2+ | 5 | -1 | 2 | [[core-rules/pistol.md\|手枪]]，[[core-rules/precision.md\|精准]] |
 
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |

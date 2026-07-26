@@ -27,12 +27,12 @@ updated: '2026-07-23'
 ## 射击武器
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| Heavy bolt pistol | 18" | 1 | 2+ | 4 | -1 | 1 | Pistol |
+| 重型爆弹手枪 | 18" | 1 | 2+ | 4 | -1 | 1 | [[core-rules/pistol.md\|手枪]] |
 
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| Relic thunder hammer | 近战 | 5 | 2+ | 8 | -2 | 3 | devastating wounds |
+| Relic thunder hammer | 近战 | 5 | 2+ | 8 | -2 | 3 | [[core-rules/devastating-wounds.md\|毁灭伤害]] |
 
 ## 技能
 - **Master of Rites**：In your Command phase, select one of the following to apply to this model’s unit until the end of the turn:<br><ul><li>This model’s unit is eligible to shoot in a turn in which it Advanced.</li><li>This model’s unit is eligible to declare a charge in a turn in it which it Advanced.</li><li>This model’s unit is eligible to shoot and declare a charge in a turn in which it Fell Back.</li></ul>

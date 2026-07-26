@@ -1,5 +1,6 @@
 ---
 id: '000001133'
+name_zh: 纳垢灵
 name_en: Nurglings
 faction: 混沌恶魔
 type: unit
@@ -21,7 +22,7 @@ updated: '2026-07-23'
 ## 属性表
 | 模型 | M | T | SV | W | LD | OC |
 |---|---|---|---|---|---|---|
-| Nurglings | 5" | 3 | 7+ | 4 | 8+ | 0 |
+| 纳垢灵 | 5" | 3 | 7+ | 4 | 8+ | 0 |
 
 ### 特殊保护
 - 5+
@@ -29,10 +30,10 @@ updated: '2026-07-23'
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| Diseased claws and teeth | 近战 | 4 | 5+ | 2 | 0 | 1 | lethal hits |
+| 疫病爪牙 | 近战 | 4 | 5+ | 2 | 0 | 1 | [[core-rules/lethal-hits.md\|致命一击]] |
 
 ## 技能
-- **Mischief Makers**：Each time an enemy unit (excluding <span class="kwb">TITANIC</span> units) within Engagement Range of one or more units with this ability is selected to fight, until the end of the phase, each time a model in that enemy unit makes a melee attack, subtract 1 from the Hit roll.
+- **生性淘气（光环）**：位于该单位近战范围内的敌方单位（巨型单位除外）中的模型进行近战攻击时，直到阶段结束前，攻击的命中掷骰结果减少 1 点。
 
 ## 单位构成
 - **3个模型** — 45 分
@@ -40,4 +41,4 @@ updated: '2026-07-23'
 
 ## 关键词
 - **阵营关键词**：Legiones Daemonica
-- **普通关键词**：[[core-rules/swarm.md|Swarm]]，Nurgle，Daemon，Chaos，[[core-rules/battleline.md|Battleline]]，Shadow Legion，Nurglings
+- **普通关键词**：[[core-rules/swarm.md|Swarm]]，Nurgle，Daemon，Chaos，[[core-rules/battleline.md|Battleline]]，[[factions/混沌恶魔/detachments/shadow-legion.md|Shadow Legion]]，Nurglings

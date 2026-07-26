@@ -24,13 +24,13 @@ updated: '2026-07-23'
 ## 射击武器
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| Heavy bolter | 36" | 3 | 4+ | 5 | -1 | 2 | [[core-rules/sustained-hits.md\|sustained hits 1]] |
-| Lascannon | 48" | 1 | 4+ | 12 | -3 | D6+1 | — |
+| 重型爆弹枪 | 36" | 3 | 4+ | 5 | -1 | 2 | [[core-rules/sustained-hits.md\|连击1]] |
+| 激光炮 | 48" | 1 | 4+ | 12 | -3 | D6+1 | — |
 
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| Armoured hull | 近战 | 6 | 4+ | 8 | 0 | 1 | — |
+| 装甲外壳 | 近战 | 6 | 4+ | 8 | 0 | 1 | — |
 
 ## 技能
 - **Heavy Bombs**：Each time the bearer ends a Normal move, you can select one enemy unit it moved over during that move and roll nine D6, adding 1 to each result if that unit is a <span class="kwb">MONSTER</span> or <span class="kwb">VEHICLE</span>: for each 5+, that unit suffers 1 mortal wound.

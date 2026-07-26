@@ -29,8 +29,8 @@ updated: '2026-07-23'
 ## 射击武器
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| 灵能激流（巫火） | 18" | 1 | 3+ | 12 | -3 | D6+1 | [[core-rules/ignores-cover.md\|忽视掩体]]，灵能 |
-| 灵能激流（聚焦巫火） | 18" | 2 | 3+ | 12 | -3 | D6+1 | [[core-rules/ignores-cover.md\|忽视掩体]]，灵能，[[core-rules/hazardous.md\|危险]] |
+| 灵能激流（巫火） | 18" | 1 | 3+ | 12 | -3 | D6+1 | [[core-rules/ignores-cover.md\|无视掩体]]，[[core-rules/psychic-attacks.md\|灵能]] |
+| 灵能激流（聚焦巫火） | 18" | 2 | 3+ | 12 | -3 | D6+1 | [[core-rules/hazardous.md\|危险]]，[[core-rules/ignores-cover.md\|无视掩体]]，[[core-rules/psychic-attacks.md\|灵能]] |
 
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |

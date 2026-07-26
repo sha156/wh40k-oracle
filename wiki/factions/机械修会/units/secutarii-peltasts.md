@@ -28,15 +28,15 @@ updated: '2026-07-23'
 ## 射击武器
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| Archeotech pistol | 12" | 1 | 4+ | 6 | -1 | 1 | devastating wounds，pistol |
-| Galvanic caster – flechette | 18" | 5 | 4+ | 4 | 0 | 1 | assault |
-| Galvanic caster – hammershot | 24" | 2 | 4+ | 5 | -1 | 1 | heavy |
+| Archeotech pistol | 12" | 1 | 4+ | 6 | -1 | 1 | [[core-rules/devastating-wounds.md\|毁灭伤害]]，[[core-rules/pistol.md\|手枪]] |
+| Galvanic caster – flechette | 18" | 5 | 4+ | 4 | 0 | 1 | [[core-rules/assault.md\|突击]] |
+| Galvanic caster – hammershot | 24" | 2 | 4+ | 5 | -1 | 1 | [[core-rules/heavy.md\|重型]] |
 
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
 | Alpha close combat weapon | 近战 | 2 | 4+ | 5 | -1 | 1 | — |
-| Close combat weapon | 近战 | 1 | 4+ | 3 | 0 | 1 | — |
+| 格斗武器 | 近战 | 1 | 4+ | 3 | 0 | 1 | — |
 
 ## 技能
 - **Enhanced data-tether**：Each time you select the bearer’s unit as the target of a Stratagem, roll one D6: on a 5+, you gain 1CP

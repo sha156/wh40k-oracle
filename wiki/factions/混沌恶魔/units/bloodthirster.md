@@ -1,5 +1,6 @@
 ---
-id: 000002582
+id: '000002582'
+name_zh: 嗜血狂魔
 name_en: Bloodthirster
 faction: 混沌恶魔
 type: unit
@@ -20,7 +21,7 @@ updated: '2026-07-23'
 ## 属性表
 | 模型 | M | T | SV | W | LD | OC |
 |---|---|---|---|---|---|---|
-| Bloodthirster | 12" | 11 | 3+ | 18 | 6+ | 5 |
+| 嗜血狂魔 | 12" | 11 | 3+ | 18 | 6+ | 5 |
 
 ### 特殊保护
 - 4+
@@ -28,26 +29,26 @@ updated: '2026-07-23'
 ## 射击武器
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| Bloodflail | 12" | 1 | 2+ | 16 | -3 | D6+1 | devastating wounds |
-| Hellfire breath | 12" | D6 | N/A | 5 | -1 | 1 | ignores cover，torrent |
-| Lash of Khorne | 12" | 6 | 2+ | 8 | -1 | 2 | — |
+| 鲜血连枷  | 12" | 1 | 2+ | 16 | -3 | D6+1 | [[core-rules/devastating-wounds.md\|毁灭伤害]] |
+| 狱火吐息 | 12" | D6 | N/A | 5 | -1 | 1 | [[core-rules/ignores-cover.md\|无视掩体]]，[[core-rules/torrent.md\|洪流]] |
+| 恐虐长鞭 | 12" | 6 | 2+ | 8 | -1 | 2 | — |
 
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| Axe of Khorne – strike | 近战 | 8 | 2+ | 14 | -4 | D3+1 | — |
-| Axe of Khorne – sweep | 近战 | 16 | 2+ | 8 | -2 | 1 | — |
-| Great axe of Khorne – strike | 近战 | 7 | 2+ | 16 | -4 | D6+2 | — |
-| Great axe of Khorne – sweep | 近战 | 14 | 2+ | 10 | -2 | 2 | — |
+| 恐虐战斧-重击 | 近战 | 8 | 2+ | 14 | -4 | D3+1 | — |
+| 恐虐战斧-横扫 | 近战 | 16 | 2+ | 8 | -2 | 1 | — |
+| 恐虐巨斧-重击 | 近战 | 7 | 2+ | 16 | -4 | D6+2 | — |
+| 恐虐巨斧-横扫 | 近战 | 14 | 2+ | 10 | -2 | 2 | — |
 
 ## 技能
-- **Daemon Lord of Khorne (Aura)**：While a friendly Khorne Legiones Daemonica unit is within 6" of this model, each time a model in that unit makes a melee attack, add 1 to the Hit roll.
-- **Relentless Carnage**：At the end of the Fight phase, you can select one enemy unit within Engagement Range of this model and roll eight D6: for each 4+, that enemy unit suffers 1 mortal wound.
-- **Greater Daemon of Khorne (Aura)**：While a friendly Khorne Legiones Daemonica unit is within 6" of this model, that unit is within your army’s Shadow of Chaos.
+- **恐虐魔王（光环）**：当一个己方恐虐逆理魔军单位中的模型位于此模型6寸内时，每当其进行近战攻击，这次近战攻击的命中结果+1。
+- **不息屠戮**：在近战阶段结束时，你可以选择该模型交战范围内的一个敌方单位并掷 8 枚 D6：每有一个结果为 4+，那个敌方单位便受到 1 处致命伤。
+- **高阶恐虐恶魔（光环)**：当一个己方恐虐逆理魔军单位位于该模型的 6" 内时，那个单位视为位于己方混沌之影之中。
 
 ## 单位构成
 - **1个模型** — 320 分
 
 ## 关键词
 - **阵营关键词**：Legiones Daemonica
-- **普通关键词**：Daemon，Bloodthirster，Shadow Legion，Fly，Khorne，Chaos，Monster，[[core-rules/character.md|Character]]
+- **普通关键词**：Daemon，Bloodthirster，[[factions/混沌恶魔/detachments/shadow-legion.md|Shadow Legion]]，Fly，Khorne，Chaos，Monster，[[core-rules/character.md|Character]]

@@ -27,17 +27,17 @@ updated: '2026-07-23'
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
 | 爆弹手枪   | 12" | 1 | 3+ | 4 | 0 | 1 | [[core-rules/pistol.md\|手枪]] |
-| Smite – witchfire | 24" | D6 | 3+ | 5 | -1 | D3 | psychic |
-| Smite – focused witchfire | 24" | D6 | 3+ | 6 | -2 | D3 | devastating wounds，hazardous，psychic |
+| 惩击（巫火） | 24" | D6 | 3+ | 5 | -1 | D3 | [[core-rules/psychic-attacks.md\|灵能]] |
+| 惩击（聚焦） | 24" | D6 | 3+ | 6 | -2 | D3 | [[core-rules/devastating-wounds.md\|毁灭伤害]]，[[core-rules/hazardous.md\|危险]]，[[core-rules/psychic-attacks.md\|灵能]] |
 
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| Force weapon | 近战 | 4 | 3+ | 6 | -1 | D3 | psychic |
+| 灵能武器 | 近战 | 4 | 3+ | 6 | -1 | D3 | [[core-rules/psychic-attacks.md\|灵能]] |
 
 ## 技能
 - **【阵营技能】：破敌重誓**
-- **灵能头冠**：本模型所领导的单位，其中的模型遭到【灵 能】攻击时获得【不知疼痛 4+】技能
+- **灵能头冠**：本模型所领导的单位，其中的模型遭到【灵 能】攻击时获得【不觉疼痛 4+】技能
 - **心灵壁垒【灵能】**：本模型所领导的单位，其中的模型拥有 4+特殊保护
 
 ## 单位构成

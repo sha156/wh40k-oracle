@@ -1,5 +1,5 @@
 ---
-id: 000003709
+id: '000003709'
 name_en: Ufthak Blackhawk
 faction: 兽人
 type: unit
@@ -27,16 +27,16 @@ updated: '2026-07-23'
 ## 射击武器
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| Shokk rifle | 24" | 1 | 4+ | 8 | -2 | D6+1 | devastating wounds，hazardous，precision |
+| Shokk rifle | 24" | 1 | 4+ | 8 | -2 | D6+1 | [[core-rules/devastating-wounds.md\|毁灭伤害]]，[[core-rules/hazardous.md\|危险]]，[[core-rules/precision.md\|精准]] |
 
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| Princess’ jaws | 近战 | 2 | 4+ | 4 | 0 | 1 | extra attacks |
-| Snazzhammer | 近战 | 4 | 3+ | 10 | -2 | 2 | devastating wounds |
+| Princess’ jaws | 近战 | 2 | 4+ | 4 | 0 | 1 | [[core-rules/extra-attacks.md\|额外攻击]] |
+| Snazzhammer | 近战 | 4 | 3+ | 10 | -2 | 2 | [[core-rules/devastating-wounds.md\|毁灭伤害]] |
 
 ## 技能
-- **Tellyporta Tech**：While this model is leading a unit, models in that unit have the Deep Strike ability.
+- **[[factions/兽人/enhancements/tellyporta-bully-boyz.md|Tellyporta]] Tech**：While this model is leading a unit, models in that unit have the Deep Strike ability.
 - **Gargantsmasha**：Each time this model makes an attack that targets a <span class="kwb">TITANIC</span> unit, you can re-roll the Hit roll and you can re-roll the Wound roll.
 
 ## 单位构成

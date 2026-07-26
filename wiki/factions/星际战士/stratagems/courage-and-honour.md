@@ -1,0 +1,31 @@
+---
+id: '000010634004'
+name_en: COURAGE AND HONOUR!
+faction: 星际战士
+type: stratagem
+detachment: Blade of Ultramar
+cp: 1
+phase: Fight phase
+stratagem_type: Blade of Ultramar – Battle Tactic Stratagem
+tags:
+- stratagem
+- stratagem/星际战士
+- 星际战士
+sources:
+- book: 官方结构库 db/wh40k.sqlite（Wahapedia 11 版镜像）
+updated: '2026-07-26'
+---
+
+1 CP、Fight phase、[[factions/星际战士/detachments/blade-of-ultramar.md|Blade of Ultramar]] 分队、Battle Tactic Stratagem。
+
+## 使用时机
+
+Fight phase.
+
+## 使用对象
+
+One ADEPTUS ASTARTES unit from your army.
+
+## 效果
+
+Until the end of the phase, melee weapons equipped by models in your unit have the [LANCE] ability. If your unit is under the effects of the Assault Doctrine, until the end of the phase, improve the Armour Penetration characteristic of such weapons by 1 as well.

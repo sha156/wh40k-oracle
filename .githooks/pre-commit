@@ -4,7 +4,11 @@ set -eu
 repo_root=$(git rev-parse --show-toplevel)
 cd "$repo_root"
 
-if git diff --cached --name-only | grep -Eq '(^|/)\.env($|\.|/)|(^|/)\.streamlit/secrets\.toml$'; then
+# .env.example 是唯一该进库的：它是环境变量说明书、只有空占位。先把它滤掉，
+# 否则 \.env\. 这一支会把它一起拦下（Stage 5 改这个文件时踩到）。
+if git diff --cached --name-only \
+  | grep -Ev '(^|/)\.env\.example$' \
+  | grep -Eq '(^|/)\.env($|\.|/)|(^|/)\.streamlit/secrets\.toml$'; then
   echo "Blocked: do not commit .env or .streamlit/secrets.toml" >&2
   exit 1
 fi

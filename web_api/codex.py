@@ -30,19 +30,57 @@ _FACTION_ZH: Dict[str, str] = {
 }
 
 
-def list_factions(db_path) -> List[Dict[str, Any]]:
-    """有单位的阵营列表：{id, name, nameZh, count}，按单位数降序。"""
+def _current_unit_ids(conn: sqlite3.Connection) -> set:
+    """现役单位 id 集合 = 出现在官方现行 MFM 点数表 **或** 被黑图书馆收录。
+
+    库里 1715 条来自 Wahapedia 全量，其中 553 条是 Legends / 福基世界 / 退环境条目
+    （Karandras、Vampire Raider、Secutarii…），比赛里摆不上桌，默认不该占满图鉴。
+
+    为什么要两个来源取并集而不是只看 MFM：官方 MFM 页只列 30 个阵营，**没有
+    Harlequins 那一组**（实测 aeldari 81 条里无 Troupe/Solitaire/Death Jester），
+    只按 MFM 判会把 199 个在售单位误归档。黑图书馆收录面≈在售单位，正好补上这个洞。
+    """
+    cur = set()
+    for uid, pj in conn.execute("SELECT id, points_json FROM units"):
+        try:
+            if pj and (json.loads(pj) or {}).get("mfm"):
+                cur.add(uid)
+        except (json.JSONDecodeError, TypeError):
+            continue
+    for (uid,) in conn.execute("SELECT canonical_id FROM unit_zh_detail"):
+        cur.add(uid)
+    return cur
+
+
+def list_factions(db_path, include_legacy: bool = False) -> List[Dict[str, Any]]:
+    """有单位的阵营列表：{id, name, nameZh, count, legacyCount}，按单位数降序。
+
+    count 默认只数现役单位（与列表口径一致，否则数字对不上会让人以为列表漏了）。
+    """
     conn = sqlite3.connect(str(db_path))
     try:
+        current = _current_unit_ids(conn)
         rows = conn.execute(
-            "SELECT f.id, f.name, COUNT(u.id) n "
-            "FROM factions f LEFT JOIN units u ON u.faction_id = f.id "
-            "GROUP BY f.id HAVING n > 0 ORDER BY n DESC"
-        ).fetchall()
-        return [
-            {"id": fid, "name": name, "nameZh": _FACTION_ZH.get(fid), "count": n}
-            for fid, name, n in rows
+            "SELECT f.id, f.name, u.id FROM factions f "
+            "JOIN units u ON u.faction_id = f.id").fetchall()
+        tally: Dict[str, List[int]] = {}
+        names: Dict[str, str] = {}
+        for fid, fname, uid in rows:
+            names[fid] = fname
+            slot = tally.setdefault(fid, [0, 0])
+            if uid in current:
+                slot[0] += 1
+            else:
+                slot[1] += 1
+        out = [
+            {"id": fid, "name": names[fid], "nameZh": _FACTION_ZH.get(fid),
+             "count": (n_cur + n_leg) if include_legacy else n_cur,
+             "legacyCount": n_leg}
+            for fid, (n_cur, n_leg) in tally.items()
+            if (n_cur + n_leg if include_legacy else n_cur) > 0
         ]
+        out.sort(key=lambda f: -f["count"])
+        return out
     finally:
         conn.close()
 
@@ -58,10 +96,16 @@ def _min_points(points_json: Optional[str]) -> Optional[int]:
     return min(costs) if costs else None
 
 
-def list_units(db_path, faction_id: str) -> List[Dict[str, Any]]:
-    """某阵营单位列表：{id, nameEn, nameZh, pts}，按英文名排序。"""
+def list_units(db_path, faction_id: str,
+               include_legacy: bool = False) -> List[Dict[str, Any]]:
+    """某阵营单位列表：{id, nameEn, nameZh, pts, legacy}，按英文名排序。
+
+    默认只列现役（见 _current_unit_ids）；include_legacy=True 时把传承条目一并返回，
+    带 legacy=True 供前端标注——归档不是删除，直链单位页始终可访问。
+    """
     conn = sqlite3.connect(str(db_path))
     try:
+        current = _current_unit_ids(conn)
         rows = conn.execute(
             "SELECT id, name_en, name_zh, points_json FROM units "
             "WHERE faction_id = ? ORDER BY name_en",
@@ -69,10 +113,14 @@ def list_units(db_path, faction_id: str) -> List[Dict[str, Any]]:
         ).fetchall()
         out = []
         for uid, en, zh, pj in rows:
+            legacy = uid not in current
+            if legacy and not include_legacy:
+                continue
             pmin = _min_points(pj)
             out.append({
                 "id": uid, "nameEn": en, "nameZh": zh,
                 "pts": ("{} 分起".format(pmin) if pmin is not None else None),
+                "legacy": legacy,
             })
         return out
     finally:
@@ -123,36 +171,50 @@ def _load_faction_keywords(conn: sqlite3.Connection, unit_id: str) -> List[str]:
 def _localize_weapon_names(
     ds_dict: Dict[str, Any], zh: Optional[Dict[str, Any]],
 ) -> Dict[str, str]:
-    """zh 模式：黑图中文层武器名/关键词覆盖到英文武器行（原地改 ds_dict['weapons']）。
+    """zh 模式：用**落库的** weapons.name_zh 覆盖武器名（原地改 ds_dict['weapons']）。
 
-    诚实约束：数值永远用英文权威表（黑图数值有漂移，如智能导弹 A=3 vs 官方 4），
-    只换 name 与 keywords 显示；按 kind 内位置匹配，且**数量不等则整组不换**——
-    错配的中文名比英文名更糟（自信的错误）。
+    2026-07-25 改法：旧实现在渲染时把黑图的中文武器列表按 kind 内**位置**贴到英文行上，
+    只用"数量相等"当守卫——挡不住顺序不同的情形，战斗修女小队因此把「爆弹手枪」贴到了
+    Ministorum hand flamer（A=D6/BS=N/A）那一行。数值对、名字错，用户无从察觉。
+    现在配对在离线侧按数值指纹做（db_compile/zh_weapons.py），配不上就留空 → 显示英文。
 
+    数值永远用英文权威表（黑图数值有漂移，如智能导弹 A=3 vs 官方 4），这里只换 name。
     返回 en→zh 武器名映射（供 loadout 文本翻译复用）。"""
     name_map: Dict[str, str] = {}
-    if not zh:
-        return name_map
-    wj = zh.get("武器") or {}
-    if not isinstance(wj, dict):
-        return name_map
-    kind_map = {"ranged": wj.get("射击武器") or [], "melee": wj.get("近战武器") or []}
-    weapons = ds_dict.get("weapons") or []
-    for kind, zh_rows in kind_map.items():
-        idx = [i for i, w in enumerate(weapons) if w.get("kind") == kind]
-        if not zh_rows or len(idx) != len(zh_rows):
-            continue  # 数量不等：不换，保英文
-        for i, zh_row in zip(idx, zh_rows):
-            nm = str((zh_row or {}).get("name") or "").strip()
-            if nm:
-                en_name = str(weapons[i].get("name") or "").strip()
-                if en_name:
-                    name_map[en_name] = nm
-                weapons[i]["name"] = nm
-            kw = (zh_row or {}).get("skill")
-            if isinstance(kw, list) and kw:
-                weapons[i]["keywords"] = [str(k) for k in kw]
+    for w in ds_dict.get("weapons") or []:
+        zh_name = str(w.get("name_zh") or "").strip()
+        en_name = str(w.get("name") or "").strip()
+        if zh_name and en_name:
+            name_map[en_name] = zh_name
+            w["name"] = zh_name
     return name_map
+
+
+def _localize_weapon_keywords(conn: sqlite3.Connection, ds_dict: Dict[str, Any]) -> None:
+    """zh 模式：武器关键词（USR）按对照表逐词翻译，查不到的保英文。
+
+    对照表是离线从**单关键词对单关键词**的行学来的（db_compile.zh_weapons），
+    逐词查表没有对齐问题——USR 是封闭小词表，不像武器名那样每单位不同。
+    """
+    try:
+        gloss = {en: zh for en, zh in conn.execute(
+            "SELECT term_en, term_zh FROM zh_keyword_glossary")}
+    except sqlite3.OperationalError:
+        return                      # 老库没这张表：保英文，不报错
+    if not gloss:
+        return
+    for w in ds_dict.get("weapons") or []:
+        kws = w.get("keywords") or []
+        if not kws:
+            continue
+        out: List[str] = []
+        for k in kws:
+            # 库里一格常是「heavy, devastating wounds」这种逗号串，先拆再逐词查
+            for part in str(k).split(","):
+                token = part.strip()
+                if token:
+                    out.append(gloss.get(token.upper(), token))
+        w["keywords"] = out
 
 
 _LOADOUT_PREFIXES = [
@@ -237,6 +299,7 @@ def unit_card(
         zh_composition: List[str] = []
         if lang == "zh":
             name_map = _localize_weapon_names(ds_dict, zh)
+            _localize_weapon_keywords(conn, ds_dict)
             _localize_composition(ds_dict)
             if meta.get("loadout"):
                 meta["loadout"] = _localize_loadout(str(meta["loadout"]), name_map)

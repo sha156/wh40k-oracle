@@ -1,5 +1,5 @@
 ---
-id: 000003946
+id: '000003946'
 name_en: Quartermaster Cadre Squad
 faction: 基因窃取者教派
 type: unit
@@ -25,7 +25,7 @@ updated: '2026-07-23'
 ## 射击武器
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| Quartermaster’s pistol | 12" | 1 | 3+ | 3 | -1 | 1 | pistol |
+| Quartermaster’s pistol | 12" | 1 | 3+ | 3 | -1 | 1 | [[core-rules/pistol.md\|手枪]] |
 
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |

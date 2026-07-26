@@ -1,5 +1,5 @@
 ---
-id: 000003837
+id: '000003837'
 name_en: Death Company Marines with Boltguns and Jump Packs
 faction: 星际战士
 type: unit
@@ -25,21 +25,21 @@ updated: '2026-07-23'
 ## 射击武器
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| Bolt pistol | 12" | 1 | 3+ | 4 | 0 | 1 | pistol |
-| Boltgun | 24" | 2 | 3+ | 4 | 0 | 1 | — |
-| Hand flamer | 12" | D6 | N/A | 3 | 0 | 1 | ignores cover，pistol，torrent |
-| Inferno pistol | 6" | 1 | 3+ | 8 | -4 | D3 | pistol，[[core-rules/melta.md\|melta 2]] |
-| Plasma pistol – standard | 12" | 1 | 3+ | 7 | -2 | 1 | pistol |
-| Plasma pistol – supercharge | 12" | 1 | 3+ | 8 | -3 | 2 | hazardous，pistol |
+| 爆弹手枪 | 12" | 1 | 3+ | 4 | 0 | 1 | [[core-rules/pistol.md\|手枪]] |
+| 爆弹枪 | 24" | 2 | 3+ | 4 | 0 | 1 | — |
+| 喷火手枪 | 12" | D6 | N/A | 3 | 0 | 1 | [[core-rules/ignores-cover.md\|无视掩体]]，[[core-rules/pistol.md\|手枪]]，[[core-rules/torrent.md\|洪流]] |
+| 狱火手枪 | 6" | 1 | 3+ | 8 | -4 | D3 | [[core-rules/pistol.md\|手枪]]，[[core-rules/melta.md\|热熔2]] |
+| 等离子手枪（标准） | 12" | 1 | 3+ | 7 | -2 | 1 | [[core-rules/pistol.md\|手枪]] |
+| 等离子手枪（过载） | 12" | 1 | 3+ | 8 | -3 | 2 | [[core-rules/hazardous.md\|危险]]，[[core-rules/pistol.md\|手枪]] |
 
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| Astartes chainsword | 近战 | 4 | 3+ | 4 | -1 | 1 | — |
-| Power fist | 近战 | 3 | 3+ | 8 | -2 | 2 | — |
-| Power weapon | 近战 | 4 | 3+ | 5 | -2 | 1 | — |
-| Thunder hammer | 近战 | 3 | 4+ | 8 | -2 | 2 | devastating wounds |
-| Close combat weapon | 近战 | 3 | 3+ | 4 | 0 | 1 | — |
+| 阿斯塔特链锯剑 | 近战 | 4 | 3+ | 4 | -1 | 1 | — |
+| 动力拳 | 近战 | 3 | 3+ | 8 | -2 | 2 | — |
+| 动力武器 | 近战 | 4 | 3+ | 5 | -2 | 1 | — |
+| 雷霆锤 | 近战 | 3 | 4+ | 8 | -2 | 2 | [[core-rules/devastating-wounds.md\|毁灭伤害]] |
+| 格斗武器 | 近战 | 3 | 3+ | 4 | 0 | 1 | — |
 
 ## 技能
 - **黑怒**：Each time a model in this unit makes an attack, you can re-roll the Hit roll. While this unit is not within 12" of one or more friendly <span class="kwb">CHAPLAIN</span> models, it cannot be selected to Fall Back and the Objective Control characteristic of models in this unit is 0.
@@ -52,4 +52,4 @@ updated: '2026-07-23'
 
 ## 关键词
 - **阵营关键词**：Adeptus Astartes，Blood Angels
-- **普通关键词**：Jump Pack，[[core-rules/grenades.md|Grenades]]，Imperium，Death Company，Death Company Marines with boltguns and Jump Packs，Fly，[[core-rules/infantry.md|Infantry]]
+- **普通关键词**：Jump Pack，[[core-rules/grenades.md|Grenades]]，Imperium，Death Company，[[factions/星际战士/units/death-company-marines.md|Death Company Marines]] with boltguns and Jump Packs，Fly，[[core-rules/infantry.md|Infantry]]

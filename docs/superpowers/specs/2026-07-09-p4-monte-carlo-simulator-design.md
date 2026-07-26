@@ -84,7 +84,7 @@
 | 输入 | 实况 | 装配层对策 |
 |------|------|-----------|
 | **每档模型数**（blast/团灭必需） | `models.count_options_json` **全库 0/1817 非空**；模型数只以自由文本存 `units.points_json.items[].desc` 的 `"10 models"`/`"5 models"` | 正则从 desc 抽每档模型数 |
-| **武器 loadout**（哪些模型拿哪把、几把） | `weapons` 是**选项池**（Warboss 列 5 把互斥），无数量、无模型归属 | P4：**手动 `options.loadout`**；单模型单位可自动（选项池即其全部武器） |
+| **武器 loadout**（哪些模型拿哪把、几把） | `weapons` 是**选项池**（Warboss 列 5 把互斥），无数量、无模型归属 | P4：**手动 `options.loadout`**；单模型单位可自动（选项池即其全部武器）。**2026-07-25 修正**：池先按阶段收窄（`assembly.usable_in_phase`），该阶段①0 把可开火 → `no_weapon_for_phase` 指路换阶段（158 个单位无远程武器，此前在射击阶段收到一个填不满的装配面板）；②恰好 1 把 → 自动装配 `count=模型数` 并在 `warning` 披露（无互斥选项可选，逼用户"选唯一项"纯属卡住；1012 个单位近战只有 1 把）；③≥2 把 → 照旧要求手动 loadout。跨阶段 loadout（纯近战武器打射击）由"ok + 全 0 报告 + warning"改为显式失败 |
 | **多模型混编单位** | **94/1715** 个 unit 有 2-4 行异质 model（如 Kill Team T4/T5 混编） | 契约支持多 model 行（见第六节 `TargetProfile.model_rows`）；未指定时按主模型行 + 警示 |
 | **同名多 profile 武器** | **76 组** `(unit_id,name_en)` 重复（远近双模式 `30"`/`Melee`） | `WeaponProfile.range` 字段 + 按 phase 过滤（`range=='Melee'` vs 数字射程）+ 去重策略 |
 

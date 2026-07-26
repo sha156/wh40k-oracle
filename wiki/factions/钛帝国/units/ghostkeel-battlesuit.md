@@ -31,7 +31,7 @@ updated: '2026-07-23'
 | 融合加速炮 | 18" | 2 | 4+ | 12 | -4 | D6 | [[core-rules/melta.md\|热熔2]] |
 | 并联爆裂速射炮 | 18" | 4 | 4+ | 5 | 0 | 1 | [[core-rules/twin-linked.md\|双联]] |
 | 并联融合炮 | 12" | 1 | 4+ | 9 | -4 | D6 | [[core-rules/melta.md\|热熔2]]，[[core-rules/twin-linked.md\|双联]] |
-| 并联钛式火焰喷射器 | 12" | D6 | N/A | 4 | 0 | 1 | [[core-rules/ignores-cover.md\|忽略掩体]]，[[core-rules/torrent.md\|喷射]]，[[core-rules/twin-linked.md\|双联]] |
+| 并联钛式火焰喷射器 | 12" | D6 | N/A | 4 | 0 | 1 | [[core-rules/ignores-cover.md\|无视掩体]]，[[core-rules/torrent.md\|洪流]]，[[core-rules/twin-linked.md\|双联]] |
 
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |

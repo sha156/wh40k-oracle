@@ -1,5 +1,5 @@
 ---
-id: 000000478
+id: '000000478'
 name_zh: 巨噬兽
 name_en: Haruspex
 faction: 泰伦虫族

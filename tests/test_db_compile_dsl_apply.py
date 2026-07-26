@@ -234,6 +234,12 @@ class TestMaterialize:
         # == 投影结果计数（applied+already）。物化目标库：detachments 源行按真实
         # id/文本造行，其余行照 payload id 造壳
         import pathlib
+
+        import pytest
+        # 真源指纹要跟真库对，缺库时该 skip 而不是抛 sqlite3.OperationalError
+        # （CI 里 db/ 不在版本库；旧写法会让 CI 因"环境没数据"而红，掩盖真回归）
+        if not pathlib.Path("db/wh40k.sqlite").exists():
+            pytest.skip("需要 db/wh40k.sqlite（真源 payload 指纹对账）")
         all_entries = []
         for f in sorted(pathlib.Path("dsl_payloads").glob("*.json")):
             payload = json.loads(f.read_text(encoding="utf-8"))

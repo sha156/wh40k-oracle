@@ -30,7 +30,7 @@ updated: '2026-07-23'
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
 | 爆能手枪 | 6" | 1 | 3+ | 8 | -4 | D3 | [[core-rules/pistol.md\|手枪]] |
-| 毒晶手枪 | 12" | 1 | 3+ | 2 | 0 | 1 | [[core-rules/anti.md\|针对步兵 3+]]，[[core-rules/assault.md\|突击]]，[[core-rules/pistol.md\|手枪]] |
+| 毒晶手枪 | 12" | 1 | 3+ | 2 | 0 | 1 | [[core-rules/anti.md\|针对步兵3+]]，[[core-rules/assault.md\|突击]]，[[core-rules/pistol.md\|手枪]] |
 
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |

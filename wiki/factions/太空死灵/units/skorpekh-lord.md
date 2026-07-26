@@ -1,5 +1,5 @@
 ---
-id: 000002109
+id: '000002109'
 name_zh: 荒蝎领主
 name_en: Skorpekh Lord
 faction: 太空死灵
@@ -29,12 +29,12 @@ updated: '2026-07-23'
 ## 射击武器
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| Enmitic annihilator | 18" | 2 | 2+ | 6 | -1 | 1 | [[core-rules/rapid-fire.md\|rapid fire 2]] |
+| 憎火歼灭炮 | 18" | 2 | 2+ | 6 | -1 | 1 | [[core-rules/rapid-fire.md\|速射2]] |
 
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| Flensing claw | 近战 | 8 | 2+ | 6 | -1 | 1 | — |
+| 剥皮爪 | 近战 | 8 | 2+ | 6 | -1 | 1 | — |
 | 超相位掠命巨刃      | 近战 | 4 | 2+ | 10 | -3 | 3 | — |
 
 ## 技能
@@ -47,4 +47,4 @@ updated: '2026-07-23'
 
 ## 关键词
 - **阵营关键词**：Necrons
-- **普通关键词**：Destroyer Cult，[[core-rules/character.md|Character]]，[[core-rules/infantry.md|Infantry]]，Skorpekh Lord
+- **普通关键词**：Destroyer Cult，[[core-rules/character.md|Character]]，[[core-rules/infantry.md|Infantry]]，Skorpekh [[factions/太空死灵/units/lord.md|Lord]]

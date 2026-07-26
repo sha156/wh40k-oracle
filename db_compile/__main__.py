@@ -18,6 +18,11 @@ def main() -> None:
     p.add_argument("--no-restore", action="store_true",
                    help="只重建骨架，不补回官方 MFM 分数/别名/中文层（危险：会留下降级库）")
 
+    mg = sub.add_parser(
+        "migrate",
+        help="旧库补齐后加的列（detachments 容器名/stratagems type+turn），幂等")
+    mg.add_argument("--db", default="db/wh40k.sqlite")
+
     x = sub.add_parser("crosscheck", help="BSData ↔ Wahapedia 英文属性交叉校验")
     x.add_argument("--bsdata", default="db_sources/bsdata")
     x.add_argument("--db", default="db/wh40k.sqlite")
@@ -64,6 +69,31 @@ def main() -> None:
     en.add_argument("--csv", default="db_sources/wahapedia/Enhancements.csv")
     en.add_argument("--db", default="db/wh40k.sqlite")
 
+    zw = sub.add_parser(
+        "zh-weapons",
+        help="中文武器名：黑图中文兵牌 × 库内英文武器按数值指纹配对 → weapons.name_zh")
+    zw.add_argument("--db", default="db/wh40k.sqlite")
+    zw.add_argument("--dry-run", action="store_true", help="只统计不写库")
+    zw.add_argument("--missing", action="store_true",
+                    help="列出现役单位里仍缺中文名的武器（按出现次数排序，供补译）")
+
+    zu = sub.add_parser(
+        "zh-units",
+        help="单位中文名人工补译层：zh_unit_overrides.json → units.name_zh（黑图没收录的现役单位）")
+    zu.add_argument("--db", default="db/wh40k.sqlite")
+
+    oz = sub.add_parser(
+        "official-zh",
+        help="GW 官方中文名：默认从官方中文包重新指纹配对出映射文件；"
+             "--apply 则把现成映射投影进库（战略/强化 name_zh + 分队容器中文名表）")
+    oz.add_argument("--pdf-dir", default="data/官方中文")
+    oz.add_argument("--db", default="db/wh40k.sqlite")
+    oz.add_argument("--out", default="db_compile/official_zh_names.json")
+    oz.add_argument("--apply", action="store_true",
+                    help="不重新解析 PDF，直接把 --out 指向的映射落库（离线、秒级）")
+    oz.add_argument("--dry-run", action="store_true",
+                    help="配合 --apply：只算不写，报出会覆盖掉哪些既有中文名")
+
     d = sub.add_parser(
         "downloads",
         help="官方下载页版本监控：harvest 建基线 / check 比对报改版（需 3.11+scrapling 渲染）")
@@ -98,6 +128,15 @@ def main() -> None:
         print("行数:", report.row_counts)
         if report.skipped:
             print("⚠️  缺 id 跳过行数:", report.skipped)
+        # 解析对账：裸换行/格式漂移会让解析行数与文件真实条目数对不上，必须吼出来
+        bad = report.unreconciled()
+        if bad:
+            print("\n⚠️  CSV 解析对账不平（解析行数 ≠ 文件真实条目数，疑格式漂移）：")
+            for name, a in sorted(bad.items()):
+                print(f"    {name}: 解析 {a['parsed_rows']} vs 真实 "
+                      f"{a['expected_rows']}（物理行 {a['physical_lines']}）")
+        else:
+            print(f"CSV 解析对账：{len(report.csv_audit)} 个文件差额全为 0 ✅")
         if report.missing_csv:
             print("待下载 CSV：", ", ".join(report.missing_csv))
         if args.no_restore:
@@ -109,6 +148,19 @@ def main() -> None:
             from db_compile.update import UpdateConfig, restore_authority_layers
             restore_authority_layers(UpdateConfig(
                 db=Path(args.db), csv_dir=Path(args.csv_dir), terms=Path(args.terms)))
+    elif args.cmd == "migrate":
+        import sqlite3
+
+        from db_compile.schema import ensure_columns
+
+        conn = sqlite3.connect(args.db)
+        try:
+            added = ensure_columns(conn)
+            conn.commit()
+        finally:
+            conn.close()
+        print(f"补列：{'、'.join(added) if added else '无（已是最新结构）'}")
+        print("  注意：补出来的列是空的，数据要靠 `db_compile build` 从 CSV 重灌")
     elif args.cmd == "crosscheck":
         import json
 
@@ -329,15 +381,100 @@ def main() -> None:
             print(f"\n强化落库：插入 {rep['inserted']} / 表内 {rep['table_total']} 条 / "
                   f"覆盖 {rep['detachments']} 分队")
             print("  注意：build 重建会一并重导（已进 build 流程），无需手动 restore")
+            if rep["cleared_overlay"]:
+                names = {"name_zh": "官方中文名", "effect_dsl_json": "DSL 投影"}
+                print("  ⚠️ INSERT OR REPLACE 清空了叠加列："
+                      + "、".join(f"{names.get(c, c)} {n} 行"
+                                  for c, n in sorted(rep["cleared_overlay"].items()))
+                      + "\n     补跑：python -m db_compile official-zh --apply"
+                        " && python -m db_compile dsl-apply")
         if args.check:
             rep = check_enhancements(Path(args.db), load_rows(csv_path))
             flag = "✓" if rep["match"] else "✗"
-            print(f"\n强化对账 {flag}：CSV {rep['csv_rows']} vs 库 {rep['db_rows']} "
-                  f"（{'一致' if rep['match'] else '不一致'}）")
+            print(f"\n强化对账 {flag}：CSV {rep['csv_rows']} 行全部在库 "
+                  f"（缺 {rep['missing_count']}）；库共 {rep['db_rows']} 行，"
+                  f"其中 {rep['db_extra_rows']} 条为 fp_rules 补录层（Wahapedia 无源）")
+            if rep["missing_count"]:
+                print(f"  ⚠️ CSV 有库里没有：{'、'.join(rep['missing_sample'][:5])}")
             print(f"  分队：CSV {rep['csv_detachments']} / 库 {rep['db_detachments']}")
             if rep["no_cost_count"]:
                 print(f"  ⚠️ {rep['no_cost_count']} 条无点数（cost=NULL 诚实标注）："
                       f"{'、'.join(rep['no_cost_sample'][:5])}")
+    elif args.cmd == "zh-weapons":
+        from db_compile.zh_weapons import (build_keyword_glossary,
+                                           build_zh_weapon_names, coverage_report,
+                                           leftover_radicals, missing_terms)
+
+        if args.missing:
+            terms = missing_terms(Path(args.db))
+            print(f"\n现役单位缺中文名的武器（{len(terms)} 个不同名字）：")
+            for en, n, sample in terms:
+                print(f"  {n:4d}×  {en:44s} 例：{sample}")
+        else:
+            rep = build_zh_weapon_names(Path(args.db), apply=not args.dry_run)
+            kw = build_keyword_glossary(Path(args.db), apply=not args.dry_run)
+            cov = coverage_report(Path(args.db))
+            print("\n中文武器名投影：")
+            print(f"  指纹配对 {rep['paired_direct']} / 术语表 {rep['paired_glossary']} / "
+                  f"人工译名 {rep['overrides_applied']} / 撞名撤回 {rep['dropped_by_dedupe']}")
+            print(f"  覆盖：全库 {cov['all'][0]}/{cov['all'][1]}"
+                  f"、现役 {cov['current'][0]}/{cov['current'][1]}")
+            print(f"  USR 关键词对照表 {kw['terms']} 条（候选 {kw['candidates']}）")
+            left = leftover_radicals(Path(args.db))
+            if left:
+                print(f"  ⚠️ 残留部首兼容字 {left}——补 _RADICAL_FALLBACK 对照")
+            print("\n  注意：build 重建会清空，已挂进 restore_authority_layers 自动补跑")
+    elif args.cmd == "zh-units":
+        from db_compile.blacklibrary import apply_unit_name_overrides
+
+        rep = apply_unit_name_overrides(Path(args.db))
+        print(f"\n单位中文名人工译名：{rep['terms']} 条 → 命中 {rep['filled']} 行")
+        print("\n  注意：build 重建会覆盖，已挂进 stage_zh_details（restore 自动补跑）")
+    elif args.cmd == "official-zh" and args.apply:
+        from db_compile.official_zh_apply import apply_official_zh, coverage
+
+        rep = apply_official_zh(Path(args.db), map_path=Path(args.out),
+                                dry_run=args.dry_run)
+        head = "官方中文名落库" + ("（--dry-run，未写库）" if args.dry_run else "")
+        print(f"\n{head} → {args.db}")
+        for key, label in (("stratagems", "战略"), ("enhancements", "强化")):
+            s = rep[key]
+            print(f"  {label} {s['targeted']}/{s['db_rows']} 行"
+                  f"（行级 {s['by_id']} + 同名兜底 {s['by_name']}）："
+                  f"顶掉旧译名 {s['superseded_total']}、原样 {s['already']}")
+        d = rep["detachments"]
+        print(f"  分队容器 {d['targeted']}/{d['db_containers']} 个有官方中文名")
+        if rep.get("schema_added"):
+            print(f"  补结构：{'、'.join(rep['schema_added'])}")
+        if rep.get("schema_pending"):
+            print(f"  待补结构（--apply 时会加）：{'、'.join(rep['schema_pending'])}")
+        for key, ids in rep["missing_ids_total"].items():
+            if ids:
+                print(f"  ⚠️ {key} 映射里有 {ids} 个 id 库里查无此行——映射该重编译了")
+        if d["orphans"]:
+            print(f"  ⚠️ {len(d['orphans'])} 个容器名库里不存在：{d['orphans'][:5]}")
+        if not args.dry_run:
+            cov = coverage(Path(args.db))
+            print("  当前库内中文名覆盖："
+                  + "、".join(f"{k} {v[0]}/{v[1]}" for k, v in sorted(cov.items())))
+    elif args.cmd == "official-zh":
+        from db_compile.official_zh import write_official_zh
+
+        data = write_official_zh(out_path=Path(args.out), pdf_dir=Path(args.pdf_dir),
+                                 db_path=Path(args.db))
+        rep = data["_report"]
+        m, z = rep["matched"], rep["zh_parsed"]
+        print(f"\n官方中文映射 → {args.out}")
+        print(f"  战略 {m['stratagems']}/{z['stratagems']} 命中"
+              f"（全阵营唯一 {m['stratagems_pass_a_faction_unique']} +"
+              f" 分遣队内 {m['stratagems_pass_b_within_detachment']}）")
+        print(f"  强化 {m['enhancements']}/{z['enhancements']} 命中")
+        print(f"  分遣队 {m['detachments']} 对")
+        print(f"  未命中：战略 {rep['unmatched_sample']['stratagems_total']}、"
+              f"强化 {rep['unmatched_sample']['enhancements_total']}（一律留空）")
+        if rep["detachment_conflicts_total"]:
+            print(f"  ⚠️ 跨分遣队配对已拦下 {rep['detachment_conflicts_total']} 条，"
+                  f"详见 _report.detachment_conflicts")
     elif args.cmd == "downloads":
         from db_compile.downloads import (harvest, write_manifest, check,
                                           print_diffs)

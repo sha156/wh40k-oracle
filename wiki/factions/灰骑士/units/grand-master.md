@@ -29,15 +29,15 @@ updated: '2026-07-23'
 ## 射击武器
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| 焚化炮 | 12" | D6 | N/A | 6 | -1 | 1 | ⽆视掩体，[[core-rules/torrent.md\|洪流]] |
-| 消灵炮 | 24" | 6 | 2+ | 5 | 0 | 1 | 灵能，[[core-rules/sustained-hits.md\|连击 1]]，[[core-rules/precision.md\|精准]] |
-| 灵能炮 | 24" | 3 | 2+ | 8 | -1 | 2 | 灵能 |
-| ⻛暴爆矢枪 | 24" | 2 | 2+ | 4 | 0 | 1 | [[core-rules/rapid-fire.md\|速射 2]] |
+| 焚化炮 | 12" | D6 | N/A | 6 | -1 | 1 | [[core-rules/ignores-cover.md\|无视掩体]]，[[core-rules/torrent.md\|洪流]] |
+| 消灵炮 | 24" | 6 | 2+ | 5 | 0 | 1 | [[core-rules/precision.md\|精准]]，[[core-rules/psychic-attacks.md\|灵能]]，[[core-rules/sustained-hits.md\|连击1]] |
+| 灵能炮 | 24" | 3 | 2+ | 8 | -1 | 2 | [[core-rules/psychic-attacks.md\|灵能]] |
+| ⻛暴爆矢枪 | 24" | 2 | 2+ | 4 | 0 | 1 | [[core-rules/rapid-fire.md\|速射2]] |
 
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| 天罚灵能武器 | 近战 | 5 | 2+ | 6 | -2 | 2 | 灵能 |
+| 天罚灵能武器 | 近战 | 5 | 2+ | 6 | -2 | 2 | [[core-rules/psychic-attacks.md\|灵能]] |
 
 ## 技能
 - **【阵营技能】无限之门**

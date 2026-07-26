@@ -26,10 +26,10 @@ updated: '2026-07-23'
 ## 射击武器
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| 烈火风暴炮       | 12" | D6+3 | N/A | 6 | -2 | 2 | [[core-rules/ignores-cover.md\|忽视掩体]]，[[core-rules/torrent.md\|喷射]] |
-| [[factions/星际战士/units/hunter.md\|Hunter]]-killer missile | 48" | 1 | 2+ | 14 | -3 | D6 | one shot |
-| Multi-melta | 18" | 2 | 3+ | 9 | -4 | D6 | [[core-rules/melta.md\|melta 2]] |
-| Storm bolter | 24" | 2 | 3+ | 4 | 0 | 1 | [[core-rules/rapid-fire.md\|rapid fire 2]] |
+| 烈火风暴炮       | 12" | D6+3 | N/A | 6 | -2 | 2 | [[core-rules/ignores-cover.md\|无视掩体]]，[[core-rules/torrent.md\|洪流]] |
+| 猎杀飞弹 | 48" | 1 | 2+ | 14 | -3 | D6 | [[core-rules/one-shot.md\|单发]] |
+| 多管热熔 | 18" | 2 | 3+ | 9 | -4 | D6 | [[core-rules/melta.md\|热熔2]] |
+| 风暴爆弹枪 | 24" | 2 | 3+ | 4 | 0 | 1 | [[core-rules/rapid-fire.md\|速射2]] |
 | 双联突击炮 | 24" | 6 | 3+ | 6 | 0 | 1 | [[core-rules/devastating-wounds.md\|毁灭伤害]]，[[core-rules/twin-linked.md\|双联]] |
 
 ## 近战武器
@@ -47,4 +47,4 @@ updated: '2026-07-23'
 
 ## 关键词
 - **阵营关键词**：Adeptus Astartes
-- **普通关键词**：Vehicle，Imperium，[[core-rules/transport.md|Transport]]，Land Raider，[[core-rules/grenades.md|Grenades]]，Land Raider Redeemer，Deathwing，[[core-rules/smoke.md|Smoke]]
+- **普通关键词**：Vehicle，Imperium，[[core-rules/transport.md|Transport]]，[[factions/星际战士/units/land-raider.md|Land Raider]]，[[core-rules/grenades.md|Grenades]]，Land Raider Redeemer，Deathwing，[[core-rules/smoke.md|Smoke]]

@@ -30,8 +30,8 @@ updated: '2026-07-23'
 ## 射击武器
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| 亚空间冲击-巫火* | 24" | D3 | 3+ | 7 | -2 | D3 | [[core-rules/blast.md\|爆炸]]，灵能 |
-| 亚空间冲击-聚焦巫火* | 24" | 1 | 3+ | 12 | -3 | D6+1 | [[core-rules/lethal-hits.md\|致命一击]]，灵能 |
+| 亚空间冲击-巫火* | 24" | D3 | 3+ | 7 | -2 | D3 | [[core-rules/blast.md\|爆炸]]，[[core-rules/psychic-attacks.md\|灵能]] |
+| 亚空间冲击-聚焦巫火* | 24" | 1 | 3+ | 12 | -3 | D6+1 | [[core-rules/lethal-hits.md\|致命一击]]，[[core-rules/psychic-attacks.md\|灵能]] |
 
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |

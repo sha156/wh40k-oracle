@@ -1,5 +1,6 @@
 ---
-id: 000001825
+id: '000001825'
+name_zh: 豪侠型角斗者坦克
 name_en: Gladiator Valiant
 faction: 星际战士
 type: unit
@@ -25,18 +26,20 @@ updated: '2026-07-23'
 ## 射击武器
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| Icarus rocket pod | 24" | D3 | 3+ | 8 | -1 | 2 | [[core-rules/anti.md\|anti-fly 2+]] |
-| Ironhail heavy stubber | 36" | 3 | 3+ | 4 | 0 | 1 | [[core-rules/rapid-fire.md\|rapid fire 3]] |
-| Multi-melta | 18" | 2 | 3+ | 9 | -4 | D6 | [[core-rules/melta.md\|melta 2]] |
-| Twin las-talon | 36" | 2 | 3+ | 10 | -3 | D6+1 | twin-linked |
+| 伊卡洛斯火箭巢 | 24" | D3 | 3+ | 8 | -1 | 2 | [[core-rules/anti.md\|针对飞行2+]] |
+| 铁雨重机枪 | 36" | 3 | 3+ | 4 | 0 | 1 | [[core-rules/rapid-fire.md\|速射3]] |
+| 多管热熔 | 18" | 2 | 3+ | 9 | -4 | D6 | [[core-rules/melta.md\|热熔2]] |
+| 双联激光爪 | 36" | 2 | 3+ | 10 | -3 | D6+1 | [[core-rules/twin-linked.md\|双联]] |
 
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| Armoured hull | 近战 | 3 | 4+ | 6 | 0 | 1 | — |
+| 装甲车体  | 近战 | 3 | 4+ | 6 | 0 | 1 | — |
 
 ## 技能
-- **Ferocious Assault**：Each time this model makes an attack with its twin las-talon that targets the closest eligible <span class="kwb">MONSTER</span> or <span class="kwb">VEHICLE</span> unit, add 1 to the Hit roll.
+- **【阵营技能】：破敌重誓**
+- **严重损伤**：本模型 W 值为 1-4 时，攻击命中结果-1
+- **优选目标**：本模型的双联激光爪攻击其可选目标中，最近的巨兽或载具单位时命中结果+1
 
 ## 单位构成
 - **1个模型** — 150 分

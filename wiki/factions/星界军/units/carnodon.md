@@ -1,5 +1,5 @@
 ---
-id: 000001994
+id: '000001994'
 name_en: Carnodon
 faction: 星界军
 type: unit
@@ -24,22 +24,22 @@ updated: '2026-07-23'
 ## 射击武器
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| Autocannon | 48" | 2 | 4+ | 9 | -1 | 3 | — |
-| Carnodon twin autocannon | 48" | 2 | 4+ | 9 | -1 | 3 | twin-linked |
-| Carnodon twin lascannon | 48" | 1 | 4+ | 14 | -3 | D6+1 | twin-linked |
-| Carnodon twin multi-laser | 36" | 6 | 4+ | 6 | 0 | 1 | twin-linked |
-| Heavy bolter | 36" | 3 | 4+ | 5 | -1 | 2 | [[core-rules/sustained-hits.md\|sustained hits 1]] |
-| Heavy flamer | 12" | D6 | N/A | 5 | -1 | 1 | ignores cover，torrent |
-| Hunter-killer missile | 48" | 1 | 4+ | 14 | -3 | D6 | one shot |
-| Lascannon | 48" | 1 | 4+ | 12 | -3 | D6+1 | — |
+| 自动炮 | 48" | 2 | 4+ | 9 | -1 | 3 | — |
+| Carnodon twin autocannon | 48" | 2 | 4+ | 9 | -1 | 3 | [[core-rules/twin-linked.md\|双联]] |
+| Carnodon twin lascannon | 48" | 1 | 4+ | 14 | -3 | D6+1 | [[core-rules/twin-linked.md\|双联]] |
+| Carnodon twin multi-laser | 36" | 6 | 4+ | 6 | 0 | 1 | [[core-rules/twin-linked.md\|双联]] |
+| 重型爆弹枪 | 36" | 3 | 4+ | 5 | -1 | 2 | [[core-rules/sustained-hits.md\|连击1]] |
+| 重型喷火器 | 12" | D6 | N/A | 5 | -1 | 1 | [[core-rules/ignores-cover.md\|无视掩体]]，[[core-rules/torrent.md\|洪流]] |
+| 猎杀飞弹 | 48" | 1 | 4+ | 14 | -3 | D6 | [[core-rules/one-shot.md\|单发]] |
+| 激光炮 | 48" | 1 | 4+ | 12 | -3 | D6+1 | — |
 | Militarum Multi-laser | 36" | 4 | 4+ | 6 | 0 | 1 | — |
-| Volkite caliver | 24" | 2 | 4+ | 5 | 0 | 2 | devastating wounds |
-| Volkite culverin | 36" | 4 | 4+ | 6 | 0 | 2 | devastating wounds |
+| Volkite caliver | 24" | 2 | 4+ | 5 | 0 | 2 | [[core-rules/devastating-wounds.md\|毁灭伤害]] |
+| Volkite culverin | 36" | 4 | 4+ | 6 | 0 | 2 | [[core-rules/devastating-wounds.md\|毁灭伤害]] |
 
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| Armoured tracks | 近战 | 6 | 4+ | 7 | 0 | 1 | — |
+| 装甲履带 | 近战 | 6 | 4+ | 7 | 0 | 1 | — |
 
 ## 技能
 - **Ancient Conquest**：Each time this model makes an attack that targets an enemy unit that is within your opponent’s deployment zone, re-roll a Hit roll of 1 and re-roll a Wound roll of 1.

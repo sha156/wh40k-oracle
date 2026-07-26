@@ -1,5 +1,6 @@
 ---
 id: '000003712'
+name_zh: 邪教徒纵火者
 name_en: Cultist Firebrand
 faction: 混沌星际战士
 type: unit
@@ -25,16 +26,17 @@ updated: '2026-07-23'
 ## 射击武器
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| Balefire pike | 12" | D6+3 | N/A | 5 | -1 | 1 | [[core-rules/ignores-cover.md\|IGNORES COVER]]，TORRENT |
+| 毒焰火矛 | 12" | D6+3 | N/A | 5 | -1 | 1 | [[core-rules/ignores-cover.md\|无视掩体]]，[[core-rules/torrent.md\|洪流]] |
 
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| Close combat weapon | 近战 | 4 | 4+ | 4 | -1 | 1 | — |
+| 格斗武器 | 近战 | 4 | 4+ | 4 | -1 | 1 | — |
 
 ## 技能
-- **Fiery Faith**：While this model is leading a unit, you can re-roll Leadership tests taken for that unit.
-- **Cursed Flames**：In your Shooting phase, after this model has shot, select one enemy <span class="kwb">INFANTRY</span> unit hit by one or more of those attacks. That unit must take a Battle-shock test.
+- **【阵营技能】：黑暗契约**
+- **炙热信仰**：本模型所领导的单位可以重投 LD 测试
+- **诅咒火焰**：在你的射击阶段，本模型射击后，选择 一个被命中的敌方步兵单位，那个敌方单位必须进 行一次震撼测试
 
 ## 单位构成
 - **1个模型** — 45 分

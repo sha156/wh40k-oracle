@@ -1,5 +1,5 @@
 ---
-id: 000002085
+id: '000002085'
 name_zh: 始祖鸟矢量飞梭
 name_en: Archaeopter Transvector
 faction: 机械修会
@@ -26,7 +26,7 @@ updated: '2026-07-23'
 ## 射击武器
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| 智能重机枪阵列 | 36" | 9 | 4+ | 4 | 0 | 1 | [[core-rules/rapid-fire.md\|速射 9]]，[[core-rules/sustained-hits.md\|连击 1]]，[[core-rules/twin-linked.md\|双联]] |
+| 智能重机枪阵列 | 36" | 9 | 4+ | 4 | 0 | 1 | [[core-rules/rapid-fire.md\|速射9]]，[[core-rules/sustained-hits.md\|连击1]]，[[core-rules/twin-linked.md\|双联]] |
 
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |

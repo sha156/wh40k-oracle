@@ -26,13 +26,13 @@ updated: '2026-07-23'
 ## 射击武器
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| Heavy flamer | 12" | D6 | N/A | 5 | -1 | 1 | ignores cover，torrent |
-| 风暴爆弹枪 | 24" | 2 | 3+ | 4 | 0 | 1 | [[core-rules/rapid-fire.md\|速射 2]] |
+| 重型喷火器 | 12" | D6 | N/A | 5 | -1 | 1 | [[core-rules/ignores-cover.md\|无视掩体]]，[[core-rules/torrent.md\|洪流]] |
+| 风暴爆弹枪 | 24" | 2 | 3+ | 4 | 0 | 1 | [[core-rules/rapid-fire.md\|速射2]] |
 
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| 杀戮之爪 | 近战 | 8 | 3+ | 14 | -2 | 3 | [[core-rules/twin-linked.md\|双联]]，[[core-rules/sustained-hits.md\|连击 1]] |
+| 杀戮之爪 | 近战 | 8 | 3+ | 14 | -2 | 3 | [[core-rules/sustained-hits.md\|连击1]]，[[core-rules/twin-linked.md\|双联]] |
 
 ## 技能
 - **【阵营技能】：破敌重誓**

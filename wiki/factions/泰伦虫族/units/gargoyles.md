@@ -1,5 +1,5 @@
 ---
-id: 000000484
+id: '000000484'
 name_zh: 石像鬼
 name_en: Gargoyles
 faction: 泰伦虫族

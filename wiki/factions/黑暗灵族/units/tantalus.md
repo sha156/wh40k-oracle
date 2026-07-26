@@ -27,12 +27,12 @@ updated: '2026-07-23'
 ## 射击武器
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| Pulse disintegrators | 36" | 12 | 3+ | 10 | -2 | 2 | assault |
+| Pulse disintegrators | 36" | 12 | 3+ | 10 | -2 | 2 | [[core-rules/assault.md\|突击]] |
 
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| Dire scythe blades | 近战 | 9 | 4+ | 8 | -1 | 2 | devastating wounds |
+| Dire scythe blades | 近战 | 9 | 4+ | 8 | -1 | 2 | [[core-rules/devastating-wounds.md\|毁灭伤害]] |
 
 ## 技能
 - **Engine of Destruction (Pain)**：In your Shooting phase, when you select this model to shoot, you can spend 1 Pain token to Empower this model. While Empowered, this model’s pulse disintegrators have the [RAPID FIRE 8] ability.

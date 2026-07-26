@@ -27,7 +27,7 @@ updated: '2026-07-23'
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
 | 拜尔罗斯能量炮 | 36" | 2D6 | 4+ | 7 | -2 | 1 | [[core-rules/blast.md\|爆炸]]，[[core-rules/indirect-fire.md\|曲射]] |
-| 智能重机枪 | 36" | 3 | 4+ | 4 | 0 | 1 | [[core-rules/rapid-fire.md\|速射 3]]，[[core-rules/sustained-hits.md\|连击 1]] |
+| 智能重机枪 | 36" | 3 | 4+ | 4 | 0 | 1 | [[core-rules/rapid-fire.md\|速射3]]，[[core-rules/sustained-hits.md\|连击1]] |
 | 瓦解者导弹 | 36" | 3 | 4+ | 9 | -2 | D6 | [[core-rules/twin-linked.md\|双联]] |
 | 铁融炮 | 48" | 3 | 4+ | 12 | -3 | D6+1 | — |
 

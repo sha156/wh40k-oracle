@@ -26,23 +26,23 @@ updated: '2026-07-23'
 ## 射击武器
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| 并联爆弹枪 | 24" | 2 | 4+ | 4 | 0 | 1 | [[core-rules/rapid-fire.md\|速射 2]] |
-| Heavy flamer | 12" | D6 | N/A | 5 | -1 | 1 | ignores cover，torrent |
-| Plasma cannon | 36" | D3 | 4+ | 8 | -3 | 3 | blast，hazardous，rapid fire D3 |
-| Missile launcher – frag | 48" | D6 | 4+ | 4 | 0 | 1 | blast，[[core-rules/rapid-fire.md\|rapid fire 3]] |
-| 爆炸导弹发射器（穿甲弹）  | 48" | 1 | 4+ | 9 | -2 | D6 | [[core-rules/rapid-fire.md\|rapid fire 1]] |
-| 多管热熔  | 18" | 2 | 4+ | 9 | -4 | D6 | [[core-rules/melta.md\|热熔 2]] |
-| Twin autocannon | 48" | 2 | 4+ | 9 | -1 | 3 | [[core-rules/rapid-fire.md\|rapid fire 2]]，twin-linked |
-| 双联重爆弹 | 36" | 3 | 4+ | 5 | -1 | 2 | [[core-rules/sustained-hits.md\|连击 1]]，[[core-rules/twin-linked.md\|双联]] |
-| Twin lascannon | 48" | 1 | 4+ | 12 | -3 | D6+1 | [[core-rules/rapid-fire.md\|rapid fire 1]]，twin-linked |
+| 并联爆弹枪 | 24" | 2 | 4+ | 4 | 0 | 1 | [[core-rules/rapid-fire.md\|速射4]] |
+| 重型喷火器 | 12" | D6 | N/A | 5 | -1 | 1 | [[core-rules/ignores-cover.md\|无视掩体]]，[[core-rules/torrent.md\|洪流]] |
+| 地狱兽等离子炮 | 36" | D3 | 4+ | 8 | -3 | 3 | [[core-rules/blast.md\|爆炸]]，[[core-rules/hazardous.md\|危险]]，[[core-rules/rapid-fire.md\|速射D3]] |
+| 导弹发射器（破片） | 48" | D6 | 4+ | 4 | 0 | 1 | [[core-rules/blast.md\|爆炸]]，[[core-rules/rapid-fire.md\|速射3]] |
+| 爆炸导弹发射器（穿甲弹）  | 48" | 1 | 4+ | 9 | -2 | D6 | [[core-rules/rapid-fire.md\|速射1]] |
+| 多管热熔  | 18" | 2 | 4+ | 9 | -4 | D6 | [[core-rules/melta.md\|热熔2]]，[[core-rules/rapid-fire.md\|速射1]] |
+| 双联自动炮 | 48" | 2 | 4+ | 9 | -1 | 3 | [[core-rules/rapid-fire.md\|速射2]]，[[core-rules/twin-linked.md\|双联]] |
+| 双联重爆弹 | 36" | 3 | 4+ | 5 | -1 | 2 | [[core-rules/rapid-fire.md\|速射2]]，[[core-rules/sustained-hits.md\|连击1]]，[[core-rules/twin-linked.md\|双联]] |
+| 双联激光炮 | 48" | 1 | 4+ | 12 | -3 | D6+1 | [[core-rules/rapid-fire.md\|速射1]]，[[core-rules/twin-linked.md\|双联]] |
 
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| Close combat weapon | 近战 | 6 | 3+ | 6 | 0 | 1 | — |
-| Helbrute fist | 近战 | 6 | 3+ | 12 | -2 | 3 | — |
-| Helbrute hammer | 近战 | 6 | 4+ | 14 | -3 | D6+1 | — |
-| Power scourge | 近战 | 10 | 3+ | 7 | -1 | 2 | — |
+| 格斗武器 | 近战 | 6 | 3+ | 6 | 0 | 1 | — |
+| 地狱兽铁拳 | 近战 | 6 | 3+ | 12 | -2 | 3 | — |
+| 地狱兽重锤 | 近战 | 6 | 4+ | 14 | -3 | D6+1 | — |
+| 动力长鞭 | 近战 | 10 | 3+ | 7 | -1 | 2 | — |
 
 ## 技能
 - **【阵营技能】：黑暗契约**

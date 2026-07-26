@@ -1,5 +1,5 @@
 ---
-id: 000003965
+id: '000003965'
 name_zh: 毁灭之剑
 name_en: Banesword
 faction: 基因窃取者教派
@@ -25,9 +25,9 @@ updated: '2026-07-23'
 ## 射击武器
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| 震荡炮 | 72" | D6+6 | 4+ | 16 | -4 | 4 | [[core-rules/blast.md\|爆炸]]，[[core-rules/ignores-cover.md\|忽视掩体]] |
+| 震荡炮 | 72" | D6+6 | 4+ | 16 | -4 | 4 | [[core-rules/blast.md\|爆炸]]，[[core-rules/ignores-cover.md\|无视掩体]] |
 | 双联重型爆弹枪 | 36" | 3 | 4+ | 5 | -1 | 2 | [[core-rules/sustained-hits.md\|连击1]]，[[core-rules/twin-linked.md\|双联]] |
-| 双联重型火焰喷射器 | 12" | D6 | N/A | 5 | -1 | 1 | [[core-rules/ignores-cover.md\|忽视掩体]]，[[core-rules/torrent.md\|洪流]]，[[core-rules/twin-linked.md\|双联]] |
+| 双联重型火焰喷射器 | 12" | D6 | N/A | 5 | -1 | 1 | [[core-rules/ignores-cover.md\|无视掩体]]，[[core-rules/torrent.md\|洪流]]，[[core-rules/twin-linked.md\|双联]] |
 | 激光炮 | 48" | 1 | 4+ | 12 | -3 | D6+1 | — |
 
 ## 近战武器

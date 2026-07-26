@@ -27,7 +27,7 @@ updated: '2026-07-23'
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
 | 爆裂速射炮 | 18" | 4 | 4+ | 5 | 0 | 1 | — |
-| 钛式火焰喷射器 | 12" | D6 | N/A | 4 | 0 | 1 | [[core-rules/ignores-cover.md\|忽略掩体]]，[[core-rules/torrent.md\|喷射]] |
+| 钛式火焰喷射器 | 12" | D6 | N/A | 4 | 0 | 1 | [[core-rules/ignores-cover.md\|无视掩体]]，[[core-rules/torrent.md\|洪流]] |
 
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |

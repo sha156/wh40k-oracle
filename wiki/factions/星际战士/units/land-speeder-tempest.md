@@ -1,5 +1,5 @@
 ---
-id: 000001168
+id: '000001168'
 name_en: Land Speeder Tempest
 faction: 星际战士
 type: unit
@@ -24,14 +24,14 @@ updated: '2026-07-23'
 ## 射击武器
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| Assault cannon | 24" | 6 | 3+ | 6 | 0 | 1 | devastating wounds |
-| Tempest salvo launcher – frag | 36" | 2D6 | 3+ | 4 | 0 | 1 | blast |
+| 突击炮 | 24" | 6 | 3+ | 6 | 0 | 1 | [[core-rules/devastating-wounds.md\|毁灭伤害]] |
+| Tempest salvo launcher – frag | 36" | 2D6 | 3+ | 4 | 0 | 1 | [[core-rules/blast.md\|爆炸]] |
 | Tempest salvo launcher – krak | 36" | 2 | 3+ | 9 | -2 | D6 | — |
 
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| Armoured hull | 近战 | 3 | 4+ | 4 | 0 | 1 | — |
+| 装甲外壳 | 近战 | 3 | 4+ | 4 | 0 | 1 | — |
 
 ## 技能
 - **Isolate and Destroy**：Each time this model makes an attack that targets an enemy unit, if there are no other units from your opponent’s army within 6" of that target, add 1 to the Wound roll.
@@ -41,4 +41,4 @@ updated: '2026-07-23'
 
 ## 关键词
 - **阵营关键词**：Adeptus Astartes
-- **普通关键词**：Ravenwing，Land Speeder Tempest，Imperium，Vehicle，Fly
+- **普通关键词**：Ravenwing，[[factions/星际战士/units/land-speeder.md|Land Speeder]] Tempest，Imperium，Vehicle，Fly

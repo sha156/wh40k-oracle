@@ -1,5 +1,5 @@
 ---
-id: 000003998
+id: '000003998'
 name_en: Centaur Light Carrier
 faction: 基因窃取者教派
 type: unit
@@ -24,13 +24,13 @@ updated: '2026-07-23'
 ## 射击武器
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| Heavy stubber | 36" | 3 | 4+ | 4 | 0 | 1 | [[core-rules/rapid-fire.md\|rapid fire 3]] |
-| Hunter-killer missile | 48" | 1 | 4+ | 14 | -3 | D6 | one shot |
+| Heavy stubber | 36" | 3 | 4+ | 4 | 0 | 1 | [[core-rules/rapid-fire.md\|速射3]] |
+| 猎杀飞弹 | 48" | 1 | 4+ | 14 | -3 | D6 | [[core-rules/one-shot.md\|单发]] |
 
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| Armoured tracks | 近战 | 3 | 4+ | 6 | 0 | 1 | — |
+| 装甲履带 | 近战 | 3 | 4+ | 6 | 0 | 1 | — |
 
 ## 技能
 - **Blistering Advance**：Units can disembark from this <span class="kwb">TRANSPORT</span> after it has Advanced. Units that do so count as having made a Normal move that phase, and cannot declare a charge in the same turn, but can otherwise act normally in the remainder of the turn.

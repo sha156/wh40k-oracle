@@ -1,5 +1,5 @@
 ---
-id: 000003994
+id: '000003994'
 name_en: Arkurian Stormhammer
 faction: 基因窃取者教派
 type: unit
@@ -24,20 +24,20 @@ updated: '2026-07-23'
 ## 射击武器
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| Storm bolter | 24" | 2 | 4+ | 4 | 0 | 1 | [[core-rules/rapid-fire.md\|rapid fire 2]] |
-| Stormhammer cannon | 72" | 3D6 | 4+ | 12 | -2 | 3 | blast |
-| Twin battle cannon | 48" | D6+3 | 4+ | 9 | -1 | 3 | blast，twin-linked |
-| Heavy bolter | 36" | 3 | 4+ | 5 | -1 | 2 | [[core-rules/sustained-hits.md\|sustained hits 1]] |
-| Heavy flamer | 12" | D6 | N/A | 5 | -1 | 1 | ignores cover，torrent |
-| Heavy stubber | 36" | 3 | 4+ | 4 | 0 | 1 | [[core-rules/rapid-fire.md\|rapid fire 3]] |
-| Hunter-killer missile | 48" | 1 | 4+ | 14 | -3 | D6 | one shot |
-| Lascannon | 48" | 1 | 4+ | 12 | -3 | D6+1 | — |
-| Multi-laser | 36" | 4 | 4+ | 6 | 0 | 1 | — |
+| 风暴爆弹枪 | 24" | 2 | 4+ | 4 | 0 | 1 | [[core-rules/rapid-fire.md\|速射2]] |
+| Stormhammer cannon | 72" | 3D6 | 4+ | 12 | -2 | 3 | [[core-rules/blast.md\|爆炸]] |
+| 双联战斗加农炮 | 48" | D6+3 | 4+ | 9 | -1 | 3 | [[core-rules/blast.md\|爆炸]]，[[core-rules/twin-linked.md\|双联]] |
+| 重型爆弹枪 | 36" | 3 | 4+ | 5 | -1 | 2 | [[core-rules/sustained-hits.md\|连击1]] |
+| 重型喷火器 | 12" | D6 | N/A | 5 | -1 | 1 | [[core-rules/ignores-cover.md\|无视掩体]]，[[core-rules/torrent.md\|洪流]] |
+| Heavy stubber | 36" | 3 | 4+ | 4 | 0 | 1 | [[core-rules/rapid-fire.md\|速射3]] |
+| 猎杀飞弹 | 48" | 1 | 4+ | 14 | -3 | D6 | [[core-rules/one-shot.md\|单发]] |
+| 激光炮 | 48" | 1 | 4+ | 12 | -3 | D6+1 | — |
+| 多管激光 | 36" | 4 | 4+ | 6 | 0 | 1 | — |
 
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| Armoured tracks | 近战 | 6 | 4+ | 8 | 0 | 1 | — |
+| 装甲履带 | 近战 | 6 | 4+ | 8 | 0 | 1 | — |
 
 ## 技能
 - **Rolling Fortress**：Each time a ranged attack is allocated to an <span class="kwb">ASTRA</span> <span class="kwb">MILITARUM</span> model from your army, if that model is not fully visible to every model in the attacking unit because of this <span class="kwb">ARKURIAN</span> <span class="kwb">STORMHAMMER</span> model, that model has the Benefit of Cover against that attack.

@@ -1,5 +1,5 @@
 ---
-id: 000004108
+id: '000004108'
 name_zh: 血猎犬
 name_en: Flesh Hounds
 faction: 吞世者

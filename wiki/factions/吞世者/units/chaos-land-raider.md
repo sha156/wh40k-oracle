@@ -26,16 +26,16 @@ updated: '2026-07-23'
 ## 射击武器
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| 并联爆弹枪  | 24" | 2 | 4+ | 4 | 0 | 1 | [[core-rules/rapid-fire.md\|速射 2]] |
-| 复合武器 | 24" | 1 | 4+ | 4 | 0 | 1 | [[core-rules/anti.md\|反步兵 4+]]，[[core-rules/devastating-wounds.md\|毁灭伤害]]，[[core-rules/rapid-fire.md\|速射 1]] |
+| 并联爆弹枪  | 24" | 2 | 4+ | 4 | 0 | 1 | [[core-rules/rapid-fire.md\|速射4]] |
+| 复合武器 | 24" | 1 | 4+ | 4 | 0 | 1 | [[core-rules/anti.md\|针对步兵4+]]，[[core-rules/devastating-wounds.md\|毁灭伤害]]，[[core-rules/rapid-fire.md\|速射1]] |
 | 浩劫发射器  | 48" | D6 | 4+ | 5 | 0 | 1 | [[core-rules/blast.md\|爆炸]] |
-| Soulshatter lascannon | 48" | 2 | 4+ | 12 | -3 | D6+1 | [[core-rules/rapid-fire.md\|rapid fire 2]] |
-| Twin heavy bolter | 36" | 3 | 4+ | 5 | -1 | 2 | [[core-rules/rapid-fire.md\|rapid fire 2]]，[[core-rules/sustained-hits.md\|sustained hits 1]]，twin-linked |
+| 碎魂激光炮 | 48" | 2 | 4+ | 12 | -3 | D6+1 | [[core-rules/rapid-fire.md\|速射2]] |
+| 双联重型爆弹枪 | 36" | 3 | 4+ | 5 | -1 | 2 | [[core-rules/rapid-fire.md\|速射2]]，[[core-rules/sustained-hits.md\|连击1]]，[[core-rules/twin-linked.md\|双联]] |
 
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| Armoured tracks | 近战 | 9 | 3+ | 8 | 0 | 1 | — |
+| 装甲履带 | 近战 | 9 | 3+ | 8 | 0 | 1 | — |
 
 ## 技能
 - **【阵营技能】：黑暗契约**

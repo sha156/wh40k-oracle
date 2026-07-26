@@ -1,5 +1,6 @@
 ---
-id: 000004209
+id: '000004209'
+name_zh: 亵渎者
 name_en: Defiler
 faction: 死亡守卫
 type: unit
@@ -28,22 +29,22 @@ updated: '2026-07-23'
 ## 射击武器
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| Ectoplasma destructor | 36" | D6 | 3+ | 12 | -3 | 3 | blast，lethal hits |
-| Excruciator cannon | 36" | 6 | 3+ | 6 | -1 | 2 | lethal hits |
-| Hades battle cannon | 48" | D6+3 | 3+ | 10 | -1 | 3 | blast，lethal hits |
-| Hades lascannon | 48" | 2 | 3+ | 12 | -3 | D6+1 | lethal hits |
-| Heavy baleflamer | 12" | D6+3 | N/A | 7 | -2 | 2 | ignores cover，torrent |
-| Heavy missile launcher – krak | 48" | 2 | 3+ | 10 | -2 | D6+1 | lethal hits |
-| Heavy missile launcher – frag | 48" | 2D6 | 3+ | 5 | -1 | 1 | blast，lethal hits |
-| Heavy reaper autocannon | 48" | 4 | 3+ | 9 | -1 | 3 | devastating wounds，lethal hits，[[core-rules/sustained-hits.md\|sustained hits 1]] |
-| Magma cutters | 12" | 2 | 3+ | 9 | -4 | D6 | lethal hits，[[core-rules/melta.md\|melta 2]] |
+| 魂浆毁灭炮 | 36" | D6 | 3+ | 12 | -3 | 3 | [[core-rules/blast.md\|爆炸]]，[[core-rules/lethal-hits.md\|致命一击]] |
+| 拷问者加农炮 | 36" | 6 | 3+ | 6 | -1 | 2 | [[core-rules/lethal-hits.md\|致命一击]] |
+| 冥神战斗加农炮 | 48" | D6+3 | 3+ | 10 | -1 | 3 | [[core-rules/blast.md\|爆炸]]，[[core-rules/lethal-hits.md\|致命一击]] |
+| 冥神激光炮 | 48" | 2 | 3+ | 12 | -3 | D6+1 | [[core-rules/lethal-hits.md\|致命一击]] |
+| 重型恶毒之火 | 12" | D6+3 | N/A | 7 | -2 | 2 | [[core-rules/ignores-cover.md\|无视掩体]]，[[core-rules/torrent.md\|洪流]] |
+| 重型导弹发射器（穿甲） | 48" | 2 | 3+ | 10 | -2 | D6+1 | [[core-rules/lethal-hits.md\|致命一击]] |
+| 重型导弹发射器（破片） | 48" | 2D6 | 3+ | 5 | -1 | 1 | [[core-rules/blast.md\|爆炸]]，[[core-rules/lethal-hits.md\|致命一击]] |
+| 重型收割者自动炮 | 48" | 4 | 3+ | 9 | -1 | 3 | [[core-rules/devastating-wounds.md\|毁灭伤害]]，[[core-rules/lethal-hits.md\|致命一击]]，[[core-rules/sustained-hits.md\|连击1]] |
+| 岩浆切割机 | 12" | 2 | 3+ | 9 | -4 | D6 | [[core-rules/lethal-hits.md\|致命一击]]，[[core-rules/melta.md\|热熔2]] |
 
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| Electroscourge | 近战 | 5 | 3+ | 12 | -2 | 2 | extra attacks，[[core-rules/sustained-hits.md\|sustained hits 2]] |
-| Shearing claws – strike | 近战 | 5 | 3+ | 16 | -3 | D6+1 | lethal hits |
-| Shearing claws – sweep | 近战 | 10 | 3+ | 6 | -2 | 1 | lethal hits |
+| 电鞭 | 近战 | 5 | 3+ | 12 | -2 | 2 | [[core-rules/extra-attacks.md\|额外攻击]]，[[core-rules/sustained-hits.md\|连击2]] |
+| 剪切利爪（重击） | 近战 | 5 | 3+ | 16 | -3 | D6+1 | [[core-rules/lethal-hits.md\|致命一击]] |
+| 剪切利爪（横扫） | 近战 | 10 | 3+ | 6 | -2 | 1 | [[core-rules/lethal-hits.md\|致命一击]] |
 
 ## 技能
 - **Scuttling Walker**：Each time this unit makes a Normal, Advance or Fall Back move, it can move through models (excluding <span class="kwb">TITANIC</span> models) and terrain features. When doing so, it can move within Engagement Range of enemy models, but cannot end that move within Engagement Range of them, and any Desperate Escape test is automatically passed.

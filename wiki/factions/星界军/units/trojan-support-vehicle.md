@@ -24,14 +24,14 @@ updated: '2026-07-23'
 ## 射击武器
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| Heavy bolter | 36" | 3 | 4+ | 5 | -1 | 2 | [[core-rules/sustained-hits.md\|sustained hits 1]] |
-| Heavy flamer | 12" | D6 | N/A | 5 | -1 | 1 | ignores cover，torrent |
-| Hunter-killer missile | 48" | 1 | 4+ | 14 | -3 | D6 | one shot |
+| 重型爆弹枪 | 36" | 3 | 4+ | 5 | -1 | 2 | [[core-rules/sustained-hits.md\|连击1]] |
+| 重型喷火器 | 12" | D6 | N/A | 5 | -1 | 1 | [[core-rules/ignores-cover.md\|无视掩体]]，[[core-rules/torrent.md\|洪流]] |
+| 猎杀飞弹 | 48" | 1 | 4+ | 14 | -3 | D6 | [[core-rules/one-shot.md\|单发]] |
 
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| Armoured tracks | 近战 | 3 | 4+ | 6 | 0 | 1 | — |
+| 装甲履带 | 近战 | 3 | 4+ | 6 | 0 | 1 | — |
 
 ## 技能
 - **Support Vehicle**：In your Command phase, select one friendly Astra Militarum Vehicle model within 3" of this model. That <span class="kwb">VEHICLE</span> model regains up to D3 lost wounds and, until the start of your next Command phase, each time that <span class="kwb">VEHICLE</span> model makes an attack, re-roll a Hit roll of 1. The same <span class="kwb">VEHICLE</span> model cannot be selected for both this ability and the Regimental Enginseer’s Omnissiah’s Blessing ability in the same turn, and each model can only be selected for this ability once per Command phase.

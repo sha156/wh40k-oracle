@@ -1,5 +1,5 @@
 ---
-id: 000000912
+id: '000000912'
 name_zh: 驱魔人导弹车
 name_en: Exorcist
 faction: 战斗修女
@@ -29,10 +29,10 @@ updated: '2026-07-23'
 ## 射击武器
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| 驱魔人燃烧弹 | 36" | 3D6 | 3+ | 6 | -1 | 1 | [[core-rules/ignores-cover.md\|忽视掩体]]，[[core-rules/blast.md\|爆炸]]，[[core-rules/indirect-fire.md\|曲射]] |
+| 驱魔人燃烧弹 | 36" | 3D6 | 3+ | 6 | -1 | 1 | [[core-rules/blast.md\|爆炸]]，[[core-rules/ignores-cover.md\|无视掩体]]，[[core-rules/indirect-fire.md\|曲射]] |
 | 驱魔人导弹 | 36" | D6+2 | 3+ | 10 | -3 | D6 | [[core-rules/indirect-fire.md\|曲射]] |
 | 重型爆弹枪 | 36" | 3 | 3+ | 5 | -1 | 2 | [[core-rules/sustained-hits.md\|连击1]] |
-| 猎杀飞弹 | 48" | 1 | 2+ | 14 | -3 | D6 | [[core-rules/one-shot.md\|一次性]] |
+| 猎杀飞弹 | 48" | 1 | 2+ | 14 | -3 | D6 | [[core-rules/one-shot.md\|单发]] |
 
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |

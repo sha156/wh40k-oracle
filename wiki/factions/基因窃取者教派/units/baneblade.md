@@ -1,5 +1,5 @@
 ---
-id: 000003963
+id: '000003963'
 name_zh: 毒刃
 name_en: Baneblade
 faction: 基因窃取者教派
@@ -27,7 +27,7 @@ updated: '2026-07-23'
 |---|---|---|---|---|---|---|---|
 | 同轴自动炮 | 48" | 2 | 4+ | 9 | -1 | 3 | — |
 | 毒刃加农炮 | 72" | 3D6 | 4+ | 12 | -2 | 3 | [[core-rules/blast.md\|爆炸]] |
-| 双联重型火焰喷射器 | 12" | D6 | N/A | 5 | -1 | 1 | [[core-rules/ignores-cover.md\|忽视掩体]]，[[core-rules/torrent.md\|洪流]]，[[core-rules/twin-linked.md\|双联]] |
+| 双联重型火焰喷射器 | 12" | D6 | N/A | 5 | -1 | 1 | [[core-rules/ignores-cover.md\|无视掩体]]，[[core-rules/torrent.md\|洪流]]，[[core-rules/twin-linked.md\|双联]] |
 | 双联重型爆弹枪 | 36" | 3 | 4+ | 5 | -1 | 2 | [[core-rules/sustained-hits.md\|连击1]]，[[core-rules/twin-linked.md\|双联]] |
 | 激光炮 | 48" | 1 | 4+ | 12 | -3 | D6+1 | — |
 | 重型伐木枪 | 36" | 3 | 4+ | 4 | 0 | 1 | [[core-rules/rapid-fire.md\|速射3]] |

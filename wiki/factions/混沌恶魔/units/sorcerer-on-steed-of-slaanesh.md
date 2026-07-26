@@ -24,22 +24,22 @@ updated: '2026-07-23'
 ## 射击武器
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| Combi-weapon | 24" | 1 | 4+ | 4 | 0 | 1 | [[core-rules/anti.md\|anti-infantry 4+]]，devastating wounds，[[core-rules/rapid-fire.md\|rapid fire 1]] |
-| Infernal Gaze – focused witchfire | 24" | D6 | 3+ | 6 | -2 | D3 | devastating wounds，hazardous，psychic |
-| Infernal Gaze – witchfire | 24" | D6 | 3+ | 5 | -1 | D3 | psychic |
-| Plasma pistol – standard | 12" | 1 | 2+ | 7 | -2 | 1 | pistol |
-| Plasma pistol – supercharge | 12" | 1 | 2+ | 8 | -3 | 2 | hazardous，pistol |
-| Bolt pistol | 12" | 1 | 2+ | 4 | 0 | 1 | pistol |
-| Combi-bolter | 24" | 2 | 2+ | 4 | 0 | 1 | [[core-rules/rapid-fire.md\|rapid fire 2]] |
+| 复合武器 | 24" | 1 | 4+ | 4 | 0 | 1 | [[core-rules/anti.md\|针对步兵4+]]，[[core-rules/devastating-wounds.md\|毁灭伤害]]，[[core-rules/rapid-fire.md\|速射1]] |
+| 地狱凝视（聚焦） | 24" | D6 | 3+ | 6 | -2 | D3 | [[core-rules/devastating-wounds.md\|毁灭伤害]]，[[core-rules/hazardous.md\|危险]]，[[core-rules/psychic-attacks.md\|灵能]] |
+| 地狱凝视（普通） | 24" | D6 | 3+ | 5 | -1 | D3 | [[core-rules/psychic-attacks.md\|灵能]] |
+| 等离子手枪（标准） | 12" | 1 | 2+ | 7 | -2 | 1 | [[core-rules/pistol.md\|手枪]] |
+| 等离子手枪（过载） | 12" | 1 | 2+ | 8 | -3 | 2 | [[core-rules/hazardous.md\|危险]]，[[core-rules/pistol.md\|手枪]] |
+| 爆弹手枪 | 12" | 1 | 2+ | 4 | 0 | 1 | [[core-rules/pistol.md\|手枪]] |
+| 并联爆弹枪 | 24" | 2 | 2+ | 4 | 0 | 1 | [[core-rules/rapid-fire.md\|速射2]] |
 
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| Lashing tongue | 近战 | 2 | 3+ | 4 | 0 | 1 | extra attacks，lethal hits |
-| Force weapon | 近战 | 4 | 3+ | 6 | -1 | D3 | psychic |
-| Astartes chainsword | 近战 | 5 | 3+ | 4 | -1 | 1 | — |
-| Accursed weapon | 近战 | 4 | 3+ | 5 | -2 | 1 | — |
-| Power fist | 近战 | 3 | 3+ | 8 | -2 | 2 | — |
+| 鞭击长舌 | 近战 | 2 | 3+ | 4 | 0 | 1 | [[core-rules/extra-attacks.md\|额外攻击]]，[[core-rules/lethal-hits.md\|致命一击]] |
+| 灵能武器 | 近战 | 4 | 3+ | 6 | -1 | D3 | [[core-rules/psychic-attacks.md\|灵能]] |
+| 阿斯塔特链锯剑 | 近战 | 5 | 3+ | 4 | -1 | 1 | — |
+| 诅咒武器 | 近战 | 4 | 3+ | 5 | -2 | 1 | — |
+| 动力拳 | 近战 | 3 | 3+ | 8 | -2 | 2 | — |
 
 ## 技能
 - **Dark Favour (Psychic)**：While this model is leading a unit, models in that unit have a 4+ invulnerable save.
@@ -50,4 +50,4 @@ updated: '2026-07-23'
 
 ## 关键词
 - **阵营关键词**：Legiones Daemonica，Heretic Astartes
-- **普通关键词**：Steed of Slaanesh，Undivided，Shadow Legion，[[core-rules/mounted.md|Mounted]]，[[core-rules/character.md|Character]]，[[core-rules/grenades.md|Grenades]]，Chaos，Slaanesh，Sorcerer，Steed of Slaanesh，Undivided，Shadow Legion，[[core-rules/mounted.md|Mounted]]，[[core-rules/character.md|Character]]，[[core-rules/grenades.md|Grenades]]，Chaos，Slaanesh，Sorcerer，Steed of Slaanesh，Undivided，Shadow Legion，[[core-rules/mounted.md|Mounted]]，[[core-rules/character.md|Character]]，[[core-rules/grenades.md|Grenades]]，Chaos，Slaanesh，Sorcerer，Steed of Slaanesh，Undivided，Shadow Legion，[[core-rules/mounted.md|Mounted]]，[[core-rules/character.md|Character]]，[[core-rules/grenades.md|Grenades]]，Chaos，Slaanesh，Sorcerer，Steed of Slaanesh，Undivided，Shadow Legion，[[core-rules/mounted.md|Mounted]]，[[core-rules/character.md|Character]]，[[core-rules/grenades.md|Grenades]]，Chaos，Slaanesh，Sorcerer，Steed of Slaanesh，Undivided，Shadow Legion，[[core-rules/mounted.md|Mounted]]，[[core-rules/character.md|Character]]，[[core-rules/grenades.md|Grenades]]，Chaos，Slaanesh，Sorcerer，Steed of Slaanesh，Undivided，Shadow Legion，[[core-rules/mounted.md|Mounted]]，[[core-rules/character.md|Character]]，Slaanesh，[[core-rules/grenades.md|Grenades]]，Chaos，Sorcerer
+- **普通关键词**：Steed of Slaanesh，Undivided，[[factions/混沌恶魔/detachments/shadow-legion.md|Shadow Legion]]，[[core-rules/mounted.md|Mounted]]，[[core-rules/character.md|Character]]，[[core-rules/grenades.md|Grenades]]，Chaos，Slaanesh，Sorcerer，Steed of Slaanesh，Undivided，[[factions/混沌恶魔/detachments/shadow-legion.md|Shadow Legion]]，[[core-rules/mounted.md|Mounted]]，[[core-rules/character.md|Character]]，[[core-rules/grenades.md|Grenades]]，Chaos，Slaanesh，Sorcerer，Steed of Slaanesh，Undivided，Shadow Legion，[[core-rules/mounted.md|Mounted]]，[[core-rules/character.md|Character]]，[[core-rules/grenades.md|Grenades]]，Chaos，Slaanesh，Sorcerer，Steed of Slaanesh，Undivided，Shadow Legion，[[core-rules/mounted.md|Mounted]]，[[core-rules/character.md|Character]]，[[core-rules/grenades.md|Grenades]]，Chaos，Slaanesh，Sorcerer，Steed of Slaanesh，Undivided，Shadow Legion，[[core-rules/mounted.md|Mounted]]，[[core-rules/character.md|Character]]，[[core-rules/grenades.md|Grenades]]，Chaos，Slaanesh，Sorcerer，Steed of Slaanesh，Undivided，Shadow Legion，[[core-rules/mounted.md|Mounted]]，[[core-rules/character.md|Character]]，[[core-rules/grenades.md|Grenades]]，Chaos，Slaanesh，Sorcerer，Steed of Slaanesh，Undivided，Shadow Legion，[[core-rules/mounted.md|Mounted]]，[[core-rules/character.md|Character]]，Slaanesh，[[core-rules/grenades.md|Grenades]]，Chaos，Sorcerer

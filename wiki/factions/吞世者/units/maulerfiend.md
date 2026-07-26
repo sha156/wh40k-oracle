@@ -1,5 +1,5 @@
 ---
-id: 000002639
+id: '000002639'
 name_zh: 重锤魔
 name_en: Maulerfiend
 faction: 吞世者
@@ -29,13 +29,13 @@ updated: '2026-07-23'
 ## 射击武器
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| Magma cutter | 6" | 2 | 4+ | 9 | -4 | D6 | [[core-rules/melta.md\|melta 2]]，[[core-rules/rapid-fire.md\|rapid fire 1]] |
+| 岩浆切割机 | 6" | 2 | 4+ | 9 | -4 | D6 | [[core-rules/melta.md\|热熔2]]，[[core-rules/rapid-fire.md\|速射1]] |
 
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
 | 鞭打触须  | 近战 | 6 | 3+ | 7 | -1 | 1 | [[core-rules/extra-attacks.md\|额外攻击]] |
-| Maulerfiend fists | 近战 | 8 | 3+ | 14 | -2 | D6+1 | — |
+| 锤魔铁拳 | 近战 | 8 | 3+ | 14 | -2 | D6+1 | — |
 
 ## 技能
 - **【阵营技能】：黑暗契约**

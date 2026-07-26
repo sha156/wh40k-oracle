@@ -27,13 +27,13 @@ updated: '2026-07-23'
 ## 射击武器
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| Phantasmagoria – focused witchfire | 18" | 9 | 2+ | 6 | -2 | 1 | devastating wounds，hazardous，psychic |
-| Phantasmagoria – witchfire | 18" | 6 | 2+ | 6 | -2 | 1 | devastating wounds，psychic |
+| 失心幻境-专注巫火 | 18" | 9 | 2+ | 6 | -2 | 1 | [[core-rules/devastating-wounds.md\|毁灭伤害]]，[[core-rules/hazardous.md\|危险]]，[[core-rules/psychic-attacks.md\|灵能]] |
+| 失心幻境-巫火 | 18" | 6 | 2+ | 6 | -2 | 1 | [[core-rules/devastating-wounds.md\|毁灭伤害]]，[[core-rules/psychic-attacks.md\|灵能]] |
 
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| Snapping claws | 近战 | 4 | 2+ | 6 | -2 | 3 | devastating wounds，extra attacks |
+| 魔爪钳击 | 近战 | 4 | 2+ | 6 | -2 | 3 | [[core-rules/devastating-wounds.md\|毁灭伤害]]，[[core-rules/extra-attacks.md\|额外攻击]] |
 | Souleater blade | 近战 | 6 | 2+ | 9 | -2 | 3 | — |
 
 ## 技能

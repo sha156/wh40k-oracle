@@ -1,5 +1,5 @@
 ---
-id: 000001386
+id: '000001386'
 name_en: Attack Fighta
 faction: 兽人
 type: unit
@@ -27,13 +27,13 @@ updated: '2026-07-23'
 ## 射击武器
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| Twin big shoota | 36" | 3 | 5+ | 5 | 0 | 1 | [[core-rules/rapid-fire.md\|rapid fire 2]]，twin-linked |
-| Wing missiles | 24" | 1 | 5+ | 9 | -2 | 3 | — |
+| 双联大突突枪 | 36" | 3 | 5+ | 5 | 0 | 1 | [[core-rules/rapid-fire.md\|速射2]]，[[core-rules/twin-linked.md\|双联]] |
+| 圾翼导弹 | 24" | 1 | 5+ | 9 | -2 | 3 | — |
 
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| Armoured hull | 近战 | 3 | 4+ | 6 | 0 | 1 | — |
+| 装甲外壳 | 近战 | 3 | 4+ | 6 | 0 | 1 | — |
 
 ## 技能
 - **Small Bomms**：Each time the bearer ends a Normal move, you can select one enemy unit it moved across during that move and roll three D6: for each 4+, that unit suffers 1 mortal wound.

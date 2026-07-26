@@ -1,5 +1,6 @@
 ---
-id: 000000910
+id: '000000910'
+name_zh: 修女会犀牛装甲车
 name_en: Sororitas Rhino
 faction: 战斗修女
 type: unit
@@ -28,13 +29,13 @@ updated: '2026-07-23'
 ## 射击武器
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| Hunter-killer missile | 48" | 1 | 2+ | 14 | -3 | D6 | one shot |
-| Storm bolter | 24" | 2 | 3+ | 4 | 0 | 1 | [[core-rules/rapid-fire.md\|rapid fire 2]] |
+| 猎杀飞弹 | 48" | 1 | 2+ | 14 | -3 | D6 | [[core-rules/one-shot.md\|单发]] |
+| 风暴爆弹枪 | 24" | 2 | 3+ | 4 | 0 | 1 | [[core-rules/rapid-fire.md\|速射2]] |
 
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| Armoured tracks | 近战 | 3 | 4+ | 6 | 0 | 1 | — |
+| 装甲履带 | 近战 | 3 | 4+ | 6 | 0 | 1 | — |
 
 ## 技能
 - **Self Repair**：At the start of your Command phase, this model regains 1 lost wound.

@@ -24,13 +24,13 @@ updated: '2026-07-23'
 ## 射击武器
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| Bolt pistol | 12" | 1 | 2+ | 4 | 0 | 1 | pistol |
-| Quietus | 36" | 2 | 2+ | 4 | -2 | 3 | precision |
+| 爆弹手枪 | 12" | 1 | 2+ | 4 | 0 | 1 | [[core-rules/pistol.md\|手枪]] |
+| Quietus | 36" | 2 | 2+ | 4 | -2 | 3 | [[core-rules/precision.md\|精准]] |
 
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| Combat knife | 近战 | 4 | 3+ | 4 | 0 | 1 | — |
+| 战斗刀 | 近战 | 4 | 3+ | 4 | 0 | 1 | — |
 
 ## 技能
 - **Voice of Experience**：While this model is leading a unit, improve the Objective Control characteristic of models in that unit by 1 and each time a model in that unit makes an attack, add 1 to the Hit roll.

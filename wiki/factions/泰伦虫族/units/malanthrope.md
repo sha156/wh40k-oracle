@@ -1,5 +1,5 @@
 ---
-id: 000000499
+id: '000000499'
 name_en: Malanthrope
 faction: 泰伦虫族
 type: unit

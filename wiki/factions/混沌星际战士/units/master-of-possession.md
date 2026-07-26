@@ -1,5 +1,5 @@
 ---
-id: 000001581
+id: '000001581'
 name_zh: 附魔大师
 name_en: Master Of Possession
 faction: 混沌星际战士
@@ -30,13 +30,13 @@ updated: '2026-07-23'
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
 | 爆弹手枪 | 12" | 1 | 3+ | 4 | 0 | 1 | [[core-rules/pistol.md\|手枪]] |
-| 附身咒法（普通）  | 18" | 2 | 3+ | 4 | -3 | 2 | [[core-rules/anti.md\|反灵能者 2+]]，[[core-rules/pistol.md\|手枪]]，[[core-rules/precision.md\|精准]]，灵能 |
-| 附身咒法（聚焦） | 18" | 2 | 3+ | 6 | -3 | 3 | [[core-rules/anti.md\|反灵能者 2+]]，[[core-rules/pistol.md\|手枪]]，[[core-rules/precision.md\|精准]]，[[core-rules/hazardous.md\|危险]]，灵能 |
+| 附身咒法（普通）  | 18" | 2 | 3+ | 4 | -3 | 2 | [[core-rules/anti.md\|针对灵能者2+]]，[[core-rules/pistol.md\|手枪]]，[[core-rules/precision.md\|精准]]，[[core-rules/psychic-attacks.md\|灵能]] |
+| 附身咒法（聚焦） | 18" | 2 | 3+ | 6 | -3 | 3 | [[core-rules/anti.md\|针对灵能者2+]]，[[core-rules/hazardous.md\|危险]]，[[core-rules/pistol.md\|手枪]]，[[core-rules/precision.md\|精准]]，[[core-rules/psychic-attacks.md\|灵能]] |
 
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| 附魔之杖  | 近战 | 4 | 3+ | 6 | -1 | D3 | 灵能，[[core-rules/anti.md\|反灵能者 2+]] |
+| 附魔之杖  | 近战 | 4 | 3+ | 6 | -1 | D3 | [[core-rules/anti.md\|针对灵能者2+]]，[[core-rules/psychic-attacks.md\|灵能]] |
 
 ## 技能
 - **【阵营技能】：黑暗契约**

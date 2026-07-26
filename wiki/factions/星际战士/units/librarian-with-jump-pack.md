@@ -24,22 +24,22 @@ updated: '2026-07-23'
 ## 射击武器
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| Bolt pistol | 12" | 1 | 3+ | 4 | 0 | 1 | pistol |
-| Boltgun | 24" | 2 | 3+ | 4 | 0 | 1 | — |
-| Combi-weapon | 24" | 1 | 4+ | 4 | 0 | 1 | [[core-rules/anti.md\|anti-infantry 4+]]，devastating wounds，[[core-rules/rapid-fire.md\|rapid fire 1]] |
-| Grav-pistol | 12" | 1 | 3+ | 4 | -1 | 2 | [[core-rules/anti.md\|anti-vehicle 2+]]，pistol |
-| Hand flamer | 12" | D6 | N/A | 3 | 0 | 1 | ignores cover，pistol，torrent |
-| Inferno pistol | 6" | 1 | 3+ | 8 | -4 | D3 | [[core-rules/melta.md\|melta 2]]，pistol |
-| Plasma pistol – standard | 12" | 1 | 3+ | 7 | -2 | 1 | pistol |
-| Plasma pistol – supercharge | 12" | 1 | 3+ | 8 | -3 | 2 | hazardous，pistol |
-| Smite – witchfire | 24" | D6 | 3+ | 5 | -1 | D3 | psychic |
-| Smite – focused witchfire | 24" | D6 | 3+ | 6 | -2 | D3 | devastating wounds，hazardous，psychic |
-| Storm bolter | 24" | 2 | 3+ | 4 | 0 | 1 | [[core-rules/rapid-fire.md\|rapid fire 2]] |
+| 爆弹手枪 | 12" | 1 | 3+ | 4 | 0 | 1 | [[core-rules/pistol.md\|手枪]] |
+| 爆弹枪 | 24" | 2 | 3+ | 4 | 0 | 1 | — |
+| 复合武器 | 24" | 1 | 4+ | 4 | 0 | 1 | [[core-rules/anti.md\|针对步兵4+]]，[[core-rules/devastating-wounds.md\|毁灭伤害]]，[[core-rules/rapid-fire.md\|速射1]] |
+| 重力手枪 | 12" | 1 | 3+ | 4 | -1 | 2 | [[core-rules/anti.md\|针对载具2+]]，[[core-rules/pistol.md\|手枪]] |
+| 喷火手枪 | 12" | D6 | N/A | 3 | 0 | 1 | [[core-rules/ignores-cover.md\|无视掩体]]，[[core-rules/pistol.md\|手枪]]，[[core-rules/torrent.md\|洪流]] |
+| 狱火手枪 | 6" | 1 | 3+ | 8 | -4 | D3 | [[core-rules/melta.md\|热熔2]]，[[core-rules/pistol.md\|手枪]] |
+| 等离子手枪（标准） | 12" | 1 | 3+ | 7 | -2 | 1 | [[core-rules/pistol.md\|手枪]] |
+| 等离子手枪（过载） | 12" | 1 | 3+ | 8 | -3 | 2 | [[core-rules/hazardous.md\|危险]]，[[core-rules/pistol.md\|手枪]] |
+| 惩击（巫火） | 24" | D6 | 3+ | 5 | -1 | D3 | [[core-rules/psychic-attacks.md\|灵能]] |
+| 惩击（聚焦） | 24" | D6 | 3+ | 6 | -2 | D3 | [[core-rules/devastating-wounds.md\|毁灭伤害]]，[[core-rules/hazardous.md\|危险]]，[[core-rules/psychic-attacks.md\|灵能]] |
+| 风暴爆弹枪 | 24" | 2 | 3+ | 4 | 0 | 1 | [[core-rules/rapid-fire.md\|速射2]] |
 
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| Force weapon | 近战 | 4 | 3+ | 6 | -1 | D3 | psychic |
+| 灵能武器 | 近战 | 4 | 3+ | 6 | -1 | D3 | [[core-rules/psychic-attacks.md\|灵能]] |
 
 ## 技能
 - **Psychic Hood**：While this model is leading a unit, models in that unit have the Feel No Pain 4+ ability against Psychic Attacks.
@@ -50,4 +50,4 @@ updated: '2026-07-23'
 
 ## 关键词
 - **阵营关键词**：Adeptus Astartes
-- **普通关键词**：Fly，[[core-rules/grenades.md|Grenades]]，Jump Pack，Imperium，Librarian，[[core-rules/psyker.md|Psyker]]，[[core-rules/infantry.md|Infantry]]，[[core-rules/character.md|Character]]
+- **普通关键词**：Fly，[[core-rules/grenades.md|Grenades]]，Jump Pack，Imperium，[[factions/星际战士/units/librarian.md|Librarian]]，[[core-rules/psyker.md|Psyker]]，[[core-rules/infantry.md|Infantry]]，[[core-rules/character.md|Character]]

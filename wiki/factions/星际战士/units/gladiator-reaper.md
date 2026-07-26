@@ -1,5 +1,6 @@
 ---
 id: '000001667'
+name_zh: 死神型角斗者坦克
 name_en: Gladiator Reaper
 faction: 星际战士
 type: unit
@@ -25,18 +26,20 @@ updated: '2026-07-23'
 ## 射击武器
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| Icarus rocket pod | 24" | D3 | 3+ | 8 | -1 | 2 | [[core-rules/anti.md\|anti-fly 2+]] |
-| Ironhail heavy stubber | 36" | 3 | 3+ | 4 | 0 | 1 | [[core-rules/rapid-fire.md\|rapid fire 3]] |
-| Tempest bolter | 24" | 4 | 3+ | 4 | -1 | 1 | [[core-rules/rapid-fire.md\|rapid fire 4]] |
-| Twin heavy onslaught gatling cannon | 24" | 12 | 3+ | 6 | 0 | 1 | devastating wounds，twin-linked |
+| 伊卡洛斯火箭巢 | 24" | D3 | 3+ | 8 | -1 | 2 | [[core-rules/anti.md\|针对飞行2+]] |
+| 铁雨重机枪 | 36" | 3 | 3+ | 4 | 0 | 1 | [[core-rules/rapid-fire.md\|速射3]] |
+| 旋风爆弹枪  | 24" | 4 | 3+ | 4 | -1 | 1 | [[core-rules/rapid-fire.md\|速射4]] |
+| 双联重型突击加特林 | 24" | 12 | 3+ | 6 | 0 | 1 | [[core-rules/devastating-wounds.md\|毁灭伤害]]，[[core-rules/twin-linked.md\|双联]] |
 
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| Armoured hull | 近战 | 3 | 4+ | 6 | 0 | 1 | — |
+| 装甲车体  | 近战 | 3 | 4+ | 6 | 0 | 1 | — |
 
 ## 技能
-- **Rotating Death**：This model’s twin heavy onslaught gatling cannon has the [SUSTAINED HITS 2] ability when targeting <span class="kwb">INFANTRY</span> units.
+- **飞旋死神**：本模型的双联重型突击加特林攻击步兵单位时额外获得【连击 2】技能
+- **严重损伤**：本模型 W 值为 1-4 时，攻击命中结果-1
+- **【阵营技能】：破敌重誓**
 
 ## 单位构成
 - **1个模型** — 160 分

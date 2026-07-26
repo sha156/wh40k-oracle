@@ -1,5 +1,5 @@
 ---
-id: 000003698
+id: '000003698'
 name_zh: 内环伙友
 name_en: Inner Circle Companions
 faction: 星际战士

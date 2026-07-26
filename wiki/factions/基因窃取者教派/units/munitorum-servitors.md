@@ -27,15 +27,15 @@ updated: '2026-07-23'
 ## 射击武器
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| Heavy bolter | 36" | 3 | 6+ | 5 | -1 | 2 | heavy，[[core-rules/sustained-hits.md\|sustained hits 1]] |
-| Multi-melta | 18" | 2 | 6+ | 9 | -4 | D6 | heavy，[[core-rules/melta.md\|melta 2]] |
-| Plasma cannon – standard | 36" | D3 | 6+ | 7 | -2 | 1 | blast，heavy |
-| Plasma cannon – supercharge | 36" | D3 | 6+ | 8 | -3 | 2 | blast，hazardous，heavy |
+| 重型爆弹枪 | 36" | 3 | 6+ | 5 | -1 | 2 | [[core-rules/heavy.md\|重型]]，[[core-rules/sustained-hits.md\|连击1]] |
+| 多管热熔 | 18" | 2 | 6+ | 9 | -4 | D6 | [[core-rules/heavy.md\|重型]]，[[core-rules/melta.md\|热熔2]] |
+| 等离子炮（标准） | 36" | D3 | 6+ | 7 | -2 | 1 | [[core-rules/blast.md\|爆炸]]，[[core-rules/heavy.md\|重型]] |
+| 等离子炮（过载） | 36" | D3 | 6+ | 8 | -3 | 2 | [[core-rules/blast.md\|爆炸]]，[[core-rules/hazardous.md\|危险]]，[[core-rules/heavy.md\|重型]] |
 
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| Close combat weapon | 近战 | 1 | 5+ | 3 | 0 | 1 | — |
+| 格斗武器 | 近战 | 1 | 5+ | 3 | 0 | 1 | — |
 | Servitor’s servo-arm | 近战 | 1 | 5+ | 6 | -2 | 3 | — |
 
 ## 技能

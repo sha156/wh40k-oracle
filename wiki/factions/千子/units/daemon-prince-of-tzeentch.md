@@ -1,5 +1,6 @@
 ---
 id: '000001036'
+name_zh: 奸奇恶魔王子
 name_en: Daemon Prince of Tzeentch
 faction: 千子
 type: unit
@@ -28,14 +29,14 @@ updated: '2026-07-23'
 ## 射击武器
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| Dark Blessing | 24" | 9 | 2+ | 4 | -1 | 1 | ignores cover，psychic，[[core-rules/sustained-hits.md\|sustained hits 1]] |
-| Infernal cannon | 24" | 3 | 2+ | 5 | -2 | 2 | — |
+| [[factions/帝皇之子/enhancements/dark-blessings.md\|黑暗赐福]] | 24" | 9 | 2+ | 4 | -1 | 1 | [[core-rules/ignores-cover.md\|无视掩体]]，[[core-rules/psychic-attacks.md\|灵能]]，[[core-rules/sustained-hits.md\|连击1]] |
+| 狱火加农炮 | 24" | 3 | 2+ | 5 | -2 | 2 | — |
 
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| Hellforged weapons – strike | 近战 | 6 | 2+ | 8 | -2 | 3 | devastating wounds，psychic |
-| Hellforged weapons – sweep | 近战 | 12 | 2+ | 6 | -1 | 1 | devastating wounds，psychic |
+| 狱铸武器（重击） | 近战 | 6 | 2+ | 8 | -2 | 3 | [[core-rules/devastating-wounds.md\|毁灭伤害]]，[[core-rules/psychic-attacks.md\|灵能]] |
+| 狱铸武器（横扫） | 近战 | 12 | 2+ | 6 | -1 | 1 | [[core-rules/devastating-wounds.md\|毁灭伤害]]，[[core-rules/psychic-attacks.md\|灵能]] |
 
 ## 技能
 - **Servile Pawns**：While this model is within 3" of one or more friendly Thousand Sons Infantry units, this model has the Lone Operative ability.

@@ -29,18 +29,18 @@ updated: '2026-07-23'
 ## 射击武器
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| 马格努斯凝视 | 24" | 3D3 | 2+ | 11 | -2 | 3 | [[core-rules/devastating-wounds.md\|毁灭伤害]]，灵能 |
-| 奸奇火焰风暴 | 24" | D6+3 | 2+ | 6 | -1 | 2 | [[core-rules/blast.md\|爆炸]]，灵能，[[core-rules/ignores-cover.md\|无视掩体]] |
+| 马格努斯凝视 | 24" | 3D3 | 2+ | 11 | -2 | 3 | [[core-rules/devastating-wounds.md\|毁灭伤害]]，[[core-rules/psychic-attacks.md\|灵能]] |
+| 奸奇火焰风暴 | 24" | D6+3 | 2+ | 6 | -1 | 2 | [[core-rules/blast.md\|爆炸]]，[[core-rules/ignores-cover.md\|无视掩体]]，[[core-rules/psychic-attacks.md\|灵能]] |
 
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| 马格努斯之刃 — 猛击 | 近战 | 7 | 2+ | 16 | -3 | 3 | 灵能，[[core-rules/devastating-wounds.md\|毁灭伤害]] |
-| 马格努斯之刃 — 横扫 | 近战 | 14 | 2+ | 8 | -1 | 2 | 灵能 |
+| 马格努斯之刃 — 猛击 | 近战 | 7 | 2+ | 16 | -3 | 3 | [[core-rules/devastating-wounds.md\|毁灭伤害]]，[[core-rules/psychic-attacks.md\|灵能]] |
+| 马格努斯之刃 — 横扫 | 近战 | 14 | 2+ | 8 | -1 | 2 | [[core-rules/psychic-attacks.md\|灵能]] |
 
 ## 技能
 - **阵营：巫师秘会**
-- **超自然力量**：在战斗轮次开始时，选择猩红之王中的一个技能（见左侧）。在下一个战斗轮次开始前，该模型拥有该技能。
+- **超自然力量**：在战斗轮次开始时，选择猩红之王中的一个技能（见左侧）。在[[factions/兽人/stratagems/on-to-da-next.md|下一个]]战斗轮次开始前，该模型拥有该技能。
 - **巫师之星之主 **：此模型每回合可以尝试显化最多两个仪式而非一个。每次此模型尝试显化仪式时，其灵能测试结果增加2点。
 - **受损：剩余 1-6 点耐伤**：当该模型剩余 1-6 点耐伤，模型攻击的命中掷骰结果 减少 1 点。
 

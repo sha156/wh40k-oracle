@@ -1,5 +1,6 @@
 ---
-id: 000000969
+id: '000000969'
+name_zh: 亵渎者
 name_en: Defiler
 faction: 混沌星际战士
 type: unit
@@ -28,22 +29,22 @@ updated: '2026-07-23'
 ## 射击武器
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| Hades battle cannon | 48" | D6+3 | 3+ | 10 | -1 | 3 | blast |
-| Ectoplasma destructor | 36" | D6 | 3+ | 12 | -3 | 3 | blast |
-| Excruciator cannon | 36" | 6 | 3+ | 6 | -1 | 2 | — |
-| Magma cutters | 12" | 2 | 3+ | 9 | -4 | D6 | [[core-rules/melta.md\|melta 2]] |
-| Heavy baleflamer | 12" | D6+3 | N/A | 7 | -2 | 2 | ignores cover，torrent |
-| Hades lascannon | 48" | 2 | 3+ | 12 | -3 | D6+1 | — |
-| Heavy reaper autocannon | 48" | 4 | 3+ | 9 | -1 | 3 | devastating wounds，[[core-rules/sustained-hits.md\|sustained hits 1]] |
-| Heavy missile launcher – krak | 48" | 2 | 3+ | 10 | -2 | D6+1 | — |
-| Heavy missile launcher – frag | 48" | 2D6 | 3+ | 5 | -1 | 1 | blast |
+| 冥神战斗加农炮 | 48" | D6+3 | 3+ | 10 | -1 | 3 | [[core-rules/blast.md\|爆炸]] |
+| 魂浆毁灭炮 | 36" | D6 | 3+ | 12 | -3 | 3 | [[core-rules/blast.md\|爆炸]] |
+| 拷问者加农炮 | 36" | 6 | 3+ | 6 | -1 | 2 | — |
+| 岩浆切割机 | 12" | 2 | 3+ | 9 | -4 | D6 | [[core-rules/melta.md\|热熔2]] |
+| 重型恶毒之火 | 12" | D6+3 | N/A | 7 | -2 | 2 | [[core-rules/ignores-cover.md\|无视掩体]]，[[core-rules/torrent.md\|洪流]] |
+| 冥神激光炮 | 48" | 2 | 3+ | 12 | -3 | D6+1 | — |
+| 重型收割者自动炮 | 48" | 4 | 3+ | 9 | -1 | 3 | [[core-rules/devastating-wounds.md\|毁灭伤害]]，[[core-rules/sustained-hits.md\|连击1]] |
+| 重型导弹发射器（穿甲） | 48" | 2 | 3+ | 10 | -2 | D6+1 | — |
+| 重型导弹发射器（破片） | 48" | 2D6 | 3+ | 5 | -1 | 1 | [[core-rules/blast.md\|爆炸]] |
 
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| Shearing claws – strike | 近战 | 5 | 3+ | 16 | -3 | D6+1 | — |
-| Shearing claws – sweep | 近战 | 10 | 3+ | 6 | -2 | 1 | — |
-| Electroscourge | 近战 | 5 | 3+ | 12 | -2 | 2 | extra attacks，[[core-rules/sustained-hits.md\|sustained hits 2]] |
+| 剪切利爪（重击） | 近战 | 5 | 3+ | 16 | -3 | D6+1 | — |
+| 剪切利爪（横扫） | 近战 | 10 | 3+ | 6 | -2 | 1 | — |
+| 电鞭 | 近战 | 5 | 3+ | 12 | -2 | 2 | [[core-rules/extra-attacks.md\|额外攻击]]，[[core-rules/sustained-hits.md\|连击2]] |
 
 ## 技能
 - **Scuttling Walker**：Each time this unit makes a Normal, Advance or Fall Back move, it can move through models (excluding <span class="kwb">TITANIC</span> models) and terrain features. When doing so, it can move within Engagement Range of enemy models, but cannot end that move within Engagement Range of them, and any Desperate Escape test is automatically passed.

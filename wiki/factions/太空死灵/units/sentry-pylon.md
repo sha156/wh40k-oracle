@@ -24,9 +24,9 @@ updated: '2026-07-23'
 ## 射击武器
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| Focused death ray | 36" | 6 | 4+ | 8 | -2 | 2 | [[core-rules/sustained-hits.md\|sustained hits 2]] |
-| Gauss exterminator | 48" | 1 | 4+ | 14 | -3 | 6 | lethal hits |
-| Heat cannon | 36" | 2 | 4+ | 9 | -4 | D6 | [[core-rules/melta.md\|melta 4]] |
+| Focused death ray | 36" | 6 | 4+ | 8 | -2 | 2 | [[core-rules/sustained-hits.md\|连击2]] |
+| Gauss exterminator | 48" | 1 | 4+ | 14 | -3 | 6 | [[core-rules/lethal-hits.md\|致命一击]] |
+| Heat cannon | 36" | 2 | 4+ | 9 | -4 | D6 | [[core-rules/melta.md\|热熔4]] |
 
 ## 技能
 - **Teleportation Matrix**：Once per battle, at the end of your opponent’s turn, if this <span class="kwb">FORTIFICATION</span> is not within Engagement Range of one or more enemy units, you can remove it from the battlefield. In the Reinforcements step of your next Movement phase, set it up anywhere on the battlefield that is more than 9" horizontally away from all enemy models. If the battle ends and this <span class="kwb">FORTIFICATION</span> is not on the battlefield, it is destroyed.

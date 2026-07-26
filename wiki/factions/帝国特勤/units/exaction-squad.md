@@ -1,5 +1,5 @@
 ---
-id: 000002685
+id: '000002685'
 name_zh: 强征小队
 name_en: Exaction Squad
 faction: 帝国特勤

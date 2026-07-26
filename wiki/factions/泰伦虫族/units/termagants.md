@@ -1,5 +1,5 @@
 ---
-id: 000000468
+id: '000000468'
 name_zh: 枪虫
 name_en: Termagants
 faction: 泰伦虫族
@@ -30,7 +30,7 @@ updated: '2026-07-23'
 | 蚀肉枪 | 18" | 1 | 4+ | 5 | 0 | 1 | [[core-rules/assault.md\|突击]] |
 | 碎片发射器 | 18" | D3 | 4+ | 5 | 0 | 1 | [[core-rules/blast.md\|爆炸]]，[[core-rules/heavy.md\|重型]] |
 | 脊刺步枪 | 24" | 1 | 4+ | 4 | -1 | 1 | [[core-rules/heavy.md\|重型]] |
-| 绞杀网 | 18" | D6 | N/A | 2 | 0 | 1 | [[core-rules/assault.md\|突击]]，[[core-rules/torrent.md\|洪流]]，[[core-rules/devastating-wounds.md\|毁灭伤害]] |
+| 绞杀网 | 18" | D6 | N/A | 2 | 0 | 1 | [[core-rules/assault.md\|突击]]，[[core-rules/devastating-wounds.md\|毁灭伤害]]，[[core-rules/torrent.md\|洪流]] |
 | 枪虫吞噬枪 | 18" | 2 | 4+ | 4 | 0 | 1 | — |
 | 枪虫刺拳枪 | 12" | 2 | 4+ | 3 | 0 | 1 | [[core-rules/assault.md\|突击]]，[[core-rules/pistol.md\|手枪]]，[[core-rules/twin-linked.md\|双联]] |
 

@@ -26,13 +26,13 @@ updated: '2026-07-23'
 ## 射击武器
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| Twin heavy bolter | 36" | 3 | 4+ | 5 | -1 | 2 | [[core-rules/sustained-hits.md\|sustained hits 1]]，twin-linked |
-| Twin lascannon | 48" | 1 | 4+ | 12 | -3 | D6+1 | twin-linked |
+| 双联重型爆弹枪 | 36" | 3 | 4+ | 5 | -1 | 2 | [[core-rules/sustained-hits.md\|连击1]]，[[core-rules/twin-linked.md\|双联]] |
+| 双联激光炮 | 48" | 1 | 4+ | 12 | -3 | D6+1 | [[core-rules/twin-linked.md\|双联]] |
 
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| Close combat weapon | 近战 | 1 | 4+ | 4 | 0 | 1 | — |
+| 格斗武器 | 近战 | 1 | 4+ | 4 | 0 | 1 | — |
 
 ## 技能
 - **Sentry Programming**：You can target this unit with the Fire Overwatch Stratagem for 0CP, and can do so even if you have already used that Stratagem on a different unit this phase.

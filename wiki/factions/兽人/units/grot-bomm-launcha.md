@@ -1,5 +1,5 @@
 ---
-id: 000001385
+id: '000001385'
 name_en: Grot Bomm Launcha
 faction: 兽人
 type: unit
@@ -27,12 +27,12 @@ updated: '2026-07-23'
 ## 射击武器
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| Grot-guided bomms | 72" | D6 | 4+ | 8 | -2 | 2 | blast，one shot，indirect fire |
+| Grot-guided bomms | 72" | D6 | 4+ | 8 | -2 | 2 | [[core-rules/blast.md\|爆炸]]，[[core-rules/one-shot.md\|单发]]，[[core-rules/indirect-fire.md\|曲射]] |
 
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| Spiked wheel | 近战 | 2 | 4+ | 6 | 0 | 1 | — |
+| 尖刺车轮 | 近战 | 2 | 4+ | 6 | 0 | 1 | — |
 
 ## 技能
 - **Furious Barrage**：Each time this model makes a ranged attack that targets an enemy unit that contains five or more models, you can re-roll the Hit roll.

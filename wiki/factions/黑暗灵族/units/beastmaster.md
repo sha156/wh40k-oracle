@@ -30,15 +30,15 @@ updated: '2026-07-23'
 ## 射击武器
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| Splinter pods | 18" | 2 | 3+ | 2 | 0 | 1 | [[core-rules/anti.md\|anti-infantry 3+]]，assault，twin-linked |
+| 毒晶匣枪 | 18" | 2 | 3+ | 2 | 0 | 1 | [[core-rules/anti.md\|针对步兵3+]]，[[core-rules/assault.md\|突击]]，[[core-rules/twin-linked.md\|双联]] |
 
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| Agoniser | 近战 | 3 | 3+ | 3 | -2 | 1 | [[core-rules/anti.md\|anti-infantry 3+]] |
-| Clawed Fiend fists | 近战 | 5 | 4+ | 5 | -2 | 2 | devastating wounds |
-| Khymerae talons | 近战 | 4 | 4+ | 5 | -1 | 1 | lethal hits |
-| Razorwing feathers | 近战 | 6 | 4+ | 3 | 0 | 1 | [[core-rules/sustained-hits.md\|sustained hits 1]] |
+| 折磨之鞭 | 近战 | 3 | 3+ | 3 | -2 | 1 | [[core-rules/anti.md\|针对步兵3+]] |
+| Clawed Fiend fists | 近战 | 5 | 4+ | 5 | -2 | 2 | [[core-rules/devastating-wounds.md\|毁灭伤害]] |
+| Khymerae talons | 近战 | 4 | 4+ | 5 | -1 | 1 | [[core-rules/lethal-hits.md\|致命一击]] |
+| Razorwing feathers | 近战 | 6 | 4+ | 3 | 0 | 1 | [[core-rules/sustained-hits.md\|连击1]] |
 
 ## 技能
 - **Goaded Savagery (Pain)**：In the Fight phase, when you select this unit to fight, you can spend 1 of your Pain tokens to Empower this unit. While this unit is Empowered, if it contains a <span class="kwb">BEASTMASTER</span> model, each time a <span class="kwb">BEAST</span> model in this unit makes a melee attack, you can re-roll the Hit roll and you can re-roll the Wound roll.

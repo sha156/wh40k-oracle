@@ -1,5 +1,5 @@
 ---
-id: 000000489
+id: '000000489'
 name_zh: 孢子舱
 name_en: Tyrannocyte
 faction: 泰伦虫族

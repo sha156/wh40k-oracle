@@ -1,5 +1,6 @@
 ---
-id: 000000691
+id: '000000691'
+name_zh: 装甲哨兵
 name_en: Armoured Sentinels
 faction: 星界军
 type: unit
@@ -21,30 +22,29 @@ updated: '2026-07-23'
 ## 属性表
 | 模型 | M | T | SV | W | LD | OC |
 |---|---|---|---|---|---|---|
-| Armoured Sentinels | 8" | 8 | 2+ | 7 | 7+ | 2 |
+| 装甲哨兵 | 8" | 8 | 2+ | 7 | 7+ | 2 |
 
 ## 射击武器
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| Autocannon | 48" | 2 | 4+ | 9 | -1 | 3 | — |
-| Heavy flamer | 12" | D6 | N/A | 5 | -1 | 1 | ignores cover，torrent |
-| Hunter-killer missile | 48" | 1 | 4+ | 14 | -3 | D6 | one shot |
-| Lascannon | 48" | 1 | 4+ | 12 | -3 | D6+1 | — |
-| Multi-laser | 36" | 4 | 4+ | 6 | 0 | 1 | — |
-| Missile launcher – frag | 48" | D6 | 4+ | 4 | 0 | 1 | blast，heavy |
-| Missile launcher – krak | 48" | 1 | 4+ | 9 | -2 | D6 | heavy |
-| Plasma cannon – standard | 36" | D3 | 4+ | 7 | -2 | 1 | blast |
-| Plasma cannon – supercharge | 36" | D3 | 4+ | 8 | -3 | 2 | blast，hazardous |
+| 自动炮 | 48" | 2 | 4+ | 9 | -1 | 3 | — |
+| 重型喷火器 | 12" | D6 | N/A | 5 | -1 | 1 | [[core-rules/ignores-cover.md\|无视掩体]]，[[core-rules/torrent.md\|洪流]] |
+| 猎杀飞弹 | 48" | 1 | 4+ | 14 | -3 | D6 | [[core-rules/one-shot.md\|单发]] |
+| 激光炮 | 48" | 1 | 4+ | 12 | -3 | D6+1 | — |
+| 多管激光 | 36" | 4 | 4+ | 6 | 0 | 1 | — |
+| 导弹发射器（破片） | 48" | D6 | 4+ | 4 | 0 | 1 | [[core-rules/blast.md\|爆炸]]，[[core-rules/heavy.md\|重型]] |
+| 导弹发射器（穿甲） | 48" | 1 | 4+ | 9 | -2 | D6 | [[core-rules/heavy.md\|重型]] |
+| 等离子炮（标准） | 36" | D3 | 4+ | 7 | -2 | 1 | [[core-rules/blast.md\|爆炸]] |
+| 等离子炮（过载） | 36" | D3 | 4+ | 8 | -3 | 2 | [[core-rules/blast.md\|爆炸]]，[[core-rules/hazardous.md\|危险]] |
 
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| Close combat weapon | 近战 | 2 | 4+ | 6 | 0 | 1 | — |
-| Sentinel chainsaw | 近战 | 3 | 4+ | 6 | -1 | 1 | — |
+| 格斗武器 | 近战 | 2 | 4+ | 6 | 0 | 1 | — |
+| 哨兵链锯 | 近战 | 3 | 4+ | 6 | -1 | 1 | — |
 
 ## 技能
-- **Mobile Hunter-killers**：Each time a model in this unit makes an attack that targets a <span class="kwb">MONSTER</span> or <span class="kwb">VEHICLE</span> unit, you can re-roll the Wound roll.
-- **One Shot**：The bearer can only shoot with this weapon once per battle.
+- **机动猎手**：本单位模型攻击巨兽或载具时可以重投造伤结果
 
 ## 单位构成
 - **1个模型** — 65 分

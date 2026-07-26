@@ -1,5 +1,5 @@
 ---
-id: 000000068
+id: '000000068'
 name_zh: 压制者小队
 name_en: Suppressor Squad
 faction: 星际战士

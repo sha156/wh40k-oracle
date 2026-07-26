@@ -1,5 +1,5 @@
 ---
-id: 000000439
+id: '000000439'
 name_zh: 夏司’欧 R’ALAI
 name_en: Shas’o R’alai
 faction: 钛帝国
@@ -28,13 +28,13 @@ updated: '2026-07-23'
 ## 射击武器
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| Experimental pulse submunitions rifle – EMP | 24" | 1 | 3+ | 1 | 0 | 3 | [[core-rules/anti.md\|anti-vehicle 3+]]，devastating wounds |
-| Experimental pulse submunitions rifle – ionic | 24" | D6 | 3+ | 6 | -1 | 1 | blast |
+| Experimental pulse submunitions rifle – EMP | 24" | 1 | 3+ | 1 | 0 | 3 | [[core-rules/anti.md\|针对载具3+]]，[[core-rules/devastating-wounds.md\|毁灭伤害]] |
+| Experimental pulse submunitions rifle – ionic | 24" | D6 | 3+ | 6 | -1 | 1 | [[core-rules/blast.md\|爆炸]] |
 
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| Battlesuit fists | 近战 | 3 | 4+ | 5 | 0 | 1 | — |
+| 战斗服铁拳 | 近战 | 3 | 4+ | 5 | 0 | 1 | — |
 
 ## 技能
 - **Blacklight Marker Drones**：Twice per battle, when this unit is an Observer unit, until the end of the phase, each time a ranged attack is made by a model in their Guided unit that targets their Spotted unit, re-roll a Wound roll of 1.  <br><br><b>Designer’s Note:</b> <i>Place two Blacklight Marker Drone tokens next to this model, removing one each time this ability has been used.</i>

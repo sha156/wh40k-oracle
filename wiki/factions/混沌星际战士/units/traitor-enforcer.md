@@ -1,5 +1,6 @@
 ---
-id: 000002589
+id: '000002589'
+name_zh: 叛军执法者
 name_en: Traitor Enforcer
 faction: 混沌星际战士
 type: unit
@@ -20,8 +21,8 @@ updated: '2026-07-23'
 ## 属性表
 | 模型 | M | T | SV | W | LD | OC |
 |---|---|---|---|---|---|---|
-| TRAITOR ENFORCER | 6" | 3 | 5+ | 3 | 6+ | 1 |
-| TRAITOR OGRYN | 6" | 6 | 5+ | 4 | 7+ | 1 |
+| 执法者 | 6" | 3 | 5+ | 3 | 6+ | 1 |
+| 叛变欧格林 | 6" | 6 | 5+ | 4 | 7+ | 1 |
 
 ### 特殊保护
 - 5+
@@ -29,17 +30,18 @@ updated: '2026-07-23'
 ## 射击武器
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| Bolt pistol | 12" | 1 | 3+ | 4 | 0 | 1 | pistol |
+| 爆弹手枪 | 12" | 1 | 3+ | 4 | 0 | 1 | [[core-rules/pistol.md\|手枪]] |
 
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| Ogryn weapons | 近战 | 5 | 3+ | 7 | -1 | 2 | — |
-| Power fist | 近战 | 3 | 3+ | 6 | -2 | 2 | — |
+| 欧格林巨型武器  | 近战 | 5 | 3+ | 7 | -1 | 2 | — |
+| 动力拳 | 近战 | 3 | 3+ | 6 | -2 | 2 | — |
 
 ## 技能
-- **Brutal Example**：Once per turn, while this unit is leading a unit and contains a <span class="kwb">TRAITOR</span> <span class="kwb">ENFORCER</span> model, you can target that unit with the Fire Overwatch Stratagem for 0CP, and can do so even if you have already targeted a different unit from your army with that Stratagem this turn. Each time you use this ability, one Bodyguard model in that unit is destroyed.
-- **Mutated Bodyguard**：While this unit contains a Traitor Ogryn model, <span class="kwb">CHARACTER</span> models in this unit have the Feel No Pain 4+ ability.
+- **【阵营技能】：黑暗契约**
+- **野蛮榜样**：每回合一次，本单位由执法者模型领导，则你 可以消耗 0CP 而对本单位使用【坚守射击】战略技能，即 使本阶段已经有别的单位使用过也可以。每次使用时移除 一个本单位中的保镖模型
+- **变异护卫**：如果本单位包含叛变欧格林，则本单位中的人 物模型获得【不觉疼痛 4+】技能
 
 ## 单位构成
 - **2个模型** — 70 分

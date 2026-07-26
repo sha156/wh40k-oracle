@@ -1,5 +1,5 @@
 ---
-id: 000001993
+id: '000001993'
 name_en: Da Red Gobbo
 faction: 兽人
 type: unit
@@ -24,12 +24,12 @@ updated: '2026-07-23'
 ## 射击武器
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| Kustom grot blasta | 12" | D3 | 4+ | 4 | 0 | 1 | devastating wounds，pistol |
+| Kustom grot blasta | 12" | D3 | 4+ | 4 | 0 | 1 | [[core-rules/devastating-wounds.md\|毁灭伤害]]，[[core-rules/pistol.md\|手枪]] |
 
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| Icon of da Revolushun | 近战 | 3 | 4+ | 3 | 0 | 1 | devastating wounds |
+| Icon of da Revolushun | 近战 | 3 | 4+ | 3 | 0 | 1 | [[core-rules/devastating-wounds.md\|毁灭伤害]] |
 
 ## 技能
 - **Da Revolushun!**：While this model is leading a unit, each time a model in that unit makes an attack, add 1 to the Hit roll.

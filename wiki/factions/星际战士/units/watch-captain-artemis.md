@@ -1,5 +1,5 @@
 ---
-id: 000003872
+id: '000003872'
 name_zh: 守望连长阿耳忒弥斯
 name_en: Watch Captain Artemis
 faction: 星际战士
@@ -29,7 +29,7 @@ updated: '2026-07-23'
 ## 射击武器
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| 终极地狱火 | 12" | D6 | N/A | 4 | -1 | 1 | [[core-rules/anti.md\|针对步兵 4+]]，[[core-rules/devastating-wounds.md\|毁灭伤害]]，[[core-rules/ignores-cover.md\|无视掩体]]，[[core-rules/torrent.md\|洪流]] |
+| 终极地狱火 | 12" | D6 | N/A | 4 | -1 | 1 | [[core-rules/anti.md\|针对步兵4+]]，[[core-rules/devastating-wounds.md\|毁灭伤害]]，[[core-rules/ignores-cover.md\|无视掩体]]，[[core-rules/torrent.md\|洪流]] |
 
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |
@@ -46,4 +46,4 @@ updated: '2026-07-23'
 
 ## 关键词
 - **阵营关键词**：Deathwatch，Adeptus Astartes
-- **普通关键词**：[[core-rules/infantry.md|Infantry]]，[[core-rules/character.md|Character]]，[[core-rules/epic-hero.md|Epic Hero]]，[[core-rules/grenades.md|Grenades]]，[[factions/星际战士/units/captain.md|Captain]]，Imperium，Watch Captain Artemis
+- **普通关键词**：[[core-rules/infantry.md|Infantry]]，[[core-rules/character.md|Character]]，[[core-rules/epic-hero.md|Epic Hero]]，[[core-rules/grenades.md|Grenades]]，[[factions/星际战士/units/captain.md|Captain]]，Imperium，Watch [[factions/星际战士/units/captain.md|Captain]] Artemis

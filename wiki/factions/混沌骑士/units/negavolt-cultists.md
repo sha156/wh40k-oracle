@@ -1,5 +1,5 @@
 ---
-id: 000003856
+id: '000003856'
 name_en: Negavolt Cultists
 faction: 混沌骑士
 type: unit
@@ -27,7 +27,7 @@ updated: '2026-07-23'
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| Electro-goads | 近战 | 3 | 3+ | 4 | 0 | 1 | [[core-rules/sustained-hits.md\|sustained hits 2]] |
+| Electro-goads | 近战 | 3 | 3+ | 4 | 0 | 1 | [[core-rules/sustained-hits.md\|连击2]] |
 
 ## 技能
 - **Voltagheist Field**：Each time this unit ends a Charge move, select one enemy unit within Engagement Range of it and roll one D6 for each model in this unit: for each 4+, that enemy unit suffers 1 mortal wound.

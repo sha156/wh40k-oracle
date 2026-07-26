@@ -24,17 +24,17 @@ updated: '2026-07-23'
 ## 射击武器
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| Mega-tank weapons | 18" | 10 | 4+ | 5 | 0 | 1 | [[core-rules/rapid-fire.md\|rapid fire 10]] |
-| Twin big shoota | 18" | 3 | 4+ | 5 | 0 | 1 | [[core-rules/rapid-fire.md\|rapid fire 2]]，twin-linked |
-| Twin grotzooka | 18" | D3+3 | 4+ | 6 | -1 | 1 | blast，twin-linked |
-| Twin kustom mega-blasta | 24" | 2 | 4+ | 9 | -2 | D6 | hazardous，twin-linked |
-| Twin rokkit launcha | 24" | D3 | 4+ | 9 | -2 | 3 | blast，twin-linked |
-| Twin skorcha | 12" | D6 | N/A | 5 | -1 | 1 | ignores cover，torrent，twin-linked |
+| Mega-tank weapons | 18" | 10 | 4+ | 5 | 0 | 1 | [[core-rules/rapid-fire.md\|速射10]] |
+| 双联大突突枪 | 18" | 3 | 4+ | 5 | 0 | 1 | [[core-rules/rapid-fire.md\|速射2]]，[[core-rules/twin-linked.md\|双联]] |
+| Twin grotzooka | 18" | D3+3 | 4+ | 6 | -1 | 1 | [[core-rules/blast.md\|爆炸]]，[[core-rules/twin-linked.md\|双联]] |
+| Twin kustom mega-blasta | 24" | 2 | 4+ | 9 | -2 | D6 | [[core-rules/hazardous.md\|危险]]，[[core-rules/twin-linked.md\|双联]] |
+| Twin rokkit launcha | 24" | D3 | 4+ | 9 | -2 | 3 | [[core-rules/blast.md\|爆炸]]，[[core-rules/twin-linked.md\|双联]] |
+| Twin skorcha | 12" | D6 | N/A | 5 | -1 | 1 | [[core-rules/ignores-cover.md\|无视掩体]]，[[core-rules/torrent.md\|洪流]]，[[core-rules/twin-linked.md\|双联]] |
 
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| Armoured hull | 近战 | 6 | 4+ | 4 | 0 | 1 | — |
+| 装甲外壳 | 近战 | 6 | 4+ | 4 | 0 | 1 | — |
 
 ## 技能
 - **Bizarrely Resilient**：Each time an attack targets this model, worsen the Armour Penetration characteristic of that attack by 1.

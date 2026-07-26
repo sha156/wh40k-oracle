@@ -1,5 +1,6 @@
 ---
-id: 000002795
+id: '000002795'
+name_zh: 帝皇勇士
 name_en: Emperor’s Champion
 faction: 星际战士
 type: unit
@@ -28,13 +29,13 @@ updated: '2026-07-23'
 ## 射击武器
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| Bolt pistol | 12" | 1 | 2+ | 4 | 0 | 1 | pistol |
+| 爆弹手枪 | 12" | 1 | 2+ | 4 | 0 | 1 | [[core-rules/pistol.md\|手枪]] |
 
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| Black Sword – strike | 近战 | 6 | 2+ | 8 | -3 | 3 | [[core-rules/anti.md\|anti-character 5+]]，precision |
-| Black Sword – sweep | 近战 | 10 | 2+ | 6 | -2 | 1 | — |
+| 黑剑（重击） | 近战 | 6 | 2+ | 8 | -3 | 3 | [[core-rules/anti.md\|针对角色5+]]，[[core-rules/precision.md\|精准]] |
+| 黑剑（横扫） | 近战 | 10 | 2+ | 6 | -2 | 1 | — |
 
 ## 技能
 - **Armour of Faith**：Once per phase, when an attack is allocated to this model and the saving throw is failed, you can change the Damage characteristic of that attack to 0.

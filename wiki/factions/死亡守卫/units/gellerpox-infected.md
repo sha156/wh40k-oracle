@@ -1,5 +1,5 @@
 ---
-id: 000003593
+id: '000003593'
 name_en: Gellerpox Infected
 faction: 死亡守卫
 type: unit
@@ -25,13 +25,13 @@ updated: '2026-07-23'
 ## 射击武器
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| Belly-flamer | 12" | D6 | N/A | 5 | 0 | 1 | ignores cover，torrent |
+| Belly-flamer | 12" | D6 | N/A | 5 | 0 | 1 | [[core-rules/ignores-cover.md\|无视掩体]]，[[core-rules/torrent.md\|洪流]] |
 
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
 | Brutal weapons | 近战 | 2 | 4+ | 4 | 0 | 1 | — |
-| Hideous mutations | 近战 | 4 | 4+ | 6 | -1 | 2 | — |
+| 骇人异变 | 近战 | 4 | 4+ | 6 | -1 | 2 | — |
 
 ## 技能
 - **Fearsome (Aura)**：While an enemy unit is within 6" of this unit, each time that enemy unit takes a Battle-shock or Leadership test, subtract 1 from the result.

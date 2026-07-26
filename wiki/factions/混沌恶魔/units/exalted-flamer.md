@@ -29,8 +29,8 @@ updated: '2026-07-23'
 ## 射击武器
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| 奸奇之火-蓝焰 | 18" | 3 | 3+ | 9 | -3 | 3 | 灵能，[[core-rules/ignores-cover.md\|无视掩体]] |
-| 奸奇之火-粉焰 | 12" | 2D6 | N/A | 5 | -1 | 1 | 灵能，[[core-rules/ignores-cover.md\|无视掩体]]，[[core-rules/torrent.md\|洪流]] |
+| 奸奇之火-蓝焰 | 18" | 3 | 3+ | 9 | -3 | 3 | [[core-rules/ignores-cover.md\|无视掩体]]，[[core-rules/psychic-attacks.md\|灵能]] |
+| 奸奇之火-粉焰 | 12" | 2D6 | N/A | 5 | -1 | 1 | [[core-rules/ignores-cover.md\|无视掩体]]，[[core-rules/psychic-attacks.md\|灵能]]，[[core-rules/torrent.md\|洪流]] |
 
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |
@@ -46,4 +46,4 @@ updated: '2026-07-23'
 
 ## 关键词
 - **阵营关键词**：Legiones Daemonica
-- **普通关键词**：Exalted Flamer，Fly，Shadow Legion，[[core-rules/character.md|Character]]，[[core-rules/infantry.md|Infantry]]，Chaos，Daemon，Tzeentch
+- **普通关键词**：Exalted Flamer，Fly，[[factions/混沌恶魔/detachments/shadow-legion.md|Shadow Legion]]，[[core-rules/character.md|Character]]，[[core-rules/infantry.md|Infantry]]，Chaos，Daemon，Tzeentch

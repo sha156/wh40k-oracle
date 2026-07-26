@@ -23,7 +23,14 @@ def _mkdb(tmp_path, *, with_zh=True, invuln="5", aircraft_m=False):
         "name_zh TEXT,name_en TEXT,text_zh TEXT,effect_dsl_json TEXT,dsl_status TEXT);"
         "CREATE TABLE unit_zh_detail(canonical_id TEXT,name_zh TEXT,faction_zh TEXT,"
         "score TEXT,stats_json TEXT,abilities_json TEXT,weapons_json TEXT,"
-        "intro_json TEXT,source TEXT);")
+        "intro_json TEXT,source TEXT);"
+        # 武器关键词的中文来自这张表（GW 官方简体中文），不再取黑图的技能串
+        "CREATE TABLE zh_keyword_glossary(term_en TEXT PRIMARY KEY,"
+        "term_zh TEXT NOT NULL,obs INTEGER DEFAULT 0);")
+    conn.executemany(
+        "INSERT INTO zh_keyword_glossary(term_en,term_zh) VALUES(?,?)",
+        [("PISTOL", "手枪"), ("TWIN-LINKED", "双联"),
+         ("EXTRA ATTACKS", "额外攻击")])
     conn.execute(
         "INSERT INTO units VALUES('1','ORK','Warboss',?,?,?,NULL)",
         ("战争头目" if with_zh else None,

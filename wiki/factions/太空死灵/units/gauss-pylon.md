@@ -28,8 +28,8 @@ updated: '2026-07-23'
 ## 射击武器
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| Gauss annihilator | 120" | 1 | 4+ | 16 | -4 | D6+6 | [[core-rules/anti.md\|anti-fly 2+]]，lethal hits |
-| 特斯拉电弧 | 6" | 6 | 4+ | 4 | 0 | 1 | [[core-rules/sustained-hits.md\|连击 2]] |
+| 高斯歼灭炮 | 120" | 1 | 4+ | 16 | -4 | D6+6 | [[core-rules/anti.md\|针对飞行2+]]，[[core-rules/lethal-hits.md\|致命一击]] |
+| 特斯拉电弧 | 6" | 6 | 4+ | 4 | 0 | 1 | [[core-rules/sustained-hits.md\|连击2]] |
 
 ## 技能
 - **【阵营】重生协议**

@@ -1,5 +1,5 @@
 ---
-id: 000000917
+id: '000000917'
 name_en: Vengeance Weapon Battery
 faction: 无阵营工事
 type: unit
@@ -24,9 +24,9 @@ updated: '2026-07-23'
 ## 射击武器
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| Battle cannon | 48" | D6+3 | 5+ | 9 | -1 | 3 | blast |
-| Punisher gatling cannon | 24" | 20 | 5+ | 6 | 0 | 1 | — |
-| Quad-lascannon | 48" | 2 | 5+ | 12 | -3 | D6+1 | [[core-rules/anti.md\|anti-fly 2+]]，twin-linked |
+| Battle cannon | 48" | D6+3 | 5+ | 9 | -1 | 3 | [[core-rules/blast.md\|爆炸]] |
+| 惩罚者加特林 | 24" | 20 | 5+ | 6 | 0 | 1 | — |
+| Quad-lascannon | 48" | 2 | 5+ | 12 | -3 | D6+1 | [[core-rules/anti.md\|针对飞行2+]]，[[core-rules/twin-linked.md\|双联]] |
 
 ## 技能
 - **Automated Defences**：Each time this model makes a ranged attack that targets the closest enemy unit: <br><ul><li>If that attack is made with a Punisher gatling cannon and the target is not a <span class="kwb">MONSTER</span> or <span class="kwb">VEHICLE</span>, add 1 to the Hit roll. </li><li>If that attack is made with a battle cannon and the target is a <span class="kwb">MONSTER</span> or <span class="kwb">VEHICLE</span>, add 1 to the Hit roll. </li><li>If that attack is made with a quad-lascannon and the target can Fly, add 1 to the Hit roll.</li></ul>

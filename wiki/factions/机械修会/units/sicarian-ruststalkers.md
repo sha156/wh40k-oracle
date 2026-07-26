@@ -1,5 +1,5 @@
 ---
-id: 000000851
+id: '000000851'
 name_zh: 西卡利安铁锈追踪者
 name_en: Sicarian Ruststalkers
 faction: 机械修会
@@ -31,8 +31,8 @@ updated: '2026-07-23'
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
 | 音速刃 | 近战 | 5 | 4+ | 5 | -1 | 1 | [[core-rules/devastating-wounds.md\|毁灭伤害]]，[[core-rules/precision.md\|精准]] |
-| 音速刃和共鸣爪 | 近战 | 5 | 4+ | 5 | -2 | 1 | [[core-rules/anti.md\|反步兵 3+]]，[[core-rules/devastating-wounds.md\|毁灭伤害]]，[[core-rules/precision.md\|精准]] |
-| 音速剃刀和共鸣爪 | 近战 | 3 | 4+ | 5 | -2 | 2 | [[core-rules/anti.md\|反步兵 3+]]，[[core-rules/precision.md\|精准]] |
+| 音速刃和共鸣爪 | 近战 | 5 | 4+ | 5 | -2 | 1 | [[core-rules/anti.md\|针对步兵3+]]，[[core-rules/devastating-wounds.md\|毁灭伤害]]，[[core-rules/precision.md\|精准]] |
+| 音速剃刀和共鸣爪 | 近战 | 3 | 4+ | 5 | -2 | 2 | [[core-rules/anti.md\|针对步兵3+]]，[[core-rules/precision.md\|精准]] |
 
 ## 技能
 - **【阵营技能】：机神律令**

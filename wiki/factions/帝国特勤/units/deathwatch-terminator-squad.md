@@ -1,5 +1,6 @@
 ---
-id: 000003822
+id: '000003822'
+name_zh: 死亡守望终结者小队
 name_en: Deathwatch Terminator Squad
 faction: 帝国特勤
 type: unit
@@ -20,7 +21,7 @@ updated: '2026-07-23'
 ## 属性表
 | 模型 | M | T | SV | W | LD | OC |
 |---|---|---|---|---|---|---|
-| Deathwatch Terminator Squad | 5" | 5 | 2+ | 3 | 6+ | 1 |
+| 死亡守望终结者 | 5" | 5 | 2+ | 3 | 6+ | 1 |
 
 ### 特殊保护
 - 4+
@@ -28,28 +29,28 @@ updated: '2026-07-23'
 ## 射击武器
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| Assault cannon | 24" | 6 | 3+ | 6 | 0 | 1 | devastating wounds |
-| Cyclone missile launcher – frag | 36" | 2D6 | 3+ | 4 | 0 | 1 | blast |
-| Cyclone missile launcher – krak | 36" | 2 | 3+ | 9 | -2 | D6 | — |
-| Heavy flamer | 12" | D6 | N/A | 5 | -1 | 1 | ignores cover，torrent |
-| Plasma cannon – standard | 36" | D3 | 3+ | 7 | -2 | 1 | blast |
-| Plasma cannon – supercharge | 36" | D3 | 3+ | 8 | -3 | 2 | blast，hazardous |
-| Storm bolter | 24" | 2 | 3+ | 4 | 0 | 1 | [[core-rules/rapid-fire.md\|rapid fire 2]] |
+| 突击炮 | 24" | 6 | 3+ | 6 | 0 | 1 | [[core-rules/devastating-wounds.md\|毁灭伤害]] |
+| 龙卷风导弹发射器 - 破片 | 36" | 2D6 | 3+ | 4 | 0 | 1 | [[core-rules/blast.md\|爆炸]] |
+| 龙卷风导弹发射器 - 穿甲 | 36" | 2 | 3+ | 9 | -2 | D6 | — |
+| 重型火焰喷射器 | 12" | D6 | N/A | 5 | -1 | 1 | [[core-rules/ignores-cover.md\|无视掩体]]，[[core-rules/torrent.md\|洪流]] |
+| 等离子炮 - 标准 | 36" | D3 | 3+ | 7 | -2 | 1 | [[core-rules/blast.md\|爆炸]] |
+| 等离子炮 - 过载 | 36" | D3 | 3+ | 8 | -3 | 2 | [[core-rules/blast.md\|爆炸]]，[[core-rules/hazardous.md\|危险]] |
+| 风暴爆矢枪 | 24" | 2 | 3+ | 4 | 0 | 1 | [[core-rules/rapid-fire.md\|速射2]] |
 
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| Chainfist | 近战 | 3 | 4+ | 8 | -2 | 2 | [[core-rules/anti.md\|anti-vehicle 3+]] |
-| Power fist | 近战 | 3 | 3+ | 8 | -2 | 2 | — |
-| Power weapon | 近战 | 4 | 3+ | 5 | -2 | 1 | — |
-| Thunder hammer | 近战 | 3 | 4+ | 8 | -2 | 2 | devastating wounds |
-| Twin lightning claws | 近战 | 5 | 3+ | 5 | -2 | 1 | twin-linked |
+| 链锯拳 | 近战 | 3 | 4+ | 8 | -2 | 2 | [[core-rules/anti.md\|针对载具3+]] |
+| 动力拳 | 近战 | 3 | 3+ | 8 | -2 | 2 | — |
+| 动力武器 | 近战 | 4 | 3+ | 5 | -2 | 1 | — |
+| 雷霆锤 | 近战 | 3 | 4+ | 8 | -2 | 2 | [[core-rules/devastating-wounds.md\|毁灭伤害]] |
+| 成对闪电爪 | 近战 | 5 | 3+ | 5 | -2 | 1 | [[core-rules/twin-linked.md\|双联]] |
 
 ## 技能
-- **Terminatus Assault**：Each time this unit ends a Charge move, each enemy unit within Engagement Range of this unit must take a Battle-shock test.
-- **Teleport Homer**：At the start of the battle, you can set up one Teleport Homer token for this unit anywhere on the battlefield that is not in your opponent’s deployment zone. If you do, once per battle, you can target this unit with the Rapid Ingress Stratagem for 0CP, but when resolving that Stratagem, you must set this unit up within 3" of that token and not within 9" of any enemy models. That token is then removed.
-- **Storm Shield**：The bearer has a Wounds characteristic of 4.
-- **ATTACHED UNIT**：If a Character from your army with the Leader ability can be attached to a [[factions/帝国特勤/units/deathwatch-kill-team.md|Deathwatch Kill Team]], it can be attached to this unit instead.
+- **终结者突击**：您可以重掷该单位进行的冲锋掷骰。当该单位结束冲锋时，位于其交战范围内的每个敌方单位都必须进行一次战斗震慑测试。如果那个敌方单位没有帝国或混沌关键词，测试结果减 1。
+- **传送信标**：在战斗开始时，您可以在战场上位于敌方部署区外的任意位置放置一个传送信标标识。如果您这样做，每场战斗中，您有一次机会花费 0CP 对该单位使用迅速入场计谋，但在结算该计谋时，必须将该单位部署在位于该标识 3" 内并且位于所有敌方模型水平 9" 外的任意位置。然后此标识将被移除。
+- **风暴盾**：持有者的耐伤属性变为 4
+- **【阵营技能】：破敌重誓，任务战术**
 
 ## 单位构成
 - **5个模型** — 210 分

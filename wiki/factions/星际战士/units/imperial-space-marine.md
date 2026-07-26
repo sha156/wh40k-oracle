@@ -1,5 +1,5 @@
 ---
-id: 000000148
+id: '000000148'
 name_en: Imperial Space Marine
 faction: 星际战士
 type: unit
@@ -24,13 +24,13 @@ updated: '2026-07-23'
 ## 射击武器
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| Disintegration combi-gun | 24" | 1 | 4+ | 5 | -1 | 1 | [[core-rules/anti.md\|anti-infantry 4+]]，devastating wounds，[[core-rules/rapid-fire.md\|rapid fire 1]] |
-| Disintegration pistol | 12" | 1 | 3+ | 5 | -1 | 1 | [[core-rules/anti.md\|anti-infantry 4+]]，devastating wounds，pistol |
+| Disintegration combi-gun | 24" | 1 | 4+ | 5 | -1 | 1 | [[core-rules/anti.md\|针对步兵4+]]，[[core-rules/devastating-wounds.md\|毁灭伤害]]，[[core-rules/rapid-fire.md\|速射1]] |
+| Disintegration pistol | 12" | 1 | 3+ | 5 | -1 | 1 | [[core-rules/anti.md\|针对步兵4+]]，[[core-rules/devastating-wounds.md\|毁灭伤害]]，[[core-rules/pistol.md\|手枪]] |
 
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| Close combat weapon | 近战 | 4 | 3+ | 4 | 0 | 1 | — |
+| 格斗武器 | 近战 | 4 | 3+ | 4 | 0 | 1 | — |
 
 ## 技能
 - **Swift Assault**：While this model is leading a unit, ranged weapons equipped by models in that unit have the [ASSAULT] ability.

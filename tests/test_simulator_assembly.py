@@ -15,6 +15,7 @@ from engines.simulator.assembly import (
     assemble_attacker,
     default_model_count,
     parse_model_tiers,
+    usable_in_phase,
 )
 from engines.simulator.profile import load_target, load_weapon_pool
 
@@ -22,6 +23,8 @@ DB = Path("db/wh40k.sqlite")
 WARBOSS = "000000001"       # 单模型角色（武器池含互斥 choppa/klaw）
 BOYZ = "000000016"          # 多模型：10/20 档，BOY+BOSS NOB 混编
 INTERCESSOR = "000001157"   # 5/10 档，单 model 行
+KROOT_HOUNDS = "000000415"  # 全池只有近战 'Ripping fangs'（5/10 档）
+BROADSIDE = "000000433"     # 射击 5 把 + 近战 1 把（Crushing bulk）
 
 pytestmark = pytest.mark.skipif(not DB.exists(), reason="需要 db/wh40k.sqlite")
 
@@ -87,6 +90,42 @@ def test_assemble_unknown_weapon_errors():
     assert res.ambiguous is True
     assert res.attacker is None
     assert any("不在该单位武器池" in e for e in res.errors)
+
+
+def test_usable_in_phase_filters_by_range():
+    pool = load_weapon_pool(DB, BROADSIDE)
+    assert [w.name_en for w in usable_in_phase(pool, "melee")] == ["Crushing bulk"]
+    assert "Crushing bulk" not in [w.name_en for w in usable_in_phase(pool, "shooting")]
+    assert len(usable_in_phase(pool, None)) == len(pool)   # 未给阶段 → 原样
+
+
+def test_assemble_pool_is_phase_narrowed():
+    """未给 loadout 的 ambiguous 池只列该阶段能开火的武器（射击面板不列近战武器）。"""
+    res = assemble_attacker(DB, BROADSIDE, phase="shooting")
+    assert res.ambiguous is True and res.attacker is None
+    names = [w.name_en for w in res.weapon_pool]
+    assert "Heavy rail rifle" in names and "Crushing bulk" not in names
+    assert "Crushing bulk" in [w.name_en for w in res.full_pool]   # 全池仍可披露
+
+
+def test_assemble_no_phase_weapon_is_not_a_loadout_problem():
+    """只有近战武器的单位在射击阶段：no_phase_weapon（该换阶段），不是让用户装配。"""
+    res = assemble_attacker(DB, KROOT_HOUNDS, phase="shooting")
+    assert res.no_phase_weapon is True
+    assert res.attacker is None and res.weapon_pool == []
+    assert "请切到近战阶段" in res.note
+
+
+def test_assemble_single_phase_weapon_auto_assembles():
+    """该阶段唯一武器 ⇒ 无互斥选项 → 自动装配，件数=模型数，note 披露该假设。"""
+    res = assemble_attacker(DB, KROOT_HOUNDS, phase="melee")
+    assert res.ambiguous is False and res.auto_assembled is True
+    assert res.attacker is not None
+    assert [(w.name_en, w.count) for w in res.attacker.loadout] == [("Ripping fangs", 5)]
+    assert "自动装配" in res.note
+    # 手填模型数 → 件数跟着走
+    res10 = assemble_attacker(DB, KROOT_HOUNDS, models=10, phase="melee")
+    assert res10.attacker.loadout[0].count == 10
 
 
 def test_assemble_phase_narrows_same_name():

@@ -128,6 +128,34 @@ class TestNamePatch:
         rep = apply_fp_rules(db, self._patch(table="units"))
         assert len(rep["name_invalid"]) == 1
 
+    def test_official_translation_is_not_reported_as_a_mismatch(
+            self, tmp_path, monkeypatch):
+        """库里挂的是 GW 官方译名时让路，但不算 mismatch 告警。
+
+        本层的 P7 人工译名权威更低（宪法 §6），让位是正常层序。混进 mismatch
+        的话，单独跑 fp-rules 会刷出 179 条「上游动过」的假告警，把真问题淹掉。
+        """
+        import db_compile.fp_rules as fp_rules_mod
+        monkeypatch.setattr(fp_rules_mod, "_official_zh_names",
+                            lambda: {"s1": "官方译名"})
+        db = _db(tmp_path, name_zh="官方译名")
+        rep = apply_fp_rules(db, self._patch())
+        assert rep["name_superseded_by_official"] == 1
+        assert not rep["name_mismatch"]
+        after = sqlite3.connect(str(db)).execute(
+            "SELECT name_zh FROM stratagems WHERE id='s1'").fetchone()[0]
+        assert after == "官方译名"          # 高权威的那个留在库里
+
+    def test_non_official_different_name_still_warns(self, tmp_path, monkeypatch):
+        """官方映射里就是别的名字 → 仍是真 mismatch，照旧告警。"""
+        import db_compile.fp_rules as fp_rules_mod
+        monkeypatch.setattr(fp_rules_mod, "_official_zh_names",
+                            lambda: {"s1": "官方译名"})
+        db = _db(tmp_path, name_zh="来路不明的名字")
+        rep = apply_fp_rules(db, self._patch())
+        assert rep["name_superseded_by_official"] == 0
+        assert len(rep["name_mismatch"]) == 1
+
 
 def _deact_patch(**over):
     p = {"table": "stratagems", "id": "s1", "name_en": "PHOTON GRENADES",
@@ -192,15 +220,16 @@ class TestDeactivations:
         deactivations / inserts 早有 `len(...)` 断言，唯独 text_patches 没有——
         铺量期一次追加十几条，漏写或重复一条不会被任何测试发现。这里锁总数、
         锁「同一 (table, id, column) 只许一条」，并要求每条都带溯源与非空目标文本。
-        `from_text` 允许为空串——PR27 的上游空壳行归位（AdM 000010748005 等，
-        库内 text_zh 本就是空）正是靠空 from 做幂等守卫的。
+        `from_text` 仍允许空串（真出现「库里该列本就是空」的漂移时还得靠它），
+        但当前一条都不该有：PR27 那三条空 from 的 AdM 000010748005 归位补丁是在
+        给 CSV 裸换行解析 bug 擦屁股，根因修掉后它们已退役。
         """
         import json
         from pathlib import Path
         data = json.loads(Path("db_compile/fp_rules_patches.json").read_text(
             encoding="utf-8"))
         patches = data.get("text_patches", [])
-        assert len(patches) == 198          # +基因窃取者教派 PR25 并入（origin #58 merge 2026-07-22）
+        assert len(patches) == 195          # -3：PR27 空壳行归位补丁随解析器修复退役
         keys = [(p["table"], p["id"], p["column"]) for p in patches]
         assert len(set(keys)) == len(keys), "同一 (表, id, 列) 重复补丁"
         for p in patches:

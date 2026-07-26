@@ -1,5 +1,6 @@
 ---
 id: '000001144'
+name_zh: 地狱剥皮机
 name_en: Hellflayers
 faction: 混沌恶魔
 type: unit
@@ -29,14 +30,14 @@ updated: '2026-07-23'
 ## 射击武器
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| Lashes of torment | 12" | 3 | 3+ | 4 | -1 | 2 | [[core-rules/anti.md\|anti-infantry 3+]]，assault，pistol |
+| 折磨之鞭 | 12" | 3 | 3+ | 4 | -1 | 2 | [[core-rules/anti.md\|针对步兵3+]]，[[core-rules/assault.md\|突击]]，[[core-rules/pistol.md\|手枪]] |
 
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| Lashes of torment | 近战 | 3 | 3+ | 4 | -1 | 2 | [[core-rules/anti.md\|anti-infantry 3+]]，extra attacks |
-| Seeker tongues | 近战 | 4 | 4+ | 4 | 0 | 1 | extra attacks，lethal hits |
-| Slashing claws | 近战 | 8 | 3+ | 4 | -1 | 1 | devastating wounds |
+| 折磨之鞭 | 近战 | 3 | 3+ | 4 | -1 | 2 | [[core-rules/anti.md\|针对步兵3+]]，[[core-rules/extra-attacks.md\|额外攻击]] |
+| 寻觅者之舌 | 近战 | 4 | 4+ | 4 | 0 | 1 | [[core-rules/extra-attacks.md\|额外攻击]]，[[core-rules/lethal-hits.md\|致命一击]] |
+| 凶狠利爪 | 近战 | 8 | 3+ | 4 | -1 | 1 | [[core-rules/devastating-wounds.md\|毁灭伤害]] |
 
 ## 技能
 - **Cutting Down the Foe**：Each time a model in this unit makes a melee attack, if this unit made a Charge move this turn, improve the Strength and Damage characteristics of that attack by 1.
@@ -47,4 +48,4 @@ updated: '2026-07-23'
 
 ## 关键词
 - **阵营关键词**：Legiones Daemonica
-- **普通关键词**：Chaos，Daemon，Shadow Legion，Hellflayers，Slaanesh，[[core-rules/mounted.md|Mounted]]
+- **普通关键词**：Chaos，Daemon，[[factions/混沌恶魔/detachments/shadow-legion.md|Shadow Legion]]，Hellflayers，Slaanesh，[[core-rules/mounted.md|Mounted]]

@@ -24,15 +24,15 @@ updated: '2026-07-23'
 ## 射击武器
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| Colossus siege mortar | 120" | D6 | 4+ | 6 | -1 | D6+2 | blast，devastating wounds |
-| Heavy stubber | 36" | 3 | 4+ | 4 | 0 | 1 | [[core-rules/rapid-fire.md\|rapid fire 3]] |
-| Hunter-killer missile | 48" | 1 | 4+ | 14 | -3 | D6 | one shot |
-| Storm bolter | 24" | 2 | 4+ | 4 | 0 | 1 | [[core-rules/rapid-fire.md\|rapid fire 2]] |
+| Colossus siege mortar | 120" | D6 | 4+ | 6 | -1 | D6+2 | [[core-rules/blast.md\|爆炸]]，[[core-rules/devastating-wounds.md\|毁灭伤害]] |
+| 重型伐木枪 | 36" | 3 | 4+ | 4 | 0 | 1 | [[core-rules/rapid-fire.md\|速射3]] |
+| 猎杀飞弹 | 48" | 1 | 4+ | 14 | -3 | D6 | [[core-rules/one-shot.md\|单发]] |
+| 风暴爆弹枪 | 24" | 2 | 4+ | 4 | 0 | 1 | [[core-rules/rapid-fire.md\|速射2]] |
 
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| Armoured tracks | 近战 | 6 | 4+ | 7 | 0 | 1 | — |
+| 装甲履带 | 近战 | 6 | 4+ | 7 | 0 | 1 | — |
 
 ## 技能
 - **Tracking Target**：Each time this model is selected to shoot, provided it Remained Stationary this turn, its Colossus siege mortar has the [ANTI-MONSTER 5+] and [ANTI-VEHICLE 5+] abilities while resolving those attacks.

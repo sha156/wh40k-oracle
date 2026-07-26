@@ -26,13 +26,13 @@ updated: '2026-07-23'
 ## 射击武器
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| Bolt pistol | 12" | 1 | 2+ | 4 | 0 | 1 | pistol |
-| Master-crafted scoped bolt carbine | 24" | 2 | 2+ | 4 | 0 | 2 | — |
+| 爆弹手枪 | 12" | 1 | 2+ | 4 | 0 | 1 | [[core-rules/pistol.md\|手枪]] |
+| 精工爆弹卡宾枪 | 24" | 2 | 2+ | 4 | 0 | 2 | — |
 
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| Paired combat blades | 近战 | 5 | 2+ | 4 | -1 | 1 | [[core-rules/sustained-hits.md\|sustained hits 1]] |
+| 一对战斗刀 | 近战 | 5 | 2+ | 4 | -1 | 1 | [[core-rules/sustained-hits.md\|连击1]] |
 
 ## 技能
 - **【阵营技能】：破敌重誓**
@@ -44,4 +44,4 @@ updated: '2026-07-23'
 
 ## 关键词
 - **阵营关键词**：Adeptus Astartes
-- **普通关键词**：Lieutenant，Phobos，Imperium，[[core-rules/grenades.md|Grenades]]，[[core-rules/infantry.md|Infantry]]，[[core-rules/character.md|Character]]
+- **普通关键词**：[[factions/星际战士/units/lieutenant.md|Lieutenant]]，Phobos，Imperium，[[core-rules/grenades.md|Grenades]]，[[core-rules/infantry.md|Infantry]]，[[core-rules/character.md|Character]]

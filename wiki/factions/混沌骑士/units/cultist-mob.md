@@ -1,5 +1,5 @@
 ---
-id: 000003849
+id: '000003849'
 name_zh: 邪教徒
 name_en: Cultist Mob
 faction: 混沌骑士
@@ -27,7 +27,7 @@ updated: '2026-07-23'
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
 | 爆弹手枪 | 12" | 1 | 4+ | 4 | 0 | 1 | [[core-rules/pistol.md\|手枪]] |
-| Autopistol | 12" | 1 | 4+ | 3 | 0 | 1 | pistol |
+| 自动手枪 | 12" | 1 | 4+ | 3 | 0 | 1 | [[core-rules/pistol.md\|手枪]] |
 
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |

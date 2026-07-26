@@ -1,5 +1,5 @@
 ---
-id: 000000099
+id: '000000099'
 name_en: Tarantula Air Defence Battery
 faction: 星际战士
 type: unit
@@ -24,12 +24,12 @@ updated: '2026-07-23'
 ## 射击武器
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| Tarantula air defence missiles | 48" | D6 | 4+ | 7 | -1 | 1 | [[core-rules/anti.md\|anti-fly 2+]]，blast |
+| Tarantula air defence missiles | 48" | D6 | 4+ | 7 | -1 | 1 | [[core-rules/anti.md\|针对飞行2+]]，[[core-rules/blast.md\|爆炸]] |
 
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| Armoured hull | 近战 | 1 | 4+ | 4 | 0 | 1 | — |
+| 装甲外壳 | 近战 | 1 | 4+ | 4 | 0 | 1 | — |
 
 ## 技能
 - **Sentry Programming**：You can target this model with the Fire Overwatch Stratagem for 0CP, and can do so even if you have already targeted a different unit with that Stratagem this turn. This model can only be targeted with that Stratagem once per turn.

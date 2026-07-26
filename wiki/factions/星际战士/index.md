@@ -1,6 +1,65 @@
 # 星际战士
 
-_Last updated: 2026-07-23 12:10 UTC_
+_Last updated: 2026-07-26 08:40 UTC_
+
+## 分队
+
+- [[factions/星际战士/detachments/1st-company-task-force|1st Company Task Force]] — 星际战士的分队「1st Company Task Force」，分队规则「Extremis-level Threat」。
+- [[factions/星际战士/detachments/anvil-siege-force|Anvil Siege Force]] — 星际战士的分队「Anvil Siege Force」，分队规则「Shield of the Imperium」。
+- [[factions/星际战士/detachments/blade-of-ultramar|Blade of Ultramar]] — 星际战士的分队「Blade of Ultramar」，分队规则「Mastered Doctrines」。
+- [[factions/星际战士/detachments/boarding-strike|Boarding Strike]] — 星际战士的分队「Boarding Strike」，分队规则「Drive Home the Blade」。
+- [[factions/星际战士/detachments/champions-of-fenris|Champions of Fenris]] — 星际战士的分队「Champions of Fenris」，分队规则「The Great Wolf Watches」。
+- [[factions/星际战士/detachments/companions-of-vehemence|Companions of Vehemence]] — 星际战士的分队「Companions of Vehemence」，分队规则「热忱圣怒」。
+- [[factions/星际战士/detachments/company-of-hunters|Company of Hunters]] — 星际战士的分队「Company of Hunters」，分队规则「Masters Of Manoeuvre」。
+- [[factions/星际战士/detachments/firestorm-assault-force|Firestorm Assault Force]] — 星际战士的分队「Firestorm Assault Force」，分队规则「Close-range Eradicatio...
+- [[factions/星际战士/detachments/gladius-task-force|Gladius Task Force]] — 星际战士的分队「Gladius Task Force」，分队规则「Combat Doctrines」。
+- [[factions/星际战士/detachments/godhammer-assault-force|Godhammer Assault Force]] — 星际战士的分队「Godhammer Assault Force」，分队规则「震慑突袭」。
+- [[factions/星际战士/detachments/inner-circle-task-force|Inner Circle Task Force]] — 星际战士的分队「Inner Circle Task Force」，分队规则「Vowed Target」。
+- [[factions/星际战士/detachments/ironstorm-spearhead|Ironstorm Spearhead]] — 星际战士的分队「Ironstorm Spearhead」，分队规则「Armoured Wrath」。
+- [[factions/星际战士/detachments/liberator-assault-group|Liberator Assault Group]] — 星际战士的分队「Liberator Assault Group」，分队规则「猩红饥渴」。
+- [[factions/星际战士/detachments/librarius-conclave|Librarius Conclave]] — 星际战士的分队「Librarius Conclave」，分队规则「Psychic Disciplines」。
+- [[factions/星际战士/detachments/pilum-strike-team|Pilum Strike Team]] — 星际战士的分队「Pilum Strike Team」，分队规则「Relentless Salvoes」。
+- [[factions/星际战士/detachments/saga-of-the-beastslayer|Saga of the Beastslayer]] — 星际战士的分队「Saga of the Beastslayer」，分队规则「Legendary Slayers」。
+- [[factions/星际战士/detachments/saga-of-the-bold|Saga of the Bold]] — 星际战士的分队「Saga of the Bold」，分队规则「Heroes All」。
+- [[factions/星际战士/detachments/saga-of-the-hunter|Saga of the Hunter]] — 星际战士的分队「Saga of the Hunter」，分队规则「Pack’s Quarry」。
+- [[factions/星际战士/detachments/shield-of-the-void|Shield of the Void]] — 星际战士的分队「Shield of the Void」，分队规则「Focused Response」。
+- [[factions/星际战士/detachments/spearpoint-task-force|Spearpoint Task Force]] — 星际战士的分队「Spearpoint Task Force」，分队规则「Storm-swift Onslaught」。
+- [[factions/星际战士/detachments/stormlance-task-force|Stormlance Task Force]] — 星际战士的分队「Stormlance Task Force」，分队规则「Lightning Assault」。
+- [[factions/星际战士/detachments/terminator-assault|Terminator Assault]] — 星际战士的分队「Terminator Assault」，分队规则「Sacred Oath」。
+- [[factions/星际战士/detachments/the-angelic-host|The Angelic Host]] — 星际战士的分队「The Angelic Host」，分队规则「炽翼翔空」。
+- [[factions/星际战士/detachments/the-living-miracle|The Living Miracle]] — 星际战士的分队「The Living Miracle」。
+- [[factions/星际战士/detachments/the-lost-brethren|The Lost Brethren]] — 星际战士的分队「The Lost Brethren」，分队规则「崇高战殁」。
+- [[factions/星际战士/detachments/unforgiven-task-force|Unforgiven Task Force]] — 星际战士的分队「Unforgiven Task Force」，分队规则「Grim Resolve」。
+- [[factions/星际战士/detachments/vanguard-spearhead|Vanguard Spearhead]] — 星际战士的分队「Vanguard Spearhead」，分队规则「Shadow Masters」。
+- [[factions/星际战士/detachments/vindication-task-force|Vindication Task Force]] — 星际战士的分队「Vindication Task Force」，分队规则「净化！圣化！」。
+- [[factions/星际战士/detachments/wrathful-procession|Wrathful Procession]] — 星际战士的分队「Wrathful Procession」，分队规则「不朽忠诚祷言」。
+- [[factions/星际战士/detachments/legacy-of-grace|优雅传承]] — 星际战士的分队「优雅传承」。
+- [[factions/星际战士/detachments/legends-of-saga-and-song|传奇之歌]] — 星际战士的分队「传奇之歌」。
+- [[factions/星际战士/detachments/marshals-household|元帅亲军]] — 星际战士的分队「元帅亲军」。
+- [[factions/星际战士/detachments/reclamation-force|光复派遣军]] — 星际战士的分队「光复派遣军」，分队规则「Oath of Reclamation」。
+- [[factions/星际战士/detachments/bastion-task-force|堡垒特遣队]] — 星际战士的分队「堡垒特遣队」，分队规则「Interlocking Tactics」。
+- [[factions/星际战士/detachments/angelic-inheritors|天使继承者]] — 星际战士的分队「天使继承者」，分队规则「天使遗产」。
+- [[factions/星际战士/detachments/saga-of-the-great-wolf|头狼之歌]] — 星际战士的分队「头狼之歌」，分队规则「Master of Wolves」。
+- [[factions/星际战士/detachments/interrogation-conclave|审讯者密会]] — 星际战士的分队「审讯者密会」。
+- [[factions/星际战士/detachments/wrath-of-the-rock|巨石之怒]] — 星际战士的分队「巨石之怒」，分队规则「Dutiful Tenacity」。
+- [[factions/星际战士/detachments/emperors-shield|帝皇之盾]] — 星际战士的分队「帝皇之盾」，分队规则「Wrath of Dorn」。
+- [[factions/星际战士/detachments/shadowmark-talon|影标之爪]] — 星际战士的分队「影标之爪」，分队规则「Masters of Shadow」。
+- [[factions/星际战士/detachments/rage-cursed-onslaught|怒咒猛攻]] — 星际战士的分队「怒咒猛攻」，分队规则「癫狂凶暴」。
+- [[factions/星际战士/detachments/veterans-of-the-fang|狼牙堡老兵]] — 星际战士的分队「狼牙堡老兵」。
+- [[factions/星际战士/detachments/headhunter-task-force|猎头特遣队]] — 星际战士的分队「猎头特遣队」，分队规则「Target Sighted」。
+- [[factions/星际战士/detachments/hammer-of-avernii|艾沃尼之锤]] — 星际战士的分队「艾沃尼之锤」，分队规则「Calculated Annihilation」。
+- [[factions/星际战士/detachments/lions-blade-task-force|莱昂之剑特遣队]] — 星际战士的分队「莱昂之剑特遣队」，分队规则「In The Lion’s Claws」。
+- [[factions/星际战士/detachments/encarmine-speartip|血色矛头]] — 星际战士的分队「血色矛头」。
+- [[factions/星际战士/detachments/subversion-assets|行动资源]] — 星际战士的分队「行动资源」。
+- [[factions/星际战士/detachments/armoured-speartip|装甲矛尖]] — 星际战士的分队「装甲矛尖」，分队规则「Rapid Deployment」。
+- [[factions/星际战士/detachments/orbital-assault-force|轨道突袭部队]] — 星际战士的分队「轨道突袭部队」，分队规则「Rapid-drop Deployment」。
+- [[factions/星际战士/detachments/fulguris-task-force|迅电特遣队]] — 星际战士的分队「迅电特遣队」。
+- [[factions/星际战士/detachments/wrath-of-the-doomed|迷失者的怒火]] — 星际战士的分队「迷失者的怒火」。
+- [[factions/星际战士/detachments/forgefathers-seekers|铸造之父的探寻者]] — 星际战士的分队「铸造之父的探寻者」，分队规则「Vulkan’s Quest」。
+- [[factions/星际战士/detachments/ceramite-sentinels|陶钢哨兵]] — 星际战士的分队「陶钢哨兵」，分队规则「Adaptive Defence」。
+- [[factions/星际战士/detachments/dark-age-arsenal|黑暗时代兵器]] — 星际战士的分队「黑暗时代兵器」。
+- [[factions/星际战士/detachments/darkflight-pursuit|黑暗追击队]] — 星际战士的分队「黑暗追击队」。
+- [[factions/星际战士/detachments/black-spear-task-force|黑矛特遣队]] — 星际战士的分队「黑矛特遣队」，分队规则「Mission Tactics」。
 
 ## 单位
 
@@ -31,25 +90,19 @@ _Last updated: 2026-07-23 12:10 UTC_
 - [[factions/星际战士/units/death-company-marines-with-boltguns-and-jump-packs|Death Company Marines with Boltguns and Jump Packs]] — 
 - [[factions/星际战士/units/deathstorm-drop-pod|Deathstorm Drop Pod]] — 
 - [[factions/星际战士/units/deathwing-strikemaster|Deathwing Strikemaster]] — 
-- [[factions/星际战士/units/decimus-kill-team|Decimus Kill Team]] — 
 - [[factions/星际战士/units/deimos-predator|Deimos Predator]] — 
 - [[factions/星际战士/units/deredeo-dreadnought|Deredeo Dreadnought]] — 
 - [[factions/星际战士/units/dreadnought-drop-pod|Dreadnought Drop Pod]] — 
-- [[factions/星际战士/units/emperors-champion|Emperor’s Champion]] — 
 - [[factions/星际战士/units/example-wargear|Example Wargear]] — 
 - [[factions/星际战士/units/falchion|Falchion]] — 
 - [[factions/星际战士/units/fellblade|Fellblade]] — 
 - [[factions/星际战士/units/ferren-areios|Ferren Areios]] — 
 - [[factions/星际战士/units/fire-raptor-gunship|Fire Raptor Gunship]] — 
 - [[factions/星际战士/units/gabriel-seth|Gabriel Seth]] — 
-- [[factions/星际战士/units/gladiator-lancer|Gladiator Lancer]] — 
-- [[factions/星际战士/units/gladiator-reaper|Gladiator Reaper]] — 
-- [[factions/星际战士/units/gladiator-valiant|Gladiator Valiant]] — 
 - [[factions/星际战士/units/harald-deathwolf|Harald Deathwolf]] — 
 - [[factions/星际战士/units/hounds-of-morkai|Hounds Of Morkai]] — 
 - [[factions/星际战士/units/hunter|Hunter]] — 
 - [[factions/星际战士/units/imperial-space-marine|Imperial Space Marine]] — 
-- [[factions/星际战士/units/impulsor|Impulsor]] — 
 - [[factions/星际战士/units/iron-priest-on-thunderwolf|Iron Priest On Thunderwolf]] — 
 - [[factions/星际战士/units/ironclad-dreadnought|Ironclad Dreadnought]] — 
 - [[factions/星际战士/units/javelin-attack-speeder|Javelin Attack Speeder]] — 
@@ -58,7 +111,6 @@ _Last updated: 2026-07-23 12:10 UTC_
 - [[factions/星际战士/units/kratos|Kratos]] — 
 - [[factions/星际战士/units/krom-dragongaze|Krom Dragongaze]] — 
 - [[factions/星际战士/units/land-raider-achilles|Land Raider Achilles]] — 
-- [[factions/星际战士/units/land-raider-crusader|Land Raider Crusader]] — 
 - [[factions/星际战士/units/land-raider-excelsior|Land Raider Excelsior]] — 
 - [[factions/星际战士/units/land-raider-helios|Land Raider Helios]] — 
 - [[factions/星际战士/units/land-raider-prometheus|Land Raider Prometheus]] — 
@@ -82,8 +134,6 @@ _Last updated: 2026-07-23 12:10 UTC_
 - [[factions/星际战士/units/relic-contemptor-dreadnought|Relic Contemptor Dreadnought]] — 
 - [[factions/星际战士/units/relic-razorback|Relic Razorback]] — 
 - [[factions/星际战士/units/relic-terminator-squad|Relic Terminator Squad]] — 
-- [[factions/星际战士/units/repulsor|Repulsor]] — 
-- [[factions/星际战士/units/repulsor-executioner|Repulsor Executioner]] — 
 - [[factions/星际战士/units/rhino-primaris|Rhino Primaris]] — 
 - [[factions/星际战士/units/sanguinary-priest-with-jump-pack|Sanguinary Priest With Jump Pack]] — 
 - [[factions/星际战士/units/sanguinary-priest-on-bike|Sanguinary Priest on Bike]] — 
@@ -100,16 +150,12 @@ _Last updated: 2026-07-23 12:10 UTC_
 - [[factions/星际战士/units/sokar-pattern-stormbird|Sokar-pattern Stormbird]] — 
 - [[factions/星际战士/units/spartan|Spartan]] — 
 - [[factions/星际战士/units/stalker|Stalker]] — 
-- [[factions/星际战士/units/sternguard-veteran-squad|Sternguard Veteran Squad]] — 
 - [[factions/星际战士/units/storm-eagle-gunship|Storm Eagle Gunship]] — 
 - [[factions/星际战士/units/stormfang-gunship|Stormfang Gunship]] — 
-- [[factions/星际战士/units/stormraven-gunship|Stormraven Gunship]] — 
 - [[factions/星际战士/units/stormwolf|Stormwolf]] — 
-- [[factions/星际战士/units/sword-brethren-squad|Sword Brethren Squad]] — 
 - [[factions/星际战士/units/tarantula-air-defence-battery|Tarantula Air Defence Battery]] — 
 - [[factions/星际战士/units/tarantula-sentry-battery|Tarantula Sentry Battery]] — 
 - [[factions/星际战士/units/techmarine-on-bike|Techmarine on Bike]] — 
-- [[factions/星际战士/units/terminator-squad|Terminator Squad]] — 
 - [[factions/星际战士/units/terminus-ultra|Terminus Ultra]] — 
 - [[factions/星际战士/units/terrax-pattern-termite|Terrax-pattern Termite]] — 
 - [[factions/星际战士/units/thunderfire-cannon|Thunderfire Cannon]] — 
@@ -120,7 +166,6 @@ _Last updated: 2026-07-23 12:10 UTC_
 - [[factions/星际战士/units/ultramarines-honour-guard|Ultramarines Honour Guard]] — 
 - [[factions/星际战士/units/uriel-ventris|Uriel Ventris]] — 
 - [[factions/星际战士/units/vanguard-veteran-squad|Vanguard Veteran Squad]] — 
-- [[factions/星际战士/units/venerable-dreadnought|Venerable Dreadnought]] — 
 - [[factions/星际战士/units/venerable-dreadnought-legendary|Venerable Dreadnought (Legendary)]] — 
 - [[factions/星际战士/units/vindicator-laser-destroyer|Vindicator Laser Destroyer]] — 
 - [[factions/星际战士/units/whirlwind-scorpius|Whirlwind Scorpius]] — 
@@ -155,19 +200,23 @@ _Last updated: 2026-07-23 12:10 UTC_
 - [[factions/星际战士/units/inner-circle-companions|内环伙友]] — 
 - [[factions/星际战士/units/storm-speeder-hailstrike|冰雹型风暴速攻艇]] — 
 - [[factions/星际战士/units/impulsor-2|冲击者突击艇]] — 
+- [[factions/星际战士/units/impulsor|冲击者突击艇]] — 
 - [[factions/星际战士/units/kayvaan-shrike|凯万-史瑞克]] — 
 - [[factions/星际战士/units/talonstrike-kill-team|利爪突击杀戮小队]] — 
+- [[factions/星际战士/units/sword-brethren-squad|剑之兄弟小队]] — 
 - [[factions/星际战士/units/bladeguard-ancient|剑卫旗手]] — 
 - [[factions/星际战士/units/bladeguard-veteran-squad|剑卫老兵小队]] — 
 - [[factions/星际战士/units/lieutenant|副官]] — 
 - [[factions/星际战士/units/lieutenant-in-reiver-armour|劫掠者副官]] — 
 - [[factions/星际战士/units/reiver-squad|劫掠者小队]] — 
 - [[factions/星际战士/units/land-raider-crusader-2|十字军型兰德掠袭者坦克]] — 
+- [[factions/星际战士/units/land-raider-crusader|十字军型兰德掠袭者坦克]] — 
 - [[factions/星际战士/units/crusader-squad|十字军小队]] — 
 - [[factions/星际战士/units/cato-sicarius|卡托·西卡留斯]] — 
 - [[factions/星际战士/units/caanok-var|卡诺克·瓦尔]] — 
 - [[factions/星际战士/units/suppressor-squad|压制者小队]] — 
 - [[factions/星际战士/units/repulsor-2|反击者突击艇]] — 
+- [[factions/星际战士/units/repulsor|反击者突击艇]] — 
 - [[factions/星际战士/units/the-sanguinor|圣吉列诺]] — 
 - [[factions/星际战士/units/sanguinary-guard|圣血卫队]] — 
 - [[factions/星际战士/units/sanguinary-priest|圣血祭司]] — 
@@ -176,6 +225,7 @@ _Last updated: 2026-07-23 12:10 UTC_
 - [[factions/星际战士/units/pedro-kantor|坎托战团长]] — 
 - [[factions/星际战士/units/castellan|堡主]] — 
 - [[factions/星际战士/units/repulsor-executioner-2|处决者型反击者坦克]] — 
+- [[factions/星际战士/units/repulsor-executioner|处决者型反击者坦克]] — 
 - [[factions/星际战士/units/land-speeder-vengeance|复仇型兰德飞艇]] — 
 - [[factions/星际战士/units/wardens-of-ultramar|奥特拉玛守望者]] — 
 - [[factions/星际战士/units/watch-master|守望堡主]] — 
@@ -183,7 +233,9 @@ _Last updated: 2026-07-23 12:10 UTC_
 - [[factions/星际战士/units/desolation-squad|寂灭者小队]] — 
 - [[factions/星际战士/units/ballistus-dreadnought|射手型无畏机甲]] — 
 - [[factions/星际战士/units/baal-predator|巴尔掠食者]] — 
+- [[factions/星际战士/units/emperors-champion|帝皇勇士]] — 
 - [[factions/星际战士/units/victrix-honour-guard|常胜护卫]] — 
+- [[factions/星际战士/units/decimus-kill-team|德西姆斯猎杀小队]] — 
 - [[factions/星际战士/units/tactical-squad|战术小队]] — 
 - [[factions/星际战士/units/tor-garadon|托尔连长]] — 
 - [[factions/星际战士/units/execrator|执裁者]] — 
@@ -199,9 +251,11 @@ _Last updated: 2026-07-23 12:10 UTC_
 - [[factions/星际战士/units/spectrus-kill-team|无形杀戮小队]] — 
 - [[factions/星际战士/units/dreadnought|无畏机甲]] — 
 - [[factions/星际战士/units/librarian|智库]] — 
+- [[factions/星际战士/units/stormraven-gunship|暴风渡鸦炮艇]] — 
 - [[factions/星际战士/units/murderfang|杀戮牙]] — 
 - [[factions/星际战士/units/ulrik-the-slayer|杀戮者乌尔里克]] — 
 - [[factions/星际战士/units/gladiator-lancer-2|枪骑兵型角斗者坦克]] — 
+- [[factions/星际战士/units/gladiator-lancer|枪骑兵型角斗者坦克]] — 
 - [[factions/星际战士/units/eradicator-squad|根除者小队]] — 
 - [[factions/星际战士/units/chaplain-grimaldus|格瑞马都斯牧师]] — 
 - [[factions/星际战士/units/deathwatch-terminator-squad|死亡守望终结者小队]] — 
@@ -210,6 +264,7 @@ _Last updated: 2026-07-23 12:10 UTC_
 - [[factions/星际战士/units/death-company-dreadnought|死亡连无畏]] — 
 - [[factions/星际战士/units/death-company-captain|死亡连连长]] — 
 - [[factions/星际战士/units/gladiator-reaper-2|死神型角斗者坦克]] — 
+- [[factions/星际战士/units/gladiator-reaper|死神型角斗者坦克]] — 
 - [[factions/星际战士/units/deathwing-command-squad|死翼指挥组【传奇】]] — 
 - [[factions/星际战士/units/deathwing-terminator-squad|死翼终结者小队]] — 
 - [[factions/星际战士/units/deathwing-knights|死翼骑士]] — 
@@ -239,6 +294,7 @@ _Last updated: 2026-07-23 12:10 UTC_
 - [[factions/星际战士/units/assault-intercessor-squad|突击仲裁者小队]] — 
 - [[factions/星际战士/units/terminator-assault-squad|突击终结者小队]] — 
 - [[factions/星际战士/units/terminator-squad-2|终结者小队]] — 
+- [[factions/星际战士/units/terminator-squad|终结者小队]] — 
 - [[factions/星际战士/units/ancient-in-terminator-armour|终结者旗手]] — 
 - [[factions/星际战士/units/librarian-in-terminator-armour|终结者智库]] — 
 - [[factions/星际战士/units/chaplain-in-terminator-armour|终结者牧师]] — 
@@ -246,11 +302,13 @@ _Last updated: 2026-07-23 12:10 UTC_
 - [[factions/星际战士/units/vindicator|维护者突击炮]] — 
 - [[factions/星际战士/units/roboute-guilliman|罗伯特.基里曼]] — 
 - [[factions/星际战士/units/sternguard-veteran-squad-2|肃卫老兵小队]] — 
+- [[factions/星际战士/units/sternguard-veteran-squad|肃卫老兵小队]] — 
 - [[factions/星际战士/units/fortis-kill-team|至强杀戮小队]] — 
 - [[factions/星际战士/units/high-marshal-helbrecht|至高大元帅赫尔贝茨]] — 
 - [[factions/星际战士/units/aethon-shaan|艾索-沙恩]] — 
 - [[factions/星际战士/units/fenrisian-wolves|芬里斯狼]] — 
 - [[factions/星际战士/units/suboden-khan|苏博登可汗]] — 
+- [[factions/星际战士/units/venerable-dreadnought|荣耀无畏机甲]] — 
 - [[factions/星际战士/units/apothecary|药剂师]] — 
 - [[factions/星际战士/units/darnath-lysander|莱山德连长]] — 
 - [[factions/星际战士/units/lion-eljonson|莱昂艾尔庄森，黑暗天使基因原体]] — 
@@ -266,6 +324,7 @@ _Last updated: 2026-07-23 12:10 UTC_
 - [[factions/星际战士/units/death-company-captain-with-jump-pack|装备跳跃背包的死亡连连长]] — 
 - [[factions/星际战士/units/wulfen-with-storm-shields|装备风暴盾的狼人]] — 
 - [[factions/星际战士/units/gladiator-valiant-2|豪侠型角斗者坦克]] — 
+- [[factions/星际战士/units/gladiator-valiant|豪侠型角斗者坦克]] — 
 - [[factions/星际战士/units/razorback|豪猪装甲车]] — 
 - [[factions/星际战士/units/belial|贝利亚大导师]] — 
 - [[factions/星际战士/units/vanguard-veteran-squad-with-jump-packs|跳跃背包先锋老兵小队]] — 
@@ -302,4 +361,497 @@ _Last updated: 2026-07-23 12:10 UTC_
 - [[factions/星际战士/units/ravenwing-dark-talon|鸦翼黑爪轰炸机]] — 
 - [[factions/星际战士/units/ravenwing-black-knights|鸦翼黑骑士]] — 
 - [[factions/星际战士/units/corvus-blackstar|黑星渡鸦]] — 
+
+## 策略技能
+
+- [[factions/星际战士/stratagems/a-deadly-prize|A DEADLY PRIZE]] — 1 CP、Command phase、Vanguard Spearhead 分队、Wargear Stratagem。
+- [[factions/星际战士/stratagems/adaptive-purge|ADAPTIVE PURGE]] — 1 CP、Shooting phase、Shield of the Void 分队、Battle Tactic Stra...
+- [[factions/星际战士/stratagems/adaptive-strategy|ADAPTIVE STRATEGY]] — 1 CP、Command phase、Gladius Task Force 分队、Strategic Ploy Stra...
+- [[factions/星际战士/stratagems/advanced-deployment|ADVANCED DEPLOYMENT]] — 1 CP、Movement phase、装甲矛尖 分队、Strategic Ploy Stratagem。
+- [[factions/星际战士/stratagems/alpha-strike|ALPHA STRIKE]] — 1 CP、Charge phase、Saga of the Bold 分队、Epic Deed Stratagem。
+- [[factions/星际战士/stratagems/ancient-fury|ANCIENT FURY]] — 1 CP、Command phase、Ironstorm Spearhead 分队、Epic Deed Stratage...
+- [[factions/星际战士/stratagems/assail|ASSAIL]] — 1 CP、Shooting phase、Librarius Conclave 分队、Strategic Ploy Str...
+- [[factions/星际战士/stratagems/augmetic-fortitude|AUGMETIC FORTITUDE]] — 1 CP、Charge phase、艾沃尼之锤 分队、Battle Tactic Stratagem。
+- [[factions/星际战士/stratagems/battle-drill-recall|BATTLE DRILL RECALL]] — 1 CP、Shooting phase、Anvil Siege Force 分队、Battle Tactic Strat...
+- [[factions/星际战士/stratagems/birth-of-a-saga|BIRTH OF A SAGA]] — 1 CP、Command phase、Saga of the Bold 分队、Epic Deed Stratagem。
+- [[factions/星际战士/stratagems/blazing-earth|BLAZING EARTH]] — 1 CP、Charge phase、铸造之父的探寻者 分队、Strategic Ploy Stratagem。
+- [[factions/星际战士/stratagems/blitzing-fusillade|BLITZING FUSILLADE]] — 1 CP、Shooting phase、Stormlance Task Force 分队、Battle Tactic S...
+- [[factions/星际战士/stratagems/bounding-advance|BOUNDING ADVANCE]] — 1 CP、Movement or Charge phase、Saga of the Hunter 分队、Strategi...
+- [[factions/星际战士/stratagems/burning-vengeance-firestorm-assault-force|BURNING VENGEANCE]] — 1 CP、Shooting phase、Firestorm Assault Force 分队、Battle Tactic...
+- [[factions/星际战士/stratagems/burning-vengeance-forgefathers-seekers|BURNING VENGEANCE]] — 1 CP、Shooting phase、铸造之父的探寻者 分队、Battle Tactic Stratagem。
+- [[factions/星际战士/stratagems/calculated-feint|CALCULATED FEINT]] — 1 CP、Charge phase、Vanguard Spearhead 分队、Strategic Ploy Strat...
+- [[factions/星际战士/stratagems/carve-a-path|CARVE A PATH]] — 1 CP、Movement or Charge phase、Terminator Assault 分队、Strategi...
+- [[factions/星际战士/stratagems/ceramite-bulwark|CERAMITE BULWARK]] — 1 CP、Fight phase、Boarding Strike 分队、Battle Tactic Stratagem。
+- [[factions/星际战士/stratagems/ceramite-sledgehammer|CERAMITE SLEDGEHAMMER]] — 1 CP、Movement phase、装甲矛尖 分队、Strategic Ploy Stratagem。
+- [[factions/星际战士/stratagems/champions-guidance|CHAMPION’S GUIDANCE]] — 1 CP、Shooting or Fight phase、Saga of the Bold 分队、Epic Deed S...
+- [[factions/星际战士/stratagems/chosen-prey|CHOSEN PREY]] — 1 CP、Movement phase、Saga of the Hunter 分队、Strategic Ploy Str...
+- [[factions/星际战士/stratagems/cleansing-sweep|CLEANSING SWEEP]] — 1 CP、Movement or Charge phase、Terminator Assault 分队、Battle T...
+- [[factions/星际战士/stratagems/codex-warfare|CODEX WARFARE]] — 1 CP、Movement phase、Shield of the Void 分队、Strategic Ploy Str...
+- [[factions/星际战士/stratagems/coordinated-strike|COORDINATED STRIKE]] — 1 CP、Fight phase、Saga of the Beastslayer 分队、Strategic Ploy S...
+- [[factions/星际战士/stratagems/countercharge|COUNTERCHARGE]] — 2 CP、Charge phase、Saga of the Bold 分队、Epic Deed Stratagem。
+- [[factions/星际战士/stratagems/courage-and-honour|COURAGE AND HONOUR!]] — 1 CP、Fight phase、Blade of Ultramar 分队、Battle Tactic Stratage...
+- [[factions/星际战士/stratagems/death-on-the-wind|DEATH ON THE WIND]] — 1 CP、Shooting phase、Company of Hunters 分队、Battle Tactic Stra...
+- [[factions/星际战士/stratagems/dropship-extraction-emperors-shield|DROPSHIP EXTRACTION]] — 1 CP、Fight phase、帝皇之盾 分队、Battle Tactic Stratagem。
+- [[factions/星际战士/stratagems/dropship-extraction-hammer-of-avernii|DROPSHIP EXTRACTION]] — 1 CP、Fight phase、艾沃尼之锤 分队、Strategic Ploy Stratagem。
+- [[factions/星际战士/stratagems/duty-and-defiance|DUTY AND DEFIANCE]] — 1 CP、Fight phase、Boarding Strike 分队、Strategic Ploy Stratagem...
+- [[factions/星际战士/stratagems/duty-and-honour|DUTY AND HONOUR]] — 1 CP、Shooting phase、1st Company Task Force 分队、Strategic Ploy...
+- [[factions/星际战士/stratagems/duty-unto-death|DUTY UNTO DEATH]] — 1 CP、Fight phase、Inner Circle Task Force 分队、Strategic Ploy S...
+- [[factions/星际战士/stratagems/enhanced-efficiency|ENHANCED EFFICIENCY]] — 1 CP、Movement phase、Pilum Strike Team 分队、Strategic Ploy Stra...
+- [[factions/星际战士/stratagems/evasive-manoeuvres|EVASIVE MANOEUVRES]] — 1 CP、Shooting phase、Spearpoint Task Force 分队、Battle Tactic S...
+- [[factions/星际战士/stratagems/exemplary-vigilance|EXEMPLARY VIGILANCE]] — 1 CP、Shooting phase、Blade of Ultramar 分队、Battle Tactic Strat...
+- [[factions/星际战士/stratagems/fiery-shield|FIERY SHIELD]] — 1 CP、Fight phase、Librarius Conclave 分队、Strategic Ploy Strata...
+- [[factions/星际战士/stratagems/fighting-retreat|FIGHTING RETREAT]] — 1 CP、Movement phase、Pilum Strike Team 分队、Strategic Ploy Stra...
+- [[factions/星际战士/stratagems/fire-discipline|FIRE DISCIPLINE]] — 1 CP、Shooting phase、Unforgiven Task Force 分队、Battle Tactic S...
+- [[factions/星际战士/stratagems/focusing-shrine|FOCUSING SHRINE]] — 1 CP、Movement phase、Terminator Assault 分队、Strategic Ploy Str...
+- [[factions/星际战士/stratagems/full-throttle|FULL THROTTLE]] — 2 CP、Movement phase、Stormlance Task Force 分队、Wargear Stratag...
+- [[factions/星际战士/stratagems/grim-retribution|GRIM RETRIBUTION]] — 1 CP、Shooting phase、Unforgiven Task Force 分队、Strategic Ploy...
+- [[factions/星际战士/stratagems/guerrilla-tactics|GUERRILLA TACTICS]] — 1 CP、Fight phase、Vanguard Spearhead 分队、Strategic Ploy Strata...
+- [[factions/星际战士/stratagems/hail-of-vengeance|HAIL OF VENGEANCE]] — 2 CP、Shooting phase、Anvil Siege Force 分队、Strategic Ploy Stra...
+- [[factions/星际战士/stratagems/heroes-of-the-chapter|HEROES OF THE CHAPTER]] — 1 CP、Shooting or Fight phase、1st Company Task Force 分队、Battl...
+- [[factions/星际战士/stratagems/heroic-resolve|HEROIC RESOLVE]] — 2 CP、Shooting phase、Saga of the Bold 分队、Epic Deed Stratagem。
+- [[factions/星际战士/stratagems/high-speed-focus|HIGH-SPEED FOCUS]] — 1 CP、Shooting phase、Company of Hunters 分队、Battle Tactic Stra...
+- [[factions/星际战士/stratagems/honour-the-chapter|HONOUR THE CHAPTER]] — 1 CP、Fight phase、Gladius Task Force 分队、Battle Tactic Stratag...
+- [[factions/星际战士/stratagems/hunters-trail-company-of-hunters|HUNTERS’ TRAIL]] — 1 CP、Command phase、Company of Hunters 分队、Strategic Ploy Stra...
+- [[factions/星际战士/stratagems/hunters-trail-saga-of-the-hunter|HUNTERS’ TRAIL]] — 1 CP、Fight phase、Saga of the Hunter 分队、Strategic Ploy Strata...
+- [[factions/星际战士/stratagems/hunters-instincts|HUNTER’S INSTINCTS]] — 1 CP、Movement phase、Spearpoint Task Force 分队、Strategic Ploy...
+- [[factions/星际战士/stratagems/impetuosity|IMPETUOSITY]] — 1 CP、Shooting phase、Saga of the Beastslayer 分队、Strategic Plo...
+- [[factions/星际战士/stratagems/in-the-emperors-name|IN THE EMPEROR’S NAME]] — 1 CP、Shooting or Fight phase、Boarding Strike 分队、Battle Tacti...
+- [[factions/星际战士/stratagems/inspiring-presence|INSPIRING PRESENCE]] — 1 CP、Fight phase、Saga of the Bold 分队、Epic Deed Stratagem。
+- [[factions/星际战士/stratagems/into-darkness|INTO DARKNESS]] — 1 CP、Fight phase、影标之爪 分队、Strategic Ploy Stratagem。
+- [[factions/星际战士/stratagems/intractable|INTRACTABLE]] — 1 CP、Movement phase、Unforgiven Task Force 分队、Strategic Ploy...
+- [[factions/星际战士/stratagems/iron-arm|IRON ARM]] — 1 CP、Fight phase、Librarius Conclave 分队、Strategic Ploy Strata...
+- [[factions/星际战士/stratagems/kill-shot|KILL SHOT]] — 1 CP、Shooting phase、猎头特遣队 分队、Battle Tactic Stratagem。
+- [[factions/星际战士/stratagems/knife-work|KNIFE WORK]] — 1 CP、Fight phase、Pilum Strike Team 分队、Battle Tactic Stratage...
+- [[factions/星际战士/stratagems/legendary-fortitude|LEGENDARY FORTITUDE]] — 1 CP、Charge phase、1st Company Task Force 分队、Battle Tactic St...
+- [[factions/星际战士/stratagems/leonine-aggression|LEONINE AGGRESSION]] — 1 CP、Charge phase、巨石之怒 分队、Strategic Ploy Stratagem。
+- [[factions/星际战士/stratagems/marked-for-destruction|MARKED FOR DESTRUCTION]] — 1 CP、Shooting phase、Saga of the Hunter 分队、Battle Tactic Stra...
+- [[factions/星际战士/stratagems/martial-mastery|MARTIAL MASTERY]] — 1 CP、Fight phase、Inner Circle Task Force 分队、Epic Deed Strata...
+- [[factions/星际战士/stratagems/master-marksmen|MASTER MARKSMEN]] — 1 CP、Shooting phase、Pilum Strike Team 分队、Battle Tactic Strat...
+- [[factions/星际战士/stratagems/mercy-is-weakness|MERCY IS WEAKNESS]] — 2 CP、Shooting or Fight phase、Ironstorm Spearhead 分队、Battle T...
+- [[factions/星际战士/stratagems/mobile-lethality|MOBILE LETHALITY]] — 1 CP、Movement phase、Spearpoint Task Force 分队、Battle Tactic S...
+- [[factions/星际战士/stratagems/no-threat-too-great|NO THREAT TOO GREAT]] — 2 CP、Shooting phase、Anvil Siege Force 分队、Battle Tactic Strat...
+- [[factions/星际战士/stratagems/not-one-backwards-step|NOT ONE BACKWARDS STEP]] — 1 CP、Command phase、Anvil Siege Force 分队、Strategic Ploy Strat...
+- [[factions/星际战士/stratagems/only-in-death-does-duty-end|ONLY IN DEATH DOES DUTY END]] — 2 CP、Fight phase、Gladius Task Force 分队、Epic Deed Stratagem。
+- [[factions/星际战士/stratagems/onrushing-storm|ONRUSHING STORM]] — 1 CP、Fight phase、Champions of Fenris 分队、Strategic Ploy Strat...
+- [[factions/星际战士/stratagems/onslaught-of-fire|ONSLAUGHT OF FIRE]] — 1 CP、Shooting phase、Firestorm Assault Force 分队、Battle Tactic...
+- [[factions/星际战士/stratagems/orbital-teleportarium|ORBITAL TELEPORTARIUM]] — 1 CP、Fight phase、1st Company Task Force 分队、Strategic Ploy St...
+- [[factions/星际战士/stratagems/overcharged-breach|OVERCHARGED BREACH]] — 1 CP、Shooting phase、Shield of the Void 分队、Strategic Ploy Str...
+- [[factions/星际战士/stratagems/overwhelming-onslaught|OVERWHELMING ONSLAUGHT]] — 1 CP、Fight phase、Saga of the Hunter 分队、Battle Tactic Stratag...
+- [[factions/星际战士/stratagems/pinning-fire|PINNING FIRE]] — 1 CP、Shooting phase、Saga of the Beastslayer 分队、Strategic Plo...
+- [[factions/星际战士/stratagems/power-of-the-machine-spirit|POWER OF THE MACHINE SPIRIT]] — 1 CP、Shooting phase、Ironstorm Spearhead 分队、Epic Deed Stratag...
+- [[factions/星际战士/stratagems/practical-tactics|PRACTICAL TACTICS]] — 1 CP、Movement phase、Blade of Ultramar 分队、Strategic Ploy Stra...
+- [[factions/星际战士/stratagems/prescient-precision|PRESCIENT PRECISION]] — 1 CP、Shooting phase、Librarius Conclave 分队、Strategic Ploy Str...
+- [[factions/星际战士/stratagems/preytakers-eye|PREYTAKER’S EYE]] — 1 CP、Shooting or Fight phase、Champions of Fenris 分队、Strategi...
+- [[factions/星际战士/stratagems/rapid-reappraisal|RAPID REAPPRAISAL]] — 1 CP、Fight phase、Company of Hunters 分队、Battle Tactic Stratag...
+- [[factions/星际战士/stratagems/rapid-takeover|RAPID TAKEOVER]] — 1 CP、Movement phase、Shield of the Void 分队、Strategic Ploy Str...
+- [[factions/星际战士/stratagems/raptorial-vigilance|RAPTORIAL VIGILANCE]] — 1 CP、Movement phase、影标之爪 分队、Battle Tactic Stratagem。
+- [[factions/星际战士/stratagems/relic-teleportarium|RELIC TELEPORTARIUM]] — 1 CP、Movement phase、Inner Circle Task Force 分队、Strategic Plo...
+- [[factions/星际战士/stratagems/ride-hard-ride-fast|RIDE HARD, RIDE FAST]] — 1 CP、Shooting phase、Stormlance Task Force 分队、Battle Tactic S...
+- [[factions/星际战士/stratagems/rigid-discipline|RIGID DISCIPLINE]] — 1 CP、Fight phase、Anvil Siege Force 分队、Strategic Ploy Stratag...
+- [[factions/星际战士/stratagems/runes-of-claiming-champions-of-fenris|RUNES OF CLAIMING]] — 1 CP、Command phase、Champions of Fenris 分队、Strategic Ploy Str...
+- [[factions/星际战士/stratagems/scions-of-guilliman|SCIONS OF GUILLIMAN]] — 1 CP、Movement phase、光复派遣军 分队、Strategic Ploy Stratagem。
+- [[factions/星际战士/stratagems/sensory-assault|SENSORY ASSAULT]] — 1 CP、Command phase、Librarius Conclave 分队、Strategic Ploy Stra...
+- [[factions/星际战士/stratagems/shock-assault|SHOCK ASSAULT]] — 1 CP、Charge phase、Stormlance Task Force 分队、Battle Tactic Str...
+- [[factions/星际战士/stratagems/shock-cavalry|SHOCK CAVALRY]] — 1 CP、Movement or Charge phase、Saga of the Beastslayer 分队、Str...
+- [[factions/星际战士/stratagems/spear-thrust-and-sabre-swing|SPEAR THRUST AND SABRE SWING]] — 1 CP、Fight phase、Spearpoint Task Force 分队、Battle Tactic Stra...
+- [[factions/星际战士/stratagems/squad-tactics|SQUAD TACTICS]] — 1 CP、Movement phase、Gladius Task Force 分队、Strategic Ploy Str...
+- [[factions/星际战士/stratagems/stalking-wolves|STALKING WOLVES]] — 1 CP、Shooting phase、Champions of Fenris 分队、Strategic Ploy St...
+- [[factions/星际战士/stratagems/storm-of-fire|STORM OF FIRE]] — 1 CP、Shooting phase、Gladius Task Force 分队、Battle Tactic Stra...
+- [[factions/星际战士/stratagems/surgical-strikes|SURGICAL STRIKES]] — 2 CP、Fight phase、Vanguard Spearhead 分队、Battle Tactic Stratag...
+- [[factions/星际战士/stratagems/tactical-foresight|TACTICAL FORESIGHT]] — 1 CP、Shooting or Fight phase、Blade of Ultramar 分队、Epic Deed...
+- [[factions/星际战士/stratagems/talon-strike|TALON STRIKE]] — 1 CP、Shooting or Fight phase、Company of Hunters 分队、Strategic...
+- [[factions/星际战士/stratagems/target-weak-point|TARGET WEAK POINT]] — 1 CP、Shooting phase、猎头特遣队 分队、Battle Tactic Stratagem。
+- [[factions/星际战士/stratagems/terrifying-proficiency|TERRIFYING PROFICIENCY]] — 1 CP、Fight phase、1st Company Task Force 分队、Strategic Ploy St...
+- [[factions/星际战士/stratagems/territorial-advantage|TERRITORIAL ADVANTAGE]] — 1 CP、Fight phase、Saga of the Hunter 分队、Strategic Ploy Strata...
+- [[factions/星际战士/stratagems/thunderous-pursuit|THUNDEROUS PURSUIT]] — 1 CP、Movement phase、Saga of the Beastslayer 分队、Strategic Plo...
+- [[factions/星际战士/stratagems/tower-of-strength|TOWER OF STRENGTH]] — 1 CP、Any phase、Terminator Assault 分队、Strategic Ploy Stratage...
+- [[factions/星际战士/stratagems/ultramarian-adaptivity|ULTRAMARIAN ADAPTIVITY]] — 1 CP、Command phase、Blade of Ultramar 分队、Strategic Ploy Strat...
+- [[factions/星际战士/stratagems/ultramarian-destiny|ULTRAMARIAN DESTINY]] — 1 CP、Movement phase、光复派遣军 分队、Strategic Ploy Stratagem。
+- [[factions/星际战士/stratagems/unbowed-conviction|UNBOWED CONVICTION]] — 1 CP、Command phase、Ironstorm Spearhead 分队、Battle Tactic Stra...
+- [[factions/星际战士/stratagems/unbreakable-lines|UNBREAKABLE LINES]] — 2 CP、Charge phase、Unforgiven Task Force 分队、Battle Tactic Str...
+- [[factions/星际战士/stratagems/unbridled-ferocity|UNBRIDLED FEROCITY]] — 1 CP、Fight phase、Saga of the Beastslayer 分队、Battle Tactic St...
+- [[factions/星际战士/stratagems/unforgiven-fury|UNFORGIVEN FURY]] — 1 CP、Shooting or Fight phase、Unforgiven Task Force 分队、Battle...
+- [[factions/星际战士/stratagems/unmatched-fortitude|UNMATCHED FORTITUDE]] — 1 CP、Shooting phase、Inner Circle Task Force 分队、Battle Tactic...
+- [[factions/星际战士/stratagems/vengeful-animus|VENGEFUL ANIMUS]] — 1 CP、Any phase、Ironstorm Spearhead 分队、Epic Deed Stratagem。
+- [[factions/星际战士/stratagems/vox-amplified-roar|VOX-AMPLIFIED ROAR]] — 1 CP、Charge phase、Boarding Strike 分队、Strategic Ploy Stratage...
+- [[factions/星际战士/stratagems/wind-swift-evasion|WIND-SWIFT EVASION]] — 1 CP、Movement phase、Stormlance Task Force 分队、Strategic Ploy...
+- [[factions/星际战士/stratagems/withdraw-and-regroup|WITHDRAW AND REGROUP]] — 1 CP、Fight phase、Spearpoint Task Force 分队、Strategic Ploy Str...
+- [[factions/星际战士/stratagems/wrath-of-the-lion|WRATH OF THE LION]] — 1 CP、Charge phase、Inner Circle Task Force 分队、Epic Deed Strat...
+- [[factions/星际战士/stratagems/inescapable-wrath|不可逃避的怒火]] — 2 CP、Charge phase、莱昂之剑特遣队 分队、Strategic Ploy Stratagem。
+- [[factions/星际战士/stratagems/unyielding-might|不屈之力]] — 1 CP、Command phase、陶钢哨兵 分队、Battle Tactic Stratagem。
+- [[factions/星际战士/stratagems/inexorable-valour|不屈勇气]] — 1 CP、Movement phase、血色矛头 分队。
+- [[factions/星际战士/stratagems/obdurate-vengeance|不屈复仇]] — 1 CP、Fight phase、帝皇之盾 分队、Battle Tactic Stratagem。
+- [[factions/星际战士/stratagems/unrelenting-hunters|不屈猎手]] — 1 CP、Movement phase、头狼之歌 分队、Stratagem。
+- [[factions/星际战士/stratagems/deathless-duty|不朽使命]] — 2 CP、Fight phase、怒咒猛攻 分队、Stratagem。
+- [[factions/星际战士/stratagems/a-grim-warning|不祥征兆]] — 1 CP、Any phase、怒咒猛攻 分队、Stratagem。
+- [[factions/星际战士/stratagems/castigate-the-demagogues|严惩煽动者]] — 1 CP、Fight phase、Wrathful Procession 分队、Battle Tactic Strata...
+- [[factions/星际战士/stratagems/unsparing-execution|严格处刑]] — 1 CP、Movement phase、元帅亲军 分队。
+- [[factions/星际战士/stratagems/for-the-emperors-honour|为了帝皇的荣誉！]] — 1 CP、Fight phase、Companions of Vehemence 分队、Battle Tactic St...
+- [[factions/星际战士/stratagems/strike-now-for-glory|为荣誉出击]] — 1 CP、Shooting phase、天使继承者 分队、Strategic Ploy Stratagem。
+- [[factions/星际战士/stratagems/dominator-beacon|主宰信标]] — 1 CP、Movement phase、艾沃尼之锤 分队、Strategic Ploy Stratagem。
+- [[factions/星际战士/stratagems/onward-for-the-emperor|以帝皇之名前进]] — 1 CP、Fight phase、轨道突袭部队 分队、Strategic Ploy Stratagem。
+- [[factions/星际战士/stratagems/site-to-site-teleportation|传送]] — 1 CP、Fight phase、黑矛特遣队 分队、Strategic Ploy Stratagem。
+- [[factions/星际战士/stratagems/feint-and-thrust|佯退突袭]] — 1 CP、Movement phase、影标之爪 分队、Strategic Ploy Stratagem。
+- [[factions/星际战士/stratagems/aggressive-onslaught|侵袭猛攻]] — 1 CP、Movement phase、Liberator Assault Group 分队、Strategic Plo...
+- [[factions/星际战士/stratagems/fuelled-by-faith|信仰驱动]] — 1 CP、Any phase、Wrathful Procession 分队、Battle Tactic Stratage...
+- [[factions/星际战士/stratagems/instant-of-grace|光辉时刻]] — 1 CP、Command phase、天使继承者 分队、Epic Deed Stratagem。
+- [[factions/星际战士/stratagems/kraken-rounds|克拉肯子弹]] — 1 CP、Shooting phase、黑矛特遣队 分队、Wargear Stratagem。
+- [[factions/星际战士/stratagems/chilling-howl-champions-of-fenris|冰冷狼嚎]] — 1 CP、Command phase、Champions of Fenris 分队、Strategic Ploy Str...
+- [[factions/星际战士/stratagems/chilling-howl-legends-of-saga-and-song|冰冷狼嚎]] — 1 CP、Command phase、传奇之歌 分队。
+- [[factions/星际战士/stratagems/relentless-momentum|势不可挡]] — 1 CP、Fight phase、Wrathful Procession 分队、Strategic Ploy Strat...
+- [[factions/星际战士/stratagems/overpowering-exaction|压倒性追捕]] — 1 CP、Command or Fight phase、莱昂之剑特遣队 分队、Strategic Ploy Strata...
+- [[factions/星际战士/stratagems/suppression-strafing|压制扫射]] — 1 CP、Command phase、轨道突袭部队 分队、Strategic Ploy Stratagem。
+- [[factions/星际战士/stratagems/reactive-repositioning|反应机动]] — 1 CP、Movement phase、猎头特遣队 分队、Strategic Ploy Stratagem。
+- [[factions/星际战士/stratagems/anti-grav-surge|反重力推进]] — 1 CP、Fight phase、迅电特遣队 分队。
+- [[factions/星际战士/stratagems/terrifying-zeal|可怕狂热]] — 1 CP、Charge phase、审讯者密会 分队。
+- [[factions/星际战士/stratagems/strength-in-unity|团结之力]] — 1 CP、Fight phase、莱昂之剑特遣队 分队、Battle Tactic Stratagem。
+- [[factions/星际战士/stratagems/codex-discipline|圣典条令]] — 1 CP、Shooting or Fight phase、堡垒特遣队 分队、Battle Tactic Stratage...
+- [[factions/星际战士/stratagems/in-the-shadow-of-great-wings|在巨大双翼的阴影下]] — 1 CP、Shooting phase、天使继承者 分队、Battle Tactic Stratagem。
+- [[factions/星际战士/stratagems/hellfire-rounds|地狱火子弹]] — 1 CP、Shooting phase、黑矛特遣队 分队、Wargear Stratagem。
+- [[factions/星际战士/stratagems/augmented-targeting|增强定位]] — 1 CP、Shooting phase、陶钢哨兵 分队、Battle Tactic Stratagem。
+- [[factions/星际战士/stratagems/light-of-vengeance|复仇之光]] — 1 CP、Shooting or Fight phase、堡垒特遣队 分队、Battle Tactic Stratage...
+- [[factions/星际战士/stratagems/no-barrier-to-retribution|复仇无阻]] — 1 CP、Movement or Charge phase、迷失者的怒火 分队。
+- [[factions/星际战士/stratagems/blinding-blurs-of-vengeance|复仇的耀光]] — 1 CP、Shooting phase、血色矛头 分队。
+- [[factions/星际战士/stratagems/limb-from-limb|大卸八块]] — 1 CP、Fight phase、怒咒猛攻 分队、Stratagem。
+- [[factions/星际战士/stratagems/angelic-grace|天使优雅]] — 1 CP、Any phase、Liberator Assault Group 分队、Strategic Ploy Str...
+- [[factions/星际战士/stratagems/aura-of-the-angels-grace|天使圣洁光环]] — 1 CP、Shooting phase、优雅传承 分队。
+- [[factions/星际战士/stratagems/angels-sacrifice|天使牺牲]] — 1 CP、Fight phase、The Angelic Host 分队、Battle Tactic Stratagem...
+- [[factions/星际战士/stratagems/descent-of-angels|天使降临]] — 1 CP、Movement phase、The Angelic Host 分队、Epic Deed Stratagem。
+- [[factions/星际战士/stratagems/furious-dedication|奉献怒火]] — 1 CP、Charge or Fight phase、光复派遣军 分队、Battle Tactic Stratagem。
+- [[factions/星际战士/stratagems/runes-of-claiming-champions-of-fenris-2|宣索符文]] — 1 CP、Movement phase、Champions of Fenris 分队。
+- [[factions/星际战士/stratagems/blade-keen-senses|尖锐感官]] — 1 CP、Shooting phase、狼牙堡老兵 分队。
+- [[factions/星际战士/stratagems/heresy-begets-retribution|异端必遭严惩！]] — 1 CP、Movement phase、Companions of Vehemence 分队、Strategic Plo...
+- [[factions/星际战士/stratagems/guided-disruption|引导性混乱]] — 1 CP、Shooting or Fight phase、堡垒特遣队 分队、Strategic Ploy Stratag...
+- [[factions/星际战士/stratagems/rapid-gunnery|快速射击]] — 1 CP、Shooting phase、猎头特遣队 分队、Strategic Ploy Stratagem。
+- [[factions/星际战士/stratagems/rapid-embarkation-armoured-speartip|快速登车]] — 1 CP、Fight phase、装甲矛尖 分队、Wargear Stratagem。
+- [[factions/星际战士/stratagems/rapid-embarkation-firestorm-assault-force|快速登车]] — 1 CP、Fight phase、Firestorm Assault Force 分队、Strategic Ploy S...
+- [[factions/星际战士/stratagems/wrathful-inferno|怒火成焚]] — 1 CP、Movement phase、铸造之父的探寻者 分队、Strategic Ploy Stratagem。
+- [[factions/星际战士/stratagems/wrathful-conquerors|愤怒征服者]] — 1 CP、Movement phase、帝皇之盾 分队、Strategic Ploy Stratagem。
+- [[factions/星际战士/stratagems/blade-of-detestation|憎恶之剑]] — 1 CP、Charge phase、元帅亲军 分队。
+- [[factions/星际战士/stratagems/slayers-of-abominations|憎恶杀手]] — 1 CP、Fight phase、元帅亲军 分队。
+- [[factions/星际战士/stratagems/we-are-vengeance|我们是复仇化身]] — 1 CP、Shooting phase、黑暗追击队 分队。
+- [[factions/星际战士/stratagems/battle-instincts|战斗本能]] — 1 CP、Shooting phase、头狼之歌 分队、Stratagem。
+- [[factions/星际战士/stratagems/tactical-mastery|战术大师]] — 1 CP、Movement phase、巨石之怒 分队、Battle Tactic Stratagem。
+- [[factions/星际战士/stratagems/tactical-decapitation|战术斩首]] — 1 CP、Shooting or Fight phase、轨道突袭部队 分队、Battle Tactic Stratag...
+- [[factions/星际战士/stratagems/crucible-of-battle-firestorm-assault-force|战火熔炉]] — 1 CP、Shooting or Fight phase、Firestorm Assault Force 分队、Batt...
+- [[factions/星际战士/stratagems/crucible-of-battle-forgefathers-seekers|战火熔炉]] — 1 CP、Shooting or Fight phase、铸造之父的探寻者 分队、Battle Tactic Strat...
+- [[factions/星际战士/stratagems/fight-to-the-end|战至最后]] — 1 CP、Fight phase、光复派遣军 分队、Battle Tactic Stratagem。
+- [[factions/星际战士/stratagems/exacting-punishment|执行惩处]] — 1 CP、Fight phase、审讯者密会 分队。
+- [[factions/星际战士/stratagems/spoor-of-the-unholy|扫清异端]] — 1 CP、Shooting or Fight phase、Vindication Task Force 分队、Battl...
+- [[factions/星际战士/stratagems/angels-defiant|抗争天使]] — 1 CP、Fight phase、堡垒特遣队 分队。
+- [[factions/星际战士/stratagems/refusal-to-yield|拒绝倒下]] — 1 CP、Any phase、Vindication Task Force 分队、Epic Deed Stratagem...
+- [[factions/星际战士/stratagems/data-link-augury|数据连接卜测]] — 1 CP、Shooting phase、迅电特遣队 分队。
+- [[factions/星际战士/stratagems/lay-low-the-tyrants|斩首行动]] — 1 CP、Fight phase、影标之爪 分队、Battle Tactic Stratagem。
+- [[factions/星际战士/stratagems/ruthless-butchery|无情屠戮]] — 1 CP、Fight phase、艾沃尼之锤 分队、Battle Tactic Stratagem。
+- [[factions/星际战士/stratagems/relentless-assault|无情突击]] — 1 CP、Movement phase、Liberator Assault Group 分队、Strategic Plo...
+- [[factions/星际战士/stratagems/unbridled-ardour|无拘热忱]] — 1 CP、Any phase、The Angelic Host 分队、Epic Deed Stratagem。
+- [[factions/星际战士/stratagems/dread-crusaders|无畏十字军]] — 1 CP、Charge phase、Companions of Vehemence 分队、Strategic Ploy...
+- [[factions/星际战士/stratagems/no-sacrifice-too-great|无谓牺牲]] — 1 CP、Shooting phase、黑暗时代兵器 分队。
+- [[factions/星际战士/stratagems/inescapable-justice|昭昭天罚]] — 2 CP、Any phase、巨石之怒 分队、Battle Tactic Stratagem。
+- [[factions/星际战士/stratagems/wings-of-shadow|暗影之翼]] — 1 CP、Shooting phase、黑暗追击队 分队。
+- [[factions/星际战士/stratagems/strike-from-the-shadows-subversion-assets|暗影狙杀]] — 1 CP、Shooting phase、行动资源 分队。
+- [[factions/星际战士/stratagems/strike-from-the-shadows-vanguard-spearhead|暗影狙杀]] — 1 CP、Shooting phase、Vanguard Spearhead 分队、Battle Tactic Stra...
+- [[factions/星际战士/stratagems/wrathful-rampage|暴怒冲动]] — 1 CP、Movement phase、The Lost Brethren 分队、Strategic Ploy Stra...
+- [[factions/星际战士/stratagems/wings-of-the-blizzard|暴风雪之翼]] — 1 CP、Fight phase、传奇之歌 分队。
+- [[factions/星际战士/stratagems/final-retribution|最终复仇]] — 1 CP、Fight phase、The Lost Brethren 分队、Epic Deed Stratagem。
+- [[factions/星际战士/stratagems/machine-wrath|机械之怒]] — 1 CP、Any phase、装甲矛尖 分队、Epic Deed Stratagem。
+- [[factions/星际战士/stratagems/machine-vengeance|机械复仇]] — 1 CP、Shooting phase、猎头特遣队 分队、Epic Deed Stratagem。
+- [[factions/星际战士/stratagems/rite-of-perfervid-wrath|极端怒火仪式]] — 1 CP、Fight phase、Wrathful Procession 分队。
+- [[factions/星际战士/stratagems/grimnars-command|格里姆纳尔的命令]] — 1 CP、Command phase、头狼之歌 分队、Stratagem。
+- [[factions/星际战士/stratagems/martial-exemplars|武艺典范]] — 1 CP、Fight phase、The Angelic Host 分队、Battle Tactic Stratagem...
+- [[factions/星际战士/stratagems/martial-paragon|武艺楷模]] — 1 CP、Shooting or Fight phase、优雅传承 分队。
+- [[factions/星际战士/stratagems/death-from-the-skies|死从天降]] — 1 CP、Charge phase、The Angelic Host 分队、Epic Deed Stratagem。
+- [[factions/星际战士/stratagems/a-ceaseless-cause|永不停歇的进军]] — 1 CP、Fight phase、Godhammer Assault Force 分队、Strategic Ploy S...
+- [[factions/星际战士/stratagems/marching-ever-on|永不停止的进军]] — 1 CP、Fight phase、光复派遣军 分队、Strategic Ploy Stratagem。
+- [[factions/星际战士/stratagems/soul-darkened-fury|污染灵魂的怒火]] — 1 CP、Movement phase、优雅传承 分队。
+- [[factions/星际战士/stratagems/icy-calm|沉着冷静]] — 1 CP、Movement phase、狼牙堡老兵 分队。
+- [[factions/星际战士/stratagems/grizzled-killers|沧桑杀手]] — 1 CP、Fight phase、狼牙堡老兵 分队。
+- [[factions/星际战士/stratagems/litanies-of-purgation|洗罪祷言]] — 1 CP、Fight phase、Vindication Task Force 分队、Battle Tactic Str...
+- [[factions/星际战士/stratagems/death-begets-vengeance|源于死亡的仇恨]] — 1 CP、Any phase、迷失者的怒火 分队。
+- [[factions/星际战士/stratagems/searing-bursts|灼热连射]] — 1 CP、Shooting phase、黑暗时代兵器 分队。
+- [[factions/星际战士/stratagems/immolation-protocols-firestorm-assault-force|焚化协议]] — 2 CP、Shooting phase、Firestorm Assault Force 分队、Battle Tactic...
+- [[factions/星际战士/stratagems/immolation-protocols-forgefathers-seekers|焚化协议]] — 2 CP、Shooting phase、铸造之父的探寻者 分队、Battle Tactic Stratagem。
+- [[factions/星际战士/stratagems/illuminating-fire|照明火力]] — 1 CP、Shooting phase、莱昂之剑特遣队 分队、Battle Tactic Stratagem。
+- [[factions/星际战士/stratagems/rage-fuelled-response|狂怒反应]] — 1 CP、Shooting phase、迷失者的怒火 分队。
+- [[factions/星际战士/stratagems/furious-onslaught|狂怒猛攻]] — 1 CP、Fight phase、The Lost Brethren 分队、Battle Tactic Stratage...
+- [[factions/星际战士/stratagems/perfervid-intervention|狂热干预]] — 2 CP、Charge phase、Vindication Task Force 分队、Strategic Ploy S...
+- [[factions/星际战士/stratagems/brute-fervour|狂热蛮力]] — 1 CP、Fight phase、Wrathful Procession 分队、Battle Tactic Strata...
+- [[factions/星际战士/stratagems/lions-will|狮王意志]] — 1 CP、Command phase、巨石之怒 分队、Strategic Ploy Stratagem。
+- [[factions/星际战士/stratagems/wolf-totems|狼图腾]] — 1 CP、Any phase、Champions of Fenris 分队。
+- [[factions/星际战士/stratagems/eye-of-the-pack|狼群之眼]] — 1 CP、Shooting phase、头狼之歌 分队、Stratagem。
+- [[factions/星际战士/stratagems/fangs-of-the-pack|狼群獠牙]] — 1 CP、Fight phase、传奇之歌 分队。
+- [[factions/星际战士/stratagems/stalk-between-worlds|界隙潜行]] — 1 CP、Shooting phase、Champions of Fenris 分队。
+- [[factions/星际战士/stratagems/blessed-hull|祝圣外壳]] — 2 CP、Shooting phase、Godhammer Assault Force 分队、Battle Tactic...
+- [[factions/星际战士/stratagems/gauntlet-of-the-god-emperor|神皇铁拳]] — 1 CP、Movement phase、Godhammer Assault Force 分队、Strategic Plo...
+- [[factions/星际战士/stratagems/skyborne-surveillance|空中监视]] — 1 CP、Shooting phase、黑暗追击队 分队。
+- [[factions/星际战士/stratagems/shock-onslaught|突击猛攻]] — 1 CP、Fight phase、轨道突袭部队 分队、Strategic Ploy Stratagem。
+- [[factions/星际战士/stratagems/stand-to-the-end|站至最后]] — 1 CP、Fight phase、陶钢哨兵 分队、Epic Deed Stratagem。
+- [[factions/星际战士/stratagems/fury-of-the-first|第一连之怒]] — 1 CP、Shooting or Fight phase、帝皇之盾 分队、Battle Tactic Stratagem...
+- [[factions/星际战士/stratagems/cogitated-ferocity|精确愤怒]] — 1 CP、Fight phase、艾沃尼之锤 分队、Strategic Ploy Stratagem。
+- [[factions/星际战士/stratagems/disciplined-extermination|纪律性歼灭]] — 1 CP、Shooting phase、帝皇之盾 分队、Battle Tactic Stratagem。
+- [[factions/星际战士/stratagems/heresy-undone|终结异端]] — 1 CP、Shooting or Charge phase、堡垒特遣队 分队、Strategic Ploy Strata...
+- [[factions/星际战士/stratagems/revelation-of-guilt|罪愆昭示]] — 1 CP、Shooting phase、黑暗时代兵器 分队。
+- [[factions/星际战士/stratagems/focused-hatred|聚焦仇恨]] — 1 CP、Charge phase、Godhammer Assault Force 分队、Strategic Ploy...
+- [[factions/星际战士/stratagems/purgation-doctrine|肃清条令]] — 1 CP、Shooting phase、装甲矛尖 分队、Battle Tactic Stratagem。
+- [[factions/星际战士/stratagems/autosense-coordination|自动感应协调]] — 1 CP、Shooting or Fight phase、轨道突袭部队 分队、Battle Tactic Stratag...
+- [[factions/星际战士/stratagems/blind-screen|致盲景象]] — 1 CP、Shooting phase、轨道突袭部队 分队、Strategic Ploy Stratagem。
+- [[factions/星际战士/stratagems/fenrisian-ferocity|芬里斯狂怒]] — 1 CP、Movement or Charge phase、头狼之歌 分队、Stratagem。
+- [[factions/星际战士/stratagems/glorious-sacrifice|荣光牺牲]] — 1 CP、Any phase、The Lost Brethren 分队、Epic Deed Stratagem。
+- [[factions/星际战士/stratagems/armour-of-contempt-angelic-inheritors|蔑视战甲]] — 1 CP、Shooting or Fight phase、天使继承者 分队、Battle Tactic Stratage...
+- [[factions/星际战士/stratagems/armour-of-contempt-lions-blade-task-force|蔑视战甲]] — 1 CP、Shooting or Fight phase、莱昂之剑特遣队 分队、Battle Tactic Strata...
+- [[factions/星际战士/stratagems/armour-of-contempt-wrathful-procession|蔑视战甲]] — 1 CP、Shooting or Fight phase、Wrathful Procession 分队、Battle T...
+- [[factions/星际战士/stratagems/armour-of-contempt-1st-company-task-force|蔑视甲胄]] — 1 CP、Shooting or Fight phase、1st Company Task Force 分队、Battl...
+- [[factions/星际战士/stratagems/armour-of-contempt-anvil-siege-force|蔑视甲胄]] — 1 CP、Shooting or Fight phase、Anvil Siege Force 分队、Battle Tac...
+- [[factions/星际战士/stratagems/armour-of-contempt-armoured-speartip|蔑视甲胄]] — 1 CP、Shooting or Fight phase、装甲矛尖 分队、Strategic Ploy Stratage...
+- [[factions/星际战士/stratagems/armour-of-contempt-black-spear-task-force|蔑视甲胄]] — 1 CP、Shooting or Fight phase、黑矛特遣队 分队、Battle Tactic Stratage...
+- [[factions/星际战士/stratagems/armour-of-contempt-blade-of-ultramar|蔑视甲胄]] — 1 CP、Shooting or Fight phase、Blade of Ultramar 分队、Battle Tac...
+- [[factions/星际战士/stratagems/armour-of-contempt-ceramite-sentinels|蔑视甲胄]] — 1 CP、Shooting or Fight phase、陶钢哨兵 分队、Battle Tactic Stratagem...
+- [[factions/星际战士/stratagems/armour-of-contempt-champions-of-fenris|蔑视甲胄]] — 1 CP、Shooting or Fight phase、Champions of Fenris 分队、Strategi...
+- [[factions/星际战士/stratagems/armour-of-contempt-company-of-hunters|蔑视甲胄]] — 1 CP、Shooting or Fight phase、Company of Hunters 分队、Battle Ta...
+- [[factions/星际战士/stratagems/armour-of-contempt-emperors-shield|蔑视甲胄]] — 1 CP、Shooting or Fight phase、帝皇之盾 分队、Battle Tactic Stratagem...
+- [[factions/星际战士/stratagems/armour-of-contempt-firestorm-assault-force|蔑视甲胄]] — 1 CP、Shooting or Fight phase、Firestorm Assault Force 分队、Batt...
+- [[factions/星际战士/stratagems/armour-of-contempt-forgefathers-seekers|蔑视甲胄]] — 1 CP、Shooting or Fight phase、铸造之父的探寻者 分队、Battle Tactic Strat...
+- [[factions/星际战士/stratagems/armour-of-contempt-gladius-task-force|蔑视甲胄]] — 1 CP、Shooting or Fight phase、Gladius Task Force 分队、Battle Ta...
+- [[factions/星际战士/stratagems/armour-of-contempt-hammer-of-avernii|蔑视甲胄]] — 1 CP、Shooting or Fight phase、艾沃尼之锤 分队、Battle Tactic Stratage...
+- [[factions/星际战士/stratagems/armour-of-contempt-headhunter-task-force|蔑视甲胄]] — 1 CP、Shooting or Fight phase、猎头特遣队 分队、Strategic Ploy Stratag...
+- [[factions/星际战士/stratagems/armour-of-contempt-inner-circle-task-force|蔑视甲胄]] — 1 CP、Shooting or Fight phase、Inner Circle Task Force 分队、Batt...
+- [[factions/星际战士/stratagems/armour-of-contempt-ironstorm-spearhead|蔑视甲胄]] — 1 CP、Shooting or Fight phase、Ironstorm Spearhead 分队、Battle T...
+- [[factions/星际战士/stratagems/armour-of-contempt-liberator-assault-group|蔑视甲胄]] — 1 CP、Shooting or Fight phase、Liberator Assault Group 分队、Batt...
+- [[factions/星际战士/stratagems/armour-of-contempt-librarius-conclave|蔑视甲胄]] — 1 CP、Shooting or Fight phase、Librarius Conclave 分队、Strategic...
+- [[factions/星际战士/stratagems/armour-of-contempt-rage-cursed-onslaught|蔑视甲胄]] — 1 CP、Shooting or Fight phase、怒咒猛攻 分队、Stratagem。
+- [[factions/星际战士/stratagems/armour-of-contempt-shadowmark-talon|蔑视甲胄]] — 1 CP、Shooting or Fight phase、影标之爪 分队、Battle Tactic Stratagem...
+- [[factions/星际战士/stratagems/armour-of-contempt-spearpoint-task-force|蔑视甲胄]] — 1 CP、Shooting or Fight phase、Spearpoint Task Force 分队、Battle...
+- [[factions/星际战士/stratagems/armour-of-contempt-stormlance-task-force|蔑视甲胄]] — 1 CP、Shooting or Fight phase、Stormlance Task Force 分队、Battle...
+- [[factions/星际战士/stratagems/armour-of-contempt-the-angelic-host|蔑视甲胄]] — 1 CP、Shooting or Fight phase、The Angelic Host 分队、Battle Tact...
+- [[factions/星际战士/stratagems/armour-of-contempt-the-lost-brethren|蔑视甲胄]] — 1 CP、Shooting or Fight phase、The Lost Brethren 分队、Battle Tac...
+- [[factions/星际战士/stratagems/armour-of-contempt-unforgiven-task-force|蔑视甲胄]] — 1 CP、Shooting or Fight phase、Unforgiven Task Force 分队、Battle...
+- [[factions/星际战士/stratagems/armour-of-contempt-vanguard-spearhead|蔑视甲胄]] — 1 CP、Shooting or Fight phase、Vanguard Spearhead 分队、Battle Ta...
+- [[factions/星际战士/stratagems/armour-of-contempt-wrath-of-the-rock|蔑视甲胄]] — 1 CP、Shooting or Fight phase、巨石之怒 分队、Battle Tactic Stratagem...
+- [[factions/星际战士/stratagems/pious-enmity|虔信之仇]] — 1 CP、Fight phase、Companions of Vehemence 分队、Battle Tactic St...
+- [[factions/星际战士/stratagems/devout-push|虔信推进]] — 1 CP、Fight phase、Companions of Vehemence 分队、Battle Tactic St...
+- [[factions/星际战士/stratagems/voice-of-devotion|虔诚之声]] — 1 CP、Command phase、Wrathful Procession 分队、Strategic Ploy Str...
+- [[factions/星际战士/stratagems/the-foe-foreseen|被预见的敌人]] — 1 CP、Shooting or Fight phase、头狼之歌 分队、Stratagem。
+- [[factions/星际战士/stratagems/evasive-repositioning|规避性重新部署]] — 1 CP、Shooting phase、陶钢哨兵 分队、Strategic Ploy Stratagem。
+- [[factions/星际战士/stratagems/condemnatory-info-screed|谴责音阵]] — 1 CP、Fight phase、Godhammer Assault Force 分队、Battle Tactic St...
+- [[factions/星际战士/stratagems/red-rampage|赤红狂怒]] — 1 CP、Fight phase、Liberator Assault Group 分队、Battle Tactic St...
+- [[factions/星际战士/stratagems/red-wrath|赤色怒火]] — 1 CP、Movement phase、怒咒猛攻 分队、Stratagem。
+- [[factions/星际战士/stratagems/uncompromising-egress|迅猛突袭]] — 1 CP、Movement phase、Godhammer Assault Force 分队、Strategic Plo...
+- [[factions/星际战士/stratagems/crusading-conquerors|远征征服者]] — 1 CP、Command phase、光复派遣军 分队、Strategic Ploy Stratagem。
+- [[factions/星际战士/stratagems/lost-to-rage|迷失盛怒]] — 1 CP、Fight phase、The Lost Brethren 分队、Battle Tactic Stratage...
+- [[factions/星际战士/stratagems/wages-of-cowardice|追击懦弱者]] — 1 CP、Movement phase、审讯者密会 分队。
+- [[factions/星际战士/stratagems/adaptive-operations|适应作战]] — 1 CP、Shooting phase、行动资源 分队。
+- [[factions/星际战士/stratagems/adaptive-tactics|适应战术]] — 1 CP、Command phase、黑矛特遣队 分队、Strategic Ploy Stratagem。
+- [[factions/星际战士/stratagems/reclaim-our-honour|重拾我们的荣誉！]] — 1 CP、Shooting or Fight phase、Vindication Task Force 分队、Strat...
+- [[factions/星际战士/stratagems/savage-echoes|野蛮回响]] — 1 CP、Charge phase、Liberator Assault Group 分队、Battle Tactic S...
+- [[factions/星际战士/stratagems/judgement-of-the-golden-host|金色军团的审判]] — 1 CP、Charge phase、血色矛头 分队。
+- [[factions/星际战士/stratagems/knights-of-iron|钢铁骑士]] — 1 CP、Movement or Charge phase、莱昂之剑特遣队 分队、Strategic Ploy Stra...
+- [[factions/星际战士/stratagems/hearts-hardened-to-duty|铁血矢志，恪尽职守！]] — 1 CP、Fight phase、Companions of Vehemence 分队、Strategic Ploy S...
+- [[factions/星际战士/stratagems/reactive-evasion|闪避反应]] — 1 CP、Movement phase、迅电特遣队 分队。
+- [[factions/星际战士/stratagems/cloaked-position|隐匿位置]] — 1 CP、Movement phase、行动资源 分队。
+- [[factions/星际战士/stratagems/focused-fury|集中怒火]] — 1 CP、Fight phase、天使继承者 分队、Battle Tactic Stratagem。
+- [[factions/星际战士/stratagems/stunning-fusillade|震慑齐射]] — 1 CP、Shooting phase、影标之爪 分队、Battle Tactic Stratagem。
+- [[factions/星际战士/stratagems/shock-bombardment|震荡轰炸]] — 1 CP、Shooting or Fight phase、堡垒特遣队 分队、Strategic Ploy Stratag...
+- [[factions/星际战士/stratagems/recitation-of-the-revered|颂扬圣者]] — 1 CP、Shooting phase、Vindication Task Force 分队、Strategic Ploy...
+- [[factions/星际战士/stratagems/unto-the-burning-skies|飞向燃烧的天空]] — 1 CP、Fight phase、天使继承者 分队、Strategic Ploy Stratagem。
+- [[factions/星际战士/stratagems/priority-strike|首要打击]] — 2 CP、Shooting or Fight phase、陶钢哨兵 分队、Battle Tactic Stratagem...
+- [[factions/星际战士/stratagems/insensate-rampage|麻木狂怒]] — 1 CP、Shooting or Fight phase、怒咒猛攻 分队、Stratagem。
+- [[factions/星际战士/stratagems/relics-of-the-dark-age|黑暗纪元圣物]] — 1 CP、Shooting phase、巨石之怒 分队、Strategic Ploy Stratagem。
+- [[factions/星际战士/stratagems/dragonfire-rounds|龙火子弹]] — 1 CP、Shooting phase、黑矛特遣队 分队、Wargear Stratagem。
+
+## 强化
+
+- [[factions/星际战士/enhancements/a-giant-amongst-giants|A Giant Amongst Giants]] — 分数未知、Champions of Fenris 分队。
+- [[factions/星际战士/enhancements/adept-of-the-codex|Adept of the Codex]] — 20 分、Gladius Task Force 分队。
+- [[factions/星际战士/enhancements/adept-of-the-omnissiah|Adept of the Omnissiah]] — 35 分、Ironstorm Spearhead 分队。
+- [[factions/星际战士/enhancements/architect-of-war|Architect of War]] — 25 分、Anvil Siege Force 分队。
+- [[factions/星际战士/enhancements/armour-of-antoninus|Armour of Antoninus]] — 10 分、Blade of Ultramar 分队。
+- [[factions/星际战士/enhancements/armoured-commander|Armoured Commander]] — 25 分、装甲矛尖 分队。
+- [[factions/星际战士/enhancements/artificer-armour|Artificer Armour]] — 10 分、Gladius Task Force 分队。
+- [[factions/星际战士/enhancements/bellicose-weapon-spirits|Bellicose Weapon Spirits]] — 分数未知、迅电特遣队 分队。
+- [[factions/星际战士/enhancements/blackwing-shroud|Blackwing Shroud]] — 25 分、影标之爪 分队。
+- [[factions/星际战士/enhancements/braggarts-steel|Braggart’s Steel]] — 20 分、Saga of the Bold 分队。
+- [[factions/星际战士/enhancements/calibanite-armaments|Calibanite Armaments]] — 15 分、莱昂之剑特遣队 分队。
+- [[factions/星际战士/enhancements/castellum-omnivox|Castellum Omnivox]] — 20 分、陶钢哨兵 分队。
+- [[factions/星际战士/enhancements/celerity|Celerity]] — 30 分、Librarius Conclave 分队。
+- [[factions/星际战士/enhancements/champion-of-humanity|Champion of Humanity]] — 10 分、Firestorm Assault Force 分队。
+- [[factions/星际战士/enhancements/champion-of-the-deathwing|Champion of the Deathwing]] — 15 分、Inner Circle Task Force 分队。
+- [[factions/星际战士/enhancements/champion-of-the-feast|Champion of the Feast]] — 25 分、帝皇之盾 分队。
+- [[factions/星际战士/enhancements/chariots-of-the-storm|Chariots of the Storm]] — 25 分、头狼之歌 分队。
+- [[factions/星际战士/enhancements/chogorian-huntmaster|Chogorian Huntmaster]] — 25 分、Spearpoint Task Force 分队。
+- [[factions/星际战士/enhancements/clavitine-reliquary|Clavitine Reliquary]] — 0 分、Boarding Strike 分队。
+- [[factions/星际战士/enhancements/deathwing-assault-inner-circle-task-force|Deathwing Assault]] — 30 分、Inner Circle Task Force 分队。
+- [[factions/星际战士/enhancements/deathwing-assault-wrath-of-the-rock|Deathwing Assault]] — 15 分、巨石之怒 分队。
+- [[factions/星际战士/enhancements/dedicated-gunship|Dedicated Gunship]] — 15 分、轨道突袭部队 分队。
+- [[factions/星际战士/enhancements/defensive-mastery|Defensive Mastery]] — 25 分、陶钢哨兵 分队。
+- [[factions/星际战士/enhancements/disciple-of-rhetoricus|Disciple of Rhetoricus]] — 10 分、帝皇之盾 分队。
+- [[factions/星际战士/enhancements/elders-guidance|Elder’s Guidance]] — 20 分、Saga of the Beastslayer 分队。
+- [[factions/星际战士/enhancements/execute-and-redeploy|Execute and Redeploy]] — 20 分、Vanguard Spearhead 分队。
+- [[factions/星际战士/enhancements/eye-of-the-primarch|Eye of the Primarch]] — 10 分、堡垒特遣队 分队。
+- [[factions/星际战士/enhancements/eye-of-the-unseen|Eye of the Unseen]] — 10 分、Inner Circle Task Force 分队。
+- [[factions/星际战士/enhancements/fangrune-pendant|Fangrune Pendant]] — 15 分、Champions of Fenris 分队。
+- [[factions/星际战士/enhancements/fear-made-manifest-aura|Fear Made Manifest (Aura)]] — 30 分、1st Company Task Force 分队。
+- [[factions/星际战士/enhancements/feinting-withdrawal|Feinting Withdrawal]] — 10 分、Stormlance Task Force 分队。
+- [[factions/星际战士/enhancements/fenrisian-grit|Fenrisian Grit]] — 15 分、Saga of the Hunter 分队。
+- [[factions/星际战士/enhancements/feral-rage|Feral Rage]] — 10 分、Saga of the Hunter 分队。
+- [[factions/星际战士/enhancements/fierce-example|Fierce Example]] — 分数未知、传奇之歌 分队。
+- [[factions/星际战士/enhancements/fire-discipline|Fire Discipline]] — 25 分、Gladius Task Force 分队。
+- [[factions/星际战士/enhancements/fleet-commander|Fleet Commander]] — 15 分、Anvil Siege Force 分队。
+- [[factions/星际战士/enhancements/foes-fate|Foes’ Fate]] — 15 分、Champions of Fenris 分队。
+- [[factions/星际战士/enhancements/fulgus-magna|Fulgus Magna]] — 20 分、莱昂之剑特遣队 分队。
+- [[factions/星际战士/enhancements/fury-of-the-storm|Fury of the Storm]] — 25 分、Stormlance Task Force 分队。
+- [[factions/星际战士/enhancements/fusillade|Fusillade]] — 35 分、Librarius Conclave 分队。
+- [[factions/星际战士/enhancements/ghostweave-cloak|Ghostweave Cloak]] — 15 分、Vanguard Spearhead 分队。
+- [[factions/星际战士/enhancements/helm-of-the-beastslayer|Helm of the Beastslayer]] — 15 分、Saga of the Beastslayer 分队。
+- [[factions/星际战士/enhancements/hero-of-the-chapter|Hero of the Chapter]] — 20 分、堡垒特遣队 分队。
+- [[factions/星际战士/enhancements/hordeslayer|Hordeslayer]] — 15 分、Saga of the Bold 分队。
+- [[factions/星际战士/enhancements/hunters-eye|Hunter’s Eye]] — 20 分、Spearpoint Task Force 分队。
+- [[factions/星际战士/enhancements/hunters-guile|Hunter’s Guile]] — 20 分、Saga of the Beastslayer 分队。
+- [[factions/星际战士/enhancements/hunters-instincts-shadowmark-talon|Hunter’s Instincts]] — 25 分、影标之爪 分队。
+- [[factions/星际战士/enhancements/hunters-instincts-stormlance-task-force|Hunter’s Instincts]] — 25 分、Stormlance Task Force 分队。
+- [[factions/星际战士/enhancements/indomitable-fury|Indomitable Fury]] — 20 分、Anvil Siege Force 分队。
+- [[factions/星际战士/enhancements/iron-laurel|Iron Laurel]] — 10 分、艾沃尼之锤 分队。
+- [[factions/星际战士/enhancements/iron-resolve|Iron Resolve]] — 15 分、1st Company Task Force 分队。
+- [[factions/星际战士/enhancements/laurels-of-thunder|Laurels of Thunder]] — 15 分、轨道突袭部队 分队。
+- [[factions/星际战士/enhancements/liberator|Liberator]] — 15 分、装甲矛尖 分队。
+- [[factions/星际战士/enhancements/liberatum|Liberatum]] — 25 分、光复派遣军 分队。
+- [[factions/星际战士/enhancements/longstrider|Longstrider]] — 20 分、Champions of Fenris 分队。
+- [[factions/星际战士/enhancements/lord-of-the-hunt|Lord of the Hunt]] — 15 分、莱昂之剑特遣队 分队。
+- [[factions/星际战士/enhancements/lord-of-the-ravenwing|Lord of the Ravenwing]] — 10 分、巨石之怒 分队。
+- [[factions/星际战士/enhancements/master-of-machine-war|Master of Machine War]] — 20 分、Ironstorm Spearhead 分队。
+- [[factions/星际战士/enhancements/master-of-manoeuvre|Master of Manoeuvre]] — 15 分、Company of Hunters 分队。
+- [[factions/星际战士/enhancements/master-crafted-weapon|Master-crafted Weapon]] — 10 分、Company of Hunters 分队。
+- [[factions/星际战士/enhancements/mounted-strategist|Mounted Strategist]] — 30 分、Company of Hunters 分队。
+- [[factions/星际战士/enhancements/nightforged-battery|Nightforged Battery]] — 分数未知、黑暗追击队 分队。
+- [[factions/星际战士/enhancements/oath-of-macragge|Oath of Macragge]] — 15 分、Blade of Ultramar 分队。
+- [[factions/星际战士/enhancements/obfuscation|Obfuscation]] — 20 分、Librarius Conclave 分队。
+- [[factions/星际战士/enhancements/omni-structural-auspex|Omni-Structural Auspex]] — 0 分、Pilum Strike Team 分队。
+- [[factions/星际战士/enhancements/orbital-uplink-reliquary|Orbital Uplink Reliquary]] — 25 分、轨道突袭部队 分队。
+- [[factions/星际战士/enhancements/pennant-of-remembrance|Pennant of Remembrance]] — 10 分、Unforgiven Task Force 分队。
+- [[factions/星际战士/enhancements/portents-of-wisdom|Portents of Wisdom]] — 15 分、Stormlance Task Force 分队。
+- [[factions/星际战士/enhancements/prescience|Prescience]] — 25 分、Librarius Conclave 分队。
+- [[factions/星际战士/enhancements/preyslayer|Preyslayer]] — 分数未知、Champions of Fenris 分队。
+- [[factions/星际战士/enhancements/pyrebrand|Pyrebrand]] — 25 分、Wrathful Procession 分队。
+- [[factions/星际战士/enhancements/raptorial-cogitator-core|Raptorial Cogitator Core]] — 分数未知、迅电特遣队 分队。
+- [[factions/星际战士/enhancements/recon-hunter|Recon Hunter]] — 20 分、Company of Hunters 分队。
+- [[factions/星际战士/enhancements/resolute|Resolute]] — 0 分、Terminator Assault 分队。
+- [[factions/星际战士/enhancements/rites-of-war|Rites of War]] — 10 分、1st Company Task Force 分队。
+- [[factions/星际战士/enhancements/sacred-rage|Sacred Rage]] — 30 分、Wrathful Procession 分队。
+- [[factions/星际战士/enhancements/scroll-of-proclamation|Scroll of Proclamation]] — 15 分、光复派遣军 分队。
+- [[factions/星际战士/enhancements/seal-of-indomitability|Seal of Indomitability]] — 0 分、Terminator Assault 分队。
+- [[factions/星际战士/enhancements/shadow-war-veteran|Shadow War Veteran]] — 30 分、Vanguard Spearhead 分队。
+- [[factions/星际战士/enhancements/shock-deployment|Shock Deployment]] — 20 分、装甲矛尖 分队。
+- [[factions/星际战士/enhancements/shroud-of-heroes|Shroud of Heroes]] — 25 分、Unforgiven Task Force 分队。
+- [[factions/星际战士/enhancements/singular-will|Singular Will]] — 20 分、Inner Circle Task Force 分队。
+- [[factions/星际战士/enhancements/skjald|Skjald]] — 15 分、Saga of the Bold 分队。
+- [[factions/星际战士/enhancements/skjalds-foretelling|Skjald’s Foretelling]] — 25 分、头狼之歌 分队。
+- [[factions/星际战士/enhancements/spearpoint-paragon|Spearpoint Paragon]] — 25 分、Spearpoint Task Force 分队。
+- [[factions/星际战士/enhancements/speartip-of-the-chapter|Speartip of the Chapter]] — 0 分、Shield of the Void 分队。
+- [[factions/星际战士/enhancements/spiritus-ferrum|Spiritus Ferrum]] — 25 分、艾沃尼之锤 分队。
+- [[factions/星际战士/enhancements/spy-skull-data-link|Spy-skull Data Link]] — 15 分、陶钢哨兵 分队。
+- [[factions/星际战士/enhancements/stalwart-champion|Stalwart Champion]] — 25 分、莱昂之剑特遣队 分队。
+- [[factions/星际战士/enhancements/steel-font|Steel Font]] — 15 分、艾沃尼之锤 分队。
+- [[factions/星际战士/enhancements/stoic-defender|Stoic Defender]] — 15 分、Anvil Siege Force 分队。
+- [[factions/星际战士/enhancements/stormseers-wisdom|Stormseers’ Wisdom]] — 15 分、Spearpoint Task Force 分队。
+- [[factions/星际战士/enhancements/stubborn-tenacity|Stubborn Tenacity]] — 15 分、Unforgiven Task Force 分队。
+- [[factions/星际战士/enhancements/student-of-the-codex|Student of the Codex]] — 20 分、Blade of Ultramar 分队。
+- [[factions/星际战士/enhancements/swift-hunter|Swift Hunter]] — 20 分、Saga of the Hunter 分队。
+- [[factions/星际战士/enhancements/taramonds-censer|Taramond’s Censer]] — 15 分、Wrathful Procession 分队。
+- [[factions/星际战士/enhancements/target-augury-web|Target Augury Web]] — 30 分、Ironstorm Spearhead 分队。
+- [[factions/星际战士/enhancements/the-blade-driven-deep|The Blade Driven Deep]] — 25 分、Vanguard Spearhead 分队。
+- [[factions/星际战士/enhancements/the-flesh-is-weak|The Flesh is Weak]] — 10 分、Ironstorm Spearhead 分队。
+- [[factions/星际战士/enhancements/the-honour-vehement|The Honour Vehement]] — 15 分、Gladius Task Force 分队。
+- [[factions/星际战士/enhancements/the-imperiums-sword|The Imperium’s Sword]] — 25 分、1st Company Task Force 分队。
+- [[factions/星际战士/enhancements/thirst-for-glory|Thirst for Glory]] — 分数未知、传奇之歌 分队。
+- [[factions/星际战士/enhancements/thundercowl-turbines|Thundercowl Turbines]] — 分数未知、黑暗追击队 分队。
+- [[factions/星际战士/enhancements/thunderwolfs-fortitude|Thunderwolf’s Fortitude]] — 25 分、Saga of the Bold 分队。
+- [[factions/星际战士/enhancements/tolorek-data-djinn|Tolorek Data Djinn]] — 0 分、Shield of the Void 分队。
+- [[factions/星际战士/enhancements/umbral-raptor|Umbral Raptor]] — 15 分、影标之爪 分队。
+- [[factions/星际战士/enhancements/veteran-of-behemoth|Veteran of Behemoth]] — 25 分、Blade of Ultramar 分队。
+- [[factions/星际战士/enhancements/void-warrior|Void Warrior]] — 0 分、Pilum Strike Team 分队。
+- [[factions/星际战士/enhancements/weapons-of-the-first-legion|Weapons of the First Legion]] — 15 分、Unforgiven Task Force 分队。
+- [[factions/星际战士/enhancements/wolf-master|Wolf Master]] — 5 分、Saga of the Hunter 分队。
+- [[factions/星际战士/enhancements/wolf-touched|Wolf-touched]] — 15 分、Saga of the Beastslayer 分队。
+- [[factions/星际战士/enhancements/wolves-wisdom|Wolves’ Wisdom]] — 30 分、Champions of Fenris 分队。
+- [[factions/星际战士/enhancements/inescapable-interrogation|不可逃避的审讯]] — 分数未知、审讯者密会 分队。
+- [[factions/星际战士/enhancements/troubling-visions|不安幻视]] — 15 分、天使继承者 分队。
+- [[factions/星际战士/enhancements/indomitable-champion|不屈勇士]] — 20 分、帝皇之盾 分队。
+- [[factions/星际战士/enhancements/honour-indefatigable|不屈荣誉]] — 25 分、陶钢哨兵 分队。
+- [[factions/星际战士/enhancements/weaver-of-sagas|传奇叙述者]] — 分数未知、狼牙堡老兵 分队。
+- [[factions/星际战士/enhancements/coronal-susurrant|低语冠冕]] — 30 分、影标之爪 分队。
+- [[factions/星际战士/enhancements/tip-of-the-spear|先锋矛尖]] — 40 分、装甲矛尖 分队。
+- [[factions/星际战士/enhancements/seals-of-reconquest|光复之印]] — 20 分、光复派遣军 分队。
+- [[factions/星际战士/enhancements/blades-of-valour|勇气之刃]] — 15 分、堡垒特遣队 分队。
+- [[factions/星际战士/enhancements/augury-servo-host|占卜伺服主机]] — 15 分、Godhammer Assault Force 分队。
+- [[factions/星际战士/enhancements/speed-of-the-primarch|原体之速]] — 25 分、Liberator Assault Group 分队。
+- [[factions/星际战士/enhancements/on-the-archtraitors-bridge|叛徒舰桥之上]] — 分数未知、迷失者的怒火 分队。
+- [[factions/星际战士/enhancements/ordained-sacrifice|命定牺牲]] — 25 分、天使继承者 分队。
+- [[factions/星际战士/enhancements/howlmaw|嚎叫狼口]] — 15 分、头狼之歌 分队。
+- [[factions/星际战士/enhancements/sanguinius-grace|圣吉列斯的优雅]] — 20 分、The Lost Brethren 分队。
+- [[factions/星际战士/enhancements/herald-of-sacred-slaughter|圣洁屠戮先锋]] — 15 分、Godhammer Assault Force 分队。
+- [[factions/星际战士/enhancements/sanguinary-tear-aura|圣血泪滴（光环）]] — 35 分、怒咒猛攻 分队。
+- [[factions/星际战士/enhancements/redoubtable-machine-spirit|坚毅机魂]] — 25 分、猎头特遣队 分队。
+- [[factions/星际战士/enhancements/avenging-avatar-aura|复仇化身（光环）]] — 10 分、光复派遣军 分队。
+- [[factions/星际战士/enhancements/vengeful-onslaught|复仇猛攻]] — 10 分、The Lost Brethren 分队。
+- [[factions/星际战士/enhancements/adaptable-executioner|多面处刑者]] — 分数未知、Wrathful Procession 分队。
+- [[factions/星际战士/enhancements/archangels-shard|大天使碎片]] — 15 分、The Angelic Host 分队。
+- [[factions/星际战士/enhancements/beacon-angelis|天使信标]] — 25 分、黑矛特遣队 分队。
+- [[factions/星际战士/enhancements/aureole-of-the-angel|天使光环]] — 分数未知、优雅传承 分队。
+- [[factions/星际战士/enhancements/icon-of-the-angel|天使圣旗]] — 20 分、Liberator Assault Group 分队。
+- [[factions/星际战士/enhancements/angelic-executioner|天使处刑者]] — 分数未知、血色矛头 分队。
+- [[factions/星际战士/enhancements/angels-fang|天使獠牙]] — 25 分、怒咒猛攻 分队。
+- [[factions/星际战士/enhancements/osseus-key|奥瑟斯之匙]] — 15 分、黑矛特遣队 分队。
+- [[factions/星际战士/enhancements/consecrating-aura|守护圣环]] — 25 分、Vindication Task Force 分队。
+- [[factions/星际战士/enhancements/bombast-omnivox|宏声通讯器]] — 15 分、堡垒特遣队 分队。
+- [[factions/星际战士/enhancements/orb-of-the-emperors-aegis|帝皇圣盾宝珠]] — 10 分、Vindication Task Force 分队。
+- [[factions/星际战士/enhancements/shroud-field|帷幕力场]] — 分数未知、行动资源 分队。
+- [[factions/星际战士/enhancements/the-tome-of-ectoclades|异星大典]] — 30 分、黑矛特遣队 分队。
+- [[factions/星际战士/enhancements/paragon-of-fury|怒火楷模]] — 25 分、Godhammer Assault Force 分队。
+- [[factions/星际战士/enhancements/benediction-of-fury|怒火祝福]] — 10 分、Wrathful Procession 分队。
+- [[factions/星际战士/enhancements/shadow-of-abomination|憎恶之影]] — 分数未知、血色矛头 分队。
+- [[factions/星际战士/enhancements/artisan-of-war|战争工匠]] — 20 分、The Angelic Host 分队。
+- [[factions/星际战士/enhancements/battle-psalm-precentor|战歌颂唱者]] — 10 分、Godhammer Assault Force 分队。
+- [[factions/星际战士/enhancements/tempered-in-battle-aura|战火淬炼（光环）]] — 10 分、巨石之怒 分队。
+- [[factions/星际战士/enhancements/guiding-omens|指引圣兆]] — 分数未知、The Living Miracle 分队。
+- [[factions/星际战士/enhancements/limitless-zeal|无尽狂热]] — 分数未知、审讯者密会 分队。
+- [[factions/星际战士/enhancements/merciless-denunciation|无情声讨]] — 25 分、Companions of Vehemence 分队。
+- [[factions/星际战士/enhancements/gunnery-honours|枪炮荣誉]] — 20 分、猎头特遣队 分队。
+- [[factions/星际战士/enhancements/grimnars-mark|格里姆纳尔的印记]] — 20 分、头狼之歌 分队。
+- [[factions/星际战士/enhancements/zealous-vanguard|正义先锋]] — 20 分、Companions of Vehemence 分队。
+- [[factions/星际战士/enhancements/visage-of-death|死亡面具]] — 15 分、The Angelic Host 分队。
+- [[factions/星际战士/enhancements/entreaty-of-perpetual-ardour|永恒热情祈求]] — 分数未知、黑暗时代兵器 分队。
+- [[factions/星际战士/enhancements/imperialis-of-the-eternal-crusade|永恒远征圣旗]] — 15 分、Vindication Task Force 分队。
+- [[factions/星际战士/enhancements/blood-boil|沸血术]] — 分数未知、优雅传承 分队。
+- [[factions/星际战士/enhancements/carmine-reliquary|深红圣物]] — 30 分、怒咒猛攻 分队。
+- [[factions/星际战士/enhancements/firestorm-coordinators|火力协调器]] — 20 分、猎头特遣队 分队。
+- [[factions/星际战士/enhancements/blazing-icon|炽燃圣印]] — 20 分、天使继承者 分队。
+- [[factions/星际战士/enhancements/incendiary-animus|炽燃怒火]] — 25 分、Companions of Vehemence 分队。
+- [[factions/星际战士/enhancements/fervent-exemplars|热忱模范]] — 分数未知、元帅亲军 分队。
+- [[factions/星际战士/enhancements/immolator|焚灭者]] — 10 分、铸造之父的探寻者 分队。
+- [[factions/星际战士/enhancements/rage-fuelled-warrior|燃怒战士]] — 35 分、Liberator Assault Group 分队。
+- [[factions/星际战士/enhancements/war-tempered-artifice-firestorm-assault-force|百战精工]] — 25 分、Firestorm Assault Force 分队。
+- [[factions/星际战士/enhancements/war-tempered-artifice-forgefathers-seekers|百战精工]] — 25 分、铸造之父的探寻者 分队。
+- [[factions/星际战士/enhancements/instinctive-interception|直觉性拦截]] — 分数未知、迷失者的怒火 分队。
+- [[factions/星际战士/enhancements/prescient-flash|短暂预知]] — 20 分、天使继承者 分队。
+- [[factions/星际战士/enhancements/thief-of-secrets|秘密窃取者]] — 25 分、黑矛特遣队 分队。
+- [[factions/星际战士/enhancements/petition-of-stability|稳定请求]] — 分数未知、黑暗时代兵器 分队。
+- [[factions/星际战士/enhancements/adamantine-mantle-boarding-strike|精金斗篷]] — 0 分、Boarding Strike 分队。
+- [[factions/星际战士/enhancements/adamantine-mantle-firestorm-assault-force|精金斗篷]] — 20 分、Firestorm Assault Force 分队。
+- [[factions/星际战士/enhancements/adamantine-mantle-forgefathers-seekers|精金斗篷]] — 20 分、铸造之父的探寻者 分队。
+- [[factions/星际战士/enhancements/medusan-roar-aura|美杜莎之吼（光环）]] — 30 分、艾沃尼之锤 分队。
+- [[factions/星际战士/enhancements/veteran-of-the-vanguard|老兵先锋]] — 20 分、轨道突袭部队 分队。
+- [[factions/星际战士/enhancements/warden-of-honour|荣誉卫士]] — 20 分、Vindication Task Force 分队。
+- [[factions/星际战士/enhancements/master-of-the-red-thirst|血色饥渴大师]] — 25 分、怒咒猛攻 分队。
+- [[factions/星际战士/enhancements/inheritors-of-sigismund|西吉斯蒙德的继承者]] — 分数未知、元帅亲军 分队。
+- [[factions/星际战士/enhancements/oathbound-exemplar|誓言典范]] — 15 分、Companions of Vehemence 分队。
+- [[factions/星际战士/enhancements/to-slay-the-warmaster|诛杀战帅！]] — 15 分、The Lost Brethren 分队。
+- [[factions/星际战士/enhancements/ancient-weapons|远古神兵]] — 25 分、巨石之怒 分队。
+- [[factions/星际战士/enhancements/forged-in-battle-firestorm-assault-force|铸于战砧]] — 15 分、Firestorm Assault Force 分队。
+- [[factions/星际战士/enhancements/forged-in-battle-forgefathers-seekers|铸于战砧]] — 15 分、铸造之父的探寻者 分队。
+- [[factions/星际战士/enhancements/malodraxian-standard|长恶星战旗]] — 20 分、帝皇之盾 分队。
+- [[factions/星际战士/enhancements/gleaming-pinions|闪耀炽羽]] — 25 分、The Angelic Host 分队。
+- [[factions/星际战士/enhancements/astartes-tank-ace-aura|阿斯塔特坦克王牌（光环）]] — 40 分、猎头特遣队 分队。
+- [[factions/星际战士/enhancements/gift-of-foresight|预言之赐]] — 15 分、Liberator Assault Group 分队。
+- [[factions/星际战士/enhancements/blood-shard|鲜血碎片]] — 25 分、The Lost Brethren 分队。
+- [[factions/星际战士/enhancements/eye-of-the-hunter|鹰眼猎手]] — 分数未知、狼牙堡老兵 分队。
+- [[factions/星际战士/enhancements/death-in-the-dark|黑暗中的死亡]] — 分数未知、行动资源 分队。
 

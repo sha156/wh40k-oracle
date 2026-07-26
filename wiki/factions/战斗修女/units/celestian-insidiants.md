@@ -1,5 +1,5 @@
 ---
-id: 000004189
+id: '000004189'
 name_zh: 洁天使隐伏者
 name_en: Celestian Insidiants
 faction: 战斗修女
@@ -29,9 +29,9 @@ updated: '2026-07-23'
 ## 射击武器
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| 降罪者爆弹手枪 | 12" | 1 | 3+ | 4 | 0 | 1 | [[core-rules/pistol.md\|手枪]]，[[core-rules/devastating-wounds.md\|毁灭伤害]]，[[core-rules/anti.md\|针对灵能者4+]] |
+| 降罪者爆弹手枪 | 12" | 1 | 3+ | 4 | 0 | 1 | [[core-rules/anti.md\|针对灵能者4+]]，[[core-rules/devastating-wounds.md\|毁灭伤害]]，[[core-rules/pistol.md\|手枪]] |
 | 地狱火手枪 | 6" | 1 | 3+ | 8 | -4 | D3 | [[core-rules/melta.md\|热熔2]]，[[core-rules/pistol.md\|手枪]] |
-| 教廷喷火手枪 | 12" | D6 | N/A | 4 | 0 | 1 | [[core-rules/ignores-cover.md\|忽略掩体]]，[[core-rules/pistol.md\|手枪]]，[[core-rules/torrent.md\|喷射]] |
+| 教廷喷火手枪 | 12" | D6 | N/A | 4 | 0 | 1 | [[core-rules/ignores-cover.md\|无视掩体]]，[[core-rules/pistol.md\|手枪]]，[[core-rules/torrent.md\|洪流]] |
 
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |

@@ -1,5 +1,5 @@
 ---
-id: 000000498
+id: '000000498'
 name_zh: 孢囊要塞
 name_en: Sporocyst
 faction: 泰伦虫族

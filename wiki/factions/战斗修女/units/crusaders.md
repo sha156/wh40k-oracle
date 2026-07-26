@@ -1,5 +1,5 @@
 ---
-id: 000000894
+id: '000000894'
 name_en: Crusaders
 faction: 战斗修女
 type: unit
@@ -28,7 +28,7 @@ updated: '2026-07-23'
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| Power weapon | 近战 | 3 | 3+ | 4 | -2 | 2 | — |
+| 动力武器 | 近战 | 3 | 3+ | 4 | -2 | 2 | — |
 
 ## 技能
 - **Spiritual Fortitude**：Models in this unit have the Feel No Pain 4+ ability against Psychic Attacks and mortal wounds.

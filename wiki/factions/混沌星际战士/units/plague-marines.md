@@ -1,5 +1,6 @@
 ---
-id: 000003584
+id: '000003584'
+name_zh: 瘟疫战士
 name_en: Plague Marines
 faction: 混沌星际战士
 type: unit
@@ -26,28 +27,29 @@ updated: '2026-07-23'
 ## 射击武器
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| Plague belcher | 12" | D6 | N/A | 4 | 0 | 1 | [[core-rules/anti.md\|anti-infantry 4+]]，ignores cover，torrent |
-| Plague spewer | 12" | D6 | N/A | 5 | -1 | 1 | [[core-rules/anti.md\|anti-infantry 2+]]，ignores cover，torrent |
-| Plasma gun – standard | 24" | 1 | 3+ | 7 | -2 | 1 | [[core-rules/rapid-fire.md\|rapid fire 1]] |
-| Plasma gun – supercharge | 24" | 1 | 3+ | 8 | -3 | 2 | hazardous，[[core-rules/rapid-fire.md\|rapid fire 1]] |
-| Plasma pistol – standard | 12" | 1 | 3+ | 7 | -2 | 1 | pistol |
-| Meltagun | 12" | 1 | 3+ | 9 | -4 | D6 | [[core-rules/melta.md\|melta 2]] |
-| Plasma pistol – supercharge | 12" | 1 | 3+ | 8 | -3 | 2 | hazardous，pistol |
-| Blight launcher | 24" | D3 | 3+ | 6 | -1 | 2 | blast，lethal hits |
-| Bolt pistol | 12" | 1 | 3+ | 4 | 0 | 1 | lethal hits，pistol |
-| Boltgun | 24" | 2 | 3+ | 4 | 0 | 1 | lethal hits |
+| 瘟疫喷射器 | 12" | D6 | N/A | 4 | 0 | 1 | [[core-rules/anti.md\|针对步兵4+]]，[[core-rules/ignores-cover.md\|无视掩体]]，[[core-rules/torrent.md\|洪流]] |
+| 重型瘟疫喷射器 | 12" | D6 | N/A | 5 | -1 | 1 | [[core-rules/anti.md\|针对步兵2+]]，[[core-rules/ignores-cover.md\|无视掩体]]，[[core-rules/torrent.md\|洪流]] |
+| 等离子枪（标准） | 24" | 1 | 3+ | 7 | -2 | 1 | [[core-rules/rapid-fire.md\|速射1]] |
+| 等离子枪（过载） | 24" | 1 | 3+ | 8 | -3 | 2 | [[core-rules/hazardous.md\|危险]]，[[core-rules/rapid-fire.md\|速射1]] |
+| 等离子手枪（标准） | 12" | 1 | 3+ | 7 | -2 | 1 | [[core-rules/pistol.md\|手枪]] |
+| 热熔枪 | 12" | 1 | 3+ | 9 | -4 | D6 | [[core-rules/melta.md\|热熔2]] |
+| 等离子手枪（过载） | 12" | 1 | 3+ | 8 | -3 | 2 | [[core-rules/hazardous.md\|危险]]，[[core-rules/pistol.md\|手枪]] |
+| 凋零榴弹炮     | 24" | D3 | 3+ | 6 | -1 | 2 | [[core-rules/blast.md\|爆炸]]，[[core-rules/lethal-hits.md\|致命一击]] |
+| 瘟疫爆弹手枪   | 12" | 1 | 3+ | 4 | 0 | 1 | [[core-rules/lethal-hits.md\|致命一击]]，[[core-rules/pistol.md\|手枪]] |
+| 瘟疫爆弹枪 | 24" | 2 | 3+ | 4 | 0 | 1 | [[core-rules/lethal-hits.md\|致命一击]] |
 
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| Bubotic weapons | 近战 | 4 | 3+ | 5 | -2 | 1 | lethal hits |
-| Heavy plague weapon | 近战 | 3 | 4+ | 8 | -2 | 2 | lethal hits |
-| Power fist | 近战 | 3 | 3+ | 8 | -2 | 2 | lethal hits |
-| Plague knives | 近战 | 3 | 3+ | 4 | 0 | 1 | lethal hits |
+| 感染武器  | 近战 | 4 | 3+ | 5 | -2 | 1 | [[core-rules/lethal-hits.md\|致命一击]] |
+| 动力拳 | 近战 | 3 | 4+ | 8 | -2 | 2 | [[core-rules/lethal-hits.md\|致命一击]] |
+| 动力拳 | 近战 | 3 | 3+ | 8 | -2 | 2 | [[core-rules/lethal-hits.md\|致命一击]] |
+| 瘟疫毒刀  | 近战 | 3 | 3+ | 4 | 0 | 1 | [[core-rules/lethal-hits.md\|致命一击]] |
 
 ## 技能
-- **Infused with the Blessings of Nurgle**：In your Shooting phase, each time this unit is selected to shoot, after this unit has shot, select one enemy unit hit by one or more of those attacks. Until the start of your next turn, that enemy unit is Afflicted.
-- **Icon of Despair (Aura)**：While an enemy unit is within 6" of the bearer, worsen the Leadership characteristic of models in that unit by 1.
+- **【阵营技能】：纳垢赐福【光环】**
+- **纳垢赐福灌注**：在你的射击阶段，选择一个被 此单位攻击命中后的敌方单位，其视为受感染。 感染持续到你的下个轮次开始
+- **绝望圣徽（光环）**：在该徽记持有者 6 寸内的敌 方单位领导力-1
 
 ## 单位构成
 - **5个模型** — 95 分

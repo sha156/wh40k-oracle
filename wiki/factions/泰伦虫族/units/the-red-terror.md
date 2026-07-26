@@ -26,7 +26,7 @@ updated: '2026-07-23'
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| Gaping maw | 近战 | 1 | 2+ | 5 | - | D3+2 | extra attacks，devastating wounds，precision |
+| 巨张之口 | 近战 | 1 | 2+ | 5 | - | D3+2 | [[core-rules/extra-attacks.md\|额外攻击]]，[[core-rules/devastating-wounds.md\|毁灭伤害]]，[[core-rules/precision.md\|精准]] |
 | 镰刀爪 | 近战 | 12 | 2+ | 7 | -2 | 2 | — |
 
 ## 技能

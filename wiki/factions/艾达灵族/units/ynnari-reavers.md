@@ -1,5 +1,5 @@
 ---
-id: 000003919
+id: '000003919'
 name_zh: 死神军劫掠者
 name_en: Ynnari Reavers
 faction: 艾达灵族
@@ -31,14 +31,14 @@ updated: '2026-07-23'
 |---|---|---|---|---|---|---|---|
 | 爆能枪 | 18" | 1 | 3+ | 8 | -4 | D6+1 | [[core-rules/assault.md\|突击]] |
 | 高热光矛 | 18" | 1 | 3+ | 14 | -4 | D6 | [[core-rules/assault.md\|突击]]，[[core-rules/melta.md\|热熔3]] |
-| 毒晶手枪 | 12" | 1 | 3+ | 2 | 0 | 1 | [[core-rules/anti.md\|反步兵3+]]，[[core-rules/assault.md\|突击]]，[[core-rules/pistol.md\|手枪]] |
-| 毒晶步枪 | 24" | 2 | 3+ | 2 | 0 | 1 | [[core-rules/anti.md\|反步兵3+]]，[[core-rules/assault.md\|突击]] |
+| 毒晶手枪 | 12" | 1 | 3+ | 2 | 0 | 1 | [[core-rules/anti.md\|针对步兵3+]]，[[core-rules/assault.md\|突击]]，[[core-rules/pistol.md\|手枪]] |
+| 毒晶步枪 | 24" | 2 | 3+ | 2 | 0 | 1 | [[core-rules/anti.md\|针对步兵3+]]，[[core-rules/assault.md\|突击]] |
 
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| 折磨之鞭 | 近战 | 4 | 3+ | 3 | -1 | 1 | [[core-rules/anti.md\|反步兵3+]] |
-| Bladevanes | 近战 | 3 | 3+ | 4 | 0 | 1 | — |
+| 折磨之鞭 | 近战 | 4 | 3+ | 3 | -1 | 1 | [[core-rules/anti.md\|针对步兵3+]] |
+| 锋刃翼 | 近战 | 3 | 3+ | 4 | 0 | 1 | — |
 
 ## 技能
 - **【阵营技能】：战斗专注**

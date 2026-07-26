@@ -1,5 +1,6 @@
 ---
-id: 000003898
+id: '000003898'
+name_zh: 死亡骑兵
 name_en: Death Riders
 faction: 星界军
 type: unit
@@ -21,22 +22,22 @@ updated: '2026-07-23'
 ## 属性表
 | 模型 | M | T | SV | W | LD | OC |
 |---|---|---|---|---|---|---|
-| Death Riders | 10" | 4 | 4+ | 2 | 7+ | 1 |
+| 死亡骑兵 | 10" | 4 | 4+ | 2 | 7+ | 1 |
 
 ## 射击武器
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| Death Rider lascarbine | 18" | 2 | 4+ | 3 | 0 | 1 | assault |
+| 死亡骑兵激光卡宾枪 | 18" | 2 | 4+ | 3 | 0 | 1 | [[core-rules/assault.md\|突击]] |
 
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| Frag lance | 近战 | D6 | 3+ | 4 | 0 | 1 | lance |
-| Power sabre | 近战 | 3 | 3+ | 4 | -2 | 1 | — |
-| Steed's savage claws | 近战 | 2 | 4+ | 4 | -1 | 1 | extra attacks |
+| 破片长矛 | 近战 | D6 | 3+ | 4 | 0 | 1 | [[core-rules/lance.md\|骑枪]] |
+| 动力军刀 | 近战 | 3 | 3+ | 4 | -2 | 1 | — |
+| 马蹄践踏 | 近战 | 2 | 4+ | 4 | -1 | 1 | [[core-rules/extra-attacks.md\|额外攻击]] |
 
 ## 技能
-- **Screening Line**：Once per turn, when an enemy unit ends a Normal, Advance or Fall Back move within 9" of this unit, if this unit is not within Engagement Range of one or more enemy units, it can make a Normal move of up to 6".
+- **稳住阵线**：每回合一次，当一个敌军单位在该单位的8寸内结束一次常规移动、突进或撤退且该单位并不位于一个或多个敌军单位的接战范围内时，该单位可以立即进行一次至多6寸的常规移动
 
 ## 单位构成
 - **5个模型** — 60 分

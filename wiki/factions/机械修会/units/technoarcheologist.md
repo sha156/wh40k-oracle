@@ -34,7 +34,7 @@ updated: '2026-07-23'
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| 电弧机械臂 | 近战 | 3 | 4+ | 8 | -2 | 2 | [[core-rules/anti.md\|反载具 4+]]，[[core-rules/devastating-wounds.md\|毁灭伤害]] |
+| 电弧机械臂 | 近战 | 3 | 4+ | 8 | -2 | 2 | [[core-rules/anti.md\|针对载具4+]]，[[core-rules/devastating-wounds.md\|毁灭伤害]] |
 
 ## 技能
 - **【阵营技能】：机神律令**

@@ -1,19 +1,28 @@
 # 机械修会
 
-_Last updated: 2026-07-23 12:10 UTC_
+_Last updated: 2026-07-26 08:40 UTC_
+
+## 分队
+
+- [[factions/机械修会/detachments/cohort-cybernetica|Cohort Cybernetica]] — 机械修会的分队「Cohort Cybernetica」，分队规则「Cyber-Psalm Programming」。
+- [[factions/机械修会/detachments/data-psalm-conclave|Data-Psalm Conclave]] — 机械修会的分队「Data-Psalm Conclave」，分队规则「Benedictions Of The Omniss...
+- [[factions/机械修会/detachments/electromartyrs|Electromartyrs]] — 机械修会的分队「Electromartyrs」，分队规则「Overload Machine Spirits」。
+- [[factions/机械修会/detachments/explorator-maniple|Explorator Maniple]] — 机械修会的分队「Explorator Maniple」，分队规则「Acquisition At Any Cost」。
+- [[factions/机械修会/detachments/machine-cult|Machine Cult]] — 机械修会的分队「Machine Cult」，分队规则「Canticles of the Omnissiah」。
+- [[factions/机械修会/detachments/rad-zone-corps|Rad-Zone Corps]] — 机械修会的分队「Rad-Zone Corps」，分队规则「Rad-bombardment」。
+- [[factions/机械修会/detachments/response-clade|Response Clade]] — 机械修会的分队「Response Clade」，分队规则「Procedural Elimination」。
+- [[factions/机械修会/detachments/skitarii-hunter-cohort|Skitarii Hunter Cohort]] — 机械修会的分队「Skitarii Hunter Cohort」，分队规则「Stealth Optimisation」。
+- [[factions/机械修会/detachments/luminen-auto-choir|启明自动合唱团]] — 机械修会的分队「启明自动合唱团」。
+- [[factions/机械修会/detachments/haloscreed-battle-clade|圣智战斗支队]] — 机械修会的分队「圣智战斗支队」，分队规则「Noospheric Transference」。
+- [[factions/机械修会/detachments/eradication-cohort|根除大队]] — 机械修会的分队「根除大队」，分队规则「Murderous Imperative」。
+- [[factions/机械修会/detachments/cohort-acquisitus|求知大队]] — 机械修会的分队「求知大队」。
+- [[factions/机械修会/detachments/lords-of-the-forge|熔炉领主]] — 机械修会的分队「熔炉领主」。
 
 ## 单位
 
 - [[factions/机械修会/units/secutarii-hoplites|Secutarii Hoplites]] — 
 - [[factions/机械修会/units/secutarii-peltasts|Secutarii Peltasts]] — 
 - [[factions/机械修会/units/servitors|Servitors]] — 
-- [[factions/机械修会/units/skitarii-marshal|Skitarii Marshal]] — 
-- [[factions/机械修会/units/skitarii-rangers|Skitarii Rangers]] — 
-- [[factions/机械修会/units/skitarii-vanguard|Skitarii Vanguard]] — 
-- [[factions/机械修会/units/skorpius-dunerider|Skorpius Dunerider]] — 
-- [[factions/机械修会/units/tech-priest-dominus|Tech-priest Dominus]] — 
-- [[factions/机械修会/units/tech-priest-enginseer|Tech-priest Enginseer]] — 
-- [[factions/机械修会/units/tech-priest-manipulus|Tech-priest Manipulus]] — 
 - [[factions/机械修会/units/terrax-pattern-termite|Terrax-pattern Termite]] — 
 - [[factions/机械修会/units/x-101|X-101]] — 
 - [[factions/机械修会/units/kastelan-robots|卡斯特兰机器人]] — 
@@ -28,7 +37,13 @@ _Last updated: 2026-07-23 12:10 UTC_
 - [[factions/机械修会/units/archaeopter-fusilave|始祖鸟燧火轰炸机]] — 
 - [[factions/机械修会/units/archaeopter-transvector|始祖鸟矢量飞梭]] — 
 - [[factions/机械修会/units/ironstrider-ballistarii|巴利斯塔利铁骑兵]] — 
+- [[factions/机械修会/units/tech-priest-enginseer|技术技师机械教士]] — 
+- [[factions/机械修会/units/skitarii-marshal|护教军元帅]] — 
+- [[factions/机械修会/units/skitarii-vanguard|护教军先锋兵]] — 
+- [[factions/机械修会/units/skitarii-rangers|护教军游猎兵]] — 
+- [[factions/机械修会/units/tech-priest-manipulus|控电神甫]] — 
 - [[factions/机械修会/units/cybernetica-datasmith|智控数据技师]] — 
+- [[factions/机械修会/units/tech-priest-dominus|机械主教]] — 
 - [[factions/机械修会/units/kataphron-destroyers|武装奴工毁灭者]] — 
 - [[factions/机械修会/units/kataphron-breachers|武装奴工突破者]] — 
 - [[factions/机械修会/units/onager-dunecrawler|沙丘爬行者机甲]] — 
@@ -36,6 +51,7 @@ _Last updated: 2026-07-23 12:10 UTC_
 - [[factions/机械修会/units/technoarcheologist|科技考古学家]] — 
 - [[factions/机械修会/units/pteraxii-sterylizors|翼龙军净炎兵]] — 
 - [[factions/机械修会/units/pteraxii-skystalkers|翼龙军天猎兵]] — 
+- [[factions/机械修会/units/skorpius-dunerider|蝎式沙丘运输车]] — 
 - [[factions/机械修会/units/sydonian-dragoons-with-taser-lances|装备泰瑟骑枪的西多尼亚龙骑兵]] — 
 - [[factions/机械修会/units/sydonian-dragoons-with-radium-jezzails|装备辐射狙击枪的西多尼亚龙骑兵]] — 
 - [[factions/机械修会/units/sicarian-infiltrators|西卡利安渗透者]] — 
@@ -43,4 +59,113 @@ _Last updated: 2026-07-23 12:10 UTC_
 - [[factions/机械修会/units/sydonian-skatros|西多尼亚哨兵]] — 
 - [[factions/机械修会/units/belisarius-cawl|贝利撒留·考尔]] — 
 - [[factions/机械修会/units/corpuscarii-electro-priests|雷鸣宗电僧]] — 
+
+## 策略技能
+
+- [[factions/机械修会/stratagems/access-overrides|ACCESS OVERRIDES]] — 1 CP、Movement phase、Response Clade 分队、Strategic Ploy Stratag...
+- [[factions/机械修会/stratagems/aggressive-impulse|AGGRESSIVE IMPULSE]] — 1 CP、Movement phase、圣智战斗支队 分队、Strategic Ploy Stratagem。
+- [[factions/机械修会/stratagems/aggressor-imperative|AGGRESSOR IMPERATIVE]] — 1 CP、Movement phase、Rad-Zone Corps 分队、Battle Tactic Stratage...
+- [[factions/机械修会/stratagems/auto-divinatory-targeting|AUTO-DIVINATORY TARGETING]] — 1 CP、Command phase、Cohort Cybernetica 分队、Battle Tactic Strat...
+- [[factions/机械修会/stratagems/auto-oracular-retrieval|AUTO-ORACULAR RETRIEVAL]] — 2 CP、Shooting phase、Explorator Maniple 分队、Battle Tactic Stra...
+- [[factions/机械修会/stratagems/auto-vengeance|AUTO-VENGEANCE]] — 1 CP、Fight phase、Electromartyrs 分队、Strategic Ploy Stratagem。
+- [[factions/机械修会/stratagems/baleful-halo|BALEFUL HALO]] — 2 CP、Fight phase、Rad-Zone Corps 分队、Battle Tactic Stratagem。
+- [[factions/机械修会/stratagems/ballistic-synchrony|BALLISTIC SYNCHRONY]] — 1 CP、Shooting phase、Electromartyrs 分队、Battle Tactic Stratage...
+- [[factions/机械修会/stratagems/benevolence-of-the-omnissiah|BENEVOLENCE OF THE OMNISSIAH]] — 1 CP、Command phase、Cohort Cybernetica 分队、Battle Tactic Strat...
+- [[factions/机械修会/stratagems/binharic-offence|BINHARIC OFFENCE]] — 2 CP、Shooting or Fight phase、Skitarii Hunter Cohort 分队、Strat...
+- [[factions/机械修会/stratagems/bionic-endurance|BIONIC ENDURANCE]] — 1 CP、Shooting or Fight phase、Skitarii Hunter Cohort 分队、Strat...
+- [[factions/机械修会/stratagems/bulwark-imperative|BULWARK IMPERATIVE]] — 2 CP、Shooting phase、Rad-Zone Corps 分队、Battle Tactic Stratage...
+- [[factions/机械修会/stratagems/cached-acquisition|CACHED ACQUISITION]] — 1 CP、Any phase、Explorator Maniple 分队、Epic Deed Stratagem。
+- [[factions/机械修会/stratagems/chant-of-the-remorseless-fist|CHANT OF THE REMORSELESS FIST]] — 1 CP、Fight phase、Data-Psalm Conclave 分队、Battle Tactic Strata...
+- [[factions/机械修会/stratagems/electrogheist-visitations|ELECTROGHEIST VISITATIONS]] — 1 CP、Shooting or Fight phase、Machine Cult 分队、Wargear Stratag...
+- [[factions/机械修会/stratagems/expedited-purge-protocol|EXPEDITED PURGE PROTOCOL]] — 1 CP、Charge phase、Skitarii Hunter Cohort 分队、Strategic Ploy S...
+- [[factions/机械修会/stratagems/extinction-order|EXTINCTION ORDER]] — 1 CP、Command phase、Rad-Zone Corps 分队、Strategic Ploy Stratage...
+- [[factions/机械修会/stratagems/guided-retreat|GUIDED RETREAT]] — 1 CP、Movement phase、圣智战斗支队 分队、Strategic Ploy Stratagem。
+- [[factions/机械修会/stratagems/incantation-of-the-iron-soul|INCANTATION OF THE IRON SOUL]] — 1 CP、Any phase、Data-Psalm Conclave 分队、Battle Tactic Stratage...
+- [[factions/机械修会/stratagems/incense-exhausts|INCENSE EXHAUSTS]] — 1 CP、Shooting phase、Explorator Maniple 分队、Wargear Stratagem。
+- [[factions/机械修会/stratagems/infoslave-skull|INFOSLAVE SKULL]] — 1 CP、Command phase、Explorator Maniple 分队、Wargear Stratagem。
+- [[factions/机械修会/stratagems/integrative-withdrawal|INTEGRATIVE WITHDRAWAL]] — 1 CP、Shooting phase、Response Clade 分队、Strategic Ploy Stratag...
+- [[factions/机械修会/stratagems/isolate-and-destroy|ISOLATE AND DESTROY]] — 1 CP、Shooting phase、Skitarii Hunter Cohort 分队、Strategic Ploy...
+- [[factions/机械修会/stratagems/lethal-dosage|LETHAL DOSAGE]] — 1 CP、Shooting phase、Rad-Zone Corps 分队、Wargear Stratagem。
+- [[factions/机械修会/stratagems/litany-of-the-electromancer|LITANY OF THE ELECTROMANCER]] — 1 CP、Shooting phase、Data-Psalm Conclave 分队、Strategic Ploy St...
+- [[factions/机械修会/stratagems/luminescent-blessing|LUMINESCENT BLESSING]] — 1 CP、Shooting phase、Data-Psalm Conclave 分队、Battle Tactic Str...
+- [[factions/机械修会/stratagems/machine-spirit-resurgent|MACHINE SPIRIT RESURGENT]] — 1 CP、Command phase、Cohort Cybernetica 分队、Epic Deed Stratagem...
+- [[factions/机械修会/stratagems/machine-superiority|MACHINE SUPERIORITY]] — 1 CP、Command phase、Cohort Cybernetica 分队、Epic Deed Stratagem...
+- [[factions/机械修会/stratagems/motive-imperative|MOTIVE IMPERATIVE]] — 1 CP、Command phase、Cohort Cybernetica 分队、Battle Tactic Strat...
+- [[factions/机械修会/stratagems/omni-targeters|OMNI-TARGETERS]] — 1 CP、Shooting phase、Electromartyrs 分队、Battle Tactic Stratage...
+- [[factions/机械修会/stratagems/omnissiahs-guidance|OMNISSIAH’S GUIDANCE]] — 1 CP、Shooting phase、Machine Cult 分队、Battle Tactic Stratagem。
+- [[factions/机械修会/stratagems/power-of-the-motive-force|POWER OF THE MOTIVE FORCE]] — 1 CP、Charge phase、Machine Cult 分队、Strategic Ploy Stratagem。
+- [[factions/机械修会/stratagems/pre-calibrated-purge-solution|PRE-CALIBRATED PURGE SOLUTION]] — 1 CP、Shooting phase、Rad-Zone Corps 分队、Battle Tactic Stratage...
+- [[factions/机械修会/stratagems/precognitated-firefields|PRECOGNITATED FIREFIELDS]] — 1 CP、Shooting phase、Response Clade 分队、Battle Tactic Stratage...
+- [[factions/机械修会/stratagems/priority-reclamation|PRIORITY RECLAMATION]] — 1 CP、Fight phase、Explorator Maniple 分队、Battle Tactic Stratag...
+- [[factions/机械修会/stratagems/programmed-withdrawal|PROGRAMMED WITHDRAWAL]] — 1 CP、Fight phase、Skitarii Hunter Cohort 分队、Strategic Ploy St...
+- [[factions/机械修会/stratagems/reactive-safeguard|REACTIVE SAFEGUARD]] — 1 CP、Charge phase、Explorator Maniple 分队、Strategic Ploy Strat...
+- [[factions/机械修会/stratagems/responsive-shielding|RESPONSIVE SHIELDING]] — 1 CP、Shooting or Fight phase、Response Clade 分队、Wargear Strat...
+- [[factions/机械修会/stratagems/saviour-systems|SAVIOUR SYSTEMS]] — 1 CP、Shooting phase、Electromartyrs 分队、Battle Tactic Stratage...
+- [[factions/机械修会/stratagems/shroud-protocols|SHROUD PROTOCOLS]] — 1 CP、Shooting phase、Skitarii Hunter Cohort 分队、Strategic Ploy...
+- [[factions/机械修会/stratagems/tether-tendrils|TETHER-TENDRILS]] — 1 CP、Movement phase、Machine Cult 分队、Strategic Ploy Stratagem...
+- [[factions/机械修会/stratagems/transcendent-cogitation|TRANSCENDENT COGITATION]] — 1 CP、Command phase、Cohort Cybernetica 分队、Strategic Ploy Stra...
+- [[factions/机械修会/stratagems/tribute-of-emphatic-veneration|TRIBUTE OF EMPHATIC VENERATION]] — 1 CP、Movement phase、Data-Psalm Conclave 分队、Strategic Ploy St...
+- [[factions/机械修会/stratagems/verse-of-vengeance|VERSE OF VENGEANCE]] — 1 CP、Fight phase、Data-Psalm Conclave 分队、Strategic Ploy Strat...
+- [[factions/机械修会/stratagems/servodriven-charge|伺服驱动充能]] — 1 CP、Fight phase、根除大队 分队、Wargear Stratagem。
+- [[factions/机械修会/stratagems/analytic-reprisals|分析性报复]] — 1 CP、Shooting phase、根除大队 分队、Strategic Ploy Stratagem。
+- [[factions/机械修会/stratagems/momentum-feedback|动量反馈]] — 1 CP、Shooting phase、启明自动合唱团 分队。
+- [[factions/机械修会/stratagems/repolarised-augurs|卜测仪转极]] — 1 CP、Movement phase、求知大队 分队。
+- [[factions/机械修会/stratagems/scriptural-prognosis|圣文预测]] — 1 CP、Shooting or Fight phase、熔炉领主 分队。
+- [[factions/机械修会/stratagems/threatcogitation-targeters|威胁沉思者瞄准器]] — 1 CP、Shooting phase、根除大队 分队、Wargear Stratagem。
+- [[factions/机械修会/stratagems/unrelenting-aggression|无情侵略]] — 1 CP、Movement phase、根除大队 分队、Strategic Ploy Stratagem。
+- [[factions/机械修会/stratagems/unshackled-wrath|无拘之怒]] — 1 CP、Shooting phase、根除大队 分队、Wargear Stratagem。
+- [[factions/机械修会/stratagems/defect-scrutiny|检测瑕疵]] — 1 CP、Shooting phase、求知大队 分队。
+- [[factions/机械修会/stratagems/eradication-protocols|歼灭规程]] — 1 CP、Shooting or Fight phase、圣智战斗支队 分队、Battle Tactic Stratag...
+- [[factions/机械修会/stratagems/chant-of-electrotraction|电子牵引圣歌]] — 1 CP、Movement phase、启明自动合唱团 分队。
+- [[factions/机械修会/stratagems/echoes-of-the-conduit-wars|电路战争的回响]] — 1 CP、Shooting or Fight phase、启明自动合唱团 分队。
+- [[factions/机械修会/stratagems/targeting-override|瞄准修正]] — 1 CP、Shooting or Fight phase、圣智战斗支队 分队、Battle Tactic Stratag...
+- [[factions/机械修会/stratagems/holy-avarice|神圣贪欲]] — 1 CP、Shooting phase、熔炉领主 分队。
+- [[factions/机械修会/stratagems/neural-overload|神经过载]] — 1 CP、Movement phase、圣智战斗支队 分队、Strategic Ploy Stratagem。
+- [[factions/机械修会/stratagems/clandestine-reposition|秘密转移]] — 1 CP、Fight phase、求知大队 分队。
+- [[factions/机械修会/stratagems/precision-onslaught|精准猛攻]] — 1 CP、Charge phase、根除大队 分队、Battle Tactic Stratagem。
+- [[factions/机械修会/stratagems/analytical-divination|解读性占卜]] — 1 CP、Movement phase、圣智战斗支队 分队、Strategic Ploy Stratagem。
+- [[factions/机械修会/stratagems/overloaded-safeguards|过载安全措施]] — 1 CP、Movement phase、熔炉领主 分队。
+
+## 强化
+
+- [[factions/机械修会/enhancements/admonissor-shunt|Admonissor Shunt]] — 0 分、Response Clade 分队。
+- [[factions/机械修会/enhancements/arch-negator|Arch-negator]] — 10 分、Cohort Cybernetica 分队。
+- [[factions/机械修会/enhancements/artisan|Artisan]] — 15 分、Explorator Maniple 分队。
+- [[factions/机械修会/enhancements/autoclavic-denunciation|Autoclavic Denunciation]] — 15 分、Rad-Zone Corps 分队。
+- [[factions/机械修会/enhancements/battle-sphere-uplink|Battle-sphere Uplink]] — 30 分、Skitarii Hunter Cohort 分队。
+- [[factions/机械修会/enhancements/beseech-the-machine-spirits|Beseech the Machine Spirits]] — 0 分、Machine Cult 分队。
+- [[factions/机械修会/enhancements/cantic-thrallnet|Cantic Thrallnet]] — 25 分、Skitarii Hunter Cohort 分队。
+- [[factions/机械修会/enhancements/clandestine-infiltrator|Clandestine Infiltrator]] — 20 分、Skitarii Hunter Cohort 分队。
+- [[factions/机械修会/enhancements/cognitive-reinforcement|Cognitive Reinforcement]] — 35 分、圣智战斗支队 分队。
+- [[factions/机械修会/enhancements/data-blessed-autosermon|Data-blessed Autosermon]] — 20 分、Data-Psalm Conclave 分队。
+- [[factions/机械修会/enhancements/electromiasmic-brazier|Electromiasmic Brazier]] — 分数未知、启明自动合唱团 分队。
+- [[factions/机械修会/enhancements/emotionless-clarity|Emotionless Clarity]] — 15 分、Cohort Cybernetica 分队。
+- [[factions/机械修会/enhancements/genetor|Genetor]] — 25 分、Explorator Maniple 分队。
+- [[factions/机械修会/enhancements/harmonic-discordator|Harmonic Discordator]] — 0 分、Machine Cult 分队。
+- [[factions/机械修会/enhancements/logis|Logis]] — 20 分、Explorator Maniple 分队。
+- [[factions/机械修会/enhancements/lord-of-machines|Lord of Machines]] — 20 分、Cohort Cybernetica 分队。
+- [[factions/机械修会/enhancements/magos|Magos]] — 15 分、Explorator Maniple 分队。
+- [[factions/机械修会/enhancements/malphonic-susurrus|Malphonic Susurrus]] — 20 分、Rad-Zone Corps 分队。
+- [[factions/机械修会/enhancements/mantle-of-the-gnosticarch|Mantle of the Gnosticarch]] — 15 分、Data-Psalm Conclave 分队。
+- [[factions/机械修会/enhancements/martial-signatum-amplificator|Martial Signatum Amplificator]] — 15 分、根除大队 分队。
+- [[factions/机械修会/enhancements/mechanicus-locum|Mechanicus Locum]] — 10 分、Data-Psalm Conclave 分队。
+- [[factions/机械修会/enhancements/multi-dimensional-auspex|Multi-dimensional Auspex]] — 0 分、Electromartyrs 分队。
+- [[factions/机械修会/enhancements/necromechanic|Necromechanic]] — 25 分、Cohort Cybernetica 分队。
+- [[factions/机械修会/enhancements/omnicogitator|Omnicogitator]] — 25 分、根除大队 分队。
+- [[factions/机械修会/enhancements/optimised-cogitators|Optimised Cogitators]] — 0 分、Response Clade 分队。
+- [[factions/机械修会/enhancements/peerless-eradicator|Peerless Eradicator]] — 20 分、Rad-Zone Corps 分队。
+- [[factions/机械修会/enhancements/radial-suffusion|Radial Suffusion]] — 25 分、Rad-Zone Corps 分队。
+- [[factions/机械修会/enhancements/remote-lockdown|Remote Lockdown]] — 0 分、Electromartyrs 分队。
+- [[factions/机械修会/enhancements/tl-4ø9|TL-4Ø9]] — 分数未知、熔炉领主 分队。
+- [[factions/机械修会/enhancements/temporcopia|Temporcopia]] — 25 分、Data-Psalm Conclave 分队。
+- [[factions/机械修会/enhancements/transoracular-dyad-wafers|Transoracular Dyad Wafers]] — 15 分、圣智战斗支队 分队。
+- [[factions/机械修会/enhancements/veiled-hunter|Veiled Hunter]] — 10 分、Skitarii Hunter Cohort 分队。
+- [[factions/机械修会/enhancements/voltagheist-reliquary|Voltagheist Reliquary]] — 分数未知、启明自动合唱团 分队。
+- [[factions/机械修会/enhancements/sanctified-ordnance|圣化弹药]] — 10 分、圣智战斗支队 分队。
+- [[factions/机械修会/enhancements/explorator-dispensation|探索者分支]] — 分数未知、求知大队 分队。
+- [[factions/机械修会/enhancements/omnissiahs-fury|欧姆尼赛亚之怒]] — 10 分、根除大队 分队。
+- [[factions/机械修会/enhancements/vinghs-wafers-of-dynamism|维因的活力晶片]] — 分数未知、熔炉领主 分队。
+- [[factions/机械修会/enhancements/inloaded-lethality|致命数据]] — 15 分、圣智战斗支队 分队。
+- [[factions/机械修会/enhancements/belicosa-class-capacitor-vanes|贝利科萨级电容叶片]] — 30 分、根除大队 分队。
+- [[factions/机械修会/enhancements/stealth-screened-cybercanids|隐形赛博犬]] — 分数未知、求知大队 分队。
 

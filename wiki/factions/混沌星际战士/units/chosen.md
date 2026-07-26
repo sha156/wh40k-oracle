@@ -1,5 +1,5 @@
 ---
-id: 000000952
+id: '000000952'
 name_zh: 神选战士
 name_en: Chosen
 faction: 混沌星际战士
@@ -27,18 +27,18 @@ updated: '2026-07-23'
 ## 射击武器
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| Bolt pistol | 12" | 1 | 3+ | 4 | 0 | 1 | pistol |
+| 爆弹手枪 | 12" | 1 | 3+ | 4 | 0 | 1 | [[core-rules/pistol.md\|手枪]] |
 | 爆弹枪  | 24" | 2 | 3+ | 4 | 0 | 1 | — |
-| Combi-weapon | 24" | 1 | 4+ | 4 | 0 | 1 | [[core-rules/anti.md\|anti-infantry 4+]]，devastating wounds，[[core-rules/rapid-fire.md\|rapid fire 1]] |
-| Plasma pistol – standard | 12" | 1 | 3+ | 7 | -2 | 1 | pistol |
-| 等离子手枪（过载） | 12" | 1 | 3+ | 8 | -3 | 2 | [[core-rules/pistol.md\|手枪]]，[[core-rules/hazardous.md\|危险]] |
+| 复合武器 | 24" | 1 | 4+ | 4 | 0 | 1 | [[core-rules/anti.md\|针对步兵4+]]，[[core-rules/devastating-wounds.md\|毁灭伤害]]，[[core-rules/rapid-fire.md\|速射1]] |
+| 等离子手枪（标准） | 12" | 1 | 3+ | 7 | -2 | 1 | [[core-rules/pistol.md\|手枪]] |
+| 等离子手枪（过载） | 12" | 1 | 3+ | 8 | -3 | 2 | [[core-rules/hazardous.md\|危险]]，[[core-rules/pistol.md\|手枪]] |
 
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| Accursed weapon | 近战 | 4 | 3+ | 5 | -2 | 1 | — |
+| 诅咒武器 | 近战 | 4 | 3+ | 5 | -2 | 1 | — |
 | 一对诅咒武器   | 近战 | 5 | 3+ | 5 | -2 | 1 | [[core-rules/twin-linked.md\|双联]] |
-| Power fist | 近战 | 4 | 3+ | 8 | -2 | 2 | — |
+| 动力拳 | 近战 | 4 | 3+ | 8 | -2 | 2 | — |
 
 ## 技能
 - **【阵营技能】：黑暗契约**

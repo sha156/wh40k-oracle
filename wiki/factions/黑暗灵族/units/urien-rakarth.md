@@ -27,12 +27,12 @@ updated: '2026-07-23'
 ## 射击武器
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| Casket of Flensing | 12" | 3D6 | N/A | 3 | -1 | 1 | devastating wounds，one shot，torrent |
+| Casket of Flensing | 12" | 3D6 | N/A | 3 | -1 | 1 | [[core-rules/devastating-wounds.md\|毁灭伤害]]，[[core-rules/one-shot.md\|单发]]，[[core-rules/torrent.md\|洪流]] |
 
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| [[factions/黑暗灵族/units/haemonculus.md\|Haemonculus]] tools and scissorhands | 近战 | 5 | 2+ | 3 | -1 | D3 | [[core-rules/anti.md\|anti-infantry 2+]]，precision |
+| [[factions/黑暗灵族/units/haemonculus.md\|血伶人]]刑具和剪刀手 | 近战 | 5 | 2+ | 3 | -1 | D3 | [[core-rules/anti.md\|针对步兵2+]]，[[core-rules/precision.md\|精准]] |
 
 ## 技能
 - **Sculptor of Torments (Pain)**：In your Fight phase, when you select this model’s unit to fight, you can spend 1 of your Pain tokens to Empower this model’s unit. While that unit is Empowered, each time a model in that unit makes a melee attack, add 1 to the Wound roll.
@@ -45,4 +45,4 @@ updated: '2026-07-23'
 
 ## 关键词
 - **阵营关键词**：Drukhari
-- **普通关键词**：[[core-rules/epic-hero.md|Epic Hero]]，[[core-rules/character.md|Character]]，Haemonculus Covens，Urien Rakarth，[[core-rules/infantry.md|Infantry]]，Haemonculus，Aeldari
+- **普通关键词**：[[core-rules/epic-hero.md|Epic Hero]]，[[core-rules/character.md|Character]]，[[factions/黑暗灵族/units/haemonculus.md|Haemonculus]] Covens，Urien Rakarth，[[core-rules/infantry.md|Infantry]]，[[factions/黑暗灵族/units/haemonculus.md|Haemonculus]]，Aeldari

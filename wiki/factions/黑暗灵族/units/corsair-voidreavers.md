@@ -1,5 +1,5 @@
 ---
-id: 000004168
+id: '000004168'
 name_zh: 虚空劫掠者海盗
 name_en: Corsair Voidreavers
 faction: 黑暗灵族
@@ -26,12 +26,12 @@ updated: '2026-07-23'
 ## 射击武器
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| 神经干扰枪 | 12" | 1 | 3+ | 4 | -2 | 1 | [[core-rules/anti.md\|反步兵 2+]]，[[core-rules/assault.md\|突击]]，[[core-rules/pistol.md\|手枪]] |
-| 粉碎枪 | 18" | D6 | N/A | 6 | 0 | 1 | [[core-rules/assault.md\|突击]]，[[core-rules/torrent.md\|喷射]] |
-| Shuriken rifle | 24" | 1 | 3+ | 4 | -1 | 1 | assault，[[core-rules/rapid-fire.md\|rapid fire 1]] |
+| 神经干扰枪 | 12" | 1 | 3+ | 4 | -2 | 1 | [[core-rules/anti.md\|针对步兵2+]]，[[core-rules/assault.md\|突击]]，[[core-rules/pistol.md\|手枪]] |
+| 粉碎枪 | 18" | D6 | N/A | 6 | 0 | 1 | [[core-rules/assault.md\|突击]]，[[core-rules/torrent.md\|洪流]] |
+| 星镖步枪 | 24" | 1 | 3+ | 4 | -1 | 1 | [[core-rules/assault.md\|突击]]，[[core-rules/rapid-fire.md\|速射1]] |
 | 星镖炮 | 24" | 3 | 3+ | 6 | -1 | 2 | [[core-rules/lethal-hits.md\|致命一击]] |
 | 幽冥炮 | 18" | 1 | 3+ | 14 | -4 | D6+1 | — |
-| Shuriken pistol | 12" | 1 | 3+ | 4 | -1 | 1 | assault，pistol |
+| 星镖手枪 | 12" | 1 | 3+ | 4 | -1 | 1 | [[core-rules/assault.md\|突击]]，[[core-rules/pistol.md\|手枪]] |
 | 爆能枪 | 18" | 1 | 3+ | 8 | -4 | D6+1 | [[core-rules/assault.md\|突击]] |
 
 ## 近战武器

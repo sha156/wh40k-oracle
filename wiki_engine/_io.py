@@ -11,21 +11,30 @@ import hashlib
 import json
 import os
 from pathlib import Path
-from typing import Dict
+from typing import Dict, Optional
 
 # 生成内容哈希登记表文件名（放在 wiki_root 下，以点开头不进 Obsidian 视野）
 GEN_HASHES_NAME = ".gen_hashes.json"
 
 
-def atomic_write_text(path: Path, text: str, encoding: str = "utf-8") -> None:
+def atomic_write_text(path: Path, text: str, encoding: str = "utf-8",
+                      newline: Optional[str] = None) -> None:
     """原子写文本：先写同目录临时文件，再 os.replace 覆盖目标。
 
     os.replace 在 Windows / POSIX 上均为原子替换（同一文件系统内）。
+
+    newline 默认 None＝随平台（Windows 上 \\n 会被写成 \\r\\n），这是 wiki 下
+    1800+ 个 .md 既有产物的行尾，**不要改**，改了就是一次全库假 diff。
+    传 "\\n" 可强制 LF——机器读的产物（如 indexes/keywords.json）需要它：
+    这类文件在 Windows 本机和 Linux CI/容器里都会被重新生成，行尾随平台漂移
+    会让同样的数据每次都产生整文件 diff。
     """
     path = Path(path)
     path.parent.mkdir(parents=True, exist_ok=True)
     tmp = path.with_name(path.name + ".tmp")
-    tmp.write_text(text, encoding=encoding)
+    # 用 open 而非 Path.write_text：后者的 newline 参数 3.10 才有，本项目跑在 3.9
+    with open(str(tmp), "w", encoding=encoding, newline=newline) as fh:
+        fh.write(text)
     os.replace(tmp, path)
 
 

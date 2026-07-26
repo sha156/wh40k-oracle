@@ -1,5 +1,5 @@
 ---
-id: 000003829
+id: '000003829'
 name_en: Jokaero Weaponsmith
 faction: 帝国特勤
 type: unit
@@ -27,13 +27,13 @@ updated: '2026-07-23'
 ## 射击武器
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| Jokaero weapons – scattered | 12" | D6 | N/A | 4 | 0 | 1 | TORRENT |
+| Jokaero weapons – scattered | 12" | D6 | N/A | 4 | 0 | 1 | [[core-rules/torrent.md\|洪流]] |
 | Jokaero weapons – focused | 24" | 1 | 4+ | 10 | -1 | 3 | — |
 
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| Close combat weapon | 近战 | 2 | 5+ | 4 | 0 | 1 | — |
+| 格斗武器 | 近战 | 2 | 5+ | 4 | 0 | 1 | — |
 
 ## 技能
 - **Inconceivable Augmentation**：While this model is leading a unit, ranged weapons equipped by models in that unit have the [LETHAL HITS] ability.

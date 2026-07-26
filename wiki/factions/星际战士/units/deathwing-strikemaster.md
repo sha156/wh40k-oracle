@@ -1,5 +1,5 @@
 ---
-id: 000002468
+id: '000002468'
 name_en: Deathwing Strikemaster
 faction: 星际战士
 type: unit
@@ -27,17 +27,17 @@ updated: '2026-07-23'
 ## 射击武器
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| Storm bolter | 24" | 2 | 2+ | 4 | 0 | 1 | [[core-rules/rapid-fire.md\|rapid fire 2]] |
+| 风暴爆弹枪 | 24" | 2 | 2+ | 4 | 0 | 1 | [[core-rules/rapid-fire.md\|速射2]] |
 
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| Chainfist | 近战 | 4 | 3+ | 8 | -2 | 2 | [[core-rules/anti.md\|anti-vehicle 3+]] |
-| Mace of absolution | 近战 | 5 | 2+ | 6 | -1 | 3 | — |
-| Master-crafted power weapon | 近战 | 5 | 2+ | 5 | -2 | 2 | — |
-| Power fist | 近战 | 4 | 2+ | 8 | -2 | 2 | — |
-| Thunder hammer | 近战 | 4 | 3+ | 8 | -2 | 2 | devastating wounds |
-| Twin lightning claws | 近战 | 6 | 2+ | 5 | -2 | 1 | twin-linked |
+| 链锯拳 | 近战 | 4 | 3+ | 8 | -2 | 2 | [[core-rules/anti.md\|针对载具3+]] |
+| 赦免之锤 | 近战 | 5 | 2+ | 6 | -1 | 3 | — |
+| 精工动力武器 | 近战 | 5 | 2+ | 5 | -2 | 2 | — |
+| 动力拳 | 近战 | 4 | 2+ | 8 | -2 | 2 | — |
+| 雷霆锤 | 近战 | 4 | 3+ | 8 | -2 | 2 | [[core-rules/devastating-wounds.md\|毁灭伤害]] |
+| 一对闪电爪 | 近战 | 6 | 2+ | 5 | -2 | 1 | [[core-rules/twin-linked.md\|双联]] |
 
 ## 技能
 - **Storm Shield**：The bearer has a Wounds characteristic of 6.

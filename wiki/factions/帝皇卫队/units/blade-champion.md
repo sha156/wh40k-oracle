@@ -1,5 +1,5 @@
 ---
-id: 000002518
+id: '000002518'
 name_zh: 剑锋冠军
 name_en: Blade Champion
 faction: 帝皇卫队

@@ -1,5 +1,5 @@
 ---
-id: 000004197
+id: '000004197'
 name_zh: 卡尔塞斯
 name_en: Kharseth
 faction: 黑暗灵族
@@ -28,12 +28,12 @@ updated: '2026-07-23'
 ## 射击武器
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| 虚空深渊之恐惧 | 24" | D6+2 | 3+ | 3 | -2 | 1 | [[core-rules/anti.md\|针对步兵2+]]，[[core-rules/blast.md\|爆炸]]，[[core-rules/hazardous.md\|危险]]，[[core-rules/ignores-cover.md\|无视掩体]]，灵能 |
+| 虚空深渊之恐惧 | 24" | D6+2 | 3+ | 3 | -2 | 1 | [[core-rules/anti.md\|针对步兵2+]]，[[core-rules/blast.md\|爆炸]]，[[core-rules/hazardous.md\|危险]]，[[core-rules/ignores-cover.md\|无视掩体]]，[[core-rules/psychic-attacks.md\|灵能]] |
 
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| 寻路权杖 | 近战 | 3 | 2+ | 3 | 0 | 3 | [[core-rules/anti.md\|针对步兵2+]]，灵能 |
+| 寻路权杖 | 近战 | 3 | 2+ | 3 | 0 | 3 | [[core-rules/anti.md\|针对步兵2+]]，[[core-rules/psychic-attacks.md\|灵能]] |
 
 ## 技能
 - **阵营技能：战斗专注**

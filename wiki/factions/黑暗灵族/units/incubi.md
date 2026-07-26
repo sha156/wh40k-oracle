@@ -1,5 +1,5 @@
 ---
-id: 000000648
+id: '000000648'
 name_zh: 梦魇剑客
 name_en: Incubi
 faction: 黑暗灵族

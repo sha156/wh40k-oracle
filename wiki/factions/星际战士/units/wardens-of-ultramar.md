@@ -1,5 +1,5 @@
 ---
-id: 000004188
+id: '000004188'
 name_zh: 奥特拉玛守望者
 name_en: Wardens of Ultramar
 faction: 星际战士
@@ -26,16 +26,16 @@ updated: '2026-07-23'
 ## 射击武器
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| Archeotech laspistol | 12" | 1 | 3+ | 4 | -1 | 1 | pistol |
-| 星语者冲击波 | 12" | D6 | 3+ | 4 | -1 | 1 | [[core-rules/blast.md\|爆炸]]，灵能 |
+| 远古科技激光手枪 | 12" | 1 | 3+ | 4 | -1 | 1 | [[core-rules/pistol.md\|手枪]] |
+| 星语者冲击波 | 12" | D6 | 3+ | 4 | -1 | 1 | [[core-rules/blast.md\|爆炸]]，[[core-rules/psychic-attacks.md\|灵能]] |
 | 爆矢步枪 | 24" | 2 | 3+ | 4 | -1 | 1 | [[core-rules/assault.md\|突击]]，[[core-rules/heavy.md\|重型]] |
-| Heavy bolt pistol | 18" | 1 | 3+ | 4 | -1 | 1 | pistol |
+| 重型爆矢手枪 | 18" | 1 | 3+ | 4 | -1 | 1 | [[core-rules/pistol.md\|手枪]] |
 
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
 | 格斗武器 | 近战 | 4 | 2+ | 4 | 0 | 1 | — |
-| 灵能杖 | 近战 | 1 | 2+ | 5 | -2 | 2 | 灵能 |
+| 灵能杖 | 近战 | 1 | 2+ | 5 | -2 | 2 | [[core-rules/psychic-attacks.md\|灵能]] |
 | 动力武器 | 近战 | 4 | 2+ | 4 | -2 | 1 | — |
 | 大师级动力武器 | 近战 | 5 | 2+ | 5 | -2 | 2 | — |
 

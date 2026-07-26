@@ -24,9 +24,9 @@ updated: '2026-07-23'
 ## 射击武器
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| Heavy bolter | 36" | 3 | 4+ | 5 | -1 | 2 | [[core-rules/sustained-hits.md\|sustained hits 1]] |
-| Redemptor lascannons | 48" | 2 | 4+ | 14 | -3 | D6+1 | [[core-rules/anti.md\|anti-fly 2+]] |
-| Redemptor missile silo – superfrag | 48" | 2D6+2 | 4+ | 5 | 0 | 1 | blast |
+| 重型爆弹枪 | 36" | 3 | 4+ | 5 | -1 | 2 | [[core-rules/sustained-hits.md\|连击1]] |
+| Redemptor lascannons | 48" | 2 | 4+ | 14 | -3 | D6+1 | [[core-rules/anti.md\|针对飞行2+]] |
+| Redemptor missile silo – superfrag | 48" | 2D6+2 | 4+ | 5 | 0 | 1 | [[core-rules/blast.md\|爆炸]] |
 | Redemptor missile silo – superkrak | 48" | 2 | 4+ | 10 | -2 | D6+1 | — |
 
 ## 技能

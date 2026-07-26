@@ -29,12 +29,12 @@ updated: '2026-07-23'
 |---|---|---|---|---|---|---|---|
 | 爆弹手枪  | 12" | 1 | 3+ | 4 | 0 | 1 | [[core-rules/pistol.md\|手枪]] |
 | 重型爆弹步枪     | 30" | 2 | 3+ | 5 | -1 | 2 | [[core-rules/assault.md\|突击]]，[[core-rules/heavy.md\|重型]] |
-| 重型爆弹枪   | 36" | 3 | 3+ | 5 | -1 | 2 | [[core-rules/assault.md\|突击]]，[[core-rules/heavy.md\|重型]]，[[core-rules/sustained-hits.md\|连击 1]] |
+| 重型爆弹枪   | 36" | 3 | 3+ | 5 | -1 | 2 | [[core-rules/assault.md\|突击]]，[[core-rules/heavy.md\|重型]]，[[core-rules/sustained-hits.md\|连击1]] |
 
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| Close combat weapon | 近战 | 3 | 3+ | 4 | 0 | 1 | — |
+| 格斗武器 | 近战 | 3 | 3+ | 4 | 0 | 1 | — |
 
 ## 技能
 - **【阵营技能】：破敌重誓**
@@ -46,4 +46,4 @@ updated: '2026-07-23'
 
 ## 关键词
 - **阵营关键词**：Adeptus Astartes
-- **普通关键词**：[[core-rules/infantry.md|Infantry]]，Heavy Intercessor Squad，Gravis，Imperium，[[core-rules/grenades.md|Grenades]]，[[core-rules/battleline.md|Battleline]]
+- **普通关键词**：[[core-rules/infantry.md|Infantry]]，Heavy [[factions/星际战士/units/intercessor-squad.md|Intercessor Squad]]，Gravis，Imperium，[[core-rules/grenades.md|Grenades]]，[[core-rules/battleline.md|Battleline]]

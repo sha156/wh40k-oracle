@@ -32,7 +32,7 @@ updated: '2026-07-23'
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| 狩猎短刀 | 近战 | 3 | 3+ | 4 | -1 | 1 | [[core-rules/lance.md\|迅猛冲锋]] |
+| 狩猎短刀 | 近战 | 3 | 3+ | 4 | -1 | 1 | [[core-rules/lance.md\|骑枪]] |
 | 狂兽之拳 | 近战 | 4 | 3+ | 6 | -1 | 2 | [[core-rules/extra-attacks.md\|额外攻击]]，[[core-rules/sustained-hits.md\|连击1]] |
 
 ## 技能

@@ -1,5 +1,5 @@
 ---
-id: 000002779
+id: '000002779'
 name_zh: 无形杀戮小队
 name_en: Spectrus Kill Team
 faction: 星际战士
@@ -28,19 +28,19 @@ updated: '2026-07-23'
 |---|---|---|---|---|---|---|---|
 | 爆矢手枪 | 12" | 1 | 3+ | 4 | 0 | 1 | [[core-rules/pistol.md\|手枪]] |
 | 爆矢狙击步枪 | 36" | 1 | 3+ | 5 | -2 | 3 | [[core-rules/heavy.md\|重型]]，[[core-rules/precision.md\|精准]] |
-| Deathwatch bolt carbine | 24" | 2 | 3+ | 5 | -1 | 1 | lethal hits，precision |
-| Deathwatch marksman bolt carbine | 24" | 2 | 3+ | 5 | -1 | 1 | heavy，lethal hits |
-| Deathwatch occulus bolt carbine | 24" | 2 | 3+ | 5 | -1 | 1 | assault，ignores cover，lethal hits |
+| 死亡守望爆弹卡宾枪 | 24" | 2 | 3+ | 5 | -1 | 1 | [[core-rules/lethal-hits.md\|致命一击]]，[[core-rules/precision.md\|精准]] |
+| 死亡守望神射手爆矢卡宾枪 | 24" | 2 | 3+ | 5 | -1 | 1 | [[core-rules/heavy.md\|重型]]，[[core-rules/lethal-hits.md\|致命一击]] |
+| 死亡守望瞄具爆弹卡宾枪 | 24" | 2 | 3+ | 5 | -1 | 1 | [[core-rules/assault.md\|突击]]，[[core-rules/ignores-cover.md\|无视掩体]]，[[core-rules/lethal-hits.md\|致命一击]] |
 | 煽动者爆矢卡宾枪 | 24" | 1 | 3+ | 4 | -2 | 2 | [[core-rules/heavy.md\|重型]] |
 | 激光燧发枪 | 36" | 1 | 3+ | 9 | -3 | D6 | [[core-rules/heavy.md\|重型]] |
-| 特种爆矢手枪 | 12" | 1 | 3+ | 4 | -1 | 1 | [[core-rules/pistol.md\|手枪]]，[[core-rules/heavy.md\|重型]] |
+| 特种爆矢手枪 | 12" | 1 | 3+ | 4 | -1 | 1 | [[core-rules/pistol.md\|手枪]]，[[core-rules/precision.md\|精准]] |
 
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
 | 格斗武器 | 近战 | 3 | 3+ | 4 | 0 | 1 | — |
 | 战斗刀 | 近战 | 4 | 3+ | 4 | -1 | 1 | [[core-rules/precision.md\|精准]] |
-| 战斗双刀 | 近战 | 3 | 3+ | 4 | -1 | 1 | [[core-rules/sustained-hits.md\|连击 1]] |
+| 战斗双刀 | 近战 | 3 | 3+ | 4 | -1 | 1 | [[core-rules/sustained-hits.md\|连击1]] |
 
 ## 技能
 - **无形战术**：在您对手的回合结束时，如果该单位位于所有敌方单位 6" 外，您可以将该单位从战场上移除并放入战略预备队。

@@ -1,5 +1,5 @@
 ---
-id: 000002488
+id: '000002488'
 name_zh: 超级屁精老大监工佐德格罗德·沃茨纳加
 name_en: Zodgrod Wortsnagga
 faction: 兽人
@@ -26,7 +26,7 @@ updated: '2026-07-23'
 ## 射击武器
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| 猎兽手铳 | 12" | 1 | 5+ | 4 | -1 | 1 | [[core-rules/pistol.md\|手枪]]，[[core-rules/anti.md\|针对巨兽4+]] |
+| 猎兽手铳 | 12" | 1 | 5+ | 4 | -1 | 1 | [[core-rules/anti.md\|针对怪物4+]]，[[core-rules/pistol.md\|手枪]] |
 
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |

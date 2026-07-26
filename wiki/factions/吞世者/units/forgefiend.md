@@ -1,5 +1,5 @@
 ---
-id: 000002638
+id: '000002638'
 name_zh: 铸造魔
 name_en: Forgefiend
 faction: 吞世者
@@ -29,14 +29,14 @@ updated: '2026-07-23'
 ## 射击武器
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| Ectoplasma cannon | 36" | D3 | 4+ | 10 | -3 | 3 | blast，[[core-rules/rapid-fire.md\|rapid fire 1]] |
-| Hades autocannon | 36" | 6 | 4+ | 8 | -1 | 2 | [[core-rules/rapid-fire.md\|rapid fire 4]] |
+| 幽冥等离子炮 | 36" | D3 | 4+ | 10 | -3 | 3 | [[core-rules/blast.md\|爆炸]]，[[core-rules/rapid-fire.md\|速射1]] |
+| 冥神自动炮 | 36" | 6 | 4+ | 8 | -1 | 2 | [[core-rules/rapid-fire.md\|速射4]] |
 
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| Forgefiend claws | 近战 | 6 | 3+ | 6 | 0 | 1 | — |
-| Forgefiend jaws | 近战 | 8 | 3+ | 7 | -1 | 2 | — |
+| 魔铸利爪 | 近战 | 6 | 3+ | 6 | 0 | 1 | — |
+| 魔铸巨嘴 | 近战 | 8 | 3+ | 7 | -1 | 2 | — |
 
 ## 技能
 - **【阵营技能】：黑暗契约**

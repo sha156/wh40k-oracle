@@ -1,5 +1,5 @@
 ---
-id: 000000399
+id: '000000399'
 name_zh: 兄弟会科技战⼠
 name_en: Brotherhood Techmarine
 faction: 灰骑士

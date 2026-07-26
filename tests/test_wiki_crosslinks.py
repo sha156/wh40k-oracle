@@ -300,3 +300,69 @@ class TestInjectionGuards:
         out2 = inject_wikilinks(alone, targets,
                                 self_path="factions/艾达灵族/units/windrider.md")
         assert "[[factions/艾达灵族/units/vyper.md|Vyper]]" in out2.body
+
+
+class TestKeywordAliasResolution:
+    """武器词条 → core-rules 页的解析（2026-07-25 词条索引配套）。
+
+    背景：建索引时逐条实测，46 个基础词条里 39 个从中英某一侧解析不出规则页——
+    `anti.md` 存在却没有任何别名指向它，12 个 ANTI-X 全断。更隐蔽的一层是**大小写**：
+    结构库的 keywords_json 存小写（"devastating wounds"），而别名表按官方写法登记大写，
+    于是兵牌页同一格里 anti-infantry 2+ 成链（走 IGNORECASE 正则）、
+    devastating wounds 是纯文本——一半能点一半不能。
+    """
+
+    def test_case_folded_lookup(self):
+        from wiki_engine.crosslinks import _resolve_known_alias
+
+        for raw in ("devastating wounds", "DEVASTATING WOUNDS", "Devastating Wounds"):
+            assert _resolve_known_alias(raw) == "core-rules/devastating-wounds.md"
+        assert _resolve_known_alias("psychic") == "core-rules/psychic-attacks.md"
+        assert _resolve_known_alias("twin-linked") == "core-rules/twin-linked.md"
+        assert _resolve_known_alias("ignores cover") == "core-rules/ignores-cover.md"
+
+    def test_11e_new_keywords(self):
+        """11 版新增/改名词条也要能落地。"""
+        from wiki_engine.crosslinks import _resolve_known_alias
+
+        assert _resolve_known_alias("CLEAVE") == "core-rules/cleave.md"
+        assert _resolve_known_alias("横扫") == "core-rules/cleave.md"
+        assert _resolve_known_alias("横扫1") == "core-rules/cleave.md"
+        # 24.07：【手枪】等效替换为【近距离】，页仍名 pistol（改名等于改全部入链）
+        assert _resolve_known_alias("CLOSE-QUARTERS") == "core-rules/pistol.md"
+        assert _resolve_known_alias("近距离") == "core-rules/pistol.md"
+
+    def test_dice_and_param_variants(self):
+        from wiki_engine.crosslinks import _resolve_known_alias
+
+        assert _resolve_known_alias("速射D6+3") == "core-rules/rapid-fire.md"
+        assert _resolve_known_alias("连击D3") == "core-rules/sustained-hits.md"
+        assert _resolve_known_alias("爆炸2") == "core-rules/blast.md"     # 11版带参形态
+        assert _resolve_known_alias("ANTI-EPIC HERO 2+") == "core-rules/anti.md"
+        assert _resolve_known_alias("ANTI-VEHICLE") == "core-rules/anti.md"
+        assert _resolve_known_alias("反载具") == "core-rules/anti.md"
+
+    def test_does_not_swallow_ordinary_words(self):
+        """误链比断链更难发现：ANTI 的中文侧按目标关键词枚举，不用 `^反.*$`/`^针对.*$`。"""
+        from wiki_engine.crosslinks import _resolve_known_alias
+
+        for word in ("反击", "反应", "反正", "针对性", "针对那次攻击",
+                     "爆炸性", "速射手", "劈砍刀"):
+            assert _resolve_known_alias(word) is None, word
+
+    def test_bare_official_anti_name_resolves(self):
+        """「针对」是官方词条名（24.03），必须能解析——它同时又是极常见的中文词。
+
+        为什么这样不会把正文里的「针对那次攻击」变成链接：本表只在两处被查——
+        ① `canonicalize_known_terms` 重写**已经写成 [[…]] 的**目标；
+        ② `from_db._wrap` 决定要不要把武器技能列里的词条包成裸链。
+        两处都是「先有明确的词条边界，再来查表」，不是拿它去正文里做子串匹配。
+        往正文里注入链接的是 `inject_wikilinks`，走的是另一张按实体名建的表。
+        """
+        from wiki_engine.crosslinks import _resolve_known_alias
+
+        assert _resolve_known_alias("针对") == "core-rules/anti.md"
+        assert _resolve_known_alias("针对载具4+") == "core-rules/anti.md"
+        # 英文侧同理：ANTI 是官方词条名，不是普通词
+        assert _resolve_known_alias("ANTI") == "core-rules/anti.md"
+        assert _resolve_known_alias("Anti") == "core-rules/anti.md"

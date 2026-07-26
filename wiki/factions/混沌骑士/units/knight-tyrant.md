@@ -1,5 +1,5 @@
 ---
-id: 000001659
+id: '000001659'
 name_zh: 暴君骑士
 name_en: Knight Tyrant
 faction: 混沌骑士
@@ -33,7 +33,7 @@ updated: '2026-07-23'
 | 黑焰炮 | 18" | 3D6 | N/A | 8 | -1 | 2 | [[core-rules/ignores-cover.md\|无视掩体]]，[[core-rules/torrent.md\|洪流]] |
 | 魂浆屠戮炮 - 标准 | 36" | D6+3 | 3+ | 8 | -3 | 2 | [[core-rules/blast.md\|爆炸]] |
 | 魂浆屠戮炮 - 过载 | 36" | D6+3 | 3+ | 9 | -4 | 3 | [[core-rules/blast.md\|爆炸]]，[[core-rules/hazardous.md\|危险]] |
-| 幽鬼打击导弹发射器 | 72" | 1 | 3+ | 12 | -6 | D6+1 | [[core-rules/anti.md\|针对巨型 4+]]，[[core-rules/devastating-wounds.md\|毁灭伤害]] |
+| 幽鬼打击导弹发射器 | 72" | 1 | 3+ | 12 | -6 | D6+1 | [[core-rules/anti.md\|针对泰坦4+]]，[[core-rules/devastating-wounds.md\|毁灭伤害]] |
 | 双联魔息热熔枪 | 12" | 1 | 3+ | 9 | -4 | D6 | [[core-rules/melta.md\|热熔2]]，[[core-rules/twin-linked.md\|双联]] |
 | 双联渎神者炮 | 36" | D6 | 3+ | 6 | 0 | 1 | [[core-rules/blast.md\|爆炸]]，[[core-rules/twin-linked.md\|双联]] |
 | 亚空间冲击鱼叉 | 12" | D3 | 3+ | 24 | -6 | 12 | [[core-rules/blast.md\|爆炸]]，[[core-rules/devastating-wounds.md\|毁灭伤害]] |

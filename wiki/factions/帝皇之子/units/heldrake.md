@@ -1,5 +1,6 @@
 ---
-id: 000004092
+id: '000004092'
+name_zh: 地狱飞龙
 name_en: Heldrake
 faction: 帝皇之子
 type: unit
@@ -28,16 +29,18 @@ updated: '2026-07-23'
 ## 射击武器
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| Baleflamer | 12" | D6+3 | N/A | 6 | -1 | 2 | ignores cover，torrent |
-| Hades autocannon | 36" | 6 | 3+ | 8 | -1 | 2 | — |
+| 恶毒之火 | 12" | D6+3 | N/A | 6 | -1 | 2 | [[core-rules/ignores-cover.md\|无视掩体]]，[[core-rules/torrent.md\|洪流]] |
+| 冥神自动炮 | 36" | 6 | 3+ | 8 | -1 | 2 | — |
 
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| Heldrake claws | 近战 | 5 | 3+ | 7 | -1 | 2 | [[core-rules/anti.md\|anti-fly 2+]]，devastating wounds |
+| 地狱龙爪 | 近战 | 5 | 3+ | 7 | -1 | 2 | [[core-rules/anti.md\|针对飞行2+]]，[[core-rules/devastating-wounds.md\|毁灭伤害]] |
 
 ## 技能
-- **Airborne Predator**：Each time this model ends a Normal move, you can select one enemy unit that it moved over during that move and roll two D6, adding 1 to each result if that enemy unit can <span class="kwb">FLY</span>: for each 4+, that enemy unit suffers D3 mortal wounds.
+- **【阵营技能】：黑暗契约**
+- **空中猎食者**：本模型攻击飞行目标时命中结果+1
+- **严重损伤**：当本模型 W 值为 1-4 时，进行的攻击命 中结果-1
 
 ## 单位构成
 - **1个模型** — 175 分

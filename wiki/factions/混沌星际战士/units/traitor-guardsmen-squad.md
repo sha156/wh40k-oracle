@@ -1,5 +1,6 @@
 ---
-id: 000002590
+id: '000002590'
+name_zh: 叛变卫队
 name_en: Traitor Guardsmen Squad
 faction: 混沌星际战士
 type: unit
@@ -25,26 +26,27 @@ updated: '2026-07-23'
 ## 射击武器
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| Boltgun | 24" | 1 | 4+ | 4 | 0 | 1 | [[core-rules/rapid-fire.md\|rapid fire 1]] |
-| Corrupted pistol | 12" | 1 | 4+ | 4 | -1 | 1 | pistol |
-| Cultist grenade launcher – frag | 24" | D3 | 4+ | 4 | 0 | 1 | blast |
-| Cultist grenade launcher – krak | 24" | 1 | 4+ | 9 | -2 | D3 | — |
-| Cultist sniper rifle | 36" | 1 | 4+ | 4 | -2 | 2 | heavy，precision |
-| Flamer | 12" | D6 | N/A | 4 | 0 | 1 | ignores cover，torrent |
-| Lasgun | 24" | 1 | 4+ | 3 | 0 | 1 | [[core-rules/rapid-fire.md\|rapid fire 1]] |
-| Meltagun | 12" | 1 | 4+ | 9 | -4 | D6 | [[core-rules/melta.md\|melta 2]] |
-| Plasma gun – standard | 24" | 1 | 4+ | 7 | -2 | 1 | [[core-rules/rapid-fire.md\|rapid fire 1]] |
-| Plasma gun – supercharge | 24" | 1 | 4+ | 8 | -3 | 2 | hazardous，[[core-rules/rapid-fire.md\|rapid fire 1]] |
+| 爆弹枪  | 24" | 1 | 4+ | 4 | 0 | 1 | [[core-rules/rapid-fire.md\|速射1]] |
+| 腐化手枪   | 12" | 1 | 4+ | 4 | -1 | 1 | [[core-rules/pistol.md\|手枪]] |
+| 榴弹发射器（破片弹） | 24" | D3 | 4+ | 4 | 0 | 1 | [[core-rules/blast.md\|爆炸]] |
+| 榴弹发射器（穿甲弹）     | 24" | 1 | 4+ | 9 | -2 | D3 | — |
+| 狙击步枪 | 36" | 1 | 4+ | 4 | -2 | 2 | [[core-rules/heavy.md\|重型]]，[[core-rules/precision.md\|精准]] |
+| 喷火器 | 12" | D6 | N/A | 4 | 0 | 1 | [[core-rules/ignores-cover.md\|无视掩体]]，[[core-rules/torrent.md\|洪流]] |
+| 激光枪   | 24" | 1 | 4+ | 3 | 0 | 1 | [[core-rules/rapid-fire.md\|速射1]] |
+| 热熔枪       | 12" | 1 | 4+ | 9 | -4 | D6 | [[core-rules/melta.md\|热熔2]] |
+| 等离子枪（标准） | 24" | 1 | 4+ | 7 | -2 | 1 | [[core-rules/rapid-fire.md\|速射1]] |
+| 等离子枪（过载） | 24" | 1 | 4+ | 8 | -3 | 2 | [[core-rules/hazardous.md\|危险]]，[[core-rules/rapid-fire.md\|速射1]] |
 
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| Chainsword | 近战 | 3 | 4+ | 3 | 0 | 1 | — |
-| Close combat weapon | 近战 | 1 | 4+ | 3 | 0 | 1 | — |
-| Power weapon | 近战 | 2 | 4+ | 4 | -2 | 1 | — |
+| 链锯剑 | 近战 | 3 | 4+ | 3 | 0 | 1 | — |
+| 格斗武器  | 近战 | 1 | 4+ | 3 | 0 | 1 | — |
+| 动力武器     | 近战 | 2 | 4+ | 4 | -2 | 1 | — |
 
 ## 技能
-- **Twisted Defence Force**：While this unit is within range of an objective marker, each time a ranged attack targets this unit, models in this unit have the Benefit of Cover against that attack.
+- **【阵营技能】：黑暗契约**
+- **堕落守军**：在该单位处于一个目标的范围内时，该单位拥有针对远程攻击的 +1 SV。
 
 ## 单位构成
 - **10个模型** — 70 分

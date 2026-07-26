@@ -1,5 +1,5 @@
 ---
-id: 000000380
+id: '000000380'
 name_zh: 克罗堡主
 name_en: Castellan Crowe
 faction: 灰骑士
@@ -29,8 +29,8 @@ updated: '2026-07-23'
 ## 射击武器
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| 净化烈焰 | 18" | 3 | 2+ | 4 | -2 | 1 | [[core-rules/anti.md\|针对步兵 2+]]，⽆视掩体，灵能 |
-| ⻛暴爆矢枪 | 24" | 2 | 2+ | 4 | 0 | 1 | [[core-rules/rapid-fire.md\|速射 2]] |
+| 净化烈焰 | 18" | 3 | 2+ | 4 | -2 | 1 | [[core-rules/anti.md\|针对步兵2+]]，[[core-rules/ignores-cover.md\|无视掩体]]，[[core-rules/psychic-attacks.md\|灵能]] |
+| ⻛暴爆矢枪 | 24" | 2 | 2+ | 4 | 0 | 1 | [[core-rules/rapid-fire.md\|速射2]] |
 
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |

@@ -1,5 +1,5 @@
 ---
-id: 000000784
+id: '000000784'
 name_en: Vulture Gunship
 faction: 星界军
 type: unit
@@ -24,15 +24,15 @@ updated: '2026-07-23'
 ## 射击武器
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| Heavy bolter | 36" | 3 | 4+ | 5 | -1 | 2 | [[core-rules/sustained-hits.md\|sustained hits 1]] |
-| Multiple rocket pod | 36" | D6 | 4+ | 6 | 0 | 1 | blast |
-| Vulture gatling cannon | 24" | 18 | 4+ | 5 | 0 | 1 | [[core-rules/sustained-hits.md\|sustained hits 1]] |
-| Vulture hellstrike rack | 48" | 2 | 4+ | 10 | -3 | D6 | [[core-rules/anti.md\|anti-fly 2+]] |
+| 重型爆弹枪 | 36" | 3 | 4+ | 5 | -1 | 2 | [[core-rules/sustained-hits.md\|连击1]] |
+| 多管火箭发射器 | 36" | D6 | 4+ | 6 | 0 | 1 | [[core-rules/blast.md\|爆炸]] |
+| Vulture gatling cannon | 24" | 18 | 4+ | 5 | 0 | 1 | [[core-rules/sustained-hits.md\|连击1]] |
+| Vulture hellstrike rack | 48" | 2 | 4+ | 10 | -3 | D6 | [[core-rules/anti.md\|针对飞行2+]] |
 
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| Armoured hull | 近战 | 6 | 4+ | 4 | 0 | 1 | — |
+| 装甲外壳 | 近战 | 6 | 4+ | 4 | 0 | 1 | — |
 
 ## 技能
 - **Gunship Barrage**：In your Shooting phase, after this model has shot, select one enemy unit hit by one or more of those attacks. That enemy unit must take a Battle-shock test.

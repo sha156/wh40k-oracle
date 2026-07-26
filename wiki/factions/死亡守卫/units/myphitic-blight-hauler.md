@@ -1,5 +1,6 @@
 ---
 id: '000001374'
+name_zh: 恶臭疫病拖车
 name_en: Myphitic Blight-hauler
 faction: 死亡守卫
 type: unit
@@ -29,15 +30,15 @@ updated: '2026-07-23'
 ## 射击武器
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| Bile spurt | 12" | 3 | 3+ | 5 | 0 | 1 | lethal hits |
-| Missile launcher – frag | 48" | D6 | 3+ | 4 | 0 | 1 | blast |
-| Missile launcher – krak | 48" | 1 | 3+ | 9 | -2 | D6 | — |
-| Multi-melta | 18" | 2 | 3+ | 9 | -4 | D6 | [[core-rules/melta.md\|melta 2]]，lethal hits |
+| 胆汁喷射 | 12" | 3 | 3+ | 5 | 0 | 1 | [[core-rules/lethal-hits.md\|致命一击]] |
+| 导弹发射器（破片） | 48" | D6 | 3+ | 4 | 0 | 1 | [[core-rules/blast.md\|爆炸]] |
+| 导弹发射器（穿甲） | 48" | 1 | 3+ | 9 | -2 | D6 | — |
+| 多管热熔 | 18" | 2 | 3+ | 9 | -4 | D6 | [[core-rules/melta.md\|热熔2]]，[[core-rules/lethal-hits.md\|致命一击]] |
 
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| Gnashing maw | 近战 | 4 | 3+ | 6 | -1 | 1 | lethal hits |
+| 啮咬巨口 | 近战 | 4 | 3+ | 6 | -1 | 1 | [[core-rules/lethal-hits.md\|致命一击]] |
 
 ## 技能
 - **Tank Hunters**：In your Shooting phase, each time a model in this unit makes an attack that targets a <span class="kwb">MONSTER</span> or <span class="kwb">VEHICLE</span> unit, add 1 to the Hit roll and add 1 to the Wound roll.

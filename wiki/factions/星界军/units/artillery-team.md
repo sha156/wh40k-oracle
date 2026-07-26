@@ -1,5 +1,6 @@
 ---
-id: 000003896
+id: '000003896'
+name_zh: 炮兵小组
 name_en: Artillery Team
 faction: 星界军
 type: unit
@@ -20,24 +21,24 @@ updated: '2026-07-23'
 ## 属性表
 | 模型 | M | T | SV | W | LD | OC |
 |---|---|---|---|---|---|---|
-| Artillery Team | 3" | 7 | 3+ | 10 | 7+ | 3 |
+| 炮兵小组 | 3" | 7 | 3+ | 10 | 7+ | 3 |
 
 ## 射击武器
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| Heavy mortar | 48" | D6+3 | 5+ | 8 | -1 | 2 | blast，heavy，indirect fire |
-| Heavy quad launcher | 48" | 2D6 | 5+ | 5 | 0 | 1 | blast，heavy，indirect fire，twin-linked |
-| Lasgun | 24" | 1 | 4+ | 3 | 0 | 1 | [[core-rules/rapid-fire.md\|rapid fire 1]] |
-| Multiple rocket launcher | 48" | D6+3 | 5+ | 2 | -1 | 1 | [[core-rules/anti.md\|anti-infantry 3+]]，blast，heavy，indirect fire |
-| Siege cannon | 48" | D6 | 5+ | 12 | -2 | 3 | blast，heavy，indirect fire |
+| 重型迫击炮 | 48" | D6+3 | 5+ | 8 | -1 | 2 | [[core-rules/blast.md\|爆炸]]，[[core-rules/heavy.md\|重型]]，[[core-rules/indirect-fire.md\|曲射]] |
+| 重型四管迫击炮 | 48" | 2D6 | 5+ | 5 | 0 | 1 | [[core-rules/blast.md\|爆炸]]，[[core-rules/heavy.md\|重型]]，[[core-rules/indirect-fire.md\|曲射]]，[[core-rules/twin-linked.md\|双联]] |
+| 激光枪 | 24" | 1 | 4+ | 3 | 0 | 1 | [[core-rules/rapid-fire.md\|速射1]] |
+| 多管火箭发射器 | 48" | D6+3 | 5+ | 2 | -1 | 1 | [[core-rules/anti.md\|针对步兵3+]]，[[core-rules/blast.md\|爆炸]]，[[core-rules/heavy.md\|重型]]，[[core-rules/indirect-fire.md\|曲射]] |
+| 攻城加农炮 | 48" | D6 | 5+ | 12 | -2 | 3 | [[core-rules/blast.md\|爆炸]]，[[core-rules/heavy.md\|重型]]，[[core-rules/indirect-fire.md\|曲射]] |
 
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| Crew close combat weapons | 近战 | 3 | 4+ | 3 | 0 | 1 | — |
+| 炮组格斗武器 | 近战 | 3 | 4+ | 3 | 0 | 1 | — |
 
 ## 技能
-- **Remorseless Barrage**：In your Shooting phase, after this model has shot, if one or more of those attacks made with an Indirect Fire weapon scored a hit against an enemy unit, that unit must take a Battle-shock test (if an <span class="kwb">INFANTRY</span> unit is hit by one or more attacks made by a multiple rocket launcher, they must subtract 1 from their Battle-shock test when doing so).
+- **无情弹雨**：在您的射击阶段，当该模型进行射击后如果有一次或多次本单位拥有曲射的武器成功命中了一个敌军单位，那么那个单位必须进行一次战斗震慑测试（如果一个步兵单位被该模型的多管火箭发射器命中，那么这一次战斗震慑测试的结果-1）
 
 ## 单位构成
 - **1个模型** — 95 分

@@ -1,5 +1,5 @@
 ---
-id: 000000854
+id: '000000854'
 name_zh: 沙丘爬行者机甲
 name_en: Onager Dunecrawler
 faction: 机械修会
@@ -29,13 +29,13 @@ updated: '2026-07-23'
 ## 射击武器
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| 智能重机枪 | 36" | 3 | 4+ | 4 | 0 | 1 | [[core-rules/rapid-fire.md\|速射 3]]，[[core-rules/sustained-hits.md\|连击 1]] |
-| 代达罗斯导弹 | 48" | 2 | 4+ | 10 | -2 | D6+1 | [[core-rules/anti.md\|反飞行 2+]] |
-| 灭绝射线（散射） | 36" | 3D3 | 4+ | 9 | -2 | 2 | [[core-rules/blast.md\|爆炸]]，[[core-rules/sustained-hits.md\|连击 1]] |
-| 灭绝射线（聚焦） | 18" | 3D3 | 4+ | 10 | -3 | 3 | [[core-rules/blast.md\|爆炸]]，[[core-rules/sustained-hits.md\|连击 1]] |
+| 智能重机枪 | 36" | 3 | 4+ | 4 | 0 | 1 | [[core-rules/rapid-fire.md\|速射3]]，[[core-rules/sustained-hits.md\|连击1]] |
+| 代达罗斯导弹 | 48" | 2 | 4+ | 10 | -2 | D6+1 | [[core-rules/anti.md\|针对飞行2+]] |
+| 灭绝射线（散射） | 36" | 3D3 | 4+ | 9 | -2 | 2 | [[core-rules/blast.md\|爆炸]]，[[core-rules/sustained-hits.md\|连击1]] |
+| 灭绝射线（聚焦） | 18" | 3D3 | 4+ | 10 | -3 | 3 | [[core-rules/blast.md\|爆炸]]，[[core-rules/sustained-hits.md\|连击1]] |
 | 中子激光 | 48" | 3 | 4+ | 16 | -4 | D6+2 | [[core-rules/heavy.md\|重型]] |
-| 伊卡洛斯阵列 | 48" | 6 | 4+ | 8 | -1 | 2 | [[core-rules/anti.md\|反飞行 4+]]，[[core-rules/twin-linked.md\|双联]] |
-| 双联重型磷火炮 | 36" | 12 | 4+ | 6 | -1 | 2 | [[core-rules/ignores-cover.md\|忽视掩体]]，[[core-rules/twin-linked.md\|双联]] |
+| 伊卡洛斯阵列 | 48" | 6 | 4+ | 8 | -1 | 2 | [[core-rules/anti.md\|针对飞行4+]]，[[core-rules/twin-linked.md\|双联]] |
+| 双联重型磷火炮 | 36" | 12 | 4+ | 6 | -1 | 2 | [[core-rules/ignores-cover.md\|无视掩体]]，[[core-rules/twin-linked.md\|双联]] |
 
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |

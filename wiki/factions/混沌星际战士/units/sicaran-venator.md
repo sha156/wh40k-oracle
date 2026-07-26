@@ -1,5 +1,5 @@
 ---
-id: 000003678
+id: '000003678'
 name_en: Sicaran Venator
 faction: 混沌星际战士
 type: unit
@@ -24,16 +24,16 @@ updated: '2026-07-23'
 ## 射击武器
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| Venator neutron laser | 48" | 3 | 3+ | 16 | -4 | D3+3 | heavy |
-| Storm bolter | 24" | 2 | 3+ | 4 | 0 | 1 | [[core-rules/rapid-fire.md\|rapid fire 2]] |
-| Hunter-killer missile | 48" | 1 | 2+ | 14 | -3 | D6 | one shot |
-| Heavy bolter | 36" | 3 | 3+ | 5 | -1 | 2 | [[core-rules/sustained-hits.md\|sustained hits 1]] |
-| Lascannon | 48" | 1 | 3+ | 12 | -3 | D6+1 | — |
+| Venator neutron laser | 48" | 3 | 3+ | 16 | -4 | D3+3 | [[core-rules/heavy.md\|重型]] |
+| 风暴爆弹枪 | 24" | 2 | 3+ | 4 | 0 | 1 | [[core-rules/rapid-fire.md\|速射2]] |
+| 猎杀飞弹 | 48" | 1 | 2+ | 14 | -3 | D6 | [[core-rules/one-shot.md\|单发]] |
+| 重型爆弹枪 | 36" | 3 | 3+ | 5 | -1 | 2 | [[core-rules/sustained-hits.md\|连击1]] |
+| 激光炮 | 48" | 1 | 3+ | 12 | -3 | D6+1 | — |
 
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| Armoured tracks | 近战 | 6 | 4+ | 8 | 0 | 1 | — |
+| 装甲履带 | 近战 | 6 | 4+ | 8 | 0 | 1 | — |
 
 ## 技能
 - **Ferocious Assault**：Each time this model makes a ranged attack that targets the closest eligible <span class="kwb">MONSTER</span> or <span class="kwb">VEHICLE</span> unit, add 1 to the Hit roll.

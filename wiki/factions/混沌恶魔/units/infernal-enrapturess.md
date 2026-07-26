@@ -1,5 +1,5 @@
 ---
-id: 000001589
+id: '000001589'
 name_zh: 炼狱琴魔
 name_en: Infernal Enrapturess
 faction: 混沌恶魔
@@ -30,12 +30,12 @@ updated: '2026-07-23'
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
 | 心弦竖琴-嘈杂旋律 | 18" | 6 | 3+ | 6 | 0 | 1 | [[core-rules/assault.md\|突击]] |
-| Heartstring lyre – euphonic blast | 24" | 1 | 3+ | 12 | -3 | D6+1 | assault |
+| 心弦竖琴-锐耳震爆 | 24" | 1 | 3+ | 12 | -3 | D6+1 | [[core-rules/assault.md\|突击]] |
 
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| Ravaging claws | 近战 | 5 | 2+ | 4 | -1 | 1 | devastating wounds |
+| 凶狠利爪 | 近战 | 5 | 2+ | 4 | -1 | 1 | [[core-rules/devastating-wounds.md\|毁灭伤害]] |
 
 ## 技能
 - **和音汇集**
@@ -46,4 +46,4 @@ updated: '2026-07-23'
 
 ## 关键词
 - **阵营关键词**：Legiones Daemonica
-- **普通关键词**：Shadow Legion，[[core-rules/infantry.md|Infantry]]，[[core-rules/character.md|Character]]，Daemon，Slaanesh，Infernal Enrapturess，Chaos
+- **普通关键词**：[[factions/混沌恶魔/detachments/shadow-legion.md|Shadow Legion]]，[[core-rules/infantry.md|Infantry]]，[[core-rules/character.md|Character]]，Daemon，Slaanesh，Infernal Enrapturess，Chaos

@@ -1,5 +1,5 @@
 ---
-id: 000003874
+id: '000003874'
 name_zh: 利爪突击杀戮小队
 name_en: Talonstrike Kill Team
 faction: 星际战士
@@ -27,8 +27,8 @@ updated: '2026-07-23'
 ## 射击武器
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| 突击爆矢枪 | 18" | 3 | 3+ | 5 | -1 | 2 | [[core-rules/assault.md\|突击]]，[[core-rules/pistol.md\|手枪]]，[[core-rules/sustained-hits.md\|连击 2]]，[[core-rules/twin-linked.md\|双联]] |
-| 喷火手枪 | 12" | D6 | N/A | 3 | 0 | 1 | [[core-rules/ignores-cover.md\|无视掩体]]，[[core-rules/torrent.md\|洪流]] |
+| 突击爆矢枪 | 18" | 3 | 3+ | 5 | -1 | 2 | [[core-rules/assault.md\|突击]]，[[core-rules/pistol.md\|手枪]]，[[core-rules/sustained-hits.md\|连击2]]，[[core-rules/twin-linked.md\|双联]] |
+| 喷火手枪 | 12" | D6 | N/A | 3 | 0 | 1 | [[core-rules/ignores-cover.md\|无视掩体]]，[[core-rules/pistol.md\|手枪]]，[[core-rules/torrent.md\|洪流]] |
 | 重型爆矢手枪 | 18" | 1 | 3+ | 4 | -1 | 1 | [[core-rules/pistol.md\|手枪]] |
 | 等离子灭绝者 - 标准 | 18" | 2 | 3+ | 7 | -2 | 2 | [[core-rules/assault.md\|突击]]，[[core-rules/pistol.md\|手枪]]，[[core-rules/twin-linked.md\|双联]] |
 | 等离子灭绝者 - 过载 | 18" | 2 | 3+ | 8 | -3 | 3 | [[core-rules/assault.md\|突击]]，[[core-rules/hazardous.md\|危险]]，[[core-rules/pistol.md\|手枪]]，[[core-rules/twin-linked.md\|双联]] |

@@ -29,10 +29,10 @@ updated: '2026-07-23'
 ## 射击武器
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| 特斯拉球   | 24" | 6 | 3+ | 7 | 0 | 1 | [[core-rules/anti.md\|针对飞行 4+]]，[[core-rules/sustained-hits.md\|连击 2]] |
-| Antimatter Meteor | 24" | D6+3 | 3+ | 10 | -3 | 3 | blast，devastating wounds，indirect fire，c'tan power |
-| Cosmic Fire | 18" | 3D6 | N/A | 6 | -2 | 1 | ignores cover，devastating wounds，torrent，c'tan power |
-| Time’s Arrow | 24" | 1 | 2+ | 3 | -2 | 6 | [[core-rules/anti.md\|anti-character 4+]]，devastating wounds，precision，c'tan power |
+| 特斯拉球   | 24" | 6 | 3+ | 7 | 0 | 1 | [[core-rules/sustained-hits.md\|连击2]] |
+| 反物质陨星 | 24" | D6+3 | 3+ | 10 | -3 | 3 | [[core-rules/blast.md\|爆炸]]，[[core-rules/devastating-wounds.md\|毁灭伤害]]，[[core-rules/indirect-fire.md\|曲射]]，星神之力 |
+| 宇宙烈火 | 18" | 3D6 | N/A | 6 | -2 | 1 | [[core-rules/ignores-cover.md\|无视掩体]]，[[core-rules/devastating-wounds.md\|毁灭伤害]]，[[core-rules/torrent.md\|洪流]]，星神之力 |
+| 时光之箭 | 24" | 1 | 2+ | 3 | -2 | 6 | [[core-rules/anti.md\|针对角色4+]]，[[core-rules/devastating-wounds.md\|毁灭伤害]]，[[core-rules/precision.md\|精准]]，星神之力 |
 
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |

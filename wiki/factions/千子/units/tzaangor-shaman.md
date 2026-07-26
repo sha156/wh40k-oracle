@@ -29,12 +29,12 @@ updated: '2026-07-23'
 ## 射击武器
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| 畸变宝珠 | 18" | D6 | 3+ | 9 | 0 | 1 | [[core-rules/blast.md\|爆炸]]，[[core-rules/devastating-wounds.md\|毁灭伤害]]，灵能 |
+| 畸变宝珠 | 18" | D6 | 3+ | 9 | 0 | 1 | [[core-rules/blast.md\|爆炸]]，[[core-rules/devastating-wounds.md\|毁灭伤害]]，[[core-rules/psychic-attacks.md\|灵能]] |
 
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| 萨满法杖 | 近战 | 3 | 3+ | 5 | -1 | D3 | 灵能 |
+| 萨满法杖 | 近战 | 3 | 3+ | 5 | -1 | D3 | [[core-rules/psychic-attacks.md\|灵能]] |
 
 ## 技能
 - **阵营：巫师秘会**

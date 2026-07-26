@@ -1,5 +1,5 @@
 ---
-id: 000002359
+id: '000002359'
 name_zh: 灾蝗驱逐者
 name_en: Lokhust Destroyers
 faction: 太空死灵
@@ -29,7 +29,7 @@ updated: '2026-07-23'
 ## 射击武器
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| Gauss cannon | 24" | 3 | 3+ | 5 | -2 | 2 | lethal hits |
+| 高斯炮 | 24" | 3 | 3+ | 5 | -2 | 2 | [[core-rules/lethal-hits.md\|致命一击]] |
 
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |

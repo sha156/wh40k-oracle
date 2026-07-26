@@ -1,5 +1,5 @@
 ---
-id: 000002678
+id: '000002678'
 name_en: Chaplain Cassius
 faction: 星际战士
 type: unit
@@ -27,12 +27,12 @@ updated: '2026-07-23'
 ## 射击武器
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| Infernus | 12" | D6 | N/A | 4 | -1 | 1 | [[core-rules/anti.md\|anti-infantry 4+]]，devastating wounds，ignores cover，torrent |
+| Infernus | 12" | D6 | N/A | 4 | -1 | 1 | [[core-rules/anti.md\|针对步兵4+]]，[[core-rules/devastating-wounds.md\|毁灭伤害]]，[[core-rules/ignores-cover.md\|无视掩体]]，[[core-rules/torrent.md\|洪流]] |
 
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| Artificer crozius | 近战 | 5 | 2+ | 6 | -1 | 2 | — |
+| 精工牧师权杖 | 近战 | 5 | 2+ | 6 | -1 | 2 | — |
 
 ## 技能
 - **Catechism of Death**：While this model is leading a unit, melee weapons equipped by models in that unit have the [DEVASTATING WOUNDS] ability.
@@ -43,4 +43,4 @@ updated: '2026-07-23'
 
 ## 关键词
 - **阵营关键词**：Ultramarines，Adeptus Astartes
-- **普通关键词**：Imperium，[[core-rules/character.md|Character]]，Chaplain Cassius，[[core-rules/epic-hero.md|Epic Hero]]，[[core-rules/infantry.md|Infantry]]
+- **普通关键词**：Imperium，[[core-rules/character.md|Character]]，[[factions/星际战士/units/chaplain.md|Chaplain]] Cassius，[[core-rules/epic-hero.md|Epic Hero]]，[[core-rules/infantry.md|Infantry]]

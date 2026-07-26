@@ -1,5 +1,6 @@
 ---
-id: 000003582
+id: '000003582'
+name_zh: 恐虐狂战士
 name_en: Khorne Berzerkers
 faction: 混沌星际战士
 type: unit
@@ -25,19 +26,20 @@ updated: '2026-07-23'
 ## 射击武器
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| Bolt pistol | 12" | 1 | 4+ | 4 | 0 | 1 | pistol |
-| Plasma pistol – supercharge | 12" | 1 | 4+ | 8 | -3 | 2 | hazardous，pistol |
-| Plasma pistol – standard | 12" | 1 | 4+ | 7 | -2 | 1 | pistol |
+| 爆矢手枪 | 12" | 1 | 4+ | 4 | 0 | 1 | [[core-rules/pistol.md\|手枪]] |
+| 等离子手枪（过载） | 12" | 1 | 4+ | 8 | -3 | 2 | [[core-rules/hazardous.md\|危险]]，[[core-rules/pistol.md\|手枪]] |
+| 等离子手枪(标准) | 12" | 1 | 4+ | 7 | -2 | 1 | [[core-rules/pistol.md\|手枪]] |
 
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| Chainblade | 近战 | 4 | 3+ | 4 | -1 | 1 | — |
-| Khornate eviscerator | 近战 | 3 | 3+ | 8 | -2 | 2 | — |
+| 狂战士链锯刃 | 近战 | 4 | 3+ | 4 | -1 | 1 | — |
+| 恐虐开膛刃 | 近战 | 3 | 3+ | 8 | -2 | 2 | — |
 
 ## 技能
-- **Blood Surge**：In your opponent’s Shooting phase, each time an enemy unit has shot, if any models from this unit were destroyed as a result of those attacks, this unit can make a Blood Surge move. To do so, roll one D6 and add 2 to the roll: models in this unit move a number of inches up to this result, but this unit must end that move as close as possible to the closest enemy unit (excluding <span class="kwb">AIRCRAFT</span>), When doing so, those models can be moved within Engagement Range of that enemy unit. This unit cannot make a Blood Surge move while it is Battle-shocked or within Engagement Range of one or more enemy units, and can only make one Blood Surge move per phase.
-- **Icon of Khorne**：If the bearer’s unit contains one or more Icons of Khorne, each time the bearer’s unit destroys an enemy unit, you gain 1 Bloodshed point. Each time you make a Blessings of Khorne roll, roll one additional D6 for each Bloodshed point you have, after which, all your Bloodshed points are lost.
+- **阵营：恐虐祝福**
+- **血涌**：在对手的射击阶段中，一个敌方单位完成射击后，如果该单位中的一个模型由于这些攻击被摧毁，那么该单位可以进行一次最多 D6+2" 的迸发移动。
+- **恐虐徽记（装备）**：如果持有者拥有一枚或更多恐虐徽记，每当持有者的单位摧毁一个敌方单位时，您获得1点血流点数。每当您进行恐虐祝福掷骰时，您每有一点血流点数，便额外掷一枚骰子。这那之后，您失去所有的血流点数。
 
 ## 单位构成
 - **10个模型** — 180 分

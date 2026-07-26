@@ -1,5 +1,5 @@
 ---
-id: 000002291
+id: '000002291'
 name_zh: 萨穆尔大导师
 name_en: Sammael
 faction: 星际战士
@@ -31,7 +31,7 @@ updated: '2026-07-23'
 |---|---|---|---|---|---|---|---|
 | 爆弹手枪 | 12" | 1 | 2+ | 4 | 0 | 1 | [[core-rules/pistol.md\|手枪]] |
 | 精工等离子炮 | 36" | D3 | 2+ | 8 | -3 | 2 | [[core-rules/blast.md\|爆炸]] |
-| 双联风暴爆弹抢 | 24" | 2 | 2+ | 4 | 0 | 1 | [[core-rules/twin-linked.md\|双联]]，[[core-rules/rapid-fire.md\|速射2]] |
+| 双联风暴爆弹抢 | 24" | 2 | 2+ | 4 | 0 | 1 | [[core-rules/rapid-fire.md\|速射2]]，[[core-rules/twin-linked.md\|双联]] |
 
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |

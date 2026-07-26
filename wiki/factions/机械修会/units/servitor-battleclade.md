@@ -1,5 +1,5 @@
 ---
-id: 000004119
+id: '000004119'
 name_zh: 奴工战斗支队
 name_en: Servitor Battleclade
 faction: 机械修会
@@ -30,7 +30,7 @@ updated: '2026-07-23'
 ## 射击武器
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| 重型电弧步枪 | 30" | 1 | 4+ | 8 | -2 | 3 | [[core-rules/anti.md\|反载具 4+]]，[[core-rules/rapid-fire.md\|速射 1]] |
+| 重型电弧步枪 | 30" | 1 | 4+ | 8 | -2 | 3 | [[core-rules/anti.md\|针对载具4+]]，[[core-rules/rapid-fire.md\|速射1]] |
 | 重型爆矢枪 | 36" | 3 | 4+ | 5 | -1 | 2 | [[core-rules/heavy.md\|重型]]，[[core-rules/sustained-hits.md\|连击1]] |
 | 怒焰点火器 | 12" | D6 | N/A | 3 | 0 | 1 | [[core-rules/ignores-cover.md\|无视掩体]]，[[core-rules/torrent.md\|洪流]] |
 | 机械手枪 | 12" | 1 | 4+ | 6 | -1 | 1 | [[core-rules/devastating-wounds.md\|毁灭伤害]]，[[core-rules/pistol.md\|手枪]] |

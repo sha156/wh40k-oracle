@@ -1,5 +1,5 @@
 ---
-id: 000003686
+id: '000003686'
 name_en: Sicaran Punisher
 faction: 混沌星际战士
 type: unit
@@ -24,16 +24,16 @@ updated: '2026-07-23'
 ## 射击武器
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| Hunter-killer missile | 48" | 1 | 2+ | 14 | -3 | D6 | one shot |
-| Lascannon | 48" | 1 | 3+ | 12 | -3 | D6+1 | — |
-| Storm bolter | 24" | 2 | 3+ | 4 | 0 | 1 | [[core-rules/rapid-fire.md\|rapid fire 2]] |
-| Punisher rotary cannon | 36" | 18 | 4+ | 6 | 0 | 1 | devastating wounds |
-| Heavy bolter | 36" | 3 | 3+ | 5 | -1 | 2 | [[core-rules/sustained-hits.md\|sustained hits 1]] |
+| 猎杀飞弹 | 48" | 1 | 2+ | 14 | -3 | D6 | [[core-rules/one-shot.md\|单发]] |
+| 激光炮 | 48" | 1 | 3+ | 12 | -3 | D6+1 | — |
+| 风暴爆弹枪 | 24" | 2 | 3+ | 4 | 0 | 1 | [[core-rules/rapid-fire.md\|速射2]] |
+| Punisher rotary cannon | 36" | 18 | 4+ | 6 | 0 | 1 | [[core-rules/devastating-wounds.md\|毁灭伤害]] |
+| 重型爆弹枪 | 36" | 3 | 3+ | 5 | -1 | 2 | [[core-rules/sustained-hits.md\|连击1]] |
 
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| Armoured tracks | 近战 | 6 | 4+ | 8 | 0 | 1 | — |
+| 装甲履带 | 近战 | 6 | 4+ | 8 | 0 | 1 | — |
 
 ## 技能
 - **Rotating Death**：This model’s Punisher rotary cannon has the [SUSTAINED HITS 1] ability when targeting <span class="kwb">INFANTRY</span> units.

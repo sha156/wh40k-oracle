@@ -34,10 +34,10 @@ updated: '2026-07-23'
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| 死神链锯剑 - 猛击 | 近战 | 6 | 2+ | 14 | -4 | 6 | [[core-rules/sustained-hits.md\|连击 1]] |
-| 死神链锯剑 - 横扫 | 近战 | 18 | 2+ | 9 | -3 | 2 | [[core-rules/sustained-hits.md\|连击 1]] |
-| 亚空间攻击爪 - 猛击 | 近战 | 6 | 2+ | 20 | -3 | 8 | [[core-rules/sustained-hits.md\|连击 1]] |
-| 亚空间攻击爪 - 横扫 | 近战 | 12 | 2+ | 10 | -2 | 3 | [[core-rules/sustained-hits.md\|连击 1]] |
+| 死神链锯剑 - 猛击 | 近战 | 6 | 2+ | 14 | -4 | 6 | [[core-rules/sustained-hits.md\|连击1]] |
+| 死神链锯剑 - 横扫 | 近战 | 18 | 2+ | 9 | -3 | 2 | [[core-rules/sustained-hits.md\|连击1]] |
+| 亚空间攻击爪 - 猛击 | 近战 | 6 | 2+ | 20 | -3 | 8 | [[core-rules/sustained-hits.md\|连击1]] |
+| 亚空间攻击爪 - 横扫 | 近战 | 12 | 2+ | 10 | -2 | 3 | [[core-rules/sustained-hits.md\|连击1]] |
 
 ## 技能
 - **嗜血**：当本模型进行冲锋后，直到本回合结束前，本模型的近战 武器拥有【毁灭伤害】技能。

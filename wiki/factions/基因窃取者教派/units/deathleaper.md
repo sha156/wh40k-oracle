@@ -1,5 +1,6 @@
 ---
-id: 000003877
+id: '000003877'
+name_zh: 死亡跃袭者
 name_en: Deathleaper
 faction: 基因窃取者教派
 type: unit
@@ -27,12 +28,13 @@ updated: '2026-07-23'
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| [[factions/基因窃取者教派/units/lictor.md\|Lictor]] claws and talons | 近战 | 6 | 2+ | 7 | -2 | 2 | precision |
+| [[factions/基因窃取者教派/units/lictor.md\|刀斧虫]]利爪 | 近战 | 6 | 2+ | 7 | -2 | 2 | [[core-rules/precision.md\|精准]] |
 
 ## 技能
-- **Feeder Tendrils**：Each time this model destroys an enemy <span class="kwb">CHARACTER</span> model, you gain 1CP.
-- **Fear of the Unseen (Aura)**：While an enemy unit is within 6" of this model, worsen the Leadership characteristic of models in that unit by 1. In addition, in the Battle-shock step of your opponent’s Command phase, if such an enemy unit is below its Starting Strength, it must take a Battle-shock test.
-- **HUNTER ORGANISM**：This model cannot be your <span class="kwb">WARLORD</span>.
+- **【阵营技能】节点生物**
+- **吸食触须**：当该模型摧毁一个敌方角色模型时，您获得 1CP。
+- **无形恐惧（光环）**：当敌方单位位于该模型 6"内时那个敌方单位中模型的领导力属性降低1。此外，在您对手指挥阶段的战斗震慑步骤中，如果上述敌方单位低于初始兵力，则其必须进行一次战斗震慑测试。
+- **猎手生物体**：此模型不能为你的统帅
 
 ## 单位构成
 - **1个模型** — 80 分

@@ -1,5 +1,5 @@
 ---
-id: 000000778
+id: '000000778'
 name_en: Aquila Lander
 faction: 星界军
 type: unit
@@ -24,14 +24,14 @@ updated: '2026-07-23'
 ## 射击武器
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| Autocannon | 48" | 2 | 4+ | 9 | -1 | 3 | — |
-| Heavy bolter | 36" | 3 | 4+ | 5 | -1 | 2 | [[core-rules/sustained-hits.md\|sustained hits 1]] |
-| Multi-laser | 36" | 4 | 4+ | 6 | 0 | 1 | — |
+| 自动炮 | 48" | 2 | 4+ | 9 | -1 | 3 | — |
+| 重型爆弹枪 | 36" | 3 | 4+ | 5 | -1 | 2 | [[core-rules/sustained-hits.md\|连击1]] |
+| 多管激光 | 36" | 4 | 4+ | 6 | 0 | 1 | — |
 
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| Armoured hull | 近战 | 3 | 4+ | 6 | 0 | 1 | — |
+| 装甲外壳 | 近战 | 3 | 4+ | 6 | 0 | 1 | — |
 
 ## 技能
 - **Aerial Deployment**：If this model starts the game in Hover mode and in Strategic Reserves, it can be set up in the Reinforcements step of your first, second or third Movement phase, regardless of any mission rules.

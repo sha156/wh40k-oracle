@@ -28,7 +28,7 @@ updated: '2026-07-23'
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| Hideous mutations | 近战 | 4 | 3+ | 5 | -1 | 2 | — |
+| 骇人异变 | 近战 | 4 | 3+ | 5 | -1 | 2 | — |
 
 ## 技能
 - **Diseased Icon**：Melee weapons in the bearer’s unit have the [LETHAL HITS] ability.

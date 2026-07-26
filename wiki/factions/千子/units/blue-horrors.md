@@ -1,5 +1,5 @@
 ---
-id: 000004128
+id: '000004128'
 name_zh: 蓝惧妖
 name_en: Blue Horrors
 faction: 千子
@@ -28,8 +28,8 @@ updated: '2026-07-23'
 ## 射击武器
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| 蓝焰 | 18" | 2 | 4+ | 3 | -1 | 1 | 灵能，[[core-rules/pistol.md\|手枪]] |
-| 黄焰 | 18" | 2 | 5+ | 2 | -1 | 1 | 灵能，[[core-rules/pistol.md\|手枪]] |
+| 蓝焰 | 18" | 2 | 4+ | 3 | -1 | 1 | [[core-rules/pistol.md\|手枪]]，[[core-rules/psychic-attacks.md\|灵能]] |
+| 黄焰 | 18" | 2 | 5+ | 2 | -1 | 1 | [[core-rules/pistol.md\|手枪]]，[[core-rules/psychic-attacks.md\|灵能]] |
 
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |

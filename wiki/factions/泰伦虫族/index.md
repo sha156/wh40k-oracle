@@ -1,6 +1,23 @@
 # 泰伦虫族
 
-_Last updated: 2026-07-23 12:10 UTC_
+_Last updated: 2026-07-26 08:40 UTC_
+
+## 分队
+
+- [[factions/泰伦虫族/detachments/assimilation-swarm|Assimilation Swarm]] — 泰伦虫族的分队「Assimilation Swarm」，分队规则「Feed the Swarm」。
+- [[factions/泰伦虫族/detachments/biotide|Biotide]] — 泰伦虫族的分队「Biotide」，分队规则「Unstoppable Swarm」。
+- [[factions/泰伦虫族/detachments/boarding-swarm|Boarding Swarm]] — 泰伦虫族的分队「Boarding Swarm」，分队规则「Priority Predation」。
+- [[factions/泰伦虫族/detachments/crusher-stampede|Crusher Stampede]] — 泰伦虫族的分队「Crusher Stampede」，分队规则「Enraged Behemoths」。
+- [[factions/泰伦虫族/detachments/infestation-swarm|Infestation Swarm]] — 泰伦虫族的分队「Infestation Swarm」，分队规则「Half-Glimpsed Shadows」。
+- [[factions/泰伦虫族/detachments/invasion-fleet|Invasion Fleet]] — 泰伦虫族的分队「Invasion Fleet」，分队规则「Hyper-adaptations」。
+- [[factions/泰伦虫族/detachments/synaptic-nexus|Synaptic Nexus]] — 泰伦虫族的分队「Synaptic Nexus」，分队规则「Synaptic Imperatives」。
+- [[factions/泰伦虫族/detachments/tyranid-attack|Tyranid Attack]] — 泰伦虫族的分队「Tyranid Attack」，分队规则「Xeno-Terror」。
+- [[factions/泰伦虫族/detachments/unending-swarm|Unending Swarm]] — 泰伦虫族的分队「Unending Swarm」，分队规则「Insurmountable Odds」。
+- [[factions/泰伦虫族/detachments/vanguard-onslaught|Vanguard Onslaught]] — 泰伦虫族的分队「Vanguard Onslaught」，分队规则「Questing Tendrils」。
+- [[factions/泰伦虫族/detachments/ambush-predators|伏击捕食者]] — 泰伦虫族的分队「伏击捕食者」。
+- [[factions/泰伦虫族/detachments/subterranean-assault|地底突袭]] — 泰伦虫族的分队「地底突袭」，分队规则「Surprise Assault」。
+- [[factions/泰伦虫族/detachments/warrior-bioform-onslaught|战斗生物总攻]] — 泰伦虫族的分队「战斗生物总攻」，分队规则「Leader-beasts」。
+- [[factions/泰伦虫族/detachments/talons-of-the-norn-queen|诺恩女王之爪]] — 泰伦虫族的分队「诺恩女王之爪」。
 
 ## 单位
 
@@ -61,4 +78,124 @@ _Last updated: 2026-07-23 12:10 UTC_
 - [[factions/泰伦虫族/units/norn-emissary|诺恩使者]] — 
 - [[factions/泰伦虫族/units/norn-assimilator|诺恩同化者]] — 
 - [[factions/泰伦虫族/units/hyperadapted-raveners|超适应蛇虫]] — 
+
+## 策略技能
+
+- [[factions/泰伦虫族/stratagems/ablative-carapace|ABLATIVE CARAPACE]] — 2 CP、Shooting or Fight phase、Assimilation Swarm 分队、Epic Deed...
+- [[factions/泰伦虫族/stratagems/adrenal-surge|ADRENAL SURGE]] — 2 CP、Fight phase、Invasion Fleet 分队、Battle Tactic Stratagem。
+- [[factions/泰伦虫族/stratagems/adrenalised-slaughter|ADRENALISED SLAUGHTER]] — 1 CP、Fight phase、Boarding Swarm 分队、Strategic Ploy Stratagem。
+- [[factions/泰伦虫族/stratagems/assassin-beasts|ASSASSIN BEASTS]] — 1 CP、Fight phase、Vanguard Onslaught 分队、Battle Tactic Stratag...
+- [[factions/泰伦虫族/stratagems/bio-acid-surge|BIO-ACID SURGE]] — 1 CP、Fight phase、Tyranid Attack 分队、Battle Tactic Stratagem。
+- [[factions/泰伦虫族/stratagems/bounding-advance|BOUNDING ADVANCE]] — 1 CP、Movement phase、Unending Swarm 分队、Battle Tactic Stratage...
+- [[factions/泰伦虫族/stratagems/broodguard-impulse|BROODGUARD IMPULSE]] — 1 CP、Any phase、Assimilation Swarm 分队、Epic Deed Stratagem。
+- [[factions/泰伦虫族/stratagems/corrosive-viscera|CORROSIVE VISCERA]] — 1 CP、Shooting or Fight phase、Crusher Stampede 分队、Strategic P...
+- [[factions/泰伦虫族/stratagems/death-frenzy|DEATH FRENZY]] — 1 CP、Fight phase、Invasion Fleet 分队、Strategic Ploy Stratagem。
+- [[factions/泰伦虫族/stratagems/endless-swarm|ENDLESS SWARM]] — 1 CP、Command phase、Invasion Fleet 分队、Strategic Ploy Stratage...
+- [[factions/泰伦虫族/stratagems/expendable-biomass|EXPENDABLE BIOMASS]] — 1 CP、Shooting phase、Tyranid Attack 分队、Strategic Ploy Stratag...
+- [[factions/泰伦虫族/stratagems/hive-sight|HIVE SIGHT]] — 1 CP、Charge phase、Tyranid Attack 分队、Strategic Ploy Stratagem...
+- [[factions/泰伦虫族/stratagems/hunting-grounds|HUNTING GROUNDS]] — 1 CP、Movement phase、Infestation Swarm 分队、Strategic Ploy Stra...
+- [[factions/泰伦虫族/stratagems/hyperadrenal-reflexes|HYPERADRENAL REFLEXES]] — 1 CP、Fight phase、Infestation Swarm 分队、Battle Tactic Stratage...
+- [[factions/泰伦虫族/stratagems/hypersensory-scillia|HYPERSENSORY SCILLIA]] — 2 CP、Movement phase、Vanguard Onslaught 分队、Strategic Ploy Str...
+- [[factions/泰伦虫族/stratagems/imperative-dominance|IMPERATIVE DOMINANCE]] — 1 CP、Command phase、Synaptic Nexus 分队、Strategic Ploy Stratage...
+- [[factions/泰伦虫族/stratagems/invisible-hunter|INVISIBLE HUNTER]] — 1 CP、Fight phase、Vanguard Onslaught 分队、Strategic Ploy Strata...
+- [[factions/泰伦虫族/stratagems/irresistible-will|IRRESISTIBLE WILL]] — 1 CP、Shooting or Fight phase、Synaptic Nexus 分队、Battle Tactic...
+- [[factions/泰伦虫族/stratagems/lithe-killers|LITHE KILLERS]] — 1 CP、Fight phase、Boarding Swarm 分队、Battle Tactic Stratagem。
+- [[factions/泰伦虫族/stratagems/living-avalanche|LIVING AVALANCHE]] — 1 CP、Movement phase、Biotide 分队、Strategic Ploy Stratagem。
+- [[factions/泰伦虫族/stratagems/massive-impact|MASSIVE IMPACT]] — 1 CP、Charge phase、Crusher Stampede 分队、Epic Deed Stratagem。
+- [[factions/泰伦虫族/stratagems/onrushing-horde|ONRUSHING HORDE]] — 1 CP、Shooting phase、Biotide 分队、Battle Tactic Stratagem。
+- [[factions/泰伦虫族/stratagems/outflank|OUTFLANK]] — 1 CP、Fight phase、Infestation Swarm 分队、Strategic Ploy Stratag...
+- [[factions/泰伦虫族/stratagems/override-instincts|OVERRIDE INSTINCTS]] — 1 CP、Movement phase、Synaptic Nexus 分队、Strategic Ploy Stratag...
+- [[factions/泰伦虫族/stratagems/overrun|OVERRUN]] — 1 CP、Fight phase、Invasion Fleet 分队、Strategic Ploy Stratagem。
+- [[factions/泰伦虫族/stratagems/pervasive-dread|PERVASIVE DREAD]] — 1 CP、Fight phase、Infestation Swarm 分队、Strategic Ploy Stratag...
+- [[factions/泰伦虫族/stratagems/phagic-spores|PHAGIC SPORES]] — 1 CP、Shooting or Fight phase、Tyranid Attack 分队、Wargear Strat...
+- [[factions/泰伦虫族/stratagems/predatory-imperative|PREDATORY IMPERATIVE]] — 1 CP、Command phase、Invasion Fleet 分队、Strategic Ploy Stratage...
+- [[factions/泰伦虫族/stratagems/predatory-pounce|PREDATORY POUNCE]] — 1 CP、Movement phase、Boarding Swarm 分队、Strategic Ploy Stratag...
+- [[factions/泰伦虫族/stratagems/preservation-imperative|PRESERVATION IMPERATIVE]] — 1 CP、Shooting phase、Unending Swarm 分队、Strategic Ploy Stratag...
+- [[factions/泰伦虫族/stratagems/rampaging-monstrosities|RAMPAGING MONSTROSITIES]] — 1 CP、Fight phase、Crusher Stampede 分队、Battle Tactic Stratagem...
+- [[factions/泰伦虫族/stratagems/rapacious-hunger|RAPACIOUS HUNGER]] — 1 CP、Fight phase、Assimilation Swarm 分队、Battle Tactic Stratag...
+- [[factions/泰伦虫族/stratagems/rapid-regeneration|RAPID REGENERATION]] — 1 CP、Shooting or Fight phase、Invasion Fleet 分队、Battle Tactic...
+- [[factions/泰伦虫族/stratagems/reclaim-biomass|RECLAIM BIOMASS]] — 1 CP、Any phase、Assimilation Swarm 分队、Strategic Ploy Stratage...
+- [[factions/泰伦虫族/stratagems/reinforced-hive-node|REINFORCED HIVE NODE]] — 1 CP、Shooting or Fight phase、Synaptic Nexus 分队、Battle Tactic...
+- [[factions/泰伦虫族/stratagems/restorative-impulse|RESTORATIVE IMPULSE]] — 1 CP、Command phase、战斗生物总攻 分队、Strategic Ploy Stratagem。
+- [[factions/泰伦虫族/stratagems/retreat-below|RETREAT BELOW]] — 1 CP、Fight phase、地底突袭 分队、Strategic Ploy Stratagem。
+- [[factions/泰伦虫族/stratagems/savage-roar|SAVAGE ROAR]] — 1 CP、Fight phase、Crusher Stampede 分队、Battle Tactic Stratagem...
+- [[factions/泰伦虫族/stratagems/secure-biomass|SECURE BIOMASS]] — 1 CP、Fight phase、Assimilation Swarm 分队、Strategic Ploy Strata...
+- [[factions/泰伦虫族/stratagems/seeded-broods|SEEDED BROODS]] — 1 CP、Movement phase、Vanguard Onslaught 分队、Strategic Ploy Str...
+- [[factions/泰伦虫族/stratagems/spontaneous-hypercorrosion|SPONTANEOUS HYPERCORROSION]] — 1 CP、Shooting or Fight phase、战斗生物总攻 分队、Wargear Stratagem。
+- [[factions/泰伦虫族/stratagems/squirming-masses|SQUIRMING MASSES]] — 1 CP、Movement phase、Biotide 分队、Strategic Ploy Stratagem。
+- [[factions/泰伦虫族/stratagems/surprise-assault|SURPRISE ASSAULT]] — 1 CP、Shooting or Fight phase、Vanguard Onslaught 分队、Battle Ta...
+- [[factions/泰伦虫族/stratagems/swarm-hunters|SWARM HUNTERS]] — 1 CP、Shooting phase、Biotide 分队、Battle Tactic Stratagem。
+- [[factions/泰伦虫族/stratagems/swarm-guided-salvoes|SWARM-GUIDED SALVOES]] — 1 CP、Shooting phase、Crusher Stampede 分队、Battle Tactic Strata...
+- [[factions/泰伦虫族/stratagems/swarming-masses|SWARMING MASSES]] — 1 CP、Shooting or Fight phase、Unending Swarm 分队、Battle Tactic...
+- [[factions/泰伦虫族/stratagems/synaptic-amplification|SYNAPTIC AMPLIFICATION]] — 1 CP、Shooting or Fight phase、战斗生物总攻 分队、Strategic Ploy Strata...
+- [[factions/泰伦虫族/stratagems/synaptic-channelling|SYNAPTIC CHANNELLING]] — 1 CP、Command phase、Synaptic Nexus 分队、Battle Tactic Stratagem...
+- [[factions/泰伦虫族/stratagems/synaptic-goading|SYNAPTIC GOADING]] — 1 CP、Any phase、Unending Swarm 分队、Strategic Ploy Stratagem。
+- [[factions/泰伦虫族/stratagems/synaptic-shield|SYNAPTIC SHIELD]] — 1 CP、Shooting phase、战斗生物总攻 分队、Strategic Ploy Stratagem。
+- [[factions/泰伦虫族/stratagems/talon-tip-swarm|TALON-TIP SWARM]] — 1 CP、Fight phase、Boarding Swarm 分队、Strategic Ploy Stratagem。
+- [[factions/泰伦虫族/stratagems/teeming-masses|TEEMING MASSES]] — 1 CP、Shooting or Fight phase、Unending Swarm 分队、Battle Tactic...
+- [[factions/泰伦虫族/stratagems/the-smothering-shadow|THE SMOTHERING SHADOW]] — 1 CP、Any phase、Synaptic Nexus 分队、Strategic Ploy Stratagem。
+- [[factions/泰伦虫族/stratagems/tyrannoformed|TYRANNOFORMED]] — 1 CP、Command phase、Assimilation Swarm 分队、Strategic Ploy Stra...
+- [[factions/泰伦虫族/stratagems/unending-waves|UNENDING WAVES]] — 2 CP、Any phase、Unending Swarm 分队、Strategic Ploy Stratagem。
+- [[factions/泰伦虫族/stratagems/unseen-lurkers|UNSEEN LURKERS]] — 1 CP、Shooting phase、Vanguard Onslaught 分队、Strategic Ploy Str...
+- [[factions/泰伦虫族/stratagems/untrammelled-ferocity|UNTRAMMELLED FEROCITY]] — 1 CP、Movement phase、Crusher Stampede 分队、Strategic Ploy Strat...
+- [[factions/泰伦虫族/stratagems/scanner-gheist|侦测鬼影]] — 1 CP、Fight phase、伏击捕食者 分队。
+- [[factions/泰伦虫族/stratagems/enfilading-emergence|侧袭火力]] — 1 CP、Movement phase、地底突袭 分队、Strategic Ploy Stratagem。
+- [[factions/泰伦虫族/stratagems/counterpredation|反狩猎]] — 1 CP、Fight phase、伏击捕食者 分队。
+- [[factions/泰伦虫族/stratagems/tunnel-network|地道网络]] — 1 CP、Movement phase、地底突袭 分队、Strategic Ploy Stratagem。
+- [[factions/泰伦虫族/stratagems/parasitic-payload|寄生弹药]] — 1 CP、Shooting phase、战斗生物总攻 分队、Strategic Ploy Stratagem。
+- [[factions/泰伦虫族/stratagems/alien-physiology|异种体格]] — 1 CP、Shooting or Fight phase、战斗生物总攻 分队。
+- [[factions/泰伦虫族/stratagems/synaptic-micronodes|微型突触节点]] — 1 CP、Movement phase、战斗生物总攻 分队、Strategic Ploy Stratagem。
+- [[factions/泰伦虫族/stratagems/tanglestrike-rounds|束缚弹药]] — 1 CP、Shooting phase、诺恩女王之爪 分队。
+- [[factions/泰伦虫族/stratagems/lesser-prey|渺小猎物]] — 1 CP、Fight phase、诺恩女王之爪 分队。
+- [[factions/泰伦虫族/stratagems/catalytic-biofortification|生物防御催化]] — 1 CP、Any phase、诺恩女王之爪 分队。
+- [[factions/泰伦虫族/stratagems/swarming-assault|虫群强袭]] — 1 CP、Charge phase、地底突袭 分队、Strategic Ploy Stratagem。
+- [[factions/泰伦虫族/stratagems/replenishing-swarms|补充虫群]] — 1 CP、Movement phase、地底突袭 分队、Wargear Stratagem。
+- [[factions/泰伦虫族/stratagems/hypersensory-adaptations|超感官适应]] — 1 CP、Shooting phase、伏击捕食者 分队。
+- [[factions/泰伦虫族/stratagems/adaptive-optimisation|适应优化]] — 1 CP、Command phase、地底突袭 分队、Wargear Stratagem。
+
+## 强化
+
+- [[factions/泰伦虫族/enhancements/adaptive-biology|Adaptive Biology]] — 25 分、Invasion Fleet 分队。
+- [[factions/泰伦虫族/enhancements/adrenalised-onslaught|Adrenalised Onslaught]] — 15 分、Unending Swarm 分队。
+- [[factions/泰伦虫族/enhancements/alien-cunning|Alien Cunning]] — 30 分、Invasion Fleet 分队。
+- [[factions/泰伦虫族/enhancements/biophagic-flow-aura|Biophagic Flow (Aura)]] — 10 分、Assimilation Swarm 分队。
+- [[factions/泰伦虫族/enhancements/chameleonic|Chameleonic]] — 15 分、Vanguard Onslaught 分队。
+- [[factions/泰伦虫族/enhancements/elevated-might|Elevated Might]] — 30 分、战斗生物总攻 分队。
+- [[factions/泰伦虫族/enhancements/enraged-reserves|Enraged Reserves]] — 20 分、Crusher Stampede 分队。
+- [[factions/泰伦虫族/enhancements/hunting-grounds|Hunting Grounds]] — 20 分、Vanguard Onslaught 分队。
+- [[factions/泰伦虫族/enhancements/hypersurge-gland|Hypersurge Gland]] — 0 分、Biotide 分队。
+- [[factions/泰伦虫族/enhancements/instinctive-defence|Instinctive Defence]] — 15 分、Assimilation Swarm 分队。
+- [[factions/泰伦虫族/enhancements/monoform-predators|Monoform Predators]] — 0 分、Boarding Swarm 分队。
+- [[factions/泰伦虫族/enhancements/monstrous-nemesis|Monstrous Nemesis]] — 25 分、Crusher Stampede 分队。
+- [[factions/泰伦虫族/enhancements/naturalised-camouflage|Naturalised Camouflage]] — 30 分、Unending Swarm 分队。
+- [[factions/泰伦虫族/enhancements/neuronode|Neuronode]] — 20 分、Vanguard Onslaught 分队。
+- [[factions/泰伦虫族/enhancements/null-nodules|Null Nodules]] — 10 分、Crusher Stampede 分队。
+- [[factions/泰伦虫族/enhancements/ocular-adaptation|Ocular Adaptation]] — 20 分、战斗生物总攻 分队。
+- [[factions/泰伦虫族/enhancements/ominous-presence|Ominous Presence]] — 15 分、Crusher Stampede 分队。
+- [[factions/泰伦虫族/enhancements/parasitic-biomorphology|Parasitic Biomorphology]] — 25 分、Assimilation Swarm 分队。
+- [[factions/泰伦虫族/enhancements/perfectly-adapted|Perfectly Adapted]] — 15 分、Invasion Fleet 分队。
+- [[factions/泰伦虫族/enhancements/piercing-talons|Piercing Talons]] — 25 分、Unending Swarm 分队。
+- [[factions/泰伦虫族/enhancements/power-of-the-hive-mind|Power of the Hive Mind]] — 10 分、Synaptic Nexus 分队。
+- [[factions/泰伦虫族/enhancements/psi-spoor-sensitivity|Psi-spoor Sensitivity]] — 0 分、Infestation Swarm 分队。
+- [[factions/泰伦虫族/enhancements/psychostatic-disruption|Psychostatic Disruption]] — 30 分、Synaptic Nexus 分队。
+- [[factions/泰伦虫族/enhancements/regenerating-monstrosity|Regenerating Monstrosity]] — 20 分、Assimilation Swarm 分队。
+- [[factions/泰伦虫族/enhancements/reinforced-carapace|Reinforced Carapace]] — 0 分、Tyranid Attack 分队。
+- [[factions/泰伦虫族/enhancements/relentless-hunger|Relentless Hunger]] — 20 分、Unending Swarm 分队。
+- [[factions/泰伦虫族/enhancements/sensory-assimilation|Sensory Assimilation]] — 20 分、战斗生物总攻 分队。
+- [[factions/泰伦虫族/enhancements/stalker|Stalker]] — 10 分、Vanguard Onslaught 分队。
+- [[factions/泰伦虫族/enhancements/stalking-menace|Stalking Menace]] — 0 分、Infestation Swarm 分队。
+- [[factions/泰伦虫族/enhancements/synaptic-beacon|Synaptic Beacon]] — 0 分、Biotide 分队。
+- [[factions/泰伦虫族/enhancements/synaptic-control|Synaptic Control]] — 20 分、Synaptic Nexus 分队。
+- [[factions/泰伦虫族/enhancements/synaptic-goad|Synaptic Goad]] — 0 分、Tyranid Attack 分队。
+- [[factions/泰伦虫族/enhancements/synaptic-linchpin|Synaptic Linchpin]] — 20 分、Invasion Fleet 分队。
+- [[factions/泰伦虫族/enhancements/synaptic-tyrant|Synaptic Tyrant]] — 10 分、战斗生物总攻 分队。
+- [[factions/泰伦虫族/enhancements/the-dirgeheart-of-kharis-aura|The Dirgeheart of Kharis (Aura)]] — 15 分、Synaptic Nexus 分队。
+- [[factions/泰伦虫族/enhancements/tremor-senses|Tremor Senses]] — 20 分、地底突袭 分队。
+- [[factions/泰伦虫族/enhancements/vanguard-intellect|Vanguard Intellect]] — 15 分、地底突袭 分队。
+- [[factions/泰伦虫族/enhancements/destabilising-predation|动摇捕猎]] — 分数未知、诺恩女王之爪 分队。
+- [[factions/泰伦虫族/enhancements/encircling-horrors|包围恐惧]] — 分数未知、伏击捕食者 分队。
+- [[factions/泰伦虫族/enhancements/synaptic-strategy|战略突触]] — 15 分、地底突袭 分队。
+- [[factions/泰伦虫族/enhancements/trygon-prime|掘蟒首领]] — 20 分、地底突袭 分队。
+- [[factions/泰伦虫族/enhancements/synaptoprescience|突触科学]] — 分数未知、诺恩女王之爪 分队。
+- [[factions/泰伦虫族/enhancements/cryptophotaic-camouflage|隐蔽伪装]] — 分数未知、伏击捕食者 分队。
 

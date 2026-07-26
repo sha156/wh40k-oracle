@@ -26,12 +26,12 @@ updated: '2026-07-23'
 ## 射击武器
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| Pulse rifle | 30" | 1 | 4+ | 5 | 0 | 1 | [[core-rules/rapid-fire.md\|rapid fire 1]] |
+| 脉冲步枪 | 30" | 1 | 4+ | 5 | 0 | 1 | [[core-rules/rapid-fire.md\|速射1]] |
 
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| Close combat weapons | 近战 | 2 | 5+ | 3 | 0 | 1 | — |
+| 格斗武器 | 近战 | 2 | 5+ | 3 | 0 | 1 | — |
 
 ## 技能
 - **High-intensity Markerlights**：Each time this unit is an Observer unit, until the end of the phase, each time a model in its Guided unit makes an attack that targets their Spotted unit, you can re-roll the Hit roll.

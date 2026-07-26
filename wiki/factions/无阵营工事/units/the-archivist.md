@@ -1,5 +1,5 @@
 ---
-id: 000002093
+id: '000002093'
 name_en: The Archivist
 faction: 无阵营工事
 type: unit
@@ -24,7 +24,7 @@ updated: '2026-07-23'
 ## 射击武器
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| Atomic disassembler | 18" | 1 | 3+ | 8 | -2 | 2 | ignores cover，pistol |
+| Atomic disassembler | 18" | 1 | 3+ | 8 | -2 | 2 | [[core-rules/ignores-cover.md\|无视掩体]]，[[core-rules/pistol.md\|手枪]] |
 
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |

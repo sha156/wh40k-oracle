@@ -1,0 +1,54 @@
+# .dockerignore —— 决定 `COPY . .` 能看到什么（Stage 5）
+#
+# 大件资产一律排除、改由 compose 只读挂载：opt/ 4.5G、data/ 1.1G、
+# local_vector_store/ 29M、db/ 34M。漏掉任何一条，构建上下文就会往 daemon
+# 传几个 G，构建慢到以为卡死。
+
+# ── 运行期挂载的大件资产 ──
+opt/
+data/
+local_vector_store/
+db/
+data_refined/
+data_blacklibrary/
+db_sources/
+archive/
+wiki_build/
+
+# ── 本地环境 / 缓存 ──
+.venv/
+venv/
+**/__pycache__/
+**/*.py[cod]
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# ── 前端（独立镜像构建，见 web/Dockerfile）──
+web/node_modules/
+web/.next/
+
+# ── 版本控制与助手配置 ──
+.git/
+.gitignore
+.claude/
+.superpowers/
+
+# ── 密钥：绝不进镜像层（进了就洗不掉）──
+.env
+.env.*
+!.env.example
+.streamlit/secrets.toml
+.fiddler_key
+
+# ── 运行产物 / 噪声 ──
+*.log
+*.err
+*.out
+temp.pdf
+qa_*_results.json
+qa_agent_*.json
+qa_classic_*.json
+qa_layered_*.json
+.DS_Store
+Thumbs.db

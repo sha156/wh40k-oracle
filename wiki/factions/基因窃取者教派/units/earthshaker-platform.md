@@ -1,5 +1,5 @@
 ---
-id: 000003956
+id: '000003956'
 name_en: Earthshaker Platform
 faction: 基因窃取者教派
 type: unit
@@ -24,12 +24,12 @@ updated: '2026-07-23'
 ## 射击武器
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| Earthshaker cannon | 240" | D6+3 | 4+ | 8 | -2 | 2 | blast，indirect fire |
+| 撼地炮 | 240" | D6+3 | 4+ | 8 | -2 | 2 | [[core-rules/blast.md\|爆炸]]，[[core-rules/indirect-fire.md\|曲射]] |
 
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| Close combat weapons | 近战 | 3 | 4+ | 3 | 0 | 1 | — |
+| 格斗武器 | 近战 | 3 | 4+ | 3 | 0 | 1 | — |
 
 ## 技能
 - **Earthshaker Rounds**：In your Shooting phase, after this model has shot, if one or more of those attacks made with its earthshaker cannon scored a hit against an enemy Infantry unit, until the end of your opponent’s next turn, that unit is shaken. While a unit is shaken, subtract 2" from its Move characteristic and subtract 2 from Advance and Charge rolls made for it.

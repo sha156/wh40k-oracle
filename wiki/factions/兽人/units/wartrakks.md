@@ -1,5 +1,6 @@
 ---
 id: '000000034'
+name_zh: 战履车
 name_en: Wartrakks
 faction: 兽人
 type: unit
@@ -29,13 +30,13 @@ updated: '2026-07-23'
 ## 射击武器
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| Rack of rokkits | 24" | D3+1 | 5+ | 9 | -2 | 3 | blast |
-| Twin big shoota | 36" | 3 | 5+ | 5 | 0 | 1 | [[core-rules/rapid-fire.md\|rapid fire 2]]，twin-linked |
+| 火箭巢 | 24" | D3+1 | 5+ | 9 | -2 | 3 | [[core-rules/blast.md\|爆炸]] |
+| 双联大突突枪 | 36" | 3 | 5+ | 5 | 0 | 1 | [[core-rules/rapid-fire.md\|速射2]]，[[core-rules/twin-linked.md\|双联]] |
 
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| Spiked wheel | 近战 | 2 | 4+ | 6 | 0 | 1 | — |
+| 尖刺车轮 | 近战 | 2 | 4+ | 6 | 0 | 1 | — |
 
 ## 技能
 - **Drive-by Dakka**：Each time a model in this unit makes a ranged attack that targets a unit within 9", improve the Armour Penetration characteristic of that attack by 1.

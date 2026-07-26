@@ -1,5 +1,5 @@
 ---
-id: 000002068
+id: '000002068'
 name_en: Battle Sanctum
 faction: 战斗修女
 type: unit

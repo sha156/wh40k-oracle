@@ -1,5 +1,5 @@
 ---
-id: 000003831
+id: '000003831'
 name_zh: 圣血连长
 name_en: Blood Angels Captain
 faction: 星际战士
@@ -29,15 +29,15 @@ updated: '2026-07-23'
 ## 射击武器
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| Heavy bolt pistol | 18" | 1 | 2+ | 4 | -1 | 1 | Pistol |
-| Inferno pistol | 6" | 1 | 2+ | 8 | -4 | D3 | [[core-rules/melta.md\|melta 2]]，pistol |
+| 重型爆弹手枪 | 18" | 1 | 2+ | 4 | -1 | 1 | [[core-rules/pistol.md\|手枪]] |
+| 狱火手枪 | 6" | 1 | 2+ | 8 | -4 | D3 | [[core-rules/melta.md\|热熔2]]，[[core-rules/pistol.md\|手枪]] |
 
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
 | 精工链锯剑 | 近战 | 7 | 2+ | 4 | -1 | 2 | — |
-| Power fist | 近战 | 5 | 2+ | 8 | -2 | 2 | — |
-| Relic weapon | 近战 | 6 | 2+ | 5 | -2 | 2 | — |
+| 动力拳 | 近战 | 5 | 2+ | 8 | -2 | 2 | — |
+| 圣物武器 | 近战 | 6 | 2+ | 5 | -2 | 2 | — |
 
 ## 技能
 - **【阵营技能】：破敌重誓**
@@ -49,4 +49,4 @@ updated: '2026-07-23'
 
 ## 关键词
 - **阵营关键词**：Adeptus Astartes，Blood Angels
-- **普通关键词**：[[core-rules/infantry.md|Infantry]]，[[core-rules/character.md|Character]]，[[core-rules/grenades.md|Grenades]]，Imperium，Captain，Tacticus
+- **普通关键词**：[[core-rules/infantry.md|Infantry]]，[[core-rules/character.md|Character]]，[[core-rules/grenades.md|Grenades]]，Imperium，[[factions/星际战士/units/captain.md|Captain]]，Tacticus

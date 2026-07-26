@@ -1,5 +1,6 @@
 ---
 id: '000001604'
+name_zh: 恶角野兽人
 name_en: Fellgor Beastmen
 faction: 混沌星际战士
 type: unit
@@ -25,22 +26,23 @@ updated: '2026-07-23'
 ## 射击武器
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| Autopistol | 12" | 1 | 4+ | 3 | 0 | 1 | pistol |
-| Bolt pistol | 12" | 1 | 4+ | 4 | 0 | 1 | pistol |
-| Corrupted stave | 18" | D3 | 4+ | 5 | -1 | 1 | devastating wounds，psychic |
-| Plasma pistol – standard | 12" | 1 | 4+ | 7 | -2 | 1 | pistol |
-| Plasma pistol – supercharge | 12" | 1 | 4+ | 8 | -3 | 2 | hazardous，pistol |
+| 自动手枪 | 12" | 1 | 4+ | 3 | 0 | 1 | [[core-rules/pistol.md\|手枪]] |
+| 爆弹手枪 | 12" | 1 | 4+ | 4 | 0 | 1 | [[core-rules/pistol.md\|手枪]] |
+| 腐化法杖 | 18" | D3 | 4+ | 5 | -1 | 1 | [[core-rules/devastating-wounds.md\|毁灭伤害]]，[[core-rules/psychic-attacks.md\|灵能]] |
+| 等离子手枪（标准） | 12" | 1 | 4+ | 7 | -2 | 1 | [[core-rules/pistol.md\|手枪]] |
+| 等离子手枪（过载） | 12" | 1 | 4+ | 8 | -3 | 2 | [[core-rules/hazardous.md\|危险]]，[[core-rules/pistol.md\|手枪]] |
 
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| Chainsword | 近战 | 3 | 4+ | 4 | 0 | 1 | — |
-| Close combat weapon | 近战 | 2 | 4+ | 4 | 0 | 1 | — |
-| Corrupted stave | 近战 | 2 | 4+ | 4 | -1 | D3 | devastating wounds，psychic |
-| Great weapon | 近战 | 2 | 5+ | 8 | -1 | 2 | — |
+| 链锯剑 | 近战 | 3 | 4+ | 4 | 0 | 1 | — |
+| 格斗武器 | 近战 | 2 | 4+ | 4 | 0 | 1 | — |
+| 腐化法杖  | 近战 | 2 | 4+ | 4 | -1 | D3 | [[core-rules/devastating-wounds.md\|毁灭伤害]]，[[core-rules/psychic-attacks.md\|灵能]] |
+| 重型近战武器     | 近战 | 2 | 5+ | 8 | -1 | 2 | — |
 
 ## 技能
-- **Bestial Raiders**：If this unit starts the game in Strategic Reserves, it can be set up in the Reinforcements step of your first, second or third Movement phase, regardless of any mission rules. If this unit is in Strategic Reserves, for the purposes of setting up this unit on the battlefield, treat the current battle round number as being one higher than it actually is.
+- **【阵营技能】：黑暗契约**：：每当一个敌方单位射击造成本单位至少 一个模型被消灭时，本单位如果不处于震慑状态可 以进行一次最多 D6 寸的特殊移动，但是这次移动必 须尽可能的更靠近最近的敌方单位（飞行器单位除 外），甚至可以进入敌方单位的接战范围
+- **兽化劫掠者**：如果本单位在游戏开始时处于战略预备队 中，则可以在你的第 1-3 回合的援军入场子阶段部署入 场，并且入场时算作比当前游戏大回合数多一回合
 
 ## 单位构成
 - **10个模型** — 60 分

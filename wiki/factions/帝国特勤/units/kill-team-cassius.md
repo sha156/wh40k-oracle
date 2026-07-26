@@ -1,5 +1,5 @@
 ---
-id: 000003821
+id: '000003821'
 name_en: Kill Team Cassius
 faction: 帝国特勤
 type: unit
@@ -30,23 +30,23 @@ updated: '2026-07-23'
 ## 射击武器
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| Bolt pistol | 12" | 1 | 3+ | 4 | 0 | 1 | pistol |
-| Boltgun | 24" | 2 | 3+ | 4 | 0 | 1 | — |
-| Deathwatch twin boltgun | 24" | 2 | 3+ | 4 | 0 | 1 | [[core-rules/twin-linked.md\|TWIN-LINKED]] |
-| Frag cannon | 18" | D3 | 4+ | 7 | -1 | 2 | blast，heavy，rapid fire d3 |
-| Heavy flamer | 12" | D6 | N/A | 5 | -1 | 1 | ignores cover，torrent |
-| Long Vigil ranged weapon | 24" | 1 | 4+ | 4 | 0 | 1 | [[core-rules/anti.md\|anti-infantry 4+]]，devastating wounds，[[core-rules/rapid-fire.md\|rapid fire 1]] |
-| Psychic Cleanse | 24" | D6 | 3+ | 5 | -1 | D3 | psychic |
+| 爆弹手枪 | 12" | 1 | 3+ | 4 | 0 | 1 | [[core-rules/pistol.md\|手枪]] |
+| 爆弹枪 | 24" | 2 | 3+ | 4 | 0 | 1 | — |
+| Deathwatch twin boltgun | 24" | 2 | 3+ | 4 | 0 | 1 | [[core-rules/twin-linked.md\|双联]] |
+| 破片炮 | 18" | D3 | 4+ | 7 | -1 | 2 | [[core-rules/blast.md\|爆炸]]，[[core-rules/heavy.md\|重型]]，[[core-rules/rapid-fire.md\|速射D3]] |
+| 重型喷火器 | 12" | D6 | N/A | 5 | -1 | 1 | [[core-rules/ignores-cover.md\|无视掩体]]，[[core-rules/torrent.md\|洪流]] |
+| 长守远程武器 | 24" | 1 | 4+ | 4 | 0 | 1 | [[core-rules/anti.md\|针对步兵4+]]，[[core-rules/devastating-wounds.md\|毁灭伤害]]，[[core-rules/rapid-fire.md\|速射1]] |
+| Psychic Cleanse | 24" | D6 | 3+ | 5 | -1 | D3 | [[core-rules/psychic-attacks.md\|灵能]] |
 
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| Artificer crozius | 近战 | 5 | 2+ | 6 | -1 | 2 | — |
-| Close combat weapon | 近战 | 3 | 3+ | 5 | -2 | 1 | — |
-| Force weapon | 近战 | 5 | 2+ | 5 | -3 | D3 | psychic |
-| Long Vigil melee weapon | 近战 | 3 | 3+ | 5 | -2 | 1 | — |
-| Power fist | 近战 | 3 | 3+ | 8 | -2 | 2 | — |
-| Twin lightning claws | 近战 | 4 | 3+ | 5 | -2 | 1 | twin-linked |
+| 精工牧师权杖 | 近战 | 5 | 2+ | 6 | -1 | 2 | — |
+| 格斗武器 | 近战 | 3 | 3+ | 5 | -2 | 1 | — |
+| 灵能武器 | 近战 | 5 | 2+ | 5 | -3 | D3 | [[core-rules/psychic-attacks.md\|灵能]] |
+| 长守近战武器 | 近战 | 3 | 3+ | 5 | -2 | 1 | — |
+| 动力拳 | 近战 | 3 | 3+ | 8 | -2 | 2 | — |
+| 一对闪电爪 | 近战 | 4 | 3+ | 5 | -2 | 1 | [[core-rules/twin-linked.md\|双联]] |
 
 ## 技能
 - **Catechism of Death**：While this unit contains Chaplain Cassius, melee weapons equipped by models in this unit have the [DEVASTATING WOUNDS] ability.

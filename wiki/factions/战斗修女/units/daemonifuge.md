@@ -35,7 +35,7 @@ updated: '2026-07-23'
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| 圣洁 | 近战 | 4 | 2+ | 6 | -2 | 2 | [[core-rules/precision.md\|精准]]，[[core-rules/anti.md\|反混沌 2+]] |
+| 圣洁 | 近战 | 4 | 2+ | 6 | -2 | 2 | [[core-rules/anti.md\|针对混沌2+]]，[[core-rules/precision.md\|精准]] |
 | 流放者武器 | 近战 | 6 | 2+ | 4 | -2 | 1 | [[core-rules/precision.md\|精准]] |
 
 ## 技能

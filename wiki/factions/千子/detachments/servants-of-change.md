@@ -1,0 +1,32 @@
+---
+id: container-servants-of-change
+name_zh: 变化的仆从
+name_en: Servants of Change
+faction: 千子
+type: detachment
+detachment: Servants of Change
+tags:
+- detachment
+- detachment/千子
+- 千子
+sources:
+- book: 官方结构库 db/wh40k.sqlite（Wahapedia 11 版镜像）
+updated: '2026-07-26'
+---
+
+千子的分队「变化的仆从」。
+
+## 分队规则
+
+（源文本未提供）
+
+## 增强
+
+- [[factions/千子/enhancements/thicket-of-bladed-bone.md\|刃骨增生]]
+- [[factions/千子/enhancements/unravelled-fates.md\|解开命运]]
+
+## 战略
+
+- [[factions/千子/stratagems/prismatic-displacement.md\|棱镜移位]]
+- [[factions/千子/stratagems/temporal-instability.md\|时序失稳]]
+- [[factions/千子/stratagems/the-land-writhes.md\|大地翻涌]]

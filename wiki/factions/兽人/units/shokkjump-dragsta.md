@@ -1,5 +1,5 @@
 ---
-id: 000001539
+id: '000001539'
 name_zh: 折跃飚速车
 name_en: Shokkjump Dragsta
 faction: 兽人

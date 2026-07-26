@@ -1,5 +1,5 @@
 ---
-id: 000000899
+id: '000000899'
 name_zh: 大修女
 name_en: Canoness
 faction: 战斗修女
@@ -29,12 +29,12 @@ updated: '2026-07-23'
 ## 射击武器
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| Bolt pistol | 12" | 1 | 2+ | 4 | 0 | 1 | pistol |
-| 圣焰火盆 | 12" | D6 | N/A | 6 | -1 | 2 | [[core-rules/ignores-cover.md\|忽视掩体]]，[[core-rules/one-shot.md\|一次性]]，[[core-rules/torrent.md\|喷射]] |
-| Condemnor boltgun | 24" | 1 | 2+ | 4 | 0 | 1 | [[core-rules/anti.md\|anti-psyker 2+]]，devastating wounds，precision，[[core-rules/rapid-fire.md\|rapid fire 1]] |
-| 地狱火手枪 | 6" | 1 | 2+ | 8 | -4 | D3 | [[core-rules/melta.md\|热熔 2]]，[[core-rules/pistol.md\|手枪]] |
+| 爆弹手枪 | 12" | 1 | 2+ | 4 | 0 | 1 | [[core-rules/pistol.md\|手枪]] |
+| 圣焰火盆 | 12" | D6 | N/A | 6 | -1 | 2 | [[core-rules/ignores-cover.md\|无视掩体]]，[[core-rules/one-shot.md\|单发]]，[[core-rules/torrent.md\|洪流]] |
+| 降罪者爆弹枪 | 24" | 1 | 2+ | 4 | 0 | 1 | [[core-rules/anti.md\|针对灵能者2+]]，[[core-rules/devastating-wounds.md\|毁灭伤害]]，[[core-rules/precision.md\|精准]]，[[core-rules/rapid-fire.md\|速射1]] |
+| 地狱火手枪 | 6" | 1 | 2+ | 8 | -4 | D3 | [[core-rules/melta.md\|热熔2]]，[[core-rules/pistol.md\|手枪]] |
 | 等离子手枪(标准) | 12" | 1 | 2+ | 7 | -2 | 1 | [[core-rules/pistol.md\|手枪]] |
-| 等离子手枪(过载) | 12" | 1 | 2+ | 8 | -3 | 2 | [[core-rules/pistol.md\|手枪]]，[[core-rules/hazardous.md\|危险]] |
+| 等离子手枪(过载) | 12" | 1 | 2+ | 8 | -3 | 2 | [[core-rules/hazardous.md\|危险]]，[[core-rules/pistol.md\|手枪]] |
 
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |

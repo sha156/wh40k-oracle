@@ -24,13 +24,13 @@ updated: '2026-07-23'
 ## 射击武器
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| Twin lascannon | 48" | 1 | 3+ | 12 | -3 | D6+1 | twin-linked |
-| Xiphon missile battery | 60" | 3 | 3+ | 7 | -1 | 3 | [[core-rules/anti.md\|anti-fly 2+]] |
+| 双联激光炮 | 48" | 1 | 3+ | 12 | -3 | D6+1 | [[core-rules/twin-linked.md\|双联]] |
+| Xiphon missile battery | 60" | 3 | 3+ | 7 | -1 | 3 | [[core-rules/anti.md\|针对飞行2+]] |
 
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| Armoured hull | 近战 | 3 | 4+ | 6 | 0 | 1 | — |
+| 装甲外壳 | 近战 | 3 | 4+ | 6 | 0 | 1 | — |
 
 ## 技能
 - **Interceptor**：Each time this model makes a ranged attack that targets a unit that can Fly, add 1 to the Hit roll.

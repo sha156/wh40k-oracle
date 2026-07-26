@@ -1,5 +1,5 @@
 ---
-id: 000004190
+id: '000004190'
 name_zh: 大漩涡之主
 name_en: Masters of the Maelstrom
 faction: 混沌星际战士
@@ -28,17 +28,17 @@ updated: '2026-07-23'
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
 | 赦免者爆矢手枪 | 18" | 1 | 3+ | 5 | -1 | 2 | [[core-rules/pistol.md\|手枪]] |
-| Bolt pistol | 12" | 1 | 3+ | 4 | -1 | 1 | pistol |
-| Laspistol | 12" | 1 | 3+ | 4 | -1 | 1 | pistol |
+| 爆弹手枪 | 12" | 1 | 3+ | 4 | -1 | 1 | [[core-rules/pistol.md\|手枪]] |
+| 激光手枪 | 12" | 1 | 3+ | 4 | -1 | 1 | [[core-rules/pistol.md\|手枪]] |
 | 隆达西致残枪 | 18" | 3 | 3+ | 4 | -1 | 1 | [[core-rules/assault.md\|突击]] |
-| 精神扭曲 | 12" | 1 | 2+ | 6 | -2 | D6+1 | [[core-rules/precision.md\|精准]]，灵能 |
+| 精神扭曲 | 12" | 1 | 2+ | 6 | -2 | D6+1 | [[core-rules/precision.md\|精准]]，[[core-rules/psychic-attacks.md\|灵能]] |
 
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
 | 终结之斧 | 近战 | 6 | 2+ | 6 | -2 | 2 | [[core-rules/anti.md\|针对角色2+]]，[[core-rules/precision.md\|精准]] |
 | 机械拳套 | 近战 | 1 | 2+ | 6 | -2 | 2 | — |
-| 灵能权杖 | 近战 | 4 | 2+ | 6 | -2 | 2 | 灵能 |
+| 灵能权杖 | 近战 | 4 | 2+ | 6 | -2 | 2 | [[core-rules/psychic-attacks.md\|灵能]] |
 | 动力佩剑 | 近战 | 4 | 3+ | 4 | -2 | 1 | — |
 | 还原者阵列 | 近战 | 6 | 3+ | 4 | -2 | 1 | — |
 

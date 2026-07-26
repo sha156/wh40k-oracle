@@ -1,5 +1,6 @@
 ---
 id: '000000400'
+name_zh: 荣耀无畏机甲
 name_en: Venerable Dreadnought
 faction: 灰骑士
 type: unit
@@ -25,17 +26,17 @@ updated: '2026-07-23'
 ## 射击武器
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| Assault cannon | 24" | 6 | 3+ | 6 | 0 | 1 | devastating wounds |
-| Heavy flamer | 12" | D6 | N/A | 5 | -1 | 1 | ignores cover，torrent |
-| Heavy plasma cannon – standard | 36" | D3 | 3+ | 7 | -2 | 2 | blast |
-| Heavy plasma cannon – supercharge | 36" | D3 | 3+ | 8 | -3 | 3 | blast，hazardous |
-| Storm bolter | 24" | 2 | 3+ | 4 | 0 | 1 | [[core-rules/rapid-fire.md\|rapid fire 2]] |
-| Twin lascannon | 48" | 1 | 3+ | 12 | -3 | D6+1 | twin-linked |
+| 突击炮 | 24" | 6 | 3+ | 6 | 0 | 1 | [[core-rules/devastating-wounds.md\|毁灭伤害]] |
+| 重型喷火器 | 12" | D6 | N/A | 5 | -1 | 1 | [[core-rules/ignores-cover.md\|无视掩体]]，[[core-rules/torrent.md\|洪流]] |
+| 重型等离子炮—标准 | 36" | D3 | 3+ | 7 | -2 | 2 | [[core-rules/blast.md\|爆炸]] |
+| 重型等离子炮—过载 | 36" | D3 | 3+ | 8 | -3 | 3 | [[core-rules/blast.md\|爆炸]]，[[core-rules/hazardous.md\|危险]] |
+| 风暴爆弹枪 | 24" | 2 | 3+ | 4 | 0 | 1 | [[core-rules/rapid-fire.md\|速射2]] |
+| 双联激光炮 | 48" | 1 | 3+ | 12 | -3 | D6+1 | [[core-rules/twin-linked.md\|双联]] |
 
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| Dreadnought combat weapon | 近战 | 5 | 3+ | 12 | -2 | 3 | — |
+| 无畏格斗武器 | 近战 | 5 | 3+ | 12 | -2 | 3 | — |
 
 ## 技能
 - **Guidance of the Ancients (Psychic)**：In your Shooting phase, after this unit has shot, select one enemy unit hit by one or more of those attacks. Until the end of the phase, each time a Grey Knights model from your army makes an attack that targets that unit, add 1 to the Hit roll.

@@ -1,5 +1,5 @@
 ---
-id: 000000493
+id: '000000493'
 name_zh: 掘蟒
 name_en: Trygon
 faction: 泰伦虫族

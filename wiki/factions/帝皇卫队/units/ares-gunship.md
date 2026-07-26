@@ -1,5 +1,5 @@
 ---
-id: 000001680
+id: '000001680'
 name_zh: 阿瑞斯炮艇机
 name_en: Ares Gunship
 faction: 帝皇卫队

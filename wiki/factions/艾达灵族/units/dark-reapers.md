@@ -32,7 +32,7 @@ updated: '2026-07-23'
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
 | 灵族导弹发射器（击星弹头） | 48" | 1 | 2+ | 10 | -2 | D6 | [[core-rules/ignores-cover.md\|无视掩体]] |
-| 灵族导弹发射器（阳炎弹头） | 48" | D6 | 2+ | 4 | -1 | 1 | [[core-rules/ignores-cover.md\|无视掩体]]，[[core-rules/blast.md\|爆炸]] |
+| 灵族导弹发射器（阳炎弹头） | 48" | D6 | 2+ | 4 | -1 | 1 | [[core-rules/blast.md\|爆炸]]，[[core-rules/ignores-cover.md\|无视掩体]] |
 | 死神发射器（击星弹头） | 48" | 1 | 3+ | 10 | -2 | 3 | [[core-rules/ignores-cover.md\|无视掩体]] |
 | 死神发射器（群星弹头） | 48" | 2 | 3+ | 5 | -2 | 1 | [[core-rules/ignores-cover.md\|无视掩体]] |
 | 星镖炮 | 24" | 3 | 3+ | 6 | -1 | 2 | [[core-rules/ignores-cover.md\|无视掩体]]，[[core-rules/lethal-hits.md\|致命一击]] |

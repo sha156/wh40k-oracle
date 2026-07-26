@@ -1,15 +1,25 @@
 # 吞世者
 
-_Last updated: 2026-07-23 12:10 UTC_
+_Last updated: 2026-07-26 08:40 UTC_
+
+## 分队
+
+- [[factions/吞世者/detachments/berzerker-warband|Berzerker Warband]] — 吞世者的分队「Berzerker Warband」，分队规则「无情狂怒」。
+- [[factions/吞世者/detachments/boarding-butchers|Boarding Butchers]] — 吞世者的分队「Boarding Butchers」，分队规则「凶性专注」。
+- [[factions/吞世者/detachments/butchers-of-khorne|Butchers of Khorne]] — 吞世者的分队「Butchers of Khorne」。
+- [[factions/吞世者/detachments/cult-of-blood|Cult of Blood]] — 吞世者的分队「Cult of Blood」，分队规则「恐虐神像」。
+- [[factions/吞世者/detachments/goretrack-onslaught|Goretrack Onslaught]] — 吞世者的分队「Goretrack Onslaught」，分队规则「疾赴战场」。
+- [[factions/吞世者/detachments/khorne-daemonkin|Khorne Daemonkin]] — 吞世者的分队「Khorne Daemonkin」，分队规则「血税」。
+- [[factions/吞世者/detachments/possessed-slaughterband|Possessed Slaughterband]] — 吞世者的分队「Possessed Slaughterband」，分队规则「黄铜之怒」。
+- [[factions/吞世者/detachments/skullsworn|Skullsworn]] — 吞世者的分队「Skullsworn」，分队规则「收割战绩」。
+- [[factions/吞世者/detachments/brazen-engines|好战机械]] — 吞世者的分队「好战机械」。
+- [[factions/吞世者/detachments/vessels-of-wrath|怒火容器]] — 吞世者的分队「怒火容器」，分队规则「恐虐之怒」。
 
 ## 单位
 
 - [[factions/吞世者/units/blood-slaughterer|Blood Slaughterer]] — 
 - [[factions/吞世者/units/cerberus|Cerberus]] — 
 - [[factions/吞世者/units/chaos-thunderhawk|Chaos Thunderhawk]] — 
-- [[factions/吞世者/units/daemon-prince-of-khorne|Daemon Prince of Khorne]] — 
-- [[factions/吞世者/units/daemon-prince-of-khorne-with-wings|Daemon Prince of Khorne with Wings]] — 
-- [[factions/吞世者/units/defiler|Defiler]] — 
 - [[factions/吞世者/units/deredeo-dreadnought|Deredeo Dreadnought]] — 
 - [[factions/吞世者/units/falchion|Falchion]] — 
 - [[factions/吞世者/units/fellblade|Fellblade]] — 
@@ -22,7 +32,6 @@ _Last updated: 2026-07-23 12:10 UTC_
 - [[factions/吞世者/units/land-raider-achilles|Land Raider Achilles]] — 
 - [[factions/吞世者/units/land-raider-proteus|Land Raider Proteus]] — 
 - [[factions/吞世者/units/leviathan-dreadnought|Leviathan Dreadnought]] — 
-- [[factions/吞世者/units/lord-on-juggernaut|Lord on Juggernaut]] — 
 - [[factions/吞世者/units/mastodon|Mastodon]] — 
 - [[factions/吞世者/units/rapier-carrier|Rapier Carrier]] — 
 - [[factions/吞世者/units/relic-contemptor-dreadnought|Relic Contemptor Dreadnought]] — 
@@ -36,6 +45,7 @@ _Last updated: 2026-07-23 12:10 UTC_
 - [[factions/吞世者/units/typhon|Typhon]] — 
 - [[factions/吞世者/units/whirlwind-scorpius|Whirlwind Scorpius]] — 
 - [[factions/吞世者/units/xiphon-interceptor|Xiphon Interceptor]] — 
+- [[factions/吞世者/units/defiler|亵渎者]] — 
 - [[factions/吞世者/units/eightbound|八缚者]] — 
 - [[factions/吞世者/units/bloodthirster|嗜血狂魔]] — 
 - [[factions/吞世者/units/lord-invocatus|因维卡图斯尊主]] — 
@@ -43,10 +53,12 @@ _Last updated: 2026-07-23 12:10 UTC_
 - [[factions/吞世者/units/heldrake|地狱飞龙]] — 
 - [[factions/吞世者/units/angron|安格隆]] — 
 - [[factions/吞世者/units/chaos-terminators|帝皇之子混沌终结者]] — 
+- [[factions/吞世者/units/daemon-prince-of-khorne|恐虐恶魔王子]] — 
 - [[factions/吞世者/units/khorne-berzerkers|恐虐狂战士]] — 
 - [[factions/吞世者/units/khorne-lord-of-skulls|恐虐颅骨之主]] — 
 - [[factions/吞世者/units/bloodletters|放血鬼]] — 
 - [[factions/吞世者/units/skarbrand|斯卡布兰德]] — 
+- [[factions/吞世者/units/daemon-prince-of-khorne-with-wings|有翼恐虐恶魔王子]] — 
 - [[factions/吞世者/units/master-of-executions|枭首魔将]] — 
 - [[factions/吞世者/units/chaos-predator-annihilator|歼灭者型猎食者坦克]] — 
 - [[factions/吞世者/units/goremongers|洒血狂]] — 
@@ -60,6 +72,96 @@ _Last updated: 2026-07-23 12:10 UTC_
 - [[factions/吞世者/units/flesh-hounds|血猎犬]] — 
 - [[factions/吞世者/units/jakhals|裂伤者]] — 
 - [[factions/吞世者/units/maulerfiend|重锤魔]] — 
+- [[factions/吞世者/units/lord-on-juggernaut|铁甲兽领主]] — 
 - [[factions/吞世者/units/forgefiend|铸造魔]] — 
 - [[factions/吞世者/units/exalted-eightbound|高阶八缚者]] — 
+
+## 策略技能
+
+- [[factions/吞世者/stratagems/immortal-fury|不朽之怒]] — 2 CP、Fight phase、Possessed Slaughterband 分队、Battle Tactic St...
+- [[factions/吞世者/stratagems/warp-stalkers|亚空间潜行者]] — 1 CP、Movement or Charge phase、Possessed Slaughterband 分队、Str...
+- [[factions/吞世者/stratagems/full-throttle-assault|全速突击]] — 1 CP、Movement phase、Goretrack Onslaught 分队、Strategic Ploy St...
+- [[factions/吞世者/stratagems/focused-ferocity|凶性专注]] — 1 CP、Fight phase、Butchers of Khorne 分队。
+- [[factions/吞世者/stratagems/unstoppable-rage|势不可挡之怒]] — 1 CP、Movement phase、Boarding Butchers 分队、Strategic Ploy Stra...
+- [[factions/吞世者/stratagems/fail-not-the-blood-god|勿负血神]] — 1 CP、Fight phase、Cult of Blood 分队、Strategic Ploy Stratagem。
+- [[factions/吞世者/stratagems/bloodthirsty-horde|嗜血蛮群]] — 1 CP、Fight phase、Cult of Blood 分队、Battle Tactic Stratagem。
+- [[factions/吞世者/stratagems/a-worthy-skull|够格的头颅]] — 1 CP、Fight phase、Khorne Daemonkin 分队、Epic Deed Stratagem。
+- [[factions/吞世者/stratagems/wrath-beyond-reason|失理暴怒]] — 2 CP、Shooting phase、Butchers of Khorne 分队。
+- [[factions/吞世者/stratagems/summoned-by-slaughter|屠戮召唤]] — 1 CP、Any phase、Khorne Daemonkin 分队、Strategic Ploy Stratagem。
+- [[factions/吞世者/stratagems/drawn-to-the-slaughter|引赴屠场]] — 2 CP、Any phase、Cult of Blood 分队、Strategic Ploy Stratagem。
+- [[factions/吞世者/stratagems/aggressive-disembarkation|强袭下车]] — 1 CP、Movement phase、Goretrack Onslaught 分队、Strategic Ploy St...
+- [[factions/吞世者/stratagems/fury-unleashed|怒火尽泄]] — 1 CP、Shooting phase、Goretrack Onslaught 分队、Strategic Ploy St...
+- [[factions/吞世者/stratagems/daemonic-fury|恶魔之怒]] — 1 CP、Fight phase、Khorne Daemonkin 分队、Battle Tactic Stratagem...
+- [[factions/吞世者/stratagems/daemonic-strength|恶魔伟力]] — 1 CP、Fight phase、Possessed Slaughterband 分队、Battle Tactic St...
+- [[factions/吞世者/stratagems/daemonic-resistance|恶魔抗性]] — 2 CP、Shooting or Fight phase、Possessed Slaughterband 分队、Batt...
+- [[factions/吞世者/stratagems/punish-the-craven|惩罚懦夫]] — 1 CP、Movement phase、怒火容器 分队、Strategic Ploy Stratagem。
+- [[factions/吞世者/stratagems/brazen-contempt|愤怒蔑视]] — 1 CP、Shooting phase、怒火容器 分队、Battle Tactic Stratagem。
+- [[factions/吞世者/stratagems/cowards-bane|懦夫克星]] — 1 CP、Movement phase、Boarding Butchers 分队、Strategic Ploy Stra...
+- [[factions/吞世者/stratagems/hack-and-slash|斩尽杀绝]] — 1 CP、Fight phase、Berzerker Warband 分队、Battle Tactic Stratage...
+- [[factions/吞世者/stratagems/endless-pursuit-of-violence|无尽逐暴]] — 1 CP、Shooting or Fight phase、Goretrack Onslaught 分队、Strategi...
+- [[factions/吞世者/stratagems/unrelenting-advance|无情推进]] — 1 CP、Shooting phase、Goretrack Onslaught 分队、Strategic Ploy St...
+- [[factions/吞世者/stratagems/murder-call|杀戮召令]] — 1 CP、Fight phase、Khorne Daemonkin 分队、Strategic Ploy Stratage...
+- [[factions/吞世者/stratagems/smash-through|横冲直撞]] — 1 CP、Movement phase、Goretrack Onslaught 分队、Strategic Ploy St...
+- [[factions/吞世者/stratagems/ruinous-rampage|毁灭暴走]] — 1 CP、Movement or Charge phase、Skullsworn 分队、Strategic Ploy S...
+- [[factions/吞世者/stratagems/trail-of-destruction|毁灭路径]] — 1 CP、Movement phase、好战机械 分队。
+- [[factions/吞世者/stratagems/apoplectic-clarity|清晰怒火]] — 1 CP、Shooting or Fight phase、好战机械 分队。
+- [[factions/吞世者/stratagems/aspire-to-infamy|渴望恶名]] — 1 CP、Fight phase、怒火容器 分队、Battle Tactic Stratagem。
+- [[factions/吞世者/stratagems/goaded-to-fury|激起怒火]] — 1 CP、Shooting phase、好战机械 分队。
+- [[factions/吞世者/stratagems/blessing-of-burning-blood|燃血赐福]] — 1 CP、Shooting or Fight phase、Khorne Daemonkin 分队、Battle Tact...
+- [[factions/吞世者/stratagems/furious-momentum|狂怒冲势]] — 1 CP、Fight phase、Skullsworn 分队、Strategic Ploy Stratagem。
+- [[factions/吞世者/stratagems/berzerkers-wrath|狂战士之怒]] — 1 CP、Shooting phase、Berzerker Warband 分队、Strategic Ploy Stra...
+- [[factions/吞世者/stratagems/a-trophy-for-the-throne|献予王座的战利]] — 1 CP、Fight phase、Butchers of Khorne 分队。
+- [[factions/吞世者/stratagems/meet-force-with-force|硬碰硬]] — 1 CP、Shooting phase、怒火容器 分队、Strategic Ploy Stratagem。
+- [[factions/吞世者/stratagems/overshadowed-by-none|脱颖而出]] — 1 CP、Fight phase、怒火容器 分队、Battle Tactic Stratagem。
+- [[factions/吞世者/stratagems/scorn-the-witch|蔑视巫师]] — 1 CP、Any phase、怒火容器 分队。
+- [[factions/吞世者/stratagems/savage-resilience|蛮性坚韧]] — 1 CP、Shooting phase、Boarding Butchers 分队、Battle Tactic Strat...
+- [[factions/吞世者/stratagems/frenzied-resilience|血怒坚韧]] — 2 CP、Fight phase、Berzerker Warband 分队、Battle Tactic Stratage...
+- [[factions/吞世者/stratagems/blood-rite|血祭仪式]] — 1 CP、Fight phase、Skullsworn 分队、Strategic Ploy Stratagem。
+- [[factions/吞世者/stratagems/bloody-vengeance|血腥复仇]] — 1 CP、Any phase、Cult of Blood 分队、Epic Deed Stratagem。
+- [[factions/吞世者/stratagems/gory-dedication|血腥奉献]] — 1 CP、Fight phase、怒火容器 分队、Strategic Ploy Stratagem。
+- [[factions/吞世者/stratagems/rapid-manifestation|迅速显形]] — 1 CP、Movement phase、Possessed Slaughterband 分队、Strategic Plo...
+- [[factions/吞世者/stratagems/shocking-onslaught|震骇猛攻]] — 1 CP、Movement or Charge phase、Skullsworn 分队、Battle Tactic St...
+- [[factions/吞世者/stratagems/skulls-for-the-skull-throne|颅献颅座！]] — 1 CP、Fight phase、Berzerker Warband 分队、Strategic Ploy Stratag...
+- [[factions/吞世者/stratagems/apoplectic-frenzy|颠心狂暴]] — 1 CP、Charge phase、Berzerker Warband 分队、Strategic Ploy Strata...
+- [[factions/吞世者/stratagems/terrifying-screams|骇人尖啸]] — 1 CP、Fight phase、Boarding Butchers 分队、Strategic Ploy Stratag...
+- [[factions/吞世者/stratagems/horrifying-violence|骇人暴行]] — 1 CP、Command phase、Possessed Slaughterband 分队、Strategic Ploy...
+- [[factions/吞世者/stratagems/daemontide|魔潮]] — 1 CP、Command phase、Khorne Daemonkin 分队、Strategic Ploy Strata...
+- [[factions/吞世者/stratagems/blood-offering|鲜血供奉]] — 1 CP、Any phase、Berzerker Warband 分队、Epic Deed Stratagem。
+- [[factions/吞世者/stratagems/brazen-idol|黄铜神像]] — 2 CP、Command phase、Cult of Blood 分队、Epic Deed Stratagem。
+- [[factions/吞世者/stratagems/in-the-shadow-of-brass-idols|黄铜神像之荫]] — 1 CP、Shooting or Fight phase、Cult of Blood 分队、Strategic Ploy...
+
+## 强化
+
+- [[factions/吞世者/enhancements/avengers-crown|Avenger’s Crown]] — 15 分、怒火容器 分队。
+- [[factions/吞世者/enhancements/vox-diabolus|Vox-diabolus]] — 20 分、怒火容器 分队。
+- [[factions/吞世者/enhancements/unleash-hell|倾泻火力]] — 10 分、Goretrack Onslaught 分队。
+- [[factions/吞世者/enhancements/murderous-onslaught|凶残猛攻]] — 5 分、Goretrack Onslaught 分队。
+- [[factions/吞世者/enhancements/battle-lust-berzerker-warband|好战强欲]] — 10 分、Berzerker Warband 分队。
+- [[factions/吞世者/enhancements/battle-lust-boarding-butchers|好战欲]] — 0 分、Boarding Butchers 分队。
+- [[factions/吞世者/enhancements/butcher-lord|屠夫领主]] — 10 分、Cult of Blood 分队。
+- [[factions/吞世者/enhancements/talons-of-butchery|屠戮利爪（更新）]] — 分数未知、好战机械 分队。
+- [[factions/吞世者/enhancements/strategic-slaughter|屠戮布阵]] — 20 分、Cult of Blood 分队。
+- [[factions/吞世者/enhancements/sanctified-in-slaughter|屠戮祝圣]] — 分数未知、Butchers of Khorne 分队。
+- [[factions/吞世者/enhancements/disciple-of-khorne|恐虐信徒]] — 15 分、Khorne Daemonkin 分队。
+- [[factions/吞世者/enhancements/favoured-of-khorne|恐虐爱将]] — 15 分、Berzerker Warband 分队。
+- [[factions/吞世者/enhancements/chosen-of-khorne|恐虐神选]] — 0 分、Boarding Butchers 分队。
+- [[factions/吞世者/enhancements/malicious-vigour|恶意活力]] — 30 分、Possessed Slaughterband 分队。
+- [[factions/吞世者/enhancements/icon-of-war|战争圣像]] — 25 分、Khorne Daemonkin 分队。
+- [[factions/吞世者/enhancements/blade-of-endless-bloodshed|无尽血战之刃]] — 30 分、Khorne Daemonkin 分队。
+- [[factions/吞世者/enhancements/violent-demise|暴烈临终]] — 10 分、Possessed Slaughterband 分队。
+- [[factions/吞世者/enhancements/killing-clarity|杀戮澄明]] — 15 分、Possessed Slaughterband 分队。
+- [[factions/吞世者/enhancements/murder-forged-entity|杀戮造物]] — 分数未知、好战机械 分队。
+- [[factions/吞世者/enhancements/gore-stained-veterans|浴血老兵]] — 分数未知、Butchers of Khorne 分队。
+- [[factions/吞世者/enhancements/aggressive-deployment|激进部署]] — 20 分、Goretrack Onslaught 分队。
+- [[factions/吞世者/enhancements/infernal-infusion|炼狱灌注]] — 25 分、Goretrack Onslaught 分队。
+- [[factions/吞世者/enhancements/frenzied|狂乱]] — 0 分、Skullsworn 分队。
+- [[factions/吞世者/enhancements/frenzied-focus|狂乱专注]] — 20 分、Possessed Slaughterband 分队。
+- [[factions/吞世者/enhancements/berzerker-glaive|狂战之刃]] — 35 分、Berzerker Warband 分队。
+- [[factions/吞世者/enhancements/helm-of-brazen-ire|盛怒战盔]] — 30 分、Berzerker Warband 分队。
+- [[factions/吞世者/enhancements/carmine-corona|腥红光冕]] — 0 分、Skullsworn 分队。
+- [[factions/吞世者/enhancements/gateways-to-glory|荣耀道路]] — 10 分、怒火容器 分队。
+- [[factions/吞世者/enhancements/chosen-of-the-blood-god|血神神选]] — 15 分、Cult of Blood 分队。
+- [[factions/吞世者/enhancements/blood-forged-armour|血铸甲]] — 20 分、Khorne Daemonkin 分队。
+- [[factions/吞世者/enhancements/archslaughterer|顶尖屠杀者]] — 25 分、怒火容器 分队。
+- [[factions/吞世者/enhancements/brazen-form|黄铜之躯]] — 25 分、Cult of Blood 分队。
 

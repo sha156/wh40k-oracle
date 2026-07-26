@@ -1,5 +1,5 @@
 ---
-id: 000001448
+id: '000001448'
 name_zh: 终结者盾卫连长
 name_en: Shield-captain In Allarus Terminator Armour
 faction: 帝皇卫队
@@ -21,7 +21,7 @@ updated: '2026-07-23'
 ## 属性表
 | 模型 | M | T | SV | W | LD | OC |
 |---|---|---|---|---|---|---|
-| 终结者盾卫连长 | 5" | 7 | 2+ | 7 | 6+ | 2 |
+| 终结者[[factions/帝皇卫队/units/shield-captain.md\|盾卫连长]] | 5" | 7 | 2+ | 7 | 6+ | 2 |
 
 ### 特殊保护
 - 4+
@@ -30,8 +30,8 @@ updated: '2026-07-23'
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
 | 强弩榴弹发射器 | 18" | D6 | 2+ | 4 | -1 | 1 | [[core-rules/blast.md\|爆炸]] |
-| Castellan axe | 24" | 2 | 2+ | 4 | -1 | 2 | assault |
-| Guardian spear | 24" | 2 | 2+ | 4 | -1 | 2 | assault |
+| 堡主战斧 | 24" | 2 | 2+ | 4 | -1 | 2 | [[core-rules/assault.md\|突击]] |
+| 卫士之矛 | 24" | 2 | 2+ | 4 | -1 | 2 | [[core-rules/assault.md\|突击]] |
 
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |

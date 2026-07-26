@@ -1,5 +1,5 @@
 ---
-id: 000004199
+id: '000004199'
 name_zh: 天空掠夺者海盗
 name_en: Corsair Skyreavers
 faction: 黑暗灵族
@@ -28,7 +28,7 @@ updated: '2026-07-23'
 |---|---|---|---|---|---|---|---|
 | 爆能枪 | 18" | 1 | 3+ | 8 | -4 | D6+1 | [[core-rules/assault.md\|突击]] |
 | 火焰喷射器 | 12" | D6 | N/A | 4 | 0 | 1 | [[core-rules/assault.md\|突击]]，[[core-rules/ignores-cover.md\|无视掩体]]，[[core-rules/torrent.md\|洪流]] |
-| 熔融枪 | 12" | 1 | 3+ | 8 | -4 | D6 | [[core-rules/assault.md\|突击]]，[[core-rules/melta.md\|热熔 2]] |
+| 熔融枪 | 12" | 1 | 3+ | 8 | -4 | D6 | [[core-rules/assault.md\|突击]]，[[core-rules/melta.md\|热熔2]] |
 | 神经干扰枪 | 12" | 1 | 3+ | 4 | -2 | 1 | [[core-rules/anti.md\|针对步兵2+]]，[[core-rules/assault.md\|突击]]，[[core-rules/pistol.md\|手枪]] |
 | 爆能手枪 | 6" | 1 | 3+ | 8 | -3 | D3 | [[core-rules/assault.md\|突击]]，[[core-rules/pistol.md\|手枪]] |
 | 粉碎枪 | 18" | D6 | N/A | 6 | 0 | 1 | [[core-rules/assault.md\|突击]]，[[core-rules/torrent.md\|洪流]] |

@@ -120,6 +120,7 @@ export function RosterUnitRow({
             loadout={unit.loadout}
             onChange={(w, c) => onLoadout(unit.uid, w, c)}
             accent="cyan"
+            fillCount={unit.models}
           />
         )
       ) : null}

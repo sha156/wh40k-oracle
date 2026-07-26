@@ -27,8 +27,8 @@ updated: '2026-07-23'
 ## 射击武器
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| HYLas rotary cannon | 24" | 6 | 4+ | 6 | -1 | 2 | [[core-rules/sustained-hits.md\|sustained hits 1]] |
-| Magna-rail cannon | 24" | 1 | 4+ | 14 | -4 | D3+3 | devastating wounds，heavy |
+| 高能激光转轮炮 | 24" | 6 | 4+ | 6 | -1 | 2 | [[core-rules/sustained-hits.md\|连击1]] |
+| 磁轨炮 | 24" | 1 | 4+ | 14 | -4 | D3+3 | [[core-rules/devastating-wounds.md\|毁灭伤害]]，[[core-rules/heavy.md\|重型]] |
 | 双联电磁线圈自动炮 | 24" | 3 | 4+ | 7 | -1 | 2 | [[core-rules/twin-linked.md\|双联]] |
 
 ## 近战武器

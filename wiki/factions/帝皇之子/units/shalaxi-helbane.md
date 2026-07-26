@@ -1,5 +1,5 @@
 ---
-id: 000004094
+id: '000004094'
 name_zh: 夏拉希·魔灾
 name_en: Shalaxi Helbane
 faction: 帝皇之子
@@ -29,13 +29,13 @@ updated: '2026-07-23'
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
 | 色孽长鞭 | 12" | 6 | 2+ | 6 | -1 | 2 | [[core-rules/assault.md\|突击]] |
-| 色孽之舞-巫火 | 18" | D6 | 2+ | 9 | -1 | D3 | [[core-rules/devastating-wounds.md\|毁灭伤害]]，灵能 |
-| 色孽之舞-专注巫火 | 18" | D6 | 2+ | 9 | -2 | D3 | [[core-rules/sustained-hits.md\|连击3]]，[[core-rules/devastating-wounds.md\|毁灭伤害]]，灵能，[[core-rules/hazardous.md\|危险]] |
+| 色孽之舞-巫火 | 18" | D6 | 2+ | 9 | -1 | D3 | [[core-rules/devastating-wounds.md\|毁灭伤害]]，[[core-rules/psychic-attacks.md\|灵能]] |
+| 色孽之舞-专注巫火 | 18" | D6 | 2+ | 9 | -2 | D3 | [[core-rules/hazardous.md\|危险]]，[[core-rules/devastating-wounds.md\|毁灭伤害]]，[[core-rules/psychic-attacks.md\|灵能]]，[[core-rules/sustained-hits.md\|连击3]] |
 
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| 魔爪钳击 | 近战 | 4 | 2+ | 6 | -2 | 3 | [[core-rules/extra-attacks.md\|额外攻击]]，[[core-rules/devastating-wounds.md\|毁灭伤害]] |
+| 魔爪钳击 | 近战 | 4 | 2+ | 6 | -2 | 3 | [[core-rules/devastating-wounds.md\|毁灭伤害]]，[[core-rules/extra-attacks.md\|额外攻击]] |
 | 穿魂之矛 | 近战 | 6 | 2+ | 12 | -3 | D6+2 | [[core-rules/precision.md\|精准]] |
 
 ## 技能

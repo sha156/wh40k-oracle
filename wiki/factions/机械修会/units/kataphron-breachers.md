@@ -1,5 +1,5 @@
 ---
-id: 000000841
+id: '000000841'
 name_zh: 武装奴工突破者
 name_en: Kataphron Breachers
 faction: 机械修会
@@ -30,13 +30,13 @@ updated: '2026-07-23'
 ## 射击武器
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| 重型电弧步枪 | 30" | 2 | 4+ | 8 | -2 | 3 | [[core-rules/anti.md\|反载具 4+]]，[[core-rules/rapid-fire.md\|速射 2]] |
-| 扭曲炮 | 36" | D3 | 4+ | 6 | -2 | 2 | [[core-rules/anti.md\|反步兵 2+]]，[[core-rules/blast.md\|爆炸]] |
+| 重型电弧步枪 | 30" | 2 | 4+ | 8 | -2 | 3 | [[core-rules/anti.md\|针对载具4+]]，[[core-rules/rapid-fire.md\|速射2]] |
+| 扭曲炮 | 36" | D3 | 4+ | 6 | -2 | 2 | [[core-rules/anti.md\|针对步兵2+]]，[[core-rules/blast.md\|爆炸]] |
 
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| 电弧爪 | 近战 | 4 | 4+ | 5 | -1 | 1 | [[core-rules/anti.md\|反载具 4+]] |
+| 电弧爪 | 近战 | 4 | 4+ | 5 | -1 | 1 | [[core-rules/anti.md\|针对载具4+]] |
 | 液压钳 | 近战 | 2 | 4+ | 8 | -2 | 3 | — |
 
 ## 技能

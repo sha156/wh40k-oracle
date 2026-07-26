@@ -1,5 +1,5 @@
 ---
-id: 000001558
+id: '000001558'
 name_zh: 天鹰终结者
 name_en: Aquilon Custodians
 faction: 帝皇卫队
@@ -30,7 +30,7 @@ updated: '2026-07-23'
 ## 射击武器
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| 炼狱烈焰矛 | 12" | D6 | N/A | 6 | -1 | 1 | [[core-rules/ignores-cover.md\|忽视掩体]]，[[core-rules/torrent.md\|喷射]] |
+| 炼狱烈焰矛 | 12" | D6 | N/A | 6 | -1 | 1 | [[core-rules/ignores-cover.md\|无视掩体]]，[[core-rules/torrent.md\|洪流]] |
 | 拉斯托姆型风暴爆弹枪 | 24" | 2 | 2+ | 5 | -1 | 1 | [[core-rules/rapid-fire.md\|速射2]] |
 | 并联亚德斯克解离枪 | 18" | 1 | 2+ | 6 | -2 | 3 | [[core-rules/twin-linked.md\|双联]] |
 

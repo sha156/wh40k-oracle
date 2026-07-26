@@ -1,71 +1,47 @@
 # 星界军
 
-_Last updated: 2026-07-23 12:10 UTC_
+_Last updated: 2026-07-26 08:40 UTC_
+
+## 分队
+
+- [[factions/星界军/detachments/bridgehead-strike|Bridgehead Strike]] — 星界军的分队「Bridgehead Strike」，分队规则「Only the Best」。
+- [[factions/星界军/detachments/combined-arms|Combined Arms]] — 星界军的分队「Combined Arms」，分队规则「Born Soldiers」。
+- [[factions/星界军/detachments/embarked-regiment|Embarked Regiment]] — 星界军的分队「Embarked Regiment」，分队规则「Get Down!」。
+- [[factions/星界军/detachments/hammer-of-the-emperor|Hammer of the Emperor]] — 星界军的分队「Hammer of the Emperor」，分队规则「Iron Tread」。
+- [[factions/星界军/detachments/mechanised-assault|Mechanised Assault]] — 星界军的分队「Mechanised Assault」，分队规则「Armoured Fist」。
+- [[factions/星界军/detachments/recon-element|Recon Element]] — 星界军的分队「Recon Element」，分队规则「Masters of Camouflage」。
+- [[factions/星界军/detachments/siege-regiment|Siege Regiment]] — 星界军的分队「Siege Regiment」，分队规则「Artillery Support」。
+- [[factions/星界军/detachments/tempestus-boarding-regiment|Tempestus Boarding Regiment]] — 星界军的分队「Tempestus Boarding Regiment」，分队规则「Purge-Sweep Protoco...
+- [[factions/星界军/detachments/abhuman-auxiliaries|亚人类辅助军]] — 星界军的分队「亚人类辅助军」。
+- [[factions/星界军/detachments/designation-force|指示部队]] — 星界军的分队「指示部队」。
+- [[factions/星界军/detachments/grizzled-company|老兵连队]] — 星界军的分队「老兵连队」，分队规则「Ruthless Discipline」。
+- [[factions/星界军/detachments/armoured-infantry|装甲步兵]] — 星界军的分队「装甲步兵」，分队规则「Squadron Command」。
+- [[factions/星界军/detachments/steel-hammer|钢铁之锤]] — 星界军的分队「钢铁之锤」，分队规则「Ceaseless Cannonade」。
 
 ## 单位
 
-- [[factions/星界军/units/aegis-defence-line|Aegis Defence Line]] — 
 - [[factions/星界军/units/aquila-lander|Aquila Lander]] — 
 - [[factions/星界军/units/arkurian-stormhammer|Arkurian Stormhammer]] — 
 - [[factions/星界军/units/armageddon-pattern-medusa|Armageddon-pattern Medusa]] — 
-- [[factions/星界军/units/armoured-sentinels|Armoured Sentinels]] — 
-- [[factions/星界军/units/artillery-team|Artillery Team]] — 
 - [[factions/星界军/units/arvus-lighter|Arvus Lighter]] — 
 - [[factions/星界军/units/atlas-recovery-vehicle|Atlas Recovery Vehicle]] — 
-- [[factions/星界军/units/attilan-rough-riders|Attilan Rough Riders]] — 
-- [[factions/星界军/units/baneblade|Baneblade]] — 
-- [[factions/星界军/units/banehammer|Banehammer]] — 
-- [[factions/星界军/units/banesword|Banesword]] — 
-- [[factions/星界军/units/basilisk|Basilisk]] — 
-- [[factions/星界军/units/cadian-castellan|Cadian Castellan]] — 
-- [[factions/星界军/units/cadian-command-squad|Cadian Command Squad]] — 
-- [[factions/星界军/units/cadian-heavy-weapons-squad|Cadian Heavy Weapons Squad]] — 
-- [[factions/星界军/units/cadian-shock-troops|Cadian Shock Troops]] — 
 - [[factions/星界军/units/carnodon|Carnodon]] — 
-- [[factions/星界军/units/catachan-command-squad|Catachan Command Squad]] — 
-- [[factions/星界军/units/catachan-heavy-weapons-squad|Catachan Heavy Weapons Squad]] — 
-- [[factions/星界军/units/catachan-jungle-fighters|Catachan Jungle Fighters]] — 
 - [[factions/星界军/units/centaur-light-carrier|Centaur Light Carrier]] — 
-- [[factions/星界军/units/centaur-rsv|Centaur RSV]] — 
-- [[factions/星界军/units/chimera|Chimera]] — 
 - [[factions/星界军/units/colossus|Colossus]] — 
 - [[factions/星界军/units/crassus|Crassus]] — 
-- [[factions/星界军/units/cyclops-demolition-vehicle|Cyclops Demolition Vehicle]] — 
 - [[factions/星界军/units/death-korps-grenadier-squad|Death Korps Grenadier Squad]] — 
-- [[factions/星界军/units/death-korps-of-krieg|Death Korps Of Krieg]] — 
 - [[factions/星界军/units/death-rider-commissar|Death Rider Commissar]] — 
-- [[factions/星界军/units/death-riders|Death Riders]] — 
-- [[factions/星界军/units/deathstrike|Deathstrike]] — 
 - [[factions/星界军/units/dominus-armoured-siege-bombard|Dominus Armoured Siege Bombard]] — 
-- [[factions/星界军/units/doomhammer|Doomhammer]] — 
 - [[factions/星界军/units/earthshaker-carriage-battery|Earthshaker Carriage Battery]] — 
 - [[factions/星界军/units/earthshaker-platform|Earthshaker Platform]] — 
 - [[factions/星界军/units/elysian-drop-sentinel|Elysian Drop Sentinel]] — 
 - [[factions/星界军/units/elysian-sniper-squad|Elysian Sniper Squad]] — 
-- [[factions/星界军/units/field-ordnance-battery|Field Ordnance Battery]] — 
 - [[factions/星界军/units/gorgon-heavy-transport|Gorgon Heavy Transport]] — 
 - [[factions/星界军/units/griffon-mortar-carrier|Griffon Mortar Carrier]] — 
 - [[factions/星界军/units/hades-breaching-drill|Hades Breaching Drill]] — 
 - [[factions/星界军/units/heavy-mortar-team|Heavy Mortar Team]] — 
 - [[factions/星界军/units/heavy-quad-launcher-team|Heavy Quad Launcher Team]] — 
-- [[factions/星界军/units/hellhammer|Hellhammer]] — 
-- [[factions/星界军/units/hellhound|Hellhound]] — 
-- [[factions/星界军/units/hells-last|Hell’s Last]] — 
-- [[factions/星界军/units/hippogriff-afv|Hippogriff AFV]] — 
-- [[factions/星界军/units/hydra|Hydra]] — 
 - [[factions/星界军/units/hydra-platform|Hydra Platform]] — 
-- [[factions/星界军/units/kasrkin|Kasrkin]] — 
-- [[factions/星界军/units/krieg-combat-engineers|Krieg Combat Engineers]] — 
-- [[factions/星界军/units/krieg-command-squad|Krieg Command Squad]] — 
-- [[factions/星界军/units/krieg-heavy-weapons-squad|Krieg Heavy Weapons Squad]] — 
-- [[factions/星界军/units/leman-russ-battle-tank|Leman Russ Battle Tank]] — 
-- [[factions/星界军/units/leman-russ-commander|Leman Russ Commander]] — 
-- [[factions/星界军/units/leman-russ-demolisher|Leman Russ Demolisher]] — 
-- [[factions/星界军/units/leman-russ-eradicator|Leman Russ Eradicator]] — 
-- [[factions/星界军/units/leman-russ-executioner|Leman Russ Executioner]] — 
-- [[factions/星界军/units/leman-russ-exterminator|Leman Russ Exterminator]] — 
-- [[factions/星界军/units/leman-russ-punisher|Leman Russ Punisher]] — 
-- [[factions/星界军/units/leman-russ-vanquisher|Leman Russ Vanquisher]] — 
 - [[factions/星界军/units/macharius|Macharius]] — 
 - [[factions/星界军/units/macharius-omega|Macharius Omega]] — 
 - [[factions/星界军/units/macharius-vanquisher|Macharius Vanquisher]] — 
@@ -74,68 +50,226 @@ _Last updated: 2026-07-23 12:10 UTC_
 - [[factions/星界军/units/malcador-annihilator|Malcador Annihilator]] — 
 - [[factions/星界军/units/malcador-defender|Malcador Defender]] — 
 - [[factions/星界军/units/malcador-infernus|Malcador Infernus]] — 
-- [[factions/星界军/units/manticore|Manticore]] — 
 - [[factions/星界军/units/manticore-platform|Manticore Platform]] — 
 - [[factions/星界军/units/marauder-bomber|Marauder Bomber]] — 
 - [[factions/星界军/units/marauder-destroyer|Marauder Destroyer]] — 
 - [[factions/星界军/units/medusa-carriage-battery|Medusa Carriage Battery]] — 
-- [[factions/星界军/units/ministorum-priest|Ministorum Priest]] — 
 - [[factions/星界军/units/minotaur|Minotaur]] — 
 - [[factions/星界军/units/mukaali-riders|Mukaali Riders]] — 
 - [[factions/星界军/units/munitorum-servitors|Munitorum Servitors]] — 
 - [[factions/星界军/units/praetor|Praetor]] — 
-- [[factions/星界军/units/primaris-psyker|Primaris Psyker]] — 
 - [[factions/星界军/units/provisionally-prepared|Provisionally Prepared]] — 
 - [[factions/星界军/units/quartermaster-cadre-squad|Quartermaster Cadre Squad]] — 
 - [[factions/星界军/units/rapier-laser-destroyer-battery|Rapier Laser Destroyer Battery]] — 
 - [[factions/星界军/units/regimental-attachés|Regimental Attachés]] — 
 - [[factions/星界军/units/rein-and-raus|Rein And Raus]] — 
-- [[factions/星界军/units/rogal-dorn-battle-tank|Rogal Dorn Battle Tank]] — 
-- [[factions/星界军/units/rogal-dorn-commander|Rogal Dorn Commander]] — 
 - [[factions/星界军/units/sabre-weapons-battery|Sabre Weapons Battery]] — 
 - [[factions/星界军/units/salamander-command-vehicle|Salamander Command Vehicle]] — 
 - [[factions/星界军/units/salamander-scout-vehicle|Salamander Scout Vehicle]] — 
-- [[factions/星界军/units/scout-sentinels|Scout Sentinels]] — 
 - [[factions/星界军/units/sentinel-powerlifter|Sentinel Powerlifter]] — 
 - [[factions/星界军/units/sergeant-harker|Sergeant Harker]] — 
-- [[factions/星界军/units/shadowsword|Shadowsword]] — 
 - [[factions/星界军/units/storm-chimera|Storm Chimera]] — 
 - [[factions/星界军/units/stormblade|Stormblade]] — 
-- [[factions/星界军/units/stormlord|Stormlord]] — 
-- [[factions/星界军/units/stormsword|Stormsword]] — 
 - [[factions/星界军/units/stygies-destroyer-tank-hunter|Stygies Destroyer Tank Hunter]] — 
 - [[factions/星界军/units/tarantula-battery|Tarantula Battery]] — 
 - [[factions/星界军/units/tauros-assault-vehicle|Tauros Assault Vehicle]] — 
 - [[factions/星界军/units/tauros-venator|Tauros Venator]] — 
-- [[factions/星界军/units/taurox|Taurox]] — 
-- [[factions/星界军/units/taurox-prime|Taurox Prime]] — 
 - [[factions/星界军/units/trojan-support-vehicle|Trojan Support Vehicle]] — 
 - [[factions/星界军/units/valdor|Valdor]] — 
 - [[factions/星界军/units/valkyrie-sky-talon|Valkyrie Sky Talon]] — 
 - [[factions/星界军/units/vendetta-gunship|Vendetta Gunship]] — 
 - [[factions/星界军/units/voss-pattern-lightning|Voss-pattern Lightning]] — 
 - [[factions/星界军/units/vulture-gunship|Vulture Gunship]] — 
-- [[factions/星界军/units/wyvern|Wyvern]] — 
 - [[factions/星界军/units/iron-hand-straken|‘Iron Hand’ Straken]] — 
+- [[factions/星界军/units/hells-last|【传奇】地狱之末]] — 
+- [[factions/星界军/units/hydra|九头蛇高射炮]] — 
 - [[factions/星界军/units/commissar-yarrick|亚瑞克政委]] — 
+- [[factions/星界军/units/scout-sentinels|侦查哨兵]] — 
 - [[factions/星界军/units/nork-deddog|保镖诺克]] — 
 - [[factions/星界军/units/ursula-creed|克里德堡主]] — 
+- [[factions/星界军/units/krieg-combat-engineers|克里格战斗工兵]] — 
+- [[factions/星界军/units/krieg-command-squad|克里格指挥组]] — 
+- [[factions/星界军/units/death-korps-of-krieg|克里格死兵队]] — 
+- [[factions/星界军/units/krieg-heavy-weapons-squad|克里格重型武器小队]] — 
 - [[factions/星界军/units/gaunts-ghosts|刚特的幽灵]] — 
+- [[factions/星界军/units/centaur-rsv|半人马快速突击战车]] — 
+- [[factions/星界军/units/catachan-jungle-fighters|卡塔昌丛林战士]] — 
+- [[factions/星界军/units/catachan-command-squad|卡塔昌指挥组]] — 
+- [[factions/星界军/units/catachan-heavy-weapons-squad|卡塔昌重型武器小队]] — 
+- [[factions/星界军/units/kasrkin|卡舍津突击队]] — 
 - [[factions/星界军/units/cadian-recon-squad|卡迪亚侦察小队]] — 
+- [[factions/星界军/units/cadian-heavy-weapons-squad|卡迪亚重型武器小队]] — 
+- [[factions/星界军/units/cadian-castellan|卡迪安堡主]] — 
+- [[factions/星界军/units/cadian-command-squad|卡迪安指挥组]] — 
+- [[factions/星界军/units/cadian-shock-troops|卡迪安突击队]] — 
+- [[factions/星界军/units/wyvern|双足飞龙自行火炮]] — 
+- [[factions/星界军/units/hellhammer|地狱之锤]] — 
+- [[factions/星界军/units/hellhound|地狱犬喷射车]] — 
 - [[factions/星界军/units/avenger-strike-fighter|复仇者攻击机]] — 
 - [[factions/星界军/units/lord-marshal-dreir|大元帅德雷尔]] — 
 - [[factions/星界军/units/lord-solar-leontus|太阳元帅雷昂图斯]] — 
+- [[factions/星界军/units/chimera|奇美拉装甲车]] — 
 - [[factions/星界军/units/valkyrie|女武神炮艇]] — 
+- [[factions/星界军/units/shadowsword|影剑]] — 
 - [[factions/星界军/units/tech-priest-enginseer|技术技师机械教士]] — 
 - [[factions/星界军/units/commissar|政委]] — 
+- [[factions/星界军/units/ministorum-priest|教廷牧师]] — 
 - [[factions/星界军/units/sly-marbo|斯莱·马博]] — 
+- [[factions/星界军/units/doomhammer|末日之锤]] — 
 - [[factions/星界军/units/commissar-graves|格雷夫斯政委]] — 
 - [[factions/星界军/units/ogryn-bodyguard|欧格林保镖]] — 
 - [[factions/星界军/units/ogryn-squad|欧格林小队]] — 
 - [[factions/星界军/units/commissar-graves-on-foot|步行的格雷夫斯政委]] — 
+- [[factions/星界军/units/deathstrike|死亡直击导弹车]] — 
+- [[factions/星界军/units/death-riders|死亡骑兵]] — 
+- [[factions/星界军/units/banesword|毁灭之剑]] — 
+- [[factions/星界军/units/banehammer|毁灭之锤]] — 
+- [[factions/星界军/units/baneblade|毒刃]] — 
+- [[factions/星界军/units/primaris-psyker|灵能导师]] — 
+- [[factions/星界军/units/artillery-team|炮兵小组]] — 
 - [[factions/星界军/units/bullgryn-squad|牛格林小队]] — 
+- [[factions/星界军/units/cyclops-demolition-vehicle|独眼巨人爆破车]] — 
+- [[factions/星界军/units/basilisk|石化蜥蜴自行火炮]] — 
+- [[factions/星界军/units/aegis-defence-line|神盾防御墙]] — 
+- [[factions/星界军/units/rogal-dorn-battle-tank|罗格多恩坦克]] — 
+- [[factions/星界军/units/rogal-dorn-commander|罗格多恩指挥官]] — 
 - [[factions/星界军/units/ratlings|莱特林]] — 
+- [[factions/星界军/units/manticore|蝎尾狮火箭炮]] — 
+- [[factions/星界军/units/armoured-sentinels|装甲哨兵]] — 
+- [[factions/星界军/units/field-ordnance-battery|野战炮兵]] — 
+- [[factions/星界军/units/taurox|野牛装甲车]] — 
+- [[factions/星界军/units/taurox-prime|金牛装甲车]] — 
+- [[factions/星界军/units/attilan-rough-riders|阿提拉蛮骑兵]] — 
+- [[factions/星界军/units/stormsword|风暴之剑]] — 
 - [[factions/星界军/units/militarum-tempestus-command-squad|风暴兵指挥组]] — 
 - [[factions/星界军/units/tempestus-aquilons|风暴天鹰]] — 
 - [[factions/星界军/units/tempestus-scions|风暴忠嗣军小队]] — 
+- [[factions/星界军/units/stormlord|风暴领主]] — 
+- [[factions/星界军/units/hippogriff-afv|鹫马装甲战车]] — 
+- [[factions/星界军/units/leman-russ-executioner|黎曼鲁斯处决者]] — 
+- [[factions/星界军/units/leman-russ-punisher|黎曼鲁斯惩罚者]] — 
+- [[factions/星界军/units/leman-russ-battle-tank|黎曼鲁斯战斗坦克]] — 
+- [[factions/星界军/units/leman-russ-commander|黎曼鲁斯指挥官]] — 
+- [[factions/星界军/units/leman-russ-eradicator|黎曼鲁斯根除者]] — 
+- [[factions/星界军/units/leman-russ-exterminator|黎曼鲁斯灭绝者]] — 
+- [[factions/星界军/units/leman-russ-demolisher|黎曼鲁斯破坏者]] — 
+- [[factions/星界军/units/leman-russ-vanquisher|黎曼鲁斯胜利者]] — 
+
+## 策略技能
+
+- [[factions/星界军/stratagems/ablative-plating|ABLATIVE PLATING]] — 2 CP、Shooting phase、Hammer of the Emperor 分队、Wargear Stratag...
+- [[factions/星界军/stratagems/adamantine-behemoth|ADAMANTINE BEHEMOTH]] — 1 CP、Movement or Charge phase、钢铁之锤 分队、Strategic Ploy Stratag...
+- [[factions/星界军/stratagems/aerial-extraction|AERIAL EXTRACTION]] — 1 CP、Fight phase、Bridgehead Strike 分队、Epic Deed Stratagem。
+- [[factions/星界军/stratagems/against-the-odds|AGAINST THE ODDS]] — 1 CP、Shooting or Fight phase、Embarked Regiment 分队、Battle Tac...
+- [[factions/星界军/stratagems/bellicosa-drop|BELLICOSA DROP]] — 1 CP、Movement phase、Bridgehead Strike 分队、Battle Tactic Strat...
+- [[factions/星界军/stratagems/blazing-advance|BLAZING ADVANCE]] — 1 CP、Movement phase、Hammer of the Emperor 分队、Battle Tactic S...
+- [[factions/星界军/stratagems/brutal-choke-point|BRUTAL CHOKE POINT]] — 1 CP、Movement or Charge phase、Embarked Regiment 分队、Strategic...
+- [[factions/星界军/stratagems/brutal-training|BRUTAL TRAINING]] — 1 CP、Fight phase、Tempestus Boarding Regiment 分队、Battle Tacti...
+- [[factions/星界军/stratagems/callous-sacrifice|CALLOUS SACRIFICE]] — 1 CP、Shooting phase、Siege Regiment 分队、Battle Tactic Stratage...
+- [[factions/星界军/stratagems/clear-and-secure|CLEAR AND SECURE]] — 1 CP、Shooting phase、Mechanised Assault 分队、Battle Tactic Stra...
+- [[factions/星界军/stratagems/coordinated-action|COORDINATED ACTION]] — 1 CP、Any phase、Combined Arms 分队、Battle Tactic Stratagem。
+- [[factions/星界军/stratagems/coordinated-strike|COORDINATED STRIKE]] — 1 CP、Command phase、Tempestus Boarding Regiment 分队、Strategic...
+- [[factions/星界军/stratagems/courageous-diversion|COURAGEOUS DIVERSION]] — 1 CP、Shooting phase、Recon Element 分队、Strategic Ploy Stratage...
+- [[factions/星界军/stratagems/crack-shots|CRACK SHOTS]] — 1 CP、Shooting phase、Recon Element 分队、Battle Tactic Stratagem...
+- [[factions/星界军/stratagems/crash-through|CRASH THROUGH]] — 1 CP、Movement or Charge phase、Hammer of the Emperor 分队、Strat...
+- [[factions/星界军/stratagems/draw-them-out|DRAW THEM OUT]] — 1 CP、Movement phase、Recon Element 分队、Strategic Ploy Stratage...
+- [[factions/星界军/stratagems/duck-and-cover|DUCK AND COVER]] — 1 CP、Shooting or Fight phase、Embarked Regiment 分队、Battle Tac...
+- [[factions/星界军/stratagems/fields-of-fire|FIELDS OF FIRE]] — 1 CP、Shooting phase、Combined Arms 分队、Battle Tactic Stratagem...
+- [[factions/星界军/stratagems/final-hour|FINAL HOUR]] — 1 CP、Command phase、Hammer of the Emperor 分队、Epic Deed Strata...
+- [[factions/星界军/stratagems/fire-and-relocate|FIRE AND RELOCATE]] — 1 CP、Shooting phase、Bridgehead Strike 分队、Strategic Ploy Stra...
+- [[factions/星界军/stratagems/fire-pattern-hurricanus|FIRE-PATTERN HURRICANUS]] — 1 CP、Shooting phase、Tempestus Boarding Regiment 分队、Battle Ta...
+- [[factions/星界军/stratagems/firing-hot|FIRING HOT]] — 2 CP、Shooting phase、Bridgehead Strike 分队、Battle Tactic Strat...
+- [[factions/星界军/stratagems/flare-burst|FLARE BURST]] — 1 CP、Shooting phase、Siege Regiment 分队、Wargear Stratagem。
+- [[factions/星界军/stratagems/flexible-command|FLEXIBLE COMMAND]] — 2 CP、Command phase、Combined Arms 分队、Strategic Ploy Stratagem...
+- [[factions/星界军/stratagems/furious-cannonade|FURIOUS CANNONADE]] — 1 CP、Shooting phase、Hammer of the Emperor 分队、Battle Tactic S...
+- [[factions/星界军/stratagems/furious-fusillade|FURIOUS FUSILLADE]] — 1 CP、Shooting phase、Siege Regiment 分队、Strategic Ploy Stratag...
+- [[factions/星界军/stratagems/hasty-extraction|HASTY EXTRACTION]] — 1 CP、Charge phase、Mechanised Assault 分队、Battle Tactic Strata...
+- [[factions/星界军/stratagems/idle-hands|IDLE HANDS]] — 1 CP、Movement phase、Embarked Regiment 分队、Strategic Ploy Stra...
+- [[factions/星界军/stratagems/inspired-command|INSPIRED COMMAND]] — 1 CP、Command phase、Combined Arms 分队、Epic Deed Stratagem。
+- [[factions/星界军/stratagems/lockdown|LOCKDOWN]] — 1 CP、Movement phase、Tempestus Boarding Regiment 分队、Strategic...
+- [[factions/星界军/stratagems/minefield|MINEFIELD]] — 1 CP、Charge phase、Siege Regiment 分队、Wargear Stratagem。
+- [[factions/星界军/stratagems/move-out|MOVE OUT]] — 1 CP、Any phase、Mechanised Assault 分队、Strategic Ploy Stratage...
+- [[factions/星界军/stratagems/on-my-position|ON MY POSITION]] — 1 CP、Charge phase、Bridgehead Strike 分队、Epic Deed Stratagem。
+- [[factions/星界军/stratagems/over-the-top|OVER THE TOP]] — 2 CP、Command phase、Siege Regiment 分队、Strategic Ploy Stratage...
+- [[factions/星界军/stratagems/purging-fire|PURGING FIRE]] — 1 CP、Shooting phase、老兵连队 分队、Stratagem。
+- [[factions/星界军/stratagems/rapid-dispersal|RAPID DISPERSAL]] — 1 CP、Movement phase、Mechanised Assault 分队、Strategic Ploy Str...
+- [[factions/星界军/stratagems/reinforcements|REINFORCEMENTS!]] — 2 CP、Any phase、Combined Arms 分队、Strategic Ploy Stratagem。
+- [[factions/星界军/stratagems/scouting-outriders|SCOUTING OUTRIDERS]] — 1 CP、Any phase、Recon Element 分队、Battle Tactic Stratagem。
+- [[factions/星界军/stratagems/scramble-field|SCRAMBLE FIELD]] — 1 CP、Movement phase、Recon Element 分队、Wargear Stratagem。
+- [[factions/星界军/stratagems/servodesignators|SERVO‑DESIGNATORS]] — 1 CP、Shooting phase、Bridgehead Strike 分队、Strategic Ploy Stra...
+- [[factions/星界军/stratagems/stalwart-protector|STALWART PROTECTOR]] — 1 CP、Shooting phase、Combined Arms 分队、Battle Tactic Stratagem...
+- [[factions/星界军/stratagems/swift-interception|SWIFT INTERCEPTION]] — 1 CP、Movement phase、Mechanised Assault 分队、Battle Tactic Stra...
+- [[factions/星界军/stratagems/tactical-withdrawal|TACTICAL WITHDRAWAL]] — 1 CP、Movement phase、Hammer of the Emperor 分队、Strategic Ploy...
+- [[factions/星界军/stratagems/tanglefoot-grenades|TANGLEFOOT GRENADES]] — 1 CP、Charge phase、Recon Element 分队、Wargear Stratagem。
+- [[factions/星界军/stratagems/trench-fighters|TRENCH FIGHTERS]] — 1 CP、Fight phase、Siege Regiment 分队、Battle Tactic Stratagem。
+- [[factions/星界军/stratagems/veteran-sharpshooters|VETERAN SHARPSHOOTERS]] — 1 CP、Shooting phase、老兵连队 分队、Stratagem。
+- [[factions/星界军/stratagems/vox-relay|VOX-RELAY]] — 1 CP、Command phase、Mechanised Assault 分队、Wargear Stratagem。
+- [[factions/星界军/stratagems/order-the-advance|下令前进]] — 1 CP、Movement phase、装甲步兵 分队、Battle Tactic Stratagem。
+- [[factions/星界军/stratagems/low-profile|低可见度]] — 1 CP、Shooting phase、亚人类辅助军 分队。
+- [[factions/星界军/stratagems/combined-fire|协同火力]] — 1 CP、Shooting phase、装甲步兵 分队、Battle Tactic Stratagem。
+- [[factions/星界军/stratagems/accuracy-under-pressure|压力下的精准]] — 2 CP、Shooting phase、钢铁之锤 分队、Battle Tactic Stratagem。
+- [[factions/星界军/stratagems/imposing-arrival|威严降临]] — 1 CP、Movement phase、钢铁之锤 分队、Strategic Ploy Stratagem。
+- [[factions/星界军/stratagems/thick-skulled-obdurance|憨厚顽固]] — 1 CP、Shooting or Fight phase、亚人类辅助军 分队。
+- [[factions/星界军/stratagems/supporting-ordnance|支援炮击]] — 1 CP、Shooting phase、装甲步兵 分队、Battle Tactic Stratagem。
+- [[factions/星界军/stratagems/engine-of-wrath|机械之怒]] — 1 CP、Fight phase、钢铁之锤 分队、Epic Deed Stratagem。
+- [[factions/星界军/stratagems/stirred-to-action|激怒行动]] — 1 CP、Shooting phase、亚人类辅助军 分队。
+- [[factions/星界军/stratagems/mobile-firebase|移动火力平台]] — 1 CP、Movement phase、装甲步兵 分队、Strategic Ploy Stratagem。
+- [[factions/星界军/stratagems/opening-salvo|突袭齐射]] — 1 CP、Shooting phase、装甲步兵 分队、Battle Tactic Stratagem。
+- [[factions/星界军/stratagems/snap-to-it|立即执行]] — 1 CP、Any phase、老兵连队 分队、Stratagem。
+- [[factions/星界军/stratagems/shattering-salvo|粉碎齐射]] — 1 CP、Shooting phase、钢铁之锤 分队、Strategic Ploy Stratagem。
+- [[factions/星界军/stratagems/no-retreat|绝不撤退！]] — 1 CP、Command phase、老兵连队 分队、Stratagem。
+- [[factions/星界军/stratagems/sump-smog-screen|臭气烟幕]] — 1 CP、Shooting phase、指示部队 分队。
+- [[factions/星界军/stratagems/mordian-minute|莫迪安齐射]] — 1 CP、Shooting phase、老兵连队 分队、Stratagem。
+- [[factions/星界军/stratagems/triggered-alerts|触发警报]] — 1 CP、Movement phase、指示部队 分队。
+- [[factions/星界军/stratagems/close-range-detection|近距离侦测]] — 1 CP、Shooting phase、指示部队 分队。
+- [[factions/星界军/stratagems/burst-of-speed|速度爆发]] — 1 CP、Movement phase、装甲步兵 分队、Strategic Ploy Stratagem。
+- [[factions/星界军/stratagems/withering-firepower|震撼火力]] — 1 CP、Shooting phase、钢铁之锤 分队、Strategic Ploy Stratagem。
+- [[factions/星界军/stratagems/additional-armour|额外护甲]] — 1 CP、Shooting phase、老兵连队 分队、Stratagem。
+
+## 强化
+
+- [[factions/星界军/enhancements/abhuman-detail|Abhuman Detail]] — 20 分、老兵连队 分队。
+- [[factions/星界军/enhancements/advance-augury|Advance Augury]] — 15 分、Bridgehead Strike 分队。
+- [[factions/星界军/enhancements/assault-hatches|Assault Hatches]] — 25 分、钢铁之锤 分队。
+- [[factions/星界军/enhancements/bold-leadership|Bold Leadership]] — 25 分、Mechanised Assault 分队。
+- [[factions/星界军/enhancements/bombast-class-vox-array|Bombast-class Vox-array]] — 35 分、Bridgehead Strike 分队。
+- [[factions/星界军/enhancements/calm-under-fire|Calm Under Fire]] — 15 分、Hammer of the Emperor 分队。
+- [[factions/星界军/enhancements/covert-breach|Covert Breach]] — 0 分、Tempestus Boarding Regiment 分队。
+- [[factions/星界军/enhancements/death-mask-of-ollanius|Death Mask of Ollanius]] — 10 分、Combined Arms 分队。
+- [[factions/星界军/enhancements/drill-commander|Drill Commander]] — 20 分、Combined Arms 分队。
+- [[factions/星界军/enhancements/eager-advance|Eager Advance]] — 20 分、Siege Regiment 分队。
+- [[factions/星界军/enhancements/elimination-force|Elimination Force]] — 0 分、Tempestus Boarding Regiment 分队。
+- [[factions/星界军/enhancements/exemplary-officer|Exemplary Officer]] — 20 分、装甲步兵 分队。
+- [[factions/星界军/enhancements/flash-grenades|Flash Grenades]] — 20 分、Siege Regiment 分队。
+- [[factions/星界军/enhancements/guerrilla-honours|Guerrilla Honours]] — 25 分、Recon Element 分队。
+- [[factions/星界军/enhancements/indomitable-steed|Indomitable Steed]] — 15 分、Hammer of the Emperor 分队。
+- [[factions/星界军/enhancements/legacy-sidearm|Legacy Sidearm]] — 10 分、Siege Regiment 分队。
+- [[factions/星界军/enhancements/long-range-scout|Long-range Scout]] — 分数未知、指示部队 分队。
+- [[factions/星界军/enhancements/master-manoeuvrist|Master Manoeuvrist]] — 15 分、装甲步兵 分队。
+- [[factions/星界军/enhancements/priority-drop-beacon|Priority-drop Beacon]] — 30 分、Bridgehead Strike 分队。
+- [[factions/星界军/enhancements/reactive-command|Reactive Command]] — 15 分、Combined Arms 分队。
+- [[factions/星界军/enhancements/recon-star|Recon Star]] — 分数未知、指示部队 分队。
+- [[factions/星界军/enhancements/regimental-banner|Regimental Banner]] — 20 分、Hammer of the Emperor 分队。
+- [[factions/星界军/enhancements/rigged-blind-grenades|Rigged Blind Grenades]] — 0 分、Embarked Regiment 分队。
+- [[factions/星界军/enhancements/sacred-unguents|Sacred Unguents]] — 10 分、Mechanised Assault 分队。
+- [[factions/星界军/enhancements/scare-gas-grenades|Scare Gas Grenades]] — 5 分、Recon Element 分队。
+- [[factions/星界军/enhancements/shipboard-veteran|Shipboard Veteran]] — 0 分、Embarked Regiment 分队。
+- [[factions/星界军/enhancements/shroud-projector|Shroud Projector]] — 15 分、Bridgehead Strike 分队。
+- [[factions/星界军/enhancements/smoke-grenades|Smoke Grenades]] — 10 分、Mechanised Assault 分队。
+- [[factions/星界军/enhancements/spec-ops-veteran|Spec Ops Veteran]] — 15 分、老兵连队 分队。
+- [[factions/星界军/enhancements/stalwarts-honours|Stalwart’s Honours]] — 15 分、Siege Regiment 分队。
+- [[factions/星界军/enhancements/survival-gear|Survival Gear]] — 5 分、Recon Element 分队。
+- [[factions/星界军/enhancements/titan-killer|Titan Killer]] — 20 分、钢铁之锤 分队。
+- [[factions/星界军/enhancements/tripwires|Tripwires]] — 20 分、Recon Element 分队。
+- [[factions/星界军/enhancements/vanguard-honours|Vanguard Honours]] — 15 分、Mechanised Assault 分队。
+- [[factions/星界军/enhancements/veteran-crew|Veteran Crew]] — 20 分、Hammer of the Emperor 分队。
+- [[factions/星界军/enhancements/grand-strategist-armoured-infantry|大战略家]] — 25 分、装甲步兵 分队。
+- [[factions/星界军/enhancements/grand-strategist-combined-arms|大战略家]] — 15 分、Combined Arms 分队。
+- [[factions/星界军/enhancements/aquilan-eye|天鹰之眼]] — 20 分、老兵连队 分队。
+- [[factions/星界军/enhancements/laud-hailer|扩音器]] — 10 分、老兵连队 分队。
+- [[factions/星界军/enhancements/sharp-eyes-light-fingers|敏锐视觉]] — 分数未知、亚人类辅助军 分队。
+- [[factions/星界军/enhancements/engine-speaker|机械对话者]] — 15 分、钢铁之锤 分队。
+- [[factions/星界军/enhancements/omnissian-unguents-aura|欧姆尼赛亚的神圣油膏（光环）]] — 35 分、装甲步兵 分队。
+- [[factions/星界军/enhancements/battalion-commander|营部指挥官]] — 30 分、钢铁之锤 分队。
+- [[factions/星界军/enhancements/exemplar-of-duty|责任榜样]] — 分数未知、亚人类辅助军 分队。
 

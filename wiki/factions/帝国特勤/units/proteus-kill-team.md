@@ -1,5 +1,5 @@
 ---
-id: 000003824
+id: '000003824'
 name_en: Proteus Kill Team
 faction: 帝国特勤
 type: unit
@@ -30,31 +30,31 @@ updated: '2026-07-23'
 ## 射击武器
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| Assault cannon | 24" | 6 | 3+ | 6 | 0 | 1 | [[core-rules/devastating-wounds.md\|DEVASTATING WOUNDS]] |
-| Boltgun | 24" | 2 | 3+ | 4 | 0 | 1 | — |
-| Cyclone missile launcher – frag | 36" | 2D6 | 3+ | 4 | 0 | 1 | [[core-rules/blast.md\|BLAST]] |
-| Cyclone missile launcher – krak | 36" | 2 | 3+ | 9 | -2 | D6 | — |
-| Frag cannon | 18" | D3 | 4+ | 7 | -1 | 2 | blast，heavy，rapid fire d3 |
-| Heavy flamer | 12" | D6 | N/A | 5 | -1 | 1 | [[core-rules/ignores-cover.md\|IGNORES COVER]]，TORRENT |
-| Infernus heavy bolter – heavy bolter | 36" | 3 | 4+ | 5 | -1 | 2 | [[core-rules/heavy.md\|HEAVY]]，[[core-rules/sustained-hits.md\|SUSTAINED HITS 1]] |
-| Infernus heavy bolter – heavy flamer | 12" | D6 | N/A | 5 | -1 | 1 | [[core-rules/ignores-cover.md\|IGNORES COVER]]，TORRENT |
-| Long Vigil ranged weapon | 24" | 1 | 4+ | 4 | 0 | 1 | [[core-rules/anti.md\|ANTI-INFANTRY 4+]]，[[core-rules/devastating-wounds.md\|DEVASTATING WOUNDS]]，[[core-rules/rapid-fire.md\|RAPID FIRE 1]] |
-| Plasma cannon – standard | 36" | D3 | 4+ | 7 | -2 | 1 | [[core-rules/blast.md\|BLAST]]，[[core-rules/heavy.md\|HEAVY]] |
-| Plasma cannon – supercharge | 36" | D3 | 4+ | 8 | -3 | 2 | [[core-rules/blast.md\|BLAST]]，[[core-rules/hazardous.md\|HAZARDOUS]]，[[core-rules/heavy.md\|HEAVY]] |
-| Storm bolter | 24" | 2 | 3+ | 4 | 0 | 1 | [[core-rules/rapid-fire.md\|rapid fire 2]] |
-| Twin boltgun | 24" | 2 | 3+ | 4 | 0 | 1 | twin-linked |
+| 突击炮 | 24" | 6 | 3+ | 6 | 0 | 1 | [[core-rules/devastating-wounds.md\|毁灭伤害]] |
+| 爆弹枪 | 24" | 2 | 3+ | 4 | 0 | 1 | — |
+| 龙卷风导弹发射器-破片 | 36" | 2D6 | 3+ | 4 | 0 | 1 | [[core-rules/blast.md\|爆炸]] |
+| 龙卷风导弹发射器-穿甲 | 36" | 2 | 3+ | 9 | -2 | D6 | — |
+| 破片炮 | 18" | D3 | 4+ | 7 | -1 | 2 | [[core-rules/blast.md\|爆炸]]，[[core-rules/heavy.md\|重型]]，[[core-rules/rapid-fire.md\|速射D3]] |
+| 重型喷火器 | 12" | D6 | N/A | 5 | -1 | 1 | [[core-rules/ignores-cover.md\|无视掩体]]，[[core-rules/torrent.md\|洪流]] |
+| 地狱火重型爆弹枪-重型爆弹枪 | 36" | 3 | 4+ | 5 | -1 | 2 | [[core-rules/heavy.md\|重型]]，[[core-rules/sustained-hits.md\|连击1]] |
+| 地狱火重型爆弹枪-重型火焰喷射器 | 12" | D6 | N/A | 5 | -1 | 1 | [[core-rules/ignores-cover.md\|无视掩体]]，[[core-rules/torrent.md\|洪流]] |
+| 长守远程武器 | 24" | 1 | 4+ | 4 | 0 | 1 | [[core-rules/anti.md\|针对步兵4+]]，[[core-rules/devastating-wounds.md\|毁灭伤害]]，[[core-rules/rapid-fire.md\|速射1]] |
+| 等离子炮-标准 | 36" | D3 | 4+ | 7 | -2 | 1 | [[core-rules/blast.md\|爆炸]]，[[core-rules/heavy.md\|重型]] |
+| 等离子炮-过载 | 36" | D3 | 4+ | 8 | -3 | 2 | [[core-rules/blast.md\|爆炸]]，[[core-rules/hazardous.md\|危险]]，[[core-rules/heavy.md\|重型]] |
+| 风暴爆弹枪 | 24" | 2 | 3+ | 4 | 0 | 1 | [[core-rules/rapid-fire.md\|速射2]] |
+| Twin boltgun | 24" | 2 | 3+ | 4 | 0 | 1 | [[core-rules/twin-linked.md\|双联]] |
 
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| Close combat weapon | 近战 | 3 | 3+ | 4 | 0 | 1 | — |
-| Chainfist | 近战 | 3 | 4+ | 8 | -2 | 2 | [[core-rules/anti.md\|anti-vehicle 3+]] |
-| Deathwatch thunder hammer | 近战 | 3 | 4+ | 10 | -2 | 3 | devastating wounds |
-| Long Vigil melee weapon | 近战 | 3 | 3+ | 5 | -2 | 1 | — |
-| Power fist | 近战 | 3 | 3+ | 8 | -2 | 2 | — |
-| Power weapon | 近战 | 4 | 3+ | 5 | -2 | 1 | — |
-| Terminator thunder hammer | 近战 | 3 | 3+ | 8 | -2 | 2 | devastating wounds |
-| Twin lightning claws | 近战 | 5 | 3+ | 5 | -2 | 1 | twin-linked |
+| 格斗武器 | 近战 | 3 | 3+ | 4 | 0 | 1 | — |
+| 链锯拳 | 近战 | 3 | 4+ | 8 | -2 | 2 | [[core-rules/anti.md\|针对载具3+]] |
+| 死亡守望雷霆锤 | 近战 | 3 | 4+ | 10 | -2 | 3 | [[core-rules/devastating-wounds.md\|毁灭伤害]] |
+| 长守近战武器 | 近战 | 3 | 3+ | 5 | -2 | 1 | — |
+| 动力拳 | 近战 | 3 | 3+ | 8 | -2 | 2 | — |
+| 动力武器 | 近战 | 4 | 3+ | 5 | -2 | 1 | — |
+| Terminator thunder hammer | 近战 | 3 | 3+ | 8 | -2 | 2 | [[core-rules/devastating-wounds.md\|毁灭伤害]] |
+| 一对闪电爪 | 近战 | 5 | 3+ | 5 | -2 | 1 | [[core-rules/twin-linked.md\|双联]] |
 
 ## 技能
 - **Proteus Doctrines**：Each time a model in this unit makes an attack that targets a unit that is not Below Half-strength, add 1 to the Hit roll.

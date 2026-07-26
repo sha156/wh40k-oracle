@@ -34,11 +34,11 @@ updated: '2026-07-23'
 
 ## 技能
 - **鲜血宝座**
-- **冠军杀手**
+- **[[factions/帝皇卫队/stratagems/slayer-of-champions.md|冠军杀手]]**
 
 ## 单位构成
 - **1个模型** — 150 分
 
 ## 关键词
 - **阵营关键词**：Legiones Daemonica
-- **普通关键词**：[[core-rules/character.md|Character]]，Daemon，Khorne，Rendmaster on Blood throne，Shadow Legion，Chaos，[[core-rules/mounted.md|Mounted]]
+- **普通关键词**：[[core-rules/character.md|Character]]，Daemon，Khorne，Rendmaster on Blood throne，[[factions/混沌恶魔/detachments/shadow-legion.md|Shadow Legion]]，Chaos，[[core-rules/mounted.md|Mounted]]

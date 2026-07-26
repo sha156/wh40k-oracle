@@ -1,5 +1,5 @@
 ---
-id: 000003961
+id: '000003961'
 name_zh: 炮兵小组
 name_en: Artillery Team
 faction: 基因窃取者教派

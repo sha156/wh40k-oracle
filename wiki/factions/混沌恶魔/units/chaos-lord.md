@@ -1,5 +1,6 @@
 ---
 id: '000004036'
+name_zh: 混沌领主
 name_en: Chaos Lord
 faction: 混沌恶魔
 type: unit
@@ -27,24 +28,25 @@ updated: '2026-07-23'
 ## 射击武器
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| Plasma pistol – standard | 12" | 1 | 2+ | 7 | -2 | 1 | pistol |
-| Plasma pistol – supercharge | 12" | 1 | 2+ | 8 | -3 | 2 | pistol，hazardous |
+| 等离子手枪（标准）  | 12" | 1 | 2+ | 7 | -2 | 1 | [[core-rules/pistol.md\|手枪]] |
+| 等离子手枪（过载）   | 12" | 1 | 2+ | 8 | -3 | 2 | [[core-rules/pistol.md\|手枪]]，[[core-rules/hazardous.md\|危险]] |
 
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| Accursed weapon | 近战 | 6 | 2+ | 5 | -2 | 1 | — |
-| Daemon hammer | 近战 | 5 | 3+ | 8 | -2 | 2 | devastating wounds |
-| Power fist | 近战 | 5 | 2+ | 8 | -2 | 2 | — |
-| Astartes chainblade | 近战 | 7 | 2+ | 4 | -1 | 1 | — |
+| 诅咒武器  | 近战 | 6 | 2+ | 5 | -2 | 1 | — |
+| 恶魔战锤 | 近战 | 5 | 3+ | 8 | -2 | 2 | [[core-rules/devastating-wounds.md\|毁灭伤害]] |
+| 动力拳 | 近战 | 5 | 2+ | 8 | -2 | 2 | — |
+| 阿斯塔特链锯刃     | 近战 | 7 | 2+ | 4 | -1 | 1 | — |
 
 ## 技能
-- **Lord of Chaos**：Once per battle round, one unit from your army with this ability can use it when its unit is targeted with a Stratagem. If it does, reduce the CP cost of that use of that Stratagem by 1CP.
-- **Chance for Glory**：Once per battle, at the start of the Fight phase, this model can use this ability. If it does, until the end of the phase, improve the Strength, Attacks, Armour Penetration and Damage characteristics of melee weapons equipped by this model by 1.
+- **【阵营技能】：黑暗契约**
+- **混沌领主**：每个游戏大回合一次，你的军队中最多一个拥有 此技能的单位对自身所在单位使用一个战略技能时可以减少 1 点 CP 消耗
+- **争抢荣誉**：整场游戏一次，在近战阶段开始时可以使用，持 续那个阶段，本模型的近战武器 A,S,AP,D 值都提高 1 点
 
 ## 单位构成
 - **1个模型** — 90 分
 
 ## 关键词
 - **阵营关键词**：Legiones Daemonica，Heretic Astartes
-- **普通关键词**：Shadow Legion，Undivided，Chaos Lord，Chaos，[[core-rules/grenades.md|Grenades]]，Undivided，[[core-rules/character.md|Character]]，Chaos Lord，Chaos，Chaos Lord，Undivided，Shadow Legion，[[core-rules/infantry.md|Infantry]]，[[core-rules/character.md|Character]]，[[core-rules/grenades.md|Grenades]]，Chaos，Chaos Lord，Undivided，[[core-rules/grenades.md|Grenades]]，[[core-rules/infantry.md|Infantry]]，[[core-rules/character.md|Character]]，[[core-rules/grenades.md|Grenades]]，Chaos，Chaos Lord，Undivided，Shadow Legion，[[core-rules/infantry.md|Infantry]]，[[core-rules/character.md|Character]]，[[core-rules/grenades.md|Grenades]]，Chaos，Shadow Legion，Shadow Legion，[[core-rules/character.md|Character]]，[[core-rules/infantry.md|Infantry]]，[[core-rules/infantry.md|Infantry]]
+- **普通关键词**：[[factions/混沌恶魔/detachments/shadow-legion.md|Shadow Legion]]，Undivided，Chaos Lord，Chaos，[[core-rules/grenades.md|Grenades]]，Undivided，[[core-rules/character.md|Character]]，Chaos Lord，Chaos，Chaos Lord，Undivided，[[factions/混沌恶魔/detachments/shadow-legion.md|Shadow Legion]]，[[core-rules/infantry.md|Infantry]]，[[core-rules/character.md|Character]]，[[core-rules/grenades.md|Grenades]]，Chaos，Chaos Lord，Undivided，[[core-rules/grenades.md|Grenades]]，[[core-rules/infantry.md|Infantry]]，[[core-rules/character.md|Character]]，[[core-rules/grenades.md|Grenades]]，Chaos，Chaos Lord，Undivided，Shadow Legion，[[core-rules/infantry.md|Infantry]]，[[core-rules/character.md|Character]]，[[core-rules/grenades.md|Grenades]]，Chaos，Shadow Legion，Shadow Legion，[[core-rules/character.md|Character]]，[[core-rules/infantry.md|Infantry]]，[[core-rules/infantry.md|Infantry]]

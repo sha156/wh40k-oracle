@@ -34,7 +34,7 @@ updated: '2026-07-23'
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| 圣物处刑者巨剑     | 近战 | 5 | 2+ | 7 | -2 | 2 | [[core-rules/precision.md\|精准]]，[[core-rules/devastating-wounds.md\|毁灭伤害]] |
+| 圣物处刑者巨剑     | 近战 | 5 | 2+ | 7 | -2 | 2 | [[core-rules/devastating-wounds.md\|毁灭伤害]]，[[core-rules/precision.md\|精准]] |
 
 ## 技能
 - **【阵营技能】：破敌重誓**

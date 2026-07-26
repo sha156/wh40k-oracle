@@ -1,5 +1,6 @@
 ---
 id: '000001114'
+name_zh: 放血鬼
 name_en: Bloodletters
 faction: 混沌恶魔
 type: unit
@@ -20,7 +21,7 @@ updated: '2026-07-23'
 ## 属性表
 | 模型 | M | T | SV | W | LD | OC |
 |---|---|---|---|---|---|---|
-| Bloodletters | 8" | 4 | 7+ | 1 | 7+ | 2 |
+| 放血鬼 | 8" | 4 | 7+ | 1 | 7+ | 2 |
 
 ### 特殊保护
 - 5+
@@ -28,16 +29,16 @@ updated: '2026-07-23'
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| Hellblade | 近战 | 2 | 3+ | 5 | -2 | 2 | — |
+| 地狱之刃 | 近战 | 2 | 3+ | 5 | -2 | 2 | — |
 
 ## 技能
-- **Daemonic Icon**：Models in the bearer’s unit have a Leadership characteristic of 6+.
-- **Instrument of Chaos**：Add 1 to Charge rolls made for the bearer’s unit.
-- **Bane of Cowards**：Each time an enemy unit (excluding <span class="kwb">MONSTERS</span> and <span class="kwb">VEHICLES</span>) within Engagement Range of one or more units from your army with this ability Falls Back, models in that enemy unit must take Desperate Escape tests. When doing so, if that enemy unit is also Battle-shocked, subtract 1 from each of those Desperate Escape tests.
+- **懦夫梦魇**：每当一个与该单位处于近战中的敌方非巨兽非载具单位进行撤退，那个敌方单位中模型须进行绝望溃逃测试。当如是做时，如果那个敌方单位还处于震慑中，则其绝望溃逃测试结果-1。
+- **恶魔徽记**：持有者所属单位中模型的领导力属性为 6+。
+- **混沌乐器**：持有者所属单位进行的冲锋掷骰结果增加 1 点。
 
 ## 单位构成
 - **10个模型** — 110 分
 
 ## 关键词
 - **阵营关键词**：Legiones Daemonica
-- **普通关键词**：[[core-rules/infantry.md|Infantry]]，[[core-rules/battleline.md|Battleline]]，Chaos，Daemon，Bloodletters，Shadow Legion，Khorne
+- **普通关键词**：[[core-rules/infantry.md|Infantry]]，[[core-rules/battleline.md|Battleline]]，Chaos，Daemon，Bloodletters，[[factions/混沌恶魔/detachments/shadow-legion.md|Shadow Legion]]，Khorne

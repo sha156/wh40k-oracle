@@ -24,12 +24,12 @@ updated: '2026-07-23'
 ## 射击武器
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| Heavy mortar | 48" | D6 | 5+ | 6 | -1 | 2 | heavy，blast，indirect fire |
+| 重型迫击炮 | 48" | D6 | 5+ | 6 | -1 | 2 | [[core-rules/heavy.md\|重型]]，[[core-rules/blast.md\|爆炸]]，[[core-rules/indirect-fire.md\|曲射]] |
 
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| Close combat weapons | 近战 | 3 | 4+ | 3 | 0 | 1 | — |
+| 格斗武器 | 近战 | 3 | 4+ | 3 | 0 | 1 | — |
 
 ## 技能
 - **Rearm, Reload, Fire**：While this model is being affected by an Order, provided it Remained Stationary this turn, ranged weapons equipped by this model have the [SUSTAINED HITS 1] ability.

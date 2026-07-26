@@ -1,5 +1,6 @@
 ---
-id: 000000967
+id: '000000967'
+name_zh: 铸造魔
 name_en: Forgefiend
 faction: 混沌星际战士
 type: unit
@@ -28,17 +29,19 @@ updated: '2026-07-23'
 ## 射击武器
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| Ectoplasma cannon | 36" | D3 | 3+ | 10 | -3 | 3 | blast |
-| Hades autocannon | 36" | 6 | 3+ | 8 | -1 | 2 | — |
+| 幽冥等离子炮 | 36" | D3 | 3+ | 10 | -3 | 3 | [[core-rules/blast.md\|爆炸]] |
+| 冥神自动炮 | 36" | 6 | 3+ | 8 | -1 | 2 | — |
 
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| Armoured limbs | 近战 | 2 | 3+ | 6 | 0 | 2 | — |
-| Forgefiend jaws | 近战 | 5 | 3+ | 7 | 0 | 2 | — |
+| 装甲身躯  | 近战 | 2 | 3+ | 6 | 0 | 2 | — |
+| 魔铸巨嘴  | 近战 | 5 | 3+ | 7 | 0 | 2 | — |
 
 ## 技能
-- **Daemonic Ordnance**：Each time this model is selected to shoot, it can use this ability. If it does, until the end of the phase, its ranged weapons have the [DEVASTATING WOUNDS] and [HAZARDOUS] abilities.
+- **【阵营技能】：黑暗契约**
+- **魔化重炮**：本模型被选择进行射击时，可以在本阶 段中让自身的射击武器获得【毁灭伤害】和【危险】技能
+- **严重损伤**：当本模型 W 值为 1-4 时，进行的攻击命 中结果-1
 
 ## 单位构成
 - **1个模型** — 160 分

@@ -14,7 +14,9 @@ from web_api.simulate import (lookup_unit_name, run_simulation,
                               sanitize_options)
 
 DB_PATH = Path(__file__).resolve().parent.parent / "db" / "wh40k.sqlite"
-BROADSIDE = "000000433"   # Broadside Battlesuits：多武器 → 未给 loadout 必 ambiguous
+BROADSIDE = "000000433"   # Broadside Battlesuits：射击 5 把 → 未给 loadout 必 ambiguous
+BOYZ = "000000016"        # Boyz：近战 4 把 → 反打阶段仍需装配
+KROOT_HOUNDS = "000000415"  # Kroot Hounds：全池只有近战 'Ripping fangs'（无远程）
 
 needs_db = pytest.mark.skipif(not DB_PATH.exists(), reason="wh40k.sqlite 不存在")
 
@@ -173,9 +175,48 @@ def test_run_simulation_loadout_required_surfaces_pool():
     assert resp is not None and resp.ok is False
     assert resp.reason == "loadout_required"
     assert resp.weapon_pool and "Heavy rail rifle" in resp.weapon_pool
+    # 池按阶段收窄：射击阶段不再列近战武器（列了等于诱导用户选出全 0 报告）
+    assert "Crushing bulk" not in resp.weapon_pool
     assert resp.model_tiers    # points 档位（选模型数用）
     d = resp.model_dump(by_alias=True)
     assert "weaponPool" in d and "modelTiers" in d   # camelCase 契约
+
+
+# ── 该阶段无可开火武器：装配无解 → 换阶段（2026-07-25 修）────────────
+
+@needs_db
+def test_melee_only_unit_in_shooting_phase_says_switch_phase():
+    """只有近战武器的单位在射击阶段：不再发一份填不满的装配面板，而是显式指路换阶段。"""
+    resp = run_simulation(DB_PATH, KROOT_HOUNDS, BROADSIDE, {"phase": "shooting"})
+    assert resp is not None and resp.ok is False
+    assert resp.reason == "no_weapon_for_phase"
+    assert "射击阶段没有可开火武器" in (resp.note or "")
+    assert resp.weapon_pool == ["Ripping fangs"]   # 完整池供展示
+
+
+@needs_db
+def test_single_weapon_unit_auto_assembles_and_discloses():
+    """该阶段武器池只有 1 把 ⇒ 无选项可选 → 自动装配（件数=模型数）并在 warning 披露。"""
+    resp = run_simulation(DB_PATH, KROOT_HOUNDS, BROADSIDE,
+                          {"phase": "melee", "n": 500, "seed": 7})
+    assert resp is not None and resp.ok is True, resp.note
+    assert resp.report is not None and resp.report.funnel["attacks"] > 0
+    assert "自动装配" in (resp.warning or "")
+    # 模型数手填 → 件数跟着变（5 模型 A3 = 15 攻击；10 模型 = 30）
+    more = run_simulation(DB_PATH, KROOT_HOUNDS, BROADSIDE,
+                          {"phase": "melee", "attacker_models": 10, "n": 500, "seed": 7})
+    assert more is not None and more.ok is True
+    assert more.report.funnel["attacks"] == resp.report.funnel["attacks"] * 2
+
+
+@needs_db
+def test_explicit_cross_phase_loadout_fails_instead_of_zero_report():
+    """手填近战武器打射击阶段：显式失败，不再发"成功的"全 0 报告（假成功）。"""
+    resp = run_simulation(DB_PATH, KROOT_HOUNDS, BROADSIDE,
+                          {"phase": "shooting", "loadout": [["Ripping fangs", 5]]})
+    assert resp is not None and resp.ok is False
+    assert resp.reason == "no_weapon_for_phase"
+    assert resp.report is None
 
 
 # ── 完整模拟（带 loadout）─────────────────────────────────────────
@@ -212,12 +253,24 @@ def test_run_simulation_full_report_contract():
 
 @needs_db
 def test_run_simulation_reverse_needs_defender_loadout():
-    """reverse=True + 守方多武器未指明 loadout → defender_loadout_required（不静默退回单向）。"""
-    resp = run_simulation(DB_PATH, BROADSIDE, BROADSIDE, {
+    """reverse=True + 守方近战多武器未指明 loadout → defender_loadout_required（不静默退回单向）。"""
+    resp = run_simulation(DB_PATH, BROADSIDE, BOYZ, {
         "loadout": [["Heavy rail rifle", 1]], "reverse": True, "n": 300})
     assert resp is not None and resp.ok is False
     assert resp.reason == "defender_loadout_required"
-    assert resp.weapon_pool and "Crushing bulk" in resp.weapon_pool
+    assert resp.weapon_pool and "Power klaw" in resp.weapon_pool
+    # 反打阶段恒近战 → 池里不该混进守方的射击武器
+    assert "Shoota" not in resp.weapon_pool
+
+
+@needs_db
+def test_run_simulation_reverse_single_melee_weapon_auto_assembles():
+    """守方近战只有 1 把（Crushing bulk）→ 无选项可选，自动装配并披露，不再拦着要装配。"""
+    resp = run_simulation(DB_PATH, BROADSIDE, BROADSIDE, {
+        "loadout": [["Heavy rail rifle", 1]], "reverse": True, "n": 300, "seed": 7})
+    assert resp is not None and resp.ok is True, resp.note
+    assert resp.report is not None and resp.report.reverse is not None
+    assert "守方反打自动装配" in (resp.warning or "")
 
 
 @needs_db

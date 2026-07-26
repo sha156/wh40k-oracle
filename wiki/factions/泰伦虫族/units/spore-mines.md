@@ -1,5 +1,5 @@
 ---
-id: 000000488
+id: '000000488'
 name_zh: 孢子雷
 name_en: Spore Mines
 faction: 泰伦虫族

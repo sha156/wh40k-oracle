@@ -27,7 +27,7 @@ updated: '2026-07-23'
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
 | 魔改米加枪 | 24" | 3 | 5+ | 9 | -2 | D6 | [[core-rules/hazardous.md\|危险]] |
-| 牵引光束大炮 | 36" | 1 | 5+ | 10 | -2 | D6+1 | [[core-rules/anti.md\|针对飞行2+]]，[[core-rules/devastating-wounds.md\|毁灭伤害]] |
+| 牵引光束大炮 | 36" | 1 | 5+ | 10 | -2 | D6+1 | [[core-rules/anti.md\|针对飞行3+]]，[[core-rules/devastating-wounds.md\|毁灭伤害]] |
 
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |

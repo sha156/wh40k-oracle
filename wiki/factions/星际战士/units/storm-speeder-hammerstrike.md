@@ -26,9 +26,9 @@ updated: '2026-07-23'
 ## 射击武器
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| Hammerstrike missile launcher | 36" | 2 | 3+ | 9 | -3 | D6 | — |
-| Krakstorm grenade launcher | 18" | 1 | 3+ | 9 | -1 | D3 | — |
-| Melta destroyer | 18" | 3 | 3+ | 9 | -4 | D6 | [[core-rules/melta.md\|melta 2]] |
+| 落锤导弹 | 36" | 2 | 3+ | 9 | -3 | D6 | — |
+| 穿甲风暴雷 | 18" | 1 | 3+ | 9 | -1 | D3 | — |
+| 热熔破坏炮 | 18" | 3 | 3+ | 9 | -4 | D6 | [[core-rules/melta.md\|热熔2]] |
 
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |

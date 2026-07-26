@@ -1,5 +1,5 @@
 ---
-id: 000000085
+id: '000000085'
 name_en: Rhino Primaris
 faction: 星际战士
 type: unit
@@ -24,14 +24,14 @@ updated: '2026-07-23'
 ## 射击武器
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| [[factions/星际战士/units/hunter.md\|Hunter]]-killer missile | 48" | 1 | 2+ | 14 | -3 | D6 | one shot |
-| Twin plasma gun – standard | 24" | 1 | 3+ | 7 | -2 | 1 | [[core-rules/rapid-fire.md\|rapid fire 1]]，twin-linked |
-| Twin plasma gun – supercharge | 24" | 1 | 3+ | 8 | -3 | 2 | hazardous，[[core-rules/rapid-fire.md\|rapid fire 1]]，twin-linked |
+| 猎杀飞弹 | 48" | 1 | 2+ | 14 | -3 | D6 | [[core-rules/one-shot.md\|单发]] |
+| Twin plasma gun – standard | 24" | 1 | 3+ | 7 | -2 | 1 | [[core-rules/rapid-fire.md\|速射1]]，[[core-rules/twin-linked.md\|双联]] |
+| Twin plasma gun – supercharge | 24" | 1 | 3+ | 8 | -3 | 2 | [[core-rules/hazardous.md\|危险]]，[[core-rules/rapid-fire.md\|速射1]]，[[core-rules/twin-linked.md\|双联]] |
 
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| Armoured tracks | 近战 | 3 | 4+ | 6 | 0 | 1 | — |
+| 装甲履带 | 近战 | 3 | 4+ | 6 | 0 | 1 | — |
 
 ## 技能
 - **Self Repair**：At the end of your Command phase, this model regains 1 lost wound.
@@ -43,4 +43,4 @@ updated: '2026-07-23'
 
 ## 关键词
 - **阵营关键词**：Adeptus Astartes
-- **普通关键词**：[[core-rules/smoke.md|Smoke]]，Vehicle，[[core-rules/transport.md|Transport]]，Imperium，Rhino Primaris
+- **普通关键词**：[[core-rules/smoke.md|Smoke]]，Vehicle，[[core-rules/transport.md|Transport]]，Imperium，[[factions/星际战士/units/rhino.md|Rhino]] Primaris

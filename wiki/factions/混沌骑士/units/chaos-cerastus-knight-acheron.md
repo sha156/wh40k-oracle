@@ -1,5 +1,5 @@
 ---
-id: 000001094
+id: '000001094'
 name_zh: 混沌黄泉型角蝰骑士
 name_en: Chaos Cerastus Knight Acheron
 faction: 混沌骑士
@@ -29,7 +29,7 @@ updated: '2026-07-23'
 ## 射击武器
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| 黄泉火焰炮 | 18" | 2D6 | N/A | 8 | -1 | 2 | [[core-rules/torrent.md\|洪流]]，[[core-rules/ignores-cover.md\|忽略掩体]] |
+| 黄泉火焰炮 | 18" | 2D6 | N/A | 8 | -1 | 2 | [[core-rules/ignores-cover.md\|无视掩体]]，[[core-rules/torrent.md\|洪流]] |
 | 并联重型爆弹枪 | 36" | 3 | 3+ | 5 | -1 | 2 | [[core-rules/sustained-hits.md\|连击1]]，[[core-rules/twin-linked.md\|双联]] |
 
 ## 近战武器

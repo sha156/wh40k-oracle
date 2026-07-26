@@ -27,14 +27,14 @@ updated: '2026-07-23'
 ## 射击武器
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| Twin lascannon | 48" | 1 | 3+ | 12 | -3 | D6+1 | twin-linked |
-| Havoc launcher | 48" | D6 | 3+ | 5 | 0 | 1 | blast |
-| Autocannon | 48" | 2 | 3+ | 9 | -1 | 3 | — |
+| 双联激光炮 | 48" | 1 | 3+ | 12 | -3 | D6+1 | [[core-rules/twin-linked.md\|双联]] |
+| 浩劫发射器 | 48" | D6 | 3+ | 5 | 0 | 1 | [[core-rules/blast.md\|爆炸]] |
+| 自动炮 | 48" | 2 | 3+ | 9 | -1 | 3 | — |
 
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| Armoured hull | 近战 | 6 | 4+ | 6 | 0 | 1 | — |
+| 装甲外壳 | 近战 | 6 | 4+ | 6 | 0 | 1 | — |
 
 ## 技能
 - **Bomb Rack**：Each time this model ends a Normal move, you can select one enemy unit it moved across during that move and roll six D6: for each 3+, that unit suffers 1 mortal wound.

@@ -1,5 +1,5 @@
 ---
-id: 000002679
+id: '000002679'
 name_zh: 瓦什托尔
 name_en: Vashtorr The Arkifane
 faction: 混沌星际战士
@@ -29,13 +29,13 @@ updated: '2026-07-23'
 ## 射击武器
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| Vashtorr’s claw | 12" | D6 | N/A | 5 | -2 | 1 | [[core-rules/anti.md\|anti-vehicle 4+]]，torrent |
+| 魔爪喷射 | 12" | D6 | N/A | 5 | -2 | 1 | [[core-rules/anti.md\|针对载具4+]]，[[core-rules/torrent.md\|洪流]] |
 
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| 瓦什托尔魔锤（重击） | 近战 | 6 | 2+ | 14 | -3 | 3 | [[core-rules/anti.md\|反载具 4+]]，[[core-rules/devastating-wounds.md\|毁灭伤害]] |
-| 瓦什托尔魔锤（横扫） | 近战 | 12 | 2+ | 8 | -1 | 2 | [[core-rules/anti.md\|反载具 4+]]，[[core-rules/devastating-wounds.md\|毁灭伤害]] |
+| 瓦什托尔魔锤（重击） | 近战 | 6 | 2+ | 14 | -3 | 3 | [[core-rules/anti.md\|针对载具4+]]，[[core-rules/devastating-wounds.md\|毁灭伤害]] |
+| 瓦什托尔魔锤（横扫） | 近战 | 12 | 2+ | 8 | -1 | 2 | [[core-rules/anti.md\|针对载具4+]]，[[core-rules/devastating-wounds.md\|毁灭伤害]] |
 
 ## 技能
 - **【阵营技能】：黑暗契约**

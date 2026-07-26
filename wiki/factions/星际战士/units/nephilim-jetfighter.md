@@ -1,5 +1,5 @@
 ---
-id: 000000239
+id: '000000239'
 name_zh: 涅法雷姆战斗机
 name_en: Nephilim Jetfighter
 faction: 星际战士
@@ -30,8 +30,8 @@ updated: '2026-07-23'
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
 | 复仇者爆弹 | 36" | 10 | 3+ | 5 | -1 | 2 | [[core-rules/sustained-hits.md\|连击1]] |
-| 黑剑导弹 | 36" | 2 | 3+ | 8 | -2 | D6 | [[core-rules/anti.md\|反飞行2+]] |
-| Nephilim lascannons | 48" | 2 | 3+ | 12 | -3 | D6+1 | — |
+| 黑剑导弹 | 36" | 2 | 3+ | 8 | -2 | D6 | [[core-rules/anti.md\|针对飞行2+]] |
+| 涅法雷姆激光炮 | 48" | 2 | 3+ | 12 | -3 | D6+1 | — |
 | 双联重型爆弹枪 | 36" | 3 | 3+ | 5 | -1 | 2 | [[core-rules/sustained-hits.md\|连击1]]，[[core-rules/twin-linked.md\|双联]] |
 
 ## 近战武器

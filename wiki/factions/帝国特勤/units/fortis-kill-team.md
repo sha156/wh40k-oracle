@@ -1,5 +1,6 @@
 ---
-id: 000003825
+id: '000003825'
+name_zh: 至强杀戮小队
 name_en: Fortis Kill Team
 faction: 帝国特勤
 type: unit
@@ -20,34 +21,33 @@ updated: '2026-07-23'
 ## 属性表
 | 模型 | M | T | SV | W | LD | OC |
 |---|---|---|---|---|---|---|
-| KILL TEAM INTERCESSOR | 6" | 4 | 3+ | 2 | 6+ | 1 |
+| 杀戮小队仲裁者 | 6" | 4 | 3+ | 2 | 6+ | 1 |
 | KILL TEAM OUTRIDER | 12" | 5 | 3+ | 4 | 6+ | 2 |
 
 ## 射击武器
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| Bolt pistol | 12" | 1 | 3+ | 4 | 0 | 1 | pistol |
-| Bolt rifle | 24" | 2 | 3+ | 4 | -1 | 1 | assault，heavy |
-| Hand flamer | 12" | D6 | N/A | 3 | 0 | 1 | ignores cover，pistol，torrent |
-| Heavy bolt pistol | 18" | 1 | 3+ | 4 | -1 | 1 | pistol |
-| Long Vigil ranged weapon | 24" | 1 | 4+ | 4 | 0 | 1 | [[core-rules/anti.md\|anti-infantry 4+]]，devastating wounds，[[core-rules/rapid-fire.md\|rapid fire 1]] |
-| Plasma pistol – standard | 12" | 1 | 3+ | 7 | -2 | 1 | PISTOL |
-| Plasma pistol – supercharge | 12" | 1 | 3+ | 8 | -3 | 2 | [[core-rules/hazardous.md\|HAZARDOUS]]，PISTOL |
-| Plasma incinerator – standard | 24" | 2 | 3+ | 7 | -2 | 1 | assault，heavy |
-| Plasma incinerator – supercharge | 24" | 2 | 3+ | 8 | -3 | 2 | assault，hazardous，heavy |
-| Twin bolt rifle | 24" | 2 | 3+ | 4 | -1 | 1 | twin-linked |
+| 爆矢手枪 | 12" | 1 | 3+ | 4 | 0 | 1 | [[core-rules/pistol.md\|手枪]] |
+| 爆弹步枪 | 24" | 2 | 3+ | 4 | -1 | 1 | [[core-rules/assault.md\|突击]]，[[core-rules/heavy.md\|重型]] |
+| 喷火手枪 | 12" | D6 | N/A | 3 | 0 | 1 | [[core-rules/ignores-cover.md\|无视掩体]]，[[core-rules/pistol.md\|手枪]]，[[core-rules/torrent.md\|洪流]] |
+| 重型爆矢手枪 | 18" | 1 | 3+ | 4 | -1 | 1 | [[core-rules/pistol.md\|手枪]] |
+| 爆矢手枪 | 24" | 1 | 4+ | 4 | 0 | 1 | [[core-rules/anti.md\|针对步兵4+]]，[[core-rules/devastating-wounds.md\|毁灭伤害]]，[[core-rules/rapid-fire.md\|速射1]] |
+| 等离子手枪 - 标准 | 12" | 1 | 3+ | 7 | -2 | 1 | [[core-rules/pistol.md\|手枪]] |
+| 等离子手枪 - 过载 | 12" | 1 | 3+ | 8 | -3 | 2 | [[core-rules/hazardous.md\|危险]]，[[core-rules/pistol.md\|手枪]] |
+| 等离子焚化枪 - 标准 | 24" | 2 | 3+ | 7 | -2 | 1 | [[core-rules/assault.md\|突击]]，[[core-rules/heavy.md\|重型]] |
+| 等离子焚化枪 - 过载 | 24" | 2 | 3+ | 8 | -3 | 2 | [[core-rules/assault.md\|突击]]，[[core-rules/hazardous.md\|危险]]，[[core-rules/heavy.md\|重型]] |
+| 双联爆弹步枪 | 24" | 2 | 3+ | 4 | -1 | 1 | [[core-rules/twin-linked.md\|双联]] |
 
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| Astartes chainsword | 近战 | 4 | 4+ | 4 | -1 | 1 | — |
-| Close combat weapon | 近战 | 3 | 3+ | 4 | 0 | 1 | — |
-| Long Vigil melee weapon | 近战 | 3 | 3+ | 5 | -2 | 1 | — |
+| 阿斯塔特链锯剑 | 近战 | 4 | 4+ | 4 | -1 | 1 | — |
+| 格斗武器 | 近战 | 3 | 3+ | 4 | 0 | 1 | — |
+| 长守近战武器 | 近战 | 3 | 3+ | 5 | -2 | 1 | — |
 
 ## 技能
-- **Fortis Doctrines**：Each time a model in this unit makes an attack that targets a unit that is Below Half-strength, add 1 to the Hit roll.
-- **ATTACHED UNIT**：If a Character from your army with the Leader ability can be attached to a [[factions/帝国特勤/units/deathwatch-kill-team.md|Deathwatch Kill Team]], it can be attached to this unit instead.
-- **TRANSPORT**：This unit cannot embark within an [[factions/帝国特勤/units/imperial-rhino.md|Imperial Rhino]].
+- **至强战术**：当该单位中的模型对低于初始兵力的单位进行攻击时，命中掷骰结果加 1。当该单位中的模型对低于半数兵力的单位进行攻击时，命中掷骰和致伤掷骰结果都加 1。
+- **【阵营技能】：破敌重誓，任务战术**
 
 ## 单位构成
 - **5个模型** — 100 分

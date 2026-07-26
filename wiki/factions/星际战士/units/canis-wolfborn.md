@@ -1,5 +1,5 @@
 ---
-id: 000000288
+id: '000000288'
 name_en: Canis Wolfborn
 faction: 星际战士
 type: unit
@@ -24,13 +24,13 @@ updated: '2026-07-23'
 ## 射击武器
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| Bolt pistol | 12" | 1 | 5+ | 4 | 0 | 1 | pistol |
+| 爆弹手枪 | 12" | 1 | 5+ | 4 | 0 | 1 | [[core-rules/pistol.md\|手枪]] |
 
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| Crushing teeth and claws | 近战 | 3 | 4+ | 5 | -1 | 1 | extra attacks |
-| Wolf claws | 近战 | 8 | 2+ | 5 | -2 | 1 | twin-linked |
+| Crushing teeth and claws | 近战 | 3 | 4+ | 5 | -1 | 1 | [[core-rules/extra-attacks.md\|额外攻击]] |
+| Wolf claws | 近战 | 8 | 2+ | 5 | -2 | 1 | [[core-rules/twin-linked.md\|双联]] |
 
 ## 技能
 - **Born of Wolves**：While this model is leading a unit, melee weapons equipped by models in that unit have the [SUSTAINED HITS 1] ability.

@@ -28,12 +28,12 @@ updated: '2026-07-23'
 ## 射击武器
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| Drakkis | 12" | D6+3 | N/A | 4 | -1 | 1 | ignores cover，pistol，torrent |
+| 龙之焰 | 12" | D6+3 | N/A | 4 | -1 | 1 | [[core-rules/ignores-cover.md\|无视掩体]]，[[core-rules/pistol.md\|手枪]]，[[core-rules/torrent.md\|洪流]] |
 
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| Malleus Noctum | 近战 | 5 | 2+ | 10 | -2 | 3 | — |
+| 诺克顿之锤 | 近战 | 5 | 2+ | 10 | -2 | 3 | — |
 
 ## 技能
 - **Unto the Anvil**：While this model is leading a unit, each time a model in that unit makes a melee attack, you can re-roll the Wound roll.

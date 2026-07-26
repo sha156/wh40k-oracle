@@ -1,5 +1,6 @@
 ---
 id: '000002535'
+name_zh: 暗影先知
 name_en: Shadowseer
 faction: 艾达灵族
 type: unit
@@ -19,7 +20,7 @@ updated: '2026-07-23'
 ## 属性表
 | 模型 | M | T | SV | W | LD | OC |
 |---|---|---|---|---|---|---|
-| Shadowseer | 8" | 3 | 6+ | 4 | 6+ | 1 |
+| 暗影先知 | 8" | 3 | 6+ | 4 | 6+ | 1 |
 
 ### 特殊保护
 - 4+
@@ -27,19 +28,18 @@ updated: '2026-07-23'
 ## 射击武器
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| Neuro disruptor | 12" | 1 | 2+ | 4 | -2 | 1 | [[core-rules/anti.md\|anti-infantry 2+]]，assault，pistol |
-| Shuriken pistol | 12" | 1 | 2+ | 4 | -1 | 1 | assault，pistol |
+| 神经干扰枪 | 12" | 1 | 2+ | 4 | -2 | 1 | [[core-rules/anti.md\|针对步兵2+]]，[[core-rules/assault.md\|突击]]，[[core-rules/pistol.md\|手枪]] |
+| 星镖手枪 | 12" | 1 | 2+ | 4 | -1 | 1 | [[core-rules/assault.md\|突击]]，[[core-rules/pistol.md\|手枪]] |
 
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| Miststave | 近战 | 4 | 2+ | 5 | -1 | D3 | psychic |
+| 迷雾法杖 | 近战 | 4 | 2+ | 5 | -1 | D3 | [[core-rules/psychic-attacks.md\|灵能]] |
 
 ## 技能
-- **Fog of Dreams (Psychic)**：While this model is leading a unit, that unit can only be selected as the target of a ranged attack if the attacking model is within 18".
-- **Treacherous Illusion (Psychic)**：Melee weapons equipped by enemy models have the [HAZARDOUS] ability while targeting this model’s unit.
-- **Flip Belt**：Each time the bearer’s unit makes a Normal, Advance, Fall Back or Charge move, ignore any vertical distance when determining the total distance the bearer can be moved during that move.
-- **TRAVELLING PLAYERS**：Unless otherwise stated, you cannot include more than one of this model in your army.
+- **【阵营技能】：战斗专注**
+- **梦境迷雾（灵能）**：当本模型领导一个单位时，该单位只能被位于其18寸内的模型选为远程攻击的目标
+- **危险错觉（灵能）**：以本模型所在单位为攻击目标的敌方单位装备的近战武器获得【危险】词条
 
 ## 单位构成
 - **1个模型** — 60 分

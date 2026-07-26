@@ -1,5 +1,5 @@
 ---
-id: 000002494
+id: '000002494'
 name_zh: 兽霸小子
 name_en: Beast Snagga Boyz
 faction: 兽人

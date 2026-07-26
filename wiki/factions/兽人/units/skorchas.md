@@ -28,12 +28,12 @@ updated: '2026-07-23'
 ## 射击武器
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| Skorcha | 12" | D6 | N/A | 5 | -1 | 1 | ignores cover，torrent |
+| Skorcha | 12" | D6 | N/A | 5 | -1 | 1 | [[core-rules/ignores-cover.md\|无视掩体]]，[[core-rules/torrent.md\|洪流]] |
 
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| Spiked wheel | 近战 | 2 | 4+ | 6 | 0 | 1 | — |
+| 尖刺车轮 | 近战 | 2 | 4+ | 6 | 0 | 1 | — |
 
 ## 技能
 - **Pyromaniaks**：Each time a model in this unit makes a ranged attack with a Torrent weapon that targets an enemy unit within 6", re-roll a Wound roll of 1. If the target of that attack is also within range of an objective marker, you can re-roll the Wound roll instead.

@@ -33,7 +33,7 @@ updated: '2026-07-23'
 | 循环离子炮 — 标准 | 18" | 3 | 4+ | 7 | -1 | 1 | — |
 | 循环离子炮 — 过载 | 18" | 3 | 4+ | 8 | -2 | 2 | [[core-rules/hazardous.md\|危险]] |
 | 导弹仓 | 30" | 2 | 4+ | 7 | -1 | 2 | — |
-| 寻觅者导弹 | 48" | 1 | 4+ | 14 | -3 | D6+1 | [[core-rules/one-shot.md\|一次性]] |
+| 寻觅者导弹 | 48" | 1 | 4+ | 14 | -3 | D6+1 | [[core-rules/one-shot.md\|单发]] |
 | 并联重型磁轨加农 | 120" | 1 | 4+ | 26 | -5 | 12 | [[core-rules/devastating-wounds.md\|毁灭伤害]]，[[core-rules/twin-linked.md\|双联]] |
 
 ## 近战武器

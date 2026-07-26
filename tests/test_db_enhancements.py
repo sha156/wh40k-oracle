@@ -42,8 +42,64 @@ def test_apply_and_check_reconcile(tmp_path):
     assert rep["inserted"] == rep["table_total"]         # 全部落库
     assert rep["detachments"] > 200                      # 实测 261
     chk = check_enhancements(db, rows)
-    assert chk["match"] is True                          # CSV 行数 == 库行数
+    assert chk["match"] is True                          # CSV 每行都在库里
+    assert chk["missing_count"] == 0 and chk["db_extra_rows"] == 0
     assert chk["csv_detachments"] == chk["db_detachments"]
+
+
+@needs_csv
+def test_check_tolerates_fp_rules_补录层_but_flags_real_loss(tmp_path):
+    """对账口径：库 = 上游 CSV 层 + fp_rules 补录层（FP 新分队，Wahapedia 无源）。
+
+    旧口径拿 CSV 总数直接比库总数，只要补录层存在就恒报「不一致」——真库里
+    927 vs 1058 天天红着，于是没人再看它。假警报的代价就是漏掉真丢行，所以
+    改判「CSV 的每一行都在库里」，补录层进 db_extra_rows 如实披露。
+    """
+    import sqlite3
+    db = tmp_path / "t.sqlite"
+    rows = load_rows(CSV)
+    apply_enhancements(db, rows)
+    conn = sqlite3.connect(str(db))
+    conn.execute("INSERT INTO enhancements (id, faction_id, detachment_id, name, cost)"
+                 " VALUES ('fp11e-x-1', 'AC', 'd1', '补录强化', 15)")
+    conn.commit()
+    conn.close()
+
+    chk = check_enhancements(db, rows)
+    assert chk["match"] is True                  # 补录层不算差异
+    assert chk["db_extra_rows"] == 1 and chk["db_rows"] == len(rows) + 1
+
+    # 但真丢一行上游数据必须红
+    conn = sqlite3.connect(str(db))
+    conn.execute("DELETE FROM enhancements WHERE id = ?", (rows[0]["id"],))
+    conn.commit()
+    conn.close()
+    chk = check_enhancements(db, rows)
+    assert chk["match"] is False
+    assert chk["missing_count"] == 1 and chk["missing_sample"] == [rows[0]["id"]]
+
+
+def test_apply_reports_the_overlay_columns_it_wipes(tmp_path):
+    """INSERT OR REPLACE 是删了再插：官方中文名 / DSL 投影会被一并清空。
+
+    这类丢失极隐蔽——表现是「中文名忽然少了一批」，没人会联想到是重灌强化表干的。
+    所以清了多少必须报出来（CLI 据此提示补跑 official-zh --apply 与 dsl-apply）。
+    """
+    import sqlite3
+
+    db = tmp_path / "t.sqlite"
+    rows = [{"id": "e1", "faction_id": "AE", "name": "Archraider", "cost": "20",
+             "detachment": "Windrider Host", "detachment_id": "d1",
+             "legend": "", "description": "x"}]
+    apply_enhancements(db, rows)
+    conn = sqlite3.connect(str(db))
+    conn.execute("UPDATE enhancements SET name_zh = '大劫掠者', "
+                 "effect_dsl_json = '{}'")
+    conn.commit()
+    conn.close()
+
+    rep = apply_enhancements(db, rows)
+    assert rep["cleared_overlay"] == {"name_zh": 1, "effect_dsl_json": 1}
 
 
 @needs_csv

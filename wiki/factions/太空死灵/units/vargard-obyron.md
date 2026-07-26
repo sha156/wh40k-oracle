@@ -1,5 +1,5 @@
 ---
-id: 000000528
+id: '000000528'
 name_zh: 禁卫奥比隆
 name_en: Vargard Obyron
 faction: 太空死灵
@@ -25,7 +25,7 @@ updated: '2026-07-23'
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| Warscythe | 近战 | 4 | 2+ | 8 | -3 | 2 | devastating wounds，precision |
+| 战镰 | 近战 | 4 | 2+ | 8 | -3 | 2 | [[core-rules/devastating-wounds.md\|毁灭伤害]]，[[core-rules/precision.md\|精准]] |
 
 ## 技能
 - **[阵营]：重生协议**

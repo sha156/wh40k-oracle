@@ -1,5 +1,5 @@
 ---
-id: 000004186
+id: '000004186'
 name_zh: 绝灭者阿门塔尔
 name_en: Nekrosor Ammentar
 faction: 太空死灵

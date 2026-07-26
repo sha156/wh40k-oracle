@@ -29,12 +29,12 @@ updated: '2026-07-23'
 ## 射击武器
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| 毒刺手枪 | 12" | 1 | 2+ | 2 | -1 | D3 | [[core-rules/anti.md\|针对步兵 2+]]，[[core-rules/pistol.md\|手枪]]，[[core-rules/precision.md\|精准]] |
+| 毒刺手枪 | 12" | 1 | 2+ | 2 | -1 | D3 | [[core-rules/anti.md\|针对步兵2+]]，[[core-rules/pistol.md\|手枪]]，[[core-rules/precision.md\|精准]] |
 
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| 血伶人刑具和剪刀手 | 近战 | 5 | 2+ | 3 | -1 | D3 | [[core-rules/anti.md\|针对步兵 2+]]，[[core-rules/precision.md\|精准]] |
+| 血伶人刑具和剪刀手 | 近战 | 5 | 2+ | 3 | -1 | D3 | [[core-rules/anti.md\|针对步兵2+]]，[[core-rules/precision.md\|精准]] |
 
 ## 技能
 - **【阵营技能】：痛苦之力**：重塑血肉(苦痛):在您的指挥阶段，您可以花费1枚苦痛标识来强化该模型的单位。若如此做，您可以为该单位复活至多D3+1名被推毁的护卫模型。

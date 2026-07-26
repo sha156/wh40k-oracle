@@ -26,15 +26,15 @@ updated: '2026-07-23'
 ## 射击武器
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| Bolt pistol | 12" | 1 | 3+ | 4 | 0 | 1 | pistol |
-| Heavy bolter | 36" | 3 | 3+ | 5 | -1 | 2 | [[core-rules/sustained-hits.md\|sustained hits 1]] |
-| Multi-melta | 18" | 2 | 3+ | 9 | -4 | D6 | [[core-rules/melta.md\|melta 2]] |
-| Twin boltgun | 24" | 2 | 3+ | 4 | 0 | 1 | twin-linked |
+| 爆弹手枪 | 12" | 1 | 3+ | 4 | 0 | 1 | [[core-rules/pistol.md\|手枪]] |
+| 重型爆弹枪 | 36" | 3 | 3+ | 5 | -1 | 2 | [[core-rules/sustained-hits.md\|连击1]] |
+| 多管热熔 | 18" | 2 | 3+ | 9 | -4 | D6 | [[core-rules/melta.md\|热熔2]] |
+| Twin boltgun | 24" | 2 | 3+ | 4 | 0 | 1 | [[core-rules/twin-linked.md\|双联]] |
 
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| Close combat weapon | 近战 | 3 | 3+ | 4 | 0 | 1 | — |
+| 格斗武器 | 近战 | 3 | 3+ | 4 | 0 | 1 | — |
 
 ## 技能
 - **Outrider Escort**：Once per turn, in your opponent’s Shooting phase, when a friendly Adeptus Astartes Mounted unit within 6" of this unit is selected as the target of an attack, this unit can use this ability. If it does, after that enemy unit has finished making its attacks, this unit can shoot as if it were your Shooting phase, but when resolving those attacks it can only target that enemy unit (and only if it is an eligible target).
@@ -46,4 +46,4 @@ updated: '2026-07-23'
 
 ## 关键词
 - **阵营关键词**：Adeptus Astartes
-- **普通关键词**：[[core-rules/mounted.md|Mounted]]，Imperium，[[core-rules/grenades.md|Grenades]]，Attack Bike Squad，Ravenwing
+- **普通关键词**：[[core-rules/mounted.md|Mounted]]，Imperium，[[core-rules/grenades.md|Grenades]]，Attack [[factions/星际战士/units/bike-squad.md|Bike Squad]]，Ravenwing

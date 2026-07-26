@@ -1,5 +1,5 @@
 ---
-id: 000003598
+id: '000003598'
 name_en: Hell Blade
 faction: 千子
 type: unit
@@ -27,13 +27,13 @@ updated: '2026-07-23'
 ## 射击武器
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| Twin lascannon | 48" | 1 | 3+ | 12 | -3 | D6+1 | twin-linked |
-| Twin autocannon | 48" | 2 | 3+ | 9 | -3 | 3 | twin-linked |
+| 双联激光炮 | 48" | 1 | 3+ | 12 | -3 | D6+1 | [[core-rules/twin-linked.md\|双联]] |
+| 双联自动炮 | 48" | 2 | 3+ | 9 | -3 | 3 | [[core-rules/twin-linked.md\|双联]] |
 
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| Armoured hull | 近战 | 3 | 4+ | 6 | 0 | 1 | — |
+| 装甲外壳 | 近战 | 3 | 4+ | 6 | 0 | 1 | — |
 
 ## 技能
 - **Interceptor**：Each time this model makes a ranged attack that targets a unit that can <span class="kwb">FLY</span>, add 1 to the Hit roll.

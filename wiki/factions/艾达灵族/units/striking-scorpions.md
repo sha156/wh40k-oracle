@@ -1,5 +1,5 @@
 ---
-id: 000000595
+id: '000000595'
 name_zh: 突击战蝎
 name_en: Striking Scorpions
 faction: 艾达灵族
@@ -31,8 +31,8 @@ updated: '2026-07-23'
 ## 射击武器
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| Chainsabres | 12" | 1 | 3+ | 4 | -1 | 1 | assault，pistol，twin-linked |
-| Shuriken pistol | 12" | 1 | 3+ | 4 | -1 | 1 | assault，pistol |
+| 链锯双剑 | 12" | 1 | 3+ | 4 | -1 | 1 | [[core-rules/assault.md\|突击]]，[[core-rules/pistol.md\|手枪]]，[[core-rules/twin-linked.md\|双联]] |
+| 星镖手枪 | 12" | 1 | 3+ | 4 | -1 | 1 | [[core-rules/assault.md\|突击]]，[[core-rules/pistol.md\|手枪]] |
 
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |

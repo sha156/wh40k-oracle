@@ -30,12 +30,12 @@ updated: '2026-07-23'
 ## 射击武器
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| Stormfrag auto-launcher | 12" | D3 | 4+ | 4 | 0 | 1 | assault，blast |
+| 风暴破片雷发射器 | 12" | D3 | 4+ | 4 | 0 | 1 | [[core-rules/assault.md\|突击]]，[[core-rules/blast.md\|爆炸]] |
 
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| Thunder hammer | 近战 | 2 | 3+ | 5 | -2 | 3 | [[core-rules/anti.md\|anti-monster 3+]]，[[core-rules/anti.md\|anti-vehicle 3+]] |
+| 雷霆锤 | 近战 | 2 | 3+ | 5 | -2 | 3 | [[core-rules/anti.md\|针对怪物3+]]，[[core-rules/anti.md\|针对载具3+]] |
 
 ## 技能
 - **【阵营技能】：破敌重誓**
@@ -49,4 +49,4 @@ updated: '2026-07-23'
 
 ## 关键词
 - **阵营关键词**：Adeptus Astartes，Space Wolves
-- **普通关键词**：Wulfen with Storm Shields，Wulfen，Imperium，[[core-rules/infantry.md|Infantry]]
+- **普通关键词**：[[factions/星际战士/units/wulfen.md|Wulfen]] with Storm Shields，Wulfen，Imperium，[[core-rules/infantry.md|Infantry]]

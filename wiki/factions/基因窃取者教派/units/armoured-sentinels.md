@@ -1,5 +1,5 @@
 ---
-id: 000003960
+id: '000003960'
 name_zh: 装甲哨兵
 name_en: Armoured Sentinels
 faction: 基因窃取者教派
@@ -32,8 +32,8 @@ updated: '2026-07-23'
 | 等离子炮（标准） | 36" | D3 | 4+ | 7 | -2 | 1 | [[core-rules/blast.md\|爆炸]] |
 | 等离子炮（过载） | 36" | D3 | 4+ | 8 | -3 | 2 | [[core-rules/blast.md\|爆炸]]，[[core-rules/hazardous.md\|危险]] |
 | 自动炮 | 48" | 2 | 4+ | 9 | -1 | 3 | — |
-| 重型喷火器 | 12" | D6 | N/A | 5 | -1 | 1 | [[core-rules/ignores-cover.md\|忽视掩体]]，[[core-rules/torrent.md\|洪流]] |
-| 猎杀飞弹 | 48" | 1 | 4+ | 14 | -3 | D6 | [[core-rules/one-shot.md\|一次性]] |
+| 重型喷火器 | 12" | D6 | N/A | 5 | -1 | 1 | [[core-rules/ignores-cover.md\|无视掩体]]，[[core-rules/torrent.md\|洪流]] |
+| 猎杀飞弹 | 48" | 1 | 4+ | 14 | -3 | D6 | [[core-rules/one-shot.md\|单发]] |
 | 激光炮 | 48" | 1 | 4+ | 12 | -3 | D6+1 | — |
 
 ## 近战武器

@@ -1,5 +1,5 @@
 ---
-id: 000003835
+id: '000003835'
 name_zh: 【传奇】装备磁力勾爪的死亡连无畏
 name_en: Death Company Dreadnought with Magna-grapple
 faction: 星际战士
@@ -47,4 +47,4 @@ updated: '2026-07-23'
 
 ## 关键词
 - **阵营关键词**：Adeptus Astartes，Blood Angels
-- **普通关键词**：Death Company [[factions/星际战士/units/dreadnought.md|Dreadnought]]，Dreadnought，Imperium，[[core-rules/walker.md|Walker]]，Vehicle
+- **普通关键词**：Death Company [[factions/星际战士/units/dreadnought.md|Dreadnought]]，[[factions/星际战士/units/dreadnought.md|Dreadnought]]，Imperium，[[core-rules/walker.md|Walker]]，Vehicle

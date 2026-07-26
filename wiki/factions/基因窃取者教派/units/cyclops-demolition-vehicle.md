@@ -1,5 +1,5 @@
 ---
-id: 000003993
+id: '000003993'
 name_zh: 独眼巨人爆破车
 name_en: Cyclops Demolition Vehicle
 faction: 基因窃取者教派

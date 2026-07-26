@@ -1,5 +1,6 @@
 ---
 id: '000004063'
+name_zh: 浩劫
 name_en: Havocs
 faction: 混沌恶魔
 type: unit
@@ -19,39 +20,40 @@ updated: '2026-07-23'
 ## 属性表
 | 模型 | M | T | SV | W | LD | OC |
 |---|---|---|---|---|---|---|
-| Havocs | 5" | 5 | 3+ | 2 | 6+ | 1 |
+| [[factions/混沌恶魔/units/dark-apostle.md\|黑暗使徒]] | 5" | 5 | 3+ | 2 | 6+ | 1 |
 
 ## 射击武器
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| Boltgun | 24" | 2 | 3+ | 4 | 0 | 1 | — |
-| Plasma pistol – supercharge | 12" | 1 | 3+ | 8 | -3 | 2 | [[core-rules/hazardous.md\|HAZARDOUS]]，PISTOL |
-| Plasma gun – supercharge | 24" | 1 | 3+ | 8 | -3 | 2 | [[core-rules/hazardous.md\|HAZARDOUS]]，[[core-rules/rapid-fire.md\|RAPID FIRE 1]] |
-| Plasma gun – standard | 24" | 1 | 3+ | 7 | -2 | 1 | [[core-rules/rapid-fire.md\|RAPID FIRE 1]] |
-| Meltagun | 12" | 1 | 3+ | 9 | -4 | D6 | [[core-rules/melta.md\|MELTA 2]] |
-| Havoc reaper chaincannon | 24" | 8 | 3+ | 5 | 0 | 1 | — |
-| Flamer | 12" | D6 | N/A | 4 | 0 | 1 | ignores cover，torrent |
-| Havoc heavy bolter | 36" | 3 | 3+ | 5 | -1 | 2 | [[core-rules/sustained-hits.md\|sustained hits 1]] |
-| Plasma pistol – standard | 12" | 1 | 3+ | 7 | -2 | 1 | PISTOL |
-| Havoc autocannon | 48" | 2 | 3+ | 9 | -1 | 3 | — |
-| Havoc missile launcher – frag | 48" | D6 | 3+ | 4 | 0 | 1 | blast |
-| Havoc missile launcher – krak | 48" | 1 | 3+ | 9 | -2 | D6 | — |
-| Havoc lascannon | 48" | 1 | 3+ | 12 | -3 | D6+1 | — |
+| 爆弹枪  | 24" | 2 | 3+ | 4 | 0 | 1 | — |
+| 等离子手枪（过载） | 12" | 1 | 3+ | 8 | -3 | 2 | [[core-rules/hazardous.md\|危险]]，[[core-rules/pistol.md\|手枪]] |
+| 等离子枪（过载） | 24" | 1 | 3+ | 8 | -3 | 2 | [[core-rules/hazardous.md\|危险]]，[[core-rules/rapid-fire.md\|速射1]] |
+| 等离子枪（标准） | 24" | 1 | 3+ | 7 | -2 | 1 | [[core-rules/rapid-fire.md\|速射1]] |
+| 热熔枪 | 12" | 1 | 3+ | 9 | -4 | D6 | [[core-rules/melta.md\|热熔2]] |
+| 浩劫收割者加特林  | 24" | 8 | 3+ | 5 | 0 | 1 | — |
+| 喷火器   | 12" | D6 | N/A | 4 | 0 | 1 | [[core-rules/ignores-cover.md\|无视掩体]]，[[core-rules/torrent.md\|洪流]] |
+| 浩劫重型爆弹枪 | 36" | 3 | 3+ | 5 | -1 | 2 | [[core-rules/sustained-hits.md\|连击1]] |
+| 等离子手枪（标准） | 12" | 1 | 3+ | 7 | -2 | 1 | [[core-rules/pistol.md\|手枪]] |
+| 浩劫自动炮   | 48" | 2 | 3+ | 9 | -1 | 3 | — |
+| 喷火器   | 48" | D6 | 3+ | 4 | 0 | 1 | [[core-rules/blast.md\|爆炸]] |
+| 浩劫导弹发射器导弹发射器（穿甲） | 48" | 1 | 3+ | 9 | -2 | D6 | — |
+| 浩劫激光炮  | 48" | 1 | 3+ | 12 | -3 | D6+1 | — |
 
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| Close combat weapon | 近战 | 3 | 3+ | 4 | 0 | 1 | — |
-| Power fist | 近战 | 3 | 3+ | 8 | -2 | 2 | — |
-| Astartes chainsword | 近战 | 5 | 3+ | 4 | -1 | 1 | — |
-| Accursed weapon | 近战 | 4 | 3+ | 5 | -2 | 1 | — |
+| 格斗武器  | 近战 | 3 | 3+ | 4 | 0 | 1 | — |
+| 动力拳 | 近战 | 3 | 3+ | 8 | -2 | 2 | — |
+| 阿斯塔特链锯剑 | 近战 | 5 | 3+ | 4 | -1 | 1 | — |
+| 诅咒武器  | 近战 | 4 | 3+ | 5 | -2 | 1 | — |
 
 ## 技能
-- **Stabilisation Talons**：Each time a model in this unit makes an attack with a ranged weapon, you can ignore any or all modifiers to the Hit roll and any or all modifiers to the Ballistic Skill characteristic of that weapon.
+- **【阵营技能】：黑暗契约**
+- **稳定脚爪**：本单位模型射击攻击时可以忽视任意或 全部对命中投掷结果和 BS 值的修正
 
 ## 单位构成
 - **5个模型** — 125 分
 
 ## 关键词
 - **阵营关键词**：Legiones Daemonica，Heretic Astartes
-- **普通关键词**：[[core-rules/infantry.md|Infantry]]，[[core-rules/infantry.md|Infantry]]，Havocs，Undivided，Shadow Legion，Shadow Legion，Undivided，Havocs，Chaos，Havocs，Undivided，Shadow Legion，Chaos，Chaos，[[core-rules/infantry.md|Infantry]]
+- **普通关键词**：[[core-rules/infantry.md|Infantry]]，[[core-rules/infantry.md|Infantry]]，Havocs，Undivided，[[factions/混沌恶魔/detachments/shadow-legion.md|Shadow Legion]]，[[factions/混沌恶魔/detachments/shadow-legion.md|Shadow Legion]]，Undivided，Havocs，Chaos，Havocs，Undivided，Shadow Legion，Chaos，Chaos，[[core-rules/infantry.md|Infantry]]

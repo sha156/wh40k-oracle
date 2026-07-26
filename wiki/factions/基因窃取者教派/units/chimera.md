@@ -1,5 +1,5 @@
 ---
-id: 000003951
+id: '000003951'
 name_zh: 奇美拉装甲车
 name_en: Chimera
 faction: 基因窃取者教派
@@ -30,7 +30,7 @@ updated: '2026-07-23'
 | 重型伐木枪 | 36" | 3 | 4+ | 4 | 0 | 1 | [[core-rules/rapid-fire.md\|速射3]] |
 | 重型火焰喷射器 | 12" | D6 | N/A | 5 | -1 | 1 | [[core-rules/ignores-cover.md\|无视掩体]]，[[core-rules/torrent.md\|洪流]] |
 | 重型爆弹枪 | 36" | 3 | 4+ | 5 | -1 | 2 | [[core-rules/sustained-hits.md\|连击1]] |
-| 猎杀飞弹 | 48" | 1 | 4+ | 14 | -3 | D6 | 单发 |
+| 猎杀飞弹 | 48" | 1 | 4+ | 14 | -3 | D6 | [[core-rules/one-shot.md\|单发]] |
 | 风暴爆弹枪 | 24" | 2 | 4+ | 4 | 0 | 1 | [[core-rules/rapid-fire.md\|速射2]] |
 
 ## 近战武器

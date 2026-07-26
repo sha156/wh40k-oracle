@@ -1,5 +1,5 @@
 ---
-id: 000000853
+id: '000000853'
 name_zh: 装备泰瑟骑枪的西多尼亚龙骑兵
 name_en: Sydonian Dragoons With Taser Lances
 faction: 机械修会
@@ -31,16 +31,16 @@ updated: '2026-07-23'
 ## 射击武器
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| Phosphor serpenta | 18" | 1 | 4+ | 5 | -1 | 2 | ignores cover，pistol |
+| 磷火短铳 | 18" | 1 | 4+ | 5 | -1 | 2 | [[core-rules/ignores-cover.md\|无视掩体]]，[[core-rules/pistol.md\|手枪]] |
 
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| 泰瑟骑枪 | 近战 | 4 | 4+ | 7 | -2 | 2 | [[core-rules/anti.md\|反机甲 2+]]，[[core-rules/lance.md\|迅猛冲锋]]，[[core-rules/sustained-hits.md\|连击 2]] |
+| 泰瑟骑枪 | 近战 | 4 | 4+ | 7 | -2 | 2 | [[core-rules/anti.md\|针对步行者2+]]，[[core-rules/lance.md\|骑枪]]，[[core-rules/sustained-hits.md\|连击2]] |
 
 ## 技能
 - **【阵营技能】：机神律令**
-- **灵活机动**：本单位即使同回合进行过撤退或加速，依然可以发动冲锋，并且本单位模型可以重投绝望撤退测试结果
+- **[[factions/钛帝国/stratagems/aggressive-mobility.md|灵活机动]]**：本单位即使同回合进行过撤退或加速，依然可以发动冲锋，并且本单位模型可以重投绝望撤退测试结果
 - **广域数据链**：每当本单位成为你的战略技能使用目标时，投 D6，5+则你获得 1CP
 
 ## 单位构成

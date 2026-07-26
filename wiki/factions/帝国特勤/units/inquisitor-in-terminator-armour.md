@@ -27,16 +27,16 @@ updated: '2026-07-23'
 ## 射击武器
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| Combi-weapon | 24" | 1 | 3+ | 4 | -2 | 1 | [[core-rules/anti.md\|anti-infantry 4+]]，devastating wounds，[[core-rules/rapid-fire.md\|rapid fire 1]] |
-| Psycannon | 24" | 3 | 3+ | 8 | -1 | 2 | psychic |
-| Psychic shock wave | 18" | 2D6 | N/A | 3 | -2 | 1 | devastating wounds，psychic，torrent |
-| Storm bolter | 24" | 2 | 3+ | 4 | 0 | 1 | [[core-rules/rapid-fire.md\|rapid fire 2]] |
+| 复合武器 | 24" | 1 | 3+ | 4 | -2 | 1 | [[core-rules/anti.md\|针对步兵4+]]，[[core-rules/devastating-wounds.md\|毁灭伤害]]，[[core-rules/rapid-fire.md\|速射1]] |
+| 灵能炮 | 24" | 3 | 3+ | 8 | -1 | 2 | [[core-rules/psychic-attacks.md\|灵能]] |
+| Psychic shock wave | 18" | 2D6 | N/A | 3 | -2 | 1 | [[core-rules/devastating-wounds.md\|毁灭伤害]]，[[core-rules/psychic-attacks.md\|灵能]]，[[core-rules/torrent.md\|洪流]] |
+| 风暴爆弹枪 | 24" | 2 | 3+ | 4 | 0 | 1 | [[core-rules/rapid-fire.md\|速射2]] |
 
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| Force weapon | 近战 | 4 | 3+ | 5 | -2 | D3 | psychic |
-| Inquisitorial melee weapon | 近战 | 5 | 3+ | 4 | -2 | 1 | — |
+| 灵能武器 | 近战 | 4 | 3+ | 5 | -2 | D3 | [[core-rules/psychic-attacks.md\|灵能]] |
+| 审判庭近战武器 | 近战 | 5 | 3+ | 4 | -2 | 1 | — |
 
 ## 技能
 - **Authority of the Inquisition**：While this model is leading a unit, it can embark within any Transport that its Bodyguard unit can embark within.
@@ -49,4 +49,4 @@ updated: '2026-07-23'
 
 ## 关键词
 - **阵营关键词**：Agents of the Imperium
-- **普通关键词**：[[core-rules/character.md|Character]]，[[core-rules/infantry.md|Infantry]]，Terminator，Imperium，[[core-rules/grenades.md|Grenades]]，Inquisitor
+- **普通关键词**：[[core-rules/character.md|Character]]，[[core-rules/infantry.md|Infantry]]，Terminator，Imperium，[[core-rules/grenades.md|Grenades]]，[[factions/帝国特勤/units/inquisitor.md|Inquisitor]]

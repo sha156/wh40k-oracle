@@ -1,5 +1,6 @@
 ---
-id: 000003887
+id: '000003887'
+name_zh: 掘蟒
 name_en: Trygon
 faction: 基因窃取者教派
 type: unit
@@ -24,15 +25,17 @@ updated: '2026-07-23'
 ## 射击武器
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| Bio-electric pulse | 12" | 6 | 3+ | 5 | 0 | 1 | [[core-rules/sustained-hits.md\|sustained hits 2]] |
+| 生物电脉冲 | 12" | 6 | 3+ | 5 | 0 | 1 | [[core-rules/sustained-hits.md\|连击2]] |
 
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| Trygon scything talons | 近战 | 12 | 3+ | 9 | -2 | 3 | — |
+| 掘蟒镰刀爪 | 近战 | 12 | 3+ | 9 | -2 | 3 | — |
 
 ## 技能
-- **Subterranean Tunnels**：In your Movement phase, when this model is set up on the battlefield using the Deep Strike ability, it can use a subterranean tunnel. If it does, this model can be set up anywhere on the battlefield that is more than 6" horizontally away from all enemy units, but until the end of the turn, it is not eligible to declare a charge.
+- **【阵营技能】节点生物**
+- **地底隧道**：当该模型使用深入打击技能部薯在战场上时，该模型可以部署在位于所有敌方单位水平6“外的任意位置。当这样做时，如果该模型部署在一个或更多敌方单位 9"内，在该回合结束前，该单位不能进行冲锋。
+- **受损**：当该模型剩余 1-5 点耐伤，当该模型进行攻击时，命中掷结果减1。
 
 ## 单位构成
 - **1个模型** — 140 分

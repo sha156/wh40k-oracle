@@ -1,5 +1,6 @@
 ---
 id: '000001145'
+name_zh: 寻觅者
 name_en: Seekers
 faction: 混沌恶魔
 type: unit
@@ -21,7 +22,7 @@ updated: '2026-07-23'
 ## 属性表
 | 模型 | M | T | SV | W | LD | OC |
 |---|---|---|---|---|---|---|
-| Seekers | 14" | 4 | 7+ | 2 | 7+ | 1 |
+| 寻觅者 | 14" | 4 | 7+ | 2 | 7+ | 1 |
 
 ### 特殊保护
 - 5+
@@ -29,13 +30,13 @@ updated: '2026-07-23'
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| Lashing tongue | 近战 | 2 | 4+ | 4 | 0 | 1 | extra attacks，lethal hits |
-| Slashing claws | 近战 | 3 | 3+ | 4 | -1 | 1 | devastating wounds |
+| 鞭击长舌 | 近战 | 2 | 4+ | 4 | 0 | 1 | [[core-rules/extra-attacks.md\|额外攻击]]，[[core-rules/lethal-hits.md\|致命一击]] |
+| 凶狠利爪 | 近战 | 3 | 3+ | 4 | -1 | 1 | [[core-rules/devastating-wounds.md\|毁灭伤害]] |
 
 ## 技能
-- **Daemonic Icon**：Models in the bearer’s unit have a Leadership characteristic of 6+.
-- **Instrument of Chaos**：Add 1 to Charge rolls made for the bearer’s unit.
-- **Unholy Speed**：You can re-roll Advance and Charge rolls made for this unit.
+- **不洁之速**
+- **混沌乐器**
+- **恶魔徽记**
 
 ## 单位构成
 - **5个模型** — 80 分
@@ -43,4 +44,4 @@ updated: '2026-07-23'
 
 ## 关键词
 - **阵营关键词**：Legiones Daemonica
-- **普通关键词**：[[core-rules/mounted.md|Mounted]]，Shadow Legion，Seekers，Slaanesh，Daemon，Chaos
+- **普通关键词**：[[core-rules/mounted.md|Mounted]]，[[factions/混沌恶魔/detachments/shadow-legion.md|Shadow Legion]]，Seekers，Slaanesh，Daemon，Chaos

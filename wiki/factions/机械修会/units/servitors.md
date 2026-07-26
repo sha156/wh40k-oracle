@@ -1,5 +1,5 @@
 ---
-id: 000000847
+id: '000000847'
 name_en: Servitors
 faction: 机械修会
 type: unit
@@ -27,10 +27,10 @@ updated: '2026-07-23'
 ## 射击武器
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| Heavy bolter | 36" | 3 | 6+ | 5 | -1 | 2 | heavy，[[core-rules/sustained-hits.md\|sustained hits 1]] |
-| Multi-melta | 18" | 2 | 6+ | 9 | -4 | D6 | heavy，[[core-rules/melta.md\|melta 2]] |
-| Plasma cannon – standard | 36" | D3 | 6+ | 7 | -2 | 1 | heavy，blast |
-| Plasma cannon – supercharge | 36" | D3 | 6+ | 8 | -3 | 2 | heavy，blast，hazardous |
+| 重型爆矢枪 | 36" | 3 | 6+ | 5 | -1 | 2 | [[core-rules/heavy.md\|重型]]，[[core-rules/sustained-hits.md\|连击1]] |
+| 多管热熔 | 18" | 2 | 6+ | 9 | -4 | D6 | [[core-rules/heavy.md\|重型]]，[[core-rules/melta.md\|热熔2]] |
+| 等离子炮（标准） | 36" | D3 | 6+ | 7 | -2 | 1 | [[core-rules/heavy.md\|重型]]，[[core-rules/blast.md\|爆炸]] |
+| 等离子炮（过载） | 36" | D3 | 6+ | 8 | -3 | 2 | [[core-rules/heavy.md\|重型]]，[[core-rules/blast.md\|爆炸]]，[[core-rules/hazardous.md\|危险]] |
 
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |

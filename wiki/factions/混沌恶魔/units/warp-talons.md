@@ -1,5 +1,6 @@
 ---
 id: '000004073'
+name_zh: 次元爪
 name_en: Warp Talons
 faction: 混沌恶魔
 type: unit
@@ -28,10 +29,11 @@ updated: '2026-07-23'
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| Warp claws | 近战 | 4 | 3+ | 5 | -2 | 1 | twin-linked |
+| 虚空利爪  | 近战 | 4 | 3+ | 5 | -2 | 1 | [[core-rules/twin-linked.md\|双联]] |
 
 ## 技能
-- **Warp Strike**：At the end of the Fight phase, if this unit destroyed one or more enemy units this phase and is not within Engagement Range of one or more enemy units, you can remove this unit from the battlefield and place it into Strategic Reserves.
+- **【阵营技能】：黑暗契约**
+- **次元突袭**：在近战阶段结束时，如果本单位在本阶段消灭过至少一个敌方单位，并且此时接战范围内没有敌方单位，你可以将本单位移除出场放入战略预备队
 
 ## 单位构成
 - **5个模型** — 125 分
@@ -39,4 +41,4 @@ updated: '2026-07-23'
 
 ## 关键词
 - **阵营关键词**：Legiones Daemonica，Heretic Astartes
-- **普通关键词**：[[core-rules/grenades.md|Grenades]]，Chaos，Daemon，Warp Talons，Undivided，Shadow Legion，[[core-rules/infantry.md|Infantry]]，Fly，Jump Packs，[[core-rules/grenades.md|Grenades]]，Chaos，Daemon，Warp Talons，Undivided，Shadow Legion，[[core-rules/infantry.md|Infantry]]，Fly，Jump Packs，[[core-rules/grenades.md|Grenades]]，Chaos，Daemon，Warp Talons，Undivided，Shadow Legion，[[core-rules/infantry.md|Infantry]]，Fly，Jump Packs，[[core-rules/grenades.md|Grenades]]，Chaos，Daemon，Warp Talons，Undivided，Shadow Legion，[[core-rules/infantry.md|Infantry]]，Fly，Jump Packs，[[core-rules/grenades.md|Grenades]]，Chaos，Daemon，Warp Talons，Undivided，Shadow Legion，[[core-rules/infantry.md|Infantry]]，Fly，Jump Packs，[[core-rules/grenades.md|Grenades]]，Chaos，Daemon，Warp Talons，Undivided，Shadow Legion，Jump Packs，Chaos，[[core-rules/grenades.md|Grenades]]，Fly，Fly，Daemon，Jump Packs，[[core-rules/infantry.md|Infantry]]，Shadow Legion，Undivided，Warp Talons，[[core-rules/infantry.md|Infantry]]
+- **普通关键词**：[[core-rules/grenades.md|Grenades]]，Chaos，Daemon，Warp Talons，Undivided，[[factions/混沌恶魔/detachments/shadow-legion.md|Shadow Legion]]，[[core-rules/infantry.md|Infantry]]，Fly，Jump Packs，[[core-rules/grenades.md|Grenades]]，Chaos，Daemon，Warp Talons，Undivided，[[factions/混沌恶魔/detachments/shadow-legion.md|Shadow Legion]]，[[core-rules/infantry.md|Infantry]]，Fly，Jump Packs，[[core-rules/grenades.md|Grenades]]，Chaos，Daemon，Warp Talons，Undivided，Shadow Legion，[[core-rules/infantry.md|Infantry]]，Fly，Jump Packs，[[core-rules/grenades.md|Grenades]]，Chaos，Daemon，Warp Talons，Undivided，Shadow Legion，[[core-rules/infantry.md|Infantry]]，Fly，Jump Packs，[[core-rules/grenades.md|Grenades]]，Chaos，Daemon，Warp Talons，Undivided，Shadow Legion，[[core-rules/infantry.md|Infantry]]，Fly，Jump Packs，[[core-rules/grenades.md|Grenades]]，Chaos，Daemon，Warp Talons，Undivided，Shadow Legion，Jump Packs，Chaos，[[core-rules/grenades.md|Grenades]]，Fly，Fly，Daemon，Jump Packs，[[core-rules/infantry.md|Infantry]]，Shadow Legion，Undivided，Warp Talons，[[core-rules/infantry.md|Infantry]]

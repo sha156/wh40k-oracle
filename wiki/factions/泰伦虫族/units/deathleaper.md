@@ -1,5 +1,5 @@
 ---
-id: 000000479
+id: '000000479'
 name_zh: 死亡跃袭者
 name_en: Deathleaper
 faction: 泰伦虫族
@@ -29,7 +29,7 @@ updated: '2026-07-23'
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| [[factions/泰伦虫族/units/lictor.md\|刀斧虫]]利爪 | 近战 | 6 | 2+ | 7 | -2 | 2 | [[core-rules/precision.md\|精准]] |
+| 刀斧虫利爪 | 近战 | 6 | 2+ | 7 | -2 | 2 | [[core-rules/precision.md\|精准]] |
 
 ## 技能
 - **【阵营技能】节点生物**

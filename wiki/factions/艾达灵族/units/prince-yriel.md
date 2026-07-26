@@ -1,5 +1,6 @@
 ---
-id: 000004193
+id: '000004193'
+name_zh: 伊瑞尔亲王
 name_en: Prince Yriel
 faction: 艾达灵族
 type: unit
@@ -20,7 +21,7 @@ updated: '2026-07-23'
 ## 属性表
 | 模型 | M | T | SV | W | LD | OC |
 |---|---|---|---|---|---|---|
-| Prince Yriel | 7" | 3 | 3+ | 5 | 6+ | 1 |
+| 伊瑞尔亲王 | 7" | 3 | 3+ | 5 | 6+ | 1 |
 
 ### 特殊保护
 - 4+
@@ -28,17 +29,18 @@ updated: '2026-07-23'
 ## 射击武器
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| Eye of Wrath | 6" | 3 | 2+ | 6 | -2 | 2 | assault，pistol |
-| Shuriken pistol | 12" | 1 | 2+ | 4 | -1 | 1 | assault，pistol |
+| 愤怒之眼 | 6" | 3 | 2+ | 6 | -2 | 2 | [[core-rules/assault.md\|突击]]，[[core-rules/pistol.md\|手枪]] |
+| 星镖手枪 | 12" | 1 | 2+ | 4 | -1 | 1 | [[core-rules/assault.md\|突击]]，[[core-rules/pistol.md\|手枪]] |
 
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| Spear of Twilight | 近战 | 5 | 2+ | 7 | -3 | 3 | lance |
+| 暮光之矛 | 近战 | 5 | 2+ | 7 | -3 | 3 | [[core-rules/lance.md\|骑枪]] |
 
 ## 技能
-- **Piratical Hero**：While this model is leading a unit, each time a model in that unit makes an attack, that attack has the [SUSTAINED HITS 1] ability and add 1 to the Hit roll.
-- **Prince of Corsairs**：After both players have deployed their armies, if this unit is on the battlefield (or any Transport it is embarked within is on the battlefield), select up to three <span class="kwb">AELDARI</span> units from your army and redeploy them. When doing so, you can set those units up in Strategic Reserves, regardless of how many units are already in Strategic Reserves.
+- **阵营技能：战斗专注**
+- **海盗英雄**：当该模型领导一个单位时，每当那个单位中的模型进行攻击时，那次攻击获得连击 1技能，且命中掷骰的结果增加 1 点。
+- **灵族海盗亲王**：在双方玩家都部署完军队后，如果该单位位于战场上（或其搭乘的任何载具位于战场上），选择至多三个己方艾达灵族单位，并重新部署他们。当如此做时，您可以将它们置入战略预备队中，无论战略预备队中已经有多少个单位。
 
 ## 单位构成
 - **1个模型** — 95 分

@@ -1,5 +1,5 @@
 ---
-id: 000001598
+id: '000001598'
 name_en: Amallyn Shadowguide
 faction: 艾达灵族
 type: unit
@@ -27,7 +27,7 @@ updated: '2026-07-23'
 ## 射击武器
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| Ranger long rifle | 36" | 1 | 3+ | 4 | -1 | 2 | heavy，precision |
+| Ranger long rifle | 36" | 1 | 3+ | 4 | -1 | 2 | [[core-rules/heavy.md\|重型]]，[[core-rules/precision.md\|精准]] |
 
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |
@@ -36,7 +36,7 @@ updated: '2026-07-23'
 
 ## 技能
 - **The Path Least Travelled**：If your army includes this model, after both players have deployed their armies and determined who has the first turn, you can select one [[factions/艾达灵族/units/rangers.md|Rangers]] or [[factions/艾达灵族/units/shroud-runners.md|Shroud Runners]] unit from your army and redeploy that unit. When doing so, that unit can be placed into Strategic Reserves, regardless of how many units are already in Strategic Reserves.
-- **Path of the Outcast**：Once per turn, when an enemy unit ends a Normal, Advance or Fall Back move within 9" of this model, if this model is not within Engagement Range of one or more enemy units, it can make a Normal move of up to D6".
+- **[[factions/艾达灵族/detachments/path-of-the-outcast.md|Path of the Outcast]]**：Once per turn, when an enemy unit ends a Normal, Advance or Fall Back move within 9" of this model, if this model is not within Engagement Range of one or more enemy units, it can make a Normal move of up to D6".
 
 ## 单位构成
 - **1个模型** — 75 分

@@ -1,5 +1,5 @@
 ---
-id: 000003843
+id: '000003843'
 name_zh: 护教军先锋兵
 name_en: Skitarii Vanguard
 faction: 帝国骑士
@@ -29,11 +29,11 @@ updated: '2026-07-23'
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
 | 超铀元素步枪 | 36" | 1 | 4+ | 7 | -2 | D3 | [[core-rules/heavy.md\|重型]]，[[core-rules/precision.md\|精准]] |
-| 电弧步枪 | 30" | 1 | 4+ | 8 | -1 | D3 | [[core-rules/anti.md\|反载具 4+]]，[[core-rules/devastating-wounds.md\|毁灭伤害]]，[[core-rules/rapid-fire.md\|速射1]] |
+| 电弧步枪 | 30" | 1 | 4+ | 8 | -1 | D3 | [[core-rules/anti.md\|针对载具4+]]，[[core-rules/devastating-wounds.md\|毁灭伤害]]，[[core-rules/rapid-fire.md\|速射1]] |
 | 等离子连发枪（标准） | 30" | 2 | 4+ | 7 | -2 | 1 | — |
 | 等离子连发枪（过载） | 30" | 2 | 4+ | 8 | -3 | 2 | [[core-rules/hazardous.md\|危险]] |
 | 机械教手枪 | 12" | 1 | 4+ | 6 | -1 | 1 | [[core-rules/devastating-wounds.md\|毁灭伤害]]，[[core-rules/pistol.md\|手枪]] |
-| 辐射卡宾枪 | 18" | 3 | 4+ | 3 | 0 | 1 | [[core-rules/anti.md\|反步兵4+]] |
+| 辐射卡宾枪 | 18" | 3 | 4+ | 3 | 0 | 1 | [[core-rules/anti.md\|针对步兵4+]] |
 
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |

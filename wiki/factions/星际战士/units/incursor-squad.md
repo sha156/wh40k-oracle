@@ -1,5 +1,5 @@
 ---
-id: 000001159
+id: '000001159'
 name_zh: 入侵者小队
 name_en: Incursor Squad
 faction: 星际战士
@@ -28,12 +28,12 @@ updated: '2026-07-23'
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
 | 爆弹手枪 | 12" | 1 | 3+ | 4 | 0 | 1 | [[core-rules/pistol.md\|手枪]] |
-| Occulus bolt carbine | 24" | 2 | 3+ | 4 | 0 | 1 | assault，ignores cover |
+| 全知者爆弹卡宾枪 | 24" | 2 | 3+ | 4 | 0 | 1 | [[core-rules/assault.md\|突击]]，[[core-rules/ignores-cover.md\|无视掩体]] |
 
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| 一对战斗刀 | 近战 | 3 | 3+ | 4 | -1 | 1 | [[core-rules/sustained-hits.md\|连击 1]] |
+| 一对战斗刀 | 近战 | 3 | 3+ | 4 | -1 | 1 | [[core-rules/sustained-hits.md\|连击1]] |
 
 ## 技能
 - **多重光谱阵列**：每当本单位射击完成后，你可以选择被本 单位命中过的一个敌方单位，本阶段中，阿斯塔特修会友军单位攻击那个敌方单位时，命中结果+1

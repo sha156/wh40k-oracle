@@ -26,13 +26,13 @@ updated: '2026-07-23'
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
 | 爆弹手枪 | 12" | 1 | 2+ | 4 | 0 | 1 | [[core-rules/pistol.md\|手枪]] |
-| 戈尔贡之怒 | 36" | 3 | 2+ | 5 | -1 | 2 | [[core-rules/sustained-hits.md\|连击 2]] |
+| 戈尔贡之怒 | 36" | 3 | 2+ | 5 | -1 | 2 | [[core-rules/sustained-hits.md\|连击2]] |
 
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| 齿轮之斧 | 近战 | 6 | 3+ | 7 | -2 | 2 | 无 |
-| Medusan Manipuli | 近战 | 2 | 3+ | 8 | -2 | 3 | extra attacks |
+| 齿轮之斧 | 近战 | 6 | 3+ | 7 | -2 | 2 | — |
+| 美杜莎机械臂 | 近战 | 2 | 3+ | 8 | -2 | 3 | [[core-rules/extra-attacks.md\|额外攻击]] |
 
 ## 技能
 - **Rites of Tempering**：While this model is leading a unit, models in that unit have the Feel No Pain 5+ ability.

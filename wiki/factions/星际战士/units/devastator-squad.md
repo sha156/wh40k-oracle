@@ -27,30 +27,30 @@ updated: '2026-07-23'
 ## 射击武器
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| Bolt pistol | 12" | 1 | 3+ | 4 | 0 | 1 | pistol |
+| 爆弹手枪 | 12" | 1 | 3+ | 4 | 0 | 1 | [[core-rules/pistol.md\|手枪]] |
 | 爆弹枪 | 24" | 2 | 3+ | 4 | 0 | 1 | — |
-| Combi-weapon | 24" | 1 | 4+ | 4 | 0 | 1 | [[core-rules/anti.md\|ANTI-INFANTRY 4+]]，[[core-rules/devastating-wounds.md\|DEVASTATING WOUNDS]]，[[core-rules/rapid-fire.md\|RAPID FIRE 1]] |
-| Grav-cannon | 24" | 3 | 4+ | 6 | -1 | 3 | [[core-rules/anti.md\|anti-vehicle 2+]]，heavy |
-| 重力手枪      | 12" | 1 | 3+ | 4 | -1 | 2 | [[core-rules/anti.md\|反载具 2+]]，[[core-rules/pistol.md\|手枪]] |
-| 重型爆弹枪   | 36" | 3 | 4+ | 5 | -1 | 2 | [[core-rules/heavy.md\|重型]]，[[core-rules/sustained-hits.md\|连击 1]] |
-| Lascannon | 48" | 1 | 4+ | 12 | -3 | D6+1 | heavy |
+| 复合武器 | 24" | 1 | 4+ | 4 | 0 | 1 | [[core-rules/anti.md\|针对步兵4+]]，[[core-rules/devastating-wounds.md\|毁灭伤害]]，[[core-rules/rapid-fire.md\|速射1]] |
+| 重力炮 | 24" | 3 | 4+ | 6 | -1 | 3 | [[core-rules/anti.md\|针对载具2+]]，[[core-rules/heavy.md\|重型]] |
+| 重力手枪      | 12" | 1 | 3+ | 4 | -1 | 2 | [[core-rules/anti.md\|针对载具2+]]，[[core-rules/pistol.md\|手枪]] |
+| 重型爆弹枪   | 36" | 3 | 4+ | 5 | -1 | 2 | [[core-rules/heavy.md\|重型]]，[[core-rules/sustained-hits.md\|连击1]] |
+| 激光炮 | 48" | 1 | 4+ | 12 | -3 | D6+1 | [[core-rules/heavy.md\|重型]] |
 | 导弹发射器（破片） | 48" | D6 | 4+ | 4 | 0 | 1 | [[core-rules/blast.md\|爆炸]]，[[core-rules/heavy.md\|重型]] |
-| Missile launcher – krak | 48" | 1 | 4+ | 9 | -2 | D6 | heavy |
-| Multi-melta | 18" | 2 | 4+ | 9 | -4 | D6 | heavy，[[core-rules/melta.md\|melta 2]] |
-| Plasma cannon – standard | 36" | D3 | 4+ | 7 | -2 | 1 | [[core-rules/blast.md\|BLAST]]，[[core-rules/heavy.md\|HEAVY]] |
-| Plasma cannon – supercharge | 36" | D3 | 4+ | 8 | -3 | 2 | [[core-rules/blast.md\|BLAST]]，[[core-rules/hazardous.md\|HAZARDOUS]]，[[core-rules/heavy.md\|HEAVY]] |
+| 导弹发射器（穿甲） | 48" | 1 | 4+ | 9 | -2 | D6 | [[core-rules/heavy.md\|重型]] |
+| 多管热熔 | 18" | 2 | 4+ | 9 | -4 | D6 | [[core-rules/heavy.md\|重型]]，[[core-rules/melta.md\|热熔2]] |
+| 等离子炮（标准） | 36" | D3 | 4+ | 7 | -2 | 1 | [[core-rules/blast.md\|爆炸]]，[[core-rules/heavy.md\|重型]] |
+| 等离子炮（过载） | 36" | D3 | 4+ | 8 | -3 | 2 | [[core-rules/blast.md\|爆炸]]，[[core-rules/hazardous.md\|危险]]，[[core-rules/heavy.md\|重型]] |
 | 等离子手枪（标准） | 12" | 1 | 3+ | 7 | -2 | 1 | [[core-rules/pistol.md\|手枪]] |
-| 等离子手枪（过载）  | 12" | 1 | 3+ | 8 | -3 | 2 | [[core-rules/pistol.md\|手枪]]，[[core-rules/hazardous.md\|危险]] |
-| 爆弹枪 | 24" | 2 | 3+ | 4 | 0 | 1 | [[core-rules/rapid-fire.md\|RAPID FIRE 2]] |
+| 等离子手枪（过载）  | 12" | 1 | 3+ | 8 | -3 | 2 | [[core-rules/hazardous.md\|危险]]，[[core-rules/pistol.md\|手枪]] |
+| 爆弹枪 | 24" | 2 | 3+ | 4 | 0 | 1 | [[core-rules/rapid-fire.md\|速射2]] |
 
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
 | 阿斯塔特链锯剑     | 近战 | 4 | 3+ | 4 | -1 | 1 | — |
-| Close combat weapon | 近战 | 2 | 3+ | 4 | 0 | 1 | — |
-| Power fist | 近战 | 2 | 3+ | 8 | -2 | 2 | — |
+| 格斗武器 | 近战 | 2 | 3+ | 4 | 0 | 1 | — |
+| 动力拳 | 近战 | 2 | 3+ | 8 | -2 | 2 | — |
 | 动力武器 | 近战 | 3 | 3+ | 5 | -2 | 1 | — |
-| Thunder hammer | 近战 | 2 | 4+ | 8 | -2 | 2 | devastating wounds |
+| 雷霆锤 | 近战 | 2 | 4+ | 8 | -2 | 2 | [[core-rules/devastating-wounds.md\|毁灭伤害]] |
 
 ## 技能
 - **计算仪**：如果本单位保持静止，则直到下个你的移动阶段开 始时，本单位模型的射击武器获得【忽视掩体】技能

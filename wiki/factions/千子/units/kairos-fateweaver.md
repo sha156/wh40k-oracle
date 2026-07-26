@@ -28,13 +28,13 @@ updated: '2026-07-23'
 ## 射击武器
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| 火狱之门-巫火 | 24" | D6+3 | 2+ | 9 | -2 | D3 | [[core-rules/blast.md\|爆炸]]，[[core-rules/indirect-fire.md\|曲射]]，灵能 |
-| Infernal Gateway – focused witchfire | 24" | D6+6 | 2+ | 9 | -2 | 3 | blast，indirect fire，hazardous，psychic |
+| 火狱之门-巫火 | 24" | D6+3 | 2+ | 9 | -2 | D3 | [[core-rules/blast.md\|爆炸]]，[[core-rules/indirect-fire.md\|曲射]]，[[core-rules/psychic-attacks.md\|灵能]] |
+| 火狱之门-专注巫火 | 24" | D6+6 | 2+ | 9 | -2 | 3 | [[core-rules/blast.md\|爆炸]]，[[core-rules/indirect-fire.md\|曲射]]，[[core-rules/hazardous.md\|危险]]，[[core-rules/psychic-attacks.md\|灵能]] |
 
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| 明日法杖 | 近战 | 5 | 3+ | 8 | -2 | 2D3 | 灵能 |
+| 明日法杖 | 近战 | 5 | 3+ | 8 | -2 | 2D3 | [[core-rules/psychic-attacks.md\|灵能]] |
 
 ## 技能
 - **高阶奸奇恶魔（光环)**：当一个己方奸奇逆理魔军单位位于该模型的 6" 内时，那个单位位于己方混沌之影中。

@@ -28,7 +28,7 @@ updated: '2026-07-23'
 |---|---|---|---|---|---|---|---|
 | 雾化射线 | 12" | 1 | 4+ | 6 | -1 | 1 | — |
 | 高斯收割枪 | 18" | 1 | 4+ | 4 | -1 | 1 | [[core-rules/lethal-hits.md\|致命一击]] |
-| 特斯拉卡宾枪 | 18" | 1 | 4+ | 5 | 0 | 1 | [[core-rules/sustained-hits.md\|连击1]]，[[core-rules/assault.md\|突击]] |
+| 特斯拉卡宾枪 | 18" | 1 | 4+ | 5 | 0 | 1 | [[core-rules/assault.md\|突击]]，[[core-rules/sustained-hits.md\|连击1]] |
 
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |

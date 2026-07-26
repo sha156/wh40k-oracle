@@ -1,5 +1,5 @@
 ---
-id: 000000019
+id: '000000019'
 name_zh: 烧烤小子
 name_en: Burna Boyz
 faction: 兽人
@@ -30,7 +30,7 @@ updated: '2026-07-23'
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
 | 大突突枪 | 36" | 3 | 5+ | 5 | 0 | 1 | [[core-rules/rapid-fire.md\|速射2]] |
-| 喷火器 | 12" | D6 | N/A | 4 | 0 | 1 | [[core-rules/ignores-cover.md\|忽视掩体]]，[[core-rules/torrent.md\|洪流]] |
+| 喷火器 | 12" | D6 | N/A | 4 | 0 | 1 | [[core-rules/ignores-cover.md\|无视掩体]]，[[core-rules/torrent.md\|洪流]] |
 | 魔改米加枪 | 24" | 3 | 5+ | 9 | -2 | D6 | [[core-rules/hazardous.md\|危险]] |
 | 火箭筒 | 24" | D3 | 5+ | 9 | -2 | 3 | [[core-rules/blast.md\|爆炸]] |
 
@@ -46,7 +46,7 @@ updated: '2026-07-23'
 
 ## 单位构成
 - **1 Spanner and 4 Burna [[factions/兽人/units/boyz.md|Boyz]]** — 60 分
-- **2 Spanners and 8 Burna Boyz** — 120 分
+- **2 Spanners and 8 Burna [[factions/兽人/units/boyz.md|Boyz]]** — 120 分
 - **5个模型** — 60 分
 - **10个模型** — 120 分
 

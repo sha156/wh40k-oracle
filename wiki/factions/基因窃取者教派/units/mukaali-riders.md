@@ -24,23 +24,23 @@ updated: '2026-07-23'
 ## 射击武器
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| Flamer | 12" | D6 | N/A | 4 | 0 | 1 | ignores cover，torrent |
-| Grenade launcher – frag | 24" | D3 | 4+ | 4 | 0 | 1 | blast |
-| Grenade launcher – krak | 24" | 1 | 4+ | 9 | -2 | D3 | — |
-| Laspistol | 12" | 1 | 4+ | 3 | 0 | 1 | pistol |
-| Meltagun | 12" | 1 | 4+ | 9 | -4 | D6 | [[core-rules/melta.md\|melta 2]] |
-| Plasma gun – standard | 24" | 1 | 4+ | 7 | -2 | 1 | [[core-rules/rapid-fire.md\|rapid fire 1]] |
-| Plasma gun – supercharge | 24" | 1 | 4+ | 8 | -3 | 2 | hazardous，[[core-rules/rapid-fire.md\|rapid fire 1]] |
-| Plasma pistol – standard | 24" | 1 | 4+ | 7 | -2 | 1 | [[core-rules/rapid-fire.md\|rapid fire 1]] |
-| Plasma pistol – supercharge | 24" | 1 | 4+ | 8 | -3 | 2 | hazardous，[[core-rules/rapid-fire.md\|rapid fire 1]] |
+| Flamer | 12" | D6 | N/A | 4 | 0 | 1 | [[core-rules/ignores-cover.md\|无视掩体]]，[[core-rules/torrent.md\|洪流]] |
+| 榴弹发射器（破片） | 24" | D3 | 4+ | 4 | 0 | 1 | [[core-rules/blast.md\|爆炸]] |
+| 榴弹发射器（穿甲） | 24" | 1 | 4+ | 9 | -2 | D3 | — |
+| 激光手枪 | 12" | 1 | 4+ | 3 | 0 | 1 | [[core-rules/pistol.md\|手枪]] |
+| 热熔枪 | 12" | 1 | 4+ | 9 | -4 | D6 | [[core-rules/melta.md\|热熔2]] |
+| 等离子枪（标准） | 24" | 1 | 4+ | 7 | -2 | 1 | [[core-rules/rapid-fire.md\|速射1]] |
+| 等离子枪（过载） | 24" | 1 | 4+ | 8 | -3 | 2 | [[core-rules/hazardous.md\|危险]]，[[core-rules/rapid-fire.md\|速射1]] |
+| 等离子手枪（标准） | 24" | 1 | 4+ | 7 | -2 | 1 | [[core-rules/rapid-fire.md\|速射1]] |
+| 等离子手枪（过载） | 24" | 1 | 4+ | 8 | -3 | 2 | [[core-rules/hazardous.md\|危险]]，[[core-rules/rapid-fire.md\|速射1]] |
 
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| Stomping feet | 近战 | 2 | 4+ | 4 | 0 | 1 | extra attacks |
-| Chainsword | 近战 | 4 | 4+ | 3 | 0 | 1 | — |
-| Hunting lance | 近战 | 3 | 4+ | 4 | 0 | 1 | lance |
-| Power weapon | 近战 | 3 | 4+ | 4 | -2 | 1 | — |
+| Stomping feet | 近战 | 2 | 4+ | 4 | 0 | 1 | [[core-rules/extra-attacks.md\|额外攻击]] |
+| 链锯剑 | 近战 | 4 | 4+ | 3 | 0 | 1 | — |
+| Hunting lance | 近战 | 3 | 4+ | 4 | 0 | 1 | [[core-rules/lance.md\|骑枪]] |
+| 动力武器 | 近战 | 3 | 4+ | 4 | -2 | 1 | — |
 
 ## 技能
 - **Desert Riders**：You can ignore any or all modifiers to this unit’s Move characteristic and to Advance and Charge rolls made for it. In addition, this unit is eligible to shoot and declare a charge in a turn in which it Fell Back.

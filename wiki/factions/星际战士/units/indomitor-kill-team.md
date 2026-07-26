@@ -1,5 +1,5 @@
 ---
-id: 000002781
+id: '000002781'
 name_zh: 不屈杀戮小队
 name_en: Indomitor Kill Team
 faction: 星际战士
@@ -29,10 +29,10 @@ updated: '2026-07-23'
 | 自动爆矢风暴臂铠  | 18" | 3 | 3+ | 4 | 0 | 1 | [[core-rules/twin-linked.md\|双联]] |
 | 爆矢手枪 | 12" | 1 | 3+ | 4 | 0 | 1 | [[core-rules/pistol.md\|手枪]] |
 | 死亡守望重型爆矢步枪 | 30" | 2 | 3+ | 5 | -2 | 2 | [[core-rules/assault.md\|突击]]，[[core-rules/heavy.md\|重型]]，[[core-rules/lethal-hits.md\|致命一击]] |
-| 死亡守望重型爆矢枪  | 36" | 3 | 3+ | 5 | -2 | 3 | [[core-rules/assault.md\|突击]]，[[core-rules/heavy.md\|重型]]，[[core-rules/lethal-hits.md\|致命一击]]，[[core-rules/sustained-hits.md\|连击 1]] |
+| 死亡守望重型爆矢枪  | 36" | 3 | 3+ | 5 | -2 | 3 | [[core-rules/assault.md\|突击]]，[[core-rules/heavy.md\|重型]]，[[core-rules/lethal-hits.md\|致命一击]]，[[core-rules/sustained-hits.md\|连击1]] |
 | 破片风暴榴弹发射器 | 18" | D6 | 3+ | 4 | 0 | 1 | [[core-rules/blast.md\|爆炸]] |
 | 火焰风暴臂铠 | 12" | D6+1 | N/A | 4 | 0 | 1 | [[core-rules/ignores-cover.md\|无视掩体]]，[[core-rules/torrent.md\|洪流]]，[[core-rules/twin-linked.md\|双联]] |
-| 热熔步枪 | 18" | 1 | 3+ | 9 | -4 | D6 | [[core-rules/heavy.md\|重型]]，[[core-rules/melta.md\|热熔 2]] |
+| 热熔步枪 | 18" | 1 | 3+ | 9 | -4 | D6 | [[core-rules/heavy.md\|重型]]，[[core-rules/melta.md\|热熔2]] |
 | 多管热熔 | 18" | 2 | 4+ | 9 | -4 | D6 | [[core-rules/heavy.md\|重型]]，[[core-rules/melta.md\|热熔2]] |
 
 ## 近战武器

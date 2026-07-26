@@ -1,5 +1,5 @@
 ---
-id: 000001149
+id: '000001149'
 name_zh: 混沌恶魔王子
 name_en: Daemon Prince of Chaos
 faction: 混沌恶魔
@@ -52,4 +52,4 @@ updated: '2026-07-23'
 
 ## 关键词
 - **阵营关键词**：Legiones Daemonica
-- **普通关键词**：[[core-rules/character.md|Character]]，Monster，Shadow Legion，Daemon Prince of Chaos，Daemon，Chaos
+- **普通关键词**：[[core-rules/character.md|Character]]，Monster，[[factions/混沌恶魔/detachments/shadow-legion.md|Shadow Legion]]，Daemon Prince of Chaos，Daemon，Chaos

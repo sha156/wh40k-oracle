@@ -94,6 +94,22 @@ copy .env.example .env    # 填入 DeepSeek / 智谱 key
 cd web; npm install; npm run dev                                  # 前端
 ```
 
+### 容器化一键起全栈（可选）
+
+索引与结构库仍由宿主机流水线产出（上面第 3 步），容器只装代码、把资产只读挂进去。
+
+```powershell
+copy .env.example .env      # 填 DEEPSEEK_API_KEY；不填也能起，问答走诚实降级
+docker compose up -d        # api → 127.0.0.1:8000，web → 127.0.0.1:3000
+docker compose logs api     # 看 [preflight]：模型/索引/结构库四项是否全 ok
+```
+
+- 端口只绑 `127.0.0.1`；两个容器均非 root 运行；四个数据卷全 `:ro`
+- 缺资产时服务仍会起来但 `/healthz` 的 `ready=false` 并在日志列出缺什么、怎么补；
+  想让它缺资产就拒绝启动，设 `WEB_API_PREFLIGHT_STRICT=1`
+- 全部环境变量（限流档位、CORS 白名单、预热开关、构建代理）见 `.env.example`
+- 设计取舍与验收记录：`docs/superpowers/specs/2026-07-25-stage5-deploy.md`
+
 ## 数据管线
 
 ```powershell
@@ -165,7 +181,8 @@ cd web; npm install; npm run dev                                  # 前端
 - 对战模拟器 + 军表实验室（验表 + 点评）
 - 网站化四页签（Next.js + FastAPI，契约真源单点镜像）
 - 阵营技能 DSL：28 阵营逐条编码并投影进库
+- 容器化部署（docker-compose 两服务 + 只读资产卷、限流/CORS、启动资产前置校验）
 
 **进行中**
 - 阵营技能 DSL 逐条补全 + wiki 全量编译（长期滚动）
-- 基准集扩充、部署上线、外部数据源观察（BSData-11e / Wahapedia 11 版滚更）
+- 基准集扩充、外部数据源观察（BSData-11e / Wahapedia 11 版滚更）

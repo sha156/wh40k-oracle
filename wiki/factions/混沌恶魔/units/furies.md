@@ -40,4 +40,4 @@ updated: '2026-07-23'
 
 ## 关键词
 - **阵营关键词**：Legiones Daemonica
-- **普通关键词**：Daemon，Chaos，Shadow Legion，[[core-rules/infantry.md|Infantry]]，Furies，Fly
+- **普通关键词**：Daemon，Chaos，[[factions/混沌恶魔/detachments/shadow-legion.md|Shadow Legion]]，[[core-rules/infantry.md|Infantry]]，Furies，Fly

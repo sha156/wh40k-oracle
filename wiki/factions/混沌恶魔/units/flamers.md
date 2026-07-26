@@ -1,5 +1,6 @@
 ---
 id: '000001125'
+name_zh: 火妖
 name_en: Flamers
 faction: 混沌恶魔
 type: unit
@@ -21,7 +22,7 @@ updated: '2026-07-23'
 ## 属性表
 | 模型 | M | T | SV | W | LD | OC |
 |---|---|---|---|---|---|---|
-| Flamers | 9" | 4 | 7+ | 3 | 7+ | 1 |
+| 火妖 | 9" | 4 | 7+ | 3 | 7+ | 1 |
 
 ### 特殊保护
 - 4+
@@ -29,15 +30,15 @@ updated: '2026-07-23'
 ## 射击武器
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| Flickering Flames | 12" | D6 | N/A | 4 | -1 | 1 | ignores cover，psychic，torrent |
+| 飘忽烈焰 | 12" | D6 | N/A | 4 | -1 | 1 | [[core-rules/ignores-cover.md\|无视掩体]]，[[core-rules/psychic-attacks.md\|灵能]]，[[core-rules/torrent.md\|洪流]] |
 
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| Flamer mouths | 近战 | 3 | 4+ | 4 | 0 | 1 | — |
+| 火妖巨口 | 近战 | 3 | 4+ | 4 | 0 | 1 | — |
 
 ## 技能
-- **Bounding Leaps**：This unit is eligible to shoot in a turn in which it Fell Back.
+- **腾跃袭击**：该单位可以在进行了后撤的回合中进行射击。
 
 ## 单位构成
 - **3个模型** — 65 分
@@ -45,4 +46,4 @@ updated: '2026-07-23'
 
 ## 关键词
 - **阵营关键词**：Legiones Daemonica
-- **普通关键词**：Shadow Legion，Tzeentch，Daemon，Chaos，Fly，[[core-rules/infantry.md|Infantry]]，Flamers
+- **普通关键词**：[[factions/混沌恶魔/detachments/shadow-legion.md|Shadow Legion]]，Tzeentch，Daemon，Chaos，Fly，[[core-rules/infantry.md|Infantry]]，Flamers

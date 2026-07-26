@@ -1,5 +1,5 @@
 ---
-id: 000000590
+id: '000000590'
 name_zh: 风暴守护者
 name_en: Storm Guardians
 faction: 艾达灵族
@@ -21,13 +21,13 @@ updated: '2026-07-23'
 ## 属性表
 | 模型 | M | T | SV | W | LD | OC |
 |---|---|---|---|---|---|---|
-| 风暴守护者 | 7" | 3 | 4+ | 1 | 7+ | 2 |
+| 风暴[[factions/帝皇卫队/enhancements/praesidius.md\|守护者]] | 7" | 3 | 4+ | 1 | 7+ | 2 |
 | 蛇鳞平台 | 7" | 3 | 4+ | 2 | 7+ | 0 |
 
 ## 射击武器
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| 灵族火焰喷射器 | 12" | D6 | N/A | 4 | 0 | 1 | [[core-rules/assault.md\|突击]]，[[core-rules/ignores-cover.md\|无视掩体]]，[[core-rules/torrent.md\|喷射]] |
+| 灵族火焰喷射器 | 12" | D6 | N/A | 4 | 0 | 1 | [[core-rules/assault.md\|突击]]，[[core-rules/ignores-cover.md\|无视掩体]]，[[core-rules/torrent.md\|洪流]] |
 | 热熔枪 | 12" | 1 | 3+ | 8 | -4 | D6 | [[core-rules/assault.md\|突击]]，[[core-rules/melta.md\|热熔2]] |
 | 星镖手枪 | 12" | 1 | 3+ | 4 | -1 | 1 | [[core-rules/assault.md\|突击]]，[[core-rules/pistol.md\|手枪]] |
 
@@ -40,7 +40,7 @@ updated: '2026-07-23'
 ## 技能
 - **【阵营技能】：战斗专注**
 - **风暴剑阵**：在你的指挥阶段结束时，若本单位位于一个由你控制的目标点范围内，那么此后该目标点将一直由你控制，直到它在任意阶段结束时被你的对手控制
-- **人控平台**：当本单位中最后一个风暴守护者模型被消灭时，本单位中的蛇鳞平台模型也会一同被消灭
+- **人控平台**：当本单位中最后一个风暴[[factions/帝皇卫队/enhancements/praesidius.md|守护者]]模型被消灭时，本单位中的蛇鳞平台模型也会一同被消灭
 - **蛇鳞平台**：该模型所在单位具有 5+特殊保护
 
 ## 单位构成

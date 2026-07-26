@@ -27,16 +27,16 @@ updated: '2026-07-23'
 ## 射击武器
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| Lashes of torment | 6" | 6 | 3+ | 4 | 0 | 1 | [[core-rules/anti.md\|anti-infantry 3+]]，assault，pistol |
+| 折磨之鞭 | 6" | 6 | 3+ | 4 | 0 | 1 | [[core-rules/anti.md\|针对步兵3+]]，[[core-rules/assault.md\|突击]]，[[core-rules/pistol.md\|手枪]] |
 
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| Exalted Seeker tongues | 近战 | 8 | 4+ | 4 | 0 | 1 | extra attacks，lethal hits |
-| Ravaging claws | 近战 | 15 | 3+ | 4 | -1 | 1 | devastating wounds |
+| Exalted Seeker tongues | 近战 | 8 | 4+ | 4 | 0 | 1 | [[core-rules/extra-attacks.md\|额外攻击]]，[[core-rules/lethal-hits.md\|致命一击]] |
+| 凶狠利爪 | 近战 | 15 | 3+ | 4 | -1 | 1 | [[core-rules/devastating-wounds.md\|毁灭伤害]] |
 
 ## 技能
-- **Tormentbringer (Aura)**：While a friendly Slaanesh Legiones Daemonica unit is within 6" of this model, melee weapons in that unit have the [SUSTAINED HITS 1] ability.
+- **[[factions/混沌恶魔/units/tormentbringer.md|Tormentbringer]] (Aura)**：While a friendly Slaanesh Legiones Daemonica unit is within 6" of this model, melee weapons in that unit have the [SUSTAINED HITS 1] ability.
 - **Hysterical Frenzy (Psychic)**：Once per Fight phase, just after an enemy unit selects a Slaanesh Legiones Daemonica unit from your army as a target, one friendly Psyker that is within 6" of that <span class="kwb">SLAANESH</span> unit and has this ability can use it. If it does, until the end of the phase, each time a model in that <span class="kwb">SLAANESH</span> unit is destroyed, roll one D6: on a 4+, do not remove it from play. That model can fight after the attacking model’s unit has finished making its attacks, and is then removed from play.
 
 ## 单位构成
@@ -44,4 +44,4 @@ updated: '2026-07-23'
 
 ## 关键词
 - **阵营关键词**：Legiones Daemonica
-- **普通关键词**：[[core-rules/psyker.md|Psyker]]，Chaos，Daemon，Slaanesh，Tormentbringer on Exalted [[factions/混沌恶魔/units/seeker-chariot.md|Seeker Chariot]]，[[core-rules/mounted.md|Mounted]]，Shadow Legion，[[core-rules/character.md|Character]]
+- **普通关键词**：[[core-rules/psyker.md|Psyker]]，Chaos，Daemon，Slaanesh，Tormentbringer on Exalted [[factions/混沌恶魔/units/seeker-chariot.md|Seeker Chariot]]，[[core-rules/mounted.md|Mounted]]，[[factions/混沌恶魔/detachments/shadow-legion.md|Shadow Legion]]，[[core-rules/character.md|Character]]

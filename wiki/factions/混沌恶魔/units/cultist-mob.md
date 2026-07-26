@@ -1,5 +1,6 @@
 ---
 id: '000004050'
+name_zh: 邪教徒
 name_en: Cultist Mob
 faction: 混沌恶魔
 type: unit
@@ -25,16 +26,17 @@ updated: '2026-07-23'
 ## 射击武器
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| Autopistol | 12" | 1 | 4+ | 3 | 0 | 1 | pistol |
-| Bolt pistol | 12" | 1 | 4+ | 4 | 0 | 1 | pistol |
+| 自动手枪 | 12" | 1 | 4+ | 3 | 0 | 1 | [[core-rules/pistol.md\|手枪]] |
+| 爆弹手枪 | 12" | 1 | 4+ | 4 | 0 | 1 | [[core-rules/pistol.md\|手枪]] |
 
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| Brutal assault weapon | 近战 | 2 | 4+ | 3 | 0 | 1 | — |
+| 野蛮近战武器  | 近战 | 2 | 4+ | 3 | 0 | 1 | — |
 
 ## 技能
-- **For the Dark Gods**：At the end of your Command phase, if this unit is within range of an objective marker you control, that objective marker remains under your control, even if you have no models within range of it, until your opponent controls it at the start or end of any turn.
+- **【阵营技能】：黑暗契约**
+- **为了黑暗诸神**：在你的指挥阶段结束时，如果本单位位于一个你占领的目标点范围内，则即使你在这个目标点范围内已没有你的模型，也算作你占领此目标点，此效果持续到敌方占领此目标点后，任意回合开始或结束时为止
 
 ## 单位构成
 - **10个模型** — 50 分
@@ -42,4 +44,4 @@ updated: '2026-07-23'
 
 ## 关键词
 - **阵营关键词**：Heretic Astartes，Legiones Daemonica
-- **普通关键词**：Cultist Mob，Undivided，Chaos，[[core-rules/infantry.md|Infantry]]，Damned，Cultist Mob，Undivided，Shadow Legion，Undivided，[[core-rules/battleline.md|Battleline]]，Damned，Shadow Legion，[[core-rules/infantry.md|Infantry]]，Shadow Legion，Undivided，[[core-rules/infantry.md|Infantry]]，[[core-rules/battleline.md|Battleline]]，[[core-rules/grenades.md|Grenades]]，Chaos，Cultist Mob，Damned，Cultist Mob，Chaos，Undivided，Shadow Legion，[[core-rules/infantry.md|Infantry]]，[[core-rules/grenades.md|Grenades]]，[[core-rules/battleline.md|Battleline]]，[[core-rules/battleline.md|Battleline]]，[[core-rules/grenades.md|Grenades]]，Chaos，[[core-rules/grenades.md|Grenades]]，Damned，Undivided，Shadow Legion，[[core-rules/infantry.md|Infantry]]，[[core-rules/battleline.md|Battleline]]，[[core-rules/grenades.md|Grenades]]，Cultist Mob，Chaos，Damned，Cultist Mob，Damned，Chaos，[[core-rules/grenades.md|Grenades]]，[[core-rules/battleline.md|Battleline]]，[[core-rules/infantry.md|Infantry]]，Shadow Legion
+- **普通关键词**：Cultist Mob，Undivided，Chaos，[[core-rules/infantry.md|Infantry]]，Damned，Cultist Mob，Undivided，[[factions/混沌恶魔/detachments/shadow-legion.md|Shadow Legion]]，Undivided，[[core-rules/battleline.md|Battleline]]，Damned，[[factions/混沌恶魔/detachments/shadow-legion.md|Shadow Legion]]，[[core-rules/infantry.md|Infantry]]，Shadow Legion，Undivided，[[core-rules/infantry.md|Infantry]]，[[core-rules/battleline.md|Battleline]]，[[core-rules/grenades.md|Grenades]]，Chaos，Cultist Mob，Damned，Cultist Mob，Chaos，Undivided，Shadow Legion，[[core-rules/infantry.md|Infantry]]，[[core-rules/grenades.md|Grenades]]，[[core-rules/battleline.md|Battleline]]，[[core-rules/battleline.md|Battleline]]，[[core-rules/grenades.md|Grenades]]，Chaos，[[core-rules/grenades.md|Grenades]]，Damned，Undivided，Shadow Legion，[[core-rules/infantry.md|Infantry]]，[[core-rules/battleline.md|Battleline]]，[[core-rules/grenades.md|Grenades]]，Cultist Mob，Chaos，Damned，Cultist Mob，Damned，Chaos，[[core-rules/grenades.md|Grenades]]，[[core-rules/battleline.md|Battleline]]，[[core-rules/infantry.md|Infantry]]，Shadow Legion

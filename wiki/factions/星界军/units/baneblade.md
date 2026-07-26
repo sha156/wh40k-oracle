@@ -1,5 +1,6 @@
 ---
 id: '000000702'
+name_zh: 毒刃
 name_en: Baneblade
 faction: 星界军
 type: unit
@@ -20,26 +21,27 @@ updated: '2026-07-23'
 ## 属性表
 | 模型 | M | T | SV | W | LD | OC |
 |---|---|---|---|---|---|---|
-| Baneblade | 12" | 13 | 2+ | 24 | 7+ | 8 |
+| 毒刃 | 12" | 13 | 2+ | 24 | 7+ | 8 |
 
 ## 射击武器
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| Baneblade cannon | 72" | 3D6 | 4+ | 12 | -2 | 3 | blast |
-| Coaxial autocannon | 48" | 2 | 4+ | 9 | -1 | 3 | — |
-| Demolisher cannon | 24" | D6+3 | 4+ | 14 | -3 | D6 | blast |
-| Heavy stubber | 36" | 3 | 4+ | 4 | 0 | 1 | [[core-rules/rapid-fire.md\|rapid fire 3]] |
-| Lascannon | 48" | 1 | 4+ | 12 | -3 | D6+1 | — |
-| Twin heavy bolter | 36" | 3 | 4+ | 5 | -1 | 2 | [[core-rules/sustained-hits.md\|sustained hits 1]]，twin-linked |
-| Twin heavy flamer | 12" | D6 | N/A | 5 | -1 | 1 | ignores cover，torrent，twin-linked |
+| 毒刃加农炮 | 72" | 3D6 | 4+ | 12 | -2 | 3 | [[core-rules/blast.md\|爆炸]] |
+| 同轴自动炮 | 48" | 2 | 4+ | 9 | -1 | 3 | — |
+| 破坏者加农炮 | 24" | D6+3 | 4+ | 14 | -3 | D6 | [[core-rules/blast.md\|爆炸]] |
+| 重型伐木枪 | 36" | 3 | 4+ | 4 | 0 | 1 | [[core-rules/rapid-fire.md\|速射3]] |
+| 激光炮 | 48" | 1 | 4+ | 12 | -3 | D6+1 | — |
+| 双联重型爆弹枪 | 36" | 3 | 4+ | 5 | -1 | 2 | [[core-rules/sustained-hits.md\|连击1]]，[[core-rules/twin-linked.md\|双联]] |
+| 双联重型火焰喷射器 | 12" | D6 | N/A | 5 | -1 | 1 | [[core-rules/ignores-cover.md\|无视掩体]]，[[core-rules/torrent.md\|洪流]]，[[core-rules/twin-linked.md\|双联]] |
 
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| Armoured tracks | 近战 | 6 | 4+ | 8 | 0 | 1 | — |
+| 装甲履带 | 近战 | 6 | 4+ | 8 | 0 | 1 | — |
 
 ## 技能
-- **Rolling Fortress**：Each time a ranged attack is allocated to an <span class="kwb">ASTRA</span> <span class="kwb">MILITARUM</span> model from your army, if that model is not fully visible to every model in the attacking unit because of this <span class="kwb">BANEBLADE</span> model, that model has the Benefit of Cover against that attack.
+- **移动要塞**：如果因本模型的遮挡导致目标对于攻击方不是完全可见，则被攻击的星界军友军模型获得掩体效果
+- **受损**：当该单位剩余1-8点耐伤时，该单位的目标控制属性降低4，并且当该模型攻击时，命中投掷结果-1
 
 ## 单位构成
 - **1个模型** — 415 分

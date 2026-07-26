@@ -1,5 +1,6 @@
 ---
 id: '000000066'
+name_zh: 十字军型兰德掠袭者坦克
 name_en: Land Raider Crusader
 faction: 星际战士
 type: unit
@@ -25,24 +26,25 @@ updated: '2026-07-23'
 ## 射击武器
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| [[factions/星际战士/units/hunter.md\|Hunter]]-killer missile | 48" | 1 | 2+ | 14 | -3 | D6 | one shot |
-| Hurricane bolter | 24" | 6 | 3+ | 4 | 0 | 1 | [[core-rules/rapid-fire.md\|rapid fire 6]]，twin-linked |
-| Multi-melta | 18" | 2 | 3+ | 9 | -4 | D6 | [[core-rules/melta.md\|melta 2]] |
-| Storm bolter | 24" | 2 | 3+ | 4 | 0 | 1 | [[core-rules/rapid-fire.md\|rapid fire 2]] |
-| Twin assault cannon | 24" | 6 | 3+ | 6 | 0 | 1 | devastating wounds，twin-linked |
+| 猎杀飞弹 | 48" | 1 | 2+ | 14 | -3 | D6 | [[core-rules/one-shot.md\|单发]] |
+| 飓风爆弹阵列 | 24" | 6 | 3+ | 4 | 0 | 1 | [[core-rules/rapid-fire.md\|速射6]]，[[core-rules/twin-linked.md\|双联]] |
+| 多管热熔 | 18" | 2 | 3+ | 9 | -4 | D6 | [[core-rules/melta.md\|热熔2]] |
+| 风暴爆弹枪 | 24" | 2 | 3+ | 4 | 0 | 1 | [[core-rules/rapid-fire.md\|速射2]] |
+| 双联突击炮 | 24" | 6 | 3+ | 6 | 0 | 1 | [[core-rules/devastating-wounds.md\|毁灭伤害]]，[[core-rules/twin-linked.md\|双联]] |
 
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| Armoured tracks | 近战 | 6 | 4+ | 8 | 0 | 1 | — |
+| 精金履带 | 近战 | 6 | 4+ | 8 | 0 | 1 | — |
 
 ## 技能
-- **Assault Ramp**：Each time a unit disembarks from this model after it has made a Normal move, that unit is still eligible to declare a charge this turn.
-- **One Shot**：The bearer can only shoot with this weapon once per battle.
+- **严重损伤**：本模型 W 值为 1-5 时，攻击命中结果-1
+- **突击载具**：本模型进行标准移动后，从中脱离的单位本回合依然可以发动冲锋
+- **【阵营技能】：破敌重誓**
 
 ## 单位构成
 - **1个模型** — 220 分
 
 ## 关键词
 - **阵营关键词**：Adeptus Astartes
-- **普通关键词**：Deathwing，Land Raider Crusader，Land Raider，Imperium，[[core-rules/transport.md|Transport]]，[[core-rules/grenades.md|Grenades]]，[[core-rules/smoke.md|Smoke]]，Vehicle
+- **普通关键词**：Deathwing，[[factions/星际战士/units/land-raider.md|Land Raider]] Crusader，Land Raider，Imperium，[[core-rules/transport.md|Transport]]，[[core-rules/grenades.md|Grenades]]，[[core-rules/smoke.md|Smoke]]，Vehicle

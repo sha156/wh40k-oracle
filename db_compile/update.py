@@ -40,6 +40,7 @@ class UpdateConfig:
     mfm_json: Path = Path("db_sources/mfm/mfm_points.json")
     fp_errata: Path = Path("db_compile/fp_errata_patches.json")
     fp_rules: Path = Path("db_compile/fp_rules_patches.json")
+    official_zh_map: Path = Path("db_compile/official_zh_names.json")
     dsl_payloads: Path = Path("dsl_payloads")
     refined: Path = Path("data_refined")
     blacklibrary_cache: Path = Path("db_sources/blacklibrary/units.json")
@@ -158,11 +159,20 @@ def stage_build(cfg: UpdateConfig) -> StageResult:
     if rep.skipped:
         warnings.append("缺 id 跳过行数：" + "，".join(
             f"{k} {v}" for k, v in rep.skipped.items()))
+    # CSV 解析对账：解析行数 ≠ 文件真实条目数 = 上游换了版式，行正在被静默合并/丢弃。
+    # 这条必须走 warning 而不是只留在 detail 里——`build` 子命令自己会打印对账，但
+    # 整条 update 管线只显示 summary+warning，不吼就等于没这个门（Stratagems 那条
+    # 裸换行当初就是这样静默换来「多一条垃圾行、少一条真战略」）。
+    bad = rep.unreconciled()
+    if bad:
+        warnings.append("CSV 解析对账不平：" + "，".join(
+            f"{n} 解析 {a['parsed_rows']} vs 真实 {a['expected_rows']}"
+            for n, a in sorted(bad.items())))
     return StageResult(
         "build", True,
         "重建 " + "，".join(f"{k} {v}" for k, v in rep.row_counts.items()),
         detail={"row_counts": rep.row_counts, "missing_csv": rep.missing_csv,
-                "skipped": rep.skipped},
+                "skipped": rep.skipped, "csv_unreconciled": bad},
         warning="；".join(warnings) if warnings else None)
 
 
@@ -232,10 +242,39 @@ def stage_fp_rules(cfg: UpdateConfig) -> StageResult:
         "fp_rules", True,
         f"文本补丁 应用 {rep['text_applied']} / 幂等 {rep['text_already']} / "
         f"让路 {len(rep['text_mismatch'])}；中文名 应用 {rep['name_applied']} / "
-        f"幂等 {rep['name_already']} / 让路 {len(rep['name_mismatch'])}；"
+        f"幂等 {rep['name_already']} / 让位官方译名 "
+        f"{rep.get('name_superseded_by_official', 0)} / "
+        f"让路 {len(rep['name_mismatch'])}；"
         f"失效标记 应用 {rep['deact_applied']} / 幂等 {rep['deact_already']}；"
         f"补录插行 应用 {rep['ins_applied']} / 幂等 {rep['ins_already']}",
         detail=rep, warning=warn)
+
+
+def stage_official_zh(cfg: UpdateConfig) -> StageResult:
+    """GW 官方中文名投影（**必须排在 fp_rules 之后**）。
+
+    fp_rules 会用 P7 人工译名填 name_zh，官方译名权威更高（宪法 §6）要盖在它上面；
+    顺序反了就是「低权威覆盖高权威」，而两边都是中文名，页面上看不出差别。
+    映射文件缺失时优雅跳过并告警——静默跳过等于全库中文名悄悄退回上一层。
+    """
+    if not cfg.official_zh_map.exists():
+        return StageResult("official_zh", True, f"跳过（{cfg.official_zh_map} 不存在）",
+                           warning="官方中文映射缺失，战略/强化/分队中文名未升级到官方译名")
+    from db_compile.official_zh_apply import apply_official_zh
+    rep = apply_official_zh(cfg.db, map_path=cfg.official_zh_map)
+    warns = []
+    for key, total in rep["missing_ids_total"].items():
+        if total:
+            warns.append(f"{key} 映射里 {total} 个 id 库内查无此行（映射需重编译）")
+    if rep["detachments"]["orphans"]:
+        warns.append(f"{len(rep['detachments']['orphans'])} 个容器名库里不存在")
+    return StageResult(
+        "official_zh", True,
+        f"官方中文名：战略 {rep['stratagems']['targeted']}/{rep['stratagems']['db_rows']}"
+        f"（顶掉旧译名 {rep['stratagems']['superseded_total']}）、"
+        f"强化 {rep['enhancements']['targeted']}/{rep['enhancements']['db_rows']}、"
+        f"分队容器 {rep['detachments']['targeted']}/{rep['detachments']['db_containers']}",
+        detail=rep, warning="；".join(warns) or None)
 
 
 def stage_dsl_apply(cfg: UpdateConfig) -> StageResult:
@@ -315,21 +354,51 @@ def stage_zh_details(cfg: UpdateConfig) -> StageResult:
     从缓存 details.json 灌（detail 抓取慢，不进周更；刷新走 fetch_blacklibrary_details.py）。
     英文=权威真值不动，本表是叠加的中文内容层。
     """
-    from db_compile.blacklibrary import (fill_name_zh, load_details,
-                                         load_or_fetch_units, populate_zh_details)
+    from db_compile.blacklibrary import (apply_unit_name_overrides, fill_name_zh,
+                                         load_details, load_or_fetch_units,
+                                         populate_zh_details)
     units, _ = load_or_fetch_units(cfg.blacklibrary_cache, offline=cfg.offline)
     name_rep = fill_name_zh(cfg.db, units) if units else {"filled": 0}
+    # 黑图没收录的现役单位（新品/改名）走人工译名真源，优先级最高
+    ov_rep = apply_unit_name_overrides(cfg.db)
     details = load_details(cfg.blacklibrary_details)
     if not details:
         return StageResult("zh_details", True,
-                           f"填 name_zh {name_rep['filled']}；无 details 缓存，跳过中文表",
+                           f"填 name_zh {name_rep['filled']}"
+                           f"（人工译名 {ov_rep['filled']} 行）；无 details 缓存，跳过中文表",
                            warning="details.json 缺失，中文 datasheet 层未灌")
     det_rep = populate_zh_details(cfg.db, details)
     return StageResult(
         "zh_details", True,
-        f"填 name_zh {name_rep['filled']}；unit_zh_detail 入库 {det_rep['matched']} "
-        f"（无匹配 {det_rep['unmatched']}）",
-        detail={**det_rep, "name_zh_filled": name_rep["filled"]})
+        f"填 name_zh {name_rep['filled']}（人工译名 {ov_rep['filled']} 行）；"
+        f"unit_zh_detail 入库 {det_rep['matched']}（无匹配 {det_rep['unmatched']}）",
+        detail={**det_rep, "name_zh_filled": name_rep["filled"],
+                "overrides": ov_rep})
+
+
+def stage_zh_weapons(cfg: UpdateConfig) -> StageResult:
+    """中文武器名投影：黑图中文兵牌 × 库内英文武器，按数值指纹离线配对落 weapons.name_zh。
+
+    必须排在 zh_details 之后（吃它的产物）。整列是投影，每次重建；人工译名走
+    db_compile/zh_weapon_overrides.json（git 真源）在最后叠加。
+    """
+    from db_compile.zh_weapons import (build_keyword_glossary,
+                                       build_zh_weapon_names, coverage_report,
+                                       leftover_radicals)
+    rep = build_zh_weapon_names(cfg.db)
+    kw = build_keyword_glossary(cfg.db)
+    cov = coverage_report(cfg.db)
+    left = leftover_radicals(cfg.db)
+    warn = None
+    if left:
+        warn = f"归一后仍残留部首兼容字 {left} —— 需在 zh_weapons._RADICAL_FALLBACK 补对照"
+    return StageResult(
+        "zh_weapons", True,
+        f"中文武器名 {cov['all'][0]}/{cov['all'][1]}（现役 {cov['current'][0]}/"
+        f"{cov['current'][1]}）：指纹配对 {rep['paired_direct']}、术语表 "
+        f"{rep['paired_glossary']}、人工 {rep['overrides_applied']}、"
+        f"撞名撤回 {rep['dropped_by_dedupe']}；USR 关键词表 {kw['terms']} 条",
+        warning=warn, detail={**rep, "coverage": cov})
 
 
 def stage_crosscheck(cfg: UpdateConfig) -> StageResult:
@@ -421,11 +490,13 @@ _PIPELINE = [
     ("补 Faction Pack 11 版真漂移", stage_fp_errata, False),
     ("应用官方 MFM 分数", stage_mfm_apply, False),
     ("补 Faction Pack 规则文本真漂移", stage_fp_rules, False),
+    ("叠 GW 官方中文名层", stage_official_zh, False),
     ("投影 P7 DSL 真源", stage_dsl_apply, False),
     ("重灌中文别名层", stage_aliases, False),
     ("补黑图书馆中英别名", stage_aliases_blackforum, False),
     ("补社区俗名层", stage_aliases_community, False),
     ("灌黑图书馆中文 datasheet 层", stage_zh_details, False),
+    ("配中文武器名（数值指纹）", stage_zh_weapons, False),
     ("交叉校验 BSData ↔ 库", stage_crosscheck, False),
     ("校验分数收敛", stage_mfm_check, False),
     ("监控官方下载页版本", stage_downloads_check, False),
@@ -439,11 +510,14 @@ _RESTORE_STAGES = [
     ("补 Faction Pack 11 版真漂移", stage_fp_errata),
     ("应用官方 MFM 分数", stage_mfm_apply),
     ("补 Faction Pack 规则文本真漂移", stage_fp_rules),
+    # 官方中文名要盖在 fp_rules 的 P7 译名之上（宪法 §6：官方 > 人工）
+    ("叠 GW 官方中文名层", stage_official_zh),
     ("投影 P7 DSL 真源", stage_dsl_apply),
     ("重灌中文别名层", stage_aliases),
     ("补黑图书馆中英别名", stage_aliases_blackforum),
     ("补社区俗名层", stage_aliases_community),
     ("灌黑图书馆中文 datasheet 层", stage_zh_details),
+    ("配中文武器名（数值指纹）", stage_zh_weapons),
 ]
 
 

@@ -1,6 +1,25 @@
 # 太空死灵
 
-_Last updated: 2026-07-23 12:10 UTC_
+_Last updated: 2026-07-26 08:40 UTC_
+
+## 分队
+
+- [[factions/太空死灵/detachments/annihilation-legion|Annihilation Legion]] — 太空死灵的分队「Annihilation Legion」，分队规则「歼灭协议」。
+- [[factions/太空死灵/detachments/awakened-dynasty|Awakened Dynasty]] — 太空死灵的分队「Awakened Dynasty」，分队规则「指令协议」。
+- [[factions/太空死灵/detachments/canoptek-court|Canoptek Court]] — 太空死灵的分队「Canoptek Court」，分队规则「力量矩阵」。
+- [[factions/太空死灵/detachments/canoptek-harvesters|Canoptek Harvesters]] — 太空死灵的分队「Canoptek Harvesters」，分队规则「报应协议」。
+- [[factions/太空死灵/detachments/deranged-outcasts|Deranged Outcasts]] — 太空死灵的分队「Deranged Outcasts」，分队规则「恐怖冲锋」。
+- [[factions/太空死灵/detachments/harbinger-cabal|Harbinger Cabal]] — 太空死灵的分队「Harbinger Cabal」，分队规则「奥秘科学专精」。
+- [[factions/太空死灵/detachments/hypercrypt-legion|Hypercrypt Legion]] — 太空死灵的分队「Hypercrypt Legion」，分队规则「超相位」。
+- [[factions/太空死灵/detachments/obeisance-phalanx|Obeisance Phalanx]] — 太空死灵的分队「Obeisance Phalanx」，分队规则「劲敌」。
+- [[factions/太空死灵/detachments/tomb-ship-complement|Tomb Ship Complement]] — 太空死灵的分队「Tomb Ship Complement」，分队规则「征服协议」。
+- [[factions/太空死灵/detachments/pantheon-of-woe|哀伤众神殿]] — 太空死灵的分队「哀伤众神殿」，分队规则「宇宙扭曲」。
+- [[factions/太空死灵/detachments/cryptek-conclave|墓穴技师密会]] — 太空死灵的分队「墓穴技师密会」，分队规则「技术巫术强化」。
+- [[factions/太空死灵/detachments/the-phaerons-armoury|法皇的军备]] — 太空死灵的分队「法皇的军备」。
+- [[factions/太空死灵/detachments/hand-of-the-dynasty|王朝之手]] — 太空死灵的分队「王朝之手」。
+- [[factions/太空死灵/detachments/starshatter-arsenal|碎星宝库]] — 太空死灵的分队「碎星宝库」，分队规则「无情猛攻」。
+- [[factions/太空死灵/detachments/cursed-legion|诅咒军团]] — 太空死灵的分队「诅咒军团」，分队规则「冷酷狂热」。
+- [[factions/太空死灵/detachments/skyshroud-spearhead|遮天先锋]] — 太空死灵的分队「遮天先锋」。
 
 ## 单位
 
@@ -68,4 +87,139 @@ _Last updated: 2026-07-23 12:10 UTC_
 - [[factions/太空死灵/units/imotekh-the-stormlord|风暴之王伊莫泰克]] — 
 - [[factions/太空死灵/units/gauss-pylon|高斯巨石碑]] — 
 - [[factions/太空死灵/units/obelisk|黑石浮塔]] — 
+
+## 策略技能
+
+- [[factions/太空死灵/stratagems/suffer-no-rival|不容匹敌]] — 1 CP、Fight phase、Obeisance Phalanx 分队、Battle Tactic Stratage...
+- [[factions/太空死灵/stratagems/protocol-of-the-undying-legions|不朽军团协议]] — 1 CP、Shooting or Fight phase、Awakened Dynasty 分队、Strategic P...
+- [[factions/太空死灵/stratagems/unyielding-forms|不破造物]] — 2 CP、Shooting or Fight phase、碎星宝库 分队、Battle Tactic Stratagem...
+- [[factions/太空死灵/stratagems/dominance-protocols|主宰规程]] — 1 CP、Command phase、王朝之手 分队。
+- [[factions/太空死灵/stratagems/curse-of-the-cryptek|克里普特克诅咒]] — 1 CP、Shooting or Fight phase、Canoptek Court 分队、Battle Tactic...
+- [[factions/太空死灵/stratagems/hologyric-simulation|全息模拟]] — 1 CP、Shooting or Fight phase、Harbinger Cabal 分队、Battle Tacti...
+- [[factions/太空死灵/stratagems/rush-to-slaughter|冲向屠杀]] — 1 CP、Movement phase、Deranged Outcasts 分队、Strategic Ploy Stra...
+- [[factions/太空死灵/stratagems/murderous-reanimation|凶残重生]] — 1 CP、Fight phase、Annihilation Legion 分队、Battle Tactic Strata...
+- [[factions/太空死灵/stratagems/molecular-erosion|分子侵蚀]] — 1 CP、Command phase、哀伤众神殿 分队、Strategic Ploy Stratagem。
+- [[factions/太空死灵/stratagems/molecular-targeting|分子目标锁定]] — 1 CP、Shooting or Fight phase、墓穴技师密会 分队、Battle Tactic Stratag...
+- [[factions/太空死灵/stratagems/dynamic-reconfiguration|动态重构]] — 1 CP、Any phase、Harbinger Cabal 分队、Strategic Ploy Stratagem。
+- [[factions/太空死灵/stratagems/synergistic-empowerment|协同赋能]] — 1 CP、Shooting phase、墓穴技师密会 分队、Strategic Ploy Stratagem。
+- [[factions/太空死灵/stratagems/reactive-subroutines|反应式子程序]] — 1 CP、Movement phase、Canoptek Court 分队、Strategic Ploy Stratag...
+- [[factions/太空死灵/stratagems/reactive-reposition|反应式移动]] — 1 CP、Shooting phase、碎星宝库 分队、Strategic Ploy Stratagem。
+- [[factions/太空死灵/stratagems/unwavering-defence|坚定防御]] — 1 CP、Fight phase、Tomb Ship Complement 分队、Battle Tactic Strat...
+- [[factions/太空死灵/stratagems/protocol-of-the-vengeful-stars|复仇星辰协议]] — 2 CP、Shooting phase、Awakened Dynasty 分队、Strategic Ploy Strat...
+- [[factions/太空死灵/stratagems/omnilocked-strafing|多重锁定扫射]] — 1 CP、Movement phase、遮天先锋 分队。
+- [[factions/太空死灵/stratagems/solar-pulse|太阳脉冲]] — 1 CP、Shooting phase、Canoptek Court 分队、Strategic Ploy Stratag...
+- [[factions/太空死灵/stratagems/disharmonisation-cascade|失谐级联]] — 1 CP、Any phase、哀伤众神殿 分队、Epic Deed Stratagem。
+- [[factions/太空死灵/stratagems/enslaved-artifice|奴役造物]] — 1 CP、Shooting or Fight phase、Obeisance Phalanx 分队、Battle Tac...
+- [[factions/太空死灵/stratagems/cosmic-precision|宇宙精准]] — 1 CP、Movement phase、Hypercrypt Legion 分队、Strategic Ploy Stra...
+- [[factions/太空死灵/stratagems/cosmic-storm|宇宙风暴]] — 1 CP、Shooting phase、法皇的军备 分队。
+- [[factions/太空死灵/stratagems/driven-to-butchery|屠杀冲动]] — 1 CP、Shooting or Charge phase、诅咒军团 分队、Strategic Ploy Stratag...
+- [[factions/太空死灵/stratagems/protocol-of-the-conquering-tyrant|征服暴君协议]] — 1 CP、Shooting phase、Awakened Dynasty 分队、Battle Tactic Strata...
+- [[factions/太空死灵/stratagems/will-of-the-conqueror|征服者的意志]] — 1 CP、Movement phase、王朝之手 分队。
+- [[factions/太空死灵/stratagems/microscarab-swarm|微型圣甲虫群]] — 1 CP、Shooting or Fight phase、墓穴技师密会 分队、Wargear Stratagem。
+- [[factions/太空死灵/stratagems/terrifying-ambush|恐怖伏击]] — 1 CP、Movement phase、Deranged Outcasts 分队、Strategic Ploy Stra...
+- [[factions/太空死灵/stratagems/animus-curse|恶意信息诅咒]] — 1 CP、Shooting or Fight phase、墓穴技师密会 分队、Wargear Stratagem。
+- [[factions/太空死灵/stratagems/spreading-madness|散播疯狂]] — 1 CP、Charge phase、诅咒军团 分队、Battle Tactic Stratagem。
+- [[factions/太空死灵/stratagems/endless-servitude|无尽奴役]] — 1 CP、Fight phase、碎星宝库 分队、Strategic Ploy Stratagem。
+- [[factions/太空死灵/stratagems/merciless-reclamation|无情收回]] — 2 CP、Shooting or Fight phase、碎星宝库 分队、Battle Tactic Stratagem...
+- [[factions/太空死灵/stratagems/pitiless-hunters|无情猎手]] — 1 CP、Fight phase、Annihilation Legion 分队、Battle Tactic Strata...
+- [[factions/太空死灵/stratagems/chronodistortion|时间扭曲]] — 1 CP、Fight phase、哀伤众神殿 分队、Battle Tactic Stratagem。
+- [[factions/太空死灵/stratagems/chronoshift|时间跃迁]] — 1 CP、Movement phase、碎星宝库 分队、Strategic Ploy Stratagem。
+- [[factions/太空死灵/stratagems/shadow-stalkers|暗影潜猎]] — 1 CP、Movement phase、Deranged Outcasts 分队、Strategic Ploy Stra...
+- [[factions/太空死灵/stratagems/untapped-power|未曾设想的力量]] — 1 CP、Shooting phase、墓穴技师密会 分队、Battle Tactic Stratagem。
+- [[factions/太空死灵/stratagems/suboptimal-facade|次优伪装]] — 1 CP、Charge phase、Canoptek Court 分队、Strategic Ploy Stratagem...
+- [[factions/太空死灵/stratagems/dimensional-tunnel|次元通道]] — 1 CP、Movement phase、碎星宝库 分队、Strategic Ploy Stratagem。
+- [[factions/太空死灵/stratagems/mortis-protocols|死亡协议]] — 1 CP、Shooting or Fight phase、诅咒军团 分队、Strategic Ploy Stratage...
+- [[factions/太空死灵/stratagems/image-of-death|死亡景象]] — 1 CP、Shooting or Fight phase、诅咒军团 分队、Battle Tactic Stratagem...
+- [[factions/太空死灵/stratagems/masks-of-death|死亡面具]] — 1 CP、Shooting or Fight phase、Annihilation Legion 分队、Strategi...
+- [[factions/太空死灵/stratagems/cynosure-of-eradication|歼灭焦点]] — 2 CP、Shooting or Fight phase、Canoptek Court 分队、Battle Tactic...
+- [[factions/太空死灵/stratagems/protocol-of-the-eternal-revenant|永恒亡者协议]] — 1 CP、Any phase、Awakened Dynasty 分队、Epic Deed Stratagem。
+- [[factions/太空死灵/stratagems/sentinels-of-eternity|永恒哨兵]] — 1 CP、Fight phase、Obeisance Phalanx 分队、Epic Deed Stratagem。
+- [[factions/太空死灵/stratagems/your-time-is-nigh|汝时将至]] — 1 CP、Any phase、Obeisance Phalanx 分队、Epic Deed Stratagem。
+- [[factions/太空死灵/stratagems/bathed-in-blood|浴血]] — 1 CP、Fight phase、Deranged Outcasts 分队、Strategic Ploy Stratag...
+- [[factions/太空死灵/stratagems/potentiality-syphon|潜能虹吸]] — 1 CP、Command phase、墓穴技师密会 分队、Strategic Ploy Stratagem。
+- [[factions/太空死灵/stratagems/entropic-damping|熵减阻尼]] — 1 CP、Shooting phase、Hypercrypt Legion 分队、Wargear Stratagem。
+- [[factions/太空死灵/stratagems/insanitys-ire|疯狂之怒]] — 1 CP、Shooting phase、Annihilation Legion 分队、Strategic Ploy St...
+- [[factions/太空死灵/stratagems/phase-shift|相位移]] — 1 CP、Movement phase、Canoptek Harvesters 分队、Strategic Ploy St...
+- [[factions/太空死灵/stratagems/phase-melding|相位融合]] — 1 CP、Movement phase、哀伤众神殿 分队、Strategic Ploy Stratagem。
+- [[factions/太空死灵/stratagems/targeting-algorithms|瞄准算法]] — 1 CP、Shooting or Fight phase、Canoptek Harvesters 分队、Battle T...
+- [[factions/太空死灵/stratagems/disruption-fields|破坏力场]] — 1 CP、Fight phase、Tomb Ship Complement 分队、Battle Tactic Strat...
+- [[factions/太空死灵/stratagems/particle-pulse|粒子脉冲]] — 1 CP、Shooting phase、法皇的军备 分队。
+- [[factions/太空死灵/stratagems/methodical-murder|系统性杀戮]] — 1 CP、Shooting or Fight phase、诅咒军团 分队、Battle Tactic Stratagem...
+- [[factions/太空死灵/stratagems/nanoscarab-virus|纳米圣甲虫病毒]] — 1 CP、Movement phase、Canoptek Harvesters 分队、Strategic Ploy St...
+- [[factions/太空死灵/stratagems/nanosaturation|纳米扩散]] — 1 CP、Opponent's Shooting phase、王朝之手 分队。
+- [[factions/太空死灵/stratagems/nanoassembly-protocols|纳米装配协议]] — 1 CP、Shooting or Fight phase、Obeisance Phalanx 分队、Battle Tac...
+- [[factions/太空死灵/stratagems/dimensional-corridor|维度走廊]] — 2 CP、Charge phase、Hypercrypt Legion 分队、Strategic Ploy Strata...
+- [[factions/太空死灵/stratagems/mass-transmogrification|群体变形]] — 1 CP、Shooting or Fight phase、哀伤众神殿 分队、Epic Deed Stratagem。
+- [[factions/太空死灵/stratagems/entrophasic-aura-targeting|能量光环瞄准]] — 1 CP、Shooting or Fight phase、哀伤众神殿 分队、Battle Tactic Stratage...
+- [[factions/太空死灵/stratagems/the-spoor-of-frailty|脆弱之痕]] — 1 CP、Shooting or Fight phase、Annihilation Legion 分队、Battle T...
+- [[factions/太空死灵/stratagems/blood-fuelled-cruelty|血燃残酷]] — 1 CP、Movement phase、Annihilation Legion 分队、Battle Tactic Str...
+- [[factions/太空死灵/stratagems/disintegration-beams|解离光束]] — 1 CP、Movement phase、Tomb Ship Complement 分队、Strategic Ploy S...
+- [[factions/太空死灵/stratagems/hyperphasic-recall|超相位召回]] — 2 CP、Shooting or Fight phase、Hypercrypt Legion 分队、Strategic...
+- [[factions/太空死灵/stratagems/swift-as-death|迅如死亡]] — 1 CP、Opponent's Movement phase、遮天先锋 分队。
+- [[factions/太空死灵/stratagems/anti-proximal-subroutines|近距子程序]] — 1 CP、Shooting phase、Harbinger Cabal 分队、Battle Tactic Stratag...
+- [[factions/太空死灵/stratagems/continuum-realignment|连续统重整]] — 1 CP、Fight phase、Harbinger Cabal 分队、Strategic Ploy Stratagem...
+- [[factions/太空死灵/stratagems/countertemporal-shift|逆时位移]] — 1 CP、Shooting phase、Canoptek Court 分队、Strategic Ploy Stratag...
+- [[factions/太空死灵/stratagems/reanimation-crypts|重生墓室]] — 1 CP、Command phase、Hypercrypt Legion 分队、Strategic Ploy Strat...
+- [[factions/太空死灵/stratagems/quantum-deflection|量子偏转]] — 1 CP、Shooting or Fight phase、Hypercrypt Legion 分队、Wargear St...
+- [[factions/太空死灵/stratagems/subsurface-quantumweave|量子织物夹层]] — 1 CP、Opponent's Shooting or Fight phase、法皇的军备 分队。
+- [[factions/太空死灵/stratagems/quantum-flare-shield|量子闪耀护盾]] — 1 CP、Shooting or Fight phase、Canoptek Harvesters 分队、Wargear...
+- [[factions/太空死灵/stratagems/evasive-protocols|闪避规程]] — 1 CP、Opponent's Shooting phase、遮天先锋 分队。
+- [[factions/太空死灵/stratagems/concentrated-atomisation|集中原子化]] — 1 CP、Shooting phase、Tomb Ship Complement 分队、Battle Tactic St...
+- [[factions/太空死灵/stratagems/unnatural-aggression|非自然攻击性]] — 2 CP、Charge phase、诅咒军团 分队、Strategic Ploy Stratagem。
+- [[factions/太空死灵/stratagems/territorial-obsession|领土执念]] — 1 CP、Command phase、Obeisance Phalanx 分队、Strategic Ploy Strat...
+- [[factions/太空死灵/stratagems/protocol-of-the-hungry-void|饥饿虚空协议]] — 1 CP、Fight phase、Awakened Dynasty 分队、Battle Tactic Stratagem...
+- [[factions/太空死灵/stratagems/protocol-of-the-sudden-storm|骤袭风暴协议]] — 1 CP、Movement phase、Awakened Dynasty 分队、Strategic Ploy Strat...
+
+## 强化
+
+- [[factions/太空死灵/enhancements/unflinching-will|不屈意志]] — 20 分、Obeisance Phalanx 分队。
+- [[factions/太空死灵/enhancements/portal-transmuter|传送门嬗变者]] — 0 分、Harbinger Cabal 分队。
+- [[factions/太空死灵/enhancements/honourable-combatant|光荣战士]] — 10 分、Obeisance Phalanx 分队。
+- [[factions/太空死灵/enhancements/mark-of-the-nekrosor|内克罗索之印]] — 20 分、诅咒军团 分队。
+- [[factions/太空死灵/enhancements/nether-realm-casket|冥界之匣]] — 20 分、Awakened Dynasty 分队。
+- [[factions/太空死灵/enhancements/impromptu-translocation|即兴转位]] — 0 分、Canoptek Harvesters 分队。
+- [[factions/太空死灵/enhancements/gauntlet-of-compression|压缩拳套]] — 20 分、墓穴技师密会 分队。
+- [[factions/太空死灵/enhancements/atomic-disintegrators|原子分解器]] — 10 分、墓穴技师密会 分队。
+- [[factions/太空死灵/enhancements/resurrection-protocols|复活协议]] — 0 分、Tomb Ship Complement 分队。
+- [[factions/太空死灵/enhancements/arisen-tyrant|复起暴君]] — 25 分、Hypercrypt Legion 分队。
+- [[factions/太空死灵/enhancements/singularity-matrix|奇点矩阵]] — 55 分、哀伤众神殿 分队。
+- [[factions/太空死灵/enhancements/dread-majesty-aura|威严]] — 30 分、碎星宝库 分队。
+- [[factions/太空死灵/enhancements/cryptometric-experimentation|密码计量实验]] — 0 分、Harbinger Cabal 分队。
+- [[factions/太空死灵/enhancements/recursive-reanimation|循环再生]] — 分数未知、遮天先锋 分队。
+- [[factions/太空死灵/enhancements/miniaturised-nebuloscope|微缩维度镜]] — 15 分、碎星宝库 分队。
+- [[factions/太空死灵/enhancements/warrior-noble|战士贵族]] — 15 分、Obeisance Phalanx 分队。
+- [[factions/太空死灵/enhancements/domineering-presence|支配存在]] — 0 分、Deranged Outcasts 分队。
+- [[factions/太空死灵/enhancements/animus-damper|敌意增幅器]] — 35 分、哀伤众神殿 分队。
+- [[factions/太空死灵/enhancements/soulless-reaper|无魂收割者]] — 20 分、Annihilation Legion 分队。
+- [[factions/太空死灵/enhancements/chrono-impedance-fields|时序阻抗力场]] — 25 分、碎星宝库 分队。
+- [[factions/太空死灵/enhancements/prelocational-optimiser|易位优化器]] — 分数未知、法皇的军备 分队。
+- [[factions/太空死灵/enhancements/murdermind|杀戮意志]] — 15 分、诅咒军团 分队。
+- [[factions/太空死灵/enhancements/mindshackle-scarabs|束心圣甲虫]] — 0 分、Tomb Ship Complement 分队。
+- [[factions/太空死灵/enhancements/ingrained-superiority|根植优越]] — 10 分、Annihilation Legion 分队。
+- [[factions/太空死灵/enhancements/mortality-shroud|死亡之幕（光环）]] — 分数未知、法皇的军备 分队。
+- [[factions/太空死灵/enhancements/destroyer-ankh|毁灭者锚点]] — 20 分、诅咒军团 分队。
+- [[factions/太空死灵/enhancements/eternal-conqueror|永恒征服者]] — 25 分、Obeisance Phalanx 分队。
+- [[factions/太空死灵/enhancements/eternal-madness|永恒疯狂]] — 25 分、Annihilation Legion 分队。
+- [[factions/太空死灵/enhancements/enlivened-sentinels|活跃哨卫]] — 分数未知、王朝之手 分队。
+- [[factions/太空死灵/enhancements/deepening-madness|深度狂乱]] — 分数未知、遮天先锋 分队。
+- [[factions/太空死灵/enhancements/enaegic-dermal-bond|灵能真皮键结]] — 30 分、Awakened Dynasty 分队。
+- [[factions/太空死灵/enhancements/phasal-subjugator-aura|相位征服者]] — 35 分、Awakened Dynasty 分队。
+- [[factions/太空死灵/enhancements/reletavistic-tether|相对论系绳]] — 40 分、哀伤众神殿 分队。
+- [[factions/太空死灵/enhancements/nanoscarab-reconstitution|纳米圣甲虫重构]] — 0 分、Canoptek Harvesters 分队。
+- [[factions/太空死灵/enhancements/tools-of-dominion|统御工具]] — 分数未知、王朝之手 分队。
+- [[factions/太空死灵/enhancements/dimensional-sanctum|维度圣所]] — 20 分、Canoptek Court 分队。
+- [[factions/太空死灵/enhancements/dimensional-overseer|维度督军]] — 25 分、Hypercrypt Legion 分队。
+- [[factions/太空死灵/enhancements/inured-to-damage|耐伤]] — 0 分、Deranged Outcasts 分队。
+- [[factions/太空死灵/enhancements/autodivinator|自动占卜者]] — 15 分、Canoptek Court 分队。
+- [[factions/太空死灵/enhancements/demanding-leader|苛刻领袖]] — 10 分、碎星宝库 分队。
+- [[factions/太空死灵/enhancements/cursed-circlet|诅咒之冠]] — 25 分、诅咒军团 分队。
+- [[factions/太空死灵/enhancements/hyperphasic-fulcrum|超相位支点]] — 15 分、Canoptek Court 分队。
+- [[factions/太空死灵/enhancements/hyperspatial-transfer-node|超空间转移节点]] — 15 分、Hypercrypt Legion 分队。
+- [[factions/太空死灵/enhancements/eldritch-nightmare|邪术梦魇]] — 15 分、Annihilation Legion 分队。
+- [[factions/太空死灵/enhancements/gravitic-bolas|重力流星锤]] — 15 分、墓穴技师密会 分队。
+- [[factions/太空死灵/enhancements/quantum-goad|量子刺激]] — 45 分、哀伤众神殿 分队。
+- [[factions/太空死灵/enhancements/quantum-abacus|量子精算器]] — 15 分、墓穴技师密会 分队。
+- [[factions/太空死灵/enhancements/metalodermal-tesla-weave|金属真皮特斯拉织网]] — 10 分、Canoptek Court 分队。
+- [[factions/太空死灵/enhancements/osteoclave-fulcrum|骨钥支点]] — 20 分、Hypercrypt Legion 分队。
+- [[factions/太空死灵/enhancements/veil-of-darkness|黑暗之幕]] — 20 分、Awakened Dynasty 分队。
 

@@ -27,15 +27,15 @@ updated: '2026-07-23'
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
 | 爆弹手枪    | 12" | 1 | 3+ | 4 | 0 | 1 | [[core-rules/pistol.md\|手枪]] |
-| Bolt rifle | 24" | 2 | 3+ | 4 | -1 | 1 | — |
-| Master-crafted bolt rifle | 24" | 2 | 2+ | 4 | -1 | 2 | [[core-rules/devastating-wounds.md\|DEVASTATING WOUNDS]]，[[core-rules/rapid-fire.md\|RAPID FIRE 1]] |
-| Master-crafted heavy bolter | 36" | 3 | 3+ | 5 | -1 | 3 | [[core-rules/heavy.md\|HEAVY]]，[[core-rules/sustained-hits.md\|SUSTAINED HITS 2]] |
+| 爆弹步枪 | 24" | 2 | 3+ | 4 | -1 | 1 | — |
+| 精工爆弹步枪 | 24" | 2 | 2+ | 4 | -1 | 2 | [[core-rules/devastating-wounds.md\|毁灭伤害]]，[[core-rules/rapid-fire.md\|速射1]] |
+| 精工重型爆弹枪 | 36" | 3 | 3+ | 5 | -1 | 3 | [[core-rules/heavy.md\|重型]]，[[core-rules/sustained-hits.md\|连击2]] |
 
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
 | 格斗武器   | 近战 | 5 | 3+ | 4 | 0 | 1 | — |
-| Master-crafted power weapon | 近战 | 6 | 2+ | 5 | -2 | 2 | PRECISION |
+| 精工动力武器 | 近战 | 6 | 2+ | 5 | -2 | 2 | [[core-rules/precision.md\|精准]] |
 
 ## 技能
 - **【阵营技能】：破敌重誓**

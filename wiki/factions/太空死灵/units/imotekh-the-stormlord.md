@@ -29,17 +29,17 @@ updated: '2026-07-23'
 ## 射击武器
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| Gauntlet of Fire | 12" | D6 | N/A | 5 | -1 | 1 | ignores cover，torrent |
-| Staff of the Destroyer | 18" | 3 | 2+ | 6 | -3 | 2 | — |
+| 火焰臂铠 | 12" | D6 | N/A | 5 | -1 | 1 | [[core-rules/ignores-cover.md\|无视掩体]]，[[core-rules/torrent.md\|洪流]] |
+| 毁灭者之杖 | 18" | 3 | 2+ | 6 | -3 | 2 | — |
 
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| Staff of the Destroyer | 近战 | 4 | 2+ | 6 | -3 | 2 | devastating wounds |
+| 毁灭者之杖 | 近战 | 4 | 2+ | 6 | -3 | 2 | [[core-rules/devastating-wounds.md\|毁灭伤害]] |
 
 ## 技能
 - **[阵营]：重生协议**
-- **伟大战略家**：在您的指挥阶段开始时，如果该模型位于战场上，您获得 1CP。
+- **伟[[factions/星界军/enhancements/grand-strategist-armoured-infantry.md|大战略家]]**：在您的指挥阶段开始时，如果该模型位于战场上，您获得 1CP。
 - **风暴之王**：每场战斗一次，在您的指挥阶段结束时，该模型有一次机会可以使用该技能。如果 这样做，为该模型 12 英寸内的每个敌方单位掷一枚 D6，如果掷骰结果为 2-5，该敌方单位 受到 D3 处致命伤；如果掷骰结果为 6，该敌方单位受到 D3+3 处致命伤。
 
 ## 单位构成

@@ -1,5 +1,5 @@
 ---
-id: 000000008
+id: '000000008'
 name_zh: 碎骨者萨拉卡
 name_en: Ghazghkull Thraka
 faction: 兽人

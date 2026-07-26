@@ -28,7 +28,7 @@ updated: '2026-07-23'
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
 | 高斯爆裂枪  | 24" | 2 | 3+ | 5 | -1 | 1 | [[core-rules/lethal-hits.md\|致命一击]] |
-| 特斯拉卡宾枪  | 24" | 2 | 3+ | 5 | 0 | 1 | [[core-rules/assault.md\|突击]]，[[core-rules/sustained-hits.md\|连击 2]] |
+| 特斯拉卡宾枪  | 24" | 2 | 3+ | 5 | 0 | 1 | [[core-rules/assault.md\|突击]]，[[core-rules/sustained-hits.md\|连击2]] |
 
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |

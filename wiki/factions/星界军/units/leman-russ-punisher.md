@@ -1,5 +1,6 @@
 ---
 id: '000002744'
+name_zh: 黎曼鲁斯惩罚者
 name_en: Leman Russ Punisher
 faction: 星界军
 type: unit
@@ -20,30 +21,30 @@ updated: '2026-07-23'
 ## 属性表
 | 模型 | M | T | SV | W | LD | OC |
 |---|---|---|---|---|---|---|
-| Leman Russ Punisher | 10" | 11 | 2+ | 13 | 7+ | 3 |
+| 黎曼鲁斯惩罚者 | 10" | 11 | 2+ | 13 | 7+ | 3 |
 
 ## 射击武器
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| Heavy bolter | 36" | 3 | 4+ | 5 | -1 | 2 | [[core-rules/sustained-hits.md\|sustained hits 1]] |
-| Heavy flamer | 12" | D6 | N/A | 5 | -1 | 1 | ignores cover，torrent |
-| Heavy stubber | 36" | 3 | 4+ | 4 | 0 | 1 | [[core-rules/rapid-fire.md\|rapid fire 3]] |
-| Hunter-killer missile | 48" | 1 | 4+ | 14 | -3 | D6 | one shot |
-| Lascannon | 48" | 1 | 4+ | 12 | -3 | D6+1 | — |
-| Multi-melta | 18" | 2 | 4+ | 9 | -4 | D6 | [[core-rules/melta.md\|melta 2]] |
-| Plasma cannon – standard | 36" | D3 | 4+ | 7 | -2 | 1 | blast |
-| Plasma cannon – supercharge | 36" | D3 | 4+ | 8 | -3 | 2 | blast，hazardous |
-| Punisher gatling cannon | 24" | 20 | 4+ | 6 | 0 | 1 | — |
-| Storm bolter | 24" | 2 | 4+ | 4 | 0 | 1 | [[core-rules/rapid-fire.md\|rapid fire 2]] |
+| 重型爆弹枪 | 36" | 3 | 4+ | 5 | -1 | 2 | [[core-rules/sustained-hits.md\|连击1]] |
+| 重型火焰喷射器 | 12" | D6 | N/A | 5 | -1 | 1 | [[core-rules/ignores-cover.md\|无视掩体]]，[[core-rules/torrent.md\|洪流]] |
+| 重型伐木枪 | 36" | 3 | 4+ | 4 | 0 | 1 | [[core-rules/rapid-fire.md\|速射3]] |
+| 猎杀飞弹 | 48" | 1 | 4+ | 14 | -3 | D6 | [[core-rules/one-shot.md\|单发]] |
+| 激光炮 | 48" | 1 | 4+ | 12 | -3 | D6+1 | — |
+| 多管热熔 | 18" | 2 | 4+ | 9 | -4 | D6 | [[core-rules/melta.md\|热熔2]] |
+| 等离子炮（标准） | 36" | D3 | 4+ | 7 | -2 | 1 | [[core-rules/blast.md\|爆炸]] |
+| 等离子炮（过载） | 36" | D3 | 4+ | 8 | -3 | 2 | [[core-rules/blast.md\|爆炸]]，[[core-rules/hazardous.md\|危险]] |
+| 惩罚者加特林 | 24" | 20 | 4+ | 6 | 0 | 1 | — |
+| 风暴爆弹枪 | 24" | 2 | 4+ | 4 | 0 | 1 | [[core-rules/rapid-fire.md\|速射2]] |
 
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| Armoured tracks | 近战 | 6 | 4+ | 7 | 0 | 1 | — |
+| 装甲履带 | 近战 | 6 | 4+ | 7 | 0 | 1 | — |
 
 ## 技能
-- **Mow Down the Enemy**：Each time this model makes an attack with its punisher gatling cannon that targets an enemy unit (excluding <span class="kwb">MONSTERS</span> and <span class="kwb">VEHICLES</span>), that attack has the [DEVASTATING WOUNDS] ability.
-- **One Shot**：The bearer can only shoot with this weapon once per battle.
+- **收割敌军**：当该单位使用惩罚者加特林进行攻击时，若该单位不是巨兽或载具单位，则惩罚者加特林获得毁灭性伤害能力。
+- **受损**：当该模型剩余1-4点耐伤，该模型进行攻击时命中投掷结果-1。
 
 ## 单位构成
 - **1个模型** — 150 分

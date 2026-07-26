@@ -1,5 +1,5 @@
 ---
-id: 000001169
+id: '000001169'
 name_en: Land Speeder Tornado
 faction: 星际战士
 type: unit
@@ -24,15 +24,15 @@ updated: '2026-07-23'
 ## 射击武器
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| Assault cannon | 24" | 6 | 3+ | 6 | 0 | 1 | devastating wounds |
-| Heavy bolter | 36" | 3 | 3+ | 5 | -1 | 2 | [[core-rules/sustained-hits.md\|sustained hits 1]] |
-| Heavy flamer | 12" | D6 | N/A | 5 | -1 | 1 | ignores cover，torrent |
-| Multi-melta | 18" | 2 | 3+ | 9 | -4 | D6 | [[core-rules/melta.md\|melta 2]] |
+| 突击炮 | 24" | 6 | 3+ | 6 | 0 | 1 | [[core-rules/devastating-wounds.md\|毁灭伤害]] |
+| 重型爆弹枪 | 36" | 3 | 3+ | 5 | -1 | 2 | [[core-rules/sustained-hits.md\|连击1]] |
+| 重型喷火器 | 12" | D6 | N/A | 5 | -1 | 1 | [[core-rules/ignores-cover.md\|无视掩体]]，[[core-rules/torrent.md\|洪流]] |
+| 多管热熔 | 18" | 2 | 3+ | 9 | -4 | D6 | [[core-rules/melta.md\|热熔2]] |
 
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| Close combat weapon | 近战 | 3 | 3+ | 4 | 0 | 1 | — |
+| 格斗武器 | 近战 | 3 | 3+ | 4 | 0 | 1 | — |
 
 ## 技能
 - **Strafing Enfilade**：Each time this model ends a Normal move, you can select one enemy unit (excluding <span class="kwb">MONSTER</span> and <span class="kwb">VEHICLE</span> units) that it moved over during that move, then roll six D6: for each 4+, that enemy unit suffers 1 mortal wound.
@@ -42,4 +42,4 @@ updated: '2026-07-23'
 
 ## 关键词
 - **阵营关键词**：Adeptus Astartes
-- **普通关键词**：Fly，Imperium，Ravenwing，Land Speeder Tornado，Vehicle
+- **普通关键词**：Fly，Imperium，Ravenwing，[[factions/星际战士/units/land-speeder.md|Land Speeder]] Tornado，Vehicle

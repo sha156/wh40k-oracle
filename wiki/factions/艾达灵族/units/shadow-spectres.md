@@ -30,13 +30,13 @@ updated: '2026-07-23'
 ## 射击武器
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| Prism rifle – dispersed | 18" | D6 | 3+ | 4 | -1 | 1 | blast |
+| Prism rifle – dispersed | 18" | D6 | 3+ | 4 | -1 | 1 | [[core-rules/blast.md\|爆炸]] |
 | Prism rifle – focused | 24" | 1 | 3+ | 6 | -2 | 3 | — |
 
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| Close combat weapon | 近战 | 2 | 3+ | 3 | 0 | 1 | — |
+| 格斗武器 | 近战 | 2 | 3+ | 3 | 0 | 1 | — |
 
 ## 技能
 - **Shade of Twilight**：In your Shooting phase, after this unit has shot, if it is not within Engagement Range of one or more enemy units, it can make a Normal move of up to D6". If it does, until the end of the turn, this unit is not eligible to declare a charge.

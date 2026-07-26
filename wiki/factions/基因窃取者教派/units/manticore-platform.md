@@ -1,5 +1,5 @@
 ---
-id: 000003958
+id: '000003958'
 name_en: Manticore Platform
 faction: 基因窃取者教派
 type: unit
@@ -24,12 +24,12 @@ updated: '2026-07-23'
 ## 射击武器
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| Storm eagle rockets | 120" | D6+1 | 4+ | 10 | -2 | 3 | blast，indirect fire |
+| 风暴鹰火箭 | 120" | D6+1 | 4+ | 10 | -2 | 3 | [[core-rules/blast.md\|爆炸]]，[[core-rules/indirect-fire.md\|曲射]] |
 
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| Close combat weapons | 近战 | 3 | 4+ | 3 | 0 | 1 | — |
+| 格斗武器 | 近战 | 3 | 4+ | 3 | 0 | 1 | — |
 
 ## 技能
 - **Furious Barrage**：Each time this model makes an attack with its storm eagle rockets that targets an enemy unit that contains five or more models, you can re-roll the Hit roll.
@@ -41,4 +41,4 @@ updated: '2026-07-23'
 
 ## 关键词
 - **阵营关键词**：Astra Militarum，Genestealer Cults
-- **普通关键词**：[[core-rules/fortification.md|Fortification]]，Imperium，Artillery，Manticore Platform
+- **普通关键词**：[[core-rules/fortification.md|Fortification]]，Imperium，Artillery，[[factions/基因窃取者教派/units/manticore.md|Manticore]] Platform

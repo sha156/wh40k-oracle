@@ -1,5 +1,5 @@
 ---
-id: 000000867
+id: '000000867'
 name_zh: 战犬泰坦
 name_en: Warhound Titan
 faction: 泰坦军团
@@ -28,7 +28,7 @@ updated: '2026-07-23'
 ## 射击武器
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| 战犬地狱火喷射炮 | 24" | 3D6 | N/A | 7 | -2 | 3 | [[core-rules/ignores-cover.md\|忽略掩体]]，[[core-rules/torrent.md\|洪流]] |
+| 战犬地狱火喷射炮 | 24" | 3D6 | N/A | 7 | -2 | 3 | [[core-rules/ignores-cover.md\|无视掩体]]，[[core-rules/torrent.md\|洪流]] |
 | 战犬等离子爆裂枪 — 标准 | 72" | 2D6+3 | 3+ | 9 | -3 | 4 | [[core-rules/blast.md\|爆炸]] |
 | 战犬等离子爆裂枪 — 过载  | 72" | 2D6+3 | 3+ | 10 | -3 | 5 | [[core-rules/blast.md\|爆炸]]，[[core-rules/hazardous.md\|危险]] |
 | 战犬双管涡轮激光破坏炮 | 72" | D3+3 | 3+ | 20 | -3 | 2D6 | [[core-rules/blast.md\|爆炸]] |

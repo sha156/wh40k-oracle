@@ -1,5 +1,5 @@
 ---
-id: 000003937
+id: '000003937'
 name_en: Provisionally Prepared
 faction: 星界军
 type: unit
@@ -24,12 +24,12 @@ updated: '2026-07-23'
 ## 射击武器
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| Sniper rifle | 36" | 1 | 3+ | 4 | -2 | 2 | heavy，precision |
+| Sniper rifle | 36" | 1 | 3+ | 4 | -2 | 2 | [[core-rules/heavy.md\|重型]]，[[core-rules/precision.md\|精准]] |
 
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| Close combat weapons | 近战 | 2 | 5+ | 2 | 0 | 1 | — |
+| 格斗武器 | 近战 | 2 | 5+ | 2 | 0 | 1 | — |
 
 ## 技能
 - **A Hearty ‘Pick Me Up’**：While this model is leading a unit, in your Command phase, you can return up to D3 destroyed models to that unit.

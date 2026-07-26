@@ -1,5 +1,6 @@
 ---
-id: 000000699
+id: '000000699'
+name_zh: 死亡直击导弹车
 name_en: Deathstrike
 faction: 星界军
 type: unit
@@ -20,25 +21,25 @@ updated: '2026-07-23'
 ## 属性表
 | 模型 | M | T | SV | W | LD | OC |
 |---|---|---|---|---|---|---|
-| Deathstrike | 10" | 10 | 3+ | 11 | 7+ | 3 |
+| 死亡直击导弹车 | 10" | 10 | 3+ | 11 | 7+ | 3 |
 
 ## 射击武器
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| Deathstrike missile | N/A" | 2D6 | 2+ | 16 | -4 | 1 | blast，one shot，plasma warhead |
-| Heavy bolter | 36" | 3 | 4+ | 5 | -1 | 2 | [[core-rules/sustained-hits.md\|sustained hits 1]] |
-| Heavy flamer | 12" | D6 | N/A | 5 | -1 | 1 | ignores cover，torrent |
-| Hunter-killer missile | 48" | 1 | 3+ | 14 | -3 | D6 | one shot |
+| 死亡直击导弹 | N/A" | 2D6 | 2+ | 16 | -4 | 1 | [[core-rules/blast.md\|爆炸]]，[[core-rules/one-shot.md\|单发]]，等离子弹头 |
+| 重型爆弹枪 | 36" | 3 | 4+ | 5 | -1 | 2 | [[core-rules/sustained-hits.md\|连击1]] |
+| 重型火焰喷射器 | 12" | D6 | N/A | 5 | -1 | 1 | [[core-rules/ignores-cover.md\|无视掩体]]，[[core-rules/torrent.md\|洪流]] |
+| 猎杀飞弹 | 48" | 1 | 3+ | 14 | -3 | D6 | [[core-rules/one-shot.md\|单发]] |
 
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| Armoured tracks | 近战 | 3 | 4+ | 6 | 0 | 1 | — |
+| 装甲履带 | 近战 | 3 | 4+ | 6 | 0 | 1 | — |
 
 ## 技能
-- **Deathstrike Missile**：In your Shooting phase, each time this model is selected to shoot, if it has not shot with its Deathstrike missile this battle, you can do one of the following in addition to resolving this model’s ranged attacks:<br><ul><li><b>Designate Target:</b> If this model does not have a Deathstrike Target marker on the battlefield, place a unique Deathstrike Target marker for this model anywhere on the battlefield.</li><li><b>Adjust Target:</b> If this model has a Deathstrike Target marker on the battlefield, move that marker to anywhere else on the battlefield.</li></ul>
-- **Plasma Warhead**：The bearer can only shoot with this weapon in your Shooting phase, and only if it Remained Stationary this turn and you did not use its Deathstrike Missile ability to Designate Target or Adjust Target this phase. When the bearer shoots with this weapon, do not select a target. Instead, resolve this weapon’s attacks, rolling for each unit within 6" of the centre of its Deathstrike Target marker individually.
-- **One Shot**：The bearer can only shoot with this weapon once per battle.
+- **死亡直击导弹**：在您的射击阶段中，每次该模型被选中进行射击时，若本次战斗中尚未发射死亡直击导弹，你可以在射击其他武器之外进行以下选择：如果该模型未发射死亡直击导弹，那么在战场上任意位置放置一个死亡直击标记。如果该模型的死亡直击标记处于战场上，可以将该标记移动到战场上任意位置。
+- **受损**：当该模型剩余1-4点耐伤，该模型进行攻击时命中投掷结果-1。
+- **等离子弹头**：该武器仅可以在你的射击阶段进行射击，并且需要该单位保持静止且本阶段未使用过死亡直击导弹能力的设定目标和修正目标能力。当该武器射击时，无需选择目标，而是为每个位于死亡直击导弹标记6寸内的单位投掷命中骰。
 
 ## 单位构成
 - **1个模型** — 125 分

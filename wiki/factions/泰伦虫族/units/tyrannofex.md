@@ -1,5 +1,5 @@
 ---
-id: 000000496
+id: '000000496'
 name_zh: 暴虐兽
 name_en: Tyrannofex
 faction: 泰伦虫族

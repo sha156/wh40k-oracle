@@ -1,5 +1,6 @@
 ---
 id: '000000705'
+name_zh: 末日之锤
 name_en: Doomhammer
 faction: 星界军
 type: unit
@@ -20,23 +21,25 @@ updated: '2026-07-23'
 ## 属性表
 | 模型 | M | T | SV | W | LD | OC |
 |---|---|---|---|---|---|---|
-| Doomhammer | 12" | 13 | 2+ | 24 | 7+ | 8 |
+| 末日之锤 | 12" | 13 | 2+ | 24 | 7+ | 8 |
 
 ## 射击武器
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| Lascannon | 48" | 1 | 4+ | 12 | -3 | D6+1 | — |
-| Magma cannon | 24" | D6+3 | 4+ | 12 | -4 | D6 | blast，[[core-rules/melta.md\|melta 6]] |
-| Twin heavy bolter | 36" | 3 | 4+ | 5 | -1 | 2 | [[core-rules/sustained-hits.md\|sustained hits 1]]，twin-linked |
-| Twin heavy flamer | 12" | D6 | N/A | 5 | -1 | 1 | ignores cover，torrent，twin-linked |
+| 激光炮 | 48" | 1 | 4+ | 12 | -3 | D6+1 | — |
+| 岩浆炮 | 24" | D6+3 | 4+ | 12 | -4 | D6 | [[core-rules/blast.md\|爆炸]]，[[core-rules/melta.md\|热熔6]] |
+| 双联重型爆弹枪 | 36" | 3 | 4+ | 5 | -1 | 2 | [[core-rules/sustained-hits.md\|连击1]]，[[core-rules/twin-linked.md\|双联]] |
+| 双联重型火焰喷射器 | 12" | D6 | N/A | 5 | -1 | 1 | [[core-rules/ignores-cover.md\|无视掩体]]，[[core-rules/torrent.md\|洪流]]，[[core-rules/twin-linked.md\|双联]] |
 
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| Armoured tracks | 近战 | 6 | 4+ | 8 | 0 | 1 | — |
+| 装甲履带 | 近战 | 6 | 4+ | 8 | 0 | 1 | — |
 
 ## 技能
-- **Close-range Titan Killer**：Each time this model’s magma cannon targets a <span class="kwb">MONSTER</span> or <span class="kwb">VEHICLE</span> unit, that target is always considered to be within half range of that weapon.
+- **近距离泰坦杀手**：当该模型的岩浆炮命中一个巨兽或载具单位时，总是视为在该武器的一半射程内。
+- **运输工具**：该单位可以搭载26个星界军步兵模型。每个欧格林模型占用3个空间。该模型不能运输炮兵模型。
+- **受损**
 
 ## 单位构成
 - **1个模型** — 380 分

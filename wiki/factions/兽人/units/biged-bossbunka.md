@@ -1,5 +1,5 @@
 ---
-id: 000002499
+id: '000002499'
 name_zh: 大头堡
 name_en: Big’ed Bossbunka
 faction: 兽人
@@ -27,8 +27,8 @@ updated: '2026-07-23'
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
 | 大突突枪 | 36" | 3 | 5+ | 5 | 0 | 1 | [[core-rules/rapid-fire.md\|速射2]] |
-| 毛哥之眼(看渣渣的眼神) | 24" | D6 | 5+ | 5 | 0 | 1 | [[core-rules/rapid-fire.md\|速射2]] |
-| 毛哥之眼(看强者的眼神) | 18" | 1 | 5+ | 12 | -4 | 3 | 连击D3 |
+| 毛哥之眼(看渣渣的眼神) | 24" | D6 | 5+ | 5 | 0 | 1 | [[core-rules/blast.md\|爆炸]]，[[core-rules/sustained-hits.md\|连击D3]] |
+| 毛哥之眼(看强者的眼神) | 18" | 1 | 5+ | 12 | -4 | 3 | [[core-rules/sustained-hits.md\|连击D3]] |
 
 ## 技能
 - **Ramshackle Cover**：Each time a ranged attack is allocated to a model, if that model is not fully visible to every model in the attacking unit because of this <span class="kwb">FORTIFICATION</span>, that model has the Benefit of Cover against that attack.
@@ -40,4 +40,4 @@ updated: '2026-07-23'
 
 ## 关键词
 - **阵营关键词**：兽人
-- **普通关键词**：工事，[[core-rules/vehicle.md|载具]]，[[core-rules/transport.md|运输工具]]，大头目碉堡
+- **普通关键词**：工事，[[core-rules/vehicle.md|载具]]，[[core-rules/transport.md|运输工具]]，[[factions/兽人/units/bigboss.md|大头目]]碉堡

@@ -1,5 +1,5 @@
 ---
-id: 000000872
+id: '000000872'
 name_zh: 艾弗森刺客
 name_en: Eversor Assassin
 faction: 帝国特勤
@@ -31,7 +31,7 @@ updated: '2026-07-23'
 ## 射击武器
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| 处刑者手枪 | 12" | 4 | 2+ | 4 | 0 | 1 | [[core-rules/anti.md\|针对步兵3+]]，[[core-rules/precision.md\|精准]]，[[core-rules/pistol.md\|手枪]]，[[core-rules/sustained-hits.md\|连击3]] |
+| 处刑者手枪 | 12" | 4 | 2+ | 4 | 0 | 1 | [[core-rules/anti.md\|针对步兵3+]]，[[core-rules/pistol.md\|手枪]]，[[core-rules/precision.md\|精准]]，[[core-rules/sustained-hits.md\|连击3]] |
 
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |

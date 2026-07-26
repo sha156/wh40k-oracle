@@ -1,5 +1,5 @@
 ---
-id: 000000914
+id: '000000914'
 name_en: Bastion
 faction: 无阵营工事
 type: unit
@@ -24,9 +24,9 @@ updated: '2026-07-23'
 ## 射击武器
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| Heavy bolter | 36" | 3 | 4+ | 5 | -1 | 2 | [[core-rules/sustained-hits.md\|sustained hits 1]] |
-| Icarus lascannon | 48" | 1 | 5+ | 12 | -3 | D6+1 | [[core-rules/anti.md\|anti-fly 2+]] |
-| Quad-gun | 48" | 4 | 5+ | 9 | -1 | 3 | [[core-rules/anti.md\|anti-fly 3+]]，twin-linked |
+| 重型爆弹枪 | 36" | 3 | 4+ | 5 | -1 | 2 | [[core-rules/sustained-hits.md\|连击1]] |
+| Icarus lascannon | 48" | 1 | 5+ | 12 | -3 | D6+1 | [[core-rules/anti.md\|针对飞行2+]] |
+| Quad-gun | 48" | 4 | 5+ | 9 | -1 | 3 | [[core-rules/anti.md\|针对飞行3+]]，[[core-rules/twin-linked.md\|双联]] |
 
 ## 技能
 - **Reinforced Cover**：Each time a ranged attack is allocated to a model, if that model is not fully visible to every model in the attacking unit because of this <span class="kwb">FORTIFICATION</span>, that model has the Benefit of Cover against that attack.

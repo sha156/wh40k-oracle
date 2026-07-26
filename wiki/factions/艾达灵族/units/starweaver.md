@@ -1,5 +1,6 @@
 ---
 id: '000002541'
+name_zh: 织星者飞艇
 name_en: Starweaver
 faction: 艾达灵族
 type: unit
@@ -19,7 +20,7 @@ updated: '2026-07-23'
 ## 属性表
 | 模型 | M | T | SV | W | LD | OC |
 |---|---|---|---|---|---|---|
-| Starweaver | 14" | 6 | 4+ | 6 | 6+ | 2 |
+| 织星者飞艇 | 14" | 6 | 4+ | 6 | 6+ | 2 |
 
 ### 特殊保护
 - 4+
@@ -27,15 +28,16 @@ updated: '2026-07-23'
 ## 射击武器
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| Shuriken cannon | 24" | 3 | 3+ | 6 | -1 | 2 | lethal hits |
+| 星镖炮 | 24" | 3 | 3+ | 6 | -1 | 2 | [[core-rules/lethal-hits.md\|致命一击]] |
 
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| Close combat weapon | 近战 | 4 | 3+ | 3 | 0 | 1 | — |
+| 格斗武器 | 近战 | 4 | 3+ | 3 | 0 | 1 | — |
 
 ## 技能
-- **Rapid Embarkation**：At the end of the Fight phase, if there are no models currently embarked within this <span class="kwb">TRANSPORT</span>, you can select one friendly Harlequins Infantry unit that has 6 or fewer models that is wholly within 6" of this <span class="kwb">TRANSPORT</span>. Unless that unit is within Engagement Range of one or more enemy units, it can embark within this <span class="kwb">TRANSPORT</span>.
+- **【阵营技能】：战斗专注**
+- **快速上车**：近战阶段结束时，如果此时没有模型搭乘该运输载具，你可以选择一个完全位于其6寸内的模型数量小于等于6个的友方丑角步兵单位，除非上述单位位于敌方单位的近战范围内，否则上述单位可以搭乘该运输载具。那个单位可以在脱离该载具的回合中搭乘这个载具。
 
 ## 单位构成
 - **1个模型** — 80 分

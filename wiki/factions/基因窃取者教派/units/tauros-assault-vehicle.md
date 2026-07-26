@@ -24,9 +24,9 @@ updated: '2026-07-23'
 ## 射击武器
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| Tauros grenade launcher – frag | 24" | D6 | 4+ | 4 | 0 | 1 | blast |
-| Hunter-killer missile | 48" | 1 | 4+ | 14 | -3 | D6 | one shot |
-| Heavy flamer | 12" | D6 | N/A | 5 | -1 | 1 | ignores cover，torrent |
+| Tauros grenade launcher – frag | 24" | D6 | 4+ | 4 | 0 | 1 | [[core-rules/blast.md\|爆炸]] |
+| 猎杀飞弹 | 48" | 1 | 4+ | 14 | -3 | D6 | [[core-rules/one-shot.md\|单发]] |
+| 重型喷火器 | 12" | D6 | N/A | 5 | -1 | 1 | [[core-rules/ignores-cover.md\|无视掩体]]，[[core-rules/torrent.md\|洪流]] |
 | Tauros grenade launcher – krak | 24" | 2 | 4+ | 9 | -2 | D3 | — |
 
 ## 近战武器

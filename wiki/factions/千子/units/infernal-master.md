@@ -30,13 +30,13 @@ updated: '2026-07-23'
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
 | 地狱火爆矢手枪 | 12" | 1 | 2+ | 4 | -1 | 1 | [[core-rules/pistol.md\|手枪]] |
-| 尖啸召唤 — 巫火 | 18" | D6 | N/A | 6 | -2 | 1 | [[core-rules/torrent.md\|洪流]]，灵能 |
-| 尖啸召唤 — 集束巫火 | 18" | 2D6 | N/A | 6 | -2 | 1 | [[core-rules/hazardous.md\|危险]]，灵能，[[core-rules/torrent.md\|洪流]] |
+| 尖啸召唤 — 巫火 | 18" | D6 | N/A | 6 | -2 | 1 | [[core-rules/psychic-attacks.md\|灵能]]，[[core-rules/torrent.md\|洪流]] |
+| 尖啸召唤 — 集束巫火 | 18" | 2D6 | N/A | 6 | -2 | 1 | [[core-rules/hazardous.md\|危险]]，[[core-rules/psychic-attacks.md\|灵能]]，[[core-rules/torrent.md\|洪流]] |
 
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| 灵能武器 | 近战 | 4 | 3+ | 6 | -1 | D3 | 灵能 |
+| 灵能武器 | 近战 | 4 | 3+ | 6 | -1 | D3 | [[core-rules/psychic-attacks.md\|灵能]] |
 
 ## 技能
 - **阵营：巫师秘会**

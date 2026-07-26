@@ -1,5 +1,6 @@
 ---
 id: '000004205'
+name_zh: 克拉维克·莫恩
 name_en: Kravek Morne
 faction: 混沌星际战士
 type: unit
@@ -28,14 +29,14 @@ updated: '2026-07-23'
 ## 射击武器
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| Baleflamer | 12" | D6+3 | N/A | 6 | -1 | 2 | ignores cover，torrent |
-| Combi-bolter | 24" | 2 | 2+ | 4 | 0 | 1 | [[core-rules/rapid-fire.md\|rapid fire 2]] |
+| 恶毒之火 | 12" | D6+3 | N/A | 6 | -1 | 2 | [[core-rules/ignores-cover.md\|无视掩体]]，[[core-rules/torrent.md\|洪流]] |
+| 并联爆弹枪 | 24" | 2 | 2+ | 4 | 0 | 1 | [[core-rules/rapid-fire.md\|速射2]] |
 
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| Last Argument and power fist | 近战 | 7 | 2+ | 10 | -2 | 2 | devastating wounds |
-| Servo-harness | 近战 | 3 | 2+ | 6 | -2 | 2 | extra attacks，[[core-rules/anti.md\|anti-vehicle 2+]] |
+| 终极论据与动力拳 | 近战 | 7 | 2+ | 10 | -2 | 2 | [[core-rules/devastating-wounds.md\|毁灭伤害]] |
+| 伺服背具 | 近战 | 3 | 2+ | 6 | -2 | 2 | [[core-rules/extra-attacks.md\|额外攻击]]，[[core-rules/anti.md\|针对载具2+]] |
 
 ## 技能
 - **Headlong Destruction**：Each time a model in this unit makes an attack that targets the closest eligible enemy unit, improve the Armour Penetration characteristic of that attack by 1.

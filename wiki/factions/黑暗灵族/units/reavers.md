@@ -1,5 +1,5 @@
 ---
-id: 000000658
+id: '000000658'
 name_zh: 劫掠者
 name_en: Reavers
 faction: 黑暗灵族
@@ -31,14 +31,14 @@ updated: '2026-07-23'
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
 | 爆能枪 | 18" | 1 | 3+ | 8 | -4 | D6+1 | [[core-rules/assault.md\|突击]] |
-| 高热光矛 | 18" | 1 | 3+ | 14 | -4 | D6 | [[core-rules/assault.md\|突击]]，[[core-rules/melta.md\|热熔 3]] |
-| 毒晶手枪 | 12" | 1 | 3+ | 2 | 0 | 1 | [[core-rules/anti.md\|针对步兵 3+]]，[[core-rules/assault.md\|突击]]，[[core-rules/pistol.md\|手枪]] |
-| 毒晶步枪 | 24" | 2 | 3+ | 2 | 0 | 1 | [[core-rules/anti.md\|针对步兵 3+]]，[[core-rules/assault.md\|突击]] |
+| 高热光矛 | 18" | 1 | 3+ | 14 | -4 | D6 | [[core-rules/assault.md\|突击]]，[[core-rules/melta.md\|热熔3]] |
+| 毒晶手枪 | 12" | 1 | 3+ | 2 | 0 | 1 | [[core-rules/anti.md\|针对步兵3+]]，[[core-rules/assault.md\|突击]]，[[core-rules/pistol.md\|手枪]] |
+| 毒晶步枪 | 24" | 2 | 3+ | 2 | 0 | 1 | [[core-rules/anti.md\|针对步兵3+]]，[[core-rules/assault.md\|突击]] |
 
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| 锋刃翼 | 近战 | 4 | 3+ | 4 | -1 | 1 | 骑枪 |
+| 锋刃翼 | 近战 | 4 | 3+ | 4 | -1 | 1 | [[core-rules/lance.md\|骑枪]] |
 
 ## 技能
 - **【阵营技能】：痛苦之力**：无双迅捷〔苦痛〕:在您的移动阶段，当您选择该模型的单位进行突进时，您可以花费1枚苦痛标识来强化该单位。在该单位处于强化状态时，每次该单位突进时，无需为其进行突进掷骰。作为替代，直到该阶段结束，该单位中模型的移动属性增加8‘’

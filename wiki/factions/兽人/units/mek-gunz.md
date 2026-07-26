@@ -1,5 +1,5 @@
 ---
-id: 000000038
+id: '000000038'
 name_zh: 屁精技师炮
 name_en: Mek Gunz
 faction: 兽人
@@ -31,9 +31,9 @@ updated: '2026-07-23'
 ## 射击武器
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| 泡泡炮D3=1(大泡泡) | 48" | 2D6 | 4+ | 6 | -1 | 1 | [[core-rules/blast.md\|爆炸]] |
-| 泡泡炮D3=2(一串泡泡) | 48" | D6 | 4+ | 9 | -2 | 3 | [[core-rules/blast.md\|爆炸]] |
-| 泡泡炮D3=3(浓缩泡泡) | 48" | D3 | 4+ | 12 | -3 | D6+3 | [[core-rules/blast.md\|爆炸]] |
+| 泡泡炮D3=1(大泡泡) | 48" | 2D6 | 4+ | 6 | -1 | 1 | 泡泡炮，[[core-rules/blast.md\|爆炸]] |
+| 泡泡炮D3=2(一串泡泡) | 48" | D6 | 4+ | 9 | -2 | 3 | 泡泡炮，[[core-rules/blast.md\|爆炸]] |
+| 泡泡炮D3=3(浓缩泡泡) | 48" | D3 | 4+ | 12 | -3 | D6+3 | 泡泡炮，[[core-rules/blast.md\|爆炸]] |
 | 魔改米加炮 | 36" | D6 | 4+ | 12 | -1 | D6 | [[core-rules/blast.md\|爆炸]]，[[core-rules/hazardous.md\|危险]] |
 | 粉碎炮 | 48" | D3+1 | 4+ | 9 | -3 | 3 | [[core-rules/blast.md\|爆炸]] |
 | 牵引光束炮 | 48" | 1 | 4+ | 10 | -2 | D6+1 | [[core-rules/anti.md\|针对飞行2+]]，[[core-rules/devastating-wounds.md\|毁灭伤害]] |

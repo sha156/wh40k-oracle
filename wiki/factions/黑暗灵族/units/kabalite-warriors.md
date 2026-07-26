@@ -33,15 +33,15 @@ updated: '2026-07-23'
 | 爆能枪 | 18" | 1 | 3+ | 8 | -4 | D6+1 | [[core-rules/assault.md\|突击]] |
 | 暗黑光矛 | 36" | 1 | 4+ | 12 | -3 | D6+2 | [[core-rules/heavy.md\|重型]] |
 | 撕裂枪 | 18" | D6 | N/A | 6 | 0 | 1 | [[core-rules/assault.md\|突击]]，[[core-rules/torrent.md\|洪流]] |
-| 毒晶炮 | 36" | 3 | 4+ | 3 | -1 | 2 | [[core-rules/anti.md\|针对步兵 3+]]，[[core-rules/heavy.md\|重型]]，[[core-rules/sustained-hits.md\|连击1]] |
-| 毒晶手枪 | 12" | 1 | 3+ | 2 | 0 | 1 | [[core-rules/anti.md\|针对步兵 3+]]，[[core-rules/assault.md\|突击]]，[[core-rules/pistol.md\|手枪]] |
-| 毒晶步枪 | 24" | 2 | 3+ | 2 | 0 | 1 | [[core-rules/anti.md\|针对步兵 3+]]，[[core-rules/assault.md\|突击]] |
+| 毒晶炮 | 36" | 3 | 4+ | 3 | -1 | 2 | [[core-rules/anti.md\|针对步兵3+]]，[[core-rules/heavy.md\|重型]]，[[core-rules/sustained-hits.md\|连击1]] |
+| 毒晶手枪 | 12" | 1 | 3+ | 2 | 0 | 1 | [[core-rules/anti.md\|针对步兵3+]]，[[core-rules/assault.md\|突击]]，[[core-rules/pistol.md\|手枪]] |
+| 毒晶步枪 | 24" | 2 | 3+ | 2 | 0 | 1 | [[core-rules/anti.md\|针对步兵3+]]，[[core-rules/assault.md\|突击]] |
 
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
 | 格斗武器 | 近战 | 2 | 3+ | 3 | 0 | 1 | — |
-| 动力武器 | 近战 | 3 | 3+ | 3 | -2 | 1 | [[core-rules/anti.md\|针对步兵 3+]] |
+| 动力武器 | 近战 | 3 | 3+ | 3 | -2 | 1 | [[core-rules/anti.md\|针对步兵3+]] |
 
 ## 技能
 - **【阵营技能】：痛苦之力**：施虚掠夺者[苦痛]:在您的射击阶段或近战阶段，当饱选择该模型所在的单位进行射击或近战时，您可以花费1枚苦痛标识来强化该单位。在该单位处于强化状态时，每次该单位中的模型进行攻击时，可重投结果为1的致伤掷骰。如果攻击目标在一个目标标记的范围内，您可以改为重投致伤掷骰

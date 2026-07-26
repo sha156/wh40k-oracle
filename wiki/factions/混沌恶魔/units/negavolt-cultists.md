@@ -27,7 +27,7 @@ updated: '2026-07-23'
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| Electro-goads | 近战 | 3 | 3+ | 4 | 0 | 1 | [[core-rules/sustained-hits.md\|sustained hits 2]] |
+| Electro-goads | 近战 | 3 | 3+ | 4 | 0 | 1 | [[core-rules/sustained-hits.md\|连击2]] |
 
 ## 技能
 - **Voltagheist Field**：Each time this unit ends a Charge move, select one enemy unit within Engagement Range of it and roll one D6 for each model in this unit: for each 4+, that enemy unit suffers 1 mortal wound.
@@ -38,4 +38,4 @@ updated: '2026-07-23'
 
 ## 关键词
 - **阵营关键词**：Heretic Astartes，Legiones Daemonica
-- **普通关键词**：Negavolt Cultists，Shadow Legion，[[core-rules/infantry.md|Infantry]]，Chaos，Damned，Negavolt Cultists，Undivided，Shadow Legion，[[core-rules/infantry.md|Infantry]]，Chaos，Damned，Chaos，Negavolt Cultists，Damned，Undivided，Shadow Legion，[[core-rules/infantry.md|Infantry]]，Chaos，Negavolt Cultists，Undivided，Shadow Legion，Damned，Undivided，[[core-rules/infantry.md|Infantry]]
+- **普通关键词**：Negavolt Cultists，[[factions/混沌恶魔/detachments/shadow-legion.md|Shadow Legion]]，[[core-rules/infantry.md|Infantry]]，Chaos，Damned，Negavolt Cultists，Undivided，[[factions/混沌恶魔/detachments/shadow-legion.md|Shadow Legion]]，[[core-rules/infantry.md|Infantry]]，Chaos，Damned，Chaos，Negavolt Cultists，Damned，Undivided，Shadow Legion，[[core-rules/infantry.md|Infantry]]，Chaos，Negavolt Cultists，Undivided，Shadow Legion，Damned，Undivided，[[core-rules/infantry.md|Infantry]]

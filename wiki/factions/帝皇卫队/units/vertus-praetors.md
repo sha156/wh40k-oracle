@@ -31,12 +31,12 @@ updated: '2026-07-23'
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
 | 集束导弹 | 24" | 1 | 2+ | 10 | -3 | D6+1 | [[core-rules/twin-linked.md\|双联]] |
-| 飓风爆弹枪 | 18" | 3 | 2+ | 4 | -1 | 2 | [[core-rules/rapid-fire.md\|速射 3]]，[[core-rules/twin-linked.md\|双联]] |
+| 飓风爆弹枪 | 18" | 3 | 2+ | 4 | -1 | 2 | [[core-rules/rapid-fire.md\|速射3]]，[[core-rules/twin-linked.md\|双联]] |
 
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| 拦截者骑枪 | 近战 | 5 | 2+ | 7 | -2 | 2 | [[core-rules/lance.md\|迅猛冲锋]] |
+| 拦截者骑枪 | 近战 | 5 | 2+ | 7 | -2 | 2 | [[core-rules/lance.md\|骑枪]] |
 
 ## 技能
 - **【阵营技能】：禁军武艺**

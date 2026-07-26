@@ -1,5 +1,6 @@
 ---
 id: '000002255'
+name_zh: 肃卫老兵小队
 name_en: Sternguard Veteran Squad
 faction: 星际战士
 type: unit
@@ -26,22 +27,23 @@ updated: '2026-07-23'
 ## 射击武器
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| Combi-weapon | 24" | 1 | 4+ | 4 | 0 | 1 | [[core-rules/anti.md\|anti-infantry 4+]]，devastating wounds，[[core-rules/rapid-fire.md\|rapid fire 1]] |
-| Pyrecannon | 12" | D6+1 | N/A | 6 | -1 | 1 | [[core-rules/ignores-cover.md\|IGNORES COVER]]，TORRENT |
-| Sternguard bolt pistol | 12" | 1 | 3+ | 4 | 0 | 1 | devastating wounds，pistol |
-| Sternguard bolt rifle | 24" | 2 | 3+ | 4 | -1 | 1 | assault，devastating wounds，heavy，[[core-rules/rapid-fire.md\|rapid fire 1]] |
-| Sternguard heavy bolter | 36" | 3 | 4+ | 5 | -1 | 2 | devastating wounds，heavy，[[core-rules/sustained-hits.md\|sustained hits 1]] |
+| 复合武器 | 24" | 1 | 4+ | 4 | 0 | 1 | [[core-rules/anti.md\|针对步兵4+]]，[[core-rules/devastating-wounds.md\|毁灭伤害]]，[[core-rules/rapid-fire.md\|速射1]] |
+| 焚焰炮 | 12" | D6+1 | N/A | 6 | -1 | 1 | [[core-rules/ignores-cover.md\|无视掩体]]，[[core-rules/torrent.md\|洪流]] |
+| 肃卫爆弹手枪 | 12" | 1 | 3+ | 4 | 0 | 1 | [[core-rules/devastating-wounds.md\|毁灭伤害]]，[[core-rules/pistol.md\|手枪]] |
+| 肃卫爆弹步枪 | 24" | 2 | 3+ | 4 | -1 | 1 | [[core-rules/assault.md\|突击]]，[[core-rules/devastating-wounds.md\|毁灭伤害]]，[[core-rules/heavy.md\|重型]]，[[core-rules/rapid-fire.md\|速射1]] |
+| 肃卫重型爆弹枪  | 36" | 3 | 4+ | 5 | -1 | 2 | [[core-rules/devastating-wounds.md\|毁灭伤害]]，[[core-rules/heavy.md\|重型]]，[[core-rules/sustained-hits.md\|连击1]] |
 
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| Astartes chainsword | 近战 | 4 | 3+ | 4 | -1 | 1 | — |
-| Close combat weapon | 近战 | 4 | 3+ | 4 | 0 | 1 | — |
-| Power weapon | 近战 | 5 | 2+ | 5 | -2 | 1 | — |
-| Power fist | 近战 | 3 | 3+ | 8 | -2 | 2 | — |
+| 阿斯塔特链锯剑 | 近战 | 4 | 3+ | 4 | -1 | 1 | — |
+| 格斗武器   | 近战 | 4 | 3+ | 4 | 0 | 1 | — |
+| 动力武器     | 近战 | 5 | 2+ | 5 | -2 | 1 | — |
+| 动力拳 | 近战 | 3 | 3+ | 8 | -2 | 2 | — |
 
 ## 技能
-- **Sternguard Focus**：Each time a model in this unit makes an attack that targets your Oath of Moment target, you can re-roll the Wound roll.
+- **老兵专注**：本单位模型攻击你的【破敌重誓】技能目标 时，可以重投造伤结果
+- **【阵营技能】：破敌重誓**
 
 ## 单位构成
 - **5个模型** — 100 分

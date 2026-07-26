@@ -1,5 +1,5 @@
 ---
-id: 000003590
+id: '000003590'
 name_en: Kytan Ravager
 faction: 吞世者
 type: unit

@@ -31,10 +31,10 @@ updated: '2026-07-23'
 ## 射击武器
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| Death spinner | 12" | D6 | N/A | 4 | -1 | 1 | ignores cover，torrent |
-| Death weavers | 6" | D6 | N/A | 4 | -1 | 1 | ignores cover，torrent，twin-linked |
-| 神官死亡纺织者 | 12" | D6 | N/A | 6 | -2 | 1 | [[core-rules/ignores-cover.md\|无视掩体]]，[[core-rules/torrent.md\|喷射]] |
-| 纺织者步枪 | 18" | D6 | N/A | 5 | -1 | 1 | [[core-rules/ignores-cover.md\|无视掩体]]，[[core-rules/torrent.md\|喷射]] |
+| 死亡纺织者 | 12" | D6 | N/A | 4 | -1 | 1 | [[core-rules/ignores-cover.md\|无视掩体]]，[[core-rules/torrent.md\|洪流]] |
+| 死亡编织者 | 6" | D6 | N/A | 4 | -1 | 1 | [[core-rules/ignores-cover.md\|无视掩体]]，[[core-rules/torrent.md\|洪流]]，[[core-rules/twin-linked.md\|双联]] |
+| 神官死亡纺织者 | 12" | D6 | N/A | 6 | -2 | 1 | [[core-rules/ignores-cover.md\|无视掩体]]，[[core-rules/torrent.md\|洪流]] |
+| 纺织者步枪 | 18" | D6 | N/A | 5 | -1 | 1 | [[core-rules/ignores-cover.md\|无视掩体]]，[[core-rules/torrent.md\|洪流]] |
 
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |

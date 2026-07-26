@@ -1,5 +1,6 @@
 ---
-id: 000001580
+id: '000001580'
+name_zh: 控电神甫
 name_en: Tech-priest Manipulus
 faction: 机械修会
 type: unit
@@ -20,7 +21,7 @@ updated: '2026-07-23'
 ## 属性表
 | 模型 | M | T | SV | W | LD | OC |
 |---|---|---|---|---|---|---|
-| Tech-priest Manipulus | 6" | 4 | 2+ | 4 | 7+ | 1 |
+| 控电神甫 | 6" | 4 | 2+ | 4 | 7+ | 1 |
 
 ### 特殊保护
 - 5+
@@ -28,17 +29,18 @@ updated: '2026-07-23'
 ## 射击武器
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| Magnarail lance | 36" | 1 | 3+ | 7 | -2 | 3 | heavy |
-| Transonic cannon | 12" | D6 | N/A | 4 | 0 | 2 | devastating wounds，torrent |
+| 电磁长枪 | 36" | 1 | 3+ | 7 | -2 | 3 | [[core-rules/heavy.md\|重型]] |
+| 超音波炮 | 12" | D6 | N/A | 4 | 0 | 2 | [[core-rules/devastating-wounds.md\|毁灭伤害]]，[[core-rules/torrent.md\|洪流]] |
 
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| Omnissian staff | 近战 | 4 | 3+ | 6 | -1 | 2 | — |
+| 机神权杖 | 近战 | 4 | 3+ | 6 | -1 | 2 | — |
 
 ## 技能
-- **Galvanic Field**：While this model is leading a unit, weapons equipped by models in that unit have the [LETHAL HITS] ability.
-- **Defend the Divine Work**：Once per battle, at the start of any phase, this model can use this ability. If it does, until the end of the phase, all models in this model’s unit have a 4+ invulnerable save.
+- **【阵营技能】：机神律令**
+- **磁力场**：本模型所领导的单位装备的武器获得【致命一击】
+- **神工护体**：一次性技能，在任意阶段开始时，你可以让本模型所在单位获得 4+特殊保护，持续本阶段
 
 ## 单位构成
 - **1个模型** — 60 分

@@ -27,7 +27,7 @@ updated: '2026-07-23'
 ## 射击武器
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| Tankstopper rifle | 36" | 1 | 3+ | 9 | -3 | D6 | heavy |
+| 反器材狙击枪 | 36" | 1 | 3+ | 9 | -3 | D6 | [[core-rules/heavy.md\|重型]] |
 | 狙击枪 | 36" | 1 | 3+ | 4 | -2 | 2 | [[core-rules/heavy.md\|重型]]，[[core-rules/precision.md\|精准]] |
 
 ## 近战武器

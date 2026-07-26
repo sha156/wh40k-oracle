@@ -1,5 +1,6 @@
 ---
-id: 000000698
+id: '000000698'
+name_zh: 蝎尾狮火箭炮
 name_en: Manticore
 faction: 星界军
 type: unit
@@ -20,24 +21,24 @@ updated: '2026-07-23'
 ## 属性表
 | 模型 | M | T | SV | W | LD | OC |
 |---|---|---|---|---|---|---|
-| Manticore | 10" | 10 | 3+ | 11 | 7+ | 3 |
+| 蝎尾狮火箭炮 | 10" | 10 | 3+ | 11 | 7+ | 3 |
 
 ## 射击武器
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| Heavy bolter | 36" | 3 | 4+ | 5 | -1 | 2 | [[core-rules/sustained-hits.md\|sustained hits 1]] |
-| Heavy flamer | 12" | D6 | N/A | 5 | -1 | 1 | ignores cover，torrent |
-| Hunter-killer missile | 48" | 1 | 4+ | 14 | -3 | D6 | one shot |
-| Storm eagle rockets | 120" | D6 | 4+ | 7 | -2 | 3 | [[core-rules/anti.md\|anti-infantry 2+]]，blast，indirect fire |
+| 重型爆弹枪 | 36" | 3 | 4+ | 5 | -1 | 2 | [[core-rules/sustained-hits.md\|连击1]] |
+| 重型火焰喷射器 | 12" | D6 | N/A | 5 | -1 | 1 | [[core-rules/ignores-cover.md\|无视掩体]]，[[core-rules/torrent.md\|洪流]] |
+| 猎杀飞弹 | 48" | 1 | 4+ | 14 | -3 | D6 | [[core-rules/one-shot.md\|单发]] |
+| 风暴鹰火箭 | 120" | D6 | 4+ | 7 | -2 | 3 | [[core-rules/anti.md\|针对步兵2+]]，[[core-rules/blast.md\|爆炸]]，[[core-rules/indirect-fire.md\|曲射]] |
 
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| Armoured tracks | 近战 | 3 | 4+ | 6 | 0 | 1 | — |
+| 装甲履带 | 近战 | 3 | 4+ | 6 | 0 | 1 | — |
 
 ## 技能
-- **Furious Barrage**：In your Shooting phase, after this model has shot, select one enemy unit (excluding <span class="kwb">MONSTERS</span> and <span class="kwb">VEHICLES</span>) that was hit by one or more of those attacks made with this model’s storm eagle rockets. Until the start of your next Shooting phase, that enemy unit is staggered. While a unit is staggered, subtract 1 from the Objective Control characteristic of models in that unit (to a minimum of 1).
-- **One Shot**：The bearer can only shoot with this weapon once per battle.
+- **怒火弹幕**：在你的射击阶段，当该模型射击时，选择一个被暴风鹰火箭命中过一次或多次的敌军单位（巨兽和载具除外），直到[[factions/兽人/stratagems/on-to-da-next.md|下一个]]你的射击阶段开始时，那个被命中的敌军单位内的模型OC-1（最低到1）
+- **受损**：当该模型剩余1-4点耐伤，该模型进行攻击时命中投掷结果-1。
 
 ## 单位构成
 - **1个模型** — 150 分

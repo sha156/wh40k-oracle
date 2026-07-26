@@ -1,5 +1,6 @@
 ---
-id: 000001029
+id: '000001029'
+name_zh: 重锤魔
 name_en: Maulerfiend
 faction: 千子
 type: unit
@@ -28,16 +29,18 @@ updated: '2026-07-23'
 ## 射击武器
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| Magma cutter | 6" | 2 | 3+ | 9 | -4 | D6 | [[core-rules/melta.md\|melta 2]] |
+| 岩浆切割机 | 6" | 2 | 3+ | 9 | -4 | D6 | [[core-rules/melta.md\|热熔2]] |
 
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| Lasher tendrils | 近战 | 6 | 3+ | 7 | -1 | 1 | extra attacks |
-| Maulerfiend fists | 近战 | 6 | 3+ | 14 | -2 | D6+1 | — |
+| 鞭打触须  | 近战 | 6 | 3+ | 7 | -1 | 1 | [[core-rules/extra-attacks.md\|额外攻击]] |
+| 锤魔铁拳 | 近战 | 6 | 3+ | 14 | -2 | D6+1 | — |
 
 ## 技能
-- **Snarling Protector**：You can target this unit with the Heroic Intervention stratagem, regardless of any other uses of that stratagem this phase. If you do:<br><ul><li>That use is -1 CP.</li><li>That use does not prevent any uses of that stratagem on other units this phase.</li><li>When this unit declares a charge, if a friendly engaged <span class="kwb">PSYKER</span> unit is within 12" of this unit, you can use this part of this ability. If you do:<ul><li>This unit can re-roll that charge roll.</li><li>This unit must end that charge move engaged with an enemy unit engaged with that friendly <span class="kwb">PSYKER</span> unit.</li></ul></li></ul>
+- **【阵营技能】：黑暗契约**
+- **攻城机械**：本模型可以忽视任意或全部对其 M 值和 加速，冲锋投掷结果的修正
+- **严重损伤**：当本模型 W 值为 1-4 时，进行的攻击命 中结果-1
 
 ## 单位构成
 - **1个模型** — 120 分

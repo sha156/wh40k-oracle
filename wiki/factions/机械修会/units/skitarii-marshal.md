@@ -1,5 +1,6 @@
 ---
-id: 000002478
+id: '000002478'
+name_zh: 护教军元帅
 name_en: Skitarii Marshal
 faction: 机械修会
 type: unit
@@ -20,7 +21,7 @@ updated: '2026-07-23'
 ## 属性表
 | 模型 | M | T | SV | W | LD | OC |
 |---|---|---|---|---|---|---|
-| Skitarii Marshal | 6" | 3 | 4+ | 3 | 6+ | 1 |
+| 护教军元帅 | 6" | 3 | 4+ | 3 | 6+ | 1 |
 
 ### 特殊保护
 - 5+
@@ -28,16 +29,17 @@ updated: '2026-07-23'
 ## 射击武器
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| Mechanicus pistol | 12" | 1 | 3+ | 6 | -1 | 1 | devastating wounds，pistol |
+| 机械教手枪 | 12" | 1 | 3+ | 6 | -1 | 1 | [[core-rules/devastating-wounds.md\|毁灭伤害]]，[[core-rules/pistol.md\|手枪]] |
 
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| Control stave | 近战 | 4 | 3+ | 6 | -1 | 1 | — |
+| 控制权杖 | 近战 | 4 | 3+ | 6 | -1 | 1 | — |
 
 ## 技能
-- **Control Edict**：While this model is leading a unit, each time a model in that unit makes an attack, you can re-roll the Hit roll.
-- **Servo-skull Uplink**：Once per battle, at the start of any phase, you can select one friendly Skitarii unit that is Battle-shocked and within 6" of this model. That unit is no longer Battle-shocked.
+- **【阵营技能】：机神律令**
+- **控制节点**：本模型所领导的单位其中的模型可以重投攻击命中结果
+- **伺服颅骨数据链**：一次性技能，任意阶段开始时，你可以选择本模型 6 寸内一个友军护教军单位，消除其被震慑状态
 
 ## 单位构成
 - **1个模型** — 35 分

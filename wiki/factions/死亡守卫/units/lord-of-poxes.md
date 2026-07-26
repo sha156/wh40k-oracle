@@ -1,5 +1,5 @@
 ---
-id: 000004109
+id: '000004109'
 name_zh: 痘疹领主
 name_en: Lord of Poxes
 faction: 死亡守卫
@@ -30,12 +30,12 @@ updated: '2026-07-23'
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
 | 等离子手枪（普通） | 12" | 1 | 2+ | 7 | -2 | 1 | [[core-rules/pistol.md\|手枪]] |
-| 等离子手枪（过载） | 12" | 1 | 2+ | 8 | -3 | 2 | [[core-rules/pistol.md\|手枪]]，[[core-rules/hazardous.md\|危险]] |
+| 等离子手枪（过载） | 12" | 1 | 2+ | 8 | -3 | 2 | [[core-rules/hazardous.md\|危险]]，[[core-rules/pistol.md\|手枪]] |
 
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| 巨型瘟疫剑 | 近战 | 6 | 2+ | 8 | -2 | 2 | [[core-rules/lethal-hits.md\|致命一击]]，[[core-rules/devastating-wounds.md\|毁灭伤害]] |
+| 巨型瘟疫剑 | 近战 | 6 | 2+ | 8 | -2 | 2 | [[core-rules/devastating-wounds.md\|毁灭伤害]]，[[core-rules/lethal-hits.md\|致命一击]] |
 
 ## 技能
 - **【阵营技能】：纳垢赐福【光环】**

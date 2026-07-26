@@ -1,5 +1,5 @@
 ---
-id: 000002489
+id: '000002489'
 name_zh: 兽霸头目
 name_en: Beastboss
 faction: 兽人
@@ -34,8 +34,8 @@ updated: '2026-07-23'
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| 兽霸巨爪 | 近战 | 4 | 3+ | 10 | -2 | 2 | [[core-rules/anti.md\|针对载具4+]]，[[core-rules/anti.md\|针对巨兽4+]] |
-| 兽霸砍刀 | 近战 | 6 | 2+ | 6 | -1 | 2 | [[core-rules/anti.md\|针对巨兽4+]]，[[core-rules/anti.md\|针对载具4+]] |
+| 兽霸巨爪 | 近战 | 4 | 3+ | 10 | -2 | 2 | [[core-rules/anti.md\|针对怪物4+]]，[[core-rules/anti.md\|针对载具4+]] |
+| 兽霸砍刀 | 近战 | 6 | 2+ | 6 | -1 | 2 | [[core-rules/anti.md\|针对怪物4+]]，[[core-rules/anti.md\|针对载具4+]] |
 
 ## 技能
 - **【核心技能】:领袖**：本单位可以作为领袖加入以下单位：●[[factions/兽人/units/beast-snagga-boyz.md|兽霸小子]]

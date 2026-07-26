@@ -1,5 +1,5 @@
 ---
-id: 000002805
+id: '000002805'
 name_en: Cyberwolf
 faction: 星际战士
 type: unit
@@ -27,7 +27,7 @@ updated: '2026-07-23'
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| Teeth and claws | 近战 | 4 | 4+ | 4 | 0 | 1 | — |
+| 尖牙与利爪 | 近战 | 4 | 4+ | 4 | 0 | 1 | — |
 
 ## 技能
 - **Close In for the Kill**：Each time this model makes an attack that targets an enemy unit that is Below Half-strength, add 1 to the Hit roll and add 1 to the Wound roll.

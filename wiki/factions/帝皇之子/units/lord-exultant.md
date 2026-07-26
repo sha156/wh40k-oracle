@@ -1,5 +1,5 @@
 ---
-id: 000004078
+id: '000004078'
 name_zh: 极乐领主
 name_en: Lord Exultant
 faction: 帝皇之子
@@ -31,15 +31,15 @@ updated: '2026-07-23'
 |---|---|---|---|---|---|---|---|
 | 爆弹手枪 | 12" | 1 | 2+ | 4 | 0 | 1 | [[core-rules/pistol.md\|手枪]] |
 | 等离子手枪（普通） | 12" | 1 | 2+ | 7 | -2 | 1 | [[core-rules/pistol.md\|手枪]] |
-| 等离子手枪（过载） | 12" | 1 | 2+ | 8 | -3 | 2 | [[core-rules/pistol.md\|手枪]]，[[core-rules/hazardous.md\|危险]] |
-| 音波手枪 | 12" | 3 | 2+ | 5 | -1 | 2 | [[core-rules/pistol.md\|手枪]]，[[core-rules/ignores-cover.md\|忽视掩体]] |
+| 等离子手枪（过载） | 12" | 1 | 2+ | 8 | -3 | 2 | [[core-rules/hazardous.md\|危险]]，[[core-rules/pistol.md\|手枪]] |
+| 音波手枪 | 12" | 3 | 2+ | 5 | -1 | 2 | [[core-rules/ignores-cover.md\|无视掩体]]，[[core-rules/pistol.md\|手枪]] |
 
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
 | 格斗武器 | 近战 | 6 | 2+ | 4 | 0 | 1 | — |
 | 精工动力剑 | 近战 | 5 | 2+ | 5 | -2 | 2 | [[core-rules/precision.md\|精准]] |
-| 凤凰动力矛 | 近战 | 5 | 2+ | 7 | -2 | 2 | [[core-rules/lance.md\|迅猛冲锋]] |
+| 凤凰动力矛 | 近战 | 5 | 2+ | 7 | -2 | 2 | [[core-rules/lance.md\|骑枪]] |
 | 动力拳 | 近战 | 5 | 2+ | 8 | -2 | 2 | — |
 | 狂喜之鞭 | 近战 | 4 | 2+ | 4 | -1 | 1 | [[core-rules/extra-attacks.md\|额外攻击]] |
 

@@ -1,5 +1,5 @@
 ---
-id: 000000875
+id: '000000875'
 name_en: Inquisitor Karamazov
 faction: 帝国特勤
 type: unit
@@ -27,12 +27,12 @@ updated: '2026-07-23'
 ## 射击武器
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| Master-crafted multi-melta | 18" | 3 | 3+ | 10 | -4 | D6 | [[core-rules/melta.md\|melta 3]] |
+| Master-crafted multi-melta | 18" | 3 | 3+ | 10 | -4 | D6 | [[core-rules/melta.md\|热熔3]] |
 
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| Master-crafted power sword | 近战 | 6 | 3+ | 6 | -2 | 2 | — |
+| 大师级动力剑 | 近战 | 6 | 3+ | 6 | -2 | 2 | — |
 
 ## 技能
 - **Throne of Judgement (Aura)**：While a friendly unit is within 6" of this model, improve the Leadership characteristic of models in that unit by 1. While an enemy unit is within 6" of this model, worsen the Leadership characteristic of models in that unit by 1.
@@ -43,4 +43,4 @@ updated: '2026-07-23'
 
 ## 关键词
 - **阵营关键词**：Agents of the Imperium
-- **普通关键词**：Imperium，Inquisitor，Ordo Hereticus，Karamazov，[[core-rules/character.md|Character]]，[[core-rules/walker.md|Walker]]，[[core-rules/epic-hero.md|Epic Hero]]，Vehicle
+- **普通关键词**：Imperium，[[factions/帝国特勤/units/inquisitor.md|Inquisitor]]，Ordo Hereticus，Karamazov，[[core-rules/character.md|Character]]，[[core-rules/walker.md|Walker]]，[[core-rules/epic-hero.md|Epic Hero]]，Vehicle

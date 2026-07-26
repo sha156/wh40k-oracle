@@ -1,5 +1,5 @@
 ---
-id: 000002269
+id: '000002269'
 name_en: Deredeo Dreadnought
 faction: 星际战士
 type: unit
@@ -27,20 +27,20 @@ updated: '2026-07-23'
 ## 射击武器
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| Aiolos missile launcher | 48" | D6+3 | 3+ | 5 | 0 | 1 | blast |
-| Anvilus autocannon battery | 48" | 4 | 3+ | 9 | -1 | 3 | twin-linked |
+| Aiolos missile launcher | 48" | D6+3 | 3+ | 5 | 0 | 1 | [[core-rules/blast.md\|爆炸]] |
+| Anvilus autocannon battery | 48" | 4 | 3+ | 9 | -1 | 3 | [[core-rules/twin-linked.md\|双联]] |
 | Arachnus heavy lascannon battery | 48" | 2 | 3+ | 12 | -3 | D6+1 | — |
-| Boreas air defence missiles | 48" | 1 | 3+ | 12 | -3 | D6+1 | [[core-rules/anti.md\|anti-fly 2+]] |
+| Boreas air defence missiles | 48" | 1 | 3+ | 12 | -3 | D6+1 | [[core-rules/anti.md\|针对飞行2+]] |
 | Hellfire plasma cannonade – standard | 36" | 6 | 3+ | 7 | -2 | 2 | — |
-| Hellfire plasma cannonade – supercharge | 36" | 6 | 3+ | 8 | -3 | 3 | hazardous |
-| Twin heavy bolter | 36" | 3 | 3+ | 5 | -1 | 2 | [[core-rules/sustained-hits.md\|sustained hits 1]]，twin-linked |
-| Twin heavy flamer | 12" | D6 | N/A | 5 | -1 | 1 | ignores cover，torrent，twin-linked |
-| Volkite falconet battery | 30" | 6 | 3+ | 9 | 0 | 2 | devastating wounds |
+| Hellfire plasma cannonade – supercharge | 36" | 6 | 3+ | 8 | -3 | 3 | [[core-rules/hazardous.md\|危险]] |
+| 双联重型爆弹枪 | 36" | 3 | 3+ | 5 | -1 | 2 | [[core-rules/sustained-hits.md\|连击1]]，[[core-rules/twin-linked.md\|双联]] |
+| 双联重型火焰喷射器 | 12" | D6 | N/A | 5 | -1 | 1 | [[core-rules/ignores-cover.md\|无视掩体]]，[[core-rules/torrent.md\|洪流]]，[[core-rules/twin-linked.md\|双联]] |
+| Volkite falconet battery | 30" | 6 | 3+ | 9 | 0 | 2 | [[core-rules/devastating-wounds.md\|毁灭伤害]] |
 
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| Armoured feet | 近战 | 5 | 3+ | 6 | 0 | 1 | — |
+| 装甲铁脚 | 近战 | 5 | 3+ | 6 | 0 | 1 | — |
 
 ## 技能
 - **Deredeo Strike**：Each time this model makes a ranged attack that targets a unit that is not Below Half-strength, you can re-roll the Hit roll.
@@ -50,4 +50,4 @@ updated: '2026-07-23'
 
 ## 关键词
 - **阵营关键词**：Adeptus Astartes
-- **普通关键词**：Deredeo Dreadnought，Imperium，Deathwing，Vehicle，[[core-rules/walker.md|Walker]]，[[core-rules/smoke.md|Smoke]]，Dreadnought
+- **普通关键词**：Deredeo [[factions/星际战士/units/dreadnought.md|Dreadnought]]，Imperium，Deathwing，Vehicle，[[core-rules/walker.md|Walker]]，[[core-rules/smoke.md|Smoke]]，Dreadnought

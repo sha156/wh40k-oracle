@@ -1,5 +1,5 @@
 ---
-id: 000000866
+id: '000000866'
 name_zh: 冥河型巡游骑士
 name_en: Questoris Knight Styrix
 faction: 帝国骑士
@@ -29,8 +29,8 @@ updated: '2026-07-23'
 ## 射击武器
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| 重力碎碾枪 | 18" | 3 | 3+ | 6 | -1 | 2 | [[core-rules/anti.md\|反步兵 2+]]，[[core-rules/blast.md\|爆炸]] |
-| 并联辐射喷火器 | 12" | D6 | N/A | 2 | 0 | 1 | [[core-rules/anti.md\|反步兵 2+]]，[[core-rules/twin-linked.md\|双联]]，[[core-rules/torrent.md\|洪流]]，[[core-rules/ignores-cover.md\|无视掩体]] |
+| 重力碎碾枪 | 18" | 3 | 3+ | 6 | -1 | 2 | [[core-rules/anti.md\|针对载具2+]]，[[core-rules/blast.md\|爆炸]] |
+| 并联辐射喷火器 | 12" | D6 | N/A | 2 | 0 | 1 | [[core-rules/anti.md\|针对步兵2+]]，[[core-rules/ignores-cover.md\|无视掩体]]，[[core-rules/torrent.md\|洪流]]，[[core-rules/twin-linked.md\|双联]] |
 | 爆燃巨炮 | 30" | 12 | 3+ | 12 | 0 | 3 | [[core-rules/devastating-wounds.md\|毁灭伤害]] |
 
 ## 近战武器

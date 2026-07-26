@@ -27,13 +27,13 @@ updated: '2026-07-23'
 ## 射击武器
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| Bolt pistol | 12" | 1 | 2+ | 4 | 0 | 1 | pistol |
+| 爆弹手枪 | 12" | 1 | 2+ | 4 | 0 | 1 | [[core-rules/pistol.md\|手枪]] |
 | Invictus | 24" | 2 | 2+ | 4 | -1 | 2 | — |
 
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| Sword of Idaeus | 近战 | 6 | 2+ | 6 | -2 | 2 | [[core-rules/sustained-hits.md\|sustained hits 1]] |
+| Sword of Idaeus | 近战 | 6 | 2+ | 6 | -2 | 2 | [[core-rules/sustained-hits.md\|连击1]] |
 
 ## 技能
 - **Unorthodox Strategist (Aura)**：Each time your opponent targets a unit from their army with a Stratagem, if that unit is within 12" of this model, increase the cost of that use of that Stratagem by 1CP (this is not cumulative with any other rules that would increase the CP cost of that Stratagem).

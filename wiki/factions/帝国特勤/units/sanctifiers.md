@@ -1,5 +1,6 @@
 ---
 id: '000004074'
+name_zh: 净化者杀戮小队
 name_en: Sanctifiers
 faction: 帝国特勤
 type: unit
@@ -20,7 +21,7 @@ updated: '2026-07-23'
 ## 属性表
 | 模型 | M | T | SV | W | LD | OC |
 |---|---|---|---|---|---|---|
-|  | 6" | 3 | 6+ | 1 | 7+ | 1 |
+| 净化者小队 | 6" | 3 | 6+ | 1 | 7+ | 1 |
 
 ### 特殊保护
 - 5+
@@ -28,28 +29,27 @@ updated: '2026-07-23'
 ## 射击武器
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| Holy fire | 12" | D6 | N/A | 6 | -1 | 2 | ignores cover，one shot，torrent |
-| Meltagun | 12" | 1 | 4+ | 9 | -4 | D6 | [[core-rules/melta.md\|melta 2]] |
-| Ministorum flamer | 12" | D6 | N/A | 5 | 0 | 1 | ignores cover，torrent |
-| Ministorum hand flamer | 12" | D6 | N/A | 4 | 0 | 1 | ignores cover，pistol，torrent |
-| Plasma gun – standard | 24" | 1 | 4+ | 7 | -2 | 1 | [[core-rules/rapid-fire.md\|rapid fire 1]] |
-| Plasma gun – supercharge | 24" | 1 | 4+ | 8 | -3 | 2 | hazardous，[[core-rules/rapid-fire.md\|rapid fire 1]] |
+| 圣火 | 12" | D6 | N/A | 6 | -1 | 2 | [[core-rules/ignores-cover.md\|无视掩体]]，[[core-rules/one-shot.md\|单发]]，[[core-rules/torrent.md\|洪流]] |
+| 热熔枪 | 12" | 1 | 4+ | 9 | -4 | D6 | [[core-rules/melta.md\|热熔2]] |
+| 教廷火焰喷射器 | 12" | D6 | N/A | 5 | 0 | 1 | [[core-rules/ignores-cover.md\|无视掩体]]，[[core-rules/torrent.md\|洪流]] |
+| 教廷喷火手枪 | 12" | D6 | N/A | 4 | 0 | 1 | [[core-rules/ignores-cover.md\|无视掩体]]，[[core-rules/pistol.md\|手枪]]，[[core-rules/torrent.md\|洪流]] |
+| 等离子枪(标准) | 24" | 1 | 4+ | 7 | -2 | 1 | [[core-rules/rapid-fire.md\|速射1]] |
+| 等离子枪(过载) | 24" | 1 | 4+ | 8 | -3 | 2 | [[core-rules/hazardous.md\|危险]]，[[core-rules/rapid-fire.md\|速射1]] |
 
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| Burning hands | 近战 | 1 | 2+ | 6 | -2 | 3 | devastating wounds |
-| Close combat weapon | 近战 | 2 | 3+ | 3 | 0 | 1 | — |
-| Death Cult blades | 近战 | 4 | 2+ | 4 | -2 | 1 | precision |
-| Sanctifier melee weapon | 近战 | 3 | 3+ | 3 | 0 | 1 | — |
+| 燃烧之手 | 近战 | 1 | 2+ | 6 | -2 | 3 | [[core-rules/devastating-wounds.md\|毁灭伤害]] |
+| 格斗武器 | 近战 | 2 | 3+ | 3 | 0 | 1 | — |
+| 死亡教派利刃 | 近战 | 4 | 2+ | 4 | -2 | 1 | [[core-rules/precision.md\|精准]] |
+| 净化者近战武器 | 近战 | 3 | 3+ | 3 | 0 | 1 | — |
 
 ## 技能
-- **One Shot**：The bearer can only shoot with this weapon once per battle.
-- **Ministorum Sermon**：While this unit contains a <span class="kwb">MINISTORUM</span> <span class="kwb">PRIEST</span>, each time a model in this unit makes a melee attack, add 1 to the Wound roll.
-- **Cherub**：Once per battle, you can target this unit with the Command Re-roll Stratagem for 0CP, and can do so even if you have already targeted a different unit with that Stratagem this phase.<br><br><b>Designer’s Note:</b> <i>Place a Cherub token next to the unit, removing it once this ability has been used.</i>
-- **ATTACHED UNIT**：If a [[factions/帝国特勤/units/ministorum-priest.md|Ministorum Priest]] or [[factions/帝国特勤/units/inquisitor.md|Inquisitor]] model from your army with the Leader ability can be attached to a [[factions/帝国特勤/units/sisters-of-battle-squad.md|Sisters of Battle Squad]], it can be attached to this unit instead. If a <span class="kwb">MINISTORUM</span> <span class="kwb">PRIEST</span> or <span class="kwb">INQUISITOR</span> model from your army is attached to this unit during the Declare Battle Formations step, that model gains the Scouts 6" ability.
-- **Salvationist Medikit**：In your Command phase, if the bearer is on the battlefield, you can return up to D3 destroyed models (excluding <span class="kwb">CHARACTER</span> models) to this unit.
-- **Simulacrum Imperialis**：Improve the Leadership characteristic of models in the bearer’s unit by 1.
+- **【阵营技能】：派遣特工**
+- **教廷布道**：当该单位包含一个[[factions/帝国特勤/units/ministorum-priest.md|教廷牧师]]时，每当 该单位中的模型进行近战攻击时，致伤掷骰结果 加 1 。
+- **智天使**：每场战斗中您有一次机会，您可以花费  0CP 对该单位使用指挥重掷计谋，即使您已经在该 阶段中对另一个单位使用过该计谋。
+- **救赎士医疗包（武器技能）**：在您的指挥阶段中，如果持有者位于战场上，您可以将最多 D3 个被摧 毁的模型 (角色模型除外) 重新加入该单位。
+- **帝国圣像（武器技能）**：持有者所在单位中的模型的领导力属性提升 1
 
 ## 单位构成
 - **9个模型** — 100 分

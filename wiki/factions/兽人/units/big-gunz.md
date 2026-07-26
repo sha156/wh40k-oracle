@@ -28,15 +28,15 @@ updated: '2026-07-23'
 ## 射击武器
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| Kannon – frag | 36" | D6 | 6+ | 5 | 0 | 1 | blast，heavy |
-| Kannon – shell | 36" | 1 | 6+ | 9 | -2 | D6 | heavy |
-| Lobba | 48" | D6 | 6+ | 5 | 0 | 1 | blast，heavy，indirect fire |
-| Zzap gun | 36" | 1 | 6+ | 2D6 | -3 | 3 | devastating wounds，heavy |
+| 加农炮（破片弹-与穿甲弹二选一） | 36" | D6 | 6+ | 5 | 0 | 1 | [[core-rules/blast.md\|爆炸]]，[[core-rules/heavy.md\|重型]] |
+| 加农炮（穿甲弹-与破片弹二选一） | 36" | 1 | 6+ | 9 | -2 | D6 | [[core-rules/heavy.md\|重型]] |
+| 撸巴炮 | 48" | D6 | 6+ | 5 | 0 | 1 | [[core-rules/blast.md\|爆炸]]，[[core-rules/heavy.md\|重型]]，[[core-rules/indirect-fire.md\|曲射]] |
+| 吱吱炮 | 36" | 1 | 6+ | 2D6 | -3 | 3 | [[core-rules/devastating-wounds.md\|毁灭伤害]]，[[core-rules/heavy.md\|重型]] |
 
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| Close combat weapons | 近战 | 2 | 3+ | 4 | 0 | 1 | — |
+| 格斗武器 | 近战 | 2 | 3+ | 4 | 0 | 1 | — |
 
 ## 技能
 - **Splat!**：Each time a model in this unit makes a ranged attack that targets a unit containing 10 or more models, re-roll a Hit roll of 1.

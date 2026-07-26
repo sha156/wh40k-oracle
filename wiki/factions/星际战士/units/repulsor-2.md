@@ -1,5 +1,5 @@
 ---
-id: 000002791
+id: '000002791'
 name_zh: 反击者突击艇
 name_en: Repulsor
 faction: 星际战士
@@ -26,13 +26,13 @@ updated: '2026-07-23'
 ## 射击武器
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| Heavy onslaught gatling cannon | 24" | 12 | 3+ | 6 | 0 | 1 | devastating wounds |
-| [[factions/星际战士/units/hunter.md\|Hunter]]-slayer missile | 48" | 1 | 2+ | 14 | -3 | D6 | indirect fire，one shot |
-| Las-talon | 36" | 2 | 3+ | 10 | -3 | D6 | — |
-| Multi-melta | 18" | 2 | 3+ | 9 | -4 | D6 | [[core-rules/melta.md\|melta 2]] |
+| 重型突击加特林 | 24" | 12 | 3+ | 6 | 0 | 1 | [[core-rules/devastating-wounds.md\|毁灭伤害]] |
+| 屠猎飞弹 | 48" | 1 | 2+ | 14 | -3 | D6 | [[core-rules/indirect-fire.md\|曲射]]，[[core-rules/one-shot.md\|单发]] |
+| 激光爪 | 36" | 2 | 3+ | 10 | -3 | D6 | — |
+| 多管热熔 | 18" | 2 | 3+ | 9 | -4 | D6 | [[core-rules/melta.md\|热熔2]] |
 | 反击者防御阵列 | 24" | 18 | 3+ | 4 | 0 | 1 | — |
-| Twin heavy bolter | 36" | 3 | 3+ | 5 | -1 | 2 | [[core-rules/sustained-hits.md\|sustained hits 1]]，twin-linked |
-| Twin lascannon | 48" | 1 | 3+ | 12 | -3 | D6+1 | twin-linked |
+| 双联重型爆弹枪 | 36" | 3 | 3+ | 5 | -1 | 2 | [[core-rules/sustained-hits.md\|连击1]]，[[core-rules/twin-linked.md\|双联]] |
+| 双联激光炮 | 48" | 1 | 3+ | 12 | -3 | D6+1 | [[core-rules/twin-linked.md\|双联]] |
 
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |

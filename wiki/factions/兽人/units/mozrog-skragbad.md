@@ -1,5 +1,5 @@
 ---
-id: 000002493
+id: '000002493'
 name_zh: 恶疤莫兹罗格
 name_en: Mozrog Skragbad
 faction: 兽人
@@ -35,7 +35,7 @@ updated: '2026-07-23'
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
 | 跳龙巨嘴 | 近战 | 3 | 3+ | 7 | -2 | 4 | [[core-rules/devastating-wounds.md\|毁灭伤害]]，[[core-rules/extra-attacks.md\|额外攻击]] |
-| 兽霸砍刀 | 近战 | 6 | 2+ | 7 | -1 | 3 | [[core-rules/anti.md\|针对载具4+]]，[[core-rules/anti.md\|针对巨兽4+]] |
+| 兽霸砍刀 | 近战 | 6 | 2+ | 7 | -1 | 3 | [[core-rules/anti.md\|针对怪物4+]]，[[core-rules/anti.md\|针对载具4+]] |
 
 ## 技能
 - **【核心技能】:领袖**：本单位可以作为领袖加入以下单位：●[[factions/兽人/units/squighog-boyz.md|跳跳猪小子]]

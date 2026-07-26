@@ -41,6 +41,34 @@ def main() -> None:
     sp = sub.add_parser("build", help="构建 index.md 和阵营索引（流水线⑤）")
     sp.add_argument("--wiki", default="wiki", help="wiki 目录")
 
+    # ── entities ──
+    sp = sub.add_parser("entities",
+                        help="从结构库生成 分队/战略/增强 三类实体页")
+    sp.add_argument("--wiki", default="wiki", help="wiki 目录")
+    sp.add_argument("--db", default="db/wh40k.sqlite", help="官方结构库")
+
+    # ── core-rules ──
+    sp = sub.add_parser("core-rules",
+                        help="从 data_refined 生成 11 版核心规则章节页")
+    sp.add_argument("--wiki", default="wiki", help="wiki 目录")
+    sp.add_argument("--refined",
+                    default="data_refined/Core Rules - New 40K Core Rules",
+                    help="官方英文核心规则的 refine 产物目录")
+
+    # ── changelog ──
+    sp = sub.add_parser("changelog",
+                        help="从官方阵营包的「规则更新」章节生成规则变更清单")
+    sp.add_argument("--wiki", default="wiki", help="wiki 目录")
+    sp.add_argument("--zh-dir", default="data/官方中文",
+                    help="GW 官方简体中文 PDF 目录")
+
+    # ── keywords ──
+    sp = sub.add_parser("keywords", help="生成武器词条（USR）索引 indexes/keywords.md")
+    sp.add_argument("--wiki", default="wiki", help="wiki 目录")
+    sp.add_argument("--db", default="db/wh40k.sqlite", help="官方结构库")
+    sp.add_argument("--pdf", default="data/11版40K通用技能速查表.pdf",
+                    help="11 版通用技能速查表（判定通用 USR 的真源）")
+
     # ── lint ──
     sp = sub.add_parser("lint", help="一致性检查（流水线⑥）")
     sp.add_argument("--wiki", default="wiki", help="wiki 目录")
@@ -99,6 +127,71 @@ def main() -> None:
         result = build_all_outputs(Path(args.wiki))
         print("构建完成: index.md + {} 个阵营索引, {} 条日志".format(
             result["faction_indexes"], result["log_entries"]))
+
+    elif args.cmd == "entities":
+        from wiki_engine.entity_pages import generate_all as generate_entities
+        rep = generate_entities(Path(args.db), Path(args.wiki))
+        for bucket, label in (("stratagems", "战略"), ("enhancements", "增强")):
+            d = rep[bucket]
+            print("{}：库 {} 行 → 写 {} 页，跳过 {}，中文名 {}（官方译名顶掉旧译名 {}）"
+                  .format(label, d["rows"], d["written"], len(d["skipped"]),
+                          rep["zh_named"].get(bucket, 0),
+                          rep["superseded_zh"].get(bucket, 0)))
+            for s in d["skipped"][:5]:
+                print("    跳过 " + s)
+        d = rep["detachments"]
+        print("分队：容器 {} → 写 {} 页，中文名 {}，其中 {} 个无绑定分队规则".format(
+            d["containers"], d["written"], rep["zh_named"].get("detachments", 0),
+            len(d["no_rule"])))
+        if rep["conflicts"]:
+            print("⚠️ {} 页检测到人工编辑，已跳过覆盖：{}".format(
+                len(rep["conflicts"]), rep["conflicts"][:3]))
+        if rep["warnings"]:
+            print("⚠️ {} 条实体带解析警告（详见 wiki/log.md 或重跑取报告）".format(
+                len(rep["warnings"])))
+
+    elif args.cmd == "core-rules":
+        from wiki_engine.core_rules import generate_all as generate_core_rules
+        from wiki_engine.core_rules import unextracted_hints
+        rep = generate_core_rules(Path(args.refined), Path(args.wiki))
+        print("核心规则：目录 {} 章 / 正文切出 {} 节 → 写 {} 页".format(
+            rep["chapters"], rep["sections"], rep["written"]))
+        if rep["empty_chapters"]:
+            print("⚠️ {} 章一节都没切出来（排版变体？）：{}".format(
+                len(rep["empty_chapters"]), "、".join(rep["empty_chapters"])))
+        miss = unextracted_hints(Path(args.refined))
+        if miss:
+            print("⚠️ 行尾带节号却没切出来的：{}".format(miss))
+        if rep["conflicts"]:
+            print("⚠️ {} 页检测到人工编辑，已跳过覆盖".format(len(rep["conflicts"])))
+
+    elif args.cmd == "changelog":
+        from wiki_engine.changelog import generate_all as generate_changelog
+        rep = generate_changelog(Path(args.zh_dir), Path(args.wiki))
+        print("规则变更清单：{} 个阵营包 / {} 条改动（{} 条为初版后新增）"
+              " + {} 条通用更新 → 写 {} 页".format(
+                  rep["packs"], rep["entries"], rep["new_in_latest"],
+                  rep["universal"], rep["written"]))
+        if rep["no_chapter"]:
+            print("· {} 个包没有「规则更新」章节（首版）：{}".format(
+                len(rep["no_chapter"]), "、".join(rep["no_chapter"])))
+        if rep["empty_chapter"]:
+            print("· {} 个包有章节但官方未列改动：{}".format(
+                len(rep["empty_chapter"]), "、".join(rep["empty_chapter"])))
+        if rep["orphan_lines"]:
+            print("⚠️ 有行没归进任何条目（排版变体？先核对再发布）：{}".format(
+                {k: len(v) for k, v in rep["orphan_lines"].items()}))
+        if rep["conflicts"]:
+            print("⚠️ {} 页检测到人工编辑，已跳过覆盖".format(len(rep["conflicts"])))
+
+    elif args.cmd == "keywords":
+        from wiki_engine.keyword_index import generate as generate_keyword_index
+        rep = generate_keyword_index(Path(args.db), Path(args.wiki), Path(args.pdf))
+        print("词条索引: {} 条（通用 {} / 过渡期 {} / 单位特有 {}），"
+              "反查 {} 条现役 (词条, 武器) 对 → {}".format(
+                  rep["keywords"], rep["groups"].get("universal", 0),
+                  rep["groups"].get("transitional", 0), rep["groups"].get("unit-specific", 0),
+                  rep["current_weapon_names"], rep["path"]))
 
     elif args.cmd == "lint":
         refined = Path(args.refined) if Path(args.refined).is_dir() else None

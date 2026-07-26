@@ -1,5 +1,5 @@
 ---
-id: 000000397
+id: '000000397'
 name_en: Servitors
 faction: 灰骑士
 type: unit
@@ -27,10 +27,10 @@ updated: '2026-07-23'
 ## 射击武器
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| Heavy bolter | 36" | 3 | 4+ | 5 | -1 | 2 | heavy，[[core-rules/sustained-hits.md\|sustained hits 1]] |
-| Multi-melta | 18" | 2 | 4+ | 9 | -4 | D6 | heavy，[[core-rules/melta.md\|melta 2]] |
-| Plasma cannon – standard | 36" | D3 | 4+ | 7 | -2 | 1 | blast，heavy |
-| Plasma cannon – supercharge | 36" | D3 | 4+ | 8 | -3 | 2 | blast，hazardous，heavy |
+| 重型爆弹枪 | 36" | 3 | 4+ | 5 | -1 | 2 | [[core-rules/heavy.md\|重型]]，[[core-rules/sustained-hits.md\|连击1]] |
+| 多管热熔 | 18" | 2 | 4+ | 9 | -4 | D6 | [[core-rules/heavy.md\|重型]]，[[core-rules/melta.md\|热熔2]] |
+| 等离子炮（标准） | 36" | D3 | 4+ | 7 | -2 | 1 | [[core-rules/blast.md\|爆炸]]，[[core-rules/heavy.md\|重型]] |
+| 等离子炮（过载） | 36" | D3 | 4+ | 8 | -3 | 2 | [[core-rules/blast.md\|爆炸]]，[[core-rules/hazardous.md\|危险]]，[[core-rules/heavy.md\|重型]] |
 
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |
@@ -40,7 +40,7 @@ updated: '2026-07-23'
 
 ## 技能
 - **Mindlock**：While a [[factions/灰骑士/units/brotherhood-techmarine.md|Brotherhood Techmarine]] model is leading this unit, improve the Ballistic Skill and Weapon Skill characteristics of ranged and melee weapons equipped by <span class="kwb">SERVITOR</span> models in this unit by 1.
-- **Retinue**：While a Brotherhood Techmarine model is leading this unit, models in this unit have the Deep Strike and Teleport Assault abilities.
+- **Retinue**：While a [[factions/灰骑士/units/brotherhood-techmarine.md|Brotherhood Techmarine]] model is leading this unit, models in this unit have the Deep Strike and Teleport Assault abilities.
 - **SERVITOR RETINUE**：At the start of the Declare Battle Formations step, this unit can join one other unit from your army that is being led by a Brotherhood Techmarine (a unit cannot have more than one <span class="kwb">SERVITORS</span> unit joined to it). If it does, until the end of the battle, every model in this unit counts as being part of that Bodyguard unit, and that Bodyguard unit’s Starting Strength is increased accordingly.
 
 ## 单位构成

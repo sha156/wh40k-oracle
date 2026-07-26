@@ -24,7 +24,7 @@ updated: '2026-07-23'
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| Diseased claws and fangs | 近战 | 2 | 4+ | 2 | 0 | 1 | lethal hits |
+| Diseased claws and fangs | 近战 | 2 | 4+ | 2 | 0 | 1 | [[core-rules/lethal-hits.md\|致命一击]] |
 
 ## 技能
 - **Mischief Makers (Aura)**：While an enemy unit (excluding <span class="kwb">MONSTERS</span> and <span class="kwb">VEHICLES</span>) is within 6" of this unit, each time a model in that unit makes a melee attack, subtract 1 from the Hit roll.
@@ -34,4 +34,4 @@ updated: '2026-07-23'
 
 ## 关键词
 - **阵营关键词**：Heretic Astartes，Legiones Daemonica
-- **普通关键词**：[[core-rules/swarm.md|Swarm]]，Shadow Legion，Nurgle，Damned，Chaos，[[core-rules/swarm.md|Swarm]]，Undivided，Mutoid Vermin，Nurgle，Damned，Chaos，[[core-rules/swarm.md|Swarm]]，Undivided，Shadow Legion，Undivided，Mutoid Vermin，Nurgle，Damned，Chaos，[[core-rules/swarm.md|Swarm]]，Shadow Legion，Undivided，Mutoid Vermin，Nurgle，Damned，Chaos，Shadow Legion，Undivided，Mutoid Vermin，Nurgle，Damned，Chaos，[[core-rules/swarm.md|Swarm]]，Shadow Legion，Mutoid Vermin
+- **普通关键词**：[[core-rules/swarm.md|Swarm]]，[[factions/混沌恶魔/detachments/shadow-legion.md|Shadow Legion]]，Nurgle，Damned，Chaos，[[core-rules/swarm.md|Swarm]]，Undivided，Mutoid Vermin，Nurgle，Damned，Chaos，[[core-rules/swarm.md|Swarm]]，Undivided，[[factions/混沌恶魔/detachments/shadow-legion.md|Shadow Legion]]，Undivided，Mutoid Vermin，Nurgle，Damned，Chaos，[[core-rules/swarm.md|Swarm]]，Shadow Legion，Undivided，Mutoid Vermin，Nurgle，Damned，Chaos，Shadow Legion，Undivided，Mutoid Vermin，Nurgle，Damned，Chaos，[[core-rules/swarm.md|Swarm]]，Shadow Legion，Mutoid Vermin

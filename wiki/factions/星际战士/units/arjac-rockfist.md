@@ -29,12 +29,12 @@ updated: '2026-07-23'
 ## 射击武器
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| 破敌锤 | 6" | 1 | 2+ | 8 | -2 | 3 | [[core-rules/anti.md\|反巨兽 3+]]，[[core-rules/assault.md\|突击]]，[[core-rules/anti.md\|反载具 3+]] |
+| 破敌锤 | 6" | 1 | 2+ | 8 | -2 | 3 | [[core-rules/anti.md\|针对怪物3+]]，[[core-rules/anti.md\|针对载具3+]]，[[core-rules/assault.md\|突击]] |
 
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| Foehammer | 近战 | 5 | 2+ | 8 | -2 | 3 | [[core-rules/anti.md\|anti-monster 3+]]，[[core-rules/anti.md\|anti-vehicle 3+]]，precision |
+| 破敌锤 | 近战 | 5 | 2+ | 8 | -2 | 3 | [[core-rules/anti.md\|针对怪物3+]]，[[core-rules/anti.md\|针对载具3+]]，[[core-rules/precision.md\|精准]] |
 
 ## 技能
 - **【阵营技能】：破敌重誓**

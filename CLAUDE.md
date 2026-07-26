@@ -55,10 +55,70 @@
   凭 40K 记忆虚构数值——硬化 `refine_prompt.py`（v1→v2 铁律：源无数值时只输出名字/编制）
   + `scripts/refine_pages_fabricated.py` 重跑 30 页清零，verify_warn 67→37（余 37 纯结构性
   误报，纯造数字=0）。报告 `docs/superpowers/specs/2026-07-24-refine-fabrication-fix.md`
-- **剩余**：T5 · Stage 5 部署（`web/` Next.js + `web_api/` FastAPI 已成型，尚无 Dockerfile/
-  部署配置）；基准扩充（长期滚动，agent gold v3 现 96/96=100.0 零硬错，#41/#42 为固定波动题）。
-  非阻塞遗留：37 页纯结构性 verify_warn 误报（可给 verify_numbers 加白名单降噪）、军表 PR1c
-  文本解析、外部源观察项（BSData-11e / Wahapedia 11版 / 黑图书馆）。T6 分支清理已实际完成
+- **T5 · Stage 5 部署已落地**（2026-07-25）：`docker compose up` 起 api+web 两服务，
+  镜像只装代码、`opt/`(4.5G)+`local_vector_store/`+`db/`+`wiki/` 全部 `:ro` 挂宿主机，
+  端口只绑 127.0.0.1、非 root、torch 走 CPU 源（否则白背 2G nvidia 依赖）、`workers=1`
+  （模型缓存在进程内）。新增 `web_api/preflight.py`（启动核对资产，缺卷在日志吼+落
+  `/healthz.ready`，防"卷没挂上→全部静默降级"）与 `web_api/ratelimit.py`（两档固定窗口，
+  heavy=/chat+/simulate+/roster/critique，XFF 默认不信；限流须挂在 CORS **之前**）。
+  1936 测试绿。设计与验收 `docs/superpowers/specs/2026-07-25-stage5-deploy.md`。
+  ⚠ **镜像尚未真实构建验证**（本机 Docker Desktop 守护进程未起），验收表最后一行是待办
+- **codex 扩成真 wiki 已收官**（2026-07-25，分支 `feat/codex-wiki`，PR-0/1/2/4/5）：
+  wiki 从「只有兵牌页」扩到 **7900+ 页**——武器词条索引（46 词条 / 2731 条现役反查，
+  `wiki/indexes/keywords.{md,json}`，判据来自 `data/11版40K通用技能速查表.pdf`）、
+  分队/战略/增强三类实体页（324/1681/1058，`wiki_engine/entity_pages.py` + `html_md.py`）、
+  11 版核心规则全文 24 章 137 节（`wiki/core-rules/sections/`，`core_rules.py`）；
+  web `/codex` 加「武器词条」「分队」两个二级页签（`wiki_blocks.py` 把 md 编译成块级契约，
+  前端零解析、不引 markdown 库）。**正文一律官方英文**（用户裁决：宁可英文也要与官网一致，
+  不叠十版汉化译本），中文只用于名称。2125 测试绿、lint 0 error。
+  设计与决策见 `docs/superpowers/plans/2026-07-25-codex-wiki-expansion.md`。
+  **三个必知坑**：① `detachments` 表存的是分队**规则名**不是**容器名**（容器名真源在官方
+  CSV 的 detachment 列，曾入库丢失；**禁止按 id 邻接反推**）；② 从半结构化文本抽条目
+  必须配反向对账（核心规则切章三轮漏切每次都报"成功"）；③ PDF 残留控制字符（0x08）
+  会让行尾匹配静默失败
+- **GW 官方简体中文层已贯通到 wiki 页**（2026-07-26，分支 `feat/codex-wiki`）：
+  官方下载页可切简体中文 → `data/官方中文/` 收 34 个官方 PDF → `db_compile/official_zh.py`
+  按**数值指纹**配对出映射（战略 464 / 强化 234 / 分队容器 123，`official_zh_names.json`）
+  → `db_compile/official_zh_apply.py` 投影进库（战略 `name_zh` 426→728、强化**新加
+  name_zh 列** 0→249、容器中文名进新表 `detachment_names_zh`）→ 重生成 3063 实体页
+  （中文名：战略 759→989、增强 381→547、分队 0→123）。权威级别按 wiki 宪法 §6
+  「GW 官方中文 > 汉化组 > 社区」，官方顶掉的 P7 人工译名**不删**，降为页面 alias（295 页）。
+  CLI `python -m db_compile official-zh --apply [--dry-run]`，已挂进 update 管线与
+  restore（排在 fp_rules 之后，否则低权威覆盖高权威且页面上看不出来）。
+  **三个坑**：① 分队容器中文名只能走独立表——123 个键撞 `stratagems.detachment` 是
+  123/123，撞 `detachments.detachment_name` 只有 63/123，挂那张表会静默丢 60 个；
+  ② 落库以行级 `*_by_id` 为准，英文名键表达不了「同一英文名在不同包里不同官方译名」
+  （蔑视战甲 / 蔑视甲胄），只能整条丢；③ `db_compile enhancements --apply` 的
+  INSERT OR REPLACE 会清空 name_zh/DSL 投影列（已改成报数并提示补跑两条投影命令）
+- **核心规则 24 章中文化 + 规则变更清单已完成**（2026-07-26，分支 `feat/codex-wiki`）：
+  新增 `wiki_engine/pdf_sections.py`（官方 PDF → 按节号切分，中英共用）、
+  `core_rules_zh.py`（官方中文 88 页全译本，156 节）、`changelog.py`（规则变更清单）。
+  ① **核心规则页改为中文正文 + 英文原文折叠**：配对键是官方节号，
+  `cross_check` 实测中英各 156 节、双向差集为空。这条**跨语言对账**顺带逮出英文侧
+  积压的 **19 节缺失**——切分正则漏 6（`## COMMAND RE-ROLL 15.02 (1CP)` 节号后带 CP
+  花费，第 15 章 11 条核心计谋只切出 1 条）＋ refine 产物丢节号 13（`1. SELECT WEAPONS
+  04.01` 被改写成 `**1. SELECT WEAPONS**:`），后者用英文 PDF 直提兜底。
+  ② **规则变更清单** `wiki/changelog/`（index + 28 阵营页）：592 条官方改动，
+  其中 **128 条标 🆕 = v1.0→v1.1 增量**——判据是 PDF span 的**红色**（`0xa31418`），
+  官方导言写明「初版发布之后所作的修订均以红色高亮显示」，不是靠 diff 两版猜的
+  （手上只有 v1.1）。CLI `python -m wiki_engine changelog`。
+  wiki 4921→**4950 页**，2234 测试绿，lint 0 error / 593 warning（与基线持平）。
+- **核心规则与变更清单已接进网页**（2026-07-26，分支 `feat/codex-wiki`）：图鉴从三页签扩到
+  **五页签**（单位 / 武器词条 / 分队 / 核心规则 / 规则变更）。新增 `web_api/core_rules_browse.py`
+  与 `changelog_browse.py` + 四条只读路由 `/codex/rules[/{slug}]`、`/codex/changelog[/{slug}]`；
+  块级契约加 **`details` 可嵌套块**（核心规则每节「中文正文 + 官方英文原文折叠」）与行内
+  **`em`**。变更清单首页会把 index 一览表与 28 个阵营页**逐条对账**（条目数 / 新增数 /
+  页是否都在），差额 503 点名——592 与 128 是这页的头条断言。2286 测试绿、lint 0 error、
+  next build 通过、浏览器目检两页签（含折叠展开、明细页计数）。**两个坑**：
+  ① 按 `## ` 切小节必须先认 `<details>` 深度——英文原文自带 `## ` 标题 57 处，
+  不认就把折叠腰斩、24 章切出 213 节而非 156，且折叠个数一个不少（计数骗人）；
+  ② 单星号斜体只能按「整行成对」处理，通用行内配对会误吃 `5*` 脚注与 PDF 残留落单星号。
+- **剩余**：基准扩充（长期滚动，agent gold v3 现 96/96=100.0 零硬错，#41/#42 为固定波动题）。
+  wiki 收尾候选：lint 的 alias-conflicts 占满 warning 通道（官方中文名铺开后更多），
+  宜聚合成摘要 + 单独重名报告；武器词条页的「规则页 NN.NN · 正文页待上线」现在可以
+  真接成到核心规则章节页的链接了。
+  非阻塞遗留：军表 PR1c 文本解析、外部源观察项（BSData-11e / Wahapedia 11版 / 黑图书馆）。
+  T6 分支清理已实际完成
 
 ## 数据事实（2026-07-10 语料重组后）
 

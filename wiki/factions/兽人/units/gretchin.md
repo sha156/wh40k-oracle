@@ -5,14 +5,13 @@ name_en: Gretchin
 faction: 兽人
 type: unit
 points:
-  11 models: 45
+  11 models: 40
   22 models: 80
 tags:
 - unit
 - unit/兽人
 - 兽人
 version:
-  points: MFM 2026-07-19 04:03
   source: official-db
 sources:
 - book: 官方结构库 db/wh40k.sqlite（Wahapedia 11版镜像 + MFM 官方点数）
@@ -43,7 +42,7 @@ updated: '2026-07-23'
 - **鬼祟拾荒者**：你的移动阶段开始时，如果每有一个你占领的目标点，范围内至少有一个拥有本能力的单位(不能处于被震慑状态),就投一颗D6,如果至少一颗结果为4+,则你获得1CP
 
 ## 单位构成
-- **11个模型** — 45 分
+- **11个模型** — 40 分
 - **22个模型** — 80 分
 
 ## 关键词

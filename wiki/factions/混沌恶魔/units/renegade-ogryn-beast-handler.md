@@ -1,5 +1,5 @@
 ---
-id: 000004059
+id: '000004059'
 name_en: Renegade Ogryn Beast Handler
 faction: 混沌恶魔
 type: unit
@@ -38,4 +38,4 @@ updated: '2026-07-23'
 
 ## 关键词
 - **阵营关键词**：Legiones Daemonica，Heretic Astartes
-- **普通关键词**：Undivided，Beasts，Shadow Legion，Undivided，Renegade Ogryn Beast Handler，Damned，Chaos，Beasts，Shadow Legion，Beasts，Chaos，Damned，Damned，Renegade Ogryn Beast Handler，Undivided，Shadow Legion，Beasts，Chaos，Renegade Ogryn Beast Handler，Shadow Legion，Undivided，Renegade Ogryn Beast Handler，Damned，Chaos
+- **普通关键词**：Undivided，Beasts，[[factions/混沌恶魔/detachments/shadow-legion.md|Shadow Legion]]，Undivided，Renegade Ogryn Beast Handler，Damned，Chaos，Beasts，[[factions/混沌恶魔/detachments/shadow-legion.md|Shadow Legion]]，Beasts，Chaos，Damned，Damned，Renegade Ogryn Beast Handler，Undivided，Shadow Legion，Beasts，Chaos，Renegade Ogryn Beast Handler，Shadow Legion，Undivided，Renegade Ogryn Beast Handler，Damned，Chaos

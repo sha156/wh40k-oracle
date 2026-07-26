@@ -1,5 +1,5 @@
 ---
-id: 000002709
+id: '000002709'
 name_zh: 阔萨罗可汗
 name_en: Kor’sarro Khan
 faction: 星际战士
@@ -33,7 +33,7 @@ updated: '2026-07-23'
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| 月牙之刃     | 近战 | 6 | 2+ | 5 | -2 | 2 | [[core-rules/precision.md\|精准]]，[[core-rules/devastating-wounds.md\|毁灭伤害]] |
+| 月牙之刃     | 近战 | 6 | 2+ | 5 | -2 | 2 | [[core-rules/devastating-wounds.md\|毁灭伤害]]，[[core-rules/precision.md\|精准]] |
 
 ## 技能
 - **热诚指挥官**：如果将此模型加入己方军队，则直到战斗结束，己方军队中的先导摩托小队里的非角色模型，在不处于战斗震慑状态时，目标控制属性为 3。

@@ -1,5 +1,6 @@
 ---
-id: 000003880
+id: '000003880'
+name_zh: 有翼泰伦王虫
 name_en: Winged Tyranid Prime
 faction: 基因窃取者教派
 type: unit
@@ -24,11 +25,13 @@ updated: '2026-07-23'
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| Prime talons | 近战 | 6 | 2+ | 6 | -1 | 2 | — |
+| 王虫利爪 | 近战 | 6 | 2+ | 6 | -1 | 2 | — |
 
 ## 技能
-- **Alpha Warrior**：While this model is leading a unit, weapons equipped by models in that unit have the [SUSTAINED HITS 1] ability.
-- **Death Blow**：If this model is destroyed by a melee attack, if it has not fought this phase, roll one D6: on a 4+, do not remove it from play. The destroyed model can fight after the attacking model’s unit has finished making its attacks, and is then removed from play.
+- **【阵营技能】亚空间阴影**
+- **【阵营技能】节点生物**
+- **头领战士**：当该模型领导一个联合单位时，那个单位中模型装备的武器拥有【连击 1】技能。
+- **死亡打击**：如果该模型被近战攻击摧毁，而且该模型在该阶段中没有进行过近战，掷一枚 D6：如果掷骰结果为 4+，不要将其从游戏中移除。被摧毁的模型可以在攻击模型的单位完成攻击后进行近战，然后将其从游戏中移除。
 
 ## 单位构成
 - **1个模型** — 65 分

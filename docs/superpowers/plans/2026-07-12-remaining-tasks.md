@@ -3,7 +3,44 @@
 > 依据：11 版迁移计划（2026-07-10）、v2 蓝图 P0-P8 路线图（2026-07-04）、
 > 前端 BUILD-PLAN（2026-07-06）、S4-S6 各 spec，以及对当前代码/分支的实地核对。
 
-## ⏸️ 进度 CHECKPOINT（2026-07-12，让"继续"能无损续接）
+## ⏸️ 进度 CHECKPOINT（2026-07-25，最新——让"继续"能无损续接）
+
+**当前位置**：分支 `feat/stage5-deploy`（HEAD `786de0e2`，与 origin 同步、工作树干净、
+全库 **1944 测试绿**）。PR **#65** 开着两个提交，未合并 main。
+
+- `ebe067a6` Stage 5 容器化（Dockerfile/compose/preflight/ratelimit，28 测试）
+- `786de0e2` 轻量模式**真机上线** `http://49.232.104.101:8100`（+8 测试）
+
+**线上现状**：图鉴 / 模拟器 / 军表三个零 LLM 页签**已实跑验证**（25 阵营、SM 298 单位、
+56 分队、模拟器 3000 次蒙特卡洛期望伤害 3.526），常驻 79 MB；规则问答页签
+`WEB_API_RETRIEVAL=off` 诚实降级。同机 mygf/elina-bot/auction/SpeakingLab 均未受影响。
+
+**三件待办（互不依赖，按优先级）**：
+
+1. **⚠ 腾讯云安全组放行 TCP 8100**——只有用户能做。主机侧已排除（ufw inactive、
+   `YJ-FIREWALL-INPUT` 是 IP 黑名单不按端口拦、内网回环全通）。开完跑
+   `bash deploy/deploy.sh verify` 即全绿，外网可访问。
+2. **Docker 镜像真实构建验证**——本机 Docker Desktop 起不来，根因 WSL 装残
+   （MSIX 2.6.1.0 已注册但 `C:\Program Files\WSL` 下只有 `tools\`、无 wsl.exe，
+   `LxssManager` 服务缺失）。修好后照 `specs/2026-07-25-stage5-deploy.md` §6 跑。
+   **与线上无关**——真机走的是 venv + systemd，没依赖 Docker。
+3. **线上补规则问答**：走远程嵌入 API（同为 bge-m3 可复用现有索引，服务器内存增量≈0），
+   **不要**往 3.3G 的机器塞 4.3G 模型。嵌入渠道未定（硅基流动 / 其他）。
+
+**关键路径备忘**：
+- 服务器：`ssh mygf` → 代码 `/home/ubuntu/wh40k`、systemd `wh40k-api`（uvicorn:8210 听回环）、
+  静态站 `/opt/1panel/www/sites/wh40k/index`、站点配置 `/opt/1panel/www/conf.d/wh40k.conf`
+- 更新一键：`bash deploy/deploy.sh [all|code|data|web|verify]`（tar-over-ssh，本地无 rsync）
+- **前端构建必须用 PowerShell**：`$env:NEXT_OUTPUT="export"; $env:NEXT_PUBLIC_API_BASE="/api"; npm run build`
+  （Git Bash 的 MSYS 会把 `/api` 转写成 `C:/.../Git/api` 内联进包）
+- 报告：`specs/2026-07-25-stage5-deploy.md`（容器化）、`specs/2026-07-25-server-deploy.md`（上线）
+
+**长期滚动**：基准扩充（gold 96 题 100.0）、军表 PR1c 文本解析、外部源观察
+（BSData-11e / Wahapedia 11 版 / 黑图书馆）。
+
+---
+
+## ⏸️ 历史 CHECKPOINT（2026-07-12）
 
 **✅ T1 + T2 全部完成并已合并 main（PR #16，merge commit `906c25b9`）——11 版迁移正式收官。**
 本地 main 与 origin 同步、工作树干净、709 测试绿。四提交：
@@ -143,9 +180,14 @@ S6 收官时确认的 11 版大改尚未进引擎，实地核对 `engines/simula
 - **模拟器**：P4/P5 已完成——**依赖已解锁**，把「阶段漏斗」可视化复活
 - **军表实验室**：等 T3（P6）
 
-### 13. Stage 5：部署
+### 13. Stage 5：部署 ✅ 已完成（2026-07-25）
 
-- key 只在服务端 env、限流+CORS、鹰徽自绘更抽象版、不提供原文/库整体下载
+- key 只在服务端 env、限流+CORS、不提供原文/库整体下载——全部落地
+- 形态：本地 docker-compose 两服务；镜像只装代码，4.5G 模型/索引/结构库只读挂载
+- 附带补上启动资产前置校验（`web_api/preflight.py`）与两档限流（`web_api/ratelimit.py`）
+- 报告：`docs/superpowers/specs/2026-07-25-stage5-deploy.md`；1936 测试绿
+- ⏳ 唯一未完：镜像真实构建 + 镜像内 pytest（需 Docker Desktop 守护进程）
+- 未做（本次目标是本地自用）：HTTPS/反代/鉴权、鹰徽自绘更抽象版
 
 ## T6 · 仓库卫生（随手，<0.5 天）
 

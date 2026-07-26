@@ -29,27 +29,27 @@ updated: '2026-07-23'
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
 | 阿斯塔特榴弹发射器-破片弹 | 24" | D3 | 3+ | 4 | 0 | 1 | [[core-rules/blast.md\|爆炸]] |
-| Astartes grenade launcher – krak | 24" | 1 | 3+ | 9 | -2 | D3 | — |
+| 阿斯塔特榴弹发射器（穿甲） | 24" | 1 | 3+ | 9 | -2 | D3 | — |
 | 爆矢手枪 | 12" | 1 | 3+ | 4 | 0 | 1 | [[core-rules/pistol.md\|手枪]]，[[core-rules/lethal-hits.md\|致命一击]] |
-| Deathwatch marksman bolt carbine | 24" | 2 | 3+ | 5 | -1 | 1 | heavy，lethal hits |
-| Frag cannon | 18" | D3 | 3+ | 7 | -2 | 2 | blast，heavy，lethal hits，rapid fire d3 |
-| Hellstorm bolt rifle | 30" | 2 | 3+ | 5 | -2 | 2 | assault，heavy，lethal hits |
-| Infernus heavy bolter – heavy bolter | 36" | 3 | 3+ | 5 | -1 | 2 | [[core-rules/sustained-hits.md\|SUSTAINED HITS 1]] |
-| Infernus heavy bolter – heavy flamer | 12" | D6 | N/A | 5 | -1 | 1 | [[core-rules/ignores-cover.md\|IGNORES COVER]]，TORRENT |
-| Plasma incinerator – standard | 24" | 2 | 3+ | 7 | -2 | 1 | assault，heavy |
-| Plasma incinerator – supercharge | 24" | 2 | 3+ | 8 | -3 | 2 | assault，hazardous，heavy |
-| Plasma pistol – standard | 12" | 1 | 3+ | 7 | -2 | 1 | PISTOL |
-| Plasma pistol – supercharge | 12" | 1 | 3+ | 8 | -3 | 2 | [[core-rules/hazardous.md\|HAZARDOUS]]，PISTOL |
-| Special-issue bolt pistol | 18" | 1 | 3+ | 4 | -1 | 1 | pistol，precision，lethal hits |
-| Stalker bolt rifle | 30" | 2 | 3+ | 5 | -2 | 2 | heavy，lethal hits，precision |
+| 死亡守望神射手爆矢卡宾枪 | 24" | 2 | 3+ | 5 | -1 | 1 | [[core-rules/heavy.md\|重型]]，[[core-rules/lethal-hits.md\|致命一击]] |
+| 破片炮 | 18" | D3 | 3+ | 7 | -2 | 2 | [[core-rules/blast.md\|爆炸]]，[[core-rules/heavy.md\|重型]]，[[core-rules/lethal-hits.md\|致命一击]]，[[core-rules/rapid-fire.md\|速射D3]] |
+| 地狱风暴爆弹步枪 | 30" | 2 | 3+ | 5 | -2 | 2 | [[core-rules/assault.md\|突击]]，[[core-rules/heavy.md\|重型]]，[[core-rules/lethal-hits.md\|致命一击]] |
+| 地狱火重型爆弹枪-重型爆弹枪 | 36" | 3 | 3+ | 5 | -1 | 2 | [[core-rules/sustained-hits.md\|连击1]] |
+| 地狱火重型爆弹枪-重型火焰喷射器 | 12" | D6 | N/A | 5 | -1 | 1 | [[core-rules/ignores-cover.md\|无视掩体]]，[[core-rules/torrent.md\|洪流]] |
+| 等离子焚化枪（标准） | 24" | 2 | 3+ | 7 | -2 | 1 | [[core-rules/assault.md\|突击]]，[[core-rules/heavy.md\|重型]] |
+| 等离子焚化枪（过载） | 24" | 2 | 3+ | 8 | -3 | 2 | [[core-rules/assault.md\|突击]]，[[core-rules/hazardous.md\|危险]]，[[core-rules/heavy.md\|重型]] |
+| 等离子手枪-标准 | 12" | 1 | 3+ | 7 | -2 | 1 | [[core-rules/pistol.md\|手枪]] |
+| 等离子手枪-过载 | 12" | 1 | 3+ | 8 | -3 | 2 | [[core-rules/hazardous.md\|危险]]，[[core-rules/pistol.md\|手枪]] |
+| 特种爆矢手枪 | 18" | 1 | 3+ | 4 | -1 | 1 | [[core-rules/pistol.md\|手枪]]，[[core-rules/precision.md\|精准]]，[[core-rules/lethal-hits.md\|致命一击]] |
+| 潜猎爆弹步枪 | 30" | 2 | 3+ | 5 | -2 | 2 | [[core-rules/heavy.md\|重型]]，[[core-rules/lethal-hits.md\|致命一击]]，[[core-rules/precision.md\|精准]] |
 
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| Close combat weapon | 近战 | 3 | 3+ | 4 | 0 | 1 | — |
-| Combat knife | 近战 | 4 | 3+ | 4 | -1 | 1 | precision |
-| Heavy thunder hammer | 近战 | 3 | 4+ | 10 | -2 | 3 | devastating wounds |
-| Power weapon | 近战 | 4 | 3+ | 5 | -2 | 2 | [[core-rules/sustained-hits.md\|sustained hits 1]] |
+| 格斗武器 | 近战 | 3 | 3+ | 4 | 0 | 1 | — |
+| 战斗刀 | 近战 | 4 | 3+ | 4 | -1 | 1 | [[core-rules/precision.md\|精准]] |
+| 重型雷霆锤 | 近战 | 3 | 4+ | 10 | -2 | 3 | [[core-rules/devastating-wounds.md\|毁灭伤害]] |
+| 动力武器 | 近战 | 4 | 3+ | 5 | -2 | 2 | [[core-rules/sustained-hits.md\|连击1]] |
 | 异形相位刃 | 近战 | 4 | 3+ | 5 | -2 | 1 | [[core-rules/devastating-wounds.md\|毁灭伤害]] |
 
 ## 技能

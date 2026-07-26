@@ -1,5 +1,6 @@
 ---
-id: 000000694
+id: '000000694'
+name_zh: 地狱犬喷射车
 name_en: Hellhound
 faction: 星界军
 type: unit
@@ -20,27 +21,27 @@ updated: '2026-07-23'
 ## 属性表
 | 模型 | M | T | SV | W | LD | OC |
 |---|---|---|---|---|---|---|
-| Hellhound | 10" | 10 | 2+ | 11 | 7+ | 3 |
+| 地狱犬喷射车 | 10" | 10 | 2+ | 11 | 7+ | 3 |
 
 ## 射击武器
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| Chem cannon | 12" | D6+1 | N/A | 2 | -2 | 2 | [[core-rules/anti.md\|anti-infantry 2+]]，torrent |
-| Heavy bolter | 36" | 3 | 4+ | 5 | -1 | 2 | [[core-rules/sustained-hits.md\|sustained hits 1]] |
-| Heavy flamer | 12" | D6 | N/A | 5 | -1 | 1 | ignores cover，torrent |
-| Hunter-killer missile | 48" | 1 | 4+ | 14 | -3 | D6 | one shot |
-| Inferno cannon | 18" | 2D6 | N/A | 6 | -2 | 1 | ignores cover，torrent |
-| Melta cannon | 18" | D3 | 4+ | 9 | -4 | D6 | blast，[[core-rules/melta.md\|melta 4]] |
-| Multi-melta | 18" | 2 | 4+ | 9 | -4 | D6 | [[core-rules/melta.md\|melta 2]] |
+| 化学炮 | 12" | D6+1 | N/A | 2 | -2 | 2 | [[core-rules/anti.md\|针对步兵2+]]，[[core-rules/torrent.md\|洪流]] |
+| 重型爆弹枪 | 36" | 3 | 4+ | 5 | -1 | 2 | [[core-rules/sustained-hits.md\|连击1]] |
+| 重型火焰喷射器 | 12" | D6 | N/A | 5 | -1 | 1 | [[core-rules/ignores-cover.md\|无视掩体]]，[[core-rules/torrent.md\|洪流]] |
+| 猎杀飞弹 | 48" | 1 | 4+ | 14 | -3 | D6 | [[core-rules/one-shot.md\|单发]] |
+| 地狱炮 | 18" | 2D6 | N/A | 6 | -2 | 1 | [[core-rules/ignores-cover.md\|无视掩体]]，[[core-rules/torrent.md\|洪流]] |
+| 热熔炮 | 18" | D3 | 4+ | 9 | -4 | D6 | [[core-rules/blast.md\|爆炸]]，[[core-rules/melta.md\|热熔4]] |
+| 多管热熔 | 18" | 2 | 4+ | 9 | -4 | D6 | [[core-rules/melta.md\|热熔2]] |
 
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| Armoured tracks | 近战 | 3 | 4+ | 6 | 0 | 1 | — |
+| 装甲履带 | 近战 | 3 | 4+ | 6 | 0 | 1 | — |
 
 ## 技能
-- **Flush Them Out**：In your Shooting phase, after this model has shot, select one enemy unit that was hit by one or more of those attacks. Until the start of your next Shooting phase, that unit is scattered. While a unit is scattered, it cannot have the Benefit of Cover.
-- **One Shot**：The bearer can only shoot with this weapon once per battle.
+- **受损**：当该模型剩余1-4点耐伤，该模型进行攻击时命中投掷结果-1。
+- **无处藏身**：在你的射击阶段，当该单位射击结束后，选择一个被该单位射击命中一次或多次的一个敌军单位，直到下个你的射击阶段开始前，该敌军单位无法获得掩体增益。
 
 ## 单位构成
 - **1个模型** — 125 分

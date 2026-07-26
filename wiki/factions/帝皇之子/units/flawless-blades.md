@@ -1,5 +1,6 @@
 ---
-id: 000004089
+id: '000004089'
+name_zh: 无瑕之刃
 name_en: Flawless Blades
 faction: 帝皇之子
 type: unit
@@ -29,12 +30,12 @@ updated: '2026-07-23'
 ## 射击武器
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| Bolt pistol | 12" | 1 | 3+ | 4 | 0 | 1 | pistol |
+| 爆弹手枪 | 12" | 1 | 3+ | 4 | 0 | 1 | [[core-rules/pistol.md\|手枪]] |
 
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| Blissblade | 近战 | 4 | 2+ | 6 | -3 | 2 | — |
+| 极乐之刃 | 近战 | 4 | 2+ | 6 | -3 | 2 | — |
 
 ## 技能
 - **Daemonic Patrons**：Each time this unit is selected to fight, it can call upon daemonic patrons. If it does, until the end of the phase, each time a model in this unit makes an attack, an unmodified Wound roll of 3+ scores a Critical Wound. At the end of the Fight phase, if this unit called upon daemonic patrons this phase and no enemy models were destroyed by attacks made by models in this unit this phase, one model in this unit is destroyed.

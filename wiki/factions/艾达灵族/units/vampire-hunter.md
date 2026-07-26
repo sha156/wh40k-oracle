@@ -27,14 +27,14 @@ updated: '2026-07-23'
 ## 射击武器
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| Scatter laser | 36" | 6 | 3+ | 5 | 0 | 1 | — |
-| Twin pulse laser | 48" | 3 | 3+ | 9 | -2 | D6 | twin-linked |
-| Twin Vampire pulsar | 60" | 3 | 3+ | 12 | -3 | 4 | twin-linked |
+| 散射激光 | 36" | 6 | 3+ | 5 | 0 | 1 | — |
+| Twin pulse laser | 48" | 3 | 3+ | 9 | -2 | D6 | [[core-rules/twin-linked.md\|双联]] |
+| Twin Vampire pulsar | 60" | 3 | 3+ | 12 | -3 | 4 | [[core-rules/twin-linked.md\|双联]] |
 
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| Wraithbone hull | 近战 | 6 | 4+ | 6 | 0 | 1 | — |
+| 灵骨外壳 | 近战 | 6 | 4+ | 6 | 0 | 1 | — |
 
 ## 技能
 - **Titan Hunter**：Each time a ranged attack made by this model is allocated to a <span class="kwb">MONSTER</span> or <span class="kwb">VEHICLE</span> model, re-roll a Damage roll of 1.

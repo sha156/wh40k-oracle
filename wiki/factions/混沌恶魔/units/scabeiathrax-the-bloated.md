@@ -27,13 +27,13 @@ updated: '2026-07-23'
 ## 射击武器
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| Putrid vomit | 6" | D6+3 | N/A | 5 | -2 | 1 | ignores cover，torrent |
+| 恶臭喷吐 | 6" | D6+3 | N/A | 5 | -2 | 1 | [[core-rules/ignores-cover.md\|无视掩体]]，[[core-rules/torrent.md\|洪流]] |
 
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| Blade of decay – Strike | 近战 | 7 | 2+ | 9 | -2 | D6 | lethal hits |
-| Blade of decay – Sweep | 近战 | 14 | 2+ | 7 | -1 | 1 | lethal hits |
+| Blade of decay – Strike | 近战 | 7 | 2+ | 9 | -2 | D6 | [[core-rules/lethal-hits.md\|致命一击]] |
+| Blade of decay – Sweep | 近战 | 14 | 2+ | 7 | -1 | 1 | [[core-rules/lethal-hits.md\|致命一击]] |
 
 ## 技能
 - **Emissary of the Plague God (Aura)**：While a friendly Nurgle Legiones Daemonica unit is within 6" of this model, you can re-roll Battle-shock tests taken for that unit.

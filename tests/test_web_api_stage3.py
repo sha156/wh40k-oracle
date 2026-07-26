@@ -275,21 +275,25 @@ def test_localize_loadout_unmapped_names_stay_english():
     assert out.endswith("。")
 
 
-def test_localize_weapon_names_count_guard():
-    """位置匹配守卫：中英武器数量不等时整组不换（防错配=自信的错误）。"""
+def test_localize_weapon_names_uses_persisted_column():
+    """武器名只认落库的 name_zh：没有就保英文，绝不按位置猜。
+
+    回归 2026-07-25 的错位 bug：旧实现按 kind 内位置把黑图中文列表贴到英文行上，
+    只用"数量相等"当守卫——顺序不同就把「爆弹手枪」贴到了喷火手枪的数值上。
+    现在配对在离线侧按数值指纹做（db_compile/zh_weapons），渲染层只读不猜。
+    """
     from web_api.codex import _localize_weapon_names
 
     ds = {"weapons": [
-        {"kind": "ranged", "name": "Gun A", "keywords": []},
-        {"kind": "ranged", "name": "Gun B", "keywords": []},
+        {"kind": "ranged", "name": "Gun A", "name_zh": "甲枪", "keywords": []},
+        {"kind": "ranged", "name": "Gun B", "name_zh": None, "keywords": []},
     ]}
-    zh = {"武器": {"射击武器": [{"name": "只有一把"}]}}  # 1 vs 2 → 不换
-    _localize_weapon_names(ds, zh)
-    assert ds["weapons"][0]["name"] == "Gun A"
-    zh2 = {"武器": {"射击武器": [{"name": "甲枪"}, {"name": "乙枪", "skill": ["双联"]}]}}
-    _localize_weapon_names(ds, zh2)
-    assert ds["weapons"][0]["name"] == "甲枪"
-    assert ds["weapons"][1]["keywords"] == ["双联"]
+    # 传入的黑图中文层不再参与武器名决策（哪怕给了也不许影响）
+    name_map = _localize_weapon_names(
+        ds, {"武器": {"射击武器": [{"name": "错位甲"}, {"name": "错位乙"}]}})
+    assert ds["weapons"][0]["name"] == "甲枪"      # 落库值
+    assert ds["weapons"][1]["name"] == "Gun B"     # 没落库 → 保英文
+    assert name_map == {"Gun A": "甲枪"}
 
 
 @pytest.mark.skipif(not DB_PATH.exists(), reason="wh40k.sqlite 不存在")
@@ -315,3 +319,45 @@ def test_run_and_format_with_fake_loop_llm():
     ans = run_and_format("在吗", _FakeLLM(), structurer=None, tools={})
     assert isinstance(ans, Answer)
     assert ans.verdict.lede
+
+
+# ── 图鉴归档：现役 / 传承条目（2026-07-25）────────────────────────
+
+@pytest.mark.skipif(not DB_PATH.exists(), reason="wh40k.sqlite 不存在")
+def test_codex_lists_current_units_by_default():
+    """默认只列现役单位；include_legacy 才带出 Legends/福基世界条目并标 legacy。"""
+    from web_api import codex
+
+    cur = codex.list_units(DB_PATH, "AE")
+    allu = codex.list_units(DB_PATH, "AE", include_legacy=True)
+    assert cur and len(cur) < len(allu)          # 艾尔达有大量福基世界条目
+    assert all(u["legacy"] is False for u in cur)
+    assert any(u["legacy"] for u in allu)
+    # 归档不是删除：直链兵牌仍可访问
+    legacy_id = next(u["id"] for u in allu if u["legacy"])
+    assert codex.unit_card(DB_PATH, legacy_id) is not None
+
+
+@pytest.mark.skipif(not DB_PATH.exists(), reason="wh40k.sqlite 不存在")
+def test_codex_faction_counts_match_list_length():
+    """阵营 count 与列表口径一致——数字对不上会让人以为列表漏了单位。"""
+    from web_api import codex
+
+    for include in (False, True):
+        facs = codex.list_factions(DB_PATH, include_legacy=include)
+        row = next(f for f in facs if f["id"] == "AE")
+        units = codex.list_units(DB_PATH, "AE", include_legacy=include)
+        assert row["count"] == len(units)
+        assert row["legacyCount"] >= 0
+
+
+@pytest.mark.skipif(not DB_PATH.exists(), reason="wh40k.sqlite 不存在")
+def test_harlequins_not_archived_by_mfm_gap():
+    """官方 MFM 页没有 Harlequins 那一组——只按 MFM 判会误归档 199 个在售单位。
+
+    判据取 MFM ∪ 黑图收录，这里钉住：小丑单位必须留在现役列表里。
+    """
+    from web_api import codex
+
+    names = {u["nameEn"] for u in codex.list_units(DB_PATH, "AE")}
+    assert "Troupe" in names and "Solitaire" in names and "Death Jester" in names

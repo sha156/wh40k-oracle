@@ -24,14 +24,14 @@ updated: '2026-07-23'
 ## 射击武器
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| Kharybdis storm launcher – frag | 36" | 2D6 | 3+ | 4 | 0 | 1 | blast |
+| Kharybdis storm launcher – frag | 36" | 2D6 | 3+ | 4 | 0 | 1 | [[core-rules/blast.md\|爆炸]] |
 | Kharybdis storm launcher – krak | 36" | 2 | 3+ | 9 | -2 | D6 | — |
 
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
 | Blade struts | 近战 | 12 | 4+ | 8 | -2 | 1 | — |
-| Melta array | 近战 | 1 | 4+ | 12 | -4 | D6+2 | extra attacks |
+| Melta array | 近战 | 1 | 4+ | 12 | -4 | D6+2 | [[core-rules/extra-attacks.md\|额外攻击]] |
 
 ## 技能
 - **Kharybdis Assault**：This model must start the battle in Reserves, but neither it nor any units embarked within it are counted towards any limits placed on the maximum number of Reserves units you can start the battle with. This model can be set up in the Reinforcements step of your first, second or third Movement phase, regardless of any mission rules. Any units embarked within this model can disembark after it has been set up on the battlefield, and if they do they must be set up more than 9" away from all enemy models.

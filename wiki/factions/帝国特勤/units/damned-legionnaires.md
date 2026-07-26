@@ -28,23 +28,23 @@ updated: '2026-07-23'
 ## 射击武器
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| Bolt pistol | 12" | 1 | 3+ | 4 | 0 | 1 | ignores cover，pistol |
-| Boltgun | 24" | 2 | 3+ | 4 | 0 | 1 | ignores cover |
-| Flamer | 12" | D6 | N/A | 4 | 0 | 1 | ignores cover，torrent |
-| Heavy flamer | 12" | D6 | N/A | 5 | -1 | 1 | ignores cover，torrent |
-| Meltagun | 12" | 1 | 3+ | 9 | -4 | D6 | [[core-rules/melta.md\|melta 2]] |
-| Multi-melta | 18" | 2 | 4+ | 9 | -4 | D6 | heavy，[[core-rules/melta.md\|melta 2]] |
-| Plasma gun – standard | 24" | 1 | 3+ | 7 | -2 | 1 | [[core-rules/rapid-fire.md\|rapid fire 1]] |
-| Plasma gun – supercharge | 24" | 1 | 3+ | 8 | -3 | 2 | hazardous，[[core-rules/rapid-fire.md\|rapid fire 1]] |
-| Plasma pistol – standard | 12" | 1 | 3+ | 7 | -2 | 1 | pistol |
-| Plasma pistol – supercharge | 12" | 1 | 3+ | 8 | -3 | 2 | hazardous，pistol |
+| 爆弹手枪 | 12" | 1 | 3+ | 4 | 0 | 1 | [[core-rules/ignores-cover.md\|无视掩体]]，[[core-rules/pistol.md\|手枪]] |
+| 爆弹枪 | 24" | 2 | 3+ | 4 | 0 | 1 | [[core-rules/ignores-cover.md\|无视掩体]] |
+| Flamer | 12" | D6 | N/A | 4 | 0 | 1 | [[core-rules/ignores-cover.md\|无视掩体]]，[[core-rules/torrent.md\|洪流]] |
+| 重型喷火器 | 12" | D6 | N/A | 5 | -1 | 1 | [[core-rules/ignores-cover.md\|无视掩体]]，[[core-rules/torrent.md\|洪流]] |
+| 热熔枪 | 12" | 1 | 3+ | 9 | -4 | D6 | [[core-rules/melta.md\|热熔2]] |
+| 多管热熔 | 18" | 2 | 4+ | 9 | -4 | D6 | [[core-rules/heavy.md\|重型]]，[[core-rules/melta.md\|热熔2]] |
+| 等离子枪（标准） | 24" | 1 | 3+ | 7 | -2 | 1 | [[core-rules/rapid-fire.md\|速射1]] |
+| 等离子枪（过载） | 24" | 1 | 3+ | 8 | -3 | 2 | [[core-rules/hazardous.md\|危险]]，[[core-rules/rapid-fire.md\|速射1]] |
+| 等离子手枪-标准 | 12" | 1 | 3+ | 7 | -2 | 1 | [[core-rules/pistol.md\|手枪]] |
+| 等离子手枪-过载 | 12" | 1 | 3+ | 8 | -3 | 2 | [[core-rules/hazardous.md\|危险]]，[[core-rules/pistol.md\|手枪]] |
 
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| Astartes chainsword | 近战 | 5 | 3+ | 4 | -1 | 1 | — |
-| Close combat weapon | 近战 | 3 | 3+ | 4 | 0 | 1 | — |
-| Power weapon | 近战 | 3 | 3+ | 5 | -2 | 1 | — |
+| 阿斯塔特链锯剑 | 近战 | 5 | 3+ | 4 | -1 | 1 | — |
+| 格斗武器 | 近战 | 3 | 3+ | 4 | 0 | 1 | — |
+| 动力武器 | 近战 | 3 | 3+ | 5 | -2 | 1 | — |
 
 ## 技能
 - **Grim Spectres**：In your Shooting phase, after this unit has shot, select one enemy unit hit by one or more of those attacks. That enemy unit must take a Battle-shock test, subtracting 1 from the result when doing so.

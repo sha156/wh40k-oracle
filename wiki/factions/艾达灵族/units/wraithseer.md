@@ -27,20 +27,20 @@ updated: '2026-07-23'
 ## 射击武器
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| Aeldari missile launcher – sunburst | 48" | D6 | 4+ | 4 | -1 | 1 | blast |
+| Aeldari missile launcher – sunburst | 48" | D6 | 4+ | 4 | -1 | 1 | [[core-rules/blast.md\|爆炸]] |
 | Aeldari missile launcher – starshot | 48" | 1 | 4+ | 10 | -2 | D6 | — |
-| Bright lance | 36" | 1 | 4+ | 12 | -3 | D6+2 | — |
-| Destructor | 12" | D6 | N/A | 5 | -1 | 1 | psychic，torrent |
-| Scatter laser | 36" | 6 | 4+ | 5 | 0 | 1 | — |
-| Shuriken cannon | 24" | 3 | 4+ | 6 | -1 | 2 | [[core-rules/sustained-hits.md\|sustained hits 1]] |
-| Starcannon | 36" | 2 | 4+ | 8 | -3 | 2 | — |
-| Wraithseer D-cannon | 24" | 1 | 4+ | 14 | -4 | D6 | devastating wounds |
+| 光矛 | 36" | 1 | 4+ | 12 | -3 | D6+2 | — |
+| 毁灭咒术 | 12" | D6 | N/A | 5 | -1 | 1 | [[core-rules/psychic-attacks.md\|灵能]]，[[core-rules/torrent.md\|洪流]] |
+| 散射激光 | 36" | 6 | 4+ | 5 | 0 | 1 | — |
+| 星镖炮 | 24" | 3 | 4+ | 6 | -1 | 2 | [[core-rules/sustained-hits.md\|连击1]] |
+| 星光炮 | 36" | 2 | 4+ | 8 | -3 | 2 | — |
+| Wraithseer D-cannon | 24" | 1 | 4+ | 14 | -4 | D6 | [[core-rules/devastating-wounds.md\|毁灭伤害]] |
 
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| Ghostspear – sweep | 近战 | 12 | 4+ | 7 | -1 | 1 | [[core-rules/anti.md\|anti-infantry 2+]]，psychic |
-| Ghostspear – strike | 近战 | 4 | 4+ | 10 | -2 | 3 | [[core-rules/anti.md\|anti-infantry 2+]]，precision，psychic |
+| Ghostspear – sweep | 近战 | 12 | 4+ | 7 | -1 | 1 | [[core-rules/anti.md\|针对步兵2+]]，[[core-rules/psychic-attacks.md\|灵能]] |
+| Ghostspear – strike | 近战 | 4 | 4+ | 10 | -2 | 3 | [[core-rules/anti.md\|针对步兵2+]]，[[core-rules/precision.md\|精准]]，[[core-rules/psychic-attacks.md\|灵能]] |
 
 ## 技能
 - **Horrify (Psychic)**：In your Shooting phase, after this model has shot, select one enemy unit hit by one or more of those attacks. That enemy unit must take a Battle-shock test.

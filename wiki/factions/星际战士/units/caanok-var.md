@@ -28,7 +28,7 @@ updated: '2026-07-23'
 ## 射击武器
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| 风暴爆矢枪 | 24" | 2 | 2+ | 4 | 0 | 1 | [[core-rules/rapid-fire.md\|速射 2]] |
+| 风暴爆矢枪 | 24" | 2 | 2+ | 4 | 0 | 1 | [[core-rules/rapid-fire.md\|速射2]] |
 
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |
@@ -46,4 +46,4 @@ updated: '2026-07-23'
 
 ## 关键词
 - **阵营关键词**：Adeptus Astartes，Iron Hands
-- **普通关键词**：[[core-rules/epic-hero.md|Epic Hero]]，[[core-rules/character.md|Character]]，Captain，Caanok Var，[[core-rules/infantry.md|Infantry]]，Imperium，Terminator
+- **普通关键词**：[[core-rules/epic-hero.md|Epic Hero]]，[[core-rules/character.md|Character]]，[[factions/星际战士/units/captain.md|Captain]]，Caanok Var，[[core-rules/infantry.md|Infantry]]，Imperium，Terminator

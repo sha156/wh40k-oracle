@@ -1,5 +1,5 @@
 ---
-id: 000001583
+id: '000001583'
 name_zh: 魔机统领
 name_en: Lord Discordant On Helstalker
 faction: 混沌星际战士
@@ -29,17 +29,17 @@ updated: '2026-07-23'
 ## 射击武器
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| Baleflamer | 12" | D6+3 | N/A | 6 | -1 | 2 | ignores cover，torrent |
+| 恶毒之火 | 12" | D6+3 | N/A | 6 | -1 | 2 | [[core-rules/ignores-cover.md\|无视掩体]]，[[core-rules/torrent.md\|洪流]] |
 | 爆弹手枪 | 12" | 1 | 2+ | 4 | 0 | 1 | [[core-rules/pistol.md\|手枪]] |
-| Helstalker autocannon | 48" | 3 | 2+ | 9 | -1 | 3 | — |
-| Magma cutter | 6" | 2 | 3+ | 9 | -4 | D6 | [[core-rules/melta.md\|melta 2]] |
+| 地狱爬行者自动炮 | 48" | 3 | 2+ | 9 | -1 | 3 | — |
+| 岩浆切割机 | 6" | 2 | 3+ | 9 | -4 | D6 | [[core-rules/melta.md\|热熔2]] |
 
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
 | 钢铁利爪 | 近战 | 4 | 3+ | 6 | -1 | 2 | [[core-rules/extra-attacks.md\|额外攻击]] |
-| Impaler chainglaive | 近战 | 5 | 2+ | 8 | -3 | 3 | lance |
-| 科技病毒注射器  | 近战 | 1 | 3+ | 3 | -3 | 2 | [[core-rules/anti.md\|反载具 2+]]，[[core-rules/extra-attacks.md\|额外攻击]] |
+| 穿刺者长刀 | 近战 | 5 | 2+ | 8 | -3 | 3 | [[core-rules/lance.md\|骑枪]] |
+| 科技病毒注射器  | 近战 | 1 | 3+ | 3 | -3 | 2 | [[core-rules/anti.md\|针对载具2+]]，[[core-rules/extra-attacks.md\|额外攻击]] |
 
 ## 技能
 - **【阵营技能】：黑暗契约**

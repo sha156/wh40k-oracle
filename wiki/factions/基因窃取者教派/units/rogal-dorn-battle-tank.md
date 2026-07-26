@@ -1,5 +1,5 @@
 ---
-id: 000003987
+id: '000003987'
 name_zh: 罗格多恩坦克
 name_en: Rogal Dorn Battle Tank
 faction: 基因窃取者教派

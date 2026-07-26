@@ -1,5 +1,5 @@
 ---
-id: 000000548
+id: '000000548'
 name_zh: 古墓飞刃
 name_en: Tomb Blades
 faction: 太空死灵
@@ -29,7 +29,7 @@ updated: '2026-07-23'
 |---|---|---|---|---|---|---|---|
 | 粒子光束枪   | 18" | D6 | 3+ | 5 | 0 | 1 | [[core-rules/blast.md\|爆炸]]，[[core-rules/devastating-wounds.md\|毁灭伤害]] |
 | 双联高斯爆裂枪 | 24" | 2 | 3+ | 5 | -1 | 1 | [[core-rules/lethal-hits.md\|致命一击]]，[[core-rules/twin-linked.md\|双联]] |
-| 双联特斯拉卡宾枪  | 24" | 2 | 3+ | 5 | 0 | 1 | [[core-rules/assault.md\|突击]]，[[core-rules/sustained-hits.md\|连击 2]]，[[core-rules/twin-linked.md\|双联]] |
+| 双联特斯拉卡宾枪  | 24" | 2 | 3+ | 5 | 0 | 1 | [[core-rules/assault.md\|突击]]，[[core-rules/sustained-hits.md\|连击2]]，[[core-rules/twin-linked.md\|双联]] |
 
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |

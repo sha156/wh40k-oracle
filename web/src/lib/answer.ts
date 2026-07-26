@@ -11,6 +11,7 @@ export type Inline =
   | { t: "num"; s: string } // 数值强调（窄体加粗）
   | { t: "kw"; s: string } // 规则关键词，如 [重型]
   | { t: "strong"; s: string } // 结论强调（红）
+  | { t: "em"; s: string } // 源里的 *斜体*（核心规则页每节的英文小节名走它），只由 wiki 块编译器产出
   | { t: "cite"; n: number }; // 引用角标 [n]
 
 export type RichText = Inline[];

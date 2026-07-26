@@ -1,5 +1,5 @@
 ---
-id: 000000097
+id: '000000097'
 name_zh: 落锤堡
 name_en: Hammerfall Bunker
 faction: 星际战士
@@ -27,7 +27,7 @@ updated: '2026-07-23'
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
 | 落锤重型爆弹枪阵列 | 36" | 6 | 4+ | 5 | -1 | 2 | [[core-rules/sustained-hits.md\|连击1]]，[[core-rules/twin-linked.md\|双联]] |
-| 落锤重型喷火器阵列 | 12" | 2D6 | N/A | 5 | -1 | 1 | [[core-rules/ignores-cover.md\|忽视掩体]]，[[core-rules/torrent.md\|喷射]]，[[core-rules/twin-linked.md\|双联]] |
+| 落锤重型喷火器阵列 | 12" | 2D6 | N/A | 5 | -1 | 1 | [[core-rules/ignores-cover.md\|无视掩体]]，[[core-rules/torrent.md\|洪流]]，[[core-rules/twin-linked.md\|双联]] |
 | 落锤导弹发射器-破片 | 48" | 2D6+2 | 4+ | 5 | 0 | 1 | [[core-rules/blast.md\|爆炸]] |
 | 落锤导弹发射器-穿甲 | 48" | 2 | 4+ | 10 | -2 | D6+1 | — |
 

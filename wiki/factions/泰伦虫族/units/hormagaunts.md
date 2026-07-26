@@ -1,5 +1,5 @@
 ---
-id: 000000469
+id: '000000469'
 name_zh: 刀虫
 name_en: Hormagaunts
 faction: 泰伦虫族

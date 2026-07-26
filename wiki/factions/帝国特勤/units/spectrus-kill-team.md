@@ -1,5 +1,6 @@
 ---
-id: 000003827
+id: '000003827'
+name_zh: 无形杀戮小队
 name_en: Spectrus Kill Team
 faction: 帝国特勤
 type: unit
@@ -20,34 +21,33 @@ updated: '2026-07-23'
 ## 属性表
 | 模型 | M | T | SV | W | LD | OC |
 |---|---|---|---|---|---|---|
-| Spectrus Kill Team | 6" | 4 | 3+ | 2 | 6+ | 1 |
+| 杀戮小队渗透者 | 6" | 4 | 3+ | 2 | 6+ | 1 |
 
 ## 射击武器
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| Accelerator autocannon | 48" | 3 | 4+ | 8 | -1 | 2 | heavy |
-| Bolt pistol | 12" | 1 | 3+ | 4 | 0 | 1 | pistol |
-| Bolt carbine | 24" | 2 | 3+ | 4 | 0 | 1 | precision |
-| Bolt sniper rifle | 36" | 1 | 3+ | 5 | -2 | 3 | heavy，precision |
-| Las fusil | 36" | 1 | 3+ | 9 | -3 | D6 | heavy |
-| Marksman bolt carbine | 24" | 2 | 3+ | 4 | 0 | 1 | heavy |
-| Occulus bolt carbine | 24" | 2 | 3+ | 4 | 0 | 1 | assault，ignores cover |
-| Special-issue bolt pistol | 12" | 1 | 3+ | 4 | -1 | 1 | pistol，precision |
+| 加速自动炮 | 48" | 3 | 4+ | 8 | -1 | 2 | [[core-rules/heavy.md\|重型]] |
+| 爆矢手枪 | 12" | 1 | 3+ | 4 | 0 | 1 | [[core-rules/pistol.md\|手枪]] |
+| 爆弹卡宾枪 | 24" | 2 | 3+ | 4 | 0 | 1 | [[core-rules/precision.md\|精准]] |
+| 爆矢狙击步枪 | 36" | 1 | 3+ | 5 | -2 | 3 | [[core-rules/heavy.md\|重型]]，[[core-rules/precision.md\|精准]] |
+| 激光燧发枪 | 36" | 1 | 3+ | 9 | -3 | D6 | [[core-rules/heavy.md\|重型]] |
+| 神射手爆弹卡宾枪 | 24" | 2 | 3+ | 4 | 0 | 1 | [[core-rules/heavy.md\|重型]] |
+| 全知者爆弹卡宾枪 | 24" | 2 | 3+ | 4 | 0 | 1 | [[core-rules/assault.md\|突击]]，[[core-rules/ignores-cover.md\|无视掩体]] |
+| 特种爆矢手枪 | 12" | 1 | 3+ | 4 | -1 | 1 | [[core-rules/pistol.md\|手枪]]，[[core-rules/precision.md\|精准]] |
 
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| Close combat weapon | 近战 | 3 | 3+ | 4 | 0 | 1 | — |
-| Combat knife | 近战 | 4 | 3+ | 4 | 0 | 1 | precision |
-| Paired combat blades | 近战 | 3 | 3+ | 4 | 0 | 1 | [[core-rules/sustained-hits.md\|sustained hits 1]] |
+| 格斗武器 | 近战 | 3 | 3+ | 4 | 0 | 1 | — |
+| 战斗刀 | 近战 | 4 | 3+ | 4 | 0 | 1 | [[core-rules/precision.md\|精准]] |
+| 格斗武器 | 近战 | 3 | 3+ | 4 | 0 | 1 | [[core-rules/sustained-hits.md\|连击1]] |
 
 ## 技能
-- **Spectrus Doctrines**：At the end of your opponent’s turn, if this unit is more than 6" away from all enemy units, you can remove this unit from the battlefield and place it into Strategic Reserves.
-- **Helix Gauntlet**：Models in the bearer’s unit have the Feel No Pain 6+ ability.
-- **Infiltrator Comms Array**：Each time you target the bearer’s unit with a Stratagem, roll one D6: on a 5+, you gain 1CP.
-- **Jump Pack**：The bearer has a Move characteristic of 12" and can move over models and terrain features as if they were not there.
-- **ATTACHED UNIT**：If a Character from your army with the Leader ability can be attached to an [[factions/帝国特勤/units/deathwatch-kill-team.md|Deathwatch Kill Team]], it can be attached to this unit instead.
-- **TRANSPORT**：This unit cannot embark within an [[factions/帝国特勤/units/imperial-rhino.md|Imperial Rhino]].
+- **无形战术**：在您对手的回合结束时，如果该单位位于所有敌方单位 6" 外，您可以将该单位从战场上移除并放入战略预备队。
+- **螺旋臂铠**：持有者所在单位中的模型拥有“不觉疼痛 6+”技能。
+- **渗透者通讯阵列**：当您对持有者所在单位使用计谋时，掷一枚 D6：如果掷骰结果为 5+，您获得 1CP。
+- **煽动者爆矢卡宾枪**：在己方射击阶段中，持有者所在单位在射击后可以进行一次常规移动。这样做的话，该单位在回合结束前不能进行冲锋。
+- **【阵营技能】：破敌重誓，任务战术**
 
 ## 单位构成
 - **5个模型** — 90 分

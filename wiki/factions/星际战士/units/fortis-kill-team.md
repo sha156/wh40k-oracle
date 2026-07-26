@@ -1,5 +1,5 @@
 ---
-id: 000002780
+id: '000002780'
 name_zh: 至强杀戮小队
 name_en: Fortis Kill Team
 faction: 星际战士
@@ -26,12 +26,12 @@ updated: '2026-07-23'
 ## 射击武器
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| Astartes grenade launcher – frag | 24" | D3 | 3+ | 4 | 0 | 1 | blast |
+| 阿斯塔特榴弹发射器（破片） | 24" | D3 | 3+ | 4 | 0 | 1 | [[core-rules/blast.md\|爆炸]] |
 | 阿斯塔特榴弹发射器 –穿甲 | 24" | 1 | 3+ | 9 | -2 | D3 | — |
 | 爆矢手枪 | 12" | 1 | 3+ | 4 | 0 | 1 | [[core-rules/pistol.md\|手枪]] |
-| [[factions/星际战士/units/castellan.md\|Castellan]] launcher | 36" | D3 | 3+ | 4 | 0 | 1 | blast，indirect fire |
+| 堡主发射器 | 36" | D3 | 3+ | 4 | 0 | 1 | [[core-rules/blast.md\|爆炸]]，[[core-rules/indirect-fire.md\|曲射]] |
 | 死亡守望爆矢步枪 | 24" | 2 | 3+ | 5 | -2 | 1 | [[core-rules/assault.md\|突击]]，[[core-rules/heavy.md\|重型]]，[[core-rules/lethal-hits.md\|致命一击]] |
-| 喷火手枪 | 12" | D6 | N/A | 3 | 0 | 1 | [[core-rules/ignores-cover.md\|无视掩体]]，[[core-rules/torrent.md\|洪流]] |
+| 喷火手枪 | 12" | D6 | N/A | 3 | 0 | 1 | [[core-rules/ignores-cover.md\|无视掩体]]，[[core-rules/pistol.md\|手枪]]，[[core-rules/torrent.md\|洪流]] |
 | 重型爆矢手枪 | 18" | 1 | 3+ | 4 | -1 | 1 | [[core-rules/pistol.md\|手枪]] |
 | 等离子焚化枪 - 标准 | 24" | 2 | 3+ | 7 | -2 | 1 | [[core-rules/assault.md\|突击]]，[[core-rules/heavy.md\|重型]] |
 | 等离子焚化枪 - 过载 | 24" | 2 | 3+ | 8 | -3 | 2 | [[core-rules/assault.md\|突击]]，[[core-rules/hazardous.md\|危险]]，[[core-rules/heavy.md\|重型]] |
@@ -45,11 +45,11 @@ updated: '2026-07-23'
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| 阿斯塔特链锯剑 | 近战 | 4 | 3+ | 4 | -1 | 1 | 注：中文4+英文3+以英文为准 |
+| 阿斯塔特链锯剑 | 近战 | 4 | 3+ | 4 | -1 | 1 | — |
 | 格斗武器 | 近战 | 3 | 3+ | 4 | 0 | 1 | — |
-| Power fist | 近战 | 3 | 3+ | 8 | -2 | 2 | — |
+| 动力拳 | 近战 | 3 | 3+ | 8 | -2 | 2 | — |
 | 动力武器 | 近战 | 4 | 3+ | 5 | -2 | 1 | — |
-| Thunder hammer | 近战 | 3 | 4+ | 8 | -2 | 2 | devastating wounds |
+| 雷霆锤 | 近战 | 3 | 4+ | 8 | -2 | 2 | [[core-rules/devastating-wounds.md\|毁灭伤害]] |
 
 ## 技能
 - **至强战术**：当该单位中的模型对低于初始兵力的单位进行攻击时，命中掷骰结果加 1。当该单位中的模型对低于半数兵力的单位进行攻击时，命中掷骰和致伤掷骰结果都加 1。

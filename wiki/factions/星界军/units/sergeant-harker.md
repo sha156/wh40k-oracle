@@ -24,12 +24,12 @@ updated: '2026-07-23'
 ## 射击武器
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| Payback | 36" | 3 | 3+ | 5 | -1 | 2 | [[core-rules/sustained-hits.md\|sustained hits 1]] |
+| Payback | 36" | 3 | 3+ | 5 | -1 | 2 | [[core-rules/sustained-hits.md\|连击1]] |
 
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| Close combat weapon | 近战 | 4 | 3+ | 4 | 0 | 1 | — |
+| 格斗武器 | 近战 | 4 | 3+ | 4 | 0 | 1 | — |
 
 ## 技能
 - **Harker’s Hellraisers**：While this model is leading a unit, each time a ranged attack targets that unit, if the attacking model is more than 12" away, subtract 1 from the Hit roll.

@@ -1,5 +1,5 @@
 ---
-id: 000003959
+id: '000003959'
 name_en: Sabre Weapons Battery
 faction: 基因窃取者教派
 type: unit
@@ -25,15 +25,15 @@ updated: '2026-07-23'
 ## 射击武器
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| Twin heavy bolter | 36" | 3 | 4+ | 5 | -1 | 2 | [[core-rules/sustained-hits.md\|sustained hits 1]]，twin-linked |
-| Twin autocannon | 48" | 2 | 4+ | 9 | -1 | 3 | twin-linked |
-| Twin lascannon | 48" | 1 | 4+ | 12 | -3 | D6+1 | twin-linked |
-| Twin heavy stubber | 36" | 3 | 4+ | 4 | 0 | 1 | [[core-rules/rapid-fire.md\|rapid fire 3]]，twin-linked |
+| 双联重型爆弹枪 | 36" | 3 | 4+ | 5 | -1 | 2 | [[core-rules/sustained-hits.md\|连击1]]，[[core-rules/twin-linked.md\|双联]] |
+| 双联自动炮 | 48" | 2 | 4+ | 9 | -1 | 3 | [[core-rules/twin-linked.md\|双联]] |
+| 双联激光炮 | 48" | 1 | 4+ | 12 | -3 | D6+1 | [[core-rules/twin-linked.md\|双联]] |
+| 双联重机枪 | 36" | 3 | 4+ | 4 | 0 | 1 | [[core-rules/rapid-fire.md\|速射3]]，[[core-rules/twin-linked.md\|双联]] |
 
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| Close combat weapon | 近战 | 1 | 4+ | 3 | 0 | 1 | — |
+| 格斗武器 | 近战 | 1 | 4+ | 3 | 0 | 1 | — |
 
 ## 技能
 - **Defence Searchlight**：At the start of your Shooting phase, you can select one enemy unit within 24" and visible to the bearer. Until the end of the phase, that unit cannot have the Benefit of Cover.

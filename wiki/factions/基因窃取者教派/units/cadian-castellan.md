@@ -1,5 +1,5 @@
 ---
-id: 000003938
+id: '000003938'
 name_zh: 卡迪安堡主
 name_en: Cadian Castellan
 faction: 基因窃取者教派
@@ -28,10 +28,10 @@ updated: '2026-07-23'
 ## 射击武器
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| Boltgun | 24" | 1 | 3+ | 4 | 0 | 1 | [[core-rules/rapid-fire.md\|rapid fire 1]] |
+| 爆弹枪 | 24" | 1 | 3+ | 4 | 0 | 1 | [[core-rules/rapid-fire.md\|速射1]] |
 | 激光手枪 | 12" | 1 | 3+ | 3 | 0 | 1 | [[core-rules/pistol.md\|手枪]] |
 | 等离子手枪（标准） | 12" | 1 | 3+ | 7 | -2 | 1 | [[core-rules/pistol.md\|手枪]] |
-| Bolt pistol | 12" | 1 | 3+ | 4 | 0 | 1 | pistol |
+| 爆弹手枪 | 12" | 1 | 3+ | 4 | 0 | 1 | [[core-rules/pistol.md\|手枪]] |
 | 等离子手枪（过载） | 12" | 1 | 3+ | 8 | -3 | 2 | [[core-rules/hazardous.md\|危险]]，[[core-rules/pistol.md\|手枪]] |
 
 ## 近战武器

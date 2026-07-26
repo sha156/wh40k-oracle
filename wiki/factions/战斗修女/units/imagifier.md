@@ -1,5 +1,5 @@
 ---
-id: 000000900
+id: '000000900'
 name_zh: 持像者
 name_en: Imagifier
 faction: 战斗修女
@@ -29,8 +29,8 @@ updated: '2026-07-23'
 ## 射击武器
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| Bolt pistol | 12" | 1 | 3+ | 4 | 0 | 1 | pistol |
-| Boltgun | 24" | 1 | 3+ | 4 | 0 | 1 | [[core-rules/rapid-fire.md\|rapid fire 1]] |
+| 爆弹手枪 | 12" | 1 | 3+ | 4 | 0 | 1 | [[core-rules/pistol.md\|手枪]] |
+| 爆弹枪 | 24" | 1 | 3+ | 4 | 0 | 1 | [[core-rules/rapid-fire.md\|速射1]] |
 
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |

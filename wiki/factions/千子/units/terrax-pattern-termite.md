@@ -24,15 +24,15 @@ updated: '2026-07-23'
 ## 射击武器
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| Twin volkite charger | 18" | 2 | 3+ | 5 | 0 | 2 | devastating wounds，twin-linked |
-| Terrax melta cutter | 12" | 5 | 3+ | 9 | -4 | D6 | [[core-rules/melta.md\|melta 2]] |
-| Combi-bolter | 24" | 2 | 3+ | 4 | 0 | 1 | [[core-rules/rapid-fire.md\|rapid fire 2]] |
-| Heavy flamer | 12" | D6 | N/A | 5 | -1 | 1 | torrent，ignores cover |
+| Twin volkite charger | 18" | 2 | 3+ | 5 | 0 | 2 | [[core-rules/devastating-wounds.md\|毁灭伤害]]，[[core-rules/twin-linked.md\|双联]] |
+| Terrax melta cutter | 12" | 5 | 3+ | 9 | -4 | D6 | [[core-rules/melta.md\|热熔2]] |
+| 并联爆弹枪 | 24" | 2 | 3+ | 4 | 0 | 1 | [[core-rules/rapid-fire.md\|速射2]] |
+| 重型喷火器 | 12" | D6 | N/A | 5 | -1 | 1 | [[core-rules/torrent.md\|洪流]]，[[core-rules/ignores-cover.md\|无视掩体]] |
 
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| Termite drill | 近战 | 6 | 4+ | 14 | -2 | D3+3 | [[core-rules/anti.md\|anti-vehicle 3+]] |
+| Termite drill | 近战 | 6 | 4+ | 14 | -2 | D3+3 | [[core-rules/anti.md\|针对载具3+]] |
 
 ## 技能
 - **Termite Assault**：This model must start the battle in Reserves, but neither it nor any units embarked within it are counted towards any limits placed on the maximum number of Reserves units you can start the battle with. This model can be set up in the Reinforcements step of your first, second or third Movement phase, regardless of any mission rules. Any units embarked within this model can disembark after it has been set up on the battlefield, and if they do they must be set up more than 9" away from all enemy models.

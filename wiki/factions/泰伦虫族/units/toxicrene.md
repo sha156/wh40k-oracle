@@ -1,5 +1,5 @@
 ---
-id: 000000497
+id: '000000497'
 name_zh: 毒鞭兽
 name_en: Toxicrene
 faction: 泰伦虫族

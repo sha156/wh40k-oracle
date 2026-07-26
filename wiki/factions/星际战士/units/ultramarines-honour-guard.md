@@ -1,5 +1,5 @@
 ---
-id: 000000095
+id: '000000095'
 name_en: Ultramarines Honour Guard
 faction: 星际战士
 type: unit
@@ -24,19 +24,19 @@ updated: '2026-07-23'
 ## 射击武器
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| Bolt pistol | 12" | 1 | 3+ | 4 | 0 | 1 | pistol |
-| Boltgun | 24" | 2 | 3+ | 4 | 0 | 1 | — |
+| 爆弹手枪 | 12" | 1 | 3+ | 4 | 0 | 1 | [[core-rules/pistol.md\|手枪]] |
+| 爆弹枪 | 24" | 2 | 3+ | 4 | 0 | 1 | — |
 
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| Power weapon | 近战 | 3 | 3+ | 5 | -2 | 2 | — |
+| 动力武器 | 近战 | 3 | 3+ | 5 | -2 | 2 | — |
 
 ## 技能
 - **Honour Guard**：While a [[factions/星际战士/units/captain.md|Captain]] or Chapter Master model is leading this unit, each time an attack targets this unit, subtract 1 from the Wound roll.
 - **Astartes Banner**：While this unit contains an [[factions/星际战士/units/ancient.md|Ancient]], add 1 to the Objective Control characteristic of models in this unit.
 - **Honour or Death**：While this unit contains a <span class="kwb">CHAPTER</span> <span class="kwb">CHAMPION</span>, add 1 to Advance and Charge rolls made for this unit and you can target this unit with the Heroic Intervention Stratagem for 0CP.
-- **HONOUR GUARD OF MACRAGGE**：Marneus Calgar can be attached to this unit. If a Captain model from your army with the <span class="kwb">LEADER</span> ability can be attached to a [[factions/星际战士/units/command-squad.md|Command Squad]], it can be attached to this unit instead.
+- **HONOUR GUARD OF MACRAGGE**：Marneus Calgar can be attached to this unit. If a [[factions/星际战士/units/captain.md|Captain]] model from your army with the <span class="kwb">LEADER</span> ability can be attached to a [[factions/星际战士/units/command-squad.md|Command Squad]], it can be attached to this unit instead.
 
 ## 单位构成
 - **4个模型** — 155 分

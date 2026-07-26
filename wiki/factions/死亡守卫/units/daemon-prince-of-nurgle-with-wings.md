@@ -1,5 +1,6 @@
 ---
-id: 000002749
+id: '000002749'
+name_zh: 有翼纳垢恶魔王子
 name_en: Daemon Prince of Nurgle with Wings
 faction: 死亡守卫
 type: unit
@@ -28,16 +29,16 @@ updated: '2026-07-23'
 ## 射击武器
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| Infernal cannon | 24" | 3 | 2+ | 7 | -1 | 2 | lethal hits |
+| 狱火加农炮 | 24" | 3 | 2+ | 7 | -1 | 2 | [[core-rules/lethal-hits.md\|致命一击]] |
 
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| Hellforged weapons – strike | 近战 | 7 | 2+ | 8 | -2 | 3 | lethal hits |
-| Hellforged weapons – sweep | 近战 | 14 | 2+ | 6 | -1 | 1 | lethal hits |
+| 狱铸武器（重击） | 近战 | 7 | 2+ | 8 | -2 | 3 | [[core-rules/lethal-hits.md\|致命一击]] |
+| 狱铸武器（横扫） | 近战 | 14 | 2+ | 6 | -1 | 1 | [[core-rules/lethal-hits.md\|致命一击]] |
 
 ## 技能
-- **Horrifying Visage**：Each time this model ends a Charge move, select one enemy unit within Engagement Range of it. That unit must take a Battle-shock test, subtracting 1 from that test.
+- **[[factions/混沌恶魔/enhancements/horrifying-visage.md|Horrifying Visage]]**：Each time this model ends a Charge move, select one enemy unit within Engagement Range of it. That unit must take a Battle-shock test, subtracting 1 from that test.
 - **Enfeebling Miasma (Aura)**：While an enemy unit (excluding <span class="kwb">MONSTERS</span> and <span class="kwb">VEHICLES</span>) is within 6" of this model, each time that unit is selected to Fall Back, models in that enemy unit must take Desperate Escape tests. When doing so, if that enemy unit is Battle-shocked, subtract 1 from each of those Desperate Escape tests.
 
 ## 单位构成

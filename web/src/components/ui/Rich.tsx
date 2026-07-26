@@ -6,6 +6,8 @@ interface RichProps {
   numClass?: string;
   kwClass?: string;
   strongClass?: string;
+  /** *斜体*：核心规则页每节紧跟中文标题的英文小节名（*ARMIES*）走这条 */
+  emClass?: string;
   citeClass?: string;
 }
 
@@ -15,6 +17,7 @@ export function Rich({
   numClass = "font-cond font-bold",
   kwClass = "font-semibold text-cyan-glow",
   strongClass = "font-bold text-gw-red",
+  emClass = "italic",
   citeClass = "font-mono text-[10.5px] text-[#7a8f89]",
 }: RichProps) {
   return (
@@ -38,6 +41,12 @@ export function Rich({
               <b key={i} className={strongClass}>
                 {seg.s}
               </b>
+            );
+          case "em":
+            return (
+              <em key={i} className={emClass}>
+                {seg.s}
+              </em>
             );
           case "cite":
             return (

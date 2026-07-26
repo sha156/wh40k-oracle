@@ -32,7 +32,7 @@ updated: '2026-07-23'
 | 爆裂速射炮 | 18" | 4 | 4+ | 5 | 0 | 1 | — |
 | 集束炮阵 | 24" | 2D6+6 | 4+ | 6 | -1 | 1 | [[core-rules/blast.md\|爆炸]] |
 | 核融泯灭炮 | 24" | 5 | 4+ | 10 | -4 | D6 | [[core-rules/melta.md\|热熔3]] |
-| 重型磁轨加农炮阵 | 120" | 2 | 4+ | 26 | -5 | 16 | [[core-rules/heavy.md\|重型]]，[[core-rules/devastating-wounds.md\|毁灭伤害]] |
+| 重型磁轨加农炮阵 | 120" | 2 | 4+ | 26 | -5 | 16 | [[core-rules/devastating-wounds.md\|毁灭伤害]]，[[core-rules/heavy.md\|重型]] |
 | 奈克瑟斯导弹发射器 | 36" | 8 | 4+ | 8 | -3 | 2 | — |
 | 脉冲炮击系统 | 60" | 8 | 4+ | 5 | -1 | 3 | [[core-rules/anti.md\|针对步兵2+]] |
 | 智能导弹系统 | 30" | 3 | 4+ | 5 | 0 | 1 | [[core-rules/indirect-fire.md\|曲射]] |

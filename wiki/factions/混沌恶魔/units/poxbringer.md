@@ -40,4 +40,4 @@ updated: '2026-07-23'
 
 ## 关键词
 - **阵营关键词**：Legiones Daemonica
-- **普通关键词**：Shadow Legion，Poxbringer，Nurgle，Daemon，[[core-rules/infantry.md|Infantry]]，[[core-rules/character.md|Character]]，[[core-rules/psyker.md|Psyker]]，Chaos
+- **普通关键词**：[[factions/混沌恶魔/detachments/shadow-legion.md|Shadow Legion]]，Poxbringer，Nurgle，Daemon，[[core-rules/infantry.md|Infantry]]，[[core-rules/character.md|Character]]，[[core-rules/psyker.md|Psyker]]，Chaos

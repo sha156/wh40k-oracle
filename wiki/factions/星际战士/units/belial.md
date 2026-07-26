@@ -1,5 +1,5 @@
 ---
-id: 000000219
+id: '000000219'
 name_zh: 贝利亚大导师
 name_en: Belial
 faction: 星际战士

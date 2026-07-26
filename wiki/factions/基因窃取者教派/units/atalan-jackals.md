@@ -29,7 +29,7 @@ updated: '2026-07-23'
 ## 射击武器
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| 阿塔兰焚化者 | 12" | D6 | N/A | 5 | -1 | 1 | [[core-rules/ignores-cover.md\|忽略掩体]]，[[core-rules/torrent.md\|喷射]] |
+| 阿塔兰焚化者 | 12" | D6 | N/A | 5 | -1 | 1 | [[core-rules/ignores-cover.md\|无视掩体]]，[[core-rules/torrent.md\|洪流]] |
 | 阿塔兰火枪 | 12" | 2 | 4+ | 4 | 0 | 1 | [[core-rules/pistol.md\|手枪]] |
 | 榴弹发射器（破片） | 24" | D3 | 4+ | 4 | 0 | 1 | [[core-rules/blast.md\|爆炸]] |
 | 榴弹发射器（猎杀） | 24" | 1 | 4+ | 9 | -2 | D3 | — |

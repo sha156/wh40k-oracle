@@ -1,5 +1,5 @@
 ---
-id: 000004179
+id: '000004179'
 name_en: Judiciar Xacharus
 faction: 星际战士
 type: unit
@@ -27,12 +27,12 @@ updated: '2026-07-23'
 ## 射击武器
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| Absolvor bolt pistol | 18" | 1 | 3+ | 5 | -1 | 2 | pistol |
+| 赦免者爆弹手枪 | 18" | 1 | 3+ | 5 | -1 | 2 | [[core-rules/pistol.md\|手枪]] |
 
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| Executioner relic blade | 近战 | 5 | 2+ | 7 | -2 | 2 | devastating wounds，precision |
+| 圣物处刑者巨剑 | 近战 | 5 | 2+ | 7 | -2 | 2 | [[core-rules/devastating-wounds.md\|毁灭伤害]]，[[core-rules/precision.md\|精准]] |
 
 ## 技能
 - **Tempormortis**：While this model is leading a unit, that unit has the Fights First ability.
@@ -43,4 +43,4 @@ updated: '2026-07-23'
 
 ## 关键词
 - **阵营关键词**：Adeptus Astartes，Blood Ravens
-- **普通关键词**：Xacharus，Tacticus，[[core-rules/infantry.md|Infantry]]，[[core-rules/character.md|Character]]，Imperium，Judiciar，[[core-rules/epic-hero.md|Epic Hero]]
+- **普通关键词**：Xacharus，Tacticus，[[core-rules/infantry.md|Infantry]]，[[core-rules/character.md|Character]]，Imperium，[[factions/星际战士/units/judiciar.md|Judiciar]]，[[core-rules/epic-hero.md|Epic Hero]]

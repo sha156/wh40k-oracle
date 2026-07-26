@@ -26,12 +26,12 @@ updated: '2026-07-23'
 ## 射击武器
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| Combi-weapon | 24" | 1 | 3+ | 4 | 0 | 1 | [[core-rules/anti.md\|anti-infantry 4+]]，devastating wounds，[[core-rules/rapid-fire.md\|rapid fire 1]] |
+| 复合武器 | 24" | 1 | 3+ | 4 | 0 | 1 | [[core-rules/anti.md\|针对步兵4+]]，[[core-rules/devastating-wounds.md\|毁灭伤害]]，[[core-rules/rapid-fire.md\|速射1]] |
 
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| 一对淬毒战斗刀       | 近战 | 5 | 2+ | 4 | -1 | 1 | [[core-rules/sustained-hits.md\|连击 1]]，[[core-rules/anti.md\|反步兵 4+]] |
+| 一对淬毒战斗刀       | 近战 | 5 | 2+ | 4 | -1 | 1 | [[core-rules/anti.md\|针对步兵4+]]，[[core-rules/sustained-hits.md\|连击1]] |
 
 ## 技能
 - **【阵营技能】：破敌重誓**
@@ -44,4 +44,4 @@ updated: '2026-07-23'
 
 ## 关键词
 - **阵营关键词**：Adeptus Astartes
-- **普通关键词**：Lieutenant with Combi-weapon，Lieutenant，Imperium，Phobos，[[core-rules/character.md|Character]]，[[core-rules/infantry.md|Infantry]]，[[core-rules/grenades.md|Grenades]]
+- **普通关键词**：[[factions/星际战士/units/lieutenant.md|Lieutenant]] with Combi-weapon，Lieutenant，Imperium，Phobos，[[core-rules/character.md|Character]]，[[core-rules/infantry.md|Infantry]]，[[core-rules/grenades.md|Grenades]]

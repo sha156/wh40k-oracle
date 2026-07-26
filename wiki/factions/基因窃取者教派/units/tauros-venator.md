@@ -24,9 +24,9 @@ updated: '2026-07-23'
 ## 射击武器
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| Hunter-killer missile | 48" | 1 | 4+ | 14 | -3 | D6 | one shot |
-| Twin multi-laser | 36" | 4 | 4+ | 6 | 0 | 1 | twin-linked |
-| Twin lascannon | 48" | 1 | 4+ | 12 | -3 | D6+1 | twin-linked |
+| 猎杀飞弹 | 48" | 1 | 4+ | 14 | -3 | D6 | [[core-rules/one-shot.md\|单发]] |
+| Twin multi-laser | 36" | 4 | 4+ | 6 | 0 | 1 | [[core-rules/twin-linked.md\|双联]] |
+| 双联激光炮 | 48" | 1 | 4+ | 12 | -3 | D6+1 | [[core-rules/twin-linked.md\|双联]] |
 
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |

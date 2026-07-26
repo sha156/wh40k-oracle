@@ -27,13 +27,13 @@ updated: '2026-07-23'
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
 | 瘟疫爆弹手枪  | 12" | 1 | 3+ | 4 | 0 | 1 | [[core-rules/lethal-hits.md\|致命一击]]，[[core-rules/pistol.md\|手枪]] |
-| Plague Wind – witchfire | 12" | D6 | N/A | 4 | -1 | D3 | psychic，torrent |
-| 瘟疫之风（过载）   | 12" | D6+3 | N/A | 6 | -2 | D3 | 灵能，[[core-rules/torrent.md\|喷射]]，[[core-rules/hazardous.md\|危险]] |
+| 瘟疫之风（标准） | 12" | D6 | N/A | 4 | -1 | D3 | [[core-rules/psychic-attacks.md\|灵能]]，[[core-rules/torrent.md\|洪流]] |
+| 瘟疫之风（过载）   | 12" | D6+3 | N/A | 6 | -2 | D3 | [[core-rules/hazardous.md\|危险]]，[[core-rules/psychic-attacks.md\|灵能]]，[[core-rules/torrent.md\|洪流]] |
 
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| 枯萎法杖 | 近战 | 4 | 3+ | 6 | -1 | D3 | [[core-rules/lethal-hits.md\|致命一击]]，灵能 |
+| 枯萎法杖 | 近战 | 4 | 3+ | 6 | -1 | D3 | [[core-rules/lethal-hits.md\|致命一击]]，[[core-rules/psychic-attacks.md\|灵能]] |
 
 ## 技能
 - **【阵营技能】：纳垢赐福【光环】**

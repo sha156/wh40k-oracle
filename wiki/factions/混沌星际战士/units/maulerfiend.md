@@ -1,5 +1,6 @@
 ---
-id: 000000968
+id: '000000968'
+name_zh: 重锤魔
 name_en: Maulerfiend
 faction: 混沌星际战士
 type: unit
@@ -28,16 +29,18 @@ updated: '2026-07-23'
 ## 射击武器
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| Magma cutters | 6" | 2 | 3+ | 9 | -4 | D6 | [[core-rules/melta.md\|melta 2]] |
+| 岩浆切割机 | 6" | 2 | 3+ | 9 | -4 | D6 | [[core-rules/melta.md\|热熔2]] |
 
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| Lasher tendrils | 近战 | 6 | 3+ | 7 | -1 | 1 | extra attacks |
-| Maulerfiend fists | 近战 | 6 | 3+ | 14 | -2 | D6+1 | — |
+| 鞭打触须  | 近战 | 6 | 3+ | 7 | -1 | 1 | [[core-rules/extra-attacks.md\|额外攻击]] |
+| 锤魔铁拳 | 近战 | 6 | 3+ | 14 | -2 | D6+1 | — |
 
 ## 技能
-- **Siege Crawler**：You can ignore any or all modifiers to this model’s Move characteristic and to Advance and Charge rolls made for it.
+- **【阵营技能】：黑暗契约**
+- **攻城机械**：本模型可以忽视任意或全部对其 M 值和 加速，冲锋投掷结果的修正
+- **严重损伤**：当本模型 W 值为 1-4 时，进行的攻击命 中结果-1
 
 ## 单位构成
 - **1个模型** — 130 分

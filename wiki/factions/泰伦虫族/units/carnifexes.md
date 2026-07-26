@@ -1,5 +1,5 @@
 ---
-id: 000000490
+id: '000000490'
 name_zh: 刽子手
 name_en: Carnifexes
 faction: 泰伦虫族

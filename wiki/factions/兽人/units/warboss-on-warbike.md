@@ -27,14 +27,14 @@ updated: '2026-07-23'
 ## 射击武器
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| Twin dakkagun | 18" | 3 | 5+ | 5 | 0 | 1 | assault，[[core-rules/rapid-fire.md\|rapid fire 2]]，twin-linked |
+| 双联突突枪 | 18" | 3 | 5+ | 5 | 0 | 1 | [[core-rules/assault.md\|突击]]，[[core-rules/rapid-fire.md\|速射2]]，[[core-rules/twin-linked.md\|双联]] |
 
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| Big choppa | 近战 | 5 | 2+ | 8 | -1 | 2 | — |
-| Killsaw | 近战 | 3 | 4+ | 12 | -3 | 2 | — |
-| Power klaw | 近战 | 4 | 3+ | 10 | -2 | 2 | — |
+| 大砍刀 | 近战 | 5 | 2+ | 8 | -1 | 2 | — |
+| 杀戮锯 | 近战 | 3 | 4+ | 12 | -3 | 2 | — |
+| 动力爪 | 近战 | 4 | 3+ | 10 | -2 | 2 | — |
 
 ## 技能
 - **Speedboss**：While this model is leading a unit, each time a model in that unit makes a melee attack, add 1 to the Hit roll.
@@ -45,4 +45,4 @@ updated: '2026-07-23'
 
 ## 关键词
 - **阵营关键词**：Orks
-- **普通关键词**：Speed Freeks，[[core-rules/mounted.md|Mounted]]，[[core-rules/character.md|Character]]，[[core-rules/grenades.md|Grenades]]，Warboss
+- **普通关键词**：Speed Freeks，[[core-rules/mounted.md|Mounted]]，[[core-rules/character.md|Character]]，[[core-rules/grenades.md|Grenades]]，[[factions/兽人/units/warboss.md|Warboss]]

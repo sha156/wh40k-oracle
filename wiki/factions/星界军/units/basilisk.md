@@ -1,5 +1,6 @@
 ---
-id: 000000695
+id: '000000695'
+name_zh: 石化蜥蜴自行火炮
 name_en: Basilisk
 faction: 星界军
 type: unit
@@ -20,24 +21,24 @@ updated: '2026-07-23'
 ## 属性表
 | 模型 | M | T | SV | W | LD | OC |
 |---|---|---|---|---|---|---|
-| Basilisk | 10" | 9 | 3+ | 11 | 7+ | 3 |
+| 石化蜥蜴自行火炮 | 10" | 9 | 3+ | 11 | 7+ | 3 |
 
 ## 射击武器
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| Earthshaker cannon | 240" | D6+3 | 4+ | 8 | -2 | 2 | blast，indirect fire |
-| Heavy bolter | 36" | 3 | 4+ | 5 | -1 | 2 | [[core-rules/sustained-hits.md\|sustained hits 1]] |
-| Heavy flamer | 12" | D6 | N/A | 5 | -1 | 1 | ignores cover，torrent |
-| Hunter-killer missile | 48" | 1 | 4+ | 14 | -3 | D6 | one shot |
+| 撼地炮 | 240" | D6+3 | 4+ | 8 | -2 | 2 | [[core-rules/blast.md\|爆炸]]，[[core-rules/indirect-fire.md\|曲射]] |
+| 重型爆弹枪 | 36" | 3 | 4+ | 5 | -1 | 2 | [[core-rules/sustained-hits.md\|连击1]] |
+| 重型火焰喷射器 | 12" | D6 | N/A | 5 | -1 | 1 | [[core-rules/ignores-cover.md\|无视掩体]]，[[core-rules/torrent.md\|洪流]] |
+| 猎杀飞弹 | 48" | 1 | 4+ | 14 | -3 | D6 | [[core-rules/one-shot.md\|单发]] |
 
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| Armoured tracks | 近战 | 3 | 4+ | 6 | 0 | 1 | — |
+| 装甲履带 | 近战 | 3 | 4+ | 6 | 0 | 1 | — |
 
 ## 技能
-- **Earthshaker Rounds**：In your Shooting phase, after this model has shot, if one or more of those attacks made with its earthshaker cannon scored a hit against an enemy <span class="kwb">INFANTRY</span> unit, until the start of your next Shooting phase, that unit is shaken. While a unit is shaken, subtract 2" from its Move characteristic and subtract 2 from Charge rolls made for it.
-- **One Shot**：The bearer can only shoot with this weapon once per battle.
+- **撼地炮击**：在您的射击阶段中，当该模型的撼地炮命中了一个敌方步兵单位一次或多次，那么直到你的[[factions/兽人/stratagems/on-to-da-next.md|下一个]]射击阶段前该单位处于动摇状态。当单位处于动摇状态时，移动属性-2，突进和冲锋掷骰结果-2。
+- **受损**：当该模型剩余1-4点耐伤，该模型进行攻击时命中投掷结果-1。
 
 ## 单位构成
 - **1个模型** — 115 分

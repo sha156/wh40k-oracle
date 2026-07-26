@@ -1,5 +1,5 @@
 ---
-id: 000002479
+id: '000002479'
 name_zh: 莫雯·瓦尔
 name_en: Morvenn Vahl
 faction: 战斗修女

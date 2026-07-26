@@ -35,7 +35,7 @@ updated: '2026-07-23'
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
 | 懦夫之祸  | 近战 | 7 | 2+ | 6 | -2 | 2 | [[core-rules/devastating-wounds.md\|毁灭伤害]] |
-| 利刃犄角 | 近战 | 4 | 3+ | 6 | -1 | 2 | [[core-rules/extra-attacks.md\|额外攻击]]，骑枪 |
+| 利刃犄角 | 近战 | 4 | 3+ | 6 | -1 | 2 | [[core-rules/extra-attacks.md\|额外攻击]]，[[core-rules/lance.md\|骑枪]] |
 
 ## 技能
 - **阵营：恐虐祝福**

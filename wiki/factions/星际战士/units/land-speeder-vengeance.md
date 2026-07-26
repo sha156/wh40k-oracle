@@ -32,7 +32,7 @@ updated: '2026-07-23'
 | 突击炮 | 24" | 6 | 3+ | 6 | 0 | 1 | [[core-rules/devastating-wounds.md\|毁灭伤害]] |
 | 重型爆弹枪 | 36" | 3 | 3+ | 5 | -1 | 2 | [[core-rules/sustained-hits.md\|连击1]] |
 | 等离子风暴枪（标准） | 36" | D6+1 | 3+ | 8 | -2 | 2 | [[core-rules/blast.md\|爆炸]]，[[core-rules/twin-linked.md\|双联]] |
-| 等离子风暴枪（过载） | 36" | D6+1 | 3+ | 9 | -3 | 3 | [[core-rules/blast.md\|爆炸]]，[[core-rules/twin-linked.md\|双联]]，[[core-rules/hazardous.md\|危险]] |
+| 等离子风暴枪（过载） | 36" | D6+1 | 3+ | 9 | -3 | 3 | [[core-rules/blast.md\|爆炸]]，[[core-rules/hazardous.md\|危险]]，[[core-rules/twin-linked.md\|双联]] |
 
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |

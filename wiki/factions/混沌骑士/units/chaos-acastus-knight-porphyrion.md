@@ -1,5 +1,5 @@
 ---
-id: 000001099
+id: '000001099'
 name_zh: 混沌巨人王型阿卡斯托斯骑士
 name_en: Chaos Acastus Knight Porphyrion
 faction: 混沌骑士

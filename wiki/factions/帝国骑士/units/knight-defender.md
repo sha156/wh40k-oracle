@@ -1,5 +1,5 @@
 ---
-id: 000004149
+id: '000004149'
 name_zh: 护卫骑士
 name_en: Knight Defender
 faction: 帝国骑士
@@ -29,11 +29,11 @@ updated: '2026-07-23'
 ## 射击武器
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| 转换光束歼灭炮 | 36" | 3 | 3+ | 12 | -2 | 4 | 转换光束，连击D3 |
+| 转换光束歼灭炮 | 36" | 3 | 3+ | 12 | -2 | 4 | 转换，[[core-rules/sustained-hits.md\|连击D3]] |
 | 离子处决炮（普通） | 36" | D6+3 | 3+ | 8 | -2 | 2 | [[core-rules/blast.md\|爆炸]] |
 | 离子处决炮（过载） | 36" | D6+3 | 3+ | 9 | -3 | 3 | [[core-rules/blast.md\|爆炸]]，[[core-rules/hazardous.md\|危险]] |
 | 磷火爆轰枪 | 24" | 1 | 3+ | 5 | 0 | 1 | [[core-rules/ignores-cover.md\|无视掩体]]，[[core-rules/rapid-fire.md\|速射1]] |
-| 双联焚焰枪 | 12" | D6 | N/A | 6 | -1 | 1 | [[core-rules/torrent.md\|洪流]]，[[core-rules/ignores-cover.md\|无视掩体]]，[[core-rules/twin-linked.md\|双联]] |
+| 双联焚焰枪 | 12" | D6 | N/A | 6 | -1 | 1 | [[core-rules/ignores-cover.md\|无视掩体]]，[[core-rules/torrent.md\|洪流]]，[[core-rules/twin-linked.md\|双联]] |
 
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |

@@ -27,7 +27,7 @@ updated: '2026-07-23'
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
 | 光矛 | 36" | 1 | 4+ | 12 | -3 | D6+2 | — |
-| 灵族火焰喷射器 | 12" | D6 | N/A | 4 | 0 | 1 | [[core-rules/assault.md\|突击]]，[[core-rules/ignores-cover.md\|无视掩体]]，[[core-rules/torrent.md\|喷射]] |
+| 灵族火焰喷射器 | 12" | D6 | N/A | 4 | 0 | 1 | [[core-rules/assault.md\|突击]]，[[core-rules/ignores-cover.md\|无视掩体]]，[[core-rules/torrent.md\|洪流]] |
 | 灵族导弹发射器（击星弹头） | 48" | 1 | 4+ | 10 | -2 | D6 | — |
 | 灵族导弹发射器（阳炎弹头） | 48" | D6 | 4+ | 4 | -1 | 1 | [[core-rules/blast.md\|爆炸]] |
 | 散射激光 | 36" | 6 | 4+ | 5 | 0 | 1 | [[core-rules/sustained-hits.md\|连击1]] |

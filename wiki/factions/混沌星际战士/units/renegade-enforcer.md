@@ -27,17 +27,17 @@ updated: '2026-07-23'
 ## 射击武器
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| Autogun | 24" | 1 | 3+ | 3 | 0 | 1 | [[core-rules/rapid-fire.md\|rapid fire 1]] |
-| Enforcer pistol | 12" | 1 | 3+ | 4 | 0 | 1 | pistol |
-| Lasgun | 24" | 1 | 3+ | 3 | 0 | 1 | [[core-rules/rapid-fire.md\|rapid fire 1]] |
-| Shotgun | 12" | 2 | 3+ | 4 | 0 | 1 | assault |
+| 自动枪 | 24" | 1 | 3+ | 3 | 0 | 1 | [[core-rules/rapid-fire.md\|速射1]] |
+| Enforcer pistol | 12" | 1 | 3+ | 4 | 0 | 1 | [[core-rules/pistol.md\|手枪]] |
+| 激光枪 | 24" | 1 | 3+ | 3 | 0 | 1 | [[core-rules/rapid-fire.md\|速射1]] |
+| Shotgun | 12" | 2 | 3+ | 4 | 0 | 1 | [[core-rules/assault.md\|突击]] |
 
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
 | Enforcer melee weapon | 近战 | 4 | 3+ | 4 | 0 | 1 | — |
-| Power fist | 近战 | 3 | 3+ | 6 | -2 | 2 | — |
-| Power weapon | 近战 | 3 | 3+ | 4 | -2 | 1 | — |
+| 动力拳 | 近战 | 3 | 3+ | 6 | -2 | 2 | — |
+| 动力武器 | 近战 | 3 | 3+ | 4 | -2 | 1 | — |
 
 ## 技能
 - **Brutal Example**：While this model is leading a unit, you can target that unit with the Insane Bravery Stratagem for 0CP, and can do so even if another unit from your army has already been targeted with that Stratagem this phase. Each time you use this ability, one Bodyguard model in that unit is destroyed.

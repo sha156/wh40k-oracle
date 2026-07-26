@@ -27,15 +27,15 @@ updated: '2026-07-23'
 ## 射击武器
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| Boombits | 12" | D6 | N/A | 5 | 0 | 1 | torrent |
-| Killkannon | 24" | D6+3 | 5+ | 9 | -2 | 2 | — |
+| Boombits | 12" | D6 | N/A | 5 | 0 | 1 | [[core-rules/torrent.md\|洪流]] |
+| 杀戮炮 | 24" | D6+3 | 5+ | 9 | -2 | 2 | — |
 
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
 | Dread killsaw | 近战 | 4 | 3+ | 14 | -3 | 4 | — |
 | Dread rippa klaw | 近战 | 6 | 3+ | 12 | -2 | 3 | — |
-| Stompy feet | 近战 | 4 | 3+ | 7 | 0 | 1 | — |
+| 双足践踏 | 近战 | 4 | 3+ | 7 | 0 | 1 | — |
 
 ## 技能
 - **Mega Carnage**：Each time this model is selected to fight, you can select one enemy unit within Engagement Range of it and roll one D6, adding 2 to the result if this model made a Charge move this turn: on a 4-5, that enemy unit suffers D3 mortal wounds; on a 6+, that enemy unit suffers 3 mortal wounds.

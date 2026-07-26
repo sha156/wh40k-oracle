@@ -1,5 +1,6 @@
 ---
-id: 000000680
+id: '000000680'
+name_zh: 黎曼鲁斯指挥官
 name_en: Leman Russ Commander
 faction: 星界军
 type: unit
@@ -20,37 +21,37 @@ updated: '2026-07-23'
 ## 属性表
 | 模型 | M | T | SV | W | LD | OC |
 |---|---|---|---|---|---|---|
-| Leman Russ Commander | 10" | 11 | 2+ | 13 | 7+ | 3 |
+| 黎曼鲁斯指挥官 | 10" | 11 | 2+ | 13 | 7+ | 3 |
 
 ## 射击武器
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| Demolisher battle cannon | 24" | D6+1 | 4+ | 14 | -3 | D6 | blast |
-| Eradicator nova cannon | 36" | D3+6 | 4+ | 7 | -1 | 2 | blast，ignores cover |
-| Executioner plasma cannon – standard | 36" | D6+3 | 4+ | 7 | -2 | 2 | blast |
-| Executioner plasma cannon – supercharge | 36" | D6+3 | 4+ | 8 | -3 | 3 | blast，hazardous |
-| Exterminator autocannon | 48" | 4 | 4+ | 9 | -1 | 3 | [[core-rules/rapid-fire.md\|rapid fire 4]]，twin-linked |
-| Punisher gatling cannon | 24" | 20 | 4+ | 6 | 0 | 1 | — |
-| Heavy bolter | 36" | 3 | 4+ | 5 | -1 | 2 | [[core-rules/sustained-hits.md\|sustained hits 1]] |
-| Heavy flamer | 12" | D6 | N/A | 5 | -1 | 1 | ignores cover，torrent |
-| Heavy stubber | 36" | 3 | 4+ | 4 | 0 | 1 | [[core-rules/rapid-fire.md\|rapid fire 3]] |
-| Hunter-killer missile | 48" | 1 | 4+ | 14 | -3 | D6 | one shot |
-| Lascannon | 48" | 1 | 4+ | 12 | -3 | D6+1 | — |
-| Leman Russ battle cannon | 48" | D6+3 | 4+ | 10 | -1 | 3 | blast |
-| Multi-melta | 18" | 2 | 4+ | 9 | -4 | D6 | [[core-rules/melta.md\|melta 2]] |
-| Storm bolter | 24" | 2 | 4+ | 4 | 0 | 1 | [[core-rules/rapid-fire.md\|rapid fire 2]] |
-| Vanquisher battle cannon | 72" | 1 | 4+ | 18 | -4 | D6+6 | heavy |
+| 破坏者战斗加农炮 | 24" | D6+1 | 4+ | 14 | -3 | D6 | [[core-rules/blast.md\|爆炸]] |
+| 根除者新星炮 | 36" | D3+6 | 4+ | 7 | -1 | 2 | [[core-rules/blast.md\|爆炸]]，[[core-rules/ignores-cover.md\|无视掩体]] |
+| 处决者等离子炮（标准） | 36" | D6+3 | 4+ | 7 | -2 | 2 | [[core-rules/blast.md\|爆炸]] |
+| 处决者等离子炮（过载） | 36" | D6+3 | 4+ | 8 | -3 | 3 | [[core-rules/blast.md\|爆炸]]，[[core-rules/hazardous.md\|危险]] |
+| 灭绝者自动炮 | 48" | 4 | 4+ | 9 | -1 | 3 | [[core-rules/rapid-fire.md\|速射4]]，[[core-rules/twin-linked.md\|双联]] |
+| 惩罚者加特林 | 24" | 20 | 4+ | 6 | 0 | 1 | — |
+| 重型爆弹枪 | 36" | 3 | 4+ | 5 | -1 | 2 | [[core-rules/sustained-hits.md\|连击1]] |
+| 重型火焰喷射器 | 12" | D6 | N/A | 5 | -1 | 1 | [[core-rules/ignores-cover.md\|无视掩体]]，[[core-rules/torrent.md\|洪流]] |
+| 重型伐木枪 | 36" | 3 | 4+ | 4 | 0 | 1 | [[core-rules/rapid-fire.md\|速射3]] |
+| 猎杀飞弹 | 48" | 1 | 4+ | 14 | -3 | D6 | [[core-rules/one-shot.md\|单发]] |
+| 激光炮 | 48" | 1 | 4+ | 12 | -3 | D6+1 | — |
+| 黎曼鲁斯战斗加农炮 | 48" | D6+3 | 4+ | 10 | -1 | 3 | [[core-rules/blast.md\|爆炸]] |
+| 多管热熔 | 18" | 2 | 4+ | 9 | -4 | D6 | [[core-rules/melta.md\|热熔2]] |
+| 风暴爆弹枪 | 24" | 2 | 4+ | 4 | 0 | 1 | [[core-rules/rapid-fire.md\|速射2]] |
+| 征服者加农炮 | 72" | 1 | 4+ | 18 | -4 | D6+6 | [[core-rules/heavy.md\|重型]] |
 
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| Armoured tracks | 近战 | 6 | 4+ | 7 | 0 | 1 | — |
+| 装甲履带 | 近战 | 6 | 4+ | 7 | 0 | 1 | — |
 
 ## 技能
-- **Vox-net**：Each time this model issues an Order, it can issue it to an eligible unit up to 12" away.
-- **Death Befitting An Officer**：When this model is destroyed, roll one D6: on a 2+, do not remove it from play - it can, after the attacking model’s unit has finished making its attacks, shoot as if it were your Shooting phase and as if it had its full wounds remaining. This model is then removed from play.
-- **ORDERS**：This <span class="kwb">OFFICER</span> can issue up to 2 Orders to Squadron units.
-- **One Shot**：The bearer can only shoot with this weapon once per battle.
+- **受损**：当该模型剩余1-4点耐伤，该模型进行攻击时命中投掷结果-1。
+- **阵营能力-指挥之声**：该军官可以对编队单位下达至多2个命令
+- **通讯网络**：该单位发布命令时，最多可向距离为12寸的可选单位发布命令。
+- **军官之死**：当该模型被摧毁时，投掷一个D6，结果为2+则暂不移除该模型。当攻击该模型的单位结算完所有攻击后，该模型可以如在你的射击阶段视为拥有全部的耐伤一般进行一次射击后再移除该模型。
 
 ## 单位构成
 - **1个模型** — 215 分

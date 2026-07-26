@@ -1,5 +1,5 @@
 ---
-id: 000001449
+id: '000001449'
 name_zh: 摩托盾卫连长
 name_en: Shield-captain On Dawneagle Jetbike
 faction: 帝皇卫队
@@ -21,7 +21,7 @@ updated: '2026-07-23'
 ## 属性表
 | 模型 | M | T | SV | W | LD | OC |
 |---|---|---|---|---|---|---|
-| 摩托盾卫连长 | 12" | 7 | 2+ | 8 | 6+ | 2 |
+| 摩托[[factions/帝皇卫队/units/shield-captain.md\|盾卫连长]] | 12" | 7 | 2+ | 8 | 6+ | 2 |
 
 ### 特殊保护
 - 4+
@@ -29,13 +29,13 @@ updated: '2026-07-23'
 ## 射击武器
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| 飓风爆弹枪 | 18" | 3 | 2+ | 4 | -1 | 2 | [[core-rules/rapid-fire.md\|速射 3]]，[[core-rules/twin-linked.md\|双联]] |
+| 飓风爆弹枪 | 18" | 3 | 2+ | 4 | -1 | 2 | [[core-rules/rapid-fire.md\|速射3]]，[[core-rules/twin-linked.md\|双联]] |
 | 集束导弹 | 24" | 1 | 2+ | 10 | -3 | D6+1 | [[core-rules/twin-linked.md\|双联]] |
 
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| 拦截者骑枪 | 近战 | 6 | 2+ | 7 | -2 | 2 | [[core-rules/lance.md\|迅猛冲锋]] |
+| 拦截者骑枪 | 近战 | 6 | 2+ | 7 | -2 | 2 | [[core-rules/lance.md\|骑枪]] |
 
 ## 技能
 - **【阵营技能】：禁军武艺**

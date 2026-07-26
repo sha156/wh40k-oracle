@@ -1,5 +1,5 @@
 ---
-id: 000003587
+id: '000003587'
 name_en: Blood Slaughterer
 faction: 吞世者
 type: unit
@@ -27,13 +27,13 @@ updated: '2026-07-23'
 ## 射击武器
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| Impaler harpoon | 12" | 1 | 3+ | 12 | -2 | 3 | [[core-rules/anti.md\|anti-monster 2+]]，[[core-rules/anti.md\|anti-vehicle 2+]]，impaled |
+| Impaler harpoon | 12" | 1 | 3+ | 12 | -2 | 3 | [[core-rules/anti.md\|针对怪物2+]]，[[core-rules/anti.md\|针对载具2+]]，穿刺 |
 
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
 | Slaughter blade | 近战 | 5 | 3+ | 12 | -3 | 3 | — |
-| Twin slaughter blade | 近战 | 5 | 3+ | 12 | -3 | 3 | twin-linked |
+| Twin slaughter blade | 近战 | 5 | 3+ | 12 | -3 | 3 | [[core-rules/twin-linked.md\|双联]] |
 
 ## 技能
 - **Scuttling Gait**：Each time this unit Advances, do not make an Advance roll for it. Instead, until the end of the phase, add 6" to the Move characteristic of models in this unit.

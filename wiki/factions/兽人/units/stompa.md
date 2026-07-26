@@ -29,12 +29,12 @@ updated: '2026-07-23'
 ## 射击武器
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| Big shoota | 36" | 3 | 5+ | 5 | 0 | 1 | [[core-rules/rapid-fire.md\|rapid fire 2]] |
+| 大突突枪 | 36" | 3 | 5+ | 5 | 0 | 1 | [[core-rules/rapid-fire.md\|速射2]] |
 | 死亡加农炮 | 72" | 3D6 | 5+ | 14 | -3 | D6 | [[core-rules/blast.md\|爆炸]] |
-| 大烧枪 | 12" | D6 | N/A | 5 | -1 | 1 | [[core-rules/torrent.md\|洪流]]，[[core-rules/ignores-cover.md\|无视掩体]] |
+| 大烧枪 | 12" | D6 | N/A | 5 | -1 | 1 | [[core-rules/ignores-cover.md\|无视掩体]]，[[core-rules/torrent.md\|洪流]] |
 | 超级加特林 | 24" | 20 | 5+ | 7 | -1 | 2 | [[core-rules/sustained-hits.md\|连击1]] |
 | 超级火箭 | 100" | D6 | 5+ | 12 | -3 | D6+2 | [[core-rules/blast.md\|爆炸]] |
-| Twin big shoota | 36" | 3 | 5+ | 5 | 0 | 1 | [[core-rules/rapid-fire.md\|rapid fire 2]]，twin-linked |
+| 双联大突突枪 | 36" | 3 | 5+ | 5 | 0 | 1 | [[core-rules/rapid-fire.md\|速射2]]，[[core-rules/twin-linked.md\|双联]] |
 
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |
@@ -45,7 +45,7 @@ updated: '2026-07-23'
 ## 技能
 - **【阵营技能】:WAAAGH!**
 - **Waaagh之伟力【光环】**：本模型12寸内的友军兽人单位进行震慑测试时结果+1
-- **势不可挡**：本模型进行标准，加速，撤退移动时可以越过敌方模型(巨型除外)和不超过4寸高的地形
+- **[[factions/帝皇卫队/stratagems/unstoppable.md|势不可挡]]**：本模型进行标准，加速，撤退移动时可以越过敌方模型(巨型除外)和不超过4寸高的地形
 - **严重损坏**：当本模型W值为1-10时，攻击命中结果-1,OC值-6
 
 ## 单位构成

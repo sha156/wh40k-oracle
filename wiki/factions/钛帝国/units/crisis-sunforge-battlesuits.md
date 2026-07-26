@@ -1,5 +1,5 @@
 ---
-id: 000003699
+id: '000003699'
 name_zh: 危机日铸战斗服小队
 name_en: Crisis Sunforge Battlesuits
 faction: 钛帝国

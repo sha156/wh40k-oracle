@@ -30,7 +30,7 @@ updated: '2026-07-23'
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
 | 自动手枪 | 12" | 1 | 3+ | 3 | 0 | 1 | [[core-rules/pistol.md\|手枪]] |
-| 炸药包 | 8" | D6 | 3+ | 9 | -2 | 2 | [[core-rules/assault.md\|突击]]，[[core-rules/blast.md\|爆炸]]，[[core-rules/one-shot.md\|一次性]] |
+| 炸药包 | 8" | D6 | 3+ | 9 | -2 | 2 | [[core-rules/assault.md\|突击]]，[[core-rules/blast.md\|爆炸]]，[[core-rules/one-shot.md\|单发]] |
 | 遥控炸弹 | 24" | D6+3 | 3+ | 5 | 0 | 1 | [[core-rules/blast.md\|爆炸]]，[[core-rules/indirect-fire.md\|曲射]] |
 
 ## 近战武器

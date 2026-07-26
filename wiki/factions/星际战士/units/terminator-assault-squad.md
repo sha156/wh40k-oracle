@@ -1,5 +1,5 @@
 ---
-id: 000000118
+id: '000000118'
 name_zh: 突击终结者小队
 name_en: Terminator Assault Squad
 faction: 星际战士
@@ -22,7 +22,7 @@ updated: '2026-07-23'
 ## 属性表
 | 模型 | M | T | SV | W | LD | OC |
 |---|---|---|---|---|---|---|
-| Terminator [[factions/星际战士/units/assault-squad.md\|Assault Squad]] | 5" | 5 | 2+ | 3 | 6+ | 1 |
+| [[factions/星际战士/detachments/terminator-assault.md\|Terminator Assault]] Squad | 5" | 5 | 2+ | 3 | 6+ | 1 |
 
 ### 特殊保护
 - 4+
@@ -44,4 +44,4 @@ updated: '2026-07-23'
 
 ## 关键词
 - **阵营关键词**：Adeptus Astartes
-- **普通关键词**：Terminator Assault Squad，[[core-rules/infantry.md|Infantry]]，Deathwing，Imperium，Terminators
+- **普通关键词**：Terminator [[factions/星际战士/units/assault-squad.md|Assault Squad]]，[[core-rules/infantry.md|Infantry]]，Deathwing，Imperium，Terminators

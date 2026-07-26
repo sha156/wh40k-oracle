@@ -27,9 +27,9 @@ updated: '2026-07-23'
 ## 射击武器
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| Bolt cannon | 36" | 3 | 4+ | 6 | -1 | 2 | [[core-rules/sustained-hits.md\|sustained hits 2]] |
-| Graviton blast cannon | 24" | 3 | 4+ | 5 | -2 | 3 | [[core-rules/anti.md\|anti-monster 3+]]，[[core-rules/anti.md\|anti-vehicle 3+]] |
-| SP conversion beamer | 24" | 2 | 4+ | 7 | -2 | 3 | conversion，lethal hits |
+| 爆矢炮 | 36" | 3 | 4+ | 6 | -1 | 2 | [[core-rules/sustained-hits.md\|连击2]] |
+| 重力子轰击炮 | 24" | 3 | 4+ | 5 | -2 | 3 | [[core-rules/anti.md\|针对怪物3+]]，[[core-rules/anti.md\|针对载具3+]] |
+| 聚能转换光束炮 | 24" | 2 | 4+ | 7 | -2 | 3 | 转换，[[core-rules/lethal-hits.md\|致命一击]] |
 
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |
@@ -38,7 +38,7 @@ updated: '2026-07-23'
 
 ## 技能
 - **阵营:效率为先**
-- **侵彻火力**：在己方射击阶段中，在该单位进行射击后，选择一个被该单位的一次或多次攻击命中的敌方单位。直到下一个己方射击阶段开始前，那个敌方单位无法获得掩体增益。
+- **侵彻火力**：在己方射击阶段中，在该单位进行射击后，选择一个被该单位的一次或多次攻击命中的敌方单位。直到[[factions/兽人/stratagems/on-to-da-next.md|下一个]]己方射击阶段开始前，那个敌方单位无法获得掩体增益。
 
 ## 单位构成
 - **3个模型** — 80 分

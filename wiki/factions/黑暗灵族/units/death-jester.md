@@ -1,5 +1,5 @@
 ---
-id: 000004158
+id: '000004158'
 name_zh: 告死小丑
 name_en: Death Jester
 faction: 黑暗灵族

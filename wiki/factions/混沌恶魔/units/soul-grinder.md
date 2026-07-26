@@ -31,7 +31,7 @@ updated: '2026-07-23'
 |---|---|---|---|---|---|---|---|
 | 收割者加农炮 | 36" | 3 | 3+ | 10 | -1 | 3 | — |
 | 热血洪流 | 12" | 2D6 | N/A | 5 | -1 | 1 | [[core-rules/ignores-cover.md\|无视掩体]]，[[core-rules/torrent.md\|洪流]] |
-| 喷吐轰炸 | 36" | D6+1 | 3+ | 7 | -1 | 2 | [[core-rules/blast.md\|爆炸]]，[[core-rules/lethal-hits.md\|致命一击]]，[[core-rules/indirect-fire.md\|曲射]] |
+| 喷吐轰炸 | 36" | D6+1 | 3+ | 7 | -1 | 2 | [[core-rules/blast.md\|爆炸]]，[[core-rules/indirect-fire.md\|曲射]]，[[core-rules/lethal-hits.md\|致命一击]] |
 | 绝望尖啸  | 24" | 6 | 3+ | 9 | -2 | 2 | [[core-rules/devastating-wounds.md\|毁灭伤害]]，[[core-rules/sustained-hits.md\|连击1]] |
 | 次元凝视  | 48" | D3 | 3+ | 12 | -2 | D6+2 | [[core-rules/blast.md\|爆炸]] |
 
@@ -55,4 +55,4 @@ updated: '2026-07-23'
 
 ## 关键词
 - **阵营关键词**：Legiones Daemonica
-- **普通关键词**：[[core-rules/walker.md|Walker]]，Chaos，Daemon，Soul Grinder，Vehicle，Shadow Legion
+- **普通关键词**：[[core-rules/walker.md|Walker]]，Chaos，Daemon，Soul Grinder，Vehicle，[[factions/混沌恶魔/detachments/shadow-legion.md|Shadow Legion]]

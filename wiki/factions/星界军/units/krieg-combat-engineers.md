@@ -1,5 +1,6 @@
 ---
-id: 000003893
+id: '000003893'
+name_zh: 克里格战斗工兵
 name_en: Krieg Combat Engineers
 faction: 星界军
 type: unit
@@ -21,30 +22,30 @@ updated: '2026-07-23'
 ## 属性表
 | 模型 | M | T | SV | W | LD | OC |
 |---|---|---|---|---|---|---|
-| Krieg Combat Engineers | 6" | 3 | 4+ | 1 | 7+ | 1 |
+| 克里格战斗工兵 | 6" | 3 | 4+ | 1 | 7+ | 1 |
 
 ## 射击武器
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| Autopistol | 12" | 1 | 4+ | 3 | 0 | 1 | pistol |
-| Bolt pistol | 12" | 1 | 4+ | 4 | 0 | 1 | PISTOL |
-| Combat shotgun | 12" | 2 | 4+ | 4 | 0 | 1 | assault |
-| Flamer | 12" | D6 | N/A | 4 | 0 | 1 | ignores cover，torrent |
-| Hand flamer | 12" | D6 | N/A | 3 | 0 | 1 | ignores cover，pistol，torrent |
-| Plasma pistol – standard | 12" | 1 | 4+ | 7 | -2 | 1 | pistol |
-| Plasma pistol – supercharge | 12" | 1 | 4+ | 8 | -3 | 2 | hazardous，pistol |
+| 自动手枪 | 12" | 1 | 4+ | 3 | 0 | 1 | [[core-rules/pistol.md\|手枪]] |
+| 爆弹手枪 | 12" | 1 | 4+ | 4 | 0 | 1 | [[core-rules/pistol.md\|手枪]] |
+| 战斗霰弹枪 | 12" | 2 | 4+ | 4 | 0 | 1 | [[core-rules/assault.md\|突击]] |
+| 火焰喷射器 | 12" | D6 | N/A | 4 | 0 | 1 | [[core-rules/ignores-cover.md\|无视掩体]]，[[core-rules/torrent.md\|洪流]] |
+| 喷火手枪 | 12" | D6 | N/A | 3 | 0 | 1 | [[core-rules/ignores-cover.md\|无视掩体]]，[[core-rules/pistol.md\|手枪]]，[[core-rules/torrent.md\|洪流]] |
+| 等离子手枪（标准） | 12" | 1 | 4+ | 7 | -2 | 1 | [[core-rules/pistol.md\|手枪]] |
+| 等离子手枪（过载） | 12" | 1 | 4+ | 8 | -3 | 2 | [[core-rules/hazardous.md\|危险]]，[[core-rules/pistol.md\|手枪]] |
 
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| Chainsword | 近战 | 4 | 4+ | 3 | 0 | 1 | — |
-| Close combat weapon | 近战 | 2 | 4+ | 3 | 0 | 1 | — |
-| Power weapon | 近战 | 3 | 4+ | 4 | -2 | 1 | — |
-| Trench club | 近战 | 2 | 4+ | 4 | 0 | 1 | — |
+| 链锯剑 | 近战 | 4 | 4+ | 3 | 0 | 1 | — |
+| 格斗武器 | 近战 | 2 | 4+ | 3 | 0 | 1 | — |
+| 动力武器 | 近战 | 3 | 4+ | 4 | -2 | 1 | — |
+| 战壕棍 | 近战 | 2 | 4+ | 4 | 0 | 1 | — |
 
 ## 技能
-- **Grenadiers**：Once per turn, you can target this unit with the Grenade Stratagem for 0CP.
-- **Remote Mine**：Once per battle, at the start of your Shooting phase, you can select one enemy unit within 9" of and visible to the bearer and roll one D6: on a 3+, that enemy unit suffers D3 mortal wounds, or 2D3 mortal wounds instead if it is a <span class="kwb">VEHICLE</span> or <span class="kwb">FORTIFICATIONS</span> unit.<br><br><b>Designer’s Note:</b> <i>Place a Remote Mine token next to the unit, removing it once this ability has been used.</i>
+- **掷弹兵**：每个回合一次，你可以0CP对该单位使用手雷计谋
+- **遥控地雷**：每场战斗一次，在你的射击阶段开始时，选择一个位于持有者视线中9寸内的敌军单位投掷D6，结果为3+则那个敌军单位遭受D3点致命伤，如果目标是载具或者工事则改为2D3点致命伤。
 
 ## 单位构成
 - **5个模型** — 65 分

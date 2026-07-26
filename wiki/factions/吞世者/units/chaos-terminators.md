@@ -1,5 +1,5 @@
 ---
-id: 000002629
+id: '000002629'
 name_zh: 帝皇之子混沌终结者
 name_en: Chaos Terminators
 faction: 吞世者
@@ -30,18 +30,18 @@ updated: '2026-07-23'
 ## 射击武器
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| 并联爆弹枪 | 24" | 2 | 4+ | 4 | 0 | 1 | [[core-rules/rapid-fire.md\|速射2]] |
-| 复合武器 | 24" | 1 | 4+ | 4 | 0 | 1 | [[core-rules/anti.md\|反步兵 4+]]，[[core-rules/devastating-wounds.md\|毁灭伤害]]，[[core-rules/rapid-fire.md\|速射 1]] |
-| Heavy flamer | 12" | D6 | N/A | 5 | -1 | 1 | ignores cover，torrent |
-| 收割者自动 炮 | 36" | 4 | 4+ | 7 | -1 | 1 | [[core-rules/devastating-wounds.md\|毁灭伤害]]，[[core-rules/sustained-hits.md\|连击 1]] |
+| 并联爆弹枪 | 24" | 2 | 4+ | 4 | 0 | 1 | [[core-rules/rapid-fire.md\|速射4]] |
+| 复合武器 | 24" | 1 | 4+ | 4 | 0 | 1 | [[core-rules/anti.md\|针对步兵4+]]，[[core-rules/devastating-wounds.md\|毁灭伤害]]，[[core-rules/rapid-fire.md\|速射1]] |
+| 重型喷火器 | 12" | D6 | N/A | 5 | -1 | 1 | [[core-rules/ignores-cover.md\|无视掩体]]，[[core-rules/torrent.md\|洪流]] |
+| 收割者自动 炮 | 36" | 4 | 4+ | 7 | -1 | 1 | [[core-rules/devastating-wounds.md\|毁灭伤害]]，[[core-rules/rapid-fire.md\|速射2]]，[[core-rules/sustained-hits.md\|连击1]] |
 
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
 | 诅咒武器 | 近战 | 4 | 3+ | 5 | -2 | 1 | — |
-| Chainfist | 近战 | 3 | 4+ | 8 | -3 | 2 | [[core-rules/anti.md\|anti-vehicle 3+]] |
+| 链锯拳 | 近战 | 3 | 4+ | 8 | -3 | 2 | [[core-rules/anti.md\|针对载具3+]] |
 | 成对诅咒武器 | 近战 | 5 | 3+ | 5 | -2 | 1 | [[core-rules/twin-linked.md\|双联]] |
-| Power fist | 近战 | 3 | 3+ | 8 | -2 | 2 | — |
+| 动力拳 | 近战 | 3 | 3+ | 8 | -2 | 2 | — |
 
 ## 技能
 - **【阵营技能】：嗜欲恶徒**

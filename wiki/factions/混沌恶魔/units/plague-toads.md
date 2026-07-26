@@ -27,12 +27,12 @@ updated: '2026-07-23'
 ## 射击武器
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| Grasping tongue | 9" | D3 | 4+ | 5 | 0 | 1 | lethal hits |
+| 束缚长舌 | 9" | D3 | 4+ | 5 | 0 | 1 | [[core-rules/lethal-hits.md\|致命一击]] |
 
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| Yawning maw | 近战 | 3 | 3+ | 6 | -1 | 2 | lethal hits |
+| Yawning maw | 近战 | 3 | 3+ | 6 | -1 | 2 | [[core-rules/lethal-hits.md\|致命一击]] |
 
 ## 技能
 - **Pouncing Leap**：You can target this unit with the Heroic Intervention Stratagem for 0CP, and can do so even if you have already used that Stratagem on a different unit this phase.
@@ -43,4 +43,4 @@ updated: '2026-07-23'
 
 ## 关键词
 - **阵营关键词**：Legiones Daemonica
-- **普通关键词**：Daemon，Chaos，[[core-rules/beast.md|Beast]]，Nurgle，Shadow Legion，Plague Toads
+- **普通关键词**：Daemon，Chaos，[[core-rules/beast.md|Beast]]，Nurgle，[[factions/混沌恶魔/detachments/shadow-legion.md|Shadow Legion]]，Plague Toads

@@ -1,5 +1,5 @@
 ---
-id: 000000873
+id: '000000873'
 name_zh: 丘里克斯刺客
 name_en: Culexus Assassin
 faction: 帝国特勤
@@ -29,12 +29,12 @@ updated: '2026-07-23'
 ## 射击武器
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| 憎恶视镜 | 24" | 3 | 2+ | 5 | -2 | D3 | [[core-rules/anti.md\|针对灵能者2+]]，[[core-rules/precision.md\|精准]]，[[core-rules/assault.md\|突击]]，灵能者杀手 |
+| 憎恶视镜 | 24" | 3 | 2+ | 5 | -2 | D3 | [[core-rules/anti.md\|针对灵能者2+]]，[[core-rules/assault.md\|突击]]，[[core-rules/precision.md\|精准]]，灵能刺客 |
 
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| 吸魂之触 | 近战 | 4 | 2+ | 4 | -2 | 2 | [[core-rules/anti.md\|针对灵能者2+]]，[[core-rules/precision.md\|精准]]，[[core-rules/devastating-wounds.md\|毁灭伤害]] |
+| 吸魂之触 | 近战 | 4 | 2+ | 4 | -2 | 2 | [[core-rules/anti.md\|针对灵能者2+]]，[[core-rules/devastating-wounds.md\|毁灭伤害]]，[[core-rules/precision.md\|精准]] |
 
 ## 技能
 - **【阵营技能】：派遣特工**

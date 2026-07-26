@@ -1,5 +1,5 @@
 ---
-id: 000001178
+id: '000001178'
 name_en: Vindicator Laser Destroyer
 faction: 星际战士
 type: unit
@@ -24,15 +24,15 @@ updated: '2026-07-23'
 ## 射击武器
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| [[factions/星际战士/units/hunter.md\|Hunter]]-killer missile | 48" | 1 | 2+ | 14 | -3 | D6 | one shot |
-| Laser volley cannon – overcharge fire | 36" | 3 | 3+ | 14 | -4 | D6+3 | hazardous |
+| 猎杀飞弹 | 48" | 1 | 2+ | 14 | -3 | D6 | [[core-rules/one-shot.md\|单发]] |
+| Laser volley cannon – overcharge fire | 36" | 3 | 3+ | 14 | -4 | D6+3 | [[core-rules/hazardous.md\|危险]] |
 | Laser volley cannon – volley fire | 36" | 3 | 3+ | 12 | -3 | D3+3 | — |
-| Storm bolter | 24" | 2 | 3+ | 4 | 0 | 1 | [[core-rules/rapid-fire.md\|rapid fire 2]] |
+| 风暴爆弹枪 | 24" | 2 | 3+ | 4 | 0 | 1 | [[core-rules/rapid-fire.md\|速射2]] |
 
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| Armoured tracks | 近战 | 3 | 4+ | 6 | 0 | 1 | — |
+| 装甲履带 | 近战 | 3 | 4+ | 6 | 0 | 1 | — |
 
 ## 技能
 - **Annihilator**：Each time this model makes a ranged attack that targets a <span class="kwb">MONSTER</span> or <span class="kwb">VEHICLE</span> unit, re-roll a Damage roll of 1.
@@ -43,4 +43,4 @@ updated: '2026-07-23'
 
 ## 关键词
 - **阵营关键词**：Adeptus Astartes
-- **普通关键词**：[[core-rules/smoke.md|Smoke]]，Vehicle，Imperium，Vindicator Laser Destroyer
+- **普通关键词**：[[core-rules/smoke.md|Smoke]]，Vehicle，Imperium，[[factions/星际战士/units/vindicator.md|Vindicator]] Laser Destroyer

@@ -1,5 +1,5 @@
 ---
-id: 000003921
+id: '000003921'
 name_zh: 死神军毒灾飞艇
 name_en: Ynnari Venom
 faction: 艾达灵族
@@ -28,13 +28,13 @@ updated: '2026-07-23'
 ## 射击武器
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| Splinter cannon | 36" | 3 | 3+ | 3 | -1 | 2 | [[core-rules/anti.md\|anti-infantry 3+]]，[[core-rules/sustained-hits.md\|sustained hits 1]] |
-| 毒晶步枪 | 24" | 2 | 3+ | 2 | 0 | 1 | [[core-rules/anti.md\|反步兵3+]]，[[core-rules/assault.md\|突击]]，[[core-rules/rapid-fire.md\|速射1]]，[[core-rules/twin-linked.md\|双联]] |
+| 毒晶炮 | 36" | 3 | 3+ | 3 | -1 | 2 | [[core-rules/anti.md\|针对步兵3+]]，[[core-rules/sustained-hits.md\|连击1]] |
+| 毒晶步枪 | 24" | 2 | 3+ | 2 | 0 | 1 | [[core-rules/anti.md\|针对步兵3+]]，[[core-rules/assault.md\|突击]]，[[core-rules/rapid-fire.md\|速射1]]，[[core-rules/twin-linked.md\|双联]] |
 
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| Bladevanes | 近战 | 3 | 4+ | 5 | 0 | 1 | — |
+| 锋刃翼 | 近战 | 3 | 4+ | 5 | 0 | 1 | — |
 
 ## 技能
 - **【阵营技能】：战斗专注**

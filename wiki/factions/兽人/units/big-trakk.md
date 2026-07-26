@@ -27,16 +27,16 @@ updated: '2026-07-23'
 ## 射击武器
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| Big shoota | 36" | 3 | 5+ | 5 | 0 | 1 | [[core-rules/rapid-fire.md\|rapid fire 2]] |
-| Kannon – frag | 36" | D6 | 5+ | 5 | 0 | 1 | blast |
-| Kannon – shell | 36" | 1 | 5+ | 9 | -2 | D6 | — |
-| Supa-kannon – frag | 36" | D6+3 | 5+ | 5 | 0 | 1 | blast |
+| 大突突枪 | 36" | 3 | 5+ | 5 | 0 | 1 | [[core-rules/rapid-fire.md\|速射2]] |
+| 加农炮（破片弹-与穿甲弹二选一） | 36" | D6 | 5+ | 5 | 0 | 1 | [[core-rules/blast.md\|爆炸]] |
+| 加农炮（穿甲弹-与破片弹二选一） | 36" | 1 | 5+ | 9 | -2 | D6 | — |
+| Supa-kannon – frag | 36" | D6+3 | 5+ | 5 | 0 | 1 | [[core-rules/blast.md\|爆炸]] |
 | Supa-kannon – shell | 36" | 1 | 5+ | 9 | -2 | D3+3 | — |
 
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| Armoured hull | 近战 | 3 | 4+ | 6 | 0 | 1 | — |
+| 装甲外壳 | 近战 | 3 | 4+ | 6 | 0 | 1 | — |
 
 ## 技能
 - **Spiked Ram**：Each time this model ends a Charge move, select one enemy unit within Engagement Range of it and roll one D6: on a 2-5, that enemy unit suffers D3 mortal wounds; on a 6, that enemy unit suffers 3 mortal wounds.

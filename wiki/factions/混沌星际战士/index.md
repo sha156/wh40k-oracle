@@ -1,63 +1,64 @@
 # 混沌星际战士
 
-_Last updated: 2026-07-23 12:10 UTC_
+_Last updated: 2026-07-26 08:40 UTC_
+
+## 分队
+
+- [[factions/混沌星际战士/detachments/cabal-of-chaos|Cabal of Chaos]] — 混沌星际战士的分队「Cabal of Chaos」，分队规则「Empyric Wellspring」。
+- [[factions/混沌星际战士/detachments/champions-of-chaos|Champions of Chaos]] — 混沌星际战士的分队「Champions of Chaos」，分队规则「Dark Purpose」。
+- [[factions/混沌星际战士/detachments/chaos-cult|Chaos Cult]] — 混沌星际战士的分队「Chaos Cult」，分队规则「Desperate Devotion」。
+- [[factions/混沌星际战士/detachments/deceptors|Deceptors]] — 混沌星际战士的分队「Deceptors」，分队规则「Masters of Misdirection」。
+- [[factions/混沌星际战士/detachments/dread-talons|Dread Talons]] — 混沌星际战士的分队「Dread Talons」，分队规则「Terror Descends (Aura)」。
+- [[factions/混沌星际战士/detachments/fellhammer-siege-host|Fellhammer Siege-host]] — 混沌星际战士的分队「Fellhammer Siege-host」，分队规则「Iron Fortitude」。
+- [[factions/混沌星际战士/detachments/infernal-reavers|Infernal Reavers]] — 混沌星际战士的分队「Infernal Reavers」，分队规则「Dark Rewards」。
+- [[factions/混沌星际战士/detachments/pactbound-zealots|Pactbound Zealots]] — 混沌星际战士的分队「Pactbound Zealots」，分队规则「Marks of Chaos」。
+- [[factions/混沌星际战士/detachments/renegade-raiders|Renegade Raiders]] — 混沌星际战士的分队「Renegade Raiders」，分队规则「Raiders and Reavers」。
+- [[factions/混沌星际战士/detachments/soulforged-warpack|Soulforged Warpack]] — 混沌星际战士的分队「Soulforged Warpack」，分队规则「Debt to the Soul Forge」。
+- [[factions/混沌星际战士/detachments/underdeck-uprising|Underdeck Uprising]] — 混沌星际战士的分队「Underdeck Uprising」，分队规则「Fanatical Onslaught」。
+- [[factions/混沌星际战士/detachments/veterans-of-the-long-war|Veterans of the Long War]] — 混沌星际战士的分队「Veterans of the Long War」，分队规则「Focus of Hatred」。
+- [[factions/混沌星际战士/detachments/hurons-marauders|休伦的劫掠者]] — 混沌星际战士的分队「休伦的劫掠者」，分队规则「Tyrannical Motivation」。
+- [[factions/混沌星际战士/detachments/renegade-warband|变节者战队]] — 混沌星际战士的分队「变节者战队」，分队规则「Slaves to None」。
+- [[factions/混沌星际战士/detachments/nightmare-hunt|噩梦猎手]] — 混沌星际战士的分队「噩梦猎手」，分队规则「Terror Made Manifest」。
+- [[factions/混沌星际战士/detachments/creations-of-bile|拜尔造物]] — 混沌星际战士的分队「拜尔造物」，分队规则「Experimental Augmentations」。
+- [[factions/混沌星际战士/detachments/murdertalon-raiders|杀戮利爪掠夺队]] — 混沌星际战士的分队「杀戮利爪掠夺队」。
+- [[factions/混沌星际战士/detachments/warpstrike-champions|次元突袭勇士]] — 混沌星际战士的分队「次元突袭勇士」，分队规则「Warp Portals」。
+- [[factions/混沌星际战士/detachments/devotees-of-destruction|毁灭崇拜者]] — 混沌星际战士的分队「毁灭崇拜者」。
+- [[factions/混沌星际战士/detachments/cult-of-the-arkifane|造物者教派]] — 混沌星际战士的分队「造物者教派」，分队规则「Soul Forge Boons」。
 
 ## 单位
 
-- [[factions/混沌星际战士/units/accursed-cultists|Accursed Cultists]] — 
 - [[factions/混沌星际战士/units/blood-slaughterer|Blood Slaughterer]] — 
 - [[factions/混沌星际战士/units/cerberus|Cerberus]] — 
 - [[factions/混沌星际战士/units/chaos-deimos-predator|Chaos Deimos Predator]] — 
-- [[factions/混沌星际战士/units/chaos-land-raider|Chaos Land Raider]] — 
 - [[factions/混沌星际战士/units/chaos-lord-on-bike|Chaos Lord On Bike]] — 
 - [[factions/混沌星际战士/units/chaos-lord-on-disc-of-tzeentch|Chaos Lord On Disc Of Tzeentch]] — 
 - [[factions/混沌星际战士/units/chaos-lord-on-juggernaut|Chaos Lord On Juggernaut]] — 
 - [[factions/混沌星际战士/units/chaos-lord-on-palanquin-of-nurgle|Chaos Lord On Palanquin Of Nurgle]] — 
 - [[factions/混沌星际战士/units/chaos-lord-on-steed-of-slaanesh|Chaos Lord On Steed Of Slaanesh]] — 
-- [[factions/混沌星际战士/units/chaos-predator-annihilator|Chaos Predator Annihilator]] — 
-- [[factions/混沌星际战士/units/chaos-predator-destructor|Chaos Predator Destructor]] — 
-- [[factions/混沌星际战士/units/chaos-rhino|Chaos Rhino]] — 
-- [[factions/混沌星际战士/units/chaos-spawn|Chaos Spawn]] — 
 - [[factions/混沌星际战士/units/chaos-thunderhawk|Chaos Thunderhawk]] — 
-- [[factions/混沌星际战士/units/chaos-vindicator|Chaos Vindicator]] — 
-- [[factions/混沌星际战士/units/cultist-firebrand|Cultist Firebrand]] — 
-- [[factions/混沌星际战士/units/cultist-mob|Cultist Mob]] — 
 - [[factions/混沌星际战士/units/cultist-mob-with-firearms|Cultist Mob with Firearms]] — 
-- [[factions/混沌星际战士/units/dark-commune|Dark Commune]] — 
 - [[factions/混沌星际战士/units/decimator|Decimator]] — 
-- [[factions/混沌星际战士/units/defiler|Defiler]] — 
 - [[factions/混沌星际战士/units/deredeo-dreadnought|Deredeo Dreadnought]] — 
 - [[factions/混沌星际战士/units/dreadclaw-drop-pod|Dreadclaw Drop Pod]] — 
 - [[factions/混沌星际战士/units/exalted-champion|Exalted Champion]] — 
 - [[factions/混沌星际战士/units/falchion|Falchion]] — 
 - [[factions/混沌星际战士/units/fellblade|Fellblade]] — 
-- [[factions/混沌星际战士/units/fellgor-beastmen|Fellgor Beastmen]] — 
 - [[factions/混沌星际战士/units/fire-raptor-gunship|Fire Raptor Gunship]] — 
-- [[factions/混沌星际战士/units/forgefiend|Forgefiend]] — 
 - [[factions/混沌星际战士/units/gellerpox-infected|Gellerpox Infected]] — 
 - [[factions/混沌星际战士/units/greater-blight-drone|Greater Blight Drone]] — 
 - [[factions/混沌星际战士/units/greater-brass-scorpion|Greater Brass Scorpion]] — 
-- [[factions/混沌星际战士/units/helbrute|Helbrute]] — 
-- [[factions/混沌星际战士/units/heldrake|Heldrake]] — 
 - [[factions/混沌星际战士/units/hell-blade|Hell Blade]] — 
 - [[factions/混沌星际战士/units/hell-talon|Hell Talon]] — 
 - [[factions/混沌星际战士/units/kharybdis-assault-claw|Kharybdis Assault Claw]] — 
-- [[factions/混沌星际战士/units/khorne-berzerkers|Khorne Berzerkers]] — 
-- [[factions/混沌星际战士/units/khorne-lord-of-skulls|Khorne Lord Of Skulls]] — 
 - [[factions/混沌星际战士/units/kratos|Kratos]] — 
-- [[factions/混沌星际战士/units/kravek-morne|Kravek Morne]] — 
 - [[factions/混沌星际战士/units/kytan-ravager|Kytan Ravager]] — 
 - [[factions/混沌星际战士/units/land-raider-achilles|Land Raider Achilles]] — 
 - [[factions/混沌星际战士/units/land-raider-proteus|Land Raider Proteus]] — 
 - [[factions/混沌星际战士/units/leviathan-dreadnought|Leviathan Dreadnought]] — 
-- [[factions/混沌星际战士/units/master-of-executions|Master Of Executions]] — 
 - [[factions/混沌星际战士/units/mastodon|Mastodon]] — 
-- [[factions/混沌星际战士/units/maulerfiend|Maulerfiend]] — 
 - [[factions/混沌星际战士/units/mutilators-legendary|Mutilators (Legendary)]] — 
 - [[factions/混沌星际战士/units/mutoid-vermin|Mutoid Vermin]] — 
 - [[factions/混沌星际战士/units/negavolt-cultists|Negavolt Cultists]] — 
-- [[factions/混沌星际战士/units/noise-marines|Noise Marines]] — 
-- [[factions/混沌星际战士/units/plague-marines|Plague Marines]] — 
 - [[factions/混沌星际战士/units/rapier-carrier|Rapier Carrier]] — 
 - [[factions/混沌星际战士/units/relic-contemptor-dreadnought|Relic Contemptor Dreadnought]] — 
 - [[factions/混沌星际战士/units/renegade-enforcer|Renegade Enforcer]] — 
@@ -66,13 +67,10 @@ _Last updated: 2026-07-23 12:10 UTC_
 - [[factions/混沌星际战士/units/renegade-ogryn-brutes|Renegade Ogryn Brutes]] — 
 - [[factions/混沌星际战士/units/renegade-plague-ogryns|Renegade Plague Ogryns]] — 
 - [[factions/混沌星际战士/units/rogue-psyker|Rogue Psyker]] — 
-- [[factions/混沌星际战士/units/rubric-marines|Rubric Marines]] — 
 - [[factions/混沌星际战士/units/sicaran-battle-tank|Sicaran Battle Tank]] — 
 - [[factions/混沌星际战士/units/sicaran-punisher|Sicaran Punisher]] — 
 - [[factions/混沌星际战士/units/sicaran-venator|Sicaran Venator]] — 
 - [[factions/混沌星际战士/units/sokar-pattern-stormbird|Sokar-pattern Stormbird]] — 
-- [[factions/混沌星际战士/units/sorcerer|Sorcerer]] — 
-- [[factions/混沌星际战士/units/sorcerer-in-terminator-armour|Sorcerer In Terminator Armour]] — 
 - [[factions/混沌星际战士/units/sorcerer-on-bike|Sorcerer On Bike]] — 
 - [[factions/混沌星际战士/units/sorcerer-on-disc-of-tzeentch|Sorcerer On Disc Of Tzeentch]] — 
 - [[factions/混沌星际战士/units/sorcerer-on-palanquin-of-nurgle|Sorcerer On Palanquin Of Nurgle]] — 
@@ -80,40 +78,253 @@ _Last updated: 2026-07-23 12:10 UTC_
 - [[factions/混沌星际战士/units/spartan|Spartan]] — 
 - [[factions/混沌星际战士/units/storm-eagle-gunship|Storm Eagle Gunship]] — 
 - [[factions/混沌星际战士/units/terrax-pattern-termite|Terrax-pattern Termite]] — 
-- [[factions/混沌星际战士/units/traitor-enforcer|Traitor Enforcer]] — 
-- [[factions/混沌星际战士/units/traitor-guardsmen-squad|Traitor Guardsmen Squad]] — 
 - [[factions/混沌星际战士/units/typhon|Typhon]] — 
 - [[factions/混沌星际战士/units/whirlwind-scorpius|Whirlwind Scorpius]] — 
 - [[factions/混沌星际战士/units/xiphon-interceptor|Xiphon Interceptor]] — 
+- [[factions/混沌星际战士/units/defiler|亵渎者]] — 
 - [[factions/混沌星际战士/units/huron-blackheart|休伦·黑心]] — 
+- [[factions/混沌星际战士/units/kravek-morne|克拉维克·莫恩]] — 
 - [[factions/混沌星际战士/units/legionaries|军团战士]] — 
 - [[factions/混沌星际战士/units/venomcrawler|剧毒爬行者]] — 
+- [[factions/混沌星际战士/units/traitor-enforcer|叛军执法者]] — 
+- [[factions/混沌星际战士/units/traitor-guardsmen-squad|叛变卫队]] — 
+- [[factions/混沌星际战士/units/helbrute|地狱兽]] — 
+- [[factions/混沌星际战士/units/heldrake|地狱飞龙]] — 
 - [[factions/混沌星际战士/units/nemesis-claw|复仇之爪]] — 
 - [[factions/混沌星际战士/units/abaddon-the-despoiler|大掠夺者阿巴顿]] — 
 - [[factions/混沌星际战士/units/masters-of-the-maelstrom|大漩涡之主]] — 
 - [[factions/混沌星际战士/units/haarken-worldclaimer|夺星者哈肯]] — 
+- [[factions/混沌星际战士/units/sorcerer|巫师]] — 
+- [[factions/混沌星际战士/units/khorne-berzerkers|恐虐狂战士]] — 
+- [[factions/混沌星际战士/units/khorne-lord-of-skulls|恐虐颅骨之主]] — 
+- [[factions/混沌星际战士/units/fellgor-beastmen|恶角野兽人]] — 
+- [[factions/混沌星际战士/units/master-of-executions|枭首魔将]] — 
 - [[factions/混沌星际战士/units/warp-talons|次元爪]] — 
 - [[factions/混沌星际战士/units/warpsmith|次元铁匠]] — 
+- [[factions/混沌星际战士/units/chaos-predator-annihilator|歼灭者型猎食者坦克]] — 
 - [[factions/混沌星际战士/units/mutilators|残杀者]] — 
 - [[factions/混沌星际战士/units/fabius-bile|法比乌斯拜尔]] — 
 - [[factions/混沌星际战士/units/obliterators|泯灭者]] — 
 - [[factions/混沌星际战士/units/havocs|浩劫]] — 
+- [[factions/混沌星际战士/units/chaos-land-raider|混沌兰德掠袭者]] — 
+- [[factions/混沌星际战士/units/chaos-spawn|混沌卵]] — 
 - [[factions/混沌星际战士/units/chaos-bikers|混沌摩托队]] — 
 - [[factions/混沌星际战士/units/chaos-terminator-squad|混沌终结者]] — 
+- [[factions/混沌星际战士/units/chaos-vindicator|混沌维护者突击炮]] — 
 - [[factions/混沌星际战士/units/chaos-lord|混沌领主]] — 
+- [[factions/混沌星际战士/units/chaos-rhino|犀牛装甲车]] — 
 - [[factions/混沌星际战士/units/raptors|猛禽]] — 
 - [[factions/混沌星际战士/units/vashtorr-the-arkifane|瓦什托尔]] — 
+- [[factions/混沌星际战士/units/plague-marines|瘟疫战士]] — 
+- [[factions/混沌星际战士/units/chaos-predator-destructor|破坏者型猎食者坦克]] — 
 - [[factions/混沌星际战士/units/chosen|神选战士]] — 
+- [[factions/混沌星际战士/units/rubric-marines|红字战士]] — 
 - [[factions/混沌星际战士/units/red-corsairs-raiders|红海盗劫掠者]] — 
 - [[factions/混沌星际战士/units/red-corsairs-reave-captain|红海盗掠夺连长]] — 
+- [[factions/混沌星际战士/units/sorcerer-in-terminator-armour|终结者巫师]] — 
 - [[factions/混沌星际战士/units/chaos-lord-in-terminator-armour|终结者领主]] — 
+- [[factions/混沌星际战士/units/accursed-cultists|诅咒教徒]] — 
 - [[factions/混沌星际战士/units/cypher|赛佛]] — 
 - [[factions/混沌星际战士/units/chaos-lord-with-jump-pack|跳跃背包混沌领主]] — 
+- [[factions/混沌星际战士/units/cultist-mob|邪教徒]] — 
+- [[factions/混沌星际战士/units/cultist-firebrand|邪教徒纵火者]] — 
+- [[factions/混沌星际战士/units/maulerfiend|重锤魔]] — 
+- [[factions/混沌星际战士/units/forgefiend|铸造魔]] — 
 - [[factions/混沌星际战士/units/heretic-astartes-daemon-prince-with-wings|阿斯塔特叛军带翼恶魔亲王]] — 
 - [[factions/混沌星际战士/units/heretic-astartes-daemon-prince|阿斯塔特叛军恶魔亲王]] — 
 - [[factions/混沌星际战士/units/master-of-possession|附魔大师]] — 
 - [[factions/混沌星际战士/units/possessed|附魔战士]] — 
+- [[factions/混沌星际战士/units/noise-marines|音爆战士]] — 
 - [[factions/混沌星际战士/units/lord-discordant-on-helstalker|魔机统领]] — 
 - [[factions/混沌星际战士/units/dark-apostle|黑暗使徒]] — 
+- [[factions/混沌星际战士/units/dark-commune|黑暗巫会]] — 
 - [[factions/混沌星际战士/units/noctilith-crown|黑石魔冠]] — 
+
+## 策略技能
+
+- [[factions/混沌星际战士/stratagems/aggressive-strike|AGGRESSIVE STRIKE]] — 1 CP、Movement phase、Champions of Chaos 分队、Strategic Ploy Str...
+- [[factions/混沌星际战士/stratagems/balefire-boon|BALEFIRE BOON]] — 1 CP、Shooting or Fight phase、造物者教派 分队、Battle Tactic Stratage...
+- [[factions/混沌星际战士/stratagems/baleful-blessing|BALEFUL BLESSING]] — 1 CP、Any phase、Cabal of Chaos 分队、Epic Deed Stratagem。
+- [[factions/混沌星际战士/stratagems/black-crusade|BLACK CRUSADE]] — 1 CP、Movement phase、Veterans of the Long War 分队、Strategic Pl...
+- [[factions/混沌星际战士/stratagems/bloody-example|BLOODY EXAMPLE]] — 1 CP、Fight phase、Dread Talons 分队、Epic Deed Stratagem。
+- [[factions/混沌星际战士/stratagems/bringers-of-despair|BRINGERS OF DESPAIR]] — 1 CP、Fight phase、Veterans of the Long War 分队、Epic Deed Strat...
+- [[factions/混沌星际战士/stratagems/brutal-attrition|BRUTAL ATTRITION]] — 1 CP、Fight phase、Fellhammer Siege-host 分队、Epic Deed Stratage...
+- [[factions/混沌星际战士/stratagems/chosen-for-glory|CHOSEN FOR GLORY]] — 1 CP、Shooting or Fight phase、Chaos Cult 分队、Battle Tactic Str...
+- [[factions/混沌星际战士/stratagems/coils-of-deception|COILS OF DECEPTION]] — 1 CP、Movement phase、Deceptors 分队、Strategic Ploy Stratagem。
+- [[factions/混沌星际战士/stratagems/corrupted-munitions|CORRUPTED MUNITIONS]] — 1 CP、Shooting phase、变节者战队 分队、Battle Tactic Stratagem。
+- [[factions/混沌星际战士/stratagems/crazed-focus|CRAZED FOCUS]] — 1 CP、Shooting phase、Chaos Cult 分队、Battle Tactic Stratagem。
+- [[factions/混沌星际战士/stratagems/crude-sabotage|CRUDE SABOTAGE]] — 1 CP、Movement phase、Underdeck Uprising 分队、Strategic Ploy Str...
+- [[factions/混沌星际战士/stratagems/cruel-execution|CRUEL EXECUTION]] — 1 CP、Shooting phase、Infernal Reavers 分队、Strategic Ploy Strat...
+- [[factions/混沌星际战士/stratagems/daemonic-possesion|DAEMONIC POSSESION]] — 1 CP、Command phase、Soulforged Warpack 分队、Epic Deed Stratagem...
+- [[factions/混沌星际战士/stratagems/depthless-cruelty|DEPTHLESS CRUELTY]] — 1 CP、Fight phase、Dread Talons 分队、Battle Tactic Stratagem。
+- [[factions/混沌星际战士/stratagems/desperate-pledge|DESPERATE PLEDGE]] — 1 CP、Shooting or Fight phase、Soulforged Warpack 分队、Battle Ta...
+- [[factions/混沌星际战士/stratagems/detonator|DETONATOR]] — 1 CP、Any phase、Deceptors 分队、Wargear Stratagem。
+- [[factions/混沌星际战士/stratagems/endless-ire|ENDLESS IRE]] — 2 CP、Any phase、Veterans of the Long War 分队、Epic Deed Stratag...
+- [[factions/混沌星际战士/stratagems/eternal-hate|ETERNAL HATE]] — 1 CP、Fight phase、Pactbound Zealots 分队、Strategic Ploy Stratag...
+- [[factions/混沌星际战士/stratagems/eye-of-the-gods|EYE OF THE GODS]] — 1 CP、Fight phase、Pactbound Zealots 分队、Epic Deed Stratagem。
+- [[factions/混沌星际战士/stratagems/feeding-frenzy|FEEDING FRENZY]] — 1 CP、Movement phase、Soulforged Warpack 分队、Strategic Ploy Str...
+- [[factions/混沌星际战士/stratagems/festering-miasma|FESTERING MIASMA]] — 1 CP、Shooting phase、Pactbound Zealots 分队、Strategic Ploy Stra...
+- [[factions/混沌星际战士/stratagems/fleeting-might|FLEETING MIGHT]] — 1 CP、Shooting or Fight phase、Underdeck Uprising 分队、Battle Ta...
+- [[factions/混沌星际战士/stratagems/from-all-sides|FROM ALL SIDES]] — 1 CP、Charge phase、Deceptors 分队、Battle Tactic Stratagem。
+- [[factions/混沌星际战士/stratagems/glut-of-souls|GLUT OF SOULS]] — 1 CP、Fight phase、Soulforged Warpack 分队、Strategic Ploy Strata...
+- [[factions/混沌星际战士/stratagems/imperious-advance|IMPERIOUS ADVANCE]] — 1 CP、Fight phase、Champions of Chaos 分队、Battle Tactic Stratag...
+- [[factions/混沌星际战士/stratagems/infernal-altars|INFERNAL ALTARS]] — 1 CP、Shooting or Fight phase、Underdeck Uprising 分队、Battle Ta...
+- [[factions/混沌星际战士/stratagems/infernal-patrons|INFERNAL PATRONS]] — 1 CP、Any phase、Champions of Chaos 分队、Strategic Ploy Stratage...
+- [[factions/混沌星际战士/stratagems/infernal-sacrifice|INFERNAL SACRIFICE]] — 1 CP、Fight phase、Chaos Cult 分队、Battle Tactic Stratagem。
+- [[factions/混沌星际战士/stratagems/inveterate-murderers|INVETERATE MURDERERS]] — 1 CP、Fight phase、Infernal Reavers 分队、Battle Tactic Stratagem...
+- [[factions/混沌星际战士/stratagems/let-the-galaxy-burn|LET THE GALAXY BURN]] — 1 CP、Shooting phase、Veterans of the Long War 分队、Battle Tacti...
+- [[factions/混沌星际战士/stratagems/low-cunning|LOW CUNNING]] — 1 CP、Shooting or Fight phase、Infernal Reavers 分队、Battle Tact...
+- [[factions/混沌星际战士/stratagems/malign-will|MALIGN WILL]] — 1 CP、Shooting or Fight phase、Champions of Chaos 分队、Strategic...
+- [[factions/混沌星际战士/stratagems/merciless-pursuit|MERCILESS PURSUIT]] — 1 CP、Movement phase、Dread Talons 分队、Strategic Ploy Stratagem...
+- [[factions/混沌星际战士/stratagems/millennia-of-experience|MILLENNIA OF EXPERIENCE]] — 1 CP、Movement phase、Veterans of the Long War 分队、Strategic Pl...
+- [[factions/混沌星际战士/stratagems/mortal-thralls|MORTAL THRALLS]] — 1 CP、Shooting phase、Chaos Cult 分队、Strategic Ploy Stratagem。
+- [[factions/混沌星际战士/stratagems/mutations-curse|MUTATION’S CURSE]] — 1 CP、Shooting phase、Cabal of Chaos 分队、Strategic Ploy Stratag...
+- [[factions/混沌星际战士/stratagems/next-prize|NEXT PRIZE]] — 1 CP、Command phase、Infernal Reavers 分队、Strategic Ploy Strata...
+- [[factions/混沌星际战士/stratagems/no-rest-in-death|NO REST IN DEATH]] — 1 CP、Movement phase、Cabal of Chaos 分队、Strategic Ploy Stratag...
+- [[factions/混沌星际战士/stratagems/opportunistic-raiders|OPPORTUNISTIC RAIDERS]] — 1 CP、Fight phase、Renegade Raiders 分队、Strategic Ploy Stratage...
+- [[factions/混沌星际战士/stratagems/persistent-assailants|PERSISTENT ASSAILANTS]] — 1 CP、Fight phase、Fellhammer Siege-host 分队、Battle Tactic Stra...
+- [[factions/混沌星际战士/stratagems/pick-them-off|PICK THEM OFF]] — 1 CP、Shooting phase、Deceptors 分队、Battle Tactic Stratagem。
+- [[factions/混沌星际战士/stratagems/pitiless-cannonade|PITILESS CANNONADE]] — 1 CP、Shooting phase、Fellhammer Siege-host 分队、Battle Tactic S...
+- [[factions/混沌星际战士/stratagems/point-blank-destruction|POINT-BLANK DESTRUCTION]] — 1 CP、Shooting phase、Fellhammer Siege-host 分队、Battle Tactic S...
+- [[factions/混沌星际战士/stratagems/predatory-pursuit|PREDATORY PURSUIT]] — 1 CP、Movement phase、Soulforged Warpack 分队、Strategic Ploy Str...
+- [[factions/混沌星际战士/stratagems/profane-zeal|PROFANE ZEAL]] — 1 CP、Shooting or Fight phase、Pactbound Zealots 分队、Battle Tac...
+- [[factions/混沌星际战士/stratagems/reavers-haste|REAVERS’ HASTE]] — 1 CP、Charge phase、Renegade Raiders 分队、Strategic Ploy Stratag...
+- [[factions/混沌星际战士/stratagems/reckless-haste|RECKLESS HASTE]] — 1 CP、Charge phase、Chaos Cult 分队、Strategic Ploy Stratagem。
+- [[factions/混沌星际战士/stratagems/relentless-pursuit|RELENTLESS PURSUIT]] — 1 CP、Movement phase、Deceptors 分队、Strategic Ploy Stratagem。
+- [[factions/混沌星际战士/stratagems/ruinous-raid|RUINOUS RAID]] — 1 CP、Shooting or Fight phase、Renegade Raiders 分队、Battle Tact...
+- [[factions/混沌星际战士/stratagems/scour-and-seize|SCOUR AND SEIZE]] — 1 CP、Fight phase、Renegade Raiders 分队、Battle Tactic Stratagem...
+- [[factions/混沌星际战士/stratagems/scrambled-coordinates|SCRAMBLED COORDINATES]] — 1 CP、Movement phase、Deceptors 分队、Strategic Ploy Stratagem。
+- [[factions/混沌星际战士/stratagems/screaming-descent|SCREAMING DESCENT]] — 1 CP、Movement phase、Dread Talons 分队、Strategic Ploy Stratagem...
+- [[factions/混沌星际战士/stratagems/selfless-demise|SELFLESS DEMISE]] — 1 CP、Fight phase、Chaos Cult 分队、Strategic Ploy Stratagem。
+- [[factions/混沌星际战士/stratagems/shroud-of-chaos|SHROUD OF CHAOS]] — 1 CP、Shooting phase、Cabal of Chaos 分队、Battle Tactic Stratage...
+- [[factions/混沌星际战士/stratagems/siegecraft|SIEGECRAFT]] — 1 CP、Charge phase、Fellhammer Siege-host 分队、Strategic Ploy St...
+- [[factions/混沌星际战士/stratagems/skinshift|SKINSHIFT]] — 1 CP、Command phase、Pactbound Zealots 分队、Epic Deed Stratagem。
+- [[factions/混沌星际战士/stratagems/soulseekers|SOULSEEKERS]] — 1 CP、Shooting phase、Cabal of Chaos 分队、Strategic Ploy Stratag...
+- [[factions/混沌星际战士/stratagems/steadfast-determination|STEADFAST DETERMINATION]] — 1 CP、Shooting phase、Fellhammer Siege-host 分队、Strategic Ploy...
+- [[factions/混沌星际战士/stratagems/storm-the-bridge|STORM THE BRIDGE!]] — 1 CP、Charge phase、Underdeck Uprising 分队、Strategic Ploy Strat...
+- [[factions/混沌星际战士/stratagems/to-the-favoured-the-spoils|TO THE FAVOURED THE SPOILS]] — 1 CP、Shooting phase、休伦的劫掠者 分队、Strategic Ploy Stratagem。
+- [[factions/混沌星际战士/stratagems/torpefying-refrain|TORPEFYING REFRAIN]] — 1 CP、Movement phase、Pactbound Zealots 分队、Strategic Ploy Stra...
+- [[factions/混沌星际战士/stratagems/unfailingly-obdurate|UNFAILINGLY OBDURATE]] — 1 CP、Shooting or Fight phase、Renegade Raiders 分队、Battle Tact...
+- [[factions/混沌星际战士/stratagems/unholy-haste|UNHOLY HASTE]] — 1 CP、Charge phase、Cabal of Chaos 分队、Epic Deed Stratagem。
+- [[factions/混沌星际战士/stratagems/unstoppable-rampage|UNSTOPPABLE RAMPAGE]] — 1 CP、Movement or Charge phase、Soulforged Warpack 分队、Strategi...
+- [[factions/混沌星际战士/stratagems/warp-flicker|WARP FLICKER]] — 1 CP、Movement phase、次元突袭勇士 分队、Strategic Ploy Stratagem。
+- [[factions/混沌星际战士/stratagems/warp-tainted|WARP-TAINTED]] — 1 CP、Movement phase、次元突袭勇士 分队、Strategic Ploy Stratagem。
+- [[factions/混沌星际战士/stratagems/warpcharged-engines|WARPCHARGED ENGINES]] — 1 CP、Movement phase、Renegade Raiders 分队、Wargear Stratagem。
+- [[factions/混沌星际战士/stratagems/diabolic-regeneration|不洁再生]] — 1 CP、Command phase、拜尔造物 分队、Strategic Ploy Stratagem。
+- [[factions/混沌星际战士/stratagems/unholy-fortitude|不洁坚韧]] — 1 CP、Shooting phase、造物者教派 分队、Strategic Ploy Stratagem。
+- [[factions/混沌星际战士/stratagems/undying-hatred-devotees-of-destruction|不灭仇恨]] — 1 CP、Shooting phase、毁灭崇拜者 分队。
+- [[factions/混沌星际战士/stratagems/undying-hatred-renegade-warband|不灭仇恨]] — 1 CP、Fight phase、变节者战队 分队、Strategic Ploy Stratagem。
+- [[factions/混沌星际战士/stratagems/masters-are-watching|主人正在监视]] — 1 CP、Fight phase、拜尔造物 分队、Strategic Ploy Stratagem。
+- [[factions/混沌星际战士/stratagems/wreathed-in-warpflame|亚空间烈焰缠身]] — 1 CP、Shooting phase、Cabal of Chaos 分队。
+- [[factions/混沌星际战士/stratagems/empyric-dislocation|亚空间错位]] — 1 CP、Shooting or Fight phase、次元突袭勇士 分队、Battle Tactic Stratag...
+- [[factions/混沌星际战士/stratagems/never-outgunned|充足火力]] — 1 CP、Shooting or Fight phase、变节者战队 分队、Epic Deed Stratagem。
+- [[factions/混沌星际战士/stratagems/hardened-killers|冷酷杀手]] — 1 CP、Command phase、休伦的劫掠者 分队、Battle Tactic Stratagem。
+- [[factions/混沌星际战士/stratagems/plunging-talons|利爪突刺]] — 1 CP、Fight phase、杀戮利爪掠夺队 分队。
+- [[factions/混沌星际战士/stratagems/reavers-reaction|劫掠反应]] — 1 CP、Shooting phase、变节者战队 分队、Strategic Ploy Stratagem。
+- [[factions/混沌星际战士/stratagems/reavers-flurry|劫掠者狂风]] — 1 CP、Fight phase、休伦的劫掠者 分队、Battle Tactic Stratagem。
+- [[factions/混沌星际战士/stratagems/renegade-claim|变节宣称]] — 1 CP、Movement phase、变节者战队 分队、Strategic Ploy Stratagem。
+- [[factions/混沌星际战士/stratagems/vengeful-destruction|复仇毁灭]] — 1 CP、Shooting or Fight phase、变节者战队 分队、Battle Tactic Stratage...
+- [[factions/混沌星际战士/stratagems/seize-the-prize|夺取战利品]] — 1 CP、Movement phase、休伦的劫掠者 分队、Battle Tactic Stratagem。
+- [[factions/混沌星际战士/stratagems/delayed-mutations|延迟变异]] — 2 CP、Command phase、拜尔造物 分队、Strategic Ploy Stratagem。
+- [[factions/混沌星际战士/stratagems/horrific-incursion|恐怖入侵]] — 1 CP、Movement phase、噩梦猎手 分队、Stratagem。
+- [[factions/混沌星际战士/stratagems/monstrous-visages|恐怖面目]] — 1 CP、Shooting or Fight phase、拜尔造物 分队、Strategic Ploy Stratage...
+- [[factions/混沌星际战士/stratagems/portal-of-spite|恶灵传送门]] — 1 CP、Charge phase、次元突袭勇士 分队、Battle Tactic Stratagem。
+- [[factions/混沌星际战士/stratagems/warp-twisted-terrors|扭曲恐惧]] — 1 CP、Movement phase、杀戮利爪掠夺队 分队。
+- [[factions/混沌星际战士/stratagems/raking-pass|撕裂飞行]] — 1 CP、Movement phase、杀戮利爪掠夺队 分队。
+- [[factions/混沌星际战士/stratagems/sadistic-display|施虐表演]] — 1 CP、Fight phase、噩梦猎手 分队、Stratagem。
+- [[factions/混沌星际战士/stratagems/relentless-terror-dread-talons|无尽恐惧]] — 1 CP、Movement phase、Dread Talons 分队、Strategic Ploy Stratagem...
+- [[factions/混沌星际战士/stratagems/relentless-terror-nightmare-hunt|无尽恐惧]] — 1 CP、Movement phase、噩梦猎手 分队、Stratagem。
+- [[factions/混沌星际战士/stratagems/pitiless-hunters|无情猎手]] — 1 CP、Shooting phase、Dread Talons 分队、Battle Tactic Stratagem。
+- [[factions/混沌星际战士/stratagems/snare-of-fire|枪火圈套]] — 1 CP、Movement phase、毁灭崇拜者 分队。
+- [[factions/混沌星际战士/stratagems/ruinations-bounty|毁灭奖赏]] — 1 CP、Shooting phase、毁灭崇拜者 分队。
+- [[factions/混沌星际战士/stratagems/encircling-surge|涌动包围]] — 1 CP、Fight phase、休伦的劫掠者 分队、Strategic Ploy Stratagem。
+- [[factions/混沌星际战士/stratagems/soul-tally-offering|灵魂祭品]] — 2 CP、Shooting or Fight phase、造物者教派 分队、Battle Tactic Stratage...
+- [[factions/混沌星际战士/stratagems/forge-fire-surge|炉火涌动]] — 1 CP、Movement phase、造物者教派 分队、Strategic Ploy Stratagem。
+- [[factions/混沌星际战士/stratagems/prey-on-the-weak|狩猎弱者]] — 1 CP、Shooting or Fight phase、噩梦猎手 分队、Stratagem。
+- [[factions/混沌星际战士/stratagems/biomechanoid-regeneration|生物机械体再生]] — 1 CP、Command phase、造物者教派 分队、Epic Deed Stratagem。
+- [[factions/混沌星际战士/stratagems/siegebreaker-strike|碎盾者打击]] — 1 CP、Shooting phase、次元突袭勇士 分队、Strategic Ploy Stratagem。
+- [[factions/混沌星际战士/stratagems/talons-sunk-deep|穿心利爪]] — 1 CP、Shooting or Fight phase、噩梦猎手 分队、Stratagem。
+- [[factions/混沌星际战士/stratagems/fleshy-curse|肉身之咒]] — 1 CP、Shooting phase、Cabal of Chaos 分队。
+- [[factions/混沌星际战士/stratagems/armour-of-corruption|腐化甲胄]] — 2 CP、Fight phase、次元突袭勇士 分队、Strategic Ploy Stratagem。
+- [[factions/混沌星际战士/stratagems/autostimulants|自动注射]] — 1 CP、Charge phase、拜尔造物 分队、Strategic Ploy Stratagem。
+- [[factions/混沌星际战士/stratagems/specimens-for-the-spider|蜘蛛的样本]] — 2 CP、Fight phase、拜尔造物 分队、Strategic Ploy Stratagem。
+- [[factions/混沌星际战士/stratagems/contemptuous-disregard|轻蔑漠视]] — 1 CP、Shooting or Fight phase、Veterans of the Long War 分队、Bat...
+- [[factions/混沌星际战士/stratagems/touch-of-the-arkifane|造物者之触]] — 1 CP、Any phase、造物者教派 分队、Battle Tactic Stratagem。
+- [[factions/混沌星际战士/stratagems/at-the-tyrants-command|遵循暴君的命令]] — 1 CP、Movement phase、休伦的劫掠者 分队、Strategic Ploy Stratagem。
+- [[factions/混沌星际战士/stratagems/malicious-surge|邪恶涌动]] — 1 CP、Charge phase、噩梦猎手 分队、Stratagem。
+- [[factions/混沌星际战士/stratagems/infernal-vigour|邪能活力]] — 1 CP、Command phase、Cabal of Chaos 分队。
+
+## 强化
+
+- [[factions/混沌星际战士/enhancements/akshurs-binding-runes|Akshur’s Binding Runes]] — 20 分、次元突袭勇士 分队。
+- [[factions/混沌星际战士/enhancements/amulet-of-tainted-vigour|Amulet of Tainted Vigour]] — 20 分、Chaos Cult 分队。
+- [[factions/混沌星际战士/enhancements/bastion-plate|Bastion Plate]] — 10 分、Fellhammer Siege-host 分队。
+- [[factions/混沌星际战士/enhancements/conduit-of-chaos|Conduit of Chaos]] — 分数未知、Cabal of Chaos 分队。
+- [[factions/混沌星际战士/enhancements/cultists-brand|Cultist’s Brand]] — 20 分、Chaos Cult 分队。
+- [[factions/混沌星际战士/enhancements/cursed-fang|Cursed Fang]] — 10 分、Deceptors 分队。
+- [[factions/混沌星际战士/enhancements/dark-majesty|Dark Majesty]] — 0 分、Champions of Chaos 分队。
+- [[factions/混沌星际战士/enhancements/despots-claim|Despot’s Claim]] — 15 分、Renegade Raiders 分队。
+- [[factions/混沌星际战士/enhancements/dread-reaver|Dread Reaver]] — 15 分、Renegade Raiders 分队。
+- [[factions/混沌星际战士/enhancements/eager-for-bloodshed|Eager for Bloodshed]] — 30 分、休伦的劫掠者 分队。
+- [[factions/混沌星际战士/enhancements/eager-for-vengeance|Eager for Vengeance]] — 20 分、Veterans of the Long War 分队。
+- [[factions/混沌星际战士/enhancements/eater-of-dread|Eater of Dread]] — 15 分、Dread Talons 分队。
+- [[factions/混沌星际战士/enhancements/eye-of-abaddon|Eye of Abaddon]] — 15 分、Veterans of the Long War 分队。
+- [[factions/混沌星际战士/enhancements/eye-of-tzeentch|Eye of Tzeentch]] — 15 分、Pactbound Zealots 分队。
+- [[factions/混沌星际战士/enhancements/eye-of-the-warp|Eye of the Warp]] — 15 分、次元突袭勇士 分队。
+- [[factions/混沌星际战士/enhancements/eyes-of-zdesh|Eyes of Z’desh]] — 25 分、Cabal of Chaos 分队。
+- [[factions/混沌星际战士/enhancements/eyes-of-the-hunter|Eyes of the Hunter]] — 15 分、变节者战队 分队。
+- [[factions/混沌星际战士/enhancements/falsehood|Falsehood]] — 10 分、Deceptors 分队。
+- [[factions/混沌星际战士/enhancements/forges-blessing|Forge’s Blessing]] — 20 分、Soulforged Warpack 分队。
+- [[factions/混沌星际战士/enhancements/fratricidal-trophies|Fratricidal Trophies]] — 5 分、变节者战队 分队。
+- [[factions/混沌星际战士/enhancements/incendiary-goad|Incendiary Goad]] — 15 分、Chaos Cult 分队。
+- [[factions/混沌星际战士/enhancements/infernal-avatar|Infernal Avatar]] — 20 分、Cabal of Chaos 分队。
+- [[factions/混沌星际战士/enhancements/intoxicating-elixir|Intoxicating Elixir]] — 15 分、Pactbound Zealots 分队。
+- [[factions/混沌星际战士/enhancements/invigorated-mechatendrils|Invigorated Mechatendrils]] — 15 分、Soulforged Warpack 分队。
+- [[factions/混沌星际战士/enhancements/iron-artifice|Iron Artifice]] — 10 分、Fellhammer Siege-host 分队。
+- [[factions/混沌星际战士/enhancements/ironbound-enmity|Ironbound Enmity]] — 15 分、Fellhammer Siege-host 分队。
+- [[factions/混沌星际战士/enhancements/manifest-vengeance|Manifest Vengeance]] — 0 分、Champions of Chaos 分队。
+- [[factions/混沌星际战士/enhancements/mark-of-legend|Mark of Legend]] — 10 分、Veterans of the Long War 分队。
+- [[factions/混沌星际战士/enhancements/mark-of-the-hound|Mark of the Hound]] — 25 分、Renegade Raiders 分队。
+- [[factions/混沌星际战士/enhancements/mind-blade|Mind Blade]] — 25 分、Cabal of Chaos 分队。
+- [[factions/混沌星际战士/enhancements/nights-shroud|Night’s Shroud]] — 20 分、Dread Talons 分队。
+- [[factions/混沌星际战士/enhancements/orbs-of-unlife|Orbs of Unlife]] — 15 分、Pactbound Zealots 分队。
+- [[factions/混沌星际战士/enhancements/rabble-rouser|Rabble Rouser]] — 0 分、Underdeck Uprising 分队。
+- [[factions/混沌星际战士/enhancements/raid-leader|Raid Leader]] — 20 分、休伦的劫掠者 分队。
+- [[factions/混沌星际战士/enhancements/shroud-of-obfuscation|Shroud of Obfuscation]] — 15 分、Deceptors 分队。
+- [[factions/混沌星际战士/enhancements/soul-harvester|Soul Harvester]] — 15 分、Soulforged Warpack 分队。
+- [[factions/混沌星际战士/enhancements/soul-link|Soul Link]] — 5 分、Deceptors 分队。
+- [[factions/混沌星际战士/enhancements/talisman-of-burning-blood|Talisman of Burning Blood]] — 15 分、Pactbound Zealots 分队。
+- [[factions/混沌星际战士/enhancements/tempting-addendum|Tempting Addendum]] — 25 分、Soulforged Warpack 分队。
+- [[factions/混沌星际战士/enhancements/touched-by-the-warp|Touched by the Warp]] — 10 分、Cabal of Chaos 分队。
+- [[factions/混沌星际战士/enhancements/tyrants-lash|Tyrant’s Lash]] — 20 分、Renegade Raiders 分队。
+- [[factions/混沌星际战士/enhancements/voice-of-the-octed|Voice of the Octed]] — 0 分、Infernal Reavers 分队。
+- [[factions/混沌星际战士/enhancements/voice-of-the-tyrant|Voice of the Tyrant]] — 25 分、休伦的劫掠者 分队。
+- [[factions/混沌星际战士/enhancements/vox-malevolus|Vox Malevolus]] — 0 分、Underdeck Uprising 分队。
+- [[factions/混沌星际战士/enhancements/warmasters-gift|Warmaster’s Gift]] — 15 分、Veterans of the Long War 分队。
+- [[factions/混沌星际战士/enhancements/warp-tracer|Warp Tracer]] — 20 分、Fellhammer Siege-host 分队。
+- [[factions/混沌星际战士/enhancements/warped-foresight|Warped Foresight]] — 10 分、Chaos Cult 分队。
+- [[factions/混沌星际战士/enhancements/weaponised-hatred|Weaponised Hatred]] — 35 分、变节者战队 分队。
+- [[factions/混沌星际战士/enhancements/willbreaker|Willbreaker]] — 10 分、Dread Talons 分队。
+- [[factions/混沌星际战士/enhancements/prime-test-subject|上等试验体]] — 35 分、拜尔造物 分队。
+- [[factions/混沌星际战士/enhancements/empyric-symbiote|亚空间共生体]] — 15 分、变节者战队 分队。
+- [[factions/混沌星际战士/enhancements/warp-fuelled-thrusters-dread-talons|亚空间推进器]] — 20 分、Dread Talons 分队。
+- [[factions/混沌星际战士/enhancements/warp-fuelled-thrusters-nightmare-hunt|亚空间推进器]] — 20 分、噩梦猎手 分队。
+- [[factions/混沌星际战士/enhancements/swollen-with-power|充足力量]] — 0 分、Infernal Reavers 分队。
+- [[factions/混沌星际战士/enhancements/helm-of-all-seeing|全视头盔]] — 25 分、拜尔造物 分队。
+- [[factions/混沌星际战士/enhancements/sorrowscent-vulture|哀伤猎手]] — 35 分、噩梦猎手 分队。
+- [[factions/混沌星际战士/enhancements/cybinfernal-font|地狱机械印记]] — 20 分、造物者教派 分队。
+- [[factions/混沌星际战士/enhancements/infernal-fulgurite|地狱结晶]] — 20 分、次元突袭勇士 分队。
+- [[factions/混沌星际战士/enhancements/tzagulla|察古拉]] — 25 分、次元突袭勇士 分队。
+- [[factions/混沌星际战士/enhancements/shadowcowl-talisman|影罩护符]] — 分数未知、杀戮利爪掠夺队 分队。
+- [[factions/混沌星际战士/enhancements/terrorglut-parasite|恐怖寄生虫]] — 20 分、噩梦猎手 分队。
+- [[factions/混沌星际战士/enhancements/dread-reputation|恐惧恶名]] — 25 分、休伦的劫掠者 分队。
+- [[factions/混沌星际战士/enhancements/surgical-precision|手术级精准]] — 10 分、拜尔造物 分队。
+- [[factions/混沌星际战士/enhancements/pact-of-destruction|毁灭契约]] — 分数未知、毁灭崇拜者 分队。
+- [[factions/混沌星际战士/enhancements/eye-of-oblivion|泯灭之眼]] — 分数未知、毁灭崇拜者 分队。
+- [[factions/混沌星际战士/enhancements/living-carapace|活甲壳]] — 15 分、拜尔造物 分队。
+- [[factions/混沌星际战士/enhancements/greyveil-hex|灰纱诅咒]] — 25 分、噩梦猎手 分队。
+- [[factions/混沌星际战士/enhancements/mark-of-the-soul-forges|灵魂熔炉之印]] — 20 分、造物者教派 分队。
+- [[factions/混沌星际战士/enhancements/crown-of-worms|蛆虫之冠]] — 15 分、造物者教派 分队。
+- [[factions/混沌星际战士/enhancements/pact-of-cursed-pinions|诅咒镣铐契约]] — 分数未知、杀戮利爪掠夺队 分队。
+- [[factions/混沌星际战士/enhancements/wyredjinn|龙林恶灵]] — 25 分、造物者教派 分队。
 

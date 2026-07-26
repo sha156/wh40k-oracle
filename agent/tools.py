@@ -402,7 +402,7 @@ def simulate_combat_resolved(
     try:
         from dataclasses import replace as _replace
 
-        from engines.simulator.assembly import assemble_attacker
+        from engines.simulator.assembly import assemble_attacker, usable_in_phase
         from engines.simulator.contracts import Effect, Stance
         from engines.simulator.engine import simulate, simulate_matchup
         from engines.simulator.profile import load_target
@@ -440,11 +440,31 @@ def simulate_combat_resolved(
         if asm is None:
             return {"ok": False, "modeled": True, "tool": "simulate_combat",
                     "reason": "not_found", "note": f"单位 {a['name_en']} 无法装载"}
+        # 该阶段压根没有可开火武器 → 不是"该装配"而是"该换阶段"：要求 loadout 无解
+        # （只有近战武器的单位在射击阶段填任何件数都是 0 攻击）
+        if asm.no_phase_weapon:
+            return {"ok": False, "modeled": True, "tool": "simulate_combat",
+                    "reason": "no_weapon_for_phase", "note": asm.note,
+                    "weapon_pool": [w.name_en for w in asm.full_pool],
+                    "model_tiers": asm.tiers, "errors": asm.errors}
         if asm.ambiguous or asm.attacker is None:
             return {"ok": False, "modeled": True, "tool": "simulate_combat",
                     "reason": "loadout_required", "note": asm.note,
                     "weapon_pool": [w.name_en for w in asm.weapon_pool],
                     "model_tiers": asm.tiers, "errors": asm.errors}
+        # 显式 loadout 与阶段不匹配（如手填纯近战武器打射击阶段）→ 序列层会滤成 0 攻击，
+        # 与其发一份"成功的"全 0 报告（假成功），不如显式失败并指路（诚实降级纪律）
+        if not usable_in_phase(asm.attacker.loadout, phase):
+            _here = "近战" if phase == "melee" else "射击"
+            _other = "射击" if phase == "melee" else "近战"
+            return {
+                "ok": False, "modeled": True, "tool": "simulate_combat",
+                "reason": "no_weapon_for_phase",
+                "note": (f"loadout 里没有{_here}阶段能开火的武器"
+                         f"（{'、'.join(w.name_en for w in asm.attacker.loadout[:6])}"
+                         f" 全是{_other}武器），期望伤害必为 0。请改装配或切到{_other}阶段。"),
+                "weapon_pool": [w.name_en for w in asm.weapon_pool],
+                "model_tiers": asm.tiers, "errors": asm.errors}
 
         target = load_target(db_path, d["canonical_id"],
                              models=options.get("defender_models"))
@@ -536,16 +556,11 @@ def simulate_combat_resolved(
             cover_on = True
         gtg_warn = ("go_to_ground 开关已废弃（11 版核心战略无 Go to Ground），本次未生效"
                     if options.get("go_to_ground") else None)
-        # loadout 与阶段不匹配（如纯近战武器打射击阶段）→ 序列层滤成 0 攻击，显式披露不静默
-        _is_melee_phase = phase == "melee"
-        phase_warn = (
-            f"攻方在{'近战' if _is_melee_phase else '射击'}阶段无可开火武器"
-            f"（该 loadout 全是{'射击' if _is_melee_phase else '近战'}武器），期望伤害为 0"
-            if not any(w.is_melee == _is_melee_phase for w in asm.attacker.loadout)
-            else None)
-        warning = "；".join(
-            x for x in (a.get("warning"), d.get("warning"), gtg_warn, phase_warn)
-            if x) or None
+        # loadout 与阶段不匹配已在装配后显式失败（reason=no_weapon_for_phase），此处不再
+        # 有"全 0 报告 + warning"的假成功路径。自动装配（该阶段唯一武器）的件数假设须披露。
+        auto_warn = f"攻方自动装配：{asm.note}" if asm.auto_assembled else None
+        warn_parts: List[Optional[str]] = [a.get("warning"), d.get("warning"),
+                                           gtg_warn, auto_warn]
         if cover_on and not stance.target_in_cover:
             stance = _replace(stance, target_in_cover=True)
         if def_effects:
@@ -577,12 +592,33 @@ def simulate_combat_resolved(
                 return {"ok": False, "modeled": True, "tool": "simulate_combat",
                         "reason": "not_found",
                         "note": f"守方 {d['name_en']} 反打装载失败"}
+            # 守方在反打阶段无可开火武器 → 装配也救不了，显式失败并指路（不静默退回单向）
+            if d_asm.no_phase_weapon:
+                return {"ok": False, "modeled": True, "tool": "simulate_combat",
+                        "reason": "defender_no_weapon_for_phase",
+                        "note": f"守方反打：{d_asm.note}（或关掉「守方反打」只看单向）",
+                        "weapon_pool": [w.name_en for w in d_asm.full_pool],
+                        "model_tiers": d_asm.tiers, "errors": d_asm.errors}
             # 守方多武器且未指明 → 显式要求装配（禁止静默退回单向：违反诚实降级纪律）
             if d_asm.ambiguous or d_asm.attacker is None:
                 return {"ok": False, "modeled": True, "tool": "simulate_combat",
                         "reason": "defender_loadout_required", "note": d_asm.note,
                         "weapon_pool": [w.name_en for w in d_asm.weapon_pool],
                         "model_tiers": d_asm.tiers, "errors": d_asm.errors}
+            # 显式守方 loadout 与反打阶段不匹配 → 同攻方，显式失败不发全 0 反打
+            if not usable_in_phase(d_asm.attacker.loadout, rev_phase):
+                return {
+                    "ok": False, "modeled": True, "tool": "simulate_combat",
+                    "reason": "defender_no_weapon_for_phase",
+                    "note": (f"守方反打：defender_loadout 里没有"
+                             f"{'近战' if rev_phase == 'melee' else '射击'}阶段能开火的武器"
+                             f"（{'、'.join(w.name_en for w in d_asm.attacker.loadout[:6])}），"
+                             f"反打期望伤害必为 0"),
+                    "weapon_pool": [w.name_en for w in d_asm.weapon_pool],
+                    "model_tiers": d_asm.tiers, "errors": d_asm.errors}
+            if d_asm.auto_assembled:
+                warn_parts.append(f"守方反打自动装配：{d_asm.note}")
+            warning = "；".join(x for x in warn_parts if x) or None
             rep = simulate_matchup(
                 attacker_prof, target, d_asm.attacker, a_as_target,
                 stance_forward=stance, stance_reverse=Stance(phase=rev_phase),
@@ -599,6 +635,7 @@ def simulate_combat_resolved(
                     "dsl_available": dsl_available,
                     "warning": warning}
 
+        warning = "；".join(x for x in warn_parts if x) or None
         rep = simulate(attacker_prof, target, stance, n=n, seed=seed, points=points_a)
         return {"ok": True, "modeled": True, "tool": "simulate_combat",
                 "attacker": a["name_en"], "defender": d["name_en"],

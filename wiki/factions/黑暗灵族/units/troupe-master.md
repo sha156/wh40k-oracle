@@ -20,7 +20,7 @@ updated: '2026-07-23'
 ## 属性表
 | 模型 | M | T | SV | W | LD | OC |
 |---|---|---|---|---|---|---|
-| [[factions/黑暗灵族/units/troupe.md\|丑角剧团]]长 | 8" | 3 | 6+ | 4 | 6+ | 1 |
+| 丑角剧团长 | 8" | 3 | 6+ | 4 | 6+ | 1 |
 
 ### 特殊保护
 - 4+
@@ -28,9 +28,9 @@ updated: '2026-07-23'
 ## 射击武器
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| 神经干扰枪 | 12" | 1 | 2+ | 4 | -2 | 1 | [[core-rules/anti.md\|反步兵 2+]]，[[core-rules/assault.md\|突击]]，[[core-rules/pistol.md\|手枪]] |
+| 神经干扰枪 | 12" | 1 | 2+ | 4 | -2 | 1 | [[core-rules/anti.md\|针对步兵2+]]，[[core-rules/assault.md\|突击]]，[[core-rules/pistol.md\|手枪]] |
 | 星镖手枪 | 12" | 1 | 2+ | 4 | -1 | 1 | [[core-rules/assault.md\|突击]]，[[core-rules/pistol.md\|手枪]] |
-| 热熔手枪 | 6" | 1 | 2+ | 8 | -4 | D6 | [[core-rules/assault.md\|突击]]，[[core-rules/melta.md\|热熔 2]]，[[core-rules/pistol.md\|手枪]] |
+| 热熔手枪 | 6" | 1 | 2+ | 8 | -4 | D6 | [[core-rules/assault.md\|突击]]，[[core-rules/melta.md\|热熔2]]，[[core-rules/pistol.md\|手枪]] |
 
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |

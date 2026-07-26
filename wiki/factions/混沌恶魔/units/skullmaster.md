@@ -30,7 +30,7 @@ updated: '2026-07-23'
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
 | 鲜血之剑 | 近战 | 5 | 2+ | 6 | -2 | 3 | — |
-| 铁甲兽刃角 | 近战 | 4 | 4+ | 6 | -1 | 1 | [[core-rules/extra-attacks.md\|额外攻击]]，骑枪 |
+| 铁甲兽刃角 | 近战 | 4 | 4+ | 6 | -1 | 1 | [[core-rules/extra-attacks.md\|额外攻击]]，[[core-rules/lance.md\|骑枪]] |
 
 ## 技能
 - **主宰之怒**：当该模型领导的单位完成冲锋移动时，直到回合结束前，单位中模型装备的铁甲兽刃角拥有 [毁灭伤害]技能。
@@ -41,4 +41,4 @@ updated: '2026-07-23'
 
 ## 关键词
 - **阵营关键词**：Legiones Daemonica
-- **普通关键词**：[[core-rules/mounted.md|Mounted]]，[[core-rules/character.md|Character]]，Chaos，Daemon，Skullmaster，Shadow Legion，Khorne
+- **普通关键词**：[[core-rules/mounted.md|Mounted]]，[[core-rules/character.md|Character]]，Chaos，Daemon，Skullmaster，[[factions/混沌恶魔/detachments/shadow-legion.md|Shadow Legion]]，Khorne
