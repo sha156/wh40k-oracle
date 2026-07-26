@@ -1,5 +1,6 @@
 ---
 id: fp11e-genestealercults-purestrainbroodswarm-e1
+name_zh: 星辰之子印记
 name_en: Mark of the Star Children
 faction: 基因窃取者教派
 type: enhancement
@@ -10,10 +11,10 @@ tags:
 - 基因窃取者教派
 sources:
 - book: 官方结构库 db/wh40k.sqlite（Wahapedia 11 版镜像）
-updated: '2026-07-25'
+updated: '2026-07-26'
 ---
 
-分数未知、[[factions/基因窃取者教派/detachments/purestrain-broodswarm.md|Purestrain Broodswarm]] 分队。
+分数未知、[[factions/基因窃取者教派/detachments/purestrain-broodswarm.md|纯血虫群]] 分队。
 
 ## 效果
 

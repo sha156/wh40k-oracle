@@ -1,7 +1,9 @@
 ---
 id: '000010704004'
-name_zh: 首袭者
+name_zh: 大劫掠者
 name_en: Archraider
+aliases:
+- 首袭者
 faction: 艾达灵族
 type: enhancement
 detachment: Corsair Coterie
@@ -12,10 +14,10 @@ tags:
 - 艾达灵族
 sources:
 - book: 官方结构库 db/wh40k.sqlite（Wahapedia 11 版镜像）
-updated: '2026-07-25'
+updated: '2026-07-26'
 ---
 
-35 分、[[factions/艾达灵族/detachments/corsair-coterie.md|Corsair Coterie]] 分队。
+35 分、[[factions/艾达灵族/detachments/corsair-coterie.md|海盗劫掠团]] 分队。
 
 ## 效果
 

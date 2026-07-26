@@ -1,5 +1,6 @@
 ---
 id: '000009760'
+name_zh: 封臣铸造联盟
 name_en: Questor Forgepact
 faction: 帝国骑士
 type: detachment
@@ -10,10 +11,10 @@ tags:
 - 帝国骑士
 sources:
 - book: 官方结构库 db/wh40k.sqlite（Wahapedia 11 版镜像）
-updated: '2026-07-25'
+updated: '2026-07-26'
 ---
 
-帝国骑士的分队，分队规则「齿轮之盟」。
+帝国骑士的分队「封臣铸造联盟」，分队规则「齿轮之盟」。
 
 ## 分队规则
 
@@ -38,7 +39,7 @@ No ADEPTUS MECHANICUS models from your army can be your WARLORD.
 
 ## 增强
 
-- [[factions/帝国骑士/enhancements/knight-of-the-opus-machina.md\|Knight of the Opus Machina]]
+- [[factions/帝国骑士/enhancements/knight-of-the-opus-machina.md\|机械杰作的骑士（光环）]]
 - [[factions/帝国骑士/enhancements/magos-questoris.md\|Magos Questoris]]
 - [[factions/帝国骑士/enhancements/omnissian-champion.md\|Omnissian Champion]]
 - [[factions/帝国骑士/enhancements/vocifer-magnificat-aura.md\|Vocifer Magnificat (Aura)]]
@@ -48,6 +49,6 @@ No ADEPTUS MECHANICUS models from your army can be your WARLORD.
 - [[factions/帝国骑士/stratagems/aggression-begets-aggression.md\|AGGRESSION BEGETS AGGRESSION]]
 - [[factions/帝国骑士/stratagems/bonded-imperative.md\|BONDED IMPERATIVE]]
 - [[factions/帝国骑士/stratagems/machine-focus.md\|MACHINE FOCUS]]
-- [[factions/帝国骑士/stratagems/omnissiahs-grace.md\|OMNISSIAH’S GRACE]]
+- [[factions/帝国骑士/stratagems/omnissiahs-grace.md\|欧姆尼赛亚的保佑]]
 - [[factions/帝国骑士/stratagems/thronegheist-fury.md\|THRONEGHEIST FURY]]
-- [[factions/帝国骑士/stratagems/vengeance-of-the-machine-cult.md\|VENGEANCE OF THE MACHINE CULT]]
+- [[factions/帝国骑士/stratagems/vengeance-of-the-machine-cult.md\|机械教的复仇]]

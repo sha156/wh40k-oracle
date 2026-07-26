@@ -1,7 +1,9 @@
 ---
 id: '000010669006'
-name_zh: 蔓延疯狂
+name_zh: 散播疯狂
 name_en: SPREADING MADNESS
+aliases:
+- 蔓延疯狂
 faction: 太空死灵
 type: stratagem
 detachment: Cursed Legion
@@ -14,10 +16,10 @@ tags:
 - 太空死灵
 sources:
 - book: 官方结构库 db/wh40k.sqlite（Wahapedia 11 版镜像）
-updated: '2026-07-25'
+updated: '2026-07-26'
 ---
 
-1 CP、Charge phase、[[factions/太空死灵/detachments/cursed-legion.md|Cursed Legion]] 分队、Battle Tactic Stratagem。
+1 CP、Charge phase、[[factions/太空死灵/detachments/cursed-legion.md|诅咒军团]] 分队、Battle Tactic Stratagem。
 
 ## 使用时机
 

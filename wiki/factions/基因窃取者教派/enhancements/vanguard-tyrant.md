@@ -1,5 +1,6 @@
 ---
 id: '000009827004'
+name_zh: 先锋暴君
 name_en: Vanguard Tyrant
 faction: 基因窃取者教派
 type: enhancement
@@ -11,10 +12,10 @@ tags:
 - 基因窃取者教派
 sources:
 - book: 官方结构库 db/wh40k.sqlite（Wahapedia 11 版镜像）
-updated: '2026-07-25'
+updated: '2026-07-26'
 ---
 
-25 分、[[factions/基因窃取者教派/detachments/final-day.md|Final Day]] 分队。
+25 分、[[factions/基因窃取者教派/detachments/final-day.md|最终之日]] 分队。
 
 ## 效果
 

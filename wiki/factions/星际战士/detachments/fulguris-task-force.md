@@ -1,5 +1,6 @@
 ---
 id: container-fulguris-task-force
+name_zh: 迅电特遣队
 name_en: Fulguris Task Force
 faction: 星际战士
 type: detachment
@@ -10,10 +11,10 @@ tags:
 - 星际战士
 sources:
 - book: 官方结构库 db/wh40k.sqlite（Wahapedia 11 版镜像）
-updated: '2026-07-25'
+updated: '2026-07-26'
 ---
 
-星际战士的分队。
+星际战士的分队「迅电特遣队」。
 
 ## 分队规则
 
@@ -26,6 +27,6 @@ updated: '2026-07-25'
 
 ## 战略
 
-- [[factions/星际战士/stratagems/anti-grav-surge.md\|反重力涌动]]
-- [[factions/星际战士/stratagems/data-link-augury.md\|数据链导测]]
-- [[factions/星际战士/stratagems/reactive-evasion.md\|反应机动]]
+- [[factions/星际战士/stratagems/anti-grav-surge.md\|反重力推进]]
+- [[factions/星际战士/stratagems/data-link-augury.md\|数据连接卜测]]
+- [[factions/星际战士/stratagems/reactive-evasion.md\|闪避反应]]

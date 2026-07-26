@@ -61,4 +61,4 @@ updated: '2026-07-23'
 
 ## 关键词
 - **阵营关键词**：Dark Angels，Adeptus Astartes
-- **普通关键词**：Imperium，[[core-rules/infantry.md|Infantry]]，Deathwing，Deathwing Command Squad，Terminator
+- **普通关键词**：Imperium，[[core-rules/infantry.md|Infantry]]，Deathwing，Deathwing [[factions/星际战士/units/command-squad.md|Command Squad]]，Terminator

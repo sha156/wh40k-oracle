@@ -1,5 +1,6 @@
 ---
 id: '000009826'
+name_zh: 最终之日
 name_en: Final Day
 faction: 基因窃取者教派
 type: detachment
@@ -10,10 +11,10 @@ tags:
 - 基因窃取者教派
 sources:
 - book: 官方结构库 db/wh40k.sqlite（Wahapedia 11 版镜像）
-updated: '2026-07-25'
+updated: '2026-07-26'
 ---
 
-基因窃取者教派的分队，分队规则「Psionic Parasitism」。
+基因窃取者教派的分队「最终之日」，分队规则「Psionic Parasitism」。
 
 ## 分队规则
 
@@ -37,15 +38,15 @@ No TYRANIDS models from your army can be your WARLORD.
 ## 增强
 
 - [[factions/基因窃取者教派/enhancements/enraptured-damnation.md\|Enraptured Damnation]]
-- [[factions/基因窃取者教派/enhancements/inhuman-integration.md\|Inhuman Integration]]
+- [[factions/基因窃取者教派/enhancements/inhuman-integration.md\|异常结合]]
 - [[factions/基因窃取者教派/enhancements/synaptic-auger.md\|Synaptic Auger]]
-- [[factions/基因窃取者教派/enhancements/vanguard-tyrant.md\|Vanguard Tyrant]]
+- [[factions/基因窃取者教派/enhancements/vanguard-tyrant.md\|先锋暴君]]
 
 ## 战略
 
 - [[factions/基因窃取者教派/stratagems/avenge-the-star-children.md\|AVENGE THE STAR CHILDREN]]
-- [[factions/基因窃取者教派/stratagems/darting-attacks.md\|DARTING ATTACKS]]
-- [[factions/基因窃取者教派/stratagems/divine-imperative.md\|DIVINE IMPERATIVE]]
-- [[factions/基因窃取者教派/stratagems/hyperferocity.md\|HYPERFEROCITY]]
-- [[factions/基因窃取者教派/stratagems/psi-surge.md\|PSI SURGE]]
-- [[factions/基因窃取者教派/stratagems/resistance-tunnels.md\|RESISTANCE TUNNELS]]
+- [[factions/基因窃取者教派/stratagems/darting-attacks.md\|躲闪攻击]]
+- [[factions/基因窃取者教派/stratagems/divine-imperative.md\|神圣指令]]
+- [[factions/基因窃取者教派/stratagems/hyperferocity.md\|极强凶性]]
+- [[factions/基因窃取者教派/stratagems/psi-surge.md\|灵能刺激]]
+- [[factions/基因窃取者教派/stratagems/resistance-tunnels.md\|抵抗隧道]]

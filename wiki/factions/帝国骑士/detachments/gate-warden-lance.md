@@ -10,10 +10,10 @@ tags:
 - 帝国骑士
 sources:
 - book: 官方结构库 db/wh40k.sqlite（Wahapedia 11 版镜像）
-updated: '2026-07-25'
+updated: '2026-07-26'
 ---
 
-帝国骑士的分队，分队规则「无畏守御」。
+帝国骑士的分队「Gate Warden Lance」，分队规则「无畏守御」。
 
 ## 分队规则
 

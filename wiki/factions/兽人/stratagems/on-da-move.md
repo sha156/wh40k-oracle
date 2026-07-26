@@ -1,7 +1,9 @@
 ---
 id: '000010796002'
-name_zh: 上路
+name_zh: 动起来！
 name_en: ON DA MOVE
+aliases:
+- 上路
 faction: 兽人
 type: stratagem
 detachment: Speedwaaagh!
@@ -14,10 +16,10 @@ tags:
 - 兽人
 sources:
 - book: 官方结构库 db/wh40k.sqlite（Wahapedia 11 版镜像）
-updated: '2026-07-25'
+updated: '2026-07-26'
 ---
 
-1 CP、Movement phase、[[factions/兽人/detachments/speedwaaagh.md|Speedwaaagh!]] 分队、Strategic Ploy Stratagem。
+1 CP、Movement phase、[[factions/兽人/detachments/speedwaaagh.md|疾速 WAAAGH！]] 分队、Strategic Ploy Stratagem。
 
 ## 使用时机
 

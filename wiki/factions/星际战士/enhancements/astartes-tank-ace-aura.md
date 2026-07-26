@@ -1,5 +1,6 @@
 ---
 id: '000010783005'
+name_zh: 阿斯塔特坦克王牌（光环）
 name_en: Astartes Tank Ace (Aura)
 faction: 星际战士
 type: enhancement
@@ -11,10 +12,10 @@ tags:
 - 星际战士
 sources:
 - book: 官方结构库 db/wh40k.sqlite（Wahapedia 11 版镜像）
-updated: '2026-07-25'
+updated: '2026-07-26'
 ---
 
-40 分、[[factions/星际战士/detachments/headhunter-task-force.md|Headhunter Task Force]] 分队。
+40 分、[[factions/星际战士/detachments/headhunter-task-force.md|猎头特遣队]] 分队。
 
 ## 效果
 

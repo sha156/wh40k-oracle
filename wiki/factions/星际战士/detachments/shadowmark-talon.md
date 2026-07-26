@@ -1,5 +1,6 @@
 ---
 id: '000010463'
+name_zh: 影标之爪
 name_en: Shadowmark Talon
 faction: 星际战士
 type: detachment
@@ -10,10 +11,10 @@ tags:
 - 星际战士
 sources:
 - book: 官方结构库 db/wh40k.sqlite（Wahapedia 11 版镜像）
-updated: '2026-07-25'
+updated: '2026-07-26'
 ---
 
-星际战士的分队，分队规则「Masters of Shadow」。
+星际战士的分队「影标之爪」，分队规则「Masters of Shadow」。
 
 ## 分队规则
 
@@ -34,15 +35,15 @@ Your army can include Raven Guard units, but it cannot include any ADEPTUS ASTAR
 ## 增强
 
 - [[factions/星际战士/enhancements/blackwing-shroud.md\|Blackwing Shroud]]
-- [[factions/星际战士/enhancements/coronal-susurrant.md\|Coronal Susurrant]]
+- [[factions/星际战士/enhancements/coronal-susurrant.md\|低语冠冕]]
 - [[factions/星际战士/enhancements/hunters-instincts-shadowmark-talon.md\|Hunter’s Instincts]]
 - [[factions/星际战士/enhancements/umbral-raptor.md\|Umbral Raptor]]
 
 ## 战略
 
 - [[factions/星际战士/stratagems/armour-of-contempt-shadowmark-talon.md\|蔑视甲胄]]
-- [[factions/星际战士/stratagems/feint-and-thrust.md\|FEINT AND THRUST]]
+- [[factions/星际战士/stratagems/feint-and-thrust.md\|佯退突袭]]
 - [[factions/星际战士/stratagems/into-darkness.md\|INTO DARKNESS]]
-- [[factions/星际战士/stratagems/lay-low-the-tyrants.md\|LAY LOW THE TYRANTS]]
+- [[factions/星际战士/stratagems/lay-low-the-tyrants.md\|斩首行动]]
 - [[factions/星际战士/stratagems/raptorial-vigilance.md\|RAPTORIAL VIGILANCE]]
-- [[factions/星际战士/stratagems/stunning-fusillade.md\|STUNNING FUSILLADE]]
+- [[factions/星际战士/stratagems/stunning-fusillade.md\|震慑齐射]]

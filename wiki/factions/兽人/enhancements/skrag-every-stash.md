@@ -12,7 +12,7 @@ tags:
 - 兽人
 sources:
 - book: 官方结构库 db/wh40k.sqlite（Wahapedia 11 版镜像）
-updated: '2026-07-25'
+updated: '2026-07-26'
 ---
 
 25 分、[[factions/兽人/detachments/da-big-hunt.md|Da Big Hunt]] 分队。

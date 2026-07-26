@@ -6,11 +6,18 @@
 612 块能按英文名匹配上），但那是十版译本，与 11 版存在漂移（FP added_11e 200 /
 removed_11e 47），叠上去会得到"读着通顺但与官网不一致"的页面。
 
-中文名的三个来源，按优先级：
-  ① 库内 `name_zh`（战略 426 / 分队规则 106 / 增强 0）
+中文名的三个来源，按优先级（wiki 宪法 §6：GW 官方中文 > 汉化组译名 > 社区译名）：
+  ① 库内 `name_zh`——2026-07-26 起含 **GW 官方中文包**投影层
+     （`db_compile/official_zh_apply.py`：战略 728 / 增强 249，增强此前是 0）
   ② `dsl_payloads/*.json`——P7 阵营 DSL 编码时按 11 版 Faction Pack 人工译的
-     （战略 681 / 增强 378 / 分队规则 165），是增强中文名的**唯一**来源
+     （战略 681 / 增强 378 / 分队规则 165），官方没收录的条目仍靠它兜底
   ③ 没有就留英文，不机翻
+官方译名顶掉 P7 人工译名时，**旧译名不删**，降为页面 `aliases`——搜哪个都找得到
+（沿用 2026-07-25 处置 USR 旧译名的同一条规矩）。
+
+分队**容器**的中文名走独立表 `detachment_names_zh`（键就是容器英文名）：
+容器名在各表之间可 join 的面不一致，挂到 `detachments` 行上会静默丢掉 60/123
+（详见 `db_compile/official_zh_apply.py` 顶注）。
 
 「分队容器」这个坑值得单独说：`detachments` 表存的是**分队规则名**（Command Protocols），
 不是玩家说的**分队名**（Awakened Dynasty）。容器名的真源是官方 CSV 的 `detachment` 列，
@@ -78,6 +85,20 @@ def _zh_name(name_en: Optional[str], db_zh: Optional[str],
     return None
 
 
+def _superseded_zh(name_en: Optional[str], db_zh: Optional[str],
+                   table_names: Dict[str, str]) -> List[str]:
+    """被库内（官方）译名顶掉的 P7 人工译名，作为页面 alias 保留。
+
+    只在两者都在、且**不同**时返回。同名不返回——alias 与正名重复会让
+    crosslinks 的名字索引出现自指条目，也让 lint 的重名报告平白多出一堆噪音。
+    """
+    zh = _zh_name(name_en, db_zh, table_names)
+    if not zh or not name_en:
+        return []
+    old = table_names.get(str(name_en).strip().upper())
+    return [old] if old and old != zh else []
+
+
 def _title(name_zh: Optional[str], name_en: Optional[str]) -> str:
     """页面显示名：有中文用中文，否则英文。"""
     return name_zh or (name_en or "")
@@ -86,9 +107,12 @@ def _title(name_zh: Optional[str], name_en: Optional[str]) -> str:
 # ── 渲染：战略 ─────────────────────────────────────────────────────
 
 def render_stratagem(row: sqlite3.Row, faction_zh: str,
-                     zh_names: Dict[str, Dict[str, str]]) -> Tuple[WikiPage, List[str]]:
+                     zh_names: Dict[str, Dict[str, str]],
+                     det_zh: Optional[Dict[str, str]] = None
+                     ) -> Tuple[WikiPage, List[str]]:
     name_en = (row["name_en"] or "").strip()
-    name_zh = _zh_name(name_en, row["name_zh"], zh_names.get("stratagems", {}))
+    strat_names = zh_names.get("stratagems", {})
+    name_zh = _zh_name(name_en, row["name_zh"], strat_names)
     cp = _as_int(row["cp_cost"])
     phase = (row["phase"] or "").strip()
     container = (row["detachment"] or "").strip()
@@ -99,7 +123,9 @@ def render_stratagem(row: sqlite3.Row, faction_zh: str,
     if phase:
         lead_bits.append(phase)
     if container:
-        lead_bits.append("{} 分队".format(container))
+        # 有官方中文容器名就只写中文：英文名在 frontmatter 的 detachment 字段里（机器键），
+        # 正文里中英并列会被 crosslinks 当成两个名字各注一次链，同一行出现两个同目标链接
+        lead_bits.append("{} 分队".format((det_zh or {}).get(container) or container))
     if stype:
         lead_bits.append(_short_type(stype))
 
@@ -122,10 +148,11 @@ def render_stratagem(row: sqlite3.Row, faction_zh: str,
 
     fm = WikiPageFrontmatter(
         id=str(row["id"]), name_zh=name_zh, name_en=name_en,
+        aliases=_superseded_zh(name_en, row["name_zh"], strat_names),
         faction=faction_zh, type="stratagem",
         detachment=container, cp=cp, phase=phase,
         stratagem_type=stype or "",
-        sources=[{"book": SOURCE_NOTE}], updated="2026-07-25",
+        sources=[{"book": SOURCE_NOTE}], updated="2026-07-26",
     )
     fm.generate_tags()
     return WikiPage(fm=fm, body=escape_table_pipes("\n".join(L).rstrip() + "\n")), warns
@@ -143,9 +170,14 @@ _ONLY_RE = re.compile(r"^(.{0,80}?\bonly\b\.)\s*", re.IGNORECASE)
 
 
 def render_enhancement(row: sqlite3.Row, faction_zh: str,
-                       zh_names: Dict[str, Dict[str, str]]) -> Tuple[WikiPage, List[str]]:
+                       zh_names: Dict[str, Dict[str, str]],
+                       det_zh: Optional[Dict[str, str]] = None
+                       ) -> Tuple[WikiPage, List[str]]:
     name_en = (row["name"] or "").strip()
-    name_zh = _zh_name(name_en, None, zh_names.get("enhancements", {}))
+    enh_names = zh_names.get("enhancements", {})
+    # 2026-07-26 起 enhancements 表才有 name_zh 列（官方中文层）；旧库读不到就退回载荷译名
+    db_zh = _row_get(row, "name_zh") or None
+    name_zh = _zh_name(name_en, db_zh, enh_names)
     cost = _as_int(row["cost"])
     container = (row["detachment_name"] or "").strip()
 
@@ -159,7 +191,7 @@ def render_enhancement(row: sqlite3.Row, faction_zh: str,
 
     lead = ["{} 分".format(cost) if cost is not None else "分数未知"]
     if container:
-        lead.append("{} 分队".format(container))
+        lead.append("{} 分队".format((det_zh or {}).get(container) or container))
     L: List[str] = ["、".join(lead) + "。", "",
                     "## 效果", "", md or "（源文本未提供）", ""]
     if cost is not None:
@@ -168,9 +200,10 @@ def render_enhancement(row: sqlite3.Row, faction_zh: str,
 
     fm = WikiPageFrontmatter(
         id=str(row["id"]), name_zh=name_zh, name_en=name_en,
+        aliases=_superseded_zh(name_en, db_zh, enh_names),
         faction=faction_zh, type="enhancement",
         detachment=container, cost=cost,
-        sources=[{"book": SOURCE_NOTE}], updated="2026-07-25",
+        sources=[{"book": SOURCE_NOTE}], updated="2026-07-26",
     )
     fm.generate_tags()
     return WikiPage(fm=fm, body=escape_table_pipes("\n".join(L).rstrip() + "\n")), warns
@@ -183,7 +216,9 @@ def render_detachment(container: str, faction_zh: str,
                       enh_links: Sequence[Tuple[str, str]],
                       strat_links: Sequence[Tuple[str, str]],
                       zh_names: Dict[str, Dict[str, str]],
-                      det_id: str) -> Tuple[WikiPage, List[str]]:
+                      det_id: str,
+                      container_zh: Optional[str] = None
+                      ) -> Tuple[WikiPage, List[str]]:
     """一个**分队容器** = 一页。规则正文来自与之绑定的 detachments 行。
 
     rules 是列表而非单行：实测同一阵营内确有同名容器挂两条不同规则
@@ -206,8 +241,8 @@ def render_detachment(container: str, faction_zh: str,
             (r0["name_en"] or "").strip())
 
     L: List[str] = [
-        "{}的分队{}。".format(
-            faction_zh or "通用",
+        "{}的分队「{}」{}。".format(
+            faction_zh or "通用", container_zh or container,
             "，分队规则「{}」".format(first_label) if first_label else ""),
         "",
         "## 分队规则", "",
@@ -238,9 +273,9 @@ def render_detachment(container: str, faction_zh: str,
     L += _links("战略", strat_links, "（本分队在结构库中无战略条目）")
 
     fm = WikiPageFrontmatter(
-        id=det_id, name_zh=None, name_en=container,
+        id=det_id, name_zh=container_zh, name_en=container,
         faction=faction_zh, type="detachment", detachment=container,
-        sources=[{"book": SOURCE_NOTE}], updated="2026-07-25",
+        sources=[{"book": SOURCE_NOTE}], updated="2026-07-26",
     )
     fm.generate_tags()
     return WikiPage(fm=fm, body=escape_table_pipes("\n".join(L).rstrip() + "\n")), warns
@@ -265,6 +300,18 @@ def _row_get(row: sqlite3.Row, key: str) -> str:
 
 def has_column(conn: sqlite3.Connection, table: str, col: str) -> bool:
     return any(r[1] == col for r in conn.execute("PRAGMA table_info({})".format(table)))
+
+
+def load_container_zh(conn: sqlite3.Connection) -> Dict[str, str]:
+    """分队容器英文名 → 官方中文名（`detachment_names_zh`，由 official_zh_apply 灌）。
+
+    表不存在＝这库还没叠官方中文层，返回空字典让页面保持英文——**不猜**。
+    """
+    if not conn.execute("SELECT COUNT(*) FROM sqlite_master WHERE type='table' "
+                        "AND name='detachment_names_zh'").fetchone()[0]:
+        return {}
+    return {r[0]: r[1] for r in conn.execute(
+        "SELECT name_en, name_zh FROM detachment_names_zh") if r[0] and r[1]}
 
 
 # ── 批量生成 ───────────────────────────────────────────────────────
@@ -300,6 +347,8 @@ def generate_all(db_path: Path, wiki_root: Path) -> Dict[str, Any]:
         "enhancements": {"rows": 0, "written": 0, "skipped": []},
         "detachments": {"containers": 0, "written": 0, "no_rule": []},
         "conflicts": [], "warnings": defaultdict(list), "zh_named": defaultdict(int),
+        # 官方译名顶掉 P7 人工译名、旧名降为 alias 的页数（对账用，不是错误）
+        "superseded_zh": defaultdict(int),
     }
     try:
         if not has_column(conn, "detachments", "detachment_name"):
@@ -310,6 +359,9 @@ def generate_all(db_path: Path, wiki_root: Path) -> Dict[str, Any]:
 
         # ① 先把所有实体的落点算出来，再渲染——分队页要链到战略/增强页，
         #    路径必须与它们实际落盘的位置一字不差
+        det_zh = load_container_zh(conn)
+        report["detachments"]["zh_table_rows"] = len(det_zh)
+
         strat_rows = conn.execute(
             "SELECT * FROM stratagems ORDER BY id").fetchall()
         enh_rows = conn.execute(
@@ -353,14 +405,16 @@ def generate_all(db_path: Path, wiki_root: Path) -> Dict[str, Any]:
         # ③ 渲染并落盘
         for row, rel, _slug in plan_s:
             fzh = _faction_zh(row["faction"])
-            page, warns = render_stratagem(row, fzh or "", zh_names)
+            page, warns = render_stratagem(row, fzh or "", zh_names, det_zh)
             _write(wiki_root, rel, page, gen_hashes, report)
-            _collect(report, "stratagems", row["id"], warns, page.fm.name_zh)
+            _collect(report, "stratagems", row["id"], warns, page.fm.name_zh,
+                     page.fm.aliases)
         for row, rel, _slug in plan_e:
             fzh = _faction_zh(row["faction_id"])
-            page, warns = render_enhancement(row, fzh or "", zh_names)
+            page, warns = render_enhancement(row, fzh or "", zh_names, det_zh)
             _write(wiki_root, rel, page, gen_hashes, report)
-            _collect(report, "enhancements", row["id"], warns, page.fm.name_zh)
+            _collect(report, "enhancements", row["id"], warns, page.fm.name_zh,
+                     page.fm.aliases)
 
         used_det: Dict[str, int] = {}
         for key in sorted(containers):
@@ -373,7 +427,8 @@ def generate_all(db_path: Path, wiki_root: Path) -> Dict[str, Any]:
             rules = rule_by_container.get(key, [])
             if not rules:
                 report["detachments"]["no_rule"].append("{}/{}".format(fid or "通用", name))
-            enh_links = sorted((rel, _title(_zh_name(r["name"], None,
+            enh_links = sorted((rel, _title(_zh_name(r["name"],
+                                                     _row_get(r, "name_zh") or None,
                                                      zh_names.get("enhancements", {})),
                                             r["name"]))
                                for r, rel in info["enh"])
@@ -383,7 +438,8 @@ def generate_all(db_path: Path, wiki_root: Path) -> Dict[str, Any]:
                                  for r, rel in info["strat"])
             det_id = str(rules[0]["id"]) if rules else "container-" + slugify(name)
             page, warns = render_detachment(name, fzh or "", rules, enh_links,
-                                            strat_links, zh_names, det_id)
+                                            strat_links, zh_names, det_id,
+                                            det_zh.get(name))
             # slug 去重按阵营各算各的：同名容器分处两个阵营目录，不该互相加 -2 后缀
             slug = _alloc_slug(used_det, "{}/{}".format(fzh or "core", slugify(name)))
             slug = slug.split("/", 1)[1]
@@ -391,6 +447,8 @@ def generate_all(db_path: Path, wiki_root: Path) -> Dict[str, Any]:
             rel = "{}/detachments/{}.md".format(base, slug)
             _write(wiki_root, rel, page, gen_hashes, report)
             report["detachments"]["written"] += 1
+            if page.fm.name_zh:
+                report["zh_named"]["detachments"] += 1
             if warns:
                 report["warnings"][name] = warns
         # 清理陈旧登记：改过 slug 规则或实体下架后，登记表里会留下指向不存在文件的键。
@@ -475,9 +533,11 @@ def _write(wiki_root: Path, rel: str, page: WikiPage,
     gen_hashes[rel] = text_sha256(text)
 
 
-def _collect(report, bucket, rid, warns, name_zh) -> None:
+def _collect(report, bucket, rid, warns, name_zh, aliases=()) -> None:
     report[bucket]["written"] += 1
     if name_zh:
         report["zh_named"][bucket] += 1
+    if aliases:
+        report["superseded_zh"][bucket] += 1
     if warns:
         report["warnings"][str(rid)] = warns

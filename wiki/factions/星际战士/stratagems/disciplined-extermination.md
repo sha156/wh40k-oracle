@@ -1,5 +1,6 @@
 ---
 id: '000010461006'
+name_zh: 纪律性歼灭
 name_en: DISCIPLINED EXTERMINATION
 faction: 星际战士
 type: stratagem
@@ -13,10 +14,10 @@ tags:
 - 星际战士
 sources:
 - book: 官方结构库 db/wh40k.sqlite（Wahapedia 11 版镜像）
-updated: '2026-07-25'
+updated: '2026-07-26'
 ---
 
-1 CP、Shooting phase、[[factions/星际战士/detachments/emperors-shield.md|Emperor’s Shield]] 分队、Battle Tactic Stratagem。
+1 CP、Shooting phase、[[factions/星际战士/detachments/emperors-shield.md|帝皇之盾]] 分队、Battle Tactic Stratagem。
 
 ## 使用时机
 

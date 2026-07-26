@@ -1,7 +1,9 @@
 ---
 id: '000009782002'
-name_zh: 恶意狂热
+name_zh: 恶毒狂暴
 name_en: MALICIOUS FRENZY
+aliases:
+- 恶意狂热
 faction: 黑暗灵族
 type: stratagem
 detachment: Reaper’s Wager
@@ -14,10 +16,10 @@ tags:
 - 黑暗灵族
 sources:
 - book: 官方结构库 db/wh40k.sqlite（Wahapedia 11 版镜像）
-updated: '2026-07-25'
+updated: '2026-07-26'
 ---
 
-1 CP、Shooting or Fight phase、[[factions/黑暗灵族/detachments/reapers-wager.md|Reaper’s Wager]] 分队、Battle Tactic Stratagem。
+1 CP、Shooting or Fight phase、[[factions/黑暗灵族/detachments/reapers-wager.md|死神的赌注]] 分队、Battle Tactic Stratagem。
 
 ## 使用时机
 

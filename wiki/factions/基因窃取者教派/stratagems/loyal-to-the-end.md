@@ -1,7 +1,9 @@
 ---
 id: fp11e-genestealercults-heroesuprising-s3
-name_zh: 至死效忠
+name_zh: 忠诚至终
 name_en: LOYAL TO THE END
+aliases:
+- 至死效忠
 faction: 基因窃取者教派
 type: stratagem
 detachment: Heroes of the Uprising
@@ -13,10 +15,10 @@ tags:
 - 基因窃取者教派
 sources:
 - book: 官方结构库 db/wh40k.sqlite（Wahapedia 11 版镜像）
-updated: '2026-07-25'
+updated: '2026-07-26'
 ---
 
-1 CP、Fight phase、[[factions/基因窃取者教派/detachments/heroes-of-the-uprising.md|Heroes of the Uprising]] 分队。
+1 CP、Fight phase、[[factions/基因窃取者教派/detachments/heroes-of-the-uprising.md|叛逆英雄]] 分队。
 
 ## 使用时机
 

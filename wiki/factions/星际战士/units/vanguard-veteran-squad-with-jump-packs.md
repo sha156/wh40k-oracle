@@ -49,4 +49,4 @@ updated: '2026-07-23'
 
 ## 关键词
 - **阵营关键词**：Adeptus Astartes
-- **普通关键词**：Fly，Vanguard Veteran Squad，[[core-rules/infantry.md|Infantry]]，Jump Pack，Deathwing，[[core-rules/grenades.md|Grenades]]，Vanguard Veteran Squad with Jump Packs，Imperium
+- **普通关键词**：Fly，[[factions/星际战士/units/vanguard-veteran-squad.md|Vanguard Veteran Squad]]，[[core-rules/infantry.md|Infantry]]，Jump Pack，Deathwing，[[core-rules/grenades.md|Grenades]]，Vanguard Veteran Squad with Jump Packs，Imperium

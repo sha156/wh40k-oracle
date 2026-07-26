@@ -10,10 +10,10 @@ tags:
 - 太空死灵
 sources:
 - book: 官方结构库 db/wh40k.sqlite（Wahapedia 11 版镜像）
-updated: '2026-07-25'
+updated: '2026-07-26'
 ---
 
-太空死灵的分队，分队规则「歼灭协议」。
+太空死灵的分队「Annihilation Legion」，分队规则「歼灭协议」。
 
 ## 分队规则
 

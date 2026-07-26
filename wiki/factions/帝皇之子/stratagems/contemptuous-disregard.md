@@ -1,7 +1,9 @@
 ---
 id: '000010655002'
-name_zh: 轻蔑无视
+name_zh: 轻蔑漠视
 name_en: CONTEMPTUOUS DISREGARD
+aliases:
+- 轻蔑无视
 faction: 帝皇之子
 type: stratagem
 detachment: Court of the Phoenician
@@ -14,10 +16,10 @@ tags:
 - 帝皇之子
 sources:
 - book: 官方结构库 db/wh40k.sqlite（Wahapedia 11 版镜像）
-updated: '2026-07-25'
+updated: '2026-07-26'
 ---
 
-2 CP、Shooting or Fight phase、[[factions/帝皇之子/detachments/court-of-the-phoenician.md|Court of the Phoenician]] 分队、Stratagem。
+2 CP、Shooting or Fight phase、[[factions/帝皇之子/detachments/court-of-the-phoenician.md|凤凰王庭]] 分队、Stratagem。
 
 ## 使用时机
 

@@ -45,4 +45,4 @@ updated: '2026-07-23'
 
 ## 关键词
 - **阵营关键词**：Adeptus Astartes
-- **普通关键词**：[[core-rules/smoke.md|Smoke]]，[[core-rules/transport.md|Transport]]，[[core-rules/dedicated-transport.md|Dedicated Transport]]，Imperium，Relic Razorback，Vehicle
+- **普通关键词**：[[core-rules/smoke.md|Smoke]]，[[core-rules/transport.md|Transport]]，[[core-rules/dedicated-transport.md|Dedicated Transport]]，Imperium，Relic [[factions/星际战士/units/razorback.md|Razorback]]，Vehicle

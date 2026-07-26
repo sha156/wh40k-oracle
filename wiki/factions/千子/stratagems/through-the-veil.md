@@ -1,7 +1,9 @@
 ---
 id: '000009742005'
-name_zh: 穿越帷幕
+name_zh: 穿越间隔
 name_en: THROUGH THE VEIL
+aliases:
+- 穿越帷幕
 faction: 千子
 type: stratagem
 detachment: Hexwarp Thrallband
@@ -14,10 +16,10 @@ tags:
 - 千子
 sources:
 - book: 官方结构库 db/wh40k.sqlite（Wahapedia 11 版镜像）
-updated: '2026-07-25'
+updated: '2026-07-26'
 ---
 
-1 CP、Movement phase、[[factions/千子/detachments/hexwarp-thrallband.md|Hexwarp Thrallband]] 分队、Epic Deed Stratagem。
+1 CP、Movement phase、[[factions/千子/detachments/hexwarp-thrallband.md|次元邪咒傀儡团]] 分队、Epic Deed Stratagem。
 
 ## 使用时机
 

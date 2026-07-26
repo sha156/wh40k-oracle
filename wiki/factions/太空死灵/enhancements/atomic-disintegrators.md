@@ -1,7 +1,9 @@
 ---
 id: '000010664003'
-name_zh: 原子解离器
+name_zh: 原子分解器
 name_en: Atomic Disintegrators
+aliases:
+- 原子解离器
 faction: 太空死灵
 type: enhancement
 detachment: Cryptek Conclave
@@ -12,10 +14,10 @@ tags:
 - 太空死灵
 sources:
 - book: 官方结构库 db/wh40k.sqlite（Wahapedia 11 版镜像）
-updated: '2026-07-25'
+updated: '2026-07-26'
 ---
 
-10 分、[[factions/太空死灵/detachments/cryptek-conclave.md|Cryptek Conclave]] 分队。
+10 分、[[factions/太空死灵/detachments/cryptek-conclave.md|墓穴技师密会]] 分队。
 
 ## 效果
 

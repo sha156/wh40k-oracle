@@ -42,4 +42,4 @@ updated: '2026-07-23'
 
 ## 关键词
 - **阵营关键词**：Legiones Daemonica，Heretic Astartes
-- **普通关键词**：[[core-rules/infantry.md|Infantry]]，Possessed，Possessed，[[core-rules/infantry.md|Infantry]]，[[factions/混沌恶魔/detachments/shadow-legion.md|Shadow Legion]]，Undivided，Daemon，Chaos，[[core-rules/infantry.md|Infantry]]，Shadow Legion，Undivided，Possessed，Daemon，Chaos，Shadow Legion，Undivided，Daemon，Chaos，[[core-rules/infantry.md|Infantry]]，Shadow Legion，Undivided，Possessed，Daemon，Chaos
+- **普通关键词**：[[core-rules/infantry.md|Infantry]]，Possessed，Possessed，[[core-rules/infantry.md|Infantry]]，[[factions/混沌恶魔/detachments/shadow-legion.md|Shadow Legion]]，Undivided，Daemon，Chaos，[[core-rules/infantry.md|Infantry]]，[[factions/混沌恶魔/detachments/shadow-legion.md|Shadow Legion]]，Undivided，Possessed，Daemon，Chaos，Shadow Legion，Undivided，Daemon，Chaos，[[core-rules/infantry.md|Infantry]]，Shadow Legion，Undivided，Possessed，Daemon，Chaos

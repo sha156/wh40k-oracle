@@ -1,7 +1,9 @@
 ---
 id: '000010712002'
-name_zh: 队长
+name_zh: 大船长
 name_en: Da Kaptin
+aliases:
+- 队长
 faction: 兽人
 type: enhancement
 detachment: Freebooter Krew
@@ -12,10 +14,10 @@ tags:
 - 兽人
 sources:
 - book: 官方结构库 db/wh40k.sqlite（Wahapedia 11 版镜像）
-updated: '2026-07-25'
+updated: '2026-07-26'
 ---
 
-10 分、[[factions/兽人/detachments/freebooter-krew.md|Freebooter Krew]] 分队。
+10 分、[[factions/兽人/detachments/freebooter-krew.md|海盗船团]] 分队。
 
 ## 效果
 

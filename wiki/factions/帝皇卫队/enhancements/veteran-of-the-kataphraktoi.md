@@ -1,7 +1,9 @@
 ---
 id: '000009753005'
-name_zh: 卡塔法克托伊老兵
+name_zh: 铁骑结社的老兵
 name_en: Veteran of the Kataphraktoi
+aliases:
+- 卡塔法克托伊老兵
 faction: 帝皇卫队
 type: enhancement
 detachment: Solar Spearhead
@@ -12,10 +14,10 @@ tags:
 - 帝皇卫队
 sources:
 - book: 官方结构库 db/wh40k.sqlite（Wahapedia 11 版镜像）
-updated: '2026-07-25'
+updated: '2026-07-26'
 ---
 
-10 分、[[factions/帝皇卫队/detachments/solar-spearhead.md|Solar Spearhead]] 分队。
+10 分、[[factions/帝皇卫队/detachments/solar-spearhead.md|耀日矛头]] 分队。
 
 ## 效果
 

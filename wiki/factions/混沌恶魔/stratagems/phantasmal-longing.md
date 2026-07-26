@@ -1,5 +1,6 @@
 ---
 id: '000009807005'
+name_zh: 虚幻渴望
 name_en: PHANTASMAL LONGING
 faction: 混沌恶魔
 type: stratagem
@@ -13,10 +14,10 @@ tags:
 - 混沌恶魔
 sources:
 - book: 官方结构库 db/wh40k.sqlite（Wahapedia 11 版镜像）
-updated: '2026-07-25'
+updated: '2026-07-26'
 ---
 
-1 CP、Movement or Charge phase、[[factions/混沌恶魔/detachments/legion-of-excess.md|Legion of Excess]] 分队、Strategic Ploy Stratagem。
+1 CP、Movement or Charge phase、[[factions/混沌恶魔/detachments/legion-of-excess.md|恣肆军团]] 分队、Strategic Ploy Stratagem。
 
 ## 使用时机
 

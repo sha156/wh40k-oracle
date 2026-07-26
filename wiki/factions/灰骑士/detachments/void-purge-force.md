@@ -10,10 +10,10 @@ tags:
 - 灰骑士
 sources:
 - book: 官方结构库 db/wh40k.sqlite（Wahapedia 11 版镜像）
-updated: '2026-07-25'
+updated: '2026-07-26'
 ---
 
-灰骑士的分队，分队规则「An Urgent Duty」。
+灰骑士的分队「Void Purge Force」，分队规则「An Urgent Duty」。
 
 ## 分队规则
 

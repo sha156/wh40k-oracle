@@ -146,6 +146,9 @@ CREATE TABLE IF NOT EXISTS detachments (
 # P7-PR4：补 DSL 投影列（effect_dsl_json/dsl_status，真源在 dsl_payloads/*.json）与
 # fp_status（NULL=现行；'removed_11e'=FP 完整重印裁定 11 版已删除；'added_11e'=FP 新增
 # 补录行，Wahapedia 无源）。旧库缺列由 fp_rules/dsl_apply 的 ensure-column 幂等补齐。
+# name_zh（2026-07-26）：此表原本**没有**中文名列，强化的中文名此前只活在
+# dsl_payloads 的 P7 人工译名里、渲染时才合并。GW 官方中文包到手后中文名有了权威源，
+# 落进库里（真源 official_zh_names.json，投影层 official_zh_apply.py）。
 ENHANCEMENTS_DDL = """
 CREATE TABLE IF NOT EXISTS enhancements (
     id TEXT PRIMARY KEY,
@@ -153,12 +156,27 @@ CREATE TABLE IF NOT EXISTS enhancements (
     detachment_id TEXT,
     detachment_name TEXT,
     name TEXT,
+    name_zh TEXT,
     cost INTEGER,
     legend TEXT,
     description TEXT,
     effect_dsl_json TEXT,
     dsl_status TEXT DEFAULT 'not_modeled',
     fp_status TEXT
+);
+"""
+
+# 分队**容器名**的官方中文（2026-07-26）。为什么单独一张表而不是加一列：
+# 容器名的可 join 面在各表之间**不一致**——官方中文包给出 123 个容器的中文名，
+# 拿去撞 stratagems.detachment / enhancements.detachment_name 是 123/123，
+# 撞 detachments.detachment_name 只有 63/123（该表本就不覆盖全部容器）。
+# 把中文名挂在 detachments 行上，等于静默丢掉 60 个容器的译名；而 detachments.name_zh
+# 又已被**分队规则名**的中文占着（Command Protocols 那一列），不能借用。
+DETACHMENT_NAMES_ZH_DDL = """
+CREATE TABLE IF NOT EXISTS detachment_names_zh (
+    name_en TEXT PRIMARY KEY,
+    name_zh TEXT NOT NULL,
+    source TEXT NOT NULL
 );
 """
 
@@ -175,7 +193,8 @@ CREATE TABLE IF NOT EXISTS aliases (
 
 ALL_DDL = (
     FACTIONS_DDL, DATASHEETS_DDL, UNITS_DDL, MODELS_DDL, WEAPONS_DDL,
-    ABILITIES_DDL, STRATAGEMS_DDL, DETACHMENTS_DDL, ENHANCEMENTS_DDL, ALIASES_DDL,
+    ABILITIES_DDL, STRATAGEMS_DDL, DETACHMENTS_DDL, ENHANCEMENTS_DDL,
+    DETACHMENT_NAMES_ZH_DDL, ALIASES_DDL,
 )
 
 # 晚于建表加进 DDL 的列。新库由 ALL_DDL 自带，旧库（已在跑、没重建过的
@@ -186,6 +205,7 @@ ALL_DDL = (
 LATE_COLUMNS: Dict[str, Tuple[Tuple[str, str], ...]] = {
     "detachments": (("detachment_name", "TEXT"), ("detachment_id", "TEXT")),
     "stratagems": (("type", "TEXT"), ("turn", "TEXT")),
+    "enhancements": (("name_zh", "TEXT"),),
 }
 
 

@@ -1,5 +1,6 @@
 ---
 id: '000010148002'
+name_zh: 适应优化
 name_en: ADAPTIVE OPTIMISATION
 faction: 泰伦虫族
 type: stratagem
@@ -13,10 +14,10 @@ tags:
 - 泰伦虫族
 sources:
 - book: 官方结构库 db/wh40k.sqlite（Wahapedia 11 版镜像）
-updated: '2026-07-25'
+updated: '2026-07-26'
 ---
 
-1 CP、Command phase、[[factions/泰伦虫族/detachments/subterranean-assault.md|Subterranean Assault]] 分队、Wargear Stratagem。
+1 CP、Command phase、[[factions/泰伦虫族/detachments/subterranean-assault.md|地底突袭]] 分队、Wargear Stratagem。
 
 ## 使用时机
 

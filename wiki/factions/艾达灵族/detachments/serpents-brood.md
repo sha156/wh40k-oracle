@@ -1,5 +1,6 @@
 ---
 id: '000010648'
+name_zh: 巨蛇族群
 name_en: Serpent’s Brood
 faction: 艾达灵族
 type: detachment
@@ -10,10 +11,10 @@ tags:
 - 艾达灵族
 sources:
 - book: 官方结构库 db/wh40k.sqlite（Wahapedia 11 版镜像）
-updated: '2026-07-25'
+updated: '2026-07-26'
 ---
 
-艾达灵族的分队，分队规则「Boons of the Brood」。
+艾达灵族的分队「巨蛇族群」，分队规则「Boons of the Brood」。
 
 ## 分队规则
 
@@ -31,15 +32,15 @@ TRAVELLING PLAYERS
 ## 增强
 
 - [[factions/艾达灵族/enhancements/fanged-leer.md\|Fanged Leer]]
-- [[factions/艾达灵族/enhancements/key-of-ghosts.md\|Key of Ghosts]]
+- [[factions/艾达灵族/enhancements/key-of-ghosts.md\|幽魂钥匙]]
 - [[factions/艾达灵族/enhancements/shedskin-raiment.md\|Shedskin Raiment]]
-- [[factions/艾达灵族/enhancements/weavers-wail.md\|Weavers’ Wail]]
+- [[factions/艾达灵族/enhancements/weavers-wail.md\|编织者哀嚎]]
 
 ## 战略
 
-- [[factions/艾达灵族/stratagems/fangs-of-the-brood.md\|FANGS OF THE BROOD]]
-- [[factions/艾达灵族/stratagems/skyward-lunge.md\|SKYWARD LUNGE]]
-- [[factions/艾达灵族/stratagems/striking-stride.md\|STRIKING STRIDE]]
-- [[factions/艾达灵族/stratagems/venomous-wrath.md\|VENOMOUS WRATH]]
-- [[factions/艾达灵族/stratagems/weavers-coils.md\|WEAVERS’ COILS]]
-- [[factions/艾达灵族/stratagems/weaving-stride.md\|WEAVING STRIDE]]
+- [[factions/艾达灵族/stratagems/fangs-of-the-brood.md\|蛇群之牙]]
+- [[factions/艾达灵族/stratagems/skyward-lunge.md\|登云腾跃]]
+- [[factions/艾达灵族/stratagems/striking-stride.md\|突击步伐]]
+- [[factions/艾达灵族/stratagems/venomous-wrath.md\|剧毒怒火]]
+- [[factions/艾达灵族/stratagems/weavers-coils.md\|织空之形]]
+- [[factions/艾达灵族/stratagems/weaving-stride.md\|扭动舞步]]

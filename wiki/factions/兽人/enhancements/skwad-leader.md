@@ -12,14 +12,14 @@ tags:
 - 兽人
 sources:
 - book: 官方结构库 db/wh40k.sqlite（Wahapedia 11 版镜像）
-updated: '2026-07-25'
+updated: '2026-07-26'
 ---
 
 15 分、[[factions/兽人/detachments/taktikal-brigade.md|Taktikal Brigade]] 分队。
 
 ## 效果
 
-During the Declare Battle Formations step, the bearer can be attached to a [[factions/兽人/units/kommandos.md|Kommandos]] unit. While leading a [[factions/兽人/units/kommandos.md|Kommandos]] unit, it has the Infiltrators and Stealth abilities.
+During the Declare Battle Formations step, the bearer can be attached to a [[factions/兽人/units/kommandos.md|Kommandos]] unit. While leading a Kommandos unit, it has the Infiltrators and Stealth abilities.
 
 **分数**：15 分
 

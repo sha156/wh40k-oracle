@@ -1,22 +1,22 @@
 # 黑暗灵族
 
-_Last updated: 2026-07-25 17:23 UTC_
+_Last updated: 2026-07-26 05:42 UTC_
 
 ## 分队
 
-- [[factions/黑暗灵族/detachments/covenite-coterie|Covenite Coterie]] — 黑暗灵族的分队，分队规则「缝肉憎恶」。
-- [[factions/黑暗灵族/detachments/exhibition-of-slaughter|Exhibition of Slaughter]] — 黑暗灵族的分队。
-- [[factions/黑暗灵族/detachments/kabalite-agonysts|Kabalite Agonysts]] — 黑暗灵族的分队。
-- [[factions/黑暗灵族/detachments/kabalite-cartel|Kabalite Cartel]] — 黑暗灵族的分队，分队规则「谋杀议程」。
-- [[factions/黑暗灵族/detachments/kabalite-corsairs|Kabalite Corsairs]] — 黑暗灵族的分队，分队规则「劫掠」。
-- [[factions/黑暗灵族/detachments/painbringers|Painbringers]] — 黑暗灵族的分队，分队规则「再生痛楚」。
-- [[factions/黑暗灵族/detachments/realspace-raiders|Realspace Raiders]] — 黑暗灵族的分队，分队规则「痛苦联盟」。
-- [[factions/黑暗灵族/detachments/reapers-wager|Reaper’s Wager]] — 黑暗灵族的分队，分队规则「无情竞赛」。
-- [[factions/黑暗灵族/detachments/ship-killer-cult|Ship-killer Cult]] — 黑暗灵族的分队，分队规则「渴求赞誉」。
-- [[factions/黑暗灵族/detachments/skysplinter-assault|Skysplinter Assault]] — 黑暗灵族的分队，分队规则「残酷之雨」。
-- [[factions/黑暗灵族/detachments/space-lane-raiders|Space Lane Raiders]] — 黑暗灵族的分队，分队规则「科摩罗竞争」。
-- [[factions/黑暗灵族/detachments/spectacle-of-spite|Spectacle of Spite]] — 黑暗灵族的分队，分队规则「战斗药剂」。
-- [[factions/黑暗灵族/detachments/tools-of-torment|Tools of Torment]] — 黑暗灵族的分队。
+- [[factions/黑暗灵族/detachments/covenite-coterie|Covenite Coterie]] — 黑暗灵族的分队「Covenite Coterie」，分队规则「缝肉憎恶」。
+- [[factions/黑暗灵族/detachments/kabalite-cartel|Kabalite Cartel]] — 黑暗灵族的分队「Kabalite Cartel」，分队规则「谋杀议程」。
+- [[factions/黑暗灵族/detachments/kabalite-corsairs|Kabalite Corsairs]] — 黑暗灵族的分队「Kabalite Corsairs」，分队规则「劫掠」。
+- [[factions/黑暗灵族/detachments/painbringers|Painbringers]] — 黑暗灵族的分队「Painbringers」，分队规则「再生痛楚」。
+- [[factions/黑暗灵族/detachments/realspace-raiders|Realspace Raiders]] — 黑暗灵族的分队「Realspace Raiders」，分队规则「痛苦联盟」。
+- [[factions/黑暗灵族/detachments/ship-killer-cult|Ship-killer Cult]] — 黑暗灵族的分队「Ship-killer Cult」，分队规则「渴求赞誉」。
+- [[factions/黑暗灵族/detachments/skysplinter-assault|Skysplinter Assault]] — 黑暗灵族的分队「Skysplinter Assault」，分队规则「残酷之雨」。
+- [[factions/黑暗灵族/detachments/space-lane-raiders|Space Lane Raiders]] — 黑暗灵族的分队「Space Lane Raiders」，分队规则「科摩罗竞争」。
+- [[factions/黑暗灵族/detachments/spectacle-of-spite|Spectacle of Spite]] — 黑暗灵族的分队「Spectacle of Spite」，分队规则「战斗药剂」。
+- [[factions/黑暗灵族/detachments/tools-of-torment|折磨工具]] — 黑暗灵族的分队「折磨工具」。
+- [[factions/黑暗灵族/detachments/exhibition-of-slaughter|杀戮表演]] — 黑暗灵族的分队「杀戮表演」。
+- [[factions/黑暗灵族/detachments/reapers-wager|死神的赌注]] — 黑暗灵族的分队「死神的赌注」，分队规则「无情竞赛」。
+- [[factions/黑暗灵族/detachments/kabalite-agonysts|阴谋团折磨使]] — 黑暗灵族的分队「阴谋团折磨使」。
 
 ## 单位
 
@@ -71,8 +71,7 @@ _Last updated: 2026-07-25 17:23 UTC_
 ## 策略技能
 
 - [[factions/黑暗灵族/stratagems/postmortality|亡后术]] — 1 CP、Any phase、Covenite Coterie 分队、Epic Deed Stratagem。
-- [[factions/黑暗灵族/stratagems/prioritised-victim|优先猎物]] — 1 CP、Shooting or Fight phase、Kabalite Agonysts 分队。
-- [[factions/黑暗灵族/stratagems/salting-the-wound|伤口撒盐]] — 1 CP、Fight phase、Tools of Torment 分队。
+- [[factions/黑暗灵族/stratagems/salting-the-wound|伤口撒盐]] — 1 CP、Fight phase、折磨工具 分队。
 - [[factions/黑暗灵族/stratagems/feigned-weakness|佯装虚弱]] — 1 CP、Movement phase、Spectacle of Spite 分队、Strategic Ploy Str...
 - [[factions/黑暗灵族/stratagems/swooping-mockery|俯冲嘲弄]] — 1 CP、Movement phase、Skysplinter Assault 分队、Strategic Ploy St...
 - [[factions/黑暗灵族/stratagems/vicious-blades|凶残刀刃]] — 1 CP、Fight phase、Skysplinter Assault 分队、Strategic Ploy Strat...
@@ -80,30 +79,32 @@ _Last updated: 2026-07-25 17:23 UTC_
 - [[factions/黑暗灵族/stratagems/enfolding-nightmare|包裹梦魇]] — 1 CP、Shooting phase、Covenite Coterie 分队、Strategic Ploy Strat...
 - [[factions/黑暗灵族/stratagems/double-cross|双重背叛]] — 1 CP、Fight phase、Kabalite Cartel 分队、Strategic Ploy Stratagem...
 - [[factions/黑暗灵族/stratagems/symphony-of-suffering|受难交响]] — 1 CP、Fight phase、Covenite Coterie 分队、Epic Deed Stratagem。
-- [[factions/黑暗灵族/stratagems/fateful-role|命定角色]] — 1 CP、Fight phase、Reaper’s Wager 分队、Strategic Ploy Stratagem。
 - [[factions/黑暗灵族/stratagems/moulded-musculature|塑形肌理]] — 1 CP、Fight phase、Painbringers 分队、Battle Tactic Stratagem。
+- [[factions/黑暗灵族/stratagems/sculpting-the-stage|塑造舞台]] — 1 CP、Movement phase、杀戮表演 分队。
 - [[factions/黑暗灵族/stratagems/night-shield|夜幕护盾]] — 1 CP、Shooting phase、Skysplinter Assault 分队、Wargear Stratagem...
 - [[factions/黑暗灵族/stratagems/wraithlike-retreat|如魅撤退]] — 1 CP、Fight phase、Skysplinter Assault 分队、Strategic Ploy Strat...
 - [[factions/黑暗灵族/stratagems/tailored-toxins|定制毒素]] — 1 CP、Shooting or Fight phase、Kabalite Cartel 分队、Epic Deed St...
-- [[factions/黑暗灵族/stratagems/sculpting-the-stage|布置舞台]] — 1 CP、Movement phase、Exhibition of Slaughter 分队。
+- [[factions/黑暗灵族/stratagems/scintillating-tempo|巧妙节奏]] — 1 CP、Movement or Charge phase、死神的赌注 分队、Strategic Ploy Strata...
 - [[factions/黑暗灵族/stratagems/phantasm-grenades|幻象手雷]] — 1 CP、Movement phase、Ship-killer Cult 分队、Wargear Stratagem。
 - [[factions/黑暗灵族/stratagems/terrifying-aura|恐怖光环]] — 1 CP、Shooting phase、Painbringers 分队、Strategic Ploy Stratagem...
 - [[factions/黑暗灵族/stratagems/horrifying-form|恐怖形态]] — 1 CP、Any phase、Painbringers 分队、Strategic Ploy Stratagem。
 - [[factions/黑暗灵族/stratagems/distillers-of-fear|恐惧蒸馏]] — 2 CP、Fight phase、Covenite Coterie 分队、Strategic Ploy Stratage...
-- [[factions/黑暗灵族/stratagems/malicious-frenzy|恶意狂热]] — 1 CP、Shooting or Fight phase、Reaper’s Wager 分队、Battle Tactic...
+- [[factions/黑暗灵族/stratagems/malicious-frenzy|恶毒狂暴]] — 1 CP、Shooting or Fight phase、死神的赌注 分队、Battle Tactic Stratage...
 - [[factions/黑暗灵族/stratagems/pounce-on-the-prey|扑向猎物]] — 1 CP、Movement phase、Skysplinter Assault 分队、Strategic Ploy St...
 - [[factions/黑暗灵族/stratagems/poisoners-art|投毒者技艺]] — 1 CP、Fight phase、Covenite Coterie 分队、Epic Deed Stratagem。
+- [[factions/黑暗灵族/stratagems/shorten-the-odds|拉近差距]] — 1 CP、Movement phase、死神的赌注 分队、Strategic Ploy Stratagem。
 - [[factions/黑暗灵族/stratagems/a-challenge-met|接受挑战]] — 2 CP、Movement phase、Spectacle of Spite 分队、Battle Tactic Stra...
+- [[factions/黑暗灵族/stratagems/acrobatic-display-exhibition-of-slaughter|敏捷表现]] — 1 CP、Opponent's Shooting phase、杀戮表演 分队。
+- [[factions/黑暗灵族/stratagems/acrobatic-display-spectacle-of-spite|敏捷表现]] — 1 CP、Shooting phase、Spectacle of Spite 分队、Battle Tactic Stra...
 - [[factions/黑暗灵族/stratagems/no-obstacle|无可阻挡]] — 1 CP、Charge phase、Ship-killer Cult 分队、Strategic Ploy Stratag...
 - [[factions/黑暗灵族/stratagems/enemies-without-number|无尽之敌]] — 1 CP、Command phase、Kabalite Cartel 分队、Epic Deed Stratagem。
-- [[factions/黑暗灵族/stratagems/shadows-reach|暗影之触]] — 1 CP、Shooting phase、Kabalite Agonysts 分队。
+- [[factions/黑暗灵族/stratagems/shadows-reach|暗影之触]] — 1 CP、Shooting phase、阴谋团折磨使 分队。
 - [[factions/黑暗灵族/stratagems/fighting-shadows|暗影战斗]] — 1 CP、Shooting or Fight phase、Realspace Raiders 分队、Battle Tac...
 - [[factions/黑暗灵族/stratagems/instinctive-spite|本能怨恨]] — 1 CP、Shooting or Fight phase、Realspace Raiders 分队、Battle Tac...
 - [[factions/黑暗灵族/stratagems/opportunistic-thieves|机会窃贼]] — 1 CP、Fight phase、Kabalite Corsairs 分队、Strategic Ploy Stratag...
-- [[factions/黑暗灵族/stratagems/murderers-circus|杀手马戏团]] — 1 CP、Fight phase、Reaper’s Wager 分队、Battle Tactic Stratagem。
-- [[factions/黑暗灵族/stratagems/acrobatic-display-exhibition-of-slaughter|杂技表演]] — 1 CP、Opponent's Shooting phase、Exhibition of Slaughter 分队。
-- [[factions/黑暗灵族/stratagems/acrobatic-display-spectacle-of-spite|杂技表演]] — 1 CP、Shooting phase、Spectacle of Spite 分队、Battle Tactic Stra...
-- [[factions/黑暗灵族/stratagems/dance-macabre|死亡之舞]] — 2 CP、Movement phase、Reaper’s Wager 分队、Strategic Ploy Stratag...
+- [[factions/黑暗灵族/stratagems/murderers-circus|杀手狂欢]] — 1 CP、Fight phase、死神的赌注 分队、Battle Tactic Stratagem。
+- [[factions/黑暗灵族/stratagems/urgent-metamorphosis|极速质变]] — 1 CP、Movement phase、折磨工具 分队。
+- [[factions/黑暗灵族/stratagems/dance-macabre|死亡之舞]] — 2 CP、Movement phase、死神的赌注 分队、Strategic Ploy Stratagem。
 - [[factions/黑暗灵族/stratagems/eager-for-the-kill|渴望杀戮]] — 1 CP、Movement phase、Realspace Raiders 分队、Battle Tactic Strat...
 - [[factions/黑暗灵族/stratagems/elusive-duellists|灵巧决斗者]] — 1 CP、Fight phase、Kabalite Corsairs 分队、Battle Tactic Stratage...
 - [[factions/黑暗灵族/stratagems/berserk-fugue|狂暴赋格]] — 2 CP、Fight phase、Spectacle of Spite 分队、Strategic Ploy Strata...
@@ -114,22 +115,21 @@ _Last updated: 2026-07-25 17:23 UTC_
 - [[factions/黑暗灵族/stratagems/connoisseurs-of-pain|痛苦鉴赏家]] — 1 CP、Shooting or Fight phase、Covenite Coterie 分队、Battle Tact...
 - [[factions/黑暗灵族/stratagems/skyborne-annihilation|空降歼灭]] — 1 CP、Shooting phase、Skysplinter Assault 分队、Battle Tactic Str...
 - [[factions/黑暗灵族/stratagems/crew-thieves|窃船者]] — 1 CP、Fight phase、Space Lane Raiders 分队、Battle Tactic Stratag...
-- [[factions/黑暗灵族/stratagems/urgent-metamorphosis|紧急异变]] — 1 CP、Movement phase、Tools of Torment 分队。
-- [[factions/黑暗灵族/stratagems/shorten-the-odds|缩短赔率]] — 1 CP、Movement phase、Reaper’s Wager 分队、Strategic Ploy Stratag...
 - [[factions/黑暗灵族/stratagems/veteran-pirates|老练海盗]] — 1 CP、Shooting phase、Space Lane Raiders 分队、Strategic Ploy Str...
 - [[factions/黑暗灵族/stratagems/deadly-debut|致命首秀]] — 1 CP、Fight phase、Spectacle of Spite 分队、Battle Tactic Stratag...
 - [[factions/黑暗灵族/stratagems/deadly-deceivers|致命骗徒]] — 1 CP、Shooting phase、Kabalite Cartel 分队、Strategic Ploy Strata...
 - [[factions/黑暗灵族/stratagems/shipboard-shades|船载暗影]] — 1 CP、Shooting or Fight phase、Space Lane Raiders 分队、Battle Ta...
-- [[factions/黑暗灵族/stratagems/dividends-of-agony|苦痛红利]] — 1 CP、Fight phase、Tools of Torment 分队。
+- [[factions/黑暗灵族/stratagems/dividends-of-agony|苦痛利息]] — 1 CP、Fight phase、折磨工具 分队。
 - [[factions/黑暗灵族/stratagems/voidship-gladiators|虚空斗士]] — 1 CP、Movement phase、Space Lane Raiders 分队、Strategic Ploy Str...
+- [[factions/黑暗灵族/stratagems/planned-strikes|计划打击]] — 1 CP、Fight phase、杀戮表演 分队。
 - [[factions/黑暗灵族/stratagems/making-a-point|证明观点]] — 1 CP、Shooting phase、Kabalite Cartel 分队、Battle Tactic Stratag...
 - [[factions/黑暗灵族/stratagems/preternatural-agility|超凡敏捷]] — 1 CP、Movement or Charge phase、Spectacle of Spite 分队、Strategi...
 - [[factions/黑暗灵族/stratagems/hyperagility|超敏捷]] — 1 CP、Shooting or Fight phase、Ship-killer Cult 分队、Battle Tact...
-- [[factions/黑暗灵族/stratagems/scintillating-tempo|闪耀节奏]] — 1 CP、Movement or Charge phase、Reaper’s Wager 分队、Strategic Pl...
-- [[factions/黑暗灵族/stratagems/planned-strikes|预谋打击]] — 1 CP、Fight phase、Exhibition of Slaughter 分队。
+- [[factions/黑暗灵族/stratagems/fateful-role|重要角色]] — 1 CP、Fight phase、死神的赌注 分队、Strategic Ploy Stratagem。
+- [[factions/黑暗灵族/stratagems/prioritised-victim|首要受害者]] — 1 CP、Shooting or Fight phase、阴谋团折磨使 分队。
 - [[factions/黑暗灵族/stratagems/unfeeling-abominations|麻木憎恶]] — 1 CP、Fight phase、Painbringers 分队、Battle Tactic Stratagem。
 - [[factions/黑暗灵族/stratagems/insensible-to-pain|麻木无痛]] — 2 CP、Shooting or Fight phase、Realspace Raiders 分队、Battle Tac...
-- [[factions/黑暗灵族/stratagems/killers-from-the-dark-spires|黑塔杀手]] — 1 CP、Shooting phase、Kabalite Agonysts 分队。
+- [[factions/黑暗灵族/stratagems/killers-from-the-dark-spires|黑塔杀手]] — 1 CP、Shooting phase、阴谋团折磨使 分队。
 - [[factions/黑暗灵族/stratagems/dark-harvest|黑暗收割]] — 1 CP、Fight phase、Realspace Raiders 分队、Strategic Ploy Stratag...
 
 ## 强化
@@ -139,37 +139,37 @@ _Last updated: 2026-07-25 17:23 UTC_
 - [[factions/黑暗灵族/enhancements/master-repugnomancer-aura|厌恶巫师大师]] — 15 分、Covenite Coterie 分队。
 - [[factions/黑暗灵族/enhancements/leechbite-plate|吸血甲板]] — 5 分、Kabalite Cartel 分队。
 - [[factions/黑暗灵族/enhancements/master-nemesine|复仇大师]] — 5 分、Covenite Coterie 分队。
-- [[factions/黑暗灵族/enhancements/elixir-of-the-corpse-courts|尸廷灵药]] — 分数未知、Tools of Torment 分队。
+- [[factions/黑暗灵族/enhancements/elixir-of-the-corpse-courts|尸骸王庭精华]] — 分数未知、折磨工具 分队。
 - [[factions/黑暗灵族/enhancements/master-artisan|工匠大师]] — 20 分、Covenite Coterie 分队。
 - [[factions/黑暗灵族/enhancements/phantasmal-smoke|幻象烟雾]] — 15 分、Skysplinter Assault 分队。
 - [[factions/黑暗灵族/enhancements/eye-of-spite|怨恨之眼]] — 15 分、Realspace Raiders 分队。
 - [[factions/黑暗灵族/enhancements/spiteful-raider|怨恨劫掠者]] — 10 分、Skysplinter Assault 分队。
 - [[factions/黑暗灵族/enhancements/spiteful-demise|怨恨消亡]] — 0 分、Space Lane Raiders 分队。
 - [[factions/黑暗灵族/enhancements/malevolent-cunning|恶毒狡诈]] — 0 分、Kabalite Corsairs 分队。
-- [[factions/黑暗灵族/enhancements/periapt-of-torments-exhibition-of-slaughter|折磨护符]] — 分数未知、Exhibition of Slaughter 分队。
-- [[factions/黑暗灵族/enhancements/periapt-of-torments-spectacle-of-spite|折磨护符]] — 25 分、Spectacle of Spite 分队。
-- [[factions/黑暗灵族/enhancements/conductor-of-torment|折磨指挥者]] — 20 分、Reaper’s Wager 分队。
 - [[factions/黑暗灵族/enhancements/rending-chain-flails|撕裂连枷]] — 0 分、Painbringers 分队。
 - [[factions/黑暗灵族/enhancements/sadistic-fulcrum|施虐支点]] — 15 分、Skysplinter Assault 分队。
 - [[factions/黑暗灵族/enhancements/chronoshard|时间碎片]] — 15 分、Spectacle of Spite 分队。
+- [[factions/黑暗灵族/enhancements/hyperstimm-trafficker|极端药物走私者]] — 分数未知、杀戮表演 分队。
 - [[factions/黑暗灵族/enhancements/nightmare-shroud|梦魇裹尸布]] — 20 分、Skysplinter Assault 分队。
-- [[factions/黑暗灵族/enhancements/reapers-cowl|死神兜帽]] — 25 分、Reaper’s Wager 分队。
-- [[factions/黑暗灵族/enhancements/webway-walker|灵网行者]] — 15 分、Reaper’s Wager 分队。
+- [[factions/黑暗灵族/enhancements/reapers-cowl|死神兜帽]] — 25 分、死神的赌注 分队。
+- [[factions/黑暗灵族/enhancements/webway-walker|灵网行者]] — 15 分、死神的赌注 分队。
 - [[factions/黑暗灵族/enhancements/webway-awl|灵网锥]] — 25 分、Kabalite Cartel 分队。
-- [[factions/黑暗灵族/enhancements/gnarlskin-experimentor|瘤皮实验者]] — 分数未知、Tools of Torment 分队。
+- [[factions/黑暗灵族/enhancements/towering-arrogance-kabalite-agonysts|狂妄自大]] — 分数未知、阴谋团折磨使 分队。
+- [[factions/黑暗灵族/enhancements/towering-arrogance-kabalite-cartel|狂妄自大]] — 20 分、Kabalite Cartel 分队。
+- [[factions/黑暗灵族/enhancements/conductor-of-torment|痛苦指挥家]] — 20 分、死神的赌注 分队。
+- [[factions/黑暗灵族/enhancements/gnarlskin-experimentor|瘤皮实验者]] — 分数未知、折磨工具 分队。
 - [[factions/黑暗灵族/enhancements/informant-network|线人网络]] — 30 分、Kabalite Cartel 分队。
+- [[factions/黑暗灵族/enhancements/archraider|至尊掠夺者]] — 15 分、死神的赌注 分队。
+- [[factions/黑暗灵族/enhancements/periapt-of-torments-exhibition-of-slaughter|苦痛护符]] — 分数未知、杀戮表演 分队。
+- [[factions/黑暗灵族/enhancements/periapt-of-torments-spectacle-of-spite|苦痛护符]] — 25 分、Spectacle of Spite 分队。
 - [[factions/黑暗灵族/enhancements/pharmacophex|药剂师]] — 15 分、Spectacle of Spite 分队。
 - [[factions/黑暗灵族/enhancements/morghennas-curse|莫格恩娜之咒]] — 20 分、Spectacle of Spite 分队。
-- [[factions/黑暗灵族/enhancements/contempt-for-rivals|蔑视对手]] — 分数未知、Kabalite Agonysts 分队。
+- [[factions/黑暗灵族/enhancements/contempt-for-rivals|蔑视对决]] — 分数未知、阴谋团折磨使 分队。
 - [[factions/黑暗灵族/enhancements/blood-drenched-champion|血染冠军]] — 0 分、Ship-killer Cult 分队。
 - [[factions/黑暗灵族/enhancements/crucible-of-malediction|诅咒坩埚]] — 20 分、Realspace Raiders 分队。
-- [[factions/黑暗灵族/enhancements/hyperstimm-trafficker|超刺激贩子]] — 分数未知、Exhibition of Slaughter 分队。
 - [[factions/黑暗灵族/enhancements/labyrinthine-cunning|迷宫狡诈]] — 25 分、Realspace Raiders 分队。
 - [[factions/黑暗灵族/enhancements/vile-surgeon|邪恶外科医师]] — 0 分、Painbringers 分队。
 - [[factions/黑暗灵族/enhancements/master-regenesist|重生大师]] — 25 分、Covenite Coterie 分队。
-- [[factions/黑暗灵族/enhancements/archraider|首袭者]] — 15 分、Reaper’s Wager 分队。
-- [[factions/黑暗灵族/enhancements/towering-arrogance-kabalite-agonysts|高耸傲慢]] — 分数未知、Kabalite Agonysts 分队。
-- [[factions/黑暗灵族/enhancements/towering-arrogance-kabalite-cartel|高耸傲慢]] — 20 分、Kabalite Cartel 分队。
 - [[factions/黑暗灵族/enhancements/dark-vitality|黑暗活力]] — 25 分、Realspace Raiders 分队。
 - [[factions/黑暗灵族/enhancements/dark-charisma|黑暗魅力]] — 0 分、Kabalite Corsairs 分队。
 

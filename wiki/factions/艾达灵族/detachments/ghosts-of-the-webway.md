@@ -10,10 +10,10 @@ tags:
 - 艾达灵族
 sources:
 - book: 官方结构库 db/wh40k.sqlite（Wahapedia 11 版镜像）
-updated: '2026-07-25'
+updated: '2026-07-26'
 ---
 
-艾达灵族的分队，分队规则「杂技突袭」。
+艾达灵族的分队「Ghosts of the Webway」，分队规则「杂技突袭」。
 
 ## 分队规则
 
@@ -36,8 +36,8 @@ TRAVELLING PLAYERS
 ## 战略
 
 - [[factions/艾达灵族/stratagems/bloody-dance.md\|BLOODY DANCE]]
-- [[factions/艾达灵族/stratagems/exit-the-stage-ghosts-of-the-webway.md\|退场]]
-- [[factions/艾达灵族/stratagems/heroes-fall-ghosts-of-the-webway.md\|英雄的谢幕]]
+- [[factions/艾达灵族/stratagems/exit-the-stage-ghosts-of-the-webway.md\|离开舞台]]
+- [[factions/艾达灵族/stratagems/heroes-fall-ghosts-of-the-webway.md\|英雄陨落]]
 - [[factions/艾达灵族/stratagems/mocking-flight.md\|MOCKING FLIGHT]]
 - [[factions/艾达灵族/stratagems/staged-death.md\|STAGED DEATH]]
 - [[factions/艾达灵族/stratagems/tricksters-retort.md\|TRICKSTERS’ RETORT]]

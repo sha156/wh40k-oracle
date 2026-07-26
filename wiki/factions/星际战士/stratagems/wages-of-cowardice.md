@@ -1,7 +1,9 @@
 ---
 id: fp11e-da-conclave-s3
-name_zh: 怯懦的代价
+name_zh: 追击懦弱者
 name_en: Wages of Cowardice
+aliases:
+- 怯懦的代价
 faction: 星际战士
 type: stratagem
 detachment: Interrogation Conclave
@@ -13,10 +15,10 @@ tags:
 - 星际战士
 sources:
 - book: 官方结构库 db/wh40k.sqlite（Wahapedia 11 版镜像）
-updated: '2026-07-25'
+updated: '2026-07-26'
 ---
 
-1 CP、Movement phase、[[factions/星际战士/detachments/interrogation-conclave.md|Interrogation Conclave]] 分队。
+1 CP、Movement phase、[[factions/星际战士/detachments/interrogation-conclave.md|审讯者密会]] 分队。
 
 ## 使用时机
 

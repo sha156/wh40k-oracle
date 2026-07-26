@@ -1,5 +1,6 @@
 ---
 id: '000009736'
+name_zh: 战斗生物总攻
 name_en: Warrior Bioform Onslaught
 faction: 泰伦虫族
 type: detachment
@@ -10,10 +11,10 @@ tags:
 - 泰伦虫族
 sources:
 - book: 官方结构库 db/wh40k.sqlite（Wahapedia 11 版镜像）
-updated: '2026-07-25'
+updated: '2026-07-26'
 ---
 
-泰伦虫族的分队，分队规则「Leader-beasts」。
+泰伦虫族的分队「战斗生物总攻」，分队规则「Leader-beasts」。
 
 ## 分队规则
 
@@ -32,10 +33,10 @@ TYRANID WARRIORS, [[factions/泰伦虫族/units/tyranid-prime-with-lash-whip.md|
 
 ## 战略
 
-- [[factions/泰伦虫族/stratagems/alien-physiology.md\|异形生理]]
-- [[factions/泰伦虫族/stratagems/parasitic-payload.md\|PARASITIC PAYLOAD]]
+- [[factions/泰伦虫族/stratagems/alien-physiology.md\|异种体格]]
+- [[factions/泰伦虫族/stratagems/parasitic-payload.md\|寄生弹药]]
 - [[factions/泰伦虫族/stratagems/restorative-impulse.md\|RESTORATIVE IMPULSE]]
 - [[factions/泰伦虫族/stratagems/spontaneous-hypercorrosion.md\|SPONTANEOUS HYPERCORROSION]]
 - [[factions/泰伦虫族/stratagems/synaptic-amplification.md\|SYNAPTIC AMPLIFICATION]]
-- [[factions/泰伦虫族/stratagems/synaptic-micronodes.md\|SYNAPTIC MICRONODES]]
+- [[factions/泰伦虫族/stratagems/synaptic-micronodes.md\|微型突触节点]]
 - [[factions/泰伦虫族/stratagems/synaptic-shield.md\|SYNAPTIC SHIELD]]

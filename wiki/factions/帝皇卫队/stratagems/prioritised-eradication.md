@@ -1,7 +1,9 @@
 ---
 id: fp11e-ac-moritoi-s3
-name_zh: 优先歼灭
+name_zh: 优先消除
 name_en: Prioritised Eradication
+aliases:
+- 优先歼灭
 faction: 帝皇卫队
 type: stratagem
 detachment: Might of the Moritoi
@@ -13,10 +15,10 @@ tags:
 - 帝皇卫队
 sources:
 - book: 官方结构库 db/wh40k.sqlite（Wahapedia 11 版镜像）
-updated: '2026-07-25'
+updated: '2026-07-26'
 ---
 
-1 CP、Shooting phase、[[factions/帝皇卫队/detachments/might-of-the-moritoi.md|Might of the Moritoi]] 分队。
+1 CP、Shooting phase、[[factions/帝皇卫队/detachments/might-of-the-moritoi.md|亡者之势]] 分队。
 
 ## 使用时机
 

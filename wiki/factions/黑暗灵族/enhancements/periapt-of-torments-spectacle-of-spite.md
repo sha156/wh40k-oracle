@@ -1,7 +1,9 @@
 ---
 id: '000010580004'
-name_zh: 折磨护符
+name_zh: 苦痛护符
 name_en: Periapt of Torments
+aliases:
+- 折磨护符
 faction: 黑暗灵族
 type: enhancement
 detachment: Spectacle of Spite
@@ -12,7 +14,7 @@ tags:
 - 黑暗灵族
 sources:
 - book: 官方结构库 db/wh40k.sqlite（Wahapedia 11 版镜像）
-updated: '2026-07-25'
+updated: '2026-07-26'
 ---
 
 25 分、[[factions/黑暗灵族/detachments/spectacle-of-spite.md|Spectacle of Spite]] 分队。

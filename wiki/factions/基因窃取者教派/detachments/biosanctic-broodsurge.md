@@ -10,10 +10,10 @@ tags:
 - 基因窃取者教派
 sources:
 - book: 官方结构库 db/wh40k.sqlite（Wahapedia 11 版镜像）
-updated: '2026-07-25'
+updated: '2026-07-26'
 ---
 
-基因窃取者教派的分队，分队规则「Hypermorphic Fury」。
+基因窃取者教派的分队「Biosanctic Broodsurge」，分队规则「Hypermorphic Fury」。
 
 ## 分队规则
 

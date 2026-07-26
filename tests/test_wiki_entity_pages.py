@@ -32,8 +32,12 @@ def _rows(sql: str, values):
 
 _STRAT_T = ("CREATE TABLE t (id TEXT, faction TEXT, detachment TEXT, name_zh TEXT, "
             "name_en TEXT, cp_cost TEXT, phase TEXT, text_zh TEXT, type TEXT)")
+# 旧库形态：enhancements 表在 2026-07-26 官方中文层之前没有 name_zh 列。
+# 保留它当回归——渲染器必须在缺列的库上照跑不误（`_row_get` 兜底）。
 _ENH_T = ("CREATE TABLE t (id TEXT, faction_id TEXT, detachment_name TEXT, "
           "name TEXT, cost INTEGER, description TEXT)")
+_ENH_T_ZH = ("CREATE TABLE t (id TEXT, faction_id TEXT, detachment_name TEXT, "
+             "name TEXT, name_zh TEXT, cost INTEGER, description TEXT)")
 _DET_T = ("CREATE TABLE t (id TEXT, faction TEXT, name_zh TEXT, name_en TEXT, "
           "rule_text TEXT, detachment_name TEXT)")
 
@@ -164,11 +168,87 @@ def test_generate_requires_container_column(tmp_path):
 # ── 译名来源 ──────────────────────────────────────────────────────
 
 def test_payload_names_cover_enhancements():
-    """增强中文名在库里是 0/1058，唯一来源就是 P7 载荷——这条断言是它的守卫。"""
+    """P7 载荷是官方没收录的那批条目的中文名兜底（官方中文层只覆盖 249/1058 增强）。"""
     names = load_payload_names(Path("dsl_payloads"))
     assert names.get("enhancements"), "载荷里没有增强译名，增强页会全英文"
     assert len(names["enhancements"]) >= 300
     assert len(names.get("stratagems", {})) >= 600
+
+
+# ── 官方中文层（2026-07-26）────────────────────────────────────────
+
+_ZH = {"stratagems": {"ARMOUR OF CONTEMPT": "蔑视护甲"},
+       "enhancements": {"ARCHRAIDER": "至尊掠夺者"}}
+
+
+def test_official_db_name_wins_and_old_translation_becomes_alias():
+    """官方译名（库内）压过 P7 人工译名（载荷），旧译名不删——降为页面 alias。
+
+    宪法 §6：GW 官方中文 > 汉化组译名 > 社区译名。旧译名删掉的话，
+    按旧名搜索的人会一无所获，而页面看着完全正常。
+    """
+    row = _rows(_STRAT_T, ("1", "SM", "D", "蔑视甲胄", "ARMOUR OF CONTEMPT", "1", "",
+                           "<b>WHEN:</b> a<br><b>TARGET:</b> b<br><b>EFFECT:</b> c", ""))
+    page, _ = render_stratagem(row, "星际战士", _ZH)
+    assert page.fm.name_zh == "蔑视甲胄"
+    assert page.fm.aliases == ["蔑视护甲"]
+
+
+def test_no_alias_when_official_and_payload_agree():
+    """两边一样时不写 alias：自指的别名会污染 crosslinks 名字索引和重名报告。"""
+    row = _rows(_STRAT_T, ("1", "SM", "D", "蔑视护甲", "ARMOUR OF CONTEMPT", "1", "",
+                           "<b>WHEN:</b> a<br><b>TARGET:</b> b<br><b>EFFECT:</b> c", ""))
+    page, _ = render_stratagem(row, "星际战士", _ZH)
+    assert page.fm.name_zh == "蔑视护甲" and page.fm.aliases == []
+
+
+def test_enhancement_reads_official_name_from_db():
+    """增强中文名此前渲染时硬传 None（库里没这列）——官方层落库后必须读得到。"""
+    row = _rows(_ENH_T_ZH, ("1", "DRU", "Realspace Raid", "Archraider", "至尊掠夺者",
+                            20, "Do a thing."))
+    page, _ = render_enhancement(row, "黑暗灵族", {"enhancements": {}})
+    assert page.fm.name_zh == "至尊掠夺者"
+
+
+def test_enhancement_on_old_db_without_column_falls_back_to_payload():
+    row = _rows(_ENH_T, ("1", "AE", "Windrider Host", "Archraider", 20, "x"))
+    page, _ = render_enhancement(row, "艾达灵族", _ZH)
+    assert page.fm.name_zh == "至尊掠夺者"          # 缺列不炸，退回载荷译名
+
+
+def test_stratagem_lead_uses_official_detachment_zh_only():
+    """容器有官方中文名就只写中文：中英并列会被 crosslinks 各注一次链，
+    同一行冒出两个指向同一页的链接。"""
+    row = _rows(_STRAT_T, ("1", "SM", "Gladius Task Force", None, "X", "1", "",
+                           "<b>WHEN:</b> a<br><b>TARGET:</b> b<br><b>EFFECT:</b> c", ""))
+    page, _ = render_stratagem(row, "星际战士", ZH,
+                               {"Gladius Task Force": "剑刃特遣队"})
+    lead = page.body.splitlines()[0]
+    assert "剑刃特遣队 分队" in lead and "Gladius Task Force" not in lead
+    assert page.fm.detachment == "Gladius Task Force"      # 机器键仍是英文
+
+
+def test_stratagem_lead_keeps_english_when_no_official_zh():
+    row = _rows(_STRAT_T, ("1", "SM", "Gladius Task Force", None, "X", "1", "",
+                           "<b>WHEN:</b> a<br><b>TARGET:</b> b<br><b>EFFECT:</b> c", ""))
+    page, _ = render_stratagem(row, "星际战士", ZH, {})
+    assert "Gladius Task Force 分队" in page.body.splitlines()[0]
+
+
+def test_detachment_page_carries_official_container_name():
+    rule = _rows(_DET_T, ("000008370", "NEC", "指令协议", "Command Protocols",
+                          "In your Command phase, do a thing.", "Awakened Dynasty"))
+    page, _ = render_detachment("Awakened Dynasty", "太空死灵", [rule], [], [],
+                                ZH, "000008370", "启明王朝")
+    assert page.fm.name_zh == "启明王朝"
+    assert page.fm.name_en == "Awakened Dynasty"
+    assert "太空死灵的分队「启明王朝」" in page.body
+
+
+def test_detachment_page_without_official_name_shows_english():
+    page, _ = render_detachment("Orphan Container", "兽人", [], [], [], ZH, "x")
+    assert page.fm.name_zh is None
+    assert "兽人的分队「Orphan Container」" in page.body
 
 
 def test_detachment_with_two_rules_lists_both():

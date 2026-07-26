@@ -1,6 +1,6 @@
 ---
 id: fp11e-csm-murdertalon-s3
-name_zh: 亚空扭曲之恐
+name_zh: 扭曲恐惧
 name_en: WARP-TWISTED TERRORS
 faction: 混沌星际战士
 type: stratagem
@@ -13,10 +13,10 @@ tags:
 - 混沌星际战士
 sources:
 - book: 官方结构库 db/wh40k.sqlite（Wahapedia 11 版镜像）
-updated: '2026-07-25'
+updated: '2026-07-26'
 ---
 
-1 CP、Movement phase、[[factions/混沌星际战士/detachments/murdertalon-raiders.md|Murdertalon Raiders]] 分队。
+1 CP、Movement phase、[[factions/混沌星际战士/detachments/murdertalon-raiders.md|杀戮利爪掠夺队]] 分队。
 
 ## 使用时机
 

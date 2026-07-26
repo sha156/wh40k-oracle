@@ -1,7 +1,9 @@
 ---
 id: fp11e-aeldari-twilight-s1
-name_zh: 预兆彩排
+name_zh: 预兆排练
 name_en: PRESAGED REHEARSAL
+aliases:
+- 预兆彩排
 faction: 艾达灵族
 type: stratagem
 detachment: Twilight Flickers
@@ -13,10 +15,10 @@ tags:
 - 艾达灵族
 sources:
 - book: 官方结构库 db/wh40k.sqlite（Wahapedia 11 版镜像）
-updated: '2026-07-25'
+updated: '2026-07-26'
 ---
 
-1 CP、Fight phase、[[factions/艾达灵族/detachments/twilight-flickers.md|Twilight Flickers]] 分队。
+1 CP、Fight phase、[[factions/艾达灵族/detachments/twilight-flickers.md|暮光闪现]] 分队。
 
 ## 使用时机
 

@@ -1,7 +1,9 @@
 ---
 id: '000010672004'
-name_zh: 灵怒抑制器
+name_zh: 敌意增幅器
 name_en: Animus Damper
+aliases:
+- 灵怒抑制器
 faction: 太空死灵
 type: enhancement
 detachment: Pantheon of Woe
@@ -12,10 +14,10 @@ tags:
 - 太空死灵
 sources:
 - book: 官方结构库 db/wh40k.sqlite（Wahapedia 11 版镜像）
-updated: '2026-07-25'
+updated: '2026-07-26'
 ---
 
-35 分、[[factions/太空死灵/detachments/pantheon-of-woe.md|Pantheon of Woe]] 分队。
+35 分、[[factions/太空死灵/detachments/pantheon-of-woe.md|哀伤众神殿]] 分队。
 
 ## 效果
 

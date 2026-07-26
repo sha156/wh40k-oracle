@@ -14,7 +14,7 @@ tags:
 - 千子
 sources:
 - book: 官方结构库 db/wh40k.sqlite（Wahapedia 11 版镜像）
-updated: '2026-07-25'
+updated: '2026-07-26'
 ---
 
 1 CP、Charge phase、[[factions/千子/detachments/changehost-of-deceit.md|Changehost of Deceit]] 分队、Strategic Ploy Stratagem。

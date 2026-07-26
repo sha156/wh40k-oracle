@@ -128,6 +128,34 @@ class TestNamePatch:
         rep = apply_fp_rules(db, self._patch(table="units"))
         assert len(rep["name_invalid"]) == 1
 
+    def test_official_translation_is_not_reported_as_a_mismatch(
+            self, tmp_path, monkeypatch):
+        """库里挂的是 GW 官方译名时让路，但不算 mismatch 告警。
+
+        本层的 P7 人工译名权威更低（宪法 §6），让位是正常层序。混进 mismatch
+        的话，单独跑 fp-rules 会刷出 179 条「上游动过」的假告警，把真问题淹掉。
+        """
+        import db_compile.fp_rules as fp_rules_mod
+        monkeypatch.setattr(fp_rules_mod, "_official_zh_names",
+                            lambda: {"s1": "官方译名"})
+        db = _db(tmp_path, name_zh="官方译名")
+        rep = apply_fp_rules(db, self._patch())
+        assert rep["name_superseded_by_official"] == 1
+        assert not rep["name_mismatch"]
+        after = sqlite3.connect(str(db)).execute(
+            "SELECT name_zh FROM stratagems WHERE id='s1'").fetchone()[0]
+        assert after == "官方译名"          # 高权威的那个留在库里
+
+    def test_non_official_different_name_still_warns(self, tmp_path, monkeypatch):
+        """官方映射里就是别的名字 → 仍是真 mismatch，照旧告警。"""
+        import db_compile.fp_rules as fp_rules_mod
+        monkeypatch.setattr(fp_rules_mod, "_official_zh_names",
+                            lambda: {"s1": "官方译名"})
+        db = _db(tmp_path, name_zh="来路不明的名字")
+        rep = apply_fp_rules(db, self._patch())
+        assert rep["name_superseded_by_official"] == 0
+        assert len(rep["name_mismatch"]) == 1
+
 
 def _deact_patch(**over):
     p = {"table": "stratagems", "id": "s1", "name_en": "PHOTON GRENADES",

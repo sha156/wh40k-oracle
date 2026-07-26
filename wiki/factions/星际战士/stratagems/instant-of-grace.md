@@ -1,7 +1,9 @@
 ---
 id: '000009836004'
-name_zh: 乍现优雅
+name_zh: 光辉时刻
 name_en: INSTANT OF GRACE
+aliases:
+- 乍现优雅
 faction: 星际战士
 type: stratagem
 detachment: Angelic Inheritors
@@ -14,10 +16,10 @@ tags:
 - 星际战士
 sources:
 - book: 官方结构库 db/wh40k.sqlite（Wahapedia 11 版镜像）
-updated: '2026-07-25'
+updated: '2026-07-26'
 ---
 
-1 CP、Command phase、[[factions/星际战士/detachments/angelic-inheritors.md|Angelic Inheritors]] 分队、Epic Deed Stratagem。
+1 CP、Command phase、[[factions/星际战士/detachments/angelic-inheritors.md|天使继承者]] 分队、Epic Deed Stratagem。
 
 ## 使用时机
 

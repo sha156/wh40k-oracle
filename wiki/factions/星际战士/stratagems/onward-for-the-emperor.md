@@ -1,5 +1,6 @@
 ---
 id: '000010681007'
+name_zh: 以帝皇之名前进
 name_en: ONWARD FOR THE EMPEROR
 faction: 星际战士
 type: stratagem
@@ -13,10 +14,10 @@ tags:
 - 星际战士
 sources:
 - book: 官方结构库 db/wh40k.sqlite（Wahapedia 11 版镜像）
-updated: '2026-07-25'
+updated: '2026-07-26'
 ---
 
-1 CP、Fight phase、[[factions/星际战士/detachments/orbital-assault-force.md|Orbital Assault Force]] 分队、Strategic Ploy Stratagem。
+1 CP、Fight phase、[[factions/星际战士/detachments/orbital-assault-force.md|轨道突袭部队]] 分队、Strategic Ploy Stratagem。
 
 ## 使用时机
 

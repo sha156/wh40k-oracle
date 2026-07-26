@@ -1,5 +1,6 @@
 ---
 id: '000009240002'
+name_zh: 精金斗篷
 name_en: Adamantine Mantle
 faction: 星际战士
 type: enhancement
@@ -11,7 +12,7 @@ tags:
 - 星际战士
 sources:
 - book: 官方结构库 db/wh40k.sqlite（Wahapedia 11 版镜像）
-updated: '2026-07-25'
+updated: '2026-07-26'
 ---
 
 0 分、[[factions/星际战士/detachments/boarding-strike.md|Boarding Strike]] 分队。

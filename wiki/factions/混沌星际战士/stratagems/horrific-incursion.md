@@ -1,5 +1,6 @@
 ---
 id: '000010642007'
+name_zh: 恐怖入侵
 name_en: HORRIFIC INCURSION
 faction: 混沌星际战士
 type: stratagem
@@ -13,10 +14,10 @@ tags:
 - 混沌星际战士
 sources:
 - book: 官方结构库 db/wh40k.sqlite（Wahapedia 11 版镜像）
-updated: '2026-07-25'
+updated: '2026-07-26'
 ---
 
-1 CP、Movement phase、[[factions/混沌星际战士/detachments/nightmare-hunt.md|Nightmare Hunt]] 分队、Stratagem。
+1 CP、Movement phase、[[factions/混沌星际战士/detachments/nightmare-hunt.md|噩梦猎手]] 分队、Stratagem。
 
 ## 使用时机
 

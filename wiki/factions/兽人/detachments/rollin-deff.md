@@ -1,5 +1,6 @@
 ---
 id: container-rollin-deff
+name_zh: 死亡摇滚
 name_en: Rollin' Deff
 faction: 兽人
 type: detachment
@@ -10,10 +11,10 @@ tags:
 - 兽人
 sources:
 - book: 官方结构库 db/wh40k.sqlite（Wahapedia 11 版镜像）
-updated: '2026-07-25'
+updated: '2026-07-26'
 ---
 
-兽人的分队。
+兽人的分队「死亡摇滚」。
 
 ## 分队规则
 
@@ -26,6 +27,6 @@ updated: '2026-07-25'
 
 ## 战略
 
-- [[factions/兽人/stratagems/brutal-broadside.md\|残暴齐射]]
-- [[factions/兽人/stratagems/devastating-drift.md\|毁灭漂移]]
-- [[factions/兽人/stratagems/impending-crunch.md\|迫近碾压]]
+- [[factions/兽人/stratagems/brutal-broadside.md\|凶残齐射]]
+- [[factions/兽人/stratagems/devastating-drift.md\|毁灭性漂移]]
+- [[factions/兽人/stratagems/impending-crunch.md\|迫在眉睫的危机]]

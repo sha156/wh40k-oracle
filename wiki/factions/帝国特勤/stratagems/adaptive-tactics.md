@@ -1,5 +1,6 @@
 ---
 id: '000009127003'
+name_zh: 适应战术
 name_en: ADAPTIVE TACTICS
 faction: 帝国特勤
 type: stratagem
@@ -13,7 +14,7 @@ tags:
 - 帝国特勤
 sources:
 - book: 官方结构库 db/wh40k.sqlite（Wahapedia 11 版镜像）
-updated: '2026-07-25'
+updated: '2026-07-26'
 ---
 
 1 CP、Command phase、[[factions/帝国特勤/detachments/ordo-xenos-alien-hunters.md|Ordo Xenos Alien Hunters]] 分队、Strategic Ploy Stratagem。

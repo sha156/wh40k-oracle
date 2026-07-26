@@ -1,5 +1,6 @@
 ---
 id: '000010640'
+name_zh: 噩梦猎手
 name_en: Nightmare Hunt
 faction: 混沌星际战士
 type: detachment
@@ -10,10 +11,10 @@ tags:
 - 混沌星际战士
 sources:
 - book: 官方结构库 db/wh40k.sqlite（Wahapedia 11 版镜像）
-updated: '2026-07-25'
+updated: '2026-07-26'
 ---
 
-混沌星际战士的分队，分队规则「Terror Made Manifest」。
+混沌星际战士的分队「噩梦猎手」，分队规则「Terror Made Manifest」。
 
 ## 分队规则
 
@@ -29,16 +30,16 @@ Each time a HERETIC ASTARTES model from your army makes an attack that targets a
 
 ## 增强
 
-- [[factions/混沌星际战士/enhancements/greyveil-hex.md\|Greyveil Hex]]
-- [[factions/混沌星际战士/enhancements/sorrowscent-vulture.md\|Sorrowscent Vulture]]
-- [[factions/混沌星际战士/enhancements/terrorglut-parasite.md\|Terrorglut Parasite]]
-- [[factions/混沌星际战士/enhancements/warp-fuelled-thrusters-nightmare-hunt.md\|Warp-fuelled Thrusters]]
+- [[factions/混沌星际战士/enhancements/greyveil-hex.md\|灰纱诅咒]]
+- [[factions/混沌星际战士/enhancements/sorrowscent-vulture.md\|哀伤猎手]]
+- [[factions/混沌星际战士/enhancements/terrorglut-parasite.md\|恐怖寄生虫]]
+- [[factions/混沌星际战士/enhancements/warp-fuelled-thrusters-nightmare-hunt.md\|亚空间推进器]]
 
 ## 战略
 
-- [[factions/混沌星际战士/stratagems/horrific-incursion.md\|HORRIFIC INCURSION]]
-- [[factions/混沌星际战士/stratagems/malicious-surge.md\|MALICIOUS SURGE]]
-- [[factions/混沌星际战士/stratagems/prey-on-the-weak.md\|PREY ON THE WEAK]]
-- [[factions/混沌星际战士/stratagems/relentless-terror-nightmare-hunt.md\|RELENTLESS TERROR]]
-- [[factions/混沌星际战士/stratagems/sadistic-display.md\|SADISTIC DISPLAY]]
-- [[factions/混沌星际战士/stratagems/talons-sunk-deep.md\|TALONS SUNK DEEP]]
+- [[factions/混沌星际战士/stratagems/horrific-incursion.md\|恐怖入侵]]
+- [[factions/混沌星际战士/stratagems/malicious-surge.md\|邪恶涌动]]
+- [[factions/混沌星际战士/stratagems/prey-on-the-weak.md\|狩猎弱者]]
+- [[factions/混沌星际战士/stratagems/relentless-terror-nightmare-hunt.md\|无尽恐惧]]
+- [[factions/混沌星际战士/stratagems/sadistic-display.md\|施虐表演]]
+- [[factions/混沌星际战士/stratagems/talons-sunk-deep.md\|穿心利爪]]

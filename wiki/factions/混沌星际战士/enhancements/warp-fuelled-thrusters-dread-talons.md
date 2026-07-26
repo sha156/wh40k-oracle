@@ -1,5 +1,6 @@
 ---
 id: '000008972004'
+name_zh: 亚空间推进器
 name_en: Warp-fuelled Thrusters
 faction: 混沌星际战士
 type: enhancement
@@ -11,7 +12,7 @@ tags:
 - 混沌星际战士
 sources:
 - book: 官方结构库 db/wh40k.sqlite（Wahapedia 11 版镜像）
-updated: '2026-07-25'
+updated: '2026-07-26'
 ---
 
 20 分、[[factions/混沌星际战士/detachments/dread-talons.md|Dread Talons]] 分队。

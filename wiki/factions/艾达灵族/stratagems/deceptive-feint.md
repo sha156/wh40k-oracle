@@ -1,7 +1,9 @@
 ---
 id: fp11e-aeldari-fateful-s3
-name_zh: 欺敌佯攻
+name_zh: 狡诈佯攻
 name_en: DECEPTIVE FEINT
+aliases:
+- 欺敌佯攻
 faction: 艾达灵族
 type: stratagem
 detachment: Fateful Performance
@@ -13,10 +15,10 @@ tags:
 - 艾达灵族
 sources:
 - book: 官方结构库 db/wh40k.sqlite（Wahapedia 11 版镜像）
-updated: '2026-07-25'
+updated: '2026-07-26'
 ---
 
-1 CP、Movement phase、[[factions/艾达灵族/detachments/fateful-performance.md|Fateful Performance]] 分队。
+1 CP、Movement phase、[[factions/艾达灵族/detachments/fateful-performance.md|宿命的演出]] 分队。
 
 ## 使用时机
 

@@ -1,7 +1,9 @@
 ---
 id: '000009741005'
-name_zh: 夜岩斗篷
+name_zh: 夜石纹章
 name_en: Noctilith Mantle
+aliases:
+- 夜岩斗篷
 faction: 千子
 type: enhancement
 detachment: Hexwarp Thrallband
@@ -12,10 +14,10 @@ tags:
 - 千子
 sources:
 - book: 官方结构库 db/wh40k.sqlite（Wahapedia 11 版镜像）
-updated: '2026-07-25'
+updated: '2026-07-26'
 ---
 
-15 分、[[factions/千子/detachments/hexwarp-thrallband.md|Hexwarp Thrallband]] 分队。
+15 分、[[factions/千子/detachments/hexwarp-thrallband.md|次元邪咒傀儡团]] 分队。
 
 ## 效果
 

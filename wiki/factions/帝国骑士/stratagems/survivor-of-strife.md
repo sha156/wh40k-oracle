@@ -1,5 +1,6 @@
 ---
 id: '000010756006'
+name_zh: 纷争幸存者
 name_en: SURVIVOR OF STRIFE
 faction: 帝国骑士
 type: stratagem
@@ -13,10 +14,10 @@ tags:
 - 帝国骑士
 sources:
 - book: 官方结构库 db/wh40k.sqlite（Wahapedia 11 版镜像）
-updated: '2026-07-25'
+updated: '2026-07-26'
 ---
 
-1 CP、Shooting phase、[[factions/帝国骑士/detachments/freeblade-company.md|Freeblade Company]] 分队、Epic Deed Stratagem。
+1 CP、Shooting phase、[[factions/帝国骑士/detachments/freeblade-company.md|自由之刃连队]] 分队、Epic Deed Stratagem。
 
 ## 使用时机
 

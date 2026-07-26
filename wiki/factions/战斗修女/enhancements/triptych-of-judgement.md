@@ -1,5 +1,6 @@
 ---
 id: '000009831002'
+name_zh: 审判三联画
 name_en: Triptych of Judgement
 faction: 战斗修女
 type: enhancement
@@ -11,10 +12,10 @@ tags:
 - 战斗修女
 sources:
 - book: 官方结构库 db/wh40k.sqlite（Wahapedia 11 版镜像）
-updated: '2026-07-25'
+updated: '2026-07-26'
 ---
 
-15 分、[[factions/战斗修女/detachments/champions-of-faith.md|Champions of Faith]] 分队。
+15 分、[[factions/战斗修女/detachments/champions-of-faith.md|信仰冠军]] 分队。
 
 ## 效果
 

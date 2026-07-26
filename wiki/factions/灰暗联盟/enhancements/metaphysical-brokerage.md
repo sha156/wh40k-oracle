@@ -1,5 +1,6 @@
 ---
 id: '000010708003'
+name_zh: 概念性评估
 name_en: Metaphysical Brokerage
 faction: 灰暗联盟
 type: enhancement
@@ -11,10 +12,10 @@ tags:
 - 灰暗联盟
 sources:
 - book: 官方结构库 db/wh40k.sqlite（Wahapedia 11 版镜像）
-updated: '2026-07-25'
+updated: '2026-07-26'
 ---
 
-20 分、[[factions/灰暗联盟/detachments/mercenary-oathband.md|Mercenary Oathband]] 分队。
+20 分、[[factions/灰暗联盟/detachments/mercenary-oathband.md|佣兵铁誓团]] 分队。
 
 ## 效果
 

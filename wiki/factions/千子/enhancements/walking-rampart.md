@@ -1,7 +1,9 @@
 ---
 id: fp11e-ts-sekhetar-e1
-name_zh: 行走壁垒
+name_zh: 移动护墙
 name_en: Walking Rampart
+aliases:
+- 行走壁垒
 faction: 千子
 type: enhancement
 detachment: Sekhetar Cohort
@@ -11,10 +13,10 @@ tags:
 - 千子
 sources:
 - book: 官方结构库 db/wh40k.sqlite（Wahapedia 11 版镜像）
-updated: '2026-07-25'
+updated: '2026-07-26'
 ---
 
-分数未知、[[factions/千子/detachments/sekhetar-cohort.md|Sekhetar Cohort]] 分队。
+分数未知、[[factions/千子/detachments/sekhetar-cohort.md|塞克塔部队]] 分队。
 
 ## 效果
 

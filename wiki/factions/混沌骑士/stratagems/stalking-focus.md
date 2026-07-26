@@ -1,7 +1,9 @@
 ---
 id: fp11e-chaosknights-hunting-s3
-name_zh: 潜行专注
+name_zh: 追猎专注
 name_en: STALKING FOCUS
+aliases:
+- 潜行专注
 faction: 混沌骑士
 type: stratagem
 detachment: Hunting Warpack
@@ -13,10 +15,10 @@ tags:
 - 混沌骑士
 sources:
 - book: 官方结构库 db/wh40k.sqlite（Wahapedia 11 版镜像）
-updated: '2026-07-25'
+updated: '2026-07-26'
 ---
 
-1 CP、Shooting phase、[[factions/混沌骑士/detachments/hunting-warpack.md|Hunting Warpack]] 分队。
+1 CP、Shooting phase、[[factions/混沌骑士/detachments/hunting-warpack.md|猎犬战群]] 分队。
 
 ## 使用时机
 

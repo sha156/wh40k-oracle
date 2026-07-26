@@ -1,5 +1,6 @@
 ---
 id: '000009776'
+name_zh: 次元灾星特遣队
 name_en: Warpbane Task Force
 faction: 灰骑士
 type: detachment
@@ -10,10 +11,10 @@ tags:
 - 灰骑士
 sources:
 - book: 官方结构库 db/wh40k.sqlite（Wahapedia 11 版镜像）
-updated: '2026-07-25'
+updated: '2026-07-26'
 ---
 
-灰骑士的分队，分队规则「Hallowed Ground」。
+灰骑士的分队「次元灾星特遣队」，分队规则「Hallowed Ground」。
 
 ## 分队规则
 
@@ -29,16 +30,16 @@ Each time a model in a GREY KNIGHTS unit from your army makes a ranged attack th
 
 ## 增强
 
-- [[factions/灰骑士/enhancements/mandulian-reliquary.md\|Mandulian Reliquary]]
-- [[factions/灰骑士/enhancements/paragon-of-sanctity.md\|Paragon of Sanctity]]
-- [[factions/灰骑士/enhancements/phial-of-the-abyss.md\|Phial of the Abyss]]
-- [[factions/灰骑士/enhancements/radiant-champion.md\|Radiant Champion]]
+- [[factions/灰骑士/enhancements/mandulian-reliquary.md\|曼杜里斯骨匣]]
+- [[factions/灰骑士/enhancements/paragon-of-sanctity.md\|圣洁楷模]]
+- [[factions/灰骑士/enhancements/phial-of-the-abyss.md\|深渊安瓿]]
+- [[factions/灰骑士/enhancements/radiant-champion.md\|闪耀勇士]]
 
 ## 战略
 
-- [[factions/灰骑士/stratagems/aegis-eternal.md\|AEGIS ETERNAL]]
+- [[factions/灰骑士/stratagems/aegis-eternal.md\|永恒圣盾]]
 - [[factions/灰骑士/stratagems/fires-of-covenant.md\|FIRES OF COVENANT]]
-- [[factions/灰骑士/stratagems/flames-of-sanctity.md\|FLAMES OF SANCTITY]]
-- [[factions/灰骑士/stratagems/hallowed-beacon.md\|HALLOWED BEACON]]
-- [[factions/灰骑士/stratagems/repelling-sphere.md\|REPELLING SPHERE]]
-- [[factions/灰骑士/stratagems/sanctified-kill-zone.md\|SANCTIFIED KILL ZONE]]
+- [[factions/灰骑士/stratagems/flames-of-sanctity.md\|圣洁烈焰]]
+- [[factions/灰骑士/stratagems/hallowed-beacon.md\|神圣信标]]
+- [[factions/灰骑士/stratagems/repelling-sphere.md\|排斥护盾]]
+- [[factions/灰骑士/stratagems/sanctified-kill-zone.md\|圣化击杀区]]

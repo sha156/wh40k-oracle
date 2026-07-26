@@ -1,5 +1,6 @@
 ---
 id: '000010760005'
+name_zh: 站至最后
 name_en: STAND TO THE END
 faction: 星际战士
 type: stratagem
@@ -13,10 +14,10 @@ tags:
 - 星际战士
 sources:
 - book: 官方结构库 db/wh40k.sqlite（Wahapedia 11 版镜像）
-updated: '2026-07-25'
+updated: '2026-07-26'
 ---
 
-1 CP、Fight phase、[[factions/星际战士/detachments/ceramite-sentinels.md|Ceramite Sentinels]] 分队、Epic Deed Stratagem。
+1 CP、Fight phase、[[factions/星际战士/detachments/ceramite-sentinels.md|陶钢哨兵]] 分队、Epic Deed Stratagem。
 
 ## 使用时机
 

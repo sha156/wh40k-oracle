@@ -1,7 +1,9 @@
 ---
 id: fp11e-sororitas-chorus-s2
-name_zh: 谐鸣驱魔
+name_zh: 驱魔和声
 name_en: Harmonised Exorcism
+aliases:
+- 谐鸣驱魔
 faction: 战斗修女
 type: stratagem
 detachment: Chorus of Condemnation
@@ -13,10 +15,10 @@ tags:
 - 战斗修女
 sources:
 - book: 官方结构库 db/wh40k.sqlite（Wahapedia 11 版镜像）
-updated: '2026-07-25'
+updated: '2026-07-26'
 ---
 
-1 CP、Shooting phase、[[factions/战斗修女/detachments/chorus-of-condemnation.md|Chorus of Condemnation]] 分队。
+1 CP、Shooting phase、[[factions/战斗修女/detachments/chorus-of-condemnation.md|定罪合唱]] 分队。
 
 ## 使用时机
 

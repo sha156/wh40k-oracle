@@ -41,4 +41,4 @@ updated: '2026-07-23'
 
 ## 关键词
 - **阵营关键词**：Adeptus Astartes
-- **普通关键词**：Ravenwing，Land Speeder Tempest，Imperium，Vehicle，Fly
+- **普通关键词**：Ravenwing，[[factions/星际战士/units/land-speeder.md|Land Speeder]] Tempest，Imperium，Vehicle，Fly

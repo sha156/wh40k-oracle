@@ -1,5 +1,6 @@
 ---
 id: '000009744'
+name_zh: 圣智战斗支队
 name_en: Haloscreed Battle Clade
 faction: 机械修会
 type: detachment
@@ -10,10 +11,10 @@ tags:
 - 机械修会
 sources:
 - book: 官方结构库 db/wh40k.sqlite（Wahapedia 11 版镜像）
-updated: '2026-07-25'
+updated: '2026-07-26'
 ---
 
-机械修会的分队，分队规则「Noospheric Transference」。
+机械修会的分队「圣智战斗支队」，分队规则「Noospheric Transference」。
 
 ## 分队规则
 
@@ -44,15 +45,15 @@ Models in this unit have the Stealth ability.
 ## 增强
 
 - [[factions/机械修会/enhancements/cognitive-reinforcement.md\|Cognitive Reinforcement]]
-- [[factions/机械修会/enhancements/inloaded-lethality.md\|Inloaded Lethality]]
-- [[factions/机械修会/enhancements/sanctified-ordnance.md\|Sanctified Ordnance]]
+- [[factions/机械修会/enhancements/inloaded-lethality.md\|致命数据]]
+- [[factions/机械修会/enhancements/sanctified-ordnance.md\|圣化弹药]]
 - [[factions/机械修会/enhancements/transoracular-dyad-wafers.md\|Transoracular Dyad Wafers]]
 
 ## 战略
 
 - [[factions/机械修会/stratagems/aggressive-impulse.md\|AGGRESSIVE IMPULSE]]
-- [[factions/机械修会/stratagems/analytical-divination.md\|ANALYTICAL DIVINATION]]
-- [[factions/机械修会/stratagems/eradication-protocols.md\|ERADICATION PROTOCOLS]]
+- [[factions/机械修会/stratagems/analytical-divination.md\|解读性占卜]]
+- [[factions/机械修会/stratagems/eradication-protocols.md\|歼灭规程]]
 - [[factions/机械修会/stratagems/guided-retreat.md\|GUIDED RETREAT]]
-- [[factions/机械修会/stratagems/neural-overload.md\|NEURAL OVERLOAD]]
-- [[factions/机械修会/stratagems/targeting-override.md\|TARGETING OVERRIDE]]
+- [[factions/机械修会/stratagems/neural-overload.md\|神经过载]]
+- [[factions/机械修会/stratagems/targeting-override.md\|瞄准修正]]

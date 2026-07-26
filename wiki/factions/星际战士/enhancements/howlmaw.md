@@ -1,5 +1,6 @@
 ---
 id: '000010660003'
+name_zh: 嚎叫狼口
 name_en: Howlmaw
 faction: 星际战士
 type: enhancement
@@ -11,10 +12,10 @@ tags:
 - 星际战士
 sources:
 - book: 官方结构库 db/wh40k.sqlite（Wahapedia 11 版镜像）
-updated: '2026-07-25'
+updated: '2026-07-26'
 ---
 
-15 分、[[factions/星际战士/detachments/saga-of-the-great-wolf.md|Saga of the Great Wolf]] 分队。
+15 分、[[factions/星际战士/detachments/saga-of-the-great-wolf.md|头狼之歌]] 分队。
 
 ## 效果
 

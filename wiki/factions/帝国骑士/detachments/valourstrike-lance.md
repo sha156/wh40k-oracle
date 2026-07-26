@@ -10,10 +10,10 @@ tags:
 - 帝国骑士
 sources:
 - book: 官方结构库 db/wh40k.sqlite（Wahapedia 11 版镜像）
-updated: '2026-07-25'
+updated: '2026-07-26'
 ---
 
-帝国骑士的分队，分队规则「英勇无畏」。
+帝国骑士的分队「Valourstrike Lance」，分队规则「英勇无畏」。
 
 ## 分队规则
 
@@ -30,7 +30,7 @@ Each time an Imperial Knights unit from your army Advances, until the end of the
 
 ## 战略
 
-- [[factions/帝国骑士/stratagems/full-tilt-valourstrike-lance.md\|FULL TILT]]
+- [[factions/帝国骑士/stratagems/full-tilt-valourstrike-lance.md\|全速前进]]
 - [[factions/帝国骑士/stratagems/rotate-ion-shields.md\|ROTATE ION SHIELDS]]
 - [[factions/帝国骑士/stratagems/run-them-through.md\|RUN THEM THROUGH!]]
 - [[factions/帝国骑士/stratagems/tactical-foil.md\|TACTICAL FOIL]]

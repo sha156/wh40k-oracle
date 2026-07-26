@@ -10,10 +10,10 @@ tags:
 - 混沌星际战士
 sources:
 - book: 官方结构库 db/wh40k.sqlite（Wahapedia 11 版镜像）
-updated: '2026-07-25'
+updated: '2026-07-26'
 ---
 
-混沌星际战士的分队，分队规则「Terror Descends (Aura)」。
+混沌星际战士的分队「Dread Talons」，分队规则「Terror Descends (Aura)」。
 
 ## 分队规则
 
@@ -29,7 +29,7 @@ Enemy units affected by this Detachment rule do not need to take any other Battl
 
 - [[factions/混沌星际战士/enhancements/eater-of-dread.md\|Eater of Dread]]
 - [[factions/混沌星际战士/enhancements/nights-shroud.md\|Night’s Shroud]]
-- [[factions/混沌星际战士/enhancements/warp-fuelled-thrusters-dread-talons.md\|Warp-fuelled Thrusters]]
+- [[factions/混沌星际战士/enhancements/warp-fuelled-thrusters-dread-talons.md\|亚空间推进器]]
 - [[factions/混沌星际战士/enhancements/willbreaker.md\|Willbreaker]]
 
 ## 战略
@@ -38,5 +38,5 @@ Enemy units affected by this Detachment rule do not need to take any other Battl
 - [[factions/混沌星际战士/stratagems/depthless-cruelty.md\|DEPTHLESS CRUELTY]]
 - [[factions/混沌星际战士/stratagems/merciless-pursuit.md\|MERCILESS PURSUIT]]
 - [[factions/混沌星际战士/stratagems/pitiless-hunters.md\|无情猎手]]
-- [[factions/混沌星际战士/stratagems/relentless-terror-dread-talons.md\|RELENTLESS TERROR]]
+- [[factions/混沌星际战士/stratagems/relentless-terror-dread-talons.md\|无尽恐惧]]
 - [[factions/混沌星际战士/stratagems/screaming-descent.md\|SCREAMING DESCENT]]

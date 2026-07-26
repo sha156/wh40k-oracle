@@ -1,5 +1,6 @@
 ---
 id: '000009830'
+name_zh: 信仰冠军
 name_en: Champions of Faith
 faction: 战斗修女
 type: detachment
@@ -10,10 +11,10 @@ tags:
 - 战斗修女
 sources:
 - book: 官方结构库 db/wh40k.sqlite（Wahapedia 11 版镜像）
-updated: '2026-07-25'
+updated: '2026-07-26'
 ---
 
-战斗修女的分队，分队规则「Righteous Purpose」。
+战斗修女的分队「信仰冠军」，分队规则「Righteous Purpose」。
 
 ## 分队规则
 
@@ -26,20 +27,20 @@ In your Command phase, you can select up to 3 Adepta Sororitas units from your a
 - Improve the Weapon Skill and Ballistic Skill characteristics of weapons equipped by [[factions/战斗修女/units/battle-sisters-squad.md|Battle Sisters Squad]], [[factions/战斗修女/units/celestian-sacresants.md|Celestian Sacresants]] and [[factions/战斗修女/units/paragon-warsuits.md|Paragon Warsuits]] models in that unit by 1.
 
 Keywords
-While a CELESTIAN SACRESANTS unit from your army is not Battle-shocked, add 1 to the Objective Control characteristic of [[factions/战斗修女/units/celestian-sacresants.md|Celestian Sacresants]] models in that unit.
+While a CELESTIAN SACRESANTS unit from your army is not Battle-shocked, add 1 to the Objective Control characteristic of Celestian Sacresants models in that unit.
 
 ## 增强
 
-- [[factions/战斗修女/enhancements/eyes-of-the-oracle.md\|Eyes of the Oracle]]
-- [[factions/战斗修女/enhancements/mark-of-devotion.md\|Mark of Devotion]]
-- [[factions/战斗修女/enhancements/sanctified-amulet.md\|Sanctified Amulet]]
-- [[factions/战斗修女/enhancements/triptych-of-judgement.md\|Triptych of Judgement]]
+- [[factions/战斗修女/enhancements/eyes-of-the-oracle.md\|先知之眼]]
+- [[factions/战斗修女/enhancements/mark-of-devotion.md\|信仰印记]]
+- [[factions/战斗修女/enhancements/sanctified-amulet.md\|圣化护符]]
+- [[factions/战斗修女/enhancements/triptych-of-judgement.md\|审判三联画]]
 
 ## 战略
 
-- [[factions/战斗修女/stratagems/bastion-of-faith.md\|BASTION OF FAITH]]
-- [[factions/战斗修女/stratagems/indefatigable-dedication.md\|INDEFATIGABLE DEDICATION]]
-- [[factions/战斗修女/stratagems/path-of-the-righteous.md\|PATH OF THE RIGHTEOUS]]
-- [[factions/战斗修女/stratagems/shield-of-denial.md\|SHIELD OF DENIAL]]
-- [[factions/战斗修女/stratagems/suffer-not-the-unfaithful.md\|SUFFER NOT THE UNFAITHFUL]]
-- [[factions/战斗修女/stratagems/to-the-heart-of-heresy.md\|TO THE HEART OF HERESY]]
+- [[factions/战斗修女/stratagems/bastion-of-faith.md\|信仰堡垒]]
+- [[factions/战斗修女/stratagems/indefatigable-dedication.md\|不懈决心]]
+- [[factions/战斗修女/stratagems/path-of-the-righteous.md\|正义之道]]
+- [[factions/战斗修女/stratagems/shield-of-denial.md\|否认护盾]]
+- [[factions/战斗修女/stratagems/suffer-not-the-unfaithful.md\|绝不容忍不信者]]
+- [[factions/战斗修女/stratagems/to-the-heart-of-heresy.md\|直击异端之心]]

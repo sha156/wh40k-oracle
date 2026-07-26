@@ -1,7 +1,9 @@
 ---
 id: '000009741004'
-name_zh: 灵能突袭
+name_zh: 次元猛攻
 name_en: Empyric Onslaught
+aliases:
+- 灵能突袭
 faction: 千子
 type: enhancement
 detachment: Hexwarp Thrallband
@@ -12,10 +14,10 @@ tags:
 - 千子
 sources:
 - book: 官方结构库 db/wh40k.sqlite（Wahapedia 11 版镜像）
-updated: '2026-07-25'
+updated: '2026-07-26'
 ---
 
-25 分、[[factions/千子/detachments/hexwarp-thrallband.md|Hexwarp Thrallband]] 分队。
+25 分、[[factions/千子/detachments/hexwarp-thrallband.md|次元邪咒傀儡团]] 分队。
 
 ## 效果
 

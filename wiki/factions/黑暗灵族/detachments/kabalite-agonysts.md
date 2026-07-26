@@ -1,5 +1,6 @@
 ---
 id: container-kabalite-agonysts
+name_zh: 阴谋团折磨使
 name_en: Kabalite Agonysts
 faction: 黑暗灵族
 type: detachment
@@ -10,10 +11,10 @@ tags:
 - 黑暗灵族
 sources:
 - book: 官方结构库 db/wh40k.sqlite（Wahapedia 11 版镜像）
-updated: '2026-07-25'
+updated: '2026-07-26'
 ---
 
-黑暗灵族的分队。
+黑暗灵族的分队「阴谋团折磨使」。
 
 ## 分队规则
 
@@ -21,11 +22,11 @@ updated: '2026-07-25'
 
 ## 增强
 
-- [[factions/黑暗灵族/enhancements/contempt-for-rivals.md\|蔑视对手]]
-- [[factions/黑暗灵族/enhancements/towering-arrogance-kabalite-agonysts.md\|高耸傲慢]]
+- [[factions/黑暗灵族/enhancements/contempt-for-rivals.md\|蔑视对决]]
+- [[factions/黑暗灵族/enhancements/towering-arrogance-kabalite-agonysts.md\|狂妄自大]]
 
 ## 战略
 
 - [[factions/黑暗灵族/stratagems/killers-from-the-dark-spires.md\|黑塔杀手]]
-- [[factions/黑暗灵族/stratagems/prioritised-victim.md\|优先猎物]]
+- [[factions/黑暗灵族/stratagems/prioritised-victim.md\|首要受害者]]
 - [[factions/黑暗灵族/stratagems/shadows-reach.md\|暗影之触]]

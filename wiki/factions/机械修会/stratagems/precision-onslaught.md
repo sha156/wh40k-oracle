@@ -1,5 +1,6 @@
 ---
 id: '000010748006'
+name_zh: 精准猛攻
 name_en: PRECISION ONSLAUGHT
 faction: 机械修会
 type: stratagem
@@ -13,10 +14,10 @@ tags:
 - 机械修会
 sources:
 - book: 官方结构库 db/wh40k.sqlite（Wahapedia 11 版镜像）
-updated: '2026-07-25'
+updated: '2026-07-26'
 ---
 
-1 CP、Charge phase、[[factions/机械修会/detachments/eradication-cohort.md|Eradication Cohort]] 分队、Battle Tactic Stratagem。
+1 CP、Charge phase、[[factions/机械修会/detachments/eradication-cohort.md|根除大队]] 分队、Battle Tactic Stratagem。
 
 ## 使用时机
 

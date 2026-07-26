@@ -1,7 +1,9 @@
 ---
 id: '000010665002'
-name_zh: 分子瞄准
+name_zh: 分子目标锁定
 name_en: MOLECULAR TARGETING
+aliases:
+- 分子瞄准
 faction: 太空死灵
 type: stratagem
 detachment: Cryptek Conclave
@@ -14,10 +16,10 @@ tags:
 - 太空死灵
 sources:
 - book: 官方结构库 db/wh40k.sqlite（Wahapedia 11 版镜像）
-updated: '2026-07-25'
+updated: '2026-07-26'
 ---
 
-1 CP、Shooting or Fight phase、[[factions/太空死灵/detachments/cryptek-conclave.md|Cryptek Conclave]] 分队、Battle Tactic Stratagem。
+1 CP、Shooting or Fight phase、[[factions/太空死灵/detachments/cryptek-conclave.md|墓穴技师密会]] 分队、Battle Tactic Stratagem。
 
 ## 使用时机
 

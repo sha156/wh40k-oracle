@@ -46,4 +46,4 @@ updated: '2026-07-23'
 
 ## 关键词
 - **阵营关键词**：Deathwatch，Adeptus Astartes
-- **普通关键词**：[[core-rules/infantry.md|Infantry]]，[[core-rules/character.md|Character]]，[[core-rules/epic-hero.md|Epic Hero]]，[[core-rules/grenades.md|Grenades]]，[[factions/星际战士/units/captain.md|Captain]]，Imperium，Watch Captain Artemis
+- **普通关键词**：[[core-rules/infantry.md|Infantry]]，[[core-rules/character.md|Character]]，[[core-rules/epic-hero.md|Epic Hero]]，[[core-rules/grenades.md|Grenades]]，[[factions/星际战士/units/captain.md|Captain]]，Imperium，Watch [[factions/星际战士/units/captain.md|Captain]] Artemis

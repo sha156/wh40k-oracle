@@ -1,5 +1,6 @@
 ---
 id: container-encarmine-speartip
+name_zh: 血色矛头
 name_en: Encarmine Speartip
 faction: 星际战士
 type: detachment
@@ -10,10 +11,10 @@ tags:
 - 星际战士
 sources:
 - book: 官方结构库 db/wh40k.sqlite（Wahapedia 11 版镜像）
-updated: '2026-07-25'
+updated: '2026-07-26'
 ---
 
-星际战士的分队。
+星际战士的分队「血色矛头」。
 
 ## 分队规则
 
@@ -26,6 +27,6 @@ updated: '2026-07-25'
 
 ## 战略
 
-- [[factions/星际战士/stratagems/blinding-blurs-of-vengeance.md\|炫目复仇]]
-- [[factions/星际战士/stratagems/inexorable-valour.md\|不屈英勇]]
-- [[factions/星际战士/stratagems/judgement-of-the-golden-host.md\|黄金裁决]]
+- [[factions/星际战士/stratagems/blinding-blurs-of-vengeance.md\|复仇的耀光]]
+- [[factions/星际战士/stratagems/inexorable-valour.md\|不屈勇气]]
+- [[factions/星际战士/stratagems/judgement-of-the-golden-host.md\|金色军团的审判]]

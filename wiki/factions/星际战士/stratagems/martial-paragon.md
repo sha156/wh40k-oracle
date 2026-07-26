@@ -1,7 +1,9 @@
 ---
 id: fp11e-ba-grace-s1
-name_zh: 武艺宗师
+name_zh: 武艺楷模
 name_en: MARTIAL PARAGON
+aliases:
+- 武艺宗师
 faction: 星际战士
 type: stratagem
 detachment: Legacy of Grace
@@ -13,10 +15,10 @@ tags:
 - 星际战士
 sources:
 - book: 官方结构库 db/wh40k.sqlite（Wahapedia 11 版镜像）
-updated: '2026-07-25'
+updated: '2026-07-26'
 ---
 
-1 CP、Shooting or Fight phase、[[factions/星际战士/detachments/legacy-of-grace.md|Legacy of Grace]] 分队。
+1 CP、Shooting or Fight phase、[[factions/星际战士/detachments/legacy-of-grace.md|优雅传承]] 分队。
 
 ## 使用时机
 

@@ -1,7 +1,9 @@
 ---
 id: fp11e-dru-exhibition-s2
-name_zh: 布置舞台
+name_zh: 塑造舞台
 name_en: Sculpting the Stage
+aliases:
+- 布置舞台
 faction: 黑暗灵族
 type: stratagem
 detachment: Exhibition of Slaughter
@@ -13,10 +15,10 @@ tags:
 - 黑暗灵族
 sources:
 - book: 官方结构库 db/wh40k.sqlite（Wahapedia 11 版镜像）
-updated: '2026-07-25'
+updated: '2026-07-26'
 ---
 
-1 CP、Movement phase、[[factions/黑暗灵族/detachments/exhibition-of-slaughter.md|Exhibition of Slaughter]] 分队。
+1 CP、Movement phase、[[factions/黑暗灵族/detachments/exhibition-of-slaughter.md|杀戮表演]] 分队。
 
 ## 使用时机
 

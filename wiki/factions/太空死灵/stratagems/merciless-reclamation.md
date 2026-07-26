@@ -1,7 +1,9 @@
 ---
 id: '000009750002'
-name_zh: 无情回收
+name_zh: 无情收回
 name_en: MERCILESS RECLAMATION
+aliases:
+- 无情回收
 faction: 太空死灵
 type: stratagem
 detachment: Starshatter Arsenal
@@ -14,10 +16,10 @@ tags:
 - 太空死灵
 sources:
 - book: 官方结构库 db/wh40k.sqlite（Wahapedia 11 版镜像）
-updated: '2026-07-25'
+updated: '2026-07-26'
 ---
 
-2 CP、Shooting or Fight phase、[[factions/太空死灵/detachments/starshatter-arsenal.md|Starshatter Arsenal]] 分队、Battle Tactic Stratagem。
+2 CP、Shooting or Fight phase、[[factions/太空死灵/detachments/starshatter-arsenal.md|碎星宝库]] 分队、Battle Tactic Stratagem。
 
 ## 使用时机
 

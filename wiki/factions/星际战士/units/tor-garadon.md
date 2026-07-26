@@ -44,4 +44,4 @@ updated: '2026-07-23'
 
 ## 关键词
 - **阵营关键词**：Imperial Fists，Adeptus Astartes
-- **普通关键词**：[[core-rules/character.md|Character]]，[[core-rules/infantry.md|Infantry]]，Captain，Tor Garadon，Gravis，Imperium，[[core-rules/epic-hero.md|Epic Hero]]
+- **普通关键词**：[[core-rules/character.md|Character]]，[[core-rules/infantry.md|Infantry]]，[[factions/星际战士/units/captain.md|Captain]]，Tor Garadon，Gravis，Imperium，[[core-rules/epic-hero.md|Epic Hero]]

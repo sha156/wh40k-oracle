@@ -50,4 +50,4 @@ updated: '2026-07-23'
 
 ## 关键词
 - **阵营关键词**：Adeptus Astartes
-- **普通关键词**：Vehicle，Imperium，[[core-rules/walker.md|Walker]]，Deathwing，Redemptor Dreadnought，Dreadnought
+- **普通关键词**：Vehicle，Imperium，[[core-rules/walker.md|Walker]]，Deathwing，Redemptor [[factions/星际战士/units/dreadnought.md|Dreadnought]]，Dreadnought

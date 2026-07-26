@@ -1,7 +1,9 @@
 ---
 id: '000010669007'
-name_zh: 非自然侵略
+name_zh: 非自然攻击性
 name_en: UNNATURAL AGGRESSION
+aliases:
+- 非自然侵略
 faction: 太空死灵
 type: stratagem
 detachment: Cursed Legion
@@ -14,10 +16,10 @@ tags:
 - 太空死灵
 sources:
 - book: 官方结构库 db/wh40k.sqlite（Wahapedia 11 版镜像）
-updated: '2026-07-25'
+updated: '2026-07-26'
 ---
 
-2 CP、Charge phase、[[factions/太空死灵/detachments/cursed-legion.md|Cursed Legion]] 分队、Strategic Ploy Stratagem。
+2 CP、Charge phase、[[factions/太空死灵/detachments/cursed-legion.md|诅咒军团]] 分队、Strategic Ploy Stratagem。
 
 ## 使用时机
 

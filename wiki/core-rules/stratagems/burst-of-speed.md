@@ -1,5 +1,6 @@
 ---
 id: '000010247002'
+name_zh: 速度爆发
 name_en: BURST OF SPEED
 type: stratagem
 cp: 0
@@ -9,7 +10,7 @@ tags:
 - stratagem
 sources:
 - book: 官方结构库 db/wh40k.sqlite（Wahapedia 11 版镜像）
-updated: '2026-07-25'
+updated: '2026-07-26'
 ---
 
 0 CP、Shooting phase、Strategic Ploy Stratagem。

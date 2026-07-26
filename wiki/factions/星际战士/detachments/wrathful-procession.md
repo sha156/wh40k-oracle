@@ -10,10 +10,10 @@ tags:
 - 星际战士
 sources:
 - book: 官方结构库 db/wh40k.sqlite（Wahapedia 11 版镜像）
-updated: '2026-07-25'
+updated: '2026-07-26'
 ---
 
-星际战士的分队，分队规则「不朽忠诚祷言」。
+星际战士的分队「Wrathful Procession」，分队规则「不朽忠诚祷言」。
 
 ## 分队规则
 

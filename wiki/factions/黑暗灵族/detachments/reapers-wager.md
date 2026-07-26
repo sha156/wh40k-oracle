@@ -1,5 +1,6 @@
 ---
 id: '000009780'
+name_zh: 死神的赌注
 name_en: Reaper’s Wager
 faction: 黑暗灵族
 type: detachment
@@ -10,10 +11,10 @@ tags:
 - 黑暗灵族
 sources:
 - book: 官方结构库 db/wh40k.sqlite（Wahapedia 11 版镜像）
-updated: '2026-07-25'
+updated: '2026-07-26'
 ---
 
-黑暗灵族的分队，分队规则「无情竞赛」。
+黑暗灵族的分队「死神的赌注」，分队规则「无情竞赛」。
 
 ## 分队规则
 
@@ -40,16 +41,16 @@ No HARLEQUINS models from your army can be your WARLORD. If you select this Deta
 
 ## 增强
 
-- [[factions/黑暗灵族/enhancements/archraider.md\|首袭者]]
-- [[factions/黑暗灵族/enhancements/conductor-of-torment.md\|折磨指挥者]]
+- [[factions/黑暗灵族/enhancements/archraider.md\|至尊掠夺者]]
+- [[factions/黑暗灵族/enhancements/conductor-of-torment.md\|痛苦指挥家]]
 - [[factions/黑暗灵族/enhancements/reapers-cowl.md\|死神兜帽]]
 - [[factions/黑暗灵族/enhancements/webway-walker.md\|灵网行者]]
 
 ## 战略
 
 - [[factions/黑暗灵族/stratagems/dance-macabre.md\|死亡之舞]]
-- [[factions/黑暗灵族/stratagems/fateful-role.md\|命定角色]]
-- [[factions/黑暗灵族/stratagems/malicious-frenzy.md\|恶意狂热]]
-- [[factions/黑暗灵族/stratagems/murderers-circus.md\|杀手马戏团]]
-- [[factions/黑暗灵族/stratagems/scintillating-tempo.md\|闪耀节奏]]
-- [[factions/黑暗灵族/stratagems/shorten-the-odds.md\|缩短赔率]]
+- [[factions/黑暗灵族/stratagems/fateful-role.md\|重要角色]]
+- [[factions/黑暗灵族/stratagems/malicious-frenzy.md\|恶毒狂暴]]
+- [[factions/黑暗灵族/stratagems/murderers-circus.md\|杀手狂欢]]
+- [[factions/黑暗灵族/stratagems/scintillating-tempo.md\|巧妙节奏]]
+- [[factions/黑暗灵族/stratagems/shorten-the-odds.md\|拉近差距]]

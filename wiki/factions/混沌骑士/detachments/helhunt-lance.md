@@ -1,5 +1,6 @@
 ---
 id: '000010750'
+name_zh: 地狱猎手骑兵队
 name_en: Helhunt Lance
 faction: 混沌骑士
 type: detachment
@@ -10,10 +11,10 @@ tags:
 - 混沌骑士
 sources:
 - book: 官方结构库 db/wh40k.sqlite（Wahapedia 11 版镜像）
-updated: '2026-07-25'
+updated: '2026-07-26'
 ---
 
-混沌骑士的分队，分队规则「Masters of the Pack」。
+混沌骑士的分队「地狱猎手骑兵队」，分队规则「Masters of the Pack」。
 
 ## 分队规则
 
@@ -32,9 +33,9 @@ If a Titanic Chaos Knights unit from your army has an Aura ability that affects 
 
 ## 战略
 
-- [[factions/混沌骑士/stratagems/beasthide-manifestation.md\|BEASTHIDE MANIFESTATION]]
-- [[factions/混沌骑士/stratagems/contemptuous-volleys.md\|CONTEMPTUOUS VOLLEYS]]
-- [[factions/混沌骑士/stratagems/feral-arrogance.md\|FERAL ARROGANCE]]
-- [[factions/混沌骑士/stratagems/flush-the-quarry.md\|FLUSH THE QUARRY]]
-- [[factions/混沌骑士/stratagems/goaded-beast.md\|GOADED BEAST]]
-- [[factions/混沌骑士/stratagems/merciless-fusillade.md\|MERCILESS FUSILLADE]]
+- [[factions/混沌骑士/stratagems/beasthide-manifestation.md\|野兽外皮]]
+- [[factions/混沌骑士/stratagems/contemptuous-volleys.md\|蔑视火网]]
+- [[factions/混沌骑士/stratagems/feral-arrogance.md\|野性傲慢]]
+- [[factions/混沌骑士/stratagems/flush-the-quarry.md\|驱赶猎物]]
+- [[factions/混沌骑士/stratagems/goaded-beast.md\|狂怒野兽]]
+- [[factions/混沌骑士/stratagems/merciless-fusillade.md\|无情弹幕]]

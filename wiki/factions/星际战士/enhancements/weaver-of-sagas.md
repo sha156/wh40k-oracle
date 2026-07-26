@@ -1,5 +1,6 @@
 ---
 id: fp11e-sw-fang-e2
+name_zh: 传奇叙述者
 name_en: Weaver of Sagas
 faction: 星际战士
 type: enhancement
@@ -10,10 +11,10 @@ tags:
 - 星际战士
 sources:
 - book: 官方结构库 db/wh40k.sqlite（Wahapedia 11 版镜像）
-updated: '2026-07-25'
+updated: '2026-07-26'
 ---
 
-分数未知、[[factions/星际战士/detachments/veterans-of-the-fang.md|Veterans of the Fang]] 分队。
+分数未知、[[factions/星际战士/detachments/veterans-of-the-fang.md|狼牙堡老兵]] 分队。
 
 ## 效果
 

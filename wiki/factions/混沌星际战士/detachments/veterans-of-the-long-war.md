@@ -10,10 +10,10 @@ tags:
 - 混沌星际战士
 sources:
 - book: 官方结构库 db/wh40k.sqlite（Wahapedia 11 版镜像）
-updated: '2026-07-25'
+updated: '2026-07-26'
 ---
 
-混沌星际战士的分队，分队规则「Focus of Hatred」。
+混沌星际战士的分队「Veterans of the Long War」，分队规则「Focus of Hatred」。
 
 ## 分队规则
 
@@ -32,7 +32,7 @@ At the start of your Command phase, select one unit from your opponents army to 
 
 - [[factions/混沌星际战士/stratagems/black-crusade.md\|BLACK CRUSADE]]
 - [[factions/混沌星际战士/stratagems/bringers-of-despair.md\|BRINGERS OF DESPAIR]]
-- [[factions/混沌星际战士/stratagems/contemptuous-disregard.md\|轻蔑无视]]
+- [[factions/混沌星际战士/stratagems/contemptuous-disregard.md\|轻蔑漠视]]
 - [[factions/混沌星际战士/stratagems/endless-ire.md\|ENDLESS IRE]]
 - [[factions/混沌星际战士/stratagems/let-the-galaxy-burn.md\|LET THE GALAXY BURN]]
 - [[factions/混沌星际战士/stratagems/millennia-of-experience.md\|MILLENNIA OF EXPERIENCE]]

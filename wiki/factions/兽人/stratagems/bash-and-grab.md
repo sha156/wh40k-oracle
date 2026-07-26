@@ -1,7 +1,9 @@
 ---
 id: '000010713002'
-name_zh: 抢夺
+name_zh: 猛击和抢夺
 name_en: BASH AND GRAB
+aliases:
+- 抢夺
 faction: 兽人
 type: stratagem
 detachment: Freebooter Krew
@@ -14,10 +16,10 @@ tags:
 - 兽人
 sources:
 - book: 官方结构库 db/wh40k.sqlite（Wahapedia 11 版镜像）
-updated: '2026-07-25'
+updated: '2026-07-26'
 ---
 
-1 CP、Fight phase、[[factions/兽人/detachments/freebooter-krew.md|Freebooter Krew]] 分队、Battle Tactic Stratagem。
+1 CP、Fight phase、[[factions/兽人/detachments/freebooter-krew.md|海盗船团]] 分队、Battle Tactic Stratagem。
 
 ## 使用时机
 

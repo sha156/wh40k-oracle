@@ -10,10 +10,10 @@ tags:
 - 混沌星际战士
 sources:
 - book: 官方结构库 db/wh40k.sqlite（Wahapedia 11 版镜像）
-updated: '2026-07-25'
+updated: '2026-07-26'
 ---
 
-混沌星际战士的分队，分队规则「Dark Rewards」。
+混沌星际战士的分队「Infernal Reavers」，分队规则「Dark Rewards」。
 
 ## 分队规则
 
@@ -23,7 +23,7 @@ Each lime a HERETIC ASTARTES unit from your army takes a Leadership test for the
 
 ## 增强
 
-- [[factions/混沌星际战士/enhancements/swollen-with-power.md\|Swollen with Power]]
+- [[factions/混沌星际战士/enhancements/swollen-with-power.md\|充足力量]]
 - [[factions/混沌星际战士/enhancements/voice-of-the-octed.md\|Voice of the Octed]]
 
 ## 战略

@@ -1,21 +1,21 @@
 # 千子
 
-_Last updated: 2026-07-25 17:23 UTC_
+_Last updated: 2026-07-26 05:42 UTC_
 
 ## 分队
 
-- [[factions/千子/detachments/changehost-of-deceit|Changehost of Deceit]] — 千子的分队，分队规则「炼狱契约」。
-- [[factions/千子/detachments/chosen-cabal|Chosen Cabal]] — 千子的分队，分队规则「巫视」。
-- [[factions/千子/detachments/devoted-thralls|Devoted Thralls]] — 千子的分队，分队规则「虔诚信徒」。
-- [[factions/千子/detachments/fateseekers|Fateseekers]] — 千子的分队，分队规则「缜密征服」。
-- [[factions/千子/detachments/grand-coven|Grand Coven]] — 千子的分队，分队规则「血脉巫术」。
-- [[factions/千子/detachments/hexwarp-thrallband|Hexwarp Thrallband]] — 千子的分队，分队规则「魔力涌流」。
-- [[factions/千子/detachments/ritual-of-regeneration|Ritual of Regeneration]] — 千子的分队。
-- [[factions/千子/detachments/rubricae-phalanx|Rubricae Phalanx]] — 千子的分队，分队规则「皆为尘」。
-- [[factions/千子/detachments/sekhetar-cohort|Sekhetar Cohort]] — 千子的分队。
-- [[factions/千子/detachments/servants-of-change|Servants of Change]] — 千子的分队。
-- [[factions/千子/detachments/warpforged-cabal|Warpforged Cabal]] — 千子的分队，分队规则「翻焰灌注」。
-- [[factions/千子/detachments/warpmeld-pact|Warpmeld Pact]] — 千子的分队，分队规则「扭曲献祭」。
+- [[factions/千子/detachments/changehost-of-deceit|Changehost of Deceit]] — 千子的分队「Changehost of Deceit」，分队规则「炼狱契约」。
+- [[factions/千子/detachments/chosen-cabal|Chosen Cabal]] — 千子的分队「Chosen Cabal」，分队规则「巫视」。
+- [[factions/千子/detachments/devoted-thralls|Devoted Thralls]] — 千子的分队「Devoted Thralls」，分队规则「虔诚信徒」。
+- [[factions/千子/detachments/fateseekers|Fateseekers]] — 千子的分队「Fateseekers」，分队规则「缜密征服」。
+- [[factions/千子/detachments/grand-coven|Grand Coven]] — 千子的分队「Grand Coven」，分队规则「血脉巫术」。
+- [[factions/千子/detachments/rubricae-phalanx|Rubricae Phalanx]] — 千子的分队「Rubricae Phalanx」，分队规则「皆为尘」。
+- [[factions/千子/detachments/warpforged-cabal|Warpforged Cabal]] — 千子的分队「Warpforged Cabal」，分队规则「翻焰灌注」。
+- [[factions/千子/detachments/warpmeld-pact|Warpmeld Pact]] — 千子的分队「Warpmeld Pact」，分队规则「扭曲献祭」。
+- [[factions/千子/detachments/ritual-of-regeneration|再生仪式]] — 千子的分队「再生仪式」。
+- [[factions/千子/detachments/servants-of-change|变化的仆从]] — 千子的分队「变化的仆从」。
+- [[factions/千子/detachments/sekhetar-cohort|塞克塔部队]] — 千子的分队「塞克塔部队」。
+- [[factions/千子/detachments/hexwarp-thrallband|次元邪咒傀儡团]] — 千子的分队「次元邪咒傀儡团」，分队规则「魔力涌流」。
 
 ## 单位
 
@@ -82,37 +82,40 @@ _Last updated: 2026-07-25 17:23 UTC_
 
 ## 策略技能
 
-- [[factions/千子/stratagems/kaleidoscopic-tempest|万花风暴]] — 1 CP、Shooting phase、Hexwarp Thrallband 分队、Battle Tactic Stra...
-- [[factions/千子/stratagems/relentless-rebirth|不倦重生]] — 1 CP、Any phase、Ritual of Regeneration 分队。
+- [[factions/千子/stratagems/kaleidoscopic-tempest|万花风暴]] — 1 CP、Shooting phase、次元邪咒傀儡团 分队、Battle Tactic Stratagem。
 - [[factions/千子/stratagems/desecration-of-worlds|亵渎诸界]] — 1 CP、Command phase、Grand Coven 分队、Epic Deed Stratagem。
 - [[factions/千子/stratagems/costly-blessing|代价赐福]] — 1 CP、Fight phase、Chosen Cabal 分队、Epic Deed Stratagem。
 - [[factions/千子/stratagems/ethereal-phantasm|以太幻影]] — 1 CP、Movement phase、Changehost of Deceit 分队、Strategic Ploy S...
 - [[factions/千子/stratagems/fell-sacrifice|凶厄献祭]] — 1 CP、Command phase、Devoted Thralls 分队、Strategic Ploy Stratag...
 - [[factions/千子/stratagems/fractal-disjunction|分形错断]] — 1 CP、Shooting phase、Changehost of Deceit 分队、Strategic Ploy S...
-- [[factions/千子/stratagems/wrath-of-the-doomed|厄命之怒]] — 1 CP、Fight phase、Hexwarp Thrallband 分队、Strategic Ploy Strata...
 - [[factions/千子/stratagems/gift-of-change|变化之赐]] — 1 CP、Any phase、Warpmeld Pact 分队、Epic Deed Stratagem。
 - [[factions/千子/stratagems/mutate-landscape|变异地貌]] — 1 CP、Command phase、Warpforged Cabal 分队、Epic Deed Stratagem。
+- [[factions/千子/stratagems/mutagenic-magicks|变异魔法]] — 1 CP、Fight phase、再生仪式 分队。
 - [[factions/千子/stratagems/destined-by-fate|命定天数]] — 1 CP、Any phase、Grand Coven 分队、Epic Deed Stratagem。
 - [[factions/千子/stratagems/hex-marked-armour|咒印甲胄]] — 1 CP、Shooting or Fight phase、Warpforged Cabal 分队、Battle Tact...
 - [[factions/千子/stratagems/inferno-bolters|地狱爆弹]] — 1 CP、Shooting phase、Chosen Cabal 分队、Strategic Ploy Stratagem...
 - [[factions/千子/stratagems/implacable-guardians|坚定守护]] — 2 CP、Shooting phase、Rubricae Phalanx 分队、Strategic Ploy Strat...
-- [[factions/千子/stratagems/the-land-writhes|大地翻涌]] — 1 CP、Movement phase、Servants of Change 分队。
-- [[factions/千子/stratagems/arcane-venting|奥术宣泄]] — 1 CP、Movement phase、Sekhetar Cohort 分队。
+- [[factions/千子/stratagems/the-land-writhes|大地翻涌]] — 1 CP、Movement phase、变化的仆从 分队。
 - [[factions/千子/stratagems/arcane-focus|奥术聚焦]] — 1 CP、Shooting phase、Grand Coven 分队、Epic Deed Stratagem。
+- [[factions/千子/stratagems/arcane-venting|奥法排放]] — 1 CP、Movement phase、塞克塔部队 分队。
+- [[factions/千子/stratagems/warding-hex|守护邪咒]] — 1 CP、Command phase、次元邪咒傀儡团 分队、Epic Deed Stratagem。
 - [[factions/千子/stratagems/unwavering-phalanx|岿然阵列]] — 1 CP、Charge phase、Rubricae Phalanx 分队、Battle Tactic Stratage...
+- [[factions/千子/stratagems/scouring-warpflame|巫火扫荡]] — 1 CP、Shooting phase、次元邪咒傀儡团 分队、Strategic Ploy Stratagem。
 - [[factions/千子/stratagems/phantasmic-munitions|幻魅军械]] — 1 CP、Shooting phase、Fateseekers 分队、Strategic Ploy Stratagem。
 - [[factions/千子/stratagems/glimmershift-portal|微光位移门]] — 1 CP、Fight phase、Changehost of Deceit 分队、Strategic Ploy Stra...
 - [[factions/千子/stratagems/enduring-animus|恒常魂动]] — 1 CP、Fight phase、Fateseekers 分队、Strategic Ploy Stratagem。
 - [[factions/千子/stratagems/malevolent-animus|恶意魂动]] — 1 CP、Command phase、Warpforged Cabal 分队、Epic Deed Stratagem。
 - [[factions/千子/stratagems/strategic-vision|战略视界]] — 1 CP、Shooting phase、Fateseekers 分队、Strategic Ploy Stratagem。
-- [[factions/千子/stratagems/warp-fields|扭曲力场]] — 1 CP、Opponents Shooting phase、Sekhetar Cohort 分队。
 - [[factions/千子/stratagems/twisted-mirage|扭曲幻景]] — 1 CP、Movement phase、Warpmeld Pact 分队、Strategic Ploy Stratage...
 - [[factions/千子/stratagems/warped-vicissitude|扭曲无常]] — 1 CP、Shooting or Fight phase、Warpmeld Pact 分队、Strategic Ploy...
 - [[factions/千子/stratagems/inexorable-advance|无可阻挡的进击]] — 1 CP、Movement phase、Rubricae Phalanx 分队、Strategic Ploy Strat...
-- [[factions/千子/stratagems/strands-of-time|时之丝线]] — 1 CP、Movement phase、Hexwarp Thrallband 分队、Strategic Ploy Str...
-- [[factions/千子/stratagems/temporal-instability|时序失稳]] — 1 CP、Movement phase、Servants of Change 分队。
+- [[factions/千子/stratagems/relentless-rebirth|无息重生]] — 1 CP、Any phase、再生仪式 分队。
+- [[factions/千子/stratagems/multitudinous-limbs|无数肢体]] — 1 CP、Movement phase、再生仪式 分队。
+- [[factions/千子/stratagems/temporal-instability|时序失稳]] — 1 CP、Movement phase、变化的仆从 分队。
 - [[factions/千子/stratagems/chronosorcerous-bleed|时序巫蚀]] — 1 CP、Charge phase、Changehost of Deceit 分队、Strategic Ploy Str...
-- [[factions/千子/stratagems/prismatic-displacement|棱镜移位]] — 1 CP、Movement phase、Servants of Change 分队。
+- [[factions/千子/stratagems/strands-of-time|时间丝线]] — 1 CP、Movement phase、次元邪咒傀儡团 分队、Strategic Ploy Stratagem。
+- [[factions/千子/stratagems/prismatic-displacement|棱镜移位]] — 1 CP、Movement phase、变化的仆从 分队。
+- [[factions/千子/stratagems/warp-fields|次元力场]] — 1 CP、Opponents Shooting phase、塞克塔部队 分队。
 - [[factions/千子/stratagems/deceptive-glamour|欺敌幻光]] — 2 CP、Fight phase、Changehost of Deceit 分队、Strategic Ploy Stra...
 - [[factions/千子/stratagems/devastating-sorcery|毁灭巫术]] — 2 CP、Shooting phase、Grand Coven 分队、Battle Tactic Stratagem。
 - [[factions/千子/stratagems/touched-by-tzeentch|泽特奇之触]] — 1 CP、Movement phase、Warpmeld Pact 分队、Strategic Ploy Stratage...
@@ -122,59 +125,56 @@ _Last updated: 2026-07-25 17:23 UTC_
 - [[factions/千子/stratagems/empyric-desecration|炼狱亵渎]] — 1 CP、Fight phase、Chosen Cabal 分队、Epic Deed Stratagem。
 - [[factions/千子/stratagems/infernal-fusillade|炼狱齐射]] — 2 CP、Shooting phase、Rubricae Phalanx 分队、Wargear Stratagem。
 - [[factions/千子/stratagems/ardent-automata|炽热自动机]] — 1 CP、Movement phase、Rubricae Phalanx 分队、Strategic Ploy Strat...
-- [[factions/千子/stratagems/scouring-warpflame|焦烧翻焰]] — 1 CP、Shooting phase、Hexwarp Thrallband 分队、Strategic Ploy Str...
 - [[factions/千子/stratagems/deranged-ferocity|疯狂凶性]] — 1 CP、Fight phase、Warpmeld Pact 分队、Strategic Ploy Stratagem。
+- [[factions/千子/stratagems/wrath-of-the-doomed|破灭者之怒]] — 1 CP、Fight phase、次元邪咒傀儡团 分队、Strategic Ploy Stratagem。
 - [[factions/千子/stratagems/sulphurous-veil|硫磺帷幕]] — 1 CP、Shooting or Fight phase、Changehost of Deceit 分队、Battle...
-- [[factions/千子/stratagems/warding-hex|禁锢咒印]] — 1 CP、Command phase、Hexwarp Thrallband 分队、Epic Deed Stratagem...
-- [[factions/千子/stratagems/through-the-veil|穿越帷幕]] — 1 CP、Movement phase、Hexwarp Thrallband 分队、Epic Deed Stratage...
-- [[factions/千子/stratagems/multitudinous-limbs|繁生肢体]] — 1 CP、Movement phase、Ritual of Regeneration 分队。
+- [[factions/千子/stratagems/through-the-veil|穿越间隔]] — 1 CP、Movement phase、次元邪咒傀儡团 分队、Epic Deed Stratagem。
 - [[factions/千子/stratagems/revenge-of-the-rubricae|红骸复仇]] — 1 CP、Shooting phase、Rubricae Phalanx 分队、Strategic Ploy Strat...
 - [[factions/千子/stratagems/warpflame-gargoyles|翻焰石像鬼]] — 1 CP、Charge phase、Warpforged Cabal 分队、Wargear Stratagem。
-- [[factions/千子/stratagems/ectoplasmic-extrusion|胞质外突]] — 1 CP、Shooting phase、Sekhetar Cohort 分队。
 - [[factions/千子/stratagems/egotistical-power|自负之力]] — 1 CP、Command phase、Grand Coven 分队、Strategic Ploy Stratagem。
 - [[factions/千子/stratagems/flesh-change|血肉之变]] — 1 CP、Shooting or Fight phase、Devoted Thralls 分队、Battle Tacti...
-- [[factions/千子/stratagems/mutagenic-magicks|诱变魔法]] — 1 CP、Fight phase、Ritual of Regeneration 分队。
 - [[factions/千子/stratagems/blessed-transmutations|赐福嬗变]] — 1 CP、Command phase、Warpmeld Pact 分队、Strategic Ploy Stratagem...
 - [[factions/千子/stratagems/cyberspirit-machinations|赛博灵机谋算]] — 1 CP、Movement phase、Warpforged Cabal 分队、Strategic Ploy Strat...
 - [[factions/千子/stratagems/bestial-surge|野性突涌]] — 1 CP、Shooting phase、Devoted Thralls 分队、Strategic Ploy Strata...
 - [[factions/千子/stratagems/ensorcelled-infusion|附魔灌注]] — 2 CP、Shooting phase、Warpforged Cabal 分队、Battle Tactic Strata...
 - [[factions/千子/stratagems/invisible-assailants|隐形袭击者]] — 1 CP、Movement phase、Fateseekers 分队、Strategic Ploy Stratagem。
+- [[factions/千子/stratagems/ectoplasmic-extrusion|魂质肢体]] — 1 CP、Shooting phase、塞克塔部队 分队。
 
 ## 强化
 
 - [[factions/千子/enhancements/prescient-authority|先知权柄]] — 0 分、Devoted Thralls 分队。
 - [[factions/千子/enhancements/nethershriek-mind-eater|冥啸噬心者]] — 10 分、Changehost of Deceit 分队。
-- [[factions/千子/enhancements/thicket-of-bladed-bone|利骨丛生]] — 分数未知、Servants of Change 分队。
+- [[factions/千子/enhancements/thicket-of-bladed-bone|刃骨增生]] — 分数未知、变化的仆从 分队。
 - [[factions/千子/enhancements/eldritch-vortex-of-etaph|厄塔弗虚旋]] — 35 分、Grand Coven 分队。
 - [[factions/千子/enhancements/fires-of-change|变化之火]] — 0 分、Chosen Cabal 分队。
 - [[factions/千子/enhancements/duplicitous-malediction|口是心非诅咒]] — 15 分、Changehost of Deceit 分队。
 - [[factions/千子/enhancements/predestined-champion|命定冠军]] — 0 分、Fateseekers 分队。
-- [[factions/千子/enhancements/occulus-infernum|地狱之眼]] — 分数未知、Sekhetar Cohort 分队。
 - [[factions/千子/enhancements/risen-rubricae|复起红骸]] — 30 分、Rubricae Phalanx 分队。
-- [[factions/千子/enhancements/noctilith-mantle|夜岩斗篷]] — 15 分、Hexwarp Thrallband 分队。
-- [[factions/千子/enhancements/arcane-might|奥术伟力]] — 20 分、Hexwarp Thrallband 分队。
+- [[factions/千子/enhancements/noctilith-mantle|夜石纹章]] — 15 分、次元邪咒傀儡团 分队。
+- [[factions/千子/enhancements/arcane-might|奥术之力]] — 20 分、次元邪咒傀儡团 分队。
 - [[factions/千子/enhancements/arcane-thralls-aura|奥术奴仆]] — 5 分、Rubricae Phalanx 分队。
 - [[factions/千子/enhancements/thrallmaster|奴役之主]] — 0 分、Devoted Thralls 分队。
 - [[factions/千子/enhancements/warp-mastery|巫术精通]] — 0 分、Chosen Cabal 分队。
 - [[factions/千子/enhancements/warp-syphon|巫能虹吸]] — 5 分、Warpforged Cabal 分队。
 - [[factions/千子/enhancements/warp-cursed-runemaster|巫诅符文师]] — 10 分、Warpforged Cabal 分队。
 - [[factions/千子/enhancements/bray-lord|布雷领主]] — 15 分、Warpmeld Pact 分队。
-- [[factions/千子/enhancements/empowered-manifestation|强能显现]] — 20 分、Hexwarp Thrallband 分队。
+- [[factions/千子/enhancements/empowered-manifestation|强化法术]] — 20 分、次元邪咒傀儡团 分队。
 - [[factions/千子/enhancements/warpmeld-dagger|扭曲之匕]] — 10 分、Warpmeld Pact 分队。
 - [[factions/千子/enhancements/diamond-of-distortion|扭曲之钻]] — 20 分、Warpmeld Pact 分队。
 - [[factions/千子/enhancements/astral-predation|星界潜猎]] — 0 分、Fateseekers 分队。
 - [[factions/千子/enhancements/umbralefic-crystal|本影晶石]] — 20 分、Grand Coven 分队。
+- [[factions/千子/enhancements/empyric-onslaught|次元猛攻]] — 25 分、次元邪咒傀儡团 分队。
 - [[factions/千子/enhancements/flowing-flesh|流变之肉]] — 10 分、Warpmeld Pact 分队。
-- [[factions/千子/enhancements/empyric-onslaught|灵能突袭]] — 25 分、Hexwarp Thrallband 分队。
+- [[factions/千子/enhancements/occulus-infernum|炼狱魔眼]] — 分数未知、塞克塔部队 分队。
 - [[factions/千子/enhancements/incandaeum|炽焰灵体]] — 15 分、Grand Coven 分队。
-- [[factions/千子/enhancements/curse-of-life|生命诅咒]] — 分数未知、Ritual of Regeneration 分队。
-- [[factions/千子/enhancements/eruption-of-vitality|生机迸发]] — 分数未知、Ritual of Regeneration 分队。
+- [[factions/千子/enhancements/curse-of-life|生命诅咒]] — 分数未知、再生仪式 分队。
+- [[factions/千子/enhancements/eruption-of-vitality|生机迸发]] — 分数未知、再生仪式 分队。
 - [[factions/千子/enhancements/biomechanical-mutation|生物机械突变]] — 15 分、Warpforged Cabal 分队。
 - [[factions/千子/enhancements/tome-of-true-names|真名之书]] — 20 分、Changehost of Deceit 分队。
 - [[factions/千子/enhancements/lord-of-forbidden-lore|禁忌学识之主]] — 20 分、Grand Coven 分队。
+- [[factions/千子/enhancements/walking-rampart|移动护墙]] — 分数未知、塞克塔部队 分队。
 - [[factions/千子/enhancements/lord-of-the-rubricae|红骸之主]] — 15 分、Rubricae Phalanx 分队。
-- [[factions/千子/enhancements/walking-rampart|行走壁垒]] — 分数未知、Sekhetar Cohort 分队。
-- [[factions/千子/enhancements/unravelled-fates|解构天命]] — 分数未知、Servants of Change 分队。
+- [[factions/千子/enhancements/unravelled-fates|解开命运]] — 分数未知、变化的仆从 分队。
 - [[factions/千子/enhancements/the-perplexing-cloak|迷惑之袍]] — 20 分、Warpforged Cabal 分队。
 - [[factions/千子/enhancements/diabolic-savant|邪谋智者]] — 20 分、Changehost of Deceit 分队。
 - [[factions/千子/enhancements/the-stave-abominus|阿波米努斯法杖]] — 20 分、Rubricae Phalanx 分队。

@@ -1,5 +1,6 @@
 ---
 id: '000009740'
+name_zh: 次元邪咒傀儡团
 name_en: Hexwarp Thrallband
 faction: 千子
 type: detachment
@@ -10,10 +11,10 @@ tags:
 - 千子
 sources:
 - book: 官方结构库 db/wh40k.sqlite（Wahapedia 11 版镜像）
-updated: '2026-07-25'
+updated: '2026-07-26'
 ---
 
-千子的分队，分队规则「魔力涌流」。
+千子的分队「次元邪咒傀儡团」，分队规则「魔力涌流」。
 
 ## 分队规则
 
@@ -29,16 +30,16 @@ Each time a THOUSAND SONS model from your army makes a Psychic Attack, re-roll a
 
 ## 增强
 
-- [[factions/千子/enhancements/arcane-might.md\|奥术伟力]]
-- [[factions/千子/enhancements/empowered-manifestation.md\|强能显现]]
-- [[factions/千子/enhancements/empyric-onslaught.md\|灵能突袭]]
-- [[factions/千子/enhancements/noctilith-mantle.md\|夜岩斗篷]]
+- [[factions/千子/enhancements/arcane-might.md\|奥术之力]]
+- [[factions/千子/enhancements/empowered-manifestation.md\|强化法术]]
+- [[factions/千子/enhancements/empyric-onslaught.md\|次元猛攻]]
+- [[factions/千子/enhancements/noctilith-mantle.md\|夜石纹章]]
 
 ## 战略
 
 - [[factions/千子/stratagems/kaleidoscopic-tempest.md\|万花风暴]]
-- [[factions/千子/stratagems/scouring-warpflame.md\|焦烧翻焰]]
-- [[factions/千子/stratagems/strands-of-time.md\|时之丝线]]
-- [[factions/千子/stratagems/through-the-veil.md\|穿越帷幕]]
-- [[factions/千子/stratagems/warding-hex.md\|禁锢咒印]]
-- [[factions/千子/stratagems/wrath-of-the-doomed.md\|厄命之怒]]
+- [[factions/千子/stratagems/scouring-warpflame.md\|巫火扫荡]]
+- [[factions/千子/stratagems/strands-of-time.md\|时间丝线]]
+- [[factions/千子/stratagems/through-the-veil.md\|穿越间隔]]
+- [[factions/千子/stratagems/warding-hex.md\|守护邪咒]]
+- [[factions/千子/stratagems/wrath-of-the-doomed.md\|破灭者之怒]]

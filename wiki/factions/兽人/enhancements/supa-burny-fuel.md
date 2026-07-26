@@ -1,7 +1,9 @@
 ---
 id: '000010795004'
-name_zh: 超燃燃料
+name_zh: 超级燃料
 name_en: Supa-burny Fuel
+aliases:
+- 超燃燃料
 faction: 兽人
 type: enhancement
 detachment: Speedwaaagh!
@@ -12,10 +14,10 @@ tags:
 - 兽人
 sources:
 - book: 官方结构库 db/wh40k.sqlite（Wahapedia 11 版镜像）
-updated: '2026-07-25'
+updated: '2026-07-26'
 ---
 
-15 分、[[factions/兽人/detachments/speedwaaagh.md|Speedwaaagh!]] 分队。
+15 分、[[factions/兽人/detachments/speedwaaagh.md|疾速 WAAAGH！]] 分队。
 
 ## 效果
 

@@ -10,10 +10,10 @@ tags:
 - 死亡守卫
 sources:
 - book: 官方结构库 db/wh40k.sqlite（Wahapedia 11 版镜像）
-updated: '2026-07-25'
+updated: '2026-07-26'
 ---
 
-死亡守卫的分队，分队规则「瘟疫军团」。
+死亡守卫的分队「Tallyband Summoners」，分队规则「[[factions/混沌恶魔/detachments/plague-legion.md|瘟疫军团]]」。
 
 ## 分队规则
 

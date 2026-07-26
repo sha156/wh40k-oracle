@@ -1,5 +1,6 @@
 ---
 id: '000010738'
+name_zh: 次元突袭勇士
 name_en: Warpstrike Champions
 faction: 混沌星际战士
 type: detachment
@@ -10,10 +11,10 @@ tags:
 - 混沌星际战士
 sources:
 - book: 官方结构库 db/wh40k.sqlite（Wahapedia 11 版镜像）
-updated: '2026-07-25'
+updated: '2026-07-26'
 ---
 
-混沌星际战士的分队，分队规则「Warp Portals」。
+混沌星际战士的分队「次元突袭勇士」，分队规则「Warp Portals」。
 
 ## 分队规则
 
@@ -34,14 +35,14 @@ Once you have made your selections, remove those units from the battlefield and 
 
 - [[factions/混沌星际战士/enhancements/akshurs-binding-runes.md\|Akshur’s Binding Runes]]
 - [[factions/混沌星际战士/enhancements/eye-of-the-warp.md\|Eye of the Warp]]
-- [[factions/混沌星际战士/enhancements/infernal-fulgurite.md\|Infernal Fulgurite]]
-- [[factions/混沌星际战士/enhancements/tzagulla.md\|Tzagulla]]
+- [[factions/混沌星际战士/enhancements/infernal-fulgurite.md\|地狱结晶]]
+- [[factions/混沌星际战士/enhancements/tzagulla.md\|察古拉]]
 
 ## 战略
 
-- [[factions/混沌星际战士/stratagems/armour-of-corruption.md\|ARMOUR OF CORRUPTION]]
-- [[factions/混沌星际战士/stratagems/empyric-dislocation.md\|EMPYRIC DISLOCATION]]
-- [[factions/混沌星际战士/stratagems/portal-of-spite.md\|PORTAL OF SPITE]]
-- [[factions/混沌星际战士/stratagems/siegebreaker-strike.md\|SIEGEBREAKER STRIKE]]
+- [[factions/混沌星际战士/stratagems/armour-of-corruption.md\|腐化甲胄]]
+- [[factions/混沌星际战士/stratagems/empyric-dislocation.md\|亚空间错位]]
+- [[factions/混沌星际战士/stratagems/portal-of-spite.md\|恶灵传送门]]
+- [[factions/混沌星际战士/stratagems/siegebreaker-strike.md\|碎盾者打击]]
 - [[factions/混沌星际战士/stratagems/warp-flicker.md\|WARP FLICKER]]
 - [[factions/混沌星际战士/stratagems/warp-tainted.md\|WARP-TAINTED]]

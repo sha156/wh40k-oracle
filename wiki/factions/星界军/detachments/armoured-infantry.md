@@ -1,5 +1,6 @@
 ---
 id: '000010790'
+name_zh: 装甲步兵
 name_en: Armoured Infantry
 faction: 星界军
 type: detachment
@@ -10,10 +11,10 @@ tags:
 - 星界军
 sources:
 - book: 官方结构库 db/wh40k.sqlite（Wahapedia 11 版镜像）
-updated: '2026-07-25'
+updated: '2026-07-26'
 ---
 
-星界军的分队，分队规则「Squadron Command」。
+星界军的分队「装甲步兵」，分队规则「Squadron Command」。
 
 ## 分队规则
 
@@ -32,15 +33,15 @@ Astra Militarum Squadron units from your army have the ARMOURED SKIRMISHER keywo
 ## 增强
 
 - [[factions/星界军/enhancements/exemplary-officer.md\|Exemplary Officer]]
-- [[factions/星界军/enhancements/grand-strategist-armoured-infantry.md\|Grand Strategist]]
+- [[factions/星界军/enhancements/grand-strategist-armoured-infantry.md\|大战略家]]
 - [[factions/星界军/enhancements/master-manoeuvrist.md\|Master Manoeuvrist]]
-- [[factions/星界军/enhancements/omnissian-unguents-aura.md\|Omnissian Unguents  (Aura)]]
+- [[factions/星界军/enhancements/omnissian-unguents-aura.md\|欧姆尼赛亚的神圣油膏（光环）]]
 
 ## 战略
 
-- [[factions/星界军/stratagems/burst-of-speed.md\|BURST OF SPEED]]
-- [[factions/星界军/stratagems/combined-fire.md\|COMBINED FIRE]]
-- [[factions/星界军/stratagems/mobile-firebase.md\|MOBILE FIREBASE]]
-- [[factions/星界军/stratagems/opening-salvo.md\|OPENING SALVO]]
-- [[factions/星界军/stratagems/order-the-advance.md\|ORDER THE ADVANCE]]
-- [[factions/星界军/stratagems/supporting-ordnance.md\|SUPPORTING ORDNANCE]]
+- [[factions/星界军/stratagems/burst-of-speed.md\|速度爆发]]
+- [[factions/星界军/stratagems/combined-fire.md\|协同火力]]
+- [[factions/星界军/stratagems/mobile-firebase.md\|移动火力平台]]
+- [[factions/星界军/stratagems/opening-salvo.md\|突袭齐射]]
+- [[factions/星界军/stratagems/order-the-advance.md\|下令前进]]
+- [[factions/星界军/stratagems/supporting-ordnance.md\|支援炮击]]

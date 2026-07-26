@@ -1,5 +1,6 @@
 ---
 id: '000009772'
+name_zh: 拜尔造物
 name_en: Creations of Bile
 faction: 混沌星际战士
 type: detachment
@@ -10,10 +11,10 @@ tags:
 - 混沌星际战士
 sources:
 - book: 官方结构库 db/wh40k.sqlite（Wahapedia 11 版镜像）
-updated: '2026-07-25'
+updated: '2026-07-26'
 ---
 
-混沌星际战士的分队，分队规则「Experimental Augmentations」。
+混沌星际战士的分队「拜尔造物」，分队规则「Experimental Augmentations」。
 
 ## 分队规则
 
@@ -32,16 +33,16 @@ At the start of the battle, select which augmentations are active for Heretic As
 
 ## 增强
 
-- [[factions/混沌星际战士/enhancements/helm-of-all-seeing.md\|Helm of All-seeing]]
-- [[factions/混沌星际战士/enhancements/living-carapace.md\|Living Carapace]]
-- [[factions/混沌星际战士/enhancements/prime-test-subject.md\|Prime Test Subject]]
-- [[factions/混沌星际战士/enhancements/surgical-precision.md\|Surgical Precision]]
+- [[factions/混沌星际战士/enhancements/helm-of-all-seeing.md\|全视头盔]]
+- [[factions/混沌星际战士/enhancements/living-carapace.md\|活甲壳]]
+- [[factions/混沌星际战士/enhancements/prime-test-subject.md\|上等试验体]]
+- [[factions/混沌星际战士/enhancements/surgical-precision.md\|手术级精准]]
 
 ## 战略
 
-- [[factions/混沌星际战士/stratagems/autostimulants.md\|AUTOSTIMULANTS]]
-- [[factions/混沌星际战士/stratagems/delayed-mutations.md\|DELAYED MUTATIONS]]
-- [[factions/混沌星际战士/stratagems/diabolic-regeneration.md\|DIABOLIC REGENERATION]]
-- [[factions/混沌星际战士/stratagems/masters-are-watching.md\|MASTERS ARE WATCHING]]
-- [[factions/混沌星际战士/stratagems/monstrous-visages.md\|MONSTROUS VISAGES]]
-- [[factions/混沌星际战士/stratagems/specimens-for-the-spider.md\|SPECIMENS FOR THE SPIDER]]
+- [[factions/混沌星际战士/stratagems/autostimulants.md\|自动注射]]
+- [[factions/混沌星际战士/stratagems/delayed-mutations.md\|延迟变异]]
+- [[factions/混沌星际战士/stratagems/diabolic-regeneration.md\|不洁再生]]
+- [[factions/混沌星际战士/stratagems/masters-are-watching.md\|主人正在监视]]
+- [[factions/混沌星际战士/stratagems/monstrous-visages.md\|恐怖面目]]
+- [[factions/混沌星际战士/stratagems/specimens-for-the-spider.md\|蜘蛛的样本]]

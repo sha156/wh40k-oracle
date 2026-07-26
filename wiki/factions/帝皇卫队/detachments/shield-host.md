@@ -10,10 +10,10 @@ tags:
 - 帝皇卫队
 sources:
 - book: 官方结构库 db/wh40k.sqlite（Wahapedia 11 版镜像）
-updated: '2026-07-25'
+updated: '2026-07-26'
 ---
 
-帝皇卫队的分队，分队规则「武艺精通」。
+帝皇卫队的分队「Shield Host」，分队规则「武艺精通」。
 
 ## 分队规则
 

@@ -1,5 +1,6 @@
 ---
 id: '000010649003'
+name_zh: 编织者哀嚎
 name_en: Weavers’ Wail
 faction: 艾达灵族
 type: enhancement
@@ -11,10 +12,10 @@ tags:
 - 艾达灵族
 sources:
 - book: 官方结构库 db/wh40k.sqlite（Wahapedia 11 版镜像）
-updated: '2026-07-25'
+updated: '2026-07-26'
 ---
 
-20 分、[[factions/艾达灵族/detachments/serpents-brood.md|Serpent’s Brood]] 分队。
+20 分、[[factions/艾达灵族/detachments/serpents-brood.md|巨蛇族群]] 分队。
 
 ## 效果
 

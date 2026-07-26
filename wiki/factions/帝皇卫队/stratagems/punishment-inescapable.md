@@ -1,7 +1,9 @@
 ---
 id: '000009754007'
-name_zh: 无可逃脱的惩罚
+name_zh: 不可逃避的惩戒
 name_en: PUNISHMENT INESCAPABLE
+aliases:
+- 无可逃脱的惩罚
 faction: 帝皇卫队
 type: stratagem
 detachment: Solar Spearhead
@@ -14,10 +16,10 @@ tags:
 - 帝皇卫队
 sources:
 - book: 官方结构库 db/wh40k.sqlite（Wahapedia 11 版镜像）
-updated: '2026-07-25'
+updated: '2026-07-26'
 ---
 
-1 CP、Shooting phase、[[factions/帝皇卫队/detachments/solar-spearhead.md|Solar Spearhead]] 分队、Strategic Ploy Stratagem。
+1 CP、Shooting phase、[[factions/帝皇卫队/detachments/solar-spearhead.md|耀日矛头]] 分队、Strategic Ploy Stratagem。
 
 ## 使用时机
 

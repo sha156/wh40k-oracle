@@ -1,7 +1,9 @@
 ---
 id: fp11e-nec-skyshroud-s2
-name_zh: 迅捷如死
+name_zh: 迅如死亡
 name_en: Swift as Death
+aliases:
+- 迅捷如死
 faction: 太空死灵
 type: stratagem
 detachment: Skyshroud Spearhead
@@ -13,10 +15,10 @@ tags:
 - 太空死灵
 sources:
 - book: 官方结构库 db/wh40k.sqlite（Wahapedia 11 版镜像）
-updated: '2026-07-25'
+updated: '2026-07-26'
 ---
 
-1 CP、Opponent's Movement phase、[[factions/太空死灵/detachments/skyshroud-spearhead.md|Skyshroud Spearhead]] 分队。
+1 CP、Opponent's Movement phase、[[factions/太空死灵/detachments/skyshroud-spearhead.md|遮天先锋]] 分队。
 
 ## 使用时机
 

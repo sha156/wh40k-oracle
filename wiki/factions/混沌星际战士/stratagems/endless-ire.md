@@ -13,7 +13,7 @@ tags:
 - 混沌星际战士
 sources:
 - book: 官方结构库 db/wh40k.sqlite（Wahapedia 11 版镜像）
-updated: '2026-07-25'
+updated: '2026-07-26'
 ---
 
 2 CP、Any phase、[[factions/混沌星际战士/detachments/veterans-of-the-long-war.md|Veterans of the Long War]] 分队、Epic Deed Stratagem。

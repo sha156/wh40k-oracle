@@ -1,5 +1,6 @@
 ---
 id: '000009834'
+name_zh: 天使继承者
 name_en: Angelic Inheritors
 faction: 星际战士
 type: detachment
@@ -10,10 +11,10 @@ tags:
 - 星际战士
 sources:
 - book: 官方结构库 db/wh40k.sqlite（Wahapedia 11 版镜像）
-updated: '2026-07-25'
+updated: '2026-07-26'
 ---
 
-星际战士的分队，分队规则「天使遗产」。
+星际战士的分队「天使继承者」，分队规则「天使遗产」。
 
 ## 分队规则
 
@@ -34,14 +35,14 @@ Your army can include Blood Angels units, but it cannot include ADEPTUS ASTARTES
 
 - [[factions/星际战士/enhancements/blazing-icon.md\|炽燃圣印]]
 - [[factions/星际战士/enhancements/ordained-sacrifice.md\|命定牺牲]]
-- [[factions/星际战士/enhancements/prescient-flash.md\|预言灵光]]
+- [[factions/星际战士/enhancements/prescient-flash.md\|短暂预知]]
 - [[factions/星际战士/enhancements/troubling-visions.md\|不安幻视]]
 
 ## 战略
 
-- [[factions/星际战士/stratagems/armour-of-contempt-angelic-inheritors.md\|蔑视甲胄]]
-- [[factions/星际战士/stratagems/focused-fury.md\|聚焦怒火]]
-- [[factions/星际战士/stratagems/in-the-shadow-of-great-wings.md\|巨翼荫蔽]]
-- [[factions/星际战士/stratagems/instant-of-grace.md\|乍现优雅]]
-- [[factions/星际战士/stratagems/strike-now-for-glory.md\|为荣耀而战]]
-- [[factions/星际战士/stratagems/unto-the-burning-skies.md\|直击燃空]]
+- [[factions/星际战士/stratagems/armour-of-contempt-angelic-inheritors.md\|蔑视战甲]]
+- [[factions/星际战士/stratagems/focused-fury.md\|集中怒火]]
+- [[factions/星际战士/stratagems/in-the-shadow-of-great-wings.md\|在巨大双翼的阴影下]]
+- [[factions/星际战士/stratagems/instant-of-grace.md\|光辉时刻]]
+- [[factions/星际战士/stratagems/strike-now-for-glory.md\|为荣誉出击]]
+- [[factions/星际战士/stratagems/unto-the-burning-skies.md\|飞向燃烧的天空]]

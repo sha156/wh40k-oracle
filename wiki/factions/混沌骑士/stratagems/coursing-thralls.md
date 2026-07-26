@@ -1,7 +1,9 @@
 ---
 id: fp11e-chaosknights-iconoclast-s2
-name_zh: 追猎奴众
+name_zh: 奴仆呼喊
 name_en: COURSING THRALLS
+aliases:
+- 追猎奴众
 faction: 混沌骑士
 type: stratagem
 detachment: Iconoclast Fiefdom
@@ -13,10 +15,10 @@ tags:
 - 混沌骑士
 sources:
 - book: 官方结构库 db/wh40k.sqlite（Wahapedia 11 版镜像）
-updated: '2026-07-25'
+updated: '2026-07-26'
 ---
 
-1 CP、Shooting phase、[[factions/混沌骑士/detachments/iconoclast-fiefdom.md|Iconoclast Fiefdom]] 分队。
+1 CP、Shooting phase、[[factions/混沌骑士/detachments/iconoclast-fiefdom.md|叛道封地]] 分队。
 
 ## 使用时机
 

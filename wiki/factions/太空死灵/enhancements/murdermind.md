@@ -1,7 +1,9 @@
 ---
 id: '000010668003'
-name_zh: 谋杀心智
+name_zh: 杀戮意志
 name_en: Murdermind
+aliases:
+- 谋杀心智
 faction: 太空死灵
 type: enhancement
 detachment: Cursed Legion
@@ -12,10 +14,10 @@ tags:
 - 太空死灵
 sources:
 - book: 官方结构库 db/wh40k.sqlite（Wahapedia 11 版镜像）
-updated: '2026-07-25'
+updated: '2026-07-26'
 ---
 
-15 分、[[factions/太空死灵/detachments/cursed-legion.md|Cursed Legion]] 分队。
+15 分、[[factions/太空死灵/detachments/cursed-legion.md|诅咒军团]] 分队。
 
 ## 效果
 

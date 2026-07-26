@@ -10,10 +10,10 @@ tags:
 - 星界军
 sources:
 - book: 官方结构库 db/wh40k.sqlite（Wahapedia 11 版镜像）
-updated: '2026-07-25'
+updated: '2026-07-26'
 ---
 
-星界军的分队，分队规则「Born Soldiers」。
+星界军的分队「Combined Arms」，分队规则「Born Soldiers」。
 
 ## 分队规则
 
@@ -27,7 +27,7 @@ Each time a model in a Squadron unit from your army makes a ranged attack that t
 
 - [[factions/星界军/enhancements/death-mask-of-ollanius.md\|Death Mask of Ollanius]]
 - [[factions/星界军/enhancements/drill-commander.md\|Drill Commander]]
-- [[factions/星界军/enhancements/grand-strategist-combined-arms.md\|Grand Strategist]]
+- [[factions/星界军/enhancements/grand-strategist-combined-arms.md\|大战略家]]
 - [[factions/星界军/enhancements/reactive-command.md\|Reactive Command]]
 
 ## 战略

@@ -1,5 +1,6 @@
 ---
 id: '000008521'
+name_zh: 黑矛特遣队
 name_en: Black Spear Task Force
 faction: 星际战士
 type: detachment
@@ -10,10 +11,10 @@ tags:
 - 星际战士
 sources:
 - book: 官方结构库 db/wh40k.sqlite（Wahapedia 11 版镜像）
-updated: '2026-07-25'
+updated: '2026-07-26'
 ---
 
-星际战士的分队，分队规则「Mission Tactics」。
+星际战士的分队「黑矛特遣队」，分队规则「Mission Tactics」。
 
 ## 分队规则
 
@@ -29,16 +30,16 @@ PURGATUS TACTICS By adopting Purgatus tactics, the Deathwatch focus their deadly
 
 ## 增强
 
-- [[factions/星际战士/enhancements/beacon-angelis.md\|Beacon Angelis]]
-- [[factions/星际战士/enhancements/osseus-key.md\|Osseus Key]]
-- [[factions/星际战士/enhancements/the-tome-of-ectoclades.md\|The Tome of Ectoclades]]
-- [[factions/星际战士/enhancements/thief-of-secrets.md\|Thief of Secrets]]
+- [[factions/星际战士/enhancements/beacon-angelis.md\|天使信标]]
+- [[factions/星际战士/enhancements/osseus-key.md\|奥瑟斯之匙]]
+- [[factions/星际战士/enhancements/the-tome-of-ectoclades.md\|异星大典]]
+- [[factions/星际战士/enhancements/thief-of-secrets.md\|秘密窃取者]]
 
 ## 战略
 
-- [[factions/星际战士/stratagems/adaptive-tactics.md\|ADAPTIVE TACTICS]]
+- [[factions/星际战士/stratagems/adaptive-tactics.md\|适应战术]]
 - [[factions/星际战士/stratagems/armour-of-contempt-black-spear-task-force.md\|蔑视甲胄]]
-- [[factions/星际战士/stratagems/dragonfire-rounds.md\|DRAGONFIRE ROUNDS]]
-- [[factions/星际战士/stratagems/hellfire-rounds.md\|HELLFIRE ROUNDS]]
-- [[factions/星际战士/stratagems/kraken-rounds.md\|KRAKEN ROUNDS]]
-- [[factions/星际战士/stratagems/site-to-site-teleportation.md\|SITE-TO-SITE TELEPORTATION]]
+- [[factions/星际战士/stratagems/dragonfire-rounds.md\|龙火子弹]]
+- [[factions/星际战士/stratagems/hellfire-rounds.md\|地狱火子弹]]
+- [[factions/星际战士/stratagems/kraken-rounds.md\|克拉肯子弹]]
+- [[factions/星际战士/stratagems/site-to-site-teleportation.md\|传送]]

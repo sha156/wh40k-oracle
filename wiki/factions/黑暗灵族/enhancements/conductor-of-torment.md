@@ -1,7 +1,9 @@
 ---
 id: '000009781005'
-name_zh: 折磨指挥者
+name_zh: 痛苦指挥家
 name_en: Conductor of Torment
+aliases:
+- 折磨指挥者
 faction: 黑暗灵族
 type: enhancement
 detachment: Reaper’s Wager
@@ -12,10 +14,10 @@ tags:
 - 黑暗灵族
 sources:
 - book: 官方结构库 db/wh40k.sqlite（Wahapedia 11 版镜像）
-updated: '2026-07-25'
+updated: '2026-07-26'
 ---
 
-20 分、[[factions/黑暗灵族/detachments/reapers-wager.md|Reaper’s Wager]] 分队。
+20 分、[[factions/黑暗灵族/detachments/reapers-wager.md|死神的赌注]] 分队。
 
 ## 效果
 

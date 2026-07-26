@@ -79,6 +79,29 @@ def test_check_tolerates_fp_rules_补录层_but_flags_real_loss(tmp_path):
     assert chk["missing_count"] == 1 and chk["missing_sample"] == [rows[0]["id"]]
 
 
+def test_apply_reports_the_overlay_columns_it_wipes(tmp_path):
+    """INSERT OR REPLACE 是删了再插：官方中文名 / DSL 投影会被一并清空。
+
+    这类丢失极隐蔽——表现是「中文名忽然少了一批」，没人会联想到是重灌强化表干的。
+    所以清了多少必须报出来（CLI 据此提示补跑 official-zh --apply 与 dsl-apply）。
+    """
+    import sqlite3
+
+    db = tmp_path / "t.sqlite"
+    rows = [{"id": "e1", "faction_id": "AE", "name": "Archraider", "cost": "20",
+             "detachment": "Windrider Host", "detachment_id": "d1",
+             "legend": "", "description": "x"}]
+    apply_enhancements(db, rows)
+    conn = sqlite3.connect(str(db))
+    conn.execute("UPDATE enhancements SET name_zh = '大劫掠者', "
+                 "effect_dsl_json = '{}'")
+    conn.commit()
+    conn.close()
+
+    rep = apply_enhancements(db, rows)
+    assert rep["cleared_overlay"] == {"name_zh": 1, "effect_dsl_json": 1}
+
+
 @needs_csv
 def test_apply_idempotent(tmp_path):
     """INSERT OR REPLACE：重复 apply 不翻倍。"""

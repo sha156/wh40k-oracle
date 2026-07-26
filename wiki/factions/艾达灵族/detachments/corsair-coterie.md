@@ -1,5 +1,6 @@
 ---
 id: '000010702'
+name_zh: 海盗劫掠团
 name_en: Corsair Coterie
 faction: 艾达灵族
 type: detachment
@@ -10,10 +11,10 @@ tags:
 - 艾达灵族
 sources:
 - book: 官方结构库 db/wh40k.sqlite（Wahapedia 11 版镜像）
-updated: '2026-07-25'
+updated: '2026-07-26'
 ---
 
-艾达灵族的分队，分队规则「Relentless Raiders」。
+艾达灵族的分队「海盗劫掠团」，分队规则「Relentless Raiders」。
 
 ## 分队规则
 
@@ -33,16 +34,16 @@ Each time you add an Anhrathe unit to your army, it can be given up to one Corsa
 
 ## 增强
 
-- [[factions/艾达灵族/enhancements/archraider.md\|首袭者]]
-- [[factions/艾达灵族/enhancements/infamy-aura.md\|Infamy (Aura)]]
-- [[factions/艾达灵族/enhancements/voidstone.md\|Voidstone]]
-- [[factions/艾达灵族/enhancements/webway-pathstone.md\|Webway Pathstone]]
+- [[factions/艾达灵族/enhancements/archraider.md\|大劫掠者]]
+- [[factions/艾达灵族/enhancements/infamy-aura.md\|海盗恶名（光环）]]
+- [[factions/艾达灵族/enhancements/voidstone.md\|虚空石]]
+- [[factions/艾达灵族/enhancements/webway-pathstone.md\|网道路石]]
 
 ## 战略
 
-- [[factions/艾达灵族/stratagems/cloak-and-shadow.md\|CLOAK AND SHADOW]]
-- [[factions/艾达灵族/stratagems/into-the-breach.md\|INTO THE BREACH]]
-- [[factions/艾达灵族/stratagems/lethal-ruse.md\|LETHAL RUSE]]
-- [[factions/艾达灵族/stratagems/outcast-ambush.md\|OUTCAST AMBUSH]]
-- [[factions/艾达灵族/stratagems/pirates-due.md\|PIRATES’ DUE]]
-- [[factions/艾达灵族/stratagems/vengeful-sorrow.md\|VENGEFUL SORROW]]
+- [[factions/艾达灵族/stratagems/cloak-and-shadow.md\|暗影斗篷]]
+- [[factions/艾达灵族/stratagems/into-the-breach.md\|突破缺口]]
+- [[factions/艾达灵族/stratagems/lethal-ruse.md\|致命诡计]]
+- [[factions/艾达灵族/stratagems/outcast-ambush.md\|流放者伏击]]
+- [[factions/艾达灵族/stratagems/pirates-due.md\|海盗决斗]]
+- [[factions/艾达灵族/stratagems/vengeful-sorrow.md\|悲伤复仇]]

@@ -10,10 +10,10 @@ tags:
 - 帝国特勤
 sources:
 - book: 官方结构库 db/wh40k.sqlite（Wahapedia 11 版镜像）
-updated: '2026-07-25'
+updated: '2026-07-26'
 ---
 
-帝国特勤的分队，分队规则「Deathwatch Mission Tactics」。
+帝国特勤的分队「Ordo Xenos Alien Hunters」，分队规则「Deathwatch Mission Tactics」。
 
 ## 分队规则
 
@@ -30,15 +30,15 @@ Purgatus Tactics Adopting Purgatus tactics, the Deathwatch focus their ire upon 
 ## 增强
 
 - [[factions/帝国特勤/enhancements/amulet-of-auto-chastisement.md\|Amulet of Auto-Chastisement]]
-- [[factions/帝国特勤/enhancements/beacon-angelis.md\|Beacon Angelis]]
+- [[factions/帝国特勤/enhancements/beacon-angelis.md\|天使信标]]
 - [[factions/帝国特勤/enhancements/blackweave-shroud.md\|Blackweave Shroud]]
 - [[factions/帝国特勤/enhancements/universal-anathema.md\|Universal Anathema]]
 
 ## 战略
 
-- [[factions/帝国特勤/stratagems/adaptive-tactics.md\|ADAPTIVE TACTICS]]
+- [[factions/帝国特勤/stratagems/adaptive-tactics.md\|适应战术]]
 - [[factions/帝国特勤/stratagems/armour-of-contempt.md\|蔑视甲胄]]
-- [[factions/帝国特勤/stratagems/dragonfire-rounds.md\|DRAGONFIRE ROUNDS]]
-- [[factions/帝国特勤/stratagems/hellfire-rounds.md\|HELLFIRE ROUNDS]]
-- [[factions/帝国特勤/stratagems/kraken-rounds.md\|KRAKEN ROUNDS]]
+- [[factions/帝国特勤/stratagems/dragonfire-rounds.md\|龙火子弹]]
+- [[factions/帝国特勤/stratagems/hellfire-rounds.md\|地狱火子弹]]
+- [[factions/帝国特勤/stratagems/kraken-rounds.md\|克拉肯子弹]]
 - [[factions/帝国特勤/stratagems/rapid-tactical-relocation.md\|RAPID TACTICAL RELOCATION]]

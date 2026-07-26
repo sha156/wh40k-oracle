@@ -1,7 +1,9 @@
 ---
 id: fp11e-spacemarines-bastion-s6
-name_zh: 天使不屈
+name_zh: 抗争天使
 name_en: Angels Defiant
+aliases:
+- 天使不屈
 faction: 星际战士
 type: stratagem
 detachment: Bastion Task Force
@@ -13,10 +15,10 @@ tags:
 - 星际战士
 sources:
 - book: 官方结构库 db/wh40k.sqlite（Wahapedia 11 版镜像）
-updated: '2026-07-25'
+updated: '2026-07-26'
 ---
 
-1 CP、Fight phase、[[factions/星际战士/detachments/bastion-task-force.md|Bastion Task Force]] 分队。
+1 CP、Fight phase、[[factions/星际战士/detachments/bastion-task-force.md|堡垒特遣队]] 分队。
 
 ## 使用时机
 

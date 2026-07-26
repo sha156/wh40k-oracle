@@ -1,5 +1,6 @@
 ---
 id: '000009770002'
+name_zh: 守护夹层
 name_en: LAYERED WARDS
 faction: 艾达灵族
 type: stratagem
@@ -13,10 +14,10 @@ tags:
 - 艾达灵族
 sources:
 - book: 官方结构库 db/wh40k.sqlite（Wahapedia 11 版镜像）
-updated: '2026-07-25'
+updated: '2026-07-26'
 ---
 
-1 CP、Any phase、[[factions/艾达灵族/detachments/armoured-warhost.md|Armoured Warhost]] 分队、Strategic Ploy Stratagem。
+1 CP、Any phase、[[factions/艾达灵族/detachments/armoured-warhost.md|装甲战群]] 分队、Strategic Ploy Stratagem。
 
 ## 使用时机
 

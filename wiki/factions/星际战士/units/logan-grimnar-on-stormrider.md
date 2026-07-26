@@ -39,7 +39,7 @@ updated: '2026-07-23'
 ## 技能
 - **High King of Fenris**：Once per battle, in your Charge phase, this model can use this ability. If it does, until the end of the turn, you can re-roll Charge rolls made for <span class="kwb">ADEPTUS</span> <span class="kwb">ASTARTES</span> units from your army and, until the end of the turn, each time an <span class="kwb">ADEPTUS</span> <span class="kwb">ASTARTES</span> model from your army makes a melee attack, you can re-roll the Hit roll.
 - **The Great Wolf**：Each time this model destroys an enemy unit, you gain 1CP.
-- **LOGAN GRIMNAR**：Your army cannot contain both Logan Grimnar and <span class="kwb">LOGAN</span> <span class="kwb">GRIMNAR</span> <span class="kwb2">ON</span> <span class="kwb">STORMRIDER</span>.
+- **LOGAN GRIMNAR**：Your army cannot contain both [[factions/星际战士/units/logan-grimnar.md|Logan Grimnar]] and <span class="kwb">LOGAN</span> <span class="kwb">GRIMNAR</span> <span class="kwb2">ON</span> <span class="kwb">STORMRIDER</span>.
 
 ## 单位构成
 - **1个模型** — 180 分

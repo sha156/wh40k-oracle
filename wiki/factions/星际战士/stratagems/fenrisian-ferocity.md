@@ -1,5 +1,6 @@
 ---
 id: '000010661004'
+name_zh: 芬里斯狂怒
 name_en: FENRISIAN FEROCITY
 faction: 星际战士
 type: stratagem
@@ -13,10 +14,10 @@ tags:
 - 星际战士
 sources:
 - book: 官方结构库 db/wh40k.sqlite（Wahapedia 11 版镜像）
-updated: '2026-07-25'
+updated: '2026-07-26'
 ---
 
-1 CP、Movement or Charge phase、[[factions/星际战士/detachments/saga-of-the-great-wolf.md|Saga of the Great Wolf]] 分队、Stratagem。
+1 CP、Movement or Charge phase、[[factions/星际战士/detachments/saga-of-the-great-wolf.md|头狼之歌]] 分队、Stratagem。
 
 ## 使用时机
 

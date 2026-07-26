@@ -40,4 +40,4 @@ updated: '2026-07-23'
 
 ## 关键词
 - **阵营关键词**：Heretic Astartes，Legiones Daemonica
-- **普通关键词**：Undivided，Accursed Cultists，Chaos，Damned，Damned，Chaos，[[core-rules/infantry.md|Infantry]]，[[factions/混沌恶魔/detachments/shadow-legion.md|Shadow Legion]]，Damned，Accursed Cultists，Chaos，[[core-rules/infantry.md|Infantry]]，Shadow Legion，Undivided，Accursed Cultists，Undivided，[[core-rules/infantry.md|Infantry]]，Shadow Legion，Undivided，Accursed Cultists，Damned，Chaos，[[core-rules/infantry.md|Infantry]]，Shadow Legion
+- **普通关键词**：Undivided，Accursed Cultists，Chaos，Damned，Damned，Chaos，[[core-rules/infantry.md|Infantry]]，[[factions/混沌恶魔/detachments/shadow-legion.md|Shadow Legion]]，Damned，Accursed Cultists，Chaos，[[core-rules/infantry.md|Infantry]]，[[factions/混沌恶魔/detachments/shadow-legion.md|Shadow Legion]]，Undivided，Accursed Cultists，Undivided，[[core-rules/infantry.md|Infantry]]，Shadow Legion，Undivided，Accursed Cultists，Damned，Chaos，[[core-rules/infantry.md|Infantry]]，Shadow Legion

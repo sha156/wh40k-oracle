@@ -53,4 +53,4 @@ updated: '2026-07-23'
 
 ## 关键词
 - **阵营关键词**：Adeptus Astartes
-- **普通关键词**：Tacticus，Imperium，Fly，Jump Pack，[[core-rules/character.md|Character]]，[[core-rules/infantry.md|Infantry]]，[[core-rules/grenades.md|Grenades]]，Captain
+- **普通关键词**：Tacticus，Imperium，Fly，Jump Pack，[[core-rules/character.md|Character]]，[[core-rules/infantry.md|Infantry]]，[[core-rules/grenades.md|Grenades]]，[[factions/星际战士/units/captain.md|Captain]]

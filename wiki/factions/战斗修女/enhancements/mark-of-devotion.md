@@ -1,5 +1,6 @@
 ---
 id: '000009831003'
+name_zh: 信仰印记
 name_en: Mark of Devotion
 faction: 战斗修女
 type: enhancement
@@ -11,10 +12,10 @@ tags:
 - 战斗修女
 sources:
 - book: 官方结构库 db/wh40k.sqlite（Wahapedia 11 版镜像）
-updated: '2026-07-25'
+updated: '2026-07-26'
 ---
 
-30 分、[[factions/战斗修女/detachments/champions-of-faith.md|Champions of Faith]] 分队。
+30 分、[[factions/战斗修女/detachments/champions-of-faith.md|信仰冠军]] 分队。
 
 ## 效果
 

@@ -1,5 +1,6 @@
 ---
 id: container-interrogation-conclave
+name_zh: 审讯者密会
 name_en: Interrogation Conclave
 faction: 星际战士
 type: detachment
@@ -10,10 +11,10 @@ tags:
 - 星际战士
 sources:
 - book: 官方结构库 db/wh40k.sqlite（Wahapedia 11 版镜像）
-updated: '2026-07-25'
+updated: '2026-07-26'
 ---
 
-星际战士的分队。
+星际战士的分队「审讯者密会」。
 
 ## 分队规则
 
@@ -21,11 +22,11 @@ updated: '2026-07-25'
 
 ## 增强
 
-- [[factions/星际战士/enhancements/inescapable-interrogation.md\|Inescapable Interrogation]]
-- [[factions/星际战士/enhancements/limitless-zeal.md\|Limitless Zeal]]
+- [[factions/星际战士/enhancements/inescapable-interrogation.md\|不可逃避的审讯]]
+- [[factions/星际战士/enhancements/limitless-zeal.md\|无尽狂热]]
 
 ## 战略
 
-- [[factions/星际战士/stratagems/exacting-punishment.md\|精准惩戒]]
-- [[factions/星际战士/stratagems/terrifying-zeal.md\|恐怖热诚]]
-- [[factions/星际战士/stratagems/wages-of-cowardice.md\|怯懦的代价]]
+- [[factions/星际战士/stratagems/exacting-punishment.md\|执行惩处]]
+- [[factions/星际战士/stratagems/terrifying-zeal.md\|可怕狂热]]
+- [[factions/星际战士/stratagems/wages-of-cowardice.md\|追击懦弱者]]

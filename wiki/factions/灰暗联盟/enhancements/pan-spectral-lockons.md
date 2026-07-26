@@ -1,5 +1,6 @@
 ---
 id: fp11e-votann-farseekers-e1
+name_zh: 多频率锁定器
 name_en: Pan-Spectral Lockons
 faction: 灰暗联盟
 type: enhancement
@@ -10,10 +11,10 @@ tags:
 - 灰暗联盟
 sources:
 - book: 官方结构库 db/wh40k.sqlite（Wahapedia 11 版镜像）
-updated: '2026-07-25'
+updated: '2026-07-26'
 ---
 
-分数未知、[[factions/灰暗联盟/detachments/farseekers.md|Farseekers]] 分队。
+分数未知、[[factions/灰暗联盟/detachments/farseekers.md|远行探索者]] 分队。
 
 ## 效果
 

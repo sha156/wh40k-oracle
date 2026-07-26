@@ -1,5 +1,6 @@
 ---
 id: '000010683'
+name_zh: 光复派遣军
 name_en: Reclamation Force
 faction: 星际战士
 type: detachment
@@ -10,10 +11,10 @@ tags:
 - 星际战士
 sources:
 - book: 官方结构库 db/wh40k.sqlite（Wahapedia 11 版镜像）
-updated: '2026-07-25'
+updated: '2026-07-26'
 ---
 
-星际战士的分队，分队规则「Oath of Reclamation」。
+星际战士的分队「光复派遣军」，分队规则「Oath of Reclamation」。
 
 ## 分队规则
 
@@ -27,16 +28,16 @@ Your army can include Ultramarines units, but it cannot include any ADEPTUS ASTA
 
 ## 增强
 
-- [[factions/星际战士/enhancements/avenging-avatar-aura.md\|Avenging Avatar (Aura)]]
+- [[factions/星际战士/enhancements/avenging-avatar-aura.md\|复仇化身（光环）]]
 - [[factions/星际战士/enhancements/liberatum.md\|Liberatum]]
 - [[factions/星际战士/enhancements/scroll-of-proclamation.md\|Scroll of Proclamation]]
-- [[factions/星际战士/enhancements/seals-of-reconquest.md\|Seals of Reconquest]]
+- [[factions/星际战士/enhancements/seals-of-reconquest.md\|光复之印]]
 
 ## 战略
 
-- [[factions/星际战士/stratagems/crusading-conquerors.md\|CRUSADING CONQUERORS]]
-- [[factions/星际战士/stratagems/fight-to-the-end.md\|FIGHT TO THE END]]
-- [[factions/星际战士/stratagems/furious-dedication.md\|FURIOUS DEDICATION]]
-- [[factions/星际战士/stratagems/marching-ever-on.md\|MARCHING EVER ON]]
+- [[factions/星际战士/stratagems/crusading-conquerors.md\|远征征服者]]
+- [[factions/星际战士/stratagems/fight-to-the-end.md\|战至最后]]
+- [[factions/星际战士/stratagems/furious-dedication.md\|奉献怒火]]
+- [[factions/星际战士/stratagems/marching-ever-on.md\|永不停止的进军]]
 - [[factions/星际战士/stratagems/scions-of-guilliman.md\|SCIONS OF GUILLIMAN]]
 - [[factions/星际战士/stratagems/ultramarian-destiny.md\|ULTRAMARIAN DESTINY]]

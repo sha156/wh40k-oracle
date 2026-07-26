@@ -10,10 +10,10 @@ tags:
 - 机械修会
 sources:
 - book: 官方结构库 db/wh40k.sqlite（Wahapedia 11 版镜像）
-updated: '2026-07-25'
+updated: '2026-07-26'
 ---
 
-机械修会的分队，分队规则「Benedictions Of The Omnissiah」。
+机械修会的分队「Data-Psalm Conclave」，分队规则「Benedictions Of The Omnissiah」。
 
 ## 分队规则
 

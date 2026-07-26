@@ -1,5 +1,6 @@
 ---
 id: '000009813'
+name_zh: 鲜血军团
 name_en: Blood Legion
 faction: 混沌恶魔
 type: detachment
@@ -10,10 +11,10 @@ tags:
 - 混沌恶魔
 sources:
 - book: 官方结构库 db/wh40k.sqlite（Wahapedia 11 版镜像）
-updated: '2026-07-25'
+updated: '2026-07-26'
 ---
 
-混沌恶魔的分队，分队规则「Murdercall」。
+混沌恶魔的分队「鲜血军团」，分队规则「Murdercall」。
 
 ## 分队规则
 
@@ -29,16 +30,16 @@ At the end of a phase in which a Legiones Daemonica Khorne unit from your army d
 
 ## 增强
 
-- [[factions/混沌恶魔/enhancements/brazenmaw.md\|Brazenmaw]]
-- [[factions/混沌恶魔/enhancements/furys-cage.md\|Fury’s Cage]]
-- [[factions/混沌恶魔/enhancements/gateway-unto-damnation.md\|Gateway Unto Damnation]]
-- [[factions/混沌恶魔/enhancements/slaughterthirst-aura.md\|Slaughterthirst (Aura)]]
+- [[factions/混沌恶魔/enhancements/brazenmaw.md\|黄铜之颚]]
+- [[factions/混沌恶魔/enhancements/furys-cage.md\|怒火牢笼]]
+- [[factions/混沌恶魔/enhancements/gateway-unto-damnation.md\|诅咒大门]]
+- [[factions/混沌恶魔/enhancements/slaughterthirst-aura.md\|杀戮渴望（光环）]]
 
 ## 战略
 
-- [[factions/混沌恶魔/stratagems/blood-begets-skulls.md\|BLOOD BEGETS SKULLS]]
-- [[factions/混沌恶魔/stratagems/fools-flight.md\|FOOLS’ FLIGHT]]
-- [[factions/混沌恶魔/stratagems/gorehungry-onslaught.md\|GORE‑HUNGRY ONSLAUGHT]]
-- [[factions/混沌恶魔/stratagems/sheathed-in-brass.md\|SHEATHED IN BRASS]]
-- [[factions/混沌恶魔/stratagems/skulls-beget-blood.md\|SKULLS BEGET BLOOD]]
-- [[factions/混沌恶魔/stratagems/wrath-undeniable.md\|WRATH UNDENIABLE]]
+- [[factions/混沌恶魔/stratagems/blood-begets-skulls.md\|鲜血带来颅骨]]
+- [[factions/混沌恶魔/stratagems/fools-flight.md\|愚蠢的逃亡]]
+- [[factions/混沌恶魔/stratagems/gorehungry-onslaught.md\|嗜血猛攻]]
+- [[factions/混沌恶魔/stratagems/sheathed-in-brass.md\|黄铜加护]]
+- [[factions/混沌恶魔/stratagems/skulls-beget-blood.md\|颅骨带来鲜血]]
+- [[factions/混沌恶魔/stratagems/wrath-undeniable.md\|不可阻挡的怒火]]

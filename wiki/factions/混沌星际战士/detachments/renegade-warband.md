@@ -1,5 +1,6 @@
 ---
 id: '000010691'
+name_zh: 变节者战队
 name_en: Renegade Warband
 faction: 混沌星际战士
 type: detachment
@@ -10,10 +11,10 @@ tags:
 - 混沌星际战士
 sources:
 - book: 官方结构库 db/wh40k.sqlite（Wahapedia 11 版镜像）
-updated: '2026-07-25'
+updated: '2026-07-26'
 ---
 
-混沌星际战士的分队，分队规则「Slaves to None」。
+混沌星际战士的分队「变节者战队」，分队规则「Slaves to None」。
 
 ## 分队规则
 
@@ -40,7 +41,7 @@ In your Movement phase, each time you set up or select a HERETIC ASTARTES unit (
 
 ## 增强
 
-- [[factions/混沌星际战士/enhancements/empyric-symbiote.md\|Empyric Symbiote]]
+- [[factions/混沌星际战士/enhancements/empyric-symbiote.md\|亚空间共生体]]
 - [[factions/混沌星际战士/enhancements/eyes-of-the-hunter.md\|Eyes of the Hunter]]
 - [[factions/混沌星际战士/enhancements/fratricidal-trophies.md\|Fratricidal Trophies]]
 - [[factions/混沌星际战士/enhancements/weaponised-hatred.md\|Weaponised Hatred]]
@@ -48,8 +49,8 @@ In your Movement phase, each time you set up or select a HERETIC ASTARTES unit (
 ## 战略
 
 - [[factions/混沌星际战士/stratagems/corrupted-munitions.md\|CORRUPTED MUNITIONS]]
-- [[factions/混沌星际战士/stratagems/never-outgunned.md\|NEVER OUTGUNNED]]
-- [[factions/混沌星际战士/stratagems/reavers-reaction.md\|REAVERS’ REACTION]]
-- [[factions/混沌星际战士/stratagems/renegade-claim.md\|RENEGADE CLAIM]]
-- [[factions/混沌星际战士/stratagems/undying-hatred-renegade-warband.md\|UNDYING HATRED]]
-- [[factions/混沌星际战士/stratagems/vengeful-destruction.md\|VENGEFUL DESTRUCTION]]
+- [[factions/混沌星际战士/stratagems/never-outgunned.md\|充足火力]]
+- [[factions/混沌星际战士/stratagems/reavers-reaction.md\|劫掠反应]]
+- [[factions/混沌星际战士/stratagems/renegade-claim.md\|变节宣称]]
+- [[factions/混沌星际战士/stratagems/undying-hatred-renegade-warband.md\|不灭仇恨]]
+- [[factions/混沌星际战士/stratagems/vengeful-destruction.md\|复仇毁灭]]

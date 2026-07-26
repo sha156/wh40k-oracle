@@ -1,5 +1,6 @@
 ---
 id: '000008482003'
+name_zh: 百战精工
 name_en: War-tempered Artifice
 faction: 星际战士
 type: enhancement
@@ -11,7 +12,7 @@ tags:
 - 星际战士
 sources:
 - book: 官方结构库 db/wh40k.sqlite（Wahapedia 11 版镜像）
-updated: '2026-07-25'
+updated: '2026-07-26'
 ---
 
 25 分、[[factions/星际战士/detachments/firestorm-assault-force.md|Firestorm Assault Force]] 分队。

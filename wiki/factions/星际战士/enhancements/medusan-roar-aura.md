@@ -1,5 +1,6 @@
 ---
 id: '000010623003'
+name_zh: 美杜莎之吼（光环）
 name_en: Medusan Roar (Aura)
 faction: 星际战士
 type: enhancement
@@ -11,10 +12,10 @@ tags:
 - 星际战士
 sources:
 - book: 官方结构库 db/wh40k.sqlite（Wahapedia 11 版镜像）
-updated: '2026-07-25'
+updated: '2026-07-26'
 ---
 
-30 分、[[factions/星际战士/detachments/hammer-of-avernii.md|Hammer of Avernii]] 分队。
+30 分、[[factions/星际战士/detachments/hammer-of-avernii.md|艾沃尼之锤]] 分队。
 
 ## 效果
 

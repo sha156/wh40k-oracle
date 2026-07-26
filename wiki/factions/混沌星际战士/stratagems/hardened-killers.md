@@ -1,5 +1,6 @@
 ---
 id: '000010689002'
+name_zh: 冷酷杀手
 name_en: HARDENED KILLERS
 faction: 混沌星际战士
 type: stratagem
@@ -13,10 +14,10 @@ tags:
 - 混沌星际战士
 sources:
 - book: 官方结构库 db/wh40k.sqlite（Wahapedia 11 版镜像）
-updated: '2026-07-25'
+updated: '2026-07-26'
 ---
 
-1 CP、Command phase、[[factions/混沌星际战士/detachments/hurons-marauders.md|Huron’s Marauders]] 分队、Battle Tactic Stratagem。
+1 CP、Command phase、[[factions/混沌星际战士/detachments/hurons-marauders.md|休伦的劫掠者]] 分队、Battle Tactic Stratagem。
 
 ## 使用时机
 

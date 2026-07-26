@@ -1,5 +1,6 @@
 ---
 id: '000010786'
+name_zh: 钢铁之锤
 name_en: Steel Hammer
 faction: 星界军
 type: detachment
@@ -10,10 +11,10 @@ tags:
 - 星界军
 sources:
 - book: 官方结构库 db/wh40k.sqlite（Wahapedia 11 版镜像）
-updated: '2026-07-25'
+updated: '2026-07-26'
 ---
 
-星界军的分队，分队规则「Ceaseless Cannonade」。
+星界军的分队「钢铁之锤」，分队规则「Ceaseless Cannonade」。
 
 ## 分队规则
 
@@ -29,15 +30,15 @@ In the Muster Armies step, you can select one or more ASTRA MILITARUM TITANIC un
 ## 增强
 
 - [[factions/星界军/enhancements/assault-hatches.md\|Assault Hatches]]
-- [[factions/星界军/enhancements/battalion-commander.md\|Battalion Commander]]
-- [[factions/星界军/enhancements/engine-speaker.md\|Engine Speaker]]
+- [[factions/星界军/enhancements/battalion-commander.md\|营部指挥官]]
+- [[factions/星界军/enhancements/engine-speaker.md\|机械对话者]]
 - [[factions/星界军/enhancements/titan-killer.md\|Titan Killer]]
 
 ## 战略
 
-- [[factions/星界军/stratagems/accuracy-under-pressure.md\|ACCURACY UNDER PRESSURE]]
+- [[factions/星界军/stratagems/accuracy-under-pressure.md\|压力下的精准]]
 - [[factions/星界军/stratagems/adamantine-behemoth.md\|ADAMANTINE BEHEMOTH]]
-- [[factions/星界军/stratagems/engine-of-wrath.md\|ENGINE OF WRATH]]
-- [[factions/星界军/stratagems/imposing-arrival.md\|IMPOSING ARRIVAL]]
-- [[factions/星界军/stratagems/shattering-salvo.md\|SHATTERING SALVO]]
-- [[factions/星界军/stratagems/withering-firepower.md\|WITHERING FIREPOWER]]
+- [[factions/星界军/stratagems/engine-of-wrath.md\|机械之怒]]
+- [[factions/星界军/stratagems/imposing-arrival.md\|威严降临]]
+- [[factions/星界军/stratagems/shattering-salvo.md\|粉碎齐射]]
+- [[factions/星界军/stratagems/withering-firepower.md\|震撼火力]]

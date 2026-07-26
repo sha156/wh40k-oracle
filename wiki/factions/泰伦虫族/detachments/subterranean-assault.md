@@ -1,5 +1,6 @@
 ---
 id: '000010146'
+name_zh: 地底突袭
 name_en: Subterranean Assault
 faction: 泰伦虫族
 type: detachment
@@ -10,10 +11,10 @@ tags:
 - 泰伦虫族
 sources:
 - book: 官方结构库 db/wh40k.sqlite（Wahapedia 11 版镜像）
-updated: '2026-07-25'
+updated: '2026-07-26'
 ---
 
-泰伦虫族的分队，分队规则「Surprise Assault」。
+泰伦虫族的分队「地底突袭」，分队规则「Surprise Assault」。
 
 ## 分队规则
 
@@ -36,16 +37,16 @@ In the Muster Armies step, you can select up to 2 TRYGON models from your army. 
 
 ## 增强
 
-- [[factions/泰伦虫族/enhancements/synaptic-strategy.md\|Synaptic Strategy]]
+- [[factions/泰伦虫族/enhancements/synaptic-strategy.md\|战略突触]]
 - [[factions/泰伦虫族/enhancements/tremor-senses.md\|Tremor Senses]]
-- [[factions/泰伦虫族/enhancements/trygon-prime.md\|Trygon Prime]]
+- [[factions/泰伦虫族/enhancements/trygon-prime.md\|掘蟒首领]]
 - [[factions/泰伦虫族/enhancements/vanguard-intellect.md\|Vanguard Intellect]]
 
 ## 战略
 
-- [[factions/泰伦虫族/stratagems/adaptive-optimisation.md\|ADAPTIVE OPTIMISATION]]
-- [[factions/泰伦虫族/stratagems/enfilading-emergence.md\|ENFILADING EMERGENCE]]
-- [[factions/泰伦虫族/stratagems/replenishing-swarms.md\|REPLENISHING SWARMS]]
+- [[factions/泰伦虫族/stratagems/adaptive-optimisation.md\|适应优化]]
+- [[factions/泰伦虫族/stratagems/enfilading-emergence.md\|侧袭火力]]
+- [[factions/泰伦虫族/stratagems/replenishing-swarms.md\|补充虫群]]
 - [[factions/泰伦虫族/stratagems/retreat-below.md\|RETREAT BELOW]]
-- [[factions/泰伦虫族/stratagems/swarming-assault.md\|SWARMING ASSAULT]]
-- [[factions/泰伦虫族/stratagems/tunnel-network.md\|TUNNEL NETWORK]]
+- [[factions/泰伦虫族/stratagems/swarming-assault.md\|虫群强袭]]
+- [[factions/泰伦虫族/stratagems/tunnel-network.md\|地道网络]]

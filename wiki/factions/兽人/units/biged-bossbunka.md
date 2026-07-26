@@ -40,4 +40,4 @@ updated: '2026-07-23'
 
 ## 关键词
 - **阵营关键词**：兽人
-- **普通关键词**：工事，[[core-rules/vehicle.md|载具]]，[[core-rules/transport.md|运输工具]]，大头目碉堡
+- **普通关键词**：工事，[[core-rules/vehicle.md|载具]]，[[core-rules/transport.md|运输工具]]，[[factions/兽人/units/bigboss.md|大头目]]碉堡

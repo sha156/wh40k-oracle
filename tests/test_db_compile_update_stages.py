@@ -12,7 +12,8 @@ import sqlite3
 
 from db_compile.update import (_MFM_MIN_COMPARED, _PIPELINE, _RESTORE_STAGES,
                                UpdateConfig, stage_build, stage_fp_errata,
-                               stage_mfm_apply, stage_mfm_check)
+                               stage_fp_rules, stage_mfm_apply, stage_mfm_check,
+                               stage_official_zh)
 
 
 # ── H1：层序 ──────────────────────────────────────────────────────
@@ -25,6 +26,28 @@ def test_fp_errata_before_mfm_apply_in_pipeline():
 def test_fp_errata_before_mfm_apply_in_restore():
     fns = [entry[1] for entry in _RESTORE_STAGES]
     assert fns.index(stage_fp_errata) < fns.index(stage_mfm_apply)
+
+
+def test_official_zh_lands_after_fp_rules():
+    """官方中文名要盖在 fp_rules 的 P7 人工译名之上（宪法 §6：官方 > 人工）。
+
+    顺序反了就是低权威覆盖高权威，而两边都是中文名，页面上看不出任何差别。
+    """
+    for stages in (_PIPELINE, _RESTORE_STAGES):
+        fns = [entry[1] for entry in stages]
+        assert fns.index(stage_fp_rules) < fns.index(stage_official_zh)
+
+
+def test_official_zh_is_in_restore_stages():
+    """build 会清库：这一层不进 restore，重建后中文名会悄悄退回上一档。"""
+    assert stage_official_zh in [entry[1] for entry in _RESTORE_STAGES]
+
+
+def test_official_zh_missing_map_warns_instead_of_silent_skip(tmp_path):
+    cfg = UpdateConfig(db=tmp_path / "x.sqlite",
+                       official_zh_map=tmp_path / "nope.json")
+    res = stage_official_zh(cfg)
+    assert res.ok and res.warning and "中文名" in res.warning
 
 
 # ── H2：mfm_check 诚实性 ─────────────────────────────────────────

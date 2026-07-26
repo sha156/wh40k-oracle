@@ -1,5 +1,6 @@
 ---
 id: '000010667'
+name_zh: 诅咒军团
 name_en: Cursed Legion
 faction: 太空死灵
 type: detachment
@@ -10,10 +11,10 @@ tags:
 - 太空死灵
 sources:
 - book: 官方结构库 db/wh40k.sqlite（Wahapedia 11 版镜像）
-updated: '2026-07-25'
+updated: '2026-07-26'
 ---
 
-太空死灵的分队，分队规则「冷酷狂热」。
+太空死灵的分队「诅咒军团」，分队规则「冷酷狂热」。
 
 ## 分队规则
 
@@ -24,16 +25,16 @@ updated: '2026-07-25'
 
 ## 增强
 
-- [[factions/太空死灵/enhancements/cursed-circlet.md\|诅咒环冠]]
-- [[factions/太空死灵/enhancements/destroyer-ankh.md\|毁灭者安卡]]
+- [[factions/太空死灵/enhancements/cursed-circlet.md\|诅咒之冠]]
+- [[factions/太空死灵/enhancements/destroyer-ankh.md\|毁灭者锚点]]
 - [[factions/太空死灵/enhancements/mark-of-the-nekrosor.md\|内克罗索之印]]
-- [[factions/太空死灵/enhancements/murdermind.md\|谋杀心智]]
+- [[factions/太空死灵/enhancements/murdermind.md\|杀戮意志]]
 
 ## 战略
 
-- [[factions/太空死灵/stratagems/driven-to-butchery.md\|驱向屠戮]]
-- [[factions/太空死灵/stratagems/image-of-death.md\|死亡幻影]]
-- [[factions/太空死灵/stratagems/methodical-murder.md\|缜密谋杀]]
+- [[factions/太空死灵/stratagems/driven-to-butchery.md\|屠杀冲动]]
+- [[factions/太空死灵/stratagems/image-of-death.md\|死亡景象]]
+- [[factions/太空死灵/stratagems/methodical-murder.md\|系统性杀戮]]
 - [[factions/太空死灵/stratagems/mortis-protocols.md\|死亡协议]]
-- [[factions/太空死灵/stratagems/spreading-madness.md\|蔓延疯狂]]
-- [[factions/太空死灵/stratagems/unnatural-aggression.md\|非自然侵略]]
+- [[factions/太空死灵/stratagems/spreading-madness.md\|散播疯狂]]
+- [[factions/太空死灵/stratagems/unnatural-aggression.md\|非自然攻击性]]

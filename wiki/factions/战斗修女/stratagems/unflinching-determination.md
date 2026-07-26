@@ -1,7 +1,9 @@
 ---
 id: fp11e-sororitas-sacred-s3
-name_zh: 不屈决意
+name_zh: 不屈决心
 name_en: Unflinching Determination
+aliases:
+- 不屈决意
 faction: 战斗修女
 type: stratagem
 detachment: Sacred Champions
@@ -13,10 +15,10 @@ tags:
 - 战斗修女
 sources:
 - book: 官方结构库 db/wh40k.sqlite（Wahapedia 11 版镜像）
-updated: '2026-07-25'
+updated: '2026-07-26'
 ---
 
-1 CP、Movement phase、[[factions/战斗修女/detachments/sacred-champions.md|Sacred Champions]] 分队。
+1 CP、Movement phase、[[factions/战斗修女/detachments/sacred-champions.md|神圣冠军]] 分队。
 
 ## 使用时机
 

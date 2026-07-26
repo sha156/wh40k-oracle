@@ -1,5 +1,6 @@
 ---
 id: '000008523006'
+name_zh: 龙火子弹
 name_en: DRAGONFIRE ROUNDS
 faction: 星际战士
 type: stratagem
@@ -13,10 +14,10 @@ tags:
 - 星际战士
 sources:
 - book: 官方结构库 db/wh40k.sqlite（Wahapedia 11 版镜像）
-updated: '2026-07-25'
+updated: '2026-07-26'
 ---
 
-1 CP、Shooting phase、[[factions/星际战士/detachments/black-spear-task-force.md|Black Spear Task Force]] 分队、Wargear Stratagem。
+1 CP、Shooting phase、[[factions/星际战士/detachments/black-spear-task-force.md|黑矛特遣队]] 分队、Wargear Stratagem。
 
 ## 使用时机
 

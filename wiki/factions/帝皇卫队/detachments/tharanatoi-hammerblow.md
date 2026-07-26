@@ -1,5 +1,6 @@
 ---
 id: container-tharanatoi-hammerblow
+name_zh: 雷灭锤击
 name_en: Tharanatoi Hammerblow
 faction: 帝皇卫队
 type: detachment
@@ -10,10 +11,10 @@ tags:
 - 帝皇卫队
 sources:
 - book: 官方结构库 db/wh40k.sqlite（Wahapedia 11 版镜像）
-updated: '2026-07-25'
+updated: '2026-07-26'
 ---
 
-帝皇卫队的分队。
+帝皇卫队的分队「雷灭锤击」。
 
 ## 分队规则
 
@@ -21,11 +22,11 @@ updated: '2026-07-25'
 
 ## 增强
 
-- [[factions/帝皇卫队/enhancements/efficient-aggression.md\|高效侵略]]
-- [[factions/帝皇卫队/enhancements/mnemo-locked-shrine-cipher.md\|记忆锁圣所密码]]
+- [[factions/帝皇卫队/enhancements/efficient-aggression.md\|高效进攻]]
+- [[factions/帝皇卫队/enhancements/mnemo-locked-shrine-cipher.md\|记忆封存神龛暗号]]
 
 ## 战略
 
-- [[factions/帝皇卫队/stratagems/electroexorcist-saturation.md\|电控驱魔饱和]]
-- [[factions/帝皇卫队/stratagems/hardened-resolve.md\|坚毅决心]]
+- [[factions/帝皇卫队/stratagems/electroexorcist-saturation.md\|电子驱邪弹雨]]
+- [[factions/帝皇卫队/stratagems/hardened-resolve.md\|坚定意志]]
 - [[factions/帝皇卫队/stratagems/unleash-the-lions-tharanatoi-hammerblow.md\|释放雄狮]]

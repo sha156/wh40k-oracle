@@ -1,7 +1,9 @@
 ---
 id: fp11e-ec-spectacle-e1
-name_zh: 急切恩主
+name_zh: 渴求的保护人
 name_en: Eager Patrons
+aliases:
+- 急切恩主
 faction: 帝皇之子
 type: enhancement
 detachment: Spectacle of Slaughter
@@ -11,10 +13,10 @@ tags:
 - 帝皇之子
 sources:
 - book: 官方结构库 db/wh40k.sqlite（Wahapedia 11 版镜像）
-updated: '2026-07-25'
+updated: '2026-07-26'
 ---
 
-分数未知、[[factions/帝皇之子/detachments/spectacle-of-slaughter.md|Spectacle of Slaughter]] 分队。
+分数未知、[[factions/帝皇之子/detachments/spectacle-of-slaughter.md|杀戮盛景]] 分队。
 
 ## 效果
 

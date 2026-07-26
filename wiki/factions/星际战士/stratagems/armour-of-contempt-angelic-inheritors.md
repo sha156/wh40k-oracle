@@ -1,7 +1,9 @@
 ---
 id: '000009836002'
-name_zh: 蔑视甲胄
+name_zh: 蔑视战甲
 name_en: ARMOUR OF CONTEMPT
+aliases:
+- 蔑视甲胄
 faction: 星际战士
 type: stratagem
 detachment: Angelic Inheritors
@@ -14,10 +16,10 @@ tags:
 - 星际战士
 sources:
 - book: 官方结构库 db/wh40k.sqlite（Wahapedia 11 版镜像）
-updated: '2026-07-25'
+updated: '2026-07-26'
 ---
 
-1 CP、Shooting or Fight phase、[[factions/星际战士/detachments/angelic-inheritors.md|Angelic Inheritors]] 分队、Battle Tactic Stratagem。
+1 CP、Shooting or Fight phase、[[factions/星际战士/detachments/angelic-inheritors.md|天使继承者]] 分队、Battle Tactic Stratagem。
 
 ## 使用时机
 

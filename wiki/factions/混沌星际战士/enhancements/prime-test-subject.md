@@ -1,5 +1,6 @@
 ---
 id: '000009773005'
+name_zh: 上等试验体
 name_en: Prime Test Subject
 faction: 混沌星际战士
 type: enhancement
@@ -11,10 +12,10 @@ tags:
 - 混沌星际战士
 sources:
 - book: 官方结构库 db/wh40k.sqlite（Wahapedia 11 版镜像）
-updated: '2026-07-25'
+updated: '2026-07-26'
 ---
 
-35 分、[[factions/混沌星际战士/detachments/creations-of-bile.md|Creations of Bile]] 分队。
+35 分、[[factions/混沌星际战士/detachments/creations-of-bile.md|拜尔造物]] 分队。
 
 ## 效果
 

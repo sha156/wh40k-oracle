@@ -1,7 +1,9 @@
 ---
 id: fp11e-genestealercults-purestrainbroodswarm-s1
-name_zh: 潜伏突袭
+name_zh: 潜伏再突袭
 name_en: LURK AND STRIKE
+aliases:
+- 潜伏突袭
 faction: 基因窃取者教派
 type: stratagem
 detachment: Purestrain Broodswarm
@@ -13,10 +15,10 @@ tags:
 - 基因窃取者教派
 sources:
 - book: 官方结构库 db/wh40k.sqlite（Wahapedia 11 版镜像）
-updated: '2026-07-25'
+updated: '2026-07-26'
 ---
 
-1 CP、Movement phase、[[factions/基因窃取者教派/detachments/purestrain-broodswarm.md|Purestrain Broodswarm]] 分队。
+1 CP、Movement phase、[[factions/基因窃取者教派/detachments/purestrain-broodswarm.md|纯血虫群]] 分队。
 
 ## 使用时机
 

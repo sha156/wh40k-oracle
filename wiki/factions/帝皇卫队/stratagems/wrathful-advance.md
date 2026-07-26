@@ -1,7 +1,9 @@
 ---
 id: '000009754004'
-name_zh: 狂怒突进
+name_zh: 怒火前行
 name_en: WRATHFUL ADVANCE
+aliases:
+- 狂怒突进
 faction: 帝皇卫队
 type: stratagem
 detachment: Solar Spearhead
@@ -14,10 +16,10 @@ tags:
 - 帝皇卫队
 sources:
 - book: 官方结构库 db/wh40k.sqlite（Wahapedia 11 版镜像）
-updated: '2026-07-25'
+updated: '2026-07-26'
 ---
 
-1 CP、Fight phase、[[factions/帝皇卫队/detachments/solar-spearhead.md|Solar Spearhead]] 分队、Battle Tactic Stratagem。
+1 CP、Fight phase、[[factions/帝皇卫队/detachments/solar-spearhead.md|耀日矛头]] 分队、Battle Tactic Stratagem。
 
 ## 使用时机
 

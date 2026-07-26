@@ -127,7 +127,24 @@ def _apply_text_patches(conn, patches: List[dict], report: Dict) -> None:
              "synthesis": p.get("synthesis")})
 
 
+def _official_zh_names() -> Dict[str, str]:
+    """行级官方中文名（stratagems id → 中文名）。文件不在就返回空字典。
+
+    只用来**认出**「库里这个中文名是官方译名」这一种情况——本层的 P7 人工译名权威更低
+    （宪法 §6：GW 官方中文 > 汉化组 > 社区），不该把它报成「上游动过」的 mismatch 告警。
+    单独跑 `db_compile fp-rules` 时若不区分，179 条正常的层级让路会灌满告警通道，
+    真正的 mismatch 就此被淹没。
+    """
+    path = Path(__file__).resolve().parent / "official_zh_names.json"
+    try:
+        data = json.loads(path.read_text(encoding="utf-8"))
+    except (OSError, ValueError):
+        return {}
+    return dict(data.get("stratagems_by_id") or {})
+
+
 def _apply_name_patches(conn, patches: List[dict], report: Dict) -> None:
+    official = _official_zh_names()
     for p in patches:
         table, pid, name_zh = p.get("table"), p.get("id"), p.get("name_zh")
         if table not in _NAME_TABLES or not pid or not name_zh:
@@ -141,6 +158,10 @@ def _apply_name_patches(conn, patches: List[dict], report: Dict) -> None:
         cur = (row[0] or "").strip()
         if cur == name_zh.strip():
             report["name_already"] += 1
+            continue
+        if cur and table == "stratagems" and official.get(pid) == cur:
+            # 库里现在挂的是 GW 官方译名——更高权威的层已经盖过来了，让路且不算告警
+            report["name_superseded_by_official"] += 1
             continue
         if cur:
             # 已有不同中文名（上游/人工改过）：让路告警
@@ -259,7 +280,7 @@ def apply_fp_rules(db_path, patches: dict) -> Dict:
     report = {
         "text_applied": 0, "text_already": 0,
         "text_changes": [], "text_mismatch": [], "text_skipped": [], "text_invalid": [],
-        "name_applied": 0, "name_already": 0,
+        "name_applied": 0, "name_already": 0, "name_superseded_by_official": 0,
         "name_changes": [], "name_mismatch": [], "name_skipped": [], "name_invalid": [],
         "deact_applied": 0, "deact_already": 0,
         "deact_changes": [], "deact_mismatch": [], "deact_skipped": [], "deact_invalid": [],

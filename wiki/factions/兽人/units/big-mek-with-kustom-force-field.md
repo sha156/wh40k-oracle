@@ -41,4 +41,4 @@ updated: '2026-07-23'
 
 ## 关键词
 - **阵营关键词**：Orks
-- **普通关键词**：[[core-rules/character.md|Character]]，Big [[factions/兽人/units/mek.md|Mek]]，Big Mek with Kustom Force Field，[[core-rules/infantry.md|Infantry]]，Mek，[[core-rules/grenades.md|Grenades]]
+- **普通关键词**：[[core-rules/character.md|Character]]，Big [[factions/兽人/units/mek.md|Mek]]，[[factions/兽人/units/big-mek.md|Big Mek]] with Kustom Force Field，[[core-rules/infantry.md|Infantry]]，[[factions/兽人/units/mek.md|Mek]]，[[core-rules/grenades.md|Grenades]]

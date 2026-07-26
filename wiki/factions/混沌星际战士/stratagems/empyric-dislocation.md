@@ -1,5 +1,6 @@
 ---
 id: '000010740002'
+name_zh: 亚空间错位
 name_en: EMPYRIC DISLOCATION
 faction: 混沌星际战士
 type: stratagem
@@ -13,10 +14,10 @@ tags:
 - 混沌星际战士
 sources:
 - book: 官方结构库 db/wh40k.sqlite（Wahapedia 11 版镜像）
-updated: '2026-07-25'
+updated: '2026-07-26'
 ---
 
-1 CP、Shooting or Fight phase、[[factions/混沌星际战士/detachments/warpstrike-champions.md|Warpstrike Champions]] 分队、Battle Tactic Stratagem。
+1 CP、Shooting or Fight phase、[[factions/混沌星际战士/detachments/warpstrike-champions.md|次元突袭勇士]] 分队、Battle Tactic Stratagem。
 
 ## 使用时机
 

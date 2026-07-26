@@ -126,14 +126,16 @@ def main() -> None:
         rep = generate_entities(Path(args.db), Path(args.wiki))
         for bucket, label in (("stratagems", "战略"), ("enhancements", "增强")):
             d = rep[bucket]
-            print("{}：库 {} 行 → 写 {} 页，跳过 {}，中文名 {}".format(
-                label, d["rows"], d["written"], len(d["skipped"]),
-                rep["zh_named"].get(bucket, 0)))
+            print("{}：库 {} 行 → 写 {} 页，跳过 {}，中文名 {}（官方译名顶掉旧译名 {}）"
+                  .format(label, d["rows"], d["written"], len(d["skipped"]),
+                          rep["zh_named"].get(bucket, 0),
+                          rep["superseded_zh"].get(bucket, 0)))
             for s in d["skipped"][:5]:
                 print("    跳过 " + s)
         d = rep["detachments"]
-        print("分队：容器 {} → 写 {} 页，其中 {} 个无绑定分队规则".format(
-            d["containers"], d["written"], len(d["no_rule"])))
+        print("分队：容器 {} → 写 {} 页，中文名 {}，其中 {} 个无绑定分队规则".format(
+            d["containers"], d["written"], rep["zh_named"].get("detachments", 0),
+            len(d["no_rule"])))
         if rep["conflicts"]:
             print("⚠️ {} 页检测到人工编辑，已跳过覆盖：{}".format(
                 len(rep["conflicts"]), rep["conflicts"][:3]))

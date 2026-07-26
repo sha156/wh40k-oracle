@@ -1,5 +1,6 @@
 ---
 id: '000010636'
+name_zh: 老兵连队
 name_en: Grizzled Company
 faction: 星界军
 type: detachment
@@ -10,10 +11,10 @@ tags:
 - 星界军
 sources:
 - book: 官方结构库 db/wh40k.sqlite（Wahapedia 11 版镜像）
-updated: '2026-07-25'
+updated: '2026-07-26'
 ---
 
-星界军的分队，分队规则「Ruthless Discipline」。
+星界军的分队「老兵连队」，分队规则「Ruthless Discipline」。
 
 ## 分队规则
 
@@ -26,15 +27,15 @@ While an ASTRA MILITARUM unit from your army is affected by an Order, each time 
 ## 增强
 
 - [[factions/星界军/enhancements/abhuman-detail.md\|Abhuman Detail]]
-- [[factions/星界军/enhancements/aquilan-eye.md\|Aquilan Eye]]
-- [[factions/星界军/enhancements/laud-hailer.md\|Laud Hailer]]
+- [[factions/星界军/enhancements/aquilan-eye.md\|天鹰之眼]]
+- [[factions/星界军/enhancements/laud-hailer.md\|扩音器]]
 - [[factions/星界军/enhancements/spec-ops-veteran.md\|Spec Ops Veteran]]
 
 ## 战略
 
-- [[factions/星界军/stratagems/additional-armour.md\|ADDITIONAL ARMOUR]]
-- [[factions/星界军/stratagems/mordian-minute.md\|MORDIAN MINUTE]]
-- [[factions/星界军/stratagems/no-retreat.md\|NO RETREAT!]]
+- [[factions/星界军/stratagems/additional-armour.md\|额外护甲]]
+- [[factions/星界军/stratagems/mordian-minute.md\|莫迪安齐射]]
+- [[factions/星界军/stratagems/no-retreat.md\|绝不撤退！]]
 - [[factions/星界军/stratagems/purging-fire.md\|PURGING FIRE]]
-- [[factions/星界军/stratagems/snap-to-it.md\|SNAP TO IT]]
+- [[factions/星界军/stratagems/snap-to-it.md\|立即执行]]
 - [[factions/星界军/stratagems/veteran-sharpshooters.md\|VETERAN SHARPSHOOTERS]]

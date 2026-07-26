@@ -1,5 +1,6 @@
 ---
 id: '000010705002'
+name_zh: 海盗决斗
 name_en: PIRATES’ DUE
 faction: 艾达灵族
 type: stratagem
@@ -13,10 +14,10 @@ tags:
 - 艾达灵族
 sources:
 - book: 官方结构库 db/wh40k.sqlite（Wahapedia 11 版镜像）
-updated: '2026-07-25'
+updated: '2026-07-26'
 ---
 
-1 CP、Fight phase、[[factions/艾达灵族/detachments/corsair-coterie.md|Corsair Coterie]] 分队、Battle Tactic Stratagem。
+1 CP、Fight phase、[[factions/艾达灵族/detachments/corsair-coterie.md|海盗劫掠团]] 分队、Battle Tactic Stratagem。
 
 ## 使用时机
 

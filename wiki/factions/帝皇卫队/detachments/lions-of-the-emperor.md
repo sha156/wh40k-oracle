@@ -1,5 +1,6 @@
 ---
 id: '000009986'
+name_zh: 帝皇之狮
 name_en: Lions of the Emperor
 faction: 帝皇卫队
 type: detachment
@@ -10,10 +11,10 @@ tags:
 - 帝皇卫队
 sources:
 - book: 官方结构库 db/wh40k.sqlite（Wahapedia 11 版镜像）
-updated: '2026-07-25'
+updated: '2026-07-26'
 ---
 
-帝皇卫队的分队，分队规则「以寡敌众」。
+帝皇卫队的分队「帝皇之狮」，分队规则「以寡敌众」。
 
 ## 分队规则
 
@@ -23,16 +24,16 @@ Each time a model in an Adeptus Custodes unit from your army (excluding Vehicles
 
 ## 增强
 
-- [[factions/帝皇卫队/enhancements/admonimortis.md\|谴责之刃]]
-- [[factions/帝皇卫队/enhancements/fierce-conqueror.md\|凶悍征服者]]
-- [[factions/帝皇卫队/enhancements/praesidius.md\|守护者]]
+- [[factions/帝皇卫队/enhancements/admonimortis.md\|训诫之亡]]
+- [[factions/帝皇卫队/enhancements/fierce-conqueror.md\|勇猛征服者]]
+- [[factions/帝皇卫队/enhancements/praesidius.md\|卫戍]]
 - [[factions/帝皇卫队/enhancements/superior-creation.md\|卓越造物]]
 
 ## 战略
 
-- [[factions/帝皇卫队/stratagems/defiant-to-the-last.md\|誓死不退]]
-- [[factions/帝皇卫队/stratagems/gilded-champion.md\|镀金勇者]]
-- [[factions/帝皇卫队/stratagems/manoeuvre-and-fire.md\|机动开火]]
-- [[factions/帝皇卫队/stratagems/peerless-warrior.md\|无双战士]]
+- [[factions/帝皇卫队/stratagems/defiant-to-the-last.md\|奋战至终]]
+- [[factions/帝皇卫队/stratagems/gilded-champion.md\|黄金勇士]]
+- [[factions/帝皇卫队/stratagems/manoeuvre-and-fire.md\|移动射击]]
+- [[factions/帝皇卫队/stratagems/peerless-warrior.md\|无上斗士]]
 - [[factions/帝皇卫队/stratagems/swift-as-the-eagle.md\|迅如雄鹰]]
-- [[factions/帝皇卫队/stratagems/unleash-the-lions-lions-of-the-emperor.md\|释放雄狮]]
+- [[factions/帝皇卫队/stratagems/unleash-the-lions-lions-of-the-emperor.md\|释放猛狮]]

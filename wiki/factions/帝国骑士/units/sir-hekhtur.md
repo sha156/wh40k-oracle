@@ -30,7 +30,7 @@ updated: '2026-07-23'
 | 格斗武器 | 近战 | 2 | 2+ | 3 | 0 | 1 | — |
 
 ## 技能
-- **USING SIR HEKHTUR**：If your [[factions/帝国骑士/units/canis-rex.md|Canis Rex]] model is destroyed, this model is treated as a model disembarking from a destroyed <span class="kwb">TRANSPORT</span> and must perform an Emergency Disembarkation. Sir Hekhtur cannot be selected as the target of any of your Stratagems other than Core Stratagems. Your Canis Rex unit is not considered to be destroyed until Sir Hekhtur is also destroyed.
+- **USING SIR HEKHTUR**：If your [[factions/帝国骑士/units/canis-rex.md|Canis Rex]] model is destroyed, this model is treated as a model disembarking from a destroyed <span class="kwb">TRANSPORT</span> and must perform an Emergency Disembarkation. Sir Hekhtur cannot be selected as the target of any of your Stratagems other than Core Stratagems. Your [[factions/帝国骑士/units/canis-rex.md|Canis Rex]] unit is not considered to be destroyed until Sir Hekhtur is also destroyed.
 
 ## 关键词
 - **阵营关键词**：Imperial Knights

@@ -12,7 +12,7 @@ tags:
 - 兽人
 sources:
 - book: 官方结构库 db/wh40k.sqlite（Wahapedia 11 版镜像）
-updated: '2026-07-25'
+updated: '2026-07-26'
 ---
 
 45 分、[[factions/兽人/detachments/taktikal-brigade.md|Taktikal Brigade]] 分队。
@@ -25,4 +25,4 @@ During the Declare Battle Formations step, the bearer can be attached to a [[fac
 
 ## 携带限制
 
-[[factions/兽人/units/big-mek.md|Big Mek]], Big [[factions/兽人/units/mek.md|Mek]] in Mega Armour or [[factions/兽人/units/big-mek.md|Big Mek]] with Shokk Attack Gun model only.
+[[factions/兽人/units/big-mek.md|Big Mek]], Big [[factions/兽人/units/mek.md|Mek]] in Mega Armour or Big Mek with Shokk Attack Gun model only.

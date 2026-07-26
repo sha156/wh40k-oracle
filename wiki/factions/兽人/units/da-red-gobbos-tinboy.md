@@ -42,4 +42,4 @@ updated: '2026-07-23'
 
 ## 关键词
 - **阵营关键词**：Orks
-- **普通关键词**：Vehicle，[[core-rules/walker.md|Walker]]，[[core-rules/character.md|Character]]，[[core-rules/epic-hero.md|Epic Hero]]，Grots，Da Red Gobbo
+- **普通关键词**：Vehicle，[[core-rules/walker.md|Walker]]，[[core-rules/character.md|Character]]，[[core-rules/epic-hero.md|Epic Hero]]，Grots，[[factions/兽人/units/da-red-gobbo.md|Da Red Gobbo]]

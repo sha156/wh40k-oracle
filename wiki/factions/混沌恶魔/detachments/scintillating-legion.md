@@ -1,5 +1,6 @@
 ---
 id: '000009809'
+name_zh: 闪耀军团
 name_en: Scintillating Legion
 faction: 混沌恶魔
 type: detachment
@@ -10,10 +11,10 @@ tags:
 - 混沌恶魔
 sources:
 - book: 官方结构库 db/wh40k.sqlite（Wahapedia 11 版镜像）
-updated: '2026-07-25'
+updated: '2026-07-26'
 ---
 
-混沌恶魔的分队，分队规则「Fates in Flux」。
+混沌恶魔的分队「闪耀军团」，分队规则「Fates in Flux」。
 
 ## 分队规则
 
@@ -29,16 +30,16 @@ In your Command phase, if your opponent has one or more Flux tokens, you gain on
 
 ## 增强
 
-- [[factions/混沌恶魔/enhancements/improbable-shield-aura.md\|Improbable Shield (Aura)]]
-- [[factions/混沌恶魔/enhancements/inescapable-eye.md\|Inescapable Eye]]
-- [[factions/混沌恶魔/enhancements/infernal-puppeteer.md\|Infernal Puppeteer]]
-- [[factions/混沌恶魔/enhancements/neverblade.md\|Neverblade]]
+- [[factions/混沌恶魔/enhancements/improbable-shield-aura.md\|奇异护盾（光环）]]
+- [[factions/混沌恶魔/enhancements/inescapable-eye.md\|火眼金睛]]
+- [[factions/混沌恶魔/enhancements/infernal-puppeteer.md\|炼狱操偶师]]
+- [[factions/混沌恶魔/enhancements/neverblade.md\|变形利刃]]
 
 ## 战略
 
-- [[factions/混沌恶魔/stratagems/delirium-unmade.md\|DELIRIUM UNMADE]]
-- [[factions/混沌恶魔/stratagems/fateborne-nightmares.md\|FATEBORNE NIGHTMARES]]
-- [[factions/混沌恶魔/stratagems/ficklefire.md\|FICKLEFIRE]]
-- [[factions/混沌恶魔/stratagems/flickering-reality.md\|FLICKERING REALITY]]
-- [[factions/混沌恶魔/stratagems/impossible-eclipse.md\|IMPOSSIBLE ECLIPSE]]
-- [[factions/混沌恶魔/stratagems/pyrogenesis.md\|PYROGENESIS]]
+- [[factions/混沌恶魔/stratagems/delirium-unmade.md\|消散的疯狂]]
+- [[factions/混沌恶魔/stratagems/fateborne-nightmares.md\|命定梦魇]]
+- [[factions/混沌恶魔/stratagems/ficklefire.md\|无常烈焰]]
+- [[factions/混沌恶魔/stratagems/flickering-reality.md\|闪烁现实]]
+- [[factions/混沌恶魔/stratagems/impossible-eclipse.md\|异常日食]]
+- [[factions/混沌恶魔/stratagems/pyrogenesis.md\|火焰增幅]]

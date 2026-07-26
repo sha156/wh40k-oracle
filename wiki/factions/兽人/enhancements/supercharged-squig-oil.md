@@ -12,10 +12,10 @@ tags:
 - 兽人
 sources:
 - book: 官方结构库 db/wh40k.sqlite（Wahapedia 11 版镜像）
-updated: '2026-07-25'
+updated: '2026-07-26'
 ---
 
-10 分、[[factions/兽人/detachments/blitz-brigade.md|Blitz Brigade]] 分队。
+10 分、[[factions/兽人/detachments/blitz-brigade.md|闪击旅]] 分队。
 
 ## 效果
 

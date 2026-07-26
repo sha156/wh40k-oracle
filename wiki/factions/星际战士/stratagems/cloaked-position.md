@@ -1,7 +1,9 @@
 ---
 id: fp11e-spacemarines-subversion-s3
-name_zh: 潜行阵位
+name_zh: 隐匿位置
 name_en: Cloaked Position
+aliases:
+- 潜行阵位
 faction: 星际战士
 type: stratagem
 detachment: Subversion Assets
@@ -13,10 +15,10 @@ tags:
 - 星际战士
 sources:
 - book: 官方结构库 db/wh40k.sqlite（Wahapedia 11 版镜像）
-updated: '2026-07-25'
+updated: '2026-07-26'
 ---
 
-1 CP、Movement phase、[[factions/星际战士/detachments/subversion-assets.md|Subversion Assets]] 分队。
+1 CP、Movement phase、[[factions/星际战士/detachments/subversion-assets.md|行动资源]] 分队。
 
 ## 使用时机
 

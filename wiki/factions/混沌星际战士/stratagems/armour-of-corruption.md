@@ -1,5 +1,6 @@
 ---
 id: '000010740003'
+name_zh: 腐化甲胄
 name_en: ARMOUR OF CORRUPTION
 faction: 混沌星际战士
 type: stratagem
@@ -13,10 +14,10 @@ tags:
 - 混沌星际战士
 sources:
 - book: 官方结构库 db/wh40k.sqlite（Wahapedia 11 版镜像）
-updated: '2026-07-25'
+updated: '2026-07-26'
 ---
 
-2 CP、Fight phase、[[factions/混沌星际战士/detachments/warpstrike-champions.md|Warpstrike Champions]] 分队、Strategic Ploy Stratagem。
+2 CP、Fight phase、[[factions/混沌星际战士/detachments/warpstrike-champions.md|次元突袭勇士]] 分队、Strategic Ploy Stratagem。
 
 ## 使用时机
 

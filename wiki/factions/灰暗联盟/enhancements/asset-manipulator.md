@@ -1,5 +1,6 @@
 ---
 id: '000010708005'
+name_zh: 资产操纵者
 name_en: Asset Manipulator
 faction: 灰暗联盟
 type: enhancement
@@ -11,10 +12,10 @@ tags:
 - 灰暗联盟
 sources:
 - book: 官方结构库 db/wh40k.sqlite（Wahapedia 11 版镜像）
-updated: '2026-07-25'
+updated: '2026-07-26'
 ---
 
-25 分、[[factions/灰暗联盟/detachments/mercenary-oathband.md|Mercenary Oathband]] 分队。
+25 分、[[factions/灰暗联盟/detachments/mercenary-oathband.md|佣兵铁誓团]] 分队。
 
 ## 效果
 

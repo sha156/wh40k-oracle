@@ -1,7 +1,9 @@
 ---
 id: '000009730005'
-name_zh: 嗡鸣恐怖
+name_zh: 鸣叫恐惧
 name_en: DRONING HORROR
+aliases:
+- 嗡鸣恐怖
 faction: 死亡守卫
 type: stratagem
 detachment: Flyblown Host
@@ -14,10 +16,10 @@ tags:
 - 死亡守卫
 sources:
 - book: 官方结构库 db/wh40k.sqlite（Wahapedia 11 版镜像）
-updated: '2026-07-25'
+updated: '2026-07-26'
 ---
 
-1 CP、Shooting phase、[[factions/死亡守卫/detachments/flyblown-host.md|Flyblown Host]] 分队、Battle Tactic Stratagem。
+1 CP、Shooting phase、[[factions/死亡守卫/detachments/flyblown-host.md|吹蝇军]] 分队、Battle Tactic Stratagem。
 
 ## 使用时机
 

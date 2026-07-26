@@ -1,7 +1,9 @@
 ---
 id: fp11e-am-designation-s1
-name_zh: 近距侦测
+name_zh: 近距离侦测
 name_en: CLOSE-RANGE DETECTION
+aliases:
+- 近距侦测
 faction: 星界军
 type: stratagem
 detachment: Designation Force
@@ -13,10 +15,10 @@ tags:
 - 星界军
 sources:
 - book: 官方结构库 db/wh40k.sqlite（Wahapedia 11 版镜像）
-updated: '2026-07-25'
+updated: '2026-07-26'
 ---
 
-1 CP、Shooting phase、[[factions/星界军/detachments/designation-force.md|Designation Force]] 分队。
+1 CP、Shooting phase、[[factions/星界军/detachments/designation-force.md|指示部队]] 分队。
 
 ## 使用时机
 

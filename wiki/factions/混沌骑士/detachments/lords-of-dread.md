@@ -10,10 +10,10 @@ tags:
 - 混沌骑士
 sources:
 - book: 官方结构库 db/wh40k.sqlite（Wahapedia 11 版镜像）
-updated: '2026-07-25'
+updated: '2026-07-26'
 ---
 
-混沌骑士的分队，分队规则「Tyrannical Court」。
+混沌骑士的分队「Lords of Dread」，分队规则「Tyrannical Court」。
 
 ## 分队规则
 
@@ -35,6 +35,6 @@ Improve the Objective Control characteristic of Chaos Knights Character models f
 - [[factions/混沌骑士/stratagems/claimed-for-the-dark-gods.md\|CLAIMED FOR THE DARK GODS]]
 - [[factions/混沌骑士/stratagems/crushed-like-vermin.md\|CRUSHED LIKE VERMIN]]
 - [[factions/混沌骑士/stratagems/runes-of-disdain.md\|RUNES OF DISDAIN]]
-- [[factions/混沌骑士/stratagems/spiteful-demise.md\|SPITEFUL DEMISE]]
+- [[factions/混沌骑士/stratagems/spiteful-demise.md\|恶毒破灭]]
 - [[factions/混沌骑士/stratagems/titanic-duel.md\|TITANIC DUEL]]
 - [[factions/混沌骑士/stratagems/trophy-hunter.md\|TROPHY HUNTER]]

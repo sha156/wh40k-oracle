@@ -10,10 +10,10 @@ tags:
 - 混沌恶魔
 sources:
 - book: 官方结构库 db/wh40k.sqlite（Wahapedia 11 版镜像）
-updated: '2026-07-25'
+updated: '2026-07-26'
 ---
 
-分数未知、[[factions/混沌恶魔/detachments/warptide.md|Warptide]] 分队。
+分数未知、[[factions/混沌恶魔/detachments/warptide.md|次元魔潮]] 分队。
 
 ## 效果
 

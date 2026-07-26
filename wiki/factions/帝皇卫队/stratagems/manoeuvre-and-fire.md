@@ -1,7 +1,9 @@
 ---
 id: '000009988006'
-name_zh: 机动开火
+name_zh: 移动射击
 name_en: MANOEUVRE AND FIRE
+aliases:
+- 机动开火
 faction: 帝皇卫队
 type: stratagem
 detachment: Lions of the Emperor
@@ -14,10 +16,10 @@ tags:
 - 帝皇卫队
 sources:
 - book: 官方结构库 db/wh40k.sqlite（Wahapedia 11 版镜像）
-updated: '2026-07-25'
+updated: '2026-07-26'
 ---
 
-1 CP、Movement phase、[[factions/帝皇卫队/detachments/lions-of-the-emperor.md|Lions of the Emperor]] 分队、Strategic Ploy Stratagem。
+1 CP、Movement phase、[[factions/帝皇卫队/detachments/lions-of-the-emperor.md|帝皇之狮]] 分队、Strategic Ploy Stratagem。
 
 ## 使用时机
 

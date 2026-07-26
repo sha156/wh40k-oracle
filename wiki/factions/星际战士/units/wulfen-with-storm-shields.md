@@ -49,4 +49,4 @@ updated: '2026-07-23'
 
 ## 关键词
 - **阵营关键词**：Adeptus Astartes，Space Wolves
-- **普通关键词**：Wulfen with Storm Shields，Wulfen，Imperium，[[core-rules/infantry.md|Infantry]]
+- **普通关键词**：[[factions/星际战士/units/wulfen.md|Wulfen]] with Storm Shields，Wulfen，Imperium，[[core-rules/infantry.md|Infantry]]

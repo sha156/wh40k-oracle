@@ -1,7 +1,9 @@
 ---
 id: '000010668005'
-name_zh: 诅咒环冠
+name_zh: 诅咒之冠
 name_en: Cursed Circlet
+aliases:
+- 诅咒环冠
 faction: 太空死灵
 type: enhancement
 detachment: Cursed Legion
@@ -12,10 +14,10 @@ tags:
 - 太空死灵
 sources:
 - book: 官方结构库 db/wh40k.sqlite（Wahapedia 11 版镜像）
-updated: '2026-07-25'
+updated: '2026-07-26'
 ---
 
-25 分、[[factions/太空死灵/detachments/cursed-legion.md|Cursed Legion]] 分队。
+25 分、[[factions/太空死灵/detachments/cursed-legion.md|诅咒军团]] 分队。
 
 ## 效果
 

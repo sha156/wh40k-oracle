@@ -1,7 +1,9 @@
 ---
 id: fp11e-ac-moritoi-e2
-name_zh: 金相石棺
+name_zh: 耀金棺柩
 name_en: Auramite Sarcophagus
+aliases:
+- 金相石棺
 faction: 帝皇卫队
 type: enhancement
 detachment: Might of the Moritoi
@@ -11,10 +13,10 @@ tags:
 - 帝皇卫队
 sources:
 - book: 官方结构库 db/wh40k.sqlite（Wahapedia 11 版镜像）
-updated: '2026-07-25'
+updated: '2026-07-26'
 ---
 
-分数未知、[[factions/帝皇卫队/detachments/might-of-the-moritoi.md|Might of the Moritoi]] 分队。
+分数未知、[[factions/帝皇卫队/detachments/might-of-the-moritoi.md|亡者之势]] 分队。
 
 ## 效果
 

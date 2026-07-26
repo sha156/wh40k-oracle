@@ -1,7 +1,9 @@
 ---
 id: fp11e-imperialknights-dominus-s1
-name_zh: 撼地阔步
+name_zh: 撼地步伐
 name_en: Ground-Shaking Strides
+aliases:
+- 撼地阔步
 faction: 帝国骑士
 type: stratagem
 detachment: Dominus Foebreakers
@@ -13,10 +15,10 @@ tags:
 - 帝国骑士
 sources:
 - book: 官方结构库 db/wh40k.sqlite（Wahapedia 11 版镜像）
-updated: '2026-07-25'
+updated: '2026-07-26'
 ---
 
-1 CP、Movement phase、[[factions/帝国骑士/detachments/dominus-foebreakers.md|Dominus Foebreakers]] 分队。
+1 CP、Movement phase、[[factions/帝国骑士/detachments/dominus-foebreakers.md|碎敌统御者]] 分队。
 
 ## 使用时机
 

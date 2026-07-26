@@ -1,7 +1,9 @@
 ---
 id: '000009835002'
-name_zh: 预言灵光
+name_zh: 短暂预知
 name_en: Prescient Flash
+aliases:
+- 预言灵光
 faction: 星际战士
 type: enhancement
 detachment: Angelic Inheritors
@@ -12,10 +14,10 @@ tags:
 - 星际战士
 sources:
 - book: 官方结构库 db/wh40k.sqlite（Wahapedia 11 版镜像）
-updated: '2026-07-25'
+updated: '2026-07-26'
 ---
 
-20 分、[[factions/星际战士/detachments/angelic-inheritors.md|Angelic Inheritors]] 分队。
+20 分、[[factions/星际战士/detachments/angelic-inheritors.md|天使继承者]] 分队。
 
 ## 效果
 

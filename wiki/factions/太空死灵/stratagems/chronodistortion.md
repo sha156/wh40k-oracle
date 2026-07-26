@@ -1,7 +1,9 @@
 ---
 id: '000010673006'
-name_zh: 时序扭曲
+name_zh: 时间扭曲
 name_en: CHRONODISTORTION
+aliases:
+- 时序扭曲
 faction: 太空死灵
 type: stratagem
 detachment: Pantheon of Woe
@@ -14,10 +16,10 @@ tags:
 - 太空死灵
 sources:
 - book: 官方结构库 db/wh40k.sqlite（Wahapedia 11 版镜像）
-updated: '2026-07-25'
+updated: '2026-07-26'
 ---
 
-1 CP、Fight phase、[[factions/太空死灵/detachments/pantheon-of-woe.md|Pantheon of Woe]] 分队、Battle Tactic Stratagem。
+1 CP、Fight phase、[[factions/太空死灵/detachments/pantheon-of-woe.md|哀伤众神殿]] 分队、Battle Tactic Stratagem。
 
 ## 使用时机
 

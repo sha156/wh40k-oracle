@@ -1,7 +1,9 @@
 ---
 id: fp11e-chaosknights-bastions-s1
-name_zh: 符咒堡垒
+name_zh: 诅咒符文要塞
 name_en: RUNE-CURSED STRONGHOLD
+aliases:
+- 符咒堡垒
 faction: 混沌骑士
 type: stratagem
 detachment: Bastions of Tyranny
@@ -13,10 +15,10 @@ tags:
 - 混沌骑士
 sources:
 - book: 官方结构库 db/wh40k.sqlite（Wahapedia 11 版镜像）
-updated: '2026-07-25'
+updated: '2026-07-26'
 ---
 
-1 CP、Any phase、[[factions/混沌骑士/detachments/bastions-of-tyranny.md|Bastions of Tyranny]] 分队。
+1 CP、Any phase、[[factions/混沌骑士/detachments/bastions-of-tyranny.md|暴虐要塞]] 分队。
 
 ## 使用时机
 

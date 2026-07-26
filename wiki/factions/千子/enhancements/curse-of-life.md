@@ -11,10 +11,10 @@ tags:
 - 千子
 sources:
 - book: 官方结构库 db/wh40k.sqlite（Wahapedia 11 版镜像）
-updated: '2026-07-25'
+updated: '2026-07-26'
 ---
 
-分数未知、[[factions/千子/detachments/ritual-of-regeneration.md|Ritual of Regeneration]] 分队。
+分数未知、[[factions/千子/detachments/ritual-of-regeneration.md|再生仪式]] 分队。
 
 ## 效果
 

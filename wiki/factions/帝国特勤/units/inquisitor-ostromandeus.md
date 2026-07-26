@@ -47,4 +47,4 @@ updated: '2026-07-23'
 
 ## 关键词
 - **阵营关键词**：Agents of the Imperium
-- **普通关键词**：[[core-rules/infantry.md|Infantry]]，[[core-rules/character.md|Character]]，[[core-rules/grenades.md|Grenades]]，[[core-rules/epic-hero.md|Epic Hero]]，Imperium，Inquisitor Ostromandeus
+- **普通关键词**：[[core-rules/infantry.md|Infantry]]，[[core-rules/character.md|Character]]，[[core-rules/grenades.md|Grenades]]，[[core-rules/epic-hero.md|Epic Hero]]，Imperium，[[factions/帝国特勤/units/inquisitor.md|Inquisitor]] Ostromandeus

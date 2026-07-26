@@ -1,5 +1,6 @@
 ---
 id: '000010711'
+name_zh: 海盗船团
 name_en: Freebooter Krew
 faction: 兽人
 type: detachment
@@ -10,10 +11,10 @@ tags:
 - 兽人
 sources:
 - book: 官方结构库 db/wh40k.sqlite（Wahapedia 11 版镜像）
-updated: '2026-07-25'
+updated: '2026-07-26'
 ---
 
-兽人的分队，分队规则「此处有战利品」。
+兽人的分队「海盗船团」，分队规则「此处有战利品」。
 
 ## 分队规则
 
@@ -29,15 +30,15 @@ Each time a model in an Orks Infantry, Orks Mounted or Orks Walker unit from you
 ## 增强
 
 - [[factions/兽人/enhancements/bionik-workshop.md\|仿生工坊]]
-- [[factions/兽人/enhancements/da-kaptin.md\|队长]]
+- [[factions/兽人/enhancements/da-kaptin.md\|大船长]]
 - [[factions/兽人/enhancements/git-spotter-squig.md\|找子菌]]
 - [[factions/兽人/enhancements/razgits-magik-map.md\|拉兹吉特魔法地图]]
 
 ## 战略
 
-- [[factions/兽人/stratagems/bash-and-grab.md\|抢夺]]
-- [[factions/兽人/stratagems/boardin-rush.md\|登舰冲锋]]
-- [[factions/兽人/stratagems/deck-fraggers.md\|甲板破片]]
-- [[factions/兽人/stratagems/grab-and-bash.md\|夺取]]
+- [[factions/兽人/stratagems/bash-and-grab.md\|猛击和抢夺]]
+- [[factions/兽人/stratagems/boardin-rush.md\|快速登船]]
+- [[factions/兽人/stratagems/deck-fraggers.md\|甲板破片手]]
+- [[factions/兽人/stratagems/grab-and-bash.md\|抢夺和猛击]]
 - [[factions/兽人/stratagems/krump-and-run.md\|砸完就跑]]
-- [[factions/兽人/stratagems/rolling-loot-heap.md\|滚动战利品堆]]
+- [[factions/兽人/stratagems/rolling-loot-heap.md\|移动的战利品堆]]

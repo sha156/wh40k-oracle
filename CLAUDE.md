@@ -76,9 +76,24 @@
   CSV 的 detachment 列，曾入库丢失；**禁止按 id 邻接反推**）；② 从半结构化文本抽条目
   必须配反向对账（核心规则切章三轮漏切每次都报"成功"）；③ PDF 残留控制字符（0x08）
   会让行尾匹配静默失败
+- **GW 官方简体中文层已贯通到 wiki 页**（2026-07-26，分支 `feat/codex-wiki`）：
+  官方下载页可切简体中文 → `data/官方中文/` 收 34 个官方 PDF → `db_compile/official_zh.py`
+  按**数值指纹**配对出映射（战略 464 / 强化 234 / 分队容器 123，`official_zh_names.json`）
+  → `db_compile/official_zh_apply.py` 投影进库（战略 `name_zh` 426→728、强化**新加
+  name_zh 列** 0→249、容器中文名进新表 `detachment_names_zh`）→ 重生成 3063 实体页
+  （中文名：战略 759→989、增强 381→547、分队 0→123）。权威级别按 wiki 宪法 §6
+  「GW 官方中文 > 汉化组 > 社区」，官方顶掉的 P7 人工译名**不删**，降为页面 alias（295 页）。
+  CLI `python -m db_compile official-zh --apply [--dry-run]`，已挂进 update 管线与
+  restore（排在 fp_rules 之后，否则低权威覆盖高权威且页面上看不出来）。
+  **三个坑**：① 分队容器中文名只能走独立表——123 个键撞 `stratagems.detachment` 是
+  123/123，撞 `detachments.detachment_name` 只有 63/123，挂那张表会静默丢 60 个；
+  ② 落库以行级 `*_by_id` 为准，英文名键表达不了「同一英文名在不同包里不同官方译名」
+  （蔑视战甲 / 蔑视甲胄），只能整条丢；③ `db_compile enhancements --apply` 的
+  INSERT OR REPLACE 会清空 name_zh/DSL 投影列（已改成报数并提示补跑两条投影命令）
 - **剩余**：基准扩充（长期滚动，agent gold v3 现 96/96=100.0 零硬错，#41/#42 为固定波动题）。
-  wiki 收尾候选：核心规则章节页接进网页；lint 的 553 条 alias-conflicts 占满 warning 通道，
-  宜聚合成摘要 + 单独重名报告。
+  wiki 收尾候选：核心规则章节页接进网页；核心规则 24 章中文化（官方 88 页中文全译本在手）；
+  规则变更清单（v1.1 + 通用规则更新的真改动）；lint 的 alias-conflicts 占满 warning 通道
+  （官方中文名铺开后更多），宜聚合成摘要 + 单独重名报告。
   非阻塞遗留：军表 PR1c 文本解析、外部源观察项（BSData-11e / Wahapedia 11版 / 黑图书馆）。
   T6 分支清理已实际完成
 

@@ -13,10 +13,10 @@ tags:
 - 混沌恶魔
 sources:
 - book: 官方结构库 db/wh40k.sqlite（Wahapedia 11 版镜像）
-updated: '2026-07-25'
+updated: '2026-07-26'
 ---
 
-1 CP、Shooting phase、[[factions/混沌恶魔/detachments/daemonic-incursion.md|Daemonic Incursion]] 分队、Battle Tactic Stratagem。
+1 CP、Shooting phase、[[factions/混沌恶魔/detachments/daemonic-incursion.md|恶魔入侵]] 分队、Battle Tactic Stratagem。
 
 ## 使用时机
 

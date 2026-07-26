@@ -1,5 +1,6 @@
 ---
 id: '000009832007'
+name_zh: 不懈决心
 name_en: INDEFATIGABLE DEDICATION
 faction: 战斗修女
 type: stratagem
@@ -13,10 +14,10 @@ tags:
 - 战斗修女
 sources:
 - book: 官方结构库 db/wh40k.sqlite（Wahapedia 11 版镜像）
-updated: '2026-07-25'
+updated: '2026-07-26'
 ---
 
-1 CP、Movement phase、[[factions/战斗修女/detachments/champions-of-faith.md|Champions of Faith]] 分队、Strategic Ploy Stratagem。
+1 CP、Movement phase、[[factions/战斗修女/detachments/champions-of-faith.md|信仰冠军]] 分队、Strategic Ploy Stratagem。
 
 ## 使用时机
 

@@ -10,10 +10,10 @@ tags:
 - 战斗修女
 sources:
 - book: 官方结构库 db/wh40k.sqlite（Wahapedia 11 版镜像）
-updated: '2026-07-25'
+updated: '2026-07-26'
 ---
 
-分数未知、[[factions/战斗修女/detachments/chorus-of-condemnation.md|Chorus of Condemnation]] 分队。
+分数未知、[[factions/战斗修女/detachments/chorus-of-condemnation.md|定罪合唱]] 分队。
 
 ## 效果
 

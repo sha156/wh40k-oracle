@@ -10,10 +10,10 @@ tags:
 - 灰暗联盟
 sources:
 - book: 官方结构库 db/wh40k.sqlite（Wahapedia 11 版镜像）
-updated: '2026-07-25'
+updated: '2026-07-26'
 ---
 
-灰暗联盟的分队，分队规则「Mobile Sensor Relays」。
+灰暗联盟的分队「Brandfast Oathband」，分队规则「Mobile Sensor Relays」。
 
 ## 分队规则
 

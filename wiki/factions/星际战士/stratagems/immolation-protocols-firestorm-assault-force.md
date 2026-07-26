@@ -1,5 +1,6 @@
 ---
 id: '000008483005'
+name_zh: 焚化协议
 name_en: IMMOLATION PROTOCOLS
 faction: 星际战士
 type: stratagem
@@ -13,7 +14,7 @@ tags:
 - 星际战士
 sources:
 - book: 官方结构库 db/wh40k.sqlite（Wahapedia 11 版镜像）
-updated: '2026-07-25'
+updated: '2026-07-26'
 ---
 
 2 CP、Shooting phase、[[factions/星际战士/detachments/firestorm-assault-force.md|Firestorm Assault Force]] 分队、Battle Tactic Stratagem。

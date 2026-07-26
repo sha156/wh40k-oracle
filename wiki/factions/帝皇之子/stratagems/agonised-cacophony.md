@@ -1,7 +1,9 @@
 ---
 id: fp11e-ec-host-s2
-name_zh: 痛楚刺声
+name_zh: 痛苦杂音
 name_en: AGONISED CACOPHONY
+aliases:
+- 痛楚刺声
 faction: 帝皇之子
 type: stratagem
 detachment: Frenzied Host
@@ -13,10 +15,10 @@ tags:
 - 帝皇之子
 sources:
 - book: 官方结构库 db/wh40k.sqlite（Wahapedia 11 版镜像）
-updated: '2026-07-25'
+updated: '2026-07-26'
 ---
 
-1 CP、Shooting phase、[[factions/帝皇之子/detachments/frenzied-host.md|Frenzied Host]] 分队。
+1 CP、Shooting phase、[[factions/帝皇之子/detachments/frenzied-host.md|癫狂之军]] 分队。
 
 ## 使用时机
 

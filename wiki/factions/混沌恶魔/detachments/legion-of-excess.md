@@ -1,5 +1,6 @@
 ---
 id: '000009804'
+name_zh: 恣肆军团
 name_en: Legion of Excess
 faction: 混沌恶魔
 type: detachment
@@ -10,10 +11,10 @@ tags:
 - 混沌恶魔
 sources:
 - book: 官方结构库 db/wh40k.sqlite（Wahapedia 11 版镜像）
-updated: '2026-07-25'
+updated: '2026-07-26'
 ---
 
-混沌恶魔的分队，分队规则「Beguiling Aura」。
+混沌恶魔的分队「恣肆军团」，分队规则「Beguiling Aura」。
 
 ## 分队规则
 
@@ -31,16 +32,16 @@ Legiones Daemonica Slaanesh units from your army have the following ability:
 
 ## 增强
 
-- [[factions/混沌恶魔/enhancements/avatar-of-perfection.md\|Avatar of Perfection]]
+- [[factions/混沌恶魔/enhancements/avatar-of-perfection.md\|完美化身]]
 - [[factions/混沌恶魔/enhancements/dreaming-crown-aura.md\|Dreaming Crown (Aura)]]
 - [[factions/混沌恶魔/enhancements/false-majesty-aura.md\|False Majesty (Aura)]]
-- [[factions/混沌恶魔/enhancements/soul-glutton.md\|Soul Glutton]]
+- [[factions/混沌恶魔/enhancements/soul-glutton.md\|贪食灵魂]]
 
 ## 战略
 
-- [[factions/混沌恶魔/stratagems/archagonists.md\|ARCHAGONISTS]]
-- [[factions/混沌恶魔/stratagems/cavalcade-of-blades.md\|CAVALCADE OF BLADES]]
+- [[factions/混沌恶魔/stratagems/archagonists.md\|大凌虐者]]
+- [[factions/混沌恶魔/stratagems/cavalcade-of-blades.md\|利刃骑兵队]]
 - [[factions/混沌恶魔/stratagems/overwhelming-excess.md\|OVERWHELMING EXCESS]]
-- [[factions/混沌恶魔/stratagems/phantasmal-longing.md\|PHANTASMAL LONGING]]
-- [[factions/混沌恶魔/stratagems/sensory-excruciation.md\|SENSORY EXCRUCIATION]]
+- [[factions/混沌恶魔/stratagems/phantasmal-longing.md\|虚幻渴望]]
+- [[factions/混沌恶魔/stratagems/sensory-excruciation.md\|感官折磨]]
 - [[factions/混沌恶魔/stratagems/thieves-of-pain.md\|THIEVES OF PAIN]]

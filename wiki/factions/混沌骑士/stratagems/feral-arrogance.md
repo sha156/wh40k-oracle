@@ -1,5 +1,6 @@
 ---
 id: '000010752002'
+name_zh: 野性傲慢
 name_en: FERAL ARROGANCE
 faction: 混沌骑士
 type: stratagem
@@ -13,10 +14,10 @@ tags:
 - 混沌骑士
 sources:
 - book: 官方结构库 db/wh40k.sqlite（Wahapedia 11 版镜像）
-updated: '2026-07-25'
+updated: '2026-07-26'
 ---
 
-1 CP、Any phase、[[factions/混沌骑士/detachments/helhunt-lance.md|Helhunt Lance]] 分队、Strategic Ploy Stratagem。
+1 CP、Any phase、[[factions/混沌骑士/detachments/helhunt-lance.md|地狱猎手骑兵队]] 分队、Strategic Ploy Stratagem。
 
 ## 使用时机
 

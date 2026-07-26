@@ -1,7 +1,9 @@
 ---
 id: fp11e-ec-brutes-s1
-name_zh: 乐在苦痛
+name_zh: 享受疼痛
 name_en: DELIGHT IN AGONY
+aliases:
+- 乐在苦痛
 faction: 帝皇之子
 type: stratagem
 detachment: Elegant Brutes
@@ -13,10 +15,10 @@ tags:
 - 帝皇之子
 sources:
 - book: 官方结构库 db/wh40k.sqlite（Wahapedia 11 版镜像）
-updated: '2026-07-25'
+updated: '2026-07-26'
 ---
 
-1 CP、Shooting phase、[[factions/帝皇之子/detachments/elegant-brutes.md|Elegant Brutes]] 分队。
+1 CP、Shooting phase、[[factions/帝皇之子/detachments/elegant-brutes.md|优雅暴徒]] 分队。
 
 ## 使用时机
 

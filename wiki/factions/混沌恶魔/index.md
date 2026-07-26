@@ -1,22 +1,22 @@
 # 混沌恶魔
 
-_Last updated: 2026-07-25 17:23 UTC_
+_Last updated: 2026-07-26 05:42 UTC_
 
 ## 分队
 
-- [[factions/混沌恶魔/detachments/blood-legion|Blood Legion]] — 混沌恶魔的分队，分队规则「Murdercall」。
-- [[factions/混沌恶魔/detachments/cavalcade-of-chaos|Cavalcade of Chaos]] — 混沌恶魔的分队。
-- [[factions/混沌恶魔/detachments/daemonic-incursion|Daemonic Incursion]] — 混沌恶魔的分队，分队规则「Warp Rifts」。
-- [[factions/混沌恶魔/detachments/dread-carnival|Dread Carnival]] — 混沌恶魔的分队，分队规则「Lithe Killers」。
-- [[factions/混沌恶魔/detachments/infernal-onslaught|Infernal Onslaught]] — 混沌恶魔的分队，分队规则「Brutal Entrance」。
-- [[factions/混沌恶魔/detachments/legion-of-excess|Legion of Excess]] — 混沌恶魔的分队，分队规则「Beguiling Aura」。
-- [[factions/混沌恶魔/detachments/lords-of-the-warp|Lords of the Warp]] — 混沌恶魔的分队。
-- [[factions/混沌恶魔/detachments/pandaemoniac-inferno|Pandaemoniac Inferno]] — 混沌恶魔的分队，分队规则「Living Flame」。
-- [[factions/混沌恶魔/detachments/plague-legion|Plague Legion]] — 混沌恶魔的分队，分队规则「Melancholic Miasma」。
-- [[factions/混沌恶魔/detachments/rotten-and-rusted|Rotten and Rusted]] — 混沌恶魔的分队，分队规则「Toxic Miasma」。
-- [[factions/混沌恶魔/detachments/scintillating-legion|Scintillating Legion]] — 混沌恶魔的分队，分队规则「Fates in Flux」。
-- [[factions/混沌恶魔/detachments/shadow-legion|Shadow Legion]] — 混沌恶魔的分队，分队规则「Thralls of the First Prince」。
-- [[factions/混沌恶魔/detachments/warptide|Warptide]] — 混沌恶魔的分队。
+- [[factions/混沌恶魔/detachments/dread-carnival|Dread Carnival]] — 混沌恶魔的分队「Dread Carnival」，分队规则「Lithe Killers」。
+- [[factions/混沌恶魔/detachments/infernal-onslaught|Infernal Onslaught]] — 混沌恶魔的分队「Infernal Onslaught」，分队规则「Brutal Entrance」。
+- [[factions/混沌恶魔/detachments/pandaemoniac-inferno|Pandaemoniac Inferno]] — 混沌恶魔的分队「Pandaemoniac Inferno」，分队规则「Living Flame」。
+- [[factions/混沌恶魔/detachments/rotten-and-rusted|Rotten and Rusted]] — 混沌恶魔的分队「Rotten and Rusted」，分队规则「Toxic Miasma」。
+- [[factions/混沌恶魔/detachments/lords-of-the-warp|亚空间领主]] — 混沌恶魔的分队「亚空间领主」。
+- [[factions/混沌恶魔/detachments/legion-of-excess|恣肆军团]] — 混沌恶魔的分队「恣肆军团」，分队规则「Beguiling Aura」。
+- [[factions/混沌恶魔/detachments/daemonic-incursion|恶魔入侵]] — 混沌恶魔的分队「恶魔入侵」，分队规则「Warp Rifts」。
+- [[factions/混沌恶魔/detachments/shadow-legion|暗影军团]] — 混沌恶魔的分队「暗影军团」，分队规则「Thralls of the First Prince」。
+- [[factions/混沌恶魔/detachments/warptide|次元魔潮]] — 混沌恶魔的分队「次元魔潮」。
+- [[factions/混沌恶魔/detachments/cavalcade-of-chaos|混沌骑兵队]] — 混沌恶魔的分队「混沌骑兵队」。
+- [[factions/混沌恶魔/detachments/plague-legion|瘟疫军团]] — 混沌恶魔的分队「瘟疫军团」，分队规则「Melancholic Miasma」。
+- [[factions/混沌恶魔/detachments/scintillating-legion|闪耀军团]] — 混沌恶魔的分队「闪耀军团」，分队规则「Fates in Flux」。
+- [[factions/混沌恶魔/detachments/blood-legion|鲜血军团]] — 混沌恶魔的分队「鲜血军团」，分队规则「Murdercall」。
 
 ## 单位
 
@@ -130,111 +130,111 @@ _Last updated: 2026-07-25 17:23 UTC_
 ## 策略技能
 
 - [[factions/混沌恶魔/stratagems/abject-horror|ABJECT HORROR]] — 1 CP、Fight phase、Infernal Onslaught 分队、Strategic Ploy Strata...
-- [[factions/混沌恶魔/stratagems/archagonists|ARCHAGONISTS]] — 2 CP、Fight phase、Legion of Excess 分队、Battle Tactic Stratagem...
-- [[factions/混沌恶魔/stratagems/binding-shadow|BINDING SHADOW]] — 1 CP、Fight phase、Shadow Legion 分队、Strategic Ploy Stratagem。
-- [[factions/混沌恶魔/stratagems/blood-begets-skulls|BLOOD BEGETS SKULLS]] — 1 CP、Charge phase、Blood Legion 分队、Strategic Ploy Stratagem。
-- [[factions/混沌恶魔/stratagems/cavalcade-of-blades|CAVALCADE OF BLADES]] — 1 CP、Charge phase、Legion of Excess 分队、Battle Tactic Stratage...
-- [[factions/混沌恶魔/stratagems/channelled-wrath|CHANNELLED WRATH]] — 1 CP、Fight phase、Shadow Legion 分队、Strategic Ploy Stratagem。
-- [[factions/混沌恶魔/stratagems/corrupt-realspace|CORRUPT REALSPACE]] — 1 CP、Command phase、Daemonic Incursion 分队、Strategic Ploy Stra...
-- [[factions/混沌恶魔/stratagems/daemonic-invulnerability|DAEMONIC INVULNERABILITY]] — 1 CP、Shooting phase、Daemonic Incursion 分队、Battle Tactic Stra...
+- [[factions/混沌恶魔/stratagems/daemonic-invulnerability|DAEMONIC INVULNERABILITY]] — 1 CP、Shooting phase、恶魔入侵 分队、Battle Tactic Stratagem。
 - [[factions/混沌恶魔/stratagems/dance-of-death|DANCE OF DEATH]] — 1 CP、Movement phase、Dread Carnival 分队、Strategic Ploy Stratag...
-- [[factions/混沌恶魔/stratagems/death-denied|DEATH DENIED]] — 1 CP、Command phase、Shadow Legion 分队、Battle Tactic Stratagem。
-- [[factions/混沌恶魔/stratagems/delirium-unmade|DELIRIUM UNMADE]] — 1 CP、Fight phase、Scintillating Legion 分队、Strategic Ploy Stra...
-- [[factions/混沌恶魔/stratagems/denizens-of-the-warp|DENIZENS OF THE WARP]] — 1 CP、Any phase、Daemonic Incursion 分队、Strategic Ploy Stratage...
-- [[factions/混沌恶魔/stratagems/draught-of-terror|DRAUGHT OF TERROR]] — 1 CP、Shooting or Fight phase、Daemonic Incursion 分队、Battle Ta...
-- [[factions/混沌恶魔/stratagems/encroaching-darkness|ENCROACHING DARKNESS]] — 1 CP、Shooting phase、Shadow Legion 分队、Battle Tactic Stratagem...
+- [[factions/混沌恶魔/stratagems/denizens-of-the-warp|DENIZENS OF THE WARP]] — 1 CP、Any phase、恶魔入侵 分队、Strategic Ploy Stratagem。
 - [[factions/混沌恶魔/stratagems/fate-syphoning|FATE SYPHONING]] — 1 CP、Shooting or Fight phase、Pandaemoniac Inferno 分队、Battle...
-- [[factions/混沌恶魔/stratagems/fateborne-nightmares|FATEBORNE NIGHTMARES]] — 1 CP、Movement or Charge phase、Scintillating Legion 分队、Strate...
-- [[factions/混沌恶魔/stratagems/fever-visions|FEVER VISIONS]] — 1 CP、Shooting or Fight phase、Plague Legion 分队、Battle Tactic...
 - [[factions/混沌恶魔/stratagems/fickle-blessings|FICKLE BLESSINGS]] — 1 CP、Shooting phase、Pandaemoniac Inferno 分队、Strategic Ploy S...
-- [[factions/混沌恶魔/stratagems/ficklefire|FICKLEFIRE]] — 1 CP、Shooting phase、Scintillating Legion 分队、Strategic Ploy S...
-- [[factions/混沌恶魔/stratagems/flickering-reality|FLICKERING REALITY]] — 1 CP、Charge phase、Scintillating Legion 分队、Strategic Ploy Str...
-- [[factions/混沌恶魔/stratagems/foetid-resurgence|FOETID RESURGENCE]] — 2 CP、Command phase、Plague Legion 分队、Strategic Ploy Stratagem...
-- [[factions/混沌恶魔/stratagems/fools-flight|FOOLS’ FLIGHT]] — 2 CP、Movement phase、Blood Legion 分队、Strategic Ploy Stratagem...
 - [[factions/混沌恶魔/stratagems/foul-resilience|FOUL RESILIENCE]] — 1 CP、Shooting or Fight phase、Rotten and Rusted 分队、Battle Tac...
 - [[factions/混沌恶魔/stratagems/gleeful-invasion|GLEEFUL INVASION]] — 1 CP、Shooting or Fight phase、Rotten and Rusted 分队、Strategic...
-- [[factions/混沌恶魔/stratagems/gorehungry-onslaught|GORE‑HUNGRY ONSLAUGHT]] — 1 CP、Movement or Charge phase、Blood Legion 分队、Strategic Ploy...
 - [[factions/混沌恶魔/stratagems/illusory-presence|ILLUSORY PRESENCE]] — 1 CP、Shooting phase、Pandaemoniac Inferno 分队、Strategic Ploy S...
-- [[factions/混沌恶魔/stratagems/impossible-eclipse|IMPOSSIBLE ECLIPSE]] — 1 CP、Any phase、Scintillating Legion 分队、Strategic Ploy Strata...
-- [[factions/混沌恶魔/stratagems/incorporeal-terrors|INCORPOREAL TERRORS]] — 1 CP、Shooting phase、Daemonic Incursion 分队、Battle Tactic Stra...
-- [[factions/混沌恶魔/stratagems/insubstantial-entities-daemonic-incursion|INSUBSTANTIAL ENTITIES]] — 1 CP、Movement phase、Daemonic Incursion 分队、Strategic Ploy Str...
+- [[factions/混沌恶魔/stratagems/incorporeal-terrors|INCORPOREAL TERRORS]] — 1 CP、Shooting phase、恶魔入侵 分队、Battle Tactic Stratagem。
+- [[factions/混沌恶魔/stratagems/insubstantial-entities-daemonic-incursion|INSUBSTANTIAL ENTITIES]] — 1 CP、Movement phase、恶魔入侵 分队、Strategic Ploy Stratagem。
 - [[factions/混沌恶魔/stratagems/insubstantial-entities-dread-carnival|INSUBSTANTIAL ENTITIES]] — 1 CP、Movement phase、Dread Carnival 分队、Strategic Ploy Stratag...
 - [[factions/混沌恶魔/stratagems/insubstantial-entities-infernal-onslaught|INSUBSTANTIAL ENTITIES]] — 1 CP、Movement phase、Infernal Onslaught 分队、Strategic Ploy Str...
 - [[factions/混沌恶魔/stratagems/insubstantial-entities-pandaemoniac-inferno|INSUBSTANTIAL ENTITIES]] — 1 CP、Movement phase、Pandaemoniac Inferno 分队、Strategic Ploy S...
 - [[factions/混沌恶魔/stratagems/insubstantial-entities-rotten-and-rusted|INSUBSTANTIAL ENTITIES]] — 1 CP、Movement phase、Rotten and Rusted 分队、Strategic Ploy Stra...
-- [[factions/混沌恶魔/stratagems/murkshadows|MURKSHADOWS]] — 1 CP、Movement phase、Plague Legion 分队、Battle Tactic Stratagem...
-- [[factions/混沌恶魔/stratagems/overwhelming-excess|OVERWHELMING EXCESS]] — 1 CP、Shooting or Fight phase、Legion of Excess 分队、Battle Tact...
-- [[factions/混沌恶魔/stratagems/parting-blows|PARTING BLOWS]] — 1 CP、Fight phase、Daemonic Incursion 分队、Strategic Ploy Strata...
-- [[factions/混沌恶魔/stratagems/phantasmal-longing|PHANTASMAL LONGING]] — 1 CP、Movement or Charge phase、Legion of Excess 分队、Strategic...
-- [[factions/混沌恶魔/stratagems/plague-of-woes|PLAGUE OF WOES]] — 1 CP、Command phase、Plague Legion 分队、Strategic Ploy Stratagem...
-- [[factions/混沌恶魔/stratagems/pyrogenesis|PYROGENESIS]] — 1 CP、Shooting or Fight phase、Scintillating Legion 分队、Battle...
-- [[factions/混沌恶魔/stratagems/rot-and-renewal|ROT AND RENEWAL]] — 1 CP、Movement or Charge phase、Plague Legion 分队、Strategic Plo...
+- [[factions/混沌恶魔/stratagems/overwhelming-excess|OVERWHELMING EXCESS]] — 1 CP、Shooting or Fight phase、恣肆军团 分队、Battle Tactic Stratagem...
+- [[factions/混沌恶魔/stratagems/parting-blows|PARTING BLOWS]] — 1 CP、Fight phase、恶魔入侵 分队、Strategic Ploy Stratagem。
 - [[factions/混沌恶魔/stratagems/seductive-whispers|SEDUCTIVE WHISPERS]] — 1 CP、Fight phase、Dread Carnival 分队、Battle Tactic Stratagem。
-- [[factions/混沌恶魔/stratagems/seeping-virulence|SEEPING VIRULENCE]] — 1 CP、Fight phase、Plague Legion 分队、Battle Tactic Stratagem。
-- [[factions/混沌恶魔/stratagems/sensory-excruciation|SENSORY EXCRUCIATION]] — 1 CP、Command phase、Legion of Excess 分队、Strategic Ploy Strata...
-- [[factions/混沌恶魔/stratagems/shade-path|SHADE PATH]] — 2 CP、Charge phase、Shadow Legion 分队、Battle Tactic Stratagem。
-- [[factions/混沌恶魔/stratagems/sheathed-in-brass|SHEATHED IN BRASS]] — 1 CP、Shooting phase、Blood Legion 分队、Battle Tactic Stratagem。
 - [[factions/混沌恶魔/stratagems/sickly-contaminants|SICKLY CONTAMINANTS]] — 1 CP、Shooting or Fight phase、Rotten and Rusted 分队、Strategic...
-- [[factions/混沌恶魔/stratagems/skulls-beget-blood|SKULLS BEGET BLOOD]] — 1 CP、Shooting phase、Blood Legion 分队、Strategic Ploy Stratagem...
 - [[factions/混沌恶魔/stratagems/soporific-scent|SOPORIFIC SCENT]] — 1 CP、Movement phase、Dread Carnival 分队、Battle Tactic Stratage...
-- [[factions/混沌恶魔/stratagems/spiteful-demise|SPITEFUL DEMISE]] — 1 CP、Any phase、Shadow Legion 分队、Strategic Ploy Stratagem。
 - [[factions/混沌恶魔/stratagems/swift-as-murder|SWIFT AS MURDER]] — 1 CP、Movement phase、Infernal Onslaught 分队、Strategic Ploy Str...
-- [[factions/混沌恶魔/stratagems/the-realm-of-chaos|THE REALM OF CHAOS]] — 1 CP、Any phase、Daemonic Incursion 分队、Battle Tactic Stratagem...
-- [[factions/混沌恶魔/stratagems/thieves-of-pain|THIEVES OF PAIN]] — 1 CP、Any phase、Legion of Excess 分队、Strategic Ploy Stratagem。
-- [[factions/混沌恶魔/stratagems/unreal-speed|UNREAL SPEED]] — 1 CP、Charge phase、Daemonic Incursion 分队、Strategic Ploy Strat...
+- [[factions/混沌恶魔/stratagems/thieves-of-pain|THIEVES OF PAIN]] — 1 CP、Any phase、恣肆军团 分队、Strategic Ploy Stratagem。
+- [[factions/混沌恶魔/stratagems/unreal-speed|UNREAL SPEED]] — 1 CP、Charge phase、恶魔入侵 分队、Strategic Ploy Stratagem。
 - [[factions/混沌恶魔/stratagems/unstoppable-slaughterers|UNSTOPPABLE SLAUGHTERERS]] — 1 CP、Fight phase、Infernal Onslaught 分队、Strategic Ploy Strata...
-- [[factions/混沌恶魔/stratagems/warp-surge|WARP SURGE]] — 1 CP、Charge phase、Daemonic Incursion 分队、Strategic Ploy Strat...
-- [[factions/混沌恶魔/stratagems/wrath-undeniable|WRATH UNDENIABLE]] — 1 CP、Fight phase、Blood Legion 分队、Strategic Ploy Stratagem。
-- [[factions/混沌恶魔/stratagems/warp-riders|亚空间骑手]] — 1 CP、Movement phase、Cavalcade of Chaos 分队。
-- [[factions/混沌恶魔/stratagems/skirling-magicks|尖啸魔法]] — 1 CP、Shooting phase、Lords of the Warp 分队。
-- [[factions/混沌恶魔/stratagems/call-to-murder|屠戮号令]] — 1 CP、Fight phase、Lords of the Warp 分队。
-- [[factions/混沌恶魔/stratagems/daemonic-infestation|恶魔滋生]] — 1 CP、Command phase、Warptide 分队。
-- [[factions/混沌恶魔/stratagems/inescapable-manifestations|无从遁逃的显现]] — 1 CP、Movement phase、Cavalcade of Chaos 分队。
-- [[factions/混沌恶魔/stratagems/incorporeal-entities|无形实体]] — 1 CP、Shooting phase、Warptide 分队。
-- [[factions/混沌恶魔/stratagems/soulseeing|灵视]] — 1 CP、Shooting phase、Warptide 分队。
-- [[factions/混沌恶魔/stratagems/bilious-blessing|胆汁祝福]] — 1 CP、Shooting phase、Lords of the Warp 分队。
-- [[factions/混沌恶魔/stratagems/from-beyond-the-veil|自帷幕之外]] — 1 CP、Movement phase、Cavalcade of Chaos 分队。
-- [[factions/混沌恶魔/stratagems/carnival-of-excess|过度之狂欢]] — 1 CP、Fight phase、Lords of the Warp 分队。
+- [[factions/混沌恶魔/stratagems/warp-surge|WARP SURGE]] — 1 CP、Charge phase、恶魔入侵 分队、Strategic Ploy Stratagem。
+- [[factions/混沌恶魔/stratagems/inescapable-manifestations|不可逃避的恶魔]] — 1 CP、Movement phase、混沌骑兵队 分队。
+- [[factions/混沌恶魔/stratagems/wrath-undeniable|不可阻挡的怒火]] — 1 CP、Fight phase、鲜血军团 分队、Strategic Ploy Stratagem。
+- [[factions/混沌恶魔/stratagems/warp-riders|亚空间骑手]] — 1 CP、Movement phase、混沌骑兵队 分队。
+- [[factions/混沌恶魔/stratagems/cavalcade-of-blades|利刃骑兵队]] — 1 CP、Charge phase、恣肆军团 分队、Battle Tactic Stratagem。
+- [[factions/混沌恶魔/stratagems/fever-visions|发热幻觉]] — 1 CP、Shooting or Fight phase、瘟疫军团 分队、Battle Tactic Stratagem...
+- [[factions/混沌恶魔/stratagems/death-denied|否决死亡]] — 1 CP、Command phase、暗影军团 分队、Battle Tactic Stratagem。
+- [[factions/混沌恶魔/stratagems/bilious-blessing|呕吐祝福]] — 1 CP、Shooting phase、亚空间领主 分队。
+- [[factions/混沌恶魔/stratagems/fateborne-nightmares|命定梦魇]] — 1 CP、Movement or Charge phase、闪耀军团 分队、Strategic Ploy Stratag...
+- [[factions/混沌恶魔/stratagems/gorehungry-onslaught|嗜血猛攻]] — 1 CP、Movement or Charge phase、鲜血军团 分队、Strategic Ploy Stratag...
+- [[factions/混沌恶魔/stratagems/archagonists|大凌虐者]] — 2 CP、Fight phase、恣肆军团 分队、Battle Tactic Stratagem。
+- [[factions/混沌恶魔/stratagems/skirling-magicks|尖啸魔法]] — 1 CP、Shooting phase、亚空间领主 分队。
+- [[factions/混沌恶魔/stratagems/impossible-eclipse|异常日食]] — 1 CP、Any phase、闪耀军团 分队、Strategic Ploy Stratagem。
+- [[factions/混沌恶魔/stratagems/channelled-wrath|引导怒火]] — 1 CP、Fight phase、暗影军团 分队、Strategic Ploy Stratagem。
+- [[factions/混沌恶魔/stratagems/draught-of-terror|恐惧琼浆]] — 1 CP、Shooting or Fight phase、恶魔入侵 分队、Battle Tactic Stratagem...
+- [[factions/混沌恶魔/stratagems/spiteful-demise|恶毒破灭]] — 1 CP、Any phase、暗影军团 分队、Strategic Ploy Stratagem。
+- [[factions/混沌恶魔/stratagems/foetid-resurgence|恶臭复苏]] — 2 CP、Command phase、瘟疫军团 分队、Strategic Ploy Stratagem。
+- [[factions/混沌恶魔/stratagems/daemonic-infestation|恶魔侵染]] — 1 CP、Command phase、次元魔潮 分队。
+- [[factions/混沌恶魔/stratagems/fools-flight|愚蠢的逃亡]] — 2 CP、Movement phase、鲜血军团 分队、Strategic Ploy Stratagem。
+- [[factions/混沌恶魔/stratagems/sensory-excruciation|感官折磨]] — 1 CP、Command phase、恣肆军团 分队、Strategic Ploy Stratagem。
+- [[factions/混沌恶魔/stratagems/carnival-of-excess|放纵狂欢]] — 1 CP、Fight phase、亚空间领主 分队。
+- [[factions/混沌恶魔/stratagems/ficklefire|无常烈焰]] — 1 CP、Shooting phase、闪耀军团 分队、Strategic Ploy Stratagem。
+- [[factions/混沌恶魔/stratagems/incorporeal-entities|无形存在]] — 1 CP、Shooting phase、次元魔潮 分队。
+- [[factions/混沌恶魔/stratagems/murkshadows|昏暗阴影]] — 1 CP、Movement phase、瘟疫军团 分队、Battle Tactic Stratagem。
+- [[factions/混沌恶魔/stratagems/binding-shadow|暗影缠身]] — 1 CP、Fight phase、暗影军团 分队、Strategic Ploy Stratagem。
+- [[factions/混沌恶魔/stratagems/call-to-murder|杀戮召唤]] — 1 CP、Fight phase、亚空间领主 分队。
+- [[factions/混沌恶魔/stratagems/delirium-unmade|消散的疯狂]] — 1 CP、Fight phase、闪耀军团 分队、Strategic Ploy Stratagem。
+- [[factions/混沌恶魔/stratagems/the-realm-of-chaos|混沌领域]] — 1 CP、Any phase、恶魔入侵 分队、Battle Tactic Stratagem。
+- [[factions/混沌恶魔/stratagems/pyrogenesis|火焰增幅]] — 1 CP、Shooting or Fight phase、闪耀军团 分队、Battle Tactic Stratagem...
+- [[factions/混沌恶魔/stratagems/soulseeing|灵魂视觉]] — 1 CP、Shooting phase、次元魔潮 分队。
+- [[factions/混沌恶魔/stratagems/seeping-virulence|病毒外溢]] — 1 CP、Fight phase、瘟疫军团 分队、Battle Tactic Stratagem。
+- [[factions/混沌恶魔/stratagems/corrupt-realspace|腐化现实空间]] — 1 CP、Command phase、恶魔入侵 分队、Strategic Ploy Stratagem。
+- [[factions/混沌恶魔/stratagems/rot-and-renewal|腐烂与再生]] — 1 CP、Movement or Charge phase、瘟疫军团 分队、Strategic Ploy Stratag...
+- [[factions/混沌恶魔/stratagems/from-beyond-the-veil|自帷幕之外]] — 1 CP、Movement phase、混沌骑兵队 分队。
+- [[factions/混沌恶魔/stratagems/plague-of-woes|苦痛瘟疫]] — 1 CP、Command phase、瘟疫军团 分队、Strategic Ploy Stratagem。
+- [[factions/混沌恶魔/stratagems/phantasmal-longing|虚幻渴望]] — 1 CP、Movement or Charge phase、恣肆军团 分队、Strategic Ploy Stratag...
+- [[factions/混沌恶魔/stratagems/flickering-reality|闪烁现实]] — 1 CP、Charge phase、闪耀军团 分队、Strategic Ploy Stratagem。
+- [[factions/混沌恶魔/stratagems/skulls-beget-blood|颅骨带来鲜血]] — 1 CP、Shooting phase、鲜血军团 分队、Strategic Ploy Stratagem。
+- [[factions/混沌恶魔/stratagems/blood-begets-skulls|鲜血带来颅骨]] — 1 CP、Charge phase、鲜血军团 分队、Strategic Ploy Stratagem。
+- [[factions/混沌恶魔/stratagems/sheathed-in-brass|黄铜加护]] — 1 CP、Shooting phase、鲜血军团 分队、Battle Tactic Stratagem。
+- [[factions/混沌恶魔/stratagems/shade-path|黑影通道]] — 2 CP、Charge phase、暗影军团 分队、Battle Tactic Stratagem。
+- [[factions/混沌恶魔/stratagems/encroaching-darkness|黑暗将至]] — 1 CP、Shooting phase、暗影军团 分队、Battle Tactic Stratagem。
 
 ## 强化
 
-- [[factions/混沌恶魔/enhancements/apocalyptic-steeds|Apocalyptic Steeds]] — 分数未知、Cavalcade of Chaos 分队。
-- [[factions/混沌恶魔/enhancements/avatar-of-perfection|Avatar of Perfection]] — 15 分、Legion of Excess 分队。
-- [[factions/混沌恶魔/enhancements/argath-the-king-of-blades|A’rgath, the King of Blades]] — 20 分、Daemonic Incursion 分队。
-- [[factions/混沌恶魔/enhancements/bane-forged-weapons|Bane-forged Weapons]] — 分数未知、Warptide 分队。
-- [[factions/混沌恶魔/enhancements/brazenmaw|Brazenmaw]] — 15 分、Blood Legion 分队。
-- [[factions/混沌恶魔/enhancements/cankerblight|Cankerblight]] — 15 分、Plague Legion 分队。
-- [[factions/混沌恶魔/enhancements/dreaming-crown-aura|Dreaming Crown (Aura)]] — 30 分、Legion of Excess 分队。
-- [[factions/混沌恶魔/enhancements/droning-shroud-aura|Droning Shroud (Aura)]] — 35 分、Plague Legion 分队。
+- [[factions/混沌恶魔/enhancements/bane-forged-weapons|Bane-forged Weapons]] — 分数未知、次元魔潮 分队。
+- [[factions/混沌恶魔/enhancements/dreaming-crown-aura|Dreaming Crown (Aura)]] — 30 分、恣肆军团 分队。
 - [[factions/混沌恶魔/enhancements/endless-gift|Endless Gift]] — 0 分、Rotten and Rusted 分队。
-- [[factions/混沌恶魔/enhancements/fade-to-darkness|Fade to Darkness]] — 30 分、Shadow Legion 分队。
-- [[factions/混沌恶魔/enhancements/false-majesty-aura|False Majesty (Aura)]] — 30 分、Legion of Excess 分队。
+- [[factions/混沌恶魔/enhancements/fade-to-darkness|Fade to Darkness]] — 30 分、暗影军团 分队。
+- [[factions/混沌恶魔/enhancements/false-majesty-aura|False Majesty (Aura)]] — 30 分、恣肆军团 分队。
 - [[factions/混沌恶魔/enhancements/fatal-caress|Fatal Caress]] — 0 分、Dread Carnival 分队。
-- [[factions/混沌恶魔/enhancements/font-of-spores-aura|Font of Spores (Aura)]] — 20 分、Plague Legion 分队。
 - [[factions/混沌恶魔/enhancements/fulgurating-presence|Fulgurating Presence]] — 0 分、Pandaemoniac Inferno 分队。
-- [[factions/混沌恶魔/enhancements/furys-cage|Fury’s Cage]] — 20 分、Blood Legion 分队。
-- [[factions/混沌恶魔/enhancements/gateway-unto-damnation|Gateway Unto Damnation]] — 10 分、Blood Legion 分队。
-- [[factions/混沌恶魔/enhancements/geller-breach|Geller Breach]] — 0 分、Daemonic Incursion 分队。
+- [[factions/混沌恶魔/enhancements/geller-breach|Geller Breach]] — 0 分、恶魔入侵 分队。
 - [[factions/混沌恶魔/enhancements/horrifying-visage|Horrifying Visage]] — 0 分、Dread Carnival 分队。
-- [[factions/混沌恶魔/enhancements/improbable-shield-aura|Improbable Shield (Aura)]] — 30 分、Scintillating Legion 分队。
-- [[factions/混沌恶魔/enhancements/inescapable-eye|Inescapable Eye]] — 10 分、Scintillating Legion 分队。
-- [[factions/混沌恶魔/enhancements/infernal-puppeteer|Infernal Puppeteer]] — 25 分、Scintillating Legion 分队。
-- [[factions/混沌恶魔/enhancements/leaping-shadows|Leaping Shadows]] — 25 分、Shadow Legion 分队。
-- [[factions/混沌恶魔/enhancements/maggot-maws|Maggot Maws]] — 15 分、Plague Legion 分队。
-- [[factions/混沌恶魔/enhancements/malice-made-manifest|Malice Made Manifest]] — 25 分、Shadow Legion 分队。
-- [[factions/混沌恶魔/enhancements/mantle-of-gloom-aura|Mantle of Gloom (Aura)]] — 20 分、Shadow Legion 分队。
+- [[factions/混沌恶魔/enhancements/mantle-of-gloom-aura|Mantle of Gloom (Aura)]] — 20 分、暗影军团 分队。
 - [[factions/混沌恶魔/enhancements/mutagenic-flames|Mutagenic Flames]] — 0 分、Pandaemoniac Inferno 分队。
-- [[factions/混沌恶魔/enhancements/neverblade|Neverblade]] — 20 分、Scintillating Legion 分队。
-- [[factions/混沌恶魔/enhancements/slaughterthirst-aura|Slaughterthirst (Aura)]] — 25 分、Blood Legion 分队。
-- [[factions/混沌恶魔/enhancements/soul-glutton|Soul Glutton]] — 10 分、Legion of Excess 分队。
-- [[factions/混沌恶魔/enhancements/soul-shattering-charge|Soul-Shattering Charge]] — 分数未知、Cavalcade of Chaos 分队。
-- [[factions/混沌恶魔/enhancements/soul-hungry-slaughterers|Soul-hungry Slaughterers]] — 分数未知、Warptide 分队。
-- [[factions/混沌恶魔/enhancements/soulstealer|Soulstealer]] — 15 分、Daemonic Incursion 分队。
-- [[factions/混沌恶魔/enhancements/spite-made-manifest|Spite Made Manifest]] — 0 分、Daemonic Incursion 分队。
-- [[factions/混沌恶魔/enhancements/swollen-with-power|Swollen with Power]] — 分数未知、Lords of the Warp 分队。
-- [[factions/混沌恶魔/enhancements/the-endless-gift|The Endless Gift]] — 30 分、Daemonic Incursion 分队。
-- [[factions/混沌恶魔/enhancements/the-everstave|The Everstave]] — 25 分、Daemonic Incursion 分队。
+- [[factions/混沌恶魔/enhancements/soul-hungry-slaughterers|Soul-hungry Slaughterers]] — 分数未知、次元魔潮 分队。
+- [[factions/混沌恶魔/enhancements/spite-made-manifest|Spite Made Manifest]] — 0 分、恶魔入侵 分队。
 - [[factions/混沌恶魔/enhancements/unholy-fury|Unholy Fury]] — 0 分、Infernal Onslaught 分队。
 - [[factions/混沌恶魔/enhancements/virulent-corruption|Virulent Corruption]] — 0 分、Rotten and Rusted 分队。
 - [[factions/混沌恶魔/enhancements/worthier-skulls|Worthier Skulls]] — 0 分、Infernal Onslaught 分队。
+- [[factions/混沌恶魔/enhancements/swollen-with-power|充足力量]] — 分数未知、亚空间领主 分队。
+- [[factions/混沌恶魔/enhancements/neverblade|变形利刃]] — 20 分、闪耀军团 分队。
+- [[factions/混沌恶魔/enhancements/improbable-shield-aura|奇异护盾（光环）]] — 30 分、闪耀军团 分队。
+- [[factions/混沌恶魔/enhancements/font-of-spores-aura|孢子洗礼（光环)]] — 20 分、瘟疫军团 分队。
+- [[factions/混沌恶魔/enhancements/avatar-of-perfection|完美化身]] — 15 分、恣肆军团 分队。
+- [[factions/混沌恶魔/enhancements/furys-cage|怒火牢笼]] — 20 分、鲜血军团 分队。
+- [[factions/混沌恶魔/enhancements/malice-made-manifest|恶念化身]] — 25 分、暗影军团 分队。
+- [[factions/混沌恶魔/enhancements/the-endless-gift|无尽赠礼]] — 30 分、恶魔入侵 分队。
+- [[factions/混沌恶魔/enhancements/apocalyptic-steeds|末日坐骑]] — 分数未知、混沌骑兵队 分队。
+- [[factions/混沌恶魔/enhancements/slaughterthirst-aura|杀戮渴望（光环）]] — 25 分、鲜血军团 分队。
+- [[factions/混沌恶魔/enhancements/the-everstave|永恒魔杖]] — 25 分、恶魔入侵 分队。
+- [[factions/混沌恶魔/enhancements/cankerblight|溃烂瘟疫（光环)]] — 15 分、瘟疫军团 分队。
+- [[factions/混沌恶魔/enhancements/inescapable-eye|火眼金睛]] — 10 分、闪耀军团 分队。
+- [[factions/混沌恶魔/enhancements/infernal-puppeteer|炼狱操偶师]] — 25 分、闪耀军团 分队。
+- [[factions/混沌恶魔/enhancements/soul-shattering-charge|碎魂冲撞]] — 分数未知、混沌骑兵队 分队。
+- [[factions/混沌恶魔/enhancements/soulstealer|窃魂剑]] — 15 分、恶魔入侵 分队。
+- [[factions/混沌恶魔/enhancements/droning-shroud-aura|虫鸣斗篷（光环)]] — 35 分、瘟疫军团 分队。
+- [[factions/混沌恶魔/enhancements/maggot-maws|蛆虫之口]] — 15 分、瘟疫军团 分队。
+- [[factions/混沌恶魔/enhancements/gateway-unto-damnation|诅咒大门]] — 10 分、鲜血军团 分队。
+- [[factions/混沌恶魔/enhancements/soul-glutton|贪食灵魂]] — 10 分、恣肆军团 分队。
+- [[factions/混沌恶魔/enhancements/leaping-shadows|跳动黑影]] — 25 分、暗影军团 分队。
+- [[factions/混沌恶魔/enhancements/argath-the-king-of-blades|阿伽斯，万剑之王]] — 20 分、恶魔入侵 分队。
+- [[factions/混沌恶魔/enhancements/brazenmaw|黄铜之颚]] — 15 分、鲜血军团 分队。
 

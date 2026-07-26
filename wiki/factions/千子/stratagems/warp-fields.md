@@ -1,7 +1,9 @@
 ---
 id: fp11e-ts-sekhetar-s3
-name_zh: 扭曲力场
+name_zh: 次元力场
 name_en: Warp Fields
+aliases:
+- 扭曲力场
 faction: 千子
 type: stratagem
 detachment: Sekhetar Cohort
@@ -13,10 +15,10 @@ tags:
 - 千子
 sources:
 - book: 官方结构库 db/wh40k.sqlite（Wahapedia 11 版镜像）
-updated: '2026-07-25'
+updated: '2026-07-26'
 ---
 
-1 CP、Opponents Shooting phase、[[factions/千子/detachments/sekhetar-cohort.md|Sekhetar Cohort]] 分队。
+1 CP、Opponents Shooting phase、[[factions/千子/detachments/sekhetar-cohort.md|塞克塔部队]] 分队。
 
 ## 使用时机
 

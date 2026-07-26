@@ -1,5 +1,6 @@
 ---
 id: fp11e-chaosknights-bastions-e1
+name_zh: 骇影鸟巢
 name_en: Pterrorshade Rookery
 faction: 混沌骑士
 type: enhancement
@@ -10,10 +11,10 @@ tags:
 - 混沌骑士
 sources:
 - book: 官方结构库 db/wh40k.sqlite（Wahapedia 11 版镜像）
-updated: '2026-07-25'
+updated: '2026-07-26'
 ---
 
-分数未知、[[factions/混沌骑士/detachments/bastions-of-tyranny.md|Bastions of Tyranny]] 分队。
+分数未知、[[factions/混沌骑士/detachments/bastions-of-tyranny.md|暴虐要塞]] 分队。
 
 ## 效果
 

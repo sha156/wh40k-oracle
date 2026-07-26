@@ -1,7 +1,9 @@
 ---
 id: fp11e-genestealercults-xenocultmasses-s2
-name_zh: 狂信弹雨
+name_zh: 狂热弹雨
 name_en: FANATICAL HAIL
+aliases:
+- 狂信弹雨
 faction: 基因窃取者教派
 type: stratagem
 detachment: Xenocult Masses
@@ -13,10 +15,10 @@ tags:
 - 基因窃取者教派
 sources:
 - book: 官方结构库 db/wh40k.sqlite（Wahapedia 11 版镜像）
-updated: '2026-07-25'
+updated: '2026-07-26'
 ---
 
-1 CP、Shooting phase、[[factions/基因窃取者教派/detachments/xenocult-masses.md|Xenocult Masses]] 分队。
+1 CP、Shooting phase、[[factions/基因窃取者教派/detachments/xenocult-masses.md|异形教众]] 分队。
 
 ## 使用时机
 

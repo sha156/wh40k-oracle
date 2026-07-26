@@ -51,4 +51,4 @@ updated: '2026-07-23'
 
 ## 关键词
 - **阵营关键词**：Adeptus Astartes
-- **普通关键词**：[[core-rules/infantry.md|Infantry]]，Imperium，Terminator，[[core-rules/character.md|Character]]，Deathwing，Ancient
+- **普通关键词**：[[core-rules/infantry.md|Infantry]]，Imperium，Terminator，[[core-rules/character.md|Character]]，Deathwing，[[factions/星际战士/units/ancient.md|Ancient]]

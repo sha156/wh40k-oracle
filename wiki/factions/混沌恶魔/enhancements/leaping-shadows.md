@@ -1,5 +1,6 @@
 ---
 id: '000009980002'
+name_zh: 跳动黑影
 name_en: Leaping Shadows
 faction: 混沌恶魔
 type: enhancement
@@ -11,10 +12,10 @@ tags:
 - 混沌恶魔
 sources:
 - book: 官方结构库 db/wh40k.sqlite（Wahapedia 11 版镜像）
-updated: '2026-07-25'
+updated: '2026-07-26'
 ---
 
-25 分、[[factions/混沌恶魔/detachments/shadow-legion.md|Shadow Legion]] 分队。
+25 分、[[factions/混沌恶魔/detachments/shadow-legion.md|暗影军团]] 分队。
 
 ## 效果
 

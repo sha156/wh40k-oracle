@@ -10,10 +10,10 @@ tags:
 - 机械修会
 sources:
 - book: 官方结构库 db/wh40k.sqlite（Wahapedia 11 版镜像）
-updated: '2026-07-25'
+updated: '2026-07-26'
 ---
 
-机械修会的分队，分队规则「Acquisition At Any Cost」。
+机械修会的分队「Explorator Maniple」，分队规则「Acquisition At Any Cost」。
 
 ## 分队规则
 

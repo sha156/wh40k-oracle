@@ -1,7 +1,9 @@
 ---
 id: '000010673004'
-name_zh: 群体嬗变
+name_zh: 群体变形
 name_en: MASS TRANSMOGRIFICATION
+aliases:
+- 群体嬗变
 faction: 太空死灵
 type: stratagem
 detachment: Pantheon of Woe
@@ -14,10 +16,10 @@ tags:
 - 太空死灵
 sources:
 - book: 官方结构库 db/wh40k.sqlite（Wahapedia 11 版镜像）
-updated: '2026-07-25'
+updated: '2026-07-26'
 ---
 
-1 CP、Shooting or Fight phase、[[factions/太空死灵/detachments/pantheon-of-woe.md|Pantheon of Woe]] 分队、Epic Deed Stratagem。
+1 CP、Shooting or Fight phase、[[factions/太空死灵/detachments/pantheon-of-woe.md|哀伤众神殿]] 分队、Epic Deed Stratagem。
 
 ## 使用时机
 

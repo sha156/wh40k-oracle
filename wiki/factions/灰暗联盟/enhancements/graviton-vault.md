@@ -11,7 +11,7 @@ tags:
 - 灰暗联盟
 sources:
 - book: 官方结构库 db/wh40k.sqlite（Wahapedia 11 版镜像）
-updated: '2026-07-25'
+updated: '2026-07-26'
 ---
 
 5 分、[[factions/灰暗联盟/detachments/hearthfyre-arsenal.md|Hearthfyre Arsenal]] 分队。

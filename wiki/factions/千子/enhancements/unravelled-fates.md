@@ -1,7 +1,9 @@
 ---
 id: fp11e-ts-servants-e1
-name_zh: 解构天命
+name_zh: 解开命运
 name_en: Unravelled Fates
+aliases:
+- 解构天命
 faction: 千子
 type: enhancement
 detachment: Servants of Change
@@ -11,10 +13,10 @@ tags:
 - 千子
 sources:
 - book: 官方结构库 db/wh40k.sqlite（Wahapedia 11 版镜像）
-updated: '2026-07-25'
+updated: '2026-07-26'
 ---
 
-分数未知、[[factions/千子/detachments/servants-of-change.md|Servants of Change]] 分队。
+分数未知、[[factions/千子/detachments/servants-of-change.md|变化的仆从]] 分队。
 
 ## 效果
 

@@ -13,7 +13,7 @@ tags:
 - 混沌星际战士
 sources:
 - book: 官方结构库 db/wh40k.sqlite（Wahapedia 11 版镜像）
-updated: '2026-07-25'
+updated: '2026-07-26'
 ---
 
 1 CP、Shooting phase、[[factions/混沌星际战士/detachments/cabal-of-chaos.md|Cabal of Chaos]] 分队、Battle Tactic Stratagem。
@@ -24,7 +24,7 @@ Start of your opponent’s Shooting phase.
 
 ## 使用对象
 
-One Heretic Astartes Psyker, [[factions/混沌星际战士/units/heretic-astartes-daemon-prince.md|Heretic Astartes Daemon Prince]] or [[factions/混沌星际战士/units/heretic-astartes-daemon-prince.md|Heretic Astartes Daemon Prince]] with Wings unit from your army.
+One Heretic Astartes Psyker, [[factions/混沌星际战士/units/heretic-astartes-daemon-prince.md|Heretic Astartes Daemon Prince]] or Heretic Astartes Daemon Prince with Wings unit from your army.
 
 ## 效果
 

@@ -10,14 +10,14 @@ tags:
 - 帝皇卫队
 sources:
 - book: 官方结构库 db/wh40k.sqlite（Wahapedia 11 版镜像）
-updated: '2026-07-25'
+updated: '2026-07-26'
 ---
 
-帝皇卫队的分队，分队规则「[[factions/黑暗灵族/stratagems/prioritised-victim.md|优先猎物]]」。
+帝皇卫队的分队「Black Ship Guardians」，分队规则「[[factions/黑暗灵族/stratagems/prioritised-victim.md|优先猎物]]」。
 
 ## 分队规则
 
-### [[factions/黑暗灵族/stratagems/prioritised-victim.md|优先猎物]] Priority Quarry
+### 优先猎物 Priority Quarry
 
 At the start of the first battle round, you can select up to two enemy units to be your army’s quarry, one of which must be your opponents WARLORD. Each time an ANATHEMA PSYKANA unit from your army makes an attack that targets one of your army’s quarries, re-roll a Hit roll of 1. Each time an ANATHEMA PSYKANA unit from your army declares a charge, it can include one or more of your army’s quarries as targets of that charge, even if they are not visible to it.
 

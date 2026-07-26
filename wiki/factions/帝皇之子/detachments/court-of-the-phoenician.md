@@ -1,5 +1,6 @@
 ---
 id: '000010652'
+name_zh: 凤凰王庭
 name_en: Court of the Phoenician
 faction: 帝皇之子
 type: detachment
@@ -10,10 +11,10 @@ tags:
 - 帝皇之子
 sources:
 - book: 官方结构库 db/wh40k.sqlite（Wahapedia 11 版镜像）
-updated: '2026-07-25'
+updated: '2026-07-26'
 ---
 
-帝皇之子的分队，分队规则「惊艳献演」。
+帝皇之子的分队「凤凰王庭」，分队规则「惊艳献演」。
 
 ## 分队规则
 
@@ -42,9 +43,9 @@ Once per battle round, when you target a [[factions/帝皇之子/units/fulgrim.m
 
 ## 战略
 
-- [[factions/帝皇之子/stratagems/catalytic-stimulus.md\|催化激涌]]
-- [[factions/帝皇之子/stratagems/close-quarters-excruciation.md\|近身酷刑]]
-- [[factions/帝皇之子/stratagems/contemptuous-disregard.md\|轻蔑无视]]
-- [[factions/帝皇之子/stratagems/euphoric-inspiration.md\|欣快激励]]
-- [[factions/帝皇之子/stratagems/prideful-superiority.md\|傲然凌人]]
-- [[factions/帝皇之子/stratagems/sinuous-breach.md\|蜿蜒突进]]
+- [[factions/帝皇之子/stratagems/catalytic-stimulus.md\|催化刺激]]
+- [[factions/帝皇之子/stratagems/close-quarters-excruciation.md\|近距离处决]]
+- [[factions/帝皇之子/stratagems/contemptuous-disregard.md\|轻蔑漠视]]
+- [[factions/帝皇之子/stratagems/euphoric-inspiration.md\|极乐灵感]]
+- [[factions/帝皇之子/stratagems/prideful-superiority.md\|傲慢优越感]]
+- [[factions/帝皇之子/stratagems/sinuous-breach.md\|蜿蜒行进]]

@@ -1,7 +1,9 @@
 ---
 id: '000009741003'
-name_zh: 强能显现
+name_zh: 强化法术
 name_en: Empowered Manifestation
+aliases:
+- 强能显现
 faction: 千子
 type: enhancement
 detachment: Hexwarp Thrallband
@@ -12,10 +14,10 @@ tags:
 - 千子
 sources:
 - book: 官方结构库 db/wh40k.sqlite（Wahapedia 11 版镜像）
-updated: '2026-07-25'
+updated: '2026-07-26'
 ---
 
-20 分、[[factions/千子/detachments/hexwarp-thrallband.md|Hexwarp Thrallband]] 分队。
+20 分、[[factions/千子/detachments/hexwarp-thrallband.md|次元邪咒傀儡团]] 分队。
 
 ## 效果
 

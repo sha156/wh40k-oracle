@@ -1,7 +1,9 @@
 ---
 id: fp11e-ac-tharanatoi-e2
-name_zh: 高效侵略
+name_zh: 高效进攻
 name_en: Efficient Aggression
+aliases:
+- 高效侵略
 faction: 帝皇卫队
 type: enhancement
 detachment: Tharanatoi Hammerblow
@@ -11,10 +13,10 @@ tags:
 - 帝皇卫队
 sources:
 - book: 官方结构库 db/wh40k.sqlite（Wahapedia 11 版镜像）
-updated: '2026-07-25'
+updated: '2026-07-26'
 ---
 
-分数未知、[[factions/帝皇卫队/detachments/tharanatoi-hammerblow.md|Tharanatoi Hammerblow]] 分队。
+分数未知、[[factions/帝皇卫队/detachments/tharanatoi-hammerblow.md|雷灭锤击]] 分队。
 
 ## 效果
 

@@ -1,5 +1,6 @@
 ---
 id: container-designation-force
+name_zh: 指示部队
 name_en: Designation Force
 faction: 星界军
 type: detachment
@@ -10,10 +11,10 @@ tags:
 - 星界军
 sources:
 - book: 官方结构库 db/wh40k.sqlite（Wahapedia 11 版镜像）
-updated: '2026-07-25'
+updated: '2026-07-26'
 ---
 
-星界军的分队。
+星界军的分队「指示部队」。
 
 ## 分队规则
 
@@ -26,6 +27,6 @@ updated: '2026-07-25'
 
 ## 战略
 
-- [[factions/星界军/stratagems/close-range-detection.md\|近距侦测]]
-- [[factions/星界军/stratagems/sump-smog-screen.md\|污沼烟幕]]
-- [[factions/星界军/stratagems/triggered-alerts.md\|触发警讯]]
+- [[factions/星界军/stratagems/close-range-detection.md\|近距离侦测]]
+- [[factions/星界军/stratagems/sump-smog-screen.md\|臭气烟幕]]
+- [[factions/星界军/stratagems/triggered-alerts.md\|触发警报]]

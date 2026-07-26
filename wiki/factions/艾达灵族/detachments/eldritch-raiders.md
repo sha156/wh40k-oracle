@@ -1,5 +1,6 @@
 ---
 id: '000010697'
+name_zh: 骇人劫掠者
 name_en: Eldritch Raiders
 faction: 艾达灵族
 type: detachment
@@ -10,10 +11,10 @@ tags:
 - 艾达灵族
 sources:
 - book: 官方结构库 db/wh40k.sqlite（Wahapedia 11 版镜像）
-updated: '2026-07-25'
+updated: '2026-07-26'
 ---
 
-艾达灵族的分队，分队规则「Yriel’s Own」。
+艾达灵族的分队「骇人劫掠者」，分队规则「Yriel’s Own」。
 
 ## 分队规则
 
@@ -31,14 +32,14 @@ Each time you add an Anhrathe unit to your army, it can be given up to one Corsa
 
 - [[factions/艾达灵族/enhancements/adrenal-infusions.md\|Adrenal Infusions]]
 - [[factions/艾达灵族/enhancements/alacritous-assault.md\|Alacritous Assault]]
-- [[factions/艾达灵族/enhancements/exotic-munitions.md\|Exotic Munitions]]
+- [[factions/艾达灵族/enhancements/exotic-munitions.md\|奇异弹药]]
 - [[factions/艾达灵族/enhancements/pirate-prince.md\|Pirate Prince]]
 
 ## 战略
 
-- [[factions/艾达灵族/stratagems/impeding-fire.md\|IMPEDING FIRE]]
-- [[factions/艾达灵族/stratagems/no-prey-too-big.md\|NO PREY TOO BIG]]
-- [[factions/艾达灵族/stratagems/raiders-spoils.md\|RAIDERS’ SPOILS]]
-- [[factions/艾达灵族/stratagems/ruthless-killers.md\|RUTHLESS KILLERS]]
-- [[factions/艾达灵族/stratagems/withdraw-and-reinforce.md\|WITHDRAW AND REINFORCE]]
-- [[factions/艾达灵族/stratagems/yriels-example.md\|YRIEL’S EXAMPLE]]
+- [[factions/艾达灵族/stratagems/impeding-fire.md\|障碍火网]]
+- [[factions/艾达灵族/stratagems/no-prey-too-big.md\|没有猎物过于强大]]
+- [[factions/艾达灵族/stratagems/raiders-spoils.md\|掠夺者的战利品]]
+- [[factions/艾达灵族/stratagems/ruthless-killers.md\|无情杀手]]
+- [[factions/艾达灵族/stratagems/withdraw-and-reinforce.md\|撤退并增援]]
+- [[factions/艾达灵族/stratagems/yriels-example.md\|伊瑞尔典范]]

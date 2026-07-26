@@ -1,7 +1,9 @@
 ---
 id: '000009750005'
-name_zh: 维度隧道
+name_zh: 次元通道
 name_en: DIMENSIONAL TUNNEL
+aliases:
+- 维度隧道
 faction: 太空死灵
 type: stratagem
 detachment: Starshatter Arsenal
@@ -14,10 +16,10 @@ tags:
 - 太空死灵
 sources:
 - book: 官方结构库 db/wh40k.sqlite（Wahapedia 11 版镜像）
-updated: '2026-07-25'
+updated: '2026-07-26'
 ---
 
-1 CP、Movement phase、[[factions/太空死灵/detachments/starshatter-arsenal.md|Starshatter Arsenal]] 分队、Strategic Ploy Stratagem。
+1 CP、Movement phase、[[factions/太空死灵/detachments/starshatter-arsenal.md|碎星宝库]] 分队、Strategic Ploy Stratagem。
 
 ## 使用时机
 

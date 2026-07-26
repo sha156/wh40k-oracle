@@ -10,14 +10,14 @@ tags:
 - 吞世者
 sources:
 - book: 官方结构库 db/wh40k.sqlite（Wahapedia 11 版镜像）
-updated: '2026-07-25'
+updated: '2026-07-26'
 ---
 
-吞世者的分队，分队规则「[[factions/吞世者/stratagems/focused-ferocity.md|凶性专注]]」。
+吞世者的分队「Boarding Butchers」，分队规则「[[factions/吞世者/stratagems/focused-ferocity.md|凶性专注]]」。
 
 ## 分队规则
 
-### [[factions/吞世者/stratagems/focused-ferocity.md|凶性专注]] Focused Ferocity
+### 凶性专注 Focused Ferocity
 
 Each time a WORLD EATERS unit from your army declares a charge, each target of that charge must take a Battle-shock test.
 

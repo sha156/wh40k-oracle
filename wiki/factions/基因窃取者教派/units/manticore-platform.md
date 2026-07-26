@@ -41,4 +41,4 @@ updated: '2026-07-23'
 
 ## 关键词
 - **阵营关键词**：Astra Militarum，Genestealer Cults
-- **普通关键词**：[[core-rules/fortification.md|Fortification]]，Imperium，Artillery，Manticore Platform
+- **普通关键词**：[[core-rules/fortification.md|Fortification]]，Imperium，Artillery，[[factions/基因窃取者教派/units/manticore.md|Manticore]] Platform

@@ -1,7 +1,9 @@
 ---
 id: '000010713004'
-name_zh: 登舰冲锋
+name_zh: 快速登船
 name_en: BOARDIN’ RUSH
+aliases:
+- 登舰冲锋
 faction: 兽人
 type: stratagem
 detachment: Freebooter Krew
@@ -14,10 +16,10 @@ tags:
 - 兽人
 sources:
 - book: 官方结构库 db/wh40k.sqlite（Wahapedia 11 版镜像）
-updated: '2026-07-25'
+updated: '2026-07-26'
 ---
 
-1 CP、Movement phase、[[factions/兽人/detachments/freebooter-krew.md|Freebooter Krew]] 分队、Battle Tactic Stratagem。
+1 CP、Movement phase、[[factions/兽人/detachments/freebooter-krew.md|海盗船团]] 分队、Battle Tactic Stratagem。
 
 ## 使用时机
 

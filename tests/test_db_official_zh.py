@@ -557,11 +557,27 @@ def test_artifact_shape_and_lf_encoding():
     raw = OUT_PATH.read_bytes()
     assert b"\r\n" not in raw, "产物必须是 LF（Windows 下 json.dump 默认会写 CRLF）"
     data = json.loads(raw.decode("utf-8"))
-    assert set(data) == {"stratagems", "enhancements", "detachments", "_report"}
-    for key in ("stratagems", "enhancements", "detachments"):
+    assert set(data) == {"stratagems", "stratagems_by_id", "enhancements",
+                         "enhancements_by_id", "detachments", "_report"}
+    for key in ("stratagems", "stratagems_by_id", "enhancements",
+                "enhancements_by_id", "detachments"):
         assert all(isinstance(k, str) and isinstance(v, str)
                    for k, v in data[key].items())
         assert all(k.strip() and v.strip() for k, v in data[key].items())
+
+
+@needs_map
+def test_row_level_map_covers_at_least_the_name_level_one():
+    """行级映射恒 ≥ 名级：名级要为「同名不同译」整条让路，行级不用。
+
+    反过来（行级比名级少）说明行级那步把配对丢了，而落库以行级为准——
+    表现是「官方明明有中文名，页面却是英文」，没人能从报告里看出来。
+    """
+    data = json.loads(OUT_PATH.read_text(encoding="utf-8"))
+    assert len(data["stratagems_by_id"]) >= len(data["stratagems"])
+    assert len(data["enhancements_by_id"]) >= len(data["enhancements"])
+    # 名级映射丢掉的那批同名冲突，行级必须真的接住了（否则这一层白加）
+    assert len(data["stratagems_by_id"]) > len(data["stratagems"])
 
 
 @needs_map

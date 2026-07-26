@@ -1,7 +1,9 @@
 ---
 id: fp11e-ba-grace-s3
-name_zh: 天使优雅光环
+name_zh: 天使圣洁光环
 name_en: AURA OF THE ANGEL’S GRACE
+aliases:
+- 天使优雅光环
 faction: 星际战士
 type: stratagem
 detachment: Legacy of Grace
@@ -13,10 +15,10 @@ tags:
 - 星际战士
 sources:
 - book: 官方结构库 db/wh40k.sqlite（Wahapedia 11 版镜像）
-updated: '2026-07-25'
+updated: '2026-07-26'
 ---
 
-1 CP、Shooting phase、[[factions/星际战士/detachments/legacy-of-grace.md|Legacy of Grace]] 分队。
+1 CP、Shooting phase、[[factions/星际战士/detachments/legacy-of-grace.md|优雅传承]] 分队。
 
 ## 使用时机
 

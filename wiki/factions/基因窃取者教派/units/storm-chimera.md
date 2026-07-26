@@ -45,4 +45,4 @@ updated: '2026-07-23'
 
 ## 关键词
 - **阵营关键词**：Astra Militarum，Genestealer Cults
-- **普通关键词**：Vehicle，Storm Chimera，[[core-rules/smoke.md|Smoke]]，[[core-rules/dedicated-transport.md|Dedicated Transport]]，[[core-rules/transport.md|Transport]]，Squadron，Imperium
+- **普通关键词**：Vehicle，Storm [[factions/基因窃取者教派/units/chimera.md|Chimera]]，[[core-rules/smoke.md|Smoke]]，[[core-rules/dedicated-transport.md|Dedicated Transport]]，[[core-rules/transport.md|Transport]]，Squadron，Imperium

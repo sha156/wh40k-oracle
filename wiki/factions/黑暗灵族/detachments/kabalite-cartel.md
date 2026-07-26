@@ -10,10 +10,10 @@ tags:
 - 黑暗灵族
 sources:
 - book: 官方结构库 db/wh40k.sqlite（Wahapedia 11 版镜像）
-updated: '2026-07-25'
+updated: '2026-07-26'
 ---
 
-黑暗灵族的分队，分队规则「谋杀议程」。
+黑暗灵族的分队「Kabalite Cartel」，分队规则「谋杀议程」。
 
 ## 分队规则
 
@@ -37,7 +37,7 @@ Show of Strength
 
 - [[factions/黑暗灵族/enhancements/informant-network.md\|线人网络]]
 - [[factions/黑暗灵族/enhancements/leechbite-plate.md\|吸血甲板]]
-- [[factions/黑暗灵族/enhancements/towering-arrogance-kabalite-cartel.md\|高耸傲慢]]
+- [[factions/黑暗灵族/enhancements/towering-arrogance-kabalite-cartel.md\|狂妄自大]]
 - [[factions/黑暗灵族/enhancements/webway-awl.md\|灵网锥]]
 
 ## 战略

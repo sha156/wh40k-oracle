@@ -40,6 +40,7 @@ class UpdateConfig:
     mfm_json: Path = Path("db_sources/mfm/mfm_points.json")
     fp_errata: Path = Path("db_compile/fp_errata_patches.json")
     fp_rules: Path = Path("db_compile/fp_rules_patches.json")
+    official_zh_map: Path = Path("db_compile/official_zh_names.json")
     dsl_payloads: Path = Path("dsl_payloads")
     refined: Path = Path("data_refined")
     blacklibrary_cache: Path = Path("db_sources/blacklibrary/units.json")
@@ -241,10 +242,39 @@ def stage_fp_rules(cfg: UpdateConfig) -> StageResult:
         "fp_rules", True,
         f"文本补丁 应用 {rep['text_applied']} / 幂等 {rep['text_already']} / "
         f"让路 {len(rep['text_mismatch'])}；中文名 应用 {rep['name_applied']} / "
-        f"幂等 {rep['name_already']} / 让路 {len(rep['name_mismatch'])}；"
+        f"幂等 {rep['name_already']} / 让位官方译名 "
+        f"{rep.get('name_superseded_by_official', 0)} / "
+        f"让路 {len(rep['name_mismatch'])}；"
         f"失效标记 应用 {rep['deact_applied']} / 幂等 {rep['deact_already']}；"
         f"补录插行 应用 {rep['ins_applied']} / 幂等 {rep['ins_already']}",
         detail=rep, warning=warn)
+
+
+def stage_official_zh(cfg: UpdateConfig) -> StageResult:
+    """GW 官方中文名投影（**必须排在 fp_rules 之后**）。
+
+    fp_rules 会用 P7 人工译名填 name_zh，官方译名权威更高（宪法 §6）要盖在它上面；
+    顺序反了就是「低权威覆盖高权威」，而两边都是中文名，页面上看不出差别。
+    映射文件缺失时优雅跳过并告警——静默跳过等于全库中文名悄悄退回上一层。
+    """
+    if not cfg.official_zh_map.exists():
+        return StageResult("official_zh", True, f"跳过（{cfg.official_zh_map} 不存在）",
+                           warning="官方中文映射缺失，战略/强化/分队中文名未升级到官方译名")
+    from db_compile.official_zh_apply import apply_official_zh
+    rep = apply_official_zh(cfg.db, map_path=cfg.official_zh_map)
+    warns = []
+    for key, total in rep["missing_ids_total"].items():
+        if total:
+            warns.append(f"{key} 映射里 {total} 个 id 库内查无此行（映射需重编译）")
+    if rep["detachments"]["orphans"]:
+        warns.append(f"{len(rep['detachments']['orphans'])} 个容器名库里不存在")
+    return StageResult(
+        "official_zh", True,
+        f"官方中文名：战略 {rep['stratagems']['targeted']}/{rep['stratagems']['db_rows']}"
+        f"（顶掉旧译名 {rep['stratagems']['superseded_total']}）、"
+        f"强化 {rep['enhancements']['targeted']}/{rep['enhancements']['db_rows']}、"
+        f"分队容器 {rep['detachments']['targeted']}/{rep['detachments']['db_containers']}",
+        detail=rep, warning="；".join(warns) or None)
 
 
 def stage_dsl_apply(cfg: UpdateConfig) -> StageResult:
@@ -460,6 +490,7 @@ _PIPELINE = [
     ("补 Faction Pack 11 版真漂移", stage_fp_errata, False),
     ("应用官方 MFM 分数", stage_mfm_apply, False),
     ("补 Faction Pack 规则文本真漂移", stage_fp_rules, False),
+    ("叠 GW 官方中文名层", stage_official_zh, False),
     ("投影 P7 DSL 真源", stage_dsl_apply, False),
     ("重灌中文别名层", stage_aliases, False),
     ("补黑图书馆中英别名", stage_aliases_blackforum, False),
@@ -479,6 +510,8 @@ _RESTORE_STAGES = [
     ("补 Faction Pack 11 版真漂移", stage_fp_errata),
     ("应用官方 MFM 分数", stage_mfm_apply),
     ("补 Faction Pack 规则文本真漂移", stage_fp_rules),
+    # 官方中文名要盖在 fp_rules 的 P7 译名之上（宪法 §6：官方 > 人工）
+    ("叠 GW 官方中文名层", stage_official_zh),
     ("投影 P7 DSL 真源", stage_dsl_apply),
     ("重灌中文别名层", stage_aliases),
     ("补黑图书馆中英别名", stage_aliases_blackforum),

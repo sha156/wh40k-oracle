@@ -1,21 +1,21 @@
 # 基因窃取者教派
 
-_Last updated: 2026-07-25 17:23 UTC_
+_Last updated: 2026-07-26 05:42 UTC_
 
 ## 分队
 
-- [[factions/基因窃取者教派/detachments/biosanctic-broodsurge|Biosanctic Broodsurge]] — 基因窃取者教派的分队，分队规则「Hypermorphic Fury」。
-- [[factions/基因窃取者教派/detachments/brood-brother-auxilia|Brood Brother Auxilia]] — 基因窃取者教派的分队，分队规则「Integrated Tactics」。
-- [[factions/基因窃取者教派/detachments/cult-unveiled|Cult Unveiled]] — 基因窃取者教派的分队，分队规则「Harassing Fire」。
-- [[factions/基因窃取者教派/detachments/final-day|Final Day]] — 基因窃取者教派的分队，分队规则「Psionic Parasitism」。
-- [[factions/基因窃取者教派/detachments/genespawn-onslaught|Genespawn Onslaught]] — 基因窃取者教派的分队，分队规则「Blessed Visages」。
-- [[factions/基因窃取者教派/detachments/heroes-of-the-uprising|Heroes of the Uprising]] — 基因窃取者教派的分队。
-- [[factions/基因窃取者教派/detachments/host-of-ascension|Host of Ascension]] — 基因窃取者教派的分队，分队规则「A Perfect Ambush」。
-- [[factions/基因窃取者教派/detachments/infestation-swarm|Infestation Swarm]] — 基因窃取者教派的分队，分队规则「Half-Glimpsed Shadows」。
-- [[factions/基因窃取者教派/detachments/outlander-claw|Outlander Claw]] — 基因窃取者教派的分队，分队规则「Rapid Takeover」。
-- [[factions/基因窃取者教派/detachments/purestrain-broodswarm|Purestrain Broodswarm]] — 基因窃取者教派的分队。
-- [[factions/基因窃取者教派/detachments/xenocreed-congregation|Xenocreed Congregation]] — 基因窃取者教派的分队，分队规则「Unquestioning Fanaticism」。
-- [[factions/基因窃取者教派/detachments/xenocult-masses|Xenocult Masses]] — 基因窃取者教派的分队。
+- [[factions/基因窃取者教派/detachments/biosanctic-broodsurge|Biosanctic Broodsurge]] — 基因窃取者教派的分队「Biosanctic Broodsurge」，分队规则「Hypermorphic Fury」。
+- [[factions/基因窃取者教派/detachments/brood-brother-auxilia|Brood Brother Auxilia]] — 基因窃取者教派的分队「Brood Brother Auxilia」，分队规则「Integrated Tactics」。
+- [[factions/基因窃取者教派/detachments/cult-unveiled|Cult Unveiled]] — 基因窃取者教派的分队「Cult Unveiled」，分队规则「Harassing Fire」。
+- [[factions/基因窃取者教派/detachments/genespawn-onslaught|Genespawn Onslaught]] — 基因窃取者教派的分队「Genespawn Onslaught」，分队规则「Blessed Visages」。
+- [[factions/基因窃取者教派/detachments/host-of-ascension|Host of Ascension]] — 基因窃取者教派的分队「Host of Ascension」，分队规则「A Perfect Ambush」。
+- [[factions/基因窃取者教派/detachments/infestation-swarm|Infestation Swarm]] — 基因窃取者教派的分队「Infestation Swarm」，分队规则「Half-Glimpsed Shadows」。
+- [[factions/基因窃取者教派/detachments/outlander-claw|Outlander Claw]] — 基因窃取者教派的分队「Outlander Claw」，分队规则「Rapid Takeover」。
+- [[factions/基因窃取者教派/detachments/xenocreed-congregation|Xenocreed Congregation]] — 基因窃取者教派的分队「Xenocreed Congregation」，分队规则「Unquestioning Fanati...
+- [[factions/基因窃取者教派/detachments/heroes-of-the-uprising|叛逆英雄]] — 基因窃取者教派的分队「叛逆英雄」。
+- [[factions/基因窃取者教派/detachments/xenocult-masses|异形教众]] — 基因窃取者教派的分队「异形教众」。
+- [[factions/基因窃取者教派/detachments/final-day|最终之日]] — 基因窃取者教派的分队「最终之日」，分队规则「Psionic Parasitism」。
+- [[factions/基因窃取者教派/detachments/purestrain-broodswarm|纯血虫群]] — 基因窃取者教派的分队「纯血虫群」。
 
 ## 单位
 
@@ -165,14 +165,12 @@ _Last updated: 2026-07-25 17:23 UTC_
 - [[factions/基因窃取者教派/stratagems/a-deadly-snare|A DEADLY SNARE]] — 1 CP、Charge phase、Host of Ascension 分队、Strategic Ploy Strata...
 - [[factions/基因窃取者教派/stratagems/acceptable-losses|ACCEPTABLE LOSSES]] — 2 CP、Shooting phase、Brood Brother Auxilia 分队、Strategic Ploy...
 - [[factions/基因窃取者教派/stratagems/along-shadowed-trails|ALONG SHADOWED TRAILS]] — 1 CP、Any phase、Outlander Claw 分队、Strategic Ploy Stratagem。
-- [[factions/基因窃取者教派/stratagems/avenge-the-star-children|AVENGE THE STAR CHILDREN]] — 1 CP、Shooting or Fight phase、Final Day 分队、Battle Tactic Stra...
+- [[factions/基因窃取者教派/stratagems/avenge-the-star-children|AVENGE THE STAR CHILDREN]] — 1 CP、Shooting or Fight phase、最终之日 分队、Battle Tactic Stratagem...
 - [[factions/基因窃取者教派/stratagems/bio-horror-revelation|BIO-HORROR REVELATION]] — 1 CP、Shooting phase、Biosanctic Broodsurge 分队、Strategic Ploy...
 - [[factions/基因窃取者教派/stratagems/close-range-shoot-out|CLOSE-RANGE SHOOT-OUT]] — 1 CP、Shooting phase、Outlander Claw 分队、Battle Tactic Stratage...
 - [[factions/基因窃取者教派/stratagems/coordinated-trap|COORDINATED TRAP]] — 2 CP、Shooting or Fight phase、Host of Ascension 分队、Battle Tac...
-- [[factions/基因窃取者教派/stratagems/darting-attacks|DARTING ATTACKS]] — 1 CP、Shooting or Charge phase、Final Day 分队、Strategic Ploy St...
 - [[factions/基因窃取者教派/stratagems/deft-manoeuvring|DEFT MANOEUVRING]] — 1 CP、Shooting phase、Outlander Claw 分队、Battle Tactic Stratage...
 - [[factions/基因窃取者教派/stratagems/devoted-crew|DEVOTED CREW]] — 1 CP、Shooting or Fight phase、Outlander Claw 分队、Battle Tactic...
-- [[factions/基因窃取者教派/stratagems/divine-imperative|DIVINE IMPERATIVE]] — 1 CP、Charge phase、Final Day 分队、Battle Tactic Stratagem。
 - [[factions/基因窃取者教派/stratagems/encircling-the-prey|ENCIRCLING THE PREY]] — 1 CP、Fight phase、Outlander Claw 分队、Strategic Ploy Stratagem。
 - [[factions/基因窃取者教派/stratagems/evasive-vanguard|EVASIVE VANGUARD]] — 1 CP、Any phase、Biosanctic Broodsurge 分队、Strategic Ploy Strat...
 - [[factions/基因窃取者教派/stratagems/for-the-brood|FOR THE BROOD]] — 1 CP、Shooting phase、Cult Unveiled 分队、Strategic Ploy Stratage...
@@ -182,7 +180,6 @@ _Last updated: 2026-07-25 17:23 UTC_
 - [[factions/基因窃取者教派/stratagems/hunting-grounds|HUNTING GROUNDS]] — 1 CP、Movement phase、Infestation Swarm 分队、Strategic Ploy Stra...
 - [[factions/基因窃取者教派/stratagems/hyper-metabolic-vigour|HYPER-METABOLIC VIGOUR]] — 1 CP、Fight phase、Biosanctic Broodsurge 分队、Battle Tactic Stra...
 - [[factions/基因窃取者教派/stratagems/hyperadrenal-reflexes|HYPERADRENAL REFLEXES]] — 1 CP、Fight phase、Infestation Swarm 分队、Battle Tactic Stratage...
-- [[factions/基因窃取者教派/stratagems/hyperferocity|HYPERFEROCITY]] — 1 CP、Fight phase、Final Day 分队、Battle Tactic Stratagem。
 - [[factions/基因窃取者教派/stratagems/in-the-shadow-of-iron|IN THE SHADOW OF IRON]] — 1 CP、Any phase、Brood Brother Auxilia 分队、Strategic Ploy Strat...
 - [[factions/基因窃取者教派/stratagems/lurking-menace|LURKING MENACE]] — 1 CP、Shooting phase、Cult Unveiled 分队、Battle Tactic Stratagem...
 - [[factions/基因窃取者教派/stratagems/lying-in-wait|LYING IN WAIT]] — 1 CP、Movement phase、Host of Ascension 分队、Strategic Ploy Stra...
@@ -192,10 +189,8 @@ _Last updated: 2026-07-25 17:23 UTC_
 - [[factions/基因窃取者教派/stratagems/pervasive-dread|PERVASIVE DREAD]] — 1 CP、Fight phase、Infestation Swarm 分队、Strategic Ploy Stratag...
 - [[factions/基因窃取者教派/stratagems/planned-extraction|PLANNED EXTRACTION]] — 1 CP、Shooting phase、Cult Unveiled 分队、Strategic Ploy Stratage...
 - [[factions/基因窃取者教派/stratagems/primed-and-readied|PRIMED AND READIED]] — 2 CP、Shooting or Fight phase、Host of Ascension 分队、Battle Tac...
-- [[factions/基因窃取者教派/stratagems/psi-surge|PSI SURGE]] — 1 CP、Any phase、Final Day 分队、Strategic Ploy Stratagem。
 - [[factions/基因窃取者教派/stratagems/rapid-feint|RAPID FEINT]] — 1 CP、Movement phase、Outlander Claw 分队、Strategic Ploy Stratag...
 - [[factions/基因窃取者教派/stratagems/regimental-reinforcements|REGIMENTAL REINFORCEMENTS]] — 1 CP、Shooting or Fight phase、Brood Brother Auxilia 分队、Strate...
-- [[factions/基因窃取者教派/stratagems/resistance-tunnels|RESISTANCE TUNNELS]] — 1 CP、Charge phase、Final Day 分队、Strategic Ploy Stratagem。
 - [[factions/基因窃取者教派/stratagems/return-to-the-shadows|RETURN TO THE SHADOWS]] — 1 CP、Fight phase、Host of Ascension 分队、Strategic Ploy Stratag...
 - [[factions/基因窃取者教派/stratagems/saintly-paroxysm|SAINTLY PAROXYSM]] — 1 CP、Fight phase、Biosanctic Broodsurge 分队、Epic Deed Stratage...
 - [[factions/基因窃取者教派/stratagems/soldiers-of-the-star-children|SOLDIERS OF THE STAR CHILDREN]] — 1 CP、Shooting phase、Genespawn Onslaught 分队、Strategic Ploy St...
@@ -209,15 +204,20 @@ _Last updated: 2026-07-25 17:23 UTC_
 - [[factions/基因窃取者教派/stratagems/tunnel-crawlers|TUNNEL CRAWLERS]] — 1 CP、Movement phase、Host of Ascension 分队、Strategic Ploy Stra...
 - [[factions/基因窃取者教派/stratagems/unstoppable-brutes|UNSTOPPABLE BRUTES]] — 1 CP、Movement or Charge phase、Genespawn Onslaught 分队、Strateg...
 - [[factions/基因窃取者教派/stratagems/vengeance-for-the-martyr|VENGEANCE FOR THE MARTYR!]] — 1 CP、Shooting or Fight phase、Xenocreed Congregation 分队、Epic...
-- [[factions/基因窃取者教派/stratagems/living-up-to-legend|不负盛名]] — 1 CP、Shooting or Fight phase、Heroes of the Uprising 分队。
-- [[factions/基因窃取者教派/stratagems/crawling-horror|匍行恐怖]] — 1 CP、Movement phase、Purestrain Broodswarm 分队。
-- [[factions/基因窃取者教派/stratagems/eyes-of-the-cult|教派之眼]] — 1 CP、Shooting phase、Xenocult Masses 分队。
-- [[factions/基因窃取者教派/stratagems/surging-broodworship|汹涌巢崇]] — 1 CP、Shooting or Fight phase、Heroes of the Uprising 分队。
-- [[factions/基因窃取者教派/stratagems/lurk-and-strike|潜伏突袭]] — 1 CP、Movement phase、Purestrain Broodswarm 分队。
-- [[factions/基因窃取者教派/stratagems/fanatical-hail|狂信弹雨]] — 1 CP、Shooting phase、Xenocult Masses 分队。
-- [[factions/基因窃取者教派/stratagems/slunk-from-the-underbelly|自暗腹潜出]] — 1 CP、Shooting phase、Xenocult Masses 分队。
-- [[factions/基因窃取者教派/stratagems/loyal-to-the-end|至死效忠]] — 1 CP、Fight phase、Heroes of the Uprising 分队。
-- [[factions/基因窃取者教派/stratagems/inhuman-reactions|非人反应]] — 1 CP、Movement phase、Purestrain Broodswarm 分队。
+- [[factions/基因窃取者教派/stratagems/living-up-to-legend|名不虚传]] — 1 CP、Shooting or Fight phase、叛逆英雄 分队。
+- [[factions/基因窃取者教派/stratagems/inhuman-reactions|异形反应力]] — 1 CP、Movement phase、纯血虫群 分队。
+- [[factions/基因窃取者教派/stratagems/loyal-to-the-end|忠诚至终]] — 1 CP、Fight phase、叛逆英雄 分队。
+- [[factions/基因窃取者教派/stratagems/resistance-tunnels|抵抗隧道]] — 1 CP、Charge phase、最终之日 分队、Strategic Ploy Stratagem。
+- [[factions/基因窃取者教派/stratagems/eyes-of-the-cult|教派之眼]] — 1 CP、Shooting phase、异形教众 分队。
+- [[factions/基因窃取者教派/stratagems/surging-broodworship|族群信仰之力]] — 1 CP、Shooting or Fight phase、叛逆英雄 分队。
+- [[factions/基因窃取者教派/stratagems/hyperferocity|极强凶性]] — 1 CP、Fight phase、最终之日 分队、Battle Tactic Stratagem。
+- [[factions/基因窃取者教派/stratagems/slunk-from-the-underbelly|潜伏于地下世界]] — 1 CP、Shooting phase、异形教众 分队。
+- [[factions/基因窃取者教派/stratagems/lurk-and-strike|潜伏再突袭]] — 1 CP、Movement phase、纯血虫群 分队。
+- [[factions/基因窃取者教派/stratagems/psi-surge|灵能刺激]] — 1 CP、Any phase、最终之日 分队、Strategic Ploy Stratagem。
+- [[factions/基因窃取者教派/stratagems/crawling-horror|爬行怪物]] — 1 CP、Movement phase、纯血虫群 分队。
+- [[factions/基因窃取者教派/stratagems/fanatical-hail|狂热弹雨]] — 1 CP、Shooting phase、异形教众 分队。
+- [[factions/基因窃取者教派/stratagems/divine-imperative|神圣指令]] — 1 CP、Charge phase、最终之日 分队、Battle Tactic Stratagem。
+- [[factions/基因窃取者教派/stratagems/darting-attacks|躲闪攻击]] — 1 CP、Shooting or Charge phase、最终之日 分队、Strategic Ploy Stratag...
 
 ## 强化
 
@@ -228,18 +228,12 @@ _Last updated: 2026-07-25 17:23 UTC_
 - [[factions/基因窃取者教派/enhancements/assault-commando|Assault Commando]] — 15 分、Outlander Claw 分队。
 - [[factions/基因窃取者教派/enhancements/biomorph-adaptation|Biomorph Adaptation]] — 25 分、Biosanctic Broodsurge 分队。
 - [[factions/基因窃取者教派/enhancements/cartographic-data-leech|Cartographic Data-leech]] — 10 分、Outlander Claw 分队。
-- [[factions/基因窃取者教派/enhancements/contraband-munitions|Contraband Munitions]] — 分数未知、Heroes of the Uprising 分队。
 - [[factions/基因窃取者教派/enhancements/deeds-that-speak-to-the-masses|Deeds That Speak to the Masses]] — 25 分、Xenocreed Congregation 分队。
 - [[factions/基因窃取者教派/enhancements/denunciator-of-tyrants|Denunciator of Tyrants]] — 25 分、Xenocreed Congregation 分队。
-- [[factions/基因窃取者教派/enhancements/devious-disguises|Devious Disguises]] — 分数未知、Xenocult Masses 分队。
-- [[factions/基因窃取者教派/enhancements/enraptured-damnation|Enraptured Damnation]] — 10 分、Final Day 分队。
+- [[factions/基因窃取者教派/enhancements/enraptured-damnation|Enraptured Damnation]] — 10 分、最终之日 分队。
 - [[factions/基因窃取者教派/enhancements/firepoint-commander|Firepoint Commander]] — 10 分、Brood Brother Auxilia 分队。
 - [[factions/基因窃取者教派/enhancements/gene-sires-reliquant|Gene-sire’s Reliquant]] — 5 分、Xenocreed Congregation 分队。
-- [[factions/基因窃取者教派/enhancements/gene-tailored-toxins|Gene-tailored Toxins]] — 分数未知、Heroes of the Uprising 分队。
 - [[factions/基因窃取者教派/enhancements/incendiary-inspiration|Incendiary Inspiration]] — 15 分、Xenocreed Congregation 分队。
-- [[factions/基因窃取者教派/enhancements/inhuman-integration|Inhuman Integration]] — 20 分、Final Day 分队。
-- [[factions/基因窃取者教派/enhancements/inspired-to-greatness|Inspired to Greatness]] — 分数未知、Xenocult Masses 分队。
-- [[factions/基因窃取者教派/enhancements/mark-of-the-star-children|Mark of the Star Children]] — 分数未知、Purestrain Broodswarm 分队。
 - [[factions/基因窃取者教派/enhancements/martial-espionage|Martial Espionage]] — 25 分、Brood Brother Auxilia 分队。
 - [[factions/基因窃取者教派/enhancements/master-saboteur|Master Saboteur]] — 0 分、Cult Unveiled 分队。
 - [[factions/基因窃取者教派/enhancements/miasmic-fumes|Miasmic Fumes]] — 0 分、Genespawn Onslaught 分队。
@@ -253,8 +247,14 @@ _Last updated: 2026-07-25 17:23 UTC_
 - [[factions/基因窃取者教派/enhancements/spiteful-imp|Spiteful Imp]] — 0 分、Genespawn Onslaught 分队。
 - [[factions/基因窃取者教派/enhancements/stalking-menace|Stalking Menace]] — 0 分、Infestation Swarm 分队。
 - [[factions/基因窃取者教派/enhancements/starfall-shells|Starfall Shells]] — 10 分、Outlander Claw 分队。
-- [[factions/基因窃取者教派/enhancements/synaptic-auger|Synaptic Auger]] — 15 分、Final Day 分队。
-- [[factions/基因窃取者教派/enhancements/talons-of-the-sire|Talons of the Sire]] — 分数未知、Purestrain Broodswarm 分队。
+- [[factions/基因窃取者教派/enhancements/synaptic-auger|Synaptic Auger]] — 15 分、最终之日 分队。
 - [[factions/基因窃取者教派/enhancements/the-hero-returned|The Hero Returned]] — 20 分、Brood Brother Auxilia 分队。
-- [[factions/基因窃取者教派/enhancements/vanguard-tyrant|Vanguard Tyrant]] — 25 分、Final Day 分队。
+- [[factions/基因窃取者教派/enhancements/inspired-to-greatness|伟大激励]] — 分数未知、异形教众 分队。
+- [[factions/基因窃取者教派/enhancements/vanguard-tyrant|先锋暴君]] — 25 分、最终之日 分队。
+- [[factions/基因窃取者教派/enhancements/gene-tailored-toxins|基因剧毒]] — 分数未知、叛逆英雄 分队。
+- [[factions/基因窃取者教派/enhancements/inhuman-integration|异常结合]] — 20 分、最终之日 分队。
+- [[factions/基因窃取者教派/enhancements/talons-of-the-sire|族长之爪]] — 分数未知、纯血虫群 分队。
+- [[factions/基因窃取者教派/enhancements/mark-of-the-star-children|星辰之子印记]] — 分数未知、纯血虫群 分队。
+- [[factions/基因窃取者教派/enhancements/devious-disguises|狡猾伪装]] — 分数未知、异形教众 分队。
+- [[factions/基因窃取者教派/enhancements/contraband-munitions|违禁弹药]] — 分数未知、叛逆英雄 分队。
 

@@ -1,7 +1,9 @@
 ---
 id: '000010800006'
-name_zh: 刀枪不入
+name_zh: 坚固耐用
 name_en: IMPERVIOUS
+aliases:
+- 刀枪不入
 faction: 兽人
 type: stratagem
 detachment: Blitz Brigade
@@ -14,10 +16,10 @@ tags:
 - 兽人
 sources:
 - book: 官方结构库 db/wh40k.sqlite（Wahapedia 11 版镜像）
-updated: '2026-07-25'
+updated: '2026-07-26'
 ---
 
-1 CP、Shooting phase、[[factions/兽人/detachments/blitz-brigade.md|Blitz Brigade]] 分队、Strategic Ploy Stratagem。
+1 CP、Shooting phase、[[factions/兽人/detachments/blitz-brigade.md|闪击旅]] 分队、Strategic Ploy Stratagem。
 
 ## 使用时机
 

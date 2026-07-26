@@ -1,20 +1,20 @@
 # 灰骑士
 
-_Last updated: 2026-07-25 17:23 UTC_
+_Last updated: 2026-07-26 05:42 UTC_
 
 ## 分队
 
-- [[factions/灰骑士/detachments/argent-assault|Argent Assault]] — 灰骑士的分队。
-- [[factions/灰骑士/detachments/augurium-task-force|Augurium Task Force]] — 灰骑士的分队，分队规则「Prescient Redeployment」。
-- [[factions/灰骑士/detachments/baneslayer-strike|Baneslayer Strike]] — 灰骑士的分队，分队规则「Pre-Emptive Strike」。
-- [[factions/灰骑士/detachments/banishers|Banishers]] — 灰骑士的分队，分队规则「Channelled Force」。
-- [[factions/灰骑士/detachments/brotherhood-strike|Brotherhood Strike]] — 灰骑士的分队，分队规则「Fury of Titan」。
-- [[factions/灰骑士/detachments/fires-of-purgation|Fires of Purgation]] — 灰骑士的分队。
-- [[factions/灰骑士/detachments/hallowed-conclave|Hallowed Conclave]] — 灰骑士的分队，分队规则「Duty Before All」。
-- [[factions/灰骑士/detachments/immaterial-interdiction|Immaterial Interdiction]] — 灰骑士的分队。
-- [[factions/灰骑士/detachments/sanctic-spearhead|Sanctic Spearhead]] — 灰骑士的分队，分队规则「Mailed Fist」。
-- [[factions/灰骑士/detachments/void-purge-force|Void Purge Force]] — 灰骑士的分队，分队规则「An Urgent Duty」。
-- [[factions/灰骑士/detachments/warpbane-task-force|Warpbane Task Force]] — 灰骑士的分队，分队规则「Hallowed Ground」。
+- [[factions/灰骑士/detachments/augurium-task-force|Augurium Task Force]] — 灰骑士的分队「Augurium Task Force」，分队规则「Prescient Redeployment」。
+- [[factions/灰骑士/detachments/baneslayer-strike|Baneslayer Strike]] — 灰骑士的分队「Baneslayer Strike」，分队规则「Pre-Emptive Strike」。
+- [[factions/灰骑士/detachments/banishers|Banishers]] — 灰骑士的分队「Banishers」，分队规则「Channelled Force」。
+- [[factions/灰骑士/detachments/brotherhood-strike|Brotherhood Strike]] — 灰骑士的分队「Brotherhood Strike」，分队规则「Fury of Titan」。
+- [[factions/灰骑士/detachments/hallowed-conclave|Hallowed Conclave]] — 灰骑士的分队「Hallowed Conclave」，分队规则「Duty Before All」。
+- [[factions/灰骑士/detachments/sanctic-spearhead|Sanctic Spearhead]] — 灰骑士的分队「Sanctic Spearhead」，分队规则「Mailed Fist」。
+- [[factions/灰骑士/detachments/void-purge-force|Void Purge Force]] — 灰骑士的分队「Void Purge Force」，分队规则「An Urgent Duty」。
+- [[factions/灰骑士/detachments/argent-assault|圣银突袭]] — 灰骑士的分队「圣银突袭」。
+- [[factions/灰骑士/detachments/immaterial-interdiction|次元拦截]] — 灰骑士的分队「次元拦截」。
+- [[factions/灰骑士/detachments/warpbane-task-force|次元灾星特遣队]] — 灰骑士的分队「次元灾星特遣队」，分队规则「Hallowed Ground」。
+- [[factions/灰骑士/detachments/fires-of-purgation|洗罪之火]] — 灰骑士的分队「洗罪之火」。
 
 ## 单位
 
@@ -53,7 +53,6 @@ _Last updated: 2026-07-25 17:23 UTC_
 ## 策略技能
 
 - [[factions/灰骑士/stratagems/abominus-class-targets|ABOMINUS-CLASS TARGETS]] — 1 CP、Shooting or Fight phase、Sanctic Spearhead 分队、Battle Tac...
-- [[factions/灰骑士/stratagems/aegis-eternal|AEGIS ETERNAL]] — 1 CP、Shooting phase、Warpbane Task Force 分队、Battle Tactic Str...
 - [[factions/灰骑士/stratagems/aggressive-anticipation|AGGRESSIVE ANTICIPATION]] — 1 CP、Shooting or Fight phase、Augurium Task Force 分队、Battle T...
 - [[factions/灰骑士/stratagems/appointed-hour|APPOINTED HOUR]] — 1 CP、Shooting or Fight phase、Augurium Task Force 分队、Battle T...
 - [[factions/灰骑士/stratagems/argent-wrath|ARGENT WRATH]] — 1 CP、Charge phase、Sanctic Spearhead 分队、Strategic Ploy Strata...
@@ -66,13 +65,11 @@ _Last updated: 2026-07-25 17:23 UTC_
 - [[factions/灰骑士/stratagems/combat-manifestation|COMBAT MANIFESTATION]] — 1 CP、Movement phase、Brotherhood Strike 分队、Epic Deed Stratage...
 - [[factions/灰骑士/stratagems/duty-unending|DUTY UNENDING]] — 1 CP、Movement phase、Brotherhood Strike 分队、Strategic Ploy Str...
 - [[factions/灰骑士/stratagems/expeditious-exit|EXPEDITIOUS EXIT]] — 2 CP、Fight phase、Brotherhood Strike 分队、Strategic Ploy Strata...
-- [[factions/灰骑士/stratagems/fires-of-covenant|FIRES OF COVENANT]] — 1 CP、Movement phase、Warpbane Task Force 分队、Battle Tactic Str...
-- [[factions/灰骑士/stratagems/flames-of-sanctity|FLAMES OF SANCTITY]] — 1 CP、Fight phase、Warpbane Task Force 分队、Strategic Ploy Strat...
+- [[factions/灰骑士/stratagems/fires-of-covenant|FIRES OF COVENANT]] — 1 CP、Movement phase、次元灾星特遣队 分队、Battle Tactic Stratagem。
 - [[factions/灰骑士/stratagems/force-wave|FORCE WAVE]] — 1 CP、Movement or Charge phase、Sanctic Spearhead 分队、Strategic...
 - [[factions/灰骑士/stratagems/forewarned-evasion|FOREWARNED EVASION]] — 1 CP、Shooting or Fight phase、Augurium Task Force 分队、Epic Dee...
 - [[factions/灰骑士/stratagems/giants-of-the-battlefield|GIANTS OF THE BATTLEFIELD]] — 1 CP、Fight phase、Hallowed Conclave 分队、Battle Tactic Stratage...
 - [[factions/灰骑士/stratagems/grind-them-underfoot|GRIND THEM UNDERFOOT]] — 1 CP、Charge phase、Hallowed Conclave 分队、Strategic Ploy Strata...
-- [[factions/灰骑士/stratagems/hallowed-beacon|HALLOWED BEACON]] — 1 CP、Movement phase、Warpbane Task Force 分队、Battle Tactic Str...
 - [[factions/灰骑士/stratagems/hexbane-wards|HEXBANE WARDS]] — 1 CP、Fight phase、Void Purge Force 分队、Battle Tactic Stratagem...
 - [[factions/灰骑士/stratagems/hexwrought-reprisal|HEXWROUGHT REPRISAL]] — 1 CP、Any phase、Banishers 分队、Epic Deed Stratagem。
 - [[factions/灰骑士/stratagems/mirage-of-echoes|MIRAGE OF ECHOES]] — 1 CP、Movement phase、Augurium Task Force 分队、Strategic Ploy St...
@@ -84,9 +81,7 @@ _Last updated: 2026-07-25 17:23 UTC_
 - [[factions/灰骑士/stratagems/redirected-strike|REDIRECTED STRIKE]] — 1 CP、Command phase、Augurium Task Force 分队、Epic Deed Stratage...
 - [[factions/灰骑士/stratagems/redoubled-assault|REDOUBLED ASSAULT]] — 1 CP、Movement phase、Sanctic Spearhead 分队、Strategic Ploy Stra...
 - [[factions/灰骑士/stratagems/relentless-boarders|RELENTLESS BOARDERS]] — 1 CP、Charge phase、Baneslayer Strike 分队、Strategic Ploy Strata...
-- [[factions/灰骑士/stratagems/repelling-sphere|REPELLING SPHERE]] — 1 CP、Charge phase、Warpbane Task Force 分队、Battle Tactic Strat...
 - [[factions/灰骑士/stratagems/sanctic-circle|SANCTIC CIRCLE]] — 2 CP、Command phase、Baneslayer Strike 分队、Epic Deed Stratagem。
-- [[factions/灰骑士/stratagems/sanctified-kill-zone|SANCTIFIED KILL ZONE]] — 1 CP、Shooting or Fight phase、Warpbane Task Force 分队、Battle T...
 - [[factions/灰骑士/stratagems/sanctified-slaughter|SANCTIFIED SLAUGHTER]] — 1 CP、Fight phase、Void Purge Force 分队、Battle Tactic Stratagem...
 - [[factions/灰骑士/stratagems/shadow-of-anarch|SHADOW OF ANARCH]] — 1 CP、Movement phase、Banishers 分队、Epic Deed Stratagem。
 - [[factions/灰骑士/stratagems/shining-resolve|SHINING RESOLVE]] — 1 CP、Shooting phase、Hallowed Conclave 分队、Strategic Ploy Stra...
@@ -96,40 +91,38 @@ _Last updated: 2026-07-25 17:23 UTC_
 - [[factions/灰骑士/stratagems/truesilver-will|TRUESILVER WILL]] — 1 CP、Any phase、Sanctic Spearhead 分队、Epic Deed Stratagem。
 - [[factions/灰骑士/stratagems/unending-fidelity|UNENDING FIDELITY]] — 1 CP、Shooting or Fight phase、Hallowed Conclave 分队、Strategic...
 - [[factions/灰骑士/stratagems/warding-chant|WARDING CHANT]] — 1 CP、Shooting or Fight phase、Banishers 分队、Epic Deed Stratage...
-- [[factions/灰骑士/stratagems/aura-of-vengeance|复仇灵光]] — 1 CP、Fight phase、Argent Assault 分队。
-- [[factions/灰骑士/stratagems/a-threat-ended|威胁终结]] — 1 CP、Fight phase、Argent Assault 分队。
-- [[factions/灰骑士/stratagems/responsive-displacement|应变位移]] — 1 CP、Movement phase、Immaterial Interdiction 分队。
-- [[factions/灰骑士/stratagems/blades-from-the-beyond|彼界之刃]] — 1 CP、Fight phase、Immaterial Interdiction 分队。
-- [[factions/灰骑士/stratagems/by-thought-alone|意念独行]] — 1 CP、Shooting phase、Immaterial Interdiction 分队。
-- [[factions/灰骑士/stratagems/spiritsear|灼魂]] — 1 CP、Shooting phase、Fires of Purgation 分队。
-- [[factions/灰骑士/stratagems/truesilver-aegis|真银庇护]] — 1 CP、Any phase、Argent Assault 分队。
-- [[factions/灰骑士/stratagems/focused-immolation|聚焦焚烧]] — 1 CP、Shooting phase、Fires of Purgation 分队。
-- [[factions/灰骑士/stratagems/soul-locked|锁魂]] — 1 CP、Movement phase、Fires of Purgation 分队。
+- [[factions/灰骑士/stratagems/by-thought-alone|仅凭思维]] — 1 CP、Shooting phase、次元拦截 分队。
+- [[factions/灰骑士/stratagems/responsive-displacement|反应式传送]] — 1 CP、Movement phase、次元拦截 分队。
+- [[factions/灰骑士/stratagems/sanctified-kill-zone|圣化击杀区]] — 1 CP、Shooting or Fight phase、次元灾星特遣队 分队、Battle Tactic Strata...
+- [[factions/灰骑士/stratagems/flames-of-sanctity|圣洁烈焰]] — 1 CP、Fight phase、次元灾星特遣队 分队、Strategic Ploy Stratagem。
+- [[factions/灰骑士/stratagems/aura-of-vengeance|复仇灵光]] — 1 CP、Fight phase、圣银突袭 分队。
+- [[factions/灰骑士/stratagems/blades-from-the-beyond|天外之剑]] — 1 CP、Fight phase、次元拦截 分队。
+- [[factions/灰骑士/stratagems/a-threat-ended|威胁终结]] — 1 CP、Fight phase、圣银突袭 分队。
+- [[factions/灰骑士/stratagems/repelling-sphere|排斥护盾]] — 1 CP、Charge phase、次元灾星特遣队 分队、Battle Tactic Stratagem。
+- [[factions/灰骑士/stratagems/aegis-eternal|永恒圣盾]] — 1 CP、Shooting phase、次元灾星特遣队 分队、Battle Tactic Stratagem。
+- [[factions/灰骑士/stratagems/spiritsear|灵魂灼烧]] — 1 CP、Shooting phase、洗罪之火 分队。
+- [[factions/灰骑士/stratagems/truesilver-aegis|真银圣铠]] — 1 CP、Any phase、圣银突袭 分队。
+- [[factions/灰骑士/stratagems/hallowed-beacon|神圣信标]] — 1 CP、Movement phase、次元灾星特遣队 分队、Battle Tactic Stratagem。
+- [[factions/灰骑士/stratagems/soul-locked|锁定灵魂]] — 1 CP、Movement phase、洗罪之火 分队。
+- [[factions/灰骑士/stratagems/focused-immolation|集中焚烧]] — 1 CP、Shooting phase、洗罪之火 分队。
 
 ## 强化
 
 - [[factions/灰骑士/enhancements/a-foot-in-the-future|A Foot in the Future]] — 15 分、Augurium Task Force 分队。
-- [[factions/灰骑士/enhancements/astral-overlap|Astral Overlap]] — 分数未知、Immaterial Interdiction 分队。
+- [[factions/灰骑士/enhancements/astral-overlap|Astral Overlap]] — 分数未知、次元拦截 分队。
 - [[factions/灰骑士/enhancements/banishing-wave-psychic|Banishing Wave (Psychic)]] — 20 分、Brotherhood Strike 分队。
 - [[factions/灰骑士/enhancements/blinding-aura|Blinding Aura]] — 10 分、Brotherhood Strike 分队。
-- [[factions/灰骑士/enhancements/boons-of-deimos|Boons of Deimos]] — 分数未知、Fires of Purgation 分队。
 - [[factions/灰骑士/enhancements/close-and-sanction|Close and Sanction]] — 0 分、Baneslayer Strike 分队。
 - [[factions/灰骑士/enhancements/doomseers-amulet|Doomseer’s Amulet]] — 25 分、Augurium Task Force 分队。
 - [[factions/灰骑士/enhancements/driven-by-duty|Driven by Duty]] — 10 分、Sanctic Spearhead 分队。
 - [[factions/灰骑士/enhancements/eye-of-the-augurium|Eye of the Augurium]] — 25 分、Hallowed Conclave 分队。
 - [[factions/灰骑士/enhancements/grimoire-of-conjunctions|Grimoire of Conjunctions]] — 10 分、Augurium Task Force 分队。
 - [[factions/灰骑士/enhancements/inescapable-judgement-psychic|Inescapable Judgement (Psychic)]] — 20 分、Hallowed Conclave 分队。
-- [[factions/灰骑士/enhancements/mandulian-reliquary|Mandulian Reliquary]] — 20 分、Warpbane Task Force 分队。
 - [[factions/灰骑士/enhancements/nemesis-rounds|Nemesis Rounds]] — 10 分、Hallowed Conclave 分队。
-- [[factions/灰骑士/enhancements/paragon-of-sanctity|Paragon of Sanctity]] — 10 分、Warpbane Task Force 分队。
-- [[factions/灰骑士/enhancements/phial-of-the-abyss|Phial of the Abyss]] — 25 分、Warpbane Task Force 分队。
-- [[factions/灰骑士/enhancements/precognicient-volleys|Precognicient Volleys]] — 分数未知、Fires of Purgation 分队。
-- [[factions/灰骑士/enhancements/predestined-coordinates|Predestined Coordinates]] — 分数未知、Immaterial Interdiction 分队。
-- [[factions/灰骑士/enhancements/psychic-celerity|Psychic Celerity]] — 分数未知、Argent Assault 分队。
+- [[factions/灰骑士/enhancements/predestined-coordinates|Predestined Coordinates]] — 分数未知、次元拦截 分队。
 - [[factions/灰骑士/enhancements/purity-of-purpose|Purity of Purpose]] — 15 分、Brotherhood Strike 分队。
 - [[factions/灰骑士/enhancements/pyresoul-psychic|Pyresoul (Psychic)]] — 20 分、Banishers 分队。
 - [[factions/灰骑士/enhancements/quickening-foci|Quickening Foci]] — 15 分、Sanctic Spearhead 分队。
-- [[factions/灰骑士/enhancements/radiant-champion|Radiant Champion]] — 15 分、Warpbane Task Force 分队。
 - [[factions/灰骑士/enhancements/sanctic-reaper|Sanctic Reaper]] — 15 分、Hallowed Conclave 分队。
 - [[factions/灰骑士/enhancements/shield-of-admonishment|Shield of Admonishment]] — 0 分、Baneslayer Strike 分队。
 - [[factions/灰骑士/enhancements/shield-of-prophecy|Shield of Prophecy]] — 20 分、Augurium Task Force 分队。
@@ -141,5 +134,12 @@ _Last updated: 2026-07-25 17:23 UTC_
 - [[factions/灰骑士/enhancements/the-ephemeral-tome|The Ephemeral Tome]] — 15 分、Banishers 分队。
 - [[factions/灰骑士/enhancements/the-sixty-sixth-seal|The Sixty-sixth Seal]] — 25 分、Banishers 分队。
 - [[factions/灰骑士/enhancements/tome-of-forbidden-ways|Tome of Forbidden Ways]] — 25 分、Brotherhood Strike 分队。
-- [[factions/灰骑士/enhancements/vigilance-of-titan|Vigilance of Titan]] — 分数未知、Argent Assault 分队。
+- [[factions/灰骑士/enhancements/paragon-of-sanctity|圣洁楷模]] — 10 分、次元灾星特遣队 分队。
+- [[factions/灰骑士/enhancements/boons-of-deimos|戴莫斯的恩赐]] — 分数未知、洗罪之火 分队。
+- [[factions/灰骑士/enhancements/mandulian-reliquary|曼杜里斯骨匣]] — 20 分、次元灾星特遣队 分队。
+- [[factions/灰骑士/enhancements/vigilance-of-titan|泰坦的警戒]] — 分数未知、圣银突袭 分队。
+- [[factions/灰骑士/enhancements/phial-of-the-abyss|深渊安瓿]] — 25 分、次元灾星特遣队 分队。
+- [[factions/灰骑士/enhancements/psychic-celerity|灵能敏捷]] — 分数未知、圣银突袭 分队。
+- [[factions/灰骑士/enhancements/radiant-champion|闪耀勇士]] — 15 分、次元灾星特遣队 分队。
+- [[factions/灰骑士/enhancements/precognicient-volleys|预知齐射]] — 分数未知、洗罪之火 分队。
 

@@ -1,7 +1,9 @@
 ---
 id: fp11e-nec-hand-s3
-name_zh: 纳米饱和
+name_zh: 纳米扩散
 name_en: Nanosaturation
+aliases:
+- 纳米饱和
 faction: 太空死灵
 type: stratagem
 detachment: Hand of the Dynasty
@@ -13,10 +15,10 @@ tags:
 - 太空死灵
 sources:
 - book: 官方结构库 db/wh40k.sqlite（Wahapedia 11 版镜像）
-updated: '2026-07-25'
+updated: '2026-07-26'
 ---
 
-1 CP、Opponent's Shooting phase、[[factions/太空死灵/detachments/hand-of-the-dynasty.md|Hand of the Dynasty]] 分队。
+1 CP、Opponent's Shooting phase、[[factions/太空死灵/detachments/hand-of-the-dynasty.md|王朝之手]] 分队。
 
 ## 使用时机
 

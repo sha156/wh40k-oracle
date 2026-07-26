@@ -45,4 +45,4 @@ updated: '2026-07-23'
 
 ## 关键词
 - **阵营关键词**：Adeptus Astartes，Blood Angels
-- **普通关键词**：Imperium，Dreadnought，[[core-rules/psyker.md|Psyker]]，Vehicle，[[core-rules/walker.md|Walker]]，[[core-rules/smoke.md|Smoke]]，Librarian Dreadnought
+- **普通关键词**：Imperium，[[factions/星际战士/units/dreadnought.md|Dreadnought]]，[[core-rules/psyker.md|Psyker]]，Vehicle，[[core-rules/walker.md|Walker]]，[[core-rules/smoke.md|Smoke]]，[[factions/星际战士/units/librarian.md|Librarian]] Dreadnought

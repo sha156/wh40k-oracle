@@ -1,6 +1,6 @@
 ---
 id: fp11e-tyranids-norn-s3
-name_zh: 缠缚弹
+name_zh: 束缚弹药
 name_en: TANGLESTRIKE ROUNDS
 faction: 泰伦虫族
 type: stratagem
@@ -13,10 +13,10 @@ tags:
 - 泰伦虫族
 sources:
 - book: 官方结构库 db/wh40k.sqlite（Wahapedia 11 版镜像）
-updated: '2026-07-25'
+updated: '2026-07-26'
 ---
 
-1 CP、Shooting phase、[[factions/泰伦虫族/detachments/talons-of-the-norn-queen.md|Talons of the Norn Queen]] 分队。
+1 CP、Shooting phase、[[factions/泰伦虫族/detachments/talons-of-the-norn-queen.md|诺恩女王之爪]] 分队。
 
 ## 使用时机
 

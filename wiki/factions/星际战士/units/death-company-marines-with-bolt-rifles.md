@@ -57,4 +57,4 @@ updated: '2026-07-23'
 
 ## 关键词
 - **阵营关键词**：Adeptus Astartes，Blood Angels
-- **普通关键词**：Imperium，Death Company Marines with Bolt Rifles，Death Company，Tacticus，[[core-rules/grenades.md|Grenades]]，[[core-rules/infantry.md|Infantry]]
+- **普通关键词**：Imperium，[[factions/星际战士/units/death-company-marines.md|Death Company Marines]] with Bolt Rifles，Death Company，Tacticus，[[core-rules/grenades.md|Grenades]]，[[core-rules/infantry.md|Infantry]]

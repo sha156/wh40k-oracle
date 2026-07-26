@@ -1,5 +1,6 @@
 ---
 id: '000010792007'
+name_zh: 突袭齐射
 name_en: OPENING SALVO
 faction: 星界军
 type: stratagem
@@ -13,10 +14,10 @@ tags:
 - 星界军
 sources:
 - book: 官方结构库 db/wh40k.sqlite（Wahapedia 11 版镜像）
-updated: '2026-07-25'
+updated: '2026-07-26'
 ---
 
-1 CP、Shooting phase、[[factions/星界军/detachments/armoured-infantry.md|Armoured Infantry]] 分队、Battle Tactic Stratagem。
+1 CP、Shooting phase、[[factions/星界军/detachments/armoured-infantry.md|装甲步兵]] 分队、Battle Tactic Stratagem。
 
 ## 使用时机
 

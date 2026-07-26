@@ -47,4 +47,4 @@ updated: '2026-07-23'
 
 ## 关键词
 - **阵营关键词**：Adeptus Astartes，Blood Angels
-- **普通关键词**：Death Company [[factions/星际战士/units/dreadnought.md|Dreadnought]]，Dreadnought，Imperium，[[core-rules/walker.md|Walker]]，Vehicle
+- **普通关键词**：Death Company [[factions/星际战士/units/dreadnought.md|Dreadnought]]，[[factions/星际战士/units/dreadnought.md|Dreadnought]]，Imperium，[[core-rules/walker.md|Walker]]，Vehicle

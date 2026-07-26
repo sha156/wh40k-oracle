@@ -1,5 +1,6 @@
 ---
 id: '000010620'
+name_zh: 艾沃尼之锤
 name_en: Hammer of Avernii
 faction: 星际战士
 type: detachment
@@ -10,10 +11,10 @@ tags:
 - 星际战士
 sources:
 - book: 官方结构库 db/wh40k.sqlite（Wahapedia 11 版镜像）
-updated: '2026-07-25'
+updated: '2026-07-26'
 ---
 
-星际战士的分队，分队规则「Calculated Annihilation」。
+星际战士的分队「艾沃尼之锤」，分队规则「Calculated Annihilation」。
 
 ## 分队规则
 
@@ -34,7 +35,7 @@ Your army can include Iron Hands units, but it cannot include any ADEPTUS ASTART
 ## 增强
 
 - [[factions/星际战士/enhancements/iron-laurel.md\|Iron Laurel]]
-- [[factions/星际战士/enhancements/medusan-roar-aura.md\|Medusan Roar (Aura)]]
+- [[factions/星际战士/enhancements/medusan-roar-aura.md\|美杜莎之吼（光环）]]
 - [[factions/星际战士/enhancements/spiritus-ferrum.md\|Spiritus Ferrum]]
 - [[factions/星际战士/enhancements/steel-font.md\|Steel Font]]
 
@@ -42,7 +43,7 @@ Your army can include Iron Hands units, but it cannot include any ADEPTUS ASTART
 
 - [[factions/星际战士/stratagems/armour-of-contempt-hammer-of-avernii.md\|蔑视甲胄]]
 - [[factions/星际战士/stratagems/augmetic-fortitude.md\|AUGMETIC FORTITUDE]]
-- [[factions/星际战士/stratagems/cogitated-ferocity.md\|COGITATED FEROCITY]]
-- [[factions/星际战士/stratagems/dominator-beacon.md\|DOMINATOR BEACON]]
+- [[factions/星际战士/stratagems/cogitated-ferocity.md\|精确愤怒]]
+- [[factions/星际战士/stratagems/dominator-beacon.md\|主宰信标]]
 - [[factions/星际战士/stratagems/dropship-extraction-hammer-of-avernii.md\|DROPSHIP EXTRACTION]]
-- [[factions/星际战士/stratagems/ruthless-butchery.md\|RUTHLESS BUTCHERY]]
+- [[factions/星际战士/stratagems/ruthless-butchery.md\|无情屠戮]]

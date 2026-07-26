@@ -1,7 +1,9 @@
 ---
 id: fp11e-votann-trailblazers-s2
-name_zh: 侧翼装甲
+name_zh: 装甲包抄
 name_en: OUTFLANKING ARMOUR
+aliases:
+- 侧翼装甲
 faction: 灰暗联盟
 type: stratagem
 detachment: Armoured Trailblazers
@@ -13,10 +15,10 @@ tags:
 - 灰暗联盟
 sources:
 - book: 官方结构库 db/wh40k.sqlite（Wahapedia 11 版镜像）
-updated: '2026-07-25'
+updated: '2026-07-26'
 ---
 
-1 CP、Movement phase、[[factions/灰暗联盟/detachments/armoured-trailblazers.md|Armoured Trailblazers]] 分队。
+1 CP、Movement phase、[[factions/灰暗联盟/detachments/armoured-trailblazers.md|装甲先驱]] 分队。
 
 ## 使用时机
 

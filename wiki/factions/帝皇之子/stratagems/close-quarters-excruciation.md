@@ -1,7 +1,9 @@
 ---
 id: '000010655005'
-name_zh: 近身酷刑
+name_zh: 近距离处决
 name_en: CLOSE-QUARTERS EXCRUCIATION
+aliases:
+- 近身酷刑
 faction: 帝皇之子
 type: stratagem
 detachment: Court of the Phoenician
@@ -14,10 +16,10 @@ tags:
 - 帝皇之子
 sources:
 - book: 官方结构库 db/wh40k.sqlite（Wahapedia 11 版镜像）
-updated: '2026-07-25'
+updated: '2026-07-26'
 ---
 
-1 CP、Shooting phase、[[factions/帝皇之子/detachments/court-of-the-phoenician.md|Court of the Phoenician]] 分队、Stratagem。
+1 CP、Shooting phase、[[factions/帝皇之子/detachments/court-of-the-phoenician.md|凤凰王庭]] 分队、Stratagem。
 
 ## 使用时机
 

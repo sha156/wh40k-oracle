@@ -1,5 +1,6 @@
 ---
 id: container-contagion-engines
+name_zh: 传瘟机械
 name_en: Contagion Engines
 faction: 死亡守卫
 type: detachment
@@ -10,10 +11,10 @@ tags:
 - 死亡守卫
 sources:
 - book: 官方结构库 db/wh40k.sqlite（Wahapedia 11 版镜像）
-updated: '2026-07-25'
+updated: '2026-07-26'
 ---
 
-死亡守卫的分队。
+死亡守卫的分队「传瘟机械」。
 
 ## 分队规则
 
@@ -21,11 +22,11 @@ updated: '2026-07-25'
 
 ## 增强
 
-- [[factions/死亡守卫/enhancements/lancet-of-the-worldsore.md\|世界疮刺]]
-- [[factions/死亡守卫/enhancements/parasitic-woe-reaper.md\|寄生灾殃收割者]]
+- [[factions/死亡守卫/enhancements/lancet-of-the-worldsore.md\|穿刺世界之疮]]
+- [[factions/死亡守卫/enhancements/parasitic-woe-reaper.md\|寄生收割]]
 
 ## 战略
 
-- [[factions/死亡守卫/stratagems/bloodrust-deluge.md\|血锈倾盆]]
-- [[factions/死亡守卫/stratagems/fresh-vectors.md\|新鲜病媒]]
-- [[factions/死亡守卫/stratagems/soulrot-flux.md\|魂腐涌流]]
+- [[factions/死亡守卫/stratagems/bloodrust-deluge.md\|血锈洪流]]
+- [[factions/死亡守卫/stratagems/fresh-vectors.md\|全新介体]]
+- [[factions/死亡守卫/stratagems/soulrot-flux.md\|腐魂爆发]]

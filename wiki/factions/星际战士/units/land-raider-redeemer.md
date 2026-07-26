@@ -47,4 +47,4 @@ updated: '2026-07-23'
 
 ## 关键词
 - **阵营关键词**：Adeptus Astartes
-- **普通关键词**：Vehicle，Imperium，[[core-rules/transport.md|Transport]]，Land Raider，[[core-rules/grenades.md|Grenades]]，Land Raider Redeemer，Deathwing，[[core-rules/smoke.md|Smoke]]
+- **普通关键词**：Vehicle，Imperium，[[core-rules/transport.md|Transport]]，[[factions/星际战士/units/land-raider.md|Land Raider]]，[[core-rules/grenades.md|Grenades]]，Land Raider Redeemer，Deathwing，[[core-rules/smoke.md|Smoke]]

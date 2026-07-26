@@ -27,7 +27,15 @@ Pass B：先由 Pass A 的结果**多数票**反推「中文分遣队名 ↔ 英
         必须靠 Pass B 定出的分遣队对收窄搜索域才够判别力。
 
 一条也不猜：配不上、有歧义、type 冲突，一律不落——留空计入 `_report`，宁缺毋错。
-产物 `db_compile/official_zh_names.json` 是 git 真源；**本模块不写库、不碰 wiki/**。
+产物 `db_compile/official_zh_names.json` 是 git 真源；**本模块不写库、不碰 wiki/**
+（落库在 `db_compile/official_zh_apply.py`）。
+
+产物里同时给**两种键**，因为它们各自能表达的东西不同：
+  · `stratagems` / `enhancements`：英文名 → 中文名。同一英文名在不同包里有不同官方译名时
+    （`ARMOUR OF CONTEMPT` → 蔑视战甲 / 蔑视甲胄），这种键**表达不了**，只能整条丢。
+  · `stratagems_by_id` / `enhancements_by_id`：库内行 id → 中文名，直接来自配对的那一对，
+    上面那类冲突在这里天然不存在（每行认自己那本包的译名）。落库以它为准，
+    英文名键只用来给「没配上、但同名条目在别处配上了」的行兜底。
 """
 from __future__ import annotations
 
@@ -990,6 +998,25 @@ def _unique_or_drop(mapping: List[Tuple[str, str]]) -> Tuple[Dict[str, str],
     return out, sorted(conflicts)
 
 
+def _row_map(mapping: List[Tuple[str, str]]) -> Tuple[Dict[str, str], List[str]]:
+    """行级映射（库内 id → 中文名）。一行认两个不同中文名＝上游配对出了双份，两边都丢。
+
+    与 `_unique_or_drop` 的区别：这里**不管**两行是否同名同中文——
+    「同一中文名出现在两行」在行级是常态（同名战略分处两个分遣队），不是撞车。
+    """
+    by_id: Dict[str, Set[str]] = defaultdict(set)
+    for rid, zh_name in mapping:
+        by_id[rid].add(zh_name)
+    out: Dict[str, str] = {}
+    conflicts: List[str] = []
+    for rid, zh_names in by_id.items():
+        if len(zh_names) > 1:
+            conflicts.append(f"{rid} → {sorted(zh_names)}")
+            continue
+        out[rid] = next(iter(zh_names))
+    return out, sorted(conflicts)
+
+
 def compile_official_zh(pdf_dir: Path = ZH_PDF_DIR,
                         db_path: Optional[Path] = None) -> Dict[str, Any]:
     """跑全流程：解析 28 个官方中文阵营包 → 指纹配对 → 映射 + 报告。"""
@@ -1068,6 +1095,10 @@ def compile_official_zh(pdf_dir: Path = ZH_PDF_DIR,
         [(e.name_en.upper(), z.name_zh) for e, z in strat_pairs if e.name_en])
     enh_map, enh_conf = _unique_or_drop(
         [(e.name_en, z.name_zh) for e, z in enh_pairs if e.name_en])
+    strat_rows, strat_row_conf = _row_map([(e.sid, z.name_zh)
+                                           for e, z in strat_pairs if e.sid])
+    enh_rows, enh_row_conf = _row_map([(e.eid, z.name_zh)
+                                       for e, z in enh_pairs if e.eid])
 
     done_s = {id(x) for _, x in strat_pairs}
     done_e = {id(x) for _, x in enh_pairs}
@@ -1089,7 +1120,9 @@ def compile_official_zh(pdf_dir: Path = ZH_PDF_DIR,
 
     return {
         "stratagems": dict(sorted(strat_map.items())),
+        "stratagems_by_id": dict(sorted(strat_rows.items())),
         "enhancements": dict(sorted(enh_map.items())),
+        "enhancements_by_id": dict(sorted(enh_rows.items())),
         "detachments": dict(sorted(det_map.items())),
         "_report": {
             "_comment": "GW 官方中文包 → 库内英文条目的数值指纹配对结果。"
@@ -1101,7 +1134,10 @@ def compile_official_zh(pdf_dir: Path = ZH_PDF_DIR,
                         "stratagems_pass_a_faction_unique": pass_a_n,
                         "stratagems_pass_b_within_detachment": pass_b_n,
                         "enhancements": len(enh_map),
-                        "detachments": len(det_map)},
+                        "detachments": len(det_map),
+                        # 行级恒 ≥ 名级：名级要为「同名不同译」整条让路，行级不用
+                        "stratagems_rows": len(strat_rows),
+                        "enhancements_rows": len(enh_rows)},
             "db_totals": {"stratagems": len(en_strats),
                           "enhancements": len(en_enhs)},
             "weak_evidence_no_digits": {"stratagems": weak_s,
@@ -1124,6 +1160,8 @@ def compile_official_zh(pdf_dir: Path = ZH_PDF_DIR,
             "detachment_conflicts_total": len(det_conflicts),
             "name_conflicts": {"stratagems": strat_conf[:20],
                                "enhancements": enh_conf[:20]},
+            "row_conflicts": {"stratagems": strat_row_conf[:20],
+                              "enhancements": enh_row_conf[:20]},
             "parse_warnings": sorted(set(warns))[:30],
             "parse_warnings_total": len(warns),
             "skipped_slugs": skipped,

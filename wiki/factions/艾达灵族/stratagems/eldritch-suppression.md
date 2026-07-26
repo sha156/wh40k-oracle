@@ -1,7 +1,9 @@
 ---
 id: fp11e-aeldari-outcast-s1
-name_zh: 秘术压制
+name_zh: 幽影压制
 name_en: ELDRITCH SUPPRESSION
+aliases:
+- 秘术压制
 faction: 艾达灵族
 type: stratagem
 detachment: Path of the Outcast
@@ -13,10 +15,10 @@ tags:
 - 艾达灵族
 sources:
 - book: 官方结构库 db/wh40k.sqlite（Wahapedia 11 版镜像）
-updated: '2026-07-25'
+updated: '2026-07-26'
 ---
 
-1 CP、Shooting phase、[[factions/艾达灵族/detachments/path-of-the-outcast.md|Path of the Outcast]] 分队。
+1 CP、Shooting phase、[[factions/艾达灵族/detachments/path-of-the-outcast.md|流放者之道]] 分队。
 
 ## 使用时机
 

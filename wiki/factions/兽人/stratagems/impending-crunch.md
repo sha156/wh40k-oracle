@@ -1,7 +1,9 @@
 ---
 id: fp11e-ork-rollin-s2
-name_zh: 迫近碾压
+name_zh: 迫在眉睫的危机
 name_en: Impending Crunch
+aliases:
+- 迫近碾压
 faction: 兽人
 type: stratagem
 detachment: Rollin' Deff
@@ -13,10 +15,10 @@ tags:
 - 兽人
 sources:
 - book: 官方结构库 db/wh40k.sqlite（Wahapedia 11 版镜像）
-updated: '2026-07-25'
+updated: '2026-07-26'
 ---
 
-1 CP、Charge phase、[[factions/兽人/detachments/rollin-deff.md|Rollin' Deff]] 分队。
+1 CP、Charge phase、[[factions/兽人/detachments/rollin-deff.md|死亡摇滚]] 分队。
 
 ## 使用时机
 

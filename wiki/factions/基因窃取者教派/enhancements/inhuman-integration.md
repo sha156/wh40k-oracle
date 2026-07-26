@@ -1,5 +1,6 @@
 ---
 id: '000009827005'
+name_zh: 异常结合
 name_en: Inhuman Integration
 faction: 基因窃取者教派
 type: enhancement
@@ -11,10 +12,10 @@ tags:
 - 基因窃取者教派
 sources:
 - book: 官方结构库 db/wh40k.sqlite（Wahapedia 11 版镜像）
-updated: '2026-07-25'
+updated: '2026-07-26'
 ---
 
-20 分、[[factions/基因窃取者教派/detachments/final-day.md|Final Day]] 分队。
+20 分、[[factions/基因窃取者教派/detachments/final-day.md|最终之日]] 分队。
 
 ## 效果
 

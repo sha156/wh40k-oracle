@@ -1,7 +1,9 @@
 ---
 id: fp11e-chaosdaemons-cavalcade-s3
-name_zh: 无从遁逃的显现
+name_zh: 不可逃避的恶魔
 name_en: INESCAPABLE MANIFESTATIONS
+aliases:
+- 无从遁逃的显现
 faction: 混沌恶魔
 type: stratagem
 detachment: Cavalcade of Chaos
@@ -13,10 +15,10 @@ tags:
 - 混沌恶魔
 sources:
 - book: 官方结构库 db/wh40k.sqlite（Wahapedia 11 版镜像）
-updated: '2026-07-25'
+updated: '2026-07-26'
 ---
 
-1 CP、Movement phase、[[factions/混沌恶魔/detachments/cavalcade-of-chaos.md|Cavalcade of Chaos]] 分队。
+1 CP、Movement phase、[[factions/混沌恶魔/detachments/cavalcade-of-chaos.md|混沌骑兵队]] 分队。
 
 ## 使用时机
 

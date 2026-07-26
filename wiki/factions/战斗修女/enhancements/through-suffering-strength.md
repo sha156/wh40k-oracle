@@ -11,7 +11,7 @@ tags:
 - 战斗修女
 sources:
 - book: 官方结构库 db/wh40k.sqlite（Wahapedia 11 版镜像）
-updated: '2026-07-25'
+updated: '2026-07-26'
 ---
 
 25 分、[[factions/战斗修女/detachments/hallowed-martyrs.md|Hallowed Martyrs]] 分队。

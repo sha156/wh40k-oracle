@@ -1,5 +1,6 @@
 ---
 id: container-warptide
+name_zh: 次元魔潮
 name_en: Warptide
 faction: 混沌恶魔
 type: detachment
@@ -10,10 +11,10 @@ tags:
 - 混沌恶魔
 sources:
 - book: 官方结构库 db/wh40k.sqlite（Wahapedia 11 版镜像）
-updated: '2026-07-25'
+updated: '2026-07-26'
 ---
 
-混沌恶魔的分队。
+混沌恶魔的分队「次元魔潮」。
 
 ## 分队规则
 
@@ -26,6 +27,6 @@ updated: '2026-07-25'
 
 ## 战略
 
-- [[factions/混沌恶魔/stratagems/daemonic-infestation.md\|恶魔滋生]]
-- [[factions/混沌恶魔/stratagems/incorporeal-entities.md\|无形实体]]
-- [[factions/混沌恶魔/stratagems/soulseeing.md\|灵视]]
+- [[factions/混沌恶魔/stratagems/daemonic-infestation.md\|恶魔侵染]]
+- [[factions/混沌恶魔/stratagems/incorporeal-entities.md\|无形存在]]
+- [[factions/混沌恶魔/stratagems/soulseeing.md\|灵魂视觉]]

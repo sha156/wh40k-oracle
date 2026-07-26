@@ -52,4 +52,4 @@ updated: '2026-07-23'
 
 ## 关键词
 - **阵营关键词**：Adeptus Astartes
-- **普通关键词**：Venerable，Dreadnought，Deathwing，[[core-rules/walker.md|Walker]]，Vehicle，[[core-rules/smoke.md|Smoke]]，Imperium
+- **普通关键词**：Venerable，[[factions/星际战士/units/dreadnought.md|Dreadnought]]，Deathwing，[[core-rules/walker.md|Walker]]，Vehicle，[[core-rules/smoke.md|Smoke]]，Imperium

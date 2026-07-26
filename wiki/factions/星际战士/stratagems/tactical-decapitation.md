@@ -1,5 +1,6 @@
 ---
 id: '000010681003'
+name_zh: 战术斩首
 name_en: TACTICAL DECAPITATION
 faction: 星际战士
 type: stratagem
@@ -13,10 +14,10 @@ tags:
 - 星际战士
 sources:
 - book: 官方结构库 db/wh40k.sqlite（Wahapedia 11 版镜像）
-updated: '2026-07-25'
+updated: '2026-07-26'
 ---
 
-1 CP、Shooting or Fight phase、[[factions/星际战士/detachments/orbital-assault-force.md|Orbital Assault Force]] 分队、Battle Tactic Stratagem。
+1 CP、Shooting or Fight phase、[[factions/星际战士/detachments/orbital-assault-force.md|轨道突袭部队]] 分队、Battle Tactic Stratagem。
 
 ## 使用时机
 

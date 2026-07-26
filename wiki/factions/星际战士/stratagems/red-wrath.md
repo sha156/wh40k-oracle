@@ -1,7 +1,9 @@
 ---
 id: '000010646007'
-name_zh: 赤红之怒
+name_zh: 赤色怒火
 name_en: RED WRATH
+aliases:
+- 赤红之怒
 faction: 星际战士
 type: stratagem
 detachment: Rage-cursed Onslaught
@@ -14,10 +16,10 @@ tags:
 - 星际战士
 sources:
 - book: 官方结构库 db/wh40k.sqlite（Wahapedia 11 版镜像）
-updated: '2026-07-25'
+updated: '2026-07-26'
 ---
 
-1 CP、Movement phase、[[factions/星际战士/detachments/rage-cursed-onslaught.md|Rage-cursed Onslaught]] 分队、Stratagem。
+1 CP、Movement phase、[[factions/星际战士/detachments/rage-cursed-onslaught.md|怒咒猛攻]] 分队、Stratagem。
 
 ## 使用时机
 

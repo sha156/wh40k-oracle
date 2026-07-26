@@ -1,7 +1,9 @@
 ---
 id: fp11e-gk-immaterial-s3
-name_zh: 应变位移
+name_zh: 反应式传送
 name_en: Responsive Displacement
+aliases:
+- 应变位移
 faction: 灰骑士
 type: stratagem
 detachment: Immaterial Interdiction
@@ -13,10 +15,10 @@ tags:
 - 灰骑士
 sources:
 - book: 官方结构库 db/wh40k.sqlite（Wahapedia 11 版镜像）
-updated: '2026-07-25'
+updated: '2026-07-26'
 ---
 
-1 CP、Movement phase、[[factions/灰骑士/detachments/immaterial-interdiction.md|Immaterial Interdiction]] 分队。
+1 CP、Movement phase、[[factions/灰骑士/detachments/immaterial-interdiction.md|次元拦截]] 分队。
 
 ## 使用时机
 

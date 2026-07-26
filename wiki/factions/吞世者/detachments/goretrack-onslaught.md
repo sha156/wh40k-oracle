@@ -10,10 +10,10 @@ tags:
 - 吞世者
 sources:
 - book: 官方结构库 db/wh40k.sqlite（Wahapedia 11 版镜像）
-updated: '2026-07-25'
+updated: '2026-07-26'
 ---
 
-吞世者的分队，分队规则「疾赴战场」。
+吞世者的分队「Goretrack Onslaught」，分队规则「疾赴战场」。
 
 ## 分队规则
 

@@ -45,4 +45,4 @@ updated: '2026-07-23'
 
 ## 关键词
 - **阵营关键词**：Agents of the Imperium
-- **普通关键词**：[[core-rules/psyker.md|Psyker]]，[[core-rules/grenades.md|Grenades]]，Imperium，Ordo Xenos，Inquisitor，Eisenhorn，[[core-rules/epic-hero.md|Epic Hero]]，[[core-rules/infantry.md|Infantry]]，[[core-rules/character.md|Character]]
+- **普通关键词**：[[core-rules/psyker.md|Psyker]]，[[core-rules/grenades.md|Grenades]]，Imperium，Ordo Xenos，[[factions/帝国特勤/units/inquisitor.md|Inquisitor]]，Eisenhorn，[[core-rules/epic-hero.md|Epic Hero]]，[[core-rules/infantry.md|Infantry]]，[[core-rules/character.md|Character]]

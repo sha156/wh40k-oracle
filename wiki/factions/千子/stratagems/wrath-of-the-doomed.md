@@ -1,7 +1,9 @@
 ---
 id: '000009742003'
-name_zh: 厄命之怒
+name_zh: 破灭者之怒
 name_en: WRATH OF THE DOOMED
+aliases:
+- 厄命之怒
 faction: 千子
 type: stratagem
 detachment: Hexwarp Thrallband
@@ -14,10 +16,10 @@ tags:
 - 千子
 sources:
 - book: 官方结构库 db/wh40k.sqlite（Wahapedia 11 版镜像）
-updated: '2026-07-25'
+updated: '2026-07-26'
 ---
 
-1 CP、Fight phase、[[factions/千子/detachments/hexwarp-thrallband.md|Hexwarp Thrallband]] 分队、Strategic Ploy Stratagem。
+1 CP、Fight phase、[[factions/千子/detachments/hexwarp-thrallband.md|次元邪咒傀儡团]] 分队、Strategic Ploy Stratagem。
 
 ## 使用时机
 

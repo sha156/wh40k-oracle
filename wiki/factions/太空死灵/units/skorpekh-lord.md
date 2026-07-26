@@ -47,4 +47,4 @@ updated: '2026-07-23'
 
 ## 关键词
 - **阵营关键词**：Necrons
-- **普通关键词**：Destroyer Cult，[[core-rules/character.md|Character]]，[[core-rules/infantry.md|Infantry]]，Skorpekh Lord
+- **普通关键词**：Destroyer Cult，[[core-rules/character.md|Character]]，[[core-rules/infantry.md|Infantry]]，Skorpekh [[factions/太空死灵/units/lord.md|Lord]]

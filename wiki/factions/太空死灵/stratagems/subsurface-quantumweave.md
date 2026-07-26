@@ -1,7 +1,9 @@
 ---
 id: fp11e-nec-phaeron-s1
-name_zh: 亚表面量子织网
+name_zh: 量子织物夹层
 name_en: Subsurface Quantumweave
+aliases:
+- 亚表面量子织网
 faction: 太空死灵
 type: stratagem
 detachment: The Phaeron's Armoury
@@ -13,10 +15,10 @@ tags:
 - 太空死灵
 sources:
 - book: 官方结构库 db/wh40k.sqlite（Wahapedia 11 版镜像）
-updated: '2026-07-25'
+updated: '2026-07-26'
 ---
 
-1 CP、Opponent's Shooting or Fight phase、[[factions/太空死灵/detachments/the-phaerons-armoury.md|The Phaeron's Armoury]] 分队。
+1 CP、Opponent's Shooting or Fight phase、[[factions/太空死灵/detachments/the-phaerons-armoury.md|法皇的军备]] 分队。
 
 ## 使用时机
 

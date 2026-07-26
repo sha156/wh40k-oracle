@@ -1,5 +1,6 @@
 ---
 id: '000008522005'
+name_zh: 异星大典
 name_en: The Tome of Ectoclades
 faction: 星际战士
 type: enhancement
@@ -11,10 +12,10 @@ tags:
 - 星际战士
 sources:
 - book: 官方结构库 db/wh40k.sqlite（Wahapedia 11 版镜像）
-updated: '2026-07-25'
+updated: '2026-07-26'
 ---
 
-30 分、[[factions/星际战士/detachments/black-spear-task-force.md|Black Spear Task Force]] 分队。
+30 分、[[factions/星际战士/detachments/black-spear-task-force.md|黑矛特遣队]] 分队。
 
 ## 效果
 

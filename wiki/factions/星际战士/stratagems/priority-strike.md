@@ -1,5 +1,6 @@
 ---
 id: '000010760003'
+name_zh: 首要打击
 name_en: PRIORITY STRIKE
 faction: 星际战士
 type: stratagem
@@ -13,10 +14,10 @@ tags:
 - 星际战士
 sources:
 - book: 官方结构库 db/wh40k.sqlite（Wahapedia 11 版镜像）
-updated: '2026-07-25'
+updated: '2026-07-26'
 ---
 
-2 CP、Shooting or Fight phase、[[factions/星际战士/detachments/ceramite-sentinels.md|Ceramite Sentinels]] 分队、Battle Tactic Stratagem。
+2 CP、Shooting or Fight phase、[[factions/星际战士/detachments/ceramite-sentinels.md|陶钢哨兵]] 分队、Battle Tactic Stratagem。
 
 ## 使用时机
 

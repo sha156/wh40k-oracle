@@ -1,5 +1,6 @@
 ---
 id: '000008436'
+name_zh: 恶魔入侵
 name_en: Daemonic Incursion
 faction: 混沌恶魔
 type: detachment
@@ -10,10 +11,10 @@ tags:
 - 混沌恶魔
 sources:
 - book: 官方结构库 db/wh40k.sqlite（Wahapedia 11 版镜像）
-updated: '2026-07-25'
+updated: '2026-07-26'
 ---
 
-混沌恶魔的分队，分队规则「Warp Rifts」。
+混沌恶魔的分队「恶魔入侵」，分队规则「Warp Rifts」。
 
 ## 分队规则
 
@@ -29,22 +30,22 @@ LEGiONES DAEMONiCA units from your army can perform one of the following Tactica
 
 ## 增强
 
-- [[factions/混沌恶魔/enhancements/argath-the-king-of-blades.md\|A’rgath, the King of Blades]]
+- [[factions/混沌恶魔/enhancements/argath-the-king-of-blades.md\|阿伽斯，万剑之王]]
 - [[factions/混沌恶魔/enhancements/geller-breach.md\|Geller Breach]]
-- [[factions/混沌恶魔/enhancements/soulstealer.md\|Soulstealer]]
+- [[factions/混沌恶魔/enhancements/soulstealer.md\|窃魂剑]]
 - [[factions/混沌恶魔/enhancements/spite-made-manifest.md\|Spite Made Manifest]]
-- [[factions/混沌恶魔/enhancements/the-endless-gift.md\|The Endless Gift]]
-- [[factions/混沌恶魔/enhancements/the-everstave.md\|The Everstave]]
+- [[factions/混沌恶魔/enhancements/the-endless-gift.md\|无尽赠礼]]
+- [[factions/混沌恶魔/enhancements/the-everstave.md\|永恒魔杖]]
 
 ## 战略
 
-- [[factions/混沌恶魔/stratagems/corrupt-realspace.md\|CORRUPT REALSPACE]]
+- [[factions/混沌恶魔/stratagems/corrupt-realspace.md\|腐化现实空间]]
 - [[factions/混沌恶魔/stratagems/daemonic-invulnerability.md\|DAEMONIC INVULNERABILITY]]
 - [[factions/混沌恶魔/stratagems/denizens-of-the-warp.md\|DENIZENS OF THE WARP]]
-- [[factions/混沌恶魔/stratagems/draught-of-terror.md\|DRAUGHT OF TERROR]]
+- [[factions/混沌恶魔/stratagems/draught-of-terror.md\|恐惧琼浆]]
 - [[factions/混沌恶魔/stratagems/incorporeal-terrors.md\|INCORPOREAL TERRORS]]
 - [[factions/混沌恶魔/stratagems/insubstantial-entities-daemonic-incursion.md\|INSUBSTANTIAL ENTITIES]]
 - [[factions/混沌恶魔/stratagems/parting-blows.md\|PARTING BLOWS]]
-- [[factions/混沌恶魔/stratagems/the-realm-of-chaos.md\|THE REALM OF CHAOS]]
+- [[factions/混沌恶魔/stratagems/the-realm-of-chaos.md\|混沌领域]]
 - [[factions/混沌恶魔/stratagems/unreal-speed.md\|UNREAL SPEED]]
 - [[factions/混沌恶魔/stratagems/warp-surge.md\|WARP SURGE]]

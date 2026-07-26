@@ -10,10 +10,10 @@ tags:
 - 星界军
 sources:
 - book: 官方结构库 db/wh40k.sqlite（Wahapedia 11 版镜像）
-updated: '2026-07-25'
+updated: '2026-07-26'
 ---
 
-星界军的分队，分队规则「Purge-Sweep Protocols」。
+星界军的分队「Tempestus Boarding Regiment」，分队规则「Purge-Sweep Protocols」。
 
 ## 分队规则
 

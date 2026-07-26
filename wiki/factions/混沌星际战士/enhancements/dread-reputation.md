@@ -1,5 +1,6 @@
 ---
 id: '000010688004'
+name_zh: 恐惧恶名
 name_en: Dread Reputation
 faction: 混沌星际战士
 type: enhancement
@@ -11,10 +12,10 @@ tags:
 - 混沌星际战士
 sources:
 - book: 官方结构库 db/wh40k.sqlite（Wahapedia 11 版镜像）
-updated: '2026-07-25'
+updated: '2026-07-26'
 ---
 
-25 分、[[factions/混沌星际战士/detachments/hurons-marauders.md|Huron’s Marauders]] 分队。
+25 分、[[factions/混沌星际战士/detachments/hurons-marauders.md|休伦的劫掠者]] 分队。
 
 ## 效果
 

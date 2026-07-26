@@ -14,7 +14,7 @@ tags:
 - 死亡守卫
 sources:
 - book: 官方结构库 db/wh40k.sqlite（Wahapedia 11 版镜像）
-updated: '2026-07-25'
+updated: '2026-07-26'
 ---
 
 2 CP、Shooting or Fight phase、[[factions/死亡守卫/detachments/virulent-vectorium.md|Virulent Vectorium]] 分队、Battle Tactic Stratagem。

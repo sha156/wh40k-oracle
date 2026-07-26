@@ -1,5 +1,6 @@
 ---
 id: '000010782'
+name_zh: 猎头特遣队
 name_en: Headhunter Task Force
 faction: 星际战士
 type: detachment
@@ -10,10 +11,10 @@ tags:
 - 星际战士
 sources:
 - book: 官方结构库 db/wh40k.sqlite（Wahapedia 11 版镜像）
-updated: '2026-07-25'
+updated: '2026-07-26'
 ---
 
-星际战士的分队，分队规则「Target Sighted」。
+星际战士的分队「猎头特遣队」，分队规则「Target Sighted」。
 
 ## 分队规则
 
@@ -32,16 +33,16 @@ In the Muster Armies step, you can select up to three TANK ACE units from your a
 
 ## 增强
 
-- [[factions/星际战士/enhancements/astartes-tank-ace-aura.md\|Astartes Tank Ace (Aura)]]
-- [[factions/星际战士/enhancements/firestorm-coordinators.md\|Firestorm Coordinators]]
-- [[factions/星际战士/enhancements/gunnery-honours.md\|Gunnery Honours]]
-- [[factions/星际战士/enhancements/redoubtable-machine-spirit.md\|Redoubtable Machine Spirit]]
+- [[factions/星际战士/enhancements/astartes-tank-ace-aura.md\|阿斯塔特坦克王牌（光环）]]
+- [[factions/星际战士/enhancements/firestorm-coordinators.md\|火力协调器]]
+- [[factions/星际战士/enhancements/gunnery-honours.md\|枪炮荣誉]]
+- [[factions/星际战士/enhancements/redoubtable-machine-spirit.md\|坚毅机魂]]
 
 ## 战略
 
 - [[factions/星际战士/stratagems/armour-of-contempt-headhunter-task-force.md\|蔑视甲胄]]
 - [[factions/星际战士/stratagems/kill-shot.md\|KILL SHOT]]
-- [[factions/星际战士/stratagems/machine-vengeance.md\|MACHINE VENGEANCE]]
-- [[factions/星际战士/stratagems/rapid-gunnery.md\|RAPID GUNNERY]]
-- [[factions/星际战士/stratagems/reactive-repositioning.md\|REACTIVE REPOSITIONING]]
+- [[factions/星际战士/stratagems/machine-vengeance.md\|机械复仇]]
+- [[factions/星际战士/stratagems/rapid-gunnery.md\|快速射击]]
+- [[factions/星际战士/stratagems/reactive-repositioning.md\|反应机动]]
 - [[factions/星际战士/stratagems/target-weak-point.md\|TARGET WEAK POINT]]

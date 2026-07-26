@@ -1,5 +1,6 @@
 ---
 id: '000010794'
+name_zh: 疾速 WAAAGH！
 name_en: Speedwaaagh!
 faction: 兽人
 type: detachment
@@ -10,10 +11,10 @@ tags:
 - 兽人
 sources:
 - book: 官方结构库 db/wh40k.sqlite（Wahapedia 11 版镜像）
-updated: '2026-07-25'
+updated: '2026-07-26'
 ---
 
-兽人的分队，分队规则「涡轮加速」。
+兽人的分队「疾速 WAAAGH！」，分队规则「涡轮加速」。
 
 ## 分队规则
 
@@ -26,15 +27,15 @@ Each time a Speed Freeks or [[factions/兽人/units/trukk.md|Trukk]] unit (exclu
 ## 增强
 
 - [[factions/兽人/enhancements/dakkamek.md\|达卡技工]]
-- [[factions/兽人/enhancements/kustom-shokk-box.md\|定制冲击箱]]
+- [[factions/兽人/enhancements/kustom-shokk-box.md\|自制加速箱]]
 - [[factions/兽人/enhancements/master-meknologist.md\|大师技工]]
-- [[factions/兽人/enhancements/supa-burny-fuel.md\|超燃燃料]]
+- [[factions/兽人/enhancements/supa-burny-fuel.md\|超级燃料]]
 
 ## 战略
 
-- [[factions/兽人/stratagems/ded-killy-construction.md\|致命构造]]
-- [[factions/兽人/stratagems/dust-trails.md\|尘迹]]
-- [[factions/兽人/stratagems/evasive-manoova.md\|闪避机动]]
-- [[factions/兽人/stratagems/mobile-dakkastorm.md\|机动达卡风暴]]
-- [[factions/兽人/stratagems/on-da-move.md\|上路]]
+- [[factions/兽人/stratagems/ded-killy-construction.md\|杀戮造物]]
+- [[factions/兽人/stratagems/dust-trails.md\|尘土飞扬]]
+- [[factions/兽人/stratagems/evasive-manoova.md\|规避机动]]
+- [[factions/兽人/stratagems/mobile-dakkastorm.md\|移动突突风暴]]
+- [[factions/兽人/stratagems/on-da-move.md\|动起来！]]
 - [[factions/兽人/stratagems/speshul-ammo.md\|特制弹药]]

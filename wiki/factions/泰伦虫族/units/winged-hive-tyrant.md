@@ -50,4 +50,4 @@ updated: '2026-07-23'
 
 ## 关键词
 - **阵营关键词**：Tyranids
-- **普通关键词**：Hive Tyrant，Monster，[[core-rules/character.md|Character]]，[[core-rules/psyker.md|Psyker]]，Vanguard Invader，Winged Hive Tyrant，Synapse，Great Devourer，Fly
+- **普通关键词**：[[factions/泰伦虫族/units/hive-tyrant.md|Hive Tyrant]]，Monster，[[core-rules/character.md|Character]]，[[core-rules/psyker.md|Psyker]]，Vanguard Invader，Winged Hive Tyrant，Synapse，Great Devourer，Fly

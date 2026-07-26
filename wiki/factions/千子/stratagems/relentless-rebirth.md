@@ -1,7 +1,9 @@
 ---
 id: fp11e-ts-regen-s1
-name_zh: 不倦重生
+name_zh: 无息重生
 name_en: Relentless Rebirth
+aliases:
+- 不倦重生
 faction: 千子
 type: stratagem
 detachment: Ritual of Regeneration
@@ -13,10 +15,10 @@ tags:
 - 千子
 sources:
 - book: 官方结构库 db/wh40k.sqlite（Wahapedia 11 版镜像）
-updated: '2026-07-25'
+updated: '2026-07-26'
 ---
 
-1 CP、Any phase、[[factions/千子/detachments/ritual-of-regeneration.md|Ritual of Regeneration]] 分队。
+1 CP、Any phase、[[factions/千子/detachments/ritual-of-regeneration.md|再生仪式]] 分队。
 
 ## 使用时机
 

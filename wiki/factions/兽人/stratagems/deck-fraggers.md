@@ -1,7 +1,9 @@
 ---
 id: '000010713005'
-name_zh: 甲板破片
+name_zh: 甲板破片手
 name_en: DECK FRAGGERS
+aliases:
+- 甲板破片
 faction: 兽人
 type: stratagem
 detachment: Freebooter Krew
@@ -14,10 +16,10 @@ tags:
 - 兽人
 sources:
 - book: 官方结构库 db/wh40k.sqlite（Wahapedia 11 版镜像）
-updated: '2026-07-25'
+updated: '2026-07-26'
 ---
 
-1 CP、Shooting phase、[[factions/兽人/detachments/freebooter-krew.md|Freebooter Krew]] 分队、Strategic Ploy Stratagem。
+1 CP、Shooting phase、[[factions/兽人/detachments/freebooter-krew.md|海盗船团]] 分队、Strategic Ploy Stratagem。
 
 ## 使用时机
 

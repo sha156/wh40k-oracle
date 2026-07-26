@@ -25,7 +25,7 @@ updated: '2026-07-23'
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
 | 自动炮 | 48" | 2 | 4+ | 9 | -1 | 3 | — |
-| Malcador twin lascannon | 48" | 1 | 4+ | 12 | -3 | D6+1 | [[core-rules/twin-linked.md\|双联]] |
+| [[factions/基因窃取者教派/units/malcador.md\|Malcador]] twin lascannon | 48" | 1 | 4+ | 12 | -3 | D6+1 | [[core-rules/twin-linked.md\|双联]] |
 | 风暴爆弹枪 | 24" | 1 | 4+ | 4 | 0 | 1 | [[core-rules/rapid-fire.md\|速射2]] |
 | 激光炮 | 48" | 1 | 4+ | 12 | -3 | D6+1 | — |
 | 破坏者加农炮 | 24" | D6+3 | 4+ | 14 | -3 | D6 | [[core-rules/blast.md\|爆炸]] |

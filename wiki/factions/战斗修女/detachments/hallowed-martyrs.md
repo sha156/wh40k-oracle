@@ -10,10 +10,10 @@ tags:
 - 战斗修女
 sources:
 - book: 官方结构库 db/wh40k.sqlite（Wahapedia 11 版镜像）
-updated: '2026-07-25'
+updated: '2026-07-26'
 ---
 
-战斗修女的分队，分队规则「The Blood of Martyrs」。
+战斗修女的分队「Hallowed Martyrs」，分队规则「The Blood of Martyrs」。
 
 ## 分队规则
 

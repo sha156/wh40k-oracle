@@ -10,10 +10,10 @@ tags:
 - 死亡守卫
 sources:
 - book: 官方结构库 db/wh40k.sqlite（Wahapedia 11 版镜像）
-updated: '2026-07-25'
+updated: '2026-07-26'
 ---
 
-死亡守卫的分队，分队规则「Inescapable Corruption」。
+死亡守卫的分队「Arch-Contaminators」，分队规则「Inescapable Corruption」。
 
 ## 分队规则
 

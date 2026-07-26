@@ -44,7 +44,7 @@ updated: '2026-07-23'
 | 雷霆锤 | 近战 | 3 | 4+ | 8 | -2 | 2 | [[core-rules/devastating-wounds.md\|毁灭伤害]] |
 
 ## 技能
-- **Sanguinary Priest**：While this model is leading a unit, models in that unit have the Feel No Pain 5+ ability.
+- **[[factions/星际战士/units/sanguinary-priest.md|Sanguinary Priest]]**：While this model is leading a unit, models in that unit have the Feel No Pain 5+ ability.
 - **Blood Chalice**：While this model is leading a unit, improve the Armour Penetration characteristic of melee weapons equipped by models in that unit by 1.
 
 ## 单位构成

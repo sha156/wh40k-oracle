@@ -1,5 +1,6 @@
 ---
 id: container-veterans-of-the-fang
+name_zh: 狼牙堡老兵
 name_en: Veterans of the Fang
 faction: 星际战士
 type: detachment
@@ -10,10 +11,10 @@ tags:
 - 星际战士
 sources:
 - book: 官方结构库 db/wh40k.sqlite（Wahapedia 11 版镜像）
-updated: '2026-07-25'
+updated: '2026-07-26'
 ---
 
-星际战士的分队。
+星际战士的分队「狼牙堡老兵」。
 
 ## 分队规则
 
@@ -21,11 +22,11 @@ updated: '2026-07-25'
 
 ## 增强
 
-- [[factions/星际战士/enhancements/eye-of-the-hunter.md\|Eye of the Hunter]]
-- [[factions/星际战士/enhancements/weaver-of-sagas.md\|Weaver of Sagas]]
+- [[factions/星际战士/enhancements/eye-of-the-hunter.md\|鹰眼猎手]]
+- [[factions/星际战士/enhancements/weaver-of-sagas.md\|传奇叙述者]]
 
 ## 战略
 
-- [[factions/星际战士/stratagems/blade-keen-senses.md\|锐感如刃]]
-- [[factions/星际战士/stratagems/grizzled-killers.md\|沙场老杀手]]
-- [[factions/星际战士/stratagems/icy-calm.md\|寒冰沉着]]
+- [[factions/星际战士/stratagems/blade-keen-senses.md\|尖锐感官]]
+- [[factions/星际战士/stratagems/grizzled-killers.md\|沧桑杀手]]
+- [[factions/星际战士/stratagems/icy-calm.md\|沉着冷静]]

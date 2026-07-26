@@ -1,18 +1,18 @@
 # 钛帝国
 
-_Last updated: 2026-07-25 17:23 UTC_
+_Last updated: 2026-07-26 05:42 UTC_
 
 ## 分队
 
-- [[factions/钛帝国/detachments/advanced-acquisition-cadre|Advanced Acquisition Cadre]] — 钛帝国的分队。
-- [[factions/钛帝国/detachments/auxiliary-cadre|Auxiliary Cadre]] — 钛帝国的分队，分队规则「综合指挥体系」。
-- [[factions/钛帝国/detachments/experimental-prototype-cadre|Experimental Prototype Cadre]] — 钛帝国的分队，分队规则「精湛技艺」。
-- [[factions/钛帝国/detachments/kauyon|Kauyon]] — 钛帝国的分队，分队规则「耐心猎手」。
-- [[factions/钛帝国/detachments/kroot-hunting-pack|Kroot Hunting Pack]] — 钛帝国的分队，分队规则「狩猎本能」。
-- [[factions/钛帝国/detachments/kroot-raiding-party|Kroot Raiding Party]] — 钛帝国的分队，分队规则「游击伏兵」。
-- [[factions/钛帝国/detachments/montka|Mont’ka]] — 钛帝国的分队，分队规则「一击必杀」。
-- [[factions/钛帝国/detachments/retaliation-cadre|Retaliation Cadre]] — 钛帝国的分队，分队规则「结义英雄」。
-- [[factions/钛帝国/detachments/starfire-cadre|Starfire Cadre]] — 钛帝国的分队，分队规则「标记光精准」。
+- [[factions/钛帝国/detachments/auxiliary-cadre|Auxiliary Cadre]] — 钛帝国的分队「Auxiliary Cadre」，分队规则「综合指挥体系」。
+- [[factions/钛帝国/detachments/experimental-prototype-cadre|Experimental Prototype Cadre]] — 钛帝国的分队「Experimental Prototype Cadre」，分队规则「精湛技艺」。
+- [[factions/钛帝国/detachments/kauyon|Kauyon]] — 钛帝国的分队「Kauyon」，分队规则「耐心猎手」。
+- [[factions/钛帝国/detachments/kroot-hunting-pack|Kroot Hunting Pack]] — 钛帝国的分队「Kroot Hunting Pack」，分队规则「狩猎本能」。
+- [[factions/钛帝国/detachments/kroot-raiding-party|Kroot Raiding Party]] — 钛帝国的分队「Kroot Raiding Party」，分队规则「游击伏兵」。
+- [[factions/钛帝国/detachments/montka|Mont’ka]] — 钛帝国的分队「Mont’ka」，分队规则「一击必杀」。
+- [[factions/钛帝国/detachments/retaliation-cadre|Retaliation Cadre]] — 钛帝国的分队「Retaliation Cadre」，分队规则「结义英雄」。
+- [[factions/钛帝国/detachments/starfire-cadre|Starfire Cadre]] — 钛帝国的分队「Starfire Cadre」，分队规则「标记光精准」。
+- [[factions/钛帝国/detachments/advanced-acquisition-cadre|先攻抢占核心队]] — 钛帝国的分队「先攻抢占核心队」。
 
 ## 单位
 
@@ -100,13 +100,13 @@ _Last updated: 2026-07-25 17:23 UTC_
 - [[factions/钛帝国/stratagems/alien-expertise|异星学识]] — 1 CP、Movement phase、Auxiliary Cadre 分队、Battle Tactic Stratag...
 - [[factions/钛帝国/stratagems/guided-fire|引导射击]] — 1 CP、Shooting phase、Auxiliary Cadre 分队、Battle Tactic Stratag...
 - [[factions/钛帝国/stratagems/a-trap-well-laid|张机设阱]] — 1 CP、Shooting or Fight phase、Kroot Hunting Pack 分队、Battle Ta...
-- [[factions/钛帝国/stratagems/microdrone-support|微型兵蜂支援]] — 1 CP、Shooting phase、Advanced Acquisition Cadre 分队。
+- [[factions/钛帝国/stratagems/microdrone-support|微型无人机辅助]] — 1 CP、Shooting phase、先攻抢占核心队 分队。
 - [[factions/钛帝国/stratagems/the-grisly-feast|恐怖盛宴]] — 1 CP、Fight phase、Kroot Hunting Pack 分队、Strategic Ploy Strata...
 - [[factions/钛帝国/stratagems/combat-debarkation|战术下车]] — 1 CP、Shooting phase、Mont’ka 分队、Battle Tactic Stratagem。
 - [[factions/钛帝国/stratagems/combat-embarkation|战术搭载]] — 1 CP、Charge phase、Kauyon 分队、Wargear Stratagem。
 - [[factions/钛帝国/stratagems/point-blank-ambush|抵近伏击]] — 1 CP、Shooting phase、Kauyon 分队、Battle Tactic Stratagem。
 - [[factions/钛帝国/stratagems/boarding-blades|接舷利刃]] — 1 CP、Fight phase、Kroot Raiding Party 分队、Battle Tactic Strata...
-- [[factions/钛帝国/stratagems/marker-beacon|标记信标]] — 1 CP、Movement phase、Advanced Acquisition Cadre 分队。
+- [[factions/钛帝国/stratagems/marker-beacon|标记信标]] — 1 CP、Movement phase、先攻抢占核心队 分队。
 - [[factions/钛帝国/stratagems/sweeping-ambush|横扫伏击]] — 1 CP、Fight phase、Kroot Raiding Party 分队、Strategic Ploy Strat...
 - [[factions/钛帝国/stratagems/guerrilla-warriors|游击战士]] — 1 CP、Movement phase、Kroot Hunting Pack 分队、Strategic Ploy Str...
 - [[factions/钛帝国/stratagems/firing-line|火力战线]] — 1 CP、Fight phase、Starfire Cadre 分队、Strategic Ploy Stratagem。
@@ -119,8 +119,8 @@ _Last updated: 2026-07-25 17:23 UTC_
 - [[factions/钛帝国/stratagems/coordinate-to-engage|联携攻击]] — 1 CP、Shooting phase、Kauyon 分队、Battle Tactic Stratagem。
 - [[factions/钛帝国/stratagems/pulse-onslaught|脉冲冲击]] — 2 CP、Shooting phase、Mont’ka 分队、Strategic Ploy Stratagem。
 - [[factions/钛帝国/stratagems/pulse-barrage|脉冲弹幕]] — 1 CP、Movement or Charge phase、Starfire Cadre 分队、Battle Tacti...
+- [[factions/钛帝国/stratagems/autoreactive-camouflage|自动反应迷彩]] — 1 CP、Shooting phase、先攻抢占核心队 分队。
 - [[factions/钛帝国/stratagems/automated-repair-drones|自动维修兵蜂]] — 1 CP、Command phase、Experimental Prototype Cadre 分队、Strategic...
-- [[factions/钛帝国/stratagems/autoreactive-camouflage|自反应迷彩]] — 1 CP、Shooting phase、Advanced Acquisition Cadre 分队。
 - [[factions/钛帝国/stratagems/fail-safe-detonator|自毁系统]] — 2 CP、Any phase、Retaliation Cadre 分队、Epic Deed Stratagem。
 - [[factions/钛帝国/stratagems/brute-force|蛮力破门]] — 1 CP、Movement phase、Kroot Raiding Party 分队、Strategic Ploy St...
 - [[factions/钛帝国/stratagems/a-tempting-trap|诱惑陷阱]] — 1 CP、Shooting phase、Kauyon 分队、Battle Tactic Stratagem。
@@ -144,18 +144,18 @@ _Last updated: 2026-07-25 17:23 UTC_
 - [[factions/钛帝国/enhancements/prototype-weapon-system|原型武器系统]] — 15 分、Retaliation Cadre 分队。
 - [[factions/钛帝国/enhancements/through-unity-devastation|团结致胜]] — 40 分、Kauyon 分队。
 - [[factions/钛帝国/enhancements/solid-image-projection-unit|实像投影装置]] — 30 分、Kauyon 分队。
+- [[factions/钛帝国/enhancements/negation-emitters|对立粒子发射器]] — 分数未知、先攻抢占核心队 分队。
 - [[factions/钛帝国/enhancements/strategic-conqueror|战略征服者]] — 15 分、Mont’ka 分队。
 - [[factions/钛帝国/enhancements/admired-leader|敬爱领袖]] — 20 分、Auxiliary Cadre 分队。
 - [[factions/钛帝国/enhancements/starflare-ignition-system|星耀点火系统]] — 20 分、Retaliation Cadre 分队。
-- [[factions/钛帝国/enhancements/unmasking-suite|显形套件]] — 分数未知、Advanced Acquisition Cadre 分队。
 - [[factions/钛帝国/enhancements/root-carved-weapons|根雕武器]] — 10 分、Kroot Hunting Pack 分队。
-- [[factions/钛帝国/enhancements/negation-emitters|消隐发射器]] — 分数未知、Advanced Acquisition Cadre 分队。
 - [[factions/钛帝国/enhancements/nomadic-hunter|游牧猎手]] — 20 分、Kroot Hunting Pack 分队。
 - [[factions/钛帝国/enhancements/thermoneutronic-projector|热中子投射器]] — 20 分、Experimental Prototype Cadre 分队。
 - [[factions/钛帝国/enhancements/target-optimisation-microdrones|目标优化微型兵蜂]] — 0 分、Starfire Cadre 分队。
 - [[factions/钛帝国/enhancements/exemplar-of-the-kauyon|空育典范]] — 20 分、Kauyon 分队。
 - [[factions/钛帝国/enhancements/student-of-kauyon|空降学徒]] — 15 分、Auxiliary Cadre 分队。
 - [[factions/钛帝国/enhancements/plasma-accelerator-rifle|等离子加速步枪]] — 10 分、Experimental Prototype Cadre 分队。
+- [[factions/钛帝国/enhancements/unmasking-suite|索敌系统]] — 分数未知、先攻抢占核心队 分队。
 - [[factions/钛帝国/enhancements/puretide-engram-neurochip|纯洁之潮铭印芯片]] — 25 分、Retaliation Cadre 分队。
 - [[factions/钛帝国/enhancements/experienced-leader|经验老到的头领]] — 0 分、Kroot Raiding Party 分队。
 - [[factions/钛帝国/enhancements/precision-of-the-patient-hunter|耐心猎手之精准]] — 15 分、Kauyon 分队。

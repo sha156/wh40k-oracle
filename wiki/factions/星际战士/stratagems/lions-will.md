@@ -1,5 +1,6 @@
 ---
 id: '000010161003'
+name_zh: 狮王意志
 name_en: LION’S WILL
 faction: 星际战士
 type: stratagem
@@ -13,10 +14,10 @@ tags:
 - 星际战士
 sources:
 - book: 官方结构库 db/wh40k.sqlite（Wahapedia 11 版镜像）
-updated: '2026-07-25'
+updated: '2026-07-26'
 ---
 
-1 CP、Command phase、[[factions/星际战士/detachments/wrath-of-the-rock.md|Wrath of the Rock]] 分队、Strategic Ploy Stratagem。
+1 CP、Command phase、[[factions/星际战士/detachments/wrath-of-the-rock.md|巨石之怒]] 分队、Strategic Ploy Stratagem。
 
 ## 使用时机
 

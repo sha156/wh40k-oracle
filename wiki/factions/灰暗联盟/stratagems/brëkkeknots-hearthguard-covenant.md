@@ -1,7 +1,9 @@
 ---
 id: fp11e-votann-hearthguard-s1
-name_zh: 护盾结界
+name_zh: 山丘绳结
 name_en: BRËKKEKNOTS
+aliases:
+- 护盾结界
 faction: 灰暗联盟
 type: stratagem
 detachment: Hearthguard Covenant
@@ -13,7 +15,7 @@ tags:
 - 灰暗联盟
 sources:
 - book: 官方结构库 db/wh40k.sqlite（Wahapedia 11 版镜像）
-updated: '2026-07-25'
+updated: '2026-07-26'
 ---
 
 1 CP、Fight phase、[[factions/灰暗联盟/detachments/hearthguard-covenant.md|Hearthguard Covenant]] 分队。

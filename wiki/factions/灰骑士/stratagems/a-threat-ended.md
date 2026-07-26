@@ -13,10 +13,10 @@ tags:
 - 灰骑士
 sources:
 - book: 官方结构库 db/wh40k.sqlite（Wahapedia 11 版镜像）
-updated: '2026-07-25'
+updated: '2026-07-26'
 ---
 
-1 CP、Fight phase、[[factions/灰骑士/detachments/argent-assault.md|Argent Assault]] 分队。
+1 CP、Fight phase、[[factions/灰骑士/detachments/argent-assault.md|圣银突袭]] 分队。
 
 ## 使用时机
 

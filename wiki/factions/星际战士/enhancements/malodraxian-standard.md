@@ -1,5 +1,6 @@
 ---
 id: '000010460005'
+name_zh: 长恶星战旗
 name_en: Malodraxian Standard
 faction: 星际战士
 type: enhancement
@@ -11,10 +12,10 @@ tags:
 - 星际战士
 sources:
 - book: 官方结构库 db/wh40k.sqlite（Wahapedia 11 版镜像）
-updated: '2026-07-25'
+updated: '2026-07-26'
 ---
 
-20 分、[[factions/星际战士/detachments/emperors-shield.md|Emperor’s Shield]] 分队。
+20 分、[[factions/星际战士/detachments/emperors-shield.md|帝皇之盾]] 分队。
 
 ## 效果
 

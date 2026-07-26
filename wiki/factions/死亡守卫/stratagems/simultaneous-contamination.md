@@ -1,7 +1,9 @@
 ---
 id: fp11e-dg-paragons-s3
-name_zh: 同步污染
+name_zh: 同时感染
 name_en: SIMULTANEOUS CONTAMINATION
+aliases:
+- 同步污染
 faction: 死亡守卫
 type: stratagem
 detachment: Paragons of Putrescence
@@ -13,10 +15,10 @@ tags:
 - 死亡守卫
 sources:
 - book: 官方结构库 db/wh40k.sqlite（Wahapedia 11 版镜像）
-updated: '2026-07-25'
+updated: '2026-07-26'
 ---
 
-1 CP、Shooting phase、[[factions/死亡守卫/detachments/paragons-of-putrescence.md|Paragons of Putrescence]] 分队。
+1 CP、Shooting phase、[[factions/死亡守卫/detachments/paragons-of-putrescence.md|腐坏楷模]] 分队。
 
 ## 使用时机
 

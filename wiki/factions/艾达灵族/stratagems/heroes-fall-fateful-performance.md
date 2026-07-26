@@ -1,7 +1,9 @@
 ---
 id: fp11e-aeldari-fateful-s1
-name_zh: 英雄的谢幕
+name_zh: 英雄陨落
 name_en: HEROES’ FALL
+aliases:
+- 英雄的谢幕
 faction: 艾达灵族
 type: stratagem
 detachment: Fateful Performance
@@ -13,10 +15,10 @@ tags:
 - 艾达灵族
 sources:
 - book: 官方结构库 db/wh40k.sqlite（Wahapedia 11 版镜像）
-updated: '2026-07-25'
+updated: '2026-07-26'
 ---
 
-1 CP、Fight phase、[[factions/艾达灵族/detachments/fateful-performance.md|Fateful Performance]] 分队。
+1 CP、Fight phase、[[factions/艾达灵族/detachments/fateful-performance.md|宿命的演出]] 分队。
 
 ## 使用时机
 

@@ -1,7 +1,9 @@
 ---
 id: fp11e-tau-aac-e2
-name_zh: 显形套件
+name_zh: 索敌系统
 name_en: Unmasking Suite
+aliases:
+- 显形套件
 faction: 钛帝国
 type: enhancement
 detachment: Advanced Acquisition Cadre
@@ -11,10 +13,10 @@ tags:
 - 钛帝国
 sources:
 - book: 官方结构库 db/wh40k.sqlite（Wahapedia 11 版镜像）
-updated: '2026-07-25'
+updated: '2026-07-26'
 ---
 
-分数未知、[[factions/钛帝国/detachments/advanced-acquisition-cadre.md|Advanced Acquisition Cadre]] 分队。
+分数未知、[[factions/钛帝国/detachments/advanced-acquisition-cadre.md|先攻抢占核心队]] 分队。
 
 ## 效果
 

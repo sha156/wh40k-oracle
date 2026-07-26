@@ -1,7 +1,9 @@
 ---
 id: '000009847002'
-name_zh: 神选屠夫
+name_zh: 顶尖屠杀者
 name_en: Archslaughterer
+aliases:
+- 神选屠夫
 faction: 吞世者
 type: enhancement
 detachment: Vessels of Wrath
@@ -12,10 +14,10 @@ tags:
 - 吞世者
 sources:
 - book: 官方结构库 db/wh40k.sqlite（Wahapedia 11 版镜像）
-updated: '2026-07-25'
+updated: '2026-07-26'
 ---
 
-25 分、[[factions/吞世者/detachments/vessels-of-wrath.md|Vessels of Wrath]] 分队。
+25 分、[[factions/吞世者/detachments/vessels-of-wrath.md|怒火容器]] 分队。
 
 ## 效果
 

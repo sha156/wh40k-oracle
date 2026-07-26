@@ -10,9 +10,10 @@
 | 分支 | `feat/codex-wiki`（已推 origin，**未合 main**；main 落后 16 个提交） |
 | HEAD | `1dd8b6b3` |
 | 工作区 | 干净（0 脏文件、0 未推送） |
-| 测试 | **2125 passed**（本线开工前基线 1968） |
-| wiki lint | **0 error** / 553 warning（全是 alias-conflicts）/ 4 info |
-| wiki 规模 | **4917 页**（开工前 1828） |
+| 测试 | **2199 passed**（本线开工前基线 1968；2026-07-26 官方中文层 +30 条） |
+| wiki lint | **0 error** / 593 warning（全是 alias-conflicts）/ 4 info |
+| wiki 规模 | **4921 页**（开工前 1828） |
+| 中文名覆盖 | 战略 989/1681、增强 547/1058、分队容器 123/324（2026-07-26 官方中文层） |
 
 本线 6 个提交，按依赖顺序：
 
@@ -23,6 +24,10 @@
 b25b3780  PR-4 web /codex「分队」页签 + 块级契约
 d639995b  PR-5 核心规则全文 24 章 137 节
 1dd8b6b3  收官归档（CLAUDE.md 进度 + 蓝图状态）
+0dde9c12  本检查点
+ddd442ee  GW 官方简体中文语料落地（34 个 PDF）+ 全库译名改用官方
+53f35a20  官方中文实体名指纹配对（只出映射文件，不写库）
+（本次）  官方中文名落库 + 3063 实体页重生成
 ```
 （PR-3「十版汉化正文叠加」按用户裁决取消，蓝图里保留了"为什么不做"。）
 
@@ -31,6 +36,9 @@ d639995b  PR-5 核心规则全文 24 章 137 节
 所有 wiki 内容都是**确定性生成**的，删了能重建：
 
 ```powershell
+# 中文名是从库里读的：这一步不跑，实体页会退回英文/旧译名，而生成器照样报"成功写 3063 页"
+.\.venv\Scripts\python.exe -m db_compile official-zh --apply   # 官方中文名 → 库（秒级、离线）
+
 .\.venv\Scripts\python.exe -m wiki_engine keywords     # 词条索引 → indexes/keywords.{md,json}
 .\.venv\Scripts\python.exe -m wiki_engine entities     # 分队/战略/增强 3063 页
 .\.venv\Scripts\python.exe -m wiki_engine core-rules   # 核心规则 24 章
@@ -67,8 +75,11 @@ enhancements 1058 / detachments 324 / core-rules 概念页 82 / sections 24）�
    这些是 Faction Pack 新分队，Wahapedia 无源，只能人工补进
    `db_compile/fp_rules_patches.json` 的 inserts（白名单已开好）。
    **禁止**按 id 前缀去撞它们的战略行——那是被明确否掉的推断法。
-4. **分队中文名覆盖 0/324**。战略 759/1681、增强 381/1058 有中文名（来自 P7 载荷），
-   分队容器名一个都没有。要补只能人工译，且必须按 11 版 FP 而非十版译本。
+4. ~~**分队中文名覆盖 0/324**~~ **已办（2026-07-26）**：GW 官方简体中文包按数值指纹
+   配对 → 落库 → 重生成实体页。现覆盖 **分队 123/324、战略 989/1681、增强 547/1058**；
+   官方顶掉的 P7 人工译名降为页面 alias（295 页）。上限是结构性的：GW 免费发的是
+   阵营包补充（只含新增分遣队），codex 正文的战略/强化不白送——剩下的仍只能人工译，
+   且必须按 11 版 FP。落库层 `db_compile/official_zh_apply.py`，坑见其顶注。
 5. **新页面未进 FAISS**。`ingest.py --rebuild` 没跑，检索侧零影响；
    如果要让规则问答检索到这些页，需另行 ingest（注意：wiki 是 L2 层，
    FAISS 索引的是 L0/L1 的 PDF，两者是不同的层，改动前先想清楚要不要混）。

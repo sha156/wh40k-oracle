@@ -1,7 +1,9 @@
 ---
 id: fp11e-da-arsenal-s1
-name_zh: 灼烧爆发
+name_zh: 灼热连射
 name_en: Searing Bursts
+aliases:
+- 灼烧爆发
 faction: 星际战士
 type: stratagem
 detachment: Dark Age Arsenal
@@ -13,10 +15,10 @@ tags:
 - 星际战士
 sources:
 - book: 官方结构库 db/wh40k.sqlite（Wahapedia 11 版镜像）
-updated: '2026-07-25'
+updated: '2026-07-26'
 ---
 
-1 CP、Shooting phase、[[factions/星际战士/detachments/dark-age-arsenal.md|Dark Age Arsenal]] 分队。
+1 CP、Shooting phase、[[factions/星际战士/detachments/dark-age-arsenal.md|黑暗时代兵器]] 分队。
 
 ## 使用时机
 

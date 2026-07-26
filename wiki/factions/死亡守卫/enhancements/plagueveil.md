@@ -1,7 +1,9 @@
 ---
 id: '000009729005'
-name_zh: 瘟疫面纱
+name_zh: 瘟疫烟幕
 name_en: Plagueveil
+aliases:
+- 瘟疫面纱
 faction: 死亡守卫
 type: enhancement
 detachment: Flyblown Host
@@ -12,10 +14,10 @@ tags:
 - 死亡守卫
 sources:
 - book: 官方结构库 db/wh40k.sqlite（Wahapedia 11 版镜像）
-updated: '2026-07-25'
+updated: '2026-07-26'
 ---
 
-25 分、[[factions/死亡守卫/detachments/flyblown-host.md|Flyblown Host]] 分队。
+25 分、[[factions/死亡守卫/detachments/flyblown-host.md|吹蝇军]] 分队。
 
 ## 效果
 

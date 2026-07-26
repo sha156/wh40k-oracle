@@ -1,7 +1,9 @@
 ---
 id: fp11e-ac-moritoi-s2
-name_zh: 势不可挡的进击
+name_zh: 势如破竹
 name_en: Unstoppable Advance
+aliases:
+- 势不可挡的进击
 faction: 帝皇卫队
 type: stratagem
 detachment: Might of the Moritoi
@@ -13,10 +15,10 @@ tags:
 - 帝皇卫队
 sources:
 - book: 官方结构库 db/wh40k.sqlite（Wahapedia 11 版镜像）
-updated: '2026-07-25'
+updated: '2026-07-26'
 ---
 
-1 CP、Movement phase、[[factions/帝皇卫队/detachments/might-of-the-moritoi.md|Might of the Moritoi]] 分队。
+1 CP、Movement phase、[[factions/帝皇卫队/detachments/might-of-the-moritoi.md|亡者之势]] 分队。
 
 ## 使用时机
 

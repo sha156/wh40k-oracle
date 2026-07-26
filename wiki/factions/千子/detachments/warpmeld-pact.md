@@ -10,10 +10,10 @@ tags:
 - 千子
 sources:
 - book: 官方结构库 db/wh40k.sqlite（Wahapedia 11 版镜像）
-updated: '2026-07-25'
+updated: '2026-07-26'
 ---
 
-千子的分队，分队规则「扭曲献祭」。
+千子的分队「Warpmeld Pact」，分队规则「扭曲献祭」。
 
 ## 分队规则
 

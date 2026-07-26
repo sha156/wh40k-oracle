@@ -47,4 +47,4 @@ updated: '2026-07-23'
 
 ## 关键词
 - **阵营关键词**：Adeptus Astartes，Ultramarines
-- **普通关键词**：Tacticus，Chief Librarian Tigurius，Imperium，[[core-rules/epic-hero.md|Epic Hero]]，[[core-rules/character.md|Character]]，[[core-rules/infantry.md|Infantry]]，[[core-rules/psyker.md|Psyker]]
+- **普通关键词**：Tacticus，Chief [[factions/星际战士/units/librarian.md|Librarian]] Tigurius，Imperium，[[core-rules/epic-hero.md|Epic Hero]]，[[core-rules/character.md|Character]]，[[core-rules/infantry.md|Infantry]]，[[core-rules/psyker.md|Psyker]]

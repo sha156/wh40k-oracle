@@ -13,7 +13,7 @@ tags:
 - 星际战士
 sources:
 - book: 官方结构库 db/wh40k.sqlite（Wahapedia 11 版镜像）
-updated: '2026-07-25'
+updated: '2026-07-26'
 ---
 
 1 CP、Command phase、[[factions/星际战士/detachments/saga-of-the-bold.md|Saga of the Bold]] 分队、Epic Deed Stratagem。
@@ -24,7 +24,7 @@ Your Command phase.
 
 ## 使用对象
 
-One [[factions/星际战士/units/wolf-guard.md|Wolf Guard]] Headtaker or [[factions/星际战士/units/wolf-guard.md|Wolf Guard]] Terminator Pack Leader model from your army.
+One [[factions/星际战士/units/wolf-guard.md|Wolf Guard]] Headtaker or Wolf Guard Terminator Pack Leader model from your army.
 
 ## 效果
 

@@ -1,5 +1,6 @@
 ---
 id: '000009777002'
+name_zh: 曼杜里斯骨匣
 name_en: Mandulian Reliquary
 faction: 灰骑士
 type: enhancement
@@ -11,10 +12,10 @@ tags:
 - 灰骑士
 sources:
 - book: 官方结构库 db/wh40k.sqlite（Wahapedia 11 版镜像）
-updated: '2026-07-25'
+updated: '2026-07-26'
 ---
 
-20 分、[[factions/灰骑士/detachments/warpbane-task-force.md|Warpbane Task Force]] 分队。
+20 分、[[factions/灰骑士/detachments/warpbane-task-force.md|次元灾星特遣队]] 分队。
 
 ## 效果
 

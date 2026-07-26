@@ -1,5 +1,6 @@
 ---
 id: '000010756004'
+name_zh: 全速前进
 name_en: FULL TILT
 faction: 帝国骑士
 type: stratagem
@@ -13,10 +14,10 @@ tags:
 - 帝国骑士
 sources:
 - book: 官方结构库 db/wh40k.sqlite（Wahapedia 11 版镜像）
-updated: '2026-07-25'
+updated: '2026-07-26'
 ---
 
-1 CP、Movement phase、[[factions/帝国骑士/detachments/freeblade-company.md|Freeblade Company]] 分队、Wargear Stratagem。
+1 CP、Movement phase、[[factions/帝国骑士/detachments/freeblade-company.md|自由之刃连队]] 分队、Wargear Stratagem。
 
 ## 使用时机
 

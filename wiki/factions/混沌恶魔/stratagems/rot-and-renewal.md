@@ -1,5 +1,6 @@
 ---
 id: '000009820005'
+name_zh: 腐烂与再生
 name_en: ROT AND RENEWAL
 faction: 混沌恶魔
 type: stratagem
@@ -13,10 +14,10 @@ tags:
 - 混沌恶魔
 sources:
 - book: 官方结构库 db/wh40k.sqlite（Wahapedia 11 版镜像）
-updated: '2026-07-25'
+updated: '2026-07-26'
 ---
 
-1 CP、Movement or Charge phase、[[factions/混沌恶魔/detachments/plague-legion.md|Plague Legion]] 分队、Strategic Ploy Stratagem。
+1 CP、Movement or Charge phase、[[factions/混沌恶魔/detachments/plague-legion.md|瘟疫军团]] 分队、Strategic Ploy Stratagem。
 
 ## 使用时机
 

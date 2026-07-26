@@ -49,8 +49,25 @@ def _cost_to_int(raw: str) -> Optional[int]:
         return None
 
 
+_OVERLAY_COLS = ("name_zh", "effect_dsl_json")
+
+
+def _overlay_filled(cur, cols: List[str]) -> Dict[str, int]:
+    """各叠加列当前有值的行数（用于 REPLACE 前后对账）。"""
+    return {c: cur.execute(
+        "SELECT COUNT(*) FROM enhancements WHERE {0} IS NOT NULL AND {0} != ''"
+        .format(c)).fetchone()[0] for c in cols}
+
+
 def apply_enhancements(db_path, rows: List[Dict[str, str]]) -> Dict[str, int]:
-    """rows → enhancements 表（建表 + 索引 + INSERT OR REPLACE）。返回落库统计。"""
+    """rows → enhancements 表（建表 + 索引 + INSERT OR REPLACE）。返回落库统计。
+
+    ⚠️ `INSERT OR REPLACE` 是「删了再插」：**叠加列会被清空**——官方中文名
+    （name_zh，真源 official_zh_names.json）与 P7 DSL 投影（effect_dsl_json）都不在
+    插入列表里。清了多少行记进返回值 `cleared_overlay`，由 CLI 吼出来并提示补跑
+    `official-zh --apply` / `dsl-apply`。静默清空的表现是「中文名忽然少了一批」，
+    没人会想到是重灌强化表干的。
+    """
     from db_compile.schema import ENHANCEMENTS_DDL
 
     conn = sqlite3.connect(str(db_path))
@@ -59,6 +76,9 @@ def apply_enhancements(db_path, rows: List[Dict[str, str]]) -> Dict[str, int]:
         cur.execute(ENHANCEMENTS_DDL)
         cur.execute("CREATE INDEX IF NOT EXISTS idx_enh_detachment "
                     "ON enhancements(detachment_id)")
+        have = {r[1] for r in cur.execute("PRAGMA table_info(enhancements)")}
+        overlay_cols = [c for c in _OVERLAY_COLS if c in have]
+        before = _overlay_filled(cur, overlay_cols)
         payload = [
             (r.get("id"), r.get("faction_id"), r.get("detachment_id"),
              r.get("detachment"), r.get("name"), _cost_to_int(r.get("cost", "")),
@@ -74,9 +94,13 @@ def apply_enhancements(db_path, rows: List[Dict[str, str]]) -> Dict[str, int]:
         total = cur.execute("SELECT COUNT(*) FROM enhancements").fetchone()[0]
         dets = cur.execute(
             "SELECT COUNT(DISTINCT detachment_id) FROM enhancements").fetchone()[0]
+        after = _overlay_filled(cur, overlay_cols)
+        cleared = {c: before[c] - after[c] for c in overlay_cols
+                   if before[c] > after[c]}
     finally:
         conn.close()
-    return {"inserted": len(payload), "table_total": total, "detachments": dets}
+    return {"inserted": len(payload), "table_total": total, "detachments": dets,
+            "cleared_overlay": cleared}
 
 
 def check_enhancements(db_path, rows: List[Dict[str, str]]) -> Dict[str, Any]:

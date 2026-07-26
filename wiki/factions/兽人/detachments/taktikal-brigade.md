@@ -10,10 +10,10 @@ tags:
 - 兽人
 sources:
 - book: 官方结构库 db/wh40k.sqlite（Wahapedia 11 版镜像）
-updated: '2026-07-25'
+updated: '2026-07-26'
 ---
 
-兽人的分队，分队规则「听好了」。
+兽人的分队「Taktikal Brigade」，分队规则「听好了」。
 
 ## 分队规则
 

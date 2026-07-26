@@ -1,7 +1,9 @@
 ---
 id: fp11e-ork-rollin-s1
-name_zh: 残暴齐射
+name_zh: 凶残齐射
 name_en: Brutal Broadside
+aliases:
+- 残暴齐射
 faction: 兽人
 type: stratagem
 detachment: Rollin' Deff
@@ -13,10 +15,10 @@ tags:
 - 兽人
 sources:
 - book: 官方结构库 db/wh40k.sqlite（Wahapedia 11 版镜像）
-updated: '2026-07-25'
+updated: '2026-07-26'
 ---
 
-1 CP、Shooting phase、[[factions/兽人/detachments/rollin-deff.md|Rollin' Deff]] 分队。
+1 CP、Shooting phase、[[factions/兽人/detachments/rollin-deff.md|死亡摇滚]] 分队。
 
 ## 使用时机
 

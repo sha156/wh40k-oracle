@@ -10,10 +10,10 @@ tags:
 - 星际战士
 sources:
 - book: 官方结构库 db/wh40k.sqlite（Wahapedia 11 版镜像）
-updated: '2026-07-25'
+updated: '2026-07-26'
 ---
 
-星际战士的分队，分队规则「Drive Home the Blade」。
+星际战士的分队「Boarding Strike」，分队规则「Drive Home the Blade」。
 
 ## 分队规则
 
@@ -23,7 +23,7 @@ Each time an ADEPTUS ASTARTES unit from your army is selected to shoot, if one o
 
 ## 增强
 
-- [[factions/星际战士/enhancements/adamantine-mantle-boarding-strike.md\|Adamantine Mantle]]
+- [[factions/星际战士/enhancements/adamantine-mantle-boarding-strike.md\|精金斗篷]]
 - [[factions/星际战士/enhancements/clavitine-reliquary.md\|Clavitine Reliquary]]
 
 ## 战略

@@ -1,5 +1,6 @@
 ---
 id: '000009734005'
+name_zh: 钢铁骑士
 name_en: KNIGHTS OF IRON
 faction: 星际战士
 type: stratagem
@@ -13,10 +14,10 @@ tags:
 - 星际战士
 sources:
 - book: 官方结构库 db/wh40k.sqlite（Wahapedia 11 版镜像）
-updated: '2026-07-25'
+updated: '2026-07-26'
 ---
 
-1 CP、Movement or Charge phase、[[factions/星际战士/detachments/lions-blade-task-force.md|Lion’s Blade Task Force]] 分队、Strategic Ploy Stratagem。
+1 CP、Movement or Charge phase、[[factions/星际战士/detachments/lions-blade-task-force.md|莱昂之剑特遣队]] 分队、Strategic Ploy Stratagem。
 
 ## 使用时机
 

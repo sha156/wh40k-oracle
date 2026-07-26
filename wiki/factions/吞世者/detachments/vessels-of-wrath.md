@@ -1,5 +1,6 @@
 ---
 id: '000009846'
+name_zh: 怒火容器
 name_en: Vessels of Wrath
 faction: 吞世者
 type: detachment
@@ -10,10 +11,10 @@ tags:
 - 吞世者
 sources:
 - book: 官方结构库 db/wh40k.sqlite（Wahapedia 11 版镜像）
-updated: '2026-07-25'
+updated: '2026-07-26'
 ---
 
-吞世者的分队，分队规则「恐虐之怒」。
+吞世者的分队「怒火容器」，分队规则「恐虐之怒」。
 
 ## 分队规则
 
@@ -26,9 +27,9 @@ When a friendly WORLD EATERS CHARACTER unit (excluding EPIC HERO units) is selec
 
 ## 增强
 
-- [[factions/吞世者/enhancements/archslaughterer.md\|神选屠夫]]
+- [[factions/吞世者/enhancements/archslaughterer.md\|顶尖屠杀者]]
 - [[factions/吞世者/enhancements/avengers-crown.md\|Avenger’s Crown]]
-- [[factions/吞世者/enhancements/gateways-to-glory.md\|荣耀之门]]
+- [[factions/吞世者/enhancements/gateways-to-glory.md\|荣耀道路]]
 - [[factions/吞世者/enhancements/vox-diabolus.md\|Vox-diabolus]]
 
 ## 战略
@@ -39,4 +40,4 @@ When a friendly WORLD EATERS CHARACTER unit (excluding EPIC HERO units) is selec
 - [[factions/吞世者/stratagems/meet-force-with-force.md\|硬碰硬]]
 - [[factions/吞世者/stratagems/overshadowed-by-none.md\|脱颖而出]]
 - [[factions/吞世者/stratagems/punish-the-craven.md\|惩罚懦夫]]
-- [[factions/吞世者/stratagems/scorn-the-witch.md\|蔑视巫觋]]
+- [[factions/吞世者/stratagems/scorn-the-witch.md\|蔑视巫师]]
