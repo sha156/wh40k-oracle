@@ -140,6 +140,11 @@ def _norm_stat(v: Any) -> str:
     s = s.replace("－", "-").replace("＋", "+").replace('"', "").replace("”", "")
     if s in ("", "N/A", "NA", "-", "—", "无"):
         return ""
+    # 射程列的「近战」与库里的 'Melee' 是同一件事。不归一的话近战武器的数值指纹
+    # 首位永远对不上 → Pass A 对近战全盘失效，只剩「两边各只剩一把」的 Pass B 兜底；
+    # 一个单位有两把以上近战武器时就整组不配对（地狱之末 3 把近战全留英文）。
+    if s in ("MELEE", "近战"):
+        return "MELEE"
     if s.endswith("+"):
         s = s[:-1]
     return s

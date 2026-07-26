@@ -32,9 +32,13 @@ needs_assets = pytest.mark.skipif(
     not (DB_PATH.exists() and PAYLOAD.exists() and SECTIONS.is_dir()),
     reason="需要 db/wh40k.sqlite + wiki/indexes/keywords.json + wiki/core-rules/sections/")
 
-# 实测口径（2026-07-27）。数字变了先确认是换库/换版，别顺手对齐成"测试通过"。
-EXPECTED_ZH_ITEMS = 3267        # unit_zh_detail 里的技能条目总数
-EXPECTED_ZH_KW_SPANS = 190      # 其中切出的词条段（中文【】写法）
+# 实测口径（2026-07-27 黑图书馆缓存刷新后）。数字变了先确认是换库/换版，
+# 别顺手对齐成"测试通过"。本次 3267→3280 / 190→188 的来源已逐条核实：
+# 缓存从 2026-07-08 刷到 2026-07-27，源侧新增 2 条记录 + 43 条技能正文被官方改写
+# （无视掩体 10→9、毁灭伤害 11→10、光环 5→6、隐蔽 2→1），四个词条全部仍能 resolve，
+# 不是解析退化。
+EXPECTED_ZH_ITEMS = 3280        # unit_zh_detail 里的技能条目总数
+EXPECTED_ZH_KW_SPANS = 188      # 其中切出的词条段（中文【】写法）
 EXPECTED_EN_ROWS = 4009         # abilities 表行数
 EXPECTED_EN_KW_SPANS = 443      # 其中切出的词条段（英文 [] 写法；kwb 里全是阵营关键词，
                                 # 一条都不该在这里）

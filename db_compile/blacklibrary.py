@@ -130,6 +130,27 @@ def _norm_en(name: Optional[str]) -> str:
     return re.sub(r"[^a-z0-9]", "", (name or "").lower())
 
 
+def _norm_zh(name: Optional[str]) -> str:
+    """中文名归一化匹配键：去掉空白与常见修饰标点。
+
+    黑图与库里的中文名在标点上并不一致（`克拉维克·莫恩` / `【传奇】地狱之末` /
+    `装备重型武器的天灾`），只做标点归一、**不**做同义改写——中文名一字之差
+    就是另一张兵牌，模糊匹配会静默错配。
+    """
+    return re.sub(r"[\s·・’'\"()（）【】\[\]]", "", (name or "")).strip()
+
+
+def _zh_to_ids(conn: sqlite3.Connection) -> Dict[str, List[str]]:
+    """归一化中文名 → 全部同名 unit id（英文名对不上时的第二座桥）。"""
+    out: Dict[str, List[str]] = {}
+    for cid, name in conn.execute(
+            "SELECT id, name_zh FROM units WHERE name_zh IS NOT NULL AND name_zh != ''"):
+        key = _norm_zh(name)
+        if key:
+            out.setdefault(key, []).append(cid)
+    return out
+
+
 def _en_to_ids(conn: sqlite3.Connection) -> Dict[str, List[str]]:
     """归一化英文名 → **全部**同名 unit id。
 
@@ -148,8 +169,14 @@ def _en_to_ids(conn: sqlite3.Connection) -> Dict[str, List[str]]:
 def populate_zh_details(db_path, details: List[dict]) -> Dict[str, int]:
     """把黑图书馆中文 datasheet 灌进 `unit_zh_detail` 表（canonical_id 经 name_en 匹配）。
 
+    英文名对不上时退到**中文名桥**：黑图与库里的英文名在单复数/头衔前缀上会差
+    （`Hellflayer` vs `Hellflayers`、`Warsmith Kravek Morne` vs `Kravek Morne`），
+    这类只差写法的单位靠中文名能一对一接上。中文名桥**只认一对一**——归一化后
+    在黑图侧或库侧有歧义就整条放弃，宁可少灌一行也不错配到另一张兵牌。
+
     英文=权威真值不动；本表是叠加的中文原生内容层（属性/能力/武器/简介）。
-    幂等：建表 IF NOT EXISTS + 先删本源旧行。返回 {records, matched, unmatched, no_detail}。
+    幂等：建表 IF NOT EXISTS + 先删本源旧行。
+    返回 {records, matched, matched_by_zh, unmatched, no_detail}。
     """
     conn = sqlite3.connect(str(db_path))
     try:
@@ -167,9 +194,31 @@ def populate_zh_details(db_path, details: List[dict]) -> Dict[str, int]:
             )""")
         conn.execute("DELETE FROM unit_zh_detail WHERE source = 'blackforum'")
         en2ids = _en_to_ids(conn)
-        matched = no_detail = 0
+        zh2ids = _zh_to_ids(conn)
+        # 黑图侧同一中文名出现多次 → 这个中文名不具备唯一指向，退出中文名桥
+        zh_dupes = set()
+        seen_zh = set()
+        for r in details:
+            k = _norm_zh(r.get("name_zh"))
+            if not k:
+                continue
+            if k in seen_zh:
+                zh_dupes.add(k)
+            seen_zh.add(k)
+        # 已被英文名认领的行不许中文名桥再碰：否则谁后写谁赢，同一 canonical_id
+        # 会被另一张兵牌的中文层覆盖，且从表里完全看不出来
+        claimed = {cid for r in details
+                   for cid in en2ids.get(_norm_en(r.get("name_en")), [])}
+        matched = matched_by_zh = no_detail = 0
         for r in details:
             cids = en2ids.get(_norm_en(r.get("name_en")))
+            via_zh = False
+            if not cids:
+                zk = _norm_zh(r.get("name_zh"))
+                # 库侧同名多行是合法的（同一兵牌挂多阵营），黑图侧重名才是歧义
+                if zk and zk not in zh_dupes:
+                    cids = [c for c in zh2ids.get(zk, []) if c not in claimed]
+                    via_zh = bool(cids)
             if not cids:
                 continue
             det = r.get("detail")
@@ -191,8 +240,10 @@ def populate_zh_details(db_path, details: List[dict]) -> Dict[str, int]:
                      json.dumps(weapons, ensure_ascii=False),
                      json.dumps(det.get("简介"), ensure_ascii=False)))
             matched += 1
+            matched_by_zh += 1 if via_zh else 0
         conn.commit()
         return {"records": len(details), "matched": matched,
+                "matched_by_zh": matched_by_zh,
                 "unmatched": len(details) - matched - no_detail, "no_detail": no_detail}
     finally:
         conn.close()
