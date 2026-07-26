@@ -49,12 +49,9 @@ DB_PATH = REPO_ROOT / "db" / "wh40k.sqlite"
 # 留着是防某一节将来变长后把整段规则书塞进一个 tooltip。
 BRIEF_MAX = 300
 
-# 官方节号：`24.03`。中英两版共用同一套编号，它同时是配对键与身份。
-# **必须锚在行尾**：官方小节名一律「名字 + 节号」结尾，而第 24 章有一个节标题被 PDF
-# 版面污染成「…领袖  24.22/辅助 24.34」（侧栏的交叉引用串进了标题）。取第一个匹配会
-# 把它认成 24.22 的重复，真正的 24.34 就此在按号查找里消失——156 节只剩 155 个号，
-# 而页面上一切正常。取行尾那个两处都对。
-_SECTION_NO = re.compile(r"(\d{2}\.\d{2})\s*$")
+# 节号不在这里抠：`core_rules_browse` 下发的每个小节已自带 `number`（那份实现锚在
+# 行尾，绕开了「…领袖  24.22/辅助 24.34」这种被 PDF 版面污染的标题）。这里再写一份
+# 正则就是第二个错源，而两份规则打架时页面上看不出差别。
 
 # 各种连字符：官方中文 PDF 直提出来的 `[CLOSE‑QUARTERS]` 用的是 U+2011 不换行连字符，
 # 而库里的词条是 ASCII `-`。不归一化就会有两个词条永远配不上，且页面上看不出差别。
@@ -233,12 +230,11 @@ def _sections() -> Tuple[Dict[str, _Section], Dict[str, str]]:
                            summary.number, exc))
             continue
         for section in chapter.sections:
-            m = _SECTION_NO.search(section.title or "")
-            if not m:
+            number = section.number
+            if not number:
                 # 每节标题都带官方节号；不带 = 切分又出问题了（折叠被腰斩过一次）。
                 # 跳过而不是收下——收下会得到一条节号为空、永远配不上的假节。
                 continue
-            number = m.group(1)
             name_en, brief = _section_brief(section.blocks)
             by_no.setdefault(number, _Section(
                 number=number, chapter_slug=chapter.slug,
@@ -277,6 +273,33 @@ def split_tokens(values: Iterable[Any]) -> List[str]:
     return out
 
 
+def _section_for(item: Dict[str, Any]) -> Optional[_Section]:
+    """词条索引条目 → 它在核心规则里的那一节（查不到返回 None）。
+
+    节号优先用速查表印的那个；速查表漏印时（实测 PISTOL / SUSTAINED HITS 两条）退回
+    按官方英文名与核心规则章节配对——**不按顺序推断补号**。速查表印了号、但那一节
+    我们并没有正文时（`number not in by_no`）同样走英文名兜底，否则会给出一个
+    点进去什么都没有的链接。
+    """
+    by_no, by_en = _sections()
+    base = _norm_en(item.get("base", ""))
+    number = item.get("section")
+    if not number or number not in by_no:
+        number = by_en.get(base)
+    return by_no.get(number) if number else None
+
+
+def rule_link(base: str) -> Tuple[Optional[str], Optional[str]]:
+    """官方英文基名 → (官方节号, 核心规则章节页 slug)。查不到 → (None, None)。
+
+    给词条索引页用（它只有英文基名，不需要中英对照表那一步）。成对返回：
+    只有节号而没有章节页的链接无处可去，宁可两个都不给。
+    """
+    item = _index().get(_norm_en(base))
+    section = _section_for(item) if item else None
+    return (section.number, section.chapter_slug) if section else (None, None)
+
+
 def resolve(token: str) -> KeywordRef:
     """一个词条 token → KeywordRef。查不到真源时只有 `text`（诚实降级，不编解释）。
 
@@ -293,14 +316,7 @@ def resolve(token: str) -> KeywordRef:
     if item is None:
         return KeywordRef(text=text)
 
-    by_no, by_en = _sections()
-    # 节号优先用速查表印的那个；速查表漏印时（实测 PISTOL / SUSTAINED HITS 两条）
-    # 退回按官方英文名与核心规则章节配对——**不按顺序推断补号**
-    number = item.get("section")
-    if not number or number not in by_no:
-        number = by_en.get(_norm_en(base))
-    section = by_no.get(number) if number else None
-
+    section = _section_for(item)
     return KeywordRef(
         text=text,
         slug=item.get("slug") or None,

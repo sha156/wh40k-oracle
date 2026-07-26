@@ -86,10 +86,12 @@ function EngineTag({ engine }: { engine: string }) {
 interface DetailBodyProps {
   summary: KeywordSummary;
   detail: KeywordDetail | null;
+  /** 跳到核心规则页签的那一节；父页没给（比如日后单独嵌用）就只显示节号不给按钮 */
+  onOpenRule?: (ruleSlug: string, ruleSection: string) => void;
 }
 
-/** 展开区：反查清单（武器 —— 携带单位）+ 规则页标记 */
-function DetailBody({ summary, detail }: DetailBodyProps) {
+/** 展开区：反查清单（武器 —— 携带单位）+ 规则正文入口 */
+function DetailBody({ summary, detail, onOpenRule }: DetailBodyProps) {
   if (!detail) {
     return (
       <p className="border-t border-panel-line bg-[#0a1214] px-3 py-2 font-mono text-[11.5px] text-sage">
@@ -98,6 +100,9 @@ function DetailBody({ summary, detail }: DetailBodyProps) {
     );
   }
   const weapons: KeywordWeapon[] = detail.weapons;
+  // 先取成局部常量，TS 才认得住「两个都非 null」这个窄化（写在 JSX 里得用 ! 断言）
+  const ruleSection = detail.ruleSection;
+  const ruleSlug = detail.ruleSlug;
   return (
     <div className="border-t border-panel-line bg-[#0a1214] px-3 py-2.5">
       <div className="mb-2 flex flex-wrap items-baseline gap-x-4 gap-y-1 font-mono text-[11.5px] text-[#8fa19b]">
@@ -111,15 +116,26 @@ function DetailBody({ summary, detail }: DetailBodyProps) {
           <b className="font-cond text-[13px] text-bone">{detail.currentUnits}</b>
           <span className="text-[#5c6f6a]">（全库 {detail.totalUnits}）</span>
         </span>
-        {/* 规则正文页在后续 PR 才做，这里只给路径文本——做成链接就是个 404。
-            没挂页时只对单位特有词条解释去处（通用词条缺页是数据缺口，不替它编理由） */}
-        <span className="text-[#5c6f6a]">
-          {detail.rulePage
-            ? `规则页 ${detail.rulePage} · 正文页待上线`
-            : summary.group === "unit-specific"
-              ? "未挂规则页（规则正文写在该单位兵牌上）"
-              : "未挂规则页"}
-        </span>
+        {/* 规则正文页已经有了（图鉴 · 核心规则页签），所以这里是真跳转而不是路径文本。
+            判据是后端现查到的 ruleSection/ruleSlug——它俩成对给，缺一个就没有落点，
+            此时照实说没有，绝不拿 rulePage 拼一个链接出来（那是 wiki md 路径，不是路由） */}
+        {ruleSection && ruleSlug && onOpenRule ? (
+          <button
+            type="button"
+            onClick={() => onOpenRule(ruleSlug, ruleSection)}
+            className="border border-[#2b423d] px-2 py-[1px] text-[#a9bcb6] hover:border-tau hover:text-bone"
+          >
+            核心规则 {detail.ruleSection} · 查看正文 →
+          </button>
+        ) : (
+          <span className="text-[#5c6f6a]">
+            {ruleSection
+              ? `核心规则 ${ruleSection}`
+              : summary.group === "unit-specific"
+                ? "未挂规则页（规则正文写在该单位兵牌上）"
+                : "未挂规则页"}
+          </span>
+        )}
       </div>
 
       {weapons.length === 0 ? (
@@ -163,13 +179,15 @@ function DetailBody({ summary, detail }: DetailBodyProps) {
 interface KeywordIndexProps {
   /** 后端错误横幅由 /codex 页统一渲染（BACKEND_HINT 文案只留一份，不在组件里复制） */
   onError: () => void;
+  /** 「查看正文」：切到核心规则页签并滚到那一节。页签切换归 /codex 页管，故往上抛 */
+  onOpenRule?: (ruleSlug: string, ruleSection: string) => void;
 }
 
 /**
  * 图鉴 · 武器词条页签：46 个词条按通用 / 过渡期 / 单位特有 分区，
  * 点行展开该词条的武器反查清单（详情单独取，索引不驮 364KB 的 weapons）。
  */
-export function KeywordIndex({ onError }: KeywordIndexProps) {
+export function KeywordIndex({ onError, onOpenRule }: KeywordIndexProps) {
   const [items, setItems] = useState<KeywordSummary[] | null>(null);
   const [query, setQuery] = useState("");
   const [openSlug, setOpenSlug] = useState<string | null>(null);
@@ -351,7 +369,11 @@ export function KeywordIndex({ onError }: KeywordIndexProps) {
                         </button>
 
                         {open ? (
-                          <DetailBody summary={k} detail={details[k.slug] ?? null} />
+                          <DetailBody
+                            summary={k}
+                            detail={details[k.slug] ?? null}
+                            onOpenRule={onOpenRule}
+                          />
                         ) : null}
                       </li>
                     );

@@ -5,6 +5,9 @@
  * 数据来自离线生成物 wiki/indexes/keywords.json——分组与计数都在离线阶段算完，
  * 请求时后端不读 sqlite 也不碰 PDF（容器只挂 wiki/、db/、opt/、local_vector_store/ 只读卷，
  * data/ 压根没挂，任何"临时算一下"的实现上线即空）。
+ *
+ * 唯一的例外是 ruleSection / ruleSlug：它们指向核心规则正文，取决于当下 wiki 卷里
+ * 有哪些章节页，故由后端请求期现查（写死进离线载荷会在卷没挂全时给出死链）。
  */
 
 const API_BASE =
@@ -31,6 +34,14 @@ export interface KeywordSummary {
   engine: string;
   /** 规则正文页路径（"core-rules/rapid-fire.md"），无页为 null */
   rulePage: string | null;
+  /**
+   * 「规则正文在核心规则的哪一节」——与 section 不是一回事：section 是速查表印的号
+   * （可能漏印），这两个是后端照着 wiki/core-rules 现查到的、**确实翻得到正文**的落点。
+   * 成对出现或成对缺失（实测 33/46 有，缺的 13 条全是单位特有词条）。
+   */
+  ruleSection: string | null;
+  /** 核心规则章节页 slug（"24-core-abilities"），配 ruleSection 定位到具体一节 */
+  ruleSlug: string | null;
   /** 现役口径武器数（去重武器名） */
   currentWeapons: number;
   totalWeapons: number;

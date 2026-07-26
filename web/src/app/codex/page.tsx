@@ -51,6 +51,13 @@ export default function CodexPage() {
   const [keywordsMounted, setKeywordsMounted] = useState(false);
   const [detachmentsMounted, setDetachmentsMounted] = useState(false);
   const [rulesMounted, setRulesMounted] = useState(false);
+  // 词条页「查看正文」的落点。nonce 是为了同一节连点两次也能重挂组件（key 变了才重挂），
+  // 否则第二次点击什么都不会发生——而用户看到的是"按钮坏了"
+  const [ruleTarget, setRuleTarget] = useState<{
+    slug: string;
+    section: string;
+    nonce: number;
+  } | null>(null);
   const [changelogMounted, setChangelogMounted] = useState(false);
   const [factions, setFactions] = useState<FactionRow[]>([]);
   const [factionId, setFactionId] = useState<string | null>(null);
@@ -131,6 +138,13 @@ export default function CodexPage() {
 
   // 词条/分队详情取数失败时复用同一条后端提示；保持引用稳定，免得它日后进 effect 依赖里反复重拉
   const onBackendError = useCallback(() => setError(BACKEND_HINT), []);
+
+  // 武器词条 → 核心规则正文：切页签 + 记落点。落点靠 key 重挂 CoreRulesBrowser 生效
+  const openRule = useCallback((slug: string, section: string) => {
+    setRuleTarget((cur) => ({ slug, section, nonce: (cur?.nonce ?? 0) + 1 }));
+    setRulesMounted(true);
+    setTab("rules");
+  }, []);
 
   const toggleLang = () => {
     const next: CodexLang = lang === "zh" ? "en" : "zh";
@@ -313,7 +327,7 @@ export default function CodexPage() {
 
         {keywordsMounted ? (
           <div className={tab === "keywords" ? "" : "hidden"}>
-            <KeywordIndex onError={onBackendError} />
+            <KeywordIndex onError={onBackendError} onOpenRule={openRule} />
           </div>
         ) : null}
 
@@ -329,7 +343,15 @@ export default function CodexPage() {
             与阵营清单、传承开关都无关，故不传 factions */}
         {rulesMounted ? (
           <div className={tab === "rules" ? "" : "hidden"}>
-            <CoreRulesBrowser onError={onBackendError} />
+            {/* key 变 = 重挂：词条页跳过来时用 React 自己的"按 props 重置状态"手法，
+                组件内部就不必在 effect 里 setState（那条 lint 规则正好拦它）。
+                代价是重取一次目录，24 行的目录不值得为它加一层受控状态 */}
+            <CoreRulesBrowser
+              key={ruleTarget ? `jump-${ruleTarget.nonce}` : "root"}
+              onError={onBackendError}
+              initialSlug={ruleTarget?.slug ?? null}
+              initialSection={ruleTarget?.section ?? null}
+            />
           </div>
         ) : null}
 

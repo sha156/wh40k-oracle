@@ -33,6 +33,12 @@ export type WikiBlock =
 
 export interface WikiSection {
   title: string;
+  /**
+   * 官方节号（"16.01"）。**只有核心规则页会有**，其余页型（战略/增强/分队/变更清单）
+   * 的小节名本来就没编号，为 null。由后端从小节名尾部取——那条规则全仓库只有
+   * web_api/core_rules_browse.section_number 一处实现，前端不要再抠一遍。
+   */
+  number: string | null;
   blocks: WikiBlock[];
 }
 

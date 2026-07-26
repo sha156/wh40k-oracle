@@ -339,6 +339,13 @@ class KeywordSummary(_CamelModel):
     params: List[str] = []          # 档位变体（"2" / "4+" / "D6+3"），无参为 []
     engine: str                     # 数值建模 / 仅标注 / 未纳入（诚实披露，不吹）
     rule_page: Optional[str] = Field(default=None, alias="rulePage")
+    # 核心规则正文的落点，请求期由 `keyword_refs.rule_link` 算（**不进离线载荷**：
+    # 载荷是 wiki 生成物，而这两个值取决于当下磁盘上有哪些核心规则章节页）。
+    # 与上面的 `section` 的区别：`section` 是速查表印的号（可能漏印、也可能指向
+    # 一节我们并没有正文的规则），这两个是**确实能翻到正文**的那一节。
+    # 同样成对出现或成对缺失——只有节号没有章节页的话链接无处可去。
+    rule_section: Optional[str] = Field(default=None, alias="ruleSection")
+    rule_slug: Optional[str] = Field(default=None, alias="ruleSlug")
     current_weapons: int = Field(alias="currentWeapons")
     total_weapons: int = Field(alias="totalWeapons")
     current_units: int = Field(alias="currentUnits")
@@ -430,8 +437,15 @@ WikiDetails.model_rebuild()
 
 
 class WikiSection(BaseModel):
-    """一个 `## 小节`。title 就是页面上的小节名（使用时机 / 效果 / 分队规则…）。"""
+    """一个 `## 小节`。title 就是页面上的小节名（使用时机 / 效果 / 分队规则…）。
+
+    `number` 只有核心规则页会填（官方节号 24.03，由 `core_rules_browse.section_number`
+    从小节名尾部取），其余页型一律 None——战略/增强/分队的小节名是「使用时机」这类词，
+    本来就没有编号。它是**页面锚点**与词条页跳链的落点，故必须由后端给：
+    从展示串里抠节号这条规则全仓库只准有一处实现（见 `core_rules_browse` 头注）。
+    """
     title: str
+    number: Optional[str] = None
     blocks: List[WikiBlock] = []
 
 

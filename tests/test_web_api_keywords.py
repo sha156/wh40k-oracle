@@ -28,10 +28,15 @@ needs_payload = pytest.mark.skipif(
 # 必须同步 keywords.ts 与 web_api/contract.py，三处一起动。
 SUMMARY_KEYS = {
     "slug", "base", "nameZh", "group", "section", "quickrefZh", "params",
-    "engine", "rulePage", "currentWeapons", "totalWeapons", "currentUnits",
-    "totalUnits",
+    "engine", "rulePage", "ruleSection", "ruleSlug", "currentWeapons",
+    "totalWeapons", "currentUnits", "totalUnits",
 }
 DETAIL_KEYS = SUMMARY_KEYS | {"weapons"}
+
+# 实测（2026-07-27）：46 条里 33 条能落到核心规则正文，缺的 13 条**全部**是单位特有
+# 词条（规则正文写在各自兵牌上，核心规则里本来就没有）。这两个数是"跳链没断"的对账锚：
+# 掉下去说明 wiki/core-rules 少了章节页或配对键漂了，而页面上只会安静地少几个按钮。
+EXPECTED_WITH_RULE_LINK = 33
 
 # 实测分布（11 版 46 条）。数字变了说明离线生成器重跑且结果变了——先确认是有意的
 # （换版 / 换库）再改这里，别顺手对齐成"测试通过"。
@@ -78,6 +83,62 @@ def test_keyword_index_fields_are_exact_camelcase_set(client: TestClient) -> Non
         assert set(it) == SUMMARY_KEYS, it.get("slug")
     # 顺带钉死：蛇形字段名一个都不许漏出去
     assert not any(k for it in items for k in it if "_" in k)
+
+
+# ── 规则正文跳链（词条页「查看正文」的落点）─────────────────────────
+
+@needs_payload
+def test_rule_link_coverage_and_who_is_missing(client: TestClient) -> None:
+    """33/46 有落点，缺的 13 条全是单位特有词条——不是"链接坏了"，是它们真没有。
+
+    只断言"字段存在"抓不到任何东西：ruleSlug 全 None 时字段照样在，页面照样渲染，
+    只是一个「查看正文」按钮都没有。所以这里锁数量 + 锁缺的是谁。
+    """
+    items = client.get("/codex/keywords").json()["items"]
+    linked = [i for i in items if i["ruleSlug"]]
+    assert len(linked) == EXPECTED_WITH_RULE_LINK
+    assert {i["group"] for i in items if not i["ruleSlug"]} == {"unit-specific"}
+    # 成对：只有节号没有章节页的链接无处可去，反之节号缺了就不知道滚到哪一节
+    for it in items:
+        assert bool(it["ruleSection"]) == bool(it["ruleSlug"]), it["slug"]
+
+
+@needs_payload
+def test_rule_link_points_at_a_real_section(client: TestClient) -> None:
+    """落点必须真能翻到：章节页取得到，且那一章里确实有这个节号。
+
+    这条是防死链的机械对账——「按钮点了跳过去什么都没有」在页面上看着只是"没滚动"。
+    """
+    items = client.get("/codex/keywords").json()["items"]
+    linked = [i for i in items if i["ruleSlug"]]
+    chapters: dict = {}
+    for it in linked:
+        slug = it["ruleSlug"]
+        if slug not in chapters:
+            r = client.get("/codex/rules/{}".format(slug))
+            assert r.status_code == 200, (it["slug"], slug)
+            chapters[slug] = {s["number"] for s in r.json()["sections"]}
+        assert it["ruleSection"] in chapters[slug], (it["slug"], it["ruleSection"])
+
+
+@needs_payload
+def test_rule_link_survives_missing_quickref_section(client: TestClient) -> None:
+    """速查表漏印节号的词条照样有落点——靠官方英文名配回，不是按顺序推出来的。
+
+    PISTOL 的 section 是 null（速查表没印），但核心规则 24.27 确实是它。
+    """
+    detail = client.get("/codex/keywords/pistol").json()
+    assert detail["section"] is None
+    assert detail["ruleSection"] == "24.27"
+    assert detail["ruleSlug"] == "24-core-abilities"
+
+
+@needs_payload
+def test_unit_specific_keyword_has_no_rule_link(client: TestClient) -> None:
+    """单位特有词条诚实留空，不许拿 rulePage 或章节页凑一个链接出来。"""
+    detail = client.get("/codex/keywords/ctan-power").json()
+    assert detail["group"] == "unit-specific"
+    assert detail["ruleSection"] is None and detail["ruleSlug"] is None
 
 
 # ── 详情端点 ──────────────────────────────────────────────────────

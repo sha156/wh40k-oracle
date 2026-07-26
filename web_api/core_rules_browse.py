@@ -14,9 +14,14 @@
 1. **导语必须一起下发。** 分队页那边导语按设计丢弃（它是 frontmatter 的重复展示），
    但核心规则页的导语里装的是「中文由官方 PDF 文本层直提，表格与版式会有失真——判定
    规则以英文原文为准」这条披露。丢了它，页面就成了一份看着像官方定稿的中文规则书。
-2. **小节名连官方节号一起原样给**（"执行行动 16.01"）。不在这里把节号切出来做成字段：
-   节号是官方编号、也是中英配对键，从展示串里再正则抠一次只是给自己找一次错的机会，
-   而抠错了页面上看不出来。
+2. **小节名连官方节号一起原样给**（"执行行动 16.01"），同时把节号另抠一份放进
+   `WikiSection.number`。原先这里写的是"不做成字段，从展示串里再正则抠一次只是给自己
+   找一次错的机会"——**这个判断只在没人需要节号的时候成立**。现在有三个消费方
+   （词条解释层 `keyword_refs`、词条页跳到规则正文的链接、章节页的锚点），各抠各的
+   才是真正的三份规则打架。所以规则收在本模块的 `section_number()` 里，只此一份。
+   抠法本身有坑：第 24 章有个节标题被 PDF 版面污染成「…领袖  24.22/辅助 24.34」，
+   取**第一个** NN.NN 会把它认成 24.22 的重复，真正的 24.34 就此消失（156 节只剩
+   155 个号），而两个页面都照常渲染。所以正则锚在**行尾**。
 """
 from __future__ import annotations
 
@@ -46,6 +51,19 @@ _SLUG = re.compile(r"^(\d{2})-([a-z0-9-]+)$")
 # **匹配不上就原样用全名**——短名靠猜不如长名难看。
 _ZH_TITLE = re.compile(r"《(.+)》")
 _EN_TITLE = re.compile(r"^Core Rules\s*\d+\s*[:：]\s*(.+)$")
+
+# 官方节号，**锚在行尾**（见头注第 2 条：取第一个匹配会被被污染的标题骗掉一个号）
+_SECTION_NO = re.compile(r"(\d{2}\.\d{2})\s*$")
+
+
+def section_number(title: str) -> Optional[str]:
+    """小节名 → 官方节号（"执行行动 16.01" → "16.01"）；没有编号返回 None。
+
+    全仓库唯一的一份「从小节名取节号」实现。没有节号不是异常：变更清单页与分队页的
+    小节名（「使用时机」）本来就没编号，此处 None 即真值。
+    """
+    m = _SECTION_NO.search(str(title or "").strip())
+    return m.group(1) if m else None
 
 
 def _short(path: Path) -> str:
@@ -99,7 +117,10 @@ def _parse(path: Path, slug: str, number: str) -> _Chapter:
         # 此时正文里的规则不能信，宁可 503 也不把半截规则端上去
         raise WikiUnavailable("核心规则页缺 frontmatter（{}），产物可能已损坏；{}".format(
             _short(path), _MOUNT_HINT))
-    sections = tuple(parse_sections(body))
+    # 节号在这里一次性填进 WikiSection.number：下游（词条解释、跳链、页面锚点）
+    # 谁都不许再从 title 里抠第二遍
+    sections = tuple(s.model_copy(update={"number": section_number(s.title)})
+                     for s in parse_sections(body))
     if not sections:
         # 一节都没切出来 = 页被截断或切分规则失效。空章节在前端就是一页空白，
         # 而"这一章本来就没有内容"在核心规则里不存在——24 章最少的一章也有 1 节
