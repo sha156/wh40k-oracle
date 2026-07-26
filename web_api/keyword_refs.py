@@ -19,11 +19,24 @@
 
 ## 两个不显眼的设计决定
 
-**中文 → 英文只走对照表精确匹配，不做「剥掉中文尾巴的参数」那套。**
-兵牌上的中文词条串是 `web_api/codex.py::_localize_weapon_keywords` 用同一张
-`zh_keyword_glossary` 逐词翻出来的，反查回去是同一张表的逆映射（实测 81 条中文名零碰撞），
-是精确可逆的。再写一套「中文串怎么剥参数」的规则等于给自己开第二个错源，
-而两套规则打架时页面上看不出来。
+**中文侧的档位（参数）从对照表本身推，不另写一套「中文串怎么剥参数」的规则。**
+原先这里写的是「中文只走对照表精确匹配」——**那只在词条串全部由
+`codex.py::_localize_weapon_keywords` 逐词翻出来时成立**。它翻出来的是紧凑写法
+（`速射1`），而技能正文与核心规则正文里的人写形态是 `【速射 1】`、`[速射 X]`、`速射D`，
+表里一条都没有，于是 `resolve('速射 1')` 静默返回纯文本——武器行的词条能悬停、
+同一个词条出现在技能正文里就不能，页面上看着只是「这条没做」。
+
+补法是**从对照表反推**，不新造中文语法：对照表每行的英文侧过一遍
+`normalize_keyword` 就知道档位是什么（`RAPID FIRE D6+3` → 参数 `D6+3`），
+把这个参数从中文侧尾部削掉即得中文基名（`速射D6+3` → `速射`）。削不掉就跳过，
+不猜。查表时先去掉全部空白再比（`速射 1` ≡ `速射1`），未命中才退到「中文基名 +
+ASCII 档位尾巴」这条路——尾巴限定 ASCII（`0-9 D X + -`），中文尾巴一律不认，
+否则 `劈砍狠`（DEAD CHOPPY，另一个独立词条）会被吃成 `劈砍`+`狠`。
+
+**词条的「长相」与「身份」是两层，别合并。** `web_api/richtext.to_richtext` 只管
+长相：把 `【…】`/`[…]` 标成 `kw` span，纯语法、不查任何真源，所以核心规则页正文里的
+`[速射 1]` 一直只是**青色文字**、并不是链接（2026-07-27 复核：全仓库没有一处把 `kw`
+渲染成 `<a>`）。身份判定只有本模块这一处：`kw` 里装的东西拿到这里查，查得到才交互。
 
 **节正文不自己解析，一律走 `core_rules_browse.chapter_detail()`。**
 核心规则页那套 `##` 切分踩过一个大坑：英文原文折叠里自带 `## ` 标题，不认
@@ -65,6 +78,23 @@ def _norm_en(text: str) -> str:
     return " ".join(s.split()).upper()
 
 
+def _norm_zh(text: str) -> str:
+    """中文查表键：去方括号、统一连字符、**去掉全部空白**、大写。
+
+    去空白是这层的关键：对照表存的是紧凑写法（`速射1`），而人写形态是
+    `速射 1` / `连击 3`。大写只对 ASCII 档位有效（`速射d6` → `速射D6`），中文不受影响。
+    """
+    s = str(text or "").translate(_DASHES)
+    s = s.strip().strip("[]【】").strip()
+    return "".join(s.split()).upper()
+
+
+# 中文基名后面允许跟的档位尾巴：只认 ASCII（`1` / `4+` / `D6+3` / `X`）。
+# **中文尾巴一律不认**——`劈砍狠`（DEAD CHOPPY）与 `劈砍`（CLEAVE）是两个独立词条，
+# 放开中文尾巴会把前者吃成后者加一个「狠」字，而页面上只是解释变成了另一条规则。
+_ZH_PARAM_TAIL = re.compile(r"[0-9DX+\-]*")
+
+
 # ── 缓存 ─────────────────────────────────────────────────────────────
 #
 # 三份派生数据各自按自己的真源失效：对照表看 db 的 (mtime_ns, size)，节正文看
@@ -72,7 +102,8 @@ def _norm_en(text: str) -> str:
 # 离线重跑生成器后不必重启 API。
 
 _LOCK = threading.Lock()
-_GLOSSARY: Optional[Tuple[int, int, Dict[str, str], Dict[str, str]]] = None
+_GLOSSARY: Optional[Tuple[int, int, Dict[str, str], Dict[str, str],
+                         Dict[str, str]]] = None
 _SECTIONS: Optional[Tuple[Any, Dict[str, "_Section"], Dict[str, str]]] = None
 _WARNED: set = set()
 
@@ -101,11 +132,14 @@ def _warn_once(key: str, message: str) -> None:
 
 # ── 真源 1：中英对照表（带档位）──────────────────────────────────────
 
-def _glossary() -> Tuple[Dict[str, str], Dict[str, str]]:
-    """(en→zh, zh→en)。库缺失/无此表 → 两个空表 + 吼一声（不抛）。
+def _glossary() -> Tuple[Dict[str, str], Dict[str, str], Dict[str, str]]:
+    """(en→zh, zh→en, zh基名→en基名)。库缺失/无此表 → 三个空表 + 吼一声（不抛）。
 
     为什么不抛：对照表没了只意味着兵牌上的词条本来就是英文（`_localize_weapon_keywords`
     也是查它翻的），英文那条解析路径照样走得通——降级是真降级，不是掩盖。
+
+    后两张表的键都过 `_norm_zh`（去空白）：`速射 1` 与 `速射1` 必须是同一个键，
+    否则同一个词条在武器行能悬停、在技能正文里不能。
     """
     global _GLOSSARY
     try:
@@ -113,13 +147,14 @@ def _glossary() -> Tuple[Dict[str, str], Dict[str, str]]:
     except OSError:
         _warn_once("db-missing", "结构库缺失（{}），词条中文名与反查失效，"
                                  "兵牌词条按英文解析".format(DB_PATH.name))
-        return {}, {}
+        return {}, {}, {}
     with _LOCK:
         hit = _GLOSSARY
         if hit is not None and hit[0] == stat.st_mtime_ns and hit[1] == stat.st_size:
-            return hit[2], hit[3]
+            return hit[2], hit[3], hit[4]
     en_zh: Dict[str, str] = {}
     zh_en: Dict[str, str] = {}
+    zh_base: Dict[str, str] = {}
     conn = sqlite3.connect("file:{}?mode=ro".format(DB_PATH.as_posix()), uri=True)
     try:
         rows = conn.execute("SELECT term_en, term_zh FROM zh_keyword_glossary").fetchall()
@@ -135,17 +170,46 @@ def _glossary() -> Tuple[Dict[str, str], Dict[str, str]]:
         if not en or not zh:
             continue
         en_zh.setdefault(en, zh)
+        key = _norm_zh(zh)
         # 实测 81 条零碰撞；真撞了保留先到的一条并吼——静默取后者会让某个词条
         # 的中文名跟着表的物理顺序漂移
-        if zh in zh_en and zh_en[zh] != en:
-            _warn_once("gloss-collide-" + zh,
+        if key in zh_en and zh_en[key] != en:
+            _warn_once("gloss-collide-" + key,
                        "对照表中文名撞车：{} 同时对应 {} 与 {}，取前者".format(
-                           zh, zh_en[zh], en))
+                           zh, zh_en[key], en))
         else:
-            zh_en[zh] = en
+            zh_en[key] = en
+        _learn_zh_base(en, key, zh_base)
     with _LOCK:
-        _GLOSSARY = (stat.st_mtime_ns, stat.st_size, en_zh, zh_en)
-    return en_zh, zh_en
+        _GLOSSARY = (stat.st_mtime_ns, stat.st_size, en_zh, zh_en, zh_base)
+    return en_zh, zh_en, zh_base
+
+
+def _learn_zh_base(en: str, zh_key: str, out: Dict[str, str]) -> None:
+    """从对照表的一行学出「中文基名 → 英文基名」。学不出来就不学，**不猜**。
+
+    档位是什么由英文侧的 `normalize_keyword` 说了算（全仓库唯一一份词条参数语法），
+    这里只负责把同一个档位串从中文侧的尾巴上削掉：`RAPID FIRE D6+3` / `速射D6+3`
+    → 参数 `D6+3` → 中文基名 `速射`。中文侧尾巴对不上（译名把档位挪了位置、或
+    干脆没写档位）时跳过——硬按「剥掉尾部数字」去猜，就是又造了一套中文参数语法。
+    """
+    base_en, param = normalize_keyword(en)
+    if param is None:
+        base_zh = zh_key
+    else:
+        tail = _norm_zh(param)
+        if not tail or not zh_key.endswith(tail):
+            return
+        base_zh = zh_key[:-len(tail)]
+    if not base_zh:
+        return
+    prior = out.get(base_zh)
+    if prior is not None and prior != base_en:
+        _warn_once("zhbase-collide-" + base_zh,
+                   "中文基名撞车：{} 同时指向 {} 与 {}，取前者".format(
+                       base_zh, prior, base_en))
+        return
+    out[base_zh] = base_en
 
 
 # ── 真源 2：官方中文规则正文 ─────────────────────────────────────────
@@ -300,19 +364,42 @@ def rule_link(base: str) -> Tuple[Optional[str], Optional[str]]:
     return (section.number, section.chapter_slug) if section else (None, None)
 
 
+def _base_en(text: str) -> str:
+    """任意写法的词条 token → 官方英文基名（查不到时退回英文归一化结果）。
+
+    三条路依次试，**先精确后推导**：
+      ① 对照表整条命中（`针对步兵3+`、`速射 1` ≡ `速射1`）——最可信，优先
+      ② 中文基名 + ASCII 档位尾巴（`速射 X`、`速射D`、`连击 3`、光秃秃的 `速射`）
+      ③ 英文侧（`ANTI-INFANTRY 3+`、`RAPID FIRE D6+`）
+
+    ② 取**最长**匹配的中文基名：短基名是长基名的前缀时（本库暂无，但译名会变）
+    取短的会把另一个词条的后半截当成档位。
+    """
+    _, zh_en, zh_base = _glossary()
+    key = _norm_zh(text)
+    hit = zh_en.get(key)
+    if hit is None and zh_base:
+        for cand in sorted(zh_base, key=len, reverse=True):
+            if not key.startswith(cand):
+                continue
+            if _ZH_PARAM_TAIL.fullmatch(key[len(cand):]) is None:
+                continue                       # 尾巴不是档位（`劈砍狠` 那种）
+            return zh_base[cand]
+    base, _param = normalize_keyword(hit or _norm_en(text))
+    return base
+
+
 def resolve(token: str) -> KeywordRef:
     """一个词条 token → KeywordRef。查不到真源时只有 `text`（诚实降级，不编解释）。
 
-    token 可以是中文（`针对步兵3+`，zh 模式的兵牌）或英文（`ANTI-INFANTRY 3+`）。
+    token 可以是中文（`针对步兵3+` / `【致命一击】` / `[速射 1]`，zh 模式的兵牌与
+    技能正文）或英文（`ANTI-INFANTRY 3+` / `[LETHAL HITS]`）。
     """
     text = " ".join(str(token or "").split())
     if not text:
         return KeywordRef(text="")
 
-    _, zh_en = _glossary()
-    en = zh_en.get(text) or _norm_en(text)
-    base, _param = normalize_keyword(en)
-    item = _index().get(_norm_en(base))
+    item = _index().get(_norm_en(_base_en(text)))
     if item is None:
         return KeywordRef(text=text)
 

@@ -34,6 +34,7 @@ needs_assets = pytest.mark.skipif(
 EXPECTED_TOKENS = 80            # 全库武器 keywords_json 拆出的去重 token 数
 EXPECTED_NO_BRIEF = 13          # 查得到身份但核心规则无正文的词条（全部是单位特有）
 EXPECTED_SECTIONS = 156         # 核心规则 24 章的小节数，且节号两两不同
+EXPECTED_ZH_FORMS = 230         # 80 个 token 全都有中文名，其中 50 个带档位 ×3 个人写形态
 
 
 # ── 拆分 ─────────────────────────────────────────────────────────────
@@ -91,6 +92,82 @@ def test_zh_and_en_tokens_resolve_to_same_identity() -> None:
         a, b = resolve(zh), resolve(en)
         assert a.slug == b.slug and a.section == b.section, (zh, en)
         assert a.text == zh and b.text == en          # 显示文本各自原样，不互相覆盖
+
+
+@needs_assets
+def test_zh_parameterised_keyword_forms_resolve() -> None:
+    """中文侧的档位写法全都要认——**技能正文里的人写形态和对照表里的紧凑写法不一样**。
+
+    对照表存的是 `速射1`（离线从武器行学来的），而技能正文与核心规则正文里写的是
+    `【速射 1】` / `[速射 X]` / 光秃秃的 `速射`。不做归一化的后果很具体：同一个词条
+    在武器行能悬停，出现在技能正文里就退成纯文本，页面上看着只像"这条没做"。
+    """
+    for token in ("速射1", "速射 1", "速射 X", "速射D", "速射", "[速射 1]", "【速射 3】"):
+        ref = resolve(token)
+        assert (ref.slug, ref.base) == ("rapid-fire", "RAPID FIRE"), token
+        assert ref.section == "24.30", token
+        assert ref.text == " ".join(token.split())       # 显示文本原样，不被归一化改写
+
+    for token, slug in (("连击 3", "sustained-hits"), ("连击", "sustained-hits"),
+                        ("针对步兵 3+", "anti-infantry"), ("热熔 4", "melta"),
+                        ("劈砍", "cleave")):
+        assert resolve(token).slug == slug, token
+
+
+@needs_assets
+def test_zh_base_stripping_does_not_swallow_a_different_keyword() -> None:
+    """`劈砍狠`（DEAD CHOPPY）不能被剥成 `劈砍`（CLEAVE）+ 一个「狠」字。
+
+    档位尾巴只认 ASCII 就是为这条：放开中文尾巴，页面会给出另一条规则的解释，
+    而且看上去毫不心虚（有词条名、有官方节号、有正文）。
+    """
+    assert resolve("劈砍狠").slug == "dead-choppy"
+    assert resolve("劈砍").slug == "cleave"
+    # 编出来的中文尾巴一律不认，退成纯文本
+    for fake in ("速射狠", "精准度", "手枪套"):
+        ref = resolve(fake)
+        assert (ref.slug, ref.brief) == (None, None), fake
+
+
+@needs_assets
+def test_zh_and_en_agree_on_every_library_keyword() -> None:
+    """全库 80 个 token 的中文写法（紧凑 / 带空格 / 去档位 / X 档）逐条与英文侧对账。
+
+    抽查几条证明不了这层——归一化错一处，就有一批词条只在某些页面上能悬停。
+    """
+    conn = sqlite3.connect(str(DB_PATH))
+    try:
+        gloss = {en.upper(): zh for en, zh in conn.execute(
+            "SELECT term_en, term_zh FROM zh_keyword_glossary")}
+        tokens = set()
+        for (kj,) in conn.execute("SELECT keywords_json FROM weapons"):
+            try:
+                items = json.loads(kj or "[]") or []
+            except (json.JSONDecodeError, TypeError):
+                continue
+            tokens.update(t.upper() for t in split_tokens(items))
+    finally:
+        conn.close()
+    assert len(tokens) == EXPECTED_TOKENS
+
+    import re as _re
+    checked = 0
+    for tok in sorted(tokens):
+        zh = gloss.get(tok)
+        if not zh:
+            continue
+        want = resolve(tok)
+        assert want.slug, tok
+        forms = [zh]
+        m = _re.fullmatch(r"([一-鿿]+)([0-9DX+\-]+)", zh)
+        if m:                       # 带档位的：补上人写的三种形态
+            forms += [m.group(1) + " " + m.group(2), m.group(1), m.group(1) + " X"]
+        for form in forms:
+            got = resolve(form)
+            assert (got.slug, got.section) == (want.slug, want.section), (form, tok)
+            checked += 1
+    # 中文覆盖面是这条断言的头条数字：变了先查是不是换库，别顺手对齐
+    assert checked == EXPECTED_ZH_FORMS
 
 
 @needs_assets
