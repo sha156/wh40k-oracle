@@ -1,5 +1,5 @@
 import type { Ability, EntityCard, WeaponRow } from "@/lib/answer";
-import { KeywordList } from "../ui/KeywordChip";
+import { KeywordChip, KeywordList } from "../ui/KeywordChip";
 import { KwBar } from "../ui/KwBar";
 import { Rich } from "../ui/Rich";
 import { SlotBadge } from "../ui/SlotBadge";
@@ -65,6 +65,28 @@ function SectionTitle({ children }: { children: React.ReactNode }) {
   );
 }
 
+/**
+ * 技能正文：优先画后端切好的 `rich` 段，里面的 `kw` 段接上和武器行同一个悬停浮层。
+ *
+ * 退回 `ability.text` 不是死代码：后端老版本（以及任何没走 `ability_spans` 的
+ * 装配路径）不带 `rich`，那时正文照旧是一整串字——少了悬停，但一个字都不会少。
+ */
+function AbilityBody({ ability }: { ability: Ability }) {
+  const spans = ability.rich ?? [];
+  if (spans.length === 0) return <>{ability.text}</>;
+  return (
+    <>
+      {spans.map((s, i) =>
+        s.t === "kw" ? (
+          <KeywordChip key={i} kw={s.kw} />
+        ) : (
+          <span key={i}>{s.s}</span>
+        ),
+      )}
+    </>
+  );
+}
+
 function AbilityRow({ ability }: { ability: Ability }) {
   return (
     <div className="border-b border-dotted border-[#c2c6b8] py-[7px] text-[12.8px] leading-[1.55] text-[#23261f] last:border-b-0">
@@ -74,7 +96,12 @@ function AbilityRow({ ability }: { ability: Ability }) {
         </span>
       ) : null}
       <b className="text-ink">{ability.name}</b>
-      {ability.text ? <span className="text-[#3a3e34]">：{ability.text}</span> : null}
+      {ability.text ? (
+        <span className="text-[#3a3e34]">
+          ：
+          <AbilityBody ability={ability} />
+        </span>
+      ) : null}
     </div>
   );
 }

@@ -69,10 +69,25 @@ export interface WeaponRow {
   hot?: boolean; // 本次问答焦点武器高亮
 }
 
+/**
+ * 技能正文切出来的一段：纯文本，或一个**查得到解释**的规则词条。
+ *
+ * 做成 union 而不是「一串字 + 一份词条清单」：清单要靠前端再在正文里找一次那串字
+ * 才能标出来，而同一个词条在一段里出现两次时就标错了。后端保证
+ * `rich` 各段显示串拼起来 === `text`。
+ */
+export type AbilitySpan = { t: "text"; s: string } | { t: "kw"; kw: KeywordRef };
+
 export interface Ability {
   tag?: string; // 如 Faction:
   name: string;
   text?: string;
+  /**
+   * 同一段正文的分段形态（`text` 逐字等于各段拼接）。空数组=这条技能没有正文。
+   * 后端只在词条真源里查到时才切出 kw 段，查不到的一律并回纯文本——所以这里
+   * 拿到的每个 kw 段都必然带 slug，渲染时不必再判"这条有没有解释"。
+   */
+  rich?: AbilitySpan[];
 }
 
 /** 受损档（载具/巨兽血量降到阈值时的减值） */

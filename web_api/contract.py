@@ -103,10 +103,34 @@ class WeaponRow(BaseModel):
     hot: bool = False
 
 
+class AbilityTextSpan(BaseModel):
+    t: Literal["text"] = "text"
+    s: str
+
+
+class AbilityKwSpan(BaseModel):
+    t: Literal["kw"] = "kw"
+    kw: KeywordRef
+
+
+# 技能正文切成的段序列。做成 union 而不是「一串字 + 一份词条清单」：清单要靠
+# 前端再在正文里找一次那串字才能标出来，而同一个词条在一段里出现两次时就标错了。
+AbilitySpan = Union[AbilityTextSpan, AbilityKwSpan]
+
+
 class Ability(BaseModel):
+    """兵牌上的一条技能。
+
+    `text` 是**逐字的正文**（与切段前一模一样），`rich` 是同一段正文切成的段序列
+    ——把 `rich` 里每段的显示文本接起来必须等于 `text`。两个都给的原因：`text`
+    仍被搜索/日志/纯文本消费方用着，而 `rich` 里的 `kw` 段带着可查的解释。
+
+    `rich` 为空 = 这条技能没有正文，不是「还没切」：有正文就一定切得出至少一段。
+    """
     tag: Optional[str] = None
     name: str
     text: Optional[str] = None
+    rich: List[AbilitySpan] = []
 
 
 class Stat(BaseModel):

@@ -52,7 +52,8 @@ from dataclasses import dataclass
 from pathlib import Path
 from typing import Any, Dict, Iterable, List, Optional, Tuple
 
-from web_api.contract import KeywordRef
+from web_api.contract import (AbilityKwSpan, AbilitySpan, AbilityTextSpan,
+                              KeywordRef)
 from wiki_engine.keyword_index import normalize_keyword
 
 REPO_ROOT = Path(__file__).resolve().parent.parent
@@ -419,3 +420,76 @@ def resolve(token: str) -> KeywordRef:
 def resolve_all(values: Iterable[Any]) -> List[KeywordRef]:
     """武器关键词列表（可能是逗号串）→ 逐条 KeywordRef。"""
     return [resolve(tok) for tok in split_tokens(values)]
+
+
+# ── 技能正文里内嵌的词条 ─────────────────────────────────────────────
+#
+# 官方源里同一件事有三种写法，三种都要认：
+#   ① 黑图中文层：`【致命一击】`
+#   ② 英文 abilities 表：`[LETHAL HITS]`（实测 346 行 / 48 个不同串）
+#   ③ 英文 abilities 表：`<span class="kwb">VEHICLE</span>`（实测 1202 行 / 362 个串）
+#
+# ③ 的 span 里装的**绝大多数是阵营/单位关键词**（VEHICLE、ASTARTES、CHARACTER），
+# 不是武器词条。它们查不到真源、按规矩退成纯文本——所以这里不需要事先分辨"这个 span
+# 是不是 USR"，判据始终只有一条：**能不能在词条真源里查到**。
+#
+# ③ 的标签要在 HTML 被剥掉**之前**换成哨兵，否则剥完只剩裸词、位置就找不回来了。
+# 哨兵用 U+0000/U+0001：正文里不可能出现，且能穿过 `html.unescape` 与空白压缩。
+KW_OPEN = "\x00"
+KW_CLOSE = "\x01"
+
+# 三种写法合成一条正则，一次扫描：合成不是为了省事，而是因为分三遍扫要处理
+# "上一遍已经切走了一段"的偏移，两套偏移必然有一处算错。
+_MARKED = re.compile(
+    "{}(?P<span>[^{}]*){}".format(KW_OPEN, KW_CLOSE, KW_CLOSE)
+    + r"|【(?P<zh>[^】]+)】"
+    + r"|\[(?P<en>[^\[\]]+)\]"
+)
+
+# ② 的候选还要过一道形态闸：英文 abilities 正文里同样有 `[1]` 这类脚注、
+# 以及长句被方括号括起来的情形。限成「不含句号/逗号且不太长」——真词条最长的
+# `ANTI-EPIC HERO 2+` 也才 17 字符。**这只是省一次查表，不是判据**：
+# 判据永远是下面 resolve() 查不查得到。
+_TOKEN_SANE = re.compile(r"^[^。，,.;；:：!！?？]{1,40}$")
+
+
+def strip_markers(text: str) -> str:
+    """去掉 kwb 哨兵，还原成给人看的正文。"""
+    return str(text or "").replace(KW_OPEN, "").replace(KW_CLOSE, "")
+
+
+def ability_spans(text: str) -> List[AbilitySpan]:
+    """带标记的技能正文 → 段序列（纯文本段 / 可查解释的词条段）。
+
+    词条段的显示串**逐字保留**原样（`【致命一击】` 连方头括号一起，kwb 哨兵去掉），
+    把所有段的显示串接起来必须等于 `strip_markers(text)`——这条在测试里是硬断言：
+    切段切丢了字，页面上只是少了半句话，没有任何报错。
+
+    查不到真源的候选**合并回纯文本**，不留一个空壳词条段：给了段就等于说"这是个
+    规则词条"，而 kwb 里装的多半是 VEHICLE / ASTARTES 这类阵营关键词。
+    """
+    raw = str(text or "")
+    out: List[AbilitySpan] = []
+    pos = 0
+
+    def _plain(chunk: str) -> None:
+        if not chunk:
+            return
+        last = out[-1] if out else None
+        if isinstance(last, AbilityTextSpan):
+            out[-1] = AbilityTextSpan(s=last.s + chunk)
+        else:
+            out.append(AbilityTextSpan(s=chunk))
+
+    for m in _MARKED.finditer(raw):
+        _plain(strip_markers(raw[pos:m.start()]))
+        shown = strip_markers(m.group(0))
+        inner = m.group("span") or m.group("zh") or m.group("en") or ""
+        ref = resolve(shown) if _TOKEN_SANE.match(inner.strip()) else None
+        if ref is not None and ref.slug:
+            out.append(AbilityKwSpan(kw=ref))
+        else:
+            _plain(shown)
+        pos = m.end()
+    _plain(strip_markers(raw[pos:]))
+    return out
