@@ -26,12 +26,13 @@ markdown 表格、`> ` 引用），所以这里用正则逐行切块就够，不
 from __future__ import annotations
 
 import re
-from typing import Any, Dict, List, Optional, Tuple
+from typing import Any, Dict, Iterator, List, Optional, Tuple
 
 import yaml
 
-from web_api.contract import (WikiBlock, WikiHeading, WikiListBlock,
-                              WikiParagraph, WikiQuote, WikiSection, WikiTable)
+from web_api.contract import (InlineText, WikiBlock, WikiDetails, WikiHeading,
+                              WikiListBlock, WikiParagraph, WikiQuote,
+                              WikiSection, WikiTable)
 from web_api.richtext import to_richtext
 
 # ── 行首形态 ──────────────────────────────────────────────────────────
@@ -42,13 +43,66 @@ _OL_ITEM = re.compile(r"^\d+[.)]\s+(.*)$")
 # 表格分隔行：|---|---| / |:--|--:| 之类
 _TABLE_SEP = re.compile(r"^\|[\s\-:|]+\|$")
 _QUOTE = re.compile(r"^\s*>\s?")
+# 折叠块（核心规则页的中英对照）。整行匹配、不含行内写法：生成器写的就是独占一行，
+# 放宽成"行内出现 <details>"只会把正文里提到这个词的句子误当成折叠开头
+_DETAILS_OPEN = re.compile(r"^<details>\s*$")
+_DETAILS_CLOSE = re.compile(r"^</details>\s*$")
+_SUMMARY = re.compile(r"^<summary>(.*)</summary>\s*$")
 
 _WIKILINK = re.compile(r"\[\[([^\]]+)\]\]")
 _UNESCAPED_PIPE = re.compile(r"(?<!\\)\|")
 _BOLD = re.compile(r"\*\*(.+?)\*\*", re.S)
+# 整行就是一对单星号：`*ARMIES*`。核心规则每节中文标题下面那行英文小节名就长这样
+# （实测全库 165 处单星号里 164 处是整行）。**只认整行**、不做通用行内配对：
+# 库里另有 `| 屁精监工 | 6" | 5* |` 这种脚注标记，和 PDF 直提残留的落单星号
+# （`。*护卫单位`），通用配对会把两个不相干的星号之间的正文整段变成斜体
+_WHOLE_LINE_EM = re.compile(r"^\*([^*]+)\*$")
 
 
 # ── wikilink ─────────────────────────────────────────────────────────
+
+def _lines_with_depth(body: str) -> List[Tuple[str, int]]:
+    """逐行标注「此行位于第几层 `<details>` 内」。0 = 折叠之外。
+
+    **凡是按 `## ` 切小节的地方都必须过这一层**，否则折叠里的英文标题会被当成小节分界。
+    这不是假想的防御：核心规则页的英文原文自带 `## BATTLEFIELD MORALE` 这类标题
+    （refine 产物的章节标题），实测 24 章里有 57 处。不认折叠深度就会
+    ① 把折叠从那一行腰斩、后半段英文全部漏成顶层假小节，② 计数还显得挺正常
+    （156 个折叠一个不少），是典型的看着对、内容已经错位。
+
+    `<details>` 与 `</details>` 这两行本身算**在折叠内**（深度 ≥1）：它们是折叠的一部分，
+    算作外层会让紧贴闭合标签的下一行判断出现一格错位。
+    """
+    out: List[Tuple[str, int]] = []
+    depth = 0
+    for line in body.splitlines():
+        s = line.strip()
+        if _DETAILS_OPEN.match(s):
+            depth += 1
+        out.append((line, depth))
+        if _DETAILS_CLOSE.match(s) and depth > 0:
+            depth -= 1
+    return out
+
+
+def _iter_sections(body: str) -> Iterator[Tuple[Optional[str], List[str]]]:
+    """正文 → (小节名, 该节原始行) 序列；第一段的小节名为 None（导语）。
+
+    切分只认**折叠之外**的 `## `（见 `_lines_with_depth`）。parse_sections /
+    parse_intro / list_link_targets / section_table_rows 全部走它，
+    四处各写一遍 `startswith("## ")` 就是四份会各自漂移的规则。
+    """
+    title: Optional[str] = None
+    buf: List[str] = []
+    for line, depth in _lines_with_depth(body):
+        if depth == 0 and line.startswith("## "):
+            yield title, buf
+            title = line[3:].strip()
+            buf = []
+            continue
+        buf.append(line)
+    yield title, buf
+
 
 def _link_parts(inner: str) -> Tuple[str, str]:
     """`[[…]]` 内文 → (目标路径, 显示名)。转义竖线与裸竖线都认。"""
@@ -75,18 +129,15 @@ def list_link_targets(body: str, section_title: str) -> List[Tuple[str, str]]:
     再想还原路径就只能靠名字猜，而名字跨阵营会撞（Infestation Swarm 有两个）。
     """
     out: List[Tuple[str, str]] = []
-    in_section = False
-    for line in body.splitlines():
-        if line.startswith("## "):
-            in_section = line[3:].strip() == section_title
+    for title, buf in _iter_sections(body):
+        if title != section_title:
             continue
-        if not in_section:
-            continue
-        stripped = line.strip()
-        if not (_UL_ITEM.match(stripped) or _OL_ITEM.match(stripped)):
-            continue
-        for m in _WIKILINK.finditer(stripped):
-            out.append(_link_parts(m.group(1)))
+        for line in buf:
+            stripped = line.strip()
+            if not (_UL_ITEM.match(stripped) or _OL_ITEM.match(stripped)):
+                continue
+            for m in _WIKILINK.finditer(stripped):
+                out.append(_link_parts(m.group(1)))
     return out
 
 
@@ -124,18 +175,29 @@ def _strip_bold(text: str) -> str:
     return _BOLD.sub(r"\1", text).strip()
 
 
+def _emphasis_line(line: str) -> Optional[List[Any]]:
+    """整行 `*斜体*` → 一个 em span；不是这种形态返回 None（交回常规 tokenizer）。
+
+    不留星号是必须的：前端行内渲染器只认 `**粗体**`，单星号会原样显示成
+    `*ARMIES*`——核心规则 156 节每节都在中文标题正下方露一次。
+
+    这里不再往里切数值/关键词（Inline 是**平的**，没有嵌套）。代价只落在库里
+    另外 3 处整行斜体的长句上：它们会少掉句内的关键词配色，但文字一字不少。
+    """
+    m = _WHOLE_LINE_EM.match(flatten_wikilinks(line).strip())
+    if m is None:
+        return None
+    inner = m.group(1).strip()
+    return [InlineText(t="em", s=inner)] if inner else None
+
+
 def _row_cells(line: str) -> List[str]:
     """表格一行 → 单元格列表（wikilink 已压平、转义竖线已还原，**粗体星号尚在**）。
 
     粗体留到最后再剥：空表头提升（见 `_take_table`）要靠「整格是不是粗体」判断。
     """
-    s = line.strip()
-    if s.startswith("|"):
-        s = s[1:]
-    if s.endswith("|") and not s.endswith("\\|"):
-        s = s[:-1]
     return [flatten_wikilinks(c).replace("\\|", "|").strip()
-            for c in _UNESCAPED_PIPE.split(s)]
+            for c in _UNESCAPED_PIPE.split(_strip_row_edges(line))]
 
 
 def _take_table(lines: List[str], i: int) -> Tuple[WikiTable, int]:
@@ -250,6 +312,40 @@ def _take_list(lines: List[str], i: int) -> Tuple[WikiListBlock, int]:
     return WikiListBlock(t=kind, items=[_inline(x) for x in items]), i
 
 
+def _take_details(lines: List[str], i: int) -> Tuple[WikiDetails, int]:
+    """`<details>` … `</details>` → 一个折叠块（内部照常递归切块）。
+
+    两处刻意的选择：
+
+    · **按 `<details>` 计数配对**，不认第一个 `</details>` 就收尾。库里此刻没有嵌套折叠，
+      但真出现嵌套时提前收尾会把外层剩下的正文全部当成兄弟块甩出去，且完全不报错。
+    · **没有闭合标签就吃到结尾**。这种页是被截断了；把剩下的正文都收进折叠里，
+      内容一条不丢（只是多包了层折叠），比在这里 `break` 丢掉后半页安全。
+    """
+    i += 1                                      # 吃掉 <details>
+    n = len(lines)
+    summary = ""
+    if i < n:
+        m = _SUMMARY.match(lines[i].strip())
+        if m:
+            summary = flatten_wikilinks(m.group(1)).strip()
+            i += 1
+    depth = 1
+    body: List[str] = []
+    while i < n:
+        s = lines[i].strip()
+        if _DETAILS_OPEN.match(s):
+            depth += 1
+        elif _DETAILS_CLOSE.match(s):
+            depth -= 1
+            if depth == 0:
+                i += 1
+                break
+        body.append(lines[i])
+        i += 1
+    return WikiDetails(summary=summary, blocks=parse_blocks(body)), i
+
+
 def parse_blocks(lines: List[str]) -> List[WikiBlock]:
     """一段 markdown 行 → WikiBlock 数组。"""
     out: List[WikiBlock] = []
@@ -258,6 +354,14 @@ def parse_blocks(lines: List[str]) -> List[WikiBlock]:
     while i < n:
         s = lines[i].rstrip()
         if not s.strip():
+            i += 1
+            continue
+        if _DETAILS_OPEN.match(s.strip()):
+            det, i = _take_details(lines, i)
+            out.append(det)
+            continue
+        # 落单的 </details>（上一块已收尾/页面被改坏）：丢掉标签本身，不当正文喷出去
+        if _DETAILS_CLOSE.match(s.strip()):
             i += 1
             continue
         m = _HEADING.match(s)
@@ -282,27 +386,75 @@ def parse_blocks(lines: List[str]) -> List[WikiBlock]:
             lst, i = _take_list(lines, i)
             out.append(lst)
             continue
-        out.append(WikiParagraph(inline=_inline(s)))
+        out.append(WikiParagraph(inline=_emphasis_line(s) or _inline(s)))
         i += 1
     return out
 
 
+def parse_intro(body: str) -> List[WikiBlock]:
+    """第一个 `##` **之前**那几块（导语）。
+
+    与 `parse_sections` 刻意分开、按需调用：分队页的导语是 frontmatter 字段拼出来的
+    展示串，重复给一遍只会两处打架（见本模块顶注）；核心规则页与变更清单页的导语里
+    装的却是「判定规则以英文原文为准」「🆕 判据来自官方红色高亮」这类**诚实披露**，
+    丢了页面就变成一份看着毫不心虚的定稿。所以按页型决定要不要它，不做成默认行为。
+    """
+    for title, buf in _iter_sections(body):
+        if title is None:
+            return parse_blocks(buf)
+    return []
+
+
+def find_wikilinks(text: str) -> List[Tuple[str, str]]:
+    """一段文本里的全部 wikilink → [(目标路径, 显示名)]。
+
+    表格单元格里的链接靠它取：`list_link_targets` 只扫列表项（分队页的清单是列表），
+    而变更清单的一览表把明细链接放在表格最后一列。转义竖线两种写法都认（`_link_parts`）。
+    """
+    return [_link_parts(m.group(1)) for m in _WIKILINK.finditer(text)]
+
+
+def section_table_rows(body: str, section_title: str) -> List[List[str]]:
+    """某个 `## 小节` 下表格的**数据行**，单元格保留原始 markdown（含 wikilink）。
+
+    表头行与分隔行都剔掉：表头的判据是「下一行是分隔行」，比按内容猜表头稳
+    （`_looks_like_header` 那套是给没有表头的表用的，这里的表明确有表头）。
+
+    为什么不从已解析的块里回捞：块里的 wikilink 早被压成显示名（全是「查看」），
+    路径没了就只能靠阵营名去猜文件名——而 slug 与显示名并不一一对应
+    （orkss.md ↔ 欧克蛮人、imperia-knights.md ↔ 帝国骑士）。
+    """
+    rows: List[List[str]] = []
+    for title, buf in _iter_sections(body):
+        if title != section_title:
+            continue
+        for idx, line in enumerate(buf):
+            s = line.strip()
+            if not s.startswith("|") or _TABLE_SEP.match(s):
+                continue
+            nxt = buf[idx + 1].strip() if idx + 1 < len(buf) else ""
+            if _TABLE_SEP.match(nxt):           # 这是表头行
+                continue
+            rows.append([c.strip()
+                         for c in _UNESCAPED_PIPE.split(_strip_row_edges(s))])
+    return rows
+
+
+def _strip_row_edges(line: str) -> str:
+    """剥掉表格行首尾的竖线。行尾若是转义竖线 `\\|` 则不剥——那是单元格内容。"""
+    s = line.strip()
+    if s.startswith("|"):
+        s = s[1:]
+    if s.endswith("|") and not s.endswith("\\|"):
+        s = s[:-1]
+    return s
+
+
 def parse_sections(body: str) -> List[WikiSection]:
-    """正文（不含 frontmatter）→ `## 小节` 数组。第一个 `##` 之前的导语按设计丢弃。"""
-    out: List[WikiSection] = []
-    title: Optional[str] = None
-    buf: List[str] = []
-    for line in body.splitlines():
-        if line.startswith("## "):
-            if title is not None:
-                out.append(WikiSection(title=title, blocks=parse_blocks(buf)))
-            title = line[3:].strip()
-            buf = []
-        elif title is not None:
-            buf.append(line)
-    if title is not None:
-        out.append(WikiSection(title=title, blocks=parse_blocks(buf)))
-    return out
+    """正文（不含 frontmatter）→ `## 小节` 数组。第一个 `##` 之前的导语按设计丢弃
+    （核心规则页那种导语里有诚实披露的，另调 `parse_intro` 取）。"""
+    return [WikiSection(title=title, blocks=parse_blocks(buf))
+            for title, buf in _iter_sections(body) if title is not None]
 
 
 def pick_sections(sections: List[WikiSection],

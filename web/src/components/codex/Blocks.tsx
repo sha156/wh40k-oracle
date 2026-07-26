@@ -11,8 +11,13 @@ import type { WikiBlock, WikiSection } from "@/lib/wiki";
    用 Rich 默认的 GW 红（#990000）压在暗面板上既糊又像报警，改成骨白加粗 */
 const STRONG_CLASS = "font-bold text-bone";
 
+/* *斜体* 在 wiki 正文里几乎只有一种用法：核心规则每节紧跟中文标题的英文小节名
+   （`*ARMIES*`，实测 165 处里 164 处是整行）。全站的英文副名都是窄体 sage 不斜
+   （单位列表、分队列表都这么画），这里跟着走——全大写的窄体斜体在暗面板上很难读 */
+const EM_CLASS = "font-cond tracking-[1px] text-sage not-italic";
+
 function InlineRow({ inline }: { inline: Inline[] }) {
-  return <Rich text={inline} strongClass={STRONG_CLASS} />;
+  return <Rich text={inline} strongClass={STRONG_CLASS} emClass={EM_CLASS} />;
 }
 
 function TableBlock({ head, rows }: { head: string[]; rows: string[][] }) {
@@ -85,8 +90,23 @@ function BlockView({ block }: { block: WikiBlock }) {
       );
     case "table":
       return <TableBlock head={block.head} rows={block.rows} />;
+    case "details":
+      return (
+        // 折叠默认收起：核心规则页每节都挂一个英文原文，全展开会让中文正文被英文冲淡一倍。
+        // summary 原样显示——它是页面上唯一能看出英文来源的地方（14 节写的是
+        //「官方英文原文（英文由 PDF 直提）」，那是 refine 丢了节号、改用英文 PDF 兜底的）
+        <details className="my-2 border border-[#1d3238] bg-[#0b1315]">
+          <summary className="cursor-pointer px-2.5 py-1.5 font-cond text-[11.5px] tracking-[1.5px] text-sage uppercase select-none hover:text-bone">
+            {block.summary || "展开"}
+          </summary>
+          <div className="border-t border-[#1d3238] px-2.5 py-1">
+            <Blocks blocks={block.blocks} />
+          </div>
+        </details>
+      );
     case "h": {
-      // 契约只承诺 3/4 两级；越界值夹回 h4，别让后端某天多给一级就渲出非法标签
+      // 契约承诺 2/3/4 三级（折叠里的英文原文自带 `## ` 标题）；越界值夹回 h4，
+      // 别让后端某天多给一级就渲出非法标签
       const Tag = block.level <= 3 ? "h3" : "h4";
       const size = block.level <= 3 ? "text-[13.5px] text-bone" : "text-[12.5px] text-[#a9bcb6]";
       return (

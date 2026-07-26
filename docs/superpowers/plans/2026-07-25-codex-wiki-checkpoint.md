@@ -8,8 +8,8 @@
 | 项 | 值 |
 |---|---|
 | 分支 | `feat/codex-wiki`（已推 origin，**未合 main**） |
-| HEAD | 2026-07-26 核心规则中文化 + 规则变更清单 |
-| 测试 | **2234 passed**（本线开工前基线 1968；核心规则中文化 +22、变更清单 +13） |
+| HEAD | 2026-07-26 核心规则 + 变更清单接进网页（图鉴五页签） |
+| 测试 | **2286 passed**（本线开工前基线 1968；核心规则中文化 +22、变更清单 +13、接网页 +52） |
 | wiki lint | **0 error** / 593 warning（全是 alias-conflicts）/ 4 info |
 | wiki 规模 | **4950 页**（开工前 1828） |
 | 中文名覆盖 | 战略 989/1681、增强 547/1058、分队容器 123/324（2026-07-26 官方中文层） |
@@ -49,7 +49,7 @@ ddd442ee  GW 官方简体中文语料落地（34 个 PDF）+ 全库译名改用�
 .\.venv\Scripts\python.exe -m wiki_engine lint         # 体检，必须 0 error
 ```
 
-验收基线：`pytest -q` ≥ **2234 passed**；lint **0 error**；
+验收基线：`pytest -q` ≥ **2286 passed**；lint **0 error**；
 `find wiki -name '*.md' | wc -l` = **4950**（units 1715 / stratagems 1681 /
 enhancements 1058 / detachments 324 / core-rules 概念页 82 / sections 24 /
 changelog 29）。
@@ -65,14 +65,19 @@ changelog 29）。
 | 规则变更清单 | `wiki_engine/changelog.py` | `wiki/changelog/index.md` + `changelog/factions/<slug>.md` |
 | web 块级渲染 | `web_api/wiki_blocks.py` + `wiki_browse.py` | 路由 `/codex/factions/{fid}/detachments[/{slug}]` |
 | web 词条 | `web_api/keywords.py` | 路由 `/codex/keywords[/{slug}]` |
-| 前端 | `web/src/components/codex/{KeywordIndex,DetachmentBrowser,Blocks}.tsx` | `/codex` 三个二级页签 |
+| web 核心规则 | `web_api/core_rules_browse.py` | 路由 `/codex/rules[/{slug}]` |
+| web 变更清单 | `web_api/changelog_browse.py` | 路由 `/codex/changelog[/{slug}]` |
+| 前端 | `web/src/components/codex/{KeywordIndex,DetachmentBrowser,CoreRulesBrowser,ChangelogBrowser,Blocks}.tsx` | `/codex` 五个二级页签 |
 
 ## 4. 还剩什么（全部非阻塞）
 
-1. **核心规则章节页与规则变更清单都没接进网页**。PR-4 的块级渲染器（`wiki_blocks.py`）
-   已经通用，加 `/codex/rules/{chapter}` 与 `/codex/changelog` 两条路由 + 前端页签即可，
-   是最短的一块收尾。注意核心规则页正文里有 `<details>` 折叠块，
-   块级契约要么支持它、要么把中英拆成两个块。
+1. ~~**核心规则章节页与规则变更清单都没接进网页**~~ **已办（2026-07-26）**：
+   图鉴从三页签扩到**五页签**（单位 / 武器词条 / 分队 / 核心规则 / 规则变更）。
+   四条新路由 `GET /codex/rules[/{slug}]`、`GET /codex/changelog[/{slug}]`，
+   只读层 `web_api/core_rules_browse.py` 与 `changelog_browse.py`。
+   块级契约按"支持它"办：新增 `details` 块型（**可嵌套**，里面还是 WikiBlock 数组），
+   而不是把中英拆成两个块——折叠里装的就是普通正文（段落/列表/表格/引用都有），
+   拆字段等于把块渲染器在契约层复制一份。踩出来的两个坑见 §5。
 2. **lint 的 593 条 alias-conflicts 占满了整个 warning 通道**（100%；官方中文名铺开后
    由 553 涨到 593，新增的 36 条全是同一条战略在多个阵营各有一页、中文名自然重名）。
    基本不可行动。建议聚合成 1 条摘要 warning + 单出一份重名报告，
@@ -132,7 +137,23 @@ CLI `python -m wiki_engine changelog`。**592 条官方改动，其中 128 条�
 早已落在 `db_compile/fp_errata_patches.json` 与 `fp_rules_patches.json`，两者不要混读。
 （交接文档提到的「CP 两侧皆知 477 条中有 2 条不等」属于后者的口径，未并入本清单。）
 
-## 5. 下次动这块之前必须知道的（原三件 + 中文化踩出来的四条）
+## 5. 下次动这块之前必须知道的（原三件 + 中文化四条 + 接网页两条）
+
+### 把带折叠的页接进 web 这条线（2026-07-26 新增）
+
+8. **凡是按 `## ` 切小节的地方，都必须先认 `<details>` 深度**。核心规则页的英文原文
+   自带 `## BATTLEFIELD MORALE` 这类标题（refine 产物的章节标题，实测 24 章里 **57 处**）。
+   不认深度就会把折叠**从那一行腰斩**、后半段英文全部漏成顶层假小节：24 章切出 213 个
+   小节而不是 156 个。最阴的是**折叠块个数一个不少**（156 个），只看计数完全正常。
+   逮住它靠的是三条一起查：小节数、每节恰好一个折叠、**每个小节名都带官方节号**
+   （漏出来的假小节没有节号）。修法是 `wiki_blocks._lines_with_depth()`，
+   parse_sections / parse_intro / list_link_targets / section_table_rows 四处共用一份规则。
+9. **单星号 `*斜体*` 只能按"整行成对"处理，不能做通用行内配对**。前端行内渲染器只认
+   `**粗体**`，不处理就把 `*ARMIES*` 原样印在 156 节每节的中文标题正下方。
+   但库里另有 `| 屁精监工 | 6" | 5* |` 这种脚注标记、和 PDF 直提残留的落单星号
+   （`。*护卫单位`）——通用配对会把两个不相干星号之间的正文整段变成斜体。
+   全库 165 处单星号里 164 处是整行，按整行判据零误伤。为此 Inline 契约加了 `em`
+   （只由 wiki 块编译器产出；`richtext.to_richtext` 那条 LLM 链路**不动**）。
 
 ### 中文 PDF 直提这条线（2026-07-26 新增）
 

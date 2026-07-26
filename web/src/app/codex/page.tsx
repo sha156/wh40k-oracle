@@ -4,6 +4,8 @@ import { useCallback, useEffect, useMemo, useState } from "react";
 
 import { Datasheet } from "@/components/chat/Datasheet";
 import { SiteHeader } from "@/components/chat/SiteHeader";
+import { ChangelogBrowser } from "@/components/codex/ChangelogBrowser";
+import { CoreRulesBrowser } from "@/components/codex/CoreRulesBrowser";
 import { DetachmentBrowser } from "@/components/codex/DetachmentBrowser";
 import { KeywordIndex } from "@/components/codex/KeywordIndex";
 import type { EntityCard } from "@/lib/answer";
@@ -19,14 +21,24 @@ import {
 const BACKEND_HINT =
   "无法连接后端。请确认 web_api 已启动：.venv\\Scripts\\python.exe -m uvicorn web_api.main:app --port 8000";
 
-/** 图鉴内部的二级页签：顶栏 NAV_ITEMS 再加第 5 项会挤爆 max-w-[1100px]，词条/分队只能收在页内 */
-type CodexTab = "units" | "keywords" | "detachments";
+/** 图鉴内部的二级页签：顶栏 NAV_ITEMS 再加第 5 项会挤爆 max-w-[1100px]，全部收在页内 */
+type CodexTab = "units" | "keywords" | "detachments" | "rules" | "changelog";
 
 const TABS: ReadonlyArray<{ id: CodexTab; label: string }> = [
   { id: "units", label: "单位" },
   { id: "keywords", label: "武器词条" },
   { id: "detachments", label: "分队" },
+  { id: "rules", label: "核心规则" },
+  { id: "changelog", label: "规则变更" },
 ];
+
+/** 非单位页签的面包屑文案。写成表而不是三元嵌套：页签已经 5 个，嵌到第四层就没人看得懂了 */
+const TAB_CONTEXT: Partial<Record<CodexTab, string>> = {
+  keywords: "图鉴 · 武器词条",
+  detachments: "图鉴 · 分队",
+  rules: "图鉴 · 核心规则",
+  changelog: "图鉴 · 规则变更",
+};
 
 /**
  * 图鉴页（Stage 4）：阵营 → 单位列表 → 兵牌（复用 Datasheet 组件）。
@@ -38,6 +50,8 @@ export default function CodexPage() {
   // 用 hidden 切换而非卸载，来回切页签不丢已选阵营/已展开的反查清单
   const [keywordsMounted, setKeywordsMounted] = useState(false);
   const [detachmentsMounted, setDetachmentsMounted] = useState(false);
+  const [rulesMounted, setRulesMounted] = useState(false);
+  const [changelogMounted, setChangelogMounted] = useState(false);
   const [factions, setFactions] = useState<FactionRow[]>([]);
   const [factionId, setFactionId] = useState<string | null>(null);
   const [units, setUnits] = useState<UnitRow[]>([]);
@@ -111,6 +125,8 @@ export default function CodexPage() {
     setTab(t);
     if (t === "keywords") setKeywordsMounted(true);
     if (t === "detachments") setDetachmentsMounted(true);
+    if (t === "rules") setRulesMounted(true);
+    if (t === "changelog") setChangelogMounted(true);
   };
 
   // 词条/分队详情取数失败时复用同一条后端提示；保持引用稳定，免得它日后进 effect 依赖里反复重拉
@@ -134,13 +150,10 @@ export default function CodexPage() {
 
   const activeFaction = factions.find((f) => f.id === factionId);
   const context =
-    tab === "keywords"
-      ? "图鉴 · 武器词条"
-      : tab === "detachments"
-        ? "图鉴 · 分队"
-        : activeFaction
-          ? `图鉴 · ${lang === "zh" ? (activeFaction.nameZh ?? activeFaction.name) : activeFaction.name}`
-          : "图鉴 · CODEX";
+    TAB_CONTEXT[tab] ??
+    (activeFaction
+      ? `图鉴 · ${lang === "zh" ? (activeFaction.nameZh ?? activeFaction.name) : activeFaction.name}`
+      : "图鉴 · CODEX");
 
   return (
     <>
@@ -309,6 +322,20 @@ export default function CodexPage() {
         {detachmentsMounted ? (
           <div className={tab === "detachments" ? "" : "hidden"}>
             <DetachmentBrowser factions={factions} onError={onBackendError} />
+          </div>
+        ) : null}
+
+        {/* 核心规则与规则变更都只吃 wiki 产物（/codex/rules、/codex/changelog），
+            与阵营清单、传承开关都无关，故不传 factions */}
+        {rulesMounted ? (
+          <div className={tab === "rules" ? "" : "hidden"}>
+            <CoreRulesBrowser onError={onBackendError} />
+          </div>
+        ) : null}
+
+        {changelogMounted ? (
+          <div className={tab === "changelog" ? "" : "hidden"}>
+            <ChangelogBrowser onError={onBackendError} />
           </div>
         ) : null}
       </main>

@@ -25,7 +25,9 @@ from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import StreamingResponse
 from pydantic import BaseModel, ConfigDict, Field
 
-from web_api.contract import (Answer, CritiqueReportOut, DetachmentDetail,
+from web_api.contract import (Answer, ChangelogFactionPage, ChangelogIndex,
+                              CoreRuleChapter, CoreRuleChapterListResponse,
+                              CritiqueReportOut, DetachmentDetail,
                               DetachmentListResponse, KeywordDetail,
                               KeywordIndexResponse, RosterIn, SimResponse,
                               ValidationReportOut)
@@ -405,6 +407,68 @@ def codex_detachment(faction_id: str, slug: str) -> DetachmentDetail:
     except wiki_browse.NotFound as exc:
         raise HTTPException(status_code=404, detail=str(exc))
     except wiki_browse.WikiUnavailable as exc:
+        raise HTTPException(status_code=503, detail=str(exc))
+
+
+@app.get("/codex/rules", response_model=CoreRuleChapterListResponse,
+         response_model_by_alias=True)
+def codex_rule_chapters() -> CoreRuleChapterListResponse:
+    """图鉴：11 版核心规则章节目录（24 章）。
+
+    数据源是 wiki/core-rules/sections/*.md（离线生成物），不查库不读 PDF。
+    wiki 卷没挂上/产物残缺 503——**不返回空列表**，那在前端长得跟「这一版没有核心规则」
+    一模一样。
+    """
+    from web_api import core_rules_browse as crb
+    try:
+        return CoreRuleChapterListResponse(items=crb.list_chapters())
+    except crb.WikiUnavailable as exc:
+        raise HTTPException(status_code=503, detail=str(exc))
+
+
+@app.get("/codex/rules/{slug}", response_model=CoreRuleChapter,
+         response_model_by_alias=True)
+def codex_rule_chapter(slug: str) -> CoreRuleChapter:
+    """图鉴：某章全文。正文是官方简体中文，每节带一个官方英文原文折叠块。
+
+    导语一并返回（里面是「中文由 PDF 文本层直提，判定以英文原文为准」那条披露），
+    前端必须显示——丢了它这页就像一份官方中文定稿。
+    """
+    from web_api import core_rules_browse as crb
+    try:
+        return crb.chapter_detail(slug)
+    except crb.NotFound as exc:
+        raise HTTPException(status_code=404, detail=str(exc))
+    except crb.WikiUnavailable as exc:
+        raise HTTPException(status_code=503, detail=str(exc))
+
+
+@app.get("/codex/changelog", response_model=ChangelogIndex,
+         response_model_by_alias=True)
+def codex_changelog() -> ChangelogIndex:
+    """图鉴：规则变更清单首页（通用规则更新 + 28 阵营包一览）。
+
+    响应前会把 index 的一览表与 28 个阵营页逐条对账（条目数、🆕 数、页是否都在）；
+    对不上一律 503 并在日志点名——"592 条改动"是这页的头条断言，
+    悄悄少几条页面照样渲染得漂漂亮亮。
+    """
+    from web_api import changelog_browse as cgb
+    try:
+        return cgb.changelog_index()
+    except cgb.WikiUnavailable as exc:
+        raise HTTPException(status_code=503, detail=str(exc))
+
+
+@app.get("/codex/changelog/{slug}", response_model=ChangelogFactionPage,
+         response_model_by_alias=True)
+def codex_changelog_faction(slug: str) -> ChangelogFactionPage:
+    """图鉴：某阵营包官方「规则更新」全文。未知 slug 404。"""
+    from web_api import changelog_browse as cgb
+    try:
+        return cgb.faction_changelog(slug)
+    except cgb.NotFound as exc:
+        raise HTTPException(status_code=404, detail=str(exc))
+    except cgb.WikiUnavailable as exc:
         raise HTTPException(status_code=503, detail=str(exc))
 
 

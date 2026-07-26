@@ -15,14 +15,21 @@ import type { Inline } from "./answer";
 const API_BASE =
   process.env.NEXT_PUBLIC_API_BASE?.replace(/\/$/, "") ?? "http://localhost:8000";
 
-/** 块级正文：六种块覆盖 wiki 实体页的全部排版（段落/列表/表格/小标题/引用） */
+/**
+ * 块级正文：七种块覆盖 wiki 全部排版（段落/列表/表格/小标题/引用/折叠）。
+ *
+ * `details` 是**可嵌套**的块（里面还是一串 WikiBlock）——核心规则页每节「中文正文 +
+ * 官方英文原文折叠」就是它。summary 本身携带信息（142 节写「官方英文原文」、14 节写
+ * 「官方英文原文（英文由 PDF 直提）」），照实显示，不要归一化成一句固定话术。
+ */
 export type WikiBlock =
   | { t: "p"; inline: Inline[] }
   | { t: "ul"; items: Inline[][] }
   | { t: "ol"; items: Inline[][] }
   | { t: "table"; head: string[]; rows: string[][] }
-  | { t: "h"; level: number; text: string } // level 3/4，小节内标题
-  | { t: "quote"; inline: Inline[] }; // > 引用（页面里的诚实披露用它）
+  | { t: "h"; level: number; text: string } // level 2/3/4，小节内标题
+  | { t: "quote"; inline: Inline[] } // > 引用（页面里的诚实披露用它）
+  | { t: "details"; summary: string; blocks: WikiBlock[] };
 
 export interface WikiSection {
   title: string;
@@ -112,6 +119,96 @@ export function fetchDetachmentDetail(
 ): Promise<DetachmentDetail> {
   return getJson<DetachmentDetail>(
     `/codex/factions/${encodeURIComponent(factionId)}/detachments/${encodeURIComponent(slug)}`,
+    signal,
+  );
+}
+
+/* ── 核心规则全文（GET /codex/rules[/{slug}]）───────────────────────── */
+
+export interface CoreRuleChapterSummary {
+  slug: string;
+  /** 官方章号，两位前导零（"01".."24"）——它同时是排序键，别 parseInt 再拼回去 */
+  number: string;
+  nameZh: string;
+  nameEn: string;
+  sectionCount: number;
+}
+
+export interface CoreRuleChapter extends CoreRuleChapterSummary {
+  /**
+   * 导语块。**必须渲染**：里面是「正文为官方简体中文版；中文由 PDF 文本层直提，
+   * 表格与版式会有失真——判定规则以英文原文为准」这条披露。不显示它，这一页看起来
+   * 就是一份官方中文规则定稿，而它其实是直提文本。
+   */
+  intro: WikiBlock[];
+  /** 小节标题自带官方节号（"执行行动 16.01"），原样显示，前端不去拆 */
+  sections: WikiSection[];
+}
+
+export interface CoreRuleChapterListResponse {
+  items: CoreRuleChapterSummary[];
+}
+
+export function fetchRuleChapters(signal?: AbortSignal): Promise<CoreRuleChapterSummary[]> {
+  return getJson<CoreRuleChapterListResponse>("/codex/rules", signal).then((d) => d.items);
+}
+
+export function fetchRuleChapter(
+  slug: string,
+  signal?: AbortSignal,
+): Promise<CoreRuleChapter> {
+  return getJson<CoreRuleChapter>(`/codex/rules/${encodeURIComponent(slug)}`, signal);
+}
+
+/* ── 规则变更清单（GET /codex/changelog[/{slug}]）───────────────────── */
+
+export interface ChangelogFactionSummary {
+  /**
+   * null = 真没有明细页可点（deathwatch 首版无更新章节、混沌恶魔官方本次未列改动）。
+   * 这两行的原因写在 detail 里，照实显示；不要造一个空页面让人点进去看「0 条改动」。
+   */
+  slug: string | null;
+  name: string;
+  version: string;
+  total: number;
+  newCount: number;
+  /** 明细列原文：有明细页时是「查看」，没有时是不存在明细的原因 */
+  detail: string;
+}
+
+export interface ChangelogIndex {
+  intro: WikiBlock[];
+  /** 《通用规则更新》：跨全部阵营生效，与阵营明细分开显示，免得被当成某个阵营的改动 */
+  generalSections: WikiSection[];
+  /** 兜底桶：index 里其余的节（此刻是「数值层的 10→11 漂移」那条口径说明） */
+  noteSections: WikiSection[];
+  factions: ChangelogFactionSummary[];
+  total: number;
+  newCount: number;
+}
+
+export interface ChangelogFactionPage {
+  slug: string;
+  nameZh: string;
+  nameEn: string;
+  version: string;
+  total: number;
+  newCount: number;
+  intro: WikiBlock[];
+  /** 小节名是官方自己的分组（数据表 / 军队规则 / 各分遣队名） */
+  sections: WikiSection[];
+}
+
+export function fetchChangelog(signal?: AbortSignal): Promise<ChangelogIndex> {
+  return getJson<ChangelogIndex>("/codex/changelog", signal);
+}
+
+export function fetchChangelogFaction(
+  slug: string,
+  signal?: AbortSignal,
+): Promise<ChangelogFactionPage> {
+  return getJson<ChangelogFactionPage>(
+    `/codex/changelog/${encodeURIComponent(slug)}`,
     signal,
   );
 }

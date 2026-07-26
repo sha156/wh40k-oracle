@@ -571,3 +571,33 @@ def test_list_link_targets_reads_raw_paths() -> None:
         ("factions/兽人/enhancements/b.md", "乙"),
     ]
     assert wbk.list_link_targets(body, "战略") == []
+
+
+# ── 整行 *斜体* → em ─────────────────────────────────────────────────
+#
+# 核心规则每节中文标题下面那行是英文小节名 `*ARMIES*`（全库 164 处整行斜体）。
+# 前端行内渲染器只认 `**粗体**`，不处理就把星号原样印在 156 节的正文里。
+# 但**只能认整行**：库里另有 `5*` 脚注标记与 PDF 直提残留的落单星号，
+# 通用行内配对会把两个不相干星号之间的正文整段变斜体。
+
+def _kinds(line: str):
+    block = wbk.parse_blocks([line])[0]
+    return [(sp.t, getattr(sp, "s", "")) for sp in block.inline]
+
+
+def test_whole_line_italic_becomes_em() -> None:
+    assert _kinds("*ARMIES*") == [("em", "ARMIES")]
+    assert _kinds("*ATTACK SEQUENCE*") == [("em", "ATTACK SEQUENCE")]
+
+
+@pytest.mark.parametrize("line", [
+    "| 屁精监工 | 5* | 5+ |",          # 兵牌脚注标记，不是斜体
+    "。*护卫单位继续受益",              # PDF 直提残留的落单星号
+    "*A* 与 *B* 同行",                  # 同行两对：通用配对会误伤，整行判据不碰它
+])
+def test_non_whole_line_stars_are_left_alone(line: str) -> None:
+    assert all(t != "em" for t, _ in _kinds(line)), line
+
+
+def test_bold_still_wins_over_em() -> None:
+    assert _kinds("**粗体** 照旧") == [("strong", "粗体"), ("text", " 照旧")]
