@@ -43,7 +43,11 @@ PAYLOAD_REL = "indexes/keywords.json"   # 机器可读镜像，web 层读它（�
 
 # 词条后缀参数：整数（MELTA 2）、命中门槛（ANTI-INFANTRY 4+）、骰子式（RAPID FIRE D6+3）。
 # 归一化 = 剥掉参数取「基础词条」，参数单独留档做档位表。
-_PARAM_SUFFIX = re.compile(r"\s+(\d+\+?|D\d*(?:\+\d+)?)$", re.IGNORECASE)
+#
+# 末尾那个 `\+?` 不是可有可无：`RAPID FIRE D6+`、`SUSTAINED HITS D` 这类**变量档位**
+# 不带它就整串留在基名里，于是「速射」会分裂成三个互不相干的词条，而索引页上看着
+# 只是多了两行——没有任何报错。骰子式参数与数字式一样是档位，不是词条名的一部分。
+_PARAM_SUFFIX = re.compile(r"\s+(\d+\+?|D\d*(?:\+\d+)?\+?)$", re.IGNORECASE)
 
 # 速查表标题行：中文名 + 英文名 + 可选官方节号。正文行都超过 42 字，用长度先粗筛。
 _QUICKREF_HEAD = re.compile(

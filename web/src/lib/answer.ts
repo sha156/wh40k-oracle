@@ -38,10 +38,28 @@ export interface CalcStep {
   text: RichText;
 }
 
+/**
+ * 兵牌上的一个规则词条（武器 USR，或技能正文里内嵌的【致命一击】）。
+ *
+ * `text` 是原样显示的那串字（含档位、随语言而变）；其余字段是后端在真源里查到了才有。
+ * 查不到就**只有 text**——渲染成不可交互的纯文本，不挂 tooltip。
+ * `brief` 只可能是官方中文规则正文的逐字摘录，后端不会为查不到的词条编解释。
+ */
+export interface KeywordRef {
+  text: string;
+  slug?: string;
+  base?: string; // 官方英文基名（不含档位）
+  nameZh?: string;
+  brief?: string; // 官方中文规则正文摘录
+  section?: string; // 官方节号，如 24.03
+  ruleSlug?: string; // 核心规则章节页 slug，如 24-core-abilities
+  group?: "universal" | "transitional" | "unit-specific";
+}
+
 /** E6 兵牌武器行 */
 export interface WeaponRow {
   name: string;
-  kw?: string; // 武器关键词，如 [重型，毁灭伤害]
+  kw?: KeywordRef[]; // 武器关键词，逐条可悬停；空数组=这把武器没有词条
   range: string;
   a: string;
   skill: string; // BS 或 WS

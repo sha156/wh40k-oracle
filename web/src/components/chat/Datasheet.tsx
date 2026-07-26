@@ -1,4 +1,5 @@
 import type { Ability, EntityCard, WeaponRow } from "@/lib/answer";
+import { KeywordList } from "../ui/KeywordChip";
 import { KwBar } from "../ui/KwBar";
 import { Rich } from "../ui/Rich";
 import { SlotBadge } from "../ui/SlotBadge";
@@ -36,7 +37,10 @@ function WeaponTable({ caption, sig, skillHead, rows }: WeaponTableProps) {
               <tr key={w.name} className={w.hot ? "hot" : undefined}>
                 <td>
                   {w.name}
-                  {w.kw ? <span className="kw">{w.kw}</span> : null}
+                  {/* 词条逐条可悬停查官方解释；查不到真源的那条退成纯文本（KeywordChip 内判） */}
+                  {w.kw && w.kw.length > 0 ? (
+                    <KeywordList items={w.kw} className="kw" />
+                  ) : null}
                 </td>
                 <td className="num">{w.range}</td>
                 <td className="num">{w.a}</td>

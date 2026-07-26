@@ -67,9 +67,33 @@ class CalcStep(BaseModel):
 
 # ── E6 兵牌 ───────────────────────────────────────────────────────
 
+class KeywordRef(_CamelModel):
+    """兵牌上的一个规则词条（武器 USR，或技能正文里内嵌的【致命一击】）。
+
+    `text` 是页面上**原样显示**的那串字（含档位、随语言而变）；其余字段是在真源里
+    查到了才有。查不到就**只有 text**——前端据此渲染成不可交互的纯文本。
+    绝不为查不到的词条编一句解释：`brief` 只允许是官方中文规则正文的逐字摘录
+    （`wiki/core-rules/sections/`），不允许概括、不允许改写、不允许凭 40K 常识补。
+
+    `section` 与 `ruleSlug` 成对出现或成对缺失：拿得到节号就一定拿得到那节所在的
+    章节页，反之链接无处可去。速查表漏印节号的词条（实测 PISTOL / SUSTAINED HITS）
+    靠官方英文名与核心规则章节配对补回，**不按顺序推断编号**。
+    """
+    text: str
+    slug: Optional[str] = None
+    base: Optional[str] = None                  # 官方英文基名（不含档位）
+    name_zh: Optional[str] = Field(default=None, alias="nameZh")
+    brief: Optional[str] = None                 # 官方中文规则正文摘录
+    section: Optional[str] = None               # 官方节号 24.03
+    rule_slug: Optional[str] = Field(default=None, alias="ruleSlug")
+    group: Optional[str] = None                 # universal / transitional / unit-specific
+
+
 class WeaponRow(BaseModel):
     name: str
-    kw: Optional[str] = None
+    # 结构化词条数组（不是拼好的一串）：兵牌上每条 USR 都要能单独悬停看解释。
+    # 空数组 = 这把武器没有词条；数组里只有 text 的元素 = 有词条但查不到真源。
+    kw: List[KeywordRef] = []
     range: str
     a: str
     skill: str

@@ -11,6 +11,7 @@ import re
 from typing import Any, Dict, List, Optional
 
 from web_api.contract import Ability, DamagedProfile, EntityCard, Stat, WeaponRow
+from web_api.keyword_refs import resolve_all
 from web_api.richtext import to_richtext
 
 
@@ -41,25 +42,14 @@ def _fmt_skill(bs_ws: str) -> str:
     return v
 
 
-def _weapon_kw(keywords: List[str]) -> Optional[str]:
-    """武器关键词列表 → '[a，b]'；空则 None。DB 里单元素可能已是逗号串。"""
-    flat: List[str] = []
-    for k in keywords or []:
-        for part in re.split(r"[,，]", str(k)):
-            part = part.strip()
-            if part:
-                flat.append(part)
-    if not flat:
-        return None
-    return "[" + "，".join(flat) + "]"
-
-
 def _weapon_row(w: Dict[str, Any], hot_weapon: Optional[str], lang: str = "zh") -> WeaponRow:
     name = str(w.get("name", ""))
     hot = bool(hot_weapon) and hot_weapon.lower() in name.lower()
     return WeaponRow(
         name=name,
-        kw=_weapon_kw(w.get("keywords", [])),
+        # 拆开后**不再拼回字符串**：拼回去前端就只能整串印出来，逐条挂不了解释。
+        # 解析与解释统一走 keyword_refs（技能正文里的内嵌词条也走它，只准一处实现）。
+        kw=resolve_all(w.get("keywords", [])),
         range=_fmt_range(str(w.get("range", "")), lang),
         a=str(w.get("a", "")),
         skill=_fmt_skill(str(w.get("bs_ws", ""))),
