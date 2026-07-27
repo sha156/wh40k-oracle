@@ -77,6 +77,23 @@ def _write_core_rules_fixture(tmp_path):
     return core_dir
 
 
+def _write_ambiguous_resolver_fixture(tmp_path):
+    """同名跨阵营（Helbrute×2）→ resolve() 报 ambiguous 并回填 `名字 (阵营)` 候选串。"""
+    terms_path = tmp_path / "terms_ambiguous.json"
+    terms_path.write_text(json.dumps({
+        "source": "test",
+        "pairs": [
+            {"zh": "地狱魔像CSM", "en": "Helbrute", "canonical_id": "000000001",
+             "faction_id": "CSM", "book": "test", "pages": [1], "confidence": "exact"},
+            {"zh": "地狱魔像WE", "en": "Helbrute", "canonical_id": "000000002",
+             "faction_id": "WE", "book": "test", "pages": [1], "confidence": "exact"},
+        ],
+    }), encoding="utf-8")
+    app_path = tmp_path / "app_ambiguous.py"
+    app_path.write_text("UNIT_ALIASES = {}\n", encoding="utf-8")
+    return EntityResolver(terms_path=terms_path, app_path=app_path)
+
+
 def _write_resolver_fixture(tmp_path):
     terms_path = tmp_path / "terms.json"
     terms_path.write_text(TERMS_JSON, encoding="utf-8")
@@ -228,6 +245,47 @@ class TestEntityResolverTool:
         result = agent_tools.entity_resolver("完全不存在XYZ", resolver=resolver)
 
         assert result["canonical_id"] is None
+
+
+class TestEntityResolverEmptyPathHonesty:
+    """空手返回必须把「这条名字映射没命中」和「这个东西不存在」的界线说穿（#63/#109 同型）。
+
+    entity_resolver 此前是本通道里唯一一个空手时连 note 都没有的工具：ambiguous 被
+    loop._EMPTY_CHECKS 判为非空（评审 #25）→ 不降级，模型拿到裸 dict 无任何下一步指引。
+    """
+
+    def test_unresolved_note_gives_next_step_and_forbids_negative_assertion(self, tmp_path):
+        resolver, _ = _write_resolver_fixture(tmp_path)
+
+        result = agent_tools.entity_resolver("完全不存在XYZ", resolver=resolver)
+
+        note = result["note"]
+        assert "≠" in note                                    # 界线说穿
+        assert "禁止" in note and "不存在" in note             # 明令禁止否定性断言
+        assert "get_datasheet" in note and "get_entity" in note  # 指出下一步换哪个工具
+
+    def test_ambiguous_note_orders_recheck_not_bounce_to_user(self, tmp_path):
+        resolver = _write_ambiguous_resolver_fixture(tmp_path)
+
+        result = agent_tools.entity_resolver("Helbrute", resolver=resolver)
+
+        assert result["canonical_id"] is None
+        assert len(result["candidates"]) == 2
+        note = result["note"]
+        assert "原样" in note                                  # 候选串可回填重查
+        assert "退回给用户" in note                            # 反问只能是查证后的兜底
+
+    def test_note_does_not_change_loop_empty_verdicts(self, tmp_path):
+        """加 note 不得动判空口径：ambiguous 仍非空（评审 #25），彻底解析失败仍判空降级。"""
+        from agent.loop import _is_empty_result
+
+        ambiguous = agent_tools.entity_resolver(
+            "Helbrute", resolver=_write_ambiguous_resolver_fixture(tmp_path))
+        resolver, _ = _write_resolver_fixture(tmp_path)
+        miss = agent_tools.entity_resolver("完全不存在XYZ", resolver=resolver)
+
+        assert _is_empty_result("entity_resolver", ambiguous) is False
+        assert _is_empty_result("entity_resolver", miss) is True
 
 
 class TestCalcPoints:
@@ -483,6 +541,69 @@ class TestRagSearch:
 
         assert result["found"] is False
         assert "异常" in result["note"]
+
+
+class TestRagSearchFailureStatesAreDistinguishable:
+    """rag_search 是唯一一个空手结果一定会被模型看到的工具（loop 的降级分支显式排除了它），
+    所以「检索管线坏了」和「语料里零命中」必须能被区分——否则工具故障会被写成
+    「档案里没有这条规则」的否定性事实断言（#109 同型）。"""
+
+    @staticmethod
+    def _app_returning(passages):
+        class FakeApp:
+            @staticmethod
+            def load_resources():
+                return None, object(), None, None
+
+            @staticmethod
+            def build_bm25(_vectorstore):
+                return None
+
+            @staticmethod
+            def hybrid_retrieve(query, vectorstore, bm25_retriever, reranker):
+                return passages
+
+        return FakeApp
+
+    def test_zero_hit_note_forbids_negative_assertion_and_gives_next_step(self):
+        result = agent_tools.rag_search("任意问题", app_module=self._app_returning([]))
+
+        assert result["found"] is False
+        assert not result.get("error")            # 检索跑通了，只是零命中
+        note = result["note"]
+        assert "≠" in note and "禁止" in note
+        assert "get_datasheet" in note            # 指出下一步换哪个工具
+
+    def test_pipeline_failure_is_flagged_as_error_not_as_missing_content(self):
+        class FakeApp:
+            @staticmethod
+            def load_resources():
+                raise RuntimeError("模拟资源加载失败")
+
+        result = agent_tools.rag_search("任意问题", app_module=FakeApp)
+
+        assert result["error"] is True
+        assert "不是" in result["note"]           # 明说这不是「语料里没有」
+
+    def test_unbuilt_store_is_flagged_as_error_too(self):
+        class FakeApp:
+            @staticmethod
+            def load_resources():
+                return None, None, None, None
+
+        result = agent_tools.rag_search("任意问题", app_module=FakeApp)
+
+        assert result["error"] is True
+        assert "环境故障" in result["note"]
+
+    def test_successful_hit_carries_no_error_flag(self):
+        """负向成对：正常命中不许被打上 error，否则模型会把有效结果当故障丢掉。"""
+        app = self._app_returning([{"text": "t", "book": "b", "source": "s", "page": 1}])
+
+        result = agent_tools.rag_search("任意问题", app_module=app)
+
+        assert result["found"] is True
+        assert not result.get("error")
 
 
 class TestUnmodeledToolsHonestPlaceholders:

@@ -64,16 +64,46 @@ def search_wiki(query: str, wiki_root: Optional[Path] = None) -> Dict[str, Any]:
     return {"found": len(results) > 0, "page": None, "results": results[:10]}
 
 
+# ⚠️ 与 #63 / #109 同型：解析器返回的是「这条名字映射路径的状态」，不是「世上有没有这个东西」。
+# entity_resolver 此前是本通道里**唯一一个空手时连一句 note 都没有**的工具：
+#   · confidence="ambiguous"（有候选、无 canonical_id）被 loop._EMPTY_CHECKS 判为**非空**
+#     （评审 #25：候选是实质回复），于是既不降级、也没有任何下一步指引——模型拿到的是一个
+#     裸 dict，正是 #63「不降级也不作答」的形状（get_entity 已于 1efb6e5c 补上逐候选重查的
+#     note，get_datasheet 的 ambiguous 分支一直有 note，只有这里是空白）。
+#   · confidence="none" 会被判空并降级 classic，模型看不到；但同一函数被 web/军表侧直调时
+#     仍应把界线说穿，故两态都给 note。
+_RESOLVER_AMBIGUOUS_NOTE = (
+    "这个名字匹配到多个候选，本工具按判据拒绝静默取先入者。"
+    "⚠️ 有歧义 ≠ 该单位不存在。请把 candidates 里的候选串**原样**回填本工具重查"
+    "（`名字 (阵营缩写)` 形式可精确命中唯一阵营）；按问题上下文无法确定用户指哪一个时，"
+    "逐个候选查证后分别说明，不要在未查证任何候选前就把问题退回给用户。"
+)
+_RESOLVER_MISS_NOTE = (
+    "没能把这个名字解析到 canonical id（本工具只做「名字 → id」映射，不检索规则原文）。"
+    "⚠️ 解析不到 ≠ 该单位或该阵营不存在，也 ≠ 它没有规则/点数——只说明这次名字映射没命中。"
+    "请改用 get_datasheet / get_entity 直接传用户原文里的中文名重查，或用 rag_search 兜底；"
+    "全都查不到就如实说「档案缺失，建议查阅原始规则书」。"
+    "禁止据此输出「该单位/阵营不存在」「不属于战锤40K」这类否定性断言。"
+)
+
+
 def entity_resolver(name: str, resolver: Optional[EntityResolver] = None) -> Dict[str, Any]:
-    """中文名/英文名/社区俗名 → canonical id（db_compile.entity_resolver）。"""
+    """中文名/英文名/社区俗名 → canonical id（db_compile.entity_resolver）。
+
+    解析不到时**必须**把「这条路径没命中」与「这个东西不存在」的界线说穿（见上方注释）。
+    """
     r = resolver or _get_default_resolver()
     result = r.resolve(name)
-    return {
+    out: Dict[str, Any] = {
         "canonical_id": result.canonical_id,
         "name_en": result.name_en,
         "confidence": result.confidence,
         "candidates": result.candidates,
     }
+    if not result.canonical_id:
+        out["note"] = (_RESOLVER_AMBIGUOUS_NOTE if result.candidates
+                       else _RESOLVER_MISS_NOTE)
+    return out
 
 
 def get_entity(
@@ -306,15 +336,39 @@ def get_datasheet(
 
 # ── ⑩ 兜底：只读包装 app.py 现有混合检索（绝不修改 app.py）──────────
 
+# rag_search 是**唯一**一个空手结果一定会被模型看到的工具：loop.py 的降级分支显式排除了它
+# （`tool_name != "rag_search"`——它自己就是兜底目标，降级到自己没意义），所以这里的措辞就是
+# 模型作答前看到的最后一句话。三种失败态此前共用同一个形状 `{found: False, passages: []}`，
+# 模型无从区分「语料里没有」和「检索管线自己坏了」，很容易把工具故障写成「档案里没有这条规则」
+# 的否定性断言（#109 同型）。故按失败性质分开措辞，并给 error 标志。
+_RAG_EMPTY_NOTE = (
+    "本次混合检索没有命中任何段落（提问措辞/译名与语料用词不一致时最常见）。"
+    "⚠️ 没检索到 ≠ 该规则或该单位不存在。请换更短的关键词、或改用中/英文术语再检一次，"
+    "也可以改用 get_datasheet / get_entity / get_keyword_definition 直查结构库；"
+    "仍无结果就如实说「档案缺失，建议查阅原始规则书」，"
+    "禁止据此输出「规则书里没有这条规则」「该单位不存在」这类否定性断言。"
+)
+_RAG_UNAVAILABLE_HINT = (
+    "⚠️ 这是**检索侧环境故障**，不是「语料里没有相关内容」——不可据此判断该规则/单位是否存在。"
+    "请改用 get_datasheet / get_entity / get_keyword_definition 直查结构库；"
+    "都取不到就如实说明本次检索不可用，禁止输出任何否定性事实断言。"
+)
+
+
 def rag_search(query: str, app_module: Optional[Any] = None) -> Dict[str, Any]:
     """现有混合检索（兜底）。只读调用 app.py 的 load_resources/build_bm25/hybrid_retrieve，
-    不修改 app.py 本身。"""
+    不修改 app.py 本身。
+
+    失败态分两类并各自标注：`error=True` 表示检索管线/环境本身不可用（知识库未构建、调用异常），
+    `error` 缺省表示检索跑通了但零命中——后者才是关于语料内容的信息。
+    """
     try:
         app = app_module if app_module is not None else _import_app()
         embeddings, vectorstore, reranker, reranker_warning = app.load_resources()
         if vectorstore is None:
-            return {"found": False, "passages": [],
-                    "note": "知识库未构建（local_vector_store 为空），请先跑 ingest.py"}
+            return {"found": False, "error": True, "passages": [],
+                    "note": "知识库未构建（local_vector_store 为空），请先跑 ingest.py。"
+                            + _RAG_UNAVAILABLE_HINT}
 
         bm25_retriever = app.build_bm25(vectorstore)
         passages = app.hybrid_retrieve(
@@ -326,10 +380,12 @@ def rag_search(query: str, app_module: Optional[Any] = None) -> Dict[str, Any]:
         return {
             "found": bool(passages),
             "passages": passages,
-            "note": None if passages else "未检索到相关段落",
+            "note": None if passages else _RAG_EMPTY_NOTE,
         }
     except Exception as exc:
-        return {"found": False, "passages": [], "note": f"rag_search 异常: {exc}"}
+        return {"found": False, "error": True, "passages": [],
+                "note": f"rag_search 执行异常（检索管线本身出错）: {exc}。"
+                        + _RAG_UNAVAILABLE_HINT}
 
 
 # ── 未建模能力：诚实打桩，严禁伪造结果 ────────────────────────────
