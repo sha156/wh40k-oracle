@@ -130,6 +130,64 @@ class TestEntityResolverFixture:
         assert result.confidence == "none"
 
 
+class TestSeparatorNormalizedZhNames:
+    """音译名分隔号写法差异算**同名**，必须判 exact（2026-07-27，基准 #113）。
+
+    病灶：库内 `_zh_to_id` 自己就不统一（30 个键用「·」、6 个用「.」，含
+    `罗伯特.基里曼`），而题面/用户写的是通行的「·」。于是精确表查空、落到 fuzzy，
+    而 `datasheet.find_datasheet` 出于防错配**只信 exact** ⇒ 数值权威路径整条查不到
+    ⇒ Agent 判空降级经典链 ⇒ 从民间译本 PDF 答出过期的 320 分（官方是 355）。
+    """
+
+    @staticmethod
+    def _resolver(tmp_path, pairs):
+        terms_path = tmp_path / "terms_sep.json"
+        terms_path.write_text(json.dumps({"source": "test", "pairs": [
+            {"zh": zh, "en": en, "canonical_id": cid, "faction_id": "X",
+             "book": "test", "pages": [1], "confidence": "exact"}
+            for zh, en, cid in pairs]}), encoding="utf-8")
+        return EntityResolver(terms_path=terms_path)
+
+    def test_interpunct_variant_of_indexed_name_resolves_exact(self, tmp_path):
+        # 库里存的是半角句点写法，用户敲中文间隔号
+        resolver = self._resolver(
+            tmp_path, [("罗伯特.基里曼", "Roboute Guilliman", "000000138")])
+
+        result = resolver.resolve("罗伯特·基里曼")
+
+        # 判 exact 是关键：fuzzy 会被 find_datasheet 拒绝，等价于没修
+        assert result.canonical_id == "000000138"
+        assert result.confidence == "exact"
+
+    def test_normalization_is_symmetric(self, tmp_path):
+        # 反方向（库里存「·」、用户敲「.」）同样要命中
+        resolver = self._resolver(
+            tmp_path, [("卡尔多·德拉可", "Kaldor Draigo", "000000200")])
+
+        assert resolver.resolve("卡尔多.德拉可").confidence == "exact"
+        assert resolver.resolve("卡尔多德拉可").canonical_id == "000000200"
+
+    def test_colliding_normalized_key_refuses_to_guess(self, tmp_path):
+        """两个不同实体归一后同名 ⇒ 真歧义，宁可不解析也不静默取先入者。"""
+        resolver = self._resolver(tmp_path, [
+            ("甲·乙", "Alpha Beta", "000000001"),
+            ("甲.乙", "Gamma Delta", "000000002"),
+        ])
+
+        # 各自的精确写法仍旧各查各的，一个都不许被归一索引顶掉
+        assert resolver.resolve("甲·乙").canonical_id == "000000001"
+        assert resolver.resolve("甲.乙").canonical_id == "000000002"
+        # 而归一键本身是冲突的：第三种写法不许被猜成其中任意一个
+        assert resolver.resolve("甲乙").canonical_id is None
+
+    def test_unrelated_name_still_unresolved(self, tmp_path):
+        """归一化只抹分隔号，不得顺手放宽「另一个名字」的判定。"""
+        resolver = self._resolver(
+            tmp_path, [("罗伯特.基里曼", "Roboute Guilliman", "000000138")])
+
+        assert resolver.resolve("罗伯特·古里曼XYZ").canonical_id is None
+
+
 class TestFuzzySilentMismatchGate:
     """模糊匹配静默命中不相干单位（2026-07-27）：`Flamestorm Drake`（不存在的名字）
     以 ratio 0.606 命中 `Firestorm Redoubt`，报 fuzzy + canonical_id，上层于是

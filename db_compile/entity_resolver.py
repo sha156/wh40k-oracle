@@ -52,6 +52,23 @@ def _is_abbreviation(query: str, hit: str) -> bool:
     """查询串是命中名的连续子串（大小写已由调用方统一）⇒ 视为简称，不算错配。"""
     return bool(query) and query in hit
 
+
+# ⚠️ 音译名分隔号在**库内自己就不统一**：`_zh_to_id` 里 30 个键用中文间隔号「·」、
+# 6 个键用半角句点「.」（含 `罗伯特.基里曼`）。用户与题面写的是通行的「·」，于是
+# 「罗伯特·基里曼」在精确表里查空、只能落到 fuzzy——而 `datasheet.find_datasheet`
+# 出于防错配**只信 exact**，于是数值权威路径整条查不到，Agent 判空降级经典链，
+# 最终从民间译本 PDF 答出过期的 320 分（基准 #113 硬错，实测 tool_calls 只有
+# `get_datasheet(name_or_id="罗伯特·基里曼")` 一步就降级了）。
+#
+# 这是**同一个名字的两种写法**，不是模糊匹配，所以修在归一化层而不是放宽 fuzzy 判据：
+# FUZZY_MAX_EDITS 那道防线（造名给出 id 57→3）一个字节都不动。
+_ZH_SEPARATORS = "·.．•‧・‥/-— \t"
+
+
+def _sep_normalized(name: str) -> str:
+    """抹掉音译名里的分隔号/空白，用于「同名不同写法」的精确二次命中。"""
+    return "".join(ch for ch in name if ch not in _ZH_SEPARATORS).lower()
+
 # 消歧语法：`Helbrute (WE)` / `Helbrute（WE）`——candidates 原样回填即可精确重查
 _FACTION_QUALIFIED = re.compile(r"^(?P<base>.+?)\s*[（(]\s*(?P<faction>[A-Za-z0-9 _-]+)\s*[)）]$")
 
@@ -125,6 +142,9 @@ class EntityResolver:
         # 英文名查询会拿到错误阵营的数据表）：每个英文名记全部 cid + 各 cid 的 faction
         self._en_buckets: Dict[str, List[str]] = {}
         self._id_to_faction: Dict[str, str] = {}
+        # 分隔号归一化的中文索引（见 _sep_normalized）。值为 None ⇒ 该归一键被多个不同
+        # 实体共用，属于真歧义，宁可不解析也不猜。
+        self._zh_norm_to_id: Dict[str, Optional[str]] = {}
 
         def _index_en(en_name: str, cid: str, faction: Optional[str]) -> None:
             self._id_to_en.setdefault(cid, en_name)
@@ -155,6 +175,15 @@ class EntityResolver:
             for alias, cid in load_zh_aliases(db_path).items():
                 self._zh_to_id.setdefault(alias, cid)
 
+        # 归一索引在两条中文来源（terms.json 的 zh + aliases 表）都灌完之后统一建，
+        # 保证它与 `_zh_to_id` 的最终内容一致；键冲突（不同实体归一后同名）记 None。
+        for zh_name, zh_cid in self._zh_to_id.items():
+            norm = _sep_normalized(zh_name)
+            if not norm or norm == zh_name:
+                continue      # 名字里本就没有分隔号 ⇒ 精确表已覆盖，不必重复建键
+            if self._zh_norm_to_id.setdefault(norm, zh_cid) != zh_cid:
+                self._zh_norm_to_id[norm] = None
+
         self._unit_aliases = load_unit_aliases(app_path) if app_path else {}
 
     def _qualified_candidates(self, key: str) -> List[str]:
@@ -180,6 +209,12 @@ class EntityResolver:
         cid = self._zh_to_id.get(name)
         if cid:
             return ResolveResult(cid, self._id_to_en.get(cid), "exact")
+
+        # 分隔号写法差异（罗伯特·基里曼 ↔ 罗伯特.基里曼）算**同名**，判 exact：
+        # 只有这样 `datasheet.find_datasheet`（只信 exact）才够得着数值权威路径。
+        norm_cid = self._zh_norm_to_id.get(_sep_normalized(name))
+        if norm_cid:
+            return ResolveResult(norm_cid, self._id_to_en.get(norm_cid), "exact")
 
         # 消歧语法 `Name (FACTION)`：ambiguous 候选串原样回填即可命中唯一阵营
         m = _FACTION_QUALIFIED.match(name)

@@ -198,6 +198,21 @@ def get_entity(
     return {"found": False, "page": None, "resolved_via": resolved, "note": note}
 
 
+# ⚠️ 与 `_CALC_POINTS_UNRESOLVED_NOTE`（基准 #109）同型的「查不到 ≠ 不存在」通道。
+# 本工具只读 wiki/core-rules/ 的术语页，那是**结构库的一个子集**，不是全部官方语料：
+# 官方 Faction Pack 里真实存在的 `Frame` 关键词全库一个术语页都没有（已知镜像缺口，
+# 见 CLAUDE.md「点名遗留」）。基准 #117 实测这条空手返回会经 `loop._EMPTY_CHECKS`
+# 当场降级经典链，**把已经查到的兵牌/实体结果整个丢掉**，模型只剩 PDF 片段，
+# 于是照着 Faction Pack 原文答出「Frame 关键词在库中可查」——恰好与事实相反。
+_KEYWORD_NOT_FOUND_NOTE = (
+    "术语页未收录该关键词（本工具只查 wiki/core-rules/ 术语页，它只覆盖部分核心/武器词条）。"
+    "⚠️ 未收录 ≠ 官方规则里没有这个关键词，也 ≠ 库内没有单位带它——只说明没有独立术语页。"
+    "若问题问的是「结构库里有没有」，如实回答「术语页未收录」并指出这是已知的数据缺口；"
+    "若问题问的是规则含义，请改用 rag_search 查官方语料后再作答。"
+    "禁止据此断言该关键词不存在，也禁止反过来把官方 PDF 上的内容说成「库里查得到」。"
+)
+
+
 def get_keyword_definition(
     keyword: str, core_rules_dir: Optional[Path] = None,
 ) -> Dict[str, Any]:
@@ -223,7 +238,7 @@ def get_keyword_definition(
         if any(n and n.strip().lower() == keyword_norm for n in names):
             return {"found": True, "page": page}
 
-    return {"found": False, "page": None, "note": "未找到该关键词的术语页"}
+    return {"found": False, "page": None, "note": _KEYWORD_NOT_FOUND_NOTE}
 
 
 # ── ⑧ 数据类：db_compile 只读封装 ─────────────────────────────────

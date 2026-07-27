@@ -264,8 +264,31 @@
   产物改由正规命令 `python -m wiki_engine keywords` 重生成。2392 测试绿、两处 lint 0 error、
   全量 pytest 后 git status 干净。报告
   `docs/superpowers/specs/2026-07-27-zh-bridge-reproducibility-and-test-artifacts.md`
-- **剩余**：#113/#117 数据来源路由（该查库时去查了 PDF）仍未修，#117 两轮摆动；
-  上述 6 个单位的 wiki **兵牌页**尚未按新中文层重生成（词条索引已跟上，lint 0 error 不阻塞）。
+- **#113/#117「数据来源路由」已修，基准两轮 99.1 / 100.0 零硬错**（2026-07-27）：表象是
+  「答案来自 PDF 而非结构库」，但**根因不是路由偏好选错工具**——模型两次都第一时间查了
+  结构库，是**查空后被 `loop._EMPTY_CHECKS` 降级到经典链（纯 PDF 检索）**送过去的。
+  ⚠️ 诊断关键：`meta.tool_calls` 末尾那个 `rag_search` **不是模型调的**，是 `loop._fallback`
+  自己追加的（`loop.py:245`）——「序列里有 rag_search」是**降级的指纹**，只看工具名会把
+  「模型偏好查 PDF」这个错结论坐实，必须记入参与返回摘要。
+  ① **#113**：`get_datasheet("罗伯特·基里曼")` 一步就降级——库内 `_zh_to_id` 存的是
+  `罗伯特.基里曼`（**半角句点**；实测 30 个键用 `·` / 6 个用 `.`，**库内自己就不统一**），
+  写法不同 → 只判 `fuzzy`，而 `datasheet.find_datasheet` 出于防错配**只信 exact** →
+  数值权威路径整条查不到 → 降级 → 民间译本 PDF 的冻结旧值 320（官方 355）。
+  修在**归一化层**而非放宽 fuzzy：`entity_resolver` 加 `_sep_normalized()` + `_zh_norm_to_id`
+  （冲突键记 None 拒绝猜），命中判 **exact**（判 fuzzy 等于没修）；`FUZZY_MAX_EDITS`
+  那道防线一个字节没动。实测 71 个归一键 / **0 冲突 / 0 既有键退化** / 新增 34 个可解析变体。
+  ② **#117**：`get_entity(战将泰坦)` **已经成功**，第二步 `get_keyword_definition("Frame")`
+  查空触发降级，**把第一步的成果一并丢弃**，只剩 PDF 片段 → 照 Faction Pack 原文答
+  「Frame 在库中可查」（库内实为 6 个关键词无 Frame）。修法：该工具移出 `_EMPTY_CHECKS`
+  （判据沿用既有区分——**纯映射工具**的「没查到」本身即实质答案，**数据查表工具**
+  `get_datasheet` 仍**不**放行，那是「回归 7 题」防线）+ `_KEYWORD_NOT_FOUND_NOTE`
+  双向禁止（不许断言关键词不存在，也不许把 PDF 内容说成「库里查得到」）。
+  **未削弱 `rag_search`**：仍参与 33/32 题（基线 35，减少的正是不再需要降级的那几题）。
+  两轮逐题对比**零退化、差异全为改善**（基线→r2 仅 #41/#42 已知波动 + #113/#117 转 ✅），
+  四题锚点 #63/#109/#118/#119 全程 ✅，**#117 两轮均 ✅ 不再摆动**；2398 测试绿
+  （+6 用例，stash 掉源文件后 4 条真会红）、两处 lint 0 error。报告
+  `docs/superpowers/specs/2026-07-27-data-source-routing-fix.md`
+- **剩余**：上述 6 个单位的 wiki **兵牌页**尚未按新中文层重生成（词条索引已跟上，lint 0 error 不阻塞）。
   #41 兽人小子 ⚠️ 漏项（非硬错）——`get_entity` 现在 exact 命中致 agent 走兵牌查表
   不再检索规则书，改它要动「查表 vs 检索」路由偏好，波及面大。基准扩充长期滚动。
   wiki 收尾候选：武器词条页的「规则页 NN.NN · 正文页待上线」现在可以

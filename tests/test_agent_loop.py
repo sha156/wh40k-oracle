@@ -349,6 +349,49 @@ class TestIntentClassificationFailsClosed:
         assert result.intent == "查"
 
 
+class TestKeywordDefinitionMissIsNotEmpty:
+    """基准 #117（2026-07-27）：`get_keyword_definition` 查不到术语页**不许降级**。
+
+    实测 tool_calls：`get_entity(战将泰坦)`→found ⇒ `get_keyword_definition(Frame)`
+    →not found ⇒ 当场降级经典链，**把已经查到的实体结果整个丢掉**，模型只剩 PDF 片段，
+    于是照 Faction Pack 原文答「Frame 关键词在库中可查」——与库内事实（6 个关键词、
+    无 Frame）相反。它和 entity_resolver 一样是纯映射工具，「没有术语页」本身即信息。
+    """
+
+    def test_keyword_miss_keeps_prior_findings_and_does_not_degrade(self):
+        llm = ScriptedLLM("查", steps=[
+            {"type": "tool_call", "tool": "get_entity", "args": {"name_or_id": "战将泰坦"}},
+            {"type": "tool_call", "tool": "get_keyword_definition",
+             "args": {"keyword": "Frame"}},
+            {"type": "final", "content": "库内关键词共 6 个，其中不含 Frame。"},
+        ])
+        tools = _fake_tools(
+            get_entity=lambda name_or_id: {"found": True, "page": {"keywords": ["Titanic"]}},
+            get_keyword_definition=lambda keyword: {
+                "found": False, "page": None, "note": "术语页未收录该关键词"},
+        )
+        loop = AgentLoop(llm=llm, tools=tools)
+
+        result = loop.run("战将泰坦库里有哪些关键词？Frame 查得到吗？")
+
+        assert result.degraded is False
+        assert result.tool_calls == ["get_entity", "get_keyword_definition"]
+        # 先前查到的实体结果没有被降级丢掉，LLM 最后一步仍看得见
+        assert any("Titanic" in str(m) for m in llm.next_step_calls[-1])
+
+    def test_keyword_miss_note_forbids_negative_assertion(self):
+        """工具边界必须把「未收录 ≠ 不存在」说穿（同 #109 的 calc_points 通道）。"""
+        from agent.tools import get_keyword_definition
+
+        result = get_keyword_definition("Frame", core_rules_dir=Path("wiki/core-rules"))
+
+        assert result["found"] is False
+        note = result["note"]
+        assert "≠" in note
+        assert "rag_search" in note          # 问规则含义时的正确去处
+        assert "禁止" in note                 # 明令不得据此下否定性断言
+
+
 class TestAmbiguousIsNotEmpty:
     """gnhf 审查模块 5 HIGH：ambiguous（同名多候选）是需要 LLM 消歧的实质性结果，
     不许被判空短路降级——否则评审 #25 的 candidates_preview + 提示词重查铁律整条不可达。"""

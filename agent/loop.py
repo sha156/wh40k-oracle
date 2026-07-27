@@ -51,7 +51,14 @@ _EMPTY_CHECKS: Dict[str, Callable[[Dict[str, Any]], bool]] = {
                              and not r.get("suggestions")
                              and (r.get("resolved_via") or {}).get("confidence")
                              != "ambiguous"),
-    "get_keyword_definition": lambda r: not r.get("found"),
+    # `get_keyword_definition` **故意不在此列**（2026-07-27，基准 #117）。它和
+    # `entity_resolver` 一样是纯映射工具（关键词 → 术语页），「这个词没有术语页」本身
+    # 就是实质信息；而降级会把**此前已查到的兵牌/实体结果一并丢弃**，只留 PDF 片段。
+    # 实测 tool_calls：`get_entity(战将泰坦)`→found ⇒ `get_keyword_definition(Frame)`
+    # →not found ⇒ 当场降级 ⇒ 模型照 Faction Pack 原文答「Frame 在库中可查」，
+    # 与库内事实（6 个关键词、无 Frame）相反，正是本题要考的诚实性反例。
+    # 不降级并不等于够不到 PDF：rag_search 仍是模型手里的普通工具，
+    # `_KEYWORD_NOT_FOUND_NOTE` 已明写「问规则含义就改用 rag_search」。
     "entity_resolver": lambda r: (not r.get("canonical_id")
                                   and not r.get("candidates")
                                   and not r.get("suggestions")),
