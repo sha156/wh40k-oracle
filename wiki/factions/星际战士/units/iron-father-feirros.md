@@ -5,12 +5,13 @@ name_en: Iron Father Feirros
 faction: 星际战士
 type: unit
 points:
-  1 model: 95
+  1 model: 85
 tags:
 - unit
 - unit/星际战士
 - 星际战士
 version:
+  points: MFM 2026-07-27 15:14
   source: official-db
 sources:
 - book: 官方结构库 db/wh40k.sqlite（Wahapedia 11版镜像 + MFM 官方点数）
@@ -41,7 +42,7 @@ updated: '2026-07-23'
 - **INSPIRING COMMANDER**：If you include this model in your army, until the end of the battle, non-<span class="kwb">CHARACTER</span> models in [[factions/星际战士/units/heavy-intercessor-squad.md|Heavy Intercessor Squad]] units from your army have an Objective Control characteristic of 3 while they are not Battle-shocked.
 
 ## 单位构成
-- **1个模型** — 95 分
+- **1个模型** — 85 分
 
 ## 关键词
 - **阵营关键词**：Iron Hands，Adeptus Astartes

@@ -11,7 +11,7 @@ tags:
 - unit/兽人
 - 兽人
 version:
-  points: MFM 2026-07-23 14:17
+  points: MFM 2026-07-27 15:14
   source: official-db
 sources:
 - book: 官方结构库 db/wh40k.sqlite（Wahapedia 11版镜像 + MFM 官方点数）
@@ -40,4 +40,4 @@ updated: '2026-07-23'
 
 ## 关键词
 - **阵营关键词**：兽人
-- **普通关键词**：工事，[[core-rules/vehicle.md|载具]]，[[core-rules/transport.md|运输工具]]，[[factions/兽人/units/bigboss.md|大头目]]碉堡
+- **普通关键词**：工事，[[core-rules/vehicle.md|载具]]，[[core-rules/transport.md|运输工具]]，大头目碉堡

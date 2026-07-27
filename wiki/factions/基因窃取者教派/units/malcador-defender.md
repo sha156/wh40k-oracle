@@ -46,4 +46,4 @@ updated: '2026-07-23'
 
 ## 关键词
 - **阵营关键词**：Genestealer Cults，Astra Militarum
-- **普通关键词**：[[factions/基因窃取者教派/units/malcador.md|Malcador]] Defender，[[core-rules/smoke.md|Smoke]]，Squadron，Imperium，Vehicle
+- **普通关键词**：Malcador Defender，[[core-rules/smoke.md|Smoke]]，Squadron，Imperium，Vehicle

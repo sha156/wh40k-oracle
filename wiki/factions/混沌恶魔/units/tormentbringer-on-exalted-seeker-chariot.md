@@ -36,7 +36,7 @@ updated: '2026-07-23'
 | 凶狠利爪 | 近战 | 15 | 3+ | 4 | -1 | 1 | [[core-rules/devastating-wounds.md\|毁灭伤害]] |
 
 ## 技能
-- **[[factions/混沌恶魔/units/tormentbringer.md|Tormentbringer]] (Aura)**：While a friendly Slaanesh Legiones Daemonica unit is within 6" of this model, melee weapons in that unit have the [SUSTAINED HITS 1] ability.
+- **Tormentbringer (Aura)**：While a friendly Slaanesh Legiones Daemonica unit is within 6" of this model, melee weapons in that unit have the [SUSTAINED HITS 1] ability.
 - **Hysterical Frenzy (Psychic)**：Once per Fight phase, just after an enemy unit selects a Slaanesh Legiones Daemonica unit from your army as a target, one friendly Psyker that is within 6" of that <span class="kwb">SLAANESH</span> unit and has this ability can use it. If it does, until the end of the phase, each time a model in that <span class="kwb">SLAANESH</span> unit is destroyed, roll one D6: on a 4+, do not remove it from play. That model can fight after the attacking model’s unit has finished making its attacks, and is then removed from play.
 
 ## 单位构成

@@ -58,4 +58,4 @@ updated: '2026-07-23'
 
 ## 关键词
 - **阵营关键词**：Adeptus Astartes
-- **普通关键词**：[[core-rules/infantry.md|Infantry]]，Jump Pack，Fly，Imperium，[[factions/星际战士/units/assault-squad.md|Assault Squad]] with Jump Packs，[[core-rules/grenades.md|Grenades]]
+- **普通关键词**：[[core-rules/infantry.md|Infantry]]，Jump Pack，Fly，Imperium，Assault Squad with Jump Packs，[[core-rules/grenades.md|Grenades]]

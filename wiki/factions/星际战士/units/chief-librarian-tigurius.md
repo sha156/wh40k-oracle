@@ -5,12 +5,13 @@ name_en: Chief Librarian Tigurius
 faction: 星际战士
 type: unit
 points:
-  1 model: 75
+  1 model: 85
 tags:
 - unit
 - unit/星际战士
 - 星际战士
 version:
+  points: MFM 2026-07-27 15:14
   source: official-db
 sources:
 - book: 官方结构库 db/wh40k.sqlite（Wahapedia 11版镜像 + MFM 官方点数）
@@ -40,11 +41,11 @@ updated: '2026-07-23'
 ## 技能
 - **【阵营技能】：破敌重誓**
 - **地狱火头冠**：本模型所领导的单位中模型对抗灵能攻击和致 命伤害时拥有【不觉疼痛 4+】技能
-- **预言大师【灵能】**：在该模型领导一个单位时，每当那个单位受到一次攻击时，攻击的命中掷骰结果减少 1 点。此外，每个战斗轮次限一次，在您对那个单位使用反攻/警戒射击/英勇介入计谋时，那次计谋的消耗-1CP.
+- **预言大师【灵能】**：该单位拥有隐秘技能。▪ 以该单位为目标的近战攻击的命中掷骰结果减少 1 点。▪ （每个战斗轮次，每支军队限一次）当您以该单位为目标使用反攻/警戒射击/英勇介入计谋时，那次使用计谋的 CP 消耗减少 1点。
 
 ## 单位构成
-- **1个模型** — 75 分
+- **1个模型** — 85 分
 
 ## 关键词
 - **阵营关键词**：Adeptus Astartes，Ultramarines
-- **普通关键词**：Tacticus，Chief [[factions/星际战士/units/librarian.md|Librarian]] Tigurius，Imperium，[[core-rules/epic-hero.md|Epic Hero]]，[[core-rules/character.md|Character]]，[[core-rules/infantry.md|Infantry]]，[[core-rules/psyker.md|Psyker]]
+- **普通关键词**：Tacticus，Chief Librarian Tigurius，Imperium，[[core-rules/epic-hero.md|Epic Hero]]，[[core-rules/character.md|Character]]，[[core-rules/infantry.md|Infantry]]，[[core-rules/psyker.md|Psyker]]

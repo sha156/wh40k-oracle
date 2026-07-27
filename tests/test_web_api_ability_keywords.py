@@ -37,7 +37,17 @@ needs_assets = pytest.mark.skipif(
 # 缓存从 2026-07-08 刷到 2026-07-27，源侧新增 2 条记录 + 43 条技能正文被官方改写
 # （无视掩体 10→9、毁灭伤害 11→10、光环 5→6、隐蔽 2→1），四个词条全部仍能 resolve，
 # 不是解析退化。
-EXPECTED_ZH_ITEMS = 3280        # unit_zh_detail 里的技能条目总数
+#
+# 2026-07-27（本轮）3280→3296（+16 条目）：来源是 unit_zh_detail 1129→1135（+6 行），
+# 已逐行核实是**合法数据增长**而非污染——这 6 行全部由 `populate_zh_details` 的
+# **中文名桥**（英文名只差单复数/头衔前缀时靠中文名一对一接）灌入：
+#   Death Company Marine(s) With Boltguns 3 + Sentry Pylon(s) 4 + Uriel Ventris 3
+#   + Servitor(s) ×2 行 2+2 + Ynnari Kabalite Warriors 2  = 16 条目，与 +16 自洽。
+# 桥当前共接 8 行 21 条目，另 2 行（克拉维克·莫恩 3 + 装备重型武器的天灾 2 = 5）
+# 在上一轮就已入库（HEAD 的 wiki 页里能查到这两个中文名，其余 6 个查不到）。
+# units 无中文层 586→580、空 abilities_json 仍是 16（没有新增空行），三个数自洽。
+# 复现路径与钉死用例见 tests/test_db_compile_zh_coverage.py::TestZhNameBridgeIsReproducible。
+EXPECTED_ZH_ITEMS = 3296        # unit_zh_detail 里的技能条目总数
 EXPECTED_ZH_KW_SPANS = 188      # 其中切出的词条段（中文【】写法）
 EXPECTED_EN_ROWS = 4009         # abilities 表行数
 EXPECTED_EN_KW_SPANS = 443      # 其中切出的词条段（英文 [] 写法；kwb 里全是阵营关键词，

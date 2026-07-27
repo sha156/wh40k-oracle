@@ -5,12 +5,13 @@ name_en: Bloodthirster
 faction: 吞世者
 type: unit
 points:
-  1 model: 305
+  1 model: 320
 tags:
 - unit
 - unit/吞世者
 - 吞世者
 version:
+  points: MFM 2026-07-27 15:14
   source: official-db
 sources:
 - book: 官方结构库 db/wh40k.sqlite（Wahapedia 11版镜像 + MFM 官方点数）
@@ -46,7 +47,7 @@ updated: '2026-07-23'
 - **高阶恐虐恶魔（光环)**：当一个己方恐虐逆理魔军单位位于该模型的 6" 内时，那个单位视为位于己方混沌之影之中。
 
 ## 单位构成
-- **1个模型** — 305 分
+- **1个模型** — 320 分
 
 ## 关键词
 - **阵营关键词**：Blood Legions

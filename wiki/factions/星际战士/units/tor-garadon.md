@@ -5,12 +5,13 @@ name_en: Tor Garadon
 faction: 星际战士
 type: unit
 points:
-  1 model: 90
+  1 model: 80
 tags:
 - unit
 - unit/星际战士
 - 星际战士
 version:
+  points: MFM 2026-07-27 15:14
   source: official-db
 sources:
 - book: 官方结构库 db/wh40k.sqlite（Wahapedia 11版镜像 + MFM 官方点数）
@@ -40,8 +41,8 @@ updated: '2026-07-23'
 - **Siege [[factions/星际战士/units/captain.md|Captain]]**：Each time this model makes an attack that targets a <span class="kwb">MONSTER</span>, <span class="kwb">VEHICLE</span>, or <span class="kwb">FORTIFICATION</span> unit, improve the Strength, Armour Penetration and Damage characteristics of that attack by 2.
 
 ## 单位构成
-- **1个模型** — 90 分
+- **1个模型** — 80 分
 
 ## 关键词
 - **阵营关键词**：Imperial Fists，Adeptus Astartes
-- **普通关键词**：[[core-rules/character.md|Character]]，[[core-rules/infantry.md|Infantry]]，[[factions/星际战士/units/captain.md|Captain]]，Tor Garadon，Gravis，Imperium，[[core-rules/epic-hero.md|Epic Hero]]
+- **普通关键词**：[[core-rules/character.md|Character]]，[[core-rules/infantry.md|Infantry]]，Captain，Tor Garadon，Gravis，Imperium，[[core-rules/epic-hero.md|Epic Hero]]

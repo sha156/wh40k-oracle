@@ -46,7 +46,7 @@ updated: '2026-07-23'
 | 雷霆锤 | 近战 | 3 | 4+ | 8 | -2 | 2 | [[core-rules/devastating-wounds.md\|毁灭伤害]] |
 
 ## 技能
-- **[[factions/星际战士/units/techmarine.md|Techmarine]]**：While this model is within 3" of one or more friendly Adeptus Astartes Vehicle units, this model has the Lone Operative ability.
+- **Techmarine**：While this model is within 3" of one or more friendly Adeptus Astartes Vehicle units, this model has the Lone Operative ability.
 - **Blessing of the Omnissiah**：In your Command phase, you can select one friendly Adeptus Astartes Vehicle model within 3" of this model. That model regains up to D3 lost wounds and, until the start of your next Command phase, each time that <span class="kwb">VEHICLE</span> model makes an attack, add 1 to the Hit roll. Each model can only be selected for this ability once per turn.
 - **Vengeance of the Omnissiah**：If a friendly Adeptus Astartes Vehicle model is destroyed within 12" of this model, until the end of the battle, this model’s Omnissian power axe has an Attacks characteristic of 7.
 - **Conversion**：Each time an attack made with this weapon targets a unit more than 12" from the bearer, an unmodified successful Hit roll of 4+ scores a Critical Hit.

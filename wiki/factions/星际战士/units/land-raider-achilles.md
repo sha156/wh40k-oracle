@@ -48,4 +48,4 @@ updated: '2026-07-23'
 
 ## 关键词
 - **阵营关键词**：Adeptus Astartes
-- **普通关键词**：[[factions/星际战士/units/land-raider.md|Land Raider]] Achilles，Vehicle，[[core-rules/transport.md|Transport]]，[[core-rules/smoke.md|Smoke]]，Imperium
+- **普通关键词**：Land Raider Achilles，Vehicle，[[core-rules/transport.md|Transport]]，[[core-rules/smoke.md|Smoke]]，Imperium

@@ -11,7 +11,7 @@ tags:
 - unit/兽人
 - 兽人
 version:
-  points: MFM 2026-07-23 14:17
+  points: MFM 2026-07-27 15:14
   source: official-db
 sources:
 - book: 官方结构库 db/wh40k.sqlite（Wahapedia 11版镜像 + MFM 官方点数）
@@ -45,4 +45,4 @@ updated: '2026-07-23'
 
 ## 关键词
 - **阵营关键词**：Orks
-- **普通关键词**：Monster，[[core-rules/titanic.md|Titanic]]，[[core-rules/transport.md|Transport]]，[[core-rules/towering.md|Towering]]，Gargantuan [[factions/兽人/units/squiggoth.md|Squiggoth]]
+- **普通关键词**：Monster，[[core-rules/titanic.md|Titanic]]，[[core-rules/transport.md|Transport]]，[[core-rules/towering.md|Towering]]，Gargantuan Squiggoth

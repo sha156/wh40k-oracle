@@ -97,10 +97,24 @@ class TestEntityResolverFixture:
         assert result.confidence == "fuzzy"
 
     def test_fuzzy_match_ambiguous_returns_candidates(self, tmp_path):
-        terms_path, app_path = _write_fixtures(tmp_path)
-        resolver = EntityResolver(terms_path=terms_path, app_path=app_path)
+        """契约：模糊命中真有多个势均力敌的候选时报 ambiguous，绝不静默挑一个。
 
-        result = resolver.resolve("Commander Shadowsu")  # 与两个已知英文名都相近
+        ⚠️ fixture 2026-07-27 换过：原来用 "Commander Shadowsu" 配
+        Shadowsun/Farsight 两个词条——但那不是**真的**两可（离 Shadowsun 差 1 个字母、
+        离 Farsight 差 8 个），只是 difflib 的比例阈值把八竿子打不着的那个也放了进来。
+        加了绝对编辑距离判据后它会（正确地）纠错成 Shadowsun，故换成两个与查询串
+        等距的名字来考同一条契约。
+        """
+        terms_path = tmp_path / "terms_twins.json"
+        terms_path.write_text(json.dumps({"source": "test", "pairs": [
+            {"zh": "影阳指挥官甲", "en": "Commander Shadowsun", "canonical_id": "000000407",
+             "faction_id": "TAU", "book": "test", "pages": [1], "confidence": "exact"},
+            {"zh": "影阳指挥官乙", "en": "Commander Shadowsul", "canonical_id": "000000408",
+             "faction_id": "TAU", "book": "test", "pages": [1], "confidence": "exact"},
+        ]}), encoding="utf-8")
+        resolver = EntityResolver(terms_path=terms_path)
+
+        result = resolver.resolve("Commander Shadowsuk")  # 与两个英文名各差 1 个字母
 
         assert result.canonical_id is None
         assert result.confidence == "ambiguous"
@@ -114,6 +128,137 @@ class TestEntityResolverFixture:
 
         assert result.canonical_id is None
         assert result.confidence == "none"
+
+
+class TestSeparatorNormalizedZhNames:
+    """音译名分隔号写法差异算**同名**，必须判 exact（2026-07-27，基准 #113）。
+
+    病灶：库内 `_zh_to_id` 自己就不统一（30 个键用「·」、6 个用「.」，含
+    `罗伯特.基里曼`），而题面/用户写的是通行的「·」。于是精确表查空、落到 fuzzy，
+    而 `datasheet.find_datasheet` 出于防错配**只信 exact** ⇒ 数值权威路径整条查不到
+    ⇒ Agent 判空降级经典链 ⇒ 从民间译本 PDF 答出过期的 320 分（官方是 355）。
+    """
+
+    @staticmethod
+    def _resolver(tmp_path, pairs):
+        terms_path = tmp_path / "terms_sep.json"
+        terms_path.write_text(json.dumps({"source": "test", "pairs": [
+            {"zh": zh, "en": en, "canonical_id": cid, "faction_id": "X",
+             "book": "test", "pages": [1], "confidence": "exact"}
+            for zh, en, cid in pairs]}), encoding="utf-8")
+        return EntityResolver(terms_path=terms_path)
+
+    def test_interpunct_variant_of_indexed_name_resolves_exact(self, tmp_path):
+        # 库里存的是半角句点写法，用户敲中文间隔号
+        resolver = self._resolver(
+            tmp_path, [("罗伯特.基里曼", "Roboute Guilliman", "000000138")])
+
+        result = resolver.resolve("罗伯特·基里曼")
+
+        # 判 exact 是关键：fuzzy 会被 find_datasheet 拒绝，等价于没修
+        assert result.canonical_id == "000000138"
+        assert result.confidence == "exact"
+
+    def test_normalization_is_symmetric(self, tmp_path):
+        # 反方向（库里存「·」、用户敲「.」）同样要命中
+        resolver = self._resolver(
+            tmp_path, [("卡尔多·德拉可", "Kaldor Draigo", "000000200")])
+
+        assert resolver.resolve("卡尔多.德拉可").confidence == "exact"
+        assert resolver.resolve("卡尔多德拉可").canonical_id == "000000200"
+
+    def test_colliding_normalized_key_refuses_to_guess(self, tmp_path):
+        """两个不同实体归一后同名 ⇒ 真歧义，宁可不解析也不静默取先入者。"""
+        resolver = self._resolver(tmp_path, [
+            ("甲·乙", "Alpha Beta", "000000001"),
+            ("甲.乙", "Gamma Delta", "000000002"),
+        ])
+
+        # 各自的精确写法仍旧各查各的，一个都不许被归一索引顶掉
+        assert resolver.resolve("甲·乙").canonical_id == "000000001"
+        assert resolver.resolve("甲.乙").canonical_id == "000000002"
+        # 而归一键本身是冲突的：第三种写法不许被猜成其中任意一个
+        assert resolver.resolve("甲乙").canonical_id is None
+
+    def test_unrelated_name_still_unresolved(self, tmp_path):
+        """归一化只抹分隔号，不得顺手放宽「另一个名字」的判定。"""
+        resolver = self._resolver(
+            tmp_path, [("罗伯特.基里曼", "Roboute Guilliman", "000000138")])
+
+        assert resolver.resolve("罗伯特·古里曼XYZ").canonical_id is None
+
+
+class TestFuzzySilentMismatchGate:
+    """模糊匹配静默命中不相干单位（2026-07-27）：`Flamestorm Drake`（不存在的名字）
+    以 ratio 0.606 命中 `Firestorm Redoubt`，报 fuzzy + canonical_id，上层于是
+    found=True 地端回另一张真实兵牌——每一层都是成功路径，界面上毫无破绽。
+
+    判据是**绝对字符编辑距离 ≤2，外加「查询串是命中名的子串」单向豁免**（简称）；
+    不是把 FUZZY_CUTOFF 调高——实测两类命中的 ratio 区间重叠，且调高 cutoff 会把
+    「多命中 ambiguous（不给 id）」滤成「单命中 fuzzy（给 id）」，反而更糟。
+    """
+
+    @staticmethod
+    def _resolver(tmp_path, pairs):
+        terms_path = tmp_path / "terms_gate.json"
+        terms_path.write_text(json.dumps({"source": "test", "pairs": [
+            {"zh": zh, "en": en, "canonical_id": cid, "faction_id": "X",
+             "book": "test", "pages": [1], "confidence": "exact"}
+            for zh, en, cid in pairs]}), encoding="utf-8")
+        return EntityResolver(terms_path=terms_path)
+
+    def test_far_hit_is_reported_as_miss_not_as_another_unit(self, tmp_path):
+        """病灶本体：旧实现这里返回 fuzzy + 000000918（Firestorm Redoubt）。"""
+        r = self._resolver(tmp_path, [("烈焰风暴堡垒", "Firestorm Redoubt", "000000918")])
+
+        result = r.resolve("Flamestorm Drake")
+
+        assert result.canonical_id is None
+        assert result.confidence == "none"
+        # 近似名只能作为猜测回报，且**不得**混进 candidates（那是可原样回填重查的候选）
+        assert result.suggestions == ["FIRESTORM REDOUBT"]
+        assert result.candidates == []
+
+    def test_one_char_typo_still_corrects(self, tmp_path):
+        """不许一刀切：拼错一个字母就查不到是另一种糟糕体验。"""
+        r = self._resolver(tmp_path, [("烈焰风暴堡垒", "Firestorm Redoubt", "000000918")])
+
+        result = r.resolve("Firestorm Redout")   # 少一个 b
+
+        assert result.canonical_id == "000000918"
+        assert result.confidence == "fuzzy"
+
+    def test_abbreviation_survives_the_edit_distance_gate(self, tmp_path):
+        """基准 #63 的形状：「坦克指挥官」是「黎曼鲁斯坦克指挥官」的子串、距离却有 4。
+        只按编辑距离切会把正主滤掉、只剩距离 2 的「远见指挥官」，翻成 fuzzy 报错单位。"""
+        r = self._resolver(tmp_path, [
+            ("黎曼鲁斯坦克指挥官", "Leman Russ Tank Commander", "000000001"),
+            ("远见指挥官", "Commander Farsight", "000000406")])
+
+        result = r.resolve("坦克指挥官")
+
+        assert result.canonical_id is None
+        assert result.confidence == "ambiguous"
+        assert "黎曼鲁斯坦克指挥官" in result.candidates
+
+    def test_extra_words_do_not_count_as_abbreviation(self, tmp_path):
+        """反向包含（真名 + 自造修饰词）必须挡住：双向豁免会让造名命中数 3 → 45。"""
+        r = self._resolver(tmp_path, [("幽冥骑士", "Wraithknight", "000000002")])
+
+        result = r.resolve("Decimus Wraithknight")
+
+        assert result.canonical_id is None
+        assert result.confidence == "none"
+        assert result.suggestions == ["WRAITHKNIGHT"]
+
+    def test_nothing_similar_at_all_reports_plain_miss(self, tmp_path):
+        """连近似名都没有时不许伪造 suggestions（下游据它区分两种空手）。"""
+        r = self._resolver(tmp_path, [("幽冥骑士", "Wraithknight", "000000002")])
+
+        result = r.resolve("完全不着边际的名字ZZZQQQ")
+
+        assert result.confidence == "none"
+        assert result.suggestions == []
 
 
 class TestRealDbCommunityAliasRegression:

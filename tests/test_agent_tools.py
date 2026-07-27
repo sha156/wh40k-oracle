@@ -288,6 +288,161 @@ class TestEntityResolverEmptyPathHonesty:
         assert _is_empty_result("entity_resolver", miss) is True
 
 
+FIRESTORM_INDEX_MD = """# WH40K Wiki Index
+
+### 帝国
+
+| 类型 | 名称 | 摘要 | Updated |
+|------|------|------|---------|
+| unit | [Firestorm Redoubt](factions/imperium/units/firestorm-redoubt.md) | 帝国防御工事 | 2026-07-01 |
+"""
+
+FIRESTORM_PAGE = """---
+id: imperium/units/firestorm-redoubt
+name_zh: 烈焰风暴堡垒
+name_en: Firestorm Redoubt
+type: unit
+faction: IMP
+---
+
+## 烈焰风暴堡垒
+
+帝国的防御工事。
+"""
+
+
+def _write_firestorm_fixture(tmp_path):
+    """`Flamestorm Drake`（不存在）↔ `Firestorm Redoubt`（真实）的病灶复现场。"""
+    wiki_root = tmp_path / "wiki_fs"
+    (wiki_root / "factions" / "imperium" / "units").mkdir(parents=True)
+    (wiki_root / "index.md").write_text(FIRESTORM_INDEX_MD, encoding="utf-8")
+    (wiki_root / "factions" / "imperium" / "units" / "firestorm-redoubt.md").write_text(
+        FIRESTORM_PAGE, encoding="utf-8")
+    terms_path = tmp_path / "terms_fs.json"
+    terms_path.write_text(json.dumps({"source": "test", "pairs": [
+        {"zh": "烈焰风暴堡垒", "en": "Firestorm Redoubt", "canonical_id": "000000918",
+         "faction_id": "IMP", "book": "test", "pages": [1], "confidence": "exact"}]}),
+        encoding="utf-8")
+    app_path = tmp_path / "app_fs.py"
+    app_path.write_text("UNIT_ALIASES = {}\n", encoding="utf-8")
+    return wiki_root, EntityResolver(terms_path=terms_path), app_path
+
+
+class TestFuzzySilentMismatchAtToolBoundary:
+    """模糊匹配静默命中不相干单位（2026-07-27）——比 #63/#109/#118 都隐蔽的第四种错法。
+
+    旧实现：`get_entity("Flamestorm Drake")` → found=True + Firestorm Redoubt 的完整
+    实体页。found=True、数据真实、渲染正常，**每一层都是成功路径**——编造的名字换回了
+    一张真实兵牌，只有懂 40K 的人才看得出这不是他问的东西。
+    """
+
+    def test_get_entity_near_miss_reports_not_found_with_labelled_guess(self, tmp_path):
+        wiki_root, resolver, app_path = _write_firestorm_fixture(tmp_path)
+
+        result = agent_tools.get_entity("Flamestorm Drake", wiki_root=wiki_root,
+                                        resolver=resolver, app_path=app_path)
+
+        # 旧实现在这里是 found=True + 一整页 Firestorm Redoubt
+        assert result["found"] is False
+        assert result["page"] is None
+        assert result["suggestions"] == ["FIRESTORM REDOUBT"]
+        note = result["note"]
+        assert "猜测" in note                      # 近似名必须被标死为猜测
+        assert "禁止" in note                      # 不许拿它冒充答案
+
+    def test_get_entity_near_miss_is_not_treated_as_empty_by_loop(self, tmp_path):
+        """判空会立刻降级经典链，模型就看不到「库里没有这个名字」这条信息，
+        只能对着按相似词捞回来的片段自由发挥（与 #118 判空则丢消歧信息同型）。"""
+        from agent.loop import _is_empty_result
+
+        wiki_root, resolver, app_path = _write_firestorm_fixture(tmp_path)
+
+        result = agent_tools.get_entity("Flamestorm Drake", wiki_root=wiki_root,
+                                        resolver=resolver, app_path=app_path)
+
+        assert _is_empty_result("get_entity", result) is False
+
+    def test_entity_resolver_tool_passes_suggestions_and_forbids_using_them(self, tmp_path):
+        _, resolver, _ = _write_firestorm_fixture(tmp_path)
+
+        result = agent_tools.entity_resolver("Flamestorm Drake", resolver=resolver)
+
+        assert result["canonical_id"] is None
+        assert result["suggestions"] == ["FIRESTORM REDOUBT"]
+        assert result["candidates"] == []          # 猜测不许混进可回填的候选
+        assert "猜测" in result["note"]
+        assert "rag_search" in result["note"]      # 也许根本不是单位名，给出下一步
+
+    def test_accepted_fuzzy_hit_must_be_declared_as_fuzzy(self, tmp_path):
+        """拼写小错仍照常纠错（不许一刀切），但**必须**声明这是模糊匹配的结果——
+        模型不声明，用户就无从发现自己问的名字系统根本没有。"""
+        wiki_root, resolver, app_path = _write_firestorm_fixture(tmp_path)
+
+        result = agent_tools.get_entity("Firestorm Redout", wiki_root=wiki_root,
+                                        resolver=resolver, app_path=app_path)
+
+        assert result["found"] is True             # 纠错通道没被砍掉
+        assert "模糊匹配" in result["note"]
+        assert "Firestorm Redoubt" in result["note"]
+
+    def test_get_datasheet_near_miss_labels_guess_but_still_degrades(self, tmp_path):
+        """get_datasheet 与 entity_resolver 在这条路径上**故意不同**：
+
+        返回体照样带上标死为猜测的近似名（web/军表侧直调看得到），但**仍判空降级经典链**——
+        结构库 ≠ 全部语料。2026-07-27 实测过让近似名抑制降级：基准 #4（XV107 燃雨战斗服）
+        与 #62（重武器小队）当场 ✅→❌，两者都是真实单位，答案本来靠经典链从 PDF 捞回来。
+        """
+        from agent.loop import _is_empty_result
+
+        db = _mk_same_name_db(tmp_path)
+
+        result = agent_tools.get_datasheet("Helbrute Drake", db_path=db,
+                                           resolver=_resolver_for(db))
+
+        assert result["found"] is False
+        assert result["reason"] == "near_miss_only"
+        assert result["suggestions"]
+        assert "猜测" in result["note"]
+        assert _is_empty_result("get_datasheet", result) is True
+
+    def test_calc_points_fuzzy_hit_declares_itself(self, tmp_path):
+        """算分侧同型泄漏：模糊命中照样给出一个确定的点数，不声明用户就看不出
+        这个数字属于**另一个名字**的单位。"""
+        db = _mk_same_name_db(tmp_path)
+
+        result = agent_tools.calc_points(["终结者小队x"], db_path=db,
+                                          resolver=_resolver_for(db))
+
+        unit = result["units"][0]
+        assert unit["points"] == 180                      # 纠错通道保留
+        assert unit["resolved_via"]["confidence"] == "fuzzy"
+        assert "模糊匹配" in unit["note"]
+
+    def test_calc_points_near_miss_labels_guess(self, tmp_path):
+        db = _mk_same_name_db(tmp_path)
+
+        result = agent_tools.calc_points(["Helbrute Drake"], db_path=db,
+                                          resolver=_resolver_for(db))
+
+        unit = result["units"][0]
+        assert unit["unresolved"] is True
+        assert unit["suggestions"]
+        assert "猜测" in unit["note"]
+
+    def test_get_datasheet_plain_miss_still_degrades_to_classic(self, tmp_path):
+        """回归 7 题的防线：俗名/集合名一个近似名都没有时，仍须立即判空降级经典链。"""
+        from agent.loop import _is_empty_result
+
+        db = _mk_same_name_db(tmp_path)
+
+        result = agent_tools.get_datasheet("完全不着边际的名字ZZZQQQ", db_path=db,
+                                           resolver=_resolver_for(db))
+
+        assert result["found"] is False
+        assert "suggestions" not in result
+        assert _is_empty_result("get_datasheet", result) is True
+
+
 class TestCalcPoints:
     def test_wraps_db_compile_honestly_reports_missing_cost_csv(self, tmp_path):
         csv_dir = tmp_path / "wahapedia"

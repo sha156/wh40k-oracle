@@ -46,4 +46,4 @@ updated: '2026-07-23'
 
 ## 关键词
 - **阵营关键词**：Orks
-- **普通关键词**：[[core-rules/grenades.md|Grenades]]，Vehicle，Fly，[[factions/兽人/units/deffkoptas.md|Deffkoptas]] with Big Shootas
+- **普通关键词**：[[core-rules/grenades.md|Grenades]]，Vehicle，Fly，Deffkoptas with Big Shootas

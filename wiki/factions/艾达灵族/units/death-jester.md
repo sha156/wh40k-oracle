@@ -5,12 +5,13 @@ name_en: Death Jester
 faction: 艾达灵族
 type: unit
 points:
-  1 model: 90
+  1 model: 70
 tags:
 - unit
 - unit/艾达灵族
 - 艾达灵族
 version:
+  points: MFM 2026-07-27 15:14
   source: official-db
 sources:
 - book: 官方结构库 db/wh40k.sqlite（Wahapedia 11版镜像 + MFM 官方点数）
@@ -41,7 +42,7 @@ updated: '2026-07-23'
 - **残忍笑料**：你的射击阶段，当本模型被选中进行射击时，直到该阶段结束，本模型的尖啸者加农炮拥有以下能力之一【无视掩体】【精准】【连击 3】
 
 ## 单位构成
-- **1个模型** — 90 分
+- **1个模型** — 70 分
 
 ## 关键词
 - **阵营关键词**：Harlequins

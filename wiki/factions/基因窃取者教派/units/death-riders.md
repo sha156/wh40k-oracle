@@ -1,6 +1,6 @@
 ---
 id: '000003969'
-name_zh: 死亡骑兵
+name_zh: 克里格死亡骑兵
 name_en: Death Riders
 faction: 基因窃取者教派
 type: unit

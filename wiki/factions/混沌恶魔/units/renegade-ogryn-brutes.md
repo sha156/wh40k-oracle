@@ -36,4 +36,4 @@ updated: '2026-07-23'
 
 ## 关键词
 - **阵营关键词**：Legiones Daemonica，Heretic Astartes
-- **普通关键词**：[[core-rules/infantry.md|Infantry]]，Undivided，Renegade Ogryn Brutes，Damned，Chaos，[[core-rules/infantry.md|Infantry]]，[[factions/混沌恶魔/detachments/shadow-legion.md|Shadow Legion]]，Undivided，Renegade Ogryn Brutes，Damned，[[core-rules/infantry.md|Infantry]]，[[factions/混沌恶魔/detachments/shadow-legion.md|Shadow Legion]]，Undivided，Renegade Ogryn Brutes，Damned，Chaos，[[core-rules/infantry.md|Infantry]]，Chaos，Shadow Legion，Chaos，Undivided，Shadow Legion，Damned，Renegade Ogryn Brutes
+- **普通关键词**：[[core-rules/infantry.md|Infantry]]，Undivided，Renegade Ogryn Brutes，Damned，Chaos，[[core-rules/infantry.md|Infantry]]，[[factions/混沌恶魔/detachments/shadow-legion.md|Shadow Legion]]，Undivided，Renegade Ogryn Brutes，Damned，[[core-rules/infantry.md|Infantry]]，Shadow Legion，Undivided，Renegade Ogryn Brutes，Damned，Chaos，[[core-rules/infantry.md|Infantry]]，Chaos，Shadow Legion，Chaos，Undivided，Shadow Legion，Damned，Renegade Ogryn Brutes

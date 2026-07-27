@@ -11,7 +11,7 @@ tags:
 - unit/星际战士
 - 星际战士
 version:
-  points: MFM 2026-07-23 14:17
+  points: MFM 2026-07-27 15:14
   source: official-db
 sources:
 - book: 官方结构库 db/wh40k.sqlite（Wahapedia 11版镜像 + MFM 官方点数）
@@ -49,4 +49,4 @@ updated: '2026-07-23'
 
 ## 关键词
 - **阵营关键词**：Adeptus Astartes，Blood Angels
-- **普通关键词**：[[core-rules/infantry.md|Infantry]]，[[core-rules/psyker.md|Psyker]]，Chief [[factions/星际战士/units/librarian.md|Librarian]] Mephiston，Tacticus，Imperium，[[core-rules/grenades.md|Grenades]]，[[core-rules/epic-hero.md|Epic Hero]]，[[core-rules/character.md|Character]]
+- **普通关键词**：[[core-rules/infantry.md|Infantry]]，[[core-rules/psyker.md|Psyker]]，Chief Librarian Mephiston，Tacticus，Imperium，[[core-rules/grenades.md|Grenades]]，[[core-rules/epic-hero.md|Epic Hero]]，[[core-rules/character.md|Character]]

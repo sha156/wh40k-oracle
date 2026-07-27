@@ -5,12 +5,13 @@ name_en: Voidweaver
 faction: 艾达灵族
 type: unit
 points:
-  1 model: 125
+  1 model: 115
 tags:
 - unit
 - unit/艾达灵族
 - 艾达灵族
 version:
+  points: MFM 2026-07-27 15:14
   source: official-db
 sources:
 - book: 官方结构库 db/wh40k.sqlite（Wahapedia 11版镜像 + MFM 官方点数）
@@ -43,7 +44,7 @@ updated: '2026-07-23'
 - **幻彩匿踪**：本单位只能被位于其18寸内的模型选为远 程攻击的目标
 
 ## 单位构成
-- **1个模型** — 125 分
+- **1个模型** — 115 分
 
 ## 关键词
 - **阵营关键词**：Harlequins

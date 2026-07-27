@@ -49,4 +49,4 @@ updated: '2026-07-23'
 
 ## 关键词
 - **阵营关键词**：Adeptus Astartes
-- **普通关键词**：[[core-rules/mounted.md|Mounted]]，[[core-rules/grenades.md|Grenades]]，Ravenwing，[[core-rules/psyker.md|Psyker]]，Imperium，[[factions/星际战士/units/librarian.md|Librarian]]，[[core-rules/character.md|Character]]
+- **普通关键词**：[[core-rules/mounted.md|Mounted]]，[[core-rules/grenades.md|Grenades]]，Ravenwing，[[core-rules/psyker.md|Psyker]]，Imperium，Librarian，[[core-rules/character.md|Character]]

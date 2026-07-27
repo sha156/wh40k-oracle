@@ -1,6 +1,6 @@
 # 星界军
 
-_Last updated: 2026-07-26 08:40 UTC_
+_Last updated: 2026-07-27 11:51 UTC_
 
 ## 分队
 
@@ -89,6 +89,7 @@ _Last updated: 2026-07-26 08:40 UTC_
 - [[factions/星界军/units/ursula-creed|克里德堡主]] — 
 - [[factions/星界军/units/krieg-combat-engineers|克里格战斗工兵]] — 
 - [[factions/星界军/units/krieg-command-squad|克里格指挥组]] — 
+- [[factions/星界军/units/death-riders|克里格死亡骑兵]] — 
 - [[factions/星界军/units/death-korps-of-krieg|克里格死兵队]] — 
 - [[factions/星界军/units/krieg-heavy-weapons-squad|克里格重型武器小队]] — 
 - [[factions/星界军/units/gaunts-ghosts|刚特的幽灵]] — 
@@ -121,7 +122,6 @@ _Last updated: 2026-07-26 08:40 UTC_
 - [[factions/星界军/units/ogryn-squad|欧格林小队]] — 
 - [[factions/星界军/units/commissar-graves-on-foot|步行的格雷夫斯政委]] — 
 - [[factions/星界军/units/deathstrike|死亡直击导弹车]] — 
-- [[factions/星界军/units/death-riders|死亡骑兵]] — 
 - [[factions/星界军/units/banesword|毁灭之剑]] — 
 - [[factions/星界军/units/banehammer|毁灭之锤]] — 
 - [[factions/星界军/units/baneblade|毒刃]] — 

@@ -5,12 +5,13 @@ name_en: Caanok Var
 faction: 星际战士
 type: unit
 points:
-  1 model: 100
+  1 model: 90
 tags:
 - unit
 - unit/星际战士
 - 星际战士
 version:
+  points: MFM 2026-07-27 15:14
   source: official-db
 sources:
 - book: 官方结构库 db/wh40k.sqlite（Wahapedia 11版镜像 + MFM 官方点数）
@@ -42,8 +43,8 @@ updated: '2026-07-23'
 - **大脑皮层逻辑引擎**：在宣布战斗编队步骤开始时，您可以选择一个己方阿斯塔特修会步兵单位。在战斗结束前，那个单位获得“斥候 6"”技能。在双方玩家完成军队部署后，您可以选择一个己方阿斯塔特修会单位，并将其重新部署。如此做时，您可以将那个单位置入战略预备队中，无论战略预备队中已经有多少个单位。
 
 ## 单位构成
-- **1个模型** — 100 分
+- **1个模型** — 90 分
 
 ## 关键词
 - **阵营关键词**：Adeptus Astartes，Iron Hands
-- **普通关键词**：[[core-rules/epic-hero.md|Epic Hero]]，[[core-rules/character.md|Character]]，[[factions/星际战士/units/captain.md|Captain]]，Caanok Var，[[core-rules/infantry.md|Infantry]]，Imperium，Terminator
+- **普通关键词**：[[core-rules/epic-hero.md|Epic Hero]]，[[core-rules/character.md|Character]]，Captain，Caanok Var，[[core-rules/infantry.md|Infantry]]，Imperium，Terminator

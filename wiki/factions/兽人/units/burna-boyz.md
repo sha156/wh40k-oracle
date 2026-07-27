@@ -14,7 +14,7 @@ tags:
 - unit/兽人
 - 兽人
 version:
-  points: MFM 2026-07-23 14:17
+  points: MFM 2026-07-27 15:14
   source: official-db
 sources:
 - book: 官方结构库 db/wh40k.sqlite（Wahapedia 11版镜像 + MFM 官方点数）
@@ -46,7 +46,7 @@ updated: '2026-07-23'
 
 ## 单位构成
 - **1 Spanner and 4 Burna [[factions/兽人/units/boyz.md|Boyz]]** — 60 分
-- **2 Spanners and 8 Burna [[factions/兽人/units/boyz.md|Boyz]]** — 120 分
+- **2 Spanners and 8 Burna Boyz** — 120 分
 - **5个模型** — 60 分
 - **10个模型** — 120 分
 

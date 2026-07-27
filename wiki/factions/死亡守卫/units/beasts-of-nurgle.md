@@ -5,13 +5,14 @@ name_en: Beasts of Nurgle
 faction: 死亡守卫
 type: unit
 points:
-  1 model: 65
-  2 models: 130
+  1 model: 70
+  2 models: 140
 tags:
 - unit
 - unit/死亡守卫
 - 死亡守卫
 version:
+  points: MFM 2026-07-27 15:14
   source: official-db
 sources:
 - book: 官方结构库 db/wh40k.sqlite（Wahapedia 11版镜像 + MFM 官方点数）
@@ -35,8 +36,8 @@ updated: '2026-07-23'
 - **骇人再生**：在每个阶段结束时，如果该单位中的纳垢兽模型失去了任何耐伤但是没有被摧毁，那么那个模型将回复所有失去的耐伤。
 
 ## 单位构成
-- **1个模型** — 65 分
-- **2个模型** — 130 分
+- **1个模型** — 70 分
+- **2个模型** — 140 分
 
 ## 关键词
 - **阵营关键词**：Plague Legions

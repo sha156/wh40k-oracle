@@ -20,7 +20,25 @@
 .\.venv\Scripts\python.exe -m wiki_compile fetch-canonical  # 下载 Wahapedia CSV（需代理）
 .\.venv\Scripts\python.exe -m wiki_compile pair --llm       # 中英配对（LLM兜底需 DEEPSEEK_API_KEY）
 .\.venv\Scripts\python.exe -m wiki_compile terms            # 生成 wiki/terms.*
+
+# 生成物只准由正规命令产出（测试一律写临时目录，跑完 git status 必须干净）
+.\.venv\Scripts\python.exe -m wiki_engine keywords          # wiki/indexes/keywords.{md,json}
+.\.venv\Scripts\python.exe -m wiki_engine lint              # 0 error 才算过
 ```
+
+### 重建库后中文层的复现路径（`db/wh40k.sqlite` 是 gitignored，别靠库里现有的东西）
+
+```powershell
+.\.venv\Scripts\python.exe -m db_compile build   # 重建后自动跑 restore_authority_layers
+```
+
+`build` → `update.restore_authority_layers` → `stage_zh_details` → `blacklibrary.populate_zh_details`，
+从**本地缓存** `db_sources/blacklibrary/details.json`（gitignored，刷新走
+`scripts/fetch_blacklibrary_details.py`，需网络）灌回 `unit_zh_detail` 与 `units.name_zh`。
+2026-07-27 实测：已提交代码 + 当前缓存 → 1135 行（`matched 939 / matched_by_zh 7 / unmatched 131`），
+**中文名桥那 8 行一个不少**，所以「库里有、代码里没有」的风险在这一层不存在。
+钉死用例 `tests/test_db_compile_zh_coverage.py::TestRealCorpus::test_zh_name_bridge_survives_a_db_rebuild`
+（在库的副本上重跑，真库零改动）。
 
 ## 架构与技术栈
 
@@ -216,7 +234,62 @@
   （+6 用例，stash 掉实现后 5 failed 验证过真会红）。报告
   `docs/superpowers/specs/2026-07-27-calc-points-negative-assertion-fix.md`。
   **仍红的 #113/#114/#115 是库内点数过期，等 `mfm --apply` 拍板后转绿，未碰**
-- **剩余**：#41 兽人小子 ⚠️ 漏项（非硬错）——`get_entity` 现在 exact 命中致 agent 走兵牌查表
+- **「模糊匹配静默命中不相干单位」已修**（2026-07-27）：`entity_resolver("Flamestorm Drake")`
+  （一个**不存在**的名字）以 difflib ratio 0.606 命中 `Firestorm Redoubt` 并报 fuzzy +
+  canonical_id，`get_entity` 于是 **found=True** 地端回另一张真实兵牌——比 #63/#109/#118
+  都隐蔽，因为**每一层都是成功路径**（数据真实、渲染正常）。**先量分布再定判据**
+  （2590 条查询三类样本）：两类命中的 ratio 区间**重叠**（真纠错 min 0.750 / 造名 max 0.846），
+  且**调高 cutoff 会让情况变坏**——滤掉竞争命中把「多命中 ambiguous(不给 id)」变成
+  「单命中 fuzzy(给 id)」，造名被接受 56→79。改用**绝对字符编辑距离 ≤2**
+  （真纠错 max 2 vs 造名 median 6）**＋「查询串是命中名子串」单向豁免**（简称；
+  只按距离切会把 #63「坦克指挥官」的两个正主滤掉、翻成 fuzzy 报 Commander Farsight）。
+  实测每轴不劣于改动前：造名给出 id **57→3**、真纠错单命中 490→1368、简称误配 102→58。
+  工具边界透出 `suggestions` 并把「猜测」说死 + 被接受的 fuzzy **必须声明**。
+  ⚠️ `_EMPTY_CHECKS` 只放行 `entity_resolver`/`get_entity`，**`get_datasheet` 故意不放行**
+  ——实测放行会让 #4/#62 当场 ✅→❌（真实单位、名字不在结构库索引里，答案靠经典链从 PDF 捞，
+  即注释里点名的「回归 7 题」防线）：**结构库 ≠ 全部语料**。新增基准 #119（qa_gold v3.5，
+  既有 114 题逐字段零改动），四题锚点 #63/#109/#118/#119 两轮全 ✅，2391 测试绿。
+  报告 `docs/superpowers/specs/2026-07-27-fuzzy-silent-mismatch-fix.md`
+- **中文名桥可复现性已固化 + 测试不再写仓库产物**（2026-07-27）：① 上一轮补进库的两个中文名
+  （死神军阴谋团武士 / 文崔斯连长）查明**不依赖任何未提交改动**——已提交代码 + 本地
+  `details.json` 缓存重跑 `populate_zh_details` 稳定得到 1135 行、6 个目标单位全在
+  （`db_compile build` 经 `restore_authority_layers` 走的就是这条，复现命令见上「运行方式」）；
+  `1129→1135` 变的是**缓存**不是代码。哪 6 个是新的有**两条独立证据**对上：条目数算术
+  （新 6 行 16 条 + 旧 2 行 5 条 = 桥共 21）与 HEAD 的 wiki 页 grep（只有克拉维克·莫恩、
+  装备重型武器的天灾查得到）分界线完全重合。护栏 `test_zh_name_bridge_survives_a_db_rebuild`
+  在库副本上重跑，真库零改动。② `EXPECTED_ZH_ITEMS` 3280→**3296**，注释逐单位写明来源。
+  ③ `test_generate_index_is_complete_and_linked` 从前直接写 `wiki/indexes/`——跑一次 pytest
+  工作区就脏、下一轮 gnhf "Working tree is not clean" 秒退；`keyword_index.generate` 加
+  `out_root`（**读真 wiki 判断链、写临时目录**，默认相等⇒正常生成逐字节不变），
+  产物改由正规命令 `python -m wiki_engine keywords` 重生成。2392 测试绿、两处 lint 0 error、
+  全量 pytest 后 git status 干净。报告
+  `docs/superpowers/specs/2026-07-27-zh-bridge-reproducibility-and-test-artifacts.md`
+- **#113/#117「数据来源路由」已修，基准两轮 99.1 / 100.0 零硬错**（2026-07-27）：表象是
+  「答案来自 PDF 而非结构库」，但**根因不是路由偏好选错工具**——模型两次都第一时间查了
+  结构库，是**查空后被 `loop._EMPTY_CHECKS` 降级到经典链（纯 PDF 检索）**送过去的。
+  ⚠️ 诊断关键：`meta.tool_calls` 末尾那个 `rag_search` **不是模型调的**，是 `loop._fallback`
+  自己追加的（`loop.py:245`）——「序列里有 rag_search」是**降级的指纹**，只看工具名会把
+  「模型偏好查 PDF」这个错结论坐实，必须记入参与返回摘要。
+  ① **#113**：`get_datasheet("罗伯特·基里曼")` 一步就降级——库内 `_zh_to_id` 存的是
+  `罗伯特.基里曼`（**半角句点**；实测 30 个键用 `·` / 6 个用 `.`，**库内自己就不统一**），
+  写法不同 → 只判 `fuzzy`，而 `datasheet.find_datasheet` 出于防错配**只信 exact** →
+  数值权威路径整条查不到 → 降级 → 民间译本 PDF 的冻结旧值 320（官方 355）。
+  修在**归一化层**而非放宽 fuzzy：`entity_resolver` 加 `_sep_normalized()` + `_zh_norm_to_id`
+  （冲突键记 None 拒绝猜），命中判 **exact**（判 fuzzy 等于没修）；`FUZZY_MAX_EDITS`
+  那道防线一个字节没动。实测 71 个归一键 / **0 冲突 / 0 既有键退化** / 新增 34 个可解析变体。
+  ② **#117**：`get_entity(战将泰坦)` **已经成功**，第二步 `get_keyword_definition("Frame")`
+  查空触发降级，**把第一步的成果一并丢弃**，只剩 PDF 片段 → 照 Faction Pack 原文答
+  「Frame 在库中可查」（库内实为 6 个关键词无 Frame）。修法：该工具移出 `_EMPTY_CHECKS`
+  （判据沿用既有区分——**纯映射工具**的「没查到」本身即实质答案，**数据查表工具**
+  `get_datasheet` 仍**不**放行，那是「回归 7 题」防线）+ `_KEYWORD_NOT_FOUND_NOTE`
+  双向禁止（不许断言关键词不存在，也不许把 PDF 内容说成「库里查得到」）。
+  **未削弱 `rag_search`**：仍参与 33/32 题（基线 35，减少的正是不再需要降级的那几题）。
+  两轮逐题对比**零退化、差异全为改善**（基线→r2 仅 #41/#42 已知波动 + #113/#117 转 ✅），
+  四题锚点 #63/#109/#118/#119 全程 ✅，**#117 两轮均 ✅ 不再摆动**；2398 测试绿
+  （+6 用例，stash 掉源文件后 4 条真会红）、两处 lint 0 error。报告
+  `docs/superpowers/specs/2026-07-27-data-source-routing-fix.md`
+- **剩余**：上述 6 个单位的 wiki **兵牌页**尚未按新中文层重生成（词条索引已跟上，lint 0 error 不阻塞）。
+  #41 兽人小子 ⚠️ 漏项（非硬错）——`get_entity` 现在 exact 命中致 agent 走兵牌查表
   不再检索规则书，改它要动「查表 vs 检索」路由偏好，波及面大。基准扩充长期滚动。
   wiki 收尾候选：武器词条页的「规则页 NN.NN · 正文页待上线」现在可以
   真接成到核心规则章节页的链接了。

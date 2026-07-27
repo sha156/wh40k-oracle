@@ -60,9 +60,13 @@ def test_cli_parse_loadout():
 
 # ---- 三失败路径（假 resolver，不碰库） ----
 class _Res:
-    def __init__(self, cid, name_en, conf, cands):
+    """ResolveResult 的手写替身——字段必须与真 dataclass 保持一致，
+    否则这里"通过"只说明替身自己长得对（suggestions 是 2026-07-27 模糊匹配判据新增的）。"""
+
+    def __init__(self, cid, name_en, conf, cands, suggestions=()):
         self.canonical_id, self.name_en, self.confidence, self.candidates = (
             cid, name_en, conf, cands)
+        self.suggestions = list(suggestions)
 
 
 class _FakeResolver:

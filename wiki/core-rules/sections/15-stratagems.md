@@ -99,7 +99,7 @@ stratagems can be found in Codexes and other publications.
 
 ## 指挥重掷 15.02
 
-*COMMAND RE-ROLL*
+*[[core-rules/stratagems/command-re-roll-boarding-actions.md|COMMAND RE-ROLL]]*
 
 **1CP**
 
@@ -150,7 +150,7 @@ stratagems can be found in Codexes and other publications.
 
 ## 史诗挑战 15.03
 
-*EPIC CHALLENGE*
+*[[core-rules/stratagems/epic-challenge.md|EPIC CHALLENGE]]*
 
 **1CP**
 
@@ -177,7 +177,7 @@ stratagems can be found in Codexes and other publications.
 
 ## 疯狂之勇 15.04
 
-*INSANE BRAVERY*
+*[[core-rules/stratagems/insane-bravery-boarding-actions.md|INSANE BRAVERY]]*
 
 **1CP**
 
@@ -243,7 +243,7 @@ stratagems can be found in Codexes and other publications.
 
 ## 粉碎冲击 15.06
 
-*CRUSHING IMPACT*
+*[[factions/兽人/stratagems/crushing-impact.md|CRUSHING IMPACT]]*
 
 **1CP**
 
@@ -274,14 +274,14 @@ stratagems can be found in Codexes and other publications.
 1. Select one enemy unit engaged with your unit.
 2. Select one model in your unit engaged with that enemy unit.
 3. Roll a number of D6 equal to the T characteristic of that model: for each 1, your unit suffers 1 mortal wound; for each 5+, that enemy unit suffers 1 mortal wound (to a maximum of 6 mortal wounds per unit).
-## RAPID INGRESS (1CP)
+## [[core-rules/stratagems/rapid-ingress.md|RAPID INGRESS]] (1CP)
 **Type**: CORE STRATAGEM
 **When**: End of your opponent’s Movement phase.
 **Target**: One friendly unit that is in strategic reserves (excluding AIRCRAFT).
 **Effect**: Your unit makes an ingress move (20.04).
 **Restrictions**: You cannot use this stratagem during the first battle round.
 
-## FIRE OVERWATCH (1CP)
+## [[core-rules/stratagems/fire-overwatch.md|FIRE OVERWATCH]] (1CP)
 **Type**: CORE STRATAGEM
 **When**: End of your opponent’s Movement phase.
 **Target**: One friendly unengaged unit (excluding TITANIC units).
@@ -297,13 +297,13 @@ stratagems can be found in Codexes and other publications.
 
 **After Shooting**: Until the end of the phase, your unit is not eligible to start an action.
 
-## SMOKESCREEN (1CP)
+## [[core-rules/stratagems/smokescreen.md|SMOKESCREEN]] (1CP)
 **Type**: CORE STRATAGEM
 **When**: Start of your opponent’s Shooting phase.
 **Target**: One friendly SMOKE unit.
 **Effect**: Until the end of the phase, each time an attack targets either your SMOKE unit, or a unit that is not fully visible to the attacking model because of one or more models in your SMOKE unit, the target has the benefit of cover against that attack (13.08).
 
-## HEROIC INTERVENTION (1CP)
+## [[core-rules/stratagems/heroic-intervention.md|HEROIC INTERVENTION]] (1CP)
 **Type**: CORE STRATAGEM
 **When**: End of your opponent’s Charge phase.
 **Target**: One friendly unengaged unit within 12" of one or more enemy units. You can only select a VEHICLE unit if it is a CHARACTER/WALKER unit.
@@ -373,7 +373,7 @@ during the first battle round.
 
 目标：一个不处于交战状态的己方单位（巨型单位除外)。
 
-效果：目标单位使用快速射击进行射击（见下方)。
+效果：目标单位使用[[factions/星际战士/stratagems/rapid-gunnery.md|快速射击]]进行射击（见下方)。
 
 <details>
 <summary>官方英文原文（英文由 PDF 直提）</summary>
@@ -481,7 +481,7 @@ that attack (13.08).
 
 目标：一个位于一个或多个敌方单位 12" 内，并且不处于交战状态的己方单位。您可以选择一个载具单位，前提是那个单位是一个角色/机甲单位。
 
-效果：为目标单位结算一次冲锋（11.02)。在这么做时，在进行冲锋掷骰前，您必须选择以下一个模式：
+效果：为目标单位结算一次冲锋（11.02)。在这么做时，在进行冲锋掷骰前，您必须选择以[[factions/兽人/stratagems/on-to-da-next.md|下一个]]模式：
 
 - 前去防卫：在选择冲锋目标时，您只能选择在本阶段中进行了冲锋移动并且位于最大距离内的敌方单位。
 

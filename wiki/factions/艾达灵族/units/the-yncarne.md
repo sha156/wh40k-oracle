@@ -5,12 +5,13 @@ name_en: The Yncarne
 faction: 艾达灵族
 type: unit
 points:
-  1 model: 260
+  1 model: 245
 tags:
 - unit
 - unit/艾达灵族
 - 艾达灵族
 version:
+  points: MFM 2026-07-27 15:14
   source: official-db
 sources:
 - book: 官方结构库 db/wh40k.sqlite（Wahapedia 11版镜像 + MFM 官方点数）
@@ -42,7 +43,7 @@ updated: '2026-07-23'
 - **死亡化形**：当该模型消灭一个敌方单位时，回复D3点 已损失的 W 值
 
 ## 单位构成
-- **1个模型** — 260 分
+- **1个模型** — 245 分
 
 ## 关键词
 - **阵营关键词**：Ynnari

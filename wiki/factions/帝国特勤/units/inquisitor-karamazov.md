@@ -43,4 +43,4 @@ updated: '2026-07-23'
 
 ## 关键词
 - **阵营关键词**：Agents of the Imperium
-- **普通关键词**：Imperium，[[factions/帝国特勤/units/inquisitor.md|Inquisitor]]，Ordo Hereticus，Karamazov，[[core-rules/character.md|Character]]，[[core-rules/walker.md|Walker]]，[[core-rules/epic-hero.md|Epic Hero]]，Vehicle
+- **普通关键词**：Imperium，Inquisitor，Ordo Hereticus，Karamazov，[[core-rules/character.md|Character]]，[[core-rules/walker.md|Walker]]，[[core-rules/epic-hero.md|Epic Hero]]，Vehicle

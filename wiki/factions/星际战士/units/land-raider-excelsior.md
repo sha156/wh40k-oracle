@@ -49,4 +49,4 @@ updated: '2026-07-23'
 
 ## 关键词
 - **阵营关键词**：Adeptus Astartes
-- **普通关键词**：[[core-rules/transport.md|Transport]]，[[factions/星际战士/units/land-raider.md|Land Raider]] Excelsior，Vehicle，[[core-rules/smoke.md|Smoke]]，Imperium
+- **普通关键词**：[[core-rules/transport.md|Transport]]，Land Raider Excelsior，Vehicle，[[core-rules/smoke.md|Smoke]]，Imperium

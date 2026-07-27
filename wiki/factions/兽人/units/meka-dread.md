@@ -34,7 +34,7 @@ updated: '2026-07-23'
 |---|---|---|---|---|---|---|---|
 | Dread killsaw | 近战 | 4 | 3+ | 14 | -3 | 4 | — |
 | Dread rippa klaw | 近战 | 6 | 3+ | 12 | -2 | 3 | — |
-| 双足践踏 | 近战 | 4 | 3+ | 7 | 0 | 1 | — |
+| Stompy feet | 近战 | 4 | 3+ | 7 | 0 | 1 | — |
 
 ## 技能
 - **Mekaniak**：At the end of your Movement phase, you can select one friendly Orks Vehicle model within 3" of this model. That <span class="kwb">VEHICLE</span> model regains up to D3 lost wounds, and, until the start of your next Movement phase, each time that <span class="kwb">VEHICLE</span> model makes an attack, add 1 to the Hit roll. Each model can only be selected for this ability once per turn.

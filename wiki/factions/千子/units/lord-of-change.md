@@ -5,12 +5,13 @@ name_en: Lord of Change
 faction: 千子
 type: unit
 points:
-  1 model: 285
+  1 model: 320
 tags:
 - unit
 - unit/千子
 - 千子
 version:
+  points: MFM 2026-07-27 15:14
   source: official-db
 sources:
 - book: 官方结构库 db/wh40k.sqlite（Wahapedia 11版镜像 + MFM 官方点数）
@@ -44,7 +45,7 @@ updated: '2026-07-23'
 - **高阶奸奇恶魔（光环)**：当一个己方奸奇逆理魔军单位位于该模型的 6" 内时，那个单位位于己方混沌之影中。
 
 ## 单位构成
-- **1个模型** — 285 分
+- **1个模型** — 320 分
 
 ## 关键词
 - **阵营关键词**：Scintillating Legions

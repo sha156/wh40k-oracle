@@ -59,7 +59,7 @@ Both players make pile-in moves (see below) with all of their eligible units the
 
 最大距离：3"
 
-满足条件：当前是近战阶段，并且己方单位满足以下一个或多个条件：
+满足条件：当前是近战阶段，并且己方单位满足以[[factions/兽人/stratagems/on-to-da-next.md|下一个]]或多个条件：
 
 - 单位处于交战状态。
 
@@ -140,9 +140,9 @@ Terrain Objective
 Terrain Objective
 ## FIGHT PHASE
 
-### ++ ONLY IN DEATH DOES DUTY END ++
+### ++ [[factions/星际战士/stratagems/only-in-death-does-duty-end.md|ONLY IN DEATH DOES DUTY END]] ++
 
-### OVERRUN FIGHTS
+### [[factions/泰伦虫族/stratagems/overrun.md|OVERRUN]] FIGHTS
 When a unit makes an overrun fight, its models can be moved such that enemy units that were unengaged become engaged. Such enemy units become eligible to fight this phase (and may even be able to fight next if they are Fights First units).
 
 </details>

@@ -5,12 +5,13 @@ name_en: Ynnari Raider
 faction: 艾达灵族
 type: unit
 points:
-  1 model: 80
+  1 model: 70
 tags:
 - unit
 - unit/艾达灵族
 - 艾达灵族
 version:
+  points: MFM 2026-07-27 15:14
   source: official-db
 sources:
 - book: 官方结构库 db/wh40k.sqlite（Wahapedia 11版镜像 + MFM 官方点数）
@@ -41,7 +42,7 @@ updated: '2026-07-23'
 - **以太航帆**：该模型在进行加速移动时，不需要投掷加速骰结果，作为替代，直到该阶段结束，本模型的移动属性直接增加6寸
 
 ## 单位构成
-- **1个模型** — 80 分
+- **1个模型** — 70 分
 
 ## 关键词
 - **阵营关键词**：Ynnari

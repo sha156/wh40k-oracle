@@ -43,4 +43,4 @@ updated: '2026-07-23'
 
 ## 关键词
 - **阵营关键词**：Adeptus Astartes，Blood Ravens
-- **普通关键词**：Tacticus，[[core-rules/epic-hero.md|Epic Hero]]，[[core-rules/grenades.md|Grenades]]，Imperium，[[core-rules/character.md|Character]]，[[core-rules/infantry.md|Infantry]]，[[factions/星际战士/units/chaplain.md|Chaplain]]，Kastiel
+- **普通关键词**：Tacticus，[[core-rules/epic-hero.md|Epic Hero]]，[[core-rules/grenades.md|Grenades]]，Imperium，[[core-rules/character.md|Character]]，[[core-rules/infantry.md|Infantry]]，Chaplain，Kastiel

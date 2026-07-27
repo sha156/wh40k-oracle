@@ -5,12 +5,13 @@ name_en: Kor’sarro Khan
 faction: 星际战士
 type: unit
 points:
-  1 model: 60
+  1 model: 55
 tags:
 - unit
 - unit/星际战士
 - 星际战士
 version:
+  points: MFM 2026-07-27 15:14
   source: official-db
 sources:
 - book: 官方结构库 db/wh40k.sqlite（Wahapedia 11版镜像 + MFM 官方点数）
@@ -41,7 +42,7 @@ updated: '2026-07-23'
 - **勇夺首级**：每当该模型摧毁敌方一个角色模型，你可以获得1CP
 
 ## 单位构成
-- **1个模型** — 60 分
+- **1个模型** — 55 分
 
 ## 关键词
 - **阵营关键词**：Adeptus Astartes，White Scars

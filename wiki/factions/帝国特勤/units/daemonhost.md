@@ -37,7 +37,7 @@ updated: '2026-07-23'
 
 ## 技能
 - **Malefic Warding**：While an [[factions/帝国特勤/units/inquisitor.md|Inquisitor]] model is leading a unit that includes one or more <span class="kwb">DAEMONHOST</span> models, models in that unit have a 5+ invulnerable save.
-- **Bound Daemon**：While an [[factions/帝国特勤/units/inquisitor.md|Inquisitor]] model is leading a unit that includes one or more <span class="kwb">DAEMONHOST</span> models, the Objective Control characteristic of <span class="kwb">DAEMONHOST</span> models in that unit is 1.
+- **Bound Daemon**：While an Inquisitor model is leading a unit that includes one or more <span class="kwb">DAEMONHOST</span> models, the Objective Control characteristic of <span class="kwb">DAEMONHOST</span> models in that unit is 1.
 - **INQUISITORIAL RETINUE**：If your Army Faction is not <span class="kwb">AGENTS</span> <span class="kwb2">OF</span> <span class="kwb2">THE</span> <span class="kwb">IMPERIUM</span>, then for each unique pairing of 1 [[factions/帝国特勤/units/inquisitorial-agents.md|Inquisitorial Agents]] unit and 1 <span class="kwb">DAEMONHOST</span> unit occuring in your army, increase the maximum number of Retinue units permitted in your army by 1.<br><br>At the start of the Declare Battle Formations step, this unit can join one <span class="kwb">INQUISITORIAL</span> <span class="kwb">AGENTS</span> unit from your army that is being led by an Inquisitor model (a unit cannot have more than one <span class="kwb">DAEMONHOST</span> unit joined to it). If it does, until the end of the battle, every model in this unit counts as being part of that Bodyguard unit, and that Bodyguard unit’s Starting Strength is increased accordingly.
 
 ## 单位构成

@@ -40,4 +40,4 @@ updated: '2026-07-23'
 
 ## 关键词
 - **阵营关键词**：Adeptus Astartes，Blood Angels
-- **普通关键词**：[[core-rules/infantry.md|Infantry]]，[[core-rules/character.md|Character]]，Brother Corbulo，[[factions/星际战士/units/sanguinary-priest.md|Sanguinary Priest]]，Imperium，[[core-rules/grenades.md|Grenades]]，[[core-rules/epic-hero.md|Epic Hero]]
+- **普通关键词**：[[core-rules/infantry.md|Infantry]]，[[core-rules/character.md|Character]]，Brother Corbulo，Sanguinary Priest，Imperium，[[core-rules/grenades.md|Grenades]]，[[core-rules/epic-hero.md|Epic Hero]]

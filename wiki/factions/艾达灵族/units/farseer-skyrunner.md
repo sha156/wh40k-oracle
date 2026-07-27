@@ -11,7 +11,7 @@ tags:
 - unit/艾达灵族
 - 艾达灵族
 version:
-  points: MFM 2026-07-23 14:17
+  points: MFM 2026-07-27 15:14
   source: official-db
 sources:
 - book: 官方结构库 db/wh40k.sqlite（Wahapedia 11版镜像 + MFM 官方点数）
@@ -50,4 +50,4 @@ updated: '2026-07-23'
 
 ## 关键词
 - **阵营关键词**：Asuryani
-- **普通关键词**：[[core-rules/mounted.md|Mounted]]，[[core-rules/character.md|Character]]，[[factions/艾达灵族/units/farseer.md|Farseer]] Skyrunner，Aeldari，Fly，[[core-rules/psyker.md|Psyker]]，[[factions/艾达灵族/units/farseer.md|Farseer]]
+- **普通关键词**：[[core-rules/mounted.md|Mounted]]，[[core-rules/character.md|Character]]，[[factions/艾达灵族/units/farseer.md|Farseer]] Skyrunner，Aeldari，Fly，[[core-rules/psyker.md|Psyker]]，Farseer

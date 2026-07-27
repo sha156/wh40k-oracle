@@ -420,19 +420,28 @@ def build_payload(stats: Dict[str, KeywordStat], quickref: Dict[str, QuickRefEnt
 
 
 def generate(db_path: Path, wiki_root: Path,
-             pdf_path: Path = DEFAULT_PDF) -> Dict[str, object]:
+             pdf_path: Path = DEFAULT_PDF,
+             out_root: Optional[Path] = None) -> Dict[str, object]:
+    """生成武器词条索引。
+
+    `wiki_root` 只用于**读**（`_rule_page` 判页是否真实存在），`out_root` 决定**写**去哪。
+    默认两者相同＝正常生成。测试要跑真库真页的端到端，但不能顺手改仓库产物
+    （产物一脏，下一轮 gnhf 就以 "Working tree is not clean" 秒退），所以给它一个
+    只改写出目标、不改读取真源的出口。
+    """
+    out_root = wiki_root if out_root is None else out_root
     quickref = parse_quickref(pdf_path)
     stats, tally = collect(db_path)
     gloss = load_glossary(db_path)
     text = render_index(stats, quickref, gloss, wiki_root)
-    target = wiki_root / INDEX_REL
+    target = out_root / INDEX_REL
     target.parent.mkdir(parents=True, exist_ok=True)
     atomic_write_text(target, text)
     payload = build_payload(stats, quickref, gloss, wiki_root)
     # newline="\n"：机器读的产物强制 LF。Windows 本机与 Linux CI/容器都会重跑生成器，
     # 行尾随平台漂移会让同样的数据每次产生 19687 行的整文件 diff。
     # 人读的 .md 不加这个参数——wiki 下 1800+ 页既有产物都是 CRLF，统一才不制造假 diff。
-    atomic_write_text(wiki_root / PAYLOAD_REL,
+    atomic_write_text(out_root / PAYLOAD_REL,
                       json.dumps(payload, ensure_ascii=False, indent=1) + "\n",
                       newline="\n")
 
@@ -442,7 +451,7 @@ def generate(db_path: Path, wiki_root: Path,
     no_zh = sorted(st.base for st in stats.values()
                    if not _zh_base(st.base, st.variants, gloss))
     return {
-        "path": str(target), "payload": str(wiki_root / PAYLOAD_REL),
+        "path": str(target), "payload": str(out_root / PAYLOAD_REL),
         "keywords": len(stats), "quickref_entries": len(quickref),
         "groups": dict(groups), "pairs": tally["pairs"],
         "weapon_rows": tally["weapon_rows"], "orphan_rows": tally["orphan_rows"],

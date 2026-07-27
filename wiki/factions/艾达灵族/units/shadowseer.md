@@ -5,12 +5,13 @@ name_en: Shadowseer
 faction: 艾达灵族
 type: unit
 points:
-  1 model: 60
+  1 model: 50
 tags:
 - unit
 - unit/艾达灵族
 - 艾达灵族
 version:
+  points: MFM 2026-07-27 15:14
   source: official-db
 sources:
 - book: 官方结构库 db/wh40k.sqlite（Wahapedia 11版镜像 + MFM 官方点数）
@@ -42,7 +43,7 @@ updated: '2026-07-23'
 - **危险错觉（灵能）**：以本模型所在单位为攻击目标的敌方单位装备的近战武器获得【危险】词条
 
 ## 单位构成
-- **1个模型** — 60 分
+- **1个模型** — 50 分
 
 ## 关键词
 - **阵营关键词**：Harlequins

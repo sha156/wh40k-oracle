@@ -11,6 +11,7 @@ tags:
 - unit/泰坦军团
 - 泰坦军团
 version:
+  points: MFM 2026-07-27 15:14
   source: official-db
 sources:
 - book: 官方结构库 db/wh40k.sqlite（Wahapedia 11版镜像 + MFM 官方点数）

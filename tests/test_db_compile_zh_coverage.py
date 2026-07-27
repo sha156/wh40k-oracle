@@ -156,6 +156,46 @@ class TestRealCorpus:
         finally:
             conn.close()
 
+    def test_zh_name_bridge_survives_a_db_rebuild(self, tmp_path):
+        """中文名桥的产物必须能从**已提交的代码 + 本地缓存**重跑出来。
+
+        `db/wh40k.sqlite` 是 gitignored 的：库里有、代码里没有的东西，下次
+        `db_compile build` 就会静默消失。这里在库的**副本**上重跑一次
+        `populate_zh_details`（`build` 经 `update.restore_authority_layers` →
+        `stage_zh_details` 走的就是这条），断言这六个只能靠中文名桥接上的单位
+        重跑后仍在。真库一个字节都不动。
+
+        名单来自 2026-07-27 的逐行核实（见 tests/test_web_api_ability_keywords.py
+        顶部的 EXPECTED_ZH_ITEMS 注释）：它们的英文名与库内只差单复数或头衔前缀，
+        `_en_to_ids` 一个都对不上，全靠 `_zh_to_ids` 一对一接。
+        """
+        expect = {
+            "000003836": "Death Company Marines with Boltguns",
+            "000000562": "Sentry Pylon",
+            "000000121": "Uriel Ventris",
+            "000000847": "Servitors",
+            "000000397": "Servitors",
+            "000003916": "Ynnari Kabalite Warriors",
+        }
+        import shutil
+        copy = tmp_path / "repro.sqlite"
+        shutil.copyfile(str(DB), str(copy))
+        details = json.loads(DETAILS_CACHE.read_text(encoding="utf-8"))
+        populate_zh_details(copy, details)
+        conn = sqlite3.connect(str(copy))
+        try:
+            for cid, name_en in expect.items():
+                row = conn.execute(
+                    "SELECT name_zh FROM unit_zh_detail WHERE canonical_id=?",
+                    (cid,)).fetchone()
+                assert row and row[0], "重建后丢了中文层：{} {}".format(cid, name_en)
+                # 英文名确实对不上 ⇒ 这一行只可能来自中文名桥，桥断了这里就红
+                en = conn.execute("SELECT name_en FROM units WHERE id=?",
+                                  (cid,)).fetchone()
+                assert en and en[0] == name_en, (cid, en)
+        finally:
+            conn.close()
+
     def test_every_stored_ability_text_exists_verbatim_in_the_source_cache(self):
         """库里每条中文技能名都必须能在黑图缓存里逐字找到（抽 200 行对账）。
 
