@@ -216,6 +216,22 @@
   （+6 用例，stash 掉实现后 5 failed 验证过真会红）。报告
   `docs/superpowers/specs/2026-07-27-calc-points-negative-assertion-fix.md`。
   **仍红的 #113/#114/#115 是库内点数过期，等 `mfm --apply` 拍板后转绿，未碰**
+- **「模糊匹配静默命中不相干单位」已修**（2026-07-27）：`entity_resolver("Flamestorm Drake")`
+  （一个**不存在**的名字）以 difflib ratio 0.606 命中 `Firestorm Redoubt` 并报 fuzzy +
+  canonical_id，`get_entity` 于是 **found=True** 地端回另一张真实兵牌——比 #63/#109/#118
+  都隐蔽，因为**每一层都是成功路径**（数据真实、渲染正常）。**先量分布再定判据**
+  （2590 条查询三类样本）：两类命中的 ratio 区间**重叠**（真纠错 min 0.750 / 造名 max 0.846），
+  且**调高 cutoff 会让情况变坏**——滤掉竞争命中把「多命中 ambiguous(不给 id)」变成
+  「单命中 fuzzy(给 id)」，造名被接受 56→79。改用**绝对字符编辑距离 ≤2**
+  （真纠错 max 2 vs 造名 median 6）**＋「查询串是命中名子串」单向豁免**（简称；
+  只按距离切会把 #63「坦克指挥官」的两个正主滤掉、翻成 fuzzy 报 Commander Farsight）。
+  实测每轴不劣于改动前：造名给出 id **57→3**、真纠错单命中 490→1368、简称误配 102→58。
+  工具边界透出 `suggestions` 并把「猜测」说死 + 被接受的 fuzzy **必须声明**。
+  ⚠️ `_EMPTY_CHECKS` 只放行 `entity_resolver`/`get_entity`，**`get_datasheet` 故意不放行**
+  ——实测放行会让 #4/#62 当场 ✅→❌（真实单位、名字不在结构库索引里，答案靠经典链从 PDF 捞，
+  即注释里点名的「回归 7 题」防线）：**结构库 ≠ 全部语料**。新增基准 #119（qa_gold v3.5，
+  既有 114 题逐字段零改动），四题锚点 #63/#109/#118/#119 两轮全 ✅，2391 测试绿。
+  报告 `docs/superpowers/specs/2026-07-27-fuzzy-silent-mismatch-fix.md`
 - **剩余**：#41 兽人小子 ⚠️ 漏项（非硬错）——`get_entity` 现在 exact 命中致 agent 走兵牌查表
   不再检索规则书，改它要动「查表 vs 检索」路由偏好，波及面大。基准扩充长期滚动。
   wiki 收尾候选：武器词条页的「规则页 NN.NN · 正文页待上线」现在可以

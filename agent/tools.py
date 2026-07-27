@@ -78,6 +78,32 @@ _RESOLVER_AMBIGUOUS_NOTE = (
     "（`名字 (阵营缩写)` 形式可精确命中唯一阵营）；按问题上下文无法确定用户指哪一个时，"
     "逐个候选查证后分别说明，不要在未查证任何候选前就把问题退回给用户。"
 )
+# ⚠️ 第四种错法，比 #63/#109/#118 都隐蔽：**查错了**。
+# 实测病灶：`Flamestorm Drake` 是个不存在的名字，difflib 以 ratio 0.606 把它命中成
+# `Firestorm Redoubt`，resolve 报 fuzzy + canonical_id，get_entity 于是 found=True 地
+# 端回另一张真实兵牌——found=True、数据真实、渲染正常，**每一层都是成功路径**，
+# 只有懂 40K 的人才看得出这张兵牌根本不是他问的东西。
+# 解析器侧已按实测分布加了编辑距离判据（见 entity_resolver.FUZZY_MAX_EDITS），把这类
+# 命中降级成「没解析到 + 近似猜测」；工具边界这里负责把「猜测」两个字说死：
+# suggestions **不是**答案，也不是可以原样回填重查的 candidates。
+_RESOLVER_NEAR_MISS_NOTE = (
+    "没能把这个名字解析到 canonical id。suggestions 里是库里**长得像但并不相同**的名字，"
+    "它们只是「你要找的会不会是这个」的**猜测**，不是本次查询的结果。"
+    "⚠️ 作答时：① 必须先如实说明库里没有用户说的这个名字；"
+    "② 若要提到 suggestions，必须**明确标注这是近似匹配的猜测**，"
+    "并说清它与用户所问的不是同一个东西；"
+    "③ **禁止**把 suggestions 里的单位当成用户问的那个来介绍数值/技能/点数——"
+    "那等于把一张不相干的兵牌冒充成答案。"
+    "④ 如果用户给的可能不是单位名（规则术语/俗名/集合名），"
+    "请改用 rag_search / get_keyword_definition 再查一次再下结论，不要就此宣布档案缺失。"
+)
+# fuzzy 命中被接受时（拼写小错/简称）也要声明：模型不声明，用户就无从知道自己拼错了，
+# 更无从发现"系统答的是另一个单位"。
+_FUZZY_DECLARE_NOTE = (
+    "⚠️ 本结果是**模糊匹配**（用户给的名字与库内名字不完全一致，按拼写近似/简称匹配）。"
+    "作答时必须声明「库里没有完全同名的条目，按最接近的〈实际名字〉作答」，"
+    "让用户能自己判断是不是问错了名字。"
+)
 _RESOLVER_MISS_NOTE = (
     "没能把这个名字解析到 canonical id（本工具只做「名字 → id」映射，不检索规则原文）。"
     "⚠️ 解析不到 ≠ 该单位或该阵营不存在，也 ≠ 它没有规则/点数——只说明这次名字映射没命中。"
@@ -99,10 +125,17 @@ def entity_resolver(name: str, resolver: Optional[EntityResolver] = None) -> Dic
         "name_en": result.name_en,
         "confidence": result.confidence,
         "candidates": result.candidates,
+        "suggestions": list(result.suggestions),
     }
     if not result.canonical_id:
-        out["note"] = (_RESOLVER_AMBIGUOUS_NOTE if result.candidates
-                       else _RESOLVER_MISS_NOTE)
+        if result.candidates:
+            out["note"] = _RESOLVER_AMBIGUOUS_NOTE
+        elif result.suggestions:
+            out["note"] = _RESOLVER_NEAR_MISS_NOTE
+        else:
+            out["note"] = _RESOLVER_MISS_NOTE
+    elif result.confidence == "fuzzy":
+        out["note"] = _FUZZY_DECLARE_NOTE
     return out
 
 
@@ -136,9 +169,22 @@ def get_entity(
     if resolved["name_en"]:
         page = find_entity(resolved["name_en"], index, wiki_root)
         if page is not None:
-            return {"found": True, "page": page, "resolved_via": resolved}
+            out = {"found": True, "page": page, "resolved_via": resolved}
+            # 模糊命中拿回来的实体页看上去与精确命中**完全一样**（found=True + 完整页），
+            # 模型不声明，用户就看不出系统答的可能不是他问的那个单位。
+            if resolved["confidence"] == "fuzzy":
+                out["note"] = _FUZZY_DECLARE_NOTE + "（本页实际是「{}」）".format(
+                    resolved["name_en"])
+            return out
 
     note = "未找到实体页（可能未编译或译名未收录）"
+    if resolved.get("suggestions") and not resolved["candidates"]:
+        # 名字压根没解析到、只有几个「长得像」的——这条路径此前会被 _EMPTY_CHECKS 判空
+        # 后直接降级经典链，模型看不到任何「库里没有这个名字」的信号，只能对着检索片段
+        # 自由发挥。改为如实回报并把猜测标死（同 #118 的追加式补报做法）。
+        return {"found": False, "page": None, "resolved_via": resolved,
+                "suggestions": list(resolved["suggestions"]),
+                "note": _RESOLVER_NEAR_MISS_NOTE}
     if resolved["confidence"] == "ambiguous":
         # ⚠️ 这里**不能**让 LLM 直接反问用户。ambiguous 被 loop._EMPTY_CHECKS 判为
         # 「非空」（评审 #25：候选是实质回复，不该降级 classic），于是经典链兜底也不会触发；
@@ -286,6 +332,10 @@ def calc_points(
                     "resolved_via": {"canonical_id": canonical_id,
                                      "confidence": resolved.get("confidence")},
                 }
+                # 名字解析成功 ≠ 名字精确：模糊命中（拼错/简称）也会给出一个确定的点数，
+                # 不声明的话用户看不出这个数字属于另一个名字的单位。
+                if resolved.get("confidence") == "fuzzy":
+                    entry["note"] = (entry.get("note") or "") + _FUZZY_DECLARE_NOTE
                 # 名字解析成功 ≠ 名字无歧义：中文名索引是扁平表，四选一也会报 exact（#118）
                 siblings = _same_name_disclosure(db_path, retry.unit_id)
                 if siblings:
@@ -311,10 +361,13 @@ def calc_points(
             continue
 
         unresolved.append(str(query))
+        near = (resolved or {}).get("suggestions") or []
         units.append({"unit_id": r.unit_id, "name_en": None, "points": None,
                       "unresolved": True,
                       "candidates": (resolved or {}).get("candidates") or [],
-                      "note": _CALC_POINTS_UNRESOLVED_NOTE})
+                      "suggestions": near,
+                      "note": (_RESOLVER_NEAR_MISS_NOTE if near
+                               else _CALC_POINTS_UNRESOLVED_NOTE)})
 
     out: Dict[str, Any] = {"found": True, "units": units}
     if ambiguous_queries:
@@ -397,6 +450,15 @@ def get_datasheet(
                         "逐一列出各候选数值作答，绝不要只挑一个当作唯一答案："
                         + "、".join(exc.candidates)}
     if ds is None:
+        # 名字没解析到、但库里有几个「长得像」的 ⇒ 大概率用户报了个不存在的名字。
+        # 这条分支**不能**只回「库中未找到该单位」就交给 _EMPTY_CHECKS 降级：经典链拿到的
+        # 是一堆按相似词检索出来的片段，模型很容易顺着写成「这个单位是……」。
+        # 其余查空情形（俗名/集合名，一个近似名都没有）维持原样降级——那是 loop.py
+        # `_EMPTY_CHECKS["get_datasheet"]` 注释里点名的「回归 7 题」防线，不要动。
+        near = (_resolve_for_points(name_or_id, resolver) or {}).get("suggestions")
+        if near:
+            return {"found": False, "datasheet": None, "reason": "near_miss_only",
+                    "suggestions": list(near), "note": _RESOLVER_NEAR_MISS_NOTE}
         return {"found": False, "datasheet": None, "note": "库中未找到该单位"}
 
     out: Dict[str, Any] = {"found": True, "datasheet": asdict(ds)}

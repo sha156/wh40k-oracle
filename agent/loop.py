@@ -41,14 +41,28 @@ _FORCE_TOOL_NUDGE = (
 # 在 LLM 看到候选之前就降级 classic——整条消歧路径成了死代码（gnhf 审查模块 5 HIGH）。
 _EMPTY_CHECKS: Dict[str, Callable[[Dict[str, Any]], bool]] = {
     "search_wiki": lambda r: not r.get("found"),
+    # `suggestions` 非空 = 「名字没解析到，但库里有几个长得像的」（模糊匹配静默错配的
+    # 修复通道）。这种返回**不是空手**：它带着「库里没有这个名字」这条实质信息 + 已标死
+    # 为猜测的近似名，模型必须据此如实作答。判它空会立刻降级经典链，模型反而看不到
+    # 这条信息、只能对着按相似词捞回来的片段自由发挥（与 #118 判空则丢失消歧信息同型）。
+    # 注意这个键**只**出现在「一个候选都没解析到」的那条路径上：真拼错/简称仍照旧走
+    # fuzzy/ambiguous，`_EMPTY_CHECKS` 对它们的判定逐字节不变。
     "get_entity": lambda r: (not r.get("found")
+                             and not r.get("suggestions")
                              and (r.get("resolved_via") or {}).get("confidence")
                              != "ambiguous"),
     "get_keyword_definition": lambda r: not r.get("found"),
     "entity_resolver": lambda r: (not r.get("canonical_id")
-                                  and not r.get("candidates")),
+                                  and not r.get("candidates")
+                                  and not r.get("suggestions")),
     # 数值题优先走 get_datasheet；但俗名/集合名解析不到时必须立即降级 classic 兜底，
     # 否则 LLM 会反复空查后直接宣布「档案缺失」，反而不如老链路（回归 7 题的根因）。
+    # ⚠️ 这里**故意不看** `suggestions`（与上面两个工具相反）：2026-07-27 实测过让近似名
+    # 抑制降级，#4（XV107 燃雨战斗服）与 #62（重武器小队）当场从 ✅ 掉成 ❌——两者都是
+    # **真实存在**的单位，只是名字不在结构库的索引里，答案本来靠经典链从 PDF 语料捞回来。
+    # 结构库 ≠ 全部语料，所以「结构库里没有这个名字」不足以支撑作答，必须让它去查语料；
+    # 而 entity_resolver 是纯「名字 → id」映射工具，「这个名字解析不到 + 只有几个像的」
+    # 本身就是它被问到的那个问题的实质答案，两者不可混为一谈。
     "get_datasheet": lambda r: (not r.get("found")
                                 and r.get("reason") != "ambiguous"),
     # 一个名字都没解析到时降级兜底，别把「工具空手」留给模型自由发挥（基准 #109 硬错：
