@@ -147,6 +147,21 @@
   104 题逐题对比**仅 #63 变化（❌→✅），其余 103 题零变动**，98.1→**99.0 零硬错**；
   护栏 `tests/test_agent_tools.py::TestGetEntity` 两条（已验证改回旧措辞会红）。
   结果 `benchmarks/v3_edition11/qa_agent_results_ambiguous_note_fix.json`
+- **泰坦军团「缺兵牌」查明是伪缺口 + MFM 千分位静默丢行已修**（2026-07-27）：
+  泰坦军团**一共就 4 个单位**（官网 MFM 4 条、`data/Faction Pack Adeptus Titanicus.pdf`
+  10 页里 4 张兵牌、库里 4 行齐全），逐字段核对 PDF **全对**（属性/36 条武器/技能/
+  受损/装备/点数），图鉴页 Playwright 目检 4/4 非空壳，**本轮零数据改动、零新建兵牌**。
+  传闻的「7 个」实际是**被解析器静默丢掉的行数**：官网四位数分数写作 `2,200 pts`，
+  `db_compile/mfm.py` 的 `(\d+) pts` 对千分位逗号零容忍且不报错 → 库内 7 个 ≥1000 分
+  单位（4 泰坦 + 灵族幽魂/幻影泰坦 + 钛族 Manta）**从未被官方点数校验过**。
+  已修正则 + 加与行数正交的 `count_unit_headers`「有表头却 0 行」断裂探测
+  （`MfmParseBroken`，不重试、不冒充网络失败、写盘前 raise）。
+  `mfm --check` 1236→**1243 可比 / 1243 一致 / 过期 0**（+7 全对）。
+  混沌泰坦 4 个**建不了也不该建**：PDF p2 `TITANICUS TRAITORIS` 明示复用同一张兵牌
+  换两个关键词、用同一份点数。报告
+  `docs/superpowers/specs/2026-07-27-titan-legions-datasheet-audit.md`。
+  **点名遗留**：`Frame` 关键词全库缺失（19 个 FP + Core Rules 共 318 处，库内 0 个单位有）
+  ——是 Wahapedia 镜像的系统性丢失，只补 4 个泰坦会让全库口径分裂，需独立做全库反灌对账
 - **剩余**：#41 兽人小子 ⚠️ 漏项（非硬错）——`get_entity` 现在 exact 命中致 agent 走兵牌查表
   不再检索规则书，改它要动「查表 vs 检索」路由偏好，波及面大。基准扩充长期滚动。
   wiki 收尾候选：武器词条页的「规则页 NN.NN · 正文页待上线」现在可以

@@ -134,6 +134,121 @@ class TestParseMfmHtmlNewFormat:
         assert all(pts not in (20, 10) for _u, _t, _m, pts in rows)
 
 
+class TestParseMfmHtmlThousandsSeparator:
+    """四位数分数官网写作 `2,200 pts`；旧 `(\\d+)` 正则对它零容忍且不报错。
+
+    真实后果：泰坦军团（全部单位都是四位数）两页常年解析出 0 行，缓存里是空 list，
+    `mfm --check` 因此从未覆盖库内 7 个 ≥1000 分单位（4 泰坦 + 灵族幽魂/幻影泰坦
+    + 钛族 Manta）。fixture 取自 2026-07-27 抓下来的真实 titan-legions 页形态。
+    """
+
+    def _html(self, lis):
+        return ("<html><body>"
+                '<h3 class="text-4xl font-header p-1">UNITS</h3>'
+                + _UNIT.format(name="WARLORD TITAN")
+                + _TIER.format(tier="YOUR UNIT COSTS", lis=lis)
+                + "</body></html>")
+
+    def test_four_digit_points_with_comma_parsed(self):
+        rows = parse_mfm_html(self._html(
+            '<li><span>1 model</span><span>3,500 pts</span></li>'))
+        assert rows == [("WARLORD TITAN", "YOUR UNIT COSTS", "1 model", 3500)]
+
+    def test_comma_form_also_works_on_colored_marked_tier(self):
+        # 变价档（色块 + ▲/▼ 标记）同样可能是四位数
+        rows = parse_mfm_html(self._html(
+            '<li><span>1 model</span><span class="text-red-500">'
+            '▲ (+100) 2,600 pts</span></li>'))
+        assert rows == [("WARLORD TITAN", "YOUR UNIT COSTS", "1 model", 2600)]
+
+    def test_plain_digits_still_parse(self):
+        # 负向成对：三位数裸数字（官网多数单位）不得被逗号形态挤掉
+        rows = parse_mfm_html(self._html(
+            '<li><span>1 model</span><span>330 pts</span></li>'))
+        assert rows == [("WARLORD TITAN", "YOUR UNIT COSTS", "1 model", 330)]
+
+
+class TestSilentParseFailureDetection:
+    """「有单位表头却 0 条分数」= 解析器对该页断裂，必须与「该阵营没单位」分开。
+
+    只看行数分辨不出这两者——泰坦军团两页 0 行伪装成空阵营，混过了
+    fetch 的新旧缓存掉行对账（0→0 不算掉行），才会一直没人发现。
+    """
+
+    def _page(self, pts_span):
+        return ("<html><body>"
+                '<h3 class="text-4xl font-header p-1">UNITS</h3>'
+                + _UNIT.format(name="WARHOUND TITAN")
+                + _TIER.format(tier="YOUR UNIT COSTS",
+                               lis='<li><span>1 model</span>'
+                                   + pts_span + '</li>')
+                + "</body></html>")
+
+    def test_headers_counted_independently_of_price_rows(self):
+        from db_compile.mfm import count_unit_headers
+
+        broken = self._page('<span>1 100 kredits</span>')  # 认不出的分数形态
+        assert count_unit_headers(broken) == 1
+        assert parse_mfm_html(broken) == []
+
+    def test_pageless_html_has_no_headers(self):
+        from db_compile.mfm import count_unit_headers
+
+        # 负向成对：真的没有单位的页面 0 表头 0 行 —— 不该被判断裂
+        assert count_unit_headers("<html></html>") == 0
+
+    def test_fetch_faction_raises_on_headers_without_rows(self, monkeypatch):
+        import db_compile.mfm as mfm
+
+        monkeypatch.setattr(mfm, "_fetch",
+                            lambda url, timeout=40: self._page(
+                                '<span>1 100 kredits</span>'))
+        monkeypatch.setattr(mfm.time, "sleep", lambda s: None)
+        with pytest.raises(mfm.MfmParseBroken, match="解析器对该页断裂"):
+            mfm.fetch_faction("titan-legions", max_retries=2)
+
+    def test_fetch_faction_ok_when_rows_parse(self, monkeypatch):
+        import db_compile.mfm as mfm
+
+        monkeypatch.setattr(mfm, "_fetch",
+                            lambda url, timeout=40: self._page(
+                                '<span>1,100 pts</span>'))
+        monkeypatch.setattr(mfm.time, "sleep", lambda s: None)
+        rows = mfm.fetch_faction("titan-legions", max_retries=2)
+        assert rows == [("WARHOUND TITAN", "YOUR UNIT COSTS", "1 model", 1100)]
+
+    def test_fetch_all_refuses_to_write_broken_cache(self, tmp_path, monkeypatch):
+        import db_compile.mfm as mfm
+
+        home = '<a href="/en/titan-legions">t</a>'
+        broken = self._page('<span>1 100 kredits</span>')
+        monkeypatch.setattr(
+            mfm, "_fetch",
+            lambda url, timeout=40: home if url.endswith("/en") else broken)
+        monkeypatch.setattr(mfm.time, "sleep", lambda s: None)
+        out = tmp_path / "mfm.json"
+        with pytest.raises(RuntimeError, match="解析断裂"):
+            mfm.fetch_all(out, sleep_s=0, max_retries=1)
+        assert not out.exists()  # 断裂页不许写成「这个阵营没单位」
+
+    def test_fetch_all_force_writes_and_records_parse_broken(
+            self, tmp_path, monkeypatch):
+        import db_compile.mfm as mfm
+
+        home = '<a href="/en/titan-legions">t</a>'
+        broken = self._page('<span>1 100 kredits</span>')
+        monkeypatch.setattr(
+            mfm, "_fetch",
+            lambda url, timeout=40: home if url.endswith("/en") else broken)
+        monkeypatch.setattr(mfm.time, "sleep", lambda s: None)
+        out = tmp_path / "mfm.json"
+        mfm.fetch_all(out, sleep_s=0, max_retries=1, force=True)
+        saved = json.loads(out.read_text(encoding="utf-8"))
+        # --force 放行也要留痕，不能让断裂在缓存里查无此事
+        assert saved["parse_broken"] and "titan-legions" in saved["parse_broken"][0]
+        assert saved["failed"] == []  # 解析断裂不冒充网络失败
+
+
 class TestIsBaseTier:
     def test_base_tiers(self):
         assert is_base_tier("YOUR UNIT COSTS")

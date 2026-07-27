@@ -95,9 +95,15 @@ _UNIT_HEADER_RE = re.compile(
 #   旧式：<li><span>N models</span><span>N pts</span></li>
 #   新式：<li><span>N models</span><span class="text-emerald-600…">▼ (-20) N pts</span></li>
 #   放宽第二个 span 允许任意属性 + 可选箭头前缀，只抓末尾的数字，兼容新旧。
+# **四位数分数带千分位逗号**（官网写 `2,200 pts`）：`(\d+)` 对它零容忍，
+# 会把该档整条丢掉且不报错——泰坦军团全部单位都是四位数，整个阵营页因此常年解析出 0 行
+# （titan-legions / chaos-titan-legions 两页缓存一直是空 list，`mfm --check` 也就
+# 从未覆盖过库内 7 个 ≥1000 分的单位：4 泰坦 + 灵族幽魂/幻影泰坦 + 钛族 Manta）。
+# 逗号形式优先匹配，匹配不到再退回裸数字；delta 前缀同样放宽（涨降幅也可能过千）。
 _LI_PTS_RE = re.compile(
     r"<li><span>([^<]+)</span>"
-    r'<span[^>]*>(?:[▲▼]\s*\([+\-]?\d+\)\s*)?(\d+) pts</span></li>')
+    r'<span[^>]*>(?:[▲▼]\s*\([+\-]?[\d,]+\)\s*)?'
+    r"((?:\d{1,3}(?:,\d{3})+|\d+)) pts</span></li>")
 
 
 def parse_mfm_html(html: str) -> List[MfmRow]:
@@ -118,8 +124,28 @@ def parse_mfm_html(html: str) -> List[MfmRow]:
                 r'<div class="bg-slate-200[^"]*font-bold[^"]*">([^<]+)</div>'
                 r"<ul[^>]*>([\s\S]*?)</ul>", block):
             for models, pts in _LI_PTS_RE.findall(ul):
-                rows.append((unit, tier.strip(), models.strip(), int(pts)))
+                rows.append((unit, tier.strip(), models.strip(),
+                             int(pts.replace(",", ""))))
     return list(dict.fromkeys(rows))
+
+
+def count_unit_headers(html: str) -> int:
+    """页面里（保留小节内的）单位名表头个数——与分数行解析互相独立的对账基准。
+
+    parse_mfm_html 返回 0 行有两种截然不同的成因：① 该页真的没有单位（首页、
+    空阵营页）② 表头认出来了但分数行正则对不上（官网改版/新数值形态）。
+    ② 是静默降级，只看行数永远分辨不出来；表头数就是那个独立信号。
+    """
+    kept = _slice_kept_sections(_resolve_rsc_placeholders(html))
+    return len(_UNIT_HEADER_RE.findall(kept))
+
+
+class MfmParseBroken(RuntimeError):
+    """页面有单位表头却解析出 0 条分数 —— 解析器对该页断裂（非网络故障）。
+
+    与网络失败分开建模：网络抖动该重试，解析断裂重试一万次也是 0 行，
+    必须当场吼出来而不是降级成「这个阵营就是没单位」。
+    """
 
 
 def is_base_tier(tier: str) -> bool:
@@ -149,14 +175,26 @@ def _fetch(url: str, timeout: int = 40) -> str:
 
 def fetch_faction(slug: str, max_retries: int = 4,
                   retry_sleep: float = 3.0) -> List[MfmRow]:
-    """抓单个阵营页（带重试——Clash 代理偶发 SSL EOF 抖动）。"""
+    """抓单个阵营页（带重试——Clash 代理偶发 SSL EOF 抖动）。
+
+    「有表头但 0 行」判为解析器对该页断裂，抛 MfmParseBroken 且**不重试**
+    （重试治不了正则对不上，只会白等 4×3 秒然后照样降级成空阵营）。
+    """
     last: Optional[Exception] = None
     for attempt in range(max_retries):
         try:
-            return parse_mfm_html(_fetch(f"{MFM_BASE}/en/{slug}"))
+            html = _fetch(f"{MFM_BASE}/en/{slug}")
         except Exception as e:  # 网络瞬断/SSL EOF：等一拍重试
             last = e
             time.sleep(retry_sleep)
+            continue
+        rows = parse_mfm_html(html)
+        heads = count_unit_headers(html)
+        if not rows and heads:
+            raise MfmParseBroken(
+                f"{slug}: 页面有 {heads} 个单位表头却解析出 0 条分数——"
+                "解析器对该页断裂（官网改数值/版式形态），不是这个阵营没有单位")
+        return rows
     raise RuntimeError(f"抓取 {slug} 连续 {max_retries} 次失败: {last}")
 
 
@@ -200,6 +238,10 @@ def fetch_all(out_path: Path, sleep_s: float = 1.0,
     单页抓取复用 fetch_faction（同一套重试逻辑，不再内联第二份参数不一致的循环）；
     单阵营抓不下来记入 failed 继续，不拖垮整轮。写盘前与旧缓存逐阵营对账，
     系统性掉行 raise 不覆盖（force=True 跳过对账——仅限人工核实官网真删减后）。
+
+    「有表头但 0 行」的解析断裂页（MfmParseBroken）单列 parse_broken，写盘前
+    直接 raise：这类页会伪装成「该阵营就是没单位」，混进 failed 只会被当成
+    网络抖动放过去——泰坦军团两页正是这样空了不知多少版。
     """
     home = _fetch(MFM_BASE + "/en")
     slugs = list_faction_slugs(home)
@@ -207,24 +249,36 @@ def fetch_all(out_path: Path, sleep_s: float = 1.0,
         raise RuntimeError("MFM 首页未解析到阵营链接——页面结构可能已变，需更新解析器")
     data: Dict[str, List[MfmRow]] = {}
     failed: List[str] = []
+    parse_broken: List[str] = []
     for slug in slugs:
         try:
             rows = fetch_faction(slug, max_retries=max_retries)
+        except MfmParseBroken as e:
+            parse_broken.append(str(e))
+            rows = []
         except RuntimeError:
             failed.append(slug)
             rows = []
         data[slug] = rows
         print(f"  {slug}: {len(rows)} 条", flush=True)
         time.sleep(sleep_s)
+    if parse_broken and not force:
+        raise RuntimeError(
+            "MFM 有阵营页解析断裂（有单位表头却 0 条分数），已拒绝覆盖旧缓存：\n  "
+            + "\n  ".join(parse_broken)
+            + "\n先修解析器；确认官网真改版且可接受时用 --force 强制覆盖。")
     if not force:
         _guard_cache_regression(out_path, data)
     out_path.parent.mkdir(parents=True, exist_ok=True)
     out_path.write_text(
         json.dumps({"source": MFM_BASE, "fetched_at": time.strftime("%Y-%m-%d %H:%M"),
-                    "failed": failed, "factions": data},
+                    "failed": failed, "parse_broken": parse_broken,
+                    "factions": data},
                    ensure_ascii=False, indent=1), encoding="utf-8")
     if failed:
         print(f"  ⚠️ 抓取失败的阵营: {failed}")
+    if parse_broken:
+        print(f"  ⚠️ 解析断裂的阵营页（--force 已放行）: {parse_broken}")
     return data
 
 
