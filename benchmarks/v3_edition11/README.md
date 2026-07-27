@@ -130,6 +130,41 @@ apply 后 `--check` 收敛到 1319/1319/过期 0）。gold 没有为了分数好
 「Adeptus Titanicus 是独立桌游、不是 40K 阵营、四个泰坦在 11 版无官方点数」这种**否定性事实断言**。
 逐个单独问（#110-#112 同型）则全对。本轮不修，留作独立课题。
 
+## #109 已定因并修复（2026-07-27，`qa_agent_results_calc_points_honesty.json`）
+
+上面留档的「工具查不到 → 模型编否定性断言」是**诚实性硬错**，不是点数问题
+（那四个值库＝官网）。链路只有一步：`calc_points` 底层是纯 `units.id` 查表，四个中文名
+全部返回「未找到该 unit id」；`calc_points` 又不在 `loop._EMPTY_CHECKS` 里，不判空、
+不降级兜底；模型拿着一次全空返回，把**查询失败**升级成了**事实断言**
+——「泰坦军团是独立桌游、不是 40K 阵营、四个泰坦在 11 版无官方点数」。
+
+修法三层（详见 `docs/superpowers/specs/2026-07-27-calc-points-negative-assertion-fix.md`）：
+
+1. **根本修法**：`agent/tools.py::calc_points` 补名字解析——底层 `db_compile/calc_points.py`
+   一行没动（仍是纯 id 查表，军表/web 侧按 canonical id 直调的约定保持），只在 agent 包装层
+   对返回「未找到该 unit id」的那几个走 `entity_resolver` 重查。纯 id 入参的行为逐字节不变。
+   四个泰坦中文名实测全部 `confidence=exact`，一次调用返回四条——**漏项那一半也一并解决**。
+2. **措辞修法**（同 #63 的 `1efb6e5c` 做法，因果写进注释防被改回）：仍解析不到时的 note 直说
+   「查不到 ≠ 该单位或该阵营不存在，也 ≠ 它没有官方点数」，指路 `get_datasheet`/`entity_resolver`
+   重查，并明令禁止输出「不存在 / 不属于 40K / 无官方点数」这类否定性断言。
+3. **通道修法**：`_EMPTY_CHECKS` 加 `calc_points`——**全部**名字都没解析到才判空降级兜底；
+   「查到了但库里没点数」是诚实答案，不许被 `rag_search` 吞掉。
+   另在 `_NEXT_STEP_CONTRACT` 铁律段加了通用形式，覆盖其他工具的同型复发。
+
+| 指标 | 修前 `..._points_coverage.json` | 修后 `..._calc_points_honesty.json` |
+|---|---|---|
+| 成绩 | 108✅ / 1⚠️ / 4❌ = 95.6 | **109✅ / 1⚠️ / 3❌ = 96.5** |
+| 113 题逐题 verdict 差异 | — | **仅 #109（❌→✅），其余 112 题零变动** |
+| #109 回答 | 「泰坦军团…并非战锤40K的阵营…均无官方点数」 | 四个点数逐条列出，1100/2200/2600/3500 全对 |
+
+连跑两轮：#109 两轮均 ✅（不是波动侥幸），两轮唯二差异是 #41/#42 这两道早已点名的固定波动题。
+**#113/#114/#115 仍红**——库内点数过期的真实反映，`mfm --apply` 后自然转绿，本轮按红线未碰。
+
+回归护栏：`tests/test_agent_tools.py::TestCalcPoints` 四条 +
+`TestCalcPointsRealDbTitanRegression`（真库四泰坦点数钉子）+
+`tests/test_llm_client.py::test_next_step_system_prompt_bans_negative_assertions_on_lookup_miss`。
+`git stash` 掉实现后跑新用例 **5 failed**，逐条验证过对旧实现真会红。
+
 ## 与 v1（97.9，benchmarks/v1_10th/）的关系
 
 v1 与 v3 成绩不可直接比较（7 题 gold 语义变了 + 语料从 37 本十版换成 61 本分层）。

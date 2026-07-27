@@ -276,6 +276,96 @@ class TestCalcPoints:
         assert result["units"] == []
         assert "unit_list" in result["note"]
 
+    def _fixture_db(self, tmp_path):
+        csv_dir = tmp_path / "wahapedia"
+        csv_dir.mkdir()
+        (csv_dir / "Factions.csv").write_text(FACTIONS_CSV, encoding="utf-8")
+        (csv_dir / "Datasheets.csv").write_text(DATASHEETS_CSV, encoding="utf-8")
+        db_path = tmp_path / "wh40k.sqlite"
+        build_database(csv_dir, db_path)
+        return db_path
+
+    def test_chinese_name_is_resolved_to_id_not_reported_as_unknown(self, tmp_path):
+        """基准 #109：底层是纯 id 查表，中文名一律「未找到该 unit id」。
+        名字解析必须由这层包装补上，否则模型拿到的就是一次全空返回。"""
+        db_path = self._fixture_db(tmp_path)
+        resolver, _ = _write_resolver_fixture(tmp_path)
+
+        result = agent_tools.calc_points(["冷言"], db_path=db_path, resolver=resolver)
+
+        unit = result["units"][0]
+        assert unit["unit_id"] == "000000407"          # 中文名真的查到了这一行
+        assert unit.get("unresolved") is not True
+        assert unit["resolved_via"]["canonical_id"] == "000000407"
+        assert "unresolved" not in result
+
+    def test_unknown_name_note_forbids_negative_assertion(self, tmp_path):
+        """**工具查不到 ≠ 该单位不存在**。基准 #109 的硬错就是模型把这次查询失败
+        升级成了「泰坦军团不是 40K 阵营、四个泰坦无官方点数」的否定性事实断言
+        （而库=官网，四个点数都在）。note 必须当场把这条界线说穿并指路重查。"""
+        db_path = self._fixture_db(tmp_path)
+        resolver, _ = _write_resolver_fixture(tmp_path)
+
+        result = agent_tools.calc_points(
+            ["完全不存在XYZ"], db_path=db_path, resolver=resolver)
+
+        assert result["units"][0]["unresolved"] is True
+        assert result["unresolved"] == ["完全不存在XYZ"]
+        for note in (result["note"], result["units"][0]["note"]):
+            assert "查不到 ≠" in note                    # 明确否认「查不到=不存在」
+            assert "否定性断言" in note                   # 明确禁止该输出形态
+            assert "get_datasheet" in note               # 给出可执行的重查路径
+            # 工具自己绝不能给出「不存在/无官方点数」的结论——只能说没解析到
+            assert "该单位在库中不存在" not in note
+
+    def test_all_names_unresolved_counts_as_empty_for_loop(self, tmp_path):
+        """一个都没解析到 → 判空降级 rag_search 兜底，别把空手留给模型自由发挥。"""
+        from agent.loop import _is_empty_result
+
+        db_path = self._fixture_db(tmp_path)
+        resolver, _ = _write_resolver_fixture(tmp_path)
+
+        allmiss = agent_tools.calc_points(
+            ["完全不存在XYZ", "也不存在ABC"], db_path=db_path, resolver=resolver)
+        partial = agent_tools.calc_points(
+            ["冷言", "完全不存在XYZ"], db_path=db_path, resolver=resolver)
+
+        assert _is_empty_result("calc_points", allmiss) is True
+        # 「查到了但库里没点数」是诚实答案，不该被兜底吞掉
+        assert _is_empty_result("calc_points", partial) is False
+
+    def test_resolver_failure_does_not_crash_the_whole_call(self, tmp_path):
+        """解析器炸了只该让那一个名字变 unresolved，不能把整次算分带崩。"""
+        db_path = self._fixture_db(tmp_path)
+
+        class _Boom:
+            def resolve(self, name):
+                raise RuntimeError("resolver 挂了")
+
+        result = agent_tools.calc_points(["随便什么名"], db_path=db_path, resolver=_Boom())
+
+        assert result["found"] is True
+        assert result["units"][0]["unresolved"] is True
+
+
+@pytest.mark.skipif(not agent_tools.DB_PATH.exists(), reason="需要 db/wh40k.sqlite")
+class TestCalcPointsRealDbTitanRegression:
+    """基准 #109 的真库钉子：一次问四个泰坦，四个中文名必须全部查到官方点数。
+
+    gold 来自官方 MFM 实时站 titan-legions 页（2026-07-27 快照），库内四行与之逐条一致。
+    """
+
+    TITANS = {"战犬泰坦": 1100, "掠夺者泰坦": 2200,
+              "天罚战争使者泰坦": 2600, "战将泰坦": 3500}
+
+    def test_four_titans_all_resolved_with_official_points(self):
+        result = agent_tools.calc_points(list(self.TITANS))
+
+        assert "unresolved" not in result
+        assert len(result["units"]) == 4          # 问四个就要回四个，不许漏项
+        got = {u["query"]: u["points"] for u in result["units"]}
+        assert got == self.TITANS
+
 
 class TestDefaultResolverSingletonThreadSafety:
     """M#7：无锁单例竞态——并发首调只允许构造一次 EntityResolver。"""

@@ -152,9 +152,36 @@ def get_keyword_definition(
 
 # ── ⑧ 数据类：db_compile 只读封装 ─────────────────────────────────
 
-def calc_points(unit_list: List[str], db_path: Optional[Path] = None) -> Dict[str, Any]:
-    """精确算分（SQLite，db_compile.calc_points）。P2 阶段点数 CSV 未导入时
-    诚实报告缺失原因，不编造数值。"""
+# ⚠️ 「本工具没查到」和「这个单位不存在」是两件事，工具返回里必须把这句话说穿。
+# 基准 #109（一次问四个泰坦的点数）实测：calc_points 只按 units.id 精确查表，四个中文名
+# 全部返回「未找到该 unit id」，模型把这个**查询失败**升级成了**否定性事实断言**——
+# 「泰坦军团是独立桌游、不是 40K 阵营、四个泰坦在 11 版无官方点数」。而事实相反：
+# Adeptus Titanicus 是 11 版正经阵营，官方 MFM 有阵营页，库里四行点数与官网逐条一致。
+# 同样四个单位逐个单独问（走 get_datasheet）全部答对，可见错的不是数据而是这条空手返回。
+_CALC_POINTS_UNRESOLVED_NOTE = (
+    "未能把这个名字解析到库内任何单位（本工具按 units.id 精确查表）。"
+    "⚠️ 查不到 ≠ 该单位或该阵营不存在，也 ≠ 它没有官方点数——只说明这次名字解析没命中。"
+    "请改用 get_datasheet 传用户原文里的中文名重查，或先用 entity_resolver 取 canonical id "
+    "再回来算分；全都查不到就如实说「档案缺失」。"
+    "禁止据此输出「该单位/阵营不存在」「不属于战锤40K」「无官方点数」这类否定性断言。"
+)
+
+
+def calc_points(
+    unit_list: List[str],
+    db_path: Optional[Path] = None,
+    resolver: Optional[EntityResolver] = None,
+) -> Dict[str, Any]:
+    """精确算分（SQLite，db_compile.calc_points）。点数缺失时诚实报告原因，不编造数值。
+
+    底层 `db_compile.calc_points` 是纯 id 查表（保持不变——它被军表/web 侧按 canonical id
+    直调）。名字解析放在这层 agent 包装里：LLM 拿到的是用户原文里的中文名，按既有约定
+    直接查 id 必然全空，于是它只能凭记忆作答（基准 #109 的硬错来源）。这里先按 id 查，
+    只对「未找到该 unit id」的那几个走 entity_resolver 重试，既不改变纯 id 调用的行为，
+    也让中文名这条最常见的入参形态真的能查到。
+    """
+    from db_compile.calc_points import UNKNOWN_UNIT_NOTE
+
     # 参数防护（评审 M#4）：LLM 可能把 unit_list 传成单个字符串——字符串是可迭代的，
     # 会被逐字符拆成"单位名"胡乱查询。字符串包成单元素列表；其余非列表类型明确报错。
     if isinstance(unit_list, str):
@@ -166,14 +193,51 @@ def calc_points(unit_list: List[str], db_path: Optional[Path] = None) -> Dict[st
     if not Path(db_path).exists():
         return {"found": False, "units": [], "note": "wh40k.sqlite 不存在，需先跑 db_compile"}
 
-    results = _calc_points_impl(db_path, unit_list)
-    return {
-        "found": True,
-        "units": [
-            {"unit_id": r.unit_id, "name_en": r.name_en, "points": r.points, "note": r.note}
-            for r in results
-        ],
-    }
+    results = _calc_points_impl(db_path, list(unit_list))
+    units: List[Dict[str, Any]] = []
+    unresolved: List[str] = []
+    for query, r in zip(unit_list, results):
+        if r.note != UNKNOWN_UNIT_NOTE:
+            units.append({"unit_id": r.unit_id, "name_en": r.name_en,
+                          "points": r.points, "note": r.note})
+            continue
+
+        resolved = _resolve_for_points(str(query), resolver)
+        canonical_id = (resolved or {}).get("canonical_id")
+        if canonical_id:
+            retry = _calc_points_impl(db_path, [canonical_id])[0]
+            if retry.note != UNKNOWN_UNIT_NOTE:
+                units.append({
+                    "unit_id": retry.unit_id, "name_en": retry.name_en,
+                    "points": retry.points, "note": retry.note,
+                    "query": str(query),
+                    "resolved_via": {"canonical_id": canonical_id,
+                                     "confidence": resolved.get("confidence")},
+                })
+                continue
+
+        unresolved.append(str(query))
+        units.append({"unit_id": r.unit_id, "name_en": None, "points": None,
+                      "unresolved": True,
+                      "candidates": (resolved or {}).get("candidates") or [],
+                      "note": _CALC_POINTS_UNRESOLVED_NOTE})
+
+    out: Dict[str, Any] = {"found": True, "units": units}
+    if unresolved:
+        out["unresolved"] = unresolved
+        out["note"] = ("以下名字没能解析到库内单位：" + "、".join(unresolved)
+                       + "。" + _CALC_POINTS_UNRESOLVED_NOTE)
+    return out
+
+
+def _resolve_for_points(
+    name: str, resolver: Optional[EntityResolver],
+) -> Optional[Dict[str, Any]]:
+    """名字 → canonical id；解析器构造/查询失败不许把整次算分带崩（诚实返回 None 即可）。"""
+    try:
+        return entity_resolver(name, resolver=resolver)
+    except Exception:
+        return None
 
 
 def get_datasheet(

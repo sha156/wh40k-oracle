@@ -111,6 +111,22 @@ def test_next_step_system_prompt_carries_hints_and_policy():
     assert "不得省略" in system  # _NEXT_STEP_CONTRACT 新增策略条
 
 
+def test_next_step_system_prompt_bans_negative_assertions_on_lookup_miss():
+    """基准 #109：calc_points 四个中文名全查空后，模型编出「泰坦军团不是 40K 阵营、
+    四个泰坦无官方点数」——把**查询失败**说成了**事实不存在**（库=官网，点数都在）。
+    这条铁律是工具侧 note 之外的通用防线：任何工具查空都不得升级成否定性断言。"""
+    fake = FakeOpenAIClient(['{"type": "final", "content": "ok"}'])
+    llm = OpenAICompatLLMClient(client=fake)
+    llm.next_step([{"role": "user", "content": "x"}],
+                  [{"name": "calc_points", "description": "精确算分"}])
+    system = fake.calls[0]["messages"][0]["content"]
+    assert "查不到 ≠ 该事物不存在" in system
+    assert "否定性事实断言" in system
+    assert "绝不允许" in system
+    # 一次问多个单位时要一次性全查、逐个作答（#109 的另一半：漏项）
+    assert "unit_list" in system
+
+
 # ── classify_intent ───────────────────────────────────────────────
 
 class TestClassifyIntent:
