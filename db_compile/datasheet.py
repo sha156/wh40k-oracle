@@ -12,7 +12,7 @@ import json
 import sqlite3
 from dataclasses import dataclass, field
 from pathlib import Path
-from typing import List, Optional
+from typing import List, Optional, Tuple
 
 
 @dataclass
@@ -173,6 +173,33 @@ def diff_core_stats(ds: "Datasheet", zh: Optional[dict]) -> List[dict]:
             conflicts.append({"field": field_name,
                               "official": off_val, "blackforum": zh_val})
     return conflicts
+
+
+def same_name_factions(db_path, unit_id: str) -> List[Tuple[str, str, Optional[str]]]:
+    """同名跨阵营兄弟行：同一 name_en 在多个阵营各有独立兵牌时，返回全部
+    `(id, name_en, faction_id)`（含传入的这一行本身）；不构成跨阵营歧义时返回空列表。
+
+    只读。为什么需要它：`find_datasheet` 只在**英文名**直查多命中时抛 AmbiguousUnitName，
+    而中文名走 `EntityResolver.resolve` —— 中文索引 `_zh_to_id` 是「中文名 → 单个 cid」的
+    扁平表（碰撞在建索引时就被上游折叠掉了），所以 `地狱兽` 会以 confidence=exact 稳稳
+    落到 4 张 Helbrute 兵牌里的某一张，调用方完全看不出自己拿的是四选一（基准 #118：
+    只报「120 分」不说是吞世者的那张）。这里按解析结果反查兄弟行，把歧义**补报**回去。
+
+    同阵营内的重复行（上游 Wahapedia 按「书」建模的重印，见 duplicate-units-audit）不是
+    跨阵营歧义，故仅在**阵营数 > 1** 时才返回，否则返回空列表。
+    """
+    conn = sqlite3.connect(str(db_path))
+    try:
+        rows = conn.execute(
+            "SELECT id, name_en, faction_id FROM units WHERE name_en = "
+            "(SELECT name_en FROM units WHERE id = ?) COLLATE NOCASE",
+            (unit_id,)
+        ).fetchall()
+    finally:
+        conn.close()
+    if len({fac for _, _, fac in rows}) <= 1:
+        return []
+    return [(r[0], r[1], r[2]) for r in rows]
 
 
 class AmbiguousUnitName(LookupError):

@@ -425,6 +425,144 @@ class TestCalcPointsRealDbTitanRegression:
         assert got == self.TITANS
 
 
+def _mk_same_name_db(tmp_path, zh_alias_target="000004"):
+    """造一张「同名跨阵营」库：Helbrute × 4 阵营各一行 + 一个只指向其中一行的中文别名。
+
+    这正是真库的形状——中文索引是「中文名 → 单个 cid」的扁平表，所以中文名查询会稳稳
+    落到四选一里的某一张（基准 #118）。另加一个同阵营重复行的单位，钉住「重印不算歧义」。
+    """
+    import json
+    import sqlite3
+
+    db = tmp_path / "wh40k.sqlite"
+    conn = sqlite3.connect(str(db))
+    conn.executescript(
+        "CREATE TABLE factions(id TEXT,name TEXT);"
+        "CREATE TABLE datasheets(id TEXT,name TEXT,faction_id TEXT);"
+        "CREATE TABLE units(id TEXT,faction_id TEXT,name_en TEXT,name_zh TEXT,"
+        "points_json TEXT,keywords_json TEXT,version TEXT);"
+        "CREATE TABLE models(unit_id TEXT,name TEXT,m TEXT,t TEXT,sv TEXT,"
+        "invuln TEXT,w TEXT,ld TEXT,oc TEXT,base TEXT,count_options_json TEXT);"
+        "CREATE TABLE weapons(id TEXT,unit_id TEXT,name_zh TEXT,name_en TEXT,"
+        "range TEXT,a TEXT,bs_ws TEXT,s TEXT,ap TEXT,d TEXT,keywords_json TEXT);"
+        "CREATE TABLE aliases(alias TEXT,canonical_id TEXT,lang TEXT);"
+    )
+    for fid, name in (("CSM", "Chaos Space Marines"), ("DG", "Death Guard"),
+                      ("TS", "Thousand Sons"), ("WE", "World Eaters")):
+        conn.execute("INSERT INTO factions VALUES(?,?)", (fid, name))
+    rows = (("000001", "CSM", 130), ("000002", "DG", 110),
+            ("000003", "TS", 110), ("000004", "WE", 120))
+    for uid, fid, cost in rows:
+        conn.execute("INSERT INTO datasheets VALUES(?,'Helbrute',?)", (uid, fid))
+        conn.execute("INSERT INTO units VALUES(?,?,'Helbrute','地狱兽',?,NULL,NULL)",
+                     (uid, fid, json.dumps({"points": cost, "items": [{"cost": cost}]})))
+        conn.execute("INSERT INTO models VALUES(?,'Helbrute','6\"','9','2+','-','8','7','1','60mm',NULL)",
+                     (uid,))
+    # 同阵营重印（上游按「书」建模）——不是跨阵营歧义，不该触发消歧披露
+    for uid in ("000010", "000011"):
+        conn.execute("INSERT INTO datasheets VALUES(?,'Terminator Squad','CSM')", (uid,))
+        conn.execute("INSERT INTO units VALUES(?,'CSM','Terminator Squad','终结者小队',?,NULL,NULL)",
+                     (uid, json.dumps({"points": 180, "items": [{"cost": 180}]})))
+    conn.execute("INSERT INTO aliases VALUES('地狱兽',?,'zh')", (zh_alias_target,))
+    conn.execute("INSERT INTO aliases VALUES('终结者小队','000010','zh')")
+    conn.commit()
+    conn.close()
+    return db
+
+
+def _resolver_for(db):
+    from db_compile.entity_resolver import EntityResolver
+
+    return EntityResolver(db_path=db)
+
+
+class TestSameNameCrossFactionDisambiguation:
+    """基准 #118：地狱兽 / Helbrute 在库里是 4 张各自独立的兵牌，点数并不相同。
+
+    旧实现只把四选一里的那一张返回给模型（中文名索引是扁平表，四选一照报 exact），
+    模型于是答「地狱兽当前点数为 120 分」——一个数字、不说阵营（gold 判错情形 ①）。
+    修法必须同时躲开另两种判错：② 因歧义拒答/反问（#63 方向），③ 凭记忆补数（#109 方向），
+    所以下面既断言「已查到的那个数值仍在」，也断言「四个阵营的点数全都给了模型」。
+    """
+
+    EXPECTED = {"Helbrute (CSM)": 130, "Helbrute (DG)": 110,
+                "Helbrute (TS)": 110, "Helbrute (WE)": 120}
+
+    def test_get_datasheet_zh_name_discloses_all_four_factions(self, tmp_path):
+        db = _mk_same_name_db(tmp_path)
+
+        result = agent_tools.get_datasheet("地狱兽", db_path=db,
+                                           resolver=_resolver_for(db))
+
+        # ② 反面：照常给出兵牌，不因歧义降级成 found=False
+        assert result["found"] is True
+        siblings = result["same_name_other_factions"]
+        assert {s["candidate"]: s["points"] for s in siblings} == self.EXPECTED
+        # ③ 反面：四个点数都由库给出，模型无需（也不许）凭记忆补
+        assert all(s["points"] is not None for s in siblings)
+        assert sum(s["is_the_one_answered_above"] for s in siblings) == 1
+        assert "必须消歧" in result["note"]
+
+    def test_calc_points_zh_name_keeps_value_and_adds_all_factions(self, tmp_path):
+        db = _mk_same_name_db(tmp_path)
+
+        result = agent_tools.calc_points(["地狱兽"], db_path=db,
+                                          resolver=_resolver_for(db))
+
+        unit = result["units"][0]
+        assert unit["points"] == 120           # 已查到的数值不许因为消歧而消失
+        assert {s["candidate"]: s["points"]
+                for s in unit["same_name_other_factions"]} == self.EXPECTED
+        assert result["same_name_cross_faction"] == ["地狱兽"]
+
+    def test_calc_points_en_name_expands_candidates_into_points(self, tmp_path):
+        """英文名多命中此前只回候选、一个点数都不给——模型只能反问或凭记忆填数。"""
+        db = _mk_same_name_db(tmp_path)
+
+        result = agent_tools.calc_points(["Helbrute"], db_path=db,
+                                          resolver=_resolver_for(db))
+
+        unit = result["units"][0]
+        assert unit["ambiguous"] is True
+        assert {s["candidate"]: s["points"]
+                for s in unit["same_name_other_factions"]} == self.EXPECTED
+        assert "unresolved" not in result      # 有数据可给，就不是「没查到」
+
+    def test_same_faction_reprint_is_not_treated_as_ambiguous(self, tmp_path):
+        """同 name_en 同阵营的重印行（duplicate-units-audit）不是跨阵营歧义，别误报。"""
+        db = _mk_same_name_db(tmp_path)
+
+        result = agent_tools.calc_points(["终结者小队"], db_path=db,
+                                          resolver=_resolver_for(db))
+
+        assert result["units"][0]["points"] == 180
+        assert "same_name_other_factions" not in result["units"][0]
+        assert "same_name_cross_faction" not in result
+
+    def test_plain_canonical_id_input_is_unchanged(self, tmp_path):
+        """纯 id 入参是军表/web 的既有约定，行为不许被这次消歧改动波及。"""
+        db = _mk_same_name_db(tmp_path)
+
+        result = agent_tools.calc_points(["000004"], db_path=db,
+                                          resolver=_resolver_for(db))
+
+        assert result == {"found": True, "units": [
+            {"unit_id": "000004", "name_en": "Helbrute", "points": 120, "note": None}]}
+
+
+@pytest.mark.skipif(not agent_tools.DB_PATH.exists(), reason="需要 db/wh40k.sqlite")
+class TestSameNameCrossFactionRealDb:
+    """基准 #118 的真库钉子：四张 Helbrute 兵牌的官方点数必须一次全给到模型。"""
+
+    def test_helbrute_four_factions_points_from_real_db(self):
+        result = agent_tools.get_datasheet("地狱兽")
+
+        assert result["found"] is True
+        got = {s["faction"]: s["points"]
+               for s in result["same_name_other_factions"]}
+        assert got == {"CSM": 130, "DG": 110, "TS": 110, "WE": 120}
+
+
 class TestDefaultResolverSingletonThreadSafety:
     """M#7：无锁单例竞态——并发首调只允许构造一次 EntityResolver。"""
 

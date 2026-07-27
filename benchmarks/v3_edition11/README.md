@@ -194,6 +194,33 @@ WE 120，四行 `points_json["mfm"]` 溯源块与顶层 points 一致）。qa_go
 跑这两个类 **5 failed / 2 passed**（那 2 条是故意两边都绿的负向守卫：加 note 不许动判空口径、
 正常命中不许被打上 error），逐条验证过对旧实现真会红。
 
+## v3.5（2026-07-27）：#118 同名跨阵营不消歧已修（`qa_agent_results_same_name_disambig[_run2].json`）
+
+上一节点名的缺陷已修，且**根因与上一节的诊断一致**：歧义守卫只长在 `name_en` 精确匹配上，
+中文名走 `entity_resolver.resolve()` → 扁平的 `_zh_to_id` → `exact` → 静默四选一。
+
+修法**不动 resolver 的返回语义**（实测会让 **212 个**跨阵营同名中文名从 exact 翻成
+ambiguous，而 `find_datasheet` 只信 exact → 那 212 个名字全部返回 None，直接把一片题
+推向「因歧义拒答」），改为在工具边界**严格追加式**补报：新增只读
+`db_compile/datasheet.py::same_name_factions()` 按 unit_id 反查同名兄弟行（仅阵营数 > 1
+才算歧义，同阵营重印行不误报），`get_datasheet` / `calc_points` 拿到结果后追加
+`same_name_other_factions`（各候选的阵营 + 点数，全部取自结构库）与一条同时防住
+gold 三种判错情形的 note。`found` 仍为 True、已查到的数值照常返回，**纯 canonical id
+入参行为逐字节不变**（军表/web 的既有约定，有专门用例钉死）。
+
+连跑两轮均 **96.5**，对照 `qa_agent_results_r9_salvage.json` **共有题 verdict 差异 = 1**，
+即 **#118 ❌ → ✅**；两轮之间差异 0（连已知波动的 #41/#42 都没互换）。
+三题互斥锚点全部站住：#118 ①（不说阵营）❌→✅、#63 ②（因歧义拒答）✅→✅、
+#109 ③（凭记忆编否定断言）✅→✅。仍红的 #113/#114/#115 是库内点数过期，本轮按红线未碰。
+全程未改 gold、未写库。报告
+`docs/superpowers/specs/2026-07-27-same-name-cross-faction-disambiguation.md`。
+
+回归护栏：`tests/test_agent_tools.py::TestSameNameCrossFactionDisambiguation` 5 条 +
+`TestSameNameCrossFactionRealDb`（真库四张 Helbrute 点数钉子）。`git stash` 掉
+`agent/tools.py` + `db_compile/datasheet.py` 后跑这两个类 **4 failed / 2 passed**
+（那 2 条是故意两边都绿的负向守卫：同阵营重印不算歧义、纯 id 入参行为不变），
+逐条验证过对旧实现真会红。逐题对比脚本 `scripts/compare_bench_runs.py`。
+
 ## 与 v1（97.9，benchmarks/v1_10th/）的关系
 
 v1 与 v3 成绩不可直接比较（7 题 gold 语义变了 + 语料从 37 本十版换成 61 本分层）。

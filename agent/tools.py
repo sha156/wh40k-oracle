@@ -197,6 +197,47 @@ _CALC_POINTS_UNRESOLVED_NOTE = (
 )
 
 
+# ⚠️ 「同名跨阵营」和「查不到」「有歧义所以不能答」是三件事，这条 note 要同时防住三种错法。
+# 基准 #118（问「地狱兽（Helbrute）现在多少点？」）实测：库里 4 张各自独立的兵牌
+# （CSM 130 / DG 110 / TS 110 / WE 120），而中文名解析是「中文名 → 单个 cid」的扁平表，
+# 于是工具稳稳返回吞世者那张、模型照抄成「地狱兽当前点数为 120 分」——**一个数字，
+# 不说是哪个阵营**（gold 判错情形 ①）。修法不是把它变成拒答：那会掉进 gold 判错情形 ②
+# （#63 坦克指挥官那条「不降级也不作答」的死胡同）。所以本返回**照常给出已查到的数值**，
+# 另外把全部兄弟行连同各自点数一并附上，只要求模型作答时把阵营说清楚。
+_SAME_NAME_CROSS_FACTION_NOTE = (
+    "⚠️ 同名跨阵营：这个名字在库里有多张**各自独立**的兵牌，分属不同阵营，"
+    "点数与数值可能不同——全部候选及各自点数见 same_name_other_factions，"
+    "均取自结构库，不是记忆。"
+    "作答时**必须消歧**，二选一：要么把各阵营的数值逐一列出并指出差异，"
+    "要么明确写出「以下按 XX 阵营的〈单位名〉回答」。"
+    "禁止只报其中一个数值却不说明它属于哪个阵营。"
+    "⚠️ 同时禁止因为有歧义就拒答、或在未给出任何已查证数值前就把问题退回用户提问——"
+    "候选和点数本返回里都已给全；需要某一阵营的完整属性时，"
+    "用 `名字 (阵营缩写)` 形式回查 get_datasheet 即可。"
+)
+
+
+def _same_name_disclosure(
+    db_path: Path, unit_id: str,
+) -> Optional[List[Dict[str, Any]]]:
+    """同名跨阵营时 → 各兄弟行的 `候选名/阵营/点数`；不构成跨阵营歧义时 → None。
+
+    点数一并查出来，是为了让模型**不必**再发一轮工具调用就能逐个阵营列全（少一轮就少一次
+    「算了只说一个吧」的机会）；数值全部来自结构库，不给模型任何凭记忆补全的余地。
+    """
+    from db_compile.datasheet import same_name_factions
+
+    rows = same_name_factions(db_path, unit_id)
+    if not rows:
+        return None
+    points = {p.unit_id: p.points
+              for p in _calc_points_impl(db_path, [r[0] for r in rows])}
+    return [{"candidate": "{} ({})".format(name_en, faction or "?"),
+             "unit_id": uid, "faction": faction, "points": points.get(uid),
+             "is_the_one_answered_above": uid == unit_id}
+            for uid, name_en, faction in rows]
+
+
 def calc_points(
     unit_list: List[str],
     db_path: Optional[Path] = None,
@@ -226,6 +267,7 @@ def calc_points(
     results = _calc_points_impl(db_path, list(unit_list))
     units: List[Dict[str, Any]] = []
     unresolved: List[str] = []
+    ambiguous_queries: List[str] = []
     for query, r in zip(unit_list, results):
         if r.note != UNKNOWN_UNIT_NOTE:
             units.append({"unit_id": r.unit_id, "name_en": r.name_en,
@@ -237,14 +279,36 @@ def calc_points(
         if canonical_id:
             retry = _calc_points_impl(db_path, [canonical_id])[0]
             if retry.note != UNKNOWN_UNIT_NOTE:
-                units.append({
+                entry: Dict[str, Any] = {
                     "unit_id": retry.unit_id, "name_en": retry.name_en,
                     "points": retry.points, "note": retry.note,
                     "query": str(query),
                     "resolved_via": {"canonical_id": canonical_id,
                                      "confidence": resolved.get("confidence")},
-                })
+                }
+                # 名字解析成功 ≠ 名字无歧义：中文名索引是扁平表，四选一也会报 exact（#118）
+                siblings = _same_name_disclosure(db_path, retry.unit_id)
+                if siblings:
+                    entry["same_name_other_factions"] = siblings
+                    entry["note"] = _SAME_NAME_CROSS_FACTION_NOTE
+                    ambiguous_queries.append(str(query))
+                units.append(entry)
                 continue
+
+        # 英文名多命中（`Helbrute` → 4 个阵营候选）此前只回候选、一个点数都不给，模型要么
+        # 反问用户（判错情形 ②）要么凭记忆填数（判错情形 ③）。这里把候选逐个算出来。
+        expanded = _points_for_candidates(
+            db_path, (resolved or {}).get("candidates") or [], resolver)
+        if expanded:
+            units.append({
+                "unit_id": None, "name_en": None, "points": None,
+                "query": str(query), "ambiguous": True,
+                "candidates": (resolved or {}).get("candidates") or [],
+                "same_name_other_factions": expanded,
+                "note": _SAME_NAME_CROSS_FACTION_NOTE,
+            })
+            ambiguous_queries.append(str(query))
+            continue
 
         unresolved.append(str(query))
         units.append({"unit_id": r.unit_id, "name_en": None, "points": None,
@@ -253,10 +317,31 @@ def calc_points(
                       "note": _CALC_POINTS_UNRESOLVED_NOTE})
 
     out: Dict[str, Any] = {"found": True, "units": units}
+    if ambiguous_queries:
+        out["same_name_cross_faction"] = ambiguous_queries
+        out["note"] = ("以下名字同名跨阵营：" + "、".join(ambiguous_queries)
+                       + "。" + _SAME_NAME_CROSS_FACTION_NOTE)
     if unresolved:
         out["unresolved"] = unresolved
-        out["note"] = ("以下名字没能解析到库内单位：" + "、".join(unresolved)
+        # 两种情况可以同时出现（一次问多个单位），措辞各自保留，别互相覆盖
+        out["note"] = (out.get("note", "")
+                       + "以下名字没能解析到库内单位：" + "、".join(unresolved)
                        + "。" + _CALC_POINTS_UNRESOLVED_NOTE)
+    return out
+
+
+def _points_for_candidates(
+    db_path: Path, candidates: List[str], resolver: Optional[EntityResolver],
+) -> List[Dict[str, Any]]:
+    """`Helbrute (WE)` 形式的候选串 → 各自的 `候选名/阵营/点数`；一个都解析不到则返回空表。"""
+    out: List[Dict[str, Any]] = []
+    for cand in candidates:
+        cid = (_resolve_for_points(cand, resolver) or {}).get("canonical_id")
+        if not cid:
+            continue
+        r = _calc_points_impl(db_path, [cid])[0]
+        out.append({"candidate": cand, "unit_id": r.unit_id,
+                    "name_en": r.name_en, "points": r.points, "note": r.note})
     return out
 
 
@@ -315,6 +400,13 @@ def get_datasheet(
         return {"found": False, "datasheet": None, "note": "库中未找到该单位"}
 
     out: Dict[str, Any] = {"found": True, "datasheet": asdict(ds)}
+    # 上面的 AmbiguousUnitName 分支只覆盖**英文名**直查多命中；中文名走 entity_resolver，
+    # 而中文索引是「中文名 → 单个 cid」的扁平表，四选一同样报 exact、悄悄落到其中一张
+    # （基准 #118 的地狱兽）。这里按拿到的 unit_id 反查兄弟行，把漏掉的那半边歧义补报。
+    siblings = _same_name_disclosure(db_path, ds.unit_id)
+    if siblings:
+        out["same_name_other_factions"] = siblings
+        out["note"] = _SAME_NAME_CROSS_FACTION_NOTE
     # 叠加黑图书馆中文原生 datasheet（属性/能力/武器）——英文仍是权威真值，
     # 中文层供作答时用母语呈现能力/武器描述。表不存在或无此单位时静默跳过。
     try:
@@ -327,8 +419,10 @@ def get_datasheet(
             conflicts = diff_core_stats(ds, zh)
             if conflicts:
                 out["stat_conflicts"] = conflicts
-                out["note"] = ("黑图书馆中文层与官方源在部分属性上不一致，"
-                               "数值以官方英文属性块(datasheet)为准。")
+                # 追加而非覆盖：同名跨阵营的消歧铁律不能被这句话顶掉
+                out["note"] = (out.get("note", "")
+                               + "黑图书馆中文层与官方源在部分属性上不一致，"
+                                 "数值以官方英文属性块(datasheet)为准。")
     except Exception:
         pass
     return out
