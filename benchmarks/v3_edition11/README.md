@@ -165,6 +165,35 @@ apply 后 `--check` 收敛到 1319/1319/过期 0）。gold 没有为了分数好
 `tests/test_llm_client.py::test_next_step_system_prompt_bans_negative_assertions_on_lookup_miss`。
 `git stash` 掉实现后跑新用例 **5 failed**，逐条验证过对旧实现真会红。
 
+## v3.4（2026-07-27）：4 个查询类工具「查不到/空结果」路径排查（`qa_agent_results_empty_path_audit.json`）
+
+排查 `get_datasheet` / `rag_search` / `entity_resolver` / `get_keyword_definition` 四个
+「按名字取数据」工具的空手路径（措辞 / `_EMPTY_CHECKS` 双向 / 下一步指引），
+排查表与逐条证据见 `docs/superpowers/specs/2026-07-27-query-tools-empty-path-audit.md`。
+两处确认缺陷已修（`entity_resolver` 空手补 note；`rag_search` 把「环境故障」与「零命中」
+分流并加 `error` 标志），判空口径一行未动。
+
+新增 **#118**（地狱兽 Helbrute 同名跨阵营，gold 取库内四行 CSM 130 / DG 110 / TS 110 /
+WE 120，四行 `points_json["mfm"]` 溯源块与顶层 points 一致）。qa_gold 113 → **114 题**。
+
+成绩 114 题 **110 ✅ / 1 ⚠️ / 3 ❌ = 96.5**。**既有 113 题逐题零退化**：❌ 仍是且仅是
+#113/#114/#115（库内点数过期，等 `mfm --apply`）；#41 由 ⚠️ 变 ✅（已点名的固定波动题，
+本轮没碰它那条路由，不算本轮功劳）。
+
+**#118 当前 ⚠️，是如实披露的新缺陷而非 gold 问题**：`get_datasheet` 的歧义守卫只长在
+`name_en` 精确匹配上（`db_compile/datasheet.py:205-216`），**中文名**走
+`entity_resolver.resolve()` → `_zh_to_id`（`setdefault` 先入者胜）→ `exact` → 静默返回
+其中一张兵牌，`reason`/`candidates` 全无；而提示词恰恰要求模型直接传中文名
+（`agent/llm_client.py:98-100`）——评审 #25 要防的「静默取一」在主路径上没有生效。
+#118 记录里 `tool_calls: ["get_datasheet"]`、`degraded: false`、只答 120（吞世者那张），
+英文名 `get_datasheet("Helbrute")` 则正常抛 ambiguous + 4 候选预览。修它要动
+`find_datasheet` 中文分支并整轮重跑基准，留给独立一轮。
+
+回归护栏：`tests/test_agent_tools.py::TestEntityResolverEmptyPathHonesty` 3 条 +
+`TestRagSearchFailureStatesAreDistinguishable` 4 条；把 `agent/tools.py` 恢复到 HEAD 后
+跑这两个类 **5 failed / 2 passed**（那 2 条是故意两边都绿的负向守卫：加 note 不许动判空口径、
+正常命中不许被打上 error），逐条验证过对旧实现真会红。
+
 ## 与 v1（97.9，benchmarks/v1_10th/）的关系
 
 v1 与 v3 成绩不可直接比较（7 题 gold 语义变了 + 语料从 37 本十版换成 61 本分层）。
