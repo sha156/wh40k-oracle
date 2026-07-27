@@ -20,7 +20,25 @@
 .\.venv\Scripts\python.exe -m wiki_compile fetch-canonical  # 下载 Wahapedia CSV（需代理）
 .\.venv\Scripts\python.exe -m wiki_compile pair --llm       # 中英配对（LLM兜底需 DEEPSEEK_API_KEY）
 .\.venv\Scripts\python.exe -m wiki_compile terms            # 生成 wiki/terms.*
+
+# 生成物只准由正规命令产出（测试一律写临时目录，跑完 git status 必须干净）
+.\.venv\Scripts\python.exe -m wiki_engine keywords          # wiki/indexes/keywords.{md,json}
+.\.venv\Scripts\python.exe -m wiki_engine lint              # 0 error 才算过
 ```
+
+### 重建库后中文层的复现路径（`db/wh40k.sqlite` 是 gitignored，别靠库里现有的东西）
+
+```powershell
+.\.venv\Scripts\python.exe -m db_compile build   # 重建后自动跑 restore_authority_layers
+```
+
+`build` → `update.restore_authority_layers` → `stage_zh_details` → `blacklibrary.populate_zh_details`，
+从**本地缓存** `db_sources/blacklibrary/details.json`（gitignored，刷新走
+`scripts/fetch_blacklibrary_details.py`，需网络）灌回 `unit_zh_detail` 与 `units.name_zh`。
+2026-07-27 实测：已提交代码 + 当前缓存 → 1135 行（`matched 939 / matched_by_zh 7 / unmatched 131`），
+**中文名桥那 8 行一个不少**，所以「库里有、代码里没有」的风险在这一层不存在。
+钉死用例 `tests/test_db_compile_zh_coverage.py::TestRealCorpus::test_zh_name_bridge_survives_a_db_rebuild`
+（在库的副本上重跑，真库零改动）。
 
 ## 架构与技术栈
 
@@ -232,7 +250,23 @@
   即注释里点名的「回归 7 题」防线）：**结构库 ≠ 全部语料**。新增基准 #119（qa_gold v3.5，
   既有 114 题逐字段零改动），四题锚点 #63/#109/#118/#119 两轮全 ✅，2391 测试绿。
   报告 `docs/superpowers/specs/2026-07-27-fuzzy-silent-mismatch-fix.md`
-- **剩余**：#41 兽人小子 ⚠️ 漏项（非硬错）——`get_entity` 现在 exact 命中致 agent 走兵牌查表
+- **中文名桥可复现性已固化 + 测试不再写仓库产物**（2026-07-27）：① 上一轮补进库的两个中文名
+  （死神军阴谋团武士 / 文崔斯连长）查明**不依赖任何未提交改动**——已提交代码 + 本地
+  `details.json` 缓存重跑 `populate_zh_details` 稳定得到 1135 行、6 个目标单位全在
+  （`db_compile build` 经 `restore_authority_layers` 走的就是这条，复现命令见上「运行方式」）；
+  `1129→1135` 变的是**缓存**不是代码。哪 6 个是新的有**两条独立证据**对上：条目数算术
+  （新 6 行 16 条 + 旧 2 行 5 条 = 桥共 21）与 HEAD 的 wiki 页 grep（只有克拉维克·莫恩、
+  装备重型武器的天灾查得到）分界线完全重合。护栏 `test_zh_name_bridge_survives_a_db_rebuild`
+  在库副本上重跑，真库零改动。② `EXPECTED_ZH_ITEMS` 3280→**3296**，注释逐单位写明来源。
+  ③ `test_generate_index_is_complete_and_linked` 从前直接写 `wiki/indexes/`——跑一次 pytest
+  工作区就脏、下一轮 gnhf "Working tree is not clean" 秒退；`keyword_index.generate` 加
+  `out_root`（**读真 wiki 判断链、写临时目录**，默认相等⇒正常生成逐字节不变），
+  产物改由正规命令 `python -m wiki_engine keywords` 重生成。2392 测试绿、两处 lint 0 error、
+  全量 pytest 后 git status 干净。报告
+  `docs/superpowers/specs/2026-07-27-zh-bridge-reproducibility-and-test-artifacts.md`
+- **剩余**：#113/#117 数据来源路由（该查库时去查了 PDF）仍未修，#117 两轮摆动；
+  上述 6 个单位的 wiki **兵牌页**尚未按新中文层重生成（词条索引已跟上，lint 0 error 不阻塞）。
+  #41 兽人小子 ⚠️ 漏项（非硬错）——`get_entity` 现在 exact 命中致 agent 走兵牌查表
   不再检索规则书，改它要动「查表 vs 检索」路由偏好，波及面大。基准扩充长期滚动。
   wiki 收尾候选：武器词条页的「规则页 NN.NN · 正文页待上线」现在可以
   真接成到核心规则章节页的链接了。

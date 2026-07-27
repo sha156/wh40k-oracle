@@ -376,12 +376,6 @@
    "totalUnits": 252,
    "weapons": [
     {
-     "name": "Sybarite weapon",
-     "units": [
-      "Ynnari Kabalite Warriors"
-     ]
-    },
-    {
      "name": "一对战斗刀",
      "units": [
       "装备复合武器的先锋军副官"
@@ -409,6 +403,12 @@
      "name": "产卵针刺",
      "units": [
       "摩崔克斯寄生虫"
+     ]
+    },
+    {
+     "name": "享乐者武器",
+     "units": [
+      "死神军阴谋团武士"
      ]
     },
     {
@@ -747,7 +747,6 @@
     {
      "name": "毒晶手枪",
      "units": [
-      "Ynnari Kabalite Warriors",
       "劫掠者",
       "巫灵",
       "执政官",
@@ -755,6 +754,7 @@
       "死神军劫掠者",
       "死神军巫灵",
       "死神军执政官",
+      "死神军阴谋团武士",
       "死神军魅魔",
       "滑板暴徒",
       "装备毒晶卡宾枪天灾",
@@ -765,21 +765,21 @@
     {
      "name": "毒晶步枪",
      "units": [
-      "Ynnari Kabalite Warriors",
       "劫掠者",
       "执政官之手",
       "死神军劫掠者",
       "死神军毒灾飞艇",
+      "死神军阴谋团武士",
       "阴谋团战士"
      ]
     },
     {
      "name": "毒晶炮",
      "units": [
-      "Ynnari Kabalite Warriors",
       "刃翼战机",
       "执政官之手",
       "死神军毒灾飞艇",
+      "死神军阴谋团武士",
       "毒液飞艇",
       "装备重型武器的天灾",
       "阴谋团战士"
@@ -2375,7 +2375,6 @@
     {
      "name": "毒晶手枪",
      "units": [
-      "Ynnari Kabalite Warriors",
       "劫掠者",
       "巫灵",
       "执政官",
@@ -2383,6 +2382,7 @@
       "死神军劫掠者",
       "死神军巫灵",
       "死神军执政官",
+      "死神军阴谋团武士",
       "死神军魅魔",
       "滑板暴徒",
       "装备毒晶卡宾枪天灾",
@@ -2393,11 +2393,11 @@
     {
      "name": "毒晶步枪",
      "units": [
-      "Ynnari Kabalite Warriors",
       "劫掠者",
       "执政官之手",
       "死神军劫掠者",
       "死神军毒灾飞艇",
+      "死神军阴谋团武士",
       "阴谋团战士"
      ]
     },
@@ -2618,11 +2618,11 @@
     {
      "name": "爆能枪",
      "units": [
-      "Ynnari Kabalite Warriors",
       "劫掠者",
       "天空掠夺者海盗",
       "执政官之手",
       "死神军劫掠者",
+      "死神军阴谋团武士",
       "虚空劫掠者海盗",
       "虚空裂痕海盗",
       "装备毒晶卡宾枪天灾",
@@ -2766,9 +2766,9 @@
     {
      "name": "粉碎枪",
      "units": [
-      "Ynnari Kabalite Warriors",
       "天空掠夺者海盗",
       "执政官之手",
+      "死神军阴谋团武士",
       "虚空劫掠者海盗",
       "虚空裂痕海盗",
       "装备毒晶卡宾枪天灾",
@@ -3027,9 +3027,9 @@
    "params": [],
    "engine": "数值建模",
    "rulePage": "core-rules/blast.md",
-   "currentWeapons": 283,
-   "totalWeapons": 355,
-   "currentUnits": 360,
+   "currentWeapons": 284,
+   "totalWeapons": 356,
+   "currentUnits": 362,
    "totalUnits": 561,
    "weapons": [
     {
@@ -4214,8 +4214,15 @@
     {
      "name": "等离子炮-标准",
      "units": [
+      "奴工【传奇】",
       "审判官特勤",
       "死亡守望终结者小队"
+     ]
+    },
+    {
+     "name": "等离子炮-超载",
+     "units": [
+      "奴工【传奇】"
      ]
     },
     {
@@ -4241,6 +4248,7 @@
      "name": "等离子炮（标准）",
      "units": [
       "侦查哨兵",
+      "奴工【传奇】",
       "战术小队",
       "死翼终结者小队",
       "破坏者小队",
@@ -4258,6 +4266,7 @@
      "name": "等离子炮（过载）",
      "units": [
       "侦查哨兵",
+      "奴工【传奇】",
       "战术小队",
       "死翼终结者小队",
       "破坏者小队",
@@ -5082,7 +5091,7 @@
    "rulePage": "core-rules/devastating-wounds.md",
    "currentWeapons": 221,
    "totalWeapons": 267,
-   "currentUnits": 352,
+   "currentUnits": 353,
    "totalUnits": 510,
    "weapons": [
     {
@@ -6430,6 +6439,7 @@
     {
      "name": "雷霆锤",
      "units": [
+      "【传奇】装备爆弹枪的死亡连战士",
       "仲裁者小队",
       "剑之兄弟小队",
       "战术小队",
@@ -7105,9 +7115,9 @@
    "params": [],
    "engine": "仅标注",
    "rulePage": "core-rules/hazardous.md",
-   "currentWeapons": 81,
-   "totalWeapons": 101,
-   "currentUnits": 225,
+   "currentWeapons": 82,
+   "totalWeapons": 102,
+   "currentUnits": 228,
    "totalUnits": 327,
    "weapons": [
     {
@@ -7389,6 +7399,7 @@
     {
      "name": "等离子手枪-过载",
      "units": [
+      "【传奇】装备爆弹枪的死亡连战士",
       "天鹰杀戮小队",
       "审判官特勤",
       "背叛者卡恩",
@@ -7520,6 +7531,12 @@
      ]
     },
     {
+     "name": "等离子炮-超载",
+     "units": [
+      "奴工【传奇】"
+     ]
+    },
+    {
      "name": "等离子炮-过载",
      "units": [
       "审判官特勤",
@@ -7536,6 +7553,7 @@
      "name": "等离子炮（过载）",
      "units": [
       "侦查哨兵",
+      "奴工【传奇】",
       "战术小队",
       "死翼终结者小队",
       "破坏者小队",
@@ -7731,9 +7749,9 @@
    "params": [],
    "engine": "数值建模",
    "rulePage": "core-rules/heavy.md",
-   "currentWeapons": 129,
-   "totalWeapons": 157,
-   "currentUnits": 132,
+   "currentWeapons": 130,
+   "totalWeapons": 158,
+   "currentUnits": 134,
    "totalUnits": 217,
    "weapons": [
     {
@@ -7810,6 +7828,7 @@
      "units": [
       "不屈杀戮小队",
       "仇天使小队",
+      "奴工【传奇】",
       "审判官特勤",
       "战斗修女小队",
       "战术小队",
@@ -8027,8 +8046,8 @@
     {
      "name": "毒晶炮",
      "units": [
-      "Ynnari Kabalite Warriors",
       "执政官之手",
+      "死神军阴谋团武士",
       "装备重型武器的天灾",
       "阴谋团战士"
      ]
@@ -8250,7 +8269,14 @@
     {
      "name": "等离子炮-标准",
      "units": [
+      "奴工【传奇】",
       "审判官特勤"
+     ]
+    },
+    {
+     "name": "等离子炮-超载",
+     "units": [
+      "奴工【传奇】"
      ]
     },
     {
@@ -8262,6 +8288,7 @@
     {
      "name": "等离子炮（标准）",
      "units": [
+      "奴工【传奇】",
       "战术小队",
       "破坏者小队"
      ]
@@ -8269,6 +8296,7 @@
     {
      "name": "等离子炮（过载）",
      "units": [
+      "奴工【传奇】",
       "战术小队",
       "破坏者小队"
      ]
@@ -8475,6 +8503,7 @@
     {
      "name": "重型爆矢枪",
      "units": [
+      "奴工【传奇】",
       "奴工战斗支队"
      ]
     },
@@ -8595,7 +8624,7 @@
     {
      "name": "黑暗光矛",
      "units": [
-      "Ynnari Kabalite Warriors"
+      "死神军阴谋团武士"
      ]
     }
    ]
@@ -8627,8 +8656,8 @@
    "engine": "数值建模",
    "rulePage": "core-rules/ignores-cover.md",
    "currentWeapons": 172,
-   "totalWeapons": 190,
-   "currentUnits": 335,
+   "totalWeapons": 191,
+   "currentUnits": 336,
    "totalUnits": 505,
    "weapons": [
     {
@@ -9056,6 +9085,7 @@
     {
      "name": "手持喷火器",
      "units": [
+      "【传奇】装备爆弹枪的死亡连战士",
       "死亡连小队",
       "装备爆弹步枪的死亡连小队",
       "装备跳跃背包的死亡连小队"
@@ -10417,9 +10447,9 @@
    "params": [],
    "engine": "数值建模",
    "rulePage": "core-rules/lethal-hits.md",
-   "currentWeapons": 133,
+   "currentWeapons": 134,
    "totalWeapons": 150,
-   "currentUnits": 127,
+   "currentUnits": 128,
    "totalUnits": 163,
    "weapons": [
     {
@@ -11241,6 +11271,12 @@
      ]
     },
     {
+     "name": "高斯灭绝炮",
+     "units": [
+      "哨戒石碑塔"
+     ]
+    },
+    {
      "name": "高斯炮",
      "units": [
       "古墓指挥艇",
@@ -11320,9 +11356,9 @@
    ],
    "engine": "数值建模",
    "rulePage": "core-rules/melta.md",
-   "currentWeapons": 50,
+   "currentWeapons": 51,
    "totalWeapons": 62,
-   "currentUnits": 192,
+   "currentUnits": 196,
    "totalUnits": 323,
    "weapons": [
     {
@@ -11393,6 +11429,7 @@
       "地狱兽",
       "地狱犬喷射车",
       "处决者型反击者坦克",
+      "奴工【传奇】",
       "审判官特勤",
       "恶臭疫病拖车",
       "战斗修女小队",
@@ -11493,6 +11530,12 @@
      "name": "灵能卷须-神经之矛",
      "units": [
       "诺恩使者"
+     ]
+    },
+    {
+     "name": "灼热光炮",
+     "units": [
+      "哨戒石碑塔"
      ]
     },
     {
@@ -11655,6 +11698,7 @@
     {
      "name": "狱火手枪",
      "units": [
+      "【传奇】装备爆弹枪的死亡连战士",
       "仇天使小队",
       "圣血卫队",
       "圣血连长",
@@ -11905,8 +11949,8 @@
    "engine": "仅标注",
    "rulePage": "core-rules/pistol.md",
    "currentWeapons": 129,
-   "totalWeapons": 147,
-   "currentUnits": 401,
+   "totalWeapons": 148,
+   "currentUnits": 402,
    "totalUnits": 527,
    "weapons": [
     {
@@ -12122,6 +12166,7 @@
     {
      "name": "手持喷火器",
      "units": [
+      "【传奇】装备爆弹枪的死亡连战士",
       "死亡连小队",
       "装备爆弹步枪的死亡连小队",
       "装备跳跃背包的死亡连小队"
@@ -12251,7 +12296,6 @@
     {
      "name": "毒晶手枪",
      "units": [
-      "Ynnari Kabalite Warriors",
       "劫掠者",
       "巫灵",
       "执政官",
@@ -12259,6 +12303,7 @@
       "死神军劫掠者",
       "死神军巫灵",
       "死神军执政官",
+      "死神军阴谋团武士",
       "死神军魅魔",
       "滑板暴徒",
       "装备毒晶卡宾枪天灾",
@@ -12376,8 +12421,8 @@
      "name": "爆弹手枪",
      "units": [
       "ATV 突击车",
-      "Uriel Ventris",
       "【传奇】地狱之末",
+      "【传奇】装备爆弹枪的死亡连战士",
       "书记修女",
       "仇天使小队",
       "仲裁者小队",
@@ -12427,6 +12472,7 @@
       "持像者",
       "政委",
       "教条官",
+      "文崔斯连长",
       "施虐者",
       "旗手",
       "无瑕之刃",
@@ -12502,13 +12548,13 @@
     {
      "name": "爆能手枪",
      "units": [
-      "Ynnari Kabalite Warriors",
       "天空掠夺者海盗",
       "巫灵",
       "执政官",
       "执政官之手",
       "死神军巫灵",
       "死神军执政官",
+      "死神军阴谋团武士",
       "死神军魅魔",
       "装备毒晶卡宾枪天灾",
       "装备重型武器的天灾",
@@ -12538,6 +12584,7 @@
     {
      "name": "狱火手枪",
      "units": [
+      "【传奇】装备爆弹枪的死亡连战士",
       "仇天使小队",
       "圣血卫队",
       "圣血连长",
@@ -12629,6 +12676,7 @@
     {
      "name": "等离子手枪-标准",
      "units": [
+      "【传奇】装备爆弹枪的死亡连战士",
       "天鹰杀戮小队",
       "审判官特勤",
       "狼侦查",
@@ -12645,6 +12693,7 @@
     {
      "name": "等离子手枪-过载",
      "units": [
+      "【传奇】装备爆弹枪的死亡连战士",
       "天鹰杀戮小队",
       "审判官特勤",
       "背叛者卡恩",
@@ -16218,17 +16267,11 @@
    ],
    "engine": "数值建模",
    "rulePage": "core-rules/sustained-hits.md",
-   "currentWeapons": 177,
+   "currentWeapons": 178,
    "totalWeapons": 209,
-   "currentUnits": 330,
+   "currentUnits": 333,
    "totalUnits": 564,
    "weapons": [
-    {
-     "name": "Sword of Idaeus",
-     "units": [
-      "Uriel Ventris"
-     ]
-    },
     {
      "name": "一对战斗刀",
      "units": [
@@ -16266,6 +16309,12 @@
      "name": "亚空间诅咒（聚焦）",
      "units": [
       "黑暗巫会"
+     ]
+    },
+    {
+     "name": "伊代奥斯之剑",
+     "units": [
+      "文崔斯连长"
      ]
     },
     {
@@ -16808,10 +16857,10 @@
     {
      "name": "毒晶炮",
      "units": [
-      "Ynnari Kabalite Warriors",
       "刃翼战机",
       "执政官之手",
       "死神军毒灾飞艇",
+      "死神军阴谋团武士",
       "毒液飞艇",
       "装备重型武器的天灾",
       "阴谋团战士"
@@ -17095,6 +17144,12 @@
      ]
     },
     {
+     "name": "聚焦死光",
+     "units": [
+      "哨戒石碑塔"
+     ]
+    },
+    {
      "name": "肃卫重型爆弹枪",
      "units": [
       "肃卫老兵小队"
@@ -17321,6 +17376,7 @@
     {
      "name": "重型爆矢枪",
      "units": [
+      "奴工【传奇】",
       "奴工战斗支队",
       "英特兰齐娅·弗雷娅"
      ]
@@ -17446,8 +17502,8 @@
    "engine": "数值建模",
    "rulePage": "core-rules/torrent.md",
    "currentWeapons": 142,
-   "totalWeapons": 163,
-   "currentUnits": 329,
+   "totalWeapons": 164,
+   "currentUnits": 330,
    "totalUnits": 506,
    "weapons": [
     {
@@ -17805,6 +17861,7 @@
     {
      "name": "手持喷火器",
      "units": [
+      "【传奇】装备爆弹枪的死亡连战士",
       "死亡连小队",
       "装备爆弹步枪的死亡连小队",
       "装备跳跃背包的死亡连小队"
@@ -18204,9 +18261,9 @@
     {
      "name": "粉碎枪",
      "units": [
-      "Ynnari Kabalite Warriors",
       "天空掠夺者海盗",
       "执政官之手",
+      "死神军阴谋团武士",
       "虚空劫掠者海盗",
       "虚空裂痕海盗",
       "装备毒晶卡宾枪天灾",

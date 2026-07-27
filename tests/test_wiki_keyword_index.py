@@ -131,8 +131,12 @@ def test_rule_page_follows_alias_not_only_slug():
 @needs_db
 @needs_pdf
 def test_generate_index_is_complete_and_linked(tmp_path):
-    rep = generate(DB, WIKI, PDF)
-    text = (WIKI / "indexes" / "keywords.md").read_text(encoding="utf-8")
+    # out_root=tmp_path：读真库 + 真 wiki 页（断链判定要的就是真页），但**写去临时目录**。
+    # 从前这里直接写 wiki/indexes/，跑一次 pytest 就把仓库产物弄脏，
+    # 下一轮 gnhf 以 "Working tree is not clean" 秒退。产物只准由
+    # `python -m wiki_engine keywords` 正规生成。
+    rep = generate(DB, WIKI, PDF, out_root=tmp_path)
+    text = (tmp_path / "indexes" / "keywords.md").read_text(encoding="utf-8")
 
     # 对账：三档之和 == 词条总数（不许有词条掉出分档）
     assert sum(rep["groups"].values()) == rep["keywords"]
