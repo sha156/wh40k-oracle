@@ -5,12 +5,13 @@ name_en: Great Unclean One
 faction: 死亡守卫
 type: unit
 points:
-  1 model: 250
+  1 model: 265
 tags:
 - unit
 - unit/死亡守卫
 - 死亡守卫
 version:
+  points: MFM 2026-07-27 15:14
   source: official-db
 sources:
 - book: 官方结构库 db/wh40k.sqlite（Wahapedia 11版镜像 + MFM 官方点数）
@@ -47,7 +48,7 @@ updated: '2026-07-23'
 - **受损：剩余 1-7 点耐伤**：该模型剩余 1-7 点耐伤时，每当该模型进行攻击，命中掷骰结果减少1点。
 
 ## 单位构成
-- **1个模型** — 250 分
+- **1个模型** — 265 分
 
 ## 关键词
 - **阵营关键词**：Plague Legions

@@ -5,12 +5,13 @@ name_en: Skarbrand
 faction: 吞世者
 type: unit
 points:
-  1 model: 305
+  1 model: 315
 tags:
 - unit
 - unit/吞世者
 - 吞世者
 version:
+  points: MFM 2026-07-27 15:14
   source: official-db
 sources:
 - book: 官方结构库 db/wh40k.sqlite（Wahapedia 11版镜像 + MFM 官方点数）
@@ -42,7 +43,7 @@ updated: '2026-07-23'
 - **杀戮渴望**：此单位可以在其进行了奔跑的回合进行冲锋。
 
 ## 单位构成
-- **1个模型** — 305 分
+- **1个模型** — 315 分
 
 ## 关键词
 - **阵营关键词**：Blood Legions

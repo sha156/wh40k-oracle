@@ -11,7 +11,7 @@ tags:
 - unit/兽人
 - 兽人
 version:
-  points: MFM 2026-07-23 14:17
+  points: MFM 2026-07-27 15:14
   source: official-db
 sources:
 - book: 官方结构库 db/wh40k.sqlite（Wahapedia 11版镜像 + MFM 官方点数）
@@ -50,4 +50,4 @@ updated: '2026-07-23'
 
 ## 关键词
 - **阵营关键词**：兽人
-- **普通关键词**：[[core-rules/infantry.md|步兵]]，[[core-rules/character.md|人物]]，超重装甲，技师，超重装[[factions/兽人/units/big-mek.md|大技霸]]
+- **普通关键词**：[[core-rules/infantry.md|步兵]]，[[core-rules/character.md|人物]]，超重装甲，技师，超重装大技霸

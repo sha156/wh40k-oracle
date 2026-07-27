@@ -11,7 +11,7 @@ tags:
 - unit/太空死灵
 - 太空死灵
 version:
-  points: MFM 2026-07-23 14:17
+  points: MFM 2026-07-27 15:14
   source: official-db
 sources:
 - book: 官方结构库 db/wh40k.sqlite（Wahapedia 11版镜像 + MFM 官方点数）
@@ -47,4 +47,4 @@ updated: '2026-07-23'
 
 ## 关键词
 - **阵营关键词**：Necrons
-- **普通关键词**：Destroyer Cult，[[core-rules/character.md|Character]]，[[core-rules/infantry.md|Infantry]]，Skorpekh [[factions/太空死灵/units/lord.md|Lord]]
+- **普通关键词**：Destroyer Cult，[[core-rules/character.md|Character]]，[[core-rules/infantry.md|Infantry]]，Skorpekh Lord

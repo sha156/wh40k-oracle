@@ -11,7 +11,7 @@ tags:
 - unit/星际战士
 - 星际战士
 version:
-  points: MFM 2026-07-23 14:17
+  points: MFM 2026-07-27 15:14
   source: official-db
 sources:
 - book: 官方结构库 db/wh40k.sqlite（Wahapedia 11版镜像 + MFM 官方点数）
@@ -41,7 +41,7 @@ updated: '2026-07-23'
 
 ## 技能
 - **【阵营技能】破敌重誓**
-- **闪电机动**
+- **闪电机动**：对该单位进行的远程攻击拥有致伤掷骰 -1
 - **严重损伤**：本模型W为1-3时，攻击命中结果-1
 
 ## 单位构成

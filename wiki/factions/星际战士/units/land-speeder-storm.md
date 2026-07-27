@@ -40,4 +40,4 @@ updated: '2026-07-23'
 
 ## 关键词
 - **阵营关键词**：Adeptus Astartes
-- **普通关键词**：Vehicle，Fly，[[core-rules/transport.md|Transport]]，[[core-rules/dedicated-transport.md|Dedicated Transport]]，Imperium，[[factions/星际战士/units/land-speeder.md|Land Speeder]] Storm，Ravenwing
+- **普通关键词**：Vehicle，Fly，[[core-rules/transport.md|Transport]]，[[core-rules/dedicated-transport.md|Dedicated Transport]]，Imperium，Land Speeder Storm，Ravenwing

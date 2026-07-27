@@ -6,12 +6,13 @@ faction: 星际战士
 type: unit
 points:
   3 models: 110
-  6 models: 220
+  6 models: 230
 tags:
 - unit
 - unit/星际战士
 - 星际战士
 version:
+  points: MFM 2026-07-27 15:14
   source: official-db
 sources:
 - book: 官方结构库 db/wh40k.sqlite（Wahapedia 11版镜像 + MFM 官方点数）
@@ -42,7 +43,7 @@ updated: '2026-07-23'
 
 ## 单位构成
 - **3个模型** — 110 分
-- **6个模型** — 220 分
+- **6个模型** — 230 分
 
 ## 关键词
 - **阵营关键词**：Ultramarines，Adeptus Astartes

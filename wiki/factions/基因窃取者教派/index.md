@@ -1,6 +1,6 @@
 # 基因窃取者教派
 
-_Last updated: 2026-07-26 08:40 UTC_
+_Last updated: 2026-07-27 11:51 UTC_
 
 ## 分队
 
@@ -76,6 +76,7 @@ _Last updated: 2026-07-26 08:40 UTC_
 - [[factions/基因窃取者教派/units/scout-sentinels|侦查哨兵]] — 
 - [[factions/基因窃取者教派/units/krieg-combat-engineers|克里格战斗工兵]] — 
 - [[factions/基因窃取者教派/units/krieg-command-squad|克里格指挥组]] — 
+- [[factions/基因窃取者教派/units/death-riders|克里格死亡骑兵]] — 
 - [[factions/基因窃取者教派/units/death-korps-of-krieg|克里格死兵队]] — 
 - [[factions/基因窃取者教派/units/krieg-heavy-weapons-squad|克里格重型武器小队]] — 
 - [[factions/基因窃取者教派/units/von-ryans-leapers|冯·瑞恩跃袭者]] — 
@@ -113,7 +114,6 @@ _Last updated: 2026-07-26 08:40 UTC_
 - [[factions/基因窃取者教派/units/goliath-rockgrinder|歌利亚碎石车]] — 
 - [[factions/基因窃取者教派/units/deathstrike|死亡直击导弹车]] — 
 - [[factions/基因窃取者教派/units/deathleaper|死亡跃袭者]] — 
-- [[factions/基因窃取者教派/units/death-riders|死亡骑兵]] — 
 - [[factions/基因窃取者教派/units/banesword|毁灭之剑]] — 
 - [[factions/基因窃取者教派/units/banehammer|毁灭之锤]] — 
 - [[factions/基因窃取者教派/units/baneblade|毒刃]] — 

@@ -24,7 +24,7 @@ updated: '2026-07-23'
 ## 射击武器
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| [[factions/基因窃取者教派/units/macharius.md\|Macharius]] vulcan mega-bolter | 48" | 16 | 4+ | 6 | -1 | 2 | [[core-rules/sustained-hits.md\|连击1]] |
+| Macharius vulcan mega-bolter | 48" | 16 | 4+ | 6 | -1 | 2 | [[core-rules/sustained-hits.md\|连击1]] |
 | 风暴爆弹枪 | 24" | 2 | 4+ | 4 | 0 | 1 | [[core-rules/rapid-fire.md\|速射2]] |
 | Heavy stubber | 36" | 3 | 4+ | 4 | 0 | 1 | [[core-rules/rapid-fire.md\|速射3]] |
 | 猎杀飞弹 | 48" | 1 | 4+ | 14 | -3 | D6 | [[core-rules/one-shot.md\|单发]] |

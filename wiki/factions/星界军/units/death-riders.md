@@ -1,6 +1,6 @@
 ---
 id: '000003898'
-name_zh: 死亡骑兵
+name_zh: 克里格死亡骑兵
 name_en: Death Riders
 faction: 星界军
 type: unit
@@ -12,7 +12,7 @@ tags:
 - unit/星界军
 - 星界军
 version:
-  points: MFM 2026-07-23 14:17
+  points: MFM 2026-07-27 15:14
   source: official-db
 sources:
 - book: 官方结构库 db/wh40k.sqlite（Wahapedia 11版镜像 + MFM 官方点数）

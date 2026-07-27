@@ -11,7 +11,7 @@ tags:
 - unit/千子
 - 千子
 version:
-  points: MFM 2026-07-23 14:17
+  points: MFM 2026-07-27 15:14
   source: official-db
 sources:
 - book: 官方结构库 db/wh40k.sqlite（Wahapedia 11版镜像 + MFM 官方点数）
@@ -49,4 +49,4 @@ updated: '2026-07-23'
 
 ## 关键词
 - **阵营关键词**：Thousand Sons
-- **普通关键词**：Chaos，Tzeentch，[[factions/千子/units/sorcerer.md|Sorcerer]]，[[core-rules/infantry.md|Infantry]]，[[core-rules/character.md|Character]]，[[core-rules/psyker.md|Psyker]]，Terminator
+- **普通关键词**：Chaos，Tzeentch，Sorcerer，[[core-rules/infantry.md|Infantry]]，[[core-rules/character.md|Character]]，[[core-rules/psyker.md|Psyker]]，Terminator

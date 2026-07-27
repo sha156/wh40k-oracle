@@ -45,4 +45,4 @@ updated: '2026-07-23'
 
 ## 关键词
 - **阵营关键词**：Orks
-- **普通关键词**：[[core-rules/mounted.md|Mounted]]，[[factions/兽人/units/painboy.md|Painboy]] on Warbike，[[core-rules/character.md|Character]]，Speed Freeks
+- **普通关键词**：[[core-rules/mounted.md|Mounted]]，Painboy on Warbike，[[core-rules/character.md|Character]]，Speed Freeks

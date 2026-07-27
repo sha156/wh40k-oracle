@@ -103,7 +103,7 @@ To arrive on the battlefield, each strategic reserves unit must make an ingress 
 
 - 在第三战斗轮次前：在这么做时，没有模型可以被部署在对手的部署区内。
 
-移动后：除非有其他明确规定，直到下一个冲锋阶段开始前，单位不能进行任何其他类型的移动。
+移动后：除非有其他明确规定，直到[[factions/兽人/stratagems/on-to-da-next.md|下一个]]冲锋阶段开始前，单位不能进行任何其他类型的移动。
 
 在第三战斗轮次结束时，除非有其他明确规定，所有没有进行过一次或更多入场移动的战略预备队单位都将被摧毁，除非：
 

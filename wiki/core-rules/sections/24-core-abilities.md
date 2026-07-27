@@ -327,7 +327,7 @@ Each time a unit containing one or more models with an [EXTRA ATTACKS] weapon fi
 
 *FEEL NO PAIN*
 
-就算身负重伤，坚韧的战士拒绝倒下。
+就算身负重伤，坚韧的战士[[factions/星际战士/stratagems/refusal-to-yield.md|拒绝倒下]]。
 
 这类技能总是会以不觉疼痛 X+ 的形式出现。每当一个拥有本技能的模型失去一点耐伤时，掷一枚 D6：若结果为 X+ ，那么就不会失去那点耐伤。
 
@@ -676,7 +676,7 @@ Example: If a [RAPID FIRE 1] weapon with an A characteristic of 1 targets a unit
 
 斥候和侦察兵是许多军队的先锋。它们回避敌人的侦测，在主力部队的前方移动。
 
-本技能总是会以斥候 X" 的形式出现。在结算战前技能步骤中，如果单位中的每一个模型都拥有本技能，那么您可以选择以下一个效果：
+本技能总是会以斥候 X" 的形式出现。在结算战前技能步骤中，如果单位中的每一个模型都拥有本技能，那么您可以选择以[[factions/兽人/stratagems/on-to-da-next.md|下一个]]效果：
 
 - 如果单位位于战略预备队中，那么您可以将其部署在战场上完全位于己方部署区内的任意位置。
 
@@ -781,7 +781,7 @@ Monstrous creatures and gigantic engines of war loom over the battlefield like g
 
 *[SUSTAINED HITS]*
 
-一些武器能够进行持续不断的攻击，用毫无止息的攻势将敌人撕成碎片。
+一些武器能够进行持续不断的攻击，用毫无止息的攻势将敌人[[factions/星际战士/stratagems/limb-from-limb.md|撕成碎片]]。
 
 这类技能总是会以[连击 X]的形式进行表示。每次使用[连击]武器进行的攻击造成暴击命中时，那次攻击将造成 X 数量的额外命中。
 

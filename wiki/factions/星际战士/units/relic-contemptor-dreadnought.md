@@ -48,7 +48,7 @@ updated: '2026-07-23'
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
 | 装甲铁脚 | 近战 | 5 | 3+ | 6 | 0 | 1 | — |
-| [[factions/星际战士/units/dreadnought.md\|Dreadnought]] chainfist | 近战 | 4 | 3+ | 12 | -2 | 3 | [[core-rules/anti.md\|针对载具3+]] |
+| Dreadnought chainfist | 近战 | 4 | 3+ | 12 | -2 | 3 | [[core-rules/anti.md\|针对载具3+]] |
 | 无畏格斗武器 | 近战 | 5 | 3+ | 12 | -2 | 3 | — |
 
 ## 技能

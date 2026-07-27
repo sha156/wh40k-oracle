@@ -5,12 +5,13 @@ name_en: Ynnari Venom
 faction: 艾达灵族
 type: unit
 points:
-  1 model: 70
+  1 model: 65
 tags:
 - unit
 - unit/艾达灵族
 - 艾达灵族
 version:
+  points: MFM 2026-07-27 15:14
   source: official-db
 sources:
 - book: 官方结构库 db/wh40k.sqlite（Wahapedia 11版镜像 + MFM 官方点数）
@@ -41,7 +42,7 @@ updated: '2026-07-23'
 - **空中飞人**：近战阶段结束时，如果此时没有模型搭乘该运输载具，你可以选择一个完全位于其6寸内的模型数量小于等于6个的友方死神军步兵单位，除非上述单位位于敌方单位的近战范围内，否则上述单位可以搭乘该运输载具。那个单位可以在脱离该载具的回合中搭乘这个载具。
 
 ## 单位构成
-- **1个模型** — 70 分
+- **1个模型** — 65 分
 
 ## 关键词
 - **阵营关键词**：Ynnari

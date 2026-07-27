@@ -35,7 +35,7 @@ updated: '2026-07-23'
 |---|---|---|---|---|---|---|---|
 | Dread killsaw | 近战 | 4 | 3+ | 14 | -3 | 4 | — |
 | Dread rippa klaw | 近战 | 6 | 3+ | 12 | -2 | 3 | — |
-| 双足践踏 | 近战 | 4 | 3+ | 7 | 0 | 1 | — |
+| Stompy feet | 近战 | 4 | 3+ | 7 | 0 | 1 | — |
 
 ## 技能
 - **Mega Carnage**：Each time this model is selected to fight, you can select one enemy unit within Engagement Range of it and roll one D6, adding 2 to the result if this model made a Charge move this turn: on a 4-5, that enemy unit suffers D3 mortal wounds; on a 6+, that enemy unit suffers 3 mortal wounds.

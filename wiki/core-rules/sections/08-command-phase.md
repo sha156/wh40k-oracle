@@ -55,7 +55,7 @@ Both players gain 1 Command Point (CP).
 
 *3. BATTLE-SHOCK*
 
-活跃玩家必须为自己军队中每一个满足以下一个或多个条件的单位进行一次战斗震慑掷骰（01.07）：
+活跃玩家必须为自己军队中每一个满足以[[factions/兽人/stratagems/on-to-da-next.md|下一个]]或多个条件的单位进行一次战斗震慑掷骰（01.07）：
 
 - 那个单位目前处于战斗震慑状态。
 

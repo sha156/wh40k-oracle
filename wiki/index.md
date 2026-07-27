@@ -1,6 +1,6 @@
 # WH40K Wiki Index
 
-_Last updated: 2026-07-26 08:40 UTC_
+_Last updated: 2026-07-27 11:51 UTC_
 
 ## 目录
 
@@ -732,6 +732,7 @@ _Last updated: 2026-07-26 08:40 UTC_
 | unit | [侦查哨兵](factions/基因窃取者教派/units/scout-sentinels.md) |  | 2026-07-23 |
 | unit | [克里格战斗工兵](factions/基因窃取者教派/units/krieg-combat-engineers.md) |  | 2026-07-23 |
 | unit | [克里格指挥组](factions/基因窃取者教派/units/krieg-command-squad.md) |  | 2026-07-23 |
+| unit | [克里格死亡骑兵](factions/基因窃取者教派/units/death-riders.md) |  | 2026-07-23 |
 | unit | [克里格死兵队](factions/基因窃取者教派/units/death-korps-of-krieg.md) |  | 2026-07-23 |
 | unit | [克里格重型武器小队](factions/基因窃取者教派/units/krieg-heavy-weapons-squad.md) |  | 2026-07-23 |
 | unit | [冯·瑞恩跃袭者](factions/基因窃取者教派/units/von-ryans-leapers.md) |  | 2026-07-23 |
@@ -769,7 +770,6 @@ _Last updated: 2026-07-26 08:40 UTC_
 | unit | [歌利亚碎石车](factions/基因窃取者教派/units/goliath-rockgrinder.md) |  | 2026-07-23 |
 | unit | [死亡直击导弹车](factions/基因窃取者教派/units/deathstrike.md) |  | 2026-07-23 |
 | unit | [死亡跃袭者](factions/基因窃取者教派/units/deathleaper.md) |  | 2026-07-23 |
-| unit | [死亡骑兵](factions/基因窃取者教派/units/death-riders.md) |  | 2026-07-23 |
 | unit | [毁灭之剑](factions/基因窃取者教派/units/banesword.md) |  | 2026-07-23 |
 | unit | [毁灭之锤](factions/基因窃取者教派/units/banehammer.md) |  | 2026-07-23 |
 | unit | [毒刃](factions/基因窃取者教派/units/baneblade.md) |  | 2026-07-23 |
@@ -1873,6 +1873,7 @@ _Last updated: 2026-07-26 08:40 UTC_
 | unit | [克里德堡主](factions/星界军/units/ursula-creed.md) |  | 2026-07-23 |
 | unit | [克里格战斗工兵](factions/星界军/units/krieg-combat-engineers.md) |  | 2026-07-23 |
 | unit | [克里格指挥组](factions/星界军/units/krieg-command-squad.md) |  | 2026-07-23 |
+| unit | [克里格死亡骑兵](factions/星界军/units/death-riders.md) |  | 2026-07-23 |
 | unit | [克里格死兵队](factions/星界军/units/death-korps-of-krieg.md) |  | 2026-07-23 |
 | unit | [克里格重型武器小队](factions/星界军/units/krieg-heavy-weapons-squad.md) |  | 2026-07-23 |
 | unit | [刚特的幽灵](factions/星界军/units/gaunts-ghosts.md) |  | 2026-07-23 |
@@ -1905,7 +1906,6 @@ _Last updated: 2026-07-26 08:40 UTC_
 | unit | [欧格林小队](factions/星界军/units/ogryn-squad.md) |  | 2026-07-23 |
 | unit | [步行的格雷夫斯政委](factions/星界军/units/commissar-graves-on-foot.md) |  | 2026-07-23 |
 | unit | [死亡直击导弹车](factions/星界军/units/deathstrike.md) |  | 2026-07-23 |
-| unit | [死亡骑兵](factions/星界军/units/death-riders.md) |  | 2026-07-23 |
 | unit | [毁灭之剑](factions/星界军/units/banesword.md) |  | 2026-07-23 |
 | unit | [毁灭之锤](factions/星界军/units/banehammer.md) |  | 2026-07-23 |
 | unit | [毒刃](factions/星界军/units/baneblade.md) |  | 2026-07-23 |

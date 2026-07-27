@@ -46,4 +46,4 @@ updated: '2026-07-23'
 
 ## 关键词
 - **阵营关键词**：Asuryani
-- **普通关键词**：[[core-rules/titanic.md|Titanic]]，[[core-rules/towering.md|Towering]]，Wraith Construct，Monster，[[core-rules/walker.md|Walker]]，Skathach [[factions/艾达灵族/units/wraithknight.md|Wraithknight]]，Aeldari
+- **普通关键词**：[[core-rules/titanic.md|Titanic]]，[[core-rules/towering.md|Towering]]，Wraith Construct，Monster，[[core-rules/walker.md|Walker]]，Skathach Wraithknight，Aeldari

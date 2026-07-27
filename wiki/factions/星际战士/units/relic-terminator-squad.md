@@ -46,7 +46,7 @@ updated: '2026-07-23'
 ## 技能
 - **Fury of the First**：Each time a model in this unit makes an attack, you can ignore any or all modifiers to that attack’s Ballistic Skill or Weapon Skill characteristic and/or to the Hit roll. In addition, each time a model in this unit makes an attack that targets the enemy unit you selected for the Oath of Moment ability this turn, add 1 to the Hit roll.
 - **Grenade Harness**：The bearer has the <span class="kwb">GRENADES</span> keyword.
-- **ATTACHED UNITS**：If a Character unit from your army with the Leader ability can be attached to a [[factions/星际战士/units/terminator-squad-2.md|Terminator Squad]], it can also be attached to this unit.
+- **ATTACHED UNITS**：If a Character unit from your army with the Leader ability can be attached to a Terminator Squad, it can also be attached to this unit.
 
 ## 单位构成
 - **5个模型** — 200 分

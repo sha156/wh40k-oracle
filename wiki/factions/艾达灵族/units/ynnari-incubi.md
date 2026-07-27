@@ -5,13 +5,14 @@ name_en: Ynnari Incubi
 faction: 艾达灵族
 type: unit
 points:
-  5 models: 85
-  10 models: 170
+  5 models: 80
+  10 models: 160
 tags:
 - unit
 - unit/艾达灵族
 - 艾达灵族
 version:
+  points: MFM 2026-07-27 15:14
   source: official-db
 sources:
 - book: 官方结构库 db/wh40k.sqlite（Wahapedia 11版镜像 + MFM 官方点数）
@@ -39,8 +40,8 @@ updated: '2026-07-23'
 - **笞魔**：近战阶段开始时，该单位近战范围内的 每个敌方单位必须进行一次战斗震慑测试
 
 ## 单位构成
-- **5个模型** — 85 分
-- **10个模型** — 170 分
+- **5个模型** — 80 分
+- **10个模型** — 160 分
 
 ## 关键词
 - **阵营关键词**：Ynnari

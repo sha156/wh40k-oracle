@@ -50,4 +50,4 @@ updated: '2026-07-23'
 
 ## 关键词
 - **阵营关键词**：Legiones Daemonica，Heretic Astartes
-- **普通关键词**：[[core-rules/infantry.md|Infantry]]，[[factions/混沌恶魔/detachments/shadow-legion.md|Shadow Legion]]，Chaos，[[core-rules/grenades.md|Grenades]]，[[core-rules/infantry.md|Infantry]]，[[factions/混沌恶魔/detachments/shadow-legion.md|Shadow Legion]]，Undivided，Chosen，Chosen，Chaos，[[core-rules/grenades.md|Grenades]]，Undivided，Chaos，[[core-rules/infantry.md|Infantry]]，[[core-rules/grenades.md|Grenades]]，Shadow Legion，Undivided，Chosen，Chaos，[[core-rules/grenades.md|Grenades]]，[[core-rules/infantry.md|Infantry]]，Shadow Legion，Undivided，Chosen
+- **普通关键词**：[[core-rules/infantry.md|Infantry]]，[[factions/混沌恶魔/detachments/shadow-legion.md|Shadow Legion]]，Chaos，[[core-rules/grenades.md|Grenades]]，[[core-rules/infantry.md|Infantry]]，Shadow Legion，Undivided，Chosen，Chosen，Chaos，[[core-rules/grenades.md|Grenades]]，Undivided，Chaos，[[core-rules/infantry.md|Infantry]]，[[core-rules/grenades.md|Grenades]]，Shadow Legion，Undivided，Chosen，Chaos，[[core-rules/grenades.md|Grenades]]，[[core-rules/infantry.md|Infantry]]，Shadow Legion，Undivided，Chosen

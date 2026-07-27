@@ -89,7 +89,7 @@ Abilities that are gained when a unit (or one of its models) has a particular it
 
 *PLUNGING FIRE*
 
-每当一个模型对一个可见单位进行远程攻击时，如果那个单位中有一个或多个模型位于地面高度，并且那个单位满足以下一个或多个条件，那么那次攻击的 BS 属性提升 1：
+每当一个模型对一个可见单位进行远程攻击时，如果那个单位中有一个或多个模型位于地面高度，并且那个单位满足以[[factions/兽人/stratagems/on-to-da-next.md|下一个]]或多个条件，那么那次攻击的 BS 属性提升 1：
 
 - 攻击模型位于一个地形模型上高度大于等于 3" 的部分。
 

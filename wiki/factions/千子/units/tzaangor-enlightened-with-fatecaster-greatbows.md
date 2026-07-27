@@ -12,7 +12,7 @@ tags:
 - unit/千子
 - 千子
 version:
-  points: MFM 2026-07-23 14:17
+  points: MFM 2026-07-27 15:14
   source: official-db
 sources:
 - book: 官方结构库 db/wh40k.sqlite（Wahapedia 11版镜像 + MFM 官方点数）
@@ -46,4 +46,4 @@ updated: '2026-07-23'
 
 ## 关键词
 - **阵营关键词**：Thousand Sons
-- **普通关键词**：[[factions/千子/units/tzaangor-enlightened.md|Tzaangor Enlightened]] with Fatecaster Greatbows，[[factions/千子/units/tzaangor-enlightened.md|Tzaangor Enlightened]]，Mutant，Tzeentch，Fly，Chaos，[[core-rules/mounted.md|Mounted]]
+- **普通关键词**：[[factions/千子/units/tzaangor-enlightened.md|Tzaangor Enlightened]] with Fatecaster Greatbows，Tzaangor Enlightened，Mutant，Tzeentch，Fly，Chaos，[[core-rules/mounted.md|Mounted]]

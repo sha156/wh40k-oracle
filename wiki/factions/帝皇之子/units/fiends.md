@@ -5,13 +5,14 @@ name_en: Fiends
 faction: 帝皇之子
 type: unit
 points:
-  3 models: 95
-  6 models: 190
+  3 models: 90
+  6 models: 180
 tags:
 - unit
 - unit/帝皇之子
 - 帝皇之子
 version:
+  points: MFM 2026-07-27 15:14
   source: official-db
 sources:
 - book: 官方结构库 db/wh40k.sqlite（Wahapedia 11版镜像 + MFM 官方点数）
@@ -35,8 +36,8 @@ updated: '2026-07-23'
 - **安魂香气**：每次敌方单位（不包括巨兽和载具）在己方一个或多个拥有此能力的单位的交战范围内撤退时，该敌方单位中的模型必须进行一次溃逃测试检定。进行检定时，如果该敌方单位同时处于战斗震慑状态，则每次溃逃测试检定的结果减1。
 
 ## 单位构成
-- **3个模型** — 95 分
-- **6个模型** — 190 分
+- **3个模型** — 90 分
+- **6个模型** — 180 分
 
 ## 关键词
 - **阵营关键词**：Legions of Excess

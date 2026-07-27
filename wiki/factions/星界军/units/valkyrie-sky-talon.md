@@ -41,4 +41,4 @@ updated: '2026-07-23'
 
 ## 关键词
 - **阵营关键词**：Astra Militarum
-- **普通关键词**：[[core-rules/aircraft.md|Aircraft]]，Fly，Vehicle，Imperium，[[factions/星界军/units/valkyrie.md|Valkyrie]] Sky Talon，[[core-rules/transport.md|Transport]]
+- **普通关键词**：[[core-rules/aircraft.md|Aircraft]]，Fly，Vehicle，Imperium，Valkyrie Sky Talon，[[core-rules/transport.md|Transport]]

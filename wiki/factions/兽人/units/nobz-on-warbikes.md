@@ -49,4 +49,4 @@ updated: '2026-07-23'
 
 ## 关键词
 - **阵营关键词**：Orks
-- **普通关键词**：[[core-rules/mounted.md|Mounted]]，Speed Freeks，[[factions/兽人/units/nobz.md|Nobz]] on Warbikes，[[core-rules/grenades.md|Grenades]]
+- **普通关键词**：[[core-rules/mounted.md|Mounted]]，Speed Freeks，Nobz on Warbikes，[[core-rules/grenades.md|Grenades]]

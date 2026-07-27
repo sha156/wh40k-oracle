@@ -25,7 +25,7 @@ updated: '2026-07-23'
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
 | 双联重机枪 | 36" | 3 | 4+ | 4 | 0 | 1 | [[core-rules/rapid-fire.md\|速射3]]，[[core-rules/twin-linked.md\|双联]] |
-| [[factions/基因窃取者教派/units/macharius.md\|Macharius]] twin vanquisher cannon | 72" | 1 | 4+ | 18 | -4 | D6+6 | [[core-rules/heavy.md\|重型]]，[[core-rules/twin-linked.md\|双联]] |
+| Macharius twin vanquisher cannon | 72" | 1 | 4+ | 18 | -4 | D6+6 | [[core-rules/heavy.md\|重型]]，[[core-rules/twin-linked.md\|双联]] |
 | 猎杀飞弹 | 48" | 1 | 4+ | 14 | -3 | D6 | [[core-rules/one-shot.md\|单发]] |
 | Heavy stubber | 36" | 3 | 4+ | 4 | 0 | 1 | [[core-rules/rapid-fire.md\|速射3]] |
 | 重型爆弹枪 | 36" | 3 | 4+ | 5 | -1 | 2 | [[core-rules/sustained-hits.md\|连击1]] |

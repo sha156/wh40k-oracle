@@ -47,4 +47,4 @@ updated: '2026-07-23'
 
 ## 关键词
 - **阵营关键词**：Asuryani
-- **普通关键词**：[[core-rules/character.md|Character]]，Fly，Aeldari，[[factions/艾达灵族/units/autarch.md|Autarch]]，[[core-rules/mounted.md|Mounted]]，Autarch Skyrunner
+- **普通关键词**：[[core-rules/character.md|Character]]，Fly，Aeldari，Autarch，[[core-rules/mounted.md|Mounted]]，Autarch Skyrunner

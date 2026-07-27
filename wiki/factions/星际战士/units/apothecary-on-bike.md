@@ -41,4 +41,4 @@ updated: '2026-07-23'
 
 ## 关键词
 - **阵营关键词**：Adeptus Astartes
-- **普通关键词**：[[factions/星际战士/units/apothecary.md|Apothecary]]，Ravenwing，[[core-rules/mounted.md|Mounted]]，[[core-rules/character.md|Character]]，[[core-rules/grenades.md|Grenades]]，Imperium
+- **普通关键词**：Apothecary，Ravenwing，[[core-rules/mounted.md|Mounted]]，[[core-rules/character.md|Character]]，[[core-rules/grenades.md|Grenades]]，Imperium

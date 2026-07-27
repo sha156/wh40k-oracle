@@ -43,4 +43,4 @@ updated: '2026-07-23'
 
 ## 关键词
 - **阵营关键词**：Adeptus Astartes
-- **普通关键词**：Vehicle，[[core-rules/smoke.md|Smoke]]，[[core-rules/transport.md|Transport]]，Imperium，[[factions/星际战士/units/land-raider.md|Land Raider]] Helios
+- **普通关键词**：Vehicle，[[core-rules/smoke.md|Smoke]]，[[core-rules/transport.md|Transport]]，Imperium，Land Raider Helios

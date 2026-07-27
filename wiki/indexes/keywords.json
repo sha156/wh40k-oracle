@@ -370,11 +370,17 @@
    ],
    "engine": "数值建模",
    "rulePage": "core-rules/anti.md",
-   "currentWeapons": 94,
+   "currentWeapons": 95,
    "totalWeapons": 106,
-   "currentUnits": 171,
+   "currentUnits": 172,
    "totalUnits": 252,
    "weapons": [
+    {
+     "name": "Sybarite weapon",
+     "units": [
+      "Ynnari Kabalite Warriors"
+     ]
+    },
     {
      "name": "一对战斗刀",
      "units": [
@@ -741,6 +747,7 @@
     {
      "name": "毒晶手枪",
      "units": [
+      "Ynnari Kabalite Warriors",
       "劫掠者",
       "巫灵",
       "执政官",
@@ -758,6 +765,7 @@
     {
      "name": "毒晶步枪",
      "units": [
+      "Ynnari Kabalite Warriors",
       "劫掠者",
       "执政官之手",
       "死神军劫掠者",
@@ -768,6 +776,7 @@
     {
      "name": "毒晶炮",
      "units": [
+      "Ynnari Kabalite Warriors",
       "刃翼战机",
       "执政官之手",
       "死神军毒灾飞艇",
@@ -1934,7 +1943,7 @@
    "rulePage": "core-rules/assault.md",
    "currentWeapons": 156,
    "totalWeapons": 169,
-   "currentUnits": 178,
+   "currentUnits": 179,
    "totalUnits": 214,
    "weapons": [
     {
@@ -2366,6 +2375,7 @@
     {
      "name": "毒晶手枪",
      "units": [
+      "Ynnari Kabalite Warriors",
       "劫掠者",
       "巫灵",
       "执政官",
@@ -2383,6 +2393,7 @@
     {
      "name": "毒晶步枪",
      "units": [
+      "Ynnari Kabalite Warriors",
       "劫掠者",
       "执政官之手",
       "死神军劫掠者",
@@ -2607,6 +2618,7 @@
     {
      "name": "爆能枪",
      "units": [
+      "Ynnari Kabalite Warriors",
       "劫掠者",
       "天空掠夺者海盗",
       "执政官之手",
@@ -2754,6 +2766,7 @@
     {
      "name": "粉碎枪",
      "units": [
+      "Ynnari Kabalite Warriors",
       "天空掠夺者海盗",
       "执政官之手",
       "虚空劫掠者海盗",
@@ -7718,9 +7731,9 @@
    "params": [],
    "engine": "数值建模",
    "rulePage": "core-rules/heavy.md",
-   "currentWeapons": 128,
+   "currentWeapons": 129,
    "totalWeapons": 157,
-   "currentUnits": 131,
+   "currentUnits": 132,
    "totalUnits": 217,
    "weapons": [
     {
@@ -8014,6 +8027,7 @@
     {
      "name": "毒晶炮",
      "units": [
+      "Ynnari Kabalite Warriors",
       "执政官之手",
       "装备重型武器的天灾",
       "阴谋团战士"
@@ -8576,6 +8590,12 @@
      "name": "魔改炫枪",
      "units": [
       "脏枪混混"
+     ]
+    },
+    {
+     "name": "黑暗光矛",
+     "units": [
+      "Ynnari Kabalite Warriors"
      ]
     }
    ]
@@ -11886,7 +11906,7 @@
    "rulePage": "core-rules/pistol.md",
    "currentWeapons": 129,
    "totalWeapons": 147,
-   "currentUnits": 399,
+   "currentUnits": 401,
    "totalUnits": 527,
    "weapons": [
     {
@@ -12231,6 +12251,7 @@
     {
      "name": "毒晶手枪",
      "units": [
+      "Ynnari Kabalite Warriors",
       "劫掠者",
       "巫灵",
       "执政官",
@@ -12355,6 +12376,7 @@
      "name": "爆弹手枪",
      "units": [
       "ATV 突击车",
+      "Uriel Ventris",
       "【传奇】地狱之末",
       "书记修女",
       "仇天使小队",
@@ -12480,6 +12502,7 @@
     {
      "name": "爆能手枪",
      "units": [
+      "Ynnari Kabalite Warriors",
       "天空掠夺者海盗",
       "巫灵",
       "执政官",
@@ -16195,11 +16218,17 @@
    ],
    "engine": "数值建模",
    "rulePage": "core-rules/sustained-hits.md",
-   "currentWeapons": 176,
+   "currentWeapons": 177,
    "totalWeapons": 209,
-   "currentUnits": 328,
+   "currentUnits": 330,
    "totalUnits": 564,
    "weapons": [
+    {
+     "name": "Sword of Idaeus",
+     "units": [
+      "Uriel Ventris"
+     ]
+    },
     {
      "name": "一对战斗刀",
      "units": [
@@ -16779,6 +16808,7 @@
     {
      "name": "毒晶炮",
      "units": [
+      "Ynnari Kabalite Warriors",
       "刃翼战机",
       "执政官之手",
       "死神军毒灾飞艇",
@@ -17417,7 +17447,7 @@
    "rulePage": "core-rules/torrent.md",
    "currentWeapons": 142,
    "totalWeapons": 163,
-   "currentUnits": 328,
+   "currentUnits": 329,
    "totalUnits": 506,
    "weapons": [
     {
@@ -18174,6 +18204,7 @@
     {
      "name": "粉碎枪",
      "units": [
+      "Ynnari Kabalite Warriors",
       "天空掠夺者海盗",
       "执政官之手",
       "虚空劫掠者海盗",

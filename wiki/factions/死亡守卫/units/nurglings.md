@@ -5,13 +5,14 @@ name_en: Nurglings
 faction: 死亡守卫
 type: unit
 points:
-  3 models: 40
-  6 models: 70
+  3 models: 45
+  6 models: 90
 tags:
 - unit
 - unit/死亡守卫
 - 死亡守卫
 version:
+  points: MFM 2026-07-27 15:14
   source: official-db
 sources:
 - book: 官方结构库 db/wh40k.sqlite（Wahapedia 11版镜像 + MFM 官方点数）
@@ -35,8 +36,8 @@ updated: '2026-07-23'
 - **生性淘气（光环）**：位于该单位近战范围内的敌方单位（巨型单位除外）中的模型进行近战攻击时，直到阶段结束前，攻击的命中掷骰结果减少 1 点。
 
 ## 单位构成
-- **3个模型** — 40 分
-- **6个模型** — 70 分
+- **3个模型** — 45 分
+- **6个模型** — 90 分
 
 ## 关键词
 - **阵营关键词**：Plague Legions

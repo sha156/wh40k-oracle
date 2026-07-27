@@ -12,7 +12,7 @@ tags:
 - unit/星际战士
 - 星际战士
 version:
-  points: MFM 2026-07-23 14:17
+  points: MFM 2026-07-27 15:14
   source: official-db
 sources:
 - book: 官方结构库 db/wh40k.sqlite（Wahapedia 11版镜像 + MFM 官方点数）
@@ -28,7 +28,7 @@ updated: '2026-07-23'
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
 | 爆弹手枪 | 12" | 1 | 3+ | 4 | 0 | 1 | [[core-rules/pistol.md\|手枪]] |
-| 重力手枪 | 12" | 1 | 3+ | 4 | -1 | 1 | [[core-rules/anti.md\|针对载具2+]]，[[core-rules/pistol.md\|手枪]] |
+| 重型爆弹手枪 | 12" | 1 | 3+ | 4 | -1 | 1 | [[core-rules/anti.md\|针对载具2+]]，[[core-rules/pistol.md\|手枪]] |
 | 喷火手枪 | 12" | D6 | N/A | 3 | 0 | 1 | [[core-rules/ignores-cover.md\|无视掩体]]，[[core-rules/pistol.md\|手枪]]，[[core-rules/torrent.md\|洪流]] |
 | 狱火手枪 | 6" | 1 | 3+ | 8 | -4 | D3 | [[core-rules/melta.md\|热熔2]]，[[core-rules/pistol.md\|手枪]] |
 | 等离子手枪（标准） | 12" | 1 | 3+ | 7 | -2 | 1 | [[core-rules/pistol.md\|手枪]] |
@@ -49,4 +49,4 @@ updated: '2026-07-23'
 
 ## 关键词
 - **阵营关键词**：Adeptus Astartes
-- **普通关键词**：Fly，[[factions/星际战士/units/vanguard-veteran-squad.md|Vanguard Veteran Squad]]，[[core-rules/infantry.md|Infantry]]，Jump Pack，Deathwing，[[core-rules/grenades.md|Grenades]]，Vanguard Veteran Squad with Jump Packs，Imperium
+- **普通关键词**：Fly，Vanguard Veteran Squad，[[core-rules/infantry.md|Infantry]]，Jump Pack，Deathwing，[[core-rules/grenades.md|Grenades]]，Vanguard Veteran Squad with Jump Packs，Imperium

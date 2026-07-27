@@ -64,4 +64,4 @@ updated: '2026-07-23'
 
 ## 关键词
 - **阵营关键词**：Space Wolves，Adeptus Astartes
-- **普通关键词**：[[core-rules/smoke.md|Smoke]]，[[core-rules/grenades.md|Grenades]]，[[core-rules/infantry.md|Infantry]]，Imperium，[[factions/星际战士/units/scout-squad.md|Scout Squad]]，[[factions/星际战士/units/wolf-scouts.md|Wolf Scouts]]
+- **普通关键词**：[[core-rules/smoke.md|Smoke]]，[[core-rules/grenades.md|Grenades]]，[[core-rules/infantry.md|Infantry]]，Imperium，[[factions/星际战士/units/scout-squad.md|Scout Squad]]，Wolf Scouts

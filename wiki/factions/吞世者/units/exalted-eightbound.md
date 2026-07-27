@@ -12,7 +12,7 @@ tags:
 - unit/吞世者
 - 吞世者
 version:
-  points: MFM 2026-07-23 14:17
+  points: MFM 2026-07-27 15:14
   source: official-db
 sources:
 - book: 官方结构库 db/wh40k.sqlite（Wahapedia 11版镜像 + MFM 官方点数）
@@ -34,7 +34,7 @@ updated: '2026-07-23'
 
 ## 技能
 - **阵营：恐虐祝福**
-- **撕裂与毁灭**：每当该单位中的模型对凶兽或载具单位进行近战攻击时，在阶段结束前，攻击的伤害属性提升 1。
+- **撕裂与毁灭**：每当该单位中的模型对凶兽或载具单位进行近战攻击时，在阶段结束前，攻击的D+1。
 
 ## 单位构成
 - **3个模型** — 130 分
@@ -42,4 +42,4 @@ updated: '2026-07-23'
 
 ## 关键词
 - **阵营关键词**：World Eaters
-- **普通关键词**：Khorne，Chaos，[[core-rules/infantry.md|Infantry]]，Exalted [[factions/吞世者/units/eightbound.md|Eightbound]]，Daemon，Possessed
+- **普通关键词**：Khorne，Chaos，[[core-rules/infantry.md|Infantry]]，Exalted Eightbound，Daemon，Possessed

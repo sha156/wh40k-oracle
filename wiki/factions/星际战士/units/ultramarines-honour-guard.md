@@ -36,7 +36,7 @@ updated: '2026-07-23'
 - **Honour Guard**：While a [[factions/星际战士/units/captain.md|Captain]] or Chapter Master model is leading this unit, each time an attack targets this unit, subtract 1 from the Wound roll.
 - **Astartes Banner**：While this unit contains an [[factions/星际战士/units/ancient.md|Ancient]], add 1 to the Objective Control characteristic of models in this unit.
 - **Honour or Death**：While this unit contains a <span class="kwb">CHAPTER</span> <span class="kwb">CHAMPION</span>, add 1 to Advance and Charge rolls made for this unit and you can target this unit with the Heroic Intervention Stratagem for 0CP.
-- **HONOUR GUARD OF MACRAGGE**：Marneus Calgar can be attached to this unit. If a [[factions/星际战士/units/captain.md|Captain]] model from your army with the <span class="kwb">LEADER</span> ability can be attached to a [[factions/星际战士/units/command-squad.md|Command Squad]], it can be attached to this unit instead.
+- **HONOUR GUARD OF MACRAGGE**：Marneus Calgar can be attached to this unit. If a Captain model from your army with the <span class="kwb">LEADER</span> ability can be attached to a [[factions/星际战士/units/command-squad.md|Command Squad]], it can be attached to this unit instead.
 
 ## 单位构成
 - **4个模型** — 155 分
