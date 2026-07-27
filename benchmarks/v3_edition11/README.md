@@ -28,6 +28,39 @@
 防回归：`tests/test_db_compile_entity_resolver.py::TestRealDbCommunityAliasRegression`
 （真库四条断言）+ `TestPopulateCommunityAliases`（canonical id 直取单测）。
 
+## v3.2（2026-07-27）：+8 题词条/中文层/诚实性
+
+`qa_gold.json` 从 96 题扩到 **104 题**（meta.version=v3.2）。新增 #101-#108 覆盖本轮上线的
+词条解释层与中文技能对账，每题 gold 的出处写在该题的 `note` 字段里，逐条可回真源核对：
+
+| 题 | 类型 | 考什么 | gold 出处 |
+|---|------|--------|-----------|
+| #101 | rule | 【致命一击】含义 + 11版自动造伤由强制改可选 | `wiki/core-rules/lethal-hits.md`（24.23） |
+| #102 | rule | 【速射1】vs【速射2】差别（额外攻击骰数） | `wiki/core-rules/rapid-fire.md`（24.30） |
+| #103 | rule | 【连击3】一次暴击共算几下命中（4 下） | `wiki/core-rules/sustained-hits.md`（24.36） |
+| #104 | ability | 强征小队「帝国法律」内嵌的两个词条 | db `abilities`『Imperial Law』(000002685) |
+| #105 | ability | 强征小队「罪魂扫描仪」加哪个词条 | db `abilities`『Soulguilt Scanner』(000002685) |
+| #106 | rule | 【手枪】≡【近身/近距离】，PISTOL 非作废残留 | `wiki/core-rules/pistol.md` + `indexes/keywords.md` 过渡期节 |
+| #107 | ability | **诚实性**：蝎式沙丘运输车库内无中文技能层，只有英文原文，不许编中文 | db `abilities`(000001650)；`unit_zh_detail` 无该 id |
+| #108 | ability | **诚实性/版本**：「横扫敌阵」11版是 S/D 各+1，答旧版 D3 致命伤即错 | db `abilities`(000001144) + `unit_zh_detail`(000004101) 中文层 |
+
+结果 `qa_agent_results_gnhf_kw_zh.json`：**102✅ / 1⚠️ / 1❌ = 98.1**，8 道新题全 ✅（连跑两轮一致）。
+
+**⚠️ #41/#63 的掉分不是这批新题带来的，也不是本轮改动带来的。** 对照实验：把本轮改动
+（`wiki_engine/models.py`、`lint.py`、`qa_gold.json`）全部 checkout 回 HEAD 后重跑原 96 题，
+结果同样是 `{41: ⚠️, 63: ❌}`（97.9），与本轮 104 题 run 的**共有 96 题逐题 verdict 差异为 0**。
+所以这两题相对 2026-07-24 的 `qa_agent_results_refine_fabfix.json`（100.0）是**本分支更早的提交**
+造成的既有漂移，需单独定因：
+
+- **#41 兽人小子**：检索源从基线的 8 个（Core Rules / 兽人10版中文 / 黑图书馆）变成 1 个
+  （官方结构库 db）——是**路由变了**（agent 改走兵牌查表而非规则检索），答案因此没提
+  「抢好东西去 / 保镖」两条被问要点，判 ⚠️ 漏项。
+- **#63 坦克指挥官**：全 96 题里**唯一没有 gold 的题**（走 intrinsic judge），本轮 agent 反问
+  「你指哪一个坦克指挥官」而不作答，按 judge 铁律「答非所问」判 ❌。检索源 0 个。
+
+两题都指向同一个可疑变更面：黑图中文层刷新改了 `unit_zh_detail` → 兵牌工具返回内容变化 →
+agent 工具路由/消歧行为变化。**本轮不修**（超出三件事的范围），点名留档。
+
 ## 与 v1（97.9，benchmarks/v1_10th/）的关系
 
 v1 与 v3 成绩不可直接比较（7 题 gold 语义变了 + 语料从 37 本十版换成 61 本分层）。

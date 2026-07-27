@@ -8,7 +8,11 @@ from pathlib import Path
 from typing import Optional
 
 from wiki_engine.build_outputs import build_log_entry, write_log
-from wiki_engine.lint import generate_lint_report, run_lint
+from wiki_engine.lint import (
+    generate_alias_conflicts_report,
+    generate_lint_report,
+    run_lint,
+)
 
 
 def lint_operation(
@@ -32,7 +36,8 @@ def lint_operation(
 
     if write_report:
         generate_lint_report(result, wiki_root)
-        print("Lint 报告已生成: wiki/lint-report.md")
+        generate_alias_conflicts_report(result, wiki_root)
+        print("Lint 报告已生成: wiki/lint-report.md（重名明细: wiki/alias-conflicts.md）")
 
     # 打印摘要
     errors = sum(1 for i in result.issues if i.severity == "error")

@@ -89,6 +89,9 @@ def main() -> None:
     zc.add_argument("--list-cache", default=None, help="黑图 list 缓存 units.json")
     zc.add_argument("--details-cache", default=None, help="黑图 detail 缓存 details.json")
     zc.add_argument("--json", default=None, help="逐单位归因写到该 JSON 文件")
+    zc.add_argument("--dup", action="store_true",
+                    help="改跑疑似重复单位排查（同阵营 + 英文名归一化/中文名相同）"
+                         "，只出报告不改数据")
 
     oz = sub.add_parser(
         "official-zh",
@@ -442,6 +445,19 @@ def main() -> None:
         # main() 里别处有函数级 `import json`，会把 json 变成整个函数的局部名，
         # 模块顶层再 import 也照样 UnboundLocalError——这里跟着用函数级导入
         import json
+
+        if args.dup:
+            from db_compile.dup_units import audit as dup_audit
+            from db_compile.dup_units import format_report as dup_format
+
+            rep = dup_audit(Path(args.db))
+            print("\n" + dup_format(rep))
+            if args.json:
+                Path(args.json).parent.mkdir(parents=True, exist_ok=True)
+                Path(args.json).write_text(
+                    json.dumps(rep, ensure_ascii=False, indent=2), encoding="utf-8")
+                print(f"\n逐组证据已写出：{args.json}")
+            return
 
         from db_compile.zh_coverage import audit, format_report
 

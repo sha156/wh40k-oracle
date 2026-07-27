@@ -295,6 +295,18 @@ class TestLintResult:
         report = result.to_report()
         assert "没有发现问题" in report
 
+    def test_report_has_no_timestamp_so_reruns_produce_no_fake_diff(self):
+        """lint-report.md 被 git 跟踪：带生成时间戳会让每次 lint 都造出一个
+        只有时间戳变化的假 diff，工作区秒变脏。内容不变 → 字节必须不变。"""
+        result = LintResult(
+            issues=[LintIssue("warning", "alias-conflicts", None, "conflict")],
+            auto_fixed=0, total=1,
+        )
+        first = result.to_report()
+        assert first == result.to_report()
+        assert "Generated" not in first
+        assert "UTC" not in first
+
 
 class TestFactionNames:
     """faction_id → 中文阵营名常量表（问题2）。"""

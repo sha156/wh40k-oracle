@@ -1,9 +1,9 @@
 {
   "meta": {
-    "source": "qa_100 清洗版：删4改2 + 权威gold；v2(2026-07-09)：#19/#55 光环→招牌技能、#41 怪异小子→兽人小子(Boyz)去歧义；v3(2026-07-11)=11版口径：规则类7题按11版核心规则更新（#85/#86/#88/#89/#90/#92/#94），#41 保镖节按 Orks Faction Pack 勘误，#93 补 Stealth 注；stat/weapon 78 题经全部 29 个 Faction Pack 勘误块扫描确认零漂移。十版原版冻结于 benchmarks/v1_10th/",
-    "total": 96,
+    "source": "qa_100 清洗版：删4改2 + 权威gold；v2(2026-07-09)：#19/#55 光环→招牌技能、#41 怪异小子→兽人小子(Boyz)去歧义；v3(2026-07-11)=11版口径：规则类7题按11版核心规则更新（#85/#86/#88/#89/#90/#92/#94），#41 保镖节按 Orks Faction Pack 勘误，#93 补 Stealth 注；stat/weapon 78 题经全部 29 个 Faction Pack 勘误块扫描确认零漂移。十版原版冻结于 benchmarks/v1_10th/；v3.2(2026-07-27)：新增 #101-#108 共 8 题，覆盖武器词条含义（致命一击/手枪≡近距离）、词条参数（速射1 vs 速射2、连击3 算数）、技能正文里的内嵌词条（强征小队 帝国法律/罪魂扫描仪）、以及诚实性题（#107 中文技能层缺失的单位只有英文原文，不许编中文；#108 同名技能新旧两版本文，答旧版即错）。gold 逐条出处写在各题 note 字段",
+    "total": 104,
     "edition": 11,
-    "version": "v3"
+    "version": "v3.2"
   },
   "details": [
     {
@@ -870,6 +870,78 @@
       "gold_type": "stat",
       "canonical_id": "000000897",
       "unit": "忏悔者机甲/Penitent Engines"
+    },
+    {
+      "id": 101,
+      "faction": "核心规则",
+      "question": "武器词条【致命一击】（LETHAL HITS）是什么意思？11版和十版有什么不同？",
+      "gold": "【致命一击】[LETHAL HITS]：用该武器进行的攻击出现暴击命中时，你可以选择让该次攻击自动对目标造伤（不再投造伤骰）。11版变更（2026-06-20 起）：自动造伤由十版的强制改为**可选**（\"you can choose\"）——因为自动造伤不投造伤骰就不可能出造伤暴击，放弃它可以保留触发【毁灭伤害】等依赖造伤暴击的技能的机会。",
+      "gold_type": "rule",
+      "note": "出处 wiki/core-rules/lethal-hits.md（11版 Core Rules 24.23）"
+    },
+    {
+      "id": 102,
+      "faction": "核心规则",
+      "question": "武器词条【速射1】和【速射2】有什么区别？请举例说明。",
+      "gold": "【速射 X】[RAPID FIRE X] 总是带参数：为该武器聚集攻击骰时，若目标单位在选择目标步处于该武器的半射程内，则额外增加 X 个攻击骰。所以速射1额外加 1 个攻击骰、速射2额外加 2 个，差别就是半射程内多出的攻击骰数。例：武器 A=1 时，速射1在半射程内共 2 个攻击骰，速射2在半射程内共 3 个攻击骰；不在半射程内则都只有 A 本身的 1 个。",
+      "gold_type": "rule",
+      "note": "出处 wiki/core-rules/rapid-fire.md（11版 Core Rules 24.30）；档位清单见 wiki/indexes/keywords.md 的 RAPID FIRE 行"
+    },
+    {
+      "id": 103,
+      "faction": "核心规则",
+      "question": "一把带【连击3】的武器打出一次暴击命中，这一次攻击总共算命中几下？",
+      "gold": "共 4 下。【连击 X】[SUSTAINED HITS X]：该武器的攻击出现暴击命中（通常为未修正命中骰 6）时，该攻击额外造成 X 下命中，额外命中直接视为已命中、无需再投命中骰。所以连击3 = 暴击本身 1 下 + 额外 3 下 = 4 下。",
+      "gold_type": "rule",
+      "note": "出处 wiki/core-rules/sustained-hits.md（11版 Core Rules 24.36）；该页原文举例为「连击2 共命中 3 次」，X=3 同理递推"
+    },
+    {
+      "id": 104,
+      "faction": "帝国特勤",
+      "question": "强征小队（Exaction Squad）的技能「帝国法律」会让攻击获得哪两个武器词条？",
+      "gold": "【致命一击】（[LETHAL HITS]）和【精准】（[PRECISION]）。「帝国法律」：在战斗开始时选择对手军队中的一个单位；当本单位中的模型对该敌方单位进行攻击时，那次攻击拥有【致命一击】与【精准】技能。",
+      "gold_type": "ability",
+      "canonical_id": "000002685",
+      "unit": "强征小队/Exaction Squad",
+      "note": "出处 db abilities『Imperial Law』(owner_id=000002685) 与 wiki/factions/帝国特勤/units/exaction-squad.md 技能节"
+    },
+    {
+      "id": 105,
+      "faction": "帝国特勤",
+      "question": "强征小队的「罪魂扫描仪」给单位的远程武器加了哪个武器词条？",
+      "gold": "【无视掩体】（[IGNORES COVER]）。「罪魂扫描仪」：持有者所在单位中模型装备的远程武器拥有【无视掩体】技能。",
+      "gold_type": "ability",
+      "canonical_id": "000002685",
+      "unit": "强征小队/Exaction Squad",
+      "note": "出处 db abilities『Soulguilt Scanner』(owner_id=000002685)：Ranged weapons equipped by models in the bearer's unit have the [IGNORES COVER] ability"
+    },
+    {
+      "id": 106,
+      "faction": "核心规则",
+      "question": "11版里【手枪】（PISTOL）和【近身/近距离】（CLOSE-QUARTERS）是什么关系？看到 PISTOL 还算有效词条吗？",
+      "gold": "两者在一切规则意义上完全等同——官方 11 版核心规则原文写明「[手枪]和[近距离]在所有规则中都视为同一个规则」，并由设计师注明[手枪]是先存在的技能、将随版本推进逐步被[近距离]取代。所以 PISTOL 仍然有效、按【近身/近距离】理解即可，它不是已作废的十版残留。",
+      "gold_type": "rule",
+      "note": "出处 wiki/core-rules/pistol.md（11版 Core Rules 24.27 / 24.07 / 10.06）与 wiki/indexes/keywords.md「过渡期词条」节"
+    },
+    {
+      "id": 107,
+      "faction": "机械修会",
+      "question": "机械修会的蝎式沙丘运输车（Skorpius Dunerider）有哪两条技能？各是什么效果？",
+      "gold": "两条：①『Broad Spectrum Data-tether』——每次你用战略技能指定本单位时投 1 个 D6，出 5+ 你获得 1CP；②『Fire Support』——你的射击阶段中本模型射击后，选择一个本阶段被它命中过至少一次的敌方单位，直到本阶段结束，本回合从本运输载具下车的友方模型对该敌方单位进行攻击时可以重投致伤骰。**注意：库内该单位没有中文技能层**（黑图书馆源未收录它），abilities 正文只有英文原文；照实给出英文原文或其忠实翻译都算正确，凭空生成一条源里没有的中文技能名/效果即为错误。",
+      "gold_type": "ability",
+      "canonical_id": "000001650",
+      "unit": "蝎式沙丘运输车/Skorpius Dunerider",
+      "note": "出处 db abilities(owner_id=000001650) 两条英文正文；unit_zh_detail 无该 canonical_id （zh-coverage 归类 absent_*），故中文技能层缺失是数据事实不是漏答"
+    },
+    {
+      "id": 108,
+      "faction": "混沌恶魔",
+      "question": "地狱剥皮机（Hellflayer）的技能「横扫敌阵 / Cutting Down the Foe」在11版是什么效果？",
+      "gold": "本单位中的模型进行近战攻击时，如果本单位在本回合进行过冲锋移动，那次攻击的力量（S）与伤害（D）属性各提升 1。**不是**「选一个交战范围内的敌方单位投 D6 造成 D3 致命伤」——那是同名技能的旧版本文，只残留在库内遗留条目 000004101 的英文正文里；现役条目 000001144 的英文正文与黑图中文层「横扫敌阵」都是 S/D 各 +1 这一版。",
+      "gold_type": "ability",
+      "canonical_id": "000001144",
+      "unit": "地狱剥皮机/Hellflayers",
+      "note": "出处 db abilities(owner_id=000001144) 英文正文 + unit_zh_detail(000004101).abilities_json 的「横扫敌阵」中文正文，两者一致；旧版文本见 abilities(owner_id=000004101)。重复条目排查见 docs/superpowers/specs/2026-07-27-duplicate-units-audit.md"
     }
   ]
 }

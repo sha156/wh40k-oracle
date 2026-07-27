@@ -11,7 +11,11 @@ from pathlib import Path
 from wiki_engine.synthesize import create_client, synthesize_all
 from wiki_engine.crosslinks import inject_all
 from wiki_engine.build_outputs import build_all_outputs, build_log_entry, write_log
-from wiki_engine.lint import run_lint, generate_lint_report
+from wiki_engine.lint import (
+    generate_alias_conflicts_report,
+    generate_lint_report,
+    run_lint,
+)
 
 
 def main() -> None:
@@ -202,7 +206,8 @@ def main() -> None:
         )
         if not args.no_report:
             generate_lint_report(result, Path(args.wiki))
-            print("Lint 报告: wiki/lint-report.md")
+            generate_alias_conflicts_report(result, Path(args.wiki))
+            print("Lint 报告: wiki/lint-report.md（重名明细: wiki/alias-conflicts.md）")
         errors = sum(1 for i in result.issues if i.severity == "error")
         warnings = sum(1 for i in result.issues if i.severity == "warning")
         print("Lint: {} errors, {} warnings, {} info, {} auto-fixed / {} total".format(
@@ -250,6 +255,7 @@ def main() -> None:
             auto_fix=True,
         )
         generate_lint_report(lint_result, Path(args.wiki))
+        generate_alias_conflicts_report(lint_result, Path(args.wiki))
         errors = sum(1 for i in lint_result.issues if i.severity == "error")
         print("Lint: {} errors, {} warnings — {} auto-fixed".format(
             errors, lint_result.total - errors, lint_result.auto_fixed))

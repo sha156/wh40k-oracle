@@ -5,7 +5,8 @@
   - raw-backlinks：frontmatter raw: 回链的 data_refined 文件不存在
   - index-consistency：index.md 中链接指向的页面是否存在
   - missing-points：type=unit 但 points 为空
-  - alias-conflicts：两个实体的 aliases 有重叠
+  - alias-conflicts：两个实体的 aliases 有重叠（聚合成 1 条摘要 warning，
+    明细见 wiki/alias-conflicts.md）
   - faction-indexes：缺少 factions/<slug>/index.md 的阵营
 """
 from __future__ import annotations
@@ -15,7 +16,7 @@ import re
 from collections import defaultdict
 from dataclasses import dataclass, field
 from pathlib import Path
-from typing import Callable, Dict, List, Optional, Set
+from typing import Callable, Dict, List, Optional, Set, Tuple
 
 from wiki_engine.models import (
     GENERATED_MD_NAMES,
@@ -24,6 +25,10 @@ from wiki_engine.models import (
     WikiPage,
     faction_slug,
 )
+
+
+# 重名明细报告文件名（与 lint-report.md 并列，已登记进 GENERATED_MD_NAMES）
+ALIAS_CONFLICTS_REPORT_NAME = "alias-conflicts.md"
 
 
 def scan_wiki_pages(wiki_root: Path) -> List[WikiPage]:
@@ -192,9 +197,11 @@ def check_missing_points(wiki_root: Path) -> List[LintIssue]:
     return issues
 
 
-def check_alias_conflicts(wiki_root: Path) -> List[LintIssue]:
-    """检查两个实体的 aliases 或名称是否有重叠。"""
-    issues: List[LintIssue] = []
+def collect_alias_conflicts(wiki_root: Path) -> List[Tuple[str, List[str]]]:
+    """收集重名明细：返回 [(归一化名称, [实体 id, ...]), ...]，按名称排序。
+
+    只做收集不做告警——告警侧只需要"有几组"，明细走单独的报告文件。
+    """
     pages = scan_wiki_pages(wiki_root)
 
     # 收集所有名称 → 页面映射
@@ -211,17 +218,35 @@ def check_alias_conflicts(wiki_root: Path) -> List[LintIssue]:
             if name:
                 name_map[name].append(page.fm.id)
 
-    for name, page_ids in name_map.items():
-        if len(page_ids) > 1:
-            issues.append(LintIssue(
-                severity="warning",
-                rule="alias-conflicts",
-                page_path=None,
-                message="名称/别名冲突: '{}' 被 {} 同时使用".format(
-                    name, ", ".join(page_ids)),
-                auto_fixable=False,
-            ))
-    return issues
+    return [(name, ids) for name, ids in sorted(name_map.items()) if len(ids) > 1]
+
+
+def check_alias_conflicts(
+    wiki_root: Path,
+    groups: Optional[List[Tuple[str, List[str]]]] = None,
+) -> List[LintIssue]:
+    """检查两个实体的 aliases 或名称是否有重叠——**聚合成 1 条摘要 warning**。
+
+    官方中文名铺开后重名从 553 涨到 593 组，逐条报会把整个 warning 通道占满，
+    真出现别的 warning 会被淹没（项目吃过"误报致人不再看"的亏）。这里只报
+    "有 N 组重名、涉及 M 个实体"，完整名单写进 wiki/alias-conflicts.md。
+    注意这不是降级/关闭——严重度仍是 warning，一条都没少查，只是明细换了载体。
+
+    groups 可由调用方预先算好（run_lint 复用，避免重复全库扫描）。
+    """
+    if groups is None:
+        groups = collect_alias_conflicts(wiki_root)
+    if not groups:
+        return []
+    affected = {pid for _, ids in groups for pid in ids}
+    return [LintIssue(
+        severity="warning",
+        rule="alias-conflicts",
+        page_path=None,
+        message="名称/别名冲突 {} 组（涉及 {} 个实体），完整名单见 wiki/{}".format(
+            len(groups), len(affected), ALIAS_CONFLICTS_REPORT_NAME),
+        auto_fixable=False,
+    )]
 
 
 def check_faction_indexes(wiki_root: Path) -> List[LintIssue]:
@@ -314,7 +339,8 @@ def check_verify_warnings(wiki_root: Path) -> List[LintIssue]:
 
 LINT_RULES: List[Callable] = [
     check_broken_links,
-    check_alias_conflicts,
+    # check_alias_conflicts 由 run_lint 单独调用（复用预先算好的 groups，
+    # 顺带把明细带出来写 wiki/alias-conflicts.md）
     check_index_consistency,
     check_faction_indexes,
     check_missing_points,
@@ -382,6 +408,19 @@ def run_lint(
     """运行全部 lint 规则，可选自动修复。"""
     all_issues: List[LintIssue] = []
 
+    # alias-conflicts 单独跑：明细进 LintResult.alias_conflicts，issues 里只留 1 条摘要
+    alias_groups: List[Tuple[str, List[str]]] = []
+    try:
+        alias_groups = collect_alias_conflicts(wiki_root)
+        all_issues.extend(check_alias_conflicts(wiki_root, alias_groups))
+    except Exception as e:  # noqa: BLE001
+        all_issues.append(LintIssue(
+            severity="error",
+            rule="lint-error",
+            page_path=None,
+            message="规则 check_alias_conflicts 执行失败: {}".format(e),
+        ))
+
     # 运行通用规则
     for rule_fn in LINT_RULES:
         try:
@@ -411,11 +450,55 @@ def run_lint(
     if auto_fix:
         auto_fixed = auto_fix_broken_links(all_issues, wiki_root)
 
-    return LintResult(issues=all_issues, auto_fixed=auto_fixed, total=len(all_issues))
+    return LintResult(issues=all_issues, auto_fixed=auto_fixed, total=len(all_issues),
+                      alias_conflicts=alias_groups)
 
 
 def generate_lint_report(result: LintResult, wiki_root: Path) -> Path:
     """生成 wiki/lint-report.md，返回文件路径。"""
     report_path = wiki_root / "lint-report.md"
     report_path.write_text(result.to_report(), encoding="utf-8")
+    return report_path
+
+
+def render_alias_conflicts_report(groups: List[Tuple[str, List[str]]]) -> str:
+    """渲染 wiki/alias-conflicts.md 全文（确定性：同样的重名 → 同样的字节）。"""
+    affected = {pid for _, ids in groups for pid in ids}
+    lines = [
+        "# 名称/别名冲突明细",
+        "",
+        "lint 规则 `alias-conflicts` 的完整名单。摘要（1 条 warning）在 "
+        "[lint-report.md](lint-report.md)。",
+        "",
+        "重名本身多数是**正常现象**：同一条战略/增强在多个阵营各有一页，"
+        "官方中文名自然相同。这里列出来是为了可查，不是每条都要改。",
+        "",
+        "**冲突组:** {}  |  **涉及实体:** {}".format(len(groups), len(affected)),
+        "",
+    ]
+    if not groups:
+        lines.append("✅ 没有重名。")
+        return "\n".join(lines) + "\n"
+
+    lines.extend([
+        "| 名称（归一化） | 实体数 | 实体 ID |",
+        "|----------------|--------|---------|",
+    ])
+    for name, ids in groups:
+        lines.append("| {} | {} | {} |".format(
+            _escape_cell(name), len(ids),
+            ", ".join("`{}`".format(_escape_cell(i)) for i in ids)))
+    return "\n".join(lines) + "\n"
+
+
+def _escape_cell(text: str) -> str:
+    """表格单元格转义：竖线会截断列。"""
+    return text.replace("|", "\\|")
+
+
+def generate_alias_conflicts_report(result: LintResult, wiki_root: Path) -> Path:
+    """生成 wiki/alias-conflicts.md（与 lint-report.md 并列），返回文件路径。"""
+    report_path = wiki_root / ALIAS_CONFLICTS_REPORT_NAME
+    report_path.write_text(render_alias_conflicts_report(result.alias_conflicts),
+                           encoding="utf-8")
     return report_path

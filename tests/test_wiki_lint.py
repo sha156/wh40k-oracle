@@ -13,6 +13,8 @@ from wiki_engine.lint import (
     check_index_consistency,
     check_missing_points,
     check_raw_backlinks,
+    collect_alias_conflicts,
+    render_alias_conflicts_report,
     run_lint,
 )
 from wiki_engine.models import LintIssue, WikiPage, WikiPageFrontmatter
@@ -137,9 +139,66 @@ class TestAliasConflicts:
                                   faction="test", type="unit")
         (dir_a / "a.md").write_text(WikiPage(fm=fm1, body="A").to_markdown(), encoding="utf-8")
         (dir_a / "b.md").write_text(WikiPage(fm=fm2, body="B").to_markdown(), encoding="utf-8")
+        # 告警侧聚合成 1 条摘要，明细走 collect_alias_conflicts
         issues = check_alias_conflicts(wiki)
-        assert len(issues) >= 1
-        assert "冲突名" in issues[0].message
+        assert len(issues) == 1
+        assert issues[0].severity == "warning"      # 不是降级成 info
+        assert "1 组" in issues[0].message
+        assert "alias-conflicts.md" in issues[0].message
+
+        groups = collect_alias_conflicts(wiki)
+        assert groups == [("冲突名", ["a", "b"])]
+
+    def test_summary_stays_one_issue_when_conflicts_pile_up(self, tmp_path):
+        """20 组重名仍然只占 warning 通道的 1 条（聚合的全部意义）。"""
+        wiki = tmp_path / "wiki"
+        dir_a = wiki / "factions" / "test" / "units"
+        dir_a.mkdir(parents=True)
+        for i in range(20):
+            for side in ("x", "y"):
+                fm = WikiPageFrontmatter(id="{}{}".format(side, i), name_zh="重名{}".format(i),
+                                         faction="test", type="unit")
+                (dir_a / "{}{}.md".format(side, i)).write_text(
+                    WikiPage(fm=fm, body="B").to_markdown(), encoding="utf-8")
+        assert len(collect_alias_conflicts(wiki)) == 20
+        issues = check_alias_conflicts(wiki)
+        assert len(issues) == 1
+        assert "20 组" in issues[0].message and "40 个实体" in issues[0].message
+
+    def test_report_lists_every_group(self, tmp_path):
+        """明细一条不少地落进 wiki/alias-conflicts.md，且渲染确定（无时间戳）。"""
+        groups = [("重名甲", ["a", "b"]), ("重名乙|带竖线", ["c", "d", "e"])]
+        text = render_alias_conflicts_report(groups)
+        assert "**冲突组:** 2" in text and "**涉及实体:** 5" in text
+        assert "重名甲" in text
+        assert "重名乙\\|带竖线" in text      # 竖线转义，否则截断表格列
+        assert text == render_alias_conflicts_report(groups)
+
+    def test_real_warning_not_drowned_by_alias_conflicts(self, tmp_path):
+        """合成用例：50 组重名 + 1 条真 warning（faction-indexes），
+        真 warning 必须仍能在 warning 通道里被一眼看到，而不是淹在几十条同型里。"""
+        wiki = tmp_path / "wiki"
+        dir_a = wiki / "factions" / "test-faction" / "units"
+        dir_a.mkdir(parents=True)
+        for i in range(50):
+            for side in ("x", "y"):
+                fm = WikiPageFrontmatter(id="{}{}".format(side, i),
+                                         name_zh="重名{}".format(i),
+                                         faction="test-faction", type="unit",
+                                         points={"1": 10})
+                (dir_a / "{}{}.md".format(side, i)).write_text(
+                    WikiPage(fm=fm, body="B").to_markdown(), encoding="utf-8")
+        # 不建 factions/test-faction/index.md → faction-indexes 会报 1 条 warning
+        result = run_lint(wiki, auto_fix=False)
+        warnings = [i for i in result.issues if i.severity == "warning"]
+        assert len(result.alias_conflicts) == 50          # 一组都没少查
+        assert len(warnings) == 2                          # 摘要 1 条 + 真问题 1 条
+        rules = sorted(i.rule for i in warnings)
+        assert rules == ["alias-conflicts", "faction-indexes"]
+        # 报告正文里真 warning 不被 50 行重名推走
+        report = result.to_report()
+        assert "缺少阵营索引页" in report
+        assert sum(1 for ln in report.splitlines() if "**[alias-conflicts]**" in ln) == 1
 
 
 class TestFactionIndexes:
