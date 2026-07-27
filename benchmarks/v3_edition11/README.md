@@ -61,6 +61,40 @@
 两题都指向同一个可疑变更面：黑图中文层刷新改了 `unit_zh_detail` → 兵牌工具返回内容变化 →
 agent 工具路由/消歧行为变化。**本轮不修**（超出三件事的范围），点名留档。
 
+## #63 已定因并修复（2026-07-27，`qa_agent_results_ambiguous_note_fix.json`）
+
+上面留档的「消歧行为变化」定因到了一处**自相矛盾的接线**，不在数据层而在 `agent/tools.py`：
+
+- `get_entity` 解析出多候选时，返回的 `note` 原文是「译名有多个候选，**需向用户反问确认**：…」——
+  等于工具亲口指挥模型把问题退回用户；
+- 同时 `loop._EMPTY_CHECKS` 按评审 #25 的裁决把 ambiguous 判为**非空**（候选是实质回复，
+  不该降级 classic），于是经典链兜底**也不会触发**。
+
+两条单独看都合理，凑在一起就成了「**不降级、也不作答**」的死胡同：模型照 note 反问用户，
+检索源 0 个，judge 按「答非所问」判 ❌。这也解释了为什么基线时它是好的——基线上
+`get_entity` 没解析出候选（走 empty → 降级 classic → rag_search 命中 8 源）；官方中文名铺开后
+「坦克指挥官」开始能匹配到 3 个候选（黎曼鲁斯 / 罗格多恩 / 远见指挥官），才把这条死路走通。
+
+修法（只改 note 措辞，不动 `_EMPTY_CHECKS`，评审 #25 通道原样保留）：让 note 指挥模型
+**逐个候选重新调用 `get_entity`**，反问用户降级为查证之后的兜底。修后工具链变成
+`[get_entity, get_entity, rag_search]`——第二次候选查询返回空 → 兜底正常触发 → 回到基线的
+8 个检索源与带页码的正确答案。
+
+| 指标 | 修前 `..._gnhf_kw_zh.json` | 修后 `..._ambiguous_note_fix.json` |
+|---|---|---|
+| 成绩 | 102✅ / 1⚠️ / 1❌ = 98.1 | **103✅ / 1⚠️ / 0❌ = 99.0** |
+| 104 题逐题 verdict 差异 | — | **仅 #63（❌→✅），其余 103 题零变动** |
+
+回归护栏：`tests/test_agent_tools.py::TestGetEntity` 两条——
+`test_ambiguous_note_orders_recheck_not_bounce_to_user`（note 必须先指挥重查、且已验证
+把 note 改回旧措辞它会红）与 `test_ambiguous_still_counts_as_non_empty_for_loop`
+（评审 #25 通道不许被顺手改回降级）。
+
+**仍留档未修：#41 兽人小子 ⚠️**（漏项，非硬错）。它是另一套机制——`get_entity("兽人小子")`
+现在 `confidence=exact` 直接命中 `000000016`，agent 因此走兵牌查表而不再检索规则书，
+漏掉「抢好东西去 / 保镖」。改它要动「查表 vs 检索」的路由偏好，波及面远大于本次 note 措辞，
+不在本轮范围。
+
 ## 与 v1（97.9，benchmarks/v1_10th/）的关系
 
 v1 与 v3 成绩不可直接比较（7 题 gold 语义变了 + 语料从 37 本十版换成 61 本分层）。

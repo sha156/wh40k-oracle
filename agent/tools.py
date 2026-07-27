@@ -110,7 +110,15 @@ def get_entity(
 
     note = "未找到实体页（可能未编译或译名未收录）"
     if resolved["confidence"] == "ambiguous":
-        note = "译名有多个候选，需向用户反问确认：" + "、".join(resolved["candidates"])
+        # ⚠️ 这里**不能**让 LLM 直接反问用户。ambiguous 被 loop._EMPTY_CHECKS 判为
+        # 「非空」（评审 #25：候选是实质回复，不该降级 classic），于是经典链兜底也不会触发；
+        # 若本 note 再让模型把问题退回用户，这条路径就成了「不降级也不作答」的死胡同
+        # （基准 #63 坦克指挥官：0 检索源、judge 判「答非所问」❌）。
+        # 正确做法与 get_datasheet 的 ambiguous 分支一致：先逐个候选查证再作答。
+        note = ("译名有多个候选：" + "、".join(resolved["candidates"])
+                + "。请逐个用候选名重新调用 get_entity 取回各自的实体页，"
+                  "并在回答中分别说明各候选单位的情况；只有在查证候选之后仍无法判断"
+                  "用户所指时才反问用户，不要在未查证任何候选前就把问题退回给用户。")
     return {"found": False, "page": None, "resolved_via": resolved, "note": note}
 
 

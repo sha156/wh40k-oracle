@@ -149,6 +149,38 @@ class TestGetEntity:
         assert result["found"] is False
         assert result["page"] is None
 
+    def test_ambiguous_note_orders_recheck_not_bounce_to_user(self, tmp_path, monkeypatch):
+        """ambiguous 被 loop 判为「非空」→ 经典链兜底不触发，此时 note 若让模型反问用户，
+        这条路径就是「不降级也不作答」的死胡同（基准 #63：0 检索源、judge 判答非所问 ❌）。
+        note 必须指挥模型逐个候选重查。"""
+        wiki_root = _write_wiki_fixture(tmp_path)
+        monkeypatch.setattr(agent_tools, "entity_resolver", lambda name, resolver=None: {
+            "canonical_id": None, "name_en": None,
+            "confidence": "ambiguous", "candidates": ["甲指挥官", "乙指挥官"]})
+
+        result = agent_tools.get_entity("无匹配统帅ZZZ", wiki_root=wiki_root)
+
+        assert result["found"] is False
+        note = result["note"]
+        assert "甲指挥官" in note and "乙指挥官" in note      # 候选一个不少地透出
+        assert "重新调用 get_entity" in note                  # 指挥模型自己去查证
+        # 反问用户只能是查证候选之后的兜底，不能是首选动作
+        assert "需向用户反问确认" not in note
+        assert note.index("重新调用 get_entity") < note.index("才反问用户")
+
+    def test_ambiguous_still_counts_as_non_empty_for_loop(self, tmp_path, monkeypatch):
+        """评审 #25 通道不能因上面的措辞调整而被改回「空结果 → 降级 classic」。"""
+        from agent.loop import _is_empty_result
+
+        wiki_root = _write_wiki_fixture(tmp_path)
+        monkeypatch.setattr(agent_tools, "entity_resolver", lambda name, resolver=None: {
+            "canonical_id": None, "name_en": None,
+            "confidence": "ambiguous", "candidates": ["甲指挥官", "乙指挥官"]})
+
+        result = agent_tools.get_entity("无匹配统帅ZZZ", wiki_root=wiki_root)
+
+        assert _is_empty_result("get_entity", result) is False
+
 
 class TestGetKeywordDefinition:
     def test_matches_by_filename_slug(self, tmp_path):
