@@ -174,14 +174,34 @@
   溯源块——而该键在 `keyword_index.py` / `zh_weapons.py` / `web_api/codex.py` /
   `dup_units.py` **四处被当「现役」判据**，补它会翻转现役口径并需 wiki 重生成，超出本轮。
   报告 `docs/superpowers/specs/2026-07-27-mfm-refetch-points-verification.md`。
-  **顺带查出同一失效模式的第二处实例（未改）**：`_KEEP_SECTIONS` 白名单太窄，
-  排除的小节里有 **≈61 个子阵营专属真单位**从未进比对池——`space-marines` 的
-  ULTRAMARINES(8，含基里曼)/IMPERIAL FISTS(3)/IRON HANDS/SALAMANDERS/RAVEN GUARD/
-  WHITE SCARS(各 2)、`aeldari` 的 HARLEQUINS(8)/YNNARI(11)、四个混沌 LEGIONS 小节(22)；
-  另 399 条战团页重复 SM 名录 + 29 条借调价 + 13 条分队名误命中属**正确排除**。
-  ⚠️ `count_unit_headers()` 抓不到这处——它也走 `_slice_kept_sections()`，
-  **校验器与被校验对象共享前提就一起瞎**；逮到它的是体系外的明星单位证伪法。
-  修它需逐个判定小节是自军价还是借调价，且应与上面的 apply 遗留合并做（否则 wiki 重生成两次）
+  **顺带查出同一失效模式的第二处实例**（`_KEEP_SECTIONS` 白名单太窄，漏掉含基里曼的
+  子阵营小节）——**已于同日修完，见下条**
+- **MFM `_KEEP_SECTIONS` 覆盖缺口已修**（2026-07-27）：30 页**全部** h3 小节逐个做
+  数据判定（不靠小节名猜），改法是删掉整段白名单、换成**逐单位可自解释规则**——
+  「主小节（UNITS/FORTIFICATIONS）的行全收；其余小节的行**只在该单位没被主小节
+  定过价时**才收」。主小节已有 ⇒ 第二套价（`INQUISITOR` 55/65）丢；主小节没有 ⇒
+  该阵营列在子标题下的自己的单位（基里曼）收。被排除的 502 表头判成：
+  **纳入 60**（SM 战团英雄 19 + HARLEQUINS 8 + YNNARI 11 + 四个 LEGIONS 小节 22），
+  **仍排除 442**（战团页整段重印 399，与主小节 **399/399 全重叠**；imperial-agents
+  条件价 29，**29/29 全重叠**；DETACHMENTS 14，**0 个分数行**）。
+  ⚠️ **四个 LEGIONS 小节的判定推翻了直觉**：那 22 个单位全都在 `chaos-daemons` 页
+  也有价，单看像盟友借调价——但**库把它们建模成按阵营各自独立的行**（`great unclean
+  one` 同时有 CD 行和 DG 行），DG 那行的权威价就在 death-guard 页。比对结果印证：
+  **CD 行全对、DG/TS/WE/EC 行 20 条过期**（有人管的行是对的，没人管的行烂掉了）。
+  `mfm --check` **1243/1243/过期 0 → 1319 可比 / 1273 一致 (96.5%) / 过期 46**，
+  `mfm_only` 仍 5 无新增、`db_unparsed` 0；**旧 1243 条一条没退化**
+  （新增 76 = 新一致 30 + 新过期 46，46 条全属本轮纳入名单）。
+  46 条过期含**基里曼 340→355**、Suboden Khan 115→90、Lord of Change 285→320 等，
+  官网原文多带 ▲/▼ 标记＝本版刚改价、Wahapedia 镜像没跟上。
+  顺带把 `count_unit_headers()` 改成**不走小节筛选**（原先与被校验对象共享前提，
+  对整段误伤全无感知）。缓存 1716→2514 行（战团差异价现在真的留在 json 里了，
+  比对时由 `_rows_by_faction` 通用页优先丢弃）。2359 测试绿（+6 新用例，
+  对旧实现跑 4 条真会红）。报告
+  `docs/superpowers/specs/2026-07-27-mfm-section-coverage-fix.md`。
+  **未 apply**：库副本逐字段试跑显示 apply 会改 46 条档位点数 + 46 个顶层 points
+  （含 `AE/Troupe 580→85` 这类 Wahapedia 累加和→基准档最小值的大幅语义修正）
+  **+ 给 67 个单位新写 `points_json["mfm"]`＝翻转现役口径**，需连 wiki 重生成一起做；
+  副本上已验证 apply 后收敛到 **1319/1319/过期 0**，路径通，留给独立一轮
 - **剩余**：#41 兽人小子 ⚠️ 漏项（非硬错）——`get_entity` 现在 exact 命中致 agent 走兵牌查表
   不再检索规则书，改它要动「查表 vs 检索」路由偏好，波及面大。基准扩充长期滚动。
   wiki 收尾候选：武器词条页的「规则页 NN.NN · 正文页待上线」现在可以

@@ -372,6 +372,108 @@ class TestCheckPoints:
         assert stern == []  # 通用页 100 与库一致，战团价不参与
 
 
+class TestSubFactionSectionCoverage:
+    """非主小节的两种相反语义必须靠**数据**区分，不靠小节名（2026-07-27 覆盖缺口）。
+
+    旧实现整段切除 UNITS/FORTIFICATIONS 之外的小节，把 38 个「阵营自己的单位列在
+    子标题下」（基里曼在 space-marines 页的 ULTRAMARINES 小节里）一起误伤——
+    和千分位丢行同一个失效模式：不报错、指标好看、覆盖面无声塌掉。
+    """
+
+    def _page(self, sections):
+        """sections = [(h3 标题, [(单位名, 模型数, 分数)])] → 页面 HTML。"""
+        out = ["<html><body>"]
+        for title, units in sections:
+            out.append(f'<h3 class="text-4xl font-header p-1">{title}</h3>')
+            for name, models, pts in units:
+                out.append(_UNIT.format(name=name))
+                out.append(_TIER.format(
+                    tier="YOUR UNIT COSTS",
+                    lis=f"<li><span>{models}</span>"
+                        f"<span>{pts} pts</span></li>"))
+        return "".join(out) + "</body></html>"
+
+    def test_sub_faction_section_units_are_kept(self):
+        # ULTRAMARINES 小节里的单位主小节没有 ⇒ 是该阵营自己的单位，必须收
+        html = self._page([
+            ("UNITS", [("INTERCESSOR SQUAD", "5 models", 75)]),
+            ("ULTRAMARINES", [("ROBOUTE GUILLIMAN", "1 model", 355)]),
+        ])
+        rows = parse_mfm_html(html)
+        assert ("ROBOUTE GUILLIMAN", "YOUR UNIT COSTS", "1 model", 355) in rows
+
+    def test_second_price_for_already_priced_unit_is_dropped(self):
+        # 负向成对：主小节已定过价的单位，小节里的第二套价（条件价）必须丢
+        html = self._page([
+            ("UNITS", [("INQUISITOR", "1 model", 55)]),
+            ("EVERY MODEL HAS THE IMPERIUM KEYWORD",
+             [("INQUISITOR", "1 model", 65)]),
+        ])
+        rows = parse_mfm_html(html)
+        assert ("INQUISITOR", "YOUR UNIT COSTS", "1 model", 55) in rows
+        assert all(pts != 65 for _u, _t, _m, pts in rows)
+
+    def test_both_semantics_resolved_on_one_page(self):
+        # 同一页同时有两种语义时各判各的——这正是靠小节名猜会翻车的地方
+        html = self._page([
+            ("UNITS", [("INQUISITOR", "1 model", 55)]),
+            ("EVERY MODEL HAS THE IMPERIUM KEYWORD",
+             [("INQUISITOR", "1 model", 65), ("NAVIGATOR", "1 model", 75)]),
+        ])
+        names = {u for u, _t, _m, _p in parse_mfm_html(html)}
+        assert names == {"INQUISITOR", "NAVIGATOR"}
+        assert ("NAVIGATOR", "YOUR UNIT COSTS", "1 model", 75) in parse_mfm_html(html)
+
+    def test_headerless_page_still_parsed_whole(self):
+        # 异常版式（一个 h3 都没有）仍整篇当主小节，宁多勿漏
+        html = (_UNIT.format(name="LONE UNIT")
+                + _TIER.format(tier="YOUR UNIT COSTS",
+                               lis="<li><span>1 model</span>"
+                                   "<span>40 pts</span></li>"))
+        assert parse_mfm_html(html) == [
+            ("LONE UNIT", "YOUR UNIT COSTS", "1 model", 40)]
+
+    def test_header_count_does_not_share_section_filtering(self):
+        # count_unit_headers 必须**不走**小节筛选：校验器和被校验对象共享前提
+        # 就会一起瞎（旧版跟着切小节，所以对整段误伤全无感知）
+        from db_compile.mfm import count_unit_headers
+
+        html = self._page([
+            ("UNITS", [("INQUISITOR", "1 model", 55)]),
+            ("EVERY MODEL HAS THE IMPERIUM KEYWORD",
+             [("INQUISITOR", "1 model", 65)]),
+        ])
+        assert count_unit_headers(html) == 2   # 两个表头都数进来
+        assert len(parse_mfm_html(html)) == 1  # 但只留主小节那一套价
+
+    def test_chapter_page_bulk_reprint_does_not_beat_generic_page(self, tmp_path):
+        # 战团页把通用 SM 名录整段重渲染（BA 页 'SPACE MARINES' 小节 84 个单位），
+        # 这些单位在**战团页自己的**主小节里没有，故会被本页规则收下——
+        # 跨页那一层由 _rows_by_faction 的「通用页优先」收敛，战团差异价不得夺权
+        db = _make_db(tmp_path)
+        conn = sqlite3.connect(str(db))
+        conn.execute(
+            "INSERT INTO units VALUES('6','SM','Assault Intercessor Squad',"
+            "NULL,?,NULL,NULL)",
+            (json.dumps({"points": 75, "items": [
+                {"line": "1", "desc": "5 models", "cost": 75}]}),))
+        conn.commit(); conn.close()
+        chapter = self._page([
+            ("UNITS", [("DEATH COMPANY MARINES", "5 models", 100)]),
+            ("SPACE MARINES", [("ASSAULT INTERCESSOR SQUAD", "5 models", 80)]),
+        ])
+        chapter_rows = parse_mfm_html(chapter)
+        # 本页规则确实收下了它（战团差异价保留在 mfm json 里备用）
+        assert ("ASSAULT INTERCESSOR SQUAD", "YOUR UNIT COSTS",
+                "5 models", 80) in chapter_rows
+        rep = check_points(db, {
+            "blood-angels": chapter_rows,
+            "space-marines": [("ASSAULT INTERCESSOR SQUAD",
+                               "YOUR UNIT COSTS", "5 models", 75)],
+        })
+        assert rep["diffs"] == []  # 通用页 75 与库一致，战团 80 不参与比对
+
+
 class TestNameNormalizationMatching:
     """精确名匹配失败后的兜底：单复数归一 + 显式别名 + 唯一命中护栏（回归）。
 

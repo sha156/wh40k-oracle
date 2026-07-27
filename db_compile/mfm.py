@@ -54,30 +54,41 @@ def _resolve_rsc_placeholders(html: str) -> str:
     return doc
 
 
-# 只收这些 h3 小节里的单位价（自军现行价）。其余小节一律排除：
-# 'EVERY MODEL HAS THE IMPERIUM KEYWORD' 等是**借调进别家军队**的另一套价，
-# 混进来会把同一单位拆成两个矛盾价（Inquisitor 自军 55 / 借调 65）。
-_KEEP_SECTIONS = {"UNITS", "FORTIFICATIONS"}
+# 官方把「自军现行价」放在这两个 h3 主小节里。其余小节**有两种截然相反的语义**，
+# 靠数据而不是靠小节名区分（判据见 parse_mfm_html，实测明细见
+# docs/superpowers/specs/2026-07-27-mfm-section-coverage-fix.md）：
+#
+#   ① 同一单位的**第二套价**——条件价（imperial-agents 的 'EVERY MODEL HAS THE
+#      IMPERIUM KEYWORD'：Inquisitor 自军 55 / 该条件下 65）或战团差异价
+#      （blood-angels 页的 'SPACE MARINES' 小节：突击均等兄弟 80 vs 通用页 75）。
+#      收进来会把一个单位拆成两个互相矛盾的价，必须丢。
+#   ② 该阵营**自己的单位列在子标题下**——space-marines 的 'ULTRAMARINES'
+#      （基里曼在这里）、aeldari 的 'HARLEQUINS'/'YNNARI'、death-guard 的
+#      'PLAGUE LEGIONS'。整段丢掉 = 这些单位永远进不了比对池，官方改价也无人知晓。
+#
+# 区分判据（纯数据）：**该单位在同一页的主小节里是否已经定过价**。
+# 定过 = ①（主小节的自军价优先，丢弃小节里的第二套价）；没定过 = ②（收下）。
+# 旧实现是 `_KEEP_SECTIONS = {"UNITS","FORTIFICATIONS"}` 整段切除，把 ② 一起误伤了
+# ——和千分位丢行同一个失效模式：不报错、指标好看、覆盖面无声塌掉。
+_PRIMARY_SECTIONS = {"UNITS", "FORTIFICATIONS"}
 
 
-def _slice_kept_sections(doc: str) -> str:
-    """取 h3 标题在 _KEEP_SECTIONS 里的小节内容（到下一个 h3 为止），拼接返回。
+def _split_sections(doc: str) -> List[Tuple[str, str]]:
+    """按 h3 切页 → [(标题大写, 小节正文)]。
 
-    找不到任何 h3 时返回整个文档（向后兼容异常版式，宁多勿漏——多出的重复
-    由去重收敛，真正危险的借调价小节只在有 h3 结构的页面出现）。
+    页面一个 h3 都没有时，整篇当作一个主小节返回（向后兼容异常版式，宁多勿漏——
+    多出的重复由去重收敛，需要区分语义的小节只在有 h3 结构的页面上出现）。
     """
     heads = [(m.start(), m.end(),
               re.sub(r"<[^>]+>", "", m.group(1)).strip().upper())
              for m in re.finditer(r"<h3[^>]*>([\s\S]{1,150}?)</h3>", doc)]
     if not heads:
-        return doc
-    kept = []
-    for i, (start, end, title) in enumerate(heads):
-        if title not in _KEEP_SECTIONS:
-            continue
+        return [("UNITS", doc)]
+    out = []
+    for i, (_start, end, title) in enumerate(heads):
         nxt = heads[i + 1][0] if i + 1 < len(heads) else len(doc)
-        kept.append(doc[end:nxt])
-    return "".join(kept)
+        out.append((title, doc[end:nxt]))
+    return out
 
 
 # 单位名表头：2026-07 MFM 改版后有两种渲染。
@@ -106,19 +117,14 @@ _LI_PTS_RE = re.compile(
     r"((?:\d{1,3}(?:,\d{3})+|\d+)) pts</span></li>")
 
 
-def parse_mfm_html(html: str) -> List[MfmRow]:
-    """MFM 阵营页 HTML → 去重的 (单位名, 梯度表头, 模型数描述, 分数) 列表。纯函数。
-
-    只解析 UNITS/FORTIFICATIONS 小节（自军现行价），排除借调价小节与页面重复渲染。
-    按单位表头（新旧两式）切块，块内按梯度分组解析分数行（新旧两式）。
-    """
-    doc = _slice_kept_sections(_resolve_rsc_placeholders(html))
+def _parse_section_rows(body: str) -> List[MfmRow]:
+    """单个小节正文 → 分数行。按单位表头（新旧两式）切块，块内按梯度分组解析。"""
     heads = [(m.start(), (m.group(1) or m.group(2)).strip())
-             for m in _UNIT_HEADER_RE.finditer(doc)]
+             for m in _UNIT_HEADER_RE.finditer(body)]
     rows: List[MfmRow] = []
     for i, (start, unit) in enumerate(heads):
-        end = heads[i + 1][0] if i + 1 < len(heads) else len(doc)
-        block = doc[start:end]
+        end = heads[i + 1][0] if i + 1 < len(heads) else len(body)
+        block = body[start:end]
         # 单位块内按梯度分组：<div ...font-bold...>TIER 表头</div><ul>...li...</ul>
         for tier, ul in re.findall(
                 r'<div class="bg-slate-200[^"]*font-bold[^"]*">([^<]+)</div>'
@@ -126,18 +132,49 @@ def parse_mfm_html(html: str) -> List[MfmRow]:
             for models, pts in _LI_PTS_RE.findall(ul):
                 rows.append((unit, tier.strip(), models.strip(),
                              int(pts.replace(",", ""))))
-    return list(dict.fromkeys(rows))
+    return rows
+
+
+def parse_mfm_html(html: str) -> List[MfmRow]:
+    """MFM 阵营页 HTML → 去重的 (单位名, 梯度表头, 模型数描述, 分数) 列表。纯函数。
+
+    主小节（_PRIMARY_SECTIONS）的行全收；其余 h3 小节的行**只在该单位没被主小节
+    定过价时**才收——即「主小节的自军价优先」：
+
+      - 主小节里已有 ⇒ 这里是同一单位的第二套价（条件价 / 战团差异价），丢弃。
+        Inquisitor 在 imperial-agents 主小节 55、'EVERY MODEL HAS THE IMPERIUM
+        KEYWORD' 小节 65，收进来就成了两个互相矛盾的价。
+      - 主小节里没有 ⇒ 这是该阵营列在子标题下的**自己的单位**，收下。
+        ROBOUTE GUILLIMAN 只出现在 space-marines 页的 'ULTRAMARINES' 小节，
+        整段丢掉他就永远不在比对池里。
+
+    跨页的同名重复（战团页把通用 SM 名录整段重渲染一遍）由 _rows_by_faction
+    的「通用页优先」再收敛一次，这里不管。
+    """
+    doc = _resolve_rsc_placeholders(html)
+    primary: List[MfmRow] = []
+    secondary: List[MfmRow] = []
+    for title, body in _split_sections(doc):
+        (primary if title in _PRIMARY_SECTIONS else secondary).extend(
+            _parse_section_rows(body))
+    priced = {unit.strip().lower() for unit, _t, _m, _p in primary}
+    kept_secondary = [r for r in secondary if r[0].strip().lower() not in priced]
+    return list(dict.fromkeys(primary + kept_secondary))
 
 
 def count_unit_headers(html: str) -> int:
-    """页面里（保留小节内的）单位名表头个数——与分数行解析互相独立的对账基准。
+    """页面里**全部**单位名表头个数——与分数行解析互相独立的对账基准。
 
     parse_mfm_html 返回 0 行有两种截然不同的成因：① 该页真的没有单位（首页、
     空阵营页）② 表头认出来了但分数行正则对不上（官网改版/新数值形态）。
     ② 是静默降级，只看行数永远分辨不出来；表头数就是那个独立信号。
+
+    刻意**不走小节筛选**：校验器与被校验对象共享同一个前提就会一起瞎——
+    旧版跟着 `_slice_kept_sections` 走，所以对「整段小节被误伤切掉」全无感知
+    （基里曼那 38 个单位掉了它一声不吭）。代价是本函数会数进那些按「主小节优先」
+    丢弃的重复表头，故它只用于「>0 表头却 0 行」的断裂判定，不做等值对账。
     """
-    kept = _slice_kept_sections(_resolve_rsc_placeholders(html))
-    return len(_UNIT_HEADER_RE.findall(kept))
+    return len(_UNIT_HEADER_RE.findall(_resolve_rsc_placeholders(html)))
 
 
 class MfmParseBroken(RuntimeError):
