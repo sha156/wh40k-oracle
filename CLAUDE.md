@@ -162,6 +162,26 @@
   `docs/superpowers/specs/2026-07-27-titan-legions-datasheet-audit.md`。
   **点名遗留**：`Frame` 关键词全库缺失（19 个 FP + Core Rules 共 318 处，库内 0 个单位有）
   ——是 Wahapedia 镜像的系统性丢失，只补 4 个泰坦会让全库口径分裂，需独立做全库反灌对账
+- **MFM 全站重抓与点数校验已收官**（2026-07-27）：修完千分位正则后做了一次**全站重抓**
+  （非上一轮的 `--slug` 定点补抓），30 阵营逐个行数对账**零差额**（1716→1716，逐条
+  `(单位,档位,模型数)` 键新增/消失/变价皆 0），`count_unit_headers()` 独立交叉验证
+  **30/30 页表头数 = 去重单位数**，明星单位证伪法全部命中。`mfm --check`
+  **1243 可比 / 1243 一致 / 过期 0 / db_unparsed 0**；那 7 个 ≥1000 分单位
+  （4 泰坦 + 灵族幽魂/幻影泰坦 + 钛族 Manta）**7/7 与官网一致**——数值本来就对，
+  静默丢行的代价是「对不对无人知晓」。`mfm_only` 5 个全有已知解释（4 混沌泰坦共用兵牌
+  + Eradicator 变体装配名）。**未 apply**：差异为 0，库副本试跑证明
+  `units_updated=0`、点数变化 0 条，apply 唯一效果是给那 7 个补 `points_json["mfm"]`
+  溯源块——而该键在 `keyword_index.py` / `zh_weapons.py` / `web_api/codex.py` /
+  `dup_units.py` **四处被当「现役」判据**，补它会翻转现役口径并需 wiki 重生成，超出本轮。
+  报告 `docs/superpowers/specs/2026-07-27-mfm-refetch-points-verification.md`。
+  **顺带查出同一失效模式的第二处实例（未改）**：`_KEEP_SECTIONS` 白名单太窄，
+  排除的小节里有 **≈61 个子阵营专属真单位**从未进比对池——`space-marines` 的
+  ULTRAMARINES(8，含基里曼)/IMPERIAL FISTS(3)/IRON HANDS/SALAMANDERS/RAVEN GUARD/
+  WHITE SCARS(各 2)、`aeldari` 的 HARLEQUINS(8)/YNNARI(11)、四个混沌 LEGIONS 小节(22)；
+  另 399 条战团页重复 SM 名录 + 29 条借调价 + 13 条分队名误命中属**正确排除**。
+  ⚠️ `count_unit_headers()` 抓不到这处——它也走 `_slice_kept_sections()`，
+  **校验器与被校验对象共享前提就一起瞎**；逮到它的是体系外的明星单位证伪法。
+  修它需逐个判定小节是自军价还是借调价，且应与上面的 apply 遗留合并做（否则 wiki 重生成两次）
 - **剩余**：#41 兽人小子 ⚠️ 漏项（非硬错）——`get_entity` 现在 exact 命中致 agent 走兵牌查表
   不再检索规则书，改它要动「查表 vs 检索」路由偏好，波及面大。基准扩充长期滚动。
   wiki 收尾候选：武器词条页的「规则页 NN.NN · 正文页待上线」现在可以
