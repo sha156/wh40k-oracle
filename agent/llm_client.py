@@ -46,7 +46,9 @@ _TOOL_ARG_HINTS: Dict[str, str] = {
                       '（「吞世者的地狱兽」→ 传「地狱兽」）；'
                       '若返回 ambiguous，再按阵营用候选串重查（如 \\"Helbrute (WE)\\"）"}'),
     "entity_resolver": '{"name": "中文/英文/俗名"}',
-    "calc_points": '{"unit_list": ["单位名", ...]}',
+    "calc_points": ('{"unit_list": ["单位名", ...]}：中文名/英文名/canonical id 都可以，'
+                    '一次问多个单位就把它们全部放进同一个 unit_list（返回值逐个对应，'
+                    '答题时四个问了几个就要给几个）'),
     "rag_search": '{"query": "自然语言问题"}',
     # 对照 agent/tools.py judge_fight_order 真实读取的 ctx 键，全可选
     "judge_fight_order": (
@@ -116,6 +118,10 @@ _NEXT_STEP_CONTRACT = """你是「铁幕」，战锤40K规则参谋（现行第1
 - 工具返回 "modeled": false 或提示「未建模」时，如实告诉用户该能力尚未实现，
   绝不编造模拟/判定/算分结果。
 - content 里每条关键信息后标注 [《书名》第X页]。
+- **工具查不到 ≠ 该事物不存在**。工具返回 "found": false / "unresolved" / 「未找到」时，
+  只说明这条查询路径没命中，必须换工具或换名字再查一次（get_datasheet / entity_resolver /
+  rag_search 兜底）。**绝不允许**据此凭记忆输出「这个单位/阵营不存在」「不属于战锤40K」
+  「没有官方点数」之类的**否定性事实断言**——查不到就说查不到。
 - 若档案中确无相关信息，直接回复「档案缺失，建议查阅原始规则书」，绝不编造。
 - 属性/攻击数据尽量用表格或粗体呈现。
 """

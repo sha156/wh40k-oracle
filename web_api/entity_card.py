@@ -11,6 +11,8 @@ import re
 from typing import Any, Dict, List, Optional
 
 from web_api.contract import Ability, DamagedProfile, EntityCard, Stat, WeaponRow
+from web_api.keyword_refs import (KW_CLOSE, KW_OPEN, ability_spans, resolve_all,
+                                  strip_markers)
 from web_api.richtext import to_richtext
 
 
@@ -21,6 +23,29 @@ def _strip_html(s: Optional[str]) -> str:
     text = re.sub(r"<[^>]+>", "", str(s))
     text = html.unescape(text)
     return re.sub(r"\s+", " ", text).strip()
+
+
+# 英文 abilities 表把关键词包在 `<span class="kwb">…</span>` 里（实测 1202 行）。
+# 标签在 `_strip_html` 里会被整个剥掉、只剩裸词，位置就再也找不回来了——所以剥之前
+# 先换成哨兵。class 属性写法不止一种（`kwb` / `tt kwbu`），按**词边界**匹配 kwb，
+# 顺带不误吃 `kwbu`（那是同一批文本里另一个类名，实测确实与 kwb 混用）。
+_KWB_SPAN = re.compile(r'<span\b[^>]*\bclass="[^"]*\bkwb\b[^"]*"[^>]*>(.*?)</span>',
+                       re.IGNORECASE | re.DOTALL)
+
+
+def _ability(tag: Optional[str], name: str, raw_html: Optional[str],
+             fallback: str = "") -> Ability:
+    """一条技能：正文里内嵌的词条切成 `rich` 段，`text` 仍是逐字纯文本。
+
+    切段与显示用的是**同一串字**（`text == 各段显示串拼接`），不是各算各的：
+    两套规则打架时页面上只会少半句话，不报错。
+    """
+    marked = _KWB_SPAN.sub(KW_OPEN + r"\1" + KW_CLOSE, str(raw_html or ""))
+    body = _strip_html(marked) or fallback
+    if not body:
+        return Ability(tag=tag, name=name)
+    spans = ability_spans(body)
+    return Ability(tag=tag, name=name, text=strip_markers(body), rich=spans)
 
 
 def _fmt_range(val: str, lang: str = "zh") -> str:
@@ -41,25 +66,14 @@ def _fmt_skill(bs_ws: str) -> str:
     return v
 
 
-def _weapon_kw(keywords: List[str]) -> Optional[str]:
-    """武器关键词列表 → '[a，b]'；空则 None。DB 里单元素可能已是逗号串。"""
-    flat: List[str] = []
-    for k in keywords or []:
-        for part in re.split(r"[,，]", str(k)):
-            part = part.strip()
-            if part:
-                flat.append(part)
-    if not flat:
-        return None
-    return "[" + "，".join(flat) + "]"
-
-
 def _weapon_row(w: Dict[str, Any], hot_weapon: Optional[str], lang: str = "zh") -> WeaponRow:
     name = str(w.get("name", ""))
     hot = bool(hot_weapon) and hot_weapon.lower() in name.lower()
     return WeaponRow(
         name=name,
-        kw=_weapon_kw(w.get("keywords", [])),
+        # 拆开后**不再拼回字符串**：拼回去前端就只能整串印出来，逐条挂不了解释。
+        # 解析与解释统一走 keyword_refs（技能正文里的内嵌词条也走它，只准一处实现）。
+        kw=resolve_all(w.get("keywords", [])),
         range=_fmt_range(str(w.get("range", "")), lang),
         a=str(w.get("a", "")),
         skill=_fmt_skill(str(w.get("bs_ws", ""))),
@@ -119,8 +133,8 @@ def _zh_abilities(zh: Optional[Dict[str, Any]]) -> List[Ability]:
             if not nm:
                 continue
             tag, nm2 = _split_tag(nm)
-            text = _strip_html(item.get("contentHtml")) or _flatten_content(item.get("content"))
-            out.append(Ability(tag=tag, name=nm2, text=text or None))
+            out.append(_ability(tag, nm2, item.get("contentHtml"),
+                                _flatten_content(item.get("content"))))
     return out
 
 
@@ -150,8 +164,7 @@ def _eng_abilities(raw: Any) -> List[Ability]:
         nm = str(item.get("name_en") or item.get("name") or "").strip()
         if not nm:
             continue
-        text = _strip_html(item.get("text") or item.get("text_zh"))
-        out.append(Ability(name=nm, text=text or None))
+        out.append(_ability(None, nm, item.get("text") or item.get("text_zh")))
     return out
 
 

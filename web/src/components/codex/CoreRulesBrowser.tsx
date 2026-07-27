@@ -31,19 +31,42 @@ function apiHint(e: unknown, what: string): string {
   return `${what}没取到（${e instanceof Error ? e.message : String(e)}）。`;
 }
 
-/** 小节标题自带官方节号（"执行行动 16.01"）。锚点用序号而不是标题：标题里有空格与中文，
-    拿它当 id 还得转义，而节号在同一章内唯一性也不由前端保证 */
-function anchorId(slug: string, i: number): string {
-  return `rule-${slug}-${i}`;
+/**
+ * 锚点：有官方节号就用节号（"rule-24-core-abilities-24.03"），没有才退回序号。
+ *
+ * 节号由后端下发（`WikiSection.number`），不在前端从标题里抠——那条规则全仓库只有
+ * 一处实现。用它当 id 的理由是**外部要能落点**：词条页「查看正文」跳的就是这个 id，
+ * 而序号会随生成器重跑漂移。
+ */
+function anchorId(slug: string, section: { number: string | null }, i: number): string {
+  return `rule-${slug}-${section.number ?? i}`;
 }
 
-export function CoreRulesBrowser({ onError }: { onError?: () => void }) {
+interface CoreRulesBrowserProps {
+  onError?: () => void;
+  /**
+   * 深链落点：从武器词条页「查看正文」进来时带的章 slug 与节号。
+   *
+   * 做成 initial* 而不是受控 prop：父页每次跳转都用新 key 重挂本组件（React 里
+   * 「按 props 重置内部状态」的正规做法），这样这里不必在 effect 里 setState——
+   * eslint 的 react-hooks/set-state-in-effect 也正好拦那种写法。
+   */
+  initialSlug?: string | null;
+  initialSection?: string | null;
+}
+
+export function CoreRulesBrowser({
+  onError,
+  initialSlug = null,
+  initialSection = null,
+}: CoreRulesBrowserProps) {
   const [chapters, setChapters] = useState<CoreRuleChapterSummary[] | null>(null);
-  const [slug, setSlug] = useState<string | null>(null);
+  const [slug, setSlug] = useState<string | null>(initialSlug);
   const [chapter, setChapter] = useState<CoreRuleChapter | null>(null);
   const [listError, setListError] = useState<string | null>(null);
   const [detailError, setDetailError] = useState<string | null>(null);
-  const [loading, setLoading] = useState(false);
+  // 带着深链进来时正文马上就在取：初值给 false 会先闪一下"← 选择左侧章节"
+  const [loading, setLoading] = useState(Boolean(initialSlug));
 
   useEffect(() => {
     const ctrl = new AbortController();
@@ -94,6 +117,18 @@ export function CoreRulesBrowser({ onError }: { onError?: () => void }) {
       });
     return () => ctrl.abort();
   }, [slug, onError]);
+
+  // 深链滚动：正文到位后才滚（章节是异步取的，挂载时那个 id 还不存在）。
+  // 这里只碰 DOM 不 setState，故不触发级联渲染。滚过一次就够——依赖里带 chapter，
+  // 用户随后自己翻章时 initialSection 已经不属于新章，findIndex 落空自然不滚。
+  useEffect(() => {
+    if (!chapter || !initialSection || chapter.slug !== initialSlug) return;
+    const hit = chapter.sections.find((s) => s.number === initialSection);
+    if (!hit) return;
+    document
+      .getElementById(anchorId(chapter.slug, hit, chapter.sections.indexOf(hit)))
+      ?.scrollIntoView({ block: "start" });
+  }, [chapter, initialSlug, initialSection]);
 
   const totalSections = useMemo(
     () => (chapters ?? []).reduce((n, c) => n + c.sectionCount, 0),
@@ -204,7 +239,7 @@ export function CoreRulesBrowser({ onError }: { onError?: () => void }) {
                   {chapter.sections.map((s, i) => (
                     <a
                       key={i}
-                      href={`#${anchorId(chapter.slug, i)}`}
+                      href={`#${anchorId(chapter.slug, s, i)}`}
                       className="border border-[#2b423d] px-1.5 py-[1px] font-mono text-[10.5px] text-[#8fa19b] hover:border-tau hover:text-bone"
                     >
                       {s.title}
@@ -217,8 +252,14 @@ export function CoreRulesBrowser({ onError }: { onError?: () => void }) {
                 {chapter.sections.map((s, i) => (
                   <section
                     key={i}
-                    id={anchorId(chapter.slug, i)}
-                    className="mb-4 scroll-mt-4 last:mb-0"
+                    id={anchorId(chapter.slug, s, i)}
+                    className={`mb-4 scroll-mt-4 last:mb-0 ${
+                      // 深链进来的那一节高亮一下，否则跳过去只是"页面滚了一段"，
+                      // 24 章有 38 节，读者认不出到底该看哪一条
+                      initialSection && s.number === initialSection
+                        ? "border-l-2 border-gold pl-2"
+                        : ""
+                    }`}
                   >
                     <h3 className="mb-1 border-b border-[#1d3238] pb-1 font-cond text-[13.5px] tracking-[2px] text-sage uppercase">
                       {s.title}

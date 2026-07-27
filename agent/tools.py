@@ -64,16 +64,46 @@ def search_wiki(query: str, wiki_root: Optional[Path] = None) -> Dict[str, Any]:
     return {"found": len(results) > 0, "page": None, "results": results[:10]}
 
 
+# ⚠️ 与 #63 / #109 同型：解析器返回的是「这条名字映射路径的状态」，不是「世上有没有这个东西」。
+# entity_resolver 此前是本通道里**唯一一个空手时连一句 note 都没有**的工具：
+#   · confidence="ambiguous"（有候选、无 canonical_id）被 loop._EMPTY_CHECKS 判为**非空**
+#     （评审 #25：候选是实质回复），于是既不降级、也没有任何下一步指引——模型拿到的是一个
+#     裸 dict，正是 #63「不降级也不作答」的形状（get_entity 已于 1efb6e5c 补上逐候选重查的
+#     note，get_datasheet 的 ambiguous 分支一直有 note，只有这里是空白）。
+#   · confidence="none" 会被判空并降级 classic，模型看不到；但同一函数被 web/军表侧直调时
+#     仍应把界线说穿，故两态都给 note。
+_RESOLVER_AMBIGUOUS_NOTE = (
+    "这个名字匹配到多个候选，本工具按判据拒绝静默取先入者。"
+    "⚠️ 有歧义 ≠ 该单位不存在。请把 candidates 里的候选串**原样**回填本工具重查"
+    "（`名字 (阵营缩写)` 形式可精确命中唯一阵营）；按问题上下文无法确定用户指哪一个时，"
+    "逐个候选查证后分别说明，不要在未查证任何候选前就把问题退回给用户。"
+)
+_RESOLVER_MISS_NOTE = (
+    "没能把这个名字解析到 canonical id（本工具只做「名字 → id」映射，不检索规则原文）。"
+    "⚠️ 解析不到 ≠ 该单位或该阵营不存在，也 ≠ 它没有规则/点数——只说明这次名字映射没命中。"
+    "请改用 get_datasheet / get_entity 直接传用户原文里的中文名重查，或用 rag_search 兜底；"
+    "全都查不到就如实说「档案缺失，建议查阅原始规则书」。"
+    "禁止据此输出「该单位/阵营不存在」「不属于战锤40K」这类否定性断言。"
+)
+
+
 def entity_resolver(name: str, resolver: Optional[EntityResolver] = None) -> Dict[str, Any]:
-    """中文名/英文名/社区俗名 → canonical id（db_compile.entity_resolver）。"""
+    """中文名/英文名/社区俗名 → canonical id（db_compile.entity_resolver）。
+
+    解析不到时**必须**把「这条路径没命中」与「这个东西不存在」的界线说穿（见上方注释）。
+    """
     r = resolver or _get_default_resolver()
     result = r.resolve(name)
-    return {
+    out: Dict[str, Any] = {
         "canonical_id": result.canonical_id,
         "name_en": result.name_en,
         "confidence": result.confidence,
         "candidates": result.candidates,
     }
+    if not result.canonical_id:
+        out["note"] = (_RESOLVER_AMBIGUOUS_NOTE if result.candidates
+                       else _RESOLVER_MISS_NOTE)
+    return out
 
 
 def get_entity(
@@ -110,7 +140,15 @@ def get_entity(
 
     note = "未找到实体页（可能未编译或译名未收录）"
     if resolved["confidence"] == "ambiguous":
-        note = "译名有多个候选，需向用户反问确认：" + "、".join(resolved["candidates"])
+        # ⚠️ 这里**不能**让 LLM 直接反问用户。ambiguous 被 loop._EMPTY_CHECKS 判为
+        # 「非空」（评审 #25：候选是实质回复，不该降级 classic），于是经典链兜底也不会触发；
+        # 若本 note 再让模型把问题退回用户，这条路径就成了「不降级也不作答」的死胡同
+        # （基准 #63 坦克指挥官：0 检索源、judge 判「答非所问」❌）。
+        # 正确做法与 get_datasheet 的 ambiguous 分支一致：先逐个候选查证再作答。
+        note = ("译名有多个候选：" + "、".join(resolved["candidates"])
+                + "。请逐个用候选名重新调用 get_entity 取回各自的实体页，"
+                  "并在回答中分别说明各候选单位的情况；只有在查证候选之后仍无法判断"
+                  "用户所指时才反问用户，不要在未查证任何候选前就把问题退回给用户。")
     return {"found": False, "page": None, "resolved_via": resolved, "note": note}
 
 
@@ -144,9 +182,77 @@ def get_keyword_definition(
 
 # ── ⑧ 数据类：db_compile 只读封装 ─────────────────────────────────
 
-def calc_points(unit_list: List[str], db_path: Optional[Path] = None) -> Dict[str, Any]:
-    """精确算分（SQLite，db_compile.calc_points）。P2 阶段点数 CSV 未导入时
-    诚实报告缺失原因，不编造数值。"""
+# ⚠️ 「本工具没查到」和「这个单位不存在」是两件事，工具返回里必须把这句话说穿。
+# 基准 #109（一次问四个泰坦的点数）实测：calc_points 只按 units.id 精确查表，四个中文名
+# 全部返回「未找到该 unit id」，模型把这个**查询失败**升级成了**否定性事实断言**——
+# 「泰坦军团是独立桌游、不是 40K 阵营、四个泰坦在 11 版无官方点数」。而事实相反：
+# Adeptus Titanicus 是 11 版正经阵营，官方 MFM 有阵营页，库里四行点数与官网逐条一致。
+# 同样四个单位逐个单独问（走 get_datasheet）全部答对，可见错的不是数据而是这条空手返回。
+_CALC_POINTS_UNRESOLVED_NOTE = (
+    "未能把这个名字解析到库内任何单位（本工具按 units.id 精确查表）。"
+    "⚠️ 查不到 ≠ 该单位或该阵营不存在，也 ≠ 它没有官方点数——只说明这次名字解析没命中。"
+    "请改用 get_datasheet 传用户原文里的中文名重查，或先用 entity_resolver 取 canonical id "
+    "再回来算分；全都查不到就如实说「档案缺失」。"
+    "禁止据此输出「该单位/阵营不存在」「不属于战锤40K」「无官方点数」这类否定性断言。"
+)
+
+
+# ⚠️ 「同名跨阵营」和「查不到」「有歧义所以不能答」是三件事，这条 note 要同时防住三种错法。
+# 基准 #118（问「地狱兽（Helbrute）现在多少点？」）实测：库里 4 张各自独立的兵牌
+# （CSM 130 / DG 110 / TS 110 / WE 120），而中文名解析是「中文名 → 单个 cid」的扁平表，
+# 于是工具稳稳返回吞世者那张、模型照抄成「地狱兽当前点数为 120 分」——**一个数字，
+# 不说是哪个阵营**（gold 判错情形 ①）。修法不是把它变成拒答：那会掉进 gold 判错情形 ②
+# （#63 坦克指挥官那条「不降级也不作答」的死胡同）。所以本返回**照常给出已查到的数值**，
+# 另外把全部兄弟行连同各自点数一并附上，只要求模型作答时把阵营说清楚。
+_SAME_NAME_CROSS_FACTION_NOTE = (
+    "⚠️ 同名跨阵营：这个名字在库里有多张**各自独立**的兵牌，分属不同阵营，"
+    "点数与数值可能不同——全部候选及各自点数见 same_name_other_factions，"
+    "均取自结构库，不是记忆。"
+    "作答时**必须消歧**，二选一：要么把各阵营的数值逐一列出并指出差异，"
+    "要么明确写出「以下按 XX 阵营的〈单位名〉回答」。"
+    "禁止只报其中一个数值却不说明它属于哪个阵营。"
+    "⚠️ 同时禁止因为有歧义就拒答、或在未给出任何已查证数值前就把问题退回用户提问——"
+    "候选和点数本返回里都已给全；需要某一阵营的完整属性时，"
+    "用 `名字 (阵营缩写)` 形式回查 get_datasheet 即可。"
+)
+
+
+def _same_name_disclosure(
+    db_path: Path, unit_id: str,
+) -> Optional[List[Dict[str, Any]]]:
+    """同名跨阵营时 → 各兄弟行的 `候选名/阵营/点数`；不构成跨阵营歧义时 → None。
+
+    点数一并查出来，是为了让模型**不必**再发一轮工具调用就能逐个阵营列全（少一轮就少一次
+    「算了只说一个吧」的机会）；数值全部来自结构库，不给模型任何凭记忆补全的余地。
+    """
+    from db_compile.datasheet import same_name_factions
+
+    rows = same_name_factions(db_path, unit_id)
+    if not rows:
+        return None
+    points = {p.unit_id: p.points
+              for p in _calc_points_impl(db_path, [r[0] for r in rows])}
+    return [{"candidate": "{} ({})".format(name_en, faction or "?"),
+             "unit_id": uid, "faction": faction, "points": points.get(uid),
+             "is_the_one_answered_above": uid == unit_id}
+            for uid, name_en, faction in rows]
+
+
+def calc_points(
+    unit_list: List[str],
+    db_path: Optional[Path] = None,
+    resolver: Optional[EntityResolver] = None,
+) -> Dict[str, Any]:
+    """精确算分（SQLite，db_compile.calc_points）。点数缺失时诚实报告原因，不编造数值。
+
+    底层 `db_compile.calc_points` 是纯 id 查表（保持不变——它被军表/web 侧按 canonical id
+    直调）。名字解析放在这层 agent 包装里：LLM 拿到的是用户原文里的中文名，按既有约定
+    直接查 id 必然全空，于是它只能凭记忆作答（基准 #109 的硬错来源）。这里先按 id 查，
+    只对「未找到该 unit id」的那几个走 entity_resolver 重试，既不改变纯 id 调用的行为，
+    也让中文名这条最常见的入参形态真的能查到。
+    """
+    from db_compile.calc_points import UNKNOWN_UNIT_NOTE
+
     # 参数防护（评审 M#4）：LLM 可能把 unit_list 传成单个字符串——字符串是可迭代的，
     # 会被逐字符拆成"单位名"胡乱查询。字符串包成单元素列表；其余非列表类型明确报错。
     if isinstance(unit_list, str):
@@ -158,14 +264,95 @@ def calc_points(unit_list: List[str], db_path: Optional[Path] = None) -> Dict[st
     if not Path(db_path).exists():
         return {"found": False, "units": [], "note": "wh40k.sqlite 不存在，需先跑 db_compile"}
 
-    results = _calc_points_impl(db_path, unit_list)
-    return {
-        "found": True,
-        "units": [
-            {"unit_id": r.unit_id, "name_en": r.name_en, "points": r.points, "note": r.note}
-            for r in results
-        ],
-    }
+    results = _calc_points_impl(db_path, list(unit_list))
+    units: List[Dict[str, Any]] = []
+    unresolved: List[str] = []
+    ambiguous_queries: List[str] = []
+    for query, r in zip(unit_list, results):
+        if r.note != UNKNOWN_UNIT_NOTE:
+            units.append({"unit_id": r.unit_id, "name_en": r.name_en,
+                          "points": r.points, "note": r.note})
+            continue
+
+        resolved = _resolve_for_points(str(query), resolver)
+        canonical_id = (resolved or {}).get("canonical_id")
+        if canonical_id:
+            retry = _calc_points_impl(db_path, [canonical_id])[0]
+            if retry.note != UNKNOWN_UNIT_NOTE:
+                entry: Dict[str, Any] = {
+                    "unit_id": retry.unit_id, "name_en": retry.name_en,
+                    "points": retry.points, "note": retry.note,
+                    "query": str(query),
+                    "resolved_via": {"canonical_id": canonical_id,
+                                     "confidence": resolved.get("confidence")},
+                }
+                # 名字解析成功 ≠ 名字无歧义：中文名索引是扁平表，四选一也会报 exact（#118）
+                siblings = _same_name_disclosure(db_path, retry.unit_id)
+                if siblings:
+                    entry["same_name_other_factions"] = siblings
+                    entry["note"] = _SAME_NAME_CROSS_FACTION_NOTE
+                    ambiguous_queries.append(str(query))
+                units.append(entry)
+                continue
+
+        # 英文名多命中（`Helbrute` → 4 个阵营候选）此前只回候选、一个点数都不给，模型要么
+        # 反问用户（判错情形 ②）要么凭记忆填数（判错情形 ③）。这里把候选逐个算出来。
+        expanded = _points_for_candidates(
+            db_path, (resolved or {}).get("candidates") or [], resolver)
+        if expanded:
+            units.append({
+                "unit_id": None, "name_en": None, "points": None,
+                "query": str(query), "ambiguous": True,
+                "candidates": (resolved or {}).get("candidates") or [],
+                "same_name_other_factions": expanded,
+                "note": _SAME_NAME_CROSS_FACTION_NOTE,
+            })
+            ambiguous_queries.append(str(query))
+            continue
+
+        unresolved.append(str(query))
+        units.append({"unit_id": r.unit_id, "name_en": None, "points": None,
+                      "unresolved": True,
+                      "candidates": (resolved or {}).get("candidates") or [],
+                      "note": _CALC_POINTS_UNRESOLVED_NOTE})
+
+    out: Dict[str, Any] = {"found": True, "units": units}
+    if ambiguous_queries:
+        out["same_name_cross_faction"] = ambiguous_queries
+        out["note"] = ("以下名字同名跨阵营：" + "、".join(ambiguous_queries)
+                       + "。" + _SAME_NAME_CROSS_FACTION_NOTE)
+    if unresolved:
+        out["unresolved"] = unresolved
+        # 两种情况可以同时出现（一次问多个单位），措辞各自保留，别互相覆盖
+        out["note"] = (out.get("note", "")
+                       + "以下名字没能解析到库内单位：" + "、".join(unresolved)
+                       + "。" + _CALC_POINTS_UNRESOLVED_NOTE)
+    return out
+
+
+def _points_for_candidates(
+    db_path: Path, candidates: List[str], resolver: Optional[EntityResolver],
+) -> List[Dict[str, Any]]:
+    """`Helbrute (WE)` 形式的候选串 → 各自的 `候选名/阵营/点数`；一个都解析不到则返回空表。"""
+    out: List[Dict[str, Any]] = []
+    for cand in candidates:
+        cid = (_resolve_for_points(cand, resolver) or {}).get("canonical_id")
+        if not cid:
+            continue
+        r = _calc_points_impl(db_path, [cid])[0]
+        out.append({"candidate": cand, "unit_id": r.unit_id,
+                    "name_en": r.name_en, "points": r.points, "note": r.note})
+    return out
+
+
+def _resolve_for_points(
+    name: str, resolver: Optional[EntityResolver],
+) -> Optional[Dict[str, Any]]:
+    """名字 → canonical id；解析器构造/查询失败不许把整次算分带崩（诚实返回 None 即可）。"""
+    try:
+        return entity_resolver(name, resolver=resolver)
+    except Exception:
+        return None
 
 
 def get_datasheet(
@@ -213,6 +400,13 @@ def get_datasheet(
         return {"found": False, "datasheet": None, "note": "库中未找到该单位"}
 
     out: Dict[str, Any] = {"found": True, "datasheet": asdict(ds)}
+    # 上面的 AmbiguousUnitName 分支只覆盖**英文名**直查多命中；中文名走 entity_resolver，
+    # 而中文索引是「中文名 → 单个 cid」的扁平表，四选一同样报 exact、悄悄落到其中一张
+    # （基准 #118 的地狱兽）。这里按拿到的 unit_id 反查兄弟行，把漏掉的那半边歧义补报。
+    siblings = _same_name_disclosure(db_path, ds.unit_id)
+    if siblings:
+        out["same_name_other_factions"] = siblings
+        out["note"] = _SAME_NAME_CROSS_FACTION_NOTE
     # 叠加黑图书馆中文原生 datasheet（属性/能力/武器）——英文仍是权威真值，
     # 中文层供作答时用母语呈现能力/武器描述。表不存在或无此单位时静默跳过。
     try:
@@ -225,8 +419,10 @@ def get_datasheet(
             conflicts = diff_core_stats(ds, zh)
             if conflicts:
                 out["stat_conflicts"] = conflicts
-                out["note"] = ("黑图书馆中文层与官方源在部分属性上不一致，"
-                               "数值以官方英文属性块(datasheet)为准。")
+                # 追加而非覆盖：同名跨阵营的消歧铁律不能被这句话顶掉
+                out["note"] = (out.get("note", "")
+                               + "黑图书馆中文层与官方源在部分属性上不一致，"
+                                 "数值以官方英文属性块(datasheet)为准。")
     except Exception:
         pass
     return out
@@ -234,15 +430,39 @@ def get_datasheet(
 
 # ── ⑩ 兜底：只读包装 app.py 现有混合检索（绝不修改 app.py）──────────
 
+# rag_search 是**唯一**一个空手结果一定会被模型看到的工具：loop.py 的降级分支显式排除了它
+# （`tool_name != "rag_search"`——它自己就是兜底目标，降级到自己没意义），所以这里的措辞就是
+# 模型作答前看到的最后一句话。三种失败态此前共用同一个形状 `{found: False, passages: []}`，
+# 模型无从区分「语料里没有」和「检索管线自己坏了」，很容易把工具故障写成「档案里没有这条规则」
+# 的否定性断言（#109 同型）。故按失败性质分开措辞，并给 error 标志。
+_RAG_EMPTY_NOTE = (
+    "本次混合检索没有命中任何段落（提问措辞/译名与语料用词不一致时最常见）。"
+    "⚠️ 没检索到 ≠ 该规则或该单位不存在。请换更短的关键词、或改用中/英文术语再检一次，"
+    "也可以改用 get_datasheet / get_entity / get_keyword_definition 直查结构库；"
+    "仍无结果就如实说「档案缺失，建议查阅原始规则书」，"
+    "禁止据此输出「规则书里没有这条规则」「该单位不存在」这类否定性断言。"
+)
+_RAG_UNAVAILABLE_HINT = (
+    "⚠️ 这是**检索侧环境故障**，不是「语料里没有相关内容」——不可据此判断该规则/单位是否存在。"
+    "请改用 get_datasheet / get_entity / get_keyword_definition 直查结构库；"
+    "都取不到就如实说明本次检索不可用，禁止输出任何否定性事实断言。"
+)
+
+
 def rag_search(query: str, app_module: Optional[Any] = None) -> Dict[str, Any]:
     """现有混合检索（兜底）。只读调用 app.py 的 load_resources/build_bm25/hybrid_retrieve，
-    不修改 app.py 本身。"""
+    不修改 app.py 本身。
+
+    失败态分两类并各自标注：`error=True` 表示检索管线/环境本身不可用（知识库未构建、调用异常），
+    `error` 缺省表示检索跑通了但零命中——后者才是关于语料内容的信息。
+    """
     try:
         app = app_module if app_module is not None else _import_app()
         embeddings, vectorstore, reranker, reranker_warning = app.load_resources()
         if vectorstore is None:
-            return {"found": False, "passages": [],
-                    "note": "知识库未构建（local_vector_store 为空），请先跑 ingest.py"}
+            return {"found": False, "error": True, "passages": [],
+                    "note": "知识库未构建（local_vector_store 为空），请先跑 ingest.py。"
+                            + _RAG_UNAVAILABLE_HINT}
 
         bm25_retriever = app.build_bm25(vectorstore)
         passages = app.hybrid_retrieve(
@@ -254,10 +474,12 @@ def rag_search(query: str, app_module: Optional[Any] = None) -> Dict[str, Any]:
         return {
             "found": bool(passages),
             "passages": passages,
-            "note": None if passages else "未检索到相关段落",
+            "note": None if passages else _RAG_EMPTY_NOTE,
         }
     except Exception as exc:
-        return {"found": False, "passages": [], "note": f"rag_search 异常: {exc}"}
+        return {"found": False, "error": True, "passages": [],
+                "note": f"rag_search 执行异常（检索管线本身出错）: {exc}。"
+                        + _RAG_UNAVAILABLE_HINT}
 
 
 # ── 未建模能力：诚实打桩，严禁伪造结果 ────────────────────────────

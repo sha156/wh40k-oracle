@@ -54,30 +54,41 @@ def _resolve_rsc_placeholders(html: str) -> str:
     return doc
 
 
-# 只收这些 h3 小节里的单位价（自军现行价）。其余小节一律排除：
-# 'EVERY MODEL HAS THE IMPERIUM KEYWORD' 等是**借调进别家军队**的另一套价，
-# 混进来会把同一单位拆成两个矛盾价（Inquisitor 自军 55 / 借调 65）。
-_KEEP_SECTIONS = {"UNITS", "FORTIFICATIONS"}
+# 官方把「自军现行价」放在这两个 h3 主小节里。其余小节**有两种截然相反的语义**，
+# 靠数据而不是靠小节名区分（判据见 parse_mfm_html，实测明细见
+# docs/superpowers/specs/2026-07-27-mfm-section-coverage-fix.md）：
+#
+#   ① 同一单位的**第二套价**——条件价（imperial-agents 的 'EVERY MODEL HAS THE
+#      IMPERIUM KEYWORD'：Inquisitor 自军 55 / 该条件下 65）或战团差异价
+#      （blood-angels 页的 'SPACE MARINES' 小节：突击均等兄弟 80 vs 通用页 75）。
+#      收进来会把一个单位拆成两个互相矛盾的价，必须丢。
+#   ② 该阵营**自己的单位列在子标题下**——space-marines 的 'ULTRAMARINES'
+#      （基里曼在这里）、aeldari 的 'HARLEQUINS'/'YNNARI'、death-guard 的
+#      'PLAGUE LEGIONS'。整段丢掉 = 这些单位永远进不了比对池，官方改价也无人知晓。
+#
+# 区分判据（纯数据）：**该单位在同一页的主小节里是否已经定过价**。
+# 定过 = ①（主小节的自军价优先，丢弃小节里的第二套价）；没定过 = ②（收下）。
+# 旧实现是 `_KEEP_SECTIONS = {"UNITS","FORTIFICATIONS"}` 整段切除，把 ② 一起误伤了
+# ——和千分位丢行同一个失效模式：不报错、指标好看、覆盖面无声塌掉。
+_PRIMARY_SECTIONS = {"UNITS", "FORTIFICATIONS"}
 
 
-def _slice_kept_sections(doc: str) -> str:
-    """取 h3 标题在 _KEEP_SECTIONS 里的小节内容（到下一个 h3 为止），拼接返回。
+def _split_sections(doc: str) -> List[Tuple[str, str]]:
+    """按 h3 切页 → [(标题大写, 小节正文)]。
 
-    找不到任何 h3 时返回整个文档（向后兼容异常版式，宁多勿漏——多出的重复
-    由去重收敛，真正危险的借调价小节只在有 h3 结构的页面出现）。
+    页面一个 h3 都没有时，整篇当作一个主小节返回（向后兼容异常版式，宁多勿漏——
+    多出的重复由去重收敛，需要区分语义的小节只在有 h3 结构的页面上出现）。
     """
     heads = [(m.start(), m.end(),
               re.sub(r"<[^>]+>", "", m.group(1)).strip().upper())
              for m in re.finditer(r"<h3[^>]*>([\s\S]{1,150}?)</h3>", doc)]
     if not heads:
-        return doc
-    kept = []
-    for i, (start, end, title) in enumerate(heads):
-        if title not in _KEEP_SECTIONS:
-            continue
+        return [("UNITS", doc)]
+    out = []
+    for i, (_start, end, title) in enumerate(heads):
         nxt = heads[i + 1][0] if i + 1 < len(heads) else len(doc)
-        kept.append(doc[end:nxt])
-    return "".join(kept)
+        out.append((title, doc[end:nxt]))
+    return out
 
 
 # 单位名表头：2026-07 MFM 改版后有两种渲染。
@@ -95,31 +106,83 @@ _UNIT_HEADER_RE = re.compile(
 #   旧式：<li><span>N models</span><span>N pts</span></li>
 #   新式：<li><span>N models</span><span class="text-emerald-600…">▼ (-20) N pts</span></li>
 #   放宽第二个 span 允许任意属性 + 可选箭头前缀，只抓末尾的数字，兼容新旧。
+# **四位数分数带千分位逗号**（官网写 `2,200 pts`）：`(\d+)` 对它零容忍，
+# 会把该档整条丢掉且不报错——泰坦军团全部单位都是四位数，整个阵营页因此常年解析出 0 行
+# （titan-legions / chaos-titan-legions 两页缓存一直是空 list，`mfm --check` 也就
+# 从未覆盖过库内 7 个 ≥1000 分的单位：4 泰坦 + 灵族幽魂/幻影泰坦 + 钛族 Manta）。
+# 逗号形式优先匹配，匹配不到再退回裸数字；delta 前缀同样放宽（涨降幅也可能过千）。
 _LI_PTS_RE = re.compile(
     r"<li><span>([^<]+)</span>"
-    r'<span[^>]*>(?:[▲▼]\s*\([+\-]?\d+\)\s*)?(\d+) pts</span></li>')
+    r'<span[^>]*>(?:[▲▼]\s*\([+\-]?[\d,]+\)\s*)?'
+    r"((?:\d{1,3}(?:,\d{3})+|\d+)) pts</span></li>")
 
 
-def parse_mfm_html(html: str) -> List[MfmRow]:
-    """MFM 阵营页 HTML → 去重的 (单位名, 梯度表头, 模型数描述, 分数) 列表。纯函数。
-
-    只解析 UNITS/FORTIFICATIONS 小节（自军现行价），排除借调价小节与页面重复渲染。
-    按单位表头（新旧两式）切块，块内按梯度分组解析分数行（新旧两式）。
-    """
-    doc = _slice_kept_sections(_resolve_rsc_placeholders(html))
+def _parse_section_rows(body: str) -> List[MfmRow]:
+    """单个小节正文 → 分数行。按单位表头（新旧两式）切块，块内按梯度分组解析。"""
     heads = [(m.start(), (m.group(1) or m.group(2)).strip())
-             for m in _UNIT_HEADER_RE.finditer(doc)]
+             for m in _UNIT_HEADER_RE.finditer(body)]
     rows: List[MfmRow] = []
     for i, (start, unit) in enumerate(heads):
-        end = heads[i + 1][0] if i + 1 < len(heads) else len(doc)
-        block = doc[start:end]
+        end = heads[i + 1][0] if i + 1 < len(heads) else len(body)
+        block = body[start:end]
         # 单位块内按梯度分组：<div ...font-bold...>TIER 表头</div><ul>...li...</ul>
         for tier, ul in re.findall(
                 r'<div class="bg-slate-200[^"]*font-bold[^"]*">([^<]+)</div>'
                 r"<ul[^>]*>([\s\S]*?)</ul>", block):
             for models, pts in _LI_PTS_RE.findall(ul):
-                rows.append((unit, tier.strip(), models.strip(), int(pts)))
-    return list(dict.fromkeys(rows))
+                rows.append((unit, tier.strip(), models.strip(),
+                             int(pts.replace(",", ""))))
+    return rows
+
+
+def parse_mfm_html(html: str) -> List[MfmRow]:
+    """MFM 阵营页 HTML → 去重的 (单位名, 梯度表头, 模型数描述, 分数) 列表。纯函数。
+
+    主小节（_PRIMARY_SECTIONS）的行全收；其余 h3 小节的行**只在该单位没被主小节
+    定过价时**才收——即「主小节的自军价优先」：
+
+      - 主小节里已有 ⇒ 这里是同一单位的第二套价（条件价 / 战团差异价），丢弃。
+        Inquisitor 在 imperial-agents 主小节 55、'EVERY MODEL HAS THE IMPERIUM
+        KEYWORD' 小节 65，收进来就成了两个互相矛盾的价。
+      - 主小节里没有 ⇒ 这是该阵营列在子标题下的**自己的单位**，收下。
+        ROBOUTE GUILLIMAN 只出现在 space-marines 页的 'ULTRAMARINES' 小节，
+        整段丢掉他就永远不在比对池里。
+
+    跨页的同名重复（战团页把通用 SM 名录整段重渲染一遍）由 _rows_by_faction
+    的「通用页优先」再收敛一次，这里不管。
+    """
+    doc = _resolve_rsc_placeholders(html)
+    primary: List[MfmRow] = []
+    secondary: List[MfmRow] = []
+    for title, body in _split_sections(doc):
+        (primary if title in _PRIMARY_SECTIONS else secondary).extend(
+            _parse_section_rows(body))
+    priced = {unit.strip().lower() for unit, _t, _m, _p in primary}
+    kept_secondary = [r for r in secondary if r[0].strip().lower() not in priced]
+    return list(dict.fromkeys(primary + kept_secondary))
+
+
+def count_unit_headers(html: str) -> int:
+    """页面里**全部**单位名表头个数——与分数行解析互相独立的对账基准。
+
+    parse_mfm_html 返回 0 行有两种截然不同的成因：① 该页真的没有单位（首页、
+    空阵营页）② 表头认出来了但分数行正则对不上（官网改版/新数值形态）。
+    ② 是静默降级，只看行数永远分辨不出来；表头数就是那个独立信号。
+
+    刻意**不走小节筛选**：校验器与被校验对象共享同一个前提就会一起瞎——
+    旧版跟着 `_slice_kept_sections` 走，所以对「整段小节被误伤切掉」全无感知
+    （基里曼那 38 个单位掉了它一声不吭）。代价是本函数会数进那些按「主小节优先」
+    丢弃的重复表头，故它只用于「>0 表头却 0 行」的断裂判定，不做等值对账。
+    """
+    return len(_UNIT_HEADER_RE.findall(_resolve_rsc_placeholders(html)))
+
+
+class MfmParseBroken(RuntimeError):
+    """页面有单位表头却解析出 0 条分数 —— 解析器对该页断裂（非网络故障）。
+
+    与网络失败分开建模：网络抖动该重试，解析断裂重试一万次也是 0 行，
+    必须当场吼出来而不是降级成「这个阵营就是没单位」。
+    """
 
 
 def is_base_tier(tier: str) -> bool:
@@ -149,14 +212,26 @@ def _fetch(url: str, timeout: int = 40) -> str:
 
 def fetch_faction(slug: str, max_retries: int = 4,
                   retry_sleep: float = 3.0) -> List[MfmRow]:
-    """抓单个阵营页（带重试——Clash 代理偶发 SSL EOF 抖动）。"""
+    """抓单个阵营页（带重试——Clash 代理偶发 SSL EOF 抖动）。
+
+    「有表头但 0 行」判为解析器对该页断裂，抛 MfmParseBroken 且**不重试**
+    （重试治不了正则对不上，只会白等 4×3 秒然后照样降级成空阵营）。
+    """
     last: Optional[Exception] = None
     for attempt in range(max_retries):
         try:
-            return parse_mfm_html(_fetch(f"{MFM_BASE}/en/{slug}"))
+            html = _fetch(f"{MFM_BASE}/en/{slug}")
         except Exception as e:  # 网络瞬断/SSL EOF：等一拍重试
             last = e
             time.sleep(retry_sleep)
+            continue
+        rows = parse_mfm_html(html)
+        heads = count_unit_headers(html)
+        if not rows and heads:
+            raise MfmParseBroken(
+                f"{slug}: 页面有 {heads} 个单位表头却解析出 0 条分数——"
+                "解析器对该页断裂（官网改数值/版式形态），不是这个阵营没有单位")
+        return rows
     raise RuntimeError(f"抓取 {slug} 连续 {max_retries} 次失败: {last}")
 
 
@@ -200,6 +275,10 @@ def fetch_all(out_path: Path, sleep_s: float = 1.0,
     单页抓取复用 fetch_faction（同一套重试逻辑，不再内联第二份参数不一致的循环）；
     单阵营抓不下来记入 failed 继续，不拖垮整轮。写盘前与旧缓存逐阵营对账，
     系统性掉行 raise 不覆盖（force=True 跳过对账——仅限人工核实官网真删减后）。
+
+    「有表头但 0 行」的解析断裂页（MfmParseBroken）单列 parse_broken，写盘前
+    直接 raise：这类页会伪装成「该阵营就是没单位」，混进 failed 只会被当成
+    网络抖动放过去——泰坦军团两页正是这样空了不知多少版。
     """
     home = _fetch(MFM_BASE + "/en")
     slugs = list_faction_slugs(home)
@@ -207,24 +286,36 @@ def fetch_all(out_path: Path, sleep_s: float = 1.0,
         raise RuntimeError("MFM 首页未解析到阵营链接——页面结构可能已变，需更新解析器")
     data: Dict[str, List[MfmRow]] = {}
     failed: List[str] = []
+    parse_broken: List[str] = []
     for slug in slugs:
         try:
             rows = fetch_faction(slug, max_retries=max_retries)
+        except MfmParseBroken as e:
+            parse_broken.append(str(e))
+            rows = []
         except RuntimeError:
             failed.append(slug)
             rows = []
         data[slug] = rows
         print(f"  {slug}: {len(rows)} 条", flush=True)
         time.sleep(sleep_s)
+    if parse_broken and not force:
+        raise RuntimeError(
+            "MFM 有阵营页解析断裂（有单位表头却 0 条分数），已拒绝覆盖旧缓存：\n  "
+            + "\n  ".join(parse_broken)
+            + "\n先修解析器；确认官网真改版且可接受时用 --force 强制覆盖。")
     if not force:
         _guard_cache_regression(out_path, data)
     out_path.parent.mkdir(parents=True, exist_ok=True)
     out_path.write_text(
         json.dumps({"source": MFM_BASE, "fetched_at": time.strftime("%Y-%m-%d %H:%M"),
-                    "failed": failed, "factions": data},
+                    "failed": failed, "parse_broken": parse_broken,
+                    "factions": data},
                    ensure_ascii=False, indent=1), encoding="utf-8")
     if failed:
         print(f"  ⚠️ 抓取失败的阵营: {failed}")
+    if parse_broken:
+        print(f"  ⚠️ 解析断裂的阵营页（--force 已放行）: {parse_broken}")
     return data
 
 

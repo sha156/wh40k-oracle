@@ -38,10 +38,28 @@ export interface CalcStep {
   text: RichText;
 }
 
+/**
+ * 兵牌上的一个规则词条（武器 USR，或技能正文里内嵌的【致命一击】）。
+ *
+ * `text` 是原样显示的那串字（含档位、随语言而变）；其余字段是后端在真源里查到了才有。
+ * 查不到就**只有 text**——渲染成不可交互的纯文本，不挂 tooltip。
+ * `brief` 只可能是官方中文规则正文的逐字摘录，后端不会为查不到的词条编解释。
+ */
+export interface KeywordRef {
+  text: string;
+  slug?: string;
+  base?: string; // 官方英文基名（不含档位）
+  nameZh?: string;
+  brief?: string; // 官方中文规则正文摘录
+  section?: string; // 官方节号，如 24.03
+  ruleSlug?: string; // 核心规则章节页 slug，如 24-core-abilities
+  group?: "universal" | "transitional" | "unit-specific";
+}
+
 /** E6 兵牌武器行 */
 export interface WeaponRow {
   name: string;
-  kw?: string; // 武器关键词，如 [重型，毁灭伤害]
+  kw?: KeywordRef[]; // 武器关键词，逐条可悬停；空数组=这把武器没有词条
   range: string;
   a: string;
   skill: string; // BS 或 WS
@@ -51,10 +69,25 @@ export interface WeaponRow {
   hot?: boolean; // 本次问答焦点武器高亮
 }
 
+/**
+ * 技能正文切出来的一段：纯文本，或一个**查得到解释**的规则词条。
+ *
+ * 做成 union 而不是「一串字 + 一份词条清单」：清单要靠前端再在正文里找一次那串字
+ * 才能标出来，而同一个词条在一段里出现两次时就标错了。后端保证
+ * `rich` 各段显示串拼起来 === `text`。
+ */
+export type AbilitySpan = { t: "text"; s: string } | { t: "kw"; kw: KeywordRef };
+
 export interface Ability {
   tag?: string; // 如 Faction:
   name: string;
   text?: string;
+  /**
+   * 同一段正文的分段形态（`text` 逐字等于各段拼接）。空数组=这条技能没有正文。
+   * 后端只在词条真源里查到时才切出 kw 段，查不到的一律并回纯文本——所以这里
+   * 拿到的每个 kw 段都必然带 slug，渲染时不必再判"这条有没有解释"。
+   */
+  rich?: AbilitySpan[];
 }
 
 /** 受损档（载具/巨兽血量降到阈值时的减值） */

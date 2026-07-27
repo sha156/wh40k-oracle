@@ -231,8 +231,13 @@ def test_codex_card_lang_toggle():
     en = codex.unit_card(DB_PATH, "000000433", lang="en")
     assert zh and en
     # zh：武器名/关键词中文；en：英文
-    assert zh.ranged[0].name == "重型磁轨枪" and "重型" in (zh.ranged[0].kw or "")
+    assert zh.ranged[0].name == "重型磁轨枪"
+    assert "重型" in [k.text for k in zh.ranged[0].kw]
     assert en.ranged[0].name == "Heavy rail rifle"
+    # en 模式词条保持英文原文（库里就是小写，照实显示不改写），且与 zh 模式
+    # 指向同一批词条——slug 是跨语言身份，两侧对不上就说明中英走了两套解析
+    assert "heavy" in [k.text for k in en.ranged[0].kw]
+    assert [k.slug for k in zh.ranged[0].kw] == [k.slug for k in en.ranged[0].kw]
     # 数值两种模式完全一致（英文权威表，黑图数值漂移不得渗入）
     for wz, we in zip(zh.ranged, en.ranged):
         assert (wz.a, wz.s, wz.ap, wz.d) == (we.a, we.s, we.ap, we.d)

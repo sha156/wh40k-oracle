@@ -284,7 +284,10 @@ def test_all_blocks_have_exact_contract_shape() -> None:
             for child in detail["enhancements"] + detail["stratagems"]:
                 sections += child["sections"]
             for sec in sections:
-                assert set(sec) == {"title", "blocks"}
+                assert set(sec) == {"title", "number", "blocks"}
+                # 官方节号只有核心规则页有；分队/战略/增强的小节名（「使用时机」）
+                # 本来就没编号，这里必须是 null——不是"忘了填"
+                assert sec["number"] is None, (item.slug, sec["title"])
                 for blk in sec["blocks"]:
                     assert set(blk) == BLOCK_KEYS[blk["t"]], blk["t"]
                     seen.add(blk["t"])

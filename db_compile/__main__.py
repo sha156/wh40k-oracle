@@ -82,6 +82,17 @@ def main() -> None:
         help="单位中文名人工补译层：zh_unit_overrides.json → units.name_zh（黑图没收录的现役单位）")
     zu.add_argument("--db", default="db/wh40k.sqlite")
 
+    zc = sub.add_parser(
+        "zh-coverage",
+        help="兵牌中文技能覆盖对账：逐单位归因『为什么还是英文』并点名补不到的单位")
+    zc.add_argument("--db", default="db/wh40k.sqlite")
+    zc.add_argument("--list-cache", default=None, help="黑图 list 缓存 units.json")
+    zc.add_argument("--details-cache", default=None, help="黑图 detail 缓存 details.json")
+    zc.add_argument("--json", default=None, help="逐单位归因写到该 JSON 文件")
+    zc.add_argument("--dup", action="store_true",
+                    help="改跑疑似重复单位排查（同阵营 + 英文名归一化/中文名相同）"
+                         "，只出报告不改数据")
+
     oz = sub.add_parser(
         "official-zh",
         help="GW 官方中文名：默认从官方中文包重新指纹配对出映射文件；"
@@ -430,6 +441,36 @@ def main() -> None:
         rep = apply_unit_name_overrides(Path(args.db))
         print(f"\n单位中文名人工译名：{rep['terms']} 条 → 命中 {rep['filled']} 行")
         print("\n  注意：build 重建会覆盖，已挂进 stage_zh_details（restore 自动补跑）")
+    elif args.cmd == "zh-coverage":
+        # main() 里别处有函数级 `import json`，会把 json 变成整个函数的局部名，
+        # 模块顶层再 import 也照样 UnboundLocalError——这里跟着用函数级导入
+        import json
+
+        if args.dup:
+            from db_compile.dup_units import audit as dup_audit
+            from db_compile.dup_units import format_report as dup_format
+
+            rep = dup_audit(Path(args.db))
+            print("\n" + dup_format(rep))
+            if args.json:
+                Path(args.json).parent.mkdir(parents=True, exist_ok=True)
+                Path(args.json).write_text(
+                    json.dumps(rep, ensure_ascii=False, indent=2), encoding="utf-8")
+                print(f"\n逐组证据已写出：{args.json}")
+            return
+
+        from db_compile.zh_coverage import audit, format_report
+
+        rep = audit(Path(args.db),
+                    Path(args.list_cache) if args.list_cache else None,
+                    Path(args.details_cache) if args.details_cache else None)
+        print("\n" + format_report(rep))
+        if args.json:
+            Path(args.json).parent.mkdir(parents=True, exist_ok=True)
+            Path(args.json).write_text(
+                json.dumps(rep, ensure_ascii=False, indent=2), encoding="utf-8")
+            print(f"\n逐单位归因已写出：{args.json}")
+        print("\n  补不到的一律留英文——本命令只对账，不生成任何中文正文")
     elif args.cmd == "official-zh" and args.apply:
         from db_compile.official_zh_apply import apply_official_zh, coverage
 

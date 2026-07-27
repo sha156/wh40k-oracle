@@ -256,12 +256,27 @@ def codex_unit(unit_id: str, lang: str = "zh") -> Dict[str, Any]:
     return {"card": card.model_dump(by_alias=True)}
 
 
+def _with_rule_link(item: Dict[str, Any]) -> Dict[str, Any]:
+    """给一条词条补上「规则正文在哪一节」（ruleSection / ruleSlug）。
+
+    为什么在请求期算而不是写进离线载荷：载荷是 wiki 生成物，而这两个值取决于**当下
+    磁盘上有哪些核心规则章节页**——核心规则页是后来才有的，写死进载荷就会在 wiki 卷
+    没挂全时给出点进去 404 的链接。查不到就是 (None, None)，页面照实说「未挂规则页」。
+
+    返回新字典：`load_items` 给的是缓存对象本身，就地改会污染下一个请求。
+    """
+    from web_api.keyword_refs import rule_link
+    section, slug = rule_link(str(item.get("base") or ""))
+    return {**item, "ruleSection": section, "ruleSlug": slug}
+
+
 @app.get("/codex/keywords", response_model=KeywordIndexResponse,
          response_model_by_alias=True)
 def codex_keywords() -> KeywordIndexResponse:
     """图鉴：武器词条（USR）索引。
 
-    数据来自离线载荷 `wiki/indexes/keywords.json`（不查库、不读 PDF，容器没挂 data/）。
+    条目本体来自离线载荷 `wiki/indexes/keywords.json`（不查库、不读 PDF，容器没挂
+    data/）；只有「规则正文在哪一节」这两个字段是请求期照着 wiki/core-rules 现算的。
     返回的条目不带 weapons 反查表——那占载荷九成体积，索引页一把也用不上。
     """
     from web_api import keywords as kw
@@ -269,7 +284,7 @@ def codex_keywords() -> KeywordIndexResponse:
         items = kw.list_keywords()
     except kw.KeywordPayloadError as exc:
         raise HTTPException(status_code=503, detail=str(exc))
-    return KeywordIndexResponse(items=items)
+    return KeywordIndexResponse(items=[_with_rule_link(i) for i in items])
 
 
 @app.get("/codex/keywords/{slug}", response_model=KeywordDetail,
@@ -283,7 +298,7 @@ def codex_keyword(slug: str) -> KeywordDetail:
         raise HTTPException(status_code=503, detail=str(exc))
     if item is None:
         raise HTTPException(status_code=404, detail="词条不存在")
-    return KeywordDetail(**item)
+    return KeywordDetail(**_with_rule_link(item))
 
 
 class SimulateRequest(BaseModel):

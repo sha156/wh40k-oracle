@@ -67,9 +67,33 @@ class CalcStep(BaseModel):
 
 # ── E6 兵牌 ───────────────────────────────────────────────────────
 
+class KeywordRef(_CamelModel):
+    """兵牌上的一个规则词条（武器 USR，或技能正文里内嵌的【致命一击】）。
+
+    `text` 是页面上**原样显示**的那串字（含档位、随语言而变）；其余字段是在真源里
+    查到了才有。查不到就**只有 text**——前端据此渲染成不可交互的纯文本。
+    绝不为查不到的词条编一句解释：`brief` 只允许是官方中文规则正文的逐字摘录
+    （`wiki/core-rules/sections/`），不允许概括、不允许改写、不允许凭 40K 常识补。
+
+    `section` 与 `ruleSlug` 成对出现或成对缺失：拿得到节号就一定拿得到那节所在的
+    章节页，反之链接无处可去。速查表漏印节号的词条（实测 PISTOL / SUSTAINED HITS）
+    靠官方英文名与核心规则章节配对补回，**不按顺序推断编号**。
+    """
+    text: str
+    slug: Optional[str] = None
+    base: Optional[str] = None                  # 官方英文基名（不含档位）
+    name_zh: Optional[str] = Field(default=None, alias="nameZh")
+    brief: Optional[str] = None                 # 官方中文规则正文摘录
+    section: Optional[str] = None               # 官方节号 24.03
+    rule_slug: Optional[str] = Field(default=None, alias="ruleSlug")
+    group: Optional[str] = None                 # universal / transitional / unit-specific
+
+
 class WeaponRow(BaseModel):
     name: str
-    kw: Optional[str] = None
+    # 结构化词条数组（不是拼好的一串）：兵牌上每条 USR 都要能单独悬停看解释。
+    # 空数组 = 这把武器没有词条；数组里只有 text 的元素 = 有词条但查不到真源。
+    kw: List[KeywordRef] = []
     range: str
     a: str
     skill: str
@@ -79,10 +103,34 @@ class WeaponRow(BaseModel):
     hot: bool = False
 
 
+class AbilityTextSpan(BaseModel):
+    t: Literal["text"] = "text"
+    s: str
+
+
+class AbilityKwSpan(BaseModel):
+    t: Literal["kw"] = "kw"
+    kw: KeywordRef
+
+
+# 技能正文切成的段序列。做成 union 而不是「一串字 + 一份词条清单」：清单要靠
+# 前端再在正文里找一次那串字才能标出来，而同一个词条在一段里出现两次时就标错了。
+AbilitySpan = Union[AbilityTextSpan, AbilityKwSpan]
+
+
 class Ability(BaseModel):
+    """兵牌上的一条技能。
+
+    `text` 是**逐字的正文**（与切段前一模一样），`rich` 是同一段正文切成的段序列
+    ——把 `rich` 里每段的显示文本接起来必须等于 `text`。两个都给的原因：`text`
+    仍被搜索/日志/纯文本消费方用着，而 `rich` 里的 `kw` 段带着可查的解释。
+
+    `rich` 为空 = 这条技能没有正文，不是「还没切」：有正文就一定切得出至少一段。
+    """
     tag: Optional[str] = None
     name: str
     text: Optional[str] = None
+    rich: List[AbilitySpan] = []
 
 
 class Stat(BaseModel):
@@ -315,6 +363,13 @@ class KeywordSummary(_CamelModel):
     params: List[str] = []          # 档位变体（"2" / "4+" / "D6+3"），无参为 []
     engine: str                     # 数值建模 / 仅标注 / 未纳入（诚实披露，不吹）
     rule_page: Optional[str] = Field(default=None, alias="rulePage")
+    # 核心规则正文的落点，请求期由 `keyword_refs.rule_link` 算（**不进离线载荷**：
+    # 载荷是 wiki 生成物，而这两个值取决于当下磁盘上有哪些核心规则章节页）。
+    # 与上面的 `section` 的区别：`section` 是速查表印的号（可能漏印、也可能指向
+    # 一节我们并没有正文的规则），这两个是**确实能翻到正文**的那一节。
+    # 同样成对出现或成对缺失——只有节号没有章节页的话链接无处可去。
+    rule_section: Optional[str] = Field(default=None, alias="ruleSection")
+    rule_slug: Optional[str] = Field(default=None, alias="ruleSlug")
     current_weapons: int = Field(alias="currentWeapons")
     total_weapons: int = Field(alias="totalWeapons")
     current_units: int = Field(alias="currentUnits")
@@ -406,8 +461,15 @@ WikiDetails.model_rebuild()
 
 
 class WikiSection(BaseModel):
-    """一个 `## 小节`。title 就是页面上的小节名（使用时机 / 效果 / 分队规则…）。"""
+    """一个 `## 小节`。title 就是页面上的小节名（使用时机 / 效果 / 分队规则…）。
+
+    `number` 只有核心规则页会填（官方节号 24.03，由 `core_rules_browse.section_number`
+    从小节名尾部取），其余页型一律 None——战略/增强/分队的小节名是「使用时机」这类词，
+    本来就没有编号。它是**页面锚点**与词条页跳链的落点，故必须由后端给：
+    从展示串里抠节号这条规则全仓库只准有一处实现（见 `core_rules_browse` 头注）。
+    """
     title: str
+    number: Optional[str] = None
     blocks: List[WikiBlock] = []
 
 

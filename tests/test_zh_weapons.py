@@ -68,6 +68,57 @@ def test_stat_fingerprint_beats_position(tmp_path):
     assert got["Hand flamer"] == "喷火手枪"      # A=D6/BS=N/A 那行
 
 
+def _melee_db(tmp_path: Path) -> Path:
+    """三把数值互不相同的**近战**武器。库里射程写 'Melee'、黑图写 '近战'。
+
+    回归的是：两个写法不归一时近战数值指纹首位永远对不上，Pass A 对近战全盘失效，
+    只剩「两边各只剩一把」的 Pass B 兜底——一个单位有两把以上近战武器就整组留英文
+    （实测「地狱之末」3 把近战全是英文）。
+    """
+    db = tmp_path / "melee.sqlite"
+    conn = sqlite3.connect(str(db))
+    conn.execute("CREATE TABLE units (id TEXT PRIMARY KEY, faction_id TEXT, "
+                 "points_json TEXT)")
+    conn.execute("CREATE TABLE weapons (id TEXT, unit_id TEXT, name_en TEXT, "
+                 "name_zh TEXT, range TEXT, a TEXT, bs_ws TEXT, s TEXT, ap TEXT, "
+                 "d TEXT, keywords_json TEXT)")
+    conn.execute("CREATE TABLE unit_zh_detail (canonical_id TEXT PRIMARY KEY, "
+                 "weapons_json TEXT)")
+    conn.execute("INSERT INTO units VALUES ('U1','AM',NULL)")
+    conn.execute("INSERT INTO weapons VALUES ('w1','U1','Close combat weapon',NULL,"
+                 "'Melee','2','4','3','0','1','[]')")
+    conn.execute("INSERT INTO weapons VALUES ('w2','U1','Dirk',NULL,"
+                 "'Melee','3','3','3','-1','1','[]')")
+    conn.execute("INSERT INTO weapons VALUES ('w3','U1','Power weapon',NULL,"
+                 "'Melee','4','3','4','-2','1','[]')")
+    zh = {"近战武器": [   # 顺序与库里不同，只能靠数值认
+        {"name": "动力武器", "射程": "近战", "攻击次数": "4", "命中": "3+",
+         "造伤": "4", "破甲": "-2", "伤害": "1", "skill": []},
+        {"name": "格斗武器", "射程": "近战", "攻击次数": "2", "命中": "4+",
+         "造伤": "3", "破甲": "0", "伤害": "1", "skill": []},
+        {"name": "短剑", "射程": "近战", "攻击次数": "3", "命中": "3+",
+         "造伤": "3", "破甲": "-1", "伤害": "1", "skill": ["精准"]},
+    ]}
+    conn.execute("INSERT INTO unit_zh_detail VALUES ('U1', ?)",
+                 (json.dumps(zh, ensure_ascii=False),))
+    conn.commit()
+    conn.close()
+    return db
+
+
+def test_melee_range_token_is_normalized_across_languages(tmp_path):
+    """三把近战全部按数值配上——不归一 'Melee'/'近战' 时这里一把都配不出来。"""
+    db = _melee_db(tmp_path)
+    rep = build_zh_weapon_names(db)
+    conn = sqlite3.connect(str(db))
+    got = dict(conn.execute("SELECT name_en, name_zh FROM weapons"))
+    conn.close()
+    assert rep["paired_direct"] == 3
+    assert got["Close combat weapon"] == "格斗武器"
+    assert got["Dirk"] == "短剑"
+    assert got["Power weapon"] == "动力武器"
+
+
 def test_rebuild_is_idempotent(tmp_path):
     db = _mini_db(tmp_path)
     first = build_zh_weapon_names(db)

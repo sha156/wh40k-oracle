@@ -24,7 +24,11 @@ wiki/
 ├── CLAUDE.md            本规则（唯一完全手写的根文件）
 ├── index.md             全局索引 —— 生成物，禁止手改
 ├── log.md               操作日志 —— 只追加，禁止改历史行
-├── lint-report.md       体检报告 —— 生成物，禁止手改
+├── lint-report.md       体检报告 —— 生成物，禁止手改（**不写生成时间戳**：内容不变则字节不变，
+│                        否则每跑一次 lint 就是一个假 diff，工作区永远脏）
+├── alias-conflicts.md   重名明细 —— 生成物，禁止手改。lint 的 alias-conflicts 规则在
+│                        lint-report.md 里只留 1 条摘要 warning（几百组同型重名会占满
+│                        warning 通道、淹掉真问题），完整名单在这里
 ├── review_needed.md     待人工校对清单 —— 生成物
 ├── terms.md / terms.json 双语术语表 —— wiki_compile 生成物
 ├── .obsidian/           本地 Obsidian 配置，不提交 git
@@ -52,7 +56,7 @@ wiki/
 ```
 
 - **阵营目录名 = 中文阵营名**，且必须取自 `wiki_engine/models.py` 的 `FACTION_NAMES` 映射（钛帝国、吞世者、星际战士……21 个）。新阵营先在 `FACTION_NAMES` 登记，再建目录。
-- 生成物清单（禁止手工编辑，改了也会被下次 build 覆盖）：`index.md`、`factions/*/index.md`、`indexes/keywords.md`、`lint-report.md`、`terms.md`、`terms.json`、`review_needed.md`。**想改索引里的内容 = 去改实体页，然后重跑 build。**
+- 生成物清单（禁止手工编辑，改了也会被下次 build 覆盖）：`index.md`、`factions/*/index.md`、`indexes/keywords.md`、`lint-report.md`、`alias-conflicts.md`、`terms.md`、`terms.json`、`review_needed.md`。**想改索引里的内容 = 去改实体页，然后重跑 build。**
 
 ## 2. 内容放哪里：分层判定
 
@@ -197,6 +201,8 @@ wiki/
 - **name_zh 选名优先级**：GW 官方中文 > 最新版 codex 汉化组译名 > 社区最通行译名。选定后全 wiki 统一用它，其余译名全部进 `aliases` + core-rule 页的译名引用块。正文用词必须与 `terms.md` 术语表一致——发现术语表错了，改 wiki_compile 的源头再重新生成，不要在正文里另起炉灶。
 - **文件名 slug**：优先由 `name_en` 生成（小写、空格→连字符、去撇号，如 `breacher-team.md`），与 `wiki_engine/models.py::slugify` 行为一致。文件一旦建立不要改名（等于改所有入链）；确需改名走 §9 工作流并全库替换入链。
 - **同名冲突**（alias-conflicts lint）：两个实体撞名时，给次要方加限定词（如"寻觅者导弹（装备）"vs 计谋同名页），并保证 aliases 不再重叠。
+  但**多数重名是正常的**：同一条战略/增强在多个阵营各有一页，官方中文名自然相同——所以 lint 只报
+  1 条摘要 warning，完整名单在 `alias-conflicts.md` 里备查，不是每条都要改。
 
 ## 7. 数据真实性（最高优先级，没有之一）
 

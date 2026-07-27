@@ -370,8 +370,8 @@
    ],
    "engine": "数值建模",
    "rulePage": "core-rules/anti.md",
-   "currentWeapons": 93,
-   "totalWeapons": 105,
+   "currentWeapons": 94,
+   "totalWeapons": 106,
    "currentUnits": 171,
    "totalUnits": 252,
    "weapons": [
@@ -543,7 +543,6 @@
     {
      "name": "处刑者",
      "units": [
-      "狂嚎女妖",
       "虚空裂痕海盗"
      ]
     },
@@ -551,6 +550,12 @@
      "name": "处刑者手枪",
      "units": [
       "艾弗森刺客"
+     ]
+    },
+    {
+     "name": "处刑长刀",
+     "units": [
+      "狂嚎女妖"
      ]
     },
     {
@@ -1043,8 +1048,8 @@
    ],
    "engine": "数值建模",
    "rulePage": "core-rules/anti.md",
-   "currentWeapons": 34,
-   "totalWeapons": 37,
+   "currentWeapons": 35,
+   "totalWeapons": 38,
    "currentUnits": 34,
    "totalUnits": 39,
    "weapons": [
@@ -1069,8 +1074,13 @@
     {
      "name": "兽霸动力爪",
      "units": [
-      "兽霸头目",
       "剧痛头目"
+     ]
+    },
+    {
+     "name": "兽霸巨爪",
+     "units": [
+      "兽霸头目"
      ]
     },
     {
@@ -1453,8 +1463,8 @@
    ],
    "engine": "数值建模",
    "rulePage": "core-rules/anti.md",
-   "currentWeapons": 66,
-   "totalWeapons": 77,
+   "currentWeapons": 67,
+   "totalWeapons": 78,
    "currentUnits": 87,
    "totalUnits": 141,
    "weapons": [
@@ -1485,8 +1495,13 @@
     {
      "name": "兽霸动力爪",
      "units": [
-      "兽霸头目",
       "剧痛头目"
+     ]
+    },
+    {
+     "name": "兽霸巨爪",
+     "units": [
+      "兽霸头目"
      ]
     },
     {
@@ -3000,8 +3015,8 @@
    "engine": "数值建模",
    "rulePage": "core-rules/blast.md",
    "currentWeapons": 283,
-   "totalWeapons": 356,
-   "currentUnits": 358,
+   "totalWeapons": 355,
+   "currentUnits": 360,
    "totalUnits": 561,
    "weapons": [
     {
@@ -3962,6 +3977,7 @@
     {
      "name": "炸药包",
      "units": [
+      "【传奇】地狱之末",
       "歌利亚碎石车",
       "混血侍僧装备手持火焰喷射器",
       "还原爆破使"
@@ -9745,7 +9761,7 @@
      ]
     },
     {
-     "name": "黑炎矛",
+     "name": "黑炎光矛",
      "units": [
       "毁灭者骑士"
      ]
@@ -10237,12 +10253,6 @@
      ]
     },
     {
-     "name": "格斗武器",
-     "units": [
-      "克鲁特狂兽小队"
-     ]
-    },
-    {
      "name": "殷红之矛",
      "units": [
       "圣血卫队"
@@ -10270,6 +10280,12 @@
      "name": "狩猎标枪",
      "units": [
       "克鲁特独矛"
+     ]
+    },
+    {
+     "name": "狩猎短刀",
+     "units": [
+      "克鲁特狂兽小队"
      ]
     },
     {
@@ -10381,8 +10397,8 @@
    "params": [],
    "engine": "数值建模",
    "rulePage": "core-rules/lethal-hits.md",
-   "currentWeapons": 132,
-   "totalWeapons": 149,
+   "currentWeapons": 133,
+   "totalWeapons": 150,
    "currentUnits": 127,
    "totalUnits": 163,
    "weapons": [
@@ -10775,8 +10791,7 @@
      "name": "污秽之剑",
      "units": [
       "携疫者",
-      "疱疹使者",
-      "瘟疫先蜂"
+      "疱疹使者"
      ]
     },
     {
@@ -10866,6 +10881,12 @@
      "name": "疫病爪牙",
      "units": [
       "纳垢灵"
+     ]
+    },
+    {
+     "name": "瘟疫之剑",
+     "units": [
+      "瘟疫先蜂"
      ]
     },
     {
@@ -11281,7 +11302,7 @@
    "rulePage": "core-rules/melta.md",
    "currentWeapons": 50,
    "totalWeapons": 62,
-   "currentUnits": 190,
+   "currentUnits": 192,
    "totalUnits": 323,
    "weapons": [
     {
@@ -11513,6 +11534,7 @@
     {
      "name": "热熔枪",
      "units": [
+      "【传奇】地狱之末",
       "【传奇】暴烈无畏",
       "【传奇】装备磁力勾爪的死亡连无畏",
       "克里格指挥组",
@@ -11712,8 +11734,8 @@
    "engine": "仅标注",
    "rulePage": "core-rules/one-shot.md",
    "currentWeapons": 11,
-   "totalWeapons": 16,
-   "currentUnits": 79,
+   "totalWeapons": 15,
+   "currentUnits": 81,
    "totalUnits": 198,
    "weapons": [
     {
@@ -11757,6 +11779,7 @@
     {
      "name": "炸药包",
      "units": [
+      "【传奇】地狱之末",
       "混血侍僧装备手持火焰喷射器",
       "还原爆破使"
      ]
@@ -11863,7 +11886,7 @@
    "rulePage": "core-rules/pistol.md",
    "currentWeapons": 129,
    "totalWeapons": 147,
-   "currentUnits": 397,
+   "currentUnits": 399,
    "totalUnits": 527,
    "weapons": [
     {
@@ -12301,6 +12324,7 @@
     {
      "name": "热射激光手枪",
      "units": [
+      "【传奇】地狱之末",
       "卡舍津突击队",
       "风暴兵指挥组",
       "风暴天鹰",
@@ -12331,6 +12355,7 @@
      "name": "爆弹手枪",
      "units": [
       "ATV 突击车",
+      "【传奇】地狱之末",
       "书记修女",
       "仇天使小队",
       "仲裁者小队",
@@ -13146,9 +13171,9 @@
    "params": [],
    "engine": "仅标注",
    "rulePage": "core-rules/precision.md",
-   "currentWeapons": 122,
+   "currentWeapons": 123,
    "totalWeapons": 135,
-   "currentUnits": 132,
+   "currentUnits": 134,
    "totalUnits": 157,
    "weapons": [
     {
@@ -13259,12 +13284,6 @@
      "name": "处刑者手枪",
      "units": [
       "艾弗森刺客"
-     ]
-    },
-    {
-     "name": "大师级动力剑",
-     "units": [
-      "极乐领主"
      ]
     },
     {
@@ -13676,6 +13695,12 @@
      ]
     },
     {
+     "name": "短剑",
+     "units": [
+      "【传奇】地狱之末"
+     ]
+    },
+    {
      "name": "破敌锤",
      "units": [
       "阿贾克·石拳"
@@ -13739,6 +13764,12 @@
      "name": "等离子步枪（过载）",
      "units": [
       "施虐者"
+     ]
+    },
+    {
+     "name": "精工动力剑",
+     "units": [
+      "极乐领主"
      ]
     },
     {
@@ -13927,8 +13958,8 @@
    "params": [],
    "engine": "数值建模",
    "rulePage": "core-rules/psychic-attacks.md",
-   "currentWeapons": 141,
-   "totalWeapons": 163,
+   "currentWeapons": 144,
+   "totalWeapons": 166,
    "currentUnits": 116,
    "totalUnits": 143,
    "weapons": [
@@ -13978,7 +14009,12 @@
      "name": "先锋格斗武器",
      "units": [
       "变化使",
-      "幻变之主",
+      "幻变之主"
+     ]
+    },
+    {
+     "name": "先锋近战武器",
+     "units": [
       "窥命者"
      ]
     },
@@ -14447,6 +14483,18 @@
      ]
     },
     {
+     "name": "灵能权杖",
+     "units": [
+      "大漩涡之主"
+     ]
+    },
+    {
+     "name": "灵能杖",
+     "units": [
+      "奥特拉玛守望者"
+     ]
+    },
+    {
      "name": "灵能武器",
      "units": [
       "乘坐奸奇魔碟的高阶巫师",
@@ -14715,8 +14763,6 @@
     {
      "name": "萨满法杖",
      "units": [
-      "大漩涡之主",
-      "奥特拉玛守望者",
       "奸角兽萨满"
      ]
     },
@@ -14904,8 +14950,8 @@
    ],
    "engine": "数值建模",
    "rulePage": "core-rules/rapid-fire.md",
-   "currentWeapons": 148,
-   "totalWeapons": 158,
+   "currentWeapons": 149,
+   "totalWeapons": 159,
    "currentUnits": 356,
    "totalUnits": 588,
    "weapons": [
@@ -15141,6 +15187,12 @@
      ]
     },
     {
+     "name": "复合爆矢枪",
+     "units": [
+      "克拉维克·莫恩"
+     ]
+    },
+    {
      "name": "多恩之箭",
      "units": [
       "坎托战团长"
@@ -15222,7 +15274,6 @@
     {
      "name": "并联爆弹枪",
      "units": [
-      "克拉维克·莫恩",
       "地狱兽",
       "帝皇之子混沌终结者",
       "歼灭者型猎食者坦克",
@@ -16144,8 +16195,8 @@
    ],
    "engine": "数值建模",
    "rulePage": "core-rules/sustained-hits.md",
-   "currentWeapons": 175,
-   "totalWeapons": 208,
+   "currentWeapons": 176,
+   "totalWeapons": 209,
    "currentUnits": 328,
    "totalUnits": 564,
    "weapons": [
@@ -17251,6 +17302,12 @@
      ]
     },
     {
+     "name": "链锯剑",
+     "units": [
+      "堡主"
+     ]
+    },
+    {
      "name": "链锯双剑",
      "units": [
       "突击战蝎"
@@ -17286,8 +17343,7 @@
      "name": "阿斯塔特链锯剑",
      "units": [
       "剑之兄弟小队",
-      "十字军小队",
-      "堡主"
+      "十字军小队"
      ]
     },
     {
@@ -18329,7 +18385,7 @@
      ]
     },
     {
-     "name": "黑炎矛",
+     "name": "黑炎光矛",
      "units": [
       "毁灭者骑士"
      ]
@@ -18364,15 +18420,14 @@
    "params": [],
    "engine": "数值建模",
    "rulePage": "core-rules/twin-linked.md",
-   "currentWeapons": 194,
-   "totalWeapons": 249,
+   "currentWeapons": 195,
+   "totalWeapons": 250,
    "currentUnits": 276,
    "totalUnits": 501,
    "weapons": [
     {
      "name": "一对动力拳",
      "units": [
-      "不屈杀戮小队",
       "侵略者小队"
      ]
     },
@@ -18498,6 +18553,12 @@
      "name": "双联克里格重型伐木枪",
      "units": [
       "克里格重型武器小队"
+     ]
+    },
+    {
+     "name": "双联动力拳",
+     "units": [
+      "不屈杀戮小队"
      ]
     },
     {

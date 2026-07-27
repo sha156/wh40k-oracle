@@ -1,4 +1,71 @@
-import type { Exchange } from "../answer";
+import type { Exchange, KeywordRef } from "../answer";
+
+/**
+ * 首屏样例用到的四个武器词条。字段与 `brief` 正文**逐字取自后端 keyword_refs 的真实
+ * 输出**（真源：wiki/indexes/keywords.json + wiki/core-rules/sections/24-core-abilities.md，
+ * GW 官方简体中文），不是手写的解释——首屏是给人看规则的，编一句像样的话就是造数。
+ *
+ * 两处与线上不同、都是有意的：
+ * · 原稿写「一次性」，官方 11 版中文是**单发**（ONE SHOT 24.26）。fixture 跟官方走。
+ * · TWIN‑LINKED 只取 24.38 本节的两段。线上那一节的中文正文尾部粘进了后面「电子支持」
+ *   附录的整段文字（官方中文 PDF 切节的已知缺陷，第 24 章最后一节没有下界），
+ *   fixture 不复制那段污染——它不属于这一节。
+ */
+const KW: Record<string, KeywordRef> = {
+  heavy: {
+    text: "重型",
+    slug: "heavy",
+    base: "HEAVY",
+    nameZh: "重型",
+    section: "24.16",
+    ruleSlug: "24-core-abilities",
+    group: "universal",
+    brief:
+      "重型武器是战场上最为庞大的枪炮，但是需要进行稳定才能达到最高效率。\n" +
+      "在己方射击阶段中，每次使用[重型]武器进行攻击时，如果攻击单位满足以下所有条件，那么命中掷骰的结果增加 1 点：\n" +
+      "那个单位不处于交战状态。\n那个单位不是在本回合中被部署至战场的。\n" +
+      '在本回合中，那个单位中没有模型移动超过 3"。',
+  },
+  devastatingWounds: {
+    text: "毁灭伤害",
+    slug: "devastating-wounds",
+    base: "DEVASTATING WOUNDS",
+    nameZh: "毁灭伤害",
+    section: "24.10",
+    ruleSlug: "24-core-abilities",
+    group: "universal",
+    brief:
+      "最为强大的武器能够轻松击穿装甲并击杀多个敌人。\n" +
+      "每次使用一件[毁灭伤害]武器进行攻击时，如果攻击造成了暴击致伤，那么那次攻击流程结束，" +
+      "目标单位受到相当于那件武器 D 属性数量的致命伤。这些伤害将在武器攻击造成的普通伤害之后进行结算。\n" +
+      "[毁灭伤害]武器每一次通过暴击致伤所造成的致命伤最多只能对一个模型造成伤害；那一次攻击造成的任何剩余的致命伤将被舍弃。",
+  },
+  twinLinked: {
+    text: "双联",
+    slug: "twin-linked",
+    base: "TWIN-LINKED",
+    nameZh: "双联",
+    section: "24.38",
+    ruleSlug: "24-core-abilities",
+    group: "universal",
+    brief:
+      "两把相同的武器通常会被连接在同一个瞄准系统上来增加它们的致命性。\n" +
+      "每次使用[双联]武器进行攻击时，您可以重掷致伤掷骰。",
+  },
+  oneShot: {
+    text: "单发",
+    slug: "one-shot",
+    base: "ONE SHOT",
+    nameZh: "单发",
+    section: "24.26",
+    ruleSlug: "24-core-abilities",
+    group: "universal",
+    brief:
+      "一些武器十分稀少、复杂或装填缓慢，在战斗中只能使用一次。\n" +
+      "每一件拥有本技能的武器在战斗中只能被选择进行攻击一次。\n" +
+      "如果一个被摧毁的模型被返还至单位中，其拥有的所有在战斗中已经被选择进行过攻击的[单发]武器不能再次被选择用于攻击。",
+  },
+};
 
 /**
  * 永久回归样例：炮击战斗服 vs 帝国骑士（含 simulate_combat 降级的诚实轨迹）。
@@ -117,7 +184,7 @@ export const broadsideVsKnight: Exchange = {
       ranged: [
         {
           name: "重型磁轨枪",
-          kw: "[重型，毁灭伤害]",
+          kw: [KW.heavy, KW.devastatingWounds],
           range: '60"',
           a: "2",
           skill: "4+",
@@ -128,7 +195,7 @@ export const broadsideVsKnight: Exchange = {
         },
         {
           name: "集束导弹仓",
-          kw: "[双联]",
+          kw: [KW.twinLinked],
           range: '30"',
           a: "6",
           skill: "4+",
@@ -138,7 +205,7 @@ export const broadsideVsKnight: Exchange = {
         },
         {
           name: "寻觅者导弹",
-          kw: "[一次性]",
+          kw: [KW.oneShot],
           range: '48"',
           a: "1",
           skill: "4+",

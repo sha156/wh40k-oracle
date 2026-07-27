@@ -55,7 +55,8 @@
 **遗留非阻塞项**（记得但不急）：
 - 67 个 verify_warn 页（refine 数字校验疑点，内容在库可检索，`scripts/refine_reconcile.py`
   的 verify_warn 桶可随时拉清单人工比对原文）
-- T1-4 外部源观察项（BSData-11e/.cat、Wahapedia 11 版、黑图 11 版、Titan Legions 7 单位缺兵牌）
+- T1-4 外部源观察项（BSData-11e/.cat、Wahapedia 11 版、黑图 11 版、
+  ~~Titan Legions 7 单位缺兵牌~~ ← **2026-07-27 已证伪，缺口为 0**，详见本文第 4 节）
 
 **关键产物路径**：模拟器 `engines/simulator/`；检索 `app.py`（规则层保底段）；
 数据补丁 `db_compile/fp_errata.py`+`fp_errata_patches.json`；缓存工具 `scripts/refine_*.py`、
@@ -114,8 +115,16 @@ S6 收官时确认的 11 版大改尚未进引擎，实地核对 `engines/simula
 
 - BSData **wh40k-11e** 仓库 .cat 落地 → 走 crosscheck 接入（复用 english-authority 流程）
 - Wahapedia 正式挂 11 版 → 复核 fp_errata 补丁层是否可退役（带 from 守卫，冲突会自报）
-- **Adeptus Titanicus（titan-legions）数据表缺失**：7 个 MFM-only 单位在库里无兵牌，
-  新阵营无十版 codex 可垫底——等外部源，或从 Faction Pack PDF 手工建表（工作量另估）
+- ~~**Adeptus Titanicus（titan-legions）数据表缺失**：7 个 MFM-only 单位在库里无兵牌，
+  新阵营无十版 codex 可垫底——等外部源，或从 Faction Pack PDF 手工建表（工作量另估）~~
+  ❌ **2026-07-27 证伪，勿再照此派活**：泰坦军团一共就 **4 个**单位，4 个在库里
+  兵牌完整、每格数值与官方 Faction Pack PDF 逐字一致，图鉴也不是空壳，**缺口是 0**。
+  那个「7」不是单位数，是**被 MFM 解析器静默丢掉的行数**——官网四位数分数写作
+  `2,200 pts`，而 `(\d+)` 正则对千分位逗号零容忍且不报错，于是库内 7 个 ≥1000 分单位
+  （4 泰坦 + 灵族幽魂/幻影泰坦 + 钛族 Manta）在 MFM 缓存里查无此条、
+  **从未被官方点数校验覆盖过**。解析器已修（`db_compile/mfm.py`，千分位优先 +
+  独立对账基准 `count_unit_headers()`）。完整排查见
+  `docs/superpowers/specs/2026-07-27-titan-legions-datasheet-audit.md`
 - 黑图书馆出 11 版 gameId → 刷新中文别名桥
 
 ## T2 · 数据完整性（0.5-1 天，可与 T1 并行）

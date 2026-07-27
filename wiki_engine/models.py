@@ -6,9 +6,9 @@
 from __future__ import annotations
 
 from dataclasses import dataclass, field
-from datetime import date, datetime, timezone
+from datetime import date, datetime
 from pathlib import Path
-from typing import Any, Dict, List, Optional
+from typing import Any, Dict, List, Optional, Tuple
 
 import yaml
 
@@ -20,6 +20,9 @@ import yaml
 # ——lint 曾扫描自己生成的 lint-report.md，把报告里的 [[断链示例]] 当成新断链，
 # 假阳性永久自我复现（H15）。
 GENERATED_MD_NAMES = frozenset({"index.md", "log.md", "terms.md", "lint-report.md",
+                                # alias-conflicts.md：lint 的重名明细报告（与 lint-report.md
+                                # 并列的生成物），同理不能被自己扫描
+                                "alias-conflicts.md",
                                 "_from_db_drift.md",
                                 # indexes/keywords.md：武器词条总索引，与 index.md 同类
                                 # （生成物、无实体 frontmatter），不参与实体扫描与断链检查
@@ -260,17 +263,27 @@ class LintIssue:
 
 @dataclass
 class LintResult:
-    """lint 运行结果。"""
+    """lint 运行结果。
+
+    alias_conflicts：alias-conflicts 规则的**明细**（(名称, 实体 id 列表) 列表）。
+    issues 里该规则只留 1 条聚合摘要 warning，明细单独渲染成 wiki/alias-conflicts.md，
+    避免几百条同型重名把 warning 通道占满、淹掉真问题。
+    """
     issues: List[LintIssue] = field(default_factory=list)
     auto_fixed: int = 0
     total: int = 0
+    alias_conflicts: List[Tuple[str, List[str]]] = field(default_factory=list)
 
     def to_report(self) -> str:
-        """生成 wiki/lint-report.md 全文。"""
+        """生成 wiki/lint-report.md 全文。
+
+        **刻意不写生成时间戳**：本文件被 git 跟踪，带时间戳会让每次 lint 都产生一个
+        只有时间戳变化的假 diff（工作区变脏 → gnhf 等要求干净工作区的流程直接秒退），
+        而"内容不变则字节不变"才让报告里的任何 diff 都是真信号。运行时间可从
+        git 历史 / 文件 mtime 取回，不必写进正文。
+        """
         lines = [
             "# Lint Report",
-            "",
-            "_Generated: {}_".format(datetime.now(timezone.utc).strftime("%Y-%m-%d %H:%M UTC")),
             "",
             "| Severity | Count |",
             "|----------|-------|",

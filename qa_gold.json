@@ -1,9 +1,9 @@
 {
   "meta": {
-    "source": "qa_100 清洗版：删4改2 + 权威gold；v2(2026-07-09)：#19/#55 光环→招牌技能、#41 怪异小子→兽人小子(Boyz)去歧义；v3(2026-07-11)=11版口径：规则类7题按11版核心规则更新（#85/#86/#88/#89/#90/#92/#94），#41 保镖节按 Orks Faction Pack 勘误，#93 补 Stealth 注；stat/weapon 78 题经全部 29 个 Faction Pack 勘误块扫描确认零漂移。十版原版冻结于 benchmarks/v1_10th/",
-    "total": 96,
+    "source": "qa_100 清洗版：删4改2 + 权威gold；v2(2026-07-09)：#19/#55 光环→招牌技能、#41 怪异小子→兽人小子(Boyz)去歧义；v3(2026-07-11)=11版口径：规则类7题按11版核心规则更新（#85/#86/#88/#89/#90/#92/#94），#41 保镖节按 Orks Faction Pack 勘误，#93 补 Stealth 注；stat/weapon 78 题经全部 29 个 Faction Pack 勘误块扫描确认零漂移。十版原版冻结于 benchmarks/v1_10th/；v3.2(2026-07-27)：新增 #101-#108 共 8 题，覆盖武器词条含义（致命一击/手枪≡近距离）、词条参数（速射1 vs 速射2、连击3 算数）、技能正文里的内嵌词条（强征小队 帝国法律/罪魂扫描仪）、以及诚实性题（#107 中文技能层缺失的单位只有英文原文，不许编中文；#108 同名技能新旧两版本文，答旧版即错）。gold 逐条出处写在各题 note 字段；v3.3(2026-07-27)：新增 #109-#117 共 9 题，覆盖官方点数（千分位丢行的 7 个 ≥1000 分受害者：4 泰坦 + 幽魂 + 幻影 + 蝠鲼）、战团/子阵营专属角色点数（基里曼 355 / 卡尔加 155 / 坎托 80，gold 一律取官方 MFM 实时站，库内当前值已知过期待 apply，#113-#115 现阶段预期判错，apply 后自然转绿，不得改 gold 迁就库）、覆盖面（#109 一次问四个值考漏项；#116 泰坦军团恰好 4 个单位、混沌泰坦复用同一张兵牌不是缺口）与诚实性（#117 Frame 关键词库内缺失，考说清口径而非编数据）。新增 gold_type='points'（走 LLM 对标 gold 判分，不适用 stat/weapon 的两段式机械判分）。gold 逐条出处写在各题 note 字段；v3.4(2026-07-27)：新增 #118（同名跨阵营消歧诚实性——地狱兽 Helbrute 在 CSM/DG/TS/WE 四阵营各有独立兵牌且点数不同 130/110/110/120，考「不许只挑一个当唯一答案、也不许因歧义拒答或把问题退回用户」），配套本轮 4 个查询类工具「查不到/空结果」路径排查（entity_resolver 空手补 note、rag_search 故障态与零命中分流）。",
+    "total": 113,
     "edition": 11,
-    "version": "v3"
+    "version": "v3.3"
   },
   "details": [
     {
@@ -870,6 +870,175 @@
       "gold_type": "stat",
       "canonical_id": "000000897",
       "unit": "忏悔者机甲/Penitent Engines"
+    },
+    {
+      "id": 101,
+      "faction": "核心规则",
+      "question": "武器词条【致命一击】（LETHAL HITS）是什么意思？11版和十版有什么不同？",
+      "gold": "【致命一击】[LETHAL HITS]：用该武器进行的攻击出现暴击命中时，你可以选择让该次攻击自动对目标造伤（不再投造伤骰）。11版变更（2026-06-20 起）：自动造伤由十版的强制改为**可选**（\"you can choose\"）——因为自动造伤不投造伤骰就不可能出造伤暴击，放弃它可以保留触发【毁灭伤害】等依赖造伤暴击的技能的机会。",
+      "gold_type": "rule",
+      "note": "出处 wiki/core-rules/lethal-hits.md（11版 Core Rules 24.23）"
+    },
+    {
+      "id": 102,
+      "faction": "核心规则",
+      "question": "武器词条【速射1】和【速射2】有什么区别？请举例说明。",
+      "gold": "【速射 X】[RAPID FIRE X] 总是带参数：为该武器聚集攻击骰时，若目标单位在选择目标步处于该武器的半射程内，则额外增加 X 个攻击骰。所以速射1额外加 1 个攻击骰、速射2额外加 2 个，差别就是半射程内多出的攻击骰数。例：武器 A=1 时，速射1在半射程内共 2 个攻击骰，速射2在半射程内共 3 个攻击骰；不在半射程内则都只有 A 本身的 1 个。",
+      "gold_type": "rule",
+      "note": "出处 wiki/core-rules/rapid-fire.md（11版 Core Rules 24.30）；档位清单见 wiki/indexes/keywords.md 的 RAPID FIRE 行"
+    },
+    {
+      "id": 103,
+      "faction": "核心规则",
+      "question": "一把带【连击3】的武器打出一次暴击命中，这一次攻击总共算命中几下？",
+      "gold": "共 4 下。【连击 X】[SUSTAINED HITS X]：该武器的攻击出现暴击命中（通常为未修正命中骰 6）时，该攻击额外造成 X 下命中，额外命中直接视为已命中、无需再投命中骰。所以连击3 = 暴击本身 1 下 + 额外 3 下 = 4 下。",
+      "gold_type": "rule",
+      "note": "出处 wiki/core-rules/sustained-hits.md（11版 Core Rules 24.36）；该页原文举例为「连击2 共命中 3 次」，X=3 同理递推"
+    },
+    {
+      "id": 104,
+      "faction": "帝国特勤",
+      "question": "强征小队（Exaction Squad）的技能「帝国法律」会让攻击获得哪两个武器词条？",
+      "gold": "【致命一击】（[LETHAL HITS]）和【精准】（[PRECISION]）。「帝国法律」：在战斗开始时选择对手军队中的一个单位；当本单位中的模型对该敌方单位进行攻击时，那次攻击拥有【致命一击】与【精准】技能。",
+      "gold_type": "ability",
+      "canonical_id": "000002685",
+      "unit": "强征小队/Exaction Squad",
+      "note": "出处 db abilities『Imperial Law』(owner_id=000002685) 与 wiki/factions/帝国特勤/units/exaction-squad.md 技能节"
+    },
+    {
+      "id": 105,
+      "faction": "帝国特勤",
+      "question": "强征小队的「罪魂扫描仪」给单位的远程武器加了哪个武器词条？",
+      "gold": "【无视掩体】（[IGNORES COVER]）。「罪魂扫描仪」：持有者所在单位中模型装备的远程武器拥有【无视掩体】技能。",
+      "gold_type": "ability",
+      "canonical_id": "000002685",
+      "unit": "强征小队/Exaction Squad",
+      "note": "出处 db abilities『Soulguilt Scanner』(owner_id=000002685)：Ranged weapons equipped by models in the bearer's unit have the [IGNORES COVER] ability"
+    },
+    {
+      "id": 106,
+      "faction": "核心规则",
+      "question": "11版里【手枪】（PISTOL）和【近身/近距离】（CLOSE-QUARTERS）是什么关系？看到 PISTOL 还算有效词条吗？",
+      "gold": "两者在一切规则意义上完全等同——官方 11 版核心规则原文写明「[手枪]和[近距离]在所有规则中都视为同一个规则」，并由设计师注明[手枪]是先存在的技能、将随版本推进逐步被[近距离]取代。所以 PISTOL 仍然有效、按【近身/近距离】理解即可，它不是已作废的十版残留。",
+      "gold_type": "rule",
+      "note": "出处 wiki/core-rules/pistol.md（11版 Core Rules 24.27 / 24.07 / 10.06）与 wiki/indexes/keywords.md「过渡期词条」节"
+    },
+    {
+      "id": 107,
+      "faction": "机械修会",
+      "question": "机械修会的蝎式沙丘运输车（Skorpius Dunerider）有哪两条技能？各是什么效果？",
+      "gold": "两条：①『Broad Spectrum Data-tether』——每次你用战略技能指定本单位时投 1 个 D6，出 5+ 你获得 1CP；②『Fire Support』——你的射击阶段中本模型射击后，选择一个本阶段被它命中过至少一次的敌方单位，直到本阶段结束，本回合从本运输载具下车的友方模型对该敌方单位进行攻击时可以重投致伤骰。**注意：库内该单位没有中文技能层**（黑图书馆源未收录它），abilities 正文只有英文原文；照实给出英文原文或其忠实翻译都算正确，凭空生成一条源里没有的中文技能名/效果即为错误。",
+      "gold_type": "ability",
+      "canonical_id": "000001650",
+      "unit": "蝎式沙丘运输车/Skorpius Dunerider",
+      "note": "出处 db abilities(owner_id=000001650) 两条英文正文；unit_zh_detail 无该 canonical_id （zh-coverage 归类 absent_*），故中文技能层缺失是数据事实不是漏答"
+    },
+    {
+      "id": 108,
+      "faction": "混沌恶魔",
+      "question": "地狱剥皮机（Hellflayer）的技能「横扫敌阵 / Cutting Down the Foe」在11版是什么效果？",
+      "gold": "本单位中的模型进行近战攻击时，如果本单位在本回合进行过冲锋移动，那次攻击的力量（S）与伤害（D）属性各提升 1。**不是**「选一个交战范围内的敌方单位投 D6 造成 D3 致命伤」——那是同名技能的旧版本文，只残留在库内遗留条目 000004101 的英文正文里；现役条目 000001144 的英文正文与黑图中文层「横扫敌阵」都是 S/D 各 +1 这一版。",
+      "gold_type": "ability",
+      "canonical_id": "000001144",
+      "unit": "地狱剥皮机/Hellflayers",
+      "note": "出处 db abilities(owner_id=000001144) 英文正文 + unit_zh_detail(000004101).abilities_json 的「横扫敌阵」中文正文，两者一致；旧版文本见 abilities(owner_id=000004101)。重复条目排查见 docs/superpowers/specs/2026-07-27-duplicate-units-audit.md"
+    },
+    {
+      "id": 109,
+      "faction": "泰坦军团",
+      "question": "泰坦军团（Adeptus Titanicus）的四个泰坦——战犬泰坦、掠夺者泰坦、天罚战争使者泰坦、战将泰坦——按官方点数各是多少分？请四个都给出。",
+      "gold": "四个都只有 1 model 一个档位：战犬泰坦（Warhound Titan）1100 分、掠夺者泰坦（Reaver Titan）2200 分、天罚战争使者泰坦（Warbringer Nemesis Titan）2600 分、战将泰坦（Warlord Titan）3500 分。以官方 MFM 实时站（mfm.warhammer-community.com）2026-07-27 15:14 快照的 titan-legions 页为准；库内四行 points_json 与官网逐条一致。本题问的是四个数值，只给出其中一部分（例如只答战犬泰坦）即为漏项。",
+      "gold_type": "points",
+      "unit": "泰坦军团 4 个单位（faction_id=TL）",
+      "note": "gold 出处：db_sources/mfm/mfm_points.json 的 factions['titan-legions'] 四行（如 ['WARLORD TITAN','YOUR UNIT COSTS','1 model',3500]），与 db/wh40k.sqlite units(faction_id='TL') 四行 points_json 完全一致（000000867=1100 / 000000868=2200 / 000000869=3500 / 000002077=2600），wiki/factions/泰坦军团/units/ 下也恰好这 4 页。这 4 个单位曾因 MFM 解析器的 `(\\d+) pts` 正则对千分位 `2,200 pts` 零容忍而被静默丢行、长期不在官方点数比对池里，见 docs/superpowers/specs/2026-07-27-titan-legions-datasheet-audit.md 与 2026-07-27-mfm-refetch-points-verification.md。库=官网，故本题判红与点数无关，只可能是漏项：这是一道**多单位覆盖面**题，考的是一次问四个值时会不会只答一个。"
+    },
+    {
+      "id": 110,
+      "faction": "灵族",
+      "question": "艾达灵族的幽魂泰坦（Revenant Titan）按官方点数是多少分？",
+      "gold": "1100 分（只有 1 model 一个档位）。以官方 MFM 实时站（mfm.warhammer-community.com）2026-07-27 15:14 快照的 aeldari 页为准；库内 000000628 的 points_json = 1100，与官网一致。",
+      "gold_type": "points",
+      "canonical_id": "000000628",
+      "unit": "幽魂泰坦/Revenant Titan",
+      "note": "gold 出处：mfm_points.json factions['aeldari'] 的 ['REVENANT TITAN','YOUR UNIT COSTS','1 model',1100]，与 db units 000000628 points_json 一致。它是 7 个「≥1000 分、因千分位正则被丢行而从未被官方点数校验过」的单位之一，2026-07-27 全站重抓后 7/7 与官网一致。"
+    },
+    {
+      "id": 111,
+      "faction": "灵族",
+      "question": "艾达灵族的幻影泰坦（Phantom Titan）按官方点数是多少分？",
+      "gold": "2100 分（只有 1 model 一个档位）。以官方 MFM 实时站（mfm.warhammer-community.com）2026-07-27 15:14 快照的 aeldari 页为准；库内 000000631 的 points_json = 2100，与官网一致。",
+      "gold_type": "points",
+      "canonical_id": "000000631",
+      "unit": "幻影泰坦/Phantom Titan",
+      "note": "gold 出处：mfm_points.json factions['aeldari'] 的 ['PHANTOM TITAN','YOUR UNIT COSTS','1 model',2100]，与 db units 000000631 points_json 一致。同为千分位丢行受害者。附注：000000631 的库内中文名带「（疑似删除）」这一上游 Wahapedia 存疑标记，但官网 2026-07-27 快照仍给它定价 2100，点数题不受该标记影响。"
+    },
+    {
+      "id": 112,
+      "faction": "钛帝国",
+      "question": "钛帝国的蝠鲼（Manta）按官方点数是多少分？",
+      "gold": "2100 分（只有 1 model 一个档位）。以官方 MFM 实时站（mfm.warhammer-community.com）2026-07-27 15:14 快照的 tau-empire 页为准；库内 000000457 的 points_json = 2100，与官网一致。",
+      "gold_type": "points",
+      "canonical_id": "000000457",
+      "unit": "蝠鲼/Manta",
+      "note": "gold 出处：mfm_points.json factions['tau-empire'] 的 ['MANTA','YOUR UNIT COSTS','1 model',2100]，与 db units 000000457 points_json 一致。它是那 7 个千分位丢行受害者里的最后一个（4 泰坦 + 幽魂 + 幻影 + 蝠鲼）。"
+    },
+    {
+      "id": 113,
+      "faction": "星际战士",
+      "question": "星际战士的罗伯特·基里曼（Roboute Guilliman）按官方最新点数是多少分？",
+      "gold": "355 分（1 model 档）。以官方 MFM 实时站（mfm.warhammer-community.com）2026-07-27 15:14 快照的 space-marines 页 ULTRAMARINES 小节为准，官网原文写作「ROBOUTE GUILLIMAN | ▲ | YOUR UNIT COSTS | 1 model | ▲ (+15) 355 pts」，即本版刚涨了 15 分。本题只认官方 MFM（本项目既定「官方点数以 mfm.warhammer-community.com 实时站为真源」）：回答给出 340 分（库内 Wahapedia 镜像的过期值）或其它任何非 355 的数字，都与官方不符，判错。",
+      "gold_type": "points",
+      "canonical_id": "000000138",
+      "unit": "罗伯特·基里曼/Roboute Guilliman",
+      "note": "gold 出处：mfm_points.json factions['space-marines'] 的 ['ROBOUTE GUILLIMAN','YOUR UNIT COSTS','1 model',355]。**库内当前值为 340，已知过期、待 apply**，见 docs/superpowers/specs/2026-07-27-mfm-section-coverage-fix.md §5.1 的 46 条过期明细第 1 行。他此前因 `_KEEP_SECTIONS` 白名单把 space-marines 页整个 ULTRAMARINES 小节切掉而从未进过官方点数比对池（全站只有那一处给他定价）。**本题现阶段预期判错，这是库内点数过期的真实反映**；`db_compile mfm --apply` 之后会自然转绿，不得反过来把 gold 改成 340 去迁就库。"
+    },
+    {
+      "id": 114,
+      "faction": "星际战士",
+      "question": "星际战士的「身穿安提洛克斯战甲的马涅乌斯·卡尔加」（Marneus Calgar in Armour of Antilochus）按官方最新点数是多少分？",
+      "gold": "155 分（1 model 档）。以官方 MFM 实时站（mfm.warhammer-community.com）2026-07-27 15:14 快照的 space-marines 页 ULTRAMARINES 小节为准。本题只认官方 MFM：回答给出 140 分（库内 Wahapedia 镜像的过期值）或其它任何非 155 的数字，都与官方不符，判错。",
+      "gold_type": "points",
+      "canonical_id": "000004183",
+      "unit": "身穿安提洛克斯战甲的马涅乌斯·卡尔加/Marneus Calgar in Armour of Antilochus",
+      "note": "gold 出处：mfm_points.json factions['space-marines'] 的 ['MARNEUS CALGAR IN ARMOUR OF ANTILOCHUS','YOUR UNIT COSTS','1 model',155]。**库内当前值 140，已知过期、待 apply**（同上 §5.1 明细第 2 行）。**现阶段预期判错**，apply 后转绿。"
+    },
+    {
+      "id": 115,
+      "faction": "星际战士",
+      "question": "星际战士的坎托战团长（Pedro Kantor）按官方最新点数是多少分？",
+      "gold": "80 分（1 model 档）。以官方 MFM 实时站（mfm.warhammer-community.com）2026-07-27 15:14 快照的 space-marines 页 IMPERIAL FISTS 小节为准（官网原文「PEDRO KANTOR | YOUR UNIT COSTS | 1 model | 80 pts」）。本题只认官方 MFM：回答给出 90 分（库内 Wahapedia 镜像的过期值）或其它任何非 80 的数字，都与官方不符，判错。注意这一条是**降价**方向（库 90 → 官方 80）。",
+      "gold_type": "points",
+      "canonical_id": "000002713",
+      "unit": "坎托战团长/Pedro Kantor",
+      "note": "gold 出处：mfm_points.json factions['space-marines'] 的 ['PEDRO KANTOR','YOUR UNIT COSTS','1 model',80]。**库内当前值 90，已知过期、待 apply**（同上 §5.1 明细第 9 行）。刻意选降价方向的一条，与 #113/#114 的涨价方向配对，防止判分被单一偏移方向蒙混。**现阶段预期判错**，apply 后转绿。"
+    },
+    {
+      "id": 116,
+      "faction": "泰坦军团",
+      "question": "泰坦军团（Adeptus Titanicus）一共有几个单位（兵牌）？混沌泰坦军团（Titanicus Traitoris）的混沌战将泰坦是不是另有一张独立兵牌、另有一套点数？",
+      "gold": "泰坦军团一共只有 4 个单位：战犬泰坦、掠夺者泰坦、天罚战争使者泰坦、战将泰坦。混沌泰坦**没有独立兵牌、也没有独立点数**——官方 Faction Pack《Adeptus Titanicus》第 2 页的 TITANICUS TRAITORIS 一节写明：可以直接用本文件里的泰坦军团兵牌来代表 Titanicus Traitoris 模型，做法是把兵牌与军队规则卡上所有 Imperium 关键词替换成 Chaos、所有 Adeptus Titanicus 阵营关键词替换成 Titanicus Traitoris；点数方面「use those published for the equivalent Adeptus Titanicus models」，即沿用对应泰坦军团模型的点数（战将 3500 / 天罚战争使者 2600 / 掠夺者 2200 / 战犬 1100）。所以官方 MFM 上 chaos-titan-legions 页那 4 行与 titan-legions 页逐条同价，库里没有 4 张混沌泰坦兵牌**不是数据缺口**。",
+      "gold_type": "rule",
+      "unit": "泰坦军团/Adeptus Titanicus",
+      "note": "gold 出处：① data/Faction Pack Adeptus Titanicus.pdf 第 2 页 TITANICUS TRAITORIS 段原文（PyMuPDF 直提已逐字核对）；② db/wh40k.sqlite units(faction_id='TL') 恰好 4 行；③ db_sources/mfm/mfm_points.json 的 titan-legions 与 chaos-titan-legions 两页各 4 行、四对逐条同价（3500/2600/2200/1100）；④ wiki/factions/泰坦军团/units/ 下恰好 4 个页面。审计见 docs/superpowers/specs/2026-07-27-titan-legions-datasheet-audit.md（「泰坦军团缺 7 个兵牌」是伪缺口，那个 7 是解析器丢的行数）。"
+    },
+    {
+      "id": 117,
+      "faction": "泰坦军团",
+      "question": "战将泰坦（Warlord Titan）在本系统结构库里记录了哪些关键词？官方兵牌上的【Frame】关键词在库里查得到吗？",
+      "gold": "库内（db/wh40k.sqlite）战将泰坦的关键词只有 6 个：Warlord Titan、Titanic、Vehicle、Towering、Walker、Imperium——**没有 Frame**。而官方 Faction Pack《Adeptus Titanicus》里的泰坦兵牌 KEYWORDS 行确实带 Frame（如第 3 页战犬泰坦：Vehicle, Walker, Titanic, Towering, Frame, Imperium, Warhound Titan）。这是本项目已知的数据缺口：Frame 关键词在 Wahapedia 镜像里被系统性丢失，全库没有任何一个单位带它。正确回答应当照实给出库内这份关键词清单、并说明 Frame 未被结构库收录（需回官方 PDF 核对）；不许因为官方 PDF 上有就把 Frame 直接写进「库内清单」冒充查到，也不许反过来断言官方规则里没有 Frame 这个关键词。",
+      "gold_type": "ability",
+      "canonical_id": "000000869",
+      "unit": "战将泰坦/Warlord Titan",
+      "note": "gold 出处：① agent.tools.get_datasheet('Warlord Titan')['datasheet']['keywords'] 实测返回 ['Warlord Titan','Titanic','Vehicle','Towering','Walker','Imperium']；② data/Faction Pack Adeptus Titanicus.pdf 第 3 页 WARHOUND TITAN 的 KEYWORDS 行含 Frame。缺口本身已在 CLAUDE.md「点名遗留」与 docs/superpowers/specs/2026-07-27-titan-legions-datasheet-audit.md 记录（19 个 FP + Core Rules 共 318 处提到 Frame，库内 0 个单位有）。**诚实性题**：考的是说清口径与缺口，而不是编一个关键词或反过来否认官方规则。"
+    },
+    {
+      "id": 118,
+      "faction": "混沌星际战士",
+      "question": "地狱兽（Helbrute）现在多少点？",
+      "gold": "「地狱兽 / Helbrute」是**同名跨阵营**单位：结构库里有 4 张各自独立的兵牌，分属混沌星际战士(CSM)、死亡守卫(DG)、千子(TS)、吞世者(WE)，**点数并不相同**——CSM 130 点、DG 110 点、TS 110 点、WE 120 点（均为「1 模型」档）。正确回答必须先消歧：要么按上下文选定一个阵营并明确说明这是哪个阵营的地狱兽，要么把 4 个阵营的点数逐一列出并指出差异。判错的三种情形：① 只报一个点数当成唯一答案、不说明是哪个阵营；② 因为名字有歧义就拒答、或不给出任何已查证信息就直接把问题退回给用户反问；③ 凭记忆给出一个库里没有的点数。",
+      "gold_type": "points",
+      "unit": "地狱兽/Helbrute",
+      "note": "gold 出处：① db/wh40k.sqlite units 表四行实测——000000954 Helbrute(CSM) 130、000001046 Helbrute(DG) 110、000001021 Helbrute(TS) 110、000002632 Helbrute(WE) 120，四行 points_json 的 mfm 溯源块（fetched_at 2026-07-26）与顶层 points 逐条一致，即与官方 MFM 同价；② agent.tools.get_datasheet('Helbrute') 实测抛 AmbiguousUnitName，返回 reason='ambiguous' + 候选 Helbrute (CSM/DG/TS/WE) 及各自属性预览。**诚实性题**：考的是「同名多阵营」这条歧义通道——ambiguous 被 loop._EMPTY_CHECKS 判为非空（评审 #25）、经典链兜底不触发，模型必须自己逐候选查证后作答，既不许只挑一个当唯一答案，也不许把死胡同退回给用户（#63 同族）。"
     }
   ]
 }

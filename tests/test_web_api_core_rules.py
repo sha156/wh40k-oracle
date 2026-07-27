@@ -152,6 +152,46 @@ def test_every_section_title_carries_official_number() -> None:
 
 
 @needs_wiki
+def test_section_number_field_matches_title_and_is_unique() -> None:
+    """`WikiSection.number` 是全库唯一一份「从小节名取节号」的产物。
+
+    它同时是页面锚点与武器词条页跳链的落点，所以要锁三件事：156 节全都有号、
+    号与标题结尾一致、全库不重号。**重号最阴险**：第 24 章有个标题被 PDF 版面污染成
+    「…领袖  24.22/辅助 24.34」，取第一个匹配就会把 24.34 变成第二个 24.22——
+    156 节仍是 156 节，两个页面都照常渲染，只有跳链会静静地落到错误的一节。
+    """
+    numbers: List[str] = []
+    for summary in crb.list_chapters():
+        for section in crb.chapter_detail(summary.slug).sections:
+            assert section.number, (summary.slug, section.title)
+            assert section.title.strip().endswith(section.number)
+            assert section.number.split(".")[0] == summary.number
+            numbers.append(section.number)
+    assert len(numbers) == EXPECTED_SECTIONS
+    assert len(set(numbers)) == EXPECTED_SECTIONS
+
+
+@needs_wiki
+def test_section_number_reaches_the_frontend(client: TestClient) -> None:
+    """节号得真下发到 HTTP 出参——前端拿它当锚点 id，缺了跳链就落不下去。"""
+    body = client.get("/codex/rules/24-core-abilities").json()
+    numbers = [s["number"] for s in body["sections"]]
+    assert "24.27" in numbers and "24.34" in numbers        # 被污染标题的那一节
+    assert all(n for n in numbers)
+
+
+def test_sections_without_official_number_stay_null() -> None:
+    """没有编号的小节 number 为 null（战略/增强/分队页的小节名本来就没号）。
+
+    这里直接问 section_number()：核心规则页的小节按产物约定必带号，但这个函数是共用的。
+    """
+    assert crb.section_number("使用时机") is None
+    assert crb.section_number("执行行动 16.01") == "16.01"
+    assert crb.section_number("…领袖  24.22/辅助 24.34") == "24.34"   # 锚行尾
+    assert crb.section_number("") is None
+
+
+@needs_wiki
 def test_english_source_disclosure_survives_transport() -> None:
     """折叠标签两种文案都要原样保留：14 节的英文是从英文 PDF 直提兜底来的。
 
