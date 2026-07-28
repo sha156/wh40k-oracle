@@ -51,9 +51,16 @@
 - 模型缓存在 `opt/`（bge-m3、ms-marco-MiniLM-L-12-v2 等），CPU 推理
 - 嵌入走 hf-mirror 镜像 + Clash 代理（127.0.0.1:7897），相关环境变量在 ingest.py 顶部设置
 
-## 当前进度（2026-07-14 更新）
+## 当前进度（2026-07-28 更新）
 
-未完成任务全景见 `docs/superpowers/plans/2026-07-12-remaining-tasks.md`。
+**✅ 词条解释层这条线已全部并入 main**（PR #67 + #68，main `dc5248a6`）：
+pytest **2398**、基准 **115 题 100.0 零硬错**、`mfm --check` 1319/1319 过期 0、
+wiki lint 0 error / 1 warning、前端 lint 0 error。
+**收官检查点与冷启动交接见 `docs/superpowers/plans/2026-07-28-codex-wiki-line-checkpoint.md`**
+（含四种互斥诚实性错法的锚点题、46 条点数 apply 的八步流程、8 份排查报告索引、剩余非阻塞项）。
+
+未完成任务全景见 `docs/superpowers/plans/2026-07-12-remaining-tasks.md`
+（⚠️ 其中「Titan Legions 7 单位缺兵牌」已于 2026-07-27 证伪，勿再照此派活）。
 
 - **11 版迁移已正式收官**（2026-07-12，PR #16）：S1-S7 全部完成，refine 缓存对账零差额
   （索引 5652 chunks），基准 gold v3 = 99.0 零硬错。LLM PDF 重构（`llm_refine.py` +
