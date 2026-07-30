@@ -101,6 +101,16 @@ def _strip_code_fence(content: str) -> str:
     return content.strip()
 
 
+#   OpenAI 兼容口径是 "length"；部分网关按 Anthropic 口径回 "max_tokens"，两者都算截断。
+#   缺失（老 SDK / 假客户端）按未截断放行——只在**确知**截断时失败，不猜。
+_TRUNCATED_FINISH_REASONS = frozenset({"length", "max_tokens"})
+
+
+def _is_truncated(choice) -> bool:
+    reason = getattr(choice, "finish_reason", None)
+    return isinstance(reason, str) and reason.lower() in _TRUNCATED_FINISH_REASONS
+
+
 def refine_page(client, page_text: str, prev_tail: str, system_prompt: str = SYSTEM_PROMPT) -> str:
     """调用 LLM 重构单页文本，重试 MAX_RETRIES 次，指数退避。"""
     last_err = None
@@ -115,7 +125,21 @@ def refine_page(client, page_text: str, prev_tail: str, system_prompt: str = SYS
                 temperature=0.0,
                 max_tokens=MAX_TOKENS,
             )
-            content = _strip_code_fence(resp.choices[0].message.content or "")
+            choice = resp.choices[0]
+            content = _strip_code_fence(choice.message.content or "")
+            # 截断必须按失败处理：截断产物 content 非空 ⇒ 旧代码直接 return ⇒ 以
+            # fallback=False 落盘 ⇒ is_cached 此后永远命中、永不重跑，整页正文
+            # 从向量库里静默消失。而 verify_numbers 只查「原文没有的数字」，
+            # 对「少了一整页内容」在数学上不可能有反应（单向校验器，信号不正交）。
+            # 上方 MAX_TOKENS 注释记录的 p19「2655 字源→59 字缓存」正是这个失败模式，
+            # 当时只调大了阈值，finish_reason 从未被读过。
+            # 走既有重试通道；重试仍截断 → RuntimeError → _work 写 fallback=True，
+            # 下次运行会重跑该页（这正是 fallback 机制存在的意义）。
+            if _is_truncated(choice):
+                raise ValueError(
+                    "LLM 输出被 max_tokens 截断（finish_reason="
+                    "{}，已产出 {} 字）".format(
+                        getattr(choice, "finish_reason", None), len(content)))
             if content:
                 return content
             raise ValueError("LLM 返回空内容")

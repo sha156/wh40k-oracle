@@ -1,7 +1,9 @@
 # 全库三轮代码审查 · 第 1 轮：核心问答链路
 
 分支 `review/full-audit-2026-07-30`（从 `origin/main` d4fce5d5 开出，逐字节一致）
-日期 2026-07-30 ｜ 本文档为**第 1 次迭代产出：只审不改**（无任何实现代码改动）
+日期 2026-07-30
+· 第 1 次迭代：**只审不改**（无任何实现代码改动）
+· 第 2 次迭代：**修 H3 + H2**（见 §3 的两次实测输出），H1 留下一迭代
 
 产出形式（用户已拍板）：**分级清单 + 只修 CRITICAL/HIGH**；MEDIUM/LOW 只记录不动手。
 
@@ -12,14 +14,18 @@
 | 分级 | 条数 | 状态 |
 |---|---|---|
 | CRITICAL | **0** | 本轮未发现（不硬凑） |
-| HIGH | **3** | H1/H2/H3 全部**已实测复现**，待后续迭代逐条修复 |
+| HIGH | **3** | 全部已实测复现。**H3 已修 ✅ / H2 已修 ✅**（迭代 2，见 §3）；**H1 待修** |
 | MEDIUM | 6 | 只记录，不改（M6 为潜在项，库内 0 行触发） |
 | LOW | 4 | 只记录，不改 |
 | 判为不成立 | 6 | 附反证，见 §4，防下轮重复排查 |
 
-⚠️ **本次迭代未修任何一条**（迭代节奏由 objective 规定：第 1 次只审查）。
-因此 §3「改前会红 / 改后转绿」一节目前为空，将在后续迭代逐条补齐；
-本文件的 stop-condition 第 (2)(3) 条**尚未满足**。
+进度：**H3、H2 已修并配护栏测试**（`tests/test_audit_r1_core_chain.py`，10 条），
+两条都实测过「stash 掉实现 → 真会红 → 恢复 → 转绿」，输出见 §3。
+**H1 尚未修**，因此 stop-condition 第 (2) 条尚未满足；
+基准（stop-condition 第 (5) 条）留到 H1 那一迭代**一次跑完**——
+本迭代改的 `engines/simulator/assembly.py` 不在 agent/检索链上，
+`llm_refine.py` 只在 `data_refined/` 离线重构时执行，**不参与任何在线问答**
+（改它不重跑 refine 就不会有一个字节的语料变化），H1 必然要跑基准，届时一并覆盖这两条。
 
 复现脚本写在系统临时目录（`%TEMP%\audit_r1_repro.py` / `audit_r1_repro2.py`），
 未落仓库；下文所有「实际输出」均为这两个脚本的真实运行结果，无一条是杜撰。
@@ -130,7 +136,7 @@
 
 ---
 
-#### H2 · `llm_refine` 对 `finish_reason=length` 零检测——截断页以「完整+校验通过」永久落盘
+#### H2 · `llm_refine` 对 `finish_reason=length` 零检测——截断页以「完整+校验通过」永久落盘 ✅ **已修（迭代 2）**
 
 **位置**：`llm_refine.py:104-126`（`refine_page`）、`llm_refine.py:220-229`（`_work` 落盘）、
 `llm_refine.py:62-72`（`is_cached`）
@@ -171,7 +177,7 @@
 
 ---
 
-#### H3 · loadout 件数 ≤ 0 → 装配「成功」，端出全 0 的期望伤害报告
+#### H3 · loadout 件数 ≤ 0 → 装配「成功」，端出全 0 的期望伤害报告 ✅ **已修（迭代 2）**
 
 **位置**：`engines/simulator/assembly.py:164-184`（`assemble_attacker` 显式 loadout 分支，
 `replace(w, count=int(count))` 对 count 不做任何校验）
@@ -310,8 +316,114 @@ MEDIUM（当前无错误输出，属维护性断裂风险 + 文案失真）。
 
 ## 3. 已修项的「改前会红 / 改后转绿」验证输出
 
-**本轮（第 1 次迭代）无任何已修项** —— objective 规定第 1 次迭代只审查不改代码。
-H1 / H2 / H3 的修复与配套测试将在后续迭代逐条进行，届时把两次实际输出补进本节。
+护栏测试统一放 `tests/test_audit_r1_core_chain.py`（每条 HIGH 一个 class，
+注释写明「不修会怎样」，日后有人回退实现能从失败信息直接读出后果）。
+下方输出为 PowerShell 实跑，只用 `Select-String` 滤掉了 pytest 的噪声行，未改动任何一个字。
+
+---
+
+### H3 · loadout 件数 ≤0 —— `engines/simulator/assembly.py`
+
+**修法**（最小）：显式 loadout 分支里把 `count <= 0` 计入**既有** `base.errors`
+（复用现成的 `errors → ambiguous → 显式失败` 通道，不新增返回形态、
+**不动引擎**（`sequence.py` 是对的，见 §4-F）、不动 `usable_in_phase`）。
+顺带把 `base.note` 从「loadout 存在无法匹配的武器」改成
+「loadout 不可用（武器名无法匹配或件数非法）」，否则 note 与 errors 说的不是一回事。
+
+**① stash 掉实现 → 真会红**
+```
+> git stash push -- engines/simulator/assembly.py
+> .venv\Scripts\python.exe -m pytest tests/test_audit_r1_core_chain.py -q
+
+        assert res is not None
+>       assert res.ambiguous is True, "件数 0 必须走显式失败通道"
+E       AssertionError: 件数 0 必须走显式失败通道
+E       assert False is True
+tests\test_audit_r1_core_chain.py:36: AssertionError
+>       assert res.ambiguous is True and res.attacker is None
+E       AssertionError: assert (False is True)
+tests\test_audit_r1_core_chain.py:46: AssertionError
+>       assert res.ambiguous is True and res.attacker is None
+E       AssertionError: assert (False is True)
+tests\test_audit_r1_core_chain.py:56: AssertionError
+>       assert out["ok"] is False, (
+E       AssertionError: 假成功：ok=True + expected_damage 0.0 会被模型答成「期望伤害为 0」
+E       assert True is False
+tests\test_audit_r1_core_chain.py:81: AssertionError
+FAILED ...::TestH3ZeroCountLoadoutMustFailLoudly::test_zero_count_is_an_assembly_error_not_a_silent_zero
+FAILED ...::TestH3ZeroCountLoadoutMustFailLoudly::test_negative_count_is_rejected_too
+FAILED ...::TestH3ZeroCountLoadoutMustFailLoudly::test_zero_count_entry_poisons_the_whole_loadout
+FAILED ...::TestH3ZeroCountLoadoutMustFailLoudly::test_tool_boundary_returns_loadout_required_not_a_zero_damage_report
+4 failed, 1 passed, 5 warnings in 0.62s
+```
+唯一没红的那条是 `test_positive_count_still_assembles`（正常件数的回归护栏，
+本就该在改动前后都绿——它在的意义是防止修法过度收紧）。
+
+**② 恢复实现 → 转绿**
+```
+> git stash pop
+> .venv\Scripts\python.exe -m pytest tests/test_audit_r1_core_chain.py -q
+5 passed, 5 warnings in 0.27s
+```
+
+**一个必须记下的过程教训**：第一版 `test_tool_boundary_...` 我把守方 canonical_id
+写错成 `000000826`，结果 stash 后那条测试**也红了**，但红在
+`assert 'not_found' == 'loadout_required'` ——因为装配检查排在 `load_target` **之前**，
+修复后它提前 return，压根没走到「守方装不出来」。
+**测试红了不等于红对了地方**：改用真 id `000000468`（Termagants）重跑，
+才拿到真正的病灶输出 `AssertionError: 假成功…assert True is False`（`ok=True`）。
+这与本轮 §4 反复强调的「校验器与被校验对象信号不正交」是同一件事，
+只不过这次发生在测试自己身上。
+
+---
+
+### H2 · `finish_reason` 截断检测 —— `llm_refine.py`
+
+**修法**（最小）：新增 `_is_truncated(choice)`（只认 `finish_reason ∈ {length, max_tokens}`，
+**字段缺失按未截断放行**，不猜——老 SDK / 假客户端没有这个字段），
+`refine_page` 命中即 `raise ValueError` 走**既有重试通道**；重试仍截断 →
+既有 `RuntimeError` → `_work` 的 except 写 `fallback=True` → `is_cached` 判 False →
+**下次运行会重跑该页**。没有新增任何返回形态，也没碰 `MAX_TOKENS` / `verify_numbers`。
+
+**① stash 掉实现 → 真会红**
+```
+> git stash push -- llm_refine.py
+> .venv\Scripts\python.exe -m pytest tests/test_audit_r1_core_chain.py -q -k H2
+
+E           Failed: DID NOT RAISE <class 'RuntimeError'>
+tests\test_audit_r1_core_chain.py:68: Failed
+>       assert llm_refine.refine_page(client, "源文本", "") == "## 完整页"
+E       AssertionError: assert '半页就没了' == '## 完整页'
+tests\test_audit_r1_core_chain.py:80: AssertionError
+>       assert llm_refine.refine_page(client, "源文本", "") == "## 完整页"
+E       AssertionError: assert '半页' == '## 完整页'
+tests\test_audit_r1_core_chain.py:88: AssertionError
+FAILED ...::TestH2TruncatedRefineMustNotBeCachedAsComplete::test_truncated_response_is_retried_then_raises
+FAILED ...::TestH2TruncatedRefineMustNotBeCachedAsComplete::test_truncation_recovers_when_retry_completes
+FAILED ...::TestH2TruncatedRefineMustNotBeCachedAsComplete::test_anthropic_style_max_tokens_also_counts_as_truncation
+3 failed, 2 passed, 5 deselected, 5 warnings in 0.36s
+```
+`assert '半页就没了' == '## 完整页'` 就是病灶本体：**旧代码把截断的半页当成成品直接 return**，
+连重试都不会发生。另外两条没红是设计如此——
+`test_missing_finish_reason_is_not_treated_as_truncation`（无该字段必须放行，
+新旧实现都该绿）与端到端的 fallback 路径测试（它 monkeypatch 掉 `refine_page`，
+验的是 `process_book` 侧「截断 → fallback=True → is_cached False」这段既有通道没被改坏）。
+
+**② 恢复实现 → 转绿**
+```
+> git stash pop
+> .venv\Scripts\python.exe -m pytest tests/test_audit_r1_core_chain.py tests/test_llm_refine.py -q
+33 passed, 5 warnings in 0.96s
+```
+连同既有 `tests/test_llm_refine.py`（含 4 条 `refine_page` 老用例）一起跑，
+证明**假客户端没有 `finish_reason` 字段的老路径一条没被误伤**。
+
+---
+
+### H1 · 待修（下一迭代）
+改动面最大（涉及 `hybrid_retrieve` 的对外契约 + `agent/tools.py` 的 `error` 分类），
+且必须验证 Streamlit 侧「FAISS 挂了但 BM25 还能用」的部分可用行为不变。
+基准 `qa_bench --path agent` 与四题锚点对比放在那一迭代**一次跑完**。
 
 ---
 
@@ -363,14 +475,20 @@ H3 的责任在**工具边界把 0 包装成成功**，不在引擎；修复不�
    但**两份解析规则**这一形状值得第 2 轮连同 `db_compile` 侧的 points_json 写入方一起核。
 
 ### 移交第 3 轮（`web_api/` `web/`）
-4. `/simulate` 路由把用户 loadout 直传 `simulate_combat_resolved`：H3 修好后需确认
-   web 侧对件数 ≤0 的错误形态有渲染（不要出现「后端返回 errors 而前端只认 ok」）。
+4. `/simulate` 路由把用户 loadout 直传 `simulate_combat_resolved`。**H3 已于迭代 2 修复**，
+   件数 ≤0 现在返回 `ok=False / reason="loadout_required" / errors=[...]`——
+   与「多武器未装配」走的是**同一个** reason，前端本就有渲染路径，
+   全量 pytest（含 `tests/test_web_api_stage4_sim.py`）2408 全绿，未见破坏。
+   但第 3 轮仍需**目检**：`errors` 里那句「件数 ≤ 0」有没有真显示给用户，
+   还是被前端只读 `note` 给吃掉了（后端诚实 ≠ 用户看得见）。
 5. 军表实验室两个页签会同时展示 `validate.total_points` 与 `critique.total_points`
    （M3：同一张表两个数）。修 M3 时需连前端展示一起核对。
 
 ---
 
 ## 6. 本轮实际数字
+
+### 迭代 1（只审查）
 
 | 项 | 命令 | 结果 |
 |---|---|---|
@@ -381,16 +499,40 @@ H3 的责任在**工具边界把 0 包装成成功**，不在引擎；修复不�
 
 复现脚本：`%TEMP%\audit_r1_repro.py`、`%TEMP%\audit_r1_repro2.py`（系统临时目录，未入仓库）。
 
+### 迭代 2（修 H3 + H2）
+
+| 项 | 命令 | 结果 |
+|---|---|---|
+| 全量测试 | `.venv\Scripts\python.exe -m pytest -q` | **2408 passed, 0 failed**（104.95s）= 基线 2398 + 新增 10 条护栏 |
+| wiki lint | `.venv\Scripts\python.exe -m wiki_engine lint` | **0 errors, 1 warnings, 4 info**（与基线持平） |
+| 工作区 | `git status --porcelain` | 3 改 1 新增，全部本轮预期内；`git diff --numstat` = `15/2`(assembly) `25/1`(llm_refine)，**无整文件行尾假 diff** |
+| 基准 | 未跑 | 见下方说明 |
+
+**为什么本迭代不跑基准**：改的两个文件都不在在线问答链路上——
+`engines/simulator/assembly.py` 属 `engines/`（不在 stop-condition 点名的
+「`agent/` 或检索链」里），`llm_refine.py` 只在 `data_refined/` **离线**重构时执行，
+不重跑 refine 就不会有一个字节的语料/索引变化，`qa_bench` 读的是既有 FAISS 索引。
+H1 动 `app.py` 检索链 + `agent/tools.py`，**必然要跑**，届时一次覆盖本轮三条改动。
+
 ---
 
 ## 7. 下一次迭代的建议顺序
 
-1. **H3**（改动面最小、边界最清晰：`assemble_attacker` 里把 `count<=0` 并进既有 errors 通道）
-2. **H2**（`refine_page` 读 `finish_reason`；注意 fake client 无该字段时要放行）
+1. ~~**H3**~~ ✅ 已修（迭代 2）
+2. ~~**H2**~~ ✅ 已修（迭代 2）
 3. **H1**（改动面最大，涉及 `hybrid_retrieve` 的返回契约，需最后做并单独验证
    Streamlit 侧「部分可用」行为不变）
 
+H1 的落地要点（迭代 2 已核实的前提，别重新怀疑）：
+- `hybrid_retrieve` 的三处 `except → st.warning` 分别在 `app.py:361/375/390`，
+  分别对应 FAISS / BM25 / 规则层保底；**不要换成 raise**——那会把
+  「FAISS 挂了但 BM25 还能用」的部分可用路径变成整体不可用。
+- 建议形态：收集一个 `errors: list[str]` 侧信道回传，`rag_search` 据此置 `error=True`
+  并复用既有 `_RAG_UNAVAILABLE_HINT`。Streamlit 侧 `st.warning` 保持原样。
+- 护栏测试写进 `tests/test_audit_r1_core_chain.py` 的新 class（沿用现有两个 class 的写法：
+  注释写明「不修会怎样」）。
+
 每条修完立即：配测试 → 实测 stash 掉实现该测试真会红 → 恢复转绿 → 两次输出贴进 §3 →
-跑 `pytest -q` + `wiki_engine lint`；H1/H2/H3 只要动了 `agent/` 或检索链就必须跑基准
+跑 `pytest -q` + `wiki_engine lint`；H1 动了 `agent/` 与检索链，必须跑基准
 `qa_bench --path agent` 并与 `qa_agent_results_source_routing_r2.json` 逐题对比，
 四题锚点 #63/#109/#118/#119 全 ✅ 且零退化。

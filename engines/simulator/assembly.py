@@ -172,11 +172,24 @@ def assemble_attacker(
             else:
                 base.errors.append(f"武器名 {name!r} 不在该单位武器池")
             continue
-        chosen.append(replace(w, count=int(count)))
+        n = int(count)
+        if n <= 0:
+            # 件数 ≤0 必须显式失败。sequence.py 的引擎层对 count<=0 是**对的**
+            # （诚实地不开火，非 max(...,1) 幽灵开火），于是"0 件"会一路装配成功、
+            # 端出一份 ok=True + expected_damage=0.0 + warning=None 的**假成功**报告，
+            # 模型据此答"该单位期望伤害为 0"——每层都是成功路径的错答。
+            # loadout 由 LLM 从自然语言现编（"不带爆弹枪"很可能被写成 0），必须拦在这里。
+            # 走既有 errors → ambiguous 通道，不新增返回形态、不动引擎。
+            base.errors.append(
+                f"武器 {w.name_en!r} 的件数 {n} ≤ 0，无法模拟"
+                f"（0 件 = 不开火，只会得到期望伤害恒为 0 的空报告）；"
+                f"要排除这把武器就别把它写进 loadout")
+            continue
+        chosen.append(replace(w, count=n))
 
     if base.errors:
         base.ambiguous = True
-        base.note = "loadout 存在无法匹配的武器，见 errors"
+        base.note = "loadout 不可用（武器名无法匹配或件数非法），见 errors"
         return base
 
     base.attacker = _mk_attacker(chosen)
