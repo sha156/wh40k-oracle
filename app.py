@@ -326,12 +326,28 @@ def build_bm25(_vectorstore):
 # ══════════════════════════════════════════════
 #  混合检索核心函数
 # ══════════════════════════════════════════════
+def _record_retrieval_failure(errors: list[str] | None, stage: str, exc: Exception) -> None:
+    """把一次检索侧故障同时告诉两个受众：Streamlit 用户与**程序调用方**。
+
+    审查 H1：这三处故障此前只调 st.warning。st.warning 在非 Streamlit 上下文
+    （agent / qa_bench / web_api）既不抛异常也无处可见，于是 agent/tools.py 的
+    rag_search 只能看到一个空列表，把「检索管线自己坏了」报成「语料里没有」
+    ——它特意分出来的 error=True 分类因此形同虚设。
+    errors 侧信道让调用方能区分这两者；st.warning 保持原样，Streamlit 侧
+    「FAISS 挂了但 BM25 还能用」的部分可用行为一个字节不变（所以这里不 raise）。
+    """
+    if errors is not None:
+        errors.append(f"{stage}: {exc}")
+    st.warning(f"{stage}出错: {exc}")
+
+
 def hybrid_retrieve(
     query: str,
     vectorstore,
     bm25_retriever,
     reranker,
     filter_books: list[str] | None = None,
+    errors: list[str] | None = None,
 ) -> list[dict]:
     """
     混合检索流程：
@@ -340,6 +356,9 @@ def hybrid_retrieve(
       3. RRF 融合去重
       4. FlashRank 精排
     返回格式化的 passage 列表，每项含 text / book / source / page。
+
+    errors：可选的**只出不进**侧信道。传入一个 list 即可收集本次检索中被降级处理
+    （不影响其他召回通道继续工作）的故障描述；不传则行为与从前逐字节一致。
     """
     # ── 查询扩展（社区译名 → 库内译名）──
     query = expand_query(query)
@@ -359,7 +378,7 @@ def hybrid_retrieve(
         retriever = vectorstore.as_retriever(search_kwargs=search_kwargs)
         faiss_docs = retriever.invoke(query)
     except Exception as e:
-        st.warning(f"FAISS 检索出错: {e}")
+        _record_retrieval_failure(errors, "FAISS 检索", e)
 
     # ── BM25 检索 ──
     bm25_docs: list[Document] = []
@@ -373,7 +392,7 @@ def hybrid_retrieve(
                     if d.metadata.get("book") in filter_books
                 ]
         except Exception as e:
-            st.warning(f"BM25 检索出错: {e}")
+            _record_retrieval_failure(errors, "BM25 检索", e)
 
     # ── 11版迁移S2：规则层保底检索 ──
     # 规则条文层（layer=rules，11版核心规则）是版本仲裁的最高真源，但它是英文——
@@ -388,7 +407,7 @@ def hybrid_retrieve(
                 fetch_k=RULES_FLOOR_FETCH_K,
                 filter={"layer": "rules"})
         except Exception as e:
-            st.warning(f"规则层保底检索出错: {e}")
+            _record_retrieval_failure(errors, "规则层保底检索", e)
 
     # ── RRF 融合 ──
     merged = reciprocal_rank_fusion(faiss_docs, bm25_docs)

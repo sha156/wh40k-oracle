@@ -240,19 +240,29 @@ class AgentLoop:
         rag_fn = self.tools.get("rag_search")
         passages: List[Dict[str, Any]] = []
         note = reason
+        unavailable = False
 
         if rag_fn is not None:
             try:
                 rag_result = rag_fn(user_input)
                 passages = rag_result.get("passages", [])
                 if not passages:
-                    note = f"{reason}；rag_search 兜底也未检索到相关内容"
+                    # 审查 H1：rag_search 的 error=True 表示**检索管线/环境不可用**，
+                    # 与「语料里没有」是两回事。降级答案是这条链路的最后一句话——
+                    # 一律写「未找到相关内容」等于把环境故障说成内容结论。
+                    if rag_result.get("error"):
+                        unavailable = True
+                        note = (f"{reason}；rag_search 兜底不可用："
+                                f"{rag_result.get('note') or '检索侧环境故障'}")
+                    else:
+                        note = f"{reason}；rag_search 兜底也未检索到相关内容"
             except Exception as exc:
+                unavailable = True
                 note = f"{reason}；rag_search 兜底异常: {exc}"
             tool_calls = tool_calls + ["rag_search"]
 
         return AgentResult(
-            answer=self._synthesize_fallback_answer(passages, note),
+            answer=self._synthesize_fallback_answer(passages, note, unavailable),
             intent=intent,
             tool_calls=tool_calls,
             degraded=True,
@@ -260,8 +270,15 @@ class AgentLoop:
         )
 
     @staticmethod
-    def _synthesize_fallback_answer(passages: List[Dict[str, Any]], note: str) -> str:
+    def _synthesize_fallback_answer(passages: List[Dict[str, Any]], note: str,
+                                    unavailable: bool = False) -> str:
         if not passages:
+            if unavailable:
+                # 检索没跑成，不是语料里没有——这句话是用户/模型看到的最后一句，
+                # 不许在这里把环境故障收敛成「找不到」（审查 H1）。
+                return (f"⚠️ 本次检索**不可用**（{note}）。"
+                        "这是检索侧环境故障，不能据此判断相关规则/单位是否存在，"
+                        "请修复检索环境后重试，或查阅原始规则书。")
             return f"⚠️ 已降级到兜底检索，但仍未找到相关内容（{note}）。"
         lines = [f"⚠️ 已降级到兜底检索（{note}），供参考的原文片段："]
         for p in passages[:3]:

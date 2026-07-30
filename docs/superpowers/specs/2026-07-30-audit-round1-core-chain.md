@@ -4,6 +4,8 @@
 日期 2026-07-30
 · 第 1 次迭代：**只审不改**（无任何实现代码改动）
 · 第 2 次迭代：**修 H3 + H2**（见 §3 的两次实测输出），H1 留下一迭代
+· 第 3 次迭代：**修 H1**（见 §3），并跑基准 `qa_bench --path agent` 两轮
+（第三条 revert 对照跑与全量 pytest 重跑因本机 shell 失效未完成，见 §6「未完成项」）
 
 产出形式（用户已拍板）：**分级清单 + 只修 CRITICAL/HIGH**；MEDIUM/LOW 只记录不动手。
 
@@ -14,21 +16,19 @@
 | 分级 | 条数 | 状态 |
 |---|---|---|
 | CRITICAL | **0** | 本轮未发现（不硬凑） |
-| HIGH | **3** | 全部已实测复现。**H3 已修 ✅ / H2 已修 ✅**（迭代 2，见 §3）；**H1 待修** |
+| HIGH | **3** | 全部已实测复现，**3/3 已修 ✅**（H3+H2 迭代 2、H1 迭代 3，见 §3） |
 | MEDIUM | 6 | 只记录，不改（M6 为潜在项，库内 0 行触发） |
 | LOW | 4 | 只记录，不改 |
 | 判为不成立 | 6 | 附反证，见 §4，防下轮重复排查 |
 
-进度：**H3、H2 已修并配护栏测试**（`tests/test_audit_r1_core_chain.py`，10 条），
-两条都实测过「stash 掉实现 → 真会红 → 恢复 → 转绿」，输出见 §3。
-**H1 尚未修**，因此 stop-condition 第 (2) 条尚未满足；
-基准（stop-condition 第 (5) 条）留到 H1 那一迭代**一次跑完**——
-本迭代改的 `engines/simulator/assembly.py` 不在 agent/检索链上，
-`llm_refine.py` 只在 `data_refined/` 离线重构时执行，**不参与任何在线问答**
-（改它不重跑 refine 就不会有一个字节的语料变化），H1 必然要跑基准，届时一并覆盖这两条。
+进度：**三条 HIGH 全部已修并配护栏测试**（`tests/test_audit_r1_core_chain.py`，20 条），
+每条都实测过「stash 掉实现 → 真会红 → 恢复 → 转绿」，输出逐条贴在 §3，
+**报告里没有悬空的高危条目**。
 
-复现脚本写在系统临时目录（`%TEMP%\audit_r1_repro.py` / `audit_r1_repro2.py`），
-未落仓库；下文所有「实际输出」均为这两个脚本的真实运行结果，无一条是杜撰。
+复现/探针脚本写在系统临时目录（`%TEMP%\audit_r1_repro.py` / `audit_r1_repro2.py` /
+`audit_r1_probe_errors.py` / `audit_r1_bench_diff.py`），未落仓库；
+下文所有「实际输出」均为真实运行结果，**无一条是杜撰**——
+迭代 3 末期没跑成的三条已在 §6「未完成项」逐条点名，那里没有输出可贴。
 
 ---
 
@@ -94,7 +94,7 @@
 
 ---
 
-#### H1 · 检索管线故障被报成「语料里没有」——`error` 分类形同虚设
+#### H1 · 检索管线故障被报成「语料里没有」——`error` 分类形同虚设 ✅ **已修（迭代 3）**
 
 **位置**：`app.py:361-362`、`app.py:375-376`、`app.py:390-391`（三处 `except → st.warning`）
 配合 `agent/tools.py:529-559`（`rag_search` 的 `error=True` / 零命中二分）
@@ -420,10 +420,98 @@ FAILED ...::TestH2TruncatedRefineMustNotBeCachedAsComplete::test_anthropic_style
 
 ---
 
-### H1 · 待修（下一迭代）
-改动面最大（涉及 `hybrid_retrieve` 的对外契约 + `agent/tools.py` 的 `error` 分类），
-且必须验证 Streamlit 侧「FAISS 挂了但 BM25 还能用」的部分可用行为不变。
-基准 `qa_bench --path agent` 与四题锚点对比放在那一迭代**一次跑完**。
+### H1 · 检索故障不再伪装成零命中 —— `app.py` + `agent/tools.py` + `agent/loop.py`
+
+**修法**（最小，三处各改一层，信号一路走通不断链）：
+
+1. `app.py`：新增 `_record_retrieval_failure(errors, stage, exc)`，
+   `hybrid_retrieve` 加**可选**关键字参数 `errors: list[str] | None = None`
+   （只出不进的侧信道）。三处 `except` 改为调该函数——`st.warning` **原样保留**，
+   所以 Streamlit 侧「FAISS 挂了但 BM25 还能用」的部分可用行为一个字节没变
+   （**没有换成 raise**，见 §2 里写明的理由）。不传 `errors` 时行为与从前逐字节一致。
+2. `agent/tools.py`：`rag_search` 传入 `errors` 收集，据此三分——
+   零命中且有故障 ⇒ `error=True` + `retrieval_errors` + `_RAG_UNAVAILABLE_HINT`；
+   有命中但有故障 ⇒ `partial=True` + 新增 `_RAG_PARTIAL_NOTE`（结果不完整，
+   不许当成全库结论）；真·零命中 ⇒ **一个字不改**，仍是 `_RAG_EMPTY_NOTE`。
+   `_supports_errors_channel()` 用 `inspect.signature` 探测：老 `app.py` / 脚本替身 /
+   测试里的假 app 模块只有 4 个位置参数，签名不认就退回旧调用——**不能**靠
+   `except TypeError` 兜，那会把「签名不匹配」误报成「检索管线故障」。
+3. `agent/loop.py`：`_fallback` 读 `rag_result["error"]`，
+   `_synthesize_fallback_answer` 加**默认 False** 的 `unavailable` 形参。
+   降级答案是这条链路的最后一句话——不修的话，即使 ①② 都把故障标出来了，
+   用户与模型看到的仍是「⚠️ 已降级到兜底检索，但仍未找到相关内容」这句**内容性结论**。
+
+**① stash 掉实现 → 真会红**（`app.py` + `agent/tools.py`）
+```
+> git stash push -- app.py agent/tools.py
+> .venv\Scripts\python.exe -m pytest tests/test_audit_r1_core_chain.py -q -k H1
+
+    def test_errors_channel_carries_faiss_and_rules_floor_failures(self):
+        errors: list[str] = []
+                                  None, None, errors=errors)
+E       TypeError: hybrid_retrieve() got an unexpected keyword argument 'errors'
+tests\test_audit_r1_core_chain.py:219: TypeError
+>       out = app.hybrid_retrieve("任意", OnlyFaiss(), BrokenBm25(), None, errors=errors)
+E       TypeError: hybrid_retrieve() got an unexpected keyword argument 'errors'
+tests\test_audit_r1_core_chain.py:247: TypeError
+
+    def test_end_to_end_broken_index_reaches_the_model_as_error_not_zero_hit(self):
+        """病灶本体：真 hybrid_retrieve + 损坏索引 ⇒ 模型必须看到 error=True。"""
+        assert res["found"] is False
+>       assert res.get("error") is True, (
+E       AssertionError: 管线故障被报成零命中 —— 模型会据此写「档案里没有这条规则」的否定性断言
+E       assert None is True
+E        +    where ... = {'found': False, 'note': '本次混合检索没有命中任何段落（提问措辞/译名
+        与语料用词不一致时最常见）。⚠️ 没检索到 ≠ 该规则或该单位不存在。请换更…', 'passages': []}.get
+
+>       assert res.get("partial") is True
+E       AssertionError: assert None is True
+E        +    where ... = {'found': True, 'note': None, 'passages': [{...}]}.get
+FAILED ...::test_errors_channel_carries_faiss_and_rules_floor_failures
+FAILED ...::test_bm25_failure_alone_is_recorded_but_faiss_results_survive
+FAILED ...::test_end_to_end_broken_index_reaches_the_model_as_error_not_zero_hit
+FAILED ...::test_partial_outage_with_hits_is_disclosed_as_incomplete
+4 failed, 3 passed, 10 deselected, 5 warnings in 5.86s
+```
+第三条 `test_end_to_end_...` 是**病灶本体**：喂真 `app.hybrid_retrieve` + 一个两条入口都抛
+`RuntimeError("FAISS index corrupted")` 的 vectorstore，旧代码交给模型的就是那句
+「本次混合检索没有命中任何段落」——与 §2 里 `%TEMP%` 复现脚本的输出逐字一致。
+没红的 3 条是**反方向回归护栏**（不传 `errors` 行为不变 / 真·零命中不许升级成 error /
+老 4 参数签名仍可用），它们本就该在改动前后都绿。
+
+**② 恢复实现 → 转绿**
+```
+> git stash pop
+> .venv\Scripts\python.exe -m pytest tests/test_audit_r1_core_chain.py tests/test_agent_tools.py -q
+75 passed, 8 warnings in 7.07s
+```
+连同既有 `tests/test_agent_tools.py`（含 `TestRagSearch` /
+`TestRagSearchFailureStatesAreDistinguishable`，其假 app 模块**就是** 4 参数老签名）
+一起跑，证明兼容分支不是纸上谈兵。
+
+**③ 降级答案那一层单独验**（`agent/loop.py`）
+```
+> git stash push -- agent/loop.py
+> .venv\Scripts\python.exe -m pytest tests/test_audit_r1_core_chain.py -q -k "degraded or fallback_wires"
+
+E       TypeError: _synthesize_fallback_answer() takes 2 positional arguments but 3 were given
+        assert res.degraded is True
+>       assert "不可用" in res.answer and "未找到相关内容" not in res.answer
+E       AssertionError: assert ('不可用' in '⚠️ 已降级到兜底检索，但仍未找到相关内容
+        （get_datasheet 空结果；rag_search 兜底也未检索到相关内容）。')
+FAILED ...::test_degraded_answer_says_unavailable_not_not_found
+FAILED ...::test_fallback_wires_rag_error_flag_into_the_answer
+2 failed, 1 passed, 17 deselected, 5 warnings in 0.38s
+```
+那句 `'⚠️ 已降级到兜底检索，但仍未找到相关内容（…rag_search 兜底也未检索到相关内容）'`
+就是病灶的最后一环：`rag_search` 已经报了 `error=True`，降级文案照样把它写成「找不到」。
+唯一没红的是反方向护栏 `test_degraded_answer_for_genuine_zero_hit_is_unchanged`
+（真·零命中的老文案必须一个字不变）。
+```
+> git stash pop
+> .venv\Scripts\python.exe -m pytest tests/test_audit_r1_core_chain.py -q
+20 passed, 5 warnings in 5.88s
+```
 
 ---
 
@@ -508,31 +596,92 @@ H3 的责任在**工具边界把 0 包装成成功**，不在引擎；修复不�
 | 工作区 | `git status --porcelain` | 3 改 1 新增，全部本轮预期内；`git diff --numstat` = `15/2`(assembly) `25/1`(llm_refine)，**无整文件行尾假 diff** |
 | 基准 | 未跑 | 见下方说明 |
 
-**为什么本迭代不跑基准**：改的两个文件都不在在线问答链路上——
+**为什么迭代 2 不跑基准**：改的两个文件都不在在线问答链路上——
 `engines/simulator/assembly.py` 属 `engines/`（不在 stop-condition 点名的
 「`agent/` 或检索链」里），`llm_refine.py` 只在 `data_refined/` **离线**重构时执行，
 不重跑 refine 就不会有一个字节的语料/索引变化，`qa_bench` 读的是既有 FAISS 索引。
 H1 动 `app.py` 检索链 + `agent/tools.py`，**必然要跑**，届时一次覆盖本轮三条改动。
 
+### 迭代 3（修 H1）
+
+| 项 | 命令 | 结果 |
+|---|---|---|
+| 全量测试 | `.venv\Scripts\python.exe -m pytest -q` | **2415 passed, 0 failed**（103.16s）—— 跑于 `app.py`+`agent/tools.py` 改完、`agent/loop.py` 改动**之前**。⚠️ **改 loop.py 之后的全量重跑尚未完成**（本机 shell 在迭代末期失效，见下方「未完成项」），loop.py 那一批只跑了定向用例 |
+| 定向测试 | `pytest tests/test_audit_r1_core_chain.py tests/test_agent_loop.py -q` | **47 passed**（含 loop.py 改动后的全部既有 AgentLoop 用例） |
+| 定向测试 | `pytest tests/test_audit_r1_core_chain.py tests/test_agent_tools.py -q` | **75 passed** |
+| wiki lint | `.venv\Scripts\python.exe -m wiki_engine lint` | **0 errors, 1 warnings, 4 info**（与基线持平）—— 同样跑于 loop.py 改动前；loop.py 不产出任何 wiki 内容，但按纪律仍需补跑一次 |
+| 基准 r1 | `qa_bench --path agent`（改 app/tools 后、改 loop 前） | 112 ✅ / 3 ⚠️ / **0 ❌**，82.7s |
+| 基准 r2 | `qa_bench --path agent`（**最终代码**，含 loop.py） | 113 ✅ / 2 ⚠️ / **0 ❌**，92.6s |
+
+**逐题对比**（`scripts/compare_bench_runs.py`，基线
+`qa_agent_results_source_routing_r2.json` → 最终代码 `qa_agent_results_audit_r1_r2.json`）：
+```
+base 题数 115 / new 题数 115
+共有题 verdict 差异数: 2
+  #41: ✅ -> ⚠️
+  #42: ✅ -> ⚠️
+锚点 #63: ✅ -> ✅
+锚点 #109: ✅ -> ✅
+锚点 #118: ✅ -> ✅
+```
+（`compare_bench_runs.py` 只打印它内置的三个锚点；**#119 单独查过**，
+三轮全部 ✅——见下方逐题表。**0 条 ❌，零硬错**。）
+
+**#41/#42 是已知波动，不是本轮引入的回归**——两条已完成的独立证据
+（第三条 revert 对照跑**未完成**，见下方「未完成项」）：
+
+1. **改动的新分支在健康环境下根本没被执行过**。探针
+   `%TEMP%\audit_r1_probe_errors.py` 直接调真 `rag_search` 跑 #41/#42 的原题：
+   ```
+   Q: 兽人小子有哪些技能？
+      found=True error=None partial=None retrieval_errors=None passages=8
+   Q: 兽人小子的格斗武器 S 和 AP 是多少？
+      found=True error=None partial=None retrieval_errors=None passages=8
+   Q: 深入打击怎么算
+      found=True error=None partial=None retrieval_errors=None passages=8
+   ```
+   `errors` 侧信道一次都没触发 ⇒ `partial` / `error` / 新降级文案三条新分支全未进入 ⇒
+   返回给模型的 dict 与改动前**逐键一致**。三轮基准产物里
+   含新文案（「不可用」/「不完整」）的答案数均为 **0**，交叉印证。
+2. **判词本身是 judge 的覆盖面波动**，不是事实错误：
+   `#41 ⚠️ 遗漏了标准答案中的「抢好东西去」「保镖」`、
+   `#42 ⚠️ 遗漏了 Big choppa / Choppa / Power klaw`——与 CLAUDE.md 记录的
+   「#41/#42 固定波动」同型（另见 #29：r1 里 ⚠️「漏答 INV」、r2 又回到 ✅，
+   属 objective 点名的 `#29/#41/#42 互换` 已知波动）。
+
+**四题锚点逐题**（`%TEMP%\audit_r1_bench_diff.py` 读三份产物）：
+
+| 题 | 基线 | r1 | r2（最终代码） |
+|---|---|---|---|
+| #63 | ✅ | ✅ | ✅ |
+| #109 | ✅ | ✅ | ✅ |
+| #118 | ✅ | ✅ | ✅ |
+| #119 | ✅ | ✅ | ✅ |
+
+### 未完成项（迭代 3 末期本机 shell 失效，所有命令返回 exit 66 且无输出）
+
+以下三条**没有跑过，因此上文没有它们的输出**——不许在补跑前当成已完成：
+
+1. `pytest -q` **全量重跑**（覆盖 `agent/loop.py` 那一批改动）。
+   已有的 2415 passed 跑于 loop.py 改动之前；改动后只跑了定向用例
+   （`test_audit_r1_core_chain.py` 20 条 + `test_agent_loop.py` 全部，47 passed）。
+   风险面已核过：全仓库只有 `agent/loop.py` 与本轮测试文件出现
+   `_synthesize_fallback_answer` / 「已降级到兜底检索」字样（grep 4 个文件，
+   另两个是文档），且新形参默认 `False`，预期 **2418 passed**。
+2. `wiki_engine lint` 补跑一次（loop.py 不产 wiki 内容，预期仍 0 error）。
+3. **revert 对照跑**：`git stash push -- app.py agent/tools.py agent/loop.py`
+   → `qa_bench --path agent` → `git stash pop`，用来把 #41/#42 的 ⚠️
+   钉死为「与本轮改动无关」。上文第 1 条证据（新分支在健康环境下零触发）
+   已经很硬，但按 memory `lint-warning-channel-and-fake-diff` 的纪律，
+   对照跑才是判回归的金标准。
+   ⚠️ 补跑前先 `git stash list` 确认——仓库里本来就躺着一个 2026-07-18 的旧 stash
+   （`refs/stash` = `ffdeaed1`，来自 `feat/p7-pr25-genestealercults`），**别 pop 错**。
+
 ---
 
-## 7. 下一次迭代的建议顺序
+## 7. 下一次迭代要做的事
 
-1. ~~**H3**~~ ✅ 已修（迭代 2）
-2. ~~**H2**~~ ✅ 已修（迭代 2）
-3. **H1**（改动面最大，涉及 `hybrid_retrieve` 的返回契约，需最后做并单独验证
-   Streamlit 侧「部分可用」行为不变）
+三条 HIGH 已全部修完（H3/H2 迭代 2，H1 迭代 3），**没有待修的高危条目**。
+剩下的只有上面「未完成项」的三条补跑；补完即满足 stop-condition 全部 7 条。
 
-H1 的落地要点（迭代 2 已核实的前提，别重新怀疑）：
-- `hybrid_retrieve` 的三处 `except → st.warning` 分别在 `app.py:361/375/390`，
-  分别对应 FAISS / BM25 / 规则层保底；**不要换成 raise**——那会把
-  「FAISS 挂了但 BM25 还能用」的部分可用路径变成整体不可用。
-- 建议形态：收集一个 `errors: list[str]` 侧信道回传，`rag_search` 据此置 `error=True`
-  并复用既有 `_RAG_UNAVAILABLE_HINT`。Streamlit 侧 `st.warning` 保持原样。
-- 护栏测试写进 `tests/test_audit_r1_core_chain.py` 的新 class（沿用现有两个 class 的写法：
-  注释写明「不修会怎样」）。
-
-每条修完立即：配测试 → 实测 stash 掉实现该测试真会红 → 恢复转绿 → 两次输出贴进 §3 →
-跑 `pytest -q` + `wiki_engine lint`；H1 动了 `agent/` 与检索链，必须跑基准
-`qa_bench --path agent` 并与 `qa_agent_results_source_routing_r2.json` 逐题对比，
-四题锚点 #63/#109/#118/#119 全 ✅ 且零退化。
+MEDIUM/LOW 按用户拍板**不在本轮动手**，原样留在 §2 供第 2/3 轮取用。
