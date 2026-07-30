@@ -5,7 +5,8 @@
 · 第 1 次迭代：**只审不改**（无任何实现代码改动）
 · 第 2 次迭代：**修 H3 + H2**（见 §3 的两次实测输出），H1 留下一迭代
 · 第 3 次迭代：**修 H1**（见 §3），并跑基准 `qa_bench --path agent` 两轮
-（第三条 revert 对照跑与全量 pytest 重跑因本机 shell 失效未完成，见 §6「未完成项」）
+· 收尾三条补跑（全量 pytest / wiki lint / revert 对照跑）因本机 shell 失效未由 worker 完成，
+**已由 host 于同日全部补跑**，结果见 §6「补跑结果」
 
 产出形式（用户已拍板）：**分级清单 + 只修 CRITICAL/HIGH**；MEDIUM/LOW 只记录不动手。
 
@@ -28,7 +29,7 @@
 复现/探针脚本写在系统临时目录（`%TEMP%\audit_r1_repro.py` / `audit_r1_repro2.py` /
 `audit_r1_probe_errors.py` / `audit_r1_bench_diff.py`），未落仓库；
 下文所有「实际输出」均为真实运行结果，**无一条是杜撰**——
-迭代 3 末期没跑成的三条已在 §6「未完成项」逐条点名，那里没有输出可贴。
+迭代 3 末期没跑成的三条曾在 §6 逐条点名（当时没有输出可贴），现已由 host 补跑并贴出实际输出。
 
 ---
 
@@ -606,7 +607,7 @@ H1 动 `app.py` 检索链 + `agent/tools.py`，**必然要跑**，届时一次�
 
 | 项 | 命令 | 结果 |
 |---|---|---|
-| 全量测试 | `.venv\Scripts\python.exe -m pytest -q` | **2415 passed, 0 failed**（103.16s）—— 跑于 `app.py`+`agent/tools.py` 改完、`agent/loop.py` 改动**之前**。⚠️ **改 loop.py 之后的全量重跑尚未完成**（本机 shell 在迭代末期失效，见下方「未完成项」），loop.py 那一批只跑了定向用例 |
+| 全量测试 | `.venv\Scripts\python.exe -m pytest -q` | **2415 passed, 0 failed**（103.16s）—— 跑于 `app.py`+`agent/tools.py` 改完、`agent/loop.py` 改动**之前**；loop.py 那一批 worker 只跑了定向用例。**改 loop.py 之后的全量重跑已由 host 补上：2418 passed 0 failed**（见 §6「补跑结果」） |
 | 定向测试 | `pytest tests/test_audit_r1_core_chain.py tests/test_agent_loop.py -q` | **47 passed**（含 loop.py 改动后的全部既有 AgentLoop 用例） |
 | 定向测试 | `pytest tests/test_audit_r1_core_chain.py tests/test_agent_tools.py -q` | **75 passed** |
 | wiki lint | `.venv\Scripts\python.exe -m wiki_engine lint` | **0 errors, 1 warnings, 4 info**（与基线持平）—— 同样跑于 loop.py 改动前；loop.py 不产出任何 wiki 内容，但按纪律仍需补跑一次 |
@@ -658,9 +659,17 @@ base 题数 115 / new 题数 115
 | #118 | ✅ | ✅ | ✅ |
 | #119 | ✅ | ✅ | ✅ |
 
-### 未完成项（迭代 3 末期本机 shell 失效，所有命令返回 exit 66 且无输出）
+### 未完成项 → **已由 host 全部补跑完成**（2026-07-30，见本节末「补跑结果」）
 
-以下三条**没有跑过，因此上文没有它们的输出**——不许在补跑前当成已完成：
+> 迭代 3 末期本机 shell 失效（所有命令返回 exit 66 且无输出），worker 因此把下面三条
+> 如实列为未完成。**失效原因已查明**：gnhf 被作为 harness 后台任务的子进程启动，
+> 其 TUI 逐秒重绘把任务输出撑到 360KB 后该后台任务被 harness 停掉，
+> 进程树连带失去派生子进程的能力——所以 worker 之后跑什么都是 exit 66，
+> 而 gnhf 自己的 `git add -A` 同样失败，接着它的错误恢复动作 **`git reset --hard HEAD`**
+> 也失败才 fatal 退出。**那一步若成功，本轮 H1 的实现、测试与两轮基准产物会被整个抹掉。**
+> 迭代 3 的成果由 host 提交保全（`bdb7fb51`）。
+
+以下三条是 worker 未跑的原始清单（保留原文备查）：
 
 1. `pytest -q` **全量重跑**（覆盖 `agent/loop.py` 那一批改动）。
    已有的 2415 passed 跑于 loop.py 改动之前；改动后只跑了定向用例
@@ -679,9 +688,58 @@ base 题数 115 / new 题数 115
 
 ---
 
+### 补跑结果（host 执行，2026-07-30；下方数字均为实跑输出）
+
+**1. 全量 pytest（覆盖 loop.py 那批改动）** ✅
+```
+2418 passed, 19 warnings in 104.87s (0:01:44)
+```
+与 worker 的预期 **2418** 逐个吻合（基线 2398 + 迭代 2 的 10 条 + 迭代 3 的 10 条）。
+
+**2. wiki lint 补跑** ✅
+```
+Lint: 0 errors, 1 warnings, 4 info, 0 auto-fixed / 5 total
+```
+
+**3. revert 对照跑** ✅ —— **结论比预期更强：H1 对基准的影响为零**
+
+没有用 stash（仓库里躺着 2026-07-18 的旧 stash，且当时 H1 尚未提交，stash 一旦出错就是
+不可恢复的损失）。改用**已提交后回退文件**的做法：`git checkout HEAD~1 -- app.py
+agent/tools.py agent/loop.py` → 跑基准 → `git checkout HEAD -- <同三个文件>` 还原，
+整段包在 `trap ... EXIT` 里保证任何路径都会还原（脚本在系统临时目录，未入仓库）。
+`HEAD~1` = `a897b94d`（H2/H3 已修、**H1 未修**），故对照组精确隔离 H1 一个变量。
+
+五轮产物在关键题上的交叉表（`wrong` 全部为 0）：
+
+| 运行 | H1 | #29 | #41 | #42 | #63 | #109 | #118 | #119 | 硬错 | 分数 |
+|---|---|---|---|---|---|---|---|---|---|---|
+| 基线 `source_routing_r2` | 改动前的 main | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | 0 | 100.0 |
+| 对照 `control` | **未修** | ✅ | ✅ | ⚠️ | ✅ | ✅ | ✅ | ✅ | 0 | 99.1 |
+| 对照 `control_r2` | **未修** | ✅ | ⚠️ | ⚠️ | ✅ | ✅ | ✅ | ✅ | 0 | 98.3 |
+| `audit_r1` | 部分（app+tools） | ⚠️ | ⚠️ | ⚠️ | ✅ | ✅ | ✅ | ✅ | 0 | 97.4 |
+| `audit_r1_r2` | **完整** | ✅ | ⚠️ | ⚠️ | ✅ | ✅ | ✅ | ✅ | 0 | 98.3 |
+
+判定依据两条，都是直接证据而非推断：
+
+- **`control_r2`（H1 未修）与 `audit_r1_r2`（H1 已修）逐题 verdict 完全一致**
+  （同为 #41/#42 ⚠️、其余全 ✅、同为 98.3）。**同一环境下有无 H1 跑出同一张表**
+  ⇒ H1 的基准影响为零。
+- #42 在**不含 H1 的对照组两轮里都是 ⚠️**，#41 在 `control_r2` 里也是 ⚠️
+  ⇒ 两题的翻动与本轮改动无关，是既有波动。
+
+补充旁证（不作为主判据）：拉近 10 轮历史产物看，#42 有 6 轮是 ⚠️、#41 有 4 轮，
+全部早于 H1 存在；基线那次 115 题全 ✅ 是十轮里手气最好的一次，
+**拿它当"应然值"会把正常波动误判成退化**。四题锚点 #63/#109/#118/#119
+则在**所有五轮里都是 ✅**。
+
+**stop-condition 7 条现已全部满足。**
+
+---
+
 ## 7. 下一次迭代要做的事
 
 三条 HIGH 已全部修完（H3/H2 迭代 2，H1 迭代 3），**没有待修的高危条目**。
-剩下的只有上面「未完成项」的三条补跑；补完即满足 stop-condition 全部 7 条。
+收尾三条补跑已由 host 完成（§6「补跑结果」），**stop-condition 7 条全部满足，本轮到此收官**。
+第 2 轮（数据管线）与第 3 轮（web_api + 前端）的线索见 §5。
 
 MEDIUM/LOW 按用户拍板**不在本轮动手**，原样留在 §2 供第 2/3 轮取用。
