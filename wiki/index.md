@@ -1,7 +1,5 @@
 # WH40K Wiki Index
 
-_Last updated: 2026-07-27 11:51 UTC_
-
 ## 目录
 
 ### 兽人

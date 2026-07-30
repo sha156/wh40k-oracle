@@ -1,7 +1,5 @@
 # 泰伦虫族
 
-_Last updated: 2026-07-27 11:51 UTC_
-
 ## 分队
 
 - [[factions/泰伦虫族/detachments/assimilation-swarm|Assimilation Swarm]] — 泰伦虫族的分队「Assimilation Swarm」，分队规则「Feed the Swarm」。

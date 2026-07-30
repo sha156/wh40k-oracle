@@ -5,12 +5,12 @@
 > 产出形式（用户拍板）：审出分级清单 + **只修 CRITICAL/HIGH**；MEDIUM/LOW 只记录不动手。
 > 第 1 轮报告：`2026-07-30-audit-round1-core-chain.md`（0 CRITICAL / 3 HIGH 全修 / 6 M / 4 L）
 
-## 0. 本轮结论速览（迭代 1 · 只审查，零实现代码改动）
+## 0. 本轮结论速览（迭代 1 审查 · 迭代 2 修 H1）
 
 | 级别 | 条数 | 说明 |
 |---|---|---|
 | CRITICAL | **0** | 未发现 |
-| HIGH | **1** | H1 wiki 索引产物内嵌墙钟时间戳 ⇒ 每次 build 必产 26 页假 diff（已实测复现） |
+| HIGH | **1** | H1 wiki 索引产物内嵌墙钟时间戳 ⇒ 每次 build 必产 26 页假 diff（已实测复现）**→ 迭代 2 已修，配 3 条护栏测试，红/绿输出见 §3.1** |
 | MEDIUM | **7**（M1–M7） | 见 §2.2 |
 | LOW | 4 | 见 §2.3 |
 | 疑似（复现不出/需联网） | 2（M8 / M9） | 见 §2.4，**未混进 HIGH**，也不计入 MEDIUM |
@@ -124,7 +124,7 @@
 
 ### 2.1 HIGH
 
-#### H1 · wiki 索引产物内嵌墙钟时间戳 ⇒ 每次 `build` 必产 26 页假 diff
+#### H1 · wiki 索引产物内嵌墙钟时间戳 ⇒ 每次 `build` 必产 26 页假 diff　**【迭代 2 已修】**
 
 - **文件:行**：`wiki_engine/build_outputs.py:78`（`build_global_index`）、
   `wiki_engine/build_outputs.py:160`（`build_faction_index`）
@@ -160,9 +160,12 @@ on_disk = (Path("wiki")/"index.md").read_text(encoding="utf-8").splitlines()
 - **分级理由**：判 HIGH 而不是 MEDIUM，是因为**同型缺陷已被本项目判过一次是缺陷并修复**，
   这里属于修了一半；且它损害的是整个自动化流程赖以判断「改了没有」的信号。
   它不腐蚀数据，故不是 CRITICAL。
-- **修复方向（留给下一次迭代）**：去掉这两处 `_Last updated:` 行（与 `lint-report.md`
-  同一修法），配「同内容两次生成字节相同」的护栏测试，并用正规命令
-  `python -m wiki_engine build` 重生成这 26 页（预期 diff＝26 文件 × 删 2 行）。
+- **实际修法（迭代 2）**：删掉 `build_global_index` / `build_faction_index` 里的两行
+  `_Last updated: ...`（与 `lint-report.md` 同一修法），并把「为什么不写时间戳」
+  的因果写进两处 docstring（防后人当成漏了又加回去）。
+  `datetime` 的另一处用法 `build_log_entry`（追加式 `log.md` 的时间列）**保持不变**
+  ——那是日志的语义内容，不是重复生成的索引。
+- **验证输出**见 §3.1（stash-红 3 failed / 恢复-绿 3 passed，两次实际输出已贴）。
 
 ### 2.2 MEDIUM（只记录，本轮不改）
 
@@ -324,9 +327,74 @@ M8（MFM 部分丢行）、M9（分队差 1）——理由见各条，均**未�
 
 ## 3. 已修项的「改前会红 / 改后转绿」验证输出
 
-**本轮迭代 1 零实现代码改动**（objective 规定：第 1 次迭代只做审查）。
-故本节**本轮为空**，H1 的修复与其护栏测试的两次输出留待下一次迭代补齐，
-届时按红线在此贴出 stash-红 / 恢复-绿 的实际输出。
+**迭代 1 零实现代码改动**（objective 规定：第 1 次迭代只做审查），故迭代 1 本节为空。
+**迭代 2 修了 H1**，验证输出如下。
+
+### 3.1 H1 · 索引产物不再内嵌墙钟时间戳
+
+**改动**：`wiki_engine/build_outputs.py`（-2 行时间戳 +docstring 因果说明）
+**护栏测试**：`tests/test_wiki_build_outputs.py::TestIndexesAreDeterministic` 共 3 条
+
+| 测试 | 断言的正交信号 |
+|---|---|
+| `test_generation_ignores_wall_clock` | monkeypatch 把 `build_outputs.datetime` 换成拨到 **1999-12-31 23:59** 的假时钟，两次生成必须**逐字节相同**（不靠「同一分钟内跑两次」这种会侥幸绿的写法） |
+| `test_no_wall_clock_stamp_in_output` | 产物里不得出现 `Last updated`，也不得出现任何 `YYYY-MM-DD HH:MM` 形状（页面自带的 `updated` 只有日期，不会误伤） |
+| `test_build_all_outputs_is_byte_stable_across_runs` | 走完整的 `build_all_outputs` 落盘路径，两次 `read_bytes()` 必须相等——覆盖「函数返回值对了但写盘那层又塞了时间戳」 |
+
+**① stash 掉实现（只 stash `wiki_engine/build_outputs.py`，保留测试）→ 真会红**
+
+```
+$ git stash push -- wiki_engine/build_outputs.py
+Saved working directory and index state WIP on review/full-audit-2026-07-30: 1f0361be ...
+$ .venv/Scripts/python.exe -m pytest tests/test_wiki_build_outputs.py::TestIndexesAreDeterministic -q
+>       assert after_global == before_global
+E       AssertionError: assert '# WH40K Wiki...unit**: 1\n\n' == '# WH40K Wiki...unit**: 1\n\n'
+E         - _Last updated: 2026-07-30 16:35 UTC_
+E         + _Last updated: 1999-12-31 23:59 UTC_
+tests\test_wiki_build_outputs.py:190: AssertionError
+>           assert "Last updated" not in text, name
+E           assert 'Last updated' not in '# WH40K Wik...nit**: 1\n\n'
+E             'Last updated' is contained here:
+E               _Last updated: 2026-07-30 16:35 UTC_
+tests\test_wiki_build_outputs.py:200: AssertionError
+>       assert second == first
+E       AssertionError: assert [b'# WH40K Wi...\x82\r\n\r\n'] == [b'# WH40K Wi...\x82\r\n\r\n']
+E         At index 0 diff: b'# WH40K Wiki Index\r\n\r\n_Last updated: 1999-12-31 23:59 UTC_\r\n\r\n...
+tests\test_wiki_build_outputs.py:218: AssertionError
+FAILED tests/test_wiki_build_outputs.py::TestIndexesAreDeterministic::test_generation_ignores_wall_clock
+FAILED tests/test_wiki_build_outputs.py::TestIndexesAreDeterministic::test_no_wall_clock_stamp_in_output
+FAILED tests/test_wiki_build_outputs.py::TestIndexesAreDeterministic::test_build_all_outputs_is_byte_stable_across_runs
+3 failed, 5 warnings in 0.40s
+```
+
+**② 恢复实现 → 转绿**
+
+```
+$ git stash pop
+Dropped refs/stash@{0} (40c429f1e37b4a9617b829c1241ee38e9add3615)
+$ .venv/Scripts/python.exe -m pytest tests/test_wiki_build_outputs.py::TestIndexesAreDeterministic -q
+3 passed, 5 warnings in 0.16s
+```
+
+**③ 用正规命令重生成受影响的 26 页**（`python -m wiki_engine build`）
+
+```
+$ .venv/Scripts/python.exe -m wiki_engine build
+...
+构建完成: index.md + 25 个阵营索引, 0 条日志
+$ git diff --stat -- wiki/ | tail -1
+26 files changed, 52 deletions(-)
+```
+
+diff 规模与迭代 1 的预测**完全吻合**：26 个文件、每个删 2 行（时间戳行 + 其后空行）、
+**0 insertions**——即索引正文一个字节没变，印证了这 26 页此前的脏是纯时间戳噪声。
+行尾保持 CRLF（`_io.atomic_write_text` 的 `newline=None` 随平台，是 wiki 既有产物的行尾，
+未改，故无整文件假 diff）。
+
+**④ 端到端证明假 diff 已消失**：修复后**再跑一次** `wiki_engine build`，
+`git status --porcelain` 仍是 **28 行**（26 页 + 2 个源文件），`git diff --shortstat`
+仍是 `28 files changed, 79 insertions(+), 56 deletions(-)`——**第二次 build 零新增改动**。
+（修复前同样的第二次 build 会再刷 26 个文件。）
 
 ---
 
@@ -406,7 +474,22 @@ $ .venv/Scripts/python.exe -m wiki_engine.core_rules_zh
 | `mfm --check` | 未跑 | 本轮**零改动**，未触碰点数/落库判据，按 objective 免跑 |
 | 基准 | 未跑 | 本轮未改库、未改索引、未碰 `agent/`，按 objective 免跑 |
 
-**只读复现脚本**（全部写在系统临时目录 `%TEMP%`，**未入仓库**）：
+### 迭代 2（修 H1）
+
+| 项 | 命令 | 结果 |
+|---|---|---|
+| 全量测试 | `.venv\Scripts\python.exe -m pytest -q` | **2421 passed, 0 failed**（104.16s）＝基线 2418 + 新增 3 条护栏 |
+| wiki lint | `.venv\Scripts\python.exe -m wiki_engine lint` | **0 errors, 1 warnings, 4 info, 0 auto-fixed / 5 total**（与基线一致） |
+| 工作区 | `git status --porcelain`（跑完 pytest + lint + 两次 build 之后） | **28 行 = 26 个 index.md + `wiki_engine/build_outputs.py` + `tests/test_wiki_build_outputs.py`**，无任何范围外改动；lint 重写的报告字节不变 |
+| `mfm --check` | **未跑** | 本次改动**不涉及点数、不涉及落库判据**——只删了两行索引页的展示用时间戳，没碰 `db_compile/`、没碰 `points_json`、没写 `db/wh40k.sqlite`。按 objective 的条件（「若改动涉及点数或落库判据」）不满足，故免跑 |
+| 基准 | **未跑** | 未改库、未改 FAISS 索引、未碰 `agent/`；`wiki/` 的 26 个 index.md 是浏览用索引，不进检索链路 |
+
+**红线自查**：未写 `db/wh40k.sqlite`（本次迭代未连库）；未改 `qa_gold*.json`；
+未改 `agent/`、`engines/`、`app.py`、`web_api/`、`web/`；
+`wiki/` 产物只重生成了**修复本身要求**的 26 个索引页，且走的是正规命令
+`python -m wiki_engine build`，diff 规模逐条核对（26 文件 × 删 2 行、0 insertions）。
+
+**只读复现脚本**（迭代 1，全部写在系统临时目录 `%TEMP%`，**未入仓库**）：
 `audit_r2_manifest.py`、`audit_r2_current.py`、`audit_r2_lintgap.py`、
 `audit_r2_faction_gap.py`、`audit_r2_verdict.py`、`audit_r2_stamp.py`、
 `audit_r2_recon.py`、`audit_r2_det.py`。DB 一律 `file:...?mode=ro` 只读连接，
@@ -416,20 +499,26 @@ $ .venv/Scripts/python.exe -m wiki_engine.core_rules_zh
 
 - **M8（MFM 部分丢行）复现未完成**：需联网抓一份真实 MFM HTML 才能验证/证伪
   「单位块缺档位表头」这个版式是否真实存在。本轮不联网，缓存只存解析后的行、无法回放。
-- **M9（分队容器 325 vs 页 324）定因未完成**：定因需要跑
+- **M9（分队容器 325 vs 页 324）定因仍未完成**：定因要跑
   `python -m wiki_engine entities` 拿 `report["detachments"]["no_rule"]`，
-  而那会重写 wiki 产物，触碰本轮红线。留给修复迭代（届时若为修 H1 本就要重生成索引，
-  可顺带在同一次正规命令里取报告）。
-- **H1 的修复与护栏测试**：按 objective 的迭代节奏留给下一次迭代。
+  那会重写 3000+ 个实体页。迭代 2 修 H1 只需要 `wiki_engine build`（只写 26 个索引页），
+  **两条命令不是同一条**，顺带不了。M9 是 MEDIUM＝本轮不修，故不为它付一次全库重生成的
+  代价；如需定因，应在一次本就要重生成实体页的改动里搭车。
+- **H1 的修复与护栏测试**：**迭代 2 已完成**，见 §3.1。
 
 ---
 
-## 7. 下一次迭代要做的事
+## 7. 本轮收口状态
 
-1. 修 **H1**：删 `build_outputs.py:78` 与 `:160` 的 `_Last updated:` 行；
-   加护栏测试「同样输入两次生成字节完全相同 / 产物中不含时间戳」，
-   实测 stash-红 / 恢复-绿并把两次输出贴进 §3。
-2. 用正规命令 `python -m wiki_engine build` 重生成受影响的 26 个 `index.md`，
-   在报告里写明 diff 规模（预期：26 文件，每个删 2 行，无其他变化）。
-3. 收尾跑 `pytest -q`（预期 2418 + 新增护栏）、`wiki_engine lint`（预期 0 error）、
-   `git status`（预期只剩本轮预期内改动），顺带取 M9 的定因报告。
+**迭代 2 结束时，本轮范围内的工作已全部做完**：
+
+- CRITICAL **0** 条 ⇒ 无待办；
+- HIGH **1** 条（H1）⇒ **已修 + 已配 3 条护栏测试 + 已贴红/绿两次实际输出 + 已重生成 26 页**，
+  报告里**没有悬空的高危条目**；
+- MEDIUM 7 / LOW 4 ⇒ 按用户拍板**只记录不动手**，条条写明文件:行与复现，留给后续独立轮次；
+- 「疑似」2 条（M8/M9）⇒ 按红线**单列**，未混进 HIGH，未完成原因写在 §6「未完成项」。
+
+后续若要继续处理本轮记录的 MEDIUM，优先级建议：
+**M1（现役口径分裂，基准取 `web_api/codex.py` 那套）> M7（`gen_hashes` 损坏致人工编辑
+保护静默失效）> M2（lint 断链覆盖面）**——M1 会与第 3 轮的 `web_api/` 审查天然相邻，
+适合放在第 3 轮一并裁决口径。

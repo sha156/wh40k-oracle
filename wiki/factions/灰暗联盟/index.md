@@ -1,7 +1,5 @@
 # 灰暗联盟
 
-_Last updated: 2026-07-27 11:51 UTC_
-
 ## 分队
 
 - [[factions/灰暗联盟/detachments/brandfast-oathband|Brandfast Oathband]] — 灰暗联盟的分队「Brandfast Oathband」，分队规则「Mobile Sensor Relays」。

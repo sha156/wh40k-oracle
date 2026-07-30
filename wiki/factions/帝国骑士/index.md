@@ -1,7 +1,5 @@
 # 帝国骑士
 
-_Last updated: 2026-07-27 11:51 UTC_
-
 ## 分队
 
 - [[factions/帝国骑士/detachments/gate-warden-lance|Gate Warden Lance]] — 帝国骑士的分队「Gate Warden Lance」，分队规则「无畏守御」。

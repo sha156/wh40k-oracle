@@ -1,7 +1,5 @@
 # 灰骑士
 
-_Last updated: 2026-07-27 11:51 UTC_
-
 ## 分队
 
 - [[factions/灰骑士/detachments/augurium-task-force|Augurium Task Force]] — 灰骑士的分队「Augurium Task Force」，分队规则「Prescient Redeployment」。

@@ -1,7 +1,5 @@
 # 无阵营工事
 
-_Last updated: 2026-07-27 11:51 UTC_
-
 ## 单位
 
 - [[factions/无阵营工事/units/aegis-defence-line-with-weapon-emplacement|Aegis Defence Line With Weapon Emplacement]] — 

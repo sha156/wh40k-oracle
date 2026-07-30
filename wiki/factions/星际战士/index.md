@@ -1,7 +1,5 @@
 # 星际战士
 
-_Last updated: 2026-07-27 11:51 UTC_
-
 ## 分队
 
 - [[factions/星际战士/detachments/1st-company-task-force|1st Company Task Force]] — 星际战士的分队「1st Company Task Force」，分队规则「Extremis-level Threat」。

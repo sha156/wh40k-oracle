@@ -1,7 +1,5 @@
 # 混沌骑士
 
-_Last updated: 2026-07-27 11:51 UTC_
-
 ## 分队
 
 - [[factions/混沌骑士/detachments/houndpack-lance|Houndpack Lance]] — 混沌骑士的分队「Houndpack Lance」，分队规则「Marked Prey」。

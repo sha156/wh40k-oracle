@@ -1,7 +1,5 @@
 # 星界军
 
-_Last updated: 2026-07-27 11:51 UTC_
-
 ## 分队
 
 - [[factions/星界军/detachments/bridgehead-strike|Bridgehead Strike]] — 星界军的分队「Bridgehead Strike」，分队规则「Only the Best」。

@@ -1,7 +1,5 @@
 # 兽人
 
-_Last updated: 2026-07-27 11:51 UTC_
-
 ## 分队
 
 - [[factions/兽人/detachments/bully-boyz|Bully Boyz]] — 兽人的分队「Bully Boyz」，分队规则「老大在看」。

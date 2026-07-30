@@ -71,11 +71,15 @@ def build_global_index(pages: List[WikiPage], wiki_root: Path) -> str:
     """生成 wiki/index.md 全文。
 
     按 faction → type 分组，生成 Markdown 表格。
+
+    **不写生成时间戳**：索引是已提交的生成物，内嵌墙钟时间会让「内容一个字节没变」
+    的重跑也产生假 diff（跑一次 build 就脏 26 个文件），真正的变更被噪声淹没，
+    且 gnhf 无人值守跑会因工作区不干净秒退。同型缺陷 2026-07-27 已在 `lint-report.md`
+    上修过一次（见 CLAUDE.md「lint warning 通道」条），这里是当时漏掉的另一半。
+    页面各自的 `updated` 字段来自数据源，才是有意义的时间信息。
     """
     lines = [
         "# WH40K Wiki Index",
-        "",
-        "_Last updated: {}_".format(datetime.now(timezone.utc).strftime("%Y-%m-%d %H:%M UTC")),
         "",
         "## 目录",
         "",
@@ -141,6 +145,8 @@ def build_faction_index(
     """生成 factions/<slug>/index.md 全文。
 
     返回 None 如果该阵营没有页面。
+
+    与 `build_global_index` 同理**不写生成时间戳**（假 diff，原因见那边的 docstring）。
     """
     fpages = [p for p in pages if p.fm.faction == faction]
     if not fpages:
@@ -156,8 +162,6 @@ def build_faction_index(
 
     lines = [
         "# {}".format(display_name),
-        "",
-        "_Last updated: {}_".format(datetime.now(timezone.utc).strftime("%Y-%m-%d %H:%M UTC")),
         "",
     ]
 

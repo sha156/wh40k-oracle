@@ -1,7 +1,5 @@
 # 黑暗灵族
 
-_Last updated: 2026-07-27 11:51 UTC_
-
 ## 分队
 
 - [[factions/黑暗灵族/detachments/covenite-coterie|Covenite Coterie]] — 黑暗灵族的分队「Covenite Coterie」，分队规则「缝肉憎恶」。

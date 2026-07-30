@@ -1,7 +1,5 @@
 # 吞世者
 
-_Last updated: 2026-07-27 11:51 UTC_
-
 ## 分队
 
 - [[factions/吞世者/detachments/berzerker-warband|Berzerker Warband]] — 吞世者的分队「Berzerker Warband」，分队规则「无情狂怒」。

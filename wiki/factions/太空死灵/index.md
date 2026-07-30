@@ -1,7 +1,5 @@
 # 太空死灵
 
-_Last updated: 2026-07-27 11:51 UTC_
-
 ## 分队
 
 - [[factions/太空死灵/detachments/annihilation-legion|Annihilation Legion]] — 太空死灵的分队「Annihilation Legion」，分队规则「歼灭协议」。
