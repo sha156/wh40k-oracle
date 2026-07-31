@@ -70,9 +70,64 @@ def _as_loadout(v: Any) -> Optional[List[Tuple[str, int]]]:
     return out
 
 
+# 「用户填了却没生效」时向用户交代的约束文案（键 → 该键的合法范围）。
+# 只登记**白名单认识的键**：未知键（evil_key 之类）是另一回事，本表不管。
+_CONSTRAINT_ZH: Dict[str, str] = {
+    "phase": "只能是 shooting / melee",
+    "reverse_phase": "只能是 shooting / melee",
+    "attacker_models": f"要求 1-{MODELS_MAX} 的整数",
+    "defender_models": f"要求 1-{MODELS_MAX} 的整数",
+    "damage_reduction": f"要求 1-{_DMG_REDUCTION_MAX} 的整数",
+    "seed": "要求正整数",
+    "fnp": "要求 2-6 的整数",
+    "n": "要求正整数",
+    "loadout": f"要求 [[武器名, 件数], …]，件数 1-{WEAPON_COUNT_MAX}、"
+               f"至多 {LOADOUT_ITEMS_MAX} 项；任一项非法则整份丢弃（不猜半份装配）",
+    "defender_loadout": f"要求 [[武器名, 件数], …]，件数 1-{WEAPON_COUNT_MAX}、"
+                        f"至多 {LOADOUT_ITEMS_MAX} 项；任一项非法则整份丢弃",
+    "detachment": "要求非空字符串",
+    "defender_detachment": "要求非空字符串",
+    "stratagems": "要求非空字符串列表",
+    "enhancements": "要求非空字符串列表",
+    "defender_stratagems": "要求非空字符串列表",
+    "defender_enhancements": "要求非空字符串列表",
+}
+
+
+def _dropped_notes(raw: Dict[str, Any], out: Dict[str, Any]) -> List[str]:
+    """收敛后逐键对账：调用方给了、白名单认识、却没进 out ⇒ 该入参没生效，必须交代。
+
+    为什么必须有这一步（第 3 轮审查 H2）：超上限的数值入参走 _as_pos_int(v, hi)
+    返回 None ⇒ 键不进 out ⇒ 模拟照常跑完并 ok=True，端出的却是**按默认值**算的
+    报告（填 attacker_models=200 与压根不填时逐位相同）。每一层都是成功路径，
+    用户看不出自己填的东西凭空消失了——正是项目纪律点名的「假成功」。
+    修法是**披露而不是钳制**：钳了会悄悄改变模拟语义（见上方常量注释），
+    所以丢弃照旧，只是不许再不吭声。
+    """
+    notes: List[str] = []
+    for key, limit in _CONSTRAINT_ZH.items():
+        if key in raw and key not in out:
+            notes.append(
+                f"入参 {key}={raw[key]!r} 未生效：{limit}。已丢弃该入参"
+                f"（不静默钳制成边界值——那会悄悄改变模拟语义），"
+                f"本次等同于没填它")
+    return notes
+
+
 def sanitize_options(raw: Optional[Dict[str, Any]]) -> Dict[str, Any]:
     """边界白名单：只放行模拟核心认识的键，并收敛类型；n 钳制到 [100, 20000]。"""
-    raw = raw or {}
+    return sanitize_options_ex(raw)[0]
+
+
+def sanitize_options_ex(
+        raw: Optional[Dict[str, Any]]) -> Tuple[Dict[str, Any], List[str]]:
+    """同 sanitize_options，另返回「被丢弃的入参」说明列表（见 _dropped_notes）。"""
+    raw_in = raw or {}
+    out = _sanitize(raw_in)
+    return out, _dropped_notes(raw_in, out)
+
+
+def _sanitize(raw: Dict[str, Any]) -> Dict[str, Any]:
     out: Dict[str, Any] = {}
     if raw.get("phase") in ("shooting", "melee"):
         out["phase"] = raw["phase"]
@@ -167,17 +222,28 @@ def run_simulation(
     if name_a is None or name_d is None:
         return None
 
+    opts, dropped = sanitize_options_ex(options)
     res = simulate_combat_resolved(
         {"canonical_id": attacker_id, "name_en": name_a},
         {"canonical_id": defender_id, "name_en": name_d},
-        sanitize_options(options), db_path)
+        opts, db_path)
+
+    # 边界丢掉的入参必须随响应交代（H2）：明细进 errors，摘要进 warning——
+    # warning 是成功路径上唯一会被渲染的告警位（SimResults 只在 ok=true 时挂出），
+    # 而「静默丢弃」最危险的恰恰是 ok=true 那条路。两处都放，任一处漏渲染仍有兜底。
+    errors = dropped + list(res.get("errors") or [])
+    warning = res.get("warning")
+    if dropped:
+        head = "以下入参未生效（已丢弃，结果不含它们）：" + "；".join(
+            n.split("：")[0] for n in dropped)
+        warning = f"{head}。{warning}" if warning else head
 
     fo = res.get("faction_options")
     return SimResponse(
         ok=bool(res.get("ok")),
         reason=res.get("reason"),
         note=res.get("note"),
-        warning=res.get("warning"),
+        warning=warning,
         attacker=res.get("attacker", name_a),
         defender=res.get("defender", name_d),
         phase=res.get("phase"),
@@ -201,5 +267,5 @@ def run_simulation(
                 requires_toggles=e.get("requires_toggles") or [])
             for e in (res.get("dsl_available") or [])
         ],
-        errors=res.get("errors") or [],
+        errors=errors,
     )

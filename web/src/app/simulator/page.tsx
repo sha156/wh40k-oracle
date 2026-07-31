@@ -384,6 +384,23 @@ export default function SimulatorPage() {
           </div>
         ) : null}
 
+        {/* 后端逐条列出的失败/丢弃细节。
+            为什么单独占一块而不是塞进各失败分支：note 只是一句话摘要，真正告诉用户
+            「哪把武器、哪个入参出了什么问题」的是 errors——后端 note 甚至明文写着
+            「见 errors」（engines/simulator/assembly.py），而这个字段以前在整个前端
+            只出现在类型声明里，从没进过 JSX（第 3 轮审查 H3）。放在装配面板与失败
+            横幅之后、结果之前，四条路径（需装配 / 需守方装配 / 其它失败 / ok=true
+            但有入参被丢弃）共用同一块，任何一条都不会再把它吃掉。 */}
+        {resp?.errors?.length ? (
+          <ul className="mt-4 list-disc border border-amber/40 bg-[#191408] py-3 pr-4 pl-9 text-[12.5px] text-[#d9c48a]">
+            {resp.errors.map((e, i) => (
+              <li key={i} className="my-0.5">
+                {e}
+              </li>
+            ))}
+          </ul>
+        ) : null}
+
         <div className="mt-4">
           {resp?.ok && resp.report ? (
             <SimResults resp={resp} attackerLabel={atkLabel} defenderLabel={dfdLabel} />

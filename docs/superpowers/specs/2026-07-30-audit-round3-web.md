@@ -12,9 +12,9 @@
 | 分级 | 条数 | 状态 |
 |---|---|---|
 | 🔴 CRITICAL | **0** | 本轮未发现 |
-| 🔴 HIGH | **3** | H1 / H2 / H3，全部有实测复现输出，见 §2.1 |
+| 🔴 HIGH | **3** | H1 / H2 / H3，**已全部修复并配护栏**（迭代 2），见 §2.1 与 §3 |
 | 🟡 MEDIUM | 7 | 只记录 |
-| 🟢 LOW | 5 | 只记录 |
+| 🟢 LOW | 6 | 只记录（迭代 2 新增 R3-L6：`next start` 与 standalone 不兼容致 e2e 假失败） |
 | ⚪ 疑似 | 1 | 未复现，单列 |
 | ⛔ 判为不成立 | 6 | 附反证，见 §4 |
 
@@ -29,6 +29,13 @@
 
 **特别地**：第 1 轮 H3（loadout 件数 ≤0 不再假成功）的那句用户可见文案，
 经本轮实测**用户可见性为零**——它走的正是 ③ 那条前端从不读的 `errors` 通道。
+
+**迭代 2 收口**：三条 HIGH 全部修完，共动 3 个实现文件（`web_api/codex.py`
+`web_api/simulate.py` `web/src/app/simulator/page.tsx`，102 插入 / 10 删除），
+新增 11 条 pytest 护栏 + 2 条浏览器 e2e。**逐条做了「stash 掉实现真会红 / 恢复后转绿」
+的两次实测**，且 H1/H2/H3 各自只打红自己那几条（见 §3）；e2e 侧还在**真浏览器**上
+跑出了同样的红→绿。pytest **2432 passed / 0 failed**（基线 2421 + 11 新增），
+web lint 0 error，`npm run build` 通过，e2e **8 passed**。
 
 ---
 
@@ -126,7 +133,7 @@
 | `lib/api.ts` | 通读 | SSE 手写解析正确；**M5** 的源头（流正常结束但没 `done` 事件时静默 resolve） |
 | `lib/fixtures/broadside-vs-knight.ts` | 定向审 | 首屏 fixture，`degraded:true` + `status:"degraded"` 都在，示例本身诚实。无问题 |
 
-### 1.3 `web/e2e/`（4 / 4 已审）
+### 1.3 `web/e2e/`（4 / 4 已审；迭代 2 另新增 1 个文件，见表下）
 
 | 文件 | 结论 |
 |---|---|
@@ -135,9 +142,15 @@
 | `roster.spec.ts` | 第二条明确写「光有表头不算产出（P6 教训：装配成功≠有输出）」并断言行里有 `\d+\.\d`。有效 |
 | `simulator.spec.ts` | 三条全是 2026-07-25 真实缺陷的回归钉；断言含否定式（`Crushing bulk 件数` 必须 `toHaveCount(0)`）。有效 |
 
-**e2e 覆盖缺口（记入 §5 遗留，不算缺陷）**：4 条用例全走 happy path，
+**e2e 覆盖缺口（记入 §5 遗留，不算缺陷）**：审查时这 4 条用例全走 happy path，
 **没有一条**覆盖「后端 503 / 超上限入参 / 装配失败」这些错误路径——
 本轮三条 HIGH 里的 H2、H3 正落在 e2e 的盲区。
+
+**迭代 2 新增第 5 个文件**（不属被审对象，属本轮产出）：
+
+| 文件 | 内容 |
+|---|---|
+| `simulator-errors.spec.ts` | 2 条错误路径用例：① H1 点数徽章要真的出现在单位列表里；② H2+H3 攻方模型数填 200（后端上限 100）时，报告照常出但页面必须写出「`attacker_models=200` 未生效」。两条都实测过 stash-红 / 恢复-绿（§3.2） |
 
 ---
 
@@ -196,6 +209,13 @@ NEC: 62 个单位，pts 非 null 0 个
   不升 CRITICAL：不产出错误数值，只是不产出。
 - **零测试覆盖**：`grep -rn "_min_points\|\"pts\"" tests/ web/e2e/` 无任何命中。
 
+**✅ 已修（迭代 2）**：`web_api/codex.py:88-105`。修法不是「就地把 dict 解析补对」，
+而是**删掉这份手写解析、直接复用 `db_compile.calc_points._min_points`**——那是 agent
+的 `calc_points` 工具与兵牌页共用的权威口径（取 `items[].cost` 最小值，无 items 才回退
+顶层 `points`）。这样第二套口径**在结构上就不可能再分叉**。`_min_points` 只被
+`list_units` 一处消费，改动面到此为止；`points_json` 的**写入**侧一字未动
+（红线：不写库）。实测 0 → **1711/1715**，与审查阶段预测的数字逐位吻合。
+
 #### H2 · 模拟器数值入参超上限后**静默丢弃**，端出一份 `ok=True` 的假成功报告
 
 - **文件:行**：`web_api/simulate.py:104-108`（`attacker_models` / `defender_models` /
@@ -246,6 +266,32 @@ errors= []
   但它没有论证「丢弃可以不说」。正确修法是**丢弃照旧 + 显式披露**。
 - **定级理由**：UI 可达、确定性复现、产出一份看不出问题的错误报告 ⇒ HIGH。
 
+**✅ 已修（迭代 2）**：`web_api/simulate.py:73-131, 202-215`。
+**丢弃行为逐字节不变**（注释保护的那条「不静默钳」原样保留，钳制会改变模拟语义），
+补的是**披露**：
+- 新增 `_CONSTRAINT_ZH`（白名单认识的每个键 → 它的合法范围）与 `_dropped_notes()`：
+  收敛完成后逐键对账——**调用方给了、白名单认识、却没进 `out`** ⇒ 生成一条说明。
+- 新增 `sanitize_options_ex(raw) -> (out, dropped)`；老的 `sanitize_options(raw)`
+  改为 `sanitize_options_ex(raw)[0]`，**签名与返回值对既有 8 处调用方逐字节不变**
+  （护栏 `test_sanitize_options_backwards_compatible` 钉住这条）。
+- `run_simulation` 把明细拼进 `errors`、把摘要拼进 `warning`。
+  **为什么两处都放**：`warning` 是 `SimResults` 在 **`ok=true`** 时唯一会渲染的告警位
+  （`SimResults.tsx:187-189`），而「静默丢弃」最危险的恰恰是成功那条路；
+  `errors` 则由 H3 的修复负责渲染。任一处将来被漏渲染，另一处仍兜得住。
+  原有引擎 `warning` 不许被顶掉（护栏断言 `clean.warning in over.warning`）。
+- **未知键**（`evil_key` 之类）保持既有静默丢弃语义，不进披露表——那是白名单本来就
+  不认识的东西，不是「用户填了没生效」，混进来只会稀释告警。
+
+实测（`ok=true` 那条路，与审查阶段同一样本）：
+
+```
+attacker_models=101 → ok=True 攻击次数=8.0 伤害=1.135（数值仍与不填时相同——丢弃没变）
+   warning = 以下入参未生效（已丢弃，结果不含它们）：入参 attacker_models=101 未生效。攻方自动装配：…
+   errors  = ['入参 attacker_models=101 未生效：要求 1-100 的整数。已丢弃该入参（不静默钳制成边界值——那会悄悄改变模拟语义），本次等同于没填它']
+attacker_models=5   → ok=True 攻击次数=10.0 伤害=1.58
+   errors  = []                                    ← 合法值一条噪音都不许有
+```
+
 #### H3 · `SimResponse.errors` 在整个前端**从不被读取**，而后端 note 明文写着「见 errors」
 
 - **文件:行**：契约声明 `web/src/lib/sim.ts:138`；后端产出
@@ -290,6 +336,25 @@ errors= ["武器名 'Nonexistent Gun' 不在该单位武器池"]
 - **定级理由**：note 与页面自相矛盾（指向一个用户拿不到的字段）、
   且使一条已完成的 HIGH 修复在 web 侧完全失效 ⇒ HIGH。
   未升 CRITICAL：不产出错误数值，且失败本身是被正确报出来的（`ok=false`）。
+
+**✅ 已修（迭代 2）**：`web/src/app/simulator/page.tsx:387-402`。
+加一块独立的 `resp.errors` 列表渲染，位置在装配面板/失败横幅**之后**、结果**之前**。
+**为什么单独占一块而不是塞进各失败分支**：这条通道有四条路径会用到
+（需攻方装配 / 需守方装配 / 其它失败 / `ok=true` 但有入参被丢弃），
+分别接进四个分支就等于给未来又留了三个「某一条忘了渲染」的口子；
+一块共用的渲染点让任何一条路径都不可能再把它吃掉。
+`note` 保持原样（它是一句话摘要），`errors` 补的是「哪把武器、哪个入参、什么问题」。
+
+修完后同一条复现的页面表现：
+
+```
+$ cd web && grep -rn "errors" src/ --include=*.ts --include=*.tsx
+src/app/simulator/page.tsx:395:        {resp?.errors?.length ? (
+src/app/simulator/page.tsx:397:            {resp.errors.map((e, i) => (
+src/lib/sim.ts:138:  errors: string[];
+```
+
+浏览器实测见 §3 的 e2e 输出（`attacker_models=200 未生效` 那行在真页面上可见）。
 
 ### 2.2 🟡 MEDIUM（本轮只记录，不修）
 
@@ -424,8 +489,107 @@ $ .venv/Scripts/python.exe %TEMP%\r3_contract2.py
 
 ## 3. 已修项的「改前会红 / 改后转绿」验证输出
 
-**迭代 1 零实现代码改动**（objective 规定：第 1 次迭代只做审查），本节暂空。
-H1/H2/H3 的修复与两次实测输出将在后续迭代补进本节。
+护栏文件：`tests/test_web_api_round3_audit_fixes.py`（11 条）+
+`web/e2e/simulator-errors.spec.ts`（2 条浏览器用例）。
+
+### 3.1 pytest：**逐条 stash**，证明每条护栏只打红它自己那条 HIGH
+
+不是一次性 stash 三个文件——那样只会得到一个 collection ERROR，看不出哪条护栏
+在测哪件事。所以**一次只 stash 一个实现文件**，跑同一组护栏：
+
+```
+############ ① stash 掉 H1 实现（web_api/codex.py）############
+FAILED tests/test_web_api_round3_audit_fixes.py::test_min_points_reads_the_dict_shape_actually_stored_in_units
+FAILED tests/test_web_api_round3_audit_fixes.py::test_points_badge_is_not_universally_empty_on_the_real_db
+FAILED tests/test_web_api_round3_audit_fixes.py::test_list_units_renders_the_points_badge
+3 failed, 8 passed, 5 warnings in 0.87s
+
+############ ② stash 掉 H2 实现（web_api/simulate.py）############
+FAILED tests/test_web_api_round3_audit_fixes.py::test_over_limit_numeric_inputs_are_disclosed
+FAILED tests/test_web_api_round3_audit_fixes.py::test_whole_loadout_drop_is_disclosed
+FAILED tests/test_web_api_round3_audit_fixes.py::test_legal_inputs_produce_no_noise
+FAILED tests/test_web_api_round3_audit_fixes.py::test_sanitize_options_backwards_compatible
+FAILED tests/test_web_api_round3_audit_fixes.py::test_run_simulation_never_reports_silent_success_for_dropped_inputs
+FAILED tests/test_web_api_round3_audit_fixes.py::test_dropped_loadout_is_explained_on_the_failure_path
+6 failed, 5 passed, 5 warnings in 1.02s
+
+############ ③ stash 掉 H3 实现（web/src/app/simulator/page.tsx）############
+FAILED tests/test_web_api_round3_audit_fixes.py::test_simulator_page_renders_response_errors
+FAILED tests/test_web_api_round3_audit_fixes.py::test_errors_field_is_not_declaration_only_in_frontend
+2 failed, 9 passed, 5 warnings in 0.92s
+
+############ ④ 三份实现全部恢复 ############
+11 passed, 5 warnings in 0.59s
+```
+
+**H2 的两条端到端用例红得有信息量**——它们只用 `run_simulation`（不依赖新符号），
+所以报的是**行为断言失败**，而且是在「假成功报告确实产出了」之后才红的：
+
+```
+$ .venv/Scripts/python.exe -m pytest tests/...::test_run_simulation_never_reports_silent_success_for_dropped_inputs -q
+        assert clean.ok and over.ok
+        assert over.report.expected_damage == clean.report.expected_damage   ← 这行通过了
+        assert not any("未生效" in e for e in clean.errors)                   ← 这行也通过了
+>       assert any("attacker_models" in e and "未生效" in e for e in over.errors)
+E       assert False
+tests\test_web_api_round3_audit_fixes.py:160: AssertionError
+```
+
+即「填 200 与不填时逐位相同」这件事在老代码上**确实成立**（前两行断言过了），
+红的是「一个字都没说」这一条。这正是 H2 的形状。
+
+### 3.2 浏览器：真页面上的红 → 绿
+
+`web/e2e/simulator-errors.spec.ts` 两条（本轮之前 e2e **4 条全是 happy path**，
+两条 HIGH 正落在盲区里）。跑法：`npm run build` → `npm start`（本机 `next dev`
+会 panic，见 CLAUDE.md）+ `uvicorn web_api.main:app`（`WEB_API_RETRIEVAL=off`），
+Playwright `reuseExistingServer` 复用。
+
+**改前**（三个实现文件 stash 掉 → 重新 build → 重启后端 → 跑）：
+
+```
+    Error: expect(locator).toBeVisible() failed
+    Locator: locator('section').filter({ has: getByText('攻方', { exact: true }) }).getByText(/^\d+ 分起$/).first()
+    Expected: visible
+    Error: element(s) not found
+    > 38 |   await expect(panel.getByText(/^\d+ 分起$/).first()).toBeVisible({
+
+    Error: expect(locator).toBeVisible() failed
+    Locator: getByText(/attacker_models=200 未生效/).first()
+    Expected: visible
+    Error: element(s) not found
+      58 |   await expect(page.getByText("期望伤害 / 轮")).toBeVisible();     ← 报告照常出来了
+    > 59 |   await expect(page.getByText(/attacker_models=200 未生效/).first()).toBeVisible();
+  2 failed
+```
+
+注意第二条：`期望伤害 / 轮` 那行断言**是通过的**——老代码在浏览器里确实端出了一份
+看着完全正常的报告，红的只是「没告诉用户你填的 200 被丢了」。
+
+**改后**（恢复实现 → 重新 build → 重启 → 跑**全部** e2e，含既有 4 条）：
+
+```
+$ npx playwright test e2e/ --reporter=line
+  8 passed (13.0s)
+```
+
+### 3.3 关于 e2e 的一个排查记录（不是缺陷，但会浪费下一个人的时间）
+
+中途出现过一轮「5 failed，全部卡在阵营下拉一个 option 都没有」，一度被误判成限流。
+真因是**`next start` 与 `output: standalone` 不兼容**（`npm start` 自己会打印
+`⚠ "next start" does not work with "output: standalone" configuration`）：
+在它运行期间重新 `npm run build`，chunk 文件名换了，而它继续吐**旧 HTML**，
+浏览器请求新页面里引用的 `.js`/`.css` 全部 500 →
+React 没水合 → 所有 `fetch` 都没发出去 → 页面看起来「后端没数据」。
+
+```
+CONSOLE: error Failed to load resource: the server responded with a status of 500
+REQFAIL: http://localhost:3000/_next/static/chunks/1e7miq8mjrdvl.js net::ERR_ABORTED
+options = 0
+```
+
+**规矩：每次 `npm run build` 之后必须重启 `npm start`**，否则拿到的是上一份构建。
+（同型教训：症状「后端没数据」指向的是前端资源 404/500，别先去查后端。）
 
 ---
 
@@ -501,7 +665,7 @@ H1/H2/H3 的修复与两次实测输出将在后续迭代补进本节。
 **读法**：本表汇总三轮全部 MEDIUM / LOW / 疑似（HIGH 已全部修完，不在表内）。
 「当前影响」栏是**实测**结论，不是估计。用户可据此决定后续做什么。
 
-### 5.1 MEDIUM（15 条）
+### 5.1 MEDIUM（共 20 条 = 下表 15 + 第 3 轮新发现 5）
 
 | 编号 | 文件:行 | 一句话 | 当前影响 |
 |---|---|---|---|
@@ -531,7 +695,7 @@ H1/H2/H3 的修复与两次实测输出将在后续迭代补进本节。
 | R3-M4 | `CoreRulesBrowser.tsx:85-90,108-112`、`ChangelogBrowser.tsx:118-123,140-144`、`KeywordIndex.tsx:218-225` | 503 时同屏两条互相打架的错误信息（`DetachmentBrowser` 已有正解未跟进） | 同上 |
 | R3-M5 | `web/src/lib/api.ts:96-108` + `ChatApp.tsx:73` | SSE 没发 `done` 就断流 ⇒ 永远停在 streaming，输入框永久禁用 | **未复现**（缺断流伪后端） |
 
-### 5.2 LOW（13 条）
+### 5.2 LOW（14 条）
 
 | 编号 | 文件:行 | 一句话 |
 |---|---|---|
@@ -546,8 +710,9 @@ H1/H2/H3 的修复与两次实测输出将在后续迭代补进本节。
 | **R3-L1** | `web/src/app/simulator/page.tsx:27-37` | 被中止的旧请求也跑 `finally`，把新请求的 loading 提前熄掉 ⇒ 闪现「无匹配单位」 |
 | **R3-L2** | `web/src/components/sim/SimResults.tsx:169-174` | 「守方幸存反打未接入本页」是历史残留措辞，本页其实已接入 |
 | **R3-L3** | `web/src/components/chat/CalcList.tsx:31-53` | `steps` 为空仍画标题栏，出现空面板 |
-| **R3-L4** | `web/src/components/sim/LoadoutPanel.tsx:79-88` | 件数框无 `max`、无上限提示（H2 的前端一侧） |
+| **R3-L4** | `web/src/components/sim/LoadoutPanel.tsx:79-88`、`app/simulator/page.tsx:304-322` | 件数框与模型数框仍无 `max`、无上限提示（H2 的前端一侧）。**H2 修完后已不再造成静默**（超限会被逐条说出来），剩下的只是「本可以在输入时就拦住」的体验问题，故仍为 LOW |
 | **R3-L5** | `web/src/lib/api.ts:65` | `data:` 行整体 `trim()`，将来多行 data / 前导空白会失真 |
+| **R3-L6** | `web/package.json:9` + `next.config.ts:9-12` | `npm start`（`next start`）与 `output: standalone` 不兼容，会继续吐上一份构建的 HTML；重新 build 后不重启就跑 e2e 会得到一批**假失败**（症状伪装成「后端没数据」）。实测输出见 §3.3 |
 
 ### 5.3 疑似（3 条，均未复现出实际错误输出）
 
@@ -566,8 +731,10 @@ H1/H2/H3 的修复与两次实测输出将在后续迭代补进本节。
   从未接进 web——没有后端路由、前端也没有对应页签。
   第 2 轮已证 1653（阵营）+ 28（核心）= 1681（库内战略总数），**一条不少**，
   只是这 28 条在网站上看不到。见 §4.2 N3。
-- **W2** e2e 4 条用例全走 happy path，**没有一条**覆盖错误路径
+- **W2** e2e 原先 4 条用例全走 happy path，**没有一条**覆盖错误路径
   （503 / 超上限入参 / 装配失败 / 断流）。本轮 H2、H3 正落在这个盲区里。
+  **迭代 2 补了 2 条**（`web/e2e/simulator-errors.spec.ts`：点数徽章 + 超上限入参披露），
+  盲区收窄但未填平——**503 与 SSE 断流仍无用例**（这两条需要 `page.route` 造伪后端）。
 - **W3** 前端没有任何单测框架（`package.json` 只有 `@playwright/test`），
   纯函数（`buildOptions` / `parseBlock` / `fmt`）无法低成本回归。
 
@@ -594,33 +761,64 @@ H1/H2/H3 的修复与两次实测输出将在后续迭代补进本节。
 `r3_contract.py` / `r3_contract2.py`（契约机械对账）。
 全部以 `mode=ro` 或只读方式访问 `db/wh40k.sqlite`，**零写入**。
 
+### 迭代 2（修 H1 / H2 / H3）
+
+| 项 | 命令 | 结果 |
+|---|---|---|
+| 全量测试 | `.venv\Scripts\python.exe -m pytest -q` | **2432 passed, 0 failed**（135.22s）= 基线 2421 **+ 11 条新护栏**，既有用例零退化 |
+| 前端 lint | `cd web && npm run lint` | **0 error**（eslint 无输出） |
+| 前端 build | `cd web && npm run build` | **通过**，6 条路由 `/` `/_not-found` `/codex` `/design` `/roster` `/simulator` 仍全部 static 预渲染 |
+| 浏览器 e2e | `cd web && npx playwright test e2e/` | **8 passed**（既有 6 + 本轮新增 2） |
+| wiki lint | 未跑 | 未触碰 wiki 相关代码 |
+| 基准 | 未跑 | 未碰 `agent/`、未改库、未改索引（按 objective 本轮不需要） |
+| 工作区 | `git status --porcelain` | 3 个 M（`web_api/codex.py`、`web_api/simulate.py`、`web/src/app/simulator/page.tsx`）+ 2 个新文件（护栏 pytest、e2e spec）+ 本报告，无其它 |
+
+改动规模：`git diff --stat` = **102 插入 / 10 删除，3 个实现文件**。
+行尾已逐个核对：三个被改文件与 HEAD blob 一致（纯 LF，无整文件假 diff），
+两个新文件也写成 LF（`test_web_api_round3_audit_fixes.py` 曾被脚本写成 CRLF，已改回）。
+
 ### 红线自查
 
-- ✔ 未写 `db/wh40k.sqlite`（探针全部 `sqlite3.connect(..., uri=True, mode=ro)` 或只读查询）
+- ✔ 未写 `db/wh40k.sqlite`（探针与护栏全部 `mode=ro` 或只读查询；护栏跑的是真库读路径）
 - ✔ 未改 `benchmarks/**/qa_gold*.json`
 - ✔ 未重新生成 `wiki/` 产物
 - ✔ 未改本轮范围外的 `agent/` `engines/` `app.py` `db_compile/` `wiki_engine/` `scripts/`
-- ✔ 临时脚本在 `%TEMP%`，`git status` 干净
+  （H1 的修法**导入** `db_compile.calc_points._min_points`，但那个文件一个字节没动）
+- ✔ 临时脚本在 `%TEMP%`，`git status` 干净（`web/.next`、`web/out`、`web/test-results`
+  都在 `web/.gitignore` 里，build 与 e2e 的产物不入仓库）
+- ✔ 起过的后台进程（`uvicorn` + `npm start`）**已全部停掉并复验端口不通**
 
 ### 未完成项（如实登记）
 
-1. **H1 / H2 / H3 尚未修复** —— 按 objective 的迭代节奏，第 1 次迭代只做审查，
-   修复留给后续迭代（每次 1-3 条 + 配测试 + 实测「stash 掉实现真会红」）。
-2. **R3-M5（SSE 断流卡死）未复现** —— 需要一个会中途断流的伪后端。
-   Playwright `page.route` 可以做到，但要起 dev server + 系统 Chrome，
-   不在本轮必跑验证集内。已按红线降级处理（MEDIUM，不进 HIGH）。
+1. ~~H1 / H2 / H3 尚未修复~~ —— **迭代 2 已全部修完并配护栏**，见 §3。
+2. **R3-M5（SSE 断流卡死）仍未复现** —— 需要一个会中途断流的伪后端。
+   Playwright `page.route` 可以做到；迭代 2 已证明浏览器链路在本机跑得通
+   （`npm run build` + `npm start` + 系统 Chrome，绕开会 panic 的 `next dev`），
+   所以这条**技术上不再受阻**，只是不在本轮「只修 CRITICAL/HIGH」的范围内。
 3. **R2-M9（分队 325 vs 324）本轮同样未定因** —— 定因需跑
    `python -m wiki_engine entities`，会重写 wiki 产物，红线禁止。
+4. **H3 的前端护栏是源码级断言，不是渲染断言** ——
+   `test_simulator_page_renders_response_errors` / `test_errors_field_is_not_declaration_only_in_frontend`
+   读的是 `page.tsx` 的文本。真正的渲染证据在 e2e（§3.2）里，
+   但 e2e **不进 pytest、不进 CI**（需要 sqlite 与两个服务）。
+   根因是 W3：前端没有单测框架，纯组件断言无处可放。
 
 ---
 
-## 7. 下一次迭代要做的事
+## 7. 三轮审查收官状态与下一步
 
-1. 修 **H1**（`web_api/codex.py:_min_points` 改读 `items[].cost` 取 min），
-   配 pytest 护栏：断言真库上 `list_units("TAU")` 的 `pts` 非 null 数 > 0
-   且格式为「N 分起」；实测 stash 掉实现会红。
-2. 修 **H2**（`web_api/simulate.py` 超上限入参不再静默丢弃——
-   **保持不钳制**，改为在响应里显式披露被丢弃的入参），配 pytest 护栏。
-3. 修 **H3**（`web/src/app/simulator/page.tsx` 渲染 `resp.errors`），
-   改了前端就必须 `npm run build` 通过。
-4. 每条改完立刻验证并把两次输出补进 §3。
+**三轮全部完成**：第 1 轮（核心链路）0C/3H 全修、第 2 轮（数据管线）0C/1H 已修、
+第 3 轮（web）0C/3H 全修。**七条 HIGH 一条不剩，无悬空高危条目。**
+
+后续可做的（按性价比排序，全部是**用户拍板**的事，本轮不擅自动手）：
+
+1. **W1**：把 28 条通用（核心）战略接进 web —— 唯一一条「后端有数据、
+   网站上看不见」的功能缺口，用户感知最直接。
+2. **R3-M4 + R3-M3**：把 `DetachmentBrowser` 那条已写下的正解
+   （「后端答了 404/503 恰恰说明它活着」）铺到另外三个子浏览器，
+   并让 `lib/codex.ts` 抛的错带上状态码。同型、一次改完，与 memory 里
+   `half-fixed-guard-en-vs-zh` 是同一个模式。
+3. **W3 + W2**：前端引一个单测框架（Vitest），把 `buildOptions`/`parseBlock`/`fmt`
+   这类纯函数钉住；e2e 补 503 与 SSE 断流两条（对应 R3-M5、R3-M4）。
+4. **R3-M2**：`_SESSIONS` 加上限/TTL —— 长跑内存只增不减，是唯一一条会随时间恶化的。
+5. 其余 MEDIUM/LOW 见 §5，**当前影响栏都是实测结论**，可据此判要不要动。
