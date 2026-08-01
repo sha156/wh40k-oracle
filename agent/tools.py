@@ -7,6 +7,7 @@
 from __future__ import annotations
 
 import importlib
+import inspect
 import threading
 from pathlib import Path
 from typing import Any, Callable, Dict, List, Optional
@@ -524,14 +525,36 @@ _RAG_UNAVAILABLE_HINT = (
     "请改用 get_datasheet / get_entity / get_keyword_definition 直查结构库；"
     "都取不到就如实说明本次检索不可用，禁止输出任何否定性事实断言。"
 )
+# 部分召回通道挂了但仍有命中：结果是**不完整**的，可以据此作答，但不许当成全库结论。
+_RAG_PARTIAL_NOTE = (
+    "⚠️ 本次检索有部分召回通道故障（见 retrieval_errors），返回的段落**不完整**。"
+    "可据已返回内容作答，但不得据此断言「语料里只有这些」或「没有别的规则」。"
+)
+
+
+def _supports_errors_channel(fn: Any) -> bool:
+    """app.hybrid_retrieve 是否认识 errors 侧信道。
+
+    只读包装的纪律是「不能要求 app.py 必须是新版」：老版本 app.py、脚本里的替身、
+    测试里的假 app 模块都只有 4 个位置参数。签名不认就退回旧调用（此时行为与从前一致），
+    而不是把 TypeError 混进业务异常里——那会把「签名不匹配」误报成「检索管线故障」。
+    """
+    try:
+        return "errors" in inspect.signature(fn).parameters
+    except (TypeError, ValueError):
+        return False
 
 
 def rag_search(query: str, app_module: Optional[Any] = None) -> Dict[str, Any]:
     """现有混合检索（兜底）。只读调用 app.py 的 load_resources/build_bm25/hybrid_retrieve，
     不修改 app.py 本身。
 
-    失败态分两类并各自标注：`error=True` 表示检索管线/环境本身不可用（知识库未构建、调用异常），
-    `error` 缺省表示检索跑通了但零命中——后者才是关于语料内容的信息。
+    失败态分两类并各自标注：`error=True` 表示检索管线/环境本身不可用（知识库未构建、调用异常、
+    所有召回通道都抛异常），`error` 缺省表示检索跑通了但零命中——后者才是关于语料内容的信息。
+
+    审查 H1：`hybrid_retrieve` 内部把 FAISS/BM25/规则层保底的异常降级成 st.warning
+    （Streamlit 侧「一路挂了另一路还能用」是有意为之），因此这里必须走 errors 侧信道
+    主动收集，否则管线故障会以「零命中」的形状抵达模型，直接喂出否定性断言。
     """
     try:
         app = app_module if app_module is not None else _import_app()
@@ -542,17 +565,34 @@ def rag_search(query: str, app_module: Optional[Any] = None) -> Dict[str, Any]:
                             + _RAG_UNAVAILABLE_HINT}
 
         bm25_retriever = app.build_bm25(vectorstore)
-        passages = app.hybrid_retrieve(
-            query=query,
-            vectorstore=vectorstore,
-            bm25_retriever=bm25_retriever,
-            reranker=reranker,
-        )
-        return {
+        kwargs: Dict[str, Any] = {
+            "query": query,
+            "vectorstore": vectorstore,
+            "bm25_retriever": bm25_retriever,
+            "reranker": reranker,
+        }
+        retrieval_errors: List[str] = []
+        if _supports_errors_channel(app.hybrid_retrieve):
+            kwargs["errors"] = retrieval_errors
+        passages = app.hybrid_retrieve(**kwargs)
+
+        if not passages and retrieval_errors:
+            # 零命中 + 有故障 ⇒ 这不是「语料里没有」，是检索没跑成。
+            return {"found": False, "error": True, "passages": [],
+                    "retrieval_errors": list(retrieval_errors),
+                    "note": "混合检索的召回通道全部失败："
+                            + "；".join(retrieval_errors) + "。"
+                            + _RAG_UNAVAILABLE_HINT}
+        out: Dict[str, Any] = {
             "found": bool(passages),
             "passages": passages,
             "note": None if passages else _RAG_EMPTY_NOTE,
         }
+        if retrieval_errors:
+            out["retrieval_errors"] = list(retrieval_errors)
+            out["partial"] = True
+            out["note"] = _RAG_PARTIAL_NOTE
+        return out
     except Exception as exc:
         return {"found": False, "error": True, "passages": [],
                 "note": f"rag_search 执行异常（检索管线本身出错）: {exc}。"

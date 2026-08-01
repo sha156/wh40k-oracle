@@ -12,6 +12,7 @@ from dataclasses import asdict
 from pathlib import Path
 from typing import Any, Dict, List, Optional
 
+from db_compile.calc_points import _min_points as _canonical_min_points
 from web_api.contract import EntityCard
 from web_api.entity_card import build_entity_card
 
@@ -86,14 +87,22 @@ def list_factions(db_path, include_legacy: bool = False) -> List[Dict[str, Any]]
 
 
 def _min_points(points_json: Optional[str]) -> Optional[int]:
+    """列表页「N 分起」徽章的点数 = 基准档最小 cost。
+
+    直接复用 db_compile.calc_points 的实现，**不另立第二套点数口径**——
+    那边的语义（取 items[].cost 最小值、无 items 才回退顶层 points）是
+    agent 的 calc_points 工具与兵牌页共用的权威口径。
+
+    历史缺陷（第 3 轮审查 H1）：这里曾把 points_json 当 list of {"cost": …}
+    迭代，而库里存的是 dict（`{"points":…, "items":[…], "mfm":…}`，同文件
+    _current_unit_ids 就是按 dict 取 .get("mfm") 的）。迭代 dict 拿到的是 key
+    字符串 ⇒ `isinstance(o, dict)` 恒 False ⇒ costs 恒空 ⇒ 全库 1715 个单位的
+    pts 恒为 None，图鉴/模拟器/军表三处徽章分支从未走到过（无报错、无空位，
+    页面看着完全正常）。所以这里禁止再手写一份解析。
+    """
     if not points_json:
         return None
-    try:
-        opts = json.loads(points_json)
-    except (json.JSONDecodeError, TypeError):
-        return None
-    costs = [o.get("cost") for o in opts if isinstance(o, dict) and o.get("cost") is not None]
-    return min(costs) if costs else None
+    return _canonical_min_points(points_json)
 
 
 def list_units(db_path, faction_id: str,

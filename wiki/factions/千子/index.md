@@ -1,7 +1,5 @@
 # 千子
 
-_Last updated: 2026-07-27 11:51 UTC_
-
 ## 分队
 
 - [[factions/千子/detachments/changehost-of-deceit|Changehost of Deceit]] — 千子的分队「Changehost of Deceit」，分队规则「炼狱契约」。

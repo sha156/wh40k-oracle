@@ -1,7 +1,5 @@
 # 帝皇卫队
 
-_Last updated: 2026-07-27 11:51 UTC_
-
 ## 分队
 
 - [[factions/帝皇卫队/detachments/auric-champions|Auric Champions]] — 帝皇卫队的分队「Auric Champions」，分队规则「力量集结」。

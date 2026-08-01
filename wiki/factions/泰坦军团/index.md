@@ -1,7 +1,5 @@
 # 泰坦军团
 
-_Last updated: 2026-07-27 11:51 UTC_
-
 ## 单位
 
 - [[factions/泰坦军团/units/warbringer-nemesis-titan|天罚战争使者泰坦]] — 

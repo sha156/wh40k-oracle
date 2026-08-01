@@ -1,7 +1,5 @@
 # 艾达灵族
 
-_Last updated: 2026-07-27 11:51 UTC_
-
 ## 分队
 
 - [[factions/艾达灵族/detachments/aspect-host|Aspect Host]] — 艾达灵族的分队「Aspect Host」，分队规则「Path of the Warrior」。

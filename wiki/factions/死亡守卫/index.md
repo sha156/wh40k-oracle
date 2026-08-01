@@ -1,7 +1,5 @@
 # 死亡守卫
 
-_Last updated: 2026-07-27 11:51 UTC_
-
 ## 分队
 
 - [[factions/死亡守卫/detachments/arch-contaminators|Arch-Contaminators]] — 死亡守卫的分队「Arch-Contaminators」，分队规则「Inescapable Corruption」。

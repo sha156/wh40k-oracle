@@ -1,7 +1,5 @@
 # 基因窃取者教派
 
-_Last updated: 2026-07-27 11:51 UTC_
-
 ## 分队
 
 - [[factions/基因窃取者教派/detachments/biosanctic-broodsurge|Biosanctic Broodsurge]] — 基因窃取者教派的分队「Biosanctic Broodsurge」，分队规则「Hypermorphic Fury」。

@@ -1,7 +1,5 @@
 # 混沌恶魔
 
-_Last updated: 2026-07-27 11:51 UTC_
-
 ## 分队
 
 - [[factions/混沌恶魔/detachments/dread-carnival|Dread Carnival]] — 混沌恶魔的分队「Dread Carnival」，分队规则「Lithe Killers」。

@@ -1,6 +1,8 @@
 """wiki_engine/build_outputs.py 测试：index 生成、阵营索引、日志。"""
 from __future__ import annotations
 
+import re
+from datetime import datetime, timezone
 from pathlib import Path
 
 import pytest
@@ -145,6 +147,75 @@ class TestBuildAllOutputs:
         assert (wiki / "index.md").exists()
         assert (wiki / "log.md").exists()
         assert (wiki / "factions" / "tau-empire" / "index.md").exists()
+
+
+class _FakeClock:
+    """冒充 `datetime` 模块对象，只提供 `now()`，用于证明产物不受墙钟影响。"""
+
+    def __init__(self, moment: datetime) -> None:
+        self._moment = moment
+
+    def now(self, tz=None):  # noqa: D102 - 与 datetime.now 同签名
+        return self._moment if tz is None else self._moment.astimezone(tz)
+
+
+# 生成物里绝不允许出现的「墙钟」形状：YYYY-MM-DD HH:MM（页面自带的 updated 只有日期）
+_WALL_CLOCK_RE = re.compile(r"\d{4}-\d{2}-\d{2} \d{2}:\d{2}")
+
+
+class TestIndexesAreDeterministic:
+    """审查第 2 轮 H1：索引产物内嵌生成时间戳 ⇒ 内容没变也产假 diff。
+
+    26 个已提交的 index.md 每跑一次 `wiki_engine build` 就全部变脏，真正的变更被
+    时间戳噪声淹没，且 gnhf 无人值守跑会因工作区不干净秒退。同型缺陷 2026-07-27
+    已在 lint-report.md 上修过一次，这里是漏掉的另一半。
+    """
+
+    def test_generation_ignores_wall_clock(self, tmp_path, monkeypatch):
+        wiki = tmp_path / "wiki"
+        _create_test_pages(wiki)
+        pages = scan_wiki_pages(wiki)
+        import wiki_engine.build_outputs as bo
+
+        before_global = bo.build_global_index(pages, wiki)
+        before_faction = bo.build_faction_index(pages, "tau-empire", wiki)
+
+        # 把墙钟拨到 1999 年再生成一次：产物必须逐字节相同
+        monkeypatch.setattr(
+            bo, "datetime",
+            _FakeClock(datetime(1999, 12, 31, 23, 59, tzinfo=timezone.utc)))
+        after_global = bo.build_global_index(pages, wiki)
+        after_faction = bo.build_faction_index(pages, "tau-empire", wiki)
+
+        assert after_global == before_global
+        assert after_faction == before_faction
+
+    def test_no_wall_clock_stamp_in_output(self, tmp_path):
+        wiki = tmp_path / "wiki"
+        _create_test_pages(wiki)
+        pages = scan_wiki_pages(wiki)
+        index_md = build_global_index(pages, wiki)
+        faction_md = build_faction_index(pages, "tau-empire", wiki)
+        for name, text in (("index.md", index_md), ("faction index", faction_md)):
+            assert "Last updated" not in text, name
+            assert _WALL_CLOCK_RE.search(text) is None, name
+
+    def test_build_all_outputs_is_byte_stable_across_runs(self, tmp_path, monkeypatch):
+        wiki = tmp_path / "wiki"
+        _create_test_pages(wiki)
+        import wiki_engine.build_outputs as bo
+
+        bo.build_all_outputs(wiki)
+        targets = [wiki / "index.md", wiki / "factions" / "tau-empire" / "index.md"]
+        first = [p.read_bytes() for p in targets]
+
+        monkeypatch.setattr(
+            bo, "datetime",
+            _FakeClock(datetime(1999, 12, 31, 23, 59, tzinfo=timezone.utc)))
+        bo.build_all_outputs(wiki)
+        second = [p.read_bytes() for p in targets]
+
+        assert second == first
 
 
 class TestDataCorrectnessFixes:

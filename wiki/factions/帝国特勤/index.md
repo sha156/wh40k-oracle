@@ -1,7 +1,5 @@
 # 帝国特勤
 
-_Last updated: 2026-07-27 11:51 UTC_
-
 ## 分队
 
 - [[factions/帝国特勤/detachments/imperialis-fleet|Imperialis Fleet]] — 帝国特勤的分队「Imperialis Fleet」，分队规则「At all Costs」。

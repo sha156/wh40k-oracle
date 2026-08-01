@@ -1,7 +1,5 @@
 # 钛帝国
 
-_Last updated: 2026-07-27 11:51 UTC_
-
 ## 分队
 
 - [[factions/钛帝国/detachments/auxiliary-cadre|Auxiliary Cadre]] — 钛帝国的分队「Auxiliary Cadre」，分队规则「综合指挥体系」。

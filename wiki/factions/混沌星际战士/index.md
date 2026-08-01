@@ -1,7 +1,5 @@
 # 混沌星际战士
 
-_Last updated: 2026-07-27 11:51 UTC_
-
 ## 分队
 
 - [[factions/混沌星际战士/detachments/cabal-of-chaos|Cabal of Chaos]] — 混沌星际战士的分队「Cabal of Chaos」，分队规则「Empyric Wellspring」。

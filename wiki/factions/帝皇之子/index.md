@@ -1,7 +1,5 @@
 # 帝皇之子
 
-_Last updated: 2026-07-27 11:51 UTC_
-
 ## 分队
 
 - [[factions/帝皇之子/detachments/carnival-of-excess|Carnival of Excess]] — 帝皇之子的分队「Carnival of Excess」，分队规则「魔性强化」。

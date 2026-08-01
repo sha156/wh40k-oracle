@@ -1,7 +1,5 @@
 # 机械修会
 
-_Last updated: 2026-07-27 11:51 UTC_
-
 ## 分队
 
 - [[factions/机械修会/detachments/cohort-cybernetica|Cohort Cybernetica]] — 机械修会的分队「Cohort Cybernetica」，分队规则「Cyber-Psalm Programming」。

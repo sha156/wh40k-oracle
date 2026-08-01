@@ -1,7 +1,5 @@
 # 战斗修女
 
-_Last updated: 2026-07-27 11:51 UTC_
-
 ## 分队
 
 - [[factions/战斗修女/detachments/army-of-faith|Army of Faith]] — 战斗修女的分队「Army of Faith」，分队规则「Sacred Rites」。
