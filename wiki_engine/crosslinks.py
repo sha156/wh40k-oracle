@@ -438,6 +438,11 @@ def inject_wikilinks(
     for name, path in candidates:
         if name in linked or len(name) < 2:
             continue
+        # _name_pattern is an exact, case-sensitive escaped match. A missing
+        # literal cannot match it; avoid compiling thousands of absent names
+        # and rescanning existing link spans for every generated page.
+        if name not in body:
+            continue
         # 纯 CJK 短名（<3 字）误注率极高（同形词遍地），直接不注
         if len(name) < 3 and all("一" <= c <= "鿿" for c in name):
             continue

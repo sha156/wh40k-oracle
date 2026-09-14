@@ -127,6 +127,7 @@ export interface Cite {
   section?: string; // 词条分类前缀，如 "武器技能"
   term?: string; // 无页码时红色高亮的词条名，如 "重型"
   wiki: string;
+  url?: string | null;
 }
 
 /** E8 CTA */

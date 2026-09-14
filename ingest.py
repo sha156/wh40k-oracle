@@ -98,7 +98,7 @@ BREAKPOINT_TYPE       = "percentile"
 BREAKPOINT_THRESHOLD  = 85   # 百分位阈值，越大分块越少越大
 
 # 嵌入 batch_size：CPU 核心数越多可适当调大，提升吞吐
-EMBED_BATCH_SIZE = max(32, multiprocessing.cpu_count() * 4)
+EMBED_BATCH_SIZE = max(1, int(os.environ.get("INGEST_BATCH_SIZE", max(32, multiprocessing.cpu_count() * 4))))
 
 
 def parse_args():
@@ -109,6 +109,8 @@ def parse_args():
                         help="PDF 文件夹路径")
     parser.add_argument("--no-blacklibrary", action="store_true",
                         help="不把黑图书馆中文 datasheet 注入 L1 检索层")
+    parser.add_argument("--reuse-vectors", action="store_true",
+                        help="Reuse exact-text vectors from the old index; only use when the embedding model and settings are unchanged")
     return parser.parse_args()
 
 
@@ -248,7 +250,7 @@ def build_embeddings():
     return embeddings
 
 
-def build_faiss_with_progress(chunks: list[Document], embeddings) -> FAISS:
+def build_faiss_with_progress(chunks: list[Document], embeddings, reusable_vectors=None) -> FAISS:
     """
     逐批对 chunks 编码并构建 FAISS，附带 tqdm 进度条。
     比直接调用 FAISS.from_documents 多了可视化进度。
@@ -257,15 +259,25 @@ def build_faiss_with_progress(chunks: list[Document], embeddings) -> FAISS:
 
     texts    = [c.page_content for c in chunks]
     metas    = [c.metadata for c in chunks]
-    vectors  = []
+    reusable_vectors = reusable_vectors or {}
+    vectors = [reusable_vectors.get(text) for text in texts]
+    missing = [i for i, vector in enumerate(vectors) if vector is None]
+    # Similar lengths reduce padding without truncating any source text.
+    missing.sort(key=lambda i: len(texts[i]))
+    if reusable_vectors:
+        print(f"  Exact-text vectors reused: {len(texts) - len(missing)} / {len(texts)}")
 
     # sentence-transformers 内部也分批，这里再包一层显示总进度
     batch = EMBED_BATCH_SIZE
-    with tqdm(total=len(texts), desc="  向量编码", unit="chunk") as pbar:
-        for i in range(0, len(texts), batch):
-            batch_texts = texts[i : i + batch]
+    with tqdm(total=len(missing), desc="  向量编码", unit="chunk") as pbar:
+        for i in range(0, len(missing), batch):
+            positions = missing[i : i + batch]
+            batch_texts = [texts[pos] for pos in positions]
             vecs = embeddings.embed_documents(batch_texts)
-            vectors.extend(vecs)
+            if len(vecs) != len(positions):
+                raise ValueError("Embedding result count does not match source texts")
+            for pos, vector in zip(positions, vecs):
+                vectors[pos] = vector
             pbar.update(len(batch_texts))
 
     # 用 FAISS.from_embeddings 直接接收已算好的向量，避免二次编码
@@ -466,10 +478,19 @@ def main():
         #    只删「本次已成功产出新 chunk」的来源，处理失败的文件保留旧数据 ──
         new_sources = {c.metadata.get("source") for c in all_new_chunks}
         new_sources.discard(None)
+        reusable_vectors = None
+        if args.reuse_vectors:
+            # Reconstruct before deletion changes FAISS row positions. Metadata
+            # is always replaced with the newly extracted source/page/layer.
+            reusable_vectors = {
+                existing_store.docstore.search(doc_id).page_content:
+                    existing_store.index.reconstruct(position).tolist()
+                for position, doc_id in existing_store.index_to_docstore_id.items()
+            }
         removed = delete_stale_chunks(existing_store, new_sources)
         print(f"  🧹 增量去重：删除旧 chunk {removed} 个"
               f"（覆盖 {len(new_sources)} 个重处理来源）")
-        new_store = build_faiss_with_progress(all_new_chunks, embeddings)
+        new_store = build_faiss_with_progress(all_new_chunks, embeddings, reusable_vectors)
 
         # 维度校验：旧索引与新向量维度不一致时自动重建
         old_dim = existing_store.index.d

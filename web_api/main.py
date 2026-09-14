@@ -89,13 +89,14 @@ app.add_middleware(
 )
 
 # 会话内存 session：sid → 历史轮（蓝图既定，不引数据库）
-_SESSIONS: Dict[str, List[Dict[str, str]]] = {}
+from web_api.sessions import SessionStore
+_SESSIONS = SessionStore()
 
 
 class ChatRequest(BaseModel):
-    question: str
+    question: str = Field(min_length=1, max_length=8000)
     context: str = "当前语境：通用"
-    session_id: Optional[str] = None
+    session_id: Optional[str] = Field(default=None, max_length=128)
 
 
 def _make_clients():
@@ -148,11 +149,8 @@ def _run_answer(req: ChatRequest) -> Answer:
     recorder = TraceRecorder(TOOLS)
     from agent.loop import AgentLoop
     loop = AgentLoop(llm=llm, tools=recorder.wrapped_tools())
-    result = loop.run(req.question)
-    if req.session_id:
-        hist = _SESSIONS.setdefault(req.session_id, [])
-        hist.append({"role": "user", "content": req.question})
-        hist.append({"role": "assistant", "content": result.answer})
+    with _SESSIONS.session(req.session_id) as session:
+        result = loop.run(req.question, session=session)
     return format_answer(req.question, result, recorder, structurer)
 
 
@@ -227,6 +225,19 @@ def codex_factions(include_legacy: bool = False) -> Dict[str, Any]:
     if not DB_PATH.exists():
         raise HTTPException(status_code=503, detail="结构库未构建")
     return {"factions": codex.list_factions(DB_PATH, include_legacy=include_legacy)}
+
+
+@app.get("/codex/points")
+def official_points(query: str = "", offset: int = 0):
+    from web_api.official_points import browse
+    if offset < 0 or len(query) > 200:
+        raise HTTPException(status_code=422, detail="查询条件超出范围")
+    if not DB_PATH.exists():
+        raise HTTPException(status_code=503, detail="结构库未构建")
+    try:
+        return browse(DB_PATH, query, offset)
+    except ValueError as exc:
+        raise HTTPException(status_code=503, detail=str(exc))
 
 
 @app.get("/codex/factions/{faction_id}/units")
@@ -374,6 +385,21 @@ def roster_validate(req: RosterIn) -> ValidationReportOut:
     if not DB_PATH.exists():
         raise HTTPException(status_code=503, detail="结构库未构建")
     return validate_roster(DB_PATH, req)
+
+
+class RosterTextRequest(BaseModel):
+    text: str = Field(min_length=1, max_length=20000)
+    factionId: Optional[str] = Field(default=None, max_length=100)
+    detachmentId: Optional[str] = Field(default=None, max_length=100)
+    size: str = Field(default="strike_force", max_length=30)
+
+
+@app.post("/roster/parse")
+def roster_parse(req: RosterTextRequest):
+    from engines.roster.parse import parse_roster
+    if not DB_PATH.exists():
+        raise HTTPException(status_code=503, detail="结构库未构建")
+    return parse_roster(DB_PATH, req.text, req.factionId, req.detachmentId, req.size)
 
 
 @app.post("/roster/critique", response_model=CritiqueReportOut,

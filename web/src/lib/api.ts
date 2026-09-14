@@ -92,19 +92,28 @@ export async function streamChat(
   const reader = resp.body.getReader();
   const decoder = new TextDecoder();
   let buffer = "";
-
+  let completed = false;
+  try {
   for (;;) {
     const { value, done } = await reader.read();
-    if (done) break;
-    buffer += decoder.decode(value, { stream: true });
+    buffer += done ? decoder.decode() : decoder.decode(value, { stream: true });
     // SSE 事件以空行分隔
-    let sep: number;
-    while ((sep = buffer.indexOf("\n\n")) !== -1) {
-      const block = buffer.slice(0, sep);
-      buffer = buffer.slice(sep + 2);
+    let separator: RegExpExecArray | null;
+    while ((separator = /\r?\n\r?\n/.exec(buffer)) !== null) {
+      const block = buffer.slice(0, separator.index);
+      buffer = buffer.slice(separator.index + separator[0].length);
       const parsed = parseBlock(block);
-      if (parsed) dispatch(parsed.event, parsed.data, handlers);
+      if (!parsed && /^(event|data):/m.test(block)) throw new Error("回答数据无法解析，请重试。");
+      if (parsed) {
+        if (parsed.event === "done") completed = true;
+        dispatch(parsed.event, parsed.data, handlers);
+      }
     }
+    if (done) break;
+  }
+  if (!completed) throw new Error("回答传输中断，请重新提问。");
+  } finally {
+    reader.releaseLock();
   }
 }
 

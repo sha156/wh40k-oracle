@@ -1,5 +1,18 @@
 # 战锤40K 规则书 RAG 问答系统
 
+## Current checkpoint — 2026-09-14
+
+The September source sync supersedes the historical July progress figures below. See `docs/superpowers/reports/2026-09-14-release-acceptance.md` and `docs/superpowers/plans/2026-09-14-release-finish.md`.
+
+- Official ledger: 3,893/3,893 rows across 30 pages; operational prices 1,322/1,322; 203 enhancement rows updated; unmatched records remain explicit.
+- Current membership is defined only in `db_compile/active_units.py`; a present `mfm` dictionary does not mean current when `current=false`. Keyword indexing, codex and translation coverage must share this rule.
+- Apply MFM after `fp_rules` during restoration because patches can insert enhancements with frozen costs. A fresh database rebuild preserves the new ledger and current prices.
+- 28 PDF documents refreshed, 1,256 text pages verified plus one empty-text page. Retrieval index: 5,770 chunks, including Universal Rules Updates. Structured rules and DSL still require the latest patch audit.
+- Roster text import and bounded session history are implemented. Tracing preserves positional fallback calls. 2,496 tests pass; frontend lint/build pass; wiki lint has 0 errors.
+- Live AI checks are blocked by DeepSeek HTTP 402 Insufficient Balance. Docker acceptance is blocked by the host WSL installation. Do not report either as passed.
+- Runnable assets remain in the implementation checkout; PDFs, source caches, model files and SQLite are not in Git. Refresh generators in the order documented in the acceptance report.
+
+
 基于本地知识库的战锤40K规则问答：PDF 规则书 → 向量化入库 → 混合检索 → LLM 生成带引用的中文回答。
 
 **版本定位（2026-07-10 裁决）：现行第 11 版**（2026-06-20 生效）。11 版官方沿用十版 codex

@@ -903,8 +903,6 @@ class TestUnmodeledToolsHonestPlaceholders:
     @pytest.mark.parametrize("fn, args", [
         # simulate_combat（P4-e）/ judge_fight_order（P5-e）已建模，移出未建模占位清单
         # （见 test_simulator_wiring 的 judge_fight_order 真实判定测试）
-        (agent_tools.validate_roster, {"roster_text": "..."}),
-        (agent_tools.critique_roster, {"roster_text": "..."}),
         (agent_tools.archive_answer, {"title": "t", "content": "c"}),
     ])
     def test_returns_explicit_not_modeled_placeholder(self, fn, args):
@@ -916,12 +914,15 @@ class TestUnmodeledToolsHonestPlaceholders:
 
     @pytest.mark.parametrize("fn", [agent_tools.validate_roster,
                                     agent_tools.critique_roster])
-    def test_roster_stub_note_is_current(self, fn):
+    def test_incomplete_roster_is_not_reported_as_a_valid_full_list(self, fn):
         # gnhf 审查模块 5 M3：P6 已于 2026-07-14 上线，占位文案不许再说「计划于 P6」
         # ——要把用户引导到军表实验室页签，而非陈述过时假事实
-        note = fn(roster_text="...")["note"]
+        result = fn(roster_text="...")
+        note = result["note"]
         assert "计划于" not in note
-        assert "军表实验室" in note
+        assert result["modeled"] is True
+        assert result["ok"] is False and result["complete"] is False
+        assert result["issues"] and "report" not in result
 
 
 class TestToolRegistry:

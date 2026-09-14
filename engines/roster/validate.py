@@ -75,7 +75,7 @@ def validate(db_path, roster: Roster) -> ValidationReport:
         if u.points is None and u.canonical_id not in unknown_ids:
             issues.append(ValidationIssue(
                 "unit_unpriced", WARN,
-                f"{u.name_en}（{u.models} 模型）无法定价：该模型数不在点数档位内，未计入总分",
+                f"{u.name_en}（{u.models} 模型）无法完整定价：请核对现行档位、重复单位数量与需付费的武器装配；未计入总分",
                 surfaced_only=True))
 
     # ③ warlord：恰好 1 个，且须 CHARACTER

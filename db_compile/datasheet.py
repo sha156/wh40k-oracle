@@ -65,6 +65,9 @@ def _parse_points(points_json: Optional[str]) -> tuple:
     except (json.JSONDecodeError, TypeError):
         return None, []
     items = data.get("items") or []
+    if data.get("mfm"):
+        from db_compile.calc_points import _min_points
+        return _min_points(points_json), items
     costs = [it.get("cost") for it in items if isinstance(it.get("cost"), int)]
     top = data.get("points")
     minimum = min(costs) if costs else (top if isinstance(top, int) else None)

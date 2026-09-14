@@ -303,6 +303,28 @@ def _same_name_disclosure(
             for uid, name_en, faction in rows]
 
 
+def _official_point_sources(db_path, unit_ids):
+    """Cite MFM only when the returned units carry current source provenance."""
+    import json
+    import sqlite3
+    from contextlib import closing
+    sources = []
+    with closing(sqlite3.connect(str(db_path))) as conn:
+        for uid in set(unit_ids):
+            if not uid:
+                continue
+            row = conn.execute("SELECT points_json FROM units WHERE id=?", (uid,)).fetchone()
+            try:
+                source = (json.loads(row[0] or "{}").get("mfm") or {}) if row else {}
+            except (ValueError, AttributeError, TypeError):
+                continue
+            if source.get("current") is True and source.get("source_url"):
+                item = {"url": source["source_url"], "fetched_at": source.get("fetched_at")}
+                if item not in sources:
+                    sources.append(item)
+    return sources
+
+
 def calc_points(
     unit_list: List[str],
     db_path: Optional[Path] = None,
@@ -385,6 +407,14 @@ def calc_points(
             ambiguous_queries.append(str(query))
             continue
 
+        from web_api.official_points import exact_unit
+        try:
+            official = exact_unit(db_path, str(query))
+        except ValueError:  # Databases built before the full ledger remain supported.
+            official = None
+        if official:
+            units.append(official)
+            continue
         unresolved.append(str(query))
         near = (resolved or {}).get("suggestions") or []
         units.append({"unit_id": r.unit_id, "name_en": None, "points": None,
@@ -395,6 +425,14 @@ def calc_points(
                                else _CALC_POINTS_UNRESOLVED_NOTE)})
 
     out: Dict[str, Any] = {"found": True, "units": units}
+    sources = _official_point_sources(db_path, [u.get("unit_id") for u in units])
+    for unit in units:
+        for price in unit.get("official_prices", []):
+            item = {"url": price["source_url"], "fetched_at": price["fetched_at"]}
+            if item not in sources:
+                sources.append(item)
+    if sources:
+        out["official_sources"] = sources
     if ambiguous_queries:
         out["same_name_cross_faction"] = ambiguous_queries
         out["note"] = ("以下名字同名跨阵营：" + "、".join(ambiguous_queries)
@@ -487,6 +525,12 @@ def get_datasheet(
         return {"found": False, "datasheet": None, "note": "库中未找到该单位"}
 
     out: Dict[str, Any] = {"found": True, "datasheet": asdict(ds)}
+    sources = _official_point_sources(db_path, [ds.unit_id])
+    if sources:
+        out["official_sources"] = sources
+        out["source_scope"] = (
+            "MFM 溯源只证明点数同步。兵牌属性和技能来自既有结构库，"
+            "尚未逐字段复核全部最新补丁；问当前规则效果时请同时检索最新 Faction Pack。")
     # 上面的 AmbiguousUnitName 分支只覆盖**英文名**直查多命中；中文名走 entity_resolver，
     # 而中文索引是「中文名 → 单个 cid」的扁平表，四选一同样报 exact、悄悄落到其中一张
     # （基准 #118 的地狱兽）。这里按拿到的 unit_id 反查兄弟行，把漏掉的那半边歧义补报。
@@ -1016,20 +1060,26 @@ def simulate_combat_resolved(
 
 
 def validate_roster(roster_text: str) -> Dict[str, Any]:
-    # P6 验表引擎已上线（engines/roster + 军表实验室页签）；聊天侧缺的是
-    # 自由文本军表 → 结构化 Roster 的解析层（P6-PR1c，待真实样本）。
-    # 文案不许再说「计划于 P6」——对用户陈述过时假事实（gnhf 审查模块 5 M3）。
-    return _not_modeled(
-        "validate_roster",
-        "聊天侧军表文本解析未建模（无法从自由文本可靠还原单位/模型数/强化）。"
-        "验表功能已上线：请到「军表实验室」页签用图鉴单位搭表，即可实时验证点数与编制约束")
+    return _parsed_roster_report(roster_text, critique=False)
 
 
 def critique_roster(roster_text: str) -> Dict[str, Any]:
-    return _not_modeled(
-        "critique_roster",
-        "聊天侧军表文本解析未建模（无法从自由文本可靠还原单位/装配）。"
-        "点评功能已上线：请到「军表实验室」页签搭表并装配武器，即可获得强度点评")
+    return _parsed_roster_report(roster_text, critique=True)
+
+
+def _parsed_roster_report(roster_text, critique=False):
+    from engines.roster.parse import parse_roster
+    from web_api.contract import RosterIn
+    from web_api import roster
+    if not DB_PATH.exists():
+        return _not_modeled("roster", "结构库未构建")
+    parsed = parse_roster(DB_PATH, roster_text)
+    if not parsed["complete"]:
+        return dict(parsed, modeled=True, ok=False,
+                    note="军表解析未完成，不可将已识别的部分判为完整合法军表。请修正列出的行。每行示例：5x Intercessor Squad；首行 Faction: Space Marines。")
+    req = RosterIn.model_validate(parsed["roster"])
+    result = roster.critique_roster(DB_PATH, req) if critique else roster.validate_roster(DB_PATH, req)
+    return dict(parsed, modeled=True, ok=True, report=result.model_dump(by_alias=True))
 
 
 def archive_answer(title: str, content: str) -> Dict[str, Any]:
@@ -1048,7 +1098,7 @@ TOOL_SPECS: List[Dict[str, str]] = [
     {"name": "get_keyword_definition", "description": "USR/核心概念定义"},
     {"name": "judge_fight_order", "description": "战斗顺序判定：给定冲锋/Fights First/Fights Last/Counteroffensive，判谁先打 + 依据（11版 Fight phase）"},
     {"name": "simulate_combat", "description": "蒙特卡洛对战模拟：attacker 打 defender 期望伤害/击杀/团灭率+漏斗+性价比（多模型单位需 options.loadout）"},
-    {"name": "validate_roster", "description": "验表（聊天侧文本解析未建模——引导用户去军表实验室页签）"},
+    {"name": "validate_roster", "description": "解析文本军表并用引擎验表；未识别行必须显式修正"},
     {"name": "critique_roster", "description": "验表+模拟点评（聊天侧文本解析未建模——引导用户去军表实验室页签）"},
     {"name": "calc_points", "description": "精确算分"},
     {"name": "get_datasheet", "description": "英文属性块查表：M/T/Sv/W + 武器 A/S/AP/D（数值题首选）"},

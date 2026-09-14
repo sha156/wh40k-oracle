@@ -9,6 +9,7 @@ from __future__ import annotations
 import json
 import re
 import sqlite3
+from collections import Counter
 from dataclasses import replace
 from typing import Dict, List, Optional
 
@@ -61,7 +62,50 @@ def _tiers_from_points_json(points_json: Optional[str]) -> Dict[int, int]:
 
 def unit_cost(points_json: Optional[str], models: int) -> Optional[int]:
     """给定模型数的点数；档位里没有该模型数 → None（无法定价，诚实标注）。"""
+    try:
+        source = json.loads(points_json or "{}").get("mfm") or {}
+    except (ValueError, AttributeError):
+        source = {}
+    if source.get("current") is False:
+        return None
+    if source.get("tiers"):
+        return _official_cost(source["tiers"], models, 1, ())
     return _tiers_from_points_json(points_json).get(models)
+
+
+def _official_cost(rows, models, occurrence, loadout):
+    from db_compile.point_tiers import model_count, tier_applies
+    try:
+        applicable = [r for r in rows if tier_applies(r["tier"], occurrence)]
+    except ValueError:
+        return None
+    costs = {r["cost"] for r in applicable if model_count(r["models"]) == models}
+    if len(costs) != 1:
+        return None
+    surcharges = {r["models"][4:].casefold(): r["cost"] for r in applicable
+                  if r["models"].casefold().startswith("per ")}
+    if surcharges and not loadout:
+        return None  # Weapon choices now affect MFM prices; do not assume free equipment.
+    cost = costs.pop()
+    for name, count in loadout:
+        # A firing profile suffix does not create a different purchased weapon.
+        base = re.split(r"\s+[-–]\s+", name, maxsplit=1)[0].casefold()
+        cost += surcharges.get(base, 0) * count
+    # Optional extra-model packages need an explicit composition selector.
+    if any(r["models"].startswith("+") for r in applicable):
+        return None
+    return cost
+
+
+def _chapter_slug(conn, roster):
+    if not roster.detachment_id or roster.faction_id != "SM":
+        return None
+    if not conn.execute("SELECT 1 FROM sqlite_master WHERE name='official_mfm_detachments'").fetchone():
+        return None
+    names = conn.execute("SELECT DISTINCT detachment_name FROM enhancements WHERE detachment_id=?", (roster.detachment_id,)).fetchall()
+    slugs = {s for (name,) in names for (s,) in conn.execute(
+        "SELECT faction_slug FROM official_mfm_detachments WHERE lower(name)=lower(?)", (name,))}
+    return next(iter(slugs)) if len(slugs) == 1 else None
 
 
 def _load_points_json(conn, canonical_id: str) -> Optional[str]:
@@ -75,9 +119,29 @@ def recompute(db_path, roster: Roster) -> Roster:
     conn = sqlite3.connect(str(db_path))
     try:
         new_units: List[RosterUnit] = []
+        counts = Counter()
+        chapter = _chapter_slug(conn, roster)
         for u in roster.units:
             pj = _load_points_json(conn, u.canonical_id)
-            new_units.append(replace(u, points=unit_cost(pj, u.models)))
+            name_row = conn.execute("SELECT name_en,faction_id FROM units WHERE id=?", (u.canonical_id,)).fetchone()
+            identity = (name_row[0].casefold(), name_row[1]) if name_row else u.canonical_id
+            counts[identity] += 1
+            try:
+                data = json.loads(pj or "{}")
+                source = data.get("mfm") or {}
+            except (ValueError, AttributeError, TypeError):
+                new_units.append(replace(u, points=None))
+                continue
+            rows = source.get("tiers") or []
+            if chapter and name_row:
+                from db_compile.mfm import _norm_unit
+                candidates = [r for r in conn.execute("SELECT unit_name,tier,models,cost,section FROM official_mfm_points WHERE faction_slug=? AND kind='unit'", (chapter,))
+                              if _norm_unit(r[0]) == _norm_unit(name_row[0])]
+                primary = [r for r in candidates if r[4] in ("UNITS", "FORTIFICATIONS")]
+                rows = [{"tier": r[1], "models": r[2], "cost": r[3]} for r in (primary or candidates)] or rows
+            price = None if source.get("current") is False else (
+                _official_cost(rows, u.models, counts[identity], u.loadout) if rows else unit_cost(pj, u.models))
+            new_units.append(replace(u, points=price))
     finally:
         conn.close()
     return replace(roster, units=tuple(new_units))

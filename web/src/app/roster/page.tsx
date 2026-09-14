@@ -4,6 +4,7 @@ import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 
 import { SiteHeader } from "@/components/chat/SiteHeader";
 import { CritiquePanel } from "@/components/roster/CritiquePanel";
+import { RosterImport } from "@/components/roster/RosterImport";
 import {
   RosterUnitRow,
   type RosterUnitState,
@@ -30,8 +31,6 @@ import {
   type ValidationReport,
 } from "@/lib/roster";
 
-const BACKEND_HINT =
-  "无法连接后端。请确认 web_api 已启动：.venv\\Scripts\\python.exe -m uvicorn web_api.main:app --port 8000";
 
 function toPayload(
   factionId: string,
@@ -88,7 +87,7 @@ export default function RosterPage() {
   }, []);
   const onErr = useCallback((e: unknown) => {
     if ((e as Error).name === "AbortError") return;
-    setError(BACKEND_HINT);
+    setError(e instanceof Error ? e.message : "请求失败，请稍后重试。");
   }, []);
 
   // 首载阵营
@@ -146,7 +145,7 @@ export default function RosterPage() {
       JSON.stringify({
         d: detachmentId,
         s: size,
-        u: units.map((u) => [u.canonicalId, u.models, u.isWarlord, u.enhancement]),
+        u: units.map((u) => [u.canonicalId, u.models, u.isWarlord, u.enhancement, u.loadout]),
       }),
     [detachmentId, size, units],
   );
@@ -229,7 +228,7 @@ export default function RosterPage() {
         setError(
           e instanceof Error && e.message.includes("后端返回")
             ? `点评失败（${e.message}）`
-            : BACKEND_HINT,
+            : e instanceof Error ? e.message : "点评失败，请稍后重试。",
         );
       })
       .finally(() => {
@@ -306,6 +305,13 @@ export default function RosterPage() {
           </label>
         </section>
 
+        {factionId && <RosterImport key={`${factionId}/${detachmentId}/${size}`} factionId={factionId} detachmentId={detachmentId} size={size}
+          onImport={roster => {
+            setSize(roster.size); setDetachmentId(roster.detachmentId);
+            setUnits(roster.units.map(u => ({ ...u, uid: uidRef.current++, nameZh: null,
+              loadout: Object.fromEntries(u.loadout), weaponPool: null, expanded: false })));
+            setValidation(null); setError(null);
+          }} />}
         <div className="grid grid-cols-[1fr_380px] gap-4 max-tablet:grid-cols-1">
           {/* 左：搭表 */}
           <div>

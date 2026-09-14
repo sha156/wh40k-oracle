@@ -141,9 +141,9 @@ def stage_mfm_fetch(cfg: UpdateConfig) -> StageResult:
                            f"复用缓存（抓取于 {data.get('fetched_at')}）",
                            detail={"fetched_at": data.get("fetched_at"),
                                    "cached": True})
-    from db_compile.mfm import fetch_all
+    from db_compile.mfm_sync import fetch_cache
     try:
-        data = fetch_all(cfg.mfm_json)
+        data = fetch_cache(cfg.mfm_json)
         n = sum(len(v) for v in data.values())
         return StageResult("mfm_fetch", True,
                            f"抓取 {len(data)} 阵营 / {n} 条分数",
@@ -204,6 +204,12 @@ def stage_mfm_apply(cfg: UpdateConfig) -> StageResult:
     if not cfg.mfm_json.exists():
         return StageResult("mfm_apply", False, f"{cfg.mfm_json} 不存在，跳过 apply")
     from db_compile.mfm import apply_points
+    data = json.loads(cfg.mfm_json.read_text(encoding="utf-8"))
+    if data.get("source_snapshot"):
+        from db_compile.mfm_sync import apply_snapshot
+        rep = apply_snapshot(cfg.db, data["source_snapshot"])
+        return StageResult("mfm_apply", True,
+                           f"官方账本 {rep['official_rows']} 条，分数差异 0", detail=rep)
     factions, fetched_at = _load_mfm_factions(cfg.mfm_json)
     rep = apply_points(cfg.db, factions, fetched_at=fetched_at)
     return StageResult(
@@ -513,8 +519,10 @@ _PIPELINE = [
     # points_json 为 NULL，靠随后的 mfm_apply 定价。反过来跑，每次重建后这些
     # 单位点数归 NULL 且三道校验全静默（gnhf 审查模块 4 H1，DB 副本复现）。
     ("补 Faction Pack 11 版真漂移", stage_fp_errata, False),
-    ("应用官方 MFM 分数", stage_mfm_apply, False),
     ("补 Faction Pack 规则文本真漂移", stage_fp_rules, False),
+    # fp_rules can insert enhancements. Apply MFM afterwards so newly restored
+    # rows receive current official prices instead of frozen patch-file costs.
+    ("应用官方 MFM 分数", stage_mfm_apply, False),
     ("叠 GW 官方中文名层", stage_official_zh, False),
     ("投影 P7 DSL 真源", stage_dsl_apply, False),
     ("重灌中文别名层", stage_aliases, False),

@@ -23,7 +23,13 @@ def _min_points(points_json: Optional[str]) -> Optional[int]:
         data = json.loads(points_json)
     except (json.JSONDecodeError, TypeError):
         return None
+    if (data.get("mfm") or {}).get("current") is False:
+        return None
     items = data.get("items") or []
+    from db_compile.point_tiers import minimum_unit_cost
+    official_min = minimum_unit_cost(items) if data.get("mfm") else None
+    if data.get("mfm"):
+        return official_min
     costs = [it.get("cost") for it in items if isinstance(it.get("cost"), int)]
     if costs:
         return min(costs)
@@ -54,7 +60,12 @@ def calc_points(db_path: Path, unit_ids: List[str]) -> List[UnitPoints]:
             name_en, points_json = row
             pts = _min_points(points_json) if points_json is not None else None
             if pts is None:
-                out.append(UnitPoints(uid, name_en, None, MISSING_COST_NOTE))
+                try:
+                    retired = (json.loads(points_json or "{}").get("mfm") or {}).get("current") is False
+                except (ValueError, AttributeError):
+                    retired = False
+                note = "该单位未匹配到最新官方 MFM；历史点数不作为当前点数" if retired else MISSING_COST_NOTE
+                out.append(UnitPoints(uid, name_en, None, note))
             else:
                 out.append(UnitPoints(uid, name_en, pts, None))
         return out

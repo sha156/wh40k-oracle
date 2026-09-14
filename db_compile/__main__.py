@@ -225,9 +225,12 @@ def main() -> None:
         json_path = Path(args.json)
         if args.fetch:
             print("抓取官方 MFM 全部阵营页…")
-            fetch_all(json_path, force=args.force)
+            from db_compile.mfm_sync import fetch_cache
+            fetch_cache(json_path)
             print(f"写入 {json_path}")
         if args.slug:
+            if json_path.exists() and json.loads(json_path.read_text(encoding="utf-8")).get("source_snapshot"):
+                raise SystemExit("完整官方账本请用 mfm --fetch 全站刷新；单页旧解析不能覆盖完整快照")
             rows = fetch_faction(args.slug)
             data = json.loads(json_path.read_text(encoding="utf-8"))
             data["factions"][args.slug] = rows
@@ -242,8 +245,14 @@ def main() -> None:
             data = json.loads(json_path.read_text(encoding="utf-8"))
             factions = {slug: [tuple(r) for r in rows]
                         for slug, rows in data["factions"].items()}
-            rep = apply_points(Path(args.db), factions,
-                               fetched_at=data.get("fetched_at"))
+            if data.get("source_snapshot"):
+                from db_compile.mfm_sync import apply_snapshot
+                full_report = apply_snapshot(Path(args.db), data["source_snapshot"])
+                rep = full_report["units_applied"]
+                print(f"官方完整账本: {full_report['ledger']}")
+            else:
+                rep = apply_points(Path(args.db), factions,
+                                   fetched_at=data.get("fetched_at"))
             print(f"\nMFM 应用：匹配 {rep['units_matched']} 单位，"
                   f"更新 {rep['units_updated']} 个（官方分数已写入 points_json）")
             print("  注意：db_compile build 重建会覆盖，重建后需重跑 mfm --apply")

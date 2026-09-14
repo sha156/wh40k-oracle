@@ -137,7 +137,7 @@ class AgentLoop:
         intent = self._classify(user_input)
 
         try:
-            result = self._run_tool_loop(user_input, intent)
+            result = self._run_tool_loop(user_input, intent, session.history)
         except Exception as exc:
             result = self._fallback(user_input, intent, tool_calls=[], reason=f"异常: {exc}")
 
@@ -152,8 +152,11 @@ class AgentLoop:
             return DEFAULT_INTENT
         return intent if intent in INTENTS else DEFAULT_INTENT
 
-    def _run_tool_loop(self, user_input: str, intent: str) -> AgentResult:
-        messages: List[Dict[str, Any]] = [{"role": "user", "content": user_input}]
+    def _run_tool_loop(self, user_input: str, intent: str, history=None) -> AgentResult:
+        # Past answers resolve references; the existing fresh-tool gate still
+        # requires current evidence for every rules/points question.
+        messages: List[Dict[str, Any]] = [dict(m) for m in (history or [])[-12:]]
+        messages.append({"role": "user", "content": user_input})
         tool_calls: List[str] = []
         nudged_for_tools = False
         nudged_for_empty = False       # 空 final 只给一次重答机会（评审 M#5）

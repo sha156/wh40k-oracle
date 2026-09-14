@@ -4,6 +4,14 @@
 
 > 当前定位：现行**第 11 版**（2026-06-20 生效）。语料按层组织——11 版核心规则（规则唯一真源）+ Faction Pack 补丁 + MFM/平衡版点数 + 十版 codex 兵牌基底。设计蓝图见 `docs/superpowers/`。
 
+## September 14 release checkpoint
+
+Official points are now stored as a complete **3,893-row source ledger** and reconciled with the application database. All **1,322 comparable unit tiers** agree; 203 enhancement rows were updated. The codex exposes source-only prices as well as matched datasheets.
+
+The current frontend includes roster text import, conversation history, source links and clearer failures. **2,496 tests**, frontend lint/build and wiki lint pass. Forty official PDFs were downloaded; 27 changed Faction Packs and Universal Rules Updates were refreshed locally and indexed.
+
+Release acceptance is still open for the latest structured-rule/DSL audit, funded live AI benchmarking and a working Docker/WSL host. The Chinese change list is explicitly dated as a July snapshot. See the [acceptance report and next steps](docs/superpowers/reports/2026-09-14-release-acceptance.md) for exact coverage, supported import syntax and reproduction commands.
+
 ## 四大能力
 
 | 能力 | 说的话 / 入口 | 底层 |

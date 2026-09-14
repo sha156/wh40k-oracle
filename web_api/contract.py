@@ -174,6 +174,7 @@ class Cite(BaseModel):
     section: Optional[str] = None
     term: Optional[str] = None
     wiki: str = ""
+    url: Optional[str] = None
 
 
 # ── E8 CTA / 敏感性 ───────────────────────────────────────────────

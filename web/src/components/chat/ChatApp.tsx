@@ -18,22 +18,25 @@ import { emptyAnswer, streamChat } from "@/lib/api";
 type Status = "idle" | "streaming" | "error";
 
 interface ChatAppProps {
-  /** 初始示例（永久回归 fixture）——首屏展示，提问后替换为真链路结果。 */
-  initial: Exchange;
+  /** Optional supplied answer for previews; live pages start with an empty conversation. */
+  initial?: Exchange;
 }
 
 /**
  * 聊天页 client 壳（Stage 3 闭环）：持有当前 exchange + 流式状态，
- * 提问经 /chat SSE 逐槽位填充回答。首屏用 fixture 示例，提问后走真后端。
+ * Questions use /chat SSE; the landing page offers prompts before the first answer.
  */
 export function ChatApp({ initial }: ChatAppProps) {
-  const [question, setQuestion] = useState(initial.question);
-  const [answer, setAnswer] = useState<Answer>(initial.answer);
+  const [question, setQuestion] = useState(initial?.question ?? "查询规则、官方点数，或分析你的军表。");
+  const [answer, setAnswer] = useState<Answer>(initial?.answer ?? {
+    ...emptyAnswer(), followups: ["基里曼当前多少分？", "掩体在第11版如何生效？"],
+  });
   const [status, setStatus] = useState<Status>("idle");
   const [errorMsg, setErrorMsg] = useState<string | null>(null);
   const abortRef = useRef<AbortController | null>(null);
+  const sessionRef = useRef<string | null>(null);
 
-  const context = initial.context;
+  const context = initial?.context ?? "当前语境：通用 · 第11版";
 
   const submit = useCallback(
     async (q: string) => {
@@ -50,6 +53,7 @@ export function ChatApp({ initial }: ChatAppProps) {
       setErrorMsg(null);
 
       try {
+        sessionRef.current ??= crypto.randomUUID();
         await streamChat(
           trimmed,
           context,
@@ -72,15 +76,12 @@ export function ChatApp({ initial }: ChatAppProps) {
             onFollowups: (f) => setAnswer((a) => ({ ...a, followups: f })),
             onDone: () => setStatus("idle"),
           },
-          { signal: ctrl.signal },
+          { signal: ctrl.signal, sessionId: sessionRef.current },
         );
       } catch (err) {
         if ((err as Error).name === "AbortError") return;
         setStatus("error");
-        setErrorMsg(
-          "无法连接后端。请确认 web_api 已启动：" +
-            ".venv\\Scripts\\python.exe -m uvicorn web_api.main:app --port 8000",
-        );
+        setErrorMsg(err instanceof Error ? err.message : "请求失败，请稍后重试。");
       }
     },
     [context, status],

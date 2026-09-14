@@ -68,6 +68,11 @@ class TestAudit:
                            ("2", "Hellflayer", "CD", "S2", "Other", "http://x/Hellflayer"),
                            ("3", "Bloodletters", "CD", "S1", "Other", "http://x/B")],
                zh_rows=[("2", json.dumps([{"name": "a"}]))])
+        # A complete official ledger supersedes community-presence heuristics.
+        conn = sqlite3.connect(str(db))
+        conn.execute("CREATE TABLE official_mfm_points (cost INTEGER)")
+        conn.commit()
+        conn.close()
         rep = audit(db)
         assert rep["counts"]["groups"] == 1
         assert rep["counts"]["units_involved"] == 2

@@ -162,17 +162,9 @@ def engine_status(base: str) -> str:
 # ── 统计（真实分布的唯一来源）──────────────────────────────────────
 
 def _current_unit_ids(conn: sqlite3.Connection) -> Set[str]:
-    """现役口径与 web_api/codex.py 一致：官方 MFM 在册 ∪ 黑图书馆收录。"""
-    cur: Set[str] = set()
-    for uid, pj in conn.execute("SELECT id, points_json FROM units"):
-        try:
-            if pj and (json.loads(pj) or {}).get("mfm"):
-                cur.add(uid)
-        except (json.JSONDecodeError, TypeError):
-            continue
-    for (uid,) in conn.execute("SELECT canonical_id FROM unit_zh_detail"):
-        cur.add(uid)
-    return cur
+    """Use the same authoritative membership as the codex and roster data layer."""
+    from db_compile.active_units import active_unit_ids
+    return active_unit_ids(conn)
 
 
 def collect(db_path: Path) -> Tuple[Dict[str, KeywordStat], Dict[str, int]]:
@@ -309,7 +301,7 @@ def render_index(stats: Dict[str, KeywordStat], quickref: Dict[str, QuickRefEntr
         "规则页在哪、引擎建模到什么程度，以及**反查**——哪些武器带它。",
         "",
         "> 本页是生成物（`python -m wiki_engine.keyword_index`），禁止手改。",
-        "> 数量口径：**现役**＝官方 MFM 在册 ∪ 黑图书馆收录（与图鉴列表一致）；"
+        "> 数量口径：**现役**＝匹配到完整官方 MFM 快照（与图鉴列表一致；旧库沿用兼容口径）；"
         "括号内为含传承/福基世界条目的全库数。",
         "> 「引擎」列说的是 `engines/simulator` 有没有把它算进伤害期望："
         "**数值建模**＝真的改数值；**仅标注**＝识别到但不改数值（会在模拟报告里披露）；"
@@ -373,7 +365,7 @@ def render_index(stats: Dict[str, KeywordStat], quickref: Dict[str, QuickRefEntr
             names = st.current_weapon_names
             L += ["### {}".format(head), ""]
             if not names:
-                L += ["现役单位中无武器带此词条（全库 {} 件武器带它，均为传承/福基世界条目）。"
+                L += ["现役单位中无武器带此词条（全库 {} 件武器带它，均未匹配到现行 MFM）。"
                       .format(len(st.weapons)), ""]
                 continue
             L.append("共 {} 件现役武器（全库 {} 件）。".format(len(names), len(st.weapons)))

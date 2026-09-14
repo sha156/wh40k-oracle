@@ -124,6 +124,8 @@ def refine_page(client, page_text: str, prev_tail: str, system_prompt: str = SYS
                 ],
                 temperature=0.0,
                 max_tokens=MAX_TOKENS,
+                **({"extra_body": {"thinking": {"type": os.environ["REFINE_THINKING"]}}}
+                   if os.environ.get("REFINE_THINKING") in ("enabled", "disabled") else {}),
             )
             choice = resp.choices[0]
             content = _strip_code_fence(choice.message.content or "")
@@ -230,7 +232,8 @@ def _filter_chinese_pending(pdfs: List[Path], out_root: Path,
             if _refine_coverage(out_root / p.stem, _pdf_page_count(p)) < min_coverage]
 
 
-def process_book(client, pdf_path: Path, out_root: Path, workers: int = 4, lang: str = "zh") -> dict:
+def process_book(client, pdf_path: Path, out_root: Path, workers: int = 4, lang: str = "zh",
+                 reuse_source_cache: bool = False) -> dict:
     """整本处理：提取→过滤→并发 LLM→缓存落盘。返回统计 summary。"""
     pages = extract_pages(pdf_path)
     book_dir = out_root / pdf_path.stem
@@ -245,10 +248,18 @@ def process_book(client, pdf_path: Path, out_root: Path, workers: int = 4, lang:
     raw_by_no = {p["page"]: p["text"] for p in pages}
     jobs, skipped_pages = [], []
     for p in pages:
+        # A source refresh need not also migrate every unchanged page's prompt.
+        # Keep the real old prompt version; never relabel v1 output as v2.
+        source_cached = False
+        if reuse_source_cache:
+            md_path, meta_path = page_paths(book_dir, p["page"])
+            if md_path.exists() and meta_path.exists():
+                meta = json.loads(meta_path.read_text(encoding="utf-8"))
+                source_cached = meta.get("sha256") == p["sha256"] and not meta.get("fallback", False)
         if len(p["text"].strip()) < MIN_TEXT_CHARS:
             summary["skipped"] += 1
             skipped_pages.append(p["page"])
-        elif is_cached(book_dir, p["page"], p["sha256"], pv):
+        elif source_cached or is_cached(book_dir, p["page"], p["sha256"], pv):
             summary["cached"] += 1
         else:
             jobs.append(p)
@@ -256,6 +267,15 @@ def process_book(client, pdf_path: Path, out_root: Path, workers: int = 4, lang:
     if skipped_pages:
         (book_dir / "skipped_pages.json").write_text(
             json.dumps(skipped_pages), encoding="utf-8")
+    else:
+        (book_dir / "skipped_pages.json").unlink(missing_ok=True)
+    # A replacement PDF can have fewer pages or a formerly populated blank page.
+    # Leaving those Markdown files would silently re-ingest removed source text.
+    for cached_page in book_dir.glob("page_*.md"):
+        page_no = int(cached_page.stem.split("_")[1])
+        if page_no > len(pages) or page_no in skipped_pages:
+            cached_page.unlink()
+            cached_page.with_suffix(".meta.json").unlink(missing_ok=True)
 
     def _work(p):
         prev_tail = raw_by_no.get(p["page"] - 1, "")[-PREV_TAIL_CHARS:]
@@ -290,6 +310,11 @@ def process_book(client, pdf_path: Path, out_root: Path, workers: int = 4, lang:
                     # 口径会因此失真（未校验被计进"已通过"那一侧）。
                     "model": MODEL, "verify_ok": None, "fallback": True,
                 })
+    if pdf_path.exists():
+        (book_dir / "source.json").write_text(json.dumps({
+            "pdf_sha256": hashlib.sha256(pdf_path.read_bytes()).hexdigest(),
+            "pages": len(pages), "summary": summary,
+        }, ensure_ascii=False, indent=2), encoding="utf-8")
     return summary
 
 

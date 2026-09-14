@@ -36,13 +36,14 @@ def _derive_cites(result: AgentResult, recorder: TraceRecorder) -> List[Cite]:
     cites: List[Cite] = []
     seen = set()
 
-    def _add(book, page=None, section=None, term=None, wiki=""):
-        key = (book, page, term)
+    def _add(book, page=None, section=None, term=None, wiki="", url=None):
+        page = page if isinstance(page, int) and page > 0 else None
+        key = (book, page, term, url)
         if key in seen or not book:
             return
         seen.add(key)
         cites.append(Cite(n=len(cites) + 1, book=book, page=page,
-                          section=section, term=term, wiki=wiki))
+                          section=section, term=term, wiki=wiki, url=url))
 
     # 关键词定义页（核心规则术语）——provenance，非伪造页码
     kw_res = recorder.get_result("get_keyword_definition")
@@ -60,6 +61,12 @@ def _derive_cites(result: AgentResult, recorder: TraceRecorder) -> List[Cite]:
              term=str(ds.get("name_en") or ""), section="属性块")
 
     # 检索来源（真有 book/page 出处）
+    points = recorder.get_result("calc_points")
+    for evidence in (points, ds_res):
+        if isinstance(evidence, dict):
+            for source in evidence.get("official_sources", []):
+                _add("Munitorum Field Manual", section="官方当前点数",
+                     url=source.get("url"))
     for p in (result.sources or [])[:6]:
         if isinstance(p, dict) and p.get("book"):
             page = p.get("page")
@@ -169,7 +176,10 @@ def format_answer(
                 [c.model_dump() for c in cites],
             ) or {}
         except Exception:
-            structured = {}   # fail-closed：退化为散文 lede
+            structured = {}
+            degraded = True
+            trace_warn = "回答排版失败，以下保留原始回复与已查证来源。"
+            summary = _derive_summary(trace, cites, degraded)
 
     return Answer(
         summary=summary,

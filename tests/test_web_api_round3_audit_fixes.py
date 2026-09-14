@@ -64,17 +64,19 @@ def test_min_points_reads_the_dict_shape_actually_stored_in_units():
 
 @needs_db
 def test_points_badge_is_not_universally_empty_on_the_real_db():
-    """全库口径：绝大多数单位应当有点数徽章。老实现在这里是 0 个。"""
+    """Every current official unit has a badge; unmatched history is not current pricing."""
+    from db_compile.active_units import active_unit_ids
     conn = sqlite3.connect(f"file:{DB_PATH}?mode=ro", uri=True)
     try:
-        rows = conn.execute("SELECT points_json FROM units").fetchall()
+        current = active_unit_ids(conn)
+        rows = conn.execute("SELECT id,points_json FROM units").fetchall()
     finally:
         conn.close()
+    rows = [(uid, pj) for uid, pj in rows if uid in current]
     total = len(rows)
-    non_null = sum(1 for (pj,) in rows if _min_points(pj) is not None)
+    non_null = sum(1 for uid, pj in rows if _min_points(pj) is not None)
     assert total > 1000, "库里单位数异常，用例前提失效"
-    # 实测 1711/1715；留余量只断言 95%，但把「恒为 0」这条死线钉死
-    assert non_null > total * 0.95, f"有点数的单位只有 {non_null}/{total}"
+    assert non_null == total, f"当前官方单位点数缺失：{non_null}/{total}"
 
 
 @needs_db

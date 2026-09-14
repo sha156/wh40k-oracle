@@ -237,6 +237,7 @@ def render_unit(conn, uid: str, faction_zh: str,
     pj = json.loads(u["points_json"] or "{}")
     kw = json.loads(u["keywords_json"] or "{}")
     fetched = (pj.get("mfm") or {}).get("fetched_at", "")
+    is_historical = (pj.get("mfm") or {}).get("current") is False
     drift = check_drift(models, zstats) + zw_collisions
 
     L: List[str] = []
@@ -325,6 +326,8 @@ def render_unit(conn, uid: str, faction_zh: str,
     # 单位构成/点数（官方 MFM）
     if pj.get("items"):
         L += ["", "## 单位构成"]
+        if is_historical:
+            L += ["历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。"]
         for it in pj["items"]:
             L.append("- **{}** — {} 分".format(
                 _zh_model_desc(it.get("desc", "")), it.get("cost")))
@@ -338,16 +341,16 @@ def render_unit(conn, uid: str, faction_zh: str,
 
     points_fm = {_clean_desc(it["desc"]): it["cost"]
                  for it in (pj.get("items") or [])
-                 if isinstance(it.get("cost"), int)}
+                 if isinstance(it.get("cost"), int) and not is_historical}
     fm = WikiPageFrontmatter(
         id=str(u["id"]), name_zh=u["name_zh"], name_en=u["name_en"],
         faction=faction_zh, type="unit", points=points_fm or None,
         version={k: v for k, v in {
-            "points": "MFM {}".format(fetched) if fetched else "",
+            "points": "historical / unmatched" if is_historical else ("MFM {}".format(fetched) if fetched else ""),
             "source": "official-db",
         }.items() if v},
         sources=[{"book": "官方结构库 db/wh40k.sqlite（Wahapedia 11版镜像 + MFM 官方点数）"}],
-        updated="2026-07-23",
+        updated=str((pj.get("mfm") or {}).get("checked_at") or fetched or "2026-07-23")[:10],
     )
     fm.generate_tags()
     body = escape_table_pipes("\n".join(L) + "\n")
