@@ -183,6 +183,18 @@ def _insert_new_units(conn, units: List[dict], report: Dict) -> None:
             report["units_exist"].append(f"{fac}:{name}")
             continue
         uid = u["unit_id"]
+        # 存在性判据是 `(faction_id, name_en)`，写入却是固定 `unit_id` 的
+        # INSERT OR REPLACE——两者不对称（审查 R2-L3）。上游哪天用同一个 id 建了
+        # **不同名字**的单位，上面那个判据认不出（名字不同 ⇒ 判成"不存在"），
+        # 这里的 REPLACE 就会把那行的 name_zh / points_json 一起抹成 NULL。
+        # 所以落库前按 id 再查一次：被别的名字占着就跳过并报告，不硬写。
+        occupied = conn.execute(
+            "SELECT name_en FROM units WHERE id = ?", (uid,)).fetchone()
+        if occupied and (occupied[0] or "").casefold() != (name or "").casefold():
+            report["units_id_conflict"].append(
+                f"{uid}: 已被 {occupied[0]!r} 占用，本次要插的是 {name!r}——已跳过"
+                f"（硬写会 REPLACE 掉它的 name_zh/points_json）")
+            continue
         kw_json = json.dumps(
             {"keywords": u.get("keywords", []),
              "faction_keywords": u.get("faction_keywords", [])},
@@ -230,7 +242,7 @@ def apply_fp_errata(db_path, patches: dict) -> Dict:
         "weapon_invalid": [],
         "kw_applied": 0, "kw_already": 0,
         "kw_changes": [], "kw_skipped": [], "kw_invalid": [],
-        "units_inserted": [], "units_exist": [],
+        "units_inserted": [], "units_exist": [], "units_id_conflict": [],
     }
     conn = sqlite3.connect(str(db_path))
     try:

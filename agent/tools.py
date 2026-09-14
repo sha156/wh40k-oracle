@@ -8,6 +8,7 @@ from __future__ import annotations
 
 import importlib
 import inspect
+import logging
 import threading
 from pathlib import Path
 from typing import Any, Callable, Dict, List, Optional
@@ -16,6 +17,8 @@ from db_compile.calc_points import calc_points as _calc_points_impl
 from db_compile.entity_resolver import EntityResolver, load_unit_aliases
 from wiki_engine.models import WikiPage, slugify
 from wiki_engine.operations.query_op import find_entity, load_index
+
+_log = logging.getLogger(__name__)
 
 REPO_ROOT = Path(__file__).resolve().parent.parent
 WIKI_ROOT = REPO_ROOT / "wiki"
@@ -320,8 +323,14 @@ def calc_points(
     if isinstance(unit_list, str):
         unit_list = [unit_list]
     elif not isinstance(unit_list, (list, tuple)):
-        return {"ok": False, "found": False, "units": [],
-                "note": f"参数错误：unit_list 应为单位名列表，收到 {type(unit_list).__name__}"}
+        # `param_error` 是给 loop._EMPTY_CHECKS 看的放行标记（审查 R1-M1）：参数写错不是
+        # 「库里查不到」，模型照下面这句指路改个参就能自行恢复，当场降级 classic 等于把
+        # 恢复机会一起没收——与「未知工具/工具异常写回 messages 让模型改正」的既有策略
+        # 保持一致。**别删这个键**：删了这条就退回「参数错误 → 静默降级」。
+        return {"ok": False, "found": False, "units": [], "param_error": True,
+                "note": (f"参数错误：unit_list 应为单位名列表，收到 "
+                         f"{type(unit_list).__name__}。请把入参改成列表后重试，"
+                         f'例如 ["罗伯特·基里曼", "终结者小队"]。')}
     db_path = db_path or DB_PATH
     if not Path(db_path).exists():
         return {"found": False, "units": [], "note": "wh40k.sqlite 不存在，需先跑 db_compile"}
@@ -487,22 +496,36 @@ def get_datasheet(
         out["note"] = _SAME_NAME_CROSS_FACTION_NOTE
     # 叠加黑图书馆中文原生 datasheet（属性/能力/武器）——英文仍是权威真值，
     # 中文层供作答时用母语呈现能力/武器描述。表不存在或无此单位时静默跳过。
+    # ⚠️ 这两段**必须分开 try**（审查 R1-M4）：原先一个裸 `except Exception: pass` 同时罩住
+    # 中文层加载与两源冲突检测，于是任一环节抛异常时，不仅中文层没了，「数值以官方英文为准」
+    # 那句**诚实披露也一并消失**，且全程无日志——正是 CLAUDE.md 明令的「except 分支必须打
+    # 显眼日志」违例。合并回去就等于让披露重新可被静默吞掉。
+    zh = None
     try:
         from db_compile.blacklibrary import load_zh_detail
-        from db_compile.datasheet import diff_core_stats
         zh = load_zh_detail(db_path, ds.unit_id)
-        if zh:
-            out["datasheet_zh"] = zh
-            # 两源数值不一致时显式标注，防止一次回答内部自相矛盾——官方英文块为准。
+    except Exception as exc:  # noqa: BLE001
+        # 表不存在/未建中文层是预期情形（中文层可选），但要留痕，不能装作没发生
+        _log.warning("get_datasheet：黑图书馆中文层加载失败（unit_id=%s）：%s", ds.unit_id, exc)
+    if zh:
+        out["datasheet_zh"] = zh
+        # 两源数值不一致时显式标注，防止一次回答内部自相矛盾——官方英文块为准。
+        conflicts = None
+        try:
+            from db_compile.datasheet import diff_core_stats
             conflicts = diff_core_stats(ds, zh)
-            if conflicts:
-                out["stat_conflicts"] = conflicts
-                # 追加而非覆盖：同名跨阵营的消歧铁律不能被这句话顶掉
-                out["note"] = (out.get("note", "")
-                               + "黑图书馆中文层与官方源在部分属性上不一致，"
-                                 "数值以官方英文属性块(datasheet)为准。")
-    except Exception:
-        pass
+        except Exception as exc:  # noqa: BLE001
+            _log.warning("get_datasheet：两源数值冲突检测失败（unit_id=%s）：%s", ds.unit_id, exc)
+            # 检测本身挂了 ⇒ 无法断言「两源一致」，如实说出来而不是沉默
+            out["note"] = (out.get("note", "")
+                           + "（中文层与官方源的数值一致性检测未能完成，"
+                             "数值一律以官方英文属性块(datasheet)为准。）")
+        if conflicts:
+            out["stat_conflicts"] = conflicts
+            # 追加而非覆盖：同名跨阵营的消歧铁律不能被这句话顶掉
+            out["note"] = (out.get("note", "")
+                           + "黑图书馆中文层与官方源在部分属性上不一致，"
+                             "数值以官方英文属性块(datasheet)为准。")
     return out
 
 
@@ -629,10 +652,13 @@ def judge_fight_order(ctx: Optional[Dict[str, Any]] = None) -> Dict[str, Any]:
     b_name = str(ctx.get("defender", "守方"))
     co_raw = ctx.get("counter_offensive_by")
     co_by = None
-    if co_raw in ("attacker", "a", a_name):
-        co_by = a_name
+    co_is_a: Optional[bool] = None      # 方向的权威入参，名字在镜像对局里分不出（审查 R1-M2）
+    if a_name == b_name and co_raw in (a_name, b_name):
+        co_by = a_name                  # 攻守同名且只给了名字：交给 judge 显式披露，不猜
+    elif co_raw in ("attacker", "a", a_name):
+        co_by, co_is_a = a_name, True
     elif co_raw in ("defender", "b", b_name):
-        co_by = b_name
+        co_by, co_is_a = b_name, False
 
     a = FighterState(a_name, is_active_player=True,
                      charged=bool(ctx.get("attacker_charged", True)),
@@ -641,7 +667,7 @@ def judge_fight_order(ctx: Optional[Dict[str, Any]] = None) -> Dict[str, Any]:
     b = FighterState(b_name, is_active_player=False, charged=False,
                      fights_first=bool(ctx.get("defender_fights_first")),
                      fights_last=bool(ctx.get("defender_fights_last")))
-    v = judge(a, b, counter_offensive_by=co_by)
+    v = judge(a, b, counter_offensive_by=co_by, counter_offensive_is_a=co_is_a)
     return {
         "ok": True, "modeled": True, "tool": "judge_fight_order",
         "first_striker": v.first_striker,

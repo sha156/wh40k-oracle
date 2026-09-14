@@ -19,14 +19,23 @@ import yaml
 # build_outputs.scan_wiki_pages 与 lint 的扫描侧共用本集合，保证两侧排除集一致
 # ——lint 曾扫描自己生成的 lint-report.md，把报告里的 [[断链示例]] 当成新断链，
 # 假阳性永久自我复现（H15）。
-GENERATED_MD_NAMES = frozenset({"index.md", "log.md", "terms.md", "lint-report.md",
-                                # alias-conflicts.md：lint 的重名明细报告（与 lint-report.md
-                                # 并列的生成物），同理不能被自己扫描
-                                "alias-conflicts.md",
-                                "_from_db_drift.md",
-                                # indexes/keywords.md：武器词条总索引，与 index.md 同类
-                                # （生成物、无实体 frontmatter），不参与实体扫描与断链检查
-                                "keywords.md"})
+# ── 生成物分两类（审查 R2-M2）───────────────────────────────────────────
+# 分类判据是**内容**，不是"是不是生成的"：
+#   · 报告类：正文里会出现示例断链、告警明细等「看起来像链接但不是链接」的文本。
+#     lint 扫它们的出链会把自己报告里的例子当成新断链，假阳性永久自我复现（H15）。
+#   · 索引类：正文里的链接都是**真链接**，指向真实页面。把它们排除在出链检查之外，
+#     等于让「lint 0 error」这个门禁对 wiki 近一半的链接（实测 4809 条）保持沉默。
+# 两类都不参与**实体扫描**（都没有实体 frontmatter），所以 GENERATED_MD_NAMES 仍是并集。
+REPORT_MD_NAMES = frozenset({"log.md", "lint-report.md",
+                             # alias-conflicts.md：lint 的重名明细报告（与 lint-report.md
+                             # 并列的生成物），同理不能被自己扫描
+                             "alias-conflicts.md",
+                             "_from_db_drift.md"})
+INDEX_MD_NAMES = frozenset({"index.md", "terms.md",
+                            # indexes/keywords.md：武器词条总索引，与 index.md 同类
+                            # （生成物、无实体 frontmatter），但出链必须查
+                            "keywords.md"})
+GENERATED_MD_NAMES = REPORT_MD_NAMES | INDEX_MD_NAMES
 
 # faction_id（Wahapedia 缩写，见 db_sources/wahapedia/Factions.csv）→ 中文阵营名。
 # 覆盖 pairing.json 实际出现的 21 个 faction_id；fm.faction / wiki 目录名用它，

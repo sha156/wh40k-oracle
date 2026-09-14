@@ -182,7 +182,7 @@ def collect(db_path: Path) -> Tuple[Dict[str, KeywordStat], Dict[str, int]]:
     try:
         current = _current_unit_ids(conn)
         stats: Dict[str, KeywordStat] = {}
-        tally = {"weapon_rows": 0, "pairs": 0, "orphan_rows": 0}
+        tally = {"weapon_rows": 0, "pairs": 0, "orphan_rows": 0, "bad_json_rows": 0}
         rows = conn.execute(
             "SELECT w.name_en, w.name_zh, w.keywords_json, w.unit_id, "
             "       u.id AS uid, u.name_zh AS unit_zh, u.name_en AS unit_en "
@@ -196,6 +196,10 @@ def collect(db_path: Path) -> Tuple[Dict[str, KeywordStat], Dict[str, int]]:
             try:
                 items = json.loads(r["keywords_json"] or "[]") or []
             except (json.JSONDecodeError, TypeError):
+                # 与上面 orphan_rows 同标准：跳过就得记账（审查 R2-L1）。
+                # 没有这个桶时，一批 keywords_json 写坏会让反查悄悄少掉一片武器，
+                # 而 tally 里所有数字看着都正常。当前库内 0 例。
+                tally["bad_json_rows"] += 1
                 continue
             wname = r["name_zh"] or r["name_en"] or ""
             uname = r["unit_zh"] or r["unit_en"] or r["uid"]

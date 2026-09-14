@@ -28,6 +28,8 @@ import sqlite3
 from pathlib import Path
 from typing import Any, Dict, List, Tuple
 
+from db_compile.active_units import active_unit_ids
+
 # 倾向性标签。likely_* 只是建议，不构成裁决——组内证据全列在报告里
 VERDICTS = ("likely_current", "likely_legacy", "undecided")
 
@@ -124,6 +126,10 @@ def audit(db_path) -> Dict[str, Any]:
             members.setdefault(uf.find(r["id"]), []).append(r["id"])
         dup_ids = {i for ids in members.values() if len(ids) > 1 for i in ids}
 
+        # 「现役」走全库唯一真源（MFM ∪ 黑图书馆）。这里曾直接看 `points_json["mfm"]`，
+        # 那是窄口径，会把 141 个在售单位（含整组 Harlequins）标成非现役——判重复时
+        # 「哪一行还在售」正是最关键的一列（审查 R2-M1）。
+        active = active_unit_ids(conn)
         info: Dict[str, Dict[str, Any]] = {}
         for r in rows:
             if r["id"] not in dup_ids:
@@ -142,7 +148,7 @@ def audit(db_path) -> Dict[str, Any]:
                 "faction_id": r["faction_id"] or "",
                 "name_en": r["name_en"] or "",
                 "name_zh": r["name_zh"] or "",
-                "current": bool(pj.get("mfm")),
+                "current": uid in active,
                 "points_tiers": [
                     "{}={}".format(it.get("desc"), it.get("cost"))
                     for it in (pj.get("items") or [])],

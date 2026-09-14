@@ -40,17 +40,13 @@ def _current_unit_ids(conn: sqlite3.Connection) -> set:
     为什么要两个来源取并集而不是只看 MFM：官方 MFM 页只列 30 个阵营，**没有
     Harlequins 那一组**（实测 aeldari 81 条里无 Troupe/Solitaire/Death Jester），
     只按 MFM 判会把 199 个在售单位误归档。黑图书馆收录面≈在售单位，正好补上这个洞。
+
+    实现已抽到 `db_compile.active_units`（审查 R2-M1）：同一口径此前在 db_compile 侧
+    还有一份**只看 MFM** 的窄副本，少 141 个在售单位。此处保留薄包装是为了不动
+    web_api 的调用点与既有行为（表缺失仍抛，由 main 转 503）。
     """
-    cur = set()
-    for uid, pj in conn.execute("SELECT id, points_json FROM units"):
-        try:
-            if pj and (json.loads(pj) or {}).get("mfm"):
-                cur.add(uid)
-        except (json.JSONDecodeError, TypeError):
-            continue
-    for (uid,) in conn.execute("SELECT canonical_id FROM unit_zh_detail"):
-        cur.add(uid)
-    return cur
+    from db_compile.active_units import active_unit_ids
+    return active_unit_ids(conn)
 
 
 def list_factions(db_path, include_legacy: bool = False) -> List[Dict[str, Any]]:

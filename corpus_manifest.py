@@ -56,15 +56,36 @@ def edition_layer_tag(edition: str, layer: str) -> str:
     return "{}·{}".format(ed, LAYER_LABELS_ZH.get(layer, layer))
 
 
-def classify_book(book_name: str, manifest: dict) -> Dict[str, str]:
-    """书名 → {"edition": ..., "layer": ...}。精确名优先，其次前缀规则，最后 defaults。"""
+def classify_book_with_origin(book_name: str, manifest: dict):
+    """同 `classify_book`，另返回分类**来源**：`"exact"` / `"prefix"` / `"defaults"`。
+
+    `"defaults"` 不等于分错——`data/` 下 27 本未登记 PDF 逐本核对全是真十版 codex，
+    defaults 对它们是**正确**的（0 例误分类）。要报的不是分类结果，而是「这本书的层级
+    没人拍板过」这个事实（审查 R2-M3）：ingest 的分层汇总是按层聚合的
+    （`layer_stats["10版/codex-base"] += n`），未登记书目与显式登记成 codex-base 的书
+    在汇总里**完全不可区分**——那份汇总不是这条风险的探测器。
+
+    后果的具体形状：新增一本 11 版规则类 PDF 而忘了登记，会静默拿到 layer=codex-base，
+    于是**不被 app.py 的规则层保底选中**（保底按 `layer=rules` 过滤），而没有任何一处会吼。
+    """
     entry = manifest["books"].get(book_name)
+    origin = "exact"
     if entry is None:
+        origin = "prefix"
         for rule in manifest["prefixes"]:
             if book_name.startswith(rule.get("prefix", "\x00")):
                 entry = rule
                 break
     if entry is None:
+        origin = "defaults"
         entry = manifest["defaults"]
-    return {"edition": str(entry.get("edition", _BUILTIN_DEFAULTS["edition"])),
-            "layer": str(entry.get("layer", _BUILTIN_DEFAULTS["layer"]))}
+    return ({"edition": str(entry.get("edition", _BUILTIN_DEFAULTS["edition"])),
+             "layer": str(entry.get("layer", _BUILTIN_DEFAULTS["layer"]))}, origin)
+
+
+def classify_book(book_name: str, manifest: dict) -> Dict[str, str]:
+    """书名 → {"edition": ..., "layer": ...}。精确名优先，其次前缀规则，最后 defaults。
+
+    要同时知道分类是不是靠 defaults 兜底的，用 `classify_book_with_origin`。
+    """
+    return classify_book_with_origin(book_name, manifest)[0]

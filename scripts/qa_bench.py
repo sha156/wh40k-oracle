@@ -26,6 +26,7 @@ from __future__ import annotations
 
 import argparse
 import json
+import logging
 import os
 import re
 import sys
@@ -33,6 +34,9 @@ import time
 from concurrent.futures import ThreadPoolExecutor, as_completed
 from pathlib import Path
 from threading import Lock
+from typing import List
+
+_log = logging.getLogger(__name__)
 
 REPO_ROOT = Path(__file__).resolve().parent.parent
 sys.path.insert(0, str(REPO_ROOT))
@@ -308,11 +312,41 @@ def answer_agent(app, vs, bm25, reranker, tools, provider, model, client, questi
     return result.answer, srcs, meta
 
 
+_VERDICT_MARKS = ("✅", "❌", "⚠️")
+
+
+def verdict_marks_in(text) -> List[str]:
+    """判词里出现过的全部标记，按**出现位置**排序（不是按严重度）。"""
+    text = text or ""
+    return [m for _, m in sorted((text.index(m), m) for m in _VERDICT_MARKS if m in text)]
+
+
 def parse_verdict(text):
+    """判词 → ✅/❌/⚠️，取**第一个出现**的标记（审查 R2-M5）。
+
+    判分模型的输出格式是「<标记> <理由>」，所以首个标记才是它的结论。
+    旧实现是 `for mark in ("✅","❌","⚠️")` ——先看有没有 ✅，而不是看谁先出现，
+    方向单一地偏向「判对」，而这是全项目「零硬错」的**唯一测量仪器**。
+
+    实测（56 个结果文件、5592 条判词）：受影响的判词 4 条，**不是审查报告说的 0 条**。
+    典型一条是基准 #86：判词以「⚠️ …」开头，正文里有「不能判✅」，旧实现看到那个 ✅
+    就判 ✅——把判分模型明确的 ⚠️ 读成了通过。
+
+    ⚠️ 为什么不用「严重度优先（有 ❌ 就判 ❌）」：判词正文里常出现「应判✅」「不能判✅」
+    这类**引用**其他标记的措辞，按严重度取会把判分模型的结论整个读反。实测严重度优先
+    会让 #107 三次归档结果全部翻成 ❌，而其中两次判分模型自己写的是「应判✅」。
+
+    判词里同时出现多种标记 ⇒ 判分模型自相矛盾（实测 3 条，全是 #107 的历次归档：
+    开头 ✅、正文却写「因此存在关键事实错误，应判❌」）。这种不猜，按首个标记走
+    并**吼一声**，让它进人工复核而不是被静默吞掉。
+    """
     text = (text or "").strip()
-    for mark in ("✅", "❌", "⚠️"):
-        if mark in text:
-            return mark
+    marks = verdict_marks_in(text)
+    if marks:
+        if len(set(marks)) > 1:
+            _log.warning("判词自相矛盾（同时出现 %s），按首个标记 %s 计；建议人工复核：%s",
+                         "/".join(dict.fromkeys(marks)), marks[0], text[:120])
+        return marks[0]
     low = text.lower()
     if any(w in low for w in ("正确", "correct", "pass")):
         return "✅"

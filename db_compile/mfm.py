@@ -12,12 +12,15 @@ Wahapedia/BSData 是它的结构化镜像（可能滞后），中文 PDF 只是�
 from __future__ import annotations
 
 import json
+import logging
 import re
 import sqlite3
 import time
 import urllib.request
 from pathlib import Path
 from typing import Dict, List, Optional, Tuple
+
+_log = logging.getLogger(__name__)
 
 MFM_BASE = "https://mfm.warhammer-community.com"
 _UA = ("Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 "
@@ -231,6 +234,19 @@ def fetch_faction(slug: str, max_retries: int = 4,
             raise MfmParseBroken(
                 f"{slug}: 页面有 {heads} 个单位表头却解析出 0 条分数——"
                 "解析器对该页断裂（官网改数值/版式形态），不是这个阵营没有单位")
+        # ⚠️ 上面那道只覆盖「全灭」。**部分**丢行同样静默（审查 R2-M8）：某个单位块若只是
+        # 缺档位表头 div，它的全部分数行会被丢掉，而 rows>0 ⇒ 不触发 MfmParseBroken，
+        # 逐阵营 30% / 总量 10% 的缓存对账阈值也拦不住个别单位。这里补一条**与行数正交**
+        # 的信号：表头数 vs 真解析出分数的去重单位数。2026-07-27 全站重抓实测 30/30 页
+        # 两者相等，所以差额＝有单位块解析失败。
+        # 只 warn 不 raise：等值关系靠实测成立而非规格保证，冒然 raise 会在官网加一个
+        # 无分数单位时把整条抓取链打死——那是用一个静默换另一个中断。
+        priced_units = {r[0] for r in rows}
+        if heads and len(priced_units) != heads:
+            _log.warning(
+                "%s: 页面 %d 个单位表头，但只有 %d 个单位解析出分数（差 %d）——"
+                "疑似个别单位块版式变化致其分数行被丢弃，请核对官网原页",
+                slug, heads, len(priced_units), heads - len(priced_units))
         return rows
     raise RuntimeError(f"抓取 {slug} 连续 {max_retries} 次失败: {last}")
 

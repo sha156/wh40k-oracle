@@ -75,9 +75,13 @@ _EMPTY_CHECKS: Dict[str, Callable[[Dict[str, Any]], bool]] = {
     # 一个名字都没解析到时降级兜底，别把「工具空手」留给模型自由发挥（基准 #109 硬错：
     # 四个中文名全查空后模型编出「泰坦军团不是 40K 阵营、无官方点数」的否定性断言）。
     # 只要有一个单位查到就不算空——「查到了但库里没点数」是诚实答案，不该被兜底吞掉。
-    "calc_points": lambda r: (not r.get("found")
-                              or bool(r.get("units"))
-                              and all(u.get("unresolved") for u in r["units"])),
+    # `param_error` 例外（审查 R1-M1）：入参类型写错时 tools.calc_points 也返回
+    # found=False，但那是**模型自己能改对**的错，不是「库里没有」。判空即降级会让它
+    # 看不到「unit_list 应为列表」那句指路，白白丢掉一次恢复机会。
+    "calc_points": lambda r: (not r.get("param_error")
+                              and (not r.get("found")
+                                   or bool(r.get("units"))
+                                   and all(u.get("unresolved") for u in r["units"]))),
 }
 
 

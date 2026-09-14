@@ -178,7 +178,12 @@ def _render_loop_message(msg: Dict[str, Any]) -> Optional[Dict[str, str]]:
         if not isinstance(content, str):
             content = json.dumps(content, ensure_ascii=False, default=_json_default)
         if len(content) > 4000:
-            content = content[:4000] + "…（已截断）"
+            # 保**头尾**而不是只保头（审查 R1-L1）：get_datasheet 叠加中文层后整包常超限，
+            # 而数值多在尾部（武器表、点数、同名消歧披露）——只留前 4000 字等于把答案本身
+            # 切掉，模型却只看到一句「已截断」。
+            head, tail = content[:2600], content[-1200:]
+            content = (f"{head}\n…（中间省略 {len(content) - 3800} 字；"
+                       f"如需被省略的部分，请缩小查询范围后重查）…\n{tail}")
         return {"role": "user", "content": f"[工具 {name} 返回]\n{content}"}
     return None
 

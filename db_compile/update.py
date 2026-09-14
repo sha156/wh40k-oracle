@@ -86,6 +86,21 @@ def _git(bsdata: Path, *args: str) -> subprocess.CompletedProcess:
         capture_output=True, text=True, timeout=180)
 
 
+def _writes_db(fn):
+    """标记：该阶段**会往 db 写东西** ⇒ build 清库后必须补跑。
+
+    `_RESTORE_STAGES` 由这个标记从 `_PIPELINE` 派生（审查 R2-M4），不再是人工副本。
+    从前那份副本靠三条逐一点名的测试盯着（fp_errata 先于 mfm_apply 等），但**没有**
+    「_PIPELINE 里所有写库层都必须出现在 _RESTORE_STAGES 里」的通用断言——将来新增
+    一个写库层只挂 _PIPELINE，build 之后那一层就**静默不恢复**，正是注释里说的
+    「单独 build 静默留下降级库」那把脚枪换了个入口。现在结构上不可能漏，顺序也自动一致。
+
+    注意 `stage_build` 自己不打这个标记：它就是那个清库重建的动作，restore 跑在它之后。
+    """
+    fn.writes_db = True
+    return fn
+
+
 def stage_bsdata_pull(cfg: UpdateConfig) -> StageResult:
     """git pull BSData（--ff-only，避免意外 merge）。失败降级：用现有检出继续。"""
     if cfg.offline:
@@ -183,6 +198,7 @@ def _load_mfm_factions(mfm_json: Path):
     return factions, data.get("fetched_at")
 
 
+@_writes_db
 def stage_mfm_apply(cfg: UpdateConfig) -> StageResult:
     """把官方 MFM 分数写回 units.points_json（build 之后，否则被覆盖）。"""
     if not cfg.mfm_json.exists():
@@ -196,6 +212,7 @@ def stage_mfm_apply(cfg: UpdateConfig) -> StageResult:
         detail=rep)
 
 
+@_writes_db
 def stage_fp_errata(cfg: UpdateConfig) -> StageResult:
     """Faction Pack 兵牌级真漂移外科补丁（build 之后，否则被覆盖）。
 
@@ -221,6 +238,7 @@ def stage_fp_errata(cfg: UpdateConfig) -> StageResult:
         detail=rep, warning=warn)
 
 
+@_writes_db
 def stage_fp_rules(cfg: UpdateConfig) -> StageResult:
     """Faction Pack 规则文本真漂移补丁 + name_zh 补齐（build 之后，否则被覆盖）。
 
@@ -250,6 +268,7 @@ def stage_fp_rules(cfg: UpdateConfig) -> StageResult:
         detail=rep, warning=warn)
 
 
+@_writes_db
 def stage_official_zh(cfg: UpdateConfig) -> StageResult:
     """GW 官方中文名投影（**必须排在 fp_rules 之后**）。
 
@@ -277,6 +296,7 @@ def stage_official_zh(cfg: UpdateConfig) -> StageResult:
         detail=rep, warning="；".join(warns) or None)
 
 
+@_writes_db
 def stage_dsl_apply(cfg: UpdateConfig) -> StageResult:
     """P7 DSL 真源投影（build 之后、fp_rules 之后——指纹要对 11 版化后的文本核）。
 
@@ -306,6 +326,7 @@ def stage_dsl_apply(cfg: UpdateConfig) -> StageResult:
         detail=rep, warning=warn)
 
 
+@_writes_db
 def stage_aliases(cfg: UpdateConfig) -> StageResult:
     """从 data_refined 双语标题重灌中文别名层（build 清库后需重建）。"""
     from db_compile.aliases import populate_aliases
@@ -319,6 +340,7 @@ def stage_aliases(cfg: UpdateConfig) -> StageResult:
                  if rep['collided'] else None))
 
 
+@_writes_db
 def stage_aliases_blackforum(cfg: UpdateConfig) -> StageResult:
     """从黑图书馆开放 API 补中英别名（build 清库后需重灌）。offline/抓取失败复用缓存。"""
     from db_compile.aliases import populate_blackforum_aliases
@@ -338,6 +360,7 @@ def stage_aliases_blackforum(cfg: UpdateConfig) -> StageResult:
                  if rep['collided'] else None))
 
 
+@_writes_db
 def stage_aliases_community(cfg: UpdateConfig) -> StageResult:
     """人工策划的社区俗名层（激素虫=刀虫、阿巴顿=大掠夺者阿巴顿），build 清库后重灌。"""
     from db_compile.community_aliases import populate_community_aliases
@@ -348,6 +371,7 @@ def stage_aliases_community(cfg: UpdateConfig) -> StageResult:
         detail=rep)
 
 
+@_writes_db
 def stage_zh_details(cfg: UpdateConfig) -> StageResult:
     """黑图书馆中文原生 datasheet 入库（build 清库后重灌）：填 units.name_zh + unit_zh_detail 表。
 
@@ -376,6 +400,7 @@ def stage_zh_details(cfg: UpdateConfig) -> StageResult:
                 "overrides": ov_rep})
 
 
+@_writes_db
 def stage_zh_weapons(cfg: UpdateConfig) -> StageResult:
     """中文武器名投影：黑图中文兵牌 × 库内英文武器，按数值指纹离线配对落 weapons.name_zh。
 
@@ -504,21 +529,15 @@ _PIPELINE = [
 
 
 # build 会 unlink 重建整库，清掉官方 MFM 分数/别名/中文层。这些恢复阶段用本地缓存把它们
-# 补回来（离线可跑），是「单独 build 后必须补跑」的那批（_PIPELINE 的 4-9 阶段）。
-_RESTORE_STAGES = [
-    # 层序与 _PIPELINE 一致：fp_errata 先插 fpe_* 新单位，mfm_apply 再定价
-    ("补 Faction Pack 11 版真漂移", stage_fp_errata),
-    ("应用官方 MFM 分数", stage_mfm_apply),
-    ("补 Faction Pack 规则文本真漂移", stage_fp_rules),
-    # 官方中文名要盖在 fp_rules 的 P7 译名之上（宪法 §6：官方 > 人工）
-    ("叠 GW 官方中文名层", stage_official_zh),
-    ("投影 P7 DSL 真源", stage_dsl_apply),
-    ("重灌中文别名层", stage_aliases),
-    ("补黑图书馆中英别名", stage_aliases_blackforum),
-    ("补社区俗名层", stage_aliases_community),
-    ("灌黑图书馆中文 datasheet 层", stage_zh_details),
-    ("配中文武器名（数值指纹）", stage_zh_weapons),
-]
+# 补回来（离线可跑），是「单独 build 后必须补跑」的那批。
+#
+# **从 _PIPELINE 派生，不是人工副本**（审查 R2-M4）：凡是打了 @_writes_db 的阶段自动进来，
+# 顺序也自动与 _PIPELINE 一致——所以下面这些关键层序是**结构保证**而非靠人记：
+#   · fp_errata 先于 mfm_apply（先插 fpe_* 新单位，再定价；反过来点数永久 NULL 且三道校验全静默）
+#   · official_zh 后于 fp_rules（宪法 §6 官方中文名要盖在 P7 人工译名之上）
+# 新增写库层时只要打上 @_writes_db 就同时进两条管线，漏挂 restore 这条路已经堵死。
+_RESTORE_STAGES = [(title, fn) for (title, fn, _critical) in _PIPELINE
+                   if getattr(fn, "writes_db", False)]
 
 
 def restore_authority_layers(cfg: UpdateConfig) -> UpdateReport:

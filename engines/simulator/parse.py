@@ -12,6 +12,7 @@ parse.py 可 import numpy（采样是引擎数学，不碰 DB）；contracts.py 
 from __future__ import annotations
 
 import json
+import logging
 import re
 from dataclasses import dataclass
 from typing import List, Optional, Tuple, Union
@@ -19,6 +20,8 @@ from typing import List, Optional, Tuple, Union
 import numpy as np
 
 from engines.simulator.contracts import DiceExpr
+
+_log = logging.getLogger(__name__)
 
 
 class ParseError(ValueError):
@@ -90,16 +93,38 @@ def norm_stat_int(value) -> Optional[int]:
         return None
 
 
+# AP 里表示「无穿甲」的各种写法，含 unicode 连字符/减号
+_AP_ZERO_TOKENS = frozenset({"-", "–", "—", "‑", "−", "", "-0", "+0"})
+# unicode 连字符/减号 → ASCII，与 norm_stat_int 认 `*` 脚注的做法对称（审查 R1-M6）
+_AP_DASH_TRANSLATE = str.maketrans({"‑": "-", "−": "-", "–": "-", "—": "-"})
+
+
 def parse_ap(value) -> int:
-    """AP 归一：负值保留（-1/-2），`-`/`-0`/空 → 0。"""
+    """AP 归一：负值保留（-1/-2），`-`/`-0`/空 → 0。
+
+    与 `norm_stat_int` **对称**（审查 R1-M6）：同样认 `*` 脚注、同样把 unicode
+    连字符/减号折成 ASCII。原实现的 `except ValueError: return 0` 把任何解析不了的
+    AP 一律当「无穿甲」——不抛错、不记账、不告警，和 `(\\d+) pts` 对千分位零容忍
+    是同一款失效形状（静默、方向偏保守、无信号），而且当时 `parse_ap('-1*')` 给 0、
+    `norm_stat_int('-1*')` 给 -1，同一个文件里两套标准。
+
+    真库实测 0 行受影响（`weapons.ap` 只有 9 种取值且全部解析正确），所以这里不改
+    返回契约（仍是 int，`profile.py:77` 直接用），只做两件事：**能解析的解析对**、
+    **解析不了的吼一声**——别再让归零发生在无人知晓的地方。
+    """
     if value is None:
         return 0
     s = str(value).strip()
-    if s in ("-", "–", "—", "", "-0", "+0"):
+    if s in _AP_ZERO_TOKENS:
+        return 0
+    s = s.translate(_AP_DASH_TRANSLATE).replace("*", "").replace(" ", "")
+    if s in _AP_ZERO_TOKENS:
         return 0
     try:
         return int(s)
     except ValueError:
+        _log.warning("parse_ap 无法解析 AP 值 %r，按 0（无穿甲）计入——"
+                     "上游若新引入了这种写法，请在此补归一规则而不是听任它静默归零", value)
         return 0
 
 

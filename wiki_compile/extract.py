@@ -105,8 +105,15 @@ def extract_book(book_dir: Path) -> List[EntityCandidate]:
             key = (zh, en)
             if noise:
                 cand = by_key.get(key)
-                if cand is not None and page_no not in cand.pages:
-                    cand.pages.append(page_no)
+                if cand is not None:
+                    if page_no not in cand.pages:
+                        cand.pages.append(page_no)
+                else:
+                    # 噪声标题（「XX详解」）**先于**同名主标题出现时，by_key 里还没有
+                    # 这个实体，这一页的页码就被静默丢掉了（审查 R2-L2）。同文件上面的
+                    # 「无归属续页」是有告警的——两处标准不一致，这里补齐。
+                    print("[extract] 警告：解说标题 《{}》 第 {} 页「{}」出现在主标题之前，"
+                          "该页页码未计入实体".format(book_dir.name, page_no, heading))
                 continue
             cand = by_key.get(key)
             if cand is None:

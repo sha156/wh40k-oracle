@@ -168,11 +168,27 @@ def _refine_coverage(book_dir: Path, total_pages: int) -> float:
 
     fallback=True 的页是 LLM 失败后写入原始文本的兜底（H7），需要重跑，
     不计入已覆盖——否则 --chinese-only 会把失败页当完成、永不重试。
-    无 meta.json 的页按旧行为计入（无从判断，且 is_cached 自会重跑它）。"""
+    无 meta.json 的页按旧行为计入（无从判断，且 is_cached 自会重跑它）。
+
+    分母扣掉 `skipped_pages.json` 登记的空白页（审查 R1-L3）：那些页 `< MIN_TEXT_CHARS`、
+    **永远不会产出 .md**，留在分母里会让覆盖率在数学上到不了 1.0——空白页超 10% 的 PDF
+    因此会被 `--chinese-only` 的 0.9 阈值反复重扫。登记表缺失/损坏时退回总页数口径
+    （宁可低估、多扫一遍，也不虚报覆盖）。"""
     if not book_dir.is_dir():
         return 0.0
     if total_pages <= 0:
         return 0.0
+    denom = total_pages
+    skipped_path = book_dir / "skipped_pages.json"
+    if skipped_path.exists():
+        try:
+            skipped = json.loads(skipped_path.read_text(encoding="utf-8"))
+            if isinstance(skipped, list):
+                denom = max(total_pages - len(set(skipped)), 0)
+        except (json.JSONDecodeError, OSError):
+            pass                       # 登记表坏了 → 退回旧口径，不猜
+    if denom <= 0:
+        return 1.0                     # 整本都是空白页：没有可 refine 的东西，别反复重扫
     md_count = 0
     for md_file in book_dir.glob("page_*.md"):
         meta_path = md_file.with_name(md_file.stem + ".meta.json")
@@ -184,7 +200,7 @@ def _refine_coverage(book_dir: Path, total_pages: int) -> float:
             except (json.JSONDecodeError, OSError):
                 pass
         md_count += 1
-    return md_count / total_pages
+    return md_count / denom
 
 
 def _verify_warn_pages(out_root: Path) -> List[Path]:
@@ -268,7 +284,11 @@ def process_book(client, pdf_path: Path, out_root: Path, workers: int = 4, lang:
                 tqdm.write("  第{}页失败，写入原始文本兜底: {}".format(p["page"], e))
                 save_page(book_dir, p["page"], p["text"], {
                     "sha256": p["sha256"], "prompt_version": pv,
-                    "model": MODEL, "verify_ok": True, "fallback": True,
+                    # verify_ok=None ＝「没校验过」，**不是**「校验通过」（审查 R1-L2）。
+                    # 这页是 LLM 失败后落的原始文本兜底，verify_numbers 压根没跑过；
+                    # 写 True 是让一个从未被校验的页自称通过，_verify_warn_pages 的
+                    # 口径会因此失真（未校验被计进"已通过"那一侧）。
+                    "model": MODEL, "verify_ok": None, "fallback": True,
                 })
     return summary
 

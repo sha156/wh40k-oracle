@@ -20,6 +20,7 @@ from typing import Callable, Dict, List, Optional, Set, Tuple
 
 from wiki_engine.models import (
     GENERATED_MD_NAMES,
+    REPORT_MD_NAMES,
     LintIssue,
     LintResult,
     WikiPage,
@@ -52,14 +53,37 @@ def _all_md_files(wiki_root: Path) -> Set[str]:
 
 
 def _iter_source_md_files(wiki_root: Path):
-    """遍历应作为"出链来源"检查的 .md 文件：排除流水线生成产物。
+    """遍历「应带 frontmatter 的实体页」：排除全部流水线生成产物。
 
     排除集与 build_outputs.scan_wiki_pages 对齐（models.GENERATED_MD_NAMES），
     否则 lint 会扫描自己生成的 lint-report.md，把报告里的 [[断链示例]]
     当成新断链，假阳性永久自我复现（H15）。
+
+    ⚠️ 断链检查**不要**用这个迭代器，用下面的 `_iter_link_source_md_files`。
     """
     for md_file in sorted(wiki_root.rglob("*.md")):
         if md_file.name in GENERATED_MD_NAMES:
+            continue
+        yield md_file
+
+
+def _iter_link_source_md_files(wiki_root: Path):
+    """遍历「出链需要检查」的 .md 文件：只排除**报告类**生成产物（审查 R2-M2）。
+
+    排除报告类（lint-report.md / alias-conflicts.md / log.md / _from_db_drift.md）是
+    因为它们正文里有示例断链，lint 扫自己的报告会让假阳性永久自我复现（H15）。
+
+    但**索引类**生成物（index.md / terms.md / keywords.md）的链接都是真链接，
+    此前跟报告类一起被排除，导致 25 个阵营 index + changelog / core-rules / keywords
+    索引里共 **4809 条 wikilink 从不被检查**——「lint 0 error」这个门禁对 wiki 近一半的
+    链接是沉默的。
+
+    ⚠️ 与 `_iter_source_md_files` 分开是必须的：索引类生成物**本来就没有 frontmatter**，
+    拿它们喂 frontmatter-parse 规则会凭空造出 28 条 error（实测）。同一个「要不要扫」的
+    问题，对断链和对 frontmatter 是两个答案。
+    """
+    for md_file in sorted(wiki_root.rglob("*.md")):
+        if md_file.name in REPORT_MD_NAMES:
             continue
         yield md_file
 
@@ -73,7 +97,7 @@ def check_broken_links(wiki_root: Path) -> List[LintIssue]:
     all_targets = all_files | {f.replace(".md", "") for f in all_files}
     issues: List[LintIssue] = []
 
-    for md_file in _iter_source_md_files(wiki_root):
+    for md_file in _iter_link_source_md_files(wiki_root):
         rel = str(md_file.relative_to(wiki_root)).replace("\\", "/")
         try:
             text = md_file.read_text(encoding="utf-8")
@@ -142,10 +166,21 @@ def check_raw_backlinks(
 
 
 def check_index_consistency(wiki_root: Path) -> List[LintIssue]:
-    """检查 index.md 中每个链接是否指向存在的页面。"""
+    """检查**每个** index.md 里的 Markdown 链接是否指向存在的页面。
+
+    覆盖面（审查 R2-M2）：此前只查根 `wiki/index.md` 一个文件，25 个阵营 index、
+    `changelog/index.md`、`core-rules/index.md` 里的 Markdown 链接一条都不查。
+    wikilink 那一侧由 `check_broken_links` 负责（现在也扫索引类生成物了），
+    两条通道合起来这些索引页才算真被门禁盖住。
+
+    链接基准两可（有的写相对 wiki 根、有的写相对自己所在目录），所以两种解释
+    **都试**，都落空才算断链——宁可漏报也不误报，免得门禁被噪声淹没。
+    """
+    import posixpath
+
     issues: List[LintIssue] = []
-    index_path = wiki_root / "index.md"
-    if not index_path.exists():
+    root_index = wiki_root / "index.md"
+    if not root_index.exists():
         issues.append(LintIssue(
             severity="error",
             rule="index-consistency",
@@ -158,21 +193,30 @@ def check_index_consistency(wiki_root: Path) -> List[LintIssue]:
     all_files = _all_md_files(wiki_root)
     all_targets = all_files | {f.replace(".md", "") for f in all_files}
 
-    text = index_path.read_text(encoding="utf-8")
-    # 提取 Markdown 链接 [name](path) 和 [[path]]
-    for m in re.finditer(r"\[([^\]]*?)\]\(([^)]+?)\)", text):
-        path = m.group(2).strip()
-        # 去掉 .md 后缀用于匹配
-        if path.endswith(".md"):
-            path = path[:-3]
-        if path and path not in all_targets:
-            issues.append(LintIssue(
-                severity="warning",
-                rule="index-consistency",
-                page_path="index.md",
-                message="索引链接无效: [{}]({})".format(m.group(1), m.group(2)),
-                auto_fixable=False,
-            ))
+    for index_path in sorted(wiki_root.rglob("index.md")):
+        page_rel = str(index_path.relative_to(wiki_root)).replace("\\", "/")
+        rel_dir = str(index_path.parent.relative_to(wiki_root)).replace("\\", "/")
+        text = index_path.read_text(encoding="utf-8")
+        for m in re.finditer(r"\[([^\]]*?)\]\(([^)]+?)\)", text):
+            raw = m.group(2).strip()
+            if raw.startswith(("http://", "https://", "mailto:", "#")):
+                continue
+            path = raw.split("#", 1)[0].strip()
+            if not path:
+                continue
+            if path.endswith(".md"):
+                path = path[:-3]
+            candidates = {path}
+            if rel_dir not in (".", ""):
+                candidates.add(posixpath.normpath(f"{rel_dir}/{path}"))
+            if not (candidates & all_targets):
+                issues.append(LintIssue(
+                    severity="warning",
+                    rule="index-consistency",
+                    page_path=page_rel,
+                    message="索引链接无效: [{}]({})".format(m.group(1), m.group(2)),
+                    auto_fixable=False,
+                ))
     return issues
 
 

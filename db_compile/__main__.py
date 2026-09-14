@@ -389,8 +389,14 @@ def main() -> None:
             if not csv_path.exists():
                 raise SystemExit(f"{csv_path} 不存在，先跑 --fetch")
             rep = apply_enhancements(Path(args.db), load_rows(csv_path))
-            print(f"\n强化落库：插入 {rep['inserted']} / 表内 {rep['table_total']} 条 / "
-                  f"覆盖 {rep['detachments']} 分队")
+            print(f"\n强化落库：读入 {rep['rows_in']} / 插入 {rep['inserted']} / "
+                  f"表内 {rep['table_total']} 条 / 覆盖 {rep['detachments']} 分队")
+            if rep["dropped_no_id"]:
+                # 静默丢行是 CSV 换版式最典型的症状（审查 R2-M6）。这里必须吼，
+                # 否则「插入 N 条」是过滤后的 N，自己跟自己永远对得上。
+                print(f"  ⚠️ {rep['dropped_no_id']} 行因缺 id 被丢弃"
+                      f"（上游 CSV 版式可能变了，先跑 `--check` 对账）："
+                      + "、".join(rep["dropped_no_id_names"]))
             print("  注意：build 重建会一并重导（已进 build 流程），无需手动 restore")
             if rep["cleared_overlay"]:
                 names = {"name_zh": "官方中文名", "effect_dsl_json": "DSL 投影"}

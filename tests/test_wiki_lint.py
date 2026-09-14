@@ -301,12 +301,33 @@ class TestGeneratedFilesNotScanned:
         issues = check_broken_links(wiki)
         assert [i for i in issues if i.rule == "broken-links"] == []
 
-    def test_terms_and_log_md_not_scanned(self, tmp_path):
+    def test_report_md_not_scanned(self, tmp_path):
+        """报告类生成物（log.md 等）仍不扫：它们正文里有示例断链，扫了会假阳性自我复现。"""
         wiki = self._clean_wiki(tmp_path)
-        (wiki / "terms.md").write_text("[[另一个不存在目标]]", encoding="utf-8")
         (wiki / "log.md").write_text("| x | [[第三个不存在目标]] |", encoding="utf-8")
         issues = check_broken_links(wiki)
         assert [i for i in issues if i.rule == "broken-links"] == []
+
+    def test_index_md_generated_products_are_scanned(self, tmp_path):
+        """⚠️ 与上一条相反：**索引类**生成物（terms.md / index.md / keywords.md）
+        的链接都是真链接，必须扫（审查 R2-M2）。
+
+        从前它们和报告类一起被一刀切排除，导致生成物里 **4809 条 wikilink 从不被检查**——
+        「lint 0 error」这个门禁对 wiki 近一半的链接是沉默的。这条测试就是那道门禁。"""
+        wiki = self._clean_wiki(tmp_path)
+        (wiki / "terms.md").write_text("[[另一个不存在目标]]", encoding="utf-8")
+        broken = [i for i in check_broken_links(wiki) if i.rule == "broken-links"]
+        assert len(broken) == 1 and "另一个不存在目标" in broken[0].message
+
+    def test_faction_index_broken_link_is_flagged(self, tmp_path):
+        """阵营 index.md（25 个）同属索引类生成物，一样要查。"""
+        wiki = self._clean_wiki(tmp_path)
+        idx = wiki / "factions" / "test" / "index.md"
+        idx.parent.mkdir(parents=True, exist_ok=True)
+        idx.write_text("# 测试阵营\n- [[factions/test/units/根本没有.md|没有]]\n",
+                       encoding="utf-8")
+        broken = [i for i in check_broken_links(wiki) if i.rule == "broken-links"]
+        assert len(broken) == 1 and "根本没有" in broken[0].message
 
     def test_real_page_broken_link_still_flagged(self, tmp_path):
         # 排除生成产物不能顺带把真实页面的断链也放过

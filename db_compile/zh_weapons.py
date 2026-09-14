@@ -27,6 +27,8 @@ from collections import Counter, defaultdict
 from pathlib import Path
 from typing import Any, Dict, List, Optional, Tuple
 
+from db_compile.active_units import active_unit_ids
+
 # Pass C 的把关阈值：阵营内多数派要够压倒；跨阵营要样本够多且多数派同样压倒
 # （少数派多是同义风格差异——格斗武器/近战武器、爆弹/爆矢——不是错译；但样本太少时
 #  一次错配就能当选，所以跨阵营额外要求 ≥3 次观测）
@@ -469,16 +471,13 @@ def missing_terms(db_path) -> List[Tuple[str, int, str]]:
     """现役单位里仍缺中文名的武器：[(英文名, 出现行数, 举例单位)]，按出现次数降序。
 
     这是"还要人工补译多少"的工单。只看现役单位——传承/福基世界条目没人玩，不值当。
+
+    「现役」走 `db_compile.active_units`（MFM ∪ 黑图书馆）。这里曾用只看 MFM 的窄口径，
+    比真实在售面少 141 个单位，那 141 个的缺译**永远不会出现在这张工单上**（审查 R2-M1）。
     """
     conn = sqlite3.connect(str(db_path))
     try:
-        cur_ids = set()
-        for uid, pj in conn.execute("SELECT id, points_json FROM units"):
-            try:
-                if pj and (json.loads(pj) or {}).get("mfm"):
-                    cur_ids.add(uid)
-            except (json.JSONDecodeError, TypeError):
-                continue
+        cur_ids = active_unit_ids(conn)
         cnt: Counter = Counter()
         sample: Dict[str, str] = {}
         for uid, nen, nz, unm in conn.execute(
@@ -505,16 +504,14 @@ def _load_overrides() -> Dict[str, str]:
 
 
 def coverage_report(db_path) -> Dict[str, Any]:
-    """中文武器名覆盖率：全库 / 现役单位（现役=在官方现行 MFM 点数表里）。"""
+    """中文武器名覆盖率：全库 / 现役单位。
+
+    「现役」= MFM ∪ 黑图书馆（`db_compile.active_units`）。旧实现只看 MFM，
+    百分比是在一个窄 141 个单位的池子上算的——「100% 可能只是比得少」（审查 R2-M1）。
+    """
     conn = sqlite3.connect(str(db_path))
     try:
-        cur_ids = set()
-        for uid, pj in conn.execute("SELECT id, points_json FROM units"):
-            try:
-                if pj and (json.loads(pj) or {}).get("mfm"):
-                    cur_ids.add(uid)
-            except (json.JSONDecodeError, TypeError):
-                continue
+        cur_ids = active_unit_ids(conn)
         tot = zh = cur_tot = cur_zh = 0
         for uid, nz in conn.execute("SELECT unit_id, name_zh FROM weapons"):
             has = bool(nz and nz.strip())

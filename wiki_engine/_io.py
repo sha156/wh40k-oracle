@@ -17,6 +17,11 @@ from typing import Dict, Optional
 GEN_HASHES_NAME = ".gen_hashes.json"
 
 
+class GenHashesCorrupt(RuntimeError):
+    """哈希登记表损坏。**不许降级成空表**（审查 R2-M7）：空表会让「检测到人工编辑
+    就跳过覆盖」这道保护整个消失（`registered is None` ⇒ 无条件覆盖），而不是变严。"""
+
+
 def atomic_write_text(path: Path, text: str, encoding: str = "utf-8",
                       newline: Optional[str] = None) -> None:
     """原子写文本：先写同目录临时文件，再 os.replace 覆盖目标。
@@ -44,16 +49,34 @@ def text_sha256(text: str) -> str:
 
 
 def load_gen_hashes(wiki_root: Path) -> Dict[str, str]:
-    """读取生成内容哈希登记表；缺失/损坏/结构异常一律返回空表（安全降级）。"""
+    """读取生成内容哈希登记表。**文件不存在**返回空表（首次生成的正常情形）；
+    **损坏/结构异常**抛 `GenHashesCorrupt`（审查 R2-M7）。
+
+    为什么损坏不能也返回空表：调用链是
+    `load_gen_hashes → {} → entity_pages._write 里 registered is None → 无条件覆盖`，
+    于是「检测到人工编辑就跳过覆盖」这道保护在登记表损坏时**不是变严而是整个消失**，
+    `report["conflicts"]` 恒为空，CLI 还照常打印一切正常。安全降级的方向应当是
+    「宁可不写」或至少吼一声，不是「静默放行全部覆盖」。
+    """
     path = Path(wiki_root) / GEN_HASHES_NAME
     if not path.exists():
         return {}
     try:
-        data = json.loads(path.read_text(encoding="utf-8"))
-    except (OSError, ValueError):
-        return {}
+        raw = path.read_text(encoding="utf-8")
+    except OSError as exc:
+        raise GenHashesCorrupt(
+            f"{path} 读不出来（{exc}）——人工编辑保护会整个失效，"
+            f"先修好或删掉它再跑") from exc
+    try:
+        data = json.loads(raw)
+    except ValueError as exc:
+        raise GenHashesCorrupt(
+            f"{path} 不是合法 JSON（{exc}）——人工编辑保护会整个失效，"
+            f"先修好或删掉它再跑") from exc
     if not isinstance(data, dict):
-        return {}
+        raise GenHashesCorrupt(
+            f"{path} 顶层不是对象（实际 {type(data).__name__}）——"
+            f"人工编辑保护会整个失效，先修好或删掉它再跑")
     return {k: v for k, v in data.items()
             if isinstance(k, str) and isinstance(v, str)}
 
