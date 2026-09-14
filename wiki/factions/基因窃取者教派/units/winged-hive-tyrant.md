@@ -4,17 +4,16 @@ name_zh: 有翼虫巢暴君
 name_en: Winged Hive Tyrant
 faction: 基因窃取者教派
 type: unit
-points:
-  1 model: 170
 tags:
 - unit
 - unit/基因窃取者教派
 - 基因窃取者教派
 version:
+  points: historical / unmatched
   source: official-db
 sources:
 - book: 官方结构库 db/wh40k.sqlite（Wahapedia 11版镜像 + MFM 官方点数）
-updated: '2026-07-23'
+updated: '2026-09-14'
 ---
 
 ## 属性表
@@ -45,6 +44,7 @@ updated: '2026-07-23'
 - **癫狂（灵能）**：在近战阶段开始时，选中一个位于该模型 12"内且对其可见的敌方单位，随后掷一枚D6：如果掷骰结果为1，该灵能者受到 D3 处致命伤；如果掷骰结果为 2+，在该阶段结束前，该敌方单位中模型装备的武器的攻击属性降低1。
 
 ## 单位构成
+历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
 - **1个模型** — 170 分
 
 ## 关键词

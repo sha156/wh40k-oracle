@@ -5,6 +5,7 @@ name_en: Synaptoprescience
 faction: 泰伦虫族
 type: enhancement
 detachment: Talons of the Norn Queen
+cost: 30
 tags:
 - enhancement
 - enhancement/泰伦虫族
@@ -14,11 +15,13 @@ sources:
 updated: '2026-07-26'
 ---
 
-分数未知、[[factions/泰伦虫族/detachments/talons-of-the-norn-queen.md|诺恩女王之爪]] 分队。
+30 分、[[factions/泰伦虫族/detachments/talons-of-the-norn-queen.md|诺恩女王之爪]] 分队。
 
 ## 效果
 
 This unit has 4+ InSv.
+
+**分数**：30 分
 
 ## 携带限制
 

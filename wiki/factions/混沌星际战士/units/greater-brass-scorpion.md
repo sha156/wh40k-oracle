@@ -3,17 +3,16 @@ id: '000001298'
 name_en: Greater Brass Scorpion
 faction: 混沌星际战士
 type: unit
-points:
-  1 model: 500
 tags:
 - unit
 - unit/混沌星际战士
 - 混沌星际战士
 version:
+  points: historical / unmatched
   source: official-db
 sources:
 - book: 官方结构库 db/wh40k.sqlite（Wahapedia 11版镜像 + MFM 官方点数）
-updated: '2026-07-23'
+updated: '2026-09-14'
 ---
 
 ## 属性表
@@ -42,6 +41,7 @@ updated: '2026-07-23'
 - **Runes of the Blood God**：This model has the Feel No Pain 4+ ability against mortal wounds and Psychic Attacks.
 
 ## 单位构成
+历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
 - **1个模型** — 500 分
 
 ## 关键词

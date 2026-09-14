@@ -5,7 +5,7 @@ name_en: Esoteric Explosives
 faction: 帝国特勤
 type: enhancement
 detachment: Veiled Blade Elimination Force
-cost: 40
+cost: 10
 tags:
 - enhancement
 - enhancement/帝国特勤
@@ -15,13 +15,13 @@ sources:
 updated: '2026-07-26'
 ---
 
-40 分、[[factions/帝国特勤/detachments/veiled-blade-elimination-force.md|隐藏利刃歼灭部队]] 分队。
+10 分、[[factions/帝国特勤/detachments/veiled-blade-elimination-force.md|隐藏利刃歼灭部队]] 分队。
 
 ## 效果
 
 Each time this model is targeted with the Grenades Stratagem, 1 mortal wound is inflicted for each D6 roll of 3+ instead of for each 4+.
 
-**分数**：40 分
+**分数**：10 分
 
 ## 携带限制
 

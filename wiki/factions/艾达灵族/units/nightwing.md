@@ -3,17 +3,16 @@ id: '000000623'
 name_en: Nightwing
 faction: 艾达灵族
 type: unit
-points:
-  1 model: 150
 tags:
 - unit
 - unit/艾达灵族
 - 艾达灵族
 version:
+  points: historical / unmatched
   source: official-db
 sources:
 - book: 官方结构库 db/wh40k.sqlite（Wahapedia 11版镜像 + MFM 官方点数）
-updated: '2026-07-23'
+updated: '2026-09-14'
 ---
 
 ## 属性表
@@ -39,6 +38,7 @@ updated: '2026-07-23'
 - **Interceptor**：Each time this model makes a ranged attack that targets a unit that can <span class="kwb">FLY</span>, add 1 to the Hit roll.
 
 ## 单位构成
+历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
 - **1个模型** — 150 分
 
 ## 关键词

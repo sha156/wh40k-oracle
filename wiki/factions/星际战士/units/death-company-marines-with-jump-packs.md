@@ -5,18 +5,18 @@ name_en: Death Company Marines With Jump Packs
 faction: 星际战士
 type: unit
 points:
-  5 models: 120
+  5 models: 115
   10 models: 230
 tags:
 - unit
 - unit/星际战士
 - 星际战士
 version:
-  points: MFM 2026-07-27 15:14
+  points: MFM 2026-09-14T05:51:23.572407+00:00
   source: official-db
 sources:
 - book: 官方结构库 db/wh40k.sqlite（Wahapedia 11版镜像 + MFM 官方点数）
-updated: '2026-07-23'
+updated: '2026-09-14'
 ---
 
 ## 属性表
@@ -47,7 +47,7 @@ updated: '2026-07-23'
 - **黑色狂怒**：每当该模型进行近战攻击时，您可以 重掷命中掷骰。如果该模型所在单位不位于一个或更多己方圣血天使角色模型 6" 范围内，或不位于一个或更多己方牧师模型 12" 内，则那个单位不能进行后撤，并且其中模型的目标控制属性变为 0。”
 
 ## 单位构成
-- **5个模型** — 120 分
+- **5个模型** — 115 分
 - **10个模型** — 230 分
 
 ## 关键词

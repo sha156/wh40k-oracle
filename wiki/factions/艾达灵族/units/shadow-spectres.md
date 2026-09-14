@@ -3,19 +3,16 @@ id: '000000615'
 name_en: Shadow Spectres
 faction: 艾达灵族
 type: unit
-points:
-  5 Shadow Spectres: 115
-  10 Shadow Spectres: 230
-  Shadow Spectre Exarch: 30
 tags:
 - unit
 - unit/艾达灵族
 - 艾达灵族
 version:
+  points: historical / unmatched
   source: official-db
 sources:
 - book: 官方结构库 db/wh40k.sqlite（Wahapedia 11版镜像 + MFM 官方点数）
-updated: '2026-07-23'
+updated: '2026-09-14'
 ---
 
 ## 属性表
@@ -42,6 +39,7 @@ updated: '2026-07-23'
 - **Shade of Twilight**：In your Shooting phase, after this unit has shot, if it is not within Engagement Range of one or more enemy units, it can make a Normal move of up to D6". If it does, until the end of the turn, this unit is not eligible to declare a charge.
 
 ## 单位构成
+历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
 - **5 Shadow Spectres** — 115 分
 - **10 Shadow Spectres** — 230 分
 - **Shadow Spectre Exarch** — 30 分

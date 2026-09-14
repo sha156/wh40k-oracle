@@ -3,17 +3,16 @@ id: '000000010'
 name_en: Boss Zagstruk
 faction: 兽人
 type: unit
-points:
-  1 model: 90
 tags:
 - unit
 - unit/兽人
 - 兽人
 version:
+  points: historical / unmatched
   source: official-db
 sources:
 - book: 官方结构库 db/wh40k.sqlite（Wahapedia 11版镜像 + MFM 官方点数）
-updated: '2026-07-23'
+updated: '2026-09-14'
 ---
 
 ## 属性表
@@ -39,6 +38,7 @@ updated: '2026-07-23'
 - **Plummeting Descent**：You can re-roll Charge rolls made for this model’s unit in a turn in which it was set up on the battlefield from Reserves.
 
 ## 单位构成
+历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
 - **1个模型** — 90 分
 
 ## 关键词

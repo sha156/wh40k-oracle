@@ -15,34 +15,34 @@
 
 ## 单位
 
-- [[factions/吞世者/units/blood-slaughterer|Blood Slaughterer]] — 
-- [[factions/吞世者/units/cerberus|Cerberus]] — 
-- [[factions/吞世者/units/chaos-thunderhawk|Chaos Thunderhawk]] — 
-- [[factions/吞世者/units/deredeo-dreadnought|Deredeo Dreadnought]] — 
-- [[factions/吞世者/units/falchion|Falchion]] — 
-- [[factions/吞世者/units/fellblade|Fellblade]] — 
-- [[factions/吞世者/units/fire-raptor-gunship|Fire Raptor Gunship]] — 
-- [[factions/吞世者/units/greater-brass-scorpion|Greater Brass Scorpion]] — 
-- [[factions/吞世者/units/hell-blade|Hell Blade]] — 
-- [[factions/吞世者/units/hell-talon|Hell Talon]] — 
-- [[factions/吞世者/units/kratos|Kratos]] — 
-- [[factions/吞世者/units/kytan-ravager|Kytan Ravager]] — 
-- [[factions/吞世者/units/land-raider-achilles|Land Raider Achilles]] — 
-- [[factions/吞世者/units/land-raider-proteus|Land Raider Proteus]] — 
-- [[factions/吞世者/units/leviathan-dreadnought|Leviathan Dreadnought]] — 
-- [[factions/吞世者/units/mastodon|Mastodon]] — 
-- [[factions/吞世者/units/rapier-carrier|Rapier Carrier]] — 
-- [[factions/吞世者/units/relic-contemptor-dreadnought|Relic Contemptor Dreadnought]] — 
-- [[factions/吞世者/units/sicaran-battle-tank|Sicaran Battle Tank]] — 
-- [[factions/吞世者/units/sicaran-punisher|Sicaran Punisher]] — 
-- [[factions/吞世者/units/sicaran-venator|Sicaran Venator]] — 
-- [[factions/吞世者/units/sokar-pattern-stormbird|Sokar-pattern Stormbird]] — 
-- [[factions/吞世者/units/spartan|Spartan]] — 
-- [[factions/吞世者/units/storm-eagle-gunship|Storm Eagle Gunship]] — 
-- [[factions/吞世者/units/terrax-pattern-termite|Terrax-pattern Termite]] — 
-- [[factions/吞世者/units/typhon|Typhon]] — 
-- [[factions/吞世者/units/whirlwind-scorpius|Whirlwind Scorpius]] — 
-- [[factions/吞世者/units/xiphon-interceptor|Xiphon Interceptor]] — 
+- [[factions/吞世者/units/blood-slaughterer|Blood Slaughterer]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
+- [[factions/吞世者/units/cerberus|Cerberus]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
+- [[factions/吞世者/units/chaos-thunderhawk|Chaos Thunderhawk]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
+- [[factions/吞世者/units/deredeo-dreadnought|Deredeo Dreadnought]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
+- [[factions/吞世者/units/falchion|Falchion]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
+- [[factions/吞世者/units/fellblade|Fellblade]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
+- [[factions/吞世者/units/fire-raptor-gunship|Fire Raptor Gunship]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
+- [[factions/吞世者/units/greater-brass-scorpion|Greater Brass Scorpion]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
+- [[factions/吞世者/units/hell-blade|Hell Blade]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
+- [[factions/吞世者/units/hell-talon|Hell Talon]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
+- [[factions/吞世者/units/kratos|Kratos]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
+- [[factions/吞世者/units/kytan-ravager|Kytan Ravager]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
+- [[factions/吞世者/units/land-raider-achilles|Land Raider Achilles]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
+- [[factions/吞世者/units/land-raider-proteus|Land Raider Proteus]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
+- [[factions/吞世者/units/leviathan-dreadnought|Leviathan Dreadnought]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
+- [[factions/吞世者/units/mastodon|Mastodon]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
+- [[factions/吞世者/units/rapier-carrier|Rapier Carrier]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
+- [[factions/吞世者/units/relic-contemptor-dreadnought|Relic Contemptor Dreadnought]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
+- [[factions/吞世者/units/sicaran-battle-tank|Sicaran Battle Tank]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
+- [[factions/吞世者/units/sicaran-punisher|Sicaran Punisher]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
+- [[factions/吞世者/units/sicaran-venator|Sicaran Venator]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
+- [[factions/吞世者/units/sokar-pattern-stormbird|Sokar-pattern Stormbird]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
+- [[factions/吞世者/units/spartan|Spartan]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
+- [[factions/吞世者/units/storm-eagle-gunship|Storm Eagle Gunship]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
+- [[factions/吞世者/units/terrax-pattern-termite|Terrax-pattern Termite]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
+- [[factions/吞世者/units/typhon|Typhon]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
+- [[factions/吞世者/units/whirlwind-scorpius|Whirlwind Scorpius]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
+- [[factions/吞世者/units/xiphon-interceptor|Xiphon Interceptor]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
 - [[factions/吞世者/units/defiler|亵渎者]] — 
 - [[factions/吞世者/units/eightbound|八缚者]] — 
 - [[factions/吞世者/units/bloodthirster|嗜血狂魔]] — 
@@ -134,22 +134,22 @@
 - [[factions/吞世者/enhancements/vox-diabolus|Vox-diabolus]] — 20 分、怒火容器 分队。
 - [[factions/吞世者/enhancements/unleash-hell|倾泻火力]] — 10 分、Goretrack Onslaught 分队。
 - [[factions/吞世者/enhancements/murderous-onslaught|凶残猛攻]] — 5 分、Goretrack Onslaught 分队。
-- [[factions/吞世者/enhancements/battle-lust-berzerker-warband|好战强欲]] — 10 分、Berzerker Warband 分队。
+- [[factions/吞世者/enhancements/battle-lust-berzerker-warband|好战强欲]] — 20 分、Berzerker Warband 分队。
 - [[factions/吞世者/enhancements/battle-lust-boarding-butchers|好战欲]] — 0 分、Boarding Butchers 分队。
 - [[factions/吞世者/enhancements/butcher-lord|屠夫领主]] — 10 分、Cult of Blood 分队。
-- [[factions/吞世者/enhancements/talons-of-butchery|屠戮利爪（更新）]] — 分数未知、好战机械 分队。
+- [[factions/吞世者/enhancements/talons-of-butchery|屠戮利爪（更新）]] — 20 分、好战机械 分队。
 - [[factions/吞世者/enhancements/strategic-slaughter|屠戮布阵]] — 20 分、Cult of Blood 分队。
-- [[factions/吞世者/enhancements/sanctified-in-slaughter|屠戮祝圣]] — 分数未知、Butchers of Khorne 分队。
+- [[factions/吞世者/enhancements/sanctified-in-slaughter|屠戮祝圣]] — 15 分、Butchers of Khorne 分队。
 - [[factions/吞世者/enhancements/disciple-of-khorne|恐虐信徒]] — 15 分、Khorne Daemonkin 分队。
-- [[factions/吞世者/enhancements/favoured-of-khorne|恐虐爱将]] — 15 分、Berzerker Warband 分队。
+- [[factions/吞世者/enhancements/favoured-of-khorne|恐虐爱将]] — 20 分、Berzerker Warband 分队。
 - [[factions/吞世者/enhancements/chosen-of-khorne|恐虐神选]] — 0 分、Boarding Butchers 分队。
 - [[factions/吞世者/enhancements/malicious-vigour|恶意活力]] — 30 分、Possessed Slaughterband 分队。
 - [[factions/吞世者/enhancements/icon-of-war|战争圣像]] — 25 分、Khorne Daemonkin 分队。
 - [[factions/吞世者/enhancements/blade-of-endless-bloodshed|无尽血战之刃]] — 30 分、Khorne Daemonkin 分队。
 - [[factions/吞世者/enhancements/violent-demise|暴烈临终]] — 10 分、Possessed Slaughterband 分队。
 - [[factions/吞世者/enhancements/killing-clarity|杀戮澄明]] — 15 分、Possessed Slaughterband 分队。
-- [[factions/吞世者/enhancements/murder-forged-entity|杀戮造物]] — 分数未知、好战机械 分队。
-- [[factions/吞世者/enhancements/gore-stained-veterans|浴血老兵]] — 分数未知、Butchers of Khorne 分队。
+- [[factions/吞世者/enhancements/murder-forged-entity|杀戮造物]] — 15 分、好战机械 分队。
+- [[factions/吞世者/enhancements/gore-stained-veterans|浴血老兵]] — 20 分、Butchers of Khorne 分队。
 - [[factions/吞世者/enhancements/aggressive-deployment|激进部署]] — 20 分、Goretrack Onslaught 分队。
 - [[factions/吞世者/enhancements/infernal-infusion|炼狱灌注]] — 25 分、Goretrack Onslaught 分队。
 - [[factions/吞世者/enhancements/frenzied|狂乱]] — 0 分、Skullsworn 分队。
@@ -160,6 +160,6 @@
 - [[factions/吞世者/enhancements/gateways-to-glory|荣耀道路]] — 10 分、怒火容器 分队。
 - [[factions/吞世者/enhancements/chosen-of-the-blood-god|血神神选]] — 15 分、Cult of Blood 分队。
 - [[factions/吞世者/enhancements/blood-forged-armour|血铸甲]] — 20 分、Khorne Daemonkin 分队。
-- [[factions/吞世者/enhancements/archslaughterer|顶尖屠杀者]] — 25 分、怒火容器 分队。
+- [[factions/吞世者/enhancements/archslaughterer|顶尖屠杀者]] — 30 分、怒火容器 分队。
 - [[factions/吞世者/enhancements/brazen-form|黄铜之躯]] — 25 分、Cult of Blood 分队。
 

@@ -3,17 +3,16 @@ id: '000004179'
 name_en: Judiciar Xacharus
 faction: 星际战士
 type: unit
-points:
-  1 model: 75
 tags:
 - unit
 - unit/星际战士
 - 星际战士
 version:
+  points: historical / unmatched
   source: official-db
 sources:
 - book: 官方结构库 db/wh40k.sqlite（Wahapedia 11版镜像 + MFM 官方点数）
-updated: '2026-07-23'
+updated: '2026-09-14'
 ---
 
 ## 属性表
@@ -39,6 +38,7 @@ updated: '2026-07-23'
 - **Indomitable Assault**：Each time a model in this unit makes a Consolidation move, it can move up to 6" instead of up to 3".
 
 ## 单位构成
+历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
 - **1个模型** — 75 分
 
 ## 关键词

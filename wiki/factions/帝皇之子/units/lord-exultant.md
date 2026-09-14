@@ -5,17 +5,17 @@ name_en: Lord Exultant
 faction: 帝皇之子
 type: unit
 points:
-  1 model: 80
+  1 model: 90
 tags:
 - unit
 - unit/帝皇之子
 - 帝皇之子
 version:
-  points: MFM 2026-07-27 15:14
+  points: MFM 2026-09-14T05:51:23.572407+00:00
   source: official-db
 sources:
 - book: 官方结构库 db/wh40k.sqlite（Wahapedia 11版镜像 + MFM 官方点数）
-updated: '2026-07-23'
+updated: '2026-09-14'
 ---
 
 ## 属性表
@@ -50,7 +50,7 @@ updated: '2026-07-23'
 - **战帮之主**：如果本模型在宣布战斗阵型步骤时加入 一个帝皇之子战线单位，则获得【斥候 6】与【渗 透】。
 
 ## 单位构成
-- **1个模型** — 80 分
+- **1个模型** — 90 分
 
 ## 关键词
 - **阵营关键词**：Emperor’s Children

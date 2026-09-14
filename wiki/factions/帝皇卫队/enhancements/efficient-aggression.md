@@ -7,6 +7,7 @@ aliases:
 faction: 帝皇卫队
 type: enhancement
 detachment: Tharanatoi Hammerblow
+cost: 25
 tags:
 - enhancement
 - enhancement/帝皇卫队
@@ -16,11 +17,13 @@ sources:
 updated: '2026-07-26'
 ---
 
-分数未知、[[factions/帝皇卫队/detachments/tharanatoi-hammerblow.md|雷灭锤击]] 分队。
+25 分、[[factions/帝皇卫队/detachments/tharanatoi-hammerblow.md|雷灭锤击]] 分队。
 
 ## 效果
 
 (Once per turn, per army) In your opponent’s Shooting phase, when an enemy unit has shot, if this unit lost a wound as a result of those attacks, this unit can make a surge move of up to D6+1".
+
+**分数**：25 分
 
 ## 携带限制
 

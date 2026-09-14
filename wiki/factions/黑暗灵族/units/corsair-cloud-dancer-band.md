@@ -3,20 +3,16 @@ id: '000004170'
 name_en: Corsair Cloud Dancer Band
 faction: 黑暗灵族
 type: unit
-points:
-  3 models: 105
-  4 models: 140
-  6 models: 210
-  7 models: 245
 tags:
 - unit
 - unit/黑暗灵族
 - 黑暗灵族
 version:
+  points: historical / unmatched
   source: official-db
 sources:
 - book: 官方结构库 db/wh40k.sqlite（Wahapedia 11版镜像 + MFM 官方点数）
-updated: '2026-07-23'
+updated: '2026-09-14'
 ---
 
 ## 属性表
@@ -46,6 +42,7 @@ updated: '2026-07-23'
 - **Reckless Abandon**：You can target this unit with the Heroic Intervention Stratagem for 0CP, and can do so even if you have already used that Stratagem on a different unit this phase.
 
 ## 单位构成
+历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
 - **3个模型** — 105 分
 - **4个模型** — 140 分
 - **6个模型** — 210 分

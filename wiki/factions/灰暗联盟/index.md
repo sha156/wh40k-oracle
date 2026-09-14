@@ -121,25 +121,25 @@
 - [[factions/灰暗联盟/enhancements/nomad-strategist|Nomad Strategist]] — 20 分、Persecution Prospect 分队。
 - [[factions/灰暗联盟/enhancements/oathbound-speculator|Oathbound Speculator]] — 30 分、Needgaârd Oathband 分队。
 - [[factions/灰暗联盟/enhancements/obsessive-drive|Obsessive Drive]] — 0 分、Void Salvagers 分队。
-- [[factions/灰暗联盟/enhancements/optimised-attack-lines|Optimised Attack Lines]] — 分数未知、装甲先驱 分队。
+- [[factions/灰暗联盟/enhancements/optimised-attack-lines|Optimised Attack Lines]] — 15 分、装甲先驱 分队。
 - [[factions/灰暗联盟/enhancements/piledriver|Piledriver]] — 15 分、Dêlve Assault Shift 分队。
 - [[factions/灰暗联盟/enhancements/precursive-judgement|Precursive Judgement]] — 15 分、Brandfast Oathband 分队。
 - [[factions/灰暗联盟/enhancements/quake-supervisor|Quake Supervisor]] — 20 分、Dêlve Assault Shift 分队。
-- [[factions/灰暗联盟/enhancements/saturation-rounds|Saturation Rounds]] — 分数未知、装甲先驱 分队。
+- [[factions/灰暗联盟/enhancements/saturation-rounds|Saturation Rounds]] — 15 分、装甲先驱 分队。
 - [[factions/灰暗联盟/enhancements/signature-restoration|Signature Restoration]] — 5 分、Brandfast Oathband 分队。
 - [[factions/灰暗联盟/enhancements/surgical-saboteur|Surgical Saboteur]] — 10 分、Persecution Prospect 分队。
 - [[factions/灰暗联盟/enhancements/tactical-alchemy|Tactical Alchemy]] — 10 分、Brandfast Oathband 分队。
 - [[factions/灰暗联盟/enhancements/trivärg-cyber-implant|Trivärg Cyber Implant]] — 40 分、Brandfast Oathband 分队。
 - [[factions/灰暗联盟/enhancements/writ-of-acquisition|Writ of Acquisition]] — 10 分、Persecution Prospect 分队。
 - [[factions/灰暗联盟/enhancements/quake-multigenerator|地震生成器]] — 15 分、炉心战队 分队。
-- [[factions/灰暗联盟/enhancements/pan-spectral-lockons|多频率锁定器]] — 分数未知、远行探索者 分队。
+- [[factions/灰暗联盟/enhancements/pan-spectral-lockons|多频率锁定器]] — 10 分、远行探索者 分队。
 - [[factions/灰暗联盟/enhancements/metaphysical-brokerage|概念性评估]] — 20 分、佣兵铁誓团 分队。
 - [[factions/灰暗联盟/enhancements/high-kâhl-hearthband|至高统领]] — 30 分、炉心战队 分队。
-- [[factions/灰暗联盟/enhancements/high-kâhl-hearthguard-covenant|至高统领]] — 分数未知、Hearthguard Covenant 分队。
+- [[factions/灰暗联盟/enhancements/high-kâhl-hearthguard-covenant|至高统领]] — 30 分、Hearthguard Covenant 分队。
 - [[factions/灰暗联盟/enhancements/etacarn-sb9-targeting-implant|艾塔-卡恩 SB9 追踪植入物]] — 15 分、佣兵铁誓团 分队。
 - [[factions/灰暗联盟/enhancements/asset-manipulator|资产操纵者]] — 25 分、佣兵铁誓团 分队。
-- [[factions/灰暗联盟/enhancements/shroudwërke-talismans|遮蔽力场护符]] — 分数未知、远行探索者 分队。
+- [[factions/灰暗联盟/enhancements/shroudwërke-talismans|遮蔽力场护符]] — 15 分、远行探索者 分队。
 - [[factions/灰暗联盟/enhancements/ironskein-hearthband|钢铁织锦]] — 10 分、炉心战队 分队。
-- [[factions/灰暗联盟/enhancements/ironskein-hearthguard-covenant|钢铁织锦]] — 分数未知、Hearthguard Covenant 分队。
+- [[factions/灰暗联盟/enhancements/ironskein-hearthguard-covenant|钢铁织锦]] — 10 分、Hearthguard Covenant 分队。
 - [[factions/灰暗联盟/enhancements/mercenary-prospector|雇佣勘探员]] — 20 分、佣兵铁誓团 分队。
 

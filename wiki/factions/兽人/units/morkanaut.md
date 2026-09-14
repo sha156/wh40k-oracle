@@ -5,17 +5,17 @@ name_en: Morkanaut
 faction: 兽人
 type: unit
 points:
-  1 model: 270
+  1 model: 345
 tags:
 - unit
 - unit/兽人
 - 兽人
 version:
-  points: MFM 2026-07-27 15:14
+  points: MFM 2026-09-14T05:51:23.572407+00:00
   source: official-db
 sources:
 - book: 官方结构库 db/wh40k.sqlite（Wahapedia 11版镜像 + MFM 官方点数）
-updated: '2026-07-23'
+updated: '2026-09-14'
 ---
 
 ## 属性表
@@ -47,7 +47,7 @@ updated: '2026-07-23'
 - **严重损坏**：当本模型W值为1-7时，攻击命中结果-1,OC值-4
 
 ## 单位构成
-- **1个模型** — 270 分
+- **1个模型** — 345 分
 
 ## 关键词
 - **阵营关键词**：兽人

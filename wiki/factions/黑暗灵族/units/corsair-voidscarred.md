@@ -4,18 +4,16 @@ name_zh: 虚空裂痕海盗
 name_en: Corsair Voidscarred
 faction: 黑暗灵族
 type: unit
-points:
-  5 models: 80
-  10 models: 160
 tags:
 - unit
 - unit/黑暗灵族
 - 黑暗灵族
 version:
+  points: historical / unmatched
   source: official-db
 sources:
 - book: 官方结构库 db/wh40k.sqlite（Wahapedia 11版镜像 + MFM 官方点数）
-updated: '2026-07-23'
+updated: '2026-09-14'
 ---
 
 ## 属性表
@@ -49,6 +47,7 @@ updated: '2026-07-23'
 - **劫掠海盗**：在战斗开始时，选择一个敌方单位，本单位中的模型装备的武器攻击对该敌方单位时拥有【致命一击】和 【精准】技能
 
 ## 单位构成
+历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
 - **5个模型** — 80 分
 - **10个模型** — 160 分
 

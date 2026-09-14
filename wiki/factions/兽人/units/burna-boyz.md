@@ -4,21 +4,16 @@ name_zh: 烧烤小子
 name_en: Burna Boyz
 faction: 兽人
 type: unit
-points:
-  1 Spanner and 4 Burna Boyz: 60
-  2 Spanners and 8 Burna Boyz: 120
-  5 models: 60
-  10 models: 120
 tags:
 - unit
 - unit/兽人
 - 兽人
 version:
-  points: MFM 2026-07-27 15:14
+  points: historical / unmatched
   source: official-db
 sources:
 - book: 官方结构库 db/wh40k.sqlite（Wahapedia 11版镜像 + MFM 官方点数）
-updated: '2026-07-23'
+updated: '2026-09-14'
 ---
 
 ## 属性表
@@ -45,6 +40,7 @@ updated: '2026-07-23'
 - **纵火狂**：本单位用喷火器对6寸内的敌方单位射击时重投造伤结果中的1,如果目标还位于目标点范围内，改为可以重投造伤结果
 
 ## 单位构成
+历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
 - **1 Spanner and 4 Burna [[factions/兽人/units/boyz.md|Boyz]]** — 60 分
 - **2 Spanners and 8 Burna Boyz** — 120 分
 - **5个模型** — 60 分

@@ -3,17 +3,16 @@ id: '000004025'
 name_en: Regimental Attachés
 faction: 基因窃取者教派
 type: unit
-points:
-  3 models: 40
 tags:
 - unit
 - unit/基因窃取者教派
 - 基因窃取者教派
 version:
+  points: historical / unmatched
   source: official-db
 sources:
 - book: 官方结构库 db/wh40k.sqlite（Wahapedia 11版镜像 + MFM 官方点数）
-updated: '2026-07-23'
+updated: '2026-09-14'
 ---
 
 ## 属性表
@@ -39,6 +38,7 @@ updated: '2026-07-23'
 - **ATTACHÉS**：At the start of the Declare Battle Formations step, this unit must join one Command Squad unit from your army (a <span class="kwb">COMMAND</span> <span class="kwb">SQUAD</span> unit cannot have more than one <span class="kwb">REGIMENTAL</span> <span class="kwb">ATTACHÉ</span> unit joined to it). For the rest of the battle, every model in this unit counts as part of that <span class="kwb">COMMAND</span> <span class="kwb">SQUAD</span> unit, and its Starting Strength is increased accordingly. If it is not possible to join a <span class="kwb">REGIMENTAL</span> <span class="kwb">ATTACHÉ</span> unit to a <span class="kwb">COMMAND</span> <span class="kwb">SQUAD</span> in this way, it does not take part in the battle and counts as having been destroyed. <br><br>While this unit is joined to a unit, it can embark within any Transport that unit can embark within.
 
 ## 单位构成
+历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
 - **3个模型** — 40 分
 
 ## 关键词

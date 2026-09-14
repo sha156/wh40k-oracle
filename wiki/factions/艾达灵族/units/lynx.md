@@ -3,17 +3,16 @@ id: '000000620'
 name_en: Lynx
 faction: 艾达灵族
 type: unit
-points:
-  1 model: 180
 tags:
 - unit
 - unit/艾达灵族
 - 艾达灵族
 version:
+  points: historical / unmatched
   source: official-db
 sources:
 - book: 官方结构库 db/wh40k.sqlite（Wahapedia 11版镜像 + MFM 官方点数）
-updated: '2026-07-23'
+updated: '2026-09-14'
 ---
 
 ## 属性表
@@ -44,6 +43,7 @@ updated: '2026-07-23'
 - **Speed of Vaul**：Each time this model Advances, do not make an Advance roll for it. Instead, until the end of the phase, add 9" to the Move characteristic of this model.
 
 ## 单位构成
+历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
 - **1个模型** — 180 分
 
 ## 关键词

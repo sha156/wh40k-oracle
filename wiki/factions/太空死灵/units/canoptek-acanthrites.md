@@ -4,18 +4,16 @@ name_zh: 冥工针尾幽魂
 name_en: Canoptek Acanthrites
 faction: 太空死灵
 type: unit
-points:
-  3 models: 85
-  6 models: 170
 tags:
 - unit
 - unit/太空死灵
 - 太空死灵
 version:
+  points: historical / unmatched
   source: official-db
 sources:
 - book: 官方结构库 db/wh40k.sqlite（Wahapedia 11版镜像 + MFM 官方点数）
-updated: '2026-07-23'
+updated: '2026-09-14'
 ---
 
 ## 属性表
@@ -38,6 +36,7 @@ updated: '2026-07-23'
 - **破甲创伤**：在你的射击阶段，在本模型射击之后，选择一个被其中一次或多次攻击击中的敌方 单位。直到此阶段结束，每次一个友方太空死灵模型对那个单位造成暴击造伤时，那次伤害 的护甲穿透属性提高 1。
 
 ## 单位构成
+历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
 - **3个模型** — 85 分
 - **6个模型** — 170 分
 

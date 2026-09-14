@@ -4,6 +4,7 @@ name_en: Bane-forged Weapons
 faction: 混沌恶魔
 type: enhancement
 detachment: Warptide
+cost: 15
 tags:
 - enhancement
 - enhancement/混沌恶魔
@@ -13,11 +14,13 @@ sources:
 updated: '2026-07-26'
 ---
 
-分数未知、[[factions/混沌恶魔/detachments/warptide.md|次元魔潮]] 分队。
+15 分、[[factions/混沌恶魔/detachments/warptide.md|次元魔潮]] 分队。
 
 ## 效果
 
 This unit’s attacks have +1 Strength characteristic.
+
+**分数**：15 分
 
 ## 携带限制
 

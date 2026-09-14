@@ -5,6 +5,7 @@ name_en: Vigilance of Titan
 faction: 灰骑士
 type: enhancement
 detachment: Argent Assault
+cost: 20
 tags:
 - enhancement
 - enhancement/灰骑士
@@ -14,11 +15,13 @@ sources:
 updated: '2026-07-26'
 ---
 
-分数未知、[[factions/灰骑士/detachments/argent-assault.md|圣银突袭]] 分队。
+20 分、[[factions/灰骑士/detachments/argent-assault.md|圣银突袭]] 分队。
 
 ## 效果
 
 At the start of your Shooting phase, you can select one visible enemy unit within 12" of this unit. That enemy unit has +6" detection range.
+
+**分数**：20 分
 
 ## 携带限制
 

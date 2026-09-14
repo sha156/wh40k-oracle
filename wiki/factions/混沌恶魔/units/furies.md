@@ -3,18 +3,16 @@ id: '000001150'
 name_en: Furies
 faction: 混沌恶魔
 type: unit
-points:
-  5 models: 40
-  10 models: 80
 tags:
 - unit
 - unit/混沌恶魔
 - 混沌恶魔
 version:
+  points: historical / unmatched
   source: official-db
 sources:
 - book: 官方结构库 db/wh40k.sqlite（Wahapedia 11版镜像 + MFM 官方点数）
-updated: '2026-07-23'
+updated: '2026-09-14'
 ---
 
 ## 属性表
@@ -35,6 +33,7 @@ updated: '2026-07-23'
 - **DAEMONIC ALLEGIANCE**：When you select this model to include in your army, you must select one of the following keywords for it to gain: <br><ul><li><span class="kwb">KHORNE</span> </li><li><span class="kwb">TZEENTCH</span> </li><li><span class="kwb">NURGLE</span> </li><li><span class="kwb">SLAANESH</span></li></ul>
 
 ## 单位构成
+历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
 - **5个模型** — 40 分
 - **10个模型** — 80 分
 

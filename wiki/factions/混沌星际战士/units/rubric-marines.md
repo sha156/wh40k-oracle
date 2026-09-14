@@ -4,18 +4,16 @@ name_zh: 红字战士
 name_en: Rubric Marines
 faction: 混沌星际战士
 type: unit
-points:
-  5 models: 100
-  10 models: 190
 tags:
 - unit
 - unit/混沌星际战士
 - 混沌星际战士
 version:
+  points: historical / unmatched
   source: official-db
 sources:
 - book: 官方结构库 db/wh40k.sqlite（Wahapedia 11版镜像 + MFM 官方点数）
-updated: '2026-07-23'
+updated: '2026-09-14'
 ---
 
 ## 属性表
@@ -49,6 +47,7 @@ updated: '2026-07-23'
 - **装备技能【炽焰印记】**：持有者所在单位中的模型(角色模型除外)装备的远程武器拥有[无视掩体]技能
 
 ## 单位构成
+历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
 - **5个模型** — 100 分
 - **10个模型** — 190 分
 

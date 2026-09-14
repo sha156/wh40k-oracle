@@ -5,17 +5,17 @@ name_en: Bannernob
 faction: 兽人
 type: unit
 points:
-  1 model: 50
+  1 model: 35
 tags:
 - unit
 - unit/兽人
 - 兽人
 version:
-  points: MFM 2026-07-27 15:14
+  points: MFM 2026-09-14T05:51:23.572407+00:00
   source: official-db
 sources:
 - book: 官方结构库 db/wh40k.sqlite（Wahapedia 11版镜像 + MFM 官方点数）
-updated: '2026-07-23'
+updated: '2026-09-14'
 ---
 
 ## 属性表
@@ -41,7 +41,7 @@ updated: '2026-07-23'
 - **【核心技能】:辅助**：本单位可以作为领袖加入以下单位：●喷火小子●坦克破坏者,●强蛮人●怪枪小子●毁灭小子●蛮人小子●蛮人拾荒者
 
 ## 单位构成
-- **1个模型** — 50 分
+- **1个模型** — 35 分
 
 ## 关键词
 - **阵营关键词**：兽人

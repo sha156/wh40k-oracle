@@ -19,11 +19,11 @@
 
 ## 单位
 
-- [[factions/泰伦虫族/units/barbed-hierodule|Barbed Hierodule]] — 
-- [[factions/泰伦虫族/units/dimachaeron|Dimachaeron]] — 
-- [[factions/泰伦虫族/units/malanthrope|Malanthrope]] — 
-- [[factions/泰伦虫族/units/scythed-hierodule|Scythed Hierodule]] — 
-- [[factions/泰伦虫族/units/sky-slasher-swarms|Sky-slasher Swarms]] — 
+- [[factions/泰伦虫族/units/barbed-hierodule|Barbed Hierodule]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
+- [[factions/泰伦虫族/units/dimachaeron|Dimachaeron]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
+- [[factions/泰伦虫族/units/malanthrope|Malanthrope]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
+- [[factions/泰伦虫族/units/scythed-hierodule|Scythed Hierodule]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
+- [[factions/泰伦虫族/units/sky-slasher-swarms|Sky-slasher Swarms]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
 - [[factions/泰伦虫族/units/von-ryans-leapers|冯·瑞恩跃袭者]] — 
 - [[factions/泰伦虫族/units/lictor|刀斧虫]] — 
 - [[factions/泰伦虫族/units/hormagaunts|刀虫]] — 
@@ -160,7 +160,7 @@
 - [[factions/泰伦虫族/enhancements/chameleonic|Chameleonic]] — 15 分、Vanguard Onslaught 分队。
 - [[factions/泰伦虫族/enhancements/elevated-might|Elevated Might]] — 30 分、战斗生物总攻 分队。
 - [[factions/泰伦虫族/enhancements/enraged-reserves|Enraged Reserves]] — 20 分、Crusher Stampede 分队。
-- [[factions/泰伦虫族/enhancements/hunting-grounds|Hunting Grounds]] — 20 分、Vanguard Onslaught 分队。
+- [[factions/泰伦虫族/enhancements/hunting-grounds|Hunting Grounds]] — 30 分、Vanguard Onslaught 分队。
 - [[factions/泰伦虫族/enhancements/hypersurge-gland|Hypersurge Gland]] — 0 分、Biotide 分队。
 - [[factions/泰伦虫族/enhancements/instinctive-defence|Instinctive Defence]] — 15 分、Assimilation Swarm 分队。
 - [[factions/泰伦虫族/enhancements/monoform-predators|Monoform Predators]] — 0 分、Boarding Swarm 分队。
@@ -190,10 +190,10 @@
 - [[factions/泰伦虫族/enhancements/the-dirgeheart-of-kharis-aura|The Dirgeheart of Kharis (Aura)]] — 15 分、Synaptic Nexus 分队。
 - [[factions/泰伦虫族/enhancements/tremor-senses|Tremor Senses]] — 20 分、地底突袭 分队。
 - [[factions/泰伦虫族/enhancements/vanguard-intellect|Vanguard Intellect]] — 15 分、地底突袭 分队。
-- [[factions/泰伦虫族/enhancements/destabilising-predation|动摇捕猎]] — 分数未知、诺恩女王之爪 分队。
-- [[factions/泰伦虫族/enhancements/encircling-horrors|包围恐惧]] — 分数未知、伏击捕食者 分队。
+- [[factions/泰伦虫族/enhancements/destabilising-predation|动摇捕猎]] — 20 分、诺恩女王之爪 分队。
+- [[factions/泰伦虫族/enhancements/encircling-horrors|包围恐惧]] — 20 分、伏击捕食者 分队。
 - [[factions/泰伦虫族/enhancements/synaptic-strategy|战略突触]] — 15 分、地底突袭 分队。
 - [[factions/泰伦虫族/enhancements/trygon-prime|掘蟒首领]] — 20 分、地底突袭 分队。
-- [[factions/泰伦虫族/enhancements/synaptoprescience|突触科学]] — 分数未知、诺恩女王之爪 分队。
-- [[factions/泰伦虫族/enhancements/cryptophotaic-camouflage|隐蔽伪装]] — 分数未知、伏击捕食者 分队。
+- [[factions/泰伦虫族/enhancements/synaptoprescience|突触科学]] — 30 分、诺恩女王之爪 分队。
+- [[factions/泰伦虫族/enhancements/cryptophotaic-camouflage|隐蔽伪装]] — 15 分、伏击捕食者 分队。
 

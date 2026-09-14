@@ -5,17 +5,17 @@ name_en: Daemonettes
 faction: 帝皇之子
 type: unit
 points:
-  10 models: 90
+  10 models: 100
 tags:
 - unit
 - unit/帝皇之子
 - 帝皇之子
 version:
-  points: MFM 2026-07-27 15:14
+  points: MFM 2026-09-14T05:51:23.572407+00:00
   source: official-db
 sources:
 - book: 官方结构库 db/wh40k.sqlite（Wahapedia 11版镜像 + MFM 官方点数）
-updated: '2026-07-23'
+updated: '2026-09-14'
 ---
 
 ## 属性表
@@ -37,7 +37,7 @@ updated: '2026-07-23'
 - **混沌乐器**：持有者所属单位进行的冲锋掷骰结果增加 1 点。
 
 ## 单位构成
-- **10个模型** — 90 分
+- **10个模型** — 100 分
 
 ## 关键词
 - **阵营关键词**：Legions of Excess

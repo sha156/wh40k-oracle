@@ -4,17 +4,16 @@ name_zh: 卡舍津突击队
 name_en: Kasrkin
 faction: 基因窃取者教派
 type: unit
-points:
-  10 models: 110
 tags:
 - unit
 - unit/基因窃取者教派
 - 基因窃取者教派
 version:
+  points: historical / unmatched
   source: official-db
 sources:
 - book: 官方结构库 db/wh40k.sqlite（Wahapedia 11版镜像 + MFM 官方点数）
-updated: '2026-07-23'
+updated: '2026-09-14'
 ---
 
 ## 属性表
@@ -52,6 +51,7 @@ updated: '2026-07-23'
 - **热熔地雷**：每场战斗一次，任意阶段开始时，你可以选择一个位于持有者3寸内的敌军单位并投掷一个D6，结果为2+则那个单位遭受D3点致命伤，如果是载具则改为2D3点致命伤。
 
 ## 单位构成
+历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
 - **10个模型** — 110 分
 
 ## 关键词

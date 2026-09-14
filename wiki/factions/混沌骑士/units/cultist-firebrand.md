@@ -4,17 +4,16 @@ name_zh: 邪教徒纵火者
 name_en: Cultist Firebrand
 faction: 混沌骑士
 type: unit
-points:
-  1 model: 45
 tags:
 - unit
 - unit/混沌骑士
 - 混沌骑士
 version:
+  points: historical / unmatched
   source: official-db
 sources:
 - book: 官方结构库 db/wh40k.sqlite（Wahapedia 11版镜像 + MFM 官方点数）
-updated: '2026-07-23'
+updated: '2026-09-14'
 ---
 
 ## 属性表
@@ -38,6 +37,7 @@ updated: '2026-07-23'
 - **诅咒火焰**：在你的射击阶段，本模型射击后，选择 一个被命中的敌方步兵单位，那个敌方单位必须进 行一次震撼测试
 
 ## 单位构成
+历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
 - **1个模型** — 45 分
 
 ## 关键词

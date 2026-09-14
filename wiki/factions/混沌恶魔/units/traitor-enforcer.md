@@ -4,17 +4,16 @@ name_zh: 叛军执法者
 name_en: Traitor Enforcer
 faction: 混沌恶魔
 type: unit
-points:
-  2 models: 55
 tags:
 - unit
 - unit/混沌恶魔
 - 混沌恶魔
 version:
+  points: historical / unmatched
   source: official-db
 sources:
 - book: 官方结构库 db/wh40k.sqlite（Wahapedia 11版镜像 + MFM 官方点数）
-updated: '2026-07-23'
+updated: '2026-09-14'
 ---
 
 ## 属性表
@@ -43,6 +42,7 @@ updated: '2026-07-23'
 - **变异护卫**：如果本单位包含叛变欧格林，则本单位中的人 物模型获得【不觉疼痛 4+】技能
 
 ## 单位构成
+历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
 - **2个模型** — 55 分
 
 ## 关键词

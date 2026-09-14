@@ -5,17 +5,17 @@ name_en: Sorcerer
 faction: 千子
 type: unit
 points:
-  1 model: 85
+  1 model: 95
 tags:
 - unit
 - unit/千子
 - 千子
 version:
-  points: MFM 2026-07-27 15:14
+  points: MFM 2026-09-14T05:51:23.572407+00:00
   source: official-db
 sources:
 - book: 官方结构库 db/wh40k.sqlite（Wahapedia 11版镜像 + MFM 官方点数）
-updated: '2026-07-23'
+updated: '2026-09-14'
 ---
 
 ## 属性表
@@ -44,7 +44,7 @@ updated: '2026-07-23'
 - **混沌赠礼【灵能】**：每当本模型被选择进行射击或近战 时，结算完攻击之后，选择本轮攻击中被本模型【灵能】 技能命中过的一个敌方单位，那个单位必须进行一次 LD 测试，如果失败就遭受 D3 点致命伤害
 
 ## 单位构成
-- **1个模型** — 85 分
+- **1个模型** — 95 分
 
 ## 关键词
 - **阵营关键词**：Thousand Sons

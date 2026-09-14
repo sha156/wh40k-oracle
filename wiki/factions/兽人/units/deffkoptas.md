@@ -5,18 +5,18 @@ name_en: Deffkoptas
 faction: 兽人
 type: unit
 points:
-  3 models: 75
-  6 models: 140
+  3 models: 80
+  6 models: 160
 tags:
 - unit
 - unit/兽人
 - 兽人
 version:
-  points: MFM 2026-07-27 15:14
+  points: MFM 2026-09-14T05:51:23.572407+00:00
   source: official-db
 sources:
 - book: 官方结构库 db/wh40k.sqlite（Wahapedia 11版镜像 + MFM 官方点数）
-updated: '2026-07-23'
+updated: '2026-09-14'
 ---
 
 ## 属性表
@@ -44,8 +44,8 @@ updated: '2026-07-23'
 - **[[factions/星际战士/stratagems/death-from-the-skies.md|死从天降]]**：每当本模型结束一次标准移动时，你可以选择本次移动经过的一个敌方单位，本单位每有一个模型就投一颗D6,每个为4+的结果会让那个敌方单位遭受1点致命伤害
 
 ## 单位构成
-- **3个模型** — 75 分
-- **6个模型** — 140 分
+- **3个模型** — 80 分
+- **6个模型** — 160 分
 
 ## 关键词
 - **阵营关键词**：兽人

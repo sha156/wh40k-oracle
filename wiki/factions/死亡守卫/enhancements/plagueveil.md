@@ -7,7 +7,7 @@ aliases:
 faction: 死亡守卫
 type: enhancement
 detachment: Flyblown Host
-cost: 25
+cost: 15
 tags:
 - enhancement
 - enhancement/死亡守卫
@@ -17,13 +17,13 @@ sources:
 updated: '2026-07-26'
 ---
 
-25 分、[[factions/死亡守卫/detachments/flyblown-host.md|吹蝇军]] 分队。
+15 分、[[factions/死亡守卫/detachments/flyblown-host.md|吹蝇军]] 分队。
 
 ## 效果
 
 This unit has -3" detection range.
 
-**分数**：25 分
+**分数**：15 分
 
 ## 携带限制
 

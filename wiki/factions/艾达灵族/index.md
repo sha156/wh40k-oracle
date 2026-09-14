@@ -24,32 +24,31 @@
 
 ## 单位
 
-- [[factions/艾达灵族/units/amallyn-shadowguide|Amallyn Shadowguide]] — 
-- [[factions/艾达灵族/units/autarch-skyrunner|Autarch Skyrunner]] — 
-- [[factions/艾达灵族/units/bonesinger|Bonesinger]] — 
-- [[factions/艾达灵族/units/cobra|Cobra]] — 
-- [[factions/艾达灵族/units/corsair-cloud-dancer-band|Corsair Cloud Dancer Band]] — 
-- [[factions/艾达灵族/units/corsair-reaver-band|Corsair Reaver Band]] — 
-- [[factions/艾达灵族/units/corsair-skyreaver-band|Corsair Skyreaver Band]] — 
-- [[factions/艾达灵族/units/firestorm|Firestorm]] — 
-- [[factions/艾达灵族/units/hornet|Hornet]] — 
-- [[factions/艾达灵族/units/illic-nightspear|Illic Nightspear]] — 
-- [[factions/艾达灵族/units/irillyth|Irillyth]] — 
-- [[factions/艾达灵族/units/karandras|Karandras]] — 
-- [[factions/艾达灵族/units/lynx|Lynx]] — 
-- [[factions/艾达灵族/units/nightwing|Nightwing]] — 
-- [[factions/艾达灵族/units/phoenix|Phoenix]] — 
-- [[factions/艾达灵族/units/prince-yriel-legendary|Prince Yriel (Legendary)]] — 
-- [[factions/艾达灵族/units/scorpion|Scorpion]] — 
-- [[factions/艾达灵族/units/shadow-spectres|Shadow Spectres]] — 
-- [[factions/艾达灵族/units/skathach-wraithknight|Skathach Wraithknight]] — 
-- [[factions/艾达灵族/units/vampire-hunter|Vampire Hunter]] — 
-- [[factions/艾达灵族/units/vampire-raider|Vampire Raider]] — 
-- [[factions/艾达灵族/units/warp-hunter|Warp Hunter]] — 
-- [[factions/艾达灵族/units/wasp-assault-walker|Wasp Assault Walker]] — 
-- [[factions/艾达灵族/units/webway-gate|Webway Gate]] — 
-- [[factions/艾达灵族/units/wraithseer|Wraithseer]] — 
-- [[factions/艾达灵族/units/ynnari-kabalite-warriors|Ynnari Kabalite Warriors]] — 
+- [[factions/艾达灵族/units/amallyn-shadowguide|Amallyn Shadowguide]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
+- [[factions/艾达灵族/units/autarch-skyrunner|Autarch Skyrunner]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
+- [[factions/艾达灵族/units/bonesinger|Bonesinger]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
+- [[factions/艾达灵族/units/cobra|Cobra]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
+- [[factions/艾达灵族/units/corsair-cloud-dancer-band|Corsair Cloud Dancer Band]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
+- [[factions/艾达灵族/units/corsair-reaver-band|Corsair Reaver Band]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
+- [[factions/艾达灵族/units/corsair-skyreaver-band|Corsair Skyreaver Band]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
+- [[factions/艾达灵族/units/firestorm|Firestorm]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
+- [[factions/艾达灵族/units/hornet|Hornet]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
+- [[factions/艾达灵族/units/illic-nightspear|Illic Nightspear]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
+- [[factions/艾达灵族/units/irillyth|Irillyth]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
+- [[factions/艾达灵族/units/karandras|Karandras]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
+- [[factions/艾达灵族/units/lynx|Lynx]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
+- [[factions/艾达灵族/units/nightwing|Nightwing]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
+- [[factions/艾达灵族/units/phoenix|Phoenix]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
+- [[factions/艾达灵族/units/prince-yriel-legendary|Prince Yriel (Legendary)]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
+- [[factions/艾达灵族/units/scorpion|Scorpion]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
+- [[factions/艾达灵族/units/shadow-spectres|Shadow Spectres]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
+- [[factions/艾达灵族/units/skathach-wraithknight|Skathach Wraithknight]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
+- [[factions/艾达灵族/units/vampire-hunter|Vampire Hunter]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
+- [[factions/艾达灵族/units/vampire-raider|Vampire Raider]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
+- [[factions/艾达灵族/units/warp-hunter|Warp Hunter]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
+- [[factions/艾达灵族/units/wasp-assault-walker|Wasp Assault Walker]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
+- [[factions/艾达灵族/units/webway-gate|Webway Gate]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
+- [[factions/艾达灵族/units/wraithseer|Wraithseer]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
 - [[factions/艾达灵族/units/troupe|丑角剧团]] — 
 - [[factions/艾达灵族/units/troupe-master|丑角剧团长]] — 
 - [[factions/艾达灵族/units/yvraine|伊弗蕾妮]] — 
@@ -88,6 +87,7 @@
 - [[factions/艾达灵族/units/ynnari-raider|死神军掠袭者飞艇]] — 
 - [[factions/艾达灵族/units/ynnari-incubi|死神军梦魇剑客]] — 
 - [[factions/艾达灵族/units/ynnari-venom|死神军毒灾飞艇]] — 
+- [[factions/艾达灵族/units/ynnari-kabalite-warriors|死神军阴谋团武士]] — 
 - [[factions/艾达灵族/units/ynnari-succubus|死神军魅魔]] — 
 - [[factions/艾达灵族/units/wave-serpent|波蛇飞艇]] — 
 - [[factions/艾达灵族/units/rangers|游侠]] — 
@@ -230,10 +230,10 @@
 
 ## 强化
 
-- [[factions/艾达灵族/enhancements/a-foot-in-the-future|A Foot in the Future]] — 分数未知、宿命的演出 分队。
+- [[factions/艾达灵族/enhancements/a-foot-in-the-future|A Foot in the Future]] — 15 分、宿命的演出 分队。
 - [[factions/艾达灵族/enhancements/adrenal-infusions|Adrenal Infusions]] — 20 分、骇人劫掠者 分队。
 - [[factions/艾达灵族/enhancements/alacritous-assault|Alacritous Assault]] — 20 分、骇人劫掠者 分队。
-- [[factions/艾达灵族/enhancements/aspect-of-murder|Aspect of Murder]] — 25 分、Aspect Host 分队。
+- [[factions/艾达灵族/enhancements/aspect-of-murder|Aspect of Murder]] — 15 分、Aspect Host 分队。
 - [[factions/艾达灵族/enhancements/borrowed-vigour|Borrowed Vigour]] — 10 分、Devoted of Ynnead 分队。
 - [[factions/艾达灵族/enhancements/breath-of-vaul|Breath of Vaul]] — 10 分、Guardian Battlehost 分队。
 - [[factions/艾达灵族/enhancements/cegorachs-coil|Cegorach’s Coil]] — 25 分、Ghosts of the Webway 分队。
@@ -250,10 +250,10 @@
 - [[factions/艾达灵族/enhancements/higher-duty|Higher Duty]] — 25 分、Spirit Conclave 分队。
 - [[factions/艾达灵族/enhancements/light-of-clarity|Light of Clarity]] — 30 分、Spirit Conclave 分队。
 - [[factions/艾达灵族/enhancements/lucid-eye|Lucid Eye]] — 30 分、Seer Council 分队。
-- [[factions/艾达灵族/enhancements/mantle-of-wisdom|Mantle of Wisdom]] — 30 分、Aspect Host 分队。
+- [[factions/艾达灵族/enhancements/mantle-of-wisdom|Mantle of Wisdom]] — 20 分、Aspect Host 分队。
 - [[factions/艾达灵族/enhancements/mask-of-secrets|Mask of Secrets]] — 15 分、Ghosts of the Webway 分队。
 - [[factions/艾达灵族/enhancements/mirage-field|Mirage Field]] — 25 分、Windrider Host 分队。
-- [[factions/艾达灵族/enhancements/mistweave-fateful-performance|Mistweave]] — 分数未知、宿命的演出 分队。
+- [[factions/艾达灵族/enhancements/mistweave-fateful-performance|Mistweave]] — 20 分、宿命的演出 分队。
 - [[factions/艾达灵族/enhancements/mistweave-ghosts-of-the-webway|Mistweave]] — 15 分、Ghosts of the Webway 分队。
 - [[factions/艾达灵族/enhancements/morbid-might|Morbid Might]] — 15 分、Devoted of Ynnead 分队。
 - [[factions/艾达灵族/enhancements/murders-jest|Murder’s Jest]] — 20 分、Ghosts of the Webway 分队。
@@ -270,26 +270,26 @@
 - [[factions/艾达灵族/enhancements/seersight-strike|Seersight Strike]] — 15 分、Windrider Host 分队。
 - [[factions/艾达灵族/enhancements/shedskin-raiment|Shedskin Raiment]] — 25 分、巨蛇族群 分队。
 - [[factions/艾达灵族/enhancements/shieldmaster|Shieldmaster]] — 0 分、Khaine’s Arrow 分队。
-- [[factions/艾达灵族/enhancements/shimmerstone|Shimmerstone]] — 15 分、Aspect Host 分队。
+- [[factions/艾达灵族/enhancements/shimmerstone|Shimmerstone]] — 10 分、Aspect Host 分队。
 - [[factions/艾达灵族/enhancements/song-of-renewal|Song of Renewal]] — 0 分、Wraiths of the Void 分队。
 - [[factions/艾达灵族/enhancements/stave-of-kurnous|Stave of Kurnous]] — 15 分、Spirit Conclave 分队。
 - [[factions/艾达灵族/enhancements/stone-of-eldritch-fury|Stone of Eldritch Fury]] — 15 分、Seer Council 分队。
 - [[factions/艾达灵族/enhancements/storm-of-whispers|Storm of Whispers]] — 10 分、Devoted of Ynnead 分队。
-- [[factions/艾达灵族/enhancements/strategic-savant|Strategic Savant]] — 15 分、Aspect Host 分队。
+- [[factions/艾达灵族/enhancements/strategic-savant|Strategic Savant]] — 10 分、Aspect Host 分队。
 - [[factions/艾达灵族/enhancements/timeless-strategist|Timeless Strategist]] — 15 分、Warhost 分队。
 - [[factions/艾达灵族/enhancements/torc-of-morai-heg|Torc of Morai-Heg]] — 20 分、Seer Council 分队。
-- [[factions/艾达灵族/enhancements/assassins-eye|刺客之眼]] — 分数未知、流放者之道 分队。
+- [[factions/艾达灵族/enhancements/assassins-eye|刺客之眼]] — 15 分、流放者之道 分队。
 - [[factions/艾达灵族/enhancements/archraider|大劫掠者]] — 35 分、海盗劫掠团 分队。
 - [[factions/艾达灵族/enhancements/exotic-munitions|奇异弹药]] — 15 分、骇人劫掠者 分队。
 - [[factions/艾达灵族/enhancements/key-of-ghosts|幽魂钥匙]] — 20 分、巨蛇族群 分队。
-- [[factions/艾达灵族/enhancements/prelude-performer|序幕舞者]] — 分数未知、暮光闪现 分队。
-- [[factions/艾达灵族/enhancements/shadowfall-masks|影落假面]] — 分数未知、暮光闪现 分队。
+- [[factions/艾达灵族/enhancements/prelude-performer|序幕舞者]] — 20 分、暮光闪现 分队。
+- [[factions/艾达灵族/enhancements/shadowfall-masks|影落假面]] — 15 分、暮光闪现 分队。
 - [[factions/艾达灵族/enhancements/guiding-presence|指引灵魂]] — 25 分、装甲战群 分队。
 - [[factions/艾达灵族/enhancements/infamy-aura|海盗恶名（光环）]] — 25 分、海盗劫掠团 分队。
 - [[factions/艾达灵族/enhancements/weavers-wail|编织者哀嚎]] — 20 分、巨蛇族群 分队。
 - [[factions/艾达灵族/enhancements/webway-pathstone|网道路石]] — 25 分、海盗劫掠团 分队。
 - [[factions/艾达灵族/enhancements/spirit-stone-of-raelyth|蕾利斯的灵魂石]] — 20 分、装甲战群 分队。
 - [[factions/艾达灵族/enhancements/voidstone|虚空石]] — 15 分、海盗劫掠团 分队。
-- [[factions/艾达灵族/enhancements/camouflaged-snipers|迷彩狙击手]] — 分数未知、流放者之道 分队。
+- [[factions/艾达灵族/enhancements/camouflaged-snipers|迷彩狙击手]] — 10 分、流放者之道 分队。
 - [[factions/艾达灵族/enhancements/gift-of-foresight|预言之赐]] — 15 分、Warhost 分队。
 

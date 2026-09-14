@@ -5,17 +5,17 @@ name_en: Beastboss On Squigosaur
 faction: 兽人
 type: unit
 points:
-  1 model: 95
+  1 model: 140
 tags:
 - unit
 - unit/兽人
 - 兽人
 version:
-  points: MFM 2026-07-27 15:14
+  points: MFM 2026-09-14T05:51:23.572407+00:00
   source: official-db
 sources:
 - book: 官方结构库 db/wh40k.sqlite（Wahapedia 11版镜像 + MFM 官方点数）
-updated: '2026-07-23'
+updated: '2026-09-14'
 ---
 
 ## 属性表
@@ -45,7 +45,7 @@ updated: '2026-07-23'
 - **一根筋战狂**：您可以对该单位使用英勇介入计谋，无论您在本阶段中是否已经使用过这个计谋。若这么做：▪ 那次计谋的消耗 -1 CP。▪ 那次计谋的使用不会阻止您在本阶段中对其他单位使用同样的计谋。
 
 ## 单位构成
-- **1个模型** — 95 分
+- **1个模型** — 140 分
 
 ## 关键词
 - **阵营关键词**：兽人

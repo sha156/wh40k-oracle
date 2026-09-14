@@ -4,17 +4,16 @@ name_zh: 重型枪蜂小队
 name_en: Heavy Gun Drones
 faction: 钛帝国
 type: unit
-points:
-  2 models: 45
 tags:
 - unit
 - unit/钛帝国
 - 钛帝国
 version:
+  points: historical / unmatched
   source: official-db
 sources:
 - book: 官方结构库 db/wh40k.sqlite（Wahapedia 11版镜像 + MFM 官方点数）
-updated: '2026-07-23'
+updated: '2026-09-14'
 ---
 
 ## 属性表
@@ -38,6 +37,7 @@ updated: '2026-07-23'
 - **Markerlight**：The bearer has the Markerlight keyword.
 
 ## 单位构成
+历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
 - **2个模型** — 45 分
 
 ## 关键词

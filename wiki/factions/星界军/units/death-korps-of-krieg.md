@@ -5,18 +5,18 @@ name_en: Death Korps Of Krieg
 faction: 星界军
 type: unit
 points:
-  10 models: 75
-  20 models: 145
+  10 models: 70
+  20 models: 135
 tags:
 - unit
 - unit/星界军
 - 星界军
 version:
-  points: MFM 2026-07-27 15:14
+  points: MFM 2026-09-14T05:51:23.572407+00:00
   source: official-db
 sources:
 - book: 官方结构库 db/wh40k.sqlite（Wahapedia 11版镜像 + MFM 官方点数）
-updated: '2026-07-23'
+updated: '2026-09-14'
 ---
 
 ## 属性表
@@ -55,8 +55,8 @@ updated: '2026-07-23'
 - **【装备技能】死兵队医疗包**：在你的指挥阶段结束时，如 果装备者所在单位低于起始数量，则你可以救治 D3 个死 兵重新加入此单位，如果本单位中有两个模型装备有死兵 队医疗包，则改为救治 D3+1 个模型。
 
 ## 单位构成
-- **10个模型** — 75 分
-- **20个模型** — 145 分
+- **10个模型** — 70 分
+- **20个模型** — 135 分
 
 ## 关键词
 - **阵营关键词**：Astra Militarum

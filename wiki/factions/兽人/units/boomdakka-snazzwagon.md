@@ -4,18 +4,16 @@ name_zh: 爆裂靓车
 name_en: Boomdakka Snazzwagon
 faction: 兽人
 type: unit
-points:
-  1 model: 70
 tags:
 - unit
 - unit/兽人
 - 兽人
 version:
-  points: MFM 2026-07-27 15:14
+  points: historical / unmatched
   source: official-db
 sources:
 - book: 官方结构库 db/wh40k.sqlite（Wahapedia 11版镜像 + MFM 官方点数）
-updated: '2026-07-23'
+updated: '2026-09-14'
 ---
 
 ## 属性表
@@ -43,6 +41,7 @@ updated: '2026-07-23'
 - **烟尘滚滚【光环】**：本模型6寸内的非载具或非巨兽敌方单位进行攻击时命中结果-1
 
 ## 单位构成
+历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
 - **1个模型** — 70 分
 
 ## 关键词

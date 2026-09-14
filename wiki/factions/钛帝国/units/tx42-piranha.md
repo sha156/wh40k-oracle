@@ -4,17 +4,16 @@ name_zh: TX-42水虎鱼
 name_en: Tx42 Piranha
 faction: 钛帝国
 type: unit
-points:
-  1 model: 60
 tags:
 - unit
 - unit/钛帝国
 - 钛帝国
 version:
+  points: historical / unmatched
   source: official-db
 sources:
 - book: 官方结构库 db/wh40k.sqlite（Wahapedia 11版镜像 + MFM 官方点数）
-updated: '2026-07-23'
+updated: '2026-09-14'
 ---
 
 ## 属性表
@@ -39,6 +38,7 @@ updated: '2026-07-23'
 - **Outflank**：When this unit arrives from Strategic Reserves, it can be set up within your opponent’s deployment zone (all other restrictions still apply).
 
 ## 单位构成
+历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
 - **1个模型** — 60 分
 
 ## 关键词

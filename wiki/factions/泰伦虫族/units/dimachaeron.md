@@ -3,17 +3,16 @@ id: '000000500'
 name_en: Dimachaeron
 faction: 泰伦虫族
 type: unit
-points:
-  1 model: 200
 tags:
 - unit
 - unit/泰伦虫族
 - 泰伦虫族
 version:
+  points: historical / unmatched
   source: official-db
 sources:
 - book: 官方结构库 db/wh40k.sqlite（Wahapedia 11版镜像 + MFM 官方点数）
-updated: '2026-07-23'
+updated: '2026-09-14'
 ---
 
 ## 属性表
@@ -33,6 +32,7 @@ updated: '2026-07-23'
 - **Digestion Spine**：Each time this model fights, after it has resolved its attacks, if one or more enemy models (excluding <span class="kwb">VEHICLE</span> models) were destroyed as the result of those attacks, this model regains up to D3 wounds.
 
 ## 单位构成
+历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
 - **1个模型** — 200 分
 
 ## 关键词

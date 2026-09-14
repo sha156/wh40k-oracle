@@ -4,17 +4,16 @@ name_zh: 恶角野兽人
 name_en: Fellgor Beastmen
 faction: 混沌骑士
 type: unit
-points:
-  10 models: 70
 tags:
 - unit
 - unit/混沌骑士
 - 混沌骑士
 version:
+  points: historical / unmatched
   source: official-db
 sources:
 - book: 官方结构库 db/wh40k.sqlite（Wahapedia 11版镜像 + MFM 官方点数）
-updated: '2026-07-23'
+updated: '2026-09-14'
 ---
 
 ## 属性表
@@ -44,6 +43,7 @@ updated: '2026-07-23'
 - **兽化劫掠者**：如果本单位在游戏开始时处于战略预备队 中，则可以在你的第 1-3 回合的援军入场子阶段部署入 场，并且入场时算作比当前游戏大回合数多一回合
 
 ## 单位构成
+历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
 - **10个模型** — 70 分
 
 ## 关键词

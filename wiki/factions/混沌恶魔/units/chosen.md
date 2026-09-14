@@ -4,18 +4,16 @@ name_zh: 神选战士
 name_en: Chosen
 faction: 混沌恶魔
 type: unit
-points:
-  5 models: 125
-  10 models: 250
 tags:
 - unit
 - unit/混沌恶魔
 - 混沌恶魔
 version:
+  points: historical / unmatched
   source: official-db
 sources:
 - book: 官方结构库 db/wh40k.sqlite（Wahapedia 11版镜像 + MFM 官方点数）
-updated: '2026-07-23'
+updated: '2026-09-14'
 ---
 
 ## 属性表
@@ -45,6 +43,7 @@ updated: '2026-07-23'
 - **混沌圣旗**：装备者所在单位可以重投为黑暗契约技 能所进行的 LD 测试
 
 ## 单位构成
+历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
 - **5个模型** — 125 分
 - **10个模型** — 250 分
 

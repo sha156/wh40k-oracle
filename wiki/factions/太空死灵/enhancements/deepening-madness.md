@@ -7,6 +7,7 @@ aliases:
 faction: 太空死灵
 type: enhancement
 detachment: Skyshroud Spearhead
+cost: 20
 tags:
 - enhancement
 - enhancement/太空死灵
@@ -16,11 +17,13 @@ sources:
 updated: '2026-07-26'
 ---
 
-分数未知、[[factions/太空死灵/detachments/skyshroud-spearhead.md|遮天先锋]] 分队。
+20 分、[[factions/太空死灵/detachments/skyshroud-spearhead.md|遮天先锋]] 分队。
 
 ## 效果
 
 This unit’s ranged attacks have [ASSAULT].
+
+**分数**：20 分
 
 ## 携带限制
 

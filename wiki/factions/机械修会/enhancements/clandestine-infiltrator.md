@@ -4,7 +4,7 @@ name_en: Clandestine Infiltrator
 faction: 机械修会
 type: enhancement
 detachment: Skitarii Hunter Cohort
-cost: 20
+cost: 15
 tags:
 - enhancement
 - enhancement/机械修会
@@ -14,13 +14,13 @@ sources:
 updated: '2026-07-26'
 ---
 
-20 分、[[factions/机械修会/detachments/skitarii-hunter-cohort.md|Skitarii Hunter Cohort]] 分队。
+15 分、[[factions/机械修会/detachments/skitarii-hunter-cohort.md|Skitarii Hunter Cohort]] 分队。
 
 ## 效果
 
 The bearer, and models in any unit they are leading, have the Infiltrators and Scouts 6" abilities.
 
-**分数**：20 分
+**分数**：15 分
 
 ## 携带限制
 

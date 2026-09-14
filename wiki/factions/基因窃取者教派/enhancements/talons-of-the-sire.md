@@ -5,6 +5,7 @@ name_en: Talons of the Sire
 faction: 基因窃取者教派
 type: enhancement
 detachment: Purestrain Broodswarm
+cost: 15
 tags:
 - enhancement
 - enhancement/基因窃取者教派
@@ -14,11 +15,13 @@ sources:
 updated: '2026-07-26'
 ---
 
-分数未知、[[factions/基因窃取者教派/detachments/purestrain-broodswarm.md|纯血虫群]] 分队。
+15 分、[[factions/基因窃取者教派/detachments/purestrain-broodswarm.md|纯血虫群]] 分队。
 
 ## 效果
 
 This unit’s attacks can re-roll Wound rolls of 1.
+
+**分数**：15 分
 
 ## 携带限制
 

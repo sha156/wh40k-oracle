@@ -5,17 +5,17 @@ name_en: Sorcerer In Terminator Armour
 faction: 千子
 type: unit
 points:
-  1 model: 95
+  1 model: 100
 tags:
 - unit
 - unit/千子
 - 千子
 version:
-  points: MFM 2026-07-27 15:14
+  points: MFM 2026-09-14T05:51:23.572407+00:00
   source: official-db
 sources:
 - book: 官方结构库 db/wh40k.sqlite（Wahapedia 11版镜像 + MFM 官方点数）
-updated: '2026-07-23'
+updated: '2026-09-14'
 ---
 
 ## 属性表
@@ -45,7 +45,7 @@ updated: '2026-07-23'
 - **灵能使魔**：一次性技能，装备者可以将一下被分配 给本模型的攻击的 D 改为 0
 
 ## 单位构成
-- **1个模型** — 95 分
+- **1个模型** — 100 分
 
 ## 关键词
 - **阵营关键词**：Thousand Sons

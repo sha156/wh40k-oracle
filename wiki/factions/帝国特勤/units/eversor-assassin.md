@@ -5,19 +5,17 @@ name_en: Eversor Assassin
 faction: 帝国特勤
 type: unit
 points:
-  1 model (AGENTS OF THE IMPERIUM Detachment): 110
-  1 model (Assigned Agent): 120
   1 model: 100
 tags:
 - unit
 - unit/帝国特勤
 - 帝国特勤
 version:
-  points: MFM 2026-07-27 15:14
+  points: MFM 2026-09-14T05:51:23.572407+00:00
   source: official-db
 sources:
 - book: 官方结构库 db/wh40k.sqlite（Wahapedia 11版镜像 + MFM 官方点数）
-updated: '2026-07-23'
+updated: '2026-09-14'
 ---
 
 ## 属性表
@@ -44,8 +42,6 @@ updated: '2026-07-23'
 - **过度杀戮**：每场战斗中您有一次机会，在您的移动阶段中，该模型可以在进行常规移动前使用该技能。如果这样做，在该回合结束前，该模型的移动属性提升6寸。并且该模型装备的近战武器的攻击属性提升3。
 
 ## 单位构成
-- **1个模型 (AGENTS OF THE IMPERIUM Detachment)** — 110 分
-- **1个模型 (Assigned Agent)** — 120 分
 - **1个模型** — 100 分
 
 ## 关键词

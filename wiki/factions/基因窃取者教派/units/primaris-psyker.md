@@ -4,17 +4,16 @@ name_zh: 灵能导师
 name_en: Primaris Psyker
 faction: 基因窃取者教派
 type: unit
-points:
-  1 model: 60
 tags:
 - unit
 - unit/基因窃取者教派
 - 基因窃取者教派
 version:
+  points: historical / unmatched
   source: official-db
 sources:
 - book: 官方结构库 db/wh40k.sqlite（Wahapedia 11版镜像 + MFM 官方点数）
-updated: '2026-07-23'
+updated: '2026-09-14'
 ---
 
 ## 属性表
@@ -39,6 +38,7 @@ updated: '2026-07-23'
 - **灵能屏障（灵能）**：对手的射击阶段开始时，你可以投掷D6，结果为1则该灵能者所在单位遭受D3致命伤，结果为2+则该灵能者所在单位获得4+特殊保护。
 
 ## 单位构成
+历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
 - **1个模型** — 60 分
 
 ## 关键词

@@ -4,17 +4,16 @@ name_zh: 风暴领主
 name_en: Stormlord
 faction: 基因窃取者教派
 type: unit
-points:
-  1 model: 430
 tags:
 - unit
 - unit/基因窃取者教派
 - 基因窃取者教派
 version:
+  points: historical / unmatched
   source: official-db
 sources:
 - book: 官方结构库 db/wh40k.sqlite（Wahapedia 11版镜像 + MFM 官方点数）
-updated: '2026-07-23'
+updated: '2026-09-14'
 ---
 
 ## 属性表
@@ -42,6 +41,7 @@ updated: '2026-07-23'
 - **运输工具**：该模型可以搭载40个星界军步兵模型，每个重武器小队模型占据2个模型空间，每个欧格林模型占据3个模型空间，该模型不能搭载炮兵模型。
 
 ## 单位构成
+历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
 - **1个模型** — 430 分
 
 ## 关键词

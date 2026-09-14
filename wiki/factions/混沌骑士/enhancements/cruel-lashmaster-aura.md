@@ -5,6 +5,7 @@ name_en: Cruel Lashmaster (Aura)
 faction: 混沌骑士
 type: enhancement
 detachment: Iconoclast Fiefdom
+cost: 25
 tags:
 - enhancement
 - enhancement/混沌骑士
@@ -14,11 +15,13 @@ sources:
 updated: '2026-07-26'
 ---
 
-分数未知、[[factions/混沌骑士/detachments/iconoclast-fiefdom.md|叛道封地]] 分队。
+25 分、[[factions/混沌骑士/detachments/iconoclast-fiefdom.md|叛道封地]] 分队。
 
 ## 效果
 
 While a friendly DAMNED unit is within 6" of this model, when that unit is selected to make a Normal, Advance or Fall Back move, that unit has +2" M until the end of the phase.
+
+**分数**：25 分
 
 ## 携带限制
 

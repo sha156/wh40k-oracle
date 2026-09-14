@@ -3,18 +3,16 @@ id: '000000037'
 name_en: Big Gunz
 faction: 兽人
 type: unit
-points:
-  1 model: 20
-  2 models: 40
 tags:
 - unit
 - unit/兽人
 - 兽人
 version:
+  points: historical / unmatched
   source: official-db
 sources:
 - book: 官方结构库 db/wh40k.sqlite（Wahapedia 11版镜像 + MFM 官方点数）
-updated: '2026-07-23'
+updated: '2026-09-14'
 ---
 
 ## 属性表
@@ -43,6 +41,7 @@ updated: '2026-07-23'
 - **BIG GUNZ**：<b>Designer’s Note:</b> <i>Place two Grot Crew tokens next to each [[factions/兽人/units/mek.md|Mek]] Gun model when this unit is first set up, removing one each time its Big Gun model loses a wound (a Big Gun model itself is considered to represent its final wound).</i>
 
 ## 单位构成
+历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
 - **1个模型** — 20 分
 - **2个模型** — 40 分
 

@@ -7,6 +7,7 @@ aliases:
 faction: 吞世者
 type: enhancement
 detachment: Brazen Engines
+cost: 15
 tags:
 - enhancement
 - enhancement/吞世者
@@ -16,11 +17,13 @@ sources:
 updated: '2026-07-26'
 ---
 
-分数未知、[[factions/吞世者/detachments/brazen-engines.md|好战机械]] 分队。
+15 分、[[factions/吞世者/detachments/brazen-engines.md|好战机械]] 分队。
 
 ## 效果
 
 This unit has DAEMON.
+
+**分数**：15 分
 
 ## 携带限制
 

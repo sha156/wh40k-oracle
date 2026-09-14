@@ -4,17 +4,16 @@ name_zh: 有翼泰伦王虫
 name_en: Winged Tyranid Prime
 faction: 基因窃取者教派
 type: unit
-points:
-  1 model: 65
 tags:
 - unit
 - unit/基因窃取者教派
 - 基因窃取者教派
 version:
+  points: historical / unmatched
   source: official-db
 sources:
 - book: 官方结构库 db/wh40k.sqlite（Wahapedia 11版镜像 + MFM 官方点数）
-updated: '2026-07-23'
+updated: '2026-09-14'
 ---
 
 ## 属性表
@@ -34,6 +33,7 @@ updated: '2026-07-23'
 - **死亡打击**：如果该模型被近战攻击摧毁，而且该模型在该阶段中没有进行过近战，掷一枚 D6：如果掷骰结果为 4+，不要将其从游戏中移除。被摧毁的模型可以在攻击模型的单位完成攻击后进行近战，然后将其从游戏中移除。
 
 ## 单位构成
+历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
 - **1个模型** — 65 分
 
 ## 关键词

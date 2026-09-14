@@ -5,6 +5,7 @@ name_en: Eruption of Vitality
 faction: 千子
 type: enhancement
 detachment: Ritual of Regeneration
+cost: 35
 tags:
 - enhancement
 - enhancement/千子
@@ -14,13 +15,15 @@ sources:
 updated: '2026-07-26'
 ---
 
-分数未知、[[factions/千子/detachments/ritual-of-regeneration.md|再生仪式]] 分队。
+35 分、[[factions/千子/detachments/ritual-of-regeneration.md|再生仪式]] 分队。
 
 ## 效果
 
 The first time this model is destroyed, at the end of the phase, roll one D6:
 
 - On a 2+, set this model back up on the battlefield as close as possible to where it was destroyed, unengaged, with 3 wounds remaining.
+
+**分数**：35 分
 
 ## 携带限制
 

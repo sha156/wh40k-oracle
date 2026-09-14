@@ -7,6 +7,7 @@ aliases:
 faction: 钛帝国
 type: enhancement
 detachment: Advanced Acquisition Cadre
+cost: 15
 tags:
 - enhancement
 - enhancement/钛帝国
@@ -16,11 +17,13 @@ sources:
 updated: '2026-07-26'
 ---
 
-分数未知、[[factions/钛帝国/detachments/advanced-acquisition-cadre.md|先攻抢占核心队]] 分队。
+15 分、[[factions/钛帝国/detachments/advanced-acquisition-cadre.md|先攻抢占核心队]] 分队。
 
 ## 效果
 
 When this unit is selected to shoot, you can select one enemy unit within 24" of this unit. That enemy unit has +9" detection range until this unit has shot.
+
+**分数**：15 分
 
 ## 携带限制
 

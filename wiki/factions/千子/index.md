@@ -17,32 +17,32 @@
 
 ## 单位
 
-- [[factions/千子/units/cerberus|Cerberus]] — 
-- [[factions/千子/units/chaos-lord-on-disc-of-tzeentch|Chaos Lord On Disc Of Tzeentch]] — 
-- [[factions/千子/units/chaos-thunderhawk|Chaos Thunderhawk]] — 
-- [[factions/千子/units/deredeo-dreadnought|Deredeo Dreadnought]] — 
-- [[factions/千子/units/falchion|Falchion]] — 
-- [[factions/千子/units/fellblade|Fellblade]] — 
-- [[factions/千子/units/fire-raptor-gunship|Fire Raptor Gunship]] — 
-- [[factions/千子/units/hell-blade|Hell Blade]] — 
-- [[factions/千子/units/hell-talon|Hell Talon]] — 
-- [[factions/千子/units/kratos|Kratos]] — 
-- [[factions/千子/units/land-raider-achilles|Land Raider Achilles]] — 
-- [[factions/千子/units/land-raider-proteus|Land Raider Proteus]] — 
-- [[factions/千子/units/leviathan-dreadnought|Leviathan Dreadnought]] — 
-- [[factions/千子/units/mastodon|Mastodon]] — 
-- [[factions/千子/units/rapier-carrier|Rapier Carrier]] — 
-- [[factions/千子/units/relic-contemptor-dreadnought|Relic Contemptor Dreadnought]] — 
-- [[factions/千子/units/sicaran-battle-tank|Sicaran Battle Tank]] — 
-- [[factions/千子/units/sicaran-punisher|Sicaran Punisher]] — 
-- [[factions/千子/units/sicaran-venator|Sicaran Venator]] — 
-- [[factions/千子/units/sokar-pattern-stormbird|Sokar-pattern Stormbird]] — 
-- [[factions/千子/units/spartan|Spartan]] — 
-- [[factions/千子/units/storm-eagle-gunship|Storm Eagle Gunship]] — 
-- [[factions/千子/units/terrax-pattern-termite|Terrax-pattern Termite]] — 
-- [[factions/千子/units/typhon|Typhon]] — 
-- [[factions/千子/units/whirlwind-scorpius|Whirlwind Scorpius]] — 
-- [[factions/千子/units/xiphon-interceptor|Xiphon Interceptor]] — 
+- [[factions/千子/units/cerberus|Cerberus]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
+- [[factions/千子/units/chaos-lord-on-disc-of-tzeentch|Chaos Lord On Disc Of Tzeentch]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
+- [[factions/千子/units/chaos-thunderhawk|Chaos Thunderhawk]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
+- [[factions/千子/units/deredeo-dreadnought|Deredeo Dreadnought]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
+- [[factions/千子/units/falchion|Falchion]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
+- [[factions/千子/units/fellblade|Fellblade]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
+- [[factions/千子/units/fire-raptor-gunship|Fire Raptor Gunship]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
+- [[factions/千子/units/hell-blade|Hell Blade]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
+- [[factions/千子/units/hell-talon|Hell Talon]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
+- [[factions/千子/units/kratos|Kratos]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
+- [[factions/千子/units/land-raider-achilles|Land Raider Achilles]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
+- [[factions/千子/units/land-raider-proteus|Land Raider Proteus]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
+- [[factions/千子/units/leviathan-dreadnought|Leviathan Dreadnought]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
+- [[factions/千子/units/mastodon|Mastodon]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
+- [[factions/千子/units/rapier-carrier|Rapier Carrier]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
+- [[factions/千子/units/relic-contemptor-dreadnought|Relic Contemptor Dreadnought]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
+- [[factions/千子/units/sicaran-battle-tank|Sicaran Battle Tank]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
+- [[factions/千子/units/sicaran-punisher|Sicaran Punisher]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
+- [[factions/千子/units/sicaran-venator|Sicaran Venator]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
+- [[factions/千子/units/sokar-pattern-stormbird|Sokar-pattern Stormbird]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
+- [[factions/千子/units/spartan|Spartan]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
+- [[factions/千子/units/storm-eagle-gunship|Storm Eagle Gunship]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
+- [[factions/千子/units/terrax-pattern-termite|Terrax-pattern Termite]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
+- [[factions/千子/units/typhon|Typhon]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
+- [[factions/千子/units/whirlwind-scorpius|Whirlwind Scorpius]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
+- [[factions/千子/units/xiphon-interceptor|Xiphon Interceptor]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
 - [[factions/千子/units/exalted-sorcerer-on-disc-of-tzeentch|乘坐奸奇魔碟的高阶巫师]] — 
 - [[factions/千子/units/defiler|亵渎者]] — 
 - [[factions/千子/units/kairos-fateweaver|凯洛斯·织命者]] — 
@@ -142,7 +142,7 @@
 
 - [[factions/千子/enhancements/prescient-authority|先知权柄]] — 0 分、Devoted Thralls 分队。
 - [[factions/千子/enhancements/nethershriek-mind-eater|冥啸噬心者]] — 10 分、Changehost of Deceit 分队。
-- [[factions/千子/enhancements/thicket-of-bladed-bone|刃骨增生]] — 分数未知、变化的仆从 分队。
+- [[factions/千子/enhancements/thicket-of-bladed-bone|刃骨增生]] — 10 分、变化的仆从 分队。
 - [[factions/千子/enhancements/eldritch-vortex-of-etaph|厄塔弗虚旋]] — 35 分、Grand Coven 分队。
 - [[factions/千子/enhancements/fires-of-change|变化之火]] — 0 分、Chosen Cabal 分队。
 - [[factions/千子/enhancements/duplicitous-malediction|口是心非诅咒]] — 15 分、Changehost of Deceit 分队。
@@ -160,19 +160,19 @@
 - [[factions/千子/enhancements/warpmeld-dagger|扭曲之匕]] — 10 分、Warpmeld Pact 分队。
 - [[factions/千子/enhancements/diamond-of-distortion|扭曲之钻]] — 20 分、Warpmeld Pact 分队。
 - [[factions/千子/enhancements/astral-predation|星界潜猎]] — 0 分、Fateseekers 分队。
-- [[factions/千子/enhancements/umbralefic-crystal|本影晶石]] — 20 分、Grand Coven 分队。
+- [[factions/千子/enhancements/umbralefic-crystal|本影晶石]] — 30 分、Grand Coven 分队。
 - [[factions/千子/enhancements/empyric-onslaught|次元猛攻]] — 25 分、次元邪咒傀儡团 分队。
 - [[factions/千子/enhancements/flowing-flesh|流变之肉]] — 10 分、Warpmeld Pact 分队。
-- [[factions/千子/enhancements/occulus-infernum|炼狱魔眼]] — 分数未知、塞克塔部队 分队。
+- [[factions/千子/enhancements/occulus-infernum|炼狱魔眼]] — 20 分、塞克塔部队 分队。
 - [[factions/千子/enhancements/incandaeum|炽焰灵体]] — 15 分、Grand Coven 分队。
-- [[factions/千子/enhancements/curse-of-life|生命诅咒]] — 分数未知、再生仪式 分队。
-- [[factions/千子/enhancements/eruption-of-vitality|生机迸发]] — 分数未知、再生仪式 分队。
+- [[factions/千子/enhancements/curse-of-life|生命诅咒]] — 20 分、再生仪式 分队。
+- [[factions/千子/enhancements/eruption-of-vitality|生机迸发]] — 35 分、再生仪式 分队。
 - [[factions/千子/enhancements/biomechanical-mutation|生物机械突变]] — 15 分、Warpforged Cabal 分队。
 - [[factions/千子/enhancements/tome-of-true-names|真名之书]] — 20 分、Changehost of Deceit 分队。
 - [[factions/千子/enhancements/lord-of-forbidden-lore|禁忌学识之主]] — 20 分、Grand Coven 分队。
-- [[factions/千子/enhancements/walking-rampart|移动护墙]] — 分数未知、塞克塔部队 分队。
+- [[factions/千子/enhancements/walking-rampart|移动护墙]] — 30 分、塞克塔部队 分队。
 - [[factions/千子/enhancements/lord-of-the-rubricae|红骸之主]] — 15 分、Rubricae Phalanx 分队。
-- [[factions/千子/enhancements/unravelled-fates|解开命运]] — 分数未知、变化的仆从 分队。
+- [[factions/千子/enhancements/unravelled-fates|解开命运]] — 15 分、变化的仆从 分队。
 - [[factions/千子/enhancements/the-perplexing-cloak|迷惑之袍]] — 20 分、Warpforged Cabal 分队。
 - [[factions/千子/enhancements/diabolic-savant|邪谋智者]] — 20 分、Changehost of Deceit 分队。
 - [[factions/千子/enhancements/the-stave-abominus|阿波米努斯法杖]] — 20 分、Rubricae Phalanx 分队。

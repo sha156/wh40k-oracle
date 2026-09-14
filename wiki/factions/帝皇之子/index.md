@@ -102,29 +102,29 @@
 
 - [[factions/帝皇之子/enhancements/daemonshrieker|Daemonshrieker]] — 0 分、Sublime Strike 分队。
 - [[factions/帝皇之子/enhancements/venom-of-the-six-fanged-serpent|Venom of the Six-fanged Serpent]] — 0 分、Sublime Strike 分队。
-- [[factions/帝皇之子/enhancements/warp-walker|亚空间行者]] — 30 分、Carnival of Excess 分队。
+- [[factions/帝皇之子/enhancements/warp-walker|亚空间行者]] — 35 分、Carnival of Excess 分队。
 - [[factions/帝皇之子/enhancements/proud-and-vainglorious|傲慢虚荣]] — 20 分、Slaanesh’s Chosen 分队。
 - [[factions/帝皇之子/enhancements/spearhead-striker|先锋突袭者]] — 20 分、Rapid Evisceration 分队。
 - [[factions/帝皇之子/enhancements/tears-of-the-phoenix|凤凰之泪]] — 25 分、凤凰王庭 分队。
 - [[factions/帝皇之子/enhancements/repulsed-by-weakness|厌弃孱弱]] — 25 分、Slaanesh’s Chosen 分队。
 - [[factions/帝皇之子/enhancements/loathsome-dexterity|可憎灵巧]] — 10 分、Mercurial Host 分队。
-- [[factions/帝皇之子/enhancements/howling-plate|嚎啸战甲]] — 分数未知、癫狂之军 分队。
+- [[factions/帝皇之子/enhancements/howling-plate|嚎啸战甲]] — 20 分、癫狂之军 分队。
 - [[factions/帝皇之子/enhancements/accomplished-tactician|娴熟战术家]] — 35 分、Rapid Evisceration 分队。
 - [[factions/帝皇之子/enhancements/tactical-perfection|完美战术]] — 15 分、Mercurial Host 分队。
 - [[factions/帝皇之子/enhancements/exalted-patron|尊崇恩主]] — 15 分、凤凰王庭 分队。
 - [[factions/帝皇之子/enhancements/slayer-of-champions|弑冠军者]] — 15 分、Slaanesh’s Chosen 分队。
 - [[factions/帝皇之子/enhancements/eager-to-prove|急于证明]] — 15 分、Slaanesh’s Chosen 分队。
-- [[factions/帝皇之子/enhancements/beguiling-grotesquerie|惑人怪貌]] — 分数未知、杀戮盛景 分队。
+- [[factions/帝皇之子/enhancements/beguiling-grotesquerie|惑人怪貌]] — 15 分、杀戮盛景 分队。
 - [[factions/帝皇之子/enhancements/distortion|扭曲]] — 25 分、Peerless Bladesmen 分队。
 - [[factions/帝皇之子/enhancements/faultless-opportunist|无瑕投机者]] — 15 分、Peerless Bladesmen 分队。
 - [[factions/帝皇之子/enhancements/pledge-of-dark-glory|暗耀誓约]] — 25 分、Coterie of the Conceited 分队。
-- [[factions/帝皇之子/enhancements/euphoric-crown|欣快之冠]] — 分数未知、癫狂之军 分队。
+- [[factions/帝皇之子/enhancements/euphoric-crown|欣快之冠]] — 20 分、癫狂之军 分队。
 - [[factions/帝皇之子/enhancements/pledge-of-eternal-servitude|永役誓约]] — 25 分、Coterie of the Conceited 分队。
 - [[factions/帝皇之子/enhancements/steeped-in-suffering|浸淫苦难]] — 20 分、Mercurial Host 分队。
-- [[factions/帝皇之子/enhancements/eager-patrons|渴求的保护人]] — 分数未知、杀戮盛景 分队。
+- [[factions/帝皇之子/enhancements/eager-patrons|渴求的保护人]] — 20 分、杀戮盛景 分队。
 - [[factions/帝皇之子/enhancements/empyric-suffusion|灵能弥漫]] — 15 分、Carnival of Excess 分队。
 - [[factions/帝皇之子/enhancements/blinding-speed|炫目神速]] — 25 分、Peerless Bladesmen 分队。
-- [[factions/帝皇之子/enhancements/frenzied-ferocity|狂暴猛击]] — 分数未知、优雅暴徒 分队。
+- [[factions/帝皇之子/enhancements/frenzied-ferocity|狂暴猛击]] — 15 分、优雅暴徒 分队。
 - [[factions/帝皇之子/enhancements/pledge-of-mortal-pain|苦痛誓约]] — 15 分、Coterie of the Conceited 分队。
 - [[factions/帝皇之子/enhancements/spiritsliver|裂魂刃]] — 20 分、凤凰王庭 分队。
 - [[factions/帝皇之子/enhancements/sublime-prescience|超凡预见]] — 25 分、Rapid Evisceration 分队。
@@ -132,8 +132,8 @@
 - [[factions/帝皇之子/enhancements/intoxicating-musk|迷魂麝香]] — 20 分、Mercurial Host 分队。
 - [[factions/帝皇之子/enhancements/heretek-adept|邪机专家]] — 35 分、Rapid Evisceration 分队。
 - [[factions/帝皇之子/enhancements/pledge-of-unholy-fortune|邪运誓约]] — 30 分、Coterie of the Conceited 分队。
-- [[factions/帝皇之子/enhancements/possessed-blade|附魔之刃]] — 25 分、Carnival of Excess 分队。
-- [[factions/帝皇之子/enhancements/cacophonic-accompaniment|随行噪音]] — 分数未知、优雅暴徒 分队。
+- [[factions/帝皇之子/enhancements/possessed-blade|附魔之刃]] — 35 分、Carnival of Excess 分队。
+- [[factions/帝皇之子/enhancements/cacophonic-accompaniment|随行噪音]] — 20 分、优雅暴徒 分队。
 - [[factions/帝皇之子/enhancements/soulstain-made-manifest|魂污显形]] — 15 分、凤凰王庭 分队。
 - [[factions/帝皇之子/enhancements/dark-blessings|黑暗赐福]] — 10 分、Carnival of Excess 分队。
 

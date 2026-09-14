@@ -5,17 +5,17 @@ name_en: Mozrog Skragbad
 faction: 兽人
 type: unit
 points:
-  1 model: 125
+  1 model: 170
 tags:
 - unit
 - unit/兽人
 - 兽人
 version:
-  points: MFM 2026-07-27 15:14
+  points: MFM 2026-09-14T05:51:23.572407+00:00
   source: official-db
 sources:
 - book: 官方结构库 db/wh40k.sqlite（Wahapedia 11版镜像 + MFM 官方点数）
-updated: '2026-07-23'
+updated: '2026-09-14'
 ---
 
 ## 属性表
@@ -44,7 +44,7 @@ updated: '2026-07-23'
 - **越大越好**：本模型近战攻击巨兽或载具单位时，D+1,近战攻击巨型单位时改为D+2
 
 ## 单位构成
-- **1个模型** — 125 分
+- **1个模型** — 170 分
 
 ## 关键词
 - **阵营关键词**：兽人

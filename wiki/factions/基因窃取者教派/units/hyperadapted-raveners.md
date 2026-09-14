@@ -4,17 +4,16 @@ name_zh: 超适应蛇虫
 name_en: Hyperadapted Raveners
 faction: 基因窃取者教派
 type: unit
-points:
-  5 models: 165
 tags:
 - unit
 - unit/基因窃取者教派
 - 基因窃取者教派
 version:
+  points: historical / unmatched
   source: official-db
 sources:
 - book: 官方结构库 db/wh40k.sqlite（Wahapedia 11版镜像 + MFM 官方点数）
-updated: '2026-07-23'
+updated: '2026-09-14'
 ---
 
 ## 属性表
@@ -41,6 +40,7 @@ updated: '2026-07-23'
 - **超感官阵列**：每个战斗轮次限一次，您可以消耗0CP对该单位使用快速进场或英勇干预计谋，即使本回合中您已对另一个单位使用过那个计谋，依然可以这么做。
 
 ## 单位构成
+历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
 - **5个模型** — 165 分
 
 ## 关键词

@@ -5,17 +5,17 @@ name_en: The Sanguinor
 faction: 星际战士
 type: unit
 points:
-  1 model: 130
+  1 model: 120
 tags:
 - unit
 - unit/星际战士
 - 星际战士
 version:
-  points: MFM 2026-07-27 15:14
+  points: MFM 2026-09-14T05:51:23.572407+00:00
   source: official-db
 sources:
 - book: 官方结构库 db/wh40k.sqlite（Wahapedia 11版镜像 + MFM 官方点数）
-updated: '2026-07-23'
+updated: '2026-09-14'
 ---
 
 ## 属性表
@@ -37,7 +37,7 @@ updated: '2026-07-23'
 - **奇迹救赎**：一场战斗仅一次，在你对手的冲锋阶段结 束时，如果本模型处于预备队，你可以选择一个在本 阶段完成了冲锋移动的敌方单位，将本模型置入那 个敌方单位的接战范围内。
 
 ## 单位构成
-- **1个模型** — 130 分
+- **1个模型** — 120 分
 
 ## 关键词
 - **阵营关键词**：Blood Angels，Adeptus Astartes

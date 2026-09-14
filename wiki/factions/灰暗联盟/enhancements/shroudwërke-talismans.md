@@ -5,6 +5,7 @@ name_en: Shroudwërke Talismans
 faction: 灰暗联盟
 type: enhancement
 detachment: Farseekers
+cost: 15
 tags:
 - enhancement
 - enhancement/灰暗联盟
@@ -14,11 +15,13 @@ sources:
 updated: '2026-07-26'
 ---
 
-分数未知、[[factions/灰暗联盟/detachments/farseekers.md|远行探索者]] 分队。
+15 分、[[factions/灰暗联盟/detachments/farseekers.md|远行探索者]] 分队。
 
 ## 效果
 
 This unit has -3" detection range.
+
+**分数**：15 分
 
 ## 携带限制
 

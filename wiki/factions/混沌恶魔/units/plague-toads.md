@@ -3,17 +3,16 @@ id: '000001336'
 name_en: Plague Toads
 faction: 混沌恶魔
 type: unit
-points:
-  3 models: 120
 tags:
 - unit
 - unit/混沌恶魔
 - 混沌恶魔
 version:
+  points: historical / unmatched
   source: official-db
 sources:
 - book: 官方结构库 db/wh40k.sqlite（Wahapedia 11版镜像 + MFM 官方点数）
-updated: '2026-07-23'
+updated: '2026-09-14'
 ---
 
 ## 属性表
@@ -39,6 +38,7 @@ updated: '2026-07-23'
 - **GRANDFATHER'S BLESSING**：If a model from your army with the Leader ability can be attached to a Beasts of Nurgle unit, it can be attached to this unit instead.
 
 ## 单位构成
+历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
 - **3个模型** — 120 分
 
 ## 关键词

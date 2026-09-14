@@ -4,17 +4,16 @@ name_zh: 护教军先锋兵
 name_en: Skitarii Vanguard
 faction: 帝国骑士
 type: unit
-points:
-  10 models: 95
 tags:
 - unit
 - unit/帝国骑士
 - 帝国骑士
 version:
+  points: historical / unmatched
   source: official-db
 sources:
 - book: 官方结构库 db/wh40k.sqlite（Wahapedia 11版镜像 + MFM 官方点数）
-updated: '2026-07-23'
+updated: '2026-09-14'
 ---
 
 ## 属性表
@@ -46,6 +45,7 @@ updated: '2026-07-23'
 - **辐射污染**：本单位 3 寸内的敌方非载具单位 OC 值-1
 
 ## 单位构成
+历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
 - **10个模型** — 95 分
 
 ## 关键词

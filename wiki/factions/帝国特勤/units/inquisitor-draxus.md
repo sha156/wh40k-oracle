@@ -5,19 +5,17 @@ name_en: Inquisitor Draxus
 faction: 帝国特勤
 type: unit
 points:
-  1 model (AGENTS OF THE IMPERIUM Detachment): 75
-  1 model (Assigned Agent): 110
   1 model: 75
 tags:
 - unit
 - unit/帝国特勤
 - 帝国特勤
 version:
-  points: MFM 2026-07-27 15:14
+  points: MFM 2026-09-14T05:51:23.572407+00:00
   source: official-db
 sources:
 - book: 官方结构库 db/wh40k.sqlite（Wahapedia 11版镜像 + MFM 官方点数）
-updated: '2026-07-23'
+updated: '2026-09-14'
 ---
 
 ## 属性表
@@ -46,8 +44,6 @@ updated: '2026-07-23'
 - **灵能之幕（灵能）**：在您的指挥阶段中，该灵能者可以使用该技能，如果这样做，掷一枚D6；如果掷骰结果为1，该灵能者所在单位受到D3处致命伤，如果掷骰结果为2+，在您的[[factions/兽人/stratagems/on-to-da-next.md|下一个]]指挥阶段开始前，该灵能者所在单位除非位于攻击模型的18寸内，否则无法被选择成为远程攻击的目标。
 
 ## 单位构成
-- **1个模型 (AGENTS OF THE IMPERIUM Detachment)** — 75 分
-- **1个模型 (Assigned Agent)** — 110 分
 - **1个模型** — 75 分
 
 ## 关键词

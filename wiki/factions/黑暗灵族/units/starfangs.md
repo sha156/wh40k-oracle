@@ -4,18 +4,16 @@ name_zh: 星牙战机
 name_en: Starfangs
 faction: 黑暗灵族
 type: unit
-points:
-  1 model: 75
-  2 models: 150
 tags:
 - unit
 - unit/黑暗灵族
 - 黑暗灵族
 version:
+  points: historical / unmatched
   source: official-db
 sources:
 - book: 官方结构库 db/wh40k.sqlite（Wahapedia 11版镜像 + MFM 官方点数）
-updated: '2026-07-23'
+updated: '2026-09-14'
 ---
 
 ## 属性表
@@ -38,6 +36,7 @@ updated: '2026-07-23'
 - **Hallucinogen Grenades**：At the start of your opponent’s Shooting phase, this unit can use this ability. If it does, select one Aeldari Infantry unit from your army visible to and within 36" of this unit: until the end of the phase, that unit has the Stealth ability.
 
 ## 单位构成
+历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
 - **1个模型** — 75 分
 - **2个模型** — 150 分
 

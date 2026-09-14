@@ -5,8 +5,6 @@ name_en: Crusader Squad
 faction: 星际战士
 type: unit
 points:
-  1 Sword Brother, 5 Initiates and 4 Neophytes: 150
-  1 Sword Brother, 11 Initiates and 8 Neophytes: 300
   1 sword brother, 4 neophytes, 5 initiates: 150
   1 sword brother, 8 neophytes, 11 initiates: 290
 tags:
@@ -14,11 +12,11 @@ tags:
 - unit/星际战士
 - 星际战士
 version:
-  points: MFM 2026-07-27 15:14
+  points: MFM 2026-09-14T05:51:23.572407+00:00
   source: official-db
 sources:
 - book: 官方结构库 db/wh40k.sqlite（Wahapedia 11版镜像 + MFM 官方点数）
-updated: '2026-07-23'
+updated: '2026-09-14'
 ---
 
 ## 属性表
@@ -50,8 +48,6 @@ updated: '2026-07-23'
 - **正义狂热**：在您对手的射击阶段中，每当一个敌方单位完成射击后，如果该单位中的任意模型被那个敌方单位的攻击摧毁,该单位可以进行一次D6+2" 的迸发移动。
 
 ## 单位构成
-- **1 Sword Brother, 5 Initiates and 4 Neophytes** — 150 分
-- **1 Sword Brother, 11 Initiates and 8 Neophytes** — 300 分
 - **1 sword brother, 4 neophytes, 5 initiates** — 150 分
 - **1 sword brother, 8 neophytes, 11 initiates** — 290 分
 

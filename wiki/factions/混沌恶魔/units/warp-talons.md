@@ -4,18 +4,16 @@ name_zh: 次元爪
 name_en: Warp Talons
 faction: 混沌恶魔
 type: unit
-points:
-  5 models: 125
-  10 models: 270
 tags:
 - unit
 - unit/混沌恶魔
 - 混沌恶魔
 version:
+  points: historical / unmatched
   source: official-db
 sources:
 - book: 官方结构库 db/wh40k.sqlite（Wahapedia 11版镜像 + MFM 官方点数）
-updated: '2026-07-23'
+updated: '2026-09-14'
 ---
 
 ## 属性表
@@ -36,6 +34,7 @@ updated: '2026-07-23'
 - **次元突袭**：在近战阶段结束时，如果本单位在本阶段消灭过至少一个敌方单位，并且此时接战范围内没有敌方单位，你可以将本单位移除出场放入战略预备队
 
 ## 单位构成
+历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
 - **5个模型** — 125 分
 - **10个模型** — 270 分
 

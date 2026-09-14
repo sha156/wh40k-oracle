@@ -5,7 +5,7 @@ name_en: Ferocious Show Off
 faction: 兽人
 type: enhancement
 detachment: Green Tide
-cost: 10
+cost: 15
 tags:
 - enhancement
 - enhancement/兽人
@@ -15,13 +15,13 @@ sources:
 updated: '2026-07-26'
 ---
 
-10 分、[[factions/兽人/detachments/green-tide.md|Green Tide]] 分队。
+15 分、[[factions/兽人/detachments/green-tide.md|Green Tide]] 分队。
 
 ## 效果
 
 Each time the bearer fights, while resolving those attacks, add 1 to the Strength characteristic of the bearers melee weapons. If the bearer’s unit contains 10 or more models, while resolving those attacks, add 3 to the Strength characteristic instead.
 
-**分数**：10 分
+**分数**：15 分
 
 ## 携带限制
 

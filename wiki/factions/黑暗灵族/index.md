@@ -18,46 +18,46 @@
 
 ## 单位
 
-- [[factions/黑暗灵族/units/beastmaster|Beastmaster]] — 
-- [[factions/黑暗灵族/units/corsair-cloud-dancer-band|Corsair Cloud Dancer Band]] — 
-- [[factions/黑暗灵族/units/corsair-reaver-band|Corsair Reaver Band]] — 
-- [[factions/黑暗灵族/units/corsair-skyreaver-band|Corsair Skyreaver Band]] — 
-- [[factions/黑暗灵族/units/court-of-the-archon|Court of the Archon]] — 
-- [[factions/黑暗灵族/units/grotesques|Grotesques]] — 
-- [[factions/黑暗灵族/units/raven-strike-fighter|Raven Strike Fighter]] — 
-- [[factions/黑暗灵族/units/reaper|Reaper]] — 
-- [[factions/黑暗灵族/units/tantalus|Tantalus]] — 
-- [[factions/黑暗灵族/units/urien-rakarth|Urien Rakarth]] — 
-- [[factions/黑暗灵族/units/troupe|丑角剧团]] — 
-- [[factions/黑暗灵族/units/troupe-master|丑角剧团长]] — 
-- [[factions/黑暗灵族/units/prince-yriel|伊瑞尔亲王]] — 
+- [[factions/黑暗灵族/units/beastmaster|Beastmaster]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
+- [[factions/黑暗灵族/units/corsair-cloud-dancer-band|Corsair Cloud Dancer Band]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
+- [[factions/黑暗灵族/units/corsair-reaver-band|Corsair Reaver Band]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
+- [[factions/黑暗灵族/units/corsair-skyreaver-band|Corsair Skyreaver Band]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
+- [[factions/黑暗灵族/units/court-of-the-archon|Court of the Archon]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
+- [[factions/黑暗灵族/units/grotesques|Grotesques]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
+- [[factions/黑暗灵族/units/raven-strike-fighter|Raven Strike Fighter]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
+- [[factions/黑暗灵族/units/reaper|Reaper]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
+- [[factions/黑暗灵族/units/tantalus|Tantalus]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
+- [[factions/黑暗灵族/units/urien-rakarth|Urien Rakarth]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
+- [[factions/黑暗灵族/units/troupe|丑角剧团]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
+- [[factions/黑暗灵族/units/troupe-master|丑角剧团长]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
+- [[factions/黑暗灵族/units/prince-yriel|伊瑞尔亲王]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
 - [[factions/黑暗灵族/units/cronos|克洛诺斯]] — 
 - [[factions/黑暗灵族/units/wracks|凌虐者]] — 
 - [[factions/黑暗灵族/units/razorwing-jetfighter|刃翼战机]] — 
 - [[factions/黑暗灵族/units/reavers|劫掠者]] — 
-- [[factions/黑暗灵族/units/kharseth|卡尔塞斯]] — 
-- [[factions/黑暗灵族/units/death-jester|告死小丑]] — 
+- [[factions/黑暗灵族/units/kharseth|卡尔塞斯]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
+- [[factions/黑暗灵族/units/death-jester|告死小丑]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
 - [[factions/黑暗灵族/units/talos|塔洛斯]] — 
-- [[factions/黑暗灵族/units/corsair-skyreavers|天空掠夺者海盗]] — 
+- [[factions/黑暗灵族/units/corsair-skyreavers|天空掠夺者海盗]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
 - [[factions/黑暗灵族/units/wyches|巫灵]] — 
 - [[factions/黑暗灵族/units/archon|执政官]] — 
 - [[factions/黑暗灵族/units/hand-of-the-archon|执政官之手]] — 
 - [[factions/黑暗灵族/units/raider|掠袭者飞艇]] — 
-- [[factions/黑暗灵族/units/starfangs|星牙战机]] — 
-- [[factions/黑暗灵族/units/shadowseer|暗影先知]] — 
+- [[factions/黑暗灵族/units/starfangs|星牙战机]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
+- [[factions/黑暗灵族/units/shadowseer|暗影先知]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
 - [[factions/黑暗灵族/units/mandrakes|曼德拉]] — 
 - [[factions/黑暗灵族/units/incubi|梦魇剑客]] — 
 - [[factions/黑暗灵族/units/venom|毒液飞艇]] — 
 - [[factions/黑暗灵族/units/hellions|滑板暴徒]] — 
-- [[factions/黑暗灵族/units/solitaire|独角]] — 
+- [[factions/黑暗灵族/units/solitaire|独角]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
 - [[factions/黑暗灵族/units/lady-malys|玛勒丝女士]] — 
 - [[factions/黑暗灵族/units/ravager|破坏者飞艇]] — 
-- [[factions/黑暗灵族/units/starweaver|织星者飞艇]] — 
-- [[factions/黑暗灵族/units/skyweavers|织空者摩托]] — 
+- [[factions/黑暗灵族/units/starweaver|织星者飞艇]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
+- [[factions/黑暗灵族/units/skyweavers|织空者摩托]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
 - [[factions/黑暗灵族/units/lelith-hesperax|莉莉丝·海斯佩拉克斯]] — 
-- [[factions/黑暗灵族/units/corsair-voidreavers|虚空劫掠者海盗]] — 
-- [[factions/黑暗灵族/units/voidweaver|虚空编织者飞艇]] — 
-- [[factions/黑暗灵族/units/corsair-voidscarred|虚空裂痕海盗]] — 
+- [[factions/黑暗灵族/units/corsair-voidreavers|虚空劫掠者海盗]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
+- [[factions/黑暗灵族/units/voidweaver|虚空编织者飞艇]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
+- [[factions/黑暗灵族/units/corsair-voidscarred|虚空裂痕海盗]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
 - [[factions/黑暗灵族/units/voidraven-bomber|虚空鸦轰炸机]] — 
 - [[factions/黑暗灵族/units/haemonculus|血伶人]] — 
 - [[factions/黑暗灵族/units/succubus|血腥魔女]] — 
@@ -137,7 +137,7 @@
 - [[factions/黑暗灵族/enhancements/master-repugnomancer-aura|厌恶巫师大师]] — 15 分、Covenite Coterie 分队。
 - [[factions/黑暗灵族/enhancements/leechbite-plate|吸血甲板]] — 5 分、Kabalite Cartel 分队。
 - [[factions/黑暗灵族/enhancements/master-nemesine|复仇大师]] — 5 分、Covenite Coterie 分队。
-- [[factions/黑暗灵族/enhancements/elixir-of-the-corpse-courts|尸骸王庭精华]] — 分数未知、折磨工具 分队。
+- [[factions/黑暗灵族/enhancements/elixir-of-the-corpse-courts|尸骸王庭精华]] — 15 分、折磨工具 分队。
 - [[factions/黑暗灵族/enhancements/master-artisan|工匠大师]] — 20 分、Covenite Coterie 分队。
 - [[factions/黑暗灵族/enhancements/phantasmal-smoke|幻象烟雾]] — 15 分、Skysplinter Assault 分队。
 - [[factions/黑暗灵族/enhancements/eye-of-spite|怨恨之眼]] — 15 分、Realspace Raiders 分队。
@@ -147,27 +147,27 @@
 - [[factions/黑暗灵族/enhancements/rending-chain-flails|撕裂连枷]] — 0 分、Painbringers 分队。
 - [[factions/黑暗灵族/enhancements/sadistic-fulcrum|施虐支点]] — 15 分、Skysplinter Assault 分队。
 - [[factions/黑暗灵族/enhancements/chronoshard|时间碎片]] — 15 分、Spectacle of Spite 分队。
-- [[factions/黑暗灵族/enhancements/hyperstimm-trafficker|极端药物走私者]] — 分数未知、杀戮表演 分队。
+- [[factions/黑暗灵族/enhancements/hyperstimm-trafficker|极端药物走私者]] — 20 分、杀戮表演 分队。
 - [[factions/黑暗灵族/enhancements/nightmare-shroud|梦魇裹尸布]] — 20 分、Skysplinter Assault 分队。
 - [[factions/黑暗灵族/enhancements/reapers-cowl|死神兜帽]] — 25 分、死神的赌注 分队。
 - [[factions/黑暗灵族/enhancements/webway-walker|灵网行者]] — 15 分、死神的赌注 分队。
 - [[factions/黑暗灵族/enhancements/webway-awl|灵网锥]] — 25 分、Kabalite Cartel 分队。
-- [[factions/黑暗灵族/enhancements/towering-arrogance-kabalite-agonysts|狂妄自大]] — 分数未知、阴谋团折磨使 分队。
+- [[factions/黑暗灵族/enhancements/towering-arrogance-kabalite-agonysts|狂妄自大]] — 15 分、阴谋团折磨使 分队。
 - [[factions/黑暗灵族/enhancements/towering-arrogance-kabalite-cartel|狂妄自大]] — 20 分、Kabalite Cartel 分队。
 - [[factions/黑暗灵族/enhancements/conductor-of-torment|痛苦指挥家]] — 20 分、死神的赌注 分队。
-- [[factions/黑暗灵族/enhancements/gnarlskin-experimentor|瘤皮实验者]] — 分数未知、折磨工具 分队。
+- [[factions/黑暗灵族/enhancements/gnarlskin-experimentor|瘤皮实验者]] — 20 分、折磨工具 分队。
 - [[factions/黑暗灵族/enhancements/informant-network|线人网络]] — 30 分、Kabalite Cartel 分队。
 - [[factions/黑暗灵族/enhancements/archraider|至尊掠夺者]] — 15 分、死神的赌注 分队。
-- [[factions/黑暗灵族/enhancements/periapt-of-torments-exhibition-of-slaughter|苦痛护符]] — 分数未知、杀戮表演 分队。
+- [[factions/黑暗灵族/enhancements/periapt-of-torments-exhibition-of-slaughter|苦痛护符]] — 20 分、杀戮表演 分队。
 - [[factions/黑暗灵族/enhancements/periapt-of-torments-spectacle-of-spite|苦痛护符]] — 25 分、Spectacle of Spite 分队。
 - [[factions/黑暗灵族/enhancements/pharmacophex|药剂师]] — 15 分、Spectacle of Spite 分队。
 - [[factions/黑暗灵族/enhancements/morghennas-curse|莫格恩娜之咒]] — 20 分、Spectacle of Spite 分队。
-- [[factions/黑暗灵族/enhancements/contempt-for-rivals|蔑视对决]] — 分数未知、阴谋团折磨使 分队。
+- [[factions/黑暗灵族/enhancements/contempt-for-rivals|蔑视对决]] — 20 分、阴谋团折磨使 分队。
 - [[factions/黑暗灵族/enhancements/blood-drenched-champion|血染冠军]] — 0 分、Ship-killer Cult 分队。
-- [[factions/黑暗灵族/enhancements/crucible-of-malediction|诅咒坩埚]] — 20 分、Realspace Raiders 分队。
+- [[factions/黑暗灵族/enhancements/crucible-of-malediction|诅咒坩埚]] — 15 分、Realspace Raiders 分队。
 - [[factions/黑暗灵族/enhancements/labyrinthine-cunning|迷宫狡诈]] — 25 分、Realspace Raiders 分队。
 - [[factions/黑暗灵族/enhancements/vile-surgeon|邪恶外科医师]] — 0 分、Painbringers 分队。
 - [[factions/黑暗灵族/enhancements/master-regenesist|重生大师]] — 25 分、Covenite Coterie 分队。
-- [[factions/黑暗灵族/enhancements/dark-vitality|黑暗活力]] — 25 分、Realspace Raiders 分队。
+- [[factions/黑暗灵族/enhancements/dark-vitality|黑暗活力]] — 20 分、Realspace Raiders 分队。
 - [[factions/黑暗灵族/enhancements/dark-charisma|黑暗魅力]] — 0 分、Kabalite Corsairs 分队。
 

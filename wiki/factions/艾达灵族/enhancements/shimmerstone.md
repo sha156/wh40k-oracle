@@ -4,7 +4,7 @@ name_en: Shimmerstone
 faction: 艾达灵族
 type: enhancement
 detachment: Aspect Host
-cost: 15
+cost: 10
 tags:
 - enhancement
 - enhancement/艾达灵族
@@ -14,13 +14,13 @@ sources:
 updated: '2026-07-26'
 ---
 
-15 分、[[factions/艾达灵族/detachments/aspect-host.md|Aspect Host]] 分队。
+10 分、[[factions/艾达灵族/detachments/aspect-host.md|Aspect Host]] 分队。
 
 ## 效果
 
 While the bearer is leading an Aspect Warriors unit, each time a ranged attack targets that unit, subtract 1 from the Wound roll.
 
-**分数**：15 分
+**分数**：10 分
 
 ## 携带限制
 

@@ -3,17 +3,16 @@ id: '000000120'
 name_en: Venerable Dreadnought (Legendary)
 faction: 星际战士
 type: unit
-points:
-  1 model: 165
 tags:
 - unit
 - unit/星际战士
 - 星际战士
 version:
+  points: historical / unmatched
   source: official-db
 sources:
 - book: 官方结构库 db/wh40k.sqlite（Wahapedia 11版镜像 + MFM 官方点数）
-updated: '2026-07-23'
+updated: '2026-09-14'
 ---
 
 ## 属性表
@@ -48,6 +47,7 @@ updated: '2026-07-23'
 - **Wisdom of the Ancients (Aura)**：While a friendly Adeptus Astartes Infantry unit is within 6" of this model, each time a model in that unit makes an attack, re-roll a Hit roll of 1.
 
 ## 单位构成
+历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
 - **1个模型** — 165 分
 
 ## 关键词

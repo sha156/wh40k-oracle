@@ -3,17 +3,16 @@ id: '000004008'
 name_en: Hades Breaching Drill
 faction: 基因窃取者教派
 type: unit
-points:
-  1 model: 110
 tags:
 - unit
 - unit/基因窃取者教派
 - 基因窃取者教派
 version:
+  points: historical / unmatched
   source: official-db
 sources:
 - book: 官方结构库 db/wh40k.sqlite（Wahapedia 11版镜像 + MFM 官方点数）
-updated: '2026-07-23'
+updated: '2026-09-14'
 ---
 
 ## 属性表
@@ -30,6 +29,7 @@ updated: '2026-07-23'
 - **[[factions/泰伦虫族/detachments/subterranean-assault.md|Subterranean Assault]]**：Each time you set up this model on the battlefield using the Deep Strike ability, you can select one friendly Astra Militarum Infantry unit in Strategic Reserves. If you do, set up that unit anywhere on the battlefield that is wholly within 9" of this model and more than 9" away from all enemy units.
 
 ## 单位构成
+历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
 - **1个模型** — 110 分
 
 ## 关键词

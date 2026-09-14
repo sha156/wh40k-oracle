@@ -3,17 +3,16 @@ id: '000004173'
 name_en: Inquisitor Ostromandeus
 faction: 帝国特勤
 type: unit
-points:
-  2 models: 65
 tags:
 - unit
 - unit/帝国特勤
 - 帝国特勤
 version:
+  points: historical / unmatched
   source: official-db
 sources:
 - book: 官方结构库 db/wh40k.sqlite（Wahapedia 11版镜像 + MFM 官方点数）
-updated: '2026-07-23'
+updated: '2026-09-14'
 ---
 
 ## 属性表
@@ -43,6 +42,7 @@ updated: '2026-07-23'
 - **Vox-skull**：Once per battle, at the start of any phase, you can select one enemy unit (excluding <span class="kwb">MONSTERS</span> and <span class="kwb">VEHICLES</span>) within 12" of the bearer. That unit must take a Battle-shock test; if that test is failed, until the end of your next turn, that unit cannot have the Benefit of Cover.<br><br><b>Designer’s Note:</b> <i>Place a vox-skull token next to the unit, removing it once this ability has been used.</i>
 
 ## 单位构成
+历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
 - **2个模型** — 65 分
 
 ## 关键词

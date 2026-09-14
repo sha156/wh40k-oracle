@@ -4,6 +4,7 @@ name_en: Bellicose Weapon Spirits
 faction: 星际战士
 type: enhancement
 detachment: Fulguris Task Force
+cost: 15
 tags:
 - enhancement
 - enhancement/星际战士
@@ -13,11 +14,13 @@ sources:
 updated: '2026-07-26'
 ---
 
-分数未知、[[factions/星际战士/detachments/fulguris-task-force.md|迅电特遣队]] 分队。
+15 分、[[factions/星际战士/detachments/fulguris-task-force.md|迅电特遣队]] 分队。
 
 ## 效果
 
 This unit can re-roll Damage rolls and rolls to determine the Attacks characteristic of a weapon.
+
+**分数**：15 分
 
 ## 携带限制
 

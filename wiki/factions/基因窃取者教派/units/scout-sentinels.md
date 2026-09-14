@@ -4,18 +4,16 @@ name_zh: 侦查哨兵
 name_en: Scout Sentinels
 faction: 基因窃取者教派
 type: unit
-points:
-  1 model: 55
-  2 models: 110
 tags:
 - unit
 - unit/基因窃取者教派
 - 基因窃取者教派
 version:
+  points: historical / unmatched
   source: official-db
 sources:
 - book: 官方结构库 db/wh40k.sqlite（Wahapedia 11版镜像 + MFM 官方点数）
-updated: '2026-07-23'
+updated: '2026-09-14'
 ---
 
 ## 属性表
@@ -46,6 +44,7 @@ updated: '2026-07-23'
 - **大胆侦查**：在你的射击阶段中，你可以选择一个该单位18寸内的敌方可见单位，若如此做直到本阶段结束前，每当友军星界军模型对该敌方单位进行攻击时，重投结果为1的命中
 
 ## 单位构成
+历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
 - **1个模型** — 55 分
 - **2个模型** — 110 分
 

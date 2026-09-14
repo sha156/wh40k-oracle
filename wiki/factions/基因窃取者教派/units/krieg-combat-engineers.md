@@ -4,18 +4,16 @@ name_zh: 克里格战斗工兵
 name_en: Krieg Combat Engineers
 faction: 基因窃取者教派
 type: unit
-points:
-  5 models: 60
-  10 models: 95
 tags:
 - unit
 - unit/基因窃取者教派
 - 基因窃取者教派
 version:
+  points: historical / unmatched
   source: official-db
 sources:
 - book: 官方结构库 db/wh40k.sqlite（Wahapedia 11版镜像 + MFM 官方点数）
-updated: '2026-07-23'
+updated: '2026-09-14'
 ---
 
 ## 属性表
@@ -47,6 +45,7 @@ updated: '2026-07-23'
 - **遥控地雷**：每场战斗一次，在你的射击阶段开始时，选择一个位于持有者视线中9寸内的敌军单位投掷D6，结果为3+则那个敌军单位遭受D3点致命伤，如果目标是载具或者工事则改为2D3点致命伤。
 
 ## 单位构成
+历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
 - **5个模型** — 60 分
 - **10个模型** — 95 分
 

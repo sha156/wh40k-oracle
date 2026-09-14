@@ -5,19 +5,17 @@ name_en: Sisters of Battle Immolator
 faction: 帝国特勤
 type: unit
 points:
-  1 model (AGENTS OF THE IMPERIUM Detachment): 100
-  1 model (Assigned Agent): 115
   1 model: 90
 tags:
 - unit
 - unit/帝国特勤
 - 帝国特勤
 version:
-  points: MFM 2026-07-27 15:14
+  points: MFM 2026-09-14T05:51:23.572407+00:00
   source: official-db
 sources:
 - book: 官方结构库 db/wh40k.sqlite（Wahapedia 11版镜像 + MFM 官方点数）
-updated: '2026-07-23'
+updated: '2026-09-14'
 ---
 
 ## 属性表
@@ -47,8 +45,6 @@ updated: '2026-07-23'
 - **净化与清除**：当该模型进行射击后，选择一个被该模型进行的攻击命中一次或多次的敌方单位。在该阶段结束前，该敌方单位无法获得掩体增益。
 
 ## 单位构成
-- **1个模型 (AGENTS OF THE IMPERIUM Detachment)** — 100 分
-- **1个模型 (Assigned Agent)** — 115 分
 - **1个模型** — 90 分
 
 ## 关键词

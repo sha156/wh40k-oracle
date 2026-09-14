@@ -5,18 +5,18 @@ name_en: Dark Reapers
 faction: 艾达灵族
 type: unit
 points:
-  5 models: 100
-  10 models: 210
+  5 models: 95
+  10 models: 200
 tags:
 - unit
 - unit/艾达灵族
 - 艾达灵族
 version:
-  points: MFM 2026-07-27 15:14
+  points: MFM 2026-09-14T05:51:23.572407+00:00
   source: official-db
 sources:
 - book: 官方结构库 db/wh40k.sqlite（Wahapedia 11版镜像 + MFM 官方点数）
-updated: '2026-07-23'
+updated: '2026-09-14'
 ---
 
 ## 属性表
@@ -48,8 +48,8 @@ updated: '2026-07-23'
 - **无处可逃**：当本单位中的模型进行远程攻击时，你可以无视任意或所有对其 BS 属性和命中骰结果的修正
 
 ## 单位构成
-- **5个模型** — 100 分
-- **10个模型** — 210 分
+- **5个模型** — 95 分
+- **10个模型** — 200 分
 
 ## 关键词
 - **阵营关键词**：Asuryani

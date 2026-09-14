@@ -4,7 +4,7 @@ name_en: Catechism of Divine Penitence
 faction: 战斗修女
 type: enhancement
 detachment: Penitent Host
-cost: 20
+cost: 15
 tags:
 - enhancement
 - enhancement/战斗修女
@@ -14,13 +14,13 @@ sources:
 updated: '2026-07-26'
 ---
 
-20 分、[[factions/战斗修女/detachments/penitent-host.md|Penitent Host]] 分队。
+15 分、[[factions/战斗修女/detachments/penitent-host.md|Penitent Host]] 分队。
 
 ## 效果
 
 The bearer gains the PENITENT keyword and, during the Declare Battle Formations step, can be attached to a REPENTIA SOUAD unit.
 
-**分数**：20 分
+**分数**：15 分
 
 ## 携带限制
 

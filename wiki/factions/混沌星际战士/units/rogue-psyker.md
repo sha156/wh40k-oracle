@@ -3,17 +3,16 @@ id: '000001600'
 name_en: Rogue Psyker
 faction: 混沌星际战士
 type: unit
-points:
-  1 model: 60
 tags:
 - unit
 - unit/混沌星际战士
 - 混沌星际战士
 version:
+  points: historical / unmatched
   source: official-db
 sources:
 - book: 官方结构库 db/wh40k.sqlite（Wahapedia 11版镜像 + MFM 官方点数）
-updated: '2026-07-23'
+updated: '2026-09-14'
 ---
 
 ## 属性表
@@ -38,6 +37,7 @@ updated: '2026-07-23'
 - **Psychic Barrier (Psychic)**：At the start of your opponent’s Shooting phase, you can roll one D6: on a 1, this <span class="kwb">PSYKER</span>’s unit suffers D3 mortal wounds; on a 2+, until the end of the phase, models in this <span class="kwb">PSYKER</span>’s unit have a 4+ invulnerable save.
 
 ## 单位构成
+历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
 - **1个模型** — 60 分
 
 ## 关键词

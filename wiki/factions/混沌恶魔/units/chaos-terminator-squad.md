@@ -4,18 +4,16 @@ name_zh: 混沌终结者
 name_en: Chaos Terminator Squad
 faction: 混沌恶魔
 type: unit
-points:
-  5 models: 180
-  10 models: 360
 tags:
 - unit
 - unit/混沌恶魔
 - 混沌恶魔
 version:
+  points: historical / unmatched
   source: official-db
 sources:
 - book: 官方结构库 db/wh40k.sqlite（Wahapedia 11版镜像 + MFM 官方点数）
-updated: '2026-07-23'
+updated: '2026-09-14'
 ---
 
 ## 属性表
@@ -47,6 +45,7 @@ updated: '2026-07-23'
 - **黑暗劫掠**：本单位进行了黑暗契约的同阶段中，可以重投 攻击命中结果
 
 ## 单位构成
+历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
 - **5个模型** — 180 分
 - **10个模型** — 360 分
 

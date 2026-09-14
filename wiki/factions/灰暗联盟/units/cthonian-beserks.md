@@ -5,18 +5,18 @@ name_en: Cthonian Beserks
 faction: 灰暗联盟
 type: unit
 points:
-  5 models: 100
-  10 models: 200
+  5 models: 95
+  10 models: 190
 tags:
 - unit
 - unit/灰暗联盟
 - 灰暗联盟
 version:
-  points: MFM 2026-07-27 15:14
+  points: MFM 2026-09-14T05:51:23.572407+00:00
   source: official-db
 sources:
 - book: 官方结构库 db/wh40k.sqlite（Wahapedia 11版镜像 + MFM 官方点数）
-updated: '2026-07-23'
+updated: '2026-09-14'
 ---
 
 ## 属性表
@@ -42,8 +42,8 @@ updated: '2026-07-23'
 - **地下爆破**：在己方射击阶段，在该单位进行射击后。选择一个被鼹鼠钻地榴弹发射器的一次或多次攻击命中的敌方单位(凶兽与载具单位除外)。直到[[factions/兽人/stratagems/on-to-da-next.md|下一个]]己方射击阶段开始前，那个敌方单位无法成为“警戒射击”计谋的目标。设计师注释:我们建议在受该效果影响的敌方单位旁放置一个鼹鼠钻地榴弹指示物作为提示。
 
 ## 单位构成
-- **5个模型** — 100 分
-- **10个模型** — 200 分
+- **5个模型** — 95 分
+- **10个模型** — 190 分
 
 ## 关键词
 - **阵营关键词**：Leagues of Votann

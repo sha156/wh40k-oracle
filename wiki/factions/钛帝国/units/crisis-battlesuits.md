@@ -4,18 +4,16 @@ name_zh: 危机战斗服小队
 name_en: Crisis Battlesuits
 faction: 钛帝国
 type: unit
-points:
-  3 models: 200
-  6 models: 400
 tags:
 - unit
 - unit/钛帝国
 - 钛帝国
 version:
+  points: historical / unmatched
   source: official-db
 sources:
 - book: 官方结构库 db/wh40k.sqlite（Wahapedia 11版镜像 + MFM 官方点数）
-updated: '2026-07-23'
+updated: '2026-09-14'
 ---
 
 ## 属性表
@@ -47,6 +45,7 @@ updated: '2026-07-23'
 - **Turbo-jets**：Each time this unit Advances, do not make an Advance roll for it. Instead, until the end of the phase, add 6" to the Move characteristic of models in this unit.
 
 ## 单位构成
+历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
 - **3个模型** — 200 分
 - **6个模型** — 400 分
 

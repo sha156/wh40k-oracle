@@ -3,17 +3,16 @@ id: '000001579'
 name_en: Inquisitor Eisenhorn
 faction: 帝国特勤
 type: unit
-points:
-  1 model: 65
 tags:
 - unit
 - unit/帝国特勤
 - 帝国特勤
 version:
+  points: historical / unmatched
   source: official-db
 sources:
 - book: 官方结构库 db/wh40k.sqlite（Wahapedia 11版镜像 + MFM 官方点数）
-updated: '2026-07-23'
+updated: '2026-09-14'
 ---
 
 ## 属性表
@@ -41,6 +40,7 @@ updated: '2026-07-23'
 - **Dominate Will (Psychic)**：At the start of your opponent’s Shooting phase, select one enemy <span class="kwb">INFANTRY</span> unit that is within 12" of and visible to this model and roll one D6: on a 1, this model suffers D3 mortal wounds; on a 2-5, until the end of the phase, each time a model in that unit makes an attack, subtract 1 from the Hit roll; on a 6, until the end of the phase, that unit is not eligible to shoot.
 
 ## 单位构成
+历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
 - **1个模型** — 65 分
 
 ## 关键词

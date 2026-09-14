@@ -4,7 +4,7 @@ name_en: Celerity
 faction: 星际战士
 type: enhancement
 detachment: Librarius Conclave
-cost: 30
+cost: 35
 tags:
 - enhancement
 - enhancement/星际战士
@@ -14,13 +14,13 @@ sources:
 updated: '2026-07-26'
 ---
 
-30 分、[[factions/星际战士/detachments/librarius-conclave.md|Librarius Conclave]] 分队。
+35 分、[[factions/星际战士/detachments/librarius-conclave.md|Librarius Conclave]] 分队。
 
 ## 效果
 
 The bearer’s unit is eligible to declare a charge in a turn in which it Advanced, and if the Biomancy Discipline is active for your army, it is eligible to declare a charge in a turn in which it Fell Back.
 
-**分数**：30 分
+**分数**：35 分
 
 ## 携带限制
 

@@ -5,6 +5,7 @@ name_en: Shroud Field
 faction: 星际战士
 type: enhancement
 detachment: Subversion Assets
+cost: 20
 tags:
 - enhancement
 - enhancement/星际战士
@@ -14,11 +15,13 @@ sources:
 updated: '2026-07-26'
 ---
 
-分数未知、[[factions/星际战士/detachments/subversion-assets.md|行动资源]] 分队。
+20 分、[[factions/星际战士/detachments/subversion-assets.md|行动资源]] 分队。
 
 ## 效果
 
 This model has Lone Operative and Stealth.
+
+**分数**：20 分
 
 ## 携带限制
 

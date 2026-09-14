@@ -106,14 +106,14 @@
 
 ## 强化
 
-- [[factions/帝皇卫队/enhancements/interred-expertise|亡者专精]] — 分数未知、亡者之势 分队。
+- [[factions/帝皇卫队/enhancements/interred-expertise|亡者专精]] — 25 分、亡者之势 分队。
 - [[factions/帝皇卫队/enhancements/mantle-of-the-emissary|使节披风]] — 0 分、Voyagers in Darkness 分队。
 - [[factions/帝皇卫队/enhancements/honoured-fallen-aura|光荣逝者（光环)]] — 15 分、耀日矛头 分队。
 - [[factions/帝皇卫队/enhancements/radiant-mantle|光辉披风]] — 30 分、Talons Of The Emperor 分队。
 - [[factions/帝皇卫队/enhancements/panoptispex|全景观测仪]] — 5 分、Shield Host 分队。
 - [[factions/帝皇卫队/enhancements/blade-imperator|剑之统帅]] — 25 分、Auric Champions 分队。
 - [[factions/帝皇卫队/enhancements/fierce-conqueror|勇猛征服者]] — 15 分、帝皇之狮 分队。
-- [[factions/帝皇卫队/enhancements/encircling-hunter|包抄猎手]] — 分数未知、寂静猎手 分队。
+- [[factions/帝皇卫队/enhancements/encircling-hunter|包抄猎手]] — 15 分、寂静猎手 分队。
 - [[factions/帝皇卫队/enhancements/superior-creation|卓越造物]] — 25 分、帝皇之狮 分队。
 - [[factions/帝皇卫队/enhancements/augury-uplink|占卜仪链接]] — 35 分、耀日矛头 分队。
 - [[factions/帝皇卫队/enhancements/praesidius|卫戍]] — 25 分、帝皇之狮 分队。
@@ -123,21 +123,21 @@
 - [[factions/帝皇卫队/enhancements/champion-of-the-imperium|帝国冠军]] — 25 分、Talons Of The Emperor 分队。
 - [[factions/帝皇卫队/enhancements/the-vratine-aquila-aura|弗拉汀之鹰]] — 0 分、Black Ship Guardians 分队。
 - [[factions/帝皇卫队/enhancements/martial-philosopher|武学哲人]] — 30 分、Auric Champions 分队。
-- [[factions/帝皇卫队/enhancements/from-the-hall-of-armouries|武库大厅]] — 25 分、Shield Host 分队。
+- [[factions/帝皇卫队/enhancements/from-the-hall-of-armouries|武库大厅]] — 20 分、Shield Host 分队。
 - [[factions/帝皇卫队/enhancements/gift-of-terran-artifice|泰拉造物之赐]] — 15 分、Talons Of The Emperor 分队。
 - [[factions/帝皇卫队/enhancements/oblivion-knight|湮灭骑士]] — 25 分、Null Maiden Vigil 分队。
 - [[factions/帝皇卫队/enhancements/raptor-blade|猛禽之刃]] — 5 分、Null Maiden Vigil 分队。
 - [[factions/帝皇卫队/enhancements/aegis-projector|神盾投射器]] — 20 分、Talons Of The Emperor 分队。
 - [[factions/帝皇卫队/enhancements/adamantine-talisman|精金护符]] — 25 分、耀日矛头 分队。
-- [[factions/帝皇卫队/enhancements/auramite-sarcophagus|耀金棺柩]] — 分数未知、亡者之势 分队。
+- [[factions/帝皇卫队/enhancements/auramite-sarcophagus|耀金棺柩]] — 15 分、亡者之势 分队。
 - [[factions/帝皇卫队/enhancements/voidstrider|虚空行者]] — 0 分、Voyagers in Darkness 分队。
-- [[factions/帝皇卫队/enhancements/admonimortis|训诫之亡]] — 10 分、帝皇之狮 分队。
-- [[factions/帝皇卫队/enhancements/mnemo-locked-shrine-cipher|记忆封存神龛暗号]] — 分数未知、雷灭锤击 分队。
+- [[factions/帝皇卫队/enhancements/admonimortis|训诫之亡]] — 30 分、帝皇之狮 分队。
+- [[factions/帝皇卫队/enhancements/mnemo-locked-shrine-cipher|记忆封存神龛暗号]] — 25 分、雷灭锤击 分队。
 - [[factions/帝皇卫队/enhancements/veteran-of-the-kataphraktoi|铁骑结社的老兵]] — 10 分、耀日矛头 分队。
 - [[factions/帝皇卫队/enhancements/sinister-presence-aura|阴森威压]] — 0 分、Black Ship Guardians 分队。
 - [[factions/帝皇卫队/enhancements/veiled-blade|隐蔽之刃]] — 25 分、Auric Champions 分队。
-- [[factions/帝皇卫队/enhancements/psyk-out-grenades|驱灵手雷]] — 分数未知、寂静猎手 分队。
-- [[factions/帝皇卫队/enhancements/efficient-aggression|高效进攻]] — 分数未知、雷灭锤击 分队。
+- [[factions/帝皇卫队/enhancements/psyk-out-grenades|驱灵手雷]] — 10 分、寂静猎手 分队。
+- [[factions/帝皇卫队/enhancements/efficient-aggression|高效进攻]] — 25 分、雷灭锤击 分队。
 - [[factions/帝皇卫队/enhancements/auric-mantle|黄金披风]] — 15 分、Shield Host 分队。
 - [[factions/帝皇卫队/enhancements/inspirational-exemplar|鼓舞典范]] — 10 分、Auric Champions 分队。
 

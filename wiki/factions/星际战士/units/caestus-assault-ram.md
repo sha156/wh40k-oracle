@@ -3,17 +3,16 @@ id: '000000072'
 name_en: Caestus Assault Ram
 faction: 星际战士
 type: unit
-points:
-  1 model: 215
 tags:
 - unit
 - unit/星际战士
 - 星际战士
 version:
+  points: historical / unmatched
   source: official-db
 sources:
 - book: 官方结构库 db/wh40k.sqlite（Wahapedia 11版镜像 + MFM 官方点数）
-updated: '2026-07-23'
+updated: '2026-09-14'
 ---
 
 ## 属性表
@@ -36,6 +35,7 @@ updated: '2026-07-23'
 - **Into the Foe**：If a unit disembarks from this <span class="kwb">TRANSPORT</span> before it moves, until the end of the turn, that unit is eligible to charge in a turn in which it Advanced.
 
 ## 单位构成
+历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
 - **1个模型** — 215 分
 
 ## 关键词

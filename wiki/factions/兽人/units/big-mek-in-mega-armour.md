@@ -5,17 +5,17 @@ name_en: Big Mek In Mega Armour
 faction: 兽人
 type: unit
 points:
-  1 model: 80
+  1 model: 90
 tags:
 - unit
 - unit/兽人
 - 兽人
 version:
-  points: MFM 2026-07-27 15:14
+  points: MFM 2026-09-14T05:51:23.572407+00:00
   source: official-db
 sources:
 - book: 官方结构库 db/wh40k.sqlite（Wahapedia 11版镜像 + MFM 官方点数）
-updated: '2026-07-23'
+updated: '2026-09-14'
 ---
 
 ## 属性表
@@ -46,7 +46,7 @@ updated: '2026-07-23'
 - **修理屁精**：一次性技能，在你的移动阶段结束时，为装备者所在单位中一个模型恢复D3点失去的W值(屁精模型只作为标记物存在，使用后移除)
 
 ## 单位构成
-- **1个模型** — 80 分
+- **1个模型** — 90 分
 
 ## 关键词
 - **阵营关键词**：兽人

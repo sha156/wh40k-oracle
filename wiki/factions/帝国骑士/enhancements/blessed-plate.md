@@ -5,6 +5,7 @@ name_en: Blessed Plate
 faction: 帝国骑士
 type: enhancement
 detachment: Dominus Foebreakers
+cost: 30
 tags:
 - enhancement
 - enhancement/帝国骑士
@@ -14,11 +15,13 @@ sources:
 updated: '2026-07-26'
 ---
 
-分数未知、[[factions/帝国骑士/detachments/dominus-foebreakers.md|碎敌统御者]] 分队。
+30 分、[[factions/帝国骑士/detachments/dominus-foebreakers.md|碎敌统御者]] 分队。
 
 ## 效果
 
 This model has +1 T.
+
+**分数**：30 分
 
 ## 携带限制
 

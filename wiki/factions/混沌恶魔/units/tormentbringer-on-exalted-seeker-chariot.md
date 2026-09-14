@@ -3,17 +3,16 @@ id: '000001141'
 name_en: Tormentbringer On Exalted Seeker Chariot
 faction: 混沌恶魔
 type: unit
-points:
-  1 model: 140
 tags:
 - unit
 - unit/混沌恶魔
 - 混沌恶魔
 version:
+  points: historical / unmatched
   source: official-db
 sources:
 - book: 官方结构库 db/wh40k.sqlite（Wahapedia 11版镜像 + MFM 官方点数）
-updated: '2026-07-23'
+updated: '2026-09-14'
 ---
 
 ## 属性表
@@ -40,6 +39,7 @@ updated: '2026-07-23'
 - **Hysterical Frenzy (Psychic)**：Once per Fight phase, just after an enemy unit selects a Slaanesh Legiones Daemonica unit from your army as a target, one friendly Psyker that is within 6" of that <span class="kwb">SLAANESH</span> unit and has this ability can use it. If it does, until the end of the phase, each time a model in that <span class="kwb">SLAANESH</span> unit is destroyed, roll one D6: on a 4+, do not remove it from play. That model can fight after the attacking model’s unit has finished making its attacks, and is then removed from play.
 
 ## 单位构成
+历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
 - **1个模型** — 140 分
 
 ## 关键词

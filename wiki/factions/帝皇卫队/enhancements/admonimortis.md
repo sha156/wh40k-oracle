@@ -7,7 +7,7 @@ aliases:
 faction: 帝皇卫队
 type: enhancement
 detachment: Lions of the Emperor
-cost: 10
+cost: 30
 tags:
 - enhancement
 - enhancement/帝皇卫队
@@ -17,13 +17,13 @@ sources:
 updated: '2026-07-26'
 ---
 
-10 分、[[factions/帝皇卫队/detachments/lions-of-the-emperor.md|帝皇之狮]] 分队。
+30 分、[[factions/帝皇卫队/detachments/lions-of-the-emperor.md|帝皇之狮]] 分队。
 
 ## 效果
 
 Improve the Strength characteristic of melee weapons equipped by the bearer by 3, and improve the Armour Penetration and Damage characteristics of those weapons by 1.
 
-**分数**：10 分
+**分数**：30 分
 
 ## 携带限制
 

@@ -5,17 +5,17 @@ name_en: Warlock
 faction: 艾达灵族
 type: unit
 points:
-  1 model: 45
+  1 model: 40
 tags:
 - unit
 - unit/艾达灵族
 - 艾达灵族
 version:
-  points: MFM 2026-07-27 15:14
+  points: MFM 2026-09-14T05:51:23.572407+00:00
   source: official-db
 sources:
 - book: 官方结构库 db/wh40k.sqlite（Wahapedia 11版镜像 + MFM 官方点数）
-updated: '2026-07-23'
+updated: '2026-09-14'
 ---
 
 ## 属性表
@@ -45,7 +45,7 @@ updated: '2026-07-23'
 - **灵能交感（灵能）**：当本模型被选中进行射击时，直到该阶段结束，本模型6寸内每有一个其他友方艾达灵族灵能者模型，本模型装备的毁灭咒术武器的A和S属性各加1（最多加2）
 
 ## 单位构成
-- **1个模型** — 45 分
+- **1个模型** — 40 分
 
 ## 关键词
 - **阵营关键词**：Asuryani

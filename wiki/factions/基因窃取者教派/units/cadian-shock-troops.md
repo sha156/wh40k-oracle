@@ -4,18 +4,16 @@ name_zh: 卡迪安突击队
 name_en: Cadian Shock Troops
 faction: 基因窃取者教派
 type: unit
-points:
-  10 models: 65
-  20 models: 120
 tags:
 - unit
 - unit/基因窃取者教派
 - 基因窃取者教派
 version:
+  points: historical / unmatched
   source: official-db
 sources:
 - book: 官方结构库 db/wh40k.sqlite（Wahapedia 11版镜像 + MFM 官方点数）
-updated: '2026-07-23'
+updated: '2026-09-14'
 ---
 
 ## 属性表
@@ -49,6 +47,7 @@ updated: '2026-07-23'
 - **单位注释**：该单位可以至多被2个领袖单位领导，这2个领袖单位中至多有一个是指挥组单位。如果该单位被2个领袖单位领导，那么当该单位作为护卫被摧毁的时候，那两个领袖单位分别成为原来的两个拥有初始兵力的单位。
 
 ## 单位构成
+历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
 - **10个模型** — 65 分
 - **20个模型** — 120 分
 

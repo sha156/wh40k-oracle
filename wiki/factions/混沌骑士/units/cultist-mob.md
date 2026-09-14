@@ -4,18 +4,16 @@ name_zh: 邪教徒
 name_en: Cultist Mob
 faction: 混沌骑士
 type: unit
-points:
-  10 models: 50
-  20 models: 100
 tags:
 - unit
 - unit/混沌骑士
 - 混沌骑士
 version:
+  points: historical / unmatched
   source: official-db
 sources:
 - book: 官方结构库 db/wh40k.sqlite（Wahapedia 11版镜像 + MFM 官方点数）
-updated: '2026-07-23'
+updated: '2026-09-14'
 ---
 
 ## 属性表
@@ -39,6 +37,7 @@ updated: '2026-07-23'
 - **为了黑暗诸神**：在你的指挥阶段结束时，如果本单位位于一个你占领的目标点范围内，则即使你在这个目标点范围内已没有你的模型，也算作你占领此目标点，此效果持续到敌方占领此目标点后，任意回合开始或结束时为止
 
 ## 单位构成
+历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
 - **10个模型** — 50 分
 - **20个模型** — 100 分
 

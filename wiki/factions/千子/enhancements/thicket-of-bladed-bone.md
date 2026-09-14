@@ -7,6 +7,7 @@ aliases:
 faction: 千子
 type: enhancement
 detachment: Servants of Change
+cost: 10
 tags:
 - enhancement
 - enhancement/千子
@@ -16,7 +17,7 @@ sources:
 updated: '2026-07-26'
 ---
 
-分数未知、[[factions/千子/detachments/servants-of-change.md|变化的仆从]] 分队。
+10 分、[[factions/千子/detachments/servants-of-change.md|变化的仆从]] 分队。
 
 ## 效果
 
@@ -24,6 +25,8 @@ This unit’s melee attacks have:
 
 - +1 AP.
 - [CLEAVE 1].
+
+**分数**：10 分
 
 ## 携带限制
 

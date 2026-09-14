@@ -4,17 +4,16 @@ name_zh: 金牛装甲车
 name_en: Taurox Prime
 faction: 基因窃取者教派
 type: unit
-points:
-  1 model: 90
 tags:
 - unit
 - unit/基因窃取者教派
 - 基因窃取者教派
 version:
+  points: historical / unmatched
   source: official-db
 sources:
 - book: 官方结构库 db/wh40k.sqlite（Wahapedia 11版镜像 + MFM 官方点数）
-updated: '2026-07-23'
+updated: '2026-09-14'
 ---
 
 ## 属性表
@@ -43,6 +42,7 @@ updated: '2026-07-23'
 - **运输工具**：该单位可以搭载12个界军风暴兵步兵模型或星界军风暴兵指挥官模型。
 
 ## 单位构成
+历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
 - **1个模型** — 90 分
 
 ## 关键词

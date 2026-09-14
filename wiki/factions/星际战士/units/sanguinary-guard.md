@@ -5,18 +5,18 @@ name_en: Sanguinary Guard
 faction: 星际战士
 type: unit
 points:
-  3 models: 125
+  3 models: 120
   6 models: 260
 tags:
 - unit
 - unit/星际战士
 - 星际战士
 version:
-  points: MFM 2026-07-27 15:14
+  points: MFM 2026-09-14T05:51:23.572407+00:00
   source: official-db
 sources:
 - book: 官方结构库 db/wh40k.sqlite（Wahapedia 11版镜像 + MFM 官方点数）
-updated: '2026-07-23'
+updated: '2026-09-14'
 ---
 
 ## 属性表
@@ -45,7 +45,7 @@ updated: '2026-07-23'
 - **阿兹凯隆接班人**：本单位被人物模型所领导时，敌方 单位以本单位为目标的近战攻击造伤骰的结果-1
 
 ## 单位构成
-- **3个模型** — 125 分
+- **3个模型** — 120 分
 - **6个模型** — 260 分
 
 ## 关键词

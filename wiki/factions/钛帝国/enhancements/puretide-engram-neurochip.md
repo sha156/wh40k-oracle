@@ -5,7 +5,7 @@ name_en: Puretide Engram Neurochip
 faction: 钛帝国
 type: enhancement
 detachment: Retaliation Cadre
-cost: 25
+cost: 15
 tags:
 - enhancement
 - enhancement/钛帝国
@@ -15,13 +15,13 @@ sources:
 updated: '2026-07-26'
 ---
 
-25 分、[[factions/钛帝国/detachments/retaliation-cadre.md|Retaliation Cadre]] 分队。
+15 分、[[factions/钛帝国/detachments/retaliation-cadre.md|Retaliation Cadre]] 分队。
 
 ## 效果
 
 Each time you target the bearer’s unit with a Stratagem, roll one D6: on a 4+, you gain 1CP.
 
-**分数**：25 分
+**分数**：15 分
 
 ## 携带限制
 

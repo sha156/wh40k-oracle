@@ -5,20 +5,20 @@ name_en: Meganobz
 faction: 兽人
 type: unit
 points:
-  2 models: 60
-  3 models: 90
-  5 models: 150
-  6 models: 180
+  2 models: 75
+  3 models: 110
+  5 models: 185
+  6 models: 225
 tags:
 - unit
 - unit/兽人
 - 兽人
 version:
-  points: MFM 2026-07-27 15:14
+  points: MFM 2026-09-14T05:51:23.572407+00:00
   source: official-db
 sources:
 - book: 官方结构库 db/wh40k.sqlite（Wahapedia 11版镜像 + MFM 官方点数）
-updated: '2026-07-23'
+updated: '2026-09-14'
 ---
 
 ## 属性表
@@ -44,10 +44,10 @@ updated: '2026-07-23'
 - **表演时间**：当你发动WAAAGH!技能的同个游戏大回合内，本单位模型获得【不觉疼痛5+】
 
 ## 单位构成
-- **2个模型** — 60 分
-- **3个模型** — 90 分
-- **5个模型** — 150 分
-- **6个模型** — 180 分
+- **2个模型** — 75 分
+- **3个模型** — 110 分
+- **5个模型** — 185 分
+- **6个模型** — 225 分
 
 ## 关键词
 - **阵营关键词**：兽人

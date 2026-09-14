@@ -6,16 +6,17 @@ faction: 黑暗灵族
 type: unit
 points:
   1 model: 110
+  per dark lance: 5
 tags:
 - unit
 - unit/黑暗灵族
 - 黑暗灵族
 version:
-  points: MFM 2026-07-27 15:14
+  points: MFM 2026-09-14T05:51:23.572407+00:00
   source: official-db
 sources:
 - book: 官方结构库 db/wh40k.sqlite（Wahapedia 11版镜像 + MFM 官方点数）
-updated: '2026-07-23'
+updated: '2026-09-14'
 ---
 
 ## 属性表
@@ -44,6 +45,7 @@ updated: '2026-07-23'
 
 ## 单位构成
 - **1个模型** — 110 分
+- **per dark lance** — 5 分
 
 ## 关键词
 - **阵营关键词**：Drukhari

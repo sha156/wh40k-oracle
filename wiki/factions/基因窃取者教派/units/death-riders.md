@@ -4,18 +4,16 @@ name_zh: 克里格死亡骑兵
 name_en: Death Riders
 faction: 基因窃取者教派
 type: unit
-points:
-  5 models: 60
-  10 models: 120
 tags:
 - unit
 - unit/基因窃取者教派
 - 基因窃取者教派
 version:
+  points: historical / unmatched
   source: official-db
 sources:
 - book: 官方结构库 db/wh40k.sqlite（Wahapedia 11版镜像 + MFM 官方点数）
-updated: '2026-07-23'
+updated: '2026-09-14'
 ---
 
 ## 属性表
@@ -39,6 +37,7 @@ updated: '2026-07-23'
 - **稳住阵线**：每回合一次，当一个敌军单位在该单位的8寸内结束一次常规移动、突进或撤退且该单位并不位于一个或多个敌军单位的接战范围内时，该单位可以立即进行一次至多6寸的常规移动
 
 ## 单位构成
+历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
 - **5个模型** — 60 分
 - **10个模型** — 120 分
 

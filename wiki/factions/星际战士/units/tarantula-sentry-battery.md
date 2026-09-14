@@ -3,19 +3,16 @@ id: '000000098'
 name_en: Tarantula Sentry Battery
 faction: 星际战士
 type: unit
-points:
-  1 model: 30
-  2 models: 60
-  3 models: 90
 tags:
 - unit
 - unit/星际战士
 - 星际战士
 version:
+  points: historical / unmatched
   source: official-db
 sources:
 - book: 官方结构库 db/wh40k.sqlite（Wahapedia 11版镜像 + MFM 官方点数）
-updated: '2026-07-23'
+updated: '2026-09-14'
 ---
 
 ## 属性表
@@ -38,6 +35,7 @@ updated: '2026-07-23'
 - **Sentinel Protocols**：Each time you select this unit for the Fire Overwatch Stratagem, hits are scored on unmodified Hit rolls of 4+ when resolving that Stratagem.
 
 ## 单位构成
+历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
 - **1个模型** — 30 分
 - **2个模型** — 60 分
 - **3个模型** — 90 分

@@ -4,18 +4,16 @@ name_zh: 恐虐狂战士
 name_en: Khorne Berzerkers
 faction: 混沌星际战士
 type: unit
-points:
-  10 models: 180
-  20 models: 360
 tags:
 - unit
 - unit/混沌星际战士
 - 混沌星际战士
 version:
+  points: historical / unmatched
   source: official-db
 sources:
 - book: 官方结构库 db/wh40k.sqlite（Wahapedia 11版镜像 + MFM 官方点数）
-updated: '2026-07-23'
+updated: '2026-09-14'
 ---
 
 ## 属性表
@@ -42,6 +40,7 @@ updated: '2026-07-23'
 - **恐虐徽记（装备）**：如果持有者拥有一枚或更多恐虐徽记，每当持有者的单位摧毁一个敌方单位时，您获得1点血流点数。每当您进行恐虐祝福掷骰时，您每有一点血流点数，便额外掷一枚骰子。这那之后，您失去所有的血流点数。
 
 ## 单位构成
+历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
 - **10个模型** — 180 分
 - **20个模型** — 360 分
 

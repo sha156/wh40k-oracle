@@ -14,8 +14,8 @@
 
 ## 单位
 
-- [[factions/钛帝国/units/tx42-piranha|TX-42水虎鱼]] — 
-- [[factions/钛帝国/units/xv9-hazard-battlesuits|XV9灾害战斗服小队]] — 
+- [[factions/钛帝国/units/tx42-piranha|TX-42水虎鱼]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
+- [[factions/钛帝国/units/xv9-hazard-battlesuits|XV9灾害战斗服小队]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
 - [[factions/钛帝国/units/ethereal|以太长老]] — 
 - [[factions/钛帝国/units/kroot-trail-shaper|克鲁特寻迹塑形者]] — 
 - [[factions/钛帝国/units/kroot-war-shaper|克鲁特战争塑形者]] — 
@@ -26,29 +26,29 @@
 - [[factions/钛帝国/units/kroot-flesh-shaper|克鲁特血肉塑形者]] — 
 - [[factions/钛帝国/units/kroot-farstalkers|克鲁特远猎者小队]] — 
 - [[factions/钛帝国/units/kroot-carnivores|克鲁特食肉者小队]] — 
-- [[factions/钛帝国/units/drone-sentry-turret|兵蜂哨戒炮]] — 
+- [[factions/钛帝国/units/drone-sentry-turret|兵蜂哨戒炮]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
 - [[factions/钛帝国/units/commander-in-coldstar-battlesuit|冷星战斗服指挥官]] — 
 - [[factions/钛帝国/units/razorshark-strike-fighter|剃刀鲨战斗机]] — 
-- [[factions/钛帝国/units/great-knarloc|卡纳罗克巨兽]] — 
-- [[factions/钛帝国/units/knarloc-riders|卡纳罗克骑兵队]] — 
-- [[factions/钛帝国/units/crisis-battlesuits|危机战斗服小队]] — 
-- [[factions/钛帝国/units/commander-in-crisis-battlesuit|危机战斗服指挥官]] — 
+- [[factions/钛帝国/units/great-knarloc|卡纳罗克巨兽]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
+- [[factions/钛帝国/units/knarloc-riders|卡纳罗克骑兵队]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
+- [[factions/钛帝国/units/crisis-battlesuits|危机战斗服小队]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
+- [[factions/钛帝国/units/commander-in-crisis-battlesuit|危机战斗服指挥官]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
 - [[factions/钛帝国/units/crisis-sunforge-battlesuits|危机日铸战斗服小队]] — 
 - [[factions/钛帝国/units/crisis-starscythe-battlesuits|危机星镰战斗服小队]] — 
 - [[factions/钛帝国/units/crisis-fireknife-battlesuits|危机火刃战斗服小队]] — 
 - [[factions/钛帝国/units/the-twin-lance|双枪]] — 
 - [[factions/钛帝国/units/taunar-supremacy-armour|塔'钨钠至高装甲]] — 
-- [[factions/钛帝国/units/shaso-ralai|夏司’欧 R’ALAI]] — 
+- [[factions/钛帝国/units/shaso-ralai|夏司’欧 R’ALAI]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
 - [[factions/钛帝国/units/sky-ray-gunship|天魟炮艇]] — 
-- [[factions/钛帝国/units/aunshi|安’史]] — 
-- [[factions/钛帝国/units/aunva|安’瓦]] — 
+- [[factions/钛帝国/units/aunshi|安’史]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
+- [[factions/钛帝国/units/aunva|安’瓦]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
 - [[factions/钛帝国/units/pathfinder-team|寻路者小队]] — 
 - [[factions/钛帝国/units/commander-in-enforcer-battlesuit|强执战斗服指挥官]] — 
 - [[factions/钛帝国/units/commander-shadowsun|影阳指挥官]] — 
-- [[factions/钛帝国/units/tactical-drones|战术兵蜂]] — 
+- [[factions/钛帝国/units/tactical-drones|战术兵蜂]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
 - [[factions/钛帝国/units/strike-team|打击小队]] — 
 - [[factions/钛帝国/units/darkstrider|暗行者]] — 
-- [[factions/钛帝国/units/barracuda|梭鱼]] — 
+- [[factions/钛帝国/units/barracuda|梭鱼]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
 - [[factions/钛帝国/units/piranhas|水虎鱼]] — 
 - [[factions/钛帝国/units/stealth-battlesuits|潜行战斗服小队]] — 
 - [[factions/钛帝国/units/tidewall-droneport|潮汐兵蜂平台]] — 
@@ -57,26 +57,26 @@
 - [[factions/钛帝国/units/riptide-battlesuit|激流战斗服]] — 
 - [[factions/钛帝国/units/cadre-fireblade|火刃队长]] — 
 - [[factions/钛帝国/units/broadside-battlesuits|炮击战斗服小队]] — 
-- [[factions/钛帝国/units/yvahra-battlesuit|焰涌战斗服]] — 
-- [[factions/钛帝国/units/rvarna-battlesuit|燃雨战斗服]] — 
+- [[factions/钛帝国/units/yvahra-battlesuit|焰涌战斗服]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
+- [[factions/钛帝国/units/rvarna-battlesuit|燃雨战斗服]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
 - [[factions/钛帝国/units/breacher-team|破袭小队]] — 
 - [[factions/钛帝国/units/firesight-team|神射手小队]] — 
 - [[factions/钛帝国/units/vespid-stingwings|胡蜂人尖翼小队]] — 
-- [[factions/钛帝国/units/tetras|脂鲤小队]] — 
+- [[factions/钛帝国/units/tetras|脂鲤小队]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
 - [[factions/钛帝国/units/tiger-shark|虎鲨]] — 
 - [[factions/钛帝国/units/ax-1-0-tiger-shark|虎鲨AX-1-0]] — 
 - [[factions/钛帝国/units/manta|蝠鲼]] — 
 - [[factions/钛帝国/units/commander-farsight|远见指挥官]] — 
-- [[factions/钛帝国/units/orca-dropship|逆戟鲸运输机]] — 
-- [[factions/钛帝国/units/longstrike|遥击]] — 
-- [[factions/钛帝国/units/remote-sensor-tower|遥感哨塔]] — 
-- [[factions/钛帝国/units/heavy-gun-drones|重型枪蜂小队]] — 
+- [[factions/钛帝国/units/orca-dropship|逆戟鲸运输机]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
+- [[factions/钛帝国/units/longstrike|遥击]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
+- [[factions/钛帝国/units/remote-sensor-tower|遥感哨塔]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
+- [[factions/钛帝国/units/heavy-gun-drones|重型枪蜂小队]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
 - [[factions/钛帝国/units/hammerhead-gunship|锤头鲨炮艇]] — 
 - [[factions/钛帝国/units/sun-shark-bomber|阳鲨轰炸机]] — 
 - [[factions/钛帝国/units/stormsurge|雷暴]] — 
 - [[factions/钛帝国/units/ghostkeel-battlesuit|鬼覆战斗服]] — 
 - [[factions/钛帝国/units/devilfish|魔鬼鱼]] — 
-- [[factions/钛帝国/units/remora-stealth-drones|鮣鱼隐形兵蜂机队]] — 
+- [[factions/钛帝国/units/remora-stealth-drones|鮣鱼隐形兵蜂机队]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
 
 ## 策略技能
 
@@ -137,28 +137,28 @@
 - [[factions/钛帝国/enhancements/kroothawk-flock|克鲁特鹰群]] — 10 分、Kroot Hunting Pack 分队。
 - [[factions/钛帝国/enhancements/internal-grenade-racks|内置榴弹架]] — 20 分、Retaliation Cadre 分队。
 - [[factions/钛帝国/enhancements/quill-marker|刺羽标记]] — 0 分、Kroot Raiding Party 分队。
-- [[factions/钛帝国/enhancements/coordinated-exploitation|协同破敌]] — 40 分、Mont’ka 分队。
+- [[factions/钛帝国/enhancements/coordinated-exploitation|协同破敌]] — 30 分、Mont’ka 分队。
 - [[factions/钛帝国/enhancements/borthrod-gland|博斯罗德腺体]] — 15 分、Kroot Hunting Pack 分队。
 - [[factions/钛帝国/enhancements/prototype-weapon-system|原型武器系统]] — 15 分、Retaliation Cadre 分队。
-- [[factions/钛帝国/enhancements/through-unity-devastation|团结致胜]] — 40 分、Kauyon 分队。
-- [[factions/钛帝国/enhancements/solid-image-projection-unit|实像投影装置]] — 30 分、Kauyon 分队。
-- [[factions/钛帝国/enhancements/negation-emitters|对立粒子发射器]] — 分数未知、先攻抢占核心队 分队。
+- [[factions/钛帝国/enhancements/through-unity-devastation|团结致胜]] — 30 分、Kauyon 分队。
+- [[factions/钛帝国/enhancements/solid-image-projection-unit|实像投影装置]] — 20 分、Kauyon 分队。
+- [[factions/钛帝国/enhancements/negation-emitters|对立粒子发射器]] — 15 分、先攻抢占核心队 分队。
 - [[factions/钛帝国/enhancements/strategic-conqueror|战略征服者]] — 15 分、Mont’ka 分队。
 - [[factions/钛帝国/enhancements/admired-leader|敬爱领袖]] — 20 分、Auxiliary Cadre 分队。
 - [[factions/钛帝国/enhancements/starflare-ignition-system|星耀点火系统]] — 20 分、Retaliation Cadre 分队。
 - [[factions/钛帝国/enhancements/root-carved-weapons|根雕武器]] — 10 分、Kroot Hunting Pack 分队。
 - [[factions/钛帝国/enhancements/nomadic-hunter|游牧猎手]] — 20 分、Kroot Hunting Pack 分队。
-- [[factions/钛帝国/enhancements/thermoneutronic-projector|热中子投射器]] — 20 分、Experimental Prototype Cadre 分队。
+- [[factions/钛帝国/enhancements/thermoneutronic-projector|热中子投射器]] — 15 分、Experimental Prototype Cadre 分队。
 - [[factions/钛帝国/enhancements/target-optimisation-microdrones|目标优化微型兵蜂]] — 0 分、Starfire Cadre 分队。
 - [[factions/钛帝国/enhancements/exemplar-of-the-kauyon|空育典范]] — 20 分、Kauyon 分队。
-- [[factions/钛帝国/enhancements/student-of-kauyon|空降学徒]] — 15 分、Auxiliary Cadre 分队。
-- [[factions/钛帝国/enhancements/plasma-accelerator-rifle|等离子加速步枪]] — 10 分、Experimental Prototype Cadre 分队。
-- [[factions/钛帝国/enhancements/unmasking-suite|索敌系统]] — 分数未知、先攻抢占核心队 分队。
-- [[factions/钛帝国/enhancements/puretide-engram-neurochip|纯洁之潮铭印芯片]] — 25 分、Retaliation Cadre 分队。
+- [[factions/钛帝国/enhancements/student-of-kauyon|空降学徒]] — 20 分、Auxiliary Cadre 分队。
+- [[factions/钛帝国/enhancements/plasma-accelerator-rifle|等离子加速步枪]] — 20 分、Experimental Prototype Cadre 分队。
+- [[factions/钛帝国/enhancements/unmasking-suite|索敌系统]] — 15 分、先攻抢占核心队 分队。
+- [[factions/钛帝国/enhancements/puretide-engram-neurochip|纯洁之潮铭印芯片]] — 15 分、Retaliation Cadre 分队。
 - [[factions/钛帝国/enhancements/experienced-leader|经验老到的头领]] — 0 分、Kroot Raiding Party 分队。
 - [[factions/钛帝国/enhancements/precision-of-the-patient-hunter|耐心猎手之精准]] — 15 分、Kauyon 分队。
 - [[factions/钛帝国/enhancements/dutys-echo|职责回响]] — 0 分、Starfire Cadre 分队。
 - [[factions/钛帝国/enhancements/exemplar-of-the-montka|蒙特卡典范]] — 10 分、Mont’ka 分队。
 - [[factions/钛帝国/enhancements/supernova-launcher|超新星发射器]] — 15 分、Experimental Prototype Cadre 分队。
-- [[factions/钛帝国/enhancements/strike-swiftly|迅捷突袭]] — 25 分、Mont’ka 分队。
+- [[factions/钛帝国/enhancements/strike-swiftly|迅捷突袭]] — 45 分、Mont’ka 分队。
 

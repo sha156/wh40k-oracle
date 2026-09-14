@@ -3,17 +3,16 @@ id: '000002738'
 name_en: Sanguinary Priest With Jump Pack
 faction: 星际战士
 type: unit
-points:
-  1 model: 100
 tags:
 - unit
 - unit/星际战士
 - 星际战士
 version:
+  points: historical / unmatched
   source: official-db
 sources:
 - book: 官方结构库 db/wh40k.sqlite（Wahapedia 11版镜像 + MFM 官方点数）
-updated: '2026-07-23'
+updated: '2026-09-14'
 ---
 
 ## 属性表
@@ -36,6 +35,7 @@ updated: '2026-07-23'
 - **Blood Chalice**：While this model is leading a unit, improve the Armour Penetration characteristic of melee weapons equipped by models in that unit by 1.
 
 ## 单位构成
+历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
 - **1个模型** — 100 分
 
 ## 关键词

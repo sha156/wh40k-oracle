@@ -4,17 +4,16 @@ name_zh: 附魔大师
 name_en: Master Of Possession
 faction: 混沌恶魔
 type: unit
-points:
-  1 model: 60
 tags:
 - unit
 - unit/混沌恶魔
 - 混沌恶魔
 version:
+  points: historical / unmatched
   source: official-db
 sources:
 - book: 官方结构库 db/wh40k.sqlite（Wahapedia 11版镜像 + MFM 官方点数）
-updated: '2026-07-23'
+updated: '2026-09-14'
 ---
 
 ## 属性表
@@ -43,6 +42,7 @@ updated: '2026-07-23'
 - **祭献匕首**：每个阶段一次，当本模型本选择进行射击或近 战时，它可以让自身遭受 1 点致命伤害，而在本阶段中进 行灵能攻击时命中和造伤结果都+1
 
 ## 单位构成
+历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
 - **1个模型** — 60 分
 
 ## 关键词

@@ -3,18 +3,16 @@ id: '000000315'
 name_en: Wolf Guard
 faction: 星际战士
 type: unit
-points:
-  5 models: 85
-  10 models: 170
 tags:
 - unit
 - unit/星际战士
 - 星际战士
 version:
+  points: historical / unmatched
   source: official-db
 sources:
 - book: 官方结构库 db/wh40k.sqlite（Wahapedia 11版镜像 + MFM 官方点数）
-updated: '2026-07-23'
+updated: '2026-09-14'
 ---
 
 ## 属性表
@@ -43,6 +41,7 @@ updated: '2026-07-23'
 - **ATTACHED UNIT**：If a Character unit from your army with the Leader ability can be attached to a [[factions/星际战士/units/sternguard-veteran-squad-2.md|Sternguard Veteran Squad]] or [[factions/星际战士/units/vanguard-veteran-squad.md|Vanguard Veteran Squad]], it can instead be attached to this unit instead.
 
 ## 单位构成
+历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
 - **5个模型** — 85 分
 - **10个模型** — 170 分
 

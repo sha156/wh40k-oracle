@@ -5,6 +5,7 @@ name_en: Curse of Life
 faction: 千子
 type: enhancement
 detachment: Ritual of Regeneration
+cost: 20
 tags:
 - enhancement
 - enhancement/千子
@@ -14,11 +15,13 @@ sources:
 updated: '2026-07-26'
 ---
 
-分数未知、[[factions/千子/detachments/ritual-of-regeneration.md|再生仪式]] 分队。
+20 分、[[factions/千子/detachments/ritual-of-regeneration.md|再生仪式]] 分队。
 
 ## 效果
 
 When this model heals as a result of the Sorcerous Invigoration detachment rule, you can add 3 to the number of wounds healed.
+
+**分数**：20 分
 
 ## 携带限制
 

@@ -5,7 +5,7 @@ name_en: Ingrained Superiority
 faction: 太空死灵
 type: enhancement
 detachment: Annihilation Legion
-cost: 10
+cost: 5
 tags:
 - enhancement
 - enhancement/太空死灵
@@ -15,13 +15,13 @@ sources:
 updated: '2026-07-26'
 ---
 
-10 分、[[factions/太空死灵/detachments/annihilation-legion.md|Annihilation Legion]] 分队。
+5 分、[[factions/太空死灵/detachments/annihilation-legion.md|Annihilation Legion]] 分队。
 
 ## 效果
 
 Each time a model in the bearer’s unit makes an attack, on a Critical Wound, improve the Armour Penetration characteristic of that attack by 1.
 
-**分数**：10 分
+**分数**：5 分
 
 ## 携带限制
 

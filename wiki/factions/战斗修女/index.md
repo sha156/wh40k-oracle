@@ -15,11 +15,11 @@
 
 ## 单位
 
-- [[factions/战斗修女/units/battle-sanctum|Battle Sanctum]] — 
-- [[factions/战斗修女/units/celestian-sacresant-aveline|Celestian Sacresant Aveline]] — 
-- [[factions/战斗修女/units/crusaders|Crusaders]] — 
-- [[factions/战斗修女/units/death-cult-assassins|Death Cult Assassins]] — 
-- [[factions/战斗修女/units/repressor|Repressor]] — 
+- [[factions/战斗修女/units/battle-sanctum|Battle Sanctum]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
+- [[factions/战斗修女/units/celestian-sacresant-aveline|Celestian Sacresant Aveline]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
+- [[factions/战斗修女/units/crusaders|Crusaders]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
+- [[factions/战斗修女/units/death-cult-assassins|Death Cult Assassins]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
+- [[factions/战斗修女/units/repressor|Repressor]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
 - [[factions/战斗修女/units/dialogus|书记修女]] — 
 - [[factions/战斗修女/units/retributor-squad|仇天使小队]] — 
 - [[factions/战斗修女/units/sororitas-rhino|修女会犀牛装甲车]] — 
@@ -104,9 +104,9 @@
 ## 强化
 
 - [[factions/战斗修女/enhancements/blade-of-saint-ellynor|Blade of Saint Ellynor]] — 15 分、Army of Faith 分队。
-- [[factions/战斗修女/enhancements/catechism-of-divine-penitence|Catechism of Divine Penitence]] — 20 分、Penitent Host 分队。
+- [[factions/战斗修女/enhancements/catechism-of-divine-penitence|Catechism of Divine Penitence]] — 15 分、Penitent Host 分队。
 - [[factions/战斗修女/enhancements/chaplet-of-sacrifice|Chaplet of Sacrifice]] — 25 分、Hallowed Martyrs 分队。
-- [[factions/战斗修女/enhancements/clarion-of-urgency|Clarion of Urgency]] — 分数未知、定罪合唱 分队。
+- [[factions/战斗修女/enhancements/clarion-of-urgency|Clarion of Urgency]] — 15 分、定罪合唱 分队。
 - [[factions/战斗修女/enhancements/divine-aspect|Divine Aspect]] — 5 分、Army of Faith 分队。
 - [[factions/战斗修女/enhancements/fervent-ferocity|Fervent Ferocity]] — 0 分、Penitents and Pilgrims 分队。
 - [[factions/战斗修女/enhancements/fire-and-fury|Fire and Fury]] — 30 分、Bringers of Flame 分队。
@@ -117,9 +117,9 @@
 - [[factions/战斗修女/enhancements/mantle-of-ophelia|Mantle of Ophelia]] — 20 分、Hallowed Martyrs 分队。
 - [[factions/战斗修女/enhancements/manual-of-saint-griselda|Manual of Saint Griselda]] — 20 分、Bringers of Flame 分队。
 - [[factions/战斗修女/enhancements/martial-discipline|Martial Discipline]] — 0 分、Pious Protectors 分队。
-- [[factions/战斗修女/enhancements/perfervid-haste|Perfervid Haste]] — 分数未知、神圣冠军 分队。
-- [[factions/战斗修女/enhancements/psalm-of-righteous-judgement|Psalm of Righteous Judgement]] — 30 分、Penitent Host 分队。
-- [[factions/战斗修女/enhancements/refrain-of-enduring-faith|Refrain of Enduring Faith]] — 25 分、Penitent Host 分队。
+- [[factions/战斗修女/enhancements/perfervid-haste|Perfervid Haste]] — 10 分、神圣冠军 分队。
+- [[factions/战斗修女/enhancements/psalm-of-righteous-judgement|Psalm of Righteous Judgement]] — 20 分、Penitent Host 分队。
+- [[factions/战斗修女/enhancements/refrain-of-enduring-faith|Refrain of Enduring Faith]] — 15 分、Penitent Host 分队。
 - [[factions/战斗修女/enhancements/righteous-rage|Righteous Rage]] — 15 分、Bringers of Flame 分队。
 - [[factions/战斗修女/enhancements/saintly-example|Saintly Example]] — 10 分、Hallowed Martyrs 分队。
 - [[factions/战斗修女/enhancements/sanctification-rituals|Sanctification Rituals]] — 0 分、Penitents and Pilgrims 分队。

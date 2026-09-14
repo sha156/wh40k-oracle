@@ -5,6 +5,7 @@ name_en: Euphoric Crown
 faction: 帝皇之子
 type: enhancement
 detachment: Frenzied Host
+cost: 20
 tags:
 - enhancement
 - enhancement/帝皇之子
@@ -14,11 +15,13 @@ sources:
 updated: '2026-07-26'
 ---
 
-分数未知、[[factions/帝皇之子/detachments/frenzied-host.md|癫狂之军]] 分队。
+20 分、[[factions/帝皇之子/detachments/frenzied-host.md|癫狂之军]] 分队。
 
 ## 效果
 
 This model’s melee attacks have +1 S.
+
+**分数**：20 分
 
 ## 携带限制
 

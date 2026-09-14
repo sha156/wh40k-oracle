@@ -5,7 +5,7 @@ name_en: Thermoneutronic Projector
 faction: 钛帝国
 type: enhancement
 detachment: Experimental Prototype Cadre
-cost: 20
+cost: 15
 tags:
 - enhancement
 - enhancement/钛帝国
@@ -15,7 +15,7 @@ sources:
 updated: '2026-07-26'
 ---
 
-20 分、[[factions/钛帝国/detachments/experimental-prototype-cadre.md|Experimental Prototype Cadre]] 分队。
+15 分、[[factions/钛帝国/detachments/experimental-prototype-cadre.md|Experimental Prototype Cadre]] 分队。
 
 ## 效果
 
@@ -24,7 +24,7 @@ In the Declare Battle Formations step, select one of this model’s T’au Flame
 - +2 S
 - +1 AP and D.
 
-**分数**：20 分
+**分数**：15 分
 
 ## 携带限制
 

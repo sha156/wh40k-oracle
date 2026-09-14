@@ -4,20 +4,16 @@ name_zh: 丑角剧团
 name_en: Troupe
 faction: 黑暗灵族
 type: unit
-points:
-  5 models: 85
-  6 models: 100
-  11 models: 190
-  12 models: 205
 tags:
 - unit
 - unit/黑暗灵族
 - 黑暗灵族
 version:
+  points: historical / unmatched
   source: official-db
 sources:
 - book: 官方结构库 db/wh40k.sqlite（Wahapedia 11版镜像 + MFM 官方点数）
-updated: '2026-07-23'
+updated: '2026-09-14'
 ---
 
 ## 属性表
@@ -47,6 +43,7 @@ updated: '2026-07-23'
 - **[[factions/黑暗灵族/stratagems/dance-macabre.md|死亡之舞]]**：在近战阶段开始时，选择以下能力之一，直到该阶段结束，本单位获得该能力⚫ 英雄之勇武：当该单位进行攻击时，重投结果为1的命中骰⚫ 恶者之灾劫：当该单位进行攻击时，该攻击的造伤骰结果加1⚫ 诡术师之优雅：当该单位被攻击时，该攻击的命中骰结果减1
 
 ## 单位构成
+历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
 - **5个模型** — 85 分
 - **6个模型** — 100 分
 - **11个模型** — 190 分

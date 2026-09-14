@@ -4,6 +4,7 @@ name_en: Thundercowl Turbines
 faction: 星际战士
 type: enhancement
 detachment: Darkflight Pursuit
+cost: 15
 tags:
 - enhancement
 - enhancement/星际战士
@@ -13,11 +14,13 @@ sources:
 updated: '2026-07-26'
 ---
 
-分数未知、[[factions/星际战士/detachments/darkflight-pursuit.md|黑暗追击队]] 分队。
+15 分、[[factions/星际战士/detachments/darkflight-pursuit.md|黑暗追击队]] 分队。
 
 ## 效果
 
 In your first Movement phase, this unit can make an ingress move.
+
+**分数**：15 分
 
 ## 携带限制
 

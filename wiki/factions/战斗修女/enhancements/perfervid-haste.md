@@ -4,6 +4,7 @@ name_en: Perfervid Haste
 faction: 战斗修女
 type: enhancement
 detachment: Sacred Champions
+cost: 10
 tags:
 - enhancement
 - enhancement/战斗修女
@@ -13,11 +14,13 @@ sources:
 updated: '2026-07-26'
 ---
 
-分数未知、[[factions/战斗修女/detachments/sacred-champions.md|神圣冠军]] 分队。
+10 分、[[factions/战斗修女/detachments/sacred-champions.md|神圣冠军]] 分队。
 
 ## 效果
 
 This unit has +1" M.
+
+**分数**：10 分
 
 ## 携带限制
 

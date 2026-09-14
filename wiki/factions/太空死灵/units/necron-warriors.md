@@ -5,18 +5,18 @@ name_en: Necron Warriors
 faction: 太空死灵
 type: unit
 points:
-  10 models: 80
+  10 models: 85
   20 models: 190
 tags:
 - unit
 - unit/太空死灵
 - 太空死灵
 version:
-  points: MFM 2026-07-27 15:14
+  points: MFM 2026-09-14T05:51:23.572407+00:00
   source: official-db
 sources:
 - book: 官方结构库 db/wh40k.sqlite（Wahapedia 11版镜像 + MFM 官方点数）
-updated: '2026-07-23'
+updated: '2026-09-14'
 ---
 
 ## 属性表
@@ -40,7 +40,7 @@ updated: '2026-07-23'
 - **他们的数量无穷无尽**：当激活该单位的重生协议时，可以重投重生协议的结果。
 
 ## 单位构成
-- **10个模型** — 80 分
+- **10个模型** — 85 分
 - **20个模型** — 190 分
 
 ## 关键词

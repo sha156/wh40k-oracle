@@ -151,7 +151,7 @@ When a unit makes an overrun fight, its models can be moved such that enemy unit
 
 *FIGHT*
 
-一个可以进行近战的单位指的是在当前阶段中还没有被选择进行近战并且满足以下一个或多个条件的单位：
+一个可以进行近战的单位指的是在当前阶段中还没有被选择进行近战并且满足以[[factions/兽人/stratagems/on-to-da-next.md|下一个]]或多个条件的单位：
 
 - 单位处于交战状态，或者在这个步骤开始时处于交战状态。
 
@@ -217,7 +217,7 @@ EFFECT: Your unit fights as described in Making Attacks (04).
 
 ## 猛攻近战 12.06
 
-*OVERRUN FIGHT*
+*[[factions/泰伦虫族/stratagems/overrun.md|OVERRUN]] FIGHT*
 
 满足条件：您的单位不处于交战状态，或者在近战步骤开始时不处于交战状态，但是在近战阶段期间处于交战状态。
 

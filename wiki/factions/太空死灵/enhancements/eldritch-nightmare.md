@@ -5,7 +5,7 @@ name_en: Eldritch Nightmare
 faction: 太空死灵
 type: enhancement
 detachment: Annihilation Legion
-cost: 15
+cost: 10
 tags:
 - enhancement
 - enhancement/太空死灵
@@ -15,13 +15,13 @@ sources:
 updated: '2026-07-26'
 ---
 
-15 分、[[factions/太空死灵/detachments/annihilation-legion.md|Annihilation Legion]] 分队。
+10 分、[[factions/太空死灵/detachments/annihilation-legion.md|Annihilation Legion]] 分队。
 
 ## 效果
 
 At the start of the Fight phase, each enemy unit within Engagement Range of the bearer must take a Battle-shock test.
 
-**分数**：15 分
+**分数**：10 分
 
 ## 携带限制
 

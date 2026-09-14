@@ -5,17 +5,17 @@ name_en: Cthonian Earthshakers
 faction: 灰暗联盟
 type: unit
 points:
-  2 models: 110
+  2 models: 100
 tags:
 - unit
 - unit/灰暗联盟
 - 灰暗联盟
 version:
-  points: MFM 2026-07-27 15:14
+  points: MFM 2026-09-14T05:51:23.572407+00:00
   source: official-db
 sources:
 - book: 官方结构库 db/wh40k.sqlite（Wahapedia 11版镜像 + MFM 官方点数）
-updated: '2026-07-23'
+updated: '2026-09-14'
 ---
 
 ## 属性表
@@ -41,7 +41,7 @@ updated: '2026-07-23'
 - **地形卜测猎手**：每场战斗至多2次，在己方射击阶段，当该单位被选择进行射击时。其可以使用本技能。若如此做，直到该阶段结束前，每当该单位中的模型使用钻毁弹进行攻击时，您可以重掷致伤掷骰。
 
 ## 单位构成
-- **2个模型** — 110 分
+- **2个模型** — 100 分
 
 ## 关键词
 - **阵营关键词**：Leagues of Votann

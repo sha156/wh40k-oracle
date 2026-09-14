@@ -5,6 +5,7 @@ name_en: Psyk-Out Grenades
 faction: 帝皇卫队
 type: enhancement
 detachment: Silent Hunters
+cost: 10
 tags:
 - enhancement
 - enhancement/帝皇卫队
@@ -14,12 +15,14 @@ sources:
 updated: '2026-07-26'
 ---
 
-分数未知、[[factions/帝皇卫队/detachments/silent-hunters.md|寂静猎手]] 分队。
+10 分、[[factions/帝皇卫队/detachments/silent-hunters.md|寂静猎手]] 分队。
 
 ## 效果
 
 - This unit has EXPLOSIVES.
 - When you target this unit with the Explosives stratagem, if you select an enemy [[core-rules/psyker.md|PSYKER]] unit, you can re-roll rolls to determine whether that enemy unit suffers a mortal wound.
+
+**分数**：10 分
 
 ## 携带限制
 

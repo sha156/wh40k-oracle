@@ -4,17 +4,16 @@ name_zh: 黎曼鲁斯指挥官
 name_en: Leman Russ Commander
 faction: 基因窃取者教派
 type: unit
-points:
-  1 model: 235
 tags:
 - unit
 - unit/基因窃取者教派
 - 基因窃取者教派
 version:
+  points: historical / unmatched
   source: official-db
 sources:
 - book: 官方结构库 db/wh40k.sqlite（Wahapedia 11版镜像 + MFM 官方点数）
-updated: '2026-07-23'
+updated: '2026-09-14'
 ---
 
 ## 属性表
@@ -53,6 +52,7 @@ updated: '2026-07-23'
 - **军官之陨**：在您对手的射击阶段中，当该单位被摧毁时，在进行致命破灭掷骰前，掷D6：● 如果掷骰结果为2+，不要将该单位从战场上移除。在进行攻击的单位完成攻击后，该单位可以使用常规射击进行射击，但在这样做时，该单位只能对那个敌方单位进行攻击。当该单位完成射击后，或在该阶段结束时（以先发生者为准），结算该单位的致命破灭掷骰，随后将该单位从战场上移除。
 
 ## 单位构成
+历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
 - **1个模型** — 235 分
 
 ## 关键词

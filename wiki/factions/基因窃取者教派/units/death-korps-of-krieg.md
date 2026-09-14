@@ -4,18 +4,16 @@ name_zh: 克里格死兵队
 name_en: Death Korps Of Krieg
 faction: 基因窃取者教派
 type: unit
-points:
-  10 models: 65
-  20 models: 145
 tags:
 - unit
 - unit/基因窃取者教派
 - 基因窃取者教派
 version:
+  points: historical / unmatched
   source: official-db
 sources:
 - book: 官方结构库 db/wh40k.sqlite（Wahapedia 11版镜像 + MFM 官方点数）
-updated: '2026-07-23'
+updated: '2026-09-14'
 ---
 
 ## 属性表
@@ -54,6 +52,7 @@ updated: '2026-07-23'
 - **【装备技能】死兵队医疗包**：在你的指挥阶段结束时，如 果装备者所在单位低于起始数量，则你可以救治 D3 个死 兵重新加入此单位，如果本单位中有两个模型装备有死兵 队医疗包，则改为救治 D3+1 个模型。
 
 ## 单位构成
+历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
 - **10个模型** — 65 分
 - **20个模型** — 145 分
 

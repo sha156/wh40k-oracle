@@ -5,7 +5,7 @@ name_en: Through Unity, Devastation
 faction: 钛帝国
 type: enhancement
 detachment: Kauyon
-cost: 40
+cost: 30
 tags:
 - enhancement
 - enhancement/钛帝国
@@ -15,13 +15,13 @@ sources:
 updated: '2026-07-26'
 ---
 
-40 分、[[factions/钛帝国/detachments/kauyon.md|Kauyon]] 分队。
+30 分、[[factions/钛帝国/detachments/kauyon.md|Kauyon]] 分队。
 
 ## 效果
 
 T’AU EMPIRE model only (excluding Kroot Shaper models). While the bearer is leading a unit, each time that unit is an Observer unit, until the end of the phase, ranged weapons equipped by models in a Guided unit have the [LETHAL HITS] ability while targeting their Spotted unit.
 
-**分数**：40 分
+**分数**：30 分
 
 ## 携带限制
 

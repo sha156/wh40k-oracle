@@ -5,17 +5,17 @@ name_en: Lokhust Lord
 faction: 太空死灵
 type: unit
 points:
-  1 model: 70
+  1 model: 80
 tags:
 - unit
 - unit/太空死灵
 - 太空死灵
 version:
-  points: MFM 2026-07-27 15:14
+  points: MFM 2026-09-14T05:51:23.572407+00:00
   source: official-db
 sources:
 - book: 官方结构库 db/wh40k.sqlite（Wahapedia 11版镜像 + MFM 官方点数）
-updated: '2026-07-23'
+updated: '2026-09-14'
 ---
 
 ## 属性表
@@ -43,7 +43,7 @@ updated: '2026-07-23'
 - **恨意驱使**：当该模型对低于半数兵力的敌方单位进行攻击时，您可以重掷命中掷骰，并且您可 以重掷致伤掷骰。
 
 ## 单位构成
-- **1个模型** — 70 分
+- **1个模型** — 80 分
 
 ## 关键词
 - **阵营关键词**：Necrons

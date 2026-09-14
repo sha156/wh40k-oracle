@@ -5,17 +5,17 @@ name_en: Deff Dread
 faction: 兽人
 type: unit
 points:
-  1 model: 110
+  1 model: 130
 tags:
 - unit
 - unit/兽人
 - 兽人
 version:
-  points: MFM 2026-07-27 15:14
+  points: MFM 2026-09-14T05:51:23.572407+00:00
   source: official-db
 sources:
 - book: 官方结构库 db/wh40k.sqlite（Wahapedia 11版镜像 + MFM 官方点数）
-updated: '2026-07-23'
+updated: '2026-09-14'
 ---
 
 ## 属性表
@@ -45,7 +45,7 @@ updated: '2026-07-23'
 - **野蛮机械**：每当该模型完成一次冲锋移动，选择位于其交战范围内的一个敌方单位并掷一枚D6：若结果为 2-5，那个敌方单位受到 D3 处致命伤；若结果为 6，那个敌方单位受到 D3+3 处致命伤。
 
 ## 单位构成
-- **1个模型** — 110 分
+- **1个模型** — 130 分
 
 ## 关键词
 - **阵营关键词**：兽人

@@ -5,7 +5,7 @@ name_en: Umbralefic Crystal
 faction: 千子
 type: enhancement
 detachment: Grand Coven
-cost: 20
+cost: 30
 tags:
 - enhancement
 - enhancement/千子
@@ -15,13 +15,13 @@ sources:
 updated: '2026-07-26'
 ---
 
-20 分、[[factions/千子/detachments/grand-coven.md|Grand Coven]] 分队。
+30 分、[[factions/千子/detachments/grand-coven.md|Grand Coven]] 分队。
 
 ## 效果
 
 Once per battle, in your Command phase, if the bearer’s unit is not within Engagement Range of one or more enemy units, you can remove that unit from the battlefield and place it into Strategic Reserves. In the Reinforcements step of your next Movement phase, set that unit back up anywhere on the battlefield that is more than 9" horizontally away from all enemy units.
 
-**分数**：20 分
+**分数**：30 分
 
 ## 携带限制
 

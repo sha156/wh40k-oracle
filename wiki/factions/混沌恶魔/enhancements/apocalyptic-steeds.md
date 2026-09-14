@@ -5,6 +5,7 @@ name_en: Apocalyptic Steeds
 faction: 混沌恶魔
 type: enhancement
 detachment: Cavalcade of Chaos
+cost: 10
 tags:
 - enhancement
 - enhancement/混沌恶魔
@@ -14,11 +15,13 @@ sources:
 updated: '2026-07-26'
 ---
 
-分数未知、[[factions/混沌恶魔/detachments/cavalcade-of-chaos.md|混沌骑兵队]] 分队。
+10 分、[[factions/混沌恶魔/detachments/cavalcade-of-chaos.md|混沌骑兵队]] 分队。
 
 ## 效果
 
 This unit has +1" Move characteristic.
+
+**分数**：10 分
 
 ## 携带限制
 

@@ -3,17 +3,16 @@ id: '000001293'
 name_en: Blood Slaughterer
 faction: 混沌星际战士
 type: unit
-points:
-  1 model: 160
 tags:
 - unit
 - unit/混沌星际战士
 - 混沌星际战士
 version:
+  points: historical / unmatched
   source: official-db
 sources:
 - book: 官方结构库 db/wh40k.sqlite（Wahapedia 11版镜像 + MFM 官方点数）
-updated: '2026-07-23'
+updated: '2026-09-14'
 ---
 
 ## 属性表
@@ -40,6 +39,7 @@ updated: '2026-07-23'
 - **Impaled**：Each time this weapon scores a hit against an enemy <span class="kwb">MONSTER</span> or <span class="kwb">VEHICLE</span> unit, until the end of the turn, if the bearer selects that unit as a target of a charge, add 2 to Charge rolls made for the bearer
 
 ## 单位构成
+历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
 - **1个模型** — 160 分
 
 ## 关键词

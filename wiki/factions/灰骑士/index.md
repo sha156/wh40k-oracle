@@ -16,9 +16,8 @@
 
 ## 单位
 
-- [[factions/灰骑士/units/brother-captain-stern|Brother-captain Stern]] — 
-- [[factions/灰骑士/units/grey-knights-relic-razorback|Grey Knights Relic Razorback]] — 
-- [[factions/灰骑士/units/servitors|Servitors]] — 
+- [[factions/灰骑士/units/brother-captain-stern|Brother-captain Stern]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
+- [[factions/灰骑士/units/grey-knights-relic-razorback|Grey Knights Relic Razorback]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
 - [[factions/灰骑士/units/grand-master|⼤导师]] — 
 - [[factions/灰骑士/units/brotherhood-champion|兄弟会勇士]] — 
 - [[factions/灰骑士/units/brotherhood-chaplain|兄弟会教⼠]] — 
@@ -30,8 +29,9 @@
 - [[factions/灰骑士/units/land-raider|兰德掠袭者坦克]] — 
 - [[factions/灰骑士/units/purifier-squad|净化者⼩队]] — 
 - [[factions/灰骑士/units/land-raider-crusader|十字军型兰德掠袭者坦克]] — 
-- [[factions/灰骑士/units/kaldor-draigo|卡尔多·德莱戈【传奇】]] — 
+- [[factions/灰骑士/units/kaldor-draigo|卡尔多·德莱戈【传奇】]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
 - [[factions/灰骑士/units/paladin-squad|圣骑⼠⼩队]] — 
+- [[factions/灰骑士/units/servitors|奴工【传奇】]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
 - [[factions/灰骑士/units/strike-squad|打击者⼩队]] — 
 - [[factions/灰骑士/units/interceptor-squad|拦截者⼩队]] — 
 - [[factions/灰骑士/units/land-raider-redeemer|救赎者型兰德掠袭者坦克]] — 
@@ -40,7 +40,7 @@
 - [[factions/灰骑士/units/purgation-squad|洗罪者⼩队]] — 
 - [[factions/灰骑士/units/nemesis-dreadknight|涅墨⻄斯骇骑机甲]] — 
 - [[factions/灰骑士/units/grand-master-in-nemesis-dreadknight|涅墨⻄斯骇骑机甲⼤导师]] — 
-- [[factions/灰骑士/units/grey-knights-dreadnought|灰骑士无畏机甲【传奇】]] — 
+- [[factions/灰骑士/units/grey-knights-dreadnought|灰骑士无畏机甲【传奇】]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
 - [[factions/灰骑士/units/grey-knights-thunderhawk-gunship|灰骑士雷鹰炮艇]] — 
 - [[factions/灰骑士/units/rhino|犀牛装甲车]] — 
 - [[factions/灰骑士/units/venerable-dreadnought|荣耀无畏机甲]] — 
@@ -107,7 +107,7 @@
 ## 强化
 
 - [[factions/灰骑士/enhancements/a-foot-in-the-future|A Foot in the Future]] — 15 分、Augurium Task Force 分队。
-- [[factions/灰骑士/enhancements/astral-overlap|Astral Overlap]] — 分数未知、次元拦截 分队。
+- [[factions/灰骑士/enhancements/astral-overlap|Astral Overlap]] — 10 分、次元拦截 分队。
 - [[factions/灰骑士/enhancements/banishing-wave-psychic|Banishing Wave (Psychic)]] — 20 分、Brotherhood Strike 分队。
 - [[factions/灰骑士/enhancements/blinding-aura|Blinding Aura]] — 10 分、Brotherhood Strike 分队。
 - [[factions/灰骑士/enhancements/close-and-sanction|Close and Sanction]] — 0 分、Baneslayer Strike 分队。
@@ -117,7 +117,7 @@
 - [[factions/灰骑士/enhancements/grimoire-of-conjunctions|Grimoire of Conjunctions]] — 10 分、Augurium Task Force 分队。
 - [[factions/灰骑士/enhancements/inescapable-judgement-psychic|Inescapable Judgement (Psychic)]] — 20 分、Hallowed Conclave 分队。
 - [[factions/灰骑士/enhancements/nemesis-rounds|Nemesis Rounds]] — 10 分、Hallowed Conclave 分队。
-- [[factions/灰骑士/enhancements/predestined-coordinates|Predestined Coordinates]] — 分数未知、次元拦截 分队。
+- [[factions/灰骑士/enhancements/predestined-coordinates|Predestined Coordinates]] — 10 分、次元拦截 分队。
 - [[factions/灰骑士/enhancements/purity-of-purpose|Purity of Purpose]] — 15 分、Brotherhood Strike 分队。
 - [[factions/灰骑士/enhancements/pyresoul-psychic|Pyresoul (Psychic)]] — 20 分、Banishers 分队。
 - [[factions/灰骑士/enhancements/quickening-foci|Quickening Foci]] — 15 分、Sanctic Spearhead 分队。
@@ -133,11 +133,11 @@
 - [[factions/灰骑士/enhancements/the-sixty-sixth-seal|The Sixty-sixth Seal]] — 25 分、Banishers 分队。
 - [[factions/灰骑士/enhancements/tome-of-forbidden-ways|Tome of Forbidden Ways]] — 25 分、Brotherhood Strike 分队。
 - [[factions/灰骑士/enhancements/paragon-of-sanctity|圣洁楷模]] — 10 分、次元灾星特遣队 分队。
-- [[factions/灰骑士/enhancements/boons-of-deimos|戴莫斯的恩赐]] — 分数未知、洗罪之火 分队。
+- [[factions/灰骑士/enhancements/boons-of-deimos|戴莫斯的恩赐]] — 20 分、洗罪之火 分队。
 - [[factions/灰骑士/enhancements/mandulian-reliquary|曼杜里斯骨匣]] — 20 分、次元灾星特遣队 分队。
-- [[factions/灰骑士/enhancements/vigilance-of-titan|泰坦的警戒]] — 分数未知、圣银突袭 分队。
-- [[factions/灰骑士/enhancements/phial-of-the-abyss|深渊安瓿]] — 25 分、次元灾星特遣队 分队。
-- [[factions/灰骑士/enhancements/psychic-celerity|灵能敏捷]] — 分数未知、圣银突袭 分队。
+- [[factions/灰骑士/enhancements/vigilance-of-titan|泰坦的警戒]] — 20 分、圣银突袭 分队。
+- [[factions/灰骑士/enhancements/phial-of-the-abyss|深渊安瓿]] — 15 分、次元灾星特遣队 分队。
+- [[factions/灰骑士/enhancements/psychic-celerity|灵能敏捷]] — 15 分、圣银突袭 分队。
 - [[factions/灰骑士/enhancements/radiant-champion|闪耀勇士]] — 15 分、次元灾星特遣队 分队。
-- [[factions/灰骑士/enhancements/precognicient-volleys|预知齐射]] — 分数未知、洗罪之火 分队。
+- [[factions/灰骑士/enhancements/precognicient-volleys|预知齐射]] — 10 分、洗罪之火 分队。
 

@@ -3,20 +3,16 @@ id: '000004172'
 name_en: Corsair Skyreaver Band
 faction: 黑暗灵族
 type: unit
-points:
-  5 models: 125
-  6 models: 150
-  10 models: 250
-  11 models: 275
 tags:
 - unit
 - unit/黑暗灵族
 - 黑暗灵族
 version:
+  points: historical / unmatched
   source: official-db
 sources:
 - book: 官方结构库 db/wh40k.sqlite（Wahapedia 11版镜像 + MFM 官方点数）
-updated: '2026-07-23'
+updated: '2026-09-14'
 ---
 
 ## 属性表
@@ -53,6 +49,7 @@ updated: '2026-07-23'
 - **Skyleap**：At the end of your opponent’s turn, if this unit is not within Engagement Range of one or more enemy units, you can remove this unit from the battlefield and place it into Strategic Reserves.
 
 ## 单位构成
+历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
 - **5个模型** — 125 分
 - **6个模型** — 150 分
 - **10个模型** — 250 分

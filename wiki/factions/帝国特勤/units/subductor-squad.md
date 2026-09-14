@@ -5,19 +5,17 @@ name_en: Subductor Squad
 faction: 帝国特勤
 type: unit
 points:
-  11 models (AGENTS OF THE IMPERIUM Detachment): 85
-  11 models (Assigned Agent): 100
   11 models: 85
 tags:
 - unit
 - unit/帝国特勤
 - 帝国特勤
 version:
-  points: MFM 2026-07-27 15:14
+  points: MFM 2026-09-14T05:51:23.572407+00:00
   source: official-db
 sources:
 - book: 官方结构库 db/wh40k.sqlite（Wahapedia 11版镜像 + MFM 官方点数）
-updated: '2026-07-23'
+updated: '2026-09-14'
 ---
 
 ## 属性表
@@ -45,8 +43,6 @@ updated: '2026-07-23'
 - **武器技能-天鹰使节**：每场战斗中您有一次机会，在任意指挥阶段开始时，您可以选择一个位于持有者6寸内的目标标记。所有位于该目标标记范围内的敌方单位必须进行一次战斗震慑测试（凶兽和载具除外）。每个目标标记在每个回合中只能被该技能选择一次。
 
 ## 单位构成
-- **11个模型 (AGENTS OF THE IMPERIUM Detachment)** — 85 分
-- **11个模型 (Assigned Agent)** — 100 分
 - **11个模型** — 85 分
 
 ## 关键词

@@ -17,145 +17,145 @@
 
 ## 单位
 
-- [[factions/基因窃取者教派/units/arkurian-stormhammer|Arkurian Stormhammer]] — 
-- [[factions/基因窃取者教派/units/armageddon-pattern-medusa|Armageddon-pattern Medusa]] — 
-- [[factions/基因窃取者教派/units/atlas-recovery-vehicle|Atlas Recovery Vehicle]] — 
-- [[factions/基因窃取者教派/units/carnodon|Carnodon]] — 
-- [[factions/基因窃取者教派/units/centaur-light-carrier|Centaur Light Carrier]] — 
-- [[factions/基因窃取者教派/units/colossus|Colossus]] — 
-- [[factions/基因窃取者教派/units/crassus|Crassus]] — 
-- [[factions/基因窃取者教派/units/death-korps-grenadier-squad|Death Korps Grenadier Squad]] — 
-- [[factions/基因窃取者教派/units/death-rider-commissar|Death Rider Commissar]] — 
-- [[factions/基因窃取者教派/units/dominus-armoured-siege-bombard|Dominus Armoured Siege Bombard]] — 
-- [[factions/基因窃取者教派/units/earthshaker-carriage-battery|Earthshaker Carriage Battery]] — 
-- [[factions/基因窃取者教派/units/earthshaker-platform|Earthshaker Platform]] — 
-- [[factions/基因窃取者教派/units/elysian-drop-sentinel|Elysian Drop Sentinel]] — 
-- [[factions/基因窃取者教派/units/elysian-sniper-squad|Elysian Sniper Squad]] — 
-- [[factions/基因窃取者教派/units/gorgon-heavy-transport|Gorgon Heavy Transport]] — 
-- [[factions/基因窃取者教派/units/griffon-mortar-carrier|Griffon Mortar Carrier]] — 
-- [[factions/基因窃取者教派/units/hades-breaching-drill|Hades Breaching Drill]] — 
-- [[factions/基因窃取者教派/units/heavy-mortar-team|Heavy Mortar Team]] — 
-- [[factions/基因窃取者教派/units/heavy-quad-launcher-team|Heavy Quad Launcher Team]] — 
-- [[factions/基因窃取者教派/units/hydra-platform|Hydra Platform]] — 
-- [[factions/基因窃取者教派/units/macharius|Macharius]] — 
-- [[factions/基因窃取者教派/units/macharius-omega|Macharius Omega]] — 
-- [[factions/基因窃取者教派/units/macharius-vanquisher|Macharius Vanquisher]] — 
-- [[factions/基因窃取者教派/units/macharius-vulcan|Macharius Vulcan]] — 
-- [[factions/基因窃取者教派/units/malcador|Malcador]] — 
-- [[factions/基因窃取者教派/units/malcador-annihilator|Malcador Annihilator]] — 
-- [[factions/基因窃取者教派/units/malcador-defender|Malcador Defender]] — 
-- [[factions/基因窃取者教派/units/malcador-infernus|Malcador Infernus]] — 
-- [[factions/基因窃取者教派/units/manticore-platform|Manticore Platform]] — 
-- [[factions/基因窃取者教派/units/medusa-carriage-battery|Medusa Carriage Battery]] — 
-- [[factions/基因窃取者教派/units/minotaur|Minotaur]] — 
-- [[factions/基因窃取者教派/units/mukaali-riders|Mukaali Riders]] — 
-- [[factions/基因窃取者教派/units/munitorum-servitors|Munitorum Servitors]] — 
-- [[factions/基因窃取者教派/units/praetor|Praetor]] — 
-- [[factions/基因窃取者教派/units/quartermaster-cadre-squad|Quartermaster Cadre Squad]] — 
-- [[factions/基因窃取者教派/units/rapier-laser-destroyer-battery|Rapier Laser Destroyer Battery]] — 
-- [[factions/基因窃取者教派/units/regimental-attachés|Regimental Attachés]] — 
-- [[factions/基因窃取者教派/units/sabre-weapons-battery|Sabre Weapons Battery]] — 
-- [[factions/基因窃取者教派/units/salamander-command-vehicle|Salamander Command Vehicle]] — 
-- [[factions/基因窃取者教派/units/salamander-scout-vehicle|Salamander Scout Vehicle]] — 
-- [[factions/基因窃取者教派/units/sentinel-powerlifter|Sentinel Powerlifter]] — 
-- [[factions/基因窃取者教派/units/storm-chimera|Storm Chimera]] — 
-- [[factions/基因窃取者教派/units/stormblade|Stormblade]] — 
-- [[factions/基因窃取者教派/units/stygies-destroyer-tank-hunter|Stygies Destroyer Tank Hunter]] — 
-- [[factions/基因窃取者教派/units/tarantula-battery|Tarantula Battery]] — 
-- [[factions/基因窃取者教派/units/tauros-assault-vehicle|Tauros Assault Vehicle]] — 
-- [[factions/基因窃取者教派/units/tauros-venator|Tauros Venator]] — 
-- [[factions/基因窃取者教派/units/tectonic-fragdrill|Tectonic Fragdrill]] — 
-- [[factions/基因窃取者教派/units/trojan-support-vehicle|Trojan Support Vehicle]] — 
-- [[factions/基因窃取者教派/units/valdor|Valdor]] — 
-- [[factions/基因窃取者教派/units/hells-last|【传奇】地狱之末]] — 
+- [[factions/基因窃取者教派/units/arkurian-stormhammer|Arkurian Stormhammer]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
+- [[factions/基因窃取者教派/units/armageddon-pattern-medusa|Armageddon-pattern Medusa]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
+- [[factions/基因窃取者教派/units/atlas-recovery-vehicle|Atlas Recovery Vehicle]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
+- [[factions/基因窃取者教派/units/carnodon|Carnodon]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
+- [[factions/基因窃取者教派/units/centaur-light-carrier|Centaur Light Carrier]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
+- [[factions/基因窃取者教派/units/colossus|Colossus]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
+- [[factions/基因窃取者教派/units/crassus|Crassus]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
+- [[factions/基因窃取者教派/units/death-korps-grenadier-squad|Death Korps Grenadier Squad]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
+- [[factions/基因窃取者教派/units/death-rider-commissar|Death Rider Commissar]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
+- [[factions/基因窃取者教派/units/dominus-armoured-siege-bombard|Dominus Armoured Siege Bombard]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
+- [[factions/基因窃取者教派/units/earthshaker-carriage-battery|Earthshaker Carriage Battery]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
+- [[factions/基因窃取者教派/units/earthshaker-platform|Earthshaker Platform]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
+- [[factions/基因窃取者教派/units/elysian-drop-sentinel|Elysian Drop Sentinel]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
+- [[factions/基因窃取者教派/units/elysian-sniper-squad|Elysian Sniper Squad]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
+- [[factions/基因窃取者教派/units/gorgon-heavy-transport|Gorgon Heavy Transport]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
+- [[factions/基因窃取者教派/units/griffon-mortar-carrier|Griffon Mortar Carrier]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
+- [[factions/基因窃取者教派/units/hades-breaching-drill|Hades Breaching Drill]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
+- [[factions/基因窃取者教派/units/heavy-mortar-team|Heavy Mortar Team]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
+- [[factions/基因窃取者教派/units/heavy-quad-launcher-team|Heavy Quad Launcher Team]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
+- [[factions/基因窃取者教派/units/hydra-platform|Hydra Platform]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
+- [[factions/基因窃取者教派/units/macharius|Macharius]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
+- [[factions/基因窃取者教派/units/macharius-omega|Macharius Omega]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
+- [[factions/基因窃取者教派/units/macharius-vanquisher|Macharius Vanquisher]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
+- [[factions/基因窃取者教派/units/macharius-vulcan|Macharius Vulcan]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
+- [[factions/基因窃取者教派/units/malcador|Malcador]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
+- [[factions/基因窃取者教派/units/malcador-annihilator|Malcador Annihilator]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
+- [[factions/基因窃取者教派/units/malcador-defender|Malcador Defender]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
+- [[factions/基因窃取者教派/units/malcador-infernus|Malcador Infernus]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
+- [[factions/基因窃取者教派/units/manticore-platform|Manticore Platform]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
+- [[factions/基因窃取者教派/units/medusa-carriage-battery|Medusa Carriage Battery]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
+- [[factions/基因窃取者教派/units/minotaur|Minotaur]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
+- [[factions/基因窃取者教派/units/mukaali-riders|Mukaali Riders]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
+- [[factions/基因窃取者教派/units/munitorum-servitors|Munitorum Servitors]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
+- [[factions/基因窃取者教派/units/praetor|Praetor]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
+- [[factions/基因窃取者教派/units/quartermaster-cadre-squad|Quartermaster Cadre Squad]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
+- [[factions/基因窃取者教派/units/rapier-laser-destroyer-battery|Rapier Laser Destroyer Battery]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
+- [[factions/基因窃取者教派/units/regimental-attachés|Regimental Attachés]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
+- [[factions/基因窃取者教派/units/sabre-weapons-battery|Sabre Weapons Battery]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
+- [[factions/基因窃取者教派/units/salamander-command-vehicle|Salamander Command Vehicle]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
+- [[factions/基因窃取者教派/units/salamander-scout-vehicle|Salamander Scout Vehicle]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
+- [[factions/基因窃取者教派/units/sentinel-powerlifter|Sentinel Powerlifter]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
+- [[factions/基因窃取者教派/units/storm-chimera|Storm Chimera]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
+- [[factions/基因窃取者教派/units/stormblade|Stormblade]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
+- [[factions/基因窃取者教派/units/stygies-destroyer-tank-hunter|Stygies Destroyer Tank Hunter]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
+- [[factions/基因窃取者教派/units/tarantula-battery|Tarantula Battery]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
+- [[factions/基因窃取者教派/units/tauros-assault-vehicle|Tauros Assault Vehicle]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
+- [[factions/基因窃取者教派/units/tauros-venator|Tauros Venator]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
+- [[factions/基因窃取者教派/units/tectonic-fragdrill|Tectonic Fragdrill]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
+- [[factions/基因窃取者教派/units/trojan-support-vehicle|Trojan Support Vehicle]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
+- [[factions/基因窃取者教派/units/valdor|Valdor]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
+- [[factions/基因窃取者教派/units/hells-last|【传奇】地狱之末]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
 - [[factions/基因窃取者教派/units/magus|主教]] — 
-- [[factions/基因窃取者教派/units/hydra|九头蛇高射炮]] — 
+- [[factions/基因窃取者教派/units/hydra|九头蛇高射炮]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
 - [[factions/基因窃取者教派/units/biophagus|传疫者]] — 
-- [[factions/基因窃取者教派/units/scout-sentinels|侦查哨兵]] — 
-- [[factions/基因窃取者教派/units/krieg-combat-engineers|克里格战斗工兵]] — 
-- [[factions/基因窃取者教派/units/krieg-command-squad|克里格指挥组]] — 
-- [[factions/基因窃取者教派/units/death-riders|克里格死亡骑兵]] — 
-- [[factions/基因窃取者教派/units/death-korps-of-krieg|克里格死兵队]] — 
-- [[factions/基因窃取者教派/units/krieg-heavy-weapons-squad|克里格重型武器小队]] — 
-- [[factions/基因窃取者教派/units/von-ryans-leapers|冯·瑞恩跃袭者]] — 
-- [[factions/基因窃取者教派/units/lictor|刀斧虫]] — 
-- [[factions/基因窃取者教派/units/centaur-rsv|半人马快速突击战车]] — 
-- [[factions/基因窃取者教派/units/catachan-jungle-fighters|卡塔昌丛林战士]] — 
-- [[factions/基因窃取者教派/units/catachan-command-squad|卡塔昌指挥组]] — 
-- [[factions/基因窃取者教派/units/catachan-heavy-weapons-squad|卡塔昌重型武器小队]] — 
-- [[factions/基因窃取者教派/units/kasrkin|卡舍津突击队]] — 
-- [[factions/基因窃取者教派/units/cadian-heavy-weapons-squad|卡迪亚重型武器小队]] — 
-- [[factions/基因窃取者教派/units/cadian-castellan|卡迪安堡主]] — 
-- [[factions/基因窃取者教派/units/cadian-command-squad|卡迪安指挥组]] — 
-- [[factions/基因窃取者教派/units/cadian-shock-troops|卡迪安突击队]] — 
-- [[factions/基因窃取者教派/units/wyvern|双足飞龙自行火炮]] — 
+- [[factions/基因窃取者教派/units/scout-sentinels|侦查哨兵]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
+- [[factions/基因窃取者教派/units/krieg-combat-engineers|克里格战斗工兵]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
+- [[factions/基因窃取者教派/units/krieg-command-squad|克里格指挥组]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
+- [[factions/基因窃取者教派/units/death-riders|克里格死亡骑兵]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
+- [[factions/基因窃取者教派/units/death-korps-of-krieg|克里格死兵队]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
+- [[factions/基因窃取者教派/units/krieg-heavy-weapons-squad|克里格重型武器小队]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
+- [[factions/基因窃取者教派/units/von-ryans-leapers|冯·瑞恩跃袭者]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
+- [[factions/基因窃取者教派/units/lictor|刀斧虫]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
+- [[factions/基因窃取者教派/units/centaur-rsv|半人马快速突击战车]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
+- [[factions/基因窃取者教派/units/catachan-jungle-fighters|卡塔昌丛林战士]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
+- [[factions/基因窃取者教派/units/catachan-command-squad|卡塔昌指挥组]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
+- [[factions/基因窃取者教派/units/catachan-heavy-weapons-squad|卡塔昌重型武器小队]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
+- [[factions/基因窃取者教派/units/kasrkin|卡舍津突击队]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
+- [[factions/基因窃取者教派/units/cadian-heavy-weapons-squad|卡迪亚重型武器小队]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
+- [[factions/基因窃取者教派/units/cadian-castellan|卡迪安堡主]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
+- [[factions/基因窃取者教派/units/cadian-command-squad|卡迪安指挥组]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
+- [[factions/基因窃取者教派/units/cadian-shock-troops|卡迪安突击队]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
+- [[factions/基因窃取者教派/units/wyvern|双足飞龙自行火炮]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
 - [[factions/基因窃取者教派/units/benefictus|圣祝者]] — 
 - [[factions/基因窃取者教派/units/sanctus|圣裁者]] — 
-- [[factions/基因窃取者教派/units/hellhammer|地狱之锤]] — 
-- [[factions/基因窃取者教派/units/hellhound|地狱犬喷射车]] — 
-- [[factions/基因窃取者教派/units/chimera|奇美拉装甲车]] — 
-- [[factions/基因窃取者教派/units/tyrannocyte|孢子舱]] — 
+- [[factions/基因窃取者教派/units/hellhammer|地狱之锤]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
+- [[factions/基因窃取者教派/units/hellhound|地狱犬喷射车]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
+- [[factions/基因窃取者教派/units/chimera|奇美拉装甲车]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
+- [[factions/基因窃取者教派/units/tyrannocyte|孢子舱]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
 - [[factions/基因窃取者教派/units/clamavus|宣政使]] — 
-- [[factions/基因窃取者教派/units/shadowsword|影剑]] — 
+- [[factions/基因窃取者教派/units/shadowsword|影剑]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
 - [[factions/基因窃取者教派/units/nexos|指战使]] — 
 - [[factions/基因窃取者教派/units/acolyte-iconward|掌旗侍僧]] — 
-- [[factions/基因窃取者教派/units/trygon|掘蟒]] — 
-- [[factions/基因窃取者教派/units/parasite-of-mortrex|摩崔克斯寄生虫]] — 
+- [[factions/基因窃取者教派/units/trygon|掘蟒]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
+- [[factions/基因窃取者教派/units/parasite-of-mortrex|摩崔克斯寄生虫]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
 - [[factions/基因窃取者教派/units/locus|教团卫士]] — 
 - [[factions/基因窃取者教派/units/neophyte-hybrids|新血教徒]] — 
 - [[factions/基因窃取者教派/units/patriarch|族长]] — 
-- [[factions/基因窃取者教派/units/winged-tyranid-prime|有翼泰伦王虫]] — 
-- [[factions/基因窃取者教派/units/winged-hive-tyrant|有翼虫巢暴君]] — 
-- [[factions/基因窃取者教派/units/doomhammer|末日之锤]] — 
+- [[factions/基因窃取者教派/units/winged-tyranid-prime|有翼泰伦王虫]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
+- [[factions/基因窃取者教派/units/winged-hive-tyrant|有翼虫巢暴君]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
+- [[factions/基因窃取者教派/units/doomhammer|末日之锤]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
 - [[factions/基因窃取者教派/units/kelermorph|杀手种]] — 
 - [[factions/基因窃取者教派/units/goliath-truck|歌利亚卡车]] — 
 - [[factions/基因窃取者教派/units/goliath-rockgrinder|歌利亚碎石车]] — 
-- [[factions/基因窃取者教派/units/deathstrike|死亡直击导弹车]] — 
-- [[factions/基因窃取者教派/units/deathleaper|死亡跃袭者]] — 
-- [[factions/基因窃取者教派/units/banesword|毁灭之剑]] — 
-- [[factions/基因窃取者教派/units/banehammer|毁灭之锤]] — 
-- [[factions/基因窃取者教派/units/baneblade|毒刃]] — 
-- [[factions/基因窃取者教派/units/mawloc|沙蟒]] — 
+- [[factions/基因窃取者教派/units/deathstrike|死亡直击导弹车]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
+- [[factions/基因窃取者教派/units/deathleaper|死亡跃袭者]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
+- [[factions/基因窃取者教派/units/banesword|毁灭之剑]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
+- [[factions/基因窃取者教派/units/banehammer|毁灭之锤]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
+- [[factions/基因窃取者教派/units/baneblade|毒刃]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
+- [[factions/基因窃取者教派/units/mawloc|沙蟒]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
 - [[factions/基因窃取者教派/units/acolyte-hybrids-with-hand-flamers|混血侍僧装备手持火焰喷射器]] — 
 - [[factions/基因窃取者教派/units/acolyte-hybrids-with-autopistols|混血侍僧装备自动手枪]] — 
 - [[factions/基因窃取者教派/units/hybrid-metamorphs|混血变种]] — 
-- [[factions/基因窃取者教派/units/primaris-psyker|灵能导师]] — 
-- [[factions/基因窃取者教派/units/artillery-team|炮兵小组]] — 
-- [[factions/基因窃取者教派/units/cyclops-demolition-vehicle|独眼巨人爆破车]] — 
+- [[factions/基因窃取者教派/units/primaris-psyker|灵能导师]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
+- [[factions/基因窃取者教派/units/artillery-team|炮兵小组]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
+- [[factions/基因窃取者教派/units/cyclops-demolition-vehicle|独眼巨人爆破车]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
 - [[factions/基因窃取者教派/units/abominant|畸变主宰]] — 
 - [[factions/基因窃取者教派/units/aberrants|畸变体]] — 
-- [[factions/基因窃取者教派/units/gargoyles|石像鬼]] — 
-- [[factions/基因窃取者教派/units/basilisk|石化蜥蜴自行火炮]] — 
-- [[factions/基因窃取者教派/units/aegis-defence-line|神盾防御墙]] — 
-- [[factions/基因窃取者教派/units/neurolictor|神经刀斧虫]] — 
-- [[factions/基因窃取者教派/units/the-red-terror|红色惧物]] — 
+- [[factions/基因窃取者教派/units/gargoyles|石像鬼]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
+- [[factions/基因窃取者教派/units/basilisk|石化蜥蜴自行火炮]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
+- [[factions/基因窃取者教派/units/aegis-defence-line|神盾防御墙]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
+- [[factions/基因窃取者教派/units/neurolictor|神经刀斧虫]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
+- [[factions/基因窃取者教派/units/the-red-terror|红色惧物]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
 - [[factions/基因窃取者教派/units/purestrain-genestealers|纯血基因窃取者]] — 
-- [[factions/基因窃取者教派/units/rogal-dorn-battle-tank|罗格多恩坦克]] — 
-- [[factions/基因窃取者教派/units/rogal-dorn-commander|罗格多恩指挥官]] — 
-- [[factions/基因窃取者教派/units/raveners|蛇虫]] — 
-- [[factions/基因窃取者教派/units/manticore|蝎尾狮火箭炮]] — 
-- [[factions/基因窃取者教派/units/armoured-sentinels|装甲哨兵]] — 
+- [[factions/基因窃取者教派/units/rogal-dorn-battle-tank|罗格多恩坦克]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
+- [[factions/基因窃取者教派/units/rogal-dorn-commander|罗格多恩指挥官]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
+- [[factions/基因窃取者教派/units/raveners|蛇虫]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
+- [[factions/基因窃取者教派/units/manticore|蝎尾狮火箭炮]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
+- [[factions/基因窃取者教派/units/armoured-sentinels|装甲哨兵]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
 - [[factions/基因窃取者教派/units/jackal-alphus|豺狼猎首]] — 
-- [[factions/基因窃取者教派/units/hyperadapted-raveners|超适应蛇虫]] — 
+- [[factions/基因窃取者教派/units/hyperadapted-raveners|超适应蛇虫]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
 - [[factions/基因窃取者教派/units/reductus-saboteur|还原爆破使]] — 
-- [[factions/基因窃取者教派/units/field-ordnance-battery|野战炮兵]] — 
-- [[factions/基因窃取者教派/units/taurox|野牛装甲车]] — 
-- [[factions/基因窃取者教派/units/taurox-prime|金牛装甲车]] — 
+- [[factions/基因窃取者教派/units/field-ordnance-battery|野战炮兵]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
+- [[factions/基因窃取者教派/units/taurox|野牛装甲车]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
+- [[factions/基因窃取者教派/units/taurox-prime|金牛装甲车]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
 - [[factions/基因窃取者教派/units/achilles-ridgerunners|阿基里斯山地车]] — 
 - [[factions/基因窃取者教派/units/atalan-jackals|阿塔兰豺狼小队]] — 
-- [[factions/基因窃取者教派/units/attilan-rough-riders|阿提拉蛮骑兵]] — 
+- [[factions/基因窃取者教派/units/attilan-rough-riders|阿提拉蛮骑兵]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
 - [[factions/基因窃取者教派/units/primus|领军]] — 
-- [[factions/基因窃取者教派/units/stormsword|风暴之剑]] — 
-- [[factions/基因窃取者教派/units/stormlord|风暴领主]] — 
-- [[factions/基因窃取者教派/units/hippogriff-afv|鹫马装甲战车]] — 
-- [[factions/基因窃取者教派/units/leman-russ-executioner|黎曼鲁斯处决者]] — 
-- [[factions/基因窃取者教派/units/leman-russ-punisher|黎曼鲁斯惩罚者]] — 
-- [[factions/基因窃取者教派/units/leman-russ-battle-tank|黎曼鲁斯战斗坦克]] — 
-- [[factions/基因窃取者教派/units/leman-russ-commander|黎曼鲁斯指挥官]] — 
-- [[factions/基因窃取者教派/units/leman-russ-eradicator|黎曼鲁斯根除者]] — 
-- [[factions/基因窃取者教派/units/leman-russ-exterminator|黎曼鲁斯灭绝者]] — 
-- [[factions/基因窃取者教派/units/leman-russ-demolisher|黎曼鲁斯破坏者]] — 
-- [[factions/基因窃取者教派/units/leman-russ-vanquisher|黎曼鲁斯胜利者]] — 
+- [[factions/基因窃取者教派/units/stormsword|风暴之剑]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
+- [[factions/基因窃取者教派/units/stormlord|风暴领主]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
+- [[factions/基因窃取者教派/units/hippogriff-afv|鹫马装甲战车]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
+- [[factions/基因窃取者教派/units/leman-russ-executioner|黎曼鲁斯处决者]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
+- [[factions/基因窃取者教派/units/leman-russ-punisher|黎曼鲁斯惩罚者]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
+- [[factions/基因窃取者教派/units/leman-russ-battle-tank|黎曼鲁斯战斗坦克]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
+- [[factions/基因窃取者教派/units/leman-russ-commander|黎曼鲁斯指挥官]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
+- [[factions/基因窃取者教派/units/leman-russ-eradicator|黎曼鲁斯根除者]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
+- [[factions/基因窃取者教派/units/leman-russ-exterminator|黎曼鲁斯灭绝者]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
+- [[factions/基因窃取者教派/units/leman-russ-demolisher|黎曼鲁斯破坏者]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
+- [[factions/基因窃取者教派/units/leman-russ-vanquisher|黎曼鲁斯胜利者]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
 
 ## 策略技能
 
@@ -247,12 +247,12 @@
 - [[factions/基因窃取者教派/enhancements/starfall-shells|Starfall Shells]] — 10 分、Outlander Claw 分队。
 - [[factions/基因窃取者教派/enhancements/synaptic-auger|Synaptic Auger]] — 15 分、最终之日 分队。
 - [[factions/基因窃取者教派/enhancements/the-hero-returned|The Hero Returned]] — 20 分、Brood Brother Auxilia 分队。
-- [[factions/基因窃取者教派/enhancements/inspired-to-greatness|伟大激励]] — 分数未知、异形教众 分队。
+- [[factions/基因窃取者教派/enhancements/inspired-to-greatness|伟大激励]] — 15 分、异形教众 分队。
 - [[factions/基因窃取者教派/enhancements/vanguard-tyrant|先锋暴君]] — 25 分、最终之日 分队。
-- [[factions/基因窃取者教派/enhancements/gene-tailored-toxins|基因剧毒]] — 分数未知、叛逆英雄 分队。
+- [[factions/基因窃取者教派/enhancements/gene-tailored-toxins|基因剧毒]] — 35 分、叛逆英雄 分队。
 - [[factions/基因窃取者教派/enhancements/inhuman-integration|异常结合]] — 20 分、最终之日 分队。
-- [[factions/基因窃取者教派/enhancements/talons-of-the-sire|族长之爪]] — 分数未知、纯血虫群 分队。
-- [[factions/基因窃取者教派/enhancements/mark-of-the-star-children|星辰之子印记]] — 分数未知、纯血虫群 分队。
-- [[factions/基因窃取者教派/enhancements/devious-disguises|狡猾伪装]] — 分数未知、异形教众 分队。
-- [[factions/基因窃取者教派/enhancements/contraband-munitions|违禁弹药]] — 分数未知、叛逆英雄 分队。
+- [[factions/基因窃取者教派/enhancements/talons-of-the-sire|族长之爪]] — 15 分、纯血虫群 分队。
+- [[factions/基因窃取者教派/enhancements/mark-of-the-star-children|星辰之子印记]] — 30 分、纯血虫群 分队。
+- [[factions/基因窃取者教派/enhancements/devious-disguises|狡猾伪装]] — 15 分、异形教众 分队。
+- [[factions/基因窃取者教派/enhancements/contraband-munitions|违禁弹药]] — 20 分、叛逆英雄 分队。
 

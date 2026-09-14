@@ -5,6 +5,7 @@ name_en: Shadowcowl Talisman
 faction: 混沌星际战士
 type: enhancement
 detachment: Murdertalon Raiders
+cost: 20
 tags:
 - enhancement
 - enhancement/混沌星际战士
@@ -14,11 +15,13 @@ sources:
 updated: '2026-07-26'
 ---
 
-分数未知、[[factions/混沌星际战士/detachments/murdertalon-raiders.md|杀戮利爪掠夺队]] 分队。
+20 分、[[factions/混沌星际战士/detachments/murdertalon-raiders.md|杀戮利爪掠夺队]] 分队。
 
 ## 效果
 
 This unit has 5+ InSv.
+
+**分数**：20 分
 
 ## 携带限制
 

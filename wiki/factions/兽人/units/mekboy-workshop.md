@@ -3,17 +3,16 @@ id: '000001545'
 name_en: Mekboy Workshop
 faction: 兽人
 type: unit
-points:
-  1 model: 80
 tags:
 - unit
 - unit/兽人
 - 兽人
 version:
+  points: historical / unmatched
   source: official-db
 sources:
 - book: 官方结构库 db/wh40k.sqlite（Wahapedia 11版镜像 + MFM 官方点数）
-updated: '2026-07-23'
+updated: '2026-09-14'
 ---
 
 ## 属性表
@@ -27,6 +26,7 @@ updated: '2026-07-23'
 - **Fortification**：While an enemy unit is only within Engagement Range of one or more <span class="kwb">FORTIFICATIONS</span> from your army:<br><ul><li>That unit can still be selected as the target of ranged attacks, but each time such an attack is made, unless it is made with a Pistol, subtract 1 from the Hit roll.</li><li>Models in that unit do not need to take Desperate Escape tests due to Falling Back while Battle-shocked, except for those that will move over enemy models when doing so.</li></ul>
 
 ## 单位构成
+历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
 - **1个模型** — 80 分
 
 ## 关键词

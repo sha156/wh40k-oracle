@@ -3,17 +3,16 @@ id: '000003596'
 name_en: Mutoid Vermin
 faction: 死亡守卫
 type: unit
-points:
-  16 models: 85
 tags:
 - unit
 - unit/死亡守卫
 - 死亡守卫
 version:
+  points: historical / unmatched
   source: official-db
 sources:
 - book: 官方结构库 db/wh40k.sqlite（Wahapedia 11版镜像 + MFM 官方点数）
-updated: '2026-07-23'
+updated: '2026-09-14'
 ---
 
 ## 属性表
@@ -30,6 +29,7 @@ updated: '2026-07-23'
 - **Mischief Makers (Aura)**：While an enemy unit (excluding <span class="kwb">MONSTERS</span> and <span class="kwb">VEHICLES</span>) is within 6" of this unit, each time a model in that unit makes a melee attack, subtract 1 from the Hit roll.
 
 ## 单位构成
+历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
 - **16个模型** — 85 分
 
 ## 关键词

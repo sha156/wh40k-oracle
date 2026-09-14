@@ -3,17 +3,16 @@ id: '000002471'
 name_en: Court of the Archon
 faction: 黑暗灵族
 type: unit
-points:
-  4 models: 95
 tags:
 - unit
 - unit/黑暗灵族
 - 黑暗灵族
 version:
+  points: historical / unmatched
   source: official-db
 sources:
 - book: 官方结构库 db/wh40k.sqlite（Wahapedia 11版镜像 + MFM 官方点数）
-updated: '2026-07-23'
+updated: '2026-09-14'
 ---
 
 ## 属性表
@@ -45,6 +44,7 @@ updated: '2026-07-23'
 - **COURT OF THE ARCHON**：This unit can be led by an Archon. Alternatively, in the Declare Battle Formations step, this unit can join one [[factions/黑暗灵族/units/kabalite-warriors.md|Kabalite Warriors]] or [[factions/黑暗灵族/units/hand-of-the-archon.md|Hand of the Archon]] unit from your army that is being led by an <span class="kwb">ARCHON</span> (a unit cannot have more than one <span class="kwb">COURT</span> <span class="kwb2">OF</span> <span class="kwb2">THE</span> <span class="kwb">ARCHON</span> unit joined to it). If it does, until the end of the battle, every model in this unit counts as part of that <span class="kwb">KABALITE</span> <span class="kwb">WARRIORS</span> or <span class="kwb">HAND</span> <span class="kwb2">OF</span> <span class="kwb2">THE</span> <span class="kwb">ARCHON</span> unit, and its Starting Strength is increased accordingly.
 
 ## 单位构成
+历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
 - **4个模型** — 95 分
 
 ## 关键词

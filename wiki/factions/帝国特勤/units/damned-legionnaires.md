@@ -3,18 +3,16 @@ id: '000002761'
 name_en: Damned Legionnaires
 faction: 帝国特勤
 type: unit
-points:
-  5 models: 90
-  10 models: 180
 tags:
 - unit
 - unit/帝国特勤
 - 帝国特勤
 version:
+  points: historical / unmatched
   source: official-db
 sources:
 - book: 官方结构库 db/wh40k.sqlite（Wahapedia 11版镜像 + MFM 官方点数）
-updated: '2026-07-23'
+updated: '2026-09-14'
 ---
 
 ## 属性表
@@ -50,6 +48,7 @@ updated: '2026-07-23'
 - **Grim Spectres**：In your Shooting phase, after this unit has shot, select one enemy unit hit by one or more of those attacks. That enemy unit must take a Battle-shock test, subtracting 1 from the result when doing so.
 
 ## 单位构成
+历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
 - **5个模型** — 90 分
 - **10个模型** — 180 分
 

@@ -5,17 +5,17 @@ name_en: Plasmancer
 faction: 太空死灵
 type: unit
 points:
-  1 model: 55
+  1 model: 60
 tags:
 - unit
 - unit/太空死灵
 - 太空死灵
 version:
-  points: MFM 2026-07-27 15:14
+  points: MFM 2026-09-14T05:51:23.572407+00:00
   source: official-db
 sources:
 - book: 官方结构库 db/wh40k.sqlite（Wahapedia 11版镜像 + MFM 官方点数）
-updated: '2026-07-23'
+updated: '2026-09-14'
 ---
 
 ## 属性表
@@ -39,7 +39,7 @@ updated: '2026-07-23'
 - **活体闪电**：在您的射击阶段中，选择一个位于该模型 18 英寸内，且对其可见的敌方单位(不属 于联合单位并拥有【独行特工】技能，且位于该模型 12 英寸外的单位除外)；为该敌方单位 投掷 4 枚 D6；每有一个结果为 4+的掷骰，该敌方单位受到 1 处致命伤。
 
 ## 单位构成
-- **1个模型** — 55 分
+- **1个模型** — 60 分
 
 ## 关键词
 - **阵营关键词**：Necrons

@@ -6,17 +6,17 @@ faction: 混沌恶魔
 type: unit
 points:
   3 models: 95
-  6 models: 190
+  6 models: 200
 tags:
 - unit
 - unit/混沌恶魔
 - 混沌恶魔
 version:
-  points: MFM 2026-07-27 15:14
+  points: MFM 2026-09-14T05:51:23.572407+00:00
   source: official-db
 sources:
 - book: 官方结构库 db/wh40k.sqlite（Wahapedia 11版镜像 + MFM 官方点数）
-updated: '2026-07-23'
+updated: '2026-09-14'
 ---
 
 ## 属性表
@@ -40,7 +40,7 @@ updated: '2026-07-23'
 
 ## 单位构成
 - **3个模型** — 95 分
-- **6个模型** — 190 分
+- **6个模型** — 200 分
 
 ## 关键词
 - **阵营关键词**：Legiones Daemonica

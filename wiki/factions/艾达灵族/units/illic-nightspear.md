@@ -3,17 +3,16 @@ id: '000000570'
 name_en: Illic Nightspear
 faction: 艾达灵族
 type: unit
-points:
-  1 model: 70
 tags:
 - unit
 - unit/艾达灵族
 - 艾达灵族
 version:
+  points: historical / unmatched
   source: official-db
 sources:
 - book: 官方结构库 db/wh40k.sqlite（Wahapedia 11版镜像 + MFM 官方点数）
-updated: '2026-07-23'
+updated: '2026-09-14'
 ---
 
 ## 属性表
@@ -40,6 +39,7 @@ updated: '2026-07-23'
 - **Hunter Unseen**：This model’s unit can only be selected as the target of a ranged attack if the attacking model is within 12".
 
 ## 单位构成
+历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
 - **1个模型** — 70 分
 
 ## 关键词

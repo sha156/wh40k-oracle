@@ -4,17 +4,16 @@ name_zh: 死亡直击导弹车
 name_en: Deathstrike
 faction: 基因窃取者教派
 type: unit
-points:
-  1 model: 145
 tags:
 - unit
 - unit/基因窃取者教派
 - 基因窃取者教派
 version:
+  points: historical / unmatched
   source: official-db
 sources:
 - book: 官方结构库 db/wh40k.sqlite（Wahapedia 11版镜像 + MFM 官方点数）
-updated: '2026-07-23'
+updated: '2026-09-14'
 ---
 
 ## 属性表
@@ -41,6 +40,7 @@ updated: '2026-07-23'
 - **等离子弹头**：该武器仅可以在你的射击阶段进行射击，并且需要该单位保持静止且本阶段未使用过死亡直击导弹能力的设定目标和修正目标能力。当该武器射击时，无需选择目标，而是为每个位于死亡直击导弹标记6寸内的单位投掷命中骰。
 
 ## 单位构成
+历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
 - **1个模型** — 145 分
 
 ## 关键词

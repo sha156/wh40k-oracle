@@ -5,7 +5,7 @@ name_en: Plasma Accelerator Rifle
 faction: 钛帝国
 type: enhancement
 detachment: Experimental Prototype Cadre
-cost: 10
+cost: 20
 tags:
 - enhancement
 - enhancement/钛帝国
@@ -15,7 +15,7 @@ sources:
 updated: '2026-07-26'
 ---
 
-10 分、[[factions/钛帝国/detachments/experimental-prototype-cadre.md|Experimental Prototype Cadre]] 分队。
+20 分、[[factions/钛帝国/detachments/experimental-prototype-cadre.md|Experimental Prototype Cadre]] 分队。
 
 ## 效果
 
@@ -24,7 +24,7 @@ In the Declare Battle Formations step, select one of this model’s Plasma Rifle
 - +2 S
 - +1 A, AP and D.
 
-**分数**：10 分
+**分数**：20 分
 
 ## 携带限制
 

@@ -4,17 +4,16 @@ name_zh: 蝎尾狮火箭炮
 name_en: Manticore
 faction: 基因窃取者教派
 type: unit
-points:
-  1 model: 165
 tags:
 - unit
 - unit/基因窃取者教派
 - 基因窃取者教派
 version:
+  points: historical / unmatched
   source: official-db
 sources:
 - book: 官方结构库 db/wh40k.sqlite（Wahapedia 11版镜像 + MFM 官方点数）
-updated: '2026-07-23'
+updated: '2026-09-14'
 ---
 
 ## 属性表
@@ -40,6 +39,7 @@ updated: '2026-07-23'
 - **受损**：当该模型剩余1-4点耐伤，该模型进行攻击时命中投掷结果-1。
 
 ## 单位构成
+历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
 - **1个模型** — 165 分
 
 ## 关键词

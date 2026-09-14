@@ -4,18 +4,16 @@ name_zh: XV9灾害战斗服小队
 name_en: Xv9 Hazard Battlesuits
 faction: 钛帝国
 type: unit
-points:
-  1 model: 55
-  2 models: 110
 tags:
 - unit
 - unit/钛帝国
 - 钛帝国
 version:
+  points: historical / unmatched
   source: official-db
 sources:
 - book: 官方结构库 db/wh40k.sqlite（Wahapedia 11版镜像 + MFM 官方点数）
-updated: '2026-07-23'
+updated: '2026-09-14'
 ---
 
 ## 属性表
@@ -42,6 +40,7 @@ updated: '2026-07-23'
 - **Photon Casters**：In your Shooting phase, after this unit has shot, if an enemy <span class="kwb">INFANTRY</span> unit was hit by one or more of those attacks, until the end of your opponent’s next turn, that enemy unit is stunned. While a unit is stunned, subtract 2 from that unit’s Move characteristic, and subtract 2 from Advance and Charge rolls made for that unit.
 
 ## 单位构成
+历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
 - **1个模型** — 55 分
 - **2个模型** — 110 分
 

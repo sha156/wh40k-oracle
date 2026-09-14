@@ -5,7 +5,7 @@ name_en: Battle-lust
 faction: 吞世者
 type: enhancement
 detachment: Berzerker Warband
-cost: 10
+cost: 20
 tags:
 - enhancement
 - enhancement/吞世者
@@ -15,13 +15,13 @@ sources:
 updated: '2026-07-26'
 ---
 
-10 分、[[factions/吞世者/detachments/berzerker-warband.md|Berzerker Warband]] 分队。
+20 分、[[factions/吞世者/detachments/berzerker-warband.md|Berzerker Warband]] 分队。
 
 ## 效果
 
 You can re-roll Charge rolls made for the bearer’s unit. In addition, while the Unbridled Bloodlust Blessing of Khorne is active for your army, add 1 to Charge rolls made for the bearer’s unit.
 
-**分数**：10 分
+**分数**：20 分
 
 ## 携带限制
 

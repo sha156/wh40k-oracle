@@ -5,18 +5,18 @@ name_en: Catachan Jungle Fighters
 faction: 星界军
 type: unit
 points:
-  10 models: 75
-  20 models: 145
+  10 models: 70
+  20 models: 135
 tags:
 - unit
 - unit/星界军
 - 星界军
 version:
-  points: MFM 2026-07-27 15:14
+  points: MFM 2026-09-14T05:51:23.572407+00:00
   source: official-db
 sources:
 - book: 官方结构库 db/wh40k.sqlite（Wahapedia 11版镜像 + MFM 官方点数）
-updated: '2026-07-23'
+updated: '2026-09-14'
 ---
 
 ## 属性表
@@ -42,8 +42,8 @@ updated: '2026-07-23'
 - **单位注释**：该单位可以至多被2个领袖单位领导，这2个领袖单位中至多有一个是指挥组单位。如果该单位被2个领袖单位领导，那么当该单位作为护卫被摧毁的时候，那两个领袖单位分别成为原来的两个拥有初始兵力的单位。
 
 ## 单位构成
-- **10个模型** — 75 分
-- **20个模型** — 145 分
+- **10个模型** — 70 分
+- **20个模型** — 135 分
 
 ## 关键词
 - **阵营关键词**：Astra Militarum

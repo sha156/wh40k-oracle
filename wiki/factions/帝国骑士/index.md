@@ -28,12 +28,12 @@
 - [[factions/帝国骑士/units/knight-destrier|战驹骑士]] — 
 - [[factions/帝国骑士/units/armiger-helverin|护卫侍从]] — 
 - [[factions/帝国骑士/units/knight-defender|护卫骑士]] — 
-- [[factions/帝国骑士/units/skitarii-marshal|护教军元帅]] — 
-- [[factions/帝国骑士/units/skitarii-vanguard|护教军先锋兵]] — 
-- [[factions/帝国骑士/units/skitarii-rangers|护教军游猎兵]] — 
-- [[factions/帝国骑士/units/tech-priest-manipulus|控电神甫]] — 
+- [[factions/帝国骑士/units/skitarii-marshal|护教军元帅]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
+- [[factions/帝国骑士/units/skitarii-vanguard|护教军先锋兵]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
+- [[factions/帝国骑士/units/skitarii-rangers|护教军游猎兵]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
+- [[factions/帝国骑士/units/tech-priest-manipulus|控电神甫]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
 - [[factions/帝国骑士/units/knight-preceptor|教导骑士]] — 
-- [[factions/帝国骑士/units/tech-priest-dominus|机械主教]] — 
+- [[factions/帝国骑士/units/tech-priest-dominus|机械主教]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
 - [[factions/帝国骑士/units/cerastus-knight-lancer|枪骑兵型角蝰骑士]] — 
 - [[factions/帝国骑士/units/knight-errant|游侠骑士]] — 
 - [[factions/帝国骑士/units/acastus-knight-asterius|牛头怪型阿卡斯托斯骑士]] — 
@@ -99,7 +99,7 @@
 - [[factions/帝国骑士/enhancements/fables-of-nightmare|Fables of Nightmare]] — 10 分、Spearhead-At-Arms 分队。
 - [[factions/帝国骑士/enhancements/herald-of-triumph|Herald of Triumph]] — 15 分、Questoris Companions 分队。
 - [[factions/帝国骑士/enhancements/hunters-eye|Hunter’s Eye]] — 25 分、自由之刃连队 分队。
-- [[factions/帝国骑士/enhancements/magos-questoris|Magos Questoris]] — 35 分、封臣铸造联盟 分队。
+- [[factions/帝国骑士/enhancements/magos-questoris|Magos Questoris]] — 20 分、封臣铸造联盟 分队。
 - [[factions/帝国骑士/enhancements/martial-tuition|Martial Tuition]] — 15 分、Spearhead-At-Arms 分队。
 - [[factions/帝国骑士/enhancements/mentors-pride|Mentor’s Pride]] — 20 分、Spearhead-At-Arms 分队。
 - [[factions/帝国骑士/enhancements/mysterious-guardian|Mysterious Guardian]] — 35 分、自由之刃连队 分队。
@@ -110,11 +110,11 @@
 - [[factions/帝国骑士/enhancements/vengeful-tread|Vengeful Tread]] — 15 分、Gate Warden Lance 分队。
 - [[factions/帝国骑士/enhancements/vocifer-magnificat-aura|Vocifer Magnificat (Aura)]] — 15 分、封臣铸造联盟 分队。
 - [[factions/帝国骑士/enhancements/wyrmslayer-divination|Wyrmslayer Divination]] — 10 分、Questoris Companions 分队。
-- [[factions/帝国骑士/enhancements/ancestral-overbleed|先祖渗透]] — 分数未知、忠诚护卫 分队。
+- [[factions/帝国骑士/enhancements/ancestral-overbleed|先祖渗透]] — 10 分、忠诚护卫 分队。
 - [[factions/帝国骑士/enhancements/sanctuary|圣庇]] — 20 分、自由之刃连队 分队。
-- [[factions/帝国骑士/enhancements/knight-of-the-opus-machina|机械杰作的骑士（光环）]] — 20 分、封臣铸造联盟 分队。
+- [[factions/帝国骑士/enhancements/knight-of-the-opus-machina|机械杰作的骑士（光环）]] — 15 分、封臣铸造联盟 分队。
 - [[factions/帝国骑士/enhancements/bringer-of-justice|正义执行者]] — 30 分、自由之刃连队 分队。
-- [[factions/帝国骑士/enhancements/blessed-plate|神圣装甲]] — 分数未知、碎敌统御者 分队。
-- [[factions/帝国骑士/enhancements/archeotech-autoloaders|远古自动装填器]] — 分数未知、碎敌统御者 分队。
-- [[factions/帝国骑士/enhancements/gyro-optimised-actuators|陀螺仪优化器]] — 分数未知、忠诚护卫 分队。
+- [[factions/帝国骑士/enhancements/blessed-plate|神圣装甲]] — 30 分、碎敌统御者 分队。
+- [[factions/帝国骑士/enhancements/archeotech-autoloaders|远古自动装填器]] — 25 分、碎敌统御者 分队。
+- [[factions/帝国骑士/enhancements/gyro-optimised-actuators|陀螺仪优化器]] — 15 分、忠诚护卫 分队。
 

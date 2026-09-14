@@ -3,17 +3,16 @@ id: '000002760'
 name_en: Inquisitor In Terminator Armour
 faction: 帝国特勤
 type: unit
-points:
-  1 model: 70
 tags:
 - unit
 - unit/帝国特勤
 - 帝国特勤
 version:
+  points: historical / unmatched
   source: official-db
 sources:
 - book: 官方结构库 db/wh40k.sqlite（Wahapedia 11版镜像 + MFM 官方点数）
-updated: '2026-07-23'
+updated: '2026-09-14'
 ---
 
 ## 属性表
@@ -45,6 +44,7 @@ updated: '2026-07-23'
 - **Psychic Gifts**：The bearer has the <span class="kwb">PSYKER</span> keyword.
 
 ## 单位构成
+历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
 - **1个模型** — 70 分
 
 ## 关键词

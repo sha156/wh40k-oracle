@@ -3,17 +3,16 @@ id: '000001400'
 name_en: Bonesinger
 faction: 艾达灵族
 type: unit
-points:
-  1 model: 45
 tags:
 - unit
 - unit/艾达灵族
 - 艾达灵族
 version:
+  points: historical / unmatched
   source: official-db
 sources:
 - book: 官方结构库 db/wh40k.sqlite（Wahapedia 11版镜像 + MFM 官方点数）
-updated: '2026-07-23'
+updated: '2026-09-14'
 ---
 
 ## 属性表
@@ -35,6 +34,7 @@ updated: '2026-07-23'
 - **Psytronome Shaper**：In your Command phase, you can select one friendly Wraith Construct or Asuryani Vehicle model within 3" of this model. That <span class="kwb">WRAITH</span> <span class="kwb">CONSTRUCT</span> or <span class="kwb">ASURYANI</span> <span class="kwb">VEHICLE</span> model regains up to D3 lost wounds.
 
 ## 单位构成
+历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
 - **1个模型** — 45 分
 
 ## 关键词

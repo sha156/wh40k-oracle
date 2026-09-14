@@ -7,6 +7,7 @@ aliases:
 faction: 帝皇卫队
 type: enhancement
 detachment: Might of the Moritoi
+cost: 15
 tags:
 - enhancement
 - enhancement/帝皇卫队
@@ -16,11 +17,13 @@ sources:
 updated: '2026-07-26'
 ---
 
-分数未知、[[factions/帝皇卫队/detachments/might-of-the-moritoi.md|亡者之势]] 分队。
+15 分、[[factions/帝皇卫队/detachments/might-of-the-moritoi.md|亡者之势]] 分队。
 
 ## 效果
 
 When you target this unit with the Crushing Impact stratagem, that use is -1 CP.
+
+**分数**：15 分
 
 ## 携带限制
 

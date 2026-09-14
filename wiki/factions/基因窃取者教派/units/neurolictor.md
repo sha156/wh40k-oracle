@@ -4,17 +4,16 @@ name_zh: 神经刀斧虫
 name_en: Neurolictor
 faction: 基因窃取者教派
 type: unit
-points:
-  1 model: 70
 tags:
 - unit
 - unit/基因窃取者教派
 - 基因窃取者教派
 version:
+  points: historical / unmatched
   source: official-db
 sources:
 - book: 官方结构库 db/wh40k.sqlite（Wahapedia 11版镜像 + MFM 官方点数）
-updated: '2026-07-23'
+updated: '2026-09-14'
 ---
 
 ## 属性表
@@ -38,6 +37,7 @@ updated: '2026-07-23'
 - **心灵破坏者（光环）**：当位于该模型12"内的敌方单位处于战斗震慑状态时:当该敌方单位中的模型进行攻击时，命中掷骰结果减1。当己方泰伦虫族模型对该敌方单位进行攻击时致伤掷骰结果加1。
 
 ## 单位构成
+历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
 - **1个模型** — 70 分
 
 ## 关键词

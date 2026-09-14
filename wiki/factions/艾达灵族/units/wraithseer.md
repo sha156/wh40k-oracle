@@ -3,17 +3,16 @@ id: '000000617'
 name_en: Wraithseer
 faction: 艾达灵族
 type: unit
-points:
-  1 model: 160
 tags:
 - unit
 - unit/艾达灵族
 - 艾达灵族
 version:
+  points: historical / unmatched
   source: official-db
 sources:
 - book: 官方结构库 db/wh40k.sqlite（Wahapedia 11版镜像 + MFM 官方点数）
-updated: '2026-07-23'
+updated: '2026-09-14'
 ---
 
 ## 属性表
@@ -46,6 +45,7 @@ updated: '2026-07-23'
 - **Horrify (Psychic)**：In your Shooting phase, after this model has shot, select one enemy unit hit by one or more of those attacks. That enemy unit must take a Battle-shock test.
 
 ## 单位构成
+历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
 - **1个模型** — 160 分
 
 ## 关键词

@@ -3,17 +3,16 @@ id: '000002459'
 name_en: Webway Gate
 faction: 艾达灵族
 type: unit
-points:
-  2 models: 105
 tags:
 - unit
 - unit/艾达灵族
 - 艾达灵族
 version:
+  points: historical / unmatched
   source: official-db
 sources:
 - book: 官方结构库 db/wh40k.sqlite（Wahapedia 11版镜像 + MFM 官方点数）
-updated: '2026-07-23'
+updated: '2026-09-14'
 ---
 
 ## 属性表
@@ -28,6 +27,7 @@ updated: '2026-07-23'
 - **DEPLOYMENT**：Both Wraithbone Arches of this <span class="kwb">FORTIFICATION</span> must be set up with their upper points no more than 1" apart and with both statues facing in fully opposite directions so that an arch is formed, as shown on the right. Both arches are then treated as a single model for all rules purposes.
 
 ## 单位构成
+历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
 - **2个模型** — 105 分
 
 ## 关键词

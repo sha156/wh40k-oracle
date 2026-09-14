@@ -3,17 +3,16 @@ id: '000000154'
 name_en: Librarian Dreadnought
 faction: 星际战士
 type: unit
-points:
-  1 model: 170
 tags:
 - unit
 - unit/星际战士
 - 星际战士
 version:
+  points: historical / unmatched
   source: official-db
 sources:
 - book: 官方结构库 db/wh40k.sqlite（Wahapedia 11版镜像 + MFM 官方点数）
-updated: '2026-07-23'
+updated: '2026-09-14'
 ---
 
 ## 属性表
@@ -41,6 +40,7 @@ updated: '2026-07-23'
 - **Wings of Sanguinius (Psychic)**：Once per turn, at the end of your Movement phase, one Psyker from your army with this ability can use it. If it does, roll one D6: on a 1, that <span class="kwb">PSYKER</span> suffers D3 mortal wounds; on a 2+, select one friendly Adeptus Astartes Infantry unit within 12" of that <span class="kwb">PSYKER</span> and remove the selected unit from the battlefield, then set it up again anywhere on the battlefield that is more than 9" horizontally away from all enemy models.
 
 ## 单位构成
+历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
 - **1个模型** — 170 分
 
 ## 关键词

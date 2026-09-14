@@ -324,7 +324,7 @@ stratagems can be found in Codexes and other publications.
 
 ## 迅速入场 15.07
 
-*RAPID INGRESS*
+*[[core-rules/stratagems/rapid-ingress.md|RAPID INGRESS]]*
 
 **1CP**
 
@@ -361,7 +361,7 @@ during the first battle round.
 
 ## 警戒射击 15.08
 
-*FIRE OVERWATCH*
+*[[core-rules/stratagems/fire-overwatch.md|FIRE OVERWATCH]]*
 
 **1CP**
 
@@ -389,7 +389,7 @@ EFFECT: Your unit shoots using snap shooting
 
 </details>
 
-## 快速射击 15.09
+## [[factions/星际战士/stratagems/rapid-gunnery.md|快速射击]] 15.09
 
 *SNAP SHOOTING*
 
@@ -435,7 +435,7 @@ your unit is not eligible to start an action.
 
 ## 烟幕 15.10
 
-*SMOKESCREEN*
+*[[core-rules/stratagems/smokescreen.md|SMOKESCREEN]]*
 
 **1CP**
 
@@ -469,7 +469,7 @@ that attack (13.08).
 
 ## CP英勇介入 15.11
 
-*HEROIC INTERVENTION*
+*[[core-rules/stratagems/heroic-intervention.md|HEROIC INTERVENTION]]*
 
 **1CP**
 
@@ -539,7 +539,7 @@ Used in: Opponent’s turn
 
 目标：一个可以进行近战的己方单位。
 
-效果：直到阶段结束前，目标单位拥有先攻技能，并且必须是下一个被您选择进行近战的单位（12.04)。
+效果：直到阶段结束前，目标单位拥有先攻技能，并且必须是[[factions/兽人/stratagems/on-to-da-next.md|下一个]]被您选择进行近战的单位（12.04)。
 
 行动代表了您的部队必须在战斗时执行的重要任务，例如搜索遗失的远古科技或者完成亵渎的仪式。
 

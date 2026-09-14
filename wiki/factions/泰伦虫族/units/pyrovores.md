@@ -5,19 +5,19 @@ name_en: Pyrovores
 faction: 泰伦虫族
 type: unit
 points:
-  1 model: 45
-  2 models: 65
-  3 models: 95
+  1 model: 40
+  2 models: 70
+  3 models: 100
 tags:
 - unit
 - unit/泰伦虫族
 - 泰伦虫族
 version:
-  points: MFM 2026-07-27 15:14
+  points: MFM 2026-09-14T05:51:23.572407+00:00
   source: official-db
 sources:
 - book: 官方结构库 db/wh40k.sqlite（Wahapedia 11版镜像 + MFM 官方点数）
-updated: '2026-07-23'
+updated: '2026-09-14'
 ---
 
 ## 属性表
@@ -40,9 +40,9 @@ updated: '2026-07-23'
 - **烈焰喷射**：在您的射击阶段中，在该单位进行射击后，选择一个被该单位一次或多次攻击命中的敌方单位。在该阶段结束前，那个敌方单位无法获得掩体增益。
 
 ## 单位构成
-- **1个模型** — 45 分
-- **2个模型** — 65 分
-- **3个模型** — 95 分
+- **1个模型** — 40 分
+- **2个模型** — 70 分
+- **3个模型** — 100 分
 
 ## 关键词
 - **阵营关键词**：Tyranids

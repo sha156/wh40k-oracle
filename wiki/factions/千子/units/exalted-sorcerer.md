@@ -5,17 +5,17 @@ name_en: Exalted Sorcerer
 faction: 千子
 type: unit
 points:
-  1 model: 90
+  1 model: 95
 tags:
 - unit
 - unit/千子
 - 千子
 version:
-  points: MFM 2026-07-27 15:14
+  points: MFM 2026-09-14T05:51:23.572407+00:00
   source: official-db
 sources:
 - book: 官方结构库 db/wh40k.sqlite（Wahapedia 11版镜像 + MFM 官方点数）
-updated: '2026-07-23'
+updated: '2026-09-14'
 ---
 
 ## 属性表
@@ -44,7 +44,7 @@ updated: '2026-07-23'
 - **驱使[[factions/千子/units/rubric-marines.md|红字战士]]（灵能）**：在您的指挥阶段中，如果该模型领导一个联合单位，您可以掷一枚 D6，如果掷骰结果为 1，该单位受到 D3 处致命伤；如果掷骰结果为 2-5，您可以将 1 个被摧毁的护卫模型重新加入该单位；如果掷骰结果为 6，您可以将至多 2 个被摧毁的护卫模型重新加入该单位。
 
 ## 单位构成
-- **1个模型** — 90 分
+- **1个模型** — 95 分
 
 ## 关键词
 - **阵营关键词**：Thousand Sons

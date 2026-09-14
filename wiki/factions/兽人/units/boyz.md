@@ -5,18 +5,18 @@ name_en: Boyz
 faction: 兽人
 type: unit
 points:
-  10 models: 75
-  20 models: 160
+  10 models: 90
+  20 models: 180
 tags:
 - unit
 - unit/兽人
 - 兽人
 version:
-  points: MFM 2026-07-27 15:14
+  points: MFM 2026-09-14T05:51:23.572407+00:00
   source: official-db
 sources:
 - book: 官方结构库 db/wh40k.sqlite（Wahapedia 11版镜像 + MFM 官方点数）
-updated: '2026-07-23'
+updated: '2026-09-14'
 ---
 
 ## 属性表
@@ -48,8 +48,8 @@ updated: '2026-07-23'
 - **保镖**：如果该单位的起始兵力为 20，您可以在其中加入最多 2 个领袖单位，而非 1 个（但其中之一必须是[[factions/兽人/units/warboss.md|战争头目]]单位）。如果您如此做，那么当该单位被摧毁时，其中的领袖单位将各自变为独立的单位并拥有原本的起始兵力。
 
 ## 单位构成
-- **10个模型** — 75 分
-- **20个模型** — 160 分
+- **10个模型** — 90 分
+- **20个模型** — 180 分
 
 ## 关键词
 - **阵营关键词**：兽人

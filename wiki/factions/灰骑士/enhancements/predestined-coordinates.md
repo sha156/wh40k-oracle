@@ -4,6 +4,7 @@ name_en: Predestined Coordinates
 faction: 灰骑士
 type: enhancement
 detachment: Immaterial Interdiction
+cost: 10
 tags:
 - enhancement
 - enhancement/灰骑士
@@ -13,11 +14,13 @@ sources:
 updated: '2026-07-26'
 ---
 
-分数未知、[[factions/灰骑士/detachments/immaterial-interdiction.md|次元拦截]] 分队。
+10 分、[[factions/灰骑士/detachments/immaterial-interdiction.md|次元拦截]] 分队。
 
 ## 效果
 
 In your first Movement phase, this unit can make an ingress move.
+
+**分数**：10 分
 
 ## 携带限制
 

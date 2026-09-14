@@ -3,17 +3,16 @@ id: '000000483'
 name_en: Sky-slasher Swarms
 faction: 泰伦虫族
 type: unit
-points:
-  3 models: 60
 tags:
 - unit
 - unit/泰伦虫族
 - 泰伦虫族
 version:
+  points: historical / unmatched
   source: official-db
 sources:
 - book: 官方结构库 db/wh40k.sqlite（Wahapedia 11版镜像 + MFM 官方点数）
-updated: '2026-07-23'
+updated: '2026-09-14'
 ---
 
 ## 属性表
@@ -35,6 +34,7 @@ updated: '2026-07-23'
 - **Chitinous Horrors**：While an enemy unit is within Engagement Range of one or more units with this ability, halve the Objective Control characteristic of models in that enemy unit.
 
 ## 单位构成
+历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
 - **3个模型** — 60 分
 
 ## 关键词

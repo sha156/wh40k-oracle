@@ -5,7 +5,7 @@ name_en: Neverblade
 faction: 混沌恶魔
 type: enhancement
 detachment: Scintillating Legion
-cost: 20
+cost: 25
 tags:
 - enhancement
 - enhancement/混沌恶魔
@@ -15,13 +15,13 @@ sources:
 updated: '2026-07-26'
 ---
 
-20 分、[[factions/混沌恶魔/detachments/scintillating-legion.md|闪耀军团]] 分队。
+25 分、[[factions/混沌恶魔/detachments/scintillating-legion.md|闪耀军团]] 分队。
 
 ## 效果
 
 Improve the Strength characteristic of melee weapons equipped by the bearer by 2, improve the Attacks and Armour Penetration characteristics of melee weapons equipped by the bearer by 1, and each time the bearer makes a melee attack, add 1 to the Hit roll.
 
-**分数**：20 分
+**分数**：25 分
 
 ## 携带限制
 

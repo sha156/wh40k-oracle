@@ -1,20 +1,19 @@
 ---
 id: '000003836'
+name_zh: 【传奇】装备爆弹枪的死亡连战士
 name_en: Death Company Marines with Boltguns
 faction: 星际战士
 type: unit
-points:
-  5 models: 125
-  10 models: 250
 tags:
 - unit
 - unit/星际战士
 - 星际战士
 version:
+  points: historical / unmatched
   source: official-db
 sources:
 - book: 官方结构库 db/wh40k.sqlite（Wahapedia 11版镜像 + MFM 官方点数）
-updated: '2026-07-23'
+updated: '2026-09-14'
 ---
 
 ## 属性表
@@ -27,10 +26,10 @@ updated: '2026-07-23'
 |---|---|---|---|---|---|---|---|
 | 爆弹手枪 | 12" | 1 | 3+ | 4 | 0 | 1 | [[core-rules/pistol.md\|手枪]] |
 | 爆弹枪 | 24" | 2 | 3+ | 4 | 0 | 1 | — |
-| 喷火手枪 | 12" | D6 | N/A | 3 | 0 | 1 | [[core-rules/ignores-cover.md\|无视掩体]]，[[core-rules/pistol.md\|手枪]]，[[core-rules/torrent.md\|洪流]] |
+| 手持喷火器 | 12" | D6 | N/A | 3 | 0 | 1 | [[core-rules/ignores-cover.md\|无视掩体]]，[[core-rules/pistol.md\|手枪]]，[[core-rules/torrent.md\|洪流]] |
 | 狱火手枪 | 6" | 1 | 3+ | 8 | -4 | D3 | [[core-rules/pistol.md\|手枪]]，[[core-rules/melta.md\|热熔2]] |
-| 等离子手枪（标准） | 12" | 1 | 3+ | 7 | -2 | 1 | [[core-rules/pistol.md\|手枪]] |
-| 等离子手枪（过载） | 12" | 1 | 3+ | 8 | -3 | 2 | [[core-rules/hazardous.md\|危险]]，[[core-rules/pistol.md\|手枪]] |
+| 等离子手枪-标准 | 12" | 1 | 3+ | 7 | -2 | 1 | [[core-rules/pistol.md\|手枪]] |
+| 等离子手枪-过载 | 12" | 1 | 3+ | 8 | -3 | 2 | [[core-rules/hazardous.md\|危险]]，[[core-rules/pistol.md\|手枪]] |
 
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |
@@ -42,11 +41,12 @@ updated: '2026-07-23'
 | 雷霆锤 | 近战 | 3 | 4+ | 8 | -2 | 2 | [[core-rules/devastating-wounds.md\|毁灭伤害]] |
 
 ## 技能
-- **黑怒**：Each time a model in this unit makes an attack, you can re-roll the Hit roll. While this unit is not within 12" of one or more friendly <span class="kwb">CHAPLAIN</span> models, it cannot be selected to Fall Back and the Objective Control characteristic of models in this unit is 0.
-- **An Honourable Death in Combat**：Each time a model in this unit makes an attack, that attack has the [SUSTAINED HITS 1] ability if this unit is below its Starting Strength, or the [SUSTAINED HITS 2] ability if this unit is Below Half-strength.
-- **DEATH COMPANY**：If a [[factions/星际战士/units/chaplain.md|Chaplain]] model from your army with the Leader ability can be attached to a [[factions/星际战士/units/tactical-squad.md|Tactical Squad]], it can be attached to this unit instead.<br><br>If a Character unit from your army with the Leader ability can be attached to a Death Company Marines unit, it can be attached to this unit instead.
+- **【阵营技能】：破敌重誓**
+- **黑色狂怒**：每次当该模型进行攻击时，你可以重投命中骰。当该模型12寸范围内没有友军牧师模型，那该模型不能撤退且他的OC变为0（维护者提醒：10版老版黑怒射击和近战命中均可重投，但是不能通过6寸内存在血天使角色解除负面效果）
+- **光荣赴死**：每次当该单位的一个模型进行攻击时，如果该单位低于起始兵力则获得连击1能力；若如果该单位低于起始兵力的半数则获得连击2能力
 
 ## 单位构成
+历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
 - **5个模型** — 125 分
 - **10个模型** — 250 分
 

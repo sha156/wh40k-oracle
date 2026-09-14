@@ -25,60 +25,60 @@
 
 ## 单位
 
-- [[factions/混沌星际战士/units/blood-slaughterer|Blood Slaughterer]] — 
-- [[factions/混沌星际战士/units/cerberus|Cerberus]] — 
-- [[factions/混沌星际战士/units/chaos-deimos-predator|Chaos Deimos Predator]] — 
-- [[factions/混沌星际战士/units/chaos-lord-on-bike|Chaos Lord On Bike]] — 
-- [[factions/混沌星际战士/units/chaos-lord-on-disc-of-tzeentch|Chaos Lord On Disc Of Tzeentch]] — 
-- [[factions/混沌星际战士/units/chaos-lord-on-juggernaut|Chaos Lord On Juggernaut]] — 
-- [[factions/混沌星际战士/units/chaos-lord-on-palanquin-of-nurgle|Chaos Lord On Palanquin Of Nurgle]] — 
-- [[factions/混沌星际战士/units/chaos-lord-on-steed-of-slaanesh|Chaos Lord On Steed Of Slaanesh]] — 
-- [[factions/混沌星际战士/units/chaos-thunderhawk|Chaos Thunderhawk]] — 
-- [[factions/混沌星际战士/units/cultist-mob-with-firearms|Cultist Mob with Firearms]] — 
-- [[factions/混沌星际战士/units/decimator|Decimator]] — 
-- [[factions/混沌星际战士/units/deredeo-dreadnought|Deredeo Dreadnought]] — 
-- [[factions/混沌星际战士/units/dreadclaw-drop-pod|Dreadclaw Drop Pod]] — 
-- [[factions/混沌星际战士/units/exalted-champion|Exalted Champion]] — 
-- [[factions/混沌星际战士/units/falchion|Falchion]] — 
-- [[factions/混沌星际战士/units/fellblade|Fellblade]] — 
-- [[factions/混沌星际战士/units/fire-raptor-gunship|Fire Raptor Gunship]] — 
-- [[factions/混沌星际战士/units/gellerpox-infected|Gellerpox Infected]] — 
-- [[factions/混沌星际战士/units/greater-blight-drone|Greater Blight Drone]] — 
-- [[factions/混沌星际战士/units/greater-brass-scorpion|Greater Brass Scorpion]] — 
-- [[factions/混沌星际战士/units/hell-blade|Hell Blade]] — 
-- [[factions/混沌星际战士/units/hell-talon|Hell Talon]] — 
-- [[factions/混沌星际战士/units/kharybdis-assault-claw|Kharybdis Assault Claw]] — 
-- [[factions/混沌星际战士/units/kratos|Kratos]] — 
-- [[factions/混沌星际战士/units/kytan-ravager|Kytan Ravager]] — 
-- [[factions/混沌星际战士/units/land-raider-achilles|Land Raider Achilles]] — 
-- [[factions/混沌星际战士/units/land-raider-proteus|Land Raider Proteus]] — 
-- [[factions/混沌星际战士/units/leviathan-dreadnought|Leviathan Dreadnought]] — 
-- [[factions/混沌星际战士/units/mastodon|Mastodon]] — 
-- [[factions/混沌星际战士/units/mutilators-legendary|Mutilators (Legendary)]] — 
-- [[factions/混沌星际战士/units/mutoid-vermin|Mutoid Vermin]] — 
-- [[factions/混沌星际战士/units/negavolt-cultists|Negavolt Cultists]] — 
-- [[factions/混沌星际战士/units/rapier-carrier|Rapier Carrier]] — 
-- [[factions/混沌星际战士/units/relic-contemptor-dreadnought|Relic Contemptor Dreadnought]] — 
-- [[factions/混沌星际战士/units/renegade-enforcer|Renegade Enforcer]] — 
-- [[factions/混沌星际战士/units/renegade-heavy-weapons-squad|Renegade Heavy Weapons Squad]] — 
-- [[factions/混沌星际战士/units/renegade-ogryn-beast-handler|Renegade Ogryn Beast Handler]] — 
-- [[factions/混沌星际战士/units/renegade-ogryn-brutes|Renegade Ogryn Brutes]] — 
-- [[factions/混沌星际战士/units/renegade-plague-ogryns|Renegade Plague Ogryns]] — 
-- [[factions/混沌星际战士/units/rogue-psyker|Rogue Psyker]] — 
-- [[factions/混沌星际战士/units/sicaran-battle-tank|Sicaran Battle Tank]] — 
-- [[factions/混沌星际战士/units/sicaran-punisher|Sicaran Punisher]] — 
-- [[factions/混沌星际战士/units/sicaran-venator|Sicaran Venator]] — 
-- [[factions/混沌星际战士/units/sokar-pattern-stormbird|Sokar-pattern Stormbird]] — 
-- [[factions/混沌星际战士/units/sorcerer-on-bike|Sorcerer On Bike]] — 
-- [[factions/混沌星际战士/units/sorcerer-on-disc-of-tzeentch|Sorcerer On Disc Of Tzeentch]] — 
-- [[factions/混沌星际战士/units/sorcerer-on-palanquin-of-nurgle|Sorcerer On Palanquin Of Nurgle]] — 
-- [[factions/混沌星际战士/units/sorcerer-on-steed-of-slaanesh|Sorcerer On Steed Of Slaanesh]] — 
-- [[factions/混沌星际战士/units/spartan|Spartan]] — 
-- [[factions/混沌星际战士/units/storm-eagle-gunship|Storm Eagle Gunship]] — 
-- [[factions/混沌星际战士/units/terrax-pattern-termite|Terrax-pattern Termite]] — 
-- [[factions/混沌星际战士/units/typhon|Typhon]] — 
-- [[factions/混沌星际战士/units/whirlwind-scorpius|Whirlwind Scorpius]] — 
-- [[factions/混沌星际战士/units/xiphon-interceptor|Xiphon Interceptor]] — 
+- [[factions/混沌星际战士/units/blood-slaughterer|Blood Slaughterer]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
+- [[factions/混沌星际战士/units/cerberus|Cerberus]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
+- [[factions/混沌星际战士/units/chaos-deimos-predator|Chaos Deimos Predator]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
+- [[factions/混沌星际战士/units/chaos-lord-on-bike|Chaos Lord On Bike]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
+- [[factions/混沌星际战士/units/chaos-lord-on-disc-of-tzeentch|Chaos Lord On Disc Of Tzeentch]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
+- [[factions/混沌星际战士/units/chaos-lord-on-juggernaut|Chaos Lord On Juggernaut]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
+- [[factions/混沌星际战士/units/chaos-lord-on-palanquin-of-nurgle|Chaos Lord On Palanquin Of Nurgle]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
+- [[factions/混沌星际战士/units/chaos-lord-on-steed-of-slaanesh|Chaos Lord On Steed Of Slaanesh]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
+- [[factions/混沌星际战士/units/chaos-thunderhawk|Chaos Thunderhawk]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
+- [[factions/混沌星际战士/units/cultist-mob-with-firearms|Cultist Mob with Firearms]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
+- [[factions/混沌星际战士/units/decimator|Decimator]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
+- [[factions/混沌星际战士/units/deredeo-dreadnought|Deredeo Dreadnought]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
+- [[factions/混沌星际战士/units/dreadclaw-drop-pod|Dreadclaw Drop Pod]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
+- [[factions/混沌星际战士/units/exalted-champion|Exalted Champion]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
+- [[factions/混沌星际战士/units/falchion|Falchion]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
+- [[factions/混沌星际战士/units/fellblade|Fellblade]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
+- [[factions/混沌星际战士/units/fire-raptor-gunship|Fire Raptor Gunship]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
+- [[factions/混沌星际战士/units/gellerpox-infected|Gellerpox Infected]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
+- [[factions/混沌星际战士/units/greater-blight-drone|Greater Blight Drone]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
+- [[factions/混沌星际战士/units/greater-brass-scorpion|Greater Brass Scorpion]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
+- [[factions/混沌星际战士/units/hell-blade|Hell Blade]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
+- [[factions/混沌星际战士/units/hell-talon|Hell Talon]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
+- [[factions/混沌星际战士/units/kharybdis-assault-claw|Kharybdis Assault Claw]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
+- [[factions/混沌星际战士/units/kratos|Kratos]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
+- [[factions/混沌星际战士/units/kytan-ravager|Kytan Ravager]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
+- [[factions/混沌星际战士/units/land-raider-achilles|Land Raider Achilles]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
+- [[factions/混沌星际战士/units/land-raider-proteus|Land Raider Proteus]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
+- [[factions/混沌星际战士/units/leviathan-dreadnought|Leviathan Dreadnought]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
+- [[factions/混沌星际战士/units/mastodon|Mastodon]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
+- [[factions/混沌星际战士/units/mutilators-legendary|Mutilators (Legendary)]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
+- [[factions/混沌星际战士/units/mutoid-vermin|Mutoid Vermin]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
+- [[factions/混沌星际战士/units/negavolt-cultists|Negavolt Cultists]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
+- [[factions/混沌星际战士/units/rapier-carrier|Rapier Carrier]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
+- [[factions/混沌星际战士/units/relic-contemptor-dreadnought|Relic Contemptor Dreadnought]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
+- [[factions/混沌星际战士/units/renegade-enforcer|Renegade Enforcer]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
+- [[factions/混沌星际战士/units/renegade-heavy-weapons-squad|Renegade Heavy Weapons Squad]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
+- [[factions/混沌星际战士/units/renegade-ogryn-beast-handler|Renegade Ogryn Beast Handler]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
+- [[factions/混沌星际战士/units/renegade-ogryn-brutes|Renegade Ogryn Brutes]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
+- [[factions/混沌星际战士/units/renegade-plague-ogryns|Renegade Plague Ogryns]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
+- [[factions/混沌星际战士/units/rogue-psyker|Rogue Psyker]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
+- [[factions/混沌星际战士/units/sicaran-battle-tank|Sicaran Battle Tank]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
+- [[factions/混沌星际战士/units/sicaran-punisher|Sicaran Punisher]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
+- [[factions/混沌星际战士/units/sicaran-venator|Sicaran Venator]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
+- [[factions/混沌星际战士/units/sokar-pattern-stormbird|Sokar-pattern Stormbird]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
+- [[factions/混沌星际战士/units/sorcerer-on-bike|Sorcerer On Bike]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
+- [[factions/混沌星际战士/units/sorcerer-on-disc-of-tzeentch|Sorcerer On Disc Of Tzeentch]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
+- [[factions/混沌星际战士/units/sorcerer-on-palanquin-of-nurgle|Sorcerer On Palanquin Of Nurgle]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
+- [[factions/混沌星际战士/units/sorcerer-on-steed-of-slaanesh|Sorcerer On Steed Of Slaanesh]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
+- [[factions/混沌星际战士/units/spartan|Spartan]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
+- [[factions/混沌星际战士/units/storm-eagle-gunship|Storm Eagle Gunship]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
+- [[factions/混沌星际战士/units/terrax-pattern-termite|Terrax-pattern Termite]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
+- [[factions/混沌星际战士/units/typhon|Typhon]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
+- [[factions/混沌星际战士/units/whirlwind-scorpius|Whirlwind Scorpius]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
+- [[factions/混沌星际战士/units/xiphon-interceptor|Xiphon Interceptor]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
 - [[factions/混沌星际战士/units/defiler|亵渎者]] — 
 - [[factions/混沌星际战士/units/huron-blackheart|休伦·黑心]] — 
 - [[factions/混沌星际战士/units/kravek-morne|克拉维克·莫恩]] — 
@@ -93,7 +93,7 @@
 - [[factions/混沌星际战士/units/masters-of-the-maelstrom|大漩涡之主]] — 
 - [[factions/混沌星际战士/units/haarken-worldclaimer|夺星者哈肯]] — 
 - [[factions/混沌星际战士/units/sorcerer|巫师]] — 
-- [[factions/混沌星际战士/units/khorne-berzerkers|恐虐狂战士]] — 
+- [[factions/混沌星际战士/units/khorne-berzerkers|恐虐狂战士]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
 - [[factions/混沌星际战士/units/khorne-lord-of-skulls|恐虐颅骨之主]] — 
 - [[factions/混沌星际战士/units/fellgor-beastmen|恶角野兽人]] — 
 - [[factions/混沌星际战士/units/master-of-executions|枭首魔将]] — 
@@ -113,10 +113,10 @@
 - [[factions/混沌星际战士/units/chaos-rhino|犀牛装甲车]] — 
 - [[factions/混沌星际战士/units/raptors|猛禽]] — 
 - [[factions/混沌星际战士/units/vashtorr-the-arkifane|瓦什托尔]] — 
-- [[factions/混沌星际战士/units/plague-marines|瘟疫战士]] — 
+- [[factions/混沌星际战士/units/plague-marines|瘟疫战士]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
 - [[factions/混沌星际战士/units/chaos-predator-destructor|破坏者型猎食者坦克]] — 
 - [[factions/混沌星际战士/units/chosen|神选战士]] — 
-- [[factions/混沌星际战士/units/rubric-marines|红字战士]] — 
+- [[factions/混沌星际战士/units/rubric-marines|红字战士]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
 - [[factions/混沌星际战士/units/red-corsairs-raiders|红海盗劫掠者]] — 
 - [[factions/混沌星际战士/units/red-corsairs-reave-captain|红海盗掠夺连长]] — 
 - [[factions/混沌星际战士/units/sorcerer-in-terminator-armour|终结者巫师]] — 
@@ -132,7 +132,7 @@
 - [[factions/混沌星际战士/units/heretic-astartes-daemon-prince|阿斯塔特叛军恶魔亲王]] — 
 - [[factions/混沌星际战士/units/master-of-possession|附魔大师]] — 
 - [[factions/混沌星际战士/units/possessed|附魔战士]] — 
-- [[factions/混沌星际战士/units/noise-marines|音爆战士]] — 
+- [[factions/混沌星际战士/units/noise-marines|音爆战士]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
 - [[factions/混沌星际战士/units/lord-discordant-on-helstalker|魔机统领]] — 
 - [[factions/混沌星际战士/units/dark-apostle|黑暗使徒]] — 
 - [[factions/混沌星际战士/units/dark-commune|黑暗巫会]] — 
@@ -257,8 +257,8 @@
 - [[factions/混沌星际战士/enhancements/akshurs-binding-runes|Akshur’s Binding Runes]] — 20 分、次元突袭勇士 分队。
 - [[factions/混沌星际战士/enhancements/amulet-of-tainted-vigour|Amulet of Tainted Vigour]] — 20 分、Chaos Cult 分队。
 - [[factions/混沌星际战士/enhancements/bastion-plate|Bastion Plate]] — 10 分、Fellhammer Siege-host 分队。
-- [[factions/混沌星际战士/enhancements/conduit-of-chaos|Conduit of Chaos]] — 分数未知、Cabal of Chaos 分队。
-- [[factions/混沌星际战士/enhancements/cultists-brand|Cultist’s Brand]] — 20 分、Chaos Cult 分队。
+- [[factions/混沌星际战士/enhancements/conduit-of-chaos|Conduit of Chaos]] — 20 分、Cabal of Chaos 分队。
+- [[factions/混沌星际战士/enhancements/cultists-brand|Cultist’s Brand]] — 30 分、Chaos Cult 分队。
 - [[factions/混沌星际战士/enhancements/cursed-fang|Cursed Fang]] — 10 分、Deceptors 分队。
 - [[factions/混沌星际战士/enhancements/dark-majesty|Dark Majesty]] — 0 分、Champions of Chaos 分队。
 - [[factions/混沌星际战士/enhancements/despots-claim|Despot’s Claim]] — 15 分、Renegade Raiders 分队。
@@ -274,7 +274,7 @@
 - [[factions/混沌星际战士/enhancements/falsehood|Falsehood]] — 10 分、Deceptors 分队。
 - [[factions/混沌星际战士/enhancements/forges-blessing|Forge’s Blessing]] — 20 分、Soulforged Warpack 分队。
 - [[factions/混沌星际战士/enhancements/fratricidal-trophies|Fratricidal Trophies]] — 5 分、变节者战队 分队。
-- [[factions/混沌星际战士/enhancements/incendiary-goad|Incendiary Goad]] — 15 分、Chaos Cult 分队。
+- [[factions/混沌星际战士/enhancements/incendiary-goad|Incendiary Goad]] — 25 分、Chaos Cult 分队。
 - [[factions/混沌星际战士/enhancements/infernal-avatar|Infernal Avatar]] — 20 分、Cabal of Chaos 分队。
 - [[factions/混沌星际战士/enhancements/intoxicating-elixir|Intoxicating Elixir]] — 15 分、Pactbound Zealots 分队。
 - [[factions/混沌星际战士/enhancements/invigorated-mechatendrils|Invigorated Mechatendrils]] — 15 分、Soulforged Warpack 分队。
@@ -284,7 +284,7 @@
 - [[factions/混沌星际战士/enhancements/mark-of-legend|Mark of Legend]] — 10 分、Veterans of the Long War 分队。
 - [[factions/混沌星际战士/enhancements/mark-of-the-hound|Mark of the Hound]] — 25 分、Renegade Raiders 分队。
 - [[factions/混沌星际战士/enhancements/mind-blade|Mind Blade]] — 25 分、Cabal of Chaos 分队。
-- [[factions/混沌星际战士/enhancements/nights-shroud|Night’s Shroud]] — 20 分、Dread Talons 分队。
+- [[factions/混沌星际战士/enhancements/nights-shroud|Night’s Shroud]] — 10 分、Dread Talons 分队。
 - [[factions/混沌星际战士/enhancements/orbs-of-unlife|Orbs of Unlife]] — 15 分、Pactbound Zealots 分队。
 - [[factions/混沌星际战士/enhancements/rabble-rouser|Rabble Rouser]] — 0 分、Underdeck Uprising 分队。
 - [[factions/混沌星际战士/enhancements/raid-leader|Raid Leader]] — 20 分、休伦的劫掠者 分队。
@@ -292,7 +292,7 @@
 - [[factions/混沌星际战士/enhancements/soul-harvester|Soul Harvester]] — 15 分、Soulforged Warpack 分队。
 - [[factions/混沌星际战士/enhancements/soul-link|Soul Link]] — 5 分、Deceptors 分队。
 - [[factions/混沌星际战士/enhancements/talisman-of-burning-blood|Talisman of Burning Blood]] — 15 分、Pactbound Zealots 分队。
-- [[factions/混沌星际战士/enhancements/tempting-addendum|Tempting Addendum]] — 25 分、Soulforged Warpack 分队。
+- [[factions/混沌星际战士/enhancements/tempting-addendum|Tempting Addendum]] — 40 分、Soulforged Warpack 分队。
 - [[factions/混沌星际战士/enhancements/touched-by-the-warp|Touched by the Warp]] — 10 分、Cabal of Chaos 分队。
 - [[factions/混沌星际战士/enhancements/tyrants-lash|Tyrant’s Lash]] — 20 分、Renegade Raiders 分队。
 - [[factions/混沌星际战士/enhancements/voice-of-the-octed|Voice of the Octed]] — 0 分、Infernal Reavers 分队。
@@ -313,16 +313,16 @@
 - [[factions/混沌星际战士/enhancements/cybinfernal-font|地狱机械印记]] — 20 分、造物者教派 分队。
 - [[factions/混沌星际战士/enhancements/infernal-fulgurite|地狱结晶]] — 20 分、次元突袭勇士 分队。
 - [[factions/混沌星际战士/enhancements/tzagulla|察古拉]] — 25 分、次元突袭勇士 分队。
-- [[factions/混沌星际战士/enhancements/shadowcowl-talisman|影罩护符]] — 分数未知、杀戮利爪掠夺队 分队。
+- [[factions/混沌星际战士/enhancements/shadowcowl-talisman|影罩护符]] — 20 分、杀戮利爪掠夺队 分队。
 - [[factions/混沌星际战士/enhancements/terrorglut-parasite|恐怖寄生虫]] — 20 分、噩梦猎手 分队。
 - [[factions/混沌星际战士/enhancements/dread-reputation|恐惧恶名]] — 25 分、休伦的劫掠者 分队。
 - [[factions/混沌星际战士/enhancements/surgical-precision|手术级精准]] — 10 分、拜尔造物 分队。
-- [[factions/混沌星际战士/enhancements/pact-of-destruction|毁灭契约]] — 分数未知、毁灭崇拜者 分队。
-- [[factions/混沌星际战士/enhancements/eye-of-oblivion|泯灭之眼]] — 分数未知、毁灭崇拜者 分队。
+- [[factions/混沌星际战士/enhancements/pact-of-destruction|毁灭契约]] — 15 分、毁灭崇拜者 分队。
+- [[factions/混沌星际战士/enhancements/eye-of-oblivion|泯灭之眼]] — 20 分、毁灭崇拜者 分队。
 - [[factions/混沌星际战士/enhancements/living-carapace|活甲壳]] — 15 分、拜尔造物 分队。
 - [[factions/混沌星际战士/enhancements/greyveil-hex|灰纱诅咒]] — 25 分、噩梦猎手 分队。
 - [[factions/混沌星际战士/enhancements/mark-of-the-soul-forges|灵魂熔炉之印]] — 20 分、造物者教派 分队。
 - [[factions/混沌星际战士/enhancements/crown-of-worms|蛆虫之冠]] — 15 分、造物者教派 分队。
-- [[factions/混沌星际战士/enhancements/pact-of-cursed-pinions|诅咒镣铐契约]] — 分数未知、杀戮利爪掠夺队 分队。
+- [[factions/混沌星际战士/enhancements/pact-of-cursed-pinions|诅咒镣铐契约]] — 20 分、杀戮利爪掠夺队 分队。
 - [[factions/混沌星际战士/enhancements/wyredjinn|龙林恶灵]] — 25 分、造物者教派 分队。
 

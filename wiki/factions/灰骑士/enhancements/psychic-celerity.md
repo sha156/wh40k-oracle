@@ -5,6 +5,7 @@ name_en: Psychic Celerity
 faction: 灰骑士
 type: enhancement
 detachment: Argent Assault
+cost: 15
 tags:
 - enhancement
 - enhancement/灰骑士
@@ -14,11 +15,13 @@ sources:
 updated: '2026-07-26'
 ---
 
-分数未知、[[factions/灰骑士/detachments/argent-assault.md|圣银突袭]] 分队。
+15 分、[[factions/灰骑士/detachments/argent-assault.md|圣银突袭]] 分队。
 
 ## 效果
 
 This unit has +1 to charge rolls.
+
+**分数**：15 分
 
 ## 携带限制
 

@@ -3,17 +3,16 @@ id: '000002378'
 name_en: Death Rider Commissar
 faction: 星界军
 type: unit
-points:
-  1 model: 35
 tags:
 - unit
 - unit/星界军
 - 星界军
 version:
+  points: historical / unmatched
   source: official-db
 sources:
 - book: 官方结构库 db/wh40k.sqlite（Wahapedia 11版镜像 + MFM 官方点数）
-updated: '2026-07-23'
+updated: '2026-09-14'
 ---
 
 ## 属性表
@@ -41,6 +40,7 @@ updated: '2026-07-23'
 - **ORDERS**：This Officer can issue 1 Order to a Regiment unit. This <span class="kwb">OFFICER</span> can only issue the Duty and Honour! and Fix Bayonets! Orders.
 
 ## 单位构成
+历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
 - **1个模型** — 35 分
 
 ## 关键词

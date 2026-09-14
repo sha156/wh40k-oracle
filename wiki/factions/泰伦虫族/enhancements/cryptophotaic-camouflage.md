@@ -5,6 +5,7 @@ name_en: Cryptophotaic Camouflage
 faction: 泰伦虫族
 type: enhancement
 detachment: Ambush Predators
+cost: 15
 tags:
 - enhancement
 - enhancement/泰伦虫族
@@ -14,11 +15,13 @@ sources:
 updated: '2026-07-26'
 ---
 
-分数未知、[[factions/泰伦虫族/detachments/ambush-predators.md|伏击捕食者]] 分队。
+15 分、[[factions/泰伦虫族/detachments/ambush-predators.md|伏击捕食者]] 分队。
 
 ## 效果
 
 This unit has -3" detection range.
+
+**分数**：15 分
 
 ## 携带限制
 

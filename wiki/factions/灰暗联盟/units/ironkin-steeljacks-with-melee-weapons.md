@@ -5,18 +5,18 @@ name_en: Ironkin Steeljacks with Melee Weapons
 faction: 灰暗联盟
 type: unit
 points:
-  3 models: 80
-  6 models: 160
+  3 models: 75
+  6 models: 150
 tags:
 - unit
 - unit/灰暗联盟
 - 灰暗联盟
 version:
-  points: MFM 2026-07-27 15:14
+  points: MFM 2026-09-14T05:51:23.572407+00:00
   source: official-db
 sources:
 - book: 官方结构库 db/wh40k.sqlite（Wahapedia 11版镜像 + MFM 官方点数）
-updated: '2026-07-23'
+updated: '2026-09-14'
 ---
 
 ## 属性表
@@ -41,8 +41,8 @@ updated: '2026-07-23'
 - **【装备技能】狩猎标记符冠**：每当持有者所属单位中的模型以-个位于一个或更多目标标记范围内的敌方单位为目标进行攻击时，造成暴击致伤的攻击拥有[精准]技能。
 
 ## 单位构成
-- **3个模型** — 80 分
-- **6个模型** — 160 分
+- **3个模型** — 75 分
+- **6个模型** — 150 分
 
 ## 关键词
 - **阵营关键词**：Leagues of Votann

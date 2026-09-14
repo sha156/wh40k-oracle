@@ -5,17 +5,17 @@ name_en: Kommandos
 faction: 兽人
 type: unit
 points:
-  10 models: 120
+  10 models: 125
 tags:
 - unit
 - unit/兽人
 - 兽人
 version:
-  points: MFM 2026-07-27 15:14
+  points: MFM 2026-09-14T05:51:23.572407+00:00
   source: official-db
 sources:
 - book: 官方结构库 db/wh40k.sqlite（Wahapedia 11版镜像 + MFM 官方点数）
-updated: '2026-07-23'
+updated: '2026-09-14'
 ---
 
 ## 属性表
@@ -49,7 +49,7 @@ updated: '2026-07-23'
 - **巡逻小队部**：在宣布战斗阵型步骤开始时，该单位可以被分成两个单位，各包含五个模型。（如此分割单位时，记下新单位分别由哪些模型组成。如果您分割的单位包含 1 个炸弹跳跳和/或 1 个诱饵地精，只有一个新单位可以在战斗中使用那个技能 -记下是哪个新单位）。
 
 ## 单位构成
-- **10个模型** — 120 分
+- **10个模型** — 125 分
 
 ## 关键词
 - **阵营关键词**：兽人

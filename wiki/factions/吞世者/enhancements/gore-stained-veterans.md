@@ -5,6 +5,7 @@ name_en: Gore-stained Veterans
 faction: 吞世者
 type: enhancement
 detachment: Butchers of Khorne
+cost: 20
 tags:
 - enhancement
 - enhancement/吞世者
@@ -14,11 +15,13 @@ sources:
 updated: '2026-07-26'
 ---
 
-分数未知、[[factions/吞世者/detachments/butchers-of-khorne.md|Butchers of Khorne]] 分队。
+20 分、[[factions/吞世者/detachments/butchers-of-khorne.md|Butchers of Khorne]] 分队。
 
 ## 效果
 
 This unit’s melee attacks have +1 WS.
+
+**分数**：20 分
 
 ## 携带限制
 

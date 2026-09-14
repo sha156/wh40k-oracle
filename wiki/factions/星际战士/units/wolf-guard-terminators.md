@@ -5,18 +5,18 @@ name_en: Wolf Guard Terminators
 faction: 星际战士
 type: unit
 points:
-  5 models: 150
-  10 models: 300
+  5 models: 155
+  10 models: 310
 tags:
 - unit
 - unit/星际战士
 - 星际战士
 version:
-  points: MFM 2026-07-27 15:14
+  points: MFM 2026-09-14T05:51:23.572407+00:00
   source: official-db
 sources:
 - book: 官方结构库 db/wh40k.sqlite（Wahapedia 11版镜像 + MFM 官方点数）
-updated: '2026-07-23'
+updated: '2026-09-14'
 ---
 
 ## 属性表
@@ -47,8 +47,8 @@ updated: '2026-07-23'
 - **风暴盾【装备】**：装备者 W 值变为 4。
 
 ## 单位构成
-- **5个模型** — 150 分
-- **10个模型** — 300 分
+- **5个模型** — 155 分
+- **10个模型** — 310 分
 
 ## 关键词
 - **阵营关键词**：Space Wolves，Adeptus Astartes

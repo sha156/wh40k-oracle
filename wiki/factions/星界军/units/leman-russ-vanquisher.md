@@ -5,17 +5,17 @@ name_en: Leman Russ Vanquisher
 faction: 星界军
 type: unit
 points:
-  1 model: 150
+  1 model: 130
 tags:
 - unit
 - unit/星界军
 - 星界军
 version:
-  points: MFM 2026-07-27 15:14
+  points: MFM 2026-09-14T05:51:23.572407+00:00
   source: official-db
 sources:
 - book: 官方结构库 db/wh40k.sqlite（Wahapedia 11版镜像 + MFM 官方点数）
-updated: '2026-07-23'
+updated: '2026-09-14'
 ---
 
 ## 属性表
@@ -47,7 +47,7 @@ updated: '2026-07-23'
 - **坦克杀手**：当该单位的征服者加农炮攻击巨兽或载具单位时，可以重投造伤骰
 
 ## 单位构成
-- **1个模型** — 150 分
+- **1个模型** — 130 分
 
 ## 关键词
 - **阵营关键词**：Astra Militarum

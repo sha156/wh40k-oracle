@@ -4,18 +4,16 @@ name_zh: 巫术小子
 name_en: Wurrboy
 faction: 兽人
 type: unit
-points:
-  1 model: 60
 tags:
 - unit
 - unit/兽人
 - 兽人
 version:
-  points: MFM 2026-07-27 15:14
+  points: historical / unmatched
   source: official-db
 sources:
 - book: 官方结构库 db/wh40k.sqlite（Wahapedia 11版镜像 + MFM 官方点数）
-updated: '2026-07-23'
+updated: '2026-09-14'
 ---
 
 ## 属性表
@@ -39,6 +37,7 @@ updated: '2026-07-23'
 - **毛哥之吼【灵能】**：在你对手的指挥阶段中，你可以选择本模型视线中 18 寸内一个敌方单位，为其投 D6，结果为 1则本模型遭受 D3 点致命伤害，2+则直到对手下个指挥阶段开始时，那个敌方单位进行震慑测试或 LD 测试时结果-2(多个本效果不累计)
 
 ## 单位构成
+历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
 - **1个模型** — 60 分
 
 ## 关键词

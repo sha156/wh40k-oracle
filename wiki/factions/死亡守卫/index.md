@@ -17,39 +17,39 @@
 
 ## 单位
 
-- [[factions/死亡守卫/units/cerberus|Cerberus]] — 
-- [[factions/死亡守卫/units/chaos-lord-on-palanquin-of-nurgle|Chaos Lord On Palanquin Of Nurgle]] — 
-- [[factions/死亡守卫/units/chaos-thunderhawk|Chaos Thunderhawk]] — 
-- [[factions/死亡守卫/units/death-guard-chaos-lord-in-terminator-armour|Death Guard Chaos Lord In Terminator Armour]] — 
-- [[factions/死亡守卫/units/death-guard-cultists|Death Guard Cultists]] — 
-- [[factions/死亡守卫/units/death-guard-possessed|Death Guard Possessed]] — 
-- [[factions/死亡守卫/units/deredeo-dreadnought|Deredeo Dreadnought]] — 
-- [[factions/死亡守卫/units/falchion|Falchion]] — 
-- [[factions/死亡守卫/units/fellblade|Fellblade]] — 
-- [[factions/死亡守卫/units/fire-raptor-gunship|Fire Raptor Gunship]] — 
-- [[factions/死亡守卫/units/gellerpox-infected|Gellerpox Infected]] — 
-- [[factions/死亡守卫/units/greater-blight-drone|Greater Blight Drone]] — 
-- [[factions/死亡守卫/units/hell-blade|Hell Blade]] — 
-- [[factions/死亡守卫/units/hell-talon|Hell Talon]] — 
-- [[factions/死亡守卫/units/kratos|Kratos]] — 
-- [[factions/死亡守卫/units/land-raider-achilles|Land Raider Achilles]] — 
-- [[factions/死亡守卫/units/land-raider-proteus|Land Raider Proteus]] — 
-- [[factions/死亡守卫/units/leviathan-dreadnought|Leviathan Dreadnought]] — 
-- [[factions/死亡守卫/units/mastodon|Mastodon]] — 
-- [[factions/死亡守卫/units/mutoid-vermin|Mutoid Vermin]] — 
-- [[factions/死亡守卫/units/rapier-carrier|Rapier Carrier]] — 
-- [[factions/死亡守卫/units/relic-contemptor-dreadnought|Relic Contemptor Dreadnought]] — 
-- [[factions/死亡守卫/units/sicaran-battle-tank|Sicaran Battle Tank]] — 
-- [[factions/死亡守卫/units/sicaran-punisher|Sicaran Punisher]] — 
-- [[factions/死亡守卫/units/sicaran-venator|Sicaran Venator]] — 
-- [[factions/死亡守卫/units/sokar-pattern-stormbird|Sokar-pattern Stormbird]] — 
-- [[factions/死亡守卫/units/sorcerer-on-palanquin-of-nurgle|Sorcerer On Palanquin Of Nurgle]] — 
-- [[factions/死亡守卫/units/spartan|Spartan]] — 
-- [[factions/死亡守卫/units/storm-eagle-gunship|Storm Eagle Gunship]] — 
-- [[factions/死亡守卫/units/terrax-pattern-termite|Terrax-pattern Termite]] — 
-- [[factions/死亡守卫/units/typhon|Typhon]] — 
-- [[factions/死亡守卫/units/whirlwind-scorpius|Whirlwind Scorpius]] — 
-- [[factions/死亡守卫/units/xiphon-interceptor|Xiphon Interceptor]] — 
+- [[factions/死亡守卫/units/cerberus|Cerberus]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
+- [[factions/死亡守卫/units/chaos-lord-on-palanquin-of-nurgle|Chaos Lord On Palanquin Of Nurgle]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
+- [[factions/死亡守卫/units/chaos-thunderhawk|Chaos Thunderhawk]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
+- [[factions/死亡守卫/units/death-guard-chaos-lord-in-terminator-armour|Death Guard Chaos Lord In Terminator Armour]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
+- [[factions/死亡守卫/units/death-guard-cultists|Death Guard Cultists]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
+- [[factions/死亡守卫/units/death-guard-possessed|Death Guard Possessed]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
+- [[factions/死亡守卫/units/deredeo-dreadnought|Deredeo Dreadnought]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
+- [[factions/死亡守卫/units/falchion|Falchion]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
+- [[factions/死亡守卫/units/fellblade|Fellblade]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
+- [[factions/死亡守卫/units/fire-raptor-gunship|Fire Raptor Gunship]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
+- [[factions/死亡守卫/units/gellerpox-infected|Gellerpox Infected]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
+- [[factions/死亡守卫/units/greater-blight-drone|Greater Blight Drone]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
+- [[factions/死亡守卫/units/hell-blade|Hell Blade]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
+- [[factions/死亡守卫/units/hell-talon|Hell Talon]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
+- [[factions/死亡守卫/units/kratos|Kratos]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
+- [[factions/死亡守卫/units/land-raider-achilles|Land Raider Achilles]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
+- [[factions/死亡守卫/units/land-raider-proteus|Land Raider Proteus]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
+- [[factions/死亡守卫/units/leviathan-dreadnought|Leviathan Dreadnought]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
+- [[factions/死亡守卫/units/mastodon|Mastodon]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
+- [[factions/死亡守卫/units/mutoid-vermin|Mutoid Vermin]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
+- [[factions/死亡守卫/units/rapier-carrier|Rapier Carrier]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
+- [[factions/死亡守卫/units/relic-contemptor-dreadnought|Relic Contemptor Dreadnought]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
+- [[factions/死亡守卫/units/sicaran-battle-tank|Sicaran Battle Tank]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
+- [[factions/死亡守卫/units/sicaran-punisher|Sicaran Punisher]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
+- [[factions/死亡守卫/units/sicaran-venator|Sicaran Venator]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
+- [[factions/死亡守卫/units/sokar-pattern-stormbird|Sokar-pattern Stormbird]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
+- [[factions/死亡守卫/units/sorcerer-on-palanquin-of-nurgle|Sorcerer On Palanquin Of Nurgle]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
+- [[factions/死亡守卫/units/spartan|Spartan]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
+- [[factions/死亡守卫/units/storm-eagle-gunship|Storm Eagle Gunship]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
+- [[factions/死亡守卫/units/terrax-pattern-termite|Terrax-pattern Termite]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
+- [[factions/死亡守卫/units/typhon|Typhon]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
+- [[factions/死亡守卫/units/whirlwind-scorpius|Whirlwind Scorpius]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
+- [[factions/死亡守卫/units/xiphon-interceptor|Xiphon Interceptor]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
 - [[factions/死亡守卫/units/noxious-blightbringer|丧钟使者]] — 
 - [[factions/死亡守卫/units/defiler|亵渎者]] — 
 - [[factions/死亡守卫/units/tallyman|凋败记账官]] — 
@@ -62,8 +62,8 @@
 - [[factions/死亡守卫/units/myphitic-blight-hauler|恶臭疫病拖车]] — 
 - [[factions/死亡守卫/units/plaguebearers|携疫者]] — 
 - [[factions/死亡守卫/units/daemon-prince-of-nurgle-with-wings|有翼纳垢恶魔王子]] — 
-- [[factions/死亡守卫/units/death-guard-chaos-lord|死亡守卫混沌领主]] — 
-- [[factions/死亡守卫/units/death-guard-sorcerer-in-terminator-armour|死亡守卫终结者巫师]] — 
+- [[factions/死亡守卫/units/death-guard-chaos-lord|死亡守卫混沌领主]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
+- [[factions/死亡守卫/units/death-guard-sorcerer-in-terminator-armour|死亡守卫终结者巫师]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
 - [[factions/死亡守卫/units/deathshroud-terminators|死亡寿衣终结者]] — 
 - [[factions/死亡守卫/units/chaos-predator-annihilator|歼灭者型猎食者坦克]] — 
 - [[factions/死亡守卫/units/typhus|泰丰斯]] — 
@@ -158,12 +158,12 @@
 - [[factions/死亡守卫/enhancements/warprot-talisman|亚空间护符]] — 30 分、Death Lord’s Chosen 分队。
 - [[factions/死亡守卫/enhancements/talisman-of-burgeoning|再生护符]] — 25 分、Shamblerot Vectorium 分队。
 - [[factions/死亡守卫/enhancements/beckoning-blight|召唤凋零]] — 20 分、Tallyband Summoners 分队。
-- [[factions/死亡守卫/enhancements/revolting-regeneration|可怖再生]] — 20 分、Virulent Vectorium 分队。
+- [[factions/死亡守卫/enhancements/revolting-regeneration|可怖再生]] — 30 分、Virulent Vectorium 分队。
 - [[factions/死亡守卫/enhancements/fountaining-filth|喷涌污秽]] — 0 分、Vectors of Decay 分队。
 - [[factions/死亡守卫/enhancements/rejuvenating-swarm-flyblown-host|回复虫群]] — 10 分、吹蝇军 分队。
-- [[factions/死亡守卫/enhancements/rejuvenating-swarm-paragons-of-putrescence|回复虫群]] — 分数未知、腐坏楷模 分队。
+- [[factions/死亡守卫/enhancements/rejuvenating-swarm-paragons-of-putrescence|回复虫群]] — 20 分、腐坏楷模 分队。
 - [[factions/死亡守卫/enhancements/parasitic-woe-reaper|寄生收割]] — 分数未知、传瘟机械 分队。
-- [[factions/死亡守卫/enhancements/insectile-murmuration|密集虫群]] — 20 分、吹蝇军 分队。
+- [[factions/死亡守卫/enhancements/insectile-murmuration|密集虫群]] — 15 分、吹蝇军 分队。
 - [[factions/死亡守卫/enhancements/shriekworm-familiar|尖啸虫使]] — 15 分、Mortarion’s Hammer 分队。
 - [[factions/死亡守卫/enhancements/entropic-knell|恐怖丧钟]] — 15 分、Tallyband Summoners 分队。
 - [[factions/死亡守卫/enhancements/disgusting-reinvigoration|恶心复元]] — 0 分、Arch-Contaminators 分队。
@@ -174,12 +174,12 @@
 - [[factions/死亡守卫/enhancements/face-of-death|死亡之面]] — 10 分、Death Lord’s Chosen 分队。
 - [[factions/死亡守卫/enhancements/fell-harvester|残暴收割]] — 10 分、Tallyband Summoners 分队。
 - [[factions/死亡守卫/enhancements/foul-constitution|污秽体质]] — 0 分、Vectors of Decay 分队。
-- [[factions/死亡守卫/enhancements/host-of-the-hybridised-pox|混合瘟疫宿主]] — 分数未知、腐坏楷模 分队。
+- [[factions/死亡守卫/enhancements/host-of-the-hybridised-pox|混合瘟疫宿主]] — 40 分、腐坏楷模 分队。
 - [[factions/死亡守卫/enhancements/pox-bearer|瘟疫使者]] — 0 分、Unclean Uprising 分队。
-- [[factions/死亡守卫/enhancements/plagueveil|瘟疫烟幕]] — 25 分、吹蝇军 分队。
+- [[factions/死亡守卫/enhancements/plagueveil|瘟疫烟幕]] — 15 分、吹蝇军 分队。
 - [[factions/死亡守卫/enhancements/furnace-of-plagues|瘟疫熔炉]] — 25 分、Virulent Vectorium 分队。
 - [[factions/死亡守卫/enhancements/miasmic-odour|瘴气恶臭]] — 0 分、Arch-Contaminators 分队。
-- [[factions/死亡守卫/enhancements/lancet-of-the-worldsore|穿刺世界之疮]] — 分数未知、传瘟机械 分队。
+- [[factions/死亡守卫/enhancements/lancet-of-the-worldsore|穿刺世界之疮]] — 15 分、传瘟机械 分队。
 - [[factions/死亡守卫/enhancements/needle-of-nurgle|精华注射]] — 25 分、Champions of Contagion 分队。
 - [[factions/死亡守卫/enhancements/tendrilous-emissions|索敌毒云]] — 30 分、Mortarion’s Hammer 分队。
 - [[factions/死亡守卫/enhancements/hand-of-nurgle|纳垢之手]] — 0 分、Unclean Uprising 分队。

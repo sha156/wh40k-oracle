@@ -5,18 +5,18 @@ name_en: Kastelan Robots
 faction: 机械修会
 type: unit
 points:
-  2 models: 160
-  4 models: 320
+  2 models: 150
+  4 models: 300
 tags:
 - unit
 - unit/机械修会
 - 机械修会
 version:
-  points: MFM 2026-07-27 15:14
+  points: MFM 2026-09-14T05:51:23.572407+00:00
   source: official-db
 sources:
 - book: 官方结构库 db/wh40k.sqlite（Wahapedia 11版镜像 + MFM 官方点数）
-updated: '2026-07-23'
+updated: '2026-09-14'
 ---
 
 ## 属性表
@@ -48,8 +48,8 @@ updated: '2026-07-23'
 - **反射力场**：当射击攻击被分配给卡斯特兰机器人时，每当未修正保护投掷结果为 6 时，攻击者单位会在完成这轮攻击后遭受 1 点致命伤害
 
 ## 单位构成
-- **2个模型** — 160 分
-- **4个模型** — 320 分
+- **2个模型** — 150 分
+- **4个模型** — 300 分
 
 ## 关键词
 - **阵营关键词**：Adeptus Mechanicus

@@ -12,20 +12,20 @@
 
 ## 单位
 
-- [[factions/帝国特勤/units/daemonhost|Daemonhost]] — 
-- [[factions/帝国特勤/units/damned-legionnaires|Damned Legionnaires]] — 
-- [[factions/帝国特勤/units/inquisitor-eisenhorn|Inquisitor Eisenhorn]] — 
-- [[factions/帝国特勤/units/inquisitor-in-terminator-armour|Inquisitor In Terminator Armour]] — 
-- [[factions/帝国特勤/units/inquisitor-karamazov|Inquisitor Karamazov]] — 
-- [[factions/帝国特勤/units/inquisitor-ostromandeus|Inquisitor Ostromandeus]] — 
-- [[factions/帝国特勤/units/janus-draik|Janus Draik]] — 
-- [[factions/帝国特勤/units/jokaero-weaponsmith|Jokaero Weaponsmith]] — 
-- [[factions/帝国特勤/units/kill-team-cassius|Kill Team Cassius]] — 
-- [[factions/帝国特勤/units/neyam-shai-murad|Neyam Shai Murad]] — 
-- [[factions/帝国特勤/units/proteus-kill-team|Proteus Kill Team]] — 
-- [[factions/帝国特勤/units/ur-025|UR-025]] — 
-- [[factions/帝国特勤/units/veteran-bike-squad|Veteran Bike Squad]] — 
-- [[factions/帝国特勤/units/indomitor-kill-team|不屈杀戮小队]] — 
+- [[factions/帝国特勤/units/daemonhost|Daemonhost]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
+- [[factions/帝国特勤/units/damned-legionnaires|Damned Legionnaires]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
+- [[factions/帝国特勤/units/inquisitor-eisenhorn|Inquisitor Eisenhorn]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
+- [[factions/帝国特勤/units/inquisitor-in-terminator-armour|Inquisitor In Terminator Armour]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
+- [[factions/帝国特勤/units/inquisitor-karamazov|Inquisitor Karamazov]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
+- [[factions/帝国特勤/units/inquisitor-ostromandeus|Inquisitor Ostromandeus]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
+- [[factions/帝国特勤/units/janus-draik|Janus Draik]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
+- [[factions/帝国特勤/units/jokaero-weaponsmith|Jokaero Weaponsmith]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
+- [[factions/帝国特勤/units/kill-team-cassius|Kill Team Cassius]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
+- [[factions/帝国特勤/units/neyam-shai-murad|Neyam Shai Murad]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
+- [[factions/帝国特勤/units/proteus-kill-team|Proteus Kill Team]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
+- [[factions/帝国特勤/units/ur-025|UR-025]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
+- [[factions/帝国特勤/units/veteran-bike-squad|Veteran Bike Squad]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
+- [[factions/帝国特勤/units/indomitor-kill-team|不屈杀戮小队]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
 - [[factions/帝国特勤/units/culexus-assassin|丘里克斯刺客]] — 
 - [[factions/帝国特勤/units/subductor-squad|冲覆者小队]] — 
 - [[factions/帝国特勤/units/sanctifiers|净化者杀戮小队]] — 
@@ -48,12 +48,12 @@
 - [[factions/帝国特勤/units/sisters-of-battle-immolator|战斗修女献祭者装甲车]] — 
 - [[factions/帝国特勤/units/ministorum-priest|教廷牧师]] — 
 - [[factions/帝国特勤/units/vindicare-assassin|文迪卡刺客]] — 
-- [[factions/帝国特勤/units/spectrus-kill-team|无形杀戮小队]] — 
+- [[factions/帝国特勤/units/spectrus-kill-team|无形杀戮小队]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
 - [[factions/帝国特勤/units/voidsmen-at-arms|武装船兵]] — 
 - [[factions/帝国特勤/units/deathwatch-kill-team|死亡守望杀戮小队]] — 
-- [[factions/帝国特勤/units/deathwatch-terminator-squad|死亡守望终结者小队]] — 
+- [[factions/帝国特勤/units/deathwatch-terminator-squad|死亡守望终结者小队]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
 - [[factions/帝国特勤/units/grey-knights-terminator-squad|灰骑士终结者小队]] — 
-- [[factions/帝国特勤/units/fortis-kill-team|至强杀戮小队]] — 
+- [[factions/帝国特勤/units/fortis-kill-team|至强杀戮小队]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
 - [[factions/帝国特勤/units/eversor-assassin|艾弗森刺客]] — 
 - [[factions/帝国特勤/units/rogue-trader-entourage|行商团队]] — 
 - [[factions/帝国特勤/units/vigilant-squad|警戒者小队]] — 
@@ -123,7 +123,7 @@
 - [[factions/帝国特勤/enhancements/vasovs-auto-oppressor|Vasov’s Auto-Oppressor]] — 0 分、Interdiction Team 分队。
 - [[factions/帝国特勤/enhancements/witch-hunter|Witch Hunter]] — 15 分、Ordo Hereticus Purgation Force 分队。
 - [[factions/帝国特勤/enhancements/beacon-angelis|天使信标]] — 30 分、Ordo Xenos Alien Hunters 分队。
-- [[factions/帝国特勤/enhancements/micromelta-rounds|微型热熔弹药]] — 45 分、隐藏利刃歼灭部队 分队。
-- [[factions/帝国特勤/enhancements/esoteric-explosives|特殊炸药]] — 40 分、隐藏利刃歼灭部队 分队。
-- [[factions/帝国特勤/enhancements/decoy-targets|诱饵目标]] — 40 分、隐藏利刃歼灭部队 分队。
+- [[factions/帝国特勤/enhancements/micromelta-rounds|微型热熔弹药]] — 20 分、隐藏利刃歼灭部队 分队。
+- [[factions/帝国特勤/enhancements/esoteric-explosives|特殊炸药]] — 10 分、隐藏利刃歼灭部队 分队。
+- [[factions/帝国特勤/enhancements/decoy-targets|诱饵目标]] — 15 分、隐藏利刃歼灭部队 分队。
 

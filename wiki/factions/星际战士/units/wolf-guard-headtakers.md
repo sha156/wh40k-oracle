@@ -6,21 +6,19 @@ faction: 星际战士
 type: unit
 points:
   3 Wolf Guard Headtakers: 85
-  3 Wolf Guard Headtakers and 3 Hunting Wolves: 110
-  6 Wolf Guard Headtakers: 170
-  6 Wolf Guard Headtakers and 6 Hunting Wolves: 220
   3 wolf guard headtakers, 3 hunting wolves: 115
+  6 Wolf Guard Headtakers: 170
   6 wolf guard headtakers, 6 hunting wolves: 230
 tags:
 - unit
 - unit/星际战士
 - 星际战士
 version:
-  points: MFM 2026-07-27 15:14
+  points: MFM 2026-09-14T05:51:23.572407+00:00
   source: official-db
 sources:
 - book: 官方结构库 db/wh40k.sqlite（Wahapedia 11版镜像 + MFM 官方点数）
-updated: '2026-07-23'
+updated: '2026-09-14'
 ---
 
 ## 属性表
@@ -50,10 +48,8 @@ updated: '2026-07-23'
 
 ## 单位构成
 - **3 [[factions/星际战士/units/wolf-guard.md|Wolf Guard]] Headtakers** — 85 分
-- **3 Wolf Guard Headtakers and 3 Hunting Wolves** — 110 分
-- **6 Wolf Guard Headtakers** — 170 分
-- **6 Wolf Guard Headtakers and 6 Hunting Wolves** — 220 分
 - **3 wolf guard headtakers, 3 hunting wolves** — 115 分
+- **6 Wolf Guard Headtakers** — 170 分
 - **6 wolf guard headtakers, 6 hunting wolves** — 230 分
 
 ## 关键词

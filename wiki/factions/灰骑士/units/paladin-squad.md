@@ -8,17 +8,17 @@ points:
   4 models: 170
   5 models: 215
   8 models: 360
-  10 models: 450
+  10 models: 460
 tags:
 - unit
 - unit/灰骑士
 - 灰骑士
 version:
-  points: MFM 2026-07-27 15:14
+  points: MFM 2026-09-14T05:51:23.572407+00:00
   source: official-db
 sources:
 - book: 官方结构库 db/wh40k.sqlite（Wahapedia 11版镜像 + MFM 官方点数）
-updated: '2026-07-23'
+updated: '2026-09-14'
 ---
 
 ## 属性表
@@ -52,7 +52,7 @@ updated: '2026-07-23'
 - **4个模型** — 170 分
 - **5个模型** — 215 分
 - **8个模型** — 360 分
-- **10个模型** — 450 分
+- **10个模型** — 460 分
 
 ## 关键词
 - **阵营关键词**：Grey Knights

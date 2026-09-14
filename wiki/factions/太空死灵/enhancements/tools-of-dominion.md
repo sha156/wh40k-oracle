@@ -5,6 +5,7 @@ name_en: Tools of Dominion
 faction: 太空死灵
 type: enhancement
 detachment: Hand of the Dynasty
+cost: 15
 tags:
 - enhancement
 - enhancement/太空死灵
@@ -14,11 +15,13 @@ sources:
 updated: '2026-07-26'
 ---
 
-分数未知、[[factions/太空死灵/detachments/hand-of-the-dynasty.md|王朝之手]] 分队。
+15 分、[[factions/太空死灵/detachments/hand-of-the-dynasty.md|王朝之手]] 分队。
 
 ## 效果
 
 This unit’s ranged attacks have [RAPID FIRE 1].
+
+**分数**：15 分
 
 ## 携带限制
 

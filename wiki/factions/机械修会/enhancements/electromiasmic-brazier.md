@@ -4,6 +4,7 @@ name_en: Electromiasmic Brazier
 faction: 机械修会
 type: enhancement
 detachment: Luminen Auto-choir
+cost: 10
 tags:
 - enhancement
 - enhancement/机械修会
@@ -13,11 +14,13 @@ sources:
 updated: '2026-07-26'
 ---
 
-分数未知、[[factions/机械修会/detachments/luminen-auto-choir.md|启明自动合唱团]] 分队。
+10 分、[[factions/机械修会/detachments/luminen-auto-choir.md|启明自动合唱团]] 分队。
 
 ## 效果
 
 This unit has Stealth.
+
+**分数**：10 分
 
 ## 携带限制
 

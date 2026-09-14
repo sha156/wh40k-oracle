@@ -4,17 +4,16 @@ name_zh: 护教军游猎兵
 name_en: Skitarii Rangers
 faction: 帝国骑士
 type: unit
-points:
-  10 models: 85
 tags:
 - unit
 - unit/帝国骑士
 - 帝国骑士
 version:
+  points: historical / unmatched
   source: official-db
 sources:
 - book: 官方结构库 db/wh40k.sqlite（Wahapedia 11版镜像 + MFM 官方点数）
-updated: '2026-07-23'
+updated: '2026-09-14'
 ---
 
 ## 属性表
@@ -46,6 +45,7 @@ updated: '2026-07-23'
 - **目标肃清**：如果在你的指挥阶段结束时，本单位位于某个你占领的目标点范围内，则即使你在这个目标点范围内已没有你的模型，也算作你占领此目标点，此效果持续到敌方占领此目标点后，任意回合开始或结束时为止
 
 ## 单位构成
+历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
 - **10个模型** — 85 分
 
 ## 关键词

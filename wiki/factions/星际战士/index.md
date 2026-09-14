@@ -62,122 +62,121 @@
 ## 单位
 
 - [[factions/星际战士/units/invader-atv|ATV 突击车]] — 
-- [[factions/星际战士/units/ancient-on-bike|Ancient on Bike]] — 
-- [[factions/星际战士/units/apothecary-on-bike|Apothecary on Bike]] — 
-- [[factions/星际战士/units/assault-squad|Assault Squad]] — 
-- [[factions/星际战士/units/assault-squad-with-jump-packs|Assault Squad with Jump Packs]] — 
-- [[factions/星际战士/units/astartes-servitors|Astartes Servitors]] — 
-- [[factions/星际战士/units/attack-bike-squad|Attack Bike Squad]] — 
-- [[factions/星际战士/units/bike-squad|Bike Squad]] — 
-- [[factions/星际战士/units/brother-corbulo|Brother Corbulo]] — 
-- [[factions/星际战士/units/caestus-assault-ram|Caestus Assault Ram]] — 
-- [[factions/星际战士/units/canis-wolfborn|Canis Wolfborn]] — 
-- [[factions/星际战士/units/captain-tycho|Captain Tycho]] — 
-- [[factions/星际战士/units/captain-on-bike|Captain on Bike]] — 
-- [[factions/星际战士/units/carab-culln-the-risen|Carab Culln The Risen]] — 
-- [[factions/星际战士/units/cerberus|Cerberus]] — 
-- [[factions/星际战士/units/chaplain-cassius|Chaplain Cassius]] — 
-- [[factions/星际战士/units/chaplain-kastiel|Chaplain Kastiel]] — 
-- [[factions/星际战士/units/chaplain-venerable-dreadnought|Chaplain Venerable Dreadnought]] — 
-- [[factions/星际战士/units/command-squad|Command Squad]] — 
-- [[factions/星际战士/units/company-champion-on-bike|Company Champion On Bike]] — 
-- [[factions/星际战士/units/company-veterans-on-bikes|Company Veterans On Bikes]] — 
-- [[factions/星际战士/units/crusader-squad-legendary|Crusader Squad (Legendary)]] — 
-- [[factions/星际战士/units/cyberwolf|Cyberwolf]] — 
-- [[factions/星际战士/units/death-company-marines-with-boltguns|Death Company Marines with Boltguns]] — 
-- [[factions/星际战士/units/death-company-marines-with-boltguns-and-jump-packs|Death Company Marines with Boltguns and Jump Packs]] — 
-- [[factions/星际战士/units/deathstorm-drop-pod|Deathstorm Drop Pod]] — 
-- [[factions/星际战士/units/deathwing-strikemaster|Deathwing Strikemaster]] — 
-- [[factions/星际战士/units/deimos-predator|Deimos Predator]] — 
-- [[factions/星际战士/units/deredeo-dreadnought|Deredeo Dreadnought]] — 
-- [[factions/星际战士/units/dreadnought-drop-pod|Dreadnought Drop Pod]] — 
+- [[factions/星际战士/units/ancient-on-bike|Ancient on Bike]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
+- [[factions/星际战士/units/apothecary-on-bike|Apothecary on Bike]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
+- [[factions/星际战士/units/assault-squad|Assault Squad]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
+- [[factions/星际战士/units/assault-squad-with-jump-packs|Assault Squad with Jump Packs]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
+- [[factions/星际战士/units/astartes-servitors|Astartes Servitors]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
+- [[factions/星际战士/units/attack-bike-squad|Attack Bike Squad]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
+- [[factions/星际战士/units/bike-squad|Bike Squad]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
+- [[factions/星际战士/units/brother-corbulo|Brother Corbulo]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
+- [[factions/星际战士/units/caestus-assault-ram|Caestus Assault Ram]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
+- [[factions/星际战士/units/canis-wolfborn|Canis Wolfborn]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
+- [[factions/星际战士/units/captain-tycho|Captain Tycho]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
+- [[factions/星际战士/units/captain-on-bike|Captain on Bike]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
+- [[factions/星际战士/units/carab-culln-the-risen|Carab Culln The Risen]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
+- [[factions/星际战士/units/cerberus|Cerberus]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
+- [[factions/星际战士/units/chaplain-cassius|Chaplain Cassius]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
+- [[factions/星际战士/units/chaplain-kastiel|Chaplain Kastiel]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
+- [[factions/星际战士/units/chaplain-venerable-dreadnought|Chaplain Venerable Dreadnought]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
+- [[factions/星际战士/units/command-squad|Command Squad]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
+- [[factions/星际战士/units/company-champion-on-bike|Company Champion On Bike]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
+- [[factions/星际战士/units/company-veterans-on-bikes|Company Veterans On Bikes]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
+- [[factions/星际战士/units/crusader-squad-legendary|Crusader Squad (Legendary)]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
+- [[factions/星际战士/units/cyberwolf|Cyberwolf]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
+- [[factions/星际战士/units/death-company-marines-with-boltguns-and-jump-packs|Death Company Marines with Boltguns and Jump Packs]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
+- [[factions/星际战士/units/deathstorm-drop-pod|Deathstorm Drop Pod]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
+- [[factions/星际战士/units/deathwing-strikemaster|Deathwing Strikemaster]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
+- [[factions/星际战士/units/deimos-predator|Deimos Predator]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
+- [[factions/星际战士/units/deredeo-dreadnought|Deredeo Dreadnought]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
+- [[factions/星际战士/units/dreadnought-drop-pod|Dreadnought Drop Pod]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
 - [[factions/星际战士/units/example-wargear|Example Wargear]] — 
-- [[factions/星际战士/units/falchion|Falchion]] — 
-- [[factions/星际战士/units/fellblade|Fellblade]] — 
-- [[factions/星际战士/units/ferren-areios|Ferren Areios]] — 
-- [[factions/星际战士/units/fire-raptor-gunship|Fire Raptor Gunship]] — 
-- [[factions/星际战士/units/gabriel-seth|Gabriel Seth]] — 
-- [[factions/星际战士/units/harald-deathwolf|Harald Deathwolf]] — 
-- [[factions/星际战士/units/hounds-of-morkai|Hounds Of Morkai]] — 
-- [[factions/星际战士/units/hunter|Hunter]] — 
-- [[factions/星际战士/units/imperial-space-marine|Imperial Space Marine]] — 
-- [[factions/星际战士/units/iron-priest-on-thunderwolf|Iron Priest On Thunderwolf]] — 
-- [[factions/星际战士/units/ironclad-dreadnought|Ironclad Dreadnought]] — 
-- [[factions/星际战士/units/javelin-attack-speeder|Javelin Attack Speeder]] — 
-- [[factions/星际战士/units/judiciar-xacharus|Judiciar Xacharus]] — 
-- [[factions/星际战士/units/kill-team-cassius|Kill Team Cassius]] — 
-- [[factions/星际战士/units/kratos|Kratos]] — 
-- [[factions/星际战士/units/krom-dragongaze|Krom Dragongaze]] — 
-- [[factions/星际战士/units/land-raider-achilles|Land Raider Achilles]] — 
-- [[factions/星际战士/units/land-raider-excelsior|Land Raider Excelsior]] — 
-- [[factions/星际战士/units/land-raider-helios|Land Raider Helios]] — 
-- [[factions/星际战士/units/land-raider-prometheus|Land Raider Prometheus]] — 
-- [[factions/星际战士/units/land-raider-proteus|Land Raider Proteus]] — 
-- [[factions/星际战士/units/land-speeder-storm|Land Speeder Storm]] — 
-- [[factions/星际战士/units/land-speeder-tempest|Land Speeder Tempest]] — 
-- [[factions/星际战士/units/land-speeder-tornado|Land Speeder Tornado]] — 
-- [[factions/星际战士/units/land-speeder-typhoon|Land Speeder Typhoon]] — 
-- [[factions/星际战士/units/leviathan-dreadnought|Leviathan Dreadnought]] — 
-- [[factions/星际战士/units/librarian-dreadnought|Librarian Dreadnought]] — 
-- [[factions/星际战士/units/librarian-on-bike|Librarian on Bike]] — 
-- [[factions/星际战士/units/librarian-with-jump-pack|Librarian with Jump Pack]] — 
-- [[factions/星际战士/units/logan-grimnar-on-stormrider|Logan Grimnar On Stormrider]] — 
-- [[factions/星际战士/units/long-fangs|Long Fangs]] — 
-- [[factions/星际战士/units/lukas-the-trickster|Lukas The Trickster]] — 
-- [[factions/星际战士/units/mastodon|Mastodon]] — 
-- [[factions/星际战士/units/mortis-dreadnought|Mortis Dreadnought]] — 
-- [[factions/星际战士/units/primaris-company-champion|Primaris Company Champion]] — 
-- [[factions/星际战士/units/rapier-carrier|Rapier Carrier]] — 
-- [[factions/星际战士/units/ravenwing-talonmaster|Ravenwing Talonmaster]] — 
-- [[factions/星际战士/units/relic-contemptor-dreadnought|Relic Contemptor Dreadnought]] — 
-- [[factions/星际战士/units/relic-razorback|Relic Razorback]] — 
-- [[factions/星际战士/units/relic-terminator-squad|Relic Terminator Squad]] — 
-- [[factions/星际战士/units/rhino-primaris|Rhino Primaris]] — 
-- [[factions/星际战士/units/sanguinary-priest-with-jump-pack|Sanguinary Priest With Jump Pack]] — 
-- [[factions/星际战士/units/sanguinary-priest-on-bike|Sanguinary Priest on Bike]] — 
-- [[factions/星际战士/units/scout-bike-squad|Scout Bike Squad]] — 
-- [[factions/星际战士/units/scout-sniper-squad|Scout Sniper Squad]] — 
-- [[factions/星际战士/units/sergeant-chronus|Sergeant Chronus]] — 
-- [[factions/星际战士/units/sergeant-telion|Sergeant Telion]] — 
-- [[factions/星际战士/units/sicaran-arcus|Sicaran Arcus]] — 
-- [[factions/星际战士/units/sicaran-battle-tank|Sicaran Battle Tank]] — 
-- [[factions/星际战士/units/sicaran-omega|Sicaran Omega]] — 
-- [[factions/星际战士/units/sicaran-punisher|Sicaran Punisher]] — 
-- [[factions/星际战士/units/sicaran-venator|Sicaran Venator]] — 
-- [[factions/星际战士/units/skyclaws|Skyclaws]] — 
-- [[factions/星际战士/units/sokar-pattern-stormbird|Sokar-pattern Stormbird]] — 
-- [[factions/星际战士/units/spartan|Spartan]] — 
-- [[factions/星际战士/units/stalker|Stalker]] — 
-- [[factions/星际战士/units/storm-eagle-gunship|Storm Eagle Gunship]] — 
-- [[factions/星际战士/units/stormfang-gunship|Stormfang Gunship]] — 
-- [[factions/星际战士/units/stormwolf|Stormwolf]] — 
-- [[factions/星际战士/units/tarantula-air-defence-battery|Tarantula Air Defence Battery]] — 
-- [[factions/星际战士/units/tarantula-sentry-battery|Tarantula Sentry Battery]] — 
-- [[factions/星际战士/units/techmarine-on-bike|Techmarine on Bike]] — 
-- [[factions/星际战士/units/terminus-ultra|Terminus Ultra]] — 
-- [[factions/星际战士/units/terrax-pattern-termite|Terrax-pattern Termite]] — 
-- [[factions/星际战士/units/thunderfire-cannon|Thunderfire Cannon]] — 
-- [[factions/星际战士/units/thunderhawk-transporter|Thunderhawk Transporter]] — 
-- [[factions/星际战士/units/tycho-the-lost|Tycho The Lost]] — 
-- [[factions/星际战士/units/typhon|Typhon]] — 
-- [[factions/星际战士/units/tyrannic-war-veterans|Tyrannic War Veterans]] — 
-- [[factions/星际战士/units/ultramarines-honour-guard|Ultramarines Honour Guard]] — 
-- [[factions/星际战士/units/uriel-ventris|Uriel Ventris]] — 
-- [[factions/星际战士/units/vanguard-veteran-squad|Vanguard Veteran Squad]] — 
-- [[factions/星际战士/units/venerable-dreadnought-legendary|Venerable Dreadnought (Legendary)]] — 
-- [[factions/星际战士/units/vindicator-laser-destroyer|Vindicator Laser Destroyer]] — 
-- [[factions/星际战士/units/whirlwind-scorpius|Whirlwind Scorpius]] — 
-- [[factions/星际战士/units/wolf-guard|Wolf Guard]] — 
-- [[factions/星际战士/units/wolf-guard-battle-leader-in-terminator-armour|Wolf Guard Battle Leader In Terminator Armour]] — 
-- [[factions/星际战士/units/wolf-guard-battle-leader-on-thunderwolf|Wolf Guard Battle Leader On Thunderwolf]] — 
-- [[factions/星际战士/units/wolf-guard-pack-leader|Wolf Guard Pack Leader]] — 
-- [[factions/星际战士/units/wolf-guard-pack-leader-in-terminator-armour|Wolf Guard Pack Leader In Terminator Armour]] — 
-- [[factions/星际战士/units/wolf-guard-pack-leader-with-jump-pack|Wolf Guard Pack Leader With Jump Pack]] — 
-- [[factions/星际战士/units/wolf-lord-on-thunderwolf|Wolf Lord on Thunderwolf]] — 
-- [[factions/星际战士/units/wolf-scouts-legendary|Wolf Scouts (Legendary)]] — 
-- [[factions/星际战士/units/xiphon-interceptor|Xiphon Interceptor]] — 
-- [[factions/星际战士/units/furioso-dreadnought|【传奇】暴烈无畏]] — 
-- [[factions/星际战士/units/death-company-dreadnought-with-magna-grapple|【传奇】装备磁力勾爪的死亡连无畏]] — 
+- [[factions/星际战士/units/falchion|Falchion]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
+- [[factions/星际战士/units/fellblade|Fellblade]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
+- [[factions/星际战士/units/ferren-areios|Ferren Areios]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
+- [[factions/星际战士/units/fire-raptor-gunship|Fire Raptor Gunship]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
+- [[factions/星际战士/units/gabriel-seth|Gabriel Seth]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
+- [[factions/星际战士/units/harald-deathwolf|Harald Deathwolf]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
+- [[factions/星际战士/units/hounds-of-morkai|Hounds Of Morkai]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
+- [[factions/星际战士/units/hunter|Hunter]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
+- [[factions/星际战士/units/imperial-space-marine|Imperial Space Marine]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
+- [[factions/星际战士/units/iron-priest-on-thunderwolf|Iron Priest On Thunderwolf]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
+- [[factions/星际战士/units/ironclad-dreadnought|Ironclad Dreadnought]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
+- [[factions/星际战士/units/javelin-attack-speeder|Javelin Attack Speeder]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
+- [[factions/星际战士/units/judiciar-xacharus|Judiciar Xacharus]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
+- [[factions/星际战士/units/kill-team-cassius|Kill Team Cassius]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
+- [[factions/星际战士/units/kratos|Kratos]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
+- [[factions/星际战士/units/krom-dragongaze|Krom Dragongaze]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
+- [[factions/星际战士/units/land-raider-achilles|Land Raider Achilles]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
+- [[factions/星际战士/units/land-raider-excelsior|Land Raider Excelsior]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
+- [[factions/星际战士/units/land-raider-helios|Land Raider Helios]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
+- [[factions/星际战士/units/land-raider-prometheus|Land Raider Prometheus]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
+- [[factions/星际战士/units/land-raider-proteus|Land Raider Proteus]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
+- [[factions/星际战士/units/land-speeder-storm|Land Speeder Storm]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
+- [[factions/星际战士/units/land-speeder-tempest|Land Speeder Tempest]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
+- [[factions/星际战士/units/land-speeder-tornado|Land Speeder Tornado]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
+- [[factions/星际战士/units/land-speeder-typhoon|Land Speeder Typhoon]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
+- [[factions/星际战士/units/leviathan-dreadnought|Leviathan Dreadnought]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
+- [[factions/星际战士/units/librarian-dreadnought|Librarian Dreadnought]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
+- [[factions/星际战士/units/librarian-on-bike|Librarian on Bike]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
+- [[factions/星际战士/units/librarian-with-jump-pack|Librarian with Jump Pack]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
+- [[factions/星际战士/units/logan-grimnar-on-stormrider|Logan Grimnar On Stormrider]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
+- [[factions/星际战士/units/long-fangs|Long Fangs]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
+- [[factions/星际战士/units/lukas-the-trickster|Lukas The Trickster]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
+- [[factions/星际战士/units/mastodon|Mastodon]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
+- [[factions/星际战士/units/mortis-dreadnought|Mortis Dreadnought]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
+- [[factions/星际战士/units/primaris-company-champion|Primaris Company Champion]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
+- [[factions/星际战士/units/rapier-carrier|Rapier Carrier]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
+- [[factions/星际战士/units/ravenwing-talonmaster|Ravenwing Talonmaster]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
+- [[factions/星际战士/units/relic-contemptor-dreadnought|Relic Contemptor Dreadnought]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
+- [[factions/星际战士/units/relic-razorback|Relic Razorback]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
+- [[factions/星际战士/units/relic-terminator-squad|Relic Terminator Squad]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
+- [[factions/星际战士/units/rhino-primaris|Rhino Primaris]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
+- [[factions/星际战士/units/sanguinary-priest-with-jump-pack|Sanguinary Priest With Jump Pack]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
+- [[factions/星际战士/units/sanguinary-priest-on-bike|Sanguinary Priest on Bike]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
+- [[factions/星际战士/units/scout-bike-squad|Scout Bike Squad]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
+- [[factions/星际战士/units/scout-sniper-squad|Scout Sniper Squad]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
+- [[factions/星际战士/units/sergeant-chronus|Sergeant Chronus]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
+- [[factions/星际战士/units/sergeant-telion|Sergeant Telion]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
+- [[factions/星际战士/units/sicaran-arcus|Sicaran Arcus]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
+- [[factions/星际战士/units/sicaran-battle-tank|Sicaran Battle Tank]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
+- [[factions/星际战士/units/sicaran-omega|Sicaran Omega]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
+- [[factions/星际战士/units/sicaran-punisher|Sicaran Punisher]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
+- [[factions/星际战士/units/sicaran-venator|Sicaran Venator]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
+- [[factions/星际战士/units/skyclaws|Skyclaws]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
+- [[factions/星际战士/units/sokar-pattern-stormbird|Sokar-pattern Stormbird]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
+- [[factions/星际战士/units/spartan|Spartan]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
+- [[factions/星际战士/units/stalker|Stalker]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
+- [[factions/星际战士/units/storm-eagle-gunship|Storm Eagle Gunship]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
+- [[factions/星际战士/units/stormfang-gunship|Stormfang Gunship]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
+- [[factions/星际战士/units/stormwolf|Stormwolf]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
+- [[factions/星际战士/units/tarantula-air-defence-battery|Tarantula Air Defence Battery]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
+- [[factions/星际战士/units/tarantula-sentry-battery|Tarantula Sentry Battery]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
+- [[factions/星际战士/units/techmarine-on-bike|Techmarine on Bike]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
+- [[factions/星际战士/units/terminus-ultra|Terminus Ultra]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
+- [[factions/星际战士/units/terrax-pattern-termite|Terrax-pattern Termite]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
+- [[factions/星际战士/units/thunderfire-cannon|Thunderfire Cannon]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
+- [[factions/星际战士/units/thunderhawk-transporter|Thunderhawk Transporter]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
+- [[factions/星际战士/units/tycho-the-lost|Tycho The Lost]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
+- [[factions/星际战士/units/typhon|Typhon]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
+- [[factions/星际战士/units/tyrannic-war-veterans|Tyrannic War Veterans]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
+- [[factions/星际战士/units/ultramarines-honour-guard|Ultramarines Honour Guard]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
+- [[factions/星际战士/units/vanguard-veteran-squad|Vanguard Veteran Squad]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
+- [[factions/星际战士/units/venerable-dreadnought-legendary|Venerable Dreadnought (Legendary)]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
+- [[factions/星际战士/units/vindicator-laser-destroyer|Vindicator Laser Destroyer]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
+- [[factions/星际战士/units/whirlwind-scorpius|Whirlwind Scorpius]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
+- [[factions/星际战士/units/wolf-guard|Wolf Guard]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
+- [[factions/星际战士/units/wolf-guard-battle-leader-in-terminator-armour|Wolf Guard Battle Leader In Terminator Armour]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
+- [[factions/星际战士/units/wolf-guard-battle-leader-on-thunderwolf|Wolf Guard Battle Leader On Thunderwolf]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
+- [[factions/星际战士/units/wolf-guard-pack-leader|Wolf Guard Pack Leader]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
+- [[factions/星际战士/units/wolf-guard-pack-leader-in-terminator-armour|Wolf Guard Pack Leader In Terminator Armour]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
+- [[factions/星际战士/units/wolf-guard-pack-leader-with-jump-pack|Wolf Guard Pack Leader With Jump Pack]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
+- [[factions/星际战士/units/wolf-lord-on-thunderwolf|Wolf Lord on Thunderwolf]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
+- [[factions/星际战士/units/wolf-scouts-legendary|Wolf Scouts (Legendary)]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
+- [[factions/星际战士/units/xiphon-interceptor|Xiphon Interceptor]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
+- [[factions/星际战士/units/furioso-dreadnought|【传奇】暴烈无畏]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
+- [[factions/星际战士/units/death-company-marines-with-boltguns|【传奇】装备爆弹枪的死亡连战士]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
+- [[factions/星际战士/units/death-company-dreadnought-with-magna-grapple|【传奇】装备磁力勾爪的死亡连无畏]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
 - [[factions/星际战士/units/invictor-tactical-warsuit|不屈型战术机甲]] — 
 - [[factions/星际战士/units/indomitor-kill-team|不屈杀戮小队]] — 
 - [[factions/星际战士/units/ezekiel|以西结]] — 
@@ -243,6 +242,7 @@
 - [[factions/星际战士/units/chaplain-on-bike|摩托牧师]] — 
 - [[factions/星际战士/units/land-raider-redeemer|救赎者型兰德掠袭者坦克]] — 
 - [[factions/星际战士/units/redemptor-dreadnought|救赎者型无畏机甲]] — 
+- [[factions/星际战士/units/uriel-ventris|文崔斯连长]] — 
 - [[factions/星际战士/units/bjorn-the-fell-handed|断手比约恩]] — 
 - [[factions/星际战士/units/whirlwind|旋风火箭炮]] — 
 - [[factions/星际战士/units/ancient|旗手]] — 
@@ -263,7 +263,7 @@
 - [[factions/星际战士/units/death-company-captain|死亡连连长]] — 
 - [[factions/星际战士/units/gladiator-reaper-2|死神型角斗者坦克]] — 
 - [[factions/星际战士/units/gladiator-reaper|死神型角斗者坦克]] — 
-- [[factions/星际战士/units/deathwing-command-squad|死翼指挥组【传奇】]] — 
+- [[factions/星际战士/units/deathwing-command-squad|死翼指挥组【传奇】]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
 - [[factions/星际战士/units/deathwing-terminator-squad|死翼终结者小队]] — 
 - [[factions/星际战士/units/deathwing-knights|死翼骑士]] — 
 - [[factions/星际战士/units/predator-annihilator|歼灭者型猎食者坦克]] — 
@@ -658,19 +658,19 @@
 
 ## 强化
 
-- [[factions/星际战士/enhancements/a-giant-amongst-giants|A Giant Amongst Giants]] — 分数未知、Champions of Fenris 分队。
+- [[factions/星际战士/enhancements/a-giant-amongst-giants|A Giant Amongst Giants]] — 15 分、Champions of Fenris 分队。
 - [[factions/星际战士/enhancements/adept-of-the-codex|Adept of the Codex]] — 20 分、Gladius Task Force 分队。
 - [[factions/星际战士/enhancements/adept-of-the-omnissiah|Adept of the Omnissiah]] — 35 分、Ironstorm Spearhead 分队。
 - [[factions/星际战士/enhancements/architect-of-war|Architect of War]] — 25 分、Anvil Siege Force 分队。
-- [[factions/星际战士/enhancements/armour-of-antoninus|Armour of Antoninus]] — 10 分、Blade of Ultramar 分队。
+- [[factions/星际战士/enhancements/armour-of-antoninus|Armour of Antoninus]] — 20 分、Blade of Ultramar 分队。
 - [[factions/星际战士/enhancements/armoured-commander|Armoured Commander]] — 25 分、装甲矛尖 分队。
-- [[factions/星际战士/enhancements/artificer-armour|Artificer Armour]] — 10 分、Gladius Task Force 分队。
-- [[factions/星际战士/enhancements/bellicose-weapon-spirits|Bellicose Weapon Spirits]] — 分数未知、迅电特遣队 分队。
+- [[factions/星际战士/enhancements/artificer-armour|Artificer Armour]] — 20 分、Gladius Task Force 分队。
+- [[factions/星际战士/enhancements/bellicose-weapon-spirits|Bellicose Weapon Spirits]] — 15 分、迅电特遣队 分队。
 - [[factions/星际战士/enhancements/blackwing-shroud|Blackwing Shroud]] — 25 分、影标之爪 分队。
 - [[factions/星际战士/enhancements/braggarts-steel|Braggart’s Steel]] — 20 分、Saga of the Bold 分队。
 - [[factions/星际战士/enhancements/calibanite-armaments|Calibanite Armaments]] — 15 分、莱昂之剑特遣队 分队。
 - [[factions/星际战士/enhancements/castellum-omnivox|Castellum Omnivox]] — 20 分、陶钢哨兵 分队。
-- [[factions/星际战士/enhancements/celerity|Celerity]] — 30 分、Librarius Conclave 分队。
+- [[factions/星际战士/enhancements/celerity|Celerity]] — 35 分、Librarius Conclave 分队。
 - [[factions/星际战士/enhancements/champion-of-humanity|Champion of Humanity]] — 10 分、Firestorm Assault Force 分队。
 - [[factions/星际战士/enhancements/champion-of-the-deathwing|Champion of the Deathwing]] — 15 分、Inner Circle Task Force 分队。
 - [[factions/星际战士/enhancements/champion-of-the-feast|Champion of the Feast]] — 25 分、帝皇之盾 分队。
@@ -691,13 +691,13 @@
 - [[factions/星际战士/enhancements/feinting-withdrawal|Feinting Withdrawal]] — 10 分、Stormlance Task Force 分队。
 - [[factions/星际战士/enhancements/fenrisian-grit|Fenrisian Grit]] — 15 分、Saga of the Hunter 分队。
 - [[factions/星际战士/enhancements/feral-rage|Feral Rage]] — 10 分、Saga of the Hunter 分队。
-- [[factions/星际战士/enhancements/fierce-example|Fierce Example]] — 分数未知、传奇之歌 分队。
+- [[factions/星际战士/enhancements/fierce-example|Fierce Example]] — 25 分、传奇之歌 分队。
 - [[factions/星际战士/enhancements/fire-discipline|Fire Discipline]] — 25 分、Gladius Task Force 分队。
 - [[factions/星际战士/enhancements/fleet-commander|Fleet Commander]] — 15 分、Anvil Siege Force 分队。
 - [[factions/星际战士/enhancements/foes-fate|Foes’ Fate]] — 15 分、Champions of Fenris 分队。
 - [[factions/星际战士/enhancements/fulgus-magna|Fulgus Magna]] — 20 分、莱昂之剑特遣队 分队。
 - [[factions/星际战士/enhancements/fury-of-the-storm|Fury of the Storm]] — 25 分、Stormlance Task Force 分队。
-- [[factions/星际战士/enhancements/fusillade|Fusillade]] — 35 分、Librarius Conclave 分队。
+- [[factions/星际战士/enhancements/fusillade|Fusillade]] — 25 分、Librarius Conclave 分队。
 - [[factions/星际战士/enhancements/ghostweave-cloak|Ghostweave Cloak]] — 15 分、Vanguard Spearhead 分队。
 - [[factions/星际战士/enhancements/helm-of-the-beastslayer|Helm of the Beastslayer]] — 15 分、Saga of the Beastslayer 分队。
 - [[factions/星际战士/enhancements/hero-of-the-chapter|Hero of the Chapter]] — 20 分、堡垒特遣队 分队。
@@ -719,18 +719,18 @@
 - [[factions/星际战士/enhancements/master-of-manoeuvre|Master of Manoeuvre]] — 15 分、Company of Hunters 分队。
 - [[factions/星际战士/enhancements/master-crafted-weapon|Master-crafted Weapon]] — 10 分、Company of Hunters 分队。
 - [[factions/星际战士/enhancements/mounted-strategist|Mounted Strategist]] — 30 分、Company of Hunters 分队。
-- [[factions/星际战士/enhancements/nightforged-battery|Nightforged Battery]] — 分数未知、黑暗追击队 分队。
+- [[factions/星际战士/enhancements/nightforged-battery|Nightforged Battery]] — 15 分、黑暗追击队 分队。
 - [[factions/星际战士/enhancements/oath-of-macragge|Oath of Macragge]] — 15 分、Blade of Ultramar 分队。
-- [[factions/星际战士/enhancements/obfuscation|Obfuscation]] — 20 分、Librarius Conclave 分队。
+- [[factions/星际战士/enhancements/obfuscation|Obfuscation]] — 25 分、Librarius Conclave 分队。
 - [[factions/星际战士/enhancements/omni-structural-auspex|Omni-Structural Auspex]] — 0 分、Pilum Strike Team 分队。
 - [[factions/星际战士/enhancements/orbital-uplink-reliquary|Orbital Uplink Reliquary]] — 25 分、轨道突袭部队 分队。
 - [[factions/星际战士/enhancements/pennant-of-remembrance|Pennant of Remembrance]] — 10 分、Unforgiven Task Force 分队。
 - [[factions/星际战士/enhancements/portents-of-wisdom|Portents of Wisdom]] — 15 分、Stormlance Task Force 分队。
-- [[factions/星际战士/enhancements/prescience|Prescience]] — 25 分、Librarius Conclave 分队。
-- [[factions/星际战士/enhancements/preyslayer|Preyslayer]] — 分数未知、Champions of Fenris 分队。
+- [[factions/星际战士/enhancements/prescience|Prescience]] — 20 分、Librarius Conclave 分队。
+- [[factions/星际战士/enhancements/preyslayer|Preyslayer]] — 15 分、Champions of Fenris 分队。
 - [[factions/星际战士/enhancements/pyrebrand|Pyrebrand]] — 25 分、Wrathful Procession 分队。
-- [[factions/星际战士/enhancements/raptorial-cogitator-core|Raptorial Cogitator Core]] — 分数未知、迅电特遣队 分队。
-- [[factions/星际战士/enhancements/recon-hunter|Recon Hunter]] — 20 分、Company of Hunters 分队。
+- [[factions/星际战士/enhancements/raptorial-cogitator-core|Raptorial Cogitator Core]] — 15 分、迅电特遣队 分队。
+- [[factions/星际战士/enhancements/recon-hunter|Recon Hunter]] — 30 分、Company of Hunters 分队。
 - [[factions/星际战士/enhancements/resolute|Resolute]] — 0 分、Terminator Assault 分队。
 - [[factions/星际战士/enhancements/rites-of-war|Rites of War]] — 10 分、1st Company Task Force 分队。
 - [[factions/星际战士/enhancements/sacred-rage|Sacred Rage]] — 30 分、Wrathful Procession 分队。
@@ -746,7 +746,7 @@
 - [[factions/星际战士/enhancements/speartip-of-the-chapter|Speartip of the Chapter]] — 0 分、Shield of the Void 分队。
 - [[factions/星际战士/enhancements/spiritus-ferrum|Spiritus Ferrum]] — 25 分、艾沃尼之锤 分队。
 - [[factions/星际战士/enhancements/spy-skull-data-link|Spy-skull Data Link]] — 15 分、陶钢哨兵 分队。
-- [[factions/星际战士/enhancements/stalwart-champion|Stalwart Champion]] — 25 分、莱昂之剑特遣队 分队。
+- [[factions/星际战士/enhancements/stalwart-champion|Stalwart Champion]] — 15 分、莱昂之剑特遣队 分队。
 - [[factions/星际战士/enhancements/steel-font|Steel Font]] — 15 分、艾沃尼之锤 分队。
 - [[factions/星际战士/enhancements/stoic-defender|Stoic Defender]] — 15 分、Anvil Siege Force 分队。
 - [[factions/星际战士/enhancements/stormseers-wisdom|Stormseers’ Wisdom]] — 15 分、Spearpoint Task Force 分队。
@@ -756,11 +756,11 @@
 - [[factions/星际战士/enhancements/taramonds-censer|Taramond’s Censer]] — 15 分、Wrathful Procession 分队。
 - [[factions/星际战士/enhancements/target-augury-web|Target Augury Web]] — 30 分、Ironstorm Spearhead 分队。
 - [[factions/星际战士/enhancements/the-blade-driven-deep|The Blade Driven Deep]] — 25 分、Vanguard Spearhead 分队。
-- [[factions/星际战士/enhancements/the-flesh-is-weak|The Flesh is Weak]] — 10 分、Ironstorm Spearhead 分队。
+- [[factions/星际战士/enhancements/the-flesh-is-weak|The Flesh is Weak]] — 20 分、Ironstorm Spearhead 分队。
 - [[factions/星际战士/enhancements/the-honour-vehement|The Honour Vehement]] — 15 分、Gladius Task Force 分队。
 - [[factions/星际战士/enhancements/the-imperiums-sword|The Imperium’s Sword]] — 25 分、1st Company Task Force 分队。
-- [[factions/星际战士/enhancements/thirst-for-glory|Thirst for Glory]] — 分数未知、传奇之歌 分队。
-- [[factions/星际战士/enhancements/thundercowl-turbines|Thundercowl Turbines]] — 分数未知、黑暗追击队 分队。
+- [[factions/星际战士/enhancements/thirst-for-glory|Thirst for Glory]] — 15 分、传奇之歌 分队。
+- [[factions/星际战士/enhancements/thundercowl-turbines|Thundercowl Turbines]] — 15 分、黑暗追击队 分队。
 - [[factions/星际战士/enhancements/thunderwolfs-fortitude|Thunderwolf’s Fortitude]] — 25 分、Saga of the Bold 分队。
 - [[factions/星际战士/enhancements/tolorek-data-djinn|Tolorek Data Djinn]] — 0 分、Shield of the Void 分队。
 - [[factions/星际战士/enhancements/umbral-raptor|Umbral Raptor]] — 15 分、影标之爪 分队。
@@ -770,18 +770,18 @@
 - [[factions/星际战士/enhancements/wolf-master|Wolf Master]] — 5 分、Saga of the Hunter 分队。
 - [[factions/星际战士/enhancements/wolf-touched|Wolf-touched]] — 15 分、Saga of the Beastslayer 分队。
 - [[factions/星际战士/enhancements/wolves-wisdom|Wolves’ Wisdom]] — 30 分、Champions of Fenris 分队。
-- [[factions/星际战士/enhancements/inescapable-interrogation|不可逃避的审讯]] — 分数未知、审讯者密会 分队。
+- [[factions/星际战士/enhancements/inescapable-interrogation|不可逃避的审讯]] — 20 分、审讯者密会 分队。
 - [[factions/星际战士/enhancements/troubling-visions|不安幻视]] — 15 分、天使继承者 分队。
 - [[factions/星际战士/enhancements/indomitable-champion|不屈勇士]] — 20 分、帝皇之盾 分队。
 - [[factions/星际战士/enhancements/honour-indefatigable|不屈荣誉]] — 25 分、陶钢哨兵 分队。
-- [[factions/星际战士/enhancements/weaver-of-sagas|传奇叙述者]] — 分数未知、狼牙堡老兵 分队。
+- [[factions/星际战士/enhancements/weaver-of-sagas|传奇叙述者]] — 15 分、狼牙堡老兵 分队。
 - [[factions/星际战士/enhancements/coronal-susurrant|低语冠冕]] — 30 分、影标之爪 分队。
 - [[factions/星际战士/enhancements/tip-of-the-spear|先锋矛尖]] — 40 分、装甲矛尖 分队。
 - [[factions/星际战士/enhancements/seals-of-reconquest|光复之印]] — 20 分、光复派遣军 分队。
 - [[factions/星际战士/enhancements/blades-of-valour|勇气之刃]] — 15 分、堡垒特遣队 分队。
 - [[factions/星际战士/enhancements/augury-servo-host|占卜伺服主机]] — 15 分、Godhammer Assault Force 分队。
 - [[factions/星际战士/enhancements/speed-of-the-primarch|原体之速]] — 25 分、Liberator Assault Group 分队。
-- [[factions/星际战士/enhancements/on-the-archtraitors-bridge|叛徒舰桥之上]] — 分数未知、迷失者的怒火 分队。
+- [[factions/星际战士/enhancements/on-the-archtraitors-bridge|叛徒舰桥之上]] — 20 分、迷失者的怒火 分队。
 - [[factions/星际战士/enhancements/ordained-sacrifice|命定牺牲]] — 25 分、天使继承者 分队。
 - [[factions/星际战士/enhancements/howlmaw|嚎叫狼口]] — 15 分、头狼之歌 分队。
 - [[factions/星际战士/enhancements/sanguinius-grace|圣吉列斯的优雅]] — 20 分、The Lost Brethren 分队。
@@ -790,48 +790,48 @@
 - [[factions/星际战士/enhancements/redoubtable-machine-spirit|坚毅机魂]] — 25 分、猎头特遣队 分队。
 - [[factions/星际战士/enhancements/avenging-avatar-aura|复仇化身（光环）]] — 10 分、光复派遣军 分队。
 - [[factions/星际战士/enhancements/vengeful-onslaught|复仇猛攻]] — 10 分、The Lost Brethren 分队。
-- [[factions/星际战士/enhancements/adaptable-executioner|多面处刑者]] — 分数未知、Wrathful Procession 分队。
+- [[factions/星际战士/enhancements/adaptable-executioner|多面处刑者]] — 20 分、Wrathful Procession 分队。
 - [[factions/星际战士/enhancements/archangels-shard|大天使碎片]] — 15 分、The Angelic Host 分队。
 - [[factions/星际战士/enhancements/beacon-angelis|天使信标]] — 25 分、黑矛特遣队 分队。
-- [[factions/星际战士/enhancements/aureole-of-the-angel|天使光环]] — 分数未知、优雅传承 分队。
+- [[factions/星际战士/enhancements/aureole-of-the-angel|天使光环]] — 20 分、优雅传承 分队。
 - [[factions/星际战士/enhancements/icon-of-the-angel|天使圣旗]] — 20 分、Liberator Assault Group 分队。
-- [[factions/星际战士/enhancements/angelic-executioner|天使处刑者]] — 分数未知、血色矛头 分队。
+- [[factions/星际战士/enhancements/angelic-executioner|天使处刑者]] — 25 分、血色矛头 分队。
 - [[factions/星际战士/enhancements/angels-fang|天使獠牙]] — 25 分、怒咒猛攻 分队。
 - [[factions/星际战士/enhancements/osseus-key|奥瑟斯之匙]] — 15 分、黑矛特遣队 分队。
 - [[factions/星际战士/enhancements/consecrating-aura|守护圣环]] — 25 分、Vindication Task Force 分队。
 - [[factions/星际战士/enhancements/bombast-omnivox|宏声通讯器]] — 15 分、堡垒特遣队 分队。
 - [[factions/星际战士/enhancements/orb-of-the-emperors-aegis|帝皇圣盾宝珠]] — 10 分、Vindication Task Force 分队。
-- [[factions/星际战士/enhancements/shroud-field|帷幕力场]] — 分数未知、行动资源 分队。
+- [[factions/星际战士/enhancements/shroud-field|帷幕力场]] — 20 分、行动资源 分队。
 - [[factions/星际战士/enhancements/the-tome-of-ectoclades|异星大典]] — 30 分、黑矛特遣队 分队。
 - [[factions/星际战士/enhancements/paragon-of-fury|怒火楷模]] — 25 分、Godhammer Assault Force 分队。
-- [[factions/星际战士/enhancements/benediction-of-fury|怒火祝福]] — 10 分、Wrathful Procession 分队。
-- [[factions/星际战士/enhancements/shadow-of-abomination|憎恶之影]] — 分数未知、血色矛头 分队。
+- [[factions/星际战士/enhancements/benediction-of-fury|怒火祝福]] — 15 分、Wrathful Procession 分队。
+- [[factions/星际战士/enhancements/shadow-of-abomination|憎恶之影]] — 25 分、血色矛头 分队。
 - [[factions/星际战士/enhancements/artisan-of-war|战争工匠]] — 20 分、The Angelic Host 分队。
 - [[factions/星际战士/enhancements/battle-psalm-precentor|战歌颂唱者]] — 10 分、Godhammer Assault Force 分队。
 - [[factions/星际战士/enhancements/tempered-in-battle-aura|战火淬炼（光环）]] — 10 分、巨石之怒 分队。
-- [[factions/星际战士/enhancements/guiding-omens|指引圣兆]] — 分数未知、The Living Miracle 分队。
-- [[factions/星际战士/enhancements/limitless-zeal|无尽狂热]] — 分数未知、审讯者密会 分队。
+- [[factions/星际战士/enhancements/guiding-omens|指引圣兆]] — 15 分、The Living Miracle 分队。
+- [[factions/星际战士/enhancements/limitless-zeal|无尽狂热]] — 10 分、审讯者密会 分队。
 - [[factions/星际战士/enhancements/merciless-denunciation|无情声讨]] — 25 分、Companions of Vehemence 分队。
 - [[factions/星际战士/enhancements/gunnery-honours|枪炮荣誉]] — 20 分、猎头特遣队 分队。
 - [[factions/星际战士/enhancements/grimnars-mark|格里姆纳尔的印记]] — 20 分、头狼之歌 分队。
 - [[factions/星际战士/enhancements/zealous-vanguard|正义先锋]] — 20 分、Companions of Vehemence 分队。
 - [[factions/星际战士/enhancements/visage-of-death|死亡面具]] — 15 分、The Angelic Host 分队。
-- [[factions/星际战士/enhancements/entreaty-of-perpetual-ardour|永恒热情祈求]] — 分数未知、黑暗时代兵器 分队。
+- [[factions/星际战士/enhancements/entreaty-of-perpetual-ardour|永恒热情祈求]] — 15 分、黑暗时代兵器 分队。
 - [[factions/星际战士/enhancements/imperialis-of-the-eternal-crusade|永恒远征圣旗]] — 15 分、Vindication Task Force 分队。
-- [[factions/星际战士/enhancements/blood-boil|沸血术]] — 分数未知、优雅传承 分队。
+- [[factions/星际战士/enhancements/blood-boil|沸血术]] — 10 分、优雅传承 分队。
 - [[factions/星际战士/enhancements/carmine-reliquary|深红圣物]] — 30 分、怒咒猛攻 分队。
 - [[factions/星际战士/enhancements/firestorm-coordinators|火力协调器]] — 20 分、猎头特遣队 分队。
 - [[factions/星际战士/enhancements/blazing-icon|炽燃圣印]] — 20 分、天使继承者 分队。
 - [[factions/星际战士/enhancements/incendiary-animus|炽燃怒火]] — 25 分、Companions of Vehemence 分队。
-- [[factions/星际战士/enhancements/fervent-exemplars|热忱模范]] — 分数未知、元帅亲军 分队。
+- [[factions/星际战士/enhancements/fervent-exemplars|热忱模范]] — 10 分、元帅亲军 分队。
 - [[factions/星际战士/enhancements/immolator|焚灭者]] — 10 分、铸造之父的探寻者 分队。
 - [[factions/星际战士/enhancements/rage-fuelled-warrior|燃怒战士]] — 35 分、Liberator Assault Group 分队。
 - [[factions/星际战士/enhancements/war-tempered-artifice-firestorm-assault-force|百战精工]] — 25 分、Firestorm Assault Force 分队。
 - [[factions/星际战士/enhancements/war-tempered-artifice-forgefathers-seekers|百战精工]] — 25 分、铸造之父的探寻者 分队。
-- [[factions/星际战士/enhancements/instinctive-interception|直觉性拦截]] — 分数未知、迷失者的怒火 分队。
+- [[factions/星际战士/enhancements/instinctive-interception|直觉性拦截]] — 10 分、迷失者的怒火 分队。
 - [[factions/星际战士/enhancements/prescient-flash|短暂预知]] — 20 分、天使继承者 分队。
 - [[factions/星际战士/enhancements/thief-of-secrets|秘密窃取者]] — 25 分、黑矛特遣队 分队。
-- [[factions/星际战士/enhancements/petition-of-stability|稳定请求]] — 分数未知、黑暗时代兵器 分队。
+- [[factions/星际战士/enhancements/petition-of-stability|稳定请求]] — 15 分、黑暗时代兵器 分队。
 - [[factions/星际战士/enhancements/adamantine-mantle-boarding-strike|精金斗篷]] — 0 分、Boarding Strike 分队。
 - [[factions/星际战士/enhancements/adamantine-mantle-firestorm-assault-force|精金斗篷]] — 20 分、Firestorm Assault Force 分队。
 - [[factions/星际战士/enhancements/adamantine-mantle-forgefathers-seekers|精金斗篷]] — 20 分、铸造之父的探寻者 分队。
@@ -839,7 +839,7 @@
 - [[factions/星际战士/enhancements/veteran-of-the-vanguard|老兵先锋]] — 20 分、轨道突袭部队 分队。
 - [[factions/星际战士/enhancements/warden-of-honour|荣誉卫士]] — 20 分、Vindication Task Force 分队。
 - [[factions/星际战士/enhancements/master-of-the-red-thirst|血色饥渴大师]] — 25 分、怒咒猛攻 分队。
-- [[factions/星际战士/enhancements/inheritors-of-sigismund|西吉斯蒙德的继承者]] — 分数未知、元帅亲军 分队。
+- [[factions/星际战士/enhancements/inheritors-of-sigismund|西吉斯蒙德的继承者]] — 15 分、元帅亲军 分队。
 - [[factions/星际战士/enhancements/oathbound-exemplar|誓言典范]] — 15 分、Companions of Vehemence 分队。
 - [[factions/星际战士/enhancements/to-slay-the-warmaster|诛杀战帅！]] — 15 分、The Lost Brethren 分队。
 - [[factions/星际战士/enhancements/ancient-weapons|远古神兵]] — 25 分、巨石之怒 分队。
@@ -850,6 +850,6 @@
 - [[factions/星际战士/enhancements/astartes-tank-ace-aura|阿斯塔特坦克王牌（光环）]] — 40 分、猎头特遣队 分队。
 - [[factions/星际战士/enhancements/gift-of-foresight|预言之赐]] — 15 分、Liberator Assault Group 分队。
 - [[factions/星际战士/enhancements/blood-shard|鲜血碎片]] — 25 分、The Lost Brethren 分队。
-- [[factions/星际战士/enhancements/eye-of-the-hunter|鹰眼猎手]] — 分数未知、狼牙堡老兵 分队。
-- [[factions/星际战士/enhancements/death-in-the-dark|黑暗中的死亡]] — 分数未知、行动资源 分队。
+- [[factions/星际战士/enhancements/eye-of-the-hunter|鹰眼猎手]] — 20 分、狼牙堡老兵 分队。
+- [[factions/星际战士/enhancements/death-in-the-dark|黑暗中的死亡]] — 15 分、行动资源 分队。
 

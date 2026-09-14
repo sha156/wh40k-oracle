@@ -3,17 +3,16 @@ id: '000001423'
 name_en: Ravenwing Talonmaster
 faction: 星际战士
 type: unit
-points:
-  1 model: 105
 tags:
 - unit
 - unit/星际战士
 - 星际战士
 version:
+  points: historical / unmatched
   source: official-db
 sources:
 - book: 官方结构库 db/wh40k.sqlite（Wahapedia 11版镜像 + MFM 官方点数）
-updated: '2026-07-23'
+updated: '2026-09-14'
 ---
 
 ## 属性表
@@ -41,6 +40,7 @@ updated: '2026-07-23'
 - **[[factions/星际战士/enhancements/master-of-manoeuvre.md|Master of Manoeuvre]]**：Once per turn, when an enemy unit ends a Normal, Advance or Fall Back move within 9" of this model, if this model is not within Engagement Range of one or more enemy units, this model can make a Normal move of up to 6".
 
 ## 单位构成
+历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
 - **1个模型** — 105 分
 
 ## 关键词

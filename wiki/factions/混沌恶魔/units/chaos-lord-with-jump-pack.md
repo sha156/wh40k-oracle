@@ -4,17 +4,16 @@ name_zh: 跳跃背包混沌领主
 name_en: Chaos Lord with Jump Pack
 faction: 混沌恶魔
 type: unit
-points:
-  1 model: 80
 tags:
 - unit
 - unit/混沌恶魔
 - 混沌恶魔
 version:
+  points: historical / unmatched
   source: official-db
 sources:
 - book: 官方结构库 db/wh40k.sqlite（Wahapedia 11版镜像 + MFM 官方点数）
-updated: '2026-07-23'
+updated: '2026-09-14'
 ---
 
 ## 属性表
@@ -45,6 +44,7 @@ updated: '2026-07-23'
 - **残酷猎手**：本模型所领导的单位在跟进或重整移动时可以 最多移动 6 寸
 
 ## 单位构成
+历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
 - **1个模型** — 80 分
 
 ## 关键词

@@ -3,18 +3,16 @@ id: '000000310'
 name_en: Wolf Scouts (Legendary)
 faction: 星际战士
 type: unit
-points:
-  5 models: 80
-  10 models: 160
 tags:
 - unit
 - unit/星际战士
 - 星际战士
 version:
+  points: historical / unmatched
   source: official-db
 sources:
 - book: 官方结构库 db/wh40k.sqlite（Wahapedia 11版镜像 + MFM 官方点数）
-updated: '2026-07-23'
+updated: '2026-09-14'
 ---
 
 ## 属性表
@@ -33,7 +31,7 @@ updated: '2026-07-23'
 | 喷火器 | 12" | D6 | N/A | 4 | 0 | 1 | [[core-rules/ignores-cover.md\|无视掩体]]，[[core-rules/torrent.md\|洪流]] |
 | 重力枪 | 18" | 2 | 3+ | 5 | -1 | 2 | [[core-rules/anti.md\|针对载具2+]] |
 | 重力手枪 | 12" | 1 | 3+ | 4 | -1 | 2 | [[core-rules/anti.md\|针对载具2+]]，[[core-rules/pistol.md\|手枪]] |
-| 喷火手枪 | 12" | D6 | N/A | 3 | 0 | 1 | [[core-rules/ignores-cover.md\|无视掩体]]，[[core-rules/pistol.md\|手枪]]，[[core-rules/torrent.md\|洪流]] |
+| Hand flamer | 12" | D6 | N/A | 3 | 0 | 1 | [[core-rules/ignores-cover.md\|无视掩体]]，[[core-rules/pistol.md\|手枪]]，[[core-rules/torrent.md\|洪流]] |
 | 狱火手枪 | 6" | 1 | 3+ | 8 | -4 | D3 | [[core-rules/melta.md\|热熔2]]，[[core-rules/pistol.md\|手枪]] |
 | 热熔枪 | 12" | 1 | 3+ | 9 | -4 | D6 | [[core-rules/melta.md\|热熔2]] |
 | 导弹发射器（破片） | 48" | D6 | 4+ | 4 | 0 | 1 | [[core-rules/blast.md\|爆炸]]，[[core-rules/heavy.md\|重型]] |
@@ -59,6 +57,7 @@ updated: '2026-07-23'
 - **Guerrilla Tactics**：At the end of your opponent’s turn, if this unit is more than 6" away from all enemy models, you can remove this unit from the battlefield and place it into Strategic Reserves.
 
 ## 单位构成
+历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
 - **5个模型** — 80 分
 - **10个模型** — 160 分
 

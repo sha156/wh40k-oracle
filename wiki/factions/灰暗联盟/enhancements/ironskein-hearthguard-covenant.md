@@ -5,6 +5,7 @@ name_en: Ironskein
 faction: 灰暗联盟
 type: enhancement
 detachment: Hearthguard Covenant
+cost: 10
 tags:
 - enhancement
 - enhancement/灰暗联盟
@@ -14,11 +15,13 @@ sources:
 updated: '2026-07-26'
 ---
 
-分数未知、[[factions/灰暗联盟/detachments/hearthguard-covenant.md|Hearthguard Covenant]] 分队。
+10 分、[[factions/灰暗联盟/detachments/hearthguard-covenant.md|Hearthguard Covenant]] 分队。
 
 ## 效果
 
 This model has +2 W.
+
+**分数**：10 分
 
 ## 携带限制
 

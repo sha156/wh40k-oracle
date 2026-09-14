@@ -4,18 +4,16 @@ name_zh: 死翼指挥组【传奇】
 name_en: Deathwing Command Squad
 faction: 星际战士
 type: unit
-points:
-  5 models: 200
-  10 models: 400
 tags:
 - unit
 - unit/星际战士
 - 星际战士
 version:
+  points: historical / unmatched
   source: official-db
 sources:
 - book: 官方结构库 db/wh40k.sqlite（Wahapedia 11版镜像 + MFM 官方点数）
-updated: '2026-07-23'
+updated: '2026-09-14'
 ---
 
 ## 属性表
@@ -56,6 +54,7 @@ updated: '2026-07-23'
 - **【装备能力】黑暗守望者**：一次性技能，任意阶段中，本单位可召唤黑暗守望者，如这样做，本单位对抗致命伤时获得不觉疼痛4+
 
 ## 单位构成
+历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
 - **5个模型** — 200 分
 - **10个模型** — 400 分
 

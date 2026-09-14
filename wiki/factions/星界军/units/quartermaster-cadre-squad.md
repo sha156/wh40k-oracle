@@ -3,17 +3,16 @@ id: '000002375'
 name_en: Quartermaster Cadre Squad
 faction: 星界军
 type: unit
-points:
-  5 models: 45
 tags:
 - unit
 - unit/星界军
 - 星界军
 version:
+  points: historical / unmatched
   source: official-db
 sources:
 - book: 官方结构库 db/wh40k.sqlite（Wahapedia 11版镜像 + MFM 官方点数）
-updated: '2026-07-23'
+updated: '2026-09-14'
 ---
 
 ## 属性表
@@ -38,6 +37,7 @@ updated: '2026-07-23'
 - **Mindlock**：While this unit contains a Quartermaster Revenant model, improve the Weapon Skill characteristic of this unit’s Medical scalpels by 1.
 
 ## 单位构成
+历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
 - **5个模型** — 45 分
 
 ## 关键词

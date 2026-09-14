@@ -4,18 +4,16 @@ name_zh: 天空掠夺者海盗
 name_en: Corsair Skyreavers
 faction: 黑暗灵族
 type: unit
-points:
-  5 models: 75
-  10 models: 150
 tags:
 - unit
 - unit/黑暗灵族
 - 黑暗灵族
 version:
+  points: historical / unmatched
   source: official-db
 sources:
 - book: 官方结构库 db/wh40k.sqlite（Wahapedia 11版镜像 + MFM 官方点数）
-updated: '2026-07-23'
+updated: '2026-09-14'
 ---
 
 ## 属性表
@@ -45,6 +43,7 @@ updated: '2026-07-23'
 - **劫掠闪袭**：在近战阶段结束时，如果该单位可以在该阶段进行近战，且不位于一个或更多敌方单位的交战范围内，其可以进行一次至多 D3+3" 的常规移动。否则，若该单位可以在该阶段进行近战，该单位可以进行一次至多 D3+3" 的后撤移动。
 
 ## 单位构成
+历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
 - **5个模型** — 75 分
 - **10个模型** — 150 分
 

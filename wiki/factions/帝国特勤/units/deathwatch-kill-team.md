@@ -6,19 +6,17 @@ faction: 帝国特勤
 type: unit
 points:
   5 models: 100
-  10 models (AGENTS OF THE IMPERIUM Detachment): 190
-  10 models (Assigned Agent): 200
   10 models: 190
 tags:
 - unit
 - unit/帝国特勤
 - 帝国特勤
 version:
-  points: MFM 2026-07-27 15:14
+  points: MFM 2026-09-14T05:51:23.572407+00:00
   source: official-db
 sources:
 - book: 官方结构库 db/wh40k.sqlite（Wahapedia 11版镜像 + MFM 官方点数）
-updated: '2026-07-23'
+updated: '2026-09-14'
 ---
 
 ## 属性表
@@ -53,8 +51,6 @@ updated: '2026-07-23'
 
 ## 单位构成
 - **5个模型** — 100 分
-- **10个模型 (AGENTS OF THE IMPERIUM Detachment)** — 190 分
-- **10个模型 (Assigned Agent)** — 200 分
 - **10个模型** — 190 分
 
 ## 关键词

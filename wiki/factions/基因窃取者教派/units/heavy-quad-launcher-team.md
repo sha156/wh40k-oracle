@@ -3,17 +3,16 @@ id: '000004010'
 name_en: Heavy Quad Launcher Team
 faction: 基因窃取者教派
 type: unit
-points:
-  1 model: 50
 tags:
 - unit
 - unit/基因窃取者教派
 - 基因窃取者教派
 version:
+  points: historical / unmatched
   source: official-db
 sources:
 - book: 官方结构库 db/wh40k.sqlite（Wahapedia 11版镜像 + MFM 官方点数）
-updated: '2026-07-23'
+updated: '2026-09-14'
 ---
 
 ## 属性表
@@ -36,6 +35,7 @@ updated: '2026-07-23'
 - **ARTILLERY TEAM**：<b>Designer’s Note:</b> <i>Place three Crew tokens next to this model when it is first set up, removing one each time this model loses a wound (the Heavy Quad Launcher Team model itself is considered to represent its final wound).</i>
 
 ## 单位构成
+历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
 - **1个模型** — 50 分
 
 ## 关键词
