@@ -12,6 +12,7 @@ The September source reconciliation supersedes the historical July figures below
 - Native API and codex startup, new datasheet rendering, simulation and roster price calculation were checked. Test results and precise coverage limits are recorded in the acceptance report.
 - Live AI acceptance still needs a successful provider call after the prior DeepSeek HTTP 402 balance failure. Docker acceptance remains blocked by the prior host WSL installation problem; neither was reported as passed.
 - Runnable assets remain in D:/Project/py/RAG; PDFs, caches, model files and SQLite are not in Git.
+- CI now installs `requirements-ci.txt` and runs model-free ingestion tests. Roster tests use temporary databases; only real-cache audits and full-app tests require local assets/dependencies. See the September 15 CI repair report for validation and remaining limits.
 
 
 基于本地知识库的战锤40K规则问答：PDF 规则书 → 向量化入库 → 混合检索 → LLM 生成带引用的中文回答。

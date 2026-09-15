@@ -17,6 +17,8 @@ User request: finish tasks 1 and 2 from the September 15 roadmap audit.
 - [x] Re-review affected DSL effects and add composite target conditions.
 - [x] Prove fresh-build authority restoration, exact ledger equality and 1,333/1,333 price agreement.
 - [x] Regenerate wiki consumers, invalidate stale Chinese retrieval content and run the native app.
+- [x] Repair CI dependency declarations and remove hidden production-DB/cache assumptions from tests.
+- [x] Verify GitHub push/PR checks for the CI repair: both workflows passed. See the CI repair report and external devlog for merge follow-through.
 - [ ] Acquire and verify the released Ork codex rules for the remaining two units and 28 enhancements, and supersede marked previews.
 - [ ] Complete live AI acceptance after provider balance is restored, and Docker acceptance after WSL repair (outside these two source tasks).
 
