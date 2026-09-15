@@ -5,19 +5,18 @@ name_en: Grey Knights Terminator Squad
 faction: 帝国特勤
 type: unit
 points:
-  5 models (AGENTS OF THE IMPERIUM Detachment): 190
-  5 models (Assigned Agent): 210
   5 models: 175
+  per psycannon: 5
 tags:
 - unit
 - unit/帝国特勤
 - 帝国特勤
 version:
-  points: MFM 2026-07-27 15:14
+  points: MFM 2026-09-14T05:51:23.572407+00:00
   source: official-db
 sources:
 - book: 官方结构库 db/wh40k.sqlite（Wahapedia 11版镜像 + MFM 官方点数）
-updated: '2026-07-23'
+updated: '2026-09-14'
 ---
 
 ## 属性表
@@ -48,9 +47,8 @@ updated: '2026-07-23'
 - **武器技能-医疗装具**：在您的指挥阶段中，您可以将1个被摧毁的模型（角色除外）重新加入持有者所在单位。
 
 ## 单位构成
-- **5个模型 (AGENTS OF THE IMPERIUM Detachment)** — 190 分
-- **5个模型 (Assigned Agent)** — 210 分
 - **5个模型** — 175 分
+- **per psycannon** — 5 分
 
 ## 关键词
 - **阵营关键词**：Agents of the Imperium

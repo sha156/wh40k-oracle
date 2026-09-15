@@ -5,18 +5,18 @@ name_en: Stormboyz
 faction: 兽人
 type: unit
 points:
-  5 models: 65
-  10 models: 130
+  5 models: 70
+  10 models: 140
 tags:
 - unit
 - unit/兽人
 - 兽人
 version:
-  points: MFM 2026-07-27 15:14
+  points: MFM 2026-09-14T05:51:23.572407+00:00
   source: official-db
 sources:
 - book: 官方结构库 db/wh40k.sqlite（Wahapedia 11版镜像 + MFM 官方点数）
-updated: '2026-07-23'
+updated: '2026-09-14'
 ---
 
 ## 属性表
@@ -41,9 +41,9 @@ updated: '2026-07-23'
 - **[[factions/兽人/stratagems/full-throttle.md|全速前进]]**：本单位在进行过加速或撤退的回合中依然是【可冲锋】单位
 
 ## 单位构成
-- **5个模型** — 65 分
-- **10个模型** — 130 分
+- **5个模型** — 70 分
+- **10个模型** — 140 分
 
 ## 关键词
-- **阵营关键词**：兽人
-- **普通关键词**：[[core-rules/infantry.md|步兵]]，[[core-rules/fly.md|飞行]]，跳跃背包，[[core-rules/grenades.md|手雷]]，风暴小子
+- **阵营关键词**：Orks
+- **普通关键词**：Fly，[[core-rules/grenades.md|Grenades]]，Stormboyz，Jump Pack，[[core-rules/infantry.md|Infantry]]

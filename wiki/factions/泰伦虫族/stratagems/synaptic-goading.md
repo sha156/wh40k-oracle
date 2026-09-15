@@ -20,7 +20,7 @@ updated: '2026-07-26'
 
 ## 使用时机
 
-Any phase, just before an Endless Multitude unit from your army that is within Synapse Range of your army makes a Surge move.
+Any phase, just before an ENDLESS MULTITUDE unit from your army that is within Synapse Range of your army makes a surge move.
 
 ## 使用对象
 
@@ -28,4 +28,4 @@ That ENDLESS MULTITUDE unit.
 
 ## 效果
 
-When making that Surge move, you can re-roll the D6 to determine how far your unit moves, and your unit can end that move as close as possible to the closest objective marker (instead of as close as possible to the closest enemy unit]. All other rules for making Surge moves still apply.
+When making that surge move, you can re-roll the D6 to determine how far your unit moves, and your unit can end that move as close as possible to the closest objective marker (instead of as close as possible to the closest enemy unit). All other rules for making surge moves still apply.

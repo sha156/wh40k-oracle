@@ -3,17 +3,16 @@ id: '000000308'
 name_en: Iron Priest On Thunderwolf
 faction: 星际战士
 type: unit
-points:
-  1 model: 95
 tags:
 - unit
 - unit/星际战士
 - 星际战士
 version:
+  points: historical / unmatched
   source: official-db
 sources:
 - book: 官方结构库 db/wh40k.sqlite（Wahapedia 11版镜像 + MFM 官方点数）
-updated: '2026-07-23'
+updated: '2026-09-14'
 ---
 
 ## 属性表
@@ -42,6 +41,7 @@ updated: '2026-07-23'
 - **Vengeance of the Omnissiah**：If a friendly Adeptus Astartes Vehicle model is destroyed within 12" of this model, until the end of the battle, this model’s Iron Priest hammer has an Attacks characteristic of 6.
 
 ## 单位构成
+历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
 - **1个模型** — 95 分
 
 ## 关键词

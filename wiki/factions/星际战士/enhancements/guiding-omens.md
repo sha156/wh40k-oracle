@@ -5,6 +5,7 @@ name_en: Guiding Omens
 faction: 星际战士
 type: enhancement
 detachment: The Living Miracle
+cost: 15
 tags:
 - enhancement
 - enhancement/星际战士
@@ -14,7 +15,7 @@ sources:
 updated: '2026-07-26'
 ---
 
-分数未知、[[factions/星际战士/detachments/the-living-miracle.md|The Living Miracle]] 分队。
+15 分、[[factions/星际战士/detachments/the-living-miracle.md|The Living Miracle]] 分队。
 
 ## 效果
 
@@ -26,6 +27,8 @@ At the start of the first battle round, you can select up to three of the follow
 - **Augury of Retribution**: Melee attacks that target this unit have [HAZARDOUS].
 - **Omen of Sacred Intervention**: When you target this unit with the Heroic Intervention stratagem, that use is -1 CP.
 - **Harbinger of Judgement**: When an enemy unit (excluding MONSTER/VEHICLE units) engaged with this model is selected to make a fall-back move, roll one D6: on a 2+, that enemy unit suffers D6 mortal wounds.
+
+**分数**：15 分
 
 ## 携带限制
 

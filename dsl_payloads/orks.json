@@ -2756,6 +2756,136 @@
     "text_sha256": "99f0a81d88d8b33d61e47427e0aaed1f0d373650e646d5796a1ff656c1bc1b56"
    },
    "encoded_by": "manual-2026-07-19"
+  },
+  {
+   "table": "enhancements",
+   "id": "official-preview-ork-extra-sneaky",
+   "side": "attacker",
+   "detachment": "Runt Swarm",
+   "name_en": "Extra Sneaky",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "Official preview only. Deployment, detection, embarked transport effects, or bearer-specific weapons require state unavailable to this attack simulation. No numerical effect is applied."
+   ],
+   "provenance": {
+    "text_sha256": "a5e3a50e396548c038724e19237057f7b534edcf15837731005c5bb434e20b2d",
+    "reviewed_source": {
+     "url": "https://assets.warhammer-community.com/articles/0-2026/august/wc17-08/40k_orkdetachments-aug18-spread-go4nfnhcb5.jpg",
+     "sha256": "0ec2e3760b9cdb618ccffa3617e0aa07c221e220be524a06c26801c54f622cbc",
+     "page": 1,
+     "kind": "official-preview-image",
+     "published": "2026-08-17"
+    },
+    "current_text": "[Official preview, 2026-08-17; not verified against the released codex.] GRETCHIN unit upgrade: reduce detection range by 3 inches."
+   },
+   "encoded_by": "manual-2026-09-15"
+  },
+  {
+   "table": "enhancements",
+   "id": "official-preview-ork-minefield-detail",
+   "side": "attacker",
+   "detachment": "Runt Swarm",
+   "name_en": "Minefield Detail",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "Official preview only. Deployment, detection, embarked transport effects, or bearer-specific weapons require state unavailable to this attack simulation. No numerical effect is applied."
+   ],
+   "provenance": {
+    "text_sha256": "200331ffc697308111469e25e229902b3776fa369a3aed828f43b2bdac65ced6",
+    "reviewed_source": {
+     "url": "https://assets.warhammer-community.com/articles/0-2026/august/wc17-08/40k_orkdetachments-aug18-spread-go4nfnhcb5.jpg",
+     "sha256": "0ec2e3760b9cdb618ccffa3617e0aa07c221e220be524a06c26801c54f622cbc",
+     "page": 1,
+     "kind": "official-preview-image",
+     "published": "2026-08-17"
+    },
+    "current_text": "[Official preview, 2026-08-17; not verified against the released codex.] GRETCHIN unit upgrade: gain Scouts 6 inches while not embarked."
+   },
+   "encoded_by": "manual-2026-09-15"
+  },
+  {
+   "table": "enhancements",
+   "id": "official-preview-ork-supa-glowy-fing",
+   "side": "attacker",
+   "detachment": "Shoota Boyz",
+   "name_en": "Supa-glowy Fing",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "Official preview only. Deployment, detection, embarked transport effects, or bearer-specific weapons require state unavailable to this attack simulation. No numerical effect is applied."
+   ],
+   "provenance": {
+    "text_sha256": "4173594081e9d142936f704aff8e37f3d2a41fb13afe672de1b6b5165a2925eb",
+    "reviewed_source": {
+     "url": "https://assets.warhammer-community.com/articles/0-2026/august/wc17-08/40k_orkdetachments-aug18-spread-go4nfnhcb5.jpg",
+     "sha256": "0ec2e3760b9cdb618ccffa3617e0aa07c221e220be524a06c26801c54f622cbc",
+     "page": 1,
+     "kind": "official-preview-image",
+     "published": "2026-08-17"
+    },
+    "current_text": "[Official preview, 2026-08-17; not verified against the released codex.] ORKS INFANTRY bearer, excluding WEIRDBOY: its ranged attacks gain Anti-Infantry 4+, Devastating Wounds and Supa-hazardous. After shooting, make two hazard rolls per Supa-hazardous ranged weapon selected during weapon selection."
+   },
+   "encoded_by": "manual-2026-09-15"
+  },
+  {
+   "table": "enhancements",
+   "id": "official-preview-ork-targetin-squigs",
+   "side": "attacker",
+   "detachment": "Shoota Boyz",
+   "name_en": "Targetin’ Squigs",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "Official preview only. Deployment, detection, embarked transport effects, or bearer-specific weapons require state unavailable to this attack simulation. No numerical effect is applied."
+   ],
+   "provenance": {
+    "text_sha256": "0da8833c6180d6e0bc1669e6c0adabfc63bd918bd859577bb292dbea247e0f29",
+    "reviewed_source": {
+     "url": "https://assets.warhammer-community.com/articles/0-2026/august/wc17-08/40k_orkdetachments-aug18-spread-go4nfnhcb5.jpg",
+     "sha256": "0ec2e3760b9cdb618ccffa3617e0aa07c221e220be524a06c26801c54f622cbc",
+     "page": 1,
+     "kind": "official-preview-image",
+     "published": "2026-08-17"
+    },
+    "current_text": "[Official preview, 2026-08-17; not verified against the released codex.] BIG MEK, MEKBOSS or WARBOSS bearer: add 3 inches to the unit’s ranged attacks, except Torrent attacks."
+   },
+   "encoded_by": "manual-2026-09-15"
+  },
+  {
+   "table": "enhancements",
+   "id": "official-preview-ork-blitzboss",
+   "side": "attacker",
+   "detachment": "Brute Bosses",
+   "name_en": "Blitzboss",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "Official preview only. Deployment, detection, embarked transport effects, or bearer-specific weapons require state unavailable to this attack simulation. No numerical effect is applied."
+   ],
+   "provenance": {
+    "text_sha256": "d576599b96fb5c3237dda236d5939e39c1fc286b97d014e91991d81cde5ac84c",
+    "reviewed_source": {
+     "url": "https://assets.warhammer-community.com/articles/0-2026/august/wc17-08/40k_orkdetachments-aug18-blitzboss-tfmfwbmzg9.jpg",
+     "sha256": "bde8ab6b45fd99c148d311eab4a3bbf0e2223d47f9d0518cc63bc925296c901f",
+     "page": 1,
+     "kind": "official-preview-image",
+     "published": "2026-08-17"
+    },
+    "current_text": "[Official preview, 2026-08-17; not verified against the released codex.] WARBOSS bearer: while embarked, its non-WALKER TRANSPORT gains 2 inches of movement and a 5+ invulnerable save."
+   },
+   "encoded_by": "manual-2026-09-15"
   }
  ]
 }

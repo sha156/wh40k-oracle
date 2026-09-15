@@ -3,17 +3,16 @@ id: '000001389'
 name_en: Kill Krusha
 faction: 兽人
 type: unit
-points:
-  1 model: 230
 tags:
 - unit
 - unit/兽人
 - 兽人
 version:
+  points: historical / unmatched
   source: official-db
 sources:
 - book: 官方结构库 db/wh40k.sqlite（Wahapedia 11版镜像 + MFM 官方点数）
-updated: '2026-07-23'
+updated: '2026-09-14'
 ---
 
 ## 属性表
@@ -42,6 +41,7 @@ updated: '2026-07-23'
 - **Da Biggest Booms**：In your Shooting phase, just after selecting a target for this model’s krusha kannon, the target unit and every other enemy <span class="kwb">INFANTRY</span> unit within 3" of that unit must take a Battle-shock test.
 
 ## 单位构成
+历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
 - **1个模型** — 230 分
 
 ## 关键词

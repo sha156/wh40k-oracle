@@ -3,17 +3,16 @@ id: '000000713'
 name_en: ‘Iron Hand’ Straken
 faction: 星界军
 type: unit
-points:
-  1 model: 55
 tags:
 - unit
 - unit/星界军
 - 星界军
 version:
+  points: historical / unmatched
   source: official-db
 sources:
 - book: 官方结构库 db/wh40k.sqlite（Wahapedia 11版镜像 + MFM 官方点数）
-updated: '2026-07-23'
+updated: '2026-09-14'
 ---
 
 ## 属性表
@@ -42,6 +41,7 @@ updated: '2026-07-23'
 - **ORDERS**：This <span class="kwb">OFFICER</span> can issue up to 2 Orders to Regiment units.
 
 ## 单位构成
+历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
 - **1个模型** — 55 分
 
 ## 关键词

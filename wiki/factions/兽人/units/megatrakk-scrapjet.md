@@ -4,18 +4,16 @@ name_zh: 超霸拖垃圾
 name_en: Megatrakk Scrapjet
 faction: 兽人
 type: unit
-points:
-  1 model: 75
 tags:
 - unit
 - unit/兽人
 - 兽人
 version:
-  points: MFM 2026-07-27 15:14
+  points: historical / unmatched
   source: official-db
 sources:
 - book: 官方结构库 db/wh40k.sqlite（Wahapedia 11版镜像 + MFM 官方点数）
-updated: '2026-07-23'
+updated: '2026-09-14'
 ---
 
 ## 属性表
@@ -43,8 +41,9 @@ updated: '2026-07-23'
 - **钻破天际**：每当本模型结束冲锋移动时，选择接战范围内一个敌方单位并投D6,2-5则目标单位遭受D3点致命伤害，6则改为3点致命伤害
 
 ## 单位构成
+历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
 - **1个模型** — 75 分
 
 ## 关键词
-- **阵营关键词**：兽人
-- **普通关键词**：[[core-rules/vehicle.md|载具]]，飚速怪咖，超霸拖垃圾
+- **阵营关键词**：Orks
+- **普通关键词**：Vehicle，Megatrakk Scrapjet，Speed Freeks

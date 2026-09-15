@@ -30,6 +30,8 @@ _FACES = 6
 KNOWN_CONDITION_TAGS = frozenset({
     "half_range", "stationary", "charging", "long_range", "indirect",
     "phase_shooting", "phase_melee", "target_has_keyword",
+    "shooting_astra_militarum_non_titanic",
+    "target_keyword_group",
     "guided_vs_spotted", "guided_markerlight", "markerlight_observer",
     "detachment_rounds_shooting", "detachment_rounds_guided",
     "ranged_within_12", "ranged_within_8",          # P7-PR4：绝对射程档假设（自含射击阶段）
@@ -85,8 +87,17 @@ def _cond_true(condition: Tuple, stance: Stance, target: TargetProfile) -> bool:
         return stance.phase == "shooting"
     if tag == "phase_melee":             # cleave（11版24.06）等仅对近战生效
         return stance.phase == "melee"
+    if tag == "shooting_astra_militarum_non_titanic":
+        # Masters of Camouflage, current FP p23: Stealth, excluding TITANIC.
+        return (stance.phase == "shooting" and "astra militarum" in target.keywords
+                and "titanic" not in target.keywords)
     if tag == "target_has_keyword":
         return len(condition) > 1 and condition[1] in target.keywords
+    if tag == "target_keyword_group":
+        if len(condition) != 2 or condition[1] not in ("monster/vehicle", "non-monster/vehicle"):
+            raise ValueError(f"Unsupported target keyword group: {condition!r}")
+        large = bool({"monster", "vehicle"} & set(target.keywords))
+        return not large if condition[1].startswith("non-") else large
     if tag == "guided_vs_spotted":       # P7：FTGG 受引导单位打被标记目标（11版军规）
         return stance.phase == "shooting" and stance.guided
     if tag == "guided_markerlight":      # P7：观察员带 Markerlight 关键词 → 追加 [IGNORES COVER]
@@ -447,15 +458,47 @@ def unconsumed_attacker_effect_notes(attacker) -> List[str]:
 #   · phase == "wound" 且 op == "modify" → _gather_params 并入致伤修正统一夹取
 #     （P7-PR5：DAEMONIC RESISTANCE 等"被伤致伤骰-1"）。
 # 其余 phase/op 当前没有消费者——列入报告注解透传。
+# 这两个消费点与 phase 无关：run_sequence 顶层的 `_target_effect_value` 只按 op 读取。
+_TARGET_CONSUMED_ANY_PHASE = frozenset({"fnp", "damage_reduction"})
+
+# 披露文案用的中文标签。**缺标签会回退成 `phase+op` 原样**，所以将来往 TARGET_CONSUMED
+# 里加消费点却忘了配标签，只会让文案不够漂亮，不会让它漏列（审查 R1-M5）。
+_CONSUMED_LABELS = {
+    "fnp": "无视伤害(fnp)",
+    "damage_reduction": "减伤(damage_reduction)",
+    ("hit", "modify"): "命中修正(hit+modify)",
+    ("hit", "bs_improve"): "守方 BS/WS 特征值修正(hit+bs_improve)",
+    ("wound", "modify"): "致伤骰修正(wound+modify)",
+    ("wound", "t_improve"): "韧性改善(wound+t_improve)",
+    ("save", "cover"): "掩体(save+cover)",
+    ("save", "invuln"): "无效保护(save+invuln)",
+    ("save", "sv_improve"): "护甲改善(save+sv_improve)",
+    ("save", "ap_improve"): "守方 AP 恶化(save+ap_improve)",
+}
+
+
 def _target_effect_consumed(e) -> bool:
-    if e.op in ("fnp", "damage_reduction"):
-        return True
-    if e.phase == "hit" and e.op in ("modify", "bs_improve"):
-        return True
-    if e.phase == "wound" and e.op in ("modify", "t_improve"):
-        return True                                  # P7-PR5 致伤骰修正 / P7-PR8 T 改善
-    return e.phase == "save" and e.op in ("cover", "invuln", "sv_improve",
-                                          "ap_improve")   # P7-PR7：守方 AP 恶化
+    """守方 effect 是否被引擎消费——判据**只读 TARGET_CONSUMED 这一个真源**。
+
+    这里曾是那个集合上方「白名单唯一真源在此，不许在别处手抄第二份」注释的违例者：
+    一条 if 链把同样的内容抄了第二遍（审查 R1-M5）。危险方向不是当下答错——两份当时
+    等价——而是将来只往其中一份加分支，被丢弃的效果就**不再被披露**。
+    """
+    return (e.op in _TARGET_CONSUMED_ANY_PHASE
+            or (e.phase, e.op) in TARGET_CONSUMED)
+
+
+def _consumed_points_label() -> str:
+    """把消费点清单渲染成披露文案——从真源集合生成，不手写。
+
+    手写那版曾漏掉 wound+modify / hit+bs_improve / wound+t_improve / save+ap_improve
+    四个**已接通**的消费点，文案与实现说的不是一回事。
+    """
+    labels = [_CONSUMED_LABELS.get(op, op) for op in sorted(_TARGET_CONSUMED_ANY_PHASE)]
+    labels += [_CONSUMED_LABELS.get((ph, op), f"{ph}+{op}")
+               for ph, op in sorted(TARGET_CONSUMED)
+               if op not in _TARGET_CONSUMED_ANY_PHASE]
+    return "/".join(labels)
 
 
 def unconsumed_target_effect_notes(target: TargetProfile) -> List[str]:
@@ -463,12 +506,10 @@ def unconsumed_target_effect_notes(target: TargetProfile) -> List[str]:
 
     只披露、不改数值——保证「报告里出现 ≠ 结果被影响」这一诚实语义。
     """
+    consumed = _consumed_points_label()
     return [
         f"守方 Effect 未消费：phase={e.phase}/op={e.op}"
-        f"（来源 {e.source or '未知'}）——引擎当前只消费 fnp/damage_reduction/"
-        f"命中修正（hit+modify）/掩体（save+cover）/无效保护（save+invuln）/"
-        f"护甲改善（save+sv_improve），该效果未计入本次结果"
+        f"（来源 {e.source or '未知'}）——引擎当前只消费 {consumed}，"
+        f"该效果未计入本次结果"
         for e in target.effects if not _target_effect_consumed(e)
     ]
-
-

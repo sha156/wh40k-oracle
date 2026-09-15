@@ -4,18 +4,16 @@ name_zh: 猛禽
 name_en: Raptors
 faction: 混沌恶魔
 type: unit
-points:
-  5 models: 110
-  10 models: 210
 tags:
 - unit
 - unit/混沌恶魔
 - 混沌恶魔
 version:
+  points: historical / unmatched
   source: official-db
 sources:
 - book: 官方结构库 db/wh40k.sqlite（Wahapedia 11版镜像 + MFM 官方点数）
-updated: '2026-07-23'
+updated: '2026-09-14'
 ---
 
 ## 属性表
@@ -49,6 +47,7 @@ updated: '2026-07-23'
 - **惊惧突袭**：在近战阶段开始时，拥有本技能的单位 接战范围内的每个敌方单位必须进行一次震慑测试
 
 ## 单位构成
+历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
 - **5个模型** — 110 分
 - **10个模型** — 210 分
 

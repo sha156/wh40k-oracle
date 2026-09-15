@@ -4,17 +4,16 @@ name_zh: 终结者巫师
 name_en: Sorcerer In Terminator Armour
 faction: 混沌恶魔
 type: unit
-points:
-  1 model: 80
 tags:
 - unit
 - unit/混沌恶魔
 - 混沌恶魔
 version:
+  points: historical / unmatched
   source: official-db
 sources:
 - book: 官方结构库 db/wh40k.sqlite（Wahapedia 11版镜像 + MFM 官方点数）
-updated: '2026-07-23'
+updated: '2026-09-14'
 ---
 
 ## 属性表
@@ -45,6 +44,7 @@ updated: '2026-07-23'
 - **灵能使魔**：一次性技能，装备者可以将一下被分配 给本模型的攻击的 D 改为 0
 
 ## 单位构成
+历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
 - **1个模型** — 80 分
 
 ## 关键词

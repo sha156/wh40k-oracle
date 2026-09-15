@@ -5,18 +5,18 @@ name_en: War Walkers
 faction: 艾达灵族
 type: unit
 points:
-  1 model: 85
+  1 model: 80
   2 models: 160
 tags:
 - unit
 - unit/艾达灵族
 - 艾达灵族
 version:
-  points: MFM 2026-07-27 15:14
+  points: MFM 2026-09-14T05:51:23.572407+00:00
   source: official-db
 sources:
 - book: 官方结构库 db/wh40k.sqlite（Wahapedia 11版镜像 + MFM 官方点数）
-updated: '2026-07-23'
+updated: '2026-09-14'
 ---
 
 ## 属性表
@@ -47,7 +47,7 @@ updated: '2026-07-23'
 - **晶化锁定**：在你的射击阶段中，本单位完成射击后，选择一个被本单位命中至少一次的敌方单位，直到本阶段结束，当一个友方艾达灵族单位以上述敌方单位为目标进行攻击时，该攻击的AP属性加1，每个敌方单位每阶段只能被此能力选中一次
 
 ## 单位构成
-- **1个模型** — 85 分
+- **1个模型** — 80 分
 - **2个模型** — 160 分
 
 ## 关键词

@@ -5,17 +5,17 @@ name_en: Skorpekh Lord
 faction: 太空死灵
 type: unit
 points:
-  1 model: 90
+  1 model: 95
 tags:
 - unit
 - unit/太空死灵
 - 太空死灵
 version:
-  points: MFM 2026-07-27 15:14
+  points: MFM 2026-09-14T05:51:23.572407+00:00
   source: official-db
 sources:
 - book: 官方结构库 db/wh40k.sqlite（Wahapedia 11版镜像 + MFM 官方点数）
-updated: '2026-07-23'
+updated: '2026-09-14'
 ---
 
 ## 属性表
@@ -43,7 +43,7 @@ updated: '2026-07-23'
 - **血腥收割**：当该模型的冲锋移动结束时，选择一个位于该模型交战范围内的敌方单位，并掷一 枚 D6；如果掷骰结果为 2-5，该单位受到 D3 处致命伤；如果掷骰结果为 6，该单位受到 D3+3 处致命伤。
 
 ## 单位构成
-- **1个模型** — 90 分
+- **1个模型** — 95 分
 
 ## 关键词
 - **阵营关键词**：Necrons

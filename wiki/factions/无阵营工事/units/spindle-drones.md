@@ -3,17 +3,16 @@ id: '000001603'
 name_en: Spindle Drones
 faction: 无阵营工事
 type: unit
-points:
-  4 models: 35
 tags:
 - unit
 - unit/无阵营工事
 - 无阵营工事
 version:
+  points: historical / unmatched
   source: official-db
 sources:
 - book: 官方结构库 db/wh40k.sqlite（Wahapedia 11版镜像 + MFM 官方点数）
-updated: '2026-07-23'
+updated: '2026-09-14'
 ---
 
 ## 属性表
@@ -35,6 +34,7 @@ updated: '2026-07-23'
 - **Threat Level Rising**：Each time a model in this unit makes an attack, add 1 to the Hit roll if this unit is below its Starting Strength, and add 1 to the Wound roll as well if this unit is Below Half-strength.
 
 ## 单位构成
+历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
 - **4个模型** — 35 分
 
 ## 关键词

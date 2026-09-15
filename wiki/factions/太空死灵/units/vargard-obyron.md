@@ -4,17 +4,16 @@ name_zh: 禁卫奥比隆
 name_en: Vargard Obyron
 faction: 太空死灵
 type: unit
-points:
-  1 model: 85
 tags:
 - unit
 - unit/太空死灵
 - 太空死灵
 version:
+  points: historical / unmatched
   source: official-db
 sources:
 - book: 官方结构库 db/wh40k.sqlite（Wahapedia 11版镜像 + MFM 官方点数）
-updated: '2026-07-23'
+updated: '2026-09-14'
 ---
 
 ## 属性表
@@ -33,6 +32,7 @@ updated: '2026-07-23'
 - **禁卫职责**：当该模型与戴冠将军赞德瑞克在同一单位中时， 该单位中的角色模型拥有【不觉 疼痛 4+】。
 
 ## 单位构成
+历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
 - **1个模型** — 85 分
 
 ## 关键词

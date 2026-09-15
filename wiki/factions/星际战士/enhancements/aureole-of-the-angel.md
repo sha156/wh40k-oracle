@@ -7,6 +7,7 @@ aliases:
 faction: 星际战士
 type: enhancement
 detachment: Legacy of Grace
+cost: 20
 tags:
 - enhancement
 - enhancement/星际战士
@@ -16,11 +17,13 @@ sources:
 updated: '2026-07-26'
 ---
 
-分数未知、[[factions/星际战士/detachments/legacy-of-grace.md|优雅传承]] 分队。
+20 分、[[factions/星际战士/detachments/legacy-of-grace.md|优雅传承]] 分队。
 
 ## 效果
 
 This unit has -3" detection range.
+
+**分数**：20 分
 
 ## 携带限制
 

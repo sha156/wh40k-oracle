@@ -11,11 +11,13 @@ tags:
 - unit/灰骑士
 - 灰骑士
 version:
-  points: MFM 2026-07-27 15:14
+  points: MFM 2026-09-14T05:51:23.572407+00:00
   source: official-db
 sources:
-- book: 官方结构库 db/wh40k.sqlite（Wahapedia 11版镜像 + MFM 官方点数）
-updated: '2026-07-23'
+- book: https://assets.warhammer-community.com/eng_22-07_warhammer_40,000_faction_pack_grey_knights-dlzvusufhy-uialb3pko4.pdf
+  pages:
+  - 9
+updated: '2026-09-14'
 ---
 
 ## 属性表
@@ -38,9 +40,8 @@ updated: '2026-07-23'
 | 破魔银锤 | 近战 | 5 | 2+ | 10 | -2 | 3 | [[core-rules/psychic-attacks.md\|灵能]] |
 
 ## 技能
-- **【阵营技能】无限之门**
-- **庇护（灵能）**：该单位拥有隐匿技能该模型领导的单位所受近战攻击的命中掷骰结果减少 1 点
-- **怒焰之锤（灵能）**：当该模型所在单位被选中进行近战时，您可以选择一个位于该单位交战范围内的敌方单位并掷一枚 D6：若结果为2-3，该敌方单位受到 1 点致命伤；若结果为 4-5，该敌方单位将受到 D3 点致命伤，若结果为6+，该敌方单位受到 D3+3 点致命伤。
+- **[[factions/帝国骑士/enhancements/sanctuary.md|Sanctuary]] (Psychic)**：This unit has Stealth. Melee attacks that target this unit have -1 to hit rolls.
+- **Hammer Aflame (Psychic)**：Each time this model’s unit is selected to fight, you can select one enemy unit within Engagement Range of this model’s unit and roll one D6: on a 2-3, that enemy unit suffers 1 mortal wound; on a 4-5, that enemy unit suffers D3 mortal wounds; on a 6, that enemy unit suffers D3+3 mortal wounds.
 
 ## 单位构成
 - **1个模型** — 125 分

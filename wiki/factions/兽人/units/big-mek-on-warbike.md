@@ -3,17 +3,16 @@ id: '000000007'
 name_en: Big Mek On Warbike
 faction: 兽人
 type: unit
-points:
-  1 model: 105
 tags:
 - unit
 - unit/兽人
 - 兽人
 version:
+  points: historical / unmatched
   source: official-db
 sources:
 - book: 官方结构库 db/wh40k.sqlite（Wahapedia 11版镜像 + MFM 官方点数）
-updated: '2026-07-23'
+updated: '2026-09-14'
 ---
 
 ## 属性表
@@ -50,6 +49,7 @@ updated: '2026-07-23'
 - **Mekaniak**：At the end of your Movement phase, you can select one friendly Orks Vehicle model within 3" of this model. That <span class="kwb">VEHICLE</span> model regains up to D3 lost wounds, and, until the start of your next Movement phase, each time that <span class="kwb">VEHICLE</span> model makes an attack, add 1 to the Hit roll. Each model can only be selected for this ability once per turn.
 
 ## 单位构成
+历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
 - **1个模型** — 105 分
 
 ## 关键词

@@ -5,18 +5,18 @@ name_en: Nobz
 faction: 兽人
 type: unit
 points:
-  5 models: 105
-  10 models: 210
+  5 models: 125
+  10 models: 250
 tags:
 - unit
 - unit/兽人
 - 兽人
 version:
-  points: MFM 2026-07-27 15:14
+  points: MFM 2026-09-14T05:51:23.572407+00:00
   source: official-db
 sources:
 - book: 官方结构库 db/wh40k.sqlite（Wahapedia 11版镜像 + MFM 官方点数）
-updated: '2026-07-23'
+updated: '2026-09-14'
 ---
 
 ## 属性表
@@ -43,9 +43,9 @@ updated: '2026-07-23'
 - **弹药屁精**：当本单位被选择进行射击时，可以使用弹药屁精，本阶段中本单位的射击武器获得【致命一击】技能，每个弹药屁精在每场游戏中只能使用一次（屁精模型只作为标记物存在，每次使用本技能后移除一个）
 
 ## 单位构成
-- **5个模型** — 105 分
-- **10个模型** — 210 分
+- **5个模型** — 125 分
+- **10个模型** — 250 分
 
 ## 关键词
-- **阵营关键词**：兽人
-- **普通关键词**：[[core-rules/infantry.md|步兵]]，[[core-rules/grenades.md|手雷]]，老大
+- **阵营关键词**：Orks
+- **普通关键词**：Nobz，[[core-rules/grenades.md|Grenades]]，[[core-rules/infantry.md|Infantry]]

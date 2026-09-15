@@ -3,17 +3,16 @@ id: '000000666'
 name_en: Reaper
 faction: 黑暗灵族
 type: unit
-points:
-  1 model: 115
 tags:
 - unit
 - unit/黑暗灵族
 - 黑暗灵族
 version:
+  points: historical / unmatched
   source: official-db
 sources:
 - book: 官方结构库 db/wh40k.sqlite（Wahapedia 11版镜像 + MFM 官方点数）
-updated: '2026-07-23'
+updated: '2026-09-14'
 ---
 
 ## 属性表
@@ -41,6 +40,7 @@ updated: '2026-07-23'
 - **Eradicate the Foe**：Each time this model makes an attack that targets an enemy unit that is at its Starting Strength, re-roll a Hit roll of 1. If the target unit has a Starting Strength of 1, this ability only applies if that unit has its starting number of wounds.
 
 ## 单位构成
+历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
 - **1个模型** — 115 分
 
 ## 关键词

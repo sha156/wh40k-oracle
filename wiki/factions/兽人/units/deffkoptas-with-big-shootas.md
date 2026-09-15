@@ -3,17 +3,16 @@ id: '000002736'
 name_en: Deffkoptas With Big Shootas
 faction: 兽人
 type: unit
-points:
-  3 models: 130
 tags:
 - unit
 - unit/兽人
 - 兽人
 version:
+  points: historical / unmatched
   source: official-db
 sources:
 - book: 官方结构库 db/wh40k.sqlite（Wahapedia 11版镜像 + MFM 官方点数）
-updated: '2026-07-23'
+updated: '2026-09-14'
 ---
 
 ## 属性表
@@ -42,6 +41,7 @@ updated: '2026-07-23'
 - **Deff from Above**：Each time this unit ends a Normal move, you can select one enemy unit it moved over during that move and roll one D6 for each model in this unit: for each 4+, that enemy unit suffers 1 mortal wound.
 
 ## 单位构成
+历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
 - **3个模型** — 130 分
 
 ## 关键词

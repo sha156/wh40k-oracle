@@ -5,18 +5,18 @@ name_en: Killa Kans
 faction: 兽人
 type: unit
 points:
-  3 models: 120
-  6 models: 240
+  3 models: 130
+  6 models: 260
 tags:
 - unit
 - unit/兽人
 - 兽人
 version:
-  points: MFM 2026-07-27 15:14
+  points: MFM 2026-09-14T05:51:23.572407+00:00
   source: official-db
 sources:
 - book: 官方结构库 db/wh40k.sqlite（Wahapedia 11版镜像 + MFM 官方点数）
-updated: '2026-07-23'
+updated: '2026-09-14'
 ---
 
 ## 属性表
@@ -45,9 +45,9 @@ updated: '2026-07-23'
 - **屁精炫耀**：每当本单位被选择进行射击时，可以投一颗D6，按如下结算■ 1-2,本单位遭受D3点致命伤害■ 3-4,本阶段中本单位射击武器S+1■ 5-6,本阶段中本单位射击武器A+1
 
 ## 单位构成
-- **3个模型** — 120 分
-- **6个模型** — 240 分
+- **3个模型** — 130 分
+- **6个模型** — 260 分
 
 ## 关键词
-- **阵营关键词**：兽人
-- **普通关键词**：[[core-rules/vehicle.md|载具]]，机甲，屁精，杀戮罐
+- **阵营关键词**：Orks
+- **普通关键词**：Grots，[[core-rules/walker.md|Walker]]，Killa Kans，Vehicle

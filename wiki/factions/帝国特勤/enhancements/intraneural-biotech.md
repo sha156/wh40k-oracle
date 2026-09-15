@@ -4,7 +4,7 @@ name_en: Intraneural Biotech
 faction: 帝国特勤
 type: enhancement
 detachment: Veiled Blade Elimination Force
-cost: 35
+cost: 15
 tags:
 - enhancement
 - enhancement/帝国特勤
@@ -14,13 +14,13 @@ sources:
 updated: '2026-07-26'
 ---
 
-35 分、[[factions/帝国特勤/detachments/veiled-blade-elimination-force.md|隐藏利刃歼灭部队]] 分队。
+15 分、[[factions/帝国特勤/detachments/veiled-blade-elimination-force.md|隐藏利刃歼灭部队]] 分队。
 
 ## 效果
 
 Once per battle round, you can target this model with the Heroic Intervention or Counter-offensive Stratagem for 0CP, and can do so even if you have already used that Stratagem on a different unit this phase.
 
-**分数**：35 分
+**分数**：15 分
 
 ## 携带限制
 

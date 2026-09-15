@@ -7,17 +7,17 @@ type: unit
 points:
   3 models: 70
   6 models: 140
-  Invader ATV: 60
+  + 1 invader atv: 60
 tags:
 - unit
 - unit/星际战士
 - 星际战士
 version:
-  points: MFM 2026-07-27 15:14
+  points: MFM 2026-09-14T05:51:23.572407+00:00
   source: official-db
 sources:
 - book: 官方结构库 db/wh40k.sqlite（Wahapedia 11版镜像 + MFM 官方点数）
-updated: '2026-07-23'
+updated: '2026-09-14'
 ---
 
 ## 属性表
@@ -48,7 +48,7 @@ updated: '2026-07-23'
 ## 单位构成
 - **3个模型** — 70 分
 - **6个模型** — 140 分
-- **[[factions/星际战士/units/invader-atv.md|Invader ATV]]** — 60 分
+- **+ 1 invader atv** — 60 分
 
 ## 关键词
 - **阵营关键词**：Adeptus Astartes

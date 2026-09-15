@@ -5,6 +5,7 @@ name_en: Destabilising Predation
 faction: 泰伦虫族
 type: enhancement
 detachment: Talons of the Norn Queen
+cost: 20
 tags:
 - enhancement
 - enhancement/泰伦虫族
@@ -14,11 +15,13 @@ sources:
 updated: '2026-07-26'
 ---
 
-分数未知、[[factions/泰伦虫族/detachments/talons-of-the-norn-queen.md|诺恩女王之爪]] 分队。
+20 分、[[factions/泰伦虫族/detachments/talons-of-the-norn-queen.md|诺恩女王之爪]] 分队。
 
 ## 效果
 
 This unit’s ranged attacks have [ANTI-CHARACTER 2+].
+
+**分数**：20 分
 
 ## 携带限制
 

@@ -5,6 +5,7 @@ name_en: Pterrorshade Rookery
 faction: 混沌骑士
 type: enhancement
 detachment: Bastions of Tyranny
+cost: 20
 tags:
 - enhancement
 - enhancement/混沌骑士
@@ -14,11 +15,13 @@ sources:
 updated: '2026-07-26'
 ---
 
-分数未知、[[factions/混沌骑士/detachments/bastions-of-tyranny.md|暴虐要塞]] 分队。
+20 分、[[factions/混沌骑士/detachments/bastions-of-tyranny.md|暴虐要塞]] 分队。
 
 ## 效果
 
 When this unit is selected to shoot, select one enemy unit within 24" of this unit. That enemy unit has +6" detection range until this unit has shot.
+
+**分数**：20 分
 
 ## 携带限制
 

@@ -3,17 +3,16 @@ id: '000003829'
 name_en: Jokaero Weaponsmith
 faction: 帝国特勤
 type: unit
-points:
-  1 model: 30
 tags:
 - unit
 - unit/帝国特勤
 - 帝国特勤
 version:
+  points: historical / unmatched
   source: official-db
 sources:
 - book: 官方结构库 db/wh40k.sqlite（Wahapedia 11版镜像 + MFM 官方点数）
-updated: '2026-07-23'
+updated: '2026-09-14'
 ---
 
 ## 属性表
@@ -41,6 +40,7 @@ updated: '2026-07-23'
 - **INQUISITORIAL AGENT**：If your Army Faction is not <span class="kwb">AGENTS</span> <span class="kwb2">OF</span> <span class="kwb2">THE</span> <span class="kwb">IMPERIUM</span>, then for each unique pairing of 1 [[factions/帝国特勤/units/inquisitorial-agents.md|Inquisitorial Agents]] unit and 1 <span class="kwb">JOKAERO</span> <span class="kwb">WEAPONSMITH</span> unit occuring in your army, increase the maximum number of Character units permitted in your army by 1.
 
 ## 单位构成
+历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
 - **1个模型** — 30 分
 
 ## 关键词

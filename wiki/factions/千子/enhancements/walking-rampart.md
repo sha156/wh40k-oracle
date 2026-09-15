@@ -7,6 +7,7 @@ aliases:
 faction: 千子
 type: enhancement
 detachment: Sekhetar Cohort
+cost: 30
 tags:
 - enhancement
 - enhancement/千子
@@ -16,7 +17,7 @@ sources:
 updated: '2026-07-26'
 ---
 
-分数未知、[[factions/千子/detachments/sekhetar-cohort.md|塞克塔部队]] 分队。
+30 分、[[factions/千子/detachments/sekhetar-cohort.md|塞克塔部队]] 分队。
 
 ## 效果
 
@@ -24,6 +25,8 @@ This model has the following abilities:
 
 - Soul Bound: In your Movement phase, at the start or end of this unit’s move, you can select one friendly SEKHETAR ROBOTS unit within 3" of this model. That SEKHETAR ROBOTS unit heals D3+1 wounds.
 - Kine-shielded Guardians: While this model is within 3" of a friendly SEKHETAR ROBOTS unit, this model has Lone Operative.
+
+**分数**：30 分
 
 ## 携带限制
 

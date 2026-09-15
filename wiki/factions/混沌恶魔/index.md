@@ -18,112 +18,112 @@
 
 ## 单位
 
-- [[factions/混沌恶魔/units/aetaosraukeres|Aetaos’rau’keres]] — 
-- [[factions/混沌恶魔/units/anggrath-the-unbound|An’ggrath the Unbound]] — 
-- [[factions/混沌恶魔/units/chaos-lord-on-disc-of-tzeentch|Chaos Lord On Disc Of Tzeentch]] — 
-- [[factions/混沌恶魔/units/chaos-lord-on-juggernaut|Chaos Lord On Juggernaut]] — 
-- [[factions/混沌恶魔/units/chaos-lord-on-palanquin-of-nurgle|Chaos Lord On Palanquin Of Nurgle]] — 
-- [[factions/混沌恶魔/units/chaos-lord-on-steed-of-slaanesh|Chaos Lord On Steed Of Slaanesh]] — 
-- [[factions/混沌恶魔/units/cultist-mob-with-firearms|Cultist Mob with Firearms]] — 
-- [[factions/混沌恶魔/units/exalted-seeker-chariot|Exalted Seeker Chariot]] — 
-- [[factions/混沌恶魔/units/furies|Furies]] — 
-- [[factions/混沌恶魔/units/gellerpox-infected|Gellerpox Infected]] — 
-- [[factions/混沌恶魔/units/giant-chaos-spawn|Giant Chaos Spawn]] — 
-- [[factions/混沌恶魔/units/herald-of-slaanesh-on-steed-of-slaanesh|Herald Of Slaanesh On Steed Of Slaanesh]] — 
-- [[factions/混沌恶魔/units/mutoid-vermin|Mutoid Vermin]] — 
-- [[factions/混沌恶魔/units/negavolt-cultists|Negavolt Cultists]] — 
-- [[factions/混沌恶魔/units/plague-toads|Plague Toads]] — 
-- [[factions/混沌恶魔/units/pox-riders|Pox Riders]] — 
-- [[factions/混沌恶魔/units/renegade-enforcer|Renegade Enforcer]] — 
-- [[factions/混沌恶魔/units/renegade-heavy-weapons-squad|Renegade Heavy Weapons Squad]] — 
-- [[factions/混沌恶魔/units/renegade-ogryn-beast-handler|Renegade Ogryn Beast Handler]] — 
-- [[factions/混沌恶魔/units/renegade-ogryn-brutes|Renegade Ogryn Brutes]] — 
-- [[factions/混沌恶魔/units/renegade-plague-ogryns|Renegade Plague Ogryns]] — 
-- [[factions/混沌恶魔/units/rogue-psyker|Rogue Psyker]] — 
-- [[factions/混沌恶魔/units/scabeiathrax-the-bloated|Scabeiathrax The Bloated]] — 
-- [[factions/混沌恶魔/units/seeker-chariot|Seeker Chariot]] — 
-- [[factions/混沌恶魔/units/sorcerer-on-disc-of-tzeentch|Sorcerer On Disc Of Tzeentch]] — 
-- [[factions/混沌恶魔/units/sorcerer-on-palanquin-of-nurgle|Sorcerer On Palanquin Of Nurgle]] — 
-- [[factions/混沌恶魔/units/sorcerer-on-steed-of-slaanesh|Sorcerer On Steed Of Slaanesh]] — 
-- [[factions/混沌恶魔/units/spined-chaos-beast|Spined Chaos Beast]] — 
-- [[factions/混沌恶魔/units/tormentbringer-on-exalted-seeker-chariot|Tormentbringer On Exalted Seeker Chariot]] — 
-- [[factions/混沌恶魔/units/zarakynel|Zarakynel]] — 
-- [[factions/混沌恶魔/units/rendmaster-on-blood-throne|乘鲜血王座的裂肉主宰]] — 
-- [[factions/混沌恶魔/units/legionaries|军团战士]] — 
-- [[factions/混沌恶魔/units/kairos-fateweaver|凯洛斯·织命者]] — 
-- [[factions/混沌恶魔/units/karanak-2|卡拉纳克]] — 
-- [[factions/混沌恶魔/units/karanak|卡拉纳克]] — 
-- [[factions/混沌恶魔/units/changecaster|变化使]] — 
-- [[factions/混沌恶魔/units/the-changeling|变化灵]] — 
-- [[factions/混沌恶魔/units/lord-of-change|变化魔君]] — 
-- [[factions/混沌恶魔/units/traitor-enforcer|叛军执法者]] — 
-- [[factions/混沌恶魔/units/traitor-guardsmen-squad|叛变卫队]] — 
-- [[factions/混沌恶魔/units/bloodthirster|嗜血狂魔]] — 
-- [[factions/混沌恶魔/units/horticulous-slimux|园艺师史莱姆克斯]] — 
-- [[factions/混沌恶魔/units/hellflayer|地狱剥皮机]] — 
-- [[factions/混沌恶魔/units/hellflayers|地狱剥皮机]] — 
-- [[factions/混沌恶魔/units/spoilpox-scrivener|坏疹记账官]] — 
-- [[factions/混沌恶魔/units/shalaxi-helbane|夏拉希·魔灾]] — 
-- [[factions/混沌恶魔/units/great-unclean-one|大不净者]] — 
-- [[factions/混沌恶魔/units/skulltaker|夺颅者]] — 
-- [[factions/混沌恶魔/units/keeper-of-secrets|守密者]] — 
-- [[factions/混沌恶魔/units/seekers|寻觅者]] — 
-- [[factions/混沌恶魔/units/screamers|尖啸魔]] — 
-- [[factions/混沌恶魔/units/sorcerer|巫师]] — 
-- [[factions/混沌恶魔/units/syllesske|希尔艾斯克]] — 
-- [[factions/混沌恶魔/units/fluxmaster|幻变之主]] — 
-- [[factions/混沌恶魔/units/fellgor-beastmen|恶角野兽人]] — 
-- [[factions/混沌恶魔/units/contorted-epitome|扭曲魔镜]] — 
-- [[factions/混沌恶魔/units/plaguebearers|携疫者]] — 
-- [[factions/混沌恶魔/units/bloodletters|放血鬼]] — 
-- [[factions/混沌恶魔/units/skarbrand|斯卡布兰德]] — 
-- [[factions/混沌恶魔/units/daemon-prince-of-chaos-with-wings|有翼混沌恶魔王子]] — 
-- [[factions/混沌恶魔/units/warp-talons|次元爪]] — 
-- [[factions/混沌恶魔/units/fiends|欢愉魔]] — 
-- [[factions/混沌恶魔/units/belakor|比拉克]] — 
-- [[factions/混沌恶魔/units/feculent-gnarlmaw|污秽瘤木]] — 
-- [[factions/混沌恶魔/units/havocs|浩劫]] — 
-- [[factions/混沌恶魔/units/daemon-prince-of-chaos|混沌恶魔王子]] — 
-- [[factions/混沌恶魔/units/chaos-terminator-squad|混沌终结者]] — 
-- [[factions/混沌恶魔/units/chaos-lord|混沌领主]] — 
-- [[factions/混沌恶魔/units/flamers|火妖]] — 
-- [[factions/混沌恶魔/units/infernal-enrapturess|炼狱琴魔]] — 
-- [[factions/混沌恶魔/units/rotigus|烂格斯]] — 
-- [[factions/混沌恶魔/units/sloppity-bilepiper|烂芋笛手]] — 
-- [[factions/混沌恶魔/units/burning-chariot|燃烧战车]] — 
-- [[factions/混沌恶魔/units/raptors|猛禽]] — 
-- [[factions/混沌恶魔/units/poxbringer|疱疹使者]] — 
-- [[factions/混沌恶魔/units/tormentbringer|痛苦使者]] — 
-- [[factions/混沌恶魔/units/plague-drones|瘟疫先蜂]] — 
-- [[factions/混沌恶魔/units/bloodcrushers|碾血骑兵]] — 
-- [[factions/混沌恶魔/units/soul-grinder|磨魂者]] — 
-- [[factions/混沌恶魔/units/exalted-flamer|神尊火妖]] — 
-- [[factions/混沌恶魔/units/chosen|神选战士]] — 
-- [[factions/混沌恶魔/units/fateskimmer|窥命者]] — 
-- [[factions/混沌恶魔/units/pink-horrors|粉惧妖]] — 
-- [[factions/混沌恶魔/units/beasts-of-nurgle|纳垢兽]] — 
-- [[factions/混沌恶魔/units/nurglings|纳垢灵]] — 
-- [[factions/混沌恶魔/units/tranceweaver|织幻者]] — 
-- [[factions/混沌恶魔/units/sorcerer-in-terminator-armour|终结者巫师]] — 
-- [[factions/混沌恶魔/units/chaos-lord-in-terminator-armour|终结者领主]] — 
-- [[factions/混沌恶魔/units/the-masque-of-slaanesh|色孽假面]] — 
-- [[factions/混沌恶魔/units/the-blue-scribes|蓝书吏]] — 
-- [[factions/混沌恶魔/units/blue-horrors|蓝惧妖]] — 
-- [[factions/混沌恶魔/units/flesh-hounds|血猎犬]] — 
-- [[factions/混沌恶魔/units/epidemius|计患官艾皮德缪斯]] — 
-- [[factions/混沌恶魔/units/accursed-cultists|诅咒教徒]] — 
-- [[factions/混沌恶魔/units/chaos-lord-with-jump-pack|跳跃背包混沌领主]] — 
-- [[factions/混沌恶魔/units/cultist-mob|邪教徒]] — 
-- [[factions/混沌恶魔/units/cultist-firebrand|邪教徒纵火者]] — 
-- [[factions/混沌恶魔/units/master-of-possession|附魔大师]] — 
-- [[factions/混沌恶魔/units/possessed|附魔战士]] — 
-- [[factions/混沌恶魔/units/skullmaster|颅骨主宰]] — 
-- [[factions/混沌恶魔/units/skull-cannon|颅骨大炮]] — 
-- [[factions/混沌恶魔/units/skull-altar|颅骨祭坛]] — 
-- [[factions/混沌恶魔/units/daemonettes|魅魔]] — 
-- [[factions/混沌恶魔/units/bloodmaster|鲜血之主]] — 
-- [[factions/混沌恶魔/units/dark-apostle|黑暗使徒]] — 
-- [[factions/混沌恶魔/units/dark-commune|黑暗巫会]] — 
+- [[factions/混沌恶魔/units/aetaosraukeres|Aetaos’rau’keres]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
+- [[factions/混沌恶魔/units/anggrath-the-unbound|An’ggrath the Unbound]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
+- [[factions/混沌恶魔/units/chaos-lord-on-disc-of-tzeentch|Chaos Lord On Disc Of Tzeentch]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
+- [[factions/混沌恶魔/units/chaos-lord-on-juggernaut|Chaos Lord On Juggernaut]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
+- [[factions/混沌恶魔/units/chaos-lord-on-palanquin-of-nurgle|Chaos Lord On Palanquin Of Nurgle]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
+- [[factions/混沌恶魔/units/chaos-lord-on-steed-of-slaanesh|Chaos Lord On Steed Of Slaanesh]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
+- [[factions/混沌恶魔/units/cultist-mob-with-firearms|Cultist Mob with Firearms]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
+- [[factions/混沌恶魔/units/exalted-seeker-chariot|Exalted Seeker Chariot]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
+- [[factions/混沌恶魔/units/furies|Furies]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
+- [[factions/混沌恶魔/units/gellerpox-infected|Gellerpox Infected]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
+- [[factions/混沌恶魔/units/giant-chaos-spawn|Giant Chaos Spawn]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
+- [[factions/混沌恶魔/units/herald-of-slaanesh-on-steed-of-slaanesh|Herald Of Slaanesh On Steed Of Slaanesh]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
+- [[factions/混沌恶魔/units/mutoid-vermin|Mutoid Vermin]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
+- [[factions/混沌恶魔/units/negavolt-cultists|Negavolt Cultists]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
+- [[factions/混沌恶魔/units/plague-toads|Plague Toads]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
+- [[factions/混沌恶魔/units/pox-riders|Pox Riders]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
+- [[factions/混沌恶魔/units/renegade-enforcer|Renegade Enforcer]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
+- [[factions/混沌恶魔/units/renegade-heavy-weapons-squad|Renegade Heavy Weapons Squad]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
+- [[factions/混沌恶魔/units/renegade-ogryn-beast-handler|Renegade Ogryn Beast Handler]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
+- [[factions/混沌恶魔/units/renegade-ogryn-brutes|Renegade Ogryn Brutes]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
+- [[factions/混沌恶魔/units/renegade-plague-ogryns|Renegade Plague Ogryns]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
+- [[factions/混沌恶魔/units/rogue-psyker|Rogue Psyker]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
+- [[factions/混沌恶魔/units/scabeiathrax-the-bloated|Scabeiathrax The Bloated]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
+- [[factions/混沌恶魔/units/seeker-chariot|Seeker Chariot]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
+- [[factions/混沌恶魔/units/sorcerer-on-disc-of-tzeentch|Sorcerer On Disc Of Tzeentch]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
+- [[factions/混沌恶魔/units/sorcerer-on-palanquin-of-nurgle|Sorcerer On Palanquin Of Nurgle]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
+- [[factions/混沌恶魔/units/sorcerer-on-steed-of-slaanesh|Sorcerer On Steed Of Slaanesh]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
+- [[factions/混沌恶魔/units/spined-chaos-beast|Spined Chaos Beast]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
+- [[factions/混沌恶魔/units/tormentbringer-on-exalted-seeker-chariot|Tormentbringer On Exalted Seeker Chariot]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
+- [[factions/混沌恶魔/units/zarakynel|Zarakynel]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
+- [[factions/混沌恶魔/units/rendmaster-on-blood-throne|乘鲜血王座的裂肉主宰]]
+- [[factions/混沌恶魔/units/legionaries|军团战士]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
+- [[factions/混沌恶魔/units/kairos-fateweaver|凯洛斯·织命者]]
+- [[factions/混沌恶魔/units/karanak-2|卡拉纳克]]
+- [[factions/混沌恶魔/units/karanak|卡拉纳克]]
+- [[factions/混沌恶魔/units/changecaster|变化使]]
+- [[factions/混沌恶魔/units/the-changeling|变化灵]]
+- [[factions/混沌恶魔/units/lord-of-change|变化魔君]]
+- [[factions/混沌恶魔/units/traitor-enforcer|叛军执法者]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
+- [[factions/混沌恶魔/units/traitor-guardsmen-squad|叛变卫队]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
+- [[factions/混沌恶魔/units/bloodthirster|嗜血狂魔]]
+- [[factions/混沌恶魔/units/horticulous-slimux|园艺师史莱姆克斯]]
+- [[factions/混沌恶魔/units/hellflayer|地狱剥皮机]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
+- [[factions/混沌恶魔/units/hellflayers|地狱剥皮机]]
+- [[factions/混沌恶魔/units/spoilpox-scrivener|坏疹记账官]]
+- [[factions/混沌恶魔/units/shalaxi-helbane|夏拉希·魔灾]]
+- [[factions/混沌恶魔/units/great-unclean-one|大不净者]]
+- [[factions/混沌恶魔/units/skulltaker|夺颅者]]
+- [[factions/混沌恶魔/units/keeper-of-secrets|守密者]]
+- [[factions/混沌恶魔/units/seekers|寻觅者]]
+- [[factions/混沌恶魔/units/screamers|尖啸魔]]
+- [[factions/混沌恶魔/units/sorcerer|巫师]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
+- [[factions/混沌恶魔/units/syllesske|希尔艾斯克]]
+- [[factions/混沌恶魔/units/fluxmaster|幻变之主]]
+- [[factions/混沌恶魔/units/fellgor-beastmen|恶角野兽人]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
+- [[factions/混沌恶魔/units/contorted-epitome|扭曲魔镜]]
+- [[factions/混沌恶魔/units/plaguebearers|携疫者]]
+- [[factions/混沌恶魔/units/bloodletters|放血鬼]]
+- [[factions/混沌恶魔/units/skarbrand|斯卡布兰德]]
+- [[factions/混沌恶魔/units/daemon-prince-of-chaos-with-wings|有翼混沌恶魔王子]]
+- [[factions/混沌恶魔/units/warp-talons|次元爪]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
+- [[factions/混沌恶魔/units/fiends|欢愉魔]]
+- [[factions/混沌恶魔/units/belakor|比拉克]]
+- [[factions/混沌恶魔/units/feculent-gnarlmaw|污秽瘤木]]
+- [[factions/混沌恶魔/units/havocs|浩劫]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
+- [[factions/混沌恶魔/units/daemon-prince-of-chaos|混沌恶魔王子]]
+- [[factions/混沌恶魔/units/chaos-terminator-squad|混沌终结者]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
+- [[factions/混沌恶魔/units/chaos-lord|混沌领主]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
+- [[factions/混沌恶魔/units/flamers|火妖]]
+- [[factions/混沌恶魔/units/infernal-enrapturess|炼狱琴魔]]
+- [[factions/混沌恶魔/units/rotigus|烂格斯]]
+- [[factions/混沌恶魔/units/sloppity-bilepiper|烂芋笛手]]
+- [[factions/混沌恶魔/units/burning-chariot|燃烧战车]]
+- [[factions/混沌恶魔/units/raptors|猛禽]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
+- [[factions/混沌恶魔/units/poxbringer|疱疹使者]]
+- [[factions/混沌恶魔/units/tormentbringer|痛苦使者]]
+- [[factions/混沌恶魔/units/plague-drones|瘟疫先蜂]]
+- [[factions/混沌恶魔/units/bloodcrushers|碾血骑兵]]
+- [[factions/混沌恶魔/units/soul-grinder|磨魂者]]
+- [[factions/混沌恶魔/units/exalted-flamer|神尊火妖]]
+- [[factions/混沌恶魔/units/chosen|神选战士]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
+- [[factions/混沌恶魔/units/fateskimmer|窥命者]]
+- [[factions/混沌恶魔/units/pink-horrors|粉惧妖]]
+- [[factions/混沌恶魔/units/beasts-of-nurgle|纳垢兽]]
+- [[factions/混沌恶魔/units/nurglings|纳垢灵]]
+- [[factions/混沌恶魔/units/tranceweaver|织幻者]]
+- [[factions/混沌恶魔/units/sorcerer-in-terminator-armour|终结者巫师]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
+- [[factions/混沌恶魔/units/chaos-lord-in-terminator-armour|终结者领主]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
+- [[factions/混沌恶魔/units/the-masque-of-slaanesh|色孽假面]]
+- [[factions/混沌恶魔/units/the-blue-scribes|蓝书吏]]
+- [[factions/混沌恶魔/units/blue-horrors|蓝惧妖]]
+- [[factions/混沌恶魔/units/flesh-hounds|血猎犬]]
+- [[factions/混沌恶魔/units/epidemius|计患官艾皮德缪斯]]
+- [[factions/混沌恶魔/units/accursed-cultists|诅咒教徒]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
+- [[factions/混沌恶魔/units/chaos-lord-with-jump-pack|跳跃背包混沌领主]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
+- [[factions/混沌恶魔/units/cultist-mob|邪教徒]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
+- [[factions/混沌恶魔/units/cultist-firebrand|邪教徒纵火者]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
+- [[factions/混沌恶魔/units/master-of-possession|附魔大师]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
+- [[factions/混沌恶魔/units/possessed|附魔战士]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
+- [[factions/混沌恶魔/units/skullmaster|颅骨主宰]]
+- [[factions/混沌恶魔/units/skull-cannon|颅骨大炮]]
+- [[factions/混沌恶魔/units/skull-altar|颅骨祭坛]]
+- [[factions/混沌恶魔/units/daemonettes|魅魔]]
+- [[factions/混沌恶魔/units/bloodmaster|鲜血之主]]
+- [[factions/混沌恶魔/units/dark-apostle|黑暗使徒]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
+- [[factions/混沌恶魔/units/dark-commune|黑暗巫会]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
 
 ## 策略技能
 
@@ -196,7 +196,7 @@
 
 ## 强化
 
-- [[factions/混沌恶魔/enhancements/bane-forged-weapons|Bane-forged Weapons]] — 分数未知、次元魔潮 分队。
+- [[factions/混沌恶魔/enhancements/bane-forged-weapons|Bane-forged Weapons]] — 15 分、次元魔潮 分队。
 - [[factions/混沌恶魔/enhancements/dreaming-crown-aura|Dreaming Crown (Aura)]] — 30 分、恣肆军团 分队。
 - [[factions/混沌恶魔/enhancements/endless-gift|Endless Gift]] — 0 分、Rotten and Rusted 分队。
 - [[factions/混沌恶魔/enhancements/fade-to-darkness|Fade to Darkness]] — 30 分、暗影军团 分队。
@@ -207,26 +207,26 @@
 - [[factions/混沌恶魔/enhancements/horrifying-visage|Horrifying Visage]] — 0 分、Dread Carnival 分队。
 - [[factions/混沌恶魔/enhancements/mantle-of-gloom-aura|Mantle of Gloom (Aura)]] — 20 分、暗影军团 分队。
 - [[factions/混沌恶魔/enhancements/mutagenic-flames|Mutagenic Flames]] — 0 分、Pandaemoniac Inferno 分队。
-- [[factions/混沌恶魔/enhancements/soul-hungry-slaughterers|Soul-hungry Slaughterers]] — 分数未知、次元魔潮 分队。
+- [[factions/混沌恶魔/enhancements/soul-hungry-slaughterers|Soul-hungry Slaughterers]] — 10 分、次元魔潮 分队。
 - [[factions/混沌恶魔/enhancements/spite-made-manifest|Spite Made Manifest]] — 0 分、恶魔入侵 分队。
 - [[factions/混沌恶魔/enhancements/unholy-fury|Unholy Fury]] — 0 分、Infernal Onslaught 分队。
 - [[factions/混沌恶魔/enhancements/virulent-corruption|Virulent Corruption]] — 0 分、Rotten and Rusted 分队。
 - [[factions/混沌恶魔/enhancements/worthier-skulls|Worthier Skulls]] — 0 分、Infernal Onslaught 分队。
-- [[factions/混沌恶魔/enhancements/swollen-with-power|充足力量]] — 分数未知、亚空间领主 分队。
-- [[factions/混沌恶魔/enhancements/neverblade|变形利刃]] — 20 分、闪耀军团 分队。
+- [[factions/混沌恶魔/enhancements/swollen-with-power|充足力量]] — 10 分、亚空间领主 分队。
+- [[factions/混沌恶魔/enhancements/neverblade|变形利刃]] — 25 分、闪耀军团 分队。
 - [[factions/混沌恶魔/enhancements/improbable-shield-aura|奇异护盾（光环）]] — 30 分、闪耀军团 分队。
 - [[factions/混沌恶魔/enhancements/font-of-spores-aura|孢子洗礼（光环)]] — 20 分、瘟疫军团 分队。
 - [[factions/混沌恶魔/enhancements/avatar-of-perfection|完美化身]] — 15 分、恣肆军团 分队。
 - [[factions/混沌恶魔/enhancements/furys-cage|怒火牢笼]] — 20 分、鲜血军团 分队。
 - [[factions/混沌恶魔/enhancements/malice-made-manifest|恶念化身]] — 25 分、暗影军团 分队。
 - [[factions/混沌恶魔/enhancements/the-endless-gift|无尽赠礼]] — 30 分、恶魔入侵 分队。
-- [[factions/混沌恶魔/enhancements/apocalyptic-steeds|末日坐骑]] — 分数未知、混沌骑兵队 分队。
+- [[factions/混沌恶魔/enhancements/apocalyptic-steeds|末日坐骑]] — 10 分、混沌骑兵队 分队。
 - [[factions/混沌恶魔/enhancements/slaughterthirst-aura|杀戮渴望（光环）]] — 25 分、鲜血军团 分队。
 - [[factions/混沌恶魔/enhancements/the-everstave|永恒魔杖]] — 25 分、恶魔入侵 分队。
 - [[factions/混沌恶魔/enhancements/cankerblight|溃烂瘟疫（光环)]] — 15 分、瘟疫军团 分队。
-- [[factions/混沌恶魔/enhancements/inescapable-eye|火眼金睛]] — 10 分、闪耀军团 分队。
-- [[factions/混沌恶魔/enhancements/infernal-puppeteer|炼狱操偶师]] — 25 分、闪耀军团 分队。
-- [[factions/混沌恶魔/enhancements/soul-shattering-charge|碎魂冲撞]] — 分数未知、混沌骑兵队 分队。
+- [[factions/混沌恶魔/enhancements/inescapable-eye|火眼金睛]] — 15 分、闪耀军团 分队。
+- [[factions/混沌恶魔/enhancements/infernal-puppeteer|炼狱操偶师]] — 20 分、闪耀军团 分队。
+- [[factions/混沌恶魔/enhancements/soul-shattering-charge|碎魂冲撞]] — 10 分、混沌骑兵队 分队。
 - [[factions/混沌恶魔/enhancements/soulstealer|窃魂剑]] — 15 分、恶魔入侵 分队。
 - [[factions/混沌恶魔/enhancements/droning-shroud-aura|虫鸣斗篷（光环)]] — 35 分、瘟疫军团 分队。
 - [[factions/混沌恶魔/enhancements/maggot-maws|蛆虫之口]] — 15 分、瘟疫军团 分队。

@@ -4,17 +4,16 @@ name_zh: 织星者飞艇
 name_en: Starweaver
 faction: 黑暗灵族
 type: unit
-points:
-  1 model: 80
 tags:
 - unit
 - unit/黑暗灵族
 - 黑暗灵族
 version:
+  points: historical / unmatched
   source: official-db
 sources:
 - book: 官方结构库 db/wh40k.sqlite（Wahapedia 11版镜像 + MFM 官方点数）
-updated: '2026-07-23'
+updated: '2026-09-14'
 ---
 
 ## 属性表
@@ -40,6 +39,7 @@ updated: '2026-07-23'
 - **快速上车**：近战阶段结束时，如果此时没有模型搭乘该运输载具，你可以选择一个完全位于其6寸内的模型数量小于等于6个的友方丑角步兵单位，除非上述单位位于敌方单位的近战范围内，否则上述单位可以搭乘该运输载具。那个单位可以在脱离该载具的回合中搭乘这个载具。
 
 ## 单位构成
+历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
 - **1个模型** — 80 分
 
 ## 关键词

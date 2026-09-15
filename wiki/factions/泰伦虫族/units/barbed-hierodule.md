@@ -3,17 +3,21 @@ id: '000000503'
 name_en: Barbed Hierodule
 faction: 泰伦虫族
 type: unit
-points:
-  1 model: 340
 tags:
 - unit
 - unit/泰伦虫族
 - 泰伦虫族
 version:
+  points: historical / unmatched
   source: official-db
 sources:
-- book: 官方结构库 db/wh40k.sqlite（Wahapedia 11版镜像 + MFM 官方点数）
-updated: '2026-07-23'
+- book: 'Faction Pack: Tyranids'
+  pages:
+  - 28
+- book: 'Faction Pack: Tyranids'
+  pages:
+  - 29
+updated: '2026-09-14'
 ---
 
 ## 属性表
@@ -35,8 +39,9 @@ updated: '2026-07-23'
 - **Overgrown Barbs**：In your Shooting phase, after this model has shot, select one enemy unit (excluding <span class="kwb">TITANIC</span> units) that was hit by one or more of those attacks. Until the start of your next turn, while this model is on the battlefield, that enemy unit is suppressed. While a unit is suppressed, each time a model in that unit makes an attack, subtract 1 from the Hit roll.
 
 ## 单位构成
+历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
 - **1个模型** — 340 分
 
 ## 关键词
 - **阵营关键词**：Tyranids
-- **普通关键词**：Monster，Great Devourer，Barbed Hierodule
+- **普通关键词**：Monster，Great Devourer，Barbed Hierodule，FRAME

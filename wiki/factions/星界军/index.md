@@ -18,140 +18,140 @@
 
 ## 单位
 
-- [[factions/星界军/units/aquila-lander|Aquila Lander]] — 
-- [[factions/星界军/units/arkurian-stormhammer|Arkurian Stormhammer]] — 
-- [[factions/星界军/units/armageddon-pattern-medusa|Armageddon-pattern Medusa]] — 
-- [[factions/星界军/units/arvus-lighter|Arvus Lighter]] — 
-- [[factions/星界军/units/atlas-recovery-vehicle|Atlas Recovery Vehicle]] — 
-- [[factions/星界军/units/carnodon|Carnodon]] — 
-- [[factions/星界军/units/centaur-light-carrier|Centaur Light Carrier]] — 
-- [[factions/星界军/units/colossus|Colossus]] — 
-- [[factions/星界军/units/crassus|Crassus]] — 
-- [[factions/星界军/units/death-korps-grenadier-squad|Death Korps Grenadier Squad]] — 
-- [[factions/星界军/units/death-rider-commissar|Death Rider Commissar]] — 
-- [[factions/星界军/units/dominus-armoured-siege-bombard|Dominus Armoured Siege Bombard]] — 
-- [[factions/星界军/units/earthshaker-carriage-battery|Earthshaker Carriage Battery]] — 
-- [[factions/星界军/units/earthshaker-platform|Earthshaker Platform]] — 
-- [[factions/星界军/units/elysian-drop-sentinel|Elysian Drop Sentinel]] — 
-- [[factions/星界军/units/elysian-sniper-squad|Elysian Sniper Squad]] — 
-- [[factions/星界军/units/gorgon-heavy-transport|Gorgon Heavy Transport]] — 
-- [[factions/星界军/units/griffon-mortar-carrier|Griffon Mortar Carrier]] — 
-- [[factions/星界军/units/hades-breaching-drill|Hades Breaching Drill]] — 
-- [[factions/星界军/units/heavy-mortar-team|Heavy Mortar Team]] — 
-- [[factions/星界军/units/heavy-quad-launcher-team|Heavy Quad Launcher Team]] — 
-- [[factions/星界军/units/hydra-platform|Hydra Platform]] — 
-- [[factions/星界军/units/macharius|Macharius]] — 
-- [[factions/星界军/units/macharius-omega|Macharius Omega]] — 
-- [[factions/星界军/units/macharius-vanquisher|Macharius Vanquisher]] — 
-- [[factions/星界军/units/macharius-vulcan|Macharius Vulcan]] — 
-- [[factions/星界军/units/malcador|Malcador]] — 
-- [[factions/星界军/units/malcador-annihilator|Malcador Annihilator]] — 
-- [[factions/星界军/units/malcador-defender|Malcador Defender]] — 
-- [[factions/星界军/units/malcador-infernus|Malcador Infernus]] — 
-- [[factions/星界军/units/manticore-platform|Manticore Platform]] — 
-- [[factions/星界军/units/marauder-bomber|Marauder Bomber]] — 
-- [[factions/星界军/units/marauder-destroyer|Marauder Destroyer]] — 
-- [[factions/星界军/units/medusa-carriage-battery|Medusa Carriage Battery]] — 
-- [[factions/星界军/units/minotaur|Minotaur]] — 
-- [[factions/星界军/units/mukaali-riders|Mukaali Riders]] — 
-- [[factions/星界军/units/munitorum-servitors|Munitorum Servitors]] — 
-- [[factions/星界军/units/praetor|Praetor]] — 
-- [[factions/星界军/units/provisionally-prepared|Provisionally Prepared]] — 
-- [[factions/星界军/units/quartermaster-cadre-squad|Quartermaster Cadre Squad]] — 
-- [[factions/星界军/units/rapier-laser-destroyer-battery|Rapier Laser Destroyer Battery]] — 
-- [[factions/星界军/units/regimental-attachés|Regimental Attachés]] — 
-- [[factions/星界军/units/rein-and-raus|Rein And Raus]] — 
-- [[factions/星界军/units/sabre-weapons-battery|Sabre Weapons Battery]] — 
-- [[factions/星界军/units/salamander-command-vehicle|Salamander Command Vehicle]] — 
-- [[factions/星界军/units/salamander-scout-vehicle|Salamander Scout Vehicle]] — 
-- [[factions/星界军/units/sentinel-powerlifter|Sentinel Powerlifter]] — 
-- [[factions/星界军/units/sergeant-harker|Sergeant Harker]] — 
-- [[factions/星界军/units/storm-chimera|Storm Chimera]] — 
-- [[factions/星界军/units/stormblade|Stormblade]] — 
-- [[factions/星界军/units/stygies-destroyer-tank-hunter|Stygies Destroyer Tank Hunter]] — 
-- [[factions/星界军/units/tarantula-battery|Tarantula Battery]] — 
-- [[factions/星界军/units/tauros-assault-vehicle|Tauros Assault Vehicle]] — 
-- [[factions/星界军/units/tauros-venator|Tauros Venator]] — 
-- [[factions/星界军/units/trojan-support-vehicle|Trojan Support Vehicle]] — 
-- [[factions/星界军/units/valdor|Valdor]] — 
-- [[factions/星界军/units/valkyrie-sky-talon|Valkyrie Sky Talon]] — 
-- [[factions/星界军/units/vendetta-gunship|Vendetta Gunship]] — 
-- [[factions/星界军/units/voss-pattern-lightning|Voss-pattern Lightning]] — 
-- [[factions/星界军/units/vulture-gunship|Vulture Gunship]] — 
-- [[factions/星界军/units/iron-hand-straken|‘Iron Hand’ Straken]] — 
-- [[factions/星界军/units/hells-last|【传奇】地狱之末]] — 
-- [[factions/星界军/units/hydra|九头蛇高射炮]] — 
-- [[factions/星界军/units/commissar-yarrick|亚瑞克政委]] — 
-- [[factions/星界军/units/scout-sentinels|侦查哨兵]] — 
-- [[factions/星界军/units/nork-deddog|保镖诺克]] — 
-- [[factions/星界军/units/ursula-creed|克里德堡主]] — 
-- [[factions/星界军/units/krieg-combat-engineers|克里格战斗工兵]] — 
-- [[factions/星界军/units/krieg-command-squad|克里格指挥组]] — 
-- [[factions/星界军/units/death-riders|克里格死亡骑兵]] — 
-- [[factions/星界军/units/death-korps-of-krieg|克里格死兵队]] — 
-- [[factions/星界军/units/krieg-heavy-weapons-squad|克里格重型武器小队]] — 
-- [[factions/星界军/units/gaunts-ghosts|刚特的幽灵]] — 
-- [[factions/星界军/units/centaur-rsv|半人马快速突击战车]] — 
-- [[factions/星界军/units/catachan-jungle-fighters|卡塔昌丛林战士]] — 
-- [[factions/星界军/units/catachan-command-squad|卡塔昌指挥组]] — 
-- [[factions/星界军/units/catachan-heavy-weapons-squad|卡塔昌重型武器小队]] — 
-- [[factions/星界军/units/kasrkin|卡舍津突击队]] — 
-- [[factions/星界军/units/cadian-recon-squad|卡迪亚侦察小队]] — 
-- [[factions/星界军/units/cadian-heavy-weapons-squad|卡迪亚重型武器小队]] — 
-- [[factions/星界军/units/cadian-castellan|卡迪安堡主]] — 
-- [[factions/星界军/units/cadian-command-squad|卡迪安指挥组]] — 
-- [[factions/星界军/units/cadian-shock-troops|卡迪安突击队]] — 
-- [[factions/星界军/units/wyvern|双足飞龙自行火炮]] — 
-- [[factions/星界军/units/hellhammer|地狱之锤]] — 
-- [[factions/星界军/units/hellhound|地狱犬喷射车]] — 
-- [[factions/星界军/units/avenger-strike-fighter|复仇者攻击机]] — 
-- [[factions/星界军/units/lord-marshal-dreir|大元帅德雷尔]] — 
-- [[factions/星界军/units/lord-solar-leontus|太阳元帅雷昂图斯]] — 
-- [[factions/星界军/units/chimera|奇美拉装甲车]] — 
-- [[factions/星界军/units/valkyrie|女武神炮艇]] — 
-- [[factions/星界军/units/shadowsword|影剑]] — 
-- [[factions/星界军/units/tech-priest-enginseer|技术技师机械教士]] — 
-- [[factions/星界军/units/commissar|政委]] — 
-- [[factions/星界军/units/ministorum-priest|教廷牧师]] — 
-- [[factions/星界军/units/sly-marbo|斯莱·马博]] — 
-- [[factions/星界军/units/doomhammer|末日之锤]] — 
-- [[factions/星界军/units/commissar-graves|格雷夫斯政委]] — 
-- [[factions/星界军/units/ogryn-bodyguard|欧格林保镖]] — 
-- [[factions/星界军/units/ogryn-squad|欧格林小队]] — 
-- [[factions/星界军/units/commissar-graves-on-foot|步行的格雷夫斯政委]] — 
-- [[factions/星界军/units/deathstrike|死亡直击导弹车]] — 
-- [[factions/星界军/units/banesword|毁灭之剑]] — 
-- [[factions/星界军/units/banehammer|毁灭之锤]] — 
-- [[factions/星界军/units/baneblade|毒刃]] — 
-- [[factions/星界军/units/primaris-psyker|灵能导师]] — 
-- [[factions/星界军/units/artillery-team|炮兵小组]] — 
-- [[factions/星界军/units/bullgryn-squad|牛格林小队]] — 
-- [[factions/星界军/units/cyclops-demolition-vehicle|独眼巨人爆破车]] — 
-- [[factions/星界军/units/basilisk|石化蜥蜴自行火炮]] — 
-- [[factions/星界军/units/aegis-defence-line|神盾防御墙]] — 
-- [[factions/星界军/units/rogal-dorn-battle-tank|罗格多恩坦克]] — 
-- [[factions/星界军/units/rogal-dorn-commander|罗格多恩指挥官]] — 
-- [[factions/星界军/units/ratlings|莱特林]] — 
-- [[factions/星界军/units/manticore|蝎尾狮火箭炮]] — 
-- [[factions/星界军/units/armoured-sentinels|装甲哨兵]] — 
-- [[factions/星界军/units/field-ordnance-battery|野战炮兵]] — 
-- [[factions/星界军/units/taurox|野牛装甲车]] — 
-- [[factions/星界军/units/taurox-prime|金牛装甲车]] — 
-- [[factions/星界军/units/attilan-rough-riders|阿提拉蛮骑兵]] — 
-- [[factions/星界军/units/stormsword|风暴之剑]] — 
-- [[factions/星界军/units/militarum-tempestus-command-squad|风暴兵指挥组]] — 
-- [[factions/星界军/units/tempestus-aquilons|风暴天鹰]] — 
-- [[factions/星界军/units/tempestus-scions|风暴忠嗣军小队]] — 
-- [[factions/星界军/units/stormlord|风暴领主]] — 
-- [[factions/星界军/units/hippogriff-afv|鹫马装甲战车]] — 
-- [[factions/星界军/units/leman-russ-executioner|黎曼鲁斯处决者]] — 
-- [[factions/星界军/units/leman-russ-punisher|黎曼鲁斯惩罚者]] — 
-- [[factions/星界军/units/leman-russ-battle-tank|黎曼鲁斯战斗坦克]] — 
-- [[factions/星界军/units/leman-russ-commander|黎曼鲁斯指挥官]] — 
-- [[factions/星界军/units/leman-russ-eradicator|黎曼鲁斯根除者]] — 
-- [[factions/星界军/units/leman-russ-exterminator|黎曼鲁斯灭绝者]] — 
-- [[factions/星界军/units/leman-russ-demolisher|黎曼鲁斯破坏者]] — 
-- [[factions/星界军/units/leman-russ-vanquisher|黎曼鲁斯胜利者]] — 
+- [[factions/星界军/units/aquila-lander|Aquila Lander]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
+- [[factions/星界军/units/arkurian-stormhammer|Arkurian Stormhammer]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
+- [[factions/星界军/units/armageddon-pattern-medusa|Armageddon-pattern Medusa]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
+- [[factions/星界军/units/arvus-lighter|Arvus Lighter]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
+- [[factions/星界军/units/atlas-recovery-vehicle|Atlas Recovery Vehicle]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
+- [[factions/星界军/units/carnodon|Carnodon]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
+- [[factions/星界军/units/centaur-light-carrier|Centaur Light Carrier]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
+- [[factions/星界军/units/colossus|Colossus]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
+- [[factions/星界军/units/crassus|Crassus]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
+- [[factions/星界军/units/death-korps-grenadier-squad|Death Korps Grenadier Squad]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
+- [[factions/星界军/units/death-rider-commissar|Death Rider Commissar]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
+- [[factions/星界军/units/dominus-armoured-siege-bombard|Dominus Armoured Siege Bombard]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
+- [[factions/星界军/units/earthshaker-carriage-battery|Earthshaker Carriage Battery]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
+- [[factions/星界军/units/earthshaker-platform|Earthshaker Platform]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
+- [[factions/星界军/units/elysian-drop-sentinel|Elysian Drop Sentinel]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
+- [[factions/星界军/units/elysian-sniper-squad|Elysian Sniper Squad]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
+- [[factions/星界军/units/gorgon-heavy-transport|Gorgon Heavy Transport]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
+- [[factions/星界军/units/griffon-mortar-carrier|Griffon Mortar Carrier]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
+- [[factions/星界军/units/hades-breaching-drill|Hades Breaching Drill]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
+- [[factions/星界军/units/heavy-mortar-team|Heavy Mortar Team]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
+- [[factions/星界军/units/heavy-quad-launcher-team|Heavy Quad Launcher Team]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
+- [[factions/星界军/units/hydra-platform|Hydra Platform]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
+- [[factions/星界军/units/macharius|Macharius]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
+- [[factions/星界军/units/macharius-omega|Macharius Omega]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
+- [[factions/星界军/units/macharius-vanquisher|Macharius Vanquisher]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
+- [[factions/星界军/units/macharius-vulcan|Macharius Vulcan]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
+- [[factions/星界军/units/malcador|Malcador]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
+- [[factions/星界军/units/malcador-annihilator|Malcador Annihilator]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
+- [[factions/星界军/units/malcador-defender|Malcador Defender]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
+- [[factions/星界军/units/malcador-infernus|Malcador Infernus]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
+- [[factions/星界军/units/manticore-platform|Manticore Platform]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
+- [[factions/星界军/units/marauder-bomber|Marauder Bomber]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
+- [[factions/星界军/units/marauder-destroyer|Marauder Destroyer]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
+- [[factions/星界军/units/medusa-carriage-battery|Medusa Carriage Battery]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
+- [[factions/星界军/units/minotaur|Minotaur]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
+- [[factions/星界军/units/mukaali-riders|Mukaali Riders]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
+- [[factions/星界军/units/munitorum-servitors|Munitorum Servitors]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
+- [[factions/星界军/units/praetor|Praetor]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
+- [[factions/星界军/units/provisionally-prepared|Provisionally Prepared]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
+- [[factions/星界军/units/quartermaster-cadre-squad|Quartermaster Cadre Squad]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
+- [[factions/星界军/units/rapier-laser-destroyer-battery|Rapier Laser Destroyer Battery]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
+- [[factions/星界军/units/regimental-attachés|Regimental Attachés]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
+- [[factions/星界军/units/rein-and-raus|Rein And Raus]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
+- [[factions/星界军/units/sabre-weapons-battery|Sabre Weapons Battery]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
+- [[factions/星界军/units/salamander-command-vehicle|Salamander Command Vehicle]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
+- [[factions/星界军/units/salamander-scout-vehicle|Salamander Scout Vehicle]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
+- [[factions/星界军/units/sentinel-powerlifter|Sentinel Powerlifter]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
+- [[factions/星界军/units/sergeant-harker|Sergeant Harker]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
+- [[factions/星界军/units/storm-chimera|Storm Chimera]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
+- [[factions/星界军/units/stormblade|Stormblade]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
+- [[factions/星界军/units/stygies-destroyer-tank-hunter|Stygies Destroyer Tank Hunter]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
+- [[factions/星界军/units/tarantula-battery|Tarantula Battery]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
+- [[factions/星界军/units/tauros-assault-vehicle|Tauros Assault Vehicle]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
+- [[factions/星界军/units/tauros-venator|Tauros Venator]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
+- [[factions/星界军/units/trojan-support-vehicle|Trojan Support Vehicle]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
+- [[factions/星界军/units/valdor|Valdor]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
+- [[factions/星界军/units/valkyrie-sky-talon|Valkyrie Sky Talon]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
+- [[factions/星界军/units/vendetta-gunship|Vendetta Gunship]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
+- [[factions/星界军/units/voss-pattern-lightning|Voss-pattern Lightning]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
+- [[factions/星界军/units/vulture-gunship|Vulture Gunship]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
+- [[factions/星界军/units/iron-hand-straken|‘Iron Hand’ Straken]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
+- [[factions/星界军/units/hells-last|【传奇】地狱之末]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
+- [[factions/星界军/units/hydra|九头蛇高射炮]]
+- [[factions/星界军/units/commissar-yarrick|亚瑞克政委]]
+- [[factions/星界军/units/scout-sentinels|侦查哨兵]]
+- [[factions/星界军/units/nork-deddog|保镖诺克]]
+- [[factions/星界军/units/ursula-creed|克里德堡主]]
+- [[factions/星界军/units/krieg-combat-engineers|克里格战斗工兵]]
+- [[factions/星界军/units/krieg-command-squad|克里格指挥组]]
+- [[factions/星界军/units/death-riders|克里格死亡骑兵]]
+- [[factions/星界军/units/death-korps-of-krieg|克里格死兵队]]
+- [[factions/星界军/units/krieg-heavy-weapons-squad|克里格重型武器小队]]
+- [[factions/星界军/units/gaunts-ghosts|刚特的幽灵]]
+- [[factions/星界军/units/centaur-rsv|半人马快速突击战车]]
+- [[factions/星界军/units/catachan-jungle-fighters|卡塔昌丛林战士]]
+- [[factions/星界军/units/catachan-command-squad|卡塔昌指挥组]]
+- [[factions/星界军/units/catachan-heavy-weapons-squad|卡塔昌重型武器小队]]
+- [[factions/星界军/units/kasrkin|卡舍津突击队]]
+- [[factions/星界军/units/cadian-recon-squad|卡迪亚侦察小队]]
+- [[factions/星界军/units/cadian-heavy-weapons-squad|卡迪亚重型武器小队]]
+- [[factions/星界军/units/cadian-castellan|卡迪安堡主]]
+- [[factions/星界军/units/cadian-command-squad|卡迪安指挥组]]
+- [[factions/星界军/units/cadian-shock-troops|卡迪安突击队]]
+- [[factions/星界军/units/wyvern|双足飞龙自行火炮]]
+- [[factions/星界军/units/hellhammer|地狱之锤]]
+- [[factions/星界军/units/hellhound|地狱犬喷射车]]
+- [[factions/星界军/units/avenger-strike-fighter|复仇者攻击机]]
+- [[factions/星界军/units/lord-marshal-dreir|大元帅德雷尔]]
+- [[factions/星界军/units/lord-solar-leontus|太阳元帅雷昂图斯]]
+- [[factions/星界军/units/chimera|奇美拉装甲车]]
+- [[factions/星界军/units/valkyrie|女武神炮艇]]
+- [[factions/星界军/units/shadowsword|影剑]]
+- [[factions/星界军/units/tech-priest-enginseer|技术技师机械教士]]
+- [[factions/星界军/units/commissar|政委]]
+- [[factions/星界军/units/ministorum-priest|教廷牧师]]
+- [[factions/星界军/units/sly-marbo|斯莱·马博]]
+- [[factions/星界军/units/doomhammer|末日之锤]]
+- [[factions/星界军/units/commissar-graves|格雷夫斯政委]]
+- [[factions/星界军/units/ogryn-bodyguard|欧格林保镖]]
+- [[factions/星界军/units/ogryn-squad|欧格林小队]]
+- [[factions/星界军/units/commissar-graves-on-foot|步行的格雷夫斯政委]]
+- [[factions/星界军/units/deathstrike|死亡直击导弹车]]
+- [[factions/星界军/units/banesword|毁灭之剑]]
+- [[factions/星界军/units/banehammer|毁灭之锤]]
+- [[factions/星界军/units/baneblade|毒刃]]
+- [[factions/星界军/units/primaris-psyker|灵能导师]]
+- [[factions/星界军/units/artillery-team|炮兵小组]]
+- [[factions/星界军/units/bullgryn-squad|牛格林小队]]
+- [[factions/星界军/units/cyclops-demolition-vehicle|独眼巨人爆破车]]
+- [[factions/星界军/units/basilisk|石化蜥蜴自行火炮]]
+- [[factions/星界军/units/aegis-defence-line|神盾防御墙]]
+- [[factions/星界军/units/rogal-dorn-battle-tank|罗格多恩坦克]]
+- [[factions/星界军/units/rogal-dorn-commander|罗格多恩指挥官]]
+- [[factions/星界军/units/ratlings|莱特林]]
+- [[factions/星界军/units/manticore|蝎尾狮火箭炮]]
+- [[factions/星界军/units/armoured-sentinels|装甲哨兵]]
+- [[factions/星界军/units/field-ordnance-battery|野战炮兵]]
+- [[factions/星界军/units/taurox|野牛装甲车]]
+- [[factions/星界军/units/taurox-prime|金牛装甲车]]
+- [[factions/星界军/units/attilan-rough-riders|阿提拉蛮骑兵]]
+- [[factions/星界军/units/stormsword|风暴之剑]]
+- [[factions/星界军/units/militarum-tempestus-command-squad|风暴兵指挥组]]
+- [[factions/星界军/units/tempestus-aquilons|风暴天鹰]]
+- [[factions/星界军/units/tempestus-scions|风暴忠嗣军小队]]
+- [[factions/星界军/units/stormlord|风暴领主]]
+- [[factions/星界军/units/hippogriff-afv|鹫马装甲战车]]
+- [[factions/星界军/units/leman-russ-executioner|黎曼鲁斯处决者]]
+- [[factions/星界军/units/leman-russ-punisher|黎曼鲁斯惩罚者]]
+- [[factions/星界军/units/leman-russ-battle-tank|黎曼鲁斯战斗坦克]]
+- [[factions/星界军/units/leman-russ-commander|黎曼鲁斯指挥官]]
+- [[factions/星界军/units/leman-russ-eradicator|黎曼鲁斯根除者]]
+- [[factions/星界军/units/leman-russ-exterminator|黎曼鲁斯灭绝者]]
+- [[factions/星界军/units/leman-russ-demolisher|黎曼鲁斯破坏者]]
+- [[factions/星界军/units/leman-russ-vanquisher|黎曼鲁斯胜利者]]
 
 ## 策略技能
 
@@ -230,7 +230,7 @@
 - [[factions/星界军/enhancements/advance-augury|Advance Augury]] — 15 分、Bridgehead Strike 分队。
 - [[factions/星界军/enhancements/assault-hatches|Assault Hatches]] — 25 分、钢铁之锤 分队。
 - [[factions/星界军/enhancements/bold-leadership|Bold Leadership]] — 25 分、Mechanised Assault 分队。
-- [[factions/星界军/enhancements/bombast-class-vox-array|Bombast-class Vox-array]] — 35 分、Bridgehead Strike 分队。
+- [[factions/星界军/enhancements/bombast-class-vox-array|Bombast-class Vox-array]] — 15 分、Bridgehead Strike 分队。
 - [[factions/星界军/enhancements/calm-under-fire|Calm Under Fire]] — 15 分、Hammer of the Emperor 分队。
 - [[factions/星界军/enhancements/covert-breach|Covert Breach]] — 0 分、Tempestus Boarding Regiment 分队。
 - [[factions/星界军/enhancements/death-mask-of-ollanius|Death Mask of Ollanius]] — 10 分、Combined Arms 分队。
@@ -242,11 +242,11 @@
 - [[factions/星界军/enhancements/guerrilla-honours|Guerrilla Honours]] — 25 分、Recon Element 分队。
 - [[factions/星界军/enhancements/indomitable-steed|Indomitable Steed]] — 15 分、Hammer of the Emperor 分队。
 - [[factions/星界军/enhancements/legacy-sidearm|Legacy Sidearm]] — 10 分、Siege Regiment 分队。
-- [[factions/星界军/enhancements/long-range-scout|Long-range Scout]] — 分数未知、指示部队 分队。
+- [[factions/星界军/enhancements/long-range-scout|Long-range Scout]] — 10 分、指示部队 分队。
 - [[factions/星界军/enhancements/master-manoeuvrist|Master Manoeuvrist]] — 15 分、装甲步兵 分队。
-- [[factions/星界军/enhancements/priority-drop-beacon|Priority-drop Beacon]] — 30 分、Bridgehead Strike 分队。
+- [[factions/星界军/enhancements/priority-drop-beacon|Priority-drop Beacon]] — 25 分、Bridgehead Strike 分队。
 - [[factions/星界军/enhancements/reactive-command|Reactive Command]] — 15 分、Combined Arms 分队。
-- [[factions/星界军/enhancements/recon-star|Recon Star]] — 分数未知、指示部队 分队。
+- [[factions/星界军/enhancements/recon-star|Recon Star]] — 10 分、指示部队 分队。
 - [[factions/星界军/enhancements/regimental-banner|Regimental Banner]] — 20 分、Hammer of the Emperor 分队。
 - [[factions/星界军/enhancements/rigged-blind-grenades|Rigged Blind Grenades]] — 0 分、Embarked Regiment 分队。
 - [[factions/星界军/enhancements/sacred-unguents|Sacred Unguents]] — 10 分、Mechanised Assault 分队。
@@ -265,9 +265,9 @@
 - [[factions/星界军/enhancements/grand-strategist-combined-arms|大战略家]] — 15 分、Combined Arms 分队。
 - [[factions/星界军/enhancements/aquilan-eye|天鹰之眼]] — 20 分、老兵连队 分队。
 - [[factions/星界军/enhancements/laud-hailer|扩音器]] — 10 分、老兵连队 分队。
-- [[factions/星界军/enhancements/sharp-eyes-light-fingers|敏锐视觉]] — 分数未知、亚人类辅助军 分队。
+- [[factions/星界军/enhancements/sharp-eyes-light-fingers|敏锐视觉]] — 10 分、亚人类辅助军 分队。
 - [[factions/星界军/enhancements/engine-speaker|机械对话者]] — 15 分、钢铁之锤 分队。
 - [[factions/星界军/enhancements/omnissian-unguents-aura|欧姆尼赛亚的神圣油膏（光环）]] — 35 分、装甲步兵 分队。
 - [[factions/星界军/enhancements/battalion-commander|营部指挥官]] — 30 分、钢铁之锤 分队。
-- [[factions/星界军/enhancements/exemplar-of-duty|责任榜样]] — 分数未知、亚人类辅助军 分队。
+- [[factions/星界军/enhancements/exemplar-of-duty|责任榜样]] — 10 分、亚人类辅助军 分队。
 

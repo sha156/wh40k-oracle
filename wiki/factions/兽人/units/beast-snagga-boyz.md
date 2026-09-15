@@ -5,18 +5,18 @@ name_en: Beast Snagga Boyz
 faction: 兽人
 type: unit
 points:
-  10 models: 90
+  10 models: 85
   20 models: 170
 tags:
 - unit
 - unit/兽人
 - 兽人
 version:
-  points: MFM 2026-07-27 15:14
+  points: MFM 2026-09-14T05:51:23.572407+00:00
   source: official-db
 sources:
 - book: 官方结构库 db/wh40k.sqlite（Wahapedia 11版镜像 + MFM 官方点数）
-updated: '2026-07-23'
+updated: '2026-09-14'
 ---
 
 ## 属性表
@@ -43,9 +43,9 @@ updated: '2026-07-23'
 - **怪物猎手**：本单位模型攻击巨兽或载具时可以重投命中结果
 
 ## 单位构成
-- **10个模型** — 90 分
+- **10个模型** — 85 分
 - **20个模型** — 170 分
 
 ## 关键词
-- **阵营关键词**：兽人
-- **普通关键词**：步兵，战线，兽群，兽霸，兽霸小子
+- **阵营关键词**：Orks
+- **普通关键词**：Mob，[[core-rules/infantry.md|Infantry]]，Beast Snagga [[factions/兽人/units/boyz.md|Boyz]]，[[core-rules/battleline.md|Battleline]]，Beast Snagga

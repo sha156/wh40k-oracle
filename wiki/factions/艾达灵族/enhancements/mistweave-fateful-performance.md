@@ -4,6 +4,7 @@ name_en: Mistweave
 faction: 艾达灵族
 type: enhancement
 detachment: Fateful Performance
+cost: 20
 tags:
 - enhancement
 - enhancement/艾达灵族
@@ -13,11 +14,13 @@ sources:
 updated: '2026-07-26'
 ---
 
-分数未知、[[factions/艾达灵族/detachments/fateful-performance.md|宿命的演出]] 分队。
+20 分、[[factions/艾达灵族/detachments/fateful-performance.md|宿命的演出]] 分队。
 
 ## 效果
 
 This unit has Infiltrators.
+
+**分数**：20 分
 
 ## 携带限制
 

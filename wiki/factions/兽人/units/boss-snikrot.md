@@ -5,17 +5,17 @@ name_en: Boss Snikrot
 faction: 兽人
 type: unit
 points:
-  1 model: 75
+  1 model: 80
 tags:
 - unit
 - unit/兽人
 - 兽人
 version:
-  points: MFM 2026-07-27 15:14
+  points: MFM 2026-09-14T05:51:23.572407+00:00
   source: official-db
 sources:
 - book: 官方结构库 db/wh40k.sqlite（Wahapedia 11版镜像 + MFM 官方点数）
-updated: '2026-07-23'
+updated: '2026-09-14'
 ---
 
 ## 属性表
@@ -43,8 +43,8 @@ updated: '2026-07-23'
 - **狡诈潜伏**：一次性技能，在您的移动阶段中，如果该单位不处于交战状态，您可以使用该技能。若使用：▪ 将该单位放入战略预备队中。▪ 直到阶段结束前，该单位拥有深入打击技能。
 
 ## 单位构成
-- **1个模型** — 75 分
+- **1个模型** — 80 分
 
 ## 关键词
-- **阵营关键词**：兽人
-- **普通关键词**：[[core-rules/infantry.md|步兵]]，[[core-rules/character.md|人物]]，传奇英雄，[[core-rules/grenades.md|手雷]]，烟雾弹，鬼祟鼠
+- **阵营关键词**：Orks
+- **普通关键词**：Boss Snikrot，[[core-rules/epic-hero.md|Epic Hero]]，[[core-rules/smoke.md|Smoke]]，[[core-rules/grenades.md|Grenades]]，[[core-rules/character.md|Character]]，[[core-rules/infantry.md|Infantry]]

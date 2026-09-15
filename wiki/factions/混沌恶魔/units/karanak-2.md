@@ -11,17 +11,19 @@ tags:
 - unit/混沌恶魔
 - 混沌恶魔
 version:
-  points: MFM 2026-07-27 15:14
+  points: MFM 2026-09-14T05:51:23.572407+00:00
   source: official-db
 sources:
-- book: 官方结构库 db/wh40k.sqlite（Wahapedia 11版镜像 + MFM 官方点数）
-updated: '2026-07-23'
+- book: 'Faction Pack: Chaos Daemons'
+  pages:
+  - 26
+updated: '2026-09-14'
 ---
 
 ## 属性表
 | 模型 | M | T | SV | W | LD | OC |
 |---|---|---|---|---|---|---|
-| 卡拉纳克 | 12" | 4 | 7+ | 5 | 7+ | 1 |
+| 卡拉纳克 | 12" | 4 | 7+ | 5 | 7+ | 3 |
 
 ### 特殊保护
 - 4+
@@ -32,9 +34,9 @@ updated: '2026-07-23'
 | 碎魂利齿 | 近战 | 6 | 2+ | 6 | -1 | 2 | [[core-rules/precision.md\|精准]] |
 
 ## 技能
-- **猎群头领**：当该模型领导单位时，你可以重掷那个单位进行的突进和冲锋掷骰。
-- **血神猎物**：在第一战斗轮次开始时，选择一个敌方单位作为该模型的猎物。该模型所属单位中的模型装备的武器在对猎物进行攻击时可以重投造伤骰。每当该模型的猎物被摧毁时，选择一个新的敌方单位作为猎物。
-- **血仇黄铜项圈**：持有者针对灵能攻击和致命伤拥有“不觉疼痛 3+”技能。
+- **Pack Leader**：While this model is leading a unit, you can re-roll Advance and Charge rolls made for that unit.
+- **Prey of the Blood God**：At the start of the first battle round, select one enemy unit to be this model’s prey. Weapons equipped by models in this model’s unit have the [LETHAL HITS] ability when targeting this model’s prey. Each time this model’s prey is destroyed, select one new enemy unit to be this model’s prey.
+- **Collar of Khorne**：The bearer has the Feel No Pain 3+ ability against Psychic Attacks.
 
 ## 单位构成
 - **1个模型** — 70 分

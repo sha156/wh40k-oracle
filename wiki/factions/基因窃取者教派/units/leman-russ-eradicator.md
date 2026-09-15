@@ -4,17 +4,16 @@ name_zh: 黎曼鲁斯根除者
 name_en: Leman Russ Eradicator
 faction: 基因窃取者教派
 type: unit
-points:
-  1 model: 170
 tags:
 - unit
 - unit/基因窃取者教派
 - 基因窃取者教派
 version:
+  points: historical / unmatched
   source: official-db
 sources:
 - book: 官方结构库 db/wh40k.sqlite（Wahapedia 11版镜像 + MFM 官方点数）
-updated: '2026-07-23'
+updated: '2026-09-14'
 ---
 
 ## 属性表
@@ -46,6 +45,7 @@ updated: '2026-07-23'
 - **城市战**：当该单位被选中作为射击武器的目标时，若该单位拥有掩体增益，则这次攻击的破坏力降低1
 
 ## 单位构成
+历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
 - **1个模型** — 170 分
 
 ## 关键词

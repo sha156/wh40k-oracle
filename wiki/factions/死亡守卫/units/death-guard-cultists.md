@@ -3,18 +3,16 @@ id: '000001043'
 name_en: Death Guard Cultists
 faction: 死亡守卫
 type: unit
-points:
-  10 models: 50
-  20 models: 100
 tags:
 - unit
 - unit/死亡守卫
 - 死亡守卫
 version:
+  points: historical / unmatched
   source: official-db
 sources:
 - book: 官方结构库 db/wh40k.sqlite（Wahapedia 11版镜像 + MFM 官方点数）
-updated: '2026-07-23'
+updated: '2026-09-14'
 ---
 
 ## 属性表
@@ -37,6 +35,7 @@ updated: '2026-07-23'
 | 野蛮近战武器 | 近战 | 2 | 4+ | 3 | 0 | 1 | — |
 
 ## 单位构成
+历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
 - **10个模型** — 50 分
 - **20个模型** — 100 分
 

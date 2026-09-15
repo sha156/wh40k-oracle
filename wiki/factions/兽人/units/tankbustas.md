@@ -5,17 +5,17 @@ name_en: Tankbustas
 faction: 兽人
 type: unit
 points:
-  6 models: 125
+  6 models: 145
 tags:
 - unit
 - unit/兽人
 - 兽人
 version:
-  points: MFM 2026-07-27 15:14
+  points: MFM 2026-09-14T05:51:23.572407+00:00
   source: official-db
 sources:
 - book: 官方结构库 db/wh40k.sqlite（Wahapedia 11版镜像 + MFM 官方点数）
-updated: '2026-07-23'
+updated: '2026-09-14'
 ---
 
 ## 属性表
@@ -42,7 +42,7 @@ updated: '2026-07-23'
 - **脉冲火箭**：一次性技能，当装备者所在的单位在你的设计阶段被选择进行攻击时可以使用本技能，若使用，则在本阶段中，本单位模型所装备的射击武器S及AP增加1点
 
 ## 单位构成
-- **6个模型** — 125 分
+- **6个模型** — 145 分
 
 ## 关键词
 - **阵营关键词**：Orks

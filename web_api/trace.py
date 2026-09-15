@@ -5,6 +5,7 @@
 """
 from __future__ import annotations
 
+import inspect
 from typing import Any, Callable, Dict, List
 
 from web_api.contract import TraceStep
@@ -59,13 +60,17 @@ class TraceRecorder:
         self.last_args: Dict[str, Dict[str, Any]] = {}
 
     def _wrap(self, name: str, fn: Callable[..., Dict[str, Any]]):
-        def recorded(**kwargs: Any) -> Dict[str, Any]:
-            result = fn(**kwargs)
+        def recorded(*args: Any, **kwargs: Any) -> Dict[str, Any]:
+            # AgentLoop's fallback passes the query positionally. Preserve the
+            # wrapped function's calling convention as well as its result.
+            bound = inspect.signature(fn).bind(*args, **kwargs)
+            arguments = dict(bound.arguments)
+            result = fn(*args, **kwargs)
             self.last_result[name] = result
-            self.last_args[name] = dict(kwargs)
+            self.last_args[name] = arguments
             self.steps.append(TraceStep(
                 fn=name,
-                args=_fmt_args(kwargs),
+                args=_fmt_args(arguments),
                 result=_summarize(result),
                 status=_status(result),
                 note=(result.get("note") if isinstance(result, dict) else None),

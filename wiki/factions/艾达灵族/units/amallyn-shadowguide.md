@@ -3,17 +3,16 @@ id: '000001598'
 name_en: Amallyn Shadowguide
 faction: 艾达灵族
 type: unit
-points:
-  1 model: 75
 tags:
 - unit
 - unit/艾达灵族
 - 艾达灵族
 version:
+  points: historical / unmatched
   source: official-db
 sources:
 - book: 官方结构库 db/wh40k.sqlite（Wahapedia 11版镜像 + MFM 官方点数）
-updated: '2026-07-23'
+updated: '2026-09-14'
 ---
 
 ## 属性表
@@ -39,6 +38,7 @@ updated: '2026-07-23'
 - **[[factions/艾达灵族/detachments/path-of-the-outcast.md|Path of the Outcast]]**：Once per turn, when an enemy unit ends a Normal, Advance or Fall Back move within 9" of this model, if this model is not within Engagement Range of one or more enemy units, it can make a Normal move of up to D6".
 
 ## 单位构成
+历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
 - **1个模型** — 75 分
 
 ## 关键词

@@ -7,6 +7,7 @@ aliases:
 faction: 死亡守卫
 type: enhancement
 detachment: Contagion Engines
+cost: 15
 tags:
 - enhancement
 - enhancement/死亡守卫
@@ -16,11 +17,13 @@ sources:
 updated: '2026-07-26'
 ---
 
-分数未知、[[factions/死亡守卫/detachments/contagion-engines.md|传瘟机械]] 分队。
+15 分、[[factions/死亡守卫/detachments/contagion-engines.md|传瘟机械]] 分队。
 
 ## 效果
 
 When this unit has fought, one model in this unit heals D3 wounds.
+
+**分数**：15 分
 
 ## 携带限制
 

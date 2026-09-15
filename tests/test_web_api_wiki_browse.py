@@ -50,9 +50,9 @@ BLOCK_KEYS = {
 
 # 实测磁盘条数（2026-07-25 生成）。数字变了说明离线重跑了 wiki_engine 且结果变了——
 # 先确认是有意的，别顺手对齐成"测试通过"。
-EXPECTED_DETACHMENTS = 324
-EXPECTED_ENHANCEMENTS = 1058
-EXPECTED_STRATAGEM_LINKS = 1647
+EXPECTED_DETACHMENTS = 328
+EXPECTED_ENHANCEMENTS = 1066
+EXPECTED_STRATAGEM_LINKS = 1650
 
 
 @pytest.fixture(scope="module")

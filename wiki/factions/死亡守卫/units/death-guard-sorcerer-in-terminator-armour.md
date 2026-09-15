@@ -4,17 +4,16 @@ name_zh: 死亡守卫终结者巫师
 name_en: Death Guard Sorcerer In Terminator Armour
 faction: 死亡守卫
 type: unit
-points:
-  1 model: 70
 tags:
 - unit
 - unit/死亡守卫
 - 死亡守卫
 version:
+  points: historical / unmatched
   source: official-db
 sources:
 - book: 官方结构库 db/wh40k.sqlite（Wahapedia 11版镜像 + MFM 官方点数）
-updated: '2026-07-23'
+updated: '2026-09-14'
 ---
 
 ## 属性表
@@ -48,6 +47,7 @@ updated: '2026-07-23'
 - **灵能使魔【灵能】**：一次性技能，为本模型的一件 灵能武器选择目标后，本阶段中那件武器的 S 和 D 提高 2 点（灵能使魔的模型只作为标记物存在）
 
 ## 单位构成
+历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
 - **1个模型** — 70 分
 
 ## 关键词

@@ -7,7 +7,7 @@ aliases:
 faction: 吞世者
 type: enhancement
 detachment: Vessels of Wrath
-cost: 25
+cost: 30
 tags:
 - enhancement
 - enhancement/吞世者
@@ -17,13 +17,13 @@ sources:
 updated: '2026-07-26'
 ---
 
-25 分、[[factions/吞世者/detachments/vessels-of-wrath.md|怒火容器]] 分队。
+30 分、[[factions/吞世者/detachments/vessels-of-wrath.md|怒火容器]] 分队。
 
 ## 效果
 
 (Once per battle, per army) In your Command phase, you can use this ability. If you do, every Blessing of Khorne is active for this unit until the start of your next turn.
 
-**分数**：25 分
+**分数**：30 分
 
 ## 携带限制
 

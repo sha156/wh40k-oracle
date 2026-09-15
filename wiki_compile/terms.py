@@ -3,12 +3,11 @@ from __future__ import annotations
 
 import json
 from dataclasses import asdict
-from datetime import datetime
 from pathlib import Path
 from typing import Dict
 
 from wiki_compile.pair import PairingResult
-from wiki_engine._io import atomic_write_text
+from wiki_engine._io import atomic_write_text, text_sha256
 
 
 def write_terms(result: PairingResult, wiki_dir: Path) -> None:
@@ -41,8 +40,11 @@ def write_terms(result: PairingResult, wiki_dir: Path) -> None:
         except (OSError, UnicodeDecodeError):
             old_text = None
         if old_text is not None and old_text != review_text:
-            stamp = datetime.now().strftime("%Y%m%d-%H%M%S")
-            backup_path = wiki_dir / "review_needed.backup-{}.md".format(stamp)
+            # 备份名用**内容哈希**而不是墙钟时间戳（审查 R2-L4）：同样的旧内容重跑多次
+            # 只会得到同一个备份文件，不会每跑一次攒一个新文件。内容不同才是新备份，
+            # 这也正是「生成物禁写时间戳」那条纪律的同一个理由。
+            digest = text_sha256(old_text)[:12]
+            backup_path = wiki_dir / "review_needed.backup-{}.md".format(digest)
             backup_path.write_text(old_text, encoding="utf-8")
             print("[terms] review_needed.md 内容有变化，旧版已备份 → {}".format(
                 backup_path))

@@ -5,18 +5,18 @@ name_en: Purgation Squad
 faction: 灰骑士
 type: unit
 points:
-  5 models: 110
-  10 models: 220
+  5 models: 105
+  10 models: 210
 tags:
 - unit
 - unit/灰骑士
 - 灰骑士
 version:
-  points: MFM 2026-07-27 15:14
+  points: MFM 2026-09-14T05:51:23.572407+00:00
   source: official-db
 sources:
 - book: 官方结构库 db/wh40k.sqlite（Wahapedia 11版镜像 + MFM 官方点数）
-updated: '2026-07-23'
+updated: '2026-09-14'
 ---
 
 ## 属性表
@@ -43,8 +43,8 @@ updated: '2026-07-23'
 - **正义追猎**：在您的射击阶段中，该单位进行了射击后，选择一个被其一次或更多攻击命中的敌方单位（不包括凶兽和载具单位）；直到[[factions/兽人/stratagems/on-to-da-next.md|下一个]]己方回合开始前，该敌方单位处于被压制。当一个单位被压制时，其移动属性减少 2"，并且进行的冲锋掷骰结果减少 2 点。
 
 ## 单位构成
-- **5个模型** — 110 分
-- **10个模型** — 220 分
+- **5个模型** — 105 分
+- **10个模型** — 210 分
 
 ## 关键词
 - **阵营关键词**：Grey Knights

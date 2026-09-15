@@ -11,11 +11,11 @@ tags:
 - unit/黑暗灵族
 - 黑暗灵族
 version:
-  points: MFM 2026-07-27 15:14
+  points: MFM 2026-09-14T05:51:23.572407+00:00
   source: official-db
 sources:
 - book: 官方结构库 db/wh40k.sqlite（Wahapedia 11版镜像 + MFM 官方点数）
-updated: '2026-07-23'
+updated: '2026-09-14'
 ---
 
 ## 属性表
@@ -41,5 +41,5 @@ updated: '2026-07-23'
 - **1个模型** — 100 分
 
 ## 关键词
-- **阵营关键词**：黑暗灵族
-- **普通关键词**：[[core-rules/infantry.md|步兵]]，阴谋团，角色，艾达灵族，执政官，[[core-rules/epic-hero.md|史诗英雄]]，玛莉斯女士
+- **阵营关键词**：Drukhari
+- **普通关键词**：Lady Malys，[[core-rules/epic-hero.md|Epic Hero]]，[[factions/黑暗灵族/units/archon.md|Archon]]，[[core-rules/character.md|Character]]，Kabal，[[core-rules/infantry.md|Infantry]]，Aeldari

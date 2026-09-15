@@ -4,18 +4,16 @@ name_zh: 织空者摩托
 name_en: Skyweavers
 faction: 黑暗灵族
 type: unit
-points:
-  2 models: 95
-  4 models: 190
 tags:
 - unit
 - unit/黑暗灵族
 - 黑暗灵族
 version:
+  points: historical / unmatched
   source: official-db
 sources:
 - book: 官方结构库 db/wh40k.sqlite（Wahapedia 11版镜像 + MFM 官方点数）
-updated: '2026-07-23'
+updated: '2026-09-14'
 ---
 
 ## 属性表
@@ -44,6 +42,7 @@ updated: '2026-07-23'
 - **灵巧身法**：当该单位受到攻击时，该攻击的命 中骰结果减1
 
 ## 单位构成
+历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
 - **2个模型** — 95 分
 - **4个模型** — 190 分
 

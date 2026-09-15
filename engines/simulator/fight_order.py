@@ -104,12 +104,19 @@ def _why(f: FighterState) -> str:
 
 
 def judge(a: FighterState, b: FighterState,
-          counter_offensive_by: Optional[str] = None) -> FightVerdict:
+          counter_offensive_by: Optional[str] = None,
+          counter_offensive_is_a: Optional[bool] = None) -> FightVerdict:
     """判定 a、b 两单位的近战先攻顺序（11 版口径）。
 
     a 通常是发起方（正打方）、b 是守方。counter_offensive_by 给单位名时，说明该单位用
     COUNTEROFFENSIVE（2CP，11版 p57：获得 Fights First 且必须是其玩家下一个选中结算的
     单位）后的差异。
+
+    `counter_offensive_is_a` 是**方向的权威入参**（True=a 方用，False=b 方用）：
+    名字在镜像对局（攻守同名）里分不出谁是谁，而 `FightVerdict.first_is_a` 的注释早已
+    写明「绝不可比对 first_striker 名字字符串」——本函数的 CO 分支曾是那条铁律唯一的
+    违例处，攻守同名时会把守方的插队问答成「你本就先打，无需 CO」（审查 R1-M2）。
+    只给名字而两边同名时不再猜，改为显式披露分不出方向。
     """
     sa, sb = a.step, b.step
     same_step = sa == sb
@@ -139,16 +146,36 @@ def judge(a: FighterState, b: FighterState,
                       "其判定按对称假设实现，结果谨慎使用）")
 
     # COUNTEROFFENSIVE（11版 p57）：只在对手近战阶段、敌方单位刚结算后可用——1v1 不改变先手方
-    if counter_offensive_by:
-        if counter_offensive_by == second.name and same_step:
-            co_note = (f"若 {second.name} 用 COUNTEROFFENSIVE（2CP，11版 p57），可在 {first.name} "
+    if counter_offensive_by or counter_offensive_is_a is not None:
+        # 方向一律走布尔，**不比对名字**（审查 R1-M2）。名字只用于文案措辞。
+        co_side_is_a: Optional[bool] = counter_offensive_is_a
+        mirror_ambiguous = False
+        if co_side_is_a is None:
+            if a.name == b.name:
+                mirror_ambiguous = True          # 镜像对局：名字给不出方向，不猜
+            elif counter_offensive_by == a.name:
+                co_side_is_a = True
+            elif counter_offensive_by == b.name:
+                co_side_is_a = False
+            # 名字既不属于 a 也不属于 b：保持 None，落到通用文案
+
+        co_label = counter_offensive_by or (a.name if co_side_is_a else b.name)
+        co_is_first = None if co_side_is_a is None else (co_side_is_a is (first is a))
+
+        if mirror_ambiguous:
+            co_note = (f"攻守同名（{a.name}），无法从名字判断 COUNTEROFFENSIVE 由哪一方使用——"
+                       f"请按侧指明（attacker / defender）。若由后打方使用，可在先打方结算后"
+                       f"立即获得 Fights First 并作为下一个结算单位插队；若由先打方使用则无需，"
+                       f"它本就先打。")
+        elif co_is_first is True:
+            co_note = (f"{co_label} 本就先打，无需 COUNTEROFFENSIVE。")
+        elif co_is_first is False and same_step:
+            co_note = (f"若 {co_label} 用 COUNTEROFFENSIVE（2CP，11版 p57），可在 {first.name} "
                        f"结算后立即获得 Fights First 并作为下一个结算单位插队，1v1 下不改变"
                        f"「{first.name} 先打」但缩短其独占先手窗口；多单位场景可抢在对手下一个单位前动作。")
-        elif counter_offensive_by == first.name:
-            co_note = (f"{first.name} 本就先打，无需 COUNTEROFFENSIVE。")
         else:
             co_note = (f"COUNTEROFFENSIVE 需在对手近战阶段、敌方单位刚结算后使用；本 1v1 对 "
-                       f"{counter_offensive_by} 改变有限（主要影响多单位交替）。")
+                       f"{co_label} 改变有限（主要影响多单位交替）。")
     else:
         co_note = ("未启用 COUNTEROFFENSIVE；守方若有 2CP 可在攻方单位结算后插队反打"
                    "（11版 p57：获得 Fights First 且必须下一个结算；多单位更显著）。")

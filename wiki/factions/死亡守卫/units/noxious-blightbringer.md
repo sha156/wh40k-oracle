@@ -5,17 +5,17 @@ name_en: Noxious Blightbringer
 faction: 死亡守卫
 type: unit
 points:
-  1 model: 60
+  1 model: 50
 tags:
 - unit
 - unit/死亡守卫
 - 死亡守卫
 version:
-  points: MFM 2026-07-27 15:14
+  points: MFM 2026-09-14T05:51:23.572407+00:00
   source: official-db
 sources:
 - book: 官方结构库 db/wh40k.sqlite（Wahapedia 11版镜像 + MFM 官方点数）
-updated: '2026-07-23'
+updated: '2026-09-14'
 ---
 
 ## 属性表
@@ -40,7 +40,7 @@ updated: '2026-07-23'
 - **苦难丧钟（光环）**：敌方指挥阶段的士气测试环节，该模型9寸内未满编的敌方单位需进行士气测试，如果该敌方单位是灵能单位则测试结果-1
 
 ## 单位构成
-- **1个模型** — 60 分
+- **1个模型** — 50 分
 
 ## 关键词
 - **阵营关键词**：Death Guard

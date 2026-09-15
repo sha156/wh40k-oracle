@@ -4,18 +4,16 @@ name_zh: 折跃飚速车
 name_en: Shokkjump Dragsta
 faction: 兽人
 type: unit
-points:
-  1 model: 70
 tags:
 - unit
 - unit/兽人
 - 兽人
 version:
-  points: MFM 2026-07-27 15:14
+  points: historical / unmatched
   source: official-db
 sources:
 - book: 官方结构库 db/wh40k.sqlite（Wahapedia 11版镜像 + MFM 官方点数）
-updated: '2026-07-23'
+updated: '2026-09-14'
 ---
 
 ## 属性表
@@ -42,8 +40,9 @@ updated: '2026-07-23'
 - **闪电折跃**：每当本模型进行加速时，你可以将其移除然后重新部署在敌方模型水平9寸外的任意位置，取代本模型正常的加速移动，但是依然算作本模型本回合进行了加速
 
 ## 单位构成
+历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
 - **1个模型** — 70 分
 
 ## 关键词
-- **阵营关键词**：兽人
-- **普通关键词**：[[core-rules/vehicle.md|载具]]，飚速怪咖，折跃飚速车
+- **阵营关键词**：Orks
+- **普通关键词**：Vehicle，Speed Freeks，Shokkjump Dragsta

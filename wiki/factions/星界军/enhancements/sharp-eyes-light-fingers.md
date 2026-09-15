@@ -5,6 +5,7 @@ name_en: Sharp Eyes, Light Fingers
 faction: 星界军
 type: enhancement
 detachment: Abhuman Auxiliaries
+cost: 10
 tags:
 - enhancement
 - enhancement/星界军
@@ -14,11 +15,13 @@ sources:
 updated: '2026-07-26'
 ---
 
-分数未知、[[factions/星界军/detachments/abhuman-auxiliaries.md|亚人类辅助军]] 分队。
+10 分、[[factions/星界军/detachments/abhuman-auxiliaries.md|亚人类辅助军]] 分队。
 
 ## 效果
 
 When this unit is selected to shoot, enemy units have +6" detection range until this unit has shot.
+
+**分数**：10 分
 
 ## 携带限制
 

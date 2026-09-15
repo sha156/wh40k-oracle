@@ -225,9 +225,12 @@ def main() -> None:
         json_path = Path(args.json)
         if args.fetch:
             print("抓取官方 MFM 全部阵营页…")
-            fetch_all(json_path, force=args.force)
+            from db_compile.mfm_sync import fetch_cache
+            fetch_cache(json_path)
             print(f"写入 {json_path}")
         if args.slug:
+            if json_path.exists() and json.loads(json_path.read_text(encoding="utf-8")).get("source_snapshot"):
+                raise SystemExit("完整官方账本请用 mfm --fetch 全站刷新；单页旧解析不能覆盖完整快照")
             rows = fetch_faction(args.slug)
             data = json.loads(json_path.read_text(encoding="utf-8"))
             data["factions"][args.slug] = rows
@@ -242,8 +245,14 @@ def main() -> None:
             data = json.loads(json_path.read_text(encoding="utf-8"))
             factions = {slug: [tuple(r) for r in rows]
                         for slug, rows in data["factions"].items()}
-            rep = apply_points(Path(args.db), factions,
-                               fetched_at=data.get("fetched_at"))
+            if data.get("source_snapshot"):
+                from db_compile.mfm_sync import apply_snapshot
+                full_report = apply_snapshot(Path(args.db), data["source_snapshot"])
+                rep = full_report["units_applied"]
+                print(f"官方完整账本: {full_report['ledger']}")
+            else:
+                rep = apply_points(Path(args.db), factions,
+                                   fetched_at=data.get("fetched_at"))
             print(f"\nMFM 应用：匹配 {rep['units_matched']} 单位，"
                   f"更新 {rep['units_updated']} 个（官方分数已写入 points_json）")
             print("  注意：db_compile build 重建会覆盖，重建后需重跑 mfm --apply")
@@ -389,8 +398,14 @@ def main() -> None:
             if not csv_path.exists():
                 raise SystemExit(f"{csv_path} 不存在，先跑 --fetch")
             rep = apply_enhancements(Path(args.db), load_rows(csv_path))
-            print(f"\n强化落库：插入 {rep['inserted']} / 表内 {rep['table_total']} 条 / "
-                  f"覆盖 {rep['detachments']} 分队")
+            print(f"\n强化落库：读入 {rep['rows_in']} / 插入 {rep['inserted']} / "
+                  f"表内 {rep['table_total']} 条 / 覆盖 {rep['detachments']} 分队")
+            if rep["dropped_no_id"]:
+                # 静默丢行是 CSV 换版式最典型的症状（审查 R2-M6）。这里必须吼，
+                # 否则「插入 N 条」是过滤后的 N，自己跟自己永远对得上。
+                print(f"  ⚠️ {rep['dropped_no_id']} 行因缺 id 被丢弃"
+                      f"（上游 CSV 版式可能变了，先跑 `--check` 对账）："
+                      + "、".join(rep["dropped_no_id_names"]))
             print("  注意：build 重建会一并重导（已进 build 流程），无需手动 restore")
             if rep["cleared_overlay"]:
                 names = {"name_zh": "官方中文名", "effect_dsl_json": "DSL 投影"}

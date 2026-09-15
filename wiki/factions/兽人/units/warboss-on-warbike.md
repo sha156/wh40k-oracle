@@ -3,17 +3,16 @@ id: '000000003'
 name_en: Warboss On Warbike
 faction: 兽人
 type: unit
-points:
-  1 model: 75
 tags:
 - unit
 - unit/兽人
 - 兽人
 version:
+  points: historical / unmatched
   source: official-db
 sources:
 - book: 官方结构库 db/wh40k.sqlite（Wahapedia 11版镜像 + MFM 官方点数）
-updated: '2026-07-23'
+updated: '2026-09-14'
 ---
 
 ## 属性表
@@ -41,6 +40,7 @@ updated: '2026-07-23'
 - **High-octane Fuel**：Each time this model’s unit Advances, do not make an Advance roll for it. Instead, until the end of the phase, add 6" to the Move characteristic of models in this model’s unit.
 
 ## 单位构成
+历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
 - **1个模型** — 75 分
 
 ## 关键词

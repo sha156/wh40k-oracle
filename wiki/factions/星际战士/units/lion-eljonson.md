@@ -11,11 +11,13 @@ tags:
 - unit/星际战士
 - 星际战士
 version:
-  points: MFM 2026-07-27 15:14
+  points: MFM 2026-09-14T05:51:23.572407+00:00
   source: official-db
 sources:
-- book: 官方结构库 db/wh40k.sqlite（Wahapedia 11版镜像 + MFM 官方点数）
-updated: '2026-07-23'
+- book: https://assets.warhammer-community.com/eng_wh40k_faction_pack_dark_angels-r9vgghuhil-tzntq05hcx.pdf
+  pages:
+  - 10
+updated: '2026-09-14'
 ---
 
 ## 属性表
@@ -39,14 +41,17 @@ updated: '2026-07-23'
 | 献忠之剑（横扫） | 近战 | 16 | 2+ | 6 | -3 | 2 | [[core-rules/sustained-hits.md\|连击1]] |
 
 ## 技能
-- **【阵营技能】破敌重誓**
-- **第一军团原体**：在你的指挥阶段开始时，选择以下效果之二对本模型生效，持续到下个你的指挥阶段开始时◼ 迷雾笼罩的阴影国度：在您对手的回合结束时，如果该单位不处于交战状态，您可以使用该技能。如果您这样做：◦	将该单位战略预备队。◦	在您的[[factions/兽人/stratagems/on-to-da-next.md|下一个]]移动阶段中，该单位可以进行一次入场移动 （包括在您的第一个回合）*编者注：这个规则目前有bug，事实上不可以第一回合入场移动◼ 战斗典范【光环】：当己方阿斯塔特修会单位位于该模型 6" 内时 ，当那个单位中的模型进行近战攻击时，重掷结果为 1 的命中掷骰和结果为 1 的致伤掷骰。◼ 黑暗守望者的视线【光环】：本模型 6 寸内的友军阿斯塔特修会单位对抗致命伤害攻击时拥有【不觉疼痛 4+】
-- **[[factions/星际战士/detachments/emperors-shield.md|帝皇之盾]]**：每当该模型成为一次攻击的目标时，如果该次攻击的力量属性大于该模型的韧性属性，致伤掷骰的结果减少 1 点。
-- **黑暗天使护卫**：如果本模型位于至少一个友军阿斯塔特修会步兵单位 3 寸内，则本模型获得【独行特工】技能
+- **Primarch of the First Legion**：At the start of your Command phase, select two Primarch of the First Legion abilities. Until the start of your next Command phase, this model has those abilities.
+- **The [[factions/星际战士/detachments/emperors-shield.md|Emperor’s Shield]]**：Each time an attack targets this model, if the Strength characteristic of that attack is greater than the Toughness characteristic of this model, subtract 1 from the Wound roll.
+- **Dark Angels Bodyguard**：While this model is within 3" of one or more friendly Adeptus Astartes Infantry units, this model has the Lone Operative ability.
+- **SUPREME COMMANDER**：If this model is in your army, it must be your Warlord.
+- **Mist-wreathed Shadow Realms**：In your Command phase, if this unit is unengaged, you can use this ability. If you do: Place this unit in strategic reserves. This unit can make an ingress move in your next Movement phase (including in your first turn).
+- **Martial Exemplar (Aura)**：While a friendly <span class="kwb">ADEPTUS</span> <span class="kwb">ASTARTES</span> unit is within 6" of this model, each time a model in that unit makes a melee attack, re-roll a Hit roll of 1 and re-roll a Wound roll of 1.
+- **No Hiding From the Watchers (Aura)**：While a friendly <span class="kwb">ADEPTUS</span> <span class="kwb">ASTARTES</span> unit is within 6" of this model, models in that unit have the Feel No Pain 4+ ability against mortal wounds.
 
 ## 单位构成
 - **1个模型** — 265 分
 
 ## 关键词
 - **阵营关键词**：Adeptus Astartes，Dark Angels
-- **普通关键词**：Lion El’Jonson，[[core-rules/epic-hero.md|Epic Hero]]，[[core-rules/character.md|Character]]，Primarch，Imperium，Monster
+- **普通关键词**：Lion El’Jonson，[[core-rules/epic-hero.md|Epic Hero]]，[[core-rules/character.md|Character]]，Primarch，Imperium，Monster，MOBILE

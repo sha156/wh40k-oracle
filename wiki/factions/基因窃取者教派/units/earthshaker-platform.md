@@ -3,17 +3,16 @@ id: '000003956'
 name_en: Earthshaker Platform
 faction: 基因窃取者教派
 type: unit
-points:
-  1 model: 110
 tags:
 - unit
 - unit/基因窃取者教派
 - 基因窃取者教派
 version:
+  points: historical / unmatched
   source: official-db
 sources:
 - book: 官方结构库 db/wh40k.sqlite（Wahapedia 11版镜像 + MFM 官方点数）
-updated: '2026-07-23'
+updated: '2026-09-14'
 ---
 
 ## 属性表
@@ -37,6 +36,7 @@ updated: '2026-07-23'
 - **FORTIFICATION**：While an enemy unit is only within Engagement Range of one or more Fortifications from your army:<br><ul><li>That unit can still be selected as the target of ranged attacks, but each time such an attack is made, unless it is made with a Pistol, subtract 1 from the Hit roll. </li><li>Models in that unit do not need to take Desperate Escape tests due to Falling Back while Battle- shocked, except for those that will move over enemy models when doing so.</li></ul>
 
 ## 单位构成
+历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
 - **1个模型** — 110 分
 
 ## 关键词

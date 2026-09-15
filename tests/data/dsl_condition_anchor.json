@@ -301,6 +301,11 @@
    "phase_shooting"
   ]
  ],
+ "astramilitarum:abilities:det000009868": [
+  [
+   "shooting_astra_militarum_non_titanic"
+  ]
+ ],
  "astramilitarum:enhancements:000008380003": [
   [
    "stationary"
@@ -777,6 +782,9 @@
   ]
  ],
  "chaosknights:stratagems:000008517007": [
+  [
+   "phase_melee"
+  ],
   [
    "phase_shooting"
   ]
@@ -2439,6 +2447,11 @@
  "spacemarines:stratagems:000010780007": [
   [
    "phase_shooting"
+  ]
+ ],
+ "spacemarines:stratagems:fp11e-sm-meteoric-onslaught": [
+  [
+   "melee_charging"
   ]
  ],
  "spacemarines:stratagems:fp11e-spacemarines-bastion-s6": [

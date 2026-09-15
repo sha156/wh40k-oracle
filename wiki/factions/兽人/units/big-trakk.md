@@ -3,17 +3,16 @@ id: '000000054'
 name_en: Big Trakk
 faction: 兽人
 type: unit
-points:
-  1 model: 90
 tags:
 - unit
 - unit/兽人
 - 兽人
 version:
+  points: historical / unmatched
   source: official-db
 sources:
 - book: 官方结构库 db/wh40k.sqlite（Wahapedia 11版镜像 + MFM 官方点数）
-updated: '2026-07-23'
+updated: '2026-09-14'
 ---
 
 ## 属性表
@@ -42,6 +41,7 @@ updated: '2026-07-23'
 - **Spiked Ram**：Each time this model ends a Charge move, select one enemy unit within Engagement Range of it and roll one D6: on a 2-5, that enemy unit suffers D3 mortal wounds; on a 6, that enemy unit suffers 3 mortal wounds.
 
 ## 单位构成
+历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
 - **1个模型** — 90 分
 
 ## 关键词

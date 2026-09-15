@@ -14,7 +14,7 @@ from dataclasses import dataclass, field
 from typing import List, Optional, Tuple
 
 from engines.roster.contracts import Roster
-from engines.roster.points import recompute
+from engines.roster.points import recompute, total_points
 
 # ── 合成典型目标（标准防御档假人；models 给足以吸收伤害不溢出）─────
 _TARGETS_SPEC = [
@@ -154,10 +154,22 @@ _NOT_MODELED = (
 
 
 def critique(db_path, roster: Roster, n: int = 1000, seed: int = 1234) -> CritiqueReport:
-    """军表 → 强度点评报告。先 recompute（点数供性价比），逐单位打典型目标。"""
+    """军表 → 强度点评报告。先 recompute（点数供性价比），逐单位打典型目标。
+
+    总分口径与 `validate` 完全一致：**单位点数 + 强化点数**（审查 R1-M3）。漏计强化会让
+    同一张军表在验表页与点评页显示两个总分（实测差 20 分 = 强化 Aegis Projector）。
+    这里**复用** `validate._enhancement_points` 而不是另抄一份求和，正是为了不再长出
+    第二套口径——判死刑的权威在 validate，点评页跟着它走。
+    """
+    from engines.roster.validate import _enhancement_points
+
     priced = recompute(db_path, roster)
     assessments = tuple(_assess_unit(db_path, u, n, seed) for u in priced.units)
-    total = sum(u.points or 0 for u in priced.units)
+    enh_points, enh_issues = _enhancement_points(db_path, priced)
+    total = total_points(priced) + enh_points
+    # 无法定价的强化在 validate 里是 surfaced 告警，这里同样透出：否则「点评总分比验表少」
+    # 会变成一个查无实据的差额，用户无从判断是漏计还是库里真没有 cost。
+    summary = _build_summary(assessments) + tuple(i.message for i in enh_issues)
     return CritiqueReport(
         total_points=total, assessments=assessments,
-        summary=_build_summary(assessments), not_modeled=_NOT_MODELED)
+        summary=summary, not_modeled=_NOT_MODELED)

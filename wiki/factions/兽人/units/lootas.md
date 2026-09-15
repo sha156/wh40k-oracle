@@ -4,21 +4,16 @@ name_zh: 拾荒小子
 name_en: Lootas
 faction: 兽人
 type: unit
-points:
-  1 Spanner and 4 Lootas: 50
-  2 Spanners and 8 Lootas: 100
-  5 models: 50
-  10 models: 100
 tags:
 - unit
 - unit/兽人
 - 兽人
 version:
-  points: MFM 2026-07-27 15:14
+  points: historical / unmatched
   source: official-db
 sources:
 - book: 官方结构库 db/wh40k.sqlite（Wahapedia 11版镜像 + MFM 官方点数）
-updated: '2026-07-23'
+updated: '2026-09-14'
 ---
 
 ## 属性表
@@ -44,11 +39,12 @@ updated: '2026-07-23'
 - **那是俺们的！**：本单位射击攻击重投命中结果中的1,如果攻击目标点范围内的敌方单位时则改为可以重投命中结果
 
 ## 单位构成
+历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
 - **1 Spanner and 4 Lootas** — 50 分
 - **2 Spanners and 8 Lootas** — 100 分
 - **5个模型** — 50 分
 - **10个模型** — 100 分
 
 ## 关键词
-- **阵营关键词**：兽人
-- **普通关键词**：[[core-rules/infantry.md|步兵]]，拾荒小子
+- **阵营关键词**：Orks
+- **普通关键词**：[[core-rules/infantry.md|Infantry]]，Lootas

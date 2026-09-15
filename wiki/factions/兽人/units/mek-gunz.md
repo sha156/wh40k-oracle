@@ -5,19 +5,19 @@ name_en: Mek Gunz
 faction: 兽人
 type: unit
 points:
-  1 model: 45
-  2 models: 90
-  3 models: 135
+  1 model: 55
+  2 models: 110
+  3 models: 165
 tags:
 - unit
 - unit/兽人
 - 兽人
 version:
-  points: MFM 2026-07-27 15:14
+  points: MFM 2026-09-14T05:51:23.572407+00:00
   source: official-db
 sources:
 - book: 官方结构库 db/wh40k.sqlite（Wahapedia 11版镜像 + MFM 官方点数）
-updated: '2026-07-23'
+updated: '2026-09-14'
 ---
 
 ## 属性表
@@ -48,10 +48,10 @@ updated: '2026-07-23'
 - **给他一炮**：本单位模型射击攻击处于起始数量的单位时(巨兽和载具除外),重投命中结果中的1
 
 ## 单位构成
-- **1个模型** — 45 分
-- **2个模型** — 90 分
-- **3个模型** — 135 分
+- **1个模型** — 55 分
+- **2个模型** — 110 分
+- **3个模型** — 165 分
 
 ## 关键词
-- **阵营关键词**：兽人
-- **普通关键词**：载具，屁精，技师大炮
+- **阵营关键词**：Orks
+- **普通关键词**：Vehicle，Grots，[[factions/兽人/units/mek.md|Mek]] Gunz

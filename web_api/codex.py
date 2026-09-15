@@ -32,25 +32,13 @@ _FACTION_ZH: Dict[str, str] = {
 
 
 def _current_unit_ids(conn: sqlite3.Connection) -> set:
-    """现役单位 id 集合 = 出现在官方现行 MFM 点数表 **或** 被黑图书馆收录。
+    """Use complete MFM snapshot membership, with compatibility for legacy DBs.
 
-    库里 1715 条来自 Wahapedia 全量，其中 553 条是 Legends / 福基世界 / 退环境条目
-    （Karandras、Vampire Raider、Secutarii…），比赛里摆不上桌，默认不该占满图鉴。
-
-    为什么要两个来源取并集而不是只看 MFM：官方 MFM 页只列 30 个阵营，**没有
-    Harlequins 那一组**（实测 aeldari 81 条里无 Troupe/Solitaire/Death Jester），
-    只按 MFM 判会把 199 个在售单位误归档。黑图书馆收录面≈在售单位，正好补上这个洞。
+    An unmatched row is not proof of retirement. Callers can expose historical
+    records explicitly without treating them as current official prices.
     """
-    cur = set()
-    for uid, pj in conn.execute("SELECT id, points_json FROM units"):
-        try:
-            if pj and (json.loads(pj) or {}).get("mfm"):
-                cur.add(uid)
-        except (json.JSONDecodeError, TypeError):
-            continue
-    for (uid,) in conn.execute("SELECT canonical_id FROM unit_zh_detail"):
-        cur.add(uid)
-    return cur
+    from db_compile.active_units import active_unit_ids
+    return active_unit_ids(conn)
 
 
 def list_factions(db_path, include_legacy: bool = False) -> List[Dict[str, Any]]:

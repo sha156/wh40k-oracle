@@ -3,17 +3,16 @@ id: '000001393'
 name_en: Firestorm
 faction: 艾达灵族
 type: unit
-points:
-  1 model: 115
 tags:
 - unit
 - unit/艾达灵族
 - 艾达灵族
 version:
+  points: historical / unmatched
   source: official-db
 sources:
 - book: 官方结构库 db/wh40k.sqlite（Wahapedia 11版镜像 + MFM 官方点数）
-updated: '2026-07-23'
+updated: '2026-09-14'
 ---
 
 ## 属性表
@@ -37,6 +36,7 @@ updated: '2026-07-23'
 - **Skyfire**：Each time you target this model with the Fire Overwatch Stratagem just after an enemy unit that can Fly starts or ends a Normal, Advance or Fall Back move, when resolving that Stratagem, in addition to shooting that enemy unit, you can select up to 3 other enemy units within 24" of this model that can Fly; this model can also shoot at each of those units with its Firestorm scatter laser (provided each one is an eligible target), but when doing so, an unmodified Hit roll of 6 is required to score a hit.
 
 ## 单位构成
+历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
 - **1个模型** — 115 分
 
 ## 关键词

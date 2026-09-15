@@ -5,7 +5,7 @@ name_en: Inescapable Eye
 faction: 混沌恶魔
 type: enhancement
 detachment: Scintillating Legion
-cost: 10
+cost: 15
 tags:
 - enhancement
 - enhancement/混沌恶魔
@@ -15,13 +15,13 @@ sources:
 updated: '2026-07-26'
 ---
 
-10 分、[[factions/混沌恶魔/detachments/scintillating-legion.md|闪耀军团]] 分队。
+15 分、[[factions/混沌恶魔/detachments/scintillating-legion.md|闪耀军团]] 分队。
 
 ## 效果
 
 In your Command phase, if the bearer is on the battlefield, if your opponent has one or more Flux tokens, you gain one additional Flux token.
 
-**分数**：10 分
+**分数**：15 分
 
 ## 携带限制
 

@@ -88,7 +88,7 @@ class TestPayloadShape:
         by = {}
         for e in entries:
             by[e.status] = by.get(e.status, 0) + 1
-        assert by == {"encoded": 14, "partial": 10, "not_modeled": 74}
+        assert by == {"encoded": 15, "partial": 9, "not_modeled": 74}
 
     def test_partial_entries_all_have_notes_and_fingerprint(self, entries):
         for e in entries:

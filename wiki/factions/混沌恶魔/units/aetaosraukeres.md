@@ -3,17 +3,16 @@ id: '000001333'
 name_en: Aetaos’rau’keres
 faction: 混沌恶魔
 type: unit
-points:
-  1 model: 315
 tags:
 - unit
 - unit/混沌恶魔
 - 混沌恶魔
 version:
+  points: historical / unmatched
   source: official-db
 sources:
 - book: 官方结构库 db/wh40k.sqlite（Wahapedia 11版镜像 + MFM 官方点数）
-updated: '2026-07-23'
+updated: '2026-09-14'
 ---
 
 ## 属性表
@@ -41,6 +40,7 @@ updated: '2026-07-23'
 - **Master of Magicks (Psychic)**：In your Shooting phase, select one of the following abilities: [IGNORES COVER]; [LETHAL HITS]; [sustainded hits D3]. Until the end of the phase, this model’s ranged weapon has that ability.
 
 ## 单位构成
+历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
 - **1个模型** — 315 分
 
 ## 关键词

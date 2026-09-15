@@ -4,17 +4,16 @@ name_zh: 卡迪亚重型武器小队
 name_en: Cadian Heavy Weapons Squad
 faction: 基因窃取者教派
 type: unit
-points:
-  3 models: 65
 tags:
 - unit
 - unit/基因窃取者教派
 - 基因窃取者教派
 version:
+  points: historical / unmatched
   source: official-db
 sources:
 - book: 官方结构库 db/wh40k.sqlite（Wahapedia 11版镜像 + MFM 官方点数）
-updated: '2026-07-23'
+updated: '2026-09-14'
 ---
 
 ## 属性表
@@ -42,6 +41,7 @@ updated: '2026-07-23'
 - **掩护火力**：每当你对本单位使用坚守射击战略技能时，未修正的 5+即可命中，如果本单位 6 寸内至少有一个友军排单位则改为 4+
 
 ## 单位构成
+历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
 - **3个模型** — 65 分
 
 ## 关键词

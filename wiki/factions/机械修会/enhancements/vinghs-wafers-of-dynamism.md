@@ -5,6 +5,7 @@ name_en: Vingh’s Wafers of Dynamism
 faction: 机械修会
 type: enhancement
 detachment: Lords of the Forge
+cost: 25
 tags:
 - enhancement
 - enhancement/机械修会
@@ -14,11 +15,13 @@ sources:
 updated: '2026-07-26'
 ---
 
-分数未知、[[factions/机械修会/detachments/lords-of-the-forge.md|熔炉领主]] 分队。
+25 分、[[factions/机械修会/detachments/lords-of-the-forge.md|熔炉领主]] 分队。
 
 ## 效果
 
 At the start of the first battle round, if this unit is an attached unit, this unit has MOBILE until the end of the battle.
+
+**分数**：25 分
 
 ## 携带限制
 

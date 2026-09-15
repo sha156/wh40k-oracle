@@ -6,6 +6,7 @@
 
 | 类型 | 名称 | 摘要 | Updated |
 |------|------|------|---------|
+| detachment | [Brute Bosses](factions/兽人/detachments/brute-bosses.md) | 兽人的分队「Brute Bosses」。 | 2026-07-26 |
 | detachment | [Bully Boyz](factions/兽人/detachments/bully-boyz.md) | 兽人的分队「Bully Boyz」，分队规则「老大在看」。 | 2026-07-26 |
 | detachment | [Da Big Hunt](factions/兽人/detachments/da-big-hunt.md) | 兽人的分队「Da Big Hunt」，分队规则「追猎开始」。 | 2026-07-26 |
 | detachment | [Dread Mob](factions/兽人/detachments/dread-mob.md) | 兽人的分队「Dread Mob」，分队规则「试试这按钮」。 | 2026-07-26 |
@@ -14,17 +15,22 @@
 | detachment | [Kult of Speed](factions/兽人/detachments/kult-of-speed.md) | 兽人的分队「Kult of Speed」，分队规则「肾上腺瘾君子」。 | 2026-07-26 |
 | detachment | [More Dakka!](factions/兽人/detachments/more-dakka.md) | 兽人的分队「More Dakka!」，分队规则「哒哒哒」。 | 2026-07-26 |
 | detachment | [Ramship Raiders](factions/兽人/detachments/ramship-raiders.md) | 兽人的分队「Ramship Raiders」，分队规则「好战登舰者」。 | 2026-07-26 |
+| detachment | [Runt Swarm](factions/兽人/detachments/runt-swarm.md) | 兽人的分队「Runt Swarm」。 | 2026-07-26 |
+| detachment | [Shoota Boyz](factions/兽人/detachments/shoota-boyz.md) | 兽人的分队「Shoota Boyz」。 | 2026-07-26 |
 | detachment | [Taktikal Brigade](factions/兽人/detachments/taktikal-brigade.md) | 兽人的分队「Taktikal Brigade」，分队规则「听好了」。 | 2026-07-26 |
 | detachment | [War Horde](factions/兽人/detachments/war-horde.md) | 兽人的分队「War Horde」，分队规则「深陷苦战」。 | 2026-07-26 |
 | detachment | [死亡摇滚](factions/兽人/detachments/rollin-deff.md) | 兽人的分队「死亡摇滚」。 | 2026-07-26 |
 | detachment | [海盗船团](factions/兽人/detachments/freebooter-krew.md) | 兽人的分队「海盗船团」，分队规则「此处有战利品」。 | 2026-07-26 |
 | detachment | [疾速 WAAAGH！](factions/兽人/detachments/speedwaaagh.md) | 兽人的分队「疾速 WAAAGH！」，分队规则「涡轮加速」。 | 2026-07-26 |
 | detachment | [闪击旅](factions/兽人/detachments/blitz-brigade.md) | 兽人的分队「闪击旅」，分队规则「渴战」。 | 2026-07-26 |
+| enhancement | [Blitzboss](factions/兽人/enhancements/blitzboss.md) | 20 分、Brute Bosses 分队。 | 2026-07-26 |
+| enhancement | [Extra Sneaky](factions/兽人/enhancements/extra-sneaky.md) | 10 分、Runt Swarm 分队。 | 2026-07-26 |
+| enhancement | [Minefield Detail](factions/兽人/enhancements/minefield-detail.md) | 10 分、Runt Swarm 分队。 | 2026-07-26 |
 | enhancement | [仿生工坊](factions/兽人/enhancements/bionik-workshop.md) | 15 分、海盗船团 分队。 | 2026-07-26 |
 | enhancement | [传送器（Kaptin）](factions/兽人/enhancements/tellyporta-bully-boyz.md) | 25 分、Bully Boyz 分队。 | 2026-07-26 |
 | enhancement | [传送器（Kaptin）](factions/兽人/enhancements/tellyporta-kaptin-killers.md) | 0 分、Kaptin Killers 分队。 | 2026-07-26 |
 | enhancement | [伤痕蛮兽](factions/兽人/enhancements/scarred-brute.md) | 0 分、Ramship Raiders 分队。 | 2026-07-26 |
-| enhancement | [凶猛炫耀者](factions/兽人/enhancements/ferocious-show-off.md) | 10 分、Green Tide 分队。 | 2026-07-26 |
+| enhancement | [凶猛炫耀者](factions/兽人/enhancements/ferocious-show-off.md) | 15 分、Green Tide 分队。 | 2026-07-26 |
 | enhancement | [劫掠每个藏匿处](factions/兽人/enhancements/skrag-every-stash.md) | 25 分、Da Big Hunt 分队。 | 2026-07-26 |
 | enhancement | [咬牙菌箱](factions/兽人/enhancements/gnasher-squig-crates.md) | 0 分、Kaptin Killers 分队。 | 2026-07-26 |
 | enhancement | [喧闹战嚎者](factions/兽人/enhancements/raucous-warcaller.md) | 20 分、Green Tide 分队。 | 2026-07-26 |
@@ -42,7 +48,7 @@
 | enhancement | [技工队长](factions/兽人/enhancements/mek-kaptin.md) | 45 分、Taktikal Brigade 分队。 | 2026-07-26 |
 | enhancement | [拉兹吉特魔法地图](factions/兽人/enhancements/razgits-magik-map.md) | 25 分、海盗船团 分队。 | 2026-07-26 |
 | enhancement | [按快点](factions/兽人/enhancements/press-it-fasta.md) | 35 分、Dread Mob 分队。 | 2026-07-26 |
-| enhancement | [断头者砍刀](factions/兽人/enhancements/headwoppas-killchoppa.md) | 20 分、War Horde 分队。 | 2026-07-26 |
+| enhancement | [断头者砍刀](factions/兽人/enhancements/headwoppas-killchoppa.md) | 15 分、War Horde 分队。 | 2026-07-26 |
 | enhancement | [最大老大](factions/兽人/enhancements/da-biggest-boss.md) | 15 分、Bully Boyz 分队。 | 2026-07-26 |
 | enhancement | [残暴又狡猾](factions/兽人/enhancements/brutal-but-kunnin.md) | 25 分、Green Tide 分队。 | 2026-07-26 |
 | enhancement | [比你快](factions/兽人/enhancements/fasta-than-yooz.md) | 35 分、Kult of Speed 分队。 | 2026-07-26 |
@@ -50,22 +56,26 @@
 | enhancement | [滚开吃达卡](factions/兽人/enhancements/zog-off-and-eat-dakka.md) | 10 分、More Dakka! 分队。 | 2026-07-26 |
 | enhancement | [烟雾配件](factions/兽人/enhancements/smoky-gubbinz.md) | 15 分、Dread Mob 分队。 | 2026-07-26 |
 | enhancement | [爆头者](factions/兽人/enhancements/eadstompa.md) | 10 分、Bully Boyz 分队。 | 2026-07-26 |
-| enhancement | [狡猾又残暴](factions/兽人/enhancements/kunnin-but-brutal.md) | 15 分、War Horde 分队。 | 2026-07-26 |
+| enhancement | [狡猾又残暴](factions/兽人/enhancements/kunnin-but-brutal.md) | 20 分、War Horde 分队。 | 2026-07-26 |
 | enhancement | [瓦兹炮](factions/兽人/enhancements/wazblasta.md) | 10 分、Kult of Speed 分队。 | 2026-07-26 |
 | enhancement | [登舰坡道](factions/兽人/enhancements/boarding-ramps.md) | 分数未知、死亡摇滚 分队。 | 2026-07-26 |
 | enhancement | [真能杀](factions/兽人/enhancements/proper-killy.md) | 15 分、Da Big Hunt 分队。 | 2026-07-26 |
+| enhancement | [瞄准菌](factions/兽人/enhancements/targetin-squigs-more-dakka.md) | 15 分、More Dakka! 分队。 | 2026-07-26 |
+| enhancement | [瞄准菌](factions/兽人/enhancements/targetin-squigs-shoota-boyz.md) | 20 分、Shoota Boyz 分队。 | 2026-07-26 |
 | enhancement | [瞄准菌](factions/兽人/enhancements/targetin-squigs.md) | 15 分、More Dakka! 分队。 | 2026-07-26 |
 | enhancement | [瞄准装置](factions/兽人/enhancements/targetin-gizmos.md) | 分数未知、死亡摇滚 分队。 | 2026-07-26 |
 | enhancement | [硬汉](factions/兽人/enhancements/tuff-git.md) | 5 分、闪击旅 分队。 | 2026-07-26 |
 | enhancement | [自制加速箱](factions/兽人/enhancements/kustom-shokk-box.md) | 10 分、疾速 WAAAGH！ 分队。 | 2026-07-26 |
-| enhancement | [荣耀猪](factions/兽人/enhancements/glory-hog.md) | 30 分、Da Big Hunt 分队。 | 2026-07-26 |
+| enhancement | [荣耀猪](factions/兽人/enhancements/glory-hog.md) | 25 分、Da Big Hunt 分队。 | 2026-07-26 |
 | enhancement | [莫克的狡诈](factions/兽人/enhancements/morks-kunnin.md) | 15 分、Taktikal Brigade 分队。 | 2026-07-26 |
 | enhancement | [菌皮轮胎](factions/兽人/enhancements/squig-hide-tyres.md) | 15 分、Kult of Speed 分队。 | 2026-07-26 |
+| enhancement | [超亮玩意](factions/兽人/enhancements/supa-glowy-fing-dread-mob.md) | 20 分、Dread Mob 分队。 | 2026-07-26 |
+| enhancement | [超亮玩意](factions/兽人/enhancements/supa-glowy-fing-shoota-boyz.md) | 25 分、Shoota Boyz 分队。 | 2026-07-26 |
 | enhancement | [超亮玩意](factions/兽人/enhancements/supa-glowy-fing.md) | 20 分、Dread Mob 分队。 | 2026-07-26 |
 | enhancement | [超充菌油](factions/兽人/enhancements/supercharged-squig-oil.md) | 10 分、闪击旅 分队。 | 2026-07-26 |
 | enhancement | [超级燃料](factions/兽人/enhancements/supa-burny-fuel.md) | 15 分、疾速 WAAAGH！ 分队。 | 2026-07-26 |
 | enhancement | [超级赛博兽人身躯](factions/兽人/enhancements/supa-cybork-body.md) | 15 分、War Horde 分队。 | 2026-07-26 |
-| enhancement | [跟我上小子](factions/兽人/enhancements/follow-me-ladz.md) | 25 分、War Horde 分队。 | 2026-07-26 |
+| enhancement | [跟我上小子](factions/兽人/enhancements/follow-me-ladz.md) | 20 分、War Horde 分队。 | 2026-07-26 |
 | enhancement | [达卡技工](factions/兽人/enhancements/dakkamek.md) | 25 分、疾速 WAAAGH！ 分队。 | 2026-07-26 |
 | enhancement | [速度即真理](factions/兽人/enhancements/speed-makes-right.md) | 25 分、Kult of Speed 分队。 | 2026-07-26 |
 | enhancement | [闪亮射手](factions/兽人/enhancements/dead-shiny-shootas.md) | 35 分、More Dakka! 分队。 | 2026-07-26 |
@@ -147,96 +157,97 @@
 | stratagem | [长时间失控射击](factions/兽人/stratagems/long-uncontrolled-bursts.md) | 1 CP、Shooting phase、More Dakka! 分队、Battle Tactic Stratagem。 | 2026-07-26 |
 | stratagem | [闪电射击](factions/兽人/stratagems/blitza-fire.md) | 1 CP、Shooting phase、Kult of Speed 分队、Battle Tactic Stratagem。 | 2026-07-26 |
 | stratagem | [额外配件](factions/兽人/stratagems/extra-gubbinz.md) | 1 CP、Shooting phase、Dread Mob 分队、Battle Tactic Stratagem。 | 2026-07-26 |
-| unit | [Attack Fighta](factions/兽人/units/attack-fighta.md) |  | 2026-07-23 |
-| unit | [Big Gunz](factions/兽人/units/big-gunz.md) |  | 2026-07-23 |
-| unit | [Big Mek On Warbike](factions/兽人/units/big-mek-on-warbike.md) |  | 2026-07-23 |
-| unit | [Big Mek With Kustom Force Field](factions/兽人/units/big-mek-with-kustom-force-field.md) |  | 2026-07-23 |
-| unit | [Big Trakk](factions/兽人/units/big-trakk.md) |  | 2026-07-23 |
-| unit | [Boss Zagstruk](factions/兽人/units/boss-zagstruk.md) |  | 2026-07-23 |
-| unit | [Chinork Warkopta](factions/兽人/units/chinork-warkopta.md) |  | 2026-07-23 |
-| unit | [Da Red Gobbo](factions/兽人/units/da-red-gobbo.md) |  | 2026-07-23 |
-| unit | [Da Red Gobbo’s Tinboy](factions/兽人/units/da-red-gobbos-tinboy.md) |  | 2026-07-23 |
-| unit | [Deff Rolla Battle Fortress](factions/兽人/units/deff-rolla-battle-fortress.md) |  | 2026-07-23 |
-| unit | [Deffkoptas With Big Shootas](factions/兽人/units/deffkoptas-with-big-shootas.md) |  | 2026-07-23 |
-| unit | [Fighta-bommer](factions/兽人/units/fighta-bommer.md) |  | 2026-07-23 |
-| unit | [Grot Bomm Launcha](factions/兽人/units/grot-bomm-launcha.md) |  | 2026-07-23 |
-| unit | [Grot Mega-tank](factions/兽人/units/grot-mega-tank.md) |  | 2026-07-23 |
-| unit | [Grot Tanks](factions/兽人/units/grot-tanks.md) |  | 2026-07-23 |
-| unit | [Kannonwagon](factions/兽人/units/kannonwagon.md) |  | 2026-07-23 |
-| unit | [Kaptin Badrukk](factions/兽人/units/kaptin-badrukk.md) |  | 2026-07-23 |
-| unit | [Kill Krusha](factions/兽人/units/kill-krusha.md) |  | 2026-07-23 |
-| unit | [Kill Tank](factions/兽人/units/kill-tank.md) |  | 2026-07-23 |
-| unit | [Lifta Wagon](factions/兽人/units/lifta-wagon.md) |  | 2026-07-23 |
-| unit | [Mad Dok Grotsnik](factions/兽人/units/mad-dok-grotsnik.md) |  | 2026-07-23 |
-| unit | [Mega Dread](factions/兽人/units/mega-dread.md) |  | 2026-07-23 |
-| unit | [Meka-dread](factions/兽人/units/meka-dread.md) |  | 2026-07-23 |
-| unit | [Mekboy Workshop](factions/兽人/units/mekboy-workshop.md) |  | 2026-07-23 |
-| unit | [Nob With Waaagh! Banner](factions/兽人/units/nob-with-waaagh-banner.md) |  | 2026-07-23 |
-| unit | [Nobz On Warbikes](factions/兽人/units/nobz-on-warbikes.md) |  | 2026-07-23 |
-| unit | [Painboy On Warbike](factions/兽人/units/painboy-on-warbike.md) |  | 2026-07-23 |
-| unit | [Skorchas](factions/兽人/units/skorchas.md) |  | 2026-07-23 |
-| unit | [Squiggoth](factions/兽人/units/squiggoth.md) |  | 2026-07-23 |
-| unit | [Ufthak Blackhawk](factions/兽人/units/ufthak-blackhawk.md) |  | 2026-07-23 |
-| unit | [Warboss On Warbike](factions/兽人/units/warboss-on-warbike.md) |  | 2026-07-23 |
-| unit | [Warbuggies](factions/兽人/units/warbuggies.md) |  | 2026-07-23 |
-| unit | [兽霸头目](factions/兽人/units/beastboss.md) |  | 2026-07-23 |
-| unit | [兽霸小子](factions/兽人/units/beast-snagga-boyz.md) |  | 2026-07-23 |
-| unit | [剧痛头目](factions/兽人/units/painboss.md) |  | 2026-07-23 |
-| unit | [剧痛小子](factions/兽人/units/painboy.md) |  | 2026-07-23 |
-| unit | [卡车](factions/兽人/units/trukk.md) |  | 2026-07-23 |
-| unit | [古巨基](factions/兽人/units/stompa.md) |  | 2026-07-23 |
-| unit | [哒咔战斗机](factions/兽人/units/dakkajet.md) |  | 2026-07-23 |
-| unit | [坦爆队](factions/兽人/units/tankbustas.md) |  | 2026-07-23 |
-| unit | [大头堡](factions/兽人/units/biged-bossbunka.md) |  | 2026-07-23 |
-| unit | [大头目](factions/兽人/units/bigboss.md) |  | 2026-07-23 |
-| unit | [大技霸](factions/兽人/units/big-mek.md) |  | 2026-07-23 |
-| unit | [小子](factions/兽人/units/boyz.md) |  | 2026-07-23 |
-| unit | [小技霸](factions/兽人/units/mek.md) |  | 2026-07-23 |
-| unit | [屁精小队](factions/兽人/units/gretchin.md) |  | 2026-07-23 |
-| unit | [屁精技师炮](factions/兽人/units/mek-gunz.md) |  | 2026-07-23 |
-| unit | [巨型斯奎格兽](factions/兽人/units/gargantuan-squiggoth.md) |  | 2026-07-23 |
-| unit | [巫术小子](factions/兽人/units/wurrboy.md) |  | 2026-07-23 |
-| unit | [恶疤莫兹罗格](factions/兽人/units/mozrog-skragbad.md) |  | 2026-07-23 |
-| unit | [战争头目](factions/兽人/units/warboss.md) |  | 2026-07-23 |
-| unit | [战履车](factions/兽人/units/wartrakks.md) |  | 2026-07-23 |
-| unit | [战斗堡垒](factions/兽人/units/battlewagon.md) |  | 2026-07-23 |
-| unit | [执旗强蛮人](factions/兽人/units/bannernob.md) |  | 2026-07-23 |
-| unit | [技霸轰炸机](factions/兽人/units/wazbom-blastajet.md) |  | 2026-07-23 |
-| unit | [折跃飚速车](factions/兽人/units/shokkjump-dragsta.md) |  | 2026-07-23 |
-| unit | [拾荒小子](factions/兽人/units/lootas.md) |  | 2026-07-23 |
-| unit | [搞哥金刚](factions/兽人/units/gorkanaut.md) |  | 2026-07-23 |
-| unit | [摩托小子](factions/兽人/units/warbikers.md) |  | 2026-07-23 |
-| unit | [杀戮战车](factions/兽人/units/kill-rig.md) |  | 2026-07-23 |
-| unit | [杀戮铁罐](factions/兽人/units/killa-kans.md) |  | 2026-07-23 |
-| unit | [次元炮大技霸](factions/兽人/units/big-mek-with-shokk-attack-gun.md) |  | 2026-07-23 |
-| unit | [死亡杀手三轮战车](factions/兽人/units/deffkilla-wartrike.md) |  | 2026-07-23 |
-| unit | [死死无畏机甲](factions/兽人/units/deff-dread.md) |  | 2026-07-23 |
-| unit | [死死直升机](factions/兽人/units/deffkoptas.md) |  | 2026-07-23 |
-| unit | [毛哥金刚](factions/兽人/units/morkanaut.md) |  | 2026-07-23 |
-| unit | [烧烤小子](factions/兽人/units/burna-boyz.md) |  | 2026-07-23 |
-| unit | [燃烧轰炸机](factions/兽人/units/burna-bommer.md) |  | 2026-07-23 |
-| unit | [爆裂靓车](factions/兽人/units/boomdakka-snazzwagon.md) |  | 2026-07-23 |
-| unit | [特战小子](factions/兽人/units/kommandos.md) |  | 2026-07-23 |
-| unit | [狩猎战车](factions/兽人/units/hunta-rig.md) |  | 2026-07-23 |
-| unit | [瓦兹达卡·古茨梅克](factions/兽人/units/wazdakka-gutsmek.md) |  | 2026-07-23 |
-| unit | [疯癫小子](factions/兽人/units/weirdboy.md) |  | 2026-07-23 |
-| unit | [破拆小子](factions/兽人/units/breaka-boyz.md) |  | 2026-07-23 |
-| unit | [碎骨者萨拉卡](factions/兽人/units/ghazghkull-thraka.md) |  | 2026-07-23 |
-| unit | [突突大机甲](factions/兽人/units/big-mek-dakkarig.md) |  | 2026-07-23 |
-| unit | [老大队](factions/兽人/units/nobz.md) |  | 2026-07-23 |
-| unit | [脏枪混混](factions/兽人/units/flash-gitz.md) |  | 2026-07-23 |
-| unit | [超级屁精老大监工佐德格罗德·沃茨纳加](factions/兽人/units/zodgrod-wortsnagga.md) |  | 2026-07-23 |
-| unit | [超重装大技霸](factions/兽人/units/big-mek-in-mega-armour.md) |  | 2026-07-23 |
-| unit | [超重装战争头目](factions/兽人/units/warboss-in-mega-armour.md) |  | 2026-07-23 |
-| unit | [超重装老大](factions/兽人/units/meganobz.md) |  | 2026-07-23 |
-| unit | [超霸拖垃圾](factions/兽人/units/megatrakk-scrapjet.md) |  | 2026-07-23 |
-| unit | [跳跳猪小子](factions/兽人/units/squighog-boyz.md) |  | 2026-07-23 |
-| unit | [跳跳送餐车](factions/兽人/units/rukkatrukk-squigbuggy.md) |  | 2026-07-23 |
-| unit | [闪电轰炸机](factions/兽人/units/blitza-bommer.md) |  | 2026-07-23 |
-| unit | [风暴小子](factions/兽人/units/stormboyz.md) |  | 2026-07-23 |
-| unit | [骑乘跳龙的兽霸头目](factions/兽人/units/beastboss-on-squigosaur.md) |  | 2026-07-23 |
-| unit | [鬼祟鼠](factions/兽人/units/boss-snikrot.md) |  | 2026-07-23 |
-| unit | [魔改爆裂车](factions/兽人/units/kustom-boosta-blasta.md) |  | 2026-07-23 |
+| unit | [Attack Fighta](factions/兽人/units/attack-fighta.md) | 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。 | 2026-09-14 |
+| unit | [Big Gunz](factions/兽人/units/big-gunz.md) | 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。 | 2026-09-14 |
+| unit | [Big Mek On Warbike](factions/兽人/units/big-mek-on-warbike.md) | 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。 | 2026-09-14 |
+| unit | [Big Mek With Kustom Force Field](factions/兽人/units/big-mek-with-kustom-force-field.md) | 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。 | 2026-09-14 |
+| unit | [Big Trakk](factions/兽人/units/big-trakk.md) | 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。 | 2026-09-14 |
+| unit | [Boss Zagstruk](factions/兽人/units/boss-zagstruk.md) | 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。 | 2026-09-14 |
+| unit | [Chinork Warkopta](factions/兽人/units/chinork-warkopta.md) | 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。 | 2026-09-14 |
+| unit | [Da Red Gobbo](factions/兽人/units/da-red-gobbo.md) | 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。 | 2026-09-14 |
+| unit | [Da Red Gobbo’s Tinboy](factions/兽人/units/da-red-gobbos-tinboy.md) | 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。 | 2026-09-14 |
+| unit | [Deff Rolla Battle Fortress](factions/兽人/units/deff-rolla-battle-fortress.md) | 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。 | 2026-09-14 |
+| unit | [Deffkoptas With Big Shootas](factions/兽人/units/deffkoptas-with-big-shootas.md) | 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。 | 2026-09-14 |
+| unit | [Fighta-bommer](factions/兽人/units/fighta-bommer.md) | 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。 | 2026-09-14 |
+| unit | [Grot Bomm Launcha](factions/兽人/units/grot-bomm-launcha.md) | 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。 | 2026-09-14 |
+| unit | [Grot Mega-tank](factions/兽人/units/grot-mega-tank.md) | 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。 | 2026-09-14 |
+| unit | [Grot Tanks](factions/兽人/units/grot-tanks.md) | 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。 | 2026-09-14 |
+| unit | [Kannonwagon](factions/兽人/units/kannonwagon.md) | 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。 | 2026-09-14 |
+| unit | [Kaptin Badrukk](factions/兽人/units/kaptin-badrukk.md) | 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。 | 2026-09-14 |
+| unit | [Kill Krusha](factions/兽人/units/kill-krusha.md) | 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。 | 2026-09-14 |
+| unit | [Kill Tank](factions/兽人/units/kill-tank.md) | 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。 | 2026-09-14 |
+| unit | [Lifta Wagon](factions/兽人/units/lifta-wagon.md) | 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。 | 2026-09-14 |
+| unit | [Mad Dok Grotsnik](factions/兽人/units/mad-dok-grotsnik.md) | 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。 | 2026-09-14 |
+| unit | [Mega Dread](factions/兽人/units/mega-dread.md) | 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。 | 2026-09-14 |
+| unit | [Meka-dread](factions/兽人/units/meka-dread.md) | 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。 | 2026-09-14 |
+| unit | [Mekboy Workshop](factions/兽人/units/mekboy-workshop.md) | 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。 | 2026-09-14 |
+| unit | [Nazdreg](factions/兽人/units/nazdreg.md) | Official preview datasheet: rules version 11e-official-preview-2026-07-20. Point... | 2026-09-14 |
+| unit | [Nob With Waaagh! Banner](factions/兽人/units/nob-with-waaagh-banner.md) | 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。 | 2026-09-14 |
+| unit | [Nobz On Warbikes](factions/兽人/units/nobz-on-warbikes.md) | 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。 | 2026-09-14 |
+| unit | [Painboy On Warbike](factions/兽人/units/painboy-on-warbike.md) | 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。 | 2026-09-14 |
+| unit | [Skorchas](factions/兽人/units/skorchas.md) | 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。 | 2026-09-14 |
+| unit | [Squiggoth](factions/兽人/units/squiggoth.md) | 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。 | 2026-09-14 |
+| unit | [Ufthak Blackhawk](factions/兽人/units/ufthak-blackhawk.md) | 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。 | 2026-09-14 |
+| unit | [Warboss On Warbike](factions/兽人/units/warboss-on-warbike.md) | 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。 | 2026-09-14 |
+| unit | [Warbuggies](factions/兽人/units/warbuggies.md) |  | 2026-09-14 |
+| unit | [兽霸头目](factions/兽人/units/beastboss.md) |  | 2026-09-14 |
+| unit | [兽霸小子](factions/兽人/units/beast-snagga-boyz.md) |  | 2026-09-14 |
+| unit | [剧痛头目](factions/兽人/units/painboss.md) |  | 2026-09-14 |
+| unit | [剧痛小子](factions/兽人/units/painboy.md) |  | 2026-09-14 |
+| unit | [卡车](factions/兽人/units/trukk.md) |  | 2026-09-14 |
+| unit | [古巨基](factions/兽人/units/stompa.md) |  | 2026-09-14 |
+| unit | [哒咔战斗机](factions/兽人/units/dakkajet.md) |  | 2026-09-14 |
+| unit | [坦爆队](factions/兽人/units/tankbustas.md) |  | 2026-09-14 |
+| unit | [大头堡](factions/兽人/units/biged-bossbunka.md) |  | 2026-09-14 |
+| unit | [大头目](factions/兽人/units/bigboss.md) |  | 2026-09-14 |
+| unit | [大技霸](factions/兽人/units/big-mek.md) |  | 2026-09-14 |
+| unit | [小子](factions/兽人/units/boyz.md) |  | 2026-09-14 |
+| unit | [小技霸](factions/兽人/units/mek.md) |  | 2026-09-14 |
+| unit | [屁精小队](factions/兽人/units/gretchin.md) |  | 2026-09-14 |
+| unit | [屁精技师炮](factions/兽人/units/mek-gunz.md) |  | 2026-09-14 |
+| unit | [巨型斯奎格兽](factions/兽人/units/gargantuan-squiggoth.md) |  | 2026-09-14 |
+| unit | [巫术小子](factions/兽人/units/wurrboy.md) | 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。 | 2026-09-14 |
+| unit | [恶疤莫兹罗格](factions/兽人/units/mozrog-skragbad.md) |  | 2026-09-14 |
+| unit | [战争头目](factions/兽人/units/warboss.md) |  | 2026-09-14 |
+| unit | [战履车](factions/兽人/units/wartrakks.md) |  | 2026-09-14 |
+| unit | [战斗堡垒](factions/兽人/units/battlewagon.md) |  | 2026-09-14 |
+| unit | [执旗强蛮人](factions/兽人/units/bannernob.md) |  | 2026-09-14 |
+| unit | [技霸轰炸机](factions/兽人/units/wazbom-blastajet.md) |  | 2026-09-14 |
+| unit | [折跃飚速车](factions/兽人/units/shokkjump-dragsta.md) | 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。 | 2026-09-14 |
+| unit | [拾荒小子](factions/兽人/units/lootas.md) | 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。 | 2026-09-14 |
+| unit | [搞哥金刚](factions/兽人/units/gorkanaut.md) |  | 2026-09-14 |
+| unit | [摩托小子](factions/兽人/units/warbikers.md) |  | 2026-09-14 |
+| unit | [杀戮战车](factions/兽人/units/kill-rig.md) |  | 2026-09-14 |
+| unit | [杀戮铁罐](factions/兽人/units/killa-kans.md) |  | 2026-09-14 |
+| unit | [次元炮大技霸](factions/兽人/units/big-mek-with-shokk-attack-gun.md) |  | 2026-09-14 |
+| unit | [死亡杀手三轮战车](factions/兽人/units/deffkilla-wartrike.md) |  | 2026-09-14 |
+| unit | [死死无畏机甲](factions/兽人/units/deff-dread.md) |  | 2026-09-14 |
+| unit | [死死直升机](factions/兽人/units/deffkoptas.md) |  | 2026-09-14 |
+| unit | [毛哥金刚](factions/兽人/units/morkanaut.md) |  | 2026-09-14 |
+| unit | [烧烤小子](factions/兽人/units/burna-boyz.md) | 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。 | 2026-09-14 |
+| unit | [燃烧轰炸机](factions/兽人/units/burna-bommer.md) |  | 2026-09-14 |
+| unit | [爆裂靓车](factions/兽人/units/boomdakka-snazzwagon.md) | 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。 | 2026-09-14 |
+| unit | [特战小子](factions/兽人/units/kommandos.md) |  | 2026-09-14 |
+| unit | [狩猎战车](factions/兽人/units/hunta-rig.md) |  | 2026-09-14 |
+| unit | [瓦兹达卡·古茨梅克](factions/兽人/units/wazdakka-gutsmek.md) |  | 2026-09-14 |
+| unit | [疯癫小子](factions/兽人/units/weirdboy.md) |  | 2026-09-14 |
+| unit | [破拆小子](factions/兽人/units/breaka-boyz.md) |  | 2026-09-14 |
+| unit | [碎骨者萨拉卡](factions/兽人/units/ghazghkull-thraka.md) |  | 2026-09-14 |
+| unit | [突突大机甲](factions/兽人/units/big-mek-dakkarig.md) |  | 2026-09-14 |
+| unit | [老大队](factions/兽人/units/nobz.md) |  | 2026-09-14 |
+| unit | [脏枪混混](factions/兽人/units/flash-gitz.md) |  | 2026-09-14 |
+| unit | [超级屁精老大监工佐德格罗德·沃茨纳加](factions/兽人/units/zodgrod-wortsnagga.md) |  | 2026-09-14 |
+| unit | [超重装大技霸](factions/兽人/units/big-mek-in-mega-armour.md) |  | 2026-09-14 |
+| unit | [超重装战争头目](factions/兽人/units/warboss-in-mega-armour.md) |  | 2026-09-14 |
+| unit | [超重装老大](factions/兽人/units/meganobz.md) |  | 2026-09-14 |
+| unit | [超霸拖垃圾](factions/兽人/units/megatrakk-scrapjet.md) | 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。 | 2026-09-14 |
+| unit | [跳跳猪小子](factions/兽人/units/squighog-boyz.md) |  | 2026-09-14 |
+| unit | [跳跳送餐车](factions/兽人/units/rukkatrukk-squigbuggy.md) |  | 2026-09-14 |
+| unit | [闪电轰炸机](factions/兽人/units/blitza-bommer.md) |  | 2026-09-14 |
+| unit | [风暴小子](factions/兽人/units/stormboyz.md) |  | 2026-09-14 |
+| unit | [骑乘跳龙的兽霸头目](factions/兽人/units/beastboss-on-squigosaur.md) |  | 2026-09-14 |
+| unit | [鬼祟鼠](factions/兽人/units/boss-snikrot.md) |  | 2026-09-14 |
+| unit | [魔改爆裂车](factions/兽人/units/kustom-boosta-blasta.md) | 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。 | 2026-09-14 |
 
 ### 千子
 
@@ -256,7 +267,7 @@
 | detachment | [次元邪咒傀儡团](factions/千子/detachments/hexwarp-thrallband.md) | 千子的分队「次元邪咒傀儡团」，分队规则「魔力涌流」。 | 2026-07-26 |
 | enhancement | [先知权柄](factions/千子/enhancements/prescient-authority.md) | 0 分、Devoted Thralls 分队。 | 2026-07-26 |
 | enhancement | [冥啸噬心者](factions/千子/enhancements/nethershriek-mind-eater.md) | 10 分、Changehost of Deceit 分队。 | 2026-07-26 |
-| enhancement | [刃骨增生](factions/千子/enhancements/thicket-of-bladed-bone.md) | 分数未知、变化的仆从 分队。 | 2026-07-26 |
+| enhancement | [刃骨增生](factions/千子/enhancements/thicket-of-bladed-bone.md) | 10 分、变化的仆从 分队。 | 2026-07-26 |
 | enhancement | [厄塔弗虚旋](factions/千子/enhancements/eldritch-vortex-of-etaph.md) | 35 分、Grand Coven 分队。 | 2026-07-26 |
 | enhancement | [变化之火](factions/千子/enhancements/fires-of-change.md) | 0 分、Chosen Cabal 分队。 | 2026-07-26 |
 | enhancement | [口是心非诅咒](factions/千子/enhancements/duplicitous-malediction.md) | 15 分、Changehost of Deceit 分队。 | 2026-07-26 |
@@ -274,19 +285,19 @@
 | enhancement | [扭曲之匕](factions/千子/enhancements/warpmeld-dagger.md) | 10 分、Warpmeld Pact 分队。 | 2026-07-26 |
 | enhancement | [扭曲之钻](factions/千子/enhancements/diamond-of-distortion.md) | 20 分、Warpmeld Pact 分队。 | 2026-07-26 |
 | enhancement | [星界潜猎](factions/千子/enhancements/astral-predation.md) | 0 分、Fateseekers 分队。 | 2026-07-26 |
-| enhancement | [本影晶石](factions/千子/enhancements/umbralefic-crystal.md) | 20 分、Grand Coven 分队。 | 2026-07-26 |
+| enhancement | [本影晶石](factions/千子/enhancements/umbralefic-crystal.md) | 30 分、Grand Coven 分队。 | 2026-07-26 |
 | enhancement | [次元猛攻](factions/千子/enhancements/empyric-onslaught.md) | 25 分、次元邪咒傀儡团 分队。 | 2026-07-26 |
 | enhancement | [流变之肉](factions/千子/enhancements/flowing-flesh.md) | 10 分、Warpmeld Pact 分队。 | 2026-07-26 |
-| enhancement | [炼狱魔眼](factions/千子/enhancements/occulus-infernum.md) | 分数未知、塞克塔部队 分队。 | 2026-07-26 |
+| enhancement | [炼狱魔眼](factions/千子/enhancements/occulus-infernum.md) | 20 分、塞克塔部队 分队。 | 2026-07-26 |
 | enhancement | [炽焰灵体](factions/千子/enhancements/incandaeum.md) | 15 分、Grand Coven 分队。 | 2026-07-26 |
-| enhancement | [生命诅咒](factions/千子/enhancements/curse-of-life.md) | 分数未知、再生仪式 分队。 | 2026-07-26 |
-| enhancement | [生机迸发](factions/千子/enhancements/eruption-of-vitality.md) | 分数未知、再生仪式 分队。 | 2026-07-26 |
+| enhancement | [生命诅咒](factions/千子/enhancements/curse-of-life.md) | 20 分、再生仪式 分队。 | 2026-07-26 |
+| enhancement | [生机迸发](factions/千子/enhancements/eruption-of-vitality.md) | 35 分、再生仪式 分队。 | 2026-07-26 |
 | enhancement | [生物机械突变](factions/千子/enhancements/biomechanical-mutation.md) | 15 分、Warpforged Cabal 分队。 | 2026-07-26 |
 | enhancement | [真名之书](factions/千子/enhancements/tome-of-true-names.md) | 20 分、Changehost of Deceit 分队。 | 2026-07-26 |
 | enhancement | [禁忌学识之主](factions/千子/enhancements/lord-of-forbidden-lore.md) | 20 分、Grand Coven 分队。 | 2026-07-26 |
-| enhancement | [移动护墙](factions/千子/enhancements/walking-rampart.md) | 分数未知、塞克塔部队 分队。 | 2026-07-26 |
+| enhancement | [移动护墙](factions/千子/enhancements/walking-rampart.md) | 30 分、塞克塔部队 分队。 | 2026-07-26 |
 | enhancement | [红骸之主](factions/千子/enhancements/lord-of-the-rubricae.md) | 15 分、Rubricae Phalanx 分队。 | 2026-07-26 |
-| enhancement | [解开命运](factions/千子/enhancements/unravelled-fates.md) | 分数未知、变化的仆从 分队。 | 2026-07-26 |
+| enhancement | [解开命运](factions/千子/enhancements/unravelled-fates.md) | 15 分、变化的仆从 分队。 | 2026-07-26 |
 | enhancement | [迷惑之袍](factions/千子/enhancements/the-perplexing-cloak.md) | 20 分、Warpforged Cabal 分队。 | 2026-07-26 |
 | enhancement | [邪谋智者](factions/千子/enhancements/diabolic-savant.md) | 20 分、Changehost of Deceit 分队。 | 2026-07-26 |
 | enhancement | [阿波米努斯法杖](factions/千子/enhancements/the-stave-abominus.md) | 20 分、Rubricae Phalanx 分队。 | 2026-07-26 |
@@ -347,66 +358,66 @@
 | stratagem | [附魔灌注](factions/千子/stratagems/ensorcelled-infusion.md) | 2 CP、Shooting phase、Warpforged Cabal 分队、Battle Tactic Stratagem。 | 2026-07-26 |
 | stratagem | [隐形袭击者](factions/千子/stratagems/invisible-assailants.md) | 1 CP、Movement phase、Fateseekers 分队、Strategic Ploy Stratagem。 | 2026-07-26 |
 | stratagem | [魂质肢体](factions/千子/stratagems/ectoplasmic-extrusion.md) | 1 CP、Shooting phase、塞克塔部队 分队。 | 2026-07-26 |
-| unit | [Cerberus](factions/千子/units/cerberus.md) |  | 2026-07-23 |
-| unit | [Chaos Lord On Disc Of Tzeentch](factions/千子/units/chaos-lord-on-disc-of-tzeentch.md) |  | 2026-07-23 |
-| unit | [Chaos Thunderhawk](factions/千子/units/chaos-thunderhawk.md) |  | 2026-07-23 |
-| unit | [Deredeo Dreadnought](factions/千子/units/deredeo-dreadnought.md) |  | 2026-07-23 |
-| unit | [Falchion](factions/千子/units/falchion.md) |  | 2026-07-23 |
-| unit | [Fellblade](factions/千子/units/fellblade.md) |  | 2026-07-23 |
-| unit | [Fire Raptor Gunship](factions/千子/units/fire-raptor-gunship.md) |  | 2026-07-23 |
-| unit | [Hell Blade](factions/千子/units/hell-blade.md) |  | 2026-07-23 |
-| unit | [Hell Talon](factions/千子/units/hell-talon.md) |  | 2026-07-23 |
-| unit | [Kratos](factions/千子/units/kratos.md) |  | 2026-07-23 |
-| unit | [Land Raider Achilles](factions/千子/units/land-raider-achilles.md) |  | 2026-07-23 |
-| unit | [Land Raider Proteus](factions/千子/units/land-raider-proteus.md) |  | 2026-07-23 |
-| unit | [Leviathan Dreadnought](factions/千子/units/leviathan-dreadnought.md) |  | 2026-07-23 |
-| unit | [Mastodon](factions/千子/units/mastodon.md) |  | 2026-07-23 |
-| unit | [Rapier Carrier](factions/千子/units/rapier-carrier.md) |  | 2026-07-23 |
-| unit | [Relic Contemptor Dreadnought](factions/千子/units/relic-contemptor-dreadnought.md) |  | 2026-07-23 |
-| unit | [Sicaran Battle Tank](factions/千子/units/sicaran-battle-tank.md) |  | 2026-07-23 |
-| unit | [Sicaran Punisher](factions/千子/units/sicaran-punisher.md) |  | 2026-07-23 |
-| unit | [Sicaran Venator](factions/千子/units/sicaran-venator.md) |  | 2026-07-23 |
-| unit | [Sokar-pattern Stormbird](factions/千子/units/sokar-pattern-stormbird.md) |  | 2026-07-23 |
-| unit | [Spartan](factions/千子/units/spartan.md) |  | 2026-07-23 |
-| unit | [Storm Eagle Gunship](factions/千子/units/storm-eagle-gunship.md) |  | 2026-07-23 |
-| unit | [Terrax-pattern Termite](factions/千子/units/terrax-pattern-termite.md) |  | 2026-07-23 |
-| unit | [Typhon](factions/千子/units/typhon.md) |  | 2026-07-23 |
-| unit | [Whirlwind Scorpius](factions/千子/units/whirlwind-scorpius.md) |  | 2026-07-23 |
-| unit | [Xiphon Interceptor](factions/千子/units/xiphon-interceptor.md) |  | 2026-07-23 |
-| unit | [乘坐奸奇魔碟的高阶巫师](factions/千子/units/exalted-sorcerer-on-disc-of-tzeentch.md) |  | 2026-07-23 |
-| unit | [亵渎者](factions/千子/units/defiler.md) |  | 2026-07-23 |
-| unit | [凯洛斯·织命者](factions/千子/units/kairos-fateweaver.md) |  | 2026-07-23 |
-| unit | [变化魔君](factions/千子/units/lord-of-change.md) |  | 2026-07-23 |
-| unit | [变异漩涡兽](factions/千子/units/mutalith-vortex-beast.md) |  | 2026-07-23 |
-| unit | [圣甲虫终结者](factions/千子/units/scarab-occult-terminators.md) |  | 2026-07-23 |
-| unit | [地狱兽](factions/千子/units/helbrute.md) |  | 2026-07-23 |
-| unit | [地狱飞龙](factions/千子/units/heldrake.md) |  | 2026-07-23 |
-| unit | [塞克塔机器人](factions/千子/units/sekhetar-robots.md) |  | 2026-07-23 |
-| unit | [奸奇恶魔王子](factions/千子/units/daemon-prince-of-tzeentch.md) |  | 2026-07-23 |
-| unit | [奸角兽](factions/千子/units/tzaangors.md) |  | 2026-07-23 |
-| unit | [奸角兽开悟者](factions/千子/units/tzaangor-enlightened.md) |  | 2026-07-23 |
-| unit | [奸角兽萨满](factions/千子/units/tzaangor-shaman.md) |  | 2026-07-23 |
-| unit | [尖啸魔](factions/千子/units/screamers.md) |  | 2026-07-23 |
-| unit | [巫师](factions/千子/units/sorcerer.md) |  | 2026-07-23 |
-| unit | [有翼奸奇恶魔王子](factions/千子/units/daemon-prince-of-tzeentch-with-wings.md) |  | 2026-07-23 |
-| unit | [歼灭者型猎食者坦克](factions/千子/units/chaos-predator-annihilator.md) |  | 2026-07-23 |
-| unit | [混沌兰德掠袭者](factions/千子/units/chaos-land-raider.md) |  | 2026-07-23 |
-| unit | [混沌卵](factions/千子/units/chaos-spawn.md) |  | 2026-07-23 |
-| unit | [混沌维护者突击炮](factions/千子/units/chaos-vindicator.md) |  | 2026-07-23 |
-| unit | [火妖](factions/千子/units/flamers.md) |  | 2026-07-23 |
-| unit | [炼狱之主](factions/千子/units/infernal-master.md) |  | 2026-07-23 |
-| unit | [犀牛装甲车](factions/千子/units/chaos-rhino.md) |  | 2026-07-23 |
-| unit | [破坏者型猎食者坦克](factions/千子/units/chaos-predator-destructor.md) |  | 2026-07-23 |
-| unit | [粉惧妖](factions/千子/units/pink-horrors.md) |  | 2026-07-23 |
-| unit | [红字战士](factions/千子/units/rubric-marines.md) |  | 2026-07-23 |
-| unit | [红魔马格努斯](factions/千子/units/magnus-the-red.md) |  | 2026-07-23 |
-| unit | [终结者巫师](factions/千子/units/sorcerer-in-terminator-armour.md) |  | 2026-07-23 |
-| unit | [蓝惧妖](factions/千子/units/blue-horrors.md) |  | 2026-07-23 |
-| unit | [装备命运掌握者巨弓的奸角兽开悟者](factions/千子/units/tzaangor-enlightened-with-fatecaster-greatbows.md) |  | 2026-07-23 |
-| unit | [重锤魔](factions/千子/units/maulerfiend.md) |  | 2026-07-23 |
-| unit | [铸造魔](factions/千子/units/forgefiend.md) |  | 2026-07-23 |
-| unit | [阿里曼](factions/千子/units/ahriman.md) |  | 2026-07-23 |
-| unit | [高阶巫师](factions/千子/units/exalted-sorcerer.md) |  | 2026-07-23 |
+| unit | [Cerberus](factions/千子/units/cerberus.md) | 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。 | 2026-09-14 |
+| unit | [Chaos Lord On Disc Of Tzeentch](factions/千子/units/chaos-lord-on-disc-of-tzeentch.md) | 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。 | 2026-09-14 |
+| unit | [Chaos Thunderhawk](factions/千子/units/chaos-thunderhawk.md) | 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。 | 2026-09-14 |
+| unit | [Deredeo Dreadnought](factions/千子/units/deredeo-dreadnought.md) | 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。 | 2026-09-14 |
+| unit | [Falchion](factions/千子/units/falchion.md) | 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。 | 2026-09-14 |
+| unit | [Fellblade](factions/千子/units/fellblade.md) | 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。 | 2026-09-14 |
+| unit | [Fire Raptor Gunship](factions/千子/units/fire-raptor-gunship.md) | 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。 | 2026-09-14 |
+| unit | [Hell Blade](factions/千子/units/hell-blade.md) | 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。 | 2026-09-14 |
+| unit | [Hell Talon](factions/千子/units/hell-talon.md) | 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。 | 2026-09-14 |
+| unit | [Kratos](factions/千子/units/kratos.md) | 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。 | 2026-09-14 |
+| unit | [Land Raider Achilles](factions/千子/units/land-raider-achilles.md) | 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。 | 2026-09-14 |
+| unit | [Land Raider Proteus](factions/千子/units/land-raider-proteus.md) | 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。 | 2026-09-14 |
+| unit | [Leviathan Dreadnought](factions/千子/units/leviathan-dreadnought.md) | 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。 | 2026-09-14 |
+| unit | [Mastodon](factions/千子/units/mastodon.md) | 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。 | 2026-09-14 |
+| unit | [Rapier Carrier](factions/千子/units/rapier-carrier.md) | 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。 | 2026-09-14 |
+| unit | [Relic Contemptor Dreadnought](factions/千子/units/relic-contemptor-dreadnought.md) | 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。 | 2026-09-14 |
+| unit | [Sicaran Battle Tank](factions/千子/units/sicaran-battle-tank.md) | 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。 | 2026-09-14 |
+| unit | [Sicaran Punisher](factions/千子/units/sicaran-punisher.md) | 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。 | 2026-09-14 |
+| unit | [Sicaran Venator](factions/千子/units/sicaran-venator.md) | 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。 | 2026-09-14 |
+| unit | [Sokar-pattern Stormbird](factions/千子/units/sokar-pattern-stormbird.md) | 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。 | 2026-09-14 |
+| unit | [Spartan](factions/千子/units/spartan.md) | 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。 | 2026-09-14 |
+| unit | [Storm Eagle Gunship](factions/千子/units/storm-eagle-gunship.md) | 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。 | 2026-09-14 |
+| unit | [Terrax-pattern Termite](factions/千子/units/terrax-pattern-termite.md) | 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。 | 2026-09-14 |
+| unit | [Typhon](factions/千子/units/typhon.md) | 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。 | 2026-09-14 |
+| unit | [Whirlwind Scorpius](factions/千子/units/whirlwind-scorpius.md) | 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。 | 2026-09-14 |
+| unit | [Xiphon Interceptor](factions/千子/units/xiphon-interceptor.md) | 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。 | 2026-09-14 |
+| unit | [乘坐奸奇魔碟的高阶巫师](factions/千子/units/exalted-sorcerer-on-disc-of-tzeentch.md) |  | 2026-09-14 |
+| unit | [亵渎者](factions/千子/units/defiler.md) |  | 2026-09-14 |
+| unit | [凯洛斯·织命者](factions/千子/units/kairos-fateweaver.md) |  | 2026-09-14 |
+| unit | [变化魔君](factions/千子/units/lord-of-change.md) |  | 2026-09-14 |
+| unit | [变异漩涡兽](factions/千子/units/mutalith-vortex-beast.md) |  | 2026-09-14 |
+| unit | [圣甲虫终结者](factions/千子/units/scarab-occult-terminators.md) |  | 2026-09-14 |
+| unit | [地狱兽](factions/千子/units/helbrute.md) |  | 2026-09-14 |
+| unit | [地狱飞龙](factions/千子/units/heldrake.md) |  | 2026-09-14 |
+| unit | [塞克塔机器人](factions/千子/units/sekhetar-robots.md) |  | 2026-09-14 |
+| unit | [奸奇恶魔王子](factions/千子/units/daemon-prince-of-tzeentch.md) |  | 2026-09-14 |
+| unit | [奸角兽](factions/千子/units/tzaangors.md) |  | 2026-09-14 |
+| unit | [奸角兽开悟者](factions/千子/units/tzaangor-enlightened.md) |  | 2026-09-14 |
+| unit | [奸角兽萨满](factions/千子/units/tzaangor-shaman.md) |  | 2026-09-14 |
+| unit | [尖啸魔](factions/千子/units/screamers.md) |  | 2026-09-14 |
+| unit | [巫师](factions/千子/units/sorcerer.md) |  | 2026-09-14 |
+| unit | [有翼奸奇恶魔王子](factions/千子/units/daemon-prince-of-tzeentch-with-wings.md) |  | 2026-09-14 |
+| unit | [歼灭者型猎食者坦克](factions/千子/units/chaos-predator-annihilator.md) |  | 2026-09-14 |
+| unit | [混沌兰德掠袭者](factions/千子/units/chaos-land-raider.md) |  | 2026-09-14 |
+| unit | [混沌卵](factions/千子/units/chaos-spawn.md) |  | 2026-09-14 |
+| unit | [混沌维护者突击炮](factions/千子/units/chaos-vindicator.md) |  | 2026-09-14 |
+| unit | [火妖](factions/千子/units/flamers.md) |  | 2026-09-14 |
+| unit | [炼狱之主](factions/千子/units/infernal-master.md) |  | 2026-09-14 |
+| unit | [犀牛装甲车](factions/千子/units/chaos-rhino.md) |  | 2026-09-14 |
+| unit | [破坏者型猎食者坦克](factions/千子/units/chaos-predator-destructor.md) |  | 2026-09-14 |
+| unit | [粉惧妖](factions/千子/units/pink-horrors.md) |  | 2026-09-14 |
+| unit | [红字战士](factions/千子/units/rubric-marines.md) |  | 2026-09-14 |
+| unit | [红魔马格努斯](factions/千子/units/magnus-the-red.md) |  | 2026-09-14 |
+| unit | [终结者巫师](factions/千子/units/sorcerer-in-terminator-armour.md) |  | 2026-09-14 |
+| unit | [蓝惧妖](factions/千子/units/blue-horrors.md) |  | 2026-09-14 |
+| unit | [装备命运掌握者巨弓的奸角兽开悟者](factions/千子/units/tzaangor-enlightened-with-fatecaster-greatbows.md) |  | 2026-09-14 |
+| unit | [重锤魔](factions/千子/units/maulerfiend.md) |  | 2026-09-14 |
+| unit | [铸造魔](factions/千子/units/forgefiend.md) |  | 2026-09-14 |
+| unit | [阿里曼](factions/千子/units/ahriman.md) |  | 2026-09-14 |
+| unit | [高阶巫师](factions/千子/units/exalted-sorcerer.md) |  | 2026-09-14 |
 
 ### 吞世者
 
@@ -426,22 +437,22 @@
 | enhancement | [Vox-diabolus](factions/吞世者/enhancements/vox-diabolus.md) | 20 分、怒火容器 分队。 | 2026-07-26 |
 | enhancement | [倾泻火力](factions/吞世者/enhancements/unleash-hell.md) | 10 分、Goretrack Onslaught 分队。 | 2026-07-26 |
 | enhancement | [凶残猛攻](factions/吞世者/enhancements/murderous-onslaught.md) | 5 分、Goretrack Onslaught 分队。 | 2026-07-26 |
-| enhancement | [好战强欲](factions/吞世者/enhancements/battle-lust-berzerker-warband.md) | 10 分、Berzerker Warband 分队。 | 2026-07-26 |
+| enhancement | [好战强欲](factions/吞世者/enhancements/battle-lust-berzerker-warband.md) | 20 分、Berzerker Warband 分队。 | 2026-07-26 |
 | enhancement | [好战欲](factions/吞世者/enhancements/battle-lust-boarding-butchers.md) | 0 分、Boarding Butchers 分队。 | 2026-07-26 |
 | enhancement | [屠夫领主](factions/吞世者/enhancements/butcher-lord.md) | 10 分、Cult of Blood 分队。 | 2026-07-26 |
-| enhancement | [屠戮利爪（更新）](factions/吞世者/enhancements/talons-of-butchery.md) | 分数未知、好战机械 分队。 | 2026-07-26 |
+| enhancement | [屠戮利爪（更新）](factions/吞世者/enhancements/talons-of-butchery.md) | 20 分、好战机械 分队。 | 2026-07-26 |
 | enhancement | [屠戮布阵](factions/吞世者/enhancements/strategic-slaughter.md) | 20 分、Cult of Blood 分队。 | 2026-07-26 |
-| enhancement | [屠戮祝圣](factions/吞世者/enhancements/sanctified-in-slaughter.md) | 分数未知、Butchers of Khorne 分队。 | 2026-07-26 |
+| enhancement | [屠戮祝圣](factions/吞世者/enhancements/sanctified-in-slaughter.md) | 15 分、Butchers of Khorne 分队。 | 2026-07-26 |
 | enhancement | [恐虐信徒](factions/吞世者/enhancements/disciple-of-khorne.md) | 15 分、Khorne Daemonkin 分队。 | 2026-07-26 |
-| enhancement | [恐虐爱将](factions/吞世者/enhancements/favoured-of-khorne.md) | 15 分、Berzerker Warband 分队。 | 2026-07-26 |
+| enhancement | [恐虐爱将](factions/吞世者/enhancements/favoured-of-khorne.md) | 20 分、Berzerker Warband 分队。 | 2026-07-26 |
 | enhancement | [恐虐神选](factions/吞世者/enhancements/chosen-of-khorne.md) | 0 分、Boarding Butchers 分队。 | 2026-07-26 |
 | enhancement | [恶意活力](factions/吞世者/enhancements/malicious-vigour.md) | 30 分、Possessed Slaughterband 分队。 | 2026-07-26 |
 | enhancement | [战争圣像](factions/吞世者/enhancements/icon-of-war.md) | 25 分、Khorne Daemonkin 分队。 | 2026-07-26 |
 | enhancement | [无尽血战之刃](factions/吞世者/enhancements/blade-of-endless-bloodshed.md) | 30 分、Khorne Daemonkin 分队。 | 2026-07-26 |
 | enhancement | [暴烈临终](factions/吞世者/enhancements/violent-demise.md) | 10 分、Possessed Slaughterband 分队。 | 2026-07-26 |
 | enhancement | [杀戮澄明](factions/吞世者/enhancements/killing-clarity.md) | 15 分、Possessed Slaughterband 分队。 | 2026-07-26 |
-| enhancement | [杀戮造物](factions/吞世者/enhancements/murder-forged-entity.md) | 分数未知、好战机械 分队。 | 2026-07-26 |
-| enhancement | [浴血老兵](factions/吞世者/enhancements/gore-stained-veterans.md) | 分数未知、Butchers of Khorne 分队。 | 2026-07-26 |
+| enhancement | [杀戮造物](factions/吞世者/enhancements/murder-forged-entity.md) | 15 分、好战机械 分队。 | 2026-07-26 |
+| enhancement | [浴血老兵](factions/吞世者/enhancements/gore-stained-veterans.md) | 20 分、Butchers of Khorne 分队。 | 2026-07-26 |
 | enhancement | [激进部署](factions/吞世者/enhancements/aggressive-deployment.md) | 20 分、Goretrack Onslaught 分队。 | 2026-07-26 |
 | enhancement | [炼狱灌注](factions/吞世者/enhancements/infernal-infusion.md) | 25 分、Goretrack Onslaught 分队。 | 2026-07-26 |
 | enhancement | [狂乱](factions/吞世者/enhancements/frenzied.md) | 0 分、Skullsworn 分队。 | 2026-07-26 |
@@ -452,7 +463,7 @@
 | enhancement | [荣耀道路](factions/吞世者/enhancements/gateways-to-glory.md) | 10 分、怒火容器 分队。 | 2026-07-26 |
 | enhancement | [血神神选](factions/吞世者/enhancements/chosen-of-the-blood-god.md) | 15 分、Cult of Blood 分队。 | 2026-07-26 |
 | enhancement | [血铸甲](factions/吞世者/enhancements/blood-forged-armour.md) | 20 分、Khorne Daemonkin 分队。 | 2026-07-26 |
-| enhancement | [顶尖屠杀者](factions/吞世者/enhancements/archslaughterer.md) | 25 分、怒火容器 分队。 | 2026-07-26 |
+| enhancement | [顶尖屠杀者](factions/吞世者/enhancements/archslaughterer.md) | 30 分、怒火容器 分队。 | 2026-07-26 |
 | enhancement | [黄铜之躯](factions/吞世者/enhancements/brazen-form.md) | 25 分、Cult of Blood 分队。 | 2026-07-26 |
 | stratagem | [不朽之怒](factions/吞世者/stratagems/immortal-fury.md) | 2 CP、Fight phase、Possessed Slaughterband 分队、Battle Tactic Stratagem。 | 2026-07-26 |
 | stratagem | [亚空间潜行者](factions/吞世者/stratagems/warp-stalkers.md) | 1 CP、Movement or Charge phase、Possessed Slaughterband 分队、Strategic Ploy Stratage... | 2026-07-26 |
@@ -505,64 +516,64 @@
 | stratagem | [鲜血供奉](factions/吞世者/stratagems/blood-offering.md) | 1 CP、Any phase、Berzerker Warband 分队、Epic Deed Stratagem。 | 2026-07-26 |
 | stratagem | [黄铜神像](factions/吞世者/stratagems/brazen-idol.md) | 2 CP、Command phase、Cult of Blood 分队、Epic Deed Stratagem。 | 2026-07-26 |
 | stratagem | [黄铜神像之荫](factions/吞世者/stratagems/in-the-shadow-of-brass-idols.md) | 1 CP、Shooting or Fight phase、Cult of Blood 分队、Strategic Ploy Stratagem。 | 2026-07-26 |
-| unit | [Blood Slaughterer](factions/吞世者/units/blood-slaughterer.md) |  | 2026-07-23 |
-| unit | [Cerberus](factions/吞世者/units/cerberus.md) |  | 2026-07-23 |
-| unit | [Chaos Thunderhawk](factions/吞世者/units/chaos-thunderhawk.md) |  | 2026-07-23 |
-| unit | [Deredeo Dreadnought](factions/吞世者/units/deredeo-dreadnought.md) |  | 2026-07-23 |
-| unit | [Falchion](factions/吞世者/units/falchion.md) |  | 2026-07-23 |
-| unit | [Fellblade](factions/吞世者/units/fellblade.md) |  | 2026-07-23 |
-| unit | [Fire Raptor Gunship](factions/吞世者/units/fire-raptor-gunship.md) |  | 2026-07-23 |
-| unit | [Greater Brass Scorpion](factions/吞世者/units/greater-brass-scorpion.md) |  | 2026-07-23 |
-| unit | [Hell Blade](factions/吞世者/units/hell-blade.md) |  | 2026-07-23 |
-| unit | [Hell Talon](factions/吞世者/units/hell-talon.md) |  | 2026-07-23 |
-| unit | [Kratos](factions/吞世者/units/kratos.md) |  | 2026-07-23 |
-| unit | [Kytan Ravager](factions/吞世者/units/kytan-ravager.md) |  | 2026-07-23 |
-| unit | [Land Raider Achilles](factions/吞世者/units/land-raider-achilles.md) |  | 2026-07-23 |
-| unit | [Land Raider Proteus](factions/吞世者/units/land-raider-proteus.md) |  | 2026-07-23 |
-| unit | [Leviathan Dreadnought](factions/吞世者/units/leviathan-dreadnought.md) |  | 2026-07-23 |
-| unit | [Mastodon](factions/吞世者/units/mastodon.md) |  | 2026-07-23 |
-| unit | [Rapier Carrier](factions/吞世者/units/rapier-carrier.md) |  | 2026-07-23 |
-| unit | [Relic Contemptor Dreadnought](factions/吞世者/units/relic-contemptor-dreadnought.md) |  | 2026-07-23 |
-| unit | [Sicaran Battle Tank](factions/吞世者/units/sicaran-battle-tank.md) |  | 2026-07-23 |
-| unit | [Sicaran Punisher](factions/吞世者/units/sicaran-punisher.md) |  | 2026-07-23 |
-| unit | [Sicaran Venator](factions/吞世者/units/sicaran-venator.md) |  | 2026-07-23 |
-| unit | [Sokar-pattern Stormbird](factions/吞世者/units/sokar-pattern-stormbird.md) |  | 2026-07-23 |
-| unit | [Spartan](factions/吞世者/units/spartan.md) |  | 2026-07-23 |
-| unit | [Storm Eagle Gunship](factions/吞世者/units/storm-eagle-gunship.md) |  | 2026-07-23 |
-| unit | [Terrax-pattern Termite](factions/吞世者/units/terrax-pattern-termite.md) |  | 2026-07-23 |
-| unit | [Typhon](factions/吞世者/units/typhon.md) |  | 2026-07-23 |
-| unit | [Whirlwind Scorpius](factions/吞世者/units/whirlwind-scorpius.md) |  | 2026-07-23 |
-| unit | [Xiphon Interceptor](factions/吞世者/units/xiphon-interceptor.md) |  | 2026-07-23 |
-| unit | [亵渎者](factions/吞世者/units/defiler.md) |  | 2026-07-23 |
-| unit | [八缚者](factions/吞世者/units/eightbound.md) |  | 2026-07-23 |
-| unit | [嗜血狂魔](factions/吞世者/units/bloodthirster.md) |  | 2026-07-23 |
-| unit | [因维卡图斯尊主](factions/吞世者/units/lord-invocatus.md) |  | 2026-07-23 |
-| unit | [地狱兽](factions/吞世者/units/helbrute.md) |  | 2026-07-23 |
-| unit | [地狱飞龙](factions/吞世者/units/heldrake.md) |  | 2026-07-23 |
-| unit | [安格隆](factions/吞世者/units/angron.md) |  | 2026-07-23 |
-| unit | [帝皇之子混沌终结者](factions/吞世者/units/chaos-terminators.md) |  | 2026-07-23 |
-| unit | [恐虐恶魔王子](factions/吞世者/units/daemon-prince-of-khorne.md) |  | 2026-07-23 |
-| unit | [恐虐狂战士](factions/吞世者/units/khorne-berzerkers.md) |  | 2026-07-23 |
-| unit | [恐虐颅骨之主](factions/吞世者/units/khorne-lord-of-skulls.md) |  | 2026-07-23 |
-| unit | [放血鬼](factions/吞世者/units/bloodletters.md) |  | 2026-07-23 |
-| unit | [斯卡布兰德](factions/吞世者/units/skarbrand.md) |  | 2026-07-23 |
-| unit | [有翼恐虐恶魔王子](factions/吞世者/units/daemon-prince-of-khorne-with-wings.md) |  | 2026-07-23 |
-| unit | [枭首魔将](factions/吞世者/units/master-of-executions.md) |  | 2026-07-23 |
-| unit | [歼灭者型猎食者坦克](factions/吞世者/units/chaos-predator-annihilator.md) |  | 2026-07-23 |
-| unit | [洒血狂](factions/吞世者/units/goremongers.md) |  | 2026-07-23 |
-| unit | [混沌兰德掠袭者](factions/吞世者/units/chaos-land-raider.md) |  | 2026-07-23 |
-| unit | [混沌卵](factions/吞世者/units/chaos-spawn.md) |  | 2026-07-23 |
-| unit | [犀牛装甲车](factions/吞世者/units/chaos-rhino.md) |  | 2026-07-23 |
-| unit | [破坏者型猎食者坦克](factions/吞世者/units/chaos-predator-destructor.md) |  | 2026-07-23 |
-| unit | [碾血骑兵](factions/吞世者/units/bloodcrushers.md) |  | 2026-07-23 |
-| unit | [缚魔战狂](factions/吞世者/units/slaughterbound.md) |  | 2026-07-23 |
-| unit | [背叛者卡恩](factions/吞世者/units/khârn-the-betrayer.md) |  | 2026-07-23 |
-| unit | [血猎犬](factions/吞世者/units/flesh-hounds.md) |  | 2026-07-23 |
-| unit | [裂伤者](factions/吞世者/units/jakhals.md) |  | 2026-07-23 |
-| unit | [重锤魔](factions/吞世者/units/maulerfiend.md) |  | 2026-07-23 |
-| unit | [铁甲兽领主](factions/吞世者/units/lord-on-juggernaut.md) |  | 2026-07-23 |
-| unit | [铸造魔](factions/吞世者/units/forgefiend.md) |  | 2026-07-23 |
-| unit | [高阶八缚者](factions/吞世者/units/exalted-eightbound.md) |  | 2026-07-23 |
+| unit | [Blood Slaughterer](factions/吞世者/units/blood-slaughterer.md) | 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。 | 2026-09-14 |
+| unit | [Cerberus](factions/吞世者/units/cerberus.md) | 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。 | 2026-09-14 |
+| unit | [Chaos Thunderhawk](factions/吞世者/units/chaos-thunderhawk.md) | 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。 | 2026-09-14 |
+| unit | [Deredeo Dreadnought](factions/吞世者/units/deredeo-dreadnought.md) | 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。 | 2026-09-14 |
+| unit | [Falchion](factions/吞世者/units/falchion.md) | 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。 | 2026-09-14 |
+| unit | [Fellblade](factions/吞世者/units/fellblade.md) | 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。 | 2026-09-14 |
+| unit | [Fire Raptor Gunship](factions/吞世者/units/fire-raptor-gunship.md) | 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。 | 2026-09-14 |
+| unit | [Greater Brass Scorpion](factions/吞世者/units/greater-brass-scorpion.md) | 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。 | 2026-09-14 |
+| unit | [Hell Blade](factions/吞世者/units/hell-blade.md) | 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。 | 2026-09-14 |
+| unit | [Hell Talon](factions/吞世者/units/hell-talon.md) | 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。 | 2026-09-14 |
+| unit | [Kratos](factions/吞世者/units/kratos.md) | 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。 | 2026-09-14 |
+| unit | [Kytan Ravager](factions/吞世者/units/kytan-ravager.md) | 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。 | 2026-09-14 |
+| unit | [Land Raider Achilles](factions/吞世者/units/land-raider-achilles.md) | 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。 | 2026-09-14 |
+| unit | [Land Raider Proteus](factions/吞世者/units/land-raider-proteus.md) | 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。 | 2026-09-14 |
+| unit | [Leviathan Dreadnought](factions/吞世者/units/leviathan-dreadnought.md) | 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。 | 2026-09-14 |
+| unit | [Mastodon](factions/吞世者/units/mastodon.md) | 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。 | 2026-09-14 |
+| unit | [Rapier Carrier](factions/吞世者/units/rapier-carrier.md) | 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。 | 2026-09-14 |
+| unit | [Relic Contemptor Dreadnought](factions/吞世者/units/relic-contemptor-dreadnought.md) | 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。 | 2026-09-14 |
+| unit | [Sicaran Battle Tank](factions/吞世者/units/sicaran-battle-tank.md) | 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。 | 2026-09-14 |
+| unit | [Sicaran Punisher](factions/吞世者/units/sicaran-punisher.md) | 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。 | 2026-09-14 |
+| unit | [Sicaran Venator](factions/吞世者/units/sicaran-venator.md) | 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。 | 2026-09-14 |
+| unit | [Sokar-pattern Stormbird](factions/吞世者/units/sokar-pattern-stormbird.md) | 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。 | 2026-09-14 |
+| unit | [Spartan](factions/吞世者/units/spartan.md) | 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。 | 2026-09-14 |
+| unit | [Storm Eagle Gunship](factions/吞世者/units/storm-eagle-gunship.md) | 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。 | 2026-09-14 |
+| unit | [Terrax-pattern Termite](factions/吞世者/units/terrax-pattern-termite.md) | 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。 | 2026-09-14 |
+| unit | [Typhon](factions/吞世者/units/typhon.md) | 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。 | 2026-09-14 |
+| unit | [Whirlwind Scorpius](factions/吞世者/units/whirlwind-scorpius.md) | 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。 | 2026-09-14 |
+| unit | [Xiphon Interceptor](factions/吞世者/units/xiphon-interceptor.md) | 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。 | 2026-09-14 |
+| unit | [亵渎者](factions/吞世者/units/defiler.md) |  | 2026-09-14 |
+| unit | [八缚者](factions/吞世者/units/eightbound.md) |  | 2026-09-14 |
+| unit | [嗜血狂魔](factions/吞世者/units/bloodthirster.md) |  | 2026-09-14 |
+| unit | [因维卡图斯尊主](factions/吞世者/units/lord-invocatus.md) |  | 2026-09-14 |
+| unit | [地狱兽](factions/吞世者/units/helbrute.md) |  | 2026-09-14 |
+| unit | [地狱飞龙](factions/吞世者/units/heldrake.md) |  | 2026-09-14 |
+| unit | [安格隆](factions/吞世者/units/angron.md) |  | 2026-09-14 |
+| unit | [帝皇之子混沌终结者](factions/吞世者/units/chaos-terminators.md) |  | 2026-09-14 |
+| unit | [恐虐恶魔王子](factions/吞世者/units/daemon-prince-of-khorne.md) |  | 2026-09-14 |
+| unit | [恐虐狂战士](factions/吞世者/units/khorne-berzerkers.md) |  | 2026-09-14 |
+| unit | [恐虐颅骨之主](factions/吞世者/units/khorne-lord-of-skulls.md) |  | 2026-09-14 |
+| unit | [放血鬼](factions/吞世者/units/bloodletters.md) |  | 2026-09-14 |
+| unit | [斯卡布兰德](factions/吞世者/units/skarbrand.md) |  | 2026-09-14 |
+| unit | [有翼恐虐恶魔王子](factions/吞世者/units/daemon-prince-of-khorne-with-wings.md) |  | 2026-09-14 |
+| unit | [枭首魔将](factions/吞世者/units/master-of-executions.md) |  | 2026-09-14 |
+| unit | [歼灭者型猎食者坦克](factions/吞世者/units/chaos-predator-annihilator.md) |  | 2026-09-14 |
+| unit | [洒血狂](factions/吞世者/units/goremongers.md) |  | 2026-09-14 |
+| unit | [混沌兰德掠袭者](factions/吞世者/units/chaos-land-raider.md) |  | 2026-09-14 |
+| unit | [混沌卵](factions/吞世者/units/chaos-spawn.md) |  | 2026-09-14 |
+| unit | [犀牛装甲车](factions/吞世者/units/chaos-rhino.md) |  | 2026-09-14 |
+| unit | [破坏者型猎食者坦克](factions/吞世者/units/chaos-predator-destructor.md) |  | 2026-09-14 |
+| unit | [碾血骑兵](factions/吞世者/units/bloodcrushers.md) |  | 2026-09-14 |
+| unit | [缚魔战狂](factions/吞世者/units/slaughterbound.md) |  | 2026-09-14 |
+| unit | [背叛者卡恩](factions/吞世者/units/khârn-the-betrayer.md) |  | 2026-09-14 |
+| unit | [血猎犬](factions/吞世者/units/flesh-hounds.md) |  | 2026-09-14 |
+| unit | [裂伤者](factions/吞世者/units/jakhals.md) |  | 2026-09-14 |
+| unit | [重锤魔](factions/吞世者/units/maulerfiend.md) |  | 2026-09-14 |
+| unit | [铁甲兽领主](factions/吞世者/units/lord-on-juggernaut.md) |  | 2026-09-14 |
+| unit | [铸造魔](factions/吞世者/units/forgefiend.md) |  | 2026-09-14 |
+| unit | [高阶八缚者](factions/吞世者/units/exalted-eightbound.md) |  | 2026-09-14 |
 
 ### 基因窃取者教派
 
@@ -608,14 +619,14 @@
 | enhancement | [Starfall Shells](factions/基因窃取者教派/enhancements/starfall-shells.md) | 10 分、Outlander Claw 分队。 | 2026-07-26 |
 | enhancement | [Synaptic Auger](factions/基因窃取者教派/enhancements/synaptic-auger.md) | 15 分、最终之日 分队。 | 2026-07-26 |
 | enhancement | [The Hero Returned](factions/基因窃取者教派/enhancements/the-hero-returned.md) | 20 分、Brood Brother Auxilia 分队。 | 2026-07-26 |
-| enhancement | [伟大激励](factions/基因窃取者教派/enhancements/inspired-to-greatness.md) | 分数未知、异形教众 分队。 | 2026-07-26 |
+| enhancement | [伟大激励](factions/基因窃取者教派/enhancements/inspired-to-greatness.md) | 15 分、异形教众 分队。 | 2026-07-26 |
 | enhancement | [先锋暴君](factions/基因窃取者教派/enhancements/vanguard-tyrant.md) | 25 分、最终之日 分队。 | 2026-07-26 |
-| enhancement | [基因剧毒](factions/基因窃取者教派/enhancements/gene-tailored-toxins.md) | 分数未知、叛逆英雄 分队。 | 2026-07-26 |
+| enhancement | [基因剧毒](factions/基因窃取者教派/enhancements/gene-tailored-toxins.md) | 35 分、叛逆英雄 分队。 | 2026-07-26 |
 | enhancement | [异常结合](factions/基因窃取者教派/enhancements/inhuman-integration.md) | 20 分、最终之日 分队。 | 2026-07-26 |
-| enhancement | [族长之爪](factions/基因窃取者教派/enhancements/talons-of-the-sire.md) | 分数未知、纯血虫群 分队。 | 2026-07-26 |
-| enhancement | [星辰之子印记](factions/基因窃取者教派/enhancements/mark-of-the-star-children.md) | 分数未知、纯血虫群 分队。 | 2026-07-26 |
-| enhancement | [狡猾伪装](factions/基因窃取者教派/enhancements/devious-disguises.md) | 分数未知、异形教众 分队。 | 2026-07-26 |
-| enhancement | [违禁弹药](factions/基因窃取者教派/enhancements/contraband-munitions.md) | 分数未知、叛逆英雄 分队。 | 2026-07-26 |
+| enhancement | [族长之爪](factions/基因窃取者教派/enhancements/talons-of-the-sire.md) | 15 分、纯血虫群 分队。 | 2026-07-26 |
+| enhancement | [星辰之子印记](factions/基因窃取者教派/enhancements/mark-of-the-star-children.md) | 30 分、纯血虫群 分队。 | 2026-07-26 |
+| enhancement | [狡猾伪装](factions/基因窃取者教派/enhancements/devious-disguises.md) | 15 分、异形教众 分队。 | 2026-07-26 |
+| enhancement | [违禁弹药](factions/基因窃取者教派/enhancements/contraband-munitions.md) | 20 分、叛逆英雄 分队。 | 2026-07-26 |
 | stratagem | [A DARK NETWORK](factions/基因窃取者教派/stratagems/a-dark-network.md) | 1 CP、Movement phase、Brood Brother Auxilia 分队、Strategic Ploy Stratagem。 | 2026-07-26 |
 | stratagem | [A DEADLY SNARE](factions/基因窃取者教派/stratagems/a-deadly-snare.md) | 1 CP、Charge phase、Host of Ascension 分队、Strategic Ploy Stratagem。 | 2026-07-26 |
 | stratagem | [ACCEPTABLE LOSSES](factions/基因窃取者教派/stratagems/acceptable-losses.md) | 2 CP、Shooting phase、Brood Brother Auxilia 分队、Strategic Ploy Stratagem。 | 2026-07-26 |
@@ -673,145 +684,145 @@
 | stratagem | [狂热弹雨](factions/基因窃取者教派/stratagems/fanatical-hail.md) | 1 CP、Shooting phase、异形教众 分队。 | 2026-07-26 |
 | stratagem | [神圣指令](factions/基因窃取者教派/stratagems/divine-imperative.md) | 1 CP、Charge phase、最终之日 分队、Battle Tactic Stratagem。 | 2026-07-26 |
 | stratagem | [躲闪攻击](factions/基因窃取者教派/stratagems/darting-attacks.md) | 1 CP、Shooting or Charge phase、最终之日 分队、Strategic Ploy Stratagem。 | 2026-07-26 |
-| unit | [Arkurian Stormhammer](factions/基因窃取者教派/units/arkurian-stormhammer.md) |  | 2026-07-23 |
-| unit | [Armageddon-pattern Medusa](factions/基因窃取者教派/units/armageddon-pattern-medusa.md) |  | 2026-07-23 |
-| unit | [Atlas Recovery Vehicle](factions/基因窃取者教派/units/atlas-recovery-vehicle.md) |  | 2026-07-23 |
-| unit | [Carnodon](factions/基因窃取者教派/units/carnodon.md) |  | 2026-07-23 |
-| unit | [Centaur Light Carrier](factions/基因窃取者教派/units/centaur-light-carrier.md) |  | 2026-07-23 |
-| unit | [Colossus](factions/基因窃取者教派/units/colossus.md) |  | 2026-07-23 |
-| unit | [Crassus](factions/基因窃取者教派/units/crassus.md) |  | 2026-07-23 |
-| unit | [Death Korps Grenadier Squad](factions/基因窃取者教派/units/death-korps-grenadier-squad.md) |  | 2026-07-23 |
-| unit | [Death Rider Commissar](factions/基因窃取者教派/units/death-rider-commissar.md) |  | 2026-07-23 |
-| unit | [Dominus Armoured Siege Bombard](factions/基因窃取者教派/units/dominus-armoured-siege-bombard.md) |  | 2026-07-23 |
-| unit | [Earthshaker Carriage Battery](factions/基因窃取者教派/units/earthshaker-carriage-battery.md) |  | 2026-07-23 |
-| unit | [Earthshaker Platform](factions/基因窃取者教派/units/earthshaker-platform.md) |  | 2026-07-23 |
-| unit | [Elysian Drop Sentinel](factions/基因窃取者教派/units/elysian-drop-sentinel.md) |  | 2026-07-23 |
-| unit | [Elysian Sniper Squad](factions/基因窃取者教派/units/elysian-sniper-squad.md) |  | 2026-07-23 |
-| unit | [Gorgon Heavy Transport](factions/基因窃取者教派/units/gorgon-heavy-transport.md) |  | 2026-07-23 |
-| unit | [Griffon Mortar Carrier](factions/基因窃取者教派/units/griffon-mortar-carrier.md) |  | 2026-07-23 |
-| unit | [Hades Breaching Drill](factions/基因窃取者教派/units/hades-breaching-drill.md) |  | 2026-07-23 |
-| unit | [Heavy Mortar Team](factions/基因窃取者教派/units/heavy-mortar-team.md) |  | 2026-07-23 |
-| unit | [Heavy Quad Launcher Team](factions/基因窃取者教派/units/heavy-quad-launcher-team.md) |  | 2026-07-23 |
-| unit | [Hydra Platform](factions/基因窃取者教派/units/hydra-platform.md) |  | 2026-07-23 |
-| unit | [Macharius](factions/基因窃取者教派/units/macharius.md) |  | 2026-07-23 |
-| unit | [Macharius Omega](factions/基因窃取者教派/units/macharius-omega.md) |  | 2026-07-23 |
-| unit | [Macharius Vanquisher](factions/基因窃取者教派/units/macharius-vanquisher.md) |  | 2026-07-23 |
-| unit | [Macharius Vulcan](factions/基因窃取者教派/units/macharius-vulcan.md) |  | 2026-07-23 |
-| unit | [Malcador](factions/基因窃取者教派/units/malcador.md) |  | 2026-07-23 |
-| unit | [Malcador Annihilator](factions/基因窃取者教派/units/malcador-annihilator.md) |  | 2026-07-23 |
-| unit | [Malcador Defender](factions/基因窃取者教派/units/malcador-defender.md) |  | 2026-07-23 |
-| unit | [Malcador Infernus](factions/基因窃取者教派/units/malcador-infernus.md) |  | 2026-07-23 |
-| unit | [Manticore Platform](factions/基因窃取者教派/units/manticore-platform.md) |  | 2026-07-23 |
-| unit | [Medusa Carriage Battery](factions/基因窃取者教派/units/medusa-carriage-battery.md) |  | 2026-07-23 |
-| unit | [Minotaur](factions/基因窃取者教派/units/minotaur.md) |  | 2026-07-23 |
-| unit | [Mukaali Riders](factions/基因窃取者教派/units/mukaali-riders.md) |  | 2026-07-23 |
-| unit | [Munitorum Servitors](factions/基因窃取者教派/units/munitorum-servitors.md) |  | 2026-07-23 |
-| unit | [Praetor](factions/基因窃取者教派/units/praetor.md) |  | 2026-07-23 |
-| unit | [Quartermaster Cadre Squad](factions/基因窃取者教派/units/quartermaster-cadre-squad.md) |  | 2026-07-23 |
-| unit | [Rapier Laser Destroyer Battery](factions/基因窃取者教派/units/rapier-laser-destroyer-battery.md) |  | 2026-07-23 |
-| unit | [Regimental Attachés](factions/基因窃取者教派/units/regimental-attachés.md) |  | 2026-07-23 |
-| unit | [Sabre Weapons Battery](factions/基因窃取者教派/units/sabre-weapons-battery.md) |  | 2026-07-23 |
-| unit | [Salamander Command Vehicle](factions/基因窃取者教派/units/salamander-command-vehicle.md) |  | 2026-07-23 |
-| unit | [Salamander Scout Vehicle](factions/基因窃取者教派/units/salamander-scout-vehicle.md) |  | 2026-07-23 |
-| unit | [Sentinel Powerlifter](factions/基因窃取者教派/units/sentinel-powerlifter.md) |  | 2026-07-23 |
-| unit | [Storm Chimera](factions/基因窃取者教派/units/storm-chimera.md) |  | 2026-07-23 |
-| unit | [Stormblade](factions/基因窃取者教派/units/stormblade.md) |  | 2026-07-23 |
-| unit | [Stygies Destroyer Tank Hunter](factions/基因窃取者教派/units/stygies-destroyer-tank-hunter.md) |  | 2026-07-23 |
-| unit | [Tarantula Battery](factions/基因窃取者教派/units/tarantula-battery.md) |  | 2026-07-23 |
-| unit | [Tauros Assault Vehicle](factions/基因窃取者教派/units/tauros-assault-vehicle.md) |  | 2026-07-23 |
-| unit | [Tauros Venator](factions/基因窃取者教派/units/tauros-venator.md) |  | 2026-07-23 |
-| unit | [Tectonic Fragdrill](factions/基因窃取者教派/units/tectonic-fragdrill.md) |  | 2026-07-23 |
-| unit | [Trojan Support Vehicle](factions/基因窃取者教派/units/trojan-support-vehicle.md) |  | 2026-07-23 |
-| unit | [Valdor](factions/基因窃取者教派/units/valdor.md) |  | 2026-07-23 |
-| unit | [【传奇】地狱之末](factions/基因窃取者教派/units/hells-last.md) |  | 2026-07-23 |
-| unit | [主教](factions/基因窃取者教派/units/magus.md) |  | 2026-07-23 |
-| unit | [九头蛇高射炮](factions/基因窃取者教派/units/hydra.md) |  | 2026-07-23 |
-| unit | [传疫者](factions/基因窃取者教派/units/biophagus.md) |  | 2026-07-23 |
-| unit | [侦查哨兵](factions/基因窃取者教派/units/scout-sentinels.md) |  | 2026-07-23 |
-| unit | [克里格战斗工兵](factions/基因窃取者教派/units/krieg-combat-engineers.md) |  | 2026-07-23 |
-| unit | [克里格指挥组](factions/基因窃取者教派/units/krieg-command-squad.md) |  | 2026-07-23 |
-| unit | [克里格死亡骑兵](factions/基因窃取者教派/units/death-riders.md) |  | 2026-07-23 |
-| unit | [克里格死兵队](factions/基因窃取者教派/units/death-korps-of-krieg.md) |  | 2026-07-23 |
-| unit | [克里格重型武器小队](factions/基因窃取者教派/units/krieg-heavy-weapons-squad.md) |  | 2026-07-23 |
-| unit | [冯·瑞恩跃袭者](factions/基因窃取者教派/units/von-ryans-leapers.md) |  | 2026-07-23 |
-| unit | [刀斧虫](factions/基因窃取者教派/units/lictor.md) |  | 2026-07-23 |
-| unit | [半人马快速突击战车](factions/基因窃取者教派/units/centaur-rsv.md) |  | 2026-07-23 |
-| unit | [卡塔昌丛林战士](factions/基因窃取者教派/units/catachan-jungle-fighters.md) |  | 2026-07-23 |
-| unit | [卡塔昌指挥组](factions/基因窃取者教派/units/catachan-command-squad.md) |  | 2026-07-23 |
-| unit | [卡塔昌重型武器小队](factions/基因窃取者教派/units/catachan-heavy-weapons-squad.md) |  | 2026-07-23 |
-| unit | [卡舍津突击队](factions/基因窃取者教派/units/kasrkin.md) |  | 2026-07-23 |
-| unit | [卡迪亚重型武器小队](factions/基因窃取者教派/units/cadian-heavy-weapons-squad.md) |  | 2026-07-23 |
-| unit | [卡迪安堡主](factions/基因窃取者教派/units/cadian-castellan.md) |  | 2026-07-23 |
-| unit | [卡迪安指挥组](factions/基因窃取者教派/units/cadian-command-squad.md) |  | 2026-07-23 |
-| unit | [卡迪安突击队](factions/基因窃取者教派/units/cadian-shock-troops.md) |  | 2026-07-23 |
-| unit | [双足飞龙自行火炮](factions/基因窃取者教派/units/wyvern.md) |  | 2026-07-23 |
-| unit | [圣祝者](factions/基因窃取者教派/units/benefictus.md) |  | 2026-07-23 |
-| unit | [圣裁者](factions/基因窃取者教派/units/sanctus.md) |  | 2026-07-23 |
-| unit | [地狱之锤](factions/基因窃取者教派/units/hellhammer.md) |  | 2026-07-23 |
-| unit | [地狱犬喷射车](factions/基因窃取者教派/units/hellhound.md) |  | 2026-07-23 |
-| unit | [奇美拉装甲车](factions/基因窃取者教派/units/chimera.md) |  | 2026-07-23 |
-| unit | [孢子舱](factions/基因窃取者教派/units/tyrannocyte.md) |  | 2026-07-23 |
-| unit | [宣政使](factions/基因窃取者教派/units/clamavus.md) |  | 2026-07-23 |
-| unit | [影剑](factions/基因窃取者教派/units/shadowsword.md) |  | 2026-07-23 |
-| unit | [指战使](factions/基因窃取者教派/units/nexos.md) |  | 2026-07-23 |
-| unit | [掌旗侍僧](factions/基因窃取者教派/units/acolyte-iconward.md) |  | 2026-07-23 |
-| unit | [掘蟒](factions/基因窃取者教派/units/trygon.md) |  | 2026-07-23 |
-| unit | [摩崔克斯寄生虫](factions/基因窃取者教派/units/parasite-of-mortrex.md) |  | 2026-07-23 |
-| unit | [教团卫士](factions/基因窃取者教派/units/locus.md) |  | 2026-07-23 |
-| unit | [新血教徒](factions/基因窃取者教派/units/neophyte-hybrids.md) |  | 2026-07-23 |
-| unit | [族长](factions/基因窃取者教派/units/patriarch.md) |  | 2026-07-23 |
-| unit | [有翼泰伦王虫](factions/基因窃取者教派/units/winged-tyranid-prime.md) |  | 2026-07-23 |
-| unit | [有翼虫巢暴君](factions/基因窃取者教派/units/winged-hive-tyrant.md) |  | 2026-07-23 |
-| unit | [末日之锤](factions/基因窃取者教派/units/doomhammer.md) |  | 2026-07-23 |
-| unit | [杀手种](factions/基因窃取者教派/units/kelermorph.md) |  | 2026-07-23 |
-| unit | [歌利亚卡车](factions/基因窃取者教派/units/goliath-truck.md) |  | 2026-07-23 |
-| unit | [歌利亚碎石车](factions/基因窃取者教派/units/goliath-rockgrinder.md) |  | 2026-07-23 |
-| unit | [死亡直击导弹车](factions/基因窃取者教派/units/deathstrike.md) |  | 2026-07-23 |
-| unit | [死亡跃袭者](factions/基因窃取者教派/units/deathleaper.md) |  | 2026-07-23 |
-| unit | [毁灭之剑](factions/基因窃取者教派/units/banesword.md) |  | 2026-07-23 |
-| unit | [毁灭之锤](factions/基因窃取者教派/units/banehammer.md) |  | 2026-07-23 |
-| unit | [毒刃](factions/基因窃取者教派/units/baneblade.md) |  | 2026-07-23 |
-| unit | [沙蟒](factions/基因窃取者教派/units/mawloc.md) |  | 2026-07-23 |
-| unit | [混血侍僧装备手持火焰喷射器](factions/基因窃取者教派/units/acolyte-hybrids-with-hand-flamers.md) |  | 2026-07-23 |
-| unit | [混血侍僧装备自动手枪](factions/基因窃取者教派/units/acolyte-hybrids-with-autopistols.md) |  | 2026-07-23 |
-| unit | [混血变种](factions/基因窃取者教派/units/hybrid-metamorphs.md) |  | 2026-07-23 |
-| unit | [灵能导师](factions/基因窃取者教派/units/primaris-psyker.md) |  | 2026-07-23 |
-| unit | [炮兵小组](factions/基因窃取者教派/units/artillery-team.md) |  | 2026-07-23 |
-| unit | [独眼巨人爆破车](factions/基因窃取者教派/units/cyclops-demolition-vehicle.md) |  | 2026-07-23 |
-| unit | [畸变主宰](factions/基因窃取者教派/units/abominant.md) |  | 2026-07-23 |
-| unit | [畸变体](factions/基因窃取者教派/units/aberrants.md) |  | 2026-07-23 |
-| unit | [石像鬼](factions/基因窃取者教派/units/gargoyles.md) |  | 2026-07-23 |
-| unit | [石化蜥蜴自行火炮](factions/基因窃取者教派/units/basilisk.md) |  | 2026-07-23 |
-| unit | [神盾防御墙](factions/基因窃取者教派/units/aegis-defence-line.md) |  | 2026-07-23 |
-| unit | [神经刀斧虫](factions/基因窃取者教派/units/neurolictor.md) |  | 2026-07-23 |
-| unit | [红色惧物](factions/基因窃取者教派/units/the-red-terror.md) |  | 2026-07-23 |
-| unit | [纯血基因窃取者](factions/基因窃取者教派/units/purestrain-genestealers.md) |  | 2026-07-23 |
-| unit | [罗格多恩坦克](factions/基因窃取者教派/units/rogal-dorn-battle-tank.md) |  | 2026-07-23 |
-| unit | [罗格多恩指挥官](factions/基因窃取者教派/units/rogal-dorn-commander.md) |  | 2026-07-23 |
-| unit | [蛇虫](factions/基因窃取者教派/units/raveners.md) |  | 2026-07-23 |
-| unit | [蝎尾狮火箭炮](factions/基因窃取者教派/units/manticore.md) |  | 2026-07-23 |
-| unit | [装甲哨兵](factions/基因窃取者教派/units/armoured-sentinels.md) |  | 2026-07-23 |
-| unit | [豺狼猎首](factions/基因窃取者教派/units/jackal-alphus.md) |  | 2026-07-23 |
-| unit | [超适应蛇虫](factions/基因窃取者教派/units/hyperadapted-raveners.md) |  | 2026-07-23 |
-| unit | [还原爆破使](factions/基因窃取者教派/units/reductus-saboteur.md) |  | 2026-07-23 |
-| unit | [野战炮兵](factions/基因窃取者教派/units/field-ordnance-battery.md) |  | 2026-07-23 |
-| unit | [野牛装甲车](factions/基因窃取者教派/units/taurox.md) |  | 2026-07-23 |
-| unit | [金牛装甲车](factions/基因窃取者教派/units/taurox-prime.md) |  | 2026-07-23 |
-| unit | [阿基里斯山地车](factions/基因窃取者教派/units/achilles-ridgerunners.md) |  | 2026-07-23 |
-| unit | [阿塔兰豺狼小队](factions/基因窃取者教派/units/atalan-jackals.md) |  | 2026-07-23 |
-| unit | [阿提拉蛮骑兵](factions/基因窃取者教派/units/attilan-rough-riders.md) |  | 2026-07-23 |
-| unit | [领军](factions/基因窃取者教派/units/primus.md) |  | 2026-07-23 |
-| unit | [风暴之剑](factions/基因窃取者教派/units/stormsword.md) |  | 2026-07-23 |
-| unit | [风暴领主](factions/基因窃取者教派/units/stormlord.md) |  | 2026-07-23 |
-| unit | [鹫马装甲战车](factions/基因窃取者教派/units/hippogriff-afv.md) |  | 2026-07-23 |
-| unit | [黎曼鲁斯处决者](factions/基因窃取者教派/units/leman-russ-executioner.md) |  | 2026-07-23 |
-| unit | [黎曼鲁斯惩罚者](factions/基因窃取者教派/units/leman-russ-punisher.md) |  | 2026-07-23 |
-| unit | [黎曼鲁斯战斗坦克](factions/基因窃取者教派/units/leman-russ-battle-tank.md) |  | 2026-07-23 |
-| unit | [黎曼鲁斯指挥官](factions/基因窃取者教派/units/leman-russ-commander.md) |  | 2026-07-23 |
-| unit | [黎曼鲁斯根除者](factions/基因窃取者教派/units/leman-russ-eradicator.md) |  | 2026-07-23 |
-| unit | [黎曼鲁斯灭绝者](factions/基因窃取者教派/units/leman-russ-exterminator.md) |  | 2026-07-23 |
-| unit | [黎曼鲁斯破坏者](factions/基因窃取者教派/units/leman-russ-demolisher.md) |  | 2026-07-23 |
-| unit | [黎曼鲁斯胜利者](factions/基因窃取者教派/units/leman-russ-vanquisher.md) |  | 2026-07-23 |
+| unit | [Arkurian Stormhammer](factions/基因窃取者教派/units/arkurian-stormhammer.md) | 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。 | 2026-09-14 |
+| unit | [Armageddon-pattern Medusa](factions/基因窃取者教派/units/armageddon-pattern-medusa.md) | 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。 | 2026-09-14 |
+| unit | [Atlas Recovery Vehicle](factions/基因窃取者教派/units/atlas-recovery-vehicle.md) | 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。 | 2026-09-14 |
+| unit | [Carnodon](factions/基因窃取者教派/units/carnodon.md) | 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。 | 2026-09-14 |
+| unit | [Centaur Light Carrier](factions/基因窃取者教派/units/centaur-light-carrier.md) | 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。 | 2026-09-14 |
+| unit | [Colossus](factions/基因窃取者教派/units/colossus.md) | 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。 | 2026-09-14 |
+| unit | [Crassus](factions/基因窃取者教派/units/crassus.md) | 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。 | 2026-09-14 |
+| unit | [Death Korps Grenadier Squad](factions/基因窃取者教派/units/death-korps-grenadier-squad.md) | 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。 | 2026-09-14 |
+| unit | [Death Rider Commissar](factions/基因窃取者教派/units/death-rider-commissar.md) | 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。 | 2026-09-14 |
+| unit | [Dominus Armoured Siege Bombard](factions/基因窃取者教派/units/dominus-armoured-siege-bombard.md) | 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。 | 2026-09-14 |
+| unit | [Earthshaker Carriage Battery](factions/基因窃取者教派/units/earthshaker-carriage-battery.md) | 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。 | 2026-09-14 |
+| unit | [Earthshaker Platform](factions/基因窃取者教派/units/earthshaker-platform.md) | 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。 | 2026-09-14 |
+| unit | [Elysian Drop Sentinel](factions/基因窃取者教派/units/elysian-drop-sentinel.md) | 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。 | 2026-09-14 |
+| unit | [Elysian Sniper Squad](factions/基因窃取者教派/units/elysian-sniper-squad.md) | 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。 | 2026-09-14 |
+| unit | [Gorgon Heavy Transport](factions/基因窃取者教派/units/gorgon-heavy-transport.md) | 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。 | 2026-09-14 |
+| unit | [Griffon Mortar Carrier](factions/基因窃取者教派/units/griffon-mortar-carrier.md) | 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。 | 2026-09-14 |
+| unit | [Hades Breaching Drill](factions/基因窃取者教派/units/hades-breaching-drill.md) | 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。 | 2026-09-14 |
+| unit | [Heavy Mortar Team](factions/基因窃取者教派/units/heavy-mortar-team.md) | 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。 | 2026-09-14 |
+| unit | [Heavy Quad Launcher Team](factions/基因窃取者教派/units/heavy-quad-launcher-team.md) | 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。 | 2026-09-14 |
+| unit | [Hydra Platform](factions/基因窃取者教派/units/hydra-platform.md) | 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。 | 2026-09-14 |
+| unit | [Macharius](factions/基因窃取者教派/units/macharius.md) | 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。 | 2026-09-14 |
+| unit | [Macharius Omega](factions/基因窃取者教派/units/macharius-omega.md) | 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。 | 2026-09-14 |
+| unit | [Macharius Vanquisher](factions/基因窃取者教派/units/macharius-vanquisher.md) | 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。 | 2026-09-14 |
+| unit | [Macharius Vulcan](factions/基因窃取者教派/units/macharius-vulcan.md) | 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。 | 2026-09-14 |
+| unit | [Malcador](factions/基因窃取者教派/units/malcador.md) | 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。 | 2026-09-14 |
+| unit | [Malcador Annihilator](factions/基因窃取者教派/units/malcador-annihilator.md) | 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。 | 2026-09-14 |
+| unit | [Malcador Defender](factions/基因窃取者教派/units/malcador-defender.md) | 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。 | 2026-09-14 |
+| unit | [Malcador Infernus](factions/基因窃取者教派/units/malcador-infernus.md) | 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。 | 2026-09-14 |
+| unit | [Manticore Platform](factions/基因窃取者教派/units/manticore-platform.md) | 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。 | 2026-09-14 |
+| unit | [Medusa Carriage Battery](factions/基因窃取者教派/units/medusa-carriage-battery.md) | 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。 | 2026-09-14 |
+| unit | [Minotaur](factions/基因窃取者教派/units/minotaur.md) | 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。 | 2026-09-14 |
+| unit | [Mukaali Riders](factions/基因窃取者教派/units/mukaali-riders.md) | 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。 | 2026-09-14 |
+| unit | [Munitorum Servitors](factions/基因窃取者教派/units/munitorum-servitors.md) | 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。 | 2026-09-14 |
+| unit | [Praetor](factions/基因窃取者教派/units/praetor.md) | 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。 | 2026-09-14 |
+| unit | [Quartermaster Cadre Squad](factions/基因窃取者教派/units/quartermaster-cadre-squad.md) | 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。 | 2026-09-14 |
+| unit | [Rapier Laser Destroyer Battery](factions/基因窃取者教派/units/rapier-laser-destroyer-battery.md) | 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。 | 2026-09-14 |
+| unit | [Regimental Attachés](factions/基因窃取者教派/units/regimental-attachés.md) | 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。 | 2026-09-14 |
+| unit | [Sabre Weapons Battery](factions/基因窃取者教派/units/sabre-weapons-battery.md) | 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。 | 2026-09-14 |
+| unit | [Salamander Command Vehicle](factions/基因窃取者教派/units/salamander-command-vehicle.md) | 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。 | 2026-09-14 |
+| unit | [Salamander Scout Vehicle](factions/基因窃取者教派/units/salamander-scout-vehicle.md) | 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。 | 2026-09-14 |
+| unit | [Sentinel Powerlifter](factions/基因窃取者教派/units/sentinel-powerlifter.md) | 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。 | 2026-09-14 |
+| unit | [Storm Chimera](factions/基因窃取者教派/units/storm-chimera.md) | 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。 | 2026-09-14 |
+| unit | [Stormblade](factions/基因窃取者教派/units/stormblade.md) | 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。 | 2026-09-14 |
+| unit | [Stygies Destroyer Tank Hunter](factions/基因窃取者教派/units/stygies-destroyer-tank-hunter.md) | 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。 | 2026-09-14 |
+| unit | [Tarantula Battery](factions/基因窃取者教派/units/tarantula-battery.md) | 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。 | 2026-09-14 |
+| unit | [Tauros Assault Vehicle](factions/基因窃取者教派/units/tauros-assault-vehicle.md) | 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。 | 2026-09-14 |
+| unit | [Tauros Venator](factions/基因窃取者教派/units/tauros-venator.md) | 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。 | 2026-09-14 |
+| unit | [Tectonic Fragdrill](factions/基因窃取者教派/units/tectonic-fragdrill.md) | 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。 | 2026-09-14 |
+| unit | [Trojan Support Vehicle](factions/基因窃取者教派/units/trojan-support-vehicle.md) | 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。 | 2026-09-14 |
+| unit | [Valdor](factions/基因窃取者教派/units/valdor.md) | 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。 | 2026-09-14 |
+| unit | [【传奇】地狱之末](factions/基因窃取者教派/units/hells-last.md) | 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。 | 2026-09-14 |
+| unit | [主教](factions/基因窃取者教派/units/magus.md) |  | 2026-09-14 |
+| unit | [九头蛇高射炮](factions/基因窃取者教派/units/hydra.md) | 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。 | 2026-09-14 |
+| unit | [传疫者](factions/基因窃取者教派/units/biophagus.md) |  | 2026-09-14 |
+| unit | [侦查哨兵](factions/基因窃取者教派/units/scout-sentinels.md) | 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。 | 2026-09-14 |
+| unit | [克里格战斗工兵](factions/基因窃取者教派/units/krieg-combat-engineers.md) | 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。 | 2026-09-14 |
+| unit | [克里格指挥组](factions/基因窃取者教派/units/krieg-command-squad.md) | 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。 | 2026-09-14 |
+| unit | [克里格死亡骑兵](factions/基因窃取者教派/units/death-riders.md) | 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。 | 2026-09-14 |
+| unit | [克里格死兵队](factions/基因窃取者教派/units/death-korps-of-krieg.md) | 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。 | 2026-09-14 |
+| unit | [克里格重型武器小队](factions/基因窃取者教派/units/krieg-heavy-weapons-squad.md) | 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。 | 2026-09-14 |
+| unit | [冯·瑞恩跃袭者](factions/基因窃取者教派/units/von-ryans-leapers.md) | 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。 | 2026-09-14 |
+| unit | [刀斧虫](factions/基因窃取者教派/units/lictor.md) | 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。 | 2026-09-14 |
+| unit | [半人马快速突击战车](factions/基因窃取者教派/units/centaur-rsv.md) | 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。 | 2026-09-14 |
+| unit | [卡塔昌丛林战士](factions/基因窃取者教派/units/catachan-jungle-fighters.md) | 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。 | 2026-09-14 |
+| unit | [卡塔昌指挥组](factions/基因窃取者教派/units/catachan-command-squad.md) | 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。 | 2026-09-14 |
+| unit | [卡塔昌重型武器小队](factions/基因窃取者教派/units/catachan-heavy-weapons-squad.md) | 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。 | 2026-09-14 |
+| unit | [卡舍津突击队](factions/基因窃取者教派/units/kasrkin.md) | 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。 | 2026-09-14 |
+| unit | [卡迪亚重型武器小队](factions/基因窃取者教派/units/cadian-heavy-weapons-squad.md) | 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。 | 2026-09-14 |
+| unit | [卡迪安堡主](factions/基因窃取者教派/units/cadian-castellan.md) | 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。 | 2026-09-14 |
+| unit | [卡迪安指挥组](factions/基因窃取者教派/units/cadian-command-squad.md) | 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。 | 2026-09-14 |
+| unit | [卡迪安突击队](factions/基因窃取者教派/units/cadian-shock-troops.md) | 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。 | 2026-09-14 |
+| unit | [双足飞龙自行火炮](factions/基因窃取者教派/units/wyvern.md) | 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。 | 2026-09-14 |
+| unit | [圣祝者](factions/基因窃取者教派/units/benefictus.md) |  | 2026-09-14 |
+| unit | [圣裁者](factions/基因窃取者教派/units/sanctus.md) |  | 2026-09-14 |
+| unit | [地狱之锤](factions/基因窃取者教派/units/hellhammer.md) | 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。 | 2026-09-14 |
+| unit | [地狱犬喷射车](factions/基因窃取者教派/units/hellhound.md) | 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。 | 2026-09-14 |
+| unit | [奇美拉装甲车](factions/基因窃取者教派/units/chimera.md) | 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。 | 2026-09-14 |
+| unit | [孢子舱](factions/基因窃取者教派/units/tyrannocyte.md) | 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。 | 2026-09-14 |
+| unit | [宣政使](factions/基因窃取者教派/units/clamavus.md) |  | 2026-09-14 |
+| unit | [影剑](factions/基因窃取者教派/units/shadowsword.md) | 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。 | 2026-09-14 |
+| unit | [指战使](factions/基因窃取者教派/units/nexos.md) |  | 2026-09-14 |
+| unit | [掌旗侍僧](factions/基因窃取者教派/units/acolyte-iconward.md) |  | 2026-09-14 |
+| unit | [掘蟒](factions/基因窃取者教派/units/trygon.md) | 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。 | 2026-09-14 |
+| unit | [摩崔克斯寄生虫](factions/基因窃取者教派/units/parasite-of-mortrex.md) | 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。 | 2026-09-14 |
+| unit | [教团卫士](factions/基因窃取者教派/units/locus.md) |  | 2026-09-14 |
+| unit | [新血教徒](factions/基因窃取者教派/units/neophyte-hybrids.md) |  | 2026-09-14 |
+| unit | [族长](factions/基因窃取者教派/units/patriarch.md) |  | 2026-09-14 |
+| unit | [有翼泰伦王虫](factions/基因窃取者教派/units/winged-tyranid-prime.md) | 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。 | 2026-09-14 |
+| unit | [有翼虫巢暴君](factions/基因窃取者教派/units/winged-hive-tyrant.md) | 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。 | 2026-09-14 |
+| unit | [末日之锤](factions/基因窃取者教派/units/doomhammer.md) | 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。 | 2026-09-14 |
+| unit | [杀手种](factions/基因窃取者教派/units/kelermorph.md) |  | 2026-09-14 |
+| unit | [歌利亚卡车](factions/基因窃取者教派/units/goliath-truck.md) |  | 2026-09-14 |
+| unit | [歌利亚碎石车](factions/基因窃取者教派/units/goliath-rockgrinder.md) |  | 2026-09-14 |
+| unit | [死亡直击导弹车](factions/基因窃取者教派/units/deathstrike.md) | 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。 | 2026-09-14 |
+| unit | [死亡跃袭者](factions/基因窃取者教派/units/deathleaper.md) | 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。 | 2026-09-14 |
+| unit | [毁灭之剑](factions/基因窃取者教派/units/banesword.md) | 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。 | 2026-09-14 |
+| unit | [毁灭之锤](factions/基因窃取者教派/units/banehammer.md) | 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。 | 2026-09-14 |
+| unit | [毒刃](factions/基因窃取者教派/units/baneblade.md) | 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。 | 2026-09-14 |
+| unit | [沙蟒](factions/基因窃取者教派/units/mawloc.md) | 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。 | 2026-09-14 |
+| unit | [混血侍僧装备手持火焰喷射器](factions/基因窃取者教派/units/acolyte-hybrids-with-hand-flamers.md) |  | 2026-09-14 |
+| unit | [混血侍僧装备自动手枪](factions/基因窃取者教派/units/acolyte-hybrids-with-autopistols.md) |  | 2026-09-14 |
+| unit | [混血变种](factions/基因窃取者教派/units/hybrid-metamorphs.md) |  | 2026-09-14 |
+| unit | [灵能导师](factions/基因窃取者教派/units/primaris-psyker.md) | 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。 | 2026-09-14 |
+| unit | [炮兵小组](factions/基因窃取者教派/units/artillery-team.md) | 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。 | 2026-09-14 |
+| unit | [独眼巨人爆破车](factions/基因窃取者教派/units/cyclops-demolition-vehicle.md) | 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。 | 2026-09-14 |
+| unit | [畸变主宰](factions/基因窃取者教派/units/abominant.md) |  | 2026-09-14 |
+| unit | [畸变体](factions/基因窃取者教派/units/aberrants.md) |  | 2026-09-14 |
+| unit | [石像鬼](factions/基因窃取者教派/units/gargoyles.md) | 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。 | 2026-09-14 |
+| unit | [石化蜥蜴自行火炮](factions/基因窃取者教派/units/basilisk.md) | 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。 | 2026-09-14 |
+| unit | [神盾防御墙](factions/基因窃取者教派/units/aegis-defence-line.md) | 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。 | 2026-09-14 |
+| unit | [神经刀斧虫](factions/基因窃取者教派/units/neurolictor.md) | 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。 | 2026-09-14 |
+| unit | [红色惧物](factions/基因窃取者教派/units/the-red-terror.md) | 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。 | 2026-09-14 |
+| unit | [纯血基因窃取者](factions/基因窃取者教派/units/purestrain-genestealers.md) |  | 2026-09-14 |
+| unit | [罗格多恩坦克](factions/基因窃取者教派/units/rogal-dorn-battle-tank.md) | 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。 | 2026-09-14 |
+| unit | [罗格多恩指挥官](factions/基因窃取者教派/units/rogal-dorn-commander.md) | 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。 | 2026-09-14 |
+| unit | [蛇虫](factions/基因窃取者教派/units/raveners.md) | 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。 | 2026-09-14 |
+| unit | [蝎尾狮火箭炮](factions/基因窃取者教派/units/manticore.md) | 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。 | 2026-09-14 |
+| unit | [装甲哨兵](factions/基因窃取者教派/units/armoured-sentinels.md) | 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。 | 2026-09-14 |
+| unit | [豺狼猎首](factions/基因窃取者教派/units/jackal-alphus.md) |  | 2026-09-14 |
+| unit | [超适应蛇虫](factions/基因窃取者教派/units/hyperadapted-raveners.md) | 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。 | 2026-09-14 |
+| unit | [还原爆破使](factions/基因窃取者教派/units/reductus-saboteur.md) |  | 2026-09-14 |
+| unit | [野战炮兵](factions/基因窃取者教派/units/field-ordnance-battery.md) | 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。 | 2026-09-14 |
+| unit | [野牛装甲车](factions/基因窃取者教派/units/taurox.md) | 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。 | 2026-09-14 |
+| unit | [金牛装甲车](factions/基因窃取者教派/units/taurox-prime.md) | 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。 | 2026-09-14 |
+| unit | [阿基里斯山地车](factions/基因窃取者教派/units/achilles-ridgerunners.md) |  | 2026-09-14 |
+| unit | [阿塔兰豺狼小队](factions/基因窃取者教派/units/atalan-jackals.md) |  | 2026-09-14 |
+| unit | [阿提拉蛮骑兵](factions/基因窃取者教派/units/attilan-rough-riders.md) | 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。 | 2026-09-14 |
+| unit | [领军](factions/基因窃取者教派/units/primus.md) |  | 2026-09-14 |
+| unit | [风暴之剑](factions/基因窃取者教派/units/stormsword.md) | 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。 | 2026-09-14 |
+| unit | [风暴领主](factions/基因窃取者教派/units/stormlord.md) | 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。 | 2026-09-14 |
+| unit | [鹫马装甲战车](factions/基因窃取者教派/units/hippogriff-afv.md) | 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。 | 2026-09-14 |
+| unit | [黎曼鲁斯处决者](factions/基因窃取者教派/units/leman-russ-executioner.md) | 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。 | 2026-09-14 |
+| unit | [黎曼鲁斯惩罚者](factions/基因窃取者教派/units/leman-russ-punisher.md) | 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。 | 2026-09-14 |
+| unit | [黎曼鲁斯战斗坦克](factions/基因窃取者教派/units/leman-russ-battle-tank.md) | 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。 | 2026-09-14 |
+| unit | [黎曼鲁斯指挥官](factions/基因窃取者教派/units/leman-russ-commander.md) | 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。 | 2026-09-14 |
+| unit | [黎曼鲁斯根除者](factions/基因窃取者教派/units/leman-russ-eradicator.md) | 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。 | 2026-09-14 |
+| unit | [黎曼鲁斯灭绝者](factions/基因窃取者教派/units/leman-russ-exterminator.md) | 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。 | 2026-09-14 |
+| unit | [黎曼鲁斯破坏者](factions/基因窃取者教派/units/leman-russ-demolisher.md) | 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。 | 2026-09-14 |
+| unit | [黎曼鲁斯胜利者](factions/基因窃取者教派/units/leman-russ-vanquisher.md) | 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。 | 2026-09-14 |
 
 ### 太空死灵
 
@@ -843,31 +854,31 @@
 | enhancement | [原子分解器](factions/太空死灵/enhancements/atomic-disintegrators.md) | 10 分、墓穴技师密会 分队。 | 2026-07-26 |
 | enhancement | [复活协议](factions/太空死灵/enhancements/resurrection-protocols.md) | 0 分、Tomb Ship Complement 分队。 | 2026-07-26 |
 | enhancement | [复起暴君](factions/太空死灵/enhancements/arisen-tyrant.md) | 25 分、Hypercrypt Legion 分队。 | 2026-07-26 |
-| enhancement | [奇点矩阵](factions/太空死灵/enhancements/singularity-matrix.md) | 55 分、哀伤众神殿 分队。 | 2026-07-26 |
+| enhancement | [奇点矩阵](factions/太空死灵/enhancements/singularity-matrix.md) | 45 分、哀伤众神殿 分队。 | 2026-07-26 |
 | enhancement | [威严](factions/太空死灵/enhancements/dread-majesty-aura.md) | 30 分、碎星宝库 分队。 | 2026-07-26 |
 | enhancement | [密码计量实验](factions/太空死灵/enhancements/cryptometric-experimentation.md) | 0 分、Harbinger Cabal 分队。 | 2026-07-26 |
-| enhancement | [循环再生](factions/太空死灵/enhancements/recursive-reanimation.md) | 分数未知、遮天先锋 分队。 | 2026-07-26 |
+| enhancement | [循环再生](factions/太空死灵/enhancements/recursive-reanimation.md) | 5 分、遮天先锋 分队。 | 2026-07-26 |
 | enhancement | [微缩维度镜](factions/太空死灵/enhancements/miniaturised-nebuloscope.md) | 15 分、碎星宝库 分队。 | 2026-07-26 |
 | enhancement | [战士贵族](factions/太空死灵/enhancements/warrior-noble.md) | 15 分、Obeisance Phalanx 分队。 | 2026-07-26 |
 | enhancement | [支配存在](factions/太空死灵/enhancements/domineering-presence.md) | 0 分、Deranged Outcasts 分队。 | 2026-07-26 |
 | enhancement | [敌意增幅器](factions/太空死灵/enhancements/animus-damper.md) | 35 分、哀伤众神殿 分队。 | 2026-07-26 |
-| enhancement | [无魂收割者](factions/太空死灵/enhancements/soulless-reaper.md) | 20 分、Annihilation Legion 分队。 | 2026-07-26 |
+| enhancement | [无魂收割者](factions/太空死灵/enhancements/soulless-reaper.md) | 15 分、Annihilation Legion 分队。 | 2026-07-26 |
 | enhancement | [时序阻抗力场](factions/太空死灵/enhancements/chrono-impedance-fields.md) | 25 分、碎星宝库 分队。 | 2026-07-26 |
-| enhancement | [易位优化器](factions/太空死灵/enhancements/prelocational-optimiser.md) | 分数未知、法皇的军备 分队。 | 2026-07-26 |
+| enhancement | [易位优化器](factions/太空死灵/enhancements/prelocational-optimiser.md) | 25 分、法皇的军备 分队。 | 2026-07-26 |
 | enhancement | [杀戮意志](factions/太空死灵/enhancements/murdermind.md) | 15 分、诅咒军团 分队。 | 2026-07-26 |
 | enhancement | [束心圣甲虫](factions/太空死灵/enhancements/mindshackle-scarabs.md) | 0 分、Tomb Ship Complement 分队。 | 2026-07-26 |
-| enhancement | [根植优越](factions/太空死灵/enhancements/ingrained-superiority.md) | 10 分、Annihilation Legion 分队。 | 2026-07-26 |
-| enhancement | [死亡之幕（光环）](factions/太空死灵/enhancements/mortality-shroud.md) | 分数未知、法皇的军备 分队。 | 2026-07-26 |
+| enhancement | [根植优越](factions/太空死灵/enhancements/ingrained-superiority.md) | 5 分、Annihilation Legion 分队。 | 2026-07-26 |
+| enhancement | [死亡之幕（光环）](factions/太空死灵/enhancements/mortality-shroud.md) | 10 分、法皇的军备 分队。 | 2026-07-26 |
 | enhancement | [毁灭者锚点](factions/太空死灵/enhancements/destroyer-ankh.md) | 20 分、诅咒军团 分队。 | 2026-07-26 |
 | enhancement | [永恒征服者](factions/太空死灵/enhancements/eternal-conqueror.md) | 25 分、Obeisance Phalanx 分队。 | 2026-07-26 |
-| enhancement | [永恒疯狂](factions/太空死灵/enhancements/eternal-madness.md) | 25 分、Annihilation Legion 分队。 | 2026-07-26 |
-| enhancement | [活跃哨卫](factions/太空死灵/enhancements/enlivened-sentinels.md) | 分数未知、王朝之手 分队。 | 2026-07-26 |
-| enhancement | [深度狂乱](factions/太空死灵/enhancements/deepening-madness.md) | 分数未知、遮天先锋 分队。 | 2026-07-26 |
+| enhancement | [永恒疯狂](factions/太空死灵/enhancements/eternal-madness.md) | 20 分、Annihilation Legion 分队。 | 2026-07-26 |
+| enhancement | [活跃哨卫](factions/太空死灵/enhancements/enlivened-sentinels.md) | 20 分、王朝之手 分队。 | 2026-07-26 |
+| enhancement | [深度狂乱](factions/太空死灵/enhancements/deepening-madness.md) | 20 分、遮天先锋 分队。 | 2026-07-26 |
 | enhancement | [灵能真皮键结](factions/太空死灵/enhancements/enaegic-dermal-bond.md) | 30 分、Awakened Dynasty 分队。 | 2026-07-26 |
 | enhancement | [相位征服者](factions/太空死灵/enhancements/phasal-subjugator-aura.md) | 35 分、Awakened Dynasty 分队。 | 2026-07-26 |
 | enhancement | [相对论系绳](factions/太空死灵/enhancements/reletavistic-tether.md) | 40 分、哀伤众神殿 分队。 | 2026-07-26 |
 | enhancement | [纳米圣甲虫重构](factions/太空死灵/enhancements/nanoscarab-reconstitution.md) | 0 分、Canoptek Harvesters 分队。 | 2026-07-26 |
-| enhancement | [统御工具](factions/太空死灵/enhancements/tools-of-dominion.md) | 分数未知、王朝之手 分队。 | 2026-07-26 |
+| enhancement | [统御工具](factions/太空死灵/enhancements/tools-of-dominion.md) | 15 分、王朝之手 分队。 | 2026-07-26 |
 | enhancement | [维度圣所](factions/太空死灵/enhancements/dimensional-sanctum.md) | 20 分、Canoptek Court 分队。 | 2026-07-26 |
 | enhancement | [维度督军](factions/太空死灵/enhancements/dimensional-overseer.md) | 25 分、Hypercrypt Legion 分队。 | 2026-07-26 |
 | enhancement | [耐伤](factions/太空死灵/enhancements/inured-to-damage.md) | 0 分、Deranged Outcasts 分队。 | 2026-07-26 |
@@ -876,7 +887,7 @@
 | enhancement | [诅咒之冠](factions/太空死灵/enhancements/cursed-circlet.md) | 25 分、诅咒军团 分队。 | 2026-07-26 |
 | enhancement | [超相位支点](factions/太空死灵/enhancements/hyperphasic-fulcrum.md) | 15 分、Canoptek Court 分队。 | 2026-07-26 |
 | enhancement | [超空间转移节点](factions/太空死灵/enhancements/hyperspatial-transfer-node.md) | 15 分、Hypercrypt Legion 分队。 | 2026-07-26 |
-| enhancement | [邪术梦魇](factions/太空死灵/enhancements/eldritch-nightmare.md) | 15 分、Annihilation Legion 分队。 | 2026-07-26 |
+| enhancement | [邪术梦魇](factions/太空死灵/enhancements/eldritch-nightmare.md) | 10 分、Annihilation Legion 分队。 | 2026-07-26 |
 | enhancement | [重力流星锤](factions/太空死灵/enhancements/gravitic-bolas.md) | 15 分、墓穴技师密会 分队。 | 2026-07-26 |
 | enhancement | [量子刺激](factions/太空死灵/enhancements/quantum-goad.md) | 45 分、哀伤众神殿 分队。 | 2026-07-26 |
 | enhancement | [量子精算器](factions/太空死灵/enhancements/quantum-abacus.md) | 15 分、墓穴技师密会 分队。 | 2026-07-26 |
@@ -962,70 +973,70 @@
 | stratagem | [领土执念](factions/太空死灵/stratagems/territorial-obsession.md) | 1 CP、Command phase、Obeisance Phalanx 分队、Strategic Ploy Stratagem。 | 2026-07-26 |
 | stratagem | [饥饿虚空协议](factions/太空死灵/stratagems/protocol-of-the-hungry-void.md) | 1 CP、Fight phase、Awakened Dynasty 分队、Battle Tactic Stratagem。 | 2026-07-26 |
 | stratagem | [骤袭风暴协议](factions/太空死灵/stratagems/protocol-of-the-sudden-storm.md) | 1 CP、Movement phase、Awakened Dynasty 分队、Strategic Ploy Stratagem。 | 2026-07-26 |
-| unit | [Nemesor Zahndrekh](factions/太空死灵/units/nemesor-zahndrekh.md) |  | 2026-07-23 |
-| unit | [Sentry Pylon](factions/太空死灵/units/sentry-pylon.md) |  | 2026-07-23 |
-| unit | [Tomb Citadel Walls](factions/太空死灵/units/tomb-citadel-walls.md) |  | 2026-07-23 |
-| unit | [三圣禁卫](factions/太空死灵/units/triarch-praetorians.md) |  | 2026-07-23 |
-| unit | [三圣追猎者](factions/太空死灵/units/triarch-stalker.md) |  | 2026-07-23 |
-| unit | [不朽者](factions/太空死灵/units/immortals.md) |  | 2026-07-23 |
-| unit | [主宰圣碑](factions/太空死灵/units/convergence-of-dominion.md) |  | 2026-07-23 |
-| unit | [传送霸主](factions/太空死灵/units/overlord-with-translocation-shroud.md) |  | 2026-07-23 |
-| unit | [六印驱逐者](factions/太空死灵/units/hexmark-destroyer.md) |  | 2026-07-23 |
-| unit | [冥工哨戒蜈蚣](factions/太空死灵/units/canoptek-tomb-sentinel.md) |  | 2026-07-23 |
-| unit | [冥工圣甲虫群](factions/太空死灵/units/canoptek-scarab-swarms.md) |  | 2026-07-23 |
-| unit | [冥工墓穴爬行者](factions/太空死灵/units/canoptek-tomb-crawlers.md) |  | 2026-07-23 |
-| unit | [冥工巨虫](factions/太空死灵/units/canoptek-macrocytes.md) |  | 2026-07-23 |
-| unit | [冥工幽魂](factions/太空死灵/units/canoptek-wraiths.md) |  | 2026-07-23 |
-| unit | [冥工末日行者](factions/太空死灵/units/canoptek-doomstalker.md) |  | 2026-07-23 |
-| unit | [冥工炽天使重型构造体](factions/太空死灵/units/seraptek-heavy-construct.md) |  | 2026-07-23 |
-| unit | [冥工蜘蛛](factions/太空死灵/units/canoptek-spyders.md) |  | 2026-07-23 |
-| unit | [冥工赋生者](factions/太空死灵/units/canoptek-reanimator.md) |  | 2026-07-23 |
-| unit | [冥工追猎蜈蚣](factions/太空死灵/units/canoptek-tomb-stalker.md) |  | 2026-07-23 |
-| unit | [冥工针尾幽魂](factions/太空死灵/units/canoptek-acanthrites.md) |  | 2026-07-23 |
-| unit | [剥皮者](factions/太空死灵/units/flayed-ones.md) |  | 2026-07-23 |
-| unit | [午夜寿衣](factions/太空死灵/units/night-shroud.md) |  | 2026-07-23 |
-| unit | [古墓指挥艇](factions/太空死灵/units/catacomb-command-barge.md) |  | 2026-07-23 |
-| unit | [古墓方尖碑](factions/太空死灵/units/monolith.md) |  | 2026-07-23 |
-| unit | [古墓机奴](factions/太空死灵/units/cryptothralls.md) |  | 2026-07-23 |
-| unit | [古墓飞刃](factions/太空死灵/units/tomb-blades.md) |  | 2026-07-23 |
-| unit | [启明者萨拉斯](factions/太空死灵/units/illuminor-szeras.md) |  | 2026-07-23 |
-| unit | [地相技师](factions/太空死灵/units/geomancer.md) |  | 2026-07-23 |
-| unit | [太空死灵武士](factions/太空死灵/units/necron-warriors.md) |  | 2026-07-23 |
-| unit | [巫妖卫士](factions/太空死灵/units/lychguard.md) |  | 2026-07-23 |
-| unit | [幽灵方舟](factions/太空死灵/units/ghost-ark.md) |  | 2026-07-23 |
-| unit | [幽蛇驱逐者](factions/太空死灵/units/ophydian-destroyers.md) |  | 2026-07-23 |
-| unit | [恐惧技师](factions/太空死灵/units/psychomancer.md) |  | 2026-07-23 |
-| unit | [拥夜者星神碎片](factions/太空死灵/units/ctan-shard-of-the-nightbringer.md) |  | 2026-07-23 |
-| unit | [斯扎拉克，寂静之王](factions/太空死灵/units/the-silent-king.md) |  | 2026-07-23 |
-| unit | [旅行者安拉凯尔](factions/太空死灵/units/anrakyr-the-traveller.md) |  | 2026-07-23 |
-| unit | [无尽者塔拉辛](factions/太空死灵/units/trazyn-the-infinite.md) |  | 2026-07-23 |
-| unit | [时间技师](factions/太空死灵/units/chronomancer.md) |  | 2026-07-23 |
-| unit | [暗夜之镰](factions/太空死灵/units/night-scythe.md) |  | 2026-07-23 |
-| unit | [末日方舟](factions/太空死灵/units/doomsday-ark.md) |  | 2026-07-23 |
-| unit | [末日灾镰](factions/太空死灵/units/doom-scythe.md) |  | 2026-07-23 |
-| unit | [欺诈者星神碎片](factions/太空死灵/units/ctan-shard-of-the-deceiver.md) |  | 2026-07-23 |
-| unit | [死亡之印](factions/太空死灵/units/deathmarks.md) |  | 2026-07-23 |
-| unit | [毁灭炮艇](factions/太空死灵/units/annihilation-barge.md) |  | 2026-07-23 |
-| unit | [灾蝗领主](factions/太空死灵/units/lokhust-lord.md) |  | 2026-07-23 |
-| unit | [灾蝗驱逐者](factions/太空死灵/units/lokhust-destroyers.md) |  | 2026-07-23 |
-| unit | [皇家督军](factions/太空死灵/units/royal-warden.md) |  | 2026-07-23 |
-| unit | [禁卫奥比隆](factions/太空死灵/units/vargard-obyron.md) |  | 2026-07-23 |
-| unit | [离子技师](factions/太空死灵/units/plasmancer.md) |  | 2026-07-23 |
-| unit | [科技技师](factions/太空死灵/units/technomancer.md) |  | 2026-07-23 |
-| unit | [绝灭者阿门塔尔](factions/太空死灵/units/nekrosor-ammentar.md) |  | 2026-07-23 |
-| unit | [至尊星神](factions/太空死灵/units/transcendent-ctan.md) |  | 2026-07-23 |
-| unit | [荒蝎领主](factions/太空死灵/units/skorpekh-lord.md) |  | 2026-07-23 |
-| unit | [荒蝎驱逐者](factions/太空死灵/units/skorpekh-destroyers.md) |  | 2026-07-23 |
-| unit | [虚空龙星神碎片](factions/太空死灵/units/ctan-shard-of-the-void-dragon.md) |  | 2026-07-23 |
-| unit | [超维方舟](factions/太空死灵/units/tesseract-ark.md) |  | 2026-07-23 |
-| unit | [超维魔方牢笼](factions/太空死灵/units/tesseract-vault.md) |  | 2026-07-23 |
-| unit | [重装灾蝗驱逐者](factions/太空死灵/units/lokhust-heavy-destroyers.md) |  | 2026-07-23 |
-| unit | [霸主](factions/太空死灵/units/overlord.md) |  | 2026-07-23 |
-| unit | [预言者欧瑞坎](factions/太空死灵/units/orikan-the-diviner.md) |  | 2026-07-23 |
-| unit | [领主](factions/太空死灵/units/lord.md) |  | 2026-07-23 |
-| unit | [风暴之王伊莫泰克](factions/太空死灵/units/imotekh-the-stormlord.md) |  | 2026-07-23 |
-| unit | [高斯巨石碑](factions/太空死灵/units/gauss-pylon.md) |  | 2026-07-23 |
-| unit | [黑石浮塔](factions/太空死灵/units/obelisk.md) |  | 2026-07-23 |
+| unit | [Nemesor Zahndrekh](factions/太空死灵/units/nemesor-zahndrekh.md) | 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。 | 2026-09-14 |
+| unit | [Tomb Citadel Walls](factions/太空死灵/units/tomb-citadel-walls.md) | 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。 | 2026-09-14 |
+| unit | [三圣禁卫](factions/太空死灵/units/triarch-praetorians.md) |  | 2026-09-14 |
+| unit | [三圣追猎者](factions/太空死灵/units/triarch-stalker.md) |  | 2026-09-14 |
+| unit | [不朽者](factions/太空死灵/units/immortals.md) |  | 2026-09-14 |
+| unit | [主宰圣碑](factions/太空死灵/units/convergence-of-dominion.md) |  | 2026-09-14 |
+| unit | [传送霸主](factions/太空死灵/units/overlord-with-translocation-shroud.md) |  | 2026-09-14 |
+| unit | [六印驱逐者](factions/太空死灵/units/hexmark-destroyer.md) |  | 2026-09-14 |
+| unit | [冥工哨戒蜈蚣](factions/太空死灵/units/canoptek-tomb-sentinel.md) | 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。 | 2026-09-14 |
+| unit | [冥工圣甲虫群](factions/太空死灵/units/canoptek-scarab-swarms.md) |  | 2026-09-14 |
+| unit | [冥工墓穴爬行者](factions/太空死灵/units/canoptek-tomb-crawlers.md) |  | 2026-09-14 |
+| unit | [冥工巨虫](factions/太空死灵/units/canoptek-macrocytes.md) |  | 2026-09-14 |
+| unit | [冥工幽魂](factions/太空死灵/units/canoptek-wraiths.md) |  | 2026-09-14 |
+| unit | [冥工末日行者](factions/太空死灵/units/canoptek-doomstalker.md) |  | 2026-09-14 |
+| unit | [冥工炽天使重型构造体](factions/太空死灵/units/seraptek-heavy-construct.md) |  | 2026-09-14 |
+| unit | [冥工蜘蛛](factions/太空死灵/units/canoptek-spyders.md) |  | 2026-09-14 |
+| unit | [冥工赋生者](factions/太空死灵/units/canoptek-reanimator.md) |  | 2026-09-14 |
+| unit | [冥工追猎蜈蚣](factions/太空死灵/units/canoptek-tomb-stalker.md) | 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。 | 2026-09-14 |
+| unit | [冥工针尾幽魂](factions/太空死灵/units/canoptek-acanthrites.md) | 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。 | 2026-09-14 |
+| unit | [剥皮者](factions/太空死灵/units/flayed-ones.md) |  | 2026-09-14 |
+| unit | [午夜寿衣](factions/太空死灵/units/night-shroud.md) | 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。 | 2026-09-14 |
+| unit | [古墓指挥艇](factions/太空死灵/units/catacomb-command-barge.md) |  | 2026-09-14 |
+| unit | [古墓方尖碑](factions/太空死灵/units/monolith.md) |  | 2026-09-14 |
+| unit | [古墓机奴](factions/太空死灵/units/cryptothralls.md) |  | 2026-09-14 |
+| unit | [古墓飞刃](factions/太空死灵/units/tomb-blades.md) |  | 2026-09-14 |
+| unit | [启明者萨拉斯](factions/太空死灵/units/illuminor-szeras.md) |  | 2026-09-14 |
+| unit | [哨戒石碑塔](factions/太空死灵/units/sentry-pylon.md) | 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。 | 2026-09-14 |
+| unit | [地相技师](factions/太空死灵/units/geomancer.md) |  | 2026-09-14 |
+| unit | [太空死灵武士](factions/太空死灵/units/necron-warriors.md) |  | 2026-09-14 |
+| unit | [巫妖卫士](factions/太空死灵/units/lychguard.md) |  | 2026-09-14 |
+| unit | [幽灵方舟](factions/太空死灵/units/ghost-ark.md) |  | 2026-09-14 |
+| unit | [幽蛇驱逐者](factions/太空死灵/units/ophydian-destroyers.md) |  | 2026-09-14 |
+| unit | [恐惧技师](factions/太空死灵/units/psychomancer.md) |  | 2026-09-14 |
+| unit | [拥夜者星神碎片](factions/太空死灵/units/ctan-shard-of-the-nightbringer.md) |  | 2026-09-14 |
+| unit | [斯扎拉克，寂静之王](factions/太空死灵/units/the-silent-king.md) |  | 2026-09-14 |
+| unit | [旅行者安拉凯尔](factions/太空死灵/units/anrakyr-the-traveller.md) | 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。 | 2026-09-14 |
+| unit | [无尽者塔拉辛](factions/太空死灵/units/trazyn-the-infinite.md) |  | 2026-09-14 |
+| unit | [时间技师](factions/太空死灵/units/chronomancer.md) |  | 2026-09-14 |
+| unit | [暗夜之镰](factions/太空死灵/units/night-scythe.md) |  | 2026-09-14 |
+| unit | [末日方舟](factions/太空死灵/units/doomsday-ark.md) |  | 2026-09-14 |
+| unit | [末日灾镰](factions/太空死灵/units/doom-scythe.md) |  | 2026-09-14 |
+| unit | [欺诈者星神碎片](factions/太空死灵/units/ctan-shard-of-the-deceiver.md) |  | 2026-09-14 |
+| unit | [死亡之印](factions/太空死灵/units/deathmarks.md) |  | 2026-09-14 |
+| unit | [毁灭炮艇](factions/太空死灵/units/annihilation-barge.md) |  | 2026-09-14 |
+| unit | [灾蝗领主](factions/太空死灵/units/lokhust-lord.md) |  | 2026-09-14 |
+| unit | [灾蝗驱逐者](factions/太空死灵/units/lokhust-destroyers.md) |  | 2026-09-14 |
+| unit | [皇家督军](factions/太空死灵/units/royal-warden.md) |  | 2026-09-14 |
+| unit | [禁卫奥比隆](factions/太空死灵/units/vargard-obyron.md) | 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。 | 2026-09-14 |
+| unit | [离子技师](factions/太空死灵/units/plasmancer.md) |  | 2026-09-14 |
+| unit | [科技技师](factions/太空死灵/units/technomancer.md) |  | 2026-09-14 |
+| unit | [绝灭者阿门塔尔](factions/太空死灵/units/nekrosor-ammentar.md) |  | 2026-09-14 |
+| unit | [至尊星神](factions/太空死灵/units/transcendent-ctan.md) |  | 2026-09-14 |
+| unit | [荒蝎领主](factions/太空死灵/units/skorpekh-lord.md) |  | 2026-09-14 |
+| unit | [荒蝎驱逐者](factions/太空死灵/units/skorpekh-destroyers.md) |  | 2026-09-14 |
+| unit | [虚空龙星神碎片](factions/太空死灵/units/ctan-shard-of-the-void-dragon.md) |  | 2026-09-14 |
+| unit | [超维方舟](factions/太空死灵/units/tesseract-ark.md) | 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。 | 2026-09-14 |
+| unit | [超维魔方牢笼](factions/太空死灵/units/tesseract-vault.md) |  | 2026-09-14 |
+| unit | [重装灾蝗驱逐者](factions/太空死灵/units/lokhust-heavy-destroyers.md) |  | 2026-09-14 |
+| unit | [霸主](factions/太空死灵/units/overlord.md) |  | 2026-09-14 |
+| unit | [预言者欧瑞坎](factions/太空死灵/units/orikan-the-diviner.md) |  | 2026-09-14 |
+| unit | [领主](factions/太空死灵/units/lord.md) | 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。 | 2026-09-14 |
+| unit | [风暴之王伊莫泰克](factions/太空死灵/units/imotekh-the-stormlord.md) |  | 2026-09-14 |
+| unit | [高斯巨石碑](factions/太空死灵/units/gauss-pylon.md) | 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。 | 2026-09-14 |
+| unit | [黑石浮塔](factions/太空死灵/units/obelisk.md) |  | 2026-09-14 |
 
 ### 帝国特勤
 
@@ -1050,7 +1061,7 @@
 | enhancement | [Grimoire of True Names (Aura)](factions/帝国特勤/enhancements/grimoire-of-true-names-aura.md) | 10 分、Ordo Malleus Daemon Hunters 分队。 | 2026-07-26 |
 | enhancement | [Heirloom Blade](factions/帝国特勤/enhancements/heirloom-blade.md) | 0 分、Voidship’s Company 分队。 | 2026-07-26 |
 | enhancement | [Ignis Judicium](factions/帝国特勤/enhancements/ignis-judicium.md) | 10 分、Ordo Hereticus Purgation Force 分队。 | 2026-07-26 |
-| enhancement | [Intraneural Biotech](factions/帝国特勤/enhancements/intraneural-biotech.md) | 35 分、隐藏利刃歼灭部队 分队。 | 2026-07-26 |
+| enhancement | [Intraneural Biotech](factions/帝国特勤/enhancements/intraneural-biotech.md) | 15 分、隐藏利刃歼灭部队 分队。 | 2026-07-26 |
 | enhancement | [Lathimon’s Flock](factions/帝国特勤/enhancements/lathimons-flock.md) | 0 分、Voidship’s Company 分队。 | 2026-07-26 |
 | enhancement | [Liber Heresius](factions/帝国特勤/enhancements/liber-heresius.md) | 10 分、Ordo Hereticus Purgation Force 分队。 | 2026-07-26 |
 | enhancement | [Manhunter’s Helm](factions/帝国特勤/enhancements/manhunters-helm.md) | 0 分、Interdiction Team 分队。 | 2026-07-26 |
@@ -1059,9 +1070,9 @@
 | enhancement | [Vasov’s Auto-Oppressor](factions/帝国特勤/enhancements/vasovs-auto-oppressor.md) | 0 分、Interdiction Team 分队。 | 2026-07-26 |
 | enhancement | [Witch Hunter](factions/帝国特勤/enhancements/witch-hunter.md) | 15 分、Ordo Hereticus Purgation Force 分队。 | 2026-07-26 |
 | enhancement | [天使信标](factions/帝国特勤/enhancements/beacon-angelis.md) | 30 分、Ordo Xenos Alien Hunters 分队。 | 2026-07-26 |
-| enhancement | [微型热熔弹药](factions/帝国特勤/enhancements/micromelta-rounds.md) | 45 分、隐藏利刃歼灭部队 分队。 | 2026-07-26 |
-| enhancement | [特殊炸药](factions/帝国特勤/enhancements/esoteric-explosives.md) | 40 分、隐藏利刃歼灭部队 分队。 | 2026-07-26 |
-| enhancement | [诱饵目标](factions/帝国特勤/enhancements/decoy-targets.md) | 40 分、隐藏利刃歼灭部队 分队。 | 2026-07-26 |
+| enhancement | [微型热熔弹药](factions/帝国特勤/enhancements/micromelta-rounds.md) | 20 分、隐藏利刃歼灭部队 分队。 | 2026-07-26 |
+| enhancement | [特殊炸药](factions/帝国特勤/enhancements/esoteric-explosives.md) | 10 分、隐藏利刃歼灭部队 分队。 | 2026-07-26 |
+| enhancement | [诱饵目标](factions/帝国特勤/enhancements/decoy-targets.md) | 15 分、隐藏利刃歼灭部队 分队。 | 2026-07-26 |
 | stratagem | [AMMO RATIONS](factions/帝国特勤/stratagems/ammo-rations.md) | 1 CP、Shooting phase、Voidship’s Company 分队、Battle Tactic Stratagem。 | 2026-07-26 |
 | stratagem | [ARBITRARY EXECUTION](factions/帝国特勤/stratagems/arbitrary-execution.md) | 1 CP、Shooting phase、Interdiction Team 分队、Strategic Ploy Stratagem。 | 2026-07-26 |
 | stratagem | [BOARDING DRILL](factions/帝国特勤/stratagems/boarding-drill.md) | 1 CP、Shooting phase、Voidship’s Company 分队、Strategic Ploy Stratagem。 | 2026-07-26 |
@@ -1100,52 +1111,52 @@
 | stratagem | [轨道监视](factions/帝国特勤/stratagems/orbital-oversight.md) | 1 CP、Shooting phase、隐藏利刃歼灭部队 分队、Strategic Ploy Stratagem。 | 2026-07-26 |
 | stratagem | [适应战术](factions/帝国特勤/stratagems/adaptive-tactics.md) | 1 CP、Command phase、Ordo Xenos Alien Hunters 分队、Strategic Ploy Stratagem。 | 2026-07-26 |
 | stratagem | [龙火子弹](factions/帝国特勤/stratagems/dragonfire-rounds.md) | 1 CP、Shooting phase、Ordo Xenos Alien Hunters 分队、Wargear Stratagem。 | 2026-07-26 |
-| unit | [Daemonhost](factions/帝国特勤/units/daemonhost.md) |  | 2026-07-23 |
-| unit | [Damned Legionnaires](factions/帝国特勤/units/damned-legionnaires.md) |  | 2026-07-23 |
-| unit | [Inquisitor Eisenhorn](factions/帝国特勤/units/inquisitor-eisenhorn.md) |  | 2026-07-23 |
-| unit | [Inquisitor In Terminator Armour](factions/帝国特勤/units/inquisitor-in-terminator-armour.md) |  | 2026-07-23 |
-| unit | [Inquisitor Karamazov](factions/帝国特勤/units/inquisitor-karamazov.md) |  | 2026-07-23 |
-| unit | [Inquisitor Ostromandeus](factions/帝国特勤/units/inquisitor-ostromandeus.md) |  | 2026-07-23 |
-| unit | [Janus Draik](factions/帝国特勤/units/janus-draik.md) |  | 2026-07-23 |
-| unit | [Jokaero Weaponsmith](factions/帝国特勤/units/jokaero-weaponsmith.md) |  | 2026-07-23 |
-| unit | [Kill Team Cassius](factions/帝国特勤/units/kill-team-cassius.md) |  | 2026-07-23 |
-| unit | [Neyam Shai Murad](factions/帝国特勤/units/neyam-shai-murad.md) |  | 2026-07-23 |
-| unit | [Proteus Kill Team](factions/帝国特勤/units/proteus-kill-team.md) |  | 2026-07-23 |
-| unit | [UR-025](factions/帝国特勤/units/ur-025.md) |  | 2026-07-23 |
-| unit | [Veteran Bike Squad](factions/帝国特勤/units/veteran-bike-squad.md) |  | 2026-07-23 |
-| unit | [不屈杀戮小队](factions/帝国特勤/units/indomitor-kill-team.md) |  | 2026-07-23 |
-| unit | [丘里克斯刺客](factions/帝国特勤/units/culexus-assassin.md) |  | 2026-07-23 |
-| unit | [冲覆者小队](factions/帝国特勤/units/subductor-squad.md) |  | 2026-07-23 |
-| unit | [净化者杀戮小队](factions/帝国特勤/units/sanctifiers.md) |  | 2026-07-23 |
-| unit | [卡里杜斯刺客](factions/帝国特勤/units/callidus-assassin.md) |  | 2026-07-23 |
-| unit | [天鹰杀戮小队](factions/帝国特勤/units/aquila-kill-team.md) |  | 2026-07-23 |
-| unit | [守望堡主](factions/帝国特勤/units/watch-master.md) |  | 2026-07-23 |
-| unit | [守望连长阿耳忒弥斯](factions/帝国特勤/units/watch-captain-artemis.md) |  | 2026-07-23 |
-| unit | [审判官](factions/帝国特勤/units/inquisitor.md) |  | 2026-07-23 |
-| unit | [审判官克提兹](factions/帝国特勤/units/inquisitor-coteaz.md) |  | 2026-07-23 |
-| unit | [审判官克罗伊尔](factions/帝国特勤/units/inquisitor-kroyle.md) |  | 2026-07-23 |
-| unit | [审判官格雷法克斯](factions/帝国特勤/units/inquisitor-greyfax.md) |  | 2026-07-23 |
-| unit | [审判官特勤](factions/帝国特勤/units/inquisitorial-agents.md) |  | 2026-07-23 |
-| unit | [审判庭奇美拉装甲车](factions/帝国特勤/units/inquisitorial-chimera.md) |  | 2026-07-23 |
-| unit | [审判领主奇莉亚·德拉克瑟斯](factions/帝国特勤/units/inquisitor-draxus.md) |  | 2026-07-23 |
-| unit | [导航员](factions/帝国特勤/units/navigator.md) |  | 2026-07-23 |
-| unit | [帝国海军跳帮者](factions/帝国特勤/units/imperial-navy-breachers.md) |  | 2026-07-23 |
-| unit | [帝国犀牛装甲车](factions/帝国特勤/units/imperial-rhino.md) |  | 2026-07-23 |
-| unit | [强征小队](factions/帝国特勤/units/exaction-squad.md) |  | 2026-07-23 |
-| unit | [战斗修女小队](factions/帝国特勤/units/sisters-of-battle-squad.md) |  | 2026-07-23 |
-| unit | [战斗修女献祭者装甲车](factions/帝国特勤/units/sisters-of-battle-immolator.md) |  | 2026-07-23 |
-| unit | [教廷牧师](factions/帝国特勤/units/ministorum-priest.md) |  | 2026-07-23 |
-| unit | [文迪卡刺客](factions/帝国特勤/units/vindicare-assassin.md) |  | 2026-07-23 |
-| unit | [无形杀戮小队](factions/帝国特勤/units/spectrus-kill-team.md) |  | 2026-07-23 |
-| unit | [武装船兵](factions/帝国特勤/units/voidsmen-at-arms.md) |  | 2026-07-23 |
-| unit | [死亡守望杀戮小队](factions/帝国特勤/units/deathwatch-kill-team.md) |  | 2026-07-23 |
-| unit | [死亡守望终结者小队](factions/帝国特勤/units/deathwatch-terminator-squad.md) |  | 2026-07-23 |
-| unit | [灰骑士终结者小队](factions/帝国特勤/units/grey-knights-terminator-squad.md) |  | 2026-07-23 |
-| unit | [至强杀戮小队](factions/帝国特勤/units/fortis-kill-team.md) |  | 2026-07-23 |
-| unit | [艾弗森刺客](factions/帝国特勤/units/eversor-assassin.md) |  | 2026-07-23 |
-| unit | [行商团队](factions/帝国特勤/units/rogue-trader-entourage.md) |  | 2026-07-23 |
-| unit | [警戒者小队](factions/帝国特勤/units/vigilant-squad.md) |  | 2026-07-23 |
-| unit | [黑星渡鸦](factions/帝国特勤/units/corvus-blackstar.md) |  | 2026-07-23 |
+| unit | [Daemonhost](factions/帝国特勤/units/daemonhost.md) | 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。 | 2026-09-14 |
+| unit | [Damned Legionnaires](factions/帝国特勤/units/damned-legionnaires.md) | 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。 | 2026-09-14 |
+| unit | [Inquisitor Eisenhorn](factions/帝国特勤/units/inquisitor-eisenhorn.md) | 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。 | 2026-09-14 |
+| unit | [Inquisitor In Terminator Armour](factions/帝国特勤/units/inquisitor-in-terminator-armour.md) | 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。 | 2026-09-14 |
+| unit | [Inquisitor Karamazov](factions/帝国特勤/units/inquisitor-karamazov.md) | 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。 | 2026-09-14 |
+| unit | [Inquisitor Ostromandeus](factions/帝国特勤/units/inquisitor-ostromandeus.md) | 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。 | 2026-09-14 |
+| unit | [Janus Draik](factions/帝国特勤/units/janus-draik.md) | 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。 | 2026-09-14 |
+| unit | [Jokaero Weaponsmith](factions/帝国特勤/units/jokaero-weaponsmith.md) | 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。 | 2026-09-14 |
+| unit | [Kill Team Cassius](factions/帝国特勤/units/kill-team-cassius.md) | 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。 | 2026-09-14 |
+| unit | [Neyam Shai Murad](factions/帝国特勤/units/neyam-shai-murad.md) | 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。 | 2026-09-14 |
+| unit | [Proteus Kill Team](factions/帝国特勤/units/proteus-kill-team.md) | 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。 | 2026-09-14 |
+| unit | [UR-025](factions/帝国特勤/units/ur-025.md) | 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。 | 2026-09-14 |
+| unit | [Veteran Bike Squad](factions/帝国特勤/units/veteran-bike-squad.md) | 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。 | 2026-09-14 |
+| unit | [不屈杀戮小队](factions/帝国特勤/units/indomitor-kill-team.md) | 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。 | 2026-09-14 |
+| unit | [丘里克斯刺客](factions/帝国特勤/units/culexus-assassin.md) |  | 2026-09-14 |
+| unit | [冲覆者小队](factions/帝国特勤/units/subductor-squad.md) |  | 2026-09-14 |
+| unit | [净化者杀戮小队](factions/帝国特勤/units/sanctifiers.md) |  | 2026-09-14 |
+| unit | [卡里杜斯刺客](factions/帝国特勤/units/callidus-assassin.md) |  | 2026-09-14 |
+| unit | [天鹰杀戮小队](factions/帝国特勤/units/aquila-kill-team.md) |  | 2026-09-14 |
+| unit | [守望堡主](factions/帝国特勤/units/watch-master.md) |  | 2026-09-14 |
+| unit | [守望连长阿耳忒弥斯](factions/帝国特勤/units/watch-captain-artemis.md) |  | 2026-09-14 |
+| unit | [审判官](factions/帝国特勤/units/inquisitor.md) |  | 2026-09-14 |
+| unit | [审判官克提兹](factions/帝国特勤/units/inquisitor-coteaz.md) |  | 2026-09-14 |
+| unit | [审判官克罗伊尔](factions/帝国特勤/units/inquisitor-kroyle.md) |  | 2026-09-14 |
+| unit | [审判官格雷法克斯](factions/帝国特勤/units/inquisitor-greyfax.md) |  | 2026-09-14 |
+| unit | [审判官特勤](factions/帝国特勤/units/inquisitorial-agents.md) |  | 2026-09-14 |
+| unit | [审判庭奇美拉装甲车](factions/帝国特勤/units/inquisitorial-chimera.md) |  | 2026-09-14 |
+| unit | [审判领主奇莉亚·德拉克瑟斯](factions/帝国特勤/units/inquisitor-draxus.md) |  | 2026-09-14 |
+| unit | [导航员](factions/帝国特勤/units/navigator.md) |  | 2026-09-14 |
+| unit | [帝国海军跳帮者](factions/帝国特勤/units/imperial-navy-breachers.md) |  | 2026-09-14 |
+| unit | [帝国犀牛装甲车](factions/帝国特勤/units/imperial-rhino.md) |  | 2026-09-14 |
+| unit | [强征小队](factions/帝国特勤/units/exaction-squad.md) |  | 2026-09-14 |
+| unit | [战斗修女小队](factions/帝国特勤/units/sisters-of-battle-squad.md) |  | 2026-09-14 |
+| unit | [战斗修女献祭者装甲车](factions/帝国特勤/units/sisters-of-battle-immolator.md) |  | 2026-09-14 |
+| unit | [教廷牧师](factions/帝国特勤/units/ministorum-priest.md) |  | 2026-09-14 |
+| unit | [文迪卡刺客](factions/帝国特勤/units/vindicare-assassin.md) |  | 2026-09-14 |
+| unit | [无形杀戮小队](factions/帝国特勤/units/spectrus-kill-team.md) | 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。 | 2026-09-14 |
+| unit | [武装船兵](factions/帝国特勤/units/voidsmen-at-arms.md) |  | 2026-09-14 |
+| unit | [死亡守望杀戮小队](factions/帝国特勤/units/deathwatch-kill-team.md) |  | 2026-09-14 |
+| unit | [死亡守望终结者小队](factions/帝国特勤/units/deathwatch-terminator-squad.md) | 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。 | 2026-09-14 |
+| unit | [灰骑士终结者小队](factions/帝国特勤/units/grey-knights-terminator-squad.md) |  | 2026-09-14 |
+| unit | [至强杀戮小队](factions/帝国特勤/units/fortis-kill-team.md) | 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。 | 2026-09-14 |
+| unit | [艾弗森刺客](factions/帝国特勤/units/eversor-assassin.md) |  | 2026-09-14 |
+| unit | [行商团队](factions/帝国特勤/units/rogue-trader-entourage.md) |  | 2026-09-14 |
+| unit | [警戒者小队](factions/帝国特勤/units/vigilant-squad.md) |  | 2026-09-14 |
+| unit | [黑星渡鸦](factions/帝国特勤/units/corvus-blackstar.md) |  | 2026-09-14 |
 
 ### 帝国骑士
 
@@ -1169,7 +1180,7 @@
 | enhancement | [Fables of Nightmare](factions/帝国骑士/enhancements/fables-of-nightmare.md) | 10 分、Spearhead-At-Arms 分队。 | 2026-07-26 |
 | enhancement | [Herald of Triumph](factions/帝国骑士/enhancements/herald-of-triumph.md) | 15 分、Questoris Companions 分队。 | 2026-07-26 |
 | enhancement | [Hunter’s Eye](factions/帝国骑士/enhancements/hunters-eye.md) | 25 分、自由之刃连队 分队。 | 2026-07-26 |
-| enhancement | [Magos Questoris](factions/帝国骑士/enhancements/magos-questoris.md) | 35 分、封臣铸造联盟 分队。 | 2026-07-26 |
+| enhancement | [Magos Questoris](factions/帝国骑士/enhancements/magos-questoris.md) | 20 分、封臣铸造联盟 分队。 | 2026-07-26 |
 | enhancement | [Martial Tuition](factions/帝国骑士/enhancements/martial-tuition.md) | 15 分、Spearhead-At-Arms 分队。 | 2026-07-26 |
 | enhancement | [Mentor’s Pride](factions/帝国骑士/enhancements/mentors-pride.md) | 20 分、Spearhead-At-Arms 分队。 | 2026-07-26 |
 | enhancement | [Mysterious Guardian](factions/帝国骑士/enhancements/mysterious-guardian.md) | 35 分、自由之刃连队 分队。 | 2026-07-26 |
@@ -1180,13 +1191,13 @@
 | enhancement | [Vengeful Tread](factions/帝国骑士/enhancements/vengeful-tread.md) | 15 分、Gate Warden Lance 分队。 | 2026-07-26 |
 | enhancement | [Vocifer Magnificat (Aura)](factions/帝国骑士/enhancements/vocifer-magnificat-aura.md) | 15 分、封臣铸造联盟 分队。 | 2026-07-26 |
 | enhancement | [Wyrmslayer Divination](factions/帝国骑士/enhancements/wyrmslayer-divination.md) | 10 分、Questoris Companions 分队。 | 2026-07-26 |
-| enhancement | [先祖渗透](factions/帝国骑士/enhancements/ancestral-overbleed.md) | 分数未知、忠诚护卫 分队。 | 2026-07-26 |
+| enhancement | [先祖渗透](factions/帝国骑士/enhancements/ancestral-overbleed.md) | 10 分、忠诚护卫 分队。 | 2026-07-26 |
 | enhancement | [圣庇](factions/帝国骑士/enhancements/sanctuary.md) | 20 分、自由之刃连队 分队。 | 2026-07-26 |
-| enhancement | [机械杰作的骑士（光环）](factions/帝国骑士/enhancements/knight-of-the-opus-machina.md) | 20 分、封臣铸造联盟 分队。 | 2026-07-26 |
+| enhancement | [机械杰作的骑士（光环）](factions/帝国骑士/enhancements/knight-of-the-opus-machina.md) | 15 分、封臣铸造联盟 分队。 | 2026-07-26 |
 | enhancement | [正义执行者](factions/帝国骑士/enhancements/bringer-of-justice.md) | 30 分、自由之刃连队 分队。 | 2026-07-26 |
-| enhancement | [神圣装甲](factions/帝国骑士/enhancements/blessed-plate.md) | 分数未知、碎敌统御者 分队。 | 2026-07-26 |
-| enhancement | [远古自动装填器](factions/帝国骑士/enhancements/archeotech-autoloaders.md) | 分数未知、碎敌统御者 分队。 | 2026-07-26 |
-| enhancement | [陀螺仪优化器](factions/帝国骑士/enhancements/gyro-optimised-actuators.md) | 分数未知、忠诚护卫 分队。 | 2026-07-26 |
+| enhancement | [神圣装甲](factions/帝国骑士/enhancements/blessed-plate.md) | 30 分、碎敌统御者 分队。 | 2026-07-26 |
+| enhancement | [远古自动装填器](factions/帝国骑士/enhancements/archeotech-autoloaders.md) | 25 分、碎敌统御者 分队。 | 2026-07-26 |
+| enhancement | [陀螺仪优化器](factions/帝国骑士/enhancements/gyro-optimised-actuators.md) | 15 分、忠诚护卫 分队。 | 2026-07-26 |
 | stratagem | [AGGRESSION BEGETS AGGRESSION](factions/帝国骑士/stratagems/aggression-begets-aggression.md) | 1 CP、Shooting phase、封臣铸造联盟 分队、Strategic Ploy Stratagem。 | 2026-07-26 |
 | stratagem | [BONDED IMPERATIVE](factions/帝国骑士/stratagems/bonded-imperative.md) | 1 CP、Command phase、封臣铸造联盟 分队、Epic Deed Stratagem。 | 2026-07-26 |
 | stratagem | [COURAGEOUS STAND](factions/帝国骑士/stratagems/courageous-stand.md) | 1 CP、Shooting or Fight phase、Questoris Companions 分队、Epic Deed Stratagem。 | 2026-07-26 |
@@ -1229,34 +1240,34 @@
 | stratagem | [近距离轰击](factions/帝国骑士/stratagems/pointblank-barrage.md) | 1 CP、Shooting phase、自由之刃连队 分队、Strategic Ploy Stratagem。 | 2026-07-26 |
 | stratagem | [适应头盔](factions/帝国骑士/stratagems/helm-conditioning.md) | 1 CP、Command phase、忠诚护卫 分队。 | 2026-07-26 |
 | stratagem | [高贵牺牲](factions/帝国骑士/stratagems/noble-sacrifice.md) | 1 CP、Any phase、自由之刃连队 分队、Epic Deed Stratagem。 | 2026-07-26 |
-| unit | [Sir Hekhtur](factions/帝国骑士/units/sir-hekhtur.md) |  | 2026-07-23 |
-| unit | [冥河型巡游骑士](factions/帝国骑士/units/questoris-knight-styrix.md) |  | 2026-07-23 |
-| unit | [勇武骑士](factions/帝国骑士/units/knight-gallant.md) |  | 2026-07-23 |
-| unit | [命运女神型角蝰骑士](factions/帝国骑士/units/cerastus-knight-atrapos.md) |  | 2026-07-23 |
-| unit | [圣堂骑士](factions/帝国骑士/units/knight-paladin.md) |  | 2026-07-23 |
-| unit | [堡主骑士](factions/帝国骑士/units/knight-castellan.md) |  | 2026-07-23 |
-| unit | [复仇女神型巡游骑士](factions/帝国骑士/units/questoris-knight-magaera.md) |  | 2026-07-23 |
-| unit | [天命型侍从](factions/帝国骑士/units/armiger-moirax.md) |  | 2026-07-23 |
-| unit | [守望骑士](factions/帝国骑士/units/knight-warden.md) |  | 2026-07-23 |
-| unit | [巨人王型阿卡斯托斯骑士](factions/帝国骑士/units/acastus-knight-porphyrion.md) |  | 2026-07-23 |
-| unit | [惩戒者型角蝰骑士](factions/帝国骑士/units/cerastus-knight-castigator.md) |  | 2026-07-23 |
-| unit | [战刃侍从](factions/帝国骑士/units/armiger-warglaive.md) |  | 2026-07-23 |
-| unit | [战驹骑士](factions/帝国骑士/units/knight-destrier.md) |  | 2026-07-23 |
-| unit | [护卫侍从](factions/帝国骑士/units/armiger-helverin.md) |  | 2026-07-23 |
-| unit | [护卫骑士](factions/帝国骑士/units/knight-defender.md) |  | 2026-07-23 |
-| unit | [护教军元帅](factions/帝国骑士/units/skitarii-marshal.md) |  | 2026-07-23 |
-| unit | [护教军先锋兵](factions/帝国骑士/units/skitarii-vanguard.md) |  | 2026-07-23 |
-| unit | [护教军游猎兵](factions/帝国骑士/units/skitarii-rangers.md) |  | 2026-07-23 |
-| unit | [控电神甫](factions/帝国骑士/units/tech-priest-manipulus.md) |  | 2026-07-23 |
-| unit | [教导骑士](factions/帝国骑士/units/knight-preceptor.md) |  | 2026-07-23 |
-| unit | [机械主教](factions/帝国骑士/units/tech-priest-dominus.md) |  | 2026-07-23 |
-| unit | [枪骑兵型角蝰骑士](factions/帝国骑士/units/cerastus-knight-lancer.md) |  | 2026-07-23 |
-| unit | [游侠骑士](factions/帝国骑士/units/knight-errant.md) |  | 2026-07-23 |
-| unit | [牛头怪型阿卡斯托斯骑士](factions/帝国骑士/units/acastus-knight-asterius.md) |  | 2026-07-23 |
-| unit | [狼王号](factions/帝国骑士/units/canis-rex.md) |  | 2026-07-23 |
-| unit | [英勇骑士](factions/帝国骑士/units/knight-valiant.md) |  | 2026-07-23 |
-| unit | [远征骑士](factions/帝国骑士/units/knight-crusader.md) |  | 2026-07-23 |
-| unit | [黄泉型角蝰骑士](factions/帝国骑士/units/cerastus-knight-acheron.md) |  | 2026-07-23 |
+| unit | [Sir Hekhtur](factions/帝国骑士/units/sir-hekhtur.md) |  | 2026-09-14 |
+| unit | [冥河型巡游骑士](factions/帝国骑士/units/questoris-knight-styrix.md) |  | 2026-09-14 |
+| unit | [勇武骑士](factions/帝国骑士/units/knight-gallant.md) |  | 2026-09-14 |
+| unit | [命运女神型角蝰骑士](factions/帝国骑士/units/cerastus-knight-atrapos.md) |  | 2026-09-14 |
+| unit | [圣堂骑士](factions/帝国骑士/units/knight-paladin.md) |  | 2026-09-14 |
+| unit | [堡主骑士](factions/帝国骑士/units/knight-castellan.md) |  | 2026-09-14 |
+| unit | [复仇女神型巡游骑士](factions/帝国骑士/units/questoris-knight-magaera.md) |  | 2026-09-14 |
+| unit | [天命型侍从](factions/帝国骑士/units/armiger-moirax.md) |  | 2026-09-14 |
+| unit | [守望骑士](factions/帝国骑士/units/knight-warden.md) |  | 2026-09-14 |
+| unit | [巨人王型阿卡斯托斯骑士](factions/帝国骑士/units/acastus-knight-porphyrion.md) |  | 2026-09-14 |
+| unit | [惩戒者型角蝰骑士](factions/帝国骑士/units/cerastus-knight-castigator.md) |  | 2026-09-14 |
+| unit | [战刃侍从](factions/帝国骑士/units/armiger-warglaive.md) |  | 2026-09-14 |
+| unit | [战驹骑士](factions/帝国骑士/units/knight-destrier.md) |  | 2026-09-14 |
+| unit | [护卫侍从](factions/帝国骑士/units/armiger-helverin.md) |  | 2026-09-14 |
+| unit | [护卫骑士](factions/帝国骑士/units/knight-defender.md) |  | 2026-09-14 |
+| unit | [护教军元帅](factions/帝国骑士/units/skitarii-marshal.md) | 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。 | 2026-09-14 |
+| unit | [护教军先锋兵](factions/帝国骑士/units/skitarii-vanguard.md) | 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。 | 2026-09-14 |
+| unit | [护教军游猎兵](factions/帝国骑士/units/skitarii-rangers.md) | 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。 | 2026-09-14 |
+| unit | [控电神甫](factions/帝国骑士/units/tech-priest-manipulus.md) | 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。 | 2026-09-14 |
+| unit | [教导骑士](factions/帝国骑士/units/knight-preceptor.md) |  | 2026-09-14 |
+| unit | [机械主教](factions/帝国骑士/units/tech-priest-dominus.md) | 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。 | 2026-09-14 |
+| unit | [枪骑兵型角蝰骑士](factions/帝国骑士/units/cerastus-knight-lancer.md) |  | 2026-09-14 |
+| unit | [游侠骑士](factions/帝国骑士/units/knight-errant.md) |  | 2026-09-14 |
+| unit | [牛头怪型阿卡斯托斯骑士](factions/帝国骑士/units/acastus-knight-asterius.md) |  | 2026-09-14 |
+| unit | [狼王号](factions/帝国骑士/units/canis-rex.md) |  | 2026-09-14 |
+| unit | [英勇骑士](factions/帝国骑士/units/knight-valiant.md) |  | 2026-09-14 |
+| unit | [远征骑士](factions/帝国骑士/units/knight-crusader.md) |  | 2026-09-14 |
+| unit | [黄泉型角蝰骑士](factions/帝国骑士/units/cerastus-knight-acheron.md) |  | 2026-09-14 |
 
 ### 帝皇之子
 
@@ -1275,29 +1286,29 @@
 | detachment | [癫狂之军](factions/帝皇之子/detachments/frenzied-host.md) | 帝皇之子的分队「癫狂之军」。 | 2026-07-26 |
 | enhancement | [Daemonshrieker](factions/帝皇之子/enhancements/daemonshrieker.md) | 0 分、Sublime Strike 分队。 | 2026-07-26 |
 | enhancement | [Venom of the Six-fanged Serpent](factions/帝皇之子/enhancements/venom-of-the-six-fanged-serpent.md) | 0 分、Sublime Strike 分队。 | 2026-07-26 |
-| enhancement | [亚空间行者](factions/帝皇之子/enhancements/warp-walker.md) | 30 分、Carnival of Excess 分队。 | 2026-07-26 |
+| enhancement | [亚空间行者](factions/帝皇之子/enhancements/warp-walker.md) | 35 分、Carnival of Excess 分队。 | 2026-07-26 |
 | enhancement | [傲慢虚荣](factions/帝皇之子/enhancements/proud-and-vainglorious.md) | 20 分、Slaanesh’s Chosen 分队。 | 2026-07-26 |
 | enhancement | [先锋突袭者](factions/帝皇之子/enhancements/spearhead-striker.md) | 20 分、Rapid Evisceration 分队。 | 2026-07-26 |
 | enhancement | [凤凰之泪](factions/帝皇之子/enhancements/tears-of-the-phoenix.md) | 25 分、凤凰王庭 分队。 | 2026-07-26 |
 | enhancement | [厌弃孱弱](factions/帝皇之子/enhancements/repulsed-by-weakness.md) | 25 分、Slaanesh’s Chosen 分队。 | 2026-07-26 |
 | enhancement | [可憎灵巧](factions/帝皇之子/enhancements/loathsome-dexterity.md) | 10 分、Mercurial Host 分队。 | 2026-07-26 |
-| enhancement | [嚎啸战甲](factions/帝皇之子/enhancements/howling-plate.md) | 分数未知、癫狂之军 分队。 | 2026-07-26 |
+| enhancement | [嚎啸战甲](factions/帝皇之子/enhancements/howling-plate.md) | 20 分、癫狂之军 分队。 | 2026-07-26 |
 | enhancement | [娴熟战术家](factions/帝皇之子/enhancements/accomplished-tactician.md) | 35 分、Rapid Evisceration 分队。 | 2026-07-26 |
 | enhancement | [完美战术](factions/帝皇之子/enhancements/tactical-perfection.md) | 15 分、Mercurial Host 分队。 | 2026-07-26 |
 | enhancement | [尊崇恩主](factions/帝皇之子/enhancements/exalted-patron.md) | 15 分、凤凰王庭 分队。 | 2026-07-26 |
 | enhancement | [弑冠军者](factions/帝皇之子/enhancements/slayer-of-champions.md) | 15 分、Slaanesh’s Chosen 分队。 | 2026-07-26 |
 | enhancement | [急于证明](factions/帝皇之子/enhancements/eager-to-prove.md) | 15 分、Slaanesh’s Chosen 分队。 | 2026-07-26 |
-| enhancement | [惑人怪貌](factions/帝皇之子/enhancements/beguiling-grotesquerie.md) | 分数未知、杀戮盛景 分队。 | 2026-07-26 |
+| enhancement | [惑人怪貌](factions/帝皇之子/enhancements/beguiling-grotesquerie.md) | 15 分、杀戮盛景 分队。 | 2026-07-26 |
 | enhancement | [扭曲](factions/帝皇之子/enhancements/distortion.md) | 25 分、Peerless Bladesmen 分队。 | 2026-07-26 |
 | enhancement | [无瑕投机者](factions/帝皇之子/enhancements/faultless-opportunist.md) | 15 分、Peerless Bladesmen 分队。 | 2026-07-26 |
 | enhancement | [暗耀誓约](factions/帝皇之子/enhancements/pledge-of-dark-glory.md) | 25 分、Coterie of the Conceited 分队。 | 2026-07-26 |
-| enhancement | [欣快之冠](factions/帝皇之子/enhancements/euphoric-crown.md) | 分数未知、癫狂之军 分队。 | 2026-07-26 |
+| enhancement | [欣快之冠](factions/帝皇之子/enhancements/euphoric-crown.md) | 20 分、癫狂之军 分队。 | 2026-07-26 |
 | enhancement | [永役誓约](factions/帝皇之子/enhancements/pledge-of-eternal-servitude.md) | 25 分、Coterie of the Conceited 分队。 | 2026-07-26 |
 | enhancement | [浸淫苦难](factions/帝皇之子/enhancements/steeped-in-suffering.md) | 20 分、Mercurial Host 分队。 | 2026-07-26 |
-| enhancement | [渴求的保护人](factions/帝皇之子/enhancements/eager-patrons.md) | 分数未知、杀戮盛景 分队。 | 2026-07-26 |
+| enhancement | [渴求的保护人](factions/帝皇之子/enhancements/eager-patrons.md) | 20 分、杀戮盛景 分队。 | 2026-07-26 |
 | enhancement | [灵能弥漫](factions/帝皇之子/enhancements/empyric-suffusion.md) | 15 分、Carnival of Excess 分队。 | 2026-07-26 |
 | enhancement | [炫目神速](factions/帝皇之子/enhancements/blinding-speed.md) | 25 分、Peerless Bladesmen 分队。 | 2026-07-26 |
-| enhancement | [狂暴猛击](factions/帝皇之子/enhancements/frenzied-ferocity.md) | 分数未知、优雅暴徒 分队。 | 2026-07-26 |
+| enhancement | [狂暴猛击](factions/帝皇之子/enhancements/frenzied-ferocity.md) | 15 分、优雅暴徒 分队。 | 2026-07-26 |
 | enhancement | [苦痛誓约](factions/帝皇之子/enhancements/pledge-of-mortal-pain.md) | 15 分、Coterie of the Conceited 分队。 | 2026-07-26 |
 | enhancement | [裂魂刃](factions/帝皇之子/enhancements/spiritsliver.md) | 20 分、凤凰王庭 分队。 | 2026-07-26 |
 | enhancement | [超凡预见](factions/帝皇之子/enhancements/sublime-prescience.md) | 25 分、Rapid Evisceration 分队。 | 2026-07-26 |
@@ -1305,8 +1316,8 @@
 | enhancement | [迷魂麝香](factions/帝皇之子/enhancements/intoxicating-musk.md) | 20 分、Mercurial Host 分队。 | 2026-07-26 |
 | enhancement | [邪机专家](factions/帝皇之子/enhancements/heretek-adept.md) | 35 分、Rapid Evisceration 分队。 | 2026-07-26 |
 | enhancement | [邪运誓约](factions/帝皇之子/enhancements/pledge-of-unholy-fortune.md) | 30 分、Coterie of the Conceited 分队。 | 2026-07-26 |
-| enhancement | [附魔之刃](factions/帝皇之子/enhancements/possessed-blade.md) | 25 分、Carnival of Excess 分队。 | 2026-07-26 |
-| enhancement | [随行噪音](factions/帝皇之子/enhancements/cacophonic-accompaniment.md) | 分数未知、优雅暴徒 分队。 | 2026-07-26 |
+| enhancement | [附魔之刃](factions/帝皇之子/enhancements/possessed-blade.md) | 35 分、Carnival of Excess 分队。 | 2026-07-26 |
+| enhancement | [随行噪音](factions/帝皇之子/enhancements/cacophonic-accompaniment.md) | 20 分、优雅暴徒 分队。 | 2026-07-26 |
 | enhancement | [魂污显形](factions/帝皇之子/enhancements/soulstain-made-manifest.md) | 15 分、凤凰王庭 分队。 | 2026-07-26 |
 | enhancement | [黑暗赐福](factions/帝皇之子/enhancements/dark-blessings.md) | 10 分、Carnival of Excess 分队。 | 2026-07-26 |
 | stratagem | [ALLURING GROTESQUERIE](factions/帝皇之子/stratagems/alluring-grotesquerie.md) | 1 CP、Fight phase、Sublime Strike 分队、Battle Tactic Stratagem。 | 2026-07-26 |
@@ -1364,29 +1375,29 @@
 | stratagem | [黑暗幻影](factions/帝皇之子/stratagems/dark-apparitions.md) | 2 CP、Fight phase、Carnival of Excess 分队、Strategic Ploy Stratagem。 | 2026-07-26 |
 | stratagem | [黑暗活力](factions/帝皇之子/stratagems/dark-vigour.md) | 1 CP、Movement phase、Mercurial Host 分队、Strategic Ploy Stratagem。 | 2026-07-26 |
 | stratagem | [黑暗王子庇佑](factions/帝皇之子/stratagems/protection-of-the-dark-prince.md) | 1 CP、Any phase、Coterie of the Conceited 分队、Strategic Ploy Stratagem。 | 2026-07-26 |
-| unit | [不灭者卢修斯](factions/帝皇之子/units/lucius-the-eternal.md) |  | 2026-07-23 |
-| unit | [亵渎者](factions/帝皇之子/units/defiler.md) |  | 2026-07-23 |
-| unit | [噪音领主](factions/帝皇之子/units/lord-kakophonist.md) |  | 2026-07-23 |
-| unit | [地狱飞龙](factions/帝皇之子/units/heldrake.md) |  | 2026-07-23 |
-| unit | [夏拉希·魔灾](factions/帝皇之子/units/shalaxi-helbane.md) |  | 2026-07-23 |
-| unit | [守密者](factions/帝皇之子/units/keeper-of-secrets.md) |  | 2026-07-23 |
-| unit | [寻觅者](factions/帝皇之子/units/seekers.md) |  | 2026-07-23 |
-| unit | [巫师](factions/帝皇之子/units/sorcerer.md) |  | 2026-07-23 |
-| unit | [帝皇之子混沌终结者](factions/帝皇之子/units/chaos-terminators.md) |  | 2026-07-23 |
-| unit | [施虐者](factions/帝皇之子/units/tormentors.md) |  | 2026-07-23 |
-| unit | [无瑕之刃](factions/帝皇之子/units/flawless-blades.md) |  | 2026-07-23 |
-| unit | [有翼色孽恶魔王子](factions/帝皇之子/units/daemon-prince-of-slaanesh-with-wings.md) |  | 2026-07-23 |
-| unit | [极乐领主](factions/帝皇之子/units/lord-exultant.md) |  | 2026-07-23 |
-| unit | [欢愉魔](factions/帝皇之子/units/fiends.md) |  | 2026-07-23 |
-| unit | [混沌兰德掠袭者](factions/帝皇之子/units/chaos-land-raider.md) |  | 2026-07-23 |
-| unit | [混沌卵](factions/帝皇之子/units/chaos-spawn.md) |  | 2026-07-23 |
-| unit | [犀牛装甲车](factions/帝皇之子/units/chaos-rhino.md) |  | 2026-07-23 |
-| unit | [破戒者](factions/帝皇之子/units/infractors.md) |  | 2026-07-23 |
-| unit | [福格瑞姆，帝皇之子恶魔原体](factions/帝皇之子/units/fulgrim.md) |  | 2026-07-23 |
-| unit | [色孽恶魔王子](factions/帝皇之子/units/daemon-prince-of-slaanesh.md) |  | 2026-07-23 |
-| unit | [重锤魔](factions/帝皇之子/units/maulerfiend.md) |  | 2026-07-23 |
-| unit | [音爆战士](factions/帝皇之子/units/noise-marines.md) |  | 2026-07-23 |
-| unit | [魅魔](factions/帝皇之子/units/daemonettes.md) |  | 2026-07-23 |
+| unit | [不灭者卢修斯](factions/帝皇之子/units/lucius-the-eternal.md) |  | 2026-09-14 |
+| unit | [亵渎者](factions/帝皇之子/units/defiler.md) |  | 2026-09-14 |
+| unit | [噪音领主](factions/帝皇之子/units/lord-kakophonist.md) |  | 2026-09-14 |
+| unit | [地狱飞龙](factions/帝皇之子/units/heldrake.md) |  | 2026-09-14 |
+| unit | [夏拉希·魔灾](factions/帝皇之子/units/shalaxi-helbane.md) |  | 2026-09-14 |
+| unit | [守密者](factions/帝皇之子/units/keeper-of-secrets.md) |  | 2026-09-14 |
+| unit | [寻觅者](factions/帝皇之子/units/seekers.md) |  | 2026-09-14 |
+| unit | [巫师](factions/帝皇之子/units/sorcerer.md) |  | 2026-09-14 |
+| unit | [帝皇之子混沌终结者](factions/帝皇之子/units/chaos-terminators.md) |  | 2026-09-14 |
+| unit | [施虐者](factions/帝皇之子/units/tormentors.md) |  | 2026-09-14 |
+| unit | [无瑕之刃](factions/帝皇之子/units/flawless-blades.md) |  | 2026-09-14 |
+| unit | [有翼色孽恶魔王子](factions/帝皇之子/units/daemon-prince-of-slaanesh-with-wings.md) |  | 2026-09-14 |
+| unit | [极乐领主](factions/帝皇之子/units/lord-exultant.md) |  | 2026-09-14 |
+| unit | [欢愉魔](factions/帝皇之子/units/fiends.md) |  | 2026-09-14 |
+| unit | [混沌兰德掠袭者](factions/帝皇之子/units/chaos-land-raider.md) |  | 2026-09-14 |
+| unit | [混沌卵](factions/帝皇之子/units/chaos-spawn.md) |  | 2026-09-14 |
+| unit | [犀牛装甲车](factions/帝皇之子/units/chaos-rhino.md) |  | 2026-09-14 |
+| unit | [破戒者](factions/帝皇之子/units/infractors.md) |  | 2026-09-14 |
+| unit | [福格瑞姆，帝皇之子恶魔原体](factions/帝皇之子/units/fulgrim.md) |  | 2026-09-14 |
+| unit | [色孽恶魔王子](factions/帝皇之子/units/daemon-prince-of-slaanesh.md) |  | 2026-09-14 |
+| unit | [重锤魔](factions/帝皇之子/units/maulerfiend.md) |  | 2026-09-14 |
+| unit | [音爆战士](factions/帝皇之子/units/noise-marines.md) |  | 2026-09-14 |
+| unit | [魅魔](factions/帝皇之子/units/daemonettes.md) |  | 2026-09-14 |
 
 ### 帝皇卫队
 
@@ -1403,14 +1414,14 @@
 | detachment | [帝皇之狮](factions/帝皇卫队/detachments/lions-of-the-emperor.md) | 帝皇卫队的分队「帝皇之狮」，分队规则「以寡敌众」。 | 2026-07-26 |
 | detachment | [耀日矛头](factions/帝皇卫队/detachments/solar-spearhead.md) | 帝皇卫队的分队「耀日矛头」，分队规则「黄金装甲」。 | 2026-07-26 |
 | detachment | [雷灭锤击](factions/帝皇卫队/detachments/tharanatoi-hammerblow.md) | 帝皇卫队的分队「雷灭锤击」。 | 2026-07-26 |
-| enhancement | [亡者专精](factions/帝皇卫队/enhancements/interred-expertise.md) | 分数未知、亡者之势 分队。 | 2026-07-26 |
+| enhancement | [亡者专精](factions/帝皇卫队/enhancements/interred-expertise.md) | 25 分、亡者之势 分队。 | 2026-07-26 |
 | enhancement | [使节披风](factions/帝皇卫队/enhancements/mantle-of-the-emissary.md) | 0 分、Voyagers in Darkness 分队。 | 2026-07-26 |
 | enhancement | [光荣逝者（光环)](factions/帝皇卫队/enhancements/honoured-fallen-aura.md) | 15 分、耀日矛头 分队。 | 2026-07-26 |
 | enhancement | [光辉披风](factions/帝皇卫队/enhancements/radiant-mantle.md) | 30 分、Talons Of The Emperor 分队。 | 2026-07-26 |
 | enhancement | [全景观测仪](factions/帝皇卫队/enhancements/panoptispex.md) | 5 分、Shield Host 分队。 | 2026-07-26 |
 | enhancement | [剑之统帅](factions/帝皇卫队/enhancements/blade-imperator.md) | 25 分、Auric Champions 分队。 | 2026-07-26 |
 | enhancement | [勇猛征服者](factions/帝皇卫队/enhancements/fierce-conqueror.md) | 15 分、帝皇之狮 分队。 | 2026-07-26 |
-| enhancement | [包抄猎手](factions/帝皇卫队/enhancements/encircling-hunter.md) | 分数未知、寂静猎手 分队。 | 2026-07-26 |
+| enhancement | [包抄猎手](factions/帝皇卫队/enhancements/encircling-hunter.md) | 15 分、寂静猎手 分队。 | 2026-07-26 |
 | enhancement | [卓越造物](factions/帝皇卫队/enhancements/superior-creation.md) | 25 分、帝皇之狮 分队。 | 2026-07-26 |
 | enhancement | [占卜仪链接](factions/帝皇卫队/enhancements/augury-uplink.md) | 35 分、耀日矛头 分队。 | 2026-07-26 |
 | enhancement | [卫戍](factions/帝皇卫队/enhancements/praesidius.md) | 25 分、帝皇之狮 分队。 | 2026-07-26 |
@@ -1420,21 +1431,21 @@
 | enhancement | [帝国冠军](factions/帝皇卫队/enhancements/champion-of-the-imperium.md) | 25 分、Talons Of The Emperor 分队。 | 2026-07-26 |
 | enhancement | [弗拉汀之鹰](factions/帝皇卫队/enhancements/the-vratine-aquila-aura.md) | 0 分、Black Ship Guardians 分队。 | 2026-07-26 |
 | enhancement | [武学哲人](factions/帝皇卫队/enhancements/martial-philosopher.md) | 30 分、Auric Champions 分队。 | 2026-07-26 |
-| enhancement | [武库大厅](factions/帝皇卫队/enhancements/from-the-hall-of-armouries.md) | 25 分、Shield Host 分队。 | 2026-07-26 |
+| enhancement | [武库大厅](factions/帝皇卫队/enhancements/from-the-hall-of-armouries.md) | 20 分、Shield Host 分队。 | 2026-07-26 |
 | enhancement | [泰拉造物之赐](factions/帝皇卫队/enhancements/gift-of-terran-artifice.md) | 15 分、Talons Of The Emperor 分队。 | 2026-07-26 |
 | enhancement | [湮灭骑士](factions/帝皇卫队/enhancements/oblivion-knight.md) | 25 分、Null Maiden Vigil 分队。 | 2026-07-26 |
 | enhancement | [猛禽之刃](factions/帝皇卫队/enhancements/raptor-blade.md) | 5 分、Null Maiden Vigil 分队。 | 2026-07-26 |
 | enhancement | [神盾投射器](factions/帝皇卫队/enhancements/aegis-projector.md) | 20 分、Talons Of The Emperor 分队。 | 2026-07-26 |
 | enhancement | [精金护符](factions/帝皇卫队/enhancements/adamantine-talisman.md) | 25 分、耀日矛头 分队。 | 2026-07-26 |
-| enhancement | [耀金棺柩](factions/帝皇卫队/enhancements/auramite-sarcophagus.md) | 分数未知、亡者之势 分队。 | 2026-07-26 |
+| enhancement | [耀金棺柩](factions/帝皇卫队/enhancements/auramite-sarcophagus.md) | 15 分、亡者之势 分队。 | 2026-07-26 |
 | enhancement | [虚空行者](factions/帝皇卫队/enhancements/voidstrider.md) | 0 分、Voyagers in Darkness 分队。 | 2026-07-26 |
-| enhancement | [训诫之亡](factions/帝皇卫队/enhancements/admonimortis.md) | 10 分、帝皇之狮 分队。 | 2026-07-26 |
-| enhancement | [记忆封存神龛暗号](factions/帝皇卫队/enhancements/mnemo-locked-shrine-cipher.md) | 分数未知、雷灭锤击 分队。 | 2026-07-26 |
+| enhancement | [训诫之亡](factions/帝皇卫队/enhancements/admonimortis.md) | 30 分、帝皇之狮 分队。 | 2026-07-26 |
+| enhancement | [记忆封存神龛暗号](factions/帝皇卫队/enhancements/mnemo-locked-shrine-cipher.md) | 25 分、雷灭锤击 分队。 | 2026-07-26 |
 | enhancement | [铁骑结社的老兵](factions/帝皇卫队/enhancements/veteran-of-the-kataphraktoi.md) | 10 分、耀日矛头 分队。 | 2026-07-26 |
 | enhancement | [阴森威压](factions/帝皇卫队/enhancements/sinister-presence-aura.md) | 0 分、Black Ship Guardians 分队。 | 2026-07-26 |
 | enhancement | [隐蔽之刃](factions/帝皇卫队/enhancements/veiled-blade.md) | 25 分、Auric Champions 分队。 | 2026-07-26 |
-| enhancement | [驱灵手雷](factions/帝皇卫队/enhancements/psyk-out-grenades.md) | 分数未知、寂静猎手 分队。 | 2026-07-26 |
-| enhancement | [高效进攻](factions/帝皇卫队/enhancements/efficient-aggression.md) | 分数未知、雷灭锤击 分队。 | 2026-07-26 |
+| enhancement | [驱灵手雷](factions/帝皇卫队/enhancements/psyk-out-grenades.md) | 10 分、寂静猎手 分队。 | 2026-07-26 |
+| enhancement | [高效进攻](factions/帝皇卫队/enhancements/efficient-aggression.md) | 25 分、雷灭锤击 分队。 | 2026-07-26 |
 | enhancement | [黄金披风](factions/帝皇卫队/enhancements/auric-mantle.md) | 15 分、Shield Host 分队。 | 2026-07-26 |
 | enhancement | [鼓舞典范](factions/帝皇卫队/enhancements/inspirational-exemplar.md) | 10 分、Auric Champions 分队。 | 2026-07-26 |
 | stratagem | [不可逃避的惩戒](factions/帝皇卫队/stratagems/punishment-inescapable.md) | 1 CP、Shooting phase、耀日矛头 分队、Strategic Ploy Stratagem。 | 2026-07-26 |
@@ -1490,37 +1501,37 @@
 | stratagem | [释放雄狮](factions/帝皇卫队/stratagems/unleash-the-lions-tharanatoi-hammerblow.md) | 1 CP、Command phase、雷灭锤击 分队。 | 2026-07-26 |
 | stratagem | [黄金勇士](factions/帝皇卫队/stratagems/gilded-champion.md) | 1 CP、Any phase、帝皇之狮 分队、Strategic Ploy Stratagem。 | 2026-07-26 |
 | stratagem | [黄金风暴](factions/帝皇卫队/stratagems/auric-storm.md) | 1 CP、Charge phase、Voyagers in Darkness 分队、Strategic Ploy Stratagem。 | 2026-07-26 |
-| unit | [伽拉图斯蔑视者无畏机甲](factions/帝皇卫队/units/contemptor-galatus-dreadnought.md) |  | 2026-07-23 |
-| unit | [克洛努斯反重力运兵车](factions/帝皇卫队/units/coronus-grav-carrier.md) |  | 2026-07-23 |
-| unit | [剑锋冠军](factions/帝皇卫队/units/blade-champion.md) |  | 2026-07-23 |
-| unit | [图拉真元帅](factions/帝皇卫队/units/trajann-valoris.md) |  | 2026-07-23 |
-| unit | [天鹰终结者](factions/帝皇卫队/units/aquilon-custodians.md) |  | 2026-07-23 |
-| unit | [射手座射击士](factions/帝皇卫队/units/sagittarum-custodians.md) |  | 2026-07-23 |
-| unit | [帕拉斯反重力战车](factions/帝皇卫队/units/pallas-grav-attack.md) |  | 2026-07-23 |
-| unit | [控诉者](factions/帝皇卫队/units/prosecutors.md) |  | 2026-07-23 |
-| unit | [摩托盾卫连长](factions/帝皇卫队/units/shield-captain-on-dawneagle-jetbike.md) |  | 2026-07-23 |
-| unit | [晨鹰摩托队](factions/帝皇卫队/units/vertus-praetors.md) |  | 2026-07-23 |
-| unit | [灭魔教团犀牛装甲车](factions/帝皇卫队/units/anathema-psykana-rhino.md) |  | 2026-07-23 |
-| unit | [特拉蒙重型无畏机甲](factions/帝皇卫队/units/telemon-heavy-dreadnought.md) |  | 2026-07-23 |
-| unit | [猎巫者](factions/帝皇卫队/units/witchseekers.md) |  | 2026-07-23 |
-| unit | [猎户座强袭炮艇](factions/帝皇卫队/units/orion-assault-dropship.md) |  | 2026-07-23 |
-| unit | [瓦雷利安连长](factions/帝皇卫队/units/valerian.md) |  | 2026-07-23 |
-| unit | [百骑长](factions/帝皇卫队/units/knight-centura.md) |  | 2026-07-23 |
-| unit | [盾卫连长](factions/帝皇卫队/units/shield-captain.md) |  | 2026-07-23 |
-| unit | [神圣兰德掠袭者坦克](factions/帝皇卫队/units/venerable-land-raider.md) |  | 2026-07-23 |
-| unit | [神圣蔑视者无畏机甲](factions/帝皇卫队/units/venerable-contemptor-dreadnought.md) |  | 2026-07-23 |
-| unit | [神鸟反重力坦克](factions/帝皇卫队/units/caladius-grav-tank.md) |  | 2026-07-23 |
-| unit | [禁军守望者](factions/帝皇卫队/units/custodian-wardens.md) |  | 2026-07-23 |
-| unit | [禁军盾卫](factions/帝皇卫队/units/custodian-guard.md) |  | 2026-07-23 |
-| unit | [禁军鹰猎士](factions/帝皇卫队/units/venatari-custodians.md) |  | 2026-07-23 |
-| unit | [终结者盾卫连长](factions/帝皇卫队/units/shield-captain-in-allarus-terminator-armour.md) |  | 2026-07-23 |
-| unit | [艾雷雅](factions/帝皇卫队/units/aleya.md) |  | 2026-07-23 |
-| unit | [装备遗迹长矛或炙烈长矛的禁军卫队](factions/帝皇卫队/units/custodian-guard-with-adrasite-and-pyrithite-spears.md) |  | 2026-07-23 |
-| unit | [警戒者](factions/帝皇卫队/units/vigilators.md) |  | 2026-07-23 |
-| unit | [阿伽马图斯枪骑士](factions/帝皇卫队/units/agamatus-custodians.md) |  | 2026-07-23 |
-| unit | [阿克琉斯蔑视者无畏机甲](factions/帝皇卫队/units/contemptor-achillus-dreadnought.md) |  | 2026-07-23 |
-| unit | [阿拉琉斯终结者](factions/帝皇卫队/units/allarus-custodians.md) |  | 2026-07-23 |
-| unit | [阿瑞斯炮艇机](factions/帝皇卫队/units/ares-gunship.md) |  | 2026-07-23 |
+| unit | [伽拉图斯蔑视者无畏机甲](factions/帝皇卫队/units/contemptor-galatus-dreadnought.md) |  | 2026-09-14 |
+| unit | [克洛努斯反重力运兵车](factions/帝皇卫队/units/coronus-grav-carrier.md) |  | 2026-09-14 |
+| unit | [剑锋冠军](factions/帝皇卫队/units/blade-champion.md) |  | 2026-09-14 |
+| unit | [图拉真元帅](factions/帝皇卫队/units/trajann-valoris.md) |  | 2026-09-14 |
+| unit | [天鹰终结者](factions/帝皇卫队/units/aquilon-custodians.md) |  | 2026-09-14 |
+| unit | [射手座射击士](factions/帝皇卫队/units/sagittarum-custodians.md) |  | 2026-09-14 |
+| unit | [帕拉斯反重力战车](factions/帝皇卫队/units/pallas-grav-attack.md) |  | 2026-09-14 |
+| unit | [控诉者](factions/帝皇卫队/units/prosecutors.md) |  | 2026-09-14 |
+| unit | [摩托盾卫连长](factions/帝皇卫队/units/shield-captain-on-dawneagle-jetbike.md) |  | 2026-09-14 |
+| unit | [晨鹰摩托队](factions/帝皇卫队/units/vertus-praetors.md) |  | 2026-09-14 |
+| unit | [灭魔教团犀牛装甲车](factions/帝皇卫队/units/anathema-psykana-rhino.md) |  | 2026-09-14 |
+| unit | [特拉蒙重型无畏机甲](factions/帝皇卫队/units/telemon-heavy-dreadnought.md) |  | 2026-09-14 |
+| unit | [猎巫者](factions/帝皇卫队/units/witchseekers.md) |  | 2026-09-14 |
+| unit | [猎户座强袭炮艇](factions/帝皇卫队/units/orion-assault-dropship.md) |  | 2026-09-14 |
+| unit | [瓦雷利安连长](factions/帝皇卫队/units/valerian.md) |  | 2026-09-14 |
+| unit | [百骑长](factions/帝皇卫队/units/knight-centura.md) |  | 2026-09-14 |
+| unit | [盾卫连长](factions/帝皇卫队/units/shield-captain.md) |  | 2026-09-14 |
+| unit | [神圣兰德掠袭者坦克](factions/帝皇卫队/units/venerable-land-raider.md) |  | 2026-09-14 |
+| unit | [神圣蔑视者无畏机甲](factions/帝皇卫队/units/venerable-contemptor-dreadnought.md) |  | 2026-09-14 |
+| unit | [神鸟反重力坦克](factions/帝皇卫队/units/caladius-grav-tank.md) |  | 2026-09-14 |
+| unit | [禁军守望者](factions/帝皇卫队/units/custodian-wardens.md) |  | 2026-09-14 |
+| unit | [禁军盾卫](factions/帝皇卫队/units/custodian-guard.md) |  | 2026-09-14 |
+| unit | [禁军鹰猎士](factions/帝皇卫队/units/venatari-custodians.md) |  | 2026-09-14 |
+| unit | [终结者盾卫连长](factions/帝皇卫队/units/shield-captain-in-allarus-terminator-armour.md) |  | 2026-09-14 |
+| unit | [艾雷雅](factions/帝皇卫队/units/aleya.md) |  | 2026-09-14 |
+| unit | [装备遗迹长矛或炙烈长矛的禁军卫队](factions/帝皇卫队/units/custodian-guard-with-adrasite-and-pyrithite-spears.md) |  | 2026-09-14 |
+| unit | [警戒者](factions/帝皇卫队/units/vigilators.md) |  | 2026-09-14 |
+| unit | [阿伽马图斯枪骑士](factions/帝皇卫队/units/agamatus-custodians.md) |  | 2026-09-14 |
+| unit | [阿克琉斯蔑视者无畏机甲](factions/帝皇卫队/units/contemptor-achillus-dreadnought.md) |  | 2026-09-14 |
+| unit | [阿拉琉斯终结者](factions/帝皇卫队/units/allarus-custodians.md) |  | 2026-09-14 |
+| unit | [阿瑞斯炮艇机](factions/帝皇卫队/units/ares-gunship.md) |  | 2026-09-14 |
 
 ### 战斗修女
 
@@ -1537,30 +1548,30 @@
 | detachment | [定罪合唱](factions/战斗修女/detachments/chorus-of-condemnation.md) | 战斗修女的分队「定罪合唱」。 | 2026-07-26 |
 | detachment | [神圣冠军](factions/战斗修女/detachments/sacred-champions.md) | 战斗修女的分队「神圣冠军」。 | 2026-07-26 |
 | enhancement | [Blade of Saint Ellynor](factions/战斗修女/enhancements/blade-of-saint-ellynor.md) | 15 分、Army of Faith 分队。 | 2026-07-26 |
-| enhancement | [Catechism of Divine Penitence](factions/战斗修女/enhancements/catechism-of-divine-penitence.md) | 20 分、Penitent Host 分队。 | 2026-07-26 |
+| enhancement | [Catechism of Divine Penitence](factions/战斗修女/enhancements/catechism-of-divine-penitence.md) | 15 分、Penitent Host 分队。 | 2026-07-26 |
 | enhancement | [Chaplet of Sacrifice](factions/战斗修女/enhancements/chaplet-of-sacrifice.md) | 25 分、Hallowed Martyrs 分队。 | 2026-07-26 |
-| enhancement | [Clarion of Urgency](factions/战斗修女/enhancements/clarion-of-urgency.md) | 分数未知、定罪合唱 分队。 | 2026-07-26 |
+| enhancement | [Clarion of Urgency](factions/战斗修女/enhancements/clarion-of-urgency.md) | 15 分、定罪合唱 分队。 | 2026-07-26 |
 | enhancement | [Divine Aspect](factions/战斗修女/enhancements/divine-aspect.md) | 5 分、Army of Faith 分队。 | 2026-07-26 |
 | enhancement | [Fervent Ferocity](factions/战斗修女/enhancements/fervent-ferocity.md) | 0 分、Penitents and Pilgrims 分队。 | 2026-07-26 |
 | enhancement | [Fire and Fury](factions/战斗修女/enhancements/fire-and-fury.md) | 30 分、Bringers of Flame 分队。 | 2026-07-26 |
-| enhancement | [Hagiomnifex Upgrade](factions/战斗修女/enhancements/hagiomnifex-upgrade.md) | 分数未知、Sanctified Orators 分队。 | 2026-07-26 |
+| enhancement | [Hagiomnifex Upgrade](factions/战斗修女/enhancements/hagiomnifex-upgrade.md) | 25 分、Sanctified Orators 分队。 | 2026-07-26 |
 | enhancement | [Iron Surplice of Saint Istalela](factions/战斗修女/enhancements/iron-surplice-of-saint-istalela.md) | 10 分、Bringers of Flame 分队。 | 2026-07-26 |
 | enhancement | [Limitless Resolve](factions/战斗修女/enhancements/limitless-resolve.md) | 0 分、Pious Protectors 分队。 | 2026-07-26 |
 | enhancement | [Litanies of Faith](factions/战斗修女/enhancements/litanies-of-faith.md) | 10 分、Army of Faith 分队。 | 2026-07-26 |
 | enhancement | [Mantle of Ophelia](factions/战斗修女/enhancements/mantle-of-ophelia.md) | 20 分、Hallowed Martyrs 分队。 | 2026-07-26 |
 | enhancement | [Manual of Saint Griselda](factions/战斗修女/enhancements/manual-of-saint-griselda.md) | 20 分、Bringers of Flame 分队。 | 2026-07-26 |
 | enhancement | [Martial Discipline](factions/战斗修女/enhancements/martial-discipline.md) | 0 分、Pious Protectors 分队。 | 2026-07-26 |
-| enhancement | [Perfervid Haste](factions/战斗修女/enhancements/perfervid-haste.md) | 分数未知、神圣冠军 分队。 | 2026-07-26 |
-| enhancement | [Psalm of Righteous Judgement](factions/战斗修女/enhancements/psalm-of-righteous-judgement.md) | 30 分、Penitent Host 分队。 | 2026-07-26 |
-| enhancement | [Refrain of Enduring Faith](factions/战斗修女/enhancements/refrain-of-enduring-faith.md) | 25 分、Penitent Host 分队。 | 2026-07-26 |
+| enhancement | [Perfervid Haste](factions/战斗修女/enhancements/perfervid-haste.md) | 10 分、神圣冠军 分队。 | 2026-07-26 |
+| enhancement | [Psalm of Righteous Judgement](factions/战斗修女/enhancements/psalm-of-righteous-judgement.md) | 20 分、Penitent Host 分队。 | 2026-07-26 |
+| enhancement | [Refrain of Enduring Faith](factions/战斗修女/enhancements/refrain-of-enduring-faith.md) | 15 分、Penitent Host 分队。 | 2026-07-26 |
 | enhancement | [Righteous Rage](factions/战斗修女/enhancements/righteous-rage.md) | 15 分、Bringers of Flame 分队。 | 2026-07-26 |
 | enhancement | [Saintly Example](factions/战斗修女/enhancements/saintly-example.md) | 10 分、Hallowed Martyrs 分队。 | 2026-07-26 |
 | enhancement | [Sanctification Rituals](factions/战斗修女/enhancements/sanctification-rituals.md) | 0 分、Penitents and Pilgrims 分队。 | 2026-07-26 |
-| enhancement | [Symphonic Payload Upgrade](factions/战斗修女/enhancements/symphonic-payload-upgrade.md) | 分数未知、定罪合唱 分队。 | 2026-07-26 |
+| enhancement | [Symphonic Payload Upgrade](factions/战斗修女/enhancements/symphonic-payload-upgrade.md) | 10 分、定罪合唱 分队。 | 2026-07-26 |
 | enhancement | [Through Suffering, Strength](factions/战斗修女/enhancements/through-suffering-strength.md) | 25 分、Hallowed Martyrs 分队。 | 2026-07-26 |
 | enhancement | [Triptych of the Macharian Crusade](factions/战斗修女/enhancements/triptych-of-the-macharian-crusade.md) | 20 分、Army of Faith 分队。 | 2026-07-26 |
 | enhancement | [Verse of Holy Piety](factions/战斗修女/enhancements/verse-of-holy-piety.md) | 15 分、Penitent Host 分队。 | 2026-07-26 |
-| enhancement | [Writ of Compunction Upgrade](factions/战斗修女/enhancements/writ-of-compunction-upgrade.md) | 分数未知、神圣冠军 分队。 | 2026-07-26 |
+| enhancement | [Writ of Compunction Upgrade](factions/战斗修女/enhancements/writ-of-compunction-upgrade.md) | 20 分、神圣冠军 分队。 | 2026-07-26 |
 | enhancement | [信仰印记](factions/战斗修女/enhancements/mark-of-devotion.md) | 30 分、信仰冠军 分队。 | 2026-07-26 |
 | enhancement | [先知之眼](factions/战斗修女/enhancements/eyes-of-the-oracle.md) | 10 分、信仰冠军 分队。 | 2026-07-26 |
 | enhancement | [圣化护符](factions/战斗修女/enhancements/sanctified-amulet.md) | 25 分、信仰冠军 分队。 | 2026-07-26 |
@@ -1609,69 +1620,69 @@
 | stratagem | [直击异端之心](factions/战斗修女/stratagems/to-the-heart-of-heresy.md) | 1 CP、Fight phase、信仰冠军 分队、Battle Tactic Stratagem。 | 2026-07-26 |
 | stratagem | [绝不容忍不信者](factions/战斗修女/stratagems/suffer-not-the-unfaithful.md) | 1 CP、Shooting or Fight phase、信仰冠军 分队、Strategic Ploy Stratagem。 | 2026-07-26 |
 | stratagem | [驱魔和声](factions/战斗修女/stratagems/harmonised-exorcism.md) | 1 CP、Shooting phase、定罪合唱 分队。 | 2026-07-26 |
-| unit | [Battle Sanctum](factions/战斗修女/units/battle-sanctum.md) |  | 2026-07-23 |
-| unit | [Celestian Sacresant Aveline](factions/战斗修女/units/celestian-sacresant-aveline.md) |  | 2026-07-23 |
-| unit | [Crusaders](factions/战斗修女/units/crusaders.md) |  | 2026-07-23 |
-| unit | [Death Cult Assassins](factions/战斗修女/units/death-cult-assassins.md) |  | 2026-07-23 |
-| unit | [Repressor](factions/战斗修女/units/repressor.md) |  | 2026-07-23 |
-| unit | [书记修女](factions/战斗修女/units/dialogus.md) |  | 2026-07-23 |
-| unit | [仇天使小队](factions/战斗修女/units/retributor-squad.md) |  | 2026-07-23 |
-| unit | [修女会犀牛装甲车](factions/战斗修女/units/sororitas-rhino.md) |  | 2026-07-23 |
-| unit | [净化者杀戮小队](factions/战斗修女/units/sanctifiers.md) |  | 2026-07-23 |
-| unit | [凯旋之圣凯瑟琳](factions/战斗修女/units/triumph-of-saint-katherine.md) |  | 2026-07-23 |
-| unit | [医疗修女](factions/战斗修女/units/hospitaller.md) |  | 2026-07-23 |
-| unit | [圣塞莱斯汀](factions/战斗修女/units/saint-celestine.md) |  | 2026-07-23 |
-| unit | [大修女](factions/战斗修女/units/canoness.md) |  | 2026-07-23 |
-| unit | [宫廷官](factions/战斗修女/units/palatine.md) |  | 2026-07-23 |
-| unit | [御天使小队](factions/战斗修女/units/dominion-squad.md) |  | 2026-07-23 |
-| unit | [忏悔修女小队](factions/战斗修女/units/repentia-squad.md) |  | 2026-07-23 |
-| unit | [忏悔者机甲](factions/战斗修女/units/penitent-engines.md) |  | 2026-07-23 |
-| unit | [恶魔驱逐者](factions/战斗修女/units/daemonifuge.md) |  | 2026-07-23 |
-| unit | [悔罪者机甲](factions/战斗修女/units/mortifiers.md) |  | 2026-07-23 |
-| unit | [惩罚者坦克](factions/战斗修女/units/castigator.md) |  | 2026-07-23 |
-| unit | [战斗修女小队](factions/战斗修女/units/battle-sisters-squad.md) |  | 2026-07-23 |
-| unit | [持像者](factions/战斗修女/units/imagifier.md) |  | 2026-07-23 |
-| unit | [教廷牧师](factions/战斗修女/units/ministorum-priest.md) |  | 2026-07-23 |
-| unit | [教条官](factions/战斗修女/units/dogmata.md) |  | 2026-07-23 |
-| unit | [楷模机甲](factions/战斗修女/units/paragon-warsuits.md) |  | 2026-07-23 |
-| unit | [洁天使圣徒](factions/战斗修女/units/celestian-sacresants.md) |  | 2026-07-23 |
-| unit | [洁天使隐伏者](factions/战斗修女/units/celestian-insidiants.md) |  | 2026-07-23 |
-| unit | [炽天使小队](factions/战斗修女/units/seraphim-squad.md) |  | 2026-07-23 |
-| unit | [献祭者坦克](factions/战斗修女/units/immolator.md) |  | 2026-07-23 |
-| unit | [英特兰齐娅·弗雷娅](factions/战斗修女/units/intranzia-fraye.md) |  | 2026-07-23 |
-| unit | [茱妮丝·伊瑞塔](factions/战斗修女/units/junith-eruita.md) |  | 2026-07-23 |
-| unit | [莫雯·瓦尔](factions/战斗修女/units/morvenn-vahl.md) |  | 2026-07-23 |
-| unit | [装备跳跃背包的大修女](factions/战斗修女/units/canoness-with-jump-pack.md) |  | 2026-07-23 |
-| unit | [见习修女小队](factions/战斗修女/units/sisters-novitiate-squad.md) |  | 2026-07-23 |
-| unit | [阿斯垂德·瑟加和阿加瑟·多兰](factions/战斗修女/units/aestred-thurga-and-agathae-dolan.md) |  | 2026-07-23 |
-| unit | [鞭挞苦修者](factions/战斗修女/units/arco-flagellants.md) |  | 2026-07-23 |
-| unit | [风天使小队](factions/战斗修女/units/zephyrim-squad.md) |  | 2026-07-23 |
-| unit | [驱魔人导弹车](factions/战斗修女/units/exorcist.md) |  | 2026-07-23 |
+| unit | [Battle Sanctum](factions/战斗修女/units/battle-sanctum.md) | 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。 | 2026-09-14 |
+| unit | [Celestian Sacresant Aveline](factions/战斗修女/units/celestian-sacresant-aveline.md) | 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。 | 2026-09-14 |
+| unit | [Crusaders](factions/战斗修女/units/crusaders.md) | 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。 | 2026-09-14 |
+| unit | [Death Cult Assassins](factions/战斗修女/units/death-cult-assassins.md) | 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。 | 2026-09-14 |
+| unit | [Repressor](factions/战斗修女/units/repressor.md) | 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。 | 2026-09-14 |
+| unit | [书记修女](factions/战斗修女/units/dialogus.md) |  | 2026-09-14 |
+| unit | [仇天使小队](factions/战斗修女/units/retributor-squad.md) |  | 2026-09-14 |
+| unit | [修女会犀牛装甲车](factions/战斗修女/units/sororitas-rhino.md) |  | 2026-09-14 |
+| unit | [净化者杀戮小队](factions/战斗修女/units/sanctifiers.md) |  | 2026-09-14 |
+| unit | [凯旋之圣凯瑟琳](factions/战斗修女/units/triumph-of-saint-katherine.md) |  | 2026-09-14 |
+| unit | [医疗修女](factions/战斗修女/units/hospitaller.md) |  | 2026-09-14 |
+| unit | [圣塞莱斯汀](factions/战斗修女/units/saint-celestine.md) |  | 2026-09-14 |
+| unit | [大修女](factions/战斗修女/units/canoness.md) |  | 2026-09-14 |
+| unit | [宫廷官](factions/战斗修女/units/palatine.md) |  | 2026-09-14 |
+| unit | [御天使小队](factions/战斗修女/units/dominion-squad.md) |  | 2026-09-14 |
+| unit | [忏悔修女小队](factions/战斗修女/units/repentia-squad.md) |  | 2026-09-14 |
+| unit | [忏悔者机甲](factions/战斗修女/units/penitent-engines.md) |  | 2026-09-14 |
+| unit | [恶魔驱逐者](factions/战斗修女/units/daemonifuge.md) |  | 2026-09-14 |
+| unit | [悔罪者机甲](factions/战斗修女/units/mortifiers.md) |  | 2026-09-14 |
+| unit | [惩罚者坦克](factions/战斗修女/units/castigator.md) |  | 2026-09-14 |
+| unit | [战斗修女小队](factions/战斗修女/units/battle-sisters-squad.md) |  | 2026-09-14 |
+| unit | [持像者](factions/战斗修女/units/imagifier.md) |  | 2026-09-14 |
+| unit | [教廷牧师](factions/战斗修女/units/ministorum-priest.md) |  | 2026-09-14 |
+| unit | [教条官](factions/战斗修女/units/dogmata.md) |  | 2026-09-14 |
+| unit | [楷模机甲](factions/战斗修女/units/paragon-warsuits.md) |  | 2026-09-14 |
+| unit | [洁天使圣徒](factions/战斗修女/units/celestian-sacresants.md) |  | 2026-09-14 |
+| unit | [洁天使隐伏者](factions/战斗修女/units/celestian-insidiants.md) |  | 2026-09-14 |
+| unit | [炽天使小队](factions/战斗修女/units/seraphim-squad.md) |  | 2026-09-14 |
+| unit | [献祭者坦克](factions/战斗修女/units/immolator.md) |  | 2026-09-14 |
+| unit | [英特兰齐娅·弗雷娅](factions/战斗修女/units/intranzia-fraye.md) |  | 2026-09-14 |
+| unit | [茱妮丝·伊瑞塔](factions/战斗修女/units/junith-eruita.md) |  | 2026-09-14 |
+| unit | [莫雯·瓦尔](factions/战斗修女/units/morvenn-vahl.md) |  | 2026-09-14 |
+| unit | [装备跳跃背包的大修女](factions/战斗修女/units/canoness-with-jump-pack.md) |  | 2026-09-14 |
+| unit | [见习修女小队](factions/战斗修女/units/sisters-novitiate-squad.md) |  | 2026-09-14 |
+| unit | [阿斯垂德·瑟加和阿加瑟·多兰](factions/战斗修女/units/aestred-thurga-and-agathae-dolan.md) |  | 2026-09-14 |
+| unit | [鞭挞苦修者](factions/战斗修女/units/arco-flagellants.md) |  | 2026-09-14 |
+| unit | [风天使小队](factions/战斗修女/units/zephyrim-squad.md) |  | 2026-09-14 |
+| unit | [驱魔人导弹车](factions/战斗修女/units/exorcist.md) |  | 2026-09-14 |
 
 ### 无阵营工事
 
 | 类型 | 名称 | 摘要 | Updated |
 |------|------|------|---------|
-| unit | [Aegis Defence Line With Weapon Emplacement](factions/无阵营工事/units/aegis-defence-line-with-weapon-emplacement.md) |  | 2026-07-23 |
-| unit | [Ambull](factions/无阵营工事/units/ambull.md) |  | 2026-07-23 |
-| unit | [Bastion](factions/无阵营工事/units/bastion.md) |  | 2026-07-23 |
-| unit | [Castellum Stronghold](factions/无阵营工事/units/castellum-stronghold.md) |  | 2026-07-23 |
-| unit | [Firestorm Redoubt](factions/无阵营工事/units/firestorm-redoubt.md) |  | 2026-07-23 |
-| unit | [Fortress Of Redemption](factions/无阵营工事/units/fortress-of-redemption.md) |  | 2026-07-23 |
-| unit | [Guardian Drone](factions/无阵营工事/units/guardian-drone.md) |  | 2026-07-23 |
-| unit | [Imperial Fortress Walls](factions/无阵营工事/units/imperial-fortress-walls.md) |  | 2026-07-23 |
-| unit | [Macro-cannon Aquila Strongpoint](factions/无阵营工事/units/macro-cannon-aquila-strongpoint.md) |  | 2026-07-23 |
-| unit | [Plasma Obliterator](factions/无阵营工事/units/plasma-obliterator.md) |  | 2026-07-23 |
-| unit | [Primaris Redoubt](factions/无阵营工事/units/primaris-redoubt.md) |  | 2026-07-23 |
-| unit | [Skyshield Landing Pad](factions/无阵营工事/units/skyshield-landing-pad.md) |  | 2026-07-23 |
-| unit | [Spindle Drones](factions/无阵营工事/units/spindle-drones.md) |  | 2026-07-23 |
-| unit | [The Archivist](factions/无阵营工事/units/the-archivist.md) |  | 2026-07-23 |
-| unit | [Vengeance Weapon Battery](factions/无阵营工事/units/vengeance-weapon-battery.md) |  | 2026-07-23 |
-| unit | [Void Shield Generator](factions/无阵营工事/units/void-shield-generator.md) |  | 2026-07-23 |
-| unit | [Vortex Missile Strongpoint](factions/无阵营工事/units/vortex-missile-strongpoint.md) |  | 2026-07-23 |
-| unit | [Wall Of Martyrs Bunker](factions/无阵营工事/units/wall-of-martyrs-bunker.md) |  | 2026-07-23 |
-| unit | [Wall Of Martyrs Defence Emplacement](factions/无阵营工事/units/wall-of-martyrs-defence-emplacement.md) |  | 2026-07-23 |
-| unit | [Wall Of Martyrs Defence Line](factions/无阵营工事/units/wall-of-martyrs-defence-line.md) |  | 2026-07-23 |
+| unit | [Aegis Defence Line With Weapon Emplacement](factions/无阵营工事/units/aegis-defence-line-with-weapon-emplacement.md) | 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。 | 2026-09-14 |
+| unit | [Ambull](factions/无阵营工事/units/ambull.md) | 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。 | 2026-09-14 |
+| unit | [Bastion](factions/无阵营工事/units/bastion.md) | 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。 | 2026-09-14 |
+| unit | [Castellum Stronghold](factions/无阵营工事/units/castellum-stronghold.md) |  | 2026-09-14 |
+| unit | [Firestorm Redoubt](factions/无阵营工事/units/firestorm-redoubt.md) | 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。 | 2026-09-14 |
+| unit | [Fortress Of Redemption](factions/无阵营工事/units/fortress-of-redemption.md) | 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。 | 2026-09-14 |
+| unit | [Guardian Drone](factions/无阵营工事/units/guardian-drone.md) | 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。 | 2026-09-14 |
+| unit | [Imperial Fortress Walls](factions/无阵营工事/units/imperial-fortress-walls.md) |  | 2026-09-14 |
+| unit | [Macro-cannon Aquila Strongpoint](factions/无阵营工事/units/macro-cannon-aquila-strongpoint.md) | 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。 | 2026-09-14 |
+| unit | [Plasma Obliterator](factions/无阵营工事/units/plasma-obliterator.md) | 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。 | 2026-09-14 |
+| unit | [Primaris Redoubt](factions/无阵营工事/units/primaris-redoubt.md) | 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。 | 2026-09-14 |
+| unit | [Skyshield Landing Pad](factions/无阵营工事/units/skyshield-landing-pad.md) | 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。 | 2026-09-14 |
+| unit | [Spindle Drones](factions/无阵营工事/units/spindle-drones.md) | 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。 | 2026-09-14 |
+| unit | [The Archivist](factions/无阵营工事/units/the-archivist.md) | 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。 | 2026-09-14 |
+| unit | [Vengeance Weapon Battery](factions/无阵营工事/units/vengeance-weapon-battery.md) | 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。 | 2026-09-14 |
+| unit | [Void Shield Generator](factions/无阵营工事/units/void-shield-generator.md) | 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。 | 2026-09-14 |
+| unit | [Vortex Missile Strongpoint](factions/无阵营工事/units/vortex-missile-strongpoint.md) | 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。 | 2026-09-14 |
+| unit | [Wall Of Martyrs Bunker](factions/无阵营工事/units/wall-of-martyrs-bunker.md) | 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。 | 2026-09-14 |
+| unit | [Wall Of Martyrs Defence Emplacement](factions/无阵营工事/units/wall-of-martyrs-defence-emplacement.md) | 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。 | 2026-09-14 |
+| unit | [Wall Of Martyrs Defence Line](factions/无阵营工事/units/wall-of-martyrs-defence-line.md) | 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。 | 2026-09-14 |
 
 ### 星界军
 
@@ -1694,7 +1705,7 @@
 | enhancement | [Advance Augury](factions/星界军/enhancements/advance-augury.md) | 15 分、Bridgehead Strike 分队。 | 2026-07-26 |
 | enhancement | [Assault Hatches](factions/星界军/enhancements/assault-hatches.md) | 25 分、钢铁之锤 分队。 | 2026-07-26 |
 | enhancement | [Bold Leadership](factions/星界军/enhancements/bold-leadership.md) | 25 分、Mechanised Assault 分队。 | 2026-07-26 |
-| enhancement | [Bombast-class Vox-array](factions/星界军/enhancements/bombast-class-vox-array.md) | 35 分、Bridgehead Strike 分队。 | 2026-07-26 |
+| enhancement | [Bombast-class Vox-array](factions/星界军/enhancements/bombast-class-vox-array.md) | 15 分、Bridgehead Strike 分队。 | 2026-07-26 |
 | enhancement | [Calm Under Fire](factions/星界军/enhancements/calm-under-fire.md) | 15 分、Hammer of the Emperor 分队。 | 2026-07-26 |
 | enhancement | [Covert Breach](factions/星界军/enhancements/covert-breach.md) | 0 分、Tempestus Boarding Regiment 分队。 | 2026-07-26 |
 | enhancement | [Death Mask of Ollanius](factions/星界军/enhancements/death-mask-of-ollanius.md) | 10 分、Combined Arms 分队。 | 2026-07-26 |
@@ -1706,11 +1717,11 @@
 | enhancement | [Guerrilla Honours](factions/星界军/enhancements/guerrilla-honours.md) | 25 分、Recon Element 分队。 | 2026-07-26 |
 | enhancement | [Indomitable Steed](factions/星界军/enhancements/indomitable-steed.md) | 15 分、Hammer of the Emperor 分队。 | 2026-07-26 |
 | enhancement | [Legacy Sidearm](factions/星界军/enhancements/legacy-sidearm.md) | 10 分、Siege Regiment 分队。 | 2026-07-26 |
-| enhancement | [Long-range Scout](factions/星界军/enhancements/long-range-scout.md) | 分数未知、指示部队 分队。 | 2026-07-26 |
+| enhancement | [Long-range Scout](factions/星界军/enhancements/long-range-scout.md) | 10 分、指示部队 分队。 | 2026-07-26 |
 | enhancement | [Master Manoeuvrist](factions/星界军/enhancements/master-manoeuvrist.md) | 15 分、装甲步兵 分队。 | 2026-07-26 |
-| enhancement | [Priority-drop Beacon](factions/星界军/enhancements/priority-drop-beacon.md) | 30 分、Bridgehead Strike 分队。 | 2026-07-26 |
+| enhancement | [Priority-drop Beacon](factions/星界军/enhancements/priority-drop-beacon.md) | 25 分、Bridgehead Strike 分队。 | 2026-07-26 |
 | enhancement | [Reactive Command](factions/星界军/enhancements/reactive-command.md) | 15 分、Combined Arms 分队。 | 2026-07-26 |
-| enhancement | [Recon Star](factions/星界军/enhancements/recon-star.md) | 分数未知、指示部队 分队。 | 2026-07-26 |
+| enhancement | [Recon Star](factions/星界军/enhancements/recon-star.md) | 10 分、指示部队 分队。 | 2026-07-26 |
 | enhancement | [Regimental Banner](factions/星界军/enhancements/regimental-banner.md) | 20 分、Hammer of the Emperor 分队。 | 2026-07-26 |
 | enhancement | [Rigged Blind Grenades](factions/星界军/enhancements/rigged-blind-grenades.md) | 0 分、Embarked Regiment 分队。 | 2026-07-26 |
 | enhancement | [Sacred Unguents](factions/星界军/enhancements/sacred-unguents.md) | 10 分、Mechanised Assault 分队。 | 2026-07-26 |
@@ -1729,11 +1740,11 @@
 | enhancement | [大战略家](factions/星界军/enhancements/grand-strategist-combined-arms.md) | 15 分、Combined Arms 分队。 | 2026-07-26 |
 | enhancement | [天鹰之眼](factions/星界军/enhancements/aquilan-eye.md) | 20 分、老兵连队 分队。 | 2026-07-26 |
 | enhancement | [扩音器](factions/星界军/enhancements/laud-hailer.md) | 10 分、老兵连队 分队。 | 2026-07-26 |
-| enhancement | [敏锐视觉](factions/星界军/enhancements/sharp-eyes-light-fingers.md) | 分数未知、亚人类辅助军 分队。 | 2026-07-26 |
+| enhancement | [敏锐视觉](factions/星界军/enhancements/sharp-eyes-light-fingers.md) | 10 分、亚人类辅助军 分队。 | 2026-07-26 |
 | enhancement | [机械对话者](factions/星界军/enhancements/engine-speaker.md) | 15 分、钢铁之锤 分队。 | 2026-07-26 |
 | enhancement | [欧姆尼赛亚的神圣油膏（光环）](factions/星界军/enhancements/omnissian-unguents-aura.md) | 35 分、装甲步兵 分队。 | 2026-07-26 |
 | enhancement | [营部指挥官](factions/星界军/enhancements/battalion-commander.md) | 30 分、钢铁之锤 分队。 | 2026-07-26 |
-| enhancement | [责任榜样](factions/星界军/enhancements/exemplar-of-duty.md) | 分数未知、亚人类辅助军 分队。 | 2026-07-26 |
+| enhancement | [责任榜样](factions/星界军/enhancements/exemplar-of-duty.md) | 10 分、亚人类辅助军 分队。 | 2026-07-26 |
 | stratagem | [ABLATIVE PLATING](factions/星界军/stratagems/ablative-plating.md) | 2 CP、Shooting phase、Hammer of the Emperor 分队、Wargear Stratagem。 | 2026-07-26 |
 | stratagem | [ADAMANTINE BEHEMOTH](factions/星界军/stratagems/adamantine-behemoth.md) | 1 CP、Movement or Charge phase、钢铁之锤 分队、Strategic Ploy Stratagem。 | 2026-07-26 |
 | stratagem | [AERIAL EXTRACTION](factions/星界军/stratagems/aerial-extraction.md) | 1 CP、Fight phase、Bridgehead Strike 分队、Epic Deed Stratagem。 | 2026-07-26 |
@@ -1802,140 +1813,140 @@
 | stratagem | [速度爆发](factions/星界军/stratagems/burst-of-speed.md) | 1 CP、Movement phase、装甲步兵 分队、Strategic Ploy Stratagem。 | 2026-07-26 |
 | stratagem | [震撼火力](factions/星界军/stratagems/withering-firepower.md) | 1 CP、Shooting phase、钢铁之锤 分队、Strategic Ploy Stratagem。 | 2026-07-26 |
 | stratagem | [额外护甲](factions/星界军/stratagems/additional-armour.md) | 1 CP、Shooting phase、老兵连队 分队、Stratagem。 | 2026-07-26 |
-| unit | [Aquila Lander](factions/星界军/units/aquila-lander.md) |  | 2026-07-23 |
-| unit | [Arkurian Stormhammer](factions/星界军/units/arkurian-stormhammer.md) |  | 2026-07-23 |
-| unit | [Armageddon-pattern Medusa](factions/星界军/units/armageddon-pattern-medusa.md) |  | 2026-07-23 |
-| unit | [Arvus Lighter](factions/星界军/units/arvus-lighter.md) |  | 2026-07-23 |
-| unit | [Atlas Recovery Vehicle](factions/星界军/units/atlas-recovery-vehicle.md) |  | 2026-07-23 |
-| unit | [Carnodon](factions/星界军/units/carnodon.md) |  | 2026-07-23 |
-| unit | [Centaur Light Carrier](factions/星界军/units/centaur-light-carrier.md) |  | 2026-07-23 |
-| unit | [Colossus](factions/星界军/units/colossus.md) |  | 2026-07-23 |
-| unit | [Crassus](factions/星界军/units/crassus.md) |  | 2026-07-23 |
-| unit | [Death Korps Grenadier Squad](factions/星界军/units/death-korps-grenadier-squad.md) |  | 2026-07-23 |
-| unit | [Death Rider Commissar](factions/星界军/units/death-rider-commissar.md) |  | 2026-07-23 |
-| unit | [Dominus Armoured Siege Bombard](factions/星界军/units/dominus-armoured-siege-bombard.md) |  | 2026-07-23 |
-| unit | [Earthshaker Carriage Battery](factions/星界军/units/earthshaker-carriage-battery.md) |  | 2026-07-23 |
-| unit | [Earthshaker Platform](factions/星界军/units/earthshaker-platform.md) |  | 2026-07-23 |
-| unit | [Elysian Drop Sentinel](factions/星界军/units/elysian-drop-sentinel.md) |  | 2026-07-23 |
-| unit | [Elysian Sniper Squad](factions/星界军/units/elysian-sniper-squad.md) |  | 2026-07-23 |
-| unit | [Gorgon Heavy Transport](factions/星界军/units/gorgon-heavy-transport.md) |  | 2026-07-23 |
-| unit | [Griffon Mortar Carrier](factions/星界军/units/griffon-mortar-carrier.md) |  | 2026-07-23 |
-| unit | [Hades Breaching Drill](factions/星界军/units/hades-breaching-drill.md) |  | 2026-07-23 |
-| unit | [Heavy Mortar Team](factions/星界军/units/heavy-mortar-team.md) |  | 2026-07-23 |
-| unit | [Heavy Quad Launcher Team](factions/星界军/units/heavy-quad-launcher-team.md) |  | 2026-07-23 |
-| unit | [Hydra Platform](factions/星界军/units/hydra-platform.md) |  | 2026-07-23 |
-| unit | [Macharius](factions/星界军/units/macharius.md) |  | 2026-07-23 |
-| unit | [Macharius Omega](factions/星界军/units/macharius-omega.md) |  | 2026-07-23 |
-| unit | [Macharius Vanquisher](factions/星界军/units/macharius-vanquisher.md) |  | 2026-07-23 |
-| unit | [Macharius Vulcan](factions/星界军/units/macharius-vulcan.md) |  | 2026-07-23 |
-| unit | [Malcador](factions/星界军/units/malcador.md) |  | 2026-07-23 |
-| unit | [Malcador Annihilator](factions/星界军/units/malcador-annihilator.md) |  | 2026-07-23 |
-| unit | [Malcador Defender](factions/星界军/units/malcador-defender.md) |  | 2026-07-23 |
-| unit | [Malcador Infernus](factions/星界军/units/malcador-infernus.md) |  | 2026-07-23 |
-| unit | [Manticore Platform](factions/星界军/units/manticore-platform.md) |  | 2026-07-23 |
-| unit | [Marauder Bomber](factions/星界军/units/marauder-bomber.md) |  | 2026-07-23 |
-| unit | [Marauder Destroyer](factions/星界军/units/marauder-destroyer.md) |  | 2026-07-23 |
-| unit | [Medusa Carriage Battery](factions/星界军/units/medusa-carriage-battery.md) |  | 2026-07-23 |
-| unit | [Minotaur](factions/星界军/units/minotaur.md) |  | 2026-07-23 |
-| unit | [Mukaali Riders](factions/星界军/units/mukaali-riders.md) |  | 2026-07-23 |
-| unit | [Munitorum Servitors](factions/星界军/units/munitorum-servitors.md) |  | 2026-07-23 |
-| unit | [Praetor](factions/星界军/units/praetor.md) |  | 2026-07-23 |
-| unit | [Provisionally Prepared](factions/星界军/units/provisionally-prepared.md) |  | 2026-07-23 |
-| unit | [Quartermaster Cadre Squad](factions/星界军/units/quartermaster-cadre-squad.md) |  | 2026-07-23 |
-| unit | [Rapier Laser Destroyer Battery](factions/星界军/units/rapier-laser-destroyer-battery.md) |  | 2026-07-23 |
-| unit | [Regimental Attachés](factions/星界军/units/regimental-attachés.md) |  | 2026-07-23 |
-| unit | [Rein And Raus](factions/星界军/units/rein-and-raus.md) |  | 2026-07-23 |
-| unit | [Sabre Weapons Battery](factions/星界军/units/sabre-weapons-battery.md) |  | 2026-07-23 |
-| unit | [Salamander Command Vehicle](factions/星界军/units/salamander-command-vehicle.md) |  | 2026-07-23 |
-| unit | [Salamander Scout Vehicle](factions/星界军/units/salamander-scout-vehicle.md) |  | 2026-07-23 |
-| unit | [Sentinel Powerlifter](factions/星界军/units/sentinel-powerlifter.md) |  | 2026-07-23 |
-| unit | [Sergeant Harker](factions/星界军/units/sergeant-harker.md) |  | 2026-07-23 |
-| unit | [Storm Chimera](factions/星界军/units/storm-chimera.md) |  | 2026-07-23 |
-| unit | [Stormblade](factions/星界军/units/stormblade.md) |  | 2026-07-23 |
-| unit | [Stygies Destroyer Tank Hunter](factions/星界军/units/stygies-destroyer-tank-hunter.md) |  | 2026-07-23 |
-| unit | [Tarantula Battery](factions/星界军/units/tarantula-battery.md) |  | 2026-07-23 |
-| unit | [Tauros Assault Vehicle](factions/星界军/units/tauros-assault-vehicle.md) |  | 2026-07-23 |
-| unit | [Tauros Venator](factions/星界军/units/tauros-venator.md) |  | 2026-07-23 |
-| unit | [Trojan Support Vehicle](factions/星界军/units/trojan-support-vehicle.md) |  | 2026-07-23 |
-| unit | [Valdor](factions/星界军/units/valdor.md) |  | 2026-07-23 |
-| unit | [Valkyrie Sky Talon](factions/星界军/units/valkyrie-sky-talon.md) |  | 2026-07-23 |
-| unit | [Vendetta Gunship](factions/星界军/units/vendetta-gunship.md) |  | 2026-07-23 |
-| unit | [Voss-pattern Lightning](factions/星界军/units/voss-pattern-lightning.md) |  | 2026-07-23 |
-| unit | [Vulture Gunship](factions/星界军/units/vulture-gunship.md) |  | 2026-07-23 |
-| unit | [‘Iron Hand’ Straken](factions/星界军/units/iron-hand-straken.md) |  | 2026-07-23 |
-| unit | [【传奇】地狱之末](factions/星界军/units/hells-last.md) |  | 2026-07-23 |
-| unit | [九头蛇高射炮](factions/星界军/units/hydra.md) |  | 2026-07-23 |
-| unit | [亚瑞克政委](factions/星界军/units/commissar-yarrick.md) |  | 2026-07-23 |
-| unit | [侦查哨兵](factions/星界军/units/scout-sentinels.md) |  | 2026-07-23 |
-| unit | [保镖诺克](factions/星界军/units/nork-deddog.md) |  | 2026-07-23 |
-| unit | [克里德堡主](factions/星界军/units/ursula-creed.md) |  | 2026-07-23 |
-| unit | [克里格战斗工兵](factions/星界军/units/krieg-combat-engineers.md) |  | 2026-07-23 |
-| unit | [克里格指挥组](factions/星界军/units/krieg-command-squad.md) |  | 2026-07-23 |
-| unit | [克里格死亡骑兵](factions/星界军/units/death-riders.md) |  | 2026-07-23 |
-| unit | [克里格死兵队](factions/星界军/units/death-korps-of-krieg.md) |  | 2026-07-23 |
-| unit | [克里格重型武器小队](factions/星界军/units/krieg-heavy-weapons-squad.md) |  | 2026-07-23 |
-| unit | [刚特的幽灵](factions/星界军/units/gaunts-ghosts.md) |  | 2026-07-23 |
-| unit | [半人马快速突击战车](factions/星界军/units/centaur-rsv.md) |  | 2026-07-23 |
-| unit | [卡塔昌丛林战士](factions/星界军/units/catachan-jungle-fighters.md) |  | 2026-07-23 |
-| unit | [卡塔昌指挥组](factions/星界军/units/catachan-command-squad.md) |  | 2026-07-23 |
-| unit | [卡塔昌重型武器小队](factions/星界军/units/catachan-heavy-weapons-squad.md) |  | 2026-07-23 |
-| unit | [卡舍津突击队](factions/星界军/units/kasrkin.md) |  | 2026-07-23 |
-| unit | [卡迪亚侦察小队](factions/星界军/units/cadian-recon-squad.md) |  | 2026-07-23 |
-| unit | [卡迪亚重型武器小队](factions/星界军/units/cadian-heavy-weapons-squad.md) |  | 2026-07-23 |
-| unit | [卡迪安堡主](factions/星界军/units/cadian-castellan.md) |  | 2026-07-23 |
-| unit | [卡迪安指挥组](factions/星界军/units/cadian-command-squad.md) |  | 2026-07-23 |
-| unit | [卡迪安突击队](factions/星界军/units/cadian-shock-troops.md) |  | 2026-07-23 |
-| unit | [双足飞龙自行火炮](factions/星界军/units/wyvern.md) |  | 2026-07-23 |
-| unit | [地狱之锤](factions/星界军/units/hellhammer.md) |  | 2026-07-23 |
-| unit | [地狱犬喷射车](factions/星界军/units/hellhound.md) |  | 2026-07-23 |
-| unit | [复仇者攻击机](factions/星界军/units/avenger-strike-fighter.md) |  | 2026-07-23 |
-| unit | [大元帅德雷尔](factions/星界军/units/lord-marshal-dreir.md) |  | 2026-07-23 |
-| unit | [太阳元帅雷昂图斯](factions/星界军/units/lord-solar-leontus.md) |  | 2026-07-23 |
-| unit | [奇美拉装甲车](factions/星界军/units/chimera.md) |  | 2026-07-23 |
-| unit | [女武神炮艇](factions/星界军/units/valkyrie.md) |  | 2026-07-23 |
-| unit | [影剑](factions/星界军/units/shadowsword.md) |  | 2026-07-23 |
-| unit | [技术技师机械教士](factions/星界军/units/tech-priest-enginseer.md) |  | 2026-07-23 |
-| unit | [政委](factions/星界军/units/commissar.md) |  | 2026-07-23 |
-| unit | [教廷牧师](factions/星界军/units/ministorum-priest.md) |  | 2026-07-23 |
-| unit | [斯莱·马博](factions/星界军/units/sly-marbo.md) |  | 2026-07-23 |
-| unit | [末日之锤](factions/星界军/units/doomhammer.md) |  | 2026-07-23 |
-| unit | [格雷夫斯政委](factions/星界军/units/commissar-graves.md) |  | 2026-07-23 |
-| unit | [欧格林保镖](factions/星界军/units/ogryn-bodyguard.md) |  | 2026-07-23 |
-| unit | [欧格林小队](factions/星界军/units/ogryn-squad.md) |  | 2026-07-23 |
-| unit | [步行的格雷夫斯政委](factions/星界军/units/commissar-graves-on-foot.md) |  | 2026-07-23 |
-| unit | [死亡直击导弹车](factions/星界军/units/deathstrike.md) |  | 2026-07-23 |
-| unit | [毁灭之剑](factions/星界军/units/banesword.md) |  | 2026-07-23 |
-| unit | [毁灭之锤](factions/星界军/units/banehammer.md) |  | 2026-07-23 |
-| unit | [毒刃](factions/星界军/units/baneblade.md) |  | 2026-07-23 |
-| unit | [灵能导师](factions/星界军/units/primaris-psyker.md) |  | 2026-07-23 |
-| unit | [炮兵小组](factions/星界军/units/artillery-team.md) |  | 2026-07-23 |
-| unit | [牛格林小队](factions/星界军/units/bullgryn-squad.md) |  | 2026-07-23 |
-| unit | [独眼巨人爆破车](factions/星界军/units/cyclops-demolition-vehicle.md) |  | 2026-07-23 |
-| unit | [石化蜥蜴自行火炮](factions/星界军/units/basilisk.md) |  | 2026-07-23 |
-| unit | [神盾防御墙](factions/星界军/units/aegis-defence-line.md) |  | 2026-07-23 |
-| unit | [罗格多恩坦克](factions/星界军/units/rogal-dorn-battle-tank.md) |  | 2026-07-23 |
-| unit | [罗格多恩指挥官](factions/星界军/units/rogal-dorn-commander.md) |  | 2026-07-23 |
-| unit | [莱特林](factions/星界军/units/ratlings.md) |  | 2026-07-23 |
-| unit | [蝎尾狮火箭炮](factions/星界军/units/manticore.md) |  | 2026-07-23 |
-| unit | [装甲哨兵](factions/星界军/units/armoured-sentinels.md) |  | 2026-07-23 |
-| unit | [野战炮兵](factions/星界军/units/field-ordnance-battery.md) |  | 2026-07-23 |
-| unit | [野牛装甲车](factions/星界军/units/taurox.md) |  | 2026-07-23 |
-| unit | [金牛装甲车](factions/星界军/units/taurox-prime.md) |  | 2026-07-23 |
-| unit | [阿提拉蛮骑兵](factions/星界军/units/attilan-rough-riders.md) |  | 2026-07-23 |
-| unit | [风暴之剑](factions/星界军/units/stormsword.md) |  | 2026-07-23 |
-| unit | [风暴兵指挥组](factions/星界军/units/militarum-tempestus-command-squad.md) |  | 2026-07-23 |
-| unit | [风暴天鹰](factions/星界军/units/tempestus-aquilons.md) |  | 2026-07-23 |
-| unit | [风暴忠嗣军小队](factions/星界军/units/tempestus-scions.md) |  | 2026-07-23 |
-| unit | [风暴领主](factions/星界军/units/stormlord.md) |  | 2026-07-23 |
-| unit | [鹫马装甲战车](factions/星界军/units/hippogriff-afv.md) |  | 2026-07-23 |
-| unit | [黎曼鲁斯处决者](factions/星界军/units/leman-russ-executioner.md) |  | 2026-07-23 |
-| unit | [黎曼鲁斯惩罚者](factions/星界军/units/leman-russ-punisher.md) |  | 2026-07-23 |
-| unit | [黎曼鲁斯战斗坦克](factions/星界军/units/leman-russ-battle-tank.md) |  | 2026-07-23 |
-| unit | [黎曼鲁斯指挥官](factions/星界军/units/leman-russ-commander.md) |  | 2026-07-23 |
-| unit | [黎曼鲁斯根除者](factions/星界军/units/leman-russ-eradicator.md) |  | 2026-07-23 |
-| unit | [黎曼鲁斯灭绝者](factions/星界军/units/leman-russ-exterminator.md) |  | 2026-07-23 |
-| unit | [黎曼鲁斯破坏者](factions/星界军/units/leman-russ-demolisher.md) |  | 2026-07-23 |
-| unit | [黎曼鲁斯胜利者](factions/星界军/units/leman-russ-vanquisher.md) |  | 2026-07-23 |
+| unit | [Aquila Lander](factions/星界军/units/aquila-lander.md) | 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。 | 2026-09-14 |
+| unit | [Arkurian Stormhammer](factions/星界军/units/arkurian-stormhammer.md) | 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。 | 2026-09-14 |
+| unit | [Armageddon-pattern Medusa](factions/星界军/units/armageddon-pattern-medusa.md) | 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。 | 2026-09-14 |
+| unit | [Arvus Lighter](factions/星界军/units/arvus-lighter.md) | 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。 | 2026-09-14 |
+| unit | [Atlas Recovery Vehicle](factions/星界军/units/atlas-recovery-vehicle.md) | 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。 | 2026-09-14 |
+| unit | [Carnodon](factions/星界军/units/carnodon.md) | 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。 | 2026-09-14 |
+| unit | [Centaur Light Carrier](factions/星界军/units/centaur-light-carrier.md) | 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。 | 2026-09-14 |
+| unit | [Colossus](factions/星界军/units/colossus.md) | 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。 | 2026-09-14 |
+| unit | [Crassus](factions/星界军/units/crassus.md) | 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。 | 2026-09-14 |
+| unit | [Death Korps Grenadier Squad](factions/星界军/units/death-korps-grenadier-squad.md) | 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。 | 2026-09-14 |
+| unit | [Death Rider Commissar](factions/星界军/units/death-rider-commissar.md) | 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。 | 2026-09-14 |
+| unit | [Dominus Armoured Siege Bombard](factions/星界军/units/dominus-armoured-siege-bombard.md) | 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。 | 2026-09-14 |
+| unit | [Earthshaker Carriage Battery](factions/星界军/units/earthshaker-carriage-battery.md) | 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。 | 2026-09-14 |
+| unit | [Earthshaker Platform](factions/星界军/units/earthshaker-platform.md) | 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。 | 2026-09-14 |
+| unit | [Elysian Drop Sentinel](factions/星界军/units/elysian-drop-sentinel.md) | 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。 | 2026-09-14 |
+| unit | [Elysian Sniper Squad](factions/星界军/units/elysian-sniper-squad.md) | 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。 | 2026-09-14 |
+| unit | [Gorgon Heavy Transport](factions/星界军/units/gorgon-heavy-transport.md) | 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。 | 2026-09-14 |
+| unit | [Griffon Mortar Carrier](factions/星界军/units/griffon-mortar-carrier.md) | 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。 | 2026-09-14 |
+| unit | [Hades Breaching Drill](factions/星界军/units/hades-breaching-drill.md) | 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。 | 2026-09-14 |
+| unit | [Heavy Mortar Team](factions/星界军/units/heavy-mortar-team.md) | 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。 | 2026-09-14 |
+| unit | [Heavy Quad Launcher Team](factions/星界军/units/heavy-quad-launcher-team.md) | 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。 | 2026-09-14 |
+| unit | [Hydra Platform](factions/星界军/units/hydra-platform.md) | 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。 | 2026-09-14 |
+| unit | [Macharius](factions/星界军/units/macharius.md) | 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。 | 2026-09-14 |
+| unit | [Macharius Omega](factions/星界军/units/macharius-omega.md) | 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。 | 2026-09-14 |
+| unit | [Macharius Vanquisher](factions/星界军/units/macharius-vanquisher.md) | 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。 | 2026-09-14 |
+| unit | [Macharius Vulcan](factions/星界军/units/macharius-vulcan.md) | 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。 | 2026-09-14 |
+| unit | [Malcador](factions/星界军/units/malcador.md) | 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。 | 2026-09-14 |
+| unit | [Malcador Annihilator](factions/星界军/units/malcador-annihilator.md) | 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。 | 2026-09-14 |
+| unit | [Malcador Defender](factions/星界军/units/malcador-defender.md) | 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。 | 2026-09-14 |
+| unit | [Malcador Infernus](factions/星界军/units/malcador-infernus.md) | 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。 | 2026-09-14 |
+| unit | [Manticore Platform](factions/星界军/units/manticore-platform.md) | 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。 | 2026-09-14 |
+| unit | [Marauder Bomber](factions/星界军/units/marauder-bomber.md) | 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。 | 2026-09-14 |
+| unit | [Marauder Destroyer](factions/星界军/units/marauder-destroyer.md) | 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。 | 2026-09-14 |
+| unit | [Medusa Carriage Battery](factions/星界军/units/medusa-carriage-battery.md) | 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。 | 2026-09-14 |
+| unit | [Minotaur](factions/星界军/units/minotaur.md) | 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。 | 2026-09-14 |
+| unit | [Mukaali Riders](factions/星界军/units/mukaali-riders.md) | 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。 | 2026-09-14 |
+| unit | [Munitorum Servitors](factions/星界军/units/munitorum-servitors.md) | 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。 | 2026-09-14 |
+| unit | [Praetor](factions/星界军/units/praetor.md) | 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。 | 2026-09-14 |
+| unit | [Provisionally Prepared](factions/星界军/units/provisionally-prepared.md) | 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。 | 2026-09-14 |
+| unit | [Quartermaster Cadre Squad](factions/星界军/units/quartermaster-cadre-squad.md) | 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。 | 2026-09-14 |
+| unit | [Rapier Laser Destroyer Battery](factions/星界军/units/rapier-laser-destroyer-battery.md) | 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。 | 2026-09-14 |
+| unit | [Regimental Attachés](factions/星界军/units/regimental-attachés.md) | 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。 | 2026-09-14 |
+| unit | [Rein And Raus](factions/星界军/units/rein-and-raus.md) | 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。 | 2026-09-14 |
+| unit | [Sabre Weapons Battery](factions/星界军/units/sabre-weapons-battery.md) | 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。 | 2026-09-14 |
+| unit | [Salamander Command Vehicle](factions/星界军/units/salamander-command-vehicle.md) | 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。 | 2026-09-14 |
+| unit | [Salamander Scout Vehicle](factions/星界军/units/salamander-scout-vehicle.md) | 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。 | 2026-09-14 |
+| unit | [Sentinel Powerlifter](factions/星界军/units/sentinel-powerlifter.md) | 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。 | 2026-09-14 |
+| unit | [Sergeant Harker](factions/星界军/units/sergeant-harker.md) | 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。 | 2026-09-14 |
+| unit | [Storm Chimera](factions/星界军/units/storm-chimera.md) | 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。 | 2026-09-14 |
+| unit | [Stormblade](factions/星界军/units/stormblade.md) | 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。 | 2026-09-14 |
+| unit | [Stygies Destroyer Tank Hunter](factions/星界军/units/stygies-destroyer-tank-hunter.md) | 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。 | 2026-09-14 |
+| unit | [Tarantula Battery](factions/星界军/units/tarantula-battery.md) | 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。 | 2026-09-14 |
+| unit | [Tauros Assault Vehicle](factions/星界军/units/tauros-assault-vehicle.md) | 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。 | 2026-09-14 |
+| unit | [Tauros Venator](factions/星界军/units/tauros-venator.md) | 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。 | 2026-09-14 |
+| unit | [Trojan Support Vehicle](factions/星界军/units/trojan-support-vehicle.md) | 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。 | 2026-09-14 |
+| unit | [Valdor](factions/星界军/units/valdor.md) | 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。 | 2026-09-14 |
+| unit | [Valkyrie Sky Talon](factions/星界军/units/valkyrie-sky-talon.md) | 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。 | 2026-09-14 |
+| unit | [Vendetta Gunship](factions/星界军/units/vendetta-gunship.md) | 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。 | 2026-09-14 |
+| unit | [Voss-pattern Lightning](factions/星界军/units/voss-pattern-lightning.md) | 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。 | 2026-09-14 |
+| unit | [Vulture Gunship](factions/星界军/units/vulture-gunship.md) | 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。 | 2026-09-14 |
+| unit | [‘Iron Hand’ Straken](factions/星界军/units/iron-hand-straken.md) | 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。 | 2026-09-14 |
+| unit | [【传奇】地狱之末](factions/星界军/units/hells-last.md) | 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。 | 2026-09-14 |
+| unit | [九头蛇高射炮](factions/星界军/units/hydra.md) |  | 2026-09-14 |
+| unit | [亚瑞克政委](factions/星界军/units/commissar-yarrick.md) |  | 2026-09-14 |
+| unit | [侦查哨兵](factions/星界军/units/scout-sentinels.md) |  | 2026-09-14 |
+| unit | [保镖诺克](factions/星界军/units/nork-deddog.md) |  | 2026-09-14 |
+| unit | [克里德堡主](factions/星界军/units/ursula-creed.md) |  | 2026-09-14 |
+| unit | [克里格战斗工兵](factions/星界军/units/krieg-combat-engineers.md) |  | 2026-09-14 |
+| unit | [克里格指挥组](factions/星界军/units/krieg-command-squad.md) |  | 2026-09-14 |
+| unit | [克里格死亡骑兵](factions/星界军/units/death-riders.md) |  | 2026-09-14 |
+| unit | [克里格死兵队](factions/星界军/units/death-korps-of-krieg.md) |  | 2026-09-14 |
+| unit | [克里格重型武器小队](factions/星界军/units/krieg-heavy-weapons-squad.md) |  | 2026-09-14 |
+| unit | [刚特的幽灵](factions/星界军/units/gaunts-ghosts.md) |  | 2026-09-14 |
+| unit | [半人马快速突击战车](factions/星界军/units/centaur-rsv.md) |  | 2026-09-14 |
+| unit | [卡塔昌丛林战士](factions/星界军/units/catachan-jungle-fighters.md) |  | 2026-09-14 |
+| unit | [卡塔昌指挥组](factions/星界军/units/catachan-command-squad.md) |  | 2026-09-14 |
+| unit | [卡塔昌重型武器小队](factions/星界军/units/catachan-heavy-weapons-squad.md) |  | 2026-09-14 |
+| unit | [卡舍津突击队](factions/星界军/units/kasrkin.md) |  | 2026-09-14 |
+| unit | [卡迪亚侦察小队](factions/星界军/units/cadian-recon-squad.md) |  | 2026-09-14 |
+| unit | [卡迪亚重型武器小队](factions/星界军/units/cadian-heavy-weapons-squad.md) |  | 2026-09-14 |
+| unit | [卡迪安堡主](factions/星界军/units/cadian-castellan.md) |  | 2026-09-14 |
+| unit | [卡迪安指挥组](factions/星界军/units/cadian-command-squad.md) |  | 2026-09-14 |
+| unit | [卡迪安突击队](factions/星界军/units/cadian-shock-troops.md) |  | 2026-09-14 |
+| unit | [双足飞龙自行火炮](factions/星界军/units/wyvern.md) |  | 2026-09-14 |
+| unit | [地狱之锤](factions/星界军/units/hellhammer.md) |  | 2026-09-14 |
+| unit | [地狱犬喷射车](factions/星界军/units/hellhound.md) |  | 2026-09-14 |
+| unit | [复仇者攻击机](factions/星界军/units/avenger-strike-fighter.md) |  | 2026-09-14 |
+| unit | [大元帅德雷尔](factions/星界军/units/lord-marshal-dreir.md) |  | 2026-09-14 |
+| unit | [太阳元帅雷昂图斯](factions/星界军/units/lord-solar-leontus.md) |  | 2026-09-14 |
+| unit | [奇美拉装甲车](factions/星界军/units/chimera.md) |  | 2026-09-14 |
+| unit | [女武神炮艇](factions/星界军/units/valkyrie.md) |  | 2026-09-14 |
+| unit | [影剑](factions/星界军/units/shadowsword.md) |  | 2026-09-14 |
+| unit | [技术技师机械教士](factions/星界军/units/tech-priest-enginseer.md) |  | 2026-09-14 |
+| unit | [政委](factions/星界军/units/commissar.md) |  | 2026-09-14 |
+| unit | [教廷牧师](factions/星界军/units/ministorum-priest.md) |  | 2026-09-14 |
+| unit | [斯莱·马博](factions/星界军/units/sly-marbo.md) |  | 2026-09-14 |
+| unit | [末日之锤](factions/星界军/units/doomhammer.md) |  | 2026-09-14 |
+| unit | [格雷夫斯政委](factions/星界军/units/commissar-graves.md) |  | 2026-09-14 |
+| unit | [欧格林保镖](factions/星界军/units/ogryn-bodyguard.md) |  | 2026-09-14 |
+| unit | [欧格林小队](factions/星界军/units/ogryn-squad.md) |  | 2026-09-14 |
+| unit | [步行的格雷夫斯政委](factions/星界军/units/commissar-graves-on-foot.md) |  | 2026-09-14 |
+| unit | [死亡直击导弹车](factions/星界军/units/deathstrike.md) |  | 2026-09-14 |
+| unit | [毁灭之剑](factions/星界军/units/banesword.md) |  | 2026-09-14 |
+| unit | [毁灭之锤](factions/星界军/units/banehammer.md) |  | 2026-09-14 |
+| unit | [毒刃](factions/星界军/units/baneblade.md) |  | 2026-09-14 |
+| unit | [灵能导师](factions/星界军/units/primaris-psyker.md) |  | 2026-09-14 |
+| unit | [炮兵小组](factions/星界军/units/artillery-team.md) |  | 2026-09-14 |
+| unit | [牛格林小队](factions/星界军/units/bullgryn-squad.md) |  | 2026-09-14 |
+| unit | [独眼巨人爆破车](factions/星界军/units/cyclops-demolition-vehicle.md) |  | 2026-09-14 |
+| unit | [石化蜥蜴自行火炮](factions/星界军/units/basilisk.md) |  | 2026-09-14 |
+| unit | [神盾防御墙](factions/星界军/units/aegis-defence-line.md) |  | 2026-09-14 |
+| unit | [罗格多恩坦克](factions/星界军/units/rogal-dorn-battle-tank.md) |  | 2026-09-14 |
+| unit | [罗格多恩指挥官](factions/星界军/units/rogal-dorn-commander.md) |  | 2026-09-14 |
+| unit | [莱特林](factions/星界军/units/ratlings.md) |  | 2026-09-14 |
+| unit | [蝎尾狮火箭炮](factions/星界军/units/manticore.md) |  | 2026-09-14 |
+| unit | [装甲哨兵](factions/星界军/units/armoured-sentinels.md) |  | 2026-09-14 |
+| unit | [野战炮兵](factions/星界军/units/field-ordnance-battery.md) |  | 2026-09-14 |
+| unit | [野牛装甲车](factions/星界军/units/taurox.md) |  | 2026-09-14 |
+| unit | [金牛装甲车](factions/星界军/units/taurox-prime.md) |  | 2026-09-14 |
+| unit | [阿提拉蛮骑兵](factions/星界军/units/attilan-rough-riders.md) |  | 2026-09-14 |
+| unit | [风暴之剑](factions/星界军/units/stormsword.md) |  | 2026-09-14 |
+| unit | [风暴兵指挥组](factions/星界军/units/militarum-tempestus-command-squad.md) |  | 2026-09-14 |
+| unit | [风暴天鹰](factions/星界军/units/tempestus-aquilons.md) |  | 2026-09-14 |
+| unit | [风暴忠嗣军小队](factions/星界军/units/tempestus-scions.md) |  | 2026-09-14 |
+| unit | [风暴领主](factions/星界军/units/stormlord.md) |  | 2026-09-14 |
+| unit | [鹫马装甲战车](factions/星界军/units/hippogriff-afv.md) |  | 2026-09-14 |
+| unit | [黎曼鲁斯处决者](factions/星界军/units/leman-russ-executioner.md) |  | 2026-09-14 |
+| unit | [黎曼鲁斯惩罚者](factions/星界军/units/leman-russ-punisher.md) |  | 2026-09-14 |
+| unit | [黎曼鲁斯战斗坦克](factions/星界军/units/leman-russ-battle-tank.md) |  | 2026-09-14 |
+| unit | [黎曼鲁斯指挥官](factions/星界军/units/leman-russ-commander.md) |  | 2026-09-14 |
+| unit | [黎曼鲁斯根除者](factions/星界军/units/leman-russ-eradicator.md) |  | 2026-09-14 |
+| unit | [黎曼鲁斯灭绝者](factions/星界军/units/leman-russ-exterminator.md) |  | 2026-09-14 |
+| unit | [黎曼鲁斯破坏者](factions/星界军/units/leman-russ-demolisher.md) |  | 2026-09-14 |
+| unit | [黎曼鲁斯胜利者](factions/星界军/units/leman-russ-vanquisher.md) |  | 2026-09-14 |
 
 ### 星际战士
 
@@ -1968,6 +1979,7 @@
 | detachment | [The Lost Brethren](factions/星际战士/detachments/the-lost-brethren.md) | 星际战士的分队「The Lost Brethren」，分队规则「崇高战殁」。 | 2026-07-26 |
 | detachment | [Unforgiven Task Force](factions/星际战士/detachments/unforgiven-task-force.md) | 星际战士的分队「Unforgiven Task Force」，分队规则「Grim Resolve」。 | 2026-07-26 |
 | detachment | [Vanguard Spearhead](factions/星际战士/detachments/vanguard-spearhead.md) | 星际战士的分队「Vanguard Spearhead」，分队规则「Shadow Masters」。 | 2026-07-26 |
+| detachment | [Vengeful Hosts](factions/星际战士/detachments/vengeful-hosts.md) | 星际战士的分队「Vengeful Hosts」，分队规则「Imperator Unleashed」。 | 2026-07-26 |
 | detachment | [Vindication Task Force](factions/星际战士/detachments/vindication-task-force.md) | 星际战士的分队「Vindication Task Force」，分队规则「净化！圣化！」。 | 2026-07-26 |
 | detachment | [Wrathful Procession](factions/星际战士/detachments/wrathful-procession.md) | 星际战士的分队「Wrathful Procession」，分队规则「不朽忠诚祷言」。 | 2026-07-26 |
 | detachment | [优雅传承](factions/星际战士/detachments/legacy-of-grace.md) | 星际战士的分队「优雅传承」。 | 2026-07-26 |
@@ -1997,19 +2009,20 @@
 | detachment | [黑暗时代兵器](factions/星际战士/detachments/dark-age-arsenal.md) | 星际战士的分队「黑暗时代兵器」。 | 2026-07-26 |
 | detachment | [黑暗追击队](factions/星际战士/detachments/darkflight-pursuit.md) | 星际战士的分队「黑暗追击队」。 | 2026-07-26 |
 | detachment | [黑矛特遣队](factions/星际战士/detachments/black-spear-task-force.md) | 星际战士的分队「黑矛特遣队」，分队规则「Mission Tactics」。 | 2026-07-26 |
-| enhancement | [A Giant Amongst Giants](factions/星际战士/enhancements/a-giant-amongst-giants.md) | 分数未知、Champions of Fenris 分队。 | 2026-07-26 |
+| enhancement | [A Giant Amongst Giants](factions/星际战士/enhancements/a-giant-amongst-giants.md) | 15 分、Champions of Fenris 分队。 | 2026-07-26 |
 | enhancement | [Adept of the Codex](factions/星际战士/enhancements/adept-of-the-codex.md) | 20 分、Gladius Task Force 分队。 | 2026-07-26 |
 | enhancement | [Adept of the Omnissiah](factions/星际战士/enhancements/adept-of-the-omnissiah.md) | 35 分、Ironstorm Spearhead 分队。 | 2026-07-26 |
 | enhancement | [Architect of War](factions/星际战士/enhancements/architect-of-war.md) | 25 分、Anvil Siege Force 分队。 | 2026-07-26 |
-| enhancement | [Armour of Antoninus](factions/星际战士/enhancements/armour-of-antoninus.md) | 10 分、Blade of Ultramar 分队。 | 2026-07-26 |
+| enhancement | [Armour of Antoninus](factions/星际战士/enhancements/armour-of-antoninus.md) | 20 分、Blade of Ultramar 分队。 | 2026-07-26 |
 | enhancement | [Armoured Commander](factions/星际战士/enhancements/armoured-commander.md) | 25 分、装甲矛尖 分队。 | 2026-07-26 |
-| enhancement | [Artificer Armour](factions/星际战士/enhancements/artificer-armour.md) | 10 分、Gladius Task Force 分队。 | 2026-07-26 |
-| enhancement | [Bellicose Weapon Spirits](factions/星际战士/enhancements/bellicose-weapon-spirits.md) | 分数未知、迅电特遣队 分队。 | 2026-07-26 |
+| enhancement | [Artificer Armour](factions/星际战士/enhancements/artificer-armour.md) | 20 分、Gladius Task Force 分队。 | 2026-07-26 |
+| enhancement | [Avenging Angel](factions/星际战士/enhancements/avenging-angel.md) | 20 分、Vengeful Hosts 分队。 | 2026-07-26 |
+| enhancement | [Bellicose Weapon Spirits](factions/星际战士/enhancements/bellicose-weapon-spirits.md) | 15 分、迅电特遣队 分队。 | 2026-07-26 |
 | enhancement | [Blackwing Shroud](factions/星际战士/enhancements/blackwing-shroud.md) | 25 分、影标之爪 分队。 | 2026-07-26 |
 | enhancement | [Braggart’s Steel](factions/星际战士/enhancements/braggarts-steel.md) | 20 分、Saga of the Bold 分队。 | 2026-07-26 |
 | enhancement | [Calibanite Armaments](factions/星际战士/enhancements/calibanite-armaments.md) | 15 分、莱昂之剑特遣队 分队。 | 2026-07-26 |
 | enhancement | [Castellum Omnivox](factions/星际战士/enhancements/castellum-omnivox.md) | 20 分、陶钢哨兵 分队。 | 2026-07-26 |
-| enhancement | [Celerity](factions/星际战士/enhancements/celerity.md) | 30 分、Librarius Conclave 分队。 | 2026-07-26 |
+| enhancement | [Celerity](factions/星际战士/enhancements/celerity.md) | 35 分、Librarius Conclave 分队。 | 2026-07-26 |
 | enhancement | [Champion of Humanity](factions/星际战士/enhancements/champion-of-humanity.md) | 10 分、Firestorm Assault Force 分队。 | 2026-07-26 |
 | enhancement | [Champion of the Deathwing](factions/星际战士/enhancements/champion-of-the-deathwing.md) | 15 分、Inner Circle Task Force 分队。 | 2026-07-26 |
 | enhancement | [Champion of the Feast](factions/星际战士/enhancements/champion-of-the-feast.md) | 25 分、帝皇之盾 分队。 | 2026-07-26 |
@@ -2030,13 +2043,13 @@
 | enhancement | [Feinting Withdrawal](factions/星际战士/enhancements/feinting-withdrawal.md) | 10 分、Stormlance Task Force 分队。 | 2026-07-26 |
 | enhancement | [Fenrisian Grit](factions/星际战士/enhancements/fenrisian-grit.md) | 15 分、Saga of the Hunter 分队。 | 2026-07-26 |
 | enhancement | [Feral Rage](factions/星际战士/enhancements/feral-rage.md) | 10 分、Saga of the Hunter 分队。 | 2026-07-26 |
-| enhancement | [Fierce Example](factions/星际战士/enhancements/fierce-example.md) | 分数未知、传奇之歌 分队。 | 2026-07-26 |
+| enhancement | [Fierce Example](factions/星际战士/enhancements/fierce-example.md) | 25 分、传奇之歌 分队。 | 2026-07-26 |
 | enhancement | [Fire Discipline](factions/星际战士/enhancements/fire-discipline.md) | 25 分、Gladius Task Force 分队。 | 2026-07-26 |
 | enhancement | [Fleet Commander](factions/星际战士/enhancements/fleet-commander.md) | 15 分、Anvil Siege Force 分队。 | 2026-07-26 |
 | enhancement | [Foes’ Fate](factions/星际战士/enhancements/foes-fate.md) | 15 分、Champions of Fenris 分队。 | 2026-07-26 |
 | enhancement | [Fulgus Magna](factions/星际战士/enhancements/fulgus-magna.md) | 20 分、莱昂之剑特遣队 分队。 | 2026-07-26 |
 | enhancement | [Fury of the Storm](factions/星际战士/enhancements/fury-of-the-storm.md) | 25 分、Stormlance Task Force 分队。 | 2026-07-26 |
-| enhancement | [Fusillade](factions/星际战士/enhancements/fusillade.md) | 35 分、Librarius Conclave 分队。 | 2026-07-26 |
+| enhancement | [Fusillade](factions/星际战士/enhancements/fusillade.md) | 25 分、Librarius Conclave 分队。 | 2026-07-26 |
 | enhancement | [Ghostweave Cloak](factions/星际战士/enhancements/ghostweave-cloak.md) | 15 分、Vanguard Spearhead 分队。 | 2026-07-26 |
 | enhancement | [Helm of the Beastslayer](factions/星际战士/enhancements/helm-of-the-beastslayer.md) | 15 分、Saga of the Beastslayer 分队。 | 2026-07-26 |
 | enhancement | [Hero of the Chapter](factions/星际战士/enhancements/hero-of-the-chapter.md) | 20 分、堡垒特遣队 分队。 | 2026-07-26 |
@@ -2058,18 +2071,19 @@
 | enhancement | [Master of Manoeuvre](factions/星际战士/enhancements/master-of-manoeuvre.md) | 15 分、Company of Hunters 分队。 | 2026-07-26 |
 | enhancement | [Master-crafted Weapon](factions/星际战士/enhancements/master-crafted-weapon.md) | 10 分、Company of Hunters 分队。 | 2026-07-26 |
 | enhancement | [Mounted Strategist](factions/星际战士/enhancements/mounted-strategist.md) | 30 分、Company of Hunters 分队。 | 2026-07-26 |
-| enhancement | [Nightforged Battery](factions/星际战士/enhancements/nightforged-battery.md) | 分数未知、黑暗追击队 分队。 | 2026-07-26 |
+| enhancement | [Nightforged Battery](factions/星际战士/enhancements/nightforged-battery.md) | 15 分、黑暗追击队 分队。 | 2026-07-26 |
 | enhancement | [Oath of Macragge](factions/星际战士/enhancements/oath-of-macragge.md) | 15 分、Blade of Ultramar 分队。 | 2026-07-26 |
-| enhancement | [Obfuscation](factions/星际战士/enhancements/obfuscation.md) | 20 分、Librarius Conclave 分队。 | 2026-07-26 |
+| enhancement | [Obfuscation](factions/星际战士/enhancements/obfuscation.md) | 25 分、Librarius Conclave 分队。 | 2026-07-26 |
 | enhancement | [Omni-Structural Auspex](factions/星际战士/enhancements/omni-structural-auspex.md) | 0 分、Pilum Strike Team 分队。 | 2026-07-26 |
 | enhancement | [Orbital Uplink Reliquary](factions/星际战士/enhancements/orbital-uplink-reliquary.md) | 25 分、轨道突袭部队 分队。 | 2026-07-26 |
+| enhancement | [Orksbane](factions/星际战士/enhancements/orksbane.md) | 20 分、Vengeful Hosts 分队。 | 2026-07-26 |
 | enhancement | [Pennant of Remembrance](factions/星际战士/enhancements/pennant-of-remembrance.md) | 10 分、Unforgiven Task Force 分队。 | 2026-07-26 |
 | enhancement | [Portents of Wisdom](factions/星际战士/enhancements/portents-of-wisdom.md) | 15 分、Stormlance Task Force 分队。 | 2026-07-26 |
-| enhancement | [Prescience](factions/星际战士/enhancements/prescience.md) | 25 分、Librarius Conclave 分队。 | 2026-07-26 |
-| enhancement | [Preyslayer](factions/星际战士/enhancements/preyslayer.md) | 分数未知、Champions of Fenris 分队。 | 2026-07-26 |
+| enhancement | [Prescience](factions/星际战士/enhancements/prescience.md) | 20 分、Librarius Conclave 分队。 | 2026-07-26 |
+| enhancement | [Preyslayer](factions/星际战士/enhancements/preyslayer.md) | 15 分、Champions of Fenris 分队。 | 2026-07-26 |
 | enhancement | [Pyrebrand](factions/星际战士/enhancements/pyrebrand.md) | 25 分、Wrathful Procession 分队。 | 2026-07-26 |
-| enhancement | [Raptorial Cogitator Core](factions/星际战士/enhancements/raptorial-cogitator-core.md) | 分数未知、迅电特遣队 分队。 | 2026-07-26 |
-| enhancement | [Recon Hunter](factions/星际战士/enhancements/recon-hunter.md) | 20 分、Company of Hunters 分队。 | 2026-07-26 |
+| enhancement | [Raptorial Cogitator Core](factions/星际战士/enhancements/raptorial-cogitator-core.md) | 15 分、迅电特遣队 分队。 | 2026-07-26 |
+| enhancement | [Recon Hunter](factions/星际战士/enhancements/recon-hunter.md) | 30 分、Company of Hunters 分队。 | 2026-07-26 |
 | enhancement | [Resolute](factions/星际战士/enhancements/resolute.md) | 0 分、Terminator Assault 分队。 | 2026-07-26 |
 | enhancement | [Rites of War](factions/星际战士/enhancements/rites-of-war.md) | 10 分、1st Company Task Force 分队。 | 2026-07-26 |
 | enhancement | [Sacred Rage](factions/星际战士/enhancements/sacred-rage.md) | 30 分、Wrathful Procession 分队。 | 2026-07-26 |
@@ -2085,7 +2099,7 @@
 | enhancement | [Speartip of the Chapter](factions/星际战士/enhancements/speartip-of-the-chapter.md) | 0 分、Shield of the Void 分队。 | 2026-07-26 |
 | enhancement | [Spiritus Ferrum](factions/星际战士/enhancements/spiritus-ferrum.md) | 25 分、艾沃尼之锤 分队。 | 2026-07-26 |
 | enhancement | [Spy-skull Data Link](factions/星际战士/enhancements/spy-skull-data-link.md) | 15 分、陶钢哨兵 分队。 | 2026-07-26 |
-| enhancement | [Stalwart Champion](factions/星际战士/enhancements/stalwart-champion.md) | 25 分、莱昂之剑特遣队 分队。 | 2026-07-26 |
+| enhancement | [Stalwart Champion](factions/星际战士/enhancements/stalwart-champion.md) | 15 分、莱昂之剑特遣队 分队。 | 2026-07-26 |
 | enhancement | [Steel Font](factions/星际战士/enhancements/steel-font.md) | 15 分、艾沃尼之锤 分队。 | 2026-07-26 |
 | enhancement | [Stoic Defender](factions/星际战士/enhancements/stoic-defender.md) | 15 分、Anvil Siege Force 分队。 | 2026-07-26 |
 | enhancement | [Stormseers’ Wisdom](factions/星际战士/enhancements/stormseers-wisdom.md) | 15 分、Spearpoint Task Force 分队。 | 2026-07-26 |
@@ -2094,12 +2108,13 @@
 | enhancement | [Swift Hunter](factions/星际战士/enhancements/swift-hunter.md) | 20 分、Saga of the Hunter 分队。 | 2026-07-26 |
 | enhancement | [Taramond’s Censer](factions/星际战士/enhancements/taramonds-censer.md) | 15 分、Wrathful Procession 分队。 | 2026-07-26 |
 | enhancement | [Target Augury Web](factions/星际战士/enhancements/target-augury-web.md) | 30 分、Ironstorm Spearhead 分队。 | 2026-07-26 |
+| enhancement | [Temporal Corridor](factions/星际战士/enhancements/temporal-corridor.md) | 25 分、Librarius Conclave 分队。 | 2026-07-26 |
 | enhancement | [The Blade Driven Deep](factions/星际战士/enhancements/the-blade-driven-deep.md) | 25 分、Vanguard Spearhead 分队。 | 2026-07-26 |
-| enhancement | [The Flesh is Weak](factions/星际战士/enhancements/the-flesh-is-weak.md) | 10 分、Ironstorm Spearhead 分队。 | 2026-07-26 |
+| enhancement | [The Flesh is Weak](factions/星际战士/enhancements/the-flesh-is-weak.md) | 20 分、Ironstorm Spearhead 分队。 | 2026-07-26 |
 | enhancement | [The Honour Vehement](factions/星际战士/enhancements/the-honour-vehement.md) | 15 分、Gladius Task Force 分队。 | 2026-07-26 |
 | enhancement | [The Imperium’s Sword](factions/星际战士/enhancements/the-imperiums-sword.md) | 25 分、1st Company Task Force 分队。 | 2026-07-26 |
-| enhancement | [Thirst for Glory](factions/星际战士/enhancements/thirst-for-glory.md) | 分数未知、传奇之歌 分队。 | 2026-07-26 |
-| enhancement | [Thundercowl Turbines](factions/星际战士/enhancements/thundercowl-turbines.md) | 分数未知、黑暗追击队 分队。 | 2026-07-26 |
+| enhancement | [Thirst for Glory](factions/星际战士/enhancements/thirst-for-glory.md) | 15 分、传奇之歌 分队。 | 2026-07-26 |
+| enhancement | [Thundercowl Turbines](factions/星际战士/enhancements/thundercowl-turbines.md) | 15 分、黑暗追击队 分队。 | 2026-07-26 |
 | enhancement | [Thunderwolf’s Fortitude](factions/星际战士/enhancements/thunderwolfs-fortitude.md) | 25 分、Saga of the Bold 分队。 | 2026-07-26 |
 | enhancement | [Tolorek Data Djinn](factions/星际战士/enhancements/tolorek-data-djinn.md) | 0 分、Shield of the Void 分队。 | 2026-07-26 |
 | enhancement | [Umbral Raptor](factions/星际战士/enhancements/umbral-raptor.md) | 15 分、影标之爪 分队。 | 2026-07-26 |
@@ -2109,18 +2124,18 @@
 | enhancement | [Wolf Master](factions/星际战士/enhancements/wolf-master.md) | 5 分、Saga of the Hunter 分队。 | 2026-07-26 |
 | enhancement | [Wolf-touched](factions/星际战士/enhancements/wolf-touched.md) | 15 分、Saga of the Beastslayer 分队。 | 2026-07-26 |
 | enhancement | [Wolves’ Wisdom](factions/星际战士/enhancements/wolves-wisdom.md) | 30 分、Champions of Fenris 分队。 | 2026-07-26 |
-| enhancement | [不可逃避的审讯](factions/星际战士/enhancements/inescapable-interrogation.md) | 分数未知、审讯者密会 分队。 | 2026-07-26 |
+| enhancement | [不可逃避的审讯](factions/星际战士/enhancements/inescapable-interrogation.md) | 20 分、审讯者密会 分队。 | 2026-07-26 |
 | enhancement | [不安幻视](factions/星际战士/enhancements/troubling-visions.md) | 15 分、天使继承者 分队。 | 2026-07-26 |
 | enhancement | [不屈勇士](factions/星际战士/enhancements/indomitable-champion.md) | 20 分、帝皇之盾 分队。 | 2026-07-26 |
 | enhancement | [不屈荣誉](factions/星际战士/enhancements/honour-indefatigable.md) | 25 分、陶钢哨兵 分队。 | 2026-07-26 |
-| enhancement | [传奇叙述者](factions/星际战士/enhancements/weaver-of-sagas.md) | 分数未知、狼牙堡老兵 分队。 | 2026-07-26 |
+| enhancement | [传奇叙述者](factions/星际战士/enhancements/weaver-of-sagas.md) | 15 分、狼牙堡老兵 分队。 | 2026-07-26 |
 | enhancement | [低语冠冕](factions/星际战士/enhancements/coronal-susurrant.md) | 30 分、影标之爪 分队。 | 2026-07-26 |
 | enhancement | [先锋矛尖](factions/星际战士/enhancements/tip-of-the-spear.md) | 40 分、装甲矛尖 分队。 | 2026-07-26 |
 | enhancement | [光复之印](factions/星际战士/enhancements/seals-of-reconquest.md) | 20 分、光复派遣军 分队。 | 2026-07-26 |
 | enhancement | [勇气之刃](factions/星际战士/enhancements/blades-of-valour.md) | 15 分、堡垒特遣队 分队。 | 2026-07-26 |
 | enhancement | [占卜伺服主机](factions/星际战士/enhancements/augury-servo-host.md) | 15 分、Godhammer Assault Force 分队。 | 2026-07-26 |
 | enhancement | [原体之速](factions/星际战士/enhancements/speed-of-the-primarch.md) | 25 分、Liberator Assault Group 分队。 | 2026-07-26 |
-| enhancement | [叛徒舰桥之上](factions/星际战士/enhancements/on-the-archtraitors-bridge.md) | 分数未知、迷失者的怒火 分队。 | 2026-07-26 |
+| enhancement | [叛徒舰桥之上](factions/星际战士/enhancements/on-the-archtraitors-bridge.md) | 20 分、迷失者的怒火 分队。 | 2026-07-26 |
 | enhancement | [命定牺牲](factions/星际战士/enhancements/ordained-sacrifice.md) | 25 分、天使继承者 分队。 | 2026-07-26 |
 | enhancement | [嚎叫狼口](factions/星际战士/enhancements/howlmaw.md) | 15 分、头狼之歌 分队。 | 2026-07-26 |
 | enhancement | [圣吉列斯的优雅](factions/星际战士/enhancements/sanguinius-grace.md) | 20 分、The Lost Brethren 分队。 | 2026-07-26 |
@@ -2129,48 +2144,48 @@
 | enhancement | [坚毅机魂](factions/星际战士/enhancements/redoubtable-machine-spirit.md) | 25 分、猎头特遣队 分队。 | 2026-07-26 |
 | enhancement | [复仇化身（光环）](factions/星际战士/enhancements/avenging-avatar-aura.md) | 10 分、光复派遣军 分队。 | 2026-07-26 |
 | enhancement | [复仇猛攻](factions/星际战士/enhancements/vengeful-onslaught.md) | 10 分、The Lost Brethren 分队。 | 2026-07-26 |
-| enhancement | [多面处刑者](factions/星际战士/enhancements/adaptable-executioner.md) | 分数未知、Wrathful Procession 分队。 | 2026-07-26 |
+| enhancement | [多面处刑者](factions/星际战士/enhancements/adaptable-executioner.md) | 20 分、Wrathful Procession 分队。 | 2026-07-26 |
 | enhancement | [大天使碎片](factions/星际战士/enhancements/archangels-shard.md) | 15 分、The Angelic Host 分队。 | 2026-07-26 |
 | enhancement | [天使信标](factions/星际战士/enhancements/beacon-angelis.md) | 25 分、黑矛特遣队 分队。 | 2026-07-26 |
-| enhancement | [天使光环](factions/星际战士/enhancements/aureole-of-the-angel.md) | 分数未知、优雅传承 分队。 | 2026-07-26 |
+| enhancement | [天使光环](factions/星际战士/enhancements/aureole-of-the-angel.md) | 20 分、优雅传承 分队。 | 2026-07-26 |
 | enhancement | [天使圣旗](factions/星际战士/enhancements/icon-of-the-angel.md) | 20 分、Liberator Assault Group 分队。 | 2026-07-26 |
-| enhancement | [天使处刑者](factions/星际战士/enhancements/angelic-executioner.md) | 分数未知、血色矛头 分队。 | 2026-07-26 |
+| enhancement | [天使处刑者](factions/星际战士/enhancements/angelic-executioner.md) | 25 分、血色矛头 分队。 | 2026-07-26 |
 | enhancement | [天使獠牙](factions/星际战士/enhancements/angels-fang.md) | 25 分、怒咒猛攻 分队。 | 2026-07-26 |
 | enhancement | [奥瑟斯之匙](factions/星际战士/enhancements/osseus-key.md) | 15 分、黑矛特遣队 分队。 | 2026-07-26 |
 | enhancement | [守护圣环](factions/星际战士/enhancements/consecrating-aura.md) | 25 分、Vindication Task Force 分队。 | 2026-07-26 |
 | enhancement | [宏声通讯器](factions/星际战士/enhancements/bombast-omnivox.md) | 15 分、堡垒特遣队 分队。 | 2026-07-26 |
 | enhancement | [帝皇圣盾宝珠](factions/星际战士/enhancements/orb-of-the-emperors-aegis.md) | 10 分、Vindication Task Force 分队。 | 2026-07-26 |
-| enhancement | [帷幕力场](factions/星际战士/enhancements/shroud-field.md) | 分数未知、行动资源 分队。 | 2026-07-26 |
+| enhancement | [帷幕力场](factions/星际战士/enhancements/shroud-field.md) | 20 分、行动资源 分队。 | 2026-07-26 |
 | enhancement | [异星大典](factions/星际战士/enhancements/the-tome-of-ectoclades.md) | 30 分、黑矛特遣队 分队。 | 2026-07-26 |
 | enhancement | [怒火楷模](factions/星际战士/enhancements/paragon-of-fury.md) | 25 分、Godhammer Assault Force 分队。 | 2026-07-26 |
-| enhancement | [怒火祝福](factions/星际战士/enhancements/benediction-of-fury.md) | 10 分、Wrathful Procession 分队。 | 2026-07-26 |
-| enhancement | [憎恶之影](factions/星际战士/enhancements/shadow-of-abomination.md) | 分数未知、血色矛头 分队。 | 2026-07-26 |
+| enhancement | [怒火祝福](factions/星际战士/enhancements/benediction-of-fury.md) | 15 分、Wrathful Procession 分队。 | 2026-07-26 |
+| enhancement | [憎恶之影](factions/星际战士/enhancements/shadow-of-abomination.md) | 25 分、血色矛头 分队。 | 2026-07-26 |
 | enhancement | [战争工匠](factions/星际战士/enhancements/artisan-of-war.md) | 20 分、The Angelic Host 分队。 | 2026-07-26 |
 | enhancement | [战歌颂唱者](factions/星际战士/enhancements/battle-psalm-precentor.md) | 10 分、Godhammer Assault Force 分队。 | 2026-07-26 |
 | enhancement | [战火淬炼（光环）](factions/星际战士/enhancements/tempered-in-battle-aura.md) | 10 分、巨石之怒 分队。 | 2026-07-26 |
-| enhancement | [指引圣兆](factions/星际战士/enhancements/guiding-omens.md) | 分数未知、The Living Miracle 分队。 | 2026-07-26 |
-| enhancement | [无尽狂热](factions/星际战士/enhancements/limitless-zeal.md) | 分数未知、审讯者密会 分队。 | 2026-07-26 |
+| enhancement | [指引圣兆](factions/星际战士/enhancements/guiding-omens.md) | 15 分、The Living Miracle 分队。 | 2026-07-26 |
+| enhancement | [无尽狂热](factions/星际战士/enhancements/limitless-zeal.md) | 10 分、审讯者密会 分队。 | 2026-07-26 |
 | enhancement | [无情声讨](factions/星际战士/enhancements/merciless-denunciation.md) | 25 分、Companions of Vehemence 分队。 | 2026-07-26 |
 | enhancement | [枪炮荣誉](factions/星际战士/enhancements/gunnery-honours.md) | 20 分、猎头特遣队 分队。 | 2026-07-26 |
 | enhancement | [格里姆纳尔的印记](factions/星际战士/enhancements/grimnars-mark.md) | 20 分、头狼之歌 分队。 | 2026-07-26 |
 | enhancement | [正义先锋](factions/星际战士/enhancements/zealous-vanguard.md) | 20 分、Companions of Vehemence 分队。 | 2026-07-26 |
 | enhancement | [死亡面具](factions/星际战士/enhancements/visage-of-death.md) | 15 分、The Angelic Host 分队。 | 2026-07-26 |
-| enhancement | [永恒热情祈求](factions/星际战士/enhancements/entreaty-of-perpetual-ardour.md) | 分数未知、黑暗时代兵器 分队。 | 2026-07-26 |
+| enhancement | [永恒热情祈求](factions/星际战士/enhancements/entreaty-of-perpetual-ardour.md) | 15 分、黑暗时代兵器 分队。 | 2026-07-26 |
 | enhancement | [永恒远征圣旗](factions/星际战士/enhancements/imperialis-of-the-eternal-crusade.md) | 15 分、Vindication Task Force 分队。 | 2026-07-26 |
-| enhancement | [沸血术](factions/星际战士/enhancements/blood-boil.md) | 分数未知、优雅传承 分队。 | 2026-07-26 |
+| enhancement | [沸血术](factions/星际战士/enhancements/blood-boil.md) | 10 分、优雅传承 分队。 | 2026-07-26 |
 | enhancement | [深红圣物](factions/星际战士/enhancements/carmine-reliquary.md) | 30 分、怒咒猛攻 分队。 | 2026-07-26 |
 | enhancement | [火力协调器](factions/星际战士/enhancements/firestorm-coordinators.md) | 20 分、猎头特遣队 分队。 | 2026-07-26 |
 | enhancement | [炽燃圣印](factions/星际战士/enhancements/blazing-icon.md) | 20 分、天使继承者 分队。 | 2026-07-26 |
 | enhancement | [炽燃怒火](factions/星际战士/enhancements/incendiary-animus.md) | 25 分、Companions of Vehemence 分队。 | 2026-07-26 |
-| enhancement | [热忱模范](factions/星际战士/enhancements/fervent-exemplars.md) | 分数未知、元帅亲军 分队。 | 2026-07-26 |
+| enhancement | [热忱模范](factions/星际战士/enhancements/fervent-exemplars.md) | 10 分、元帅亲军 分队。 | 2026-07-26 |
 | enhancement | [焚灭者](factions/星际战士/enhancements/immolator.md) | 10 分、铸造之父的探寻者 分队。 | 2026-07-26 |
 | enhancement | [燃怒战士](factions/星际战士/enhancements/rage-fuelled-warrior.md) | 35 分、Liberator Assault Group 分队。 | 2026-07-26 |
 | enhancement | [百战精工](factions/星际战士/enhancements/war-tempered-artifice-firestorm-assault-force.md) | 25 分、Firestorm Assault Force 分队。 | 2026-07-26 |
 | enhancement | [百战精工](factions/星际战士/enhancements/war-tempered-artifice-forgefathers-seekers.md) | 25 分、铸造之父的探寻者 分队。 | 2026-07-26 |
-| enhancement | [直觉性拦截](factions/星际战士/enhancements/instinctive-interception.md) | 分数未知、迷失者的怒火 分队。 | 2026-07-26 |
+| enhancement | [直觉性拦截](factions/星际战士/enhancements/instinctive-interception.md) | 10 分、迷失者的怒火 分队。 | 2026-07-26 |
 | enhancement | [短暂预知](factions/星际战士/enhancements/prescient-flash.md) | 20 分、天使继承者 分队。 | 2026-07-26 |
 | enhancement | [秘密窃取者](factions/星际战士/enhancements/thief-of-secrets.md) | 25 分、黑矛特遣队 分队。 | 2026-07-26 |
-| enhancement | [稳定请求](factions/星际战士/enhancements/petition-of-stability.md) | 分数未知、黑暗时代兵器 分队。 | 2026-07-26 |
+| enhancement | [稳定请求](factions/星际战士/enhancements/petition-of-stability.md) | 15 分、黑暗时代兵器 分队。 | 2026-07-26 |
 | enhancement | [精金斗篷](factions/星际战士/enhancements/adamantine-mantle-boarding-strike.md) | 0 分、Boarding Strike 分队。 | 2026-07-26 |
 | enhancement | [精金斗篷](factions/星际战士/enhancements/adamantine-mantle-firestorm-assault-force.md) | 20 分、Firestorm Assault Force 分队。 | 2026-07-26 |
 | enhancement | [精金斗篷](factions/星际战士/enhancements/adamantine-mantle-forgefathers-seekers.md) | 20 分、铸造之父的探寻者 分队。 | 2026-07-26 |
@@ -2178,7 +2193,7 @@
 | enhancement | [老兵先锋](factions/星际战士/enhancements/veteran-of-the-vanguard.md) | 20 分、轨道突袭部队 分队。 | 2026-07-26 |
 | enhancement | [荣誉卫士](factions/星际战士/enhancements/warden-of-honour.md) | 20 分、Vindication Task Force 分队。 | 2026-07-26 |
 | enhancement | [血色饥渴大师](factions/星际战士/enhancements/master-of-the-red-thirst.md) | 25 分、怒咒猛攻 分队。 | 2026-07-26 |
-| enhancement | [西吉斯蒙德的继承者](factions/星际战士/enhancements/inheritors-of-sigismund.md) | 分数未知、元帅亲军 分队。 | 2026-07-26 |
+| enhancement | [西吉斯蒙德的继承者](factions/星际战士/enhancements/inheritors-of-sigismund.md) | 15 分、元帅亲军 分队。 | 2026-07-26 |
 | enhancement | [誓言典范](factions/星际战士/enhancements/oathbound-exemplar.md) | 15 分、Companions of Vehemence 分队。 | 2026-07-26 |
 | enhancement | [诛杀战帅！](factions/星际战士/enhancements/to-slay-the-warmaster.md) | 15 分、The Lost Brethren 分队。 | 2026-07-26 |
 | enhancement | [远古神兵](factions/星际战士/enhancements/ancient-weapons.md) | 25 分、巨石之怒 分队。 | 2026-07-26 |
@@ -2189,8 +2204,8 @@
 | enhancement | [阿斯塔特坦克王牌（光环）](factions/星际战士/enhancements/astartes-tank-ace-aura.md) | 40 分、猎头特遣队 分队。 | 2026-07-26 |
 | enhancement | [预言之赐](factions/星际战士/enhancements/gift-of-foresight.md) | 15 分、Liberator Assault Group 分队。 | 2026-07-26 |
 | enhancement | [鲜血碎片](factions/星际战士/enhancements/blood-shard.md) | 25 分、The Lost Brethren 分队。 | 2026-07-26 |
-| enhancement | [鹰眼猎手](factions/星际战士/enhancements/eye-of-the-hunter.md) | 分数未知、狼牙堡老兵 分队。 | 2026-07-26 |
-| enhancement | [黑暗中的死亡](factions/星际战士/enhancements/death-in-the-dark.md) | 分数未知、行动资源 分队。 | 2026-07-26 |
+| enhancement | [鹰眼猎手](factions/星际战士/enhancements/eye-of-the-hunter.md) | 20 分、狼牙堡老兵 分队。 | 2026-07-26 |
+| enhancement | [黑暗中的死亡](factions/星际战士/enhancements/death-in-the-dark.md) | 15 分、行动资源 分队。 | 2026-07-26 |
 | stratagem | [A DEADLY PRIZE](factions/星际战士/stratagems/a-deadly-prize.md) | 1 CP、Command phase、Vanguard Spearhead 分队、Wargear Stratagem。 | 2026-07-26 |
 | stratagem | [ADAPTIVE PURGE](factions/星际战士/stratagems/adaptive-purge.md) | 1 CP、Shooting phase、Shield of the Void 分队、Battle Tactic Stratagem。 | 2026-07-26 |
 | stratagem | [ADAPTIVE STRATEGY](factions/星际战士/stratagems/adaptive-strategy.md) | 1 CP、Command phase、Gladius Task Force 分队、Strategic Ploy Stratagem。 | 2026-07-26 |
@@ -2249,12 +2264,14 @@
 | stratagem | [IRON ARM](factions/星际战士/stratagems/iron-arm.md) | 1 CP、Fight phase、Librarius Conclave 分队、Strategic Ploy Stratagem。 | 2026-07-26 |
 | stratagem | [KILL SHOT](factions/星际战士/stratagems/kill-shot.md) | 1 CP、Shooting phase、猎头特遣队 分队、Battle Tactic Stratagem。 | 2026-07-26 |
 | stratagem | [KNIFE WORK](factions/星际战士/stratagems/knife-work.md) | 1 CP、Fight phase、Pilum Strike Team 分队、Battle Tactic Stratagem。 | 2026-07-26 |
+| stratagem | [KNOW NO FEAR](factions/星际战士/stratagems/know-no-fear.md) | 1 CP、Command phase、Vengeful Hosts 分队。 | 2026-07-26 |
 | stratagem | [LEGENDARY FORTITUDE](factions/星际战士/stratagems/legendary-fortitude.md) | 1 CP、Charge phase、1st Company Task Force 分队、Battle Tactic Stratagem。 | 2026-07-26 |
 | stratagem | [LEONINE AGGRESSION](factions/星际战士/stratagems/leonine-aggression.md) | 1 CP、Charge phase、巨石之怒 分队、Strategic Ploy Stratagem。 | 2026-07-26 |
 | stratagem | [MARKED FOR DESTRUCTION](factions/星际战士/stratagems/marked-for-destruction.md) | 1 CP、Shooting phase、Saga of the Hunter 分队、Battle Tactic Stratagem。 | 2026-07-26 |
 | stratagem | [MARTIAL MASTERY](factions/星际战士/stratagems/martial-mastery.md) | 1 CP、Fight phase、Inner Circle Task Force 分队、Epic Deed Stratagem。 | 2026-07-26 |
 | stratagem | [MASTER MARKSMEN](factions/星际战士/stratagems/master-marksmen.md) | 1 CP、Shooting phase、Pilum Strike Team 分队、Battle Tactic Stratagem。 | 2026-07-26 |
 | stratagem | [MERCY IS WEAKNESS](factions/星际战士/stratagems/mercy-is-weakness.md) | 2 CP、Shooting or Fight phase、Ironstorm Spearhead 分队、Battle Tactic Stratagem。 | 2026-07-26 |
+| stratagem | [METEORIC ONSLAUGHT](factions/星际战士/stratagems/meteoric-onslaught.md) | 1 CP、Fight phase、Vengeful Hosts 分队。 | 2026-07-26 |
 | stratagem | [MOBILE LETHALITY](factions/星际战士/stratagems/mobile-lethality.md) | 1 CP、Movement phase、Spearpoint Task Force 分队、Battle Tactic Stratagem。 | 2026-07-26 |
 | stratagem | [NO THREAT TOO GREAT](factions/星际战士/stratagems/no-threat-too-great.md) | 2 CP、Shooting phase、Anvil Siege Force 分队、Battle Tactic Stratagem。 | 2026-07-26 |
 | stratagem | [NOT ONE BACKWARDS STEP](factions/星际战士/stratagems/not-one-backwards-step.md) | 1 CP、Command phase、Anvil Siege Force 分队、Strategic Ploy Stratagem。 | 2026-07-26 |
@@ -2269,6 +2286,7 @@
 | stratagem | [PRACTICAL TACTICS](factions/星际战士/stratagems/practical-tactics.md) | 1 CP、Movement phase、Blade of Ultramar 分队、Strategic Ploy Stratagem。 | 2026-07-26 |
 | stratagem | [PRESCIENT PRECISION](factions/星际战士/stratagems/prescient-precision.md) | 1 CP、Shooting phase、Librarius Conclave 分队、Strategic Ploy Stratagem。 | 2026-07-26 |
 | stratagem | [PREYTAKER’S EYE](factions/星际战士/stratagems/preytakers-eye.md) | 1 CP、Shooting or Fight phase、Champions of Fenris 分队、Strategic Ploy Stratagem。 | 2026-07-26 |
+| stratagem | [PURGE BY SECTORS](factions/星际战士/stratagems/purge-by-sectors.md) | 1 CP、Fight phase、Vengeful Hosts 分队。 | 2026-07-26 |
 | stratagem | [RAPID REAPPRAISAL](factions/星际战士/stratagems/rapid-reappraisal.md) | 1 CP、Fight phase、Company of Hunters 分队、Battle Tactic Stratagem。 | 2026-07-26 |
 | stratagem | [RAPID TAKEOVER](factions/星际战士/stratagems/rapid-takeover.md) | 1 CP、Movement phase、Shield of the Void 分队、Strategic Ploy Stratagem。 | 2026-07-26 |
 | stratagem | [RAPTORIAL VIGILANCE](factions/星际战士/stratagems/raptorial-vigilance.md) | 1 CP、Movement phase、影标之爪 分队、Battle Tactic Stratagem。 | 2026-07-26 |
@@ -2484,304 +2502,305 @@
 | stratagem | [麻木狂怒](factions/星际战士/stratagems/insensate-rampage.md) | 1 CP、Shooting or Fight phase、怒咒猛攻 分队、Stratagem。 | 2026-07-26 |
 | stratagem | [黑暗纪元圣物](factions/星际战士/stratagems/relics-of-the-dark-age.md) | 1 CP、Shooting phase、巨石之怒 分队、Strategic Ploy Stratagem。 | 2026-07-26 |
 | stratagem | [龙火子弹](factions/星际战士/stratagems/dragonfire-rounds.md) | 1 CP、Shooting phase、黑矛特遣队 分队、Wargear Stratagem。 | 2026-07-26 |
-| unit | [ATV 突击车](factions/星际战士/units/invader-atv.md) |  | 2026-07-23 |
-| unit | [Ancient on Bike](factions/星际战士/units/ancient-on-bike.md) |  | 2026-07-23 |
-| unit | [Apothecary on Bike](factions/星际战士/units/apothecary-on-bike.md) |  | 2026-07-23 |
-| unit | [Assault Squad](factions/星际战士/units/assault-squad.md) |  | 2026-07-23 |
-| unit | [Assault Squad with Jump Packs](factions/星际战士/units/assault-squad-with-jump-packs.md) |  | 2026-07-23 |
-| unit | [Astartes Servitors](factions/星际战士/units/astartes-servitors.md) |  | 2026-07-23 |
-| unit | [Attack Bike Squad](factions/星际战士/units/attack-bike-squad.md) |  | 2026-07-23 |
-| unit | [Bike Squad](factions/星际战士/units/bike-squad.md) |  | 2026-07-23 |
-| unit | [Brother Corbulo](factions/星际战士/units/brother-corbulo.md) |  | 2026-07-23 |
-| unit | [Caestus Assault Ram](factions/星际战士/units/caestus-assault-ram.md) |  | 2026-07-23 |
-| unit | [Canis Wolfborn](factions/星际战士/units/canis-wolfborn.md) |  | 2026-07-23 |
-| unit | [Captain Tycho](factions/星际战士/units/captain-tycho.md) |  | 2026-07-23 |
-| unit | [Captain on Bike](factions/星际战士/units/captain-on-bike.md) |  | 2026-07-23 |
-| unit | [Carab Culln The Risen](factions/星际战士/units/carab-culln-the-risen.md) |  | 2026-07-23 |
-| unit | [Cerberus](factions/星际战士/units/cerberus.md) |  | 2026-07-23 |
-| unit | [Chaplain Cassius](factions/星际战士/units/chaplain-cassius.md) |  | 2026-07-23 |
-| unit | [Chaplain Kastiel](factions/星际战士/units/chaplain-kastiel.md) |  | 2026-07-23 |
-| unit | [Chaplain Venerable Dreadnought](factions/星际战士/units/chaplain-venerable-dreadnought.md) |  | 2026-07-23 |
-| unit | [Command Squad](factions/星际战士/units/command-squad.md) |  | 2026-07-23 |
-| unit | [Company Champion On Bike](factions/星际战士/units/company-champion-on-bike.md) |  | 2026-07-23 |
-| unit | [Company Veterans On Bikes](factions/星际战士/units/company-veterans-on-bikes.md) |  | 2026-07-23 |
-| unit | [Crusader Squad (Legendary)](factions/星际战士/units/crusader-squad-legendary.md) |  | 2026-07-23 |
-| unit | [Cyberwolf](factions/星际战士/units/cyberwolf.md) |  | 2026-07-23 |
-| unit | [Death Company Marines with Boltguns](factions/星际战士/units/death-company-marines-with-boltguns.md) |  | 2026-07-23 |
-| unit | [Death Company Marines with Boltguns and Jump Packs](factions/星际战士/units/death-company-marines-with-boltguns-and-jump-packs.md) |  | 2026-07-23 |
-| unit | [Deathstorm Drop Pod](factions/星际战士/units/deathstorm-drop-pod.md) |  | 2026-07-23 |
-| unit | [Deathwing Strikemaster](factions/星际战士/units/deathwing-strikemaster.md) |  | 2026-07-23 |
-| unit | [Deimos Predator](factions/星际战士/units/deimos-predator.md) |  | 2026-07-23 |
-| unit | [Deredeo Dreadnought](factions/星际战士/units/deredeo-dreadnought.md) |  | 2026-07-23 |
-| unit | [Dreadnought Drop Pod](factions/星际战士/units/dreadnought-drop-pod.md) |  | 2026-07-23 |
-| unit | [Example Wargear](factions/星际战士/units/example-wargear.md) |  | 2026-07-23 |
-| unit | [Falchion](factions/星际战士/units/falchion.md) |  | 2026-07-23 |
-| unit | [Fellblade](factions/星际战士/units/fellblade.md) |  | 2026-07-23 |
-| unit | [Ferren Areios](factions/星际战士/units/ferren-areios.md) |  | 2026-07-23 |
-| unit | [Fire Raptor Gunship](factions/星际战士/units/fire-raptor-gunship.md) |  | 2026-07-23 |
-| unit | [Gabriel Seth](factions/星际战士/units/gabriel-seth.md) |  | 2026-07-23 |
-| unit | [Harald Deathwolf](factions/星际战士/units/harald-deathwolf.md) |  | 2026-07-23 |
-| unit | [Hounds Of Morkai](factions/星际战士/units/hounds-of-morkai.md) |  | 2026-07-23 |
-| unit | [Hunter](factions/星际战士/units/hunter.md) |  | 2026-07-23 |
-| unit | [Imperial Space Marine](factions/星际战士/units/imperial-space-marine.md) |  | 2026-07-23 |
-| unit | [Iron Priest On Thunderwolf](factions/星际战士/units/iron-priest-on-thunderwolf.md) |  | 2026-07-23 |
-| unit | [Ironclad Dreadnought](factions/星际战士/units/ironclad-dreadnought.md) |  | 2026-07-23 |
-| unit | [Javelin Attack Speeder](factions/星际战士/units/javelin-attack-speeder.md) |  | 2026-07-23 |
-| unit | [Judiciar Xacharus](factions/星际战士/units/judiciar-xacharus.md) |  | 2026-07-23 |
-| unit | [Kill Team Cassius](factions/星际战士/units/kill-team-cassius.md) |  | 2026-07-23 |
-| unit | [Kratos](factions/星际战士/units/kratos.md) |  | 2026-07-23 |
-| unit | [Krom Dragongaze](factions/星际战士/units/krom-dragongaze.md) |  | 2026-07-23 |
-| unit | [Land Raider Achilles](factions/星际战士/units/land-raider-achilles.md) |  | 2026-07-23 |
-| unit | [Land Raider Excelsior](factions/星际战士/units/land-raider-excelsior.md) |  | 2026-07-23 |
-| unit | [Land Raider Helios](factions/星际战士/units/land-raider-helios.md) |  | 2026-07-23 |
-| unit | [Land Raider Prometheus](factions/星际战士/units/land-raider-prometheus.md) |  | 2026-07-23 |
-| unit | [Land Raider Proteus](factions/星际战士/units/land-raider-proteus.md) |  | 2026-07-23 |
-| unit | [Land Speeder Storm](factions/星际战士/units/land-speeder-storm.md) |  | 2026-07-23 |
-| unit | [Land Speeder Tempest](factions/星际战士/units/land-speeder-tempest.md) |  | 2026-07-23 |
-| unit | [Land Speeder Tornado](factions/星际战士/units/land-speeder-tornado.md) |  | 2026-07-23 |
-| unit | [Land Speeder Typhoon](factions/星际战士/units/land-speeder-typhoon.md) |  | 2026-07-23 |
-| unit | [Leviathan Dreadnought](factions/星际战士/units/leviathan-dreadnought.md) |  | 2026-07-23 |
-| unit | [Librarian Dreadnought](factions/星际战士/units/librarian-dreadnought.md) |  | 2026-07-23 |
-| unit | [Librarian on Bike](factions/星际战士/units/librarian-on-bike.md) |  | 2026-07-23 |
-| unit | [Librarian with Jump Pack](factions/星际战士/units/librarian-with-jump-pack.md) |  | 2026-07-23 |
-| unit | [Logan Grimnar On Stormrider](factions/星际战士/units/logan-grimnar-on-stormrider.md) |  | 2026-07-23 |
-| unit | [Long Fangs](factions/星际战士/units/long-fangs.md) |  | 2026-07-23 |
-| unit | [Lukas The Trickster](factions/星际战士/units/lukas-the-trickster.md) |  | 2026-07-23 |
-| unit | [Mastodon](factions/星际战士/units/mastodon.md) |  | 2026-07-23 |
-| unit | [Mortis Dreadnought](factions/星际战士/units/mortis-dreadnought.md) |  | 2026-07-23 |
-| unit | [Primaris Company Champion](factions/星际战士/units/primaris-company-champion.md) |  | 2026-07-23 |
-| unit | [Rapier Carrier](factions/星际战士/units/rapier-carrier.md) |  | 2026-07-23 |
-| unit | [Ravenwing Talonmaster](factions/星际战士/units/ravenwing-talonmaster.md) |  | 2026-07-23 |
-| unit | [Relic Contemptor Dreadnought](factions/星际战士/units/relic-contemptor-dreadnought.md) |  | 2026-07-23 |
-| unit | [Relic Razorback](factions/星际战士/units/relic-razorback.md) |  | 2026-07-23 |
-| unit | [Relic Terminator Squad](factions/星际战士/units/relic-terminator-squad.md) |  | 2026-07-23 |
-| unit | [Rhino Primaris](factions/星际战士/units/rhino-primaris.md) |  | 2026-07-23 |
-| unit | [Sanguinary Priest With Jump Pack](factions/星际战士/units/sanguinary-priest-with-jump-pack.md) |  | 2026-07-23 |
-| unit | [Sanguinary Priest on Bike](factions/星际战士/units/sanguinary-priest-on-bike.md) |  | 2026-07-23 |
-| unit | [Scout Bike Squad](factions/星际战士/units/scout-bike-squad.md) |  | 2026-07-23 |
-| unit | [Scout Sniper Squad](factions/星际战士/units/scout-sniper-squad.md) |  | 2026-07-23 |
-| unit | [Sergeant Chronus](factions/星际战士/units/sergeant-chronus.md) |  | 2026-07-23 |
-| unit | [Sergeant Telion](factions/星际战士/units/sergeant-telion.md) |  | 2026-07-23 |
-| unit | [Sicaran Arcus](factions/星际战士/units/sicaran-arcus.md) |  | 2026-07-23 |
-| unit | [Sicaran Battle Tank](factions/星际战士/units/sicaran-battle-tank.md) |  | 2026-07-23 |
-| unit | [Sicaran Omega](factions/星际战士/units/sicaran-omega.md) |  | 2026-07-23 |
-| unit | [Sicaran Punisher](factions/星际战士/units/sicaran-punisher.md) |  | 2026-07-23 |
-| unit | [Sicaran Venator](factions/星际战士/units/sicaran-venator.md) |  | 2026-07-23 |
-| unit | [Skyclaws](factions/星际战士/units/skyclaws.md) |  | 2026-07-23 |
-| unit | [Sokar-pattern Stormbird](factions/星际战士/units/sokar-pattern-stormbird.md) |  | 2026-07-23 |
-| unit | [Spartan](factions/星际战士/units/spartan.md) |  | 2026-07-23 |
-| unit | [Stalker](factions/星际战士/units/stalker.md) |  | 2026-07-23 |
-| unit | [Storm Eagle Gunship](factions/星际战士/units/storm-eagle-gunship.md) |  | 2026-07-23 |
-| unit | [Stormfang Gunship](factions/星际战士/units/stormfang-gunship.md) |  | 2026-07-23 |
-| unit | [Stormwolf](factions/星际战士/units/stormwolf.md) |  | 2026-07-23 |
-| unit | [Tarantula Air Defence Battery](factions/星际战士/units/tarantula-air-defence-battery.md) |  | 2026-07-23 |
-| unit | [Tarantula Sentry Battery](factions/星际战士/units/tarantula-sentry-battery.md) |  | 2026-07-23 |
-| unit | [Techmarine on Bike](factions/星际战士/units/techmarine-on-bike.md) |  | 2026-07-23 |
-| unit | [Terminus Ultra](factions/星际战士/units/terminus-ultra.md) |  | 2026-07-23 |
-| unit | [Terrax-pattern Termite](factions/星际战士/units/terrax-pattern-termite.md) |  | 2026-07-23 |
-| unit | [Thunderfire Cannon](factions/星际战士/units/thunderfire-cannon.md) |  | 2026-07-23 |
-| unit | [Thunderhawk Transporter](factions/星际战士/units/thunderhawk-transporter.md) |  | 2026-07-23 |
-| unit | [Tycho The Lost](factions/星际战士/units/tycho-the-lost.md) |  | 2026-07-23 |
-| unit | [Typhon](factions/星际战士/units/typhon.md) |  | 2026-07-23 |
-| unit | [Tyrannic War Veterans](factions/星际战士/units/tyrannic-war-veterans.md) |  | 2026-07-23 |
-| unit | [Ultramarines Honour Guard](factions/星际战士/units/ultramarines-honour-guard.md) |  | 2026-07-23 |
-| unit | [Uriel Ventris](factions/星际战士/units/uriel-ventris.md) |  | 2026-07-23 |
-| unit | [Vanguard Veteran Squad](factions/星际战士/units/vanguard-veteran-squad.md) |  | 2026-07-23 |
-| unit | [Venerable Dreadnought (Legendary)](factions/星际战士/units/venerable-dreadnought-legendary.md) |  | 2026-07-23 |
-| unit | [Vindicator Laser Destroyer](factions/星际战士/units/vindicator-laser-destroyer.md) |  | 2026-07-23 |
-| unit | [Whirlwind Scorpius](factions/星际战士/units/whirlwind-scorpius.md) |  | 2026-07-23 |
-| unit | [Wolf Guard](factions/星际战士/units/wolf-guard.md) |  | 2026-07-23 |
-| unit | [Wolf Guard Battle Leader In Terminator Armour](factions/星际战士/units/wolf-guard-battle-leader-in-terminator-armour.md) |  | 2026-07-23 |
-| unit | [Wolf Guard Battle Leader On Thunderwolf](factions/星际战士/units/wolf-guard-battle-leader-on-thunderwolf.md) |  | 2026-07-23 |
-| unit | [Wolf Guard Pack Leader](factions/星际战士/units/wolf-guard-pack-leader.md) |  | 2026-07-23 |
-| unit | [Wolf Guard Pack Leader In Terminator Armour](factions/星际战士/units/wolf-guard-pack-leader-in-terminator-armour.md) |  | 2026-07-23 |
-| unit | [Wolf Guard Pack Leader With Jump Pack](factions/星际战士/units/wolf-guard-pack-leader-with-jump-pack.md) |  | 2026-07-23 |
-| unit | [Wolf Lord on Thunderwolf](factions/星际战士/units/wolf-lord-on-thunderwolf.md) |  | 2026-07-23 |
-| unit | [Wolf Scouts (Legendary)](factions/星际战士/units/wolf-scouts-legendary.md) |  | 2026-07-23 |
-| unit | [Xiphon Interceptor](factions/星际战士/units/xiphon-interceptor.md) |  | 2026-07-23 |
-| unit | [【传奇】暴烈无畏](factions/星际战士/units/furioso-dreadnought.md) |  | 2026-07-23 |
-| unit | [【传奇】装备磁力勾爪的死亡连无畏](factions/星际战士/units/death-company-dreadnought-with-magna-grapple.md) |  | 2026-07-23 |
-| unit | [不屈型战术机甲](factions/星际战士/units/invictor-tactical-warsuit.md) |  | 2026-07-23 |
-| unit | [不屈杀戮小队](factions/星际战士/units/indomitor-kill-team.md) |  | 2026-07-23 |
-| unit | [以西结](factions/星际战士/units/ezekiel.md) |  | 2026-07-23 |
-| unit | [仲裁者小队](factions/星际战士/units/intercessor-squad.md) |  | 2026-07-23 |
-| unit | [伏尔甘赫斯坦](factions/星际战士/units/vulkan-hestan.md) |  | 2026-07-23 |
-| unit | [但丁指挥官](factions/星际战士/units/commander-dante.md) |  | 2026-07-23 |
-| unit | [侦查小队](factions/星际战士/units/scout-squad.md) |  | 2026-07-23 |
-| unit | [侵略者小队](factions/星际战士/units/aggressor-squad.md) |  | 2026-07-23 |
-| unit | [元帅](factions/星际战士/units/marshal.md) |  | 2026-07-23 |
-| unit | [先遣者摩托小队](factions/星际战士/units/outrider-squad.md) |  | 2026-07-23 |
-| unit | [先锋军副官](factions/星际战士/units/lieutenant-in-phobos-armour.md) |  | 2026-07-23 |
-| unit | [先锋军智库](factions/星际战士/units/librarian-in-phobos-armour.md) |  | 2026-07-23 |
-| unit | [先锋军连长](factions/星际战士/units/captain-in-phobos-armour.md) |  | 2026-07-23 |
-| unit | [先驱者小队](factions/星际战士/units/inceptor-squad.md) |  | 2026-07-23 |
-| unit | [入侵者小队](factions/星际战士/units/incursor-squad.md) |  | 2026-07-23 |
-| unit | [兰德掠袭者坦克](factions/星际战士/units/land-raider.md) |  | 2026-07-23 |
-| unit | [兰德速攻艇](factions/星际战士/units/land-speeder.md) |  | 2026-07-23 |
-| unit | [内环伙友](factions/星际战士/units/inner-circle-companions.md) |  | 2026-07-23 |
-| unit | [冰雹型风暴速攻艇](factions/星际战士/units/storm-speeder-hailstrike.md) |  | 2026-07-23 |
-| unit | [冲击者突击艇](factions/星际战士/units/impulsor-2.md) |  | 2026-07-23 |
-| unit | [冲击者突击艇](factions/星际战士/units/impulsor.md) |  | 2026-07-23 |
-| unit | [凯万-史瑞克](factions/星际战士/units/kayvaan-shrike.md) |  | 2026-07-23 |
-| unit | [利爪突击杀戮小队](factions/星际战士/units/talonstrike-kill-team.md) |  | 2026-07-23 |
-| unit | [剑之兄弟小队](factions/星际战士/units/sword-brethren-squad.md) |  | 2026-07-23 |
-| unit | [剑卫旗手](factions/星际战士/units/bladeguard-ancient.md) |  | 2026-07-23 |
-| unit | [剑卫老兵小队](factions/星际战士/units/bladeguard-veteran-squad.md) |  | 2026-07-23 |
-| unit | [副官](factions/星际战士/units/lieutenant.md) |  | 2026-07-23 |
-| unit | [劫掠者副官](factions/星际战士/units/lieutenant-in-reiver-armour.md) |  | 2026-07-23 |
-| unit | [劫掠者小队](factions/星际战士/units/reiver-squad.md) |  | 2026-07-23 |
-| unit | [十字军型兰德掠袭者坦克](factions/星际战士/units/land-raider-crusader-2.md) |  | 2026-07-23 |
-| unit | [十字军型兰德掠袭者坦克](factions/星际战士/units/land-raider-crusader.md) |  | 2026-07-23 |
-| unit | [十字军小队](factions/星际战士/units/crusader-squad.md) |  | 2026-07-23 |
-| unit | [卡托·西卡留斯](factions/星际战士/units/cato-sicarius.md) |  | 2026-07-23 |
-| unit | [卡诺克·瓦尔](factions/星际战士/units/caanok-var.md) |  | 2026-07-23 |
-| unit | [压制者小队](factions/星际战士/units/suppressor-squad.md) |  | 2026-07-23 |
-| unit | [反击者突击艇](factions/星际战士/units/repulsor-2.md) |  | 2026-07-23 |
-| unit | [反击者突击艇](factions/星际战士/units/repulsor.md) |  | 2026-07-23 |
-| unit | [圣吉列诺](factions/星际战士/units/the-sanguinor.md) |  | 2026-07-23 |
-| unit | [圣血卫队](factions/星际战士/units/sanguinary-guard.md) |  | 2026-07-23 |
-| unit | [圣血祭司](factions/星际战士/units/sanguinary-priest.md) |  | 2026-07-23 |
-| unit | [圣血连长](factions/星际战士/units/blood-angels-captain.md) |  | 2026-07-23 |
-| unit | [地狱轰击者小队](factions/星际战士/units/hellblaster-squad.md) |  | 2026-07-23 |
-| unit | [坎托战团长](factions/星际战士/units/pedro-kantor.md) |  | 2026-07-23 |
-| unit | [堡主](factions/星际战士/units/castellan.md) |  | 2026-07-23 |
-| unit | [处决者型反击者坦克](factions/星际战士/units/repulsor-executioner-2.md) |  | 2026-07-23 |
-| unit | [处决者型反击者坦克](factions/星际战士/units/repulsor-executioner.md) |  | 2026-07-23 |
-| unit | [复仇型兰德飞艇](factions/星际战士/units/land-speeder-vengeance.md) |  | 2026-07-23 |
-| unit | [奥特拉玛守望者](factions/星际战士/units/wardens-of-ultramar.md) |  | 2026-07-23 |
-| unit | [守望堡主](factions/星际战士/units/watch-master.md) |  | 2026-07-23 |
-| unit | [守望连长阿耳忒弥斯](factions/星际战士/units/watch-captain-artemis.md) |  | 2026-07-23 |
-| unit | [寂灭者小队](factions/星际战士/units/desolation-squad.md) |  | 2026-07-23 |
-| unit | [射手型无畏机甲](factions/星际战士/units/ballistus-dreadnought.md) |  | 2026-07-23 |
-| unit | [巴尔掠食者](factions/星际战士/units/baal-predator.md) |  | 2026-07-23 |
-| unit | [帝皇勇士](factions/星际战士/units/emperors-champion.md) |  | 2026-07-23 |
-| unit | [常胜护卫](factions/星际战士/units/victrix-honour-guard.md) |  | 2026-07-23 |
-| unit | [德西姆斯猎杀小队](factions/星际战士/units/decimus-kill-team.md) |  | 2026-07-23 |
-| unit | [战术小队](factions/星际战士/units/tactical-squad.md) |  | 2026-07-23 |
-| unit | [托尔连长](factions/星际战士/units/tor-garadon.md) |  | 2026-07-23 |
-| unit | [执裁者](factions/星际战士/units/execrator.md) |  | 2026-07-23 |
-| unit | [技术军士](factions/星际战士/units/techmarine.md) |  | 2026-07-23 |
-| unit | [拉撒路导师](factions/星际战士/units/lazarus.md) |  | 2026-07-23 |
-| unit | [拉格纳·黑鬃](factions/星际战士/units/ragnar-blackmane.md) |  | 2026-07-23 |
-| unit | [摩托牧师](factions/星际战士/units/chaplain-on-bike.md) |  | 2026-07-23 |
-| unit | [救赎者型兰德掠袭者坦克](factions/星际战士/units/land-raider-redeemer.md) |  | 2026-07-23 |
-| unit | [救赎者型无畏机甲](factions/星际战士/units/redemptor-dreadnought.md) |  | 2026-07-23 |
-| unit | [断手比约恩](factions/星际战士/units/bjorn-the-fell-handed.md) |  | 2026-07-23 |
-| unit | [旋风火箭炮](factions/星际战士/units/whirlwind.md) |  | 2026-07-23 |
-| unit | [旗手](factions/星际战士/units/ancient.md) |  | 2026-07-23 |
-| unit | [无形杀戮小队](factions/星际战士/units/spectrus-kill-team.md) |  | 2026-07-23 |
-| unit | [无畏机甲](factions/星际战士/units/dreadnought.md) |  | 2026-07-23 |
-| unit | [智库](factions/星际战士/units/librarian.md) |  | 2026-07-23 |
-| unit | [暴风渡鸦炮艇](factions/星际战士/units/stormraven-gunship.md) |  | 2026-07-23 |
-| unit | [杀戮牙](factions/星际战士/units/murderfang.md) |  | 2026-07-23 |
-| unit | [杀戮者乌尔里克](factions/星际战士/units/ulrik-the-slayer.md) |  | 2026-07-23 |
-| unit | [枪骑兵型角斗者坦克](factions/星际战士/units/gladiator-lancer-2.md) |  | 2026-07-23 |
-| unit | [枪骑兵型角斗者坦克](factions/星际战士/units/gladiator-lancer.md) |  | 2026-07-23 |
-| unit | [根除者小队](factions/星际战士/units/eradicator-squad.md) |  | 2026-07-23 |
-| unit | [格瑞马都斯牧师](factions/星际战士/units/chaplain-grimaldus.md) |  | 2026-07-23 |
-| unit | [死亡守望终结者小队](factions/星际战士/units/deathwatch-terminator-squad.md) |  | 2026-07-23 |
-| unit | [死亡守望老兵](factions/星际战士/units/deathwatch-veterans.md) |  | 2026-07-23 |
-| unit | [死亡连小队](factions/星际战士/units/death-company-marines.md) |  | 2026-07-23 |
-| unit | [死亡连无畏](factions/星际战士/units/death-company-dreadnought.md) |  | 2026-07-23 |
-| unit | [死亡连连长](factions/星际战士/units/death-company-captain.md) |  | 2026-07-23 |
-| unit | [死神型角斗者坦克](factions/星际战士/units/gladiator-reaper-2.md) |  | 2026-07-23 |
-| unit | [死神型角斗者坦克](factions/星际战士/units/gladiator-reaper.md) |  | 2026-07-23 |
-| unit | [死翼指挥组【传奇】](factions/星际战士/units/deathwing-command-squad.md) |  | 2026-07-23 |
-| unit | [死翼终结者小队](factions/星际战士/units/deathwing-terminator-squad.md) |  | 2026-07-23 |
-| unit | [死翼骑士](factions/星际战士/units/deathwing-knights.md) |  | 2026-07-23 |
-| unit | [歼灭者型猎食者坦克](factions/星际战士/units/predator-annihilator.md) |  | 2026-07-23 |
-| unit | [歼灭者小队](factions/星际战士/units/eliminator-squad.md) |  | 2026-07-23 |
-| unit | [泰图斯连长](factions/星际战士/units/captain-titus.md) |  | 2026-07-23 |
-| unit | [洛根.格里姆纳尔](factions/星际战士/units/logan-grimnar.md) |  | 2026-07-23 |
-| unit | [涅法雷姆战斗机](factions/星际战士/units/nephilim-jetfighter.md) |  | 2026-07-23 |
-| unit | [渗透者小队](factions/星际战士/units/infiltrator-squad.md) |  | 2026-07-23 |
-| unit | [灰色猎手](factions/星际战士/units/grey-hunters.md) |  | 2026-07-23 |
-| unit | [烈火炮台](factions/星际战士/units/firestrike-servo-turrets.md) |  | 2026-07-23 |
-| unit | [焚狱者小队](factions/星际战士/units/infernus-squad.md) |  | 2026-07-23 |
-| unit | [牧师](factions/星际战士/units/chaplain.md) |  | 2026-07-23 |
-| unit | [犀牛装甲车](factions/星际战士/units/rhino.md) |  | 2026-07-23 |
-| unit | [狼人](factions/星际战士/units/wulfen.md) |  | 2026-07-23 |
-| unit | [狼人无畏机甲](factions/星际战士/units/wulfen-dreadnought.md) |  | 2026-07-23 |
-| unit | [狼侦查](factions/星际战士/units/wolf-scouts.md) |  | 2026-07-23 |
-| unit | [狼卫指挥官](factions/星际战士/units/wolf-guard-battle-leader.md) |  | 2026-07-23 |
-| unit | [狼卫猎头者](factions/星际战士/units/wolf-guard-headtakers.md) |  | 2026-07-23 |
-| unit | [狼牧师](factions/星际战士/units/wolf-priest.md) |  | 2026-07-23 |
-| unit | [生物学药剂师](factions/星际战士/units/apothecary-biologis.md) |  | 2026-07-23 |
-| unit | [百夫长破坏小队](factions/星际战士/units/centurion-devastator-squad.md) |  | 2026-07-23 |
-| unit | [百夫长突击小队](factions/星际战士/units/centurion-assault-squad.md) |  | 2026-07-23 |
-| unit | [破坏者型猎食者坦克](factions/星际战士/units/predator-destructor.md) |  | 2026-07-23 |
-| unit | [破坏者小队](factions/星际战士/units/devastator-squad.md) |  | 2026-07-23 |
-| unit | [空降仓](factions/星际战士/units/drop-pod.md) |  | 2026-07-23 |
-| unit | [突击仲裁者小队](factions/星际战士/units/assault-intercessor-squad.md) |  | 2026-07-23 |
-| unit | [突击终结者小队](factions/星际战士/units/terminator-assault-squad.md) |  | 2026-07-23 |
-| unit | [终结者小队](factions/星际战士/units/terminator-squad-2.md) |  | 2026-07-23 |
-| unit | [终结者小队](factions/星际战士/units/terminator-squad.md) |  | 2026-07-23 |
-| unit | [终结者旗手](factions/星际战士/units/ancient-in-terminator-armour.md) |  | 2026-07-23 |
-| unit | [终结者智库](factions/星际战士/units/librarian-in-terminator-armour.md) |  | 2026-07-23 |
-| unit | [终结者牧师](factions/星际战士/units/chaplain-in-terminator-armour.md) |  | 2026-07-23 |
-| unit | [终结者连长](factions/星际战士/units/captain-in-terminator-armour.md) |  | 2026-07-23 |
-| unit | [维护者突击炮](factions/星际战士/units/vindicator.md) |  | 2026-07-23 |
-| unit | [罗伯特.基里曼](factions/星际战士/units/roboute-guilliman.md) |  | 2026-07-23 |
-| unit | [肃卫老兵小队](factions/星际战士/units/sternguard-veteran-squad-2.md) |  | 2026-07-23 |
-| unit | [肃卫老兵小队](factions/星际战士/units/sternguard-veteran-squad.md) |  | 2026-07-23 |
-| unit | [至强杀戮小队](factions/星际战士/units/fortis-kill-team.md) |  | 2026-07-23 |
-| unit | [至高大元帅赫尔贝茨](factions/星际战士/units/high-marshal-helbrecht.md) |  | 2026-07-23 |
-| unit | [艾索-沙恩](factions/星际战士/units/aethon-shaan.md) |  | 2026-07-23 |
-| unit | [芬里斯狼](factions/星际战士/units/fenrisian-wolves.md) |  | 2026-07-23 |
-| unit | [苏博登可汗](factions/星际战士/units/suboden-khan.md) |  | 2026-07-23 |
-| unit | [荣耀无畏机甲](factions/星际战士/units/venerable-dreadnought.md) |  | 2026-07-23 |
-| unit | [药剂师](factions/星际战士/units/apothecary.md) |  | 2026-07-23 |
-| unit | [莱山德连长](factions/星际战士/units/darnath-lysander.md) |  | 2026-07-23 |
-| unit | [莱昂艾尔庄森，黑暗天使基因原体](factions/星际战士/units/lion-eljonson.md) |  | 2026-07-23 |
-| unit | [萨穆尔大导师](factions/星际战士/units/sammael.md) |  | 2026-07-23 |
-| unit | [落锤型风暴速攻艇](factions/星际战士/units/storm-speeder-hammerstrike.md) |  | 2026-07-23 |
-| unit | [落锤堡](factions/星际战士/units/hammerfall-bunker.md) |  | 2026-07-23 |
-| unit | [蛮兽型无畏机甲](factions/星际战士/units/brutalis-dreadnought.md) |  | 2026-07-23 |
-| unit | [血爪](factions/星际战士/units/blood-claws.md) |  | 2026-07-23 |
-| unit | [裁决士](factions/星际战士/units/judiciar.md) |  | 2026-07-23 |
-| unit | [装备复合武器的先锋军副官](factions/星际战士/units/lieutenant-with-combi-weapon.md) |  | 2026-07-23 |
-| unit | [装备爆弹步枪的死亡连小队](factions/星际战士/units/death-company-marines-with-bolt-rifles.md) |  | 2026-07-23 |
-| unit | [装备跳跃背包的死亡连小队](factions/星际战士/units/death-company-marines-with-jump-packs.md) |  | 2026-07-23 |
-| unit | [装备跳跃背包的死亡连连长](factions/星际战士/units/death-company-captain-with-jump-pack.md) |  | 2026-07-23 |
-| unit | [装备风暴盾的狼人](factions/星际战士/units/wulfen-with-storm-shields.md) |  | 2026-07-23 |
-| unit | [豪侠型角斗者坦克](factions/星际战士/units/gladiator-valiant-2.md) |  | 2026-07-23 |
-| unit | [豪侠型角斗者坦克](factions/星际战士/units/gladiator-valiant.md) |  | 2026-07-23 |
-| unit | [豪猪装甲车](factions/星际战士/units/razorback.md) |  | 2026-07-23 |
-| unit | [贝利亚大导师](factions/星际战士/units/belial.md) |  | 2026-07-23 |
-| unit | [跳跃背包先锋老兵小队](factions/星际战士/units/vanguard-veteran-squad-with-jump-packs.md) |  | 2026-07-23 |
-| unit | [跳跃背包牧师](factions/星际战士/units/chaplain-with-jump-pack.md) |  | 2026-07-23 |
-| unit | [跳跃背包突击仲裁者小队](factions/星际战士/units/assault-intercessors-with-jump-packs.md) |  | 2026-07-23 |
-| unit | [跳跃背包连长](factions/星际战士/units/captain-with-jump-pack.md) |  | 2026-07-23 |
-| unit | [身穿安提洛克斯战甲的马涅乌斯·卡尔加](factions/星际战士/units/marneus-calgar-in-armour-of-antilochus.md) |  | 2026-07-23 |
-| unit | [远征旗手](factions/星际战士/units/crusade-ancient.md) |  | 2026-07-23 |
-| unit | [连长](factions/星际战士/units/captain.md) |  | 2026-07-23 |
-| unit | [连队英雄](factions/星际战士/units/company-heroes.md) |  | 2026-07-23 |
-| unit | [重装仲裁者小队](factions/星际战士/units/heavy-intercessor-squad.md) |  | 2026-07-23 |
-| unit | [重装连长](factions/星际战士/units/captain-in-gravis-armour.md) |  | 2026-07-23 |
-| unit | [野狼守卫终结者](factions/星际战士/units/wolf-guard-terminators.md) |  | 2026-07-23 |
-| unit | [钢铁牧师](factions/星际战士/units/iron-priest.md) |  | 2026-07-23 |
-| unit | [铁父费罗斯](factions/星际战士/units/iron-father-feirros.md) |  | 2026-07-23 |
-| unit | [阔萨罗可汗](factions/星际战士/units/korsarro-khan.md) |  | 2026-07-23 |
-| unit | [阿兹瑞尔大导师](factions/星际战士/units/azrael.md) |  | 2026-07-23 |
-| unit | [阿加通连长](factions/星际战士/units/adrax-agatone.md) |  | 2026-07-23 |
-| unit | [阿斯托拉斯](factions/星际战士/units/astorath.md) |  | 2026-07-23 |
-| unit | [阿斯特赖俄斯](factions/星际战士/units/astraeus.md) |  | 2026-07-23 |
-| unit | [阿斯莫戴](factions/星际战士/units/asmodai.md) |  | 2026-07-23 |
-| unit | [阿贾克·石拳](factions/星际战士/units/arjac-rockfist.md) |  | 2026-07-23 |
-| unit | [雷狼骑兵](factions/星际战士/units/thunderwolf-cavalry.md) |  | 2026-07-23 |
-| unit | [雷霆型风暴速攻艇](factions/星际战士/units/storm-speeder-thunderstrike.md) |  | 2026-07-23 |
-| unit | [雷马特斯](factions/星际战士/units/lemartes.md) |  | 2026-07-23 |
-| unit | [雷鹰炮艇](factions/星际战士/units/thunderhawk-gunship.md) |  | 2026-07-23 |
-| unit | [风暴召唤者纳吉奥](factions/星际战士/units/njal-stormcaller.md) |  | 2026-07-23 |
-| unit | [风暴爪炮艇](factions/星际战士/units/stormtalon-gunship.md) |  | 2026-07-23 |
-| unit | [风暴隼拦截机](factions/星际战士/units/stormhawk-interceptor.md) |  | 2026-07-23 |
-| unit | [首席智库墨菲斯顿](factions/星际战士/units/chief-librarian-mephiston.md) |  | 2026-07-23 |
-| unit | [首席智库底格里斯](factions/星际战士/units/chief-librarian-tigurius.md) |  | 2026-07-23 |
-| unit | [鸦翼指挥小队](factions/星际战士/units/ravenwing-command-squad.md) |  | 2026-07-23 |
-| unit | [鸦翼暗幕飞艇](factions/星际战士/units/ravenwing-darkshroud.md) |  | 2026-07-23 |
-| unit | [鸦翼黑爪轰炸机](factions/星际战士/units/ravenwing-dark-talon.md) |  | 2026-07-23 |
-| unit | [鸦翼黑骑士](factions/星际战士/units/ravenwing-black-knights.md) |  | 2026-07-23 |
-| unit | [黑星渡鸦](factions/星际战士/units/corvus-blackstar.md) |  | 2026-07-23 |
+| unit | [ATV 突击车](factions/星际战士/units/invader-atv.md) |  | 2026-09-14 |
+| unit | [Ancient on Bike](factions/星际战士/units/ancient-on-bike.md) | 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。 | 2026-09-14 |
+| unit | [Apothecary on Bike](factions/星际战士/units/apothecary-on-bike.md) | 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。 | 2026-09-14 |
+| unit | [Assault Squad](factions/星际战士/units/assault-squad.md) | 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。 | 2026-09-14 |
+| unit | [Assault Squad with Jump Packs](factions/星际战士/units/assault-squad-with-jump-packs.md) | 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。 | 2026-09-14 |
+| unit | [Astartes Servitors](factions/星际战士/units/astartes-servitors.md) | 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。 | 2026-09-14 |
+| unit | [Attack Bike Squad](factions/星际战士/units/attack-bike-squad.md) | 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。 | 2026-09-14 |
+| unit | [Bike Squad](factions/星际战士/units/bike-squad.md) | 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。 | 2026-09-14 |
+| unit | [Brother Corbulo](factions/星际战士/units/brother-corbulo.md) | 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。 | 2026-09-14 |
+| unit | [Caestus Assault Ram](factions/星际战士/units/caestus-assault-ram.md) | 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。 | 2026-09-14 |
+| unit | [Canis Wolfborn](factions/星际战士/units/canis-wolfborn.md) | 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。 | 2026-09-14 |
+| unit | [Captain Tycho](factions/星际战士/units/captain-tycho.md) | 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。 | 2026-09-14 |
+| unit | [Captain on Bike](factions/星际战士/units/captain-on-bike.md) | 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。 | 2026-09-14 |
+| unit | [Carab Culln The Risen](factions/星际战士/units/carab-culln-the-risen.md) | 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。 | 2026-09-14 |
+| unit | [Cerberus](factions/星际战士/units/cerberus.md) | 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。 | 2026-09-14 |
+| unit | [Chaplain Cassius](factions/星际战士/units/chaplain-cassius.md) | 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。 | 2026-09-14 |
+| unit | [Chaplain Kastiel](factions/星际战士/units/chaplain-kastiel.md) | 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。 | 2026-09-14 |
+| unit | [Chaplain Venerable Dreadnought](factions/星际战士/units/chaplain-venerable-dreadnought.md) | 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。 | 2026-09-14 |
+| unit | [Command Squad](factions/星际战士/units/command-squad.md) | 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。 | 2026-09-14 |
+| unit | [Company Champion On Bike](factions/星际战士/units/company-champion-on-bike.md) | 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。 | 2026-09-14 |
+| unit | [Company Veterans On Bikes](factions/星际战士/units/company-veterans-on-bikes.md) | 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。 | 2026-09-14 |
+| unit | [Crusader Squad (Legendary)](factions/星际战士/units/crusader-squad-legendary.md) | 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。 | 2026-09-14 |
+| unit | [Cyberwolf](factions/星际战士/units/cyberwolf.md) | 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。 | 2026-09-14 |
+| unit | [Death Company Marines with Boltguns and Jump Packs](factions/星际战士/units/death-company-marines-with-boltguns-and-jump-packs.md) | 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。 | 2026-09-14 |
+| unit | [Deathstorm Drop Pod](factions/星际战士/units/deathstorm-drop-pod.md) | 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。 | 2026-09-14 |
+| unit | [Deathwing Strikemaster](factions/星际战士/units/deathwing-strikemaster.md) | 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。 | 2026-09-14 |
+| unit | [Deimos Predator](factions/星际战士/units/deimos-predator.md) | 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。 | 2026-09-14 |
+| unit | [Deredeo Dreadnought](factions/星际战士/units/deredeo-dreadnought.md) | 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。 | 2026-09-14 |
+| unit | [Dreadnought Drop Pod](factions/星际战士/units/dreadnought-drop-pod.md) | 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。 | 2026-09-14 |
+| unit | [Eradicator Squad With Heavy Bolters](factions/星际战士/units/eradicator-squad-with-heavy-bolters.md) |  | 2026-09-14 |
+| unit | [Example Wargear](factions/星际战士/units/example-wargear.md) |  | 2026-09-14 |
+| unit | [Falchion](factions/星际战士/units/falchion.md) | 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。 | 2026-09-14 |
+| unit | [Fellblade](factions/星际战士/units/fellblade.md) | 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。 | 2026-09-14 |
+| unit | [Ferren Areios](factions/星际战士/units/ferren-areios.md) | 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。 | 2026-09-14 |
+| unit | [Fire Raptor Gunship](factions/星际战士/units/fire-raptor-gunship.md) | 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。 | 2026-09-14 |
+| unit | [Gabriel Seth](factions/星际战士/units/gabriel-seth.md) | 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。 | 2026-09-14 |
+| unit | [Harald Deathwolf](factions/星际战士/units/harald-deathwolf.md) | 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。 | 2026-09-14 |
+| unit | [Hounds Of Morkai](factions/星际战士/units/hounds-of-morkai.md) | 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。 | 2026-09-14 |
+| unit | [Hunter](factions/星际战士/units/hunter.md) | 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。 | 2026-09-14 |
+| unit | [Imperial Space Marine](factions/星际战士/units/imperial-space-marine.md) | 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。 | 2026-09-14 |
+| unit | [Iron Priest On Thunderwolf](factions/星际战士/units/iron-priest-on-thunderwolf.md) | 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。 | 2026-09-14 |
+| unit | [Ironclad Dreadnought](factions/星际战士/units/ironclad-dreadnought.md) | 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。 | 2026-09-14 |
+| unit | [Javelin Attack Speeder](factions/星际战士/units/javelin-attack-speeder.md) | 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。 | 2026-09-14 |
+| unit | [Judiciar Xacharus](factions/星际战士/units/judiciar-xacharus.md) | 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。 | 2026-09-14 |
+| unit | [Kill Team Cassius](factions/星际战士/units/kill-team-cassius.md) | 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。 | 2026-09-14 |
+| unit | [Kratos](factions/星际战士/units/kratos.md) | 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。 | 2026-09-14 |
+| unit | [Krom Dragongaze](factions/星际战士/units/krom-dragongaze.md) | 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。 | 2026-09-14 |
+| unit | [Land Raider Achilles](factions/星际战士/units/land-raider-achilles.md) | 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。 | 2026-09-14 |
+| unit | [Land Raider Excelsior](factions/星际战士/units/land-raider-excelsior.md) | 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。 | 2026-09-14 |
+| unit | [Land Raider Helios](factions/星际战士/units/land-raider-helios.md) | 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。 | 2026-09-14 |
+| unit | [Land Raider Prometheus](factions/星际战士/units/land-raider-prometheus.md) | 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。 | 2026-09-14 |
+| unit | [Land Raider Proteus](factions/星际战士/units/land-raider-proteus.md) | 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。 | 2026-09-14 |
+| unit | [Land Speeder Storm](factions/星际战士/units/land-speeder-storm.md) | 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。 | 2026-09-14 |
+| unit | [Land Speeder Tempest](factions/星际战士/units/land-speeder-tempest.md) | 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。 | 2026-09-14 |
+| unit | [Land Speeder Tornado](factions/星际战士/units/land-speeder-tornado.md) | 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。 | 2026-09-14 |
+| unit | [Land Speeder Typhoon](factions/星际战士/units/land-speeder-typhoon.md) | 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。 | 2026-09-14 |
+| unit | [Leviathan Dreadnought](factions/星际战士/units/leviathan-dreadnought.md) | 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。 | 2026-09-14 |
+| unit | [Librarian Dreadnought](factions/星际战士/units/librarian-dreadnought.md) | 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。 | 2026-09-14 |
+| unit | [Librarian on Bike](factions/星际战士/units/librarian-on-bike.md) | 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。 | 2026-09-14 |
+| unit | [Librarian with Jump Pack](factions/星际战士/units/librarian-with-jump-pack.md) | 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。 | 2026-09-14 |
+| unit | [Logan Grimnar On Stormrider](factions/星际战士/units/logan-grimnar-on-stormrider.md) | 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。 | 2026-09-14 |
+| unit | [Long Fangs](factions/星际战士/units/long-fangs.md) | 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。 | 2026-09-14 |
+| unit | [Lukas The Trickster](factions/星际战士/units/lukas-the-trickster.md) | 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。 | 2026-09-14 |
+| unit | [Mastodon](factions/星际战士/units/mastodon.md) | 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。 | 2026-09-14 |
+| unit | [Mortis Dreadnought](factions/星际战士/units/mortis-dreadnought.md) | 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。 | 2026-09-14 |
+| unit | [Primaris Company Champion](factions/星际战士/units/primaris-company-champion.md) | 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。 | 2026-09-14 |
+| unit | [Rapier Carrier](factions/星际战士/units/rapier-carrier.md) | 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。 | 2026-09-14 |
+| unit | [Ravenwing Talonmaster](factions/星际战士/units/ravenwing-talonmaster.md) | 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。 | 2026-09-14 |
+| unit | [Relic Contemptor Dreadnought](factions/星际战士/units/relic-contemptor-dreadnought.md) | 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。 | 2026-09-14 |
+| unit | [Relic Razorback](factions/星际战士/units/relic-razorback.md) | 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。 | 2026-09-14 |
+| unit | [Relic Terminator Squad](factions/星际战士/units/relic-terminator-squad.md) | 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。 | 2026-09-14 |
+| unit | [Rhino Primaris](factions/星际战士/units/rhino-primaris.md) | 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。 | 2026-09-14 |
+| unit | [Sanguinary Priest With Jump Pack](factions/星际战士/units/sanguinary-priest-with-jump-pack.md) | 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。 | 2026-09-14 |
+| unit | [Sanguinary Priest on Bike](factions/星际战士/units/sanguinary-priest-on-bike.md) | 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。 | 2026-09-14 |
+| unit | [Scout Bike Squad](factions/星际战士/units/scout-bike-squad.md) | 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。 | 2026-09-14 |
+| unit | [Scout Sniper Squad](factions/星际战士/units/scout-sniper-squad.md) | 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。 | 2026-09-14 |
+| unit | [Sergeant Chronus](factions/星际战士/units/sergeant-chronus.md) | 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。 | 2026-09-14 |
+| unit | [Sergeant Telion](factions/星际战士/units/sergeant-telion.md) | 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。 | 2026-09-14 |
+| unit | [Sicaran Arcus](factions/星际战士/units/sicaran-arcus.md) | 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。 | 2026-09-14 |
+| unit | [Sicaran Battle Tank](factions/星际战士/units/sicaran-battle-tank.md) | 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。 | 2026-09-14 |
+| unit | [Sicaran Omega](factions/星际战士/units/sicaran-omega.md) | 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。 | 2026-09-14 |
+| unit | [Sicaran Punisher](factions/星际战士/units/sicaran-punisher.md) | 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。 | 2026-09-14 |
+| unit | [Sicaran Venator](factions/星际战士/units/sicaran-venator.md) | 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。 | 2026-09-14 |
+| unit | [Skyclaws](factions/星际战士/units/skyclaws.md) | 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。 | 2026-09-14 |
+| unit | [Sokar-pattern Stormbird](factions/星际战士/units/sokar-pattern-stormbird.md) | 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。 | 2026-09-14 |
+| unit | [Spartan](factions/星际战士/units/spartan.md) | 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。 | 2026-09-14 |
+| unit | [Stalker](factions/星际战士/units/stalker.md) | 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。 | 2026-09-14 |
+| unit | [Storm Eagle Gunship](factions/星际战士/units/storm-eagle-gunship.md) | 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。 | 2026-09-14 |
+| unit | [Stormfang Gunship](factions/星际战士/units/stormfang-gunship.md) | 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。 | 2026-09-14 |
+| unit | [Stormwolf](factions/星际战士/units/stormwolf.md) | 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。 | 2026-09-14 |
+| unit | [Tarantula Air Defence Battery](factions/星际战士/units/tarantula-air-defence-battery.md) | 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。 | 2026-09-14 |
+| unit | [Tarantula Sentry Battery](factions/星际战士/units/tarantula-sentry-battery.md) | 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。 | 2026-09-14 |
+| unit | [Techmarine on Bike](factions/星际战士/units/techmarine-on-bike.md) | 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。 | 2026-09-14 |
+| unit | [Terminus Ultra](factions/星际战士/units/terminus-ultra.md) | 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。 | 2026-09-14 |
+| unit | [Terrax-pattern Termite](factions/星际战士/units/terrax-pattern-termite.md) | 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。 | 2026-09-14 |
+| unit | [Thunderfire Cannon](factions/星际战士/units/thunderfire-cannon.md) | 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。 | 2026-09-14 |
+| unit | [Thunderhawk Transporter](factions/星际战士/units/thunderhawk-transporter.md) | 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。 | 2026-09-14 |
+| unit | [Tycho The Lost](factions/星际战士/units/tycho-the-lost.md) | 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。 | 2026-09-14 |
+| unit | [Typhon](factions/星际战士/units/typhon.md) | 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。 | 2026-09-14 |
+| unit | [Tyrannic War Veterans](factions/星际战士/units/tyrannic-war-veterans.md) | 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。 | 2026-09-14 |
+| unit | [Ultramarines Honour Guard](factions/星际战士/units/ultramarines-honour-guard.md) | 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。 | 2026-09-14 |
+| unit | [Vanguard Veteran Squad](factions/星际战士/units/vanguard-veteran-squad.md) | 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。 | 2026-09-14 |
+| unit | [Venerable Dreadnought (Legendary)](factions/星际战士/units/venerable-dreadnought-legendary.md) | 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。 | 2026-09-14 |
+| unit | [Vindicator Laser Destroyer](factions/星际战士/units/vindicator-laser-destroyer.md) | 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。 | 2026-09-14 |
+| unit | [Whirlwind Scorpius](factions/星际战士/units/whirlwind-scorpius.md) | 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。 | 2026-09-14 |
+| unit | [Wolf Guard](factions/星际战士/units/wolf-guard.md) | 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。 | 2026-09-14 |
+| unit | [Wolf Guard Battle Leader In Terminator Armour](factions/星际战士/units/wolf-guard-battle-leader-in-terminator-armour.md) | 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。 | 2026-09-14 |
+| unit | [Wolf Guard Battle Leader On Thunderwolf](factions/星际战士/units/wolf-guard-battle-leader-on-thunderwolf.md) | 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。 | 2026-09-14 |
+| unit | [Wolf Guard Pack Leader](factions/星际战士/units/wolf-guard-pack-leader.md) | 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。 | 2026-09-14 |
+| unit | [Wolf Guard Pack Leader In Terminator Armour](factions/星际战士/units/wolf-guard-pack-leader-in-terminator-armour.md) | 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。 | 2026-09-14 |
+| unit | [Wolf Guard Pack Leader With Jump Pack](factions/星际战士/units/wolf-guard-pack-leader-with-jump-pack.md) | 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。 | 2026-09-14 |
+| unit | [Wolf Lord on Thunderwolf](factions/星际战士/units/wolf-lord-on-thunderwolf.md) | 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。 | 2026-09-14 |
+| unit | [Wolf Scouts (Legendary)](factions/星际战士/units/wolf-scouts-legendary.md) | 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。 | 2026-09-14 |
+| unit | [Xiphon Interceptor](factions/星际战士/units/xiphon-interceptor.md) | 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。 | 2026-09-14 |
+| unit | [【传奇】暴烈无畏](factions/星际战士/units/furioso-dreadnought.md) | 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。 | 2026-09-14 |
+| unit | [【传奇】装备爆弹枪的死亡连战士](factions/星际战士/units/death-company-marines-with-boltguns.md) | 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。 | 2026-09-14 |
+| unit | [【传奇】装备磁力勾爪的死亡连无畏](factions/星际战士/units/death-company-dreadnought-with-magna-grapple.md) | 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。 | 2026-09-14 |
+| unit | [不屈型战术机甲](factions/星际战士/units/invictor-tactical-warsuit.md) |  | 2026-09-14 |
+| unit | [不屈杀戮小队](factions/星际战士/units/indomitor-kill-team.md) |  | 2026-09-14 |
+| unit | [以西结](factions/星际战士/units/ezekiel.md) |  | 2026-09-14 |
+| unit | [仲裁者小队](factions/星际战士/units/intercessor-squad.md) |  | 2026-09-14 |
+| unit | [伏尔甘赫斯坦](factions/星际战士/units/vulkan-hestan.md) |  | 2026-09-14 |
+| unit | [但丁指挥官](factions/星际战士/units/commander-dante.md) |  | 2026-09-14 |
+| unit | [侦查小队](factions/星际战士/units/scout-squad.md) |  | 2026-09-14 |
+| unit | [侵略者小队](factions/星际战士/units/aggressor-squad.md) |  | 2026-09-14 |
+| unit | [元帅](factions/星际战士/units/marshal.md) |  | 2026-09-14 |
+| unit | [先遣者摩托小队](factions/星际战士/units/outrider-squad.md) |  | 2026-09-14 |
+| unit | [先锋军副官](factions/星际战士/units/lieutenant-in-phobos-armour.md) |  | 2026-09-14 |
+| unit | [先锋军智库](factions/星际战士/units/librarian-in-phobos-armour.md) |  | 2026-09-14 |
+| unit | [先锋军连长](factions/星际战士/units/captain-in-phobos-armour.md) |  | 2026-09-14 |
+| unit | [先驱者小队](factions/星际战士/units/inceptor-squad.md) |  | 2026-09-14 |
+| unit | [入侵者小队](factions/星际战士/units/incursor-squad.md) |  | 2026-09-14 |
+| unit | [兰德掠袭者坦克](factions/星际战士/units/land-raider.md) |  | 2026-09-14 |
+| unit | [兰德速攻艇](factions/星际战士/units/land-speeder.md) |  | 2026-09-14 |
+| unit | [内环伙友](factions/星际战士/units/inner-circle-companions.md) |  | 2026-09-14 |
+| unit | [冰雹型风暴速攻艇](factions/星际战士/units/storm-speeder-hailstrike.md) |  | 2026-09-14 |
+| unit | [冲击者突击艇](factions/星际战士/units/impulsor-2.md) |  | 2026-09-14 |
+| unit | [冲击者突击艇](factions/星际战士/units/impulsor.md) |  | 2026-09-14 |
+| unit | [凯万-史瑞克](factions/星际战士/units/kayvaan-shrike.md) |  | 2026-09-14 |
+| unit | [利爪突击杀戮小队](factions/星际战士/units/talonstrike-kill-team.md) |  | 2026-09-14 |
+| unit | [剑之兄弟小队](factions/星际战士/units/sword-brethren-squad.md) |  | 2026-09-14 |
+| unit | [剑卫旗手](factions/星际战士/units/bladeguard-ancient.md) |  | 2026-09-14 |
+| unit | [剑卫老兵小队](factions/星际战士/units/bladeguard-veteran-squad.md) |  | 2026-09-14 |
+| unit | [副官](factions/星际战士/units/lieutenant.md) |  | 2026-09-14 |
+| unit | [劫掠者副官](factions/星际战士/units/lieutenant-in-reiver-armour.md) |  | 2026-09-14 |
+| unit | [劫掠者小队](factions/星际战士/units/reiver-squad.md) |  | 2026-09-14 |
+| unit | [十字军型兰德掠袭者坦克](factions/星际战士/units/land-raider-crusader-2.md) |  | 2026-09-14 |
+| unit | [十字军型兰德掠袭者坦克](factions/星际战士/units/land-raider-crusader.md) |  | 2026-09-14 |
+| unit | [十字军小队](factions/星际战士/units/crusader-squad.md) |  | 2026-09-14 |
+| unit | [卡托·西卡留斯](factions/星际战士/units/cato-sicarius.md) |  | 2026-09-14 |
+| unit | [卡诺克·瓦尔](factions/星际战士/units/caanok-var.md) |  | 2026-09-14 |
+| unit | [压制者小队](factions/星际战士/units/suppressor-squad.md) |  | 2026-09-14 |
+| unit | [反击者突击艇](factions/星际战士/units/repulsor-2.md) |  | 2026-09-14 |
+| unit | [反击者突击艇](factions/星际战士/units/repulsor.md) |  | 2026-09-14 |
+| unit | [圣吉列诺](factions/星际战士/units/the-sanguinor.md) |  | 2026-09-14 |
+| unit | [圣血卫队](factions/星际战士/units/sanguinary-guard.md) |  | 2026-09-14 |
+| unit | [圣血祭司](factions/星际战士/units/sanguinary-priest.md) |  | 2026-09-14 |
+| unit | [圣血连长](factions/星际战士/units/blood-angels-captain.md) |  | 2026-09-14 |
+| unit | [地狱轰击者小队](factions/星际战士/units/hellblaster-squad.md) |  | 2026-09-14 |
+| unit | [坎托战团长](factions/星际战士/units/pedro-kantor.md) |  | 2026-09-14 |
+| unit | [堡主](factions/星际战士/units/castellan.md) |  | 2026-09-14 |
+| unit | [处决者型反击者坦克](factions/星际战士/units/repulsor-executioner-2.md) |  | 2026-09-14 |
+| unit | [处决者型反击者坦克](factions/星际战士/units/repulsor-executioner.md) |  | 2026-09-14 |
+| unit | [复仇型兰德飞艇](factions/星际战士/units/land-speeder-vengeance.md) |  | 2026-09-14 |
+| unit | [奥特拉玛守望者](factions/星际战士/units/wardens-of-ultramar.md) |  | 2026-09-14 |
+| unit | [守望堡主](factions/星际战士/units/watch-master.md) |  | 2026-09-14 |
+| unit | [守望连长阿耳忒弥斯](factions/星际战士/units/watch-captain-artemis.md) |  | 2026-09-14 |
+| unit | [寂灭者小队](factions/星际战士/units/desolation-squad.md) |  | 2026-09-14 |
+| unit | [射手型无畏机甲](factions/星际战士/units/ballistus-dreadnought.md) |  | 2026-09-14 |
+| unit | [巴尔掠食者](factions/星际战士/units/baal-predator.md) |  | 2026-09-14 |
+| unit | [帝皇勇士](factions/星际战士/units/emperors-champion.md) |  | 2026-09-14 |
+| unit | [常胜护卫](factions/星际战士/units/victrix-honour-guard.md) |  | 2026-09-14 |
+| unit | [德西姆斯猎杀小队](factions/星际战士/units/decimus-kill-team.md) |  | 2026-09-14 |
+| unit | [战术小队](factions/星际战士/units/tactical-squad.md) |  | 2026-09-14 |
+| unit | [托尔连长](factions/星际战士/units/tor-garadon.md) |  | 2026-09-14 |
+| unit | [执裁者](factions/星际战士/units/execrator.md) |  | 2026-09-14 |
+| unit | [技术军士](factions/星际战士/units/techmarine.md) |  | 2026-09-14 |
+| unit | [拉撒路导师](factions/星际战士/units/lazarus.md) |  | 2026-09-14 |
+| unit | [拉格纳·黑鬃](factions/星际战士/units/ragnar-blackmane.md) |  | 2026-09-14 |
+| unit | [摩托牧师](factions/星际战士/units/chaplain-on-bike.md) |  | 2026-09-14 |
+| unit | [救赎者型兰德掠袭者坦克](factions/星际战士/units/land-raider-redeemer.md) |  | 2026-09-14 |
+| unit | [救赎者型无畏机甲](factions/星际战士/units/redemptor-dreadnought.md) |  | 2026-09-14 |
+| unit | [文崔斯连长](factions/星际战士/units/uriel-ventris.md) |  | 2026-09-14 |
+| unit | [断手比约恩](factions/星际战士/units/bjorn-the-fell-handed.md) |  | 2026-09-14 |
+| unit | [旋风火箭炮](factions/星际战士/units/whirlwind.md) |  | 2026-09-14 |
+| unit | [旗手](factions/星际战士/units/ancient.md) |  | 2026-09-14 |
+| unit | [无形杀戮小队](factions/星际战士/units/spectrus-kill-team.md) |  | 2026-09-14 |
+| unit | [无畏机甲](factions/星际战士/units/dreadnought.md) |  | 2026-09-14 |
+| unit | [智库](factions/星际战士/units/librarian.md) |  | 2026-09-14 |
+| unit | [暴风渡鸦炮艇](factions/星际战士/units/stormraven-gunship.md) |  | 2026-09-14 |
+| unit | [杀戮牙](factions/星际战士/units/murderfang.md) |  | 2026-09-14 |
+| unit | [杀戮者乌尔里克](factions/星际战士/units/ulrik-the-slayer.md) |  | 2026-09-14 |
+| unit | [枪骑兵型角斗者坦克](factions/星际战士/units/gladiator-lancer-2.md) |  | 2026-09-14 |
+| unit | [枪骑兵型角斗者坦克](factions/星际战士/units/gladiator-lancer.md) |  | 2026-09-14 |
+| unit | [根除者小队](factions/星际战士/units/eradicator-squad.md) |  | 2026-09-14 |
+| unit | [格瑞马都斯牧师](factions/星际战士/units/chaplain-grimaldus.md) |  | 2026-09-14 |
+| unit | [死亡守望终结者小队](factions/星际战士/units/deathwatch-terminator-squad.md) |  | 2026-09-14 |
+| unit | [死亡守望老兵](factions/星际战士/units/deathwatch-veterans.md) |  | 2026-09-14 |
+| unit | [死亡连小队](factions/星际战士/units/death-company-marines.md) |  | 2026-09-14 |
+| unit | [死亡连无畏](factions/星际战士/units/death-company-dreadnought.md) |  | 2026-09-14 |
+| unit | [死亡连连长](factions/星际战士/units/death-company-captain.md) |  | 2026-09-14 |
+| unit | [死神型角斗者坦克](factions/星际战士/units/gladiator-reaper-2.md) |  | 2026-09-14 |
+| unit | [死神型角斗者坦克](factions/星际战士/units/gladiator-reaper.md) |  | 2026-09-14 |
+| unit | [死翼指挥组【传奇】](factions/星际战士/units/deathwing-command-squad.md) | 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。 | 2026-09-14 |
+| unit | [死翼终结者小队](factions/星际战士/units/deathwing-terminator-squad.md) |  | 2026-09-14 |
+| unit | [死翼骑士](factions/星际战士/units/deathwing-knights.md) |  | 2026-09-14 |
+| unit | [歼灭者型猎食者坦克](factions/星际战士/units/predator-annihilator.md) |  | 2026-09-14 |
+| unit | [歼灭者小队](factions/星际战士/units/eliminator-squad.md) |  | 2026-09-14 |
+| unit | [泰图斯连长](factions/星际战士/units/captain-titus.md) |  | 2026-09-14 |
+| unit | [洛根.格里姆纳尔](factions/星际战士/units/logan-grimnar.md) |  | 2026-09-14 |
+| unit | [涅法雷姆战斗机](factions/星际战士/units/nephilim-jetfighter.md) |  | 2026-09-14 |
+| unit | [渗透者小队](factions/星际战士/units/infiltrator-squad.md) |  | 2026-09-14 |
+| unit | [灰色猎手](factions/星际战士/units/grey-hunters.md) |  | 2026-09-14 |
+| unit | [烈火炮台](factions/星际战士/units/firestrike-servo-turrets.md) |  | 2026-09-14 |
+| unit | [焚狱者小队](factions/星际战士/units/infernus-squad.md) |  | 2026-09-14 |
+| unit | [牧师](factions/星际战士/units/chaplain.md) |  | 2026-09-14 |
+| unit | [犀牛装甲车](factions/星际战士/units/rhino.md) |  | 2026-09-14 |
+| unit | [狼人](factions/星际战士/units/wulfen.md) |  | 2026-09-14 |
+| unit | [狼人无畏机甲](factions/星际战士/units/wulfen-dreadnought.md) |  | 2026-09-14 |
+| unit | [狼侦查](factions/星际战士/units/wolf-scouts.md) |  | 2026-09-14 |
+| unit | [狼卫指挥官](factions/星际战士/units/wolf-guard-battle-leader.md) |  | 2026-09-14 |
+| unit | [狼卫猎头者](factions/星际战士/units/wolf-guard-headtakers.md) |  | 2026-09-14 |
+| unit | [狼牧师](factions/星际战士/units/wolf-priest.md) |  | 2026-09-14 |
+| unit | [生物学药剂师](factions/星际战士/units/apothecary-biologis.md) |  | 2026-09-14 |
+| unit | [百夫长破坏小队](factions/星际战士/units/centurion-devastator-squad.md) |  | 2026-09-14 |
+| unit | [百夫长突击小队](factions/星际战士/units/centurion-assault-squad.md) |  | 2026-09-14 |
+| unit | [破坏者型猎食者坦克](factions/星际战士/units/predator-destructor.md) |  | 2026-09-14 |
+| unit | [破坏者小队](factions/星际战士/units/devastator-squad.md) |  | 2026-09-14 |
+| unit | [空降仓](factions/星际战士/units/drop-pod.md) |  | 2026-09-14 |
+| unit | [突击仲裁者小队](factions/星际战士/units/assault-intercessor-squad.md) |  | 2026-09-14 |
+| unit | [突击终结者小队](factions/星际战士/units/terminator-assault-squad.md) |  | 2026-09-14 |
+| unit | [终结者小队](factions/星际战士/units/terminator-squad-2.md) |  | 2026-09-14 |
+| unit | [终结者小队](factions/星际战士/units/terminator-squad.md) |  | 2026-09-14 |
+| unit | [终结者旗手](factions/星际战士/units/ancient-in-terminator-armour.md) |  | 2026-09-14 |
+| unit | [终结者智库](factions/星际战士/units/librarian-in-terminator-armour.md) |  | 2026-09-14 |
+| unit | [终结者牧师](factions/星际战士/units/chaplain-in-terminator-armour.md) |  | 2026-09-14 |
+| unit | [终结者连长](factions/星际战士/units/captain-in-terminator-armour.md) |  | 2026-09-14 |
+| unit | [维护者突击炮](factions/星际战士/units/vindicator.md) |  | 2026-09-14 |
+| unit | [罗伯特.基里曼](factions/星际战士/units/roboute-guilliman.md) |  | 2026-09-14 |
+| unit | [肃卫老兵小队](factions/星际战士/units/sternguard-veteran-squad-2.md) |  | 2026-09-14 |
+| unit | [肃卫老兵小队](factions/星际战士/units/sternguard-veteran-squad.md) |  | 2026-09-14 |
+| unit | [至强杀戮小队](factions/星际战士/units/fortis-kill-team.md) |  | 2026-09-14 |
+| unit | [至高大元帅赫尔贝茨](factions/星际战士/units/high-marshal-helbrecht.md) |  | 2026-09-14 |
+| unit | [艾索-沙恩](factions/星际战士/units/aethon-shaan.md) |  | 2026-09-14 |
+| unit | [芬里斯狼](factions/星际战士/units/fenrisian-wolves.md) |  | 2026-09-14 |
+| unit | [苏博登可汗](factions/星际战士/units/suboden-khan.md) |  | 2026-09-14 |
+| unit | [荣耀无畏机甲](factions/星际战士/units/venerable-dreadnought.md) |  | 2026-09-14 |
+| unit | [药剂师](factions/星际战士/units/apothecary.md) |  | 2026-09-14 |
+| unit | [莱山德连长](factions/星际战士/units/darnath-lysander.md) |  | 2026-09-14 |
+| unit | [莱昂艾尔庄森，黑暗天使基因原体](factions/星际战士/units/lion-eljonson.md) |  | 2026-09-14 |
+| unit | [萨穆尔大导师](factions/星际战士/units/sammael.md) |  | 2026-09-14 |
+| unit | [落锤型风暴速攻艇](factions/星际战士/units/storm-speeder-hammerstrike.md) |  | 2026-09-14 |
+| unit | [落锤堡](factions/星际战士/units/hammerfall-bunker.md) |  | 2026-09-14 |
+| unit | [蛮兽型无畏机甲](factions/星际战士/units/brutalis-dreadnought.md) |  | 2026-09-14 |
+| unit | [血爪](factions/星际战士/units/blood-claws.md) |  | 2026-09-14 |
+| unit | [裁决士](factions/星际战士/units/judiciar.md) |  | 2026-09-14 |
+| unit | [装备复合武器的先锋军副官](factions/星际战士/units/lieutenant-with-combi-weapon.md) |  | 2026-09-14 |
+| unit | [装备爆弹步枪的死亡连小队](factions/星际战士/units/death-company-marines-with-bolt-rifles.md) |  | 2026-09-14 |
+| unit | [装备跳跃背包的死亡连小队](factions/星际战士/units/death-company-marines-with-jump-packs.md) |  | 2026-09-14 |
+| unit | [装备跳跃背包的死亡连连长](factions/星际战士/units/death-company-captain-with-jump-pack.md) |  | 2026-09-14 |
+| unit | [装备风暴盾的狼人](factions/星际战士/units/wulfen-with-storm-shields.md) |  | 2026-09-14 |
+| unit | [豪侠型角斗者坦克](factions/星际战士/units/gladiator-valiant-2.md) |  | 2026-09-14 |
+| unit | [豪侠型角斗者坦克](factions/星际战士/units/gladiator-valiant.md) |  | 2026-09-14 |
+| unit | [豪猪装甲车](factions/星际战士/units/razorback.md) |  | 2026-09-14 |
+| unit | [贝利亚大导师](factions/星际战士/units/belial.md) |  | 2026-09-14 |
+| unit | [跳跃背包先锋老兵小队](factions/星际战士/units/vanguard-veteran-squad-with-jump-packs.md) |  | 2026-09-14 |
+| unit | [跳跃背包牧师](factions/星际战士/units/chaplain-with-jump-pack.md) |  | 2026-09-14 |
+| unit | [跳跃背包突击仲裁者小队](factions/星际战士/units/assault-intercessors-with-jump-packs.md) |  | 2026-09-14 |
+| unit | [跳跃背包连长](factions/星际战士/units/captain-with-jump-pack.md) |  | 2026-09-14 |
+| unit | [身穿安提洛克斯战甲的马涅乌斯·卡尔加](factions/星际战士/units/marneus-calgar-in-armour-of-antilochus.md) |  | 2026-09-14 |
+| unit | [远征旗手](factions/星际战士/units/crusade-ancient.md) |  | 2026-09-14 |
+| unit | [连长](factions/星际战士/units/captain.md) |  | 2026-09-14 |
+| unit | [连队英雄](factions/星际战士/units/company-heroes.md) |  | 2026-09-14 |
+| unit | [重装仲裁者小队](factions/星际战士/units/heavy-intercessor-squad.md) |  | 2026-09-14 |
+| unit | [重装连长](factions/星际战士/units/captain-in-gravis-armour.md) |  | 2026-09-14 |
+| unit | [野狼守卫终结者](factions/星际战士/units/wolf-guard-terminators.md) |  | 2026-09-14 |
+| unit | [钢铁牧师](factions/星际战士/units/iron-priest.md) |  | 2026-09-14 |
+| unit | [铁父费罗斯](factions/星际战士/units/iron-father-feirros.md) |  | 2026-09-14 |
+| unit | [阔萨罗可汗](factions/星际战士/units/korsarro-khan.md) |  | 2026-09-14 |
+| unit | [阿兹瑞尔大导师](factions/星际战士/units/azrael.md) |  | 2026-09-14 |
+| unit | [阿加通连长](factions/星际战士/units/adrax-agatone.md) |  | 2026-09-14 |
+| unit | [阿斯托拉斯](factions/星际战士/units/astorath.md) |  | 2026-09-14 |
+| unit | [阿斯特赖俄斯](factions/星际战士/units/astraeus.md) |  | 2026-09-14 |
+| unit | [阿斯莫戴](factions/星际战士/units/asmodai.md) |  | 2026-09-14 |
+| unit | [阿贾克·石拳](factions/星际战士/units/arjac-rockfist.md) |  | 2026-09-14 |
+| unit | [雷狼骑兵](factions/星际战士/units/thunderwolf-cavalry.md) |  | 2026-09-14 |
+| unit | [雷霆型风暴速攻艇](factions/星际战士/units/storm-speeder-thunderstrike.md) |  | 2026-09-14 |
+| unit | [雷马特斯](factions/星际战士/units/lemartes.md) |  | 2026-09-14 |
+| unit | [雷鹰炮艇](factions/星际战士/units/thunderhawk-gunship.md) |  | 2026-09-14 |
+| unit | [风暴召唤者纳吉奥](factions/星际战士/units/njal-stormcaller.md) |  | 2026-09-14 |
+| unit | [风暴爪炮艇](factions/星际战士/units/stormtalon-gunship.md) |  | 2026-09-14 |
+| unit | [风暴隼拦截机](factions/星际战士/units/stormhawk-interceptor.md) |  | 2026-09-14 |
+| unit | [首席智库墨菲斯顿](factions/星际战士/units/chief-librarian-mephiston.md) |  | 2026-09-14 |
+| unit | [首席智库底格里斯](factions/星际战士/units/chief-librarian-tigurius.md) |  | 2026-09-14 |
+| unit | [鸦翼指挥小队](factions/星际战士/units/ravenwing-command-squad.md) |  | 2026-09-14 |
+| unit | [鸦翼暗幕飞艇](factions/星际战士/units/ravenwing-darkshroud.md) |  | 2026-09-14 |
+| unit | [鸦翼黑爪轰炸机](factions/星际战士/units/ravenwing-dark-talon.md) |  | 2026-09-14 |
+| unit | [鸦翼黑骑士](factions/星际战士/units/ravenwing-black-knights.md) |  | 2026-09-14 |
+| unit | [黑星渡鸦](factions/星际战士/units/corvus-blackstar.md) |  | 2026-09-14 |
 
 ### 未分类
 
@@ -2972,45 +2991,45 @@
 | detachment | [求知大队](factions/机械修会/detachments/cohort-acquisitus.md) | 机械修会的分队「求知大队」。 | 2026-07-26 |
 | detachment | [熔炉领主](factions/机械修会/detachments/lords-of-the-forge.md) | 机械修会的分队「熔炉领主」。 | 2026-07-26 |
 | enhancement | [Admonissor Shunt](factions/机械修会/enhancements/admonissor-shunt.md) | 0 分、Response Clade 分队。 | 2026-07-26 |
-| enhancement | [Arch-negator](factions/机械修会/enhancements/arch-negator.md) | 10 分、Cohort Cybernetica 分队。 | 2026-07-26 |
-| enhancement | [Artisan](factions/机械修会/enhancements/artisan.md) | 15 分、Explorator Maniple 分队。 | 2026-07-26 |
+| enhancement | [Arch-negator](factions/机械修会/enhancements/arch-negator.md) | 5 分、Cohort Cybernetica 分队。 | 2026-07-26 |
+| enhancement | [Artisan](factions/机械修会/enhancements/artisan.md) | 10 分、Explorator Maniple 分队。 | 2026-07-26 |
 | enhancement | [Autoclavic Denunciation](factions/机械修会/enhancements/autoclavic-denunciation.md) | 15 分、Rad-Zone Corps 分队。 | 2026-07-26 |
-| enhancement | [Battle-sphere Uplink](factions/机械修会/enhancements/battle-sphere-uplink.md) | 30 分、Skitarii Hunter Cohort 分队。 | 2026-07-26 |
+| enhancement | [Battle-sphere Uplink](factions/机械修会/enhancements/battle-sphere-uplink.md) | 25 分、Skitarii Hunter Cohort 分队。 | 2026-07-26 |
 | enhancement | [Beseech the Machine Spirits](factions/机械修会/enhancements/beseech-the-machine-spirits.md) | 0 分、Machine Cult 分队。 | 2026-07-26 |
 | enhancement | [Cantic Thrallnet](factions/机械修会/enhancements/cantic-thrallnet.md) | 25 分、Skitarii Hunter Cohort 分队。 | 2026-07-26 |
-| enhancement | [Clandestine Infiltrator](factions/机械修会/enhancements/clandestine-infiltrator.md) | 20 分、Skitarii Hunter Cohort 分队。 | 2026-07-26 |
-| enhancement | [Cognitive Reinforcement](factions/机械修会/enhancements/cognitive-reinforcement.md) | 35 分、圣智战斗支队 分队。 | 2026-07-26 |
-| enhancement | [Data-blessed Autosermon](factions/机械修会/enhancements/data-blessed-autosermon.md) | 20 分、Data-Psalm Conclave 分队。 | 2026-07-26 |
-| enhancement | [Electromiasmic Brazier](factions/机械修会/enhancements/electromiasmic-brazier.md) | 分数未知、启明自动合唱团 分队。 | 2026-07-26 |
-| enhancement | [Emotionless Clarity](factions/机械修会/enhancements/emotionless-clarity.md) | 15 分、Cohort Cybernetica 分队。 | 2026-07-26 |
-| enhancement | [Genetor](factions/机械修会/enhancements/genetor.md) | 25 分、Explorator Maniple 分队。 | 2026-07-26 |
+| enhancement | [Clandestine Infiltrator](factions/机械修会/enhancements/clandestine-infiltrator.md) | 15 分、Skitarii Hunter Cohort 分队。 | 2026-07-26 |
+| enhancement | [Cognitive Reinforcement](factions/机械修会/enhancements/cognitive-reinforcement.md) | 30 分、圣智战斗支队 分队。 | 2026-07-26 |
+| enhancement | [Data-blessed Autosermon](factions/机械修会/enhancements/data-blessed-autosermon.md) | 15 分、Data-Psalm Conclave 分队。 | 2026-07-26 |
+| enhancement | [Electromiasmic Brazier](factions/机械修会/enhancements/electromiasmic-brazier.md) | 10 分、启明自动合唱团 分队。 | 2026-07-26 |
+| enhancement | [Emotionless Clarity](factions/机械修会/enhancements/emotionless-clarity.md) | 10 分、Cohort Cybernetica 分队。 | 2026-07-26 |
+| enhancement | [Genetor](factions/机械修会/enhancements/genetor.md) | 20 分、Explorator Maniple 分队。 | 2026-07-26 |
 | enhancement | [Harmonic Discordator](factions/机械修会/enhancements/harmonic-discordator.md) | 0 分、Machine Cult 分队。 | 2026-07-26 |
-| enhancement | [Logis](factions/机械修会/enhancements/logis.md) | 20 分、Explorator Maniple 分队。 | 2026-07-26 |
-| enhancement | [Lord of Machines](factions/机械修会/enhancements/lord-of-machines.md) | 20 分、Cohort Cybernetica 分队。 | 2026-07-26 |
-| enhancement | [Magos](factions/机械修会/enhancements/magos.md) | 15 分、Explorator Maniple 分队。 | 2026-07-26 |
+| enhancement | [Logis](factions/机械修会/enhancements/logis.md) | 15 分、Explorator Maniple 分队。 | 2026-07-26 |
+| enhancement | [Lord of Machines](factions/机械修会/enhancements/lord-of-machines.md) | 15 分、Cohort Cybernetica 分队。 | 2026-07-26 |
+| enhancement | [Magos](factions/机械修会/enhancements/magos.md) | 10 分、Explorator Maniple 分队。 | 2026-07-26 |
 | enhancement | [Malphonic Susurrus](factions/机械修会/enhancements/malphonic-susurrus.md) | 20 分、Rad-Zone Corps 分队。 | 2026-07-26 |
-| enhancement | [Mantle of the Gnosticarch](factions/机械修会/enhancements/mantle-of-the-gnosticarch.md) | 15 分、Data-Psalm Conclave 分队。 | 2026-07-26 |
+| enhancement | [Mantle of the Gnosticarch](factions/机械修会/enhancements/mantle-of-the-gnosticarch.md) | 10 分、Data-Psalm Conclave 分队。 | 2026-07-26 |
 | enhancement | [Martial Signatum Amplificator](factions/机械修会/enhancements/martial-signatum-amplificator.md) | 15 分、根除大队 分队。 | 2026-07-26 |
-| enhancement | [Mechanicus Locum](factions/机械修会/enhancements/mechanicus-locum.md) | 10 分、Data-Psalm Conclave 分队。 | 2026-07-26 |
+| enhancement | [Mechanicus Locum](factions/机械修会/enhancements/mechanicus-locum.md) | 5 分、Data-Psalm Conclave 分队。 | 2026-07-26 |
 | enhancement | [Multi-dimensional Auspex](factions/机械修会/enhancements/multi-dimensional-auspex.md) | 0 分、Electromartyrs 分队。 | 2026-07-26 |
-| enhancement | [Necromechanic](factions/机械修会/enhancements/necromechanic.md) | 25 分、Cohort Cybernetica 分队。 | 2026-07-26 |
+| enhancement | [Necromechanic](factions/机械修会/enhancements/necromechanic.md) | 20 分、Cohort Cybernetica 分队。 | 2026-07-26 |
 | enhancement | [Omnicogitator](factions/机械修会/enhancements/omnicogitator.md) | 25 分、根除大队 分队。 | 2026-07-26 |
 | enhancement | [Optimised Cogitators](factions/机械修会/enhancements/optimised-cogitators.md) | 0 分、Response Clade 分队。 | 2026-07-26 |
 | enhancement | [Peerless Eradicator](factions/机械修会/enhancements/peerless-eradicator.md) | 20 分、Rad-Zone Corps 分队。 | 2026-07-26 |
 | enhancement | [Radial Suffusion](factions/机械修会/enhancements/radial-suffusion.md) | 25 分、Rad-Zone Corps 分队。 | 2026-07-26 |
 | enhancement | [Remote Lockdown](factions/机械修会/enhancements/remote-lockdown.md) | 0 分、Electromartyrs 分队。 | 2026-07-26 |
-| enhancement | [TL-4Ø9](factions/机械修会/enhancements/tl-4ø9.md) | 分数未知、熔炉领主 分队。 | 2026-07-26 |
-| enhancement | [Temporcopia](factions/机械修会/enhancements/temporcopia.md) | 25 分、Data-Psalm Conclave 分队。 | 2026-07-26 |
+| enhancement | [TL-4Ø9](factions/机械修会/enhancements/tl-4ø9.md) | 30 分、熔炉领主 分队。 | 2026-07-26 |
+| enhancement | [Temporcopia](factions/机械修会/enhancements/temporcopia.md) | 20 分、Data-Psalm Conclave 分队。 | 2026-07-26 |
 | enhancement | [Transoracular Dyad Wafers](factions/机械修会/enhancements/transoracular-dyad-wafers.md) | 15 分、圣智战斗支队 分队。 | 2026-07-26 |
 | enhancement | [Veiled Hunter](factions/机械修会/enhancements/veiled-hunter.md) | 10 分、Skitarii Hunter Cohort 分队。 | 2026-07-26 |
-| enhancement | [Voltagheist Reliquary](factions/机械修会/enhancements/voltagheist-reliquary.md) | 分数未知、启明自动合唱团 分队。 | 2026-07-26 |
+| enhancement | [Voltagheist Reliquary](factions/机械修会/enhancements/voltagheist-reliquary.md) | 15 分、启明自动合唱团 分队。 | 2026-07-26 |
 | enhancement | [圣化弹药](factions/机械修会/enhancements/sanctified-ordnance.md) | 10 分、圣智战斗支队 分队。 | 2026-07-26 |
-| enhancement | [探索者分支](factions/机械修会/enhancements/explorator-dispensation.md) | 分数未知、求知大队 分队。 | 2026-07-26 |
+| enhancement | [探索者分支](factions/机械修会/enhancements/explorator-dispensation.md) | 20 分、求知大队 分队。 | 2026-07-26 |
 | enhancement | [欧姆尼赛亚之怒](factions/机械修会/enhancements/omnissiahs-fury.md) | 10 分、根除大队 分队。 | 2026-07-26 |
-| enhancement | [维因的活力晶片](factions/机械修会/enhancements/vinghs-wafers-of-dynamism.md) | 分数未知、熔炉领主 分队。 | 2026-07-26 |
+| enhancement | [维因的活力晶片](factions/机械修会/enhancements/vinghs-wafers-of-dynamism.md) | 25 分、熔炉领主 分队。 | 2026-07-26 |
 | enhancement | [致命数据](factions/机械修会/enhancements/inloaded-lethality.md) | 15 分、圣智战斗支队 分队。 | 2026-07-26 |
-| enhancement | [贝利科萨级电容叶片](factions/机械修会/enhancements/belicosa-class-capacitor-vanes.md) | 30 分、根除大队 分队。 | 2026-07-26 |
-| enhancement | [隐形赛博犬](factions/机械修会/enhancements/stealth-screened-cybercanids.md) | 分数未知、求知大队 分队。 | 2026-07-26 |
+| enhancement | [贝利科萨级电容叶片](factions/机械修会/enhancements/belicosa-class-capacitor-vanes.md) | 25 分、根除大队 分队。 | 2026-07-26 |
+| enhancement | [隐形赛博犬](factions/机械修会/enhancements/stealth-screened-cybercanids.md) | 15 分、求知大队 分队。 | 2026-07-26 |
 | stratagem | [ACCESS OVERRIDES](factions/机械修会/stratagems/access-overrides.md) | 1 CP、Movement phase、Response Clade 分队、Strategic Ploy Stratagem。 | 2026-07-26 |
 | stratagem | [AGGRESSIVE IMPULSE](factions/机械修会/stratagems/aggressive-impulse.md) | 1 CP、Movement phase、圣智战斗支队 分队、Strategic Ploy Stratagem。 | 2026-07-26 |
 | stratagem | [AGGRESSOR IMPERATIVE](factions/机械修会/stratagems/aggressor-imperative.md) | 1 CP、Movement phase、Rad-Zone Corps 分队、Battle Tactic Stratagem。 | 2026-07-26 |
@@ -3074,45 +3093,45 @@
 | stratagem | [精准猛攻](factions/机械修会/stratagems/precision-onslaught.md) | 1 CP、Charge phase、根除大队 分队、Battle Tactic Stratagem。 | 2026-07-26 |
 | stratagem | [解读性占卜](factions/机械修会/stratagems/analytical-divination.md) | 1 CP、Movement phase、圣智战斗支队 分队、Strategic Ploy Stratagem。 | 2026-07-26 |
 | stratagem | [过载安全措施](factions/机械修会/stratagems/overloaded-safeguards.md) | 1 CP、Movement phase、熔炉领主 分队。 | 2026-07-26 |
-| unit | [Secutarii Hoplites](factions/机械修会/units/secutarii-hoplites.md) |  | 2026-07-23 |
-| unit | [Secutarii Peltasts](factions/机械修会/units/secutarii-peltasts.md) |  | 2026-07-23 |
-| unit | [Servitors](factions/机械修会/units/servitors.md) |  | 2026-07-23 |
-| unit | [Terrax-pattern Termite](factions/机械修会/units/terrax-pattern-termite.md) |  | 2026-07-23 |
-| unit | [X-101](factions/机械修会/units/x-101.md) |  | 2026-07-23 |
-| unit | [卡斯特兰机器人](factions/机械修会/units/kastelan-robots.md) |  | 2026-07-23 |
-| unit | [哈斯塔利歼灭者](factions/机械修会/units/hastarii-exterminators.md) |  | 2026-07-23 |
-| unit | [哈斯塔利燧发枪手](factions/机械修会/units/hastarii-fusiliers.md) |  | 2026-07-23 |
-| unit | [图莉娅·古尔德](factions/机械修会/units/thulia-ghuld.md) |  | 2026-07-23 |
-| unit | [塞波利斯掠夺者](factions/机械修会/units/serberys-raiders.md) |  | 2026-07-23 |
-| unit | [塞波利斯硫磺猎手](factions/机械修会/units/serberys-sulphurhounds.md) |  | 2026-07-23 |
-| unit | [天蝎座粉碎者坦克](factions/机械修会/units/skorpius-disintegrator.md) |  | 2026-07-23 |
-| unit | [奴工战斗支队](factions/机械修会/units/servitor-battleclade.md) |  | 2026-07-23 |
-| unit | [始祖鸟层云猛禽](factions/机械修会/units/archaeopter-stratoraptor.md) |  | 2026-07-23 |
-| unit | [始祖鸟燧火轰炸机](factions/机械修会/units/archaeopter-fusilave.md) |  | 2026-07-23 |
-| unit | [始祖鸟矢量飞梭](factions/机械修会/units/archaeopter-transvector.md) |  | 2026-07-23 |
-| unit | [巴利斯塔利铁骑兵](factions/机械修会/units/ironstrider-ballistarii.md) |  | 2026-07-23 |
-| unit | [技术技师机械教士](factions/机械修会/units/tech-priest-enginseer.md) |  | 2026-07-23 |
-| unit | [护教军元帅](factions/机械修会/units/skitarii-marshal.md) |  | 2026-07-23 |
-| unit | [护教军先锋兵](factions/机械修会/units/skitarii-vanguard.md) |  | 2026-07-23 |
-| unit | [护教军游猎兵](factions/机械修会/units/skitarii-rangers.md) |  | 2026-07-23 |
-| unit | [控电神甫](factions/机械修会/units/tech-priest-manipulus.md) |  | 2026-07-23 |
-| unit | [智控数据技师](factions/机械修会/units/cybernetica-datasmith.md) |  | 2026-07-23 |
-| unit | [机械主教](factions/机械修会/units/tech-priest-dominus.md) |  | 2026-07-23 |
-| unit | [武装奴工毁灭者](factions/机械修会/units/kataphron-destroyers.md) |  | 2026-07-23 |
-| unit | [武装奴工突破者](factions/机械修会/units/kataphron-breachers.md) |  | 2026-07-23 |
-| unit | [沙丘爬行者机甲](factions/机械修会/units/onager-dunecrawler.md) |  | 2026-07-23 |
-| unit | [法身宗电僧](factions/机械修会/units/fulgurite-electro-priests.md) |  | 2026-07-23 |
-| unit | [科技考古学家](factions/机械修会/units/technoarcheologist.md) |  | 2026-07-23 |
-| unit | [翼龙军净炎兵](factions/机械修会/units/pteraxii-sterylizors.md) |  | 2026-07-23 |
-| unit | [翼龙军天猎兵](factions/机械修会/units/pteraxii-skystalkers.md) |  | 2026-07-23 |
-| unit | [蝎式沙丘运输车](factions/机械修会/units/skorpius-dunerider.md) |  | 2026-07-23 |
-| unit | [装备泰瑟骑枪的西多尼亚龙骑兵](factions/机械修会/units/sydonian-dragoons-with-taser-lances.md) |  | 2026-07-23 |
-| unit | [装备辐射狙击枪的西多尼亚龙骑兵](factions/机械修会/units/sydonian-dragoons-with-radium-jezzails.md) |  | 2026-07-23 |
-| unit | [西卡利安渗透者](factions/机械修会/units/sicarian-infiltrators.md) |  | 2026-07-23 |
-| unit | [西卡利安铁锈追踪者](factions/机械修会/units/sicarian-ruststalkers.md) |  | 2026-07-23 |
-| unit | [西多尼亚哨兵](factions/机械修会/units/sydonian-skatros.md) |  | 2026-07-23 |
-| unit | [贝利撒留·考尔](factions/机械修会/units/belisarius-cawl.md) |  | 2026-07-23 |
-| unit | [雷鸣宗电僧](factions/机械修会/units/corpuscarii-electro-priests.md) |  | 2026-07-23 |
+| unit | [Secutarii Hoplites](factions/机械修会/units/secutarii-hoplites.md) | 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。 | 2026-09-14 |
+| unit | [Secutarii Peltasts](factions/机械修会/units/secutarii-peltasts.md) | 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。 | 2026-09-14 |
+| unit | [Terrax-pattern Termite](factions/机械修会/units/terrax-pattern-termite.md) | 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。 | 2026-09-14 |
+| unit | [X-101](factions/机械修会/units/x-101.md) | 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。 | 2026-09-14 |
+| unit | [卡斯特兰机器人](factions/机械修会/units/kastelan-robots.md) |  | 2026-09-14 |
+| unit | [哈斯塔利歼灭者](factions/机械修会/units/hastarii-exterminators.md) |  | 2026-09-14 |
+| unit | [哈斯塔利燧发枪手](factions/机械修会/units/hastarii-fusiliers.md) |  | 2026-09-14 |
+| unit | [图莉娅·古尔德](factions/机械修会/units/thulia-ghuld.md) |  | 2026-09-14 |
+| unit | [塞波利斯掠夺者](factions/机械修会/units/serberys-raiders.md) |  | 2026-09-14 |
+| unit | [塞波利斯硫磺猎手](factions/机械修会/units/serberys-sulphurhounds.md) |  | 2026-09-14 |
+| unit | [天蝎座粉碎者坦克](factions/机械修会/units/skorpius-disintegrator.md) |  | 2026-09-14 |
+| unit | [奴工【传奇】](factions/机械修会/units/servitors.md) | 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。 | 2026-09-14 |
+| unit | [奴工战斗支队](factions/机械修会/units/servitor-battleclade.md) |  | 2026-09-14 |
+| unit | [始祖鸟层云猛禽](factions/机械修会/units/archaeopter-stratoraptor.md) |  | 2026-09-14 |
+| unit | [始祖鸟燧火轰炸机](factions/机械修会/units/archaeopter-fusilave.md) |  | 2026-09-14 |
+| unit | [始祖鸟矢量飞梭](factions/机械修会/units/archaeopter-transvector.md) |  | 2026-09-14 |
+| unit | [巴利斯塔利铁骑兵](factions/机械修会/units/ironstrider-ballistarii.md) |  | 2026-09-14 |
+| unit | [技术技师机械教士](factions/机械修会/units/tech-priest-enginseer.md) |  | 2026-09-14 |
+| unit | [护教军元帅](factions/机械修会/units/skitarii-marshal.md) |  | 2026-09-14 |
+| unit | [护教军先锋兵](factions/机械修会/units/skitarii-vanguard.md) |  | 2026-09-14 |
+| unit | [护教军游猎兵](factions/机械修会/units/skitarii-rangers.md) |  | 2026-09-14 |
+| unit | [控电神甫](factions/机械修会/units/tech-priest-manipulus.md) |  | 2026-09-14 |
+| unit | [智控数据技师](factions/机械修会/units/cybernetica-datasmith.md) |  | 2026-09-14 |
+| unit | [机械主教](factions/机械修会/units/tech-priest-dominus.md) |  | 2026-09-14 |
+| unit | [武装奴工毁灭者](factions/机械修会/units/kataphron-destroyers.md) |  | 2026-09-14 |
+| unit | [武装奴工突破者](factions/机械修会/units/kataphron-breachers.md) |  | 2026-09-14 |
+| unit | [沙丘爬行者机甲](factions/机械修会/units/onager-dunecrawler.md) |  | 2026-09-14 |
+| unit | [法身宗电僧](factions/机械修会/units/fulgurite-electro-priests.md) |  | 2026-09-14 |
+| unit | [科技考古学家](factions/机械修会/units/technoarcheologist.md) |  | 2026-09-14 |
+| unit | [翼龙军净炎兵](factions/机械修会/units/pteraxii-sterylizors.md) |  | 2026-09-14 |
+| unit | [翼龙军天猎兵](factions/机械修会/units/pteraxii-skystalkers.md) |  | 2026-09-14 |
+| unit | [蝎式沙丘运输车](factions/机械修会/units/skorpius-dunerider.md) |  | 2026-09-14 |
+| unit | [装备泰瑟骑枪的西多尼亚龙骑兵](factions/机械修会/units/sydonian-dragoons-with-taser-lances.md) |  | 2026-09-14 |
+| unit | [装备辐射狙击枪的西多尼亚龙骑兵](factions/机械修会/units/sydonian-dragoons-with-radium-jezzails.md) |  | 2026-09-14 |
+| unit | [西卡利安渗透者](factions/机械修会/units/sicarian-infiltrators.md) |  | 2026-09-14 |
+| unit | [西卡利安铁锈追踪者](factions/机械修会/units/sicarian-ruststalkers.md) |  | 2026-09-14 |
+| unit | [西多尼亚哨兵](factions/机械修会/units/sydonian-skatros.md) |  | 2026-09-14 |
+| unit | [贝利撒留·考尔](factions/机械修会/units/belisarius-cawl.md) |  | 2026-09-14 |
+| unit | [雷鸣宗电僧](factions/机械修会/units/corpuscarii-electro-priests.md) |  | 2026-09-14 |
 
 ### 死亡守卫
 
@@ -3134,12 +3153,12 @@
 | enhancement | [亚空间护符](factions/死亡守卫/enhancements/warprot-talisman.md) | 30 分、Death Lord’s Chosen 分队。 | 2026-07-26 |
 | enhancement | [再生护符](factions/死亡守卫/enhancements/talisman-of-burgeoning.md) | 25 分、Shamblerot Vectorium 分队。 | 2026-07-26 |
 | enhancement | [召唤凋零](factions/死亡守卫/enhancements/beckoning-blight.md) | 20 分、Tallyband Summoners 分队。 | 2026-07-26 |
-| enhancement | [可怖再生](factions/死亡守卫/enhancements/revolting-regeneration.md) | 20 分、Virulent Vectorium 分队。 | 2026-07-26 |
+| enhancement | [可怖再生](factions/死亡守卫/enhancements/revolting-regeneration.md) | 30 分、Virulent Vectorium 分队。 | 2026-07-26 |
 | enhancement | [喷涌污秽](factions/死亡守卫/enhancements/fountaining-filth.md) | 0 分、Vectors of Decay 分队。 | 2026-07-26 |
 | enhancement | [回复虫群](factions/死亡守卫/enhancements/rejuvenating-swarm-flyblown-host.md) | 10 分、吹蝇军 分队。 | 2026-07-26 |
-| enhancement | [回复虫群](factions/死亡守卫/enhancements/rejuvenating-swarm-paragons-of-putrescence.md) | 分数未知、腐坏楷模 分队。 | 2026-07-26 |
-| enhancement | [寄生收割](factions/死亡守卫/enhancements/parasitic-woe-reaper.md) | 分数未知、传瘟机械 分队。 | 2026-07-26 |
-| enhancement | [密集虫群](factions/死亡守卫/enhancements/insectile-murmuration.md) | 20 分、吹蝇军 分队。 | 2026-07-26 |
+| enhancement | [回复虫群](factions/死亡守卫/enhancements/rejuvenating-swarm-paragons-of-putrescence.md) | 20 分、腐坏楷模 分队。 | 2026-07-26 |
+| enhancement | [寄生收割](factions/死亡守卫/enhancements/parasitic-woe-reaper.md) | 15 分、传瘟机械 分队。 | 2026-07-26 |
+| enhancement | [密集虫群](factions/死亡守卫/enhancements/insectile-murmuration.md) | 15 分、吹蝇军 分队。 | 2026-07-26 |
 | enhancement | [尖啸虫使](factions/死亡守卫/enhancements/shriekworm-familiar.md) | 15 分、Mortarion’s Hammer 分队。 | 2026-07-26 |
 | enhancement | [恐怖丧钟](factions/死亡守卫/enhancements/entropic-knell.md) | 15 分、Tallyband Summoners 分队。 | 2026-07-26 |
 | enhancement | [恶心复元](factions/死亡守卫/enhancements/disgusting-reinvigoration.md) | 0 分、Arch-Contaminators 分队。 | 2026-07-26 |
@@ -3150,12 +3169,12 @@
 | enhancement | [死亡之面](factions/死亡守卫/enhancements/face-of-death.md) | 10 分、Death Lord’s Chosen 分队。 | 2026-07-26 |
 | enhancement | [残暴收割](factions/死亡守卫/enhancements/fell-harvester.md) | 10 分、Tallyband Summoners 分队。 | 2026-07-26 |
 | enhancement | [污秽体质](factions/死亡守卫/enhancements/foul-constitution.md) | 0 分、Vectors of Decay 分队。 | 2026-07-26 |
-| enhancement | [混合瘟疫宿主](factions/死亡守卫/enhancements/host-of-the-hybridised-pox.md) | 分数未知、腐坏楷模 分队。 | 2026-07-26 |
+| enhancement | [混合瘟疫宿主](factions/死亡守卫/enhancements/host-of-the-hybridised-pox.md) | 40 分、腐坏楷模 分队。 | 2026-07-26 |
 | enhancement | [瘟疫使者](factions/死亡守卫/enhancements/pox-bearer.md) | 0 分、Unclean Uprising 分队。 | 2026-07-26 |
-| enhancement | [瘟疫烟幕](factions/死亡守卫/enhancements/plagueveil.md) | 25 分、吹蝇军 分队。 | 2026-07-26 |
+| enhancement | [瘟疫烟幕](factions/死亡守卫/enhancements/plagueveil.md) | 15 分、吹蝇军 分队。 | 2026-07-26 |
 | enhancement | [瘟疫熔炉](factions/死亡守卫/enhancements/furnace-of-plagues.md) | 25 分、Virulent Vectorium 分队。 | 2026-07-26 |
 | enhancement | [瘴气恶臭](factions/死亡守卫/enhancements/miasmic-odour.md) | 0 分、Arch-Contaminators 分队。 | 2026-07-26 |
-| enhancement | [穿刺世界之疮](factions/死亡守卫/enhancements/lancet-of-the-worldsore.md) | 分数未知、传瘟机械 分队。 | 2026-07-26 |
+| enhancement | [穿刺世界之疮](factions/死亡守卫/enhancements/lancet-of-the-worldsore.md) | 15 分、传瘟机械 分队。 | 2026-07-26 |
 | enhancement | [精华注射](factions/死亡守卫/enhancements/needle-of-nurgle.md) | 25 分、Champions of Contagion 分队。 | 2026-07-26 |
 | enhancement | [索敌毒云](factions/死亡守卫/enhancements/tendrilous-emissions.md) | 30 分、Mortarion’s Hammer 分队。 | 2026-07-26 |
 | enhancement | [纳垢之手](factions/死亡守卫/enhancements/hand-of-nurgle.md) | 0 分、Unclean Uprising 分队。 | 2026-07-26 |
@@ -3228,77 +3247,77 @@
 | stratagem | [遮天蔽目](factions/死亡守卫/stratagems/eyestinger-storm.md) | 1 CP、Command phase、Mortarion’s Hammer 分队、Strategic Ploy Stratagem。 | 2026-07-26 |
 | stratagem | [饥饿折磨](factions/死亡守卫/stratagems/gnawing-hunger.md) | 1 CP、Command phase、Shamblerot Vectorium 分队、Battle Tactic Stratagem。 | 2026-07-26 |
 | stratagem | [鸣叫恐惧](factions/死亡守卫/stratagems/droning-horror.md) | 1 CP、Shooting phase、吹蝇军 分队、Battle Tactic Stratagem。 | 2026-07-26 |
-| unit | [Cerberus](factions/死亡守卫/units/cerberus.md) |  | 2026-07-23 |
-| unit | [Chaos Lord On Palanquin Of Nurgle](factions/死亡守卫/units/chaos-lord-on-palanquin-of-nurgle.md) |  | 2026-07-23 |
-| unit | [Chaos Thunderhawk](factions/死亡守卫/units/chaos-thunderhawk.md) |  | 2026-07-23 |
-| unit | [Death Guard Chaos Lord In Terminator Armour](factions/死亡守卫/units/death-guard-chaos-lord-in-terminator-armour.md) |  | 2026-07-23 |
-| unit | [Death Guard Cultists](factions/死亡守卫/units/death-guard-cultists.md) |  | 2026-07-23 |
-| unit | [Death Guard Possessed](factions/死亡守卫/units/death-guard-possessed.md) |  | 2026-07-23 |
-| unit | [Deredeo Dreadnought](factions/死亡守卫/units/deredeo-dreadnought.md) |  | 2026-07-23 |
-| unit | [Falchion](factions/死亡守卫/units/falchion.md) |  | 2026-07-23 |
-| unit | [Fellblade](factions/死亡守卫/units/fellblade.md) |  | 2026-07-23 |
-| unit | [Fire Raptor Gunship](factions/死亡守卫/units/fire-raptor-gunship.md) |  | 2026-07-23 |
-| unit | [Gellerpox Infected](factions/死亡守卫/units/gellerpox-infected.md) |  | 2026-07-23 |
-| unit | [Greater Blight Drone](factions/死亡守卫/units/greater-blight-drone.md) |  | 2026-07-23 |
-| unit | [Hell Blade](factions/死亡守卫/units/hell-blade.md) |  | 2026-07-23 |
-| unit | [Hell Talon](factions/死亡守卫/units/hell-talon.md) |  | 2026-07-23 |
-| unit | [Kratos](factions/死亡守卫/units/kratos.md) |  | 2026-07-23 |
-| unit | [Land Raider Achilles](factions/死亡守卫/units/land-raider-achilles.md) |  | 2026-07-23 |
-| unit | [Land Raider Proteus](factions/死亡守卫/units/land-raider-proteus.md) |  | 2026-07-23 |
-| unit | [Leviathan Dreadnought](factions/死亡守卫/units/leviathan-dreadnought.md) |  | 2026-07-23 |
-| unit | [Mastodon](factions/死亡守卫/units/mastodon.md) |  | 2026-07-23 |
-| unit | [Mutoid Vermin](factions/死亡守卫/units/mutoid-vermin.md) |  | 2026-07-23 |
-| unit | [Rapier Carrier](factions/死亡守卫/units/rapier-carrier.md) |  | 2026-07-23 |
-| unit | [Relic Contemptor Dreadnought](factions/死亡守卫/units/relic-contemptor-dreadnought.md) |  | 2026-07-23 |
-| unit | [Sicaran Battle Tank](factions/死亡守卫/units/sicaran-battle-tank.md) |  | 2026-07-23 |
-| unit | [Sicaran Punisher](factions/死亡守卫/units/sicaran-punisher.md) |  | 2026-07-23 |
-| unit | [Sicaran Venator](factions/死亡守卫/units/sicaran-venator.md) |  | 2026-07-23 |
-| unit | [Sokar-pattern Stormbird](factions/死亡守卫/units/sokar-pattern-stormbird.md) |  | 2026-07-23 |
-| unit | [Sorcerer On Palanquin Of Nurgle](factions/死亡守卫/units/sorcerer-on-palanquin-of-nurgle.md) |  | 2026-07-23 |
-| unit | [Spartan](factions/死亡守卫/units/spartan.md) |  | 2026-07-23 |
-| unit | [Storm Eagle Gunship](factions/死亡守卫/units/storm-eagle-gunship.md) |  | 2026-07-23 |
-| unit | [Terrax-pattern Termite](factions/死亡守卫/units/terrax-pattern-termite.md) |  | 2026-07-23 |
-| unit | [Typhon](factions/死亡守卫/units/typhon.md) |  | 2026-07-23 |
-| unit | [Whirlwind Scorpius](factions/死亡守卫/units/whirlwind-scorpius.md) |  | 2026-07-23 |
-| unit | [Xiphon Interceptor](factions/死亡守卫/units/xiphon-interceptor.md) |  | 2026-07-23 |
-| unit | [丧钟使者](factions/死亡守卫/units/noxious-blightbringer.md) |  | 2026-07-23 |
-| unit | [亵渎者](factions/死亡守卫/units/defiler.md) |  | 2026-07-23 |
-| unit | [凋败记账官](factions/死亡守卫/units/tallyman.md) |  | 2026-07-23 |
-| unit | [凋零霸主终结者](factions/死亡守卫/units/blightlord-terminators.md) |  | 2026-07-23 |
-| unit | [剧毒坩埚](factions/死亡守卫/units/miasmic-malignifier.md) |  | 2026-07-23 |
-| unit | [地狱兽](factions/死亡守卫/units/helbrute.md) |  | 2026-07-23 |
-| unit | [大不净者](factions/死亡守卫/units/great-unclean-one.md) |  | 2026-07-23 |
-| unit | [徽记手](factions/死亡守卫/units/icon-bearer.md) |  | 2026-07-23 |
-| unit | [恶疾使者](factions/死亡守卫/units/malignant-plaguecaster.md) |  | 2026-07-23 |
-| unit | [恶臭疫病拖车](factions/死亡守卫/units/myphitic-blight-hauler.md) |  | 2026-07-23 |
-| unit | [携疫者](factions/死亡守卫/units/plaguebearers.md) |  | 2026-07-23 |
-| unit | [有翼纳垢恶魔王子](factions/死亡守卫/units/daemon-prince-of-nurgle-with-wings.md) |  | 2026-07-23 |
-| unit | [死亡守卫混沌领主](factions/死亡守卫/units/death-guard-chaos-lord.md) |  | 2026-07-23 |
-| unit | [死亡守卫终结者巫师](factions/死亡守卫/units/death-guard-sorcerer-in-terminator-armour.md) |  | 2026-07-23 |
-| unit | [死亡寿衣终结者](factions/死亡守卫/units/deathshroud-terminators.md) |  | 2026-07-23 |
-| unit | [歼灭者型猎食者坦克](factions/死亡守卫/units/chaos-predator-annihilator.md) |  | 2026-07-23 |
-| unit | [泰丰斯](factions/死亡守卫/units/typhus.md) |  | 2026-07-23 |
-| unit | [混沌兰德掠袭者](factions/死亡守卫/units/chaos-land-raider.md) |  | 2026-07-23 |
-| unit | [混沌卵](factions/死亡守卫/units/chaos-spawn.md) |  | 2026-07-23 |
-| unit | [烂格斯](factions/死亡守卫/units/rotigus.md) |  | 2026-07-23 |
-| unit | [烈毒领主](factions/死亡守卫/units/lord-of-virulence.md) |  | 2026-07-23 |
-| unit | [犀牛装甲车](factions/死亡守卫/units/chaos-rhino.md) |  | 2026-07-23 |
-| unit | [疫病领主](factions/死亡守卫/units/lord-of-contagion.md) |  | 2026-07-23 |
-| unit | [病毒精练者](factions/死亡守卫/units/biologus-putrifier.md) |  | 2026-07-23 |
-| unit | [痘疹领主](factions/死亡守卫/units/lord-of-poxes.md) |  | 2026-07-23 |
-| unit | [瘟疫先蜂](factions/死亡守卫/units/plague-drones.md) |  | 2026-07-23 |
-| unit | [瘟疫军医](factions/死亡守卫/units/plague-surgeon.md) |  | 2026-07-23 |
-| unit | [瘟疫战士](factions/死亡守卫/units/plague-marines.md) |  | 2026-07-23 |
-| unit | [瘟疫散播者](factions/死亡守卫/units/foul-blightspawn.md) |  | 2026-07-23 |
-| unit | [瘟疫机蜂](factions/死亡守卫/units/foetid-bloat-drone.md) |  | 2026-07-23 |
-| unit | [瘟疫行尸](factions/死亡守卫/units/poxwalkers.md) |  | 2026-07-23 |
-| unit | [瘟疫轰炮车](factions/死亡守卫/units/plagueburst-crawler.md) |  | 2026-07-23 |
-| unit | [破坏者型猎食者坦克](factions/死亡守卫/units/chaos-predator-destructor.md) |  | 2026-07-23 |
-| unit | [纳垢兽](factions/死亡守卫/units/beasts-of-nurgle.md) |  | 2026-07-23 |
-| unit | [纳垢恶魔王子](factions/死亡守卫/units/daemon-prince-of-nurgle.md) |  | 2026-07-23 |
-| unit | [纳垢灵](factions/死亡守卫/units/nurglings.md) |  | 2026-07-23 |
-| unit | [莫塔里安](factions/死亡守卫/units/mortarion.md) |  | 2026-07-23 |
-| unit | [装备重型瘟疫榴弹炮的瘟疫机蜂](factions/死亡守卫/units/foetid-bloat-drone-with-heavy-blight-launcher.md) |  | 2026-07-23 |
+| unit | [Cerberus](factions/死亡守卫/units/cerberus.md) | 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。 | 2026-09-14 |
+| unit | [Chaos Lord On Palanquin Of Nurgle](factions/死亡守卫/units/chaos-lord-on-palanquin-of-nurgle.md) | 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。 | 2026-09-14 |
+| unit | [Chaos Thunderhawk](factions/死亡守卫/units/chaos-thunderhawk.md) | 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。 | 2026-09-14 |
+| unit | [Death Guard Chaos Lord In Terminator Armour](factions/死亡守卫/units/death-guard-chaos-lord-in-terminator-armour.md) | 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。 | 2026-09-14 |
+| unit | [Death Guard Cultists](factions/死亡守卫/units/death-guard-cultists.md) | 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。 | 2026-09-14 |
+| unit | [Death Guard Possessed](factions/死亡守卫/units/death-guard-possessed.md) | 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。 | 2026-09-14 |
+| unit | [Deredeo Dreadnought](factions/死亡守卫/units/deredeo-dreadnought.md) | 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。 | 2026-09-14 |
+| unit | [Falchion](factions/死亡守卫/units/falchion.md) | 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。 | 2026-09-14 |
+| unit | [Fellblade](factions/死亡守卫/units/fellblade.md) | 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。 | 2026-09-14 |
+| unit | [Fire Raptor Gunship](factions/死亡守卫/units/fire-raptor-gunship.md) | 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。 | 2026-09-14 |
+| unit | [Gellerpox Infected](factions/死亡守卫/units/gellerpox-infected.md) | 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。 | 2026-09-14 |
+| unit | [Greater Blight Drone](factions/死亡守卫/units/greater-blight-drone.md) | 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。 | 2026-09-14 |
+| unit | [Hell Blade](factions/死亡守卫/units/hell-blade.md) | 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。 | 2026-09-14 |
+| unit | [Hell Talon](factions/死亡守卫/units/hell-talon.md) | 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。 | 2026-09-14 |
+| unit | [Kratos](factions/死亡守卫/units/kratos.md) | 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。 | 2026-09-14 |
+| unit | [Land Raider Achilles](factions/死亡守卫/units/land-raider-achilles.md) | 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。 | 2026-09-14 |
+| unit | [Land Raider Proteus](factions/死亡守卫/units/land-raider-proteus.md) | 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。 | 2026-09-14 |
+| unit | [Leviathan Dreadnought](factions/死亡守卫/units/leviathan-dreadnought.md) | 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。 | 2026-09-14 |
+| unit | [Mastodon](factions/死亡守卫/units/mastodon.md) | 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。 | 2026-09-14 |
+| unit | [Mutoid Vermin](factions/死亡守卫/units/mutoid-vermin.md) | 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。 | 2026-09-14 |
+| unit | [Rapier Carrier](factions/死亡守卫/units/rapier-carrier.md) | 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。 | 2026-09-14 |
+| unit | [Relic Contemptor Dreadnought](factions/死亡守卫/units/relic-contemptor-dreadnought.md) | 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。 | 2026-09-14 |
+| unit | [Sicaran Battle Tank](factions/死亡守卫/units/sicaran-battle-tank.md) | 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。 | 2026-09-14 |
+| unit | [Sicaran Punisher](factions/死亡守卫/units/sicaran-punisher.md) | 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。 | 2026-09-14 |
+| unit | [Sicaran Venator](factions/死亡守卫/units/sicaran-venator.md) | 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。 | 2026-09-14 |
+| unit | [Sokar-pattern Stormbird](factions/死亡守卫/units/sokar-pattern-stormbird.md) | 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。 | 2026-09-14 |
+| unit | [Sorcerer On Palanquin Of Nurgle](factions/死亡守卫/units/sorcerer-on-palanquin-of-nurgle.md) | 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。 | 2026-09-14 |
+| unit | [Spartan](factions/死亡守卫/units/spartan.md) | 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。 | 2026-09-14 |
+| unit | [Storm Eagle Gunship](factions/死亡守卫/units/storm-eagle-gunship.md) | 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。 | 2026-09-14 |
+| unit | [Terrax-pattern Termite](factions/死亡守卫/units/terrax-pattern-termite.md) | 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。 | 2026-09-14 |
+| unit | [Typhon](factions/死亡守卫/units/typhon.md) | 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。 | 2026-09-14 |
+| unit | [Whirlwind Scorpius](factions/死亡守卫/units/whirlwind-scorpius.md) | 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。 | 2026-09-14 |
+| unit | [Xiphon Interceptor](factions/死亡守卫/units/xiphon-interceptor.md) | 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。 | 2026-09-14 |
+| unit | [丧钟使者](factions/死亡守卫/units/noxious-blightbringer.md) |  | 2026-09-14 |
+| unit | [亵渎者](factions/死亡守卫/units/defiler.md) |  | 2026-09-14 |
+| unit | [凋败记账官](factions/死亡守卫/units/tallyman.md) |  | 2026-09-14 |
+| unit | [凋零霸主终结者](factions/死亡守卫/units/blightlord-terminators.md) |  | 2026-09-14 |
+| unit | [剧毒坩埚](factions/死亡守卫/units/miasmic-malignifier.md) |  | 2026-09-14 |
+| unit | [地狱兽](factions/死亡守卫/units/helbrute.md) |  | 2026-09-14 |
+| unit | [大不净者](factions/死亡守卫/units/great-unclean-one.md) |  | 2026-09-14 |
+| unit | [徽记手](factions/死亡守卫/units/icon-bearer.md) |  | 2026-09-14 |
+| unit | [恶疾使者](factions/死亡守卫/units/malignant-plaguecaster.md) |  | 2026-09-14 |
+| unit | [恶臭疫病拖车](factions/死亡守卫/units/myphitic-blight-hauler.md) |  | 2026-09-14 |
+| unit | [携疫者](factions/死亡守卫/units/plaguebearers.md) |  | 2026-09-14 |
+| unit | [有翼纳垢恶魔王子](factions/死亡守卫/units/daemon-prince-of-nurgle-with-wings.md) |  | 2026-09-14 |
+| unit | [死亡守卫混沌领主](factions/死亡守卫/units/death-guard-chaos-lord.md) | 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。 | 2026-09-14 |
+| unit | [死亡守卫终结者巫师](factions/死亡守卫/units/death-guard-sorcerer-in-terminator-armour.md) | 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。 | 2026-09-14 |
+| unit | [死亡寿衣终结者](factions/死亡守卫/units/deathshroud-terminators.md) |  | 2026-09-14 |
+| unit | [歼灭者型猎食者坦克](factions/死亡守卫/units/chaos-predator-annihilator.md) |  | 2026-09-14 |
+| unit | [泰丰斯](factions/死亡守卫/units/typhus.md) |  | 2026-09-14 |
+| unit | [混沌兰德掠袭者](factions/死亡守卫/units/chaos-land-raider.md) |  | 2026-09-14 |
+| unit | [混沌卵](factions/死亡守卫/units/chaos-spawn.md) |  | 2026-09-14 |
+| unit | [烂格斯](factions/死亡守卫/units/rotigus.md) |  | 2026-09-14 |
+| unit | [烈毒领主](factions/死亡守卫/units/lord-of-virulence.md) |  | 2026-09-14 |
+| unit | [犀牛装甲车](factions/死亡守卫/units/chaos-rhino.md) |  | 2026-09-14 |
+| unit | [疫病领主](factions/死亡守卫/units/lord-of-contagion.md) |  | 2026-09-14 |
+| unit | [病毒精练者](factions/死亡守卫/units/biologus-putrifier.md) |  | 2026-09-14 |
+| unit | [痘疹领主](factions/死亡守卫/units/lord-of-poxes.md) |  | 2026-09-14 |
+| unit | [瘟疫先蜂](factions/死亡守卫/units/plague-drones.md) |  | 2026-09-14 |
+| unit | [瘟疫军医](factions/死亡守卫/units/plague-surgeon.md) |  | 2026-09-14 |
+| unit | [瘟疫战士](factions/死亡守卫/units/plague-marines.md) |  | 2026-09-14 |
+| unit | [瘟疫散播者](factions/死亡守卫/units/foul-blightspawn.md) |  | 2026-09-14 |
+| unit | [瘟疫机蜂](factions/死亡守卫/units/foetid-bloat-drone.md) |  | 2026-09-14 |
+| unit | [瘟疫行尸](factions/死亡守卫/units/poxwalkers.md) |  | 2026-09-14 |
+| unit | [瘟疫轰炮车](factions/死亡守卫/units/plagueburst-crawler.md) |  | 2026-09-14 |
+| unit | [破坏者型猎食者坦克](factions/死亡守卫/units/chaos-predator-destructor.md) |  | 2026-09-14 |
+| unit | [纳垢兽](factions/死亡守卫/units/beasts-of-nurgle.md) |  | 2026-09-14 |
+| unit | [纳垢恶魔王子](factions/死亡守卫/units/daemon-prince-of-nurgle.md) |  | 2026-09-14 |
+| unit | [纳垢灵](factions/死亡守卫/units/nurglings.md) |  | 2026-09-14 |
+| unit | [莫塔里安](factions/死亡守卫/units/mortarion.md) |  | 2026-09-14 |
+| unit | [装备重型瘟疫榴弹炮的瘟疫机蜂](factions/死亡守卫/units/foetid-bloat-drone-with-heavy-blight-launcher.md) |  | 2026-09-14 |
 
 ### 泰伦虫族
 
@@ -3325,7 +3344,7 @@
 | enhancement | [Chameleonic](factions/泰伦虫族/enhancements/chameleonic.md) | 15 分、Vanguard Onslaught 分队。 | 2026-07-26 |
 | enhancement | [Elevated Might](factions/泰伦虫族/enhancements/elevated-might.md) | 30 分、战斗生物总攻 分队。 | 2026-07-26 |
 | enhancement | [Enraged Reserves](factions/泰伦虫族/enhancements/enraged-reserves.md) | 20 分、Crusher Stampede 分队。 | 2026-07-26 |
-| enhancement | [Hunting Grounds](factions/泰伦虫族/enhancements/hunting-grounds.md) | 20 分、Vanguard Onslaught 分队。 | 2026-07-26 |
+| enhancement | [Hunting Grounds](factions/泰伦虫族/enhancements/hunting-grounds.md) | 30 分、Vanguard Onslaught 分队。 | 2026-07-26 |
 | enhancement | [Hypersurge Gland](factions/泰伦虫族/enhancements/hypersurge-gland.md) | 0 分、Biotide 分队。 | 2026-07-26 |
 | enhancement | [Instinctive Defence](factions/泰伦虫族/enhancements/instinctive-defence.md) | 15 分、Assimilation Swarm 分队。 | 2026-07-26 |
 | enhancement | [Monoform Predators](factions/泰伦虫族/enhancements/monoform-predators.md) | 0 分、Boarding Swarm 分队。 | 2026-07-26 |
@@ -3355,12 +3374,12 @@
 | enhancement | [The Dirgeheart of Kharis (Aura)](factions/泰伦虫族/enhancements/the-dirgeheart-of-kharis-aura.md) | 15 分、Synaptic Nexus 分队。 | 2026-07-26 |
 | enhancement | [Tremor Senses](factions/泰伦虫族/enhancements/tremor-senses.md) | 20 分、地底突袭 分队。 | 2026-07-26 |
 | enhancement | [Vanguard Intellect](factions/泰伦虫族/enhancements/vanguard-intellect.md) | 15 分、地底突袭 分队。 | 2026-07-26 |
-| enhancement | [动摇捕猎](factions/泰伦虫族/enhancements/destabilising-predation.md) | 分数未知、诺恩女王之爪 分队。 | 2026-07-26 |
-| enhancement | [包围恐惧](factions/泰伦虫族/enhancements/encircling-horrors.md) | 分数未知、伏击捕食者 分队。 | 2026-07-26 |
+| enhancement | [动摇捕猎](factions/泰伦虫族/enhancements/destabilising-predation.md) | 20 分、诺恩女王之爪 分队。 | 2026-07-26 |
+| enhancement | [包围恐惧](factions/泰伦虫族/enhancements/encircling-horrors.md) | 20 分、伏击捕食者 分队。 | 2026-07-26 |
 | enhancement | [战略突触](factions/泰伦虫族/enhancements/synaptic-strategy.md) | 15 分、地底突袭 分队。 | 2026-07-26 |
 | enhancement | [掘蟒首领](factions/泰伦虫族/enhancements/trygon-prime.md) | 20 分、地底突袭 分队。 | 2026-07-26 |
-| enhancement | [突触科学](factions/泰伦虫族/enhancements/synaptoprescience.md) | 分数未知、诺恩女王之爪 分队。 | 2026-07-26 |
-| enhancement | [隐蔽伪装](factions/泰伦虫族/enhancements/cryptophotaic-camouflage.md) | 分数未知、伏击捕食者 分队。 | 2026-07-26 |
+| enhancement | [突触科学](factions/泰伦虫族/enhancements/synaptoprescience.md) | 30 分、诺恩女王之爪 分队。 | 2026-07-26 |
+| enhancement | [隐蔽伪装](factions/泰伦虫族/enhancements/cryptophotaic-camouflage.md) | 15 分、伏击捕食者 分队。 | 2026-07-26 |
 | stratagem | [ABLATIVE CARAPACE](factions/泰伦虫族/stratagems/ablative-carapace.md) | 2 CP、Shooting or Fight phase、Assimilation Swarm 分队、Epic Deed Stratagem。 | 2026-07-26 |
 | stratagem | [ADRENAL SURGE](factions/泰伦虫族/stratagems/adrenal-surge.md) | 2 CP、Fight phase、Invasion Fleet 分队、Battle Tactic Stratagem。 | 2026-07-26 |
 | stratagem | [ADRENALISED SLAUGHTER](factions/泰伦虫族/stratagems/adrenalised-slaughter.md) | 1 CP、Fight phase、Boarding Swarm 分队、Strategic Ploy Stratagem。 | 2026-07-26 |
@@ -3432,72 +3451,72 @@
 | stratagem | [补充虫群](factions/泰伦虫族/stratagems/replenishing-swarms.md) | 1 CP、Movement phase、地底突袭 分队、Wargear Stratagem。 | 2026-07-26 |
 | stratagem | [超感官适应](factions/泰伦虫族/stratagems/hypersensory-adaptations.md) | 1 CP、Shooting phase、伏击捕食者 分队。 | 2026-07-26 |
 | stratagem | [适应优化](factions/泰伦虫族/stratagems/adaptive-optimisation.md) | 1 CP、Command phase、地底突袭 分队、Wargear Stratagem。 | 2026-07-26 |
-| unit | [Barbed Hierodule](factions/泰伦虫族/units/barbed-hierodule.md) |  | 2026-07-23 |
-| unit | [Dimachaeron](factions/泰伦虫族/units/dimachaeron.md) |  | 2026-07-23 |
-| unit | [Malanthrope](factions/泰伦虫族/units/malanthrope.md) |  | 2026-07-23 |
-| unit | [Scythed Hierodule](factions/泰伦虫族/units/scythed-hierodule.md) |  | 2026-07-23 |
-| unit | [Sky-slasher Swarms](factions/泰伦虫族/units/sky-slasher-swarms.md) |  | 2026-07-23 |
-| unit | [冯·瑞恩跃袭者](factions/泰伦虫族/units/von-ryans-leapers.md) |  | 2026-07-23 |
-| unit | [刀斧虫](factions/泰伦虫族/units/lictor.md) |  | 2026-07-23 |
-| unit | [刀虫](factions/泰伦虫族/units/hormagaunts.md) |  | 2026-07-23 |
-| unit | [刽子手](factions/泰伦虫族/units/carnifexes.md) |  | 2026-07-23 |
-| unit | [哈里丹](factions/泰伦虫族/units/harridan.md) |  | 2026-07-23 |
-| unit | [喷焰虫](factions/泰伦虫族/units/pyrovores.md) |  | 2026-07-23 |
-| unit | [噬灵虫](factions/泰伦虫族/units/psychophage.md) |  | 2026-07-23 |
-| unit | [圣皇](factions/泰伦虫族/units/hierophant.md) |  | 2026-07-23 |
-| unit | [基因窃取者](factions/泰伦虫族/units/genestealers.md) |  | 2026-07-23 |
-| unit | [天妖](factions/泰伦虫族/units/harpy.md) |  | 2026-07-23 |
-| unit | [孢囊要塞](factions/泰伦虫族/units/sporocyst.md) |  | 2026-07-23 |
-| unit | [孢子兽](factions/泰伦虫族/units/biovores.md) |  | 2026-07-23 |
-| unit | [孢子舱](factions/泰伦虫族/units/tyrannocyte.md) |  | 2026-07-23 |
-| unit | [孢子雷](factions/泰伦虫族/units/spore-mines.md) |  | 2026-07-23 |
-| unit | [尖啸杀手](factions/泰伦虫族/units/screamer-killer.md) |  | 2026-07-23 |
-| unit | [巨噬兽](factions/泰伦虫族/units/haruspex.md) |  | 2026-07-23 |
-| unit | [掘蟒](factions/泰伦虫族/units/trygon.md) |  | 2026-07-23 |
-| unit | [掷弹虫](factions/泰伦虫族/units/barbgaunts.md) |  | 2026-07-23 |
-| unit | [摩崔克斯寄生虫](factions/泰伦虫族/units/parasite-of-mortrex.md) |  | 2026-07-23 |
-| unit | [撕裂虫群](factions/泰伦虫族/units/ripper-swarms.md) |  | 2026-07-23 |
-| unit | [族群领主](factions/泰伦虫族/units/broodlord.md) |  | 2026-07-23 |
-| unit | [暴君护卫](factions/泰伦虫族/units/tyrant-guard.md) |  | 2026-07-23 |
-| unit | [暴虐兽](factions/泰伦虫族/units/tyrannofex.md) |  | 2026-07-23 |
-| unit | [有翼泰伦王虫](factions/泰伦虫族/units/winged-tyranid-prime.md) |  | 2026-07-23 |
-| unit | [有翼虫巢暴君](factions/泰伦虫族/units/winged-hive-tyrant.md) |  | 2026-07-23 |
-| unit | [枪虫](factions/泰伦虫族/units/termagants.md) |  | 2026-07-23 |
-| unit | [死亡跃袭者](factions/泰伦虫族/units/deathleaper.md) |  | 2026-07-23 |
-| unit | [母虫](factions/泰伦虫族/units/tervigon.md) |  | 2026-07-23 |
-| unit | [毒烟虫](factions/泰伦虫族/units/venomthropes.md) |  | 2026-07-23 |
-| unit | [毒鞭兽](factions/泰伦虫族/units/toxicrene.md) |  | 2026-07-23 |
-| unit | [沙蟒](factions/泰伦虫族/units/mawloc.md) |  | 2026-07-23 |
-| unit | [灵脑兽](factions/泰伦虫族/units/maleceptor.md) |  | 2026-07-23 |
-| unit | [生化喷吐泰伦武士](factions/泰伦虫族/units/tyranid-warriors-with-ranged-bio-weapons.md) |  | 2026-07-23 |
-| unit | [石像鬼](factions/泰伦虫族/units/gargoyles.md) |  | 2026-07-23 |
-| unit | [神经刀斧虫](factions/泰伦虫族/units/neurolictor.md) |  | 2026-07-23 |
-| unit | [神经虫](factions/泰伦虫族/units/neurogaunts.md) |  | 2026-07-23 |
-| unit | [离子炮兽](factions/泰伦虫族/units/exocrine.md) |  | 2026-07-23 |
-| unit | [粘液孢子](factions/泰伦虫族/units/mucolid-spores.md) |  | 2026-07-23 |
-| unit | [红色惧物](factions/泰伦虫族/units/the-red-terror.md) |  | 2026-07-23 |
-| unit | [老独眼](factions/泰伦虫族/units/old-one-eye.md) |  | 2026-07-23 |
-| unit | [脑虫](factions/泰伦虫族/units/zoanthropes.md) |  | 2026-07-23 |
-| unit | [脑虫暴君](factions/泰伦虫族/units/neurotyrant.md) |  | 2026-07-23 |
-| unit | [虫巢天妪](factions/泰伦虫族/units/hive-crone.md) |  | 2026-07-23 |
-| unit | [虫巢护卫](factions/泰伦虫族/units/hive-guard.md) |  | 2026-07-23 |
-| unit | [虫巢暴君](factions/泰伦虫族/units/hive-tyrant.md) |  | 2026-07-23 |
-| unit | [虫群霸主](factions/泰伦虫族/units/the-swarmlord.md) |  | 2026-07-23 |
-| unit | [蛇虫](factions/泰伦虫族/units/raveners.md) |  | 2026-07-23 |
-| unit | [装备抽击鞭的泰伦王虫](factions/泰伦虫族/units/tyranid-prime-with-lash-whip.md) |  | 2026-07-23 |
-| unit | [装备近战活体武器的泰伦武士](factions/泰伦虫族/units/tyranid-warriors-with-melee-bio-weapons.md) |  | 2026-07-23 |
-| unit | [诺恩使者](factions/泰伦虫族/units/norn-emissary.md) |  | 2026-07-23 |
-| unit | [诺恩同化者](factions/泰伦虫族/units/norn-assimilator.md) |  | 2026-07-23 |
-| unit | [超适应蛇虫](factions/泰伦虫族/units/hyperadapted-raveners.md) |  | 2026-07-23 |
+| unit | [Barbed Hierodule](factions/泰伦虫族/units/barbed-hierodule.md) | 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。 | 2026-09-14 |
+| unit | [Dimachaeron](factions/泰伦虫族/units/dimachaeron.md) | 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。 | 2026-09-14 |
+| unit | [Malanthrope](factions/泰伦虫族/units/malanthrope.md) | 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。 | 2026-09-14 |
+| unit | [Scythed Hierodule](factions/泰伦虫族/units/scythed-hierodule.md) | 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。 | 2026-09-14 |
+| unit | [Sky-slasher Swarms](factions/泰伦虫族/units/sky-slasher-swarms.md) | 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。 | 2026-09-14 |
+| unit | [冯·瑞恩跃袭者](factions/泰伦虫族/units/von-ryans-leapers.md) |  | 2026-09-14 |
+| unit | [刀斧虫](factions/泰伦虫族/units/lictor.md) |  | 2026-09-14 |
+| unit | [刀虫](factions/泰伦虫族/units/hormagaunts.md) |  | 2026-09-14 |
+| unit | [刽子手](factions/泰伦虫族/units/carnifexes.md) |  | 2026-09-14 |
+| unit | [哈里丹](factions/泰伦虫族/units/harridan.md) |  | 2026-09-14 |
+| unit | [喷焰虫](factions/泰伦虫族/units/pyrovores.md) |  | 2026-09-14 |
+| unit | [噬灵虫](factions/泰伦虫族/units/psychophage.md) |  | 2026-09-14 |
+| unit | [圣皇](factions/泰伦虫族/units/hierophant.md) |  | 2026-09-14 |
+| unit | [基因窃取者](factions/泰伦虫族/units/genestealers.md) |  | 2026-09-14 |
+| unit | [天妖](factions/泰伦虫族/units/harpy.md) |  | 2026-09-14 |
+| unit | [孢囊要塞](factions/泰伦虫族/units/sporocyst.md) |  | 2026-09-14 |
+| unit | [孢子兽](factions/泰伦虫族/units/biovores.md) |  | 2026-09-14 |
+| unit | [孢子舱](factions/泰伦虫族/units/tyrannocyte.md) |  | 2026-09-14 |
+| unit | [孢子雷](factions/泰伦虫族/units/spore-mines.md) |  | 2026-09-14 |
+| unit | [尖啸杀手](factions/泰伦虫族/units/screamer-killer.md) |  | 2026-09-14 |
+| unit | [巨噬兽](factions/泰伦虫族/units/haruspex.md) |  | 2026-09-14 |
+| unit | [掘蟒](factions/泰伦虫族/units/trygon.md) |  | 2026-09-14 |
+| unit | [掷弹虫](factions/泰伦虫族/units/barbgaunts.md) |  | 2026-09-14 |
+| unit | [摩崔克斯寄生虫](factions/泰伦虫族/units/parasite-of-mortrex.md) |  | 2026-09-14 |
+| unit | [撕裂虫群](factions/泰伦虫族/units/ripper-swarms.md) |  | 2026-09-14 |
+| unit | [族群领主](factions/泰伦虫族/units/broodlord.md) |  | 2026-09-14 |
+| unit | [暴君护卫](factions/泰伦虫族/units/tyrant-guard.md) |  | 2026-09-14 |
+| unit | [暴虐兽](factions/泰伦虫族/units/tyrannofex.md) |  | 2026-09-14 |
+| unit | [有翼泰伦王虫](factions/泰伦虫族/units/winged-tyranid-prime.md) |  | 2026-09-14 |
+| unit | [有翼虫巢暴君](factions/泰伦虫族/units/winged-hive-tyrant.md) |  | 2026-09-14 |
+| unit | [枪虫](factions/泰伦虫族/units/termagants.md) |  | 2026-09-14 |
+| unit | [死亡跃袭者](factions/泰伦虫族/units/deathleaper.md) |  | 2026-09-14 |
+| unit | [母虫](factions/泰伦虫族/units/tervigon.md) |  | 2026-09-14 |
+| unit | [毒烟虫](factions/泰伦虫族/units/venomthropes.md) |  | 2026-09-14 |
+| unit | [毒鞭兽](factions/泰伦虫族/units/toxicrene.md) |  | 2026-09-14 |
+| unit | [沙蟒](factions/泰伦虫族/units/mawloc.md) |  | 2026-09-14 |
+| unit | [灵脑兽](factions/泰伦虫族/units/maleceptor.md) |  | 2026-09-14 |
+| unit | [生化喷吐泰伦武士](factions/泰伦虫族/units/tyranid-warriors-with-ranged-bio-weapons.md) |  | 2026-09-14 |
+| unit | [石像鬼](factions/泰伦虫族/units/gargoyles.md) |  | 2026-09-14 |
+| unit | [神经刀斧虫](factions/泰伦虫族/units/neurolictor.md) |  | 2026-09-14 |
+| unit | [神经虫](factions/泰伦虫族/units/neurogaunts.md) |  | 2026-09-14 |
+| unit | [离子炮兽](factions/泰伦虫族/units/exocrine.md) |  | 2026-09-14 |
+| unit | [粘液孢子](factions/泰伦虫族/units/mucolid-spores.md) |  | 2026-09-14 |
+| unit | [红色惧物](factions/泰伦虫族/units/the-red-terror.md) |  | 2026-09-14 |
+| unit | [老独眼](factions/泰伦虫族/units/old-one-eye.md) |  | 2026-09-14 |
+| unit | [脑虫](factions/泰伦虫族/units/zoanthropes.md) |  | 2026-09-14 |
+| unit | [脑虫暴君](factions/泰伦虫族/units/neurotyrant.md) |  | 2026-09-14 |
+| unit | [虫巢天妪](factions/泰伦虫族/units/hive-crone.md) |  | 2026-09-14 |
+| unit | [虫巢护卫](factions/泰伦虫族/units/hive-guard.md) |  | 2026-09-14 |
+| unit | [虫巢暴君](factions/泰伦虫族/units/hive-tyrant.md) |  | 2026-09-14 |
+| unit | [虫群霸主](factions/泰伦虫族/units/the-swarmlord.md) |  | 2026-09-14 |
+| unit | [蛇虫](factions/泰伦虫族/units/raveners.md) |  | 2026-09-14 |
+| unit | [装备抽击鞭的泰伦王虫](factions/泰伦虫族/units/tyranid-prime-with-lash-whip.md) |  | 2026-09-14 |
+| unit | [装备近战活体武器的泰伦武士](factions/泰伦虫族/units/tyranid-warriors-with-melee-bio-weapons.md) |  | 2026-09-14 |
+| unit | [诺恩使者](factions/泰伦虫族/units/norn-emissary.md) |  | 2026-09-14 |
+| unit | [诺恩同化者](factions/泰伦虫族/units/norn-assimilator.md) |  | 2026-09-14 |
+| unit | [超适应蛇虫](factions/泰伦虫族/units/hyperadapted-raveners.md) |  | 2026-09-14 |
 
 ### 泰坦军团
 
 | 类型 | 名称 | 摘要 | Updated |
 |------|------|------|---------|
-| unit | [天罚战争使者泰坦](factions/泰坦军团/units/warbringer-nemesis-titan.md) |  | 2026-07-23 |
-| unit | [战将泰坦](factions/泰坦军团/units/warlord-titan.md) |  | 2026-07-23 |
-| unit | [战犬泰坦](factions/泰坦军团/units/warhound-titan.md) |  | 2026-07-23 |
-| unit | [掠夺者泰坦](factions/泰坦军团/units/reaver-titan.md) |  | 2026-07-23 |
+| unit | [天罚战争使者泰坦](factions/泰坦军团/units/warbringer-nemesis-titan.md) |  | 2026-09-14 |
+| unit | [战将泰坦](factions/泰坦军团/units/warlord-titan.md) |  | 2026-09-14 |
+| unit | [战犬泰坦](factions/泰坦军团/units/warhound-titan.md) |  | 2026-09-14 |
+| unit | [掠夺者泰坦](factions/泰坦军团/units/reaver-titan.md) |  | 2026-09-14 |
 
 ### 混沌恶魔
 
@@ -3516,7 +3535,7 @@
 | detachment | [瘟疫军团](factions/混沌恶魔/detachments/plague-legion.md) | 混沌恶魔的分队「瘟疫军团」，分队规则「Melancholic Miasma」。 | 2026-07-26 |
 | detachment | [闪耀军团](factions/混沌恶魔/detachments/scintillating-legion.md) | 混沌恶魔的分队「闪耀军团」，分队规则「Fates in Flux」。 | 2026-07-26 |
 | detachment | [鲜血军团](factions/混沌恶魔/detachments/blood-legion.md) | 混沌恶魔的分队「鲜血军团」，分队规则「Murdercall」。 | 2026-07-26 |
-| enhancement | [Bane-forged Weapons](factions/混沌恶魔/enhancements/bane-forged-weapons.md) | 分数未知、次元魔潮 分队。 | 2026-07-26 |
+| enhancement | [Bane-forged Weapons](factions/混沌恶魔/enhancements/bane-forged-weapons.md) | 15 分、次元魔潮 分队。 | 2026-07-26 |
 | enhancement | [Dreaming Crown (Aura)](factions/混沌恶魔/enhancements/dreaming-crown-aura.md) | 30 分、恣肆军团 分队。 | 2026-07-26 |
 | enhancement | [Endless Gift](factions/混沌恶魔/enhancements/endless-gift.md) | 0 分、Rotten and Rusted 分队。 | 2026-07-26 |
 | enhancement | [Fade to Darkness](factions/混沌恶魔/enhancements/fade-to-darkness.md) | 30 分、暗影军团 分队。 | 2026-07-26 |
@@ -3527,26 +3546,26 @@
 | enhancement | [Horrifying Visage](factions/混沌恶魔/enhancements/horrifying-visage.md) | 0 分、Dread Carnival 分队。 | 2026-07-26 |
 | enhancement | [Mantle of Gloom (Aura)](factions/混沌恶魔/enhancements/mantle-of-gloom-aura.md) | 20 分、暗影军团 分队。 | 2026-07-26 |
 | enhancement | [Mutagenic Flames](factions/混沌恶魔/enhancements/mutagenic-flames.md) | 0 分、Pandaemoniac Inferno 分队。 | 2026-07-26 |
-| enhancement | [Soul-hungry Slaughterers](factions/混沌恶魔/enhancements/soul-hungry-slaughterers.md) | 分数未知、次元魔潮 分队。 | 2026-07-26 |
+| enhancement | [Soul-hungry Slaughterers](factions/混沌恶魔/enhancements/soul-hungry-slaughterers.md) | 10 分、次元魔潮 分队。 | 2026-07-26 |
 | enhancement | [Spite Made Manifest](factions/混沌恶魔/enhancements/spite-made-manifest.md) | 0 分、恶魔入侵 分队。 | 2026-07-26 |
 | enhancement | [Unholy Fury](factions/混沌恶魔/enhancements/unholy-fury.md) | 0 分、Infernal Onslaught 分队。 | 2026-07-26 |
 | enhancement | [Virulent Corruption](factions/混沌恶魔/enhancements/virulent-corruption.md) | 0 分、Rotten and Rusted 分队。 | 2026-07-26 |
 | enhancement | [Worthier Skulls](factions/混沌恶魔/enhancements/worthier-skulls.md) | 0 分、Infernal Onslaught 分队。 | 2026-07-26 |
-| enhancement | [充足力量](factions/混沌恶魔/enhancements/swollen-with-power.md) | 分数未知、亚空间领主 分队。 | 2026-07-26 |
-| enhancement | [变形利刃](factions/混沌恶魔/enhancements/neverblade.md) | 20 分、闪耀军团 分队。 | 2026-07-26 |
+| enhancement | [充足力量](factions/混沌恶魔/enhancements/swollen-with-power.md) | 10 分、亚空间领主 分队。 | 2026-07-26 |
+| enhancement | [变形利刃](factions/混沌恶魔/enhancements/neverblade.md) | 25 分、闪耀军团 分队。 | 2026-07-26 |
 | enhancement | [奇异护盾（光环）](factions/混沌恶魔/enhancements/improbable-shield-aura.md) | 30 分、闪耀军团 分队。 | 2026-07-26 |
 | enhancement | [孢子洗礼（光环)](factions/混沌恶魔/enhancements/font-of-spores-aura.md) | 20 分、瘟疫军团 分队。 | 2026-07-26 |
 | enhancement | [完美化身](factions/混沌恶魔/enhancements/avatar-of-perfection.md) | 15 分、恣肆军团 分队。 | 2026-07-26 |
 | enhancement | [怒火牢笼](factions/混沌恶魔/enhancements/furys-cage.md) | 20 分、鲜血军团 分队。 | 2026-07-26 |
 | enhancement | [恶念化身](factions/混沌恶魔/enhancements/malice-made-manifest.md) | 25 分、暗影军团 分队。 | 2026-07-26 |
 | enhancement | [无尽赠礼](factions/混沌恶魔/enhancements/the-endless-gift.md) | 30 分、恶魔入侵 分队。 | 2026-07-26 |
-| enhancement | [末日坐骑](factions/混沌恶魔/enhancements/apocalyptic-steeds.md) | 分数未知、混沌骑兵队 分队。 | 2026-07-26 |
+| enhancement | [末日坐骑](factions/混沌恶魔/enhancements/apocalyptic-steeds.md) | 10 分、混沌骑兵队 分队。 | 2026-07-26 |
 | enhancement | [杀戮渴望（光环）](factions/混沌恶魔/enhancements/slaughterthirst-aura.md) | 25 分、鲜血军团 分队。 | 2026-07-26 |
 | enhancement | [永恒魔杖](factions/混沌恶魔/enhancements/the-everstave.md) | 25 分、恶魔入侵 分队。 | 2026-07-26 |
 | enhancement | [溃烂瘟疫（光环)](factions/混沌恶魔/enhancements/cankerblight.md) | 15 分、瘟疫军团 分队。 | 2026-07-26 |
-| enhancement | [火眼金睛](factions/混沌恶魔/enhancements/inescapable-eye.md) | 10 分、闪耀军团 分队。 | 2026-07-26 |
-| enhancement | [炼狱操偶师](factions/混沌恶魔/enhancements/infernal-puppeteer.md) | 25 分、闪耀军团 分队。 | 2026-07-26 |
-| enhancement | [碎魂冲撞](factions/混沌恶魔/enhancements/soul-shattering-charge.md) | 分数未知、混沌骑兵队 分队。 | 2026-07-26 |
+| enhancement | [火眼金睛](factions/混沌恶魔/enhancements/inescapable-eye.md) | 15 分、闪耀军团 分队。 | 2026-07-26 |
+| enhancement | [炼狱操偶师](factions/混沌恶魔/enhancements/infernal-puppeteer.md) | 20 分、闪耀军团 分队。 | 2026-07-26 |
+| enhancement | [碎魂冲撞](factions/混沌恶魔/enhancements/soul-shattering-charge.md) | 10 分、混沌骑兵队 分队。 | 2026-07-26 |
 | enhancement | [窃魂剑](factions/混沌恶魔/enhancements/soulstealer.md) | 15 分、恶魔入侵 分队。 | 2026-07-26 |
 | enhancement | [虫鸣斗篷（光环)](factions/混沌恶魔/enhancements/droning-shroud-aura.md) | 35 分、瘟疫军团 分队。 | 2026-07-26 |
 | enhancement | [蛆虫之口](factions/混沌恶魔/enhancements/maggot-maws.md) | 15 分、瘟疫军团 分队。 | 2026-07-26 |
@@ -3621,112 +3640,112 @@
 | stratagem | [黄铜加护](factions/混沌恶魔/stratagems/sheathed-in-brass.md) | 1 CP、Shooting phase、鲜血军团 分队、Battle Tactic Stratagem。 | 2026-07-26 |
 | stratagem | [黑影通道](factions/混沌恶魔/stratagems/shade-path.md) | 2 CP、Charge phase、暗影军团 分队、Battle Tactic Stratagem。 | 2026-07-26 |
 | stratagem | [黑暗将至](factions/混沌恶魔/stratagems/encroaching-darkness.md) | 1 CP、Shooting phase、暗影军团 分队、Battle Tactic Stratagem。 | 2026-07-26 |
-| unit | [Aetaos’rau’keres](factions/混沌恶魔/units/aetaosraukeres.md) |  | 2026-07-23 |
-| unit | [An’ggrath the Unbound](factions/混沌恶魔/units/anggrath-the-unbound.md) |  | 2026-07-23 |
-| unit | [Chaos Lord On Disc Of Tzeentch](factions/混沌恶魔/units/chaos-lord-on-disc-of-tzeentch.md) |  | 2026-07-23 |
-| unit | [Chaos Lord On Juggernaut](factions/混沌恶魔/units/chaos-lord-on-juggernaut.md) |  | 2026-07-23 |
-| unit | [Chaos Lord On Palanquin Of Nurgle](factions/混沌恶魔/units/chaos-lord-on-palanquin-of-nurgle.md) |  | 2026-07-23 |
-| unit | [Chaos Lord On Steed Of Slaanesh](factions/混沌恶魔/units/chaos-lord-on-steed-of-slaanesh.md) |  | 2026-07-23 |
-| unit | [Cultist Mob with Firearms](factions/混沌恶魔/units/cultist-mob-with-firearms.md) |  | 2026-07-23 |
-| unit | [Exalted Seeker Chariot](factions/混沌恶魔/units/exalted-seeker-chariot.md) |  | 2026-07-23 |
-| unit | [Furies](factions/混沌恶魔/units/furies.md) |  | 2026-07-23 |
-| unit | [Gellerpox Infected](factions/混沌恶魔/units/gellerpox-infected.md) |  | 2026-07-23 |
-| unit | [Giant Chaos Spawn](factions/混沌恶魔/units/giant-chaos-spawn.md) |  | 2026-07-23 |
-| unit | [Herald Of Slaanesh On Steed Of Slaanesh](factions/混沌恶魔/units/herald-of-slaanesh-on-steed-of-slaanesh.md) |  | 2026-07-23 |
-| unit | [Mutoid Vermin](factions/混沌恶魔/units/mutoid-vermin.md) |  | 2026-07-23 |
-| unit | [Negavolt Cultists](factions/混沌恶魔/units/negavolt-cultists.md) |  | 2026-07-23 |
-| unit | [Plague Toads](factions/混沌恶魔/units/plague-toads.md) |  | 2026-07-23 |
-| unit | [Pox Riders](factions/混沌恶魔/units/pox-riders.md) |  | 2026-07-23 |
-| unit | [Renegade Enforcer](factions/混沌恶魔/units/renegade-enforcer.md) |  | 2026-07-23 |
-| unit | [Renegade Heavy Weapons Squad](factions/混沌恶魔/units/renegade-heavy-weapons-squad.md) |  | 2026-07-23 |
-| unit | [Renegade Ogryn Beast Handler](factions/混沌恶魔/units/renegade-ogryn-beast-handler.md) |  | 2026-07-23 |
-| unit | [Renegade Ogryn Brutes](factions/混沌恶魔/units/renegade-ogryn-brutes.md) |  | 2026-07-23 |
-| unit | [Renegade Plague Ogryns](factions/混沌恶魔/units/renegade-plague-ogryns.md) |  | 2026-07-23 |
-| unit | [Rogue Psyker](factions/混沌恶魔/units/rogue-psyker.md) |  | 2026-07-23 |
-| unit | [Scabeiathrax The Bloated](factions/混沌恶魔/units/scabeiathrax-the-bloated.md) |  | 2026-07-23 |
-| unit | [Seeker Chariot](factions/混沌恶魔/units/seeker-chariot.md) |  | 2026-07-23 |
-| unit | [Sorcerer On Disc Of Tzeentch](factions/混沌恶魔/units/sorcerer-on-disc-of-tzeentch.md) |  | 2026-07-23 |
-| unit | [Sorcerer On Palanquin Of Nurgle](factions/混沌恶魔/units/sorcerer-on-palanquin-of-nurgle.md) |  | 2026-07-23 |
-| unit | [Sorcerer On Steed Of Slaanesh](factions/混沌恶魔/units/sorcerer-on-steed-of-slaanesh.md) |  | 2026-07-23 |
-| unit | [Spined Chaos Beast](factions/混沌恶魔/units/spined-chaos-beast.md) |  | 2026-07-23 |
-| unit | [Tormentbringer On Exalted Seeker Chariot](factions/混沌恶魔/units/tormentbringer-on-exalted-seeker-chariot.md) |  | 2026-07-23 |
-| unit | [Zarakynel](factions/混沌恶魔/units/zarakynel.md) |  | 2026-07-23 |
-| unit | [乘鲜血王座的裂肉主宰](factions/混沌恶魔/units/rendmaster-on-blood-throne.md) |  | 2026-07-23 |
-| unit | [军团战士](factions/混沌恶魔/units/legionaries.md) |  | 2026-07-23 |
-| unit | [凯洛斯·织命者](factions/混沌恶魔/units/kairos-fateweaver.md) |  | 2026-07-23 |
-| unit | [卡拉纳克](factions/混沌恶魔/units/karanak-2.md) |  | 2026-07-23 |
-| unit | [卡拉纳克](factions/混沌恶魔/units/karanak.md) |  | 2026-07-23 |
-| unit | [变化使](factions/混沌恶魔/units/changecaster.md) |  | 2026-07-23 |
-| unit | [变化灵](factions/混沌恶魔/units/the-changeling.md) |  | 2026-07-23 |
-| unit | [变化魔君](factions/混沌恶魔/units/lord-of-change.md) |  | 2026-07-23 |
-| unit | [叛军执法者](factions/混沌恶魔/units/traitor-enforcer.md) |  | 2026-07-23 |
-| unit | [叛变卫队](factions/混沌恶魔/units/traitor-guardsmen-squad.md) |  | 2026-07-23 |
-| unit | [嗜血狂魔](factions/混沌恶魔/units/bloodthirster.md) |  | 2026-07-23 |
-| unit | [园艺师史莱姆克斯](factions/混沌恶魔/units/horticulous-slimux.md) |  | 2026-07-23 |
-| unit | [地狱剥皮机](factions/混沌恶魔/units/hellflayer.md) |  | 2026-07-23 |
-| unit | [地狱剥皮机](factions/混沌恶魔/units/hellflayers.md) |  | 2026-07-23 |
-| unit | [坏疹记账官](factions/混沌恶魔/units/spoilpox-scrivener.md) |  | 2026-07-23 |
-| unit | [夏拉希·魔灾](factions/混沌恶魔/units/shalaxi-helbane.md) |  | 2026-07-23 |
-| unit | [大不净者](factions/混沌恶魔/units/great-unclean-one.md) |  | 2026-07-23 |
-| unit | [夺颅者](factions/混沌恶魔/units/skulltaker.md) |  | 2026-07-23 |
-| unit | [守密者](factions/混沌恶魔/units/keeper-of-secrets.md) |  | 2026-07-23 |
-| unit | [寻觅者](factions/混沌恶魔/units/seekers.md) |  | 2026-07-23 |
-| unit | [尖啸魔](factions/混沌恶魔/units/screamers.md) |  | 2026-07-23 |
-| unit | [巫师](factions/混沌恶魔/units/sorcerer.md) |  | 2026-07-23 |
-| unit | [希尔艾斯克](factions/混沌恶魔/units/syllesske.md) |  | 2026-07-23 |
-| unit | [幻变之主](factions/混沌恶魔/units/fluxmaster.md) |  | 2026-07-23 |
-| unit | [恶角野兽人](factions/混沌恶魔/units/fellgor-beastmen.md) |  | 2026-07-23 |
-| unit | [扭曲魔镜](factions/混沌恶魔/units/contorted-epitome.md) |  | 2026-07-23 |
-| unit | [携疫者](factions/混沌恶魔/units/plaguebearers.md) |  | 2026-07-23 |
-| unit | [放血鬼](factions/混沌恶魔/units/bloodletters.md) |  | 2026-07-23 |
-| unit | [斯卡布兰德](factions/混沌恶魔/units/skarbrand.md) |  | 2026-07-23 |
-| unit | [有翼混沌恶魔王子](factions/混沌恶魔/units/daemon-prince-of-chaos-with-wings.md) |  | 2026-07-23 |
-| unit | [次元爪](factions/混沌恶魔/units/warp-talons.md) |  | 2026-07-23 |
-| unit | [欢愉魔](factions/混沌恶魔/units/fiends.md) |  | 2026-07-23 |
-| unit | [比拉克](factions/混沌恶魔/units/belakor.md) |  | 2026-07-23 |
-| unit | [污秽瘤木](factions/混沌恶魔/units/feculent-gnarlmaw.md) |  | 2026-07-23 |
-| unit | [浩劫](factions/混沌恶魔/units/havocs.md) |  | 2026-07-23 |
-| unit | [混沌恶魔王子](factions/混沌恶魔/units/daemon-prince-of-chaos.md) |  | 2026-07-23 |
-| unit | [混沌终结者](factions/混沌恶魔/units/chaos-terminator-squad.md) |  | 2026-07-23 |
-| unit | [混沌领主](factions/混沌恶魔/units/chaos-lord.md) |  | 2026-07-23 |
-| unit | [火妖](factions/混沌恶魔/units/flamers.md) |  | 2026-07-23 |
-| unit | [炼狱琴魔](factions/混沌恶魔/units/infernal-enrapturess.md) |  | 2026-07-23 |
-| unit | [烂格斯](factions/混沌恶魔/units/rotigus.md) |  | 2026-07-23 |
-| unit | [烂芋笛手](factions/混沌恶魔/units/sloppity-bilepiper.md) |  | 2026-07-23 |
-| unit | [燃烧战车](factions/混沌恶魔/units/burning-chariot.md) |  | 2026-07-23 |
-| unit | [猛禽](factions/混沌恶魔/units/raptors.md) |  | 2026-07-23 |
-| unit | [疱疹使者](factions/混沌恶魔/units/poxbringer.md) |  | 2026-07-23 |
-| unit | [痛苦使者](factions/混沌恶魔/units/tormentbringer.md) |  | 2026-07-23 |
-| unit | [瘟疫先蜂](factions/混沌恶魔/units/plague-drones.md) |  | 2026-07-23 |
-| unit | [碾血骑兵](factions/混沌恶魔/units/bloodcrushers.md) |  | 2026-07-23 |
-| unit | [磨魂者](factions/混沌恶魔/units/soul-grinder.md) |  | 2026-07-23 |
-| unit | [神尊火妖](factions/混沌恶魔/units/exalted-flamer.md) |  | 2026-07-23 |
-| unit | [神选战士](factions/混沌恶魔/units/chosen.md) |  | 2026-07-23 |
-| unit | [窥命者](factions/混沌恶魔/units/fateskimmer.md) |  | 2026-07-23 |
-| unit | [粉惧妖](factions/混沌恶魔/units/pink-horrors.md) |  | 2026-07-23 |
-| unit | [纳垢兽](factions/混沌恶魔/units/beasts-of-nurgle.md) |  | 2026-07-23 |
-| unit | [纳垢灵](factions/混沌恶魔/units/nurglings.md) |  | 2026-07-23 |
-| unit | [织幻者](factions/混沌恶魔/units/tranceweaver.md) |  | 2026-07-23 |
-| unit | [终结者巫师](factions/混沌恶魔/units/sorcerer-in-terminator-armour.md) |  | 2026-07-23 |
-| unit | [终结者领主](factions/混沌恶魔/units/chaos-lord-in-terminator-armour.md) |  | 2026-07-23 |
-| unit | [色孽假面](factions/混沌恶魔/units/the-masque-of-slaanesh.md) |  | 2026-07-23 |
-| unit | [蓝书吏](factions/混沌恶魔/units/the-blue-scribes.md) |  | 2026-07-23 |
-| unit | [蓝惧妖](factions/混沌恶魔/units/blue-horrors.md) |  | 2026-07-23 |
-| unit | [血猎犬](factions/混沌恶魔/units/flesh-hounds.md) |  | 2026-07-23 |
-| unit | [计患官艾皮德缪斯](factions/混沌恶魔/units/epidemius.md) |  | 2026-07-23 |
-| unit | [诅咒教徒](factions/混沌恶魔/units/accursed-cultists.md) |  | 2026-07-23 |
-| unit | [跳跃背包混沌领主](factions/混沌恶魔/units/chaos-lord-with-jump-pack.md) |  | 2026-07-23 |
-| unit | [邪教徒](factions/混沌恶魔/units/cultist-mob.md) |  | 2026-07-23 |
-| unit | [邪教徒纵火者](factions/混沌恶魔/units/cultist-firebrand.md) |  | 2026-07-23 |
-| unit | [附魔大师](factions/混沌恶魔/units/master-of-possession.md) |  | 2026-07-23 |
-| unit | [附魔战士](factions/混沌恶魔/units/possessed.md) |  | 2026-07-23 |
-| unit | [颅骨主宰](factions/混沌恶魔/units/skullmaster.md) |  | 2026-07-23 |
-| unit | [颅骨大炮](factions/混沌恶魔/units/skull-cannon.md) |  | 2026-07-23 |
-| unit | [颅骨祭坛](factions/混沌恶魔/units/skull-altar.md) |  | 2026-07-23 |
-| unit | [魅魔](factions/混沌恶魔/units/daemonettes.md) |  | 2026-07-23 |
-| unit | [鲜血之主](factions/混沌恶魔/units/bloodmaster.md) |  | 2026-07-23 |
-| unit | [黑暗使徒](factions/混沌恶魔/units/dark-apostle.md) |  | 2026-07-23 |
-| unit | [黑暗巫会](factions/混沌恶魔/units/dark-commune.md) |  | 2026-07-23 |
+| unit | [Aetaos’rau’keres](factions/混沌恶魔/units/aetaosraukeres.md) | 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。 | 2026-09-14 |
+| unit | [An’ggrath the Unbound](factions/混沌恶魔/units/anggrath-the-unbound.md) | 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。 | 2026-09-14 |
+| unit | [Chaos Lord On Disc Of Tzeentch](factions/混沌恶魔/units/chaos-lord-on-disc-of-tzeentch.md) | 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。 | 2026-09-14 |
+| unit | [Chaos Lord On Juggernaut](factions/混沌恶魔/units/chaos-lord-on-juggernaut.md) | 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。 | 2026-09-14 |
+| unit | [Chaos Lord On Palanquin Of Nurgle](factions/混沌恶魔/units/chaos-lord-on-palanquin-of-nurgle.md) | 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。 | 2026-09-14 |
+| unit | [Chaos Lord On Steed Of Slaanesh](factions/混沌恶魔/units/chaos-lord-on-steed-of-slaanesh.md) | 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。 | 2026-09-14 |
+| unit | [Cultist Mob with Firearms](factions/混沌恶魔/units/cultist-mob-with-firearms.md) | 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。 | 2026-09-14 |
+| unit | [Exalted Seeker Chariot](factions/混沌恶魔/units/exalted-seeker-chariot.md) | 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。 | 2026-09-14 |
+| unit | [Furies](factions/混沌恶魔/units/furies.md) | 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。 | 2026-09-14 |
+| unit | [Gellerpox Infected](factions/混沌恶魔/units/gellerpox-infected.md) | 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。 | 2026-09-14 |
+| unit | [Giant Chaos Spawn](factions/混沌恶魔/units/giant-chaos-spawn.md) | 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。 | 2026-09-14 |
+| unit | [Herald Of Slaanesh On Steed Of Slaanesh](factions/混沌恶魔/units/herald-of-slaanesh-on-steed-of-slaanesh.md) | 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。 | 2026-09-14 |
+| unit | [Mutoid Vermin](factions/混沌恶魔/units/mutoid-vermin.md) | 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。 | 2026-09-14 |
+| unit | [Negavolt Cultists](factions/混沌恶魔/units/negavolt-cultists.md) | 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。 | 2026-09-14 |
+| unit | [Plague Toads](factions/混沌恶魔/units/plague-toads.md) | 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。 | 2026-09-14 |
+| unit | [Pox Riders](factions/混沌恶魔/units/pox-riders.md) | 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。 | 2026-09-14 |
+| unit | [Renegade Enforcer](factions/混沌恶魔/units/renegade-enforcer.md) | 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。 | 2026-09-14 |
+| unit | [Renegade Heavy Weapons Squad](factions/混沌恶魔/units/renegade-heavy-weapons-squad.md) | 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。 | 2026-09-14 |
+| unit | [Renegade Ogryn Beast Handler](factions/混沌恶魔/units/renegade-ogryn-beast-handler.md) | 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。 | 2026-09-14 |
+| unit | [Renegade Ogryn Brutes](factions/混沌恶魔/units/renegade-ogryn-brutes.md) | 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。 | 2026-09-14 |
+| unit | [Renegade Plague Ogryns](factions/混沌恶魔/units/renegade-plague-ogryns.md) | 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。 | 2026-09-14 |
+| unit | [Rogue Psyker](factions/混沌恶魔/units/rogue-psyker.md) | 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。 | 2026-09-14 |
+| unit | [Scabeiathrax The Bloated](factions/混沌恶魔/units/scabeiathrax-the-bloated.md) | 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。 | 2026-09-14 |
+| unit | [Seeker Chariot](factions/混沌恶魔/units/seeker-chariot.md) | 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。 | 2026-09-14 |
+| unit | [Sorcerer On Disc Of Tzeentch](factions/混沌恶魔/units/sorcerer-on-disc-of-tzeentch.md) | 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。 | 2026-09-14 |
+| unit | [Sorcerer On Palanquin Of Nurgle](factions/混沌恶魔/units/sorcerer-on-palanquin-of-nurgle.md) | 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。 | 2026-09-14 |
+| unit | [Sorcerer On Steed Of Slaanesh](factions/混沌恶魔/units/sorcerer-on-steed-of-slaanesh.md) | 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。 | 2026-09-14 |
+| unit | [Spined Chaos Beast](factions/混沌恶魔/units/spined-chaos-beast.md) | 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。 | 2026-09-14 |
+| unit | [Tormentbringer On Exalted Seeker Chariot](factions/混沌恶魔/units/tormentbringer-on-exalted-seeker-chariot.md) | 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。 | 2026-09-14 |
+| unit | [Zarakynel](factions/混沌恶魔/units/zarakynel.md) | 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。 | 2026-09-14 |
+| unit | [乘鲜血王座的裂肉主宰](factions/混沌恶魔/units/rendmaster-on-blood-throne.md) |  | 2026-09-14 |
+| unit | [军团战士](factions/混沌恶魔/units/legionaries.md) | 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。 | 2026-09-14 |
+| unit | [凯洛斯·织命者](factions/混沌恶魔/units/kairos-fateweaver.md) |  | 2026-09-14 |
+| unit | [卡拉纳克](factions/混沌恶魔/units/karanak-2.md) |  | 2026-09-14 |
+| unit | [卡拉纳克](factions/混沌恶魔/units/karanak.md) |  | 2026-09-14 |
+| unit | [变化使](factions/混沌恶魔/units/changecaster.md) |  | 2026-09-14 |
+| unit | [变化灵](factions/混沌恶魔/units/the-changeling.md) |  | 2026-09-14 |
+| unit | [变化魔君](factions/混沌恶魔/units/lord-of-change.md) |  | 2026-09-14 |
+| unit | [叛军执法者](factions/混沌恶魔/units/traitor-enforcer.md) | 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。 | 2026-09-14 |
+| unit | [叛变卫队](factions/混沌恶魔/units/traitor-guardsmen-squad.md) | 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。 | 2026-09-14 |
+| unit | [嗜血狂魔](factions/混沌恶魔/units/bloodthirster.md) |  | 2026-09-14 |
+| unit | [园艺师史莱姆克斯](factions/混沌恶魔/units/horticulous-slimux.md) |  | 2026-09-14 |
+| unit | [地狱剥皮机](factions/混沌恶魔/units/hellflayer.md) | 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。 | 2026-09-14 |
+| unit | [地狱剥皮机](factions/混沌恶魔/units/hellflayers.md) |  | 2026-09-14 |
+| unit | [坏疹记账官](factions/混沌恶魔/units/spoilpox-scrivener.md) |  | 2026-09-14 |
+| unit | [夏拉希·魔灾](factions/混沌恶魔/units/shalaxi-helbane.md) |  | 2026-09-14 |
+| unit | [大不净者](factions/混沌恶魔/units/great-unclean-one.md) |  | 2026-09-14 |
+| unit | [夺颅者](factions/混沌恶魔/units/skulltaker.md) |  | 2026-09-14 |
+| unit | [守密者](factions/混沌恶魔/units/keeper-of-secrets.md) |  | 2026-09-14 |
+| unit | [寻觅者](factions/混沌恶魔/units/seekers.md) |  | 2026-09-14 |
+| unit | [尖啸魔](factions/混沌恶魔/units/screamers.md) |  | 2026-09-14 |
+| unit | [巫师](factions/混沌恶魔/units/sorcerer.md) | 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。 | 2026-09-14 |
+| unit | [希尔艾斯克](factions/混沌恶魔/units/syllesske.md) |  | 2026-09-14 |
+| unit | [幻变之主](factions/混沌恶魔/units/fluxmaster.md) |  | 2026-09-14 |
+| unit | [恶角野兽人](factions/混沌恶魔/units/fellgor-beastmen.md) | 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。 | 2026-09-14 |
+| unit | [扭曲魔镜](factions/混沌恶魔/units/contorted-epitome.md) |  | 2026-09-14 |
+| unit | [携疫者](factions/混沌恶魔/units/plaguebearers.md) |  | 2026-09-14 |
+| unit | [放血鬼](factions/混沌恶魔/units/bloodletters.md) |  | 2026-09-14 |
+| unit | [斯卡布兰德](factions/混沌恶魔/units/skarbrand.md) |  | 2026-09-14 |
+| unit | [有翼混沌恶魔王子](factions/混沌恶魔/units/daemon-prince-of-chaos-with-wings.md) |  | 2026-09-14 |
+| unit | [次元爪](factions/混沌恶魔/units/warp-talons.md) | 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。 | 2026-09-14 |
+| unit | [欢愉魔](factions/混沌恶魔/units/fiends.md) |  | 2026-09-14 |
+| unit | [比拉克](factions/混沌恶魔/units/belakor.md) |  | 2026-09-14 |
+| unit | [污秽瘤木](factions/混沌恶魔/units/feculent-gnarlmaw.md) |  | 2026-09-14 |
+| unit | [浩劫](factions/混沌恶魔/units/havocs.md) | 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。 | 2026-09-14 |
+| unit | [混沌恶魔王子](factions/混沌恶魔/units/daemon-prince-of-chaos.md) |  | 2026-09-14 |
+| unit | [混沌终结者](factions/混沌恶魔/units/chaos-terminator-squad.md) | 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。 | 2026-09-14 |
+| unit | [混沌领主](factions/混沌恶魔/units/chaos-lord.md) | 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。 | 2026-09-14 |
+| unit | [火妖](factions/混沌恶魔/units/flamers.md) |  | 2026-09-14 |
+| unit | [炼狱琴魔](factions/混沌恶魔/units/infernal-enrapturess.md) |  | 2026-09-14 |
+| unit | [烂格斯](factions/混沌恶魔/units/rotigus.md) |  | 2026-09-14 |
+| unit | [烂芋笛手](factions/混沌恶魔/units/sloppity-bilepiper.md) |  | 2026-09-14 |
+| unit | [燃烧战车](factions/混沌恶魔/units/burning-chariot.md) |  | 2026-09-14 |
+| unit | [猛禽](factions/混沌恶魔/units/raptors.md) | 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。 | 2026-09-14 |
+| unit | [疱疹使者](factions/混沌恶魔/units/poxbringer.md) |  | 2026-09-14 |
+| unit | [痛苦使者](factions/混沌恶魔/units/tormentbringer.md) |  | 2026-09-14 |
+| unit | [瘟疫先蜂](factions/混沌恶魔/units/plague-drones.md) |  | 2026-09-14 |
+| unit | [碾血骑兵](factions/混沌恶魔/units/bloodcrushers.md) |  | 2026-09-14 |
+| unit | [磨魂者](factions/混沌恶魔/units/soul-grinder.md) |  | 2026-09-14 |
+| unit | [神尊火妖](factions/混沌恶魔/units/exalted-flamer.md) |  | 2026-09-14 |
+| unit | [神选战士](factions/混沌恶魔/units/chosen.md) | 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。 | 2026-09-14 |
+| unit | [窥命者](factions/混沌恶魔/units/fateskimmer.md) |  | 2026-09-14 |
+| unit | [粉惧妖](factions/混沌恶魔/units/pink-horrors.md) |  | 2026-09-14 |
+| unit | [纳垢兽](factions/混沌恶魔/units/beasts-of-nurgle.md) |  | 2026-09-14 |
+| unit | [纳垢灵](factions/混沌恶魔/units/nurglings.md) |  | 2026-09-14 |
+| unit | [织幻者](factions/混沌恶魔/units/tranceweaver.md) |  | 2026-09-14 |
+| unit | [终结者巫师](factions/混沌恶魔/units/sorcerer-in-terminator-armour.md) | 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。 | 2026-09-14 |
+| unit | [终结者领主](factions/混沌恶魔/units/chaos-lord-in-terminator-armour.md) | 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。 | 2026-09-14 |
+| unit | [色孽假面](factions/混沌恶魔/units/the-masque-of-slaanesh.md) |  | 2026-09-14 |
+| unit | [蓝书吏](factions/混沌恶魔/units/the-blue-scribes.md) |  | 2026-09-14 |
+| unit | [蓝惧妖](factions/混沌恶魔/units/blue-horrors.md) |  | 2026-09-14 |
+| unit | [血猎犬](factions/混沌恶魔/units/flesh-hounds.md) |  | 2026-09-14 |
+| unit | [计患官艾皮德缪斯](factions/混沌恶魔/units/epidemius.md) |  | 2026-09-14 |
+| unit | [诅咒教徒](factions/混沌恶魔/units/accursed-cultists.md) | 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。 | 2026-09-14 |
+| unit | [跳跃背包混沌领主](factions/混沌恶魔/units/chaos-lord-with-jump-pack.md) | 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。 | 2026-09-14 |
+| unit | [邪教徒](factions/混沌恶魔/units/cultist-mob.md) | 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。 | 2026-09-14 |
+| unit | [邪教徒纵火者](factions/混沌恶魔/units/cultist-firebrand.md) | 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。 | 2026-09-14 |
+| unit | [附魔大师](factions/混沌恶魔/units/master-of-possession.md) | 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。 | 2026-09-14 |
+| unit | [附魔战士](factions/混沌恶魔/units/possessed.md) | 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。 | 2026-09-14 |
+| unit | [颅骨主宰](factions/混沌恶魔/units/skullmaster.md) |  | 2026-09-14 |
+| unit | [颅骨大炮](factions/混沌恶魔/units/skull-cannon.md) |  | 2026-09-14 |
+| unit | [颅骨祭坛](factions/混沌恶魔/units/skull-altar.md) |  | 2026-09-14 |
+| unit | [魅魔](factions/混沌恶魔/units/daemonettes.md) |  | 2026-09-14 |
+| unit | [鲜血之主](factions/混沌恶魔/units/bloodmaster.md) |  | 2026-09-14 |
+| unit | [黑暗使徒](factions/混沌恶魔/units/dark-apostle.md) | 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。 | 2026-09-14 |
+| unit | [黑暗巫会](factions/混沌恶魔/units/dark-commune.md) | 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。 | 2026-09-14 |
 
 ### 混沌星际战士
 
@@ -3755,8 +3774,8 @@
 | enhancement | [Akshur’s Binding Runes](factions/混沌星际战士/enhancements/akshurs-binding-runes.md) | 20 分、次元突袭勇士 分队。 | 2026-07-26 |
 | enhancement | [Amulet of Tainted Vigour](factions/混沌星际战士/enhancements/amulet-of-tainted-vigour.md) | 20 分、Chaos Cult 分队。 | 2026-07-26 |
 | enhancement | [Bastion Plate](factions/混沌星际战士/enhancements/bastion-plate.md) | 10 分、Fellhammer Siege-host 分队。 | 2026-07-26 |
-| enhancement | [Conduit of Chaos](factions/混沌星际战士/enhancements/conduit-of-chaos.md) | 分数未知、Cabal of Chaos 分队。 | 2026-07-26 |
-| enhancement | [Cultist’s Brand](factions/混沌星际战士/enhancements/cultists-brand.md) | 20 分、Chaos Cult 分队。 | 2026-07-26 |
+| enhancement | [Conduit of Chaos](factions/混沌星际战士/enhancements/conduit-of-chaos.md) | 20 分、Cabal of Chaos 分队。 | 2026-07-26 |
+| enhancement | [Cultist’s Brand](factions/混沌星际战士/enhancements/cultists-brand.md) | 30 分、Chaos Cult 分队。 | 2026-07-26 |
 | enhancement | [Cursed Fang](factions/混沌星际战士/enhancements/cursed-fang.md) | 10 分、Deceptors 分队。 | 2026-07-26 |
 | enhancement | [Dark Majesty](factions/混沌星际战士/enhancements/dark-majesty.md) | 0 分、Champions of Chaos 分队。 | 2026-07-26 |
 | enhancement | [Despot’s Claim](factions/混沌星际战士/enhancements/despots-claim.md) | 15 分、Renegade Raiders 分队。 | 2026-07-26 |
@@ -3772,7 +3791,7 @@
 | enhancement | [Falsehood](factions/混沌星际战士/enhancements/falsehood.md) | 10 分、Deceptors 分队。 | 2026-07-26 |
 | enhancement | [Forge’s Blessing](factions/混沌星际战士/enhancements/forges-blessing.md) | 20 分、Soulforged Warpack 分队。 | 2026-07-26 |
 | enhancement | [Fratricidal Trophies](factions/混沌星际战士/enhancements/fratricidal-trophies.md) | 5 分、变节者战队 分队。 | 2026-07-26 |
-| enhancement | [Incendiary Goad](factions/混沌星际战士/enhancements/incendiary-goad.md) | 15 分、Chaos Cult 分队。 | 2026-07-26 |
+| enhancement | [Incendiary Goad](factions/混沌星际战士/enhancements/incendiary-goad.md) | 25 分、Chaos Cult 分队。 | 2026-07-26 |
 | enhancement | [Infernal Avatar](factions/混沌星际战士/enhancements/infernal-avatar.md) | 20 分、Cabal of Chaos 分队。 | 2026-07-26 |
 | enhancement | [Intoxicating Elixir](factions/混沌星际战士/enhancements/intoxicating-elixir.md) | 15 分、Pactbound Zealots 分队。 | 2026-07-26 |
 | enhancement | [Invigorated Mechatendrils](factions/混沌星际战士/enhancements/invigorated-mechatendrils.md) | 15 分、Soulforged Warpack 分队。 | 2026-07-26 |
@@ -3782,7 +3801,7 @@
 | enhancement | [Mark of Legend](factions/混沌星际战士/enhancements/mark-of-legend.md) | 10 分、Veterans of the Long War 分队。 | 2026-07-26 |
 | enhancement | [Mark of the Hound](factions/混沌星际战士/enhancements/mark-of-the-hound.md) | 25 分、Renegade Raiders 分队。 | 2026-07-26 |
 | enhancement | [Mind Blade](factions/混沌星际战士/enhancements/mind-blade.md) | 25 分、Cabal of Chaos 分队。 | 2026-07-26 |
-| enhancement | [Night’s Shroud](factions/混沌星际战士/enhancements/nights-shroud.md) | 20 分、Dread Talons 分队。 | 2026-07-26 |
+| enhancement | [Night’s Shroud](factions/混沌星际战士/enhancements/nights-shroud.md) | 10 分、Dread Talons 分队。 | 2026-07-26 |
 | enhancement | [Orbs of Unlife](factions/混沌星际战士/enhancements/orbs-of-unlife.md) | 15 分、Pactbound Zealots 分队。 | 2026-07-26 |
 | enhancement | [Rabble Rouser](factions/混沌星际战士/enhancements/rabble-rouser.md) | 0 分、Underdeck Uprising 分队。 | 2026-07-26 |
 | enhancement | [Raid Leader](factions/混沌星际战士/enhancements/raid-leader.md) | 20 分、休伦的劫掠者 分队。 | 2026-07-26 |
@@ -3790,7 +3809,7 @@
 | enhancement | [Soul Harvester](factions/混沌星际战士/enhancements/soul-harvester.md) | 15 分、Soulforged Warpack 分队。 | 2026-07-26 |
 | enhancement | [Soul Link](factions/混沌星际战士/enhancements/soul-link.md) | 5 分、Deceptors 分队。 | 2026-07-26 |
 | enhancement | [Talisman of Burning Blood](factions/混沌星际战士/enhancements/talisman-of-burning-blood.md) | 15 分、Pactbound Zealots 分队。 | 2026-07-26 |
-| enhancement | [Tempting Addendum](factions/混沌星际战士/enhancements/tempting-addendum.md) | 25 分、Soulforged Warpack 分队。 | 2026-07-26 |
+| enhancement | [Tempting Addendum](factions/混沌星际战士/enhancements/tempting-addendum.md) | 40 分、Soulforged Warpack 分队。 | 2026-07-26 |
 | enhancement | [Touched by the Warp](factions/混沌星际战士/enhancements/touched-by-the-warp.md) | 10 分、Cabal of Chaos 分队。 | 2026-07-26 |
 | enhancement | [Tyrant’s Lash](factions/混沌星际战士/enhancements/tyrants-lash.md) | 20 分、Renegade Raiders 分队。 | 2026-07-26 |
 | enhancement | [Voice of the Octed](factions/混沌星际战士/enhancements/voice-of-the-octed.md) | 0 分、Infernal Reavers 分队。 | 2026-07-26 |
@@ -3811,17 +3830,17 @@
 | enhancement | [地狱机械印记](factions/混沌星际战士/enhancements/cybinfernal-font.md) | 20 分、造物者教派 分队。 | 2026-07-26 |
 | enhancement | [地狱结晶](factions/混沌星际战士/enhancements/infernal-fulgurite.md) | 20 分、次元突袭勇士 分队。 | 2026-07-26 |
 | enhancement | [察古拉](factions/混沌星际战士/enhancements/tzagulla.md) | 25 分、次元突袭勇士 分队。 | 2026-07-26 |
-| enhancement | [影罩护符](factions/混沌星际战士/enhancements/shadowcowl-talisman.md) | 分数未知、杀戮利爪掠夺队 分队。 | 2026-07-26 |
+| enhancement | [影罩护符](factions/混沌星际战士/enhancements/shadowcowl-talisman.md) | 20 分、杀戮利爪掠夺队 分队。 | 2026-07-26 |
 | enhancement | [恐怖寄生虫](factions/混沌星际战士/enhancements/terrorglut-parasite.md) | 20 分、噩梦猎手 分队。 | 2026-07-26 |
 | enhancement | [恐惧恶名](factions/混沌星际战士/enhancements/dread-reputation.md) | 25 分、休伦的劫掠者 分队。 | 2026-07-26 |
 | enhancement | [手术级精准](factions/混沌星际战士/enhancements/surgical-precision.md) | 10 分、拜尔造物 分队。 | 2026-07-26 |
-| enhancement | [毁灭契约](factions/混沌星际战士/enhancements/pact-of-destruction.md) | 分数未知、毁灭崇拜者 分队。 | 2026-07-26 |
-| enhancement | [泯灭之眼](factions/混沌星际战士/enhancements/eye-of-oblivion.md) | 分数未知、毁灭崇拜者 分队。 | 2026-07-26 |
+| enhancement | [毁灭契约](factions/混沌星际战士/enhancements/pact-of-destruction.md) | 15 分、毁灭崇拜者 分队。 | 2026-07-26 |
+| enhancement | [泯灭之眼](factions/混沌星际战士/enhancements/eye-of-oblivion.md) | 20 分、毁灭崇拜者 分队。 | 2026-07-26 |
 | enhancement | [活甲壳](factions/混沌星际战士/enhancements/living-carapace.md) | 15 分、拜尔造物 分队。 | 2026-07-26 |
 | enhancement | [灰纱诅咒](factions/混沌星际战士/enhancements/greyveil-hex.md) | 25 分、噩梦猎手 分队。 | 2026-07-26 |
 | enhancement | [灵魂熔炉之印](factions/混沌星际战士/enhancements/mark-of-the-soul-forges.md) | 20 分、造物者教派 分队。 | 2026-07-26 |
 | enhancement | [蛆虫之冠](factions/混沌星际战士/enhancements/crown-of-worms.md) | 15 分、造物者教派 分队。 | 2026-07-26 |
-| enhancement | [诅咒镣铐契约](factions/混沌星际战士/enhancements/pact-of-cursed-pinions.md) | 分数未知、杀戮利爪掠夺队 分队。 | 2026-07-26 |
+| enhancement | [诅咒镣铐契约](factions/混沌星际战士/enhancements/pact-of-cursed-pinions.md) | 20 分、杀戮利爪掠夺队 分队。 | 2026-07-26 |
 | enhancement | [龙林恶灵](factions/混沌星际战士/enhancements/wyredjinn.md) | 25 分、造物者教派 分队。 | 2026-07-26 |
 | stratagem | [AGGRESSIVE STRIKE](factions/混沌星际战士/stratagems/aggressive-strike.md) | 1 CP、Movement phase、Champions of Chaos 分队、Strategic Ploy Stratagem。 | 2026-07-26 |
 | stratagem | [BALEFIRE BOON](factions/混沌星际战士/stratagems/balefire-boon.md) | 1 CP、Shooting or Fight phase、造物者教派 分队、Battle Tactic Stratagem。 | 2026-07-26 |
@@ -3934,118 +3953,118 @@
 | stratagem | [遵循暴君的命令](factions/混沌星际战士/stratagems/at-the-tyrants-command.md) | 1 CP、Movement phase、休伦的劫掠者 分队、Strategic Ploy Stratagem。 | 2026-07-26 |
 | stratagem | [邪恶涌动](factions/混沌星际战士/stratagems/malicious-surge.md) | 1 CP、Charge phase、噩梦猎手 分队、Stratagem。 | 2026-07-26 |
 | stratagem | [邪能活力](factions/混沌星际战士/stratagems/infernal-vigour.md) | 1 CP、Command phase、Cabal of Chaos 分队。 | 2026-07-26 |
-| unit | [Blood Slaughterer](factions/混沌星际战士/units/blood-slaughterer.md) |  | 2026-07-23 |
-| unit | [Cerberus](factions/混沌星际战士/units/cerberus.md) |  | 2026-07-23 |
-| unit | [Chaos Deimos Predator](factions/混沌星际战士/units/chaos-deimos-predator.md) |  | 2026-07-23 |
-| unit | [Chaos Lord On Bike](factions/混沌星际战士/units/chaos-lord-on-bike.md) |  | 2026-07-23 |
-| unit | [Chaos Lord On Disc Of Tzeentch](factions/混沌星际战士/units/chaos-lord-on-disc-of-tzeentch.md) |  | 2026-07-23 |
-| unit | [Chaos Lord On Juggernaut](factions/混沌星际战士/units/chaos-lord-on-juggernaut.md) |  | 2026-07-23 |
-| unit | [Chaos Lord On Palanquin Of Nurgle](factions/混沌星际战士/units/chaos-lord-on-palanquin-of-nurgle.md) |  | 2026-07-23 |
-| unit | [Chaos Lord On Steed Of Slaanesh](factions/混沌星际战士/units/chaos-lord-on-steed-of-slaanesh.md) |  | 2026-07-23 |
-| unit | [Chaos Thunderhawk](factions/混沌星际战士/units/chaos-thunderhawk.md) |  | 2026-07-23 |
-| unit | [Cultist Mob with Firearms](factions/混沌星际战士/units/cultist-mob-with-firearms.md) |  | 2026-07-23 |
-| unit | [Decimator](factions/混沌星际战士/units/decimator.md) |  | 2026-07-23 |
-| unit | [Deredeo Dreadnought](factions/混沌星际战士/units/deredeo-dreadnought.md) |  | 2026-07-23 |
-| unit | [Dreadclaw Drop Pod](factions/混沌星际战士/units/dreadclaw-drop-pod.md) |  | 2026-07-23 |
-| unit | [Exalted Champion](factions/混沌星际战士/units/exalted-champion.md) |  | 2026-07-23 |
-| unit | [Falchion](factions/混沌星际战士/units/falchion.md) |  | 2026-07-23 |
-| unit | [Fellblade](factions/混沌星际战士/units/fellblade.md) |  | 2026-07-23 |
-| unit | [Fire Raptor Gunship](factions/混沌星际战士/units/fire-raptor-gunship.md) |  | 2026-07-23 |
-| unit | [Gellerpox Infected](factions/混沌星际战士/units/gellerpox-infected.md) |  | 2026-07-23 |
-| unit | [Greater Blight Drone](factions/混沌星际战士/units/greater-blight-drone.md) |  | 2026-07-23 |
-| unit | [Greater Brass Scorpion](factions/混沌星际战士/units/greater-brass-scorpion.md) |  | 2026-07-23 |
-| unit | [Hell Blade](factions/混沌星际战士/units/hell-blade.md) |  | 2026-07-23 |
-| unit | [Hell Talon](factions/混沌星际战士/units/hell-talon.md) |  | 2026-07-23 |
-| unit | [Kharybdis Assault Claw](factions/混沌星际战士/units/kharybdis-assault-claw.md) |  | 2026-07-23 |
-| unit | [Kratos](factions/混沌星际战士/units/kratos.md) |  | 2026-07-23 |
-| unit | [Kytan Ravager](factions/混沌星际战士/units/kytan-ravager.md) |  | 2026-07-23 |
-| unit | [Land Raider Achilles](factions/混沌星际战士/units/land-raider-achilles.md) |  | 2026-07-23 |
-| unit | [Land Raider Proteus](factions/混沌星际战士/units/land-raider-proteus.md) |  | 2026-07-23 |
-| unit | [Leviathan Dreadnought](factions/混沌星际战士/units/leviathan-dreadnought.md) |  | 2026-07-23 |
-| unit | [Mastodon](factions/混沌星际战士/units/mastodon.md) |  | 2026-07-23 |
-| unit | [Mutilators (Legendary)](factions/混沌星际战士/units/mutilators-legendary.md) |  | 2026-07-23 |
-| unit | [Mutoid Vermin](factions/混沌星际战士/units/mutoid-vermin.md) |  | 2026-07-23 |
-| unit | [Negavolt Cultists](factions/混沌星际战士/units/negavolt-cultists.md) |  | 2026-07-23 |
-| unit | [Rapier Carrier](factions/混沌星际战士/units/rapier-carrier.md) |  | 2026-07-23 |
-| unit | [Relic Contemptor Dreadnought](factions/混沌星际战士/units/relic-contemptor-dreadnought.md) |  | 2026-07-23 |
-| unit | [Renegade Enforcer](factions/混沌星际战士/units/renegade-enforcer.md) |  | 2026-07-23 |
-| unit | [Renegade Heavy Weapons Squad](factions/混沌星际战士/units/renegade-heavy-weapons-squad.md) |  | 2026-07-23 |
-| unit | [Renegade Ogryn Beast Handler](factions/混沌星际战士/units/renegade-ogryn-beast-handler.md) |  | 2026-07-23 |
-| unit | [Renegade Ogryn Brutes](factions/混沌星际战士/units/renegade-ogryn-brutes.md) |  | 2026-07-23 |
-| unit | [Renegade Plague Ogryns](factions/混沌星际战士/units/renegade-plague-ogryns.md) |  | 2026-07-23 |
-| unit | [Rogue Psyker](factions/混沌星际战士/units/rogue-psyker.md) |  | 2026-07-23 |
-| unit | [Sicaran Battle Tank](factions/混沌星际战士/units/sicaran-battle-tank.md) |  | 2026-07-23 |
-| unit | [Sicaran Punisher](factions/混沌星际战士/units/sicaran-punisher.md) |  | 2026-07-23 |
-| unit | [Sicaran Venator](factions/混沌星际战士/units/sicaran-venator.md) |  | 2026-07-23 |
-| unit | [Sokar-pattern Stormbird](factions/混沌星际战士/units/sokar-pattern-stormbird.md) |  | 2026-07-23 |
-| unit | [Sorcerer On Bike](factions/混沌星际战士/units/sorcerer-on-bike.md) |  | 2026-07-23 |
-| unit | [Sorcerer On Disc Of Tzeentch](factions/混沌星际战士/units/sorcerer-on-disc-of-tzeentch.md) |  | 2026-07-23 |
-| unit | [Sorcerer On Palanquin Of Nurgle](factions/混沌星际战士/units/sorcerer-on-palanquin-of-nurgle.md) |  | 2026-07-23 |
-| unit | [Sorcerer On Steed Of Slaanesh](factions/混沌星际战士/units/sorcerer-on-steed-of-slaanesh.md) |  | 2026-07-23 |
-| unit | [Spartan](factions/混沌星际战士/units/spartan.md) |  | 2026-07-23 |
-| unit | [Storm Eagle Gunship](factions/混沌星际战士/units/storm-eagle-gunship.md) |  | 2026-07-23 |
-| unit | [Terrax-pattern Termite](factions/混沌星际战士/units/terrax-pattern-termite.md) |  | 2026-07-23 |
-| unit | [Typhon](factions/混沌星际战士/units/typhon.md) |  | 2026-07-23 |
-| unit | [Whirlwind Scorpius](factions/混沌星际战士/units/whirlwind-scorpius.md) |  | 2026-07-23 |
-| unit | [Xiphon Interceptor](factions/混沌星际战士/units/xiphon-interceptor.md) |  | 2026-07-23 |
-| unit | [亵渎者](factions/混沌星际战士/units/defiler.md) |  | 2026-07-23 |
-| unit | [休伦·黑心](factions/混沌星际战士/units/huron-blackheart.md) |  | 2026-07-23 |
-| unit | [克拉维克·莫恩](factions/混沌星际战士/units/kravek-morne.md) |  | 2026-07-23 |
-| unit | [军团战士](factions/混沌星际战士/units/legionaries.md) |  | 2026-07-23 |
-| unit | [剧毒爬行者](factions/混沌星际战士/units/venomcrawler.md) |  | 2026-07-23 |
-| unit | [叛军执法者](factions/混沌星际战士/units/traitor-enforcer.md) |  | 2026-07-23 |
-| unit | [叛变卫队](factions/混沌星际战士/units/traitor-guardsmen-squad.md) |  | 2026-07-23 |
-| unit | [地狱兽](factions/混沌星际战士/units/helbrute.md) |  | 2026-07-23 |
-| unit | [地狱飞龙](factions/混沌星际战士/units/heldrake.md) |  | 2026-07-23 |
-| unit | [复仇之爪](factions/混沌星际战士/units/nemesis-claw.md) |  | 2026-07-23 |
-| unit | [大掠夺者阿巴顿](factions/混沌星际战士/units/abaddon-the-despoiler.md) |  | 2026-07-23 |
-| unit | [大漩涡之主](factions/混沌星际战士/units/masters-of-the-maelstrom.md) |  | 2026-07-23 |
-| unit | [夺星者哈肯](factions/混沌星际战士/units/haarken-worldclaimer.md) |  | 2026-07-23 |
-| unit | [巫师](factions/混沌星际战士/units/sorcerer.md) |  | 2026-07-23 |
-| unit | [恐虐狂战士](factions/混沌星际战士/units/khorne-berzerkers.md) |  | 2026-07-23 |
-| unit | [恐虐颅骨之主](factions/混沌星际战士/units/khorne-lord-of-skulls.md) |  | 2026-07-23 |
-| unit | [恶角野兽人](factions/混沌星际战士/units/fellgor-beastmen.md) |  | 2026-07-23 |
-| unit | [枭首魔将](factions/混沌星际战士/units/master-of-executions.md) |  | 2026-07-23 |
-| unit | [次元爪](factions/混沌星际战士/units/warp-talons.md) |  | 2026-07-23 |
-| unit | [次元铁匠](factions/混沌星际战士/units/warpsmith.md) |  | 2026-07-23 |
-| unit | [歼灭者型猎食者坦克](factions/混沌星际战士/units/chaos-predator-annihilator.md) |  | 2026-07-23 |
-| unit | [残杀者](factions/混沌星际战士/units/mutilators.md) |  | 2026-07-23 |
-| unit | [法比乌斯拜尔](factions/混沌星际战士/units/fabius-bile.md) |  | 2026-07-23 |
-| unit | [泯灭者](factions/混沌星际战士/units/obliterators.md) |  | 2026-07-23 |
-| unit | [浩劫](factions/混沌星际战士/units/havocs.md) |  | 2026-07-23 |
-| unit | [混沌兰德掠袭者](factions/混沌星际战士/units/chaos-land-raider.md) |  | 2026-07-23 |
-| unit | [混沌卵](factions/混沌星际战士/units/chaos-spawn.md) |  | 2026-07-23 |
-| unit | [混沌摩托队](factions/混沌星际战士/units/chaos-bikers.md) |  | 2026-07-23 |
-| unit | [混沌终结者](factions/混沌星际战士/units/chaos-terminator-squad.md) |  | 2026-07-23 |
-| unit | [混沌维护者突击炮](factions/混沌星际战士/units/chaos-vindicator.md) |  | 2026-07-23 |
-| unit | [混沌领主](factions/混沌星际战士/units/chaos-lord.md) |  | 2026-07-23 |
-| unit | [犀牛装甲车](factions/混沌星际战士/units/chaos-rhino.md) |  | 2026-07-23 |
-| unit | [猛禽](factions/混沌星际战士/units/raptors.md) |  | 2026-07-23 |
-| unit | [瓦什托尔](factions/混沌星际战士/units/vashtorr-the-arkifane.md) |  | 2026-07-23 |
-| unit | [瘟疫战士](factions/混沌星际战士/units/plague-marines.md) |  | 2026-07-23 |
-| unit | [破坏者型猎食者坦克](factions/混沌星际战士/units/chaos-predator-destructor.md) |  | 2026-07-23 |
-| unit | [神选战士](factions/混沌星际战士/units/chosen.md) |  | 2026-07-23 |
-| unit | [红字战士](factions/混沌星际战士/units/rubric-marines.md) |  | 2026-07-23 |
-| unit | [红海盗劫掠者](factions/混沌星际战士/units/red-corsairs-raiders.md) |  | 2026-07-23 |
-| unit | [红海盗掠夺连长](factions/混沌星际战士/units/red-corsairs-reave-captain.md) |  | 2026-07-23 |
-| unit | [终结者巫师](factions/混沌星际战士/units/sorcerer-in-terminator-armour.md) |  | 2026-07-23 |
-| unit | [终结者领主](factions/混沌星际战士/units/chaos-lord-in-terminator-armour.md) |  | 2026-07-23 |
-| unit | [诅咒教徒](factions/混沌星际战士/units/accursed-cultists.md) |  | 2026-07-23 |
-| unit | [赛佛](factions/混沌星际战士/units/cypher.md) |  | 2026-07-23 |
-| unit | [跳跃背包混沌领主](factions/混沌星际战士/units/chaos-lord-with-jump-pack.md) |  | 2026-07-23 |
-| unit | [邪教徒](factions/混沌星际战士/units/cultist-mob.md) |  | 2026-07-23 |
-| unit | [邪教徒纵火者](factions/混沌星际战士/units/cultist-firebrand.md) |  | 2026-07-23 |
-| unit | [重锤魔](factions/混沌星际战士/units/maulerfiend.md) |  | 2026-07-23 |
-| unit | [铸造魔](factions/混沌星际战士/units/forgefiend.md) |  | 2026-07-23 |
-| unit | [阿斯塔特叛军带翼恶魔亲王](factions/混沌星际战士/units/heretic-astartes-daemon-prince-with-wings.md) |  | 2026-07-23 |
-| unit | [阿斯塔特叛军恶魔亲王](factions/混沌星际战士/units/heretic-astartes-daemon-prince.md) |  | 2026-07-23 |
-| unit | [附魔大师](factions/混沌星际战士/units/master-of-possession.md) |  | 2026-07-23 |
-| unit | [附魔战士](factions/混沌星际战士/units/possessed.md) |  | 2026-07-23 |
-| unit | [音爆战士](factions/混沌星际战士/units/noise-marines.md) |  | 2026-07-23 |
-| unit | [魔机统领](factions/混沌星际战士/units/lord-discordant-on-helstalker.md) |  | 2026-07-23 |
-| unit | [黑暗使徒](factions/混沌星际战士/units/dark-apostle.md) |  | 2026-07-23 |
-| unit | [黑暗巫会](factions/混沌星际战士/units/dark-commune.md) |  | 2026-07-23 |
-| unit | [黑石魔冠](factions/混沌星际战士/units/noctilith-crown.md) |  | 2026-07-23 |
+| unit | [Blood Slaughterer](factions/混沌星际战士/units/blood-slaughterer.md) | 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。 | 2026-09-14 |
+| unit | [Cerberus](factions/混沌星际战士/units/cerberus.md) | 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。 | 2026-09-14 |
+| unit | [Chaos Deimos Predator](factions/混沌星际战士/units/chaos-deimos-predator.md) | 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。 | 2026-09-14 |
+| unit | [Chaos Lord On Bike](factions/混沌星际战士/units/chaos-lord-on-bike.md) | 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。 | 2026-09-14 |
+| unit | [Chaos Lord On Disc Of Tzeentch](factions/混沌星际战士/units/chaos-lord-on-disc-of-tzeentch.md) | 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。 | 2026-09-14 |
+| unit | [Chaos Lord On Juggernaut](factions/混沌星际战士/units/chaos-lord-on-juggernaut.md) | 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。 | 2026-09-14 |
+| unit | [Chaos Lord On Palanquin Of Nurgle](factions/混沌星际战士/units/chaos-lord-on-palanquin-of-nurgle.md) | 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。 | 2026-09-14 |
+| unit | [Chaos Lord On Steed Of Slaanesh](factions/混沌星际战士/units/chaos-lord-on-steed-of-slaanesh.md) | 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。 | 2026-09-14 |
+| unit | [Chaos Thunderhawk](factions/混沌星际战士/units/chaos-thunderhawk.md) | 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。 | 2026-09-14 |
+| unit | [Cultist Mob with Firearms](factions/混沌星际战士/units/cultist-mob-with-firearms.md) | 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。 | 2026-09-14 |
+| unit | [Decimator](factions/混沌星际战士/units/decimator.md) | 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。 | 2026-09-14 |
+| unit | [Deredeo Dreadnought](factions/混沌星际战士/units/deredeo-dreadnought.md) | 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。 | 2026-09-14 |
+| unit | [Dreadclaw Drop Pod](factions/混沌星际战士/units/dreadclaw-drop-pod.md) | 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。 | 2026-09-14 |
+| unit | [Exalted Champion](factions/混沌星际战士/units/exalted-champion.md) | 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。 | 2026-09-14 |
+| unit | [Falchion](factions/混沌星际战士/units/falchion.md) | 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。 | 2026-09-14 |
+| unit | [Fellblade](factions/混沌星际战士/units/fellblade.md) | 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。 | 2026-09-14 |
+| unit | [Fire Raptor Gunship](factions/混沌星际战士/units/fire-raptor-gunship.md) | 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。 | 2026-09-14 |
+| unit | [Gellerpox Infected](factions/混沌星际战士/units/gellerpox-infected.md) | 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。 | 2026-09-14 |
+| unit | [Greater Blight Drone](factions/混沌星际战士/units/greater-blight-drone.md) | 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。 | 2026-09-14 |
+| unit | [Greater Brass Scorpion](factions/混沌星际战士/units/greater-brass-scorpion.md) | 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。 | 2026-09-14 |
+| unit | [Hell Blade](factions/混沌星际战士/units/hell-blade.md) | 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。 | 2026-09-14 |
+| unit | [Hell Talon](factions/混沌星际战士/units/hell-talon.md) | 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。 | 2026-09-14 |
+| unit | [Kharybdis Assault Claw](factions/混沌星际战士/units/kharybdis-assault-claw.md) | 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。 | 2026-09-14 |
+| unit | [Kratos](factions/混沌星际战士/units/kratos.md) | 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。 | 2026-09-14 |
+| unit | [Kytan Ravager](factions/混沌星际战士/units/kytan-ravager.md) | 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。 | 2026-09-14 |
+| unit | [Land Raider Achilles](factions/混沌星际战士/units/land-raider-achilles.md) | 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。 | 2026-09-14 |
+| unit | [Land Raider Proteus](factions/混沌星际战士/units/land-raider-proteus.md) | 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。 | 2026-09-14 |
+| unit | [Leviathan Dreadnought](factions/混沌星际战士/units/leviathan-dreadnought.md) | 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。 | 2026-09-14 |
+| unit | [Mastodon](factions/混沌星际战士/units/mastodon.md) | 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。 | 2026-09-14 |
+| unit | [Mutilators (Legendary)](factions/混沌星际战士/units/mutilators-legendary.md) | 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。 | 2026-09-14 |
+| unit | [Mutoid Vermin](factions/混沌星际战士/units/mutoid-vermin.md) | 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。 | 2026-09-14 |
+| unit | [Negavolt Cultists](factions/混沌星际战士/units/negavolt-cultists.md) | 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。 | 2026-09-14 |
+| unit | [Rapier Carrier](factions/混沌星际战士/units/rapier-carrier.md) | 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。 | 2026-09-14 |
+| unit | [Relic Contemptor Dreadnought](factions/混沌星际战士/units/relic-contemptor-dreadnought.md) | 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。 | 2026-09-14 |
+| unit | [Renegade Enforcer](factions/混沌星际战士/units/renegade-enforcer.md) | 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。 | 2026-09-14 |
+| unit | [Renegade Heavy Weapons Squad](factions/混沌星际战士/units/renegade-heavy-weapons-squad.md) | 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。 | 2026-09-14 |
+| unit | [Renegade Ogryn Beast Handler](factions/混沌星际战士/units/renegade-ogryn-beast-handler.md) | 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。 | 2026-09-14 |
+| unit | [Renegade Ogryn Brutes](factions/混沌星际战士/units/renegade-ogryn-brutes.md) | 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。 | 2026-09-14 |
+| unit | [Renegade Plague Ogryns](factions/混沌星际战士/units/renegade-plague-ogryns.md) | 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。 | 2026-09-14 |
+| unit | [Rogue Psyker](factions/混沌星际战士/units/rogue-psyker.md) | 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。 | 2026-09-14 |
+| unit | [Sicaran Battle Tank](factions/混沌星际战士/units/sicaran-battle-tank.md) | 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。 | 2026-09-14 |
+| unit | [Sicaran Punisher](factions/混沌星际战士/units/sicaran-punisher.md) | 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。 | 2026-09-14 |
+| unit | [Sicaran Venator](factions/混沌星际战士/units/sicaran-venator.md) | 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。 | 2026-09-14 |
+| unit | [Sokar-pattern Stormbird](factions/混沌星际战士/units/sokar-pattern-stormbird.md) | 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。 | 2026-09-14 |
+| unit | [Sorcerer On Bike](factions/混沌星际战士/units/sorcerer-on-bike.md) | 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。 | 2026-09-14 |
+| unit | [Sorcerer On Disc Of Tzeentch](factions/混沌星际战士/units/sorcerer-on-disc-of-tzeentch.md) | 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。 | 2026-09-14 |
+| unit | [Sorcerer On Palanquin Of Nurgle](factions/混沌星际战士/units/sorcerer-on-palanquin-of-nurgle.md) | 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。 | 2026-09-14 |
+| unit | [Sorcerer On Steed Of Slaanesh](factions/混沌星际战士/units/sorcerer-on-steed-of-slaanesh.md) | 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。 | 2026-09-14 |
+| unit | [Spartan](factions/混沌星际战士/units/spartan.md) | 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。 | 2026-09-14 |
+| unit | [Storm Eagle Gunship](factions/混沌星际战士/units/storm-eagle-gunship.md) | 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。 | 2026-09-14 |
+| unit | [Terrax-pattern Termite](factions/混沌星际战士/units/terrax-pattern-termite.md) | 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。 | 2026-09-14 |
+| unit | [Typhon](factions/混沌星际战士/units/typhon.md) | 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。 | 2026-09-14 |
+| unit | [Whirlwind Scorpius](factions/混沌星际战士/units/whirlwind-scorpius.md) | 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。 | 2026-09-14 |
+| unit | [Xiphon Interceptor](factions/混沌星际战士/units/xiphon-interceptor.md) | 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。 | 2026-09-14 |
+| unit | [亵渎者](factions/混沌星际战士/units/defiler.md) |  | 2026-09-14 |
+| unit | [休伦·黑心](factions/混沌星际战士/units/huron-blackheart.md) |  | 2026-09-14 |
+| unit | [克拉维克·莫恩](factions/混沌星际战士/units/kravek-morne.md) |  | 2026-09-14 |
+| unit | [军团战士](factions/混沌星际战士/units/legionaries.md) |  | 2026-09-14 |
+| unit | [剧毒爬行者](factions/混沌星际战士/units/venomcrawler.md) |  | 2026-09-14 |
+| unit | [叛军执法者](factions/混沌星际战士/units/traitor-enforcer.md) |  | 2026-09-14 |
+| unit | [叛变卫队](factions/混沌星际战士/units/traitor-guardsmen-squad.md) |  | 2026-09-14 |
+| unit | [地狱兽](factions/混沌星际战士/units/helbrute.md) |  | 2026-09-14 |
+| unit | [地狱飞龙](factions/混沌星际战士/units/heldrake.md) |  | 2026-09-14 |
+| unit | [复仇之爪](factions/混沌星际战士/units/nemesis-claw.md) |  | 2026-09-14 |
+| unit | [大掠夺者阿巴顿](factions/混沌星际战士/units/abaddon-the-despoiler.md) |  | 2026-09-14 |
+| unit | [大漩涡之主](factions/混沌星际战士/units/masters-of-the-maelstrom.md) |  | 2026-09-14 |
+| unit | [夺星者哈肯](factions/混沌星际战士/units/haarken-worldclaimer.md) |  | 2026-09-14 |
+| unit | [巫师](factions/混沌星际战士/units/sorcerer.md) |  | 2026-09-14 |
+| unit | [恐虐狂战士](factions/混沌星际战士/units/khorne-berzerkers.md) | 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。 | 2026-09-14 |
+| unit | [恐虐颅骨之主](factions/混沌星际战士/units/khorne-lord-of-skulls.md) |  | 2026-09-14 |
+| unit | [恶角野兽人](factions/混沌星际战士/units/fellgor-beastmen.md) |  | 2026-09-14 |
+| unit | [枭首魔将](factions/混沌星际战士/units/master-of-executions.md) |  | 2026-09-14 |
+| unit | [次元爪](factions/混沌星际战士/units/warp-talons.md) |  | 2026-09-14 |
+| unit | [次元铁匠](factions/混沌星际战士/units/warpsmith.md) |  | 2026-09-14 |
+| unit | [歼灭者型猎食者坦克](factions/混沌星际战士/units/chaos-predator-annihilator.md) |  | 2026-09-14 |
+| unit | [残杀者](factions/混沌星际战士/units/mutilators.md) |  | 2026-09-14 |
+| unit | [法比乌斯拜尔](factions/混沌星际战士/units/fabius-bile.md) |  | 2026-09-14 |
+| unit | [泯灭者](factions/混沌星际战士/units/obliterators.md) |  | 2026-09-14 |
+| unit | [浩劫](factions/混沌星际战士/units/havocs.md) |  | 2026-09-14 |
+| unit | [混沌兰德掠袭者](factions/混沌星际战士/units/chaos-land-raider.md) |  | 2026-09-14 |
+| unit | [混沌卵](factions/混沌星际战士/units/chaos-spawn.md) |  | 2026-09-14 |
+| unit | [混沌摩托队](factions/混沌星际战士/units/chaos-bikers.md) |  | 2026-09-14 |
+| unit | [混沌终结者](factions/混沌星际战士/units/chaos-terminator-squad.md) |  | 2026-09-14 |
+| unit | [混沌维护者突击炮](factions/混沌星际战士/units/chaos-vindicator.md) |  | 2026-09-14 |
+| unit | [混沌领主](factions/混沌星际战士/units/chaos-lord.md) |  | 2026-09-14 |
+| unit | [犀牛装甲车](factions/混沌星际战士/units/chaos-rhino.md) |  | 2026-09-14 |
+| unit | [猛禽](factions/混沌星际战士/units/raptors.md) |  | 2026-09-14 |
+| unit | [瓦什托尔](factions/混沌星际战士/units/vashtorr-the-arkifane.md) |  | 2026-09-14 |
+| unit | [瘟疫战士](factions/混沌星际战士/units/plague-marines.md) | 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。 | 2026-09-14 |
+| unit | [破坏者型猎食者坦克](factions/混沌星际战士/units/chaos-predator-destructor.md) |  | 2026-09-14 |
+| unit | [神选战士](factions/混沌星际战士/units/chosen.md) |  | 2026-09-14 |
+| unit | [红字战士](factions/混沌星际战士/units/rubric-marines.md) | 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。 | 2026-09-14 |
+| unit | [红海盗劫掠者](factions/混沌星际战士/units/red-corsairs-raiders.md) |  | 2026-09-14 |
+| unit | [红海盗掠夺连长](factions/混沌星际战士/units/red-corsairs-reave-captain.md) |  | 2026-09-14 |
+| unit | [终结者巫师](factions/混沌星际战士/units/sorcerer-in-terminator-armour.md) |  | 2026-09-14 |
+| unit | [终结者领主](factions/混沌星际战士/units/chaos-lord-in-terminator-armour.md) |  | 2026-09-14 |
+| unit | [诅咒教徒](factions/混沌星际战士/units/accursed-cultists.md) |  | 2026-09-14 |
+| unit | [赛佛](factions/混沌星际战士/units/cypher.md) |  | 2026-09-14 |
+| unit | [跳跃背包混沌领主](factions/混沌星际战士/units/chaos-lord-with-jump-pack.md) |  | 2026-09-14 |
+| unit | [邪教徒](factions/混沌星际战士/units/cultist-mob.md) |  | 2026-09-14 |
+| unit | [邪教徒纵火者](factions/混沌星际战士/units/cultist-firebrand.md) |  | 2026-09-14 |
+| unit | [重锤魔](factions/混沌星际战士/units/maulerfiend.md) |  | 2026-09-14 |
+| unit | [铸造魔](factions/混沌星际战士/units/forgefiend.md) |  | 2026-09-14 |
+| unit | [阿斯塔特叛军带翼恶魔亲王](factions/混沌星际战士/units/heretic-astartes-daemon-prince-with-wings.md) |  | 2026-09-14 |
+| unit | [阿斯塔特叛军恶魔亲王](factions/混沌星际战士/units/heretic-astartes-daemon-prince.md) |  | 2026-09-14 |
+| unit | [附魔大师](factions/混沌星际战士/units/master-of-possession.md) |  | 2026-09-14 |
+| unit | [附魔战士](factions/混沌星际战士/units/possessed.md) |  | 2026-09-14 |
+| unit | [音爆战士](factions/混沌星际战士/units/noise-marines.md) | 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。 | 2026-09-14 |
+| unit | [魔机统领](factions/混沌星际战士/units/lord-discordant-on-helstalker.md) |  | 2026-09-14 |
+| unit | [黑暗使徒](factions/混沌星际战士/units/dark-apostle.md) |  | 2026-09-14 |
+| unit | [黑暗巫会](factions/混沌星际战士/units/dark-commune.md) |  | 2026-09-14 |
+| unit | [黑石魔冠](factions/混沌星际战士/units/noctilith-crown.md) |  | 2026-09-14 |
 
 ### 混沌骑士
 
@@ -4060,7 +4079,7 @@
 | detachment | [暴虐要塞](factions/混沌骑士/detachments/bastions-of-tyranny.md) | 混沌骑士的分队「暴虐要塞」。 | 2026-07-26 |
 | detachment | [猎犬战群](factions/混沌骑士/detachments/hunting-warpack.md) | 混沌骑士的分队「猎犬战群」。 | 2026-07-26 |
 | enhancement | [Aspect of the Beast](factions/混沌骑士/enhancements/aspect-of-the-beast.md) | 30 分、地狱猎手骑兵队 分队。 | 2026-07-26 |
-| enhancement | [Bestial Aspect](factions/混沌骑士/enhancements/bestial-aspect.md) | 20 分、Infernal Lance 分队。 | 2026-07-26 |
+| enhancement | [Bestial Aspect](factions/混沌骑士/enhancements/bestial-aspect.md) | 30 分、Infernal Lance 分队。 | 2026-07-26 |
 | enhancement | [Blade of Celerity](factions/混沌骑士/enhancements/blade-of-celerity.md) | 35 分、Lords of Dread 分队。 | 2026-07-26 |
 | enhancement | [Blasphemous Engine](factions/混沌骑士/enhancements/blasphemous-engine.md) | 35 分、Infernal Lance 分队。 | 2026-07-26 |
 | enhancement | [Blessing of the Dark Master](factions/混沌骑士/enhancements/blessing-of-the-dark-master.md) | 20 分、Lords of Dread 分队。 | 2026-07-26 |
@@ -4085,12 +4104,12 @@
 | enhancement | [Tyrant’s Shadow](factions/混沌骑士/enhancements/tyrants-shadow.md) | 25 分、Traitoris Lance 分队。 | 2026-07-26 |
 | enhancement | [Veil of Medrengard](factions/混沌骑士/enhancements/veil-of-medrengard.md) | 35 分、Traitoris Lance 分队。 | 2026-07-26 |
 | enhancement | [Warp-borne Stalker](factions/混沌骑士/enhancements/warp-borne-stalker.md) | 25 分、Lords of Dread 分队。 | 2026-07-26 |
-| enhancement | [凶险竞争](factions/混沌骑士/enhancements/snarling-rivalry.md) | 分数未知、猎犬战群 分队。 | 2026-07-26 |
-| enhancement | [叛道神像（光环）](factions/混沌骑士/enhancements/iconoclast-idol-aura.md) | 分数未知、叛道封地 分队。 | 2026-07-26 |
-| enhancement | [憎恨统御](factions/混沌骑士/enhancements/hate-filled-dominion.md) | 分数未知、暴虐要塞 分队。 | 2026-07-26 |
-| enhancement | [残忍君主（光环）](factions/混沌骑士/enhancements/cruel-lashmaster-aura.md) | 分数未知、叛道封地 分队。 | 2026-07-26 |
-| enhancement | [骇影鸟巢](factions/混沌骑士/enhancements/pterrorshade-rookery.md) | 分数未知、暴虐要塞 分队。 | 2026-07-26 |
-| enhancement | [魂迹侦测器](factions/混沌骑士/enhancements/soul-spoor-auspicator.md) | 分数未知、猎犬战群 分队。 | 2026-07-26 |
+| enhancement | [凶险竞争](factions/混沌骑士/enhancements/snarling-rivalry.md) | 10 分、猎犬战群 分队。 | 2026-07-26 |
+| enhancement | [叛道神像（光环）](factions/混沌骑士/enhancements/iconoclast-idol-aura.md) | 20 分、叛道封地 分队。 | 2026-07-26 |
+| enhancement | [憎恨统御](factions/混沌骑士/enhancements/hate-filled-dominion.md) | 20 分、暴虐要塞 分队。 | 2026-07-26 |
+| enhancement | [残忍君主（光环）](factions/混沌骑士/enhancements/cruel-lashmaster-aura.md) | 25 分、叛道封地 分队。 | 2026-07-26 |
+| enhancement | [骇影鸟巢](factions/混沌骑士/enhancements/pterrorshade-rookery.md) | 20 分、暴虐要塞 分队。 | 2026-07-26 |
+| enhancement | [魂迹侦测器](factions/混沌骑士/enhancements/soul-spoor-auspicator.md) | 15 分、猎犬战群 分队。 | 2026-07-26 |
 | stratagem | [A LONG LEASH](factions/混沌骑士/stratagems/a-long-leash.md) | 1 CP、Command phase、Traitoris Lance 分队、Strategic Ploy Stratagem。 | 2026-07-26 |
 | stratagem | [ANIMALISTIC RAGE](factions/混沌骑士/stratagems/animalistic-rage.md) | 1 CP、Shooting or Fight phase、Houndpack Lance 分队、Battle Tactic Stratagem。 | 2026-07-26 |
 | stratagem | [CLAIMED FOR THE DARK GODS](factions/混沌骑士/stratagems/claimed-for-the-dark-gods.md) | 1 CP、Command phase、Lords of Dread 分队、Epic Deed Stratagem。 | 2026-07-26 |
@@ -4135,43 +4154,43 @@
 | stratagem | [野性傲慢](factions/混沌骑士/stratagems/feral-arrogance.md) | 1 CP、Any phase、地狱猎手骑兵队 分队、Strategic Ploy Stratagem。 | 2026-07-26 |
 | stratagem | [驱赶猎物](factions/混沌骑士/stratagems/flush-the-quarry.md) | 1 CP、Movement phase、地狱猎手骑兵队 分队、Battle Tactic Stratagem。 | 2026-07-26 |
 | stratagem | [黑暗献祭](factions/混沌骑士/stratagems/dark-sacrifice.md) | 1 CP、Command phase、叛道封地 分队。 | 2026-07-26 |
-| unit | [Cultist Mob with Firearms](factions/混沌骑士/units/cultist-mob-with-firearms.md) |  | 2026-07-23 |
-| unit | [Gellerpox Infected](factions/混沌骑士/units/gellerpox-infected.md) |  | 2026-07-23 |
-| unit | [Mutoid Vermin](factions/混沌骑士/units/mutoid-vermin.md) |  | 2026-07-23 |
-| unit | [Negavolt Cultists](factions/混沌骑士/units/negavolt-cultists.md) |  | 2026-07-23 |
-| unit | [Renegade Enforcer](factions/混沌骑士/units/renegade-enforcer.md) |  | 2026-07-23 |
-| unit | [Renegade Heavy Weapons Squad](factions/混沌骑士/units/renegade-heavy-weapons-squad.md) |  | 2026-07-23 |
-| unit | [Renegade Ogryn Beast Handler](factions/混沌骑士/units/renegade-ogryn-beast-handler.md) |  | 2026-07-23 |
-| unit | [Renegade Ogryn Brutes](factions/混沌骑士/units/renegade-ogryn-brutes.md) |  | 2026-07-23 |
-| unit | [Renegade Plague Ogryns](factions/混沌骑士/units/renegade-plague-ogryns.md) |  | 2026-07-23 |
-| unit | [Rogue Psyker](factions/混沌骑士/units/rogue-psyker.md) |  | 2026-07-23 |
-| unit | [叛军执法者](factions/混沌骑士/units/traitor-enforcer.md) |  | 2026-07-23 |
-| unit | [叛变卫队](factions/混沌骑士/units/traitor-guardsmen-squad.md) |  | 2026-07-23 |
-| unit | [天命型战犬](factions/混沌骑士/units/war-dog-moirax.md) |  | 2026-07-23 |
-| unit | [恶角野兽人](factions/混沌骑士/units/fellgor-beastmen.md) |  | 2026-07-23 |
-| unit | [憎恶者骑士](factions/混沌骑士/units/knight-abominant.md) |  | 2026-07-23 |
-| unit | [战犬处决者](factions/混沌骑士/units/war-dog-executioner.md) |  | 2026-07-23 |
-| unit | [战犬暴匪](factions/混沌骑士/units/war-dog-brigand.md) |  | 2026-07-23 |
-| unit | [战犬猎手](factions/混沌骑士/units/war-dog-huntsman.md) |  | 2026-07-23 |
-| unit | [战犬肉食者](factions/混沌骑士/units/war-dog-karnivore.md) |  | 2026-07-23 |
-| unit | [战犬追猎者](factions/混沌骑士/units/war-dog-stalker.md) |  | 2026-07-23 |
-| unit | [掠夺者骑士](factions/混沌骑士/units/knight-despoiler.md) |  | 2026-07-23 |
-| unit | [暴君骑士](factions/混沌骑士/units/knight-tyrant.md) |  | 2026-07-23 |
-| unit | [毁灭者骑士](factions/混沌骑士/units/knight-ruinator.md) |  | 2026-07-23 |
-| unit | [混沌冥河型巡游骑士](factions/混沌骑士/units/chaos-questoris-knight-styrix.md) |  | 2026-07-23 |
-| unit | [混沌命运女神型角蝰骑士](factions/混沌骑士/units/chaos-cerastus-knight-atrapos.md) |  | 2026-07-23 |
-| unit | [混沌复仇女神型巡游骑士](factions/混沌骑士/units/chaos-questoris-knight-magaera.md) |  | 2026-07-23 |
-| unit | [混沌巨人王型阿卡斯托斯骑士](factions/混沌骑士/units/chaos-acastus-knight-porphyrion.md) |  | 2026-07-23 |
-| unit | [混沌惩戒者型角蝰骑士](factions/混沌骑士/units/chaos-cerastus-knight-castigator.md) |  | 2026-07-23 |
-| unit | [混沌枪骑兵型角蝰骑士](factions/混沌骑士/units/chaos-cerastus-knight-lancer.md) |  | 2026-07-23 |
-| unit | [混沌牛头怪型阿卡斯托斯骑士](factions/混沌骑士/units/chaos-acastus-knight-asterius.md) |  | 2026-07-23 |
-| unit | [混沌黄泉型角蝰骑士](factions/混沌骑士/units/chaos-cerastus-knight-acheron.md) |  | 2026-07-23 |
-| unit | [渎神者骑士](factions/混沌骑士/units/knight-desecrator.md) |  | 2026-07-23 |
-| unit | [肆虐者骑士](factions/混沌骑士/units/knight-rampager.md) |  | 2026-07-23 |
-| unit | [诅咒教徒](factions/混沌骑士/units/accursed-cultists.md) |  | 2026-07-23 |
-| unit | [邪教徒](factions/混沌骑士/units/cultist-mob.md) |  | 2026-07-23 |
-| unit | [邪教徒纵火者](factions/混沌骑士/units/cultist-firebrand.md) |  | 2026-07-23 |
-| unit | [黑暗巫会](factions/混沌骑士/units/dark-commune.md) |  | 2026-07-23 |
+| unit | [Cultist Mob with Firearms](factions/混沌骑士/units/cultist-mob-with-firearms.md) | 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。 | 2026-09-14 |
+| unit | [Gellerpox Infected](factions/混沌骑士/units/gellerpox-infected.md) | 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。 | 2026-09-14 |
+| unit | [Mutoid Vermin](factions/混沌骑士/units/mutoid-vermin.md) | 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。 | 2026-09-14 |
+| unit | [Negavolt Cultists](factions/混沌骑士/units/negavolt-cultists.md) | 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。 | 2026-09-14 |
+| unit | [Renegade Enforcer](factions/混沌骑士/units/renegade-enforcer.md) | 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。 | 2026-09-14 |
+| unit | [Renegade Heavy Weapons Squad](factions/混沌骑士/units/renegade-heavy-weapons-squad.md) | 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。 | 2026-09-14 |
+| unit | [Renegade Ogryn Beast Handler](factions/混沌骑士/units/renegade-ogryn-beast-handler.md) | 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。 | 2026-09-14 |
+| unit | [Renegade Ogryn Brutes](factions/混沌骑士/units/renegade-ogryn-brutes.md) | 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。 | 2026-09-14 |
+| unit | [Renegade Plague Ogryns](factions/混沌骑士/units/renegade-plague-ogryns.md) | 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。 | 2026-09-14 |
+| unit | [Rogue Psyker](factions/混沌骑士/units/rogue-psyker.md) | 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。 | 2026-09-14 |
+| unit | [叛军执法者](factions/混沌骑士/units/traitor-enforcer.md) | 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。 | 2026-09-14 |
+| unit | [叛变卫队](factions/混沌骑士/units/traitor-guardsmen-squad.md) | 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。 | 2026-09-14 |
+| unit | [天命型战犬](factions/混沌骑士/units/war-dog-moirax.md) |  | 2026-09-14 |
+| unit | [恶角野兽人](factions/混沌骑士/units/fellgor-beastmen.md) | 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。 | 2026-09-14 |
+| unit | [憎恶者骑士](factions/混沌骑士/units/knight-abominant.md) |  | 2026-09-14 |
+| unit | [战犬处决者](factions/混沌骑士/units/war-dog-executioner.md) |  | 2026-09-14 |
+| unit | [战犬暴匪](factions/混沌骑士/units/war-dog-brigand.md) |  | 2026-09-14 |
+| unit | [战犬猎手](factions/混沌骑士/units/war-dog-huntsman.md) |  | 2026-09-14 |
+| unit | [战犬肉食者](factions/混沌骑士/units/war-dog-karnivore.md) |  | 2026-09-14 |
+| unit | [战犬追猎者](factions/混沌骑士/units/war-dog-stalker.md) |  | 2026-09-14 |
+| unit | [掠夺者骑士](factions/混沌骑士/units/knight-despoiler.md) |  | 2026-09-14 |
+| unit | [暴君骑士](factions/混沌骑士/units/knight-tyrant.md) |  | 2026-09-14 |
+| unit | [毁灭者骑士](factions/混沌骑士/units/knight-ruinator.md) |  | 2026-09-14 |
+| unit | [混沌冥河型巡游骑士](factions/混沌骑士/units/chaos-questoris-knight-styrix.md) |  | 2026-09-14 |
+| unit | [混沌命运女神型角蝰骑士](factions/混沌骑士/units/chaos-cerastus-knight-atrapos.md) |  | 2026-09-14 |
+| unit | [混沌复仇女神型巡游骑士](factions/混沌骑士/units/chaos-questoris-knight-magaera.md) |  | 2026-09-14 |
+| unit | [混沌巨人王型阿卡斯托斯骑士](factions/混沌骑士/units/chaos-acastus-knight-porphyrion.md) |  | 2026-09-14 |
+| unit | [混沌惩戒者型角蝰骑士](factions/混沌骑士/units/chaos-cerastus-knight-castigator.md) |  | 2026-09-14 |
+| unit | [混沌枪骑兵型角蝰骑士](factions/混沌骑士/units/chaos-cerastus-knight-lancer.md) |  | 2026-09-14 |
+| unit | [混沌牛头怪型阿卡斯托斯骑士](factions/混沌骑士/units/chaos-acastus-knight-asterius.md) |  | 2026-09-14 |
+| unit | [混沌黄泉型角蝰骑士](factions/混沌骑士/units/chaos-cerastus-knight-acheron.md) |  | 2026-09-14 |
+| unit | [渎神者骑士](factions/混沌骑士/units/knight-desecrator.md) |  | 2026-09-14 |
+| unit | [肆虐者骑士](factions/混沌骑士/units/knight-rampager.md) |  | 2026-09-14 |
+| unit | [诅咒教徒](factions/混沌骑士/units/accursed-cultists.md) | 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。 | 2026-09-14 |
+| unit | [邪教徒](factions/混沌骑士/units/cultist-mob.md) | 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。 | 2026-09-14 |
+| unit | [邪教徒纵火者](factions/混沌骑士/units/cultist-firebrand.md) | 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。 | 2026-09-14 |
+| unit | [黑暗巫会](factions/混沌骑士/units/dark-commune.md) | 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。 | 2026-09-14 |
 
 ### 灰暗联盟
 
@@ -4194,6 +4213,7 @@
 | enhancement | [Calculated Tenacity](factions/灰暗联盟/enhancements/calculated-tenacity.md) | 15 分、Hearthfyre Arsenal 分队。 | 2026-07-26 |
 | enhancement | [Celebrated Folk Hero](factions/灰暗联盟/enhancements/celebrated-folk-hero.md) | 0 分、Hearthfire Strike 分队。 | 2026-07-26 |
 | enhancement | [Dead Reckoning](factions/灰暗联盟/enhancements/dead-reckoning.md) | 10 分、Needgaârd Oathband 分队。 | 2026-07-26 |
+| enhancement | [Dêlvewerke Navigator](factions/灰暗联盟/enhancements/dêlvewerke-navigator.md) | 25 分、Dêlve Assault Shift 分队。 | 2026-07-26 |
 | enhancement | [Dêlvwerke Navigator](factions/灰暗联盟/enhancements/dêlvwerke-navigator.md) | 25 分、Dêlve Assault Shift 分队。 | 2026-07-26 |
 | enhancement | [Eye for Weakness](factions/灰暗联盟/enhancements/eye-for-weakness.md) | 25 分、Persecution Prospect 分队。 | 2026-07-26 |
 | enhancement | [Fârstrydr Node](factions/灰暗联盟/enhancements/fârstrydr-node.md) | 20 分、Hearthfyre Arsenal 分队。 | 2026-07-26 |
@@ -4206,26 +4226,26 @@
 | enhancement | [Nomad Strategist](factions/灰暗联盟/enhancements/nomad-strategist.md) | 20 分、Persecution Prospect 分队。 | 2026-07-26 |
 | enhancement | [Oathbound Speculator](factions/灰暗联盟/enhancements/oathbound-speculator.md) | 30 分、Needgaârd Oathband 分队。 | 2026-07-26 |
 | enhancement | [Obsessive Drive](factions/灰暗联盟/enhancements/obsessive-drive.md) | 0 分、Void Salvagers 分队。 | 2026-07-26 |
-| enhancement | [Optimised Attack Lines](factions/灰暗联盟/enhancements/optimised-attack-lines.md) | 分数未知、装甲先驱 分队。 | 2026-07-26 |
+| enhancement | [Optimised Attack Lines](factions/灰暗联盟/enhancements/optimised-attack-lines.md) | 15 分、装甲先驱 分队。 | 2026-07-26 |
 | enhancement | [Piledriver](factions/灰暗联盟/enhancements/piledriver.md) | 15 分、Dêlve Assault Shift 分队。 | 2026-07-26 |
 | enhancement | [Precursive Judgement](factions/灰暗联盟/enhancements/precursive-judgement.md) | 15 分、Brandfast Oathband 分队。 | 2026-07-26 |
 | enhancement | [Quake Supervisor](factions/灰暗联盟/enhancements/quake-supervisor.md) | 20 分、Dêlve Assault Shift 分队。 | 2026-07-26 |
-| enhancement | [Saturation Rounds](factions/灰暗联盟/enhancements/saturation-rounds.md) | 分数未知、装甲先驱 分队。 | 2026-07-26 |
+| enhancement | [Saturation Rounds](factions/灰暗联盟/enhancements/saturation-rounds.md) | 15 分、装甲先驱 分队。 | 2026-07-26 |
 | enhancement | [Signature Restoration](factions/灰暗联盟/enhancements/signature-restoration.md) | 5 分、Brandfast Oathband 分队。 | 2026-07-26 |
 | enhancement | [Surgical Saboteur](factions/灰暗联盟/enhancements/surgical-saboteur.md) | 10 分、Persecution Prospect 分队。 | 2026-07-26 |
 | enhancement | [Tactical Alchemy](factions/灰暗联盟/enhancements/tactical-alchemy.md) | 10 分、Brandfast Oathband 分队。 | 2026-07-26 |
 | enhancement | [Trivärg Cyber Implant](factions/灰暗联盟/enhancements/trivärg-cyber-implant.md) | 40 分、Brandfast Oathband 分队。 | 2026-07-26 |
 | enhancement | [Writ of Acquisition](factions/灰暗联盟/enhancements/writ-of-acquisition.md) | 10 分、Persecution Prospect 分队。 | 2026-07-26 |
 | enhancement | [地震生成器](factions/灰暗联盟/enhancements/quake-multigenerator.md) | 15 分、炉心战队 分队。 | 2026-07-26 |
-| enhancement | [多频率锁定器](factions/灰暗联盟/enhancements/pan-spectral-lockons.md) | 分数未知、远行探索者 分队。 | 2026-07-26 |
+| enhancement | [多频率锁定器](factions/灰暗联盟/enhancements/pan-spectral-lockons.md) | 10 分、远行探索者 分队。 | 2026-07-26 |
 | enhancement | [概念性评估](factions/灰暗联盟/enhancements/metaphysical-brokerage.md) | 20 分、佣兵铁誓团 分队。 | 2026-07-26 |
 | enhancement | [至高统领](factions/灰暗联盟/enhancements/high-kâhl-hearthband.md) | 30 分、炉心战队 分队。 | 2026-07-26 |
-| enhancement | [至高统领](factions/灰暗联盟/enhancements/high-kâhl-hearthguard-covenant.md) | 分数未知、Hearthguard Covenant 分队。 | 2026-07-26 |
+| enhancement | [至高统领](factions/灰暗联盟/enhancements/high-kâhl-hearthguard-covenant.md) | 30 分、Hearthguard Covenant 分队。 | 2026-07-26 |
 | enhancement | [艾塔-卡恩 SB9 追踪植入物](factions/灰暗联盟/enhancements/etacarn-sb9-targeting-implant.md) | 15 分、佣兵铁誓团 分队。 | 2026-07-26 |
 | enhancement | [资产操纵者](factions/灰暗联盟/enhancements/asset-manipulator.md) | 25 分、佣兵铁誓团 分队。 | 2026-07-26 |
-| enhancement | [遮蔽力场护符](factions/灰暗联盟/enhancements/shroudwërke-talismans.md) | 分数未知、远行探索者 分队。 | 2026-07-26 |
+| enhancement | [遮蔽力场护符](factions/灰暗联盟/enhancements/shroudwërke-talismans.md) | 15 分、远行探索者 分队。 | 2026-07-26 |
 | enhancement | [钢铁织锦](factions/灰暗联盟/enhancements/ironskein-hearthband.md) | 10 分、炉心战队 分队。 | 2026-07-26 |
-| enhancement | [钢铁织锦](factions/灰暗联盟/enhancements/ironskein-hearthguard-covenant.md) | 分数未知、Hearthguard Covenant 分队。 | 2026-07-26 |
+| enhancement | [钢铁织锦](factions/灰暗联盟/enhancements/ironskein-hearthguard-covenant.md) | 10 分、Hearthguard Covenant 分队。 | 2026-07-26 |
 | enhancement | [雇佣勘探员](factions/灰暗联盟/enhancements/mercenary-prospector.md) | 20 分、佣兵铁誓团 分队。 | 2026-07-26 |
 | stratagem | [ADAPTABLE AVARICE](factions/灰暗联盟/stratagems/adaptable-avarice.md) | 1 CP、Any phase、Persecution Prospect 分队、Strategic Ploy Stratagem。 | 2026-07-26 |
 | stratagem | [ANCESTRAL SENTENCE](factions/灰暗联盟/stratagems/ancestral-sentence.md) | 1 CP、Shooting phase、Needgaârd Oathband 分队、Battle Tactic Stratagem。 | 2026-07-26 |
@@ -4286,28 +4306,28 @@
 | stratagem | [辅助合同](factions/灰暗联盟/stratagems/auxiliary-contract.md) | 1 CP、Shooting or Fight phase、佣兵铁誓团 分队、Strategic Ploy Stratagem。 | 2026-07-26 |
 | stratagem | [高超欺骗](factions/灰暗联盟/stratagems/grand-artifice.md) | 1 CP、Movement phase、佣兵铁誓团 分队、Strategic Ploy Stratagem。 | 2026-07-26 |
 | stratagem | [高速开拓](factions/灰暗联盟/stratagems/mobile-exploitation.md) | 1 CP、Fight phase、佣兵铁誓团 分队、Strategic Ploy Stratagem。 | 2026-07-26 |
-| unit | [人马座战车](factions/灰暗联盟/units/sagitaur.md) |  | 2026-07-23 |
-| unit | [天命者乌萨尔](factions/灰暗联盟/units/ûthar-the-destined.md) |  | 2026-07-23 |
-| unit | [布里·艾吉尼尔森](factions/灰暗联盟/units/buri-aegnirssen.md) |  | 2026-07-23 |
-| unit | [战群统领](factions/灰暗联盟/units/kâhl.md) |  | 2026-07-23 |
-| unit | [摩羯座运兵车](factions/灰暗联盟/units/kapricus-carrier.md) |  | 2026-07-23 |
-| unit | [摩羯座防御者](factions/灰暗联盟/units/kapricus-defenders.md) |  | 2026-07-23 |
-| unit | [断角勇士](factions/灰暗联盟/units/einhyr-champion.md) |  | 2026-07-23 |
-| unit | [断角炉卫](factions/灰暗联盟/units/einhyr-hearthguard.md) |  | 2026-07-23 |
-| unit | [曼姆尼尔战略师](factions/灰暗联盟/units/memnyr-strategist.md) |  | 2026-07-23 |
-| unit | [机锻匠雷霆炮手](factions/灰暗联盟/units/brôkhyr-thunderkyn.md) |  | 2026-07-23 |
-| unit | [机锻钢铁之主](factions/灰暗联盟/units/brôkhyr-iron-master.md) |  | 2026-07-23 |
-| unit | [格林尼尔贤者](factions/灰暗联盟/units/grimnyr.md) |  | 2026-07-23 |
-| unit | [深岩撼地者](factions/灰暗联盟/units/cthonian-earthshakers.md) |  | 2026-07-23 |
-| unit | [深岩狂战士](factions/灰暗联盟/units/cthonian-beserks.md) |  | 2026-07-23 |
-| unit | [炉心战士](factions/灰暗联盟/units/hearthkyn-warriors.md) |  | 2026-07-23 |
-| unit | [炼金士评估师](factions/灰暗联盟/units/arkanyst-evaluator.md) |  | 2026-07-23 |
-| unit | [装备近战武器的钢甲铁裔](factions/灰暗联盟/units/ironkin-steeljacks-with-melee-weapons.md) |  | 2026-07-23 |
-| unit | [装备重型爆燃解离枪的 钢甲铁裔](factions/灰暗联盟/units/ironkin-steeljacks-with-heavy-volkanite-disintegrators.md) |  | 2026-07-23 |
-| unit | [贝雷克·斯托恩布劳](factions/灰暗联盟/units/berehk-stornbröw.md) |  | 2026-07-23 |
-| unit | [赫卡顿陆行要塞](factions/灰暗联盟/units/hekaton-land-fortress.md) |  | 2026-07-23 |
-| unit | [远行者先锋](factions/灰暗联盟/units/hernkyn-pioneers.md) |  | 2026-07-23 |
-| unit | [远行者猎手](factions/灰暗联盟/units/hernkyn-yaegirs.md) |  | 2026-07-23 |
+| unit | [人马座战车](factions/灰暗联盟/units/sagitaur.md) |  | 2026-09-14 |
+| unit | [天命者乌萨尔](factions/灰暗联盟/units/ûthar-the-destined.md) |  | 2026-09-14 |
+| unit | [布里·艾吉尼尔森](factions/灰暗联盟/units/buri-aegnirssen.md) |  | 2026-09-14 |
+| unit | [战群统领](factions/灰暗联盟/units/kâhl.md) |  | 2026-09-14 |
+| unit | [摩羯座运兵车](factions/灰暗联盟/units/kapricus-carrier.md) |  | 2026-09-14 |
+| unit | [摩羯座防御者](factions/灰暗联盟/units/kapricus-defenders.md) |  | 2026-09-14 |
+| unit | [断角勇士](factions/灰暗联盟/units/einhyr-champion.md) |  | 2026-09-14 |
+| unit | [断角炉卫](factions/灰暗联盟/units/einhyr-hearthguard.md) |  | 2026-09-14 |
+| unit | [曼姆尼尔战略师](factions/灰暗联盟/units/memnyr-strategist.md) |  | 2026-09-14 |
+| unit | [机锻匠雷霆炮手](factions/灰暗联盟/units/brôkhyr-thunderkyn.md) |  | 2026-09-14 |
+| unit | [机锻钢铁之主](factions/灰暗联盟/units/brôkhyr-iron-master.md) |  | 2026-09-14 |
+| unit | [格林尼尔贤者](factions/灰暗联盟/units/grimnyr.md) |  | 2026-09-14 |
+| unit | [深岩撼地者](factions/灰暗联盟/units/cthonian-earthshakers.md) |  | 2026-09-14 |
+| unit | [深岩狂战士](factions/灰暗联盟/units/cthonian-beserks.md) |  | 2026-09-14 |
+| unit | [炉心战士](factions/灰暗联盟/units/hearthkyn-warriors.md) |  | 2026-09-14 |
+| unit | [炼金士评估师](factions/灰暗联盟/units/arkanyst-evaluator.md) |  | 2026-09-14 |
+| unit | [装备近战武器的钢甲铁裔](factions/灰暗联盟/units/ironkin-steeljacks-with-melee-weapons.md) |  | 2026-09-14 |
+| unit | [装备重型爆燃解离枪的 钢甲铁裔](factions/灰暗联盟/units/ironkin-steeljacks-with-heavy-volkanite-disintegrators.md) |  | 2026-09-14 |
+| unit | [贝雷克·斯托恩布劳](factions/灰暗联盟/units/berehk-stornbröw.md) |  | 2026-09-14 |
+| unit | [赫卡顿陆行要塞](factions/灰暗联盟/units/hekaton-land-fortress.md) |  | 2026-09-14 |
+| unit | [远行者先锋](factions/灰暗联盟/units/hernkyn-pioneers.md) |  | 2026-09-14 |
+| unit | [远行者猎手](factions/灰暗联盟/units/hernkyn-yaegirs.md) |  | 2026-09-14 |
 
 ### 灰骑士
 
@@ -4325,7 +4345,7 @@
 | detachment | [次元灾星特遣队](factions/灰骑士/detachments/warpbane-task-force.md) | 灰骑士的分队「次元灾星特遣队」，分队规则「Hallowed Ground」。 | 2026-07-26 |
 | detachment | [洗罪之火](factions/灰骑士/detachments/fires-of-purgation.md) | 灰骑士的分队「洗罪之火」。 | 2026-07-26 |
 | enhancement | [A Foot in the Future](factions/灰骑士/enhancements/a-foot-in-the-future.md) | 15 分、Augurium Task Force 分队。 | 2026-07-26 |
-| enhancement | [Astral Overlap](factions/灰骑士/enhancements/astral-overlap.md) | 分数未知、次元拦截 分队。 | 2026-07-26 |
+| enhancement | [Astral Overlap](factions/灰骑士/enhancements/astral-overlap.md) | 10 分、次元拦截 分队。 | 2026-07-26 |
 | enhancement | [Banishing Wave (Psychic)](factions/灰骑士/enhancements/banishing-wave-psychic.md) | 20 分、Brotherhood Strike 分队。 | 2026-07-26 |
 | enhancement | [Blinding Aura](factions/灰骑士/enhancements/blinding-aura.md) | 10 分、Brotherhood Strike 分队。 | 2026-07-26 |
 | enhancement | [Close and Sanction](factions/灰骑士/enhancements/close-and-sanction.md) | 0 分、Baneslayer Strike 分队。 | 2026-07-26 |
@@ -4335,7 +4355,8 @@
 | enhancement | [Grimoire of Conjunctions](factions/灰骑士/enhancements/grimoire-of-conjunctions.md) | 10 分、Augurium Task Force 分队。 | 2026-07-26 |
 | enhancement | [Inescapable Judgement (Psychic)](factions/灰骑士/enhancements/inescapable-judgement-psychic.md) | 20 分、Hallowed Conclave 分队。 | 2026-07-26 |
 | enhancement | [Nemesis Rounds](factions/灰骑士/enhancements/nemesis-rounds.md) | 10 分、Hallowed Conclave 分队。 | 2026-07-26 |
-| enhancement | [Predestined Coordinates](factions/灰骑士/enhancements/predestined-coordinates.md) | 分数未知、次元拦截 分队。 | 2026-07-26 |
+| enhancement | [One Foot in the Future](factions/灰骑士/enhancements/one-foot-in-the-future.md) | 15 分、Augurium Task Force 分队。 | 2026-07-26 |
+| enhancement | [Predestined Coordinates](factions/灰骑士/enhancements/predestined-coordinates.md) | 10 分、次元拦截 分队。 | 2026-07-26 |
 | enhancement | [Purity of Purpose](factions/灰骑士/enhancements/purity-of-purpose.md) | 15 分、Brotherhood Strike 分队。 | 2026-07-26 |
 | enhancement | [Pyresoul (Psychic)](factions/灰骑士/enhancements/pyresoul-psychic.md) | 20 分、Banishers 分队。 | 2026-07-26 |
 | enhancement | [Quickening Foci](factions/灰骑士/enhancements/quickening-foci.md) | 15 分、Sanctic Spearhead 分队。 | 2026-07-26 |
@@ -4351,13 +4372,13 @@
 | enhancement | [The Sixty-sixth Seal](factions/灰骑士/enhancements/the-sixty-sixth-seal.md) | 25 分、Banishers 分队。 | 2026-07-26 |
 | enhancement | [Tome of Forbidden Ways](factions/灰骑士/enhancements/tome-of-forbidden-ways.md) | 25 分、Brotherhood Strike 分队。 | 2026-07-26 |
 | enhancement | [圣洁楷模](factions/灰骑士/enhancements/paragon-of-sanctity.md) | 10 分、次元灾星特遣队 分队。 | 2026-07-26 |
-| enhancement | [戴莫斯的恩赐](factions/灰骑士/enhancements/boons-of-deimos.md) | 分数未知、洗罪之火 分队。 | 2026-07-26 |
+| enhancement | [戴莫斯的恩赐](factions/灰骑士/enhancements/boons-of-deimos.md) | 20 分、洗罪之火 分队。 | 2026-07-26 |
 | enhancement | [曼杜里斯骨匣](factions/灰骑士/enhancements/mandulian-reliquary.md) | 20 分、次元灾星特遣队 分队。 | 2026-07-26 |
-| enhancement | [泰坦的警戒](factions/灰骑士/enhancements/vigilance-of-titan.md) | 分数未知、圣银突袭 分队。 | 2026-07-26 |
-| enhancement | [深渊安瓿](factions/灰骑士/enhancements/phial-of-the-abyss.md) | 25 分、次元灾星特遣队 分队。 | 2026-07-26 |
-| enhancement | [灵能敏捷](factions/灰骑士/enhancements/psychic-celerity.md) | 分数未知、圣银突袭 分队。 | 2026-07-26 |
+| enhancement | [泰坦的警戒](factions/灰骑士/enhancements/vigilance-of-titan.md) | 20 分、圣银突袭 分队。 | 2026-07-26 |
+| enhancement | [深渊安瓿](factions/灰骑士/enhancements/phial-of-the-abyss.md) | 15 分、次元灾星特遣队 分队。 | 2026-07-26 |
+| enhancement | [灵能敏捷](factions/灰骑士/enhancements/psychic-celerity.md) | 15 分、圣银突袭 分队。 | 2026-07-26 |
 | enhancement | [闪耀勇士](factions/灰骑士/enhancements/radiant-champion.md) | 15 分、次元灾星特遣队 分队。 | 2026-07-26 |
-| enhancement | [预知齐射](factions/灰骑士/enhancements/precognicient-volleys.md) | 分数未知、洗罪之火 分队。 | 2026-07-26 |
+| enhancement | [预知齐射](factions/灰骑士/enhancements/precognicient-volleys.md) | 10 分、洗罪之火 分队。 | 2026-07-26 |
 | stratagem | [ABOMINUS-CLASS TARGETS](factions/灰骑士/stratagems/abominus-class-targets.md) | 1 CP、Shooting or Fight phase、Sanctic Spearhead 分队、Battle Tactic Stratagem。 | 2026-07-26 |
 | stratagem | [AGGRESSIVE ANTICIPATION](factions/灰骑士/stratagems/aggressive-anticipation.md) | 1 CP、Shooting or Fight phase、Augurium Task Force 分队、Battle Tactic Stratagem。 | 2026-07-26 |
 | stratagem | [APPOINTED HOUR](factions/灰骑士/stratagems/appointed-hour.md) | 1 CP、Shooting or Fight phase、Augurium Task Force 分队、Battle Tactic Stratagem。 | 2026-07-26 |
@@ -4411,37 +4432,37 @@
 | stratagem | [神圣信标](factions/灰骑士/stratagems/hallowed-beacon.md) | 1 CP、Movement phase、次元灾星特遣队 分队、Battle Tactic Stratagem。 | 2026-07-26 |
 | stratagem | [锁定灵魂](factions/灰骑士/stratagems/soul-locked.md) | 1 CP、Movement phase、洗罪之火 分队。 | 2026-07-26 |
 | stratagem | [集中焚烧](factions/灰骑士/stratagems/focused-immolation.md) | 1 CP、Shooting phase、洗罪之火 分队。 | 2026-07-26 |
-| unit | [Brother-captain Stern](factions/灰骑士/units/brother-captain-stern.md) |  | 2026-07-23 |
-| unit | [Grey Knights Relic Razorback](factions/灰骑士/units/grey-knights-relic-razorback.md) |  | 2026-07-23 |
-| unit | [Servitors](factions/灰骑士/units/servitors.md) |  | 2026-07-23 |
-| unit | [⼤导师](factions/灰骑士/units/grand-master.md) |  | 2026-07-23 |
-| unit | [兄弟会勇士](factions/灰骑士/units/brotherhood-champion.md) |  | 2026-07-23 |
-| unit | [兄弟会教⼠](factions/灰骑士/units/brotherhood-chaplain.md) |  | 2026-07-23 |
-| unit | [兄弟会智库](factions/灰骑士/units/brotherhood-librarian.md) |  | 2026-07-23 |
-| unit | [兄弟会科技战⼠](factions/灰骑士/units/brotherhood-techmarine.md) |  | 2026-07-23 |
-| unit | [兄弟会终结者⼩队](factions/灰骑士/units/brotherhood-terminator-squad.md) |  | 2026-07-23 |
-| unit | [兄弟会连⻓](factions/灰骑士/units/brother-captain.md) |  | 2026-07-23 |
-| unit | [克罗堡主](factions/灰骑士/units/castellan-crowe.md) |  | 2026-07-23 |
-| unit | [兰德掠袭者坦克](factions/灰骑士/units/land-raider.md) |  | 2026-07-23 |
-| unit | [净化者⼩队](factions/灰骑士/units/purifier-squad.md) |  | 2026-07-23 |
-| unit | [十字军型兰德掠袭者坦克](factions/灰骑士/units/land-raider-crusader.md) |  | 2026-07-23 |
-| unit | [卡尔多·德莱戈【传奇】](factions/灰骑士/units/kaldor-draigo.md) |  | 2026-07-23 |
-| unit | [圣骑⼠⼩队](factions/灰骑士/units/paladin-squad.md) |  | 2026-07-23 |
-| unit | [打击者⼩队](factions/灰骑士/units/strike-squad.md) |  | 2026-07-23 |
-| unit | [拦截者⼩队](factions/灰骑士/units/interceptor-squad.md) |  | 2026-07-23 |
-| unit | [救赎者型兰德掠袭者坦克](factions/灰骑士/units/land-raider-redeemer.md) |  | 2026-07-23 |
-| unit | [暴风渡鸦炮艇](factions/灰骑士/units/stormraven-gunship.md) |  | 2026-07-23 |
-| unit | [沃尔达斯⼤导师](factions/灰骑士/units/grand-master-voldus.md) |  | 2026-07-23 |
-| unit | [洗罪者⼩队](factions/灰骑士/units/purgation-squad.md) |  | 2026-07-23 |
-| unit | [涅墨⻄斯骇骑机甲](factions/灰骑士/units/nemesis-dreadknight.md) |  | 2026-07-23 |
-| unit | [涅墨⻄斯骇骑机甲⼤导师](factions/灰骑士/units/grand-master-in-nemesis-dreadknight.md) |  | 2026-07-23 |
-| unit | [灰骑士无畏机甲【传奇】](factions/灰骑士/units/grey-knights-dreadnought.md) |  | 2026-07-23 |
-| unit | [灰骑士雷鹰炮艇](factions/灰骑士/units/grey-knights-thunderhawk-gunship.md) |  | 2026-07-23 |
-| unit | [犀牛装甲车](factions/灰骑士/units/rhino.md) |  | 2026-07-23 |
-| unit | [荣耀无畏机甲](factions/灰骑士/units/venerable-dreadnought.md) |  | 2026-07-23 |
-| unit | [豪猪装甲车](factions/灰骑士/units/razorback.md) |  | 2026-07-23 |
-| unit | [风暴爪炮艇](factions/灰骑士/units/stormtalon-gunship.md) |  | 2026-07-23 |
-| unit | [风暴隼拦截机](factions/灰骑士/units/stormhawk-interceptor.md) |  | 2026-07-23 |
+| unit | [Brother-captain Stern](factions/灰骑士/units/brother-captain-stern.md) | 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。 | 2026-09-14 |
+| unit | [Grey Knights Relic Razorback](factions/灰骑士/units/grey-knights-relic-razorback.md) | 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。 | 2026-09-14 |
+| unit | [⼤导师](factions/灰骑士/units/grand-master.md) |  | 2026-09-14 |
+| unit | [兄弟会勇士](factions/灰骑士/units/brotherhood-champion.md) |  | 2026-09-14 |
+| unit | [兄弟会教⼠](factions/灰骑士/units/brotherhood-chaplain.md) |  | 2026-09-14 |
+| unit | [兄弟会智库](factions/灰骑士/units/brotherhood-librarian.md) |  | 2026-09-14 |
+| unit | [兄弟会科技战⼠](factions/灰骑士/units/brotherhood-techmarine.md) |  | 2026-09-14 |
+| unit | [兄弟会终结者⼩队](factions/灰骑士/units/brotherhood-terminator-squad.md) |  | 2026-09-14 |
+| unit | [兄弟会连⻓](factions/灰骑士/units/brother-captain.md) |  | 2026-09-14 |
+| unit | [克罗堡主](factions/灰骑士/units/castellan-crowe.md) |  | 2026-09-14 |
+| unit | [兰德掠袭者坦克](factions/灰骑士/units/land-raider.md) |  | 2026-09-14 |
+| unit | [净化者⼩队](factions/灰骑士/units/purifier-squad.md) |  | 2026-09-14 |
+| unit | [十字军型兰德掠袭者坦克](factions/灰骑士/units/land-raider-crusader.md) |  | 2026-09-14 |
+| unit | [卡尔多·德莱戈【传奇】](factions/灰骑士/units/kaldor-draigo.md) | 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。 | 2026-09-14 |
+| unit | [圣骑⼠⼩队](factions/灰骑士/units/paladin-squad.md) |  | 2026-09-14 |
+| unit | [奴工【传奇】](factions/灰骑士/units/servitors.md) | 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。 | 2026-09-14 |
+| unit | [打击者⼩队](factions/灰骑士/units/strike-squad.md) |  | 2026-09-14 |
+| unit | [拦截者⼩队](factions/灰骑士/units/interceptor-squad.md) |  | 2026-09-14 |
+| unit | [救赎者型兰德掠袭者坦克](factions/灰骑士/units/land-raider-redeemer.md) |  | 2026-09-14 |
+| unit | [暴风渡鸦炮艇](factions/灰骑士/units/stormraven-gunship.md) |  | 2026-09-14 |
+| unit | [沃尔达斯⼤导师](factions/灰骑士/units/grand-master-voldus.md) |  | 2026-09-14 |
+| unit | [洗罪者⼩队](factions/灰骑士/units/purgation-squad.md) |  | 2026-09-14 |
+| unit | [涅墨⻄斯骇骑机甲](factions/灰骑士/units/nemesis-dreadknight.md) |  | 2026-09-14 |
+| unit | [涅墨⻄斯骇骑机甲⼤导师](factions/灰骑士/units/grand-master-in-nemesis-dreadknight.md) |  | 2026-09-14 |
+| unit | [灰骑士无畏机甲【传奇】](factions/灰骑士/units/grey-knights-dreadnought.md) | 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。 | 2026-09-14 |
+| unit | [灰骑士雷鹰炮艇](factions/灰骑士/units/grey-knights-thunderhawk-gunship.md) |  | 2026-09-14 |
+| unit | [犀牛装甲车](factions/灰骑士/units/rhino.md) |  | 2026-09-14 |
+| unit | [荣耀无畏机甲](factions/灰骑士/units/venerable-dreadnought.md) |  | 2026-09-14 |
+| unit | [豪猪装甲车](factions/灰骑士/units/razorback.md) |  | 2026-09-14 |
+| unit | [风暴爪炮艇](factions/灰骑士/units/stormtalon-gunship.md) |  | 2026-09-14 |
+| unit | [风暴隼拦截机](factions/灰骑士/units/stormhawk-interceptor.md) |  | 2026-09-14 |
 
 ### 艾达灵族
 
@@ -4466,10 +4487,10 @@
 | detachment | [海盗劫掠团](factions/艾达灵族/detachments/corsair-coterie.md) | 艾达灵族的分队「海盗劫掠团」，分队规则「Relentless Raiders」。 | 2026-07-26 |
 | detachment | [装甲战群](factions/艾达灵族/detachments/armoured-warhost.md) | 艾达灵族的分队「装甲战群」，分队规则「Skilled Crews」。 | 2026-07-26 |
 | detachment | [骇人劫掠者](factions/艾达灵族/detachments/eldritch-raiders.md) | 艾达灵族的分队「骇人劫掠者」，分队规则「Yriel’s Own」。 | 2026-07-26 |
-| enhancement | [A Foot in the Future](factions/艾达灵族/enhancements/a-foot-in-the-future.md) | 分数未知、宿命的演出 分队。 | 2026-07-26 |
+| enhancement | [A Foot in the Future](factions/艾达灵族/enhancements/a-foot-in-the-future.md) | 15 分、宿命的演出 分队。 | 2026-07-26 |
 | enhancement | [Adrenal Infusions](factions/艾达灵族/enhancements/adrenal-infusions.md) | 20 分、骇人劫掠者 分队。 | 2026-07-26 |
 | enhancement | [Alacritous Assault](factions/艾达灵族/enhancements/alacritous-assault.md) | 20 分、骇人劫掠者 分队。 | 2026-07-26 |
-| enhancement | [Aspect of Murder](factions/艾达灵族/enhancements/aspect-of-murder.md) | 25 分、Aspect Host 分队。 | 2026-07-26 |
+| enhancement | [Aspect of Murder](factions/艾达灵族/enhancements/aspect-of-murder.md) | 15 分、Aspect Host 分队。 | 2026-07-26 |
 | enhancement | [Borrowed Vigour](factions/艾达灵族/enhancements/borrowed-vigour.md) | 10 分、Devoted of Ynnead 分队。 | 2026-07-26 |
 | enhancement | [Breath of Vaul](factions/艾达灵族/enhancements/breath-of-vaul.md) | 10 分、Guardian Battlehost 分队。 | 2026-07-26 |
 | enhancement | [Cegorach’s Coil](factions/艾达灵族/enhancements/cegorachs-coil.md) | 25 分、Ghosts of the Webway 分队。 | 2026-07-26 |
@@ -4486,10 +4507,10 @@
 | enhancement | [Higher Duty](factions/艾达灵族/enhancements/higher-duty.md) | 25 分、Spirit Conclave 分队。 | 2026-07-26 |
 | enhancement | [Light of Clarity](factions/艾达灵族/enhancements/light-of-clarity.md) | 30 分、Spirit Conclave 分队。 | 2026-07-26 |
 | enhancement | [Lucid Eye](factions/艾达灵族/enhancements/lucid-eye.md) | 30 分、Seer Council 分队。 | 2026-07-26 |
-| enhancement | [Mantle of Wisdom](factions/艾达灵族/enhancements/mantle-of-wisdom.md) | 30 分、Aspect Host 分队。 | 2026-07-26 |
+| enhancement | [Mantle of Wisdom](factions/艾达灵族/enhancements/mantle-of-wisdom.md) | 20 分、Aspect Host 分队。 | 2026-07-26 |
 | enhancement | [Mask of Secrets](factions/艾达灵族/enhancements/mask-of-secrets.md) | 15 分、Ghosts of the Webway 分队。 | 2026-07-26 |
 | enhancement | [Mirage Field](factions/艾达灵族/enhancements/mirage-field.md) | 25 分、Windrider Host 分队。 | 2026-07-26 |
-| enhancement | [Mistweave](factions/艾达灵族/enhancements/mistweave-fateful-performance.md) | 分数未知、宿命的演出 分队。 | 2026-07-26 |
+| enhancement | [Mistweave](factions/艾达灵族/enhancements/mistweave-fateful-performance.md) | 20 分、宿命的演出 分队。 | 2026-07-26 |
 | enhancement | [Mistweave](factions/艾达灵族/enhancements/mistweave-ghosts-of-the-webway.md) | 15 分、Ghosts of the Webway 分队。 | 2026-07-26 |
 | enhancement | [Morbid Might](factions/艾达灵族/enhancements/morbid-might.md) | 15 分、Devoted of Ynnead 分队。 | 2026-07-26 |
 | enhancement | [Murder’s Jest](factions/艾达灵族/enhancements/murders-jest.md) | 20 分、Ghosts of the Webway 分队。 | 2026-07-26 |
@@ -4506,27 +4527,27 @@
 | enhancement | [Seersight Strike](factions/艾达灵族/enhancements/seersight-strike.md) | 15 分、Windrider Host 分队。 | 2026-07-26 |
 | enhancement | [Shedskin Raiment](factions/艾达灵族/enhancements/shedskin-raiment.md) | 25 分、巨蛇族群 分队。 | 2026-07-26 |
 | enhancement | [Shieldmaster](factions/艾达灵族/enhancements/shieldmaster.md) | 0 分、Khaine’s Arrow 分队。 | 2026-07-26 |
-| enhancement | [Shimmerstone](factions/艾达灵族/enhancements/shimmerstone.md) | 15 分、Aspect Host 分队。 | 2026-07-26 |
+| enhancement | [Shimmerstone](factions/艾达灵族/enhancements/shimmerstone.md) | 10 分、Aspect Host 分队。 | 2026-07-26 |
 | enhancement | [Song of Renewal](factions/艾达灵族/enhancements/song-of-renewal.md) | 0 分、Wraiths of the Void 分队。 | 2026-07-26 |
 | enhancement | [Stave of Kurnous](factions/艾达灵族/enhancements/stave-of-kurnous.md) | 15 分、Spirit Conclave 分队。 | 2026-07-26 |
 | enhancement | [Stone of Eldritch Fury](factions/艾达灵族/enhancements/stone-of-eldritch-fury.md) | 15 分、Seer Council 分队。 | 2026-07-26 |
 | enhancement | [Storm of Whispers](factions/艾达灵族/enhancements/storm-of-whispers.md) | 10 分、Devoted of Ynnead 分队。 | 2026-07-26 |
-| enhancement | [Strategic Savant](factions/艾达灵族/enhancements/strategic-savant.md) | 15 分、Aspect Host 分队。 | 2026-07-26 |
+| enhancement | [Strategic Savant](factions/艾达灵族/enhancements/strategic-savant.md) | 10 分、Aspect Host 分队。 | 2026-07-26 |
 | enhancement | [Timeless Strategist](factions/艾达灵族/enhancements/timeless-strategist.md) | 15 分、Warhost 分队。 | 2026-07-26 |
 | enhancement | [Torc of Morai-Heg](factions/艾达灵族/enhancements/torc-of-morai-heg.md) | 20 分、Seer Council 分队。 | 2026-07-26 |
-| enhancement | [刺客之眼](factions/艾达灵族/enhancements/assassins-eye.md) | 分数未知、流放者之道 分队。 | 2026-07-26 |
+| enhancement | [刺客之眼](factions/艾达灵族/enhancements/assassins-eye.md) | 15 分、流放者之道 分队。 | 2026-07-26 |
 | enhancement | [大劫掠者](factions/艾达灵族/enhancements/archraider.md) | 35 分、海盗劫掠团 分队。 | 2026-07-26 |
 | enhancement | [奇异弹药](factions/艾达灵族/enhancements/exotic-munitions.md) | 15 分、骇人劫掠者 分队。 | 2026-07-26 |
 | enhancement | [幽魂钥匙](factions/艾达灵族/enhancements/key-of-ghosts.md) | 20 分、巨蛇族群 分队。 | 2026-07-26 |
-| enhancement | [序幕舞者](factions/艾达灵族/enhancements/prelude-performer.md) | 分数未知、暮光闪现 分队。 | 2026-07-26 |
-| enhancement | [影落假面](factions/艾达灵族/enhancements/shadowfall-masks.md) | 分数未知、暮光闪现 分队。 | 2026-07-26 |
+| enhancement | [序幕舞者](factions/艾达灵族/enhancements/prelude-performer.md) | 20 分、暮光闪现 分队。 | 2026-07-26 |
+| enhancement | [影落假面](factions/艾达灵族/enhancements/shadowfall-masks.md) | 15 分、暮光闪现 分队。 | 2026-07-26 |
 | enhancement | [指引灵魂](factions/艾达灵族/enhancements/guiding-presence.md) | 25 分、装甲战群 分队。 | 2026-07-26 |
 | enhancement | [海盗恶名（光环）](factions/艾达灵族/enhancements/infamy-aura.md) | 25 分、海盗劫掠团 分队。 | 2026-07-26 |
 | enhancement | [编织者哀嚎](factions/艾达灵族/enhancements/weavers-wail.md) | 20 分、巨蛇族群 分队。 | 2026-07-26 |
 | enhancement | [网道路石](factions/艾达灵族/enhancements/webway-pathstone.md) | 25 分、海盗劫掠团 分队。 | 2026-07-26 |
 | enhancement | [蕾利斯的灵魂石](factions/艾达灵族/enhancements/spirit-stone-of-raelyth.md) | 20 分、装甲战群 分队。 | 2026-07-26 |
 | enhancement | [虚空石](factions/艾达灵族/enhancements/voidstone.md) | 15 分、海盗劫掠团 分队。 | 2026-07-26 |
-| enhancement | [迷彩狙击手](factions/艾达灵族/enhancements/camouflaged-snipers.md) | 分数未知、流放者之道 分队。 | 2026-07-26 |
+| enhancement | [迷彩狙击手](factions/艾达灵族/enhancements/camouflaged-snipers.md) | 10 分、流放者之道 分队。 | 2026-07-26 |
 | enhancement | [预言之赐](factions/艾达灵族/enhancements/gift-of-foresight.md) | 15 分、Warhost 分队。 | 2026-07-26 |
 | stratagem | [ACROBATIC LEAPS](factions/艾达灵族/stratagems/acrobatic-leaps.md) | 1 CP、Movement phase、Star-dancer Masque 分队、Strategic Ploy Stratagem。 | 2026-07-26 |
 | stratagem | [ANTI‑GRAV REPULSION](factions/艾达灵族/stratagems/antigrav-repulsion.md) | 1 CP、Charge phase、装甲战群 分队、Strategic Ploy Stratagem。 | 2026-07-26 |
@@ -4631,103 +4652,107 @@
 | stratagem | [障碍火网](factions/艾达灵族/stratagems/impeding-fire.md) | 1 CP、Charge phase、骇人劫掠者 分队、Wargear Stratagem。 | 2026-07-26 |
 | stratagem | [预兆排练](factions/艾达灵族/stratagems/presaged-rehearsal.md) | 1 CP、Fight phase、暮光闪现 分队。 | 2026-07-26 |
 | stratagem | [魅影幻象](factions/艾达灵族/stratagems/phantasmal-mirage.md) | 1 CP、Shooting phase、暮光闪现 分队。 | 2026-07-26 |
-| unit | [Amallyn Shadowguide](factions/艾达灵族/units/amallyn-shadowguide.md) |  | 2026-07-23 |
-| unit | [Autarch Skyrunner](factions/艾达灵族/units/autarch-skyrunner.md) |  | 2026-07-23 |
-| unit | [Bonesinger](factions/艾达灵族/units/bonesinger.md) |  | 2026-07-23 |
-| unit | [Cobra](factions/艾达灵族/units/cobra.md) |  | 2026-07-23 |
-| unit | [Corsair Cloud Dancer Band](factions/艾达灵族/units/corsair-cloud-dancer-band.md) |  | 2026-07-23 |
-| unit | [Corsair Reaver Band](factions/艾达灵族/units/corsair-reaver-band.md) |  | 2026-07-23 |
-| unit | [Corsair Skyreaver Band](factions/艾达灵族/units/corsair-skyreaver-band.md) |  | 2026-07-23 |
-| unit | [Firestorm](factions/艾达灵族/units/firestorm.md) |  | 2026-07-23 |
-| unit | [Hornet](factions/艾达灵族/units/hornet.md) |  | 2026-07-23 |
-| unit | [Illic Nightspear](factions/艾达灵族/units/illic-nightspear.md) |  | 2026-07-23 |
-| unit | [Irillyth](factions/艾达灵族/units/irillyth.md) |  | 2026-07-23 |
-| unit | [Karandras](factions/艾达灵族/units/karandras.md) |  | 2026-07-23 |
-| unit | [Lynx](factions/艾达灵族/units/lynx.md) |  | 2026-07-23 |
-| unit | [Nightwing](factions/艾达灵族/units/nightwing.md) |  | 2026-07-23 |
-| unit | [Phoenix](factions/艾达灵族/units/phoenix.md) |  | 2026-07-23 |
-| unit | [Prince Yriel (Legendary)](factions/艾达灵族/units/prince-yriel-legendary.md) |  | 2026-07-23 |
-| unit | [Scorpion](factions/艾达灵族/units/scorpion.md) |  | 2026-07-23 |
-| unit | [Shadow Spectres](factions/艾达灵族/units/shadow-spectres.md) |  | 2026-07-23 |
-| unit | [Skathach Wraithknight](factions/艾达灵族/units/skathach-wraithknight.md) |  | 2026-07-23 |
-| unit | [Vampire Hunter](factions/艾达灵族/units/vampire-hunter.md) |  | 2026-07-23 |
-| unit | [Vampire Raider](factions/艾达灵族/units/vampire-raider.md) |  | 2026-07-23 |
-| unit | [Warp Hunter](factions/艾达灵族/units/warp-hunter.md) |  | 2026-07-23 |
-| unit | [Wasp Assault Walker](factions/艾达灵族/units/wasp-assault-walker.md) |  | 2026-07-23 |
-| unit | [Webway Gate](factions/艾达灵族/units/webway-gate.md) |  | 2026-07-23 |
-| unit | [Wraithseer](factions/艾达灵族/units/wraithseer.md) |  | 2026-07-23 |
-| unit | [Ynnari Kabalite Warriors](factions/艾达灵族/units/ynnari-kabalite-warriors.md) |  | 2026-07-23 |
-| unit | [丑角剧团](factions/艾达灵族/units/troupe.md) |  | 2026-07-23 |
-| unit | [丑角剧团长](factions/艾达灵族/units/troupe-master.md) |  | 2026-07-23 |
-| unit | [伊弗蕾妮](factions/艾达灵族/units/yvraine.md) |  | 2026-07-23 |
-| unit | [伊瑞尔亲王](factions/艾达灵族/units/prince-yriel.md) |  | 2026-07-23 |
-| unit | [先知](factions/艾达灵族/units/farseer.md) |  | 2026-07-23 |
-| unit | [凯恩化身](factions/艾达灵族/units/avatar-of-khaine.md) |  | 2026-07-23 |
-| unit | [卡尔塞斯](factions/艾达灵族/units/kharseth.md) |  | 2026-07-23 |
-| unit | [卫戍守护者](factions/艾达灵族/units/guardian-defenders.md) |  | 2026-07-23 |
-| unit | [司战](factions/艾达灵族/units/autarch.md) |  | 2026-07-23 |
-| unit | [告死小丑](factions/艾达灵族/units/death-jester.md) |  | 2026-07-23 |
-| unit | [因卡恩-伊纳德化身](factions/艾达灵族/units/the-yncarne.md) |  | 2026-07-23 |
-| unit | [埃尔德拉德阿瑟兰](factions/艾达灵族/units/eldrad-ulthran.md) |  | 2026-07-23 |
-| unit | [天空掠夺者海盗](factions/艾达灵族/units/corsair-skyreavers.md) |  | 2026-07-23 |
-| unit | [天行者先知](factions/艾达灵族/units/farseer-skyrunner.md) |  | 2026-07-23 |
-| unit | [天行者术士](factions/艾达灵族/units/warlock-skyrunners.md) |  | 2026-07-23 |
-| unit | [巴哈罗斯](factions/艾达灵族/units/baharroth.md) |  | 2026-07-23 |
-| unit | [帷幕奔行者](factions/艾达灵族/units/shroud-runners.md) |  | 2026-07-23 |
-| unit | [幻影泰坦（疑似删除）](factions/艾达灵族/units/phantom-titan.md) |  | 2026-07-23 |
-| unit | [幽冥之刃](factions/艾达灵族/units/wraithblades.md) |  | 2026-07-23 |
-| unit | [幽冥护卫](factions/艾达灵族/units/wraithguard.md) |  | 2026-07-23 |
-| unit | [幽冥领主](factions/艾达灵族/units/wraithlord.md) |  | 2026-07-23 |
-| unit | [幽冥骑士](factions/艾达灵族/units/wraithknight.md) |  | 2026-07-23 |
-| unit | [幽魂泰坦](factions/艾达灵族/units/revenant-titan.md) |  | 2026-07-23 |
-| unit | [弗甘](factions/艾达灵族/units/fuegan.md) |  | 2026-07-23 |
-| unit | [御风者摩托](factions/艾达灵族/units/windriders.md) |  | 2026-07-23 |
-| unit | [战巫](factions/艾达灵族/units/warlock.md) |  | 2026-07-23 |
-| unit | [战巫议会](factions/艾达灵族/units/warlock-conclave.md) |  | 2026-07-23 |
-| unit | [战行者](factions/艾达灵族/units/war-walkers.md) |  | 2026-07-23 |
-| unit | [星牙战机](factions/艾达灵族/units/starfangs.md) |  | 2026-07-23 |
-| unit | [暗影先知](factions/艾达灵族/units/shadowseer.md) |  | 2026-07-23 |
-| unit | [次元炮平台](factions/艾达灵族/units/d-cannon-platform.md) |  | 2026-07-23 |
-| unit | [次元蜘蛛](factions/艾达灵族/units/warp-spiders.md) |  | 2026-07-23 |
-| unit | [死神军劫掠者](factions/艾达灵族/units/ynnari-reavers.md) |  | 2026-07-23 |
-| unit | [死神军巫灵](factions/艾达灵族/units/ynnari-wyches.md) |  | 2026-07-23 |
-| unit | [死神军执政官](factions/艾达灵族/units/ynnari-archon.md) |  | 2026-07-23 |
-| unit | [死神军掠袭者飞艇](factions/艾达灵族/units/ynnari-raider.md) |  | 2026-07-23 |
-| unit | [死神军梦魇剑客](factions/艾达灵族/units/ynnari-incubi.md) |  | 2026-07-23 |
-| unit | [死神军毒灾飞艇](factions/艾达灵族/units/ynnari-venom.md) |  | 2026-07-23 |
-| unit | [死神军魅魔](factions/艾达灵族/units/ynnari-succubus.md) |  | 2026-07-23 |
-| unit | [波蛇飞艇](factions/艾达灵族/units/wave-serpent.md) |  | 2026-07-23 |
-| unit | [游侠](factions/艾达灵族/units/rangers.md) |  | 2026-07-23 |
-| unit | [灵魂先知](factions/艾达灵族/units/spiritseer.md) |  | 2026-07-23 |
-| unit | [炎晶坦克](factions/艾达灵族/units/fire-prism.md) |  | 2026-07-23 |
-| unit | [烈焰火龙](factions/艾达灵族/units/fire-dragons.md) |  | 2026-07-23 |
-| unit | [狂嚎女妖](factions/艾达灵族/units/howling-banshees.md) |  | 2026-07-23 |
-| unit | [狂暴复仇者](factions/艾达灵族/units/dire-avengers.md) |  | 2026-07-23 |
-| unit | [独角](factions/艾达灵族/units/solitaire.md) |  | 2026-07-23 |
-| unit | [猎鹰坦克](factions/艾达灵族/units/falcon.md) |  | 2026-07-23 |
-| unit | [玛甘 拉](factions/艾达灵族/units/maugan-ra.md) |  | 2026-07-23 |
-| unit | [突击战蝎](factions/艾达灵族/units/striking-scorpions.md) |  | 2026-07-23 |
-| unit | [织夜者坦克](factions/艾达灵族/units/night-spinner.md) |  | 2026-07-23 |
-| unit | [织影炮平台](factions/艾达灵族/units/shadow-weaver-platform.md) |  | 2026-07-23 |
-| unit | [织星者飞艇](factions/艾达灵族/units/starweaver.md) |  | 2026-07-23 |
-| unit | [织空者摩托](factions/艾达灵族/units/skyweavers.md) |  | 2026-07-23 |
-| unit | [绯红猎手](factions/艾达灵族/units/crimson-hunter.md) |  | 2026-07-23 |
-| unit | [维萨奇](factions/艾达灵族/units/the-visarch.md) |  | 2026-07-23 |
-| unit | [翔空司战](factions/艾达灵族/units/autarch-wayleaper.md) |  | 2026-07-23 |
-| unit | [翔鹰](factions/艾达灵族/units/swooping-hawks.md) |  | 2026-07-23 |
-| unit | [莱凯丝](factions/艾达灵族/units/lhykhis.md) |  | 2026-07-23 |
-| unit | [虚空劫掠者海盗](factions/艾达灵族/units/corsair-voidreavers.md) |  | 2026-07-23 |
-| unit | [虚空编织者飞艇](factions/艾达灵族/units/voidweaver.md) |  | 2026-07-23 |
-| unit | [虚空裂痕海盗](factions/艾达灵族/units/corsair-voidscarred.md) |  | 2026-07-23 |
-| unit | [蝮蛇飞艇](factions/艾达灵族/units/vypers.md) |  | 2026-07-23 |
-| unit | [装备幽冥长刀的幽冥骑士](factions/艾达灵族/units/wraithknight-with-ghostglaive.md) |  | 2026-07-23 |
-| unit | [贾因 扎尔](factions/艾达灵族/units/jain-zar.md) |  | 2026-07-23 |
-| unit | [铁杉幽冥战机](factions/艾达灵族/units/hemlock-wraithfighter.md) |  | 2026-07-23 |
-| unit | [闪矛](factions/艾达灵族/units/shining-spears.md) |  | 2026-07-23 |
-| unit | [阿苏曼](factions/艾达灵族/units/asurmen.md) |  | 2026-07-23 |
-| unit | [音波炮平台（震击炮平台）](factions/艾达灵族/units/vibro-cannon-platform.md) |  | 2026-07-23 |
-| unit | [风暴守护者](factions/艾达灵族/units/storm-guardians.md) |  | 2026-07-23 |
-| unit | [黑暗死神](factions/艾达灵族/units/dark-reapers.md) |  | 2026-07-23 |
+| unit | [Amallyn Shadowguide](factions/艾达灵族/units/amallyn-shadowguide.md) | 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。 | 2026-09-14 |
+| unit | [Autarch Skyrunner](factions/艾达灵族/units/autarch-skyrunner.md) | 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。 | 2026-09-14 |
+| unit | [Bonesinger](factions/艾达灵族/units/bonesinger.md) | 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。 | 2026-09-14 |
+| unit | [Clanblade](factions/艾达灵族/units/clanblade.md) |  | 2026-09-14 |
+| unit | [Cobra](factions/艾达灵族/units/cobra.md) | 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。 | 2026-09-14 |
+| unit | [Corsair Cloud Dancer Band](factions/艾达灵族/units/corsair-cloud-dancer-band.md) | 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。 | 2026-09-14 |
+| unit | [Corsair Reaver Band](factions/艾达灵族/units/corsair-reaver-band.md) | 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。 | 2026-09-14 |
+| unit | [Corsair Skyreaver Band](factions/艾达灵族/units/corsair-skyreaver-band.md) | 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。 | 2026-09-14 |
+| unit | [Dragon Knights](factions/艾达灵族/units/dragon-knights.md) |  | 2026-09-14 |
+| unit | [Firestorm](factions/艾达灵族/units/firestorm.md) | 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。 | 2026-09-14 |
+| unit | [Hornet](factions/艾达灵族/units/hornet.md) | 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。 | 2026-09-14 |
+| unit | [Illic Nightspear](factions/艾达灵族/units/illic-nightspear.md) | 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。 | 2026-09-14 |
+| unit | [Irillyth](factions/艾达灵族/units/irillyth.md) | 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。 | 2026-09-14 |
+| unit | [Karandras](factions/艾达灵族/units/karandras.md) | 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。 | 2026-09-14 |
+| unit | [Leystalker](factions/艾达灵族/units/leystalker.md) |  | 2026-09-14 |
+| unit | [Lynx](factions/艾达灵族/units/lynx.md) | 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。 | 2026-09-14 |
+| unit | [Nightwing](factions/艾达灵族/units/nightwing.md) | 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。 | 2026-09-14 |
+| unit | [Phoenix](factions/艾达灵族/units/phoenix.md) | 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。 | 2026-09-14 |
+| unit | [Prince Yriel (Legendary)](factions/艾达灵族/units/prince-yriel-legendary.md) | 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。 | 2026-09-14 |
+| unit | [Scorpion](factions/艾达灵族/units/scorpion.md) | 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。 | 2026-09-14 |
+| unit | [Shadow Spectres](factions/艾达灵族/units/shadow-spectres.md) | 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。 | 2026-09-14 |
+| unit | [Skathach Wraithknight](factions/艾达灵族/units/skathach-wraithknight.md) | 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。 | 2026-09-14 |
+| unit | [Stonesinger](factions/艾达灵族/units/stonesinger.md) |  | 2026-09-14 |
+| unit | [Vampire Hunter](factions/艾达灵族/units/vampire-hunter.md) | 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。 | 2026-09-14 |
+| unit | [Vampire Raider](factions/艾达灵族/units/vampire-raider.md) | 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。 | 2026-09-14 |
+| unit | [Warp Hunter](factions/艾达灵族/units/warp-hunter.md) | 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。 | 2026-09-14 |
+| unit | [Wasp Assault Walker](factions/艾达灵族/units/wasp-assault-walker.md) | 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。 | 2026-09-14 |
+| unit | [Webway Gate](factions/艾达灵族/units/webway-gate.md) | 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。 | 2026-09-14 |
+| unit | [Wraithseer](factions/艾达灵族/units/wraithseer.md) | 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。 | 2026-09-14 |
+| unit | [丑角剧团](factions/艾达灵族/units/troupe.md) |  | 2026-09-14 |
+| unit | [丑角剧团长](factions/艾达灵族/units/troupe-master.md) |  | 2026-09-14 |
+| unit | [伊弗蕾妮](factions/艾达灵族/units/yvraine.md) |  | 2026-09-14 |
+| unit | [伊瑞尔亲王](factions/艾达灵族/units/prince-yriel.md) |  | 2026-09-14 |
+| unit | [先知](factions/艾达灵族/units/farseer.md) |  | 2026-09-14 |
+| unit | [凯恩化身](factions/艾达灵族/units/avatar-of-khaine.md) |  | 2026-09-14 |
+| unit | [卡尔塞斯](factions/艾达灵族/units/kharseth.md) |  | 2026-09-14 |
+| unit | [卫戍守护者](factions/艾达灵族/units/guardian-defenders.md) |  | 2026-09-14 |
+| unit | [司战](factions/艾达灵族/units/autarch.md) |  | 2026-09-14 |
+| unit | [告死小丑](factions/艾达灵族/units/death-jester.md) |  | 2026-09-14 |
+| unit | [因卡恩-伊纳德化身](factions/艾达灵族/units/the-yncarne.md) |  | 2026-09-14 |
+| unit | [埃尔德拉德阿瑟兰](factions/艾达灵族/units/eldrad-ulthran.md) |  | 2026-09-14 |
+| unit | [天空掠夺者海盗](factions/艾达灵族/units/corsair-skyreavers.md) |  | 2026-09-14 |
+| unit | [天行者先知](factions/艾达灵族/units/farseer-skyrunner.md) |  | 2026-09-14 |
+| unit | [天行者术士](factions/艾达灵族/units/warlock-skyrunners.md) |  | 2026-09-14 |
+| unit | [巴哈罗斯](factions/艾达灵族/units/baharroth.md) |  | 2026-09-14 |
+| unit | [帷幕奔行者](factions/艾达灵族/units/shroud-runners.md) |  | 2026-09-14 |
+| unit | [幻影泰坦（疑似删除）](factions/艾达灵族/units/phantom-titan.md) |  | 2026-09-14 |
+| unit | [幽冥之刃](factions/艾达灵族/units/wraithblades.md) |  | 2026-09-14 |
+| unit | [幽冥护卫](factions/艾达灵族/units/wraithguard.md) |  | 2026-09-14 |
+| unit | [幽冥领主](factions/艾达灵族/units/wraithlord.md) |  | 2026-09-14 |
+| unit | [幽冥骑士](factions/艾达灵族/units/wraithknight.md) |  | 2026-09-14 |
+| unit | [幽魂泰坦](factions/艾达灵族/units/revenant-titan.md) |  | 2026-09-14 |
+| unit | [弗甘](factions/艾达灵族/units/fuegan.md) |  | 2026-09-14 |
+| unit | [御风者摩托](factions/艾达灵族/units/windriders.md) |  | 2026-09-14 |
+| unit | [战巫](factions/艾达灵族/units/warlock.md) |  | 2026-09-14 |
+| unit | [战巫议会](factions/艾达灵族/units/warlock-conclave.md) |  | 2026-09-14 |
+| unit | [战行者](factions/艾达灵族/units/war-walkers.md) |  | 2026-09-14 |
+| unit | [星牙战机](factions/艾达灵族/units/starfangs.md) |  | 2026-09-14 |
+| unit | [暗影先知](factions/艾达灵族/units/shadowseer.md) |  | 2026-09-14 |
+| unit | [次元炮平台](factions/艾达灵族/units/d-cannon-platform.md) |  | 2026-09-14 |
+| unit | [次元蜘蛛](factions/艾达灵族/units/warp-spiders.md) |  | 2026-09-14 |
+| unit | [死神军劫掠者](factions/艾达灵族/units/ynnari-reavers.md) |  | 2026-09-14 |
+| unit | [死神军巫灵](factions/艾达灵族/units/ynnari-wyches.md) |  | 2026-09-14 |
+| unit | [死神军执政官](factions/艾达灵族/units/ynnari-archon.md) |  | 2026-09-14 |
+| unit | [死神军掠袭者飞艇](factions/艾达灵族/units/ynnari-raider.md) |  | 2026-09-14 |
+| unit | [死神军梦魇剑客](factions/艾达灵族/units/ynnari-incubi.md) |  | 2026-09-14 |
+| unit | [死神军毒灾飞艇](factions/艾达灵族/units/ynnari-venom.md) |  | 2026-09-14 |
+| unit | [死神军阴谋团武士](factions/艾达灵族/units/ynnari-kabalite-warriors.md) |  | 2026-09-14 |
+| unit | [死神军魅魔](factions/艾达灵族/units/ynnari-succubus.md) |  | 2026-09-14 |
+| unit | [波蛇飞艇](factions/艾达灵族/units/wave-serpent.md) |  | 2026-09-14 |
+| unit | [游侠](factions/艾达灵族/units/rangers.md) |  | 2026-09-14 |
+| unit | [灵魂先知](factions/艾达灵族/units/spiritseer.md) |  | 2026-09-14 |
+| unit | [炎晶坦克](factions/艾达灵族/units/fire-prism.md) |  | 2026-09-14 |
+| unit | [烈焰火龙](factions/艾达灵族/units/fire-dragons.md) |  | 2026-09-14 |
+| unit | [狂嚎女妖](factions/艾达灵族/units/howling-banshees.md) |  | 2026-09-14 |
+| unit | [狂暴复仇者](factions/艾达灵族/units/dire-avengers.md) |  | 2026-09-14 |
+| unit | [独角](factions/艾达灵族/units/solitaire.md) |  | 2026-09-14 |
+| unit | [猎鹰坦克](factions/艾达灵族/units/falcon.md) |  | 2026-09-14 |
+| unit | [玛甘 拉](factions/艾达灵族/units/maugan-ra.md) |  | 2026-09-14 |
+| unit | [突击战蝎](factions/艾达灵族/units/striking-scorpions.md) |  | 2026-09-14 |
+| unit | [织夜者坦克](factions/艾达灵族/units/night-spinner.md) |  | 2026-09-14 |
+| unit | [织影炮平台](factions/艾达灵族/units/shadow-weaver-platform.md) |  | 2026-09-14 |
+| unit | [织星者飞艇](factions/艾达灵族/units/starweaver.md) |  | 2026-09-14 |
+| unit | [织空者摩托](factions/艾达灵族/units/skyweavers.md) |  | 2026-09-14 |
+| unit | [绯红猎手](factions/艾达灵族/units/crimson-hunter.md) |  | 2026-09-14 |
+| unit | [维萨奇](factions/艾达灵族/units/the-visarch.md) |  | 2026-09-14 |
+| unit | [翔空司战](factions/艾达灵族/units/autarch-wayleaper.md) |  | 2026-09-14 |
+| unit | [翔鹰](factions/艾达灵族/units/swooping-hawks.md) |  | 2026-09-14 |
+| unit | [莱凯丝](factions/艾达灵族/units/lhykhis.md) |  | 2026-09-14 |
+| unit | [虚空劫掠者海盗](factions/艾达灵族/units/corsair-voidreavers.md) |  | 2026-09-14 |
+| unit | [虚空编织者飞艇](factions/艾达灵族/units/voidweaver.md) |  | 2026-09-14 |
+| unit | [虚空裂痕海盗](factions/艾达灵族/units/corsair-voidscarred.md) |  | 2026-09-14 |
+| unit | [蝮蛇飞艇](factions/艾达灵族/units/vypers.md) |  | 2026-09-14 |
+| unit | [装备幽冥长刀的幽冥骑士](factions/艾达灵族/units/wraithknight-with-ghostglaive.md) |  | 2026-09-14 |
+| unit | [贾因 扎尔](factions/艾达灵族/units/jain-zar.md) |  | 2026-09-14 |
+| unit | [铁杉幽冥战机](factions/艾达灵族/units/hemlock-wraithfighter.md) |  | 2026-09-14 |
+| unit | [闪矛](factions/艾达灵族/units/shining-spears.md) |  | 2026-09-14 |
+| unit | [阿苏曼](factions/艾达灵族/units/asurmen.md) |  | 2026-09-14 |
+| unit | [音波炮平台（震击炮平台）](factions/艾达灵族/units/vibro-cannon-platform.md) |  | 2026-09-14 |
+| unit | [风暴守护者](factions/艾达灵族/units/storm-guardians.md) |  | 2026-09-14 |
+| unit | [黑暗死神](factions/艾达灵族/units/dark-reapers.md) |  | 2026-09-14 |
 
 ### 钛帝国
 
@@ -4748,30 +4773,30 @@
 | enhancement | [克鲁特鹰群](factions/钛帝国/enhancements/kroothawk-flock.md) | 10 分、Kroot Hunting Pack 分队。 | 2026-07-26 |
 | enhancement | [内置榴弹架](factions/钛帝国/enhancements/internal-grenade-racks.md) | 20 分、Retaliation Cadre 分队。 | 2026-07-26 |
 | enhancement | [刺羽标记](factions/钛帝国/enhancements/quill-marker.md) | 0 分、Kroot Raiding Party 分队。 | 2026-07-26 |
-| enhancement | [协同破敌](factions/钛帝国/enhancements/coordinated-exploitation.md) | 40 分、Mont’ka 分队。 | 2026-07-26 |
+| enhancement | [协同破敌](factions/钛帝国/enhancements/coordinated-exploitation.md) | 30 分、Mont’ka 分队。 | 2026-07-26 |
 | enhancement | [博斯罗德腺体](factions/钛帝国/enhancements/borthrod-gland.md) | 15 分、Kroot Hunting Pack 分队。 | 2026-07-26 |
 | enhancement | [原型武器系统](factions/钛帝国/enhancements/prototype-weapon-system.md) | 15 分、Retaliation Cadre 分队。 | 2026-07-26 |
-| enhancement | [团结致胜](factions/钛帝国/enhancements/through-unity-devastation.md) | 40 分、Kauyon 分队。 | 2026-07-26 |
-| enhancement | [实像投影装置](factions/钛帝国/enhancements/solid-image-projection-unit.md) | 30 分、Kauyon 分队。 | 2026-07-26 |
-| enhancement | [对立粒子发射器](factions/钛帝国/enhancements/negation-emitters.md) | 分数未知、先攻抢占核心队 分队。 | 2026-07-26 |
+| enhancement | [团结致胜](factions/钛帝国/enhancements/through-unity-devastation.md) | 30 分、Kauyon 分队。 | 2026-07-26 |
+| enhancement | [实像投影装置](factions/钛帝国/enhancements/solid-image-projection-unit.md) | 20 分、Kauyon 分队。 | 2026-07-26 |
+| enhancement | [对立粒子发射器](factions/钛帝国/enhancements/negation-emitters.md) | 15 分、先攻抢占核心队 分队。 | 2026-07-26 |
 | enhancement | [战略征服者](factions/钛帝国/enhancements/strategic-conqueror.md) | 15 分、Mont’ka 分队。 | 2026-07-26 |
 | enhancement | [敬爱领袖](factions/钛帝国/enhancements/admired-leader.md) | 20 分、Auxiliary Cadre 分队。 | 2026-07-26 |
 | enhancement | [星耀点火系统](factions/钛帝国/enhancements/starflare-ignition-system.md) | 20 分、Retaliation Cadre 分队。 | 2026-07-26 |
 | enhancement | [根雕武器](factions/钛帝国/enhancements/root-carved-weapons.md) | 10 分、Kroot Hunting Pack 分队。 | 2026-07-26 |
 | enhancement | [游牧猎手](factions/钛帝国/enhancements/nomadic-hunter.md) | 20 分、Kroot Hunting Pack 分队。 | 2026-07-26 |
-| enhancement | [热中子投射器](factions/钛帝国/enhancements/thermoneutronic-projector.md) | 20 分、Experimental Prototype Cadre 分队。 | 2026-07-26 |
+| enhancement | [热中子投射器](factions/钛帝国/enhancements/thermoneutronic-projector.md) | 15 分、Experimental Prototype Cadre 分队。 | 2026-07-26 |
 | enhancement | [目标优化微型兵蜂](factions/钛帝国/enhancements/target-optimisation-microdrones.md) | 0 分、Starfire Cadre 分队。 | 2026-07-26 |
 | enhancement | [空育典范](factions/钛帝国/enhancements/exemplar-of-the-kauyon.md) | 20 分、Kauyon 分队。 | 2026-07-26 |
-| enhancement | [空降学徒](factions/钛帝国/enhancements/student-of-kauyon.md) | 15 分、Auxiliary Cadre 分队。 | 2026-07-26 |
-| enhancement | [等离子加速步枪](factions/钛帝国/enhancements/plasma-accelerator-rifle.md) | 10 分、Experimental Prototype Cadre 分队。 | 2026-07-26 |
-| enhancement | [索敌系统](factions/钛帝国/enhancements/unmasking-suite.md) | 分数未知、先攻抢占核心队 分队。 | 2026-07-26 |
-| enhancement | [纯洁之潮铭印芯片](factions/钛帝国/enhancements/puretide-engram-neurochip.md) | 25 分、Retaliation Cadre 分队。 | 2026-07-26 |
+| enhancement | [空降学徒](factions/钛帝国/enhancements/student-of-kauyon.md) | 20 分、Auxiliary Cadre 分队。 | 2026-07-26 |
+| enhancement | [等离子加速步枪](factions/钛帝国/enhancements/plasma-accelerator-rifle.md) | 20 分、Experimental Prototype Cadre 分队。 | 2026-07-26 |
+| enhancement | [索敌系统](factions/钛帝国/enhancements/unmasking-suite.md) | 15 分、先攻抢占核心队 分队。 | 2026-07-26 |
+| enhancement | [纯洁之潮铭印芯片](factions/钛帝国/enhancements/puretide-engram-neurochip.md) | 15 分、Retaliation Cadre 分队。 | 2026-07-26 |
 | enhancement | [经验老到的头领](factions/钛帝国/enhancements/experienced-leader.md) | 0 分、Kroot Raiding Party 分队。 | 2026-07-26 |
 | enhancement | [耐心猎手之精准](factions/钛帝国/enhancements/precision-of-the-patient-hunter.md) | 15 分、Kauyon 分队。 | 2026-07-26 |
 | enhancement | [职责回响](factions/钛帝国/enhancements/dutys-echo.md) | 0 分、Starfire Cadre 分队。 | 2026-07-26 |
 | enhancement | [蒙特卡典范](factions/钛帝国/enhancements/exemplar-of-the-montka.md) | 10 分、Mont’ka 分队。 | 2026-07-26 |
 | enhancement | [超新星发射器](factions/钛帝国/enhancements/supernova-launcher.md) | 15 分、Experimental Prototype Cadre 分队。 | 2026-07-26 |
-| enhancement | [迅捷突袭](factions/钛帝国/enhancements/strike-swiftly.md) | 25 分、Mont’ka 分队。 | 2026-07-26 |
+| enhancement | [迅捷突袭](factions/钛帝国/enhancements/strike-swiftly.md) | 45 分、Mont’ka 分队。 | 2026-07-26 |
 | stratagem | [EMP手雷](factions/钛帝国/stratagems/emp-grenades.md) | 1 CP、Shooting or Fight phase、Kroot Hunting Pack 分队、Wargear Stratagem。 | 2026-07-26 |
 | stratagem | [且退且射](factions/钛帝国/stratagems/retreating-fire.md) | 1 CP、Shooting phase、Starfire Cadre 分队、Strategic Ploy Stratagem。 | 2026-07-26 |
 | stratagem | [信息素路标](factions/钛帝国/stratagems/pheromone-waypoints.md) | 1 CP、Movement phase、Auxiliary Cadre 分队、Strategic Ploy Stratagem。 | 2026-07-26 |
@@ -4820,69 +4845,69 @@
 | stratagem | [阿拉孔教义](factions/钛帝国/stratagems/the-arrokon-protocol.md) | 1 CP、Shooting phase、Retaliation Cadre 分队、Battle Tactic Stratagem。 | 2026-07-26 |
 | stratagem | [隐匿猎手](factions/钛帝国/stratagems/hidden-hunters.md) | 1 CP、Shooting phase、Kroot Hunting Pack 分队、Strategic Ploy Stratagem。 | 2026-07-26 |
 | stratagem | [集中火力](factions/钛帝国/stratagems/focused-fire.md) | 1 CP、Shooting phase、Mont’ka 分队、Battle Tactic Stratagem。 | 2026-07-26 |
-| unit | [TX-42水虎鱼](factions/钛帝国/units/tx42-piranha.md) |  | 2026-07-23 |
-| unit | [XV9灾害战斗服小队](factions/钛帝国/units/xv9-hazard-battlesuits.md) |  | 2026-07-23 |
-| unit | [以太长老](factions/钛帝国/units/ethereal.md) |  | 2026-07-23 |
-| unit | [克鲁特寻迹塑形者](factions/钛帝国/units/kroot-trail-shaper.md) |  | 2026-07-23 |
-| unit | [克鲁特战争塑形者](factions/钛帝国/units/kroot-war-shaper.md) |  | 2026-07-23 |
-| unit | [克鲁特狂兽小队](factions/钛帝国/units/krootox-rampagers.md) |  | 2026-07-23 |
-| unit | [克鲁特独矛](factions/钛帝国/units/kroot-lone-spear.md) |  | 2026-07-23 |
-| unit | [克鲁特猎犬队](factions/钛帝国/units/kroot-hounds.md) |  | 2026-07-23 |
-| unit | [克鲁特猿兽骑兵小队](factions/钛帝国/units/krootox-riders.md) |  | 2026-07-23 |
-| unit | [克鲁特血肉塑形者](factions/钛帝国/units/kroot-flesh-shaper.md) |  | 2026-07-23 |
-| unit | [克鲁特远猎者小队](factions/钛帝国/units/kroot-farstalkers.md) |  | 2026-07-23 |
-| unit | [克鲁特食肉者小队](factions/钛帝国/units/kroot-carnivores.md) |  | 2026-07-23 |
-| unit | [兵蜂哨戒炮](factions/钛帝国/units/drone-sentry-turret.md) |  | 2026-07-23 |
-| unit | [冷星战斗服指挥官](factions/钛帝国/units/commander-in-coldstar-battlesuit.md) |  | 2026-07-23 |
-| unit | [剃刀鲨战斗机](factions/钛帝国/units/razorshark-strike-fighter.md) |  | 2026-07-23 |
-| unit | [卡纳罗克巨兽](factions/钛帝国/units/great-knarloc.md) |  | 2026-07-23 |
-| unit | [卡纳罗克骑兵队](factions/钛帝国/units/knarloc-riders.md) |  | 2026-07-23 |
-| unit | [危机战斗服小队](factions/钛帝国/units/crisis-battlesuits.md) |  | 2026-07-23 |
-| unit | [危机战斗服指挥官](factions/钛帝国/units/commander-in-crisis-battlesuit.md) |  | 2026-07-23 |
-| unit | [危机日铸战斗服小队](factions/钛帝国/units/crisis-sunforge-battlesuits.md) |  | 2026-07-23 |
-| unit | [危机星镰战斗服小队](factions/钛帝国/units/crisis-starscythe-battlesuits.md) |  | 2026-07-23 |
-| unit | [危机火刃战斗服小队](factions/钛帝国/units/crisis-fireknife-battlesuits.md) |  | 2026-07-23 |
-| unit | [双枪](factions/钛帝国/units/the-twin-lance.md) |  | 2026-07-23 |
-| unit | [塔'钨钠至高装甲](factions/钛帝国/units/taunar-supremacy-armour.md) |  | 2026-07-23 |
-| unit | [夏司’欧 R’ALAI](factions/钛帝国/units/shaso-ralai.md) |  | 2026-07-23 |
-| unit | [天魟炮艇](factions/钛帝国/units/sky-ray-gunship.md) |  | 2026-07-23 |
-| unit | [安’史](factions/钛帝国/units/aunshi.md) |  | 2026-07-23 |
-| unit | [安’瓦](factions/钛帝国/units/aunva.md) |  | 2026-07-23 |
-| unit | [寻路者小队](factions/钛帝国/units/pathfinder-team.md) |  | 2026-07-23 |
-| unit | [强执战斗服指挥官](factions/钛帝国/units/commander-in-enforcer-battlesuit.md) |  | 2026-07-23 |
-| unit | [影阳指挥官](factions/钛帝国/units/commander-shadowsun.md) |  | 2026-07-23 |
-| unit | [战术兵蜂](factions/钛帝国/units/tactical-drones.md) |  | 2026-07-23 |
-| unit | [打击小队](factions/钛帝国/units/strike-team.md) |  | 2026-07-23 |
-| unit | [暗行者](factions/钛帝国/units/darkstrider.md) |  | 2026-07-23 |
-| unit | [梭鱼](factions/钛帝国/units/barracuda.md) |  | 2026-07-23 |
-| unit | [水虎鱼](factions/钛帝国/units/piranhas.md) |  | 2026-07-23 |
-| unit | [潜行战斗服小队](factions/钛帝国/units/stealth-battlesuits.md) |  | 2026-07-23 |
-| unit | [潮汐兵蜂平台](factions/钛帝国/units/tidewall-droneport.md) |  | 2026-07-23 |
-| unit | [潮汐护盾墙](factions/钛帝国/units/tidewall-shieldline.md) |  | 2026-07-23 |
-| unit | [潮汐炮台](factions/钛帝国/units/tidewall-gunrig.md) |  | 2026-07-23 |
-| unit | [激流战斗服](factions/钛帝国/units/riptide-battlesuit.md) |  | 2026-07-23 |
-| unit | [火刃队长](factions/钛帝国/units/cadre-fireblade.md) |  | 2026-07-23 |
-| unit | [炮击战斗服小队](factions/钛帝国/units/broadside-battlesuits.md) |  | 2026-07-23 |
-| unit | [焰涌战斗服](factions/钛帝国/units/yvahra-battlesuit.md) |  | 2026-07-23 |
-| unit | [燃雨战斗服](factions/钛帝国/units/rvarna-battlesuit.md) |  | 2026-07-23 |
-| unit | [破袭小队](factions/钛帝国/units/breacher-team.md) |  | 2026-07-23 |
-| unit | [神射手小队](factions/钛帝国/units/firesight-team.md) |  | 2026-07-23 |
-| unit | [胡蜂人尖翼小队](factions/钛帝国/units/vespid-stingwings.md) |  | 2026-07-23 |
-| unit | [脂鲤小队](factions/钛帝国/units/tetras.md) |  | 2026-07-23 |
-| unit | [虎鲨](factions/钛帝国/units/tiger-shark.md) |  | 2026-07-23 |
-| unit | [虎鲨AX-1-0](factions/钛帝国/units/ax-1-0-tiger-shark.md) |  | 2026-07-23 |
-| unit | [蝠鲼](factions/钛帝国/units/manta.md) |  | 2026-07-23 |
-| unit | [远见指挥官](factions/钛帝国/units/commander-farsight.md) |  | 2026-07-23 |
-| unit | [逆戟鲸运输机](factions/钛帝国/units/orca-dropship.md) |  | 2026-07-23 |
-| unit | [遥击](factions/钛帝国/units/longstrike.md) |  | 2026-07-23 |
-| unit | [遥感哨塔](factions/钛帝国/units/remote-sensor-tower.md) |  | 2026-07-23 |
-| unit | [重型枪蜂小队](factions/钛帝国/units/heavy-gun-drones.md) |  | 2026-07-23 |
-| unit | [锤头鲨炮艇](factions/钛帝国/units/hammerhead-gunship.md) |  | 2026-07-23 |
-| unit | [阳鲨轰炸机](factions/钛帝国/units/sun-shark-bomber.md) |  | 2026-07-23 |
-| unit | [雷暴](factions/钛帝国/units/stormsurge.md) |  | 2026-07-23 |
-| unit | [鬼覆战斗服](factions/钛帝国/units/ghostkeel-battlesuit.md) |  | 2026-07-23 |
-| unit | [魔鬼鱼](factions/钛帝国/units/devilfish.md) |  | 2026-07-23 |
-| unit | [鮣鱼隐形兵蜂机队](factions/钛帝国/units/remora-stealth-drones.md) |  | 2026-07-23 |
+| unit | [TX-42水虎鱼](factions/钛帝国/units/tx42-piranha.md) | 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。 | 2026-09-14 |
+| unit | [XV9灾害战斗服小队](factions/钛帝国/units/xv9-hazard-battlesuits.md) | 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。 | 2026-09-14 |
+| unit | [以太长老](factions/钛帝国/units/ethereal.md) |  | 2026-09-14 |
+| unit | [克鲁特寻迹塑形者](factions/钛帝国/units/kroot-trail-shaper.md) |  | 2026-09-14 |
+| unit | [克鲁特战争塑形者](factions/钛帝国/units/kroot-war-shaper.md) |  | 2026-09-14 |
+| unit | [克鲁特狂兽小队](factions/钛帝国/units/krootox-rampagers.md) |  | 2026-09-14 |
+| unit | [克鲁特独矛](factions/钛帝国/units/kroot-lone-spear.md) |  | 2026-09-14 |
+| unit | [克鲁特猎犬队](factions/钛帝国/units/kroot-hounds.md) |  | 2026-09-14 |
+| unit | [克鲁特猿兽骑兵小队](factions/钛帝国/units/krootox-riders.md) |  | 2026-09-14 |
+| unit | [克鲁特血肉塑形者](factions/钛帝国/units/kroot-flesh-shaper.md) |  | 2026-09-14 |
+| unit | [克鲁特远猎者小队](factions/钛帝国/units/kroot-farstalkers.md) |  | 2026-09-14 |
+| unit | [克鲁特食肉者小队](factions/钛帝国/units/kroot-carnivores.md) |  | 2026-09-14 |
+| unit | [兵蜂哨戒炮](factions/钛帝国/units/drone-sentry-turret.md) | 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。 | 2026-09-14 |
+| unit | [冷星战斗服指挥官](factions/钛帝国/units/commander-in-coldstar-battlesuit.md) |  | 2026-09-14 |
+| unit | [剃刀鲨战斗机](factions/钛帝国/units/razorshark-strike-fighter.md) |  | 2026-09-14 |
+| unit | [卡纳罗克巨兽](factions/钛帝国/units/great-knarloc.md) | 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。 | 2026-09-14 |
+| unit | [卡纳罗克骑兵队](factions/钛帝国/units/knarloc-riders.md) | 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。 | 2026-09-14 |
+| unit | [危机战斗服小队](factions/钛帝国/units/crisis-battlesuits.md) | 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。 | 2026-09-14 |
+| unit | [危机战斗服指挥官](factions/钛帝国/units/commander-in-crisis-battlesuit.md) | 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。 | 2026-09-14 |
+| unit | [危机日铸战斗服小队](factions/钛帝国/units/crisis-sunforge-battlesuits.md) |  | 2026-09-14 |
+| unit | [危机星镰战斗服小队](factions/钛帝国/units/crisis-starscythe-battlesuits.md) |  | 2026-09-14 |
+| unit | [危机火刃战斗服小队](factions/钛帝国/units/crisis-fireknife-battlesuits.md) |  | 2026-09-14 |
+| unit | [双枪](factions/钛帝国/units/the-twin-lance.md) |  | 2026-09-14 |
+| unit | [塔'钨钠至高装甲](factions/钛帝国/units/taunar-supremacy-armour.md) |  | 2026-09-14 |
+| unit | [夏司’欧 R’ALAI](factions/钛帝国/units/shaso-ralai.md) | 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。 | 2026-09-14 |
+| unit | [天魟炮艇](factions/钛帝国/units/sky-ray-gunship.md) |  | 2026-09-14 |
+| unit | [安’史](factions/钛帝国/units/aunshi.md) | 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。 | 2026-09-14 |
+| unit | [安’瓦](factions/钛帝国/units/aunva.md) | 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。 | 2026-09-14 |
+| unit | [寻路者小队](factions/钛帝国/units/pathfinder-team.md) |  | 2026-09-14 |
+| unit | [强执战斗服指挥官](factions/钛帝国/units/commander-in-enforcer-battlesuit.md) |  | 2026-09-14 |
+| unit | [影阳指挥官](factions/钛帝国/units/commander-shadowsun.md) |  | 2026-09-14 |
+| unit | [战术兵蜂](factions/钛帝国/units/tactical-drones.md) | 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。 | 2026-09-14 |
+| unit | [打击小队](factions/钛帝国/units/strike-team.md) |  | 2026-09-14 |
+| unit | [暗行者](factions/钛帝国/units/darkstrider.md) |  | 2026-09-14 |
+| unit | [梭鱼](factions/钛帝国/units/barracuda.md) | 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。 | 2026-09-14 |
+| unit | [水虎鱼](factions/钛帝国/units/piranhas.md) |  | 2026-09-14 |
+| unit | [潜行战斗服小队](factions/钛帝国/units/stealth-battlesuits.md) |  | 2026-09-14 |
+| unit | [潮汐兵蜂平台](factions/钛帝国/units/tidewall-droneport.md) |  | 2026-09-14 |
+| unit | [潮汐护盾墙](factions/钛帝国/units/tidewall-shieldline.md) |  | 2026-09-14 |
+| unit | [潮汐炮台](factions/钛帝国/units/tidewall-gunrig.md) |  | 2026-09-14 |
+| unit | [激流战斗服](factions/钛帝国/units/riptide-battlesuit.md) |  | 2026-09-14 |
+| unit | [火刃队长](factions/钛帝国/units/cadre-fireblade.md) |  | 2026-09-14 |
+| unit | [炮击战斗服小队](factions/钛帝国/units/broadside-battlesuits.md) |  | 2026-09-14 |
+| unit | [焰涌战斗服](factions/钛帝国/units/yvahra-battlesuit.md) | 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。 | 2026-09-14 |
+| unit | [燃雨战斗服](factions/钛帝国/units/rvarna-battlesuit.md) | 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。 | 2026-09-14 |
+| unit | [破袭小队](factions/钛帝国/units/breacher-team.md) |  | 2026-09-14 |
+| unit | [神射手小队](factions/钛帝国/units/firesight-team.md) |  | 2026-09-14 |
+| unit | [胡蜂人尖翼小队](factions/钛帝国/units/vespid-stingwings.md) |  | 2026-09-14 |
+| unit | [脂鲤小队](factions/钛帝国/units/tetras.md) | 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。 | 2026-09-14 |
+| unit | [虎鲨](factions/钛帝国/units/tiger-shark.md) |  | 2026-09-14 |
+| unit | [虎鲨AX-1-0](factions/钛帝国/units/ax-1-0-tiger-shark.md) |  | 2026-09-14 |
+| unit | [蝠鲼](factions/钛帝国/units/manta.md) |  | 2026-09-14 |
+| unit | [远见指挥官](factions/钛帝国/units/commander-farsight.md) |  | 2026-09-14 |
+| unit | [逆戟鲸运输机](factions/钛帝国/units/orca-dropship.md) | 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。 | 2026-09-14 |
+| unit | [遥击](factions/钛帝国/units/longstrike.md) | 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。 | 2026-09-14 |
+| unit | [遥感哨塔](factions/钛帝国/units/remote-sensor-tower.md) | 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。 | 2026-09-14 |
+| unit | [重型枪蜂小队](factions/钛帝国/units/heavy-gun-drones.md) | 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。 | 2026-09-14 |
+| unit | [锤头鲨炮艇](factions/钛帝国/units/hammerhead-gunship.md) |  | 2026-09-14 |
+| unit | [阳鲨轰炸机](factions/钛帝国/units/sun-shark-bomber.md) |  | 2026-09-14 |
+| unit | [雷暴](factions/钛帝国/units/stormsurge.md) |  | 2026-09-14 |
+| unit | [鬼覆战斗服](factions/钛帝国/units/ghostkeel-battlesuit.md) |  | 2026-09-14 |
+| unit | [魔鬼鱼](factions/钛帝国/units/devilfish.md) |  | 2026-09-14 |
+| unit | [鮣鱼隐形兵蜂机队](factions/钛帝国/units/remora-stealth-drones.md) | 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。 | 2026-09-14 |
 
 ### 黑暗灵族
 
@@ -4906,7 +4931,7 @@
 | enhancement | [厌恶巫师大师](factions/黑暗灵族/enhancements/master-repugnomancer-aura.md) | 15 分、Covenite Coterie 分队。 | 2026-07-26 |
 | enhancement | [吸血甲板](factions/黑暗灵族/enhancements/leechbite-plate.md) | 5 分、Kabalite Cartel 分队。 | 2026-07-26 |
 | enhancement | [复仇大师](factions/黑暗灵族/enhancements/master-nemesine.md) | 5 分、Covenite Coterie 分队。 | 2026-07-26 |
-| enhancement | [尸骸王庭精华](factions/黑暗灵族/enhancements/elixir-of-the-corpse-courts.md) | 分数未知、折磨工具 分队。 | 2026-07-26 |
+| enhancement | [尸骸王庭精华](factions/黑暗灵族/enhancements/elixir-of-the-corpse-courts.md) | 15 分、折磨工具 分队。 | 2026-07-26 |
 | enhancement | [工匠大师](factions/黑暗灵族/enhancements/master-artisan.md) | 20 分、Covenite Coterie 分队。 | 2026-07-26 |
 | enhancement | [幻象烟雾](factions/黑暗灵族/enhancements/phantasmal-smoke.md) | 15 分、Skysplinter Assault 分队。 | 2026-07-26 |
 | enhancement | [怨恨之眼](factions/黑暗灵族/enhancements/eye-of-spite.md) | 15 分、Realspace Raiders 分队。 | 2026-07-26 |
@@ -4916,28 +4941,28 @@
 | enhancement | [撕裂连枷](factions/黑暗灵族/enhancements/rending-chain-flails.md) | 0 分、Painbringers 分队。 | 2026-07-26 |
 | enhancement | [施虐支点](factions/黑暗灵族/enhancements/sadistic-fulcrum.md) | 15 分、Skysplinter Assault 分队。 | 2026-07-26 |
 | enhancement | [时间碎片](factions/黑暗灵族/enhancements/chronoshard.md) | 15 分、Spectacle of Spite 分队。 | 2026-07-26 |
-| enhancement | [极端药物走私者](factions/黑暗灵族/enhancements/hyperstimm-trafficker.md) | 分数未知、杀戮表演 分队。 | 2026-07-26 |
+| enhancement | [极端药物走私者](factions/黑暗灵族/enhancements/hyperstimm-trafficker.md) | 20 分、杀戮表演 分队。 | 2026-07-26 |
 | enhancement | [梦魇裹尸布](factions/黑暗灵族/enhancements/nightmare-shroud.md) | 20 分、Skysplinter Assault 分队。 | 2026-07-26 |
 | enhancement | [死神兜帽](factions/黑暗灵族/enhancements/reapers-cowl.md) | 25 分、死神的赌注 分队。 | 2026-07-26 |
 | enhancement | [灵网行者](factions/黑暗灵族/enhancements/webway-walker.md) | 15 分、死神的赌注 分队。 | 2026-07-26 |
 | enhancement | [灵网锥](factions/黑暗灵族/enhancements/webway-awl.md) | 25 分、Kabalite Cartel 分队。 | 2026-07-26 |
-| enhancement | [狂妄自大](factions/黑暗灵族/enhancements/towering-arrogance-kabalite-agonysts.md) | 分数未知、阴谋团折磨使 分队。 | 2026-07-26 |
+| enhancement | [狂妄自大](factions/黑暗灵族/enhancements/towering-arrogance-kabalite-agonysts.md) | 15 分、阴谋团折磨使 分队。 | 2026-07-26 |
 | enhancement | [狂妄自大](factions/黑暗灵族/enhancements/towering-arrogance-kabalite-cartel.md) | 20 分、Kabalite Cartel 分队。 | 2026-07-26 |
 | enhancement | [痛苦指挥家](factions/黑暗灵族/enhancements/conductor-of-torment.md) | 20 分、死神的赌注 分队。 | 2026-07-26 |
-| enhancement | [瘤皮实验者](factions/黑暗灵族/enhancements/gnarlskin-experimentor.md) | 分数未知、折磨工具 分队。 | 2026-07-26 |
+| enhancement | [瘤皮实验者](factions/黑暗灵族/enhancements/gnarlskin-experimentor.md) | 20 分、折磨工具 分队。 | 2026-07-26 |
 | enhancement | [线人网络](factions/黑暗灵族/enhancements/informant-network.md) | 30 分、Kabalite Cartel 分队。 | 2026-07-26 |
 | enhancement | [至尊掠夺者](factions/黑暗灵族/enhancements/archraider.md) | 15 分、死神的赌注 分队。 | 2026-07-26 |
-| enhancement | [苦痛护符](factions/黑暗灵族/enhancements/periapt-of-torments-exhibition-of-slaughter.md) | 分数未知、杀戮表演 分队。 | 2026-07-26 |
+| enhancement | [苦痛护符](factions/黑暗灵族/enhancements/periapt-of-torments-exhibition-of-slaughter.md) | 20 分、杀戮表演 分队。 | 2026-07-26 |
 | enhancement | [苦痛护符](factions/黑暗灵族/enhancements/periapt-of-torments-spectacle-of-spite.md) | 25 分、Spectacle of Spite 分队。 | 2026-07-26 |
 | enhancement | [药剂师](factions/黑暗灵族/enhancements/pharmacophex.md) | 15 分、Spectacle of Spite 分队。 | 2026-07-26 |
 | enhancement | [莫格恩娜之咒](factions/黑暗灵族/enhancements/morghennas-curse.md) | 20 分、Spectacle of Spite 分队。 | 2026-07-26 |
-| enhancement | [蔑视对决](factions/黑暗灵族/enhancements/contempt-for-rivals.md) | 分数未知、阴谋团折磨使 分队。 | 2026-07-26 |
+| enhancement | [蔑视对决](factions/黑暗灵族/enhancements/contempt-for-rivals.md) | 20 分、阴谋团折磨使 分队。 | 2026-07-26 |
 | enhancement | [血染冠军](factions/黑暗灵族/enhancements/blood-drenched-champion.md) | 0 分、Ship-killer Cult 分队。 | 2026-07-26 |
-| enhancement | [诅咒坩埚](factions/黑暗灵族/enhancements/crucible-of-malediction.md) | 20 分、Realspace Raiders 分队。 | 2026-07-26 |
+| enhancement | [诅咒坩埚](factions/黑暗灵族/enhancements/crucible-of-malediction.md) | 15 分、Realspace Raiders 分队。 | 2026-07-26 |
 | enhancement | [迷宫狡诈](factions/黑暗灵族/enhancements/labyrinthine-cunning.md) | 25 分、Realspace Raiders 分队。 | 2026-07-26 |
 | enhancement | [邪恶外科医师](factions/黑暗灵族/enhancements/vile-surgeon.md) | 0 分、Painbringers 分队。 | 2026-07-26 |
 | enhancement | [重生大师](factions/黑暗灵族/enhancements/master-regenesist.md) | 25 分、Covenite Coterie 分队。 | 2026-07-26 |
-| enhancement | [黑暗活力](factions/黑暗灵族/enhancements/dark-vitality.md) | 25 分、Realspace Raiders 分队。 | 2026-07-26 |
+| enhancement | [黑暗活力](factions/黑暗灵族/enhancements/dark-vitality.md) | 20 分、Realspace Raiders 分队。 | 2026-07-26 |
 | enhancement | [黑暗魅力](factions/黑暗灵族/enhancements/dark-charisma.md) | 0 分、Kabalite Corsairs 分队。 | 2026-07-26 |
 | stratagem | [亡后术](factions/黑暗灵族/stratagems/postmortality.md) | 1 CP、Any phase、Covenite Coterie 分队、Epic Deed Stratagem。 | 2026-07-26 |
 | stratagem | [伤口撒盐](factions/黑暗灵族/stratagems/salting-the-wound.md) | 1 CP、Fight phase、折磨工具 分队。 | 2026-07-26 |
@@ -5000,63 +5025,63 @@
 | stratagem | [麻木无痛](factions/黑暗灵族/stratagems/insensible-to-pain.md) | 2 CP、Shooting or Fight phase、Realspace Raiders 分队、Battle Tactic Stratagem。 | 2026-07-26 |
 | stratagem | [黑塔杀手](factions/黑暗灵族/stratagems/killers-from-the-dark-spires.md) | 1 CP、Shooting phase、阴谋团折磨使 分队。 | 2026-07-26 |
 | stratagem | [黑暗收割](factions/黑暗灵族/stratagems/dark-harvest.md) | 1 CP、Fight phase、Realspace Raiders 分队、Strategic Ploy Stratagem。 | 2026-07-26 |
-| unit | [Beastmaster](factions/黑暗灵族/units/beastmaster.md) |  | 2026-07-23 |
-| unit | [Corsair Cloud Dancer Band](factions/黑暗灵族/units/corsair-cloud-dancer-band.md) |  | 2026-07-23 |
-| unit | [Corsair Reaver Band](factions/黑暗灵族/units/corsair-reaver-band.md) |  | 2026-07-23 |
-| unit | [Corsair Skyreaver Band](factions/黑暗灵族/units/corsair-skyreaver-band.md) |  | 2026-07-23 |
-| unit | [Court of the Archon](factions/黑暗灵族/units/court-of-the-archon.md) |  | 2026-07-23 |
-| unit | [Grotesques](factions/黑暗灵族/units/grotesques.md) |  | 2026-07-23 |
-| unit | [Raven Strike Fighter](factions/黑暗灵族/units/raven-strike-fighter.md) |  | 2026-07-23 |
-| unit | [Reaper](factions/黑暗灵族/units/reaper.md) |  | 2026-07-23 |
-| unit | [Tantalus](factions/黑暗灵族/units/tantalus.md) |  | 2026-07-23 |
-| unit | [Urien Rakarth](factions/黑暗灵族/units/urien-rakarth.md) |  | 2026-07-23 |
-| unit | [丑角剧团](factions/黑暗灵族/units/troupe.md) |  | 2026-07-23 |
-| unit | [丑角剧团长](factions/黑暗灵族/units/troupe-master.md) |  | 2026-07-23 |
-| unit | [伊瑞尔亲王](factions/黑暗灵族/units/prince-yriel.md) |  | 2026-07-23 |
-| unit | [克洛诺斯](factions/黑暗灵族/units/cronos.md) |  | 2026-07-23 |
-| unit | [凌虐者](factions/黑暗灵族/units/wracks.md) |  | 2026-07-23 |
-| unit | [刃翼战机](factions/黑暗灵族/units/razorwing-jetfighter.md) |  | 2026-07-23 |
-| unit | [劫掠者](factions/黑暗灵族/units/reavers.md) |  | 2026-07-23 |
-| unit | [卡尔塞斯](factions/黑暗灵族/units/kharseth.md) |  | 2026-07-23 |
-| unit | [告死小丑](factions/黑暗灵族/units/death-jester.md) |  | 2026-07-23 |
-| unit | [塔洛斯](factions/黑暗灵族/units/talos.md) |  | 2026-07-23 |
-| unit | [天空掠夺者海盗](factions/黑暗灵族/units/corsair-skyreavers.md) |  | 2026-07-23 |
-| unit | [巫灵](factions/黑暗灵族/units/wyches.md) |  | 2026-07-23 |
-| unit | [执政官](factions/黑暗灵族/units/archon.md) |  | 2026-07-23 |
-| unit | [执政官之手](factions/黑暗灵族/units/hand-of-the-archon.md) |  | 2026-07-23 |
-| unit | [掠袭者飞艇](factions/黑暗灵族/units/raider.md) |  | 2026-07-23 |
-| unit | [星牙战机](factions/黑暗灵族/units/starfangs.md) |  | 2026-07-23 |
-| unit | [暗影先知](factions/黑暗灵族/units/shadowseer.md) |  | 2026-07-23 |
-| unit | [曼德拉](factions/黑暗灵族/units/mandrakes.md) |  | 2026-07-23 |
-| unit | [梦魇剑客](factions/黑暗灵族/units/incubi.md) |  | 2026-07-23 |
-| unit | [毒液飞艇](factions/黑暗灵族/units/venom.md) |  | 2026-07-23 |
-| unit | [滑板暴徒](factions/黑暗灵族/units/hellions.md) |  | 2026-07-23 |
-| unit | [独角](factions/黑暗灵族/units/solitaire.md) |  | 2026-07-23 |
-| unit | [玛勒丝女士](factions/黑暗灵族/units/lady-malys.md) |  | 2026-07-23 |
-| unit | [破坏者飞艇](factions/黑暗灵族/units/ravager.md) |  | 2026-07-23 |
-| unit | [织星者飞艇](factions/黑暗灵族/units/starweaver.md) |  | 2026-07-23 |
-| unit | [织空者摩托](factions/黑暗灵族/units/skyweavers.md) |  | 2026-07-23 |
-| unit | [莉莉丝·海斯佩拉克斯](factions/黑暗灵族/units/lelith-hesperax.md) |  | 2026-07-23 |
-| unit | [虚空劫掠者海盗](factions/黑暗灵族/units/corsair-voidreavers.md) |  | 2026-07-23 |
-| unit | [虚空编织者飞艇](factions/黑暗灵族/units/voidweaver.md) |  | 2026-07-23 |
-| unit | [虚空裂痕海盗](factions/黑暗灵族/units/corsair-voidscarred.md) |  | 2026-07-23 |
-| unit | [虚空鸦轰炸机](factions/黑暗灵族/units/voidraven-bomber.md) |  | 2026-07-23 |
-| unit | [血伶人](factions/黑暗灵族/units/haemonculus.md) |  | 2026-07-23 |
-| unit | [血腥魔女](factions/黑暗灵族/units/succubus.md) |  | 2026-07-23 |
-| unit | [装备毒晶卡宾枪天灾](factions/黑暗灵族/units/scourges-with-shardcarbines.md) |  | 2026-07-23 |
-| unit | [装备重型武器的天灾](factions/黑暗灵族/units/scourges-with-heavy-weapons.md) |  | 2026-07-23 |
-| unit | [达扎尔](factions/黑暗灵族/units/drazhar.md) |  | 2026-07-23 |
-| unit | [阴谋团战士](factions/黑暗灵族/units/kabalite-warriors.md) |  | 2026-07-23 |
+| unit | [Beastmaster](factions/黑暗灵族/units/beastmaster.md) | 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。 | 2026-09-14 |
+| unit | [Corsair Cloud Dancer Band](factions/黑暗灵族/units/corsair-cloud-dancer-band.md) | 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。 | 2026-09-14 |
+| unit | [Corsair Reaver Band](factions/黑暗灵族/units/corsair-reaver-band.md) | 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。 | 2026-09-14 |
+| unit | [Corsair Skyreaver Band](factions/黑暗灵族/units/corsair-skyreaver-band.md) | 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。 | 2026-09-14 |
+| unit | [Court of the Archon](factions/黑暗灵族/units/court-of-the-archon.md) | 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。 | 2026-09-14 |
+| unit | [Grotesques](factions/黑暗灵族/units/grotesques.md) | 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。 | 2026-09-14 |
+| unit | [Raven Strike Fighter](factions/黑暗灵族/units/raven-strike-fighter.md) | 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。 | 2026-09-14 |
+| unit | [Reaper](factions/黑暗灵族/units/reaper.md) | 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。 | 2026-09-14 |
+| unit | [Tantalus](factions/黑暗灵族/units/tantalus.md) | 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。 | 2026-09-14 |
+| unit | [Urien Rakarth](factions/黑暗灵族/units/urien-rakarth.md) | 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。 | 2026-09-14 |
+| unit | [丑角剧团](factions/黑暗灵族/units/troupe.md) | 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。 | 2026-09-14 |
+| unit | [丑角剧团长](factions/黑暗灵族/units/troupe-master.md) | 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。 | 2026-09-14 |
+| unit | [伊瑞尔亲王](factions/黑暗灵族/units/prince-yriel.md) | 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。 | 2026-09-14 |
+| unit | [克洛诺斯](factions/黑暗灵族/units/cronos.md) |  | 2026-09-14 |
+| unit | [凌虐者](factions/黑暗灵族/units/wracks.md) |  | 2026-09-14 |
+| unit | [刃翼战机](factions/黑暗灵族/units/razorwing-jetfighter.md) |  | 2026-09-14 |
+| unit | [劫掠者](factions/黑暗灵族/units/reavers.md) |  | 2026-09-14 |
+| unit | [卡尔塞斯](factions/黑暗灵族/units/kharseth.md) | 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。 | 2026-09-14 |
+| unit | [告死小丑](factions/黑暗灵族/units/death-jester.md) | 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。 | 2026-09-14 |
+| unit | [塔洛斯](factions/黑暗灵族/units/talos.md) |  | 2026-09-14 |
+| unit | [天空掠夺者海盗](factions/黑暗灵族/units/corsair-skyreavers.md) | 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。 | 2026-09-14 |
+| unit | [巫灵](factions/黑暗灵族/units/wyches.md) |  | 2026-09-14 |
+| unit | [执政官](factions/黑暗灵族/units/archon.md) |  | 2026-09-14 |
+| unit | [执政官之手](factions/黑暗灵族/units/hand-of-the-archon.md) |  | 2026-09-14 |
+| unit | [掠袭者飞艇](factions/黑暗灵族/units/raider.md) |  | 2026-09-14 |
+| unit | [星牙战机](factions/黑暗灵族/units/starfangs.md) | 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。 | 2026-09-14 |
+| unit | [暗影先知](factions/黑暗灵族/units/shadowseer.md) | 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。 | 2026-09-14 |
+| unit | [曼德拉](factions/黑暗灵族/units/mandrakes.md) |  | 2026-09-14 |
+| unit | [梦魇剑客](factions/黑暗灵族/units/incubi.md) |  | 2026-09-14 |
+| unit | [毒液飞艇](factions/黑暗灵族/units/venom.md) |  | 2026-09-14 |
+| unit | [滑板暴徒](factions/黑暗灵族/units/hellions.md) |  | 2026-09-14 |
+| unit | [独角](factions/黑暗灵族/units/solitaire.md) | 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。 | 2026-09-14 |
+| unit | [玛勒丝女士](factions/黑暗灵族/units/lady-malys.md) |  | 2026-09-14 |
+| unit | [破坏者飞艇](factions/黑暗灵族/units/ravager.md) |  | 2026-09-14 |
+| unit | [织星者飞艇](factions/黑暗灵族/units/starweaver.md) | 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。 | 2026-09-14 |
+| unit | [织空者摩托](factions/黑暗灵族/units/skyweavers.md) | 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。 | 2026-09-14 |
+| unit | [莉莉丝·海斯佩拉克斯](factions/黑暗灵族/units/lelith-hesperax.md) |  | 2026-09-14 |
+| unit | [虚空劫掠者海盗](factions/黑暗灵族/units/corsair-voidreavers.md) | 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。 | 2026-09-14 |
+| unit | [虚空编织者飞艇](factions/黑暗灵族/units/voidweaver.md) | 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。 | 2026-09-14 |
+| unit | [虚空裂痕海盗](factions/黑暗灵族/units/corsair-voidscarred.md) | 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。 | 2026-09-14 |
+| unit | [虚空鸦轰炸机](factions/黑暗灵族/units/voidraven-bomber.md) |  | 2026-09-14 |
+| unit | [血伶人](factions/黑暗灵族/units/haemonculus.md) |  | 2026-09-14 |
+| unit | [血腥魔女](factions/黑暗灵族/units/succubus.md) |  | 2026-09-14 |
+| unit | [装备毒晶卡宾枪天灾](factions/黑暗灵族/units/scourges-with-shardcarbines.md) |  | 2026-09-14 |
+| unit | [装备重型武器的天灾](factions/黑暗灵族/units/scourges-with-heavy-weapons.md) |  | 2026-09-14 |
+| unit | [达扎尔](factions/黑暗灵族/units/drazhar.md) |  | 2026-09-14 |
+| unit | [阴谋团战士](factions/黑暗灵族/units/kabalite-warriors.md) |  | 2026-09-14 |
 
 ---
 
 ## 统计
 
-- **总实体数**: 4916
+- **总实体数**: 4941
 - **changelog**: 28
 - **core-rule**: 110
-- **detachment**: 324
-- **enhancement**: 1058
-- **stratagem**: 1681
-- **unit**: 1715
+- **detachment**: 328
+- **enhancement**: 1070
+- **stratagem**: 1684
+- **unit**: 1721
 

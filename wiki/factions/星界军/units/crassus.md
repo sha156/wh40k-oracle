@@ -3,17 +3,21 @@ id: '000000766'
 name_en: Crassus
 faction: 星界军
 type: unit
-points:
-  1 model: 180
 tags:
 - unit
 - unit/星界军
 - 星界军
 version:
+  points: historical / unmatched
   source: official-db
 sources:
-- book: 官方结构库 db/wh40k.sqlite（Wahapedia 11版镜像 + MFM 官方点数）
-updated: '2026-07-23'
+- book: 'Faction Pack: Astra Militarum'
+  pages:
+  - 110
+- book: 'Faction Pack: Astra Militarum'
+  pages:
+  - 111
+updated: '2026-09-14'
 ---
 
 ## 属性表
@@ -37,8 +41,9 @@ updated: '2026-07-23'
 - **Fire Support**：In your Shooting phase, after this model has shot, select one enemy unit that was hit by one or more of those attacks. Until the end of the phase, each time a friendly model that disembarked from this <span class="kwb">TRANSPORT</span> this turn makes an attack that targets that enemy unit, you can re-roll the Wound roll.
 
 ## 单位构成
+历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
 - **1个模型** — 180 分
 
 ## 关键词
 - **阵营关键词**：Astra Militarum
-- **普通关键词**：[[core-rules/smoke.md|Smoke]]，Crassus，[[core-rules/transport.md|Transport]]，Squadron，Vehicle，Imperium
+- **普通关键词**：[[core-rules/smoke.md|Smoke]]，Crassus，[[core-rules/transport.md|Transport]]，Squadron，Vehicle，Imperium，FRAME

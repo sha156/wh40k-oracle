@@ -5,6 +5,7 @@ name_en: Contraband Munitions
 faction: 基因窃取者教派
 type: enhancement
 detachment: Heroes of the Uprising
+cost: 20
 tags:
 - enhancement
 - enhancement/基因窃取者教派
@@ -14,11 +15,13 @@ sources:
 updated: '2026-07-26'
 ---
 
-分数未知、[[factions/基因窃取者教派/detachments/heroes-of-the-uprising.md|叛逆英雄]] 分队。
+20 分、[[factions/基因窃取者教派/detachments/heroes-of-the-uprising.md|叛逆英雄]] 分队。
 
 ## 效果
 
 This unit’s ranged attacks have +2 S.
+
+**分数**：20 分
 
 ## 携带限制
 

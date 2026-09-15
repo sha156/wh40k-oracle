@@ -241,9 +241,16 @@
     "军表域限制（不可混编其他战团）不建模"
    ],
    "provenance": {
-    "text_sha256": "31f6fbda94021fd5eeaffd65aba4d77e6b48a78ac677af1e1f921e52009199c7"
+    "text_sha256": "d64163c512c30ae662c5452fe2ac9e4458d96e08fea4ec9430c612bb3788b540",
+    "reviewed_source": {
+     "url": "https://assets.warhammer-community.com/eng_wh40k_faction_pack_space_wolves-pbtnrlz7q6-f0pvbqyejr.pdf",
+     "sha256": "0d3424b0c258b3faa11b82b45eba709c11b3380e43bc1b24f3a66edc2bd8fc72",
+     "page": 1,
+     "title": "Faction Pack: Space Wolves"
+    },
+    "current_text": "- When a friendly GREY HUNTER unit starts an action, that action does not prevent this unit from being eligible to shoot.<br>- In the Declare Battle Formations step, you can split a friendly GREY HUNTERS unit into two units, each containing as equal a number of models as possible (when splitting a unit in this way, make a note of which models form each of the two new units).<br><br><span class=\"hi_custom\">RESTRICTIONS</span><br>Your army can include SPACE WOLVES units, but it cannot include any ADEPTUS ASTARTES units drawn from any other Chapter."
    },
-   "encoded_by": "manual-2026-07-21",
+   "encoded_by": "manual-2026-09-15",
    "materialize": {
     "from_table": "detachments",
     "from_id": "fp11e-sw-fang-det",

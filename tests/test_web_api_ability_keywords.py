@@ -49,8 +49,8 @@ needs_assets = pytest.mark.skipif(
 # 复现路径与钉死用例见 tests/test_db_compile_zh_coverage.py::TestZhNameBridgeIsReproducible。
 EXPECTED_ZH_ITEMS = 3296        # unit_zh_detail 里的技能条目总数
 EXPECTED_ZH_KW_SPANS = 188      # 其中切出的词条段（中文【】写法）
-EXPECTED_EN_ROWS = 4009         # abilities 表行数
-EXPECTED_EN_KW_SPANS = 443      # 其中切出的词条段（英文 [] 写法；kwb 里全是阵营关键词，
+EXPECTED_EN_ROWS = 4041         # abilities 表行数
+EXPECTED_EN_KW_SPANS = 445      # 其中切出的词条段（英文 [] 写法；kwb 里全是阵营关键词，
                                 # 一条都不该在这里）
 
 

@@ -5,17 +5,19 @@ name_en: Leman Russ Executioner
 faction: 星界军
 type: unit
 points:
-  1 model: 170
+  1 model: 145
 tags:
 - unit
 - unit/星界军
 - 星界军
 version:
-  points: MFM 2026-07-27 15:14
+  points: MFM 2026-09-14T05:51:23.572407+00:00
   source: official-db
 sources:
-- book: 官方结构库 db/wh40k.sqlite（Wahapedia 11版镜像 + MFM 官方点数）
-updated: '2026-07-23'
+- book: https://assets.warhammer-community.com/eng_wh40k_faction_pack_astra_militarum-o51zhqvsvy-wdobxbf6t0.pdf
+  pages:
+  - 23
+updated: '2026-09-14'
 ---
 
 ## 属性表
@@ -48,8 +50,8 @@ updated: '2026-07-23'
 - **处决者**：当该单位用处决者等离子炮进行攻击时，若目标单位低于半数军力，则命中结果+1
 
 ## 单位构成
-- **1个模型** — 170 分
+- **1个模型** — 145 分
 
 ## 关键词
 - **阵营关键词**：Astra Militarum
-- **普通关键词**：[[core-rules/smoke.md|Smoke]]，Imperium，Squadron，Leman Russ Executioner，Vehicle
+- **普通关键词**：[[core-rules/smoke.md|Smoke]]，Imperium，Squadron，Leman Russ Executioner，Vehicle，FRAME

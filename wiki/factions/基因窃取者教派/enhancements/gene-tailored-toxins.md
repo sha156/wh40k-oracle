@@ -5,6 +5,7 @@ name_en: Gene-tailored Toxins
 faction: 基因窃取者教派
 type: enhancement
 detachment: Heroes of the Uprising
+cost: 35
 tags:
 - enhancement
 - enhancement/基因窃取者教派
@@ -14,11 +15,13 @@ sources:
 updated: '2026-07-26'
 ---
 
-分数未知、[[factions/基因窃取者教派/detachments/heroes-of-the-uprising.md|叛逆英雄]] 分队。
+35 分、[[factions/基因窃取者教派/detachments/heroes-of-the-uprising.md|叛逆英雄]] 分队。
 
 ## 效果
 
 This model’s attacks have +1 D.
+
+**分数**：35 分
 
 ## 携带限制
 

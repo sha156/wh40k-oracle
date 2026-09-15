@@ -1,0 +1,422 @@
+[
+  {
+    "source": {
+      "faction": "AS",
+      "detachment": "chorus of condemnation",
+      "name": "symphonic payload"
+    },
+    "target": {
+      "id": "fp11e-sororitas-chorus-e2",
+      "faction_id": "AS",
+      "detachment_name": "Chorus of Condemnation",
+      "name": "Symphonic Payload Upgrade"
+    },
+    "reason": "Reviewed identity within the same faction and detachment; official spelling differs.",
+    "source_url": "https://mfm.warhammer-community.com/en"
+  },
+  {
+    "source": {
+      "faction": "AS",
+      "detachment": "sacred champions",
+      "name": "writ of compunction"
+    },
+    "target": {
+      "id": "fp11e-sororitas-sacred-e1",
+      "faction_id": "AS",
+      "detachment_name": "Sacred Champions",
+      "name": "Writ of Compunction Upgrade"
+    },
+    "reason": "Reviewed identity within the same faction and detachment; official spelling differs.",
+    "source_url": "https://mfm.warhammer-community.com/en"
+  },
+  {
+    "source": {
+      "faction": "AS",
+      "detachment": "sanctified orators",
+      "name": "hagiomnifex"
+    },
+    "target": {
+      "id": "fp11e-sororitas-orators-e1",
+      "faction_id": "AS",
+      "detachment_name": "Sanctified Orators",
+      "name": "Hagiomnifex Upgrade"
+    },
+    "reason": "Reviewed identity within the same faction and detachment; official spelling differs.",
+    "source_url": "https://mfm.warhammer-community.com/en"
+  },
+  {
+    "source": {
+      "faction": "AM",
+      "detachment": "abhuman auxiliaries",
+      "name": "sharp eyes"
+    },
+    "target": {
+      "id": "fp11e-am-abhuman-e1",
+      "faction_id": "AM",
+      "detachment_name": "Abhuman Auxiliaries",
+      "name": "Sharp Eyes, Light Fingers"
+    },
+    "reason": "Reviewed identity within the same faction and detachment; official spelling differs.",
+    "source_url": "https://mfm.warhammer-community.com/en"
+  },
+  {
+    "source": {
+      "faction": "AM",
+      "detachment": "bridgehead strike",
+      "name": "priority drop beacon"
+    },
+    "target": {
+      "id": "000009801003",
+      "faction_id": "AM",
+      "detachment_name": "Bridgehead Strike",
+      "name": "Priority-drop Beacon"
+    },
+    "reason": "Reviewed identity within the same faction and detachment; official spelling differs.",
+    "source_url": "https://mfm.warhammer-community.com/en"
+  },
+  {
+    "source": {
+      "faction": "QT",
+      "detachment": "houndpack lance",
+      "name": "panoply of the cursed knights"
+    },
+    "target": {
+      "id": "000010312005",
+      "faction_id": "QT",
+      "detachment_name": "Houndpack Lance",
+      "name": "Panoply of the Cursed Knight"
+    },
+    "reason": "Reviewed identity within the same faction and detachment; official spelling differs.",
+    "source_url": "https://mfm.warhammer-community.com/en"
+  },
+  {
+    "source": {
+      "faction": "DG",
+      "detachment": "contagion engines",
+      "name": "parasitic woe‑reaper"
+    },
+    "target": {
+      "id": "fp11e-dg-engines-e1",
+      "faction_id": "DG",
+      "detachment_name": "Contagion Engines",
+      "name": "Parasitic Woe-Reaper"
+    },
+    "reason": "Reviewed identity within the same faction and detachment; official spelling differs.",
+    "source_url": "https://mfm.warhammer-community.com/en"
+  },
+  {
+    "source": {
+      "faction": "GC",
+      "detachment": "brood brothers auxilia",
+      "name": "adaptive reprisal"
+    },
+    "target": {
+      "id": "000009084003",
+      "faction_id": "GC",
+      "detachment_name": "Brood Brother Auxilia",
+      "name": "Adaptive Reprisal"
+    },
+    "reason": "Reviewed identity within the same faction and detachment; official spelling differs.",
+    "source_url": "https://mfm.warhammer-community.com/en"
+  },
+  {
+    "source": {
+      "faction": "GC",
+      "detachment": "brood brothers auxilia",
+      "name": "fire-point commander"
+    },
+    "target": {
+      "id": "000009084005",
+      "faction_id": "GC",
+      "detachment_name": "Brood Brother Auxilia",
+      "name": "Firepoint Commander"
+    },
+    "reason": "Reviewed identity within the same faction and detachment; official spelling differs.",
+    "source_url": "https://mfm.warhammer-community.com/en"
+  },
+  {
+    "source": {
+      "faction": "GC",
+      "detachment": "brood brothers auxilia",
+      "name": "martial espionage"
+    },
+    "target": {
+      "id": "000009084002",
+      "faction_id": "GC",
+      "detachment_name": "Brood Brother Auxilia",
+      "name": "Martial Espionage"
+    },
+    "reason": "Reviewed identity within the same faction and detachment; official spelling differs.",
+    "source_url": "https://mfm.warhammer-community.com/en"
+  },
+  {
+    "source": {
+      "faction": "GC",
+      "detachment": "brood brothers auxilia",
+      "name": "the hero returned"
+    },
+    "target": {
+      "id": "000009084004",
+      "faction_id": "GC",
+      "detachment_name": "Brood Brother Auxilia",
+      "name": "The Hero Returned"
+    },
+    "reason": "Reviewed identity within the same faction and detachment; official spelling differs.",
+    "source_url": "https://mfm.warhammer-community.com/en"
+  },
+  {
+    "source": {
+      "faction": "GK",
+      "detachment": "banishers",
+      "name": "ephemeral tome"
+    },
+    "target": {
+      "id": "000010356003",
+      "faction_id": "GK",
+      "detachment_name": "Banishers",
+      "name": "The Ephemeral Tome"
+    },
+    "reason": "Reviewed identity within the same faction and detachment; official spelling differs.",
+    "source_url": "https://mfm.warhammer-community.com/en"
+  },
+  {
+    "source": {
+      "faction": "GK",
+      "detachment": "banishers",
+      "name": "sixty-sixth seal"
+    },
+    "target": {
+      "id": "000010356004",
+      "faction_id": "GK",
+      "detachment_name": "Banishers",
+      "name": "The Sixty-sixth Seal"
+    },
+    "reason": "Reviewed identity within the same faction and detachment; official spelling differs.",
+    "source_url": "https://mfm.warhammer-community.com/en"
+  },
+  {
+    "source": {
+      "faction": "AoI",
+      "detachment": "ordo hereticus, purgation force",
+      "name": "ignis judicium"
+    },
+    "target": {
+      "id": "000009130002",
+      "faction_id": "AoI",
+      "detachment_name": "Ordo Hereticus Purgation Force",
+      "name": "Ignis Judicium"
+    },
+    "reason": "Reviewed identity within the same faction and detachment; official spelling differs.",
+    "source_url": "https://mfm.warhammer-community.com/en"
+  },
+  {
+    "source": {
+      "faction": "AoI",
+      "detachment": "ordo hereticus, purgation force",
+      "name": "liber heresius"
+    },
+    "target": {
+      "id": "000009130003",
+      "faction_id": "AoI",
+      "detachment_name": "Ordo Hereticus Purgation Force",
+      "name": "Liber Heresius"
+    },
+    "reason": "Reviewed identity within the same faction and detachment; official spelling differs.",
+    "source_url": "https://mfm.warhammer-community.com/en"
+  },
+  {
+    "source": {
+      "faction": "AoI",
+      "detachment": "ordo hereticus, purgation force",
+      "name": "no escape"
+    },
+    "target": {
+      "id": "000009130004",
+      "faction_id": "AoI",
+      "detachment_name": "Ordo Hereticus Purgation Force",
+      "name": "No Escape (Aura)"
+    },
+    "reason": "Reviewed identity within the same faction and detachment; official spelling differs.",
+    "source_url": "https://mfm.warhammer-community.com/en"
+  },
+  {
+    "source": {
+      "faction": "AoI",
+      "detachment": "ordo hereticus, purgation force",
+      "name": "witch hunter"
+    },
+    "target": {
+      "id": "000009130005",
+      "faction_id": "AoI",
+      "detachment_name": "Ordo Hereticus Purgation Force",
+      "name": "Witch Hunter"
+    },
+    "reason": "Reviewed identity within the same faction and detachment; official spelling differs.",
+    "source_url": "https://mfm.warhammer-community.com/en"
+  },
+  {
+    "source": {
+      "faction": "AoI",
+      "detachment": "ordo malleus, daemon hunters",
+      "name": "daemon slayer"
+    },
+    "target": {
+      "id": "000009134002",
+      "faction_id": "AoI",
+      "detachment_name": "Ordo Malleus Daemon Hunters",
+      "name": "Daemon Slayer"
+    },
+    "reason": "Reviewed identity within the same faction and detachment; official spelling differs.",
+    "source_url": "https://mfm.warhammer-community.com/en"
+  },
+  {
+    "source": {
+      "faction": "AoI",
+      "detachment": "ordo malleus, daemon hunters",
+      "name": "formidable resolve"
+    },
+    "target": {
+      "id": "000009134003",
+      "faction_id": "AoI",
+      "detachment_name": "Ordo Malleus Daemon Hunters",
+      "name": "Formidable Resolve"
+    },
+    "reason": "Reviewed identity within the same faction and detachment; official spelling differs.",
+    "source_url": "https://mfm.warhammer-community.com/en"
+  },
+  {
+    "source": {
+      "faction": "AoI",
+      "detachment": "ordo malleus, daemon hunters",
+      "name": "gift of the prescient"
+    },
+    "target": {
+      "id": "000009134004",
+      "faction_id": "AoI",
+      "detachment_name": "Ordo Malleus Daemon Hunters",
+      "name": "Gift of the Prescient"
+    },
+    "reason": "Reviewed identity within the same faction and detachment; official spelling differs.",
+    "source_url": "https://mfm.warhammer-community.com/en"
+  },
+  {
+    "source": {
+      "faction": "AoI",
+      "detachment": "ordo malleus, daemon hunters",
+      "name": "grimoire of true names"
+    },
+    "target": {
+      "id": "000009134005",
+      "faction_id": "AoI",
+      "detachment_name": "Ordo Malleus Daemon Hunters",
+      "name": "Grimoire of True Names (Aura)"
+    },
+    "reason": "Reviewed identity within the same faction and detachment; official spelling differs.",
+    "source_url": "https://mfm.warhammer-community.com/en"
+  },
+  {
+    "source": {
+      "faction": "AoI",
+      "detachment": "ordo xenos, alien hunters",
+      "name": "amulet of auto-chastisement"
+    },
+    "target": {
+      "id": "000009126002",
+      "faction_id": "AoI",
+      "detachment_name": "Ordo Xenos Alien Hunters",
+      "name": "Amulet of Auto-Chastisement"
+    },
+    "reason": "Reviewed identity within the same faction and detachment; official spelling differs.",
+    "source_url": "https://mfm.warhammer-community.com/en"
+  },
+  {
+    "source": {
+      "faction": "AoI",
+      "detachment": "ordo xenos, alien hunters",
+      "name": "beacon angelis"
+    },
+    "target": {
+      "id": "000009126003",
+      "faction_id": "AoI",
+      "detachment_name": "Ordo Xenos Alien Hunters",
+      "name": "Beacon Angelis"
+    },
+    "reason": "Reviewed identity within the same faction and detachment; official spelling differs.",
+    "source_url": "https://mfm.warhammer-community.com/en"
+  },
+  {
+    "source": {
+      "faction": "AoI",
+      "detachment": "ordo xenos, alien hunters",
+      "name": "blackweave shroud"
+    },
+    "target": {
+      "id": "000009126004",
+      "faction_id": "AoI",
+      "detachment_name": "Ordo Xenos Alien Hunters",
+      "name": "Blackweave Shroud"
+    },
+    "reason": "Reviewed identity within the same faction and detachment; official spelling differs.",
+    "source_url": "https://mfm.warhammer-community.com/en"
+  },
+  {
+    "source": {
+      "faction": "AoI",
+      "detachment": "ordo xenos, alien hunters",
+      "name": "universal anathema"
+    },
+    "target": {
+      "id": "000009126005",
+      "faction_id": "AoI",
+      "detachment_name": "Ordo Xenos Alien Hunters",
+      "name": "Universal Anathema"
+    },
+    "reason": "Reviewed identity within the same faction and detachment; official spelling differs.",
+    "source_url": "https://mfm.warhammer-community.com/en"
+  },
+  {
+    "source": {
+      "faction": "AoI",
+      "detachment": "veiled blade elimination force",
+      "name": "introneural biotech"
+    },
+    "target": {
+      "id": "000009757004",
+      "faction_id": "AoI",
+      "detachment_name": "Veiled Blade Elimination Force",
+      "name": "Intraneural Biotech"
+    },
+    "reason": "Reviewed identity within the same faction and detachment; official spelling differs.",
+    "source_url": "https://mfm.warhammer-community.com/en"
+  },
+  {
+    "source": {
+      "faction": "TS",
+      "detachment": "rubricae phalanx",
+      "name": "stave abominus"
+    },
+    "target": {
+      "id": "000010205005",
+      "faction_id": "TS",
+      "detachment_name": "Rubricae Phalanx",
+      "name": "The Stave Abominus"
+    },
+    "reason": "Reviewed identity within the same faction and detachment; official spelling differs.",
+    "source_url": "https://mfm.warhammer-community.com/en"
+  },
+  {
+    "source": {
+      "faction": "TS",
+      "detachment": "warpforged cabal",
+      "name": "perplexing cloak"
+    },
+    "target": {
+      "id": "000010209003",
+      "faction_id": "TS",
+      "detachment_name": "Warpforged Cabal",
+      "name": "The Perplexing Cloak"
+    },
+    "reason": "Reviewed identity within the same faction and detachment; official spelling differs.",
+    "source_url": "https://mfm.warhammer-community.com/en"
+  }
+]

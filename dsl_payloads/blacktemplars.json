@@ -335,15 +335,20 @@
    "effects": [],
    "requires_toggles": [],
    "not_modeled_notes_zh": [
-    "对手移动后 surge 移动 D6 寸——移动域未建模"
+    "Reviewed current official text. This rule changes movement, deployment, resurrection, charge sequencing, army selection or a positional state outside this fixed attack-sequence simulator. See current_text for the exact rule."
    ],
    "provenance": {
-    "current_text": "db stratagems.text_zh id=000010393006",
+    "current_text": "<b>WHEN:</b> Your opponent’s Movement phase, just after an enemy unit ends a Normal, Advance or Fall Back move.<br><br><b>TARGET:</b> One Chaplain or Judiciar unit from your army that is within 8\" of that enemy unit and is not within Engagement Range of one or more enemy units.<br><br><b>EFFECT:</b> Your unit can make a surge move of up to D6\".",
     "base_text": "FP Black Templars（PR6 fp_rules 已刷新为 11 版现行文本，工作单 drifted）",
     "synthesis": "无需合成",
-    "text_sha256": "4facb2084a22366c06fadb5e49fa5b533ff265735fdf52cfe44e88acab32c54a"
+    "text_sha256": "b663de4386f55cf1b567c12230d05cabfa156b99aabbed62d5f3cfa3175718e4",
+    "reviewed_source": {
+     "url": "https://assets.warhammer-community.com/eng_22-07_warhammer_40,000_faction_pack_black_templars-inz7wljsdy-badlygdtjm.pdf",
+     "sha256": "9cba4d7699499c58e71062182a8eb0639f7caee7171a1e41cea9316b2c0550e2",
+     "page": 5
+    }
    },
-   "encoded_by": "manual-2026-07-19"
+   "encoded_by": "manual-2026-09-15"
   },
   {
    "table": "stratagems",

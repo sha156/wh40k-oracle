@@ -5,6 +5,7 @@ name_en: Eye of the Hunter
 faction: 星际战士
 type: enhancement
 detachment: Veterans of the Fang
+cost: 20
 tags:
 - enhancement
 - enhancement/星际战士
@@ -14,7 +15,7 @@ sources:
 updated: '2026-07-26'
 ---
 
-分数未知、[[factions/星际战士/detachments/veterans-of-the-fang.md|狼牙堡老兵]] 分队。
+20 分、[[factions/星际战士/detachments/veterans-of-the-fang.md|狼牙堡老兵]] 分队。
 
 ## 效果
 
@@ -22,6 +23,8 @@ This unit's ranged attacks have:
 - [ASSAULT].
 - [IGNORES COVER].
 - +1 AP.
+
+**分数**：20 分
 
 ## 携带限制
 

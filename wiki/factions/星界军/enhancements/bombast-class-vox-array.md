@@ -4,7 +4,7 @@ name_en: Bombast-class Vox-array
 faction: 星界军
 type: enhancement
 detachment: Bridgehead Strike
-cost: 35
+cost: 15
 tags:
 - enhancement
 - enhancement/星界军
@@ -14,13 +14,13 @@ sources:
 updated: '2026-07-26'
 ---
 
-35 分、[[factions/星界军/detachments/bridgehead-strike.md|Bridgehead Strike]] 分队。
+15 分、[[factions/星界军/detachments/bridgehead-strike.md|Bridgehead Strike]] 分队。
 
 ## 效果
 
 When this model issues an Order, if this unit has the Master Vox wargear ability, this model can issue that Order to up to three different REGIMENT units, instead of only one.
 
-**分数**：35 分
+**分数**：15 分
 
 ## 携带限制
 

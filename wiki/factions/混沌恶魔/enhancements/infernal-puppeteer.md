@@ -5,7 +5,7 @@ name_en: Infernal Puppeteer
 faction: 混沌恶魔
 type: enhancement
 detachment: Scintillating Legion
-cost: 25
+cost: 20
 tags:
 - enhancement
 - enhancement/混沌恶魔
@@ -15,16 +15,14 @@ sources:
 updated: '2026-07-26'
 ---
 
-25 分、[[factions/混沌恶魔/detachments/scintillating-legion.md|闪耀军团]] 分队。
+20 分、[[factions/混沌恶魔/detachments/scintillating-legion.md|闪耀军团]] 分队。
 
 ## 效果
 
-In your Shooting phase, the bearer can use this Enhancement. If it does, until the end of the phase, you can select one other friendly visible Legiones Daemonica Tzeentch unit within 9" of the bearer. If you do, when selecting targets for ranged weapons equipped by the bearer, you can measure range and determine visibility from one model of your choice in the selected unit instead.
+In your Shooting phase, when this unit is selected to shoot, while an enemy unit is visible to a friendly LEGIONES DAEMONICA TZEENTCH unit, that enemy unit has +9" detection range until this unit has shot.
 
-**Designer’s Note:** *When determining if a unit with the Lone Operative ability can be selected as the target, the range is determined from the model of your choice in the selected unit.*
-
-**分数**：25 分
+**分数**：20 分
 
 ## 携带限制
 
-Legiones Daemonica Tzeentch Monster model only.
+LEGIONES DAEMONICA TZEENTCH MONSTER model only.

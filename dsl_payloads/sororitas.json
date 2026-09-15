@@ -176,13 +176,19 @@
    "requires_toggles": [],
    "not_modeled_notes_zh": [
     "Righteous 为动态标记（每指挥阶段选≤3单位，按 active 假设）",
-    "限 Battle Sisters Squad/Celestian Sacresants/Paragon Warsuits 单位武器",
+    "Applies to Battle Sisters Squad, Celestian Insidiants, Celestian Sacresants and Paragon Warsuits selected as Righteous.",
     "+1\"M/+1Ld、未战栗 Sacresants +1 OC 未建模"
    ],
    "provenance": {
-    "text_sha256": "55da3102e97b8bb1b360166f86af295ca8a59caac1859e7844f24e451288208d"
+    "text_sha256": "8bb2f05e410574e489d769b0385136babd7ec36aa8fc17a41bcfd7467ec383e8",
+    "reviewed_source": {
+     "url": "https://assets.warhammer-community.com/eng_wh40k_faction_pack_adepta_sororitas-zs0bbbnpdp-ey2x8mavkr.pdf",
+     "sha256": "3bafe610941e2d802ff7c491d1d60966dab5b644852590b805fd85651a798dac",
+     "page": 1,
+     "title": "Faction Pack: Adepta Sororitas"
+    }
    },
-   "encoded_by": "manual-2026-07-20",
+   "encoded_by": "manual-2026-09-15",
    "materialize": {
     "from_table": "detachments",
     "from_id": "000009830",
@@ -243,7 +249,7 @@
     {
      "phase": "hit",
      "op": "bs_improve",
-     "source": "神圣征途：CELESTIAN SACRESANTS 攻击 WS/BS +1",
+     "source": "Holy Quest: CELESTIAN attacks improve BS and WS by 1.",
      "params": [
       1
      ]
@@ -251,12 +257,18 @@
    ],
    "requires_toggles": [],
    "not_modeled_notes_zh": [
-    "限 CELESTIAN SACRESANTS 单位（假设攻方为该单位）；REVEREND 分队 tag 约束不建模"
+    "Select an eligible CELESTIAN attacker. The shared REVEREND detachment restriction is not modeled."
    ],
    "provenance": {
-    "text_sha256": "b69dc5ff7e17e42e6973bbf5c7bc0161669e999c07ff00af0d357a49e214b5d5"
+    "text_sha256": "23c6d03e3e039fd7a0ff44574bb74178d2241b1dac10027fd324b919395f3aff",
+    "reviewed_source": {
+     "url": "https://assets.warhammer-community.com/eng_wh40k_faction_pack_adepta_sororitas-zs0bbbnpdp-ey2x8mavkr.pdf",
+     "sha256": "3bafe610941e2d802ff7c491d1d60966dab5b644852590b805fd85651a798dac",
+     "page": 1,
+     "title": "Faction Pack: Adepta Sororitas"
+    }
    },
-   "encoded_by": "manual-2026-07-20",
+   "encoded_by": "manual-2026-09-15",
    "materialize": {
     "from_table": "detachments",
     "from_id": "fp11e-sororitas-sacred",
@@ -856,10 +868,18 @@
    "effects": [],
    "requires_toggles": [],
    "not_modeled_notes_zh": [
-    "复活最后阵亡模型——无载体"
+    "Reviewed current official text. This rule changes movement, deployment, resurrection, charge sequencing, army selection or a positional state outside this fixed attack-sequence simulator. See current_text for the exact rule."
    ],
-   "provenance": {},
-   "encoded_by": "manual-2026-07-20"
+   "provenance": {
+    "text_sha256": "0f2d924e0e77141eb3ba8cf46a6b381b6057958402d7baa14c2b9ecc93069bc1",
+    "reviewed_source": {
+     "url": "https://assets.warhammer-community.com/eng_wh40k_faction_pack_adepta_sororitas-zs0bbbnpdp-ey2x8mavkr.pdf",
+     "sha256": "3bafe610941e2d802ff7c491d1d60966dab5b644852590b805fd85651a798dac",
+     "page": 13
+    },
+    "current_text": "<b>WHEN:</b> Any phase.<br><br><b>TARGET:</b> One ADEPTA SORORITAS CHARACTER model from your army that was just destroyed. You can use this Stratagem on that model even though it was just destroyed.<br><br><b>EFFECT:</b> You can discard 1-3 Miracle dice. At the end of the phase, set up that model on the battlefield, unengaged and as close as possible to where it was destroyed. That model is not part of an attached unit and its unit has a starting strength of 1. Roll one D3, adding 1 to the result for each Miracle dice you discarded. That model has that number of wounds remaining (up to its starting number of wounds).<br><br><b>RESTRICTIONS:</b> You cannot select Saint Celestine as the target of this Stratagem. You cannot select the same <span class=\"kwb\">CHARACTER</span> as the target of this Stratagem more than once per battle."
+   },
+   "encoded_by": "manual-2026-09-15"
   },
   {
    "table": "stratagems",

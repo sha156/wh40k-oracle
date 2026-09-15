@@ -5,17 +5,17 @@ name_en: Crisis Starscythe Battlesuits
 faction: 钛帝国
 type: unit
 points:
-  3 models: 90
+  3 models: 100
 tags:
 - unit
 - unit/钛帝国
 - 钛帝国
 version:
-  points: MFM 2026-07-27 15:14
+  points: MFM 2026-09-14T05:51:23.572407+00:00
   source: official-db
 sources:
 - book: 官方结构库 db/wh40k.sqlite（Wahapedia 11版镜像 + MFM 官方点数）
-updated: '2026-07-23'
+updated: '2026-09-14'
 ---
 
 ## 属性表
@@ -39,7 +39,7 @@ updated: '2026-07-23'
 - **Battlesuit Support System**：This unit is eligible to shoot in a turn in which it Fell Back.
 
 ## 单位构成
-- **3个模型** — 90 分
+- **3个模型** — 100 分
 
 ## 关键词
 - **阵营关键词**：T’au Empire

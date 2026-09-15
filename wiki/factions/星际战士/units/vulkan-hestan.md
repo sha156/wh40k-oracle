@@ -5,17 +5,17 @@ name_en: Vulkan He’stan
 faction: 星际战士
 type: unit
 points:
-  1 model: 85
+  1 model: 95
 tags:
 - unit
 - unit/星际战士
 - 星际战士
 version:
-  points: MFM 2026-07-27 15:14
+  points: MFM 2026-09-14T05:51:23.572407+00:00
   source: official-db
 sources:
 - book: 官方结构库 db/wh40k.sqlite（Wahapedia 11版镜像 + MFM 官方点数）
-updated: '2026-07-23'
+updated: '2026-09-14'
 ---
 
 ## 属性表
@@ -44,8 +44,8 @@ updated: '2026-07-23'
 - **激励人心**：如果军队中包含本模型，则你的[[factions/星际战士/units/infernus-squad.md|焚狱者小队]]中的非人物模型OC值在非震慑状态下变为2
 
 ## 单位构成
-- **1个模型** — 85 分
+- **1个模型** — 95 分
 
 ## 关键词
 - **阵营关键词**：Salamanders，Adeptus Astartes
-- **普通关键词**：[[core-rules/infantry.md|步兵]]，角色，[[core-rules/epic-hero.md|史诗英雄]]，[[core-rules/grenades.md|手雷]]，帝国，战术护甲，连长，伏尔甘赫斯坦
+- **普通关键词**：[[core-rules/infantry.md|Infantry]]，[[core-rules/character.md|Character]]，[[core-rules/epic-hero.md|Epic Hero]]，[[core-rules/grenades.md|Grenades]]，Imperium，Tacticus，Vulkan He’stan，[[factions/星际战士/units/captain.md|Captain]]

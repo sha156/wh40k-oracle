@@ -4,7 +4,7 @@ name_en: Hunting Grounds
 faction: 泰伦虫族
 type: enhancement
 detachment: Vanguard Onslaught
-cost: 20
+cost: 30
 tags:
 - enhancement
 - enhancement/泰伦虫族
@@ -14,13 +14,13 @@ sources:
 updated: '2026-07-26'
 ---
 
-20 分、[[factions/泰伦虫族/detachments/vanguard-onslaught.md|Vanguard Onslaught]] 分队。
+30 分、[[factions/泰伦虫族/detachments/vanguard-onslaught.md|Vanguard Onslaught]] 分队。
 
 ## 效果
 
 While the bearer is on the battlefield, each time your opponent sets up a Reserves unit on the battlefield, roll one D6: on a 2+, that unit must take a Battle-shock test.
 
-**分数**：20 分
+**分数**：30 分
 
 ## 携带限制
 

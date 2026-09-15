@@ -5,17 +5,17 @@ name_en: Storm Guardians
 faction: 艾达灵族
 type: unit
 points:
-  11 models: 110
+  11 models: 100
 tags:
 - unit
 - unit/艾达灵族
 - 艾达灵族
 version:
-  points: MFM 2026-07-27 15:14
+  points: MFM 2026-09-14T05:51:23.572407+00:00
   source: official-db
 sources:
 - book: 官方结构库 db/wh40k.sqlite（Wahapedia 11版镜像 + MFM 官方点数）
-updated: '2026-07-23'
+updated: '2026-09-14'
 ---
 
 ## 属性表
@@ -44,7 +44,7 @@ updated: '2026-07-23'
 - **蛇鳞平台**：该模型所在单位具有 5+特殊保护
 
 ## 单位构成
-- **11个模型** — 110 分
+- **11个模型** — 100 分
 
 ## 关键词
 - **阵营关键词**：Asuryani

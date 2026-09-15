@@ -11,11 +11,16 @@ tags:
 - unit/泰坦军团
 - 泰坦军团
 version:
-  points: MFM 2026-07-27 15:14
+  points: MFM 2026-09-14T05:51:23.572407+00:00
   source: official-db
 sources:
-- book: 官方结构库 db/wh40k.sqlite（Wahapedia 11版镜像 + MFM 官方点数）
-updated: '2026-07-23'
+- book: 'Faction Pack: Adeptus Titanicus'
+  pages:
+  - 7
+- book: 'Faction Pack: Adeptus Titanicus'
+  pages:
+  - 8
+updated: '2026-09-14'
 ---
 
 ## 属性表
@@ -54,4 +59,4 @@ updated: '2026-07-23'
 
 ## 关键词
 - **阵营关键词**：Adeptus Titanicus
-- **普通关键词**：[[core-rules/towering.md|Towering]]，[[core-rules/titanic.md|Titanic]]，Imperium，[[core-rules/walker.md|Walker]]，Warbringer Nemesis Titan，Vehicle
+- **普通关键词**：[[core-rules/towering.md|Towering]]，[[core-rules/titanic.md|Titanic]]，Imperium，[[core-rules/walker.md|Walker]]，Warbringer Nemesis Titan，Vehicle，FRAME

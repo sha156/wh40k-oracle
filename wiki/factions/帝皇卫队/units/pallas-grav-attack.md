@@ -11,11 +11,16 @@ tags:
 - unit/帝皇卫队
 - 帝皇卫队
 version:
-  points: MFM 2026-07-27 15:14
+  points: MFM 2026-09-14T05:51:23.572407+00:00
   source: official-db
 sources:
-- book: 官方结构库 db/wh40k.sqlite（Wahapedia 11版镜像 + MFM 官方点数）
-updated: '2026-07-23'
+- book: 'Faction Pack: Adeptus Custodes'
+  pages:
+  - 21
+- book: 'Faction Pack: Adeptus Custodes'
+  pages:
+  - 22
+updated: '2026-09-14'
 ---
 
 ## 属性表
@@ -45,4 +50,4 @@ updated: '2026-07-23'
 
 ## 关键词
 - **阵营关键词**：Adeptus Custodes
-- **普通关键词**：Vehicle，Fly，Imperium，Pallas Grav-attack
+- **普通关键词**：Vehicle，Fly，Imperium，Pallas Grav-attack，FRAME

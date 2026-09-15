@@ -4,7 +4,7 @@ name_en: Obfuscation
 faction: 星际战士
 type: enhancement
 detachment: Librarius Conclave
-cost: 20
+cost: 25
 tags:
 - enhancement
 - enhancement/星际战士
@@ -14,13 +14,13 @@ sources:
 updated: '2026-07-26'
 ---
 
-20 分、[[factions/星际战士/detachments/librarius-conclave.md|Librarius Conclave]] 分队。
+25 分、[[factions/星际战士/detachments/librarius-conclave.md|Librarius Conclave]] 分队。
 
 ## 效果
 
 Enemy units cannot use the Fire Overwatch Stratagem to shoot at the bearer’s unit, and if the Telepathy Discipline is active for your army, the bearer’s unit cannot be targeted by ranged attacks unless the attacking model is within 18".
 
-**分数**：20 分
+**分数**：25 分
 
 ## 携带限制
 

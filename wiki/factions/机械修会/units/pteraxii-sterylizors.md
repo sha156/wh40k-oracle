@@ -5,18 +5,18 @@ name_en: Pteraxii Sterylizors
 faction: 机械修会
 type: unit
 points:
-  5 models: 80
-  10 models: 160
+  5 models: 75
+  10 models: 150
 tags:
 - unit
 - unit/机械修会
 - 机械修会
 version:
-  points: MFM 2026-07-27 15:14
+  points: MFM 2026-09-14T05:51:23.572407+00:00
   source: official-db
 sources:
 - book: 官方结构库 db/wh40k.sqlite（Wahapedia 11版镜像 + MFM 官方点数）
-updated: '2026-07-23'
+updated: '2026-09-14'
 ---
 
 ## 属性表
@@ -44,8 +44,8 @@ updated: '2026-07-23'
 - **炙热焚焰**：本单位模型使用磷焰喷炬攻击目标点范围内的敌方单位时可以重投造伤结果中的 1，如果本单位此时位于至少一个机械修会战线单位 6 寸内，则改为可以重投造伤结果
 
 ## 单位构成
-- **5个模型** — 80 分
-- **10个模型** — 160 分
+- **5个模型** — 75 分
+- **10个模型** — 150 分
 
 ## 关键词
 - **阵营关键词**：Adeptus Mechanicus

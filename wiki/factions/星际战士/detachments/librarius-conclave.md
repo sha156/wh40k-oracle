@@ -42,6 +42,7 @@ Each time a model in this unit makes an attack, you can ignore any or all modifi
 - [[factions/星际战士/enhancements/fusillade.md\|Fusillade]]
 - [[factions/星际战士/enhancements/obfuscation.md\|Obfuscation]]
 - [[factions/星际战士/enhancements/prescience.md\|Prescience]]
+- [[factions/星际战士/enhancements/temporal-corridor.md\|Temporal Corridor]]
 
 ## 战略
 

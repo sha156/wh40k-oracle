@@ -3,17 +3,16 @@ id: '000000875'
 name_en: Inquisitor Karamazov
 faction: 帝国特勤
 type: unit
-points:
-  1 model: 140
 tags:
 - unit
 - unit/帝国特勤
 - 帝国特勤
 version:
+  points: historical / unmatched
   source: official-db
 sources:
 - book: 官方结构库 db/wh40k.sqlite（Wahapedia 11版镜像 + MFM 官方点数）
-updated: '2026-07-23'
+updated: '2026-09-14'
 ---
 
 ## 属性表
@@ -39,6 +38,7 @@ updated: '2026-07-23'
 - **Unsubtle Crusader**：At the start of the Declare Battle Formations step, you can select up to three Agents of the Imperium Infantry units from your army, or one Imperium Battleline unit from your army – those units gain the Scouts 6" ability.
 
 ## 单位构成
+历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
 - **1个模型** — 140 分
 
 ## 关键词

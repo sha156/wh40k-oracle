@@ -224,10 +224,19 @@
    "effects": [],
    "requires_toggles": [],
    "not_modeled_notes_zh": [
-    "射击后涌动移动 D6+1\"、换取放弃 Personal Teleporters——移动机制无载体"
+    "Reviewed current official text. This rule changes movement, deployment, resurrection, charge sequencing, army selection or a positional state outside this fixed attack-sequence simulator. See current_text for the exact rule."
    ],
-   "provenance": {},
-   "encoded_by": "manual-2026-07-20",
+   "provenance": {
+    "text_sha256": "bdbe89bd96dda78b89dcb4c7841b229afff15c4ffe02dc3bcf87868de6e056c5",
+    "reviewed_source": {
+     "url": "https://assets.warhammer-community.com/eng_22-07_warhammer_40,000_faction_pack_grey_knights-dlzvusufhy-uialb3pko4.pdf",
+     "sha256": "8df7b54292988edb5ef5a83260dd4c054f658f06ba7cacc2467e3f558a1dd797",
+     "page": 1,
+     "title": "Faction Pack: Grey Knights"
+    },
+    "current_text": "In your Shooting phase, when a friendly INTERCEPTOR SQUAD unit has shot, you can use this ability. If you do: That unit cannot use its Personal Teleporters ability. That unit can make a surge move of up to D6+1\"."
+   },
+   "encoded_by": "manual-2026-09-15",
    "materialize": {
     "from_table": "detachments",
     "from_id": "fp11e-gk-immaterial",
@@ -241,23 +250,29 @@
    "detachment": "Augurium Task Force",
    "name_en": "AGGRESSIVE ANTICIPATION",
    "name_zh": null,
-   "status": "partial",
+   "status": "encoded",
    "effects": [
     {
      "phase": "hit",
-     "op": "ignore_hit_mods",
-     "params": [],
-     "source": "谨慎预判：无视本单位攻击的命中/BS 修正"
+     "op": "reroll",
+     "params": [
+      "fail"
+     ],
+     "condition": [],
+     "source": "Aggressive Anticipation: re-roll hit rolls."
     }
    ],
    "requires_toggles": [],
-   "not_modeled_notes_zh": [
-    "引擎按 [PSYCHIC] 语义忽略命中骰与 BS 特征值的负修正（掩体、烟幕、减命中等）；忽略正修正无收益故不建模；WHEN=射击或战斗均适用（无阶段门恰对）"
-   ],
+   "not_modeled_notes_zh": [],
    "provenance": {
-    "text_sha256": "20f559c529eed0152e05f1d141481cd9eb040054f3253e3d535adab7acd3f406"
+    "text_sha256": "c027e52aeaacb269797a3105ac5468aa46418bc8e903a6e934936286b9046d31",
+    "reviewed_source": {
+     "url": "https://assets.warhammer-community.com/eng_22-07_warhammer_40,000_faction_pack_grey_knights-dlzvusufhy-uialb3pko4.pdf",
+     "sha256": "8df7b54292988edb5ef5a83260dd4c054f658f06ba7cacc2467e3f558a1dd797",
+     "page": 9
+    }
    },
-   "encoded_by": "manual-2026-07-20"
+   "encoded_by": "manual-2026-09-15"
   },
   {
    "table": "stratagems",
@@ -531,10 +546,18 @@
    "effects": [],
    "requires_toggles": [],
    "not_modeled_notes_zh": [
-    "普通移动 6\"/置入预备队——移动/预备队机制无载体"
+    "Reviewed current official text. This rule changes movement, deployment, resurrection, charge sequencing, army selection or a positional state outside this fixed attack-sequence simulator. See current_text for the exact rule."
    ],
-   "provenance": {},
-   "encoded_by": "manual-2026-07-20"
+   "provenance": {
+    "text_sha256": "592a1035076fce11d7c752ed91515498141026edbf23248df171e732e510b1d4",
+    "reviewed_source": {
+     "url": "https://assets.warhammer-community.com/eng_22-07_warhammer_40,000_faction_pack_grey_knights-dlzvusufhy-uialb3pko4.pdf",
+     "sha256": "8df7b54292988edb5ef5a83260dd4c054f658f06ba7cacc2467e3f558a1dd797",
+     "page": 9
+    },
+    "current_text": "<b>WHEN:</b> Your opponent’s Movement phase, just after an enemy unit ends a Normal, Advance or Fall Back move.<br><br><b>TARGET:</b> One Grey Knights Psyker unit from your army that is within 8\" of that enemy unit and is not within Engagement Range of one or more enemy units.<br><br><b>EFFECT:</b> Your unit can make a Normal move of up to 6\" or, if it has the Deep Strike ability, it can be placed into Strategic Reserves."
+   },
+   "encoded_by": "manual-2026-09-15"
   },
   {
    "table": "stratagems",
@@ -758,10 +781,18 @@
    "effects": [],
    "requires_toggles": [],
    "not_modeled_notes_zh": [
-    "普通移动 D6\"——移动机制无载体"
+    "Reviewed current official text. This rule changes movement, deployment, resurrection, charge sequencing, army selection or a positional state outside this fixed attack-sequence simulator. See current_text for the exact rule."
    ],
-   "provenance": {},
-   "encoded_by": "manual-2026-07-20"
+   "provenance": {
+    "text_sha256": "4a3d60a58e154f472b1ad9d71c458fa4eca16729a073b78118fab47a5646c784",
+    "reviewed_source": {
+     "url": "https://assets.warhammer-community.com/eng_22-07_warhammer_40,000_faction_pack_grey_knights-dlzvusufhy-uialb3pko4.pdf",
+     "sha256": "8df7b54292988edb5ef5a83260dd4c054f658f06ba7cacc2467e3f558a1dd797",
+     "page": 9
+    },
+    "current_text": "<b>WHEN:</b> Your opponent’s Movement phase, just after an enemy unit ends a Normal, Advance or Fall Back move.<br><br><b>TARGET:</b> One Grey Knights Infantry unit from your army that is within 8\" of that enemy unit and not within Engagement Range of one or more enemy units.<br><br><b>EFFECT:</b> Your unit can make a Normal move of up to D6\"."
+   },
+   "encoded_by": "manual-2026-09-15"
   },
   {
    "table": "stratagems",
@@ -1340,16 +1371,24 @@
    "id": "000010364004",
    "side": "attacker",
    "detachment": "Augurium Task Force",
-   "name_en": "A Foot in the Future",
+   "name_en": "One Foot in the Future",
    "name_zh": null,
    "status": "not_modeled",
    "effects": [],
    "requires_toggles": [],
    "not_modeled_notes_zh": [
-    "登场后普通移动 D6\"——移动机制无载体"
+    "Reviewed current official text. This rule changes movement, deployment, resurrection, charge sequencing, army selection or a positional state outside this fixed attack-sequence simulator. See current_text for the exact rule."
    ],
-   "provenance": {},
-   "encoded_by": "manual-2026-07-20"
+   "provenance": {
+    "text_sha256": "2864d05281ca87301814e694e989313f683fc32c8195905a57ca8b8aae549a1d",
+    "reviewed_source": {
+     "url": "https://assets.warhammer-community.com/eng_22-07_warhammer_40,000_faction_pack_grey_knights-dlzvusufhy-uialb3pko4.pdf",
+     "sha256": "8df7b54292988edb5ef5a83260dd4c054f658f06ba7cacc2467e3f558a1dd797",
+     "page": 9
+    },
+    "current_text": "GREY KNIGHTS model only. When this unit ends an ingress move, you can use this ability. If you do: ▪This unit can make a normal move of up to D6\". ▪Until the end of the turn, this unit is not eligible to declare a charge."
+   },
+   "encoded_by": "manual-2026-09-15"
   },
   {
    "table": "enhancements",
@@ -1670,10 +1709,18 @@
    "effects": [],
    "requires_toggles": [],
    "not_modeled_notes_zh": [
-    "被瞄准时移除再部署——部署/预备队机制无载体"
+    "Reviewed current official text. This rule changes movement, deployment, resurrection, charge sequencing, army selection or a positional state outside this fixed attack-sequence simulator. See current_text for the exact rule."
    ],
-   "provenance": {},
-   "encoded_by": "manual-2026-07-20"
+   "provenance": {
+    "text_sha256": "1b93374c9bd7f6e853c910e9bcb83f221c3e2b0f1b0a97d6fed1d691db2b6021",
+    "reviewed_source": {
+     "url": "https://assets.warhammer-community.com/eng_22-07_warhammer_40,000_faction_pack_grey_knights-dlzvusufhy-uialb3pko4.pdf",
+     "sha256": "8df7b54292988edb5ef5a83260dd4c054f658f06ba7cacc2467e3f558a1dd797",
+     "page": 9
+    },
+    "current_text": "<span class=\"kwb\">GREY</span> <span class=\"kwb\">KNIGHTS</span> model only. Once per battle, in your opponent’s Shooting phase, when the bearer’s unit is selected as the target of a ranged attack, you can remove the bearer’s unit from the battlefield and then set it back up again anywhere on the battlefield that is more than 8\" horizontally away from all enemy units. If the bearer’s unit is no longer an eligible target, your opponent can then select new targets for any attacks that had targeted the bearer’s unit."
+   },
+   "encoded_by": "manual-2026-09-15"
   },
   {
    "table": "enhancements",

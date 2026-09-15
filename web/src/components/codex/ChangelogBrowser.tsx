@@ -3,6 +3,7 @@
 import { useEffect, useState } from "react";
 
 import { Blocks, SectionList } from "@/components/codex/Blocks";
+import { OfficialSources } from "@/components/codex/OfficialSources";
 import {
   fetchChangelog,
   fetchChangelogFaction,
@@ -150,6 +151,7 @@ export function ChangelogBrowser({ onError }: { onError?: () => void }) {
 
   return (
     <div>
+      <OfficialSources />
       <div className="mb-1.5 flex flex-wrap items-baseline gap-x-3 font-mono text-[11.5px] text-[#8fa19b]">
         {index === null ? (
           <span>载入变更清单…</span>

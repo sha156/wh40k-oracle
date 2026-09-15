@@ -5,17 +5,17 @@ name_en: Knight Despoiler
 faction: 混沌骑士
 type: unit
 points:
-  1 model: 380
+  1 model: 360
 tags:
 - unit
 - unit/混沌骑士
 - 混沌骑士
 version:
-  points: MFM 2026-07-27 15:14
+  points: MFM 2026-09-14T05:51:23.572407+00:00
   source: official-db
 sources:
 - book: 官方结构库 db/wh40k.sqlite（Wahapedia 11版镜像 + MFM 官方点数）
-updated: '2026-07-23'
+updated: '2026-09-14'
 ---
 
 ## 属性表
@@ -56,7 +56,7 @@ updated: '2026-07-23'
 - **受损：剩余 1-9 点耐伤**：当该模型剩余 1-9 点耐伤，模型攻击的命中骰结果-1，OC 属性-5。
 
 ## 单位构成
-- **1个模型** — 380 分
+- **1个模型** — 360 分
 
 ## 关键词
 - **阵营关键词**：Chaos Knights

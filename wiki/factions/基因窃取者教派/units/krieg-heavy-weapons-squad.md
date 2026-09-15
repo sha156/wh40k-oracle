@@ -4,17 +4,16 @@ name_zh: 克里格重型武器小队
 name_en: Krieg Heavy Weapons Squad
 faction: 基因窃取者教派
 type: unit
-points:
-  4 models: 75
 tags:
 - unit
 - unit/基因窃取者教派
 - 基因窃取者教派
 version:
+  points: historical / unmatched
   source: official-db
 sources:
 - book: 官方结构库 db/wh40k.sqlite（Wahapedia 11版镜像 + MFM 官方点数）
-updated: '2026-07-23'
+updated: '2026-09-14'
 ---
 
 ## 属性表
@@ -41,6 +40,7 @@ updated: '2026-07-23'
 - **最终使命**：当该单位的火力观察员仍位于战场时，每当一个重型武器炮手模型被摧毁时，掷一枚 D6，如果掷骰结果为3+，不要将该模型从战斗中移除。被摧毁的模型可以在攻击模型的单位完成攻击后进行射击，随后将其从游戏中移除。
 
 ## 单位构成
+历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
 - **4个模型** — 75 分
 
 ## 关键词

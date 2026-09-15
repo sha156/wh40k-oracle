@@ -11,11 +11,13 @@ tags:
 - unit/吞世者
 - 吞世者
 version:
-  points: MFM 2026-07-27 15:14
+  points: MFM 2026-09-14T05:51:23.572407+00:00
   source: official-db
 sources:
-- book: 官方结构库 db/wh40k.sqlite（Wahapedia 11版镜像 + MFM 官方点数）
-updated: '2026-07-23'
+- book: https://assets.warhammer-community.com/eng_wh40k_faction_pack_world_eaters-5cgvc5tjcb-nipfvwkpo5.pdf
+  pages:
+  - 8
+updated: '2026-09-14'
 ---
 
 ## 属性表
@@ -44,4 +46,4 @@ updated: '2026-07-23'
 
 ## 关键词
 - **阵营关键词**：World Eaters
-- **普通关键词**：Khorne，Vehicle，[[core-rules/transport.md|Transport]]，Chaos，[[core-rules/dedicated-transport.md|Dedicated Transport]]，Rhino，[[core-rules/smoke.md|Smoke]]
+- **普通关键词**：Khorne，Vehicle，[[core-rules/transport.md|Transport]]，Chaos，[[core-rules/dedicated-transport.md|Dedicated Transport]]，Rhino，[[core-rules/smoke.md|Smoke]]，FRAME

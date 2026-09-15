@@ -3,17 +3,16 @@ id: '000002678'
 name_en: Chaplain Cassius
 faction: 星际战士
 type: unit
-points:
-  1 model: 80
 tags:
 - unit
 - unit/星际战士
 - 星际战士
 version:
+  points: historical / unmatched
   source: official-db
 sources:
 - book: 官方结构库 db/wh40k.sqlite（Wahapedia 11版镜像 + MFM 官方点数）
-updated: '2026-07-23'
+updated: '2026-09-14'
 ---
 
 ## 属性表
@@ -39,6 +38,7 @@ updated: '2026-07-23'
 - **Inspired Retribution**：While this model is leading a unit, each time a model in that unit is destroyed by a melee attack, if that model has not fought this phase, roll one D6. On a 4+, do not remove it from play; that destroyed model can fight after the attacking model’s unit has finished making its attacks, and is then removed from play.
 
 ## 单位构成
+历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
 - **1个模型** — 80 分
 
 ## 关键词

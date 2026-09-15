@@ -5,6 +5,7 @@ name_en: Inescapable Interrogation
 faction: 星际战士
 type: enhancement
 detachment: Interrogation Conclave
+cost: 20
 tags:
 - enhancement
 - enhancement/星际战士
@@ -14,11 +15,13 @@ sources:
 updated: '2026-07-26'
 ---
 
-分数未知、[[factions/星际战士/detachments/interrogation-conclave.md|审讯者密会]] 分队。
+20 分、[[factions/星际战士/detachments/interrogation-conclave.md|审讯者密会]] 分队。
 
 ## 效果
 
 This unit’s ranged attacks have [IGNORES COVER].
+
+**分数**：20 分
 
 ## 携带限制
 

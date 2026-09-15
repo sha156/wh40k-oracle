@@ -3,17 +3,16 @@ id: '000001390'
 name_en: Raven Strike Fighter
 faction: 黑暗灵族
 type: unit
-points:
-  1 model: 170
 tags:
 - unit
 - unit/黑暗灵族
 - 黑暗灵族
 version:
+  points: historical / unmatched
   source: official-db
 sources:
 - book: 官方结构库 db/wh40k.sqlite（Wahapedia 11版镜像 + MFM 官方点数）
-updated: '2026-07-23'
+updated: '2026-09-14'
 ---
 
 ## 属性表
@@ -40,6 +39,7 @@ updated: '2026-07-23'
 - **Ground-attack Craft**：Each time a model in this unit makes a ranged attack that targets an enemy unit (excluding units that can <span class="kwb">FLY</span>), add 1 to the Hit roll.
 
 ## 单位构成
+历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
 - **1个模型** — 170 分
 
 ## 关键词

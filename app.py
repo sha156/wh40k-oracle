@@ -413,7 +413,15 @@ def hybrid_retrieve(
     merged = reciprocal_rank_fusion(faiss_docs, bm25_docs)
 
     if not merged:
-        return []
+        # 主检索空手 ≠ 规则层保底也该丢（审查 R1-M7）。保底走的是独立的
+        # `filter={"layer":"rules"}` 查询，是版本仲裁的最高真源；原先这里无条件
+        # `return []`，等于「主链一空就把已经查到的保底一起扔掉」——与 #117
+        # 「降级把前面成功的工具结果一并作废」是同一个形状。
+        # 现实里两者共用同一个 vectorstore、很难只空一边（故审查里列为疑似），
+        # 但 FAISS / BM25 任一侧抛异常时 merged 就是空的，那时保底还活着。
+        if not rules_docs:
+            return []
+        merged = list(rules_docs)
 
     # ── FlashRank 精排 ──
     passages = [

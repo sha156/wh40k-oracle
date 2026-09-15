@@ -8,6 +8,7 @@ import { ChangelogBrowser } from "@/components/codex/ChangelogBrowser";
 import { CoreRulesBrowser } from "@/components/codex/CoreRulesBrowser";
 import { DetachmentBrowser } from "@/components/codex/DetachmentBrowser";
 import { KeywordIndex } from "@/components/codex/KeywordIndex";
+import { OfficialPoints } from "@/components/codex/OfficialPoints";
 import type { EntityCard } from "@/lib/answer";
 import {
   fetchFactions,
@@ -18,11 +19,13 @@ import {
   type UnitRow,
 } from "@/lib/codex";
 
-const BACKEND_HINT =
-  "无法连接后端。请确认 web_api 已启动：.venv\\Scripts\\python.exe -m uvicorn web_api.main:app --port 8000";
+const BACKEND_HINT = "数据暂不可用，请稍后重试。";
+function apiError(e: unknown) {
+  return e instanceof Error ? e.message : BACKEND_HINT;
+}
 
 /** 图鉴内部的二级页签：顶栏 NAV_ITEMS 再加第 5 项会挤爆 max-w-[1100px]，全部收在页内 */
-type CodexTab = "units" | "keywords" | "detachments" | "rules" | "changelog";
+type CodexTab = "units" | "keywords" | "detachments" | "rules" | "changelog" | "points";
 
 const TABS: ReadonlyArray<{ id: CodexTab; label: string }> = [
   { id: "units", label: "单位" },
@@ -30,6 +33,7 @@ const TABS: ReadonlyArray<{ id: CodexTab; label: string }> = [
   { id: "detachments", label: "分队" },
   { id: "rules", label: "核心规则" },
   { id: "changelog", label: "规则变更" },
+  { id: "points", label: "官方点数" },
 ];
 
 /** 非单位页签的面包屑文案。写成表而不是三元嵌套：页签已经 5 个，嵌到第四层就没人看得懂了 */
@@ -38,6 +42,7 @@ const TAB_CONTEXT: Partial<Record<CodexTab, string>> = {
   detachments: "图鉴 · 分队",
   rules: "图鉴 · 核心规则",
   changelog: "图鉴 · 规则变更",
+  points: "图鉴 · 官方点数",
 };
 
 /**
@@ -84,7 +89,7 @@ export default function CodexPage() {
         });
       })
       .catch((e) => {
-        if ((e as Error).name !== "AbortError") setError(BACKEND_HINT);
+        if ((e as Error).name !== "AbortError") setError(apiError(e));
       });
     return () => ctrl.abort();
   }, [showLegacy]);
@@ -95,7 +100,7 @@ export default function CodexPage() {
     fetchUnits(factionId, ctrl.signal, showLegacy)
       .then(setUnits)
       .catch((e) => {
-        if ((e as Error).name !== "AbortError") setError(BACKEND_HINT);
+        if ((e as Error).name !== "AbortError") setError(apiError(e));
       })
       .finally(() => setLoadingUnits(false));
     return () => ctrl.abort();
@@ -118,7 +123,7 @@ export default function CodexPage() {
     fetchUnitCard(uid, l)
       .then(setCard)
       .catch((e) => {
-        if ((e as Error).name !== "AbortError") setError(BACKEND_HINT);
+        if ((e as Error).name !== "AbortError") setError(apiError(e));
       })
       .finally(() => setLoadingCard(false));
   };
@@ -181,7 +186,7 @@ export default function CodexPage() {
 
         {/* 二级页签：顶栏已有 4 项，第 5 项会挤爆 max-w-[1100px]，词条只能收在图鉴内部。
             两个页签都常驻 DOM（hidden 切换），来回切不丢已选阵营与已展开的反查清单 */}
-        <div className="mb-4 flex gap-1 border-b border-panel-line">
+        <div className="mb-4 flex flex-wrap gap-1 border-b border-panel-line">
           {TABS.map((t) => (
             <button
               key={t.id}
@@ -230,14 +235,14 @@ export default function CodexPage() {
             <button
               type="button"
               onClick={() => setShowLegacy((v) => !v)}
-              title="传承条目 = Legends / 福基世界 / 退环境单位，比赛摆不上桌，默认归档不列"
+              title="显示未匹配到当前 MFM 的条目；未匹配不等于已确认退环境"
               className={`clip-slant-8 flex-none border px-3.5 py-1.5 font-cond text-[13px] tracking-[1.5px] uppercase hover:brightness-125 ${
                 showLegacy
                   ? "border-tau/60 bg-[#0d2a30] text-cyan-glow"
                   : "border-[#2b423d] bg-[#101b1e] text-[#a9bcb6]"
               }`}
             >
-              {showLegacy ? "传承 · 显示中" : "含传承条目"}
+              {showLegacy ? "未匹配 · 显示中" : "含未匹配条目"}
             </button>
           </div>
 
@@ -355,6 +360,7 @@ export default function CodexPage() {
           </div>
         ) : null}
 
+        {tab === "points" ? <OfficialPoints /> : null}
         {changelogMounted ? (
           <div className={tab === "changelog" ? "" : "hidden"}>
             <ChangelogBrowser onError={onBackendError} />

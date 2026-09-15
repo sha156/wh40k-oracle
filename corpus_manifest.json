@@ -6,6 +6,7 @@
     { "prefix": "Event Companion", "edition": "11", "layer": "event" }
   ],
   "books": {
+    "Universal Rules Updates": { "edition": "11", "layer": "rules", "effective_date": "2026-08-26" },
     "Core Rules - New 40K Core Rules": { "edition": "11", "layer": "rules" },
     "6月4日分数中文": { "edition": "11", "layer": "points" },
     "6月4日平衡版中午": { "edition": "11", "layer": "balance" },

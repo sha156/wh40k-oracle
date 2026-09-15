@@ -28,4 +28,4 @@ One Grey Knights Psyker unit from your army that has not been selected to shoot 
 
 ## 效果
 
-Until the end of the phase, each time a model in your unit makes an attack, you can ignore any or all modifiers to that attack’s Weapon Skill or Ballistic Skill characteristics and/or any or all modifiers to the Hit roll.
+Your unit's attacks can re-roll hit rolls.

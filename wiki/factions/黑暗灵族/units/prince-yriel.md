@@ -4,17 +4,16 @@ name_zh: 伊瑞尔亲王
 name_en: Prince Yriel
 faction: 黑暗灵族
 type: unit
-points:
-  1 model: 95
 tags:
 - unit
 - unit/黑暗灵族
 - 黑暗灵族
 version:
+  points: historical / unmatched
   source: official-db
 sources:
 - book: 官方结构库 db/wh40k.sqlite（Wahapedia 11版镜像 + MFM 官方点数）
-updated: '2026-07-23'
+updated: '2026-09-14'
 ---
 
 ## 属性表
@@ -42,6 +41,7 @@ updated: '2026-07-23'
 - **灵族海盗亲王**：在双方玩家都部署完军队后，如果该单位位于战场上（或其搭乘的任何载具位于战场上），选择至多三个己方艾达灵族单位，并重新部署他们。当如此做时，您可以将它们置入战略预备队中，无论战略预备队中已经有多少个单位。
 
 ## 单位构成
+历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
 - **1个模型** — 95 分
 
 ## 关键词

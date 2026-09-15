@@ -5,7 +5,7 @@ name_en: Possessed Blade
 faction: 帝皇之子
 type: enhancement
 detachment: Carnival of Excess
-cost: 25
+cost: 35
 tags:
 - enhancement
 - enhancement/帝皇之子
@@ -15,13 +15,13 @@ sources:
 updated: '2026-07-26'
 ---
 
-25 分、[[factions/帝皇之子/detachments/carnival-of-excess.md|Carnival of Excess]] 分队。
+35 分、[[factions/帝皇之子/detachments/carnival-of-excess.md|Carnival of Excess]] 分队。
 
 ## 效果
 
 At the start of the battle, select one melee weapon equipped by the bearer; add 1 to the Attacks characteristic of that weapon. In addition, each time the bearer is selected to fight, it can use this Enhancement. If it does, while resolving those attacks, add 1 to the Damage characteristic of that weapon and that weapon has the [devastating wounds] and [hazardous] abilities.
 
-**分数**：25 分
+**分数**：35 分
 
 ## 携带限制
 

@@ -232,11 +232,16 @@ def render_unit(conn, uid: str, faction_zh: str,
     zw_ranged, zw_melee, zw_collisions = _zh_weapons_indices(
         json.loads(zd["weapons_json"]) if zd and zd["weapons_json"] else {})
     zintro = json.loads(zd["intro_json"]) if zd and zd["intro_json"] else []
+    from db_compile.source_reconcile import requires_current_english
+    if requires_current_english(conn, uid):
+        zabils = []
+        zintro = []
     zfac_kw, zkw = _zh_keywords(zintro)
 
     pj = json.loads(u["points_json"] or "{}")
     kw = json.loads(u["keywords_json"] or "{}")
     fetched = (pj.get("mfm") or {}).get("fetched_at", "")
+    is_historical = (pj.get("mfm") or {}).get("current") is False
     drift = check_drift(models, zstats) + zw_collisions
 
     L: List[str] = []
@@ -325,29 +330,38 @@ def render_unit(conn, uid: str, faction_zh: str,
     # 单位构成/点数（官方 MFM）
     if pj.get("items"):
         L += ["", "## 单位构成"]
+        if is_historical:
+            L += ["历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。"]
         for it in pj["items"]:
             L.append("- **{}** — {} 分".format(
                 _zh_model_desc(it.get("desc", "")), it.get("cost")))
 
-    # 关键词（中文优先黑图书馆，无则官方英文；可解析的裸链）
-    fac_src = zfac_kw or kw.get("faction_keywords", [])
-    kw_src = zkw or kw.get("keywords", [])
+    # Keyword membership comes from the authoritative structure, not stale translations.
+    fac_src = kw.get("faction_keywords", [])
+    kw_src = kw.get("keywords", [])
     L += ["", "## 关键词",
           "- **阵营关键词**：{}".format("，".join(_wrap(k) for k in fac_src)),
           "- **普通关键词**：{}".format("，".join(_wrap(k) for k in kw_src))]
 
     points_fm = {_clean_desc(it["desc"]): it["cost"]
                  for it in (pj.get("items") or [])
-                 if isinstance(it.get("cost"), int)}
+                 if isinstance(it.get("cost"), int) and not is_historical}
+    from db_compile.source_reconcile import unit_sources
+    reviewed_sources = unit_sources(conn, uid)
+    if u["version"] and "official-preview" in u["version"]:
+        L.insert(0, "Official preview datasheet: rules version " + u["version"] + ". Points use the current MFM; later codex wording has not been verified.\n")
     fm = WikiPageFrontmatter(
         id=str(u["id"]), name_zh=u["name_zh"], name_en=u["name_en"],
         faction=faction_zh, type="unit", points=points_fm or None,
         version={k: v for k, v in {
-            "points": "MFM {}".format(fetched) if fetched else "",
+            "points": "historical / unmatched" if is_historical else ("MFM {}".format(fetched) if fetched else ""),
             "source": "official-db",
+            "rules": u["version"] if reviewed_sources else "",
         }.items() if v},
-        sources=[{"book": "官方结构库 db/wh40k.sqlite（Wahapedia 11版镜像 + MFM 官方点数）"}],
-        updated="2026-07-23",
+        sources=([{"book": s.get("title") or s["url"], "pages": [s["page"]]}
+                  for s in reviewed_sources] or
+                 [{"book": "官方结构库 db/wh40k.sqlite（Wahapedia 11版镜像 + MFM 官方点数）"}]),
+        updated=str((pj.get("mfm") or {}).get("checked_at") or fetched or "2026-07-23")[:10],
     )
     fm.generate_tags()
     body = escape_table_pipes("\n".join(L) + "\n")

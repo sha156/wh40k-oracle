@@ -16,37 +16,37 @@
 
 ## 单位
 
-- [[factions/帝皇卫队/units/contemptor-galatus-dreadnought|伽拉图斯蔑视者无畏机甲]] — 
-- [[factions/帝皇卫队/units/coronus-grav-carrier|克洛努斯反重力运兵车]] — 
-- [[factions/帝皇卫队/units/blade-champion|剑锋冠军]] — 
-- [[factions/帝皇卫队/units/trajann-valoris|图拉真元帅]] — 
-- [[factions/帝皇卫队/units/aquilon-custodians|天鹰终结者]] — 
-- [[factions/帝皇卫队/units/sagittarum-custodians|射手座射击士]] — 
-- [[factions/帝皇卫队/units/pallas-grav-attack|帕拉斯反重力战车]] — 
-- [[factions/帝皇卫队/units/prosecutors|控诉者]] — 
-- [[factions/帝皇卫队/units/shield-captain-on-dawneagle-jetbike|摩托盾卫连长]] — 
-- [[factions/帝皇卫队/units/vertus-praetors|晨鹰摩托队]] — 
-- [[factions/帝皇卫队/units/anathema-psykana-rhino|灭魔教团犀牛装甲车]] — 
-- [[factions/帝皇卫队/units/telemon-heavy-dreadnought|特拉蒙重型无畏机甲]] — 
-- [[factions/帝皇卫队/units/witchseekers|猎巫者]] — 
-- [[factions/帝皇卫队/units/orion-assault-dropship|猎户座强袭炮艇]] — 
-- [[factions/帝皇卫队/units/valerian|瓦雷利安连长]] — 
-- [[factions/帝皇卫队/units/knight-centura|百骑长]] — 
-- [[factions/帝皇卫队/units/shield-captain|盾卫连长]] — 
-- [[factions/帝皇卫队/units/venerable-land-raider|神圣兰德掠袭者坦克]] — 
-- [[factions/帝皇卫队/units/venerable-contemptor-dreadnought|神圣蔑视者无畏机甲]] — 
-- [[factions/帝皇卫队/units/caladius-grav-tank|神鸟反重力坦克]] — 
-- [[factions/帝皇卫队/units/custodian-wardens|禁军守望者]] — 
-- [[factions/帝皇卫队/units/custodian-guard|禁军盾卫]] — 
-- [[factions/帝皇卫队/units/venatari-custodians|禁军鹰猎士]] — 
-- [[factions/帝皇卫队/units/shield-captain-in-allarus-terminator-armour|终结者盾卫连长]] — 
-- [[factions/帝皇卫队/units/aleya|艾雷雅]] — 
-- [[factions/帝皇卫队/units/custodian-guard-with-adrasite-and-pyrithite-spears|装备遗迹长矛或炙烈长矛的禁军卫队]] — 
-- [[factions/帝皇卫队/units/vigilators|警戒者]] — 
-- [[factions/帝皇卫队/units/agamatus-custodians|阿伽马图斯枪骑士]] — 
-- [[factions/帝皇卫队/units/contemptor-achillus-dreadnought|阿克琉斯蔑视者无畏机甲]] — 
-- [[factions/帝皇卫队/units/allarus-custodians|阿拉琉斯终结者]] — 
-- [[factions/帝皇卫队/units/ares-gunship|阿瑞斯炮艇机]] — 
+- [[factions/帝皇卫队/units/contemptor-galatus-dreadnought|伽拉图斯蔑视者无畏机甲]]
+- [[factions/帝皇卫队/units/coronus-grav-carrier|克洛努斯反重力运兵车]]
+- [[factions/帝皇卫队/units/blade-champion|剑锋冠军]]
+- [[factions/帝皇卫队/units/trajann-valoris|图拉真元帅]]
+- [[factions/帝皇卫队/units/aquilon-custodians|天鹰终结者]]
+- [[factions/帝皇卫队/units/sagittarum-custodians|射手座射击士]]
+- [[factions/帝皇卫队/units/pallas-grav-attack|帕拉斯反重力战车]]
+- [[factions/帝皇卫队/units/prosecutors|控诉者]]
+- [[factions/帝皇卫队/units/shield-captain-on-dawneagle-jetbike|摩托盾卫连长]]
+- [[factions/帝皇卫队/units/vertus-praetors|晨鹰摩托队]]
+- [[factions/帝皇卫队/units/anathema-psykana-rhino|灭魔教团犀牛装甲车]]
+- [[factions/帝皇卫队/units/telemon-heavy-dreadnought|特拉蒙重型无畏机甲]]
+- [[factions/帝皇卫队/units/witchseekers|猎巫者]]
+- [[factions/帝皇卫队/units/orion-assault-dropship|猎户座强袭炮艇]]
+- [[factions/帝皇卫队/units/valerian|瓦雷利安连长]]
+- [[factions/帝皇卫队/units/knight-centura|百骑长]]
+- [[factions/帝皇卫队/units/shield-captain|盾卫连长]]
+- [[factions/帝皇卫队/units/venerable-land-raider|神圣兰德掠袭者坦克]]
+- [[factions/帝皇卫队/units/venerable-contemptor-dreadnought|神圣蔑视者无畏机甲]]
+- [[factions/帝皇卫队/units/caladius-grav-tank|神鸟反重力坦克]]
+- [[factions/帝皇卫队/units/custodian-wardens|禁军守望者]]
+- [[factions/帝皇卫队/units/custodian-guard|禁军盾卫]]
+- [[factions/帝皇卫队/units/venatari-custodians|禁军鹰猎士]]
+- [[factions/帝皇卫队/units/shield-captain-in-allarus-terminator-armour|终结者盾卫连长]]
+- [[factions/帝皇卫队/units/aleya|艾雷雅]]
+- [[factions/帝皇卫队/units/custodian-guard-with-adrasite-and-pyrithite-spears|装备遗迹长矛或炙烈长矛的禁军卫队]]
+- [[factions/帝皇卫队/units/vigilators|警戒者]]
+- [[factions/帝皇卫队/units/agamatus-custodians|阿伽马图斯枪骑士]]
+- [[factions/帝皇卫队/units/contemptor-achillus-dreadnought|阿克琉斯蔑视者无畏机甲]]
+- [[factions/帝皇卫队/units/allarus-custodians|阿拉琉斯终结者]]
+- [[factions/帝皇卫队/units/ares-gunship|阿瑞斯炮艇机]]
 
 ## 策略技能
 
@@ -106,14 +106,14 @@
 
 ## 强化
 
-- [[factions/帝皇卫队/enhancements/interred-expertise|亡者专精]] — 分数未知、亡者之势 分队。
+- [[factions/帝皇卫队/enhancements/interred-expertise|亡者专精]] — 25 分、亡者之势 分队。
 - [[factions/帝皇卫队/enhancements/mantle-of-the-emissary|使节披风]] — 0 分、Voyagers in Darkness 分队。
 - [[factions/帝皇卫队/enhancements/honoured-fallen-aura|光荣逝者（光环)]] — 15 分、耀日矛头 分队。
 - [[factions/帝皇卫队/enhancements/radiant-mantle|光辉披风]] — 30 分、Talons Of The Emperor 分队。
 - [[factions/帝皇卫队/enhancements/panoptispex|全景观测仪]] — 5 分、Shield Host 分队。
 - [[factions/帝皇卫队/enhancements/blade-imperator|剑之统帅]] — 25 分、Auric Champions 分队。
 - [[factions/帝皇卫队/enhancements/fierce-conqueror|勇猛征服者]] — 15 分、帝皇之狮 分队。
-- [[factions/帝皇卫队/enhancements/encircling-hunter|包抄猎手]] — 分数未知、寂静猎手 分队。
+- [[factions/帝皇卫队/enhancements/encircling-hunter|包抄猎手]] — 15 分、寂静猎手 分队。
 - [[factions/帝皇卫队/enhancements/superior-creation|卓越造物]] — 25 分、帝皇之狮 分队。
 - [[factions/帝皇卫队/enhancements/augury-uplink|占卜仪链接]] — 35 分、耀日矛头 分队。
 - [[factions/帝皇卫队/enhancements/praesidius|卫戍]] — 25 分、帝皇之狮 分队。
@@ -123,21 +123,21 @@
 - [[factions/帝皇卫队/enhancements/champion-of-the-imperium|帝国冠军]] — 25 分、Talons Of The Emperor 分队。
 - [[factions/帝皇卫队/enhancements/the-vratine-aquila-aura|弗拉汀之鹰]] — 0 分、Black Ship Guardians 分队。
 - [[factions/帝皇卫队/enhancements/martial-philosopher|武学哲人]] — 30 分、Auric Champions 分队。
-- [[factions/帝皇卫队/enhancements/from-the-hall-of-armouries|武库大厅]] — 25 分、Shield Host 分队。
+- [[factions/帝皇卫队/enhancements/from-the-hall-of-armouries|武库大厅]] — 20 分、Shield Host 分队。
 - [[factions/帝皇卫队/enhancements/gift-of-terran-artifice|泰拉造物之赐]] — 15 分、Talons Of The Emperor 分队。
 - [[factions/帝皇卫队/enhancements/oblivion-knight|湮灭骑士]] — 25 分、Null Maiden Vigil 分队。
 - [[factions/帝皇卫队/enhancements/raptor-blade|猛禽之刃]] — 5 分、Null Maiden Vigil 分队。
 - [[factions/帝皇卫队/enhancements/aegis-projector|神盾投射器]] — 20 分、Talons Of The Emperor 分队。
 - [[factions/帝皇卫队/enhancements/adamantine-talisman|精金护符]] — 25 分、耀日矛头 分队。
-- [[factions/帝皇卫队/enhancements/auramite-sarcophagus|耀金棺柩]] — 分数未知、亡者之势 分队。
+- [[factions/帝皇卫队/enhancements/auramite-sarcophagus|耀金棺柩]] — 15 分、亡者之势 分队。
 - [[factions/帝皇卫队/enhancements/voidstrider|虚空行者]] — 0 分、Voyagers in Darkness 分队。
-- [[factions/帝皇卫队/enhancements/admonimortis|训诫之亡]] — 10 分、帝皇之狮 分队。
-- [[factions/帝皇卫队/enhancements/mnemo-locked-shrine-cipher|记忆封存神龛暗号]] — 分数未知、雷灭锤击 分队。
+- [[factions/帝皇卫队/enhancements/admonimortis|训诫之亡]] — 30 分、帝皇之狮 分队。
+- [[factions/帝皇卫队/enhancements/mnemo-locked-shrine-cipher|记忆封存神龛暗号]] — 25 分、雷灭锤击 分队。
 - [[factions/帝皇卫队/enhancements/veteran-of-the-kataphraktoi|铁骑结社的老兵]] — 10 分、耀日矛头 分队。
 - [[factions/帝皇卫队/enhancements/sinister-presence-aura|阴森威压]] — 0 分、Black Ship Guardians 分队。
 - [[factions/帝皇卫队/enhancements/veiled-blade|隐蔽之刃]] — 25 分、Auric Champions 分队。
-- [[factions/帝皇卫队/enhancements/psyk-out-grenades|驱灵手雷]] — 分数未知、寂静猎手 分队。
-- [[factions/帝皇卫队/enhancements/efficient-aggression|高效进攻]] — 分数未知、雷灭锤击 分队。
+- [[factions/帝皇卫队/enhancements/psyk-out-grenades|驱灵手雷]] — 10 分、寂静猎手 分队。
+- [[factions/帝皇卫队/enhancements/efficient-aggression|高效进攻]] — 25 分、雷灭锤击 分队。
 - [[factions/帝皇卫队/enhancements/auric-mantle|黄金披风]] — 15 分、Shield Host 分队。
 - [[factions/帝皇卫队/enhancements/inspirational-exemplar|鼓舞典范]] — 10 分、Auric Champions 分队。
 

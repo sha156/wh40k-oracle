@@ -4,17 +4,16 @@ name_zh: 炮兵小组
 name_en: Artillery Team
 faction: 基因窃取者教派
 type: unit
-points:
-  1 model: 95
 tags:
 - unit
 - unit/基因窃取者教派
 - 基因窃取者教派
 version:
+  points: historical / unmatched
   source: official-db
 sources:
 - book: 官方结构库 db/wh40k.sqlite（Wahapedia 11版镜像 + MFM 官方点数）
-updated: '2026-07-23'
+updated: '2026-09-14'
 ---
 
 ## 属性表
@@ -40,6 +39,7 @@ updated: '2026-07-23'
 - **无情弹雨**：在您的射击阶段，当该模型进行射击后如果有一次或多次本单位拥有曲射的武器成功命中了一个敌军单位，那么那个单位必须进行一次战斗震慑测试（如果一个步兵单位被该模型的多管火箭发射器命中，那么这一次战斗震慑测试的结果-1）
 
 ## 单位构成
+历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
 - **1个模型** — 95 分
 
 ## 关键词

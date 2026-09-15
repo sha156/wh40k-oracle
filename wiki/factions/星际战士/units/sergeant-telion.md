@@ -3,17 +3,16 @@ id: '000001162'
 name_en: Sergeant Telion
 faction: 星际战士
 type: unit
-points:
-  1 model: 70
 tags:
 - unit
 - unit/星际战士
 - 星际战士
 version:
+  points: historical / unmatched
   source: official-db
 sources:
 - book: 官方结构库 db/wh40k.sqlite（Wahapedia 11版镜像 + MFM 官方点数）
-updated: '2026-07-23'
+updated: '2026-09-14'
 ---
 
 ## 属性表
@@ -37,6 +36,7 @@ updated: '2026-07-23'
 - **Guiding Hand**：While this model is leading a unit, each time that unit is selected to shoot or fight, select one of the following abilities to apply to weapons equipped by models in that unit until the end of the phase: <br><ul><li>[LETHAL HITS] </li><li>[PRECISION] </li><li>[SUSTAINED HITS 1]</li></ul>
 
 ## 单位构成
+历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
 - **1个模型** — 70 分
 
 ## 关键词

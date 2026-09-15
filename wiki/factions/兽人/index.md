@@ -2,6 +2,7 @@
 
 ## 分队
 
+- [[factions/兽人/detachments/brute-bosses|Brute Bosses]] — 兽人的分队「Brute Bosses」。
 - [[factions/兽人/detachments/bully-boyz|Bully Boyz]] — 兽人的分队「Bully Boyz」，分队规则「老大在看」。
 - [[factions/兽人/detachments/da-big-hunt|Da Big Hunt]] — 兽人的分队「Da Big Hunt」，分队规则「追猎开始」。
 - [[factions/兽人/detachments/dread-mob|Dread Mob]] — 兽人的分队「Dread Mob」，分队规则「试试这按钮」。
@@ -10,6 +11,8 @@
 - [[factions/兽人/detachments/kult-of-speed|Kult of Speed]] — 兽人的分队「Kult of Speed」，分队规则「肾上腺瘾君子」。
 - [[factions/兽人/detachments/more-dakka|More Dakka!]] — 兽人的分队「More Dakka!」，分队规则「哒哒哒」。
 - [[factions/兽人/detachments/ramship-raiders|Ramship Raiders]] — 兽人的分队「Ramship Raiders」，分队规则「好战登舰者」。
+- [[factions/兽人/detachments/runt-swarm|Runt Swarm]] — 兽人的分队「Runt Swarm」。
+- [[factions/兽人/detachments/shoota-boyz|Shoota Boyz]] — 兽人的分队「Shoota Boyz」。
 - [[factions/兽人/detachments/taktikal-brigade|Taktikal Brigade]] — 兽人的分队「Taktikal Brigade」，分队规则「听好了」。
 - [[factions/兽人/detachments/war-horde|War Horde]] — 兽人的分队「War Horde」，分队规则「深陷苦战」。
 - [[factions/兽人/detachments/rollin-deff|死亡摇滚]] — 兽人的分队「死亡摇滚」。
@@ -19,96 +22,97 @@
 
 ## 单位
 
-- [[factions/兽人/units/attack-fighta|Attack Fighta]] — 
-- [[factions/兽人/units/big-gunz|Big Gunz]] — 
-- [[factions/兽人/units/big-mek-on-warbike|Big Mek On Warbike]] — 
-- [[factions/兽人/units/big-mek-with-kustom-force-field|Big Mek With Kustom Force Field]] — 
-- [[factions/兽人/units/big-trakk|Big Trakk]] — 
-- [[factions/兽人/units/boss-zagstruk|Boss Zagstruk]] — 
-- [[factions/兽人/units/chinork-warkopta|Chinork Warkopta]] — 
-- [[factions/兽人/units/da-red-gobbo|Da Red Gobbo]] — 
-- [[factions/兽人/units/da-red-gobbos-tinboy|Da Red Gobbo’s Tinboy]] — 
-- [[factions/兽人/units/deff-rolla-battle-fortress|Deff Rolla Battle Fortress]] — 
-- [[factions/兽人/units/deffkoptas-with-big-shootas|Deffkoptas With Big Shootas]] — 
-- [[factions/兽人/units/fighta-bommer|Fighta-bommer]] — 
-- [[factions/兽人/units/grot-bomm-launcha|Grot Bomm Launcha]] — 
-- [[factions/兽人/units/grot-mega-tank|Grot Mega-tank]] — 
-- [[factions/兽人/units/grot-tanks|Grot Tanks]] — 
-- [[factions/兽人/units/kannonwagon|Kannonwagon]] — 
-- [[factions/兽人/units/kaptin-badrukk|Kaptin Badrukk]] — 
-- [[factions/兽人/units/kill-krusha|Kill Krusha]] — 
-- [[factions/兽人/units/kill-tank|Kill Tank]] — 
-- [[factions/兽人/units/lifta-wagon|Lifta Wagon]] — 
-- [[factions/兽人/units/mad-dok-grotsnik|Mad Dok Grotsnik]] — 
-- [[factions/兽人/units/mega-dread|Mega Dread]] — 
-- [[factions/兽人/units/meka-dread|Meka-dread]] — 
-- [[factions/兽人/units/mekboy-workshop|Mekboy Workshop]] — 
-- [[factions/兽人/units/nob-with-waaagh-banner|Nob With Waaagh! Banner]] — 
-- [[factions/兽人/units/nobz-on-warbikes|Nobz On Warbikes]] — 
-- [[factions/兽人/units/painboy-on-warbike|Painboy On Warbike]] — 
-- [[factions/兽人/units/skorchas|Skorchas]] — 
-- [[factions/兽人/units/squiggoth|Squiggoth]] — 
-- [[factions/兽人/units/ufthak-blackhawk|Ufthak Blackhawk]] — 
-- [[factions/兽人/units/warboss-on-warbike|Warboss On Warbike]] — 
-- [[factions/兽人/units/warbuggies|Warbuggies]] — 
-- [[factions/兽人/units/beastboss|兽霸头目]] — 
-- [[factions/兽人/units/beast-snagga-boyz|兽霸小子]] — 
-- [[factions/兽人/units/painboss|剧痛头目]] — 
-- [[factions/兽人/units/painboy|剧痛小子]] — 
-- [[factions/兽人/units/trukk|卡车]] — 
-- [[factions/兽人/units/stompa|古巨基]] — 
-- [[factions/兽人/units/dakkajet|哒咔战斗机]] — 
-- [[factions/兽人/units/tankbustas|坦爆队]] — 
-- [[factions/兽人/units/biged-bossbunka|大头堡]] — 
-- [[factions/兽人/units/bigboss|大头目]] — 
-- [[factions/兽人/units/big-mek|大技霸]] — 
-- [[factions/兽人/units/boyz|小子]] — 
-- [[factions/兽人/units/mek|小技霸]] — 
-- [[factions/兽人/units/gretchin|屁精小队]] — 
-- [[factions/兽人/units/mek-gunz|屁精技师炮]] — 
-- [[factions/兽人/units/gargantuan-squiggoth|巨型斯奎格兽]] — 
-- [[factions/兽人/units/wurrboy|巫术小子]] — 
-- [[factions/兽人/units/mozrog-skragbad|恶疤莫兹罗格]] — 
-- [[factions/兽人/units/warboss|战争头目]] — 
-- [[factions/兽人/units/wartrakks|战履车]] — 
-- [[factions/兽人/units/battlewagon|战斗堡垒]] — 
-- [[factions/兽人/units/bannernob|执旗强蛮人]] — 
-- [[factions/兽人/units/wazbom-blastajet|技霸轰炸机]] — 
-- [[factions/兽人/units/shokkjump-dragsta|折跃飚速车]] — 
-- [[factions/兽人/units/lootas|拾荒小子]] — 
-- [[factions/兽人/units/gorkanaut|搞哥金刚]] — 
-- [[factions/兽人/units/warbikers|摩托小子]] — 
-- [[factions/兽人/units/kill-rig|杀戮战车]] — 
-- [[factions/兽人/units/killa-kans|杀戮铁罐]] — 
-- [[factions/兽人/units/big-mek-with-shokk-attack-gun|次元炮大技霸]] — 
-- [[factions/兽人/units/deffkilla-wartrike|死亡杀手三轮战车]] — 
-- [[factions/兽人/units/deff-dread|死死无畏机甲]] — 
-- [[factions/兽人/units/deffkoptas|死死直升机]] — 
-- [[factions/兽人/units/morkanaut|毛哥金刚]] — 
-- [[factions/兽人/units/burna-boyz|烧烤小子]] — 
-- [[factions/兽人/units/burna-bommer|燃烧轰炸机]] — 
-- [[factions/兽人/units/boomdakka-snazzwagon|爆裂靓车]] — 
-- [[factions/兽人/units/kommandos|特战小子]] — 
-- [[factions/兽人/units/hunta-rig|狩猎战车]] — 
-- [[factions/兽人/units/wazdakka-gutsmek|瓦兹达卡·古茨梅克]] — 
-- [[factions/兽人/units/weirdboy|疯癫小子]] — 
-- [[factions/兽人/units/breaka-boyz|破拆小子]] — 
-- [[factions/兽人/units/ghazghkull-thraka|碎骨者萨拉卡]] — 
-- [[factions/兽人/units/big-mek-dakkarig|突突大机甲]] — 
-- [[factions/兽人/units/nobz|老大队]] — 
-- [[factions/兽人/units/flash-gitz|脏枪混混]] — 
-- [[factions/兽人/units/zodgrod-wortsnagga|超级屁精老大监工佐德格罗德·沃茨纳加]] — 
-- [[factions/兽人/units/big-mek-in-mega-armour|超重装大技霸]] — 
-- [[factions/兽人/units/warboss-in-mega-armour|超重装战争头目]] — 
-- [[factions/兽人/units/meganobz|超重装老大]] — 
-- [[factions/兽人/units/megatrakk-scrapjet|超霸拖垃圾]] — 
-- [[factions/兽人/units/squighog-boyz|跳跳猪小子]] — 
-- [[factions/兽人/units/rukkatrukk-squigbuggy|跳跳送餐车]] — 
-- [[factions/兽人/units/blitza-bommer|闪电轰炸机]] — 
-- [[factions/兽人/units/stormboyz|风暴小子]] — 
-- [[factions/兽人/units/beastboss-on-squigosaur|骑乘跳龙的兽霸头目]] — 
-- [[factions/兽人/units/boss-snikrot|鬼祟鼠]] — 
-- [[factions/兽人/units/kustom-boosta-blasta|魔改爆裂车]] — 
+- [[factions/兽人/units/attack-fighta|Attack Fighta]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
+- [[factions/兽人/units/big-gunz|Big Gunz]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
+- [[factions/兽人/units/big-mek-on-warbike|Big Mek On Warbike]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
+- [[factions/兽人/units/big-mek-with-kustom-force-field|Big Mek With Kustom Force Field]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
+- [[factions/兽人/units/big-trakk|Big Trakk]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
+- [[factions/兽人/units/boss-zagstruk|Boss Zagstruk]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
+- [[factions/兽人/units/chinork-warkopta|Chinork Warkopta]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
+- [[factions/兽人/units/da-red-gobbo|Da Red Gobbo]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
+- [[factions/兽人/units/da-red-gobbos-tinboy|Da Red Gobbo’s Tinboy]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
+- [[factions/兽人/units/deff-rolla-battle-fortress|Deff Rolla Battle Fortress]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
+- [[factions/兽人/units/deffkoptas-with-big-shootas|Deffkoptas With Big Shootas]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
+- [[factions/兽人/units/fighta-bommer|Fighta-bommer]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
+- [[factions/兽人/units/grot-bomm-launcha|Grot Bomm Launcha]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
+- [[factions/兽人/units/grot-mega-tank|Grot Mega-tank]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
+- [[factions/兽人/units/grot-tanks|Grot Tanks]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
+- [[factions/兽人/units/kannonwagon|Kannonwagon]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
+- [[factions/兽人/units/kaptin-badrukk|Kaptin Badrukk]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
+- [[factions/兽人/units/kill-krusha|Kill Krusha]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
+- [[factions/兽人/units/kill-tank|Kill Tank]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
+- [[factions/兽人/units/lifta-wagon|Lifta Wagon]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
+- [[factions/兽人/units/mad-dok-grotsnik|Mad Dok Grotsnik]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
+- [[factions/兽人/units/mega-dread|Mega Dread]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
+- [[factions/兽人/units/meka-dread|Meka-dread]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
+- [[factions/兽人/units/mekboy-workshop|Mekboy Workshop]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
+- [[factions/兽人/units/nazdreg|Nazdreg]] — Official preview datasheet: rules version 11e-official-previ...
+- [[factions/兽人/units/nob-with-waaagh-banner|Nob With Waaagh! Banner]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
+- [[factions/兽人/units/nobz-on-warbikes|Nobz On Warbikes]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
+- [[factions/兽人/units/painboy-on-warbike|Painboy On Warbike]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
+- [[factions/兽人/units/skorchas|Skorchas]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
+- [[factions/兽人/units/squiggoth|Squiggoth]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
+- [[factions/兽人/units/ufthak-blackhawk|Ufthak Blackhawk]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
+- [[factions/兽人/units/warboss-on-warbike|Warboss On Warbike]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
+- [[factions/兽人/units/warbuggies|Warbuggies]]
+- [[factions/兽人/units/beastboss|兽霸头目]]
+- [[factions/兽人/units/beast-snagga-boyz|兽霸小子]]
+- [[factions/兽人/units/painboss|剧痛头目]]
+- [[factions/兽人/units/painboy|剧痛小子]]
+- [[factions/兽人/units/trukk|卡车]]
+- [[factions/兽人/units/stompa|古巨基]]
+- [[factions/兽人/units/dakkajet|哒咔战斗机]]
+- [[factions/兽人/units/tankbustas|坦爆队]]
+- [[factions/兽人/units/biged-bossbunka|大头堡]]
+- [[factions/兽人/units/bigboss|大头目]]
+- [[factions/兽人/units/big-mek|大技霸]]
+- [[factions/兽人/units/boyz|小子]]
+- [[factions/兽人/units/mek|小技霸]]
+- [[factions/兽人/units/gretchin|屁精小队]]
+- [[factions/兽人/units/mek-gunz|屁精技师炮]]
+- [[factions/兽人/units/gargantuan-squiggoth|巨型斯奎格兽]]
+- [[factions/兽人/units/wurrboy|巫术小子]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
+- [[factions/兽人/units/mozrog-skragbad|恶疤莫兹罗格]]
+- [[factions/兽人/units/warboss|战争头目]]
+- [[factions/兽人/units/wartrakks|战履车]]
+- [[factions/兽人/units/battlewagon|战斗堡垒]]
+- [[factions/兽人/units/bannernob|执旗强蛮人]]
+- [[factions/兽人/units/wazbom-blastajet|技霸轰炸机]]
+- [[factions/兽人/units/shokkjump-dragsta|折跃飚速车]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
+- [[factions/兽人/units/lootas|拾荒小子]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
+- [[factions/兽人/units/gorkanaut|搞哥金刚]]
+- [[factions/兽人/units/warbikers|摩托小子]]
+- [[factions/兽人/units/kill-rig|杀戮战车]]
+- [[factions/兽人/units/killa-kans|杀戮铁罐]]
+- [[factions/兽人/units/big-mek-with-shokk-attack-gun|次元炮大技霸]]
+- [[factions/兽人/units/deffkilla-wartrike|死亡杀手三轮战车]]
+- [[factions/兽人/units/deff-dread|死死无畏机甲]]
+- [[factions/兽人/units/deffkoptas|死死直升机]]
+- [[factions/兽人/units/morkanaut|毛哥金刚]]
+- [[factions/兽人/units/burna-boyz|烧烤小子]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
+- [[factions/兽人/units/burna-bommer|燃烧轰炸机]]
+- [[factions/兽人/units/boomdakka-snazzwagon|爆裂靓车]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
+- [[factions/兽人/units/kommandos|特战小子]]
+- [[factions/兽人/units/hunta-rig|狩猎战车]]
+- [[factions/兽人/units/wazdakka-gutsmek|瓦兹达卡·古茨梅克]]
+- [[factions/兽人/units/weirdboy|疯癫小子]]
+- [[factions/兽人/units/breaka-boyz|破拆小子]]
+- [[factions/兽人/units/ghazghkull-thraka|碎骨者萨拉卡]]
+- [[factions/兽人/units/big-mek-dakkarig|突突大机甲]]
+- [[factions/兽人/units/nobz|老大队]]
+- [[factions/兽人/units/flash-gitz|脏枪混混]]
+- [[factions/兽人/units/zodgrod-wortsnagga|超级屁精老大监工佐德格罗德·沃茨纳加]]
+- [[factions/兽人/units/big-mek-in-mega-armour|超重装大技霸]]
+- [[factions/兽人/units/warboss-in-mega-armour|超重装战争头目]]
+- [[factions/兽人/units/meganobz|超重装老大]]
+- [[factions/兽人/units/megatrakk-scrapjet|超霸拖垃圾]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
+- [[factions/兽人/units/squighog-boyz|跳跳猪小子]]
+- [[factions/兽人/units/rukkatrukk-squigbuggy|跳跳送餐车]]
+- [[factions/兽人/units/blitza-bommer|闪电轰炸机]]
+- [[factions/兽人/units/stormboyz|风暴小子]]
+- [[factions/兽人/units/beastboss-on-squigosaur|骑乘跳龙的兽霸头目]]
+- [[factions/兽人/units/boss-snikrot|鬼祟鼠]]
+- [[factions/兽人/units/kustom-boosta-blasta|魔改爆裂车]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
 
 ## 策略技能
 
@@ -192,11 +196,14 @@
 
 ## 强化
 
+- [[factions/兽人/enhancements/blitzboss|Blitzboss]] — 20 分、Brute Bosses 分队。
+- [[factions/兽人/enhancements/extra-sneaky|Extra Sneaky]] — 10 分、Runt Swarm 分队。
+- [[factions/兽人/enhancements/minefield-detail|Minefield Detail]] — 10 分、Runt Swarm 分队。
 - [[factions/兽人/enhancements/bionik-workshop|仿生工坊]] — 15 分、海盗船团 分队。
 - [[factions/兽人/enhancements/tellyporta-bully-boyz|传送器（Kaptin）]] — 25 分、Bully Boyz 分队。
 - [[factions/兽人/enhancements/tellyporta-kaptin-killers|传送器（Kaptin）]] — 0 分、Kaptin Killers 分队。
 - [[factions/兽人/enhancements/scarred-brute|伤痕蛮兽]] — 0 分、Ramship Raiders 分队。
-- [[factions/兽人/enhancements/ferocious-show-off|凶猛炫耀者]] — 10 分、Green Tide 分队。
+- [[factions/兽人/enhancements/ferocious-show-off|凶猛炫耀者]] — 15 分、Green Tide 分队。
 - [[factions/兽人/enhancements/skrag-every-stash|劫掠每个藏匿处]] — 25 分、Da Big Hunt 分队。
 - [[factions/兽人/enhancements/gnasher-squig-crates|咬牙菌箱]] — 0 分、Kaptin Killers 分队。
 - [[factions/兽人/enhancements/raucous-warcaller|喧闹战嚎者]] — 20 分、Green Tide 分队。
@@ -214,7 +221,7 @@
 - [[factions/兽人/enhancements/mek-kaptin|技工队长]] — 45 分、Taktikal Brigade 分队。
 - [[factions/兽人/enhancements/razgits-magik-map|拉兹吉特魔法地图]] — 25 分、海盗船团 分队。
 - [[factions/兽人/enhancements/press-it-fasta|按快点]] — 35 分、Dread Mob 分队。
-- [[factions/兽人/enhancements/headwoppas-killchoppa|断头者砍刀]] — 20 分、War Horde 分队。
+- [[factions/兽人/enhancements/headwoppas-killchoppa|断头者砍刀]] — 15 分、War Horde 分队。
 - [[factions/兽人/enhancements/da-biggest-boss|最大老大]] — 15 分、Bully Boyz 分队。
 - [[factions/兽人/enhancements/brutal-but-kunnin|残暴又狡猾]] — 25 分、Green Tide 分队。
 - [[factions/兽人/enhancements/fasta-than-yooz|比你快]] — 35 分、Kult of Speed 分队。
@@ -222,22 +229,26 @@
 - [[factions/兽人/enhancements/zog-off-and-eat-dakka|滚开吃达卡]] — 10 分、More Dakka! 分队。
 - [[factions/兽人/enhancements/smoky-gubbinz|烟雾配件]] — 15 分、Dread Mob 分队。
 - [[factions/兽人/enhancements/eadstompa|爆头者]] — 10 分、Bully Boyz 分队。
-- [[factions/兽人/enhancements/kunnin-but-brutal|狡猾又残暴]] — 15 分、War Horde 分队。
+- [[factions/兽人/enhancements/kunnin-but-brutal|狡猾又残暴]] — 20 分、War Horde 分队。
 - [[factions/兽人/enhancements/wazblasta|瓦兹炮]] — 10 分、Kult of Speed 分队。
 - [[factions/兽人/enhancements/boarding-ramps|登舰坡道]] — 分数未知、死亡摇滚 分队。
 - [[factions/兽人/enhancements/proper-killy|真能杀]] — 15 分、Da Big Hunt 分队。
+- [[factions/兽人/enhancements/targetin-squigs-more-dakka|瞄准菌]] — 15 分、More Dakka! 分队。
+- [[factions/兽人/enhancements/targetin-squigs-shoota-boyz|瞄准菌]] — 20 分、Shoota Boyz 分队。
 - [[factions/兽人/enhancements/targetin-squigs|瞄准菌]] — 15 分、More Dakka! 分队。
 - [[factions/兽人/enhancements/targetin-gizmos|瞄准装置]] — 分数未知、死亡摇滚 分队。
 - [[factions/兽人/enhancements/tuff-git|硬汉]] — 5 分、闪击旅 分队。
 - [[factions/兽人/enhancements/kustom-shokk-box|自制加速箱]] — 10 分、疾速 WAAAGH！ 分队。
-- [[factions/兽人/enhancements/glory-hog|荣耀猪]] — 30 分、Da Big Hunt 分队。
+- [[factions/兽人/enhancements/glory-hog|荣耀猪]] — 25 分、Da Big Hunt 分队。
 - [[factions/兽人/enhancements/morks-kunnin|莫克的狡诈]] — 15 分、Taktikal Brigade 分队。
 - [[factions/兽人/enhancements/squig-hide-tyres|菌皮轮胎]] — 15 分、Kult of Speed 分队。
+- [[factions/兽人/enhancements/supa-glowy-fing-dread-mob|超亮玩意]] — 20 分、Dread Mob 分队。
+- [[factions/兽人/enhancements/supa-glowy-fing-shoota-boyz|超亮玩意]] — 25 分、Shoota Boyz 分队。
 - [[factions/兽人/enhancements/supa-glowy-fing|超亮玩意]] — 20 分、Dread Mob 分队。
 - [[factions/兽人/enhancements/supercharged-squig-oil|超充菌油]] — 10 分、闪击旅 分队。
 - [[factions/兽人/enhancements/supa-burny-fuel|超级燃料]] — 15 分、疾速 WAAAGH！ 分队。
 - [[factions/兽人/enhancements/supa-cybork-body|超级赛博兽人身躯]] — 15 分、War Horde 分队。
-- [[factions/兽人/enhancements/follow-me-ladz|跟我上小子]] — 25 分、War Horde 分队。
+- [[factions/兽人/enhancements/follow-me-ladz|跟我上小子]] — 20 分、War Horde 分队。
 - [[factions/兽人/enhancements/dakkamek|达卡技工]] — 25 分、疾速 WAAAGH！ 分队。
 - [[factions/兽人/enhancements/speed-makes-right|速度即真理]] — 25 分、Kult of Speed 分队。
 - [[factions/兽人/enhancements/dead-shiny-shootas|闪亮射手]] — 35 分、More Dakka! 分队。

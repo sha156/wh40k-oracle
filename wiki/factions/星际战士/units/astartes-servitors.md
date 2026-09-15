@@ -3,17 +3,16 @@ id: '000000134'
 name_en: Astartes Servitors
 faction: 星际战士
 type: unit
-points:
-  4 models: 55
 tags:
 - unit
 - unit/星际战士
 - 星际战士
 version:
+  points: historical / unmatched
   source: official-db
 sources:
 - book: 官方结构库 db/wh40k.sqlite（Wahapedia 11版镜像 + MFM 官方点数）
-updated: '2026-07-23'
+updated: '2026-09-14'
 ---
 
 ## 属性表
@@ -43,6 +42,7 @@ updated: '2026-07-23'
 - **SERVITOR RETINUE**：At the start of the Declare Battle Formations step, this unit can join one other unit from your army that is being led by a Techmarine. If it does, until the end of the battle, every model in this unit counts as being part of that Bodyguard unit, and that Bodyguard unit’s Starting Strength is increased accordingly.
 
 ## 单位构成
+历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
 - **4个模型** — 55 分
 
 ## 关键词

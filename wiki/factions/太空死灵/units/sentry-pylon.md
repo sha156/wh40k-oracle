@@ -1,41 +1,48 @@
 ---
 id: '000000562'
+name_zh: 哨戒石碑塔
 name_en: Sentry Pylon
 faction: 太空死灵
 type: unit
-points:
-  1 model: 120
 tags:
 - unit
 - unit/太空死灵
 - 太空死灵
 version:
+  points: historical / unmatched
   source: official-db
 sources:
-- book: 官方结构库 db/wh40k.sqlite（Wahapedia 11版镜像 + MFM 官方点数）
-updated: '2026-07-23'
+- book: 'Faction Pack: Necrons'
+  pages:
+  - 36
+- book: 'Faction Pack: Necrons'
+  pages:
+  - 37
+updated: '2026-09-14'
 ---
 
 ## 属性表
 | 模型 | M | T | SV | W | LD | OC |
 |---|---|---|---|---|---|---|
-| Sentry Pylon | - | 8 | 3+ | 10 | 7+ | 0 |
+| Sentry Pylon | -" | 8 | 3+ | 10 | 7+ | 0 |
 
 ## 射击武器
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| Focused death ray | 36" | 6 | 4+ | 8 | -2 | 2 | [[core-rules/sustained-hits.md\|连击2]] |
-| Gauss exterminator | 48" | 1 | 4+ | 14 | -3 | 6 | [[core-rules/lethal-hits.md\|致命一击]] |
-| Heat cannon | 36" | 2 | 4+ | 9 | -4 | D6 | [[core-rules/melta.md\|热熔4]] |
+| 聚焦死光 | 36" | 6 | 4+ | 8 | -2 | 2 | [[core-rules/sustained-hits.md\|连击2]] |
+| 高斯灭绝炮    | 48" | 1 | 4+ | 14 | -3 | 6 | [[core-rules/lethal-hits.md\|致命一击]] |
+| 灼热光炮     | 36" | 2 | 4+ | 9 | -4 | D6 | [[core-rules/melta.md\|热熔4]] |
 
 ## 技能
-- **Teleportation Matrix**：Once per battle, at the end of your opponent’s turn, if this <span class="kwb">FORTIFICATION</span> is not within Engagement Range of one or more enemy units, you can remove it from the battlefield. In the Reinforcements step of your next Movement phase, set it up anywhere on the battlefield that is more than 9" horizontally away from all enemy models. If the battle ends and this <span class="kwb">FORTIFICATION</span> is not on the battlefield, it is destroyed.
-- **Phase-shifted Cover**：Each time a ranged attack is allocated to a model, if that model is not fully visible to every model in the attacking unit because of this <span class="kwb">FORTIFICATION</span>, that model has the Benefit of Cover against that attack.
-- **FORTIFICATION**：While an enemy unit is only within Engagement Range of one or more Fortifications from your army:<br><ul><li>That unit can still be selected as the target of ranged attacks, but each time such an attack is made, unless it is made with a Pistol, subtract 1 from the Hit roll.</li><li>Models in that unit do not need to take Desperate Escape tests due to Falling Back while Battle-shocked, except for those that will move over enemy models when doing so.</li></ul>
+- **【阵营】重生协议**
+- **传送矩阵**：每场战斗中，在您对手的回合结束时，如果该单位不在任何敌方单位的交战范围内， 你可以将该单位从战场上移除。然后，在您[[factions/兽人/stratagems/on-to-da-next.md|下一个]]移动阶段的增援步骤中，将该单位部署在 战场上位于所有敌方模型水平距离 9 英寸外的任意位置。如果战斗结束时这个单位不在战场 上，它就会被摧毁。
+- **相位转移造物**：每次将远程攻击分配给一个模型时，如果该模型由于该防御工事而不对攻击单 位中所有模型完全可见，则该模型获得针对该攻击的掩体增益。
+- **防御工事**：当一个敌方单位仅位于己方防御工事的交战范围内时：该单位依旧可以被选择成为远程攻击的目标，但是每次进行攻击时，除非使用的武器是手 枪，否则命中掷骰的结果减少 1 点。该单位中的模型不需要在处于战斗震慑状态的情况下撤退后进行溃逃测试，除非单位需要 在这么做时移动越过其他敌方模型。
 
 ## 单位构成
+历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
 - **1个模型** — 120 分
 
 ## 关键词
 - **阵营关键词**：Necrons
-- **普通关键词**：Vehicle，[[core-rules/fortification.md|Fortification]]，Sentry Pylon
+- **普通关键词**：Vehicle，[[core-rules/fortification.md|Fortification]]，Sentry Pylon，FRAME

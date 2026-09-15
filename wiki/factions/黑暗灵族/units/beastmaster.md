@@ -3,17 +3,16 @@ id: '000000652'
 name_en: Beastmaster
 faction: 黑暗灵族
 type: unit
-points:
-  7 models: 135
 tags:
 - unit
 - unit/黑暗灵族
 - 黑暗灵族
 version:
+  points: historical / unmatched
   source: official-db
 sources:
 - book: 官方结构库 db/wh40k.sqlite（Wahapedia 11版镜像 + MFM 官方点数）
-updated: '2026-07-23'
+updated: '2026-09-14'
 ---
 
 ## 属性表
@@ -45,6 +44,7 @@ updated: '2026-07-23'
 - **Beastmaster**：While this unit contains a <span class="kwb">BEASTMASTER</span> model, you can re-roll Charge rolls made for this unit.
 
 ## 单位构成
+历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
 - **7个模型** — 135 分
 
 ## 关键词

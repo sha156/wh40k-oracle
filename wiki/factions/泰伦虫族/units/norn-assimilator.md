@@ -11,11 +11,13 @@ tags:
 - unit/泰伦虫族
 - 泰伦虫族
 version:
-  points: MFM 2026-07-27 15:14
+  points: MFM 2026-09-14T05:51:23.572407+00:00
   source: official-db
 sources:
-- book: 官方结构库 db/wh40k.sqlite（Wahapedia 11版镜像 + MFM 官方点数）
-updated: '2026-07-23'
+- book: https://assets.warhammer-community.com/eng_wh40k_faction_pack_tyranids-kbkk66qiwc-nh0khbkupv.pdf
+  pages:
+  - 20
+updated: '2026-09-14'
 ---
 
 ## 属性表
@@ -35,12 +37,9 @@ updated: '2026-07-23'
 | 毒素注射鱼叉 | 近战 | 4 | 2+ | 12 | -3 | D6+1 | [[core-rules/extra-attacks.md\|额外攻击]] |
 
 ## 技能
-- **【阵营技能】亚空间阴影**
-- **【阵营技能】节点生物**
-- **单一目标**：在第一个战斗轮次开始时，选择以下一种技能:选择一个敌方单位。在战斗结束前，当该模型以该敌方单位为目标进行攻击时，您可以重掷命中掷骰，并且您可以重掷致伤掷骰。选择一个目标标记。在战斗结束前，当该模型位于该目标标记范围内时，该模型拥有不觉疼痛 5+并且目标控制属性变为 15，
-- **受损**：当该模型剩余 1-5点耐伤，当该模型进行攻击时，命中结果减1。
-- **鱼叉倒刺**：每个回合中，当位于该模型交战范围内的敌方单位被选中进行后撤时，该模型有一次机会掷一枚 D6，如果掷骰结果为2+，该敌方单位受到D6 处致命伤。
-- **【武器技能】毒素突刺**：使用本武器射击后，选择一个被本武器命中过的敌方巨兽或载具单位，在本回合中，当本模型对该敌方单位冲锋时结果+2
+- **Singular Purpose**：At the start of the first battle round, select one of the following:<br><ul><li>Select one enemy unit. Until the end of the battle, each time this model makes an attack that targets that unit, you can re-roll the Hit roll and you can re-roll the Wound roll.</li><li>Select one objective marker. Until the end of the battle, while this model is within range of that objective marker, it has the Feel No Pain 5+ ability and an Objective Control characteristic of 15.</li></ul>
+- **Harpoon Barbs**：Once per turn, when an enemy unit within Engagement Range of this model is selected to Fall Back, roll one D6: on a 2+, that unit suffers D6 mortal wounds.
+- **Harpooned**：Harpooned: When this unit declares a charge, if an enemy MONSTER/ VEHICLE unit is within 12" of this unit and was hit by an attack made by this weapon this turn, you can use this ability. If you do: ▪This unit has +2 to charge rolls until the end of the phase. ▪This unit must end that charge move engaged with that MONSTER/VEHICLE unit.
 
 ## 单位构成
 - **1个模型** — 250 分

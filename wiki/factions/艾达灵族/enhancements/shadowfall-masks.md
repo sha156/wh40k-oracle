@@ -5,6 +5,7 @@ name_en: Shadowfall Masks
 faction: 艾达灵族
 type: enhancement
 detachment: Twilight Flickers
+cost: 15
 tags:
 - enhancement
 - enhancement/艾达灵族
@@ -14,11 +15,13 @@ sources:
 updated: '2026-07-26'
 ---
 
-分数未知、[[factions/艾达灵族/detachments/twilight-flickers.md|暮光闪现]] 分队。
+15 分、[[factions/艾达灵族/detachments/twilight-flickers.md|暮光闪现]] 分队。
 
 ## 效果
 
 This unit has Fights First.
+
+**分数**：15 分
 
 ## 携带限制
 

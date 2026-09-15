@@ -4,17 +4,16 @@ name_zh: 暗影先知
 name_en: Shadowseer
 faction: 黑暗灵族
 type: unit
-points:
-  1 model: 60
 tags:
 - unit
 - unit/黑暗灵族
 - 黑暗灵族
 version:
+  points: historical / unmatched
   source: official-db
 sources:
 - book: 官方结构库 db/wh40k.sqlite（Wahapedia 11版镜像 + MFM 官方点数）
-updated: '2026-07-23'
+updated: '2026-09-14'
 ---
 
 ## 属性表
@@ -42,6 +41,7 @@ updated: '2026-07-23'
 - **危险错觉（灵能）**：以本模型所在单位为攻击目标的敌方单位装备的近战武器获得【危险】词条
 
 ## 单位构成
+历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
 - **1个模型** — 60 分
 
 ## 关键词

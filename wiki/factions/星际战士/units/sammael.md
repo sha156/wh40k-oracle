@@ -5,17 +5,19 @@ name_en: Sammael
 faction: 星际战士
 type: unit
 points:
-  1 model: 95
+  1 model: 105
 tags:
 - unit
 - unit/星际战士
 - 星际战士
 version:
-  points: MFM 2026-07-27 15:14
+  points: MFM 2026-09-14T05:51:23.572407+00:00
   source: official-db
 sources:
-- book: 官方结构库 db/wh40k.sqlite（Wahapedia 11版镜像 + MFM 官方点数）
-updated: '2026-07-23'
+- book: https://assets.warhammer-community.com/eng_wh40k_faction_pack_dark_angels-r9vgghuhil-tzntq05hcx.pdf
+  pages:
+  - 11
+updated: '2026-09-14'
 ---
 
 ## 属性表
@@ -44,8 +46,8 @@ updated: '2026-07-23'
 - **【阵营技能】破敌重誓**
 
 ## 单位构成
-- **1个模型** — 95 分
+- **1个模型** — 105 分
 
 ## 关键词
 - **阵营关键词**：Adeptus Astartes，Dark Angels
-- **普通关键词**：Sammael，[[factions/星际战士/units/captain.md|Captain]]，Ravenwing，Imperium，[[core-rules/grenades.md|Grenades]]，Fly，[[core-rules/epic-hero.md|Epic Hero]]，[[core-rules/character.md|Character]]，[[core-rules/mounted.md|Mounted]]
+- **普通关键词**：Sammael，[[factions/星际战士/units/captain.md|Captain]]，Ravenwing，Imperium，[[core-rules/grenades.md|Grenades]]，Fly，[[core-rules/epic-hero.md|Epic Hero]]，[[core-rules/character.md|Character]]，[[core-rules/mounted.md|Mounted]]，FRAME

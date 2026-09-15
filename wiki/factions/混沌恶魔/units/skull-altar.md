@@ -11,11 +11,16 @@ tags:
 - unit/混沌恶魔
 - 混沌恶魔
 version:
-  points: MFM 2026-07-27 15:14
+  points: MFM 2026-09-14T05:51:23.572407+00:00
   source: official-db
 sources:
-- book: 官方结构库 db/wh40k.sqlite（Wahapedia 11版镜像 + MFM 官方点数）
-updated: '2026-07-23'
+- book: 'Faction Pack: Chaos Daemons'
+  pages:
+  - 36
+- book: 'Faction Pack: Chaos Daemons'
+  pages:
+  - 37
+updated: '2026-09-14'
 ---
 
 ## 属性表
@@ -33,4 +38,4 @@ updated: '2026-07-23'
 
 ## 关键词
 - **阵营关键词**：Legiones Daemonica
-- **普通关键词**：Chaos，[[core-rules/fortification.md|Fortification]]，Daemon，Khorne，Skull Altar，[[factions/混沌恶魔/detachments/shadow-legion.md|Shadow Legion]]
+- **普通关键词**：Chaos，[[core-rules/fortification.md|Fortification]]，Daemon，Khorne，Skull Altar，[[factions/混沌恶魔/detachments/shadow-legion.md|Shadow Legion]]，FRAME

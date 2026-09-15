@@ -4,18 +4,16 @@ name_zh: 虚空劫掠者海盗
 name_en: Corsair Voidreavers
 faction: 黑暗灵族
 type: unit
-points:
-  5 models: 65
-  10 models: 110
 tags:
 - unit
 - unit/黑暗灵族
 - 黑暗灵族
 version:
+  points: historical / unmatched
   source: official-db
 sources:
 - book: 官方结构库 db/wh40k.sqlite（Wahapedia 11版镜像 + MFM 官方点数）
-updated: '2026-07-23'
+updated: '2026-09-14'
 ---
 
 ## 属性表
@@ -45,6 +43,7 @@ updated: '2026-07-23'
 - **虚空掠夺者**：本单位在进行攻击时可重投结果为1 的命中骰；若本次攻击的目标是位于目标点范围内的敌方单位，则可以重投所有命中骰
 
 ## 单位构成
+历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
 - **5个模型** — 65 分
 - **10个模型** — 110 分
 

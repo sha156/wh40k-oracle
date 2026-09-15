@@ -3,17 +3,21 @@ id: '000000506'
 name_en: Scythed Hierodule
 faction: 泰伦虫族
 type: unit
-points:
-  1 model: 330
 tags:
 - unit
 - unit/泰伦虫族
 - 泰伦虫族
 version:
+  points: historical / unmatched
   source: official-db
 sources:
-- book: 官方结构库 db/wh40k.sqlite（Wahapedia 11版镜像 + MFM 官方点数）
-updated: '2026-07-23'
+- book: 'Faction Pack: Tyranids'
+  pages:
+  - 30
+- book: 'Faction Pack: Tyranids'
+  pages:
+  - 31
+updated: '2026-09-14'
 ---
 
 ## 属性表
@@ -35,8 +39,9 @@ updated: '2026-07-23'
 - **Irresistible Force**：This model is eligible to declare a charge in a turn in which it Fell Back.
 
 ## 单位构成
+历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
 - **1个模型** — 330 分
 
 ## 关键词
 - **阵营关键词**：Tyranids
-- **普通关键词**：Monster，Great Devourer，Scythed Hierodule
+- **普通关键词**：Monster，Great Devourer，Scythed Hierodule，FRAME

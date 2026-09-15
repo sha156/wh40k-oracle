@@ -5,17 +5,17 @@ name_en: Wazdakka Gutsmek
 faction: 兽人
 type: unit
 points:
-  1 model: 175
+  1 model: 200
 tags:
 - unit
 - unit/兽人
 - 兽人
 version:
-  points: MFM 2026-07-27 15:14
+  points: MFM 2026-09-14T05:51:23.572407+00:00
   source: official-db
 sources:
 - book: 官方结构库 db/wh40k.sqlite（Wahapedia 11版镜像 + MFM 官方点数）
-updated: '2026-07-23'
+updated: '2026-09-14'
 ---
 
 ## 属性表
@@ -45,8 +45,8 @@ updated: '2026-07-23'
 - **瓦兹达卡的 WAAAGH!**：如果该模型是己方统帅，则己方[[factions/兽人/units/warbikers.md|摩托小子]]单位拥有战线关键词。
 
 ## 单位构成
-- **1个模型** — 175 分
+- **1个模型** — 200 分
 
 ## 关键词
-- **阵营关键词**：兽人
-- **普通关键词**：[[core-rules/mounted.md|骑乘]]，[[core-rules/vehicle.md|载具]]，极速怪咖，[[core-rules/epic-hero.md|史诗英雄]]，烟幕，[[core-rules/character.md|人物]]，瓦兹达卡·古茨梅克，单位构成
+- **阵营关键词**：Orks
+- **普通关键词**：[[core-rules/mounted.md|Mounted]]，Vehicle，Speed Freeks，[[core-rules/epic-hero.md|Epic Hero]]，[[core-rules/smoke.md|Smoke]]，[[core-rules/character.md|Character]]，Wazdakka Gutsmek

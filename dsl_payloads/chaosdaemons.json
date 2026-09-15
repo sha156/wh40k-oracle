@@ -698,9 +698,16 @@
     "混沌国度：撤出战场进战略预备队并下回合深入打击——预备队域无载体"
    ],
    "provenance": {
-    "text_sha256": "902213c3d28fb408d07a5a21fdd87caf91be7b8cd154e0c43f489748e4317018"
+    "text_sha256": "9a8c3d136a428f97f82da82c1f42e8fde576e5bfbd84e58ce67884eee45bbd3b",
+    "reviewed_source": {
+     "url": "https://assets.warhammer-community.com/eng_22-07_warhammer_40,000_faction_pack_chaos_daemons-lycqqrymwe-qogh4b5yly.pdf",
+     "sha256": "818f7ef144691b9eef6b3c5b5d0a39793690af5a958037b7055215e6675e6a2c",
+     "page": 1,
+     "title": "Faction Pack: Chaos Daemons"
+    },
+    "current_text": "<b>WHEN:</b> End of your opponent’s turn.<br><br><b>TARGET:</b> Up to two <span class=\"kwb\">LEGIONES</span> <span class=\"kwb\">DAEMONICA</span> units from your army that are within your army’s Shadow of Chaos, or one other <span class=\"kwb\">LEGIONES</span> <span class=\"kwb\">DAEMONICA</span> unit from your army.<br><br><b>EFFECT:</b> Place your unit in strategic reserves. Your unit must make an ingress move in your next Movement phase (including in your first turn).<br><br><b>RESTRICTIONS:</b> You cannot target units that are within Engagement Range of one or more enemy units with this Stratagem."
    },
-   "encoded_by": "manual-2026-07-21",
+   "encoded_by": "manual-2026-09-15",
    "weapon_filter": ""
   },
   {
@@ -987,9 +994,16 @@
     "痛楚窃贼：把本单位失去的伤转成友军单位吃致命伤——伤害转移（异单位）无载体"
    ],
    "provenance": {
-    "text_sha256": "737cb386623c97d7e55312168511cc4ad12f8b563f65b6996628dd57e08cf972"
+    "text_sha256": "e8bba3b542252931ae1f0df03b2cae6c4e2bcc587a7bda2b645d4db9e7594d64",
+    "reviewed_source": {
+     "url": "https://assets.warhammer-community.com/eng_22-07_warhammer_40,000_faction_pack_chaos_daemons-lycqqrymwe-qogh4b5yly.pdf",
+     "sha256": "818f7ef144691b9eef6b3c5b5d0a39793690af5a958037b7055215e6675e6a2c",
+     "page": 1,
+     "title": "Faction Pack: Chaos Daemons"
+    },
+    "current_text": "<b>WHEN:</b> Any phase, when an enemy unit targets a friendly LEGIONES DAEMONICA SLAANESH unit (excluding MONSTER/VEHICLE units), or when a friendly LEGIONES DAEMONICA SLAANESH unit (excluding MONSTER/VEHICLE units) suffers a mortal wound.<br><br><b>TARGET:</b> That <span class=\"kwb\">LEGIONES</span> <span class=\"kwb\">DAEMONICA</span> <span class=\"kwb\">SLAANESH</span> unit.<br><br><b>EFFECT:</b> Select one other friendly <span class=\"kwb\">LEGIONES</span> <span class=\"kwb\">DAEMONICA</span> <span class=\"kwb\">SLAANESH</span> unit that is within 9\" of and visible to your unit. Until the end of the phase, while the selected unit is on the battlefield, each time a model in your unit would lose a wound, inflict 1 mortal wound on the selected unit instead."
    },
-   "encoded_by": "manual-2026-07-21",
+   "encoded_by": "manual-2026-09-15",
    "weapon_filter": ""
   },
   {
@@ -1365,9 +1379,16 @@
     "腐臭复苏：复活模型 / MONSTER 回血 D3+1——复活与治疗域无载体"
    ],
    "provenance": {
-    "text_sha256": "4abe53c5bde2898bd10808e40e2c045645c19e283242a88839c30ff207470137"
+    "text_sha256": "95a5804ec1ff4465569334eef08988f4242e0ee963f48cabaeffdcde8d089bab",
+    "reviewed_source": {
+     "url": "https://assets.warhammer-community.com/eng_22-07_warhammer_40,000_faction_pack_chaos_daemons-lycqqrymwe-qogh4b5yly.pdf",
+     "sha256": "818f7ef144691b9eef6b3c5b5d0a39793690af5a958037b7055215e6675e6a2c",
+     "page": 1,
+     "title": "Faction Pack: Chaos Daemons"
+    },
+    "current_text": "<b>WHEN:</b> Your Command phase.<br><br><b>TARGET:</b> One Legiones Daemonica Nurgle unit from your army that is on the battlefield.<br><br><b>EFFECT:</b> Return up to 1 destroyed model to your unit (excluding CHARACTER models) or up to D3 destroyed models instead (excluding CHARACTER models) if your unit is a BATTLELINE unit, with their full wounds remaining. If your unit is a MONSTER unit, one model in your unit regains up to D3+1 lost wounds instead."
    },
-   "encoded_by": "manual-2026-07-21",
+   "encoded_by": "manual-2026-09-15",
    "weapon_filter": ""
   },
   {
@@ -2590,9 +2611,16 @@
     "地狱傀儡师：改从友军单位量测射程与视线——射程/视线几何无载体"
    ],
    "provenance": {
-    "text_sha256": "b6b2d8105cd7293ea8889c0f7936ba6990c7d02f3733df8fdf1b6479d1a180b3"
+    "text_sha256": "53b6fae040864b51ccd624b0f37da6bb6f9889c6c531531e3b8f211f808a29f9",
+    "reviewed_source": {
+     "url": "https://assets.warhammer-community.com/eng_22-07_warhammer_40,000_faction_pack_chaos_daemons-lycqqrymwe-qogh4b5yly.pdf",
+     "sha256": "818f7ef144691b9eef6b3c5b5d0a39793690af5a958037b7055215e6675e6a2c",
+     "page": 1,
+     "title": "Faction Pack: Chaos Daemons"
+    },
+    "current_text": "LEGIONES DAEMONICA TZEENTCH MONSTER model only. In your Shooting phase, when this unit is selected to shoot, while an enemy unit is visible to a friendly LEGIONES DAEMONICA TZEENTCH unit, that enemy unit has +9\" detection range until this unit has shot."
    },
-   "encoded_by": "manual-2026-07-21",
+   "encoded_by": "manual-2026-09-15",
    "weapon_filter": ""
   },
   {

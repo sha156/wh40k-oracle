@@ -11,11 +11,13 @@ tags:
 - unit/帝皇卫队
 - 帝皇卫队
 version:
-  points: MFM 2026-07-27 15:14
+  points: MFM 2026-09-14T05:51:23.572407+00:00
   source: official-db
 sources:
-- book: 官方结构库 db/wh40k.sqlite（Wahapedia 11版镜像 + MFM 官方点数）
-updated: '2026-07-23'
+- book: 'Faction Pack: Adeptus Custodes'
+  pages:
+  - 1
+updated: '2026-09-14'
 ---
 
 ## 属性表
@@ -38,9 +40,7 @@ updated: '2026-07-23'
 | 装甲外壳 | 近战 | 9 | 4+ | 9 | 0 | 1 | — |
 
 ## 技能
-- **【阵营技能】：禁军武艺**
-- **炼狱燃烧弹**：每次本模型完成标准移动后，你可以选择一个飞跃的敌方单位，那个单位直到回合结束前都无法获得掩体增益，另外为该单位中的每个模型投1个D6，每个为6的结果对该敌方单位造成1点致命伤。
-- **受损：剩余1-7W时**：当本模型剩余1-7W时，每次攻击时命中骰结果-1。
+- **Infernus Firebombs**：At the end of your Movement phase, select one visible enemy unit (excluding AIRCRAFT/Lone Operative units) within 24" of this unit: That enemy unit cannot have the benefit of cover until the end of your next Shooting phase. Roll one D6 for each model in that enemy unit: for each 6, that enemy unit suffers 1 mortal wound.
 
 ## 单位构成
 - **1个模型** — 580 分

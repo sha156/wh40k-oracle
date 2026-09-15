@@ -107,7 +107,7 @@ M 和 OC 变为 ”-“。
 
 ### [[factions/星际战士/stratagems/machine-vengeance.md|机械复仇]]祈祷技能
 
-改为：“在己方指挥阶段开始时，选择一个对手军队中的单位。在下一个己方指挥阶段开始前，那个敌方单位是您的机械复仇目标。每当一个己方机械修会单位中的模型对机械复仇目标进行攻击时，您可以重掷命中掷骰。”
+改为：“在己方指挥阶段开始时，选择一个对手军队中的单位。在[[factions/兽人/stratagems/on-to-da-next.md|下一个]]己方指挥阶段开始前，那个敌方单位是您的[[factions/星际战士/stratagems/machine-vengeance.md|机械复仇]]目标。每当一个己方机械修会单位中的模型对[[factions/星际战士/stratagems/machine-vengeance.md|机械复仇]]目标进行攻击时，您可以重掷命中掷骰。”
 
 ### 纪律真言技能
 

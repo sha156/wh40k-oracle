@@ -5,7 +5,7 @@ name_en: Follow Me Ladz
 faction: 兽人
 type: enhancement
 detachment: War Horde
-cost: 25
+cost: 20
 tags:
 - enhancement
 - enhancement/兽人
@@ -15,13 +15,13 @@ sources:
 updated: '2026-07-26'
 ---
 
-25 分、[[factions/兽人/detachments/war-horde.md|War Horde]] 分队。
+20 分、[[factions/兽人/detachments/war-horde.md|War Horde]] 分队。
 
 ## 效果
 
 While the bearer is leading a unit, add 2" to the Move characteristic of models in that unit.
 
-**分数**：25 分
+**分数**：20 分
 
 ## 携带限制
 

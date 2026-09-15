@@ -5,6 +5,7 @@ name_en: Encircling Hunter
 faction: 帝皇卫队
 type: enhancement
 detachment: Silent Hunters
+cost: 15
 tags:
 - enhancement
 - enhancement/帝皇卫队
@@ -14,11 +15,13 @@ sources:
 updated: '2026-07-26'
 ---
 
-分数未知、[[factions/帝皇卫队/detachments/silent-hunters.md|寂静猎手]] 分队。
+15 分、[[factions/帝皇卫队/detachments/silent-hunters.md|寂静猎手]] 分队。
 
 ## 效果
 
 When both players have deployed their armies, you can redeploy up to three friendly ANATHEMA PSYKANA INFANTRY units. When doing so, you can set those units up in strategic reserves, regardless of how many units are already in strategic reserves.
+
+**分数**：15 分
 
 ## 携带限制
 

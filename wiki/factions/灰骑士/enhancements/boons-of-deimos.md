@@ -5,6 +5,7 @@ name_en: Boons of Deimos
 faction: 灰骑士
 type: enhancement
 detachment: Fires of Purgation
+cost: 20
 tags:
 - enhancement
 - enhancement/灰骑士
@@ -14,11 +15,13 @@ sources:
 updated: '2026-07-26'
 ---
 
-分数未知、[[factions/灰骑士/detachments/fires-of-purgation.md|洗罪之火]] 分队。
+20 分、[[factions/灰骑士/detachments/fires-of-purgation.md|洗罪之火]] 分队。
 
 ## 效果
 
 This unit's ranged attacks have +2 S.
+
+**分数**：20 分
 
 ## 携带限制
 

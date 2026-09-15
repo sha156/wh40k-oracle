@@ -5,6 +5,7 @@ name_en: Swollen with Power
 faction: 混沌恶魔
 type: enhancement
 detachment: Lords of the Warp
+cost: 10
 tags:
 - enhancement
 - enhancement/混沌恶魔
@@ -14,11 +15,13 @@ sources:
 updated: '2026-07-26'
 ---
 
-分数未知、[[factions/混沌恶魔/detachments/lords-of-the-warp.md|亚空间领主]] 分队。
+10 分、[[factions/混沌恶魔/detachments/lords-of-the-warp.md|亚空间领主]] 分队。
 
 ## 效果
 
 LEGIONES DAEMONICA CHARACTER model only (excluding MONSTER units). This model has +2 Wounds characteristic.
+
+**分数**：10 分
 
 ## 携带限制
 

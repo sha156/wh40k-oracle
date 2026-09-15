@@ -45,14 +45,14 @@ SM_DETACHMENTS = (
     "Ceramite Sentinels", "Blade of Ultramar", "Hammer of Avernii",
     "Spearpoint Task Force", "Forgefather’s Seekers", "Emperor’s Shield",
     "Shadowmark Talon", "Bastion Task Force", "Orbital Assault Force",
-    "Reclamation Force", "Fulguris Task Force", "Subversion Assets",
+    "Reclamation Force", "Fulguris Task Force", "Subversion Assets", "Vengeful Hosts",
 )
 # 18 条分队规则物化条目 id（det + detachments 源行 id；含双规则分队 Hammer/Spearpoint/Shadowmark）
 SM_RULE_IDS = (
     "det000009784", "det000010777", "det000010782", "det000010758", "det000010632",
     "det000010620", "det000010621", "det000010626", "det000010627", "det000010367",
     "det000010459", "det000010463", "det000010464", "det000010675", "det000010679",
-    "det000010683", "detfp11e-spacemarines-fulguris", "detfp11e-spacemarines-subversion",
+    "det000010683", "detfp11e-spacemarines-fulguris", "detfp11e-spacemarines-subversion", "detfp11e-sm-vengeful-hosts",
 )
 
 
@@ -100,17 +100,17 @@ def _ratio(numer, denom):
 class TestPayloadShape:
     def test_counts(self, entries):
         # 18 规则 + 84 战略 + 56 增强 = 158（0 encoded / 44 partial / 114 not_modeled）
-        assert len(entries) == 158
+        assert len(entries) == 165
         by = {}
         for e in entries:
             by[e.status] = by.get(e.status, 0) + 1
-        assert by == {"partial": 44, "not_modeled": 114}
+        assert by == {"partial": 45, "not_modeled": 120}
 
     def test_table_breakdown(self, entries):
         by = {}
         for e in entries:
             by[e.table] = by.get(e.table, 0) + 1
-        assert by == {"abilities": 18, "stratagems": 84, "enhancements": 56}
+        assert by == {"abilities": 19, "stratagems": 87, "enhancements": 59}
 
     def test_faction_is_sm(self, entries):
         assert all(e.faction == "SM" for e in entries)

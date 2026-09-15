@@ -7,6 +7,7 @@ aliases:
 faction: 黑暗灵族
 type: enhancement
 detachment: Kabalite Agonysts
+cost: 15
 tags:
 - enhancement
 - enhancement/黑暗灵族
@@ -16,11 +17,13 @@ sources:
 updated: '2026-07-26'
 ---
 
-分数未知、[[factions/黑暗灵族/detachments/kabalite-agonysts.md|阴谋团折磨使]] 分队。
+15 分、[[factions/黑暗灵族/detachments/kabalite-agonysts.md|阴谋团折磨使]] 分队。
 
 ## 效果
 
 This unit has +1 Ld and OC.
+
+**分数**：15 分
 
 ## 携带限制
 

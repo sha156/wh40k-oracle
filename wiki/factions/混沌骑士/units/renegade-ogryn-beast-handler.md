@@ -3,18 +3,16 @@ id: '000003858'
 name_en: Renegade Ogryn Beast Handler
 faction: 混沌骑士
 type: unit
-points:
-  4 models: 40
-  7 models: 70
 tags:
 - unit
 - unit/混沌骑士
 - 混沌骑士
 version:
+  points: historical / unmatched
   source: official-db
 sources:
 - book: 官方结构库 db/wh40k.sqlite（Wahapedia 11版镜像 + MFM 官方点数）
-updated: '2026-07-23'
+updated: '2026-09-14'
 ---
 
 ## 属性表
@@ -33,6 +31,7 @@ updated: '2026-07-23'
 - **Beastmaster**：While this unit contains an Ogryn Pack Master model, you can re-roll Charge rolls made for this unit, and each time a Chaos Mauler Hound model in this unit makes an attack, re-roll a Hit roll of 1.
 
 ## 单位构成
+历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
 - **4个模型** — 40 分
 - **7个模型** — 70 分
 

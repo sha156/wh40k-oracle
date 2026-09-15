@@ -2944,9 +2944,15 @@
     "第二从句「Harlequins 单位下车后本回合武器获 [SUSTAINED HITS 1]」与第一从句同效果，编码已按第一从句恒生效处理，下车分支不另设开关"
    ],
    "provenance": {
-    "text_sha256": "8e38519c1b70136d76ec748837aa92fc29fa0e7e9cbba5ce925b796a95f6a09d"
+    "text_sha256": "4542213486d61390c3be39c5a16a995e8cc5018cdfe8d533e0af0f00a01ec337",
+    "reviewed_source": {
+     "url": "https://assets.warhammer-community.com/eng_wh40k_faction_pack_aeldari-r7ubocxyoz-nhd972kesl.pdf",
+     "sha256": "07cfef8fbf48a3e6be28563b0bbc3151cd173848052a2466029c09f16f8ba20e",
+     "page": 1,
+     "title": "Faction Pack: Aeldari"
+    }
    },
-   "encoded_by": "manual-2026-07-21",
+   "encoded_by": "manual-2026-09-15",
    "weapon_filter": "",
    "materialize": {
     "from_table": "detachments",

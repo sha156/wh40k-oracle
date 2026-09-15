@@ -75,9 +75,13 @@ _EMPTY_CHECKS: Dict[str, Callable[[Dict[str, Any]], bool]] = {
     # 一个名字都没解析到时降级兜底，别把「工具空手」留给模型自由发挥（基准 #109 硬错：
     # 四个中文名全查空后模型编出「泰坦军团不是 40K 阵营、无官方点数」的否定性断言）。
     # 只要有一个单位查到就不算空——「查到了但库里没点数」是诚实答案，不该被兜底吞掉。
-    "calc_points": lambda r: (not r.get("found")
-                              or bool(r.get("units"))
-                              and all(u.get("unresolved") for u in r["units"])),
+    # `param_error` 例外（审查 R1-M1）：入参类型写错时 tools.calc_points 也返回
+    # found=False，但那是**模型自己能改对**的错，不是「库里没有」。判空即降级会让它
+    # 看不到「unit_list 应为列表」那句指路，白白丢掉一次恢复机会。
+    "calc_points": lambda r: (not r.get("param_error")
+                              and (not r.get("found")
+                                   or bool(r.get("units"))
+                                   and all(u.get("unresolved") for u in r["units"]))),
 }
 
 
@@ -133,7 +137,7 @@ class AgentLoop:
         intent = self._classify(user_input)
 
         try:
-            result = self._run_tool_loop(user_input, intent)
+            result = self._run_tool_loop(user_input, intent, session.history)
         except Exception as exc:
             result = self._fallback(user_input, intent, tool_calls=[], reason=f"异常: {exc}")
 
@@ -148,8 +152,11 @@ class AgentLoop:
             return DEFAULT_INTENT
         return intent if intent in INTENTS else DEFAULT_INTENT
 
-    def _run_tool_loop(self, user_input: str, intent: str) -> AgentResult:
-        messages: List[Dict[str, Any]] = [{"role": "user", "content": user_input}]
+    def _run_tool_loop(self, user_input: str, intent: str, history=None) -> AgentResult:
+        # Past answers resolve references; the existing fresh-tool gate still
+        # requires current evidence for every rules/points question.
+        messages: List[Dict[str, Any]] = [dict(m) for m in (history or [])[-12:]]
+        messages.append({"role": "user", "content": user_input})
         tool_calls: List[str] = []
         nudged_for_tools = False
         nudged_for_empty = False       # 空 final 只给一次重答机会（评审 M#5）

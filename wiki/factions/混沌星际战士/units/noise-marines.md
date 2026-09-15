@@ -4,17 +4,16 @@ name_zh: 音爆战士
 name_en: Noise Marines
 faction: 混沌星际战士
 type: unit
-points:
-  6 models: 145
 tags:
 - unit
 - unit/混沌星际战士
 - 混沌星际战士
 version:
+  points: historical / unmatched
   source: official-db
 sources:
 - book: 官方结构库 db/wh40k.sqlite（Wahapedia 11版镜像 + MFM 官方点数）
-updated: '2026-07-23'
+updated: '2026-09-14'
 ---
 
 ## 属性表
@@ -40,6 +39,7 @@ updated: '2026-07-23'
 - **Terrifying Crescendo**：In your Shooting phase, after this unit has shot, select one enemy unit hit by one or more of those attacks. Until the start of your next Shooting phase, each time a Battle-shock or Leadership test is taken for that enemy unit, subtract 1 from that test.
 
 ## 单位构成
+历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
 - **6个模型** — 145 分
 
 ## 关键词

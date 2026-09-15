@@ -3,17 +3,16 @@ id: '000001397'
 name_en: Munitorum Servitors
 faction: 星界军
 type: unit
-points:
-  4 models: 35
 tags:
 - unit
 - unit/星界军
 - 星界军
 version:
+  points: historical / unmatched
   source: official-db
 sources:
 - book: 官方结构库 db/wh40k.sqlite（Wahapedia 11版镜像 + MFM 官方点数）
-updated: '2026-07-23'
+updated: '2026-09-14'
 ---
 
 ## 属性表
@@ -36,13 +35,14 @@ updated: '2026-07-23'
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
 | 格斗武器 | 近战 | 1 | 5+ | 3 | 0 | 1 | — |
-| Servitor’s servo-arm | 近战 | 1 | 5+ | 6 | -2 | 3 | — |
+| 奴工伺服臂 | 近战 | 1 | 5+ | 6 | -2 | 3 | — |
 
 ## 技能
 - **Mindlock**：While a friendly [[factions/星界军/units/tech-priest-enginseer.md|Tech-Priest Enginseer]] model is leading this unit, improve the Ballistic Skill and Weapon Skill characteristics of ranged and melee weapons equipped by <span class="kwb">MUNITORUM</span> <span class="kwb">SERVITOR</span> models in this unit by 1.
 - **SERVITOR RETINUE**：At the start of the Declare Battle Formations step, this unit can join one other unit from your army that is being led by a Regimental Enginseer (a unit cannot have more than one <span class="kwb">MUNITORUM</span> <span class="kwb">SERVITORS</span> unit joined to it). If it does, until the end of the battle, every model in this unit counts as being part of that Bodyguard unit, and that Bodyguard unit’s Starting Strength is increased accordingly.
 
 ## 单位构成
+历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
 - **4个模型** — 35 分
 
 ## 关键词

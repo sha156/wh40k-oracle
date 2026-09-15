@@ -7,6 +7,7 @@ aliases:
 faction: 黑暗灵族
 type: enhancement
 detachment: Tools of Torment
+cost: 15
 tags:
 - enhancement
 - enhancement/黑暗灵族
@@ -16,11 +17,13 @@ sources:
 updated: '2026-07-26'
 ---
 
-分数未知、[[factions/黑暗灵族/detachments/tools-of-torment.md|折磨工具]] 分队。
+15 分、[[factions/黑暗灵族/detachments/tools-of-torment.md|折磨工具]] 分队。
 
 ## 效果
 
 This unit has a 5+ invulnerable save.
+
+**分数**：15 分
 
 ## 携带限制
 

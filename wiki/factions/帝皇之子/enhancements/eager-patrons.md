@@ -7,6 +7,7 @@ aliases:
 faction: 帝皇之子
 type: enhancement
 detachment: Spectacle of Slaughter
+cost: 20
 tags:
 - enhancement
 - enhancement/帝皇之子
@@ -16,11 +17,13 @@ sources:
 updated: '2026-07-26'
 ---
 
-分数未知、[[factions/帝皇之子/detachments/spectacle-of-slaughter.md|杀戮盛景]] 分队。
+20 分、[[factions/帝皇之子/detachments/spectacle-of-slaughter.md|杀戮盛景]] 分队。
 
 ## 效果
 
 This unit has +2" M.
+
+**分数**：20 分
 
 ## 携带限制
 

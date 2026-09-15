@@ -3,18 +3,16 @@ id: '000000049'
 name_en: Grot Tanks
 faction: 兽人
 type: unit
-points:
-  4 models: 155
-  8 models: 310
 tags:
 - unit
 - unit/兽人
 - 兽人
 version:
+  points: historical / unmatched
   source: official-db
 sources:
 - book: 官方结构库 db/wh40k.sqlite（Wahapedia 11版镜像 + MFM 官方点数）
-updated: '2026-07-23'
+updated: '2026-09-14'
 ---
 
 ## 属性表
@@ -40,6 +38,7 @@ updated: '2026-07-23'
 - **Scatter!**：Once per turn, when an enemy unit ends a Normal, Advance or Fall Back move within 9" of this unit, if this unit is not within Engagement Range of one or more enemy units, it can make a Normal move of up to 6".
 
 ## 单位构成
+历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
 - **4个模型** — 155 分
 - **8个模型** — 310 分
 

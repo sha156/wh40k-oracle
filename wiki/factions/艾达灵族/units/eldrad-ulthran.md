@@ -5,17 +5,17 @@ name_en: Eldrad Ulthran
 faction: 艾达灵族
 type: unit
 points:
-  1 model: 130
+  1 model: 120
 tags:
 - unit
 - unit/艾达灵族
 - 艾达灵族
 version:
-  points: MFM 2026-07-27 15:14
+  points: MFM 2026-09-14T05:51:23.572407+00:00
   source: official-db
 sources:
 - book: 官方结构库 db/wh40k.sqlite（Wahapedia 11版镜像 + MFM 官方点数）
-updated: '2026-07-23'
+updated: '2026-09-14'
 ---
 
 ## 属性表
@@ -43,7 +43,7 @@ updated: '2026-07-23'
 - **末日（灵能）**：在你的移动阶段结束时，选择一个位于本模型18寸内可见的敌方单位，直到你的[[factions/兽人/stratagems/on-to-da-next.md|下一个]]指挥阶段开始，你的友方艾达灵族模型在攻击该敌方单位时造伤骰结果+1
 
 ## 单位构成
-- **1个模型** — 130 分
+- **1个模型** — 120 分
 
 ## 关键词
 - **阵营关键词**：Asuryani

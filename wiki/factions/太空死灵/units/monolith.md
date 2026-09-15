@@ -11,11 +11,16 @@ tags:
 - unit/太空死灵
 - 太空死灵
 version:
-  points: MFM 2026-07-27 15:14
+  points: MFM 2026-09-14T05:51:23.572407+00:00
   source: official-db
 sources:
-- book: 官方结构库 db/wh40k.sqlite（Wahapedia 11版镜像 + MFM 官方点数）
-updated: '2026-07-23'
+- book: https://assets.warhammer-community.com/eng_wh40k_faction_pack_necrons-eweoek106p-nqomxds3qr.pdf
+  pages:
+  - 30
+- book: https://assets.warhammer-community.com/eng_wh40k_faction_pack_necrons-eweoek106p-nqomxds3qr.pdf
+  pages:
+  - 29
+updated: '2026-09-14'
 ---
 
 ## 属性表
@@ -36,13 +41,11 @@ updated: '2026-07-23'
 | 放逐之门  | 近战 | 6 | 2+ | 8 | -2 | 3 | — |
 
 ## 技能
-- **【阵营】重生协议**
-- **永恒之门**：在您的移动阶段中（第一战斗轮次除外），您可以选择您军队中一个位于战略预备队中或位于战场上的太空死灵步兵单位（如果您选择后者，将其从战场上移除，并放入战略预备队中）。那个单位进行一次入场移动。并且必须被部署在完全位于该模型6英寸内，且不与敌方单位处于交战状态的位置。那个单位在该回合中不能进行冲锋移动。
-- **严重损伤**：当该模型的 W 为 1-7 时，OC-4，攻击命中结果-1。
+- **Eternity Gate**：In your Movement phase (excluding the first battle round), you can select one friendly NECRONS INFANTRY unit that is either in strategic reserves or on the battlefield (if you select a unit on the battlefield, remove that unit from the battlefield and place it into strategic reserves). That unit can make an ingress move, and while making that ingress move, that unit must be set up wholly within 6" of this unit and unengaged (instead of more than 8" horizontally from all enemy units), even if that is within your opponent’s deployment zone. That unit cannot make a charge move this turn.
 
 ## 单位构成
 - **1个模型** — 420 分
 
 ## 关键词
 - **阵营关键词**：Necrons
-- **普通关键词**：Monolith，[[core-rules/towering.md|Towering]]，Vehicle，[[core-rules/titanic.md|Titanic]]，Fly
+- **普通关键词**：Monolith，[[core-rules/towering.md|Towering]]，Vehicle，[[core-rules/titanic.md|Titanic]]，Fly，FRAME

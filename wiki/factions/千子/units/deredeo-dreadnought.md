@@ -3,17 +3,16 @@ id: '000003623'
 name_en: Deredeo Dreadnought
 faction: 千子
 type: unit
-points:
-  1 model: 160
 tags:
 - unit
 - unit/千子
 - 千子
 version:
+  points: historical / unmatched
   source: official-db
 sources:
 - book: 官方结构库 db/wh40k.sqlite（Wahapedia 11版镜像 + MFM 官方点数）
-updated: '2026-07-23'
+updated: '2026-09-14'
 ---
 
 ## 属性表
@@ -46,6 +45,7 @@ updated: '2026-07-23'
 - **Deredeo Strike**：Each time this model makes a ranged attack that targets a unit that is not Below Half-strength, you can re-roll the Hit roll.
 
 ## 单位构成
+历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
 - **1个模型** — 160 分
 
 ## 关键词

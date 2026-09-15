@@ -11,11 +11,11 @@ tags:
 - unit/兽人
 - 兽人
 version:
-  points: MFM 2026-07-27 15:14
+  points: MFM 2026-09-14T05:51:23.572407+00:00
   source: official-db
 sources:
 - book: 官方结构库 db/wh40k.sqlite（Wahapedia 11版镜像 + MFM 官方点数）
-updated: '2026-07-23'
+updated: '2026-09-14'
 ---
 
 ## 属性表
@@ -39,5 +39,5 @@ updated: '2026-07-23'
 - **1个模型** — 135 分
 
 ## 关键词
-- **阵营关键词**：兽人
-- **普通关键词**：工事，[[core-rules/vehicle.md|载具]]，[[core-rules/transport.md|运输工具]]，大头目碉堡
+- **阵营关键词**：Orks
+- **普通关键词**：Big’ed Bossbunka，[[core-rules/transport.md|Transport]]，Vehicle，[[core-rules/fortification.md|Fortification]]

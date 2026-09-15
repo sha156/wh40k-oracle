@@ -7,6 +7,7 @@ aliases:
 faction: 帝皇之子
 type: enhancement
 detachment: Elegant Brutes
+cost: 20
 tags:
 - enhancement
 - enhancement/帝皇之子
@@ -16,12 +17,14 @@ sources:
 updated: '2026-07-26'
 ---
 
-分数未知、[[factions/帝皇之子/detachments/elegant-brutes.md|优雅暴徒]] 分队。
+20 分、[[factions/帝皇之子/detachments/elegant-brutes.md|优雅暴徒]] 分队。
 
 ## 效果
 
 - This model has Deep Strike.
 - This unit’s ranged attacks have [IGNORES COVER].
+
+**分数**：20 分
 
 ## 携带限制
 

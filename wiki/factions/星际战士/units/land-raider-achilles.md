@@ -3,17 +3,21 @@ id: '000001607'
 name_en: Land Raider Achilles
 faction: 星际战士
 type: unit
-points:
-  1 model: 230
 tags:
 - unit
 - unit/星际战士
 - 星际战士
 version:
+  points: historical / unmatched
   source: official-db
 sources:
-- book: 官方结构库 db/wh40k.sqlite（Wahapedia 11版镜像 + MFM 官方点数）
-updated: '2026-07-23'
+- book: 'Faction Pack: Space Marines'
+  pages:
+  - 174
+- book: 'Faction Pack: Space Marines'
+  pages:
+  - 175
+updated: '2026-09-14'
 ---
 
 ## 属性表
@@ -44,8 +48,9 @@ updated: '2026-07-23'
 - **One Shot**：The bearer can only shoot with this weapon once per battle.
 
 ## 单位构成
+历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
 - **1个模型** — 230 分
 
 ## 关键词
 - **阵营关键词**：Adeptus Astartes
-- **普通关键词**：Land Raider Achilles，Vehicle，[[core-rules/transport.md|Transport]]，[[core-rules/smoke.md|Smoke]]，Imperium
+- **普通关键词**：Land Raider Achilles，Vehicle，[[core-rules/transport.md|Transport]]，[[core-rules/smoke.md|Smoke]]，Imperium，FRAME

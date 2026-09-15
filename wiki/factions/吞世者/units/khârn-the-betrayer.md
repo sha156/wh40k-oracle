@@ -11,11 +11,13 @@ tags:
 - unit/吞世者
 - 吞世者
 version:
-  points: MFM 2026-07-27 15:14
+  points: MFM 2026-09-14T05:51:23.572407+00:00
   source: official-db
 sources:
-- book: 官方结构库 db/wh40k.sqlite（Wahapedia 11版镜像 + MFM 官方点数）
-updated: '2026-07-23'
+- book: https://assets.warhammer-community.com/eng_wh40k_faction_pack_world_eaters-5cgvc5tjcb-nipfvwkpo5.pdf
+  pages:
+  - 8
+updated: '2026-09-14'
 ---
 
 ## 属性表
@@ -38,10 +40,9 @@ updated: '2026-07-23'
 | 鲜血之子 | 近战 | 8 | 2+ | 7 | -2 | 3 | — |
 
 ## 技能
-- **阵营：恐虐祝福**
-- **传奇杀手**：当该模型领导一个单位时，每当单位中一个模型进行一次近战攻击时，重掷结果为 1 的命中掷骰和结果为 1 的致伤掷骰。
-- **背叛者**：在您的冲锋阶段结束时，如果该模型领导一个联合单位并且该 单位没有位于一个或更多敌方单位交战范围内，您必须让该模型进行一次 领导力测试。如果该测试失败，您选择的一个护卫模型被摧毁。
-- **狂战士狂怒**：当该模型首次被摧毁后，在阶段结束时，掷一枚D6：若结果为2+，将该模型部署回战场上尽可能靠近其被摧毁的位置，并且不位于敌方单位交战范围内，剩余3点耐伤。
+- **Legendary Killer**：While this model is leading a unit, each time a model in that unit makes a melee attack, re-roll a Hit roll of 1 and re-roll a Wound roll of 1.
+- **The Betrayer**：At the end of your Charge phase, if this unit is on the battlefield, is unengaged, and contains a bodyguard model, this unit makes a leadership roll: ▪If that leadership roll is failed, one bodyguard model in this unit is destroyed.
+- **Berzerker Frenzy**：The first time this model is destroyed, at the end of the phase, roll one D6: on a 2+, set this model back up on the battlefield as close as possible to where it was destroyed and not within Engagement Range of one or more enemy units, with 3 wounds remaining.
 
 ## 单位构成
 - **1个模型** — 115 分

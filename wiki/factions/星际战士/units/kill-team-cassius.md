@@ -3,17 +3,16 @@ id: '000003875'
 name_en: Kill Team Cassius
 faction: 星际战士
 type: unit
-points:
-  11 models: 220
 tags:
 - unit
 - unit/星际战士
 - 星际战士
 version:
+  points: historical / unmatched
   source: official-db
 sources:
 - book: 官方结构库 db/wh40k.sqlite（Wahapedia 11版镜像 + MFM 官方点数）
-updated: '2026-07-23'
+updated: '2026-09-14'
 ---
 
 ## 属性表
@@ -56,6 +55,7 @@ updated: '2026-07-23'
 - **CASSIUS**：Your army cannot contain both [[factions/星际战士/units/chaplain.md|Chaplain]] Cassius and <span class="kwb">KILL</span> <span class="kwb">TEAM</span> <span class="kwb">CASSIUS</span>.
 
 ## 单位构成
+历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
 - **11个模型** — 220 分
 
 ## 关键词

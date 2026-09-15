@@ -5,17 +5,19 @@ name_en: Leman Russ Exterminator
 faction: 星界军
 type: unit
 points:
-  1 model: 180
+  1 model: 160
 tags:
 - unit
 - unit/星界军
 - 星界军
 version:
-  points: MFM 2026-07-27 15:14
+  points: MFM 2026-09-14T05:51:23.572407+00:00
   source: official-db
 sources:
-- book: 官方结构库 db/wh40k.sqlite（Wahapedia 11版镜像 + MFM 官方点数）
-updated: '2026-07-23'
+- book: https://assets.warhammer-community.com/eng_wh40k_faction_pack_astra_militarum-o51zhqvsvy-wdobxbf6t0.pdf
+  pages:
+  - 23
+updated: '2026-09-14'
 ---
 
 ## 属性表
@@ -47,8 +49,8 @@ updated: '2026-07-23'
 - **受损**：当该模型剩余1-4点耐伤，该模型进行攻击时命中投掷结果-1。
 
 ## 单位构成
-- **1个模型** — 180 分
+- **1个模型** — 160 分
 
 ## 关键词
 - **阵营关键词**：Astra Militarum
-- **普通关键词**：Vehicle，[[core-rules/smoke.md|Smoke]]，Imperium，Squadron，Leman Russ Exterminator
+- **普通关键词**：Vehicle，[[core-rules/smoke.md|Smoke]]，Imperium，Squadron，Leman Russ Exterminator，FRAME

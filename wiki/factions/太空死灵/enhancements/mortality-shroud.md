@@ -7,6 +7,7 @@ aliases:
 faction: 太空死灵
 type: enhancement
 detachment: The Phaeron's Armoury
+cost: 10
 tags:
 - enhancement
 - enhancement/太空死灵
@@ -16,11 +17,13 @@ sources:
 updated: '2026-07-26'
 ---
 
-分数未知、[[factions/太空死灵/detachments/the-phaerons-armoury.md|法皇的军备]] 分队。
+10 分、[[factions/太空死灵/detachments/the-phaerons-armoury.md|法皇的军备]] 分队。
 
 ## 效果
 
 In your opponent’s Battle-shock step, if an enemy unit within 8" of this unit is below starting strength, that enemy unit makes a battle-shock roll.
+
+**分数**：10 分
 
 ## 携带限制
 

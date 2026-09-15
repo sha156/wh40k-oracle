@@ -4,17 +4,16 @@ name_zh: 独眼巨人爆破车
 name_en: Cyclops Demolition Vehicle
 faction: 基因窃取者教派
 type: unit
-points:
-  1 model: 25
 tags:
 - unit
 - unit/基因窃取者教派
 - 基因窃取者教派
 version:
+  points: historical / unmatched
   source: official-db
 sources:
 - book: 官方结构库 db/wh40k.sqlite（Wahapedia 11版镜像 + MFM 官方点数）
-updated: '2026-07-23'
+updated: '2026-09-14'
 ---
 
 ## 属性表
@@ -28,6 +27,7 @@ updated: '2026-07-23'
 - **紧凑车体**：本模型可以如同步兵模型那样被星界军运输模型运载，如果你这样做，本模型占据6个运输空间。
 
 ## 单位构成
+历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
 - **1个模型** — 25 分
 
 ## 关键词

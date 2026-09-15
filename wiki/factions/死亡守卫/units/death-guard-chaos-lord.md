@@ -4,17 +4,16 @@ name_zh: 死亡守卫混沌领主
 name_en: Death Guard Chaos Lord
 faction: 死亡守卫
 type: unit
-points:
-  1 model: 65
 tags:
 - unit
 - unit/死亡守卫
 - 死亡守卫
 version:
+  points: historical / unmatched
   source: official-db
 sources:
 - book: 官方结构库 db/wh40k.sqlite（Wahapedia 11版镜像 + MFM 官方点数）
-updated: '2026-07-23'
+updated: '2026-09-14'
 ---
 
 ## 属性表
@@ -48,6 +47,7 @@ updated: '2026-07-23'
 - **干枯凋零【光环】**：本模型感染范围内的敌方单位 在回合结束时投 D6，结果为 4+则遭受 D3 点致命伤害
 
 ## 单位构成
+历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
 - **1个模型** — 65 分
 
 ## 关键词

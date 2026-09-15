@@ -5,17 +5,17 @@ name_en: Tech-priest Dominus
 faction: 机械修会
 type: unit
 points:
-  1 model: 65
+  1 model: 60
 tags:
 - unit
 - unit/机械修会
 - 机械修会
 version:
-  points: MFM 2026-07-27 15:14
+  points: MFM 2026-09-14T05:51:23.572407+00:00
   source: official-db
 sources:
 - book: 官方结构库 db/wh40k.sqlite（Wahapedia 11版镜像 + MFM 官方点数）
-updated: '2026-07-23'
+updated: '2026-09-14'
 ---
 
 ## 属性表
@@ -46,7 +46,7 @@ updated: '2026-07-23'
 - **数据探针**：在近战阶段开始时，你可以选择本模型接战范围内一个敌方载具单位，为其投 D6，结果为 4+则那个单位遭受 D6 点致命伤害，并且本阶段中，那个单位的近战武器WS-1
 
 ## 单位构成
-- **1个模型** — 65 分
+- **1个模型** — 60 分
 
 ## 关键词
 - **阵营关键词**：Adeptus Mechanicus

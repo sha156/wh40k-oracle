@@ -5,17 +5,17 @@ name_en: Spiritseer
 faction: 艾达灵族
 type: unit
 points:
-  1 model: 55
+  1 model: 50
 tags:
 - unit
 - unit/艾达灵族
 - 艾达灵族
 version:
-  points: MFM 2026-07-27 15:14
+  points: MFM 2026-09-14T05:51:23.572407+00:00
   source: official-db
 sources:
 - book: 官方结构库 db/wh40k.sqlite（Wahapedia 11版镜像 + MFM 官方点数）
-updated: '2026-07-23'
+updated: '2026-09-14'
 ---
 
 ## 属性表
@@ -43,7 +43,7 @@ updated: '2026-07-23'
 - **伊莎之泪（灵能）**：在你的指挥阶段中，选择一个本模型6寸内的友方幽冥构造体单位，如果该单位中有至少一个模型被消灭，为该单位返还一个被消灭的模型；否则，该单位中的一个模型回复至多D3点损失的W值，每个单位每回合只能被此能力选择一次
 
 ## 单位构成
-- **1个模型** — 55 分
+- **1个模型** — 50 分
 
 ## 关键词
 - **阵营关键词**：Asuryani

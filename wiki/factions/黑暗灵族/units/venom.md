@@ -11,11 +11,16 @@ tags:
 - unit/黑暗灵族
 - 黑暗灵族
 version:
-  points: MFM 2026-07-27 15:14
+  points: MFM 2026-09-14T05:51:23.572407+00:00
   source: official-db
 sources:
-- book: 官方结构库 db/wh40k.sqlite（Wahapedia 11版镜像 + MFM 官方点数）
-updated: '2026-07-23'
+- book: https://assets.warhammer-community.com/eng_wh40k_faction_pack_drukhari-p7mpvgnmnn-clii96hzh6.pdf
+  pages:
+  - 7
+- book: https://assets.warhammer-community.com/eng_wh40k_faction_pack_drukhari-p7mpvgnmnn-clii96hzh6.pdf
+  pages:
+  - 8
+updated: '2026-09-14'
 ---
 
 ## 属性表
@@ -38,12 +43,12 @@ updated: '2026-07-23'
 | 锋刃翼 | 近战 | 3 | 4+ | 5 | -1 | 1 | — |
 
 ## 技能
-- **【阵营技能】：痛苦之力**：快速部署(苦痛):在您的移动阶段，当您选择该模型进行突进时，您可以花费1枚苦痛标识来强化该模型。在该模型处于强化状态时，搭乘该模型的单位可以在该模型完成突进后脱离该模型。若如此做，搭乘单位算作在该阶段进行了一次常规移动，并且在该回合中不能宣告冲锋，但在该回合的剩余时间里可以正常行动。
-- **空中飞人**：在近战阶段结束时，如果没有模型搭乘在这个运输工具中，那么您可以选择一个完全位于该运输工具6" 内并且模型数量小于等于 6 的己方黑暗灵族步兵单位（您不能选择一个可以飞行的单位）。被选择的单位可以搭乘该运输工具，除非被选择的单位位于敌方单位的交战范围内。那个单位能够在脱离本载具的回合中搭乘本载具。
+- **Rapid Deployment (Pain)**：In your Movement phase, when you select this model to Advance, you can spend 1 Pain token to Empower this model. While Empowered, units can disembark from this model after it has Advanced. Units that do so count as having made a Normal move that phase, and cannot declare a charge in the same turn, but can otherwise act normally in the remainder of the turn.
+- **Aerialists**：At the end of the Fight phase, if there are no models currently embarked within this TRANSPORT, you can select one friendly DRUKHARI INFANTRY unit that has 6 or fewer models that is wholly within 6" of this TRANSPORT (you cannot select a unit that can FLY). Unless that unit is within Engagement Range of one or more enemy units, it can embark within this TRANSPORT. That unit can embark within this TRANSPORT in a turn it disembarked from a TRANSPORT.
 
 ## 单位构成
 - **1个模型** — 65 分
 
 ## 关键词
 - **阵营关键词**：Drukhari
-- **普通关键词**：[[core-rules/transport.md|Transport]]，[[core-rules/dedicated-transport.md|Dedicated Transport]]，Vehicle，Fly，Aeldari，Venom
+- **普通关键词**：[[core-rules/transport.md|Transport]]，[[core-rules/dedicated-transport.md|Dedicated Transport]]，Vehicle，Fly，Aeldari，Venom，FRAME

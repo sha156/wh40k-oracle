@@ -3,17 +3,16 @@ id: '000001199'
 name_en: Repressor
 faction: 战斗修女
 type: unit
-points:
-  1 model: 130
 tags:
 - unit
 - unit/战斗修女
 - 战斗修女
 version:
+  points: historical / unmatched
   source: official-db
 sources:
 - book: 官方结构库 db/wh40k.sqlite（Wahapedia 11版镜像 + MFM 官方点数）
-updated: '2026-07-23'
+updated: '2026-09-14'
 ---
 
 ## 属性表
@@ -42,6 +41,7 @@ updated: '2026-07-23'
 - **One Shot**：The bearer can only shoot with this weapon once per battle.
 
 ## 单位构成
+历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
 - **1个模型** — 130 分
 
 ## 关键词

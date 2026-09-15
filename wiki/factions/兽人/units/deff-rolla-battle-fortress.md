@@ -3,17 +3,16 @@ id: '000001388'
 name_en: Deff Rolla Battle Fortress
 faction: 兽人
 type: unit
-points:
-  1 model: 250
 tags:
 - unit
 - unit/兽人
 - 兽人
 version:
+  points: historical / unmatched
   source: official-db
 sources:
 - book: 官方结构库 db/wh40k.sqlite（Wahapedia 11版镜像 + MFM 官方点数）
-updated: '2026-07-23'
+updated: '2026-09-14'
 ---
 
 ## 属性表
@@ -45,6 +44,7 @@ updated: '2026-07-23'
 - **Rolling Fortress**：Each time a ranged attack is allocated to an <span class="kwb">ORKS</span> model from your army, if that model is not fully visible to every model in the attacking unit because of this <span class="kwb">DEFF</span> <span class="kwb">ROLLA</span> <span class="kwb">BATTLE</span> <span class="kwb">FORTRESS</span> model, that model has the Benefit of Cover against that attack.
 
 ## 单位构成
+历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
 - **1个模型** — 250 分
 
 ## 关键词

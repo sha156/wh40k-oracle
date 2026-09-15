@@ -5,6 +5,7 @@ name_en: Weaver of Sagas
 faction: 星际战士
 type: enhancement
 detachment: Veterans of the Fang
+cost: 15
 tags:
 - enhancement
 - enhancement/星际战士
@@ -14,13 +15,15 @@ sources:
 updated: '2026-07-26'
 ---
 
-分数未知、[[factions/星际战士/detachments/veterans-of-the-fang.md|狼牙堡老兵]] 分队。
+15 分、[[factions/星际战士/detachments/veterans-of-the-fang.md|狼牙堡老兵]] 分队。
 
 ## 效果
 
 (Once per battle-round, per army) In your Movement phase, at the start or end of this unit's move, you can:
 - Select one friendly ADEPTUS ASTARTES unit within 6" of this unit. That unit is no longer battle-shocked.
 - Or: Select one friendly GREY HUNTERS unit within 18" of this unit. That unit is no longer battle-shocked.
+
+**分数**：15 分
 
 ## 携带限制
 

@@ -12,11 +12,13 @@ tags:
 - unit/艾达灵族
 - 艾达灵族
 version:
-  points: MFM 2026-07-27 15:14
+  points: MFM 2026-09-14T05:51:23.572407+00:00
   source: official-db
 sources:
-- book: 官方结构库 db/wh40k.sqlite（Wahapedia 11版镜像 + MFM 官方点数）
-updated: '2026-07-23'
+- book: https://assets.warhammer-community.com/eng_wh40k_faction_pack_aeldari-r7ubocxyoz-nhd972kesl.pdf
+  pages:
+  - 31
+updated: '2026-09-14'
 ---
 
 ## 属性表
@@ -41,9 +43,9 @@ updated: '2026-07-23'
 | 巫术之刃 | 近战 | 2 | 3+ | 3 | 0 | 2 | [[core-rules/anti.md\|针对步兵2+]]，[[core-rules/psychic-attacks.md\|灵能]] |
 
 ## 技能
-- **【阵营技能】：战斗专注**
-- **保护（灵能）**：当一个先知模型领导本单位时，本单位所受攻击的造伤骰结果-1
-- **灵能交感（灵能）**：当本模型被选中进行射击时，直到该阶段结束，本模型6寸内每有一个其他友方艾达灵族灵能者模型，本模型装备的毁灭咒术武器的A和S属性各加1（最多加2）
+- **Protect (Psychic)**：While a [[factions/艾达灵族/units/farseer.md|Farseer]] model is leading this unit, each time an attack targets this unit, subtract 1 from the Wound roll.
+- **Psychic Communion (Psychic)**：Each time this unit is selected to shoot, for each [[factions/艾达灵族/units/warlock.md|Warlock]] model in this unit, until the end of the phase, add 1 to the Attacks and Strength characteristics of that model’s Destructor weapon for each other friendly Aeldari Psyker model within 6" of that model (to a maximum of +2).
+- **Support**
 
 ## 单位构成
 - **2个模型** — 55 分
@@ -51,4 +53,4 @@ updated: '2026-07-23'
 
 ## 关键词
 - **阵营关键词**：Asuryani
-- **普通关键词**：Aeldari，[[core-rules/infantry.md|Infantry]]，[[core-rules/psyker.md|Psyker]]，Warlocks，[[factions/艾达灵族/units/warlock.md|Warlock]] Conclave
+- **普通关键词**：Aeldari，[[core-rules/infantry.md|Infantry]]，[[core-rules/psyker.md|Psyker]]，Warlocks，Warlock Conclave

@@ -5,17 +5,19 @@ name_en: Leman Russ Eradicator
 faction: 星界军
 type: unit
 points:
-  1 model: 170
+  1 model: 145
 tags:
 - unit
 - unit/星界军
 - 星界军
 version:
-  points: MFM 2026-07-27 15:14
+  points: MFM 2026-09-14T05:51:23.572407+00:00
   source: official-db
 sources:
-- book: 官方结构库 db/wh40k.sqlite（Wahapedia 11版镜像 + MFM 官方点数）
-updated: '2026-07-23'
+- book: https://assets.warhammer-community.com/eng_wh40k_faction_pack_astra_militarum-o51zhqvsvy-wdobxbf6t0.pdf
+  pages:
+  - 23
+updated: '2026-09-14'
 ---
 
 ## 属性表
@@ -47,8 +49,8 @@ updated: '2026-07-23'
 - **城市战**：当该单位被选中作为射击武器的目标时，若该单位拥有掩体增益，则这次攻击的破坏力降低1
 
 ## 单位构成
-- **1个模型** — 170 分
+- **1个模型** — 145 分
 
 ## 关键词
 - **阵营关键词**：Astra Militarum
-- **普通关键词**：[[core-rules/smoke.md|Smoke]]，Squadron，Leman Russ Eradicator，Vehicle，Imperium
+- **普通关键词**：[[core-rules/smoke.md|Smoke]]，Squadron，Leman Russ Eradicator，Vehicle，Imperium，FRAME

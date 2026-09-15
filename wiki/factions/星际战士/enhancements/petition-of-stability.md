@@ -5,6 +5,7 @@ name_en: Petition of Stability
 faction: 星际战士
 type: enhancement
 detachment: Dark Age Arsenal
+cost: 15
 tags:
 - enhancement
 - enhancement/星际战士
@@ -14,11 +15,13 @@ sources:
 updated: '2026-07-26'
 ---
 
-分数未知、[[factions/星际战士/detachments/dark-age-arsenal.md|黑暗时代兵器]] 分队。
+15 分、[[factions/星际战士/detachments/dark-age-arsenal.md|黑暗时代兵器]] 分队。
 
 ## 效果
 
 This unit’s plasma attacks have +6" Range.
+
+**分数**：15 分
 
 ## 携带限制
 

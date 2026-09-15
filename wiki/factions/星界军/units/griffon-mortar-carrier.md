@@ -3,17 +3,21 @@ id: '000000744'
 name_en: Griffon Mortar Carrier
 faction: 星界军
 type: unit
-points:
-  1 model: 115
 tags:
 - unit
 - unit/星界军
 - 星界军
 version:
+  points: historical / unmatched
   source: official-db
 sources:
-- book: 官方结构库 db/wh40k.sqlite（Wahapedia 11版镜像 + MFM 官方点数）
-updated: '2026-07-23'
+- book: 'Faction Pack: Astra Militarum'
+  pages:
+  - 92
+- book: 'Faction Pack: Astra Militarum'
+  pages:
+  - 93
+updated: '2026-09-14'
 ---
 
 ## 属性表
@@ -39,8 +43,9 @@ updated: '2026-07-23'
 - **Suppression Bombardment**：In your Shooting phase, after this model has shot, select one enemy unit (excluding <span class="kwb">MONSTER</span> and <span class="kwb">VEHICLE</span> units) hit by one or more of those attacks made with this model’s Griffon heavy mortar. Until the start of your next turn, that enemy unit is suppressed. While a unit is suppressed, each time a model in that unit makes an attack, subtract 1 from the Hit roll.
 
 ## 单位构成
+历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
 - **1个模型** — 115 分
 
 ## 关键词
 - **阵营关键词**：Astra Militarum
-- **普通关键词**：Imperium，Artillery，Vehicle，Griffon Mortar Carrier，[[core-rules/smoke.md|Smoke]]，Squadron
+- **普通关键词**：Imperium，Artillery，Vehicle，Griffon Mortar Carrier，[[core-rules/smoke.md|Smoke]]，Squadron，FRAME

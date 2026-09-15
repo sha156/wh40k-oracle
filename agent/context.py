@@ -24,4 +24,5 @@ class SessionContext:
             self.faction = faction
 
     def append_turn(self, role: str, content: str) -> None:
-        self.history.append({"role": role, "content": content})
+        self.history.append({"role": role, "content": content[:4000]})
+        del self.history[:-12]

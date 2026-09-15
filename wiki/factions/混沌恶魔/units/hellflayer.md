@@ -4,18 +4,16 @@ name_zh: 地狱剥皮机
 name_en: Hellflayer
 faction: 混沌恶魔
 type: unit
-points:
-  1 model: 105
-  2 models: 210
 tags:
 - unit
 - unit/混沌恶魔
 - 混沌恶魔
 version:
+  points: historical / unmatched
   source: official-db
 sources:
 - book: 官方结构库 db/wh40k.sqlite（Wahapedia 11版镜像 + MFM 官方点数）
-updated: '2026-07-23'
+updated: '2026-09-14'
 ---
 
 ## 属性表
@@ -42,6 +40,7 @@ updated: '2026-07-23'
 - **横扫敌阵**：每当该单位中的模型进行近战攻击时，如果该单位在本回合进行过冲锋，那次攻击的力量和伤害属性都提升 1。
 
 ## 单位构成
+历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
 - **1个模型** — 105 分
 - **2个模型** — 210 分
 

@@ -3,18 +3,16 @@ id: '000000326'
 name_en: Long Fangs
 faction: 星际战士
 type: unit
-points:
-  5 models: 120
-  6 models: 145
 tags:
 - unit
 - unit/星际战士
 - 星际战士
 version:
+  points: historical / unmatched
   source: official-db
 sources:
 - book: 官方结构库 db/wh40k.sqlite（Wahapedia 11版镜像 + MFM 官方点数）
-updated: '2026-07-23'
+updated: '2026-09-14'
 ---
 
 ## 属性表
@@ -58,6 +56,7 @@ updated: '2026-07-23'
 - **ATTACHED UNIT**：If a Character unit from your army with the Leader ability can be attached to a [[factions/星际战士/units/devastator-squad.md|Devastator Squad]], it can instead be attached to this unit.
 
 ## 单位构成
+历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
 - **5个模型** — 120 分
 - **6个模型** — 145 分
 

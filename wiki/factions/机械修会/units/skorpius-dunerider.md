@@ -11,11 +11,13 @@ tags:
 - unit/机械修会
 - 机械修会
 version:
-  points: MFM 2026-07-27 15:14
+  points: MFM 2026-09-14T05:51:23.572407+00:00
   source: official-db
 sources:
-- book: 官方结构库 db/wh40k.sqlite（Wahapedia 11版镜像 + MFM 官方点数）
-updated: '2026-07-23'
+- book: https://assets.warhammer-community.com/eng_wh40k_faction_pack_adeptus_mechanicus-nnsofctxvp-ed7amkvryu.pdf
+  pages:
+  - 19
+updated: '2026-09-14'
 ---
 
 ## 属性表
@@ -42,4 +44,4 @@ updated: '2026-07-23'
 
 ## 关键词
 - **阵营关键词**：Adeptus Mechanicus
-- **普通关键词**：Vehicle，[[core-rules/transport.md|Transport]]，[[core-rules/dedicated-transport.md|Dedicated Transport]]，Imperium，Skitarii，[[core-rules/smoke.md|Smoke]]，Skorpius Dunerider
+- **普通关键词**：Vehicle，[[core-rules/transport.md|Transport]]，[[core-rules/dedicated-transport.md|Dedicated Transport]]，Imperium，Skitarii，[[core-rules/smoke.md|Smoke]]，Skorpius Dunerider，FRAME

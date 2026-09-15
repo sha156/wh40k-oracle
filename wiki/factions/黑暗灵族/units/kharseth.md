@@ -4,17 +4,16 @@ name_zh: 卡尔塞斯
 name_en: Kharseth
 faction: 黑暗灵族
 type: unit
-points:
-  1 model: 95
 tags:
 - unit
 - unit/黑暗灵族
 - 黑暗灵族
 version:
+  points: historical / unmatched
   source: official-db
 sources:
 - book: 官方结构库 db/wh40k.sqlite（Wahapedia 11版镜像 + MFM 官方点数）
-updated: '2026-07-23'
+updated: '2026-09-14'
 ---
 
 ## 属性表
@@ -41,6 +40,7 @@ updated: '2026-07-23'
 - **虚空之怒（灵能）**：在己方射击阶段中，在该模型所在单位进行射击后，选择一个被该模型的虚空深的一次或更多攻击命中的敌方单位。在该回合结束前，那个单位处于撕裂状态。每当一个己方艾达灵族模型对一个处于撕裂状态的单位进行攻击时，那次攻击的力量属性增加 1 点。
 
 ## 单位构成
+历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
 - **1个模型** — 95 分
 
 ## 关键词

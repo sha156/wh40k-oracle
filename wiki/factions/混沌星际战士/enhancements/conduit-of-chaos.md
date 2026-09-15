@@ -4,6 +4,7 @@ name_en: Conduit of Chaos
 faction: 混沌星际战士
 type: enhancement
 detachment: Cabal of Chaos
+cost: 20
 tags:
 - enhancement
 - enhancement/混沌星际战士
@@ -13,11 +14,13 @@ sources:
 updated: '2026-07-26'
 ---
 
-分数未知、[[factions/混沌星际战士/detachments/cabal-of-chaos.md|Cabal of Chaos]] 分队。
+20 分、[[factions/混沌星际战士/detachments/cabal-of-chaos.md|Cabal of Chaos]] 分队。
 
 ## 效果
 
 HERETIC ASTARTES DAEMON model only (excluding KHORNE models). This model’s melee attacks have [LANCE].
+
+**分数**：20 分
 
 ## 携带限制
 

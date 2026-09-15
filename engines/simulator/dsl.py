@@ -225,6 +225,9 @@ def _parse_effect(raw: dict, side: str, entry_name: str) -> Effect:
             raise DslError(
                 f"{entry_name}：未知 condition tag {tag!r}——契约是 (tag, *args) 单 tag，"
                 f"合取列表不支持；复合语义先在 sequence 注册复合 tag（评审 F2）")
+        if tag == "target_keyword_group" and (len(condition) != 2 or condition[1] not in
+                ("monster/vehicle", "non-monster/vehicle")):
+            raise DslError(f"{entry_name}: invalid target keyword group")
         for extra in condition[1:]:
             if extra in KNOWN_CONDITION_TAGS:
                 raise DslError(

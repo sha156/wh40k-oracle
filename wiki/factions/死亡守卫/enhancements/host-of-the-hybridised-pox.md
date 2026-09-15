@@ -7,6 +7,7 @@ aliases:
 faction: 死亡守卫
 type: enhancement
 detachment: Paragons of Putrescence
+cost: 40
 tags:
 - enhancement
 - enhancement/死亡守卫
@@ -16,11 +17,13 @@ sources:
 updated: '2026-07-26'
 ---
 
-分数未知、[[factions/死亡守卫/detachments/paragons-of-putrescence.md|腐坏楷模]] 分队。
+40 分、[[factions/死亡守卫/detachments/paragons-of-putrescence.md|腐坏楷模]] 分队。
 
 ## 效果
 
 (Once per battle, per army) In your Command phase, you can use this ability. If you do, select one of the Plagues listed in Nurgle’s Gift (see Codex: Death Guard). Enemy units within Contagion Range of this unit also have the effect of that Plague in addition to your army’s chosen Plague until the end of the battle.
+
+**分数**：40 分
 
 ## 携带限制
 

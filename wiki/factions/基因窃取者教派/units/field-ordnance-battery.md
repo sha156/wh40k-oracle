@@ -4,17 +4,16 @@ name_zh: 野战炮兵
 name_en: Field Ordnance Battery
 faction: 基因窃取者教派
 type: unit
-points:
-  2 models: 110
 tags:
 - unit
 - unit/基因窃取者教派
 - 基因窃取者教派
 version:
+  points: historical / unmatched
   source: official-db
 sources:
 - book: 官方结构库 db/wh40k.sqlite（Wahapedia 11版镜像 + MFM 官方点数）
-updated: '2026-07-23'
+updated: '2026-09-14'
 ---
 
 ## 属性表
@@ -40,6 +39,7 @@ updated: '2026-07-23'
 - **装填开火**：当该模型在本回合受到命令影响且保持静止，那么该单位所有的重型武器拥有连击1能力。
 
 ## 单位构成
+历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
 - **2个模型** — 110 分
 
 ## 关键词

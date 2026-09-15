@@ -5,17 +5,18 @@ name_en: Krieg Heavy Weapons Squad
 faction: 星界军
 type: unit
 points:
-  4 models: 60
+  4 models: 70
+  per krieg heavy flamer: 5
 tags:
 - unit
 - unit/星界军
 - 星界军
 version:
-  points: MFM 2026-07-27 15:14
+  points: MFM 2026-09-14T05:51:23.572407+00:00
   source: official-db
 sources:
 - book: 官方结构库 db/wh40k.sqlite（Wahapedia 11版镜像 + MFM 官方点数）
-updated: '2026-07-23'
+updated: '2026-09-14'
 ---
 
 ## 属性表
@@ -42,7 +43,8 @@ updated: '2026-07-23'
 - **最终使命**：当该单位的火力观察员仍位于战场时，每当一个重型武器炮手模型被摧毁时，掷一枚 D6，如果掷骰结果为3+，不要将该模型从战斗中移除。被摧毁的模型可以在攻击模型的单位完成攻击后进行射击，随后将其从游戏中移除。
 
 ## 单位构成
-- **4个模型** — 60 分
+- **4个模型** — 70 分
+- **per krieg heavy flamer** — 5 分
 
 ## 关键词
 - **阵营关键词**：Astra Militarum

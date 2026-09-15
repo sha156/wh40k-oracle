@@ -4,6 +4,8 @@ md_chunker.py — 将 LLM 重构后的 Markdown 按条目（## 标题）分块
 仅依赖 langchain_core，保持可独立测试。
 """
 from pathlib import Path
+import hashlib
+import json
 from typing import List, Optional, Tuple
 
 from langchain_core.documents import Document
@@ -156,6 +158,11 @@ def load_refined_book(pdf_path: Path, refined_root: Path,
     让 ingest.py 回退到 PDF 抽取（H4）——否则空 refined 目录会被误判
     "已完成"，该书 0 chunk 入库且被 processed_log 永久跳过。"""
     book_dir = refined_root / pdf_path.stem
+    source_file = book_dir / "source.json"
+    if source_file.exists():
+        source = json.loads(source_file.read_text(encoding="utf-8"))
+        if source.get("pdf_sha256") != hashlib.sha256(pdf_path.read_bytes()).hexdigest():
+            return None  # Current PDF extraction is safer than stale refined text.
     md_files = sorted(book_dir.glob("page_*.md"))
     if not md_files:
         return None

@@ -3,17 +3,21 @@ id: '000001302'
 name_en: Chaos Deimos Predator
 faction: 混沌星际战士
 type: unit
-points:
-  1 model: 115
 tags:
 - unit
 - unit/混沌星际战士
 - 混沌星际战士
 version:
+  points: historical / unmatched
   source: official-db
 sources:
-- book: 官方结构库 db/wh40k.sqlite（Wahapedia 11版镜像 + MFM 官方点数）
-updated: '2026-07-23'
+- book: 'Faction Pack: Chaos Space Marines'
+  pages:
+  - 80
+- book: 'Faction Pack: Chaos Space Marines'
+  pages:
+  - 81
+updated: '2026-09-14'
 ---
 
 ## 属性表
@@ -46,8 +50,9 @@ updated: '2026-07-23'
 - **One Shot**：The bearer can only shoot with this weapon once per battle.
 
 ## 单位构成
+历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
 - **1个模型** — 115 分
 
 ## 关键词
 - **阵营关键词**：Heretic Astartes
-- **普通关键词**：Deimos Predator，Chaos，[[core-rules/smoke.md|Smoke]]，Vehicle
+- **普通关键词**：Deimos Predator，Chaos，[[core-rules/smoke.md|Smoke]]，Vehicle，FRAME

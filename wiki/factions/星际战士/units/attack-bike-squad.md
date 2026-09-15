@@ -3,19 +3,16 @@ id: '000002076'
 name_en: Attack Bike Squad
 faction: 星际战士
 type: unit
-points:
-  1 model: 55
-  2 models: 110
-  3 models: 165
 tags:
 - unit
 - unit/星际战士
 - 星际战士
 version:
+  points: historical / unmatched
   source: official-db
 sources:
 - book: 官方结构库 db/wh40k.sqlite（Wahapedia 11版镜像 + MFM 官方点数）
-updated: '2026-07-23'
+updated: '2026-09-14'
 ---
 
 ## 属性表
@@ -40,6 +37,7 @@ updated: '2026-07-23'
 - **Outrider Escort**：Once per turn, in your opponent’s Shooting phase, when a friendly Adeptus Astartes Mounted unit within 6" of this unit is selected as the target of an attack, this unit can use this ability. If it does, after that enemy unit has finished making its attacks, this unit can shoot as if it were your Shooting phase, but when resolving those attacks it can only target that enemy unit (and only if it is an eligible target).
 
 ## 单位构成
+历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
 - **1个模型** — 55 分
 - **2个模型** — 110 分
 - **3个模型** — 165 分

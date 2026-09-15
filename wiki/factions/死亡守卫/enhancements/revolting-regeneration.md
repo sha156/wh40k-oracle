@@ -5,7 +5,7 @@ name_en: Revolting Regeneration
 faction: 死亡守卫
 type: enhancement
 detachment: Virulent Vectorium
-cost: 20
+cost: 30
 tags:
 - enhancement
 - enhancement/死亡守卫
@@ -15,13 +15,13 @@ sources:
 updated: '2026-07-26'
 ---
 
-20 分、[[factions/死亡守卫/detachments/virulent-vectorium.md|Virulent Vectorium]] 分队。
+30 分、[[factions/死亡守卫/detachments/virulent-vectorium.md|Virulent Vectorium]] 分队。
 
 ## 效果
 
 The bearer has the Feel No Pain 5+ ability.
 
-**分数**：20 分
+**分数**：30 分
 
 ## 携带限制
 

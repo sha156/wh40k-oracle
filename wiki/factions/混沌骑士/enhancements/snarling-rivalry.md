@@ -5,6 +5,7 @@ name_en: Snarling Rivalry
 faction: 混沌骑士
 type: enhancement
 detachment: Hunting Warpack
+cost: 10
 tags:
 - enhancement
 - enhancement/混沌骑士
@@ -14,11 +15,13 @@ sources:
 updated: '2026-07-26'
 ---
 
-分数未知、[[factions/混沌骑士/detachments/hunting-warpack.md|猎犬战群]] 分队。
+10 分、[[factions/混沌骑士/detachments/hunting-warpack.md|猎犬战群]] 分队。
 
 ## 效果
 
 This unit’s ranged attacks have [IGNORES COVER].
+
+**分数**：10 分
 
 ## 携带限制
 

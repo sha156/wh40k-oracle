@@ -29,4 +29,4 @@ One Legiones Daemonica Nurgle unit from your army that is on the battlefield.
 
 ## 效果
 
-Return up to 1 destroyed model to your unit, or up to D3 destroyed models instead if your unit is a Battleline unit, with their full wounds remaining. If it is a Monster unit, one model in your unit regains up to D3+1 lost wounds instead.
+Return up to 1 destroyed model to your unit (excluding CHARACTER models) or up to D3 destroyed models instead (excluding CHARACTER models) if your unit is a BATTLELINE unit, with their full wounds remaining. If your unit is a MONSTER unit, one model in your unit regains up to D3+1 lost wounds instead.

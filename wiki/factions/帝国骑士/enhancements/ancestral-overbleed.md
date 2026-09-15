@@ -5,6 +5,7 @@ name_en: Ancestral Overbleed
 faction: 帝国骑士
 type: enhancement
 detachment: Throne-bonded Outriders
+cost: 10
 tags:
 - enhancement
 - enhancement/帝国骑士
@@ -14,11 +15,13 @@ sources:
 updated: '2026-07-26'
 ---
 
-分数未知、[[factions/帝国骑士/detachments/throne-bonded-outriders.md|忠诚护卫]] 分队。
+10 分、[[factions/帝国骑士/detachments/throne-bonded-outriders.md|忠诚护卫]] 分队。
 
 ## 效果
 
 When you target this unit with the Fire Overwatch or Heroic Intervention Stratagem, that use is -1 CP.
+
+**分数**：10 分
 
 ## 携带限制
 

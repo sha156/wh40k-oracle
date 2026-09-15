@@ -3,19 +3,16 @@ id: '000000757'
 name_en: Rapier Laser Destroyer Battery
 faction: 星界军
 type: unit
-points:
-  1 model: 35
-  2 models: 70
-  3 models: 105
 tags:
 - unit
 - unit/星界军
 - 星界军
 version:
+  points: historical / unmatched
   source: official-db
 sources:
 - book: 官方结构库 db/wh40k.sqlite（Wahapedia 11版镜像 + MFM 官方点数）
-updated: '2026-07-23'
+updated: '2026-09-14'
 ---
 
 ## 属性表
@@ -37,6 +34,7 @@ updated: '2026-07-23'
 - **Powerful Volley**：While this unit is being affected by an Order, provided it Remained Stationary this turn, Heavy weapons equipped by models in this unit have the [LETHAL HITS] ability.
 
 ## 单位构成
+历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
 - **1个模型** — 35 分
 - **2个模型** — 70 分
 - **3个模型** — 105 分

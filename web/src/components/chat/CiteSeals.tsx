@@ -21,15 +21,17 @@ export function CiteSeals({ cites }: CiteSealsProps) {
             {c.book}
             {c.section ? <> {c.section} ·</> : null}{" "}
             <span className="font-cond text-[12.5px] font-bold text-redfont">
-              {c.page !== undefined ? `p.${c.page}` : c.term}
+              {c.page != null && c.page > 0 ? `p.${c.page}` : c.term}
             </span>
           </div>
-          <a
+          {c.url && /^https?:\/\//i.test(c.url) ? <a
             className="mt-[3px] block font-mono text-[10.5px] break-all text-[#6b6046] underline decoration-dotted"
-            href="#"
+            href={c.url}
+            target="_blank"
+            rel="noopener noreferrer"
           >
-            {c.wiki}
-          </a>
+            官方来源 ↗
+          </a> : <span className="mt-[3px] block font-mono text-[10.5px] text-[#6b6046]">{c.wiki}</span>}
         </div>
       ))}
     </div>

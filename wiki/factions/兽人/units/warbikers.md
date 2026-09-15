@@ -5,18 +5,18 @@ name_en: Warbikers
 faction: 兽人
 type: unit
 points:
-  3 models: 60
-  6 models: 120
+  3 models: 75
+  6 models: 140
 tags:
 - unit
 - unit/兽人
 - 兽人
 version:
-  points: MFM 2026-07-27 15:14
+  points: MFM 2026-09-14T05:51:23.572407+00:00
   source: official-db
 sources:
 - book: 官方结构库 db/wh40k.sqlite（Wahapedia 11版镜像 + MFM 官方点数）
-updated: '2026-07-23'
+updated: '2026-09-14'
 ---
 
 ## 属性表
@@ -47,9 +47,9 @@ updated: '2026-07-23'
 - **狂飙激射**：本单位模型对9寸内目标射击时AP值提高1点
 
 ## 单位构成
-- **3个模型** — 60 分
-- **6个模型** — 120 分
+- **3个模型** — 75 分
+- **6个模型** — 140 分
 
 ## 关键词
-- **阵营关键词**：兽人
-- **普通关键词**：骑乘，手雷，飚速怪咖，摩托小子
+- **阵营关键词**：Orks
+- **普通关键词**：Warbikers，Speed Freeks，[[core-rules/grenades.md|Grenades]]，[[core-rules/mounted.md|Mounted]]

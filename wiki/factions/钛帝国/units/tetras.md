@@ -4,18 +4,16 @@ name_zh: 脂鲤小队
 name_en: Tetras
 faction: 钛帝国
 type: unit
-points:
-  2 models: 80
-  4 models: 160
 tags:
 - unit
 - unit/钛帝国
 - 钛帝国
 version:
+  points: historical / unmatched
   source: official-db
 sources:
 - book: 官方结构库 db/wh40k.sqlite（Wahapedia 11版镜像 + MFM 官方点数）
-updated: '2026-07-23'
+updated: '2026-09-14'
 ---
 
 ## 属性表
@@ -37,6 +35,7 @@ updated: '2026-07-23'
 - **High-intensity Markerlights**：Each time this unit is an Observer unit, until the end of the phase, each time a model in its Guided unit makes an attack that targets their Spotted unit, you can re-roll the Hit roll.
 
 ## 单位构成
+历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
 - **2个模型** — 80 分
 - **4个模型** — 160 分
 

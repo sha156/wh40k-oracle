@@ -73,7 +73,7 @@ from langchain_community.document_loaders import PyMuPDFLoader
 from langchain_community.vectorstores import FAISS
 from langchain_experimental.text_splitter import SemanticChunker
 from langchain_core.documents import Document
-from corpus_manifest import classify_book, load_manifest
+from corpus_manifest import classify_book, classify_book_with_origin, load_manifest
 from hf_embeddings_compat import build_huggingface_embeddings
 from md_chunker import load_refined_book
 
@@ -98,7 +98,7 @@ BREAKPOINT_TYPE       = "percentile"
 BREAKPOINT_THRESHOLD  = 85   # 百分位阈值，越大分块越少越大
 
 # 嵌入 batch_size：CPU 核心数越多可适当调大，提升吞吐
-EMBED_BATCH_SIZE = max(32, multiprocessing.cpu_count() * 4)
+EMBED_BATCH_SIZE = max(1, int(os.environ.get("INGEST_BATCH_SIZE", max(32, multiprocessing.cpu_count() * 4))))
 
 
 def parse_args():
@@ -109,6 +109,8 @@ def parse_args():
                         help="PDF 文件夹路径")
     parser.add_argument("--no-blacklibrary", action="store_true",
                         help="不把黑图书馆中文 datasheet 注入 L1 检索层")
+    parser.add_argument("--reuse-vectors", action="store_true",
+                        help="Reuse exact-text vectors from the old index; only use when the embedding model and settings are unchanged")
     return parser.parse_args()
 
 
@@ -248,7 +250,7 @@ def build_embeddings():
     return embeddings
 
 
-def build_faiss_with_progress(chunks: list[Document], embeddings) -> FAISS:
+def build_faiss_with_progress(chunks: list[Document], embeddings, reusable_vectors=None) -> FAISS:
     """
     逐批对 chunks 编码并构建 FAISS，附带 tqdm 进度条。
     比直接调用 FAISS.from_documents 多了可视化进度。
@@ -257,15 +259,25 @@ def build_faiss_with_progress(chunks: list[Document], embeddings) -> FAISS:
 
     texts    = [c.page_content for c in chunks]
     metas    = [c.metadata for c in chunks]
-    vectors  = []
+    reusable_vectors = reusable_vectors or {}
+    vectors = [reusable_vectors.get(text) for text in texts]
+    missing = [i for i, vector in enumerate(vectors) if vector is None]
+    # Similar lengths reduce padding without truncating any source text.
+    missing.sort(key=lambda i: len(texts[i]))
+    if reusable_vectors:
+        print(f"  Exact-text vectors reused: {len(texts) - len(missing)} / {len(texts)}")
 
     # sentence-transformers 内部也分批，这里再包一层显示总进度
     batch = EMBED_BATCH_SIZE
-    with tqdm(total=len(texts), desc="  向量编码", unit="chunk") as pbar:
-        for i in range(0, len(texts), batch):
-            batch_texts = texts[i : i + batch]
+    with tqdm(total=len(missing), desc="  向量编码", unit="chunk") as pbar:
+        for i in range(0, len(missing), batch):
+            positions = missing[i : i + batch]
+            batch_texts = [texts[pos] for pos in positions]
             vecs = embeddings.embed_documents(batch_texts)
-            vectors.extend(vecs)
+            if len(vecs) != len(positions):
+                raise ValueError("Embedding result count does not match source texts")
+            for pos, vector in zip(positions, vecs):
+                vectors[pos] = vector
             pbar.update(len(batch_texts))
 
     # 用 FAISS.from_embeddings 直接接收已算好的向量，避免二次编码
@@ -278,13 +290,32 @@ def build_faiss_with_progress(chunks: list[Document], embeddings) -> FAISS:
     return store
 
 
+def _source_key(value) -> str:
+    """把 metadata['source'] 归一成可跨「相对/绝对路径」比较的键（审查 R1-L4）。
+
+    索引里的 source 是入库当时的 `str(pdf_path)` 原样字符串：默认 `--data-dir data`
+    建的索引存的是相对路径，改用绝对路径重跑时按原样字符串**匹配不上**，
+    `delete_stale_chunks` 会删 0 条 ⇒ 新旧 chunk 并存、内容互相矛盾——正是 H3
+    当初要防的那个场景，只是换了个触发方式。解析失败（如 source 不是路径）时
+    退回原样字符串，宁可不匹配也不误删。
+    """
+    if value is None:
+        return ""
+    try:
+        return str(Path(str(value)).resolve()).casefold()
+    except (OSError, ValueError):
+        return str(value).casefold()
+
+
 def delete_stale_chunks(store, sources: set) -> int:
     """增量合并前，从已有索引删除 metadata['source'] 命中 sources 的旧 chunk（H3）。
 
     不删的话，文件变化重入库时新旧 chunk 并存、内容互相矛盾。返回删除数。
+    比较走 `_source_key` 归一，相对/绝对路径混用不再漏删。
     """
+    wanted = {_source_key(s) for s in sources}
     stale_ids = [doc_id for doc_id, doc in store.docstore._dict.items()
-                 if doc.metadata.get("source") in sources]
+                 if _source_key(doc.metadata.get("source")) in wanted]
     if stale_ids:
         store.delete(stale_ids)
     return len(stale_ids)
@@ -315,10 +346,14 @@ def main():
 
     # ── 增量过滤 ──
     processed_log = {} if args.rebuild else load_processed_log()
+    # 按归一化路径建查询视图（审查 R1-L4）：log 里存的是入库当时的 `str(pdf)` 原样字符串，
+    # 相对/绝对路径混用时原样比对会全部失配、把已处理过的文件当成新文件重跑一遍。
+    # 写入侧仍用原样 str(pdf)，这样旧 log 不需要迁移。
+    processed_by_key = {_source_key(k): v for k, v in processed_log.items()}
     to_process = []
     for pdf in pdf_files:
         mtime = "{}|{}".format(os.path.getmtime(pdf), refined_fingerprint(pdf))
-        if processed_log.get(str(pdf)) == mtime:
+        if processed_by_key.get(_source_key(pdf)) == mtime:
             print(f"  ⏭️  跳过（已处理）: {pdf.name}")
         else:
             to_process.append(pdf)
@@ -335,6 +370,7 @@ def main():
     # ── 语料层级清单（11版迁移S1）：书名 → edition/layer ──
     manifest = load_manifest(MANIFEST_PATH)
     layer_stats: dict[str, int] = {}
+    unregistered_books: list[str] = []   # 未在 manifest 登记的书名（审查 R2-M3）
 
     # ── 逐文件加载并累积 chunks ──
     all_new_chunks: list[Document] = []
@@ -367,12 +403,18 @@ def main():
                 chunks = semantic_chunk(pages, embeddings)
                 tqdm.write(f"  ✂️  分块完成: {len(chunks)} chunks  ({time.time()-t0:.1f}s)")
 
-            tag = classify_book(base_meta["book"], manifest)
+            tag, origin = classify_book_with_origin(base_meta["book"], manifest)
             for c in chunks:
                 c.metadata.update(tag)
             key = "{}版/{}".format(tag["edition"], tag["layer"])
             layer_stats[key] = layer_stats.get(key, 0) + len(chunks)
-            tqdm.write(f"  🏷️  {base_meta['book']} → {key}")
+            if origin == "defaults":
+                # 未在 manifest 登记 ⇒ 层级是兜底猜的，不是拍板的（审查 R2-M3）。
+                # 按层聚合的 layer_stats 分不出这两种情况，必须单列名单。
+                unregistered_books.append(base_meta["book"])
+                tqdm.write(f"  🏷️  {base_meta['book']} → {key} ⚠️ 未登记 manifest，层级取 defaults")
+            else:
+                tqdm.write(f"  🏷️  {base_meta['book']} → {key}")
 
             all_new_chunks.extend(chunks)
             processed_log[str(pdf_path)] = "{}|{}".format(
@@ -410,6 +452,14 @@ def main():
     print("📊 分层构成（edition/layer）:")
     for key in sorted(layer_stats):
         print(f"    {key}: {layer_stats[key]} chunks")
+    if unregistered_books:
+        # 只报名单，不改分类行为——27 本未登记书目前全是真十版 codex，defaults 对它们
+        # 是正确的。这行存在的意义是：将来新增一本 11 版规则类 PDF 而忘了登记时，
+        # 它会出现在这份名单里，而不是悄悄拿到 codex-base 后从规则层保底里消失。
+        print(f"\n⚠️  {len(unregistered_books)} 本书未在 corpus_manifest.json 登记，"
+              f"层级由 defaults 兜底（分类未必错，但没人拍板过）：")
+        for name in sorted(set(unregistered_books)):
+            print(f"    · {name}")
 
     # ── 构建 / 合并 FAISS（带进度条）──
     faiss_index_file = VECTOR_STORE_PATH / "index.faiss"
@@ -428,10 +478,19 @@ def main():
         #    只删「本次已成功产出新 chunk」的来源，处理失败的文件保留旧数据 ──
         new_sources = {c.metadata.get("source") for c in all_new_chunks}
         new_sources.discard(None)
+        reusable_vectors = None
+        if args.reuse_vectors:
+            # Reconstruct before deletion changes FAISS row positions. Metadata
+            # is always replaced with the newly extracted source/page/layer.
+            reusable_vectors = {
+                existing_store.docstore.search(doc_id).page_content:
+                    existing_store.index.reconstruct(position).tolist()
+                for position, doc_id in existing_store.index_to_docstore_id.items()
+            }
         removed = delete_stale_chunks(existing_store, new_sources)
         print(f"  🧹 增量去重：删除旧 chunk {removed} 个"
               f"（覆盖 {len(new_sources)} 个重处理来源）")
-        new_store = build_faiss_with_progress(all_new_chunks, embeddings)
+        new_store = build_faiss_with_progress(all_new_chunks, embeddings, reusable_vectors)
 
         # 维度校验：旧索引与新向量维度不一致时自动重建
         old_dim = existing_store.index.d

@@ -3,17 +3,16 @@ id: '000004180'
 name_en: Chaplain Kastiel
 faction: 星际战士
 type: unit
-points:
-  1 model: 70
 tags:
 - unit
 - unit/星际战士
 - 星际战士
 version:
+  points: historical / unmatched
   source: official-db
 sources:
 - book: 官方结构库 db/wh40k.sqlite（Wahapedia 11版镜像 + MFM 官方点数）
-updated: '2026-07-23'
+updated: '2026-09-14'
 ---
 
 ## 属性表
@@ -39,6 +38,7 @@ updated: '2026-07-23'
 - **Zealot’s Fervour**：This model’s unit is eligible to charge in a turn in which it Fell Back.
 
 ## 单位构成
+历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
 - **1个模型** — 70 分
 
 ## 关键词

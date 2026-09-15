@@ -5,17 +5,17 @@ name_en: Deffkilla Wartrike
 faction: 兽人
 type: unit
 points:
-  1 model: 70
+  1 model: 80
 tags:
 - unit
 - unit/兽人
 - 兽人
 version:
-  points: MFM 2026-07-27 15:14
+  points: MFM 2026-09-14T05:51:23.572407+00:00
   source: official-db
 sources:
 - book: 官方结构库 db/wh40k.sqlite（Wahapedia 11版镜像 + MFM 官方点数）
-updated: '2026-07-23'
+updated: '2026-09-14'
 ---
 
 ## 属性表
@@ -45,8 +45,8 @@ updated: '2026-07-23'
 - **燃油屁精**：每当本模型所在单位进行加速移动时，无需投掷而是本阶段直接M+6
 
 ## 单位构成
-- **1个模型** — 70 分
+- **1个模型** — 80 分
 
 ## 关键词
-- **阵营关键词**：兽人
-- **普通关键词**：[[core-rules/mounted.md|骑乘]]，[[core-rules/character.md|人物]]，[[factions/兽人/units/warboss.md|战争头目]]，飚速怪咖，死亡杀手三轮战车
+- **阵营关键词**：Orks
+- **普通关键词**：[[core-rules/character.md|Character]]，[[factions/兽人/units/warboss.md|Warboss]]，[[core-rules/mounted.md|Mounted]]，Speed Freeks，Deffkilla Wartrike

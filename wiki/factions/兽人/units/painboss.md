@@ -5,17 +5,17 @@ name_en: Painboss
 faction: 兽人
 type: unit
 points:
-  1 model: 70
+  1 model: 60
 tags:
 - unit
 - unit/兽人
 - 兽人
 version:
-  points: MFM 2026-07-27 15:14
+  points: MFM 2026-09-14T05:51:23.572407+00:00
   source: official-db
 sources:
 - book: 官方结构库 db/wh40k.sqlite（Wahapedia 11版镜像 + MFM 官方点数）
-updated: '2026-07-23'
+updated: '2026-09-14'
 ---
 
 ## 属性表
@@ -36,8 +36,8 @@ updated: '2026-07-23'
 - **屁精助手**：一次性技能，在你的指挥阶段中，装备者所领导的单位可以复活D3个被消灭的保镖模型(屁精模型只作为标记物存在，使用后移除)
 
 ## 单位构成
-- **1个模型** — 70 分
+- **1个模型** — 60 分
 
 ## 关键词
-- **阵营关键词**：兽人
-- **普通关键词**：[[core-rules/infantry.md|步兵]]，[[core-rules/character.md|人物]]，兽霸，剧痛头目
+- **阵营关键词**：Orks
+- **普通关键词**：[[core-rules/infantry.md|Infantry]]，[[core-rules/character.md|Character]]，Beast Snagga，Painboss

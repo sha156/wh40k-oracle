@@ -79,6 +79,11 @@ def apply_enhancements(db_path, rows: List[Dict[str, str]]) -> Dict[str, int]:
         have = {r[1] for r in cur.execute("PRAGMA table_info(enhancements)")}
         overlay_cols = [c for c in _OVERLAY_COLS if c in have]
         before = _overlay_filled(cur, overlay_cols)
+        # 无 id 行会被丢弃（主键缺失，写不进去）。**必须报数**（审查 R2-M6）：
+        # 上游 CSV 换版式导致 id 列错位时，这些行会无声消失，而下面 `inserted` 报的是
+        # **过滤后**的数——自己跟自己对得上，看不出少了东西。`--check` 子命令做 CSV↔库
+        # 行数对账能逮到，但那是另一条命令，`--apply` 单跑时没有这道门。
+        dropped_no_id = [r for r in rows if not r.get("id")]
         payload = [
             (r.get("id"), r.get("faction_id"), r.get("detachment_id"),
              r.get("detachment"), r.get("name"), _cost_to_int(r.get("cost", "")),
@@ -100,7 +105,11 @@ def apply_enhancements(db_path, rows: List[Dict[str, str]]) -> Dict[str, int]:
     finally:
         conn.close()
     return {"inserted": len(payload), "table_total": total, "detachments": dets,
-            "cleared_overlay": cleared}
+            "cleared_overlay": cleared,
+            # 读入行数与被丢弃行数一并返回，让「inserted 少了」这件事能被看见
+            "rows_in": len(rows), "dropped_no_id": len(dropped_no_id),
+            "dropped_no_id_names": sorted(
+                {str(r.get("name") or "(无名)") for r in dropped_no_id})[:20]}
 
 
 def check_enhancements(db_path, rows: List[Dict[str, str]]) -> Dict[str, Any]:

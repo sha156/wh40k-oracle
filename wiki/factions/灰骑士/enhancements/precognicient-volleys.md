@@ -5,6 +5,7 @@ name_en: Precognicient Volleys
 faction: 灰骑士
 type: enhancement
 detachment: Fires of Purgation
+cost: 10
 tags:
 - enhancement
 - enhancement/灰骑士
@@ -14,11 +15,13 @@ sources:
 updated: '2026-07-26'
 ---
 
-分数未知、[[factions/灰骑士/detachments/fires-of-purgation.md|洗罪之火]] 分队。
+10 分、[[factions/灰骑士/detachments/fires-of-purgation.md|洗罪之火]] 分队。
 
 ## 效果
 
 This unit's snap shooting attacks hit on unmodified hit rolls of 5+.
+
+**分数**：10 分
 
 ## 携带限制
 

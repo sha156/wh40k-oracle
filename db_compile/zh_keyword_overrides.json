@@ -33,6 +33,12 @@
   "PSYCHIC": "灵能",
   "ASSAULT": "突击",
   "HOOKED": "钩挂",
-  "IMPALED": "穿刺"
+  "IMPALED": "穿刺",
+  "BLAST 1": "爆炸1",
+  "ANTI-MONSTER/VEHICLE 3+": "针对怪兽或载具3+",
+  "ANTI-NON-MONSTER/VEHICLE 2+": "针对非怪兽且非载具2+",
+  "ANTI-NON-MONSTER/VEHICLE 3+": "针对非怪兽且非载具3+",
+  "LETHAL HITS: NON-MONSTER/VEHICLE": "致命一击：非怪兽且非载具",
+  "DEVASTATING WOUNDS: NON-MONSTER/VEHICLE": "毁灭伤害：非怪兽且非载具"
  }
 }

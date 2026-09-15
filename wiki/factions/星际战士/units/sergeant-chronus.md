@@ -3,17 +3,16 @@ id: '000001524'
 name_en: Sergeant Chronus
 faction: 星际战士
 type: unit
-points:
-  1 model: 75
 tags:
 - unit
 - unit/星际战士
 - 星际战士
 version:
+  points: historical / unmatched
   source: official-db
 sources:
 - book: 官方结构库 db/wh40k.sqlite（Wahapedia 11版镜像 + MFM 官方点数）
-updated: '2026-07-23'
+updated: '2026-09-14'
 ---
 
 ## 属性表
@@ -37,6 +36,7 @@ updated: '2026-07-23'
 - **TANK COMMANDER**：If your army includes one or more of the <span class="kwb">VEHICLE</span> models listed below, Sergeant Chronus must start the battle embarked within one of those models as if it were a Transport. Sergeant Chronus can only disembark from that <span class="kwb">VEHICLE</span> if it is destroyed. While embarked in this way, Sergeant Chronus is said to be commanding that <span class="kwb">VEHICLE</span>. <br><ul><li>[[factions/星际战士/units/hunter.md|Hunter]]                        </li><li>[[factions/星际战士/units/predator-annihilator.md|Predator Annihilator]] </li><li>[[factions/星际战士/units/land-raider.md|Land Raider]]                   </li><li>[[factions/星际战士/units/predator-destructor.md|Predator Destructor]] </li><li>[[factions/星际战士/units/land-raider-crusader-2.md|Land Raider Crusader]]          </li><li>[[factions/星际战士/units/stalker.md|Stalker]] </li><li>[[factions/星际战士/units/land-raider-redeemer.md|Land Raider Redeemer]]          </li><li>[[factions/星际战士/units/vindicator.md|Vindicator]] </li><li>[[factions/星际战士/units/whirlwind.md|Whirlwind]]</li></ul>
 
 ## 单位构成
+历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
 - **1个模型** — 75 分
 
 ## 关键词

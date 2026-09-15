@@ -1,5 +1,20 @@
 # 战锤40K 规则书 RAG 问答系统
 
+## Current checkpoint — 2026-09-15
+
+The September source reconciliation supersedes the historical July figures below. See `docs/superpowers/reports/2026-09-15-structured-source-reconciliation.md` and `docs/superpowers/plans/2026-09-15-structured-source-reconciliation.md`.
+
+- Official ledger: 3,893/3,893 rows; operational prices 1,333/1,333; 879 enhancement database rows matched. Remaining source-only records: Gunwagon, Runtherd and 28 Ork enhancement keys.
+- 390 reviewed source patches restore after `fp_rules`, before MFM and DSL. Exact prior-value mismatch rolls back the patch transaction. Fresh-build restoration and all 2,901 DSL fingerprints passed.
+- Six datasheets added. Nazdreg and five Ork enhancements use explicitly marked official previews; released codex rules have not been verified. Never equate current points with current rules coverage.
+- FRAME now appears on 242 unit records. Keyword membership comes from the structured source, not stale Chinese translations. Eighteen changed units invalidate older translations; 16 old retrieval chunks were pruned, leaving 5,754 chunks.
+- Current membership remains defined in `db_compile/active_units.py`. Preserve English where a verified Chinese source is absent. Regenerate pages only through documented commands.
+- Native API and codex startup, new datasheet rendering, simulation and roster price calculation were checked. Test results and precise coverage limits are recorded in the acceptance report.
+- Live AI acceptance still needs a successful provider call after the prior DeepSeek HTTP 402 balance failure. Docker acceptance remains blocked by the prior host WSL installation problem; neither was reported as passed.
+- Runnable assets remain in D:/Project/py/RAG; PDFs, caches, model files and SQLite are not in Git.
+- CI now installs `requirements-ci.txt` and runs model-free ingestion tests. Roster tests use temporary databases; only real-cache audits and full-app tests require local assets/dependencies. See the September 15 CI repair report for validation and remaining limits.
+
+
 基于本地知识库的战锤40K规则问答：PDF 规则书 → 向量化入库 → 混合检索 → LLM 生成带引用的中文回答。
 
 **版本定位（2026-07-10 裁决）：现行第 11 版**（2026-06-20 生效）。11 版官方沿用十版 codex

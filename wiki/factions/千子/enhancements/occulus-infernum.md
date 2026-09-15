@@ -7,6 +7,7 @@ aliases:
 faction: 千子
 type: enhancement
 detachment: Sekhetar Cohort
+cost: 20
 tags:
 - enhancement
 - enhancement/千子
@@ -16,11 +17,13 @@ sources:
 updated: '2026-07-26'
 ---
 
-分数未知、[[factions/千子/detachments/sekhetar-cohort.md|塞克塔部队]] 分队。
+20 分、[[factions/千子/detachments/sekhetar-cohort.md|塞克塔部队]] 分队。
 
 ## 效果
 
 In your Movement phase, at the start or end of this unit’s move, you can select one friendly SEKHETAR ROBOTS unit within 6" of this unit. That unit’s ranged attacks have +1 BS until the start of your next turn.
+
+**分数**：20 分
 
 ## 携带限制
 

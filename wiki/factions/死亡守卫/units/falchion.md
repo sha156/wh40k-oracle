@@ -3,17 +3,16 @@ id: '000003688'
 name_en: Falchion
 faction: 死亡守卫
 type: unit
-points:
-  1 model: 420
 tags:
 - unit
 - unit/死亡守卫
 - 死亡守卫
 version:
+  points: historical / unmatched
   source: official-db
 sources:
 - book: 官方结构库 db/wh40k.sqlite（Wahapedia 11版镜像 + MFM 官方点数）
-updated: '2026-07-23'
+updated: '2026-09-14'
 ---
 
 ## 属性表
@@ -43,6 +42,7 @@ updated: '2026-07-23'
 - **Titan-killer**：Each time this model makes a ranged attack with its twin Falchion volcano cannon that targets a <span class="kwb">MONSTER</span> or <span class="kwb">VEHICLE</span> unit, that attack has the [DEVASTATING WOUNDS] ability.
 
 ## 单位构成
+历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
 - **1个模型** — 420 分
 
 ## 关键词

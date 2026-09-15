@@ -4,18 +4,16 @@ name_zh: 死亡守望终结者小队
 name_en: Deathwatch Terminator Squad
 faction: 帝国特勤
 type: unit
-points:
-  5 models: 210
-  10 models: 420
 tags:
 - unit
 - unit/帝国特勤
 - 帝国特勤
 version:
+  points: historical / unmatched
   source: official-db
 sources:
 - book: 官方结构库 db/wh40k.sqlite（Wahapedia 11版镜像 + MFM 官方点数）
-updated: '2026-07-23'
+updated: '2026-09-14'
 ---
 
 ## 属性表
@@ -53,6 +51,7 @@ updated: '2026-07-23'
 - **【阵营技能】：破敌重誓，任务战术**
 
 ## 单位构成
+历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
 - **5个模型** — 210 分
 - **10个模型** — 420 分
 

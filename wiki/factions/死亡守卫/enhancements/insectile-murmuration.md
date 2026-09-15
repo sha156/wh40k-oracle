@@ -7,7 +7,7 @@ aliases:
 faction: 死亡守卫
 type: enhancement
 detachment: Flyblown Host
-cost: 20
+cost: 15
 tags:
 - enhancement
 - enhancement/死亡守卫
@@ -17,13 +17,13 @@ sources:
 updated: '2026-07-26'
 ---
 
-20 分、[[factions/死亡守卫/detachments/flyblown-host.md|吹蝇军]] 分队。
+15 分、[[factions/死亡守卫/detachments/flyblown-host.md|吹蝇军]] 分队。
 
 ## 效果
 
 When this unit’s attacks target a unit within Contagion Range of a friendly unit, those attacks can re-roll wound rolls of 1.
 
-**分数**：20 分
+**分数**：15 分
 
 ## 携带限制
 

@@ -5,7 +5,7 @@ name_en: Belicosa-Class Capacitor Vanes
 faction: 机械修会
 type: enhancement
 detachment: Eradication Cohort
-cost: 30
+cost: 25
 tags:
 - enhancement
 - enhancement/机械修会
@@ -15,13 +15,13 @@ sources:
 updated: '2026-07-26'
 ---
 
-30 分、[[factions/机械修会/detachments/eradication-cohort.md|根除大队]] 分队。
+25 分、[[factions/机械修会/detachments/eradication-cohort.md|根除大队]] 分队。
 
 ## 效果
 
 Add 6" to the Range characteristic of ranged weapons equipped by models in the bearer’s unit, and add 1 to the Strength characteristic of those weapons.
 
-**分数**：30 分
+**分数**：25 分
 
 ## 携带限制
 

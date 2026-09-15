@@ -5,17 +5,17 @@ name_en: Catachan Heavy Weapons Squad
 faction: 星界军
 type: unit
 points:
-  3 models: 65
+  3 models: 70
 tags:
 - unit
 - unit/星界军
 - 星界军
 version:
-  points: MFM 2026-07-27 15:14
+  points: MFM 2026-09-14T05:51:23.572407+00:00
   source: official-db
 sources:
 - book: 官方结构库 db/wh40k.sqlite（Wahapedia 11版镜像 + MFM 官方点数）
-updated: '2026-07-23'
+updated: '2026-09-14'
 ---
 
 ## 属性表
@@ -43,8 +43,8 @@ updated: '2026-07-23'
 - **击倒巨物！**：每当本模型中的单位对巨兽或载具单位进行射击攻击时，你可以重骰结果为 1 的命中骰和造伤骰
 
 ## 单位构成
-- **3个模型** — 65 分
+- **3个模型** — 70 分
 
 ## 关键词
 - **阵营关键词**：Astra Militarum
-- **普通关键词**：[[core-rules/infantry.md|步兵]]，帝国，[[core-rules/grenades.md|手雷]]，兵团，卡塔昌重武器班
+- **普通关键词**：Catachan Heavy Weapons Squad，Regiment，Imperium，[[core-rules/grenades.md|Grenades]]，[[core-rules/infantry.md|Infantry]]

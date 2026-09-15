@@ -5,6 +5,7 @@ name_en: Camouflaged Snipers
 faction: 艾达灵族
 type: enhancement
 detachment: Path of the Outcast
+cost: 10
 tags:
 - enhancement
 - enhancement/艾达灵族
@@ -14,11 +15,13 @@ sources:
 updated: '2026-07-26'
 ---
 
-分数未知、[[factions/艾达灵族/detachments/path-of-the-outcast.md|流放者之道]] 分队。
+10 分、[[factions/艾达灵族/detachments/path-of-the-outcast.md|流放者之道]] 分队。
 
 ## 效果
 
 This unit’s ranged attacks do not prevent this unit from being hidden.
+
+**分数**：10 分
 
 ## 携带限制
 

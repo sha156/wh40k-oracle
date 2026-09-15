@@ -5,17 +5,17 @@ name_en: Ghazghkull Thraka
 faction: 兽人
 type: unit
 points:
-  2 models: 235
+  1 model: 300
 tags:
 - unit
 - unit/兽人
 - 兽人
 version:
-  points: MFM 2026-07-27 15:14
+  points: MFM 2026-09-14T05:51:23.572407+00:00
   source: official-db
 sources:
 - book: 官方结构库 db/wh40k.sqlite（Wahapedia 11版镜像 + MFM 官方点数）
-updated: '2026-07-23'
+updated: '2026-09-14'
 ---
 
 ## 属性表
@@ -47,8 +47,8 @@ updated: '2026-07-23'
 - **碎骨者的WAAAGH!战旗【光环】**：马卡力12寸内的友军兽人单位，在你发动WAAAGH!技能的生效期间内，近战武器获得【致命一击】技能
 
 ## 单位构成
-- **2个模型** — 235 分
+- **1个模型** — 300 分
 
 ## 关键词
-- **阵营关键词**：兽人
+- **阵营关键词**：Orks
 - **普通关键词**：[[factions/兽人/units/warboss.md|Warboss]]，[[core-rules/character.md|Character]]，Ghazghkull Thraka，[[core-rules/epic-hero.md|Epic Hero]]，[[core-rules/infantry.md|Infantry]]

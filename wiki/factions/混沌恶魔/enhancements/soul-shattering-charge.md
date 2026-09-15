@@ -5,6 +5,7 @@ name_en: Soul-Shattering Charge
 faction: 混沌恶魔
 type: enhancement
 detachment: Cavalcade of Chaos
+cost: 10
 tags:
 - enhancement
 - enhancement/混沌恶魔
@@ -14,11 +15,13 @@ sources:
 updated: '2026-07-26'
 ---
 
-分数未知、[[factions/混沌恶魔/detachments/cavalcade-of-chaos.md|混沌骑兵队]] 分队。
+10 分、[[factions/混沌恶魔/detachments/cavalcade-of-chaos.md|混沌骑兵队]] 分队。
 
 ## 效果
 
 When this unit is selected to fight, if this unit made a Charge move this turn, you can use this ability. If you do, when determining which models in this unit can fight, friendly models that are within 3" of enemy units engaged with this unit can target those enemy units.
+
+**分数**：10 分
 
 ## 携带限制
 

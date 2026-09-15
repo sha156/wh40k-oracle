@@ -42,6 +42,16 @@ export interface RosterPayload {
   units: RosterUnitPayload[];
 }
 
+export interface ParsedRoster {
+  complete: boolean;
+  roster: RosterPayload;
+  issues: { line: number; text: string; reason: string }[];
+}
+
+export function parseRoster(text: string, factionId: string, detachmentId: string | null, size: RosterSize): Promise<ParsedRoster> {
+  return postJson<ParsedRoster>("/roster/parse", { text, factionId, detachmentId, size });
+}
+
 export interface ValidationIssue {
   code: string;
   severity: "error" | "warn" | "info";

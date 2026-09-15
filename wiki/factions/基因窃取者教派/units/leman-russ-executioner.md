@@ -4,17 +4,16 @@ name_zh: 黎曼鲁斯处决者
 name_en: Leman Russ Executioner
 faction: 基因窃取者教派
 type: unit
-points:
-  1 model: 170
 tags:
 - unit
 - unit/基因窃取者教派
 - 基因窃取者教派
 version:
+  points: historical / unmatched
   source: official-db
 sources:
 - book: 官方结构库 db/wh40k.sqlite（Wahapedia 11版镜像 + MFM 官方点数）
-updated: '2026-07-23'
+updated: '2026-09-14'
 ---
 
 ## 属性表
@@ -47,6 +46,7 @@ updated: '2026-07-23'
 - **处决者**：当该单位用处决者等离子炮进行攻击时，若目标单位低于半数军力，则命中结果+1
 
 ## 单位构成
+历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
 - **1个模型** — 170 分
 
 ## 关键词

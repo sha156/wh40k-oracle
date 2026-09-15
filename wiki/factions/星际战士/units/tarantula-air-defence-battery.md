@@ -3,17 +3,21 @@ id: '000000099'
 name_en: Tarantula Air Defence Battery
 faction: 星际战士
 type: unit
-points:
-  1 model: 70
 tags:
 - unit
 - unit/星际战士
 - 星际战士
 version:
+  points: historical / unmatched
   source: official-db
 sources:
-- book: 官方结构库 db/wh40k.sqlite（Wahapedia 11版镜像 + MFM 官方点数）
-updated: '2026-07-23'
+- book: 'Faction Pack: Space Marines'
+  pages:
+  - 109
+- book: 'Faction Pack: Space Marines'
+  pages:
+  - 110
+updated: '2026-09-14'
 ---
 
 ## 属性表
@@ -35,8 +39,9 @@ updated: '2026-07-23'
 - **Sentry Programming**：You can target this model with the Fire Overwatch Stratagem for 0CP, and can do so even if you have already targeted a different unit with that Stratagem this turn. This model can only be targeted with that Stratagem once per turn.
 
 ## 单位构成
+历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
 - **1个模型** — 70 分
 
 ## 关键词
 - **阵营关键词**：Adeptus Astartes
-- **普通关键词**：Tarantula Air Defence Battery，Imperium，Vehicle
+- **普通关键词**：Tarantula Air Defence Battery，Imperium，Vehicle，FRAME

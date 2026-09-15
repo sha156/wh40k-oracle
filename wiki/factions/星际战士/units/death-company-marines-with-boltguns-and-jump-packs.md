@@ -3,18 +3,16 @@ id: '000003837'
 name_en: Death Company Marines with Boltguns and Jump Packs
 faction: 星际战士
 type: unit
-points:
-  5 models: 140
-  10 models: 280
 tags:
 - unit
 - unit/星际战士
 - 星际战士
 version:
+  points: historical / unmatched
   source: official-db
 sources:
 - book: 官方结构库 db/wh40k.sqlite（Wahapedia 11版镜像 + MFM 官方点数）
-updated: '2026-07-23'
+updated: '2026-09-14'
 ---
 
 ## 属性表
@@ -27,7 +25,7 @@ updated: '2026-07-23'
 |---|---|---|---|---|---|---|---|
 | 爆弹手枪 | 12" | 1 | 3+ | 4 | 0 | 1 | [[core-rules/pistol.md\|手枪]] |
 | 爆弹枪 | 24" | 2 | 3+ | 4 | 0 | 1 | — |
-| 喷火手枪 | 12" | D6 | N/A | 3 | 0 | 1 | [[core-rules/ignores-cover.md\|无视掩体]]，[[core-rules/pistol.md\|手枪]]，[[core-rules/torrent.md\|洪流]] |
+| Hand flamer | 12" | D6 | N/A | 3 | 0 | 1 | [[core-rules/ignores-cover.md\|无视掩体]]，[[core-rules/pistol.md\|手枪]]，[[core-rules/torrent.md\|洪流]] |
 | 狱火手枪 | 6" | 1 | 3+ | 8 | -4 | D3 | [[core-rules/pistol.md\|手枪]]，[[core-rules/melta.md\|热熔2]] |
 | 等离子手枪（标准） | 12" | 1 | 3+ | 7 | -2 | 1 | [[core-rules/pistol.md\|手枪]] |
 | 等离子手枪（过载） | 12" | 1 | 3+ | 8 | -3 | 2 | [[core-rules/hazardous.md\|危险]]，[[core-rules/pistol.md\|手枪]] |
@@ -47,6 +45,7 @@ updated: '2026-07-23'
 - **DEATH COMPANY**：If a [[factions/星际战士/units/chaplain.md|Chaplain]] model from your army with the Leader ability can be attached to Assault Intercessors with Jump Packs or an [[factions/星际战士/units/assault-squad-with-jump-packs.md|Assault Squad with Jump Packs]], it can be attached to this unit instead.<br><br>If a Character unit from your army with the Leader ability can be attached to a [[factions/星际战士/units/death-company-marines.md|Death Company Marines]] with Jump Packs unit, it can be attached to this unit instead.
 
 ## 单位构成
+历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
 - **5个模型** — 140 分
 - **10个模型** — 280 分
 

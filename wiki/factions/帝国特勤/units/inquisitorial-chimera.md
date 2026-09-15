@@ -11,11 +11,13 @@ tags:
 - unit/帝国特勤
 - 帝国特勤
 version:
-  points: MFM 2026-07-27 15:14
+  points: MFM 2026-09-14T05:51:23.572407+00:00
   source: official-db
 sources:
-- book: 官方结构库 db/wh40k.sqlite（Wahapedia 11版镜像 + MFM 官方点数）
-updated: '2026-07-23'
+- book: https://assets.warhammer-community.com/eng_22-07_warhammer_40,000_faction_pack_imperia_agents-fttx9vrxuj-jug1nycmjn.pdf
+  pages:
+  - 10
+updated: '2026-09-14'
 ---
 
 ## 属性表
@@ -48,4 +50,4 @@ updated: '2026-07-23'
 
 ## 关键词
 - **阵营关键词**：Agents of the Imperium
-- **普通关键词**：[[core-rules/transport.md|Transport]]，[[core-rules/smoke.md|Smoke]]，Vehicle，Inquisitorial Chimera，Imperium，[[core-rules/dedicated-transport.md|Dedicated Transport]]
+- **普通关键词**：[[core-rules/transport.md|Transport]]，[[core-rules/smoke.md|Smoke]]，Vehicle，Inquisitorial Chimera，Imperium，[[core-rules/dedicated-transport.md|Dedicated Transport]]，FRAME

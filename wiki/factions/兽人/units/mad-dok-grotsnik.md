@@ -3,17 +3,16 @@ id: '000000015'
 name_en: Mad Dok Grotsnik
 faction: 兽人
 type: unit
-points:
-  1 model: 65
 tags:
 - unit
 - unit/兽人
 - 兽人
 version:
+  points: historical / unmatched
   source: official-db
 sources:
 - book: 官方结构库 db/wh40k.sqlite（Wahapedia 11版镜像 + MFM 官方点数）
-updated: '2026-07-23'
+updated: '2026-09-14'
 ---
 
 ## 属性表
@@ -40,6 +39,7 @@ updated: '2026-07-23'
 - **One Scalpel Short of a Medpack**：While this model is leading a unit, that unit is eligible to declare a charge in a turn in which it Fell Back.
 
 ## 单位构成
+历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
 - **1个模型** — 65 分
 
 ## 关键词

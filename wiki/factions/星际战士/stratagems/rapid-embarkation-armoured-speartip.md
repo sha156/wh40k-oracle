@@ -29,4 +29,4 @@ One Adeptus Astartes Infantry unit from your army that is not within Engagement 
 
 ## 效果
 
-If your ADEPTUS ASTARTES INFANTRY unit is wholly within 6" of that HEAVY TRANSPORT, it can embark within it.
+If your ADEPTUS ASTARTES INFANTRY unit is wholly within 6" of that HEAVY TRANSPORT, it can embark within it. Your unit can embark within that TRANSPORT in a turn it disembarked from a TRANSPORT.

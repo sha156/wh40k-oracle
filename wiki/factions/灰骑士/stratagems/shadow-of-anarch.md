@@ -24,7 +24,7 @@ Your opponent’s Movement phase, just after an enemy unit ends a Normal, Advanc
 
 ## 使用对象
 
-One Grey Knights Psyker unit from your army that is within 9" of that enemy unit and is not within Engagement Range of one or more enemy units.
+One Grey Knights Psyker unit from your army that is within 8" of that enemy unit and is not within Engagement Range of one or more enemy units.
 
 ## 效果
 

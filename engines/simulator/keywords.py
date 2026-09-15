@@ -95,7 +95,8 @@ def keyword_to_effects(pk: ParsedKeyword) -> Tuple[List[Effect], List[str], List
         return ([Effect("hit", "extra_hits", _sustained_param(p), (), src)],
                 ["sustained hits"], [])
     if name == "lethal_hits":
-        return ([Effect("hit", "auto_wound", (), (), src)], ["lethal hits"], [])
+        condition = ("target_keyword_group", pk.params[0]) if pk.params else ()
+        return ([Effect("hit", "auto_wound", (), condition, src)], ["lethal hits"], [])
     if name == "torrent":
         return ([Effect("hit", "auto_hit", (), (), src)], ["torrent"], [])
     if name == "heavy":
@@ -125,7 +126,8 @@ def keyword_to_effects(pk: ParsedKeyword) -> Tuple[List[Effect], List[str], List
 
     # ---- 致伤 ----
     if name == "devastating_wounds":
-        return ([Effect("wound", "mortal_pool", (), (), src)], ["devastating wounds"], [])
+        condition = ("target_keyword_group", pk.params[0]) if pk.params else ()
+        return ([Effect("wound", "mortal_pool", (), condition, src)], ["devastating wounds"], [])
     if name == "twin_linked":
         return ([Effect("wound", "reroll", ("fail",), (), src)], ["twin-linked"], [])
     if name == "lance":
@@ -135,8 +137,10 @@ def keyword_to_effects(pk: ParsedKeyword) -> Tuple[List[Effect], List[str], List
         if len(pk.params) >= 2:
             kw = str(pk.params[0]).strip().lower()
             n = _as_int(pk.params[1]) or 4
+            condition = (("target_keyword_group", kw) if kw in
+                         ("monster/vehicle", "non-monster/vehicle") else ("target_has_keyword", kw))
             return ([Effect("wound", "crit_threshold", (n,),
-                            ("target_has_keyword", kw), src)],
+                            condition, src)],
                     [f"anti-{kw} {n}+"], [])
         return [], [], []
 

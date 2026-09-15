@@ -250,25 +250,29 @@
    "detachment": "Recon Element",
    "name_en": "Masters of Camouflage",
    "name_zh": null,
-   "status": "partial",
+   "status": "encoded",
    "effects": [
     {
      "phase": "save",
      "op": "cover",
      "params": [],
-     "condition": [],
-     "source": "伪装大师（ASTRA MILITARUM WALKER/REGIMENT 模型恒享掩体收益；11 版掩体落命中侧，射击与近战皆按引擎掩体通道处理）"
+     "condition": [
+      "shooting_astra_militarum_non_titanic"
+     ],
+     "source": "Masters of Camouflage: Stealth for ASTRA MILITARUM, excluding TITANIC."
     }
    ],
    "requires_toggles": [],
-   "not_modeled_notes_zh": [
-    "第二从句「若该模型另有来源已享掩体收益，则 Sv 改善 1（至多 3+）」需要「掩体来自另一来源」的状态区分——引擎只有单一掩体开关，裸编 sv_improve 会与本条第一从句自我叠加，故不编（欠建模）",
-    "「WALKER / REGIMENT 模型」是守方自关键词限制，引擎无守方关键词门，注入到任何守方都会生效，适用性由使用者自查"
-   ],
+   "not_modeled_notes_zh": [],
    "provenance": {
-    "text_sha256": "49d8ecc5ec4037b4e7d553440e5206a928fddbdfbbc768a90a9acbc429051112"
+    "text_sha256": "363b748f2bd95df6e22738023b24764ddc37ec74dcfcb40e1a6a60f9e68b8244",
+    "reviewed_source": {
+     "url": "https://assets.warhammer-community.com/eng_wh40k_faction_pack_astra_militarum-o51zhqvsvy-wdobxbf6t0.pdf",
+     "sha256": "b8fccdf9cfcd37dc538a1f49d84871e6b184e01c54e9fa83bef8372aa6190601",
+     "page": 23
+    }
    },
-   "encoded_by": "manual-2026-07-21",
+   "encoded_by": "manual-2026-09-15",
    "weapon_filter": "",
    "materialize": {
     "from_table": "detachments",

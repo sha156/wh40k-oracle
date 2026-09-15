@@ -183,7 +183,7 @@ def build_faction_index(
             rel_path = entity_page_path_for_display(wiki_root, page)
             link = "[[{}|{}]]".format(rel_path.replace(".md", ""), name)
             summary = _extract_summary(page.body, 60)
-            lines.append("- {} — {}".format(link, summary))
+            lines.append("- {}{}".format(link, " — " + summary if summary else ""))
         lines.append("")
 
     return "\n".join(lines) + "\n"

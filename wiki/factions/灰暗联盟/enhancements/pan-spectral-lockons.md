@@ -5,6 +5,7 @@ name_en: Pan-Spectral Lockons
 faction: 灰暗联盟
 type: enhancement
 detachment: Farseekers
+cost: 10
 tags:
 - enhancement
 - enhancement/灰暗联盟
@@ -14,11 +15,13 @@ sources:
 updated: '2026-07-26'
 ---
 
-分数未知、[[factions/灰暗联盟/detachments/farseekers.md|远行探索者]] 分队。
+10 分、[[factions/灰暗联盟/detachments/farseekers.md|远行探索者]] 分队。
 
 ## 效果
 
 In your Shooting phase, you can select one visible enemy unit within 12" of this unit. That enemy unit is spotted. While a unit is spotted, that unit has +3" detection range.
+
+**分数**：10 分
 
 ## 携带限制
 

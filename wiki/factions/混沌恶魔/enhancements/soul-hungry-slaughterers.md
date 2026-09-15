@@ -4,6 +4,7 @@ name_en: Soul-hungry Slaughterers
 faction: 混沌恶魔
 type: enhancement
 detachment: Warptide
+cost: 10
 tags:
 - enhancement
 - enhancement/混沌恶魔
@@ -13,11 +14,13 @@ sources:
 updated: '2026-07-26'
 ---
 
-分数未知、[[factions/混沌恶魔/detachments/warptide.md|次元魔潮]] 分队。
+10 分、[[factions/混沌恶魔/detachments/warptide.md|次元魔潮]] 分队。
 
 ## 效果
 
 When you target this unit with the Heroic Intervention or Fire Overwatch Stratagem, that use is -1 CP.
+
+**分数**：10 分
 
 ## 携带限制
 

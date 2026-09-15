@@ -4,7 +4,7 @@ name_en: Mechanicus Locum
 faction: 机械修会
 type: enhancement
 detachment: Data-Psalm Conclave
-cost: 10
+cost: 5
 tags:
 - enhancement
 - enhancement/机械修会
@@ -14,13 +14,13 @@ sources:
 updated: '2026-07-26'
 ---
 
-10 分、[[factions/机械修会/detachments/data-psalm-conclave.md|Data-Psalm Conclave]] 分队。
+5 分、[[factions/机械修会/detachments/data-psalm-conclave.md|Data-Psalm Conclave]] 分队。
 
 ## 效果
 
 The bearer has a Leadership characteristic of 6+ and, once per battle, at the start of any phase, you can select one friendly CULT MECHANICUS unit that is Battle-shocked and within 12" of the bearer. That unit is no longer Battle-shocked.
 
-**分数**：10 分
+**分数**：5 分
 
 ## 携带限制
 

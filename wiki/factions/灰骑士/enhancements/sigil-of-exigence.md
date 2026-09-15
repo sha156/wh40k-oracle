@@ -18,7 +18,7 @@ updated: '2026-07-26'
 
 ## 效果
 
-Once per battle, in your opponent’s Shooting phase, when the bearer’s unit is selected as the target of a ranged attack, you can remove the bearer’s unit from the battlefield and then set it back up again anywhere on the battlefield that is more than 9" horizontally away from all enemy units. If the bearer’s unit is no longer an eligible target, your opponent can then select new targets for any attacks that had targeted the bearer’s unit.
+Once per battle, in your opponent’s Shooting phase, when the bearer’s unit is selected as the target of a ranged attack, you can remove the bearer’s unit from the battlefield and then set it back up again anywhere on the battlefield that is more than 8" horizontally away from all enemy units. If the bearer’s unit is no longer an eligible target, your opponent can then select new targets for any attacks that had targeted the bearer’s unit.
 
 **分数**：30 分
 

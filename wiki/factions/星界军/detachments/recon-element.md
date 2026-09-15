@@ -19,7 +19,7 @@ updated: '2026-07-26'
 
 ### Masters of Camouflage
 
-ASTRA MILITARUM WALKER and REGIMENT models from your army have the Benefit of Cover. While such a model has the Benefit of Cover for any other reason, improve the Save characteristic of that model by 1 (to a maximum of 3+).
+Friendly ASTRA MILITARUM units (excluding TITANIC units) have Stealth.
 
 ## 增强
 

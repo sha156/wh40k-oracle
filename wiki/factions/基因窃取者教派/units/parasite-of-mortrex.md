@@ -4,17 +4,16 @@ name_zh: 摩崔克斯寄生虫
 name_en: Parasite Of Mortrex
 faction: 基因窃取者教派
 type: unit
-points:
-  1 model: 80
 tags:
 - unit
 - unit/基因窃取者教派
 - 基因窃取者教派
 version:
+  points: historical / unmatched
   source: official-db
 sources:
 - book: 官方结构库 db/wh40k.sqlite（Wahapedia 11版镜像 + MFM 官方点数）
-updated: '2026-07-23'
+updated: '2026-09-14'
 ---
 
 ## 属性表
@@ -35,6 +34,7 @@ updated: '2026-07-23'
 - **瘙痒！**：在近战阶段开始时，选择一个位于该模型交战范围内的敌方单位。该敌方单位必须进行一次战斗震慑测试。
 
 ## 单位构成
+历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
 - **1个模型** — 80 分
 
 ## 关键词

@@ -5,17 +5,17 @@ name_en: Maleceptor
 faction: 泰伦虫族
 type: unit
 points:
-  1 model: 190
+  1 model: 180
 tags:
 - unit
 - unit/泰伦虫族
 - 泰伦虫族
 version:
-  points: MFM 2026-07-27 15:14
+  points: MFM 2026-09-14T05:51:23.572407+00:00
   source: official-db
 sources:
 - book: 官方结构库 db/wh40k.sqlite（Wahapedia 11版镜像 + MFM 官方点数）
-updated: '2026-07-23'
+updated: '2026-09-14'
 ---
 
 ## 属性表
@@ -44,7 +44,7 @@ updated: '2026-07-23'
 - **脑能漫射（光环，灵能）**：当敌方单位位于该模型 6"内时，当该敌方单位中的模型进行攻击时，命中掷骰结果减1；并且如果该敌方单位低于半数兵力，致伤掷骰结果也减1。
 
 ## 单位构成
-- **1个模型** — 190 分
+- **1个模型** — 180 分
 
 ## 关键词
 - **阵营关键词**：Tyranids

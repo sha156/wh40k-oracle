@@ -5,17 +5,17 @@ name_en: Hearthkyn Warriors
 faction: 灰暗联盟
 type: unit
 points:
-  10 models: 100
+  10 models: 90
 tags:
 - unit
 - unit/灰暗联盟
 - 灰暗联盟
 version:
-  points: MFM 2026-07-27 15:14
+  points: MFM 2026-09-14T05:51:23.572407+00:00
   source: official-db
 sources:
 - book: 官方结构库 db/wh40k.sqlite（Wahapedia 11版镜像 + MFM 官方点数）
-updated: '2026-07-23'
+updated: '2026-09-14'
 ---
 
 ## 属性表
@@ -51,7 +51,7 @@ updated: '2026-07-23'
 - **【装备技能】织盾符冠**：持有者所属单位中的模型拥有5+无敌豁免。
 
 ## 单位构成
-- **10个模型** — 100 分
+- **10个模型** — 90 分
 
 ## 关键词
 - **阵营关键词**：Leagues of Votann

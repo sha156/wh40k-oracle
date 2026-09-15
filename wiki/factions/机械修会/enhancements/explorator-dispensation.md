@@ -5,6 +5,7 @@ name_en: Explorator Dispensation
 faction: 机械修会
 type: enhancement
 detachment: Cohort Acquisitus
+cost: 20
 tags:
 - enhancement
 - enhancement/机械修会
@@ -14,11 +15,13 @@ sources:
 updated: '2026-07-26'
 ---
 
-分数未知、[[factions/机械修会/detachments/cohort-acquisitus.md|求知大队]] 分队。
+20 分、[[factions/机械修会/detachments/cohort-acquisitus.md|求知大队]] 分队。
 
 ## 效果
 
 This unit has Infiltrators.
+
+**分数**：20 分
 
 ## 携带限制
 

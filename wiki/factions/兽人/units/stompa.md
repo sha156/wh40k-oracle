@@ -5,17 +5,17 @@ name_en: Stompa
 faction: 兽人
 type: unit
 points:
-  1 model: 600
+  1 model: 700
 tags:
 - unit
 - unit/兽人
 - 兽人
 version:
-  points: MFM 2026-07-27 15:14
+  points: MFM 2026-09-14T05:51:23.572407+00:00
   source: official-db
 sources:
 - book: 官方结构库 db/wh40k.sqlite（Wahapedia 11版镜像 + MFM 官方点数）
-updated: '2026-07-23'
+updated: '2026-09-14'
 ---
 
 ## 属性表
@@ -49,8 +49,8 @@ updated: '2026-07-23'
 - **严重损坏**：当本模型W值为1-10时，攻击命中结果-1,OC值-6
 
 ## 单位构成
-- **1个模型** — 600 分
+- **1个模型** — 700 分
 
 ## 关键词
-- **阵营关键词**：兽人
-- **普通关键词**：[[core-rules/vehicle.md|载具]]，巨型，机甲，[[core-rules/towering.md|高耸]]，[[core-rules/transport.md|运输工具]]，古巨基
+- **阵营关键词**：Orks
+- **普通关键词**：[[core-rules/towering.md|Towering]]，[[core-rules/transport.md|Transport]]，[[core-rules/walker.md|Walker]]，Vehicle，[[core-rules/titanic.md|Titanic]]，Stompa

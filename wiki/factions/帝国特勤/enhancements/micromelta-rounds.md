@@ -5,7 +5,7 @@ name_en: Micromelta Rounds
 faction: 帝国特勤
 type: enhancement
 detachment: Veiled Blade Elimination Force
-cost: 45
+cost: 20
 tags:
 - enhancement
 - enhancement/帝国特勤
@@ -15,13 +15,13 @@ sources:
 updated: '2026-07-26'
 ---
 
-45 分、[[factions/帝国特勤/detachments/veiled-blade-elimination-force.md|隐藏利刃歼灭部队]] 分队。
+20 分、[[factions/帝国特勤/detachments/veiled-blade-elimination-force.md|隐藏利刃歼灭部队]] 分队。
 
 ## 效果
 
 This model’s exitus rifle has the [ANTI-MONSTER 4+] and [ANTI-VEHICLE 4+] abilities.
 
-**分数**：45 分
+**分数**：20 分
 
 ## 携带限制
 

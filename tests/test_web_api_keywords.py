@@ -36,12 +36,12 @@ DETAIL_KEYS = SUMMARY_KEYS | {"weapons"}
 # 实测（2026-07-27）：46 条里 33 条能落到核心规则正文，缺的 13 条**全部**是单位特有
 # 词条（规则正文写在各自兵牌上，核心规则里本来就没有）。这两个数是"跳链没断"的对账锚：
 # 掉下去说明 wiki/core-rules 少了章节页或配对键漂了，而页面上只会安静地少几个按钮。
-EXPECTED_WITH_RULE_LINK = 33
+EXPECTED_WITH_RULE_LINK = 37
 
 # 实测分布（11 版 46 条）。数字变了说明离线生成器重跑且结果变了——先确认是有意的
 # （换版 / 换库）再改这里，别顺手对齐成"测试通过"。
-EXPECTED_TOTAL = 46
-EXPECTED_GROUPS = {"universal": 32, "transitional": 1, "unit-specific": 13}
+EXPECTED_TOTAL = 50
+EXPECTED_GROUPS = {"universal": 36, "transitional": 1, "unit-specific": 13}
 
 
 @pytest.fixture(scope="module")

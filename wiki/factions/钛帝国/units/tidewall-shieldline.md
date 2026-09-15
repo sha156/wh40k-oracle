@@ -6,17 +6,19 @@ faction: 钛帝国
 type: unit
 points:
   1 model: 85
-  Tidewall Defence Platform: 20
+  + 1 tidewall defence platform: 20
 tags:
 - unit
 - unit/钛帝国
 - 钛帝国
 version:
-  points: MFM 2026-07-27 15:14
+  points: MFM 2026-09-14T05:51:23.572407+00:00
   source: official-db
 sources:
-- book: 官方结构库 db/wh40k.sqlite（Wahapedia 11版镜像 + MFM 官方点数）
-updated: '2026-07-23'
+- book: https://assets.warhammer-community.com/eng_wh40k_faction_pack_tau_empire-sxhzmfrlud-mpzjzuhupn.pdf
+  pages:
+  - 19
+updated: '2026-09-14'
 ---
 
 ## 属性表
@@ -34,8 +36,8 @@ updated: '2026-07-23'
 
 ## 单位构成
 - **1个模型** — 85 分
-- **Tidewall Defence Platform** — 20 分
+- **+ 1 tidewall defence platform** — 20 分
 
 ## 关键词
 - **阵营关键词**：T’au Empire
-- **普通关键词**：[[core-rules/fortification.md|Fortification]]，Vehicle，[[core-rules/transport.md|Transport]]，Fly，Tidewall Shieldline
+- **普通关键词**：[[core-rules/fortification.md|Fortification]]，Vehicle，[[core-rules/transport.md|Transport]]，Fly，Tidewall Shieldline，FRAME

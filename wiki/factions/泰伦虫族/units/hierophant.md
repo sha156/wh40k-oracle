@@ -11,11 +11,16 @@ tags:
 - unit/泰伦虫族
 - 泰伦虫族
 version:
-  points: MFM 2026-07-27 15:14
+  points: MFM 2026-09-14T05:51:23.572407+00:00
   source: official-db
 sources:
-- book: 官方结构库 db/wh40k.sqlite（Wahapedia 11版镜像 + MFM 官方点数）
-updated: '2026-07-23'
+- book: 'Faction Pack: Tyranids'
+  pages:
+  - 17
+- book: 'Faction Pack: Tyranids'
+  pages:
+  - 18
+updated: '2026-09-14'
 ---
 
 ## 属性表
@@ -49,4 +54,4 @@ updated: '2026-07-23'
 
 ## 关键词
 - **阵营关键词**：Tyranids
-- **普通关键词**：Great Devourer，Hierophant，[[core-rules/titanic.md|Titanic]]，Monster，[[core-rules/towering.md|Towering]]，[[core-rules/transport.md|Transport]]
+- **普通关键词**：Great Devourer，Hierophant，[[core-rules/titanic.md|Titanic]]，Monster，[[core-rules/towering.md|Towering]]，[[core-rules/transport.md|Transport]]，FRAME

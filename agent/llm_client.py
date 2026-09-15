@@ -67,8 +67,8 @@ _TOOL_ARG_HINTS: Dict[str, str] = {
         '"damage_reduction": 1, "attacker_models": 5, "defender_models": 5, '
         '"n": 8000, "seed": 1234}}'
     ),
-    "validate_roster": '{"roster_text": "军表文本"}',
-    "critique_roster": '{"roster_text": "军表文本"}',
+    "validate_roster": '{"roster_text": "Faction: Space Marines\nDetachment: Gladius Task Force\n5x Intercessor Squad\nApothecary Biologis | models=1 | warlord"}（每行一个单位、明确模型数；保留用户所有行，不编装配）',
+    "critique_roster": '{"roster_text": "与 validate_roster 相同格式，含 Faction/Detachment 和明确模型数"}',
     "archive_answer": '{"title": "标题", "content": "正文"}',
 }
 
@@ -78,8 +78,9 @@ _INTENT_SYSTEM = (
     "判 = 判定某具体情形下规则如何裁定（先后顺序、能否触发等）；\n"
     "算 = 计算点数/军表分值；\n"
     "谋 = 战术推演/模拟对战/谁能打赢；\n"
-    "闲聊 = 与规则无关的寒暄。\n"
-    "只输出这一个汉字，不要任何解释、标点或引号。"
+    "闲聊 = 寒暄、记录用户偏好、回忆本次对话中用户说过什么（例如：我刚才说用哪个阵营）。\n"
+    "回忆用户自己的选择不需要查规则，归闲聊；但追问该单位现在的点数、规则或能力仍归查/算。\n"
+    "只输出上述一个分类，不要任何解释、标点或引号。"
 )
 
 _NEXT_STEP_CONTRACT = """你是「铁幕」，战锤40K规则参谋（现行第11版：11版核心规则/Faction Pack 补丁 + 官方仍合法的十版 codex 兵牌基底），正在一个工具调用循环中工作。
@@ -95,6 +96,9 @@ _NEXT_STEP_CONTRACT = """你是「铁幕」，战锤40K规则参谋（现行第1
 {catalog}
 
 工具使用策略：
+- 本轮消息之前的 user/assistant 消息是同一会话的历史。回忆用户说过的阵营、偏好或选择时，
+  直接依据这些消息回答；历史中没有就如实说没有。历史答案不是当前官方规则/点数的证据，
+  用户问「它现在多少分」之类的问题仍必须用工具重新查证。
 - **问属性/数值**（M/T/Sv/W/OC/Ld、武器 A/BS/WS/S/AP/D、单位点数）时，**先用 get_datasheet**，
   直接传用户原文里的中文单位名——它直查 L3 结构库（英文权威真值 + 中文别名层），是数值题的
   **首选**，避免 PDF 检索被译名/拍扁坑。get_datasheet 查空再退到 get_entity / rag_search。
@@ -178,7 +182,12 @@ def _render_loop_message(msg: Dict[str, Any]) -> Optional[Dict[str, str]]:
         if not isinstance(content, str):
             content = json.dumps(content, ensure_ascii=False, default=_json_default)
         if len(content) > 4000:
-            content = content[:4000] + "…（已截断）"
+            # 保**头尾**而不是只保头（审查 R1-L1）：get_datasheet 叠加中文层后整包常超限，
+            # 而数值多在尾部（武器表、点数、同名消歧披露）——只留前 4000 字等于把答案本身
+            # 切掉，模型却只看到一句「已截断」。
+            head, tail = content[:2600], content[-1200:]
+            content = (f"{head}\n…（中间省略 {len(content) - 3800} 字；"
+                       f"如需被省略的部分，请缩小查询范围后重查）…\n{tail}")
         return {"role": "user", "content": f"[工具 {name} 返回]\n{content}"}
     return None
 

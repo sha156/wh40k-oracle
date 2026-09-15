@@ -14,8 +14,10 @@ import {
 } from "@/lib/codex";
 import { postSimulate, type SimOptions, type SimResponse } from "@/lib/sim";
 
-const BACKEND_HINT =
-  "无法连接后端。请确认 web_api 已启动：.venv\\Scripts\\python.exe -m uvicorn web_api.main:app --port 8000";
+const BACKEND_HINT = "数据暂不可用，请稍后重试。";
+function apiError(e: unknown) {
+  return e instanceof Error ? e.message : BACKEND_HINT;
+}
 
 /** 一侧（攻/守）的阵营+单位选择状态 */
 function useSideUnits(onError: (msg: string) => void) {
@@ -30,7 +32,7 @@ function useSideUnits(onError: (msg: string) => void) {
     fetchUnits(factionId, ctrl.signal)
       .then(setUnits)
       .catch((e) => {
-        if ((e as Error).name !== "AbortError") onError(BACKEND_HINT);
+        if ((e as Error).name !== "AbortError") onError(apiError(e));
       })
       .finally(() => setLoading(false));
     return () => ctrl.abort();
@@ -115,7 +117,7 @@ export default function SimulatorPage() {
         }
       })
       .catch((e) => {
-        if ((e as Error).name !== "AbortError") setError(BACKEND_HINT);
+        if ((e as Error).name !== "AbortError") setError(apiError(e));
       });
     return () => ctrl.abort();
     // atk/dfd 的 setter 引用稳定（useState），仅首载执行一次
@@ -189,9 +191,7 @@ export default function SimulatorPage() {
       })
       .catch((e) => {
         if ((e as Error).name === "AbortError") return; // 被取消/卸载，静默
-        setError(e instanceof Error && e.message.includes("后端返回")
-          ? `模拟失败（${e.message}）`
-          : BACKEND_HINT);
+        setError(`模拟失败：${apiError(e)}`);
       })
       .finally(() => {
         if (!ctrl.signal.aborted) setRunning(false);

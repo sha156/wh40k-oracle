@@ -11,11 +11,13 @@ tags:
 - unit/星际战士
 - 星际战士
 version:
-  points: MFM 2026-07-27 15:14
+  points: MFM 2026-09-14T05:51:23.572407+00:00
   source: official-db
 sources:
-- book: 官方结构库 db/wh40k.sqlite（Wahapedia 11版镜像 + MFM 官方点数）
-updated: '2026-07-23'
+- book: 'Faction Pack: Space Marines'
+  pages:
+  - 1
+updated: '2026-09-14'
 ---
 
 ## 属性表
@@ -41,11 +43,11 @@ updated: '2026-07-23'
 | 大师级动力武器 | 近战 | 5 | 2+ | 5 | -2 | 2 | — |
 
 ## 技能
-- **二连旗帜**：在该单位中包含旗手加德里尔时，该单位中模型的目标控制属性增加 1 点。此外，在该单位中包含旗手加德里尔以及[[factions/星际战士/units/captain-titus.md|泰图斯连长]]时，该单位中模型的领导力属性提升 1。
-- **战略指挥部**：在双方玩家完成军队的部署后，如果该单位位于战场（或者搭乘在任何一个位于战场的运输工具中)，选择最多三个己方阿斯塔特修会单位并重新部署。在这么做时，您可以将这些单位放入战略预备队中，无论预备队中已经存在多少单位。
-- **风暴盾（武器技能）**：持有者拥有 4+ 无敌豁免。
-- **偏移立场（武器技能）**：持有者拥有 5+ 无敌豁免。
-- **【阵营技能】：破敌重誓**
+- **Second Company Banner**：While this unit contains [[factions/星际战士/units/ancient.md|Ancient]] Gadriel, add 1 to the Objective Control characteristic of models in this unit. While this unit contains Ancient Gadriel and [[factions/星际战士/units/captain-titus.md|Captain Titus]], improve the Leadership characteristic of models in this unit by 1 as well.
+- **Strategium Command**：After both players have deployed their armies, if this unit is on the battlefield (or any Transport it is embarked within is on the battlefield), select up to three <span class="kwb">ADEPTUS</span> <span class="kwb">ASTARTES</span> units from your army and redeploy them. When doing so, you can set those units up in Strategic Reserves, regardless of how many units are already in Strategic Reserves.
+- **Refractor Field**：The bearer has a 5+ invulnerable save.
+- **Storm Shield**：The bearer has a 4+ invulnerable save.
+- **Support**
 
 ## 单位构成
 - **6个模型** — 120 分

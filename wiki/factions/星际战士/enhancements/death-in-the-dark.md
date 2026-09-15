@@ -5,6 +5,7 @@ name_en: Death in the Dark
 faction: 星际战士
 type: enhancement
 detachment: Subversion Assets
+cost: 15
 tags:
 - enhancement
 - enhancement/星际战士
@@ -14,11 +15,13 @@ sources:
 updated: '2026-07-26'
 ---
 
-分数未知、[[factions/星际战士/detachments/subversion-assets.md|行动资源]] 分队。
+15 分、[[factions/星际战士/detachments/subversion-assets.md|行动资源]] 分队。
 
 ## 效果
 
 This unit's attacks that target a hidden unit have +1 to Hit rolls.
+
+**分数**：15 分
 
 ## 携带限制
 

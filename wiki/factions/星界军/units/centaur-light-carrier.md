@@ -3,17 +3,21 @@ id: '000000731'
 name_en: Centaur Light Carrier
 faction: 星界军
 type: unit
-points:
-  1 model: 40
 tags:
 - unit
 - unit/星界军
 - 星界军
 version:
+  points: historical / unmatched
   source: official-db
 sources:
-- book: 官方结构库 db/wh40k.sqlite（Wahapedia 11版镜像 + MFM 官方点数）
-updated: '2026-07-23'
+- book: 'Faction Pack: Astra Militarum'
+  pages:
+  - 54
+- book: 'Faction Pack: Astra Militarum'
+  pages:
+  - 55
+updated: '2026-09-14'
 ---
 
 ## 属性表
@@ -37,8 +41,9 @@ updated: '2026-07-23'
 - **One Shot**：The bearer can only shoot with this weapon once per battle.
 
 ## 单位构成
+历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
 - **1个模型** — 40 分
 
 ## 关键词
 - **阵营关键词**：Astra Militarum
-- **普通关键词**：Squadron，[[core-rules/smoke.md|Smoke]]，Vehicle，Imperium，[[core-rules/transport.md|Transport]]，Centaur Light Carrier
+- **普通关键词**：Squadron，[[core-rules/smoke.md|Smoke]]，Vehicle，Imperium，[[core-rules/transport.md|Transport]]，Centaur Light Carrier，FRAME

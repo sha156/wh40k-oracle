@@ -5,6 +5,7 @@ name_en: Mark of the Star Children
 faction: 基因窃取者教派
 type: enhancement
 detachment: Purestrain Broodswarm
+cost: 30
 tags:
 - enhancement
 - enhancement/基因窃取者教派
@@ -14,7 +15,7 @@ sources:
 updated: '2026-07-26'
 ---
 
-分数未知、[[factions/基因窃取者教派/detachments/purestrain-broodswarm.md|纯血虫群]] 分队。
+30 分、[[factions/基因窃取者教派/detachments/purestrain-broodswarm.md|纯血虫群]] 分队。
 
 ## 效果
 
@@ -23,6 +24,8 @@ This unit has:
 - +1 T.
 - 4+ Sv.
 - This unit’s melee attacks have +1 S.
+
+**分数**：30 分
 
 ## 携带限制
 

@@ -6,16 +6,17 @@ faction: 兽人
 type: unit
 points:
   1 model: 85
+  2 models: 160
 tags:
 - unit
 - unit/兽人
 - 兽人
 version:
-  points: MFM 2026-07-27 15:14
+  points: MFM 2026-09-14T05:51:23.572407+00:00
   source: official-db
 sources:
 - book: 官方结构库 db/wh40k.sqlite（Wahapedia 11版镜像 + MFM 官方点数）
-updated: '2026-07-23'
+updated: '2026-09-14'
 ---
 
 ## 属性表
@@ -44,7 +45,8 @@ updated: '2026-07-23'
 
 ## 单位构成
 - **1个模型** — 85 分
+- **2个模型** — 160 分
 
 ## 关键词
-- **阵营关键词**：兽人
-- **普通关键词**：[[core-rules/vehicle.md|载具]]，飚速怪咖，跳跳送餐车
+- **阵营关键词**：Orks
+- **普通关键词**：Rukkatrukk Squigbuggy，Speed Freeks，Vehicle

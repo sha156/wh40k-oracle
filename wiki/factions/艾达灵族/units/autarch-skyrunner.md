@@ -3,17 +3,16 @@ id: '000000580'
 name_en: Autarch Skyrunner
 faction: 艾达灵族
 type: unit
-points:
-  1 model: 90
 tags:
 - unit
 - unit/艾达灵族
 - 艾达灵族
 version:
+  points: historical / unmatched
   source: official-db
 sources:
 - book: 官方结构库 db/wh40k.sqlite（Wahapedia 11版镜像 + MFM 官方点数）
-updated: '2026-07-23'
+updated: '2026-09-14'
 ---
 
 ## 属性表
@@ -43,6 +42,7 @@ updated: '2026-07-23'
 - **Path of Command**：Once per battle round, one model from your army with this ability can use it when its unit is targeted with a Stratagem. If it does, reduce the CP cost of that usage of that Stratagem by 1CP.
 
 ## 单位构成
+历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
 - **1个模型** — 90 分
 
 ## 关键词

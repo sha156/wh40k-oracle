@@ -5,17 +5,17 @@ name_en: Chaos Cerastus Knight Lancer
 faction: 混沌骑士
 type: unit
 points:
-  1 model: 395
+  1 model: 385
 tags:
 - unit
 - unit/混沌骑士
 - 混沌骑士
 version:
-  points: MFM 2026-07-27 15:14
+  points: MFM 2026-09-14T05:51:23.572407+00:00
   source: official-db
 sources:
 - book: 官方结构库 db/wh40k.sqlite（Wahapedia 11版镜像 + MFM 官方点数）
-updated: '2026-07-23'
+updated: '2026-09-14'
 ---
 
 ## 属性表
@@ -45,7 +45,7 @@ updated: '2026-07-23'
 - **黑暗狂热(光环)**：当一个友方战犬级模型位于此模型 6 寸内时， 该战犬级模型装备的远程武器获得【突击】技能。
 
 ## 单位构成
-- **1个模型** — 395 分
+- **1个模型** — 385 分
 
 ## 关键词
 - **阵营关键词**：Chaos Knights

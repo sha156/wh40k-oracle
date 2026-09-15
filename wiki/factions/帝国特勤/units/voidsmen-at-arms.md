@@ -5,19 +5,17 @@ name_en: Voidsmen-at-arms
 faction: 帝国特勤
 type: unit
 points:
-  6 models (AGENTS OF THE IMPERIUM Detachment): 50
-  6 models (Assigned Agent): 70
   6 models: 50
 tags:
 - unit
 - unit/帝国特勤
 - 帝国特勤
 version:
-  points: MFM 2026-07-27 15:14
+  points: MFM 2026-09-14T05:51:23.572407+00:00
   source: official-db
 sources:
 - book: 官方结构库 db/wh40k.sqlite（Wahapedia 11版镜像 + MFM 官方点数）
-updated: '2026-07-23'
+updated: '2026-09-14'
 ---
 
 ## 属性表
@@ -44,8 +42,6 @@ updated: '2026-07-23'
 - **近距离战斗专家**：每当该单位中的模型对最近的可攻击目标进行远程攻击时，该攻击拥有【致命一击】技能。
 
 ## 单位构成
-- **6个模型 (AGENTS OF THE IMPERIUM Detachment)** — 50 分
-- **6个模型 (Assigned Agent)** — 70 分
 - **6个模型** — 50 分
 
 ## 关键词

@@ -7,6 +7,7 @@ aliases:
 faction: 星际战士
 type: enhancement
 detachment: Legacy of Grace
+cost: 10
 tags:
 - enhancement
 - enhancement/星际战士
@@ -16,7 +17,7 @@ sources:
 updated: '2026-07-26'
 ---
 
-分数未知、[[factions/星际战士/detachments/legacy-of-grace.md|优雅传承]] 分队。
+10 分、[[factions/星际战士/detachments/legacy-of-grace.md|优雅传承]] 分队。
 
 ## 效果
 
@@ -24,6 +25,8 @@ This model’s [PSYCHIC] attacks:
 
 - Have [ANTI: non-MONSTER/VEHICLE 5+].
 - Can re-roll damage rolls.
+
+**分数**：10 分
 
 ## 携带限制
 

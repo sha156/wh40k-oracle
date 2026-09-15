@@ -11,11 +11,13 @@ tags:
 - unit/混沌恶魔
 - 混沌恶魔
 version:
-  points: MFM 2026-07-27 15:14
+  points: MFM 2026-09-14T05:51:23.572407+00:00
   source: official-db
 sources:
-- book: 官方结构库 db/wh40k.sqlite（Wahapedia 11版镜像 + MFM 官方点数）
-updated: '2026-07-23'
+- book: 'Faction Pack: Chaos Daemons'
+  pages:
+  - 1
+updated: '2026-09-14'
 ---
 
 ## 属性表
@@ -38,8 +40,8 @@ updated: '2026-07-23'
 | 先锋格斗武器 | 近战 | 3 | 4+ | 4 | -1 | 1 | [[core-rules/psychic-attacks.md\|灵能]] |
 
 ## 技能
-- **幻变之主**：该单位拥有隐匿。针对该单位进行的近战攻击的命中掷骰 -1。
-- **扭曲现实(灵能)**：每个战斗轮次限一次，在该模型进行了一次命中掷骰、致伤掷骰或豁免掷骰后，你可以将掷骰结果变为 6。
+- **Fluxmaster**：This unit has Stealth. Melee attacks that target this unit have -1 to hit rolls.
+- **Altered Reality (Psychic)**：Once per battle round, after a Hit roll, a Wound roll, or a saving throw is made for this model, you can change the result of that roll to a 6.
 
 ## 单位构成
 - **1个模型** — 70 分

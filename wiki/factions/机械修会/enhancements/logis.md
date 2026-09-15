@@ -4,7 +4,7 @@ name_en: Logis
 faction: 机械修会
 type: enhancement
 detachment: Explorator Maniple
-cost: 20
+cost: 15
 tags:
 - enhancement
 - enhancement/机械修会
@@ -14,13 +14,13 @@ sources:
 updated: '2026-07-26'
 ---
 
-20 分、[[factions/机械修会/detachments/explorator-maniple.md|Explorator Maniple]] 分队。
+15 分、[[factions/机械修会/detachments/explorator-maniple.md|Explorator Maniple]] 分队。
 
 ## 效果
 
 While the bearer is leading a unit, each time a model in that unit makes an attack that targets a unit within range of your Acquisition objective marker, add 1 to the Hit roll.
 
-**分数**：20 分
+**分数**：15 分
 
 ## 携带限制
 

@@ -3,17 +3,16 @@ id: '000001339'
 name_en: Giant Chaos Spawn
 faction: 混沌恶魔
 type: unit
-points:
-  1 model: 130
 tags:
 - unit
 - unit/混沌恶魔
 - 混沌恶魔
 version:
+  points: historical / unmatched
   source: official-db
 sources:
 - book: 官方结构库 db/wh40k.sqlite（Wahapedia 11版镜像 + MFM 官方点数）
-updated: '2026-07-23'
+updated: '2026-09-14'
 ---
 
 ## 属性表
@@ -38,6 +37,7 @@ updated: '2026-07-23'
 - **Creature of Slaanesh**：If this model has the <span class="kwb">SLAANESH</span> keyword, add 2" to this model’s Move characteristic.
 
 ## 单位构成
+历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
 - **1个模型** — 130 分
 
 ## 关键词

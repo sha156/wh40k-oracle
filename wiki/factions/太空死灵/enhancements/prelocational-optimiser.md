@@ -7,6 +7,7 @@ aliases:
 faction: 太空死灵
 type: enhancement
 detachment: The Phaeron's Armoury
+cost: 25
 tags:
 - enhancement
 - enhancement/太空死灵
@@ -16,7 +17,7 @@ sources:
 updated: '2026-07-26'
 ---
 
-分数未知、[[factions/太空死灵/detachments/the-phaerons-armoury.md|法皇的军备]] 分队。
+25 分、[[factions/太空死灵/detachments/the-phaerons-armoury.md|法皇的军备]] 分队。
 
 ## 效果
 
@@ -24,6 +25,8 @@ When this unit is selected to shoot, if this unit was set up using a [[factions/
 
 - [LETHAL HITS].
 - Or: [SUSTAINED HITS 1].
+
+**分数**：25 分
 
 ## 携带限制
 

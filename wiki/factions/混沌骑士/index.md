@@ -13,43 +13,43 @@
 
 ## 单位
 
-- [[factions/混沌骑士/units/cultist-mob-with-firearms|Cultist Mob with Firearms]] — 
-- [[factions/混沌骑士/units/gellerpox-infected|Gellerpox Infected]] — 
-- [[factions/混沌骑士/units/mutoid-vermin|Mutoid Vermin]] — 
-- [[factions/混沌骑士/units/negavolt-cultists|Negavolt Cultists]] — 
-- [[factions/混沌骑士/units/renegade-enforcer|Renegade Enforcer]] — 
-- [[factions/混沌骑士/units/renegade-heavy-weapons-squad|Renegade Heavy Weapons Squad]] — 
-- [[factions/混沌骑士/units/renegade-ogryn-beast-handler|Renegade Ogryn Beast Handler]] — 
-- [[factions/混沌骑士/units/renegade-ogryn-brutes|Renegade Ogryn Brutes]] — 
-- [[factions/混沌骑士/units/renegade-plague-ogryns|Renegade Plague Ogryns]] — 
-- [[factions/混沌骑士/units/rogue-psyker|Rogue Psyker]] — 
-- [[factions/混沌骑士/units/traitor-enforcer|叛军执法者]] — 
-- [[factions/混沌骑士/units/traitor-guardsmen-squad|叛变卫队]] — 
-- [[factions/混沌骑士/units/war-dog-moirax|天命型战犬]] — 
-- [[factions/混沌骑士/units/fellgor-beastmen|恶角野兽人]] — 
-- [[factions/混沌骑士/units/knight-abominant|憎恶者骑士]] — 
-- [[factions/混沌骑士/units/war-dog-executioner|战犬处决者]] — 
-- [[factions/混沌骑士/units/war-dog-brigand|战犬暴匪]] — 
-- [[factions/混沌骑士/units/war-dog-huntsman|战犬猎手]] — 
-- [[factions/混沌骑士/units/war-dog-karnivore|战犬肉食者]] — 
-- [[factions/混沌骑士/units/war-dog-stalker|战犬追猎者]] — 
-- [[factions/混沌骑士/units/knight-despoiler|掠夺者骑士]] — 
-- [[factions/混沌骑士/units/knight-tyrant|暴君骑士]] — 
-- [[factions/混沌骑士/units/knight-ruinator|毁灭者骑士]] — 
-- [[factions/混沌骑士/units/chaos-questoris-knight-styrix|混沌冥河型巡游骑士]] — 
-- [[factions/混沌骑士/units/chaos-cerastus-knight-atrapos|混沌命运女神型角蝰骑士]] — 
-- [[factions/混沌骑士/units/chaos-questoris-knight-magaera|混沌复仇女神型巡游骑士]] — 
-- [[factions/混沌骑士/units/chaos-acastus-knight-porphyrion|混沌巨人王型阿卡斯托斯骑士]] — 
-- [[factions/混沌骑士/units/chaos-cerastus-knight-castigator|混沌惩戒者型角蝰骑士]] — 
-- [[factions/混沌骑士/units/chaos-cerastus-knight-lancer|混沌枪骑兵型角蝰骑士]] — 
-- [[factions/混沌骑士/units/chaos-acastus-knight-asterius|混沌牛头怪型阿卡斯托斯骑士]] — 
-- [[factions/混沌骑士/units/chaos-cerastus-knight-acheron|混沌黄泉型角蝰骑士]] — 
-- [[factions/混沌骑士/units/knight-desecrator|渎神者骑士]] — 
-- [[factions/混沌骑士/units/knight-rampager|肆虐者骑士]] — 
-- [[factions/混沌骑士/units/accursed-cultists|诅咒教徒]] — 
-- [[factions/混沌骑士/units/cultist-mob|邪教徒]] — 
-- [[factions/混沌骑士/units/cultist-firebrand|邪教徒纵火者]] — 
-- [[factions/混沌骑士/units/dark-commune|黑暗巫会]] — 
+- [[factions/混沌骑士/units/cultist-mob-with-firearms|Cultist Mob with Firearms]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
+- [[factions/混沌骑士/units/gellerpox-infected|Gellerpox Infected]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
+- [[factions/混沌骑士/units/mutoid-vermin|Mutoid Vermin]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
+- [[factions/混沌骑士/units/negavolt-cultists|Negavolt Cultists]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
+- [[factions/混沌骑士/units/renegade-enforcer|Renegade Enforcer]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
+- [[factions/混沌骑士/units/renegade-heavy-weapons-squad|Renegade Heavy Weapons Squad]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
+- [[factions/混沌骑士/units/renegade-ogryn-beast-handler|Renegade Ogryn Beast Handler]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
+- [[factions/混沌骑士/units/renegade-ogryn-brutes|Renegade Ogryn Brutes]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
+- [[factions/混沌骑士/units/renegade-plague-ogryns|Renegade Plague Ogryns]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
+- [[factions/混沌骑士/units/rogue-psyker|Rogue Psyker]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
+- [[factions/混沌骑士/units/traitor-enforcer|叛军执法者]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
+- [[factions/混沌骑士/units/traitor-guardsmen-squad|叛变卫队]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
+- [[factions/混沌骑士/units/war-dog-moirax|天命型战犬]]
+- [[factions/混沌骑士/units/fellgor-beastmen|恶角野兽人]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
+- [[factions/混沌骑士/units/knight-abominant|憎恶者骑士]]
+- [[factions/混沌骑士/units/war-dog-executioner|战犬处决者]]
+- [[factions/混沌骑士/units/war-dog-brigand|战犬暴匪]]
+- [[factions/混沌骑士/units/war-dog-huntsman|战犬猎手]]
+- [[factions/混沌骑士/units/war-dog-karnivore|战犬肉食者]]
+- [[factions/混沌骑士/units/war-dog-stalker|战犬追猎者]]
+- [[factions/混沌骑士/units/knight-despoiler|掠夺者骑士]]
+- [[factions/混沌骑士/units/knight-tyrant|暴君骑士]]
+- [[factions/混沌骑士/units/knight-ruinator|毁灭者骑士]]
+- [[factions/混沌骑士/units/chaos-questoris-knight-styrix|混沌冥河型巡游骑士]]
+- [[factions/混沌骑士/units/chaos-cerastus-knight-atrapos|混沌命运女神型角蝰骑士]]
+- [[factions/混沌骑士/units/chaos-questoris-knight-magaera|混沌复仇女神型巡游骑士]]
+- [[factions/混沌骑士/units/chaos-acastus-knight-porphyrion|混沌巨人王型阿卡斯托斯骑士]]
+- [[factions/混沌骑士/units/chaos-cerastus-knight-castigator|混沌惩戒者型角蝰骑士]]
+- [[factions/混沌骑士/units/chaos-cerastus-knight-lancer|混沌枪骑兵型角蝰骑士]]
+- [[factions/混沌骑士/units/chaos-acastus-knight-asterius|混沌牛头怪型阿卡斯托斯骑士]]
+- [[factions/混沌骑士/units/chaos-cerastus-knight-acheron|混沌黄泉型角蝰骑士]]
+- [[factions/混沌骑士/units/knight-desecrator|渎神者骑士]]
+- [[factions/混沌骑士/units/knight-rampager|肆虐者骑士]]
+- [[factions/混沌骑士/units/accursed-cultists|诅咒教徒]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
+- [[factions/混沌骑士/units/cultist-mob|邪教徒]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
+- [[factions/混沌骑士/units/cultist-firebrand|邪教徒纵火者]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
+- [[factions/混沌骑士/units/dark-commune|黑暗巫会]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
 
 ## 策略技能
 
@@ -101,7 +101,7 @@
 ## 强化
 
 - [[factions/混沌骑士/enhancements/aspect-of-the-beast|Aspect of the Beast]] — 30 分、地狱猎手骑兵队 分队。
-- [[factions/混沌骑士/enhancements/bestial-aspect|Bestial Aspect]] — 20 分、Infernal Lance 分队。
+- [[factions/混沌骑士/enhancements/bestial-aspect|Bestial Aspect]] — 30 分、Infernal Lance 分队。
 - [[factions/混沌骑士/enhancements/blade-of-celerity|Blade of Celerity]] — 35 分、Lords of Dread 分队。
 - [[factions/混沌骑士/enhancements/blasphemous-engine|Blasphemous Engine]] — 35 分、Infernal Lance 分队。
 - [[factions/混沌骑士/enhancements/blessing-of-the-dark-master|Blessing of the Dark Master]] — 20 分、Lords of Dread 分队。
@@ -126,10 +126,10 @@
 - [[factions/混沌骑士/enhancements/tyrants-shadow|Tyrant’s Shadow]] — 25 分、Traitoris Lance 分队。
 - [[factions/混沌骑士/enhancements/veil-of-medrengard|Veil of Medrengard]] — 35 分、Traitoris Lance 分队。
 - [[factions/混沌骑士/enhancements/warp-borne-stalker|Warp-borne Stalker]] — 25 分、Lords of Dread 分队。
-- [[factions/混沌骑士/enhancements/snarling-rivalry|凶险竞争]] — 分数未知、猎犬战群 分队。
-- [[factions/混沌骑士/enhancements/iconoclast-idol-aura|叛道神像（光环）]] — 分数未知、叛道封地 分队。
-- [[factions/混沌骑士/enhancements/hate-filled-dominion|憎恨统御]] — 分数未知、暴虐要塞 分队。
-- [[factions/混沌骑士/enhancements/cruel-lashmaster-aura|残忍君主（光环）]] — 分数未知、叛道封地 分队。
-- [[factions/混沌骑士/enhancements/pterrorshade-rookery|骇影鸟巢]] — 分数未知、暴虐要塞 分队。
-- [[factions/混沌骑士/enhancements/soul-spoor-auspicator|魂迹侦测器]] — 分数未知、猎犬战群 分队。
+- [[factions/混沌骑士/enhancements/snarling-rivalry|凶险竞争]] — 10 分、猎犬战群 分队。
+- [[factions/混沌骑士/enhancements/iconoclast-idol-aura|叛道神像（光环）]] — 20 分、叛道封地 分队。
+- [[factions/混沌骑士/enhancements/hate-filled-dominion|憎恨统御]] — 20 分、暴虐要塞 分队。
+- [[factions/混沌骑士/enhancements/cruel-lashmaster-aura|残忍君主（光环）]] — 25 分、叛道封地 分队。
+- [[factions/混沌骑士/enhancements/pterrorshade-rookery|骇影鸟巢]] — 20 分、暴虐要塞 分队。
+- [[factions/混沌骑士/enhancements/soul-spoor-auspicator|魂迹侦测器]] — 15 分、猎犬战群 分队。
 

@@ -31,10 +31,10 @@ needs_assets = pytest.mark.skipif(
     reason="需要 db/wh40k.sqlite + wiki/indexes/keywords.json + wiki/core-rules/sections/")
 
 # 实测口径（2026-07-27）。数字变了先确认是换库/换版，别顺手对齐成"测试通过"。
-EXPECTED_TOKENS = 80            # 全库武器 keywords_json 拆出的去重 token 数
+EXPECTED_TOKENS = 86            # 全库武器 keywords_json 拆出的去重 token 数
 EXPECTED_NO_BRIEF = 13          # 查得到身份但核心规则无正文的词条（全部是单位特有）
 EXPECTED_SECTIONS = 156         # 核心规则 24 章的小节数，且节号两两不同
-EXPECTED_ZH_FORMS = 230         # 80 个 token 全都有中文名，其中 50 个带档位 ×3 个人写形态
+EXPECTED_ZH_FORMS = 248         # 80 个 token 全都有中文名，其中 50 个带档位 ×3 个人写形态
 
 
 # ── 拆分 ─────────────────────────────────────────────────────────────

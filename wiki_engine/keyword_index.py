@@ -141,9 +141,20 @@ def normalize_keyword(token: str) -> Tuple[str, Optional[str]]:
 
 def _engine_name(base: str) -> str:
     """基础词条 → 引擎内部名（engines/simulator/parse.py 的口径）。"""
+    if base.startswith(("LETHAL HITS:", "DEVASTATING WOUNDS:")):
+        base = base.split(":", 1)[0]
     if base.startswith("ANTI-"):
         return "anti"                              # 引擎按 anti 一族统一建模
     return base.lower().replace("-", "_").replace(" ", "_").replace("'", "")
+
+
+def keyword_family(base: str) -> str:
+    """Keep conditional identities distinct, but link to their shared core rule."""
+    if base.startswith("ANTI-"):
+        return "ANTI"
+    if base in {"LETHAL HITS: NON-MONSTER/VEHICLE", "DEVASTATING WOUNDS: NON-MONSTER/VEHICLE"}:
+        return base.split(":", 1)[0]
+    return base
 
 
 def engine_status(base: str) -> str:
@@ -162,17 +173,9 @@ def engine_status(base: str) -> str:
 # ── 统计（真实分布的唯一来源）──────────────────────────────────────
 
 def _current_unit_ids(conn: sqlite3.Connection) -> Set[str]:
-    """现役口径与 web_api/codex.py 一致：官方 MFM 在册 ∪ 黑图书馆收录。"""
-    cur: Set[str] = set()
-    for uid, pj in conn.execute("SELECT id, points_json FROM units"):
-        try:
-            if pj and (json.loads(pj) or {}).get("mfm"):
-                cur.add(uid)
-        except (json.JSONDecodeError, TypeError):
-            continue
-    for (uid,) in conn.execute("SELECT canonical_id FROM unit_zh_detail"):
-        cur.add(uid)
-    return cur
+    """Use the same authoritative membership as the codex and roster data layer."""
+    from db_compile.active_units import active_unit_ids
+    return active_unit_ids(conn)
 
 
 def collect(db_path: Path) -> Tuple[Dict[str, KeywordStat], Dict[str, int]]:
@@ -182,7 +185,7 @@ def collect(db_path: Path) -> Tuple[Dict[str, KeywordStat], Dict[str, int]]:
     try:
         current = _current_unit_ids(conn)
         stats: Dict[str, KeywordStat] = {}
-        tally = {"weapon_rows": 0, "pairs": 0, "orphan_rows": 0}
+        tally = {"weapon_rows": 0, "pairs": 0, "orphan_rows": 0, "bad_json_rows": 0}
         rows = conn.execute(
             "SELECT w.name_en, w.name_zh, w.keywords_json, w.unit_id, "
             "       u.id AS uid, u.name_zh AS unit_zh, u.name_en AS unit_en "
@@ -196,6 +199,10 @@ def collect(db_path: Path) -> Tuple[Dict[str, KeywordStat], Dict[str, int]]:
             try:
                 items = json.loads(r["keywords_json"] or "[]") or []
             except (json.JSONDecodeError, TypeError):
+                # 与上面 orphan_rows 同标准：跳过就得记账（审查 R2-L1）。
+                # 没有这个桶时，一批 keywords_json 写坏会让反查悄悄少掉一片武器，
+                # 而 tally 里所有数字看着都正常。当前库内 0 例。
+                tally["bad_json_rows"] += 1
                 continue
             wname = r["name_zh"] or r["name_en"] or ""
             uname = r["unit_zh"] or r["unit_en"] or r["uid"]
@@ -256,7 +263,7 @@ def _rule_page(base: str, wiki_root: Path, zh: str = "") -> Optional[str]:
     from wiki_engine.crosslinks import _resolve_known_alias
 
     candidates: List[str] = ["core-rules/{}.md".format(slugify(base))]
-    for label in (base, zh):
+    for label in (base, zh, keyword_family(base)):
         if label:
             got = _resolve_known_alias(label)
             if got:
@@ -280,7 +287,7 @@ def classify(base: str, quickref: Dict[str, QuickRefEntry]) -> str:
         #   设计师注：「[手枪]是一个预先存在的技能，它将随着这次版本的发展被[近距离]替代。」
         # 即：**规则上完全等同，正在被逐步取代，但此刻仍是现行词条**。
         return "transitional"
-    key = "ANTI" if base.startswith("ANTI-") else base
+    key = keyword_family(base)
     return "universal" if key in quickref else "unit-specific"
 
 
@@ -305,7 +312,7 @@ def render_index(stats: Dict[str, KeywordStat], quickref: Dict[str, QuickRefEntr
         "规则页在哪、引擎建模到什么程度，以及**反查**——哪些武器带它。",
         "",
         "> 本页是生成物（`python -m wiki_engine.keyword_index`），禁止手改。",
-        "> 数量口径：**现役**＝官方 MFM 在册 ∪ 黑图书馆收录（与图鉴列表一致）；"
+        "> 数量口径：**现役**＝匹配到完整官方 MFM 快照（与图鉴列表一致；旧库沿用兼容口径）；"
         "括号内为含传承/福基世界条目的全库数。",
         "> 「引擎」列说的是 `engines/simulator` 有没有把它算进伤害期望："
         "**数值建模**＝真的改数值；**仅标注**＝识别到但不改数值（会在模拟报告里披露）；"
@@ -326,7 +333,7 @@ def render_index(stats: Dict[str, KeywordStat], quickref: Dict[str, QuickRefEntr
               "| 词条 | 英文 | 节号 | 档位 | 现役武器 | 现役单位 | 引擎 |",
               "|---|---|---|---|---|---|---|"]
         for st in group:
-            qr = quickref.get("ANTI" if st.base.startswith("ANTI-") else st.base)
+            qr = quickref.get(keyword_family(st.base))
             zh = _zh_base(st.base, st.variants, gloss) or st.base
             section = (qr.section if qr and qr.section else "—")
             params = sorted({v[len(st.base):].strip() for v in st.variants
@@ -344,7 +351,7 @@ def render_index(stats: Dict[str, KeywordStat], quickref: Dict[str, QuickRefEntr
     # ── 译名差异披露 ──
     diffs = []
     for st in stats.values():
-        qr = quickref.get("ANTI" if st.base.startswith("ANTI-") else st.base)
+        qr = quickref.get(keyword_family(st.base))
         zh = _zh_base(st.base, st.variants, gloss)
         if qr and zh and qr.name_zh != zh and not st.base.startswith("ANTI-"):
             diffs.append((st.base, zh, qr.name_zh))
@@ -369,7 +376,7 @@ def render_index(stats: Dict[str, KeywordStat], quickref: Dict[str, QuickRefEntr
             names = st.current_weapon_names
             L += ["### {}".format(head), ""]
             if not names:
-                L += ["现役单位中无武器带此词条（全库 {} 件武器带它，均为传承/福基世界条目）。"
+                L += ["现役单位中无武器带此词条（全库 {} 件武器带它，均未匹配到现行 MFM）。"
                       .format(len(st.weapons)), ""]
                 continue
             L.append("共 {} 件现役武器（全库 {} 件）。".format(len(names), len(st.weapons)))
@@ -396,7 +403,7 @@ def build_payload(stats: Dict[str, KeywordStat], quickref: Dict[str, QuickRefEnt
     items: List[Dict[str, object]] = []
     for base in sorted(stats):
         st = stats[base]
-        qr = quickref.get("ANTI" if base.startswith("ANTI-") else base)
+        qr = quickref.get(keyword_family(base))
         zh = _zh_base(base, st.variants, gloss)
         items.append({
             "slug": slugify(base),

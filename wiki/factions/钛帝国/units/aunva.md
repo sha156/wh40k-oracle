@@ -4,17 +4,16 @@ name_zh: 安’瓦
 name_en: Aun’va
 faction: 钛帝国
 type: unit
-points:
-  3 models: 65
 tags:
 - unit
 - unit/钛帝国
 - 钛帝国
 version:
+  points: historical / unmatched
   source: official-db
 sources:
 - book: 官方结构库 db/wh40k.sqlite（Wahapedia 11版镜像 + MFM 官方点数）
-updated: '2026-07-23'
+updated: '2026-09-14'
 ---
 
 ## 属性表
@@ -38,6 +37,7 @@ updated: '2026-07-23'
 - **Supreme Loyalty (Aura)**：While a friendly <span class="kwb">T’AU</span> <span class="kwb">EMPIRE</span> unit is within 6" of this unit, each time that unit takes a Battle-shock or Leadership test, add 1 to that test.
 
 ## 单位构成
+历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
 - **3个模型** — 65 分
 
 ## 关键词

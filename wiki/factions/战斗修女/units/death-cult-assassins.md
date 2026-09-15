@@ -3,18 +3,16 @@ id: '000000895'
 name_en: Death Cult Assassins
 faction: 战斗修女
 type: unit
-points:
-  2 models: 55
-  4 models: 110
 tags:
 - unit
 - unit/战斗修女
 - 战斗修女
 version:
+  points: historical / unmatched
   source: official-db
 sources:
 - book: 官方结构库 db/wh40k.sqlite（Wahapedia 11版镜像 + MFM 官方点数）
-updated: '2026-07-23'
+updated: '2026-09-14'
 ---
 
 ## 属性表
@@ -34,6 +32,7 @@ updated: '2026-07-23'
 - **Death Cult**：Each time a model in this unit makes an attack that targets a <span class="kwb">CHARACTER</span> unit, re-roll a Wound roll.
 
 ## 单位构成
+历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
 - **2个模型** — 55 分
 - **4个模型** — 110 分
 

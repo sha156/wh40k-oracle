@@ -4,7 +4,7 @@ name_en: Magos Questoris
 faction: 帝国骑士
 type: enhancement
 detachment: Questor Forgepact
-cost: 35
+cost: 20
 tags:
 - enhancement
 - enhancement/帝国骑士
@@ -14,13 +14,13 @@ sources:
 updated: '2026-07-26'
 ---
 
-35 分、[[factions/帝国骑士/detachments/questor-forgepact.md|封臣铸造联盟]] 分队。
+20 分、[[factions/帝国骑士/detachments/questor-forgepact.md|封臣铸造联盟]] 分队。
 
 ## 效果
 
 While the bearer is within 3" of one or more friendly Imperial Knights units, it has the Lone Operative ability. In your Command phase, select one friendly Imperial Knights model within 3" of the bearer. That model regains up to 2 lost wounds.
 
-**分数**：35 分
+**分数**：20 分
 
 ## 携带限制
 

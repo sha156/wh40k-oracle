@@ -4,17 +4,16 @@ name_zh: 叛变卫队
 name_en: Traitor Guardsmen Squad
 faction: 混沌恶魔
 type: unit
-points:
-  10 models: 70
 tags:
 - unit
 - unit/混沌恶魔
 - 混沌恶魔
 version:
+  points: historical / unmatched
   source: official-db
 sources:
 - book: 官方结构库 db/wh40k.sqlite（Wahapedia 11版镜像 + MFM 官方点数）
-updated: '2026-07-23'
+updated: '2026-09-14'
 ---
 
 ## 属性表
@@ -48,6 +47,7 @@ updated: '2026-07-23'
 - **堕落守军**：在该单位处于一个目标的范围内时，该单位拥有针对远程攻击的 +1 SV。
 
 ## 单位构成
+历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
 - **10个模型** — 70 分
 
 ## 关键词

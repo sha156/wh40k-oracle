@@ -4,17 +4,16 @@ name_zh: 超维方舟
 name_en: Tesseract Ark
 faction: 太空死灵
 type: unit
-points:
-  1 model: 130
 tags:
 - unit
 - unit/太空死灵
 - 太空死灵
 version:
+  points: historical / unmatched
   source: official-db
 sources:
 - book: 官方结构库 db/wh40k.sqlite（Wahapedia 11版镜像 + MFM 官方点数）
-updated: '2026-07-23'
+updated: '2026-09-14'
 ---
 
 ## 属性表
@@ -44,6 +43,7 @@ updated: '2026-07-23'
 - **能量稳定场**：每次敌方单位选择此模型作为冲锋目标时，这次冲锋掷骰结果减 2（不与对减少 该冲锋掷骰结果的其他效果叠加）
 
 ## 单位构成
+历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
 - **1个模型** — 130 分
 
 ## 关键词

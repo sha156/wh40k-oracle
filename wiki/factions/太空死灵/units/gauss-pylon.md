@@ -4,17 +4,16 @@ name_zh: 高斯巨石碑
 name_en: Gauss Pylon
 faction: 太空死灵
 type: unit
-points:
-  1 model: 210
 tags:
 - unit
 - unit/太空死灵
 - 太空死灵
 version:
+  points: historical / unmatched
   source: official-db
 sources:
 - book: 官方结构库 db/wh40k.sqlite（Wahapedia 11版镜像 + MFM 官方点数）
-updated: '2026-07-23'
+updated: '2026-09-14'
 ---
 
 ## 属性表
@@ -39,6 +38,7 @@ updated: '2026-07-23'
 - **相位转移造物**：每次将远程攻击分配给一个模型时，如果该模型由于该防御工事而不对攻击单 位中所有模型完全可见，则该模型获得针对该攻击的掩体增益。
 
 ## 单位构成
+历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
 - **1个模型** — 210 分
 
 ## 关键词

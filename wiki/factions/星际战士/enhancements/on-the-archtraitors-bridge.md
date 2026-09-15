@@ -7,6 +7,7 @@ aliases:
 faction: 星际战士
 type: enhancement
 detachment: Wrath of the Doomed
+cost: 20
 tags:
 - enhancement
 - enhancement/星际战士
@@ -16,11 +17,13 @@ sources:
 updated: '2026-07-26'
 ---
 
-分数未知、[[factions/星际战士/detachments/wrath-of-the-doomed.md|迷失者的怒火]] 分队。
+20 分、[[factions/星际战士/detachments/wrath-of-the-doomed.md|迷失者的怒火]] 分队。
 
 ## 效果
 
 This model’s melee attacks have +2 A.
+
+**分数**：20 分
 
 ## 携带限制
 

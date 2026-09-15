@@ -3,17 +3,16 @@ id: '000003811'
 name_en: Celestian Sacresant Aveline
 faction: 战斗修女
 type: unit
-points:
-  1 model: 45
 tags:
 - unit
 - unit/战斗修女
 - 战斗修女
 version:
+  points: historical / unmatched
   source: official-db
 sources:
 - book: 官方结构库 db/wh40k.sqlite（Wahapedia 11版镜像 + MFM 官方点数）
-updated: '2026-07-23'
+updated: '2026-09-14'
 ---
 
 ## 属性表
@@ -39,6 +38,7 @@ updated: '2026-07-23'
 - **Daemonbreaker**：Each time this model makes an attack that targets a <span class="kwb">DAEMON</span> unit, you can re-roll the Hit roll and you can re-roll the Wound roll.
 
 ## 单位构成
+历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
 - **1个模型** — 45 分
 
 ## 关键词

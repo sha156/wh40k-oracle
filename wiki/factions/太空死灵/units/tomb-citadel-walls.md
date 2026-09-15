@@ -3,17 +3,21 @@ id: '000002362'
 name_en: Tomb Citadel Walls
 faction: 太空死灵
 type: unit
-points:
-  1 model: 920
 tags:
 - unit
 - unit/太空死灵
 - 太空死灵
 version:
+  points: historical / unmatched
   source: official-db
 sources:
-- book: 官方结构库 db/wh40k.sqlite（Wahapedia 11版镜像 + MFM 官方点数）
-updated: '2026-07-23'
+- book: 'Faction Pack: Necrons'
+  pages:
+  - 40
+- book: 'Faction Pack: Necrons'
+  pages:
+  - 41
+updated: '2026-09-14'
 ---
 
 ## 属性表
@@ -27,7 +31,7 @@ updated: '2026-07-23'
 ## 射击武器
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| Gauss exterminator | 48" | 1 | 4+ | 14 | -3 | 6 | [[core-rules/lethal-hits.md\|致命一击]] |
+| 高斯灭绝炮 | 48" | 1 | 4+ | 14 | -3 | 6 | [[core-rules/lethal-hits.md\|致命一击]] |
 | 双联特斯拉毁灭者 | 36" | 6 | 3+ | 8 | 0 | 2 | [[core-rules/sustained-hits.md\|连击2]]，[[core-rules/twin-linked.md\|双联]] |
 
 ## 技能
@@ -36,8 +40,9 @@ updated: '2026-07-23'
 - **FORTIFICATION**：While an enemy unit is only within Engagement Range of one or more Fortifications from your army:<br><ul><li>That unit can still be selected as the target of ranged attacks, but each time such an attack is made, unless it is made with a Pistol, subtract 1 from the Hit roll.</li><li>Models in that unit do not need to take Desperate Escape tests due to Falling Back while Battle-shocked, except for those that will move over enemy models when doing so.</li></ul>
 
 ## 单位构成
+历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
 - **1个模型** — 920 分
 
 ## 关键词
 - **阵营关键词**：Necrons
-- **普通关键词**：Tomb Citadel，[[core-rules/fortification.md|Fortification]]，[[core-rules/titanic.md|Titanic]]，Vehicle
+- **普通关键词**：Tomb Citadel，[[core-rules/fortification.md|Fortification]]，[[core-rules/titanic.md|Titanic]]，Vehicle，FRAME

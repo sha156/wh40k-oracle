@@ -3,17 +3,16 @@ id: '000004000'
 name_en: Crassus
 faction: 基因窃取者教派
 type: unit
-points:
-  1 model: 180
 tags:
 - unit
 - unit/基因窃取者教派
 - 基因窃取者教派
 version:
+  points: historical / unmatched
   source: official-db
 sources:
 - book: 官方结构库 db/wh40k.sqlite（Wahapedia 11版镜像 + MFM 官方点数）
-updated: '2026-07-23'
+updated: '2026-09-14'
 ---
 
 ## 属性表
@@ -37,6 +36,7 @@ updated: '2026-07-23'
 - **Fire Support**：In your Shooting phase, after this model has shot, select one enemy unit that was hit by one or more of those attacks. Until the end of the phase, each time a friendly model that disembarked from this <span class="kwb">TRANSPORT</span> this turn makes an attack that targets that enemy unit, you can re-roll the Wound roll.
 
 ## 单位构成
+历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
 - **1个模型** — 180 分
 
 ## 关键词

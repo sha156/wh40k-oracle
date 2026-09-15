@@ -280,7 +280,7 @@ Benefit of Cover, Hidden, Obscuring or Solid rules apply.
 
 *BENEFIT OF COVER*
 
-每当一个单位被选择成为远程攻击的目标时，如果那个单位中的所有模型都满足以下一个或更多条件，那么那个单位针对那次攻击拥有掩体增益：
+每当一个单位被选择成为远程攻击的目标时，如果那个单位中的所有模型都满足以[[factions/兽人/stratagems/on-to-da-next.md|下一个]]或更多条件，那么那个单位针对那次攻击拥有掩体增益：
 
 - 那个模型拥有步兵/野兽/集群关键词，并且位于一个地形区域内。
 

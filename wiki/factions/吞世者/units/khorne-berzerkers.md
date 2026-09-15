@@ -5,18 +5,18 @@ name_en: Khorne Berzerkers
 faction: 吞世者
 type: unit
 points:
-  10 models: 170
-  20 models: 330
+  10 models: 160
+  20 models: 320
 tags:
 - unit
 - unit/吞世者
 - 吞世者
 version:
-  points: MFM 2026-07-27 15:14
+  points: MFM 2026-09-14T05:51:23.572407+00:00
   source: official-db
 sources:
 - book: 官方结构库 db/wh40k.sqlite（Wahapedia 11版镜像 + MFM 官方点数）
-updated: '2026-07-23'
+updated: '2026-09-14'
 ---
 
 ## 属性表
@@ -43,8 +43,8 @@ updated: '2026-07-23'
 - **恐虐徽记（装备）**：如果持有者拥有一枚或更多恐虐徽记，每当持有者的单位摧毁一个敌方单位时，您获得1点血流点数。每当您进行恐虐祝福掷骰时，您每有一点血流点数，便额外掷一枚骰子。这那之后，您失去所有的血流点数。
 
 ## 单位构成
-- **10个模型** — 170 分
-- **20个模型** — 330 分
+- **10个模型** — 160 分
+- **20个模型** — 320 分
 
 ## 关键词
 - **阵营关键词**：World Eaters

@@ -6,16 +6,17 @@ faction: 星界军
 type: unit
 points:
   2 models: 90
+  per bombast field gun: 10
 tags:
 - unit
 - unit/星界军
 - 星界军
 version:
-  points: MFM 2026-07-27 15:14
+  points: MFM 2026-09-14T05:51:23.572407+00:00
   source: official-db
 sources:
 - book: 官方结构库 db/wh40k.sqlite（Wahapedia 11版镜像 + MFM 官方点数）
-updated: '2026-07-23'
+updated: '2026-09-14'
 ---
 
 ## 属性表
@@ -42,6 +43,7 @@ updated: '2026-07-23'
 
 ## 单位构成
 - **2个模型** — 90 分
+- **per bombast field gun** — 10 分
 
 ## 关键词
 - **阵营关键词**：Astra Militarum

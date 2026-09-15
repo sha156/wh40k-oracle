@@ -4,7 +4,7 @@ name_en: Priority-drop Beacon
 faction: 星界军
 type: enhancement
 detachment: Bridgehead Strike
-cost: 30
+cost: 25
 tags:
 - enhancement
 - enhancement/星界军
@@ -14,13 +14,13 @@ sources:
 updated: '2026-07-26'
 ---
 
-30 分、[[factions/星界军/detachments/bridgehead-strike.md|Bridgehead Strike]] 分队。
+25 分、[[factions/星界军/detachments/bridgehead-strike.md|Bridgehead Strike]] 分队。
 
 ## 效果
 
 In your first Movement phase, this unit can make an ingress move.
 
-**分数**：30 分
+**分数**：25 分
 
 ## 携带限制
 

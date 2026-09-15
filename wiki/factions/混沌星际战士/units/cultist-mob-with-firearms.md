@@ -3,18 +3,16 @@ id: '000003713'
 name_en: Cultist Mob with Firearms
 faction: 混沌星际战士
 type: unit
-points:
-  10 models: 50
-  20 models: 100
 tags:
 - unit
 - unit/混沌星际战士
 - 混沌星际战士
 version:
+  points: historical / unmatched
   source: official-db
 sources:
 - book: 官方结构库 db/wh40k.sqlite（Wahapedia 11版镜像 + MFM 官方点数）
-updated: '2026-07-23'
+updated: '2026-09-14'
 ---
 
 ## 属性表
@@ -43,6 +41,7 @@ updated: '2026-07-23'
 - **For the Dark Gods**：At the end of your Command phase, if this unit is within range of an objective marker you control, that objective marker remains under your control until your opponent’s Level of Control over that objective marker is greater than yours at the end of a phase.
 
 ## 单位构成
+历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
 - **10个模型** — 50 分
 - **20个模型** — 100 分
 

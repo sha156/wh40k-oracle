@@ -5,18 +5,18 @@ name_en: Myphitic Blight-hauler
 faction: 死亡守卫
 type: unit
 points:
-  1 model: 100
-  2 models: 200
+  1 model: 95
+  2 models: 190
 tags:
 - unit
 - unit/死亡守卫
 - 死亡守卫
 version:
-  points: MFM 2026-07-27 15:14
+  points: MFM 2026-09-14T05:51:23.572407+00:00
   source: official-db
 sources:
 - book: 官方结构库 db/wh40k.sqlite（Wahapedia 11版镜像 + MFM 官方点数）
-updated: '2026-07-23'
+updated: '2026-09-14'
 ---
 
 ## 属性表
@@ -44,8 +44,8 @@ updated: '2026-07-23'
 - **Tank Hunters**：In your Shooting phase, each time a model in this unit makes an attack that targets a <span class="kwb">MONSTER</span> or <span class="kwb">VEHICLE</span> unit, add 1 to the Hit roll and add 1 to the Wound roll.
 
 ## 单位构成
-- **1个模型** — 100 分
-- **2个模型** — 200 分
+- **1个模型** — 95 分
+- **2个模型** — 190 分
 
 ## 关键词
 - **阵营关键词**：Death Guard

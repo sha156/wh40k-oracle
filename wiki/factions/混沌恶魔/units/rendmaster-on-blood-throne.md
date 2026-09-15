@@ -5,17 +5,17 @@ name_en: Rendmaster On Blood Throne
 faction: 混沌恶魔
 type: unit
 points:
-  1 model: 150
+  1 model: 160
 tags:
 - unit
 - unit/混沌恶魔
 - 混沌恶魔
 version:
-  points: MFM 2026-07-27 15:14
+  points: MFM 2026-09-14T05:51:23.572407+00:00
   source: official-db
 sources:
 - book: 官方结构库 db/wh40k.sqlite（Wahapedia 11版镜像 + MFM 官方点数）
-updated: '2026-07-23'
+updated: '2026-09-14'
 ---
 
 ## 属性表
@@ -37,7 +37,7 @@ updated: '2026-07-23'
 - **[[factions/帝皇卫队/stratagems/slayer-of-champions.md|冠军杀手]]**
 
 ## 单位构成
-- **1个模型** — 150 分
+- **1个模型** — 160 分
 
 ## 关键词
 - **阵营关键词**：Legiones Daemonica

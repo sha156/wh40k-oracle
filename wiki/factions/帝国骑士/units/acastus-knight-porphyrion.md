@@ -11,11 +11,16 @@ tags:
 - unit/帝国骑士
 - 帝国骑士
 version:
-  points: MFM 2026-07-27 15:14
+  points: MFM 2026-09-14T05:51:23.572407+00:00
   source: official-db
 sources:
-- book: 官方结构库 db/wh40k.sqlite（Wahapedia 11版镜像 + MFM 官方点数）
-updated: '2026-07-23'
+- book: 'Faction Pack: Imperial Knights'
+  pages:
+  - 11
+- book: 'Faction Pack: Imperial Knights'
+  pages:
+  - 12
+updated: '2026-09-14'
 ---
 
 ## 属性表
@@ -50,4 +55,4 @@ updated: '2026-07-23'
 
 ## 关键词
 - **阵营关键词**：Imperial Knights
-- **普通关键词**：Imperium，Vehicle，[[core-rules/walker.md|Walker]]，[[core-rules/titanic.md|Titanic]]，[[core-rules/towering.md|Towering]]，Acastus，Knight Porphyrion
+- **普通关键词**：Imperium，Vehicle，[[core-rules/walker.md|Walker]]，[[core-rules/titanic.md|Titanic]]，[[core-rules/towering.md|Towering]]，Acastus，Knight Porphyrion，FRAME

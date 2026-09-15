@@ -3,18 +3,16 @@ id: '000001045'
 name_en: Death Guard Possessed
 faction: 死亡守卫
 type: unit
-points:
-  5 models: 155
-  10 models: 310
 tags:
 - unit
 - unit/死亡守卫
 - 死亡守卫
 version:
+  points: historical / unmatched
   source: official-db
 sources:
 - book: 官方结构库 db/wh40k.sqlite（Wahapedia 11版镜像 + MFM 官方点数）
-updated: '2026-07-23'
+updated: '2026-09-14'
 ---
 
 ## 属性表
@@ -36,6 +34,7 @@ updated: '2026-07-23'
 - **POSSESSED**：For the purposes of embarking within Transports, each <span class="kwb">DEATH</span> <span class="kwb">GUARD</span> <span class="kwb">POSSESSED</span> model counts as one Terminator model.
 
 ## 单位构成
+历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
 - **5个模型** — 155 分
 - **10个模型** — 310 分
 

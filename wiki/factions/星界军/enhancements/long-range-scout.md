@@ -4,6 +4,7 @@ name_en: Long-range Scout
 faction: 星界军
 type: enhancement
 detachment: Designation Force
+cost: 10
 tags:
 - enhancement
 - enhancement/星界军
@@ -13,11 +14,13 @@ sources:
 updated: '2026-07-26'
 ---
 
-分数未知、[[factions/星界军/detachments/designation-force.md|指示部队]] 分队。
+10 分、[[factions/星界军/detachments/designation-force.md|指示部队]] 分队。
 
 ## 效果
 
 This unit has Infiltrators.
+
+**分数**：10 分
 
 ## 携带限制
 

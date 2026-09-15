@@ -4,17 +4,16 @@ name_zh: 告死小丑
 name_en: Death Jester
 faction: 黑暗灵族
 type: unit
-points:
-  1 model: 90
 tags:
 - unit
 - unit/黑暗灵族
 - 黑暗灵族
 version:
+  points: historical / unmatched
   source: official-db
 sources:
 - book: 官方结构库 db/wh40k.sqlite（Wahapedia 11版镜像 + MFM 官方点数）
-updated: '2026-07-23'
+updated: '2026-09-14'
 ---
 
 ## 属性表
@@ -41,6 +40,7 @@ updated: '2026-07-23'
 - **残忍笑料**：你的射击阶段，当本模型被选中进行射击时，直到该阶段结束，本模型的尖啸者加农炮拥有以下能力之一【无视掩体】【精准】【连击 3】
 
 ## 单位构成
+历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
 - **1个模型** — 90 分
 
 ## 关键词

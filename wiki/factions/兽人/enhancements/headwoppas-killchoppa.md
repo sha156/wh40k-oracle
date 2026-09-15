@@ -5,7 +5,7 @@ name_en: Headwoppa’s Killchoppa
 faction: 兽人
 type: enhancement
 detachment: War Horde
-cost: 20
+cost: 15
 tags:
 - enhancement
 - enhancement/兽人
@@ -15,13 +15,13 @@ sources:
 updated: '2026-07-26'
 ---
 
-20 分、[[factions/兽人/detachments/war-horde.md|War Horde]] 分队。
+15 分、[[factions/兽人/detachments/war-horde.md|War Horde]] 分队。
 
 ## 效果
 
 Melee weapons equipped by the bearer (excluding Extra Attacks weapons) have the [DEVASTATING WOUNDS] ability.
 
-**分数**：20 分
+**分数**：15 分
 
 ## 携带限制
 

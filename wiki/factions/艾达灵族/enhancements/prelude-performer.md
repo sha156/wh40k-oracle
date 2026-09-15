@@ -5,6 +5,7 @@ name_en: Prelude Performer
 faction: 艾达灵族
 type: enhancement
 detachment: Twilight Flickers
+cost: 20
 tags:
 - enhancement
 - enhancement/艾达灵族
@@ -14,11 +15,13 @@ sources:
 updated: '2026-07-26'
 ---
 
-分数未知、[[factions/艾达灵族/detachments/twilight-flickers.md|暮光闪现]] 分队。
+20 分、[[factions/艾达灵族/detachments/twilight-flickers.md|暮光闪现]] 分队。
 
 ## 效果
 
 This unit has Scouts 6".
+
+**分数**：20 分
 
 ## 携带限制
 

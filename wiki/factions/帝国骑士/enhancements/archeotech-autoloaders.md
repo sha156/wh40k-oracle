@@ -5,6 +5,7 @@ name_en: Archeotech Autoloaders
 faction: 帝国骑士
 type: enhancement
 detachment: Dominus Foebreakers
+cost: 25
 tags:
 - enhancement
 - enhancement/帝国骑士
@@ -14,11 +15,13 @@ sources:
 updated: '2026-07-26'
 ---
 
-分数未知、[[factions/帝国骑士/detachments/dominus-foebreakers.md|碎敌统御者]] 分队。
+25 分、[[factions/帝国骑士/detachments/dominus-foebreakers.md|碎敌统御者]] 分队。
 
 ## 效果
 
 This unit can re-roll rolls to determine the Attacks characteristic of a weapon.
+
+**分数**：25 分
 
 ## 携带限制
 

@@ -20,7 +20,7 @@ updated: '2026-07-26'
 
 ## 使用时机
 
-Any phase, just after an enemy unit ends a move within 9" of one or more of your Cult Ambush markers.
+Any phase, just after an enemy unit ends a move within 8" of one or more of your Cult Ambush markers.
 
 ## 使用对象
 

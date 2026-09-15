@@ -3,17 +3,16 @@ id: '000001139'
 name_en: Herald Of Slaanesh On Steed Of Slaanesh
 faction: 混沌恶魔
 type: unit
-points:
-  1 model: 70
 tags:
 - unit
 - unit/混沌恶魔
 - 混沌恶魔
 version:
+  points: historical / unmatched
   source: official-db
 sources:
 - book: 官方结构库 db/wh40k.sqlite（Wahapedia 11版镜像 + MFM 官方点数）
-updated: '2026-07-23'
+updated: '2026-09-14'
 ---
 
 ## 属性表
@@ -35,6 +34,7 @@ updated: '2026-07-23'
 - **Symphony of Pain (Psychic)**：At the end of your Movement phase, you can select one enemy unit that is Battle-shocked and within 12" of this model. Until the end of the turn, each time a Slaanesh Legiones Daemonica model from your army makes an attack that targets that enemy unit, you can re-roll the Hit roll and you can re-roll the Wound roll.
 
 ## 单位构成
+历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
 - **1个模型** — 70 分
 
 ## 关键词

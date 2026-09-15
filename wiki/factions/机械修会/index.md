@@ -18,45 +18,45 @@
 
 ## 单位
 
-- [[factions/机械修会/units/secutarii-hoplites|Secutarii Hoplites]] — 
-- [[factions/机械修会/units/secutarii-peltasts|Secutarii Peltasts]] — 
-- [[factions/机械修会/units/servitors|Servitors]] — 
-- [[factions/机械修会/units/terrax-pattern-termite|Terrax-pattern Termite]] — 
-- [[factions/机械修会/units/x-101|X-101]] — 
-- [[factions/机械修会/units/kastelan-robots|卡斯特兰机器人]] — 
-- [[factions/机械修会/units/hastarii-exterminators|哈斯塔利歼灭者]] — 
-- [[factions/机械修会/units/hastarii-fusiliers|哈斯塔利燧发枪手]] — 
-- [[factions/机械修会/units/thulia-ghuld|图莉娅·古尔德]] — 
-- [[factions/机械修会/units/serberys-raiders|塞波利斯掠夺者]] — 
-- [[factions/机械修会/units/serberys-sulphurhounds|塞波利斯硫磺猎手]] — 
-- [[factions/机械修会/units/skorpius-disintegrator|天蝎座粉碎者坦克]] — 
-- [[factions/机械修会/units/servitor-battleclade|奴工战斗支队]] — 
-- [[factions/机械修会/units/archaeopter-stratoraptor|始祖鸟层云猛禽]] — 
-- [[factions/机械修会/units/archaeopter-fusilave|始祖鸟燧火轰炸机]] — 
-- [[factions/机械修会/units/archaeopter-transvector|始祖鸟矢量飞梭]] — 
-- [[factions/机械修会/units/ironstrider-ballistarii|巴利斯塔利铁骑兵]] — 
-- [[factions/机械修会/units/tech-priest-enginseer|技术技师机械教士]] — 
-- [[factions/机械修会/units/skitarii-marshal|护教军元帅]] — 
-- [[factions/机械修会/units/skitarii-vanguard|护教军先锋兵]] — 
-- [[factions/机械修会/units/skitarii-rangers|护教军游猎兵]] — 
-- [[factions/机械修会/units/tech-priest-manipulus|控电神甫]] — 
-- [[factions/机械修会/units/cybernetica-datasmith|智控数据技师]] — 
-- [[factions/机械修会/units/tech-priest-dominus|机械主教]] — 
-- [[factions/机械修会/units/kataphron-destroyers|武装奴工毁灭者]] — 
-- [[factions/机械修会/units/kataphron-breachers|武装奴工突破者]] — 
-- [[factions/机械修会/units/onager-dunecrawler|沙丘爬行者机甲]] — 
-- [[factions/机械修会/units/fulgurite-electro-priests|法身宗电僧]] — 
-- [[factions/机械修会/units/technoarcheologist|科技考古学家]] — 
-- [[factions/机械修会/units/pteraxii-sterylizors|翼龙军净炎兵]] — 
-- [[factions/机械修会/units/pteraxii-skystalkers|翼龙军天猎兵]] — 
-- [[factions/机械修会/units/skorpius-dunerider|蝎式沙丘运输车]] — 
-- [[factions/机械修会/units/sydonian-dragoons-with-taser-lances|装备泰瑟骑枪的西多尼亚龙骑兵]] — 
-- [[factions/机械修会/units/sydonian-dragoons-with-radium-jezzails|装备辐射狙击枪的西多尼亚龙骑兵]] — 
-- [[factions/机械修会/units/sicarian-infiltrators|西卡利安渗透者]] — 
-- [[factions/机械修会/units/sicarian-ruststalkers|西卡利安铁锈追踪者]] — 
-- [[factions/机械修会/units/sydonian-skatros|西多尼亚哨兵]] — 
-- [[factions/机械修会/units/belisarius-cawl|贝利撒留·考尔]] — 
-- [[factions/机械修会/units/corpuscarii-electro-priests|雷鸣宗电僧]] — 
+- [[factions/机械修会/units/secutarii-hoplites|Secutarii Hoplites]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
+- [[factions/机械修会/units/secutarii-peltasts|Secutarii Peltasts]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
+- [[factions/机械修会/units/terrax-pattern-termite|Terrax-pattern Termite]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
+- [[factions/机械修会/units/x-101|X-101]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
+- [[factions/机械修会/units/kastelan-robots|卡斯特兰机器人]]
+- [[factions/机械修会/units/hastarii-exterminators|哈斯塔利歼灭者]]
+- [[factions/机械修会/units/hastarii-fusiliers|哈斯塔利燧发枪手]]
+- [[factions/机械修会/units/thulia-ghuld|图莉娅·古尔德]]
+- [[factions/机械修会/units/serberys-raiders|塞波利斯掠夺者]]
+- [[factions/机械修会/units/serberys-sulphurhounds|塞波利斯硫磺猎手]]
+- [[factions/机械修会/units/skorpius-disintegrator|天蝎座粉碎者坦克]]
+- [[factions/机械修会/units/servitors|奴工【传奇】]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
+- [[factions/机械修会/units/servitor-battleclade|奴工战斗支队]]
+- [[factions/机械修会/units/archaeopter-stratoraptor|始祖鸟层云猛禽]]
+- [[factions/机械修会/units/archaeopter-fusilave|始祖鸟燧火轰炸机]]
+- [[factions/机械修会/units/archaeopter-transvector|始祖鸟矢量飞梭]]
+- [[factions/机械修会/units/ironstrider-ballistarii|巴利斯塔利铁骑兵]]
+- [[factions/机械修会/units/tech-priest-enginseer|技术技师机械教士]]
+- [[factions/机械修会/units/skitarii-marshal|护教军元帅]]
+- [[factions/机械修会/units/skitarii-vanguard|护教军先锋兵]]
+- [[factions/机械修会/units/skitarii-rangers|护教军游猎兵]]
+- [[factions/机械修会/units/tech-priest-manipulus|控电神甫]]
+- [[factions/机械修会/units/cybernetica-datasmith|智控数据技师]]
+- [[factions/机械修会/units/tech-priest-dominus|机械主教]]
+- [[factions/机械修会/units/kataphron-destroyers|武装奴工毁灭者]]
+- [[factions/机械修会/units/kataphron-breachers|武装奴工突破者]]
+- [[factions/机械修会/units/onager-dunecrawler|沙丘爬行者机甲]]
+- [[factions/机械修会/units/fulgurite-electro-priests|法身宗电僧]]
+- [[factions/机械修会/units/technoarcheologist|科技考古学家]]
+- [[factions/机械修会/units/pteraxii-sterylizors|翼龙军净炎兵]]
+- [[factions/机械修会/units/pteraxii-skystalkers|翼龙军天猎兵]]
+- [[factions/机械修会/units/skorpius-dunerider|蝎式沙丘运输车]]
+- [[factions/机械修会/units/sydonian-dragoons-with-taser-lances|装备泰瑟骑枪的西多尼亚龙骑兵]]
+- [[factions/机械修会/units/sydonian-dragoons-with-radium-jezzails|装备辐射狙击枪的西多尼亚龙骑兵]]
+- [[factions/机械修会/units/sicarian-infiltrators|西卡利安渗透者]]
+- [[factions/机械修会/units/sicarian-ruststalkers|西卡利安铁锈追踪者]]
+- [[factions/机械修会/units/sydonian-skatros|西多尼亚哨兵]]
+- [[factions/机械修会/units/belisarius-cawl|贝利撒留·考尔]]
+- [[factions/机械修会/units/corpuscarii-electro-priests|雷鸣宗电僧]]
 
 ## 策略技能
 
@@ -127,43 +127,43 @@
 ## 强化
 
 - [[factions/机械修会/enhancements/admonissor-shunt|Admonissor Shunt]] — 0 分、Response Clade 分队。
-- [[factions/机械修会/enhancements/arch-negator|Arch-negator]] — 10 分、Cohort Cybernetica 分队。
-- [[factions/机械修会/enhancements/artisan|Artisan]] — 15 分、Explorator Maniple 分队。
+- [[factions/机械修会/enhancements/arch-negator|Arch-negator]] — 5 分、Cohort Cybernetica 分队。
+- [[factions/机械修会/enhancements/artisan|Artisan]] — 10 分、Explorator Maniple 分队。
 - [[factions/机械修会/enhancements/autoclavic-denunciation|Autoclavic Denunciation]] — 15 分、Rad-Zone Corps 分队。
-- [[factions/机械修会/enhancements/battle-sphere-uplink|Battle-sphere Uplink]] — 30 分、Skitarii Hunter Cohort 分队。
+- [[factions/机械修会/enhancements/battle-sphere-uplink|Battle-sphere Uplink]] — 25 分、Skitarii Hunter Cohort 分队。
 - [[factions/机械修会/enhancements/beseech-the-machine-spirits|Beseech the Machine Spirits]] — 0 分、Machine Cult 分队。
 - [[factions/机械修会/enhancements/cantic-thrallnet|Cantic Thrallnet]] — 25 分、Skitarii Hunter Cohort 分队。
-- [[factions/机械修会/enhancements/clandestine-infiltrator|Clandestine Infiltrator]] — 20 分、Skitarii Hunter Cohort 分队。
-- [[factions/机械修会/enhancements/cognitive-reinforcement|Cognitive Reinforcement]] — 35 分、圣智战斗支队 分队。
-- [[factions/机械修会/enhancements/data-blessed-autosermon|Data-blessed Autosermon]] — 20 分、Data-Psalm Conclave 分队。
-- [[factions/机械修会/enhancements/electromiasmic-brazier|Electromiasmic Brazier]] — 分数未知、启明自动合唱团 分队。
-- [[factions/机械修会/enhancements/emotionless-clarity|Emotionless Clarity]] — 15 分、Cohort Cybernetica 分队。
-- [[factions/机械修会/enhancements/genetor|Genetor]] — 25 分、Explorator Maniple 分队。
+- [[factions/机械修会/enhancements/clandestine-infiltrator|Clandestine Infiltrator]] — 15 分、Skitarii Hunter Cohort 分队。
+- [[factions/机械修会/enhancements/cognitive-reinforcement|Cognitive Reinforcement]] — 30 分、圣智战斗支队 分队。
+- [[factions/机械修会/enhancements/data-blessed-autosermon|Data-blessed Autosermon]] — 15 分、Data-Psalm Conclave 分队。
+- [[factions/机械修会/enhancements/electromiasmic-brazier|Electromiasmic Brazier]] — 10 分、启明自动合唱团 分队。
+- [[factions/机械修会/enhancements/emotionless-clarity|Emotionless Clarity]] — 10 分、Cohort Cybernetica 分队。
+- [[factions/机械修会/enhancements/genetor|Genetor]] — 20 分、Explorator Maniple 分队。
 - [[factions/机械修会/enhancements/harmonic-discordator|Harmonic Discordator]] — 0 分、Machine Cult 分队。
-- [[factions/机械修会/enhancements/logis|Logis]] — 20 分、Explorator Maniple 分队。
-- [[factions/机械修会/enhancements/lord-of-machines|Lord of Machines]] — 20 分、Cohort Cybernetica 分队。
-- [[factions/机械修会/enhancements/magos|Magos]] — 15 分、Explorator Maniple 分队。
+- [[factions/机械修会/enhancements/logis|Logis]] — 15 分、Explorator Maniple 分队。
+- [[factions/机械修会/enhancements/lord-of-machines|Lord of Machines]] — 15 分、Cohort Cybernetica 分队。
+- [[factions/机械修会/enhancements/magos|Magos]] — 10 分、Explorator Maniple 分队。
 - [[factions/机械修会/enhancements/malphonic-susurrus|Malphonic Susurrus]] — 20 分、Rad-Zone Corps 分队。
-- [[factions/机械修会/enhancements/mantle-of-the-gnosticarch|Mantle of the Gnosticarch]] — 15 分、Data-Psalm Conclave 分队。
+- [[factions/机械修会/enhancements/mantle-of-the-gnosticarch|Mantle of the Gnosticarch]] — 10 分、Data-Psalm Conclave 分队。
 - [[factions/机械修会/enhancements/martial-signatum-amplificator|Martial Signatum Amplificator]] — 15 分、根除大队 分队。
-- [[factions/机械修会/enhancements/mechanicus-locum|Mechanicus Locum]] — 10 分、Data-Psalm Conclave 分队。
+- [[factions/机械修会/enhancements/mechanicus-locum|Mechanicus Locum]] — 5 分、Data-Psalm Conclave 分队。
 - [[factions/机械修会/enhancements/multi-dimensional-auspex|Multi-dimensional Auspex]] — 0 分、Electromartyrs 分队。
-- [[factions/机械修会/enhancements/necromechanic|Necromechanic]] — 25 分、Cohort Cybernetica 分队。
+- [[factions/机械修会/enhancements/necromechanic|Necromechanic]] — 20 分、Cohort Cybernetica 分队。
 - [[factions/机械修会/enhancements/omnicogitator|Omnicogitator]] — 25 分、根除大队 分队。
 - [[factions/机械修会/enhancements/optimised-cogitators|Optimised Cogitators]] — 0 分、Response Clade 分队。
 - [[factions/机械修会/enhancements/peerless-eradicator|Peerless Eradicator]] — 20 分、Rad-Zone Corps 分队。
 - [[factions/机械修会/enhancements/radial-suffusion|Radial Suffusion]] — 25 分、Rad-Zone Corps 分队。
 - [[factions/机械修会/enhancements/remote-lockdown|Remote Lockdown]] — 0 分、Electromartyrs 分队。
-- [[factions/机械修会/enhancements/tl-4ø9|TL-4Ø9]] — 分数未知、熔炉领主 分队。
-- [[factions/机械修会/enhancements/temporcopia|Temporcopia]] — 25 分、Data-Psalm Conclave 分队。
+- [[factions/机械修会/enhancements/tl-4ø9|TL-4Ø9]] — 30 分、熔炉领主 分队。
+- [[factions/机械修会/enhancements/temporcopia|Temporcopia]] — 20 分、Data-Psalm Conclave 分队。
 - [[factions/机械修会/enhancements/transoracular-dyad-wafers|Transoracular Dyad Wafers]] — 15 分、圣智战斗支队 分队。
 - [[factions/机械修会/enhancements/veiled-hunter|Veiled Hunter]] — 10 分、Skitarii Hunter Cohort 分队。
-- [[factions/机械修会/enhancements/voltagheist-reliquary|Voltagheist Reliquary]] — 分数未知、启明自动合唱团 分队。
+- [[factions/机械修会/enhancements/voltagheist-reliquary|Voltagheist Reliquary]] — 15 分、启明自动合唱团 分队。
 - [[factions/机械修会/enhancements/sanctified-ordnance|圣化弹药]] — 10 分、圣智战斗支队 分队。
-- [[factions/机械修会/enhancements/explorator-dispensation|探索者分支]] — 分数未知、求知大队 分队。
+- [[factions/机械修会/enhancements/explorator-dispensation|探索者分支]] — 20 分、求知大队 分队。
 - [[factions/机械修会/enhancements/omnissiahs-fury|欧姆尼赛亚之怒]] — 10 分、根除大队 分队。
-- [[factions/机械修会/enhancements/vinghs-wafers-of-dynamism|维因的活力晶片]] — 分数未知、熔炉领主 分队。
+- [[factions/机械修会/enhancements/vinghs-wafers-of-dynamism|维因的活力晶片]] — 25 分、熔炉领主 分队。
 - [[factions/机械修会/enhancements/inloaded-lethality|致命数据]] — 15 分、圣智战斗支队 分队。
-- [[factions/机械修会/enhancements/belicosa-class-capacitor-vanes|贝利科萨级电容叶片]] — 30 分、根除大队 分队。
-- [[factions/机械修会/enhancements/stealth-screened-cybercanids|隐形赛博犬]] — 分数未知、求知大队 分队。
+- [[factions/机械修会/enhancements/belicosa-class-capacitor-vanes|贝利科萨级电容叶片]] — 25 分、根除大队 分队。
+- [[factions/机械修会/enhancements/stealth-screened-cybercanids|隐形赛博犬]] — 15 分、求知大队 分队。
 

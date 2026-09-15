@@ -12,12 +12,15 @@ Wahapedia/BSData 是它的结构化镜像（可能滞后），中文 PDF 只是�
 from __future__ import annotations
 
 import json
+import logging
 import re
 import sqlite3
 import time
 import urllib.request
 from pathlib import Path
 from typing import Dict, List, Optional, Tuple
+
+_log = logging.getLogger(__name__)
 
 MFM_BASE = "https://mfm.warhammer-community.com"
 _UA = ("Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 "
@@ -99,8 +102,8 @@ def _split_sections(doc: str) -> List[Tuple[str, str]]:
 #   稳定信号是 text-xl（slate 直排文本）或 text-xl keep-all（色块内 span），与配色脱钩——
 #   只匹配旧式会漏掉本版所有变价单位（正是 fetch 最该抓到的那批，如降价 20 的 ANGRON）。
 _UNIT_HEADER_RE = re.compile(
-    r'<div class="[^"]*bg-slate-500[^"]*font-bold text-xl[^"]*">([^<]+)</div>'
-    r'|<span class="text-xl keep-all">([^<]+)</span>')
+    r'<div class="(?=[^"]*\bfont-bold\b)(?=[^"]*\btext-xl\b)[^"]*">([^<]+)</div>'
+    r'|<span class="(?=[^"]*\btext-xl\b)(?=[^"]*\bkeep-all\b)[^"]*">([^<]+)</span>')
 
 # 分数行：改版给变价档加了 class 着色与 ▲/▼ (±N) 变动标记前缀。
 #   旧式：<li><span>N models</span><span>N pts</span></li>
@@ -231,6 +234,19 @@ def fetch_faction(slug: str, max_retries: int = 4,
             raise MfmParseBroken(
                 f"{slug}: 页面有 {heads} 个单位表头却解析出 0 条分数——"
                 "解析器对该页断裂（官网改数值/版式形态），不是这个阵营没有单位")
+        # ⚠️ 上面那道只覆盖「全灭」。**部分**丢行同样静默（审查 R2-M8）：某个单位块若只是
+        # 缺档位表头 div，它的全部分数行会被丢掉，而 rows>0 ⇒ 不触发 MfmParseBroken，
+        # 逐阵营 30% / 总量 10% 的缓存对账阈值也拦不住个别单位。这里补一条**与行数正交**
+        # 的信号：表头数 vs 真解析出分数的去重单位数。2026-07-27 全站重抓实测 30/30 页
+        # 两者相等，所以差额＝有单位块解析失败。
+        # 只 warn 不 raise：等值关系靠实测成立而非规格保证，冒然 raise 会在官网加一个
+        # 无分数单位时把整条抓取链打死——那是用一个静默换另一个中断。
+        priced_units = {r[0] for r in rows}
+        if heads and len(priced_units) != heads:
+            _log.warning(
+                "%s: 页面 %d 个单位表头，但只有 %d 个单位解析出分数（差 %d）——"
+                "疑似个别单位块版式变化致其分数行被丢弃，请核对官网原页",
+                slug, heads, len(priced_units), heads - len(priced_units))
         return rows
     raise RuntimeError(f"抓取 {slug} 连续 {max_retries} 次失败: {last}")
 
@@ -280,6 +296,10 @@ def fetch_all(out_path: Path, sleep_s: float = 1.0,
     直接 raise：这类页会伪装成「该阵营就是没单位」，混进 failed 只会被当成
     网络抖动放过去——泰坦军团两页正是这样空了不知多少版。
     """
+    if out_path.exists():
+        old = json.loads(out_path.read_text(encoding="utf-8"))
+        if old.get("source_snapshot"):
+            raise ValueError("Use mfm_sync.fetch_cache: legacy fetch cannot replace a complete official snapshot")
     home = _fetch(MFM_BASE + "/en")
     slugs = list_faction_slugs(home)
     if not slugs:
@@ -385,11 +405,21 @@ def _load_db_units(conn) -> Dict[Tuple[str, str], List[Tuple[str, str, Optional[
 # 修复背景：官网 "VYPER"/"WARTRAKK" 对不上库里 "Vypers"/"Wartrakks"，过期分数被静默归入
 # mfm_only 而非 diffs——精确名匹配对单复数零容忍是更新功能的隐性漏检口。
 _MFM_NAME_ALIASES: Dict[str, str] = {}
+_TITAN_DATASHEET_ALIASES: Dict[str, str] = {
+    # Adeptus Titanicus Faction Pack p2, TITANICUS TRAITORIS: shared
+    # datasheets, with faction keywords replaced when mustering Chaos.
+    "chaos warhound titan": "warhound titan",
+    "chaos reaver titan": "reaver titan",
+    "chaos warbringer nemesis titan": "warbringer nemesis titan",
+    "chaos warlord titan": "warlord titan",
+}
 
 
 def _norm_unit(name: str) -> str:
     """单位名归一（小写、压空白、去尾复数 s）——精确名匹配失败后的兜底键。"""
     n = re.sub(r"\s+", " ", name.strip().lower())
+    if n.endswith("ies"):
+        return n[:-3] + "y"
     return n[:-1] if n.endswith("s") else n
 
 
@@ -409,6 +439,8 @@ def _resolve_db_hits(db_map: Dict[Tuple[str, str], List],
     if exact is not None:
         return exact
     alias = _MFM_NAME_ALIASES.get(unit_l)
+    if alias is None and fid == "TL":
+        alias = _TITAN_DATASHEET_ALIASES.get(unit_l)
     if alias is not None:
         hit = db_map.get((fid, alias.strip().lower()))
         if hit is not None:
@@ -419,24 +451,27 @@ def _resolve_db_hits(db_map: Dict[Tuple[str, str], List],
     return None
 
 
-def check_points(db_path, factions: FactionRows) -> Dict:
+def check_points(db_path, factions: FactionRows, *, connection=None) -> Dict:
     """MFM 分数 vs units.points_json 按（阵营+单位+模型数）比对。
 
     只比**基准梯度**（is_base_tier）——库内是单值，与重复单位加价档不可比。
     返回 {compared, agree, diffs[{unit,models,db,mfm}], mfm_only[], tiered_units}。
     """
     by_faction = _rows_by_faction(factions)
-    conn = sqlite3.connect(str(db_path))
+    conn = connection if connection is not None else sqlite3.connect(str(db_path))
     try:
         db_units = _load_db_units(conn)
     finally:
-        conn.close()
+        if connection is None:
+            conn.close()
     norm_index = _norm_index(db_units)
 
     compared = agree = 0
     diffs: List[Dict] = []
     mfm_only: List[str] = []
     unparsed: List[str] = []
+    missing_tiers: List[Dict] = []
+    extra_tiers: List[Dict] = []
     tiered_units = set()
     for (fid, unit_l), rows in by_faction.items():
         for tier, _m, _p in rows:
@@ -459,12 +494,18 @@ def check_points(db_path, factions: FactionRows) -> Dict:
                 continue
             costs = {(it.get("desc") or "").strip().lower(): it.get("cost")
                      for it in items if isinstance(it.get("cost"), int)}
+            base = _base_prices(rows, f"{fid}/{unit_l}")
+            for desc in sorted(set(costs) - set(base)):
+                extra_tiers.append({"id": _uid, "unit": name, "models": desc,
+                                    "db": costs[desc]})
             for tier, models, pts in rows:
                 if not is_base_tier(tier):
                     continue
                 db_cost = costs.get(models.strip().lower())
                 if db_cost is None:
-                    continue  # 模型档位描述不一致，不强行比
+                    missing_tiers.append({"id": _uid, "unit": name,
+                                          "models": models, "mfm": pts})
+                    continue
                 compared += 1
                 if db_cost == pts:
                     agree += 1
@@ -473,11 +514,25 @@ def check_points(db_path, factions: FactionRows) -> Dict:
                                   "db": db_cost, "mfm": pts})
     return {"compared": compared, "agree": agree, "diffs": diffs,
             "mfm_only": sorted(set(mfm_only)), "tiered_units": sorted(tiered_units),
-            "db_unparsed": sorted(set(unparsed))}
+            "db_unparsed": sorted(set(unparsed)),
+            "db_missing_tiers": missing_tiers, "db_extra_tiers": extra_tiers}
+
+
+def _base_prices(rows, label: str) -> Dict[str, int]:
+    """Reject conflicting base prices instead of silently taking the last row."""
+    base: Dict[str, int] = {}
+    for tier, models, pts in rows:
+        if not is_base_tier(tier):
+            continue
+        desc = models.strip().lower()
+        if desc in base and base[desc] != pts:
+            raise MfmParseBroken(f"MFM base price conflict: {label}/{desc}: {base[desc]} vs {pts}")
+        base[desc] = pts
+    return base
 
 
 def apply_points(db_path, factions: FactionRows,
-                 fetched_at: Optional[str] = None) -> Dict:
+                 fetched_at: Optional[str] = None, *, connection=None) -> Dict:
     """把官方 MFM 分数应用进 units.points_json（官方为最高真源），按阵营匹配。
 
     - 基准梯度：更新 items[].cost（按模型数描述匹配），库里没有的档位补进 items
@@ -486,7 +541,14 @@ def apply_points(db_path, factions: FactionRows,
     - 只动 MFM 里有的单位；注意 `db_compile build` 重建会覆盖，重建后需重跑本命令
     """
     by_faction = _rows_by_faction(factions)
-    conn = sqlite3.connect(str(db_path))
+    # Validate the whole batch before opening the writable connection.
+    bases = {key: _base_prices(rows, "/".join(key))
+             for key, rows in by_faction.items()}
+    for alias, canonical in _TITAN_DATASHEET_ALIASES.items():
+        if ("TL", alias) in bases and ("TL", canonical) in bases:
+            if bases[("TL", alias)] != bases[("TL", canonical)]:
+                raise MfmParseBroken(f"Shared Titan datasheet price conflict: {alias}")
+    conn = connection if connection is not None else sqlite3.connect(str(db_path))
     updated = matched = 0
     try:
         # Python 侧建匹配表：SQLite lower() 只降 ASCII（Ûthar 匹配不上），
@@ -505,34 +567,33 @@ def apply_points(db_path, factions: FactionRows,
             if not hits:
                 continue
             matched += 1
-            base = {models.strip().lower(): pts
-                    for tier, models, pts in rows if is_base_tier(tier)}
+            base = bases[(fid, unit_l)]
+            if not base:
+                continue
             any_changed = False
             for uid, pj_raw in hits:
                 try:
                     pj = json.loads(pj_raw) if pj_raw else {}
                 except (json.JSONDecodeError, TypeError):
                     pj = {}
-                items = pj.get("items") or []
-                changed = False
-                seen_descs = set()
-                for it in items:
-                    d = (it.get("desc") or "").strip().lower()
-                    seen_descs.add(d)
-                    if d in base and it.get("cost") != base[d]:
-                        it["cost"] = base[d]
-                        changed = True
-                for d, pts in base.items():
-                    if d not in seen_descs:
-                        items.append({"line": None, "desc": d, "cost": pts})
-                        changed = True
-                new_points = min(base.values()) if base else pj.get("points")
+                old_items = pj.get("items") or []
+                old_by_desc = {(it.get("desc") or "").strip().lower(): it
+                               for it in old_items if isinstance(it, dict)}
+                # Exact replacement removes retired model sizes; retaining them would
+                # leave stale cheaper prices available to calc_points and roster code.
+                items = [dict(old_by_desc.get(d, {"line": None, "desc": d}), cost=pts)
+                         for d, pts in base.items()]
+                changed = old_items != items
+                from db_compile.point_tiers import minimum_unit_cost
+                new_points = minimum_unit_cost(items)
                 if new_points != pj.get("points"):
                     changed = True
                 pj["items"] = items
                 pj["points"] = new_points
                 pj["mfm"] = {
                     "fetched_at": fetched_at,
+                    "current": True,
+                    "source_url": MFM_BASE,
                     "tiers": [{"tier": t, "models": m, "cost": p}
                               for t, m, p in rows],
                 }
@@ -541,7 +602,9 @@ def apply_points(db_path, factions: FactionRows,
                 any_changed = any_changed or changed
             if any_changed:
                 updated += 1
-        conn.commit()
+        if connection is None:
+            conn.commit()
     finally:
-        conn.close()
+        if connection is None:
+            conn.close()
     return {"units_matched": matched, "units_updated": updated}

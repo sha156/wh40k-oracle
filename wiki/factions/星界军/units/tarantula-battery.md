@@ -3,19 +3,16 @@ id: '000000762'
 name_en: Tarantula Battery
 faction: 星界军
 type: unit
-points:
-  1 model: 40
-  2 models: 80
-  3 models: 120
 tags:
 - unit
 - unit/星界军
 - 星界军
 version:
+  points: historical / unmatched
   source: official-db
 sources:
 - book: 官方结构库 db/wh40k.sqlite（Wahapedia 11版镜像 + MFM 官方点数）
-updated: '2026-07-23'
+updated: '2026-09-14'
 ---
 
 ## 属性表
@@ -38,6 +35,7 @@ updated: '2026-07-23'
 - **Sentry Programming**：You can target this unit with the Fire Overwatch Stratagem for 0CP, and can do so even if you have already used that Stratagem on a different unit this phase.
 
 ## 单位构成
+历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
 - **1个模型** — 40 分
 - **2个模型** — 80 分
 - **3个模型** — 120 分

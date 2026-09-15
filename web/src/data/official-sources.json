@@ -1,0 +1,247 @@
+{
+  "source": "https://www.warhammer-community.com/en-gb/downloads/warhammer-40000/",
+  "fetched_at": "2026-09-14",
+  "language": "English",
+  "documents": [
+    {
+      "title": "Universal Rules Updates",
+      "url": "https://assets.warhammer-community.com/eng_wh40k_core&key_universal_rules_updates-lu3grocned-rphh78bl6k.pdf",
+      "sha256": "e9368c75bf4c9040fa978e7f792080e71d140997def77182dd41e71959185a72",
+      "bytes": 935104
+    },
+    {
+      "title": "Core Rules",
+      "url": "https://assets.warhammer-community.com/eng_01-06_warhammer40k_new40k_core_rules-was6fbu1ix-hfewhmxyiy.pdf",
+      "sha256": "f6a2443a44627ac5f0ef08407d29aa5ec7e97339998f05bc35f3ae37bf276833",
+      "bytes": 32214071
+    },
+    {
+      "title": "Faction Pack: Dark Angels",
+      "url": "https://assets.warhammer-community.com/eng_wh40k_faction_pack_dark_angels-r9vgghuhil-tzntq05hcx.pdf",
+      "sha256": "b33b79c207d910a8e6aec4abfa8042507154e7ff17cb88d8e9a77d4c02c78bb1",
+      "bytes": 9166477
+    },
+    {
+      "title": "Faction Pack: Death Guard",
+      "url": "https://assets.warhammer-community.com/eng_wh40k_faction_pack_death_guard-etfwxynh2n-uxtkih85rs.pdf",
+      "sha256": "3b446db7d7dc48fc19ee61b263ec672a88c129b61ca8cd0dfa644414a1fef7c6",
+      "bytes": 6386315
+    },
+    {
+      "title": "Faction Pack: Adepta Sororitas",
+      "url": "https://assets.warhammer-community.com/eng_wh40k_faction_pack_adepta_sororitas-zs0bbbnpdp-ey2x8mavkr.pdf",
+      "sha256": "3bafe610941e2d802ff7c491d1d60966dab5b644852590b805fd85651a798dac",
+      "bytes": 12014145
+    },
+    {
+      "title": "Faction Pack: Thousand Sons",
+      "url": "https://assets.warhammer-community.com/eng_wh40k_faction_pack_thousand_sons-zha93omuus-lqi5vkrcpq.pdf",
+      "sha256": "886bc73de0af878511bd0de2023010ec1a1e424f83ee439c095e2a7e5968eccf",
+      "bytes": 18361141
+    },
+    {
+      "title": "Faction Pack: Adeptus Mechanicus",
+      "url": "https://assets.warhammer-community.com/eng_wh40k_faction_pack_adeptus_mechanicus-nnsofctxvp-ed7amkvryu.pdf",
+      "sha256": "76819664005154632450e45677d609aa3934dee965317f74dfedc26efc3467ab",
+      "bytes": 11567284
+    },
+    {
+      "title": "Faction Pack: Space Wolves",
+      "url": "https://assets.warhammer-community.com/eng_wh40k_faction_pack_space_wolves-pbtnrlz7q6-f0pvbqyejr.pdf",
+      "sha256": "0d3424b0c258b3faa11b82b45eba709c11b3380e43bc1b24f3a66edc2bd8fc72",
+      "bytes": 7230587
+    },
+    {
+      "title": "Faction Pack: Chaos Knights",
+      "url": "https://assets.warhammer-community.com/eng_wh40k_faction_pack_chaos_knights-87ywk2jovh-xk68yzyb18.pdf",
+      "sha256": "28fd9a69ffe7ec8463199e4b5dfda93b6daf30692008fd5cf28bbec4bbfb8acd",
+      "bytes": 12769657
+    },
+    {
+      "title": "Faction Pack: Astra Militarum",
+      "url": "https://assets.warhammer-community.com/eng_wh40k_faction_pack_astra_militarum-o51zhqvsvy-wdobxbf6t0.pdf",
+      "sha256": "b8fccdf9cfcd37dc538a1f49d84871e6b184e01c54e9fa83bef8372aa6190601",
+      "bytes": 19424308
+    },
+    {
+      "title": "Faction Pack: Drukhari",
+      "url": "https://assets.warhammer-community.com/eng_wh40k_faction_pack_drukhari-p7mpvgnmnn-clii96hzh6.pdf",
+      "sha256": "ab3baea55fa6e7b932a3f940a860b9c30348593615f5098c705de0bdaefddd50",
+      "bytes": 9025431
+    },
+    {
+      "title": "Faction Pack: Space Marines",
+      "url": "https://assets.warhammer-community.com/eng_wh40k_faction_pack_space_marines-kxoxqpsahz-u0lzirv0zl.pdf",
+      "sha256": "f1f96c0a3dda8dfc2d5686b4aa60e7959697651edbc51f5a344439ff6ac1a1f9",
+      "bytes": 26406249
+    },
+    {
+      "title": "Faction Pack: World Eaters",
+      "url": "https://assets.warhammer-community.com/eng_wh40k_faction_pack_world_eaters-5cgvc5tjcb-nipfvwkpo5.pdf",
+      "sha256": "e991bc0fea80059f38e2cc0d4c6f4d38e642a8fef93ee2c3da18d6c581399ea6",
+      "bytes": 4013406
+    },
+    {
+      "title": "Faction Pack: Necrons",
+      "url": "https://assets.warhammer-community.com/eng_wh40k_faction_pack_necrons-eweoek106p-nqomxds3qr.pdf",
+      "sha256": "be3417eab97f4a3857dfb4a481719e0910ee88ffc169dd718283233e2c4ffcd3",
+      "bytes": 17179710
+    },
+    {
+      "title": "Faction Pack: Tyranids",
+      "url": "https://assets.warhammer-community.com/eng_wh40k_faction_pack_tyranids-kbkk66qiwc-nh0khbkupv.pdf",
+      "sha256": "d7531867ba2c0939c098dbd247e459e611b206fe009c1ba031c896bcbc541663",
+      "bytes": 17016648
+    },
+    {
+      "title": "Faction Pack: Emperor's Children",
+      "url": "https://assets.warhammer-community.com/eng_wh40k_faction_pack_emperors_children-s7cvl3p8e4-ddwa1akamk.pdf",
+      "sha256": "50f456e9f4a20889450093a9e6627aa1c1ed0af66efbc29c583c46d910295ca7",
+      "bytes": 8748445
+    },
+    {
+      "title": "Faction Pack: Imperial Knights",
+      "url": "https://assets.warhammer-community.com/eng_wh40k_faction_pack_imperial_knights-n1irjnjygs-w8jfnk8kdn.pdf",
+      "sha256": "7c8c814350363760acda3c53ba4a01d8c5c5703f8e5e16a7b5911d06d612fa81",
+      "bytes": 10932980
+    },
+    {
+      "title": "Faction Pack: T'au Empire",
+      "url": "https://assets.warhammer-community.com/eng_wh40k_faction_pack_tau_empire-sxhzmfrlud-mpzjzuhupn.pdf",
+      "sha256": "143cf421a68cd067b376cd8b8d04c92301af9f4eb5a1d6717aba6d22940f5b9c",
+      "bytes": 11430907
+    },
+    {
+      "title": "Faction Pack: Chaos Space Marines",
+      "url": "https://assets.warhammer-community.com/eng_wh40k_faction_pack_chaos_space_marines-vs0xkzuia9-omgej8huqu.pdf",
+      "sha256": "f3a8d05ed88bad5085d014bf76fad684b60336f92cf75cf3aed30b989a33a495",
+      "bytes": 17712735
+    },
+    {
+      "title": "Faction Pack: Aeldari",
+      "url": "https://assets.warhammer-community.com/eng_wh40k_faction_pack_aeldari-r7ubocxyoz-nhd972kesl.pdf",
+      "sha256": "07cfef8fbf48a3e6be28563b0bbc3151cd173848052a2466029c09f16f8ba20e",
+      "bytes": 15522911
+    },
+    {
+      "title": "Faction Pack: Adeptus Titanicus",
+      "url": "https://assets.warhammer-community.com/eng_22-07_warhammer_40,000_faction_pack_adeptus_titanicus-pkhrobh6xn-nmtoszeaxw.pdf",
+      "sha256": "8622ee4dea768cf14823b950376b3e4be5102826dcc27bb821c9dcf5a35a9b3b",
+      "bytes": 6589072
+    },
+    {
+      "title": "Faction Pack: Imperial Agents",
+      "url": "https://assets.warhammer-community.com/eng_22-07_warhammer_40,000_faction_pack_imperia_agents-fttx9vrxuj-jug1nycmjn.pdf",
+      "sha256": "bd8486b44d14c4e409bd1d9e1676cd7732ce73c251b3d484c75df8ce35810bd7",
+      "bytes": 16555705
+    },
+    {
+      "title": "Faction Pack: Black Templars",
+      "url": "https://assets.warhammer-community.com/eng_22-07_warhammer_40,000_faction_pack_black_templars-inz7wljsdy-badlygdtjm.pdf",
+      "sha256": "9cba4d7699499c58e71062182a8eb0639f7caee7171a1e41cea9316b2c0550e2",
+      "bytes": 2662410
+    },
+    {
+      "title": "Faction Pack: Genestealer Cults",
+      "url": "https://assets.warhammer-community.com/eng_22-07_warhammer_40,000_faction_pack_genestealer_cults-vmkwgeydbr-sh7picbeqo.pdf",
+      "sha256": "045ee9f53f7b1e018e3fc06c5932cb8e1d9c308ea2e0c298a703c3ea5745d769",
+      "bytes": 6080503
+    },
+    {
+      "title": "Faction Pack: Chaos Daemons",
+      "url": "https://assets.warhammer-community.com/eng_22-07_warhammer_40,000_faction_pack_chaos_daemons-lycqqrymwe-qogh4b5yly.pdf",
+      "sha256": "818f7ef144691b9eef6b3c5b5d0a39793690af5a958037b7055215e6675e6a2c",
+      "bytes": 40221706
+    },
+    {
+      "title": "Faction Pack: Adeptus Custodes",
+      "url": "https://assets.warhammer-community.com/eng_22-07_warhammer_40,000_faction_pack_adeptus_custodes-9ddgakd3ms-3azheaqd6y.pdf",
+      "sha256": "2bd44272dd4abb2c4e44b77ecb3bac55cb21d14f3be9312ee4ca2591b8112427",
+      "bytes": 12507243
+    },
+    {
+      "title": "Faction Pack: Leagues of Votann",
+      "url": "https://assets.warhammer-community.com/eng_22-07_warhammer_40,000_faction_pack_leagues-of-votann-kpfosalfyb-sbqk309w4w.pdf",
+      "sha256": "dd29a4633ada948536c7e3b2b3da7e8237e65fcb4bde3291d6f084a3b4d8e4cd",
+      "bytes": 11933181
+    },
+    {
+      "title": "Faction Pack: Grey Knights",
+      "url": "https://assets.warhammer-community.com/eng_22-07_warhammer_40,000_faction_pack_grey_knights-dlzvusufhy-uialb3pko4.pdf",
+      "sha256": "8df7b54292988edb5ef5a83260dd4c054f658f06ba7cacc2467e3f558a1dd797",
+      "bytes": 12906151
+    },
+    {
+      "title": "Faction Pack: Blood Angels",
+      "url": "https://assets.warhammer-community.com/eng_22-07_warhammer_40,000_faction_pack_blood_angels-l1ttsuicte-4xq8nrzqy1.pdf",
+      "sha256": "75aad2a44b40db3dbc6c0fa7786d1a7c76f878f34f15aa7e69b9b80d66caeed1",
+      "bytes": 14707928
+    },
+    {
+      "title": "Faction Pack: Deathwatch",
+      "url": "https://assets.warhammer-community.com/eng_08-06_warhammer40000_faction_pack_deathwatch-z0ebavrfze-muhcibnets.pdf",
+      "sha256": "698b7063a71e3f10301aab1498effcb88ad2be41f3f491e24737c2abc9f988ce",
+      "bytes": 12938672
+    },
+    {
+      "title": "Warhammer Doubles - Event Companion",
+      "url": "https://assets.warhammer-community.com/eng_wh40k_doubles_event_companion-x8bakj0hba-chdctfbcoc.pdf",
+      "sha256": "752d8887a8821e55199cdf80cdf954daeeda450b4b1836bfe989f321293c9f44",
+      "bytes": 1047920
+    },
+    {
+      "title": "Warhammer Event Companion",
+      "url": "https://assets.warhammer-community.com/eng_wh40k_event_companion-pl87i44rzn-a7ieny8i9x.pdf",
+      "sha256": "1f44d9fa0297f60be6c4367041a65d1a98710c68b221d8c8e22ecd1674e7525e",
+      "bytes": 10665731
+    },
+    {
+      "title": "Warhammer Teams - Event Companion",
+      "url": "https://assets.warhammer-community.com/eng_22-07_warhammer_40,000_teams_event_companion-7ow8c92xdm-dyf3i4qpst.pdf",
+      "sha256": "1f50d642dd6bd55cfd461ef00d06e34dea0101bc9d48851e20400d63769e11ba",
+      "bytes": 1718235
+    },
+    {
+      "title": "Warhammer Dominatus - Event Companion",
+      "url": "https://assets.warhammer-community.com/eng_22-07_warhammer_40,000_warhammer_dominatus_event_companion-qltehqtely-atbn2qffac.pdf",
+      "sha256": "33b1ed79ffe023bc6c9e16c48e59149ae6a992c3dcf8e6f410d04b79bd3ad131",
+      "bytes": 1043880
+    },
+    {
+      "title": "Battlefields: Armageddon instructions",
+      "url": "https://assets.warhammer-community.com/40k_battlefields_armageddon_instructions-bdqnniovbo-lcipd3xcyb.pdf",
+      "sha256": "597491ee5fc000f1ad871550f8154eec4bfc24a95de2921ee5add73f9d22b7de",
+      "bytes": 6483062
+    },
+    {
+      "title": "Death World Jungle",
+      "url": "https://assets.warhammer-community.com/warhammer40k_terrain_area_footprint_death_world_jungle-ou67vrxeys-0hosfodoj0.pdf",
+      "sha256": "81a9aa95fd2e5374cb0eb61248f539b262d060de87d1af73f7eec3283d93cedc",
+      "bytes": 25581358
+    },
+    {
+      "title": "Imperial World",
+      "url": "https://assets.warhammer-community.com/warhammer40k_terrain_area_footprint_imperial_world-5bnnj0urvl-pxdwtehxgw.pdf",
+      "sha256": "dcfb30d2e67e1b24eacc29cc9e03735756cce3ee9b47bfcad78d04bd2e29f16c",
+      "bytes": 21581804
+    },
+    {
+      "title": "Maelstrom World",
+      "url": "https://assets.warhammer-community.com/warhammer40k_terrain_area_footprint_maelstrom_world-vnjfcxwebe-cv1l9fhzap.pdf",
+      "sha256": "9e417fba9a5d3fa2aa62d5c9a4814170dae554bf59024c54c10201cebabd7341",
+      "bytes": 23857676
+    },
+    {
+      "title": "Death World Snow",
+      "url": "https://assets.warhammer-community.com/warhammer40k_terrain_area_footprint_death_world_snow-t3zsylosfg-hflqpgfj0n.pdf",
+      "sha256": "71d1c662228fa43955d21702deb4c4f5517c41b94c1af0f86247f4724038d96d",
+      "bytes": 10919793
+    },
+    {
+      "title": "Armageddon",
+      "url": "https://assets.warhammer-community.com/eng_12-06_warhammer40000_terrainareafootprints-biavo5zf9f-gxdahkydbj.pdf",
+      "sha256": "abda484efe1e3031a92079053594a8b933a6ac429b899151f39ce8d51cbb9189",
+      "bytes": 11493369
+    }
+  ]
+}

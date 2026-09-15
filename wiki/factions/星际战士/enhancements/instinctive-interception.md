@@ -7,6 +7,7 @@ aliases:
 faction: 星际战士
 type: enhancement
 detachment: Wrath of the Doomed
+cost: 10
 tags:
 - enhancement
 - enhancement/星际战士
@@ -16,11 +17,13 @@ sources:
 updated: '2026-07-26'
 ---
 
-分数未知、[[factions/星际战士/detachments/wrath-of-the-doomed.md|迷失者的怒火]] 分队。
+10 分、[[factions/星际战士/detachments/wrath-of-the-doomed.md|迷失者的怒火]] 分队。
 
 ## 效果
 
 When you target this unit with the Heroic Intervention stratagem, that use is -1 CP.
+
+**分数**：10 分
 
 ## 携带限制
 

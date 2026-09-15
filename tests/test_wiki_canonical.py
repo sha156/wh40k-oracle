@@ -2,6 +2,8 @@
 """Wahapedia CSV 解析测试（离线 fixture，不联网）。"""
 from pathlib import Path
 
+import pytest
+
 from wiki_compile.canonical import (CanonicalEntry, audit_wahapedia_csv,
                                     load_canonical, parse_wahapedia_csv)
 
@@ -87,6 +89,10 @@ class TestBareNewlineContinuation:
         assert audit_wahapedia_csv("")["reconciled"] is True
 
 
+@pytest.mark.skipif(
+    not Path("db_sources/wahapedia").exists(),
+    reason="Local Wahapedia CSV cache is not included in Git; synthetic parser tests still run",
+)
 class TestRealCsvReconciliation:
     """真库 CSV 全量对账：11 个文件解析行数 vs 文件真实条目数，差额必须为 0。"""
 

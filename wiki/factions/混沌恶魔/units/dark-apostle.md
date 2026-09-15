@@ -4,17 +4,16 @@ name_zh: 黑暗使徒
 name_en: Dark Apostle
 faction: 混沌恶魔
 type: unit
-points:
-  3 models: 65
 tags:
 - unit
 - unit/混沌恶魔
 - 混沌恶魔
 version:
+  points: historical / unmatched
   source: official-db
 sources:
 - book: 官方结构库 db/wh40k.sqlite（Wahapedia 11版镜像 + MFM 官方点数）
-updated: '2026-07-23'
+updated: '2026-09-14'
 ---
 
 ## 属性表
@@ -44,6 +43,7 @@ updated: '2026-07-23'
 - **恶毒祭献**：在近战阶段开始时，如果本单位还有黑暗侍僧 模型存活，则你可以选择其中之一并对本单位接战范围内 一个敌方单位投 D6，2-5 则那个敌方单位遭受 1 点致命伤 害，6 则改为 D3 点致命伤害，然后移除这个黑暗侍僧模型
 
 ## 单位构成
+历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
 - **3个模型** — 65 分
 
 ## 关键词

@@ -3,17 +3,16 @@ id: '000000053'
 name_en: Lifta Wagon
 faction: 兽人
 type: unit
-points:
-  1 model: 135
 tags:
 - unit
 - unit/兽人
 - 兽人
 version:
+  points: historical / unmatched
   source: official-db
 sources:
 - book: 官方结构库 db/wh40k.sqlite（Wahapedia 11版镜像 + MFM 官方点数）
-updated: '2026-07-23'
+updated: '2026-09-14'
 ---
 
 ## 属性表
@@ -43,6 +42,7 @@ updated: '2026-07-23'
 - **Da Bigger Dey Are, da Better Dey Drop**：Each time an attack made with this model’s lifta-droppa destroys an enemy model that has the Deadly Demise ability, that model’s Deadly Demise ability inflicts mortal wounds on a D6 roll of 3+ instead of on a 6.
 
 ## 单位构成
+历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
 - **1个模型** — 135 分
 
 ## 关键词

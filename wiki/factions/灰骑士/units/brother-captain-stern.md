@@ -3,17 +3,16 @@ id: '000000377'
 name_en: Brother-captain Stern
 faction: 灰骑士
 type: unit
-points:
-  1 model: 90
 tags:
 - unit
 - unit/灰骑士
 - 灰骑士
 version:
+  points: historical / unmatched
   source: official-db
 sources:
 - book: 官方结构库 db/wh40k.sqlite（Wahapedia 11版镜像 + MFM 官方点数）
-updated: '2026-07-23'
+updated: '2026-09-14'
 ---
 
 ## 属性表
@@ -39,6 +38,7 @@ updated: '2026-07-23'
 - **Strands of Fate (Psychic)**：The first time this model is destroyed, roll one D6 at the end of the phase. On a 2+, set this model back up on the battlefield as close as possible to where it was destroyed and not within Engagement Range of any enemy units, with its full wounds remaining.
 
 ## 单位构成
+历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
 - **1个模型** — 90 分
 
 ## 关键词

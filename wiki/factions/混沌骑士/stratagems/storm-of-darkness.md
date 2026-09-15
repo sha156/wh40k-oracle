@@ -20,7 +20,7 @@ updated: '2026-07-26'
 
 ## 使用时机
 
-Your opponent’s Shooting phase, just after an enemy unit has selected its targets.
+Your opponent’s Shooting phase or the Fight phase, just after an enemy unit has selected its targets.
 
 ## 使用对象
 
@@ -28,4 +28,4 @@ One Chaos Knights unit from your army that was selected as the target of one or 
 
 ## 效果
 
-Until the end of the phase, models in your unit have the Stealth ability, and each time an attack targets your unit, models in it have the Benefit of Cover against that attack.
+Your unit has Stealth. Melee attacks that target your unit have -1 to hit rolls.

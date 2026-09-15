@@ -3,17 +3,21 @@ id: '000000776'
 name_en: Praetor
 faction: 星界军
 type: unit
-points:
-  1 model: 275
 tags:
 - unit
 - unit/星界军
 - 星界军
 version:
+  points: historical / unmatched
   source: official-db
 sources:
-- book: 官方结构库 db/wh40k.sqlite（Wahapedia 11版镜像 + MFM 官方点数）
-updated: '2026-07-23'
+- book: 'Faction Pack: Astra Militarum'
+  pages:
+  - 136
+- book: 'Faction Pack: Astra Militarum'
+  pages:
+  - 137
+updated: '2026-09-14'
 ---
 
 ## 属性表
@@ -39,8 +43,9 @@ updated: '2026-07-23'
 - **Targeting Coordinates**：While this model is being affected by an Order, each time it makes an attack with its Praetor launcher, it does not suffer the penalty to the Hit roll for attacking a unit that is not visible to it.
 
 ## 单位构成
+历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
 - **1个模型** — 275 分
 
 ## 关键词
 - **阵营关键词**：Astra Militarum
-- **普通关键词**：Praetor，Squadron，Imperium，Vehicle，[[core-rules/smoke.md|Smoke]]
+- **普通关键词**：Praetor，Squadron，Imperium，Vehicle，[[core-rules/smoke.md|Smoke]]，FRAME

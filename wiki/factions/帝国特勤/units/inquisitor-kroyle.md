@@ -5,19 +5,17 @@ name_en: Inquisitor Kroyle
 faction: 帝国特勤
 type: unit
 points:
-  1 model (AGENTS OF THE IMPERIUM Detachment): 100
-  1 model (Assigned Agent): 100
   1 model: 100
 tags:
 - unit
 - unit/帝国特勤
 - 帝国特勤
 version:
-  points: MFM 2026-07-27 15:14
+  points: MFM 2026-09-14T05:51:23.572407+00:00
   source: official-db
 sources:
 - book: 官方结构库 db/wh40k.sqlite（Wahapedia 11版镜像 + MFM 官方点数）
-updated: '2026-07-23'
+updated: '2026-09-14'
 ---
 
 ## 属性表
@@ -45,8 +43,6 @@ updated: '2026-07-23'
 - **剧毒循环枪**：在己方射击阶段中，在该单位射击后，如果该模型使用金达里剧毒循环枪攻击成功命中，直到本次战斗结束前，该武器的力量和伤害属性提高2点（伤害属性最多增加至6点）。
 
 ## 单位构成
-- **1个模型 (AGENTS OF THE IMPERIUM Detachment)** — 100 分
-- **1个模型 (Assigned Agent)** — 100 分
 - **1个模型** — 100 分
 
 ## 关键词

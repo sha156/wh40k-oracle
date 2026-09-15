@@ -27,7 +27,7 @@ While the Waaagh! is active for your army, during your Shooting phase, ranged we
 
 - [[factions/兽人/enhancements/da-gobshot-thunderbuss.md\|戈布肖特雷鸣铳]]
 - [[factions/兽人/enhancements/dead-shiny-shootas.md\|闪亮射手]]
-- [[factions/兽人/enhancements/targetin-squigs.md\|瞄准菌]]
+- [[factions/兽人/enhancements/targetin-squigs-more-dakka.md\|瞄准菌]]
 - [[factions/兽人/enhancements/zog-off-and-eat-dakka.md\|滚开吃达卡]]
 
 ## 战略

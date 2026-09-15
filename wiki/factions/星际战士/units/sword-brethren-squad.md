@@ -5,20 +5,20 @@ name_en: Sword Brethren Squad
 faction: 星际战士
 type: unit
 points:
-  4 models: 105
-  5 models: 130
-  9 models: 235
-  10 models: 260
+  4 models: 100
+  5 models: 125
+  9 models: 225
+  10 models: 250
 tags:
 - unit
 - unit/星际战士
 - 星际战士
 version:
-  points: MFM 2026-07-27 15:14
+  points: MFM 2026-09-14T05:51:23.572407+00:00
   source: official-db
 sources:
 - book: 官方结构库 db/wh40k.sqlite（Wahapedia 11版镜像 + MFM 官方点数）
-updated: '2026-07-23'
+updated: '2026-09-14'
 ---
 
 ## 属性表
@@ -47,10 +47,10 @@ updated: '2026-07-23'
 - **ATTACHED UNIT**：If a Character from your army with the Leader ability can be attached to an [[factions/星际战士/units/intercessor-squad.md|Intercessor Squad]], it can be attached to this unit instead.
 
 ## 单位构成
-- **4个模型** — 105 分
-- **5个模型** — 130 分
-- **9个模型** — 235 分
-- **10个模型** — 260 分
+- **4个模型** — 100 分
+- **5个模型** — 125 分
+- **9个模型** — 225 分
+- **10个模型** — 250 分
 
 ## 关键词
 - **阵营关键词**：Black Templars，Adeptus Astartes

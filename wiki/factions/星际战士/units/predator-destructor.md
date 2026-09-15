@@ -11,11 +11,13 @@ tags:
 - unit/星际战士
 - 星际战士
 version:
-  points: MFM 2026-07-27 15:14
+  points: MFM 2026-09-14T05:51:23.572407+00:00
   source: official-db
 sources:
-- book: 官方结构库 db/wh40k.sqlite（Wahapedia 11版镜像 + MFM 官方点数）
-updated: '2026-07-23'
+- book: https://assets.warhammer-community.com/eng_wh40k_faction_pack_space_marines-kxoxqpsahz-u0lzirv0zl.pdf
+  pages:
+  - 61
+updated: '2026-09-14'
 ---
 
 ## 属性表
@@ -47,4 +49,4 @@ updated: '2026-07-23'
 
 ## 关键词
 - **阵营关键词**：Adeptus Astartes
-- **普通关键词**：Imperium，Predator Destructor，Vehicle，[[core-rules/smoke.md|Smoke]]
+- **普通关键词**：Imperium，Predator Destructor，Vehicle，[[core-rules/smoke.md|Smoke]]，FRAME
