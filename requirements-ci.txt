@@ -1,0 +1,16 @@
+# Reproduce the no-database CI job in a clean checkout and virtual environment.
+-r requirements-server.txt
+pytest
+httpx
+pymupdf
+tqdm
+openai
+
+# Synthetic ingestion tests need these libraries, but no torch or model assets.
+# Match the versions verified in the project's full local environment.
+langchain==0.3.28
+langchain-text-splitters==0.3.11
+langchain-core==0.3.84
+langchain-community==0.3.31
+langchain-experimental==0.3.4
+faiss-cpu==1.13.0

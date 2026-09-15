@@ -914,7 +914,17 @@ class TestUnmodeledToolsHonestPlaceholders:
 
     @pytest.mark.parametrize("fn", [agent_tools.validate_roster,
                                     agent_tools.critique_roster])
-    def test_incomplete_roster_is_not_reported_as_a_valid_full_list(self, fn):
+    def test_incomplete_roster_is_not_reported_as_a_valid_full_list(self, fn, tmp_path, monkeypatch):
+        import sqlite3
+        from contextlib import closing
+        from db_compile.schema import ALL_DDL
+
+        # Exercise the real parser without relying on the ignored production DB.
+        db = tmp_path / "roster.sqlite"
+        with closing(sqlite3.connect(str(db))) as conn, conn:
+            for ddl in ALL_DDL:
+                conn.execute(ddl)
+        monkeypatch.setattr(agent_tools, "DB_PATH", db)
         # gnhf 审查模块 5 M3：P6 已于 2026-07-14 上线，占位文案不许再说「计划于 P6」
         # ——要把用户引导到军表实验室页签，而非陈述过时假事实
         result = fn(roster_text="...")
@@ -923,6 +933,15 @@ class TestUnmodeledToolsHonestPlaceholders:
         assert result["modeled"] is True
         assert result["ok"] is False and result["complete"] is False
         assert result["issues"] and "report" not in result
+
+    @pytest.mark.parametrize("fn", [agent_tools.validate_roster,
+                                    agent_tools.critique_roster])
+    def test_missing_roster_database_is_reported(self, fn, tmp_path, monkeypatch):
+        monkeypatch.setattr(agent_tools, "DB_PATH", tmp_path / "missing.sqlite")
+        result = fn(roster_text="...")
+        assert result["ok"] is False
+        assert "结构库未构建" in result["note"]
+        assert "report" not in result
 
 
 class TestToolRegistry:

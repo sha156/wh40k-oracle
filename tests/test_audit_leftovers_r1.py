@@ -275,6 +275,7 @@ class TestRulesFloorSurvivesEmptyMerge:
         return Store()
 
     def test_rules_floor_is_returned_when_main_retrieval_is_empty(self):
+        pytest.importorskip("streamlit", reason="Full app retrieval stack is local-only")
         import app
         out = app.hybrid_retrieve("深入打击", self._fake_store(["DEEP STRIKE 11.03"]),
                                   bm25_retriever=None, reranker=None)
@@ -283,6 +284,7 @@ class TestRulesFloorSurvivesEmptyMerge:
 
     def test_still_empty_when_nothing_found_at_all(self):
         """成对负向：两边都空手时仍然返回空，不许凭空造结果。"""
+        pytest.importorskip("streamlit", reason="Full app retrieval stack is local-only")
         import app
         assert app.hybrid_retrieve("xyz", self._fake_store([]),
                                    bm25_retriever=None, reranker=None) == []
