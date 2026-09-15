@@ -1,3 +1,5 @@
+![WH40K Oracle — a gothic command archive with an illuminated rulebook and tactical display](docs/assets/wh40k-oracle-banner.png)
+
 # wh40k-oracle · 战锤40K 垂类 AI
 
 面向战锤40K（Warhammer 40,000）**第 11 版**的本地知识智库。从"规则书 PDF 问答"起步，已长成四位一体的垂类系统：**规则问答 + 单位图鉴 + 对战模拟 + 军表实验室**，共享同一套官方对齐的结构化数据。全程本地嵌入、可切换云端 LLM，官方点数与规则定期对齐官网。
@@ -13,6 +15,10 @@ The current frontend includes roster text import, conversation history, source l
 Release acceptance is still open for the latest structured-rule/DSL audit, funded live AI benchmarking and a working Docker/WSL host. The Chinese change list is explicitly dated as a July snapshot. See the [acceptance report and next steps](docs/superpowers/reports/2026-09-14-release-acceptance.md) for exact coverage, supported import syntax and reproduction commands.
 
 ## 四大能力
+
+![Four capabilities: Rules with cited rulebooks, Codex with unit datasheets, Simulation with tabletop dice, and Rosters with army formations](docs/assets/wh40k-oracle-capabilities.png)
+
+<sub>The banner and feature illustration are AI-generated project artwork.</sub>
 
 | 能力 | 说的话 / 入口 | 底层 |
 |---|---|---|
