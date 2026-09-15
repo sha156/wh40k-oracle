@@ -14,7 +14,12 @@ version:
   points: MFM 2026-09-14T05:51:23.572407+00:00
   source: official-db
 sources:
-- book: 官方结构库 db/wh40k.sqlite（Wahapedia 11版镜像 + MFM 官方点数）
+- book: 'Faction Pack: Adeptus Custodes'
+  pages:
+  - 25
+- book: 'Faction Pack: Adeptus Custodes'
+  pages:
+  - 26
 updated: '2026-09-14'
 ---
 
@@ -48,4 +53,4 @@ updated: '2026-09-14'
 
 ## 关键词
 - **阵营关键词**：Adeptus Custodes
-- **普通关键词**：Caladius Grav-tank，Fly，Imperium，Vehicle
+- **普通关键词**：Caladius Grav-tank，Fly，Imperium，Vehicle，FRAME

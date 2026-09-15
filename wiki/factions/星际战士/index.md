@@ -29,6 +29,7 @@
 - [[factions/星际战士/detachments/the-lost-brethren|The Lost Brethren]] — 星际战士的分队「The Lost Brethren」，分队规则「崇高战殁」。
 - [[factions/星际战士/detachments/unforgiven-task-force|Unforgiven Task Force]] — 星际战士的分队「Unforgiven Task Force」，分队规则「Grim Resolve」。
 - [[factions/星际战士/detachments/vanguard-spearhead|Vanguard Spearhead]] — 星际战士的分队「Vanguard Spearhead」，分队规则「Shadow Masters」。
+- [[factions/星际战士/detachments/vengeful-hosts|Vengeful Hosts]] — 星际战士的分队「Vengeful Hosts」，分队规则「Imperator Unleashed」。
 - [[factions/星际战士/detachments/vindication-task-force|Vindication Task Force]] — 星际战士的分队「Vindication Task Force」，分队规则「净化！圣化！」。
 - [[factions/星际战士/detachments/wrathful-procession|Wrathful Procession]] — 星际战士的分队「Wrathful Procession」，分队规则「不朽忠诚祷言」。
 - [[factions/星际战士/detachments/legacy-of-grace|优雅传承]] — 星际战士的分队「优雅传承」。
@@ -61,7 +62,7 @@
 
 ## 单位
 
-- [[factions/星际战士/units/invader-atv|ATV 突击车]] — 
+- [[factions/星际战士/units/invader-atv|ATV 突击车]]
 - [[factions/星际战士/units/ancient-on-bike|Ancient on Bike]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
 - [[factions/星际战士/units/apothecary-on-bike|Apothecary on Bike]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
 - [[factions/星际战士/units/assault-squad|Assault Squad]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
@@ -90,7 +91,8 @@
 - [[factions/星际战士/units/deimos-predator|Deimos Predator]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
 - [[factions/星际战士/units/deredeo-dreadnought|Deredeo Dreadnought]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
 - [[factions/星际战士/units/dreadnought-drop-pod|Dreadnought Drop Pod]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
-- [[factions/星际战士/units/example-wargear|Example Wargear]] — 
+- [[factions/星际战士/units/eradicator-squad-with-heavy-bolters|Eradicator Squad With Heavy Bolters]]
+- [[factions/星际战士/units/example-wargear|Example Wargear]]
 - [[factions/星际战士/units/falchion|Falchion]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
 - [[factions/星际战士/units/fellblade|Fellblade]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
 - [[factions/星际战士/units/ferren-areios|Ferren Areios]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
@@ -177,188 +179,188 @@
 - [[factions/星际战士/units/furioso-dreadnought|【传奇】暴烈无畏]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
 - [[factions/星际战士/units/death-company-marines-with-boltguns|【传奇】装备爆弹枪的死亡连战士]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
 - [[factions/星际战士/units/death-company-dreadnought-with-magna-grapple|【传奇】装备磁力勾爪的死亡连无畏]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
-- [[factions/星际战士/units/invictor-tactical-warsuit|不屈型战术机甲]] — 
-- [[factions/星际战士/units/indomitor-kill-team|不屈杀戮小队]] — 
-- [[factions/星际战士/units/ezekiel|以西结]] — 
-- [[factions/星际战士/units/intercessor-squad|仲裁者小队]] — 
-- [[factions/星际战士/units/vulkan-hestan|伏尔甘赫斯坦]] — 
-- [[factions/星际战士/units/commander-dante|但丁指挥官]] — 
-- [[factions/星际战士/units/scout-squad|侦查小队]] — 
-- [[factions/星际战士/units/aggressor-squad|侵略者小队]] — 
-- [[factions/星际战士/units/marshal|元帅]] — 
-- [[factions/星际战士/units/outrider-squad|先遣者摩托小队]] — 
-- [[factions/星际战士/units/lieutenant-in-phobos-armour|先锋军副官]] — 
-- [[factions/星际战士/units/librarian-in-phobos-armour|先锋军智库]] — 
-- [[factions/星际战士/units/captain-in-phobos-armour|先锋军连长]] — 
-- [[factions/星际战士/units/inceptor-squad|先驱者小队]] — 
-- [[factions/星际战士/units/incursor-squad|入侵者小队]] — 
-- [[factions/星际战士/units/land-raider|兰德掠袭者坦克]] — 
-- [[factions/星际战士/units/land-speeder|兰德速攻艇]] — 
-- [[factions/星际战士/units/inner-circle-companions|内环伙友]] — 
-- [[factions/星际战士/units/storm-speeder-hailstrike|冰雹型风暴速攻艇]] — 
-- [[factions/星际战士/units/impulsor-2|冲击者突击艇]] — 
-- [[factions/星际战士/units/impulsor|冲击者突击艇]] — 
-- [[factions/星际战士/units/kayvaan-shrike|凯万-史瑞克]] — 
-- [[factions/星际战士/units/talonstrike-kill-team|利爪突击杀戮小队]] — 
-- [[factions/星际战士/units/sword-brethren-squad|剑之兄弟小队]] — 
-- [[factions/星际战士/units/bladeguard-ancient|剑卫旗手]] — 
-- [[factions/星际战士/units/bladeguard-veteran-squad|剑卫老兵小队]] — 
-- [[factions/星际战士/units/lieutenant|副官]] — 
-- [[factions/星际战士/units/lieutenant-in-reiver-armour|劫掠者副官]] — 
-- [[factions/星际战士/units/reiver-squad|劫掠者小队]] — 
-- [[factions/星际战士/units/land-raider-crusader-2|十字军型兰德掠袭者坦克]] — 
-- [[factions/星际战士/units/land-raider-crusader|十字军型兰德掠袭者坦克]] — 
-- [[factions/星际战士/units/crusader-squad|十字军小队]] — 
-- [[factions/星际战士/units/cato-sicarius|卡托·西卡留斯]] — 
-- [[factions/星际战士/units/caanok-var|卡诺克·瓦尔]] — 
-- [[factions/星际战士/units/suppressor-squad|压制者小队]] — 
-- [[factions/星际战士/units/repulsor-2|反击者突击艇]] — 
-- [[factions/星际战士/units/repulsor|反击者突击艇]] — 
-- [[factions/星际战士/units/the-sanguinor|圣吉列诺]] — 
-- [[factions/星际战士/units/sanguinary-guard|圣血卫队]] — 
-- [[factions/星际战士/units/sanguinary-priest|圣血祭司]] — 
-- [[factions/星际战士/units/blood-angels-captain|圣血连长]] — 
-- [[factions/星际战士/units/hellblaster-squad|地狱轰击者小队]] — 
-- [[factions/星际战士/units/pedro-kantor|坎托战团长]] — 
-- [[factions/星际战士/units/castellan|堡主]] — 
-- [[factions/星际战士/units/repulsor-executioner-2|处决者型反击者坦克]] — 
-- [[factions/星际战士/units/repulsor-executioner|处决者型反击者坦克]] — 
-- [[factions/星际战士/units/land-speeder-vengeance|复仇型兰德飞艇]] — 
-- [[factions/星际战士/units/wardens-of-ultramar|奥特拉玛守望者]] — 
-- [[factions/星际战士/units/watch-master|守望堡主]] — 
-- [[factions/星际战士/units/watch-captain-artemis|守望连长阿耳忒弥斯]] — 
-- [[factions/星际战士/units/desolation-squad|寂灭者小队]] — 
-- [[factions/星际战士/units/ballistus-dreadnought|射手型无畏机甲]] — 
-- [[factions/星际战士/units/baal-predator|巴尔掠食者]] — 
-- [[factions/星际战士/units/emperors-champion|帝皇勇士]] — 
-- [[factions/星际战士/units/victrix-honour-guard|常胜护卫]] — 
-- [[factions/星际战士/units/decimus-kill-team|德西姆斯猎杀小队]] — 
-- [[factions/星际战士/units/tactical-squad|战术小队]] — 
-- [[factions/星际战士/units/tor-garadon|托尔连长]] — 
-- [[factions/星际战士/units/execrator|执裁者]] — 
-- [[factions/星际战士/units/techmarine|技术军士]] — 
-- [[factions/星际战士/units/lazarus|拉撒路导师]] — 
-- [[factions/星际战士/units/ragnar-blackmane|拉格纳·黑鬃]] — 
-- [[factions/星际战士/units/chaplain-on-bike|摩托牧师]] — 
-- [[factions/星际战士/units/land-raider-redeemer|救赎者型兰德掠袭者坦克]] — 
-- [[factions/星际战士/units/redemptor-dreadnought|救赎者型无畏机甲]] — 
-- [[factions/星际战士/units/uriel-ventris|文崔斯连长]] — 
-- [[factions/星际战士/units/bjorn-the-fell-handed|断手比约恩]] — 
-- [[factions/星际战士/units/whirlwind|旋风火箭炮]] — 
-- [[factions/星际战士/units/ancient|旗手]] — 
-- [[factions/星际战士/units/spectrus-kill-team|无形杀戮小队]] — 
-- [[factions/星际战士/units/dreadnought|无畏机甲]] — 
-- [[factions/星际战士/units/librarian|智库]] — 
-- [[factions/星际战士/units/stormraven-gunship|暴风渡鸦炮艇]] — 
-- [[factions/星际战士/units/murderfang|杀戮牙]] — 
-- [[factions/星际战士/units/ulrik-the-slayer|杀戮者乌尔里克]] — 
-- [[factions/星际战士/units/gladiator-lancer-2|枪骑兵型角斗者坦克]] — 
-- [[factions/星际战士/units/gladiator-lancer|枪骑兵型角斗者坦克]] — 
-- [[factions/星际战士/units/eradicator-squad|根除者小队]] — 
-- [[factions/星际战士/units/chaplain-grimaldus|格瑞马都斯牧师]] — 
-- [[factions/星际战士/units/deathwatch-terminator-squad|死亡守望终结者小队]] — 
-- [[factions/星际战士/units/deathwatch-veterans|死亡守望老兵]] — 
-- [[factions/星际战士/units/death-company-marines|死亡连小队]] — 
-- [[factions/星际战士/units/death-company-dreadnought|死亡连无畏]] — 
-- [[factions/星际战士/units/death-company-captain|死亡连连长]] — 
-- [[factions/星际战士/units/gladiator-reaper-2|死神型角斗者坦克]] — 
-- [[factions/星际战士/units/gladiator-reaper|死神型角斗者坦克]] — 
+- [[factions/星际战士/units/invictor-tactical-warsuit|不屈型战术机甲]]
+- [[factions/星际战士/units/indomitor-kill-team|不屈杀戮小队]]
+- [[factions/星际战士/units/ezekiel|以西结]]
+- [[factions/星际战士/units/intercessor-squad|仲裁者小队]]
+- [[factions/星际战士/units/vulkan-hestan|伏尔甘赫斯坦]]
+- [[factions/星际战士/units/commander-dante|但丁指挥官]]
+- [[factions/星际战士/units/scout-squad|侦查小队]]
+- [[factions/星际战士/units/aggressor-squad|侵略者小队]]
+- [[factions/星际战士/units/marshal|元帅]]
+- [[factions/星际战士/units/outrider-squad|先遣者摩托小队]]
+- [[factions/星际战士/units/lieutenant-in-phobos-armour|先锋军副官]]
+- [[factions/星际战士/units/librarian-in-phobos-armour|先锋军智库]]
+- [[factions/星际战士/units/captain-in-phobos-armour|先锋军连长]]
+- [[factions/星际战士/units/inceptor-squad|先驱者小队]]
+- [[factions/星际战士/units/incursor-squad|入侵者小队]]
+- [[factions/星际战士/units/land-raider|兰德掠袭者坦克]]
+- [[factions/星际战士/units/land-speeder|兰德速攻艇]]
+- [[factions/星际战士/units/inner-circle-companions|内环伙友]]
+- [[factions/星际战士/units/storm-speeder-hailstrike|冰雹型风暴速攻艇]]
+- [[factions/星际战士/units/impulsor-2|冲击者突击艇]]
+- [[factions/星际战士/units/impulsor|冲击者突击艇]]
+- [[factions/星际战士/units/kayvaan-shrike|凯万-史瑞克]]
+- [[factions/星际战士/units/talonstrike-kill-team|利爪突击杀戮小队]]
+- [[factions/星际战士/units/sword-brethren-squad|剑之兄弟小队]]
+- [[factions/星际战士/units/bladeguard-ancient|剑卫旗手]]
+- [[factions/星际战士/units/bladeguard-veteran-squad|剑卫老兵小队]]
+- [[factions/星际战士/units/lieutenant|副官]]
+- [[factions/星际战士/units/lieutenant-in-reiver-armour|劫掠者副官]]
+- [[factions/星际战士/units/reiver-squad|劫掠者小队]]
+- [[factions/星际战士/units/land-raider-crusader-2|十字军型兰德掠袭者坦克]]
+- [[factions/星际战士/units/land-raider-crusader|十字军型兰德掠袭者坦克]]
+- [[factions/星际战士/units/crusader-squad|十字军小队]]
+- [[factions/星际战士/units/cato-sicarius|卡托·西卡留斯]]
+- [[factions/星际战士/units/caanok-var|卡诺克·瓦尔]]
+- [[factions/星际战士/units/suppressor-squad|压制者小队]]
+- [[factions/星际战士/units/repulsor-2|反击者突击艇]]
+- [[factions/星际战士/units/repulsor|反击者突击艇]]
+- [[factions/星际战士/units/the-sanguinor|圣吉列诺]]
+- [[factions/星际战士/units/sanguinary-guard|圣血卫队]]
+- [[factions/星际战士/units/sanguinary-priest|圣血祭司]]
+- [[factions/星际战士/units/blood-angels-captain|圣血连长]]
+- [[factions/星际战士/units/hellblaster-squad|地狱轰击者小队]]
+- [[factions/星际战士/units/pedro-kantor|坎托战团长]]
+- [[factions/星际战士/units/castellan|堡主]]
+- [[factions/星际战士/units/repulsor-executioner-2|处决者型反击者坦克]]
+- [[factions/星际战士/units/repulsor-executioner|处决者型反击者坦克]]
+- [[factions/星际战士/units/land-speeder-vengeance|复仇型兰德飞艇]]
+- [[factions/星际战士/units/wardens-of-ultramar|奥特拉玛守望者]]
+- [[factions/星际战士/units/watch-master|守望堡主]]
+- [[factions/星际战士/units/watch-captain-artemis|守望连长阿耳忒弥斯]]
+- [[factions/星际战士/units/desolation-squad|寂灭者小队]]
+- [[factions/星际战士/units/ballistus-dreadnought|射手型无畏机甲]]
+- [[factions/星际战士/units/baal-predator|巴尔掠食者]]
+- [[factions/星际战士/units/emperors-champion|帝皇勇士]]
+- [[factions/星际战士/units/victrix-honour-guard|常胜护卫]]
+- [[factions/星际战士/units/decimus-kill-team|德西姆斯猎杀小队]]
+- [[factions/星际战士/units/tactical-squad|战术小队]]
+- [[factions/星际战士/units/tor-garadon|托尔连长]]
+- [[factions/星际战士/units/execrator|执裁者]]
+- [[factions/星际战士/units/techmarine|技术军士]]
+- [[factions/星际战士/units/lazarus|拉撒路导师]]
+- [[factions/星际战士/units/ragnar-blackmane|拉格纳·黑鬃]]
+- [[factions/星际战士/units/chaplain-on-bike|摩托牧师]]
+- [[factions/星际战士/units/land-raider-redeemer|救赎者型兰德掠袭者坦克]]
+- [[factions/星际战士/units/redemptor-dreadnought|救赎者型无畏机甲]]
+- [[factions/星际战士/units/uriel-ventris|文崔斯连长]]
+- [[factions/星际战士/units/bjorn-the-fell-handed|断手比约恩]]
+- [[factions/星际战士/units/whirlwind|旋风火箭炮]]
+- [[factions/星际战士/units/ancient|旗手]]
+- [[factions/星际战士/units/spectrus-kill-team|无形杀戮小队]]
+- [[factions/星际战士/units/dreadnought|无畏机甲]]
+- [[factions/星际战士/units/librarian|智库]]
+- [[factions/星际战士/units/stormraven-gunship|暴风渡鸦炮艇]]
+- [[factions/星际战士/units/murderfang|杀戮牙]]
+- [[factions/星际战士/units/ulrik-the-slayer|杀戮者乌尔里克]]
+- [[factions/星际战士/units/gladiator-lancer-2|枪骑兵型角斗者坦克]]
+- [[factions/星际战士/units/gladiator-lancer|枪骑兵型角斗者坦克]]
+- [[factions/星际战士/units/eradicator-squad|根除者小队]]
+- [[factions/星际战士/units/chaplain-grimaldus|格瑞马都斯牧师]]
+- [[factions/星际战士/units/deathwatch-terminator-squad|死亡守望终结者小队]]
+- [[factions/星际战士/units/deathwatch-veterans|死亡守望老兵]]
+- [[factions/星际战士/units/death-company-marines|死亡连小队]]
+- [[factions/星际战士/units/death-company-dreadnought|死亡连无畏]]
+- [[factions/星际战士/units/death-company-captain|死亡连连长]]
+- [[factions/星际战士/units/gladiator-reaper-2|死神型角斗者坦克]]
+- [[factions/星际战士/units/gladiator-reaper|死神型角斗者坦克]]
 - [[factions/星际战士/units/deathwing-command-squad|死翼指挥组【传奇】]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
-- [[factions/星际战士/units/deathwing-terminator-squad|死翼终结者小队]] — 
-- [[factions/星际战士/units/deathwing-knights|死翼骑士]] — 
-- [[factions/星际战士/units/predator-annihilator|歼灭者型猎食者坦克]] — 
-- [[factions/星际战士/units/eliminator-squad|歼灭者小队]] — 
-- [[factions/星际战士/units/captain-titus|泰图斯连长]] — 
-- [[factions/星际战士/units/logan-grimnar|洛根.格里姆纳尔]] — 
-- [[factions/星际战士/units/nephilim-jetfighter|涅法雷姆战斗机]] — 
-- [[factions/星际战士/units/infiltrator-squad|渗透者小队]] — 
-- [[factions/星际战士/units/grey-hunters|灰色猎手]] — 
-- [[factions/星际战士/units/firestrike-servo-turrets|烈火炮台]] — 
-- [[factions/星际战士/units/infernus-squad|焚狱者小队]] — 
-- [[factions/星际战士/units/chaplain|牧师]] — 
-- [[factions/星际战士/units/rhino|犀牛装甲车]] — 
-- [[factions/星际战士/units/wulfen|狼人]] — 
-- [[factions/星际战士/units/wulfen-dreadnought|狼人无畏机甲]] — 
-- [[factions/星际战士/units/wolf-scouts|狼侦查]] — 
-- [[factions/星际战士/units/wolf-guard-battle-leader|狼卫指挥官]] — 
-- [[factions/星际战士/units/wolf-guard-headtakers|狼卫猎头者]] — 
-- [[factions/星际战士/units/wolf-priest|狼牧师]] — 
-- [[factions/星际战士/units/apothecary-biologis|生物学药剂师]] — 
-- [[factions/星际战士/units/centurion-devastator-squad|百夫长破坏小队]] — 
-- [[factions/星际战士/units/centurion-assault-squad|百夫长突击小队]] — 
-- [[factions/星际战士/units/predator-destructor|破坏者型猎食者坦克]] — 
-- [[factions/星际战士/units/devastator-squad|破坏者小队]] — 
-- [[factions/星际战士/units/drop-pod|空降仓]] — 
-- [[factions/星际战士/units/assault-intercessor-squad|突击仲裁者小队]] — 
-- [[factions/星际战士/units/terminator-assault-squad|突击终结者小队]] — 
-- [[factions/星际战士/units/terminator-squad-2|终结者小队]] — 
-- [[factions/星际战士/units/terminator-squad|终结者小队]] — 
-- [[factions/星际战士/units/ancient-in-terminator-armour|终结者旗手]] — 
-- [[factions/星际战士/units/librarian-in-terminator-armour|终结者智库]] — 
-- [[factions/星际战士/units/chaplain-in-terminator-armour|终结者牧师]] — 
-- [[factions/星际战士/units/captain-in-terminator-armour|终结者连长]] — 
-- [[factions/星际战士/units/vindicator|维护者突击炮]] — 
-- [[factions/星际战士/units/roboute-guilliman|罗伯特.基里曼]] — 
-- [[factions/星际战士/units/sternguard-veteran-squad-2|肃卫老兵小队]] — 
-- [[factions/星际战士/units/sternguard-veteran-squad|肃卫老兵小队]] — 
-- [[factions/星际战士/units/fortis-kill-team|至强杀戮小队]] — 
-- [[factions/星际战士/units/high-marshal-helbrecht|至高大元帅赫尔贝茨]] — 
-- [[factions/星际战士/units/aethon-shaan|艾索-沙恩]] — 
-- [[factions/星际战士/units/fenrisian-wolves|芬里斯狼]] — 
-- [[factions/星际战士/units/suboden-khan|苏博登可汗]] — 
-- [[factions/星际战士/units/venerable-dreadnought|荣耀无畏机甲]] — 
-- [[factions/星际战士/units/apothecary|药剂师]] — 
-- [[factions/星际战士/units/darnath-lysander|莱山德连长]] — 
-- [[factions/星际战士/units/lion-eljonson|莱昂艾尔庄森，黑暗天使基因原体]] — 
-- [[factions/星际战士/units/sammael|萨穆尔大导师]] — 
-- [[factions/星际战士/units/storm-speeder-hammerstrike|落锤型风暴速攻艇]] — 
-- [[factions/星际战士/units/hammerfall-bunker|落锤堡]] — 
-- [[factions/星际战士/units/brutalis-dreadnought|蛮兽型无畏机甲]] — 
-- [[factions/星际战士/units/blood-claws|血爪]] — 
-- [[factions/星际战士/units/judiciar|裁决士]] — 
-- [[factions/星际战士/units/lieutenant-with-combi-weapon|装备复合武器的先锋军副官]] — 
-- [[factions/星际战士/units/death-company-marines-with-bolt-rifles|装备爆弹步枪的死亡连小队]] — 
-- [[factions/星际战士/units/death-company-marines-with-jump-packs|装备跳跃背包的死亡连小队]] — 
-- [[factions/星际战士/units/death-company-captain-with-jump-pack|装备跳跃背包的死亡连连长]] — 
-- [[factions/星际战士/units/wulfen-with-storm-shields|装备风暴盾的狼人]] — 
-- [[factions/星际战士/units/gladiator-valiant-2|豪侠型角斗者坦克]] — 
-- [[factions/星际战士/units/gladiator-valiant|豪侠型角斗者坦克]] — 
-- [[factions/星际战士/units/razorback|豪猪装甲车]] — 
-- [[factions/星际战士/units/belial|贝利亚大导师]] — 
-- [[factions/星际战士/units/vanguard-veteran-squad-with-jump-packs|跳跃背包先锋老兵小队]] — 
-- [[factions/星际战士/units/chaplain-with-jump-pack|跳跃背包牧师]] — 
-- [[factions/星际战士/units/assault-intercessors-with-jump-packs|跳跃背包突击仲裁者小队]] — 
-- [[factions/星际战士/units/captain-with-jump-pack|跳跃背包连长]] — 
-- [[factions/星际战士/units/marneus-calgar-in-armour-of-antilochus|身穿安提洛克斯战甲的马涅乌斯·卡尔加]] — 
-- [[factions/星际战士/units/crusade-ancient|远征旗手]] — 
-- [[factions/星际战士/units/captain|连长]] — 
-- [[factions/星际战士/units/company-heroes|连队英雄]] — 
-- [[factions/星际战士/units/heavy-intercessor-squad|重装仲裁者小队]] — 
-- [[factions/星际战士/units/captain-in-gravis-armour|重装连长]] — 
-- [[factions/星际战士/units/wolf-guard-terminators|野狼守卫终结者]] — 
-- [[factions/星际战士/units/iron-priest|钢铁牧师]] — 
-- [[factions/星际战士/units/iron-father-feirros|铁父费罗斯]] — 
-- [[factions/星际战士/units/korsarro-khan|阔萨罗可汗]] — 
-- [[factions/星际战士/units/azrael|阿兹瑞尔大导师]] — 
-- [[factions/星际战士/units/adrax-agatone|阿加通连长]] — 
-- [[factions/星际战士/units/astorath|阿斯托拉斯]] — 
-- [[factions/星际战士/units/astraeus|阿斯特赖俄斯]] — 
-- [[factions/星际战士/units/asmodai|阿斯莫戴]] — 
-- [[factions/星际战士/units/arjac-rockfist|阿贾克·石拳]] — 
-- [[factions/星际战士/units/thunderwolf-cavalry|雷狼骑兵]] — 
-- [[factions/星际战士/units/storm-speeder-thunderstrike|雷霆型风暴速攻艇]] — 
-- [[factions/星际战士/units/lemartes|雷马特斯]] — 
-- [[factions/星际战士/units/thunderhawk-gunship|雷鹰炮艇]] — 
-- [[factions/星际战士/units/njal-stormcaller|风暴召唤者纳吉奥]] — 
-- [[factions/星际战士/units/stormtalon-gunship|风暴爪炮艇]] — 
-- [[factions/星际战士/units/stormhawk-interceptor|风暴隼拦截机]] — 
-- [[factions/星际战士/units/chief-librarian-mephiston|首席智库墨菲斯顿]] — 
-- [[factions/星际战士/units/chief-librarian-tigurius|首席智库底格里斯]] — 
-- [[factions/星际战士/units/ravenwing-command-squad|鸦翼指挥小队]] — 
-- [[factions/星际战士/units/ravenwing-darkshroud|鸦翼暗幕飞艇]] — 
-- [[factions/星际战士/units/ravenwing-dark-talon|鸦翼黑爪轰炸机]] — 
-- [[factions/星际战士/units/ravenwing-black-knights|鸦翼黑骑士]] — 
-- [[factions/星际战士/units/corvus-blackstar|黑星渡鸦]] — 
+- [[factions/星际战士/units/deathwing-terminator-squad|死翼终结者小队]]
+- [[factions/星际战士/units/deathwing-knights|死翼骑士]]
+- [[factions/星际战士/units/predator-annihilator|歼灭者型猎食者坦克]]
+- [[factions/星际战士/units/eliminator-squad|歼灭者小队]]
+- [[factions/星际战士/units/captain-titus|泰图斯连长]]
+- [[factions/星际战士/units/logan-grimnar|洛根.格里姆纳尔]]
+- [[factions/星际战士/units/nephilim-jetfighter|涅法雷姆战斗机]]
+- [[factions/星际战士/units/infiltrator-squad|渗透者小队]]
+- [[factions/星际战士/units/grey-hunters|灰色猎手]]
+- [[factions/星际战士/units/firestrike-servo-turrets|烈火炮台]]
+- [[factions/星际战士/units/infernus-squad|焚狱者小队]]
+- [[factions/星际战士/units/chaplain|牧师]]
+- [[factions/星际战士/units/rhino|犀牛装甲车]]
+- [[factions/星际战士/units/wulfen|狼人]]
+- [[factions/星际战士/units/wulfen-dreadnought|狼人无畏机甲]]
+- [[factions/星际战士/units/wolf-scouts|狼侦查]]
+- [[factions/星际战士/units/wolf-guard-battle-leader|狼卫指挥官]]
+- [[factions/星际战士/units/wolf-guard-headtakers|狼卫猎头者]]
+- [[factions/星际战士/units/wolf-priest|狼牧师]]
+- [[factions/星际战士/units/apothecary-biologis|生物学药剂师]]
+- [[factions/星际战士/units/centurion-devastator-squad|百夫长破坏小队]]
+- [[factions/星际战士/units/centurion-assault-squad|百夫长突击小队]]
+- [[factions/星际战士/units/predator-destructor|破坏者型猎食者坦克]]
+- [[factions/星际战士/units/devastator-squad|破坏者小队]]
+- [[factions/星际战士/units/drop-pod|空降仓]]
+- [[factions/星际战士/units/assault-intercessor-squad|突击仲裁者小队]]
+- [[factions/星际战士/units/terminator-assault-squad|突击终结者小队]]
+- [[factions/星际战士/units/terminator-squad-2|终结者小队]]
+- [[factions/星际战士/units/terminator-squad|终结者小队]]
+- [[factions/星际战士/units/ancient-in-terminator-armour|终结者旗手]]
+- [[factions/星际战士/units/librarian-in-terminator-armour|终结者智库]]
+- [[factions/星际战士/units/chaplain-in-terminator-armour|终结者牧师]]
+- [[factions/星际战士/units/captain-in-terminator-armour|终结者连长]]
+- [[factions/星际战士/units/vindicator|维护者突击炮]]
+- [[factions/星际战士/units/roboute-guilliman|罗伯特.基里曼]]
+- [[factions/星际战士/units/sternguard-veteran-squad-2|肃卫老兵小队]]
+- [[factions/星际战士/units/sternguard-veteran-squad|肃卫老兵小队]]
+- [[factions/星际战士/units/fortis-kill-team|至强杀戮小队]]
+- [[factions/星际战士/units/high-marshal-helbrecht|至高大元帅赫尔贝茨]]
+- [[factions/星际战士/units/aethon-shaan|艾索-沙恩]]
+- [[factions/星际战士/units/fenrisian-wolves|芬里斯狼]]
+- [[factions/星际战士/units/suboden-khan|苏博登可汗]]
+- [[factions/星际战士/units/venerable-dreadnought|荣耀无畏机甲]]
+- [[factions/星际战士/units/apothecary|药剂师]]
+- [[factions/星际战士/units/darnath-lysander|莱山德连长]]
+- [[factions/星际战士/units/lion-eljonson|莱昂艾尔庄森，黑暗天使基因原体]]
+- [[factions/星际战士/units/sammael|萨穆尔大导师]]
+- [[factions/星际战士/units/storm-speeder-hammerstrike|落锤型风暴速攻艇]]
+- [[factions/星际战士/units/hammerfall-bunker|落锤堡]]
+- [[factions/星际战士/units/brutalis-dreadnought|蛮兽型无畏机甲]]
+- [[factions/星际战士/units/blood-claws|血爪]]
+- [[factions/星际战士/units/judiciar|裁决士]]
+- [[factions/星际战士/units/lieutenant-with-combi-weapon|装备复合武器的先锋军副官]]
+- [[factions/星际战士/units/death-company-marines-with-bolt-rifles|装备爆弹步枪的死亡连小队]]
+- [[factions/星际战士/units/death-company-marines-with-jump-packs|装备跳跃背包的死亡连小队]]
+- [[factions/星际战士/units/death-company-captain-with-jump-pack|装备跳跃背包的死亡连连长]]
+- [[factions/星际战士/units/wulfen-with-storm-shields|装备风暴盾的狼人]]
+- [[factions/星际战士/units/gladiator-valiant-2|豪侠型角斗者坦克]]
+- [[factions/星际战士/units/gladiator-valiant|豪侠型角斗者坦克]]
+- [[factions/星际战士/units/razorback|豪猪装甲车]]
+- [[factions/星际战士/units/belial|贝利亚大导师]]
+- [[factions/星际战士/units/vanguard-veteran-squad-with-jump-packs|跳跃背包先锋老兵小队]]
+- [[factions/星际战士/units/chaplain-with-jump-pack|跳跃背包牧师]]
+- [[factions/星际战士/units/assault-intercessors-with-jump-packs|跳跃背包突击仲裁者小队]]
+- [[factions/星际战士/units/captain-with-jump-pack|跳跃背包连长]]
+- [[factions/星际战士/units/marneus-calgar-in-armour-of-antilochus|身穿安提洛克斯战甲的马涅乌斯·卡尔加]]
+- [[factions/星际战士/units/crusade-ancient|远征旗手]]
+- [[factions/星际战士/units/captain|连长]]
+- [[factions/星际战士/units/company-heroes|连队英雄]]
+- [[factions/星际战士/units/heavy-intercessor-squad|重装仲裁者小队]]
+- [[factions/星际战士/units/captain-in-gravis-armour|重装连长]]
+- [[factions/星际战士/units/wolf-guard-terminators|野狼守卫终结者]]
+- [[factions/星际战士/units/iron-priest|钢铁牧师]]
+- [[factions/星际战士/units/iron-father-feirros|铁父费罗斯]]
+- [[factions/星际战士/units/korsarro-khan|阔萨罗可汗]]
+- [[factions/星际战士/units/azrael|阿兹瑞尔大导师]]
+- [[factions/星际战士/units/adrax-agatone|阿加通连长]]
+- [[factions/星际战士/units/astorath|阿斯托拉斯]]
+- [[factions/星际战士/units/astraeus|阿斯特赖俄斯]]
+- [[factions/星际战士/units/asmodai|阿斯莫戴]]
+- [[factions/星际战士/units/arjac-rockfist|阿贾克·石拳]]
+- [[factions/星际战士/units/thunderwolf-cavalry|雷狼骑兵]]
+- [[factions/星际战士/units/storm-speeder-thunderstrike|雷霆型风暴速攻艇]]
+- [[factions/星际战士/units/lemartes|雷马特斯]]
+- [[factions/星际战士/units/thunderhawk-gunship|雷鹰炮艇]]
+- [[factions/星际战士/units/njal-stormcaller|风暴召唤者纳吉奥]]
+- [[factions/星际战士/units/stormtalon-gunship|风暴爪炮艇]]
+- [[factions/星际战士/units/stormhawk-interceptor|风暴隼拦截机]]
+- [[factions/星际战士/units/chief-librarian-mephiston|首席智库墨菲斯顿]]
+- [[factions/星际战士/units/chief-librarian-tigurius|首席智库底格里斯]]
+- [[factions/星际战士/units/ravenwing-command-squad|鸦翼指挥小队]]
+- [[factions/星际战士/units/ravenwing-darkshroud|鸦翼暗幕飞艇]]
+- [[factions/星际战士/units/ravenwing-dark-talon|鸦翼黑爪轰炸机]]
+- [[factions/星际战士/units/ravenwing-black-knights|鸦翼黑骑士]]
+- [[factions/星际战士/units/corvus-blackstar|黑星渡鸦]]
 
 ## 策略技能
 
@@ -420,12 +422,14 @@
 - [[factions/星际战士/stratagems/iron-arm|IRON ARM]] — 1 CP、Fight phase、Librarius Conclave 分队、Strategic Ploy Strata...
 - [[factions/星际战士/stratagems/kill-shot|KILL SHOT]] — 1 CP、Shooting phase、猎头特遣队 分队、Battle Tactic Stratagem。
 - [[factions/星际战士/stratagems/knife-work|KNIFE WORK]] — 1 CP、Fight phase、Pilum Strike Team 分队、Battle Tactic Stratage...
+- [[factions/星际战士/stratagems/know-no-fear|KNOW NO FEAR]] — 1 CP、Command phase、Vengeful Hosts 分队。
 - [[factions/星际战士/stratagems/legendary-fortitude|LEGENDARY FORTITUDE]] — 1 CP、Charge phase、1st Company Task Force 分队、Battle Tactic St...
 - [[factions/星际战士/stratagems/leonine-aggression|LEONINE AGGRESSION]] — 1 CP、Charge phase、巨石之怒 分队、Strategic Ploy Stratagem。
 - [[factions/星际战士/stratagems/marked-for-destruction|MARKED FOR DESTRUCTION]] — 1 CP、Shooting phase、Saga of the Hunter 分队、Battle Tactic Stra...
 - [[factions/星际战士/stratagems/martial-mastery|MARTIAL MASTERY]] — 1 CP、Fight phase、Inner Circle Task Force 分队、Epic Deed Strata...
 - [[factions/星际战士/stratagems/master-marksmen|MASTER MARKSMEN]] — 1 CP、Shooting phase、Pilum Strike Team 分队、Battle Tactic Strat...
 - [[factions/星际战士/stratagems/mercy-is-weakness|MERCY IS WEAKNESS]] — 2 CP、Shooting or Fight phase、Ironstorm Spearhead 分队、Battle T...
+- [[factions/星际战士/stratagems/meteoric-onslaught|METEORIC ONSLAUGHT]] — 1 CP、Fight phase、Vengeful Hosts 分队。
 - [[factions/星际战士/stratagems/mobile-lethality|MOBILE LETHALITY]] — 1 CP、Movement phase、Spearpoint Task Force 分队、Battle Tactic S...
 - [[factions/星际战士/stratagems/no-threat-too-great|NO THREAT TOO GREAT]] — 2 CP、Shooting phase、Anvil Siege Force 分队、Battle Tactic Strat...
 - [[factions/星际战士/stratagems/not-one-backwards-step|NOT ONE BACKWARDS STEP]] — 1 CP、Command phase、Anvil Siege Force 分队、Strategic Ploy Strat...
@@ -440,6 +444,7 @@
 - [[factions/星际战士/stratagems/practical-tactics|PRACTICAL TACTICS]] — 1 CP、Movement phase、Blade of Ultramar 分队、Strategic Ploy Stra...
 - [[factions/星际战士/stratagems/prescient-precision|PRESCIENT PRECISION]] — 1 CP、Shooting phase、Librarius Conclave 分队、Strategic Ploy Str...
 - [[factions/星际战士/stratagems/preytakers-eye|PREYTAKER’S EYE]] — 1 CP、Shooting or Fight phase、Champions of Fenris 分队、Strategi...
+- [[factions/星际战士/stratagems/purge-by-sectors|PURGE BY SECTORS]] — 1 CP、Fight phase、Vengeful Hosts 分队。
 - [[factions/星际战士/stratagems/rapid-reappraisal|RAPID REAPPRAISAL]] — 1 CP、Fight phase、Company of Hunters 分队、Battle Tactic Stratag...
 - [[factions/星际战士/stratagems/rapid-takeover|RAPID TAKEOVER]] — 1 CP、Movement phase、Shield of the Void 分队、Strategic Ploy Str...
 - [[factions/星际战士/stratagems/raptorial-vigilance|RAPTORIAL VIGILANCE]] — 1 CP、Movement phase、影标之爪 分队、Battle Tactic Stratagem。
@@ -665,6 +670,7 @@
 - [[factions/星际战士/enhancements/armour-of-antoninus|Armour of Antoninus]] — 20 分、Blade of Ultramar 分队。
 - [[factions/星际战士/enhancements/armoured-commander|Armoured Commander]] — 25 分、装甲矛尖 分队。
 - [[factions/星际战士/enhancements/artificer-armour|Artificer Armour]] — 20 分、Gladius Task Force 分队。
+- [[factions/星际战士/enhancements/avenging-angel|Avenging Angel]] — 20 分、Vengeful Hosts 分队。
 - [[factions/星际战士/enhancements/bellicose-weapon-spirits|Bellicose Weapon Spirits]] — 15 分、迅电特遣队 分队。
 - [[factions/星际战士/enhancements/blackwing-shroud|Blackwing Shroud]] — 25 分、影标之爪 分队。
 - [[factions/星际战士/enhancements/braggarts-steel|Braggart’s Steel]] — 20 分、Saga of the Bold 分队。
@@ -724,6 +730,7 @@
 - [[factions/星际战士/enhancements/obfuscation|Obfuscation]] — 25 分、Librarius Conclave 分队。
 - [[factions/星际战士/enhancements/omni-structural-auspex|Omni-Structural Auspex]] — 0 分、Pilum Strike Team 分队。
 - [[factions/星际战士/enhancements/orbital-uplink-reliquary|Orbital Uplink Reliquary]] — 25 分、轨道突袭部队 分队。
+- [[factions/星际战士/enhancements/orksbane|Orksbane]] — 20 分、Vengeful Hosts 分队。
 - [[factions/星际战士/enhancements/pennant-of-remembrance|Pennant of Remembrance]] — 10 分、Unforgiven Task Force 分队。
 - [[factions/星际战士/enhancements/portents-of-wisdom|Portents of Wisdom]] — 15 分、Stormlance Task Force 分队。
 - [[factions/星际战士/enhancements/prescience|Prescience]] — 20 分、Librarius Conclave 分队。
@@ -755,6 +762,7 @@
 - [[factions/星际战士/enhancements/swift-hunter|Swift Hunter]] — 20 分、Saga of the Hunter 分队。
 - [[factions/星际战士/enhancements/taramonds-censer|Taramond’s Censer]] — 15 分、Wrathful Procession 分队。
 - [[factions/星际战士/enhancements/target-augury-web|Target Augury Web]] — 30 分、Ironstorm Spearhead 分队。
+- [[factions/星际战士/enhancements/temporal-corridor|Temporal Corridor]] — 25 分、Librarius Conclave 分队。
 - [[factions/星际战士/enhancements/the-blade-driven-deep|The Blade Driven Deep]] — 25 分、Vanguard Spearhead 分队。
 - [[factions/星际战士/enhancements/the-flesh-is-weak|The Flesh is Weak]] — 20 分、Ironstorm Spearhead 分队。
 - [[factions/星际战士/enhancements/the-honour-vehement|The Honour Vehement]] — 15 分、Gladius Task Force 分队。

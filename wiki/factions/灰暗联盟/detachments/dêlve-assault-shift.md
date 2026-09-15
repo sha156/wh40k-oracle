@@ -26,7 +26,7 @@ CTHONIAN BESERKS units from your army gain the [[core-rules/battleline.md|BATTLE
 
 ## 增强
 
-- [[factions/灰暗联盟/enhancements/dêlvwerke-navigator.md\|Dêlvwerke Navigator]]
+- [[factions/灰暗联盟/enhancements/dêlvewerke-navigator.md\|Dêlvewerke Navigator]]
 - [[factions/灰暗联盟/enhancements/multiwave-system-jammer.md\|Multiwave System Jammer]]
 - [[factions/灰暗联盟/enhancements/piledriver.md\|Piledriver]]
 - [[factions/灰暗联盟/enhancements/quake-supervisor.md\|Quake Supervisor]]

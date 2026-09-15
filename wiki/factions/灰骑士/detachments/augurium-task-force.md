@@ -25,9 +25,9 @@ From the second battle round onwards, at the start of your Movement phase, if yo
 
 ## 增强
 
-- [[factions/灰骑士/enhancements/a-foot-in-the-future.md\|A Foot in the Future]]
 - [[factions/灰骑士/enhancements/doomseers-amulet.md\|Doomseer’s Amulet]]
 - [[factions/灰骑士/enhancements/grimoire-of-conjunctions.md\|Grimoire of Conjunctions]]
+- [[factions/灰骑士/enhancements/one-foot-in-the-future.md\|One Foot in the Future]]
 - [[factions/灰骑士/enhancements/shield-of-prophecy.md\|Shield of Prophecy]]
 
 ## 战略

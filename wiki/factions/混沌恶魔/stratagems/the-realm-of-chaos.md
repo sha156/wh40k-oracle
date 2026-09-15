@@ -29,7 +29,7 @@ Up to two LEGIONES DAEMONICA units from your army that are within your army’s 
 
 ## 效果
 
-Remove the targeted units from the battlefield and place them into Strategic Reserves. They will arrive back on the battlefield in the Reinforcements step of your next Movement phase using the Deep Strike ability.
+Place your unit in strategic reserves. Your unit must make an ingress move in your next Movement phase (including in your first turn).
 
 ## 限制
 

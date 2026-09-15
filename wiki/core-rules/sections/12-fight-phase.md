@@ -159,9 +159,9 @@ When a unit makes an overrun fight, its models can be moved such that enemy unit
 
 玩家将按照以下流程为每一个可用单位结算近战，直到所有可用单位都被选择进行近战并且这些攻击都被结算完成为止：
 
-1. 结算先攻：从进行当前回合的玩家开始，双方玩家轮流选择一个可以进行近战的己方先攻单位；那个单位被选择进行近战（见下方）。如果这不可能：如果不存在可以进行近战的先攻单位，那么前往结算剩余近战步骤来选择下一个单位。
+1. 结算先攻：从进行当前回合的玩家开始，双方玩家轮流选择一个可以进行近战的己方先攻单位；那个单位被选择进行近战（见下方）。如果这不可能：如果不存在可以进行近战的先攻单位，那么前往结算剩余近战步骤来选择[[factions/兽人/stratagems/on-to-da-next.md|下一个]]单位。
 
-若是其他情况，另一名玩家将选择下一个自己的单位。
+若是其他情况，另一名玩家将选择[[factions/兽人/stratagems/on-to-da-next.md|下一个]]自己的单位。
 
 2. 结算剩余近战：从先来到本流程步骤的玩家开始，双方玩家轮流选择一个可以进行近战的己方单位；那个单位被选择进行近战。如果这不可能：如果没有剩余任何可以进行近战的单位，那么近战步骤结束。
 
@@ -250,7 +250,7 @@ ELIGIBLE IF: Your unit is unengaged, or was unengaged at the start of the Fight 
 EFFECT: Your unit can make one additional pile-in move, then fights as described in Making Attacks (04).
 Fight types are marked with this icon.
 
-OVERRUN FIGHT
+[[factions/泰伦虫族/stratagems/overrun.md|OVERRUN]] FIGHT
 NORMAL FIGHT
 
 Players alternate selecting units to fight. Fights First units must be selected before any other eligible units.

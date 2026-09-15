@@ -80,78 +80,78 @@
 - [[factions/星界军/units/vulture-gunship|Vulture Gunship]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
 - [[factions/星界军/units/iron-hand-straken|‘Iron Hand’ Straken]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
 - [[factions/星界军/units/hells-last|【传奇】地狱之末]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
-- [[factions/星界军/units/hydra|九头蛇高射炮]] — 
-- [[factions/星界军/units/commissar-yarrick|亚瑞克政委]] — 
-- [[factions/星界军/units/scout-sentinels|侦查哨兵]] — 
-- [[factions/星界军/units/nork-deddog|保镖诺克]] — 
-- [[factions/星界军/units/ursula-creed|克里德堡主]] — 
-- [[factions/星界军/units/krieg-combat-engineers|克里格战斗工兵]] — 
-- [[factions/星界军/units/krieg-command-squad|克里格指挥组]] — 
-- [[factions/星界军/units/death-riders|克里格死亡骑兵]] — 
-- [[factions/星界军/units/death-korps-of-krieg|克里格死兵队]] — 
-- [[factions/星界军/units/krieg-heavy-weapons-squad|克里格重型武器小队]] — 
-- [[factions/星界军/units/gaunts-ghosts|刚特的幽灵]] — 
-- [[factions/星界军/units/centaur-rsv|半人马快速突击战车]] — 
-- [[factions/星界军/units/catachan-jungle-fighters|卡塔昌丛林战士]] — 
-- [[factions/星界军/units/catachan-command-squad|卡塔昌指挥组]] — 
-- [[factions/星界军/units/catachan-heavy-weapons-squad|卡塔昌重型武器小队]] — 
-- [[factions/星界军/units/kasrkin|卡舍津突击队]] — 
-- [[factions/星界军/units/cadian-recon-squad|卡迪亚侦察小队]] — 
-- [[factions/星界军/units/cadian-heavy-weapons-squad|卡迪亚重型武器小队]] — 
-- [[factions/星界军/units/cadian-castellan|卡迪安堡主]] — 
-- [[factions/星界军/units/cadian-command-squad|卡迪安指挥组]] — 
-- [[factions/星界军/units/cadian-shock-troops|卡迪安突击队]] — 
-- [[factions/星界军/units/wyvern|双足飞龙自行火炮]] — 
-- [[factions/星界军/units/hellhammer|地狱之锤]] — 
-- [[factions/星界军/units/hellhound|地狱犬喷射车]] — 
-- [[factions/星界军/units/avenger-strike-fighter|复仇者攻击机]] — 
-- [[factions/星界军/units/lord-marshal-dreir|大元帅德雷尔]] — 
-- [[factions/星界军/units/lord-solar-leontus|太阳元帅雷昂图斯]] — 
-- [[factions/星界军/units/chimera|奇美拉装甲车]] — 
-- [[factions/星界军/units/valkyrie|女武神炮艇]] — 
-- [[factions/星界军/units/shadowsword|影剑]] — 
-- [[factions/星界军/units/tech-priest-enginseer|技术技师机械教士]] — 
-- [[factions/星界军/units/commissar|政委]] — 
-- [[factions/星界军/units/ministorum-priest|教廷牧师]] — 
-- [[factions/星界军/units/sly-marbo|斯莱·马博]] — 
-- [[factions/星界军/units/doomhammer|末日之锤]] — 
-- [[factions/星界军/units/commissar-graves|格雷夫斯政委]] — 
-- [[factions/星界军/units/ogryn-bodyguard|欧格林保镖]] — 
-- [[factions/星界军/units/ogryn-squad|欧格林小队]] — 
-- [[factions/星界军/units/commissar-graves-on-foot|步行的格雷夫斯政委]] — 
-- [[factions/星界军/units/deathstrike|死亡直击导弹车]] — 
-- [[factions/星界军/units/banesword|毁灭之剑]] — 
-- [[factions/星界军/units/banehammer|毁灭之锤]] — 
-- [[factions/星界军/units/baneblade|毒刃]] — 
-- [[factions/星界军/units/primaris-psyker|灵能导师]] — 
-- [[factions/星界军/units/artillery-team|炮兵小组]] — 
-- [[factions/星界军/units/bullgryn-squad|牛格林小队]] — 
-- [[factions/星界军/units/cyclops-demolition-vehicle|独眼巨人爆破车]] — 
-- [[factions/星界军/units/basilisk|石化蜥蜴自行火炮]] — 
-- [[factions/星界军/units/aegis-defence-line|神盾防御墙]] — 
-- [[factions/星界军/units/rogal-dorn-battle-tank|罗格多恩坦克]] — 
-- [[factions/星界军/units/rogal-dorn-commander|罗格多恩指挥官]] — 
-- [[factions/星界军/units/ratlings|莱特林]] — 
-- [[factions/星界军/units/manticore|蝎尾狮火箭炮]] — 
-- [[factions/星界军/units/armoured-sentinels|装甲哨兵]] — 
-- [[factions/星界军/units/field-ordnance-battery|野战炮兵]] — 
-- [[factions/星界军/units/taurox|野牛装甲车]] — 
-- [[factions/星界军/units/taurox-prime|金牛装甲车]] — 
-- [[factions/星界军/units/attilan-rough-riders|阿提拉蛮骑兵]] — 
-- [[factions/星界军/units/stormsword|风暴之剑]] — 
-- [[factions/星界军/units/militarum-tempestus-command-squad|风暴兵指挥组]] — 
-- [[factions/星界军/units/tempestus-aquilons|风暴天鹰]] — 
-- [[factions/星界军/units/tempestus-scions|风暴忠嗣军小队]] — 
-- [[factions/星界军/units/stormlord|风暴领主]] — 
-- [[factions/星界军/units/hippogriff-afv|鹫马装甲战车]] — 
-- [[factions/星界军/units/leman-russ-executioner|黎曼鲁斯处决者]] — 
-- [[factions/星界军/units/leman-russ-punisher|黎曼鲁斯惩罚者]] — 
-- [[factions/星界军/units/leman-russ-battle-tank|黎曼鲁斯战斗坦克]] — 
-- [[factions/星界军/units/leman-russ-commander|黎曼鲁斯指挥官]] — 
-- [[factions/星界军/units/leman-russ-eradicator|黎曼鲁斯根除者]] — 
-- [[factions/星界军/units/leman-russ-exterminator|黎曼鲁斯灭绝者]] — 
-- [[factions/星界军/units/leman-russ-demolisher|黎曼鲁斯破坏者]] — 
-- [[factions/星界军/units/leman-russ-vanquisher|黎曼鲁斯胜利者]] — 
+- [[factions/星界军/units/hydra|九头蛇高射炮]]
+- [[factions/星界军/units/commissar-yarrick|亚瑞克政委]]
+- [[factions/星界军/units/scout-sentinels|侦查哨兵]]
+- [[factions/星界军/units/nork-deddog|保镖诺克]]
+- [[factions/星界军/units/ursula-creed|克里德堡主]]
+- [[factions/星界军/units/krieg-combat-engineers|克里格战斗工兵]]
+- [[factions/星界军/units/krieg-command-squad|克里格指挥组]]
+- [[factions/星界军/units/death-riders|克里格死亡骑兵]]
+- [[factions/星界军/units/death-korps-of-krieg|克里格死兵队]]
+- [[factions/星界军/units/krieg-heavy-weapons-squad|克里格重型武器小队]]
+- [[factions/星界军/units/gaunts-ghosts|刚特的幽灵]]
+- [[factions/星界军/units/centaur-rsv|半人马快速突击战车]]
+- [[factions/星界军/units/catachan-jungle-fighters|卡塔昌丛林战士]]
+- [[factions/星界军/units/catachan-command-squad|卡塔昌指挥组]]
+- [[factions/星界军/units/catachan-heavy-weapons-squad|卡塔昌重型武器小队]]
+- [[factions/星界军/units/kasrkin|卡舍津突击队]]
+- [[factions/星界军/units/cadian-recon-squad|卡迪亚侦察小队]]
+- [[factions/星界军/units/cadian-heavy-weapons-squad|卡迪亚重型武器小队]]
+- [[factions/星界军/units/cadian-castellan|卡迪安堡主]]
+- [[factions/星界军/units/cadian-command-squad|卡迪安指挥组]]
+- [[factions/星界军/units/cadian-shock-troops|卡迪安突击队]]
+- [[factions/星界军/units/wyvern|双足飞龙自行火炮]]
+- [[factions/星界军/units/hellhammer|地狱之锤]]
+- [[factions/星界军/units/hellhound|地狱犬喷射车]]
+- [[factions/星界军/units/avenger-strike-fighter|复仇者攻击机]]
+- [[factions/星界军/units/lord-marshal-dreir|大元帅德雷尔]]
+- [[factions/星界军/units/lord-solar-leontus|太阳元帅雷昂图斯]]
+- [[factions/星界军/units/chimera|奇美拉装甲车]]
+- [[factions/星界军/units/valkyrie|女武神炮艇]]
+- [[factions/星界军/units/shadowsword|影剑]]
+- [[factions/星界军/units/tech-priest-enginseer|技术技师机械教士]]
+- [[factions/星界军/units/commissar|政委]]
+- [[factions/星界军/units/ministorum-priest|教廷牧师]]
+- [[factions/星界军/units/sly-marbo|斯莱·马博]]
+- [[factions/星界军/units/doomhammer|末日之锤]]
+- [[factions/星界军/units/commissar-graves|格雷夫斯政委]]
+- [[factions/星界军/units/ogryn-bodyguard|欧格林保镖]]
+- [[factions/星界军/units/ogryn-squad|欧格林小队]]
+- [[factions/星界军/units/commissar-graves-on-foot|步行的格雷夫斯政委]]
+- [[factions/星界军/units/deathstrike|死亡直击导弹车]]
+- [[factions/星界军/units/banesword|毁灭之剑]]
+- [[factions/星界军/units/banehammer|毁灭之锤]]
+- [[factions/星界军/units/baneblade|毒刃]]
+- [[factions/星界军/units/primaris-psyker|灵能导师]]
+- [[factions/星界军/units/artillery-team|炮兵小组]]
+- [[factions/星界军/units/bullgryn-squad|牛格林小队]]
+- [[factions/星界军/units/cyclops-demolition-vehicle|独眼巨人爆破车]]
+- [[factions/星界军/units/basilisk|石化蜥蜴自行火炮]]
+- [[factions/星界军/units/aegis-defence-line|神盾防御墙]]
+- [[factions/星界军/units/rogal-dorn-battle-tank|罗格多恩坦克]]
+- [[factions/星界军/units/rogal-dorn-commander|罗格多恩指挥官]]
+- [[factions/星界军/units/ratlings|莱特林]]
+- [[factions/星界军/units/manticore|蝎尾狮火箭炮]]
+- [[factions/星界军/units/armoured-sentinels|装甲哨兵]]
+- [[factions/星界军/units/field-ordnance-battery|野战炮兵]]
+- [[factions/星界军/units/taurox|野牛装甲车]]
+- [[factions/星界军/units/taurox-prime|金牛装甲车]]
+- [[factions/星界军/units/attilan-rough-riders|阿提拉蛮骑兵]]
+- [[factions/星界军/units/stormsword|风暴之剑]]
+- [[factions/星界军/units/militarum-tempestus-command-squad|风暴兵指挥组]]
+- [[factions/星界军/units/tempestus-aquilons|风暴天鹰]]
+- [[factions/星界军/units/tempestus-scions|风暴忠嗣军小队]]
+- [[factions/星界军/units/stormlord|风暴领主]]
+- [[factions/星界军/units/hippogriff-afv|鹫马装甲战车]]
+- [[factions/星界军/units/leman-russ-executioner|黎曼鲁斯处决者]]
+- [[factions/星界军/units/leman-russ-punisher|黎曼鲁斯惩罚者]]
+- [[factions/星界军/units/leman-russ-battle-tank|黎曼鲁斯战斗坦克]]
+- [[factions/星界军/units/leman-russ-commander|黎曼鲁斯指挥官]]
+- [[factions/星界军/units/leman-russ-eradicator|黎曼鲁斯根除者]]
+- [[factions/星界军/units/leman-russ-exterminator|黎曼鲁斯灭绝者]]
+- [[factions/星界军/units/leman-russ-demolisher|黎曼鲁斯破坏者]]
+- [[factions/星界军/units/leman-russ-vanquisher|黎曼鲁斯胜利者]]
 
 ## 策略技能
 
@@ -244,7 +244,7 @@
 - [[factions/星界军/enhancements/legacy-sidearm|Legacy Sidearm]] — 10 分、Siege Regiment 分队。
 - [[factions/星界军/enhancements/long-range-scout|Long-range Scout]] — 10 分、指示部队 分队。
 - [[factions/星界军/enhancements/master-manoeuvrist|Master Manoeuvrist]] — 15 分、装甲步兵 分队。
-- [[factions/星界军/enhancements/priority-drop-beacon|Priority-drop Beacon]] — 30 分、Bridgehead Strike 分队。
+- [[factions/星界军/enhancements/priority-drop-beacon|Priority-drop Beacon]] — 25 分、Bridgehead Strike 分队。
 - [[factions/星界军/enhancements/reactive-command|Reactive Command]] — 15 分、Combined Arms 分队。
 - [[factions/星界军/enhancements/recon-star|Recon Star]] — 10 分、指示部队 分队。
 - [[factions/星界军/enhancements/regimental-banner|Regimental Banner]] — 20 分、Hammer of the Emperor 分队。
@@ -265,7 +265,7 @@
 - [[factions/星界军/enhancements/grand-strategist-combined-arms|大战略家]] — 15 分、Combined Arms 分队。
 - [[factions/星界军/enhancements/aquilan-eye|天鹰之眼]] — 20 分、老兵连队 分队。
 - [[factions/星界军/enhancements/laud-hailer|扩音器]] — 10 分、老兵连队 分队。
-- [[factions/星界军/enhancements/sharp-eyes-light-fingers|敏锐视觉]] — 分数未知、亚人类辅助军 分队。
+- [[factions/星界军/enhancements/sharp-eyes-light-fingers|敏锐视觉]] — 10 分、亚人类辅助军 分队。
 - [[factions/星界军/enhancements/engine-speaker|机械对话者]] — 15 分、钢铁之锤 分队。
 - [[factions/星界军/enhancements/omnissian-unguents-aura|欧姆尼赛亚的神圣油膏（光环）]] — 35 分、装甲步兵 分队。
 - [[factions/星界军/enhancements/battalion-commander|营部指挥官]] — 30 分、钢铁之锤 分队。

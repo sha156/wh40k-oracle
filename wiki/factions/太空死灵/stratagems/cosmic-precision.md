@@ -25,7 +25,7 @@ Your Movement phase.
 
 ## 使用对象
 
-One NECRONS unit from your army (excluding Monster units) that is arriving using the Deep Strike or Hyperphasing abilities this phase.
+One NECRONS unit from your army (excluding MONSTER units) that is arriving using an ingress move this phase.
 
 ## 效果
 

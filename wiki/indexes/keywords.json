@@ -1255,6 +1255,63 @@
    ]
   },
   {
+   "slug": "anti-monster-vehicle",
+   "base": "ANTI-MONSTER/VEHICLE",
+   "nameZh": "针对怪兽或载具",
+   "group": "universal",
+   "section": "24.03",
+   "quickrefZh": "针对性攻击",
+   "params": [
+    "3+"
+   ],
+   "engine": "数值建模",
+   "rulePage": "core-rules/anti.md",
+   "currentWeapons": 1,
+   "totalWeapons": 1,
+   "currentUnits": 1,
+   "totalUnits": 1,
+   "weapons": [
+    {
+     "name": "Song of Waning",
+     "units": [
+      "Stonesinger"
+     ]
+    }
+   ]
+  },
+  {
+   "slug": "anti-non-monster-vehicle",
+   "base": "ANTI-NON-MONSTER/VEHICLE",
+   "nameZh": "针对非怪兽且非载具",
+   "group": "universal",
+   "section": "24.03",
+   "quickrefZh": "针对性攻击",
+   "params": [
+    "2+",
+    "3+"
+   ],
+   "engine": "数值建模",
+   "rulePage": "core-rules/anti.md",
+   "currentWeapons": 2,
+   "totalWeapons": 2,
+   "currentUnits": 1,
+   "totalUnits": 1,
+   "weapons": [
+    {
+     "name": "Stone Stave",
+     "units": [
+      "Stonesinger"
+     ]
+    },
+    {
+     "name": "Venomcrest Spit",
+     "units": [
+      "Stonesinger"
+     ]
+    }
+   ]
+  },
+  {
    "slug": "anti-psyker",
    "base": "ANTI-PSYKER",
    "nameZh": "针对灵能者",
@@ -1913,11 +1970,17 @@
    "params": [],
    "engine": "仅标注",
    "rulePage": "core-rules/assault.md",
-   "currentWeapons": 154,
-   "totalWeapons": 169,
-   "currentUnits": 161,
-   "totalUnits": 214,
+   "currentWeapons": 155,
+   "totalWeapons": 170,
+   "currentUnits": 162,
+   "totalUnits": 215,
    "weapons": [
+    {
+     "name": "Laser Lance",
+     "units": [
+      "Dragon Knights"
+     ]
+    },
     {
      "name": "三刃手里剑",
      "units": [
@@ -2977,13 +3040,15 @@
    "group": "universal",
    "section": "24.05",
    "quickrefZh": "爆炸",
-   "params": [],
+   "params": [
+    "1"
+   ],
    "engine": "数值建模",
    "rulePage": "core-rules/blast.md",
-   "currentWeapons": 275,
-   "totalWeapons": 356,
-   "currentUnits": 303,
-   "totalUnits": 561,
+   "currentWeapons": 277,
+   "totalWeapons": 358,
+   "currentUnits": 305,
+   "totalUnits": 563,
    "weapons": [
     {
      "name": "D-轰击炮",
@@ -2992,10 +3057,22 @@
      ]
     },
     {
+     "name": "Kustom Blasta X - Skorcha",
+     "units": [
+      "Nazdreg"
+     ]
+    },
+    {
      "name": "L7导弹发射器（爆破）",
      "units": [
       "人马座战车",
       "炉心战士"
+     ]
+    },
+    {
+     "name": "Venomcrest Spit",
+     "units": [
+      "Stonesinger"
      ]
     },
     {
@@ -4856,11 +4933,23 @@
    ],
    "engine": "数值建模",
    "rulePage": "core-rules/cleave.md",
-   "currentWeapons": 1,
-   "totalWeapons": 1,
-   "currentUnits": 1,
-   "totalUnits": 1,
+   "currentWeapons": 3,
+   "totalWeapons": 3,
+   "currentUnits": 2,
+   "totalUnits": 2,
    "weapons": [
+    {
+     "name": "Kustom Blasta X",
+     "units": [
+      "Nazdreg"
+     ]
+    },
+    {
+     "name": "Moonchewa",
+     "units": [
+      "Nazdreg"
+     ]
+    },
     {
      "name": "双手大砍刀",
      "units": [
@@ -4879,11 +4968,17 @@
    "params": [],
    "engine": "仅标注",
    "rulePage": "core-rules/pistol.md",
-   "currentWeapons": 1,
-   "totalWeapons": 1,
-   "currentUnits": 1,
-   "totalUnits": 1,
+   "currentWeapons": 2,
+   "totalWeapons": 2,
+   "currentUnits": 2,
+   "totalUnits": 2,
    "weapons": [
+    {
+     "name": "爆弹手枪",
+     "units": [
+      "Eradicator Squad With Heavy Bolters"
+     ]
+    },
     {
      "name": "短铳",
      "units": [
@@ -6417,6 +6512,29 @@
    ]
   },
   {
+   "slug": "devastating-wounds-non-monster-vehicle",
+   "base": "DEVASTATING WOUNDS: NON-MONSTER/VEHICLE",
+   "nameZh": "毁灭伤害：非怪兽且非载具",
+   "group": "universal",
+   "section": "24.10",
+   "quickrefZh": "毁灭伤害",
+   "params": [],
+   "engine": "数值建模",
+   "rulePage": "core-rules/devastating-wounds.md",
+   "currentWeapons": 1,
+   "totalWeapons": 1,
+   "currentUnits": 1,
+   "totalUnits": 1,
+   "weapons": [
+    {
+     "name": "Long Rifle",
+     "units": [
+      "Leystalker"
+     ]
+    }
+   ]
+  },
+  {
    "slug": "extra-attacks",
    "base": "EXTRA ATTACKS",
    "nameZh": "额外攻击",
@@ -6426,11 +6544,26 @@
    "params": [],
    "engine": "仅标注",
    "rulePage": "core-rules/extra-attacks.md",
-   "currentWeapons": 82,
-   "totalWeapons": 98,
-   "currentUnits": 96,
-   "totalUnits": 142,
+   "currentWeapons": 84,
+   "totalWeapons": 100,
+   "currentUnits": 101,
+   "totalUnits": 147,
    "weapons": [
+    {
+     "name": "Drakesteed Fangs and Talons",
+     "units": [
+      "Clanblade",
+      "Dragon Knights",
+      "Leystalker",
+      "Stonesinger"
+     ]
+    },
+    {
+     "name": "Kustom Blasta X",
+     "units": [
+      "Nazdreg"
+     ]
+    },
     {
      "name": "“修修”扳手",
      "units": [
@@ -6972,11 +7105,17 @@
    "params": [],
    "engine": "仅标注",
    "rulePage": "core-rules/hazardous.md",
-   "currentWeapons": 78,
-   "totalWeapons": 102,
-   "currentUnits": 176,
-   "totalUnits": 327,
+   "currentWeapons": 79,
+   "totalWeapons": 103,
+   "currentUnits": 177,
+   "totalUnits": 328,
    "weapons": [
+    {
+     "name": "Kustom Blasta X - Gatler",
+     "units": [
+      "Nazdreg"
+     ]
+    },
     {
      "name": "三轴离子加农炮—过载",
      "units": [
@@ -7576,8 +7715,8 @@
    "rulePage": "core-rules/heavy.md",
    "currentWeapons": 128,
    "totalWeapons": 158,
-   "currentUnits": 108,
-   "totalUnits": 217,
+   "currentUnits": 109,
+   "totalUnits": 218,
    "weapons": [
     {
      "name": "三刃镖弓",
@@ -8284,6 +8423,7 @@
     {
      "name": "重型爆弹枪",
      "units": [
+      "Eradicator Squad With Heavy Bolters",
       "仇天使小队",
       "侦查小队",
       "军团战士",
@@ -9985,11 +10125,17 @@
    "params": [],
    "engine": "数值建模",
    "rulePage": "core-rules/lance.md",
-   "currentWeapons": 36,
-   "totalWeapons": 41,
-   "currentUnits": 37,
-   "totalUnits": 49,
+   "currentWeapons": 37,
+   "totalWeapons": 42,
+   "currentUnits": 38,
+   "totalUnits": 50,
    "weapons": [
+    {
+     "name": "Laser Lance",
+     "units": [
+      "Dragon Knights"
+     ]
+    },
     {
      "name": "冲击骑枪（重击）",
      "units": [
@@ -10224,11 +10370,17 @@
    "params": [],
    "engine": "数值建模",
    "rulePage": "core-rules/lethal-hits.md",
-   "currentWeapons": 129,
-   "totalWeapons": 150,
-   "currentUnits": 115,
-   "totalUnits": 163,
+   "currentWeapons": 130,
+   "totalWeapons": 151,
+   "currentUnits": 116,
+   "totalUnits": 164,
    "weapons": [
+    {
+     "name": "Moonblades",
+     "units": [
+      "Clanblade"
+     ]
+    },
     {
      "name": "亚空间冲击-聚焦巫火*",
      "units": [
@@ -11054,6 +11206,29 @@
      "name": "鹰爪",
      "units": [
       "翔鹰"
+     ]
+    }
+   ]
+  },
+  {
+   "slug": "lethal-hits-non-monster-vehicle",
+   "base": "LETHAL HITS: NON-MONSTER/VEHICLE",
+   "nameZh": "致命一击：非怪兽且非载具",
+   "group": "universal",
+   "section": "24.23",
+   "quickrefZh": "致命一击",
+   "params": [],
+   "engine": "数值建模",
+   "rulePage": "core-rules/lethal-hits.md",
+   "currentWeapons": 1,
+   "totalWeapons": 1,
+   "currentUnits": 1,
+   "totalUnits": 1,
+   "weapons": [
+    {
+     "name": "Kustom Blasta X - Shoota",
+     "units": [
+      "Nazdreg"
      ]
     }
    ]
@@ -12942,11 +13117,17 @@
    "params": [],
    "engine": "仅标注",
    "rulePage": "core-rules/precision.md",
-   "currentWeapons": 119,
-   "totalWeapons": 135,
-   "currentUnits": 114,
-   "totalUnits": 157,
+   "currentWeapons": 120,
+   "totalWeapons": 136,
+   "currentUnits": 115,
+   "totalUnits": 158,
    "weapons": [
+    {
+     "name": "Long Rifle",
+     "units": [
+      "Leystalker"
+     ]
+    },
     {
      "name": "先锋利爪",
      "units": [
@@ -13704,11 +13885,23 @@
    "params": [],
    "engine": "数值建模",
    "rulePage": "core-rules/psychic-attacks.md",
-   "currentWeapons": 138,
-   "totalWeapons": 166,
-   "currentUnits": 99,
-   "totalUnits": 143,
+   "currentWeapons": 140,
+   "totalWeapons": 168,
+   "currentUnits": 100,
+   "totalUnits": 144,
    "weapons": [
+    {
+     "name": "Song of Waning",
+     "units": [
+      "Stonesinger"
+     ]
+    },
+    {
+     "name": "Stone Stave",
+     "units": [
+      "Stonesinger"
+     ]
+    },
     {
      "name": "亚空间冲击-巫火*",
      "units": [
@@ -14658,11 +14851,25 @@
    ],
    "engine": "数值建模",
    "rulePage": "core-rules/rapid-fire.md",
-   "currentWeapons": 144,
-   "totalWeapons": 159,
-   "currentUnits": 298,
-   "totalUnits": 588,
+   "currentWeapons": 146,
+   "totalWeapons": 161,
+   "currentUnits": 302,
+   "totalUnits": 592,
    "weapons": [
+    {
+     "name": "Kustom Blasta X - Shoota",
+     "units": [
+      "Nazdreg"
+     ]
+    },
+    {
+     "name": "Solar Carbine",
+     "units": [
+      "Clanblade",
+      "Dragon Knights",
+      "Stonesinger"
+     ]
+    },
     {
      "name": "XV脉冲手枪",
      "units": [
@@ -15863,8 +16070,8 @@
    "rulePage": "core-rules/sustained-hits.md",
    "currentWeapons": 174,
    "totalWeapons": 209,
-   "currentUnits": 290,
-   "totalUnits": 564,
+   "currentUnits": 291,
+   "totalUnits": 565,
    "weapons": [
     {
      "name": "一对战斗刀",
@@ -16894,6 +17101,7 @@
     {
      "name": "重型爆弹枪",
      "units": [
+      "Eradicator Squad With Heavy Bolters",
       "不屈型战术机甲",
       "九头蛇高射炮",
       "仇天使小队",
@@ -17066,11 +17274,23 @@
    "params": [],
    "engine": "数值建模",
    "rulePage": "core-rules/torrent.md",
-   "currentWeapons": 140,
-   "totalWeapons": 164,
-   "currentUnits": 270,
-   "totalUnits": 506,
+   "currentWeapons": 142,
+   "totalWeapons": 166,
+   "currentUnits": 272,
+   "totalUnits": 508,
    "weapons": [
+    {
+     "name": "Kustom Blasta X - Skorcha",
+     "units": [
+      "Nazdreg"
+     ]
+    },
+    {
+     "name": "Venomcrest Spit",
+     "units": [
+      "Stonesinger"
+     ]
+    },
     {
      "name": "亚空间漩涡（洪流）",
      "units": [
@@ -18054,11 +18274,23 @@
    "params": [],
    "engine": "数值建模",
    "rulePage": "core-rules/twin-linked.md",
-   "currentWeapons": 191,
-   "totalWeapons": 250,
-   "currentUnits": 238,
-   "totalUnits": 501,
+   "currentWeapons": 193,
+   "totalWeapons": 252,
+   "currentUnits": 240,
+   "totalUnits": 503,
    "weapons": [
+    {
+     "name": "Moonblades",
+     "units": [
+      "Clanblade"
+     ]
+    },
+    {
+     "name": "Moonchewa",
+     "units": [
+      "Nazdreg"
+     ]
+    },
     {
      "name": "一对动力拳",
      "units": [

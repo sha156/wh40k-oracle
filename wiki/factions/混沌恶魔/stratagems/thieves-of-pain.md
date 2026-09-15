@@ -20,7 +20,7 @@ updated: '2026-07-26'
 
 ## 使用时机
 
-Any phase, just after an attack or mortal wound is allocated to a model in a Legiones Daemonica Slaanesh unit from your army (excluding Monsters and Vehicles).
+Any phase, when an enemy unit targets a friendly LEGIONES DAEMONICA SLAANESH unit (excluding MONSTER/VEHICLE units), or when a friendly LEGIONES DAEMONICA SLAANESH unit (excluding MONSTER/VEHICLE units) suffers a mortal wound.
 
 ## 使用对象
 

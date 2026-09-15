@@ -48,5 +48,5 @@ updated: '2026-09-14'
 - **1个模型** — 200 分
 
 ## 关键词
-- **阵营关键词**：兽人
-- **普通关键词**：[[core-rules/mounted.md|骑乘]]，[[core-rules/vehicle.md|载具]]，极速怪咖，[[core-rules/epic-hero.md|史诗英雄]]，烟幕，[[core-rules/character.md|人物]]，瓦兹达卡·古茨梅克，单位构成
+- **阵营关键词**：Orks
+- **普通关键词**：[[core-rules/mounted.md|Mounted]]，Vehicle，Speed Freeks，[[core-rules/epic-hero.md|Epic Hero]]，[[core-rules/smoke.md|Smoke]]，[[core-rules/character.md|Character]]，Wazdakka Gutsmek

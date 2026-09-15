@@ -46,4 +46,4 @@ updated: '2026-09-14'
 
 ## 关键词
 - **阵营关键词**：Genestealer Cults，Astra Militarum
-- **普通关键词**：[[core-rules/infantry.md|步兵]]，帝国，[[core-rules/grenades.md|手雷]]，兵团，卡塔昌重武器班
+- **普通关键词**：Regiment，Imperium，[[core-rules/grenades.md|Grenades]]，[[core-rules/infantry.md|Infantry]]，Catachan Heavy Weapons Squad

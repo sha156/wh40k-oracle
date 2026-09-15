@@ -46,5 +46,5 @@ updated: '2026-09-14'
 - **1个模型** — 115 分
 
 ## 关键词
-- **阵营关键词**：兽人
-- **普通关键词**：[[core-rules/vehicle.md|载具]]，[[core-rules/aircraft.md|飞行器]]，[[core-rules/fly.md|飞行]]，飚速怪咖，闪电轰炸机
+- **阵营关键词**：Orks
+- **普通关键词**：Fly，Blitza-bommer，[[core-rules/aircraft.md|Aircraft]]，Speed Freeks，Vehicle

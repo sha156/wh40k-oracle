@@ -47,5 +47,5 @@ updated: '2026-09-14'
 - **1个模型** — 175 分
 
 ## 关键词
-- **阵营关键词**：兽人
-- **普通关键词**：[[core-rules/monster.md|巨兽]]，[[core-rules/transport.md|运输工具]]，[[core-rules/psyker.md|灵能者]]，兽霸，杀戮战车
+- **阵营关键词**：Orks
+- **普通关键词**：[[core-rules/transport.md|Transport]]，Monster，Beast Snagga，Kill Rig，[[core-rules/psyker.md|Psyker]]

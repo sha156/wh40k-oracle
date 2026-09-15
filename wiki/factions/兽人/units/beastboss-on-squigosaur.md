@@ -48,5 +48,5 @@ updated: '2026-09-14'
 - **1个模型** — 140 分
 
 ## 关键词
-- **阵营关键词**：兽人
-- **普通关键词**：[[core-rules/mounted.md|骑乘]]，[[core-rules/character.md|人物]]，兽霸，[[factions/兽人/units/warboss.md|战争头目]]，骑乘跳龙的兽霸头目
+- **阵营关键词**：Orks
+- **普通关键词**：[[core-rules/character.md|Character]]，Beast Snagga，[[factions/兽人/units/warboss.md|Warboss]]，[[factions/兽人/units/beastboss.md|Beastboss]] on Squigosaur，[[core-rules/mounted.md|Mounted]]

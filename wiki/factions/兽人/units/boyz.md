@@ -52,5 +52,5 @@ updated: '2026-09-14'
 - **20个模型** — 180 分
 
 ## 关键词
-- **阵营关键词**：兽人
-- **普通关键词**：[[core-rules/infantry.md|步兵]]，[[core-rules/battleline.md|战线]]，兽群，[[core-rules/grenades.md|手雷]]，小子
+- **阵营关键词**：Orks
+- **普通关键词**：[[core-rules/infantry.md|Infantry]]，[[core-rules/battleline.md|Battleline]]，Mob，Boyz，[[core-rules/grenades.md|Grenades]]

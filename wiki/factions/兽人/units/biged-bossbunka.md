@@ -39,5 +39,5 @@ updated: '2026-09-14'
 - **1个模型** — 135 分
 
 ## 关键词
-- **阵营关键词**：兽人
-- **普通关键词**：工事，[[core-rules/vehicle.md|载具]]，[[core-rules/transport.md|运输工具]]，大头目碉堡
+- **阵营关键词**：Orks
+- **普通关键词**：Big’ed Bossbunka，[[core-rules/transport.md|Transport]]，Vehicle，[[core-rules/fortification.md|Fortification]]

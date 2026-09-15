@@ -42,5 +42,5 @@ updated: '2026-09-14'
 - **1个模型** — 65 分
 
 ## 关键词
-- **阵营关键词**：兽人
-- **普通关键词**：[[core-rules/infantry.md|步兵]]，[[core-rules/character.md|人物]]，[[core-rules/psyker.md|灵能者]]，灵能小子
+- **阵营关键词**：Orks
+- **普通关键词**：[[core-rules/psyker.md|Psyker]]，Weirdboy，[[core-rules/infantry.md|Infantry]]，[[core-rules/character.md|Character]]

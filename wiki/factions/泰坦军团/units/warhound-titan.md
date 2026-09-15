@@ -14,7 +14,12 @@ version:
   points: MFM 2026-09-14T05:51:23.572407+00:00
   source: official-db
 sources:
-- book: 官方结构库 db/wh40k.sqlite（Wahapedia 11版镜像 + MFM 官方点数）
+- book: 'Faction Pack: Adeptus Titanicus'
+  pages:
+  - 3
+- book: 'Faction Pack: Adeptus Titanicus'
+  pages:
+  - 4
 updated: '2026-09-14'
 ---
 
@@ -51,4 +56,4 @@ updated: '2026-09-14'
 
 ## 关键词
 - **阵营关键词**：Adeptus Titanicus
-- **普通关键词**：Vehicle，[[core-rules/walker.md|Walker]]，Warhound Titan，Imperium，[[core-rules/titanic.md|Titanic]]，[[core-rules/towering.md|Towering]]
+- **普通关键词**：Vehicle，[[core-rules/walker.md|Walker]]，Warhound Titan，Imperium，[[core-rules/titanic.md|Titanic]]，[[core-rules/towering.md|Towering]]，FRAME

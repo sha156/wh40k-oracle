@@ -4,7 +4,7 @@ lint 规则 `alias-conflicts` 的完整名单。摘要（1 条 warning）在 [li
 
 重名本身多数是**正常现象**：同一条战略/增强在多个阵营各有一页，官方中文名自然相同。这里列出来是为了可查，不是每条都要改。
 
-**冲突组:** 594  |  **涉及实体:** 901
+**冲突组:** 598  |  **涉及实体:** 905
 
 | 名称（归一化） | 实体数 | 实体 ID |
 |----------------|--------|---------|
@@ -322,10 +322,12 @@ lint 规则 `alias-conflicts` 的完整名单。摘要（1 条 warning）在 [li
 | stormtalon gunship | 2 | `000001190`, `000001364` |
 | strike from the shadows | 2 | `fp11e-spacemarines-subversion-s2`, `000008491005` |
 | stygies destroyer tank hunter | 2 | `000004030`, `000000760` |
+| supa-glowy fing | 3 | `000008877005`, `official-preview-ork-supa-glowy-fing`, `000008877005` |
 | super-heavy walker | 2 | `super-heavy-walker`, `super-heavy-walker` |
 | support | 2 | `support`, `support` |
 | swollen with power | 2 | `fp11e-chaosdaemons-lordswarp-e1`, `000009503003` |
 | tarantula battery | 2 | `000004031`, `000000762` |
+| targetin’ squigs | 3 | `000009991004`, `official-preview-ork-targetin-squigs`, `000009991004` |
 | tauros assault vehicle | 2 | `000004032`, `000000736` |
 | tauros venator | 2 | `000004033`, `000000737` |
 | taurox | 2 | `000003952`, `000000693` |
@@ -517,6 +519,7 @@ lint 规则 `alias-conflicts` 的完整名单。摘要（1 条 warning）在 [li
 | 瘟疫战士 | 2 | `000001044`, `000003584` |
 | 瘟疫爆发 | 2 | `000010144002`, `000010124004` |
 | 百战精工 | 2 | `000008482003`, `000010368003` |
+| 瞄准菌 | 3 | `000009991004`, `official-preview-ork-targetin-squigs`, `000009991004` |
 | 石像鬼 | 2 | `000003881`, `000000484` |
 | 石化蜥蜴自行火炮 | 2 | `000003966`, `000000695` |
 | 破坏者型猎食者坦克 | 5 | `000001026`, `000002636`, `000002715`, `000002461`, `000000963` |
@@ -559,6 +562,7 @@ lint 规则 `alias-conflicts` 的完整名单。摘要（1 条 warning）在 [li
 | 诅咒教徒 | 3 | `000004052`, `000002571`, `000003851` |
 | 豪侠型角斗者坦克 | 2 | `000002788`, `000001825` |
 | 豪猪装甲车 | 2 | `000000129`, `000000395` |
+| 超亮玩意 | 3 | `000008877005`, `official-preview-ork-supa-glowy-fing`, `000008877005` |
 | 超适应蛇虫 | 2 | `000004118`, `000004117` |
 | 跳跃背包混沌领主 | 2 | `000004038`, `000003711` |
 | 轻蔑无视 | 2 | `000010655002`, `000008961003` |

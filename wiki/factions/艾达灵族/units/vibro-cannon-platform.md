@@ -14,7 +14,9 @@ version:
   points: MFM 2026-09-14T05:51:23.572407+00:00
   source: official-db
 sources:
-- book: 官方结构库 db/wh40k.sqlite（Wahapedia 11版镜像 + MFM 官方点数）
+- book: https://assets.warhammer-community.com/eng_wh40k_faction_pack_aeldari-r7ubocxyoz-nhd972kesl.pdf
+  pages:
+  - 31
 updated: '2026-09-14'
 ---
 
@@ -43,4 +45,4 @@ updated: '2026-09-14'
 
 ## 关键词
 - **阵营关键词**：Asuryani
-- **普通关键词**：[[core-rules/infantry.md|Infantry]]，Aeldari，Support Weapon，Vibro Cannon Platform
+- **普通关键词**：[[core-rules/infantry.md|Infantry]]，Aeldari，Support Weapon，Vibro Cannon Platform，FRAME

@@ -6,6 +6,7 @@
 
 | 类型 | 名称 | 摘要 | Updated |
 |------|------|------|---------|
+| detachment | [Brute Bosses](factions/兽人/detachments/brute-bosses.md) | 兽人的分队「Brute Bosses」。 | 2026-07-26 |
 | detachment | [Bully Boyz](factions/兽人/detachments/bully-boyz.md) | 兽人的分队「Bully Boyz」，分队规则「老大在看」。 | 2026-07-26 |
 | detachment | [Da Big Hunt](factions/兽人/detachments/da-big-hunt.md) | 兽人的分队「Da Big Hunt」，分队规则「追猎开始」。 | 2026-07-26 |
 | detachment | [Dread Mob](factions/兽人/detachments/dread-mob.md) | 兽人的分队「Dread Mob」，分队规则「试试这按钮」。 | 2026-07-26 |
@@ -14,12 +15,17 @@
 | detachment | [Kult of Speed](factions/兽人/detachments/kult-of-speed.md) | 兽人的分队「Kult of Speed」，分队规则「肾上腺瘾君子」。 | 2026-07-26 |
 | detachment | [More Dakka!](factions/兽人/detachments/more-dakka.md) | 兽人的分队「More Dakka!」，分队规则「哒哒哒」。 | 2026-07-26 |
 | detachment | [Ramship Raiders](factions/兽人/detachments/ramship-raiders.md) | 兽人的分队「Ramship Raiders」，分队规则「好战登舰者」。 | 2026-07-26 |
+| detachment | [Runt Swarm](factions/兽人/detachments/runt-swarm.md) | 兽人的分队「Runt Swarm」。 | 2026-07-26 |
+| detachment | [Shoota Boyz](factions/兽人/detachments/shoota-boyz.md) | 兽人的分队「Shoota Boyz」。 | 2026-07-26 |
 | detachment | [Taktikal Brigade](factions/兽人/detachments/taktikal-brigade.md) | 兽人的分队「Taktikal Brigade」，分队规则「听好了」。 | 2026-07-26 |
 | detachment | [War Horde](factions/兽人/detachments/war-horde.md) | 兽人的分队「War Horde」，分队规则「深陷苦战」。 | 2026-07-26 |
 | detachment | [死亡摇滚](factions/兽人/detachments/rollin-deff.md) | 兽人的分队「死亡摇滚」。 | 2026-07-26 |
 | detachment | [海盗船团](factions/兽人/detachments/freebooter-krew.md) | 兽人的分队「海盗船团」，分队规则「此处有战利品」。 | 2026-07-26 |
 | detachment | [疾速 WAAAGH！](factions/兽人/detachments/speedwaaagh.md) | 兽人的分队「疾速 WAAAGH！」，分队规则「涡轮加速」。 | 2026-07-26 |
 | detachment | [闪击旅](factions/兽人/detachments/blitz-brigade.md) | 兽人的分队「闪击旅」，分队规则「渴战」。 | 2026-07-26 |
+| enhancement | [Blitzboss](factions/兽人/enhancements/blitzboss.md) | 20 分、Brute Bosses 分队。 | 2026-07-26 |
+| enhancement | [Extra Sneaky](factions/兽人/enhancements/extra-sneaky.md) | 10 分、Runt Swarm 分队。 | 2026-07-26 |
+| enhancement | [Minefield Detail](factions/兽人/enhancements/minefield-detail.md) | 10 分、Runt Swarm 分队。 | 2026-07-26 |
 | enhancement | [仿生工坊](factions/兽人/enhancements/bionik-workshop.md) | 15 分、海盗船团 分队。 | 2026-07-26 |
 | enhancement | [传送器（Kaptin）](factions/兽人/enhancements/tellyporta-bully-boyz.md) | 25 分、Bully Boyz 分队。 | 2026-07-26 |
 | enhancement | [传送器（Kaptin）](factions/兽人/enhancements/tellyporta-kaptin-killers.md) | 0 分、Kaptin Killers 分队。 | 2026-07-26 |
@@ -54,6 +60,8 @@
 | enhancement | [瓦兹炮](factions/兽人/enhancements/wazblasta.md) | 10 分、Kult of Speed 分队。 | 2026-07-26 |
 | enhancement | [登舰坡道](factions/兽人/enhancements/boarding-ramps.md) | 分数未知、死亡摇滚 分队。 | 2026-07-26 |
 | enhancement | [真能杀](factions/兽人/enhancements/proper-killy.md) | 15 分、Da Big Hunt 分队。 | 2026-07-26 |
+| enhancement | [瞄准菌](factions/兽人/enhancements/targetin-squigs-more-dakka.md) | 15 分、More Dakka! 分队。 | 2026-07-26 |
+| enhancement | [瞄准菌](factions/兽人/enhancements/targetin-squigs-shoota-boyz.md) | 20 分、Shoota Boyz 分队。 | 2026-07-26 |
 | enhancement | [瞄准菌](factions/兽人/enhancements/targetin-squigs.md) | 15 分、More Dakka! 分队。 | 2026-07-26 |
 | enhancement | [瞄准装置](factions/兽人/enhancements/targetin-gizmos.md) | 分数未知、死亡摇滚 分队。 | 2026-07-26 |
 | enhancement | [硬汉](factions/兽人/enhancements/tuff-git.md) | 5 分、闪击旅 分队。 | 2026-07-26 |
@@ -61,6 +69,8 @@
 | enhancement | [荣耀猪](factions/兽人/enhancements/glory-hog.md) | 25 分、Da Big Hunt 分队。 | 2026-07-26 |
 | enhancement | [莫克的狡诈](factions/兽人/enhancements/morks-kunnin.md) | 15 分、Taktikal Brigade 分队。 | 2026-07-26 |
 | enhancement | [菌皮轮胎](factions/兽人/enhancements/squig-hide-tyres.md) | 15 分、Kult of Speed 分队。 | 2026-07-26 |
+| enhancement | [超亮玩意](factions/兽人/enhancements/supa-glowy-fing-dread-mob.md) | 20 分、Dread Mob 分队。 | 2026-07-26 |
+| enhancement | [超亮玩意](factions/兽人/enhancements/supa-glowy-fing-shoota-boyz.md) | 25 分、Shoota Boyz 分队。 | 2026-07-26 |
 | enhancement | [超亮玩意](factions/兽人/enhancements/supa-glowy-fing.md) | 20 分、Dread Mob 分队。 | 2026-07-26 |
 | enhancement | [超充菌油](factions/兽人/enhancements/supercharged-squig-oil.md) | 10 分、闪击旅 分队。 | 2026-07-26 |
 | enhancement | [超级燃料](factions/兽人/enhancements/supa-burny-fuel.md) | 15 分、疾速 WAAAGH！ 分队。 | 2026-07-26 |
@@ -171,6 +181,7 @@
 | unit | [Mega Dread](factions/兽人/units/mega-dread.md) | 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。 | 2026-09-14 |
 | unit | [Meka-dread](factions/兽人/units/meka-dread.md) | 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。 | 2026-09-14 |
 | unit | [Mekboy Workshop](factions/兽人/units/mekboy-workshop.md) | 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。 | 2026-09-14 |
+| unit | [Nazdreg](factions/兽人/units/nazdreg.md) | Official preview datasheet: rules version 11e-official-preview-2026-07-20. Point... | 2026-09-14 |
 | unit | [Nob With Waaagh! Banner](factions/兽人/units/nob-with-waaagh-banner.md) | 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。 | 2026-09-14 |
 | unit | [Nobz On Warbikes](factions/兽人/units/nobz-on-warbikes.md) | 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。 | 2026-09-14 |
 | unit | [Painboy On Warbike](factions/兽人/units/painboy-on-warbike.md) | 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。 | 2026-09-14 |
@@ -857,7 +868,7 @@
 | enhancement | [杀戮意志](factions/太空死灵/enhancements/murdermind.md) | 15 分、诅咒军团 分队。 | 2026-07-26 |
 | enhancement | [束心圣甲虫](factions/太空死灵/enhancements/mindshackle-scarabs.md) | 0 分、Tomb Ship Complement 分队。 | 2026-07-26 |
 | enhancement | [根植优越](factions/太空死灵/enhancements/ingrained-superiority.md) | 5 分、Annihilation Legion 分队。 | 2026-07-26 |
-| enhancement | [死亡之幕（光环）](factions/太空死灵/enhancements/mortality-shroud.md) | 分数未知、法皇的军备 分队。 | 2026-07-26 |
+| enhancement | [死亡之幕（光环）](factions/太空死灵/enhancements/mortality-shroud.md) | 10 分、法皇的军备 分队。 | 2026-07-26 |
 | enhancement | [毁灭者锚点](factions/太空死灵/enhancements/destroyer-ankh.md) | 20 分、诅咒军团 分队。 | 2026-07-26 |
 | enhancement | [永恒征服者](factions/太空死灵/enhancements/eternal-conqueror.md) | 25 分、Obeisance Phalanx 分队。 | 2026-07-26 |
 | enhancement | [永恒疯狂](factions/太空死灵/enhancements/eternal-madness.md) | 20 分、Annihilation Legion 分队。 | 2026-07-26 |
@@ -1050,7 +1061,7 @@
 | enhancement | [Grimoire of True Names (Aura)](factions/帝国特勤/enhancements/grimoire-of-true-names-aura.md) | 10 分、Ordo Malleus Daemon Hunters 分队。 | 2026-07-26 |
 | enhancement | [Heirloom Blade](factions/帝国特勤/enhancements/heirloom-blade.md) | 0 分、Voidship’s Company 分队。 | 2026-07-26 |
 | enhancement | [Ignis Judicium](factions/帝国特勤/enhancements/ignis-judicium.md) | 10 分、Ordo Hereticus Purgation Force 分队。 | 2026-07-26 |
-| enhancement | [Intraneural Biotech](factions/帝国特勤/enhancements/intraneural-biotech.md) | 35 分、隐藏利刃歼灭部队 分队。 | 2026-07-26 |
+| enhancement | [Intraneural Biotech](factions/帝国特勤/enhancements/intraneural-biotech.md) | 15 分、隐藏利刃歼灭部队 分队。 | 2026-07-26 |
 | enhancement | [Lathimon’s Flock](factions/帝国特勤/enhancements/lathimons-flock.md) | 0 分、Voidship’s Company 分队。 | 2026-07-26 |
 | enhancement | [Liber Heresius](factions/帝国特勤/enhancements/liber-heresius.md) | 10 分、Ordo Hereticus Purgation Force 分队。 | 2026-07-26 |
 | enhancement | [Manhunter’s Helm](factions/帝国特勤/enhancements/manhunters-helm.md) | 0 分、Interdiction Team 分队。 | 2026-07-26 |
@@ -1543,7 +1554,7 @@
 | enhancement | [Divine Aspect](factions/战斗修女/enhancements/divine-aspect.md) | 5 分、Army of Faith 分队。 | 2026-07-26 |
 | enhancement | [Fervent Ferocity](factions/战斗修女/enhancements/fervent-ferocity.md) | 0 分、Penitents and Pilgrims 分队。 | 2026-07-26 |
 | enhancement | [Fire and Fury](factions/战斗修女/enhancements/fire-and-fury.md) | 30 分、Bringers of Flame 分队。 | 2026-07-26 |
-| enhancement | [Hagiomnifex Upgrade](factions/战斗修女/enhancements/hagiomnifex-upgrade.md) | 分数未知、Sanctified Orators 分队。 | 2026-07-26 |
+| enhancement | [Hagiomnifex Upgrade](factions/战斗修女/enhancements/hagiomnifex-upgrade.md) | 25 分、Sanctified Orators 分队。 | 2026-07-26 |
 | enhancement | [Iron Surplice of Saint Istalela](factions/战斗修女/enhancements/iron-surplice-of-saint-istalela.md) | 10 分、Bringers of Flame 分队。 | 2026-07-26 |
 | enhancement | [Limitless Resolve](factions/战斗修女/enhancements/limitless-resolve.md) | 0 分、Pious Protectors 分队。 | 2026-07-26 |
 | enhancement | [Litanies of Faith](factions/战斗修女/enhancements/litanies-of-faith.md) | 10 分、Army of Faith 分队。 | 2026-07-26 |
@@ -1556,11 +1567,11 @@
 | enhancement | [Righteous Rage](factions/战斗修女/enhancements/righteous-rage.md) | 15 分、Bringers of Flame 分队。 | 2026-07-26 |
 | enhancement | [Saintly Example](factions/战斗修女/enhancements/saintly-example.md) | 10 分、Hallowed Martyrs 分队。 | 2026-07-26 |
 | enhancement | [Sanctification Rituals](factions/战斗修女/enhancements/sanctification-rituals.md) | 0 分、Penitents and Pilgrims 分队。 | 2026-07-26 |
-| enhancement | [Symphonic Payload Upgrade](factions/战斗修女/enhancements/symphonic-payload-upgrade.md) | 分数未知、定罪合唱 分队。 | 2026-07-26 |
+| enhancement | [Symphonic Payload Upgrade](factions/战斗修女/enhancements/symphonic-payload-upgrade.md) | 10 分、定罪合唱 分队。 | 2026-07-26 |
 | enhancement | [Through Suffering, Strength](factions/战斗修女/enhancements/through-suffering-strength.md) | 25 分、Hallowed Martyrs 分队。 | 2026-07-26 |
 | enhancement | [Triptych of the Macharian Crusade](factions/战斗修女/enhancements/triptych-of-the-macharian-crusade.md) | 20 分、Army of Faith 分队。 | 2026-07-26 |
 | enhancement | [Verse of Holy Piety](factions/战斗修女/enhancements/verse-of-holy-piety.md) | 15 分、Penitent Host 分队。 | 2026-07-26 |
-| enhancement | [Writ of Compunction Upgrade](factions/战斗修女/enhancements/writ-of-compunction-upgrade.md) | 分数未知、神圣冠军 分队。 | 2026-07-26 |
+| enhancement | [Writ of Compunction Upgrade](factions/战斗修女/enhancements/writ-of-compunction-upgrade.md) | 20 分、神圣冠军 分队。 | 2026-07-26 |
 | enhancement | [信仰印记](factions/战斗修女/enhancements/mark-of-devotion.md) | 30 分、信仰冠军 分队。 | 2026-07-26 |
 | enhancement | [先知之眼](factions/战斗修女/enhancements/eyes-of-the-oracle.md) | 10 分、信仰冠军 分队。 | 2026-07-26 |
 | enhancement | [圣化护符](factions/战斗修女/enhancements/sanctified-amulet.md) | 25 分、信仰冠军 分队。 | 2026-07-26 |
@@ -1708,7 +1719,7 @@
 | enhancement | [Legacy Sidearm](factions/星界军/enhancements/legacy-sidearm.md) | 10 分、Siege Regiment 分队。 | 2026-07-26 |
 | enhancement | [Long-range Scout](factions/星界军/enhancements/long-range-scout.md) | 10 分、指示部队 分队。 | 2026-07-26 |
 | enhancement | [Master Manoeuvrist](factions/星界军/enhancements/master-manoeuvrist.md) | 15 分、装甲步兵 分队。 | 2026-07-26 |
-| enhancement | [Priority-drop Beacon](factions/星界军/enhancements/priority-drop-beacon.md) | 30 分、Bridgehead Strike 分队。 | 2026-07-26 |
+| enhancement | [Priority-drop Beacon](factions/星界军/enhancements/priority-drop-beacon.md) | 25 分、Bridgehead Strike 分队。 | 2026-07-26 |
 | enhancement | [Reactive Command](factions/星界军/enhancements/reactive-command.md) | 15 分、Combined Arms 分队。 | 2026-07-26 |
 | enhancement | [Recon Star](factions/星界军/enhancements/recon-star.md) | 10 分、指示部队 分队。 | 2026-07-26 |
 | enhancement | [Regimental Banner](factions/星界军/enhancements/regimental-banner.md) | 20 分、Hammer of the Emperor 分队。 | 2026-07-26 |
@@ -1729,7 +1740,7 @@
 | enhancement | [大战略家](factions/星界军/enhancements/grand-strategist-combined-arms.md) | 15 分、Combined Arms 分队。 | 2026-07-26 |
 | enhancement | [天鹰之眼](factions/星界军/enhancements/aquilan-eye.md) | 20 分、老兵连队 分队。 | 2026-07-26 |
 | enhancement | [扩音器](factions/星界军/enhancements/laud-hailer.md) | 10 分、老兵连队 分队。 | 2026-07-26 |
-| enhancement | [敏锐视觉](factions/星界军/enhancements/sharp-eyes-light-fingers.md) | 分数未知、亚人类辅助军 分队。 | 2026-07-26 |
+| enhancement | [敏锐视觉](factions/星界军/enhancements/sharp-eyes-light-fingers.md) | 10 分、亚人类辅助军 分队。 | 2026-07-26 |
 | enhancement | [机械对话者](factions/星界军/enhancements/engine-speaker.md) | 15 分、钢铁之锤 分队。 | 2026-07-26 |
 | enhancement | [欧姆尼赛亚的神圣油膏（光环）](factions/星界军/enhancements/omnissian-unguents-aura.md) | 35 分、装甲步兵 分队。 | 2026-07-26 |
 | enhancement | [营部指挥官](factions/星界军/enhancements/battalion-commander.md) | 30 分、钢铁之锤 分队。 | 2026-07-26 |
@@ -1968,6 +1979,7 @@
 | detachment | [The Lost Brethren](factions/星际战士/detachments/the-lost-brethren.md) | 星际战士的分队「The Lost Brethren」，分队规则「崇高战殁」。 | 2026-07-26 |
 | detachment | [Unforgiven Task Force](factions/星际战士/detachments/unforgiven-task-force.md) | 星际战士的分队「Unforgiven Task Force」，分队规则「Grim Resolve」。 | 2026-07-26 |
 | detachment | [Vanguard Spearhead](factions/星际战士/detachments/vanguard-spearhead.md) | 星际战士的分队「Vanguard Spearhead」，分队规则「Shadow Masters」。 | 2026-07-26 |
+| detachment | [Vengeful Hosts](factions/星际战士/detachments/vengeful-hosts.md) | 星际战士的分队「Vengeful Hosts」，分队规则「Imperator Unleashed」。 | 2026-07-26 |
 | detachment | [Vindication Task Force](factions/星际战士/detachments/vindication-task-force.md) | 星际战士的分队「Vindication Task Force」，分队规则「净化！圣化！」。 | 2026-07-26 |
 | detachment | [Wrathful Procession](factions/星际战士/detachments/wrathful-procession.md) | 星际战士的分队「Wrathful Procession」，分队规则「不朽忠诚祷言」。 | 2026-07-26 |
 | detachment | [优雅传承](factions/星际战士/detachments/legacy-of-grace.md) | 星际战士的分队「优雅传承」。 | 2026-07-26 |
@@ -2004,6 +2016,7 @@
 | enhancement | [Armour of Antoninus](factions/星际战士/enhancements/armour-of-antoninus.md) | 20 分、Blade of Ultramar 分队。 | 2026-07-26 |
 | enhancement | [Armoured Commander](factions/星际战士/enhancements/armoured-commander.md) | 25 分、装甲矛尖 分队。 | 2026-07-26 |
 | enhancement | [Artificer Armour](factions/星际战士/enhancements/artificer-armour.md) | 20 分、Gladius Task Force 分队。 | 2026-07-26 |
+| enhancement | [Avenging Angel](factions/星际战士/enhancements/avenging-angel.md) | 20 分、Vengeful Hosts 分队。 | 2026-07-26 |
 | enhancement | [Bellicose Weapon Spirits](factions/星际战士/enhancements/bellicose-weapon-spirits.md) | 15 分、迅电特遣队 分队。 | 2026-07-26 |
 | enhancement | [Blackwing Shroud](factions/星际战士/enhancements/blackwing-shroud.md) | 25 分、影标之爪 分队。 | 2026-07-26 |
 | enhancement | [Braggart’s Steel](factions/星际战士/enhancements/braggarts-steel.md) | 20 分、Saga of the Bold 分队。 | 2026-07-26 |
@@ -2063,6 +2076,7 @@
 | enhancement | [Obfuscation](factions/星际战士/enhancements/obfuscation.md) | 25 分、Librarius Conclave 分队。 | 2026-07-26 |
 | enhancement | [Omni-Structural Auspex](factions/星际战士/enhancements/omni-structural-auspex.md) | 0 分、Pilum Strike Team 分队。 | 2026-07-26 |
 | enhancement | [Orbital Uplink Reliquary](factions/星际战士/enhancements/orbital-uplink-reliquary.md) | 25 分、轨道突袭部队 分队。 | 2026-07-26 |
+| enhancement | [Orksbane](factions/星际战士/enhancements/orksbane.md) | 20 分、Vengeful Hosts 分队。 | 2026-07-26 |
 | enhancement | [Pennant of Remembrance](factions/星际战士/enhancements/pennant-of-remembrance.md) | 10 分、Unforgiven Task Force 分队。 | 2026-07-26 |
 | enhancement | [Portents of Wisdom](factions/星际战士/enhancements/portents-of-wisdom.md) | 15 分、Stormlance Task Force 分队。 | 2026-07-26 |
 | enhancement | [Prescience](factions/星际战士/enhancements/prescience.md) | 20 分、Librarius Conclave 分队。 | 2026-07-26 |
@@ -2094,6 +2108,7 @@
 | enhancement | [Swift Hunter](factions/星际战士/enhancements/swift-hunter.md) | 20 分、Saga of the Hunter 分队。 | 2026-07-26 |
 | enhancement | [Taramond’s Censer](factions/星际战士/enhancements/taramonds-censer.md) | 15 分、Wrathful Procession 分队。 | 2026-07-26 |
 | enhancement | [Target Augury Web](factions/星际战士/enhancements/target-augury-web.md) | 30 分、Ironstorm Spearhead 分队。 | 2026-07-26 |
+| enhancement | [Temporal Corridor](factions/星际战士/enhancements/temporal-corridor.md) | 25 分、Librarius Conclave 分队。 | 2026-07-26 |
 | enhancement | [The Blade Driven Deep](factions/星际战士/enhancements/the-blade-driven-deep.md) | 25 分、Vanguard Spearhead 分队。 | 2026-07-26 |
 | enhancement | [The Flesh is Weak](factions/星际战士/enhancements/the-flesh-is-weak.md) | 20 分、Ironstorm Spearhead 分队。 | 2026-07-26 |
 | enhancement | [The Honour Vehement](factions/星际战士/enhancements/the-honour-vehement.md) | 15 分、Gladius Task Force 分队。 | 2026-07-26 |
@@ -2249,12 +2264,14 @@
 | stratagem | [IRON ARM](factions/星际战士/stratagems/iron-arm.md) | 1 CP、Fight phase、Librarius Conclave 分队、Strategic Ploy Stratagem。 | 2026-07-26 |
 | stratagem | [KILL SHOT](factions/星际战士/stratagems/kill-shot.md) | 1 CP、Shooting phase、猎头特遣队 分队、Battle Tactic Stratagem。 | 2026-07-26 |
 | stratagem | [KNIFE WORK](factions/星际战士/stratagems/knife-work.md) | 1 CP、Fight phase、Pilum Strike Team 分队、Battle Tactic Stratagem。 | 2026-07-26 |
+| stratagem | [KNOW NO FEAR](factions/星际战士/stratagems/know-no-fear.md) | 1 CP、Command phase、Vengeful Hosts 分队。 | 2026-07-26 |
 | stratagem | [LEGENDARY FORTITUDE](factions/星际战士/stratagems/legendary-fortitude.md) | 1 CP、Charge phase、1st Company Task Force 分队、Battle Tactic Stratagem。 | 2026-07-26 |
 | stratagem | [LEONINE AGGRESSION](factions/星际战士/stratagems/leonine-aggression.md) | 1 CP、Charge phase、巨石之怒 分队、Strategic Ploy Stratagem。 | 2026-07-26 |
 | stratagem | [MARKED FOR DESTRUCTION](factions/星际战士/stratagems/marked-for-destruction.md) | 1 CP、Shooting phase、Saga of the Hunter 分队、Battle Tactic Stratagem。 | 2026-07-26 |
 | stratagem | [MARTIAL MASTERY](factions/星际战士/stratagems/martial-mastery.md) | 1 CP、Fight phase、Inner Circle Task Force 分队、Epic Deed Stratagem。 | 2026-07-26 |
 | stratagem | [MASTER MARKSMEN](factions/星际战士/stratagems/master-marksmen.md) | 1 CP、Shooting phase、Pilum Strike Team 分队、Battle Tactic Stratagem。 | 2026-07-26 |
 | stratagem | [MERCY IS WEAKNESS](factions/星际战士/stratagems/mercy-is-weakness.md) | 2 CP、Shooting or Fight phase、Ironstorm Spearhead 分队、Battle Tactic Stratagem。 | 2026-07-26 |
+| stratagem | [METEORIC ONSLAUGHT](factions/星际战士/stratagems/meteoric-onslaught.md) | 1 CP、Fight phase、Vengeful Hosts 分队。 | 2026-07-26 |
 | stratagem | [MOBILE LETHALITY](factions/星际战士/stratagems/mobile-lethality.md) | 1 CP、Movement phase、Spearpoint Task Force 分队、Battle Tactic Stratagem。 | 2026-07-26 |
 | stratagem | [NO THREAT TOO GREAT](factions/星际战士/stratagems/no-threat-too-great.md) | 2 CP、Shooting phase、Anvil Siege Force 分队、Battle Tactic Stratagem。 | 2026-07-26 |
 | stratagem | [NOT ONE BACKWARDS STEP](factions/星际战士/stratagems/not-one-backwards-step.md) | 1 CP、Command phase、Anvil Siege Force 分队、Strategic Ploy Stratagem。 | 2026-07-26 |
@@ -2269,6 +2286,7 @@
 | stratagem | [PRACTICAL TACTICS](factions/星际战士/stratagems/practical-tactics.md) | 1 CP、Movement phase、Blade of Ultramar 分队、Strategic Ploy Stratagem。 | 2026-07-26 |
 | stratagem | [PRESCIENT PRECISION](factions/星际战士/stratagems/prescient-precision.md) | 1 CP、Shooting phase、Librarius Conclave 分队、Strategic Ploy Stratagem。 | 2026-07-26 |
 | stratagem | [PREYTAKER’S EYE](factions/星际战士/stratagems/preytakers-eye.md) | 1 CP、Shooting or Fight phase、Champions of Fenris 分队、Strategic Ploy Stratagem。 | 2026-07-26 |
+| stratagem | [PURGE BY SECTORS](factions/星际战士/stratagems/purge-by-sectors.md) | 1 CP、Fight phase、Vengeful Hosts 分队。 | 2026-07-26 |
 | stratagem | [RAPID REAPPRAISAL](factions/星际战士/stratagems/rapid-reappraisal.md) | 1 CP、Fight phase、Company of Hunters 分队、Battle Tactic Stratagem。 | 2026-07-26 |
 | stratagem | [RAPID TAKEOVER](factions/星际战士/stratagems/rapid-takeover.md) | 1 CP、Movement phase、Shield of the Void 分队、Strategic Ploy Stratagem。 | 2026-07-26 |
 | stratagem | [RAPTORIAL VIGILANCE](factions/星际战士/stratagems/raptorial-vigilance.md) | 1 CP、Movement phase、影标之爪 分队、Battle Tactic Stratagem。 | 2026-07-26 |
@@ -2513,6 +2531,7 @@
 | unit | [Deimos Predator](factions/星际战士/units/deimos-predator.md) | 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。 | 2026-09-14 |
 | unit | [Deredeo Dreadnought](factions/星际战士/units/deredeo-dreadnought.md) | 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。 | 2026-09-14 |
 | unit | [Dreadnought Drop Pod](factions/星际战士/units/dreadnought-drop-pod.md) | 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。 | 2026-09-14 |
+| unit | [Eradicator Squad With Heavy Bolters](factions/星际战士/units/eradicator-squad-with-heavy-bolters.md) |  | 2026-09-14 |
 | unit | [Example Wargear](factions/星际战士/units/example-wargear.md) |  | 2026-09-14 |
 | unit | [Falchion](factions/星际战士/units/falchion.md) | 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。 | 2026-09-14 |
 | unit | [Fellblade](factions/星际战士/units/fellblade.md) | 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。 | 2026-09-14 |
@@ -3138,7 +3157,7 @@
 | enhancement | [喷涌污秽](factions/死亡守卫/enhancements/fountaining-filth.md) | 0 分、Vectors of Decay 分队。 | 2026-07-26 |
 | enhancement | [回复虫群](factions/死亡守卫/enhancements/rejuvenating-swarm-flyblown-host.md) | 10 分、吹蝇军 分队。 | 2026-07-26 |
 | enhancement | [回复虫群](factions/死亡守卫/enhancements/rejuvenating-swarm-paragons-of-putrescence.md) | 20 分、腐坏楷模 分队。 | 2026-07-26 |
-| enhancement | [寄生收割](factions/死亡守卫/enhancements/parasitic-woe-reaper.md) | 分数未知、传瘟机械 分队。 | 2026-07-26 |
+| enhancement | [寄生收割](factions/死亡守卫/enhancements/parasitic-woe-reaper.md) | 15 分、传瘟机械 分队。 | 2026-07-26 |
 | enhancement | [密集虫群](factions/死亡守卫/enhancements/insectile-murmuration.md) | 15 分、吹蝇军 分队。 | 2026-07-26 |
 | enhancement | [尖啸虫使](factions/死亡守卫/enhancements/shriekworm-familiar.md) | 15 分、Mortarion’s Hammer 分队。 | 2026-07-26 |
 | enhancement | [恐怖丧钟](factions/死亡守卫/enhancements/entropic-knell.md) | 15 分、Tallyband Summoners 分队。 | 2026-07-26 |
@@ -4194,6 +4213,7 @@
 | enhancement | [Calculated Tenacity](factions/灰暗联盟/enhancements/calculated-tenacity.md) | 15 分、Hearthfyre Arsenal 分队。 | 2026-07-26 |
 | enhancement | [Celebrated Folk Hero](factions/灰暗联盟/enhancements/celebrated-folk-hero.md) | 0 分、Hearthfire Strike 分队。 | 2026-07-26 |
 | enhancement | [Dead Reckoning](factions/灰暗联盟/enhancements/dead-reckoning.md) | 10 分、Needgaârd Oathband 分队。 | 2026-07-26 |
+| enhancement | [Dêlvewerke Navigator](factions/灰暗联盟/enhancements/dêlvewerke-navigator.md) | 25 分、Dêlve Assault Shift 分队。 | 2026-07-26 |
 | enhancement | [Dêlvwerke Navigator](factions/灰暗联盟/enhancements/dêlvwerke-navigator.md) | 25 分、Dêlve Assault Shift 分队。 | 2026-07-26 |
 | enhancement | [Eye for Weakness](factions/灰暗联盟/enhancements/eye-for-weakness.md) | 25 分、Persecution Prospect 分队。 | 2026-07-26 |
 | enhancement | [Fârstrydr Node](factions/灰暗联盟/enhancements/fârstrydr-node.md) | 20 分、Hearthfyre Arsenal 分队。 | 2026-07-26 |
@@ -4335,6 +4355,7 @@
 | enhancement | [Grimoire of Conjunctions](factions/灰骑士/enhancements/grimoire-of-conjunctions.md) | 10 分、Augurium Task Force 分队。 | 2026-07-26 |
 | enhancement | [Inescapable Judgement (Psychic)](factions/灰骑士/enhancements/inescapable-judgement-psychic.md) | 20 分、Hallowed Conclave 分队。 | 2026-07-26 |
 | enhancement | [Nemesis Rounds](factions/灰骑士/enhancements/nemesis-rounds.md) | 10 分、Hallowed Conclave 分队。 | 2026-07-26 |
+| enhancement | [One Foot in the Future](factions/灰骑士/enhancements/one-foot-in-the-future.md) | 15 分、Augurium Task Force 分队。 | 2026-07-26 |
 | enhancement | [Predestined Coordinates](factions/灰骑士/enhancements/predestined-coordinates.md) | 10 分、次元拦截 分队。 | 2026-07-26 |
 | enhancement | [Purity of Purpose](factions/灰骑士/enhancements/purity-of-purpose.md) | 15 分、Brotherhood Strike 分队。 | 2026-07-26 |
 | enhancement | [Pyresoul (Psychic)](factions/灰骑士/enhancements/pyresoul-psychic.md) | 20 分、Banishers 分队。 | 2026-07-26 |
@@ -4634,15 +4655,18 @@
 | unit | [Amallyn Shadowguide](factions/艾达灵族/units/amallyn-shadowguide.md) | 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。 | 2026-09-14 |
 | unit | [Autarch Skyrunner](factions/艾达灵族/units/autarch-skyrunner.md) | 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。 | 2026-09-14 |
 | unit | [Bonesinger](factions/艾达灵族/units/bonesinger.md) | 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。 | 2026-09-14 |
+| unit | [Clanblade](factions/艾达灵族/units/clanblade.md) |  | 2026-09-14 |
 | unit | [Cobra](factions/艾达灵族/units/cobra.md) | 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。 | 2026-09-14 |
 | unit | [Corsair Cloud Dancer Band](factions/艾达灵族/units/corsair-cloud-dancer-band.md) | 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。 | 2026-09-14 |
 | unit | [Corsair Reaver Band](factions/艾达灵族/units/corsair-reaver-band.md) | 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。 | 2026-09-14 |
 | unit | [Corsair Skyreaver Band](factions/艾达灵族/units/corsair-skyreaver-band.md) | 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。 | 2026-09-14 |
+| unit | [Dragon Knights](factions/艾达灵族/units/dragon-knights.md) |  | 2026-09-14 |
 | unit | [Firestorm](factions/艾达灵族/units/firestorm.md) | 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。 | 2026-09-14 |
 | unit | [Hornet](factions/艾达灵族/units/hornet.md) | 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。 | 2026-09-14 |
 | unit | [Illic Nightspear](factions/艾达灵族/units/illic-nightspear.md) | 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。 | 2026-09-14 |
 | unit | [Irillyth](factions/艾达灵族/units/irillyth.md) | 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。 | 2026-09-14 |
 | unit | [Karandras](factions/艾达灵族/units/karandras.md) | 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。 | 2026-09-14 |
+| unit | [Leystalker](factions/艾达灵族/units/leystalker.md) |  | 2026-09-14 |
 | unit | [Lynx](factions/艾达灵族/units/lynx.md) | 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。 | 2026-09-14 |
 | unit | [Nightwing](factions/艾达灵族/units/nightwing.md) | 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。 | 2026-09-14 |
 | unit | [Phoenix](factions/艾达灵族/units/phoenix.md) | 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。 | 2026-09-14 |
@@ -4650,6 +4674,7 @@
 | unit | [Scorpion](factions/艾达灵族/units/scorpion.md) | 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。 | 2026-09-14 |
 | unit | [Shadow Spectres](factions/艾达灵族/units/shadow-spectres.md) | 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。 | 2026-09-14 |
 | unit | [Skathach Wraithknight](factions/艾达灵族/units/skathach-wraithknight.md) | 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。 | 2026-09-14 |
+| unit | [Stonesinger](factions/艾达灵族/units/stonesinger.md) |  | 2026-09-14 |
 | unit | [Vampire Hunter](factions/艾达灵族/units/vampire-hunter.md) | 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。 | 2026-09-14 |
 | unit | [Vampire Raider](factions/艾达灵族/units/vampire-raider.md) | 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。 | 2026-09-14 |
 | unit | [Warp Hunter](factions/艾达灵族/units/warp-hunter.md) | 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。 | 2026-09-14 |
@@ -5052,11 +5077,11 @@
 
 ## 统计
 
-- **总实体数**: 4916
+- **总实体数**: 4941
 - **changelog**: 28
 - **core-rule**: 110
-- **detachment**: 324
-- **enhancement**: 1058
-- **stratagem**: 1681
-- **unit**: 1715
+- **detachment**: 328
+- **enhancement**: 1070
+- **stratagem**: 1684
+- **unit**: 1721
 

@@ -14,7 +14,9 @@ version:
   points: MFM 2026-09-14T05:51:23.572407+00:00
   source: official-db
 sources:
-- book: 官方结构库 db/wh40k.sqlite（Wahapedia 11版镜像 + MFM 官方点数）
+- book: https://assets.warhammer-community.com/eng_wh40k_faction_pack_dark_angels-r9vgghuhil-tzntq05hcx.pdf
+  pages:
+  - 11
 updated: '2026-09-14'
 ---
 
@@ -46,4 +48,4 @@ updated: '2026-09-14'
 
 ## 关键词
 - **阵营关键词**：Adeptus Astartes，Dark Angels
-- **普通关键词**：Ravenwing，Imperium，Fly，Vehicle，Ravenwing Darkshroud
+- **普通关键词**：Ravenwing，Imperium，Fly，Vehicle，Ravenwing Darkshroud，FRAME

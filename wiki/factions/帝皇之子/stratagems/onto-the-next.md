@@ -25,8 +25,8 @@ End of the Fight phase.
 
 ## 使用对象
 
-One Emperor’s Children unit from your army that destroyed an enemy unit this phase, and one friendly Transport it is able to embark within.
+One EMPEROR’S CHILDREN unit from your army that destroyed an enemy unit this phase, and one friendly TRANSPORT it is able to embark within.
 
 ## 效果
 
-If your EMPEROR’S CHILDREN unit is wholly within 6" of that [[core-rules/transport.md|TRANSPORT]], it can embark within it.
+If your EMPEROR’S CHILDREN unit is wholly within 6" of that TRANSPORT, it can embark within it. Your unit can embark within that TRANSPORT in a turn it disembarked from a TRANSPORT.

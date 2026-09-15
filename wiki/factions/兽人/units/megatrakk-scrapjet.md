@@ -45,5 +45,5 @@ updated: '2026-09-14'
 - **1个模型** — 75 分
 
 ## 关键词
-- **阵营关键词**：兽人
-- **普通关键词**：[[core-rules/vehicle.md|载具]]，飚速怪咖，超霸拖垃圾
+- **阵营关键词**：Orks
+- **普通关键词**：Vehicle，Megatrakk Scrapjet，Speed Freeks

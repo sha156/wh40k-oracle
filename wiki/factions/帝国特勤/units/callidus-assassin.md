@@ -14,7 +14,9 @@ version:
   points: MFM 2026-09-14T05:51:23.572407+00:00
   source: official-db
 sources:
-- book: 官方结构库 db/wh40k.sqlite（Wahapedia 11版镜像 + MFM 官方点数）
+- book: https://assets.warhammer-community.com/eng_22-07_warhammer_40,000_faction_pack_imperia_agents-fttx9vrxuj-jug1nycmjn.pdf
+  pages:
+  - 10
 updated: '2026-09-14'
 ---
 
@@ -37,9 +39,9 @@ updated: '2026-09-14'
 | 相位剑与毒刃 | 近战 | 5 | 2+ | 5 | -4 | 2 | [[core-rules/lethal-hits.md\|致命一击]]，[[core-rules/precision.md\|精准]] |
 
 ## 技能
-- **【阵营技能】：派遣特工**
-- **灵巧逃脱**：在近战阶段结束时，如果该模型位于一个或更多敌方单位的交战范围内，该模型可以进行一次最多D6的后撤。此外，在您对手的回合结束时，如果该模型不位于一个或更多敌方单位3寸内，您可以将该模型从战场上移除，在您的[[factions/兽人/stratagems/on-to-da-next.md|下一个]]移动阶段的增援步骤中，将该模型部署在战场上位于所有敌方模型水平9寸外的任意位置，如果在战斗结束时该模型不位于战场上，该模型被摧毁。
-- **统御混乱**：每当你的对手对其军队中的一个单位使用计谋时，如果那个单位位于该模型的12寸内，那么那次计谋的CP消耗加1CP。
+- **Acrobatic Escape**：At the end of the Fight phase, if this unit is engaged, this unit can make a fall-back move of up to D6". At the end of your opponent’s turn, if this unit is more than 3" from all enemy units, you can use this ability. If you do: Place this unit in strategic reserves. This unit must make an ingress move in your next Movement phase (including in your first turn).
+- **Reign of Confusion**：Once per turn, when your opponent targets a unit from their army within 12” of this model with a stratagem, this model can use this ability. If you do increase the CP cost of that use of that stratagem by 1CP.
+- **SHADOW ASSIGNMENT**：This model cannot be selected to be your <span class="kwb">WARLORD</span>.<br><br>If your army faction is <span class="kwb">AGENTS</span> <span class="kwb2">OF</span> <span class="kwb2">THE</span> <span class="kwb">IMPERIUM</span>, then during the Declare Battle Formations step, you can replace this model with a different OFFICIO ASSASSINORUM model, provided the total points value of the new model does not exceed the points value of the model it replaced. Your army cannot include duplicates of the same model (i.e. after replacing a model with this rule, your army cannot have more than 1 VINDICARE ASSASSIN, it cannot have more than 1 CUlExUS ASSASSIN, it cannot have more than 1 EvERSOR ASSASSIN and it cannot have more than 1 <span class="kwb">CALLIDUS</span> <span class="kwb">ASSASSIN</span>).
 
 ## 单位构成
 - **1个模型** — 100 分

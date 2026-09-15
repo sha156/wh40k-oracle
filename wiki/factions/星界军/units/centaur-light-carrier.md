@@ -11,7 +11,12 @@ version:
   points: historical / unmatched
   source: official-db
 sources:
-- book: 官方结构库 db/wh40k.sqlite（Wahapedia 11版镜像 + MFM 官方点数）
+- book: 'Faction Pack: Astra Militarum'
+  pages:
+  - 54
+- book: 'Faction Pack: Astra Militarum'
+  pages:
+  - 55
 updated: '2026-09-14'
 ---
 
@@ -41,4 +46,4 @@ updated: '2026-09-14'
 
 ## 关键词
 - **阵营关键词**：Astra Militarum
-- **普通关键词**：Squadron，[[core-rules/smoke.md|Smoke]]，Vehicle，Imperium，[[core-rules/transport.md|Transport]]，Centaur Light Carrier
+- **普通关键词**：Squadron，[[core-rules/smoke.md|Smoke]]，Vehicle，Imperium，[[core-rules/transport.md|Transport]]，Centaur Light Carrier，FRAME

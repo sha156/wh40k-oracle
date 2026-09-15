@@ -48,5 +48,5 @@ updated: '2026-09-14'
 - **1个模型** — 130 分
 
 ## 关键词
-- **阵营关键词**：兽人
-- **普通关键词**：[[core-rules/vehicle.md|载具]]，机甲，死死无畏机甲
+- **阵营关键词**：Orks
+- **普通关键词**：Vehicle，Deff Dread，[[core-rules/walker.md|Walker]]

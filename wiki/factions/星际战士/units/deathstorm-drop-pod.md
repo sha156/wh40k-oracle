@@ -11,7 +11,12 @@ version:
   points: historical / unmatched
   source: official-db
 sources:
-- book: 官方结构库 db/wh40k.sqlite（Wahapedia 11版镜像 + MFM 官方点数）
+- book: 'Faction Pack: Space Marines'
+  pages:
+  - 170
+- book: 'Faction Pack: Space Marines'
+  pages:
+  - 171
 updated: '2026-09-14'
 ---
 
@@ -35,4 +40,4 @@ updated: '2026-09-14'
 
 ## 关键词
 - **阵营关键词**：Adeptus Astartes
-- **普通关键词**：Imperium，Vehicle，Deathstorm Drop Pod
+- **普通关键词**：Imperium，Vehicle，Deathstorm Drop Pod，FRAME

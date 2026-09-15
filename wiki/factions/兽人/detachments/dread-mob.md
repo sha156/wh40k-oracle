@@ -43,7 +43,7 @@ If a weapon equipped by a model from you army has the [HAZARDOUS] ability from m
 - [[factions/兽人/enhancements/gitfinder-googlez.md\|找目标护目镜]]
 - [[factions/兽人/enhancements/press-it-fasta.md\|按快点]]
 - [[factions/兽人/enhancements/smoky-gubbinz.md\|烟雾配件]]
-- [[factions/兽人/enhancements/supa-glowy-fing.md\|超亮玩意]]
+- [[factions/兽人/enhancements/supa-glowy-fing-dread-mob.md\|超亮玩意]]
 
 ## 战略
 

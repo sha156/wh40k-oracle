@@ -14,7 +14,9 @@ version:
   points: MFM 2026-09-14T05:51:23.572407+00:00
   source: official-db
 sources:
-- book: 官方结构库 db/wh40k.sqlite（Wahapedia 11版镜像 + MFM 官方点数）
+- book: https://assets.warhammer-community.com/eng_22-07_warhammer_40,000_faction_pack_blood_angels-l1ttsuicte-4xq8nrzqy1.pdf
+  pages:
+  - 9
 updated: '2026-09-14'
 ---
 
@@ -48,4 +50,4 @@ updated: '2026-09-14'
 
 ## 关键词
 - **阵营关键词**：Adeptus Astartes，Blood Angels
-- **普通关键词**：Vehicle，[[core-rules/smoke.md|Smoke]]，Imperium，Baal Predator
+- **普通关键词**：Vehicle，[[core-rules/smoke.md|Smoke]]，Imperium，Baal Predator，FRAME

@@ -45,5 +45,5 @@ updated: '2026-09-14'
 - **1个模型** — 85 分
 
 ## 关键词
-- **阵营关键词**：兽人
-- **普通关键词**：[[core-rules/infantry.md|步兵]]，[[core-rules/character.md|人物]]，[[core-rules/grenades.md|手雷]]，技师，大技霸
+- **阵营关键词**：Orks
+- **普通关键词**：[[core-rules/character.md|Character]]，[[core-rules/infantry.md|Infantry]]，[[core-rules/grenades.md|Grenades]]，[[factions/兽人/units/mek.md|Mek]]，Big Mek

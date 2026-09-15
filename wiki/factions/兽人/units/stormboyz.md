@@ -45,5 +45,5 @@ updated: '2026-09-14'
 - **10个模型** — 140 分
 
 ## 关键词
-- **阵营关键词**：兽人
-- **普通关键词**：[[core-rules/infantry.md|步兵]]，[[core-rules/fly.md|飞行]]，跳跃背包，[[core-rules/grenades.md|手雷]]，风暴小子
+- **阵营关键词**：Orks
+- **普通关键词**：Fly，[[core-rules/grenades.md|Grenades]]，Stormboyz，Jump Pack，[[core-rules/infantry.md|Infantry]]

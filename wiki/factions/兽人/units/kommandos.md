@@ -52,5 +52,5 @@ updated: '2026-09-14'
 - **10个模型** — 125 分
 
 ## 关键词
-- **阵营关键词**：兽人
-- **普通关键词**：[[core-rules/infantry.md|步兵]]，[[core-rules/grenades.md|手雷]]，烟雾弹，特战小子
+- **阵营关键词**：Orks
+- **普通关键词**：Kommandos，[[core-rules/smoke.md|Smoke]]，[[core-rules/grenades.md|Grenades]]，[[core-rules/infantry.md|Infantry]]

@@ -4,6 +4,7 @@ name_en: Hagiomnifex Upgrade
 faction: 战斗修女
 type: enhancement
 detachment: Sanctified Orators
+cost: 25
 tags:
 - enhancement
 - enhancement/战斗修女
@@ -13,7 +14,7 @@ sources:
 updated: '2026-07-26'
 ---
 
-分数未知、[[factions/战斗修女/detachments/sanctified-orators.md|Sanctified Orators]] 分队。
+25 分、[[factions/战斗修女/detachments/sanctified-orators.md|Sanctified Orators]] 分队。
 
 ## 效果
 
@@ -24,6 +25,8 @@ ADEPTA SORORITAS CHARACTER unit only (excluding PENITENT units). (Once per turn,
 - **Catechism of Raging Fervour:** This unit has +1" M.
 - **Psalm of Righteous Smiting:** This unit’s attacks have +1 S.
 - **Chorus of Repudiation:** Attacks that target this unit with a S greater than this unit’s T have -1 to Wound rolls.
+
+**分数**：25 分
 
 ## 携带限制
 

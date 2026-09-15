@@ -25,7 +25,7 @@ Your opponent’s Movement phase, just after an enemy unit ends a Normal, Advanc
 
 ## 使用对象
 
-One [[factions/星际战士/units/chaplain.md|Chaplain]] or [[factions/星际战士/units/judiciar.md|Judiciar]] unit from your army that is within 9" of that enemy unit and is not within Engagement Range of one or more enemy units.
+One [[factions/星际战士/units/chaplain.md|Chaplain]] or [[factions/星际战士/units/judiciar.md|Judiciar]] unit from your army that is within 8" of that enemy unit and is not within Engagement Range of one or more enemy units.
 
 ## 效果
 

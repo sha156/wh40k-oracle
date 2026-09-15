@@ -11,7 +11,12 @@ version:
   points: historical / unmatched
   source: official-db
 sources:
-- book: 官方结构库 db/wh40k.sqlite（Wahapedia 11版镜像 + MFM 官方点数）
+- book: 'Faction Pack: Tyranids'
+  pages:
+  - 30
+- book: 'Faction Pack: Tyranids'
+  pages:
+  - 31
 updated: '2026-09-14'
 ---
 
@@ -39,4 +44,4 @@ updated: '2026-09-14'
 
 ## 关键词
 - **阵营关键词**：Tyranids
-- **普通关键词**：Monster，Great Devourer，Scythed Hierodule
+- **普通关键词**：Monster，Great Devourer，Scythed Hierodule，FRAME

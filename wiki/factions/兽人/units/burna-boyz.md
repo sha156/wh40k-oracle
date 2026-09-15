@@ -47,5 +47,5 @@ updated: '2026-09-14'
 - **10个模型** — 120 分
 
 ## 关键词
-- **阵营关键词**：兽人
-- **普通关键词**：[[core-rules/infantry.md|步兵]]，喷火小子
+- **阵营关键词**：Orks
+- **普通关键词**：[[core-rules/infantry.md|Infantry]]，Burna Boyz

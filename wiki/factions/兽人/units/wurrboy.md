@@ -41,5 +41,5 @@ updated: '2026-09-14'
 - **1个模型** — 60 分
 
 ## 关键词
-- **阵营关键词**：兽人
-- **普通关键词**：[[core-rules/infantry.md|步兵]]，[[core-rules/character.md|人物]]，[[core-rules/psyker.md|灵能者]]，兽霸，战争小子
+- **阵营关键词**：Orks
+- **普通关键词**：[[core-rules/character.md|Character]]，[[core-rules/psyker.md|Psyker]]，Beast Snagga，Wurrboy，[[core-rules/infantry.md|Infantry]]

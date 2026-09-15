@@ -28,7 +28,7 @@ At the end of your opponent s turn, you can select a number of Adeptus Astartes 
 | **Strike Force** | Up to 2 units |
 | **Onslaught** | Up to 3 units |
 
-Once you have made your selections, remove those units from the battlefield and place them into Strategic Reserves. In the Reinforcements step of your next Movement phase, set each of those units up using their Deep Strike ability.
+Place those units in strategic reserves. Those units must make an ingress move in your next Movement phase (including in your first turn).
 
 RESTRICTIONS
 Your army can include BLOOD ANGELS units, but it cannot include any ADEPTUS ASTARTES units drawn from any other Chapter.

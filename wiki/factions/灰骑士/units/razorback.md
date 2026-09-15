@@ -14,7 +14,9 @@ version:
   points: MFM 2026-09-14T05:51:23.572407+00:00
   source: official-db
 sources:
-- book: 官方结构库 db/wh40k.sqlite（Wahapedia 11版镜像 + MFM 官方点数）
+- book: https://assets.warhammer-community.com/eng_22-07_warhammer_40,000_faction_pack_grey_knights-dlzvusufhy-uialb3pko4.pdf
+  pages:
+  - 9
 updated: '2026-09-14'
 ---
 
@@ -45,4 +47,4 @@ updated: '2026-09-14'
 
 ## 关键词
 - **阵营关键词**：Grey Knights
-- **普通关键词**：[[core-rules/dedicated-transport.md|Dedicated Transport]]，[[core-rules/smoke.md|Smoke]]，Razorback，Imperium，Vehicle，[[core-rules/transport.md|Transport]]
+- **普通关键词**：[[core-rules/dedicated-transport.md|Dedicated Transport]]，[[core-rules/smoke.md|Smoke]]，Razorback，Imperium，Vehicle，[[core-rules/transport.md|Transport]]，FRAME

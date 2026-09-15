@@ -14,7 +14,9 @@ version:
   points: MFM 2026-09-14T05:51:23.572407+00:00
   source: official-db
 sources:
-- book: 官方结构库 db/wh40k.sqlite（Wahapedia 11版镜像 + MFM 官方点数）
+- book: https://assets.warhammer-community.com/eng_22-07_warhammer_40,000_faction_pack_blood_angels-l1ttsuicte-4xq8nrzqy1.pdf
+  pages:
+  - 10
 updated: '2026-09-14'
 ---
 
@@ -32,9 +34,8 @@ updated: '2026-09-14'
 | 殷红阔剑  | 近战 | 8 | 2+ | 6 | -3 | 2 | [[core-rules/devastating-wounds.md\|毁灭伤害]] |
 
 ## 技能
-- **【阵营技能】：破敌重誓**
-- **狂热光晕（光环）**：当友方的阿斯塔特修会单位位于 本模型 6 英寸内时，你可以为那些模型重投震慑测 试和领导力测试。
-- **奇迹救赎**：一场战斗仅一次，在你对手的冲锋阶段结 束时，如果本模型处于预备队，你可以选择一个在本 阶段完成了冲锋移动的敌方单位，将本模型置入那 个敌方单位的接战范围内。
+- **Aura of Fervour (Aura)**：While a friendly <span class="kwb">ADEPTUS</span> <span class="kwb">ASTARTES</span> unit is within 6" of this model, you can re-roll Battle-shock and Leadership tests taken for that unit.
+- **奇迹救赎**：(Once per battle, per army) At the end of your opponent's Charge phase (excluding the first battle round), you can select one enemy unit that made a charge move this phase. This unit can make an ingress move and must be set up engaged with that enemy unit. That move does not prevent this unit from being eligible to move.
 
 ## 单位构成
 - **1个模型** — 120 分

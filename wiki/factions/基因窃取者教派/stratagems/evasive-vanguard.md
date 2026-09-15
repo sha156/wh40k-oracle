@@ -20,7 +20,7 @@ updated: '2026-07-26'
 
 ## 使用时机
 
-Any phase, just after an enemy unit ends a move within 9" of one or more of your Cult Ambush markers, before removing those markers from the battlefield.
+Any phase, just after an enemy unit ends a move within 8" of one or more of your Cult Ambush markers, before removing those markers from the battlefield.
 
 ## 使用对象
 
@@ -28,4 +28,4 @@ Select one of those Cult Ambush markers.
 
 ## 效果
 
-You can set up that Cult Ambush marker anywhere on the battlefield that is more than 9" horizontally away from all enemy units.
+You can set up that Cult Ambush marker anywhere on the battlefield that is more than 8" horizontally away from all enemy units.

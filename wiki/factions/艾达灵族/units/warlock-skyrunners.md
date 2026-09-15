@@ -15,7 +15,9 @@ version:
   points: MFM 2026-09-14T05:51:23.572407+00:00
   source: official-db
 sources:
-- book: 官方结构库 db/wh40k.sqlite（Wahapedia 11版镜像 + MFM 官方点数）
+- book: https://assets.warhammer-community.com/eng_wh40k_faction_pack_aeldari-r7ubocxyoz-nhd972kesl.pdf
+  pages:
+  - 31
 updated: '2026-09-14'
 ---
 
@@ -44,6 +46,7 @@ updated: '2026-09-14'
 ## 技能
 - **Runes of Battle (Psychic)**：Weapons equipped by models in this unit have the [IGNORES COVER] ability.
 - **Psychic Communion (Psychic)**：Each time this unit is selected to shoot, for each Warlock model in this unit, until the end of the phase, add 1 to the Attacks and Strength characteristics of that model’s Destructor weapon for each other friendly Aeldari Psyker model within 6" of that model (to a maximum of +2).
+- **Support**
 
 ## 单位构成
 - **1个模型** — 45 分

@@ -12,7 +12,12 @@ version:
   points: historical / unmatched
   source: official-db
 sources:
-- book: 官方结构库 db/wh40k.sqlite（Wahapedia 11版镜像 + MFM 官方点数）
+- book: 'Faction Pack: Necrons'
+  pages:
+  - 36
+- book: 'Faction Pack: Necrons'
+  pages:
+  - 37
 updated: '2026-09-14'
 ---
 
@@ -40,4 +45,4 @@ updated: '2026-09-14'
 
 ## 关键词
 - **阵营关键词**：Necrons
-- **普通关键词**：Vehicle，[[core-rules/fortification.md|Fortification]]，Sentry Pylon
+- **普通关键词**：Vehicle，[[core-rules/fortification.md|Fortification]]，Sentry Pylon，FRAME

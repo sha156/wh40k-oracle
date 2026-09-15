@@ -50,5 +50,5 @@ updated: '2026-09-14'
 - **1个模型** — 300 分
 
 ## 关键词
-- **阵营关键词**：兽人
+- **阵营关键词**：Orks
 - **普通关键词**：[[factions/兽人/units/warboss.md|Warboss]]，[[core-rules/character.md|Character]]，Ghazghkull Thraka，[[core-rules/epic-hero.md|Epic Hero]]，[[core-rules/infantry.md|Infantry]]

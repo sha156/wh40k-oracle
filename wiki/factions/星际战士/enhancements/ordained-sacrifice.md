@@ -19,7 +19,7 @@ updated: '2026-07-26'
 
 ## 效果
 
-The first time the bearer is destroyed, roll one D6 at the end of the phase: on a 2+, set the bearer back up on the battlefield as close as possible to where it was destroyed and not within Engagement Range of one or more enemy units, with 3 wounds remaining.
+(Once per battle, per army) When this model is destroyed, at the end of the phase, roll one D6: On a 2+, set up this model on the battlefield, unengaged and as close as possible to where it was destroyed. This model is not part of an attached unit and its unit has a starting strength of 1. This model has 3 wounds remaining.
 
 **分数**：25 分
 

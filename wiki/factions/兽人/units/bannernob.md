@@ -44,5 +44,5 @@ updated: '2026-09-14'
 - **1个模型** — 35 分
 
 ## 关键词
-- **阵营关键词**：兽人
-- **普通关键词**：[[core-rules/infantry.md|步兵]]
+- **阵营关键词**：ORKS
+- **普通关键词**：[[core-rules/infantry.md|INFANTRY]]，[[core-rules/character.md|CHARACTER]]，BANNERNOB

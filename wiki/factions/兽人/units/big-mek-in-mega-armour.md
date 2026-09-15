@@ -49,5 +49,5 @@ updated: '2026-09-14'
 - **1个模型** — 90 分
 
 ## 关键词
-- **阵营关键词**：兽人
-- **普通关键词**：[[core-rules/infantry.md|步兵]]，[[core-rules/character.md|人物]]，超重装甲，技师，超重装大技霸
+- **阵营关键词**：Orks
+- **普通关键词**：[[factions/兽人/units/big-mek.md|Big Mek]] in Mega Armour，[[factions/兽人/units/mek.md|Mek]]，Mega Armour，[[core-rules/character.md|Character]]，[[core-rules/infantry.md|Infantry]]

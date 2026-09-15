@@ -14,7 +14,9 @@ version:
   points: MFM 2026-09-14T05:51:23.572407+00:00
   source: official-db
 sources:
-- book: 官方结构库 db/wh40k.sqlite（Wahapedia 11版镜像 + MFM 官方点数）
+- book: https://assets.warhammer-community.com/eng_wh40k_faction_pack_death_guard-etfwxynh2n-uxtkih85rs.pdf
+  pages:
+  - 7
 updated: '2026-09-14'
 ---
 
@@ -48,4 +50,4 @@ updated: '2026-09-14'
 
 ## 关键词
 - **阵营关键词**：Death Guard
-- **普通关键词**：Predator Annihilator，Vehicle，[[core-rules/smoke.md|Smoke]]，Chaos，Nurgle
+- **普通关键词**：Predator Annihilator，Vehicle，[[core-rules/smoke.md|Smoke]]，Chaos，Nurgle，FRAME

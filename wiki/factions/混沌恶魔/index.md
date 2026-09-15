@@ -48,80 +48,80 @@
 - [[factions/混沌恶魔/units/spined-chaos-beast|Spined Chaos Beast]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
 - [[factions/混沌恶魔/units/tormentbringer-on-exalted-seeker-chariot|Tormentbringer On Exalted Seeker Chariot]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
 - [[factions/混沌恶魔/units/zarakynel|Zarakynel]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
-- [[factions/混沌恶魔/units/rendmaster-on-blood-throne|乘鲜血王座的裂肉主宰]] — 
+- [[factions/混沌恶魔/units/rendmaster-on-blood-throne|乘鲜血王座的裂肉主宰]]
 - [[factions/混沌恶魔/units/legionaries|军团战士]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
-- [[factions/混沌恶魔/units/kairos-fateweaver|凯洛斯·织命者]] — 
-- [[factions/混沌恶魔/units/karanak-2|卡拉纳克]] — 
-- [[factions/混沌恶魔/units/karanak|卡拉纳克]] — 
-- [[factions/混沌恶魔/units/changecaster|变化使]] — 
-- [[factions/混沌恶魔/units/the-changeling|变化灵]] — 
-- [[factions/混沌恶魔/units/lord-of-change|变化魔君]] — 
+- [[factions/混沌恶魔/units/kairos-fateweaver|凯洛斯·织命者]]
+- [[factions/混沌恶魔/units/karanak-2|卡拉纳克]]
+- [[factions/混沌恶魔/units/karanak|卡拉纳克]]
+- [[factions/混沌恶魔/units/changecaster|变化使]]
+- [[factions/混沌恶魔/units/the-changeling|变化灵]]
+- [[factions/混沌恶魔/units/lord-of-change|变化魔君]]
 - [[factions/混沌恶魔/units/traitor-enforcer|叛军执法者]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
 - [[factions/混沌恶魔/units/traitor-guardsmen-squad|叛变卫队]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
-- [[factions/混沌恶魔/units/bloodthirster|嗜血狂魔]] — 
-- [[factions/混沌恶魔/units/horticulous-slimux|园艺师史莱姆克斯]] — 
+- [[factions/混沌恶魔/units/bloodthirster|嗜血狂魔]]
+- [[factions/混沌恶魔/units/horticulous-slimux|园艺师史莱姆克斯]]
 - [[factions/混沌恶魔/units/hellflayer|地狱剥皮机]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
-- [[factions/混沌恶魔/units/hellflayers|地狱剥皮机]] — 
-- [[factions/混沌恶魔/units/spoilpox-scrivener|坏疹记账官]] — 
-- [[factions/混沌恶魔/units/shalaxi-helbane|夏拉希·魔灾]] — 
-- [[factions/混沌恶魔/units/great-unclean-one|大不净者]] — 
-- [[factions/混沌恶魔/units/skulltaker|夺颅者]] — 
-- [[factions/混沌恶魔/units/keeper-of-secrets|守密者]] — 
-- [[factions/混沌恶魔/units/seekers|寻觅者]] — 
-- [[factions/混沌恶魔/units/screamers|尖啸魔]] — 
+- [[factions/混沌恶魔/units/hellflayers|地狱剥皮机]]
+- [[factions/混沌恶魔/units/spoilpox-scrivener|坏疹记账官]]
+- [[factions/混沌恶魔/units/shalaxi-helbane|夏拉希·魔灾]]
+- [[factions/混沌恶魔/units/great-unclean-one|大不净者]]
+- [[factions/混沌恶魔/units/skulltaker|夺颅者]]
+- [[factions/混沌恶魔/units/keeper-of-secrets|守密者]]
+- [[factions/混沌恶魔/units/seekers|寻觅者]]
+- [[factions/混沌恶魔/units/screamers|尖啸魔]]
 - [[factions/混沌恶魔/units/sorcerer|巫师]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
-- [[factions/混沌恶魔/units/syllesske|希尔艾斯克]] — 
-- [[factions/混沌恶魔/units/fluxmaster|幻变之主]] — 
+- [[factions/混沌恶魔/units/syllesske|希尔艾斯克]]
+- [[factions/混沌恶魔/units/fluxmaster|幻变之主]]
 - [[factions/混沌恶魔/units/fellgor-beastmen|恶角野兽人]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
-- [[factions/混沌恶魔/units/contorted-epitome|扭曲魔镜]] — 
-- [[factions/混沌恶魔/units/plaguebearers|携疫者]] — 
-- [[factions/混沌恶魔/units/bloodletters|放血鬼]] — 
-- [[factions/混沌恶魔/units/skarbrand|斯卡布兰德]] — 
-- [[factions/混沌恶魔/units/daemon-prince-of-chaos-with-wings|有翼混沌恶魔王子]] — 
+- [[factions/混沌恶魔/units/contorted-epitome|扭曲魔镜]]
+- [[factions/混沌恶魔/units/plaguebearers|携疫者]]
+- [[factions/混沌恶魔/units/bloodletters|放血鬼]]
+- [[factions/混沌恶魔/units/skarbrand|斯卡布兰德]]
+- [[factions/混沌恶魔/units/daemon-prince-of-chaos-with-wings|有翼混沌恶魔王子]]
 - [[factions/混沌恶魔/units/warp-talons|次元爪]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
-- [[factions/混沌恶魔/units/fiends|欢愉魔]] — 
-- [[factions/混沌恶魔/units/belakor|比拉克]] — 
-- [[factions/混沌恶魔/units/feculent-gnarlmaw|污秽瘤木]] — 
+- [[factions/混沌恶魔/units/fiends|欢愉魔]]
+- [[factions/混沌恶魔/units/belakor|比拉克]]
+- [[factions/混沌恶魔/units/feculent-gnarlmaw|污秽瘤木]]
 - [[factions/混沌恶魔/units/havocs|浩劫]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
-- [[factions/混沌恶魔/units/daemon-prince-of-chaos|混沌恶魔王子]] — 
+- [[factions/混沌恶魔/units/daemon-prince-of-chaos|混沌恶魔王子]]
 - [[factions/混沌恶魔/units/chaos-terminator-squad|混沌终结者]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
 - [[factions/混沌恶魔/units/chaos-lord|混沌领主]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
-- [[factions/混沌恶魔/units/flamers|火妖]] — 
-- [[factions/混沌恶魔/units/infernal-enrapturess|炼狱琴魔]] — 
-- [[factions/混沌恶魔/units/rotigus|烂格斯]] — 
-- [[factions/混沌恶魔/units/sloppity-bilepiper|烂芋笛手]] — 
-- [[factions/混沌恶魔/units/burning-chariot|燃烧战车]] — 
+- [[factions/混沌恶魔/units/flamers|火妖]]
+- [[factions/混沌恶魔/units/infernal-enrapturess|炼狱琴魔]]
+- [[factions/混沌恶魔/units/rotigus|烂格斯]]
+- [[factions/混沌恶魔/units/sloppity-bilepiper|烂芋笛手]]
+- [[factions/混沌恶魔/units/burning-chariot|燃烧战车]]
 - [[factions/混沌恶魔/units/raptors|猛禽]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
-- [[factions/混沌恶魔/units/poxbringer|疱疹使者]] — 
-- [[factions/混沌恶魔/units/tormentbringer|痛苦使者]] — 
-- [[factions/混沌恶魔/units/plague-drones|瘟疫先蜂]] — 
-- [[factions/混沌恶魔/units/bloodcrushers|碾血骑兵]] — 
-- [[factions/混沌恶魔/units/soul-grinder|磨魂者]] — 
-- [[factions/混沌恶魔/units/exalted-flamer|神尊火妖]] — 
+- [[factions/混沌恶魔/units/poxbringer|疱疹使者]]
+- [[factions/混沌恶魔/units/tormentbringer|痛苦使者]]
+- [[factions/混沌恶魔/units/plague-drones|瘟疫先蜂]]
+- [[factions/混沌恶魔/units/bloodcrushers|碾血骑兵]]
+- [[factions/混沌恶魔/units/soul-grinder|磨魂者]]
+- [[factions/混沌恶魔/units/exalted-flamer|神尊火妖]]
 - [[factions/混沌恶魔/units/chosen|神选战士]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
-- [[factions/混沌恶魔/units/fateskimmer|窥命者]] — 
-- [[factions/混沌恶魔/units/pink-horrors|粉惧妖]] — 
-- [[factions/混沌恶魔/units/beasts-of-nurgle|纳垢兽]] — 
-- [[factions/混沌恶魔/units/nurglings|纳垢灵]] — 
-- [[factions/混沌恶魔/units/tranceweaver|织幻者]] — 
+- [[factions/混沌恶魔/units/fateskimmer|窥命者]]
+- [[factions/混沌恶魔/units/pink-horrors|粉惧妖]]
+- [[factions/混沌恶魔/units/beasts-of-nurgle|纳垢兽]]
+- [[factions/混沌恶魔/units/nurglings|纳垢灵]]
+- [[factions/混沌恶魔/units/tranceweaver|织幻者]]
 - [[factions/混沌恶魔/units/sorcerer-in-terminator-armour|终结者巫师]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
 - [[factions/混沌恶魔/units/chaos-lord-in-terminator-armour|终结者领主]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
-- [[factions/混沌恶魔/units/the-masque-of-slaanesh|色孽假面]] — 
-- [[factions/混沌恶魔/units/the-blue-scribes|蓝书吏]] — 
-- [[factions/混沌恶魔/units/blue-horrors|蓝惧妖]] — 
-- [[factions/混沌恶魔/units/flesh-hounds|血猎犬]] — 
-- [[factions/混沌恶魔/units/epidemius|计患官艾皮德缪斯]] — 
+- [[factions/混沌恶魔/units/the-masque-of-slaanesh|色孽假面]]
+- [[factions/混沌恶魔/units/the-blue-scribes|蓝书吏]]
+- [[factions/混沌恶魔/units/blue-horrors|蓝惧妖]]
+- [[factions/混沌恶魔/units/flesh-hounds|血猎犬]]
+- [[factions/混沌恶魔/units/epidemius|计患官艾皮德缪斯]]
 - [[factions/混沌恶魔/units/accursed-cultists|诅咒教徒]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
 - [[factions/混沌恶魔/units/chaos-lord-with-jump-pack|跳跃背包混沌领主]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
 - [[factions/混沌恶魔/units/cultist-mob|邪教徒]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
 - [[factions/混沌恶魔/units/cultist-firebrand|邪教徒纵火者]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
 - [[factions/混沌恶魔/units/master-of-possession|附魔大师]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
 - [[factions/混沌恶魔/units/possessed|附魔战士]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
-- [[factions/混沌恶魔/units/skullmaster|颅骨主宰]] — 
-- [[factions/混沌恶魔/units/skull-cannon|颅骨大炮]] — 
-- [[factions/混沌恶魔/units/skull-altar|颅骨祭坛]] — 
-- [[factions/混沌恶魔/units/daemonettes|魅魔]] — 
-- [[factions/混沌恶魔/units/bloodmaster|鲜血之主]] — 
+- [[factions/混沌恶魔/units/skullmaster|颅骨主宰]]
+- [[factions/混沌恶魔/units/skull-cannon|颅骨大炮]]
+- [[factions/混沌恶魔/units/skull-altar|颅骨祭坛]]
+- [[factions/混沌恶魔/units/daemonettes|魅魔]]
+- [[factions/混沌恶魔/units/bloodmaster|鲜血之主]]
 - [[factions/混沌恶魔/units/dark-apostle|黑暗使徒]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
 - [[factions/混沌恶魔/units/dark-commune|黑暗巫会]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
 

@@ -14,7 +14,9 @@ version:
   points: MFM 2026-09-14T05:51:23.572407+00:00
   source: official-db
 sources:
-- book: 官方结构库 db/wh40k.sqlite（Wahapedia 11版镜像 + MFM 官方点数）
+- book: 'Faction Pack: Chaos Space Marines'
+  pages:
+  - 1
 updated: '2026-09-14'
 ---
 
@@ -43,10 +45,10 @@ updated: '2026-09-14'
 | 还原者阵列 | 近战 | 6 | 3+ | 4 | -2 | 1 | — |
 
 ## 技能
-- **阵营技能：黑暗契约**
-- **精选样本**：当该单位的群尸之主加里昂位于战场上时，在己方指挥阶段，从以下效果中选择一项：您可以将 1 个被摧毁的模型（角色模型除外）返还至该单位，或，如果有一个或更多己方阿斯塔特叛军步兵单位低于起始兵力，且位于该单位 3" 范围内，您获得 1 CP。
-- **舰队指令**：在双方玩家都部署完军队后，如果该单位位于战场上（或其搭乘的任何载具位于战场上），选择至多三个己方阿斯塔特叛军单位，并重新部署他们。当如此做时，您可以将它们置入战略预备队中，无论战略预备队中已经有多少个单位。
-- **劫掠**：每场战斗限一次，在该单位结束一次常规移动后，您可以选择一个对该单位可见，且位于该单位 12" 范围内的敌方单位，并掷一枚 D6：如结果为 2+，那个敌方单位受到 D3+1 处致命伤。
+- **Choice Samples**：While this unit’s Garreon the Corpsemaster is on the battlefield, in your Command phase, select one of the following: you can return 1 destroyed model (excluding <span class="kwb">CHARACTER</span> models) to this unit, or, if one or more Heretic Astartes Infantry units from your army are below Starting Strength and within 3" of this unit, you gain 1CP.
+- **Fleet Command**：After both players have deployed their armies, if this unit is on the battlefield (or any Transport it is embarked within is on the battlefield) select up to three <span class="kwb">HERETIC</span> <span class="kwb">ASTARTES</span> units from your army and redeploy them. When doing so, you can set those units up in Strategic Reserves, regardless of how many units are already in Strategic Reserves.
+- **Plunder**：Once per battle, after this unit ends a Normal move, you can select one visible enemy unit within 12" of it and roll one D6: on a 2+, that enemy unit suffers D3+1 mortal wounds.
+- **Support**
 
 ## 单位构成
 - **5个模型** — 145 分

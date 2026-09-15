@@ -4,6 +4,7 @@ name_en: Symphonic Payload Upgrade
 faction: 战斗修女
 type: enhancement
 detachment: Chorus of Condemnation
+cost: 10
 tags:
 - enhancement
 - enhancement/战斗修女
@@ -13,11 +14,13 @@ sources:
 updated: '2026-07-26'
 ---
 
-分数未知、[[factions/战斗修女/detachments/chorus-of-condemnation.md|定罪合唱]] 分队。
+10 分、[[factions/战斗修女/detachments/chorus-of-condemnation.md|定罪合唱]] 分队。
 
 ## 效果
 
 This unit can re-roll rolls to determine the A of a weapon.
+
+**分数**：10 分
 
 ## 携带限制
 

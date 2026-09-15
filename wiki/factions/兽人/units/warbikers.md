@@ -51,5 +51,5 @@ updated: '2026-09-14'
 - **6个模型** — 140 分
 
 ## 关键词
-- **阵营关键词**：兽人
-- **普通关键词**：骑乘，手雷，飚速怪咖，摩托小子
+- **阵营关键词**：Orks
+- **普通关键词**：Warbikers，Speed Freeks，[[core-rules/grenades.md|Grenades]]，[[core-rules/mounted.md|Mounted]]

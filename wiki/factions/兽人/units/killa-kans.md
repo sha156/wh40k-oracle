@@ -49,5 +49,5 @@ updated: '2026-09-14'
 - **6个模型** — 260 分
 
 ## 关键词
-- **阵营关键词**：兽人
-- **普通关键词**：[[core-rules/vehicle.md|载具]]，机甲，屁精，杀戮罐
+- **阵营关键词**：Orks
+- **普通关键词**：Grots，[[core-rules/walker.md|Walker]]，Killa Kans，Vehicle

@@ -14,7 +14,12 @@ version:
   points: MFM 2026-09-14T05:51:23.572407+00:00
   source: official-db
 sources:
-- book: 官方结构库 db/wh40k.sqlite（Wahapedia 11版镜像 + MFM 官方点数）
+- book: 'Faction Pack: Chaos Daemons'
+  pages:
+  - 86
+- book: 'Faction Pack: Chaos Daemons'
+  pages:
+  - 87
 updated: '2026-09-14'
 ---
 
@@ -33,4 +38,4 @@ updated: '2026-09-14'
 
 ## 关键词
 - **阵营关键词**：Legiones Daemonica
-- **普通关键词**：Daemon，[[core-rules/fortification.md|Fortification]]，[[factions/混沌恶魔/detachments/shadow-legion.md|Shadow Legion]]，Chaos，Feculent Gnarlmaw，Nurgle
+- **普通关键词**：Daemon，[[core-rules/fortification.md|Fortification]]，[[factions/混沌恶魔/detachments/shadow-legion.md|Shadow Legion]]，Chaos，Feculent Gnarlmaw，Nurgle，FRAME

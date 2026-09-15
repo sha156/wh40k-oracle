@@ -11,7 +11,12 @@ version:
   points: historical / unmatched
   source: official-db
 sources:
-- book: 官方结构库 db/wh40k.sqlite（Wahapedia 11版镜像 + MFM 官方点数）
+- book: 'Faction Pack: Astra Militarum'
+  pages:
+  - 48
+- book: 'Faction Pack: Astra Militarum'
+  pages:
+  - 49
 updated: '2026-09-14'
 ---
 
@@ -48,4 +53,4 @@ updated: '2026-09-14'
 
 ## 关键词
 - **阵营关键词**：Astra Militarum
-- **普通关键词**：Gorgon Heavy Transport，[[core-rules/transport.md|Transport]]，[[core-rules/smoke.md|Smoke]]，Imperium，[[core-rules/titanic.md|Titanic]]，Vehicle
+- **普通关键词**：Gorgon Heavy Transport，[[core-rules/transport.md|Transport]]，[[core-rules/smoke.md|Smoke]]，Imperium，[[core-rules/titanic.md|Titanic]]，Vehicle，FRAME

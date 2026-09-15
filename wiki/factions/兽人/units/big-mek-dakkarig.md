@@ -44,5 +44,5 @@ updated: '2026-09-14'
 - **1个模型** — 135 分
 
 ## 关键词
-- **阵营关键词**：兽人
-- **普通关键词**：[[core-rules/vehicle.md|载具]]，机甲，[[factions/兽人/units/big-mek.md|大技霸]]，突突大机甲
+- **阵营关键词**：ORKS
+- **普通关键词**：VEHICLE，[[core-rules/walker.md|WALKER]]，BIG MEK，DAKKARIG

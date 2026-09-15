@@ -42,5 +42,5 @@ updated: '2026-09-14'
 - **1个模型** — 50 分
 
 ## 关键词
-- **阵营关键词**：兽人
-- **普通关键词**：[[core-rules/infantry.md|步兵]]，[[core-rules/character.md|人物]]，传奇英雄，祖哥高德
+- **阵营关键词**：Orks
+- **普通关键词**：[[core-rules/character.md|Character]]，[[core-rules/epic-hero.md|Epic Hero]]，Zodgrod Wortsnagga，[[core-rules/infantry.md|Infantry]]

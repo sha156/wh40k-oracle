@@ -47,5 +47,5 @@ updated: '2026-09-14'
 - **1个模型** — 85 分
 
 ## 关键词
-- **阵营关键词**：兽人
-- **普通关键词**：[[core-rules/infantry.md|步兵]]，[[core-rules/character.md|人物]]，兽霸，[[factions/兽人/units/warboss.md|战争头目]]，兽霸头目
+- **阵营关键词**：Orks
+- **普通关键词**：Beastboss，[[core-rules/infantry.md|Infantry]]，[[core-rules/character.md|Character]]，Beast Snagga，[[factions/兽人/units/warboss.md|Warboss]]

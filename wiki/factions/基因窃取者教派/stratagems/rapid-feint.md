@@ -24,7 +24,7 @@ Your opponent’s Movement phase, just after an enemy unit ends a Normal, Advanc
 
 ## 使用对象
 
-One [[factions/基因窃取者教派/units/achilles-ridgerunners.md|Achilles Ridgerunners]] or [[factions/基因窃取者教派/units/atalan-jackals.md|Atalan Jackals]] unit from your army that is within 9" of that enemy unit.
+One [[factions/基因窃取者教派/units/achilles-ridgerunners.md|Achilles Ridgerunners]] or [[factions/基因窃取者教派/units/atalan-jackals.md|Atalan Jackals]] unit from your army that is within 8" of that enemy unit.
 
 ## 效果
 

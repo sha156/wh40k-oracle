@@ -48,5 +48,5 @@ updated: '2026-09-14'
 - **6个模型** — 160 分
 
 ## 关键词
-- **阵营关键词**：兽人
-- **普通关键词**：[[core-rules/vehicle.md|载具]]，[[core-rules/fly.md|飞行]]，[[core-rules/grenades.md|手雷]]，飚速怪咖，死死直升机
+- **阵营关键词**：Orks
+- **普通关键词**：Vehicle，Fly，[[core-rules/grenades.md|Grenades]]，Speed Freeks，Deffkoptas

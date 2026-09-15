@@ -52,5 +52,5 @@ updated: '2026-09-14'
 - **1个模型** — 700 分
 
 ## 关键词
-- **阵营关键词**：兽人
-- **普通关键词**：[[core-rules/vehicle.md|载具]]，巨型，机甲，[[core-rules/towering.md|高耸]]，[[core-rules/transport.md|运输工具]]，古巨基
+- **阵营关键词**：Orks
+- **普通关键词**：[[core-rules/towering.md|Towering]]，[[core-rules/transport.md|Transport]]，[[core-rules/walker.md|Walker]]，Vehicle，[[core-rules/titanic.md|Titanic]]，Stompa

@@ -26,38 +26,38 @@
 - [[factions/帝国特勤/units/ur-025|UR-025]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
 - [[factions/帝国特勤/units/veteran-bike-squad|Veteran Bike Squad]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
 - [[factions/帝国特勤/units/indomitor-kill-team|不屈杀戮小队]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
-- [[factions/帝国特勤/units/culexus-assassin|丘里克斯刺客]] — 
-- [[factions/帝国特勤/units/subductor-squad|冲覆者小队]] — 
-- [[factions/帝国特勤/units/sanctifiers|净化者杀戮小队]] — 
-- [[factions/帝国特勤/units/callidus-assassin|卡里杜斯刺客]] — 
-- [[factions/帝国特勤/units/aquila-kill-team|天鹰杀戮小队]] — 
-- [[factions/帝国特勤/units/watch-master|守望堡主]] — 
-- [[factions/帝国特勤/units/watch-captain-artemis|守望连长阿耳忒弥斯]] — 
-- [[factions/帝国特勤/units/inquisitor|审判官]] — 
-- [[factions/帝国特勤/units/inquisitor-coteaz|审判官克提兹]] — 
-- [[factions/帝国特勤/units/inquisitor-kroyle|审判官克罗伊尔]] — 
-- [[factions/帝国特勤/units/inquisitor-greyfax|审判官格雷法克斯]] — 
-- [[factions/帝国特勤/units/inquisitorial-agents|审判官特勤]] — 
-- [[factions/帝国特勤/units/inquisitorial-chimera|审判庭奇美拉装甲车]] — 
-- [[factions/帝国特勤/units/inquisitor-draxus|审判领主奇莉亚·德拉克瑟斯]] — 
-- [[factions/帝国特勤/units/navigator|导航员]] — 
-- [[factions/帝国特勤/units/imperial-navy-breachers|帝国海军跳帮者]] — 
-- [[factions/帝国特勤/units/imperial-rhino|帝国犀牛装甲车]] — 
-- [[factions/帝国特勤/units/exaction-squad|强征小队]] — 
-- [[factions/帝国特勤/units/sisters-of-battle-squad|战斗修女小队]] — 
-- [[factions/帝国特勤/units/sisters-of-battle-immolator|战斗修女献祭者装甲车]] — 
-- [[factions/帝国特勤/units/ministorum-priest|教廷牧师]] — 
-- [[factions/帝国特勤/units/vindicare-assassin|文迪卡刺客]] — 
+- [[factions/帝国特勤/units/culexus-assassin|丘里克斯刺客]]
+- [[factions/帝国特勤/units/subductor-squad|冲覆者小队]]
+- [[factions/帝国特勤/units/sanctifiers|净化者杀戮小队]]
+- [[factions/帝国特勤/units/callidus-assassin|卡里杜斯刺客]]
+- [[factions/帝国特勤/units/aquila-kill-team|天鹰杀戮小队]]
+- [[factions/帝国特勤/units/watch-master|守望堡主]]
+- [[factions/帝国特勤/units/watch-captain-artemis|守望连长阿耳忒弥斯]]
+- [[factions/帝国特勤/units/inquisitor|审判官]]
+- [[factions/帝国特勤/units/inquisitor-coteaz|审判官克提兹]]
+- [[factions/帝国特勤/units/inquisitor-kroyle|审判官克罗伊尔]]
+- [[factions/帝国特勤/units/inquisitor-greyfax|审判官格雷法克斯]]
+- [[factions/帝国特勤/units/inquisitorial-agents|审判官特勤]]
+- [[factions/帝国特勤/units/inquisitorial-chimera|审判庭奇美拉装甲车]]
+- [[factions/帝国特勤/units/inquisitor-draxus|审判领主奇莉亚·德拉克瑟斯]]
+- [[factions/帝国特勤/units/navigator|导航员]]
+- [[factions/帝国特勤/units/imperial-navy-breachers|帝国海军跳帮者]]
+- [[factions/帝国特勤/units/imperial-rhino|帝国犀牛装甲车]]
+- [[factions/帝国特勤/units/exaction-squad|强征小队]]
+- [[factions/帝国特勤/units/sisters-of-battle-squad|战斗修女小队]]
+- [[factions/帝国特勤/units/sisters-of-battle-immolator|战斗修女献祭者装甲车]]
+- [[factions/帝国特勤/units/ministorum-priest|教廷牧师]]
+- [[factions/帝国特勤/units/vindicare-assassin|文迪卡刺客]]
 - [[factions/帝国特勤/units/spectrus-kill-team|无形杀戮小队]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
-- [[factions/帝国特勤/units/voidsmen-at-arms|武装船兵]] — 
-- [[factions/帝国特勤/units/deathwatch-kill-team|死亡守望杀戮小队]] — 
+- [[factions/帝国特勤/units/voidsmen-at-arms|武装船兵]]
+- [[factions/帝国特勤/units/deathwatch-kill-team|死亡守望杀戮小队]]
 - [[factions/帝国特勤/units/deathwatch-terminator-squad|死亡守望终结者小队]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
-- [[factions/帝国特勤/units/grey-knights-terminator-squad|灰骑士终结者小队]] — 
+- [[factions/帝国特勤/units/grey-knights-terminator-squad|灰骑士终结者小队]]
 - [[factions/帝国特勤/units/fortis-kill-team|至强杀戮小队]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
-- [[factions/帝国特勤/units/eversor-assassin|艾弗森刺客]] — 
-- [[factions/帝国特勤/units/rogue-trader-entourage|行商团队]] — 
-- [[factions/帝国特勤/units/vigilant-squad|警戒者小队]] — 
-- [[factions/帝国特勤/units/corvus-blackstar|黑星渡鸦]] — 
+- [[factions/帝国特勤/units/eversor-assassin|艾弗森刺客]]
+- [[factions/帝国特勤/units/rogue-trader-entourage|行商团队]]
+- [[factions/帝国特勤/units/vigilant-squad|警戒者小队]]
+- [[factions/帝国特勤/units/corvus-blackstar|黑星渡鸦]]
 
 ## 策略技能
 
@@ -114,7 +114,7 @@
 - [[factions/帝国特勤/enhancements/grimoire-of-true-names-aura|Grimoire of True Names (Aura)]] — 10 分、Ordo Malleus Daemon Hunters 分队。
 - [[factions/帝国特勤/enhancements/heirloom-blade|Heirloom Blade]] — 0 分、Voidship’s Company 分队。
 - [[factions/帝国特勤/enhancements/ignis-judicium|Ignis Judicium]] — 10 分、Ordo Hereticus Purgation Force 分队。
-- [[factions/帝国特勤/enhancements/intraneural-biotech|Intraneural Biotech]] — 35 分、隐藏利刃歼灭部队 分队。
+- [[factions/帝国特勤/enhancements/intraneural-biotech|Intraneural Biotech]] — 15 分、隐藏利刃歼灭部队 分队。
 - [[factions/帝国特勤/enhancements/lathimons-flock|Lathimon’s Flock]] — 0 分、Voidship’s Company 分队。
 - [[factions/帝国特勤/enhancements/liber-heresius|Liber Heresius]] — 10 分、Ordo Hereticus Purgation Force 分队。
 - [[factions/帝国特勤/enhancements/manhunters-helm|Manhunter’s Helm]] — 0 分、Interdiction Team 分队。

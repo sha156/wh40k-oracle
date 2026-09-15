@@ -47,5 +47,5 @@ updated: '2026-09-14'
 - **20个模型** — 170 分
 
 ## 关键词
-- **阵营关键词**：兽人
-- **普通关键词**：步兵，战线，兽群，兽霸，兽霸小子
+- **阵营关键词**：Orks
+- **普通关键词**：Mob，[[core-rules/infantry.md|Infantry]]，Beast Snagga [[factions/兽人/units/boyz.md|Boyz]]，[[core-rules/battleline.md|Battleline]]，Beast Snagga

@@ -46,5 +46,5 @@ updated: '2026-09-14'
 - **1个模型** — 165 分
 
 ## 关键词
-- **阵营关键词**：兽人
-- **普通关键词**：[[core-rules/monster.md|巨兽]]，[[core-rules/transport.md|运输工具]]，兽霸，狩猎战车
+- **阵营关键词**：Orks
+- **普通关键词**：[[core-rules/transport.md|Transport]]，Beast Snagga，Monster，Hunta Rig

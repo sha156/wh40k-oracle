@@ -79,64 +79,64 @@
 - [[factions/混沌星际战士/units/typhon|Typhon]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
 - [[factions/混沌星际战士/units/whirlwind-scorpius|Whirlwind Scorpius]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
 - [[factions/混沌星际战士/units/xiphon-interceptor|Xiphon Interceptor]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
-- [[factions/混沌星际战士/units/defiler|亵渎者]] — 
-- [[factions/混沌星际战士/units/huron-blackheart|休伦·黑心]] — 
-- [[factions/混沌星际战士/units/kravek-morne|克拉维克·莫恩]] — 
-- [[factions/混沌星际战士/units/legionaries|军团战士]] — 
-- [[factions/混沌星际战士/units/venomcrawler|剧毒爬行者]] — 
-- [[factions/混沌星际战士/units/traitor-enforcer|叛军执法者]] — 
-- [[factions/混沌星际战士/units/traitor-guardsmen-squad|叛变卫队]] — 
-- [[factions/混沌星际战士/units/helbrute|地狱兽]] — 
-- [[factions/混沌星际战士/units/heldrake|地狱飞龙]] — 
-- [[factions/混沌星际战士/units/nemesis-claw|复仇之爪]] — 
-- [[factions/混沌星际战士/units/abaddon-the-despoiler|大掠夺者阿巴顿]] — 
-- [[factions/混沌星际战士/units/masters-of-the-maelstrom|大漩涡之主]] — 
-- [[factions/混沌星际战士/units/haarken-worldclaimer|夺星者哈肯]] — 
-- [[factions/混沌星际战士/units/sorcerer|巫师]] — 
+- [[factions/混沌星际战士/units/defiler|亵渎者]]
+- [[factions/混沌星际战士/units/huron-blackheart|休伦·黑心]]
+- [[factions/混沌星际战士/units/kravek-morne|克拉维克·莫恩]]
+- [[factions/混沌星际战士/units/legionaries|军团战士]]
+- [[factions/混沌星际战士/units/venomcrawler|剧毒爬行者]]
+- [[factions/混沌星际战士/units/traitor-enforcer|叛军执法者]]
+- [[factions/混沌星际战士/units/traitor-guardsmen-squad|叛变卫队]]
+- [[factions/混沌星际战士/units/helbrute|地狱兽]]
+- [[factions/混沌星际战士/units/heldrake|地狱飞龙]]
+- [[factions/混沌星际战士/units/nemesis-claw|复仇之爪]]
+- [[factions/混沌星际战士/units/abaddon-the-despoiler|大掠夺者阿巴顿]]
+- [[factions/混沌星际战士/units/masters-of-the-maelstrom|大漩涡之主]]
+- [[factions/混沌星际战士/units/haarken-worldclaimer|夺星者哈肯]]
+- [[factions/混沌星际战士/units/sorcerer|巫师]]
 - [[factions/混沌星际战士/units/khorne-berzerkers|恐虐狂战士]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
-- [[factions/混沌星际战士/units/khorne-lord-of-skulls|恐虐颅骨之主]] — 
-- [[factions/混沌星际战士/units/fellgor-beastmen|恶角野兽人]] — 
-- [[factions/混沌星际战士/units/master-of-executions|枭首魔将]] — 
-- [[factions/混沌星际战士/units/warp-talons|次元爪]] — 
-- [[factions/混沌星际战士/units/warpsmith|次元铁匠]] — 
-- [[factions/混沌星际战士/units/chaos-predator-annihilator|歼灭者型猎食者坦克]] — 
-- [[factions/混沌星际战士/units/mutilators|残杀者]] — 
-- [[factions/混沌星际战士/units/fabius-bile|法比乌斯拜尔]] — 
-- [[factions/混沌星际战士/units/obliterators|泯灭者]] — 
-- [[factions/混沌星际战士/units/havocs|浩劫]] — 
-- [[factions/混沌星际战士/units/chaos-land-raider|混沌兰德掠袭者]] — 
-- [[factions/混沌星际战士/units/chaos-spawn|混沌卵]] — 
-- [[factions/混沌星际战士/units/chaos-bikers|混沌摩托队]] — 
-- [[factions/混沌星际战士/units/chaos-terminator-squad|混沌终结者]] — 
-- [[factions/混沌星际战士/units/chaos-vindicator|混沌维护者突击炮]] — 
-- [[factions/混沌星际战士/units/chaos-lord|混沌领主]] — 
-- [[factions/混沌星际战士/units/chaos-rhino|犀牛装甲车]] — 
-- [[factions/混沌星际战士/units/raptors|猛禽]] — 
-- [[factions/混沌星际战士/units/vashtorr-the-arkifane|瓦什托尔]] — 
+- [[factions/混沌星际战士/units/khorne-lord-of-skulls|恐虐颅骨之主]]
+- [[factions/混沌星际战士/units/fellgor-beastmen|恶角野兽人]]
+- [[factions/混沌星际战士/units/master-of-executions|枭首魔将]]
+- [[factions/混沌星际战士/units/warp-talons|次元爪]]
+- [[factions/混沌星际战士/units/warpsmith|次元铁匠]]
+- [[factions/混沌星际战士/units/chaos-predator-annihilator|歼灭者型猎食者坦克]]
+- [[factions/混沌星际战士/units/mutilators|残杀者]]
+- [[factions/混沌星际战士/units/fabius-bile|法比乌斯拜尔]]
+- [[factions/混沌星际战士/units/obliterators|泯灭者]]
+- [[factions/混沌星际战士/units/havocs|浩劫]]
+- [[factions/混沌星际战士/units/chaos-land-raider|混沌兰德掠袭者]]
+- [[factions/混沌星际战士/units/chaos-spawn|混沌卵]]
+- [[factions/混沌星际战士/units/chaos-bikers|混沌摩托队]]
+- [[factions/混沌星际战士/units/chaos-terminator-squad|混沌终结者]]
+- [[factions/混沌星际战士/units/chaos-vindicator|混沌维护者突击炮]]
+- [[factions/混沌星际战士/units/chaos-lord|混沌领主]]
+- [[factions/混沌星际战士/units/chaos-rhino|犀牛装甲车]]
+- [[factions/混沌星际战士/units/raptors|猛禽]]
+- [[factions/混沌星际战士/units/vashtorr-the-arkifane|瓦什托尔]]
 - [[factions/混沌星际战士/units/plague-marines|瘟疫战士]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
-- [[factions/混沌星际战士/units/chaos-predator-destructor|破坏者型猎食者坦克]] — 
-- [[factions/混沌星际战士/units/chosen|神选战士]] — 
+- [[factions/混沌星际战士/units/chaos-predator-destructor|破坏者型猎食者坦克]]
+- [[factions/混沌星际战士/units/chosen|神选战士]]
 - [[factions/混沌星际战士/units/rubric-marines|红字战士]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
-- [[factions/混沌星际战士/units/red-corsairs-raiders|红海盗劫掠者]] — 
-- [[factions/混沌星际战士/units/red-corsairs-reave-captain|红海盗掠夺连长]] — 
-- [[factions/混沌星际战士/units/sorcerer-in-terminator-armour|终结者巫师]] — 
-- [[factions/混沌星际战士/units/chaos-lord-in-terminator-armour|终结者领主]] — 
-- [[factions/混沌星际战士/units/accursed-cultists|诅咒教徒]] — 
-- [[factions/混沌星际战士/units/cypher|赛佛]] — 
-- [[factions/混沌星际战士/units/chaos-lord-with-jump-pack|跳跃背包混沌领主]] — 
-- [[factions/混沌星际战士/units/cultist-mob|邪教徒]] — 
-- [[factions/混沌星际战士/units/cultist-firebrand|邪教徒纵火者]] — 
-- [[factions/混沌星际战士/units/maulerfiend|重锤魔]] — 
-- [[factions/混沌星际战士/units/forgefiend|铸造魔]] — 
-- [[factions/混沌星际战士/units/heretic-astartes-daemon-prince-with-wings|阿斯塔特叛军带翼恶魔亲王]] — 
-- [[factions/混沌星际战士/units/heretic-astartes-daemon-prince|阿斯塔特叛军恶魔亲王]] — 
-- [[factions/混沌星际战士/units/master-of-possession|附魔大师]] — 
-- [[factions/混沌星际战士/units/possessed|附魔战士]] — 
+- [[factions/混沌星际战士/units/red-corsairs-raiders|红海盗劫掠者]]
+- [[factions/混沌星际战士/units/red-corsairs-reave-captain|红海盗掠夺连长]]
+- [[factions/混沌星际战士/units/sorcerer-in-terminator-armour|终结者巫师]]
+- [[factions/混沌星际战士/units/chaos-lord-in-terminator-armour|终结者领主]]
+- [[factions/混沌星际战士/units/accursed-cultists|诅咒教徒]]
+- [[factions/混沌星际战士/units/cypher|赛佛]]
+- [[factions/混沌星际战士/units/chaos-lord-with-jump-pack|跳跃背包混沌领主]]
+- [[factions/混沌星际战士/units/cultist-mob|邪教徒]]
+- [[factions/混沌星际战士/units/cultist-firebrand|邪教徒纵火者]]
+- [[factions/混沌星际战士/units/maulerfiend|重锤魔]]
+- [[factions/混沌星际战士/units/forgefiend|铸造魔]]
+- [[factions/混沌星际战士/units/heretic-astartes-daemon-prince-with-wings|阿斯塔特叛军带翼恶魔亲王]]
+- [[factions/混沌星际战士/units/heretic-astartes-daemon-prince|阿斯塔特叛军恶魔亲王]]
+- [[factions/混沌星际战士/units/master-of-possession|附魔大师]]
+- [[factions/混沌星际战士/units/possessed|附魔战士]]
 - [[factions/混沌星际战士/units/noise-marines|音爆战士]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
-- [[factions/混沌星际战士/units/lord-discordant-on-helstalker|魔机统领]] — 
-- [[factions/混沌星际战士/units/dark-apostle|黑暗使徒]] — 
-- [[factions/混沌星际战士/units/dark-commune|黑暗巫会]] — 
-- [[factions/混沌星际战士/units/noctilith-crown|黑石魔冠]] — 
+- [[factions/混沌星际战士/units/lord-discordant-on-helstalker|魔机统领]]
+- [[factions/混沌星际战士/units/dark-apostle|黑暗使徒]]
+- [[factions/混沌星际战士/units/dark-commune|黑暗巫会]]
+- [[factions/混沌星际战士/units/noctilith-crown|黑石魔冠]]
 
 ## 策略技能
 

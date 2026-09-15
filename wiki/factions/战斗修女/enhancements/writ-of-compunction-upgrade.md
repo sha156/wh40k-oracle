@@ -4,6 +4,7 @@ name_en: Writ of Compunction Upgrade
 faction: 战斗修女
 type: enhancement
 detachment: Sacred Champions
+cost: 20
 tags:
 - enhancement
 - enhancement/战斗修女
@@ -13,11 +14,13 @@ sources:
 updated: '2026-07-26'
 ---
 
-分数未知、[[factions/战斗修女/detachments/sacred-champions.md|神圣冠军]] 分队。
+20 分、[[factions/战斗修女/detachments/sacred-champions.md|神圣冠军]] 分队。
 
 ## 效果
 
 This unit has +1 OC.
+
+**分数**：20 分
 
 ## 携带限制
 

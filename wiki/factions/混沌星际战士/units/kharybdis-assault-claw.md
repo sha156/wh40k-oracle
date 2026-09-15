@@ -11,7 +11,12 @@ version:
   points: historical / unmatched
   source: official-db
 sources:
-- book: 官方结构库 db/wh40k.sqlite（Wahapedia 11版镜像 + MFM 官方点数）
+- book: 'Faction Pack: Chaos Space Marines'
+  pages:
+  - 98
+- book: 'Faction Pack: Chaos Space Marines'
+  pages:
+  - 99
 updated: '2026-09-14'
 ---
 
@@ -41,4 +46,4 @@ updated: '2026-09-14'
 
 ## 关键词
 - **阵营关键词**：Heretic Astartes
-- **普通关键词**：Kharybdis Assault Claw，Vehicle，[[core-rules/titanic.md|Titanic]]，Chaos，[[core-rules/transport.md|Transport]]，Fly
+- **普通关键词**：Kharybdis Assault Claw，Vehicle，[[core-rules/titanic.md|Titanic]]，Chaos，[[core-rules/transport.md|Transport]]，Fly，FRAME

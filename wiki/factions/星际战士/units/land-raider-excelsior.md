@@ -11,7 +11,12 @@ version:
   points: historical / unmatched
   source: official-db
 sources:
-- book: 官方结构库 db/wh40k.sqlite（Wahapedia 11版镜像 + MFM 官方点数）
+- book: 'Faction Pack: Space Marines'
+  pages:
+  - 87
+- book: 'Faction Pack: Space Marines'
+  pages:
+  - 88
 updated: '2026-09-14'
 ---
 
@@ -49,4 +54,4 @@ updated: '2026-09-14'
 
 ## 关键词
 - **阵营关键词**：Adeptus Astartes
-- **普通关键词**：[[core-rules/transport.md|Transport]]，Land Raider Excelsior，Vehicle，[[core-rules/smoke.md|Smoke]]，Imperium
+- **普通关键词**：[[core-rules/transport.md|Transport]]，Land Raider Excelsior，Vehicle，[[core-rules/smoke.md|Smoke]]，Imperium，FRAME

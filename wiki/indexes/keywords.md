@@ -6,43 +6,47 @@
 > 数量口径：**现役**＝匹配到完整官方 MFM 快照（与图鉴列表一致；旧库沿用兼容口径）；括号内为含传承/福基世界条目的全库数。
 > 「引擎」列说的是 `engines/simulator` 有没有把它算进伤害期望：**数值建模**＝真的改数值；**仅标注**＝识别到但不改数值（会在模拟报告里披露）；**未纳入**＝引擎不认识它。
 
-## 通用武器词条（32 条）
+## 通用武器词条（36 条）
 
 11 版《通用技能速查表》在册，任何单位都可能带。
 
 | 词条 | 英文 | 节号 | 档位 | 现役武器 | 现役单位 | 引擎 |
 |---|---|---|---|---|---|---|
-| [[core-rules/blast.md\|爆炸]] | BLAST | 24.05 | — | 275（356） | 303（561） | 数值建模 |
+| [[core-rules/blast.md\|爆炸]] | BLAST | 24.05 | 1 | 277（358） | 305（563） | 数值建模 |
 | [[core-rules/devastating-wounds.md\|毁灭伤害]] | DEVASTATING WOUNDS | 24.10 | — | 218（267） | 316（510） | 数值建模 |
-| [[core-rules/twin-linked.md\|双联]] | TWIN-LINKED | 24.38 | — | 191（250） | 238（501） | 数值建模 |
-| [[core-rules/sustained-hits.md\|连击]] | SUSTAINED HITS | — | 1/2/3/D3 | 174（209） | 290（564） | 数值建模 |
+| [[core-rules/twin-linked.md\|双联]] | TWIN-LINKED | 24.38 | — | 193（252） | 240（503） | 数值建模 |
+| [[core-rules/sustained-hits.md\|连击]] | SUSTAINED HITS | — | 1/2/3/D3 | 174（209） | 291（565） | 数值建模 |
 | [[core-rules/ignores-cover.md\|无视掩体]] | IGNORES COVER | 24.18 | — | 169（191） | 275（505） | 数值建模 |
-| [[core-rules/assault.md\|突击]] | ASSAULT | 24.04 | — | 154（169） | 161（214） | 仅标注 |
-| [[core-rules/rapid-fire.md\|速射]] | RAPID FIRE | 24.30 | 1/10/2/3/4/5/6/9/D3/D6/D6+3 | 144（159） | 298（588） | 数值建模 |
-| [[core-rules/torrent.md\|洪流]] | TORRENT | 24.37 | — | 140（164） | 270（506） | 数值建模 |
-| [[core-rules/psychic-attacks.md\|灵能]] | PSYCHIC | 24.29 | — | 138（166） | 99（143） | 数值建模 |
-| [[core-rules/lethal-hits.md\|致命一击]] | LETHAL HITS | 24.23 | — | 129（150） | 115（163） | 数值建模 |
-| [[core-rules/heavy.md\|重型]] | HEAVY | 24.16 | — | 128（158） | 108（217） | 数值建模 |
-| [[core-rules/precision.md\|精准]] | PRECISION | 24.28 | — | 119（135） | 114（157） | 仅标注 |
+| [[core-rules/assault.md\|突击]] | ASSAULT | 24.04 | — | 155（170） | 162（215） | 仅标注 |
+| [[core-rules/rapid-fire.md\|速射]] | RAPID FIRE | 24.30 | 1/10/2/3/4/5/6/9/D3/D6/D6+3 | 146（161） | 302（592） | 数值建模 |
+| [[core-rules/torrent.md\|洪流]] | TORRENT | 24.37 | — | 142（166） | 272（508） | 数值建模 |
+| [[core-rules/psychic-attacks.md\|灵能]] | PSYCHIC | 24.29 | — | 140（168） | 100（144） | 数值建模 |
+| [[core-rules/lethal-hits.md\|致命一击]] | LETHAL HITS | 24.23 | — | 130（151） | 116（164） | 数值建模 |
+| [[core-rules/heavy.md\|重型]] | HEAVY | 24.16 | — | 128（158） | 109（218） | 数值建模 |
+| [[core-rules/precision.md\|精准]] | PRECISION | 24.28 | — | 120（136） | 115（158） | 仅标注 |
 | [[core-rules/anti.md\|针对步兵]] | ANTI-INFANTRY | 24.03 | 2+/3+/4+/5+ | 94（106） | 149（252） | 数值建模 |
-| [[core-rules/extra-attacks.md\|额外攻击]] | EXTRA ATTACKS | 24.11 | — | 82（98） | 96（142） | 仅标注 |
-| [[core-rules/hazardous.md\|危险]] | HAZARDOUS | 24.15 | — | 78（102） | 176（327） | 仅标注 |
+| [[core-rules/extra-attacks.md\|额外攻击]] | EXTRA ATTACKS | 24.11 | — | 84（100） | 101（147） | 仅标注 |
+| [[core-rules/hazardous.md\|危险]] | HAZARDOUS | 24.15 | — | 79（103） | 177（328） | 仅标注 |
 | [[core-rules/anti.md\|针对载具]] | ANTI-VEHICLE | 24.03 | 2+/3+/4+/5+ | 67（78） | 77（141） | 数值建模 |
 | [[core-rules/indirect-fire.md\|曲射]] | INDIRECT FIRE | 24.19 | — | 52（69） | 62（123） | 数值建模 |
 | [[core-rules/melta.md\|热熔]] | MELTA | 24.25 | 1/2/3/4/6 | 49（62） | 156（323） | 数值建模 |
-| [[core-rules/lance.md\|骑枪]] | LANCE | 24.21 | — | 36（41） | 37（49） | 数值建模 |
+| [[core-rules/lance.md\|骑枪]] | LANCE | 24.21 | — | 37（42） | 38（50） | 数值建模 |
 | [[core-rules/anti.md\|针对怪物]] | ANTI-MONSTER | 24.03 | 2+/3+/4+/5+ | 35（38） | 33（39） | 数值建模 |
 | [[core-rules/anti.md\|针对飞行]] | ANTI-FLY | 24.03 | 2+/3+/4+ | 24（49） | 43（102） | 数值建模 |
 | [[core-rules/anti.md\|针对灵能者]] | ANTI-PSYKER | 24.03 | 2+/4+/5+ | 17（19） | 17（19） | 数值建模 |
 | [[core-rules/one-shot.md\|单发]] | ONE SHOT | 24.26 | — | 11（15） | 61（198） | 仅标注 |
 | [[core-rules/anti.md\|针对角色]] | ANTI-CHARACTER | 24.03 | 2+/3+/4+/5+ | 9（9） | 9（9） | 数值建模 |
+| [[core-rules/cleave.md\|劈砍]] | CLEAVE | 24.06 | 1 | 3（3） | 2（2） | 数值建模 |
 | [[core-rules/anti.md\|针对混沌]] | ANTI-CHAOS | 24.03 | 2+ | 2（2） | 2（2） | 数值建模 |
+| [[core-rules/anti.md\|针对非怪兽且非载具]] | ANTI-NON-MONSTER/VEHICLE | 24.03 | 2+/3+ | 2（2） | 1（1） | 数值建模 |
 | [[core-rules/anti.md\|针对泰坦]] | ANTI-TITANIC | 24.03 | 4+ | 2（2） | 3（3） | 数值建模 |
+| [[core-rules/pistol.md\|近距离]] | CLOSE-QUARTERS | 24.07 | — | 2（2） | 2（2） | 仅标注 |
 | [[core-rules/anti.md\|针对恶魔]] | ANTI-DAEMON | 24.03 | 2+/4+ | 1（3） | 1（2） | 数值建模 |
 | [[core-rules/anti.md\|针对史诗英雄]] | ANTI-EPIC HERO | 24.03 | 2+ | 1（1） | 1（1） | 数值建模 |
+| [[core-rules/anti.md\|针对怪兽或载具]] | ANTI-MONSTER/VEHICLE | 24.03 | 3+ | 1（1） | 1（1） | 数值建模 |
 | [[core-rules/anti.md\|针对步行者]] | ANTI-WALKER | 24.03 | 2+ | 1（1） | 1（1） | 数值建模 |
-| [[core-rules/cleave.md\|劈砍]] | CLEAVE | 24.06 | 1 | 1（1） | 1（1） | 数值建模 |
-| [[core-rules/pistol.md\|近距离]] | CLOSE-QUARTERS | 24.07 | — | 1（1） | 1（1） | 仅标注 |
+| [[core-rules/devastating-wounds.md\|毁灭伤害：非怪兽且非载具]] | DEVASTATING WOUNDS: NON-MONSTER/VEHICLE | 24.10 | — | 1（1） | 1（1） | 数值建模 |
+| [[core-rules/lethal-hits.md\|致命一击：非怪兽且非载具]] | LETHAL HITS: NON-MONSTER/VEHICLE | 24.23 | — | 1（1） | 1（1） | 数值建模 |
 | [[core-rules/anti.md\|针对泰伦虫族]] | ANTI-TYRANIDS | 24.03 | 4+ | 0（3） | 0（1） | 数值建模 |
 
 ## 过渡期词条（1 条）
@@ -80,8 +84,10 @@
 | 英文 | GW 官方 | 汉化组速查表 |
 |---|---|---|
 | CLEAVE | 劈砍 | 横扫 |
+| DEVASTATING WOUNDS: NON-MONSTER/VEHICLE | 毁灭伤害：非怪兽且非载具 | 毁灭伤害 |
 | IGNORES COVER | 无视掩体 | 忽视掩体 |
 | LANCE | 骑枪 | 迅猛冲锋 |
+| LETHAL HITS: NON-MONSTER/VEHICLE | 致命一击：非怪兽且非载具 | 致命一击 |
 | ONE SHOT | 单发 | 一次性武器 |
 | TORRENT | 洪流 | 喷射 |
 
@@ -91,10 +97,12 @@
 
 ### 爆炸（BLAST）
 
-共 275 件现役武器（全库 356 件）。
+共 277 件现役武器（全库 358 件）。
 
 - D-轰击炮 —— 幻影泰坦（疑似删除）
+- Kustom Blasta X - Skorcha —— Nazdreg
 - L7导弹发射器（爆破） —— 人马座战车 等 2 个单位
+- Venomcrest Spit —— Stonesinger
 - 三轴离子加农炮—标准 —— 塔'钨钠至高装甲
 - 三轴离子加农炮—过载 —— 塔'钨钠至高装甲
 - 中子榴弹发射器 —— 胡蜂人尖翼小队
@@ -594,8 +602,10 @@
 
 ### 双联（TWIN-LINKED）
 
-共 191 件现役武器（全库 250 件）。
+共 193 件现役武器（全库 252 件）。
 
+- Moonblades —— Clanblade
+- Moonchewa —— Nazdreg
 - 一对动力拳 —— 侵略者小队
 - 一对闪电爪 —— 剑之兄弟小队 等 7 个单位
 - 九头蛇自动炮 —— 九头蛇高射炮
@@ -947,7 +957,7 @@
 - 邪钢共生炮（亚空间弹幕） —— 泯灭者
 - 重型收割者自动炮 —— 亵渎者
 - 重型死光 —— 末日灾镰
-- 重型爆弹枪 —— 不屈型战术机甲 等 43 个单位
+- 重型爆弹枪 —— Eradicator Squad With Heavy Bolters 等 44 个单位
 - 重型爆矢枪 —— 奴工战斗支队 等 2 个单位
 - 铁雨天爪阵列 —— 冲击者突击艇
 - 链锯剑 —— 堡主
@@ -1143,8 +1153,9 @@
 
 ### 突击（ASSAULT）
 
-共 154 件现役武器（全库 169 件）。
+共 155 件现役武器（全库 170 件）。
 
+- Laser Lance —— Dragon Knights
 - 三刃手里剑 —— 狂嚎女妖
 - 三刃镖弓 —— 克鲁特战争塑形者
 - 中子爆破枪 —— 胡蜂人尖翼小队
@@ -1302,8 +1313,10 @@
 
 ### 速射（RAPID FIRE）
 
-共 144 件现役武器（全库 159 件）。
+共 146 件现役武器（全库 161 件）。
 
+- Kustom Blasta X - Shoota —— Nazdreg
+- Solar Carbine —— Clanblade 等 3 个单位
 - XV脉冲手枪 —— 双枪
 - 伐木枪 —— 卡迪亚侦察小队
 - 伺服阵列热射枪 —— 风暴天鹰
@@ -1451,8 +1464,10 @@
 
 ### 洪流（TORRENT）
 
-共 140 件现役武器（全库 164 件）。
+共 142 件现役武器（全库 166 件）。
 
+- Kustom Blasta X - Skorcha —— Nazdreg
+- Venomcrest Spit —— Stonesinger
 - 亚空间漩涡（洪流） —— 变异漩涡兽
 - 亚空间火焰喷射器 —— 红字战士
 - 亚空间火焰投射器 —— 塞克塔机器人
@@ -1596,8 +1611,10 @@
 
 ### 灵能（PSYCHIC）
 
-共 138 件现役武器（全库 166 件）。
+共 140 件现役武器（全库 168 件）。
 
+- Song of Waning —— Stonesinger
+- Stone Stave —— Stonesinger
 - 亚空间冲击-巫火* —— 脑虫
 - 亚空间冲击-聚焦巫火* —— 脑虫
 - 亚空间诅咒（普通） —— 黑暗巫会
@@ -1739,8 +1756,9 @@
 
 ### 致命一击（LETHAL HITS）
 
-共 129 件现役武器（全库 150 件）。
+共 130 件现役武器（全库 151 件）。
 
+- Moonblades —— Clanblade
 - 亚空间冲击-聚焦巫火* —— 脑虫
 - 亡者之颅 —— 瘟疫先蜂
 - 修枝巨剪 —— 园艺师史莱姆克斯
@@ -1980,7 +1998,7 @@
 - 重型四管迫击炮 —— 炮兵小组
 - 重型激光灭杀炮 —— 处决者型反击者坦克
 - 重型激光炮 —— 野战炮兵
-- 重型爆弹枪 —— 仇天使小队 等 11 个单位
+- 重型爆弹枪 —— Eradicator Squad With Heavy Bolters 等 12 个单位
 - 重型爆弹步枪 —— 重装仲裁者小队 等 2 个单位
 - 重型爆矢枪 —— 奴工战斗支队
 - 重型磁轨加农炮阵 —— 塔'钨钠至高装甲
@@ -2006,8 +2024,9 @@
 
 ### 精准（PRECISION）
 
-共 119 件现役武器（全库 135 件）。
+共 120 件现役武器（全库 136 件）。
 
+- Long Rifle —— Leystalker
 - 先锋利爪 —— 夺星者哈肯
 - 克鲁特长铳 —— 克鲁特独矛
 - 决斗弯刀 —— 破戒者
@@ -2229,8 +2248,10 @@
 
 ### 额外攻击（EXTRA ATTACKS）
 
-共 82 件现役武器（全库 98 件）。
+共 84 件现役武器（全库 100 件）。
 
+- Drakesteed Fangs and Talons —— Clanblade 等 4 个单位
+- Kustom Blasta X —— Nazdreg
 - “修修”扳手 —— 瓦兹达卡·古茨梅克
 - 产卵针刺 —— 摩崔克斯寄生虫
 - 仪式匕首 —— 守密者
@@ -2316,8 +2337,9 @@
 
 ### 危险（HAZARDOUS）
 
-共 78 件现役武器（全库 102 件）。
+共 79 件现役武器（全库 103 件）。
 
+- Kustom Blasta X - Gatler —— Nazdreg
 - 三轴离子加农炮—过载 —— 塔'钨钠至高装甲
 - 亚空间诅咒（聚焦） —— 黑暗巫会
 - 先祖之怒（聚焦） —— 格林尼尔贤者
@@ -2582,8 +2604,9 @@
 
 ### 骑枪（LANCE）
 
-共 36 件现役武器（全库 41 件）。
+共 37 件现役武器（全库 42 件）。
 
+- Laser Lance —— Dragon Knights
 - 冲击骑枪（重击） —— 枪骑兵型角蝰骑士 等 2 个单位
 - 凤凰动力矛 —— 极乐领主
 - 刃角 —— 因维卡图斯尊主 等 3 个单位
@@ -2742,6 +2765,14 @@
 - 终结之斧 —— 大漩涡之主
 - 黑剑（重击） —— 帝皇勇士
 
+### 劈砍（CLEAVE）
+
+共 3 件现役武器（全库 3 件）。
+
+- Kustom Blasta X —— Nazdreg
+- Moonchewa —— Nazdreg
+- 双手大砍刀 —— 大头目
+
 ### 针对混沌（ANTI-CHAOS）
 
 共 2 件现役武器（全库 2 件）。
@@ -2749,12 +2780,26 @@
 - 叛徒之灾 —— 以西结
 - 圣洁 —— 恶魔驱逐者
 
+### 针对非怪兽且非载具（ANTI-NON-MONSTER/VEHICLE）
+
+共 2 件现役武器（全库 2 件）。
+
+- Stone Stave —— Stonesinger
+- Venomcrest Spit —— Stonesinger
+
 ### 针对泰坦（ANTI-TITANIC）
 
 共 2 件现役武器（全库 2 件）。
 
 - 幽鬼打击导弹发射器 —— 暴君骑士
 - 碎盾者导弹发射器 —— 堡主骑士 等 2 个单位
+
+### 近距离（CLOSE-QUARTERS）
+
+共 2 件现役武器（全库 2 件）。
+
+- 爆弹手枪 —— Eradicator Squad With Heavy Bolters
+- 短铳 —— 大头目
 
 ### 针对恶魔（ANTI-DAEMON）
 
@@ -2768,23 +2813,29 @@
 
 - 阿苏瓦·无声尖啸者（诛神） —— 维萨奇
 
+### 针对怪兽或载具（ANTI-MONSTER/VEHICLE）
+
+共 1 件现役武器（全库 1 件）。
+
+- Song of Waning —— Stonesinger
+
 ### 针对步行者（ANTI-WALKER）
 
 共 1 件现役武器（全库 1 件）。
 
 - 泰瑟骑枪 —— 装备泰瑟骑枪的西多尼亚龙骑兵
 
-### 劈砍（CLEAVE）
+### 毁灭伤害：非怪兽且非载具（DEVASTATING WOUNDS: NON-MONSTER/VEHICLE）
 
 共 1 件现役武器（全库 1 件）。
 
-- 双手大砍刀 —— 大头目
+- Long Rifle —— Leystalker
 
-### 近距离（CLOSE-QUARTERS）
+### 致命一击：非怪兽且非载具（LETHAL HITS: NON-MONSTER/VEHICLE）
 
 共 1 件现役武器（全库 1 件）。
 
-- 短铳 —— 大头目
+- Kustom Blasta X - Shoota —— Nazdreg
 
 ### 针对泰伦虫族（ANTI-TYRANIDS）
 

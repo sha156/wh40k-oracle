@@ -11,7 +11,12 @@ version:
   points: historical / unmatched
   source: official-db
 sources:
-- book: 官方结构库 db/wh40k.sqlite（Wahapedia 11版镜像 + MFM 官方点数）
+- book: 'Faction Pack: Astra Militarum'
+  pages:
+  - 144
+- book: 'Faction Pack: Astra Militarum'
+  pages:
+  - 145
 updated: '2026-09-14'
 ---
 
@@ -42,4 +47,4 @@ updated: '2026-09-14'
 
 ## 关键词
 - **阵营关键词**：Astra Militarum
-- **普通关键词**：[[core-rules/smoke.md|Smoke]]，Imperium，Trojan Support Vehicle，Squadron，Vehicle
+- **普通关键词**：[[core-rules/smoke.md|Smoke]]，Imperium，Trojan Support Vehicle，Squadron，Vehicle，FRAME

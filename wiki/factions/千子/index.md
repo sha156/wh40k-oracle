@@ -43,40 +43,40 @@
 - [[factions/千子/units/typhon|Typhon]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
 - [[factions/千子/units/whirlwind-scorpius|Whirlwind Scorpius]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
 - [[factions/千子/units/xiphon-interceptor|Xiphon Interceptor]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
-- [[factions/千子/units/exalted-sorcerer-on-disc-of-tzeentch|乘坐奸奇魔碟的高阶巫师]] — 
-- [[factions/千子/units/defiler|亵渎者]] — 
-- [[factions/千子/units/kairos-fateweaver|凯洛斯·织命者]] — 
-- [[factions/千子/units/lord-of-change|变化魔君]] — 
-- [[factions/千子/units/mutalith-vortex-beast|变异漩涡兽]] — 
-- [[factions/千子/units/scarab-occult-terminators|圣甲虫终结者]] — 
-- [[factions/千子/units/helbrute|地狱兽]] — 
-- [[factions/千子/units/heldrake|地狱飞龙]] — 
-- [[factions/千子/units/sekhetar-robots|塞克塔机器人]] — 
-- [[factions/千子/units/daemon-prince-of-tzeentch|奸奇恶魔王子]] — 
-- [[factions/千子/units/tzaangors|奸角兽]] — 
-- [[factions/千子/units/tzaangor-enlightened|奸角兽开悟者]] — 
-- [[factions/千子/units/tzaangor-shaman|奸角兽萨满]] — 
-- [[factions/千子/units/screamers|尖啸魔]] — 
-- [[factions/千子/units/sorcerer|巫师]] — 
-- [[factions/千子/units/daemon-prince-of-tzeentch-with-wings|有翼奸奇恶魔王子]] — 
-- [[factions/千子/units/chaos-predator-annihilator|歼灭者型猎食者坦克]] — 
-- [[factions/千子/units/chaos-land-raider|混沌兰德掠袭者]] — 
-- [[factions/千子/units/chaos-spawn|混沌卵]] — 
-- [[factions/千子/units/chaos-vindicator|混沌维护者突击炮]] — 
-- [[factions/千子/units/flamers|火妖]] — 
-- [[factions/千子/units/infernal-master|炼狱之主]] — 
-- [[factions/千子/units/chaos-rhino|犀牛装甲车]] — 
-- [[factions/千子/units/chaos-predator-destructor|破坏者型猎食者坦克]] — 
-- [[factions/千子/units/pink-horrors|粉惧妖]] — 
-- [[factions/千子/units/rubric-marines|红字战士]] — 
-- [[factions/千子/units/magnus-the-red|红魔马格努斯]] — 
-- [[factions/千子/units/sorcerer-in-terminator-armour|终结者巫师]] — 
-- [[factions/千子/units/blue-horrors|蓝惧妖]] — 
-- [[factions/千子/units/tzaangor-enlightened-with-fatecaster-greatbows|装备命运掌握者巨弓的奸角兽开悟者]] — 
-- [[factions/千子/units/maulerfiend|重锤魔]] — 
-- [[factions/千子/units/forgefiend|铸造魔]] — 
-- [[factions/千子/units/ahriman|阿里曼]] — 
-- [[factions/千子/units/exalted-sorcerer|高阶巫师]] — 
+- [[factions/千子/units/exalted-sorcerer-on-disc-of-tzeentch|乘坐奸奇魔碟的高阶巫师]]
+- [[factions/千子/units/defiler|亵渎者]]
+- [[factions/千子/units/kairos-fateweaver|凯洛斯·织命者]]
+- [[factions/千子/units/lord-of-change|变化魔君]]
+- [[factions/千子/units/mutalith-vortex-beast|变异漩涡兽]]
+- [[factions/千子/units/scarab-occult-terminators|圣甲虫终结者]]
+- [[factions/千子/units/helbrute|地狱兽]]
+- [[factions/千子/units/heldrake|地狱飞龙]]
+- [[factions/千子/units/sekhetar-robots|塞克塔机器人]]
+- [[factions/千子/units/daemon-prince-of-tzeentch|奸奇恶魔王子]]
+- [[factions/千子/units/tzaangors|奸角兽]]
+- [[factions/千子/units/tzaangor-enlightened|奸角兽开悟者]]
+- [[factions/千子/units/tzaangor-shaman|奸角兽萨满]]
+- [[factions/千子/units/screamers|尖啸魔]]
+- [[factions/千子/units/sorcerer|巫师]]
+- [[factions/千子/units/daemon-prince-of-tzeentch-with-wings|有翼奸奇恶魔王子]]
+- [[factions/千子/units/chaos-predator-annihilator|歼灭者型猎食者坦克]]
+- [[factions/千子/units/chaos-land-raider|混沌兰德掠袭者]]
+- [[factions/千子/units/chaos-spawn|混沌卵]]
+- [[factions/千子/units/chaos-vindicator|混沌维护者突击炮]]
+- [[factions/千子/units/flamers|火妖]]
+- [[factions/千子/units/infernal-master|炼狱之主]]
+- [[factions/千子/units/chaos-rhino|犀牛装甲车]]
+- [[factions/千子/units/chaos-predator-destructor|破坏者型猎食者坦克]]
+- [[factions/千子/units/pink-horrors|粉惧妖]]
+- [[factions/千子/units/rubric-marines|红字战士]]
+- [[factions/千子/units/magnus-the-red|红魔马格努斯]]
+- [[factions/千子/units/sorcerer-in-terminator-armour|终结者巫师]]
+- [[factions/千子/units/blue-horrors|蓝惧妖]]
+- [[factions/千子/units/tzaangor-enlightened-with-fatecaster-greatbows|装备命运掌握者巨弓的奸角兽开悟者]]
+- [[factions/千子/units/maulerfiend|重锤魔]]
+- [[factions/千子/units/forgefiend|铸造魔]]
+- [[factions/千子/units/ahriman|阿里曼]]
+- [[factions/千子/units/exalted-sorcerer|高阶巫师]]
 
 ## 策略技能
 

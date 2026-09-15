@@ -11,7 +11,12 @@ version:
   points: historical / unmatched
   source: official-db
 sources:
-- book: 官方结构库 db/wh40k.sqlite（Wahapedia 11版镜像 + MFM 官方点数）
+- book: 'Faction Pack: Chaos Space Marines'
+  pages:
+  - 92
+- book: 'Faction Pack: Chaos Space Marines'
+  pages:
+  - 93
 updated: '2026-09-14'
 ---
 
@@ -44,4 +49,4 @@ updated: '2026-09-14'
 
 ## 关键词
 - **阵营关键词**：Heretic Astartes
-- **普通关键词**：Daemon，Khorne，Vehicle，[[core-rules/walker.md|Walker]]，Chaos，Blood Slaughterer
+- **普通关键词**：Daemon，Khorne，Vehicle，[[core-rules/walker.md|Walker]]，Chaos，Blood Slaughterer，FRAME

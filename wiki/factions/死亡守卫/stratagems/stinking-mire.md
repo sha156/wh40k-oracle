@@ -25,8 +25,8 @@ Start of your opponent’s Charge phase.
 
 ## 使用对象
 
-One Death Guard Vehicle unit from your army.
+One friendly unengaged DEATH GUARD VEHICLE unit.
 
 ## 效果
 
-Until the end of the phase, each time an enemy unit selects your unit as the target of a charge, subtract 2 from the Charge roll (this is not cumulative with any other negative modifiers to that Charge roll).
+Select one visible enemy unit within 12" of your unit. When that enemy unit declares a charge, that enemy unit has -1 to charge rolls.

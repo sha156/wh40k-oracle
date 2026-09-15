@@ -11,7 +11,12 @@ version:
   points: historical / unmatched
   source: official-db
 sources:
-- book: 官方结构库 db/wh40k.sqlite（Wahapedia 11版镜像 + MFM 官方点数）
+- book: 'Faction Pack: Astra Militarum'
+  pages:
+  - 112
+- book: 'Faction Pack: Astra Militarum'
+  pages:
+  - 113
 updated: '2026-09-14'
 ---
 
@@ -39,4 +44,4 @@ updated: '2026-09-14'
 
 ## 关键词
 - **阵营关键词**：Astra Militarum
-- **普通关键词**：[[core-rules/infantry.md|Infantry]]，Earthshaker Carriage Battery，Regiment，[[core-rules/grenades.md|Grenades]]，Imperium，Artillery
+- **普通关键词**：[[core-rules/infantry.md|Infantry]]，Earthshaker Carriage Battery，Regiment，[[core-rules/grenades.md|Grenades]]，Imperium，Artillery，FRAME

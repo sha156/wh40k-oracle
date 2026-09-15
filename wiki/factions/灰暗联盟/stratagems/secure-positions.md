@@ -20,7 +20,7 @@ updated: '2026-07-26'
 
 ## 使用时机
 
-End of any of your phases, if units from your army have Hostile Acquisition.
+End of any of your phases.
 
 ## 使用对象
 

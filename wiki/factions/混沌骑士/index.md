@@ -25,27 +25,27 @@
 - [[factions/混沌骑士/units/rogue-psyker|Rogue Psyker]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
 - [[factions/混沌骑士/units/traitor-enforcer|叛军执法者]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
 - [[factions/混沌骑士/units/traitor-guardsmen-squad|叛变卫队]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
-- [[factions/混沌骑士/units/war-dog-moirax|天命型战犬]] — 
+- [[factions/混沌骑士/units/war-dog-moirax|天命型战犬]]
 - [[factions/混沌骑士/units/fellgor-beastmen|恶角野兽人]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
-- [[factions/混沌骑士/units/knight-abominant|憎恶者骑士]] — 
-- [[factions/混沌骑士/units/war-dog-executioner|战犬处决者]] — 
-- [[factions/混沌骑士/units/war-dog-brigand|战犬暴匪]] — 
-- [[factions/混沌骑士/units/war-dog-huntsman|战犬猎手]] — 
-- [[factions/混沌骑士/units/war-dog-karnivore|战犬肉食者]] — 
-- [[factions/混沌骑士/units/war-dog-stalker|战犬追猎者]] — 
-- [[factions/混沌骑士/units/knight-despoiler|掠夺者骑士]] — 
-- [[factions/混沌骑士/units/knight-tyrant|暴君骑士]] — 
-- [[factions/混沌骑士/units/knight-ruinator|毁灭者骑士]] — 
-- [[factions/混沌骑士/units/chaos-questoris-knight-styrix|混沌冥河型巡游骑士]] — 
-- [[factions/混沌骑士/units/chaos-cerastus-knight-atrapos|混沌命运女神型角蝰骑士]] — 
-- [[factions/混沌骑士/units/chaos-questoris-knight-magaera|混沌复仇女神型巡游骑士]] — 
-- [[factions/混沌骑士/units/chaos-acastus-knight-porphyrion|混沌巨人王型阿卡斯托斯骑士]] — 
-- [[factions/混沌骑士/units/chaos-cerastus-knight-castigator|混沌惩戒者型角蝰骑士]] — 
-- [[factions/混沌骑士/units/chaos-cerastus-knight-lancer|混沌枪骑兵型角蝰骑士]] — 
-- [[factions/混沌骑士/units/chaos-acastus-knight-asterius|混沌牛头怪型阿卡斯托斯骑士]] — 
-- [[factions/混沌骑士/units/chaos-cerastus-knight-acheron|混沌黄泉型角蝰骑士]] — 
-- [[factions/混沌骑士/units/knight-desecrator|渎神者骑士]] — 
-- [[factions/混沌骑士/units/knight-rampager|肆虐者骑士]] — 
+- [[factions/混沌骑士/units/knight-abominant|憎恶者骑士]]
+- [[factions/混沌骑士/units/war-dog-executioner|战犬处决者]]
+- [[factions/混沌骑士/units/war-dog-brigand|战犬暴匪]]
+- [[factions/混沌骑士/units/war-dog-huntsman|战犬猎手]]
+- [[factions/混沌骑士/units/war-dog-karnivore|战犬肉食者]]
+- [[factions/混沌骑士/units/war-dog-stalker|战犬追猎者]]
+- [[factions/混沌骑士/units/knight-despoiler|掠夺者骑士]]
+- [[factions/混沌骑士/units/knight-tyrant|暴君骑士]]
+- [[factions/混沌骑士/units/knight-ruinator|毁灭者骑士]]
+- [[factions/混沌骑士/units/chaos-questoris-knight-styrix|混沌冥河型巡游骑士]]
+- [[factions/混沌骑士/units/chaos-cerastus-knight-atrapos|混沌命运女神型角蝰骑士]]
+- [[factions/混沌骑士/units/chaos-questoris-knight-magaera|混沌复仇女神型巡游骑士]]
+- [[factions/混沌骑士/units/chaos-acastus-knight-porphyrion|混沌巨人王型阿卡斯托斯骑士]]
+- [[factions/混沌骑士/units/chaos-cerastus-knight-castigator|混沌惩戒者型角蝰骑士]]
+- [[factions/混沌骑士/units/chaos-cerastus-knight-lancer|混沌枪骑兵型角蝰骑士]]
+- [[factions/混沌骑士/units/chaos-acastus-knight-asterius|混沌牛头怪型阿卡斯托斯骑士]]
+- [[factions/混沌骑士/units/chaos-cerastus-knight-acheron|混沌黄泉型角蝰骑士]]
+- [[factions/混沌骑士/units/knight-desecrator|渎神者骑士]]
+- [[factions/混沌骑士/units/knight-rampager|肆虐者骑士]]
 - [[factions/混沌骑士/units/accursed-cultists|诅咒教徒]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
 - [[factions/混沌骑士/units/cultist-mob|邪教徒]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
 - [[factions/混沌骑士/units/cultist-firebrand|邪教徒纵火者]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。

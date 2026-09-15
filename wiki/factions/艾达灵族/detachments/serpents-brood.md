@@ -29,6 +29,8 @@ TRAVELLING PLAYERS
 - [[factions/艾达灵族/units/troupe.md|Troupe]] units from your army gain the [[core-rules/battleline.md|BATTLELINE]] keyword, and TROUPE models in those units have an Objective Control characteristic of 2.
 - You can include up to three of each of the following models in your army: [[factions/艾达灵族/units/death-jester.md|Death Jester]], [[factions/艾达灵族/units/shadowseer.md|Shadowseer]], [[factions/艾达灵族/units/troupe-master.md|Troupe Master]].
 
+When mustering your army, you can select a friendly HARLEQUINS CHARACTER model to be your WARLORD.
+
 ## 增强
 
 - [[factions/艾达灵族/enhancements/fanged-leer.md\|Fanged Leer]]

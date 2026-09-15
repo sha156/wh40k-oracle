@@ -7,7 +7,7 @@
 
 **Total issues:** 692  |  **Auto-fixed:** 0
 
-- ⚠️ **[alias-conflicts]** 名称/别名冲突 594 组（涉及 901 个实体），完整名单见 wiki/alias-conflicts.md
+- ⚠️ **[alias-conflicts]** 名称/别名冲突 598 组（涉及 905 个实体），完整名单见 wiki/alias-conflicts.md
 - ℹ️ **[missing-points]** `factions/兽人/units/attack-fighta.md` — 单位页缺少 points 字段
 - ℹ️ **[missing-points]** `factions/兽人/units/big-gunz.md` — 单位页缺少 points 字段
 - ℹ️ **[missing-points]** `factions/兽人/units/big-mek-on-warbike.md` — 单位页缺少 points 字段

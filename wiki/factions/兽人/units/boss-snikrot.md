@@ -46,5 +46,5 @@ updated: '2026-09-14'
 - **1个模型** — 80 分
 
 ## 关键词
-- **阵营关键词**：兽人
-- **普通关键词**：[[core-rules/infantry.md|步兵]]，[[core-rules/character.md|人物]]，传奇英雄，[[core-rules/grenades.md|手雷]]，烟雾弹，鬼祟鼠
+- **阵营关键词**：Orks
+- **普通关键词**：Boss Snikrot，[[core-rules/epic-hero.md|Epic Hero]]，[[core-rules/smoke.md|Smoke]]，[[core-rules/grenades.md|Grenades]]，[[core-rules/character.md|Character]]，[[core-rules/infantry.md|Infantry]]

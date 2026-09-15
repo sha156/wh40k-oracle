@@ -48,4 +48,4 @@ updated: '2026-09-14'
 
 ## 关键词
 - **阵营关键词**：Salamanders，Adeptus Astartes
-- **普通关键词**：[[core-rules/infantry.md|步兵]]，角色，[[core-rules/epic-hero.md|史诗英雄]]，[[core-rules/grenades.md|手雷]]，帝国，战术护甲，连长，伏尔甘赫斯坦
+- **普通关键词**：[[core-rules/infantry.md|Infantry]]，[[core-rules/character.md|Character]]，[[core-rules/epic-hero.md|Epic Hero]]，[[core-rules/grenades.md|Grenades]]，Imperium，Tacticus，Vulkan He’stan，[[factions/星际战士/units/captain.md|Captain]]

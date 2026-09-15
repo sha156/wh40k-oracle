@@ -49,5 +49,5 @@ updated: '2026-09-14'
 - **1个模型** — 100 分
 
 ## 关键词
-- **阵营关键词**：兽人
-- **普通关键词**：[[core-rules/infantry.md|步兵]]，[[core-rules/character.md|人物]]，[[core-rules/grenades.md|手雷]]，战争头目
+- **阵营关键词**：Orks
+- **普通关键词**：[[core-rules/character.md|Character]]，[[core-rules/grenades.md|Grenades]]，[[core-rules/infantry.md|Infantry]]，Warboss

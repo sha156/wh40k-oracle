@@ -20,39 +20,39 @@
 - [[factions/战斗修女/units/crusaders|Crusaders]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
 - [[factions/战斗修女/units/death-cult-assassins|Death Cult Assassins]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
 - [[factions/战斗修女/units/repressor|Repressor]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
-- [[factions/战斗修女/units/dialogus|书记修女]] — 
-- [[factions/战斗修女/units/retributor-squad|仇天使小队]] — 
-- [[factions/战斗修女/units/sororitas-rhino|修女会犀牛装甲车]] — 
-- [[factions/战斗修女/units/sanctifiers|净化者杀戮小队]] — 
-- [[factions/战斗修女/units/triumph-of-saint-katherine|凯旋之圣凯瑟琳]] — 
-- [[factions/战斗修女/units/hospitaller|医疗修女]] — 
-- [[factions/战斗修女/units/saint-celestine|圣塞莱斯汀]] — 
-- [[factions/战斗修女/units/canoness|大修女]] — 
-- [[factions/战斗修女/units/palatine|宫廷官]] — 
-- [[factions/战斗修女/units/dominion-squad|御天使小队]] — 
-- [[factions/战斗修女/units/repentia-squad|忏悔修女小队]] — 
-- [[factions/战斗修女/units/penitent-engines|忏悔者机甲]] — 
-- [[factions/战斗修女/units/daemonifuge|恶魔驱逐者]] — 
-- [[factions/战斗修女/units/mortifiers|悔罪者机甲]] — 
-- [[factions/战斗修女/units/castigator|惩罚者坦克]] — 
-- [[factions/战斗修女/units/battle-sisters-squad|战斗修女小队]] — 
-- [[factions/战斗修女/units/imagifier|持像者]] — 
-- [[factions/战斗修女/units/ministorum-priest|教廷牧师]] — 
-- [[factions/战斗修女/units/dogmata|教条官]] — 
-- [[factions/战斗修女/units/paragon-warsuits|楷模机甲]] — 
-- [[factions/战斗修女/units/celestian-sacresants|洁天使圣徒]] — 
-- [[factions/战斗修女/units/celestian-insidiants|洁天使隐伏者]] — 
-- [[factions/战斗修女/units/seraphim-squad|炽天使小队]] — 
-- [[factions/战斗修女/units/immolator|献祭者坦克]] — 
-- [[factions/战斗修女/units/intranzia-fraye|英特兰齐娅·弗雷娅]] — 
-- [[factions/战斗修女/units/junith-eruita|茱妮丝·伊瑞塔]] — 
-- [[factions/战斗修女/units/morvenn-vahl|莫雯·瓦尔]] — 
-- [[factions/战斗修女/units/canoness-with-jump-pack|装备跳跃背包的大修女]] — 
-- [[factions/战斗修女/units/sisters-novitiate-squad|见习修女小队]] — 
-- [[factions/战斗修女/units/aestred-thurga-and-agathae-dolan|阿斯垂德·瑟加和阿加瑟·多兰]] — 
-- [[factions/战斗修女/units/arco-flagellants|鞭挞苦修者]] — 
-- [[factions/战斗修女/units/zephyrim-squad|风天使小队]] — 
-- [[factions/战斗修女/units/exorcist|驱魔人导弹车]] — 
+- [[factions/战斗修女/units/dialogus|书记修女]]
+- [[factions/战斗修女/units/retributor-squad|仇天使小队]]
+- [[factions/战斗修女/units/sororitas-rhino|修女会犀牛装甲车]]
+- [[factions/战斗修女/units/sanctifiers|净化者杀戮小队]]
+- [[factions/战斗修女/units/triumph-of-saint-katherine|凯旋之圣凯瑟琳]]
+- [[factions/战斗修女/units/hospitaller|医疗修女]]
+- [[factions/战斗修女/units/saint-celestine|圣塞莱斯汀]]
+- [[factions/战斗修女/units/canoness|大修女]]
+- [[factions/战斗修女/units/palatine|宫廷官]]
+- [[factions/战斗修女/units/dominion-squad|御天使小队]]
+- [[factions/战斗修女/units/repentia-squad|忏悔修女小队]]
+- [[factions/战斗修女/units/penitent-engines|忏悔者机甲]]
+- [[factions/战斗修女/units/daemonifuge|恶魔驱逐者]]
+- [[factions/战斗修女/units/mortifiers|悔罪者机甲]]
+- [[factions/战斗修女/units/castigator|惩罚者坦克]]
+- [[factions/战斗修女/units/battle-sisters-squad|战斗修女小队]]
+- [[factions/战斗修女/units/imagifier|持像者]]
+- [[factions/战斗修女/units/ministorum-priest|教廷牧师]]
+- [[factions/战斗修女/units/dogmata|教条官]]
+- [[factions/战斗修女/units/paragon-warsuits|楷模机甲]]
+- [[factions/战斗修女/units/celestian-sacresants|洁天使圣徒]]
+- [[factions/战斗修女/units/celestian-insidiants|洁天使隐伏者]]
+- [[factions/战斗修女/units/seraphim-squad|炽天使小队]]
+- [[factions/战斗修女/units/immolator|献祭者坦克]]
+- [[factions/战斗修女/units/intranzia-fraye|英特兰齐娅·弗雷娅]]
+- [[factions/战斗修女/units/junith-eruita|茱妮丝·伊瑞塔]]
+- [[factions/战斗修女/units/morvenn-vahl|莫雯·瓦尔]]
+- [[factions/战斗修女/units/canoness-with-jump-pack|装备跳跃背包的大修女]]
+- [[factions/战斗修女/units/sisters-novitiate-squad|见习修女小队]]
+- [[factions/战斗修女/units/aestred-thurga-and-agathae-dolan|阿斯垂德·瑟加和阿加瑟·多兰]]
+- [[factions/战斗修女/units/arco-flagellants|鞭挞苦修者]]
+- [[factions/战斗修女/units/zephyrim-squad|风天使小队]]
+- [[factions/战斗修女/units/exorcist|驱魔人导弹车]]
 
 ## 策略技能
 
@@ -110,7 +110,7 @@
 - [[factions/战斗修女/enhancements/divine-aspect|Divine Aspect]] — 5 分、Army of Faith 分队。
 - [[factions/战斗修女/enhancements/fervent-ferocity|Fervent Ferocity]] — 0 分、Penitents and Pilgrims 分队。
 - [[factions/战斗修女/enhancements/fire-and-fury|Fire and Fury]] — 30 分、Bringers of Flame 分队。
-- [[factions/战斗修女/enhancements/hagiomnifex-upgrade|Hagiomnifex Upgrade]] — 分数未知、Sanctified Orators 分队。
+- [[factions/战斗修女/enhancements/hagiomnifex-upgrade|Hagiomnifex Upgrade]] — 25 分、Sanctified Orators 分队。
 - [[factions/战斗修女/enhancements/iron-surplice-of-saint-istalela|Iron Surplice of Saint Istalela]] — 10 分、Bringers of Flame 分队。
 - [[factions/战斗修女/enhancements/limitless-resolve|Limitless Resolve]] — 0 分、Pious Protectors 分队。
 - [[factions/战斗修女/enhancements/litanies-of-faith|Litanies of Faith]] — 10 分、Army of Faith 分队。
@@ -123,11 +123,11 @@
 - [[factions/战斗修女/enhancements/righteous-rage|Righteous Rage]] — 15 分、Bringers of Flame 分队。
 - [[factions/战斗修女/enhancements/saintly-example|Saintly Example]] — 10 分、Hallowed Martyrs 分队。
 - [[factions/战斗修女/enhancements/sanctification-rituals|Sanctification Rituals]] — 0 分、Penitents and Pilgrims 分队。
-- [[factions/战斗修女/enhancements/symphonic-payload-upgrade|Symphonic Payload Upgrade]] — 分数未知、定罪合唱 分队。
+- [[factions/战斗修女/enhancements/symphonic-payload-upgrade|Symphonic Payload Upgrade]] — 10 分、定罪合唱 分队。
 - [[factions/战斗修女/enhancements/through-suffering-strength|Through Suffering, Strength]] — 25 分、Hallowed Martyrs 分队。
 - [[factions/战斗修女/enhancements/triptych-of-the-macharian-crusade|Triptych of the Macharian Crusade]] — 20 分、Army of Faith 分队。
 - [[factions/战斗修女/enhancements/verse-of-holy-piety|Verse of Holy Piety]] — 15 分、Penitent Host 分队。
-- [[factions/战斗修女/enhancements/writ-of-compunction-upgrade|Writ of Compunction Upgrade]] — 分数未知、神圣冠军 分队。
+- [[factions/战斗修女/enhancements/writ-of-compunction-upgrade|Writ of Compunction Upgrade]] — 20 分、神圣冠军 分队。
 - [[factions/战斗修女/enhancements/mark-of-devotion|信仰印记]] — 30 分、信仰冠军 分队。
 - [[factions/战斗修女/enhancements/eyes-of-the-oracle|先知之眼]] — 10 分、信仰冠军 分队。
 - [[factions/战斗修女/enhancements/sanctified-amulet|圣化护符]] — 25 分、信仰冠军 分队。
