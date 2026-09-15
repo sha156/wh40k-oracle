@@ -93,16 +93,20 @@
    "effects": [],
    "requires_toggles": [],
    "not_modeled_notes_zh": [
-    "跳包单位撤场入预备队再深打——部署域",
-    "军表域约束（不可混编其他战团）不建模——BA 分队通用限制句"
+    "Reviewed current official text. This rule changes movement, deployment, resurrection, charge sequencing, army selection or a positional state outside this fixed attack-sequence simulator. See current_text for the exact rule."
    ],
    "provenance": {
-    "current_text": "db detachments.rule_text id=000009189",
+    "current_text": "At the end of your opponent s turn, you can select a number of Adeptus Astartes Jump Pack units from your army (excluding units that are within Engagement Range of one or more enemy units). The maximum number of units you can select depends on the battle size, as follows:<br><div class=\"BreakInsideAvoid\"  style=\"\"\"><table width=\"0\" border=\"0\" bordercolor=\"#888\" cellpadding=\"4\" cellspacing=\"0\" style=\"border-collapse:collapse;border-width:0px\"><tbody><tr><td><table class=\" customTable tablefont\" border=\"1\" bordercolor=\"#888\" cellpadding=\"4\" style=\"border-collapse:collapse;border-color:#888888;border-width:0px\"><tbody><tr><td style=\"border-width:1px 1px 1px 1px;border-style:none none solid none;background-color:rgb(114,25,28);color:rgb(254,254,254);text-align:center;vertical-align:middle;font-size:20px;width:160px;height:0px;\"><b>BATTLE SIZE</b></td><td style=\"border-width:1px 1px 1px 1px;border-style:none none solid none;background-color:rgb(114,25,28);color:rgb(254,254,254);text-align:center;vertical-align:middle;font-size:20px;width:320px;height:0px;\">UNITS</td></tr><tr><td style=\"border-width:1px 1px 1px 1px;border-style:none none dotted none;text-align:left;vertical-align:middle;font-size:18px;width:160px;height:0px;\"><b>Incursion</b></td><td style=\"border-width:1px 1px 1px 1px;border-style:none none dotted none;text-align:center;vertical-align:middle;font-size:18px;width:320px;height:0px;\">Up to 1 units </td></tr><tr><td style=\"border-width:1px 1px 1px 1px;border-style:none none dotted none;text-align:left;vertical-align:middle;font-size:18px;width:160px;height:0px;\"><b>Strike Force</b></td><td style=\"border-width:1px 1px 1px 1px;border-style:none none dotted none;text-align:center;vertical-align:middle;font-size:18px;width:320px;height:0px;\">Up to 2 units </td></tr><tr><td style=\"border-width:1px 1px 1px 1px;border-style:none none dotted none;text-align:left;vertical-align:middle;font-size:18px;width:160px;height:0px;\"><b>Onslaught</b></td><td style=\"border-width:1px 1px 1px 1px;border-style:none none dotted none;text-align:center;vertical-align:middle;font-size:18px;width:320px;height:0px;\">Up to 3 units </td></tr></tbody></table></td></tr></tbody></table></div><br>Place those units in strategic reserves. Those units must make an ingress move in your next Movement phase (including in your first turn).<br><br><span class=\"hi_custom\">RESTRICTIONS</span><br>Your army can include <span class=\"kwb\">BLOOD</span> <span class=\"kwb\">ANGELS</span> units, but it cannot include any <span class=\"kwb\">ADEPTUS</span> <span class=\"kwb\">ASTARTES</span> units drawn from any other Chapter.",
     "base_text": "Wahapedia 现文（PR9 工作单：FP 未触及或已滚入，11 版仍现行）",
     "synthesis": "DSL 投影经 materialize 落 abilities 新行（spec D5）",
-    "text_sha256": "b2cbedeb343648a9e97c452be5d77980b682e38b2d115b1c72ba56a6f5693081"
+    "text_sha256": "1c9d3987e2d22c5177c084bf8e8a46d5019a6c90455ad86eb652e4e2a0b975c4",
+    "reviewed_source": {
+     "url": "https://assets.warhammer-community.com/eng_22-07_warhammer_40,000_faction_pack_blood_angels-l1ttsuicte-4xq8nrzqy1.pdf",
+     "sha256": "75aad2a44b40db3dbc6c0fa7786d1a7c76f878f34f15aa7e69b9b80d66caeed1",
+     "page": 9
+    }
    },
-   "encoded_by": "manual-2026-07-19",
+   "encoded_by": "manual-2026-09-15",
    "materialize": {
     "from_table": "detachments",
     "from_id": "000009189",
@@ -1690,15 +1694,21 @@
    "effects": [],
    "requires_toggles": [],
    "not_modeled_notes_zh": [
-    "首次阵亡 2+ 复活——治疗/复活域"
+    "Reviewed current official text. This rule changes movement, deployment, resurrection, charge sequencing, army selection or a positional state outside this fixed attack-sequence simulator. See current_text for the exact rule."
    ],
    "provenance": {
-    "current_text": "db enhancements.description id=000009835005",
+    "current_text": "ADEPTUS ASTARTES model only. (Once per battle, per army) When this model is destroyed, at the end of the phase, roll one D6: On a 2+, set up this model on the battlefield, unengaged and as close as possible to where it was destroyed. This model is not part of an attached unit and its unit has a starting strength of 1. This model has 3 wounds remaining.",
     "base_text": "Wahapedia 现文（PR9 工作单：FP 未触及或已滚入，11 版仍现行）",
     "synthesis": "无需合成",
-    "text_sha256": "cd3a977c7d726a803d76cc7e8e2a8b732d77a1616a914ffd5fe9d3e91bc58024"
+    "text_sha256": "66fd0830aa882b5a7421549522c814a65ddc5f751124ce5cd08a1e3374f367ed",
+    "reviewed_source": {
+     "url": "https://assets.warhammer-community.com/eng_22-07_warhammer_40,000_faction_pack_blood_angels-l1ttsuicte-4xq8nrzqy1.pdf",
+     "sha256": "75aad2a44b40db3dbc6c0fa7786d1a7c76f878f34f15aa7e69b9b80d66caeed1",
+     "page": 1,
+     "title": "Faction Pack: Blood Angels"
+    }
    },
-   "encoded_by": "manual-2026-07-19"
+   "encoded_by": "manual-2026-09-15"
   },
   {
    "table": "enhancements",

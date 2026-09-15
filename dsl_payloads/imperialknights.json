@@ -60,12 +60,18 @@
    "effects": [],
    "requires_toggles": [],
    "not_modeled_notes_zh": [
-    "军规：防线上单位无视命中减值 + [SUSTAINED HITS 1]——防线为地图位置门无载体，裸编会过度施加"
+    "Reviewed current official text. This rule changes movement, deployment, resurrection, charge sequencing, army selection or a positional state outside this fixed attack-sequence simulator. See current_text for the exact rule."
    ],
    "provenance": {
-    "text_sha256": "1cb0cd5d0d252ee8f8a596a9ecd7bcc8c590039095971bd6885b767d88692f09"
+    "text_sha256": "0fd3b2452e439942d4b4319bb37ede00f497bdbb1eca6140ab20926148c4237e",
+    "reviewed_source": {
+     "url": "https://assets.warhammer-community.com/eng_wh40k_faction_pack_imperial_knights-n1irjnjygs-w8jfnk8kdn.pdf",
+     "sha256": "7c8c814350363760acda3c53ba4a01d8c5c5703f8e5e16a7b5911d06d612fa81",
+     "page": 27
+    },
+    "current_text": "At the start of the first battle round, select two objectives to be your foundations. Place a circular 40mm foundation marker in each one. When you draw a line from any part of one your foundation markers to any part of the other, if any part of a model’s base (or any part of a model’s hull, for a model without a base) crosses that line, that model’s unit is said to be on your defensive line. While an IMPERIAL KNIGHTS unit from your army is on your defensive line, that unit has the following ability: Against the Horde: Each time a model in this unit makes an attack that targets a visible enemy unit, you can ignore any or all modifiers to the Hit roll, and weapons equipped by models in this unit have the [SUSTAINED HITS 1] ability."
    },
-   "encoded_by": "manual-2026-07-20",
+   "encoded_by": "manual-2026-09-15",
    "materialize": {
     "from_table": "detachments",
     "from_id": "000010496",

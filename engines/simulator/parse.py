@@ -174,6 +174,9 @@ def parse_keyword_token(token: str) -> ParsedKeyword:
     t = token.strip().lower()
     if not t:
         return ParsedKeyword(name="", raw=token, recognized=False)
+    conditional = re.fullmatch(r"(lethal hits|devastating wounds):\s*((?:non-)?monster/vehicle)", t)
+    if conditional:
+        return ParsedKeyword(name=_canon(conditional[1]), params=(conditional[2],), raw=token)
 
     # anti-X N+（目标可多词，如 "epic hero"）
     m = _ANTI_RE.match(t)

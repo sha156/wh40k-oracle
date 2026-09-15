@@ -95,7 +95,7 @@ class TestPayloadShape:
         by = {}
         for e in entries:
             by[e.status] = by.get(e.status, 0) + 1
-        assert by == {"encoded": 13, "partial": 20, "not_modeled": 89}
+        assert by == {"encoded": 14, "partial": 19, "not_modeled": 89}
 
     def test_table_breakdown(self, entries):
         by = {}
@@ -284,7 +284,7 @@ class TestDbReconciliation:
         assert "was set up this turn" in fzp and "from Reserves" not in fzp
         moc = con.execute("SELECT rule_text FROM detachments "
                           "WHERE id='000009868'").fetchone()[0]
-        assert "wholly within a" not in moc and "(to a maximum of 3+)" in moc
+        assert moc == "Friendly ASTRA MILITARUM units (excluding TITANIC units) have Stealth."
         sd = con.execute("SELECT text_zh FROM stratagems "
                          "WHERE id='000009802005'").fetchone()[0]
         assert "[IGNORES COVER]" in sd and "cannot have the Benefit of Cover" not in sd
@@ -389,7 +389,7 @@ class TestPhaseGating:
         "000010788002",         # 怒火引擎（近战武器 A/AP）
     )
     BOTH_PHASES = (
-        "det000009868",         # 伪装大师（常驻掩体，无 WHEN 相位）
+                 # 伪装大师（常驻掩体，无 WHEN 相位）
         "000009381003",         # 闪避掩蔽（WHEN=对手射击阶段或近战阶段）
         "fp11e-am-abhuman-s1",  # 厚颅固执（WHEN=对手射击阶段或近战阶段）
         "000009857004",         # 传世佩枪（手枪 A+2，无相位限定）
@@ -455,6 +455,7 @@ class TestPhaseGating:
         allowed = {
             (), ("phase_shooting",), ("phase_melee",),
             ("ranged_within_12",), ("half_range",), ("stationary",),
+            ("shooting_astra_militarum_non_titanic",),
         }
         for e in entries:
             for f in e.effects:
@@ -658,7 +659,7 @@ class TestOffensiveFromPayload:
         vs = _entry(entries, "000010638004")
         assert vs.status == "encoded"
         camo = _entry(entries, "det000009868")
-        covered, _, _ = inject_target(_target(), [camo], frozenset())
+        covered, _, _ = inject_target(_target(keywords=frozenset({"astra militarum"})), [camo], frozenset())
         base = _run(_attacker(_gun(bs=4)), covered, Stance(phase="shooting"))
         # 11 版掩体 = 恶化 BS 1 点（射击专属）→ BS5+
         assert _ratio(base.hits, base.attacks) == pytest.approx(1 / 3, abs=0.02)
@@ -714,7 +715,7 @@ class TestOffensiveFromPayload:
         assert sd.status == "partial"
         assert any("攻方自关键词" in n for n in sd.not_modeled_notes_zh)
         camo = _entry(entries, "det000009868")
-        covered, _, _ = inject_target(_target(), [camo], frozenset())
+        covered, _, _ = inject_target(_target(keywords=frozenset({"astra militarum"})), [camo], frozenset())
         atk, _, _ = inject_attacker(_attacker(_gun(bs=4)), [sd], frozenset())
         r = _run(atk, covered, Stance(phase="shooting"))
         assert _ratio(r.hits, r.attacks) == pytest.approx(1 / 2, abs=0.02)
@@ -723,7 +724,7 @@ class TestOffensiveFromPayload:
         ss = _entry(entries, "000010788005")
         assert ss.status == "encoded"
         camo = _entry(entries, "det000009868")
-        covered, _, _ = inject_target(_target(), [camo], frozenset())
+        covered, _, _ = inject_target(_target(keywords=frozenset({"astra militarum"})), [camo], frozenset())
         atk, _, _ = inject_attacker(_attacker(_gun(bs=4)), [ss], frozenset())
         assert _ratio(*(lambda r: (r.hits, r.attacks))(
             _run(atk, covered, Stance(phase="shooting")))) == pytest.approx(1 / 2, abs=0.02)
@@ -789,8 +790,8 @@ class TestDefensiveFromPayload:
 
     def test_masters_of_camouflage_cover_is_hit_side(self, entries):
         moc = _entry(entries, "det000009868")
-        assert moc.status == "partial" and moc.side == "target"
-        tgt, modeled, _ = inject_target(_target(), [moc], frozenset())
+        assert moc.status == "encoded" and moc.side == "target"
+        tgt, modeled, _ = inject_target(_target(keywords=frozenset({"astra militarum"})), [moc], frozenset())
         assert modeled
         r = _run(_attacker(_gun(bs=4)), tgt, Stance(phase="shooting"))
         assert _ratio(r.hits, r.attacks) == pytest.approx(1 / 3, abs=0.02)

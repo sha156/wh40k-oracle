@@ -405,6 +405,14 @@ def _load_db_units(conn) -> Dict[Tuple[str, str], List[Tuple[str, str, Optional[
 # 修复背景：官网 "VYPER"/"WARTRAKK" 对不上库里 "Vypers"/"Wartrakks"，过期分数被静默归入
 # mfm_only 而非 diffs——精确名匹配对单复数零容忍是更新功能的隐性漏检口。
 _MFM_NAME_ALIASES: Dict[str, str] = {}
+_TITAN_DATASHEET_ALIASES: Dict[str, str] = {
+    # Adeptus Titanicus Faction Pack p2, TITANICUS TRAITORIS: shared
+    # datasheets, with faction keywords replaced when mustering Chaos.
+    "chaos warhound titan": "warhound titan",
+    "chaos reaver titan": "reaver titan",
+    "chaos warbringer nemesis titan": "warbringer nemesis titan",
+    "chaos warlord titan": "warlord titan",
+}
 
 
 def _norm_unit(name: str) -> str:
@@ -431,6 +439,8 @@ def _resolve_db_hits(db_map: Dict[Tuple[str, str], List],
     if exact is not None:
         return exact
     alias = _MFM_NAME_ALIASES.get(unit_l)
+    if alias is None and fid == "TL":
+        alias = _TITAN_DATASHEET_ALIASES.get(unit_l)
     if alias is not None:
         hit = db_map.get((fid, alias.strip().lower()))
         if hit is not None:
@@ -534,6 +544,10 @@ def apply_points(db_path, factions: FactionRows,
     # Validate the whole batch before opening the writable connection.
     bases = {key: _base_prices(rows, "/".join(key))
              for key, rows in by_faction.items()}
+    for alias, canonical in _TITAN_DATASHEET_ALIASES.items():
+        if ("TL", alias) in bases and ("TL", canonical) in bases:
+            if bases[("TL", alias)] != bases[("TL", canonical)]:
+                raise MfmParseBroken(f"Shared Titan datasheet price conflict: {alias}")
     conn = connection if connection is not None else sqlite3.connect(str(db_path))
     updated = matched = 0
     try:

@@ -353,16 +353,22 @@
    "detachment": "Brandfast Oathband",
    "name_en": "SECURE POSITIONS",
    "name_zh": null,
-   "encoded_by": "manual-2026-07-20",
+   "encoded_by": "manual-2026-09-15",
    "provenance": {
-    "text_sha256": "945a844e4aca41676887386beb08e789adf060d87a56d52cdf5d619107a8c8df"
+    "text_sha256": "90dd15773ae6fe3f5e7991423b4aacad3ba082e5733f518e612bea8ac9ef732c",
+    "reviewed_source": {
+     "url": "https://assets.warhammer-community.com/eng_22-07_warhammer_40,000_faction_pack_leagues-of-votann-kpfosalfyb-sbqk309w4w.pdf",
+     "sha256": "dd29a4633ada948536c7e3b2b3da7e8237e65fcb4bde3291d6f084a3b4d8e4cd",
+     "page": 11
+    },
+    "current_text": "<b>WHEN:</b> End of any of your phases.<br><br><b>TARGET:</b> One <span class=\"kwb\">LEAGUES</span> <span class=\"kwb2\">OF</span> <span class=\"kwb\">VOTANN</span> <span class=\"kwb\">TRANSPORT</span> unit from your army.<br><br><b>EFFECT:</b> One <span class=\"kwb\">LEAGUES</span> <span class=\"kwb2\">OF</span> <span class=\"kwb\">VOTANN</span> unit embarked within your <span class=\"kwb\">TRANSPORT</span> can disembark. When doing so, models in that unit can be set up anywhere on the battlefield wholly within 6\" of your <span class=\"kwb\">TRANSPORT</span>. That unit cannot declare a charge in the same turn, but can otherwise act normally in the remainder of the turn."
    },
    "side": "attacker",
    "status": "not_modeled",
    "effects": [],
    "requires_toggles": [],
    "not_modeled_notes_zh": [
-    "下车重部署——移动域（DB 已补 SECURE POSITIONS 触发文）"
+    "Reviewed current official text. This rule changes movement, deployment, resurrection, charge sequencing, army selection or a positional state outside this fixed attack-sequence simulator. See current_text for the exact rule."
    ]
   },
   {
@@ -1659,18 +1665,24 @@
    "table": "enhancements",
    "id": "000010443002",
    "detachment": "Dêlve Assault Shift",
-   "name_en": "Dêlvwerke Navigator",
+   "name_en": "Dêlvewerke Navigator",
    "name_zh": null,
-   "encoded_by": "manual-2026-07-20",
+   "encoded_by": "manual-2026-09-15",
    "provenance": {
-    "text_sha256": "2c9255b840f2ca5d239f7e417ff42ea575332efa18a56d957f28acaa6a8fd1c9"
+    "text_sha256": "5f710895ef21656e64a02d5dd41bdee7ed835d4db04b3b9e54788549a9705edf",
+    "reviewed_source": {
+     "url": "https://assets.warhammer-community.com/eng_22-07_warhammer_40,000_faction_pack_leagues-of-votann-kpfosalfyb-sbqk309w4w.pdf",
+     "sha256": "dd29a4633ada948536c7e3b2b3da7e8237e65fcb4bde3291d6f084a3b4d8e4cd",
+     "page": 11
+    },
+    "current_text": "<span class=\"kwb\">LEAGUES</span> <span class=\"kwb2\">OF</span> <span class=\"kwb\">VOTANN</span> model only. In the Reinforcements step of your Movement phase, the bearer can use this Enhancement. If it does, select one friendly Cthonian Beserks unit visible to the bearer and then spend any number of YP. Return one destroyed model (excluding CHARACTER models) to that unit and then, for every 2YP you just spent, return up to one additional destroyed model (excluding CHARACTER models) to that unit."
    },
    "side": "attacker",
    "status": "not_modeled",
    "effects": [],
    "requires_toggles": [],
    "not_modeled_notes_zh": [
-    "花 YP 复活 Cthonian Beserks 模型——复活/YP 域"
+    "Reviewed current official text. This rule changes movement, deployment, resurrection, charge sequencing, army selection or a positional state outside this fixed attack-sequence simulator. See current_text for the exact rule."
    ]
   },
   {

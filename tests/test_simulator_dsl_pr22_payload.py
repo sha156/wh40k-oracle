@@ -97,7 +97,7 @@ class TestPayloadShape:
         by = {}
         for e in entries:
             by[e.status] = by.get(e.status, 0) + 1
-        assert by == {"encoded": 4, "partial": 16, "not_modeled": 55}
+        assert by == {"encoded": 5, "partial": 15, "not_modeled": 55}
 
     def test_table_breakdown(self, entries):
         by = {}
@@ -304,19 +304,17 @@ class TestDefensiveFromPayload:
         assert _ratio(base.wounds, base.hits) == pytest.approx(2 / 3, abs=0.02)
         assert _ratio(r.wounds, r.hits) == pytest.approx(1 / 2, abs=0.02)
 
-    def test_storm_of_darkness_stealth_is_cover_shooting_only(self, entries):
-        # 暗影风暴（Traitoris Lance 战略）：11 版 Stealth=掩体收益（命中侧 BS 惩罚），
-        # 「获 Stealth」与「获掩体收益」两从句收敛为同一二元状态，只编一份；近战不注入
+    def test_storm_of_darkness_separates_shooting_cover_and_melee_hit_penalty(self, entries):
+        # September FP: shooting Stealth and melee hit -1 are separate effects.
         sd = _entry(entries, "000008517007")
-        assert len(sd.effects) == 1
+        assert len(sd.effects) == 2
         base = _run(_attacker(_gun(bs=3)), _target(sv=4), Stance(phase="shooting"))
         tgt, _, _ = inject_target(_target(sv=4), [sd], frozenset())
         r = _run(_attacker(_gun(bs=3)), tgt, Stance(phase="shooting"))
-        assert _ratio(r.hits, base.hits) < 1.0          # 掩体 → 命中侧惩罚
-        # 近战阶段不注入：命中率与基线一致
+        assert _ratio(r.hits, base.hits) == pytest.approx(0.75, abs=0.02)
         bm = _run(_attacker(_melee(ws=3)), _target(sv=4), Stance(phase="melee"))
         rm = _run(_attacker(_melee(ws=3)), tgt, Stance(phase="melee"))
-        assert _ratio(rm.hits, bm.hits) == pytest.approx(1.0, abs=0.02)
+        assert _ratio(rm.hits, bm.hits) == pytest.approx(0.75, abs=0.02)
 
     def test_panoply_ap_worsen_needs_bearer_toggle(self, entries):
         # 受咒骑士全装（Houndpack Lance 增强）：针对携带者的攻击 AP 恶化 1，两相位

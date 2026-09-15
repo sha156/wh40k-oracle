@@ -330,12 +330,19 @@
    "effects": [],
    "requires_toggles": [],
    "not_modeled_notes_zh": [
-    "战斗阶段末登车——移动/登车域未建模"
+    "Reviewed current official text. This rule changes movement, deployment, resurrection, charge sequencing, army selection or a positional state outside this fixed attack-sequence simulator. See current_text for the exact rule."
    ],
    "provenance": {
-    "text_sha256": "5a421ead57554b7becf519e977867a5c7b9318e75802b71cc8b766796fdfae3e"
+    "text_sha256": "fce9e40c370ed5d4f39df948d991e1b39d6193aed7afa645e03db01d1265c450",
+    "reviewed_source": {
+     "url": "https://assets.warhammer-community.com/eng_wh40k_faction_pack_space_marines-kxoxqpsahz-u0lzirv0zl.pdf",
+     "sha256": "f1f96c0a3dda8dfc2d5686b4aa60e7959697651edbc51f5a344439ff6ac1a1f9",
+     "page": 1,
+     "title": "Faction Pack: Space Marines"
+    },
+    "current_text": "<b>WHEN:</b> End of the Fight phase.<br><br><b>TARGET:</b> One Adeptus Astartes Infantry unit from your army that is not within Engagement Range of one or more enemy units, and one friendly Heavy Transport it is able to embark within.<br><br><b>EFFECT:</b> If your ADEPTUS ASTARTES INFANTRY unit is wholly within 6\" of that HEAVY TRANSPORT, it can embark within it. Your unit can embark within that TRANSPORT in a turn it disembarked from a TRANSPORT."
    },
-   "encoded_by": "manual-2026-07-20"
+   "encoded_by": "manual-2026-09-15"
   },
   {
    "table": "stratagems",
@@ -3509,6 +3516,197 @@
     "text_sha256": "5a0e42086b4e5dd92e59c677ec5cee92911d744d033e95f76f8ddb70141ed72c"
    },
    "encoded_by": "manual-2026-07-20"
+  },
+  {
+   "table": "enhancements",
+   "id": "fp11e-sm-avenging-angel",
+   "side": "attacker",
+   "detachment": "Vengeful Hosts",
+   "name_en": "Avenging Angel",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "This rule uses deployment, leadership, weapon replacement or re-rolls of 1, outside the supported fixed attack-sequence channels."
+   ],
+   "provenance": {
+    "text_sha256": "28657654330622329da759da48c7118225b470e295ec3f137e2a4f158c41f786",
+    "reviewed_source": {
+     "url": "https://assets.warhammer-community.com/eng_wh40k_faction_pack_space_marines-kxoxqpsahz-u0lzirv0zl.pdf",
+     "sha256": "f1f96c0a3dda8dfc2d5686b4aa60e7959697651edbc51f5a344439ff6ac1a1f9",
+     "page": 2,
+     "title": "Faction Pack: Space Marines"
+    },
+    "current_text": "ADEPTUS ASTARTES FLY INFANTRY model only. When this unit ends an ingress move, select up to one enemy unit within 9\" of this unit. That enemy unit makes a battle-shock roll, with -1 to that battle-shock roll."
+   },
+   "encoded_by": "manual-2026-09-15"
+  },
+  {
+   "table": "enhancements",
+   "id": "fp11e-sm-orksbane",
+   "side": "attacker",
+   "detachment": "Vengeful Hosts",
+   "name_en": "Orksbane",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "This rule uses deployment, leadership, weapon replacement or re-rolls of 1, outside the supported fixed attack-sequence channels."
+   ],
+   "provenance": {
+    "text_sha256": "ed5b6e2f25a3e5defe2e33ae99b4c590534aa338b804c377312b07a7753a4202",
+    "reviewed_source": {
+     "url": "https://assets.warhammer-community.com/eng_wh40k_faction_pack_space_marines-kxoxqpsahz-u0lzirv0zl.pdf",
+     "sha256": "f1f96c0a3dda8dfc2d5686b4aa60e7959697651edbc51f5a344439ff6ac1a1f9",
+     "page": 2,
+     "title": "Faction Pack: Space Marines"
+    },
+    "current_text": "ADEPTUS ASTARTES FLY INFANTRY model only. This model has the following weapon: Orksbane [CLEAVE 2]. Range: Melee; A: 4; WS: 2+; S: 8; AP: -2; D: 3."
+   },
+   "encoded_by": "manual-2026-09-15"
+  },
+  {
+   "table": "enhancements",
+   "id": "fp11e-sm-temporal-corridor",
+   "side": "attacker",
+   "detachment": "Librarius Conclave",
+   "name_en": "Temporal Corridor",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "This rule uses deployment, leadership, weapon replacement or re-rolls of 1, outside the supported fixed attack-sequence channels."
+   ],
+   "provenance": {
+    "text_sha256": "43e7c0a0c20dfb38c9d88265aa804ba205acbd0a46c2799d72b4bdd4cdf4be9d",
+    "reviewed_source": {
+     "url": "https://assets.warhammer-community.com/eng_wh40k_faction_pack_space_marines-kxoxqpsahz-u0lzirv0zl.pdf",
+     "sha256": "f1f96c0a3dda8dfc2d5686b4aa60e7959697651edbc51f5a344439ff6ac1a1f9",
+     "page": 4,
+     "title": "Faction Pack: Space Marines"
+    },
+    "current_text": "ADEPTUS ASTARTES PSYKER model only. If this unit has the Telekinesis Discipline ability, this unit has Deep Strike. At the end of your opponent’s Fight phase, if this unit is unengaged, you can use this ability. If you do: Place this unit in strategic reserves. This unit can make an ingress move in your next Movement phase (including in your first turn)."
+   },
+   "encoded_by": "manual-2026-09-15"
+  },
+  {
+   "table": "abilities",
+   "id": "detfp11e-sm-vengeful-hosts",
+   "side": "attacker",
+   "detachment": "Vengeful Hosts",
+   "name_en": "Imperator Unleashed",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "This rule uses deployment, leadership, weapon replacement or re-rolls of 1, outside the supported fixed attack-sequence channels."
+   ],
+   "provenance": {
+    "text_sha256": "7cf78ca8d6424403aa0c5bea4248f095a9b8799c18d17841a59fdcf9853b78a2",
+    "reviewed_source": {
+     "url": "https://assets.warhammer-community.com/eng_wh40k_faction_pack_space_marines-kxoxqpsahz-u0lzirv0zl.pdf",
+     "sha256": "f1f96c0a3dda8dfc2d5686b4aa60e7959697651edbc51f5a344439ff6ac1a1f9",
+     "page": 2,
+     "title": "Faction Pack: Space Marines"
+    },
+    "current_text": "In a turn a friendly ADEPTUS ASTARTES FLY INFANTRY unit made an ingress/charge move, that unit’s attacks can re-roll hit rolls of 1."
+   },
+   "encoded_by": "manual-2026-09-15",
+   "materialize": {
+    "from_table": "detachments",
+    "from_id": "fp11e-sm-vengeful-hosts",
+    "from_column": "rule_text"
+   }
+  },
+  {
+   "table": "stratagems",
+   "id": "fp11e-sm-meteoric-onslaught",
+   "side": "attacker",
+   "detachment": "Vengeful Hosts",
+   "name_en": "METEORIC ONSLAUGHT",
+   "name_zh": null,
+   "status": "partial",
+   "effects": [
+    {
+     "phase": "wound",
+     "op": "s_improve",
+     "params": [
+      1
+     ],
+     "condition": [
+      "melee_charging"
+     ],
+     "source": "Meteoric Onslaught: +1 Strength to melee attacks after charging."
+    }
+   ],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "Select only an eligible ADEPTUS ASTARTES FLY INFANTRY unit. Attacker unit eligibility is a user selection assumption; the phase and charge gates are enforced."
+   ],
+   "provenance": {
+    "text_sha256": "fc833e9365b062afee15220a8358bb7e0d7d12a0d1d042d777276aac553d4f16",
+    "reviewed_source": {
+     "url": "https://assets.warhammer-community.com/eng_wh40k_faction_pack_space_marines-kxoxqpsahz-u0lzirv0zl.pdf",
+     "sha256": "f1f96c0a3dda8dfc2d5686b4aa60e7959697651edbc51f5a344439ff6ac1a1f9",
+     "page": 2,
+     "title": "Faction Pack: Space Marines"
+    }
+   },
+   "encoded_by": "manual-2026-09-15"
+  },
+  {
+   "table": "stratagems",
+   "id": "fp11e-sm-purge-by-sectors",
+   "side": "attacker",
+   "detachment": "Vengeful Hosts",
+   "name_en": "PURGE BY SECTORS",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "This rule uses deployment, leadership, weapon replacement or re-rolls of 1, outside the supported fixed attack-sequence channels."
+   ],
+   "provenance": {
+    "text_sha256": "53662e7ff9baf3c85a8a315a260a88239d3013e8a1fd3b63fa1c0c0604bd51eb",
+    "reviewed_source": {
+     "url": "https://assets.warhammer-community.com/eng_wh40k_faction_pack_space_marines-kxoxqpsahz-u0lzirv0zl.pdf",
+     "sha256": "f1f96c0a3dda8dfc2d5686b4aa60e7959697651edbc51f5a344439ff6ac1a1f9",
+     "page": 2,
+     "title": "Faction Pack: Space Marines"
+    },
+    "current_text": "<b>WHEN:</b> End of the Fight phase.<br><br><b>TARGET:</b> One friendly unengaged ADEPTUS ASTARTES FLY INFANTRY unit that was eligible to fight this phase.<br><br><b>EFFECT:</b> Your unit can make a normal move of up to D3+3\"."
+   },
+   "encoded_by": "manual-2026-09-15"
+  },
+  {
+   "table": "stratagems",
+   "id": "fp11e-sm-know-no-fear",
+   "side": "attacker",
+   "detachment": "Vengeful Hosts",
+   "name_en": "KNOW NO FEAR",
+   "name_zh": null,
+   "status": "not_modeled",
+   "effects": [],
+   "requires_toggles": [],
+   "not_modeled_notes_zh": [
+    "This rule uses deployment, leadership, weapon replacement or re-rolls of 1, outside the supported fixed attack-sequence channels."
+   ],
+   "provenance": {
+    "text_sha256": "0ddcce619d3c674b3510091fd7ac42e97f0c6142d940e9e8cfcef25db0e6b4e3",
+    "reviewed_source": {
+     "url": "https://assets.warhammer-community.com/eng_wh40k_faction_pack_space_marines-kxoxqpsahz-u0lzirv0zl.pdf",
+     "sha256": "f1f96c0a3dda8dfc2d5686b4aa60e7959697651edbc51f5a344439ff6ac1a1f9",
+     "page": 2,
+     "title": "Faction Pack: Space Marines"
+    },
+    "current_text": "<b>WHEN:</b> Your Command phase.<br><br><b>TARGET:</b> One friendly battle-shocked ADEPTUS ASTARTES unit. You can target that unit with this stratagem even though it is battle-shocked.<br><br><b>EFFECT:</b> Your unit is no longer battle-shocked."
+   },
+   "encoded_by": "manual-2026-09-15"
   }
  ]
 }

@@ -55,6 +55,7 @@ class Datasheet:
     keywords: List[str]
     models: List[ModelProfile]
     weapons: List[Weapon]
+    source_note: Optional[str] = None
 
 
 def _parse_points(points_json: Optional[str]) -> tuple:
@@ -129,10 +130,15 @@ def lookup_datasheet(db_path, unit_id: str) -> Optional[Datasheet]:
                 "SELECT name_en, range, a, bs_ws, s, ap, d, keywords_json, name_zh "
                 "FROM weapons WHERE unit_id = ? ORDER BY id", (unit_id,))
         ]
+        from db_compile.source_reconcile import unit_sources
+        previews = [s for s in unit_sources(conn, unit_id) if s.get("kind") == "official-preview-image"]
+        source_note = ("Official preview " + previews[0].get("published", "") +
+                       ": current MFM points; released codex rules not verified.") if previews else None
         return Datasheet(
             unit_id=unit_id, name_en=name_en, name_zh=name_zh, faction=faction,
             points_min=points_min, points_options=points_options,
-            keywords=_parse_keywords(keywords_json), models=models, weapons=weapons)
+            keywords=_parse_keywords(keywords_json), models=models, weapons=weapons,
+            source_note=source_note)
     finally:
         conn.close()
 

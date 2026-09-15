@@ -95,7 +95,7 @@ class TestRenderUnit:
         page, _ = from_db.render_unit(conn, "1", "欧克蛮人")
         conn.close()
         assert "[[额外攻击]]" in page.body        # 近战武器技能裸链
-        assert "[[步兵]]" in page.body and "[[人物]]" in page.body  # 关键词裸链
+        assert "[[Infantry]]" in page.body and "[[Character]]" in page.body  # 关键词裸链
 
     def test_empty_invuln_hides_section(self, tmp_path):
         db = _mkdb(tmp_path, invuln="-")

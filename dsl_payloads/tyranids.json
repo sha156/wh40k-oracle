@@ -553,12 +553,18 @@
    "effects": [],
    "requires_toggles": [],
    "not_modeled_notes_zh": [
-    "突触驱策（SYNAPTIC GOADING）：重掷 surge move 距离并改为朝目标点移动——纯移动域，无引擎载体"
+    "Reviewed current official text. This rule changes movement, deployment, resurrection, charge sequencing, army selection or a positional state outside this fixed attack-sequence simulator. See current_text for the exact rule."
    ],
    "provenance": {
-    "text_sha256": "2bd9c334b083b3fa427d175a94166c4bc45ae887bad68db6ffc27a595d2ec7a4"
+    "text_sha256": "fcc49642833b5e208fdcd8e3c41333089c7c330a6f1b9d9e186cfe3e346319f0",
+    "reviewed_source": {
+     "url": "https://assets.warhammer-community.com/eng_wh40k_faction_pack_tyranids-kbkk66qiwc-nh0khbkupv.pdf",
+     "sha256": "d7531867ba2c0939c098dbd247e459e611b206fe009c1ba031c896bcbc541663",
+     "page": 19
+    },
+    "current_text": "<b>WHEN:</b> Any phase, just before an ENDLESS MULTITUDE unit from your army that is within Synapse Range of your army makes a surge move.<br><br><b>TARGET:</b> That <span class=\"kwb\">ENDLESS</span> <span class=\"kwb\">MULTITUDE</span> unit.<br><br><b>EFFECT:</b> When making that surge move, you can re-roll the D6 to determine how far your unit moves, and your unit can end that move as close as possible to the closest objective marker (instead of as close as possible to the closest enemy unit). All other rules for making surge moves still apply."
    },
-   "encoded_by": "manual-2026-07-21",
+   "encoded_by": "manual-2026-09-15",
    "weapon_filter": ""
   },
   {

@@ -55,3 +55,8 @@ Official current prices are authoritative. Historical/Legends records must not b
 - Source implementation: `826127ca4`; generated wiki: `69b5a1b5a`; earlier work preserved in `709836f48`. Branch pushed as `codex/official-sync-finish`; both checkouts follow it.
 - Private knowledge repositories updated and pushed: claude-harness `c2d95c3`, learn-notes `eabf36a`, error-notes `37e92f2`, project-devlog `29d11fd`.
 - Final app check: health is ready and model warmup completed; the rebuilt UI displays the dated rules notice outside the source disclosure, and official search returns Nazdreg at 175 points with its MFM link.
+
+
+## September 15 source follow-through
+
+Tasks 1–2 now have a reviewed patch pipeline, six added datasheets, refreshed DSL and generated consumers. See [reconciliation acceptance](../reports/2026-09-15-structured-source-reconciliation.md). The unmatched list fell from 12 to 2 unit names and from 67 to 28 enhancement keys. Released Ork codex access and preview verification remain explicit source gaps.

@@ -1037,15 +1037,20 @@
    "effects": [],
    "requires_toggles": [],
    "not_modeled_notes_zh": [
-    "战斗后登车——运输域未建模"
+    "Reviewed current official text. This rule changes movement, deployment, resurrection, charge sequencing, army selection or a positional state outside this fixed attack-sequence simulator. See current_text for the exact rule."
    ],
    "provenance": {
-    "current_text": "db stratagems.text_zh id=000010007002",
+    "current_text": "<b>WHEN:</b> End of the Fight phase.<br><br><b>TARGET:</b> One EMPEROR’S CHILDREN unit from your army that destroyed an enemy unit this phase, and one friendly TRANSPORT it is able to embark within.<br><br><b>EFFECT:</b> If your EMPEROR’S CHILDREN unit is wholly within 6\" of that TRANSPORT, it can embark within it. Your unit can embark within that TRANSPORT in a turn it disembarked from a TRANSPORT.",
     "base_text": "Wahapedia 现文（PR7 工作单：FP 未触及或已滚入，11 版仍现行）",
     "synthesis": "无需合成",
-    "text_sha256": "bbaeadcda0ce9fe262335ad958c2bf1cfaeb88c4eb089251c019fcdb779fff82"
+    "text_sha256": "b352ab2613055851ddabc46f974581dd1e3074e3936b893b1b7d5494278dcc92",
+    "reviewed_source": {
+     "url": "https://assets.warhammer-community.com/eng_wh40k_faction_pack_emperors_children-s7cvl3p8e4-ddwa1akamk.pdf",
+     "sha256": "50f456e9f4a20889450093a9e6627aa1c1ed0af66efbc29c583c46d910295ca7",
+     "page": 9
+    }
    },
-   "encoded_by": "manual-2026-07-19"
+   "encoded_by": "manual-2026-09-15"
   },
   {
    "table": "stratagems",

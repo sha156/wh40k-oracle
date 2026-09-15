@@ -322,6 +322,8 @@ def build_blacklibrary_docs(db_path):
                 "SELECT canonical_id, name_zh, faction_zh, stats_json, "
                 "abilities_json, weapons_json FROM unit_zh_detail "
                 "WHERE source='blackforum'").fetchall()
+            from db_compile.source_reconcile import requires_current_english
+            rows = [row for row in rows if not requires_current_english(conn, row[0])]
         except sqlite3.OperationalError:
             return []
     finally:
@@ -375,10 +377,12 @@ def load_zh_detail(db_path, canonical_id: str) -> Optional[dict]:
             return None
         if not row:
             return None
+        from db_compile.source_reconcile import requires_current_english
+        current_english = requires_current_english(conn, canonical_id)
         return {
             "name_zh": row[0], "faction_zh": row[1],
             "属性": json.loads(row[2]) if row[2] else [],
-            "能力": json.loads(row[3]) if row[3] else None,
+            "能力": json.loads(row[3]) if row[3] and not current_english else None,
             "武器": json.loads(row[4]) if row[4] else None,
         }
     finally:

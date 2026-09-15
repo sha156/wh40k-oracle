@@ -84,11 +84,11 @@ def _ratio(numer, denom):
 class TestPayloadShape:
     def test_counts(self, entries):
         # 15 分队规则物化 + 77 战略 + 50 增强 = 142（23 encoded / 13 partial / 106 not_modeled）
-        assert len(entries) == 142
+        assert len(entries) == 147
         by = {}
         for e in entries:
             by[e.status] = by.get(e.status, 0) + 1
-        assert by == {"encoded": 23, "partial": 13, "not_modeled": 106}
+        assert by == {"encoded": 23, "partial": 13, "not_modeled": 111}
 
     def test_partial_entries_all_have_notes_and_fingerprint(self, entries):
         for e in entries:

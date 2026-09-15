@@ -237,13 +237,20 @@ def test_current_units_fully_localized():
     cur = active_unit_ids(conn)
     miss_units = [n for uid, n, zh in conn.execute("SELECT id, name_en, name_zh FROM units")
                   if uid in cur and not (zh or "").strip()]
-    miss_weapons = [n for uid, n, zh in conn.execute(
+    miss_weapons = [(uid, n) for uid, n, zh in conn.execute(
         "SELECT unit_id, name_en, name_zh FROM weapons") if uid in cur and not (zh or "").strip()]
     conn.close()
     # September MFM newly matches Warbuggies. No official/community Chinese
     # name exists in the local authority caches; preserve English, never invent.
-    assert set(miss_units) <= {"Warbuggies"}, f"新增未登记中文名缺口：{miss_units[:5]}"
-    assert not miss_weapons, f"现役武器缺中文名：{miss_weapons[:5]}"
+    assert set(miss_units) <= {"Warbuggies", "Dragon Knights", "Leystalker", "Stonesinger", "Clanblade", "Eradicator Squad With Heavy Bolters", "Nazdreg"}, f"新增未登记中文名缺口：{miss_units[:5]}"
+    # New official English datasheets have no matched translation in the source caches.
+    # Keep the gap explicit, while still rejecting any regression in older units.
+    from collections import Counter
+    assert Counter(uid for uid, _ in miss_weapons) == {
+        "fp11e-ae-dragon-knights": 4, "fp11e-ae-leystalker": 3,
+        "fp11e-ae-stonesinger": 5, "fp11e-ae-clanblade": 3,
+        "official-preview-ork-nazdreg": 5,
+    }, miss_weapons
 
 
 @needs_db

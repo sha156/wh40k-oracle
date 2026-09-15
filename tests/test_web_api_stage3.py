@@ -366,3 +366,12 @@ def test_harlequins_not_archived_by_mfm_gap():
 
     names = {u["nameEn"] for u in codex.list_units(DB_PATH, "AE")}
     assert "Troupe" in names and "Solitaire" in names and "Death Jester" in names
+
+
+def test_absent_invulnerable_save_and_preview_provenance():
+    card = build_entity_card({"found": True, "datasheet": {
+        "name_en": "Preview unit", "models": [{"invuln": None}],
+        "source_note": "Official preview: released codex rules not verified.",
+    }})
+    assert card.invuln is None
+    assert card.src == "Official preview: released codex rules not verified."

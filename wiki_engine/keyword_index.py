@@ -141,9 +141,20 @@ def normalize_keyword(token: str) -> Tuple[str, Optional[str]]:
 
 def _engine_name(base: str) -> str:
     """基础词条 → 引擎内部名（engines/simulator/parse.py 的口径）。"""
+    if base.startswith(("LETHAL HITS:", "DEVASTATING WOUNDS:")):
+        base = base.split(":", 1)[0]
     if base.startswith("ANTI-"):
         return "anti"                              # 引擎按 anti 一族统一建模
     return base.lower().replace("-", "_").replace(" ", "_").replace("'", "")
+
+
+def keyword_family(base: str) -> str:
+    """Keep conditional identities distinct, but link to their shared core rule."""
+    if base.startswith("ANTI-"):
+        return "ANTI"
+    if base in {"LETHAL HITS: NON-MONSTER/VEHICLE", "DEVASTATING WOUNDS: NON-MONSTER/VEHICLE"}:
+        return base.split(":", 1)[0]
+    return base
 
 
 def engine_status(base: str) -> str:
@@ -252,7 +263,7 @@ def _rule_page(base: str, wiki_root: Path, zh: str = "") -> Optional[str]:
     from wiki_engine.crosslinks import _resolve_known_alias
 
     candidates: List[str] = ["core-rules/{}.md".format(slugify(base))]
-    for label in (base, zh):
+    for label in (base, zh, keyword_family(base)):
         if label:
             got = _resolve_known_alias(label)
             if got:
@@ -276,7 +287,7 @@ def classify(base: str, quickref: Dict[str, QuickRefEntry]) -> str:
         #   设计师注：「[手枪]是一个预先存在的技能，它将随着这次版本的发展被[近距离]替代。」
         # 即：**规则上完全等同，正在被逐步取代，但此刻仍是现行词条**。
         return "transitional"
-    key = "ANTI" if base.startswith("ANTI-") else base
+    key = keyword_family(base)
     return "universal" if key in quickref else "unit-specific"
 
 
@@ -322,7 +333,7 @@ def render_index(stats: Dict[str, KeywordStat], quickref: Dict[str, QuickRefEntr
               "| 词条 | 英文 | 节号 | 档位 | 现役武器 | 现役单位 | 引擎 |",
               "|---|---|---|---|---|---|---|"]
         for st in group:
-            qr = quickref.get("ANTI" if st.base.startswith("ANTI-") else st.base)
+            qr = quickref.get(keyword_family(st.base))
             zh = _zh_base(st.base, st.variants, gloss) or st.base
             section = (qr.section if qr and qr.section else "—")
             params = sorted({v[len(st.base):].strip() for v in st.variants
@@ -340,7 +351,7 @@ def render_index(stats: Dict[str, KeywordStat], quickref: Dict[str, QuickRefEntr
     # ── 译名差异披露 ──
     diffs = []
     for st in stats.values():
-        qr = quickref.get("ANTI" if st.base.startswith("ANTI-") else st.base)
+        qr = quickref.get(keyword_family(st.base))
         zh = _zh_base(st.base, st.variants, gloss)
         if qr and zh and qr.name_zh != zh and not st.base.startswith("ANTI-"):
             diffs.append((st.base, zh, qr.name_zh))
@@ -392,7 +403,7 @@ def build_payload(stats: Dict[str, KeywordStat], quickref: Dict[str, QuickRefEnt
     items: List[Dict[str, object]] = []
     for base in sorted(stats):
         st = stats[base]
-        qr = quickref.get("ANTI" if base.startswith("ANTI-") else base)
+        qr = quickref.get(keyword_family(base))
         zh = _zh_base(base, st.variants, gloss)
         items.append({
             "slug": slugify(base),

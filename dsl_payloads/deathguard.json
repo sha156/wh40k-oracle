@@ -39,16 +39,21 @@
    "not_modeled_notes_zh": [
     "被感染判定由 target_afflicted 开关声明——传染范围逐轮 3/6/9 寸（上限 12 寸）与毒雾轰炸/血锈倾盆/定点感染等来源统一由该开关承载；近战几乎恒成立，射击自查",
     "瘟疫三选一仅骨疽疟（Rattlejoint Ague）可建模：plague_rattlejoint 开关声明军队所选瘟疫；Sv 恶化 1 以 AP 特征值改善 1 编码——护甲面数学等价、特保不受影响，与 RAW 一致",
-    "颅蛆枯萎（Skullsquirm：被感染单位近战命中-1）是敌方攻击方向的减益，本条目为攻方向——DG 为守方时该效果未接入（守方向军规注入不在本期）",
+    "Skullsquirm now grants cover to enemies attacked at range by the Afflicted unit and imposes -1 on its melee hit rolls. These are reverse-direction penalties; this attacker-side payload models only the unchanged Toughness penalty and selected Rattlejoint effect.",
     "疥痂魂腐（Scabrous：M/Ld/OC 恶化）无战斗数学通道"
    ],
    "provenance": {
     "current_text": "db abilities.text_zh id=000008396",
     "base_text": "Faction Pack Death Guard page_007.md（fp_rules 已 11 版化）",
     "synthesis": "fp_rules 补丁后的 DB 现行文本",
-    "text_sha256": "23c3d9aa1cb58c5356d21e0a5fbda7ef8c7bbe28d04e79e68b06799d22c68875"
+    "text_sha256": "1163f3f11b42cb1e8303b39edda19d4fb485ef26959b0fdff8b2636f95ca9d49",
+    "reviewed_source": {
+     "url": "https://assets.warhammer-community.com/eng_wh40k_faction_pack_death_guard-etfwxynh2n-uxtkih85rs.pdf",
+     "sha256": "3b446db7d7dc48fc19ee61b263ec672a88c129b61ca8cd0dfa644414a1fef7c6",
+     "page": 7
+    }
    },
-   "encoded_by": "manual-2026-07-19"
+   "encoded_by": "manual-2026-09-15"
   },
   {
    "table": "abilities",
@@ -1035,15 +1040,20 @@
    "effects": [],
    "requires_toggles": [],
    "not_modeled_notes_zh": [
-    "冲锋骰 -2——冲锋域"
+    "Reviewed current official text. This rule changes movement, deployment, resurrection, charge sequencing, army selection or a positional state outside this fixed attack-sequence simulator. See current_text for the exact rule."
    ],
    "provenance": {
-    "current_text": "db stratagems.text_zh id=000010128007",
+    "current_text": "<b>WHEN:</b> Start of your opponent’s Charge phase.<br><br><b>TARGET:</b> One friendly unengaged DEATH GUARD VEHICLE unit.<br><br><b>EFFECT:</b> Select one visible enemy unit within 12\" of your unit. When that enemy unit declares a charge, that enemy unit has -1 to charge rolls.",
     "base_text": "Wahapedia 现文（PR8 工作单：FP 未触及或已滚入，11 版仍现行）",
     "synthesis": "无需合成",
-    "text_sha256": "7515d838a538ce0251de344691808b78bf99a735acd1a07f6ce845367a86f5c0"
+    "text_sha256": "4ff93ba1d7845426675bc025ba56e98cdb8d5a00cd251007362cb798d4769a67",
+    "reviewed_source": {
+     "url": "https://assets.warhammer-community.com/eng_wh40k_faction_pack_death_guard-etfwxynh2n-uxtkih85rs.pdf",
+     "sha256": "3b446db7d7dc48fc19ee61b263ec672a88c129b61ca8cd0dfa644414a1fef7c6",
+     "page": 7
+    }
    },
-   "encoded_by": "manual-2026-07-19"
+   "encoded_by": "manual-2026-09-15"
   },
   {
    "table": "stratagems",

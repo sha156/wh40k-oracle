@@ -335,7 +335,7 @@
    "detachment": "Traitoris Lance",
    "name_en": "STORM OF DARKNESS",
    "name_zh": null,
-   "status": "partial",
+   "status": "encoded",
    "effects": [
     {
      "phase": "save",
@@ -344,18 +344,31 @@
      "condition": [
       "phase_shooting"
      ],
-     "source": "暗影风暴（守方获 Stealth + 掩体收益：11 版 24.33 的全部效果就是授予 13.08 掩体收益，两从句收敛为同一二元状态，只编一份）"
+     "source": "Storm of Darkness: Stealth (Core Rules 24.33)."
+    },
+    {
+     "phase": "hit",
+     "op": "modify",
+     "params": [
+      -1
+     ],
+     "condition": [
+      "phase_melee"
+     ],
+     "source": "Storm of Darkness: -1 to incoming melee hit rolls."
     }
    ],
    "requires_toggles": [],
-   "not_modeled_notes_zh": [
-    "WHEN=对手射击阶段选中目标后——射击门自含，近战不注入",
-    "原文「获 Stealth」与「获掩体收益」在 11 版是同一个状态，勿再叠编 hit-1（十版 Stealth 语义残留会双重计费且不吃 [IGNORES COVER] 24.18 抵消）"
-   ],
+   "not_modeled_notes_zh": [],
    "provenance": {
-    "text_sha256": "4bde62667f1880888725971d8216124f097edb3d892b8283fb2cd35f247cd5ae"
+    "text_sha256": "bf031be6cf67bae2b8cfd0de2c8ce59562a14275fbf7d623e484478f3ca1c35f",
+    "reviewed_source": {
+     "url": "https://assets.warhammer-community.com/eng_wh40k_faction_pack_chaos_knights-87ywk2jovh-xk68yzyb18.pdf",
+     "sha256": "28fd9a69ffe7ec8463199e4b5dfda93b6daf30692008fd5cf28bbec4bbfb8acd",
+     "page": 25
+    }
    },
-   "encoded_by": "manual-2026-07-21",
+   "encoded_by": "manual-2026-09-15",
    "weapon_filter": ""
   },
   {

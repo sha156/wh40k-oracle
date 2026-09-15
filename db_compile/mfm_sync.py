@@ -24,7 +24,7 @@ from db_compile.mfm_source import load_snapshot, verify_ledger, write_ledger
 def _name_key(name):
     # Publisher type suffixes are metadata, not part of the enhancement name.
     text = (name or "").strip().casefold().replace("’", "'").replace("‘", "'")
-    text = re.sub(r"\s*\((?:aura|psychic|upgrade)\)\s*$", "", text)
+    text = re.sub(r"(?:\s*\((?:aura|psychic|upgrade)\))+\s*$", "", text)
     return " ".join(text.split())
 
 
@@ -90,10 +90,19 @@ def _enhancements(conn, snapshot, apply=False):
     if not {"id", "faction_id", "name", "detachment_name", "cost"} <= cols:
         raise RuntimeError("Enhancement table is missing required columns")
     db_rows = {}
+    by_id = {}
     for uid, fid, name, detachment, cost in conn.execute(
             "SELECT id,faction_id,name,detachment_name,cost FROM enhancements"):
         key = (fid, _name_key(detachment), _name_key(name))
         db_rows.setdefault(key, []).append((uid, cost))
+        by_id[uid] = (fid, name, detachment, cost)
+    aliases = {}
+    for entry in json.loads(Path(__file__).with_name("mfm_enhancement_aliases.json").read_text(encoding="utf-8")):
+        src, target = entry["source"], entry["target"]
+        key = (src["faction"], _name_key(src["detachment"]), _name_key(src["name"]))
+        if key in aliases:
+            raise ValueError(f"Duplicate official enhancement alias: {key}")
+        aliases[key] = target
     prices = {}
     for slug in sorted(snapshot["pages"], key=lambda s: (s != "space-marines", s)):
         fid = mfm.MFM_SLUG_TO_FACTION.get(slug)
@@ -106,6 +115,14 @@ def _enhancements(conn, snapshot, apply=False):
     changes, unmatched, matched = [], [], 0
     for key, cost in prices.items():
         hits = db_rows.get(key, [])
+        if not hits and key in aliases:
+            target = aliases[key]
+            current = by_id.get(target["id"])
+            expected = (target["faction_id"], target["name"], target["detachment_name"])
+            if current and current[:3] != expected:
+                raise ValueError(f"Official enhancement alias target changed: {target['id']}")
+            if current:
+                hits = [(target["id"], current[3])]
         if not hits:
             unmatched.append({"faction": key[0], "detachment": key[1], "name": key[2], "cost": cost})
         for uid, old in hits:

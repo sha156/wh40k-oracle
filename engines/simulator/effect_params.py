@@ -30,6 +30,8 @@ _FACES = 6
 KNOWN_CONDITION_TAGS = frozenset({
     "half_range", "stationary", "charging", "long_range", "indirect",
     "phase_shooting", "phase_melee", "target_has_keyword",
+    "shooting_astra_militarum_non_titanic",
+    "target_keyword_group",
     "guided_vs_spotted", "guided_markerlight", "markerlight_observer",
     "detachment_rounds_shooting", "detachment_rounds_guided",
     "ranged_within_12", "ranged_within_8",          # P7-PR4：绝对射程档假设（自含射击阶段）
@@ -85,8 +87,17 @@ def _cond_true(condition: Tuple, stance: Stance, target: TargetProfile) -> bool:
         return stance.phase == "shooting"
     if tag == "phase_melee":             # cleave（11版24.06）等仅对近战生效
         return stance.phase == "melee"
+    if tag == "shooting_astra_militarum_non_titanic":
+        # Masters of Camouflage, current FP p23: Stealth, excluding TITANIC.
+        return (stance.phase == "shooting" and "astra militarum" in target.keywords
+                and "titanic" not in target.keywords)
     if tag == "target_has_keyword":
         return len(condition) > 1 and condition[1] in target.keywords
+    if tag == "target_keyword_group":
+        if len(condition) != 2 or condition[1] not in ("monster/vehicle", "non-monster/vehicle"):
+            raise ValueError(f"Unsupported target keyword group: {condition!r}")
+        large = bool({"monster", "vehicle"} & set(target.keywords))
+        return not large if condition[1].startswith("non-") else large
     if tag == "guided_vs_spotted":       # P7：FTGG 受引导单位打被标记目标（11版军规）
         return stance.phase == "shooting" and stance.guided
     if tag == "guided_markerlight":      # P7：观察员带 Markerlight 关键词 → 追加 [IGNORES COVER]
@@ -502,5 +513,3 @@ def unconsumed_target_effect_notes(target: TargetProfile) -> List[str]:
         f"该效果未计入本次结果"
         for e in target.effects if not _target_effect_consumed(e)
     ]
-
-

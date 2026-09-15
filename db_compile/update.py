@@ -275,6 +275,16 @@ def stage_fp_rules(cfg: UpdateConfig) -> StageResult:
 
 
 @_writes_db
+def stage_source_reconcile(cfg: UpdateConfig) -> StageResult:
+    """Restore reviewed September corrections before prices and DSL projections."""
+    from db_compile.source_reconcile import apply_patches
+    rep = apply_patches(cfg.db)
+    return StageResult("source_reconcile", True,
+                       f"Official corrections: {rep['applied']} updated, {rep['inserted']} inserted, {rep['already']} current",
+                       detail=rep)
+
+
+@_writes_db
 def stage_official_zh(cfg: UpdateConfig) -> StageResult:
     """GW 官方中文名投影（**必须排在 fp_rules 之后**）。
 
@@ -520,6 +530,7 @@ _PIPELINE = [
     # 单位点数归 NULL 且三道校验全静默（gnhf 审查模块 4 H1，DB 副本复现）。
     ("补 Faction Pack 11 版真漂移", stage_fp_errata, False),
     ("补 Faction Pack 规则文本真漂移", stage_fp_rules, False),
+    ("Restore reviewed official source corrections", stage_source_reconcile, True),
     # fp_rules can insert enhancements. Apply MFM afterwards so newly restored
     # rows receive current official prices instead of frozen patch-file costs.
     ("应用官方 MFM 分数", stage_mfm_apply, False),

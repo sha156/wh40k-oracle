@@ -9,18 +9,23 @@
    "detachment": null,
    "name_en": "Cult Ambush",
    "name_zh": null,
-   "encoded_by": "manual-2026-07-21",
+   "encoded_by": "manual-2026-09-15",
    "provenance": {
-    "current_text": "db abilities.text_zh id=000008501",
+    "current_text": "If your Army Faction is <span class=\"kwb\">GENESTEALER</span> <span class=\"kwb\">CULTS</span>, you start the battle with a number of Resurgence points, depending on the battle size, as shown below.<br><ul><li><b>Incursion:</b> 6 Resurgence points</li><li><b>Strike Force:</b> 10 Resurgence points</li><li><b>Onslaught:</b> 14 Resurgence points</li></ul><br>Each time a unit from your army is destroyed, if every model (excluding CHARACTER models) in that unit has this ability, you can spend the relevant number of Resurgence points shown below based on that unit’s Starting Strength (not including attached CHARACTER models).<br><br><div class=\"BreakInsideAvoid\"><div class=\"BreakInsideAvoid\"  style=\"\"\"><table border=\"0\" bordercolor=\"#888\" cellpadding=\"4\" cellspacing=\"0\" style=\"border-collapse:collapse;border-width:0px\"><tbody><tr><td><table class=\" customTable\" border=\"1\" bordercolor=\"#888\" cellpadding=\"4\" style=\"border-collapse:collapse;border-color:#888888;border-width:0px\"><tbody><tr><td colspan=\"2\" style=\"border-width:1px 0 1px 1px;border-style:none none none none;background-color:rgb(91,27,54);text-align:left;vertical-align:middle;width:0px;height:0px;\"><b><a href=\"/wh40k10ed/factions/genestealer-cults/Aberrants\">Aberrants</a></b></td></tr><tr><td style=\"border-width:0 0 0 0;border-style:none none none none;vertical-align:bottom;width:351px;height:0px;\">5 models</td><td style=\"border-width:0 0 0 0;border-style:none none none none;vertical-align:bottom;width:208px;height:0px;\">4 Resurgence points</td></tr><tr><td style=\"border-width:0 0 0 0;border-style:none none none none;vertical-align:bottom;width:351px;height:0px;\">10 models</td><td style=\"border-width:0 0 0 0;border-style:none none none none;vertical-align:bottom;width:208px;height:0px;\">8 Resurgence points</td></tr><tr><td style=\"border-width:0 0 0 0;border-style:none none none none;vertical-align:bottom;width:351px;height:0px;\"></td><td style=\"border-width:0 0 0 0;border-style:none none none none;vertical-align:bottom;width:208px;height:0px;\"></td></tr><tr><td colspan=\"2\" style=\"border-width:1px 0 1px 1px;border-style:none none none none;background-color:rgb(91,27,54);text-align:left;vertical-align:middle;width:0px;height:0px;\"><b><a href=\"/wh40k10ed/factions/genestealer-cults/Acolyte-Hybrids-With-Autopistols\">Acolyte Hybrids with Autopistols</a>, <a href=\"/wh40k10ed/factions/genestealer-cults/Acolyte-Hybrids-With-Hand-Flamers\">Acolyte Hybrids with Hand Flamers</a>, <a href=\"/wh40k10ed/factions/genestealer-cults/Hybrid-Metamorphs\">Hybrid Metamorphs</a></b></td></tr><tr><td style=\"border-width:0 0 0 0;border-style:none none none none;vertical-align:bottom;width:351px;height:0px;\">5 models</td><td style=\"border-width:0 0 0 0;border-style:none none none none;vertical-align:bottom;width:208px;height:0px;\">2 Resurgence points</td></tr><tr><td style=\"border-width:0 0 0 0;border-style:none none none none;vertical-align:bottom;width:351px;height:0px;\">10 models</td><td style=\"border-width:0 0 0 0;border-style:none none none none;vertical-align:bottom;width:208px;height:0px;\">4 Resurgence points</td></tr><tr><td style=\"border-width:0 0 0 0;border-style:none none none none;vertical-align:bottom;width:351px;height:0px;\"></td><td style=\"border-width:0 0 0 0;border-style:none none none none;vertical-align:bottom;width:208px;height:0px;\"></td></tr><tr><td colspan=\"2\" style=\"border-width:1px 0 1px 1px;border-style:none none none none;background-color:rgb(91,27,54);text-align:left;vertical-align:middle;width:0px;height:0px;\"><b><a href=\"/wh40k10ed/factions/genestealer-cults/Atalan-Jackals\">Atalan Jackals</a></b></td></tr><tr><td style=\"border-width:0 0 0 0;border-style:none none none none;vertical-align:bottom;width:351px;height:0px;\">5 models</td><td style=\"border-width:0 0 0 0;border-style:none none none none;vertical-align:bottom;width:208px;height:0px;\">2 Resurgence points</td></tr><tr><td style=\"border-width:0 0 0 0;border-style:none none none none;vertical-align:bottom;width:351px;height:0px;\">10 models</td><td style=\"border-width:0 0 0 0;border-style:none none none none;vertical-align:bottom;width:208px;height:0px;\">6 Resurgence points</td></tr><tr><td style=\"border-width:0 0 0 0;border-style:none none none none;vertical-align:bottom;width:351px;height:0px;\"></td><td style=\"border-width:0 0 0 0;border-style:none none none none;vertical-align:bottom;width:208px;height:0px;\"></td></tr><tr><td colspan=\"2\" style=\"border-width:1px 0 1px 1px;border-style:none none none none;background-color:rgb(91,27,54);text-align:left;vertical-align:middle;width:0px;height:0px;\"><b><a href=\"/wh40k10ed/factions/genestealer-cults/Neophyte-Hybrids\">Neophyte Hybrids</a></b></td></tr><tr><td style=\"border-width:0 0 0 0;border-style:none none none none;vertical-align:bottom;width:351px;height:0px;\">10 models</td><td style=\"border-width:0 0 0 0;border-style:none none none none;vertical-align:bottom;width:208px;height:0px;\">3 Resurgence points</td></tr><tr><td style=\"border-width:0 0 0 0;border-style:none none none none;vertical-align:bottom;width:351px;height:0px;\">20 models</td><td style=\"border-width:0 0 0 0;border-style:none none none none;vertical-align:bottom;width:208px;height:0px;\">6 Resurgence points</td></tr><tr><td style=\"border-width:0 0 0 0;border-style:none none none none;vertical-align:bottom;width:351px;height:0px;\"></td><td style=\"border-width:0 0 0 0;border-style:none none none none;vertical-align:bottom;width:208px;height:0px;\"></td></tr><tr><td colspan=\"2\" style=\"border-width:1px 0 1px 1px;border-style:none none none none;background-color:rgb(91,27,54);text-align:left;vertical-align:middle;width:0px;height:0px;\"><b><a href=\"/wh40k10ed/factions/genestealer-cults/Purestrain-Genestealers\">Purestrain Genestealers</a></b></td></tr><tr><td style=\"border-width:0 0 0 0;border-style:none none none none;vertical-align:bottom;width:351px;height:0px;\">5 models</td><td style=\"border-width:0 0 0 0;border-style:none none none none;vertical-align:bottom;width:208px;height:0px;\">2 Resurgence points</td></tr><tr><td style=\"border-width:0 0 0 0;border-style:none none none none;vertical-align:bottom;width:351px;height:0px;\">10 models</td><td style=\"border-width:0 0 0 0;border-style:none none none none;vertical-align:bottom;width:208px;height:0px;\">6 Resurgence points</td></tr></tbody></table></td></tr></tbody></table></div><br></div>If you do:<br><ul><li>Add a new unit to your army identical to that destroyed unit (excluding CHARACTER models), in Cult Ambush, at its Starting Strength, with all of its wounds remaining and any <span class=\"kwb2 bluefont\">[ONE SHOT]</span> weapons those models are equipped with considered as not having been shot.</li><li>Place one Cult Ambush marker (see below) anywhere on the battlefield that is more than 8\" horizontally away from all enemy units (if this is not possible, no marker is placed).</li></ul><br><span class=\"hi_custom\">Units in Cult Ambush</span><br>Cult Ambush is a type of Strategic Reserves. Units in Cult Ambush cannot be targeted with the Rapid Ingress Stratagem, but can be set up on the battlefield using a Cult Ambush marker as described below, or by following the rules for Strategic Reserves in a subsequent turn. Units in Cult Ambush are not automatically destroyed at the end of the third battle round.<br><br><span class=\"hi_custom\">Cult Ambush Markers</span><br>Use a circular 32mm diameter marker for Cult Ambush markers. If an enemy model (excluding <span class=\"kwb\">AIRCRAFT</span>) ends any kind of move within 8\" of a Cult Ambush marker you placed, that Cult Ambush marker is removed from the battlefield. At the end of your opponent’s next Movement phase, for each of your Cult Ambush markers still on the battlefield, you can select one unit from your army that is in Cult Ambush to make an ingress move. For that ingress move, set that unit up with at least one model in that unit in base contact with that Cult Ambush marker and all other models placed wholly within 3\" of that Cult Ambush marker (that Cult Ambush marker is then removed from the battlefield). Units in Cult Ambush can make an ingress move in the first battle round using this rule.",
     "base_text": "Wahapedia 现文（PR25 工作单：FP 未触及或已滚入，11 版仍现行）",
-    "text_sha256": "e8b733534584dade875b0c29b1bd14655b7605ee7e5eda5dbf20e0a1b0428256"
+    "text_sha256": "8d75e8a21fb9f7296e50da81929eff60c0de91fdb4136f6472ea481de3c3b6d4",
+    "reviewed_source": {
+     "url": "https://assets.warhammer-community.com/eng_22-07_warhammer_40,000_faction_pack_genestealer_cults-vmkwgeydbr-sh7picbeqo.pdf",
+     "sha256": "045ee9f53f7b1e018e3fc06c5932cb8e1d9c308ea2e0c298a703c3ea5745d769",
+     "page": 7
+    }
    },
    "side": "attacker",
    "status": "not_modeled",
    "effects": [],
    "requires_toggles": [],
    "not_modeled_notes_zh": [
-    "复苏点（Resurgence points）资源、单位被消灭后按起始编制花费复苏点重生、Cult Ambush 标记的放置/移除与 ingress move——资源/预备队/部署三域，全部在攻击结算链之外"
+    "Reviewed current official text. This rule changes movement, deployment, resurrection, charge sequencing, army selection or a positional state outside this fixed attack-sequence simulator. See current_text for the exact rule."
    ]
   },
   {
@@ -406,18 +411,23 @@
    "detachment": "Biosanctic Broodsurge",
    "name_en": "EVASIVE VANGUARD",
    "name_zh": null,
-   "encoded_by": "manual-2026-07-21",
+   "encoded_by": "manual-2026-09-15",
    "provenance": {
-    "current_text": "db stratagems.text_zh id=000009076002",
+    "current_text": "<b>WHEN:</b> Any phase, just after an enemy unit ends a move within 8\" of one or more of your Cult Ambush markers, before removing those markers from the battlefield.<br><br><b>TARGET:</b> Select one of those Cult Ambush markers.<br><br><b>EFFECT:</b> You can set up that Cult Ambush marker anywhere on the battlefield that is more than 8\" horizontally away from all enemy units.",
     "base_text": "Wahapedia 现文（PR25 工作单：FP 未触及或已滚入，11 版仍现行）",
-    "text_sha256": "11030b70c3373631e47c1a403f1c38c05e918ec189cd3e8f73501cb3e645d4b1"
+    "text_sha256": "c7afe5644a136507b1142cc33135ec1201215e69b920ab72020444189b446347",
+    "reviewed_source": {
+     "url": "https://assets.warhammer-community.com/eng_22-07_warhammer_40,000_faction_pack_genestealer_cults-vmkwgeydbr-sh7picbeqo.pdf",
+     "sha256": "045ee9f53f7b1e018e3fc06c5932cb8e1d9c308ea2e0c298a703c3ea5745d769",
+     "page": 7
+    }
    },
    "side": "attacker",
    "status": "not_modeled",
    "effects": [],
    "requires_toggles": [],
    "not_modeled_notes_zh": [
-    "重新放置 Cult Ambush 标记——部署/标记域"
+    "Reviewed current official text. This rule changes movement, deployment, resurrection, charge sequencing, army selection or a positional state outside this fixed attack-sequence simulator. See current_text for the exact rule."
    ]
   },
   {
@@ -552,18 +562,23 @@
    "detachment": "Brood Brother Auxilia",
    "name_en": "IN THE SHADOW OF IRON",
    "name_zh": null,
-   "encoded_by": "manual-2026-07-21",
+   "encoded_by": "manual-2026-09-15",
    "provenance": {
-    "current_text": "db stratagems.text_zh id=000009085002",
+    "current_text": "<b>WHEN:</b> Any phase, just after an enemy unit ends a move within 8” of one or more of your Cult Ambush markers.<br><br><b>TARGET:</b> One Astra Militarum Vehicle unit from your army.<br><br><b>EFFECT:</b> Select one of those Cult Ambush markers. You can set up that Cult Ambush marker anywhere on the battlefield that is more than 8\" horizontally away from all enemy units and wholly within 6\" of your unit.",
     "base_text": "FP Rules Updates 已刷新为 11 版现行文本（PR25 迭代 1 fp_rules text_patch）",
-    "text_sha256": "de37bfbf98dc4050f407823a22115d56ee775dff0d76c7c9b9571bde846ee49e"
+    "text_sha256": "cce8477568226bca50e9f0d71152f061271b747d6ba52437bc85ea5fd2bb90a7",
+    "reviewed_source": {
+     "url": "https://assets.warhammer-community.com/eng_22-07_warhammer_40,000_faction_pack_genestealer_cults-vmkwgeydbr-sh7picbeqo.pdf",
+     "sha256": "045ee9f53f7b1e018e3fc06c5932cb8e1d9c308ea2e0c298a703c3ea5745d769",
+     "page": 7
+    }
    },
    "side": "attacker",
    "status": "not_modeled",
    "effects": [],
    "requires_toggles": [],
    "not_modeled_notes_zh": [
-    "重新放置 Cult Ambush 标记（敌方 8\" 外且本单位 6\" 内）——部署/标记域"
+    "Reviewed current official text. This rule changes movement, deployment, resurrection, charge sequencing, army selection or a positional state outside this fixed attack-sequence simulator. See current_text for the exact rule."
    ]
   },
   {
@@ -1276,18 +1291,23 @@
    "detachment": "Outlander Claw",
    "name_en": "ALONG SHADOWED TRAILS",
    "name_zh": null,
-   "encoded_by": "manual-2026-07-21",
+   "encoded_by": "manual-2026-09-15",
    "provenance": {
-    "current_text": "db stratagems.text_zh id=000009080002",
+    "current_text": "<b>WHEN:</b> Any phase, just after an enemy unit ends a move within 8\" of one or more of your Cult Ambush markers.<br><br><b>TARGET:</b> Select one of those Cult Ambush markers.<br><br><b>EFFECT:</b> You can set up that Cult Ambush marker anywhere on the battlefield that is more than 8\" horizontally away from all enemy units.",
     "base_text": "FP Rules Updates 已刷新为 11 版现行文本（PR25 迭代 1 fp_rules text_patch）",
-    "text_sha256": "f1ccf9e9313c1d87dca4a27fe021b427d8eed3a2beb7ae418202b2a5fc35abb9"
+    "text_sha256": "cdb5260d0461537afc0a3bd0a393f6aa4dcbd7ff46d86cc44857143a80f1853b",
+    "reviewed_source": {
+     "url": "https://assets.warhammer-community.com/eng_22-07_warhammer_40,000_faction_pack_genestealer_cults-vmkwgeydbr-sh7picbeqo.pdf",
+     "sha256": "045ee9f53f7b1e018e3fc06c5932cb8e1d9c308ea2e0c298a703c3ea5745d769",
+     "page": 8
+    }
    },
    "side": "attacker",
    "status": "not_modeled",
    "effects": [],
    "requires_toggles": [],
    "not_modeled_notes_zh": [
-    "重新放置 Cult Ambush 标记——部署/标记域"
+    "Reviewed current official text. This rule changes movement, deployment, resurrection, charge sequencing, army selection or a positional state outside this fixed attack-sequence simulator. See current_text for the exact rule."
    ]
   },
   {
@@ -1354,18 +1374,23 @@
    "detachment": "Outlander Claw",
    "name_en": "RAPID FEINT",
    "name_zh": null,
-   "encoded_by": "manual-2026-07-21",
+   "encoded_by": "manual-2026-09-15",
    "provenance": {
-    "current_text": "db stratagems.text_zh id=000009080005",
+    "current_text": "<b>WHEN:</b> Your opponent’s Movement phase, just after an enemy unit ends a Normal, Advance or Fall Back move.<br><br><b>TARGET:</b> One Achilles Ridgerunners or Atalan Jackals unit from your army that is within 8\" of that enemy unit.<br><br><b>EFFECT:</b> Your unit can make a Normal move of up to 6\".",
     "base_text": "Wahapedia 现文（PR25 工作单：FP 未触及或已滚入，11 版仍现行）",
-    "text_sha256": "b69fb5f79fe0f1127dbdb2d39a84e6ddf95ce7a95fa47befea15fbd9e6032f2d"
+    "text_sha256": "2fa2b73cf3387abc64d62893f15aada6774fae2b01845934fce1188e1bcc6910",
+    "reviewed_source": {
+     "url": "https://assets.warhammer-community.com/eng_22-07_warhammer_40,000_faction_pack_genestealer_cults-vmkwgeydbr-sh7picbeqo.pdf",
+     "sha256": "045ee9f53f7b1e018e3fc06c5932cb8e1d9c308ea2e0c298a703c3ea5745d769",
+     "page": 8
+    }
    },
    "side": "attacker",
    "status": "not_modeled",
    "effects": [],
    "requires_toggles": [],
    "not_modeled_notes_zh": [
-    "对手移动阶段做 6\" 常规移动——移动域"
+    "Reviewed current official text. This rule changes movement, deployment, resurrection, charge sequencing, army selection or a positional state outside this fixed attack-sequence simulator. See current_text for the exact rule."
    ]
   },
   {

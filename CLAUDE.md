@@ -1,16 +1,17 @@
 # 战锤40K 规则书 RAG 问答系统
 
-## Current checkpoint — 2026-09-14
+## Current checkpoint — 2026-09-15
 
-The September source sync supersedes the historical July progress figures below. See `docs/superpowers/reports/2026-09-14-release-acceptance.md` and `docs/superpowers/plans/2026-09-14-release-finish.md`.
+The September source reconciliation supersedes the historical July figures below. See `docs/superpowers/reports/2026-09-15-structured-source-reconciliation.md` and `docs/superpowers/plans/2026-09-15-structured-source-reconciliation.md`.
 
-- Official ledger: 3,893/3,893 rows across 30 pages; operational prices 1,322/1,322; 203 enhancement rows updated; unmatched records remain explicit.
-- Current membership is defined only in `db_compile/active_units.py`; a present `mfm` dictionary does not mean current when `current=false`. Keyword indexing, codex and translation coverage must share this rule.
-- Apply MFM after `fp_rules` during restoration because patches can insert enhancements with frozen costs. A fresh database rebuild preserves the new ledger and current prices.
-- 28 PDF documents refreshed, 1,256 text pages verified plus one empty-text page. Retrieval index: 5,770 chunks, including Universal Rules Updates. Structured rules and DSL still require the latest patch audit.
-- Roster text import and bounded session history are implemented. Tracing preserves positional fallback calls. 2,496 tests pass; frontend lint/build pass; wiki lint has 0 errors.
-- Live AI checks are blocked by DeepSeek HTTP 402 Insufficient Balance. Docker acceptance is blocked by the host WSL installation. Do not report either as passed.
-- Runnable assets remain in the implementation checkout; PDFs, source caches, model files and SQLite are not in Git. Refresh generators in the order documented in the acceptance report.
+- Official ledger: 3,893/3,893 rows; operational prices 1,333/1,333; 879 enhancement database rows matched. Remaining source-only records: Gunwagon, Runtherd and 28 Ork enhancement keys.
+- 390 reviewed source patches restore after `fp_rules`, before MFM and DSL. Exact prior-value mismatch rolls back the patch transaction. Fresh-build restoration and all 2,901 DSL fingerprints passed.
+- Six datasheets added. Nazdreg and five Ork enhancements use explicitly marked official previews; released codex rules have not been verified. Never equate current points with current rules coverage.
+- FRAME now appears on 242 unit records. Keyword membership comes from the structured source, not stale Chinese translations. Eighteen changed units invalidate older translations; 16 old retrieval chunks were pruned, leaving 5,754 chunks.
+- Current membership remains defined in `db_compile/active_units.py`. Preserve English where a verified Chinese source is absent. Regenerate pages only through documented commands.
+- Native API and codex startup, new datasheet rendering, simulation and roster price calculation were checked. Test results and precise coverage limits are recorded in the acceptance report.
+- Live AI acceptance still needs a successful provider call after the prior DeepSeek HTTP 402 balance failure. Docker acceptance remains blocked by the prior host WSL installation problem; neither was reported as passed.
+- Runnable assets remain in D:/Project/py/RAG; PDFs, caches, model files and SQLite are not in Git.
 
 
 基于本地知识库的战锤40K规则问答：PDF 规则书 → 向量化入库 → 混合检索 → LLM 生成带引用的中文回答。

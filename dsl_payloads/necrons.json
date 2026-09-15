@@ -1203,9 +1203,18 @@
    "effects": [],
    "requires_toggles": [],
    "not_modeled_notes_zh": [
-    "宇宙精准：深入打击部署——预备队无载体"
+    "Reviewed current official text. This rule changes movement, deployment, resurrection, charge sequencing, army selection or a positional state outside this fixed attack-sequence simulator. See current_text for the exact rule."
    ],
-   "encoded_by": "manual-2026-07-19"
+   "encoded_by": "manual-2026-09-15",
+   "provenance": {
+    "text_sha256": "67da4d21467ac0d4c2529abdbcfbfc094055b4d62b5bd87a121e130a32567fd6",
+    "reviewed_source": {
+     "url": "https://assets.warhammer-community.com/eng_wh40k_faction_pack_necrons-eweoek106p-nqomxds3qr.pdf",
+     "sha256": "be3417eab97f4a3857dfb4a481719e0910ee88ffc169dd718283233e2c4ffcd3",
+     "page": 29
+    },
+    "current_text": "<b>WHEN:</b> Your Movement phase.<br><br><b>TARGET:</b> One NECRONS unit from your army (excluding MONSTER units) that is arriving using an ingress move this phase.<br><br><b>EFFECT:</b> Your unit can be set up anywhere on the battlefield that is more than 6\" horizontally away from all enemy models.<br><br><b>RESTRICTIONS:</b> A unit targeted with this Stratagem is not eligible to declare a charge in the same turn."
+   }
   },
   {
    "table": "stratagems",

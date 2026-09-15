@@ -206,7 +206,7 @@ def build_entity_card(
     models = ds.get("models") or []
     m0 = models[0] if models else {}
     stats = [Stat(lab=lab, val=str(m0.get(key, "—"))) for key, lab in _STAT_LABELS]
-    invuln = str(m0.get("invuln", "-")).strip()
+    invuln = str(m0.get("invuln") or "-").strip()
     if invuln and invuln not in ("-", "—", ""):
         invuln_val = invuln + "+" if invuln.isdigit() else invuln
     else:
@@ -256,6 +256,6 @@ def build_entity_card(
         factionKeywords=faction_keywords,
         legend=legend,
         faction="阵营: " + str(faction) if faction else "阵营: 未知",
-        src="L3 结构库 · " + str(faction or "未知阵营"),
+        src=ds.get("source_note") or "L3 结构库 · " + str(faction or "未知阵营"),
         wiki=_wiki_path(faction, str(ds.get("unit_id", "")), str(ds.get("name_en") or "")),
     )
