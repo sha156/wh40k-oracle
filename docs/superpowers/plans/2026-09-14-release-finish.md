@@ -23,7 +23,7 @@ User request: complete the five-step finish plan, with local points agreeing wit
 - [x] Build the current frontend; verify API, UI, retrieval and representative roster workflows.
 - [ ] Complete live LLM conversation recall and refreshed benchmark acceptance after provider availability is restored.
 - [x] Run full tests and record concrete host/provider blockers.
-- [ ] Complete an actual Docker build/start after WSL is working.
+- [x] Complete an actual Docker build/start after WSL is working (September 16: both images built, containers started, API healthy and 85 targeted container tests passed).
 - [x] Review final diff; produce source-linked sync and acceptance reports; consolidate the verified checkout.
 
 ## Sync definition
@@ -60,3 +60,7 @@ Official current prices are authoritative. Historical/Legends records must not b
 ## September 15 source follow-through
 
 Tasks 1–2 now have a reviewed patch pipeline, six added datasheets, refreshed DSL and generated consumers. See [reconciliation acceptance](../reports/2026-09-15-structured-source-reconciliation.md). The unmatched list fell from 12 to 2 unit names and from 67 to 28 enhancement keys. Released Ork codex access and preview verification remain explicit source gaps.
+
+## September 16 pause
+
+[Live AI and Docker checkpoint](../reports/2026-09-16-live-ai-docker-checkpoint.md): benchmark 113 correct / 2 partial / 0 wrong. Docker acceptance passed. Same-session live recall failed by falling back to retrieval; task 3 remains open. User requested save and stop before a code fix.

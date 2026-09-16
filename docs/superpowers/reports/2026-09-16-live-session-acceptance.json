@@ -1,0 +1,186 @@
+[
+  {
+    "check": "remember",
+    "request": {
+      "question": "For this conversation, my army is Tau Empire and my army nickname is Copper Lantern 742. Please remember those details.",
+      "session_id": "acceptance-20260916-a"
+    },
+    "status": 200,
+    "seconds": 4.8,
+    "response": {
+      "summary": "检索 0 步 · 引用 0 条",
+      "trace": [],
+      "traceWarn": null,
+      "verdict": {
+        "label": "已记录",
+        "labelEn": "Noted",
+        "lede": [
+          {
+            "t": "text",
+            "s": "已记录：你的阵营是 "
+          },
+          {
+            "t": "strong",
+            "s": "Tau Empire（钛帝国）"
+          },
+          {
+            "t": "text",
+            "s": "，军表昵称 "
+          },
+          {
+            "t": "strong",
+            "s": "Copper Lantern 742"
+          },
+          {
+            "t": "text",
+            "s": "。后续讨论我会默认按钛帝国来查证与判定。"
+          }
+        ]
+      },
+      "calc": [],
+      "entityCard": null,
+      "cites": [],
+      "sensitivity": null,
+      "cta": null,
+      "followups": [
+        "查某个单位的属性或点数",
+        "模拟某场对战",
+        "验一张军表"
+      ],
+      "degraded": false
+    }
+  },
+  {
+    "check": "recall",
+    "request": {
+      "question": "What army and exact army nickname did I tell you earlier?",
+      "session_id": "acceptance-20260916-a"
+    },
+    "status": 200,
+    "seconds": 34.62,
+    "response": {
+      "summary": "检索 1 步 · 引用 6 条 · 已降级兜底",
+      "trace": [
+        {
+          "fn": "rag_search",
+          "args": "('What army and exact army nickname did I tell you earlier?')",
+          "result": "已命中",
+          "status": "ok",
+          "note": null
+        }
+      ],
+      "traceWarn": null,
+      "verdict": {
+        "label": "暂无法判定",
+        "labelEn": "Unverifiable",
+        "lede": [
+          {
+            "t": "text",
+            "s": "抱歉，我这边没有找到你之前告诉过我的军队和军队昵称记录——检索只翻到一些分数表和规则片段，没有对话历史。如果你能再报一次，我就能接着聊。"
+          }
+        ]
+      },
+      "calc": [],
+      "entityCard": null,
+      "cites": [
+        {
+          "n": 1,
+          "book": "6月4日分数中文",
+          "page": 21,
+          "section": null,
+          "term": null,
+          "wiki": "",
+          "url": null
+        },
+        {
+          "n": 2,
+          "book": "Faction Pack Thousand Sons",
+          "page": 11,
+          "section": null,
+          "term": null,
+          "wiki": "",
+          "url": null
+        },
+        {
+          "n": 3,
+          "book": "星际战士10版中文",
+          "page": 69,
+          "section": null,
+          "term": null,
+          "wiki": "",
+          "url": null
+        },
+        {
+          "n": 4,
+          "book": "Faction Pack Chaos Space Marines",
+          "page": 39,
+          "section": null,
+          "term": null,
+          "wiki": "",
+          "url": null
+        },
+        {
+          "n": 5,
+          "book": "星际战士10版中文",
+          "page": 70,
+          "section": null,
+          "term": null,
+          "wiki": "",
+          "url": null
+        },
+        {
+          "n": 6,
+          "book": "Core Rules - New 40K Core Rules",
+          "page": 5,
+          "section": null,
+          "term": null,
+          "wiki": "",
+          "url": null
+        }
+      ],
+      "sensitivity": null,
+      "cta": null,
+      "followups": [
+        "我上次说的军队昵称是什么？",
+        "帮我重新记一下我的军队和昵称",
+        "混沌军队的分数表在哪一页？"
+      ],
+      "degraded": true
+    }
+  },
+  {
+    "check": "isolation",
+    "request": {
+      "question": "What army and exact army nickname did I tell you earlier?",
+      "session_id": "acceptance-20260916-b"
+    },
+    "status": 200,
+    "seconds": 4.19,
+    "response": {
+      "summary": "检索 0 步 · 引用 0 条",
+      "trace": [],
+      "traceWarn": null,
+      "verdict": {
+        "label": "暂无法判定",
+        "labelEn": "No Data",
+        "lede": [
+          {
+            "t": "text",
+            "s": "本会话历史里没有你提到过的阵营或军队昵称——你之前没告诉过我你的军队和它的绰号。现在告诉我，我可以帮你查点数、配装或做模拟。"
+          }
+        ]
+      },
+      "calc": [],
+      "entityCard": null,
+      "cites": [],
+      "sensitivity": null,
+      "cta": null,
+      "followups": [
+        "我的军队是XX，绰号YY，帮我看看配装",
+        "帮我查一下这个阵营的规则要点",
+        "我想做一次模拟对战，先告诉你我的军队"
+      ],
+      "degraded": false
+    }
+  }
+]

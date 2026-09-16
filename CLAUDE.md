@@ -1,5 +1,9 @@
 # 战锤40K 规则书 RAG 问答系统
 
+## Latest pause — 2026-09-16
+
+See `docs/superpowers/reports/2026-09-16-live-ai-docker-checkpoint.md`. Docker startup was repaired and both real images built and ran; API assets and model warmup passed, with 85 targeted container tests passing. DeepSeek now works. Live benchmark: 113 correct, 2 partial, 0 wrong out of 115. Gold #117 now reflects restored FRAME membership, with v3.5 preserved. **Same-session live recall failed by falling back to retrieval; task 3 is still open.** No production code fix was made before the user's save-and-stop request. Resume from `codex/live-ai-docker-acceptance` in `D:/Project/py/RAG`; preserve fresh fact verification when fixing recall.
+
 ## Current checkpoint — 2026-09-15
 
 The September source reconciliation supersedes the historical July figures below. See `docs/superpowers/reports/2026-09-15-structured-source-reconciliation.md` and `docs/superpowers/plans/2026-09-15-structured-source-reconciliation.md`.
