@@ -2,9 +2,9 @@
 
 ## Latest continuation paused — September 18
 
-The user requested save and stop during follow-up work on benchmark questions 63 and 116. Canonical identity lookup and faction inventory changes are saved on `codex/benchmark-lookup-completeness`, pending final benchmark, ambiguity review, container acceptance and CI. The [lookup checkpoint](../reports/2026-09-18-lookup-checkpoint.md) records tests, rejected and final raw live trials, public-only Ork source constraints, and the exact resume order. Main and the running app retain the earlier accepted tasks 3–4 implementation.
+The user requested save and stop after the lookup benchmark reached **115 correct / 0 partial / 0 wrong** with unchanged gold. Implementation through `39c16a2f9` is pushed on `codex/benchmark-lookup-completeness`. Canonical identity, faction inventory, source-scope disclosure and identity-first handling are implemented; question 118 base comparison did not reproduce a regression. Full native pytest passed 2,527 before the final three added tests; final focused tests passed 124. API/browser checks passed on `60fdee85b`, and the final I/O optimization image built successfully. Remaining release steps are deployment and HTTP acceptance of that final image, final CI review, PR/merge and checkout synchronization. See the [lookup checkpoint](../reports/2026-09-18-lookup-checkpoint.md). The running app remains available; Ork source and Docker startup-durability limits are unchanged.
 
-User request: complete the five-step finish plan, with local points agreeing with the official Munitorum Field Manual.
+User request: complete the five-step finish plan, with local points agreeing with the official Munitorum Field Manual. Historical working states below describe earlier checkpoints; the latest branch and runtime state above supersede them.
 
 ## Working state
 

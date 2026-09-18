@@ -2,7 +2,7 @@
 
 ## Paused continuation — 2026-09-18
 
-Lookup improvements are saved on `codex/benchmark-lookup-completeness` and are not merged or deployed. See `docs/superpowers/reports/2026-09-18-lookup-checkpoint.md`: canonical wiki identity preservation, a paginated faction inventory tool, 2,521 passing native tests and a separately passing final 9-test regression file. Ten raw live probes are saved; question 118 shows answer-path variability that still needs assessment, so benchmark completion is not claimed. The user selected public official sources only for the remaining Ork gaps, then requested save and stop. Resume from `D:/Project/py/RAG` and follow the checkpoint's acceptance order.
+Lookup changes through `39c16a2f9` are pushed on `codex/benchmark-lookup-completeness`, unmerged. The unchanged-gold full benchmark passed 115/115 after identity, inventory and source-scope fixes; the earlier failed run is retained. Full native pytest passed 2,527 before the final three added tests; final focused checks passed 124. The running API/browser passed checks with `60fdee85b` code. The final filesystem optimization image built successfully but is not yet deployed or checked through HTTP; its hosted CI also needs review. See `docs/superpowers/reports/2026-09-18-lookup-checkpoint.md` for evidence, exact limits and resume order. User requested save and stop. Runtime remains `D:/Project/py/RAG`; app checkout main remains `74544de81`. Public official sources only for remaining Ork rules.
 
 ## Latest acceptance — 2026-09-18
 

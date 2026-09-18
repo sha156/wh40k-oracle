@@ -1,36 +1,56 @@
 # Lookup completeness checkpoint
 
-Status: saved at the user's request to stop. Work remains on `codex/benchmark-lookup-completeness` in `D:/Project/py/RAG`; it is not merged or deployed. The app checkout at `C:/Users/Administrator/Documents/ChatGPT/RAG` and the running containers still represent the previous accepted main revision, `74544de81`.
+Status: saved and stopped at the user's request on September 18. Implementation through `39c16a2f91807c551ad90bd457101031dd65cefc` is pushed on `codex/benchmark-lookup-completeness` in `D:/Project/py/RAG`. No PR or merge was performed for this branch. The app checkout at `C:/Users/Administrator/Documents/ChatGPT/RAG` remains on main `74544de81`.
 
 ## Changes and purpose
 
-- `get_entity` carries the resolver's canonical ID through to the indexed wiki page. Re-querying by English display name could miss a translated title or select a same-named unit from another faction. Numeric ID lookup, duplicate-ID refusal and faction-qualified ambiguous candidates preserve identity. Unique older slug-ID pages retain their compatibility path.
-- A read-only, paginated `list_faction_units` tool reports current database datasheet counts separately from deduplicated official MFM unit counts. It uses the existing active-unit policy, keeps missing data distinct from zero, and preserves complete bounded JSON on the model wire.
-- The existing Chaos Titan alias mapping now exposes its source: Faction Pack Adeptus Titanicus, page 2, TITANICUS TRAITORIS. Separate Imperial and Chaos points pages do not establish separate datasheets. The local official PDF text was checked.
-- No database, official price cache, generated wiki or gold-answer changes were made in this continuation.
+- `8c172ea22`: preserve canonical identity between the resolver and indexed wiki pages, refuse duplicate IDs, and retain a bounded compatibility path for older slug pages. Add read-only paginated faction inventory with separate database and official price-row counts. Expose the official shared Chaos Titan datasheet rule from Faction Pack Adeptus Titanicus page 2.
+- `ff6bc6f6d`: retrieve referenced army rules when a datasheet supplies only the ability name/count/range. Identify merged structured cards explicitly: a patch in page frontmatter does not prove every field came from that patch. Preserve this source-scope disclosure after tool-output truncation.
+- `60fdee85b`: resolve identity before numeric lookup when a question asks what a unit is or which faction it belongs to. Keep fuzzy suggestions provisional and the requested answer focused. Numeric-only questions retain their established datasheet path.
+- `39c16a2f9`: reduce repeated filesystem metadata calls during canonical lookup on Docker's Windows bind mount. Reuse directory metadata only within one call, retain duplicate-ID refusal and symlink boundary checks, and observe regenerated pages on subsequent calls.
+- No database, official price cache, generated wiki or gold-answer edits were made in this continuation. Existing fallback safeguards for questions 4 and 62 remain in place.
+
+## Verified acceptance and limits
+
+| Check | Actual result |
+| --- | --- |
+| Full native pytest before the final three added tests | 2,527 passed, 19 warnings, 184.44 seconds. |
+| Final focused lookup/tool/client/loop tests | 124 passed, 8 warnings, 3.64 seconds, including regeneration and symlink checks. Counts overlap with the full suite; do not add them. |
+| First full benchmark | 113 correct / 1 partial / 1 wrong. Retained in `benchmarks/v3_edition11/qa_agent_results_20260918_lookup.json`. |
+| Final full benchmark | 115 correct / 0 partial / 0 wrong, unchanged gold, in `benchmarks/v3_edition11/qa_agent_results_20260918_lookup_r2.json`. Compared with September 16, only questions 63 and 116 changed verdict, both partial to correct. |
+| Controls | Questions 63, 109, 118 and 119 passed, as did fallback-sensitive questions 4 and 62. This is one passing stochastic full run, not a guarantee for every future response. |
+| Real base comparison for question 118 | Base `74544de81` and candidate tools returned identical dictionaries for the three tested Helbrute names. Both saved faction-disclosing answers passed the existing rubric. The suspected lookup regression was not reproduced. |
+| Hosted CI | Python and frontend passed for `ff6bc6f6d` (run 35335823498) and `60fdee85b` (run 35336236595). CI for final I/O commit `39c16a2f9` has not been reviewed. |
+| Container API before final I/O change | Healthy and warmup complete; questions 63, 116 and 118 returned HTTP 200 with inspected answers. Evidence: `2026-09-18-lookup-http-acceptance.json`. |
+| Browser before final I/O change | Rendered four shared Titan datasheets; follow-up confirmed both Warlord prices at 3,500. Browser text/interaction inspected; no screenshot-based visual QA in this continuation. |
+| Direct canonical lookup timing | Old Docker 105.022 seconds; candidate Docker 19.646; native candidate 0.952. Same canonical ID `000000680`. Single isolated-process observations, not a latency distribution or final API latency result. |
+| Final API image | Build completed successfully, config `33f9faa4ccf5fec1de005a26823e20305dcc6c371c39e62ed85817ef4b00ff39`; it has not been deployed or tested through the API. |
+
+The full benchmark preceded the final filesystem optimization; prompts and routing did not change afterward. The final focused tests and isolated Docker timing cover that optimization, but final deployed API acceptance remains open. The running API still has the earlier checked `60fdee85b` code; the web container is unchanged. Both services remain running. No build worker remains active.
+
+Initial overlapping model/test processes exhausted Windows resources (`std::bad_alloc` and WinError 1450). Temporarily stopping this project's API model process and serializing heavy checks allowed the full suite and both full benchmarks to finish. The API was then restarted and verified. Interrupted logs are not counted as completed checks.
 
 ## Saved evidence
 
-| Artifact | What it establishes |
-| --- | --- |
-| `2026-09-18-lookup-baseline.json` | Four baseline live trials: two each for questions 63 and 116, including the lookup/fallback limitations. |
-| `2026-09-18-lookup-initial-candidate.json` | Four initial candidate trials. Retained as rejected evidence: a Titan answer incorrectly inferred independent Chaos datasheets from separate points pages. |
-| `2026-09-18-lookup-final-probe.json` | Ten final-code trials: two each for 63, 109, 116, 118 and 119. Raw answers, metadata and tool traces; these are not ten formally judged passes. |
+All paths below are relative to `docs/superpowers/reports/` unless otherwise stated.
 
-The full native suite collected the first three new regression tests and passed **2,521 tests, 19 warnings** in 175.75 seconds. The final lookup test file, including six subsequently added cases, separately passed **9 tests**. The earlier focused agent/tool/loop set passed **115 tests**. Do not add these overlapping counts or label the completed full run as 2,527 tests. The original fixture failed before implementation by selecting ID `101` rather than resolved ID `202`; the corrected identity fixture passes. `git diff --check` passed.
+- `2026-09-18-lookup-base-comparison.json`: actual base/candidate tool outputs.
+- `2026-09-18-lookup-probe-judgments.json`, `2026-09-18-lookup-completion-probe.json` and `2026-09-18-lookup-completion-judgments.json`: intermediate failures retained rather than overwritten.
+- Earlier baseline, initial-candidate and final-probe JSON files remain as historical observations; their former label "final" does not make every answer a judged pass.
+- `2026-09-18-lookup-http-acceptance.json`: checked live API responses before the I/O change.
+- `2026-09-18-canonical-lookup-timing.json`: method and single-call timings.
+- Both complete benchmark files are under `benchmarks/v3_edition11/` as listed above. Gold was unchanged.
+- Ignored local logs include `pytest-lookup-serial.log`, `benchmark-lookup-serial.log`, `benchmark-lookup-r2.log` and `docker-lookup-final-build.log`.
 
-Both final question 116 answers report four datasheets and the sourced shared Chaos rules. Question 118 trial 1 instead leads with the World Eaters price after `get_datasheet`, then discloses other factions in a note; trial 0 lists all four faction prices through `calc_points`. This needs formal assessment and a base comparison before declaring ambiguity behavior unchanged. Question 63 answers still need complete source/freshness review. No full 115-question benchmark or hosted CI was run for this branch, and no final Docker/API/browser acceptance was performed for these changes.
+## Remaining source and host work
 
-## Public official source constraint
-
-The user selected **public official sources only for now**. The [official downloads page](https://www.warhammer-community.com/en-gb/downloads/warhammer-40000/) and public Ork articles were inspected, including the [September points announcement](https://www.warhammer-community.com/en-gb/articles/x82yzzth/codex-orks-points-are-live-on-the-munitorum-field-manual/), [army examples](https://www.warhammer-community.com/en-gb/articles/fvsvtvtu/build-a-better-waaagh-warhammer-community-cooks-up-their-ideal-ork-armies/), and [army dispositions](https://www.warhammer-community.com/en-gb/articles/lyqxdhrh/building-your-ork-waaagh-around-army-dispositions-with-adrian-from-tabletop-titans/). No additional complete authoritative rules were acquired for Gunwagon, Runtherd or the 28 remaining enhancement keys. This is an acquisition limit, not proof that no public source exists. Labeled previews remain previews. No new points synchronization is claimed for September 18.
+Use **public official sources only for now**, as the user requested. No additional complete authoritative rules were acquired for Gunwagon, Runtherd or the 28 remaining Ork enhancement keys. This is an acquisition limit, not proof that no public source exists. Labeled previews remain previews. No new September 18 points synchronization is claimed. Docker's recurring stale host sockets still have only a recovery workaround; startup durability is unverified.
 
 ## Resume order
 
-1. Review all final live traces and formally assess questions 63 and 118, including a real base comparison where regression is suspected. Preserve rejected evidence and existing ambiguity safeguards.
-2. Finish code review and any corrections; run relevant final tests. Run the complete 115-question benchmark with unchanged gold and retain actual results.
-3. Rebuild the API image and verify the new tools through the live API/browser. Existing containers have the previous accepted code, not this branch.
-4. Publish a reviewable PR and require green CI and acceptance before merge. Synchronize the two checkouts only after acceptance.
-5. Continue Ork source reconciliation only when suitable public official rules become available. Docker startup durability remains an independent open host issue.
+1. Deploy the already-built API image from `D:/Project/py/RAG` using the existing compose configuration; wait for health and model warmup. Run final question 63 HTTP acceptance and inspect both the answer and latency. The prepared temporary script is `%TEMP%/wh40k-lookup-optimized-http.py`; it has not run and is not a durable repository dependency.
+2. Review final-commit CI and the branch diff, then create a PR. Require final container acceptance and green checks before merge.
+3. Synchronize the two checkouts after merge. Preserve local runtime/data assets.
+4. Continue remaining Ork rules only with suitable public official evidence; keep Docker host durability separate.
 
-No further implementation, model calls, rebuild or merge should run until the user resumes the task. Existing application services are left running; stopping this work does not shut down the user's app.
+No further implementation, model calls, deployment or merge should run until the user resumes. Existing application services are left running.
