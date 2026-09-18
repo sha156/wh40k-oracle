@@ -128,3 +128,38 @@ def test_merged_card_source_scope_survives_wire_truncation(tmp_path):
     assert "中间省略" in wire["content"]
     assert result["source_scope"] in wire["content"]
     assert "不是逐字段出处" in result["source_scope"]
+
+
+def test_canonical_lookup_observes_regeneration_and_rejects_outside_paths(tmp_path):
+    from wiki_engine.operations.query_op import find_entity_by_id, load_index
+
+    root = tmp_path / "wiki"
+    root.mkdir()
+    (root / "index.md").write_text(
+        "| unit | [One](one) | | - |\n| unit | [Outside](../outside.md) | | - |\n"
+        "| unit | [Missing](absent/page.md) | | - |\n", encoding="utf-8")
+    page = "---\nid: '202'\ntype: unit\n---\n\n"
+    (root / "one.md").write_text(page + "Before", encoding="utf-8")
+    (tmp_path / "outside.md").write_text(page + "Outside", encoding="utf-8")
+    index = load_index(root)
+    assert "Before" in find_entity_by_id("202", index, root).to_markdown()
+    (root / "one.md").write_text(page + "After", encoding="utf-8")
+    assert "After" in find_entity_by_id("202", index, root).to_markdown()
+    (root / "one.md").unlink()
+    assert find_entity_by_id("202", index, root) is None
+
+
+def test_canonical_lookup_rejects_symlink_escape(tmp_path):
+    from wiki_engine.operations.query_op import find_entity_by_id, load_index
+
+    root = tmp_path / "wiki"
+    root.mkdir()
+    outside = tmp_path / "outside.md"
+    outside.write_text("---\nid: '202'\ntype: unit\n---\n\nOutside", encoding="utf-8")
+    try:
+        (root / "link.md").symlink_to(outside)
+    except OSError:
+        pytest.skip("Creating symlinks requires host permission")
+    (root / "index.md").write_text(
+        "| unit | [Linked](link) | | - |\n", encoding="utf-8")
+    assert find_entity_by_id("202", load_index(root), root) is None

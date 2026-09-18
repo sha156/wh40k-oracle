@@ -5,6 +5,7 @@
 """
 from __future__ import annotations
 
+import os
 import re
 from pathlib import Path
 from typing import Dict, List, Optional
@@ -100,13 +101,32 @@ def find_entity_by_id(
     pattern = re.compile(r"(?m)^id:\s*['\"]?" + re.escape(canonical_id) + r"['\"]?\s*$")
     matches = {}
     root = wiki_root.resolve()
+    directories = {}
     for entry in index:
-        path = (wiki_root / entry.path).resolve()
-        if not path.is_relative_to(root):
+        raw_path = wiki_root / entry.path
+        # Resolving every component of every file is expensive on Docker's
+        # Windows bind mounts. Resolve/list each parent once per lookup; use
+        # scandir's file metadata, while still checking symlink destinations.
+        # This cache is call-local so a regenerated page is seen immediately.
+        if raw_path.parent not in directories:
+            parent = raw_path.parent.resolve()
+            files = {}
+            if parent.is_relative_to(root):
+                try:
+                    with os.scandir(parent) as entries:
+                        files = {os.path.normcase(item.name): item for item in entries}
+                except (FileNotFoundError, NotADirectoryError):
+                    pass
+            directories[raw_path.parent] = files
+        files = directories[raw_path.parent]
+        candidate = (files.get(os.path.normcase(raw_path.name))
+                     or files.get(os.path.normcase(raw_path.with_suffix(".md").name)))
+        if candidate is None or not candidate.is_file():
             continue
-        if not path.exists():
-            path = path.with_suffix(".md")
-        if not path.is_file():
+        path = Path(candidate.path)
+        if candidate.is_symlink():
+            path = path.resolve()
+        if not path.is_relative_to(root):
             continue
         text = path.read_text(encoding="utf-8")
         header = text.split("\n---", 1)[0]
