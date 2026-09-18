@@ -1,0 +1,308 @@
+[
+  {
+    "check": "remember",
+    "request": {
+      "question": "For this conversation, my army is Tau Empire and my army nickname is Copper Lantern 742. Please remember those details.",
+      "session_id": "acceptance-20260918-a"
+    },
+    "status": 200,
+    "seconds": 3.74,
+    "response": {
+      "summary": "检索 0 步 · 引用 0 条",
+      "trace": [],
+      "traceWarn": null,
+      "verdict": {
+        "label": "已记录",
+        "labelEn": "Noted",
+        "lede": [
+          {
+            "t": "text",
+            "s": "已记录：你的阵营是 "
+          },
+          {
+            "t": "strong",
+            "s": "Tau Empire（钛帝国）"
+          },
+          {
+            "t": "text",
+            "s": "，军表昵称是 "
+          },
+          {
+            "t": "strong",
+            "s": "Copper Lantern 742"
+          },
+          {
+            "t": "text",
+            "s": "。后续讨论我会默认按钛帝国阵营来查证与判定。"
+          }
+        ]
+      },
+      "calc": [],
+      "entityCard": null,
+      "cites": [],
+      "sensitivity": null,
+      "cta": null,
+      "followups": [
+        "帮我查钛帝国某单位的属性与点数",
+        "用 Copper Lantern 742 模拟一场对战",
+        "帮我验表或判定战斗顺序"
+      ],
+      "degraded": false
+    }
+  },
+  {
+    "check": "recall",
+    "request": {
+      "question": "What army and exact army nickname did I tell you earlier?",
+      "session_id": "acceptance-20260918-a"
+    },
+    "status": 200,
+    "seconds": 3.63,
+    "response": {
+      "summary": "检索 0 步 · 引用 0 条",
+      "trace": [],
+      "traceWarn": null,
+      "verdict": {
+        "label": "已记录",
+        "labelEn": "Recorded",
+        "lede": [
+          {
+            "t": "text",
+            "s": "你之前告诉我：阵营是 "
+          },
+          {
+            "t": "strong",
+            "s": "Tau Empire（钛帝国）"
+          },
+          {
+            "t": "text",
+            "s": "，军表昵称是 "
+          },
+          {
+            "t": "strong",
+            "s": "Copper Lantern 742"
+          },
+          {
+            "t": "text",
+            "s": "。"
+          }
+        ]
+      },
+      "calc": [],
+      "entityCard": null,
+      "cites": [],
+      "sensitivity": null,
+      "cta": null,
+      "followups": [
+        "Copper Lantern 742 里都带了哪些单位？",
+        "这个 Tau 军表主打什么战术风格？",
+        "需要我帮你把这份军表整理成槽位吗？"
+      ],
+      "degraded": false
+    }
+  },
+  {
+    "check": "isolation",
+    "request": {
+      "question": "What army and exact army nickname did I tell you earlier?",
+      "session_id": "acceptance-20260918-b"
+    },
+    "status": 200,
+    "seconds": 3.1,
+    "response": {
+      "summary": "检索 0 步 · 引用 0 条",
+      "trace": [],
+      "traceWarn": null,
+      "verdict": {
+        "label": "暂无法判定",
+        "labelEn": "Unverified",
+        "lede": [
+          {
+            "t": "text",
+            "s": "在本会话的历史消息里，你并没有告诉我任何阵营或部队昵称。我这边看不到你之前提过相关内容——如果你确实说过，可能是被截断了，麻烦再发一次。"
+          }
+        ]
+      },
+      "calc": [],
+      "entityCard": null,
+      "cites": [],
+      "sensitivity": null,
+      "cta": null,
+      "followups": [
+        "你之前提到的阵营和昵称是什么？",
+        "需要我帮你查证某个阵营的规则吗？",
+        "要不要重新发一次你的部队配置？"
+      ],
+      "degraded": false
+    }
+  },
+  {
+    "check": "stale-context",
+    "request": {
+      "question": "Remember that my old draft listed Roboute Guilliman at 123 points. This is just my old draft, not a verified rule.",
+      "session_id": "acceptance-20260918-a"
+    },
+    "status": 200,
+    "seconds": 3.69,
+    "response": {
+      "summary": "检索 0 步 · 引用 0 条",
+      "trace": [],
+      "traceWarn": null,
+      "verdict": {
+        "label": "仅记草稿",
+        "labelEn": "Draft Only",
+        "lede": [
+          {
+            "t": "text",
+            "s": "已记录：你的"
+          },
+          {
+            "t": "strong",
+            "s": "旧草稿"
+          },
+          {
+            "t": "text",
+            "s": "里把 Roboute Guilliman 记为 "
+          },
+          {
+            "t": "num",
+            "s": "123"
+          },
+          {
+            "t": "text",
+            "s": " 分。这仅是你旧草稿中的数字，"
+          },
+          {
+            "t": "strong",
+            "s": "不是"
+          },
+          {
+            "t": "text",
+            "s": "经查证的官方点数，我不会把它当作规则依据。"
+          }
+        ]
+      },
+      "calc": [],
+      "entityCard": null,
+      "cites": [],
+      "sensitivity": {
+        "title": "◭ 敏感性 · 数字来源",
+        "text": [
+          {
+            "t": "num",
+            "s": "123"
+          },
+          {
+            "t": "text",
+            "s": " 分只来自你的旧草稿，未经任何工具查证，不能作为规则依据使用。"
+          }
+        ]
+      },
+      "cta": null,
+      "followups": [
+        "用工具查证 Guilliman 的现行官方点数",
+        "对比旧草稿 123 分与现行官方点数的差异",
+        "确认 Guilliman 在现行版本中的分遣队归属"
+      ],
+      "degraded": false
+    }
+  },
+  {
+    "check": "fresh-points",
+    "request": {
+      "question": "How many points does Roboute Guilliman actually cost in the current official data? Please verify it.",
+      "session_id": "acceptance-20260918-a"
+    },
+    "status": 200,
+    "seconds": 7.9,
+    "response": {
+      "summary": "检索 1 步 · 引用 2 条",
+      "trace": [
+        {
+          "fn": "calc_points",
+          "args": "(['Roboute Guilliman'])",
+          "result": "已命中",
+          "status": "ok",
+          "note": null
+        }
+      ],
+      "traceWarn": null,
+      "verdict": {
+        "label": "规则如下",
+        "labelEn": "Ruling",
+        "lede": [
+          {
+            "t": "text",
+            "s": "Roboute Guilliman 的现行官方点数是 "
+          },
+          {
+            "t": "strong",
+            "s": "355 分"
+          },
+          {
+            "t": "text",
+            "s": "，精确匹配官方 Munitorum Field Manual 点数库 "
+          },
+          {
+            "t": "cite",
+            "n": 1
+          },
+          {
+            "t": "cite",
+            "n": 2
+          },
+          {
+            "t": "text",
+            "s": "。旧草稿里的 "
+          },
+          {
+            "t": "num",
+            "s": "123"
+          },
+          {
+            "t": "text",
+            "s": " 分与官方值不符，请以 "
+          },
+          {
+            "t": "strong",
+            "s": "355 分"
+          },
+          {
+            "t": "text",
+            "s": "为准。"
+          }
+        ]
+      },
+      "calc": [],
+      "entityCard": null,
+      "cites": [
+        {
+          "n": 1,
+          "book": "Munitorum Field Manual",
+          "page": null,
+          "section": "官方当前点数",
+          "term": null,
+          "wiki": "",
+          "url": "https://mfm.warhammer-community.com"
+        },
+        {
+          "n": 2,
+          "book": "Munitorum Field Manual (mfm.warhammer-community.com)",
+          "page": null,
+          "section": null,
+          "term": null,
+          "wiki": "",
+          "url": null
+        }
+      ],
+      "sensitivity": null,
+      "cta": null,
+      "followups": [
+        "355 分是哪个版本的 Munitorum Field Manual？",
+        "Roboute Guilliman 的规则和单位数据卡在哪里查？",
+        "旧草稿里的 123 分是从哪来的？"
+      ],
+      "degraded": false
+    }
+  }
+]

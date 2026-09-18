@@ -21,7 +21,7 @@ User request: complete the five-step finish plan, with local points agreeing wit
 - [x] Connect bounded conversation history to agent requests.
 - [x] Replace stale landing-page example; repair citations and stream/error handling.
 - [x] Build the current frontend; verify API, UI, retrieval and representative roster workflows.
-- [ ] Complete live LLM conversation recall and refreshed benchmark acceptance after provider availability is restored.
+- [x] Complete live LLM conversation recall and refreshed benchmark acceptance (September 16 benchmark: 113 correct / 2 partial / 0 wrong; September 18: recall 6/6, API isolation and fresh fact verification passed).
 - [x] Run full tests and record concrete host/provider blockers.
 - [x] Complete an actual Docker build/start after WSL is working (September 16: both images built, containers started, API healthy and 85 targeted container tests passed).
 - [x] Review final diff; produce source-linked sync and acceptance reports; consolidate the verified checkout.
@@ -64,3 +64,7 @@ Tasks 1–2 now have a reviewed patch pipeline, six added datasheets, refreshed 
 ## September 16 pause
 
 [Live AI and Docker checkpoint](../reports/2026-09-16-live-ai-docker-checkpoint.md): benchmark 113 correct / 2 partial / 0 wrong. Docker acceptance passed. Same-session live recall failed by falling back to retrieval; task 3 remains open. User requested save and stop before a code fix.
+
+## September 18 completion
+
+[Live recall fix and acceptance](../reports/2026-09-18-live-recall-fix.md): JSON protocol history fixes the reproduced blank-response/fallback path. Full native tests: 2,518 passed. Rebuilt Docker API passed live recall, isolation and a points lookup that ignored stale draft context. Tasks 3–4 application acceptance is complete. The two partial benchmark answers and released Ork source gaps remain separate follow-up work. Docker startup required the socket-directory workaround again; do not treat it as a permanent host repair.

@@ -1,0 +1,103 @@
+[
+  {
+    "round": 0,
+    "intent": "闲聊",
+    "degraded": false,
+    "trace": [],
+    "answer": "你之前告诉我：阵营是 **Tau Empire（钛帝国）**，军表昵称是 **Copper Lantern 742**。"
+  },
+  {
+    "round": 1,
+    "intent": "闲聊",
+    "degraded": true,
+    "trace": [
+      {
+        "empty_json": true
+      },
+      {
+        "plain_mode_content": "你之前告诉我：\n\n- **阵营（Army）**：Tau Empire（钛帝国）\n- **军表昵称（Army nickname）**：Copper Lantern 742\n\n这两条我已在本次会话中记住。"
+      },
+      {
+        "empty_json": true
+      },
+      {
+        "plain_mode_content": "你之前告诉我：\n\n- **阵营（Army）：** Tau Empire（钛帝国）\n- **军表昵称（Army nickname）：** Copper Lantern 742\n\n这是你在本会话中明确让我记住的信息。"
+      }
+    ],
+    "answer": "⚠️ 已降级到兜底检索，但仍未找到相关内容（异常: 未找到 JSON 对象：你之前告诉我：\n\n- **阵营（Army）：** Tau Empire（钛帝国）\n- **军表昵称（Army nickname）：** Copper Lantern 742\n\n这是你在本会话中明确让我记住的信息。；rag_search 兜底也未检索到相关内容）。"
+  },
+  {
+    "round": 2,
+    "intent": "闲聊",
+    "degraded": false,
+    "trace": [
+      {
+        "empty_json": true
+      },
+      {
+        "plain_mode_content": "你之前告诉我：\n\n- **阵营（Army）**：Tau Empire（钛帝国）\n- **军表昵称（Army nickname）**：Copper Lantern 742\n\n这两条我已在会话中记住。"
+      }
+    ],
+    "answer": "你之前告诉我：阵营是 **Tau Empire（钛帝国）**，军表昵称是 **Copper Lantern 742**。"
+  },
+  {
+    "round": 3,
+    "intent": "闲聊",
+    "degraded": true,
+    "trace": [
+      {
+        "empty_json": true
+      },
+      {
+        "plain_mode_content": "你之前告诉我：\n\n- **阵营（Army）**：Tau Empire（钛帝国）\n- **军表昵称（Army nickname）**：Copper Lantern 742\n\n这两条我已在本次会话中记住。"
+      },
+      {
+        "empty_json": true
+      },
+      {
+        "plain_mode_content": "你之前告诉我：\n\n- **阵营（Army）**：Tau Empire（钛帝国）\n- **军表昵称（Army nickname）**：Copper Lantern 742\n\n这两条我已在本次会话中记住。"
+      }
+    ],
+    "answer": "⚠️ 已降级到兜底检索，但仍未找到相关内容（异常: 未找到 JSON 对象：你之前告诉我：\n\n- **阵营（Army）**：Tau Empire（钛帝国）\n- **军表昵称（Army nickname）**：Copper Lantern 742\n\n这两条我已在本次会话中记住。；rag_search 兜底也未检索到相关内容）。"
+  },
+  {
+    "round": 4,
+    "intent": "闲聊",
+    "degraded": true,
+    "trace": [
+      {
+        "empty_json": true
+      },
+      {
+        "plain_mode_content": "你之前告诉我：\n\n- **阵营（Army）：** Tau Empire（钛帝国）\n- **军表昵称（Army nickname）：** Copper Lantern 742\n\n这两条我都记着，后续会默认按钛帝国来查证。"
+      },
+      {
+        "empty_json": true
+      },
+      {
+        "plain_mode_content": "你之前告诉我：\n\n- **阵营（Army）：** Tau Empire（钛帝国）\n- **军表昵称（Army nickname）：** Copper Lantern 742\n\n这是你在本会话中明确让我记住的两项信息。"
+      }
+    ],
+    "answer": "⚠️ 已降级到兜底检索，但仍未找到相关内容（异常: 未找到 JSON 对象：你之前告诉我：\n\n- **阵营（Army）：** Tau Empire（钛帝国）\n- **军表昵称（Army nickname）：** Copper Lantern 742\n\n这是你在本会话中明确让我记住的两项信息。；rag_search 兜底也未检索到相关内容）。"
+  },
+  {
+    "round": 5,
+    "intent": "闲聊",
+    "degraded": true,
+    "trace": [
+      {
+        "empty_json": true
+      },
+      {
+        "plain_mode_content": "你之前告诉我：\n\n- **阵营（Army）**：Tau Empire（钛帝国）\n- **军表昵称（Army nickname）**：Copper Lantern 742\n\n这两条我已在本次会话中记住。"
+      },
+      {
+        "empty_json": true
+      },
+      {
+        "plain_mode_content": "你之前告诉我：\n\n- **阵营（Army）**：Tau Empire（钛帝国）\n- **军表昵称（Army nickname）**：Copper Lantern 742\n\n这两条我已在会话中记住，后续默认按钛帝国处理。"
+      }
+    ],
+    "answer": "⚠️ 已降级到兜底检索，但仍未找到相关内容（异常: 未找到 JSON 对象：你之前告诉我：\n\n- **阵营（Army）**：Tau Empire（钛帝国）\n- **军表昵称（Army nickname）**：Copper Lantern 742\n\n这两条我已在会话中记住，后续默认按钛帝国处理。；rag_search 兜底也未检索到相关内容）。"
+  }
+]

@@ -1,0 +1,198 @@
+[
+  {
+    "mode": "plain",
+    "round": 0,
+    "degraded": true,
+    "trace": [
+      {
+        "want_json": false,
+        "response": "闲聊"
+      },
+      {
+        "want_json": true,
+        "response": "{\"type\": \"final\", \"content\": \"已记录：你的阵营是 **Tau Empire（钛帝国）**，军表昵称是 **Copper Lantern 742**。后续讨论我会默认以钛帝国为背景，需要查证点数/属性/规则时我会用工具实时核对。\", \"sources\": []}"
+      },
+      {
+        "want_json": false,
+        "response": "闲聊"
+      },
+      {
+        "want_json": true,
+        "response": "                              "
+      },
+      {
+        "want_json": true,
+        "response": "                              "
+      }
+    ],
+    "answer": "⚠️ 已降级到兜底检索，但仍未找到相关内容（异常: LLM 返回空内容；rag_search 兜底也未检索到相关内容）。"
+  },
+  {
+    "mode": "json_history",
+    "round": 0,
+    "degraded": false,
+    "trace": [
+      {
+        "want_json": false,
+        "response": "闲聊"
+      },
+      {
+        "want_json": true,
+        "response": "{\"type\": \"final\", \"content\": \"已记录：你的阵营是 **Tau Empire（钛帝国）**，军表昵称是 **Copper Lantern 742**。后续讨论我会默认以钛帝国为背景；若涉及具体单位点数/属性，我仍会实时查证。\", \"sources\": []}"
+      },
+      {
+        "want_json": false,
+        "response": "闲聊"
+      },
+      {
+        "want_json": true,
+        "response": "{\"type\": \"final\", \"content\": \"你之前告诉我：阵营是 **Tau Empire（钛帝国）**，军表昵称是 **Copper Lantern 742**。\", \"sources\": []}"
+      }
+    ],
+    "answer": "你之前告诉我：阵营是 **Tau Empire（钛帝国）**，军表昵称是 **Copper Lantern 742**。"
+  },
+  {
+    "mode": "plain",
+    "round": 1,
+    "degraded": false,
+    "trace": [
+      {
+        "want_json": false,
+        "response": "闲聊"
+      },
+      {
+        "want_json": true,
+        "response": "{\"type\": \"final\", \"content\": \"已记录：你的阵营是 **Tau Empire（钛帝国）**，军表昵称 **Copper Lantern 742**。后续讨论我会默认按钛帝国来查证与判定。需要我做什么？比如查单位属性/点数、模拟对战、验表或战斗顺序判定都可以。\", \"sources\": []}"
+      },
+      {
+        "want_json": false,
+        "response": "闲聊"
+      },
+      {
+        "want_json": true,
+        "response": "{\"type\": \"final\", \"content\": \"你之前告诉我：阵营是 **Tau Empire（钛帝国）**，军表昵称是 **Copper Lantern 742**。\", \"sources\": []}"
+      }
+    ],
+    "answer": "你之前告诉我：阵营是 **Tau Empire（钛帝国）**，军表昵称是 **Copper Lantern 742**。"
+  },
+  {
+    "mode": "json_history",
+    "round": 1,
+    "degraded": false,
+    "trace": [
+      {
+        "want_json": false,
+        "response": "闲聊"
+      },
+      {
+        "want_json": true,
+        "response": "{\"type\": \"final\", \"content\": \"已记录：你的阵营是 **Tau Empire（钛帝国）**，军表昵称是 **Copper Lantern 742**。后续讨论我会默认按钛帝国来查证与判定。需要我做什么？比如查单位属性/点数、模拟对战、验表点评，或战斗顺序判定都可以。\", \"sources\": []}"
+      },
+      {
+        "want_json": false,
+        "response": "闲聊"
+      },
+      {
+        "want_json": true,
+        "response": "{\"type\": \"final\", \"content\": \"你之前告诉我：阵营是 **Tau Empire（钛帝国）**，军表昵称是 **Copper Lantern 742**。\", \"sources\": []}"
+      }
+    ],
+    "answer": "你之前告诉我：阵营是 **Tau Empire（钛帝国）**，军表昵称是 **Copper Lantern 742**。"
+  },
+  {
+    "mode": "plain",
+    "round": 2,
+    "degraded": false,
+    "trace": [
+      {
+        "want_json": false,
+        "response": "闲聊"
+      },
+      {
+        "want_json": true,
+        "response": "{\"type\": \"final\", \"content\": \"已记住：你的阵营是 **Tau Empire（钛帝国）**，军表昵称是 **Copper Lantern 742**。后续讨论我会默认以钛帝国为背景；如需查点数、属性或模拟对战，直接说单位名即可。\", \"sources\": []}"
+      },
+      {
+        "want_json": false,
+        "response": "闲聊"
+      },
+      {
+        "want_json": true,
+        "response": "{\"type\": \"final\", \"content\": \"你之前告诉我：阵营是 **Tau Empire（钛帝国）**，军表昵称是 **Copper Lantern 742**。\", \"sources\": []}"
+      }
+    ],
+    "answer": "你之前告诉我：阵营是 **Tau Empire（钛帝国）**，军表昵称是 **Copper Lantern 742**。"
+  },
+  {
+    "mode": "json_history",
+    "round": 2,
+    "degraded": false,
+    "trace": [
+      {
+        "want_json": false,
+        "response": "闲聊"
+      },
+      {
+        "want_json": true,
+        "response": "{\"type\": \"final\", \"content\": \"已记录：你的阵营是 **Tau Empire（钛帝国）**，军表昵称是 **Copper Lantern 742**。后续讨论我会默认按钛帝国来查证与判定。需要我做什么？比如查单位属性/点数、模拟对战、验表或战斗顺序判定都可以。\", \"sources\": []}"
+      },
+      {
+        "want_json": false,
+        "response": "闲聊"
+      },
+      {
+        "want_json": true,
+        "response": "{\"type\": \"final\", \"content\": \"你之前告诉我：阵营是 **Tau Empire（钛帝国）**，军表昵称是 **Copper Lantern 742**。\", \"sources\": []}"
+      }
+    ],
+    "answer": "你之前告诉我：阵营是 **Tau Empire（钛帝国）**，军表昵称是 **Copper Lantern 742**。"
+  },
+  {
+    "mode": "plain",
+    "round": 3,
+    "degraded": false,
+    "trace": [
+      {
+        "want_json": false,
+        "response": "闲聊"
+      },
+      {
+        "want_json": true,
+        "response": "{\"type\": \"final\", \"content\": \"已记录：你的阵营是 **Tau Empire（钛帝国）**，军表昵称是 **Copper Lantern 742**。后续讨论我会默认以钛帝国为背景；若你问点数/属性/规则，我仍会用工具重新查证当前官方数据。\", \"sources\": []}"
+      },
+      {
+        "want_json": false,
+        "response": "闲聊"
+      },
+      {
+        "want_json": true,
+        "response": "{\"type\": \"final\", \"content\": \"你之前告诉我：阵营是 **Tau Empire（钛帝国）**，军表昵称是 **Copper Lantern 742**。\", \"sources\": []}"
+      }
+    ],
+    "answer": "你之前告诉我：阵营是 **Tau Empire（钛帝国）**，军表昵称是 **Copper Lantern 742**。"
+  },
+  {
+    "mode": "json_history",
+    "round": 3,
+    "degraded": false,
+    "trace": [
+      {
+        "want_json": false,
+        "response": "闲聊"
+      },
+      {
+        "want_json": true,
+        "response": "{\"type\": \"final\", \"content\": \"已记录：你的阵营是 **Tau Empire（钛帝国）**，军表昵称是 **Copper Lantern 742**。后续讨论我会默认按钛帝国来查证与判定。需要我帮你查单位属性、算分、验表或模拟对战时，直接说单位名和场景即可。\", \"sources\": []}"
+      },
+      {
+        "want_json": false,
+        "response": "闲聊"
+      },
+      {
+        "want_json": true,
+        "response": "{\"type\": \"final\", \"content\": \"你之前告诉我：阵营是 **Tau Empire（钛帝国）**，军表昵称是 **Copper Lantern 742**。\", \"sources\": []}"
+      }
+    ],
+    "answer": "你之前告诉我：阵营是 **Tau Empire（钛帝国）**，军表昵称是 **Copper Lantern 742**。"
+  }
+]

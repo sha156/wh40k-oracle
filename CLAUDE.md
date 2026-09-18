@@ -1,8 +1,8 @@
 # 战锤40K 规则书 RAG 问答系统
 
-## Latest pause — 2026-09-16
+## Latest acceptance — 2026-09-18
 
-See `docs/superpowers/reports/2026-09-16-live-ai-docker-checkpoint.md`. Docker startup was repaired and both real images built and ran; API assets and model warmup passed, with 85 targeted container tests passing. DeepSeek now works. Live benchmark: 113 correct, 2 partial, 0 wrong out of 115. Gold #117 now reflects restored FRAME membership, with v3.5 preserved. **Same-session live recall failed by falling back to retrieval; task 3 is still open.** No production code fix was made before the user's save-and-stop request. Resume from `codex/live-ai-docker-acceptance` in `D:/Project/py/RAG`; preserve fresh fact verification when fixing recall.
+Tasks 3–4 now pass their application acceptance. See `docs/superpowers/reports/2026-09-18-live-recall-fix.md`. Assistant history is serialized in the existing JSON step protocol; live same-session recall passed 6/6 trials, and container API checks passed recall, isolation and fresh points verification. Full native pytest: 2,518 passed. The September 16 benchmark remains 113 correct / 2 partial / 0 wrong (115 questions); it was not rerun in full on September 18. Docker's stale inference socket error recurred despite Docker AI being disabled; preserving/replacing the socket directories restored the engine and containers. This is a verified recovery workaround, not a permanent host fix. Runtime/assets remain in `D:/Project/py/RAG`.
 
 ## Current checkpoint — 2026-09-15
 
@@ -14,7 +14,7 @@ The September source reconciliation supersedes the historical July figures below
 - FRAME now appears on 242 unit records. Keyword membership comes from the structured source, not stale Chinese translations. Eighteen changed units invalidate older translations; 16 old retrieval chunks were pruned, leaving 5,754 chunks.
 - Current membership remains defined in `db_compile/active_units.py`. Preserve English where a verified Chinese source is absent. Regenerate pages only through documented commands.
 - Native API and codex startup, new datasheet rendering, simulation and roster price calculation were checked. Test results and precise coverage limits are recorded in the acceptance report.
-- Live AI acceptance still needs a successful provider call after the prior DeepSeek HTTP 402 balance failure. Docker acceptance remains blocked by the prior host WSL installation problem; neither was reported as passed.
+- Historical September 15 blockers were subsequently cleared: see the September 16 benchmark/Docker checkpoint and September 18 live recall acceptance above. Docker restart durability remains unverified.
 - Runnable assets remain in D:/Project/py/RAG; PDFs, caches, model files and SQLite are not in Git.
 - CI now installs `requirements-ci.txt` and runs model-free ingestion tests. Roster tests use temporary databases; only real-cache audits and full-app tests require local assets/dependencies. See the September 15 CI repair report for validation and remaining limits.
 
