@@ -1,5 +1,9 @@
 # 战锤40K 规则书 RAG 问答系统
 
+## Paused continuation — 2026-09-18
+
+Lookup improvements are saved on `codex/benchmark-lookup-completeness` and are not merged or deployed. See `docs/superpowers/reports/2026-09-18-lookup-checkpoint.md`: canonical wiki identity preservation, a paginated faction inventory tool, 2,521 passing native tests and a separately passing final 9-test regression file. Ten raw live probes are saved; question 118 shows answer-path variability that still needs assessment, so benchmark completion is not claimed. The user selected public official sources only for the remaining Ork gaps, then requested save and stop. Resume from `D:/Project/py/RAG` and follow the checkpoint's acceptance order.
+
 ## Latest acceptance — 2026-09-18
 
 Tasks 3–4 now pass their application acceptance. See `docs/superpowers/reports/2026-09-18-live-recall-fix.md`. Assistant history is serialized in the existing JSON step protocol; live same-session recall passed 6/6 trials, and container API checks passed recall, isolation and fresh points verification. Full native pytest: 2,518 passed. The September 16 benchmark remains 113 correct / 2 partial / 0 wrong (115 questions); it was not rerun in full on September 18. Docker's stale inference socket error recurred despite Docker AI being disabled; preserving/replacing the socket directories restored the engine and containers. This is a verified recovery workaround, not a permanent host fix. Runtime/assets remain in `D:/Project/py/RAG`.

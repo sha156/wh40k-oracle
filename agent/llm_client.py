@@ -36,6 +36,7 @@ _PROVIDERS: Dict[str, Any] = {
 # TOOL_SPECS 只有 name+description，缺参数名。补一张 arg 提示表（只读，不改 tools.py）
 # 让模型知道每个工具怎么传参。未列出的工具默认无参数 {}。
 _TOOL_ARG_HINTS: Dict[str, str] = {
+    "list_faction_units": '{"faction": "阵营英文名/中文名/ID", "offset": 0, "limit": 20}（总数不受分页限制；不要从 search_wiki 的前十条搜索结果推断总数）',
     "search_wiki": '{"query": "中文关键词"}',
     "get_entity": '{"name_or_id": "用户原文里的中文单位名（工具内部自动解析俗名/译名）"}',
     "get_keyword_definition": '{"keyword": "USR 或核心概念名"}',
@@ -96,6 +97,8 @@ _NEXT_STEP_CONTRACT = """你是「铁幕」，战锤40K规则参谋（现行第1
 {catalog}
 
 工具使用策略：
+- 问某阵营有多少单位/兵牌、完整清单时先用 list_faction_units。区分结构库兵牌数量与
+  官方 MFM 点数条目；有点数不代表已有完整兵牌。共享兵牌/关键词替换等规则另用 rag_search 查证。
 - 本轮消息之前的 user/assistant 消息是同一会话的历史。回忆用户说过的阵营、偏好或选择时，
   直接依据这些消息回答；历史中没有就如实说没有。历史答案不是当前官方规则/点数的证据，
   用户问「它现在多少分」之类的问题仍必须用工具重新查证。
@@ -188,7 +191,9 @@ def _render_loop_message(msg: Dict[str, Any]) -> Optional[Dict[str, str]]:
         name = msg.get("name", "?")
         if not isinstance(content, str):
             content = json.dumps(content, ensure_ascii=False, default=_json_default)
-        if len(content) > 4000:
+        # Inventory is explicitly paginated (<=50 units, <=10 names/page).
+        # Splitting its JSON would lose rows while still claiming returned=N.
+        if len(content) > 4000 and name != "list_faction_units":
             # 保**头尾**而不是只保头（审查 R1-L1）：get_datasheet 叠加中文层后整包常超限，
             # 而数值多在尾部（武器表、点数、同名消歧披露）——只留前 4000 字等于把答案本身
             # 切掉，模型却只看到一句「已截断」。

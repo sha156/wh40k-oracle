@@ -1,5 +1,9 @@
 # Official points sync and release finish
 
+## Latest continuation paused — September 18
+
+The user requested save and stop during follow-up work on benchmark questions 63 and 116. Canonical identity lookup and faction inventory changes are saved on `codex/benchmark-lookup-completeness`, pending final benchmark, ambiguity review, container acceptance and CI. The [lookup checkpoint](../reports/2026-09-18-lookup-checkpoint.md) records tests, rejected and final raw live trials, public-only Ork source constraints, and the exact resume order. Main and the running app retain the earlier accepted tasks 3–4 implementation.
+
 User request: complete the five-step finish plan, with local points agreeing with the official Munitorum Field Manual.
 
 ## Working state

@@ -88,6 +88,36 @@ def find_entity(
     return None
 
 
+def find_entity_by_id(
+    canonical_id: str, index: List[WikiIndexEntry], wiki_root: Path,
+) -> Optional[WikiPage]:
+    """Resolve an identity through indexed files without dropping its faction.
+
+    The display index omits English names and IDs. Inspect the small ID header
+    before parsing a candidate, so renamed translations do not hide real pages.
+    Duplicate IDs fail closed rather than selecting whichever file came first.
+    """
+    pattern = re.compile(r"(?m)^id:\s*['\"]?" + re.escape(canonical_id) + r"['\"]?\s*$")
+    matches = {}
+    root = wiki_root.resolve()
+    for entry in index:
+        path = (wiki_root / entry.path).resolve()
+        if not path.is_relative_to(root):
+            continue
+        if not path.exists():
+            path = path.with_suffix(".md")
+        if not path.is_file():
+            continue
+        text = path.read_text(encoding="utf-8")
+        header = text.split("\n---", 1)[0]
+        if not pattern.search(header):
+            continue
+        page = WikiPage.from_markdown(text)
+        if page is not None and str(page.fm.id) == canonical_id:
+            matches[path] = page
+    return next(iter(matches.values())) if len(matches) == 1 else None
+
+
 def search_entities(
     query: str,
     index: List[WikiIndexEntry],

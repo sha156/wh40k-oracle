@@ -1,0 +1,1617 @@
+[
+  {
+    "id": 63,
+    "trial": 0,
+    "question": "坦克指挥官的坦克命令有什么效果？",
+    "answer": "「坦克指挥官」在库中对应的是**黎曼鲁斯指挥官（Leman Russ Commander）**，它本身没有叫「坦克命令」的专属技能；它作为**军官（Officer）**，通过星界军的阵营能力**「指挥之声」**下达**命令**，命令效果如下（星界军10版中文规则）：\n\n**下达时机**：你的指挥阶段中；或（本模型所在单位）脱离运输工具的阶段结束时；或（本模型所在单位）部署到战场的阶段结束时。\n\n**生效方式**：选择一条命令，对其 **6寸内**一个友军单位生效，持续到**下个你的指挥阶段开始时**。除非特殊说明，一个单位只能被一条命令影响（后生效的立即替换之前的）；若接令单位处于**被震慑**状态，影响它的命令效果立即失效。命令效果**只对星界军模型生效**。[《星界军10版中文》第1页]\n\n| 命令名称 | 效果 |\n|---|---|\n| 快快快！ | 本单位模型 M+3 |\n| 上刺刀！ | 本单位模型近战武器 WS+1 |\n| 瞄准！ | 本单位模型射击武器 BS+1 |\n| 一排放！二排放！ | 本单位模型【速射】武器 A+1 |\n| 卧倒！ | 本单位模型 SV 值提高1，最多3+ |\n| 职责与荣誉！ | 本单位模型 LD 和 OC 值提高1 |\n\n[《星界军10版中文》第1页]\n\n**黎曼鲁斯指挥官自身的相关技能**（星界军阵营页）：\n- **阵营能力-指挥之声**：该军官可以对编队单位下达至多 **2个命令**。\n- **通讯网络**：该单位发布命令时，最多可向距离为 **12寸** 的可选单位发布命令（即突破常规6寸限制）。\n- **受损**：剩余1-4点耐伤时，该模型攻击时命中投掷结果-1。\n- **军官之陨**：对手射击阶段中该单位被摧毁时，进行致命破灭掷骰前掷D6，2+则暂不移除，可在攻击方完成攻击后用常规射击反击（只能打那个敌方单位），随后结算致命破灭并移除。\n\n**点数**：星界军版黎曼鲁斯指挥官 **1个模型 195分**（MFM 2026-09-14 快照）。\n\n**同名单位提示**：库中还存在**基因窃取者教派版**的黎曼鲁斯指挥官（阵营关键词含 Genestealer Cults + Astra Militarum），其技能文本与上述一致，但点数为**历史值 235分（未匹配到本次官方 MFM 快照，不能作为当前点数）**。若你问的是基因窃取者教派版本，请说明，我再单独核对。\n\n（注：术语页未收录「坦克命令」这一独立关键词，以上命令效果来自星界军规则语料。）",
+    "sources": [
+      {
+        "book": "星界军10版中文",
+        "page": 1
+      },
+      {
+        "book": "星界军10版中文",
+        "page": 4
+      },
+      {
+        "book": "官方结构库 db/wh40k.sqlite（Wahapedia 11版镜像 + MFM 官方点数）",
+        "page": 0
+      }
+    ],
+    "meta": {
+      "intent": "查",
+      "tool_calls": [
+        "get_entity",
+        "get_entity",
+        "get_entity",
+        "get_keyword_definition",
+        "rag_search"
+      ],
+      "degraded": false
+    },
+    "trace": [
+      {
+        "name": "get_entity",
+        "args": [],
+        "kwargs": {
+          "name_or_id": "坦克指挥官"
+        },
+        "result": {
+          "found": false,
+          "page": null,
+          "resolved_via": {
+            "canonical_id": null,
+            "name_en": null,
+            "confidence": "ambiguous",
+            "candidates": [
+              "Leman Russ Commander (AM)",
+              "Leman Russ Commander (GC)",
+              "Rogal Dorn Commander (AM)",
+              "Rogal Dorn Commander (GC)",
+              "远见指挥官"
+            ],
+            "suggestions": [],
+            "note": "这个名字匹配到多个候选，本工具按判据拒绝静默取先入者。⚠️ 有歧义 ≠ 该单位不存在。请把 candidates 里的候选串**原样**回填本工具重查（`名字 (阵营缩写)` 形式可精确命中唯一阵营）；按问题上下文无法确定用户指哪一个时，逐个候选查证后分别说明，不要在未查证任何候选前就把问题退回给用户。"
+          },
+          "note": "译名有多个候选：Leman Russ Commander (AM)、Leman Russ Commander (GC)、Rogal Dorn Commander (AM)、Rogal Dorn Commander (GC)、远见指挥官。请按问题语境选择相关候选，逐个用候选名重新调用 get_entity 取回各自的实体页，并在回答中分别说明各候选单位的情况；只有在查证候选之后仍无法判断用户所指时才反问用户，不要在未查证任何候选前就把问题退回给用户。"
+        }
+      },
+      {
+        "name": "get_entity",
+        "args": [],
+        "kwargs": {
+          "name_or_id": "Leman Russ Commander (AM)"
+        },
+        "result": {
+          "found": true,
+          "page": "---\nid: '000000680'\nname_zh: 黎曼鲁斯指挥官\nname_en: Leman Russ Commander\nfaction: 星界军\ntype: unit\npoints:\n  1 model: 195\ntags:\n- unit\n- unit/星界军\n- 星界军\nversion:\n  points: MFM 2026-09-14T05:51:23.572407+00:00\n  source: official-db\nsources:\n- book: https://assets.warhammer-community.com/eng_wh40k_faction_pack_astra_militarum-o51zhqvsvy-wdobxbf6t0.pdf\n  pages:\n  - 23\nupdated: '2026-09-14'\n---\n\n## 属性表\n| 模型 | M | T | SV | W | LD | OC |\n|---|---|---|---|---|---|---|\n| 黎曼鲁斯指挥官 | 10\" | 11 | 2+ | 13 | 7+ | 3 |\n\n## 射击武器\n| 武器 | 射程 | A | BS | S | AP | D | 技能 |\n|---|---|---|---|---|---|---|---|\n| 破坏者战斗加农炮 | 24\" | D6+1 | 4+ | 14 | -3 | D6 | [[core-rules/blast.md\\|爆炸]] |\n| 根除者新星炮 | 36\" | D3+6 | 4+ | 7 | -1 | 2 | [[core-rules/blast.md\\|爆炸]]，[[core-rules/ignores-cover.md\\|无视掩体]] |\n| 处决者等离子炮（标准） | 36\" | D6+3 | 4+ | 7 | -2 | 2 | [[core-rules/blast.md\\|爆炸]] |\n| 处决者等离子炮（过载） | 36\" | D6+3 | 4+ | 8 | -3 | 3 | [[core-rules/blast.md\\|爆炸]]，[[core-rules/hazardous.md\\|危险]] |\n| 灭绝者自动炮 | 48\" | 4 | 4+ | 9 | -1 | 3 | [[core-rules/rapid-fire.md\\|速射4]]，[[core-rules/twin-linked.md\\|双联]] |\n| 惩罚者加特林 | 24\" | 20 | 4+ | 6 | 0 | 1 | — |\n| 重型爆弹枪 | 36\" | 3 | 4+ | 5 | -1 | 2 | [[core-rules/sustained-hits.md\\|连击1]] |\n| 重型火焰喷射器 | 12\" | D6 | N/A | 5 | -1 | 1 | [[core-rules/ignores-cover.md\\|无视掩体]]，[[core-rules/torrent.md\\|洪流]] |\n| 重型伐木枪 | 36\" | 3 | 4+ | 4 | 0 | 1 | [[core-rules/rapid-fire.md\\|速射3]] |\n| 猎杀飞弹 | 48\" | 1 | 4+ | 14 | -3 | D6 | [[core-rules/one-shot.md\\|单发]] |\n| 激光炮 | 48\" | 1 | 4+ | 12 | -3 | D6+1 | — |\n| 黎曼鲁斯战斗加农炮 | 48\" | D6+3 | 4+ | 10 | -1 | 3 | [[core-rules/blast.md\\|爆炸]] |\n| 多管热熔 | 18\" | 2 | 4+ | 9 | -4 | D6 | [[core-rules/melta.md\\|热熔2]] |\n| 风暴爆弹枪 | 24\" | 2 | 4+ | 4 | 0 | 1 | [[core-rules/rapid-fire.md\\|速射2]] |\n| 征服者加农炮 | 72\" | 1 | 4+ | 18 | -4 | D6+6 | [[core-rules/heavy.md\\|重型]] |\n\n## 近战武器\n| 武器 | 射程 | A | WS | S | AP | D | 技能 |\n|---|---|---|---|---|---|---|---|\n| 装甲履带 | 近战 | 6 | 4+ | 7 | 0 | 1 | — |\n\n## 技能\n- **受损**：当该模型剩余1-4点耐伤，该模型进行攻击时命中投掷结果-1。\n- **阵营能力-指挥之声**：该军官可以对编队单位下达至多2个命令\n- **通讯网络**：该单位发布命令时，最多可向距离为12寸的可选单位发布命令。\n- **军官之陨**：在您对手的射击阶段中，当该单位被摧毁时，在进行致命破灭掷骰前，掷D6：● 如果掷骰结果为2+，不要将该单位从战场上移除。在进行攻击的单位完成攻击后，该单位可以使用常规射击进行射击，但在这样做时，该单位只能对那个敌方单位进行攻击。当该单位完成射击后，或在该阶段结束时（以先发生者为准），结算该单位的致命破灭掷骰，随后将该单位从战场上移除。\n\n## 单位构成\n- **1个模型** — 195 分\n\n## 关键词\n- **阵营关键词**：Astra Militarum\n- **普通关键词**：Leman Russ Commander，Officer，Imperium，Squadron，[[core-rules/character.md|Character]]，Vehicle，[[core-rules/smoke.md|Smoke]]，FRAME",
+          "resolved_via": {
+            "canonical_id": "000000680",
+            "name_en": "Leman Russ Commander",
+            "confidence": "exact",
+            "candidates": [],
+            "suggestions": []
+          },
+          "same_name_candidates": [
+            "Leman Russ Commander (AM)",
+            "Leman Russ Commander (GC)"
+          ],
+          "note": "本页阵营：星界军。同名单位还存在于其他阵营：Leman Russ Commander (AM)、Leman Russ Commander (GC)。按问题语境用含阵营的候选串重查，不要把本页当作所有阵营的规则。"
+        }
+      },
+      {
+        "name": "get_entity",
+        "args": [],
+        "kwargs": {
+          "name_or_id": "Leman Russ Commander (GC)"
+        },
+        "result": {
+          "found": true,
+          "page": "---\nid: '000003942'\nname_zh: 黎曼鲁斯指挥官\nname_en: Leman Russ Commander\nfaction: 基因窃取者教派\ntype: unit\ntags:\n- unit\n- unit/基因窃取者教派\n- 基因窃取者教派\nversion:\n  points: historical / unmatched\n  source: official-db\nsources:\n- book: 官方结构库 db/wh40k.sqlite（Wahapedia 11版镜像 + MFM 官方点数）\nupdated: '2026-09-14'\n---\n\n## 属性表\n| 模型 | M | T | SV | W | LD | OC |\n|---|---|---|---|---|---|---|\n| 黎曼鲁斯指挥官 | 10\" | 11 | 2+ | 13 | 7+ | 3 |\n\n## 射击武器\n| 武器 | 射程 | A | BS | S | AP | D | 技能 |\n|---|---|---|---|---|---|---|---|\n| 重型爆弹枪 | 36\" | 3 | 4+ | 5 | -1 | 2 | [[core-rules/sustained-hits.md\\|连击1]] |\n| 重型火焰喷射器 | 12\" | D6 | N/A | 5 | -1 | 1 | [[core-rules/ignores-cover.md\\|无视掩体]]，[[core-rules/torrent.md\\|洪流]] |\n| 重型伐木枪 | 36\" | 3 | 4+ | 4 | 0 | 1 | [[core-rules/rapid-fire.md\\|速射3]] |\n| 猎杀飞弹 | 48\" | 1 | 4+ | 14 | -3 | D6 | [[core-rules/one-shot.md\\|单发]] |\n| 黎曼鲁斯战斗加农炮 | 48\" | D6+3 | 4+ | 10 | -1 | 3 | [[core-rules/blast.md\\|爆炸]] |\n| 多管热熔 | 18\" | 2 | 4+ | 9 | -4 | D6 | [[core-rules/melta.md\\|热熔2]] |\n| 风暴爆弹枪 | 24\" | 2 | 4+ | 4 | 0 | 1 | [[core-rules/rapid-fire.md\\|速射2]] |\n| 激光炮 | 48\" | 1 | 4+ | 12 | -3 | D6+1 | — |\n| 破坏者战斗加农炮 | 24\" | D6+1 | 4+ | 14 | -3 | D6 | [[core-rules/blast.md\\|爆炸]] |\n| 根除者新星炮 | 36\" | D3+6 | 4+ | 7 | -1 | 2 | [[core-rules/blast.md\\|爆炸]]，[[core-rules/ignores-cover.md\\|无视掩体]] |\n| 处决者等离子炮（标准） | 36\" | D6+3 | 4+ | 7 | -2 | 2 | [[core-rules/blast.md\\|爆炸]] |\n| 处决者等离子炮（过载） | 36\" | D6+3 | 4+ | 8 | -3 | 3 | [[core-rules/blast.md\\|爆炸]]，[[core-rules/hazardous.md\\|危险]] |\n| 灭绝者自动炮 | 48\" | 4 | 4+ | 9 | -1 | 3 | [[core-rules/rapid-fire.md\\|速射4]]，[[core-rules/twin-linked.md\\|双联]] |\n| 惩罚者加特林 | 24\" | 20 | 4+ | 6 | 0 | 1 | — |\n| 征服者加农炮 | 72\" | 1 | 4+ | 18 | -4 | D6+6 | [[core-rules/heavy.md\\|重型]] |\n\n## 近战武器\n| 武器 | 射程 | A | WS | S | AP | D | 技能 |\n|---|---|---|---|---|---|---|---|\n| 装甲履带 | 近战 | 6 | 4+ | 7 | 0 | 1 | — |\n\n## 技能\n- **受损**：当该模型剩余1-4点耐伤，该模型进行攻击时命中投掷结果-1。\n- **阵营能力-指挥之声**：该军官可以对编队单位下达至多2个命令\n- **通讯网络**：该单位发布命令时，最多可向距离为12寸的可选单位发布命令。\n- **军官之陨**：在您对手的射击阶段中，当该单位被摧毁时，在进行致命破灭掷骰前，掷D6：● 如果掷骰结果为2+，不要将该单位从战场上移除。在进行攻击的单位完成攻击后，该单位可以使用常规射击进行射击，但在这样做时，该单位只能对那个敌方单位进行攻击。当该单位完成射击后，或在该阶段结束时（以先发生者为准），结算该单位的致命破灭掷骰，随后将该单位从战场上移除。\n\n## 单位构成\n历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。\n- **1个模型** — 235 分\n\n## 关键词\n- **阵营关键词**：Genestealer Cults，Astra Militarum\n- **普通关键词**：Vehicle，[[core-rules/character.md|Character]]，[[core-rules/smoke.md|Smoke]]，Squadron，Imperium，Officer，Leman Russ Commander",
+          "resolved_via": {
+            "canonical_id": "000003942",
+            "name_en": "Leman Russ Commander",
+            "confidence": "exact",
+            "candidates": [],
+            "suggestions": []
+          },
+          "same_name_candidates": [
+            "Leman Russ Commander (AM)",
+            "Leman Russ Commander (GC)"
+          ],
+          "note": "本页阵营：基因窃取者教派。同名单位还存在于其他阵营：Leman Russ Commander (AM)、Leman Russ Commander (GC)。按问题语境用含阵营的候选串重查，不要把本页当作所有阵营的规则。"
+        }
+      },
+      {
+        "name": "get_keyword_definition",
+        "args": [],
+        "kwargs": {
+          "keyword": "坦克指挥官"
+        },
+        "result": {
+          "found": false,
+          "page": null,
+          "note": "术语页未收录该关键词（本工具只查 wiki/core-rules/ 术语页，它只覆盖部分核心/武器词条）。⚠️ 未收录 ≠ 官方规则里没有这个关键词，也 ≠ 库内没有单位带它——只说明没有独立术语页。若问题问的是「结构库里有没有」，如实回答「术语页未收录」并指出这是已知的数据缺口；若问题问的是规则含义，请改用 rag_search 查官方语料后再作答。禁止据此断言该关键词不存在，也禁止反过来把官方 PDF 上的内容说成「库里查得到」。"
+        }
+      },
+      {
+        "name": "rag_search",
+        "args": [],
+        "kwargs": {
+          "query": "坦克指挥官 坦克命令 效果 星界军 命令"
+        },
+        "result": {
+          "found": true,
+          "passages": [
+            {
+              "text": "## 即兴指挥 INSPIRED COMMAND\n| 技能来源 | 技能分类 | 使用时机 | 使用目标 | 效果 |\n|---|---|---|---|---|\n| 星界军：合成作战兵团 | 传奇伟业 | 对手的指挥阶段 | 一个你的星界军军官单位 | 上述军官可以下达一条命令，如同在你的指挥阶段 |",
+              "book": "星界军10版中文",
+              "source": "data\\星界军10版中文老湿腐版1.27.pdf",
+              "page": 4,
+              "edition": "10",
+              "layer": "codex-base"
+            },
+            {
+              "text": "## 星界军规则\n### 指挥之声\n⚫ \n如果你的军队阵营是星界军，你军队中拥有本技能的军官模型可以在以下时刻下达命令 \n◼ \n你的指挥阶段中 \n◼ \n（本模型所在单位）脱离运输工具的阶段结束时 \n◼ \n（本模型所在单位）部署到战场的阶段结束时 \n⚫ \n选择以下一条命令，对其6 寸内一个友军单位生效，持续到下个你的指挥阶段开始时。 \n⚫ \n除非特殊说明，一个单位只能被一条命令所影响（后生效的立即替换之前的），如果接令单位处于被震慑状\n态则影响它的命令效果立即失效 \n⚫ \n命令效果只对星界军模型生效 \n\n| 命令名称 | 效果 |\n|---|---|\n| 快快快！ | 本单位模型M+3 |\n| 上刺刀！ | 本单位模型近战武器WS+1 |\n| 瞄准！ | 本单位模型射击武器BS+1 |\n| 一排放！二排放！ | 本单位模型【速射】武器A+1 |\n| 卧倒！ | 本单位模型SV 值提高1，最多3+ |\n| 职责与荣誉！ | 本单位模型LD 和OC 值提高1 |",
+              "book": "星界军10版中文",
+              "source": "data\\星界军10版中文老湿腐版1.27.pdf",
+              "page": 1,
+              "edition": "10",
+              "layer": "codex-base"
+            },
+            {
+              "text": "## 音阵中继 Vox-Relay（1CP）\n**技能来源**：星界军：机械化突击队\n**技能分类**：武器装备\n**使用时机**：你的指挥阶段\n**使用目标**：你军队中的一个正在乘坐运输工具的步兵军官单位\n**效果**：本阶段中，本单位可以在不在战场上的情况下下达命令，并且可以无视命令距离，对我方的星界军运输工具单位（巨型单位除外）下达命令。",
+              "book": "星界军10版中文",
+              "source": "data\\星界军10版中文老湿腐版1.27.pdf",
+              "page": 9,
+              "edition": "10",
+              "layer": "codex-base"
+            },
+            {
+              "text": "## 战略技能\n\n### 堑壕斗士 Trench Fighters\n| 技能来源 | 技能分类 | 使用时机 | 使用对象 | 效果 |\n|---|---|---|---|---|\n| 星界军：攻城战兵团 | 战斗战术 | 近战阶段中，在一个敌方单位选择攻击目标后 | 一个被选作攻击目标的友军星界军步兵单位 | 本阶段中，每当本单位中模型被摧毁时尚未进行近战攻击，你投一枚D6，若是兵团模型则结果+2，若结果为4+，暂不将那些模型移除，而是可以进行一轮攻击，然后再移除出场。 |\n\n### 翻越壕沟 Over the Top\n| 技能来源 | 技能分类 | 使用时机 | 使用对象 | 效果 |\n|---|---|---|---|---|\n| 星界军：攻城战兵团 | 战略行动 | 你的指挥阶段开始时 | 你军队中的一个步兵军官模型 | 本阶段中，上述模型下达快快快!命令时，你可以无视命令距离，选择任意数量的，可以被下达命令的我方步兵团单位，该命令同样对那些单位生效。 |\n\n### 信号指引 Flare Burst\n| 技能来源 | 技能分类 | 使用时机 | 使用对象 | 效果 |\n|---|---|---|---|---|\n| 星界军：攻城战兵团 | 武器装备 | 你的射击阶段 | 你军队中的一个尚未攻击的星界军人物单位 | 本阶段中，上述友军单位攻击位于视线中12 寸内的敌方单位时，可以重骰命中骰。 |\n\n### 冷酷牺牲 Callous Sacrifice\n| 技能来源 | 技能分类 | 使用时机 | 使用对象 | 效果 |\n|---|---|---|---|---|\n| 星界军：攻城战兵团 | 战斗战术 | 你的射击阶段 | 一个位于敌方单位接战范围内的友军排单位 | 本阶段中，位于本单位接战范围内的敌方单位在被判定能否作为射击目标时不视作处于近战。但是每当那些敌方单位损失一点W 值，就投一颗D6，若结果为4+，在本轮攻击结束后，本单位就会有一个模型被直接移除 |",
+              "book": "星界军10版中文",
+              "source": "data\\星界军10版中文老湿腐版1.27.pdf",
+              "page": 6,
+              "edition": "10",
+              "layer": "codex-base"
+            },
+            {
+              "text": "## 协调行动 Coordinated action（1CP）\n| 技能来源 | 技能分类 | 使用时机 | 使用目标 | 效果 |\n|---|---|---|---|---|\n| 星界军：合成作战兵团 | 战斗战术 | 任意阶段开始时 | 一个友军兵团单位，及其视线中6寸内一个友军编队单位 | 本阶段中，上述两个单位共享其接受的命令效果 |",
+              "book": "星界军10版中文",
+              "source": "data\\星界军10版中文老湿腐版1.27.pdf",
+              "page": 3,
+              "edition": "10",
+              "layer": "codex-base"
+            },
+            {
+              "text": "## 支配命令 IMPERATIVE DOMINANCE 1CP\n| 技能来源 | 技能分类 | 使用时机 | 使用对象 | 效果 |\n|----------|----------|----------|----------|------|\n| 泰伦虫族：突触节点 | 战略行动 | 指挥阶段中 | 位于你的节点范围内的一个泰伦虫族友军单位 | 选择一个突触命令（使用过也可以），你的下个指挥阶段开始前，对本单位（也只对本单位）生效，替换原有效果 |",
+              "book": "泰伦虫族10版中文",
+              "source": "data\\泰伦虫族10版中文老湿腐版1.12.pdf",
+              "page": 14,
+              "edition": "10",
+              "layer": "codex-base"
+            },
+            {
+              "text": "## FIRE OVERWATCH (1CP)\n**Type**: CORE STRATAGEM\n**When**: End of your opponent’s Movement phase.\n**Target**: One friendly unengaged unit (excluding TITANIC units).\n**Effect**: Your unit shoots using snap shooting (see below).",
+              "book": "Core Rules - New 40K Core Rules",
+              "source": "data\\Core Rules - New 40K Core Rules.pdf",
+              "page": 57,
+              "edition": "11",
+              "layer": "rules"
+            },
+            {
+              "text": "## ADVANCED RULES\npg 60-75\nThis section explains how to use more specialised types of units, as well as how to reinforce your army with units that are not yet on the battlefield.\n17. MONSTERS AND VEHICLES - pg 62\n18. TRANSPORTS - pg 64\n19. ATTACHED UNITS - pg 66\n20. STRATEGIC RESERVES - pg 68\n21. FLYING AND SURGING - pg 70\n22. OTHER RULES AND ABILITIES - pg 72\n23. AIRCRAFT - pg 74",
+              "book": "Core Rules - New 40K Core Rules",
+              "source": "data\\Core Rules - New 40K Core Rules.pdf",
+              "page": 2,
+              "edition": "11",
+              "layer": "rules"
+            }
+          ],
+          "note": null
+        }
+      }
+    ]
+  },
+  {
+    "id": 109,
+    "trial": 0,
+    "question": "泰坦军团（Adeptus Titanicus）的四个泰坦——战犬泰坦、掠夺者泰坦、天罚战争使者泰坦、战将泰坦——按官方点数各是多少分？请四个都给出。",
+    "answer": "泰坦军团（Adeptus Titanicus）四台泰坦的官方点数如下（均精确命中，非近似）：\n\n| 泰坦 | 英文名 | 点数 |\n|---|---|---|\n| 战犬泰坦 | Warhound Titan | **1100 分** |\n| 掠夺者泰坦 | Reaver Titan | **2200 分** |\n| 天罚战争使者泰坦 | Warbringer Nemesis Titan | **2600 分** |\n| 战将泰坦 | Warlord Titan | **3500 分** |\n\n数据来源为官方 MFM（Munitorum Field Manual）点数库 [《Munitorum Field Manual》官方点数条目，mfm.warhammer-community.com，2026-09-14 抓取]。",
+    "sources": [
+      {
+        "book": "Munitorum Field Manual (mfm.warhammer-community.com)",
+        "page": 0
+      }
+    ],
+    "meta": {
+      "intent": "算",
+      "tool_calls": [
+        "calc_points"
+      ],
+      "degraded": false
+    },
+    "trace": [
+      {
+        "name": "calc_points",
+        "args": [],
+        "kwargs": {
+          "unit_list": [
+            "战犬泰坦",
+            "掠夺者泰坦",
+            "天罚战争使者泰坦",
+            "战将泰坦"
+          ]
+        },
+        "result": {
+          "found": true,
+          "units": [
+            {
+              "unit_id": "000000867",
+              "name_en": "Warhound Titan",
+              "points": 1100,
+              "note": null,
+              "query": "战犬泰坦",
+              "resolved_via": {
+                "canonical_id": "000000867",
+                "confidence": "exact"
+              }
+            },
+            {
+              "unit_id": "000000868",
+              "name_en": "Reaver Titan",
+              "points": 2200,
+              "note": null,
+              "query": "掠夺者泰坦",
+              "resolved_via": {
+                "canonical_id": "000000868",
+                "confidence": "exact"
+              }
+            },
+            {
+              "unit_id": "000002077",
+              "name_en": "Warbringer Nemesis Titan",
+              "points": 2600,
+              "note": null,
+              "query": "天罚战争使者泰坦",
+              "resolved_via": {
+                "canonical_id": "000002077",
+                "confidence": "exact"
+              }
+            },
+            {
+              "unit_id": "000000869",
+              "name_en": "Warlord Titan",
+              "points": 3500,
+              "note": null,
+              "query": "战将泰坦",
+              "resolved_via": {
+                "canonical_id": "000000869",
+                "confidence": "exact"
+              }
+            }
+          ],
+          "official_sources": [
+            {
+              "url": "https://mfm.warhammer-community.com",
+              "fetched_at": "2026-09-14T05:51:23.572407+00:00"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "id": 116,
+    "trial": 0,
+    "question": "泰坦军团（Adeptus Titanicus）一共有几个单位（兵牌）？混沌泰坦军团（Titanicus Traitoris）的混沌战将泰坦是不是另有一张独立兵牌、另有一套点数？",
+    "answer": "**泰坦军团（Adeptus Titanicus）当前结构库共 4 张兵牌**（官方 MFM 页 unit_count 也是 4，按单位名去重）：\n\n| # | 英文名 | 中文名 |\n|---|---|---|\n| 1 | Reaver Titan | 掠夺者泰坦 |\n| 2 | Warbringer Nemesis Titan | 天罚战争使者泰坦 |\n| 3 | Warhound Titan | 战犬泰坦 |\n| 4 | Warlord Titan | 战将泰坦 |\n\n**混沌泰坦军团（Titanicus Traitoris）不是另有一套独立兵牌，也不是另有一套点数。** 官方 Faction Pack 明确规定：Titanicus Traitoris 直接使用对应的 Adeptus Titanicus 兵牌与已公布点数，只需在兵牌和 Army Rules 卡上把 **Imperium 替换为 Chaos、Adeptus Titanicus 替换为 Titanicus Traitoris** [《Faction Pack Adeptus Titanicus》第2页，TITANICUS TRAITORIS 节]。\n\n也就是说，官方 MFM 上混沌泰坦军团页列出的 4 个名字（CHAOS REAVER TITAN、CHAOS WARBRINGER NEMESIS TITAN、CHAOS WARHOUND TITAN、CHAOS WARLORD TITAN）是**同一批兵牌的混沌别名**，库内别名映射为：\n- chaos warhound titan → warhound titan\n- chaos reaver titan → reaver titan\n- chaos warbringer nemesis titan → warbringer nemesis titan\n- chaos warlord titan → warlord titan\n\n所以「混沌战将泰坦」并没有一张独立兵牌、也没有独立点数——它就是 **Warlord Titan（战将泰坦）** 这张兵牌，套用混沌关键词与 Titanicus Traitoris 军规后使用同一套点数 [《Faction Pack Adeptus Titanicus》第2页]。\n\n注意：以上是**结构库兵牌数量**；点数条目与兵牌收录是两回事，且共享兵牌的具体规则仍建议以官方 Faction Pack 原文为准。",
+    "sources": [
+      {
+        "book": "Faction Pack Adeptus Titanicus",
+        "page": 2
+      }
+    ],
+    "meta": {
+      "intent": "查",
+      "tool_calls": [
+        "list_faction_units"
+      ],
+      "degraded": false
+    },
+    "trace": [
+      {
+        "name": "list_faction_units",
+        "args": [],
+        "kwargs": {
+          "faction": "Adeptus Titanicus",
+          "offset": 0,
+          "limit": 20
+        },
+        "result": {
+          "found": true,
+          "faction_id": "TL",
+          "faction": "Adeptus Titanicus",
+          "scope": "current_database_datasheets",
+          "database_count": 4,
+          "offset": 0,
+          "returned": 4,
+          "next_offset": null,
+          "note": "database_count 是当前结构库兵牌总数（按统一现役口径），不受分页影响；官方每页 unit_count 按单位名去重，不把价格档位或强化算成单位。不同官方页可能重印同一单位，不可把各页数量直接相加。点数条目可能尚无兵牌，库内兵牌也不证明全部规则已更新。共享兵牌须另查官方规则。",
+          "official_pages": [
+            {
+              "slug": "titan-legions",
+              "unit_count": 4,
+              "unit_names": [
+                "REAVER TITAN",
+                "WARBRINGER NEMESIS TITAN",
+                "WARHOUND TITAN",
+                "WARLORD TITAN"
+              ],
+              "names_truncated": false,
+              "sources": [
+                {
+                  "url": "https://mfm.warhammer-community.com/en/titan-legions",
+                  "fetched_at": "2026-09-14T05:51:23.572407+00:00"
+                }
+              ]
+            },
+            {
+              "slug": "chaos-titan-legions",
+              "unit_count": 4,
+              "unit_names": [
+                "CHAOS REAVER TITAN",
+                "CHAOS WARBRINGER NEMESIS TITAN",
+                "CHAOS WARHOUND TITAN",
+                "CHAOS WARLORD TITAN"
+              ],
+              "names_truncated": false,
+              "sources": [
+                {
+                  "url": "https://mfm.warhammer-community.com/en/chaos-titan-legions",
+                  "fetched_at": "2026-09-14T05:51:23.572407+00:00"
+                }
+              ]
+            }
+          ],
+          "units": [
+            {
+              "id": "000000868",
+              "name_en": "Reaver Titan",
+              "name_zh": "掠夺者泰坦"
+            },
+            {
+              "id": "000002077",
+              "name_en": "Warbringer Nemesis Titan",
+              "name_zh": "天罚战争使者泰坦"
+            },
+            {
+              "id": "000000867",
+              "name_en": "Warhound Titan",
+              "name_zh": "战犬泰坦"
+            },
+            {
+              "id": "000000869",
+              "name_en": "Warlord Titan",
+              "name_zh": "战将泰坦"
+            }
+          ],
+          "shared_datasheets": {
+            "aliases": {
+              "chaos warhound titan": "warhound titan",
+              "chaos reaver titan": "reaver titan",
+              "chaos warbringer nemesis titan": "warbringer nemesis titan",
+              "chaos warlord titan": "warlord titan"
+            },
+            "source": {
+              "book": "Faction Pack Adeptus Titanicus",
+              "page": 2,
+              "section": "TITANICUS TRAITORIS",
+              "rule": "Titanicus Traitoris uses the corresponding Adeptus Titanicus datasheets and published points. Replace Imperium with Chaos and Adeptus Titanicus with Titanicus Traitoris on the datasheets and Army Rules card."
+            }
+          }
+        }
+      }
+    ]
+  },
+  {
+    "id": 118,
+    "trial": 0,
+    "question": "地狱兽（Helbrute）现在多少点？",
+    "answer": "「地狱兽（Helbrute）」在结构库里是**同名跨阵营**的独立兵牌，各阵营点数不同，需按阵营区分：\n\n| 阵营 | 兵牌 | 点数 |\n|---|---|---|\n| 混沌星际战士 CSM | Helbrute (CSM) | **130 分** |\n| 死亡守卫 DG | Helbrute (DG) | **110 分** |\n| 千子 TS | Helbrute (TS) | **110 分** |\n| 吞世者 WE | Helbrute (WE) | **120 分** |\n\n也就是说，若你问的是**吞世者**的地狱兽，是 **120 分**；CSM 版本最贵（130 分），DG/TS 版本最便宜（110 分）。点数取自官方 MFM（mfm.warhammer-community.com，抓取于 2026-09-14）。\n\n需要某一版本的完整属性（M/T/Sv/W 与武器 A/S/AP/D），告诉我阵营即可，我用「Helbrute (阵营缩写)」回查。",
+    "sources": [
+      {
+        "book": "Warhammer 40,000 Munitorum Field Manual (mfm.warhammer-community.com)",
+        "page": 0
+      }
+    ],
+    "meta": {
+      "intent": "算",
+      "tool_calls": [
+        "calc_points"
+      ],
+      "degraded": false
+    },
+    "trace": [
+      {
+        "name": "calc_points",
+        "args": [],
+        "kwargs": {
+          "unit_list": [
+            "地狱兽"
+          ]
+        },
+        "result": {
+          "found": true,
+          "units": [
+            {
+              "unit_id": "000002632",
+              "name_en": "Helbrute",
+              "points": 120,
+              "note": "⚠️ 同名跨阵营：这个名字在库里有多张**各自独立**的兵牌，分属不同阵营，点数与数值可能不同——全部候选及各自点数见 same_name_other_factions，均取自结构库，不是记忆。作答时**必须消歧**，二选一：要么把各阵营的数值逐一列出并指出差异，要么明确写出「以下按 XX 阵营的〈单位名〉回答」。禁止只报其中一个数值却不说明它属于哪个阵营。⚠️ 同时禁止因为有歧义就拒答、或在未给出任何已查证数值前就把问题退回用户提问——候选和点数本返回里都已给全；需要某一阵营的完整属性时，用 `名字 (阵营缩写)` 形式回查 get_datasheet 即可。",
+              "query": "地狱兽",
+              "resolved_via": {
+                "canonical_id": "000002632",
+                "confidence": "exact"
+              },
+              "same_name_other_factions": [
+                {
+                  "candidate": "Helbrute (CSM)",
+                  "unit_id": "000000954",
+                  "faction": "CSM",
+                  "points": 130,
+                  "is_the_one_answered_above": false
+                },
+                {
+                  "candidate": "Helbrute (DG)",
+                  "unit_id": "000001046",
+                  "faction": "DG",
+                  "points": 110,
+                  "is_the_one_answered_above": false
+                },
+                {
+                  "candidate": "Helbrute (TS)",
+                  "unit_id": "000001021",
+                  "faction": "TS",
+                  "points": 110,
+                  "is_the_one_answered_above": false
+                },
+                {
+                  "candidate": "Helbrute (WE)",
+                  "unit_id": "000002632",
+                  "faction": "WE",
+                  "points": 120,
+                  "is_the_one_answered_above": true
+                }
+              ]
+            }
+          ],
+          "official_sources": [
+            {
+              "url": "https://mfm.warhammer-community.com",
+              "fetched_at": "2026-09-14T05:51:23.572407+00:00"
+            }
+          ],
+          "same_name_cross_faction": [
+            "地狱兽"
+          ],
+          "note": "以下名字同名跨阵营：地狱兽。⚠️ 同名跨阵营：这个名字在库里有多张**各自独立**的兵牌，分属不同阵营，点数与数值可能不同——全部候选及各自点数见 same_name_other_factions，均取自结构库，不是记忆。作答时**必须消歧**，二选一：要么把各阵营的数值逐一列出并指出差异，要么明确写出「以下按 XX 阵营的〈单位名〉回答」。禁止只报其中一个数值却不说明它属于哪个阵营。⚠️ 同时禁止因为有歧义就拒答、或在未给出任何已查证数值前就把问题退回用户提问——候选和点数本返回里都已给全；需要某一阵营的完整属性时，用 `名字 (阵营缩写)` 形式回查 get_datasheet 即可。"
+        }
+      }
+    ]
+  },
+  {
+    "id": 119,
+    "trial": 0,
+    "question": "有人给我一份军表，里面有个单位叫「Flamestorm Drake」。这是什么单位？属于哪个阵营，多少点？",
+    "answer": "档案缺失，建议查阅原始规则书。\n\n**说明：**\n- 在本次提供的全部档案中，**未出现**名为「Flamestorm Drake」的单位条目。\n- 已检索的档案范围包括：\n  - 【档案 1】《6月4日分数中文》第35页 —— **钛帝国**圣典点数表\n  - 【档案 3】《6月4日分数中文》第31页 —— **星际战士**圣典点数表\n  - 【档案 5】《6月4日分数中文》第23页 —— **灰骑士**索引点数表\n  - 【档案 2/4/6】基因窃取者教团、战斗修女、星界军 FAQ 与技能\n  - 【档案 7/8】11 版核心规则（飞行器、冲锋阶段）\n\n上述档案中均无该单位名称，因此**无法确认其所属阵营与点数**。\n\n**建议：**\n1. 核对军表原文拼写——该名称可能为译名差异或非官方/旧版条目。\n2. 若确为某阵营单位，请提供其所属**圣典/索引名称**，以便在对应档案中定位。\n3. 档案缺失部分，建议查阅原始规则书或该阵营最新点数文件。\n\n若您能提供该单位的**英文原名出处**或**所属阵营**，我可再行比对现有档案。",
+    "sources": [
+      {
+        "book": "6月4日分数中文",
+        "page": 35
+      },
+      {
+        "book": "基因窃取者10版中文",
+        "page": 1
+      },
+      {
+        "book": "6月4日分数中文",
+        "page": 31
+      },
+      {
+        "book": "战斗修女10版中文",
+        "page": 1
+      },
+      {
+        "book": "6月4日分数中文",
+        "page": 23
+      },
+      {
+        "book": "星界军10版中文",
+        "page": 19
+      },
+      {
+        "book": "Core Rules - New 40K Core Rules",
+        "page": 74
+      },
+      {
+        "book": "Core Rules - New 40K Core Rules",
+        "page": 29
+      }
+    ],
+    "meta": {
+      "intent": "查",
+      "tool_calls": [
+        "get_datasheet",
+        "rag_search"
+      ],
+      "degraded": true,
+      "fell_back_to_classic": true
+    },
+    "trace": [
+      {
+        "name": "get_datasheet",
+        "args": [],
+        "kwargs": {
+          "name_or_id": "Flamestorm Drake"
+        },
+        "result": {
+          "found": false,
+          "datasheet": null,
+          "reason": "near_miss_only",
+          "suggestions": [
+            "FIRESTORM REDOUBT"
+          ],
+          "note": "没能把这个名字解析到 canonical id。suggestions 里是库里**长得像但并不相同**的名字，它们只是「你要找的会不会是这个」的**猜测**，不是本次查询的结果。⚠️ 作答时：① 必须先如实说明库里没有用户说的这个名字；② 若要提到 suggestions，必须**明确标注这是近似匹配的猜测**，并说清它与用户所问的不是同一个东西；③ **禁止**把 suggestions 里的单位当成用户问的那个来介绍数值/技能/点数——那等于把一张不相干的兵牌冒充成答案。④ 如果用户给的可能不是单位名（规则术语/俗名/集合名），请改用 rag_search / get_keyword_definition 再查一次再下结论，不要就此宣布档案缺失。"
+        }
+      },
+      {
+        "name": "rag_search",
+        "args": [
+          "有人给我一份军表，里面有个单位叫「Flamestorm Drake」。这是什么单位？属于哪个阵营，多少点？"
+        ],
+        "kwargs": {},
+        "result": {
+          "found": true,
+          "passages": [
+            {
+              "text": "## 圣典：钛帝国\n\n| 单位名称 | 分数 |\n|---|---|\n| 攻坚小队 10 模型 | 100 点 |\n| 舷炮战斗服 1 模型 | 90 点 |\n| 舷炮战斗服 2 模型 | 180 点 |\n| 舷炮战斗服 3 模型 | 300 点 |\n| 火刃首领 1 模型 | 50 点 |\n| 指挥官远见 1 模型 | 95 点 |\n| 冷星战斗服指挥官 1 模型 | 95 点 |\n| 执法者战斗服指挥官 1 模型 | 80 点 |\n| 指挥官影阳 1 模型 | 100 点 |\n| 危机炎刃战斗服 3 模型 | 130 点 |\n| 危机星镰战斗服 3 模型 | 110 点 |\n| 危机阳铸战斗服 3 模型 | 150 点 |\n| 暗行 1 模型 | 60 点 |\n| 魔鬼鱼运输艇 1 模型 | 85 点 |\n| 以太 1 模型 | 50 点 |\n| 火眼小队 1 模型 | 70 点 |\n| 鬼船战斗服 1 模型 | 160 点 |\n| 锤头鲨炮艇 1 模型 | 145 点 |\n| 克鲁特捕食者 10 模型 | 65 点 |\n| 克鲁特捕食者 20 模型 | 140 点 (+10) |\n| 克鲁特远猎者 12 模型 | 85 点 |\n| 克鲁特血肉塑形者 1 模型 | 45 点 |\n| 克鲁特猎犬 5 模型 | 40 点 |\n| 克鲁特猎犬 10 模型 | 80 点 |\n| 克鲁特独矛 1 模型 | 80 点 |\n| 克鲁特踪迹塑形者 1 模型 | 55 点 |\n| 克鲁特战争塑形者 1 模型 | 50 点 |\n| 狂暴克鲁特兽 3 模型 | 85 点 |\n| 狂暴克鲁特兽 6 模型 | 170 点 |\n| 克鲁特兽骑兵 1 模型 | 40 点 |\n| 克鲁特兽骑兵 2 模型 | 60 点 |\n| 克鲁特兽骑兵 3 模型 | 90 点 |\n| 探路者小队 10 模型 | 90 点 |\n| 食人鱼战机 1 模型 | 60 点 |\n| 食人鱼战机 2 模型 | 120 点 |\n| 食人鱼战机 3 模型 | 180 点 |\n| 剃刀鲨歼击机 1 模型 | 170 点 |\n| 激流战斗服 1 模型 | 190 点 |\n| 天鳐炮艇 1 模型 | 140 点 |\n| 隐形战斗服 3 模型 | 80 点 (+20) |\n| 隐形战斗服 6 模型 | 120 点 |\n| 风暴潮 1 模型 | 400 点 |\n| 突击小队 10 模型 | 75 点 |\n| 太阳鲨轰炸机 1 模型 | 160 点 |\n| 潮汐壁垒无人机港 1 模型 | 85 点 |\n| 潮汐壁垒炮台 1 模型 | 90 点 |\n| 潮汐壁垒防线墙 1 模型 | 85 点 |\n| 潮汐壁垒防御平台 | +20 点 |\n| 胡蜂尖翼战士 5 模型 | 65 点 |\n| 胡蜂尖翼战士 10 模型 | 130 点 |",
+              "book": "6月4日分数中文",
+              "source": "data\\6月4日分数中文.pdf",
+              "page": 35,
+              "edition": "11",
+              "layer": "points"
+            },
+            {
+              "text": "## 基因窃取者教团FAQ（10 月16 日更新）\n\n**问：** 如果我的军队中一个人物模型被摧毁，需要我在战场上或战略预备队中存在其他的人物才能够使用崇星结社分队的为殉教者复仇！战略技能吗？  \n**答：** 是的。  \n\n**问：** 当我的领军乘坐于运输工具时，我可以在游戏开始时使用诱敌误导技能吗？  \n**答：** 不可以。  \n\n**问：** 如果在敌方的移动阶段结束时，战场上仍然存在有未使用的伏击印记，我需要把这些印记移除吗？  \n**答：** 不需要。  \n\n**问：** 如果我的教团伏兵中没有任何单位，但是战场上仍然存在有伏击印记，我需要把这些印记移除吗？  \n**答：** 不需要。  \n\n**问：** 如果敌方单位部署进我的伏击印记9 寸内，我需要把这些印记移除吗？  \n**答：** 不需要。  \n\n**问：** 如果我在巢裔盟兵分队中加入卡舍津单位，我可以在自己的指挥阶段中使用卡舍津的战士精英（在指挥阶段为该单位下达一条额外命令）能力吗？  \n**答：** 可以。  \n\n**问：** 如果我在飞升教群分队中使用教团伏兵规则，但不使用伏击印记将复活的具有深入打击能力的基因窃取者教团单位置入战场，我可以使用掘地行者战略技能吗？  \n**答：** 可以。",
+              "book": "基因窃取者10版中文",
+              "source": "data\\基因窃取者10版中文DavidZ版1.06.pdf",
+              "page": 1,
+              "edition": "10",
+              "layer": "codex-base"
+            },
+            {
+              "text": "## 圣典：星际战士\n\n| 单位名称 | 单位构成与分数 |\n|---|---|\n| 阿德拉克斯·阿伽顿 | 1 模型 85 点 |\n| 侵略者小队 | 3 模型 (-20) 100 点 / 6 模型 (-20) 220 点 |\n| 旗手 | 1 模型 50 点 |\n| 终结者护甲旗手 | 1 模型 75 点 |\n| 药剂师 | 1 模型 50 点 |\n| 生物药剂师 | 1 模型 70 点 |\n| 突击仲裁者小队 | 5 模型 75 点 / 10 模型 150 点 |\n| 跳跃背包突击仲裁者 | 5 模型 90 点 / 10 模型 160 点 |\n| 射手型无畏机甲 | 1 模型 140 点 |\n| 剑卫旗手 | 1 模型 45 点 |\n| 剑卫老兵小队 | 3 模型 80 点 / 6 模型 160 点 |\n| 残暴无畏机甲 | 1 模型 160 点 |\n| 连长 | 1 模型 80 点 |\n| 重装型护甲连长 | 1 模型 80 点 |\n| 恐惧型护甲连长 | 1 模型 70 点 |\n| 终结者护甲连长 | 1 模型 95 点 |\n| 西卡留斯连长 | 1 模型 85 点 |\n| 跳跃背包连长 | 1 模型 (-10) 75 点 |\n| 百夫长突击小队 | 3 模型 150 点 / 6 模型 300 点 |\n| 百夫长破坏者小队 | 3 模型 165 点 / 6 模型 330 点 |\n| 教士 | 1 模型 60 点 |\n| 终结者护甲教士 | 1 模型 75 点 |\n| 摩托教士 | 1 模型 75 点 |\n| 跳跃背包教士 | 1 模型 75 点 |\n| 首席智库狄格里斯 | 1 模型 75 点 |\n| 连队英雄 | 4 模型 105 点 |\n| 达纳斯·莱山德 | 1 模型 100 点 |\n| 寂灭小队 | 5 模型 200 点 |\n| 破坏者小队 | 5 模型 120 点 / 10 模型 200 点 |\n| 无畏机甲 | 1 模型 135 点 |\n| 空降舱 | 1 模型 70 点 |\n| 歼灭者小队 | 3 模型 85 点 |\n| 根除者小队 | 3 模型 100 点 / 6 模型 200 点 |\n| 炎击伺服炮台 | 1 模型 75 点 / 2 模型 150 点 |\n| 枪骑型角斗士战车 | 1 模型 160 点 |\n| 死神型角斗士战车 | 1 模型 160 点 |\n| 豪侠型角斗士战车 | 1 模型 160 点 |\n| 落锤堡 | 1 模型 175 点 |\n| 重装仲裁者小队 | 5 模型 (-10) 100 点 / 10 模型 (-20) 200 点 |\n| 地狱轰击者小队 | 5 模型 (-5) 110 点 / 10 模型 (-10) 220 点 |\n| 脉冲战车 | 1 模型 80 点 |\n| 先驱者小队 | 3 模型 120 点 / 6 模型 240 点 |\n| 入侵者小队 | 5 模型 80 点 / 10 模型 160 点 |\n| 焚狱者小队 | 5 模型 90 点 / 10 模型 180 点 |\n| 渗透者小队 | 5 模型 100 点 / 10 模型 200 点 |\n| 仲裁者小队 | 5 模型 80 点 / 10 模型 160 点 |\n| 入侵者全地形车 | 1 模型 60 点 |\n| 不败者战术铠甲 | 1 模型 125 点 |\n| 钢铁圣父费洛斯 | 1 模型 95 点 |\n| 裁决者 | 1 模型 70 点 |\n| 凯万·史瑞克 | 1 模型 100 点 |\n| 科萨罗可汗 | 1 模型 70 点 |\n| 兰德掠袭者战车 | 1 模型 240 点 |\n| 十字军型兰德掠袭者战车 | 1 模型 220 点 |\n| 救赎者型兰德掠袭者战车 | 1 模型 285 点 |\n| 智库员 | 1 模型 65 点 |\n| 恐惧型护甲智库员 | 1 模型 70 点 |\n| 终结者护甲智库员 | 1 模型 75 点 |\n| 副官 | 1 模型 65 点 |\n| 恐惧型护甲副官 | 1 模型 55 点 |\n| 掠夺者护甲副官 | 1 模型 55 点 |\n| 装备复合武器的副官 | 1 模型 70 点 |\n| 泰图斯副官 | 1 模型 70 点 |\n| 马涅乌斯·卡尔加 | 3 模型 (-10) 200 点 |\n| 摩托警卫小队 | 3 模型 80 点 / 6 模型 160 点 |\n| 入侵者全地形车 | +60 点 |\n\n佩德罗·坎托\n1 模型   90 点\n\n歼灭者型掠食者战车\n1 模型   135 点\n\n破坏者型掠食者战车\n1 模型   140 点\n\n豪猪战车\n1 模型   95 点\n\n救赎者无畏机甲\n1 模型   210 点\n\n掠夺者小队\n5 模型   80 点\n10 模型   160 点",
+              "book": "6月4日分数中文",
+              "source": "data\\6月4日分数中文.pdf",
+              "page": 31,
+              "edition": "11",
+              "layer": "points"
+            },
+            {
+              "text": "## 战斗修女FAQ（5 月14 日更新）\n**问**：如果我使用神圣殉道者分队时，一名升级有神圣榜样的人物在我方圣像旗手12 寸内被消灭，我可以使用圣像旗手的伟绩颂歌能力，在将神圣榜样产生的D3 枚奇迹骰子置入奇迹骰子池之前重投这些奇迹骰子的结果吗？ \n**答**：可以。 \n\n**问**：如果我使用悔罪战群分队，我每回合必须要选择一项赎罪誓言吗？ \n**答**：是的。这意味着在第四回合后，由于你已经在前三回合选择了所有的赎罪誓言，你将无法再选择赎罪誓言生效于你的军队。 \n\n**问**：如果一名人物装备有悔罪战群分队的圣诗乐章升级，并在战斗轮次开始时生效，如果该人物在位于复合单位中的场合，被具有【精准】的武器摧毁，那么该升级直到下个战斗轮次开始前还会继续生效吗？ \n**答**：仍然生效。 \n\n**问**：奇迹骰子可以作为重骰的部分结果（如冲锋）吗？ \n**答**：可以。 \n\n**问**：如果我在冲锋时使用了奇迹骰子，那么在我重骰该冲锋骰时，那枚奇迹骰子的面值仍然保留吗？ \n**答**：不保留。 \n\n**问**：圣凯瑟琳巡礼队的乌木圣杯圣像（光环）可以一次性在一次冲锋中用奇迹骰子替换两枚冲锋骰吗？ \n**答**：不可以。 \n\n**问**：战斗修女规则中的信仰之举规则， 当我的单位被摧毁时，我是在单位被摧毁时获得奇迹骰子，还是在单位被摧毁的阶段结束时才会获得奇迹骰子？ \n**答**：单位被摧毁时。",
+              "book": "战斗修女10版中文",
+              "source": "data\\战斗修女10版中文DavidZ版1.07.pdf",
+              "page": 1,
+              "edition": "10",
+              "layer": "codex-base"
+            },
+            {
+              "text": "## 索引：灰骑士\n\n| 模型 | 单位构成 | 分数 |\n|---|---|---|\n| 兄弟会连长 | 1 模型 | 90 点 |\n| 斯特恩连长 | 1 模型 | 90 点 |\n| 兄弟会勇士 | 1 模型 | (-10) 70 点 |\n| 兄弟会教士 | 1 模型 | 75 点 |\n| 兄弟会智库员 | 1 模型 | 120 点 |\n| 兄弟会科技战士 | 1 模型 | 70 点 |\n| 兄弟会终结者小队 | 5 模型 | 200 点 |\n| 兄弟会终结者小队 | 10 模型 | (-20) 400 点 |\n| 克罗堡主 | 1 模型 | 90 点 |\n| 大导师 | 1 模型 | 95 点 |\n| 涅墨西斯骇骑机甲大导师 | 1 模型 | 210 点 |\n| 沃尔达斯大导师 | 1 模型 | 95 点 |\n| 灰骑士兰德掠袭者战车 | 1 模型 | 240 点 |\n| 灰骑士十字军型兰德掠袭者战车 | 1 模型 | 220 点 |\n| 灰骑士救赎者型兰德掠袭者战车 | 1 模型 | 285 点 |\n| 灰骑士豪猪战车 | 1 模型 | 85 点 |\n| 灰骑士犀牛战车 | 1 模型 | 75 点 |\n| 灰骑士风暴鹰拦截者战机 | 1 模型 | 160 点 |\n| 灰骑士风暴鸦炮艇 | 1 模型 | 280 点 |\n| 灰骑士风暴爪炮艇 | 1 模型 | 170 点 |\n| 灰骑士神圣无畏机甲 | 1 模型 | 155 点 |\n| 拦截者小队 | 5 模型 | 125 点 |\n| 拦截者小队 | 10 模型 | 250 点 |\n| 卡尔多·得莱戈 | 1 模型 | 125 点 |\n| 涅墨西斯骇骑机甲 | 1 模型 | 210 点 |\n| 圣骑士小队 | 5 模型 | 215 点 |\n| 圣骑士小队 | 10 模型 | (-20) 430 点 |\n| 洗罪小队 | 5 模型 | 120 点 |\n| 洗罪小队 | 10 模型 | 240 点 |\n| 净化者小队 | 5 模型 | 125 点 |\n| 净化者小队 | 10 模型 | 250 点 |\n| 奴工 | 4 模型 | 50 点 |\n| 打击小队 | 5 模型 | 120 点 |\n| 打击小队 | 10 模型 | 240 点 |\n\n### 铸造世界点数值\n\n| 模型 | 单位构成 | 分数 |\n|---|---|---|\n| 灰骑士雷鹰炮艇 | 1 模型 | 805 点 |\n| 驱逐者型兰德掠袭者战车 | 1 模型 | 255 点 |\n\n### 分遣队强化\n\n| 分遣队 | 强化 | 分数 |\n|---|---|---|\n| 传送打击部队 | 万魔大典 | 20 点 |\n| 传送打击部队 | 战阵先锋 | 35 点 |\n| 传送打击部队 | 定劫之怒 | 15 点 |\n| 传送打击部队 | 避险印记 | 30 点 |\n| 次元灾星特遣队 | 曼杜里斯骨匣 | 20 点 |\n| 次元灾星特遣队 | 圣洁楷模 | 10 点 |\n| 次元灾星特遣队 | 深渊安瓿 | 25 点 |\n| 次元灾星特遣队 | 闪耀勇士 | 15 点 |",
+              "book": "6月4日分数中文",
+              "source": "data\\6月4日分数中文.pdf",
+              "page": 23,
+              "edition": "11",
+              "layer": "points"
+            },
+            {
+              "text": "## 向我开炮 ON MY POSITION (1CP)\n- **技能来源**：星界军：桥头堡突击队\n- **技能分类**：史诗伟业\n- **使用时机**：对方的近战阶段结束时\n- **使用目标**：一个位于敌方接战范围内的友军兵团步兵单位\n- **效果**：每个位于本单位接战范围内的敌方单位要投一颗D6，结果为2+则遭受D6 点致命伤害，最后本单位遭受3D3 点致命伤害",
+              "book": "星界军10版中文",
+              "source": "data\\星界军10版中文老湿腐版1.27.pdf",
+              "page": 19,
+              "edition": "10",
+              "layer": "codex-base"
+            },
+            {
+              "text": "## AIRCRAFT\n\n### DEPLOYMENT 23.01\n- In the Declare Battle Formations step, all AIRCRAFT units must be placed in strategic reserves (20.01).\n\n### MOVEMENT 23.02\n- AIRCRAFT units are only eligible to make an ingress move (20.04); they are not eligible to make any other type of move.\n- At the end of your opponent’s turn, all AIRCRAFT units in your army that are on the battlefield must be placed in strategic reserves.\n- Each time a unit makes any type of move, its models can be moved through AIRCRAFT models.\n- Each time a unit makes a pile-in, consolidation or surge move, unless that unit can FLY, while making that move, ignore AIRCRAFT units for the purposes of selecting enemy units and determining the closest enemy unit.\n- Being engaged solely with one or more AIRCRAFT units does not prevent a unit from being eligible to make a normal or advance move.\n\n### SHOOTING 23.03\n- The Plunging Fire rule (22.05) has no effect on attacks made by, or targeting, AIRCRAFT units.\n\n### CHARGING AND FIGHTING 23.04\n- AIRCRAFT units are not eligible to declare a charge, and can only make melee attacks that target FLYING units.\n- Only FLYING units can select AIRCRAFT units as a charge target, and only FLYING models can make melee attacks that target AIRCRAFT units.\n\nAIRCRAFT fulfil a unique but limited role on Warhammer 40,000 battlefields. Hurtling through the skies while they duel one another, strafe ground forces or perform bombing runs, they are constantly on the move.\n\n> ++ WE CARE NOT WHAT THE ALIEN THINKS. THAT WE SIMPLY HATE SUFFICES ++",
+              "book": "Core Rules - New 40K Core Rules",
+              "source": "data\\Core Rules - New 40K Core Rules.pdf",
+              "page": 74,
+              "edition": "11",
+              "layer": "rules"
+            },
+            {
+              "text": "## CHARGE PHASE\nYour units make charge moves to engage the enemy.",
+              "book": "Core Rules - New 40K Core Rules",
+              "source": "data\\Core Rules - New 40K Core Rules.pdf",
+              "page": 29,
+              "edition": "11",
+              "layer": "rules"
+            }
+          ],
+          "note": null
+        }
+      }
+    ]
+  },
+  {
+    "id": 63,
+    "trial": 1,
+    "question": "坦克指挥官的坦克命令有什么效果？",
+    "answer": "「坦克指挥官」在档案里对应的是**黎曼鲁斯指挥官（Leman Russ Commander）**，它本身没有一条叫「坦克命令」的专属技能；它作为**军官（Officer）**，通过阵营能力**指挥之声**下达命令，命令的具体效果由所下达的那条命令决定。\n\n**黎曼鲁斯指挥官（星界军）** [《Astra Militarum Faction Pack》第23页]\n- 属性：M 10\" / T 11 / Sv 2+ / W 13 / Ld 7+ / OC 3\n- 点数：**1 模型 195 分**（MFM 2026-09-14 快照）\n- 技能：\n  - **受损**：剩余 1–4 点耐伤时，该模型攻击的命中投掷 -1。\n  - **阵营能力-指挥之声**：该军官可以对编队单位下达**至多 2 个命令**。\n  - **通讯网络**：发布命令时，最多可向**距离 12 寸**的可选单位发布命令。\n  - **军官之陨**：对手射击阶段中该单位被摧毁时，致命破灭掷骰前掷 D6，2+ 则暂不移除，可在攻击方完成攻击后用常规射击反击（只能打那个敌方单位），随后再结算致命破灭并移除。\n- 关键词：Astra Militarum、Officer、Imperium、Squadron、Character、Vehicle、Smoke、FRAME\n\n**同名单位（基因窃取者教派版）** [官方结构库 db/wh40k.sqlite]\n- 属性与武器表基本一致，但阵营关键词为 Genestealer Cults + Astra Militarum，同样具备**指挥之声**（至多 2 个命令）与**通讯网络**（12 寸内发布命令）。\n- 点数：**235 分**，但该条目标注为「历史点数 / 未匹配到本次官方 MFM 快照」，**不能作为当前点数使用**。\n\n**关于「坦克命令」本身**：档案中未检索到名为「坦克命令」的独立命令条目，因此无法给出该命令的具体效果文本。若你指的是某条具体命令（例如星界军命令表中的某一条），请给出命令名称，我再查证其效果。\n\n档案缺失，建议查阅原始规则书。",
+    "sources": [
+      {
+        "book": "Astra Militarum Faction Pack",
+        "page": 23
+      },
+      {
+        "book": "官方结构库 db/wh40k.sqlite（Wahapedia 11版镜像 + MFM 官方点数）",
+        "page": 0
+      }
+    ],
+    "meta": {
+      "intent": "查",
+      "tool_calls": [
+        "get_entity",
+        "get_entity",
+        "get_entity"
+      ],
+      "degraded": false
+    },
+    "trace": [
+      {
+        "name": "get_entity",
+        "args": [],
+        "kwargs": {
+          "name_or_id": "坦克指挥官"
+        },
+        "result": {
+          "found": false,
+          "page": null,
+          "resolved_via": {
+            "canonical_id": null,
+            "name_en": null,
+            "confidence": "ambiguous",
+            "candidates": [
+              "Leman Russ Commander (AM)",
+              "Leman Russ Commander (GC)",
+              "Rogal Dorn Commander (AM)",
+              "Rogal Dorn Commander (GC)",
+              "远见指挥官"
+            ],
+            "suggestions": [],
+            "note": "这个名字匹配到多个候选，本工具按判据拒绝静默取先入者。⚠️ 有歧义 ≠ 该单位不存在。请把 candidates 里的候选串**原样**回填本工具重查（`名字 (阵营缩写)` 形式可精确命中唯一阵营）；按问题上下文无法确定用户指哪一个时，逐个候选查证后分别说明，不要在未查证任何候选前就把问题退回给用户。"
+          },
+          "note": "译名有多个候选：Leman Russ Commander (AM)、Leman Russ Commander (GC)、Rogal Dorn Commander (AM)、Rogal Dorn Commander (GC)、远见指挥官。请按问题语境选择相关候选，逐个用候选名重新调用 get_entity 取回各自的实体页，并在回答中分别说明各候选单位的情况；只有在查证候选之后仍无法判断用户所指时才反问用户，不要在未查证任何候选前就把问题退回给用户。"
+        }
+      },
+      {
+        "name": "get_entity",
+        "args": [],
+        "kwargs": {
+          "name_or_id": "Leman Russ Commander (AM)"
+        },
+        "result": {
+          "found": true,
+          "page": "---\nid: '000000680'\nname_zh: 黎曼鲁斯指挥官\nname_en: Leman Russ Commander\nfaction: 星界军\ntype: unit\npoints:\n  1 model: 195\ntags:\n- unit\n- unit/星界军\n- 星界军\nversion:\n  points: MFM 2026-09-14T05:51:23.572407+00:00\n  source: official-db\nsources:\n- book: https://assets.warhammer-community.com/eng_wh40k_faction_pack_astra_militarum-o51zhqvsvy-wdobxbf6t0.pdf\n  pages:\n  - 23\nupdated: '2026-09-14'\n---\n\n## 属性表\n| 模型 | M | T | SV | W | LD | OC |\n|---|---|---|---|---|---|---|\n| 黎曼鲁斯指挥官 | 10\" | 11 | 2+ | 13 | 7+ | 3 |\n\n## 射击武器\n| 武器 | 射程 | A | BS | S | AP | D | 技能 |\n|---|---|---|---|---|---|---|---|\n| 破坏者战斗加农炮 | 24\" | D6+1 | 4+ | 14 | -3 | D6 | [[core-rules/blast.md\\|爆炸]] |\n| 根除者新星炮 | 36\" | D3+6 | 4+ | 7 | -1 | 2 | [[core-rules/blast.md\\|爆炸]]，[[core-rules/ignores-cover.md\\|无视掩体]] |\n| 处决者等离子炮（标准） | 36\" | D6+3 | 4+ | 7 | -2 | 2 | [[core-rules/blast.md\\|爆炸]] |\n| 处决者等离子炮（过载） | 36\" | D6+3 | 4+ | 8 | -3 | 3 | [[core-rules/blast.md\\|爆炸]]，[[core-rules/hazardous.md\\|危险]] |\n| 灭绝者自动炮 | 48\" | 4 | 4+ | 9 | -1 | 3 | [[core-rules/rapid-fire.md\\|速射4]]，[[core-rules/twin-linked.md\\|双联]] |\n| 惩罚者加特林 | 24\" | 20 | 4+ | 6 | 0 | 1 | — |\n| 重型爆弹枪 | 36\" | 3 | 4+ | 5 | -1 | 2 | [[core-rules/sustained-hits.md\\|连击1]] |\n| 重型火焰喷射器 | 12\" | D6 | N/A | 5 | -1 | 1 | [[core-rules/ignores-cover.md\\|无视掩体]]，[[core-rules/torrent.md\\|洪流]] |\n| 重型伐木枪 | 36\" | 3 | 4+ | 4 | 0 | 1 | [[core-rules/rapid-fire.md\\|速射3]] |\n| 猎杀飞弹 | 48\" | 1 | 4+ | 14 | -3 | D6 | [[core-rules/one-shot.md\\|单发]] |\n| 激光炮 | 48\" | 1 | 4+ | 12 | -3 | D6+1 | — |\n| 黎曼鲁斯战斗加农炮 | 48\" | D6+3 | 4+ | 10 | -1 | 3 | [[core-rules/blast.md\\|爆炸]] |\n| 多管热熔 | 18\" | 2 | 4+ | 9 | -4 | D6 | [[core-rules/melta.md\\|热熔2]] |\n| 风暴爆弹枪 | 24\" | 2 | 4+ | 4 | 0 | 1 | [[core-rules/rapid-fire.md\\|速射2]] |\n| 征服者加农炮 | 72\" | 1 | 4+ | 18 | -4 | D6+6 | [[core-rules/heavy.md\\|重型]] |\n\n## 近战武器\n| 武器 | 射程 | A | WS | S | AP | D | 技能 |\n|---|---|---|---|---|---|---|---|\n| 装甲履带 | 近战 | 6 | 4+ | 7 | 0 | 1 | — |\n\n## 技能\n- **受损**：当该模型剩余1-4点耐伤，该模型进行攻击时命中投掷结果-1。\n- **阵营能力-指挥之声**：该军官可以对编队单位下达至多2个命令\n- **通讯网络**：该单位发布命令时，最多可向距离为12寸的可选单位发布命令。\n- **军官之陨**：在您对手的射击阶段中，当该单位被摧毁时，在进行致命破灭掷骰前，掷D6：● 如果掷骰结果为2+，不要将该单位从战场上移除。在进行攻击的单位完成攻击后，该单位可以使用常规射击进行射击，但在这样做时，该单位只能对那个敌方单位进行攻击。当该单位完成射击后，或在该阶段结束时（以先发生者为准），结算该单位的致命破灭掷骰，随后将该单位从战场上移除。\n\n## 单位构成\n- **1个模型** — 195 分\n\n## 关键词\n- **阵营关键词**：Astra Militarum\n- **普通关键词**：Leman Russ Commander，Officer，Imperium，Squadron，[[core-rules/character.md|Character]]，Vehicle，[[core-rules/smoke.md|Smoke]]，FRAME",
+          "resolved_via": {
+            "canonical_id": "000000680",
+            "name_en": "Leman Russ Commander",
+            "confidence": "exact",
+            "candidates": [],
+            "suggestions": []
+          },
+          "same_name_candidates": [
+            "Leman Russ Commander (AM)",
+            "Leman Russ Commander (GC)"
+          ],
+          "note": "本页阵营：星界军。同名单位还存在于其他阵营：Leman Russ Commander (AM)、Leman Russ Commander (GC)。按问题语境用含阵营的候选串重查，不要把本页当作所有阵营的规则。"
+        }
+      },
+      {
+        "name": "get_entity",
+        "args": [],
+        "kwargs": {
+          "name_or_id": "Leman Russ Commander (GC)"
+        },
+        "result": {
+          "found": true,
+          "page": "---\nid: '000003942'\nname_zh: 黎曼鲁斯指挥官\nname_en: Leman Russ Commander\nfaction: 基因窃取者教派\ntype: unit\ntags:\n- unit\n- unit/基因窃取者教派\n- 基因窃取者教派\nversion:\n  points: historical / unmatched\n  source: official-db\nsources:\n- book: 官方结构库 db/wh40k.sqlite（Wahapedia 11版镜像 + MFM 官方点数）\nupdated: '2026-09-14'\n---\n\n## 属性表\n| 模型 | M | T | SV | W | LD | OC |\n|---|---|---|---|---|---|---|\n| 黎曼鲁斯指挥官 | 10\" | 11 | 2+ | 13 | 7+ | 3 |\n\n## 射击武器\n| 武器 | 射程 | A | BS | S | AP | D | 技能 |\n|---|---|---|---|---|---|---|---|\n| 重型爆弹枪 | 36\" | 3 | 4+ | 5 | -1 | 2 | [[core-rules/sustained-hits.md\\|连击1]] |\n| 重型火焰喷射器 | 12\" | D6 | N/A | 5 | -1 | 1 | [[core-rules/ignores-cover.md\\|无视掩体]]，[[core-rules/torrent.md\\|洪流]] |\n| 重型伐木枪 | 36\" | 3 | 4+ | 4 | 0 | 1 | [[core-rules/rapid-fire.md\\|速射3]] |\n| 猎杀飞弹 | 48\" | 1 | 4+ | 14 | -3 | D6 | [[core-rules/one-shot.md\\|单发]] |\n| 黎曼鲁斯战斗加农炮 | 48\" | D6+3 | 4+ | 10 | -1 | 3 | [[core-rules/blast.md\\|爆炸]] |\n| 多管热熔 | 18\" | 2 | 4+ | 9 | -4 | D6 | [[core-rules/melta.md\\|热熔2]] |\n| 风暴爆弹枪 | 24\" | 2 | 4+ | 4 | 0 | 1 | [[core-rules/rapid-fire.md\\|速射2]] |\n| 激光炮 | 48\" | 1 | 4+ | 12 | -3 | D6+1 | — |\n| 破坏者战斗加农炮 | 24\" | D6+1 | 4+ | 14 | -3 | D6 | [[core-rules/blast.md\\|爆炸]] |\n| 根除者新星炮 | 36\" | D3+6 | 4+ | 7 | -1 | 2 | [[core-rules/blast.md\\|爆炸]]，[[core-rules/ignores-cover.md\\|无视掩体]] |\n| 处决者等离子炮（标准） | 36\" | D6+3 | 4+ | 7 | -2 | 2 | [[core-rules/blast.md\\|爆炸]] |\n| 处决者等离子炮（过载） | 36\" | D6+3 | 4+ | 8 | -3 | 3 | [[core-rules/blast.md\\|爆炸]]，[[core-rules/hazardous.md\\|危险]] |\n| 灭绝者自动炮 | 48\" | 4 | 4+ | 9 | -1 | 3 | [[core-rules/rapid-fire.md\\|速射4]]，[[core-rules/twin-linked.md\\|双联]] |\n| 惩罚者加特林 | 24\" | 20 | 4+ | 6 | 0 | 1 | — |\n| 征服者加农炮 | 72\" | 1 | 4+ | 18 | -4 | D6+6 | [[core-rules/heavy.md\\|重型]] |\n\n## 近战武器\n| 武器 | 射程 | A | WS | S | AP | D | 技能 |\n|---|---|---|---|---|---|---|---|\n| 装甲履带 | 近战 | 6 | 4+ | 7 | 0 | 1 | — |\n\n## 技能\n- **受损**：当该模型剩余1-4点耐伤，该模型进行攻击时命中投掷结果-1。\n- **阵营能力-指挥之声**：该军官可以对编队单位下达至多2个命令\n- **通讯网络**：该单位发布命令时，最多可向距离为12寸的可选单位发布命令。\n- **军官之陨**：在您对手的射击阶段中，当该单位被摧毁时，在进行致命破灭掷骰前，掷D6：● 如果掷骰结果为2+，不要将该单位从战场上移除。在进行攻击的单位完成攻击后，该单位可以使用常规射击进行射击，但在这样做时，该单位只能对那个敌方单位进行攻击。当该单位完成射击后，或在该阶段结束时（以先发生者为准），结算该单位的致命破灭掷骰，随后将该单位从战场上移除。\n\n## 单位构成\n历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。\n- **1个模型** — 235 分\n\n## 关键词\n- **阵营关键词**：Genestealer Cults，Astra Militarum\n- **普通关键词**：Vehicle，[[core-rules/character.md|Character]]，[[core-rules/smoke.md|Smoke]]，Squadron，Imperium，Officer，Leman Russ Commander",
+          "resolved_via": {
+            "canonical_id": "000003942",
+            "name_en": "Leman Russ Commander",
+            "confidence": "exact",
+            "candidates": [],
+            "suggestions": []
+          },
+          "same_name_candidates": [
+            "Leman Russ Commander (AM)",
+            "Leman Russ Commander (GC)"
+          ],
+          "note": "本页阵营：基因窃取者教派。同名单位还存在于其他阵营：Leman Russ Commander (AM)、Leman Russ Commander (GC)。按问题语境用含阵营的候选串重查，不要把本页当作所有阵营的规则。"
+        }
+      }
+    ]
+  },
+  {
+    "id": 109,
+    "trial": 1,
+    "question": "泰坦军团（Adeptus Titanicus）的四个泰坦——战犬泰坦、掠夺者泰坦、天罚战争使者泰坦、战将泰坦——按官方点数各是多少分？请四个都给出。",
+    "answer": "泰坦军团（Adeptus Titanicus）四个泰坦的官方点数如下（均精确命中，非近似匹配）：\n\n| 单位 | 英文名 | 点数 |\n|---|---|---|\n| 战犬泰坦 | Warhound Titan | **1100 分** |\n| 掠夺者泰坦 | Reaver Titan | **2200 分** |\n| 天罚战争使者泰坦 | Warbringer Nemesis Titan | **2600 分** |\n| 战将泰坦 | Warlord Titan | **3500 分** |\n\n数据来源为官方 MFM（Munitorum Field Manual）点数库，抓取时间 2026-09-14 [官方 MFM：https://mfm.warhammer-community.com]。",
+    "sources": [
+      {
+        "book": "Munitorum Field Manual (官方 MFM)",
+        "page": 0
+      }
+    ],
+    "meta": {
+      "intent": "算",
+      "tool_calls": [
+        "calc_points"
+      ],
+      "degraded": false
+    },
+    "trace": [
+      {
+        "name": "calc_points",
+        "args": [],
+        "kwargs": {
+          "unit_list": [
+            "战犬泰坦",
+            "掠夺者泰坦",
+            "天罚战争使者泰坦",
+            "战将泰坦"
+          ]
+        },
+        "result": {
+          "found": true,
+          "units": [
+            {
+              "unit_id": "000000867",
+              "name_en": "Warhound Titan",
+              "points": 1100,
+              "note": null,
+              "query": "战犬泰坦",
+              "resolved_via": {
+                "canonical_id": "000000867",
+                "confidence": "exact"
+              }
+            },
+            {
+              "unit_id": "000000868",
+              "name_en": "Reaver Titan",
+              "points": 2200,
+              "note": null,
+              "query": "掠夺者泰坦",
+              "resolved_via": {
+                "canonical_id": "000000868",
+                "confidence": "exact"
+              }
+            },
+            {
+              "unit_id": "000002077",
+              "name_en": "Warbringer Nemesis Titan",
+              "points": 2600,
+              "note": null,
+              "query": "天罚战争使者泰坦",
+              "resolved_via": {
+                "canonical_id": "000002077",
+                "confidence": "exact"
+              }
+            },
+            {
+              "unit_id": "000000869",
+              "name_en": "Warlord Titan",
+              "points": 3500,
+              "note": null,
+              "query": "战将泰坦",
+              "resolved_via": {
+                "canonical_id": "000000869",
+                "confidence": "exact"
+              }
+            }
+          ],
+          "official_sources": [
+            {
+              "url": "https://mfm.warhammer-community.com",
+              "fetched_at": "2026-09-14T05:51:23.572407+00:00"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "id": 116,
+    "trial": 1,
+    "question": "泰坦军团（Adeptus Titanicus）一共有几个单位（兵牌）？混沌泰坦军团（Titanicus Traitoris）的混沌战将泰坦是不是另有一张独立兵牌、另有一套点数？",
+    "answer": "**泰坦军团（Adeptus Titanicus）共 4 张兵牌**（当前结构库口径，与官方 MFM 页一致）：\n\n| # | 单位 | 中文名 |\n|---|---|---|\n| 1 | Reaver Titan | 掠夺者泰坦 |\n| 2 | Warbringer Nemesis Titan | 天罚战争使者泰坦 |\n| 3 | Warhound Titan | 战犬泰坦 |\n| 4 | Warlord Titan | 战将泰坦 |\n\n**混沌泰坦军团（Titanicus Traitoris）没有另设独立兵牌，也没有另一套点数。** 官方 MFM 的 chaos-titan-legions 页虽然列出 4 个名字（CHAOS REAVER TITAN、CHAOS WARBRINGER NEMESIS TITAN、CHAOS WARHOUND TITAN、CHAOS WARLORD TITAN），但库内明确标注为**共享兵牌（shared_datasheets）**：这四个名字分别映射回泰坦军团的同名兵牌（chaos warlord titan → warlord titan 等）。\n\n依据规则原文：Titanicus Traitoris **使用对应的 Adeptus Titanicus 兵牌与已公布点数**，只需在兵牌与 Army Rules 卡上把 Imperium 替换为 Chaos、Adeptus Titanicus 替换为 Titanicus Traitoris [《Faction Pack Adeptus Titanicus》第2页，TITANICUS TRAITORIS 节]。\n\n所以：混沌战将泰坦 = 战将泰坦兵牌 + 关键词替换，**同一张兵牌、同一套点数**，不是独立兵牌。注意官方页会重印同一单位，不能把两页的 4+4 直接相加成 8 个单位。",
+    "sources": [
+      {
+        "book": "Faction Pack Adeptus Titanicus",
+        "page": 2
+      },
+      {
+        "book": "MFM: titan-legions / chaos-titan-legions",
+        "page": 0
+      }
+    ],
+    "meta": {
+      "intent": "查",
+      "tool_calls": [
+        "list_faction_units"
+      ],
+      "degraded": false
+    },
+    "trace": [
+      {
+        "name": "list_faction_units",
+        "args": [],
+        "kwargs": {
+          "faction": "Adeptus Titanicus",
+          "offset": 0,
+          "limit": 20
+        },
+        "result": {
+          "found": true,
+          "faction_id": "TL",
+          "faction": "Adeptus Titanicus",
+          "scope": "current_database_datasheets",
+          "database_count": 4,
+          "offset": 0,
+          "returned": 4,
+          "next_offset": null,
+          "note": "database_count 是当前结构库兵牌总数（按统一现役口径），不受分页影响；官方每页 unit_count 按单位名去重，不把价格档位或强化算成单位。不同官方页可能重印同一单位，不可把各页数量直接相加。点数条目可能尚无兵牌，库内兵牌也不证明全部规则已更新。共享兵牌须另查官方规则。",
+          "official_pages": [
+            {
+              "slug": "titan-legions",
+              "unit_count": 4,
+              "unit_names": [
+                "REAVER TITAN",
+                "WARBRINGER NEMESIS TITAN",
+                "WARHOUND TITAN",
+                "WARLORD TITAN"
+              ],
+              "names_truncated": false,
+              "sources": [
+                {
+                  "url": "https://mfm.warhammer-community.com/en/titan-legions",
+                  "fetched_at": "2026-09-14T05:51:23.572407+00:00"
+                }
+              ]
+            },
+            {
+              "slug": "chaos-titan-legions",
+              "unit_count": 4,
+              "unit_names": [
+                "CHAOS REAVER TITAN",
+                "CHAOS WARBRINGER NEMESIS TITAN",
+                "CHAOS WARHOUND TITAN",
+                "CHAOS WARLORD TITAN"
+              ],
+              "names_truncated": false,
+              "sources": [
+                {
+                  "url": "https://mfm.warhammer-community.com/en/chaos-titan-legions",
+                  "fetched_at": "2026-09-14T05:51:23.572407+00:00"
+                }
+              ]
+            }
+          ],
+          "units": [
+            {
+              "id": "000000868",
+              "name_en": "Reaver Titan",
+              "name_zh": "掠夺者泰坦"
+            },
+            {
+              "id": "000002077",
+              "name_en": "Warbringer Nemesis Titan",
+              "name_zh": "天罚战争使者泰坦"
+            },
+            {
+              "id": "000000867",
+              "name_en": "Warhound Titan",
+              "name_zh": "战犬泰坦"
+            },
+            {
+              "id": "000000869",
+              "name_en": "Warlord Titan",
+              "name_zh": "战将泰坦"
+            }
+          ],
+          "shared_datasheets": {
+            "aliases": {
+              "chaos warhound titan": "warhound titan",
+              "chaos reaver titan": "reaver titan",
+              "chaos warbringer nemesis titan": "warbringer nemesis titan",
+              "chaos warlord titan": "warlord titan"
+            },
+            "source": {
+              "book": "Faction Pack Adeptus Titanicus",
+              "page": 2,
+              "section": "TITANICUS TRAITORIS",
+              "rule": "Titanicus Traitoris uses the corresponding Adeptus Titanicus datasheets and published points. Replace Imperium with Chaos and Adeptus Titanicus with Titanicus Traitoris on the datasheets and Army Rules card."
+            }
+          }
+        }
+      }
+    ]
+  },
+  {
+    "id": 118,
+    "trial": 1,
+    "question": "地狱兽（Helbrute）现在多少点？",
+    "answer": "**地狱兽（Helbrute）当前点数：120 分**（1 模型）[《MFM / 结构库兵牌》]\n\n| 项目 | 数值 |\n|---|---|\n| 单位 | Helbrute（地狱兽） |\n| 阵营 | World Eaters（吞世者） |\n| 模型数 | 1 |\n| 点数 | **120 分** |\n| M | 9\" |\n| T | 9 |\n| Sv | 2+ |\n| W | 8 |\n| Ld | 6+ |\n| OC | 3 |\n| 底盘 | 60mm |\n\n注：以上为结构库中该兵牌（World Eaters 阵营）的点数与属性。地狱兽在多个混沌阵营（如死亡守卫、千子、混沌星际战士等）都有各自独立的兵牌，点数可能不同；若你指的是其他阵营的地狱兽，请告知具体阵营，我再为你查证。",
+    "sources": [
+      {
+        "book": "结构库兵牌（Helbrute / World Eaters）",
+        "page": 0
+      }
+    ],
+    "meta": {
+      "intent": "算",
+      "tool_calls": [
+        "get_datasheet"
+      ],
+      "degraded": false
+    },
+    "trace": [
+      {
+        "name": "get_datasheet",
+        "args": [],
+        "kwargs": {
+          "name_or_id": "地狱兽"
+        },
+        "result": {
+          "found": true,
+          "datasheet": {
+            "unit_id": "000002632",
+            "name_en": "Helbrute",
+            "name_zh": "地狱兽",
+            "faction": "World Eaters",
+            "points_min": 120,
+            "points_options": [
+              {
+                "line": "1",
+                "desc": "1 model",
+                "cost": 120
+              }
+            ],
+            "keywords": [
+              "Walker",
+              "Chaos",
+              "Vehicle",
+              "Helbrute",
+              "Khorne"
+            ],
+            "models": [
+              {
+                "name": "Helbrute",
+                "m": "9\"",
+                "t": "9",
+                "sv": "2+",
+                "invuln": "-",
+                "w": "8",
+                "ld": "6+",
+                "oc": "3",
+                "base": "60mm"
+              }
+            ],
+            "weapons": [
+              {
+                "name": "Combi-bolter",
+                "kind": "ranged",
+                "range": "24",
+                "a": "2",
+                "bs_ws": "4",
+                "s": "4",
+                "ap": "0",
+                "d": "1",
+                "keywords": [
+                  "rapid fire 4"
+                ],
+                "name_zh": "并联爆弹枪"
+              },
+              {
+                "name": "Close combat weapon",
+                "kind": "melee",
+                "range": "Melee",
+                "a": "6",
+                "bs_ws": "3",
+                "s": "6",
+                "ap": "0",
+                "d": "1",
+                "keywords": [],
+                "name_zh": "格斗武器"
+              },
+              {
+                "name": "Helbrute fist",
+                "kind": "melee",
+                "range": "Melee",
+                "a": "6",
+                "bs_ws": "3",
+                "s": "12",
+                "ap": "-2",
+                "d": "3",
+                "keywords": [],
+                "name_zh": "地狱兽铁拳"
+              },
+              {
+                "name": "Helbrute hammer",
+                "kind": "melee",
+                "range": "Melee",
+                "a": "6",
+                "bs_ws": "4",
+                "s": "14",
+                "ap": "-3",
+                "d": "D6+1",
+                "keywords": [],
+                "name_zh": "地狱兽重锤"
+              },
+              {
+                "name": "Power scourge",
+                "kind": "melee",
+                "range": "Melee",
+                "a": "10",
+                "bs_ws": "3",
+                "s": "7",
+                "ap": "-1",
+                "d": "2",
+                "keywords": [],
+                "name_zh": "动力长鞭"
+              },
+              {
+                "name": "Heavy flamer",
+                "kind": "ranged",
+                "range": "12",
+                "a": "D6",
+                "bs_ws": "N/A",
+                "s": "5",
+                "ap": "-1",
+                "d": "1",
+                "keywords": [
+                  "ignores cover, torrent"
+                ],
+                "name_zh": "重型喷火器"
+              },
+              {
+                "name": "Plasma cannon",
+                "kind": "ranged",
+                "range": "36",
+                "a": "D3",
+                "bs_ws": "4",
+                "s": "8",
+                "ap": "-3",
+                "d": "3",
+                "keywords": [
+                  "blast, hazardous, rapid fire D3"
+                ],
+                "name_zh": "地狱兽等离子炮"
+              },
+              {
+                "name": "Missile launcher – frag",
+                "kind": "ranged",
+                "range": "48",
+                "a": "D6",
+                "bs_ws": "4",
+                "s": "4",
+                "ap": "0",
+                "d": "1",
+                "keywords": [
+                  "blast, rapid fire 3"
+                ],
+                "name_zh": "导弹发射器（破片）"
+              },
+              {
+                "name": "Missile launcher – krak",
+                "kind": "ranged",
+                "range": "48",
+                "a": "1",
+                "bs_ws": "4",
+                "s": "9",
+                "ap": "-2",
+                "d": "D6",
+                "keywords": [
+                  "rapid fire 1"
+                ],
+                "name_zh": "导弹发射器（穿甲）"
+              },
+              {
+                "name": "Multi-melta",
+                "kind": "ranged",
+                "range": "18",
+                "a": "2",
+                "bs_ws": "4",
+                "s": "9",
+                "ap": "-4",
+                "d": "D6",
+                "keywords": [
+                  "melta 2, rapid fire 1"
+                ],
+                "name_zh": "多管热熔"
+              },
+              {
+                "name": "Twin autocannon",
+                "kind": "ranged",
+                "range": "48",
+                "a": "2",
+                "bs_ws": "4",
+                "s": "9",
+                "ap": "-1",
+                "d": "3",
+                "keywords": [
+                  "rapid fire 2, twin-linked"
+                ],
+                "name_zh": "双联自动炮"
+              },
+              {
+                "name": "Twin heavy bolter",
+                "kind": "ranged",
+                "range": "36",
+                "a": "3",
+                "bs_ws": "4",
+                "s": "5",
+                "ap": "-1",
+                "d": "2",
+                "keywords": [
+                  "rapid fire 2, sustained hits 1, twin-linked"
+                ],
+                "name_zh": "双联重型爆弹枪"
+              },
+              {
+                "name": "Twin lascannon",
+                "kind": "ranged",
+                "range": "48",
+                "a": "1",
+                "bs_ws": "4",
+                "s": "12",
+                "ap": "-3",
+                "d": "D6+1",
+                "keywords": [
+                  "rapid fire 1, twin-linked"
+                ],
+                "name_zh": "双联激光炮"
+              }
+            ],
+            "source_note": null
+          },
+          "official_sources": [
+            {
+              "url": "https://mfm.warhammer-community.com",
+              "fetched_at": "2026-09-14T05:51:23.572407+00:00"
+            }
+          ],
+          "source_scope": "MFM 溯源只证明点数同步。兵牌属性和技能来自既有结构库，尚未逐字段复核全部最新补丁；问当前规则效果时请同时检索最新 Faction Pack。",
+          "same_name_other_factions": [
+            {
+              "candidate": "Helbrute (CSM)",
+              "unit_id": "000000954",
+              "faction": "CSM",
+              "points": 130,
+              "is_the_one_answered_above": false
+            },
+            {
+              "candidate": "Helbrute (DG)",
+              "unit_id": "000001046",
+              "faction": "DG",
+              "points": 110,
+              "is_the_one_answered_above": false
+            },
+            {
+              "candidate": "Helbrute (TS)",
+              "unit_id": "000001021",
+              "faction": "TS",
+              "points": 110,
+              "is_the_one_answered_above": false
+            },
+            {
+              "candidate": "Helbrute (WE)",
+              "unit_id": "000002632",
+              "faction": "WE",
+              "points": 120,
+              "is_the_one_answered_above": true
+            }
+          ],
+          "note": "⚠️ 同名跨阵营：这个名字在库里有多张**各自独立**的兵牌，分属不同阵营，点数与数值可能不同——全部候选及各自点数见 same_name_other_factions，均取自结构库，不是记忆。作答时**必须消歧**，二选一：要么把各阵营的数值逐一列出并指出差异，要么明确写出「以下按 XX 阵营的〈单位名〉回答」。禁止只报其中一个数值却不说明它属于哪个阵营。⚠️ 同时禁止因为有歧义就拒答、或在未给出任何已查证数值前就把问题退回用户提问——候选和点数本返回里都已给全；需要某一阵营的完整属性时，用 `名字 (阵营缩写)` 形式回查 get_datasheet 即可。",
+          "datasheet_zh": {
+            "name_zh": "地狱兽",
+            "faction_zh": "混沌星际战士",
+            "属性": [
+              {
+                "unitName": "",
+                "m": "6",
+                "t": "9",
+                "sv": "2",
+                "w": "8",
+                "ld": "6",
+                "oc": "3",
+                "unitBase": "60mm"
+              },
+              {
+                "unitName": "",
+                "m": "6",
+                "t": "4",
+                "sv": "6",
+                "w": "1",
+                "ld": "7",
+                "oc": "1"
+              }
+            ],
+            "能力": [
+              {
+                "id": 3481,
+                "name": "【阵营技能】：黑暗契约",
+                "content": [],
+                "contentHtml": ""
+              },
+              {
+                "id": 3482,
+                "name": "暗黑晋升【光环】",
+                "content": [
+                  {
+                    "type": "text",
+                    "content": [
+                      {
+                        "text": "本模型 6 寸内的",
+                        "style": ""
+                      },
+                      {
+                        "text": "阿斯塔特叛军",
+                        "style": "font-weight:bold;"
+                      },
+                      {
+                        "text": "友军单位进行黑暗契约的那个阶段中，所装备的武 器同时获得黑暗契约的两个效果而非二选一",
+                        "style": ""
+                      }
+                    ]
+                  }
+                ],
+                "contentHtml": "<p>本模型 6 寸内的<strong>阿斯塔特叛军 </strong>友军单位进行黑暗契约的那个阶段中，所装备的武 器同时获得黑暗契约的两个效果而非二选一</p>"
+              },
+              {
+                "id": 3483,
+                "name": "沉迷毁灭",
+                "content": [
+                  {
+                    "type": "text",
+                    "content": [
+                      {
+                        "text": "如果本模型在格斗武器以外还拥有两件 近战武器，则那两件武器 A+2",
+                        "style": ""
+                      }
+                    ]
+                  }
+                ],
+                "contentHtml": "<p>如果本模型在格斗武器以外还拥有两件 近战武器，则那两件武器 A+2</p>"
+              }
+            ],
+            "武器": {
+              "射击武器": [
+                {
+                  "name": "并联爆弹枪",
+                  "skill": [
+                    "速射 2"
+                  ],
+                  "射程": "24",
+                  "攻击次数": "2",
+                  "命中": "3+ ",
+                  "造伤": "4",
+                  "破甲": "0",
+                  "伤害": "1",
+                  "content": [],
+                  "contentHtml": ""
+                },
+                {
+                  "name": "地狱兽等离子炮",
+                  "skill": [
+                    "爆炸",
+                    "危险"
+                  ],
+                  "射程": "36",
+                  "攻击次数": "D3",
+                  "命中": "3+",
+                  "造伤": "8",
+                  "破甲": " -3",
+                  "伤害": "3",
+                  "content": [],
+                  "contentHtml": ""
+                },
+                {
+                  "name": "双联自动炮 ",
+                  "skill": [
+                    "双联"
+                  ],
+                  "射程": "48",
+                  "攻击次数": "2",
+                  "命中": "3+",
+                  "造伤": "9 ",
+                  "破甲": "-1",
+                  "伤害": "3",
+                  "content": [],
+                  "contentHtml": ""
+                },
+                {
+                  "name": "双联激光炮",
+                  "skill": [
+                    " 双联"
+                  ],
+                  "射程": "48",
+                  "攻击次数": "1",
+                  "命中": "3+",
+                  "造伤": " 12 ",
+                  "破甲": "-3",
+                  "伤害": "D6+1",
+                  "content": [],
+                  "contentHtml": ""
+                },
+                {
+                  "name": "重型喷火器",
+                  "skill": [
+                    "忽视掩体",
+                    "喷射"
+                  ],
+                  "射程": "12",
+                  "攻击次数": "D6",
+                  "命中": "- ",
+                  "造伤": "5",
+                  "破甲": "-1",
+                  "伤害": "1 ",
+                  "content": [],
+                  "contentHtml": ""
+                },
+                {
+                  "name": "爆炸导弹发射器（破片弹）",
+                  "skill": [
+                    "爆炸"
+                  ],
+                  "射程": "48",
+                  "攻击次数": " D6",
+                  "命中": "3+ ",
+                  "造伤": "4",
+                  "破甲": "0",
+                  "伤害": "1",
+                  "content": [
+                    {
+                      "type": "text",
+                      "content": [
+                        {
+                          "text": "为本武器选择攻击目标之前，选择以下属性之一",
+                          "style": ""
+                        }
+                      ]
+                    }
+                  ],
+                  "contentHtml": "<p>为本武器选择攻击目标之前，选择以下属性之一</p>"
+                },
+                {
+                  "name": "爆炸导弹发射器（穿甲弹） ",
+                  "skill": [],
+                  "射程": "48",
+                  "攻击次数": "1",
+                  "命中": "3+",
+                  "造伤": "9",
+                  "破甲": "-2",
+                  "伤害": "D6",
+                  "content": [],
+                  "contentHtml": ""
+                },
+                {
+                  "name": "多管热熔 ",
+                  "skill": [
+                    "热熔 2"
+                  ],
+                  "射程": "18",
+                  "攻击次数": "2",
+                  "命中": "3+",
+                  "造伤": "9",
+                  "破甲": "-4",
+                  "伤害": "D6",
+                  "content": [],
+                  "contentHtml": ""
+                },
+                {
+                  "name": "双联重爆弹",
+                  "skill": [
+                    "连击 1",
+                    "双联 "
+                  ],
+                  "射程": "36",
+                  "攻击次数": "3",
+                  "命中": " 3+",
+                  "造伤": "5",
+                  "破甲": "-1",
+                  "伤害": "2",
+                  "content": [],
+                  "contentHtml": ""
+                }
+              ],
+              "近战武器": [
+                {
+                  "name": "地狱兽铁拳  ",
+                  "skill": [],
+                  "射程": "近战",
+                  "攻击次数": "5",
+                  "命中": "3+",
+                  "造伤": "12",
+                  "破甲": "-2",
+                  "伤害": "3",
+                  "content": [],
+                  "contentHtml": ""
+                },
+                {
+                  "name": "格斗武器 ",
+                  "skill": [],
+                  "射程": "近战",
+                  "攻击次数": "5",
+                  "命中": "3+",
+                  "造伤": "6",
+                  "破甲": "0",
+                  "伤害": "1",
+                  "content": [],
+                  "contentHtml": ""
+                },
+                {
+                  "name": "动力长鞭 ",
+                  "skill": [],
+                  "射程": "近战",
+                  "攻击次数": " 8",
+                  "命中": "3+",
+                  "造伤": "7",
+                  "破甲": "-1",
+                  "伤害": "2",
+                  "content": [],
+                  "contentHtml": ""
+                },
+                {
+                  "name": "地狱兽重锤    ",
+                  "skill": [],
+                  "射程": "近战",
+                  "攻击次数": "5",
+                  "命中": "4+",
+                  "造伤": "14",
+                  "破甲": "-3 ",
+                  "伤害": "D6+1"
+                }
+              ]
+            }
+          }
+        }
+      }
+    ]
+  },
+  {
+    "id": 119,
+    "trial": 1,
+    "question": "有人给我一份军表，里面有个单位叫「Flamestorm Drake」。这是什么单位？属于哪个阵营，多少点？",
+    "answer": "档案缺失，建议查阅原始规则书。\n\n**说明：**\n\n- 在本次提供的全部规则档案中，**未出现**名为「Flamestorm Drake」的单位条目。\n- 已检索的档案范围包括：\n  - 【档案 1】《6月4日分数中文》第35页 —— **钛帝国**圣典点数表\n  - 【档案 3】《6月4日分数中文》第31页 —— **星际战士**圣典点数表\n  - 【档案 5】《6月4日分数中文》第23页 —— **灰骑士**索引点数表\n  - 【档案 2/4/6】基因窃取者教团、战斗修女、星界军 FAQ 与战略技能\n  - 【档案 7/8】11 版核心规则（飞行器、冲锋阶段）\n\n上述档案中均无该单位名称，因此**无法确认其所属阵营与点数**。\n\n**建议：**\n\n1. 核对军表原文拼写——该名称可能为译名差异或非官方/自制单位。\n2. 若确为官方单位，请提供其所属阵营的**圣典或索引点数页**，我可据此作答。\n3. 在获得对应档案前，依规不作任何推测性回答。\n\n如需，我可以先为你列出档案中**已确认存在**的钛帝国、星际战士、灰骑士单位点数，供比对排查。",
+    "sources": [
+      {
+        "book": "6月4日分数中文",
+        "page": 35
+      },
+      {
+        "book": "基因窃取者10版中文",
+        "page": 1
+      },
+      {
+        "book": "6月4日分数中文",
+        "page": 31
+      },
+      {
+        "book": "战斗修女10版中文",
+        "page": 1
+      },
+      {
+        "book": "6月4日分数中文",
+        "page": 23
+      },
+      {
+        "book": "星界军10版中文",
+        "page": 19
+      },
+      {
+        "book": "Core Rules - New 40K Core Rules",
+        "page": 74
+      },
+      {
+        "book": "Core Rules - New 40K Core Rules",
+        "page": 29
+      }
+    ],
+    "meta": {
+      "intent": "查",
+      "tool_calls": [
+        "get_datasheet",
+        "rag_search"
+      ],
+      "degraded": true,
+      "fell_back_to_classic": true
+    },
+    "trace": [
+      {
+        "name": "get_datasheet",
+        "args": [],
+        "kwargs": {
+          "name_or_id": "Flamestorm Drake"
+        },
+        "result": {
+          "found": false,
+          "datasheet": null,
+          "reason": "near_miss_only",
+          "suggestions": [
+            "FIRESTORM REDOUBT"
+          ],
+          "note": "没能把这个名字解析到 canonical id。suggestions 里是库里**长得像但并不相同**的名字，它们只是「你要找的会不会是这个」的**猜测**，不是本次查询的结果。⚠️ 作答时：① 必须先如实说明库里没有用户说的这个名字；② 若要提到 suggestions，必须**明确标注这是近似匹配的猜测**，并说清它与用户所问的不是同一个东西；③ **禁止**把 suggestions 里的单位当成用户问的那个来介绍数值/技能/点数——那等于把一张不相干的兵牌冒充成答案。④ 如果用户给的可能不是单位名（规则术语/俗名/集合名），请改用 rag_search / get_keyword_definition 再查一次再下结论，不要就此宣布档案缺失。"
+        }
+      },
+      {
+        "name": "rag_search",
+        "args": [
+          "有人给我一份军表，里面有个单位叫「Flamestorm Drake」。这是什么单位？属于哪个阵营，多少点？"
+        ],
+        "kwargs": {},
+        "result": {
+          "found": true,
+          "passages": [
+            {
+              "text": "## 圣典：钛帝国\n\n| 单位名称 | 分数 |\n|---|---|\n| 攻坚小队 10 模型 | 100 点 |\n| 舷炮战斗服 1 模型 | 90 点 |\n| 舷炮战斗服 2 模型 | 180 点 |\n| 舷炮战斗服 3 模型 | 300 点 |\n| 火刃首领 1 模型 | 50 点 |\n| 指挥官远见 1 模型 | 95 点 |\n| 冷星战斗服指挥官 1 模型 | 95 点 |\n| 执法者战斗服指挥官 1 模型 | 80 点 |\n| 指挥官影阳 1 模型 | 100 点 |\n| 危机炎刃战斗服 3 模型 | 130 点 |\n| 危机星镰战斗服 3 模型 | 110 点 |\n| 危机阳铸战斗服 3 模型 | 150 点 |\n| 暗行 1 模型 | 60 点 |\n| 魔鬼鱼运输艇 1 模型 | 85 点 |\n| 以太 1 模型 | 50 点 |\n| 火眼小队 1 模型 | 70 点 |\n| 鬼船战斗服 1 模型 | 160 点 |\n| 锤头鲨炮艇 1 模型 | 145 点 |\n| 克鲁特捕食者 10 模型 | 65 点 |\n| 克鲁特捕食者 20 模型 | 140 点 (+10) |\n| 克鲁特远猎者 12 模型 | 85 点 |\n| 克鲁特血肉塑形者 1 模型 | 45 点 |\n| 克鲁特猎犬 5 模型 | 40 点 |\n| 克鲁特猎犬 10 模型 | 80 点 |\n| 克鲁特独矛 1 模型 | 80 点 |\n| 克鲁特踪迹塑形者 1 模型 | 55 点 |\n| 克鲁特战争塑形者 1 模型 | 50 点 |\n| 狂暴克鲁特兽 3 模型 | 85 点 |\n| 狂暴克鲁特兽 6 模型 | 170 点 |\n| 克鲁特兽骑兵 1 模型 | 40 点 |\n| 克鲁特兽骑兵 2 模型 | 60 点 |\n| 克鲁特兽骑兵 3 模型 | 90 点 |\n| 探路者小队 10 模型 | 90 点 |\n| 食人鱼战机 1 模型 | 60 点 |\n| 食人鱼战机 2 模型 | 120 点 |\n| 食人鱼战机 3 模型 | 180 点 |\n| 剃刀鲨歼击机 1 模型 | 170 点 |\n| 激流战斗服 1 模型 | 190 点 |\n| 天鳐炮艇 1 模型 | 140 点 |\n| 隐形战斗服 3 模型 | 80 点 (+20) |\n| 隐形战斗服 6 模型 | 120 点 |\n| 风暴潮 1 模型 | 400 点 |\n| 突击小队 10 模型 | 75 点 |\n| 太阳鲨轰炸机 1 模型 | 160 点 |\n| 潮汐壁垒无人机港 1 模型 | 85 点 |\n| 潮汐壁垒炮台 1 模型 | 90 点 |\n| 潮汐壁垒防线墙 1 模型 | 85 点 |\n| 潮汐壁垒防御平台 | +20 点 |\n| 胡蜂尖翼战士 5 模型 | 65 点 |\n| 胡蜂尖翼战士 10 模型 | 130 点 |",
+              "book": "6月4日分数中文",
+              "source": "data\\6月4日分数中文.pdf",
+              "page": 35,
+              "edition": "11",
+              "layer": "points"
+            },
+            {
+              "text": "## 基因窃取者教团FAQ（10 月16 日更新）\n\n**问：** 如果我的军队中一个人物模型被摧毁，需要我在战场上或战略预备队中存在其他的人物才能够使用崇星结社分队的为殉教者复仇！战略技能吗？  \n**答：** 是的。  \n\n**问：** 当我的领军乘坐于运输工具时，我可以在游戏开始时使用诱敌误导技能吗？  \n**答：** 不可以。  \n\n**问：** 如果在敌方的移动阶段结束时，战场上仍然存在有未使用的伏击印记，我需要把这些印记移除吗？  \n**答：** 不需要。  \n\n**问：** 如果我的教团伏兵中没有任何单位，但是战场上仍然存在有伏击印记，我需要把这些印记移除吗？  \n**答：** 不需要。  \n\n**问：** 如果敌方单位部署进我的伏击印记9 寸内，我需要把这些印记移除吗？  \n**答：** 不需要。  \n\n**问：** 如果我在巢裔盟兵分队中加入卡舍津单位，我可以在自己的指挥阶段中使用卡舍津的战士精英（在指挥阶段为该单位下达一条额外命令）能力吗？  \n**答：** 可以。  \n\n**问：** 如果我在飞升教群分队中使用教团伏兵规则，但不使用伏击印记将复活的具有深入打击能力的基因窃取者教团单位置入战场，我可以使用掘地行者战略技能吗？  \n**答：** 可以。",
+              "book": "基因窃取者10版中文",
+              "source": "data\\基因窃取者10版中文DavidZ版1.06.pdf",
+              "page": 1,
+              "edition": "10",
+              "layer": "codex-base"
+            },
+            {
+              "text": "## 圣典：星际战士\n\n| 单位名称 | 单位构成与分数 |\n|---|---|\n| 阿德拉克斯·阿伽顿 | 1 模型 85 点 |\n| 侵略者小队 | 3 模型 (-20) 100 点 / 6 模型 (-20) 220 点 |\n| 旗手 | 1 模型 50 点 |\n| 终结者护甲旗手 | 1 模型 75 点 |\n| 药剂师 | 1 模型 50 点 |\n| 生物药剂师 | 1 模型 70 点 |\n| 突击仲裁者小队 | 5 模型 75 点 / 10 模型 150 点 |\n| 跳跃背包突击仲裁者 | 5 模型 90 点 / 10 模型 160 点 |\n| 射手型无畏机甲 | 1 模型 140 点 |\n| 剑卫旗手 | 1 模型 45 点 |\n| 剑卫老兵小队 | 3 模型 80 点 / 6 模型 160 点 |\n| 残暴无畏机甲 | 1 模型 160 点 |\n| 连长 | 1 模型 80 点 |\n| 重装型护甲连长 | 1 模型 80 点 |\n| 恐惧型护甲连长 | 1 模型 70 点 |\n| 终结者护甲连长 | 1 模型 95 点 |\n| 西卡留斯连长 | 1 模型 85 点 |\n| 跳跃背包连长 | 1 模型 (-10) 75 点 |\n| 百夫长突击小队 | 3 模型 150 点 / 6 模型 300 点 |\n| 百夫长破坏者小队 | 3 模型 165 点 / 6 模型 330 点 |\n| 教士 | 1 模型 60 点 |\n| 终结者护甲教士 | 1 模型 75 点 |\n| 摩托教士 | 1 模型 75 点 |\n| 跳跃背包教士 | 1 模型 75 点 |\n| 首席智库狄格里斯 | 1 模型 75 点 |\n| 连队英雄 | 4 模型 105 点 |\n| 达纳斯·莱山德 | 1 模型 100 点 |\n| 寂灭小队 | 5 模型 200 点 |\n| 破坏者小队 | 5 模型 120 点 / 10 模型 200 点 |\n| 无畏机甲 | 1 模型 135 点 |\n| 空降舱 | 1 模型 70 点 |\n| 歼灭者小队 | 3 模型 85 点 |\n| 根除者小队 | 3 模型 100 点 / 6 模型 200 点 |\n| 炎击伺服炮台 | 1 模型 75 点 / 2 模型 150 点 |\n| 枪骑型角斗士战车 | 1 模型 160 点 |\n| 死神型角斗士战车 | 1 模型 160 点 |\n| 豪侠型角斗士战车 | 1 模型 160 点 |\n| 落锤堡 | 1 模型 175 点 |\n| 重装仲裁者小队 | 5 模型 (-10) 100 点 / 10 模型 (-20) 200 点 |\n| 地狱轰击者小队 | 5 模型 (-5) 110 点 / 10 模型 (-10) 220 点 |\n| 脉冲战车 | 1 模型 80 点 |\n| 先驱者小队 | 3 模型 120 点 / 6 模型 240 点 |\n| 入侵者小队 | 5 模型 80 点 / 10 模型 160 点 |\n| 焚狱者小队 | 5 模型 90 点 / 10 模型 180 点 |\n| 渗透者小队 | 5 模型 100 点 / 10 模型 200 点 |\n| 仲裁者小队 | 5 模型 80 点 / 10 模型 160 点 |\n| 入侵者全地形车 | 1 模型 60 点 |\n| 不败者战术铠甲 | 1 模型 125 点 |\n| 钢铁圣父费洛斯 | 1 模型 95 点 |\n| 裁决者 | 1 模型 70 点 |\n| 凯万·史瑞克 | 1 模型 100 点 |\n| 科萨罗可汗 | 1 模型 70 点 |\n| 兰德掠袭者战车 | 1 模型 240 点 |\n| 十字军型兰德掠袭者战车 | 1 模型 220 点 |\n| 救赎者型兰德掠袭者战车 | 1 模型 285 点 |\n| 智库员 | 1 模型 65 点 |\n| 恐惧型护甲智库员 | 1 模型 70 点 |\n| 终结者护甲智库员 | 1 模型 75 点 |\n| 副官 | 1 模型 65 点 |\n| 恐惧型护甲副官 | 1 模型 55 点 |\n| 掠夺者护甲副官 | 1 模型 55 点 |\n| 装备复合武器的副官 | 1 模型 70 点 |\n| 泰图斯副官 | 1 模型 70 点 |\n| 马涅乌斯·卡尔加 | 3 模型 (-10) 200 点 |\n| 摩托警卫小队 | 3 模型 80 点 / 6 模型 160 点 |\n| 入侵者全地形车 | +60 点 |\n\n佩德罗·坎托\n1 模型   90 点\n\n歼灭者型掠食者战车\n1 模型   135 点\n\n破坏者型掠食者战车\n1 模型   140 点\n\n豪猪战车\n1 模型   95 点\n\n救赎者无畏机甲\n1 模型   210 点\n\n掠夺者小队\n5 模型   80 点\n10 模型   160 点",
+              "book": "6月4日分数中文",
+              "source": "data\\6月4日分数中文.pdf",
+              "page": 31,
+              "edition": "11",
+              "layer": "points"
+            },
+            {
+              "text": "## 战斗修女FAQ（5 月14 日更新）\n**问**：如果我使用神圣殉道者分队时，一名升级有神圣榜样的人物在我方圣像旗手12 寸内被消灭，我可以使用圣像旗手的伟绩颂歌能力，在将神圣榜样产生的D3 枚奇迹骰子置入奇迹骰子池之前重投这些奇迹骰子的结果吗？ \n**答**：可以。 \n\n**问**：如果我使用悔罪战群分队，我每回合必须要选择一项赎罪誓言吗？ \n**答**：是的。这意味着在第四回合后，由于你已经在前三回合选择了所有的赎罪誓言，你将无法再选择赎罪誓言生效于你的军队。 \n\n**问**：如果一名人物装备有悔罪战群分队的圣诗乐章升级，并在战斗轮次开始时生效，如果该人物在位于复合单位中的场合，被具有【精准】的武器摧毁，那么该升级直到下个战斗轮次开始前还会继续生效吗？ \n**答**：仍然生效。 \n\n**问**：奇迹骰子可以作为重骰的部分结果（如冲锋）吗？ \n**答**：可以。 \n\n**问**：如果我在冲锋时使用了奇迹骰子，那么在我重骰该冲锋骰时，那枚奇迹骰子的面值仍然保留吗？ \n**答**：不保留。 \n\n**问**：圣凯瑟琳巡礼队的乌木圣杯圣像（光环）可以一次性在一次冲锋中用奇迹骰子替换两枚冲锋骰吗？ \n**答**：不可以。 \n\n**问**：战斗修女规则中的信仰之举规则， 当我的单位被摧毁时，我是在单位被摧毁时获得奇迹骰子，还是在单位被摧毁的阶段结束时才会获得奇迹骰子？ \n**答**：单位被摧毁时。",
+              "book": "战斗修女10版中文",
+              "source": "data\\战斗修女10版中文DavidZ版1.07.pdf",
+              "page": 1,
+              "edition": "10",
+              "layer": "codex-base"
+            },
+            {
+              "text": "## 索引：灰骑士\n\n| 模型 | 单位构成 | 分数 |\n|---|---|---|\n| 兄弟会连长 | 1 模型 | 90 点 |\n| 斯特恩连长 | 1 模型 | 90 点 |\n| 兄弟会勇士 | 1 模型 | (-10) 70 点 |\n| 兄弟会教士 | 1 模型 | 75 点 |\n| 兄弟会智库员 | 1 模型 | 120 点 |\n| 兄弟会科技战士 | 1 模型 | 70 点 |\n| 兄弟会终结者小队 | 5 模型 | 200 点 |\n| 兄弟会终结者小队 | 10 模型 | (-20) 400 点 |\n| 克罗堡主 | 1 模型 | 90 点 |\n| 大导师 | 1 模型 | 95 点 |\n| 涅墨西斯骇骑机甲大导师 | 1 模型 | 210 点 |\n| 沃尔达斯大导师 | 1 模型 | 95 点 |\n| 灰骑士兰德掠袭者战车 | 1 模型 | 240 点 |\n| 灰骑士十字军型兰德掠袭者战车 | 1 模型 | 220 点 |\n| 灰骑士救赎者型兰德掠袭者战车 | 1 模型 | 285 点 |\n| 灰骑士豪猪战车 | 1 模型 | 85 点 |\n| 灰骑士犀牛战车 | 1 模型 | 75 点 |\n| 灰骑士风暴鹰拦截者战机 | 1 模型 | 160 点 |\n| 灰骑士风暴鸦炮艇 | 1 模型 | 280 点 |\n| 灰骑士风暴爪炮艇 | 1 模型 | 170 点 |\n| 灰骑士神圣无畏机甲 | 1 模型 | 155 点 |\n| 拦截者小队 | 5 模型 | 125 点 |\n| 拦截者小队 | 10 模型 | 250 点 |\n| 卡尔多·得莱戈 | 1 模型 | 125 点 |\n| 涅墨西斯骇骑机甲 | 1 模型 | 210 点 |\n| 圣骑士小队 | 5 模型 | 215 点 |\n| 圣骑士小队 | 10 模型 | (-20) 430 点 |\n| 洗罪小队 | 5 模型 | 120 点 |\n| 洗罪小队 | 10 模型 | 240 点 |\n| 净化者小队 | 5 模型 | 125 点 |\n| 净化者小队 | 10 模型 | 250 点 |\n| 奴工 | 4 模型 | 50 点 |\n| 打击小队 | 5 模型 | 120 点 |\n| 打击小队 | 10 模型 | 240 点 |\n\n### 铸造世界点数值\n\n| 模型 | 单位构成 | 分数 |\n|---|---|---|\n| 灰骑士雷鹰炮艇 | 1 模型 | 805 点 |\n| 驱逐者型兰德掠袭者战车 | 1 模型 | 255 点 |\n\n### 分遣队强化\n\n| 分遣队 | 强化 | 分数 |\n|---|---|---|\n| 传送打击部队 | 万魔大典 | 20 点 |\n| 传送打击部队 | 战阵先锋 | 35 点 |\n| 传送打击部队 | 定劫之怒 | 15 点 |\n| 传送打击部队 | 避险印记 | 30 点 |\n| 次元灾星特遣队 | 曼杜里斯骨匣 | 20 点 |\n| 次元灾星特遣队 | 圣洁楷模 | 10 点 |\n| 次元灾星特遣队 | 深渊安瓿 | 25 点 |\n| 次元灾星特遣队 | 闪耀勇士 | 15 点 |",
+              "book": "6月4日分数中文",
+              "source": "data\\6月4日分数中文.pdf",
+              "page": 23,
+              "edition": "11",
+              "layer": "points"
+            },
+            {
+              "text": "## 向我开炮 ON MY POSITION (1CP)\n- **技能来源**：星界军：桥头堡突击队\n- **技能分类**：史诗伟业\n- **使用时机**：对方的近战阶段结束时\n- **使用目标**：一个位于敌方接战范围内的友军兵团步兵单位\n- **效果**：每个位于本单位接战范围内的敌方单位要投一颗D6，结果为2+则遭受D6 点致命伤害，最后本单位遭受3D3 点致命伤害",
+              "book": "星界军10版中文",
+              "source": "data\\星界军10版中文老湿腐版1.27.pdf",
+              "page": 19,
+              "edition": "10",
+              "layer": "codex-base"
+            },
+            {
+              "text": "## AIRCRAFT\n\n### DEPLOYMENT 23.01\n- In the Declare Battle Formations step, all AIRCRAFT units must be placed in strategic reserves (20.01).\n\n### MOVEMENT 23.02\n- AIRCRAFT units are only eligible to make an ingress move (20.04); they are not eligible to make any other type of move.\n- At the end of your opponent’s turn, all AIRCRAFT units in your army that are on the battlefield must be placed in strategic reserves.\n- Each time a unit makes any type of move, its models can be moved through AIRCRAFT models.\n- Each time a unit makes a pile-in, consolidation or surge move, unless that unit can FLY, while making that move, ignore AIRCRAFT units for the purposes of selecting enemy units and determining the closest enemy unit.\n- Being engaged solely with one or more AIRCRAFT units does not prevent a unit from being eligible to make a normal or advance move.\n\n### SHOOTING 23.03\n- The Plunging Fire rule (22.05) has no effect on attacks made by, or targeting, AIRCRAFT units.\n\n### CHARGING AND FIGHTING 23.04\n- AIRCRAFT units are not eligible to declare a charge, and can only make melee attacks that target FLYING units.\n- Only FLYING units can select AIRCRAFT units as a charge target, and only FLYING models can make melee attacks that target AIRCRAFT units.\n\nAIRCRAFT fulfil a unique but limited role on Warhammer 40,000 battlefields. Hurtling through the skies while they duel one another, strafe ground forces or perform bombing runs, they are constantly on the move.\n\n> ++ WE CARE NOT WHAT THE ALIEN THINKS. THAT WE SIMPLY HATE SUFFICES ++",
+              "book": "Core Rules - New 40K Core Rules",
+              "source": "data\\Core Rules - New 40K Core Rules.pdf",
+              "page": 74,
+              "edition": "11",
+              "layer": "rules"
+            },
+            {
+              "text": "## CHARGE PHASE\nYour units make charge moves to engage the enemy.",
+              "book": "Core Rules - New 40K Core Rules",
+              "source": "data\\Core Rules - New 40K Core Rules.pdf",
+              "page": 29,
+              "edition": "11",
+              "layer": "rules"
+            }
+          ],
+          "note": null
+        }
+      }
+    ]
+  }
+]

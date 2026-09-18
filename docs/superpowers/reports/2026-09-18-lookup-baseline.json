@@ -1,0 +1,618 @@
+[
+  {
+    "id": 63,
+    "trial": 0,
+    "question": "坦克指挥官的坦克命令有什么效果？",
+    "answer": "根据档案，**坦克指挥官**（罗格多恩坦克指挥官、黎曼鲁斯坦克指挥官）本身并不提供\"坦克专属命令\"——它们使用的是星界军通用的**指挥之声**命令表。以下按档案逐条说明。\n\n---\n\n## 一、指挥之声的通用机制\n\n来源：[《星界军10版中文》第1页]\n\n- 拥有本技能的**军官模型**可在以下时刻下达命令：\n  - 你的**指挥阶段**中\n  - （本模型所在单位）**脱离运输工具**的阶段结束时\n  - （本模型所在单位）**部署到战场**的阶段结束时\n- 选择一条命令，对其 **6寸内**一个友军单位生效，持续到**下个你的指挥阶段开始时**。\n- 除非特殊说明，**一个单位只能被一条命令影响**（后生效的立即替换之前的）；接令单位若处于**被震慑状态**，影响它的命令效果**立即失效**。\n- 命令效果**只对星界军模型生效**。\n\n---\n\n## 二、命令效果表\n\n来源：[《星界军10版中文》第1页]\n\n| 命令名称 | 效果 |\n|---|---|\n| **快快快！** | 本单位模型 **M+3** |\n| **上刺刀！** | 本单位模型近战武器 **WS+1** |\n| **瞄准！** | 本单位模型射击武器 **BS+1** |\n| **一排放！二排放！** | 本单位模型**【速射】武器 A+1** |\n| **卧倒！** | 本单位模型 **SV 值提高1，最多3+** |\n| **职责与荣誉！** | 本单位模型 **LD 和 OC 值提高1** |\n\n---\n\n## 三、两位坦克指挥官的命令差异\n\n| 项目 | 罗格多恩坦克指挥官 | 黎曼鲁斯坦克指挥官 |\n|---|---|---|\n| 命令数量 | 最多 **2 条** | 最多 **2 条** |\n| 命令范围 | **12寸**（通讯网络） | **12寸**（通讯网络） |\n| 可命令对象 | 编队单位 | 中队单位（可下达命令给中队单位） |\n| 来源 | [《星界军10版中文》第33页] | [《星界军10版中文》第31页] |\n\n> 注：档案中罗格多恩坦克指挥官的关键词含**编队**，黎曼鲁斯坦克指挥官的关键词含**中队**，且其兵牌明确写有\"可以下达命令给中队单位\"。\n\n---\n\n## 四、11版补充：超重型坦克的指挥能力\n\n来源：[《Faction Pack Astra Militarum》第5页]\n\n- **STEEL HAMMER**：在**Muster Armies**步骤，你可从军队中选择一个或多个星界军 **Titanic** 单位获得 **Character** 关键词。设计者注：这意味着被选单位可获得**强化**，且其中之一可被选为**统帅**。\n- **强化 BATTALION COMMANDER**（仅限星界军 Titanic Character 模型）：持有者获得 **Voice of Command** 技能与 **Officer** 关键词，并可向星界军 **Titanic 与 Squadron** 单位下达最多 **2 条命令**。\n\n---\n\n**结论**：坦克指挥官下达的就是上表六条通用命令，本身没有独立的\"坦克命令\"条目。若问的是**超重型坦克**的指挥强化，则见档案6的 **BATTALION COMMANDER**。\n\n档案缺失部分：档案未给出\"编队\"与\"中队\"关键词的具体定义，建议查阅原始规则书。",
+    "sources": [
+      {
+        "book": "星界军10版中文",
+        "page": 33
+      },
+      {
+        "book": "星界军10版中文",
+        "page": 31
+      },
+      {
+        "book": "星界军10版中文",
+        "page": 1
+      },
+      {
+        "book": "泰伦虫族10版中文",
+        "page": 14
+      },
+      {
+        "book": "星界军10版中文",
+        "page": 28
+      },
+      {
+        "book": "Faction Pack Astra Militarum",
+        "page": 5
+      },
+      {
+        "book": "Core Rules - New 40K Core Rules",
+        "page": 56
+      },
+      {
+        "book": "Core Rules - New 40K Core Rules",
+        "page": 52
+      }
+    ],
+    "meta": {
+      "intent": "查",
+      "tool_calls": [
+        "get_entity",
+        "get_entity",
+        "rag_search"
+      ],
+      "degraded": true,
+      "fell_back_to_classic": true
+    },
+    "trace": [
+      {
+        "name": "get_entity",
+        "args": [],
+        "kwargs": {
+          "name_or_id": "坦克指挥官"
+        },
+        "result": {
+          "found": false,
+          "page": null,
+          "resolved_via": {
+            "canonical_id": null,
+            "name_en": null,
+            "confidence": "ambiguous",
+            "candidates": [
+              "黎曼鲁斯坦克指挥官",
+              "罗格多恩坦克指挥官",
+              "远见指挥官"
+            ],
+            "suggestions": [],
+            "note": "这个名字匹配到多个候选，本工具按判据拒绝静默取先入者。⚠️ 有歧义 ≠ 该单位不存在。请把 candidates 里的候选串**原样**回填本工具重查（`名字 (阵营缩写)` 形式可精确命中唯一阵营）；按问题上下文无法确定用户指哪一个时，逐个候选查证后分别说明，不要在未查证任何候选前就把问题退回给用户。"
+          },
+          "note": "译名有多个候选：黎曼鲁斯坦克指挥官、罗格多恩坦克指挥官、远见指挥官。请逐个用候选名重新调用 get_entity 取回各自的实体页，并在回答中分别说明各候选单位的情况；只有在查证候选之后仍无法判断用户所指时才反问用户，不要在未查证任何候选前就把问题退回给用户。"
+        }
+      },
+      {
+        "name": "get_entity",
+        "args": [],
+        "kwargs": {
+          "name_or_id": "黎曼鲁斯坦克指挥官"
+        },
+        "result": {
+          "found": false,
+          "page": null,
+          "resolved_via": {
+            "canonical_id": "000003942",
+            "name_en": "Leman Russ Commander",
+            "confidence": "exact",
+            "candidates": [],
+            "suggestions": []
+          },
+          "note": "未找到实体页（可能未编译或译名未收录）"
+        }
+      },
+      {
+        "name": "rag_search",
+        "args": [
+          "坦克指挥官的坦克命令有什么效果？"
+        ],
+        "kwargs": {},
+        "result": {
+          "found": true,
+          "passages": [
+            {
+              "text": "## 罗格多恩坦克指挥官 ROGAL DORN COMMANDER\n| M | T | SV | W | LD | OC |\n|---|---|---|---|---|---|\n| 10 | 12 | 2+ | 18 | 7+ | 5 |\n\n### 技能\n- **【核心技能】：致命破灭D6**\n- **指挥之声**：可以对编队单位下达最多2 条命令\n- **通讯网络**：本模型下达命令的范围扩大到12 寸\n- **关键射击**：本模型在进行射击时，你可以重投一颗命中骰，一颗造伤骰，以及一颗伤害骰。\n- **严重损伤**：本模型W 值为1-6 时，攻击命中结果-1\n\n### 射击武器\n| 武器名 | 攻击范围 | A | BS | S | AP | D | 武器技能 |\n|---|---|---|---|---|---|---|---|\n| 惩罚者加特林 | 24 | 12 | 4+ | 5 | 0 | 1 | 无 |\n| 同轴自动炮 | 48 | 2 | 4+ | 9 | -1 | 3 | 无 |\n| 重型爆弹枪 | 36 | 3 | 4+ | 5 | -1 | 2 | 连击1 |\n| 重机枪 | 36 | 3 | 4+ | 4 | 0 | 1 | 速射3 |\n| 热熔枪 | 12 | 1 | 4+ | 9 | -4 | D6 | 热熔2 |\n| 多管热熔 | 18 | 2 | 4+ | 9 | -4 | D6 | 热熔2 |\n| 压制者加农炮 | 72 | D6+3 | 4+ | 12 | -2 | 3 | 爆炸 |\n| 粉碎者加农炮 | 24 | D6 | 4+ | 9 | -3 | 3 | 爆炸 |\n| 双联战斗加农炮 | 48 | D6+3 | 4+ | 10 | -1 | 3 | 爆炸，双联 |\n\n### 近战武器\n| 武器名 | 攻击范围 | A | WS | S | AP | D | 武器技能 |\n|---|---|---|---|---|---|---|---|\n| 装甲履带 | 近战 | 6 | 4+ | 7 | 0 | 1 | 无 |\n\n### 单位构成\n一个罗格多恩坦克指挥官，265 分  \n单位装备：惩罚者加特林，重机枪，双联战斗炮，装甲履带  \n\n升级选项：\n- 可以将双联战斗加农炮换为压制者加农炮和同轴自动炮\n- 可以将惩罚者加特林换为粉碎者加农炮\n- 可以额外装备以下之一\n  - 2 把热熔枪\n  - 2 把额外的重机枪\n- 可以额外装备以下之一\n  - 2 把重型爆弹枪\n  - 2 把多管热熔\n\n**阵营关键词**：星界军  \n**关键词**：载具，人物，帝国，编队，烟雾弹，军官，罗格多恩坦克指挥官",
+              "book": "星界军10版中文",
+              "source": "data\\星界军10版中文老湿腐版1.27.pdf",
+              "page": 33,
+              "edition": "10",
+              "layer": "codex-base"
+            },
+            {
+              "text": "## 黎曼鲁斯坦克指挥官 LEMAN RUSS COMMANDER\n| M | T | SV | W | LD | OC |\n|---|---|---|---|---|---|\n| 10 | 11 | 2+ | 13 | 7+ | 3 |\n### 技能\n- **【核心技能】**：致命破灭D3\n- **指挥之声**：可以对编队单位下达最多2 条命令\n- **通讯网络**：本模型下达命令的范围扩大到12 寸\n- **最后一炮**：本模型被消灭时，投D6，2+则暂时不移除模型，而是在对方单位完成本轮攻击后，如同在你的射击阶段中进行一轮射击攻击，此时视作满W 状态，然后再移除\n- **严重损伤**：本模型W 值为1-4 时，攻击命中结果-1\n### 远程武器\n| 武器名称 | 射程 | A | BS | S | AP | D |\n|---|---|---|---|---|---|---|\n| 重型爆弹枪 | 36 | 3 | 4+ | 5 | -1 | 2 |\n| 重型喷火器 | 12 | D6 | - | 5 | -1 | 1 |\n| 重机枪 | 36 | 3 | 4+ | 4 | 0 | 1 |\n| 猎杀飞弹 | 48 | 1 | 4+ | 14 | -3 | D6 |\n| 激光炮 | 48 | 1 | 4+ | 12 | -3 | D6+1 |\n| 战斗加农炮 | 48 | D6+3 | 4+ | 10 | -1 | 3 |\n| 多管热熔 | 18 | 2 | 4+ | 9 | -4 | D6 |\n| 风暴爆弹枪 | 24 | 2 | 4+ | 4 | 0 | 1 |\n| 等离子炮（标准） | 36 | D3 | 4+ | 7 | -2 | 1 |\n| 等离子炮（过载） | 36 | D3 | 4+ | 8 | -3 | 2 |\n| 破坏者加农炮 | 24 | D6+1 | 4+ | 14 | -3 | D6 |\n| 根除者新星炮 | 36 | D3+6 | 4+ | 7 | -1 | 2 |\n| 处决者等离子炮（标准） | 36 | D6+3 | 4+ | 7 | -2 | 2 |\n| 处决者等离子炮（过载） | 36 | D6+3 | 4+ | 8 | -3 | 3 |\n| 灭绝者自动炮 | 48 | 4 | 4+ | 9 | -1 | 3 |\n| 惩罚者加特林 | 24 | 20 | 4+ | 6 | 0 | 1 |\n| 征服者加农炮 | 72 | 1 | 4+ | 18 | -4 | D6+6 |\n### 近战武器\n| 武器名称 | 射程 | A | WS | S | AP | D |\n|---|---|---|---|---|---|---|\n| 装甲履带 | 近战 | 6 | 4+ | 7 | 0 | 1 |\n### 单位构成\n- **阵营关键词**：星界军\n- **关键词**：载具，人物，烟雾，兵团，军官，中队，黎曼鲁斯坦克指挥官\n- 可以下达命令给中队单位。\n### 单位构成\n- 一个黎曼鲁斯坦克指挥官，235 分\n- 单位装备：战斗加农炮，激光炮，装甲履带\n- 升级选项：\n  - 本模型可以将战斗加农炮换为以下之一\n    - 破坏者加农炮\n    - 根除者新星炮\n    - 处决者等离子炮\n    - 灭绝者自动炮\n    - 惩罚者加特林\n    - 征服者加农炮\n  - 本模型可以将激光炮换为重型爆弹枪或重型喷火器\n  - 本模型可以额外装备以下组合之一\n    - 两把重型爆弹枪\n    - 两把重型喷火器\n    - 两把多管热熔\n    - 两把等离子炮\n  - 本模型可以额外装备一把重机枪或风暴爆弹枪\n  - 本模型可以额外装备一发猎杀飞弹\n**阵营关键词**：星界军\n**关键词**：载具，人物，帝国，编队，烟雾弹，军官，黎曼鲁坦克斯指挥官",
+              "book": "星界军10版中文",
+              "source": "data\\星界军10版中文老湿腐版1.27.pdf",
+              "page": 31,
+              "edition": "10",
+              "layer": "codex-base"
+            },
+            {
+              "text": "## 星界军规则\n### 指挥之声\n⚫ \n如果你的军队阵营是星界军，你军队中拥有本技能的军官模型可以在以下时刻下达命令 \n◼ \n你的指挥阶段中 \n◼ \n（本模型所在单位）脱离运输工具的阶段结束时 \n◼ \n（本模型所在单位）部署到战场的阶段结束时 \n⚫ \n选择以下一条命令，对其6 寸内一个友军单位生效，持续到下个你的指挥阶段开始时。 \n⚫ \n除非特殊说明，一个单位只能被一条命令所影响（后生效的立即替换之前的），如果接令单位处于被震慑状\n态则影响它的命令效果立即失效 \n⚫ \n命令效果只对星界军模型生效 \n\n| 命令名称 | 效果 |\n|---|---|\n| 快快快！ | 本单位模型M+3 |\n| 上刺刀！ | 本单位模型近战武器WS+1 |\n| 瞄准！ | 本单位模型射击武器BS+1 |\n| 一排放！二排放！ | 本单位模型【速射】武器A+1 |\n| 卧倒！ | 本单位模型SV 值提高1，最多3+ |\n| 职责与荣誉！ | 本单位模型LD 和OC 值提高1 |",
+              "book": "星界军10版中文",
+              "source": "data\\星界军10版中文老湿腐版1.27.pdf",
+              "page": 1,
+              "edition": "10",
+              "layer": "codex-base"
+            },
+            {
+              "text": "## 支配命令 IMPERATIVE DOMINANCE 1CP\n| 技能来源 | 技能分类 | 使用时机 | 使用对象 | 效果 |\n|----------|----------|----------|----------|------|\n| 泰伦虫族：突触节点 | 战略行动 | 指挥阶段中 | 位于你的节点范围内的一个泰伦虫族友军单位 | 选择一个突触命令（使用过也可以），你的下个指挥阶段开始前，对本单位（也只对本单位）生效，替换原有效果 |",
+              "book": "泰伦虫族10版中文",
+              "source": "data\\泰伦虫族10版中文老湿腐版1.12.pdf",
+              "page": 14,
+              "edition": "10",
+              "layer": "codex-base"
+            },
+            {
+              "text": "## 卡塔昌指挥组 CATACHAN COMMAND SQUAD\n| M | T | SV | W | LD | OC |\n|---|---|----|---|---|----|\n| 老兵 | 6 | 3 | 5+ | 1 | 7+ | 1 |\n| 指挥官 | 6 | 3 | 5+ | 3 | 7+ | 1 |\n\n### 远程武器\n| 武器名称 | 射程 | A | BS | S | AP | D |\n|---|---|---|---|---|---|---|\n| 激光手枪 [手枪] | 12 | 1 | 4+ | 3 | 0 | 1 |\n| 激光枪 [速射1] | 24 | 1 | 4+ | 3 | 0 | 1 |\n| 爆弹手枪 [手枪] | 12 | 1 | 4+ | 4 | 0 | 1 |\n| 爆弹枪 [速射1] | 24 | 1 | 4+ | 4 | 0 | 1 |\n| 等离子手枪（标准） [手枪] | 12 | 1 | 4+ | 7 | -2 | 1 |\n| 等离子手枪（过载） [手枪, 危险] | 12 | 1 | 4+ | 8 | -3 | 2 |\n| 喷火器 [忽视掩体, 喷射] | 12 | D6 | - | 4 | 0 | 1 |\n| 重型喷火器 [忽视掩体, 喷射] | 12 | D6 | - | 5 | -1 | 1 |\n| 榴弹发射器（破片弹） [爆炸] | 24 | D3 | 4+ | 4 | 0 | 1 |\n| 榴弹发射器（穿甲弹） | 24 | 1 | 4+ | 9 | -2 | D3 |\n| 热熔枪 [热熔2] | 12 | 1 | 4+ | 9 | -4 | D6 |\n| 等离子枪（标准） [速射1] | 24 | 1 | 4+ | 7 | -2 | 1 |\n| 等离子枪（过载） [速射1, 危险] | 24 | 1 | 4+ | 8 | -3 | 2 |\n| 狙击步枪 [重型, 精准] | 36 | 1 | 4+ | 4 | -2 | 2 |\n\n### 近战武器\n| 武器名称 | 射程 | A | WS | S | AP | D |\n|---|---|---|---|---|---|---|\n| 链锯剑 | 近战 | 4 | 4+ | 3 | 0 | 1 |\n| 格斗武器 | 近战 | 2 | 4+ | 3 | 0 | 1 |\n| 动力拳 | 近战 | 3 | 4+ | 6 | -2 | 2 |\n| 动力武器 | 近战 | 3 | 4+ | 4 | -2 | 1 |\n\n### 技能\n- **【核心技能】**：领袖，斥候6\n- **指挥之声**：可以对兵团单位下达最多1 条命令\n- **喋血军令**：当本单位中包含军官模型时，本单位中的射击武器拥有【突击】技能。\n\n**阵营关键词**：星界军\n**关键词（全体模型）**：步兵，帝国，手雷，排，卡塔昌，指挥组\n**关键词（指挥官）**：人物，军官\n\n### 单位构成\n一个指挥官和4 个老兵，共65 分\n\n**单位装备**：指挥官装备激光手枪，格斗武器；所有老兵装备激光枪，激光手枪，格斗武器\n\n**装备技能**：\n- **音阵总台**：装备者所在单位的军官下达命令的范围扩大到24 寸\n- **医疗包**：你的指挥阶段开始时，如果本单位低于起始数量，你可以复活本单位中至多D3 个被摧毁的排模型（人物模型除外）。\n- **兵团旗帜**：装备者所在单位模型的OC 值+1\n\n**升级选项**：\n- 任意数量的老兵可以将激光枪替换为下列武器之一，且不能重复：\n  - 喷火器\n  - 榴弹发射器\n  - 重型喷火器\n  - 热熔枪\n  - 等离子枪\n  - 狙击步枪\n- 三名装备激光枪的老兵可分别装备音阵总台，医疗包，兵团旗帜，且不能重复\n- 指挥官可以将激光手枪换为爆弹手枪或等离子手枪\n- 指挥官可以将格斗武器换为以下之一：\n  - 爆弹枪\n  - 链锯剑\n  - 动力拳\n  - 动力武器\n\n**核心技能：领袖**\n- 本单位可以作为领袖加入以下单位：\n  - 卡塔昌丛林战士",
+              "book": "星界军10版中文",
+              "source": "data\\星界军10版中文老湿腐版1.27.pdf",
+              "page": 28,
+              "edition": "10",
+              "layer": "codex-base"
+            },
+            {
+              "text": "## STEEL HAMMER（续）\n### KEYWORDS\nIn the Muster Armies step, you can \nselect one or more Astra Militarum \nTitanic units from your army to gain the \nCharacter keyword.\n**Designer’s Note**: This means that the \nselected units can be given Enhancements, \nand one of them can be selected as \nyour Warlord.\n\n### ENHANCEMENTS\n#### BATTALION COMMANDER\nHigh‑ranking officers of armoured regiments may \noperate super‑heavy tanks as command vehicles, their \norders blaring from hull‑mounted laud hailers or \ncrackling over internal vox‑channels.\nAstra Militarum Titanic Character model only. The \nbearer has the Voice of Command ability and the \nOfficer keyword, and can issue up to 2 Orders to \nAstra Militarum Titanic and Squadron units.\n\n#### TITAN KILLER\nSeeking to add another kill marking to their war \nmachine, this glory‑hungry tank commander seeks out \nand engages only the heaviest enemy assets.\nAstra Militarum Titanic Character model only. Each \ntime the bearer makes a ranged attack, you can re‑roll \nthe Damage roll.\n\n#### ENGINE SPEAKER\nIntimately attuned to the machine spirits of Astra \nMilitarum vehicles, this Tech‑Priest administers rites \nand rituals, seeking to draw additional performance \nfrom engines.\nAstra Militarum Tech‑Priest Enginseer model only. \nEach time the bearer uses its Omnissiah’s Blessing \nability, until the start of your next Command phase, \nadd 3\" to the Move characteristic of the selected \nVehicle model.\n\n#### ASSAULT HATCHES\nRamps and hatches slam down on all sides of this \ntitanic vehicle, enabling infantry to surge forth and \noverwhelm the enemy.\nAstra Militarum Titanic Character Transport model \nonly. Each time a unit disembarks from the bearer \nafter it has made a Normal move, that unit is still \neligible to declare a charge this turn.",
+              "book": "Faction Pack Astra Militarum",
+              "source": "data\\Faction Pack Astra Militarum.pdf",
+              "page": 5,
+              "edition": "11",
+              "layer": "overlay"
+            },
+            {
+              "text": "## COMMAND RE-ROLL 15.02 (1CP)\n**CORE STRATAGEM**\n*A great commander can bend even the vagaries of fate and fortune to their will, the better to ensure victory.*\n**WHEN**: Any phase, just after you make one of the following rolls for a friendly unit or model:\n▪ Advance roll\n▪ Charge roll\n▪ Damage roll\n▪ Hazard roll\n▪ Hit roll\n▪ Save roll\n▪ Wound roll\n▪ A roll to determine the number of attacks generated with a weapon.\n**TARGET**: That unit or model.\n**EFFECT**: You re‑roll that roll. If you are rolling more than one dice together, select one of those dice to re‑roll (excluding charge rolls, which you must re-roll in full).",
+              "book": "Core Rules - New 40K Core Rules",
+              "source": "data\\Core Rules - New 40K Core Rules.pdf",
+              "page": 56,
+              "edition": "11",
+              "layer": "rules"
+            },
+            {
+              "text": "## OBJECTIVES (14)（续）\n### SECURED OBJECTIVES (14.03)\nSome rules allow an objective to be secured by a player’s army. When an objective is secured by a player’s army, that objective remains under their control – even once they no longer have any units within range of it – until their opponent’s level of control over that objective is greater than theirs at the end of a phase.\n\n> **HOLD AT ALL COSTS**\n> Some units have abilities that are triggered when they control an objective, or when they secure an objective for your army.\n**SEE ALSO**  \nObjectives Not Within a Terrain Area\n\n**CONTROLLING A TERRAIN OBJECTIVE**\n\n*++ FOR A WARRIOR THE ONLY CRIME IS COWARDICE ++*\n\nThis unit is currently battle-shocked, so the OC characteristic of all of its models is ‘-’.  \nThe models in this unit each have an OC characteristic of 1. Six of its models are within the terrain area.  \nThis VEHICLE has an OC characteristic of 3, and it is within the terrain area.  \nThis VEHICLE has an OC characteristic of 2, and it is wholly within the terrain area.  \nBoth players add together the OC characteristics of all their models that are within the terrain area. The BLUE player’s level of control is 5, and the RED player’s level of control is 6. The RED player therefore controls the objective.",
+              "book": "Core Rules - New 40K Core Rules",
+              "source": "data\\Core Rules - New 40K Core Rules.pdf",
+              "page": 52,
+              "edition": "11",
+              "layer": "rules"
+            }
+          ],
+          "note": null
+        }
+      }
+    ]
+  },
+  {
+    "id": 116,
+    "trial": 0,
+    "question": "泰坦军团（Adeptus Titanicus）一共有几个单位（兵牌）？混沌泰坦军团（Titanicus Traitoris）的混沌战将泰坦是不是另有一张独立兵牌、另有一套点数？",
+    "answer": "# 铁幕答复\n\n## 一、泰坦军团（Adeptus Titanicus）单位数量\n\n根据档案，**无法给出确切总数**。\n\n档案中明确列出的泰坦修会点数值仅有 **4 个**：\n\n| 单位 | 模型 | 点数 |\n|------|------|------|\n| 掠夺者级泰坦 | 1 模型 | **2200 点** |\n| 战争使者型天罚级泰坦 | 1 模型 | **2600 点** |\n| 战犬级泰坦 | 1 模型 | **1100 点** |\n| 战将级泰坦 | 1 模型 | **3500 点** |\n\n[《6月4日分数中文》第5页]\n\n此外，档案 5 提供了**战将泰坦**的完整兵牌数据（M10\" / T16 / SV2+ / W100 / LD6 / OC30）[《黑图书馆》第0页]。\n\n**注意**：档案 2 与档案 4 均提及 \"the Adeptus Titanicus datasheets in this document\"，即泰坦修会兵牌收录于该 Faction Pack 文档中，但**档案未给出该文档的完整兵牌清单**。因此除上述 4 个点数条目与 1 张战将泰坦兵牌外，其余兵牌数量**档案缺失，建议查阅原始规则书**。\n\n---\n\n## 二、混沌战将泰坦是否另有独立兵牌与点数？\n\n**否。** 按档案 2 的规则，混沌泰坦军团**不另设独立兵牌，也不另设独立点数**。\n\n具体机制为：\n\n- **兵牌复用**：直接使用本文件中的 Adeptus Titanicus 兵牌来代表 Titanicus Traitoris 模型 [《Faction Pack Adeptus Titanicus》第2页]。\n- **关键词替换**：在这些兵牌及 Army Rules 卡上，将所有 **Imperium** 关键词替换为 **Chaos**，将所有 **Adeptus Titanicus** 阵营关键词替换为 **Titanicus Traitoris** [《Faction Pack Adeptus Titanicus》第2页]。\n- **点数沿用**：点数数值**使用与对应 Adeptus Titanicus 模型相同的已发布点数**（\"use those published for the equivalent Adeptus Titanicus models\"）[《Faction Pack Adeptus Titanicus》第2页]。\n\n因此，混沌战将泰坦在规则上等同于**战将泰坦兵牌 + 关键词替换**，点数仍为 **3500 点**，并非另有一张独立兵牌或另一套点数。\n\n---\n\n## 三、补充：设计师注记\n\n档案 2 附有 Designer's Note，指出泰坦是足以扭转战局的庞然战争机器，部分模型点数**超过 Onslaught 规模战斗所能容纳的上限**，其设计面向\"你能想象的最末日级规模\"的战场 [《Faction Pack Adeptus Titanicus》第2页]。\n\n---\n\n**结论**：档案仅支持\"4 个点数条目 + 1 张战将泰坦兵牌\"的陈述，完整兵牌总数档案缺失；混沌战将泰坦**无独立兵牌、无独立点数**，以关键词替换方式复用忠诚派兵牌与点数。",
+    "sources": [
+      {
+        "book": "6月4日分数中文",
+        "page": 5
+      },
+      {
+        "book": "Faction Pack Adeptus Titanicus",
+        "page": 2
+      },
+      {
+        "book": "混沌骑士",
+        "page": 10
+      },
+      {
+        "book": "黑图书馆",
+        "page": 0
+      },
+      {
+        "book": "6月4日分数中文",
+        "page": 27
+      },
+      {
+        "book": "Core Rules - New 40K Core Rules",
+        "page": 66
+      },
+      {
+        "book": "Core Rules - New 40K Core Rules",
+        "page": 68
+      }
+    ],
+    "meta": {
+      "intent": "查",
+      "tool_calls": [
+        "search_wiki",
+        "rag_search"
+      ],
+      "degraded": true,
+      "fell_back_to_classic": true
+    },
+    "trace": [
+      {
+        "name": "search_wiki",
+        "args": [],
+        "kwargs": {
+          "query": "泰坦军团 Adeptus Titanicus 单位 兵牌"
+        },
+        "result": {
+          "found": false,
+          "page": null,
+          "results": []
+        }
+      },
+      {
+        "name": "rag_search",
+        "args": [
+          "泰坦军团（Adeptus Titanicus）一共有几个单位（兵牌）？混沌泰坦军团（Titanicus Traitoris）的混沌战将泰坦是不是另有一张独立兵牌、另有一套点数？"
+        ],
+        "kwargs": {},
+        "result": {
+          "found": true,
+          "passages": [
+            {
+              "text": "## 索引：泰坦修会 铸造世界点数值\n| 单位 | 模型 | 点数 |\n|------|------|------|\n| 掠夺者级泰坦 | 1 模型 | 2200 点 |\n| 战争使者型天罚级泰坦 | 1 模型 | 2600 点 |\n| 战犬级泰坦 | 1 模型 | 1100 点 |\n| 战将级泰坦 | 1 模型 | 3500 点 |\n圣典：艾达灵族\n- 阿苏曼 1 模型 ................................................. 135 点\n- 司战 1 模型 ......................................(+10) 85 点\n- 翔空司战 1 模型 ................................................. 80 点\n- 凯恩化身 1 模型 ................................................. 300 点\n- 巴哈罗斯 1 模型 ................................................. 115 点\n- 虚空掠夺者海盗 5 模型 ................................................. 60 点 10 模型 ................................................. 120 点\n- 虚空创痕海盗 5 模型 ................................................. 80 点 10 模型 ................................................. 160 点\n- 猩红猎手 1 模型 ................................................. 160 点\n- 次元炮平台 1 模型 ................................................. 125 点\n- 黑暗死神 5 模型 ................................................. 90 点 10 模型 ................................................. 195 点\n- 死亡小丑 1 模型 ................................................. 90 点\n- 凶暴复仇者 5 模型 ................................................. 80 点 10 模型 ................................................. 160 点\n- 艾尔德拉德·乌瑟兰 1 模型 ................................................. 110 点\n- 猎鹰坦克 1 模型 ................................................. 130 点\n- 大先知 1 模型 ................................................. 70 点\n- 天行者大先知 1 模型 ................................................. 80 点\n- 火龙 5 模型 ......................................(+10) 120 点 10 模型 ................................................. 220 点\n- 炎晶坦克 1 模型 ......................................(-10) 150 点\n- 弗甘 1 模型 ................................................. 120 点\n- 卫戍守护者 11 模型 ................................................. 100 点\n- 铁杉幽冥战机 1 模型 ................................................. 155 点\n- 狂嚎女妖 5 模型 .......................................(+5) 95 点 10 模型 ......................................(+10) 190 点",
+              "book": "6月4日分数中文",
+              "source": "data\\6月4日分数中文.pdf",
+              "page": 5,
+              "edition": "11",
+              "layer": "points"
+            },
+            {
+              "text": "## ADEPTUS TITANICUS ARMY RULES（续）\n### TITANICUS TRAITORIS\n\nYou can use the Adeptus Titanicus datasheets in this document to represent Titanicus Traitoris models if you wish. To do so, on those datasheets and on this Army Rules card, replace all instances of the Imperium keyword with Chaos, and replace all instances of the Adeptus Titanicus Faction keyword with Titanicus Traitoris. For the purposes of points values, use those published for the equivalent Adeptus Titanicus models.\n\n**Designer’s Note**: Titans are colossal war machines that can turn the tide of battle. As such, the points values of some of these models are greater than even Onslaught-sized battles can accommodate; they are designed for battlefields of the most apocalyptic scale you can imagine!",
+              "book": "Faction Pack Adeptus Titanicus",
+              "source": "data\\Faction Pack Adeptus Titanicus.pdf",
+              "page": 2,
+              "edition": "11",
+              "layer": "overlay"
+            },
+            {
+              "text": "## 泰坦决斗 TITANIC OUEL (1CP)\n**技能分类**：史诗伟业  \n**使用时机**：你的射击阶段或任意近战阶段  \n**使用对象**：你军队中一个本阶段尚未被选择进行射击或近战的混沌骑士角色单位。  \n**效果**：选择一个敌方巨兽或载具单位。直到阶段结束，每当目标单位中的模型对该敌方单位进行攻击时，你可以重投结果为1 的命中骰和造伤骰。如果敌方单位是巨型单位，作为替代，你可以重骰命中骰和造伤骰。",
+              "book": "混沌骑士",
+              "source": "data\\混沌骑士CODEX-双子星版 V1.20.pdf",
+              "page": 10,
+              "edition": "10",
+              "layer": "codex-base"
+            },
+            {
+              "text": "## ADEPTUS TITANICUS ARMY RULES\n\nTitans are amongst the largest war engines to be found anywhere in the galaxy, ponderous battleships of the land whose weapon batteries are capable of obliterating entire formations of enemy troops. Created before the dawn of the Imperium, each god-engine is a miracle of forgotten technology. During the catastrophic wars of the Horus Heresy, the once-mighty Titan Legions warred against one another in great numbers, but their numbers are now much diminished. While loyalist Titans still defend the forge worlds of the Adeptus Mechanicus and march against the Emperor’s foes, their traitorous brethren were consigned to the Eye of Terror where they became Chaos Titans – twisted mockeries of their former glory who now fight alongside traitors and renegades.\n\n### TOWERING EXAMPLE\n\nWhen mustering your army, if your Army Faction is Adeptus Titanicus, ignore the Select Detachment Rules step. In the Select Warlord step, select one Adeptus Titanicus model from your army to be your Warlord, even though that model does not have the Character keyword. Your army has the Take and Hold force disposition.\n\n### TITANIC SUPPORT\n\nIf every model in your army has the Imperium keyword, you can include 1 Adeptus Titanicus model in your army, even if it does not have the Faction keyword you selected in the Select Army Faction step.",
+              "book": "Faction Pack Adeptus Titanicus",
+              "source": "data\\Faction Pack Adeptus Titanicus.pdf",
+              "page": 2,
+              "edition": "11",
+              "layer": "overlay"
+            },
+            {
+              "text": "## 战将泰坦\n所属：泰坦修会\n**战将泰坦**：M10\" T16 SV2+ W100 LD6 OC30 底盘外壳\n**武器**\n- [射击] 启示录导弹发射器：射程200\" 攻击20 命中3+ S8 AP-2 D2（爆炸、曲射）\n- [射击] 阿德克斯型近防激光炮：射程48\" 攻击1 命中3+ S12 AP-3 DD6+1\n- [射击] 阿德克斯型近防爆弹炮：射程36\" 攻击6 命中3+ S6 AP-2 D2\n- [射击] 艾瑞欧克型泰坦动力爪：射程48\" 攻击20 命中3+ S6 AP-1 D2（连击1）\n- [射击] 贝利寇萨型火山炮：射程120\" 攻击D3+3 命中3+ S32 AP-5 D18（爆炸）\n- [射击] 激光爆裂炮：射程72\" 攻击6 命中3+ S16 AP4 DD6+3（爆炸）\n- [射击] 加特林宏炮：射程100\" 攻击30 命中3+ S9 AP-2 D3（连击1）\n- [射击] 死亡地震炮：射程280\" 攻击3D6 命中3+ S16 AP-4 D6（爆炸、忽略掩体）\n- [射击] 日怒离子湮灭炮 — 标准：射程72\" 攻击2D6+6 命中3+ S10 AP-3 D5（爆炸）\n- [射击] 日怒离子湮灭炮 — 过载：射程72\" 攻击2D6+6 命中3+ S12 AP-3 D8（爆炸、危险）\n- [近战] 战犬铁足：攻击6 命中4+ S12 AP-2 D4\n- [近战] 艾瑞欧克型泰坦动力爪 — 猛击：攻击6 命中4+ S20 AP-4 D24\n- [近战] 艾瑞欧克型泰坦动力爪 — 横扫：攻击12 命中4+ S12 AP-3 D8\n**能力**\n- 【阵营技能】：超重型机甲\n- 高耸巨像：如对本模型使用战略能力，需支付4倍原本该战略能力的CP值。\n- 奥米尼西亚之怒：你的射击阶段，本单位射击后，选择 一个被本单位命中过的敌方单位，那个单位必须进行 震慑测试。\n- 受损：当本模型剩余1-33W时，本模型的OC值-15，每次攻击时命中骰结果-1。",
+              "book": "黑图书馆",
+              "source": "blacklibrary",
+              "page": 0,
+              "edition": "10",
+              "layer": "codex-base"
+            },
+            {
+              "text": "## 索引：沃坦联盟\n\n### 单位\n| 单位 | 模型数 | 点数 |\n|------|--------|------|\n| 机锻钢铁之主 | 5 模型 | 65 点 |\n| 机锻匠雷霆炮手 | 3 模型 | 80 点 |\n| 机锻匠雷霆炮手 | 6 模型 | 160 点 |\n| 深岩狂战士 | 5 模型 | 100 点 |\n| 深岩狂战士 | 10 模型 | 200 点 |\n| 断角勇士 | 1 模型 | 60 点 |\n| 断角炉卫 | 5 模型 | 150 点 |\n| 断角炉卫 | 10 模型 | 320 点 |\n| 格林尼尔贤者 | 3 模型 | 65 点 |\n| 炉心战士 | 10 模型 | 100 点 |\n| 赫卡顿陆行要塞 | 1 模型 | 225 点 |\n| 远行者先锋 | 3 模型 | 90 点 |\n| 远行者先锋 | 6 模型 | 180 点 |\n| 远行者猎手 | 10 模型 | 90 点 |\n| 战群统领 | 1 模型 | 70 点 |\n| 人马座战车 | 1 模型 | 115 点 |\n| 天命者乌萨尔 | 1 模型 | 80 点 |",
+              "book": "6月4日分数中文",
+              "source": "data\\6月4日分数中文.pdf",
+              "page": 27,
+              "edition": "11",
+              "layer": "points"
+            },
+            {
+              "text": "## 19 ATTACHED UNITS\n\n### FORMING ATTACHED UNITS 19.01\nSome units have the Leader or Support ability listed on their datasheet (see below). Such units are known as leader units and support units respectively. Both of these abilities allow such units to lead other friendly units (known as bodyguard units) to form attached units. An attached unit is a single unit for all rules purposes. Leader and support units can only lead specific bodyguard units, as listed in the Warhammer 40,000 app.\n\n**LEADER 24.22 / SUPPORT 24.34**: Mighty heroes fight at the forefront of battle.\n\nBefore the battle, in the Muster Armies step, for each leader and support unit in your army, you can select one friendly bodyguard unit that unit can lead. That unit will then lead that bodyguard unit for the battle and form an attached unit with it.\n\nUnless otherwise stated, each bodyguard unit can only have one leader unit and one support unit attached to it.\n\n### ATTACKING ATTACHED UNITS 19.02\nEach time an attack targets an attached unit, if that unit contains one or more bodyguard models, use the highest T characteristic of the bodyguard models in that unit while resolving that attack, even if a leader/support unit in that attached unit has a different T characteristic. If that unit only contains leader/support models, use the highest T characteristic of those models while resolving that attack instead.\n\nRules that are triggered when a unit is destroyed are only triggered when the last model that started the battle in an attached unit is destroyed.\n\nThe heroes of your army rarely fight alone. Instead, they typically lead bands of warriors, forming an attached unit that acts as a single entity. This section explains how to form attached units and how they function on the battlefield.",
+              "book": "Core Rules - New 40K Core Rules",
+              "source": "data\\Core Rules - New 40K Core Rules.pdf",
+              "page": 66,
+              "edition": "11",
+              "layer": "rules"
+            },
+            {
+              "text": "## STRATEGIC RESERVES\n### PLACING UNITS IN STRATEGIC RESERVES 20.01\n\nBefore the battle, in the Declare Battle Formations step, you can select one or more friendly units (excluding FORTIFICATIONS) to place in strategic reserves. Instead of setting up these units on the battlefield during deployment, place them to one side; they are strategic reserves units, and will arrive later in the battle.\n\nUnless otherwise stated, the combined points value of all of your strategic reserves units (including those embarked within TRANSPORTS that are themselves placed in strategic reserves) cannot exceed 50% of your points limit for your battle size.",
+              "book": "Core Rules - New 40K Core Rules",
+              "source": "data\\Core Rules - New 40K Core Rules.pdf",
+              "page": 68,
+              "edition": "11",
+              "layer": "rules"
+            }
+          ],
+          "note": null
+        }
+      }
+    ]
+  },
+  {
+    "id": 63,
+    "trial": 1,
+    "question": "坦克指挥官的坦克命令有什么效果？",
+    "answer": "根据档案，**坦克指挥官**（罗格多恩坦克指挥官、黎曼鲁斯坦克指挥官）本身并不提供\"坦克专属命令\"——它们使用的是星界军通用的**指挥之声**命令表。以下按档案逐条说明。\n\n---\n\n## 一、指挥之声的通用机制\n\n[《星界军10版中文》第1页]\n\n- 拥有该技能的**军官模型**可在以下时刻下达命令：\n  - 你的**指挥阶段**中\n  - （本模型所在单位）**脱离运输工具**的阶段结束时\n  - （本模型所在单位）**部署到战场**的阶段结束时\n- 选择一条命令，对其 **6寸内**一个友军单位生效，持续到**下个你的指挥阶段开始时**。\n- 除非特殊说明，**一个单位只能被一条命令影响**（后生效的立即替换之前的）；接令单位若处于**被震慑**状态，影响它的命令效果**立即失效**。\n- 命令效果**只对星界军模型生效**。\n\n## 二、可选命令及效果\n\n| 命令名称 | 效果 |\n|---|---|\n| **快快快！** | 本单位模型 **M+3** |\n| **上刺刀！** | 本单位模型近战武器 **WS+1** |\n| **瞄准！** | 本单位模型射击武器 **BS+1** |\n| **一排放！二排放！** | 本单位模型【速射】武器 **A+1** |\n| **卧倒！** | 本单位模型 **SV 值提高1，最多3+** |\n| **职责与荣誉！** | 本单位模型 **LD 和 OC 值提高1** |\n\n## 三、两位坦克指挥官的差异\n\n| 项目 | 罗格多恩坦克指挥官 | 黎曼鲁斯坦克指挥官 |\n|---|---|---|\n| 下达命令数量 | 最多 **2 条** | 最多 **2 条** |\n| 命令范围 | **12寸**（通讯网络） | **12寸**（通讯网络） |\n| 可命令对象 | 编队单位 | 中队单位（可下达命令给中队单位） |\n| 来源 | [《星界军10版中文》第33页] | [《星界军10版中文》第31页] |\n\n> 注：档案中罗格多恩坦克指挥官的关键词含**编队**，黎曼鲁斯坦克指挥官的关键词含**中队**，且后者明确写有\"可以下达命令给中队单位\"。\n\n## 四、11版补充：超重型坦克的指挥能力\n\n[《Faction Pack Astra Militarum》第5页]\n\n- **BATTALION COMMANDER**（强化，仅限星界军**泰坦级人物**模型）：持有者获得**指挥之声**技能与**军官**关键词，并可向星界军**泰坦级和中队**单位下达最多 **2 条命令**。\n- 同页 **STEEL HAMMER** 规则允许在**集结军队步骤**中，选择你军中的星界军**泰坦级**单位获得**人物**关键词。\n\n---\n\n**结论**：坦克指挥官下达的就是上表六条通用命令，本身没有独立的\"坦克命令表\"；其特殊性在于**命令数量（2条）**与**范围（12寸）**，以及可命令的单位类型（编队/中队）。档案未涉及其他坦克专属命令，如需进一步确认建议查阅原始规则书。",
+    "sources": [
+      {
+        "book": "星界军10版中文",
+        "page": 33
+      },
+      {
+        "book": "星界军10版中文",
+        "page": 31
+      },
+      {
+        "book": "星界军10版中文",
+        "page": 1
+      },
+      {
+        "book": "泰伦虫族10版中文",
+        "page": 14
+      },
+      {
+        "book": "星界军10版中文",
+        "page": 28
+      },
+      {
+        "book": "Faction Pack Astra Militarum",
+        "page": 5
+      },
+      {
+        "book": "Core Rules - New 40K Core Rules",
+        "page": 56
+      },
+      {
+        "book": "Core Rules - New 40K Core Rules",
+        "page": 52
+      }
+    ],
+    "meta": {
+      "intent": "查",
+      "tool_calls": [
+        "get_entity",
+        "get_entity",
+        "rag_search"
+      ],
+      "degraded": true,
+      "fell_back_to_classic": true
+    },
+    "trace": [
+      {
+        "name": "get_entity",
+        "args": [],
+        "kwargs": {
+          "name_or_id": "坦克指挥官"
+        },
+        "result": {
+          "found": false,
+          "page": null,
+          "resolved_via": {
+            "canonical_id": null,
+            "name_en": null,
+            "confidence": "ambiguous",
+            "candidates": [
+              "黎曼鲁斯坦克指挥官",
+              "罗格多恩坦克指挥官",
+              "远见指挥官"
+            ],
+            "suggestions": [],
+            "note": "这个名字匹配到多个候选，本工具按判据拒绝静默取先入者。⚠️ 有歧义 ≠ 该单位不存在。请把 candidates 里的候选串**原样**回填本工具重查（`名字 (阵营缩写)` 形式可精确命中唯一阵营）；按问题上下文无法确定用户指哪一个时，逐个候选查证后分别说明，不要在未查证任何候选前就把问题退回给用户。"
+          },
+          "note": "译名有多个候选：黎曼鲁斯坦克指挥官、罗格多恩坦克指挥官、远见指挥官。请逐个用候选名重新调用 get_entity 取回各自的实体页，并在回答中分别说明各候选单位的情况；只有在查证候选之后仍无法判断用户所指时才反问用户，不要在未查证任何候选前就把问题退回给用户。"
+        }
+      },
+      {
+        "name": "get_entity",
+        "args": [],
+        "kwargs": {
+          "name_or_id": "黎曼鲁斯坦克指挥官"
+        },
+        "result": {
+          "found": false,
+          "page": null,
+          "resolved_via": {
+            "canonical_id": "000003942",
+            "name_en": "Leman Russ Commander",
+            "confidence": "exact",
+            "candidates": [],
+            "suggestions": []
+          },
+          "note": "未找到实体页（可能未编译或译名未收录）"
+        }
+      },
+      {
+        "name": "rag_search",
+        "args": [
+          "坦克指挥官的坦克命令有什么效果？"
+        ],
+        "kwargs": {},
+        "result": {
+          "found": true,
+          "passages": [
+            {
+              "text": "## 罗格多恩坦克指挥官 ROGAL DORN COMMANDER\n| M | T | SV | W | LD | OC |\n|---|---|---|---|---|---|\n| 10 | 12 | 2+ | 18 | 7+ | 5 |\n\n### 技能\n- **【核心技能】：致命破灭D6**\n- **指挥之声**：可以对编队单位下达最多2 条命令\n- **通讯网络**：本模型下达命令的范围扩大到12 寸\n- **关键射击**：本模型在进行射击时，你可以重投一颗命中骰，一颗造伤骰，以及一颗伤害骰。\n- **严重损伤**：本模型W 值为1-6 时，攻击命中结果-1\n\n### 射击武器\n| 武器名 | 攻击范围 | A | BS | S | AP | D | 武器技能 |\n|---|---|---|---|---|---|---|---|\n| 惩罚者加特林 | 24 | 12 | 4+ | 5 | 0 | 1 | 无 |\n| 同轴自动炮 | 48 | 2 | 4+ | 9 | -1 | 3 | 无 |\n| 重型爆弹枪 | 36 | 3 | 4+ | 5 | -1 | 2 | 连击1 |\n| 重机枪 | 36 | 3 | 4+ | 4 | 0 | 1 | 速射3 |\n| 热熔枪 | 12 | 1 | 4+ | 9 | -4 | D6 | 热熔2 |\n| 多管热熔 | 18 | 2 | 4+ | 9 | -4 | D6 | 热熔2 |\n| 压制者加农炮 | 72 | D6+3 | 4+ | 12 | -2 | 3 | 爆炸 |\n| 粉碎者加农炮 | 24 | D6 | 4+ | 9 | -3 | 3 | 爆炸 |\n| 双联战斗加农炮 | 48 | D6+3 | 4+ | 10 | -1 | 3 | 爆炸，双联 |\n\n### 近战武器\n| 武器名 | 攻击范围 | A | WS | S | AP | D | 武器技能 |\n|---|---|---|---|---|---|---|---|\n| 装甲履带 | 近战 | 6 | 4+ | 7 | 0 | 1 | 无 |\n\n### 单位构成\n一个罗格多恩坦克指挥官，265 分  \n单位装备：惩罚者加特林，重机枪，双联战斗炮，装甲履带  \n\n升级选项：\n- 可以将双联战斗加农炮换为压制者加农炮和同轴自动炮\n- 可以将惩罚者加特林换为粉碎者加农炮\n- 可以额外装备以下之一\n  - 2 把热熔枪\n  - 2 把额外的重机枪\n- 可以额外装备以下之一\n  - 2 把重型爆弹枪\n  - 2 把多管热熔\n\n**阵营关键词**：星界军  \n**关键词**：载具，人物，帝国，编队，烟雾弹，军官，罗格多恩坦克指挥官",
+              "book": "星界军10版中文",
+              "source": "data\\星界军10版中文老湿腐版1.27.pdf",
+              "page": 33,
+              "edition": "10",
+              "layer": "codex-base"
+            },
+            {
+              "text": "## 黎曼鲁斯坦克指挥官 LEMAN RUSS COMMANDER\n| M | T | SV | W | LD | OC |\n|---|---|---|---|---|---|\n| 10 | 11 | 2+ | 13 | 7+ | 3 |\n### 技能\n- **【核心技能】**：致命破灭D3\n- **指挥之声**：可以对编队单位下达最多2 条命令\n- **通讯网络**：本模型下达命令的范围扩大到12 寸\n- **最后一炮**：本模型被消灭时，投D6，2+则暂时不移除模型，而是在对方单位完成本轮攻击后，如同在你的射击阶段中进行一轮射击攻击，此时视作满W 状态，然后再移除\n- **严重损伤**：本模型W 值为1-4 时，攻击命中结果-1\n### 远程武器\n| 武器名称 | 射程 | A | BS | S | AP | D |\n|---|---|---|---|---|---|---|\n| 重型爆弹枪 | 36 | 3 | 4+ | 5 | -1 | 2 |\n| 重型喷火器 | 12 | D6 | - | 5 | -1 | 1 |\n| 重机枪 | 36 | 3 | 4+ | 4 | 0 | 1 |\n| 猎杀飞弹 | 48 | 1 | 4+ | 14 | -3 | D6 |\n| 激光炮 | 48 | 1 | 4+ | 12 | -3 | D6+1 |\n| 战斗加农炮 | 48 | D6+3 | 4+ | 10 | -1 | 3 |\n| 多管热熔 | 18 | 2 | 4+ | 9 | -4 | D6 |\n| 风暴爆弹枪 | 24 | 2 | 4+ | 4 | 0 | 1 |\n| 等离子炮（标准） | 36 | D3 | 4+ | 7 | -2 | 1 |\n| 等离子炮（过载） | 36 | D3 | 4+ | 8 | -3 | 2 |\n| 破坏者加农炮 | 24 | D6+1 | 4+ | 14 | -3 | D6 |\n| 根除者新星炮 | 36 | D3+6 | 4+ | 7 | -1 | 2 |\n| 处决者等离子炮（标准） | 36 | D6+3 | 4+ | 7 | -2 | 2 |\n| 处决者等离子炮（过载） | 36 | D6+3 | 4+ | 8 | -3 | 3 |\n| 灭绝者自动炮 | 48 | 4 | 4+ | 9 | -1 | 3 |\n| 惩罚者加特林 | 24 | 20 | 4+ | 6 | 0 | 1 |\n| 征服者加农炮 | 72 | 1 | 4+ | 18 | -4 | D6+6 |\n### 近战武器\n| 武器名称 | 射程 | A | WS | S | AP | D |\n|---|---|---|---|---|---|---|\n| 装甲履带 | 近战 | 6 | 4+ | 7 | 0 | 1 |\n### 单位构成\n- **阵营关键词**：星界军\n- **关键词**：载具，人物，烟雾，兵团，军官，中队，黎曼鲁斯坦克指挥官\n- 可以下达命令给中队单位。\n### 单位构成\n- 一个黎曼鲁斯坦克指挥官，235 分\n- 单位装备：战斗加农炮，激光炮，装甲履带\n- 升级选项：\n  - 本模型可以将战斗加农炮换为以下之一\n    - 破坏者加农炮\n    - 根除者新星炮\n    - 处决者等离子炮\n    - 灭绝者自动炮\n    - 惩罚者加特林\n    - 征服者加农炮\n  - 本模型可以将激光炮换为重型爆弹枪或重型喷火器\n  - 本模型可以额外装备以下组合之一\n    - 两把重型爆弹枪\n    - 两把重型喷火器\n    - 两把多管热熔\n    - 两把等离子炮\n  - 本模型可以额外装备一把重机枪或风暴爆弹枪\n  - 本模型可以额外装备一发猎杀飞弹\n**阵营关键词**：星界军\n**关键词**：载具，人物，帝国，编队，烟雾弹，军官，黎曼鲁坦克斯指挥官",
+              "book": "星界军10版中文",
+              "source": "data\\星界军10版中文老湿腐版1.27.pdf",
+              "page": 31,
+              "edition": "10",
+              "layer": "codex-base"
+            },
+            {
+              "text": "## 星界军规则\n### 指挥之声\n⚫ \n如果你的军队阵营是星界军，你军队中拥有本技能的军官模型可以在以下时刻下达命令 \n◼ \n你的指挥阶段中 \n◼ \n（本模型所在单位）脱离运输工具的阶段结束时 \n◼ \n（本模型所在单位）部署到战场的阶段结束时 \n⚫ \n选择以下一条命令，对其6 寸内一个友军单位生效，持续到下个你的指挥阶段开始时。 \n⚫ \n除非特殊说明，一个单位只能被一条命令所影响（后生效的立即替换之前的），如果接令单位处于被震慑状\n态则影响它的命令效果立即失效 \n⚫ \n命令效果只对星界军模型生效 \n\n| 命令名称 | 效果 |\n|---|---|\n| 快快快！ | 本单位模型M+3 |\n| 上刺刀！ | 本单位模型近战武器WS+1 |\n| 瞄准！ | 本单位模型射击武器BS+1 |\n| 一排放！二排放！ | 本单位模型【速射】武器A+1 |\n| 卧倒！ | 本单位模型SV 值提高1，最多3+ |\n| 职责与荣誉！ | 本单位模型LD 和OC 值提高1 |",
+              "book": "星界军10版中文",
+              "source": "data\\星界军10版中文老湿腐版1.27.pdf",
+              "page": 1,
+              "edition": "10",
+              "layer": "codex-base"
+            },
+            {
+              "text": "## 支配命令 IMPERATIVE DOMINANCE 1CP\n| 技能来源 | 技能分类 | 使用时机 | 使用对象 | 效果 |\n|----------|----------|----------|----------|------|\n| 泰伦虫族：突触节点 | 战略行动 | 指挥阶段中 | 位于你的节点范围内的一个泰伦虫族友军单位 | 选择一个突触命令（使用过也可以），你的下个指挥阶段开始前，对本单位（也只对本单位）生效，替换原有效果 |",
+              "book": "泰伦虫族10版中文",
+              "source": "data\\泰伦虫族10版中文老湿腐版1.12.pdf",
+              "page": 14,
+              "edition": "10",
+              "layer": "codex-base"
+            },
+            {
+              "text": "## 卡塔昌指挥组 CATACHAN COMMAND SQUAD\n| M | T | SV | W | LD | OC |\n|---|---|----|---|---|----|\n| 老兵 | 6 | 3 | 5+ | 1 | 7+ | 1 |\n| 指挥官 | 6 | 3 | 5+ | 3 | 7+ | 1 |\n\n### 远程武器\n| 武器名称 | 射程 | A | BS | S | AP | D |\n|---|---|---|---|---|---|---|\n| 激光手枪 [手枪] | 12 | 1 | 4+ | 3 | 0 | 1 |\n| 激光枪 [速射1] | 24 | 1 | 4+ | 3 | 0 | 1 |\n| 爆弹手枪 [手枪] | 12 | 1 | 4+ | 4 | 0 | 1 |\n| 爆弹枪 [速射1] | 24 | 1 | 4+ | 4 | 0 | 1 |\n| 等离子手枪（标准） [手枪] | 12 | 1 | 4+ | 7 | -2 | 1 |\n| 等离子手枪（过载） [手枪, 危险] | 12 | 1 | 4+ | 8 | -3 | 2 |\n| 喷火器 [忽视掩体, 喷射] | 12 | D6 | - | 4 | 0 | 1 |\n| 重型喷火器 [忽视掩体, 喷射] | 12 | D6 | - | 5 | -1 | 1 |\n| 榴弹发射器（破片弹） [爆炸] | 24 | D3 | 4+ | 4 | 0 | 1 |\n| 榴弹发射器（穿甲弹） | 24 | 1 | 4+ | 9 | -2 | D3 |\n| 热熔枪 [热熔2] | 12 | 1 | 4+ | 9 | -4 | D6 |\n| 等离子枪（标准） [速射1] | 24 | 1 | 4+ | 7 | -2 | 1 |\n| 等离子枪（过载） [速射1, 危险] | 24 | 1 | 4+ | 8 | -3 | 2 |\n| 狙击步枪 [重型, 精准] | 36 | 1 | 4+ | 4 | -2 | 2 |\n\n### 近战武器\n| 武器名称 | 射程 | A | WS | S | AP | D |\n|---|---|---|---|---|---|---|\n| 链锯剑 | 近战 | 4 | 4+ | 3 | 0 | 1 |\n| 格斗武器 | 近战 | 2 | 4+ | 3 | 0 | 1 |\n| 动力拳 | 近战 | 3 | 4+ | 6 | -2 | 2 |\n| 动力武器 | 近战 | 3 | 4+ | 4 | -2 | 1 |\n\n### 技能\n- **【核心技能】**：领袖，斥候6\n- **指挥之声**：可以对兵团单位下达最多1 条命令\n- **喋血军令**：当本单位中包含军官模型时，本单位中的射击武器拥有【突击】技能。\n\n**阵营关键词**：星界军\n**关键词（全体模型）**：步兵，帝国，手雷，排，卡塔昌，指挥组\n**关键词（指挥官）**：人物，军官\n\n### 单位构成\n一个指挥官和4 个老兵，共65 分\n\n**单位装备**：指挥官装备激光手枪，格斗武器；所有老兵装备激光枪，激光手枪，格斗武器\n\n**装备技能**：\n- **音阵总台**：装备者所在单位的军官下达命令的范围扩大到24 寸\n- **医疗包**：你的指挥阶段开始时，如果本单位低于起始数量，你可以复活本单位中至多D3 个被摧毁的排模型（人物模型除外）。\n- **兵团旗帜**：装备者所在单位模型的OC 值+1\n\n**升级选项**：\n- 任意数量的老兵可以将激光枪替换为下列武器之一，且不能重复：\n  - 喷火器\n  - 榴弹发射器\n  - 重型喷火器\n  - 热熔枪\n  - 等离子枪\n  - 狙击步枪\n- 三名装备激光枪的老兵可分别装备音阵总台，医疗包，兵团旗帜，且不能重复\n- 指挥官可以将激光手枪换为爆弹手枪或等离子手枪\n- 指挥官可以将格斗武器换为以下之一：\n  - 爆弹枪\n  - 链锯剑\n  - 动力拳\n  - 动力武器\n\n**核心技能：领袖**\n- 本单位可以作为领袖加入以下单位：\n  - 卡塔昌丛林战士",
+              "book": "星界军10版中文",
+              "source": "data\\星界军10版中文老湿腐版1.27.pdf",
+              "page": 28,
+              "edition": "10",
+              "layer": "codex-base"
+            },
+            {
+              "text": "## STEEL HAMMER（续）\n### KEYWORDS\nIn the Muster Armies step, you can \nselect one or more Astra Militarum \nTitanic units from your army to gain the \nCharacter keyword.\n**Designer’s Note**: This means that the \nselected units can be given Enhancements, \nand one of them can be selected as \nyour Warlord.\n\n### ENHANCEMENTS\n#### BATTALION COMMANDER\nHigh‑ranking officers of armoured regiments may \noperate super‑heavy tanks as command vehicles, their \norders blaring from hull‑mounted laud hailers or \ncrackling over internal vox‑channels.\nAstra Militarum Titanic Character model only. The \nbearer has the Voice of Command ability and the \nOfficer keyword, and can issue up to 2 Orders to \nAstra Militarum Titanic and Squadron units.\n\n#### TITAN KILLER\nSeeking to add another kill marking to their war \nmachine, this glory‑hungry tank commander seeks out \nand engages only the heaviest enemy assets.\nAstra Militarum Titanic Character model only. Each \ntime the bearer makes a ranged attack, you can re‑roll \nthe Damage roll.\n\n#### ENGINE SPEAKER\nIntimately attuned to the machine spirits of Astra \nMilitarum vehicles, this Tech‑Priest administers rites \nand rituals, seeking to draw additional performance \nfrom engines.\nAstra Militarum Tech‑Priest Enginseer model only. \nEach time the bearer uses its Omnissiah’s Blessing \nability, until the start of your next Command phase, \nadd 3\" to the Move characteristic of the selected \nVehicle model.\n\n#### ASSAULT HATCHES\nRamps and hatches slam down on all sides of this \ntitanic vehicle, enabling infantry to surge forth and \noverwhelm the enemy.\nAstra Militarum Titanic Character Transport model \nonly. Each time a unit disembarks from the bearer \nafter it has made a Normal move, that unit is still \neligible to declare a charge this turn.",
+              "book": "Faction Pack Astra Militarum",
+              "source": "data\\Faction Pack Astra Militarum.pdf",
+              "page": 5,
+              "edition": "11",
+              "layer": "overlay"
+            },
+            {
+              "text": "## COMMAND RE-ROLL 15.02 (1CP)\n**CORE STRATAGEM**\n*A great commander can bend even the vagaries of fate and fortune to their will, the better to ensure victory.*\n**WHEN**: Any phase, just after you make one of the following rolls for a friendly unit or model:\n▪ Advance roll\n▪ Charge roll\n▪ Damage roll\n▪ Hazard roll\n▪ Hit roll\n▪ Save roll\n▪ Wound roll\n▪ A roll to determine the number of attacks generated with a weapon.\n**TARGET**: That unit or model.\n**EFFECT**: You re‑roll that roll. If you are rolling more than one dice together, select one of those dice to re‑roll (excluding charge rolls, which you must re-roll in full).",
+              "book": "Core Rules - New 40K Core Rules",
+              "source": "data\\Core Rules - New 40K Core Rules.pdf",
+              "page": 56,
+              "edition": "11",
+              "layer": "rules"
+            },
+            {
+              "text": "## OBJECTIVES (14)（续）\n### SECURED OBJECTIVES (14.03)\nSome rules allow an objective to be secured by a player’s army. When an objective is secured by a player’s army, that objective remains under their control – even once they no longer have any units within range of it – until their opponent’s level of control over that objective is greater than theirs at the end of a phase.\n\n> **HOLD AT ALL COSTS**\n> Some units have abilities that are triggered when they control an objective, or when they secure an objective for your army.\n**SEE ALSO**  \nObjectives Not Within a Terrain Area\n\n**CONTROLLING A TERRAIN OBJECTIVE**\n\n*++ FOR A WARRIOR THE ONLY CRIME IS COWARDICE ++*\n\nThis unit is currently battle-shocked, so the OC characteristic of all of its models is ‘-’.  \nThe models in this unit each have an OC characteristic of 1. Six of its models are within the terrain area.  \nThis VEHICLE has an OC characteristic of 3, and it is within the terrain area.  \nThis VEHICLE has an OC characteristic of 2, and it is wholly within the terrain area.  \nBoth players add together the OC characteristics of all their models that are within the terrain area. The BLUE player’s level of control is 5, and the RED player’s level of control is 6. The RED player therefore controls the objective.",
+              "book": "Core Rules - New 40K Core Rules",
+              "source": "data\\Core Rules - New 40K Core Rules.pdf",
+              "page": 52,
+              "edition": "11",
+              "layer": "rules"
+            }
+          ],
+          "note": null
+        }
+      }
+    ]
+  },
+  {
+    "id": 116,
+    "trial": 1,
+    "question": "泰坦军团（Adeptus Titanicus）一共有几个单位（兵牌）？混沌泰坦军团（Titanicus Traitoris）的混沌战将泰坦是不是另有一张独立兵牌、另有一套点数？",
+    "answer": "# 铁幕答复\n\n## 一、泰坦军团（Adeptus Titanicus）单位数量\n\n根据档案所载点数索引，**泰坦修会**条目下共列出 **4 个**单位（兵牌）：\n\n| 单位 | 模型 | 点数 |\n|------|------|------|\n| 掠夺者级泰坦 | 1 模型 | **2200 点** |\n| 战争使者型天罚级泰坦 | 1 模型 | **2600 点** |\n| 战犬级泰坦 | 1 模型 | **1100 点** |\n| 战将级泰坦 | 1 模型 | **3500 点** |\n\n[《6月4日分数中文》第5页]\n\n> 注：档案仅给出上述 4 条点数条目，未列出其他泰坦修会兵牌。若需确认兵牌总数是否与点数条目一一对应，**档案缺失，建议查阅原始规则书**。\n\n---\n\n## 二、混沌战将泰坦是否另有独立兵牌与点数？\n\n**否。** 按档案文本，混沌泰坦军团（Titanicus Traitoris）**不另设独立兵牌，也不另设独立点数**。\n\n具体机制为 [《Faction Pack Adeptus Titanicus》第2页]：\n\n- 可直接使用本文件中的 **Adeptus Titanicus 兵牌数据**来代表 Titanicus Traitoris 模型；\n- 转换方式为：在这些兵牌及本军团规则卡上，**将所有 `Imperium` 关键词替换为 `Chaos`**，并将所有 `Adeptus Titanicus` 阵营关键词替换为 `Titanicus Traitoris`；\n- 点数方面，**使用与对应 Adeptus Titanicus 模型相同的已发布点数**（\"use those published for the equivalent Adeptus Titanicus models\"）。\n\n因此，**混沌战将泰坦并非一张新兵牌**，而是以战将泰坦兵牌为基底、经关键词替换后使用，点数沿用战将泰坦的 **3500 点** [《6月4日分数中文》第5页；《Faction Pack Adeptus Titanicus》第2页]。\n\n---\n\n## 三、补充：泰坦军团的编成规则要点\n\n档案另载两条与编成相关的规则 [《Faction Pack Adeptus Titanicus》第2页]：\n\n- **Towering Example**：若你的 Army Faction 为 Adeptus Titanicus，在集结军队时**忽略 Select Detachment Rules 步骤**；在 Select Warlord 步骤中，从军中选一个 Adeptus Titanicus 模型作为统帅，**即使该模型没有 Character 关键词**。你的军队获得 **Take and Hold** 武力倾向。\n- **Titanic Support**：若你军中**每个模型**都带 `Imperium` 关键词，你可以在军中**加入 1 个 Adeptus Titanicus 模型**，即使它不具备你在 Select Army Faction 步骤中所选的阵营关键词。\n\n> 关于上述两条规则在 Titanicus Traitoris 下的关键词替换后如何具体适用，档案未进一步展开，**档案缺失，建议查阅原始规则书**。\n\n---\n\n**结论摘要**：\n1. 泰坦修会点数索引列 **4 个**单位。\n2. 混沌战将泰坦**无独立兵牌、无独立点数**，以战将泰坦兵牌经关键词替换使用，点数 **3500 点**。",
+    "sources": [
+      {
+        "book": "6月4日分数中文",
+        "page": 5
+      },
+      {
+        "book": "Faction Pack Adeptus Titanicus",
+        "page": 2
+      },
+      {
+        "book": "混沌骑士",
+        "page": 10
+      },
+      {
+        "book": "黑图书馆",
+        "page": 0
+      },
+      {
+        "book": "6月4日分数中文",
+        "page": 27
+      },
+      {
+        "book": "Core Rules - New 40K Core Rules",
+        "page": 66
+      },
+      {
+        "book": "Core Rules - New 40K Core Rules",
+        "page": 68
+      }
+    ],
+    "meta": {
+      "intent": "查",
+      "tool_calls": [
+        "search_wiki",
+        "rag_search"
+      ],
+      "degraded": true,
+      "fell_back_to_classic": true
+    },
+    "trace": [
+      {
+        "name": "search_wiki",
+        "args": [],
+        "kwargs": {
+          "query": "泰坦军团 Adeptus Titanicus 单位 兵牌"
+        },
+        "result": {
+          "found": false,
+          "page": null,
+          "results": []
+        }
+      },
+      {
+        "name": "rag_search",
+        "args": [
+          "泰坦军团（Adeptus Titanicus）一共有几个单位（兵牌）？混沌泰坦军团（Titanicus Traitoris）的混沌战将泰坦是不是另有一张独立兵牌、另有一套点数？"
+        ],
+        "kwargs": {},
+        "result": {
+          "found": true,
+          "passages": [
+            {
+              "text": "## 索引：泰坦修会 铸造世界点数值\n| 单位 | 模型 | 点数 |\n|------|------|------|\n| 掠夺者级泰坦 | 1 模型 | 2200 点 |\n| 战争使者型天罚级泰坦 | 1 模型 | 2600 点 |\n| 战犬级泰坦 | 1 模型 | 1100 点 |\n| 战将级泰坦 | 1 模型 | 3500 点 |\n圣典：艾达灵族\n- 阿苏曼 1 模型 ................................................. 135 点\n- 司战 1 模型 ......................................(+10) 85 点\n- 翔空司战 1 模型 ................................................. 80 点\n- 凯恩化身 1 模型 ................................................. 300 点\n- 巴哈罗斯 1 模型 ................................................. 115 点\n- 虚空掠夺者海盗 5 模型 ................................................. 60 点 10 模型 ................................................. 120 点\n- 虚空创痕海盗 5 模型 ................................................. 80 点 10 模型 ................................................. 160 点\n- 猩红猎手 1 模型 ................................................. 160 点\n- 次元炮平台 1 模型 ................................................. 125 点\n- 黑暗死神 5 模型 ................................................. 90 点 10 模型 ................................................. 195 点\n- 死亡小丑 1 模型 ................................................. 90 点\n- 凶暴复仇者 5 模型 ................................................. 80 点 10 模型 ................................................. 160 点\n- 艾尔德拉德·乌瑟兰 1 模型 ................................................. 110 点\n- 猎鹰坦克 1 模型 ................................................. 130 点\n- 大先知 1 模型 ................................................. 70 点\n- 天行者大先知 1 模型 ................................................. 80 点\n- 火龙 5 模型 ......................................(+10) 120 点 10 模型 ................................................. 220 点\n- 炎晶坦克 1 模型 ......................................(-10) 150 点\n- 弗甘 1 模型 ................................................. 120 点\n- 卫戍守护者 11 模型 ................................................. 100 点\n- 铁杉幽冥战机 1 模型 ................................................. 155 点\n- 狂嚎女妖 5 模型 .......................................(+5) 95 点 10 模型 ......................................(+10) 190 点",
+              "book": "6月4日分数中文",
+              "source": "data\\6月4日分数中文.pdf",
+              "page": 5,
+              "edition": "11",
+              "layer": "points"
+            },
+            {
+              "text": "## ADEPTUS TITANICUS ARMY RULES（续）\n### TITANICUS TRAITORIS\n\nYou can use the Adeptus Titanicus datasheets in this document to represent Titanicus Traitoris models if you wish. To do so, on those datasheets and on this Army Rules card, replace all instances of the Imperium keyword with Chaos, and replace all instances of the Adeptus Titanicus Faction keyword with Titanicus Traitoris. For the purposes of points values, use those published for the equivalent Adeptus Titanicus models.\n\n**Designer’s Note**: Titans are colossal war machines that can turn the tide of battle. As such, the points values of some of these models are greater than even Onslaught-sized battles can accommodate; they are designed for battlefields of the most apocalyptic scale you can imagine!",
+              "book": "Faction Pack Adeptus Titanicus",
+              "source": "data\\Faction Pack Adeptus Titanicus.pdf",
+              "page": 2,
+              "edition": "11",
+              "layer": "overlay"
+            },
+            {
+              "text": "## 泰坦决斗 TITANIC OUEL (1CP)\n**技能分类**：史诗伟业  \n**使用时机**：你的射击阶段或任意近战阶段  \n**使用对象**：你军队中一个本阶段尚未被选择进行射击或近战的混沌骑士角色单位。  \n**效果**：选择一个敌方巨兽或载具单位。直到阶段结束，每当目标单位中的模型对该敌方单位进行攻击时，你可以重投结果为1 的命中骰和造伤骰。如果敌方单位是巨型单位，作为替代，你可以重骰命中骰和造伤骰。",
+              "book": "混沌骑士",
+              "source": "data\\混沌骑士CODEX-双子星版 V1.20.pdf",
+              "page": 10,
+              "edition": "10",
+              "layer": "codex-base"
+            },
+            {
+              "text": "## ADEPTUS TITANICUS ARMY RULES\n\nTitans are amongst the largest war engines to be found anywhere in the galaxy, ponderous battleships of the land whose weapon batteries are capable of obliterating entire formations of enemy troops. Created before the dawn of the Imperium, each god-engine is a miracle of forgotten technology. During the catastrophic wars of the Horus Heresy, the once-mighty Titan Legions warred against one another in great numbers, but their numbers are now much diminished. While loyalist Titans still defend the forge worlds of the Adeptus Mechanicus and march against the Emperor’s foes, their traitorous brethren were consigned to the Eye of Terror where they became Chaos Titans – twisted mockeries of their former glory who now fight alongside traitors and renegades.\n\n### TOWERING EXAMPLE\n\nWhen mustering your army, if your Army Faction is Adeptus Titanicus, ignore the Select Detachment Rules step. In the Select Warlord step, select one Adeptus Titanicus model from your army to be your Warlord, even though that model does not have the Character keyword. Your army has the Take and Hold force disposition.\n\n### TITANIC SUPPORT\n\nIf every model in your army has the Imperium keyword, you can include 1 Adeptus Titanicus model in your army, even if it does not have the Faction keyword you selected in the Select Army Faction step.",
+              "book": "Faction Pack Adeptus Titanicus",
+              "source": "data\\Faction Pack Adeptus Titanicus.pdf",
+              "page": 2,
+              "edition": "11",
+              "layer": "overlay"
+            },
+            {
+              "text": "## 战将泰坦\n所属：泰坦修会\n**战将泰坦**：M10\" T16 SV2+ W100 LD6 OC30 底盘外壳\n**武器**\n- [射击] 启示录导弹发射器：射程200\" 攻击20 命中3+ S8 AP-2 D2（爆炸、曲射）\n- [射击] 阿德克斯型近防激光炮：射程48\" 攻击1 命中3+ S12 AP-3 DD6+1\n- [射击] 阿德克斯型近防爆弹炮：射程36\" 攻击6 命中3+ S6 AP-2 D2\n- [射击] 艾瑞欧克型泰坦动力爪：射程48\" 攻击20 命中3+ S6 AP-1 D2（连击1）\n- [射击] 贝利寇萨型火山炮：射程120\" 攻击D3+3 命中3+ S32 AP-5 D18（爆炸）\n- [射击] 激光爆裂炮：射程72\" 攻击6 命中3+ S16 AP4 DD6+3（爆炸）\n- [射击] 加特林宏炮：射程100\" 攻击30 命中3+ S9 AP-2 D3（连击1）\n- [射击] 死亡地震炮：射程280\" 攻击3D6 命中3+ S16 AP-4 D6（爆炸、忽略掩体）\n- [射击] 日怒离子湮灭炮 — 标准：射程72\" 攻击2D6+6 命中3+ S10 AP-3 D5（爆炸）\n- [射击] 日怒离子湮灭炮 — 过载：射程72\" 攻击2D6+6 命中3+ S12 AP-3 D8（爆炸、危险）\n- [近战] 战犬铁足：攻击6 命中4+ S12 AP-2 D4\n- [近战] 艾瑞欧克型泰坦动力爪 — 猛击：攻击6 命中4+ S20 AP-4 D24\n- [近战] 艾瑞欧克型泰坦动力爪 — 横扫：攻击12 命中4+ S12 AP-3 D8\n**能力**\n- 【阵营技能】：超重型机甲\n- 高耸巨像：如对本模型使用战略能力，需支付4倍原本该战略能力的CP值。\n- 奥米尼西亚之怒：你的射击阶段，本单位射击后，选择 一个被本单位命中过的敌方单位，那个单位必须进行 震慑测试。\n- 受损：当本模型剩余1-33W时，本模型的OC值-15，每次攻击时命中骰结果-1。",
+              "book": "黑图书馆",
+              "source": "blacklibrary",
+              "page": 0,
+              "edition": "10",
+              "layer": "codex-base"
+            },
+            {
+              "text": "## 索引：沃坦联盟\n\n### 单位\n| 单位 | 模型数 | 点数 |\n|------|--------|------|\n| 机锻钢铁之主 | 5 模型 | 65 点 |\n| 机锻匠雷霆炮手 | 3 模型 | 80 点 |\n| 机锻匠雷霆炮手 | 6 模型 | 160 点 |\n| 深岩狂战士 | 5 模型 | 100 点 |\n| 深岩狂战士 | 10 模型 | 200 点 |\n| 断角勇士 | 1 模型 | 60 点 |\n| 断角炉卫 | 5 模型 | 150 点 |\n| 断角炉卫 | 10 模型 | 320 点 |\n| 格林尼尔贤者 | 3 模型 | 65 点 |\n| 炉心战士 | 10 模型 | 100 点 |\n| 赫卡顿陆行要塞 | 1 模型 | 225 点 |\n| 远行者先锋 | 3 模型 | 90 点 |\n| 远行者先锋 | 6 模型 | 180 点 |\n| 远行者猎手 | 10 模型 | 90 点 |\n| 战群统领 | 1 模型 | 70 点 |\n| 人马座战车 | 1 模型 | 115 点 |\n| 天命者乌萨尔 | 1 模型 | 80 点 |",
+              "book": "6月4日分数中文",
+              "source": "data\\6月4日分数中文.pdf",
+              "page": 27,
+              "edition": "11",
+              "layer": "points"
+            },
+            {
+              "text": "## 19 ATTACHED UNITS\n\n### FORMING ATTACHED UNITS 19.01\nSome units have the Leader or Support ability listed on their datasheet (see below). Such units are known as leader units and support units respectively. Both of these abilities allow such units to lead other friendly units (known as bodyguard units) to form attached units. An attached unit is a single unit for all rules purposes. Leader and support units can only lead specific bodyguard units, as listed in the Warhammer 40,000 app.\n\n**LEADER 24.22 / SUPPORT 24.34**: Mighty heroes fight at the forefront of battle.\n\nBefore the battle, in the Muster Armies step, for each leader and support unit in your army, you can select one friendly bodyguard unit that unit can lead. That unit will then lead that bodyguard unit for the battle and form an attached unit with it.\n\nUnless otherwise stated, each bodyguard unit can only have one leader unit and one support unit attached to it.\n\n### ATTACKING ATTACHED UNITS 19.02\nEach time an attack targets an attached unit, if that unit contains one or more bodyguard models, use the highest T characteristic of the bodyguard models in that unit while resolving that attack, even if a leader/support unit in that attached unit has a different T characteristic. If that unit only contains leader/support models, use the highest T characteristic of those models while resolving that attack instead.\n\nRules that are triggered when a unit is destroyed are only triggered when the last model that started the battle in an attached unit is destroyed.\n\nThe heroes of your army rarely fight alone. Instead, they typically lead bands of warriors, forming an attached unit that acts as a single entity. This section explains how to form attached units and how they function on the battlefield.",
+              "book": "Core Rules - New 40K Core Rules",
+              "source": "data\\Core Rules - New 40K Core Rules.pdf",
+              "page": 66,
+              "edition": "11",
+              "layer": "rules"
+            },
+            {
+              "text": "## STRATEGIC RESERVES\n### PLACING UNITS IN STRATEGIC RESERVES 20.01\n\nBefore the battle, in the Declare Battle Formations step, you can select one or more friendly units (excluding FORTIFICATIONS) to place in strategic reserves. Instead of setting up these units on the battlefield during deployment, place them to one side; they are strategic reserves units, and will arrive later in the battle.\n\nUnless otherwise stated, the combined points value of all of your strategic reserves units (including those embarked within TRANSPORTS that are themselves placed in strategic reserves) cannot exceed 50% of your points limit for your battle size.",
+              "book": "Core Rules - New 40K Core Rules",
+              "source": "data\\Core Rules - New 40K Core Rules.pdf",
+              "page": 68,
+              "edition": "11",
+              "layer": "rules"
+            }
+          ],
+          "note": null
+        }
+      }
+    ]
+  }
+]

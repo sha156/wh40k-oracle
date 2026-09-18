@@ -413,6 +413,15 @@ _TITAN_DATASHEET_ALIASES: Dict[str, str] = {
     "chaos warbringer nemesis titan": "warbringer nemesis titan",
     "chaos warlord titan": "warlord titan",
 }
+# Provenance for the existing shared-datasheet mapping. Consumers must not
+# mistake separate MFM faction pages for proof of separate datasheets.
+TITAN_DATASHEET_RULE = {
+    "book": "Faction Pack Adeptus Titanicus", "page": 2,
+    "section": "TITANICUS TRAITORIS",
+    "rule": ("Titanicus Traitoris uses the corresponding Adeptus Titanicus datasheets "
+             "and published points. Replace Imperium with Chaos and Adeptus Titanicus "
+             "with Titanicus Traitoris on the datasheets and Army Rules card."),
+}
 
 
 def _norm_unit(name: str) -> str:
