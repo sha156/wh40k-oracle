@@ -110,3 +110,21 @@ def test_duplicate_canonical_ids_fail_closed(tmp_path):
     for filename in ["one.md", "two.md"]:
         (tmp_path / filename).write_text("---\nid: '202'\ntype: unit\n---\n\nExample", encoding="utf-8")
     assert find_entity_by_id("202", load_index(tmp_path), tmp_path) is None
+
+
+def test_merged_card_source_scope_survives_wire_truncation(tmp_path):
+    from agent.llm_client import _render_loop_message
+
+    (tmp_path / "index.md").write_text(
+        "| unit | [Commander](commander.md) | | - |\n", encoding="utf-8")
+    (tmp_path / "commander.md").write_text(
+        "---\nid: '202'\nname_en: Commander\ntype: unit\n"
+        "version:\n  source: official-db\nsources:\n"
+        "- book: Keyword patch\n  pages: [23]\n---\n\n" + "Weapon rows\n" * 800,
+        encoding="utf-8")
+    result = tools.get_entity("Commander", wiki_root=tmp_path)
+    assert result["page"].fm.sources[0]["pages"] == [23]
+    wire = _render_loop_message({"role": "tool", "name": "get_entity", "content": result})
+    assert "中间省略" in wire["content"]
+    assert result["source_scope"] in wire["content"]
+    assert "不是逐字段出处" in result["source_scope"]

@@ -143,6 +143,19 @@ def entity_resolver(name: str, resolver: Optional[EntityResolver] = None) -> Dic
     return out
 
 
+def _entity_page_result(page: WikiPage, resolved_via: Any) -> Dict[str, Any]:
+    out = {"found": True, "page": page, "resolved_via": resolved_via}
+    if (page.fm.version or {}).get("source") == "official-db":
+        # A merged card can cite a patch that only changes one keyword. Its
+        # page-level source list is not provenance for every stat/ability.
+        out["source_scope"] = (
+            "这张 wiki 兵牌由多个数据层合并；sources 是关联参考，不是逐字段出处。"
+            "其中的补丁页可能只改一个关键词，不能给整张兵牌的技能/属性背书。"
+            "引用具体技能时，优先用 rag_search 实际取回的规则正文及页码；"
+            "未定位原文的字段标注「结构库兵牌」，不要套用关联补丁的页码。")
+    return out
+
+
 def get_entity(
     name_or_id: str,
     wiki_root: Optional[Path] = None,
@@ -160,20 +173,19 @@ def get_entity(
     index = load_index(wiki_root)
     page = find_entity(name_or_id, index, wiki_root)
     if page is not None:
-        return {"found": True, "page": page, "resolved_via": None}
+        return _entity_page_result(page, None)
 
     if name_or_id.strip().isdigit():
         page = find_entity_by_id(name_or_id.strip(), index, wiki_root)
         if page is not None:
-            return {"found": True, "page": page,
-                    "resolved_via": {"canonical_id": name_or_id.strip(), "confidence": "exact"}}
+            return _entity_page_result(
+                page, {"canonical_id": name_or_id.strip(), "confidence": "exact"})
 
     alias_target = load_unit_aliases(app_path).get(name_or_id)
     if alias_target:
         page = find_entity(alias_target, index, wiki_root)
         if page is not None:
-            return {"found": True, "page": page,
-                    "resolved_via": {"alias_target": alias_target}}
+            return _entity_page_result(page, {"alias_target": alias_target})
 
     resolved = entity_resolver(name_or_id, resolver=resolver)
     if resolved["name_en"]:
@@ -189,7 +201,7 @@ def get_entity(
                     and (legacy.fm.name_en or "").casefold() == resolved["name_en"].casefold()):
                 page = legacy
         if page is not None:
-            out = {"found": True, "page": page, "resolved_via": resolved}
+            out = _entity_page_result(page, resolved)
             if same_name["confidence"] == "ambiguous":
                 out["same_name_candidates"] = same_name["candidates"]
                 out["note"] = ("本页阵营：" + page.fm.faction + "。同名单位还存在于其他阵营："

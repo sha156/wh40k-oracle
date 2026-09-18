@@ -1,0 +1,26 @@
+{
+  "base": "74544de81",
+  "queries": [
+    {
+      "query": "地狱兽",
+      "equal": true,
+      "found": true,
+      "reason": null,
+      "disclosure": true
+    },
+    {
+      "query": "Helbrute",
+      "equal": true,
+      "found": false,
+      "reason": "ambiguous",
+      "disclosure": false
+    },
+    {
+      "query": "Helbrute (WE)",
+      "equal": true,
+      "found": true,
+      "reason": null,
+      "disclosure": true
+    }
+  ]
+}
