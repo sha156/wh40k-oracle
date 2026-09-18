@@ -1,0 +1,4003 @@
+{
+  "summary": {
+    "path": "agent",
+    "provider": "DeepSeek",
+    "results": {
+      "correct": 113,
+      "partial": 2,
+      "wrong": 0,
+      "total": 115
+    },
+    "accuracy": 98.3,
+    "degraded_count": 33,
+    "wall_time": "193.3s"
+  },
+  "details": [
+    {
+      "id": 1,
+      "faction": "钛帝国",
+      "question": "影阳指挥官的M和T各是多少？",
+      "gold": "影阳指挥官：M=10\" T=4",
+      "gold_type": "stat",
+      "judged_against_gold": true,
+      "judge_method": "mechanical",
+      "verdict": "✅",
+      "judge_reason": "被问字段全部正确：M/T",
+      "time": "6.0s",
+      "meta": {
+        "intent": "查",
+        "tool_calls": [
+          "get_datasheet"
+        ],
+        "degraded": false
+      },
+      "sources": [
+        {
+          "book": "T'au Empire Datasheet（结构库，unit_id 000000407）",
+          "page": 0
+        },
+        {
+          "book": "Munitorum Field Manual (mfm.warhammer-community.com)",
+          "page": 0
+        }
+      ],
+      "answer": "影阳指挥官（Commander Shadowsun，钛帝国）的移动与坚韧如下：\n\n| 属性 | 数值 |\n|---|---|\n| M（移动） | **10\"** |\n| T（坚韧） | **4** |\n\n顺带附上同一条兵牌的其他关键属性：Sv 3+（另有 5+ 特殊保护）、W 6、Ld 6+、OC 1，底盘 50mm，点数 100 分（1 模型）。\n\n注：该兵牌属性来自既有结构库，点数已与 MFM 同步；若需确认最新补丁是否改动，建议同时查阅最新 Faction Pack。"
+    },
+    {
+      "id": 2,
+      "faction": "钛帝国",
+      "question": "影阳指挥官的W和LD各是多少？",
+      "gold": "影阳指挥官：W=6 LD=6+",
+      "gold_type": "stat",
+      "judged_against_gold": true,
+      "judge_method": "mechanical",
+      "verdict": "✅",
+      "judge_reason": "被问字段全部正确：W/LD",
+      "time": "7.1s",
+      "meta": {
+        "intent": "查",
+        "tool_calls": [
+          "get_datasheet"
+        ],
+        "degraded": false
+      },
+      "sources": [
+        {
+          "book": "Warhammer 40,000 数据表（Commander Shadowsun / 影阳指挥官）",
+          "page": 0
+        }
+      ],
+      "answer": "影阳指挥官（Commander Shadowsun，钛帝国）的属性：\n\n| 属性 | 数值 |\n|---|---|\n| M | 10\" |\n| T | 4 |\n| Sv | 3+（含 5+ 特殊保护） |\n| **W** | **6** |\n| **Ld** | **6+** |\n| OC | 1 |\n\n即 **W = 6，Ld = 6+**。\n\n补充：该模型为 1 模型单位，点数 100 分，底盘 50mm。"
+    },
+    {
+      "id": 3,
+      "faction": "钛帝国",
+      "question": "高能融合炮的S、AP、D各是多少？",
+      "gold": "High-energy fusion blaster S=10 AP=-4 D=D6",
+      "gold_type": "weapon",
+      "judged_against_gold": true,
+      "judge_method": "mechanical",
+      "verdict": "✅",
+      "judge_reason": "被问字段全部正确：S/AP/D",
+      "time": "7.0s",
+      "meta": {
+        "intent": "查",
+        "tool_calls": [
+          "get_datasheet",
+          "rag_search"
+        ],
+        "degraded": true,
+        "fell_back_to_classic": true
+      },
+      "sources": [
+        {
+          "book": "沃坦联盟",
+          "page": 41
+        },
+        {
+          "book": "钛帝国十版",
+          "page": 30
+        },
+        {
+          "book": "星界军10版中文",
+          "page": 74
+        },
+        {
+          "book": "钛帝国十版",
+          "page": 17
+        },
+        {
+          "book": "钛帝国十版",
+          "page": 47
+        },
+        {
+          "book": "星际战士10版中文",
+          "page": 100
+        },
+        {
+          "book": "Core Rules - New 40K Core Rules",
+          "page": 22
+        },
+        {
+          "book": "Core Rules - New 40K Core Rules",
+          "page": 20
+        }
+      ],
+      "answer": "**高能融合炮**（影阳指挥官装备）的武器属性如下 [《钛帝国十版》第17页]：\n\n| 武器名称 | 射程 | A | BS | S | AP | D |\n|---|---|---|---|---|---|---|\n| 高能融合炮 [热熔2] | 18” | 1 | 2+ | **10** | **-4** | **D6** |\n\n- **S（力量）：10**\n- **AP（穿甲）：-4**\n- **D（伤害）：D6**\n\n该武器带 **[热熔2]** 技能，射程 18\"，A 为 1，BS 为 2+ [《钛帝国十版》第17页]。\n\n注：档案中另有一款名称相近的武器——鬼覆战斗服的 **融合加速炮 [热熔2]**（S 12 / AP -4 / D D6）[《钛帝国十版》第30页]，二者并非同一武器，请勿混淆。"
+    },
+    {
+      "id": 4,
+      "faction": "钛帝国",
+      "question": "XV107燃雨战斗服的W是多少？它的特殊保护是多少？",
+      "gold": "燃雨战斗服：特殊保护=5++ W=15",
+      "gold_type": "stat",
+      "judged_against_gold": true,
+      "judge_method": "mechanical",
+      "verdict": "✅",
+      "judge_reason": "被问字段全部正确：INV/W",
+      "time": "8.1s",
+      "meta": {
+        "intent": "查",
+        "tool_calls": [
+          "get_datasheet",
+          "rag_search"
+        ],
+        "degraded": true,
+        "fell_back_to_classic": true
+      },
+      "sources": [
+        {
+          "book": "钛帝国十版",
+          "page": 66
+        },
+        {
+          "book": "Faction Pack Tau Empire",
+          "page": 49
+        },
+        {
+          "book": "钛帝国十版",
+          "page": 67
+        },
+        {
+          "book": "钛帝国十版",
+          "page": 64
+        },
+        {
+          "book": "钛帝国十版",
+          "page": 62
+        },
+        {
+          "book": "钛帝国十版",
+          "page": 45
+        },
+        {
+          "book": "Core Rules - New 40K Core Rules",
+          "page": 83
+        },
+        {
+          "book": "Core Rules - New 40K Core Rules",
+          "page": 71
+        }
+      ],
+      "answer": "根据档案，**XV107 燃雨战斗服（R’varna Battlesuit）** 的数据如下：\n\n| 属性 | 数值 |\n|---|---|\n| **W（ wounds，耐久）** | **15** |\n| **特殊保护（Invulnerable Save）** | **5+** |\n\n**来源说明：**\n- 十版兵牌基底《钛帝国十版》第66页：W 为 **15**，特殊保护 **5+** [《钛帝国十版》第66页]\n- 11版阵营补丁《Faction Pack Tau Empire》第49页：W 为 **15**，Invulnerable Save **5+** [《Faction Pack Tau Empire》第49页]\n\n两版数据一致，无冲突。"
+    },
+    {
+      "id": 5,
+      "faction": "钛帝国",
+      "question": "潮汐护盾墙的T和SV各是多少？",
+      "gold": "潮汐护盾墙：T=8 SV=3+",
+      "gold_type": "stat",
+      "judged_against_gold": true,
+      "judge_method": "mechanical",
+      "verdict": "✅",
+      "judge_reason": "被问字段全部正确：T/SV",
+      "time": "5.3s",
+      "meta": {
+        "intent": "查",
+        "tool_calls": [
+          "get_datasheet"
+        ],
+        "degraded": false
+      },
+      "sources": [
+        {
+          "book": "Tidewall Shieldline Datasheet (T'au Empire)",
+          "page": 0
+        }
+      ],
+      "answer": "**潮汐护盾墙（Tidewall Shieldline）的 T 和 Sv：**\n\n| 属性 | 数值 |\n|---|---|\n| T（坚韧） | **8** |\n| Sv（保护） | **3+** |\n\n补充：该单位另有 **5+ 特殊保护（invuln）**，W 为 10（若装备潮汐防御平台则 W 变为 15），M 4\"，Ld 7+，OC 0 [《钛帝国 兵牌》潮汐护盾墙条目]。\n\n注：中文层把底座写作「外壳」，官方英文属性块为「Use model」，数值以官方英文属性块为准。"
+    },
+    {
+      "id": 6,
+      "faction": "钛帝国",
+      "question": "暗行者的M和OC各是多少？",
+      "gold": "暗行者：M=7\" OC=1",
+      "gold_type": "stat",
+      "judged_against_gold": true,
+      "judge_method": "mechanical",
+      "verdict": "✅",
+      "judge_reason": "被问字段全部正确：M/OC",
+      "time": "4.9s",
+      "meta": {
+        "intent": "查",
+        "tool_calls": [
+          "get_datasheet"
+        ],
+        "degraded": false
+      },
+      "sources": [
+        {
+          "book": "Warhammer 40,000 Faction Pack / MFM（钛帝国 暗行者 兵牌）",
+          "page": 0
+        }
+      ],
+      "answer": "暗行者（Darkstrider，钛帝国）的 **M 为 7\"**，**OC 为 1**。\n\n完整属性块：\n\n| 属性 | 数值 |\n|---|---|\n| M | **7\"** |\n| T | 3 |\n| Sv | 4+ |\n| W | 3 |\n| Ld | 7+ |\n| OC | **1** |\n| 底盘 | 32mm |\n\n点数：60 分（1 模型）[《MFM》2026-09-14 同步]。"
+    },
+    {
+      "id": 7,
+      "faction": "钛帝国",
+      "question": "克鲁特血肉塑形者的WS是多少？",
+      "gold": "克鲁特血肉塑形者：WS=2+（10版中WS体现在近战武器上，其近战武器「双仪式短刀 Twin ritualistic blades」WS为2+）。",
+      "gold_type": "stat",
+      "judged_against_gold": true,
+      "judge_method": "mechanical",
+      "verdict": "✅",
+      "judge_reason": "被问字段全部正确：WS",
+      "time": "5.7s",
+      "meta": {
+        "intent": "查",
+        "tool_calls": [
+          "get_datasheet"
+        ],
+        "degraded": false
+      },
+      "sources": [
+        {
+          "book": "Warhammer 40,000 数据表（Kroot Flesh Shaper）",
+          "page": 0
+        }
+      ],
+      "answer": "克鲁特血肉塑形者（Kroot Flesh Shaper，钛帝国）的 **WS 为 2+**（近战武器「双联仪式短刀」命中值 2+）。\n\n顺带列出该单位关键数据：\n\n| 项目 | 数值 |\n|---|---|\n| M | 7\" |\n| T | 3 |\n| Sv | 6+ |\n| W | 3 |\n| Ld | 7+ |\n| OC | 1 |\n| 点数 | 45 分（1 模型） |\n\n武器：\n- **克鲁特霰弹枪**（射击）：12\"，A2，BS 4+，S4，AP0，D1，[突击]\n- **双联仪式短刀**（近战）：A4，**WS 2+**，S5，AP-1，D1，[双联]\n\n注：点数已与 MFM 同步；兵牌属性来自既有结构库，尚未逐字段复核全部最新补丁，若需当前规则效果建议同时核对最新 Faction Pack。"
+    },
+    {
+      "id": 8,
+      "faction": "钛帝国",
+      "question": "冷星战斗服指挥官的SV是多少？",
+      "gold": "冷星战斗服指挥官：SV=3+",
+      "gold_type": "stat",
+      "judged_against_gold": true,
+      "judge_method": "mechanical",
+      "verdict": "✅",
+      "judge_reason": "被问字段全部正确：SV",
+      "time": "5.0s",
+      "meta": {
+        "intent": "查",
+        "tool_calls": [
+          "get_datasheet"
+        ],
+        "degraded": false
+      },
+      "sources": [
+        {
+          "book": "T'au Empire Datasheet (Commander in Coldstar Battlesuit)",
+          "page": 0
+        }
+      ],
+      "answer": "冷星战斗服指挥官（Commander in Coldstar Battlesuit，钛帝国）的 **Sv 为 3+**，无特殊保护（invuln 为「-」）。\n\n其完整属性如下：\n\n| 属性 | 数值 |\n|---|---|\n| M | 12\" |\n| T | 5 |\n| **Sv** | **3+** |\n| W | 6 |\n| Ld | 7+ |\n| OC | 2 |\n| 底盘 | 60mm |\n\n点数：95 分（1 模型）。"
+    },
+    {
+      "id": 9,
+      "faction": "钛帝国",
+      "question": "水虎鱼的M是多少？它的斥候距离是多少？",
+      "gold": "水虎鱼 M=14寸；斥候距离为「斥候9寸」（部署后可标准移动至多9寸）。",
+      "gold_type": "stat",
+      "judged_against_gold": true,
+      "judge_method": "mechanical",
+      "verdict": "✅",
+      "judge_reason": "被问字段全部正确：M",
+      "time": "6.2s",
+      "meta": {
+        "intent": "查",
+        "tool_calls": [
+          "get_datasheet"
+        ],
+        "degraded": false
+      },
+      "sources": [
+        {
+          "book": "Warhammer 40,000 数据表（钛帝国：水虎鱼 / Piranhas）",
+          "page": 0
+        },
+        {
+          "book": "Munitorum Field Manual (MFM)",
+          "page": 0
+        }
+      ],
+      "answer": "**水虎鱼（Piranha，钛帝国）**\n\n| 属性 | 数值 |\n|---|---|\n| M（移动） | **14\"** |\n| T | 7 |\n| Sv | 4+ |\n| W | 7 |\n| Ld | 7+ |\n| OC | 2 |\n\n**斥候距离：档案中未记载。** 该兵牌的能力栏只列出「阵营：为了上上善道」和「兵蜂袭扰战术」（移动阶段结束时令12\"内一个敌方单位做战斗震慑测试），没有 Scout/斥候 关键字或斥候距离条目。也就是说，水虎鱼在现有数据里**不具备斥候部署能力**，自然没有斥候距离可填。\n\n补充：点数 1 模型 65 分 / 2 模型 110 分 / 3 模型 165 分；底座为 60mm 飞行底座（中文层写作「大型飞行底座」，以官方英文属性块为准）。\n\n注：兵牌属性来自既有结构库，尚未逐字段复核全部最新补丁；若你确认某版 Faction Pack 给水虎鱼加了斥候，请告知，我再检索最新补丁确认。"
+    },
+    {
+      "id": 10,
+      "faction": "钛帝国",
+      "question": "鬼覆战斗服的T是多少？光学折射能力的效果是什么？",
+      "gold": "鬼覆战斗服 T=8。「潜行兵蜂/光学折射」类能力：每场战斗两次，当攻击被分配至该模型时，可将那次攻击的D变为0（对手造伤掷骰后、己方保护掷骰前）。",
+      "gold_type": "ability",
+      "judged_against_gold": true,
+      "judge_method": "llm_gold",
+      "verdict": "✅",
+      "judge_reason": "✅ 理由：T=8 与标准答案一致；光学折射效果（每场两次、被分配攻击时将该次攻击D变为0、在造伤后保护前）也完整答出，仅名称用了「潜行兵蜂」并说明译名差异，不构成事实矛盾。",
+      "time": "7.5s",
+      "meta": {
+        "intent": "查",
+        "tool_calls": [
+          "get_datasheet"
+        ],
+        "degraded": false
+      },
+      "sources": [
+        {
+          "book": "钛帝国 兵牌（Ghostkeel Battlesuit）",
+          "page": 0
+        },
+        {
+          "book": "Munitorum Field Manual (MFM)",
+          "page": 0
+        }
+      ],
+      "answer": "**鬼覆战斗服（XV95 Ghostkeel Battlesuit，钛帝国）**\n\n**T（坚韧）：8**\n\n完整属性行：M 10\" / **T 8** / Sv 2+ / W 12 / Ld 7+ / OC 3（无特保）[《钛帝国 兵牌》鬼覆战斗服]\n\n---\n\n**关于「光学折射能力」**\n\n档案里这台机体**没有**叫「光学折射」的能力条目。它实际拥有的能力是：\n\n| 能力 | 效果 |\n|---|---|\n| **潜行兵蜂** | 每场战斗有两次机会，当攻击被分配至该模型时，可将那次攻击的 **D 变为 0**（在对方投完造伤骰、你投保护骰之前使用） |\n| 【装备技能】战斗服支援系统 | 持有者可在进行后撤的回合进行射击，但**失去烟幕关键词** |\n| 受损：剩余 1-4W 时 | 该模型攻击的命中掷骰结果 **-1** |\n| 阵营：为了上上善道 | 钛帝国阵营规则 |\n\n[《钛帝国 兵牌》鬼覆战斗服]\n\n你问的「光学折射」很可能是把**潜行兵蜂**（把一次攻击伤害归零，本质就是「折射/规避掉这一击」）记成了这个名字，或者是旧版/其他版本的译名。若你指的是别的具体能力名，请把原文名给我，我再查一次。\n\n---\n\n**备注**：点数 150 分（1 模型）已与 MFM 同步；但兵牌属性与技能来自既有结构库，尚未逐字段复核最新 Faction Pack 补丁，问当前规则效果时建议同时核对最新补丁文档。"
+    },
+    {
+      "id": 11,
+      "faction": "星际战士",
+      "question": "仲裁者的SV和W各是多少？",
+      "gold": "仲裁者小队：SV=3+ W=2",
+      "gold_type": "stat",
+      "judged_against_gold": true,
+      "judge_method": "mechanical",
+      "verdict": "✅",
+      "judge_reason": "被问字段全部正确：SV/W",
+      "time": "6.0s",
+      "meta": {
+        "intent": "查",
+        "tool_calls": [
+          "get_datasheet",
+          "rag_search"
+        ],
+        "degraded": true,
+        "fell_back_to_classic": true
+      },
+      "sources": [
+        {
+          "book": "星际战士10版中文",
+          "page": 101
+        },
+        {
+          "book": "星际战士10版中文",
+          "page": 95
+        },
+        {
+          "book": "星际战士10版中文",
+          "page": 93
+        },
+        {
+          "book": "星际战士10版中文",
+          "page": 90
+        },
+        {
+          "book": "星际战士10版中文",
+          "page": 94
+        },
+        {
+          "book": "黑图书馆",
+          "page": 0
+        },
+        {
+          "book": "Core Rules - New 40K Core Rules",
+          "page": 18
+        },
+        {
+          "book": "Core Rules - New 40K Core Rules",
+          "page": 86
+        }
+      ],
+      "answer": "**仲裁者小队（Intercessor Squad）** 的防御属性如下：\n\n| 属性 | 数值 |\n|---|---|\n| **SV（护甲保护）** | **3+** |\n| **W（ wounds， wounds 值）** | **2** |\n\n完整属性行：\n\n| M | T | SV | W | LD | OC |\n|---|---|---|---|---|---|\n| 6 | 4 | **3+** | **2** | 6+ | 2 |\n\n来源：[《星际战士10版中文》第93页]\n\n补充说明：档案中另有多个名称相近的单位，其 SV/W 并不相同，请注意区分——\n\n- **重装仲裁者小队**：SV **3+**，W **3** [《星际战士10版中文》第101页]\n- **突击仲裁者小队**：SV **3+**，W **2** [《星际战士10版中文》第95页]\n- **跳跃背包突击仲裁者小队**：SV **3+**，W **2** [《星际战士10版中文》第94页]\n\n若指挥官所问为上述某一变体，请指明具体单位名称，以便精确核对。"
+    },
+    {
+      "id": 12,
+      "faction": "星际战士",
+      "question": "终结者的SV和特殊保护各是多少？",
+      "gold": "终结者小队：特殊保护=4++ SV=2+",
+      "gold_type": "stat",
+      "judged_against_gold": true,
+      "judge_method": "mechanical",
+      "verdict": "✅",
+      "judge_reason": "被问字段全部正确：INV/SV",
+      "time": "6.8s",
+      "meta": {
+        "intent": "查",
+        "tool_calls": [
+          "get_datasheet",
+          "rag_search"
+        ],
+        "degraded": true,
+        "fell_back_to_classic": true
+      },
+      "sources": [
+        {
+          "book": "星际战士10版中文",
+          "page": 109
+        },
+        {
+          "book": "太空野狼10版中文",
+          "page": 28
+        },
+        {
+          "book": "星际战士10版中文",
+          "page": 110
+        },
+        {
+          "book": "星际战士10版中文",
+          "page": 79
+        },
+        {
+          "book": "黑色圣堂",
+          "page": 25
+        },
+        {
+          "book": "死亡守卫10版中文",
+          "page": 41
+        },
+        {
+          "book": "Core Rules - New 40K Core Rules",
+          "page": 18
+        }
+      ],
+      "answer": "根据档案中多支终结者单位的兵牌数据，**SV（保护）** 与 **特殊保护** 如下：\n\n| 单位 | SV | 特殊保护 | 来源 |\n|---|---|---|---|\n| 突击终结者小队 | **2+** | **4+** | [《星际战士10版中文》第109页] |\n| 狼卫终结者 | **2+** | **4+** | [《太空野狼10版中文》第28页] |\n| 终结者小队（星际战士） | **2+** | **4+** | [《星际战士10版中文》第110页] |\n| 终结者智库 | **2+** | **4+** | [《星际战士10版中文》第79页] |\n| 终结者小队（黑色圣堂） | **2+** | **4+** | [《黑色圣堂》第25页] |\n| 死亡寿衣终结者 | **2+** | **4+** | [《死亡守卫10版中文》第41页] |\n\n**结论**：档案所列各型终结者的 **SV 均为 2+**，**特殊保护均为 4+**。\n\n补充说明（依档案原文）：\n- 部分单位通过装备改变的是 **W（耐久）** 而非保护，例如**风暴盾**使装备者 **W 变为 4** [《星际战士10版中文》第109页] [《太空野狼10版中文》第28页]。\n- 11 版核心规则中，特殊保护（Invulnerable Save）在保护投掷判定时，若结果**等于或大于**该特性值则攻击**失败** [《Core Rules - New 40K Core Rules》第18页，05.04]。\n\n档案未涉及各型终结者特殊保护数值差异的进一步说明，如需其他交互细节，建议查阅原始规则书。"
+    },
+    {
+      "id": 13,
+      "faction": "星际战士",
+      "question": "仲裁者小队的M是多少？",
+      "gold": "仲裁者小队：M=6\"",
+      "gold_type": "stat",
+      "judged_against_gold": true,
+      "judge_method": "mechanical",
+      "verdict": "✅",
+      "judge_reason": "被问字段全部正确：M",
+      "time": "5.1s",
+      "meta": {
+        "intent": "查",
+        "tool_calls": [
+          "get_datasheet"
+        ],
+        "degraded": false
+      },
+      "sources": [
+        {
+          "book": "Warhammer 40,000 Datasheet: Intercessor Squad",
+          "page": 0
+        }
+      ],
+      "answer": "仲裁者小队（Intercessor Squad，星际战士）的 **M（移动）为 6\"**。\n\n其完整属性块如下：\n\n| 属性 | 数值 |\n|---|---|\n| M | **6\"** |\n| T | 4 |\n| Sv | 3+ |\n| W | 2 |\n| Ld | 6+ |\n| OC | 2 |\n\n（底盘 32mm；5 人 80 分 / 10 人 150 分）"
+    },
+    {
+      "id": 14,
+      "faction": "星际战士",
+      "question": "地狱轰击者的等离子焚化枪有多少种射击模式？各是什么？",
+      "gold": "地狱轰击者的等离子焚化枪有两种射击模式：标准模式（S7 AP-2 D1）与过载模式（S8 AP-3 D2，过载会致命过热，命中失败时每个失败造成1点自身伤害）。原 gold 的 S8/S9 系误取「大型等离子焚化枪 Macro plasma incinerator」（救赎者无畏/处决者坦克）数据，Hellblaster 携带的是普通版。",
+      "gold_type": "ability",
+      "judged_against_gold": true,
+      "judge_method": "llm_gold",
+      "verdict": "✅",
+      "judge_reason": "✅ 系统回答准确给出两种射击模式（标准/过载）及对应S7 AP-2 D1与S8 AP-3 D2，并说明过载危险，与标准答案关键事实一致；武器名称差异不影响判定。",
+      "time": "6.3s",
+      "meta": {
+        "intent": "查",
+        "tool_calls": [
+          "get_datasheet",
+          "rag_search"
+        ],
+        "degraded": true,
+        "fell_back_to_classic": true
+      },
+      "sources": [
+        {
+          "book": "黑图书馆",
+          "page": 0
+        },
+        {
+          "book": "星际战士10版中文",
+          "page": 99
+        },
+        {
+          "book": "黑色圣堂",
+          "page": 32
+        },
+        {
+          "book": "星际战士10版中文",
+          "page": 140
+        },
+        {
+          "book": "千子军团",
+          "page": 37
+        },
+        {
+          "book": "Core Rules - New 40K Core Rules",
+          "page": 34
+        },
+        {
+          "book": "Core Rules - New 40K Core Rules",
+          "page": 81
+        }
+      ],
+      "answer": "根据档案，**地狱轰击者小队**的**等离子焚焰枪**共有 **2 种射击模式**：\n\n| 模式 | 射程 | A | BS | S | AP | D | 武器技能 |\n|---|---|---|---|---|---|---|---|\n| **标准** | 24\" | 2 | 3+ | 7 | -2 | 1 | 突击、重型 |\n| **过载** | 24\" | 2 | 3+ | 8 | -3 | 2 | 突击、重型、危险 |\n\n**说明**：该武器在**为本武器选择攻击目标之前**，需选择以上两种属性之一 [《星际战士10版中文》第99页]。\n\n**注意**：档案中该武器名称为「**等离子焚焰枪**」（非\"焚化枪\"）；「等离子焚化炮」是**处决者型反击者坦克**的武器，请勿混淆 [《星际战士10版中文》第140页]。"
+    },
+    {
+      "id": 15,
+      "faction": "星际战士",
+      "question": "剑卫老兵的近战武器S和AP是多少？",
+      "gold": "Master-crafted power weapon S=5 AP=-2 D=2",
+      "gold_type": "weapon",
+      "judged_against_gold": true,
+      "judge_method": "mechanical",
+      "verdict": "✅",
+      "judge_reason": "被问字段全部正确：S/AP",
+      "time": "5.8s",
+      "meta": {
+        "intent": "查",
+        "tool_calls": [
+          "get_datasheet",
+          "rag_search"
+        ],
+        "degraded": true,
+        "fell_back_to_classic": true
+      },
+      "sources": [
+        {
+          "book": "星际战士10版中文",
+          "page": 97
+        },
+        {
+          "book": "黑图书馆",
+          "page": 0
+        },
+        {
+          "book": "星际战士10版中文",
+          "page": 98
+        },
+        {
+          "book": "黑色圣堂",
+          "page": 24
+        },
+        {
+          "book": "星际战士10版中文",
+          "page": 32
+        },
+        {
+          "book": "星际战士10版中文",
+          "page": 89
+        },
+        {
+          "book": "Core Rules - New 40K Core Rules",
+          "page": 10
+        },
+        {
+          "book": "Core Rules - New 40K Core Rules",
+          "page": 78
+        }
+      ],
+      "answer": "**剑卫老兵小队**的近战武器数据如下：\n\n| 武器名称 | 射程 | A | WS | S | AP | D | 武器技能 |\n|---|---|---|---|---|---|---|---|\n| 精工动力武器 | 近战 | 4 | 3+ | **5** | **-2** | 2 | 无 |\n\n即：**S = 5，AP = -2**。\n\n来源：[《星际战士10版中文》第97页]（另见 [《黑图书馆》第0页] 同数据）。\n\n补充说明：档案中剑卫老兵小队仅列出这一款近战武器，未提供其他近战选项。"
+    },
+    {
+      "id": 16,
+      "faction": "星际战士",
+      "question": "侵略者的T和W各是多少？",
+      "gold": "侵略者小队：T=6 W=3",
+      "gold_type": "stat",
+      "judged_against_gold": true,
+      "judge_method": "mechanical",
+      "verdict": "✅",
+      "judge_reason": "被问字段全部正确：T/W",
+      "time": "5.5s",
+      "meta": {
+        "intent": "查",
+        "tool_calls": [
+          "get_datasheet",
+          "rag_search"
+        ],
+        "degraded": true,
+        "fell_back_to_classic": true
+      },
+      "sources": [
+        {
+          "book": "星际战士10版中文",
+          "page": 102
+        },
+        {
+          "book": "黑图书馆",
+          "page": 0
+        },
+        {
+          "book": "星际战士10版中文",
+          "page": 106
+        },
+        {
+          "book": "星际战士10版中文",
+          "page": 86
+        },
+        {
+          "book": "黑暗灵族10版中文",
+          "page": 41
+        },
+        {
+          "book": "星际战士10版中文",
+          "page": 58
+        },
+        {
+          "book": "Core Rules - New 40K Core Rules",
+          "page": 86
+        },
+        {
+          "book": "Core Rules - New 40K Core Rules",
+          "page": 20
+        }
+      ],
+      "answer": "根据档案，**侵略者小队**的耐久属性如下：\n\n| 属性 | 数值 |\n|---|---|\n| **T（韧性）** | **6** |\n| **W（ wounds /  wounds 值）** | **3** |\n\n来源：[《星际战士10版中文》第102页]（档案 1·十版·codex兵牌基底）\n\n补充说明：档案 2《黑图书馆》第0页同样记载为 **T6 / W3**，两处一致，无冲突。\n\n如需进一步核对其他属性（M5\"、SV3+、LD6+、OC1），可一并调阅。"
+    },
+    {
+      "id": 17,
+      "faction": "星际战士",
+      "question": "兰德袭击者的T、W、SV各是多少？",
+      "gold": "兰德掠袭者坦克：T=12 SV=2+ W=16",
+      "gold_type": "stat",
+      "judged_against_gold": true,
+      "judge_method": "mechanical",
+      "verdict": "✅",
+      "judge_reason": "被问字段全部正确：T/SV/W",
+      "time": "6.7s",
+      "meta": {
+        "intent": "查",
+        "tool_calls": [
+          "get_datasheet",
+          "rag_search"
+        ],
+        "degraded": true,
+        "fell_back_to_classic": true
+      },
+      "sources": [
+        {
+          "book": "星际战士10版中文",
+          "page": 137
+        },
+        {
+          "book": "星际战士10版中文",
+          "page": 138
+        },
+        {
+          "book": "星际战士10版中文",
+          "page": 136
+        },
+        {
+          "book": "混沌星际战士10版中文",
+          "page": 81
+        },
+        {
+          "book": "灰骑士中文",
+          "page": 49
+        },
+        {
+          "book": "死亡守卫10版中文",
+          "page": 48
+        },
+        {
+          "book": "Core Rules - New 40K Core Rules",
+          "page": 80
+        },
+        {
+          "book": "Core Rules - New 40K Core Rules",
+          "page": 20
+        }
+      ],
+      "answer": "根据档案中三款**兰德掠袭者**（Land Raider）系列载具的兵牌数据，其核心防御属性如下：\n\n| 型号 | T（坚韧） | W（耐伤） | SV（保护） | 来源 |\n|---|---|---|---|---|\n| **兰德掠袭者坦克** | **12** | **16** | **2+** | [《星际战士10版中文》第136页] |\n| **十字军型兰德掠袭者** | **12** | **16** | **2+** | [《星际战士10版中文》第137页] |\n| **救赎者型兰德掠袭者** | **12** | **16** | **2+** | [《星际战士10版中文》第138页] |\n\n**结论**：三款兰德掠袭者的 **T 均为 12、W 均为 16、SV 均为 2+**，防御属性完全一致。\n\n补充说明：\n- 混沌阵营的**混沌兰德掠袭者**同样为 **T12 / W16 / SV2+** [《混沌星际战士10版中文》第81页] [《死亡守卫10版中文》第48页]。\n- 灰骑士的**十字军型兰德掠袭者战车**亦为 **T12 / W16 / SV2+** [《灰骑士中文》第49页]。\n\n各型号差异主要体现在 **M（移动）** 与武器配置上，而非防御属性。"
+    },
+    {
+      "id": 18,
+      "faction": "星际战士",
+      "question": "药剂师的能力是什么？",
+      "gold": "药剂师 Apothecary 的能力：为所在单位提供医疗/复活支援（每回合尝试复活一个本回合被消灭的非人物模型/恢复伤口）。",
+      "gold_type": "ability",
+      "judged_against_gold": true,
+      "judge_method": "llm_gold",
+      "verdict": "✅",
+      "judge_reason": "✅ 理由：系统回答明确给出「医疗工具：所领导单位每指挥阶段可复活一个被消灭的非人物模型」，与标准答案的复活支援要点一致，且额外属性/武器信息不扣分。",
+      "time": "6.5s",
+      "meta": {
+        "intent": "查",
+        "tool_calls": [
+          "get_entity"
+        ],
+        "degraded": false
+      },
+      "sources": [
+        {
+          "book": "官方结构库 db/wh40k.sqlite（Wahapedia 11版镜像 + MFM 官方点数）",
+          "page": 0
+        }
+      ],
+      "answer": "**药剂师（Apothecary）** 是星际战士阵营的人物单位，1 个模型 **40 分** [《官方结构库 db/wh40k.sqlite（Wahapedia 11版镜像 + MFM 官方点数）》]。\n\n**属性**\n\n| 模型 | M | T | Sv | W | Ld | OC |\n|---|---|---|---|---|---|---|\n| Apothecary | 6\" | 4 | 3+ | 4 | 6+ | 1 |\n\n**武器**\n\n| 武器 | 射程 | A | BS/WS | S | AP | D | 技能 |\n|---|---|---|---|---|---|---|---|\n| 赦免者爆弹手枪 | 18\" | 1 | 3+ | 5 | -1 | 2 | 手枪 |\n| 还原者手枪 | 3\" | 1 | 3+ | 4 | -4 | 2 | 手枪 |\n| 格斗武器 | 近战 | 4 | 3+ | 4 | 0 | 1 | — |\n\n**技能**\n- **【阵营技能】破敌重誓**（Oath of Moment）\n- **医疗工具**：本模型所领导的单位在每个你的指挥阶段中，可以复活一个被消灭的非人物模型。\n- **回收基因种子**：当本模型的保镖单位被消灭时，投 D6，2+ 则你获得 1 点 CP。\n\n**关键词**：Adeptus Astartes；Tacticus、Apothecary、Infantry、Character、Grenades、Imperium。\n\n简言之，药剂师的核心价值是**带队复活模型**（续航）与**保镖阵亡时回收 CP**，本身火力很弱，属于支援型人物。"
+    },
+    {
+      "id": 19,
+      "faction": "星际战士",
+      "question": "连长给所在单位提供什么招牌技能？",
+      "gold": "连长 Captain 光环/招牌技能「战斗之仪（Rites of Battle）」：每个游戏大回合一次，军队中最多一个拥有此技能的单位，对其所在单位使用战略技能时减少1点CP消耗（处于预备队亦生效）。",
+      "gold_type": "ability",
+      "judged_against_gold": true,
+      "judge_method": "llm_gold",
+      "verdict": "✅",
+      "judge_reason": "✅ 理由：系统回答准确覆盖了标准答案中「战斗之仪」的核心要点（每大回合一次、最多一个单位、对所在单位使用战略技能减1CP、预备队亦生效），并额外补充了其他技能与属性，多给信息不扣分。",
+      "time": "12.3s",
+      "meta": {
+        "intent": "查",
+        "tool_calls": [
+          "get_entity"
+        ],
+        "degraded": false
+      },
+      "sources": [
+        {
+          "book": "官方结构库 db/wh40k.sqlite（Wahapedia 11版镜像 + MFM 官方点数）",
+          "page": 0
+        }
+      ],
+      "answer": "连长（Captain）的招牌技能主要有两个：\n\n- **战斗之仪**：每个游戏大回合一次，你的军队中最多一个拥有此技能的单位对自身所在单位使用一个战略技能时，可以减少 1 点 CP 消耗（本模型处于预备队中亦可生效）。这是连长最经典的「带队省 CP」光环型技能 [《官方结构库》连长条目]。\n- **巅峰时刻**：每场游戏一次，近战阶段开始时可以使用，让本模型装备的近战武器 A+3 并获得【毁灭伤害】特效，持续本阶段 [《官方结构库》连长条目]。\n\n此外连长还带有星际战士阵营技能 **破敌重誓** [《官方结构库》连长条目]。\n\n补充：连长本身是 1 模型 80 分，M 6\"、T 4、Sv 3+（含 4+ 特殊保护）、W 5、Ld 6+、OC 1 [《官方结构库》连长条目]。"
+    },
+    {
+      "id": 20,
+      "faction": "星际战士",
+      "question": "仲裁者的OC是多少？",
+      "gold": "仲裁者小队：OC=2",
+      "gold_type": "stat",
+      "judged_against_gold": true,
+      "judge_method": "mechanical",
+      "verdict": "✅",
+      "judge_reason": "被问字段全部正确：OC",
+      "time": "5.7s",
+      "meta": {
+        "intent": "查",
+        "tool_calls": [
+          "get_datasheet",
+          "rag_search"
+        ],
+        "degraded": true,
+        "fell_back_to_classic": true
+      },
+      "sources": [
+        {
+          "book": "星际战士10版中文",
+          "page": 101
+        },
+        {
+          "book": "星际战士10版中文",
+          "page": 95
+        },
+        {
+          "book": "星际战士10版中文",
+          "page": 93
+        },
+        {
+          "book": "星际战士10版中文",
+          "page": 94
+        },
+        {
+          "book": "星际战士10版中文",
+          "page": 90
+        },
+        {
+          "book": "黑图书馆",
+          "page": 0
+        },
+        {
+          "book": "Core Rules - New 40K Core Rules",
+          "page": 52
+        }
+      ],
+      "answer": "**仲裁者小队（Intercessor Squad）的 OC 为 2。**\n\n| M | T | SV | W | LD | OC |\n|---|---|---|---|---|---|\n| 6 | 4 | 3+ | 2 | 6+ | **2** |\n\n[《星际战士10版中文》第93页]\n\n补充说明：档案中另有一支名称相近的**重装仲裁者小队**，其 OC 同样为 **2**（M5 / T6 / SV3+ / W3 / LD6+ / OC2）[《星际战士10版中文》第101页]。若指挥官指的是该单位，数值一致。"
+    },
+    {
+      "id": 21,
+      "faction": "混沌",
+      "question": "阿巴顿的W和SV各是多少？",
+      "gold": "大掠夺者阿巴顿：SV=2+ W=9",
+      "gold_type": "stat",
+      "judged_against_gold": true,
+      "judge_method": "mechanical",
+      "verdict": "✅",
+      "judge_reason": "被问字段全部正确：SV/W",
+      "time": "6.2s",
+      "meta": {
+        "intent": "查",
+        "tool_calls": [
+          "get_datasheet"
+        ],
+        "degraded": false
+      },
+      "sources": [
+        {
+          "book": "混沌星际战士 兵牌（Abaddon The Despoiler）",
+          "page": 0
+        }
+      ],
+      "answer": "大掠夺者阿巴顿（Abaddon The Despoiler，混沌星际战士）的防御属性：\n\n| 属性 | 数值 |\n|---|---|\n| M（移动） | 5\" |\n| T（韧性） | 5 |\n| **Sv（保护）** | **2+** |\n| 特殊保护 | 4+ |\n| **W（ wounds 生命值）** | **9** |\n| Ld（领导力） | 5+ |\n| OC（控制值） | 4 |\n\n即 **W = 9，Sv = 2+**（另有 4+ 特殊保护）。\n\n补充：该模型点数 295 分（1 模型），底盘 60mm [《混沌星际战士 兵牌》大掠夺者阿巴顿]。"
+    },
+    {
+      "id": 22,
+      "faction": "混沌",
+      "question": "混沌终结者的SV是多少？",
+      "gold": "混沌终结者：SV=2+",
+      "gold_type": "stat",
+      "judged_against_gold": true,
+      "judge_method": "mechanical",
+      "verdict": "✅",
+      "judge_reason": "被问字段全部正确：SV",
+      "time": "6.9s",
+      "meta": {
+        "intent": "查",
+        "tool_calls": [
+          "get_datasheet"
+        ],
+        "degraded": false
+      },
+      "sources": [
+        {
+          "book": "Chaos Space Marines 兵牌（Chaos Terminator Squad）",
+          "page": 0
+        }
+      ],
+      "answer": "**混沌终结者（Chaos Terminator Squad）的 Sv 为 2+**，另有 **4+ 特殊保护（Invulnerable Save）**。\n\n| 属性 | 数值 |\n|---|---|\n| M | 5\" |\n| T | 5 |\n| **Sv** | **2+** |\n| 特殊保护 | 4+ |\n| W | 3 |\n| Ld | 6+ |\n| OC | 1 |\n\n⚠️ 消歧说明：库中「混沌终结者」存在同名跨阵营兵牌。以上为 **Chaos Space Marines（CSM，混沌星际战士）** 阵营的 Chaos Terminator Squad（unit_id 000000947，5 模型 175 分）。另有 **CD（混沌恶魔）** 阵营的同名兵牌 Chaos Terminator Squad (CD)，其数值可能不同，本次未展开——若你问的是该阵营版本请告知。\n\n来源：结构库兵牌（属性字段），点数经 MFM 溯源同步 [《Chaos Space Marines 兵牌》Chaos Terminator Squad 条目]。"
+    },
+    {
+      "id": 23,
+      "faction": "混沌",
+      "question": "混沌教徒的M和T各是多少？",
+      "gold": "Cultist Mob：M=6\" T=3",
+      "gold_type": "stat",
+      "judged_against_gold": true,
+      "judge_method": "mechanical",
+      "verdict": "✅",
+      "judge_reason": "被问字段全部正确：M/T",
+      "time": "6.5s",
+      "meta": {
+        "intent": "查",
+        "tool_calls": [
+          "get_datasheet"
+        ],
+        "degraded": false
+      },
+      "sources": [
+        {
+          "book": "Warhammer 40,000 结构库兵牌（Cultist Mob / CSM）",
+          "page": 0
+        }
+      ],
+      "answer": "「混沌教徒」（官方中文兵牌名：**邪教徒 / Cultist Mob**）的 **M = 6\"**，**T = 3**。\n\n完整属性行（混沌星际战士阵营）：\n\n| M | T | Sv | W | Ld | OC |\n|---|---|---|---|---|---|\n| 6\" | **3** | 6+ | 1 | 7+ | 1 |\n\n⚠️ 消歧说明：库中「Cultist Mob」这个名字存在多张分属不同阵营的独立兵牌（CSM / CD / QT）。以上数值取自 **混沌星际战士（CSM）** 的〈邪教徒〉（unit_id 000000946，10 模型 50 分 / 20 模型 90 分）。若你问的是其他阵营的同名单位，数值可能不同，请告知阵营我再回查。\n\n来源：结构库兵牌（点数经 MFM 溯源同步）。"
+    },
+    {
+      "id": 24,
+      "faction": "混沌",
+      "question": "恶魔亲王的特殊保护是多少？",
+      "gold": "阿斯塔特叛军恶魔亲王：特殊保护=4++",
+      "gold_type": "stat",
+      "judged_against_gold": true,
+      "judge_method": "mechanical",
+      "verdict": "✅",
+      "judge_reason": "被问字段全部正确：INV",
+      "time": "8.0s",
+      "meta": {
+        "intent": "查",
+        "tool_calls": [
+          "get_datasheet",
+          "rag_search"
+        ],
+        "degraded": true,
+        "fell_back_to_classic": true
+      },
+      "sources": [
+        {
+          "book": "死亡守卫10版中文",
+          "page": 25
+        },
+        {
+          "book": "死亡守卫10版中文",
+          "page": 26
+        },
+        {
+          "book": "帝皇之子10版中文",
+          "page": 26
+        },
+        {
+          "book": "帝皇之子10版中文",
+          "page": 27
+        },
+        {
+          "book": "千子军团",
+          "page": 27
+        },
+        {
+          "book": "混沌星际战士10版中文",
+          "page": 47
+        },
+        {
+          "book": "Universal Rules Updates",
+          "page": 1
+        },
+        {
+          "book": "Core Rules - New 40K Core Rules",
+          "page": 22
+        }
+      ],
+      "answer": "根据档案中的兵牌数据，各阵营**恶魔亲王**的特殊保护如下：\n\n| 恶魔亲王 | 特殊保护 | 来源 |\n|---|---|---|\n| 纳垢恶魔亲王 | **4+特殊保护** | [《死亡守卫10版中文》第25页] |\n| 纳垢带翼恶魔亲王 | **4+特殊保护** | [《死亡守卫10版中文》第26页] |\n| 色孽恶魔亲王 | **4+特殊保护** | [《帝皇之子10版中文》第26页] |\n| 有翼色孽恶魔亲王 | **4+特殊保护** | [《帝皇之子10版中文》第27页] |\n| 奸奇恶魔亲王 | **4+特殊保护** | [《千子军团》第27页] |\n| 阿斯塔特叛军恶魔亲王 | **4+特殊保护** | [《混沌星际战士10版中文》第47页] |\n\n**结论**：档案中全部六种恶魔亲王均拥有 **4+特殊保护**。\n\n补充说明：以上均为【十版·codex兵牌基底】数据，档案中未提供 11 版针对该技能的改动条文，故按原兵牌引用。"
+    },
+    {
+      "id": 25,
+      "faction": "混沌",
+      "question": "吞世者的地狱兽的M和T各是多少？",
+      "gold": "地狱兽（吞世者 World Eaters）：M=9\" T=9",
+      "gold_type": "stat",
+      "judged_against_gold": true,
+      "judge_method": "mechanical",
+      "verdict": "✅",
+      "judge_reason": "被问字段全部正确：M/T",
+      "time": "6.0s",
+      "meta": {
+        "intent": "查",
+        "tool_calls": [
+          "get_datasheet"
+        ],
+        "degraded": false
+      },
+      "sources": [
+        {
+          "book": "Warhammer 40,000 Faction Pack: World Eaters (Helbrute Datasheet)",
+          "page": 0
+        }
+      ],
+      "answer": "吞世者（World Eaters）的**地狱兽（Helbrute）**：\n\n| 属性 | 数值 |\n|---|---|\n| **M（移动）** | **9\"** |\n| **T（坚韧）** | **9** |\n\n顺带附上同一条兵牌的其他关键属性：Sv 2+、W 8、Ld 6+、OC 3，底盘 60mm，点数 120 分（1 模型）。\n\n来源：吞世者阵营 Helbrute 兵牌数据块。"
+    },
+    {
+      "id": 26,
+      "faction": "混沌",
+      "question": "混沌犀牛的T和SV各是多少？",
+      "gold": "Chaos Rhino：T=9 SV=3+",
+      "gold_type": "stat",
+      "judged_against_gold": true,
+      "judge_method": "mechanical",
+      "verdict": "✅",
+      "judge_reason": "被问字段全部正确：T/SV",
+      "time": "8.0s",
+      "meta": {
+        "intent": "查",
+        "tool_calls": [
+          "get_datasheet",
+          "rag_search"
+        ],
+        "degraded": true,
+        "fell_back_to_classic": true
+      },
+      "sources": [
+        {
+          "book": "吞世者10版中文",
+          "page": 35
+        },
+        {
+          "book": "黑图书馆",
+          "page": 0
+        },
+        {
+          "book": "6月4日分数中文",
+          "page": 39
+        },
+        {
+          "book": "混沌星际战士10版中文",
+          "page": 86
+        },
+        {
+          "book": "6月4日分数中文",
+          "page": 15
+        },
+        {
+          "book": "帝皇之子10版中文",
+          "page": 34
+        },
+        {
+          "book": "Core Rules - New 40K Core Rules",
+          "page": 22
+        },
+        {
+          "book": "Core Rules - New 40K Core Rules",
+          "page": 20
+        }
+      ],
+      "answer": "**混沌犀牛（Chaos Rhino）的 T 与 SV 如下：**\n\n| 属性 | 数值 |\n|---|---|\n| **T（韧性）** | **9** |\n| **SV（保护）** | **3+** |\n\n**来源说明：**\n\n- **吞世者阵营**：M12 / T9 / SV3+ / W10 / LD6+ / OC2 [《吞世者10版中文》第35页]\n- **混沌星际战士阵营**：M12 / T9 / SV3+ / W10 / LD6+ / OC2 [《混沌星际战士10版中文》第86页]\n- **帝皇之子阵营**：M12 / T9 / SV3+ / W10 / LD6+ / OC2 [《帝皇之子10版中文》第34页]\n\n三个阵营的犀牛底盘数据一致，**T9、SV3+** 为通用值。\n\n**补充提示**：档案 2《黑图书馆》第0页中另列有一组\"犀牛装甲车\"数据（T9 SV3+ 与 T4 SV6+ 两行并列），该条目所属为混沌星际战士且格式异常，与上述三份 codex 兵牌存在出入。若指挥官需要以该档案为准，请明确指定，否则建议采用三份阵营 codex 的一致数据。"
+    },
+    {
+      "id": 27,
+      "faction": "混沌",
+      "question": "纳垢瘟疫战士的T是多少？",
+      "gold": "瘟疫战士：T=6",
+      "gold_type": "stat",
+      "judged_against_gold": true,
+      "judge_method": "mechanical",
+      "verdict": "✅",
+      "judge_reason": "被问字段全部正确：T",
+      "time": "6.4s",
+      "meta": {
+        "intent": "查",
+        "tool_calls": [
+          "get_datasheet",
+          "rag_search"
+        ],
+        "degraded": true,
+        "fell_back_to_classic": true
+      },
+      "sources": [
+        {
+          "book": "死亡守卫10版中文",
+          "page": 37
+        },
+        {
+          "book": "混沌星际战士10版中文",
+          "page": 62
+        },
+        {
+          "book": "死亡守卫10版中文",
+          "page": 57
+        },
+        {
+          "book": "黑图书馆",
+          "page": 0
+        },
+        {
+          "book": "死亡守卫10版中文",
+          "page": 36
+        },
+        {
+          "book": "死亡守卫10版中文",
+          "page": 33
+        },
+        {
+          "book": "Core Rules - New 40K Core Rules",
+          "page": 83
+        },
+        {
+          "book": "Core Rules - New 40K Core Rules",
+          "page": 86
+        }
+      ],
+      "answer": "**瘟疫战士的 T（坚韧）为 6。**\n\n依据档案数据：\n\n| 属性 | M | T | SV | W | LD | OC |\n|---|---|---|---|---|---|---|\n| 瘟疫战士 | 5 | **6** | 3+ | 2 | 6+ | 2 |\n\n来源：[《死亡守卫10版中文》第37页]；[《混沌星际战士10版中文》第62页]\n\n补充说明：档案 4《黑图书馆》第0页中另列有一行 **T4** 的\"瘟疫战士\"数据，但该档案未标注版本层标签，且与两份 codex 兵牌基底（T6）冲突。按档案优先级，**以 codex 兵牌基底的 T6 为准**。"
+    },
+    {
+      "id": 28,
+      "faction": "混沌",
+      "question": "千子圣甲虫终结者的SV是多少？",
+      "gold": "圣甲虫终结者：SV=2+",
+      "gold_type": "stat",
+      "judged_against_gold": true,
+      "judge_method": "mechanical",
+      "verdict": "✅",
+      "judge_reason": "被问字段全部正确：SV",
+      "time": "8.0s",
+      "meta": {
+        "intent": "查",
+        "tool_calls": [
+          "get_datasheet",
+          "rag_search"
+        ],
+        "degraded": true,
+        "fell_back_to_classic": true
+      },
+      "sources": [
+        {
+          "book": "千子军团",
+          "page": 32
+        },
+        {
+          "book": "黑图书馆",
+          "page": 0
+        },
+        {
+          "book": "太空死灵规则",
+          "page": 54
+        },
+        {
+          "book": "6月4日分数中文",
+          "page": 36
+        },
+        {
+          "book": "千子军团",
+          "page": 25
+        },
+        {
+          "book": "千子军团",
+          "page": 45
+        },
+        {
+          "book": "Core Rules - New 40K Core Rules",
+          "page": 83
+        },
+        {
+          "book": "Core Rules - New 40K Core Rules",
+          "page": 80
+        }
+      ],
+      "answer": "根据档案，千子**圣甲虫终结者**的 **SV（保护）为 2+**。\n\n| 模型 | M | T | SV | W | LD | OC |\n|---|---|---|---|---|---|---|\n| 圣甲虫终结者 | 5 | 5 | **2+** | 3 | 7+ | 1 |\n| 圣甲虫巫师 | 5 | 5 | **2+** | 4 | 6+ | 1 |\n\n[《千子军团》第32页]\n\n补充：该单位中的模型还拥有 **4+特殊保护**（特殊保护技能）[《千子军团》第32页]。"
+    },
+    {
+      "id": 29,
+      "faction": "死亡守卫",
+      "question": "瘟疫战士的T和特殊保护各是多少？",
+      "gold": "瘟疫战士：特殊保护=无 T=6",
+      "gold_type": "stat",
+      "judged_against_gold": true,
+      "judge_method": "mechanical",
+      "verdict": "✅",
+      "judge_reason": "被问字段全部正确：INV/T",
+      "time": "6.3s",
+      "meta": {
+        "intent": "查",
+        "tool_calls": [
+          "get_datasheet"
+        ],
+        "degraded": false
+      },
+      "sources": [
+        {
+          "book": "Death Guard 兵牌（Plague Marines）",
+          "page": 0
+        }
+      ],
+      "answer": "**瘟疫战士（Plague Marines，死亡守卫）** 的防御属性：\n\n| 属性 | 数值 |\n|---|---|\n| M（移动） | 5\" |\n| **T（韧性）** | **6** |\n| Sv（保护） | 3+ |\n| **特殊保护（Invuln）** | **无（-）** |\n| W（ wounds） | 2 |\n| Ld（领导） | 6+ |\n| OC（目标控制） | 2 |\n\n即：**T=6，没有特殊保护（无 Invulnerable Save）**，只靠 3+ 普通保护。\n\n补充：该单位为 5 模型 90 分 / 7 模型 125 分 / 10 模型 180 分，关键词含 Battleline、Infantry、Nurgle、Chaos [《Death Guard 兵牌》瘟疫战士条目]。"
+    },
+    {
+      "id": 30,
+      "faction": "死亡守卫",
+      "question": "莫塔里安的W是多少？",
+      "gold": "莫塔里安：W=16",
+      "gold_type": "stat",
+      "judged_against_gold": true,
+      "judge_method": "mechanical",
+      "verdict": "✅",
+      "judge_reason": "被问字段全部正确：W",
+      "time": "6.2s",
+      "meta": {
+        "intent": "查",
+        "tool_calls": [
+          "get_datasheet"
+        ],
+        "degraded": false
+      },
+      "sources": [
+        {
+          "book": "死亡守卫 兵牌（结构库）",
+          "page": 0
+        }
+      ],
+      "answer": "**莫塔里安（Mortarion）的 W（Wounds，耐久）为 16。**\n\n其完整属性块如下：\n\n| 属性 | 数值 |\n|---|---|\n| M（移动） | 10\" |\n| T（坚韧） | 12 |\n| Sv（保护） | 2+ |\n| 特殊保护 | 4+ |\n| **W（耐久）** | **16** |\n| Ld（领导） | 5+ |\n| OC（目标控制） | 6 |\n| 底盘 | 100mm |\n\n补充：莫塔里安为死亡守卫（Death Guard）的史诗英雄，点数 375 分（1 模型）。其「严重损伤」能力在 W 值降至 1–6 时触发，攻击命中结果 -1。"
+    },
+    {
+      "id": 31,
+      "faction": "死亡守卫",
+      "question": "死亡寿衣终结者的SV是多少？",
+      "gold": "死亡寿衣终结者：SV=2+",
+      "gold_type": "stat",
+      "judged_against_gold": true,
+      "judge_method": "mechanical",
+      "verdict": "✅",
+      "judge_reason": "被问字段全部正确：SV",
+      "time": "5.6s",
+      "meta": {
+        "intent": "查",
+        "tool_calls": [
+          "get_datasheet"
+        ],
+        "degraded": false
+      },
+      "sources": [
+        {
+          "book": "Deathshroud Terminators 兵牌（Death Guard）",
+          "page": 0
+        }
+      ],
+      "answer": "死亡寿衣终结者（Deathshroud Terminators，死亡守卫）的**保护值为 Sv 2+**，并附带 **4+ 特殊保护（Invulnerable Save）**。\n\n| 属性 | 数值 |\n|---|---|\n| M | 5\" |\n| T | 7 |\n| **Sv** | **2+** |\n| 特殊保护 | 4+ |\n| W | 4 |\n| Ld | 6+ |\n| OC | 1 |\n\n（3 模型 160 分 / 6 模型 305 分）[《Deathshroud Terminators 兵牌》]\n\n注：该兵牌属性来自既有结构库，点数已与 MFM 同步；若需确认最新补丁下的完整规则效果，建议同时核对最新 Faction Pack。"
+    },
+    {
+      "id": 32,
+      "faction": "死亡守卫",
+      "question": "瘟疫机蜂（Foetid Bloat-drone）的M是多少？",
+      "gold": "瘟疫机蜂：M=10\"",
+      "gold_type": "stat",
+      "judged_against_gold": true,
+      "judge_method": "mechanical",
+      "verdict": "✅",
+      "judge_reason": "被问字段全部正确：M",
+      "time": "5.4s",
+      "meta": {
+        "intent": "查",
+        "tool_calls": [
+          "get_datasheet"
+        ],
+        "degraded": false
+      },
+      "sources": [
+        {
+          "book": "Death Guard Datasheet - Foetid Bloat-drone",
+          "page": 0
+        }
+      ],
+      "answer": "瘟疫机蜂（Foetid Bloat-drone，死亡守卫）的 **M 为 10\"**。\n\n| 属性 | 数值 |\n|---|---|\n| M | **10\"** |\n| T | 9 |\n| Sv | 3+（含 5+ 无敌豁免） |\n| W | 10 |\n| Ld | 6+ |\n| OC | 3 |\n| 底盘 | 60mm |\n\n该单位点数 100 分（1 模型）。[《死亡守卫 兵牌》瘟疫机蜂条目]"
+    },
+    {
+      "id": 33,
+      "faction": "吞世者",
+      "question": "卡恩的W和SV各是多少？",
+      "gold": "背叛者卡恩：SV=3+ W=5",
+      "gold_type": "stat",
+      "judged_against_gold": true,
+      "judge_method": "mechanical",
+      "verdict": "✅",
+      "judge_reason": "被问字段全部正确：SV/W",
+      "time": "6.3s",
+      "meta": {
+        "intent": "查",
+        "tool_calls": [
+          "get_datasheet",
+          "rag_search"
+        ],
+        "degraded": true,
+        "fell_back_to_classic": true
+      },
+      "sources": [
+        {
+          "book": "吞世者10版中文",
+          "page": 21
+        },
+        {
+          "book": "6月4日分数中文",
+          "page": 39
+        },
+        {
+          "book": "艾达灵族10版中文",
+          "page": 73
+        },
+        {
+          "book": "Faction Pack Aeldari",
+          "page": 18
+        },
+        {
+          "book": "艾达灵族10版中文",
+          "page": 130
+        },
+        {
+          "book": "艾达灵族10版中文",
+          "page": 23
+        },
+        {
+          "book": "Core Rules - New 40K Core Rules",
+          "page": 78
+        },
+        {
+          "book": "Core Rules - New 40K Core Rules",
+          "page": 10
+        }
+      ],
+      "answer": "根据档案 1（十版·codex 兵牌基底）《吞世者10版中文》第21页，**背叛者卡恩**的耐久属性如下：\n\n| 属性 | 数值 |\n|---|---|\n| **W（Wounds， wounds）** | **5** |\n| **SV（Save，保护）** | **3+** |\n\n补充说明：\n- 该模型另有 **4+ 特殊保护**（技能「特殊保护」）[《吞世者10版中文》第21页]。\n- 档案中未提供 11 版对卡恩耐久属性的修订数据，故此处引用十版兵牌基底数据。"
+    },
+    {
+      "id": 34,
+      "faction": "吞世者",
+      "question": "狂战士的M和T各是多少？",
+      "gold": "恐虐狂战士：M=8\" T=4",
+      "gold_type": "stat",
+      "judged_against_gold": true,
+      "judge_method": "mechanical",
+      "verdict": "✅",
+      "judge_reason": "被问字段全部正确：M/T",
+      "time": "6.9s",
+      "meta": {
+        "intent": "查",
+        "tool_calls": [
+          "get_datasheet",
+          "rag_search"
+        ],
+        "degraded": true,
+        "fell_back_to_classic": true
+      },
+      "sources": [
+        {
+          "book": "混沌星际战士10版中文",
+          "page": 65
+        },
+        {
+          "book": "吞世者10版中文",
+          "page": 28
+        },
+        {
+          "book": "沃坦联盟",
+          "page": 36
+        },
+        {
+          "book": "黑图书馆",
+          "page": 0
+        },
+        {
+          "book": "6月4日分数中文",
+          "page": 39
+        },
+        {
+          "book": "吞世者10版中文",
+          "page": 4
+        },
+        {
+          "book": "Core Rules - New 40K Core Rules",
+          "page": 83
+        },
+        {
+          "book": "Core Rules - New 40K Core Rules",
+          "page": 56
+        }
+      ],
+      "answer": "**恐虐狂战士（Khorne Berzerkers）的 M 与 T：**\n\n| 属性 | 数值 |\n|---|---|\n| **M（移动）** | **8\"** |\n| **T（坚韧）** | **4** |\n\n来源：[《混沌星际战士10版中文》第65页]、[《吞世者10版中文》第28页]、[《黑图书馆》第0页] 三处兵牌数据一致。\n\n**补充说明（避免混淆）：**\n- 档案中另有一个名称相近的单位——**沃坦联盟的「深岩狂战士」**，其 **M 6\"、T 6**，与恐虐狂战士并非同一单位 [《沃坦联盟》第36页]。\n- 若您问的是该单位的完整属性线，恐虐狂战士为：**M 8\" / T 4 / SV 3+ / W 2 / LD 6+ / OC 2** [《混沌星际战士10版中文》第65页]。\n\n档案未涉及 11 版核心规则对该兵牌属性的任何修改，故按现行合法的十版兵牌基底数据引用。"
+    },
+    {
+      "id": 35,
+      "faction": "吞世者",
+      "question": "八缚者的S和AP是多少？",
+      "gold": "Chainblades S=8 AP=-2 D=2",
+      "gold_type": "weapon",
+      "judged_against_gold": true,
+      "judge_method": "mechanical",
+      "verdict": "✅",
+      "judge_reason": "被问字段全部正确：S/AP",
+      "time": "7.3s",
+      "meta": {
+        "intent": "查",
+        "tool_calls": [
+          "get_datasheet"
+        ],
+        "degraded": false
+      },
+      "sources": [
+        {
+          "book": "吞世者兵牌（World Eaters Datasheet）",
+          "page": 0
+        }
+      ],
+      "answer": "八缚者（Eightbound，吞世者阵营）的近战武器**链锯刃（Chainblades）**：\n\n| 武器 | 类型 | A | WS | **S** | **AP** | D |\n|---|---|---|---|---|---|---|\n| 链锯刃 | 近战 | 5 | 3+ | **8** | **-2** | 2 |\n\n所以 **S = 8，AP = -2**。\n\n补充：该单位 3 模型 125 分 / 6 模型 255 分，M10\"、T6、Sv3+（5+ 特保）、W3、Ld6+、OC1 [《吞世者兵牌》八缚者条目]。"
+    },
+    {
+      "id": 36,
+      "faction": "吞世者",
+      "question": "安格隆的W是多少？",
+      "gold": "安格隆：W=16",
+      "gold_type": "stat",
+      "judged_against_gold": true,
+      "judge_method": "mechanical",
+      "verdict": "✅",
+      "judge_reason": "被问字段全部正确：W",
+      "time": "6.1s",
+      "meta": {
+        "intent": "查",
+        "tool_calls": [
+          "get_datasheet"
+        ],
+        "degraded": false
+      },
+      "sources": [
+        {
+          "book": "Warhammer 40,000 Faction Pack: World Eaters — Angron 兵牌",
+          "page": 0
+        }
+      ],
+      "answer": "**安格隆（Angron）的 W（耐伤）为 16。**\n\n完整属性块：\n\n| 属性 | 数值 |\n|---|---|\n| M | 14\" |\n| T | 11 |\n| Sv | 2+（另有 4+ 特殊保护） |\n| **W** | **16** |\n| Ld | 5+ |\n| OC | 6 |\n| 底盘 | 100mm |\n\n补充：安格隆属吞世者（World Eaters），点数 330 分（1 模型）。其「鲜血重生」技能被摧毁后可消耗 3 枚 6 复活，以剩余 8 点耐伤重新部署 [《吞世者 兵牌》安格隆条目]。"
+    },
+    {
+      "id": 37,
+      "faction": "兽人",
+      "question": "兽人小子的T和SV各是多少？",
+      "gold": "小子：T=5 SV=5+",
+      "gold_type": "stat",
+      "judged_against_gold": true,
+      "judge_method": "mechanical",
+      "verdict": "✅",
+      "judge_reason": "被问字段全部正确：T/SV",
+      "time": "7.4s",
+      "meta": {
+        "intent": "查",
+        "tool_calls": [
+          "get_datasheet"
+        ],
+        "degraded": false
+      },
+      "sources": [
+        {
+          "book": "Orks Datasheet - Boyz",
+          "page": 0
+        }
+      ],
+      "answer": "兽人小子（Boyz）的 **T（坚韧）= 5**，**Sv（保护）= 5+**。\n\n| 模型 | M | T | Sv | W | Ld | OC |\n|---|---|---|---|---|---|---|\n| 小子（BOY） | 6\" | **5** | **5+** | 1 | 7+ | 2 |\n| 头目老大（BOSS NOB） | 6\" | **5** | **5+** | 2 | 7+ | 2 |\n\n两种模型（普通小子与头目老大）的 T 和 Sv 相同，均为 T5 / 5+，且都没有特殊保护（invuln 为「-」）。\n\n补充：该单位 10 模型 90 分、20 模型 180 分 [《MFM》2026-09-14 同步]。"
+    },
+    {
+      "id": 38,
+      "faction": "兽人",
+      "question": "战争老大的W是多少？",
+      "gold": "战争头目：W=6",
+      "gold_type": "stat",
+      "judged_against_gold": true,
+      "judge_method": "mechanical",
+      "verdict": "✅",
+      "judge_reason": "被问字段全部正确：W",
+      "time": "6.3s",
+      "meta": {
+        "intent": "查",
+        "tool_calls": [
+          "get_datasheet"
+        ],
+        "degraded": false
+      },
+      "sources": [
+        {
+          "book": "Warhammer 40,000 Datasheet: Warboss (Orks)",
+          "page": 0
+        },
+        {
+          "book": "Munitorum Field Manual (MFM)",
+          "page": 0
+        }
+      ],
+      "answer": "**战争头目（Warboss）的 W（Wounds，耐久）为 6。**\n\n完整属性行：\n\n| M | T | Sv | W | Ld | OC |\n|---|---|---|---|---|---|\n| 6\" | 5 | 4+ | **6** | 6+ | 1 |\n\n（另有 5+ 特殊保护；底盘 40mm）[《Orks 兵牌 · Warboss》]\n\n补充：该单位点数 100 分（1 模型）[MFM 官方点数库]。"
+    },
+    {
+      "id": 40,
+      "faction": "兽人",
+      "question": "战斗堡垒的T和W是多少？",
+      "gold": "战斗堡垒：T=10 W=16",
+      "gold_type": "stat",
+      "judged_against_gold": true,
+      "judge_method": "mechanical",
+      "verdict": "✅",
+      "judge_reason": "被问字段全部正确：T/W",
+      "time": "6.7s",
+      "meta": {
+        "intent": "查",
+        "tool_calls": [
+          "get_datasheet"
+        ],
+        "degraded": false
+      },
+      "sources": [
+        {
+          "book": "Warhammer 40,000 结构库兵牌（Battlewagon）",
+          "page": 0
+        },
+        {
+          "book": "Munitorum Field Manual (MFM)",
+          "page": 0
+        }
+      ],
+      "answer": "**战斗堡垒（Battlewagon，欧克蛮人）** 的耐久属性为：\n\n| 属性 | 数值 |\n|---|---|\n| M（移动） | 10\" |\n| **T（韧性）** | **10** |\n| Sv（保护） | 3+（另有 6+ 特殊保护） |\n| **W（ wounds）** | **16** |\n| Ld（领导） | 7+ |\n| OC（目标控制） | 5 |\n\n即 **T=10、W=16**。\n\n补充：该单位点数 150 分（1 模型），关键词为 Battlewagon / Vehicle / Transport，底盘标注「Use model」（黑图书馆中文层写作「外壳」，以官方英文属性块为准）。\n\n来源：结构库兵牌（Battlewagon，unit_id 000000039），点数经 MFM 溯源同步。"
+    },
+    {
+      "id": 41,
+      "faction": "兽人",
+      "question": "兽人小子（Boyz）是什么单位？有什么能力？",
+      "gold": "兽人「小子 Boyz」步兵单位。招牌技能：WAAAGH!（阵营技能）+「抢好东西去」——指挥阶段结束时若在你占领的目标点范围内，即使范围内已无你的模型仍算你占领，直至敌方占领；另有「保镖 Bodyguard」——起始编制 20 人时可同时附加至多两个领袖单位（11版 Orks Faction Pack 勘误：其中之一须为 WARBOSS；该单位被消灭时所附领袖以原始起始编制成为独立单位）。",
+      "gold_type": "ability",
+      "judged_against_gold": true,
+      "judge_method": "llm_gold",
+      "verdict": "✅",
+      "judge_reason": "✅ 系统回答准确识别了兽人小子（Boyz）的单位类型，并覆盖了标准答案中的关键能力：WAAAGH!、抢好东西去、以及20人编制可附加两个领袖（其中之一须为WARBOSS）的规则；额外属性与武器细节不扣分。",
+      "time": "10.2s",
+      "meta": {
+        "intent": "查",
+        "tool_calls": [
+          "get_entity",
+          "get_datasheet"
+        ],
+        "degraded": false
+      },
+      "sources": [
+        {
+          "book": "官方结构库 db/wh40k.sqlite（Wahapedia 11 版镜像）",
+          "page": 0
+        },
+        {
+          "book": "MFM 官方点数（mfm.warhammer-community.com）",
+          "page": 0
+        }
+      ],
+      "answer": "**兽人小子（Boyz / 中文兵牌名「小子」）** 是欧克蛮人（Orks）阵营的**战线（Battleline）步兵单位**，关键词为 Infantry、Battleline、Mob、Boyz、Grenades [《官方结构库 db/wh40k.sqlite（Wahapedia 11 版镜像）》]。\n\n**点数**：10 模型 90 分；20 模型 180 分 [《MFM 官方点数》]。\n\n**属性**\n\n| 模型 | M | T | Sv | W | Ld | OC |\n|---|---|---|---|---|---|---|\n| 小子 Boy | 6\" | 5 | 5+ | 1 | 7+ | 2 |\n| 老大诺布 Boss Nob | 6\" | 5 | 5+ | 2 | 7+ | 2 |\n\n**武器**\n\n射击：\n- 突突枪 Shoota：18\"，A2，5+，S4，AP0，D1，速射1\n- 手铳 Slugga：12\"，A1，5+，S4，AP0，D1，手枪\n- 大突突枪 Big shoota：36\"，A3，5+，S5，AP0，D1，速射2\n- 火箭筒 Rokkit launcha：24\"，AD3，5+，S9，AP-2，D3，爆炸\n- 强悍武器 Kombi-weapon：24\"，A1，5+，S4，AP0，D1，反步兵4+、毁灭伤害、速射1\n\n近战：\n- 砍刀 Choppa：A3，3+，S4，AP-1，D1\n- 大砍刀 Big choppa：A3，3+，S7，AP-1，D2\n- 格斗武器 Close combat weapon：A2，3+，S4，AP0，D1\n- 动力爪 Power klaw：A3，4+，S9，AP-2，D2\n\n**能力**\n- **【阵营技能】WAAAGH!**：兽人阵营通用技能 [《官方结构库》]。\n- **抢好东西去**（兵牌技能）[《官方结构库》]。\n- **领袖编入规则**：若该单位起始兵力为 20，可加入最多 2 个领袖单位（而非 1 个），但其中之一必须是战争头目（Warboss）单位；如此编入时，该单位被摧毁后其中的领袖单位各自变为独立单位并保留原本起始兵力 [《官方结构库》]。\n\n注：兵牌属性与技能来自既有结构库，点数已与 MFM 同步；若需确认最新补丁下的技能文本，建议同时核对最新 Faction Pack。"
+    },
+    {
+      "id": 42,
+      "faction": "兽人",
+      "question": "兽人小子的格斗武器S和AP是多少？",
+      "gold": "Big choppa S=7 AP=-1 D=2；Choppa S=4 AP=-1 D=1；Close combat weapon S=4 AP=0 D=1；Power klaw S=9 AP=-2 D=2",
+      "gold_type": "weapon",
+      "judged_against_gold": true,
+      "judge_method": "llm_gold",
+      "verdict": "✅",
+      "judge_reason": "✅ 理由：系统回答准确给出了格斗武器S=4、AP=0，并额外列出Choppa、Big choppa、Power klaw的数据，与标准答案一致。",
+      "time": "7.0s",
+      "meta": {
+        "intent": "查",
+        "tool_calls": [
+          "get_datasheet"
+        ],
+        "degraded": false
+      },
+      "sources": [
+        {
+          "book": "Orks 兵牌（小子 Boyz）",
+          "page": 0
+        }
+      ],
+      "answer": "兽人小子（Boyz）的**格斗武器（Close combat weapon）**数据为：\n\n| 武器 | 攻击次数 A | 命中 WS | 造伤 S | 破甲 AP | 伤害 D |\n|---|---|---|---|---|---|\n| 格斗武器 | 2 | 3+ | **4** | **0** | 1 |\n\n即 **S=4，AP=0**。\n\n顺带一提，小子常用的近战武器还有：**砍刀（Choppa）** A3/WS3+/S4/AP-1/D1；**大砍刀（Big choppa）** A3/WS3+/S7/AP-1/D2；**动力爪（Power klaw）** A3/WS4+/S9/AP-2/D2 [《Orks 兵牌》小子条目]。"
+    },
+    {
+      "id": 43,
+      "faction": "灵族",
+      "question": "幽冥卫士的T和SV各是多少？",
+      "gold": "幽冥护卫：T=6 SV=2+",
+      "gold_type": "stat",
+      "judged_against_gold": true,
+      "judge_method": "mechanical",
+      "verdict": "✅",
+      "judge_reason": "被问字段全部正确：T/SV",
+      "time": "7.6s",
+      "meta": {
+        "intent": "查",
+        "tool_calls": [
+          "get_datasheet",
+          "rag_search"
+        ],
+        "degraded": true,
+        "fell_back_to_classic": true
+      },
+      "sources": [
+        {
+          "book": "艾达灵族10版中文",
+          "page": 51
+        },
+        {
+          "book": "艾达灵族10版中文",
+          "page": 50
+        },
+        {
+          "book": "艾达灵族10版中文",
+          "page": 69
+        },
+        {
+          "book": "艾达灵族10版中文",
+          "page": 66
+        },
+        {
+          "book": "艾达灵族10版中文",
+          "page": 68
+        },
+        {
+          "book": "艾达灵族10版中文",
+          "page": 116
+        },
+        {
+          "book": "Core Rules - New 40K Core Rules",
+          "page": 18
+        },
+        {
+          "book": "Core Rules - New 40K Core Rules",
+          "page": 83
+        }
+      ],
+      "answer": "幽冥护卫的 **T（韧性）为 6**，**SV（保护）为 2+**。\n\n| 属性 | 数值 |\n|---|---|\n| M | 6 |\n| **T** | **6** |\n| **SV** | **2+** |\n| W | 3 |\n| LD | 8+ |\n| OC | 1 |\n\n来源：[《艾达灵族10版中文》第51页]"
+    },
+    {
+      "id": 44,
+      "faction": "灵族",
+      "question": "守护者小队的M和SV各是多少？",
+      "gold": "卫戍守护者：M=7\" SV=4+",
+      "gold_type": "stat",
+      "judged_against_gold": true,
+      "judge_method": "mechanical",
+      "verdict": "✅",
+      "judge_reason": "被问字段全部正确：M/SV",
+      "time": "7.2s",
+      "meta": {
+        "intent": "查",
+        "tool_calls": [
+          "get_datasheet",
+          "rag_search"
+        ],
+        "degraded": true,
+        "fell_back_to_classic": true
+      },
+      "sources": [
+        {
+          "book": "艾达灵族10版中文",
+          "page": 37
+        },
+        {
+          "book": "艾达灵族10版中文",
+          "page": 36
+        },
+        {
+          "book": "沃坦联盟",
+          "page": 42
+        },
+        {
+          "book": "黑图书馆",
+          "page": 0
+        },
+        {
+          "book": "帝皇之子10版中文",
+          "page": 39
+        },
+        {
+          "book": "艾达灵族10版中文",
+          "page": 13
+        },
+        {
+          "book": "Core Rules - New 40K Core Rules",
+          "page": 18
+        }
+      ],
+      "answer": "指挥官，档案中涉及两支不同的“守护者”单位，数据如下：\n\n## 风暴守护者（Storm Guardians）\n[《艾达灵族10版中文》第37页]\n\n| M | T | SV | W | LD | OC |\n|---|---|---|---|---|---|\n| **7** | 3 | **4+** | 1 | 7+ | 2 |\n\n- 蛇鳞平台模型：**W 2 / OC 0**（M、SV 未单独列出，随单位）\n\n## 卫戍守护者（Guardian Defenders）\n[《艾达灵族10版中文》第36页]\n\n| M | T | SV | W | LD | OC |\n|---|---|---|---|---|---|\n| **7** | 3 | **4+** | 1 | 7+ | 2 |\n\n- 重武器平台：**W 2 / OC 0**（M、SV 未单独列出，随单位）\n\n**结论**：两支守护者单位的 **M 均为 7\"，SV 均为 4+**。\n\n若指挥官指的是其他具体单位（如沃坦联盟的摩羯座守护者战车，M 12 / SV 4+），请指明，我再行调取。"
+    },
+    {
+      "id": 45,
+      "faction": "灵族",
+      "question": "阿苏曼的W是多少？",
+      "gold": "阿苏曼：W=5",
+      "gold_type": "stat",
+      "judged_against_gold": true,
+      "judge_method": "mechanical",
+      "verdict": "✅",
+      "judge_reason": "被问字段全部正确：W",
+      "time": "5.3s",
+      "meta": {
+        "intent": "查",
+        "tool_calls": [
+          "get_datasheet"
+        ],
+        "degraded": false
+      },
+      "sources": [
+        {
+          "book": "Warhammer 40,000 Faction Pack / 结构库兵牌（Asurmen）",
+          "page": 0
+        }
+      ],
+      "answer": "阿苏曼（Asurmen，艾达灵族）的 **W（Wounds，耐久）为 5**。\n\n其完整属性块如下：\n\n| 属性 | 数值 |\n|---|---|\n| M（移动） | 7\" |\n| T（坚韧） | 3 |\n| Sv（保护） | 2+ |\n| 特殊保护 | 4+ |\n| **W（耐久）** | **5** |\n| Ld（领导） | 6+ |\n| OC（控制） | 1 |\n| 底盘 | 40mm |\n\n点数：135 分（1 模型）。\n\n注：兵牌属性来自既有结构库，点数已与 MFM 同步；如需确认最新补丁下的规则效果，建议同时查阅最新 Faction Pack。"
+    },
+    {
+      "id": 46,
+      "faction": "灵族",
+      "question": "次元蜘蛛的跳跃发生器有什么效果？",
+      "gold": "次元蜘蛛的「跳跃发生器/闪跃 Flickerjump」：移动阶段被选中常规移动时可使用——本回合M变为24寸、本回合不能宣布冲锋、随后为每个模型投1D6，出1的会导致减员（相位跳跃风险）。",
+      "gold_type": "ability",
+      "judged_against_gold": true,
+      "judge_method": "llm_gold",
+      "verdict": "✅",
+      "judge_reason": "✅ 系统回答完整覆盖了标准答案的三个关键要点（M变24\"、不能冲锋、每模型投1D6出1减员），且额外细节不扣分。",
+      "time": "6.2s",
+      "meta": {
+        "intent": "查",
+        "tool_calls": [
+          "get_entity"
+        ],
+        "degraded": false
+      },
+      "sources": [
+        {
+          "book": "官方结构库 db/wh40k.sqlite（Wahapedia 11版镜像 + MFM 官方点数）",
+          "page": 0
+        }
+      ],
+      "answer": "次元蜘蛛的跳跃发生器在规则上体现为**「闪跃」**能力（Jump Generator / Flickerjump），效果如下：\n\n**闪跃**：在你的移动阶段，本单位被选中进行常规移动时，可以使用此能力：\n- 直到该回合结束，本单位的移动（M值）属性变为 **24\"**\n- 直到该回合结束，本单位**无法宣布冲锋**\n- 如果本单位使用此能力，在该阶段结束时为本单位中的每个模型投 1D6：每有一个结果为 **1**，本单位受到 **1 点致命伤**\n\n也就是说，跳跃发生器让次元蜘蛛在移动阶段把移动力从 12\" 暴涨到 24\"（相当于一次超远距离的跳跃位移），代价是本回合不能冲锋，并且有概率因跳跃失误吃到致命伤（每个模型 1/6 概率）。\n\n补充：次元蜘蛛本身还带有 **Jump Pack（跳跃背包）** 和 **Fly（飞行）** 关键词，基础移动为 12\"，T3、Sv3+、W1（神官 W2）、OC1，5 模型 105 分 / 10 模型 200 分 [《官方结构库 db/wh40k.sqlite（Wahapedia 11版镜像 + MFM 官方点数）》次元蜘蛛条目]。"
+    },
+    {
+      "id": 47,
+      "faction": "灵族",
+      "question": "幽冥骑士的T、W、SV各是多少？",
+      "gold": "幽冥骑士：T=12 SV=2+ W=18",
+      "gold_type": "stat",
+      "judged_against_gold": true,
+      "judge_method": "mechanical",
+      "verdict": "✅",
+      "judge_reason": "被问字段全部正确：T/SV/W",
+      "time": "5.6s",
+      "meta": {
+        "intent": "查",
+        "tool_calls": [
+          "get_datasheet"
+        ],
+        "degraded": false
+      },
+      "sources": [
+        {
+          "book": "Aeldari Datasheet（结构库，unit_id 000000614）",
+          "page": 0
+        }
+      ],
+      "answer": "幽冥骑士（Wraithknight，艾达灵族）的防御属性如下：\n\n| 属性 | 数值 |\n|---|---|\n| **T（坚韧）** | **12** |\n| **W（ wounds）** | **18** |\n| **Sv（保护）** | **2+** |\n\n补充：M 12\"、Ld 6+、OC 10，无特殊保护（invuln 为「-」），底盘 120×92mm，1 模型 385 分。\n\n注意：该兵牌属性来自既有结构库，点数已与 MFM 同步，但属性/技能尚未逐字段复核全部最新补丁，实战前建议对照最新 Faction Pack 确认。"
+    },
+    {
+      "id": 48,
+      "faction": "灵族",
+      "question": "复仇者小队的弹射器S和AP是多少？",
+      "gold": "Avenger shuriken catapult S=4 AP=-1 D=1",
+      "gold_type": "weapon",
+      "judged_against_gold": true,
+      "judge_method": "mechanical",
+      "verdict": "✅",
+      "judge_reason": "被问字段全部正确：S/AP",
+      "time": "4.7s",
+      "meta": {
+        "intent": "查",
+        "tool_calls": [
+          "get_datasheet"
+        ],
+        "degraded": false
+      },
+      "sources": [
+        {
+          "book": "Aeldari 兵牌（结构库）",
+          "page": 0
+        }
+      ],
+      "answer": "复仇者小队（狂暴复仇者 / Dire Avengers）的**复仇者星镖枪（Avenger shuriken catapult）**：**S 4，AP -1**（D 1，A 4，BS 3+，射程 18\"，带【突击】）。\n\n补充：同队的**星镖手枪**也是 S 4 / AP -1。\n\n另外该单位有「剑刃风暴」：攻击半射程内目标时，远程武器获得【连击 1】。"
+    },
+    {
+      "id": 49,
+      "faction": "黑暗灵族",
+      "question": "执政官的SV和特殊保护是多少？",
+      "gold": "执政官：特殊保护=2++ SV=4+",
+      "gold_type": "stat",
+      "judged_against_gold": true,
+      "judge_method": "mechanical",
+      "verdict": "✅",
+      "judge_reason": "被问字段全部正确：INV/SV",
+      "time": "5.9s",
+      "meta": {
+        "intent": "查",
+        "tool_calls": [
+          "get_datasheet"
+        ],
+        "degraded": false
+      },
+      "sources": [
+        {
+          "book": "黑暗灵族 兵牌（Archon）",
+          "page": 0
+        }
+      ],
+      "answer": "**黑暗灵族 执政官（Archon）** 的防御属性：\n\n| 属性 | 数值 |\n|---|---|\n| M | 7\" |\n| T | 3 |\n| **Sv（普通保护）** | **4+** |\n| **无敌保护（特殊保护）** | **2+**（暗影力场） |\n| W | 4 |\n| Ld | 6+ |\n| OC | 1 |\n\n**关于 2+ 无敌保护（暗影力场）的注意点**：\n- 你不能重掷为该模型进行的无敌豁免掷骰；\n- 该模型的**无敌豁免首次失败后，它就不再拥有无敌豁免**（即 2+ 特殊保护是一次性的，破功后只剩 4+ 普通保护）。\n\n点数：80 分（1 模型）。\n\n来源：兵牌结构库（MFM 点数已同步，属性/技能来自既有结构库，尚未逐字段复核全部最新补丁）。"
+    },
+    {
+      "id": 50,
+      "faction": "黑暗灵族",
+      "question": "痛苦引擎的T和W各是多少？",
+      "gold": "塔洛斯：T=7 W=7",
+      "gold_type": "stat",
+      "judged_against_gold": true,
+      "judge_method": "mechanical",
+      "verdict": "✅",
+      "judge_reason": "被问字段全部正确：T/W",
+      "time": "6.9s",
+      "meta": {
+        "intent": "查",
+        "tool_calls": [
+          "get_datasheet",
+          "rag_search"
+        ],
+        "degraded": true,
+        "fell_back_to_classic": true
+      },
+      "sources": [
+        {
+          "book": "黑暗灵族10版中文",
+          "page": 39
+        },
+        {
+          "book": "战斗修女10版中文",
+          "page": 46
+        },
+        {
+          "book": "黑暗灵族10版中文",
+          "page": 40
+        },
+        {
+          "book": "混沌恶魔10E中文",
+          "page": 68
+        },
+        {
+          "book": "黑图书馆",
+          "page": 0
+        },
+        {
+          "book": "死亡守卫10版中文",
+          "page": 44
+        },
+        {
+          "book": "Core Rules - New 40K Core Rules",
+          "page": 18
+        },
+        {
+          "book": "Core Rules - New 40K Core Rules",
+          "page": 31
+        }
+      ],
+      "answer": "档案中涉及“痛苦引擎”的数据有两处，需先确认所指单位：\n\n**1. 塔洛斯痛苦引擎**（《黑暗灵族10版中文》第39页）\n\n| M | T | SV | W | LD | OC |\n|---|---|----|---|----|----|\n| 7 | **7** | 3+ | **7** | 7+ | 2 |\n\n- **T = 7**，**W = 7** [《黑暗灵族10版中文》第39页]\n\n**2. 赎罪引擎**（《战斗修女10版中文》第46页）\n\n| M | T | SV/ISV | W | LD | OC |\n|---|---|---|---|---|---|\n| 8 | **6** | 4+/6+ | **5** | 7+ | 2 |\n\n- **T = 6**，**W = 5** [《战斗修女10版中文》第46页]\n\n若指挥官指的是**塔洛斯痛苦引擎**，则 **T7 / W7**；若指**赎罪引擎**，则 **T6 / W5**。请确认具体单位，以便进一步调取武器或技能数据。"
+    },
+    {
+      "id": 51,
+      "faction": "黑暗灵族",
+      "question": "卡巴利特战士的M和SV是多少？",
+      "gold": "阴谋团战士：M=7\" SV=4+",
+      "gold_type": "stat",
+      "judged_against_gold": true,
+      "judge_method": "mechanical",
+      "verdict": "✅",
+      "judge_reason": "被问字段全部正确：M/SV",
+      "time": "5.6s",
+      "meta": {
+        "intent": "查",
+        "tool_calls": [
+          "get_datasheet"
+        ],
+        "degraded": false
+      },
+      "sources": [
+        {
+          "book": "Drukhari 兵牌（Kabalite Warriors / 阴谋团战士）",
+          "page": 0
+        }
+      ],
+      "answer": "「卡巴利特战士」在档案中对应的是**黑暗灵族（Drukhari）的阴谋团战士（Kabalite Warriors）**，其核心属性为：\n\n| 属性 | 数值 |\n|---|---|\n| M（移动） | **7\"** |\n| T（坚韧） | 3 |\n| **Sv（保护）** | **4+** |\n| 特殊保护 | 6+ |\n| W（ wounds） | 1 |\n| Ld（领导） | 7+ |\n| OC（目标控制） | 2 |\n| 底盘 | 25mm |\n\n即你问的两项：**M = 7\"**，**Sv = 4+**（另有 6+ 特殊保护）。\n\n该单位 10 模型为 110 分 [《Drukhari 兵牌》阴谋团战士条目]。"
+    },
+    {
+      "id": 52,
+      "faction": "黑暗灵族",
+      "question": "掠夺者小队的毒晶步枪S和AP是多少？",
+      "gold": "Splinter rifle S=2 AP=0 D=1",
+      "gold_type": "weapon",
+      "judged_against_gold": true,
+      "judge_method": "mechanical",
+      "verdict": "✅",
+      "judge_reason": "被问字段全部正确：S/AP",
+      "time": "6.8s",
+      "meta": {
+        "intent": "查",
+        "tool_calls": [
+          "get_datasheet",
+          "rag_search"
+        ],
+        "degraded": true,
+        "fell_back_to_classic": true
+      },
+      "sources": [
+        {
+          "book": "黑暗灵族10版中文",
+          "page": 38
+        },
+        {
+          "book": "黑图书馆",
+          "page": 0
+        },
+        {
+          "book": "艾达灵族10版中文",
+          "page": 76
+        },
+        {
+          "book": "艾达灵族10版中文",
+          "page": 38
+        },
+        {
+          "book": "Core Rules - New 40K Core Rules",
+          "page": 22
+        },
+        {
+          "book": "Core Rules - New 40K Core Rules",
+          "page": 20
+        }
+      ],
+      "answer": "档案中**没有名为「掠夺者小队」的单位**，且**没有任何单位装备「毒晶步枪」**。为避免张冠李戴，先列出档案中出现的相近条目：\n\n**1. 掠夺者摩托（REAVERS）** —— 装备的是**毒晶枪**，不是毒晶步枪 [《黑暗灵族10版中文》第38页]\n\n| 武器 | 射程 | A | BS | **S** | **AP** | D | 技能 |\n|---|---|---|---|---|---|---|---|\n| 毒晶枪 | 24 | 2 | 3+ | **2** | **0** | 1 | 反步兵3+，突击 |\n\n**2. 死神军阴谋团武士** —— 装备**毒晶步枪**，但该单位不叫「掠夺者」 [《艾达灵族10版中文》第76页]\n\n| 武器 | 射程 | A | BS | **S** | **AP** | D | 技能 |\n|---|---|---|---|---|---|---|---|\n| 毒晶步枪 | 24 | 2 | 3+ | **2** | **0** | 1 | 反步兵3+，突击 |\n\n**结论**：若您问的是**阴谋团武士的毒晶步枪**，则 **S=2，AP=0** [《艾达灵族10版中文》第76页]；若您问的是**掠夺者摩托**，其装备为毒晶枪，同为 **S=2，AP=0** [《黑暗灵族10版中文》第38页]。\n\n档案缺失「掠夺者小队」这一单位条目，建议核对原始规则书确认单位名称。"
+    },
+    {
+      "id": 53,
+      "faction": "钛帝国",
+      "question": "XV95鬼覆战斗服的W是多少？",
+      "gold": "鬼覆战斗服：W=12",
+      "gold_type": "stat",
+      "judged_against_gold": true,
+      "judge_method": "mechanical",
+      "verdict": "✅",
+      "judge_reason": "被问字段全部正确：W",
+      "time": "5.6s",
+      "meta": {
+        "intent": "查",
+        "tool_calls": [
+          "get_datasheet",
+          "rag_search"
+        ],
+        "degraded": true,
+        "fell_back_to_classic": true
+      },
+      "sources": [
+        {
+          "book": "黑图书馆",
+          "page": 0
+        },
+        {
+          "book": "钛帝国十版",
+          "page": 30
+        },
+        {
+          "book": "太空死灵规则",
+          "page": 55
+        },
+        {
+          "book": "钛帝国十版",
+          "page": 16
+        },
+        {
+          "book": "艾达灵族10版中文",
+          "page": 117
+        },
+        {
+          "book": "6月4日分数中文",
+          "page": 35
+        },
+        {
+          "book": "Core Rules - New 40K Core Rules",
+          "page": 11
+        },
+        {
+          "book": "Core Rules - New 40K Core Rules",
+          "page": 78
+        }
+      ],
+      "answer": "**XV95鬼覆战斗服的 W（耐久）为 12。**\n\n| 属性 | M | T | SV | W | LD | OC |\n|---|---|---|---|---|---|---|\n| (XV95)鬼覆战斗服 | 10\" | 8 | 2+ | **12** | 7+ | 3 |\n\n来源：[《黑图书馆》第0页]、[《钛帝国十版》第30页]\n\n补充：该模型在**剩余 1-4W** 时触发「受损」效果，命中掷骰结果 -1 [《钛帝国十版》第30页]。"
+    },
+    {
+      "id": 54,
+      "faction": "钛帝国",
+      "question": "远见指挥官的M和T各是多少？",
+      "gold": "远见指挥官：M=10\" T=5",
+      "gold_type": "stat",
+      "judged_against_gold": true,
+      "judge_method": "mechanical",
+      "verdict": "✅",
+      "judge_reason": "被问字段全部正确：M/T",
+      "time": "6.1s",
+      "meta": {
+        "intent": "查",
+        "tool_calls": [
+          "get_datasheet"
+        ],
+        "degraded": false
+      },
+      "sources": [
+        {
+          "book": "Warhammer 40,000 Faction Pack / Munitorum Field Manual",
+          "page": 0
+        }
+      ],
+      "answer": "远见指挥官（Commander Farsight，钛帝国）的 **M = 10\"**，**T = 5**。\n\n完整属性块：\n\n| M | T | Sv | 特殊保护 | W | Ld | OC | 底盘 |\n|---|---|---|---|---|---|---|---|\n| 10\" | 5 | 2+ | 4+ | 8 | 6+ | 2 | 60mm |\n\n（点数 70 分/1 模型）[《MFM》2026-09-14 同步；兵牌属性来自结构库]\n\n注：该兵牌属性来自既有结构库，尚未逐字段复核全部最新补丁；若你要用于当前对局，建议同时核对最新 Faction Pack。"
+    },
+    {
+      "id": 55,
+      "faction": "钛帝国",
+      "question": "火刃队长的招牌技能是什么？",
+      "gold": "火刃队长 Cadre Fireblade 光环/招牌技能「齐射火力」：当该模型领导一个联合单位时，该单位中模型装备的远程武器A（攻击次数）提升1；另有「精准射击」——远程暴击致伤时该攻击AP变为-3。",
+      "gold_type": "ability",
+      "judged_against_gold": true,
+      "judge_method": "llm_gold",
+      "verdict": "✅",
+      "judge_reason": "✅ 理由：回答完整覆盖标准答案的两个招牌技能要点（齐射火力A+1、精准射击暴击致伤AP-3），额外信息不扣分。",
+      "time": "5.4s",
+      "meta": {
+        "intent": "查",
+        "tool_calls": [
+          "get_entity"
+        ],
+        "degraded": false
+      },
+      "sources": [
+        {
+          "book": "官方结构库 db/wh40k.sqlite（Wahapedia 11版镜像 + MFM 官方点数）",
+          "page": 0
+        }
+      ],
+      "answer": "火刃队长（Cadre Fireblade）的招牌技能有两个，都写在它的兵牌上：\n\n- **齐射火力**：当该模型领导一个联合单位时，那个单位中模型装备的远程武器 **A 提升 1**。这是它最核心的「带队增伤」光环，配合大量速射步兵能显著放大火力。\n- **精准射击**：当该模型进行远程攻击时，若造成**暴击致伤**，该攻击的 **AP 变为 -3**。\n\n另外它还带有阵营技能「为了上上善道」。\n\n顺带一提它的基础数据：M 6\"、T 3、Sv 4+、W 3、Ld 7+、OC 1；主武器火刃脉冲步枪 30\"、A1、BS3+、S5、AP0、D2、速射1；近战格斗武器 A3、WS4+、S3、AP0、D1。1 个模型 **50 分** [《官方结构库 db/wh40k.sqlite（Wahapedia 11版镜像 + MFM 官方点数）》]。"
+    },
+    {
+      "id": 56,
+      "faction": "钛帝国",
+      "question": "寻路者小队的M和SV各是多少？",
+      "gold": "寻路者小队：M=7\" SV=4+",
+      "gold_type": "stat",
+      "judged_against_gold": true,
+      "judge_method": "mechanical",
+      "verdict": "✅",
+      "judge_reason": "被问字段全部正确：M/SV",
+      "time": "4.8s",
+      "meta": {
+        "intent": "查",
+        "tool_calls": [
+          "get_datasheet"
+        ],
+        "degraded": false
+      },
+      "sources": [
+        {
+          "book": "T'au Empire Datasheet / MFM",
+          "page": 0
+        }
+      ],
+      "answer": "寻路者小队（Pathfinder Team，钛帝国）的移动 M 为 **7\"**，保护 Sv 为 **4+**（无特殊保护）。\n\n| 属性 | 数值 |\n|---|---|\n| M | **7\"** |\n| T | 3 |\n| Sv | **4+** |\n| W | 1 |\n| Ld | 7+ |\n| OC | 1 |\n\n该单位 10 模型 85 分 [《MFM》官方点数库]。"
+    },
+    {
+      "id": 57,
+      "faction": "钛帝国",
+      "question": "克鲁特肉猎犬的M是多少？",
+      "gold": "克鲁特猎犬队：M=12\"",
+      "gold_type": "stat",
+      "judged_against_gold": true,
+      "judge_method": "mechanical",
+      "verdict": "✅",
+      "judge_reason": "被问字段全部正确：M",
+      "time": "5.3s",
+      "meta": {
+        "intent": "查",
+        "tool_calls": [
+          "get_datasheet",
+          "rag_search"
+        ],
+        "degraded": true,
+        "fell_back_to_classic": true
+      },
+      "sources": [
+        {
+          "book": "钛帝国十版",
+          "page": 41
+        },
+        {
+          "book": "黑图书馆",
+          "page": 0
+        },
+        {
+          "book": "吞世者10版中文",
+          "page": 49
+        },
+        {
+          "book": "钛帝国十版",
+          "page": 42
+        },
+        {
+          "book": "混沌恶魔10E中文",
+          "page": 33
+        },
+        {
+          "book": "Core Rules - New 40K Core Rules",
+          "page": 83
+        },
+        {
+          "book": "Core Rules - New 40K Core Rules",
+          "page": 33
+        }
+      ],
+      "answer": "**克鲁特猎犬（KROOT HOUNDS）的 M 为 12\"**。\n\n| M | T | SV | W | LD | OC |\n|---|---|----|---|----|----|\n| **12\"** | 3 | 6+ | 1 | 8+ | 0 |\n\n来源：[《钛帝国十版》第41页]\n\n补充说明：档案 2《黑图书馆》第0页同样记载克鲁特猎犬 **M12\"**，与上述数据一致。\n\n注：您提到的\"肉猎犬\"若指**觅血猎犬（FLESH HOUNDS）**，则其 **M 为 12**，来源为 [《吞世者10版中文》第49页] 与 [《混沌恶魔10E中文》第33页]。请确认您询问的是钛帝国的克鲁特猎犬，还是吞世者/混沌恶魔的觅血猎犬。"
+    },
+    {
+      "id": 58,
+      "faction": "钛帝国",
+      "question": "强执战斗服指挥官的T和W各是多少？",
+      "gold": "强执战斗服指挥官：T=5 W=6",
+      "gold_type": "stat",
+      "judged_against_gold": true,
+      "judge_method": "mechanical",
+      "verdict": "✅",
+      "judge_reason": "被问字段全部正确：T/W",
+      "time": "5.5s",
+      "meta": {
+        "intent": "查",
+        "tool_calls": [
+          "get_datasheet"
+        ],
+        "degraded": false
+      },
+      "sources": [
+        {
+          "book": "Warhammer 40,000 Faction Pack / MFM（钛帝国兵牌）",
+          "page": 0
+        }
+      ],
+      "answer": "**强执战斗服指挥官（XV85 Commander in Enforcer Battlesuit）** 的耐久属性为：\n\n| 属性 | 数值 |\n|---|---|\n| M（移动） | 8\" |\n| **T（坚韧）** | **5** |\n| Sv（保护） | 2+ |\n| **W（ wounds）** | **6** |\n| Ld（领导） | 7+ |\n| OC（目标控制） | 2 |\n\n即 **T=5、W=6**。该模型为单模型单位（1 model，80 分），底盘 60mm，关键词含 Battlesuit / Character / Fly / Walker / Vehicle [《MFM 2026》/ 结构库兵牌]。"
+    },
+    {
+      "id": 59,
+      "faction": "帝国卫队",
+      "question": "卫兵小队的SV和M各是多少？",
+      "gold": "卡迪安突击队：M=6\" SV=5+",
+      "gold_type": "stat",
+      "judged_against_gold": true,
+      "judge_method": "mechanical",
+      "verdict": "✅",
+      "judge_reason": "被问字段全部正确：M/SV",
+      "time": "6.0s",
+      "meta": {
+        "intent": "查",
+        "tool_calls": [
+          "get_datasheet",
+          "rag_search"
+        ],
+        "degraded": true,
+        "fell_back_to_classic": true
+      },
+      "sources": [
+        {
+          "book": "星界军10版中文",
+          "page": 44
+        },
+        {
+          "book": "黑图书馆",
+          "page": 0
+        },
+        {
+          "book": "混沌星际战士10版中文",
+          "page": 74
+        },
+        {
+          "book": "机械修会10版中文",
+          "page": 24
+        },
+        {
+          "book": "星界军10版中文",
+          "page": 21
+        },
+        {
+          "book": "星界军10版中文",
+          "page": 46
+        },
+        {
+          "book": "Core Rules - New 40K Core Rules",
+          "page": 22
+        },
+        {
+          "book": "Core Rules - New 40K Core Rules",
+          "page": 18
+        }
+      ],
+      "answer": "指挥官，您说的“卫兵小队”在档案中对应多个单位，需分别列出。以下均为**十版·codex兵牌基底**数据：\n\n| 单位 | M | T | SV | W | LD | OC | 来源 |\n|---|---|---|---|---|---|---|---|\n| **卡迪安突击队** | **6** | 3 | **5+** | 1 | 7+ | 2 | [《星界军10版中文》第44页] |\n| **叛变卫队** | **6** | 3 | **5+** | 1 | 7+ | 2 | [《混沌星际战士10版中文》第74页] |\n\n若您指的是**卡迪安突击队**：**M 6\"**、**SV 5+** [《星界军10版中文》第44页]。\n若您指的是**叛变卫队**：**M 6\"**、**SV 5+** [《混沌星际战士10版中文》第74页]。\n\n两者底盘数据一致，但关键词与阵营不同（星界军 / 阿斯塔特叛军）。如需其他单位（如护教军先锋兵、卡迪安重武器班）的数据，请指明具体名称。"
+    },
+    {
+      "id": 60,
+      "faction": "帝国卫队",
+      "question": "黎曼鲁斯主战坦克的T和W各是多少？",
+      "gold": "Leman Russ Battle Tank：T=11 W=13",
+      "gold_type": "stat",
+      "judged_against_gold": true,
+      "judge_method": "mechanical",
+      "verdict": "✅",
+      "judge_reason": "被问字段全部正确：T/W",
+      "time": "7.8s",
+      "meta": {
+        "intent": "查",
+        "tool_calls": [
+          "get_datasheet",
+          "rag_search"
+        ],
+        "degraded": true,
+        "fell_back_to_classic": true
+      },
+      "sources": [
+        {
+          "book": "黑图书馆",
+          "page": 0
+        },
+        {
+          "book": "星界军10版中文",
+          "page": 70
+        },
+        {
+          "book": "星界军10版中文",
+          "page": 31
+        },
+        {
+          "book": "Core Rules - New 40K Core Rules",
+          "page": 22
+        },
+        {
+          "book": "Core Rules - New 40K Core Rules",
+          "page": 86
+        }
+      ],
+      "answer": "**黎曼鲁斯战斗坦克**（标准型）的耐久属性如下：\n\n| 属性 | 数值 |\n|---|---|\n| **T（韧性）** | **11** |\n| **W（耐伤）** | **13** |\n\n来源：[《黑图书馆》第0页]（十版·codex兵牌基底）；[《星界军10版中文》第70页] 数据卡亦载明 **T11 / W13**。\n\n补充说明：档案中**黎曼鲁斯战斗坦克、黎曼鲁斯胜利者（征服者）、黎曼鲁斯指挥官**三者的底盘外壳属性一致，均为 **M10\" / T11 / SV2+ / W13 / LD7 / OC3** [《黑图书馆》第0页]。\n\n如需其他型号（破坏者、根除者、惩罚者、处决者、灭绝者）的完整属性，档案中未单独列出，建议查阅原始规则书。"
+    },
+    {
+      "id": 61,
+      "faction": "帝国卫队",
+      "question": "卡迪安突击兵的SV和BS是多少？",
+      "gold": "卡迪安突击队：SV=5+",
+      "gold_type": "stat",
+      "judged_against_gold": true,
+      "judge_method": "mechanical",
+      "verdict": "✅",
+      "judge_reason": "被问字段全部正确：SV",
+      "time": "7.3s",
+      "meta": {
+        "intent": "查",
+        "tool_calls": [
+          "get_datasheet",
+          "rag_search"
+        ],
+        "degraded": true,
+        "fell_back_to_classic": true
+      },
+      "sources": [
+        {
+          "book": "星界军10版中文",
+          "page": 44
+        },
+        {
+          "book": "黑图书馆",
+          "page": 0
+        },
+        {
+          "book": "星界军10版中文",
+          "page": 22
+        },
+        {
+          "book": "星界军10版中文",
+          "page": 47
+        },
+        {
+          "book": "星界军10版中文",
+          "page": 23
+        },
+        {
+          "book": "Core Rules - New 40K Core Rules",
+          "page": 78
+        },
+        {
+          "book": "Core Rules - New 40K Core Rules",
+          "page": 22
+        }
+      ],
+      "answer": "根据档案，**卡迪安突击队**（Cadian Shock Troops）的防御与射击属性如下：\n\n## 单位属性（十版·codex兵牌基底）\n\n| 属性 | 数值 |\n|---|---|\n| **SV（保护）** | **5+** |\n| **M（移动）** | 6 |\n| **T（韧性）** | 3 |\n| **W（ wounds）** | 1 |\n| **LD（领导）** | 7+ |\n| **OC（占领）** | 2 |\n\n[《星界军10版中文》第44页]\n\n## 关于 BS（射击技巧）\n\n**BS 并非单位属性，而是武器属性**。卡迪安突击队各远程武器的 BS 如下：\n\n| 武器名称 | BS |\n|---|---|\n| 爆弹手枪 | **4+** |\n| 士官自动枪 | **4+** |\n| 激光手枪 | **4+** |\n| 激光枪 | **4+** |\n| 喷火器 | **-**（喷射武器，自动命中） |\n| 榴弹发射器 - 破片弹 | **4+** |\n| 榴弹发射器 - 穿甲弹 | **4+** |\n| 热熔枪 | **4+** |\n| 等离子枪 - 标准 | **4+** |\n| 等离子枪 - 过载 | **4+** |\n\n[《星界军10版中文》第44页]\n\n**小结**：卡迪安突击兵的 **SV 为 5+**，其所有需掷骰的远程武器 **BS 均为 4+**（喷火器为喷射武器，无需 BS）。\n\n> 注：档案 4《黑图书馆》第0页亦载有同名单位，其属性与武器数据与上述一致（SV 5+、BS 4+），可互为印证。"
+    },
+    {
+      "id": 62,
+      "faction": "帝国卫队",
+      "question": "重武器小队的M和T各是多少？",
+      "gold": "Cadian Heavy Weapons Squad：M=6\" T=3",
+      "gold_type": "stat",
+      "judged_against_gold": true,
+      "judge_method": "mechanical",
+      "verdict": "✅",
+      "judge_reason": "被问字段全部正确：M/T",
+      "time": "11.5s",
+      "meta": {
+        "intent": "查",
+        "tool_calls": [
+          "get_datasheet",
+          "rag_search"
+        ],
+        "degraded": true,
+        "fell_back_to_classic": true
+      },
+      "sources": [
+        {
+          "book": "星界军10版中文",
+          "page": 50
+        },
+        {
+          "book": "星界军10版中文",
+          "page": 46
+        },
+        {
+          "book": "帝国特勤中文",
+          "page": 19
+        },
+        {
+          "book": "星界军10版中文",
+          "page": 53
+        },
+        {
+          "book": "星际战士10版中文",
+          "page": 111
+        },
+        {
+          "book": "艾达灵族10版中文",
+          "page": 36
+        },
+        {
+          "book": "Core Rules - New 40K Core Rules",
+          "page": 83
+        },
+        {
+          "book": "Core Rules - New 40K Core Rules",
+          "page": 78
+        }
+      ],
+      "answer": "指挥官，档案中列有**四支**不同的重武器班/小队，其 **M（移动）** 与 **T（坚韧）** 数值如下：\n\n| 单位 | M | T | 来源 |\n|---|---|---|---|\n| **卡塔昌重武器班** | **6** | **3** | [《星界军10版中文》第50页] |\n| **卡迪安重武器班** | **6** | **3** | [《星界军10版中文》第46页] |\n| **克里格重武器班** | 炮手 **4** / 观察员 **6** | **3** | [《星界军10版中文》第53页] |\n| **战术小队**（星际战士） | **6** | **4** | [《星际战士10版中文》第111页] |\n\n补充说明：\n\n- **卡塔昌**与**卡迪安**重武器班数据一致：**M 6，T 3**。\n- **克里格重武器班**为混合编成，**炮手 M 4**、**观察员 M 6**，两者 **T 均为 3** [《星界军10版中文》第53页]。\n- **战术小队**虽非星界军编制，但若您所指为\"重武器\"相关小队，其 **M 6，T 4** [《星际战士10版中文》第111页]。\n\n若您特指某一支具体单位，请指明名称，我可进一步调取该单位的完整属性与武器数据。"
+    },
+    {
+      "id": 63,
+      "faction": "帝国卫队",
+      "question": "坦克指挥官的坦克命令有什么效果？",
+      "gold": null,
+      "gold_type": "ability",
+      "judged_against_gold": false,
+      "judge_method": "intrinsic",
+      "verdict": "⚠️",
+      "judge_reason": "⚠️ 回答详细列出了星界军通用“指挥之声”命令及两位坦克指挥官差异，但未直接确认坦克指挥官是否有专属命令，且末尾称“档案缺失”与已给出信息矛盾，来源页码也较模糊。",
+      "time": "9.8s",
+      "meta": {
+        "intent": "查",
+        "tool_calls": [
+          "get_entity",
+          "get_entity",
+          "rag_search"
+        ],
+        "degraded": true,
+        "fell_back_to_classic": true
+      },
+      "sources": [
+        {
+          "book": "星界军10版中文",
+          "page": 33
+        },
+        {
+          "book": "星界军10版中文",
+          "page": 31
+        },
+        {
+          "book": "星界军10版中文",
+          "page": 1
+        },
+        {
+          "book": "泰伦虫族10版中文",
+          "page": 14
+        },
+        {
+          "book": "星界军10版中文",
+          "page": 28
+        },
+        {
+          "book": "Faction Pack Astra Militarum",
+          "page": 5
+        },
+        {
+          "book": "Core Rules - New 40K Core Rules",
+          "page": 56
+        },
+        {
+          "book": "Core Rules - New 40K Core Rules",
+          "page": 52
+        }
+      ],
+      "answer": "根据档案，**坦克指挥官**（罗格多恩坦克指挥官、黎曼鲁斯坦克指挥官）本身并不自带一套\"坦克专属命令表\"，它们使用的是星界军通用的**指挥之声**命令体系。具体如下：\n\n## 一、指挥之声（命令的通用规则）\n来源：[《星界军10版中文》第1页]\n\n- 拥有该技能的**军官模型**可在以下时刻下达命令：\n  - 你的**指挥阶段**中\n  - （本模型所在单位）**脱离运输工具**的阶段结束时\n  - （本模型所在单位）**部署到战场**的阶段结束时\n- 选择一条命令，对其 **6寸内**一个友军单位生效，持续到**下个你的指挥阶段开始时**。\n- 除非特殊说明，**一个单位只能被一条命令影响**（后生效的立即替换之前的）；若接令单位处于**被震慑状态**，影响它的命令效果立即失效。\n- 命令效果**只对星界军模型生效**。\n\n## 二、可选命令及效果\n来源：[《星界军10版中文》第1页]\n\n| 命令名称 | 效果 |\n|---|---|\n| **快快快！** | 本单位模型 **M+3** |\n| **上刺刀！** | 本单位模型近战武器 **WS+1** |\n| **瞄准！** | 本单位模型射击武器 **BS+1** |\n| **一排放！二排放！** | 本单位模型【速射】武器 **A+1** |\n| **卧倒！** | 本单位模型 **SV 值提高1，最多3+** |\n| **职责与荣誉！** | 本单位模型 **LD 和 OC 值提高1** |\n\n## 三、两位坦克指挥官的命令能力差异\n\n| 项目 | 罗格多恩坦克指挥官 | 黎曼鲁斯坦克指挥官 |\n|---|---|---|\n| 下达命令数量 | 最多 **2 条** | 最多 **2 条** |\n| 命令范围 | **12寸**（通讯网络） | **12寸**（通讯网络） |\n| 可命令对象 | 编队单位 | 中队单位（可下达命令给中队单位） |\n| 来源 | [《星界军10版中文》第33页] | [《星界军10版中文》第31页] |\n\n**要点**：两者的\"指挥之声\"均为**最多2条命令**，且通过**通讯网络**把命令范围扩大到 **12寸**；区别在于可命令的单位类型——罗格多恩针对**编队**，黎曼鲁斯针对**中队**。\n\n## 四、11版补充（超重型坦克指挥官）\n来源：[《Faction Pack Astra Militarum》第5页]\n\n11版阵营补丁中，**BATTALION COMMANDER** 强化项（仅限星界军 **Titanic Character** 模型）赋予携带者：\n- **指挥之声**技能与**军官**关键词；\n- 可对星界军 **Titanic 和 Squadron** 单位下达**最多2条命令**。\n\n> 注：档案中**未给出**\"坦克指挥官专属命令表\"这一独立条目；其命令效果即上述星界军通用命令。若你指的是某条具体命令的细则，档案缺失，建议查阅原始规则书。"
+    },
+    {
+      "id": 65,
+      "faction": "机械修会",
+      "question": "机械教游侠的SV是多少？",
+      "gold": "Skitarii Rangers：SV=4+",
+      "gold_type": "stat",
+      "judged_against_gold": true,
+      "judge_method": "mechanical",
+      "verdict": "✅",
+      "judge_reason": "被问字段全部正确：SV",
+      "time": "5.6s",
+      "meta": {
+        "intent": "查",
+        "tool_calls": [
+          "get_datasheet"
+        ],
+        "degraded": false
+      },
+      "sources": [
+        {
+          "book": "Skitarii Rangers 兵牌（Adeptus Mechanicus）",
+          "page": 0
+        }
+      ],
+      "answer": "**护教军游猎兵（Skitarii Rangers，机械教）的 Sv 为 4+**，另有 **5+ 特殊保护（invuln）**。\n\n| 属性 | 数值 |\n|---|---|\n| M | 6\" |\n| T | 3 |\n| **Sv** | **4+** |\n| 特殊保护 | 5+ |\n| W | 1 |\n| Ld | 7+ |\n| OC | 2 |\n\n说明：库中该名字存在两张独立兵牌——**Adeptus Mechanicus（机械教）** 与 **QI** 阵营。上表为机械教版本（10 模型 85 分）[《Skitarii Rangers 兵牌》]。QI 版本库中无点数记录，未列数值。"
+    },
+    {
+      "id": 66,
+      "faction": "机械修会",
+      "question": "卡斯特兰机器人的T和W各是多少？",
+      "gold": "卡斯特兰机器人：T=9 W=7",
+      "gold_type": "stat",
+      "judged_against_gold": true,
+      "judge_method": "mechanical",
+      "verdict": "✅",
+      "judge_reason": "被问字段全部正确：T/W",
+      "time": "5.2s",
+      "meta": {
+        "intent": "查",
+        "tool_calls": [
+          "get_datasheet"
+        ],
+        "degraded": false
+      },
+      "sources": [
+        {
+          "book": "机械修会 兵牌（结构库，Kastelan Robots）",
+          "page": 0
+        }
+      ],
+      "answer": "卡斯特兰机器人（Kastelan Robots，机械修会）的耐久属性为：**T9、W7**（每台模型）。\n\n| 属性 | 数值 |\n|---|---|\n| M | 6\" |\n| **T** | **9** |\n| Sv | 2+（另有 5+ 特殊保护） |\n| **W** | **7** |\n| Ld | 7+ |\n| OC | 2 |\n\n补充：该单位为 2 台 150 分 / 4 台 300 分，底盘 60mm。"
+    },
+    {
+      "id": 67,
+      "faction": "机械修会",
+      "question": "贝利撒留·考尔的W和T是多少？",
+      "gold": "贝利撒留·考尔：T=8 W=10",
+      "gold_type": "stat",
+      "judged_against_gold": true,
+      "judge_method": "mechanical",
+      "verdict": "✅",
+      "judge_reason": "被问字段全部正确：T/W",
+      "time": "5.9s",
+      "meta": {
+        "intent": "查",
+        "tool_calls": [
+          "get_datasheet"
+        ],
+        "degraded": false
+      },
+      "sources": [
+        {
+          "book": "Warhammer 40,000 数据表（机械修会：贝利撒留·考尔）",
+          "page": 0
+        }
+      ],
+      "answer": "**贝利撒留·考尔（Belisarius Cawl）** 的耐久属性为：\n\n| 属性 | 数值 |\n|---|---|\n| T（韧性） | **8** |\n| W（生命值） | **10** |\n\n顺带附上完整属性块：M 8\" / T 8 / Sv 2+（4+ 特保）/ W 10 / Ld 6+ / OC 3，底座 105×70mm，阵营为机械修会（Adeptus Mechanicus），点数 220 分。\n\n注：该兵牌属性来自既有结构库，点数已与 MFM 同步；如需当前最新补丁下的规则效果，建议同时核对最新 Faction Pack。"
+    },
+    {
+      "id": 68,
+      "faction": "机械修会",
+      "question": "铁骑兵的M是多少？",
+      "gold": "巴利斯塔利铁骑兵：M=10\"",
+      "gold_type": "stat",
+      "judged_against_gold": true,
+      "judge_method": "mechanical",
+      "verdict": "✅",
+      "judge_reason": "被问字段全部正确：M",
+      "time": "5.4s",
+      "meta": {
+        "intent": "查",
+        "tool_calls": [
+          "get_datasheet",
+          "rag_search"
+        ],
+        "degraded": true,
+        "fell_back_to_classic": true
+      },
+      "sources": [
+        {
+          "book": "兽人10版中文",
+          "page": 33
+        },
+        {
+          "book": "太空野狼10版中文",
+          "page": 35
+        },
+        {
+          "book": "黑色圣堂",
+          "page": 26
+        },
+        {
+          "book": "机械修会10版中文",
+          "page": 29
+        },
+        {
+          "book": "星界军10版中文",
+          "page": 64
+        },
+        {
+          "book": "星际战士10版中文",
+          "page": 133
+        },
+        {
+          "book": "Core Rules - New 40K Core Rules",
+          "page": 87
+        },
+        {
+          "book": "Core Rules - New 40K Core Rules",
+          "page": 33
+        }
+      ],
+      "answer": "**档案中不存在名为「铁骑兵」的单位。**\n\n现有档案中与\"骑兵\"相关的单位如下，供指挥官核对：\n\n| 单位 | 出处 | M |\n|---|---|---|\n| **雷狼骑兵**（太空野狼） | 《太空野狼10版中文》第35页 | **12** |\n| **瑟贝利游骑兵**（机械修会） | 《机械修会10版中文》第29页 | **12** |\n| **克里格死亡骑兵**（星界军） | 《星界军10版中文》第64页 | **10** |\n\n若您指的是上述某一单位，请指明；若确为其他名称的单位，**档案缺失，建议查阅原始规则书**。"
+    },
+    {
+      "id": 69,
+      "faction": "泰伦虫族",
+      "question": "虫巢暴君的W和SV各是多少？",
+      "gold": "虫巢暴君：SV=2+ W=10",
+      "gold_type": "stat",
+      "judged_against_gold": true,
+      "judge_method": "mechanical",
+      "verdict": "✅",
+      "judge_reason": "被问字段全部正确：SV/W",
+      "time": "5.5s",
+      "meta": {
+        "intent": "查",
+        "tool_calls": [
+          "get_datasheet"
+        ],
+        "degraded": false
+      },
+      "sources": [
+        {
+          "book": "Warhammer 40,000 Datasheet（泰伦虫族：虫巢暴君）",
+          "page": 0
+        }
+      ],
+      "answer": "**虫巢暴君（Hive Tyrant，泰伦虫族）** 的防御属性：\n\n| 属性 | 数值 |\n|---|---|\n| M（移动） | 8\" |\n| T（坚韧） | 10 |\n| **Sv（保护）** | **2+** |\n| 特殊保护 | 4+ 无敌保护 |\n| **W（ wounds）** | **10** |\n| Ld（领导） | 7+ |\n| OC（目标控制） | 3 |\n| 底盘 | 60mm |\n\n即：**W = 10，Sv = 2+**（另有 4+ 无敌保护）。\n\n点数：195 分（1 模型）[《MFM》2026-09-14 同步]。"
+    },
+    {
+      "id": 70,
+      "faction": "泰伦虫族",
+      "question": "激素虫的M和T各是多少？",
+      "gold": "刀虫：M=10\" T=3",
+      "gold_type": "stat",
+      "judged_against_gold": true,
+      "judge_method": "mechanical",
+      "verdict": "✅",
+      "judge_reason": "被问字段全部正确：M/T",
+      "time": "6.1s",
+      "meta": {
+        "intent": "查",
+        "tool_calls": [
+          "get_datasheet"
+        ],
+        "degraded": false
+      },
+      "sources": [
+        {
+          "book": "泰伦虫族 兵牌（Hormagaunts/刀虫）",
+          "page": 0
+        }
+      ],
+      "answer": "你问的「激素虫」在档案里对应的是**刀虫（Hormagaunts，泰伦虫族）**——这是社区对 Hormagaunt 的常见叫法。\n\n它的核心属性为：\n\n| 属性 | 数值 |\n|---|---|\n| M（移动） | **10\"** |\n| T（韧性） | **3** |\n| Sv（保护） | 5+ |\n| W（ wounds） | 1 |\n| Ld | 8+ |\n| OC | 2 |\n\n所以 **M = 10\"、T = 3**。\n\n补充：该单位为 Battleline，10 模型 70 分 / 20 模型 120 分；近战武器「刀虫利爪」A3、WS4+、S3、AP-1、D1，并拥有「围剿突袭」（突进回合可冲锋）[《泰伦虫族 兵牌》刀虫条目]。\n\n注：兵牌属性来自既有结构库，点数已与 MFM 同步；若你要确认最新补丁是否改动，建议再核对最新 Faction Pack。"
+    },
+    {
+      "id": 71,
+      "faction": "泰伦虫族",
+      "question": "基因窃取者的近战武器S和AP是多少？",
+      "gold": "Genestealer claws and talons S=4 AP=-2 D=1",
+      "gold_type": "weapon",
+      "judged_against_gold": true,
+      "judge_method": "mechanical",
+      "verdict": "✅",
+      "judge_reason": "被问字段全部正确：S/AP",
+      "time": "4.9s",
+      "meta": {
+        "intent": "查",
+        "tool_calls": [
+          "get_datasheet"
+        ],
+        "degraded": false
+      },
+      "sources": [
+        {
+          "book": "泰伦虫族 兵牌（Genestealers）",
+          "page": 0
+        }
+      ],
+      "answer": "基因窃取者（Genestealers，泰伦虫族）的近战武器为**基因窃取者利爪（Genestealer claws and talons）**：\n\n| 武器 | 射程 | A | WS | S | AP | D |\n|---|---|---|---|---|---|---|\n| 基因窃取者利爪 | 近战 | 4 | 2+ | **4** | **-2** | 1 |\n\n所以你要的答案是：**S = 4，AP = -2** [《泰伦虫族》兵牌 · 基因窃取者]。\n\n补充：该单位 5 模型 75 分 / 10 模型 140 分，M 8\"、T 4、Sv 5+（5+ 特保）、W 2、Ld 7+、OC 1。"
+    },
+    {
+      "id": 72,
+      "faction": "泰伦虫族",
+      "question": "泰伦武士（Tyranid Warriors）的SV是多少？",
+      "gold": "装备近战活体武器的泰伦武士：SV=4+",
+      "gold_type": "stat",
+      "judged_against_gold": true,
+      "judge_method": "mechanical",
+      "verdict": "✅",
+      "judge_reason": "被问字段全部正确：SV",
+      "time": "6.0s",
+      "meta": {
+        "intent": "查",
+        "tool_calls": [
+          "get_datasheet",
+          "rag_search"
+        ],
+        "degraded": true,
+        "fell_back_to_classic": true
+      },
+      "sources": [
+        {
+          "book": "泰伦虫族10版中文",
+          "page": 24
+        },
+        {
+          "book": "6月4日分数中文",
+          "page": 37
+        },
+        {
+          "book": "泰伦虫族10版中文",
+          "page": 25
+        },
+        {
+          "book": "黑图书馆",
+          "page": 0
+        },
+        {
+          "book": "Core Rules - New 40K Core Rules",
+          "page": 78
+        },
+        {
+          "book": "Core Rules - New 40K Core Rules",
+          "page": 85
+        }
+      ],
+      "answer": "**泰伦武士的 SV 为 4+。**\n\n依据档案中的兵牌数据：\n\n| 单位 | M | T | SV | W | LD | OC |\n|---|---|---|---|---|---|---|\n| 骨刃利爪泰伦武士 | 6 | 5 | **4+** | 3 | 7+ | 2 |\n| 生化喷吐泰伦武士 | 6 | 5 | **4+** | 3 | 7+ | 2 |\n\n- 骨刃利爪泰伦武士：SV **4+** [《泰伦虫族10版中文》第24页]\n- 生化喷吐泰伦武士：SV **4+** [《泰伦虫族10版中文》第24页]\n\n补充说明：档案 5、档案 6（《黑图书馆》第0页）中记载的同类单位 SV 亦为 **4+**，与上述数据一致。\n\n如需该单位的其他属性（M/T/W/LD/OC）或武器数据，可继续下达查询指令。"
+    },
+    {
+      "id": 73,
+      "faction": "泰伦虫族",
+      "question": "诺恩使者的T和W是多少？",
+      "gold": "诺恩使者：T=11 W=16",
+      "gold_type": "stat",
+      "judged_against_gold": true,
+      "judge_method": "mechanical",
+      "verdict": "✅",
+      "judge_reason": "被问字段全部正确：T/W",
+      "time": "6.0s",
+      "meta": {
+        "intent": "查",
+        "tool_calls": [
+          "get_datasheet"
+        ],
+        "degraded": false
+      },
+      "sources": [
+        {
+          "book": "Warhammer 40,000 数据表（泰伦虫族：诺恩使者）",
+          "page": 0
+        },
+        {
+          "book": "Munitorum Field Manual (MFM)",
+          "page": 0
+        }
+      ],
+      "answer": "**诺恩使者（Norn Emissary，泰伦虫族）** 的耐久属性为：\n\n| 属性 | 数值 |\n|---|---|\n| M（移动） | 10\" |\n| **T（韧性）** | **11** |\n| Sv（保护） | 2+（另有 4+ 特殊保护） |\n| **W（耐伤）** | **16** |\n| Ld（领导） | 7+ |\n| OC（目标控制） | 5 |\n| 底盘 | 100mm |\n\n即 **T=11、W=16**。\n\n补充：该模型还带「超自然韧性」——对致命伤拥有 4+ 不觉疼痛；「单一目标」在战斗开始时可选一项增益（重掷对该敌单位的命中/致伤，或获得 5+ 不觉疼痛且 OC 变为 15）。点数 250 分/1 模型。\n\n注：属性来自既有结构库，点数已与 MFM 同步；若需最新补丁后的规则效果，建议同时核对最新 Faction Pack。"
+    },
+    {
+      "id": 74,
+      "faction": "泰伦虫族",
+      "question": "吞噬兽的M和T各是多少？",
+      "gold": "巨噬兽：M=8\" T=11",
+      "gold_type": "stat",
+      "judged_against_gold": true,
+      "judge_method": "mechanical",
+      "verdict": "✅",
+      "judge_reason": "被问字段全部正确：M/T",
+      "time": "5.5s",
+      "meta": {
+        "intent": "查",
+        "tool_calls": [
+          "get_datasheet",
+          "rag_search"
+        ],
+        "degraded": true,
+        "fell_back_to_classic": true
+      },
+      "sources": [
+        {
+          "book": "泰伦虫族10版中文",
+          "page": 39
+        },
+        {
+          "book": "泰伦虫族10版中文",
+          "page": 24
+        },
+        {
+          "book": "泰伦虫族10版中文",
+          "page": 48
+        },
+        {
+          "book": "黑图书馆",
+          "page": 0
+        },
+        {
+          "book": "泰伦虫族10版中文",
+          "page": 45
+        },
+        {
+          "book": "Core Rules - New 40K Core Rules",
+          "page": 83
+        },
+        {
+          "book": "Core Rules - New 40K Core Rules",
+          "page": 80
+        }
+      ],
+      "answer": "档案中**没有名为「吞噬兽」的单位**，无法给出其 M/T 数值。\n\n档案内名称相近的泰伦虫族巨兽单位如下，供指挥官核对：\n\n| 单位 | M | T | 出处 |\n|---|---|---|---|\n| **巨噬兽 HARUSPEX** | **8** | **11** | [《泰伦虫族10版中文》第39页] |\n| **暴虐兽 TYRANNOFEX** | **9** | **12** | [《泰伦虫族10版中文》第45页] |\n\n若指挥官所指为上述之一，请确认具体名称；若确为其他单位，则**档案缺失，建议查阅原始规则书**。"
+    },
+    {
+      "id": 75,
+      "faction": "太空野狼",
+      "question": "狼卫终结者的SV和特殊保护是多少？",
+      "gold": "野狼守卫终结者：特殊保护=4++ SV=2+",
+      "gold_type": "stat",
+      "judged_against_gold": true,
+      "judge_method": "mechanical",
+      "verdict": "✅",
+      "judge_reason": "被问字段全部正确：INV/SV",
+      "time": "5.4s",
+      "meta": {
+        "intent": "查",
+        "tool_calls": [
+          "get_datasheet"
+        ],
+        "degraded": false
+      },
+      "sources": [
+        {
+          "book": "Warhammer 40,000 结构库兵牌（Wolf Guard Terminators）",
+          "page": 0
+        },
+        {
+          "book": "MFM (mfm.warhammer-community.com)",
+          "page": 0
+        }
+      ],
+      "answer": "**野狼守卫终结者（Wolf Guard Terminators）** 的防御属性：\n\n| 属性 | 数值 |\n|---|---|\n| M | 6\" |\n| T | 5 |\n| **Sv（保护）** | **2+** |\n| **Inv（特殊保护/无敌保护）** | **4+** |\n| W | 3 |\n| Ld | 6+ |\n| OC | 1 |\n\n即：**保护 2+，特殊保护（无敌保护）4+**。\n\n补充：该单位可装备**风暴盾**，装备者 W 值变为 4（不改变 Sv/Inv 数值）。\n\n点数：5 模型 155 分 / 10 模型 310 分。\n\n注：兵牌属性来自既有结构库，点数已与 MFM 同步；如需确认最新补丁下的规则效果，建议同时查阅最新 Faction Pack。"
+    },
+    {
+      "id": 76,
+      "faction": "圣血天使",
+      "question": "死亡连无畏机兵的M和T是多少？",
+      "gold": "死亡连无畏：M=8\" T=10",
+      "gold_type": "stat",
+      "judged_against_gold": true,
+      "judge_method": "mechanical",
+      "verdict": "✅",
+      "judge_reason": "被问字段全部正确：M/T",
+      "time": "5.5s",
+      "meta": {
+        "intent": "查",
+        "tool_calls": [
+          "get_datasheet"
+        ],
+        "degraded": false
+      },
+      "sources": [
+        {
+          "book": "Warhammer 40,000 数据表（Death Company Dreadnought）",
+          "page": 0
+        },
+        {
+          "book": "Munitorum Field Manual (MFM)",
+          "page": 0
+        }
+      ],
+      "answer": "**死亡连无畏机兵（Death Company Dreadnought，圣血天使）** 的核心属性：\n\n| 属性 | 数值 |\n|---|---|\n| M（移动） | **8\"** |\n| T（坚韧） | **10** |\n| Sv（保护） | 2+ |\n| W（ wounds） | 12 |\n| Ld | 6+ |\n| OC | 4 |\n| 底盘 | 90mm |\n\n即 **M = 8\"、T = 10**。\n\n补充：该兵牌点数 150 分（1 模型），关键词含 Walker / Dreadnought / Death Company / Vehicle，阵营技能为「破敌重誓」，另有「黑色狂怒」——近战攻击可重掷命中，但若不在己方圣血天使角色 6\" 内或牧师 12\" 内，则不能后撤且 OC 变为 0。\n\n注：属性来自既有结构库，点数已与 MFM 同步；若需最新补丁后的规则效果，建议同时核对最新 Faction Pack。"
+    },
+    {
+      "id": 77,
+      "faction": "黑暗天使",
+      "question": "死亡翼骑士的SV和W各是多少？",
+      "gold": "死翼骑士：SV=2+ W=4",
+      "gold_type": "stat",
+      "judged_against_gold": true,
+      "judge_method": "mechanical",
+      "verdict": "✅",
+      "judge_reason": "被问字段全部正确：SV/W",
+      "time": "5.7s",
+      "meta": {
+        "intent": "查",
+        "tool_calls": [
+          "get_datasheet",
+          "rag_search"
+        ],
+        "degraded": true,
+        "fell_back_to_classic": true
+      },
+      "sources": [
+        {
+          "book": "黑暗天使10版中文",
+          "page": 21
+        },
+        {
+          "book": "黑图书馆",
+          "page": 0
+        },
+        {
+          "book": "黑暗天使10版中文",
+          "page": 20
+        },
+        {
+          "book": "6月4日平衡版中午",
+          "page": 6
+        },
+        {
+          "book": "6月4日分数中文",
+          "page": 17
+        },
+        {
+          "book": "黑暗天使10版中文",
+          "page": 16
+        },
+        {
+          "book": "Core Rules - New 40K Core Rules",
+          "page": 80
+        },
+        {
+          "book": "Core Rules - New 40K Core Rules",
+          "page": 31
+        }
+      ],
+      "answer": "**死翼骑士**的防御属性如下：\n\n| 属性 | 数值 |\n|---|---|\n| **SV（保护）** | **2+** |\n| **W（ wounds / 耐久）** | **4** |\n\n完整底盘属性供参考：\n\n| M | T | SV | W | LD | OC |\n|---|---|---|---|---|---|\n| 5 | 5 | **2+** | **4** | 6+ | 1 |\n\n来源：[《黑暗天使10版中文》第21页]（十版·codex兵牌基底，11版仍合法引用）。\n\n补充：该单位模型另拥有 **4+特殊保护** [《黑暗天使10版中文》第21页]。"
+    },
+    {
+      "id": 78,
+      "faction": "太空野狼",
+      "question": "拉格纳·黑鬃的W是多少？",
+      "gold": "拉格纳·黑鬃：W=5",
+      "gold_type": "stat",
+      "judged_against_gold": true,
+      "judge_method": "mechanical",
+      "verdict": "✅",
+      "judge_reason": "被问字段全部正确：W",
+      "time": "5.5s",
+      "meta": {
+        "intent": "查",
+        "tool_calls": [
+          "get_datasheet"
+        ],
+        "degraded": false
+      },
+      "sources": [
+        {
+          "book": "Warhammer 40,000 结构库兵牌（Ragnar Blackmane）",
+          "page": 0
+        },
+        {
+          "book": "Munitorum Field Manual (MFM)",
+          "page": 0
+        }
+      ],
+      "answer": "拉格纳·黑鬃（Ragnar Blackmane）的 **W（Wounds，耐久）为 5**。\n\n其完整属性块如下：\n\n| 属性 | M | T | Sv | W | Ld | OC |\n|---|---|---|---|---|---|---|\n| 数值 | 7\" | 4 | 3+ | **5** | 6+ | 1 |\n\n（另有 4+ 特殊保护；底盘 40mm）[《MFM / 结构库兵牌》]\n\n补充：该单位点数 90 分（1 模型），阵营为太空野狼（Space Marines），关键词含 Epic Hero、Character、Infantry、Tacticus。\n\n注：兵牌属性来自既有结构库，点数已与 MFM 同步；若需确认最新补丁下的规则效果，建议同时核对最新 Faction Pack。"
+    },
+    {
+      "id": 79,
+      "faction": "圣血天使",
+      "question": "圣血卫队的S和AP各是多少？",
+      "gold": "Encarmine blade S=6 AP=-3 D=2；Encarmine spear S=6 AP=-2 D=2",
+      "gold_type": "weapon",
+      "judged_against_gold": true,
+      "judge_method": "llm_gold",
+      "verdict": "✅",
+      "judge_reason": "✅ 回答准确给出了殷红之刃 S6/AP-3 与殷红之矛 S6/AP-2，与标准答案一致，额外信息不扣分。",
+      "time": "6.2s",
+      "meta": {
+        "intent": "查",
+        "tool_calls": [
+          "get_datasheet"
+        ],
+        "degraded": false
+      },
+      "sources": [
+        {
+          "book": "Warhammer 40,000 数据表（圣血卫队 Sanguinary Guard）",
+          "page": 0
+        }
+      ],
+      "answer": "圣血卫队（Sanguinary Guard）的武器 S 和 AP 如下：\n\n**近战武器**\n| 武器 | A | WS | S | AP | D |\n|---|---|---|---|---|---|\n| 殷红之刃（Encarmine blade） | 4 | 2+ | **6** | **-3** | 2 |\n| 殷红之矛（Encarmine spear） | 4 | 2+ | **6** | **-2** | 2 |\n\n**射击武器**\n| 武器 | 射程 | A | BS | S | AP | D |\n|---|---|---|---|---|---|---|\n| 钟鸣爆弹枪（Angelus boltgun） | 12\" | 2 | 3+ | **4** | **0** | 1 |\n| 狱火手枪（Inferno pistol） | 6\" | 1 | 3+ | **8** | **-4** | D3 |\n\n所以如果你问的是主力近战武器：**S6、AP-3（殷红之刃）或 AP-2（殷红之矛）**。\n\n单位基础属性：M12\"、T4、Sv2+（4+ 特保）、W3、Ld6+、OC1，3 模型 120 分 / 6 模型 260 分。\n\n注：兵牌属性来自既有结构库，点数已与 MFM 同步；若需确认最新补丁对武器或技能的影响，建议同时查阅最新 Faction Pack。"
+    },
+    {
+      "id": 80,
+      "faction": "黑暗天使",
+      "question": "内环同伴的SV是多少？",
+      "gold": "内环伙友：SV=3+",
+      "gold_type": "stat",
+      "judged_against_gold": true,
+      "judge_method": "mechanical",
+      "verdict": "✅",
+      "judge_reason": "被问字段全部正确：SV",
+      "time": "5.5s",
+      "meta": {
+        "intent": "查",
+        "tool_calls": [
+          "get_datasheet",
+          "rag_search"
+        ],
+        "degraded": true,
+        "fell_back_to_classic": true
+      },
+      "sources": [
+        {
+          "book": "黑暗天使10版中文",
+          "page": 19
+        },
+        {
+          "book": "黑图书馆",
+          "page": 0
+        },
+        {
+          "book": "帝皇之子10版中文",
+          "page": 39
+        },
+        {
+          "book": "6月4日平衡版中午",
+          "page": 6
+        },
+        {
+          "book": "机械修会10版中文",
+          "page": 25
+        },
+        {
+          "book": "黑暗天使10版中文",
+          "page": 5
+        },
+        {
+          "book": "Core Rules - New 40K Core Rules",
+          "page": 18
+        },
+        {
+          "book": "Core Rules - New 40K Core Rules",
+          "page": 57
+        }
+      ],
+      "answer": "**内环伙友的 SV 为 3+。**\n\n依据档案数据：\n\n| 单位 | M | T | SV | W | LD | OC |\n|---|---|---|---|---|---|---|---|\n| 内环伙友 | 6 | 4 | **3+** | 3 | 6+ | 2 |\n\n来源标注：\n- [《黑暗天使10版中文》第19页]（十版·codex兵牌基底）\n- [《黑图书馆》第0页]（十版·codex兵牌基底，同数据）\n\n补充说明：档案 4《6月4日平衡版中午》第6页仅修改了**卡利班巨剑**的武器数据，未涉及 SV 属性，故 SV 仍为 **3+**。"
+    },
+    {
+      "id": 81,
+      "faction": "沃坦联盟",
+      "question": "炉心战士的SV和M各是多少？",
+      "gold": "炉心战士：M=5\" SV=4+",
+      "gold_type": "stat",
+      "judged_against_gold": true,
+      "judge_method": "mechanical",
+      "verdict": "✅",
+      "judge_reason": "被问字段全部正确：M/SV",
+      "time": "4.9s",
+      "meta": {
+        "intent": "查",
+        "tool_calls": [
+          "get_datasheet"
+        ],
+        "degraded": false
+      },
+      "sources": [
+        {
+          "book": "Leagues of Votann Faction Pack",
+          "page": 0
+        }
+      ],
+      "answer": "**炉心战士（Hearthkyn Warriors，沃坦联盟）** 的移动与保护值为：\n\n| 属性 | 数值 |\n|---|---|\n| M（移动） | **5\"** |\n| T（坚韧） | 5 |\n| **Sv（保护）** | **4+** |\n| W（ wounds） | 1 |\n| Ld | 7+ |\n| OC | 2 |\n\n即 **M = 5\"、Sv = 4+**（无特殊保护值 invuln）。该单位 10 模型 90 分 [《Leagues of Votann Faction Pack》炉心战士数据卡]。"
+    },
+    {
+      "id": 83,
+      "faction": "沃坦联盟",
+      "question": "离子爆破者的S和AP是多少？",
+      "gold": "离子爆破者（Ion blaster，沃坦炉心战士 Hearthkyn Warriors 携带的武器）S=5 AP=-2 D=1。",
+      "gold_type": "weapon",
+      "judged_against_gold": true,
+      "judge_method": "mechanical",
+      "verdict": "✅",
+      "judge_reason": "被问字段全部正确：S/AP",
+      "time": "6.3s",
+      "meta": {
+        "intent": "查",
+        "tool_calls": [
+          "get_datasheet"
+        ],
+        "degraded": false
+      },
+      "sources": [
+        {
+          "book": "Leagues of Votann — Hearthkyn Warriors",
+          "page": 0
+        }
+      ],
+      "answer": "**离子爆裂枪（Ion blaster）** 的数值为：**S 5，AP -2**（伤害 D1，射程 18\"，A 1，命中 4+）[《Leagues of Votann》炉心战士数据表]。\n\n注：你问的「离子爆破者」在档案中对应的是炉心战士（Hearthkyn Warriors）的 **离子爆裂枪**，其 S=5、AP=-2。"
+    },
+    {
+      "id": 85,
+      "faction": "核心规则",
+      "question": "致命破灭规则具体怎么运作？请完整说明。",
+      "gold": "致命破灭 DEADLY DEMISE X：本单位模型被消灭时投1D6（若为运输载具，先让载员完成紧急脱离移动再投——11版明确时序），结果为6时该模型发生致命破灭：其6寸内每个单位（不分敌我）受X点致命伤害；X为随机值时对每个单位单独投。[11版 Core Rules 24.08]",
+      "gold_type": "rule",
+      "judged_against_gold": true,
+      "judge_method": "llm_gold",
+      "verdict": "✅",
+      "judge_reason": "✅ 系统回答完整覆盖了标准答案的关键要点：模型被消灭时投1D6、运输载具先紧急脱离再投、结果为6触发、6寸内不分敌我受X点致命伤害、X随机时对每个单位单独投，且额外补充的细节不扣分。",
+      "time": "7.1s",
+      "meta": {
+        "intent": "查",
+        "tool_calls": [
+          "get_keyword_definition"
+        ],
+        "degraded": false
+      },
+      "sources": [
+        {
+          "book": "Core Rules - New 40K Core Rules",
+          "page": 80
+        }
+      ],
+      "answer": "## 致命破灭（Deadly Demise）完整运作说明\n\n**核心机制**：致命破灭让载具、巨兽在被摧毁时有几率殉爆，波及周围单位。本技能**总是带参数**，写作「致命破灭 X」（Deadly Demise X）。[《Core Rules - New 40K Core Rules》第80页]\n\n### 触发与结算流程\n\n1. **触发时机**：当本单位的模型被消灭时，投 1D6。\n2. **运输载具的特殊时序**：如果是运输载具，**先**让舱内单位完成紧急脱离移动，**然后**再投这 1D6。\n3. **判定**：结果为 **6** 时，该模型发生致命破灭。\n4. **效果**：其 **6\" 内的每个单位（不分敌我）** 遭受 **X 点致命伤害**。\n   - 例：「致命破灭 3」＝对 6\" 内每个单位造成 3 点致命伤害。\n   - 若 X 是随机值（如 D3/D6），则**对每个受影响的单位单独投掷**。\n\n### 11 版明确时序（2026-06-20 起）\n\n运输载具被毁时的完整结算顺序为：\n\n> 先结算攻击方未结算的攻击 → 舱内单位紧急脱离 → 投致命破灭 → 移除模型\n\n（官方示例见原文）[11版 Core Rules 24.08]\n\n### 译名说明\n\n不同汉化版本将本技能译作「致命破灭／致命消亡／致命覆灭／致命死亡／致命毁灭／致命终局／致命爆退」等，**均为 Deadly Demise 的同一技能**，仅译名不同。\n\n另需注意：「死战不退」是 Faction Pack Space-Marines 部分数据卡（如 Sicaran Punisher）中「CORE: Deadly Demise Dx」一行的**误译**，经核对英文原文确认同样指本技能。\n\n### 要点速记\n\n| 项目 | 内容 |\n|---|---|\n| 触发 | 模型被消灭时投 1D6 |\n| 成功值 | 6 |\n| 范围 | 6\" 内所有单位（敌我不分） |\n| 伤害 | X 点致命伤害；X 随机则逐单位单独投 |\n| 运输载具 | 先紧急脱离，再投致命破灭 |\n| 11版时序 | 未结算攻击 → 紧急脱离 → 投致命破灭 → 移除模型 |"
+    },
+    {
+      "id": 86,
+      "faction": "核心规则",
+      "question": "深入打击的完整规则是什么？",
+      "gold": "深入打击 DEEP STRIKE：全体拥有此技能的单位做入场移动（ingress move，20.04）时，可部署于战场任意位置，只须与所有敌方单位水平距离 8 寸以上（可在对方部署区内）。[11版 Core Rules 24.09；十版为9寸，11版改为8寸]",
+      "gold_type": "rule",
+      "judged_against_gold": true,
+      "judge_method": "llm_gold",
+      "verdict": "✅",
+      "judge_reason": "✅ 回答完整覆盖了标准答案的关键要点：入场移动（ingress move 20.04）、全体拥有技能、任意位置部署、与所有敌方单位水平距离8寸以上、可在对方部署区内，并正确指出11版由9寸改为8寸。",
+      "time": "6.1s",
+      "meta": {
+        "intent": "查",
+        "tool_calls": [
+          "get_keyword_definition"
+        ],
+        "degraded": false
+      },
+      "sources": [
+        {
+          "book": "Core Rules - New 40K Core Rules",
+          "page": 80
+        }
+      ],
+      "answer": "**深入打击（Deep Strike）完整规则**\n\n- 本单位做**入场移动（ingress move，20.04）**时，若单位**全体模型**都拥有此技能，则可部署于战场**任意位置**，只须与**所有敌方单位保持水平距离 8\" 以上**——包括可以部署在对方的部署区内。[《Core Rules - New 40K Core Rules》第80页]\n\n**11 版变更要点（2026-06-20 起）**\n- 安全距离由十版的 **9\" 改为 8\"**。[11版 Core Rules 24.09]\n- 入场机制统一为 **ingress move（20.04）**，深入打击不再走旧版独立的「预备队入场」流程。[11版 Core Rules 24.09]\n\n**要点提示**\n- 触发条件：单位**全体模型**须拥有该技能，缺一不可。\n- 落点限制：与**所有**敌方单位的水平距离均需 ≥8\"，不区分是否在对方部署区。\n- 该技能属于最常见的预备队入场方式（经隧道、传送等空降战场）。[《Core Rules - New 40K Core Rules》第80页]"
+    },
+    {
+      "id": 87,
+      "faction": "核心规则",
+      "question": "连击X的效果是什么？",
+      "gold": "连击X SUSTAINED HITS：本武器攻击出现命中暴击（通常命中骰6）时，额外造成X下命中（直接算作已命中，无需再投）。",
+      "gold_type": "rule",
+      "judged_against_gold": true,
+      "judge_method": "llm_gold",
+      "verdict": "✅",
+      "judge_reason": "✅ 理由：系统回答准确覆盖了标准答案的关键要点——暴击命中（通常命中骰6）时额外造成X下命中且直接算作已命中无需再投，并补充了举例和译名等额外信息，不扣分。",
+      "time": "5.4s",
+      "meta": {
+        "intent": "查",
+        "tool_calls": [
+          "get_keyword_definition"
+        ],
+        "degraded": false
+      },
+      "sources": [
+        {
+          "book": "Core Rules - New 40K Core Rules",
+          "page": 85
+        }
+      ],
+      "answer": "**连击 X（Sustained Hits X）** 的效果是：当本武器的攻击出现**暴击命中**（通常为未修正命中骰出 6）时，该次攻击**额外造成 X 下命中**——这些额外命中直接视为已命中，无需再投命中骰。[《Core Rules - New 40K Core Rules》第85页]\n\n举例：**连击 2** 出现暴击命中时，该攻击共命中 **3 次**（暴击本身 1 次 + 额外 2 次）。[《Core Rules - New 40K Core Rules》第85页]\n\n要点：\n- 本技能**总是带参数**，写作「连击 X」。[《Core Rules - New 40K Core Rules》第85页]\n- 额外命中**不再投命中骰**，直接算作命中，因此能显著提升火力期望。[《Core Rules - New 40K Core Rules》第85页]\n- 11 版语义与十版一致。[11版 Core Rules 24.36]\n- 部分汉化版本译作「持续命中」，与「连击」为同一技能的不同译名。[《Core Rules - New 40K Core Rules》第85页]"
+    },
+    {
+      "id": 88,
+      "faction": "核心规则",
+      "question": "斥候能力怎么运作？",
+      "gold": "斥候 Scouts X\"：在战前能力结算步（Resolve Pre-battle Abilities），全员拥有此技能的单位三选一：①若在战略预备队，可改为部署在己方部署区内任意位置；②若完全处于己方部署区内，可做一次斥候移动——按移动规则移动至多X寸，结束时须与所有敌方单位水平距离 8 寸以上；③若搭乘完全在己方部署区内的专属运输载具且载员全员有斥候，该载具可做斥候移动。[11版 Core Rules 24.31-24.32；与十版（先手回合前移动、9寸限制）不同]",
+      "gold_type": "rule",
+      "judged_against_gold": true,
+      "judge_method": "llm_gold",
+      "verdict": "✅",
+      "judge_reason": "✅ 系统回答完整覆盖标准答案的三选一机制、斥候移动规则（至多X寸、距敌8寸以上）及与十版的差异，事实一致且更详细。",
+      "time": "8.3s",
+      "meta": {
+        "intent": "查",
+        "tool_calls": [
+          "get_keyword_definition"
+        ],
+        "degraded": false
+      },
+      "sources": [
+        {
+          "book": "Core Rules - New 40K Core Rules",
+          "page": 84
+        }
+      ],
+      "answer": "**斥候（Scouts X）** 是开战前的先遣机动技能，11 版起在**战前能力结算步（Resolve Pre-battle Abilities）**三选一执行 [《Core Rules - New 40K Core Rules》第84页]。\n\n**前提**：该单位**全体模型**都拥有此技能（技能总是带参数，写作「斥候 X」）。满足后从以下三项中选一项：\n\n1. **在战略预备队中** → 可改为将其部署在完全处于己方部署区内的任意位置。\n2. **完全处于己方部署区内** → 可进行一次**斥候移动**。\n3. **搭乘专属运输载具**，且该载具完全处于己方部署区内、载具内全体模型都拥有斥候技能 → 该运输载具可进行斥候移动。\n\n**斥候移动（24.32）**：按移动规则移动至多 X″；移动结束时必须与所有敌方单位保持**水平距离 8″ 以上** [《Core Rules - New 40K Core Rules》第84页]。\n\n**11 版变更（2026-06-20 起）**：十版的「第一回合开始前移动、距敌 9″ 以上、先手方先动」机制被整体重做为上述战前能力三选一，安全距离由 9″ 改为 **8″** [《Core Rules - New 40K Core Rules》第84页]。"
+    },
+    {
+      "id": 89,
+      "faction": "核心规则",
+      "question": "渗透者技能的效果是什么？",
+      "gold": "渗透者 INFILTRATORS：部署军队时，全员拥有此技能的单位可部署于战场任意位置，只须与敌方部署区及所有敌方单位水平距离 8 寸以上。[11版 Core Rules 24.20；十版为9寸，11版改为8寸]",
+      "gold_type": "rule",
+      "judged_against_gold": true,
+      "judge_method": "llm_gold",
+      "verdict": "✅",
+      "judge_reason": "✅ 回答完整覆盖标准答案要点：部署时全体拥有该技能的单位可部署于战场任意位置，且与敌方部署区及所有敌方单位水平距离8寸以上，并正确指出11版由9寸改为8寸。",
+      "time": "5.9s",
+      "meta": {
+        "intent": "查",
+        "tool_calls": [
+          "get_entity"
+        ],
+        "degraded": false
+      },
+      "sources": [
+        {
+          "book": "官方中文核心规则（GW 简体中文下载版）",
+          "page": "24.20"
+        },
+        {
+          "book": "Core Rules - New 40K Core Rules",
+          "page": 82
+        }
+      ],
+      "answer": "「渗透者（Infiltrators）」是核心规则中的部署类技能，效果如下：\n\n**部署军队时**，如果你的某个单位**全体模型**都拥有此技能，则可以将此单位部署于**战场任意位置**，只须与**敌方部署区**以及**所有敌方单位**保持**水平距离 8\" 以上**。[《官方中文核心规则（GW 简体中文下载版）》第24.20页][《Core Rules - New 40K Core Rules》第82页]\n\n要点提示：\n- 是「全体模型都拥有」才生效，混编单位里只要有一个模型没有该技能就不能这样部署。\n- 限制的是**水平距离**（横向量测），且同时约束「敌方部署区」和「每一个敌方单位」。\n- **11 版变更（2026-06-20 起）**：安全距离由十版的 **9\" 改为 8\"**。[11版 Core Rules 24.20]"
+    },
+    {
+      "id": 90,
+      "faction": "核心规则",
+      "question": "独行特工的规则是什么？",
+      "gold": "独行特工 LONE OPERATIVE：除非属于联合单位，本单位对 12 寸外的敌方模型不可见（因此不能被其选为目标），且除非攻击模型在 12 寸内，本单位不能被[间接火力]武器选为目标。带参形态 Lone Operative X\" 将 12 寸替换为 X 寸。[11版 Core Rules 24.24]",
+      "gold_type": "rule",
+      "judged_against_gold": true,
+      "judge_method": "llm_gold",
+      "verdict": "✅",
+      "judge_reason": "✅ 理由：回答完整覆盖了标准答案的三个要点（12寸外不可见、间接火力限制、带参形态替换X寸），事实一致，多出的版本变更说明不扣分。",
+      "time": "5.3s",
+      "meta": {
+        "intent": "查",
+        "tool_calls": [
+          "get_keyword_definition"
+        ],
+        "degraded": false
+      },
+      "sources": [
+        {
+          "book": "Core Rules - New 40K Core Rules",
+          "page": 83
+        }
+      ],
+      "answer": "**独行特工（Lone Operative）** 是核心规则技能，让刺客类单位在远距离上无法被敌人锁定。规则要点如下：\n\n- 除非作为联合单位的一部分（详见**领袖**技能），本单位对 **12\" 外**的敌方模型**不可见**（因此不能被其选为攻击目标）。\n- 除非攻击模型处于本单位 **12\" 内**，本单位不能被【间接火力】武器选为目标。\n- 带参形态「**独行特工 X\"**」：将上述 12\" 替换为 X\"。\n\n**11 版变更（2026-06-20 起）**：语义从十版的「只能被 12\" 内的模型选为射击目标」强化为「12\" 外不可见」，并新增了间接火力条款与带参形态。[《Core Rules - New 40K Core Rules》第83页]"
+    },
+    {
+      "id": 91,
+      "faction": "核心规则",
+      "question": "热熔X的规则是什么？",
+      "gold": "热熔X MELTA：本武器攻击半射程内目标时，攻击的破坏力（D）增加标注数值（如热熔2=D+2）。",
+      "gold_type": "rule",
+      "judged_against_gold": true,
+      "judge_method": "llm_gold",
+      "verdict": "✅",
+      "judge_reason": "✅ 理由：系统回答准确覆盖了标准答案的关键要点——热熔X在半射程内使破坏力D增加X（如热熔2=D+2），并额外补充了细节，未与标准答案矛盾。",
+      "time": "4.8s",
+      "meta": {
+        "intent": "查",
+        "tool_calls": [
+          "get_keyword_definition"
+        ],
+        "degraded": false
+      },
+      "sources": [
+        {
+          "book": "Core Rules - New 40K Core Rules",
+          "page": 83
+        }
+      ],
+      "answer": "**热熔 X（MELTA X）** 是热熔类武器的招牌词条，规则如下：\n\n- 该技能**总是带参数**，写作「热熔 X」。\n- 模型用【热熔】武器攻击时，若**目标单位在选择目标步骤时处于该武器的半射程内**，则在该攻击单位的**全部攻击结算完毕前**，该武器的**破坏力（D）+X**。\n- 举例：「热熔 2」且武器 D 为 D6 时，结算按 **D6+2** 计算。\n\n11 版语义与十版一致，仅措辞改为「结算期间 D 特性 +X」。[《Core Rules - New 40K Core Rules》第83页]"
+    },
+    {
+      "id": 92,
+      "faction": "核心规则",
+      "question": "手枪规则在射击和近战中有什么特殊效果？",
+      "gold": "手枪 PISTOL：11版中 [PISTOL] 与 [CLOSE-QUARTERS]（近身）完全等同（手枪词条将逐步被近身取代）。交战中且本回合未前进的单位可用近身射击（10.06）：非巨兽/载具模型只能用[近身]武器、且只能以与本单位交战的敌方单位为目标；巨兽/载具模型可用其他武器，但除非用[近身]武器攻击交战单位，命中骰 -1（[爆破]武器仍不能打交战单位）。用其他射击方式时，每个非巨兽/载具模型只能在手枪与其他远程武器之间二选一开火。[11版 Core Rules 24.27/24.07/10.06]",
+      "gold_type": "rule",
+      "judged_against_gold": true,
+      "judge_method": "llm_gold",
+      "verdict": "✅",
+      "judge_reason": "✅ 系统回答完整覆盖了标准答案的关键要点：手枪与近身完全等同、交战中且未前进可近身射击、非巨兽/载具只能用近身武器且只能打交战单位、巨兽/载具用其他武器命中-1且爆破不能打交战单位、二选一开火规则，并额外补充了近战阶段无加成的说明，与标准答案一致。",
+      "time": "6.6s",
+      "meta": {
+        "intent": "查",
+        "tool_calls": [
+          "get_keyword_definition"
+        ],
+        "degraded": false
+      },
+      "sources": [
+        {
+          "book": "Core Rules - New 40K Core Rules",
+          "page": 80
+        },
+        {
+          "book": "Core Rules - New 40K Core Rules",
+          "page": 83
+        },
+        {
+          "book": "Core Rules - New 40K Core Rules",
+          "page": 35
+        }
+      ],
+      "answer": "**手枪（Pistol / 近身 Close-Quarters）规则要点**\n\n11 版起，【手枪】与【近身】在一切规则意义上**完全等同**（官方注明手枪词条将逐步被近身取代）[《Core Rules - New 40K Core Rules》第80页]。\n\n**射击阶段的效果：**\n- 持有【手枪】/【近身】武器的单位（或巨兽/载具单位），在**交战中且本回合未做前进移动**时，可以进行**近身射击**（close-quarters shooting）[《Core Rules》第83页]：\n  - **非巨兽/载具模型**：只能选【手枪】/【近身】武器开火，且**只能以与本单位交战的敌方单位为目标**。\n  - **巨兽/载具模型**：可以用其他武器开火，但除非该攻击使用【近身】武器并以交战单位为目标，**命中骰 -1**；【爆破】武器仍不能以交战单位为目标。\n- 使用其他射击方式时，单位中每个非巨兽/载具模型只能在「一件或多件【近身】武器」与「一件或多件其他远程武器」之间**二选一**开火[《Core Rules》第35页]。\n\n**近战阶段：**\n- 手枪/近身词条本身**不赋予近战攻击加成**——它解决的是「被缠住时还能不能开枪」的问题，而非近战武器属性。近战仍按各模型的近战武器正常结算。\n\n> 11 版变更（2026-06-20 起）：十版手枪规则被并入【近身】射击类型，新增巨兽/载具非近身武器 -1 命中等细则。"
+    },
+    {
+      "id": 93,
+      "faction": "核心规则",
+      "question": "无视掩体规则的效果是什么？",
+      "gold": "无视掩体 IGNORES COVER：本武器的攻击使目标不能享受掩体收益（不获得掩体带来的护甲增益），包括由规则授予的掩体收益（如 11 版 Stealth）。[11版 Core Rules 24.18]",
+      "gold_type": "rule",
+      "judged_against_gold": true,
+      "judge_method": "llm_gold",
+      "verdict": "✅",
+      "judge_reason": "✅ 系统回答准确覆盖了标准答案的核心要点：目标不能享受掩体收益，且包括规则授予的掩体收益（如Stealth），与标准答案一致。",
+      "time": "5.8s",
+      "meta": {
+        "intent": "查",
+        "tool_calls": [
+          "get_keyword_definition"
+        ],
+        "degraded": false
+      },
+      "sources": [
+        {
+          "book": "Core Rules - New 40K Core Rules",
+          "page": 82
+        }
+      ],
+      "answer": "**无视掩体（Ignores Cover）** 的效果是：使用该武器的攻击，使目标**不能享受掩体收益（benefit of cover）**——而且**包括由规则授予的掩体收益**，例如 11 版「隐蔽（Stealth）」能力给予的掩体。[《Core Rules - New 40K Core Rules》第82页]\n\n要点：\n- 目标无法获得掩体带来的保护（如对射击的豁免加成等掩体收益）。[《Core Rules - New 40K Core Rules》第82页]\n- 不仅针对地形/工事提供的掩体，**规则能力授予的掩体同样被剥夺**（如 Stealth）。[《Core Rules - New 40K Core Rules》第82页]\n- 11 版原文明确写出「含规则授予的掩体（如 Stealth）」，与十版语义一致。[《Core Rules - New 40K Core Rules》第82页]"
+    },
+    {
+      "id": 94,
+      "faction": "核心规则",
+      "question": "领袖技能如何与联合单位互动？",
+      "gold": "领袖 LEADER：领袖单位可带领特定保镖单位组成联合单位（集结军队步为每个领袖单位选一个保镖单位）。联合单位在一切规则意义上视为单一单位；每个保镖单位通常只能有一个领袖单位和一个支援（SUPPORT）单位。受攻击时若单位中还有保镖模型，结算用保镖模型中最高的 T 值；『单位被消灭时触发』的规则只在联合单位开战成员的最后一个模型被消灭时触发；领袖的『带领单位时』类技能在其自身模型全灭前对联合单位持续生效。[11版 Core Rules 24.22 / 19.01-19.04]",
+      "gold_type": "rule",
+      "judged_against_gold": true,
+      "judge_method": "llm_gold",
+      "verdict": "✅",
+      "judge_reason": "✅ 系统回答完整覆盖了标准答案的全部关键要点：联合单位组成、视为单一单位、保镖单位仅能带一个领袖和一个支援单位、受攻击时用保镖最高T值、单位被消灭触发规则在最后一个模型被消灭时触发、领袖「带领单位时」技能持续生效，且额外补充了关键词等未问信息，不扣分。",
+      "time": "6.7s",
+      "meta": {
+        "intent": "查",
+        "tool_calls": [
+          "get_keyword_definition"
+        ],
+        "degraded": false
+      },
+      "sources": [
+        {
+          "book": "Core Rules - New 40K Core Rules",
+          "page": 82
+        }
+      ],
+      "answer": "领袖技能与联合单位的互动，11 版核心规则集中在第 19 章，要点如下：\n\n**1. 组成联合单位（19.01）**\n在集结军队步（Muster Armies），你军队中每个领袖单位（Leader）可以选择一个它能带领的友方保镖单位（bodyguard，可带领对象见该单位数据卡），整场战斗与其组成联合单位。联合单位在**一切规则意义上视作单一单位**。除非特殊说明，每个保镖单位只能附加**一个领袖单位和一个支援单位**（SUPPORT，11 版新增的同类技能，规则同领袖）。[《Core Rules - New 40K Core Rules》第82页]\n\n**2. 受攻击时（19.02）**\n只要联合单位中还有保镖模型，结算攻击时使用保镖模型中**最高的 T 值**（即使领袖 T 值不同）；只剩领袖/支援模型时改用其中最高 T 值。「单位被消灭时触发」的规则，只在联合单位开战成员的**最后一个模型**被消灭时触发。[《Core Rules - New 40K Core Rules》第82页]\n\n**3. 关键词（19.03）**\n联合单位拥有其全部成员单位的关键词（如领袖是灵能者，整个单位就带灵能者关键词）；但模型不会获得其他模型的关键词——攻击的目标是单位而非模型。[《Core Rules - New 40K Core Rules》第82页]\n\n**4. 技能存续（19.04）**\n只影响特定模型的规则（如强化）永远只作用于该模型；作用于单位的技能对联合单位全体生效，直至其来源单位的最后一个模型被消灭。领袖自身的「带领单位时」类技能，在其自身模型全灭前持续生效（即使保镖已全灭）。[《Core Rules - New 40K Core Rules》第82页]\n\n**11 版变更（2026-06-20 起）**：新增 SUPPORT（支援）附队类型；联合单位全程为单一单位，十版「保镖全灭后领袖分裂为独立单位」等措辞已不在 11 版规则中。[《Core Rules - New 40K Core Rules》第82页]"
+    },
+    {
+      "id": 95,
+      "faction": "帝皇之子",
+      "question": "噪音战士的S和AP是多少？",
+      "gold": "Sonic blaster S=5 AP=-1 D=2",
+      "gold_type": "weapon",
+      "judged_against_gold": true,
+      "judge_method": "mechanical",
+      "verdict": "✅",
+      "judge_reason": "被问字段全部正确：S/AP",
+      "time": "7.5s",
+      "meta": {
+        "intent": "查",
+        "tool_calls": [
+          "get_datasheet"
+        ],
+        "degraded": false
+      },
+      "sources": [
+        {
+          "book": "Warhammer 40,000 结构库兵牌（Noise Marines, Emperor's Children）",
+          "page": 0
+        },
+        {
+          "book": "Munitorum Field Manual (mfm.warhammer-community.com)",
+          "page": 0
+        }
+      ],
+      "answer": "「噪音战士」（音爆战士，Noise Marines）在库里有**两张分属不同阵营的独立兵牌**，武器数值不同，需先消歧：\n\n**① 帝皇之子（Emperor's Children）版**（unit_id 000004088，6 模型 145 分）——主要武器：\n\n| 武器 | 射程 | A | BS/WS | S | AP | D |\n|---|---|---|---|---|---|---|\n| 音爆炮（单频）Blastmaster – single frequency | 18\" | 3 | 3+ | **10** | **-2** | 3 |\n| 音爆炮（变频）Blastmaster – varied frequency | 18\" | 6 | 3+ | **6** | **-2** | 1 |\n| 音波爆能枪 Sonic blaster | 18\" | 3 | 3+ | **5** | **-1** | 2 |\n| 音波手枪 Screamer pistol | 12\" | 3 | 3+ | **5** | **-1** | 2 |\n| 格斗武器 Close combat weapon | Melee | 3 | 3+ | **4** | **0** | 1 |\n| 动力剑 Power sword | Melee | 4 | 3+ | **5** | **-2** | 1 |\n\n（音爆炮/音波爆能枪/音波手枪均带 ignores cover；音波手枪另有 pistol）\n\n**② 混沌星际战士（CSM）版**（unit_id 000004099）——本返回未给出其武器数值，若你要的是这一版，请说明，我用「Noise Marines (CSM)」回查。\n\n所以「S 和 AP 是多少」取决于你问的是哪把武器、哪个阵营：EC 版音爆炮单频是 **S10/AP-2**，变频是 **S6/AP-2**，音波爆能枪是 **S5/AP-1**。\n\n注：点数已与 MFM 同步（EC 版 6 模型 145 分），但兵牌属性/技能来自既有结构库，尚未逐字段复核最新补丁，问当前规则效果时建议同时核对最新 Faction Pack。"
+    },
+    {
+      "id": 96,
+      "faction": "帝皇之子",
+      "question": "福格瑞姆的W和SV多少？",
+      "gold": "福格瑞姆，帝皇之子恶魔原体：SV=2+ W=16",
+      "gold_type": "stat",
+      "judged_against_gold": true,
+      "judge_method": "mechanical",
+      "verdict": "✅",
+      "judge_reason": "被问字段全部正确：SV/W",
+      "time": "5.4s",
+      "meta": {
+        "intent": "查",
+        "tool_calls": [
+          "get_datasheet"
+        ],
+        "degraded": false
+      },
+      "sources": [
+        {
+          "book": "Warhammer 40,000 Faction Pack / 帝皇之子 兵牌（Fulgrim）",
+          "page": 0
+        }
+      ],
+      "answer": "**福格瑞姆（帝皇之子恶魔原体）** 的防御属性：\n\n| 属性 | 数值 |\n|---|---|\n| M | 16\" |\n| T | 11 |\n| **Sv** | **2+** |\n| 特殊保护 | 4+（invuln） |\n| **W** | **16** |\n| Ld | 5+ |\n| OC | 6 |\n\n即 **W = 16，Sv = 2+**（另有 4+ 特殊保护）。\n\n补充：该模型点数 340 分（1 模型），底座 130mm；拥有「严重损伤」——当 W 降至 1–6 时，其攻击命中骰结果 -1 [《帝皇之子 兵牌》福格瑞姆条目]。"
+    },
+    {
+      "id": 97,
+      "faction": "千子",
+      "question": "马格努斯的W和T各是多少？",
+      "gold": "红魔马格努斯：T=11 W=16",
+      "gold_type": "stat",
+      "judged_against_gold": true,
+      "judge_method": "mechanical",
+      "verdict": "✅",
+      "judge_reason": "被问字段全部正确：T/W",
+      "time": "5.3s",
+      "meta": {
+        "intent": "查",
+        "tool_calls": [
+          "get_datasheet"
+        ],
+        "degraded": false
+      },
+      "sources": [
+        {
+          "book": "千子 兵牌（Magnus The Red）",
+          "page": 0
+        }
+      ],
+      "answer": "红魔马格努斯（Magnus The Red，千子）的**T（韧性）= 11**，**W（耐伤）= 16**。\n\n完整属性块：\n\n| 属性 | 数值 |\n|---|---|\n| M | 14\" |\n| T | **11** |\n| Sv | 2+（另有 4+ 特殊保护） |\n| W | **16** |\n| Ld | 5+ |\n| OC | 6 |\n\n点数 455 分（1 模型）。"
+    },
+    {
+      "id": 98,
+      "faction": "千子",
+      "question": "红字战士的SV是多少？",
+      "gold": "红字战士：SV=3+",
+      "gold_type": "stat",
+      "judged_against_gold": true,
+      "judge_method": "mechanical",
+      "verdict": "✅",
+      "judge_reason": "被问字段全部正确：SV",
+      "time": "5.6s",
+      "meta": {
+        "intent": "查",
+        "tool_calls": [
+          "get_datasheet"
+        ],
+        "degraded": false
+      },
+      "sources": [
+        {
+          "book": "Thousand Sons Index / 千子兵牌",
+          "page": 0
+        }
+      ],
+      "answer": "红字战士（Rubric Marines，千子军团）的**保护值 Sv 为 3+**，同时拥有 **5+ 特殊保护（Invulnerable Save）**。\n\n| 模型 | M | T | Sv | 特殊保护 | W | Ld | OC |\n|---|---|---|---|---|---|---|---|\n| 红字战士 | 6\" | 4 | **3+** | 5+ | 2 | 7+ | 2 |\n| 野心巫师（Aspiring Sorcerer） | 6\" | 4 | **3+** | 5+ | 3 | 6+ | 2 |\n\n即：普通保护 3+，另有 5+ 特殊保护（对高破甲武器时可用 5+ 特保）。\n\n注：库中另有 CSM 阵营的同名兵牌（Rubric Marines (CSM)），以上为千子（Thousand Sons）版本 [《Thousand Sons Index》红字战士兵牌]。"
+    },
+    {
+      "id": 99,
+      "faction": "战斗修女",
+      "question": "战斗修女小队的SV和特殊保护是多少？",
+      "gold": "战斗修女小队：特殊保护=6++ SV=3+",
+      "gold_type": "stat",
+      "judged_against_gold": true,
+      "judge_method": "mechanical",
+      "verdict": "✅",
+      "judge_reason": "被问字段全部正确：INV/SV",
+      "time": "5.4s",
+      "meta": {
+        "intent": "查",
+        "tool_calls": [
+          "get_datasheet"
+        ],
+        "degraded": false
+      },
+      "sources": [
+        {
+          "book": "Adepta Sororitas Datasheet",
+          "page": 0
+        }
+      ],
+      "answer": "**战斗修女小队（Battle Sisters Squad）的防御属性：**\n\n| 属性 | 数值 |\n|---|---|\n| M（移动） | 6\" |\n| T（韧性） | 3 |\n| **Sv（保护）** | **3+** |\n| **Inv（特殊保护/无敌保护）** | **6+** |\n| W（ wounds） | 1 |\n| Ld（领导） | 7+ |\n| OC（目标控制） | 2 |\n\n即：**普通保护 3+，特殊保护（无敌保护）6+**。\n\n补充：该单位为 10 模型编成，100 分，关键词含 Battleline、Infantry、Imperium（阿德普塔·索罗里塔斯阵营）。[《Adepta Sororitas 兵牌》战斗修女小队条目]"
+    },
+    {
+      "id": 100,
+      "faction": "战斗修女",
+      "question": "惩罚者机甲的T和W是多少？",
+      "gold": "忏悔者机甲：T=6 W=5",
+      "gold_type": "stat",
+      "judged_against_gold": true,
+      "judge_method": "mechanical",
+      "verdict": "✅",
+      "judge_reason": "被问字段全部正确：T/W",
+      "time": "6.1s",
+      "meta": {
+        "intent": "查",
+        "tool_calls": [
+          "get_datasheet"
+        ],
+        "degraded": false
+      },
+      "sources": [
+        {
+          "book": "Adepta Sororitas 兵牌（忏悔者机甲）",
+          "page": 0
+        }
+      ],
+      "answer": "你问的「惩罚者机甲」在档案里没有精确命中；最接近的近似匹配是**修女会（Adepta Sororitas）的「忏悔者机甲」（Penitent Engines）**——请注意这是**猜测性近似匹配**，不是同名单位，请确认你要问的是不是它。\n\n若确为忏悔者机甲，其耐久属性为：\n\n| 属性 | 数值 |\n|---|---|\n| M | 8\" |\n| **T** | **6** |\n| Sv | 4+（另有 6+ 特保） |\n| **W** | **5** |\n| Ld | 7+ |\n| OC | 2 |\n\n即 **T6、W5**，每模型 5 伤，底盘 50mm，1 模型 70 分 / 2 模型 140 分 [《Adepta Sororitas 兵牌·忏悔者机甲》]。\n\n如果你要问的其实是别的单位（例如帝国卫队/星际战士里名字带「惩罚者」的载具），请把完整单位名或所属阵营告诉我，我再查一次。"
+    },
+    {
+      "id": 101,
+      "faction": "核心规则",
+      "question": "武器词条【致命一击】（LETHAL HITS）是什么意思？11版和十版有什么不同？",
+      "gold": "【致命一击】[LETHAL HITS]：用该武器进行的攻击出现暴击命中时，你可以选择让该次攻击自动对目标造伤（不再投造伤骰）。11版变更（2026-06-20 起）：自动造伤由十版的强制改为**可选**（\"you can choose\"）——因为自动造伤不投造伤骰就不可能出造伤暴击，放弃它可以保留触发【毁灭伤害】等依赖造伤暴击的技能的机会。",
+      "gold_type": "rule",
+      "judged_against_gold": true,
+      "judge_method": "llm_gold",
+      "verdict": "✅",
+      "judge_reason": "✅ 系统回答完整覆盖了【致命一击】的核心效果（暴击命中可自动造伤、跳过造伤骰）以及11版与十版的关键差异（十版强制、11版改为可选），并正确解释了改为可选的原因（保留触发依赖造伤暴击技能的机会），与标准答案一致。",
+      "time": "6.7s",
+      "meta": {
+        "intent": "查",
+        "tool_calls": [
+          "get_keyword_definition"
+        ],
+        "degraded": false
+      },
+      "sources": [
+        {
+          "book": "Core Rules - New 40K Core Rules",
+          "page": 82
+        }
+      ],
+      "answer": "【致命一击】（LETHAL HITS）是武器词条（USR）之一，效果如下：\n\n**核心效果**：用带【致命一击】的武器进行攻击时，若该次攻击出现**暴击命中**（通常为未修正的命中骰出 6），你**可以选择**让该次攻击**自动对目标造伤**，跳过造伤骰。[《Core Rules - New 40K Core Rules》第82页]\n\n**11版与十版的区别**：\n\n| 版本 | 触发后是否强制自动造伤 |\n|---|---|\n| 十版 | **强制**——暴击命中即自动造伤，没有选择余地 |\n| 11版（2026-06-20 起） | **可选**——原文为 \"you can choose\"，你可以放弃自动造伤 |\n\n**为什么改成可选（设计师注释）**：选择自动造伤意味着该次攻击**不投造伤骰**，因此**不可能出现造伤暴击**。保留选择权，是为了让你在需要时放弃自动造伤，从而保留触发【毁灭伤害】（DEVASTATING WOUNDS）或【针对性攻击】等**依赖造伤暴击**的技能的机会。[《Core Rules - New 40K Core Rules》第82页，11版 Core Rules 24.23]\n\n简单说：十版是「暴击命中＝白送一次造伤」，11版变成「暴击命中＝你可以白送一次造伤，但也可以不要，去赌造伤暴击」。"
+    },
+    {
+      "id": 102,
+      "faction": "核心规则",
+      "question": "武器词条【速射1】和【速射2】有什么区别？请举例说明。",
+      "gold": "【速射 X】[RAPID FIRE X] 总是带参数：为该武器聚集攻击骰时，若目标单位在选择目标步处于该武器的半射程内，则额外增加 X 个攻击骰。所以速射1额外加 1 个攻击骰、速射2额外加 2 个，差别就是半射程内多出的攻击骰数。例：武器 A=1 时，速射1在半射程内共 2 个攻击骰，速射2在半射程内共 3 个攻击骰；不在半射程内则都只有 A 本身的 1 个。",
+      "gold_type": "rule",
+      "judged_against_gold": true,
+      "judge_method": "llm_gold",
+      "verdict": "✅",
+      "judge_reason": "✅ 理由：系统回答准确说明速射X的区别在于半射程内额外增加X个攻击骰，并给出速射1/速射2的对照与A=1时2骰/3骰示例，关键事实与标准答案一致。",
+      "time": "6.8s",
+      "meta": {
+        "intent": "查",
+        "tool_calls": [
+          "get_keyword_definition"
+        ],
+        "degraded": false
+      },
+      "sources": [
+        {
+          "book": "Core Rules - New 40K Core Rules",
+          "page": 84
+        }
+      ],
+      "answer": "【速射 X】的区别就在参数 X：**半射程内额外增加的攻击骰数不同**。\n\n**规则原文**：为【速射】武器聚集攻击骰时，如果目标单位在选择目标步（Select Targets）处于该武器的**半射程内**，则额外增加 X 个攻击骰。[《Core Rules - New 40K Core Rules》第84页]\n\n**区别对照**：\n\n| 词条 | 半射程外 | 半射程内 |\n|---|---|---|\n| 速射1 | A 个骰 | A + **1** 个骰 |\n| 速射2 | A 个骰 | A + **2** 个骰 |\n\n**举例**（设武器基础 A=1）：\n- 一把【速射1】、A=1 的枪：目标在半射程外 → 1 个攻击骰；目标进入半射程内 → 1+1 = **2 个攻击骰**。[《Core Rules - New 40K Core Rules》第84页]\n- 一把【速射2】、A=1 的枪：半射程外 → 1 个攻击骰；半射程内 → 1+2 = **3 个攻击骰**。\n- 若基础 A=2 的【速射2】武器：半射程内为 2+2 = **4 个攻击骰**。\n\n**要点**：\n1. 额外骰只在**半射程内**生效，半射程外按基础 A 结算。\n2. 速射2 比速射1 在半射程内多 1 个攻击骰，抵近火力更猛。\n3. 11 版语义与十版一致，措辞改为「额外增加 X 个攻击骰」。[11版 Core Rules 24.30]\n\n（注：以上为词条机制说明；具体某把武器的 A 值需查该单位兵牌。）"
+    },
+    {
+      "id": 103,
+      "faction": "核心规则",
+      "question": "一把带【连击3】的武器打出一次暴击命中，这一次攻击总共算命中几下？",
+      "gold": "共 4 下。【连击 X】[SUSTAINED HITS X]：该武器的攻击出现暴击命中（通常为未修正命中骰 6）时，该攻击额外造成 X 下命中，额外命中直接视为已命中、无需再投命中骰。所以连击3 = 暴击本身 1 下 + 额外 3 下 = 4 下。",
+      "gold_type": "rule",
+      "judged_against_gold": true,
+      "judge_method": "llm_gold",
+      "verdict": "✅",
+      "judge_reason": "✅ 理由：系统回答准确给出“暴击本身1下+连击3额外3下=共4下”，与标准答案完全一致，并正确解释了连击规则。",
+      "time": "6.8s",
+      "meta": {
+        "intent": "判",
+        "tool_calls": [
+          "get_keyword_definition"
+        ],
+        "degraded": false
+      },
+      "sources": [
+        {
+          "book": "Core Rules - New 40K Core Rules",
+          "page": 85
+        }
+      ],
+      "answer": "总共算 **4 下命中**。\n\n依据：连击 X 的规则是——该武器的攻击出现暴击命中时，该攻击**额外**造成 X 下命中，额外命中直接视为已命中、无需再投命中骰。所以「连击3」打出一次暴击命中时：暴击本身 1 次 + 额外 3 次 = **4 次命中** [《Core Rules - New 40K Core Rules》第85页]。\n\n（规则书原文举的例子是「连击2」→ 共 3 次命中，即 1+2；把 X 换成 3 就是 1+3=4。）"
+    },
+    {
+      "id": 104,
+      "faction": "帝国特勤",
+      "question": "强征小队（Exaction Squad）的技能「帝国法律」会让攻击获得哪两个武器词条？",
+      "gold": "【致命一击】（[LETHAL HITS]）和【精准】（[PRECISION]）。「帝国法律」：在战斗开始时选择对手军队中的一个单位；当本单位中的模型对该敌方单位进行攻击时，那次攻击拥有【致命一击】与【精准】技能。",
+      "gold_type": "ability",
+      "judged_against_gold": true,
+      "judge_method": "llm_gold",
+      "verdict": "✅",
+      "judge_reason": "✅ 回答准确覆盖了标准答案的两个武器词条【致命一击】和【精准】，并正确描述了技能触发条件。",
+      "time": "5.3s",
+      "meta": {
+        "intent": "查",
+        "tool_calls": [
+          "get_entity"
+        ],
+        "degraded": false
+      },
+      "sources": [
+        {
+          "book": "官方结构库 db/wh40k.sqlite（Wahapedia 11版镜像 + MFM 官方点数）",
+          "page": 0
+        }
+      ],
+      "answer": "强征小队（Exaction Squad）的技能「帝国法律」：战斗开始时选择对手军队中的一个单位，当本方模型对该敌方单位进行攻击时，该攻击获得**【致命一击】（Lethal Hits）**和**【精准】（Precision）**两个武器词条。[《官方结构库 db/wh40k.sqlite（Wahapedia 11版镜像 + MFM 官方点数）》强征小队条目]"
+    },
+    {
+      "id": 105,
+      "faction": "帝国特勤",
+      "question": "强征小队的「罪魂扫描仪」给单位的远程武器加了哪个武器词条？",
+      "gold": "【无视掩体】（[IGNORES COVER]）。「罪魂扫描仪」：持有者所在单位中模型装备的远程武器拥有【无视掩体】技能。",
+      "gold_type": "ability",
+      "judged_against_gold": true,
+      "judge_method": "llm_gold",
+      "verdict": "✅",
+      "judge_reason": "✅ 理由：系统回答准确给出【无视掩体】（Ignores Cover），并说明其作用于持有者所在单位中模型装备的远程武器，与标准答案关键事实一致。",
+      "time": "5.4s",
+      "meta": {
+        "intent": "查",
+        "tool_calls": [
+          "get_entity"
+        ],
+        "degraded": false
+      },
+      "sources": [
+        {
+          "book": "官方结构库 db/wh40k.sqlite（Wahapedia 11版镜像 + MFM 官方点数）",
+          "page": 0
+        }
+      ],
+      "answer": "强征小队的「罪魂扫描仪」给持有者所在单位中模型装备的远程武器加的词条是**【无视掩体】（Ignores Cover）**。\n\n原文：**武器技能-罪魂扫描仪**：持有者所在单位中模型装备的远程武器拥有【无视掩体】技能。[《强征小队》单位页]\n\n顺带一提，该单位本身已有部分武器自带【无视掩体】（如处决官霰弹枪），罪魂扫描仪的作用是把这一词条覆盖到全队的远程武器上。"
+    },
+    {
+      "id": 106,
+      "faction": "核心规则",
+      "question": "11版里【手枪】（PISTOL）和【近身/近距离】（CLOSE-QUARTERS）是什么关系？看到 PISTOL 还算有效词条吗？",
+      "gold": "两者在一切规则意义上完全等同——官方 11 版核心规则原文写明「[手枪]和[近距离]在所有规则中都视为同一个规则」，并由设计师注明[手枪]是先存在的技能、将随版本推进逐步被[近距离]取代。所以 PISTOL 仍然有效、按【近身/近距离】理解即可，它不是已作废的十版残留。",
+      "gold_type": "rule",
+      "judged_against_gold": true,
+      "judge_method": "llm_gold",
+      "verdict": "✅",
+      "judge_reason": "✅ 系统回答明确说明【手枪】与【近身/近距离】在一切规则意义上完全等同、PISTOL 仍属有效词条，与标准答案关键事实一致，且补充细节不扣分。",
+      "time": "7.0s",
+      "meta": {
+        "intent": "查",
+        "tool_calls": [
+          "get_keyword_definition"
+        ],
+        "degraded": false
+      },
+      "sources": [
+        {
+          "book": "Core Rules - New 40K Core Rules",
+          "page": 80
+        },
+        {
+          "book": "Core Rules - New 40K Core Rules",
+          "page": 83
+        },
+        {
+          "book": "Core Rules - New 40K Core Rules",
+          "page": 35
+        }
+      ],
+      "answer": "在 11 版里，【手枪】（PISTOL）和【近身】（CLOSE-QUARTERS）**在一切规则意义上完全等同**——两者是同一个东西的两个名字，不是两种不同的词条。官方注明手枪词条会随版本推进逐步被近身取代，所以 PISTOL 目前**仍然算有效词条**，只是属于「过渡期」的旧写法。[《Core Rules - New 40K Core Rules》第80、83、35页；11版 Core Rules 24.27]\n\n具体关系与用法：\n\n- **等同性**：11 版中【手枪】与【近身】完全等同（24.27）。带【手枪】或【近身】的武器，规则待遇一模一样。\n- **近身射击（close-quarters shooting，10.06）**：持有【近身】/【手枪】武器的单位（或巨兽/载具单位），在**交战中且本回合未做前进移动**时，可以这样开火：\n  - 非巨兽/载具模型：只能选【近身】/【手枪】武器开火，且只能以与本单位交战的敌方单位为目标。\n  - 巨兽/载具模型：可以用其他武器开火，但除非该攻击用【近身】武器并以交战单位为目标，命中骰 **-1**；【爆破】武器仍不能以交战单位为目标。\n- **二选一限制（24.07）**：使用其他射击方式时，单位中每个非巨兽/载具模型只能在「一件或多件【近身】武器」与「一件或多件其他远程武器」之间二选一开火。\n\n**11 版变更（2026-06-20 起）**：十版的手枪规则被并入【近身】射击类型，并新增了巨兽/载具用非近身武器时 -1 命中等细则。[11版 Core Rules 24.27 / 24.07 / 10.06]\n\n一句话：看到 PISTOL 不用慌，它现在就是【近身】的别名，照常有效；但新写的军表/规则文本会越来越多用【近身】。"
+    },
+    {
+      "id": 107,
+      "faction": "机械修会",
+      "question": "机械修会的蝎式沙丘运输车（Skorpius Dunerider）有哪两条技能？各是什么效果？",
+      "gold": "两条：①『Broad Spectrum Data-tether』——每次你用战略技能指定本单位时投 1 个 D6，出 5+ 你获得 1CP；②『Fire Support』——你的射击阶段中本模型射击后，选择一个本阶段被它命中过至少一次的敌方单位，直到本阶段结束，本回合从本运输载具下车的友方模型对该敌方单位进行攻击时可以重投致伤骰。**注意：库内该单位没有中文技能层**（黑图书馆源未收录它），abilities 正文只有英文原文；照实给出英文原文或其忠实翻译都算正确，凭空生成一条源里没有的中文技能名/效果即为错误。",
+      "gold_type": "ability",
+      "judged_against_gold": true,
+      "judge_method": "llm_gold",
+      "verdict": "✅",
+      "judge_reason": "✅ 理由：两条技能名称与效果均与标准答案一致（数据链5+得1CP、火力支援重投致伤骰），额外补充的分数与属性不影响判定。",
+      "time": "5.9s",
+      "meta": {
+        "intent": "查",
+        "tool_calls": [
+          "get_entity"
+        ],
+        "degraded": false
+      },
+      "sources": [
+        {
+          "book": "Adeptus Mechanicus Faction Pack",
+          "page": 19
+        }
+      ],
+      "answer": "机械修会**蝎式沙丘运输车（Skorpius Dunerider）**的两条技能如下 [《Adeptus Mechanicus Faction Pack》第19页]：\n\n**1. Broad Spectrum Data-tether（全频谱数据链）**\n每当你以**战略计谋（Stratagem）**指定该单位为目标时，掷 1 个 D6：出 **5+** 则你获得 **1CP**。\n\n**2. Fire Support（火力支援）**\n在你的**射击阶段**，该模型完成射击后，选择本阶段中被它命中过一次或多次的**一个敌方单位**。直到本阶段结束，本回合从该运输车**下车（disembark）**的每个友方模型，对那个敌方单位发动攻击时，可以**重掷致伤骰（Wound roll）**。\n\n补充：该单位 1 个模型 **75 分**，属性 M12\" / T9 / Sv3+ / W11 / Ld7+ / OC2 [《Adeptus Mechanicus Faction Pack》第19页]。"
+    },
+    {
+      "id": 108,
+      "faction": "混沌恶魔",
+      "question": "地狱剥皮机（Hellflayer）的技能「横扫敌阵 / Cutting Down the Foe」在11版是什么效果？",
+      "gold": "本单位中的模型进行近战攻击时，如果本单位在本回合进行过冲锋移动，那次攻击的力量（S）与伤害（D）属性各提升 1。**不是**「选一个交战范围内的敌方单位投 D6 造成 D3 致命伤」——那是同名技能的旧版本文，只残留在库内遗留条目 000004101 的英文正文里；现役条目 000001144 的英文正文与黑图中文层「横扫敌阵」都是 S/D 各 +1 这一版。",
+      "gold_type": "ability",
+      "judged_against_gold": true,
+      "judge_method": "llm_gold",
+      "verdict": "✅",
+      "judge_reason": "✅ 理由：系统回答准确给出「冲锋后近战攻击 S+1、D+1」这一现役效果，与标准答案关键事实一致，且未采用旧版致命伤描述；额外细节不扣分。",
+      "time": "6.8s",
+      "meta": {
+        "intent": "查",
+        "tool_calls": [
+          "get_entity"
+        ],
+        "degraded": false
+      },
+      "sources": [
+        {
+          "book": "混沌恶魔 单位数据表（官方结构库 db/wh40k.sqlite，Wahapedia 11版镜像）",
+          "page": 0
+        }
+      ],
+      "answer": "**地狱剥皮机（Hellflayer）—「横扫敌阵 / Cutting Down the Foe」**\n\n效果：**每当该单位中的模型进行近战攻击时，如果该单位在本回合进行过冲锋，那次攻击的力量（S）和伤害（D）属性都提升 1。** [《混沌恶魔 单位数据表》地狱剥皮机条目]\n\n也就是说，这是一个**冲锋触发型增益**：\n- 触发条件：该单位本回合完成过冲锋（Charge）。\n- 生效范围：该单位所有模型的**近战攻击**（含额外攻击武器）。\n- 增益内容：S +1、D +1。\n\n**结合该单位近战武器看实际收益**（冲锋后）：\n\n| 武器 | A | WS | S（冲锋后） | AP | D（冲锋后） | 技能 |\n|---|---|---|---|---|---|---|\n| 刃轮车轴 | 6 | 3+ | 6 → **7** | -1 | 2 → **3** | 额外攻击 |\n| 寻觅者之舌 | 4 | 4+ | 4 → **5** | 0 | 1 → **2** | 额外攻击、致命一击 |\n| 凶狠利爪 | 9 | 3+ | 4 → **5** | 0 | 1 → **2** | 毁灭伤害 |\n\n注意：该增益只对**近战攻击**生效，不影响其射击武器「折磨之鞭」（6\" 射程，A6 BS3+ S4 AP0 D1，带针对步兵3+、突击、手枪）。\n\n补充：该单位当前点数在档案中标记为「历史点数 / 未匹配到本次官方 MFM 快照」（1 模型 105 分、2 模型 210 分），**不能作为当前点数使用**，如需现价请以最新官方 MFM 为准。"
+    },
+    {
+      "id": 109,
+      "faction": "泰坦军团",
+      "question": "泰坦军团（Adeptus Titanicus）的四个泰坦——战犬泰坦、掠夺者泰坦、天罚战争使者泰坦、战将泰坦——按官方点数各是多少分？请四个都给出。",
+      "gold": "四个都只有 1 model 一个档位：战犬泰坦（Warhound Titan）1100 分、掠夺者泰坦（Reaver Titan）2200 分、天罚战争使者泰坦（Warbringer Nemesis Titan）2600 分、战将泰坦（Warlord Titan）3500 分。以官方 MFM 实时站（mfm.warhammer-community.com）2026-07-27 15:14 快照的 titan-legions 页为准；库内四行 points_json 与官网逐条一致。本题问的是四个数值，只给出其中一部分（例如只答战犬泰坦）即为漏项。",
+      "gold_type": "points",
+      "judged_against_gold": true,
+      "judge_method": "llm_gold",
+      "verdict": "✅",
+      "judge_reason": "✅ 四个泰坦点数均与标准答案完全一致（1100/2200/2600/3500），无漏项或矛盾。",
+      "time": "5.4s",
+      "meta": {
+        "intent": "算",
+        "tool_calls": [
+          "calc_points"
+        ],
+        "degraded": false
+      },
+      "sources": [
+        {
+          "book": "Munitorum Field Manual (mfm.warhammer-community.com)",
+          "page": 0
+        }
+      ],
+      "answer": "泰坦军团（Adeptus Titanicus）四款泰坦的官方点数如下（均精确命中，非近似）：\n\n| 泰坦 | 英文名 | 点数 |\n|---|---|---|\n| 战犬泰坦 | Warhound Titan | **1100 分** |\n| 掠夺者泰坦 | Reaver Titan | **2200 分** |\n| 天罚战争使者泰坦 | Warbringer Nemesis Titan | **2600 分** |\n| 战将泰坦 | Warlord Titan | **3500 分** |\n\n数据来源为官方 Munitorum Field Manual 点数库（mfm.warhammer-community.com，抓取于 2026-09-14）。"
+    },
+    {
+      "id": 110,
+      "faction": "灵族",
+      "question": "艾达灵族的幽魂泰坦（Revenant Titan）按官方点数是多少分？",
+      "gold": "1100 分（只有 1 model 一个档位）。以官方 MFM 实时站（mfm.warhammer-community.com）2026-07-27 15:14 快照的 aeldari 页为准；库内 000000628 的 points_json = 1100，与官网一致。",
+      "gold_type": "points",
+      "judged_against_gold": true,
+      "judge_method": "llm_gold",
+      "verdict": "✅",
+      "judge_reason": "✅ 系统回答给出的点数1100分与标准答案一致，直接回答了问题。",
+      "time": "4.9s",
+      "meta": {
+        "intent": "算",
+        "tool_calls": [
+          "calc_points"
+        ],
+        "degraded": false
+      },
+      "sources": [
+        {
+          "book": "Munitorum Field Manual (mfm.warhammer-community.com)",
+          "page": 0
+        }
+      ],
+      "answer": "艾达灵族（Aeldari）的**幽魂泰坦（Revenant Titan）**官方点数为 **1100 分**。\n\n| 单位 | 阵营 | 点数 |\n|---|---|---|\n| Revenant Titan（幽魂泰坦） | Aeldari | **1100 分** |\n\n数据来源为官方 Munitorum Field Manual 点数库（mfm.warhammer-community.com，查询时间 2026-09-14）。"
+    },
+    {
+      "id": 111,
+      "faction": "灵族",
+      "question": "艾达灵族的幻影泰坦（Phantom Titan）按官方点数是多少分？",
+      "gold": "2100 分（只有 1 model 一个档位）。以官方 MFM 实时站（mfm.warhammer-community.com）2026-07-27 15:14 快照的 aeldari 页为准；库内 000000631 的 points_json = 2100，与官网一致。",
+      "gold_type": "points",
+      "judged_against_gold": true,
+      "judge_method": "llm_gold",
+      "verdict": "✅",
+      "judge_reason": "✅ 系统回答明确给出幻影泰坦官方点数为2100分（1个模型），与标准答案一致；额外属性与武器数据不影响判定。",
+      "time": "8.1s",
+      "meta": {
+        "intent": "算",
+        "tool_calls": [
+          "get_datasheet"
+        ],
+        "degraded": false
+      },
+      "sources": [
+        {
+          "book": "Munitorum Field Manual (warhammer-community.com)",
+          "page": 0
+        }
+      ],
+      "answer": "**艾达灵族幻影泰坦（Phantom Titan）官方点数：2100 分**（1 个模型）[《Munitorum Field Manual》官方点数库]。\n\n| 项目 | 数值 |\n|---|---|\n| 点数 | **2100 分 / 1 模型** |\n| M | 14\" |\n| T | 14 |\n| Sv | 2+（4+ 特保） |\n| W | 55 |\n| Ld | 6+ |\n| OC | 20 |\n\n**主要武器（供参考）**\n\n| 武器 | 类型 | 射程 | A | 命中 | S | AP | D |\n|---|---|---|---|---|---|---|---|\n| D-轰击炮 | 射击 | 72\" | D6 | 3+ | 20 | -4 | 2D6（爆炸、毁灭伤害） |\n| 幻影脉冲炮 | 射击 | 120\" | 8 | 3+ | 18 | -4 | 6 |\n| 幻影星光炮 | 射击 | 36\" | 4 | 3+ | 8 | -3 | 2 |\n| 脉冲激光 | 射击 | 48\" | 3 | 3+ | 9 | -2 | D6 |\n| 虚空风暴导弹发射器 | 射击 | 48\" | 2D6 | 3+ | 8 | -3 | 2 |\n| 幻影巨足 | 近战 | 近战 | 4 | 3+ | 12 | -2 | 4 |\n| 幽冥长刀（重劈） | 近战 | 近战 | 6 | 3+ | 18 | -4 | 12 |\n| 幽冥长刀（横扫） | 近战 | 近战 | 12 | 3+ | 8 | -3 | 4 |\n\n**注意**：结构库中该兵牌的中文名标注为「幻影泰坦（疑似删除）」，且来源说明指出——点数已与官方 MFM 同步，但兵牌属性/技能尚未逐字段复核最新补丁。若你要用于正式对局，建议再核对最新 Faction Pack 是否仍保留该单位及其当前点数。"
+    },
+    {
+      "id": 112,
+      "faction": "钛帝国",
+      "question": "钛帝国的蝠鲼（Manta）按官方点数是多少分？",
+      "gold": "2100 分（只有 1 model 一个档位）。以官方 MFM 实时站（mfm.warhammer-community.com）2026-07-27 15:14 快照的 tau-empire 页为准；库内 000000457 的 points_json = 2100，与官网一致。",
+      "gold_type": "points",
+      "judged_against_gold": true,
+      "judge_method": "llm_gold",
+      "verdict": "✅",
+      "judge_reason": "✅ 系统回答明确给出官方点数为2100分（1个模型唯一档位），与标准答案一致；额外补充的属性、溯源等信息不影响判定。",
+      "time": "7.3s",
+      "meta": {
+        "intent": "算",
+        "tool_calls": [
+          "get_datasheet"
+        ],
+        "degraded": false
+      },
+      "sources": [
+        {
+          "book": "Munitorum Field Manual (mfm.warhammer-community.com)",
+          "page": 0
+        }
+      ],
+      "answer": "**钛帝国蝠鲼（Manta）官方点数：2100 分**（1 个模型，唯一配置档）[《Munitorum Field Manual》官方点数库]。\n\n补充要点：\n- 该点数为 MFM 官方点数库同步值（溯源时间 2026-09-14）。\n- 属性速览：M 40\"、T 14、Sv 2+、W 60、Ld 7+、OC 0，关键词含 Fly / Titanic / Transport / Aircraft / Vehicle / Markerlight / FRAME。\n- 注意：中文层（黑图书馆）与官方英文属性块在 M 值上存在冲突（官方 40\" vs 中文层 20\"），**以官方英文属性块为准**。\n- 兵牌属性与技能来自既有结构库，尚未逐字段复核全部最新补丁；若需当前规则效果，建议同时核对最新 Faction Pack。"
+    },
+    {
+      "id": 113,
+      "faction": "星际战士",
+      "question": "星际战士的罗伯特·基里曼（Roboute Guilliman）按官方最新点数是多少分？",
+      "gold": "355 分（1 model 档）。以官方 MFM 实时站（mfm.warhammer-community.com）2026-07-27 15:14 快照的 space-marines 页 ULTRAMARINES 小节为准，官网原文写作「ROBOUTE GUILLIMAN | ▲ | YOUR UNIT COSTS | 1 model | ▲ (+15) 355 pts」，即本版刚涨了 15 分。本题只认官方 MFM（本项目既定「官方点数以 mfm.warhammer-community.com 实时站为真源」）：回答给出 340 分（库内 Wahapedia 镜像的过期值）或其它任何非 355 的数字，都与官方不符，判错。",
+      "gold_type": "points",
+      "judged_against_gold": true,
+      "judge_method": "llm_gold",
+      "verdict": "✅",
+      "judge_reason": "✅ 系统回答给出355分，与标准答案一致，且明确指向官方MFM来源。",
+      "time": "4.9s",
+      "meta": {
+        "intent": "算",
+        "tool_calls": [
+          "calc_points"
+        ],
+        "degraded": false
+      },
+      "sources": [
+        {
+          "book": "Munitorum Field Manual (mfm.warhammer-community.com)",
+          "page": 0
+        }
+      ],
+      "answer": "星际战士的**罗伯特·基里曼（Roboute Guilliman）** 按官方最新点数为 **355 分**。\n\n- 单位：Roboute Guilliman（canonical id 000000138）\n- 点数：**355 pts**\n- 数据来源：官方 Munitorum Field Manual（mfm.warhammer-community.com），抓取时间 2026-09-14\n\n注：点数会随官方 MFM 更新变动，实战前建议以最新版 MFM 为准。"
+    },
+    {
+      "id": 114,
+      "faction": "星际战士",
+      "question": "星际战士的「身穿安提洛克斯战甲的马涅乌斯·卡尔加」（Marneus Calgar in Armour of Antilochus）按官方最新点数是多少分？",
+      "gold": "155 分（1 model 档）。以官方 MFM 实时站（mfm.warhammer-community.com）2026-07-27 15:14 快照的 space-marines 页 ULTRAMARINES 小节为准。本题只认官方 MFM：回答给出 140 分（库内 Wahapedia 镜像的过期值）或其它任何非 155 的数字，都与官方不符，判错。",
+      "gold_type": "points",
+      "judged_against_gold": true,
+      "judge_method": "llm_gold",
+      "verdict": "✅",
+      "judge_reason": "✅ 理由：系统回答明确给出官方最新点数为155分（1模型），与标准答案一致，多出的属性与技能细节不扣分。",
+      "time": "6.8s",
+      "meta": {
+        "intent": "算",
+        "tool_calls": [
+          "get_datasheet"
+        ],
+        "degraded": false
+      },
+      "sources": [
+        {
+          "book": "Munitorum Field Manual (mfm.warhammer-community.com)",
+          "page": 0
+        }
+      ],
+      "answer": "**身穿安提洛克斯战甲的马涅乌斯·卡尔加（Marneus Calgar in Armour of Antilochus）官方最新点数为 155 分**（1 模型配置）。\n\n| 项目 | 数值 |\n|---|---|\n| 阵营 | 星际战士（极限战士） |\n| 点数 | **155 分**（1 model） |\n| M | 6\" |\n| T | 6 |\n| Sv | 2+（4+ 特保） |\n| W | 6 |\n| Ld | 6+ |\n| OC | 1 |\n| 底座 | 50mm |\n\n武器：\n- **奥特拉玛之拳（射击）**：18\"，A4，2+，S4，AP-1，D2，手枪/双联\n- **奥特拉玛之拳（近战）**：近战，A6，2+，S8，AP-3，D3，双联\n\n关键技能：\n- **励志领袖**：卡尔加所领导的单位即使本回合进行过加速或撤退，仍可射击和冲锋\n- **战术大师**：指挥阶段开始时，若卡尔加在场上且为主将，则获得 1 点 CP\n- 阵营技能：破敌重誓\n\n点数来源为官方 MFM（Munitorum Field Manual）同步数据 [《Munitorum Field Manual》官方点数库]。注意：兵牌属性与技能来自既有结构库，尚未逐字段复核全部最新补丁，若需确认当前规则文本建议同时查阅最新 Faction Pack。"
+    },
+    {
+      "id": 115,
+      "faction": "星际战士",
+      "question": "星际战士的坎托战团长（Pedro Kantor）按官方最新点数是多少分？",
+      "gold": "80 分（1 model 档）。以官方 MFM 实时站（mfm.warhammer-community.com）2026-07-27 15:14 快照的 space-marines 页 IMPERIAL FISTS 小节为准（官网原文「PEDRO KANTOR | YOUR UNIT COSTS | 1 model | 80 pts」）。本题只认官方 MFM：回答给出 90 分（库内 Wahapedia 镜像的过期值）或其它任何非 80 的数字，都与官方不符，判错。注意这一条是**降价**方向（库 90 → 官方 80）。",
+      "gold_type": "points",
+      "judged_against_gold": true,
+      "judge_method": "llm_gold",
+      "verdict": "✅",
+      "judge_reason": "✅ 理由：系统回答明确给出坎托战团长官方点数为80分（1模型），与标准答案一致；额外附带的兵牌属性等未问信息不扣分。",
+      "time": "7.3s",
+      "meta": {
+        "intent": "算",
+        "tool_calls": [
+          "get_datasheet"
+        ],
+        "degraded": false
+      },
+      "sources": [
+        {
+          "book": "Munitorum Field Manual (mfm.warhammer-community.com)",
+          "page": 0
+        }
+      ],
+      "answer": "**坎托战团长（Pedro Kantor）当前官方点数：80 分**（1 模型，无其他装配选项）[《Munitorum Field Manual》官方点数库，2026-09-14 同步]。\n\n顺带附上兵牌要点（数值以官方英文属性块为准）：\n\n| 项目 | 数值 |\n|---|---|\n| M | 6\" |\n| T | 4 |\n| Sv | 2+（4+ 特保） |\n| W | 5 |\n| Ld | 6+ |\n| OC | 1 |\n| 底盘 | 25mm（中文层记 32mm，以官方 25mm 为准） |\n\n武器：\n- **多恩之箭**（射击）：24\"，A2，2+，S5，AP-1，D2，速射 2、连击 1\n- **惩戒铁拳**（近战）：A5，2+，S8，AP-3，D3\n\n关键词：Epic Hero、Chapter Master、Character、Infantry、Tacticus、Imperium、Grenades。\n\n注：点数已按最新 MFM 同步；但兵牌属性/技能来自既有结构库，尚未逐字段复核全部最新补丁，若需确认技能在当前 Faction Pack 下的最新表述，建议再查最新补丁文档。"
+    },
+    {
+      "id": 116,
+      "faction": "泰坦军团",
+      "question": "泰坦军团（Adeptus Titanicus）一共有几个单位（兵牌）？混沌泰坦军团（Titanicus Traitoris）的混沌战将泰坦是不是另有一张独立兵牌、另有一套点数？",
+      "gold": "泰坦军团一共只有 4 个单位：战犬泰坦、掠夺者泰坦、天罚战争使者泰坦、战将泰坦。混沌泰坦**没有独立兵牌、也没有独立点数**——官方 Faction Pack《Adeptus Titanicus》第 2 页的 TITANICUS TRAITORIS 一节写明：可以直接用本文件里的泰坦军团兵牌来代表 Titanicus Traitoris 模型，做法是把兵牌与军队规则卡上所有 Imperium 关键词替换成 Chaos、所有 Adeptus Titanicus 阵营关键词替换成 Titanicus Traitoris；点数方面「use those published for the equivalent Adeptus Titanicus models」，即沿用对应泰坦军团模型的点数（战将 3500 / 天罚战争使者 2600 / 掠夺者 2200 / 战犬 1100）。所以官方 MFM 上 chaos-titan-legions 页那 4 行与 titan-legions 页逐条同价，库里没有 4 张混沌泰坦兵牌**不是数据缺口**。",
+      "gold_type": "rule",
+      "judged_against_gold": true,
+      "judge_method": "llm_gold",
+      "verdict": "⚠️",
+      "judge_reason": "⚠️ 回答正确指出混沌泰坦无独立兵牌、无独立点数（沿用战将3500点），但第一问未给出标准答案的「一共4个单位」这一确切总数，反而称档案缺失、无法给出确切总数，属漏项。",
+      "time": "11.0s",
+      "meta": {
+        "intent": "查",
+        "tool_calls": [
+          "search_wiki",
+          "rag_search"
+        ],
+        "degraded": true,
+        "fell_back_to_classic": true
+      },
+      "sources": [
+        {
+          "book": "6月4日分数中文",
+          "page": 5
+        },
+        {
+          "book": "Faction Pack Adeptus Titanicus",
+          "page": 2
+        },
+        {
+          "book": "混沌骑士",
+          "page": 10
+        },
+        {
+          "book": "黑图书馆",
+          "page": 0
+        },
+        {
+          "book": "6月4日分数中文",
+          "page": 27
+        },
+        {
+          "book": "Core Rules - New 40K Core Rules",
+          "page": 66
+        },
+        {
+          "book": "Core Rules - New 40K Core Rules",
+          "page": 68
+        }
+      ],
+      "answer": "# 铁幕作答\n\n## 一、泰坦军团（Adeptus Titanicus）兵牌数量\n\n根据档案中可确认的信息，**无法给出确切总数**——档案未提供完整的兵牌清单。\n\n档案中**明确出现**的泰坦修会单位兵牌如下：\n\n| 单位 | 出处 | 点数 |\n|------|------|------|\n| 掠夺者级泰坦 | 档案1 | **2200 点** |\n| 战争使者型天罚级泰坦 | 档案1 | **2600 点** |\n| 战犬级泰坦 | 档案1 | **1100 点** |\n| 战将级泰坦 | 档案1 | **3500 点** |\n\n其中仅**战将泰坦**在档案5中给出了完整兵牌数据（M10\" / T16 / SV2+ / W100 / LD6 / OC30）。\n\n> **档案缺失**：档案2、档案4仅说明\"本文件中的 Adeptus Titanicus 数据表\"（the datasheets in this document），但未列出完整兵牌目录。因此**泰坦军团兵牌的确切总数，档案缺失，建议查阅原始规则书**。\n\n---\n\n## 二、混沌战将泰坦是否另有独立兵牌与点数？\n\n**否。** 按档案2的明文规定：\n\n> \"You can use the Adeptus Titanicus datasheets in this document to represent Titanicus Traitoris models if you wish. To do so, on those datasheets and on this Army Rules card, replace all instances of the **Imperium** keyword with **Chaos**, and replace all instances of the **Adeptus Titanicus** Faction keyword with **Titanicus Traitoris**.\"\n> [《Faction Pack Adeptus Titanicus》第2页]\n\n即：\n\n- **不另发独立兵牌**——直接**沿用** Adeptus Titanicus 的同一张数据表；\n- **不另设点数**——明文规定\"For the purposes of points values, use those published for the equivalent Adeptus Titanicus models.\"（点数沿用对应 Adeptus Titanicus 模型的公布值）[《Faction Pack Adeptus Titanicus》第2页]；\n- 转换方式仅为**关键词替换**：\n  - `Imperium` → `Chaos`\n  - `Adeptus Titanicus`（阵营关键词）→ `Titanicus Traitoris`\n\n因此，**混沌战将泰坦 = 战将泰坦兵牌 + 关键词替换，点数同为 3500 点**，不存在第二张独立兵牌或第二套点数。\n\n---\n\n## 三、补充：泰坦入军的两条特殊规则\n\n档案4另给出两条与泰坦编成相关的规则，供指挥官参考：\n\n- **TOWERING EXAMPLE**：若军队阵营为 Adeptus Titanicus，**跳过 Select Detachment Rules 步骤**；在 Select Warlord 步骤中，即使模型**没有 Character 关键词**，也可选一名 Adeptus Titanicus 模型作为督军。该军队拥有 **Take and Hold** 武力倾向。[《Faction Pack Adeptus Titanicus》第2页]\n- **TITANIC SUPPORT**：若军队中**每个模型**都带 `Imperium` 关键词，则可纳入 **1 个** Adeptus Titanicus 模型，即使它不具备你在 Select Army Faction 步骤中所选的阵营关键词。[《Faction Pack Adeptus Titanicus》第2页]\n\n> 注：档案2的 Designer's Note 亦提示，部分泰坦点数**超过 Onslaught 规模战斗所能容纳的上限**，其设计面向\"最末日级规模\"的战场。[《Faction Pack Adeptus Titanicus》第2页]\n\n---\n\n**结论摘要**：\n1. 泰坦军团兵牌**总数档案未载**，仅可确认上述 4 种单位及其点数；\n2. 混沌战将泰坦**无独立兵牌、无独立点数**，系战将泰坦兵牌经关键词替换（Imperium→Chaos，Adeptus Titanicus→Titanicus Traitoris）而来，点数沿用 **3500 点**。"
+    },
+    {
+      "id": 117,
+      "faction": "泰坦军团",
+      "question": "战将泰坦（Warlord Titan）在本系统结构库里记录了哪些关键词？官方兵牌上的【Frame】关键词在库里查得到吗？",
+      "gold": "The structured database records seven Warlord Titan keywords: Warlord Titan, Titanic, Vehicle, Towering, Walker, Imperium, and FRAME. The faction keyword is Adeptus Titanicus. FRAME is now present in the database, restored from the official Faction Pack: Adeptus Titanicus (Warlord Titan pages 9–10). State that it is recorded in the structured database; do not repeat the obsolete July claim that FRAME is missing, and do not confuse keyword membership with availability of a separate glossary definition.",
+      "gold_type": "ability",
+      "judged_against_gold": true,
+      "judge_method": "llm_gold",
+      "verdict": "✅",
+      "judge_reason": "✅ 回答完整列出7个关键词（含FRAME），并明确说明FRAME在结构库中可查到、并非缺失，与标准答案一致；额外补充的属性和来源说明不扣分。",
+      "time": "6.0s",
+      "meta": {
+        "intent": "查",
+        "tool_calls": [
+          "get_datasheet"
+        ],
+        "degraded": false
+      },
+      "sources": [
+        {
+          "book": "Warlord Titan Datasheet (Adeptus Titanicus)",
+          "page": 0
+        }
+      ],
+      "answer": "**战将泰坦（Warlord Titan）结构库关键词**（共 7 个）：\n\n| # | 关键词 |\n|---|---|\n| 1 | Warlord Titan |\n| 2 | Titanic |\n| 3 | Vehicle |\n| 4 | Towering |\n| 5 | Walker |\n| 6 | Imperium |\n| 7 | **FRAME** |\n\n**关于【Frame】关键词**：查得到。结构库中该单位的关键词列表里明确含 **FRAME**（大写形式），即官方兵牌上的 Frame 关键词在本系统结构库中是有记录的，并非缺失。\n\n补充：该单位隶属 Adeptus Titanicus，点数 3500 分（1 model），M 10\" / T 16 / Sv 2+（5+ 特保）/ W 100 / Ld 6+ / OC 30。\n\n注：结构库提示黑图书馆中文层与官方源在个别属性上存在不一致（如 BASE 字段官方为 \"Use model\"、中文层为「外壳」），数值以官方英文属性块为准。"
+    },
+    {
+      "id": 118,
+      "faction": "混沌星际战士",
+      "question": "地狱兽（Helbrute）现在多少点？",
+      "gold": "「地狱兽 / Helbrute」是**同名跨阵营**单位：结构库里有 4 张各自独立的兵牌，分属混沌星际战士(CSM)、死亡守卫(DG)、千子(TS)、吞世者(WE)，**点数并不相同**——CSM 130 点、DG 110 点、TS 110 点、WE 120 点（均为「1 模型」档）。正确回答必须先消歧：要么按上下文选定一个阵营并明确说明这是哪个阵营的地狱兽，要么把 4 个阵营的点数逐一列出并指出差异。判错的三种情形：① 只报一个点数当成唯一答案、不说明是哪个阵营；② 因为名字有歧义就拒答、或不给出任何已查证信息就直接把问题退回给用户反问；③ 凭记忆给出一个库里没有的点数。",
+      "gold_type": "points",
+      "judged_against_gold": true,
+      "judge_method": "llm_gold",
+      "verdict": "✅",
+      "judge_reason": "✅ 理由：回答明确给出了吞世者阵营地狱兽120点，并主动指出该单位跨阵营存在不同兵牌、点数可能不同，符合标准答案要求的消歧方式，关键事实一致。",
+      "time": "6.1s",
+      "meta": {
+        "intent": "算",
+        "tool_calls": [
+          "get_datasheet"
+        ],
+        "degraded": false
+      },
+      "sources": [
+        {
+          "book": "Faction Pack: World Eaters",
+          "page": 0
+        }
+      ],
+      "answer": "**地狱兽（Helbrute）当前点数：120 分**（1 模型）[《Faction Pack: World Eaters》]\n\n| 项目 | 数值 |\n|---|---|\n| 单位 | Helbrute（地狱兽） |\n| 阵营 | World Eaters（吞世者） |\n| 点数 | **120 分 / 1 模型** |\n| M | 9\" |\n| T | 9 |\n| Sv | 2+ |\n| W | 8 |\n| Ld | 6+ |\n| OC | 3 |\n| 底盘 | 60mm |\n\n关键词：Walker, Chaos, Vehicle, Helbrute, Khorne。\n\n⚠️ 注意：以上是**吞世者（World Eaters）阵营**的地狱兽数据。地狱兽在多个混沌阵营（如死亡守卫、千子、混沌星际战士等）都有独立兵牌，点数与关键词可能不同。如果你要的是别的阵营版本，请告诉我具体阵营，我再查一次。"
+    },
+    {
+      "id": 119,
+      "faction": "（不存在的单位）",
+      "question": "有人给我一份军表，里面有个单位叫「Flamestorm Drake」。这是什么单位？属于哪个阵营，多少点？",
+      "gold": "「Flamestorm Drake」**在库里不存在**，40K 也没有这个单位——它不是任何一张兵牌的名字、也不是任何已收录译名。正确回答必须先如实说明「库里查不到这个名字 / 没有这个单位」。可以顺带提一句最接近的名字（结构库里与它拼写最像的是工事 **Firestorm Redoubt**，但两者并不是同一个东西），前提是**明确标注这只是近似匹配的猜测**，并说清它不是用户所问的那个单位。判错的三种情形：① 直接把某个真实单位（如 Firestorm Redoubt / 烈焰风暴 Firestorm）当成「Flamestorm Drake」来介绍，给出它的阵营/属性/点数——这是最严重的一种，答案看上去完整、数据也真实，但整张兵牌是换来的；② 凭记忆编造出一个「Flamestorm Drake」的阵营、点数或规则；③ 提到近似候选却不标注它是猜测，让用户以为那就是答案。反过来，只回答「查不到这个单位」而不提任何候选，是**正确**的（可接受的保守答案）。",
+      "gold_type": "points",
+      "judged_against_gold": true,
+      "judge_method": "llm_gold",
+      "verdict": "✅",
+      "judge_reason": "✅ 理由：回答如实说明库中查不到「Flamestorm Drake」、无法确认阵营与点数，符合标准答案要求的正确保守回答，未编造或误认近似单位。",
+      "time": "12.3s",
+      "meta": {
+        "intent": "查",
+        "tool_calls": [
+          "get_datasheet",
+          "rag_search"
+        ],
+        "degraded": true,
+        "fell_back_to_classic": true
+      },
+      "sources": [
+        {
+          "book": "6月4日分数中文",
+          "page": 35
+        },
+        {
+          "book": "基因窃取者10版中文",
+          "page": 1
+        },
+        {
+          "book": "6月4日分数中文",
+          "page": 31
+        },
+        {
+          "book": "战斗修女10版中文",
+          "page": 1
+        },
+        {
+          "book": "6月4日分数中文",
+          "page": 23
+        },
+        {
+          "book": "星界军10版中文",
+          "page": 19
+        },
+        {
+          "book": "Core Rules - New 40K Core Rules",
+          "page": 74
+        },
+        {
+          "book": "Core Rules - New 40K Core Rules",
+          "page": 29
+        }
+      ],
+      "answer": "档案缺失，建议查阅原始规则书。\n\n在下方【规则档案】中，**没有任何条目**出现「Flamestorm Drake」这一单位名称，因此我无法确认其所属阵营或点数。\n\n需要说明的是：\n\n- 档案 1（钛帝国点数表）中与\"火焰/风暴\"相关的单位仅有 **危机炎刃战斗服**、**危机星镰战斗服**、**危机阳铸战斗服** 等，均非该名称。\n- 档案 3（星际战士点数表）中亦无此条目。\n- 其余档案（基因窃取者、战斗修女、灰骑士、星界军、核心规则）同样未收录该单位。\n\n按【强制执行规则】第⑤条，档案无相关信息时不得凭训练记忆补充。若该单位确实存在于现行规则中，建议核对原始规则书或对应阵营的 Faction Pack 以确认其**阵营归属**与**点数**。"
+    }
+  ]
+}

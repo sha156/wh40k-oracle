@@ -176,7 +176,14 @@ def _render_loop_message(msg: Dict[str, Any]) -> Optional[Dict[str, str]]:
     if role == "user":
         return {"role": "user", "content": str(content)}
     if role == "assistant":
-        return {"role": "assistant", "content": str(content)}
+        # SessionContext stores display prose, but this provider conversation
+        # uses JSON steps. Plain assistant history triggered blank JSON-mode
+        # responses in live multi-turn recall (2026-09-18). Restore the envelope
+        # only on the wire; history is still context, never fresh rule evidence.
+        return {"role": "assistant", "content": json.dumps(
+            {"type": "final", "content": str(content), "sources": []},
+            ensure_ascii=False,
+        )}
     if role == "tool":
         name = msg.get("name", "?")
         if not isinstance(content, str):

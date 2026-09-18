@@ -1,0 +1,2617 @@
+{
+  "/healthz": {
+    "status": 200,
+    "body": {
+      "ok": true,
+      "llm_configured": true,
+      "retrieval": true,
+      "ready": true,
+      "assets": [
+        {
+          "name": "embed_model",
+          "path": "/app/opt/models--BAAI--bge-m3/snapshots/5617a9f61b028005a4858fdac845db406aefb181",
+          "ok": true,
+          "required": true,
+          "detail": "",
+          "hint": "挂载宿主机 ./opt 到 /app/opt（compose 卷 opt:ro）"
+        },
+        {
+          "name": "vector_store",
+          "path": "/app/local_vector_store/index.faiss",
+          "ok": true,
+          "required": true,
+          "detail": "",
+          "hint": "宿主机跑 .\\.venv\\Scripts\\python.exe ingest.py 后挂载 ./local_vector_store"
+        },
+        {
+          "name": "structured_db",
+          "path": "/app/db/wh40k.sqlite",
+          "ok": true,
+          "required": true,
+          "detail": "",
+          "hint": "宿主机跑 python -m db_compile build 后挂载 ./db"
+        },
+        {
+          "name": "wiki",
+          "path": "/app/wiki/index.md",
+          "ok": true,
+          "required": false,
+          "detail": "",
+          "hint": "挂载 ./wiki（仓库内已跟踪，未挂载时用镜像内自带副本）"
+        },
+        {
+          "name": "keyword_index",
+          "path": "/app/wiki/indexes/keywords.json",
+          "ok": true,
+          "required": false,
+          "detail": "",
+          "hint": "宿主机跑 python -m wiki_engine.keyword_index 后随 ./wiki 一并挂载"
+        }
+      ],
+      "warmup": {
+        "requested": true,
+        "done": true,
+        "error": null
+      }
+    }
+  },
+  "/codex/units/000000869": {
+    "status": 200,
+    "body": {
+      "card": {
+        "nameZh": "战将泰坦",
+        "nameEn": "Warlord Titan",
+        "pts": "3500",
+        "role": null,
+        "stats": [
+          {
+            "lab": "M",
+            "val": "10\""
+          },
+          {
+            "lab": "T",
+            "val": "16"
+          },
+          {
+            "lab": "SV",
+            "val": "2+"
+          },
+          {
+            "lab": "W",
+            "val": "100"
+          },
+          {
+            "lab": "LD",
+            "val": "6+"
+          },
+          {
+            "lab": "OC",
+            "val": "30"
+          }
+        ],
+        "invuln": "5+",
+        "ranged": [
+          {
+            "name": "启示录导弹发射器",
+            "kw": [
+              {
+                "text": "爆炸",
+                "slug": "blast",
+                "base": "BLAST",
+                "nameZh": "爆炸",
+                "brief": "一发高爆弹药能够瞬间解决多名敌人，但是在周边存在友军时使用这类武器并不明智。\n每当您为一件[爆炸]武器收集攻击骰时，在选择目标步骤中，目标单位每存在五个模型，便添加额外一枚攻击骰（向下取整)。\n如果本技能以[爆炸 X]的形式表示，则每当您为这样的武器收集攻击骰时，在选择目标步骤中，目标单位每存在五个模型（向下取整)，就额外添加 X 数量的额外攻击骰。\n示例：如果一件 A 属性为 3 的 [爆炸2]武器对包含了 12 个模型的单位进行攻击，那么您将为那件武器收集额外四枚攻击骰（总共七枚)。",
+                "section": "24.05",
+                "ruleSlug": "24-core-abilities",
+                "group": "universal"
+              },
+              {
+                "text": "曲射",
+                "slug": "indirect-fire",
+                "base": "INDIRECT FIRE",
+                "nameZh": "曲射",
+                "brief": "曲射武器发射的弹药能够越过或绕过面前的障碍物——目标无处可藏包含了一个或更多拥有[曲射]武器的模型的单位可以进行曲射（10.07)。",
+                "section": "24.19",
+                "ruleSlug": "24-core-abilities",
+                "group": "universal"
+              }
+            ],
+            "range": "200\"",
+            "a": "20",
+            "skill": "3+",
+            "s": "8",
+            "ap": "-2",
+            "d": "2",
+            "hot": false
+          },
+          {
+            "name": "日怒离子湮灭炮—过载",
+            "kw": [
+              {
+                "text": "爆炸",
+                "slug": "blast",
+                "base": "BLAST",
+                "nameZh": "爆炸",
+                "brief": "一发高爆弹药能够瞬间解决多名敌人，但是在周边存在友军时使用这类武器并不明智。\n每当您为一件[爆炸]武器收集攻击骰时，在选择目标步骤中，目标单位每存在五个模型，便添加额外一枚攻击骰（向下取整)。\n如果本技能以[爆炸 X]的形式表示，则每当您为这样的武器收集攻击骰时，在选择目标步骤中，目标单位每存在五个模型（向下取整)，就额外添加 X 数量的额外攻击骰。\n示例：如果一件 A 属性为 3 的 [爆炸2]武器对包含了 12 个模型的单位进行攻击，那么您将为那件武器收集额外四枚攻击骰（总共七枚)。",
+                "section": "24.05",
+                "ruleSlug": "24-core-abilities",
+                "group": "universal"
+              },
+              {
+                "text": "危险",
+                "slug": "hazardous",
+                "base": "HAZARDOUS",
+                "nameZh": "危险",
+                "brief": "拥有不稳定动力源的武器对使用者和身边的事物来说都十分危险。\n每当一个单位被选择进行射击或者被选择进行近战时，在这个单位结算完所有的攻击后，您在选择武器步骤中每选择了一件[危险]武器，就进行一次危险掷骰（06.03）。\n核心技能24\n82",
+                "section": "24.15",
+                "ruleSlug": "24-core-abilities",
+                "group": "universal"
+              }
+            ],
+            "range": "72\"",
+            "a": "2D6+6",
+            "skill": "3+",
+            "s": "12",
+            "ap": "-3",
+            "d": "8",
+            "hot": false
+          },
+          {
+            "name": "阿德克斯型近防激光炮",
+            "kw": [],
+            "range": "48\"",
+            "a": "1",
+            "skill": "3+",
+            "s": "12",
+            "ap": "-3",
+            "d": "D6+1",
+            "hot": false
+          },
+          {
+            "name": "阿德克斯型近防爆弹炮",
+            "kw": [],
+            "range": "36\"",
+            "a": "6",
+            "skill": "3+",
+            "s": "6",
+            "ap": "-2",
+            "d": "2",
+            "hot": false
+          },
+          {
+            "name": "艾瑞欧克型泰坦动力爪",
+            "kw": [
+              {
+                "text": "连击1",
+                "slug": "sustained-hits",
+                "base": "SUSTAINED HITS",
+                "nameZh": "连击",
+                "brief": "一些武器能够进行持续不断的攻击，用毫无止息的攻势将敌人撕成碎片。\n这类技能总是会以[连击 X]的形式进行表示。每次使用[连击]武器进行的攻击造成暴击命中时，那次攻击将造成 X 数量的额外命中。\n示例：一次使用 [连击 2]武器进行的攻击造成了一次暴击命中。因此那次攻击将对目标造成总共三次命中（一次来自暴击命中，另外两次来自 [连击 2]技能)。",
+                "section": "24.36",
+                "ruleSlug": "24-core-abilities",
+                "group": "universal"
+              }
+            ],
+            "range": "48\"",
+            "a": "20",
+            "skill": "3+",
+            "s": "6",
+            "ap": "-1",
+            "d": "2",
+            "hot": false
+          },
+          {
+            "name": "贝利寇萨型火山炮",
+            "kw": [
+              {
+                "text": "爆炸",
+                "slug": "blast",
+                "base": "BLAST",
+                "nameZh": "爆炸",
+                "brief": "一发高爆弹药能够瞬间解决多名敌人，但是在周边存在友军时使用这类武器并不明智。\n每当您为一件[爆炸]武器收集攻击骰时，在选择目标步骤中，目标单位每存在五个模型，便添加额外一枚攻击骰（向下取整)。\n如果本技能以[爆炸 X]的形式表示，则每当您为这样的武器收集攻击骰时，在选择目标步骤中，目标单位每存在五个模型（向下取整)，就额外添加 X 数量的额外攻击骰。\n示例：如果一件 A 属性为 3 的 [爆炸2]武器对包含了 12 个模型的单位进行攻击，那么您将为那件武器收集额外四枚攻击骰（总共七枚)。",
+                "section": "24.05",
+                "ruleSlug": "24-core-abilities",
+                "group": "universal"
+              }
+            ],
+            "range": "120\"",
+            "a": "D3+3",
+            "skill": "3+",
+            "s": "32",
+            "ap": "-5",
+            "d": "18",
+            "hot": false
+          },
+          {
+            "name": "激光爆裂炮",
+            "kw": [
+              {
+                "text": "爆炸",
+                "slug": "blast",
+                "base": "BLAST",
+                "nameZh": "爆炸",
+                "brief": "一发高爆弹药能够瞬间解决多名敌人，但是在周边存在友军时使用这类武器并不明智。\n每当您为一件[爆炸]武器收集攻击骰时，在选择目标步骤中，目标单位每存在五个模型，便添加额外一枚攻击骰（向下取整)。\n如果本技能以[爆炸 X]的形式表示，则每当您为这样的武器收集攻击骰时，在选择目标步骤中，目标单位每存在五个模型（向下取整)，就额外添加 X 数量的额外攻击骰。\n示例：如果一件 A 属性为 3 的 [爆炸2]武器对包含了 12 个模型的单位进行攻击，那么您将为那件武器收集额外四枚攻击骰（总共七枚)。",
+                "section": "24.05",
+                "ruleSlug": "24-core-abilities",
+                "group": "universal"
+              }
+            ],
+            "range": "72\"",
+            "a": "6",
+            "skill": "3+",
+            "s": "16",
+            "ap": "-4",
+            "d": "D6+3",
+            "hot": false
+          },
+          {
+            "name": "加特林宏炮",
+            "kw": [
+              {
+                "text": "连击1",
+                "slug": "sustained-hits",
+                "base": "SUSTAINED HITS",
+                "nameZh": "连击",
+                "brief": "一些武器能够进行持续不断的攻击，用毫无止息的攻势将敌人撕成碎片。\n这类技能总是会以[连击 X]的形式进行表示。每次使用[连击]武器进行的攻击造成暴击命中时，那次攻击将造成 X 数量的额外命中。\n示例：一次使用 [连击 2]武器进行的攻击造成了一次暴击命中。因此那次攻击将对目标造成总共三次命中（一次来自暴击命中，另外两次来自 [连击 2]技能)。",
+                "section": "24.36",
+                "ruleSlug": "24-core-abilities",
+                "group": "universal"
+              }
+            ],
+            "range": "100\"",
+            "a": "30",
+            "skill": "3+",
+            "s": "9",
+            "ap": "-2",
+            "d": "3",
+            "hot": false
+          },
+          {
+            "name": "死亡地震炮",
+            "kw": [
+              {
+                "text": "爆炸",
+                "slug": "blast",
+                "base": "BLAST",
+                "nameZh": "爆炸",
+                "brief": "一发高爆弹药能够瞬间解决多名敌人，但是在周边存在友军时使用这类武器并不明智。\n每当您为一件[爆炸]武器收集攻击骰时，在选择目标步骤中，目标单位每存在五个模型，便添加额外一枚攻击骰（向下取整)。\n如果本技能以[爆炸 X]的形式表示，则每当您为这样的武器收集攻击骰时，在选择目标步骤中，目标单位每存在五个模型（向下取整)，就额外添加 X 数量的额外攻击骰。\n示例：如果一件 A 属性为 3 的 [爆炸2]武器对包含了 12 个模型的单位进行攻击，那么您将为那件武器收集额外四枚攻击骰（总共七枚)。",
+                "section": "24.05",
+                "ruleSlug": "24-core-abilities",
+                "group": "universal"
+              },
+              {
+                "text": "无视掩体",
+                "slug": "ignores-cover",
+                "base": "IGNORES COVER",
+                "nameZh": "无视掩体",
+                "brief": "一些武器被设计用于将敌人赶出防御阵地。\n每次使用[无视掩体]武器进行攻击时，目",
+                "section": "24.18",
+                "ruleSlug": "24-core-abilities",
+                "group": "universal"
+              }
+            ],
+            "range": "280\"",
+            "a": "3D6",
+            "skill": "3+",
+            "s": "16",
+            "ap": "-4",
+            "d": "6",
+            "hot": false
+          },
+          {
+            "name": "日怒离子湮灭炮—标准",
+            "kw": [
+              {
+                "text": "爆炸",
+                "slug": "blast",
+                "base": "BLAST",
+                "nameZh": "爆炸",
+                "brief": "一发高爆弹药能够瞬间解决多名敌人，但是在周边存在友军时使用这类武器并不明智。\n每当您为一件[爆炸]武器收集攻击骰时，在选择目标步骤中，目标单位每存在五个模型，便添加额外一枚攻击骰（向下取整)。\n如果本技能以[爆炸 X]的形式表示，则每当您为这样的武器收集攻击骰时，在选择目标步骤中，目标单位每存在五个模型（向下取整)，就额外添加 X 数量的额外攻击骰。\n示例：如果一件 A 属性为 3 的 [爆炸2]武器对包含了 12 个模型的单位进行攻击，那么您将为那件武器收集额外四枚攻击骰（总共七枚)。",
+                "section": "24.05",
+                "ruleSlug": "24-core-abilities",
+                "group": "universal"
+              }
+            ],
+            "range": "72\"",
+            "a": "2D6+6",
+            "skill": "3+",
+            "s": "10",
+            "ap": "-3",
+            "d": "5",
+            "hot": false
+          }
+        ],
+        "melee": [
+          {
+            "name": "艾瑞欧克型泰坦动力爪（重击）",
+            "kw": [],
+            "range": "近战",
+            "a": "6",
+            "skill": "4+",
+            "s": "20",
+            "ap": "-4",
+            "d": "24",
+            "hot": false
+          },
+          {
+            "name": "艾瑞欧克型泰坦动力爪（横扫）",
+            "kw": [],
+            "range": "近战",
+            "a": "12",
+            "skill": "4+",
+            "s": "12",
+            "ap": "-3",
+            "d": "8",
+            "hot": false
+          },
+          {
+            "name": "战神铁足",
+            "kw": [],
+            "range": "近战",
+            "a": "6",
+            "skill": "4+",
+            "s": "12",
+            "ap": "-2",
+            "d": "4",
+            "hot": false
+          }
+        ],
+        "abilities": [
+          {
+            "tag": "阵营技能",
+            "name": "超重型机甲",
+            "text": null,
+            "rich": []
+          },
+          {
+            "tag": null,
+            "name": "高耸巨像",
+            "text": "如对本模型使用战略能力，需支付4倍原本该战略能力的CP值。",
+            "rich": [
+              {
+                "t": "text",
+                "s": "如对本模型使用战略能力，需支付4倍原本该战略能力的CP值。"
+              }
+            ]
+          },
+          {
+            "tag": null,
+            "name": "奥米尼西亚之怒",
+            "text": "你的射击阶段，本单位射击后，选择 一个被本单位命中过的敌方单位，那个单位必须进行 震慑测试。",
+            "rich": [
+              {
+                "t": "text",
+                "s": "你的射击阶段，本单位射击后，选择 一个被本单位命中过的敌方单位，那个单位必须进行 震慑测试。"
+              }
+            ]
+          },
+          {
+            "tag": null,
+            "name": "受损",
+            "text": "当本模型剩余1-33W时，本模型的OC值-15，每次攻击时命中骰结果-1。",
+            "rich": [
+              {
+                "t": "text",
+                "s": "当本模型剩余1-33W时，本模型的OC值-15，每次攻击时命中骰结果-1。"
+              }
+            ]
+          }
+        ],
+        "loadout": "本模型装备：2 启示录导弹发射器s；2 阿德克斯型近防激光炮s；2 阿德克斯型近防爆弹炮s；加特林宏炮；艾瑞欧克型泰坦动力爪；战神铁足。",
+        "damaged": {
+          "w": "1-33",
+          "text": "While this model has 1-33 wounds remaining, subtract 15 from this model’s Objective Control characteristic and each time this model makes an attack, subtract 1 from the Hit roll."
+        },
+        "leads": null,
+        "composition": [
+          [
+            {
+              "t": "text",
+              "s": "战将泰坦包含"
+            },
+            {
+              "t": "num",
+              "s": "1"
+            },
+            {
+              "t": "text",
+              "s": "个模型，"
+            },
+            {
+              "t": "num",
+              "s": "3500"
+            },
+            {
+              "t": "text",
+              "s": " 分"
+            }
+          ]
+        ],
+        "keywords": "Warlord Titan，Titanic，Vehicle，Towering，Walker，Imperium，FRAME",
+        "factionKeywords": "Adeptus Titanicus",
+        "legend": null,
+        "faction": "阵营: Adeptus Titanicus",
+        "src": "L3 结构库 · Adeptus Titanicus",
+        "wiki": "factions/adeptus-titanicus/units/warlord-titan"
+      }
+    }
+  },
+  "/codex/keywords": {
+    "status": 200,
+    "body": {
+      "items": [
+        {
+          "slug": "anti-chaos",
+          "base": "ANTI-CHAOS",
+          "nameZh": "针对混沌",
+          "group": "universal",
+          "section": "24.03",
+          "quickrefZh": "针对性攻击",
+          "params": [
+            "2+"
+          ],
+          "engine": "数值建模",
+          "rulePage": "core-rules/anti.md",
+          "ruleSection": "24.03",
+          "ruleSlug": "24-core-abilities",
+          "currentWeapons": 2,
+          "totalWeapons": 2,
+          "currentUnits": 2,
+          "totalUnits": 2
+        },
+        {
+          "slug": "anti-character",
+          "base": "ANTI-CHARACTER",
+          "nameZh": "针对角色",
+          "group": "universal",
+          "section": "24.03",
+          "quickrefZh": "针对性攻击",
+          "params": [
+            "2+",
+            "3+",
+            "4+",
+            "5+"
+          ],
+          "engine": "数值建模",
+          "rulePage": "core-rules/anti.md",
+          "ruleSection": "24.03",
+          "ruleSlug": "24-core-abilities",
+          "currentWeapons": 9,
+          "totalWeapons": 9,
+          "currentUnits": 9,
+          "totalUnits": 9
+        },
+        {
+          "slug": "anti-daemon",
+          "base": "ANTI-DAEMON",
+          "nameZh": "针对恶魔",
+          "group": "universal",
+          "section": "24.03",
+          "quickrefZh": "针对性攻击",
+          "params": [
+            "2+",
+            "4+"
+          ],
+          "engine": "数值建模",
+          "rulePage": "core-rules/anti.md",
+          "ruleSection": "24.03",
+          "ruleSlug": "24-core-abilities",
+          "currentWeapons": 1,
+          "totalWeapons": 3,
+          "currentUnits": 1,
+          "totalUnits": 2
+        },
+        {
+          "slug": "anti-epic-hero",
+          "base": "ANTI-EPIC HERO",
+          "nameZh": "针对史诗英雄",
+          "group": "universal",
+          "section": "24.03",
+          "quickrefZh": "针对性攻击",
+          "params": [
+            "2+"
+          ],
+          "engine": "数值建模",
+          "rulePage": "core-rules/anti.md",
+          "ruleSection": "24.03",
+          "ruleSlug": "24-core-abilities",
+          "currentWeapons": 1,
+          "totalWeapons": 1,
+          "currentUnits": 1,
+          "totalUnits": 1
+        },
+        {
+          "slug": "anti-fly",
+          "base": "ANTI-FLY",
+          "nameZh": "针对飞行",
+          "group": "universal",
+          "section": "24.03",
+          "quickrefZh": "针对性攻击",
+          "params": [
+            "2+",
+            "3+",
+            "4+"
+          ],
+          "engine": "数值建模",
+          "rulePage": "core-rules/anti.md",
+          "ruleSection": "24.03",
+          "ruleSlug": "24-core-abilities",
+          "currentWeapons": 24,
+          "totalWeapons": 49,
+          "currentUnits": 43,
+          "totalUnits": 102
+        },
+        {
+          "slug": "anti-infantry",
+          "base": "ANTI-INFANTRY",
+          "nameZh": "针对步兵",
+          "group": "universal",
+          "section": "24.03",
+          "quickrefZh": "针对性攻击",
+          "params": [
+            "2+",
+            "3+",
+            "4+",
+            "5+"
+          ],
+          "engine": "数值建模",
+          "rulePage": "core-rules/anti.md",
+          "ruleSection": "24.03",
+          "ruleSlug": "24-core-abilities",
+          "currentWeapons": 94,
+          "totalWeapons": 106,
+          "currentUnits": 149,
+          "totalUnits": 252
+        },
+        {
+          "slug": "anti-monster",
+          "base": "ANTI-MONSTER",
+          "nameZh": "针对怪物",
+          "group": "universal",
+          "section": "24.03",
+          "quickrefZh": "针对性攻击",
+          "params": [
+            "2+",
+            "3+",
+            "4+",
+            "5+"
+          ],
+          "engine": "数值建模",
+          "rulePage": "core-rules/anti.md",
+          "ruleSection": "24.03",
+          "ruleSlug": "24-core-abilities",
+          "currentWeapons": 35,
+          "totalWeapons": 38,
+          "currentUnits": 33,
+          "totalUnits": 39
+        },
+        {
+          "slug": "anti-monster-vehicle",
+          "base": "ANTI-MONSTER/VEHICLE",
+          "nameZh": "针对怪兽或载具",
+          "group": "universal",
+          "section": "24.03",
+          "quickrefZh": "针对性攻击",
+          "params": [
+            "3+"
+          ],
+          "engine": "数值建模",
+          "rulePage": "core-rules/anti.md",
+          "ruleSection": "24.03",
+          "ruleSlug": "24-core-abilities",
+          "currentWeapons": 1,
+          "totalWeapons": 1,
+          "currentUnits": 1,
+          "totalUnits": 1
+        },
+        {
+          "slug": "anti-non-monster-vehicle",
+          "base": "ANTI-NON-MONSTER/VEHICLE",
+          "nameZh": "针对非怪兽且非载具",
+          "group": "universal",
+          "section": "24.03",
+          "quickrefZh": "针对性攻击",
+          "params": [
+            "2+",
+            "3+"
+          ],
+          "engine": "数值建模",
+          "rulePage": "core-rules/anti.md",
+          "ruleSection": "24.03",
+          "ruleSlug": "24-core-abilities",
+          "currentWeapons": 2,
+          "totalWeapons": 2,
+          "currentUnits": 1,
+          "totalUnits": 1
+        },
+        {
+          "slug": "anti-psyker",
+          "base": "ANTI-PSYKER",
+          "nameZh": "针对灵能者",
+          "group": "universal",
+          "section": "24.03",
+          "quickrefZh": "针对性攻击",
+          "params": [
+            "2+",
+            "4+",
+            "5+"
+          ],
+          "engine": "数值建模",
+          "rulePage": "core-rules/anti.md",
+          "ruleSection": "24.03",
+          "ruleSlug": "24-core-abilities",
+          "currentWeapons": 17,
+          "totalWeapons": 19,
+          "currentUnits": 17,
+          "totalUnits": 19
+        },
+        {
+          "slug": "anti-titanic",
+          "base": "ANTI-TITANIC",
+          "nameZh": "针对泰坦",
+          "group": "universal",
+          "section": "24.03",
+          "quickrefZh": "针对性攻击",
+          "params": [
+            "4+"
+          ],
+          "engine": "数值建模",
+          "rulePage": "core-rules/anti.md",
+          "ruleSection": "24.03",
+          "ruleSlug": "24-core-abilities",
+          "currentWeapons": 2,
+          "totalWeapons": 2,
+          "currentUnits": 3,
+          "totalUnits": 3
+        },
+        {
+          "slug": "anti-tyranids",
+          "base": "ANTI-TYRANIDS",
+          "nameZh": "针对泰伦虫族",
+          "group": "universal",
+          "section": "24.03",
+          "quickrefZh": "针对性攻击",
+          "params": [
+            "4+"
+          ],
+          "engine": "数值建模",
+          "rulePage": "core-rules/anti.md",
+          "ruleSection": "24.03",
+          "ruleSlug": "24-core-abilities",
+          "currentWeapons": 0,
+          "totalWeapons": 3,
+          "currentUnits": 0,
+          "totalUnits": 1
+        },
+        {
+          "slug": "anti-vehicle",
+          "base": "ANTI-VEHICLE",
+          "nameZh": "针对载具",
+          "group": "universal",
+          "section": "24.03",
+          "quickrefZh": "针对性攻击",
+          "params": [
+            "2+",
+            "3+",
+            "4+",
+            "5+"
+          ],
+          "engine": "数值建模",
+          "rulePage": "core-rules/anti.md",
+          "ruleSection": "24.03",
+          "ruleSlug": "24-core-abilities",
+          "currentWeapons": 67,
+          "totalWeapons": 78,
+          "currentUnits": 77,
+          "totalUnits": 141
+        },
+        {
+          "slug": "anti-walker",
+          "base": "ANTI-WALKER",
+          "nameZh": "针对步行者",
+          "group": "universal",
+          "section": "24.03",
+          "quickrefZh": "针对性攻击",
+          "params": [
+            "2+"
+          ],
+          "engine": "数值建模",
+          "rulePage": "core-rules/anti.md",
+          "ruleSection": "24.03",
+          "ruleSlug": "24-core-abilities",
+          "currentWeapons": 1,
+          "totalWeapons": 1,
+          "currentUnits": 1,
+          "totalUnits": 1
+        },
+        {
+          "slug": "assault",
+          "base": "ASSAULT",
+          "nameZh": "突击",
+          "group": "universal",
+          "section": "24.04",
+          "quickrefZh": "突击",
+          "params": [],
+          "engine": "仅标注",
+          "rulePage": "core-rules/assault.md",
+          "ruleSection": "24.04",
+          "ruleSlug": "24-core-abilities",
+          "currentWeapons": 155,
+          "totalWeapons": 170,
+          "currentUnits": 162,
+          "totalUnits": 215
+        },
+        {
+          "slug": "blast",
+          "base": "BLAST",
+          "nameZh": "爆炸",
+          "group": "universal",
+          "section": "24.05",
+          "quickrefZh": "爆炸",
+          "params": [
+            "1"
+          ],
+          "engine": "数值建模",
+          "rulePage": "core-rules/blast.md",
+          "ruleSection": "24.05",
+          "ruleSlug": "24-core-abilities",
+          "currentWeapons": 277,
+          "totalWeapons": 358,
+          "currentUnits": 305,
+          "totalUnits": 563
+        },
+        {
+          "slug": "bubblechukka",
+          "base": "BUBBLECHUKKA",
+          "nameZh": "泡泡炮",
+          "group": "unit-specific",
+          "section": null,
+          "quickrefZh": null,
+          "params": [],
+          "engine": "未纳入",
+          "rulePage": null,
+          "ruleSection": null,
+          "ruleSlug": null,
+          "currentWeapons": 3,
+          "totalWeapons": 3,
+          "currentUnits": 1,
+          "totalUnits": 1
+        },
+        {
+          "slug": "ctan-power",
+          "base": "C'TAN POWER",
+          "nameZh": "星神之力",
+          "group": "unit-specific",
+          "section": null,
+          "quickrefZh": null,
+          "params": [],
+          "engine": "未纳入",
+          "rulePage": null,
+          "ruleSection": null,
+          "ruleSlug": null,
+          "currentWeapons": 3,
+          "totalWeapons": 3,
+          "currentUnits": 1,
+          "totalUnits": 1
+        },
+        {
+          "slug": "cleave",
+          "base": "CLEAVE",
+          "nameZh": "劈砍",
+          "group": "universal",
+          "section": "24.06",
+          "quickrefZh": "横扫",
+          "params": [
+            "1"
+          ],
+          "engine": "数值建模",
+          "rulePage": "core-rules/cleave.md",
+          "ruleSection": "24.06",
+          "ruleSlug": "24-core-abilities",
+          "currentWeapons": 3,
+          "totalWeapons": 3,
+          "currentUnits": 2,
+          "totalUnits": 2
+        },
+        {
+          "slug": "close-quarters",
+          "base": "CLOSE-QUARTERS",
+          "nameZh": "近距离",
+          "group": "universal",
+          "section": "24.07",
+          "quickrefZh": "近距离",
+          "params": [],
+          "engine": "仅标注",
+          "rulePage": "core-rules/pistol.md",
+          "ruleSection": "24.07",
+          "ruleSlug": "24-core-abilities",
+          "currentWeapons": 2,
+          "totalWeapons": 2,
+          "currentUnits": 2,
+          "totalUnits": 2
+        },
+        {
+          "slug": "conversion",
+          "base": "CONVERSION",
+          "nameZh": "转换",
+          "group": "unit-specific",
+          "section": null,
+          "quickrefZh": null,
+          "params": [],
+          "engine": "数值建模",
+          "rulePage": null,
+          "ruleSection": null,
+          "ruleSlug": null,
+          "currentWeapons": 6,
+          "totalWeapons": 8,
+          "currentUnits": 7,
+          "totalUnits": 16
+        },
+        {
+          "slug": "dead-choppy",
+          "base": "DEAD CHOPPY",
+          "nameZh": "劈砍狠",
+          "group": "unit-specific",
+          "section": null,
+          "quickrefZh": null,
+          "params": [],
+          "engine": "未纳入",
+          "rulePage": null,
+          "ruleSection": null,
+          "ruleSlug": null,
+          "currentWeapons": 1,
+          "totalWeapons": 1,
+          "currentUnits": 1,
+          "totalUnits": 1
+        },
+        {
+          "slug": "devastating-wounds",
+          "base": "DEVASTATING WOUNDS",
+          "nameZh": "毁灭伤害",
+          "group": "universal",
+          "section": "24.10",
+          "quickrefZh": "毁灭伤害",
+          "params": [],
+          "engine": "数值建模",
+          "rulePage": "core-rules/devastating-wounds.md",
+          "ruleSection": "24.10",
+          "ruleSlug": "24-core-abilities",
+          "currentWeapons": 218,
+          "totalWeapons": 267,
+          "currentUnits": 316,
+          "totalUnits": 510
+        },
+        {
+          "slug": "devastating-wounds-non-monster-vehicle",
+          "base": "DEVASTATING WOUNDS: NON-MONSTER/VEHICLE",
+          "nameZh": "毁灭伤害：非怪兽且非载具",
+          "group": "universal",
+          "section": "24.10",
+          "quickrefZh": "毁灭伤害",
+          "params": [],
+          "engine": "数值建模",
+          "rulePage": "core-rules/devastating-wounds.md",
+          "ruleSection": "24.10",
+          "ruleSlug": "24-core-abilities",
+          "currentWeapons": 1,
+          "totalWeapons": 1,
+          "currentUnits": 1,
+          "totalUnits": 1
+        },
+        {
+          "slug": "extra-attacks",
+          "base": "EXTRA ATTACKS",
+          "nameZh": "额外攻击",
+          "group": "universal",
+          "section": "24.11",
+          "quickrefZh": "额外攻击",
+          "params": [],
+          "engine": "仅标注",
+          "rulePage": "core-rules/extra-attacks.md",
+          "ruleSection": "24.11",
+          "ruleSlug": "24-core-abilities",
+          "currentWeapons": 84,
+          "totalWeapons": 100,
+          "currentUnits": 101,
+          "totalUnits": 147
+        },
+        {
+          "slug": "harpooned",
+          "base": "HARPOONED",
+          "nameZh": "鱼叉钩中",
+          "group": "unit-specific",
+          "section": null,
+          "quickrefZh": null,
+          "params": [],
+          "engine": "未纳入",
+          "rulePage": null,
+          "ruleSection": null,
+          "ruleSlug": null,
+          "currentWeapons": 1,
+          "totalWeapons": 1,
+          "currentUnits": 1,
+          "totalUnits": 1
+        },
+        {
+          "slug": "hazardous",
+          "base": "HAZARDOUS",
+          "nameZh": "危险",
+          "group": "universal",
+          "section": "24.15",
+          "quickrefZh": "危险",
+          "params": [],
+          "engine": "仅标注",
+          "rulePage": "core-rules/hazardous.md",
+          "ruleSection": "24.15",
+          "ruleSlug": "24-core-abilities",
+          "currentWeapons": 79,
+          "totalWeapons": 103,
+          "currentUnits": 177,
+          "totalUnits": 328
+        },
+        {
+          "slug": "heavy",
+          "base": "HEAVY",
+          "nameZh": "重型",
+          "group": "universal",
+          "section": "24.16",
+          "quickrefZh": "重型",
+          "params": [],
+          "engine": "数值建模",
+          "rulePage": "core-rules/heavy.md",
+          "ruleSection": "24.16",
+          "ruleSlug": "24-core-abilities",
+          "currentWeapons": 128,
+          "totalWeapons": 158,
+          "currentUnits": 109,
+          "totalUnits": 218
+        },
+        {
+          "slug": "hooked",
+          "base": "HOOKED",
+          "nameZh": "钩挂",
+          "group": "unit-specific",
+          "section": null,
+          "quickrefZh": null,
+          "params": [],
+          "engine": "未纳入",
+          "rulePage": null,
+          "ruleSection": null,
+          "ruleSlug": null,
+          "currentWeapons": 0,
+          "totalWeapons": 1,
+          "currentUnits": 0,
+          "totalUnits": 1
+        },
+        {
+          "slug": "ignores-cover",
+          "base": "IGNORES COVER",
+          "nameZh": "无视掩体",
+          "group": "universal",
+          "section": "24.18",
+          "quickrefZh": "忽视掩体",
+          "params": [],
+          "engine": "数值建模",
+          "rulePage": "core-rules/ignores-cover.md",
+          "ruleSection": "24.18",
+          "ruleSlug": "24-core-abilities",
+          "currentWeapons": 169,
+          "totalWeapons": 191,
+          "currentUnits": 275,
+          "totalUnits": 505
+        },
+        {
+          "slug": "impaled",
+          "base": "IMPALED",
+          "nameZh": "穿刺",
+          "group": "unit-specific",
+          "section": null,
+          "quickrefZh": null,
+          "params": [],
+          "engine": "未纳入",
+          "rulePage": null,
+          "ruleSection": null,
+          "ruleSlug": null,
+          "currentWeapons": 0,
+          "totalWeapons": 1,
+          "currentUnits": 0,
+          "totalUnits": 2
+        },
+        {
+          "slug": "indirect-fire",
+          "base": "INDIRECT FIRE",
+          "nameZh": "曲射",
+          "group": "universal",
+          "section": "24.19",
+          "quickrefZh": "曲射",
+          "params": [],
+          "engine": "数值建模",
+          "rulePage": "core-rules/indirect-fire.md",
+          "ruleSection": "24.19",
+          "ruleSlug": "24-core-abilities",
+          "currentWeapons": 52,
+          "totalWeapons": 69,
+          "currentUnits": 62,
+          "totalUnits": 123
+        },
+        {
+          "slug": "lance",
+          "base": "LANCE",
+          "nameZh": "骑枪",
+          "group": "universal",
+          "section": "24.21",
+          "quickrefZh": "迅猛冲锋",
+          "params": [],
+          "engine": "数值建模",
+          "rulePage": "core-rules/lance.md",
+          "ruleSection": "24.21",
+          "ruleSlug": "24-core-abilities",
+          "currentWeapons": 37,
+          "totalWeapons": 42,
+          "currentUnits": 38,
+          "totalUnits": 50
+        },
+        {
+          "slug": "lethal-hits",
+          "base": "LETHAL HITS",
+          "nameZh": "致命一击",
+          "group": "universal",
+          "section": "24.23",
+          "quickrefZh": "致命一击",
+          "params": [],
+          "engine": "数值建模",
+          "rulePage": "core-rules/lethal-hits.md",
+          "ruleSection": "24.23",
+          "ruleSlug": "24-core-abilities",
+          "currentWeapons": 130,
+          "totalWeapons": 151,
+          "currentUnits": 116,
+          "totalUnits": 164
+        },
+        {
+          "slug": "lethal-hits-non-monster-vehicle",
+          "base": "LETHAL HITS: NON-MONSTER/VEHICLE",
+          "nameZh": "致命一击：非怪兽且非载具",
+          "group": "universal",
+          "section": "24.23",
+          "quickrefZh": "致命一击",
+          "params": [],
+          "engine": "数值建模",
+          "rulePage": "core-rules/lethal-hits.md",
+          "ruleSection": "24.23",
+          "ruleSlug": "24-core-abilities",
+          "currentWeapons": 1,
+          "totalWeapons": 1,
+          "currentUnits": 1,
+          "totalUnits": 1
+        },
+        {
+          "slug": "linked-fire",
+          "base": "LINKED FIRE",
+          "nameZh": "连锁火力",
+          "group": "unit-specific",
+          "section": null,
+          "quickrefZh": null,
+          "params": [],
+          "engine": "未纳入",
+          "rulePage": null,
+          "ruleSection": null,
+          "ruleSlug": null,
+          "currentWeapons": 1,
+          "totalWeapons": 1,
+          "currentUnits": 1,
+          "totalUnits": 1
+        },
+        {
+          "slug": "melta",
+          "base": "MELTA",
+          "nameZh": "热熔",
+          "group": "universal",
+          "section": "24.25",
+          "quickrefZh": "热熔",
+          "params": [
+            "1",
+            "2",
+            "3",
+            "4",
+            "6"
+          ],
+          "engine": "数值建模",
+          "rulePage": "core-rules/melta.md",
+          "ruleSection": "24.25",
+          "ruleSlug": "24-core-abilities",
+          "currentWeapons": 49,
+          "totalWeapons": 62,
+          "currentUnits": 156,
+          "totalUnits": 323
+        },
+        {
+          "slug": "one-shot",
+          "base": "ONE SHOT",
+          "nameZh": "单发",
+          "group": "universal",
+          "section": "24.26",
+          "quickrefZh": "一次性武器",
+          "params": [],
+          "engine": "仅标注",
+          "rulePage": "core-rules/one-shot.md",
+          "ruleSection": "24.26",
+          "ruleSlug": "24-core-abilities",
+          "currentWeapons": 11,
+          "totalWeapons": 15,
+          "currentUnits": 61,
+          "totalUnits": 198
+        },
+        {
+          "slug": "overcharge",
+          "base": "OVERCHARGE",
+          "nameZh": "过载",
+          "group": "unit-specific",
+          "section": null,
+          "quickrefZh": null,
+          "params": [],
+          "engine": "未纳入",
+          "rulePage": null,
+          "ruleSection": null,
+          "ruleSlug": null,
+          "currentWeapons": 1,
+          "totalWeapons": 1,
+          "currentUnits": 1,
+          "totalUnits": 1
+        },
+        {
+          "slug": "pistol",
+          "base": "PISTOL",
+          "nameZh": "手枪",
+          "group": "transitional",
+          "section": null,
+          "quickrefZh": null,
+          "params": [],
+          "engine": "仅标注",
+          "rulePage": "core-rules/pistol.md",
+          "ruleSection": "24.27",
+          "ruleSlug": "24-core-abilities",
+          "currentWeapons": 128,
+          "totalWeapons": 148,
+          "currentUnits": 345,
+          "totalUnits": 527
+        },
+        {
+          "slug": "plasma-warhead",
+          "base": "PLASMA WARHEAD",
+          "nameZh": "等离子弹头",
+          "group": "unit-specific",
+          "section": null,
+          "quickrefZh": null,
+          "params": [],
+          "engine": "未纳入",
+          "rulePage": null,
+          "ruleSection": null,
+          "ruleSlug": null,
+          "currentWeapons": 1,
+          "totalWeapons": 1,
+          "currentUnits": 1,
+          "totalUnits": 2
+        },
+        {
+          "slug": "precision",
+          "base": "PRECISION",
+          "nameZh": "精准",
+          "group": "universal",
+          "section": "24.28",
+          "quickrefZh": "精准",
+          "params": [],
+          "engine": "仅标注",
+          "rulePage": "core-rules/precision.md",
+          "ruleSection": "24.28",
+          "ruleSlug": "24-core-abilities",
+          "currentWeapons": 120,
+          "totalWeapons": 136,
+          "currentUnits": 115,
+          "totalUnits": 158
+        },
+        {
+          "slug": "psychic",
+          "base": "PSYCHIC",
+          "nameZh": "灵能",
+          "group": "universal",
+          "section": "24.29",
+          "quickrefZh": "灵能",
+          "params": [],
+          "engine": "数值建模",
+          "rulePage": "core-rules/psychic-attacks.md",
+          "ruleSection": "24.29",
+          "ruleSlug": "24-core-abilities",
+          "currentWeapons": 140,
+          "totalWeapons": 168,
+          "currentUnits": 100,
+          "totalUnits": 144
+        },
+        {
+          "slug": "psychic-assassin",
+          "base": "PSYCHIC ASSASSIN",
+          "nameZh": "灵能刺客",
+          "group": "unit-specific",
+          "section": null,
+          "quickrefZh": null,
+          "params": [],
+          "engine": "未纳入",
+          "rulePage": null,
+          "ruleSection": null,
+          "ruleSlug": null,
+          "currentWeapons": 1,
+          "totalWeapons": 1,
+          "currentUnits": 1,
+          "totalUnits": 1
+        },
+        {
+          "slug": "rapid-fire",
+          "base": "RAPID FIRE",
+          "nameZh": "速射",
+          "group": "universal",
+          "section": "24.30",
+          "quickrefZh": "速射",
+          "params": [
+            "1",
+            "10",
+            "2",
+            "3",
+            "4",
+            "5",
+            "6",
+            "9",
+            "D3",
+            "D6",
+            "D6+3"
+          ],
+          "engine": "数值建模",
+          "rulePage": "core-rules/rapid-fire.md",
+          "ruleSection": "24.30",
+          "ruleSlug": "24-core-abilities",
+          "currentWeapons": 146,
+          "totalWeapons": 161,
+          "currentUnits": 302,
+          "totalUnits": 592
+        },
+        {
+          "slug": "reverberating-summons",
+          "base": "REVERBERATING SUMMONS",
+          "nameZh": "回响召唤",
+          "group": "unit-specific",
+          "section": null,
+          "quickrefZh": null,
+          "params": [],
+          "engine": "未纳入",
+          "rulePage": null,
+          "ruleSection": null,
+          "ruleSlug": null,
+          "currentWeapons": 1,
+          "totalWeapons": 1,
+          "currentUnits": 2,
+          "totalUnits": 2
+        },
+        {
+          "slug": "snagged",
+          "base": "SNAGGED",
+          "nameZh": "钩缠",
+          "group": "unit-specific",
+          "section": null,
+          "quickrefZh": null,
+          "params": [],
+          "engine": "未纳入",
+          "rulePage": null,
+          "ruleSection": null,
+          "ruleSlug": null,
+          "currentWeapons": 1,
+          "totalWeapons": 1,
+          "currentUnits": 2,
+          "totalUnits": 2
+        },
+        {
+          "slug": "sustained-hits",
+          "base": "SUSTAINED HITS",
+          "nameZh": "连击",
+          "group": "universal",
+          "section": null,
+          "quickrefZh": "连击",
+          "params": [
+            "1",
+            "2",
+            "3",
+            "D3"
+          ],
+          "engine": "数值建模",
+          "rulePage": "core-rules/sustained-hits.md",
+          "ruleSection": "24.36",
+          "ruleSlug": "24-core-abilities",
+          "currentWeapons": 174,
+          "totalWeapons": 209,
+          "currentUnits": 291,
+          "totalUnits": 565
+        },
+        {
+          "slug": "torrent",
+          "base": "TORRENT",
+          "nameZh": "洪流",
+          "group": "universal",
+          "section": "24.37",
+          "quickrefZh": "喷射",
+          "params": [],
+          "engine": "数值建模",
+          "rulePage": "core-rules/torrent.md",
+          "ruleSection": "24.37",
+          "ruleSlug": "24-core-abilities",
+          "currentWeapons": 142,
+          "totalWeapons": 166,
+          "currentUnits": 272,
+          "totalUnits": 508
+        },
+        {
+          "slug": "twin-linked",
+          "base": "TWIN-LINKED",
+          "nameZh": "双联",
+          "group": "universal",
+          "section": "24.38",
+          "quickrefZh": "双联",
+          "params": [],
+          "engine": "数值建模",
+          "rulePage": "core-rules/twin-linked.md",
+          "ruleSection": "24.38",
+          "ruleSlug": "24-core-abilities",
+          "currentWeapons": 193,
+          "totalWeapons": 252,
+          "currentUnits": 240,
+          "totalUnits": 503
+        }
+      ]
+    }
+  },
+  "/codex/rules": {
+    "status": 200,
+    "body": {
+      "items": [
+        {
+          "slug": "01-core-concepts",
+          "number": "01",
+          "nameZh": "核心概念",
+          "nameEn": "CORE CONCEPTS",
+          "sectionCount": 7
+        },
+        {
+          "slug": "02-datasheets",
+          "number": "02",
+          "nameZh": "数据表",
+          "nameEn": "DATASHEETS",
+          "sectionCount": 7
+        },
+        {
+          "slug": "03-moving",
+          "number": "03",
+          "nameZh": "移动",
+          "nameEn": "MOVING",
+          "sectionCount": 4
+        },
+        {
+          "slug": "04-making-attacks",
+          "number": "04",
+          "nameZh": "进行攻击",
+          "nameEn": "MAKING ATTACKS",
+          "sectionCount": 3
+        },
+        {
+          "slug": "05-attack-sequence",
+          "number": "05",
+          "nameZh": "攻击流程",
+          "nameEn": "ATTACK SEQUENCE",
+          "sectionCount": 4
+        },
+        {
+          "slug": "06-other-concepts",
+          "number": "06",
+          "nameZh": "其他概念",
+          "nameEn": "OTHER CONCEPTS",
+          "sectionCount": 3
+        },
+        {
+          "slug": "07-the-battle-round",
+          "number": "07",
+          "nameZh": "战斗轮次",
+          "nameEn": "THE BATTLE ROUND",
+          "sectionCount": 3
+        },
+        {
+          "slug": "08-command-phase",
+          "number": "08",
+          "nameZh": "指挥阶段",
+          "nameEn": "COMMAND PHASE",
+          "sectionCount": 5
+        },
+        {
+          "slug": "09-movement-phase",
+          "number": "09",
+          "nameZh": "移动阶段",
+          "nameEn": "MOVEMENT PHASE",
+          "sectionCount": 7
+        },
+        {
+          "slug": "10-shooting-phase",
+          "number": "10",
+          "nameZh": "射击阶段",
+          "nameEn": "SHOOTING PHASE",
+          "sectionCount": 7
+        },
+        {
+          "slug": "11-charge-phase",
+          "number": "11",
+          "nameZh": "冲锋阶段",
+          "nameEn": "CHARGE PHASE",
+          "sectionCount": 4
+        },
+        {
+          "slug": "12-fight-phase",
+          "number": "12",
+          "nameZh": "近战阶段",
+          "nameEn": "FIGHT PHASE",
+          "sectionCount": 9
+        },
+        {
+          "slug": "13-terrain",
+          "number": "13",
+          "nameZh": "地形",
+          "nameEn": "TERRAIN",
+          "sectionCount": 11
+        },
+        {
+          "slug": "14-objectives",
+          "number": "14",
+          "nameZh": "目标",
+          "nameEn": "OBJECTIVES",
+          "sectionCount": 3
+        },
+        {
+          "slug": "15-stratagems",
+          "number": "15",
+          "nameZh": "计谋",
+          "nameEn": "STRATAGEMS",
+          "sectionCount": 12
+        },
+        {
+          "slug": "16-actions",
+          "number": "16",
+          "nameZh": "行动",
+          "nameEn": "ACTIONS",
+          "sectionCount": 1
+        },
+        {
+          "slug": "17-monsters-and-vehicles",
+          "number": "17",
+          "nameZh": "凶兽和载具",
+          "nameEn": "MONSTERS AND VEHICLES",
+          "sectionCount": 3
+        },
+        {
+          "slug": "18-transports",
+          "number": "18",
+          "nameZh": "运输工具",
+          "nameEn": "TRANSPORTS",
+          "sectionCount": 5
+        },
+        {
+          "slug": "19-attached-units",
+          "number": "19",
+          "nameZh": "联合单位",
+          "nameEn": "ATTACHED UNITS",
+          "sectionCount": 4
+        },
+        {
+          "slug": "20-strategic-reserves",
+          "number": "20",
+          "nameZh": "战略预备队",
+          "nameEn": "STRATEGIC RESERVES",
+          "sectionCount": 4
+        },
+        {
+          "slug": "21-flying-and-surging",
+          "number": "21",
+          "nameZh": "飞行和迸发",
+          "nameEn": "FLYING AND SURGING",
+          "sectionCount": 3
+        },
+        {
+          "slug": "22-other-rules-and-abilities",
+          "number": "22",
+          "nameZh": "其他规则和技能",
+          "nameEn": "OTHER RULES AND ABILITIES",
+          "sectionCount": 5
+        },
+        {
+          "slug": "23-aircraft",
+          "number": "23",
+          "nameZh": "飞行器",
+          "nameEn": "AIRCRAFT",
+          "sectionCount": 4
+        },
+        {
+          "slug": "24-core-abilities",
+          "number": "24",
+          "nameZh": "核心技能",
+          "nameEn": "CORE ABILITIES",
+          "sectionCount": 38
+        }
+      ]
+    }
+  },
+  "/codex/changelog": {
+    "status": 200,
+    "body": {
+      "intro": [
+        {
+          "t": "p",
+          "inline": [
+            {
+              "t": "num",
+              "s": "11"
+            },
+            {
+              "t": "text",
+              "s": " 版官方规则变更清单："
+            },
+            {
+              "t": "strong",
+              "s": "592 条阵营改动"
+            },
+            {
+              "t": "text",
+              "s": "（"
+            },
+            {
+              "t": "num",
+              "s": "28"
+            },
+            {
+              "t": "text",
+              "s": " 个阵营包）＋ "
+            },
+            {
+              "t": "strong",
+              "s": "4 条通用规则更新"
+            },
+            {
+              "t": "text",
+              "s": "。其中 "
+            },
+            {
+              "t": "num",
+              "s": "128"
+            },
+            {
+              "t": "text",
+              "s": " 条阵营改动标了 🆕，是各包初版发布之后新增的修订。"
+            }
+          ]
+        },
+        {
+          "t": "quote",
+          "inline": [
+            {
+              "t": "text",
+              "s": "这份清单只收"
+            },
+            {
+              "t": "strong",
+              "s": "官方自己列出的改动"
+            },
+            {
+              "t": "text",
+              "s": "，全部来自阵营包的「规则更新」章节与《通用规则更新》，逐条照抄、不作推断。🆕 标记读自 PDF 的红色高亮，不是靠比对两个版本猜的——手上只有 v"
+            },
+            {
+              "t": "num",
+              "s": "1.1"
+            },
+            {
+              "t": "text",
+              "s": " 一版，没有 v"
+            },
+            {
+              "t": "num",
+              "s": "1.0"
+            },
+            {
+              "t": "text",
+              "s": " 可以 diff。"
+            }
+          ]
+        }
+      ],
+      "generalSections": [
+        {
+          "title": "通用规则更新 v1.0（跨全部阵营）",
+          "number": null,
+          "blocks": [
+            {
+              "t": "h",
+              "level": 3,
+              "text": "修改一个计谋的 CP 消耗"
+            },
+            {
+              "t": "p",
+              "inline": [
+                {
+                  "t": "text",
+                  "s": "将允许玩家消耗 "
+                },
+                {
+                  "t": "num",
+                  "s": "0"
+                },
+                {
+                  "t": "text",
+                  "s": "CP 对己方单位使用一个计谋，但没有明确规定计谋名称的规则，修改为使用那次计谋消耗的 CP 减少 "
+                },
+                {
+                  "t": "num",
+                  "s": "1"
+                },
+                {
+                  "t": "text",
+                  "s": " 点。"
+                }
+              ]
+            },
+            {
+              "t": "h",
+              "level": 3,
+              "text": "可以在每个阶段/回合中使用超过一次的计谋"
+            },
+            {
+              "t": "p",
+              "inline": [
+                {
+                  "t": "text",
+                  "s": "对于允许玩家在同一阶段已对另一个单位使用过某条计谋的前提下，仍能对某个单位使用那条计谋的规则，仅在规定了那条计谋名称的前提下适用。类似的，如果某条计谋对一名玩家仅限每个回合一次，或每个战斗轮次一次，或每场战斗一次，这样的规则也仅在规定了那条计谋的名称的前提下适用。"
+                }
+              ]
+            },
+            {
+              "t": "h",
+              "level": 3,
+              "text": "防止单位成为目标的计谋"
+            },
+            {
+              "t": "p",
+              "inline": [
+                {
+                  "t": "text",
+                  "s": "如果一个计谋的效果能够让目标单位“只有在攻击模型的 "
+                },
+                {
+                  "t": "num",
+                  "s": "12"
+                },
+                {
+                  "t": "text",
+                  "s": "\" 范围内时才能够成为远程攻击的目标”，或者“不能成为远程攻击的目标，除非攻击模型位于其 "
+                },
+                {
+                  "t": "num",
+                  "s": "12"
+                },
+                {
+                  "t": "text",
+                  "s": "\" 范围内”，那么将这个效果修改为“只有在位于攻击模型的 "
+                },
+                {
+                  "t": "num",
+                  "s": "18"
+                },
+                {
+                  "t": "text",
+                  "s": "\" 范围内时才能被选择成为远程攻击的目标”。"
+                }
+              ]
+            },
+            {
+              "t": "h",
+              "level": 3,
+              "text": "将新单位添加至己方军队的计谋"
+            },
+            {
+              "t": "p",
+              "inline": [
+                {
+                  "t": "text",
+                  "s": "如果一个计谋让您可以将“一个与被摧毁单位相同的全新单位添加至己方军队中”，为那个计谋添加以下限制：“限制：您在每场战斗中只能使用本计谋一次。”"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "noteSections": [
+        {
+          "title": "数值层的 10 版 → 11 版漂移",
+          "number": null,
+          "blocks": [
+            {
+              "t": "p",
+              "inline": [
+                {
+                  "t": "text",
+                  "s": "本页收的是官方"
+                },
+                {
+                  "t": "strong",
+                  "s": "文字"
+                },
+                {
+                  "t": "text",
+                  "s": "改动。兵牌数值与规则文本的 "
+                },
+                {
+                  "t": "num",
+                  "s": "10"
+                },
+                {
+                  "t": "text",
+                  "s": "→"
+                },
+                {
+                  "t": "num",
+                  "s": "11"
+                },
+                {
+                  "t": "text",
+                  "s": " 漂移是另一条线，早已逐条落库并带 `from` 值守卫，见 `db_compile/fp_errata_patches.json`（属性/武器/关键词补丁）与 `db_compile/fp_rules_patches.json`（规则文本、"
+                },
+                {
+                  "t": "num",
+                  "s": "11"
+                },
+                {
+                  "t": "text",
+                  "s": " 版移除条目、"
+                },
+                {
+                  "t": "num",
+                  "s": "11"
+                },
+                {
+                  "t": "text",
+                  "s": " 版新增条目）。两条线口径不同，不要混着读。"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "factions": [
+        {
+          "slug": "space-marines",
+          "name": "星际战士",
+          "version": "v1.1",
+          "total": 57,
+          "newCount": 10,
+          "detail": "查看"
+        },
+        {
+          "slug": "orkss",
+          "name": "欧克蛮人",
+          "version": "v1.1",
+          "total": 43,
+          "newCount": 11,
+          "detail": "查看"
+        },
+        {
+          "slug": "genestealer-cults",
+          "name": "基因窃取者教派",
+          "version": "v1.1",
+          "total": 37,
+          "newCount": 5,
+          "detail": "查看"
+        },
+        {
+          "slug": "chaos-space-marines",
+          "name": "混沌星际战士",
+          "version": "v1.1",
+          "total": 35,
+          "newCount": 0,
+          "detail": "查看"
+        },
+        {
+          "slug": "thousand-sons",
+          "name": "千子",
+          "version": "v1.1",
+          "total": 35,
+          "newCount": 5,
+          "detail": "查看"
+        },
+        {
+          "slug": "aeldari",
+          "name": "艾达灵族",
+          "version": "v1.1",
+          "total": 34,
+          "newCount": 8,
+          "detail": "查看"
+        },
+        {
+          "slug": "adeptus-mechanicus",
+          "name": "机械修会",
+          "version": "v1.1",
+          "total": 30,
+          "newCount": 9,
+          "detail": "查看"
+        },
+        {
+          "slug": "tyranids",
+          "name": "泰伦虫族",
+          "version": "v1.1",
+          "total": 30,
+          "newCount": 4,
+          "detail": "查看"
+        },
+        {
+          "slug": "dark-angels",
+          "name": "黑暗天使",
+          "version": "v1.1",
+          "total": 26,
+          "newCount": 12,
+          "detail": "查看"
+        },
+        {
+          "slug": "necrons",
+          "name": "太空死灵",
+          "version": "v1.1",
+          "total": 26,
+          "newCount": 13,
+          "detail": "查看"
+        },
+        {
+          "slug": "tau-empire",
+          "name": "钛帝国",
+          "version": "v1.1",
+          "total": 25,
+          "newCount": 2,
+          "detail": "查看"
+        },
+        {
+          "slug": "astra-militarum",
+          "name": "星界军",
+          "version": "v1.1",
+          "total": 24,
+          "newCount": 7,
+          "detail": "查看"
+        },
+        {
+          "slug": "adepta-sororitas",
+          "name": "修女会",
+          "version": "v1.1",
+          "total": 22,
+          "newCount": 5,
+          "detail": "查看"
+        },
+        {
+          "slug": "world-eaters",
+          "name": "吞世者",
+          "version": "v1.1",
+          "total": 19,
+          "newCount": 2,
+          "detail": "查看"
+        },
+        {
+          "slug": "emperor-s-children",
+          "name": "帝皇之子",
+          "version": "v1.1",
+          "total": 18,
+          "newCount": 1,
+          "detail": "查看"
+        },
+        {
+          "slug": "imperia-agents",
+          "name": "帝国特勤",
+          "version": "v1.1",
+          "total": 16,
+          "newCount": 2,
+          "detail": "查看"
+        },
+        {
+          "slug": "drukhari",
+          "name": "黑暗灵族",
+          "version": "v1.1",
+          "total": 15,
+          "newCount": 4,
+          "detail": "查看"
+        },
+        {
+          "slug": "grey-knights",
+          "name": "灰骑士",
+          "version": "v1.1",
+          "total": 14,
+          "newCount": 8,
+          "detail": "查看"
+        },
+        {
+          "slug": "blood-angels",
+          "name": "圣血天使",
+          "version": "v1.1",
+          "total": 13,
+          "newCount": 3,
+          "detail": "查看"
+        },
+        {
+          "slug": "adeptus-custodes",
+          "name": "帝皇禁军",
+          "version": "v1.1",
+          "total": 12,
+          "newCount": 2,
+          "detail": "查看"
+        },
+        {
+          "slug": "chaos-knights",
+          "name": "混沌骑士",
+          "version": "v1.1",
+          "total": 12,
+          "newCount": 4,
+          "detail": "查看"
+        },
+        {
+          "slug": "leagues-of-votann",
+          "name": "沃坦联盟",
+          "version": "v1.1",
+          "total": 12,
+          "newCount": 2,
+          "detail": "查看"
+        },
+        {
+          "slug": "black-templars",
+          "name": "黑色圣堂",
+          "version": "v1.1",
+          "total": 10,
+          "newCount": 1,
+          "detail": "查看"
+        },
+        {
+          "slug": "death-guard",
+          "name": "死亡守卫",
+          "version": "v1.1",
+          "total": 9,
+          "newCount": 4,
+          "detail": "查看"
+        },
+        {
+          "slug": "imperia-knights",
+          "name": "帝国骑士",
+          "version": "v1.1",
+          "total": 9,
+          "newCount": 1,
+          "detail": "查看"
+        },
+        {
+          "slug": "space-wolves",
+          "name": "太空野狼",
+          "version": "v1.1",
+          "total": 9,
+          "newCount": 3,
+          "detail": "查看"
+        },
+        {
+          "slug": null,
+          "name": "deathwatch",
+          "version": "v1.0",
+          "total": 0,
+          "newCount": 0,
+          "detail": "首版，无更新章节"
+        },
+        {
+          "slug": null,
+          "name": "混沌恶魔",
+          "version": "v1.1",
+          "total": 0,
+          "newCount": 0,
+          "detail": "官方本次未列改动"
+        }
+      ],
+      "total": 592,
+      "newCount": 128
+    }
+  },
+  "/simulate": {
+    "status": 200,
+    "request": {
+      "attackerId": "000000433",
+      "defenderId": "000000433",
+      "options": {
+        "loadout": [
+          [
+            "Heavy rail rifle",
+            1
+          ]
+        ],
+        "n": 500,
+        "seed": 42
+      }
+    },
+    "body": {
+      "ok": true,
+      "reason": null,
+      "note": null,
+      "warning": null,
+      "attacker": "Broadside Battlesuits",
+      "defender": "Broadside Battlesuits",
+      "phase": "shooting",
+      "report": {
+        "expectedDamage": 3.098,
+        "expectedKills": 0.086,
+        "wipeProbability": 0.086,
+        "distribution": {
+          "p10": 0.0,
+          "p50": 0.0,
+          "p90": 0.0,
+          "histogram": {
+            "0": 0.914,
+            "1": 0.086
+          },
+          "damage": {
+            "p10": 0.0,
+            "p50": 3.0,
+            "p90": 7.0
+          }
+        },
+        "funnel": {
+          "attacks": 2.0,
+          "hits": 1.018,
+          "wounds": 0.828,
+          "unsaved": 0.73,
+          "damage": 3.098,
+          "kills": 0.086
+        },
+        "efficiency": {
+          "points": 75,
+          "damage_per_100": 4.131,
+          "kills_per_100": 0.1147
+        },
+        "modeledEffects": [
+          "heavy",
+          "devastating wounds"
+        ],
+        "notModeled": [
+          "未建模·其它：Weapon Support System、One Shot",
+          "检测到可建模防守技能（仅提示，未计入；需在手动开关自行填数，自动接线留待 P7）：Advanced Armour（无痛 4+（仅对灵能/致命伤等特定攻击——本模拟为普通攻击，多半不适用））",
+          "DSL For the Greater Good 未启用（需开关 guided），本次未施加",
+          "DSL 为了上上善道 是攻方向条目，对守方防御不适用（守方反打方向当前未接 DSL 注入）"
+        ],
+        "biasNotes": [
+          "守方反打用『期望幸存数』近似（非逐迭代联动），略高估守方反伤",
+          "冲锋成功率未建模：默认冲锋必接触，未算 2D6 冲锋距离检定失败 → 高估『冲』的价值",
+          "先攻方已按 fight_order 判定（冲锋/Fights First/Fights Last 抵消）；但同一步的逐单位交替选取与 Counter-offensive 插队仍以『整单位先手→幸存反打』近似",
+          "士气/Battle-shock、接战范围/视线/射程可达性、守方最优分配均未建模（守方按掷骰顺序固定分配）",
+          "交换比按『击杀模型→点数』折算，多耐伤单位被打残未死的部分点损失不计入"
+        ],
+        "iterations": 500,
+        "seed": 42,
+        "reverse": null
+      },
+      "defenderToggles": [
+        {
+          "name": "Advanced Armour",
+          "note": "无痛 4+（仅对灵能/致命伤等特定攻击——本模拟为普通攻击，多半不适用）",
+          "parsed": true
+        }
+      ],
+      "factionOptions": {
+        "factionId": "TAU",
+        "factionName": "T’au Empire",
+        "detachments": [
+          "Bonded Heroes",
+          "Expert Fieldcraft",
+          "Guerrilla Ambushers",
+          "Hunter’s Instincts",
+          "Integrated Command Structure",
+          "Killing Blow",
+          "Markerlight Precision",
+          "Patient Hunter",
+          "Skirmish Fighters",
+          "Superior Craftsmanship"
+        ]
+      },
+      "weaponPool": null,
+      "modelTiers": null,
+      "dslAvailable": [
+        {
+          "table": "abilities",
+          "id": "000008439",
+          "side": "attacker",
+          "nameEn": "For the Greater Good",
+          "nameZh": "为了上上善道",
+          "status": "partial",
+          "detachment": null,
+          "requiresToggles": [
+            "guided"
+          ]
+        },
+        {
+          "table": "abilities",
+          "id": "det000008441",
+          "side": "attacker",
+          "nameEn": "Patient Hunter",
+          "nameZh": "耐心猎手",
+          "status": "partial",
+          "detachment": "Kauyon",
+          "requiresToggles": [
+            "detachment_rounds"
+          ]
+        },
+        {
+          "table": "abilities",
+          "id": "det000008810",
+          "side": "attacker",
+          "nameEn": "Killing Blow",
+          "nameZh": "一击必杀",
+          "status": "partial",
+          "detachment": "Mont’ka",
+          "requiresToggles": [
+            "detachment_rounds"
+          ]
+        },
+        {
+          "table": "abilities",
+          "id": "det000008814",
+          "side": "attacker",
+          "nameEn": "Bonded Heroes",
+          "nameZh": "结义英雄",
+          "status": "partial",
+          "detachment": "Retaliation Cadre",
+          "requiresToggles": [
+            "range_within_12"
+          ]
+        },
+        {
+          "table": "abilities",
+          "id": "det000008818",
+          "side": "attacker",
+          "nameEn": "Hunter’s Instincts",
+          "nameZh": "狩猎本能",
+          "status": "partial",
+          "detachment": "Kroot Hunting Pack",
+          "requiresToggles": [
+            "target_below_starting"
+          ]
+        },
+        {
+          "table": "abilities",
+          "id": "det000009635",
+          "side": "attacker",
+          "nameEn": "Markerlight Precision",
+          "nameZh": "标记光精准",
+          "status": "partial",
+          "detachment": "Starfire Cadre",
+          "requiresToggles": [
+            "markerlight_visible"
+          ]
+        },
+        {
+          "table": "stratagems",
+          "id": "000009840002",
+          "side": "attacker",
+          "nameEn": "EXPERIMENTAL MODIFICATIONS",
+          "nameZh": "实验性改装",
+          "status": "partial",
+          "detachment": "Auxiliary Cadre",
+          "requiresToggles": []
+        },
+        {
+          "table": "stratagems",
+          "id": "000009984005",
+          "side": "attacker",
+          "nameEn": "EXPERIMENTAL AMMUNITION",
+          "nameZh": "实验性弹药",
+          "status": "partial",
+          "detachment": "Experimental Prototype Cadre",
+          "requiresToggles": []
+        },
+        {
+          "table": "stratagems",
+          "id": "000008443002",
+          "side": "attacker",
+          "nameEn": "A TEMPTING TRAP",
+          "nameZh": "诱惑陷阱",
+          "status": "partial",
+          "detachment": "Kauyon",
+          "requiresToggles": []
+        },
+        {
+          "table": "stratagems",
+          "id": "000008443004",
+          "side": "attacker",
+          "nameEn": "COORDINATE TO ENGAGE",
+          "nameZh": "联携攻击",
+          "status": "partial",
+          "detachment": "Kauyon",
+          "requiresToggles": []
+        },
+        {
+          "table": "stratagems",
+          "id": "000008443003",
+          "side": "attacker",
+          "nameEn": "POINT-BLANK AMBUSH",
+          "nameZh": "抵近伏击",
+          "status": "partial",
+          "detachment": "Kauyon",
+          "requiresToggles": []
+        },
+        {
+          "table": "stratagems",
+          "id": "000009646002",
+          "side": "attacker",
+          "nameEn": "BOARDING BLADES",
+          "nameZh": "接舷利刃",
+          "status": "partial",
+          "detachment": "Kroot Raiding Party",
+          "requiresToggles": []
+        },
+        {
+          "table": "stratagems",
+          "id": "000008812002",
+          "side": "attacker",
+          "nameEn": "PINPOINT COUNTER-OFFENSIVE",
+          "nameZh": "精准反攻",
+          "status": "partial",
+          "detachment": "Mont’ka",
+          "requiresToggles": []
+        },
+        {
+          "table": "stratagems",
+          "id": "000008812004",
+          "side": "attacker",
+          "nameEn": "FOCUSED FIRE",
+          "nameZh": "集中火力",
+          "status": "partial",
+          "detachment": "Mont’ka",
+          "requiresToggles": []
+        },
+        {
+          "table": "stratagems",
+          "id": "000008812005",
+          "side": "attacker",
+          "nameEn": "COMBAT DEBARKATION",
+          "nameZh": "战术下车",
+          "status": "partial",
+          "detachment": "Mont’ka",
+          "requiresToggles": []
+        },
+        {
+          "table": "stratagems",
+          "id": "000008816005",
+          "side": "attacker",
+          "nameEn": "THE ARRO’KON PROTOCOL",
+          "nameZh": "阿拉孔教义",
+          "status": "partial",
+          "detachment": "Retaliation Cadre",
+          "requiresToggles": []
+        },
+        {
+          "table": "stratagems",
+          "id": "000009637004",
+          "side": "attacker",
+          "nameEn": "RESPONSIVE VOLLEY",
+          "nameZh": "应变齐射",
+          "status": "partial",
+          "detachment": "Starfire Cadre",
+          "requiresToggles": []
+        },
+        {
+          "table": "stratagems",
+          "id": "fp11e-tau-aux-gbu",
+          "side": "attacker",
+          "nameEn": "GUIDED BY UNITY",
+          "nameZh": "团结引导",
+          "status": "partial",
+          "detachment": "Auxiliary Cadre",
+          "requiresToggles": []
+        },
+        {
+          "table": "enhancements",
+          "id": "000008821002",
+          "side": "attacker",
+          "nameEn": "Borthrod Gland",
+          "nameZh": "博斯罗德腺体",
+          "status": "partial",
+          "detachment": "Kroot Hunting Pack",
+          "requiresToggles": [
+            "bearer_leading"
+          ]
+        },
+        {
+          "table": "enhancements",
+          "id": "000009983002",
+          "side": "attacker",
+          "nameEn": "Supernova Launcher",
+          "nameZh": "超新星发射器",
+          "status": "partial",
+          "detachment": "Experimental Prototype Cadre",
+          "requiresToggles": []
+        },
+        {
+          "table": "enhancements",
+          "id": "000009645002",
+          "side": "attacker",
+          "nameEn": "Experienced Leader",
+          "nameZh": "经验老到的头领",
+          "status": "partial",
+          "detachment": "Kroot Raiding Party",
+          "requiresToggles": []
+        },
+        {
+          "table": "enhancements",
+          "id": "000008811002",
+          "side": "attacker",
+          "nameEn": "Coordinated Exploitation",
+          "nameZh": "协同破敌",
+          "status": "partial",
+          "detachment": "Mont’ka",
+          "requiresToggles": [
+            "guided"
+          ]
+        },
+        {
+          "table": "enhancements",
+          "id": "000009636002",
+          "side": "attacker",
+          "nameEn": "Target Optimisation Microdrones",
+          "nameZh": "目标优化微型兵蜂",
+          "status": "partial",
+          "detachment": "Starfire Cadre",
+          "requiresToggles": []
+        },
+        {
+          "table": "enhancements",
+          "id": "000009983003",
+          "side": "attacker",
+          "nameEn": "Thermoneutronic Projector",
+          "nameZh": "热中子投射器",
+          "status": "partial",
+          "detachment": "Experimental Prototype Cadre",
+          "requiresToggles": []
+        },
+        {
+          "table": "enhancements",
+          "id": "000008442003",
+          "side": "attacker",
+          "nameEn": "Precision of the Patient Hunter",
+          "nameZh": "耐心猎手之精准",
+          "status": "partial",
+          "detachment": "Kauyon",
+          "requiresToggles": [
+            "bearer_leading"
+          ]
+        },
+        {
+          "table": "enhancements",
+          "id": "000008815003",
+          "side": "attacker",
+          "nameEn": "Prototype Weapon System",
+          "nameZh": "原型武器系统",
+          "status": "partial",
+          "detachment": "Retaliation Cadre",
+          "requiresToggles": [
+            "bearer_leading"
+          ]
+        },
+        {
+          "table": "enhancements",
+          "id": "000008821003",
+          "side": "attacker",
+          "nameEn": "Kroothawk Flock",
+          "nameZh": "克鲁特鹰群",
+          "status": "partial",
+          "detachment": "Kroot Hunting Pack",
+          "requiresToggles": [
+            "bearer_leading"
+          ]
+        },
+        {
+          "table": "enhancements",
+          "id": "000009983004",
+          "side": "attacker",
+          "nameEn": "Plasma Accelerator Rifle",
+          "nameZh": "等离子加速步枪",
+          "status": "partial",
+          "detachment": "Experimental Prototype Cadre",
+          "requiresToggles": []
+        },
+        {
+          "table": "enhancements",
+          "id": "000008442005",
+          "side": "attacker",
+          "nameEn": "Through Unity, Devastation",
+          "nameZh": "团结致胜",
+          "status": "partial",
+          "detachment": "Kauyon",
+          "requiresToggles": [
+            "guided"
+          ]
+        },
+        {
+          "table": "enhancements",
+          "id": "000008821005",
+          "side": "attacker",
+          "nameEn": "Root-carved Weapons",
+          "nameZh": "根雕武器",
+          "status": "partial",
+          "detachment": "Kroot Hunting Pack",
+          "requiresToggles": [
+            "bearer_leading"
+          ]
+        },
+        {
+          "table": "abilities",
+          "id": "det000008819",
+          "side": "target",
+          "nameEn": "Skirmish Fighters",
+          "nameZh": "特遣队",
+          "status": "partial",
+          "detachment": "Kroot Hunting Pack",
+          "requiresToggles": []
+        },
+        {
+          "table": "stratagems",
+          "id": "000008822004",
+          "side": "target",
+          "nameEn": "EMP GRENADES",
+          "nameZh": "EMP手雷",
+          "status": "partial",
+          "detachment": "Kroot Hunting Pack",
+          "requiresToggles": []
+        },
+        {
+          "table": "stratagems",
+          "id": "000008812007",
+          "side": "target",
+          "nameEn": "COUNTERFIRE DEFENCE SYSTEMS",
+          "nameZh": "防御反击系统",
+          "status": "partial",
+          "detachment": "Mont’ka",
+          "requiresToggles": []
+        },
+        {
+          "table": "stratagems",
+          "id": "000008816003",
+          "side": "target",
+          "nameEn": "STIMM INJECTORS",
+          "nameZh": "兴奋剂注射器",
+          "status": "partial",
+          "detachment": "Retaliation Cadre",
+          "requiresToggles": []
+        },
+        {
+          "table": "stratagems",
+          "id": "fp11e-tau-aac-s3",
+          "side": "target",
+          "nameEn": "AUTOREACTIVE CAMOUFLAGE",
+          "nameZh": "自反应迷彩",
+          "status": "partial",
+          "detachment": "Advanced Acquisition Cadre",
+          "requiresToggles": [
+            "defender_hidden"
+          ]
+        }
+      ],
+      "errors": []
+    }
+  },
+  "/roster/validate": {
+    "status": 200,
+    "request": {
+      "factionId": "SM",
+      "detachmentId": "000001130",
+      "units": [
+        {
+          "canonicalId": "000000060",
+          "nameEn": "Apothecary Biologis",
+          "models": 1,
+          "isWarlord": true
+        },
+        {
+          "canonicalId": "000001157",
+          "nameEn": "Intercessor Squad",
+          "models": 5,
+          "loadout": [
+            [
+              "Bolt rifle",
+              5
+            ]
+          ]
+        }
+      ]
+    },
+    "body": {
+      "totalPoints": 150,
+      "limit": 2000,
+      "legal": true,
+      "issues": []
+    }
+  },
+  "/roster/critique": {
+    "status": 200,
+    "request": {
+      "factionId": "SM",
+      "detachmentId": "000001130",
+      "units": [
+        {
+          "canonicalId": "000000060",
+          "nameEn": "Apothecary Biologis",
+          "models": 1,
+          "isWarlord": true
+        },
+        {
+          "canonicalId": "000001157",
+          "nameEn": "Intercessor Squad",
+          "models": 5,
+          "loadout": [
+            [
+              "Bolt rifle",
+              5
+            ]
+          ]
+        }
+      ]
+    },
+    "body": {
+      "totalPoints": 150,
+      "assessments": [
+        {
+          "canonicalId": "000000060",
+          "nameEn": "Apothecary Biologis",
+          "points": 70,
+          "assessed": false,
+          "phase": null,
+          "scores": [],
+          "note": "需装配（多武器选项池，未指定 loadout → 不评估，不瞎估）"
+        },
+        {
+          "canonicalId": "000001157",
+          "nameEn": "Intercessor Squad",
+          "points": 80,
+          "assessed": true,
+          "phase": "shooting",
+          "scores": [
+            {
+              "key": "geq",
+              "label": "杂兵(GEQ)",
+              "expectedDamage": 3.74,
+              "damagePer100": 4.67
+            },
+            {
+              "key": "meq",
+              "label": "战锤(MEQ)",
+              "expectedDamage": 1.72,
+              "damagePer100": 2.15
+            },
+            {
+              "key": "teq",
+              "label": "终结者(TEQ)",
+              "expectedDamage": 0.78,
+              "damagePer100": 0.97
+            },
+            {
+              "key": "veh",
+              "label": "载具(VEH)",
+              "expectedDamage": 0.59,
+              "damagePer100": 0.74
+            }
+          ],
+          "note": ""
+        }
+      ],
+      "summary": [
+        "1/2 单位未评估（需先装配武器）",
+        "反装甲最强：Intercessor Squad（对 VEH 每 100 点 0.74 伤）",
+        "⚠️ 全军对载具每 100 点伤害偏低，反装甲可能不足"
+      ],
+      "notModeled": [
+        "合成目标为标准防御档假人，不含阵营规则/军队规则/分队加成",
+        "单位技能/光环/CP 战略未计入（沿用模拟器建模边界）",
+        "每单位按其 loadout 独立评估，未计协同（如指挥官挂载增益）"
+      ]
+    }
+  }
+}

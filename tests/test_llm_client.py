@@ -4,6 +4,7 @@
 不产生任何真实 API 调用——注入 FakeOpenAIClient 替换 .chat.completions.create。
 """
 from types import SimpleNamespace
+import json
 
 import pytest
 
@@ -275,3 +276,40 @@ class TestEndToEndWithAgentLoop:
 def test_unknown_provider_without_overrides_raises():
     with pytest.raises(ValueError):
         OpenAICompatLLMClient(provider="不存在的供应商", client=object())
+
+
+def test_multiturn_recall_keeps_assistant_history_in_json_protocol():
+    """Reproduce the live provider's blank JSON response after plain prose history."""
+    from agent.context import SessionContext
+
+    class JsonHistoryClient(FakeOpenAIClient):
+        def _create(self, **kwargs):
+            if kwargs.get("response_format"):
+                for message in kwargs["messages"]:
+                    if message["role"] == "assistant":
+                        try:
+                            previous = json.loads(message["content"])
+                            assert previous["type"] == "final"
+                        except (ValueError, TypeError, KeyError, AssertionError):
+                            self.calls.append(kwargs)
+                            return SimpleNamespace(choices=[SimpleNamespace(
+                                message=SimpleNamespace(content="   "))])
+            return super()._create(**kwargs)
+
+    original = 'Tau Empire / Copper "Lantern" 742\n钛帝国'
+    fake = JsonHistoryClient([
+        "闲聊", json.dumps({"type": "final", "content": original}),
+        "闲聊", json.dumps({"type": "final", "content": original}),
+    ])
+    session = SessionContext()
+    loop = AgentLoop(OpenAICompatLLMClient(client=fake), {})
+    loop.run("Remember my army and nickname", session)
+    result = loop.run("What army and nickname did I tell you?", session)
+    assert not result.degraded
+    assert result.answer == original
+    assert result.tool_calls == []
+    assert len(fake.calls) == 4
+    sent = fake.calls[-1]["messages"]
+    prior = next(m for m in sent if m["role"] == "assistant")
+    assert json.loads(prior["content"])["content"] == original
+    assert session.history[1]["content"] == original

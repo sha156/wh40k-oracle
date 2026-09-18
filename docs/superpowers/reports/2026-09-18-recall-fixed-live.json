@@ -1,0 +1,44 @@
+[
+  {
+    "round": 0,
+    "degraded": false,
+    "intent": "闲聊",
+    "answer": "你之前告诉我：阵营是 **Tau Empire（钛帝国）**，军表昵称是 **Copper Lantern 742**。",
+    "passed": true
+  },
+  {
+    "round": 1,
+    "degraded": false,
+    "intent": "闲聊",
+    "answer": "你之前告诉我：阵营是 **Tau Empire（钛帝国）**，军表昵称是 **Copper Lantern 742**。",
+    "passed": true
+  },
+  {
+    "round": 2,
+    "degraded": false,
+    "intent": "闲聊",
+    "answer": "你之前告诉我：阵营是 **Tau Empire（钛帝国）**，军表昵称是 **Copper Lantern 742**。",
+    "passed": true
+  },
+  {
+    "round": 3,
+    "degraded": false,
+    "intent": "闲聊",
+    "answer": "你之前告诉我：阵营是 **Tau Empire（钛帝国）**，军表昵称是 **Copper Lantern 742**。",
+    "passed": true
+  },
+  {
+    "round": 4,
+    "degraded": false,
+    "intent": "闲聊",
+    "answer": "你之前告诉我：阵营是 **Tau Empire（钛帝国）**，军表昵称是 **Copper Lantern 742**。",
+    "passed": true
+  },
+  {
+    "round": 5,
+    "degraded": false,
+    "intent": "闲聊",
+    "answer": "你之前告诉我：阵营是 **Tau Empire（钛帝国）**，军表昵称是 **Copper Lantern 742**。",
+    "passed": true
+  }
+]

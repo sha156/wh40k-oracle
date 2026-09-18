@@ -1,5 +1,9 @@
 # 战锤40K 规则书 RAG 问答系统
 
+## Latest acceptance — 2026-09-18
+
+Tasks 3–4 now pass their application acceptance. See `docs/superpowers/reports/2026-09-18-live-recall-fix.md`. Assistant history is serialized in the existing JSON step protocol; live same-session recall passed 6/6 trials, and container API checks passed recall, isolation and fresh points verification. Full native pytest: 2,518 passed. The September 16 benchmark remains 113 correct / 2 partial / 0 wrong (115 questions); it was not rerun in full on September 18. Docker's stale inference socket error recurred despite Docker AI being disabled; preserving/replacing the socket directories restored the engine and containers. This is a verified recovery workaround, not a permanent host fix. Runtime/assets remain in `D:/Project/py/RAG`.
+
 ## Current checkpoint — 2026-09-15
 
 The September source reconciliation supersedes the historical July figures below. See `docs/superpowers/reports/2026-09-15-structured-source-reconciliation.md` and `docs/superpowers/plans/2026-09-15-structured-source-reconciliation.md`.
@@ -10,7 +14,7 @@ The September source reconciliation supersedes the historical July figures below
 - FRAME now appears on 242 unit records. Keyword membership comes from the structured source, not stale Chinese translations. Eighteen changed units invalidate older translations; 16 old retrieval chunks were pruned, leaving 5,754 chunks.
 - Current membership remains defined in `db_compile/active_units.py`. Preserve English where a verified Chinese source is absent. Regenerate pages only through documented commands.
 - Native API and codex startup, new datasheet rendering, simulation and roster price calculation were checked. Test results and precise coverage limits are recorded in the acceptance report.
-- Live AI acceptance still needs a successful provider call after the prior DeepSeek HTTP 402 balance failure. Docker acceptance remains blocked by the prior host WSL installation problem; neither was reported as passed.
+- Historical September 15 blockers were subsequently cleared: see the September 16 benchmark/Docker checkpoint and September 18 live recall acceptance above. Docker restart durability remains unverified.
 - Runnable assets remain in D:/Project/py/RAG; PDFs, caches, model files and SQLite are not in Git.
 - CI now installs `requirements-ci.txt` and runs model-free ingestion tests. Roster tests use temporary databases; only real-cache audits and full-app tests require local assets/dependencies. See the September 15 CI repair report for validation and remaining limits.
 
