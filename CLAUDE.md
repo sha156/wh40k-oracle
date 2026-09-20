@@ -1,5 +1,13 @@
 # 战锤40K 规则书 RAG 问答系统
 
+## Local application release pass — 2026-09-20
+
+Local Docker takes priority; cloud is deferred by user decision. See `docs/superpowers/plans/2026-09-20-local-completion.md` for the reconciled roadmap and `docs/superpowers/reports/2026-09-20-lookup-deployment-acceptance.md` for final evidence. Both images are rebuilt/running with assets and warmup ready. Final fresh chat passed all six order effects and separate card/PDF citations (55.215s, no fallback). Full native suite passed 2,532 before the two final guard tests; final focused suite passed 40. Frontend unit/type/lint/build and hosted checks passed. Markdown download plus a selectable copy panel are implemented; automatic download delivery remains unconfirmed. PR #74 carries this release; its GitHub status is the merge record. Public Ork sources, Docker restart durability and automatic official-wiki AI archiving remain explicitly limited. All statuses below are historical where superseded here.
+
+## Deployment verified — 2026-09-20
+
+The user started Docker; optimized API image deployed and healthy with warmup complete. Fresh question 63 returned HTTP 200 in 51.881s, no fallback, all six order effects and explicit faction context. Browser Titan inventory/card rendering passed. See `docs/superpowers/reports/2026-09-20-lookup-deployment-acceptance.md`, including the retained limitation: some card-specific details still cite the general orders page. PR #74 can proceed after its latest checks; no new application/data edits. Earlier startup-blocked status below is historical.
+
 ## Latest resume — 2026-09-20
 
 Lookup branch is published as draft PR #74: https://github.com/sha156/wh40k-oracle/pull/74. Final optimization and checkpoint push CI passed (2,193 hosted Python tests, 331 local-asset skips; frontend passed). Docker is currently stopped/unavailable; automatic approval review blocked startup commands, and the user has been asked to start Desktop. Final deployed HTTP acceptance is still required before marking the PR ready and merging. No new source/data changes in this resume. The detailed September 18 lookup checkpoint now contains the September 20 runtime status and resume steps.

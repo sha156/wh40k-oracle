@@ -1,5 +1,13 @@
 # Lookup completeness checkpoint
 
+## Current September 20 local completion pass
+
+The Docker startup/deployment gate below is cleared. Both rebuilt services are running. Final command answer passed all six effects with separate database/PDF citations; simulator and roster checks passed. Follow-on commits `b7dde5bdc`, `ea84ff1bf`, `da57a429c` and `d38a2fe7a` cover web provenance, named-table retention and manual Markdown export. See the [current roadmap](../plans/2026-09-20-local-completion.md) and [acceptance report](2026-09-20-lookup-deployment-acceptance.md) for actual verification and remaining limits. PR #74 is the release vehicle; consult its GitHub status for the merge record. Cloud is deferred by the user's explicit local-first decision. Earlier paused instructions below are historical, not an instruction to stop this resumed work.
+
+## September 20 follow-through: optimized runtime verified
+
+The user started Docker Desktop; the final optimized image is now deployed, healthy and warm. Question 63 returned HTTP 200 in 51.881s without degradation; the browser Titan codex rendered correctly. See [deployment acceptance](2026-09-20-lookup-deployment-acceptance.md) and [raw response](2026-09-20-lookup-optimized-http.json). Preserve the report's citation-precision limitation; functional acceptance does not certify every page citation. Current next step: latest PR checks, merge PR #74, then synchronize checkouts. The prior startup blocker below is resolved by the user's action.
+
 ## September 20 resume: draft PR ready, Docker startup blocked
 
 [PR #74](https://github.com/sha156/wh40k-oracle/pull/74) is open as a draft and attached to the Codex task. Main has no intervening commits relative to this branch. Reviewed the source diff and hosted checks: final optimization run 35336818045 and checkpoint run 35337405606 both passed Python and frontend jobs. The latter reports 2,193 passed / 331 skipped / 10 warnings; skips concern unavailable local assets. CRLF-aware branch whitespace check passed. No new application code or tests changed on September 20.

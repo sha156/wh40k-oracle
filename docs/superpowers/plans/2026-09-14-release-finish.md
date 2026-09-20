@@ -1,5 +1,18 @@
 # Official points sync and release finish
 
+## Current September 20 local scope
+
+Use the [reconciled local roadmap](2026-09-20-local-completion.md), which supersedes stale paused/open checkboxes below. Both Docker services are running; live codex, points, simulator, roster and final chat checks passed. Card citations and named-table retention are fixed; manual Markdown export is added. Exact tests and browser limitations are recorded in the [acceptance report](../reports/2026-09-20-lookup-deployment-acceptance.md). PR #74 carries the release and its GitHub status records the merge. Public-source Ork gaps and Docker restart durability remain open; cloud is deferred.
+
+## September 20 optimized runtime acceptance
+
+- [x] User started Docker Desktop; deploy final optimized API image and verify health/warmup and matching source hashes.
+- [x] Complete live question 63 HTTP check (51.881s, no degradation, six order effects) and inspect the rendered Titan codex.
+- [ ] Finish latest PR checks, merge PR #74 and synchronize checkouts.
+- [ ] Improve per-field citation precision: one new response cites the general orders page for card-specific details. Preserve this limitation rather than claiming complete provenance enforcement.
+
+Evidence: [deployment acceptance](../reports/2026-09-20-lookup-deployment-acceptance.md). Public-source Ork and Docker startup-durability work remains open. Earlier blocked status below is historical.
+
 ## September 20 release follow-through
 
 - [x] Review final optimization/checkpoint hosted CI: Python and frontend passed; 2,193 hosted tests passed and 331 asset-dependent checks skipped.

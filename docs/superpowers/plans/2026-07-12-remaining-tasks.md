@@ -1,5 +1,7 @@
 # 项目未完成任务总盘点与执行计划（2026-07-12）
 
+> Historical inventory: current completion status is maintained in [the September 20 local Docker roadmap](2026-09-20-local-completion.md). Old unchecked tasks and paused branches below must not be treated as current blockers without that reconciliation.
+
 > 依据：11 版迁移计划（2026-07-10）、v2 蓝图 P0-P8 路线图（2026-07-04）、
 > 前端 BUILD-PLAN（2026-07-06）、S4-S6 各 spec，以及对当前代码/分支的实地核对。
 
