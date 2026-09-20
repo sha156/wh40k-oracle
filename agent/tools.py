@@ -1151,7 +1151,7 @@ TOOL_SPECS: List[Dict[str, str]] = [
     {"name": "judge_fight_order", "description": "战斗顺序判定：给定冲锋/Fights First/Fights Last/Counteroffensive，判谁先打 + 依据（11版 Fight phase）"},
     {"name": "simulate_combat", "description": "蒙特卡洛对战模拟：attacker 打 defender 期望伤害/击杀/团灭率+漏斗+性价比（多模型单位需 options.loadout）"},
     {"name": "validate_roster", "description": "解析文本军表并用引擎验表；未识别行必须显式修正"},
-    {"name": "critique_roster", "description": "验表+模拟点评（聊天侧文本解析未建模——引导用户去军表实验室页签）"},
+    {"name": "critique_roster", "description": "解析文本军表、验表并模拟点评；需明确模型数和武器装配，未识别行须先修正"},
     {"name": "calc_points", "description": "精确算分"},
     {"name": "get_datasheet", "description": "英文属性块查表：M/T/Sv/W + 武器 A/S/AP/D（数值题首选）"},
     {"name": "archive_answer", "description": "把判定/结论存为 wiki 页（本迭代未接线）"},

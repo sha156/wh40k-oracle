@@ -14,6 +14,7 @@ import { ToolTrace } from "@/components/chat/ToolTrace";
 import { VerdictCard } from "@/components/chat/VerdictCard";
 import type { Answer, Exchange } from "@/lib/answer";
 import { emptyAnswer, streamChat } from "@/lib/api";
+import { downloadAnswer } from "@/lib/answer-export";
 
 type Status = "idle" | "streaming" | "error";
 
@@ -97,6 +98,18 @@ export function ChatApp({ initial }: ChatAppProps) {
         <AskCard question={question} />
         <div>
           <AnswerHead summary={answer.summary || (streaming ? "机魂运算中……" : "")} />
+          {hasVerdict && status === "idle" ? (
+            <button
+              type="button"
+              onClick={() => downloadAnswer(question, answer)}
+              className="mb-3 inline-flex items-center gap-2 border border-[#517a7d] px-3 py-2 text-sm text-[#c8d8d5] hover:bg-[#17363a] focus-visible:outline-2 focus-visible:outline-offset-2"
+            >
+              <svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                <path d="M12 3v12m-5-5 5 5 5-5M4 16v5h16v-5" />
+              </svg>
+              下载回答（Markdown）
+            </button>
+          ) : null}
           {status === "error" ? (
             <p className="my-4 border border-redfont/40 bg-[#1a0d0d] px-4 py-3 font-mono text-[12.5px] text-[#d99] break-all">
               {errorMsg}

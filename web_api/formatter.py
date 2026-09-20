@@ -60,6 +60,16 @@ def _derive_cites(result: AgentResult, recorder: TraceRecorder) -> List[Cite]:
         _add("L3 结构库 · " + str(ds.get("faction") or "未知"),
              term=str(ds.get("name_en") or ""), section="属性块")
 
+    # A merged wiki card is also structured evidence. Without its own citation
+    # the structurer can only attach unrelated PDF pages to card-specific facts.
+    # Do not promote its frontmatter references to per-field PDF provenance.
+    entity = recorder.get_result("get_entity")
+    if isinstance(entity, dict) and entity.get("found"):
+        fm = getattr(entity.get("page"), "fm", None)
+        if fm is not None and (fm.version or {}).get("source") == "official-db":
+            _add("L3 结构库 · " + str(fm.faction or "未知"),
+                 term=str(fm.name_en or fm.name_zh or fm.id), section="合并兵牌")
+
     # 检索来源（真有 book/page 出处）
     points = recorder.get_result("calc_points")
     for evidence in (points, ds_res):
@@ -220,6 +230,15 @@ def _derive_entity_card(recorder: TraceRecorder, hot_weapon: Optional[str]):
 def _evidence_digest(recorder: TraceRecorder, limit: int = 2000) -> str:
     """把录到的工具返回压成给结构化 LLM 的证据摘要（截断防超长）。"""
     lines: List[str] = []
+    entity = recorder.get_result("get_entity")
+    if isinstance(entity, dict) and entity.get("found") and entity.get("source_scope"):
+        fm = getattr(entity.get("page"), "fm", None)
+        # Preserve this boundary before large page representations consume the
+        # digest budget. It was previously beyond the per-tool 600-char slice.
+        lines.append("[合并兵牌出处] {} · {}：{}".format(
+            getattr(fm, "faction", ""), getattr(fm, "name_en", ""),
+            entity["source_scope"],
+        ))
     for name, res in recorder.last_result.items():
         try:
             blob = json.dumps(res, ensure_ascii=False, default=str)
