@@ -1,0 +1,105 @@
+[
+  {
+    "check": "health and model warmup",
+    "passed": true,
+    "ready": true
+  },
+  {
+    "check": "Titan catalogue",
+    "passed": true,
+    "count": 4
+  },
+  {
+    "check": "weapon keyword to core chapter",
+    "passed": true,
+    "total": 50,
+    "linked": 37,
+    "slug": "24-core-abilities"
+  },
+  {
+    "check": "rule changelog endpoint",
+    "passed": true,
+    "keys": [
+      "intro",
+      "generalSections",
+      "noteSections",
+      "factions",
+      "total",
+      "newCount"
+    ]
+  },
+  {
+    "check": "official points browser",
+    "passed": true,
+    "response": {
+      "total": 2,
+      "sourceRows": 3893,
+      "offset": 0,
+      "fetchedAt": "2026-09-14T05:51:23.572407+00:00",
+      "rows": [
+        {
+          "faction_slug": "chaos-titan-legions",
+          "ordinal": 3,
+          "kind": "unit",
+          "section": "UNITS",
+          "unit_name": "CHAOS WARLORD TITAN",
+          "tier": "YOUR UNIT COSTS",
+          "models": "1 model",
+          "cost": 3500,
+          "source_url": "https://mfm.warhammer-community.com/en/chaos-titan-legions",
+          "source_sha256": "7360cb5627b2210091d86d7e801c1f65c16fe71e445cc33add80e55c49172792",
+          "fetched_at": "2026-09-14T05:51:23.572407+00:00"
+        },
+        {
+          "faction_slug": "titan-legions",
+          "ordinal": 3,
+          "kind": "unit",
+          "section": "UNITS",
+          "unit_name": "WARLORD TITAN",
+          "tier": "YOUR UNIT COSTS",
+          "models": "1 model",
+          "cost": 3500,
+          "source_url": "https://mfm.warhammer-community.com/en/titan-legions",
+          "source_sha256": "ed593b3a9ccdac84010a3079072b0e54c13e58c660fb56fc78923f86a65da442",
+          "fetched_at": "2026-09-14T05:51:23.572407+00:00"
+        }
+      ]
+    }
+  },
+  {
+    "check": "simulation with explicit weapon",
+    "passed": true,
+    "damage": 4.074,
+    "iterations": 500
+  },
+  {
+    "check": "simulation rejects wrong phase weapon",
+    "passed": true,
+    "reason": "no_weapon_for_phase"
+  },
+  {
+    "check": "text roster import and validation",
+    "passed": true,
+    "units": 2,
+    "totalPoints": 150,
+    "legal": true
+  },
+  {
+    "check": "roster import exposes unresolved input",
+    "passed": true,
+    "issues": [
+      {
+        "line": 3,
+        "text": "5x Imaginary unit",
+        "reason": "单位未精确匹配或有重名；请使用图鉴中的完整名称或 canonical id"
+      }
+    ]
+  },
+  {
+    "check": "roster critique",
+    "passed": true,
+    "assessed": 1,
+    "targets": 4,
+    "totalPoints": 150
+  }
+]

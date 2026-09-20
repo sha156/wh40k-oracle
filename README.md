@@ -6,7 +6,13 @@
 
 > 当前定位：现行**第 11 版**（2026-06-20 生效）。语料按层组织——11 版核心规则（规则唯一真源）+ Faction Pack 补丁 + MFM/平衡版点数 + 十版 codex 兵牌基底。设计蓝图见 `docs/superpowers/`。
 
-## September 14 release checkpoint
+## September 20 local application checkpoint
+
+The local Docker application now includes canonical faction-aware lookup, complete faction inventory, roster text import and session recall. Web answers distinguish merged-card evidence from PDF page references; named rule-table omissions trigger a visible fallback to the full reply. See the [current local roadmap](docs/superpowers/plans/2026-09-20-local-completion.md) and [acceptance evidence](docs/superpowers/reports/2026-09-20-lookup-deployment-acceptance.md) for checks and remaining public-source limits.
+
+After a chat answer finishes, use **下载回答（Markdown）** to request a Markdown download or **查看 / 复制 Markdown** to select and copy the text into Obsidian or a `.md` file. The export includes citations and the complete answer snapshot, explicitly labeled as unreviewed AI output. Saving it does not add it to the official rule corpus. Browser download support can vary; the visible copy panel provides an alternative.
+
+## Historical September 14 release checkpoint
 
 Official points are now stored as a complete **3,893-row source ledger** and reconciled with the application database. All **1,322 comparable unit tiers** agree; 203 enhancement rows were updated. The codex exposes source-only prices as well as matched datasheets.
 

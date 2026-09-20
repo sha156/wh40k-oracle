@@ -59,6 +59,7 @@ jobs:
       - name: 类型检查（漏传 props 这类错就在这一步现形）
         run: npx tsc --noEmit
       - run: npx eslint .
+      - run: npm run test:unit
       - name: 静态导出构建（与部署同参数）
         env:
           NEXT_OUTPUT: export

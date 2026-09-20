@@ -1,4 +1,4 @@
-"""agent/tools.py — L5 Agent 工具箱（spec 第七节，12 个工具）。
+"""agent/tools.py — L5 Agent 工具箱（spec 第七节，13 个工具）。
 
 已具备能力接真实实现（只读调用 wiki_engine / db_compile / app.py 的既有检索链，
 不修改这些模块）；未建模能力（模拟/判定/验表/归档写入）诚实打桩，明确注明计划期数，
@@ -16,7 +16,7 @@ from typing import Any, Callable, Dict, List, Optional
 from db_compile.calc_points import calc_points as _calc_points_impl
 from db_compile.entity_resolver import EntityResolver, load_unit_aliases
 from wiki_engine.models import WikiPage, slugify
-from wiki_engine.operations.query_op import find_entity, load_index
+from wiki_engine.operations.query_op import find_entity, find_entity_by_id, load_index
 
 _log = logging.getLogger(__name__)
 
@@ -143,6 +143,19 @@ def entity_resolver(name: str, resolver: Optional[EntityResolver] = None) -> Dic
     return out
 
 
+def _entity_page_result(page: WikiPage, resolved_via: Any) -> Dict[str, Any]:
+    out = {"found": True, "page": page, "resolved_via": resolved_via}
+    if (page.fm.version or {}).get("source") == "official-db":
+        # A merged card can cite a patch that only changes one keyword. Its
+        # page-level source list is not provenance for every stat/ability.
+        out["source_scope"] = (
+            "这张 wiki 兵牌由多个数据层合并；sources 是关联参考，不是逐字段出处。"
+            "其中的补丁页可能只改一个关键词，不能给整张兵牌的技能/属性背书。"
+            "引用具体技能时，优先用 rag_search 实际取回的规则正文及页码；"
+            "未定位原文的字段标注「结构库兵牌」，不要套用关联补丁的页码。")
+    return out
+
+
 def get_entity(
     name_or_id: str,
     wiki_root: Optional[Path] = None,
@@ -160,24 +173,44 @@ def get_entity(
     index = load_index(wiki_root)
     page = find_entity(name_or_id, index, wiki_root)
     if page is not None:
-        return {"found": True, "page": page, "resolved_via": None}
+        return _entity_page_result(page, None)
+
+    if name_or_id.strip().isdigit():
+        page = find_entity_by_id(name_or_id.strip(), index, wiki_root)
+        if page is not None:
+            return _entity_page_result(
+                page, {"canonical_id": name_or_id.strip(), "confidence": "exact"})
 
     alias_target = load_unit_aliases(app_path).get(name_or_id)
     if alias_target:
         page = find_entity(alias_target, index, wiki_root)
         if page is not None:
-            return {"found": True, "page": page,
-                    "resolved_via": {"alias_target": alias_target}}
+            return _entity_page_result(page, {"alias_target": alias_target})
 
     resolved = entity_resolver(name_or_id, resolver=resolver)
     if resolved["name_en"]:
-        page = find_entity(resolved["name_en"], index, wiki_root)
+        # Re-querying by English name discards the resolved faction and misses
+        # translated index titles. Keep the identity all the way to the page.
+        page = find_entity_by_id(str(resolved["canonical_id"]), index, wiki_root)
+        same_name = entity_resolver(resolved["name_en"], resolver=resolver)
+        if page is None and same_name["confidence"] != "ambiguous":
+            # Older hand-authored pages use slug IDs. Keep their unique-name
+            # lookup, but never replace a numeric canonical ID with another.
+            legacy = find_entity(resolved["name_en"], index, wiki_root)
+            if (legacy is not None and not str(legacy.fm.id).isdigit()
+                    and (legacy.fm.name_en or "").casefold() == resolved["name_en"].casefold()):
+                page = legacy
         if page is not None:
-            out = {"found": True, "page": page, "resolved_via": resolved}
+            out = _entity_page_result(page, resolved)
+            if same_name["confidence"] == "ambiguous":
+                out["same_name_candidates"] = same_name["candidates"]
+                out["note"] = ("本页阵营：" + page.fm.faction + "。同名单位还存在于其他阵营："
+                               + "、".join(same_name["candidates"])
+                               + "。按问题语境用含阵营的候选串重查，不要把本页当作所有阵营的规则。")
             # 模糊命中拿回来的实体页看上去与精确命中**完全一样**（found=True + 完整页），
             # 模型不声明，用户就看不出系统答的可能不是他问的那个单位。
             if resolved["confidence"] == "fuzzy":
-                out["note"] = _FUZZY_DECLARE_NOTE + "（本页实际是「{}」）".format(
+                out["note"] = out.get("note", "") + _FUZZY_DECLARE_NOTE + "（本页实际是「{}」）".format(
                     resolved["name_en"])
             return out
 
@@ -190,16 +223,34 @@ def get_entity(
                 "suggestions": list(resolved["suggestions"]),
                 "note": _RESOLVER_NEAR_MISS_NOTE}
     if resolved["confidence"] == "ambiguous":
+        # Chinese aliases may themselves collapse same-named faction copies.
+        # Expand those candidates before asking the model to re-query, so it
+        # can choose a qualified identity rather than taking a hidden sibling.
+        candidates = []
+        for candidate in resolved["candidates"]:
+            match = entity_resolver(candidate, resolver=resolver)
+            siblings = (entity_resolver(match["name_en"], resolver=resolver)
+                        if match.get("name_en") else {})
+            choices = siblings.get("candidates") if siblings.get("confidence") == "ambiguous" else [candidate]
+            candidates.extend(c for c in choices if c not in candidates)
+        resolved = dict(resolved, candidates=candidates)
         # ⚠️ 这里**不能**让 LLM 直接反问用户。ambiguous 被 loop._EMPTY_CHECKS 判为
         # 「非空」（评审 #25：候选是实质回复，不该降级 classic），于是经典链兜底也不会触发；
         # 若本 note 再让模型把问题退回用户，这条路径就成了「不降级也不作答」的死胡同
         # （基准 #63 坦克指挥官：0 检索源、judge 判「答非所问」❌）。
         # 正确做法与 get_datasheet 的 ambiguous 分支一致：先逐个候选查证再作答。
         note = ("译名有多个候选：" + "、".join(resolved["candidates"])
-                + "。请逐个用候选名重新调用 get_entity 取回各自的实体页，"
+                + "。请按问题语境选择相关候选，逐个用候选名重新调用 get_entity 取回各自的实体页，"
                   "并在回答中分别说明各候选单位的情况；只有在查证候选之后仍无法判断"
                   "用户所指时才反问用户，不要在未查证任何候选前就把问题退回给用户。")
     return {"found": False, "page": None, "resolved_via": resolved, "note": note}
+
+
+def list_faction_units(faction: str, offset: int = 0, limit: int = 20,
+                       db_path: Optional[Path] = None) -> Dict[str, Any]:
+    """Enumerate current local datasheets alongside complete official page counts."""
+    from db_compile.faction_units import list_faction_units as lookup
+    return lookup(db_path or DB_PATH, faction, offset=offset, limit=limit)
 
 
 # ⚠️ 与 `_CALC_POINTS_UNRESOLVED_NOTE`（基准 #109）同型的「查不到 ≠ 不存在」通道。
@@ -1093,13 +1144,14 @@ def archive_answer(title: str, content: str) -> Dict[str, Any]:
 # ── 工具注册表（供 agent/loop.py 的 function-calling 循环调用）──────
 
 TOOL_SPECS: List[Dict[str, str]] = [
+    {"name": "list_faction_units", "description": "阵营完整单位清单/兵牌数量：当前结构库总数、分页单位列表及官方 MFM 每页单位数；点数条目不等于已收录兵牌"},
     {"name": "search_wiki", "description": "LLM Wiki Query：先查 index.md 定位，再全文检索"},
     {"name": "get_entity", "description": "读实体页（自动实体解析）"},
     {"name": "get_keyword_definition", "description": "USR/核心概念定义"},
     {"name": "judge_fight_order", "description": "战斗顺序判定：给定冲锋/Fights First/Fights Last/Counteroffensive，判谁先打 + 依据（11版 Fight phase）"},
     {"name": "simulate_combat", "description": "蒙特卡洛对战模拟：attacker 打 defender 期望伤害/击杀/团灭率+漏斗+性价比（多模型单位需 options.loadout）"},
     {"name": "validate_roster", "description": "解析文本军表并用引擎验表；未识别行必须显式修正"},
-    {"name": "critique_roster", "description": "验表+模拟点评（聊天侧文本解析未建模——引导用户去军表实验室页签）"},
+    {"name": "critique_roster", "description": "解析文本军表、验表并模拟点评；需明确模型数和武器装配，未识别行须先修正"},
     {"name": "calc_points", "description": "精确算分"},
     {"name": "get_datasheet", "description": "英文属性块查表：M/T/Sv/W + 武器 A/S/AP/D（数值题首选）"},
     {"name": "archive_answer", "description": "把判定/结论存为 wiki 页（本迭代未接线）"},
@@ -1108,6 +1160,7 @@ TOOL_SPECS: List[Dict[str, str]] = [
 ]
 
 TOOLS: Dict[str, Callable[..., Dict[str, Any]]] = {
+    "list_faction_units": list_faction_units,
     "search_wiki": search_wiki,
     "get_entity": get_entity,
     "get_keyword_definition": get_keyword_definition,

@@ -1,5 +1,5 @@
 # tests/test_agent_tools.py
-"""agent/tools.py：12 个工具——已具备能力接真实实现的行为，未建模能力的诚实占位。"""
+"""agent/tools.py：13 个工具——已具备能力接真实实现的行为，未建模能力的诚实占位。"""
 import json
 
 import pytest
@@ -946,14 +946,14 @@ class TestUnmodeledToolsHonestPlaceholders:
 
 class TestToolRegistry:
     def test_registry_has_all_tools(self):
-        assert len(agent_tools.TOOLS) == 12
-        assert len(agent_tools.TOOL_SPECS) == 12
+        assert len(agent_tools.TOOLS) == 13
+        assert len(agent_tools.TOOL_SPECS) == 13
 
     def test_registry_names_match_spec_signatures(self):
         expected = {
             "search_wiki", "get_entity", "get_keyword_definition",
             "judge_fight_order", "simulate_combat", "validate_roster",
             "critique_roster", "calc_points", "get_datasheet", "archive_answer",
-            "rag_search", "entity_resolver",
+            "rag_search", "entity_resolver", "list_faction_units",
         }
         assert set(agent_tools.TOOLS) == expected

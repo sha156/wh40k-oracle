@@ -5,6 +5,7 @@
 """
 from __future__ import annotations
 
+import os
 import re
 from pathlib import Path
 from typing import Dict, List, Optional
@@ -86,6 +87,55 @@ def find_entity(
                 return WikiPage.from_markdown(text)
 
     return None
+
+
+def find_entity_by_id(
+    canonical_id: str, index: List[WikiIndexEntry], wiki_root: Path,
+) -> Optional[WikiPage]:
+    """Resolve an identity through indexed files without dropping its faction.
+
+    The display index omits English names and IDs. Inspect the small ID header
+    before parsing a candidate, so renamed translations do not hide real pages.
+    Duplicate IDs fail closed rather than selecting whichever file came first.
+    """
+    pattern = re.compile(r"(?m)^id:\s*['\"]?" + re.escape(canonical_id) + r"['\"]?\s*$")
+    matches = {}
+    root = wiki_root.resolve()
+    directories = {}
+    for entry in index:
+        raw_path = wiki_root / entry.path
+        # Resolving every component of every file is expensive on Docker's
+        # Windows bind mounts. Resolve/list each parent once per lookup; use
+        # scandir's file metadata, while still checking symlink destinations.
+        # This cache is call-local so a regenerated page is seen immediately.
+        if raw_path.parent not in directories:
+            parent = raw_path.parent.resolve()
+            files = {}
+            if parent.is_relative_to(root):
+                try:
+                    with os.scandir(parent) as entries:
+                        files = {os.path.normcase(item.name): item for item in entries}
+                except (FileNotFoundError, NotADirectoryError):
+                    pass
+            directories[raw_path.parent] = files
+        files = directories[raw_path.parent]
+        candidate = (files.get(os.path.normcase(raw_path.name))
+                     or files.get(os.path.normcase(raw_path.with_suffix(".md").name)))
+        if candidate is None or not candidate.is_file():
+            continue
+        path = Path(candidate.path)
+        if candidate.is_symlink():
+            path = path.resolve()
+        if not path.is_relative_to(root):
+            continue
+        text = path.read_text(encoding="utf-8")
+        header = text.split("\n---", 1)[0]
+        if not pattern.search(header):
+            continue
+        page = WikiPage.from_markdown(text)
+        if page is not None and str(page.fm.id) == canonical_id:
+            matches[path] = page
+    return next(iter(matches.values())) if len(matches) == 1 else None
 
 
 def search_entities(

@@ -1,5 +1,21 @@
 # 战锤40K 规则书 RAG 问答系统
 
+## Local application release pass — 2026-09-20
+
+Local Docker takes priority; cloud is deferred by user decision. See `docs/superpowers/plans/2026-09-20-local-completion.md` for the reconciled roadmap and `docs/superpowers/reports/2026-09-20-lookup-deployment-acceptance.md` for final evidence. Both images are rebuilt/running with assets and warmup ready. Final fresh chat passed all six order effects and separate card/PDF citations (55.215s, no fallback). Full native suite passed 2,532 before the two final guard tests; final focused suite passed 40. Frontend unit/type/lint/build and hosted checks passed. Markdown download plus a selectable copy panel are implemented; automatic download delivery remains unconfirmed. PR #74 carries this release; its GitHub status is the merge record. Public Ork sources, Docker restart durability and automatic official-wiki AI archiving remain explicitly limited. All statuses below are historical where superseded here.
+
+## Deployment verified — 2026-09-20
+
+The user started Docker; optimized API image deployed and healthy with warmup complete. Fresh question 63 returned HTTP 200 in 51.881s, no fallback, all six order effects and explicit faction context. Browser Titan inventory/card rendering passed. See `docs/superpowers/reports/2026-09-20-lookup-deployment-acceptance.md`, including the retained limitation: some card-specific details still cite the general orders page. PR #74 can proceed after its latest checks; no new application/data edits. Earlier startup-blocked status below is historical.
+
+## Latest resume — 2026-09-20
+
+Lookup branch is published as draft PR #74: https://github.com/sha156/wh40k-oracle/pull/74. Final optimization and checkpoint push CI passed (2,193 hosted Python tests, 331 local-asset skips; frontend passed). Docker is currently stopped/unavailable; automatic approval review blocked startup commands, and the user has been asked to start Desktop. Final deployed HTTP acceptance is still required before marking the PR ready and merging. No new source/data changes in this resume. The detailed September 18 lookup checkpoint now contains the September 20 runtime status and resume steps.
+
+## Paused continuation — 2026-09-18
+
+Lookup changes through `39c16a2f9` are pushed on `codex/benchmark-lookup-completeness`, unmerged. The unchanged-gold full benchmark passed 115/115 after identity, inventory and source-scope fixes; the earlier failed run is retained. Full native pytest passed 2,527 before the final three added tests; final focused checks passed 124. The running API/browser passed checks with `60fdee85b` code. The final filesystem optimization image built successfully but is not yet deployed or checked through HTTP; its hosted CI also needs review. See `docs/superpowers/reports/2026-09-18-lookup-checkpoint.md` for evidence, exact limits and resume order. User requested save and stop. Runtime remains `D:/Project/py/RAG`; app checkout main remains `74544de81`. Public official sources only for remaining Ork rules.
+
 ## Latest acceptance — 2026-09-18
 
 Tasks 3–4 now pass their application acceptance. See `docs/superpowers/reports/2026-09-18-live-recall-fix.md`. Assistant history is serialized in the existing JSON step protocol; live same-session recall passed 6/6 trials, and container API checks passed recall, isolation and fresh points verification. Full native pytest: 2,518 passed. The September 16 benchmark remains 113 correct / 2 partial / 0 wrong (115 questions); it was not rerun in full on September 18. Docker's stale inference socket error recurred despite Docker AI being disabled; preserving/replacing the socket directories restored the engine and containers. This is a verified recovery workaround, not a permanent host fix. Runtime/assets remain in `D:/Project/py/RAG`.

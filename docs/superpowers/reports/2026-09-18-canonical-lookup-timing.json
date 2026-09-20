@@ -1,0 +1,9 @@
+{
+  "query": "Leman Russ Commander (AM)",
+  "canonical_id": "000000680",
+  "baseline_revision": "60fdee85b",
+  "docker_baseline_seconds": 105.022,
+  "docker_candidate_seconds": 19.646,
+  "native_candidate_seconds": 0.952,
+  "method": "Single direct get_entity call in separate Python processes. Docker candidate module supplied on stdin to an isolated process; API process untouched for the timing comparison. These are individual observations, not a latency distribution."
+}

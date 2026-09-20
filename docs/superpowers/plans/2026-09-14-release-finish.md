@@ -1,6 +1,32 @@
 # Official points sync and release finish
 
-User request: complete the five-step finish plan, with local points agreeing with the official Munitorum Field Manual.
+## Current September 20 local scope
+
+Use the [reconciled local roadmap](2026-09-20-local-completion.md), which supersedes stale paused/open checkboxes below. Both Docker services are running; live codex, points, simulator, roster and final chat checks passed. Card citations and named-table retention are fixed; manual Markdown export is added. Exact tests and browser limitations are recorded in the [acceptance report](../reports/2026-09-20-lookup-deployment-acceptance.md). PR #74 carries the release and its GitHub status records the merge. Public-source Ork gaps and Docker restart durability remain open; cloud is deferred.
+
+## September 20 optimized runtime acceptance
+
+- [x] User started Docker Desktop; deploy final optimized API image and verify health/warmup and matching source hashes.
+- [x] Complete live question 63 HTTP check (51.881s, no degradation, six order effects) and inspect the rendered Titan codex.
+- [ ] Finish latest PR checks, merge PR #74 and synchronize checkouts.
+- [ ] Improve per-field citation precision: one new response cites the general orders page for card-specific details. Preserve this limitation rather than claiming complete provenance enforcement.
+
+Evidence: [deployment acceptance](../reports/2026-09-20-lookup-deployment-acceptance.md). Public-source Ork and Docker startup-durability work remains open. Earlier blocked status below is historical.
+
+## September 20 release follow-through
+
+- [x] Review final optimization/checkpoint hosted CI: Python and frontend passed; 2,193 hosted tests passed and 331 asset-dependent checks skipped.
+- [x] Open draft [PR #74](https://github.com/sha156/wh40k-oracle/pull/74), preserving unchanged-gold benchmark evidence and failed candidate runs.
+- [ ] Start Docker Desktop, deploy the already-built optimized image and verify live question 63 answer/latency. Engine unavailable; automatic approval review blocked startup, so user action is pending.
+- [ ] Require final deployed acceptance and current PR checks before merge, then synchronize checkouts.
+
+No new application/data changes. Public official Ork rules and Docker startup durability remain open. See the updated [lookup checkpoint](../reports/2026-09-18-lookup-checkpoint.md); earlier statements about running services are historical.
+
+## Latest continuation paused — September 18
+
+The user requested save and stop after the lookup benchmark reached **115 correct / 0 partial / 0 wrong** with unchanged gold. Implementation through `39c16a2f9` is pushed on `codex/benchmark-lookup-completeness`. Canonical identity, faction inventory, source-scope disclosure and identity-first handling are implemented; question 118 base comparison did not reproduce a regression. Full native pytest passed 2,527 before the final three added tests; final focused tests passed 124. API/browser checks passed on `60fdee85b`, and the final I/O optimization image built successfully. Remaining release steps are deployment and HTTP acceptance of that final image, final CI review, PR/merge and checkout synchronization. See the [lookup checkpoint](../reports/2026-09-18-lookup-checkpoint.md). The running app remains available; Ork source and Docker startup-durability limits are unchanged.
+
+User request: complete the five-step finish plan, with local points agreeing with the official Munitorum Field Manual. Historical working states below describe earlier checkpoints; the latest branch and runtime state above supersede them.
 
 ## Working state
 
