@@ -14,7 +14,7 @@ import { ToolTrace } from "@/components/chat/ToolTrace";
 import { VerdictCard } from "@/components/chat/VerdictCard";
 import type { Answer, Exchange } from "@/lib/answer";
 import { emptyAnswer, streamChat } from "@/lib/api";
-import { downloadAnswer } from "@/lib/answer-export";
+import { answerMarkdown, downloadAnswer } from "@/lib/answer-export";
 
 type Status = "idle" | "streaming" | "error";
 
@@ -34,6 +34,7 @@ export function ChatApp({ initial }: ChatAppProps) {
   });
   const [status, setStatus] = useState<Status>("idle");
   const [errorMsg, setErrorMsg] = useState<string | null>(null);
+  const [exportText, setExportText] = useState<string | null>(null);
   const abortRef = useRef<AbortController | null>(null);
   const sessionRef = useRef<string | null>(null);
 
@@ -52,6 +53,7 @@ export function ChatApp({ initial }: ChatAppProps) {
       setAnswer(emptyAnswer());
       setStatus("streaming");
       setErrorMsg(null);
+      setExportText(null);
 
       try {
         sessionRef.current ??= crypto.randomUUID();
@@ -99,6 +101,7 @@ export function ChatApp({ initial }: ChatAppProps) {
         <div>
           <AnswerHead summary={answer.summary || (streaming ? "机魂运算中……" : "")} />
           {hasVerdict && status === "idle" ? (
+            <div className="mb-3 flex flex-wrap gap-2">
             <button
               type="button"
               onClick={() => downloadAnswer(question, answer)}
@@ -109,6 +112,29 @@ export function ChatApp({ initial }: ChatAppProps) {
               </svg>
               下载回答（Markdown）
             </button>
+            <button
+              type="button"
+              onClick={() => setExportText(exportText === null ? answerMarkdown(question, answer) : null)}
+              aria-expanded={exportText !== null}
+              aria-controls="answer-markdown"
+              className="mb-3 border border-[#517a7d] px-3 py-2 text-sm text-[#c8d8d5] hover:bg-[#17363a] focus-visible:outline-2 focus-visible:outline-offset-2"
+            >
+              {exportText === null ? "查看 / 复制 Markdown" : "收起 Markdown"}
+            </button>
+            {exportText !== null ? (
+              <div id="answer-markdown" className="w-full">
+                <p className="mb-2 text-sm text-[#c8d8d5]">可复制到 Obsidian 或保存为 .md 文件；这是未经复核的 AI 回答快照。</p>
+                <textarea
+                  aria-label="Markdown 回答"
+                  readOnly
+                  value={exportText}
+                  onFocus={(event) => event.currentTarget.select()}
+                  rows={10}
+                  className="w-full border border-[#517a7d] bg-[#101c20] p-3 font-mono text-sm text-[#c8d8d5]"
+                />
+              </div>
+            ) : null}
+            </div>
           ) : null}
           {status === "error" ? (
             <p className="my-4 border border-redfont/40 bg-[#1a0d0d] px-4 py-3 font-mono text-[12.5px] text-[#d99] break-all">
