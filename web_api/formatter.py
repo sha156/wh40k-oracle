@@ -8,6 +8,7 @@
 from __future__ import annotations
 
 import json
+import re
 from typing import Any, Callable, Dict, List, Optional, Protocol
 
 from agent.loop import AgentLoop, AgentResult
@@ -161,6 +162,41 @@ def _build_followups(structured: Dict[str, Any]) -> List[str]:
 
 # ── 编排 ──────────────────────────────────────────────────────────
 
+def _missing_table_labels(prose: str, structured: Dict[str, Any]) -> List[str]:
+    """Reject lossy formatting of named Markdown rows; fall back to full prose.
+
+    A table can contain the actual answer (e.g. six order effects). A valid JSON
+    response is not sufficient if the layout model drops that entire table.
+    Numeric-only labels are excluded; conservative false positives retain prose.
+    """
+    def normalized(text: str) -> str:
+        return re.sub(r"\W+", "", text, flags=re.UNICODE).casefold()
+
+    labels: List[str] = []
+    in_table = False
+    for line in prose.splitlines():
+        stripped = line.strip()
+        if re.fullmatch(r"\|?\s*:?-{3,}:?\s*(?:\|\s*:?-{3,}:?\s*)+\|?", stripped):
+            in_table = True
+            continue
+        if not stripped.startswith("|") or "\\|" in stripped:
+            in_table = False
+            continue
+        if in_table:
+            label = normalized(stripped.strip("|").split("|", 1)[0])
+            if label and any(ch.isalpha() for ch in label):
+                labels.append(label)
+    if len(labels) < 2:
+        return []
+    verdict = structured.get("verdict") or {}
+    sensitivity = structured.get("sensitivity") or {}
+    visible = normalized(" ".join([
+        str(verdict.get("lede", "")),
+        *[str(item) for item in (structured.get("calc") or [])],
+        str(sensitivity.get("text", "")),
+    ]))
+    return [label for label in labels if label not in visible]
+
 def format_answer(
     question: str,
     agent_result: AgentResult,
@@ -185,6 +221,8 @@ def format_answer(
                 question, agent_result.answer, evidence,
                 [c.model_dump() for c in cites],
             ) or {}
+            if _missing_table_labels(agent_result.answer, structured):
+                raise ValueError("Answer formatting omitted named table rows")
         except Exception:
             structured = {}
             degraded = True

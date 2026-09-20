@@ -47,3 +47,29 @@ def test_failed_entity_lookup_does_not_create_a_card_citation():
     recorder.last_result["get_entity"] = {"found": False, "page": None}
     answer = format_answer("Unknown", AgentResult(answer="Not found", intent="查"), recorder)
     assert answer.cites == []
+
+
+def test_valid_json_cannot_silently_drop_the_answer_table():
+    prose = "Order effects:\n| Order | Effect |\n|---|---|\n| Advance | M+3 |\n| Aim | BS+1 |"
+
+    class Lossy:
+        def structure(self, *args):
+            return {"verdict": {"lede": "Orders last one round."},
+                    "calc": ["Issued in the command phase."]}
+
+    answer = format_answer("Order effects?", AgentResult(answer=prose, intent="查"),
+                           TraceRecorder({}), Lossy())
+    assert answer.degraded
+    assert answer.trace_warn
+    visible = "".join(getattr(span, "s", "") for span in answer.verdict.lede)
+    for value in ("Advance", "M+3", "Aim", "BS+1"):
+        assert value in visible
+
+
+def test_named_table_rows_can_be_reformatted_as_steps():
+    from web_api.formatter import _missing_table_labels
+    prose = "| Order | Effect |\n| :--- | ---: |\n| **快快快！** | M+3 |\n| 瞄准！ | BS+1 |"
+    assert _missing_table_labels(prose, {
+        "verdict": {"lede": "命令如下"},
+        "calc": ["【快快快】M+3", "【瞄准】BS+1"],
+    }) == []
