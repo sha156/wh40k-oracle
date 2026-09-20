@@ -1,5 +1,17 @@
 # Lookup completeness checkpoint
 
+## September 20 resume: draft PR ready, Docker startup blocked
+
+[PR #74](https://github.com/sha156/wh40k-oracle/pull/74) is open as a draft and attached to the Codex task. Main has no intervening commits relative to this branch. Reviewed the source diff and hosted checks: final optimization run 35336818045 and checkpoint run 35337405606 both passed Python and frontend jobs. The latter reports 2,193 passed / 331 skipped / 10 warnings; skips concern unavailable local assets. CRLF-aware branch whitespace check passed. No new application code or tests changed on September 20.
+
+The Docker engine is unavailable: its `dockerDesktopLinuxEngine` named pipe is absent, and no Docker processes were present on initial inspection. Automatic approval review rejected the direct hidden Desktop launch and a subsequent Docker startup-help command with only `blocked by policy`. No bypass, host configuration change or socket repair was attempted. The user has been asked to start Docker Desktop. This is not evidence of another stale-socket failure, and the September 18 statement that services were left running is historical, not current service availability.
+
+The optimized image built on September 18 remains unverified through the deployed API. Once the engine is running, inspect the existing image, deploy it with the existing compose configuration, wait for health/warmup, then run final question 63 HTTP acceptance. Update the draft PR with that evidence and verify its current checks before marking ready and merging. Do not merge on hosted CI alone.
+
+A bounded recheck of the [official downloads page](https://www.warhammer-community.com/en-gb/downloads/warhammer-40000/) and official Ork search results did not acquire complete rules for the two units or 28 enhancement keys. The extracted downloads page did not expose the full dynamic document list; this check does not prove no public source exists. Existing public-source limits remain unchanged.
+
+The September 18 details below remain the implementation/test record.
+
 Status: saved and stopped at the user's request on September 18. Implementation through `39c16a2f91807c551ad90bd457101031dd65cefc` is pushed on `codex/benchmark-lookup-completeness` in `D:/Project/py/RAG`. No PR or merge was performed for this branch. The app checkout at `C:/Users/Administrator/Documents/ChatGPT/RAG` remains on main `74544de81`.
 
 ## Changes and purpose

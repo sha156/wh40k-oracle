@@ -1,5 +1,9 @@
 # 战锤40K 规则书 RAG 问答系统
 
+## Latest resume — 2026-09-20
+
+Lookup branch is published as draft PR #74: https://github.com/sha156/wh40k-oracle/pull/74. Final optimization and checkpoint push CI passed (2,193 hosted Python tests, 331 local-asset skips; frontend passed). Docker is currently stopped/unavailable; automatic approval review blocked startup commands, and the user has been asked to start Desktop. Final deployed HTTP acceptance is still required before marking the PR ready and merging. No new source/data changes in this resume. The detailed September 18 lookup checkpoint now contains the September 20 runtime status and resume steps.
+
 ## Paused continuation — 2026-09-18
 
 Lookup changes through `39c16a2f9` are pushed on `codex/benchmark-lookup-completeness`, unmerged. The unchanged-gold full benchmark passed 115/115 after identity, inventory and source-scope fixes; the earlier failed run is retained. Full native pytest passed 2,527 before the final three added tests; final focused checks passed 124. The running API/browser passed checks with `60fdee85b` code. The final filesystem optimization image built successfully but is not yet deployed or checked through HTTP; its hosted CI also needs review. See `docs/superpowers/reports/2026-09-18-lookup-checkpoint.md` for evidence, exact limits and resume order. User requested save and stop. Runtime remains `D:/Project/py/RAG`; app checkout main remains `74544de81`. Public official sources only for remaining Ork rules.
