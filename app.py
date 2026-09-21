@@ -493,9 +493,10 @@ def get_llm(provider: str, api_key: str, temperature: float):
     """根据选择的 provider 返回对应 LLM 实例。"""
     if provider == "DeepSeek":
         return ChatOpenAI(
-            model="deepseek-chat",
+            model="deepseek-flash",
             api_key=api_key,
             base_url="https://api.deepseek.com",
+            extra_body={"thinking": {"type": "disabled"}},
             temperature=temperature,
             streaming=True,
         )

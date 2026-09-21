@@ -43,6 +43,30 @@ def _client(outputs, **kw):
     return OpenAICompatLLMClient(client=FakeOpenAIClient(outputs), **kw)
 
 
+def test_flash_uses_non_thinking_mode_for_small_classification_budget():
+    llm = _client(["查"])
+    assert llm.classify_intent("Points?") == "查"
+    call = llm.client.calls[0]
+    assert call["model"] == "deepseek-flash"
+    assert call["extra_body"] == {"thinking": {"type": "disabled"}}
+    assert call["max_tokens"] == 8
+
+
+def test_other_provider_does_not_receive_deepseek_thinking_parameter():
+    llm = _client(["查"], provider="ZhipuAI (GLM-4)")
+    llm.classify_intent("Points?")
+    assert "extra_body" not in llm.client.calls[0]
+
+
+def test_web_layout_also_uses_flash_without_thinking():
+    from web_api.structurer import OpenAIStructuringLLM
+    fake = FakeOpenAIClient(['{"verdict":{"lede":"Verified points"}}'])
+    layout = OpenAIStructuringLLM(client=fake)
+    assert layout.structure("Points?", "Verified points", "", [])["verdict"]["lede"]
+    assert fake.calls[0]["model"] == "deepseek-flash"
+    assert fake.calls[0]["extra_body"] == {"thinking": {"type": "disabled"}}
+
+
 # ── _extract_json_object 纯函数 ────────────────────────────────────
 
 class TestExtractJsonObject:

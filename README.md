@@ -80,7 +80,7 @@ Release acceptance is still open for the latest structured-rule/DSL audit, funde
 | 融合 | Reciprocal Rank Fusion (RRF)；FlashRank 重排**默认关闭**（实测中文重排差于 RRF） |
 | 结构库 | SQLite（11 表：datasheets/units/models/weapons/abilities/stratagems/detachments/enhancements/aliases/unit_zh_detail…） |
 | 阵营技能 | 自研 Effect DSL，28 阵营逐条编码 → 投影进库供模拟器 |
-| LLM | DeepSeek `deepseek-chat` / 智谱 `glm-4-flash`（OpenAI 兼容，可切换） |
+| LLM | DeepSeek `deepseek-flash` (non-thinking mode) / 智谱 `glm-4-flash`（OpenAI 兼容，可切换） |
 | 后端 / 前端 | FastAPI（`web_api/`）+ Next.js（`web/`，四页签） |
 | 交互问答 | Streamlit（`app.py`，本地快速试） |
 

@@ -1,7 +1,7 @@
 """agent/llm_client.py — 真实 LLMClient 实现（接线 app.py 前的最后一块）。
 
 实现 agent.loop.LLMClient Protocol（classify_intent + next_step），后端走
-deepseek-chat / glm-4-flash 的 OpenAI 兼容接口（openai SDK，非流式）。
+deepseek-flash / glm-4-flash 的 OpenAI 兼容接口（openai SDK，非流式）。
 
 协议采用「prompt 约束 JSON」而非各家原生 function-calling：
 - 供应商可移植（deepseek / glm 同一套代码，只换 base_url/model）
@@ -29,7 +29,7 @@ except Exception:  # pragma: no cover
 
 # provider 展示名 → (base_url, model)。与 app.get_llm 保持一致。
 _PROVIDERS: Dict[str, Any] = {
-    "DeepSeek": ("https://api.deepseek.com", "deepseek-chat"),
+    "DeepSeek": ("https://api.deepseek.com", "deepseek-flash"),
     "ZhipuAI (GLM-4)": ("https://open.bigmodel.cn/api/paas/v4/", "glm-4-flash"),
 }
 
@@ -348,6 +348,10 @@ class OpenAICompatLLMClient:
             max_tokens=max_tokens,
             stream=False,
         )
+        if self.model == "deepseek-flash":
+            # V4 defaults to thinking. Preserve the old chat mode: classification
+            # has an eight-token budget, too small for hidden reasoning first.
+            kwargs["extra_body"] = {"thinking": {"type": "disabled"}}
         if want_json:
             try:
                 resp = self.client.chat.completions.create(

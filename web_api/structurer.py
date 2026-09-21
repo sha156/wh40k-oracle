@@ -81,7 +81,7 @@ class OpenAIStructuringLLM:
         self,
         api_key: str = "",
         base_url: str = "https://api.deepseek.com",
-        model: str = "deepseek-chat",
+        model: str = "deepseek-flash",
         temperature: float = 0.2,
         client: Optional[Any] = None,
     ):
@@ -120,6 +120,8 @@ class OpenAIStructuringLLM:
             max_tokens=1600,
             stream=False,
         )
+        if self.model == "deepseek-flash":
+            kwargs["extra_body"] = {"thinking": {"type": "disabled"}}
         try:
             resp = self.client.chat.completions.create(
                 response_format={"type": "json_object"}, **kwargs)
