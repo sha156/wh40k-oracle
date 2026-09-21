@@ -22,6 +22,7 @@ _CANONICAL_ID_RE = re.compile(r"^\d{9}$")
 # 特例：值为 9 位数字时按 canonical id 直取——用于库内 name_en 撞名的单位
 # （name_en 桥会非确定性选行），此时必须点名唯一真单位。
 NICKNAMES: Dict[str, str] = {
+    "基里曼": "Roboute Guilliman",       # 首页示例短名；不能模糊猜成阿里曼
     "激素虫": "Hormagaunts",              # 刀虫的旧译/直译（hormone→激素）
     "阿巴顿": "Abaddon The Despoiler",     # 全名「大掠夺者阿巴顿」
     "马格努斯": "Magnus The Red",          # 全名「红魔马格努斯」

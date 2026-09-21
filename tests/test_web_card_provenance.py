@@ -1,4 +1,6 @@
 """The web formatting boundary must preserve merged-card provenance."""
+import pytest
+
 from agent.loop import AgentResult
 from agent.tools import _entity_page_result
 from web_api.formatter import format_answer
@@ -73,3 +75,76 @@ def test_named_table_rows_can_be_reformatted_as_steps():
         "verdict": {"lede": "命令如下"},
         "calc": ["【快快快】M+3", "【瞄准】BS+1"],
     }) == []
+
+
+@pytest.mark.parametrize("last_missing", [False, True])
+def test_comparison_keeps_each_successful_card_source(last_missing):
+    def get_entity(name):
+        if name == "Missing":
+            return {"found": False, "page": None}
+        page = WikiPage.from_markdown(
+            "---\nid: '{}-id'\nname_en: {}\nfaction: Alpha\ntype: unit\n"
+            "version:\n  source: official-db\n---\nTwo orders.".format(name, name)
+        )
+        return _entity_page_result(page, {"canonical_id": page.fm.id})
+
+    recorder = TraceRecorder({"get_entity": get_entity})
+    lookup = recorder.wrapped_tools()["get_entity"]
+    lookup("Commander A")
+    lookup("Commander B")
+    if last_missing:
+        lookup("Missing")
+    captured = {}
+
+    class Capture:
+        def structure(self, question, prose, evidence, cites):
+            captured.update(evidence=evidence)
+            return {"verdict": {"lede": prose}}
+
+    answer = format_answer("Compare commanders", AgentResult(answer="Comparison", intent="查"),
+                           recorder, Capture())
+    assert {c.term for c in answer.cites} == {"Commander A", "Commander B"}
+    assert "Commander A" in captured["evidence"]
+    assert "Commander B" in captured["evidence"]
+    assert not any(c.page for c in answer.cites)
+
+
+@pytest.mark.parametrize("malformed", [
+    {"verdict": {"lede": "Short answer", "calc": ["Hidden rule effect"]}},
+    {"verdict": {"lede": "Short answer"}, "calc": "Lost rule effect"},
+    {"verdict": {"lede": "Short answer"}, "calc": [{"text": "Wrong shape"}]},
+])
+def test_malformed_layout_keeps_prose_and_discloses_degradation(malformed):
+    class Malformed:
+        def structure(self, *args):
+            return malformed
+
+    answer = format_answer("Rule?", AgentResult(answer="Complete verified rule effect", intent="查"),
+                           TraceRecorder({}), Malformed())
+    assert answer.degraded
+    assert answer.trace_warn
+    assert "Complete verified rule effect" in "".join(
+        getattr(span, "s", "") for span in answer.verdict.lede)
+
+
+def test_repeated_datasheet_and_points_calls_keep_all_sources_and_latest_result():
+    def datasheet(name):
+        return {"found": True, "datasheet": {"name_en": name, "faction": "Alpha"}}
+
+    def points(url):
+        return {"official_sources": [{"url": url}]}
+
+    recorder = TraceRecorder({"get_datasheet": datasheet, "calc_points": points})
+    tools = recorder.wrapped_tools()
+    tools["get_datasheet"]("A")
+    tools["get_datasheet"]("B")
+    tools["calc_points"]("https://example.org/alpha")
+    tools["calc_points"]("https://example.org/beta")
+    tools["calc_points"]("https://example.org/alpha")
+    answer = format_answer("Compare", AgentResult(answer="Comparison", intent="查"), recorder)
+    assert {c.term for c in answer.cites if c.book.startswith("L3")} == {"A", "B"}
+    assert {c.url for c in answer.cites if c.url} == {
+        "https://example.org/alpha", "https://example.org/beta"}
+    assert len(answer.cites) == 4
+    assert recorder.get_result("get_datasheet")["datasheet"]["name_en"] == "B"
+    assert TraceRecorder({}).get_results("get_datasheet") == []

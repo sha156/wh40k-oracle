@@ -47,33 +47,32 @@ def _derive_cites(result: AgentResult, recorder: TraceRecorder) -> List[Cite]:
                           section=section, term=term, wiki=wiki, url=url))
 
     # 关键词定义页（核心规则术语）——provenance，非伪造页码
-    kw_res = recorder.get_result("get_keyword_definition")
-    if isinstance(kw_res, dict) and kw_res.get("found"):
-        page = kw_res.get("page")
-        term = getattr(getattr(page, "fm", None), "name_zh", None) if page else None
-        wiki = "core-rules/" + (getattr(getattr(page, "fm", None), "name_en", "") or "")
-        _add("核心规则术语", section="USR/关键词", term=term or "", wiki=wiki)
+    for kw_res in recorder.get_results("get_keyword_definition"):
+        if isinstance(kw_res, dict) and kw_res.get("found"):
+            page = kw_res.get("page")
+            term = getattr(getattr(page, "fm", None), "name_zh", None) if page else None
+            wiki = "core-rules/" + (getattr(getattr(page, "fm", None), "name_en", "") or "")
+            _add("核心规则术语", section="USR/关键词", term=term or "", wiki=wiki)
 
     # 结构库属性块
-    ds_res = recorder.get_result("get_datasheet")
-    if isinstance(ds_res, dict) and ds_res.get("found"):
-        ds = ds_res.get("datasheet") or {}
-        _add("L3 结构库 · " + str(ds.get("faction") or "未知"),
-             term=str(ds.get("name_en") or ""), section="属性块")
+    for ds_res in recorder.get_results("get_datasheet"):
+        if isinstance(ds_res, dict) and ds_res.get("found"):
+            ds = ds_res.get("datasheet") or {}
+            _add("L3 结构库 · " + str(ds.get("faction") or "未知"),
+                 term=str(ds.get("name_en") or ""), section="属性块")
 
     # A merged wiki card is also structured evidence. Without its own citation
     # the structurer can only attach unrelated PDF pages to card-specific facts.
     # Do not promote its frontmatter references to per-field PDF provenance.
-    entity = recorder.get_result("get_entity")
-    if isinstance(entity, dict) and entity.get("found"):
-        fm = getattr(entity.get("page"), "fm", None)
-        if fm is not None and (fm.version or {}).get("source") == "official-db":
-            _add("L3 结构库 · " + str(fm.faction or "未知"),
-                 term=str(fm.name_en or fm.name_zh or fm.id), section="合并兵牌")
+    for entity in recorder.get_results("get_entity"):
+        if isinstance(entity, dict) and entity.get("found"):
+            fm = getattr(entity.get("page"), "fm", None)
+            if fm is not None and (fm.version or {}).get("source") == "official-db":
+                _add("L3 结构库 · " + str(fm.faction or "未知"),
+                     term=str(fm.name_en or fm.name_zh or fm.id), section="合并兵牌")
 
     # 检索来源（真有 book/page 出处）
-    points = recorder.get_result("calc_points")
-    for evidence in (points, ds_res):
+    for evidence in recorder.get_results("calc_points") + recorder.get_results("get_datasheet"):
         if isinstance(evidence, dict):
             for source in evidence.get("official_sources", []):
                 _add("Munitorum Field Manual", section="官方当前点数",
@@ -162,6 +161,30 @@ def _build_followups(structured: Dict[str, Any]) -> List[str]:
 
 # ── 编排 ──────────────────────────────────────────────────────────
 
+def _validate_layout(structured: Dict[str, Any]) -> None:
+    """Malformed but parseable JSON must not silently discard verified prose."""
+    if not isinstance(structured, dict):
+        raise ValueError("Answer layout must be an object")
+    verdict = structured.get("verdict")
+    if not isinstance(verdict, dict) or not isinstance(verdict.get("lede"), str) or not verdict["lede"].strip():
+        raise ValueError("Answer layout requires a text verdict")
+    if {"calc", "sensitivity", "followups"}.intersection(verdict):
+        raise ValueError("Answer content is nested in the wrong slot")
+    for field in ("label", "labelEn"):
+        if field in verdict and not isinstance(verdict[field], str):
+            raise ValueError("Verdict labels must be text")
+    for field in ("calc", "followups"):
+        value = structured.get(field, [])
+        if not isinstance(value, list) or any(not isinstance(item, str) for item in value):
+            raise ValueError("Answer {} must be a list of text".format(field))
+    sensitivity = structured.get("sensitivity")
+    if sensitivity is not None:
+        if not isinstance(sensitivity, dict) or not isinstance(sensitivity.get("text"), str):
+            raise ValueError("Answer sensitivity must contain text")
+        if "title" in sensitivity and not isinstance(sensitivity["title"], str):
+            raise ValueError("Sensitivity title must be text")
+
+
 def _missing_table_labels(prose: str, structured: Dict[str, Any]) -> List[str]:
     """Reject lossy formatting of named Markdown rows; fall back to full prose.
 
@@ -221,6 +244,7 @@ def format_answer(
                 question, agent_result.answer, evidence,
                 [c.model_dump() for c in cites],
             ) or {}
+            _validate_layout(structured)
             if _missing_table_labels(agent_result.answer, structured):
                 raise ValueError("Answer formatting omitted named table rows")
         except Exception:
@@ -268,15 +292,18 @@ def _derive_entity_card(recorder: TraceRecorder, hot_weapon: Optional[str]):
 def _evidence_digest(recorder: TraceRecorder, limit: int = 2000) -> str:
     """把录到的工具返回压成给结构化 LLM 的证据摘要（截断防超长）。"""
     lines: List[str] = []
-    entity = recorder.get_result("get_entity")
-    if isinstance(entity, dict) and entity.get("found") and entity.get("source_scope"):
-        fm = getattr(entity.get("page"), "fm", None)
-        # Preserve this boundary before large page representations consume the
-        # digest budget. It was previously beyond the per-tool 600-char slice.
-        lines.append("[合并兵牌出处] {} · {}：{}".format(
-            getattr(fm, "faction", ""), getattr(fm, "name_en", ""),
-            entity["source_scope"],
-        ))
+    scopes = set()
+    for entity in recorder.get_results("get_entity"):
+        if isinstance(entity, dict) and entity.get("found") and entity.get("source_scope"):
+            fm = getattr(entity.get("page"), "fm", None)
+            # Name each comparison subject before bulk text. Shared scope
+            # warnings need only be included once in the bounded digest.
+            scope = str(entity["source_scope"])
+            lines.append("[合并兵牌出处] {} · {}：{}".format(
+                getattr(fm, "faction", ""), getattr(fm, "name_en", ""),
+                scope if scope not in scopes else "同上来源边界",
+            ))
+            scopes.add(scope)
     for name, res in recorder.last_result.items():
         try:
             blob = json.dumps(res, ensure_ascii=False, default=str)

@@ -47,7 +47,7 @@ def _as_bool(v: Any) -> bool:
 def _as_pos_int(v: Any, hi: Optional[int] = None) -> Optional[int]:
     try:
         i = int(v)
-    except (TypeError, ValueError):
+    except (TypeError, ValueError, OverflowError):
         return None
     if i <= 0 or (hi is not None and i > hi):
         return None

@@ -58,6 +58,9 @@ class TraceRecorder:
         # 每个工具最近一次的完整返回（供 entityCard 等取结构化数据）+ 入参
         self.last_result: Dict[str, Any] = {}
         self.last_args: Dict[str, Dict[str, Any]] = {}
+        # One recorder belongs to one bounded agent run. Keep earlier evidence
+        # when the same lookup tool is called for multiple comparison subjects.
+        self._results: Dict[str, List[Any]] = {}
 
     def _wrap(self, name: str, fn: Callable[..., Dict[str, Any]]):
         def recorded(*args: Any, **kwargs: Any) -> Dict[str, Any]:
@@ -66,6 +69,7 @@ class TraceRecorder:
             bound = inspect.signature(fn).bind(*args, **kwargs)
             arguments = dict(bound.arguments)
             result = fn(*args, **kwargs)
+            self._results.setdefault(name, []).append(result)
             self.last_result[name] = result
             self.last_args[name] = arguments
             self.steps.append(TraceStep(
@@ -84,3 +88,9 @@ class TraceRecorder:
     def get_result(self, fn_name: str) -> Any:
         """取某工具最近一次的完整返回（未调用过返回 None）。"""
         return self.last_result.get(fn_name)
+
+    def get_results(self, fn_name: str) -> List[Any]:
+        """All calls in this request; accept manually supplied test evidence."""
+        if fn_name in self._results:
+            return list(self._results[fn_name])
+        return [self.last_result[fn_name]] if fn_name in self.last_result else []

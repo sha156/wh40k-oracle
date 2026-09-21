@@ -569,7 +569,15 @@ def get_datasheet(
         # 是一堆按相似词检索出来的片段，模型很容易顺着写成「这个单位是……」。
         # 其余查空情形（俗名/集合名，一个近似名都没有）维持原样降级——那是 loop.py
         # `_EMPTY_CHECKS["get_datasheet"]` 注释里点名的「回归 7 题」防线，不要动。
-        near = (_resolve_for_points(name_or_id, resolver) or {}).get("suggestions")
+        resolved = _resolve_for_points(name_or_id, resolver) or {}
+        if resolved.get("confidence") == "ambiguous" and resolved.get("candidates"):
+            # A name-resolution ambiguity is recoverable evidence, not an
+            # absent datasheet. Keep the candidates without accepting fuzzy
+            # guesses as authoritative numeric data.
+            return {"found": False, "datasheet": None, "reason": "ambiguous",
+                    "candidates": resolved["candidates"],
+                    "note": _RESOLVER_AMBIGUOUS_NOTE}
+        near = resolved.get("suggestions")
         if near:
             return {"found": False, "datasheet": None, "reason": "near_miss_only",
                     "suggestions": list(near), "note": _RESOLVER_NEAR_MISS_NOTE}
