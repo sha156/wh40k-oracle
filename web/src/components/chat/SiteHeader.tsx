@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { SlotBadge } from "../ui/SlotBadge";
 import { Aquila } from "./Aquila";
+import styles from "./Chat.module.css";
 
 const NAV_ITEMS = [
   { label: "聊天", href: "/", ready: true },
@@ -12,10 +13,31 @@ const NAV_ITEMS = [
 interface SiteHeaderProps {
   context: string; // 当前语境铭牌文字
   active?: string; // 当前激活页签 label，默认「聊天」
+  variant?: "default" | "chat";
+  onNewChat?: () => void;
 }
 
 /** E1 顶栏：品牌 + 语境铭牌 + 页签导航 */
-export function SiteHeader({ context, active = "聊天" }: SiteHeaderProps) {
+export function SiteHeader({ context, active = "聊天", variant = "default", onNewChat }: SiteHeaderProps) {
+  if (variant === "chat") return (
+    <header className={styles.header}>
+      <div className={styles.headerInner}>
+        <Link href="/" className={styles.brand} aria-label="40K 规则助手首页">
+          <span className={styles.brandMark}>
+            <svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6"><path d="m12 3 8 5v8l-8 5-8-5V8zM4 8l8 5 8-5m-8 5v8M8 5.5l8 5" strokeLinejoin="round" /></svg>
+          </span>
+          40K 规则助手
+        </Link>
+        <nav className={styles.nav} aria-label="主导航">
+          {NAV_ITEMS.map((item) => <Link key={item.href} href={item.href} aria-current={item.label === active ? "page" : undefined}>{item.label}</Link>)}
+        </nav>
+        <button className={styles.newChat} type="button" onClick={onNewChat}>
+          <svg aria-hidden="true" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.7"><path d="M12 5v14m-7-7h14" strokeLinecap="round" /></svg>
+          新对话
+        </button>
+      </div>
+    </header>
+  );
   return (
     <header className="relative border-b-2 border-gw-red bg-[linear-gradient(#141b1e,var(--color-ink))] shadow-[0_0_0_1px_#000,0_6px_24px_rgba(0,0,0,.6)]">
       <SlotBadge id="E1" />
