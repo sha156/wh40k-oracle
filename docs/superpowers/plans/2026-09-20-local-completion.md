@@ -1,5 +1,9 @@
 # Local Docker completion roadmap
 
+## September 26 reviewed empty listings and Guilliman source clarification
+
+User-approved source exclusions now account for 94 of the earlier 98 records: 49 empty duplicate listings, 36 empty Legends listings and nine other empty listings. Four wrong-identity responses remain actionable. Exclusions require an exact whole-inventory fingerprint and reopen on any source change; full cards and canonical units are retained. Forty focused tests and an offline full-inventory/staged-merge check passed; runtime data is unchanged. See the reviewed-listings report. Guilliman's Chinese phrase 每个回合一次 is ambiguous without the translator's terminology convention; English explicitly says once per battle round. This is an expert-review question, not a proven translation error. Exact source evidence is saved in reports/2026-09-26-guilliman-source-comparison/.
+
 ## September 26 verified Black Library import
 
 Imported 1,071 validated source captures into the active Chinese layer: 1,150 detail rows, all 1,649 old aliases preserved plus 36 new, and 4,971/4,971 active weapon names localized. Official numerical and English rule fields remain unchanged. Search now has 5,910 chunks; all 4,777 non-Black-Library documents/vectors were preserved. Final native suite passed 2,712 tests; wiki lint zero errors; Docker is ready and fresh card/chat checks passed. The 98 targeted source gaps remain (94 missing lookup keys, four wrong identities); not all are distinct missing units. Guilliman's Chinese data exists but the count-based language selector falls back to English (five grouped Chinese entries versus seven English rows), with a real turn/battle-round wording disagreement requiring verified ability-level mapping. See the September 26 Black Library import acceptance and unresolved-by-faction reports. Earlier status below is historical.

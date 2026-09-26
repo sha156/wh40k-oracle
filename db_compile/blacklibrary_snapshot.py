@@ -12,6 +12,7 @@ import json
 from pathlib import Path
 
 from scripts.fetch_blacklibrary_snapshot import parsed_detail, source_id
+from db_compile.blacklibrary_scope import reviewed_empty_listing
 
 
 def sha(data):
@@ -76,8 +77,10 @@ def merge_snapshot(snapshot, existing):
     changed, added, accepted, rejected = [], [], [], []
     fields = ("name_en", "name_zh", "faction_zh", "score", "detail")
     for sid, row in details.items():
-        if row.get("detail_status") not in ("captured", "failed", "source_empty"):
+        if row.get("detail_status") not in ("captured", "failed", "source_empty", "ignored_empty_listing"):
             raise ValueError("Unknown detail status")
+        if row["detail_status"] == "ignored_empty_listing" and not reviewed_empty_listing(units[sid]):
+            raise ValueError("Ignored listing does not match reviewed policy: " + sid)
         if row["detail_status"] != "captured":
             rejected.append(sid)
             continue

@@ -81,7 +81,8 @@ def test_complete_snapshot_has_details_catalog_only_faction_and_redacted_raw_env
     result = snap.run()
     assert result["status"] == "complete_known_endpoints"
     assert result["counts"] == {"units": 1, "factions": 2, "details": 1,
-                                "details_with_content": 1, "details_source_empty": 0, "details_failed": 0}
+                                "details_with_content": 1, "details_source_empty": 0,
+                                "details_ignored": 0, "details_failed": 0}
     assert any(call[1] == RULE_PATH and call[2]["topName"] == "无单位阵营" for call in session.calls)
     assert not session.trust_env
     details = json.loads((snap.out / "details.json").read_text(encoding="utf-8"))

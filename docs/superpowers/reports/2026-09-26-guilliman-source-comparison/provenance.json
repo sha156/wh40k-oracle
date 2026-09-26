@@ -1,0 +1,25 @@
+{
+  "unit": "Roboute Guilliman",
+  "chinese": {
+    "source_record_id": 24,
+    "fetched_at": "2026-09-22T09:36:28.206365+00:00",
+    "endpoint": "https://blackforum.czmakj.com/app/unit/detail",
+    "request": {
+      "gameId": 2,
+      "topName": "极限战士",
+      "unitName": "ROBOUTE GUILLIMAN"
+    },
+    "exact_excerpt": "◼ 超级战略：每个回合一次，你可以对本模型 12 寸内的一个友军阿斯塔特修会单位使用战略技能时少消耗1CP",
+    "raw_capture": "db_sources\\blacklibrary\\snapshots\\20260926-resume\\raw\\unit-details\\c2356069e9d1e79c.json",
+    "sha256": "f108fb90aa4df3d243e267c5138f3d69d720f221251ee2b268977dabfa8dbe38",
+    "presentation": "Rendered cached API text; not a native mini-program screenshot"
+  },
+  "english": {
+    "pdf": "data\\Faction Pack Space-Marines.pdf",
+    "url": "https://assets.warhammer-community.com/eng_wh40k_faction_pack_space_marines-kxoxqpsahz-u0lzirv0zl.pdf",
+    "pdf_page": 63,
+    "version": "Faction Pack v1.2; cover says legal for matched play from 26 August 2026",
+    "sha256": "f1f96c0a3dda8dfc2d5686b4aa60e7959697651edbc51f5a344439ff6ac1a1f9"
+  },
+  "question": "Does 回合 here mean a player turn or a battle round? Is this Chinese source intended to reflect the English amendment? No definitive mistranslation finding is made."
+}

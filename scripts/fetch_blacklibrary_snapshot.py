@@ -12,11 +12,17 @@ import hashlib
 import json
 import math
 import re
+import sys
 import time
 from datetime import datetime, timezone
 from pathlib import Path
 
 import requests
+
+if __package__ in (None, ""):
+    sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
+
+from db_compile.blacklibrary_scope import reviewed_empty_listing
 
 ROOT = Path(__file__).resolve().parents[1]
 BASE_URL = "https://blackforum.czmakj.com/app/"
@@ -240,7 +246,14 @@ class Snapshot:
             record = unit
             try:
                 detail = parsed_detail(unit)
-                if detail is None:
+                exclusion = reviewed_empty_listing(unit) if detail is None else None
+                if exclusion:
+                    status = "ignored_empty_listing"
+                    self.manifest["requests"][key] = {
+                        "status": status, "reason": exclusion["reason"],
+                        "inventory_sha256": exclusion["inventory_sha256"],
+                    }
+                elif detail is None:
                     name = unit.get("unitEnglishName")
                     if not isinstance(name, str) or not name.strip():
                         raise SourceError("unit lacks an English detail lookup name")
@@ -386,6 +399,7 @@ class Snapshot:
                 counts={"units": len(units), "factions": len(factions), "details": len(details),
                         "details_with_content": sum(row["detail_status"] == "captured" for row in details),
                         "details_source_empty": sum(row["detail_status"] == "source_empty" for row in details),
+                        "details_ignored": sum(row["detail_status"] == "ignored_empty_listing" for row in details),
                         "details_failed": sum(row["detail_status"] == "failed" for row in details)})
         except (SourceError, OSError, ValueError) as exc:
             self.manifest.update(status="partial", error=str(exc) if isinstance(exc, SourceError) else type(exc).__name__)
