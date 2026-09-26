@@ -35,11 +35,10 @@ updated: '2026-09-14'
 | 暴烈双拳 | 近战 | 5 | 3+ | 12 | -3 | 3 | [[core-rules/twin-linked.md\|双联]] |
 
 ## 技能
-- **【阵营技能】：破敌重誓**
-- **黑色狂怒**：每次当该模型进行攻击时，你可以重投命中骰。当该模型12寸范围内没有友军牧师模型，那该模型不能撤退且他的OC变为0（维护者提醒：10版老版黑怒射击和近战命中均可重投，但是不能通过6寸内存在血天使角色解除负面效果）
-- **狂乱回击**：每当一个敌方单位以该模型作为攻击目标，在攻击完成后，该模型可以如同在己方射击阶段进行射击，或如同在己方近战阶段进行近战（维护者提醒：还击对象可以并非为此次攻击的敌方单位，且该敌方攻击即使未造成伤害也可以触发反击）
-- **【装备技能】磁力勾爪**：当该模型的冲锋目标是一个或多个敌方巨兽或载具单位时，冲锋骰子的结果加2
-- **【装备技能】烟幕发射器**：持有者失去磁力勾爪能力，并获得烟幕关键词
+- **黑怒**：Each time this model makes an attack, you can re-roll the Hit roll. While this model is not within 12" of one or more friendly <span class="kwb">CHAPLAIN</span> models, it cannot be selected to Fall Back and its Objective Control characteristic is 0.
+- **狂乱反噬**：Once per turn, in the Fight phase, when an enemy unit targets this unit, after that unit has resolved its attacks, this unit is eligible to fight (even if it has already fought this phase) and must be selected to fight next.
+- **Magna-grapple**：Add 2 to Charge rolls made for this model if one or more of the targets of that charge is a <span class="kwb">MONSTER</span> or <span class="kwb">VEHICLE</span> unit.
+- **Smoke Launchers**：The bearer loses the Magna-grapple ability and gains the <span class="kwb">SMOKE</span> keyword.
 
 ## 单位构成
 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。

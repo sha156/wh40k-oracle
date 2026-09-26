@@ -37,8 +37,9 @@ updated: '2026-09-14'
 | 装甲履带 | 近战 | 3 | 4+ | 6 | 0 | 1 | — |
 
 ## 技能
-- **自行修理**：在每个你的指挥阶段结束时，本模型恢复一点失去的 W 值
-- **深渊之女**：本模型在对抗【灵能】攻击和致命伤害时算作拥有【不觉疼痛 3+】
+- **Daughters of the Abyss**：This model has the Feel No Pain 3+ ability against Psychic Attacks and mortal wounds.
+- **Self Repair**：At the start of your Command phase, this model regains 1 lost wound.
+- **One Shot**：The bearer can only shoot with this weapon once per battle.
 
 ## 单位构成
 - **1个模型** — 65 分

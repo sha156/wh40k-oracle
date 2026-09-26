@@ -37,8 +37,10 @@ updated: '2026-09-14'
 | 格斗武器  | 近战 | 1 | 4+ | 4 | 0 | 1 | — |
 
 ## 技能
-- **[阵营]：重生协议**
-- **躲闪印记**：在你的射击阶段，在这个单位完成射击后，他可以进行一次至多 6 英寸的常规移动， 如果这样做，在该回合结束前，该单位不能进行冲锋。
+- **Nebuloscope**：Ranged weapons equipped by the bearer have the [IGNORES COVER] ability.
+- **Shadowloom**：The bearer has the Stealth ability.
+- **Shieldvanes**：The bearer has a 3+ Save characteristic and a Move characteristic of 8".
+- **Evasion Engrams**：In your Shooting phase, after this unit has shot, it can make a Normal move of up to 6". If it does, until the end of the turn, this unit is not eligible to declare a charge.
 
 ## 单位构成
 - **3个模型** — 70 分

@@ -1,5 +1,6 @@
 ---
 id: '000000096'
+name_zh: 重生者卡拉布·库伦【传奇】
 name_en: Carab Culln The Risen
 faction: 星际战士
 type: unit
@@ -27,19 +28,20 @@ updated: '2026-09-14'
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
 | 重型爆弹枪 | 36" | 3 | 3+ | 5 | -1 | 2 | [[core-rules/sustained-hits.md\|连击1]] |
-| 重型喷火器 | 12" | D6 | N/A | 5 | -1 | 1 | [[core-rules/ignores-cover.md\|无视掩体]]，[[core-rules/torrent.md\|洪流]] |
+| 重型火焰喷射器 | 12" | D6 | N/A | 5 | -1 | 1 | [[core-rules/ignores-cover.md\|无视掩体]]，[[core-rules/torrent.md\|洪流]] |
 | 猎杀飞弹 | 48" | 1 | 2+ | 14 | -3 | D6 | [[core-rules/one-shot.md\|单发]] |
-| 双联突击炮 | 24" | 6 | 3+ | 6 | 0 | 1 | [[core-rules/devastating-wounds.md\|毁灭伤害]]，[[core-rules/twin-linked.md\|双联]] |
+| 并联突击炮 | 24" | 6 | 3+ | 6 | 0 | 1 | [[core-rules/devastating-wounds.md\|毁灭伤害]]，[[core-rules/twin-linked.md\|双联]] |
 
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| Tarsus Scorpii | 近战 | 5 | 3+ | 12 | -3 | 4 | — |
+| 蝎骨巨爪 | 近战 | 5 | 3+ | 12 | -3 | 4 | — |
 
 ## 技能
-- **Rites of Battle**：Once per battle round, one unit from your army with this ability can use it when its unit is targeted with a Stratagem. If it does, reduce the CP cost of that use of that Stratagem by 1CP.
-- **Death-hold**：When making ranged attacks, this model does not suffer the penalty to its Hit rolls for being within Engagement Range of one or more enemy units.
-- **One Shot**：The bearer can only shoot with this weapon once per battle.
+- **【阵营技能】破敌重誓**
+- **战斗之仪**：一次性能力，拥有本能力的单位可以0CP对其使用战略能力，即使该战略能力本阶段已经向其他目标使用过
+- **死亡之握**：本模型不会因为位于敌方接战范围内而受到射击命中惩罚
+- **受损**：当本模型剩余1-4W时，每次攻击时命中骰结果-1
 
 ## 单位构成
 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。

@@ -30,8 +30,9 @@ updated: '2026-09-14'
 | 幽冥双剑 | 近战 | 5 | 4+ | 5 | -2 | 2 | — |
 
 ## 技能
-- **恶怨亡魂**：当本单位中的模型被近战攻击消灭时，若该模型还未在本阶段进行近战，便投一枚D6：结果为 3+，则先不将其移出游戏，被消灭的模型可以在攻击模型所在单位完成所有攻击后进行近战攻击，随后再被移出游戏
-- **灵能引导**：当本单位位于至少一个友方艾达灵族灵能者模型12寸内时，该单位中的模型的LD属性为 6+，且该单位中的模型被选中进行攻击时，其命中骰结果加1
+- **Malevolent Souls**：Each time a model in this unit is destroyed by a melee attack, if that model has not fought this phase, roll one D6. On a 3+, do not remove it from play; that destroyed model can fight after the attacking unit has finished making its attacks, and is then removed from play.
+- **Psychic Guidance**：While this unit is within 12" of one or more friendly Aeldari Psyker models, models in this unit have a Leadership characteristic of 6+ and each time a model in this unit makes an attack, add 1 to the Hit roll.
+- **Forceshield**：The bearer has a 4+ invulnerable save.
 
 ## 单位构成
 - **5个模型** — 140 分

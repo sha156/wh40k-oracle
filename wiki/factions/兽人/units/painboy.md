@@ -30,11 +30,10 @@ updated: '2026-09-14'
 | 屁精大针头 | 近战 | 1 | 3+ | 2 | 0 | 1 | [[core-rules/anti.md\|针对步兵4+]]，[[core-rules/extra-attacks.md\|额外攻击]]，[[core-rules/precision.md\|精准]] |
 
 ## 技能
-- **【核心技能】:辅助**：本单位可以作为领袖加入以下单位：●小子●[[factions/兽人/units/burna-boyz.md|烧烤小子]]●[[factions/兽人/units/lootas.md|拾荒小子]]●[[factions/兽人/units/nobz.md|老大队]]●[[factions/兽人/units/tankbustas.md|坦爆队]]●[[factions/兽人/units/breaka-boyz.md|破拆小子]]
+- **【核心技能】:辅助**：本单位可以作为领袖加入以下单位：●小子●[[factions/兽人/units/breaka-boyz.md|破拆小子]]●[[factions/兽人/units/flash-gitz.md|脏枪混混]]●[[factions/兽人/units/nobz.md|老大队]]●[[factions/兽人/units/tankbustas.md|坦爆队]]
 - **【阵营技能】:WAAAGH!**
-- **疯医工具**：本模型所领导的单位中的模型获得【不觉疼痛5+】
-- **别动不疼**：本模型的大针头攻击非载具单位造伤暴击时，对目标单位造成D6点致命伤害
-- **屁精助手**：一次性技能，在你的指挥阶段中，装备者所领导的单位可以复活D3个被消灭的保镖模型(屁精模型只作为标记物存在，使用后移除)
+- **粗暴手术**：在您的指挥阶段中，该单位可以治疗3点耐伤。
+- **抓住红色的部分**：当该模型使用相暴手术技能时，您可以将治疗的耐伤增加 D3。 将一个地精护理指示物放在该单位旁边，在使用该技能后将该指示物移除。
 
 ## 单位构成
 - **1个模型** — 45 分

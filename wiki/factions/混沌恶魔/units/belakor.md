@@ -39,15 +39,16 @@ updated: '2026-09-14'
 | 幽影魔剑-横扫 | 近战 | 14 | 2+ | 8 | -3 | 1 | [[core-rules/sustained-hits.md\|连击1]] |
 
 ## 技能
-- **黑暗主宰(光环)**：战场上位于该模型 6" 内的区域被视作为被己方混沌之影笼罩。
-- **黑暗形态**：在每个战斗轮次开始时，选择一个暗影形态技能（见下方)。直到当前战斗轮次结束前，该模型拥有选择的技能。
-- **幽影护身(光环、灵能)**：位于该模型 6" 内的己方逆理魔军单位或[[factions/混沌恶魔/detachments/shadow-legion.md|暗影军团]]单位只有在位于攻击模型的 18" 内时才能被选择成为远程攻击的目标。
-- **绝望迷雾(光环、灵能)**：在对手指挥阶段的战斗震慑步骤中，如果位于该模型 9" 内的敌方单位低于起始兵力，那么那个单位必须进行一次战斗震慑测试。在结算此技能时，如果一个单位的起始兵力为 1，那么该单位在失去一点或更多耐伤后便被视为低于起始兵力。此外，每当一个位于此模型9"内的敌方单位震慑测试失败时，该模型恢复最多D3点失去的耐伤。
-- **暗影领主(光环、灵能)**：每当位于该模型 6" 内的己方逆理魔军单位或暗影军团单位中的模型进行一次攻击时，重掷结果为1的命中骰。
+- **The Dark Master (Aura)**：The area of the battlefield within 6" of this model is within your army’s Shadow of Chaos.
+- **Shadow Form**：At the start of the battle round, select one Shadow Form ability (see below). Until the end of the battle round, this model has that ability.
+- **SUPREME COMMANDER**：If this model is in your army, it must be your Warlord.
+- **Wreathed in Shadows (Aura, Psychic)**：While a friendly Legiones Daemonica unit or [[factions/混沌恶魔/detachments/shadow-legion.md|Shadow Legion]] unit is within 6" of this model, that unit can only be targeted by a ranged attack if the attacking model is within 18".
+- **Pall of Despair (Aura, Psychic)**：In the Battle-shock step of your opponent’s Command phase, if an enemy unit that is below its Starting Strength is within 9" of this model, that unit must take a Battle-shock test. For the purposes of this ability, if a unit has a Starting Strength of 1, it is considered to be below its Starting Strength while it has lost one or more wounds. In addition, for each enemy unit that fails a Battle-shock test within 9" of this model, this model regains up to D3 lost wounds.
+- **Shadow Lord (Aura, Psychic)**：While a friendly Legiones Daemonica or Shadow Legion unit is within 6" of this model, each time a model in that unit makes an attack, re-roll a Hit roll of 1.
 
 ## 单位构成
 - **1个模型** — 390 分
 
 ## 关键词
 - **阵营关键词**：Legiones Daemonica
-- **普通关键词**：[[core-rules/psyker.md|Psyker]]，[[core-rules/character.md|Character]]，[[core-rules/epic-hero.md|Epic Hero]]，Fly，Monster，[[factions/混沌恶魔/detachments/shadow-legion.md|Shadow Legion]]，Be’lakor，Daemon，Chaos
+- **普通关键词**：[[core-rules/psyker.md|Psyker]]，[[core-rules/character.md|Character]]，[[core-rules/epic-hero.md|Epic Hero]]，Fly，Monster，Shadow Legion，Be’lakor，Daemon，Chaos

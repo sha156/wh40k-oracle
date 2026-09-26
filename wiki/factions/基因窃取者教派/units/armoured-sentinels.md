@@ -41,7 +41,8 @@ updated: '2026-09-14'
 | 格斗武器 | 近战 | 2 | 4+ | 6 | 0 | 1 | — |
 
 ## 技能
-- **机动猎手**：本单位模型攻击巨兽或载具时可以重投造伤结果
+- **Mobile Hunter-killers**：Each time a model in this unit makes an attack that targets a <span class="kwb">MONSTER</span> or <span class="kwb">VEHICLE</span> unit, you can re-roll the Wound roll.
+- **One Shot**：The bearer can only shoot with this weapon once per battle.
 
 ## 单位构成
 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。

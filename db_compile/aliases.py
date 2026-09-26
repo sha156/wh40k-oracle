@@ -17,6 +17,7 @@ from pathlib import Path
 from typing import Dict, List, Tuple
 
 from wiki_compile.extract import parse_heading
+from corpus_policy import is_excluded_source
 
 _CJK = re.compile(r"[一-鿿]")
 _LATIN = re.compile(r"[A-Za-z]")
@@ -28,6 +29,8 @@ def harvest_bilingual_pairs(data_refined_dir) -> List[Tuple[str, str]]:
     pairs: List[Tuple[str, str]] = []
     pattern = os.path.join(str(data_refined_dir), "**", "*.md")
     for f in glob.glob(pattern, recursive=True):
+        if is_excluded_source(f):
+            continue
         try:
             text = Path(f).read_text(encoding="utf-8")
         except OSError:

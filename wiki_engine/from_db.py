@@ -236,6 +236,10 @@ def render_unit(conn, uid: str, faction_zh: str,
     if requires_current_english(conn, uid):
         zabils = []
         zintro = []
+    # Match the web card's completeness rule: a partial community translation
+    # must not remove an official ability (e.g. Stonesinger's Support).
+    if len(zabils or []) < len(abils):
+        zabils = []
     zfac_kw, zkw = _zh_keywords(zintro)
 
     pj = json.loads(u["points_json"] or "{}")

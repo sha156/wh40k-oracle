@@ -37,10 +37,14 @@ updated: '2026-09-14'
 | 圣物武器 | 近战 | 18 | 2+ | 5 | -2 | 1 | — |
 
 ## 技能
-- **【阵营技能】：信仰之举**
-- **至高圣女圣物**：在每个游戏大回合开始时，你可以选择下列能力中的两个，直到下个游戏大回合开始前，本模型获得那些能力：◼ 殉道圣女炽烈之心（光环）：当一个友方修女会单位位于本模型 6 英寸内时，那个单位 M 值+2，并且加速骰和冲锋骰结果+1。◼ 神圣玫瑰香炉（光环）：当一个友方修女会单位位于本模型 6 英寸内时，那个单位可以重投战斗震撼测试。◼ 乌木圣杯圣像（光环）：当一个友方修女会单位位于本模型 6 英寸内时，那个单位可以每个阶段进行 2 次信仰之举而非 1 次。（但不能对一次投掷例如冲锋使用两颗奇迹骰子）◼ 银白寿衣圣像（光环）：当一个友方修女会单位位于本模型 6 英寸内时，那个单位中的所有模型在进行射击攻击时，可以重骰结果为 1 的造伤骰。◼ 勇毅之心圣印（光环）：当一个友方修女会单位位于本模型 6 英寸内时，那个单位中的所有模型具有【不觉疼痛 6+】。◼ 血腥玫瑰花瓣（光环）：当一个友方修女会单位位于本模型 6 英寸内时，那个单位中的所有模型装备的近战武器 AP 值增加 1
-- **肃穆行列**：在每个游戏大回合开始时，如果本模型 位于战场上，你在本战斗轮次开始时的奇迹骰子不 用投掷结果，改为将一枚结果为 6 的奇迹骰子置 入奇迹骰池。
-- **严重损伤**：本单位剩余 1-6 点 W 值时，所有武器的 A 数减半，并且在使用【修会长圣遗物】技能时，只能选 择一个能力
+- **Relics of the Matriarchs**：At the start of the battle round, select up to two of the abilities in the Relics of the Matriarchs section (see left). Until the start of the next battle round, this model has those abilities.
+- **Solemn Procession**：Each time you gain 1 Miracle dice at the start of the battle round, if this model is on the battlefield, do not roll one D6 to determine the value of that Miracle dice; it has a value of 6.
+- **The Fiery Heart (Aura)**：While a friendly <span class="kwb">ADEPTA</span> <span class="kwb">SORORITAS</span> unit is within 6" of this model, add 2" to that unit's Move characteristic and add 1 to Advance and Charge rolls made for that unit.
+- **Censer of the Sacred Rose (Aura)**：While a friendly <span class="kwb">ADEPTA</span> <span class="kwb">SORORITAS</span> unit is within 6" of this model, you can re-roll Battle-shock tests taken for that unit.
+- **Simulacrum of the Ebon Chalice (Aura)**：While a friendly <span class="kwb">ADEPTA</span> <span class="kwb">SORORITAS</span> unit is within 6" of this model, that unit can perform up to two Acts of Faith per phase, instead of only one.
+- **Simulacrum of the Argent Shroud (Aura)**：While a friendly <span class="kwb">ADEPTA</span> <span class="kwb">SORORITAS</span> unit is within 6" of this model, each time a model in that unit makes a ranged attack, re-roll a Wound roll of 1.
+- **Icon of the Valorous Heart (Aura)**：While a friendly <span class="kwb">ADEPTA</span> <span class="kwb">SORORITAS</span> unit is within 6" of this model, models in that unit have the Feel No Pain 6+ ability.
+- **Petals of the Bloody Rose (Aura)**：While a friendly <span class="kwb">ADEPTA</span> <span class="kwb">SORORITAS</span> unit is within 6" of this model, improve the Armour Penetration characteristic of melee weapons equipped by models in that unit by 1.
 
 ## 单位构成
 - **1个模型** — 245 分

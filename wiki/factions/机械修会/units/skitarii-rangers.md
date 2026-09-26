@@ -43,8 +43,9 @@ updated: '2026-09-14'
 | 格斗武器 | 近战 | 1 | 4+ | 3 | 0 | 1 | — |
 
 ## 技能
-- **【阵营技能】：机神律令**
-- **目标肃清**：如果在你的指挥阶段结束时，本单位位于某个你占领的目标点范围内，则即使你在这个目标点范围内已没有你的模型，也算作你占领此目标点，此效果持续到敌方占领此目标点后，任意回合开始或结束时为止
+- **Enhanced data-tether**：Each time you select the bearer’s unit as the target of a Stratagem, roll one D6: on a 5+, you gain 1CP.
+- **Omnispex**：Ranged weapons equipped by models in the bearer’s unit have the [IGNORES COVER] ability.
+- **Objective Scouted**：At the end of your Command phase, if this unit is within range of an objective marker you control, that objective marker remains under your control, even if you have no models within range of it, until your opponent controls it at the start or end of any turn.
 
 ## 单位构成
 - **10个模型** — 85 分

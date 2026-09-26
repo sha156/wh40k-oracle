@@ -1,5 +1,6 @@
 ---
 id: '000000036'
+name_zh: 蛮人战车
 name_en: Warbuggies
 faction: 兽人
 type: unit
@@ -21,7 +22,7 @@ updated: '2026-09-14'
 ## 属性表
 | 模型 | M | T | SV | W | LD | OC |
 |---|---|---|---|---|---|---|
-| Warbuggies | 12" | 6 | 4+ | 6 | 7+ | 2 |
+| 跳跳越野战车 | 12" | 6 | 4+ | 6 | 7+ | 2 |
 
 ### 特殊保护
 - 6+
@@ -35,11 +36,11 @@ updated: '2026-09-14'
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| 带刺轮胎 | 近战 | 3 | 4+ | 6 | 0 | 1 | — |
+| 尖刺撞锤 | 近战 | 3 | 4+ | 6 | 0 | 1 | — |
 
 ## 技能
-- **Outflank**：When this unit arrives from Strategic Reserves, it can be set up within your opponent’s deployment zone (all other restrictions still apply).
-- **SPEED FREEKS**：If a model from your army with the Leader ability can be attached to a [[factions/兽人/units/warbikers.md|Warbikers]] unit, it can be attached to this unit instead.
+- **【阵营技能】:WAAAGH!**
+- **飞驰而过的烈焰**：在您的移动阶段中，您可以选择一个位于该单位6”内，且对其可见的敌方单位（凶兽/载具单位除外）•在该回合结束前，那个敌方单位不能被选择作为警戒射击计谋的目标。
 
 ## 单位构成
 - **1个模型** — 70 分

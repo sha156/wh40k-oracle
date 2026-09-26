@@ -37,8 +37,9 @@ updated: '2026-09-14'
 | 格斗武器 | 近战 | 2 | 3+ | 3 | 0 | 1 | — |
 
 ## 技能
-- **支援武器**：当本单位所在单位受到攻击时，如果本单位中还包含至少一个其他模型，在所有攻击结算前，本模型的 T 值属性为 3
-- **结构崩毁**：当本模型使用次元炮攻击时，你可以重投结果为1 的伤害（D值）骰 ；如果攻击的目标是一个巨型单位，则可以重投所有的伤害（D值）骰
+- **Support Weapon**：Each time an attack targets this model’s unit, if that unit contains one or more other models, until that attack is resolved, this model has a Toughness characteristic of 3.
+- **Structural Collapse**：Each time this model makes an attack with its D-cannon, re-roll a Damage roll of 1. If that attack targets a <span class="kwb">TITANIC</span> unit, you can re-roll the Damage roll instead.
+- **SUPPORT ARTILLERY**：At the start of the Declare Battle Formations step, this model can join one [[factions/艾达灵族/units/guardian-defenders.md|Guardian Defenders]] unit from your army (a unit cannot have more than one Support Weapon model joined to it). This model then counts as part of that <span class="kwb">GUARDIANS</span> unit for the rest of the battle, and that unit’s Starting Strength is increased accordingly.<br><br>This model, and any unit it is joined to, cannot embark within a Transport.
 
 ## 单位构成
 - **1个模型** — 110 分

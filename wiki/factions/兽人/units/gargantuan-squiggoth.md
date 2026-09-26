@@ -21,28 +21,29 @@ updated: '2026-09-14'
 ## 属性表
 | 模型 | M | T | SV | W | LD | OC |
 |---|---|---|---|---|---|---|
-| Gargantuan [[factions/兽人/units/squiggoth.md\|Squiggoth]] | 10" | 13 | 3+ | 30 | 7+ | 12 |
+| 巨型史古戈巨兽 | 10" | 13 | 3+ | 30 | 7+ | 12 |
 
 ## 射击武器
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| 加农炮（破片弹-与穿甲弹二选一） | 36" | D6 | 5+ | 5 | 0 | 1 | [[core-rules/blast.md\|爆炸]] |
-| 加农炮（穿甲弹-与破片弹二选一） | 36" | 1 | 5+ | 9 | -2 | D6 | — |
-| 超级火炮 | 60" | 2D6 | 5+ | 12 | -2 | 3 | [[core-rules/blast.md\|爆炸]] |
+| 咯隆炮-破片弹 | 36" | D6 | 5+ | 5 | 0 | 1 | [[core-rules/blast.md\|爆炸]] |
+| 咯隆炮-穿甲弹 | 36" | 1 | 5+ | 9 | -2 | D6 | — |
+| 超级咯隆炮 | 60" | 2D6 | 5+ | 12 | -2 | 3 | [[core-rules/blast.md\|爆炸]] |
 
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| 巨型獠牙（重击） | 近战 | 6 | 3+ | 14 | -3 | 12 | [[core-rules/lance.md\|骑枪]] |
-| 巨型獠牙（横扫） | 近战 | 18 | 3+ | 9 | -2 | 3 | — |
+| 巨型獠牙-猛击 | 近战 | 6 | 3+ | 14 | -3 | 12 | [[core-rules/lance.md\|骑枪]] |
+| 巨型獠牙-挥砍 | 近战 | 18 | 3+ | 9 | -2 | 3 | — |
 
 ## 技能
-- **Gargantuan**：Each time this model makes a Normal, Advance or Fall Back move, it can move over models (excluding <span class="kwb">TITANIC</span> models) and terrain features that are 4" or less in height as if they were not there.
-- **Walking Bastion**：This model does not suffer the penalty to its Hit rolls for making ranged attacks while enemy units are within Engagement Range of it.
+- **庞然巨物**：每次本模型标准移动、加速移动或撤退时，它可以无视其他非巨型模型和矮于4寸以下的地形
+- **移动堡垒**：本模型射击时不会因为射击接战范围内敌方单位而受到惩罚
+- **严重损伤**：当本模型W值为1-10时，攻击命中结果-1,OC值-6
 
 ## 单位构成
 - **1个模型** — 500 分
 
 ## 关键词
 - **阵营关键词**：Orks
-- **普通关键词**：Monster，[[core-rules/titanic.md|Titanic]]，[[core-rules/transport.md|Transport]]，[[core-rules/towering.md|Towering]]，Gargantuan Squiggoth
+- **普通关键词**：Monster，[[core-rules/titanic.md|Titanic]]，[[core-rules/transport.md|Transport]]，[[core-rules/towering.md|Towering]]，Gargantuan [[factions/兽人/units/squiggoth.md|Squiggoth]]

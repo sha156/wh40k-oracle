@@ -25,6 +25,20 @@ def _make_page(name_zh="火战士队", name_en="Fire Warriors",
     return WikiPage(fm=fm, body=body)
 
 
+def test_units_only_leaves_other_entity_prose_unchanged(tmp_path):
+    units = tmp_path / "factions/tau-empire/units"
+    units.mkdir(parents=True)
+    (units / "fire-warriors.md").write_text(_make_page().to_markdown(), encoding="utf-8")
+    source = _make_page(name_zh="友军小队", name_en="Friend", body="Fire Warriors can help.")
+    (units / "friend.md").write_text(source.to_markdown(), encoding="utf-8")
+    other = tmp_path / "other.md"
+    other.write_text(source.to_markdown(), encoding="utf-8")
+    before = other.read_bytes()
+    changed = inject_all(tmp_path, units_only=True)
+    assert "factions/tau-empire/units/friend.md" in changed
+    assert other.read_bytes() == before
+
+
 class TestLoadLinkTargets:
     def test_scans_pages(self, tmp_path):
         wiki = tmp_path / "wiki"
@@ -259,6 +273,16 @@ class TestInjectionGuards:
         out = inject_wikilinks(page, targets,
                                self_path="factions/兽人/units/ghazghkull.md")
         assert "[[" not in out.body
+
+    @pytest.mark.parametrize("self_path", ["core-rules/sections/12-fight-phase.md",
+                                          "factions/艾达灵族/units/stonesinger.md",
+                                          "factions/兽人/units/warboss.md"])
+    def test_next_turn_prose_is_not_an_ork_stratagem_reference(self, self_path):
+        target = "factions/兽人/stratagems/on-to-da-next.md"
+        explicit = "[[{}|下一个]]".format(target)
+        page = _make_page(body="直到下一个己方回合开始。明确引用：" + explicit)
+        out = inject_wikilinks(page, {"下一个": target}, self_path=self_path)
+        assert out.body == page.body
 
     def test_same_faction_unit_target_injected(self):
         # 负向成对：同阵营单位名照常注入

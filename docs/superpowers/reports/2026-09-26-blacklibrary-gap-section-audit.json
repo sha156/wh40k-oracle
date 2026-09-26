@@ -1,0 +1,25 @@
+{
+  "fresh_gap_recheck": {
+    "inventory": 1171,
+    "targeted": 98,
+    "captured": 0,
+    "missing_english_lookup": 94,
+    "wrong_identity": 4
+  },
+  "fiddler_sessions_observed": 17372,
+  "additional_datasheet_route_observed": false,
+  "nested_army_inventory_gap_records": 39,
+  "nested_gap_records_with_detail": 0,
+  "army_rule_records": 36,
+  "nested_detachments": 271,
+  "nested_detachments_nonempty_content": 0,
+  "powers": 2514,
+  "power_type_counts": {
+    "6": 911,
+    "7": 271,
+    "1": 1332
+  },
+  "rule_document_links": [],
+  "scope": "40K captured public rule endpoints; no claim of complete mini-program/site/AoS/KT coverage",
+  "rule_overlay": "Captured community faction/power text remains separate from official canonical rule bodies."
+}

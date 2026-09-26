@@ -12,7 +12,7 @@ import {
   type FactionRow,
   type UnitRow,
 } from "@/lib/codex";
-import { postSimulate, type SimOptions, type SimResponse } from "@/lib/sim";
+import { parseModelCount, postSimulate, visibleSimulation, type SavedSimulation, type SimOptions } from "@/lib/sim";
 
 const BACKEND_HINT = "数据暂不可用，请稍后重试。";
 function apiError(e: unknown) {
@@ -30,11 +30,11 @@ function useSideUnits(onError: (msg: string) => void) {
     if (!factionId) return;
     const ctrl = new AbortController();
     fetchUnits(factionId, ctrl.signal)
-      .then(setUnits)
+      .then((next) => { if (!ctrl.signal.aborted) setUnits(next); })
       .catch((e) => {
         if ((e as Error).name !== "AbortError") onError(apiError(e));
       })
-      .finally(() => setLoading(false));
+      .finally(() => { if (!ctrl.signal.aborted) setLoading(false); });
     return () => ctrl.abort();
   }, [factionId, onError]);
 
@@ -98,8 +98,11 @@ export default function SimulatorPage() {
 
   const [loadout, setLoadout] = useState<Record<string, number>>({});
   const [defLoadout, setDefLoadout] = useState<Record<string, number>>({});
-  const [resp, setResp] = useState<SimResponse | null>(null);
+  const [savedResponse, setSavedResponse] = useState<SavedSimulation | null>(null);
   const [running, setRunning] = useState(false);
+  const assemblyKey = JSON.stringify([atk.factionId, atk.unit?.id, dfd.factionId, dfd.unit?.id, phase, reverse]);
+  const inputKey = JSON.stringify([assemblyKey, stationary, halfRange, cover, indirect, charge, stealth, fnp, dmgReduction, aModels, dModels, loadout, defLoadout]);
+  const resp = visibleSimulation(savedResponse, inputKey, assemblyKey);
   const simCtrl = useRef<AbortController | null>(null);
   // 卸载时中止在途模拟，避免 post-unmount setState
   useEffect(() => () => simCtrl.current?.abort(), []);
@@ -128,7 +131,7 @@ export default function SimulatorPage() {
   const pickAttacker = (u: UnitRow) => {
     atk.setUnit(u);
     setLoadout({});
-    setResp(null);
+    setSavedResponse(null);
   };
   // 换阶段：攻方装配作废——近战/射击武器池不同，跨阶段沿用会被引擎静默滤成空手 0 伤
   // （守方反打恒为近战，defLoadout 不随攻方阶段变，无需清）
@@ -136,18 +139,18 @@ export default function SimulatorPage() {
     if (p === phase) return;
     setPhase(p);
     setLoadout({});
-    setResp(null);
+    setSavedResponse(null);
   };
   // 换守方单位：结果与守方反打装配都作废（守方武器池是单位私有的）
   const pickDefender = (u: UnitRow) => {
     dfd.setUnit(u);
     setDefLoadout({});
-    setResp(null);
+    setSavedResponse(null);
   };
   // 切守方反打开关：结果作废（报告含义变了）
   const toggleReverse = (v: boolean) => {
     setReverse(v);
-    setResp(null);
+    setSavedResponse(null);
   };
 
   const buildOptions = (): SimOptions => {
@@ -163,10 +166,10 @@ export default function SimulatorPage() {
     }
     if (fnp) opts.fnp = fnp;
     if (dmgReduction) opts.damage_reduction = 1;
-    const am = parseInt(aModels, 10);
-    if (am > 0) opts.attacker_models = am;
-    const dm = parseInt(dModels, 10);
-    if (dm > 0) opts.defender_models = dm;
+    const am = parseModelCount(aModels);
+    if (am != null) opts.attacker_models = am;
+    const dm = parseModelCount(dModels);
+    if (dm != null) opts.defender_models = dm;
     const picked = Object.entries(loadout).filter(([, c]) => c > 0);
     if (picked.length > 0) opts.loadout = picked.map(([w, c]) => [w, c]);
     if (reverse) {
@@ -180,17 +183,22 @@ export default function SimulatorPage() {
 
   const run = () => {
     if (!atk.unit || !dfd.unit || running) return;
+    if (parseModelCount(aModels) === null || parseModelCount(dModels) === null) {
+      setError("模型数须为 1–100 的整数；留空使用默认值。");
+      return;
+    }
     simCtrl.current?.abort(); // 取消上一次在途请求（正常路径下按钮已 disabled，防御性）
     const ctrl = new AbortController();
     simCtrl.current = ctrl;
     setRunning(true);
+    setSavedResponse(null);
     setError(null);
     postSimulate(atk.unit.id, dfd.unit.id, buildOptions(), ctrl.signal)
       .then((r) => {
-        if (!ctrl.signal.aborted) setResp(r);
+        if (!ctrl.signal.aborted) setSavedResponse({ inputKey, assemblyKey, response: r });
       })
       .catch((e) => {
-        if ((e as Error).name === "AbortError") return; // 被取消/卸载，静默
+        if (ctrl.signal.aborted || (e as Error).name === "AbortError") return;
         setError(`模拟失败：${apiError(e)}`);
       })
       .finally(() => {
@@ -211,9 +219,7 @@ export default function SimulatorPage() {
     resp.reason !== "loadout_required" && resp.reason !== "defender_loadout_required";
   // 「全员」一键填件数用的模型数：手填优先，否则取后端返回的最小点数档
   const fillOf = (input: string) => {
-    const n = parseInt(input, 10);
-    if (n > 0) return n;
-    return resp?.modelTiers?.[0]?.models ?? 1;
+    return parseModelCount(input) ?? resp?.modelTiers?.[0]?.models ?? 1;
   };
   const atkLabel = atk.unit ? (atk.unit.nameZh ?? atk.unit.nameEn) : "";
   const dfdLabel = dfd.unit ? (dfd.unit.nameZh ?? dfd.unit.nameEn) : "";
@@ -223,7 +229,7 @@ export default function SimulatorPage() {
       <SiteHeader context="模拟器 · SIMULATOR" active="模拟器" />
       <main className="mx-auto max-w-[1100px] px-5 pt-[22px] pb-20 max-tablet:px-2.5 max-tablet:pt-4">
         {error ? (
-          <p className="mb-4 border border-redfont/40 bg-[#1a0d0d] px-4 py-3 font-mono text-[12.5px] break-all text-[#d99]">
+          <p role="alert" className="mb-4 border border-redfont/40 bg-[#1a0d0d] px-4 py-3 font-mono text-[12.5px] break-all text-[#d99]">
             {error}
           </p>
         ) : null}
@@ -304,6 +310,9 @@ export default function SimulatorPage() {
               <input
                 type="number"
                 min={1}
+                max={100}
+                step={1}
+                aria-invalid={parseModelCount(aModels) === null}
                 value={aModels}
                 onChange={(e) => setAModels(e.target.value)}
                 placeholder="默认"
@@ -315,6 +324,9 @@ export default function SimulatorPage() {
               <input
                 type="number"
                 min={1}
+                max={100}
+                step={1}
+                aria-invalid={parseModelCount(dModels) === null}
                 value={dModels}
                 onChange={(e) => setDModels(e.target.value)}
                 placeholder="默认"

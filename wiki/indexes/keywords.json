@@ -1031,8 +1031,8 @@
    ],
    "engine": "数值建模",
    "rulePage": "core-rules/anti.md",
-   "currentWeapons": 35,
-   "totalWeapons": 38,
+   "currentWeapons": 34,
+   "totalWeapons": 37,
    "currentUnits": 33,
    "totalUnits": 39,
    "weapons": [
@@ -1057,13 +1057,8 @@
     {
      "name": "兽霸动力爪",
      "units": [
+      "兽霸头目",
       "剧痛头目"
-     ]
-    },
-    {
-     "name": "兽霸巨爪",
-     "units": [
-      "兽霸头目"
      ]
     },
     {
@@ -1272,9 +1267,9 @@
    "totalUnits": 1,
    "weapons": [
     {
-     "name": "Song of Waning",
+     "name": "衰败之歌",
      "units": [
-      "Stonesinger"
+      "石歌者"
      ]
     }
    ]
@@ -1298,15 +1293,15 @@
    "totalUnits": 1,
    "weapons": [
     {
-     "name": "Stone Stave",
+     "name": "毒冠喷涎",
      "units": [
-      "Stonesinger"
+      "石歌者"
      ]
     },
     {
-     "name": "Venomcrest Spit",
+     "name": "石杖",
      "units": [
-      "Stonesinger"
+      "石歌者"
      ]
     }
    ]
@@ -1503,8 +1498,8 @@
    ],
    "engine": "数值建模",
    "rulePage": "core-rules/anti.md",
-   "currentWeapons": 67,
-   "totalWeapons": 78,
+   "currentWeapons": 66,
+   "totalWeapons": 77,
    "currentUnits": 77,
    "totalUnits": 141,
    "weapons": [
@@ -1535,13 +1530,8 @@
     {
      "name": "兽霸动力爪",
      "units": [
+      "兽霸头目",
       "剧痛头目"
-     ]
-    },
-    {
-     "name": "兽霸巨爪",
-     "units": [
-      "兽霸头目"
      ]
     },
     {
@@ -1970,17 +1960,11 @@
    "params": [],
    "engine": "仅标注",
    "rulePage": "core-rules/assault.md",
-   "currentWeapons": 155,
-   "totalWeapons": 170,
+   "currentWeapons": 154,
+   "totalWeapons": 169,
    "currentUnits": 162,
    "totalUnits": 215,
    "weapons": [
-    {
-     "name": "Laser Lance",
-     "units": [
-      "Dragon Knights"
-     ]
-    },
     {
      "name": "三刃手里剑",
      "units": [
@@ -2480,7 +2464,8 @@
     {
      "name": "激光骑枪",
      "units": [
-      "闪矛"
+      "闪矛",
+      "龙骑士"
      ]
     },
     {
@@ -3045,8 +3030,8 @@
    ],
    "engine": "数值建模",
    "rulePage": "core-rules/blast.md",
-   "currentWeapons": 277,
-   "totalWeapons": 358,
+   "currentWeapons": 278,
+   "totalWeapons": 359,
    "currentUnits": 305,
    "totalUnits": 563,
    "weapons": [
@@ -3057,22 +3042,10 @@
      ]
     },
     {
-     "name": "Kustom Blasta X - Skorcha",
-     "units": [
-      "Nazdreg"
-     ]
-    },
-    {
      "name": "L7导弹发射器（爆破）",
      "units": [
       "人马座战车",
       "炉心战士"
-     ]
-    },
-    {
-     "name": "Venomcrest Spit",
-     "units": [
-      "Stonesinger"
      ]
     },
     {
@@ -3177,13 +3150,6 @@
      "name": "刃翼导弹–粉碎场导弹",
      "units": [
       "刃翼战机"
-     ]
-    },
-    {
-     "name": "加农炮（破片弹-与穿甲弹二选一）",
-     "units": [
-      "巨型斯奎格兽",
-      "战斗堡垒"
      ]
     },
     {
@@ -3306,11 +3272,16 @@
      ]
     },
     {
+     "name": "咯隆炮-破片弹",
+     "units": [
+      "巨型斯奎格兽",
+      "战斗堡垒"
+     ]
+    },
+    {
      "name": "喇叭枪",
      "units": [
-      "兽霸小子",
-      "恶疤莫兹罗格",
-      "骑乘跳龙的兽霸头目"
+      "兽霸小子"
      ]
     },
     {
@@ -3781,6 +3752,12 @@
      ]
     },
     {
+     "name": "毒冠喷涎",
+     "units": [
+      "石歌者"
+     ]
+    },
+    {
      "name": "毒刃加农炮",
      "units": [
       "毒刃"
@@ -3916,8 +3893,8 @@
     {
      "name": "火箭巢",
      "units": [
-      "Warbuggies",
-      "战履车"
+      "战履车",
+      "蛮人战车"
      ]
     },
     {
@@ -4387,6 +4364,12 @@
      ]
     },
     {
+     "name": "自制X爆枪-烧枪",
+     "units": [
+      "纳兹德雷格"
+     ]
+    },
+    {
      "name": "落锤导弹发射器-破片",
      "units": [
       "落锤堡"
@@ -4507,6 +4490,13 @@
      "name": "邪钢共生炮（毁灭齐射）",
      "units": [
       "泯灭者"
+     ]
+    },
+    {
+     "name": "重击炮",
+     "units": [
+      "恶疤莫兹罗格",
+      "骑乘跳龙的兽霸头目"
      ]
     },
     {
@@ -4939,21 +4929,21 @@
    "totalUnits": 2,
    "weapons": [
     {
-     "name": "Kustom Blasta X",
-     "units": [
-      "Nazdreg"
-     ]
-    },
-    {
-     "name": "Moonchewa",
-     "units": [
-      "Nazdreg"
-     ]
-    },
-    {
      "name": "双手大砍刀",
      "units": [
       "大头目"
+     ]
+    },
+    {
+     "name": "恶月利刃",
+     "units": [
+      "纳兹德雷格"
+     ]
+    },
+    {
+     "name": "自制X爆枪",
+     "units": [
+      "纳兹德雷格"
      ]
     }
    ]
@@ -4976,7 +4966,7 @@
     {
      "name": "爆弹手枪",
      "units": [
-      "Eradicator Squad With Heavy Bolters"
+      "装备重型爆矢枪的根除者小队"
      ]
     },
     {
@@ -5075,7 +5065,7 @@
    "engine": "数值建模",
    "rulePage": "core-rules/devastating-wounds.md",
    "currentWeapons": 218,
-   "totalWeapons": 267,
+   "totalWeapons": 268,
    "currentUnits": 316,
    "totalUnits": 510,
    "weapons": [
@@ -6527,9 +6517,9 @@
    "totalUnits": 1,
    "weapons": [
     {
-     "name": "Long Rifle",
+     "name": "长步枪",
      "units": [
-      "Leystalker"
+      "地脉潜行者"
      ]
     }
    ]
@@ -6549,21 +6539,6 @@
    "currentUnits": 101,
    "totalUnits": 147,
    "weapons": [
-    {
-     "name": "Drakesteed Fangs and Talons",
-     "units": [
-      "Clanblade",
-      "Dragon Knights",
-      "Leystalker",
-      "Stonesinger"
-     ]
-    },
-    {
-     "name": "Kustom Blasta X",
-     "units": [
-      "Nazdreg"
-     ]
-    },
     {
      "name": "“修修”扳手",
      "units": [
@@ -6960,6 +6935,12 @@
      ]
     },
     {
+     "name": "自制X爆枪",
+     "units": [
+      "纳兹德雷格"
+     ]
+    },
+    {
      "name": "蛛皇獠牙",
      "units": [
       "莱凯丝"
@@ -7069,6 +7050,15 @@
       "夏拉希·魔灾",
       "守密者"
      ]
+    },
+    {
+     "name": "龙骥的獠牙与利爪",
+     "units": [
+      "地脉潜行者",
+      "氏族之刃",
+      "石歌者",
+      "龙骑士"
+     ]
     }
    ]
   },
@@ -7110,12 +7100,6 @@
    "currentUnits": 177,
    "totalUnits": 328,
    "weapons": [
-    {
-     "name": "Kustom Blasta X - Gatler",
-     "units": [
-      "Nazdreg"
-     ]
-    },
     {
      "name": "三轴离子加农炮—过载",
      "units": [
@@ -7607,6 +7591,12 @@
      ]
     },
     {
+     "name": "自制X爆枪-加特林",
+     "units": [
+      "纳兹德雷格"
+     ]
+    },
+    {
      "name": "色孽之舞-专注巫火",
      "units": [
       "夏拉希·魔灾"
@@ -7685,14 +7675,14 @@
       "大技霸",
       "死死无畏机甲",
       "死死直升机",
+      "毛哥金刚",
       "超重装大技霸"
      ]
     },
     {
      "name": "魔改米加炮",
      "units": [
-      "屁精技师炮",
-      "毛哥金刚"
+      "屁精技师炮"
      ]
     },
     {
@@ -8423,7 +8413,6 @@
     {
      "name": "重型爆弹枪",
      "units": [
-      "Eradicator Squad With Heavy Bolters",
       "仇天使小队",
       "侦查小队",
       "军团战士",
@@ -8447,7 +8436,8 @@
     {
      "name": "重型爆矢枪",
      "units": [
-      "奴工战斗支队"
+      "奴工战斗支队",
+      "装备重型爆矢枪的根除者小队"
      ]
     },
     {
@@ -10125,17 +10115,11 @@
    "params": [],
    "engine": "数值建模",
    "rulePage": "core-rules/lance.md",
-   "currentWeapons": 37,
-   "totalWeapons": 42,
+   "currentWeapons": 36,
+   "totalWeapons": 41,
    "currentUnits": 38,
    "totalUnits": 50,
    "weapons": [
-    {
-     "name": "Laser Lance",
-     "units": [
-      "Dragon Knights"
-     ]
-    },
     {
      "name": "冲击骑枪（重击）",
      "units": [
@@ -10240,7 +10224,8 @@
     {
      "name": "激光骑枪",
      "units": [
-      "闪矛"
+      "闪矛",
+      "龙骑士"
      ]
     },
     {
@@ -10375,12 +10360,6 @@
    "currentUnits": 116,
    "totalUnits": 164,
    "weapons": [
-    {
-     "name": "Moonblades",
-     "units": [
-      "Clanblade"
-     ]
-    },
     {
      "name": "亚空间冲击-聚焦巫火*",
      "units": [
@@ -10702,6 +10681,12 @@
      "name": "最后的三圣议会武器",
      "units": [
       "斯扎拉克，寂静之王"
+     ]
+    },
+    {
+     "name": "月刃",
+     "units": [
+      "氏族之刃"
      ]
     },
     {
@@ -11226,9 +11211,9 @@
    "totalUnits": 1,
    "weapons": [
     {
-     "name": "Kustom Blasta X - Shoota",
+     "name": "自制X爆枪-射枪",
      "units": [
-      "Nazdreg"
+      "纳兹德雷格"
      ]
     }
    ]
@@ -13123,12 +13108,6 @@
    "totalUnits": 158,
    "weapons": [
     {
-     "name": "Long Rifle",
-     "units": [
-      "Leystalker"
-     ]
-    },
-    {
      "name": "先锋利爪",
      "units": [
       "夺星者哈肯"
@@ -13805,6 +13784,12 @@
      ]
     },
     {
+     "name": "长步枪",
+     "units": [
+      "地脉潜行者"
+     ]
+    },
+    {
      "name": "长距离脉冲步枪",
      "units": [
       "神射手小队"
@@ -13890,18 +13875,6 @@
    "currentUnits": 100,
    "totalUnits": 144,
    "weapons": [
-    {
-     "name": "Song of Waning",
-     "units": [
-      "Stonesinger"
-     ]
-    },
-    {
-     "name": "Stone Stave",
-     "units": [
-      "Stonesinger"
-     ]
-    },
     {
      "name": "亚空间冲击-巫火*",
      "units": [
@@ -14563,6 +14536,12 @@
      ]
     },
     {
+     "name": "石杖",
+     "units": [
+      "石歌者"
+     ]
+    },
+    {
      "name": "破魔银锤",
      "units": [
       "沃尔达斯⼤导师"
@@ -14697,6 +14676,12 @@
      "name": "虚空深渊之恐惧",
      "units": [
       "卡尔塞斯"
+     ]
+    },
+    {
+     "name": "衰败之歌",
+     "units": [
+      "石歌者"
      ]
     },
     {
@@ -14857,20 +14842,6 @@
    "totalUnits": 592,
    "weapons": [
     {
-     "name": "Kustom Blasta X - Shoota",
-     "units": [
-      "Nazdreg"
-     ]
-    },
-    {
-     "name": "Solar Carbine",
-     "units": [
-      "Clanblade",
-      "Dragon Knights",
-      "Stonesinger"
-     ]
-    },
-    {
      "name": "XV脉冲手枪",
      "units": [
       "双枪"
@@ -14937,12 +14908,12 @@
     {
      "name": "双联大突突枪",
      "units": [
-      "Warbuggies",
       "古巨基",
       "战履车",
       "搞哥金刚",
       "毛哥金刚",
-      "燃烧轰炸机"
+      "燃烧轰炸机",
+      "蛮人战车"
      ]
     },
     {
@@ -15326,6 +15297,14 @@
      ]
     },
     {
+     "name": "曜光卡宾枪",
+     "units": [
+      "氏族之刃",
+      "石歌者",
+      "龙骑士"
+     ]
+    },
+    {
      "name": "楷模风暴爆弹枪",
      "units": [
       "楷模机甲"
@@ -15339,7 +15318,7 @@
      ]
     },
     {
-     "name": "死亡风暴超级突突枪",
+     "name": "死亡风暴超级突突枪-瞄准",
      "units": [
       "搞哥金刚"
      ]
@@ -15453,12 +15432,6 @@
      "name": "物质转换逆变器-超载",
      "units": [
       "炼金士评估师"
-     ]
-    },
-    {
-     "name": "特战突突枪",
-     "units": [
-      "特战小子"
      ]
     },
     {
@@ -15718,6 +15691,18 @@
      "name": "脓血大炮",
      "units": [
       "恐虐颅骨之主"
+     ]
+    },
+    {
+     "name": "自制X爆枪-射枪",
+     "units": [
+      "纳兹德雷格"
+     ]
+    },
+    {
+     "name": "自制突突枪",
+     "units": [
+      "特战小子"
      ]
     },
     {
@@ -15992,7 +15977,7 @@
      ]
     },
     {
-     "name": "魔改突突枪",
+     "name": "魔改突突枪-瞄准",
      "units": [
       "超重装大技霸",
       "超重装老大"
@@ -17101,7 +17086,6 @@
     {
      "name": "重型爆弹枪",
      "units": [
-      "Eradicator Squad With Heavy Bolters",
       "不屈型战术机甲",
       "九头蛇高射炮",
       "仇天使小队",
@@ -17151,7 +17135,8 @@
      "name": "重型爆矢枪",
      "units": [
       "奴工战斗支队",
-      "英特兰齐娅·弗雷娅"
+      "英特兰齐娅·弗雷娅",
+      "装备重型爆矢枪的根除者小队"
      ]
     },
     {
@@ -17279,18 +17264,6 @@
    "currentUnits": 272,
    "totalUnits": 508,
    "weapons": [
-    {
-     "name": "Kustom Blasta X - Skorcha",
-     "units": [
-      "Nazdreg"
-     ]
-    },
-    {
-     "name": "Venomcrest Spit",
-     "units": [
-      "Stonesinger"
-     ]
-    },
     {
      "name": "亚空间漩涡（洪流）",
      "units": [
@@ -17745,6 +17718,12 @@
      ]
     },
     {
+     "name": "毒冠喷涎",
+     "units": [
+      "石歌者"
+     ]
+    },
+    {
      "name": "毒焰火矛",
      "units": [
       "邪教徒纵火者"
@@ -18066,6 +18045,12 @@
      ]
     },
     {
+     "name": "自制X爆枪-烧枪",
+     "units": [
+      "纳兹德雷格"
+     ]
+    },
+    {
      "name": "落锤重型喷火器阵列",
      "units": [
       "落锤堡"
@@ -18275,22 +18260,10 @@
    "engine": "数值建模",
    "rulePage": "core-rules/twin-linked.md",
    "currentWeapons": 193,
-   "totalWeapons": 252,
+   "totalWeapons": 253,
    "currentUnits": 240,
    "totalUnits": 503,
    "weapons": [
-    {
-     "name": "Moonblades",
-     "units": [
-      "Clanblade"
-     ]
-    },
-    {
-     "name": "Moonchewa",
-     "units": [
-      "Nazdreg"
-     ]
-    },
     {
      "name": "一对动力拳",
      "units": [
@@ -18462,12 +18435,12 @@
     {
      "name": "双联大突突枪",
      "units": [
-      "Warbuggies",
       "古巨基",
       "战履车",
       "搞哥金刚",
       "毛哥金刚",
-      "燃烧轰炸机"
+      "燃烧轰炸机",
+      "蛮人战车"
      ]
     },
     {
@@ -19139,6 +19112,12 @@
      ]
     },
     {
+     "name": "恶月利刃",
+     "units": [
+      "纳兹德雷格"
+     ]
+    },
+    {
      "name": "悔罪者火焰喷射器",
      "units": [
       "悔罪者机甲"
@@ -19224,6 +19203,12 @@
       "始祖鸟燧火轰炸机",
       "始祖鸟矢量飞梭",
       "蝎式沙丘运输车"
+     ]
+    },
+    {
+     "name": "月刃",
+     "units": [
+      "氏族之刃"
      ]
     },
     {

@@ -37,9 +37,10 @@ updated: '2026-09-14'
 | 战斗刀  | 近战 | 4 | 3+ | 4 | -1 | 1 | [[core-rules/precision.md\|精准]] |
 
 ## 技能
-- **【阵营技能】：破敌重誓**
-- **恐怖突击**：在近战阶段开始时，位于任意数量本能力单位 接战范围内的敌方单位必须以结果-1 惩罚进行一次震慑测试
-- **心理战部队（光环）**：任意数量拥有本技能的单位 3 寸内的敌方单位 OC 值-1（对巨兽和载具无效）
+- **Fearsome Assault**：At the start of the Fight phase, each enemy unit within Engagement Range of one or more units with this ability must take a Battle-shock test, subtracting 1 from that test.
+- **Terror Troops (Aura)**：While an enemy unit (excluding <span class="kwb">MONSTERS</span> and <span class="kwb">VEHICLES</span>) is within 3" of one or more units with this ability, subtract 1 from the Objective Control characteristic of models in that enemy unit.
+- **Grapnel Launcher**：Each time the bearer’s unit makes a Normal, Advance, Fall Back or Charge move, ignore any vertical distance when determining the total distance the bearer can be moved during that move.
+- **Reiver Grav-chute**：The bearer has the Deep Strike ability.
 
 ## 单位构成
 - **5个模型** — 75 分

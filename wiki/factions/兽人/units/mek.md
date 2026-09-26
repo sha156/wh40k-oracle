@@ -21,7 +21,7 @@ updated: '2026-09-14'
 ## 属性表
 | 模型 | M | T | SV | W | LD | OC |
 |---|---|---|---|---|---|---|
-| 小技霸 | 6" | 5 | 5+ | 4 | 7+ | 1 |
+| 技术小子 | 6" | 5 | 5+ | 4 | 7+ | 1 |
 
 ## 射击武器
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
@@ -35,10 +35,8 @@ updated: '2026-09-14'
 | 铁板子 | 近战 | 3 | 3+ | 4 | 0 | 1 | — |
 
 ## 技能
-- **【核心技能】:领袖**：本单位可以作为领袖加入以下单位：●小子●[[factions/兽人/units/lootas.md|拾荒小子]]●技师大炮●[[factions/兽人/units/nobz.md|老大队]]●坦爆小子
-- **【阵营技能】:WAAAGH!**
-- **技师小子**：如果本模型3寸内有至少一个友军兽人载具单位，则本模型获得【独行特工】技能
-- **让俺整整**：在你的移动阶段中，你可以选择本模型3寸内一个友军兽人载具模型，这个载具模型恢复D3点损失的W值，并且直到下个你的移动阶段开始时，这个载具模型攻击命中结果+1。每个模型在每回合中只能被此技能选择一次
+- **Mekboy**：While this model is within 3" of one or more friendly Orks Vehicle units, this model has the Lone Operative ability.
+- **Mekaniak**：At the end of your Movement phase, you can select one friendly Orks Vehicle model within 3" of this model. That <span class="kwb">VEHICLE</span> model regains up to D3 lost wounds, and, until the start of your next Movement phase, each time that <span class="kwb">VEHICLE</span> model makes an attack, add 1 to the Hit roll. Each model can only be selected for this ability once per turn.
 
 ## 单位构成
 - **1个模型** — 45 分

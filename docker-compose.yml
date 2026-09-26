@@ -21,6 +21,10 @@ services:
       # key 只从环境进，永不落镜像层；缺 key 时后端降级但不崩
       DEEPSEEK_API_KEY: ${DEEPSEEK_API_KEY:-}
       WEB_API_LLM_PROVIDER: ${WEB_API_LLM_PROVIDER:-DeepSeek}
+      # Optional runtime egress proxy; independent of dependency build downloads.
+      HTTP_PROXY: ${DOCKER_RUNTIME_PROXY:-}
+      HTTPS_PROXY: ${DOCKER_RUNTIME_PROXY:-}
+      NO_PROXY: localhost,127.0.0.1,api,web
       WEB_API_CORS: ${WEB_API_CORS:-http://localhost:3000,http://127.0.0.1:3000}
       WEB_API_RATE_LIMIT_PER_MIN: ${WEB_API_RATE_LIMIT_PER_MIN:-120}
       WEB_API_HEAVY_RATE_LIMIT_PER_MIN: ${WEB_API_HEAVY_RATE_LIMIT_PER_MIN:-20}

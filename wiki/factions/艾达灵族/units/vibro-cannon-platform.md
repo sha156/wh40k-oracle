@@ -37,8 +37,9 @@ updated: '2026-09-14'
 | 格斗武器 | 近战 | 2 | 3+ | 3 | 0 | 1 | — |
 
 ## 技能
-- **支援武器**：当本单位所在单位受到攻击时，如果本单位中还包含至少一个其他模型，在所有攻击结算前，本模型的 T 值属性为 3
-- **声波毁灭**：在你的射击阶段，当此模型使用其音波炮攻击一个敌方单位时，本阶段内，每个其他以该敌方单位为攻击目标并使用音波炮进行过至少一次攻击的友方音波炮平台模型都会使此次攻击的S、AP和D值属性各+1
+- **Support Weapon**：Each time an attack targets this model’s unit, if that unit contains one or more other models, until that attack is resolved, this model has a Toughness characteristic of 3.
+- **Sonic Destruction**：In your Shooting phase, each time this model makes an attack with its vibro cannon that targets an enemy unit, improve the Strength, Armour Penetration and Damage characteristics of that attack by 1 for each other friendly <span class="kwb">VIBRO</span> <span class="kwb">CANNON</span> <span class="kwb">PLATFORM</span> model that made one or more attacks with its vibro cannon that also targeted that enemy unit this phase.
+- **SUPPORT ARTILLERY**：At the start of the Declare Battle Formations step, this model can join one [[factions/艾达灵族/units/guardian-defenders.md|Guardian Defenders]] unit from your army (a unit cannot have more than one Support Weapon model joined to it). This model then counts as part of that <span class="kwb">GUARDIANS</span> unit for the rest of the battle, and that unit’s Starting Strength is increased accordingly.<br><br>This model, and any unit it is joined to, cannot embark within a Transport.
 
 ## 单位构成
 - **1个模型** — 60 分

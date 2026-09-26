@@ -37,10 +37,11 @@ updated: '2026-09-14'
 | 吸魂之触 | 近战 | 4 | 2+ | 4 | -2 | 2 | [[core-rules/anti.md\|针对灵能者2+]]，[[core-rules/devastating-wounds.md\|毁灭伤害]]，[[core-rules/precision.md\|精准]] |
 
 ## 技能
-- **【阵营技能】：派遣特工**
-- **虚无现身**：在己方移动阶段，当该模型使用深入打击计谋部著在战场上时，该模型可以进行一次虚无现身。如果这样做，该模型可以部署在战场上位于所有敌方模型水平6"外的任意位置，但是在该回合结束前，该模型不能进行冲锋。
-- **可怕憎物**：该模型拥有针对灵能攻击的不觉疼痛2+
-- **无魂恐惧**：每场战斗中您有一次机会，在任意指挥阶段开始时，该模型可以使用该技能。如果这样做，位于该模型9寸内的每个敌方单位必须进行一次战斗震慑测试。并且测试结果减1（如果那个单位是灵能者，则测试结果减2）。
+- **Etheric Emergence**：In your Movement phase, when this model is set up on the battlefield using the Deep Strike ability, it can perform an etheric emergence. If it does, this model can be set up anywhere on the battlefield that is more than 6" horizontally away from all enemy units, but until the end of the turn, it is not eligible to declare a charge.
+- **Abomination**：This model has the Feel No Pain 2+ ability against Psychic Attacks.
+- **Soulless Horror**：Once per battle, at the start of any Command phase, this model can use this ability. If it does, each enemy unit within 9" of this model must take a Battle-shock test, subtracting 1 from that test (or subtracting 2 if that unit is a <span class="kwb">PSYKER</span>).
+- **Psychic Assassin**：Each time you select a <span class="kwb">PSYKER</span> unit as the target for this weapon, until those attacks are resolved, change the Attacks characteristic of this weapon to 6.
+- **SHADOW ASSIGNMENT**：This model cannot be selected to be your <span class="kwb">WARLORD</span>.<br><br>If your army faction is <span class="kwb">AGENTS</span> <span class="kwb2">OF</span> <span class="kwb2">THE</span> <span class="kwb">IMPERIUM</span>, then during the Declare Battle Formations step, you can replace this model with a different OFFICIO ASSASSINORUM model, provided the total points value of the new model does not exceed the points value of the model it replaced. Your army cannot include duplicates of the same model (i.e. after replacing a model with this rule, your army cannot have more than 1 VINDICARE ASSASSIN, it cannot have more than 1 CUlExUS ASSASSIN, it cannot have more than 1 EvERSOR ASSASSIN and it cannot have more than 1 CAllIDUS ASSASSIN).
 
 ## 单位构成
 - **1个模型** — 85 分

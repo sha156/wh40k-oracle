@@ -40,8 +40,12 @@ updated: '2026-09-14'
 | 锋刃翼和猎杀锁链 | 近战 | D3+3 | 4+ | 6 | -1 | 1 | — |
 
 ## 技能
-- **【阵营技能】：痛苦之力**：毒品挂架[苦痛]:在您的射击阶段，当您选择该模型进行射击时，您可以花费1枚苦痛标识来强化该模型。在该模型处于强化状态时，如果该模型搭乘有一个或更多单位，每次该模型使用一个拥有[针对]技能的远程武器进行攻击时，您可以重掷命中掷骰。
-- **黑暗之城的先锋**：黑暗之城先锋：在您的指挥阶段开始时，从“黑暗之城先锋”部分选择一项技能。直到您的[[factions/兽人/stratagems/on-to-da-next.md|下一个]]指挥阶段开始，该模型拥有该技能黑暗之城先锋■暗穹主宰：在您的指挥阶段结束时，如果该模型处在您控制的一个目标标记的范围内，并且搭乘有一个或更多[[factions/黑暗灵族/units/kabalite-warriors.md|阴谋团战士]]单位，则该目标标记将持续由您控制，直到您的对手对该目标标记的控制等级在某一阶段结束时高于您的控制等级为止。■杀戮极速：每次一个巫灵单位从该模型上脱离时(不包括紧急脱离),该巫灵单位中的模型可以完全部署在该模型6范围内。■屠杀幻象：当该模型搭乘有一个或更多[[factions/黑暗灵族/units/wracks.md|凌虐者]]单位时，每搭乘有一个凌虐者模型，该模型的刃翼与链网的攻击次数属性就增加1点.■以太航帆：当该模型搭乘有一个或更多黑暗灵族单位时，您可以重投为该模型进行的突进进和冲锋掷骰。
+- **Splinter Racks (Pain)**：In your Shooting phase, when you select this model to shoot, you can spend 1 Pain token to Empower this model. While Empowered, if one or more units are embarked within this model, each time this model makes an attack with a ranged weapon that has the [ANTI] ability, you can re-roll the Hit roll.
+- **Vanguard of the Dark City**：At the start of your Command phase, select one of the abilities in the Vanguard of the Dark City section (see above) for this model. Until the start of your next Command phase, this model has that ability.
+- **Masters of the Shadowed Sky**：At the end of your Command phase, if this model is within range of an objective marker you control, and if one or more [[factions/黑暗灵族/units/kabalite-warriors.md|Kabalite Warriors]] units are embarked within it, that objective marker remains under your control until your opponent’s Level of Control over that objective marker is greater than yours at the end of a phase.
+- **Speed of the Kill**：Each time a [[factions/黑暗灵族/units/wyches.md|Wyches]] unit disembarks from this model (excluding Emergency Disembarkations), models in that <span class="kwb">WYCHES</span> unit must be set up wholly within 6" of this model.
+- **Visions of Butchery**：While one or more [[factions/黑暗灵族/units/wracks.md|Wracks]] units are embarked within this model, for each <span class="kwb">WRACKS</span> model embarked within this model, add 1 to the Attacks characteristic of this model’s bladevanes and chainsnares.
+- **Aethersails**：While one or more Drukhari units are embarked within this model, you can re-roll Advance and Charge rolls made for this model.
 
 ## 单位构成
 - **1个模型** — 75 分

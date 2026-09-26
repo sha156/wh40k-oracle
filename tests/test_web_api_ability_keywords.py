@@ -47,8 +47,12 @@ needs_assets = pytest.mark.skipif(
 # 在上一轮就已入库（HEAD 的 wiki 页里能查到这两个中文名，其余 6 个查不到）。
 # units 无中文层 586→580、空 abilities_json 仍是 16（没有新增空行），三个数自洽。
 # 复现路径与钉死用例见 tests/test_db_compile_zh_coverage.py::TestZhNameBridgeIsReproducible。
-EXPECTED_ZH_ITEMS = 3296        # unit_zh_detail 里的技能条目总数
-EXPECTED_ZH_KW_SPANS = 188      # 其中切出的词条段（中文【】写法）
+# 2026-09-26 verified snapshot import: +39 items on 15 added detail rows,
+# +14 net items on existing rows = 3349. Source wording changes move recognised
+# keyword spans 188 -> 184; the unchanged parser still reconstructs every text.
+# Per-unit reconciliation: reports/2026-09-26-blacklibrary-ability-reconciliation.json.
+EXPECTED_ZH_ITEMS = 3349        # unit_zh_detail 里的技能条目总数
+EXPECTED_ZH_KW_SPANS = 184      # 其中切出的词条段（中文【】写法）
 EXPECTED_EN_ROWS = 4041         # abilities 表行数
 EXPECTED_EN_KW_SPANS = 445      # 其中切出的词条段（英文 [] 写法；kwb 里全是阵营关键词，
                                 # 一条都不该在这里）

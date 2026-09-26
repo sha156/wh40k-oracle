@@ -73,7 +73,12 @@ def unit_cost(points_json: Optional[str], models: int) -> Optional[int]:
     return _tiers_from_points_json(points_json).get(models)
 
 
-def _official_cost(rows, models, occurrence, loadout):
+def _weapon_base(name):
+    # Firing profiles refer to the same purchased weapon.
+    return re.split(r"\s+[-–]\s+", name.strip(), maxsplit=1)[0].casefold()
+
+
+def _official_cost(rows, models, occurrence, loadout, weapon_names=()):
     from db_compile.point_tiers import model_count, tier_applies
     try:
         applicable = [r for r in rows if tier_applies(r["tier"], occurrence)]
@@ -82,14 +87,18 @@ def _official_cost(rows, models, occurrence, loadout):
     costs = {r["cost"] for r in applicable if model_count(r["models"]) == models}
     if len(costs) != 1:
         return None
-    surcharges = {r["models"][4:].casefold(): r["cost"] for r in applicable
+    surcharges = {_weapon_base(r["models"][4:]): r["cost"] for r in applicable
                   if r["models"].casefold().startswith("per ")}
     if surcharges and not loadout:
         return None  # Weapon choices now affect MFM prices; do not assume free equipment.
     cost = costs.pop()
+    known_weapons = {_weapon_base(name) for name in weapon_names}
     for name, count in loadout:
-        # A firing profile suffix does not create a different purchased weapon.
-        base = re.split(r"\s+[-–]\s+", name, maxsplit=1)[0].casefold()
+        if not isinstance(name, str) or type(count) is not int or count <= 0:
+            return None
+        base = _weapon_base(name)
+        if surcharges and base not in surcharges and base not in known_weapons:
+            return None  # Unknown equipment is not evidence of a free option.
         cost += surcharges.get(base, 0) * count
     # Optional extra-model packages need an explicit composition selector.
     if any(r["models"].startswith("+") for r in applicable):
@@ -139,8 +148,15 @@ def recompute(db_path, roster: Roster) -> Roster:
                               if _norm_unit(r[0]) == _norm_unit(name_row[0])]
                 primary = [r for r in candidates if r[4] in ("UNITS", "FORTIFICATIONS")]
                 rows = [{"tier": r[1], "models": r[2], "cost": r[3]} for r in (primary or candidates)] or rows
+            weapon_names = ()
+            if u.loadout and any(r["models"].casefold().startswith("per ") for r in rows):
+                if conn.execute("SELECT 1 FROM sqlite_master WHERE name='weapons'").fetchone():
+                    weapon_names = tuple(name for (name,) in conn.execute(
+                        "SELECT name_en FROM weapons WHERE unit_id=?", (u.canonical_id,))
+                        if isinstance(name, str))
             price = None if source.get("current") is False else (
-                _official_cost(rows, u.models, counts[identity], u.loadout) if rows else unit_cost(pj, u.models))
+                _official_cost(rows, u.models, counts[identity], u.loadout, weapon_names)
+                if rows else unit_cost(pj, u.models))
             new_units.append(replace(u, points=price))
     finally:
         conn.close()

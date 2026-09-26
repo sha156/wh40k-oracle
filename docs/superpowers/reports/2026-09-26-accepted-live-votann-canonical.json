@@ -1,0 +1,645 @@
+{
+  "question": "Hearthkyn Warriors（炉心战士）的当前点数和兵牌技能是什么？请区分官方数值与黑图书馆中文资料。",
+  "status": 200,
+  "elapsed_seconds": 11.469,
+  "answer": {
+    "summary": "检索 2 步 · 引用 4 条",
+    "trace": [
+      {
+        "fn": "get_datasheet",
+        "args": "('炉心战士')",
+        "result": "已命中",
+        "status": "ok",
+        "note": null
+      },
+      {
+        "fn": "get_entity",
+        "args": "('炉心战士')",
+        "result": "已命中",
+        "status": "ok",
+        "note": null
+      }
+    ],
+    "traceWarn": null,
+    "verdict": {
+      "label": "规则如下",
+      "labelEn": "Ruling",
+      "lede": [
+        {
+          "t": "text",
+          "s": "炉心战士（Hearthkyn Warriors）当前点数："
+        },
+        {
+          "t": "num",
+          "s": "10"
+        },
+        {
+          "t": "text",
+          "s": " 模型 "
+        },
+        {
+          "t": "strong",
+          "s": "90 分"
+        },
+        {
+          "t": "text",
+          "s": "（灰暗联盟 / Leagues of Votann，MFM 官方点数，"
+        },
+        {
+          "t": "num",
+          "s": "2026"
+        },
+        {
+          "t": "num",
+          "s": "-09"
+        },
+        {
+          "t": "num",
+          "s": "-14"
+        },
+        {
+          "t": "text",
+          "s": " 版本）"
+        },
+        {
+          "t": "cite",
+          "n": 3
+        },
+        {
+          "t": "cite",
+          "n": 4
+        },
+        {
+          "t": "text",
+          "s": "。兵牌技能与属性来自结构库兵牌 "
+        },
+        {
+          "t": "cite",
+          "n": 1
+        },
+        {
+          "t": "cite",
+          "n": 2
+        },
+        {
+          "t": "text",
+          "s": "。"
+        }
+      ]
+    },
+    "calc": [
+      {
+        "n": 1,
+        "text": [
+          {
+            "t": "strong",
+            "s": "兵牌技能（结构库兵牌）[1][2]："
+          },
+          {
+            "t": "text",
+            "s": "\n- "
+          },
+          {
+            "t": "strong",
+            "s": "阵营：效率为先"
+          },
+          {
+            "t": "text",
+            "s": "（灰暗联盟军队规则）\n- "
+          },
+          {
+            "t": "strong",
+            "s": "幸者得，需者持，劳者享。"
+          },
+          {
+            "t": "text",
+            "s": "：己方指挥阶段结束时，若该单位位于一个你控制的目标标记范围内，该目标标记保持被你控制，直到某阶段结束时对手对该目标的控制等级大于你。\n- "
+          },
+          {
+            "t": "strong",
+            "s": "全光谱扫描仪"
+          },
+          {
+            "t": "text",
+            "s": "：该单位模型进行远程攻击时，重掷结果为 "
+          },
+          {
+            "t": "num",
+            "s": "1"
+          },
+          {
+            "t": "text",
+            "s": " 的命中掷骰。\n- "
+          },
+          {
+            "t": "strong",
+            "s": "【装备技能】织盾符冠"
+          },
+          {
+            "t": "text",
+            "s": "：持有者所属单位模型获得 "
+          },
+          {
+            "t": "num",
+            "s": "5+"
+          },
+          {
+            "t": "text",
+            "s": " 无敌豁免。"
+          }
+        ]
+      },
+      {
+        "n": 2,
+        "text": [
+          {
+            "t": "strong",
+            "s": "属性（10 模型）[1]："
+          },
+          {
+            "t": "text",
+            "s": " M "
+          },
+          {
+            "t": "num",
+            "s": "5"
+          },
+          {
+            "t": "text",
+            "s": "\" / T "
+          },
+          {
+            "t": "num",
+            "s": "5"
+          },
+          {
+            "t": "text",
+            "s": " / Sv "
+          },
+          {
+            "t": "num",
+            "s": "4+"
+          },
+          {
+            "t": "text",
+            "s": " / W "
+          },
+          {
+            "t": "num",
+            "s": "1"
+          },
+          {
+            "t": "text",
+            "s": " / Ld "
+          },
+          {
+            "t": "num",
+            "s": "7+"
+          },
+          {
+            "t": "text",
+            "s": " / OC "
+          },
+          {
+            "t": "num",
+            "s": "2"
+          },
+          {
+            "t": "text",
+            "s": "；关键词含 Battleline、Infantry、Grenades。"
+          }
+        ]
+      },
+      {
+        "n": 3,
+        "text": [
+          {
+            "t": "strong",
+            "s": "关于「官方数值 vs 黑图书馆中文资料」："
+          },
+          {
+            "t": "text",
+            "s": " 本次工具返回的数值与技能均来自结构库兵牌（英文权威真值 + 中文别名层），点数来自 MFM 官方点数 "
+          },
+          {
+            "t": "cite",
+            "n": 3
+          },
+          {
+            "t": "cite",
+            "n": 4
+          },
+          {
+            "t": "text",
+            "s": "；黑图书馆中文资料（中文规则书/中文兵牌）本次未单独取回原文，因此无法逐条对照其译名或数值差异。若需核对黑图书馆中文版的具体表述，建议查阅原始中文规则书。"
+          }
+        ]
+      }
+    ],
+    "entityCard": {
+      "nameZh": "炉心战士",
+      "nameEn": "Hearthkyn Warriors",
+      "pts": "90",
+      "role": "Battleline",
+      "stats": [
+        {
+          "lab": "M",
+          "val": "5\""
+        },
+        {
+          "lab": "T",
+          "val": "5"
+        },
+        {
+          "lab": "SV",
+          "val": "4+"
+        },
+        {
+          "lab": "W",
+          "val": "1"
+        },
+        {
+          "lab": "LD",
+          "val": "7+"
+        },
+        {
+          "lab": "OC",
+          "val": "2"
+        }
+      ],
+      "invuln": null,
+      "ranged": [
+        {
+          "name": "基岩型爆矢手枪",
+          "kw": [
+            {
+              "text": "手枪",
+              "slug": "pistol",
+              "base": "PISTOL",
+              "nameZh": "手枪",
+              "brief": "手枪可以被用于进行零距离射击。\n[手枪]和[近距离]在所有规则中都被视为同一个规则。具体请参见[近距离]。\n设计师注：[手枪]是一个预先存在的技能，它将随着这次《战锤 40000》版本的发展被 [近距离]技能替代。这两个技能的功能相同，但是后者更适合用于对这种类型的武器进行统称。",
+              "section": "24.27",
+              "ruleSlug": "24-core-abilities",
+              "group": "transitional"
+            }
+          ],
+          "range": "12\"",
+          "a": "1",
+          "skill": "4+",
+          "s": "4",
+          "ap": "0",
+          "d": "1",
+          "hot": false
+        },
+        {
+          "name": "炉心头领手枪",
+          "kw": [
+            {
+              "text": "手枪",
+              "slug": "pistol",
+              "base": "PISTOL",
+              "nameZh": "手枪",
+              "brief": "手枪可以被用于进行零距离射击。\n[手枪]和[近距离]在所有规则中都被视为同一个规则。具体请参见[近距离]。\n设计师注：[手枪]是一个预先存在的技能，它将随着这次《战锤 40000》版本的发展被 [近距离]技能替代。这两个技能的功能相同，但是后者更适合用于对这种类型的武器进行统称。",
+              "section": "24.27",
+              "ruleSlug": "24-core-abilities",
+              "group": "transitional"
+            }
+          ],
+          "range": "12\"",
+          "a": "1",
+          "skill": "4+",
+          "s": "8",
+          "ap": "-2",
+          "d": "1",
+          "hot": false
+        },
+        {
+          "name": "基岩型爆矢枪",
+          "kw": [],
+          "range": "24\"",
+          "a": "2",
+          "skill": "4+",
+          "s": "4",
+          "ap": "0",
+          "d": "1",
+          "hot": false
+        },
+        {
+          "name": "艾塔-卡恩等离子光束枪",
+          "kw": [
+            {
+              "text": "连击D3",
+              "slug": "sustained-hits",
+              "base": "SUSTAINED HITS",
+              "nameZh": "连击",
+              "brief": "一些武器能够进行持续不断的攻击，用毫无止息的攻势将敌人撕成碎片。\n这类技能总是会以[连击 X]的形式进行表示。每次使用[连击]武器进行的攻击造成暴击命中时，那次攻击将造成 X 数量的额外命中。\n示例：一次使用 [连击 2]武器进行的攻击造成了一次暴击命中。因此那次攻击将对目标造成总共三次命中（一次来自暴击命中，另外两次来自 [连击 2]技能)。",
+              "section": "24.36",
+              "ruleSlug": "24-core-abilities",
+              "group": "universal"
+            }
+          ],
+          "range": "18\"",
+          "a": "1",
+          "skill": "4+",
+          "s": "8",
+          "ap": "-3",
+          "d": "2",
+          "hot": false
+        },
+        {
+          "name": "高能激光自动步枪",
+          "kw": [
+            {
+              "text": "突击",
+              "slug": "assault",
+              "base": "ASSAULT",
+              "nameZh": "突击",
+              "brief": "折叠枪托、短枪管或者轻型结构让一些武器能够在移动的同时进行稳定射击。包含了一个或更多拥有[突击]武器的模型的单位可以进行突击射击（10.05)。",
+              "section": "24.04",
+              "ruleSlug": "24-core-abilities",
+              "group": "universal"
+            },
+            {
+              "text": "速射3",
+              "slug": "rapid-fire",
+              "base": "RAPID FIRE",
+              "nameZh": "速射",
+              "brief": "速射武器能够进行精准的远程射击，也可以对附近的目标进行连射。\n这技能总是会以[速射 X]的形式出现。每当您为一件[速射]武器收集攻击骰时，在选择目标步骤中，如果目标单位位于武器攻击范围的一半以内，那么收集 X 数量的额外攻击骰。\n示例：如果使用一件 A 属性为 1 的[速射 1]武器对一个位于武器攻击范围一半以内的单位进行攻击，那么您将为那件武器收集额外一枚攻击骰（总共收集两枚)。",
+              "section": "24.30",
+              "ruleSlug": "24-core-abilities",
+              "group": "universal"
+            }
+          ],
+          "range": "24\"",
+          "a": "3",
+          "skill": "4+",
+          "s": "6",
+          "ap": "-1",
+          "d": "1",
+          "hot": false
+        },
+        {
+          "name": "高能激光转轮炮",
+          "kw": [
+            {
+              "text": "重型",
+              "slug": "heavy",
+              "base": "HEAVY",
+              "nameZh": "重型",
+              "brief": "重型武器是战场上最为庞大的枪炮，但是需要进行稳定才能达到最高效率。\n在己方射击阶段中，每次使用[重型]武器进行攻击时，如果攻击单位满足以下所有条件，那么命中掷骰的结果增加 1 点：\n那个单位不处于交战状态。\n那个单位不是在本回合中被部署至战场的。\n在本回合中，那个单位中没有模型移动超过 3\"。",
+              "section": "24.16",
+              "ruleSlug": "24-core-abilities",
+              "group": "universal"
+            },
+            {
+              "text": "连击1",
+              "slug": "sustained-hits",
+              "base": "SUSTAINED HITS",
+              "nameZh": "连击",
+              "brief": "一些武器能够进行持续不断的攻击，用毫无止息的攻势将敌人撕成碎片。\n这类技能总是会以[连击 X]的形式进行表示。每次使用[连击]武器进行的攻击造成暴击命中时，那次攻击将造成 X 数量的额外命中。\n示例：一次使用 [连击 2]武器进行的攻击造成了一次暴击命中。因此那次攻击将对目标造成总共三次命中（一次来自暴击命中，另外两次来自 [连击 2]技能)。",
+              "section": "24.36",
+              "ruleSlug": "24-core-abilities",
+              "group": "universal"
+            }
+          ],
+          "range": "24\"",
+          "a": "6",
+          "skill": "5+",
+          "s": "6",
+          "ap": "-1",
+          "d": "1",
+          "hot": false
+        },
+        {
+          "name": "离子爆裂枪",
+          "kw": [],
+          "range": "18\"",
+          "a": "1",
+          "skill": "4+",
+          "s": "5",
+          "ap": "-2",
+          "d": "1",
+          "hot": false
+        },
+        {
+          "name": "L7导弹发射器（爆破）",
+          "kw": [
+            {
+              "text": "爆炸",
+              "slug": "blast",
+              "base": "BLAST",
+              "nameZh": "爆炸",
+              "brief": "一发高爆弹药能够瞬间解决多名敌人，但是在周边存在友军时使用这类武器并不明智。\n每当您为一件[爆炸]武器收集攻击骰时，在选择目标步骤中，目标单位每存在五个模型，便添加额外一枚攻击骰（向下取整)。\n如果本技能以[爆炸 X]的形式表示，则每当您为这样的武器收集攻击骰时，在选择目标步骤中，目标单位每存在五个模型（向下取整)，就额外添加 X 数量的额外攻击骰。\n示例：如果一件 A 属性为 3 的 [爆炸2]武器对包含了 12 个模型的单位进行攻击，那么您将为那件武器收集额外四枚攻击骰（总共七枚)。",
+              "section": "24.05",
+              "ruleSlug": "24-core-abilities",
+              "group": "universal"
+            }
+          ],
+          "range": "24\"",
+          "a": "D6",
+          "skill": "4+",
+          "s": "4",
+          "ap": "0",
+          "d": "1",
+          "hot": false
+        },
+        {
+          "name": "L7导弹发射器（聚焦）",
+          "kw": [],
+          "range": "24\"",
+          "a": "1",
+          "skill": "4+",
+          "s": "9",
+          "ap": "-2",
+          "d": "D6",
+          "hot": false
+        },
+        {
+          "name": "磁轨步枪",
+          "kw": [
+            {
+              "text": "毁灭伤害",
+              "slug": "devastating-wounds",
+              "base": "DEVASTATING WOUNDS",
+              "nameZh": "毁灭伤害",
+              "brief": "最为强大的武器能够轻松击穿装甲并击杀多个敌人。\n每次使用一件[毁灭伤害]武器进行攻击时，如果攻击造成了暴击致伤，那么那次攻击流程结束，目标单位受到相当于那件武器 D 属性数量的致命伤。这些伤害将在武器攻击造成的普通伤害之后进行结算。\n[毁灭伤害]武器每一次通过暴击致伤所造成的致命伤最多只能对一个模型造成伤害；那一次攻击造成的任何剩余的致命伤将被舍弃。\n示例：一次使用[毁灭伤害]武器进行的攻击造成了一次暴击致伤，武器的 D 属性为 3，因此对仲裁者小队造成 3 处致命伤。前 2 处致命伤足够将 1 个仲裁者模型摧毁，因此剩余的一点致命伤被舍弃。",
+              "section": "24.10",
+              "ruleSlug": "24-core-abilities",
+              "group": "universal"
+            },
+            {
+              "text": "重型",
+              "slug": "heavy",
+              "base": "HEAVY",
+              "nameZh": "重型",
+              "brief": "重型武器是战场上最为庞大的枪炮，但是需要进行稳定才能达到最高效率。\n在己方射击阶段中，每次使用[重型]武器进行攻击时，如果攻击单位满足以下所有条件，那么命中掷骰的结果增加 1 点：\n那个单位不处于交战状态。\n那个单位不是在本回合中被部署至战场的。\n在本回合中，那个单位中没有模型移动超过 3\"。",
+              "section": "24.16",
+              "ruleSlug": "24-core-abilities",
+              "group": "universal"
+            }
+          ],
+          "range": "18\"",
+          "a": "1",
+          "skill": "5+",
+          "s": "12",
+          "ap": "-3",
+          "d": "D3+3",
+          "hot": false
+        }
+      ],
+      "melee": [
+        {
+          "name": "格斗武器",
+          "kw": [],
+          "range": "近战",
+          "a": "1",
+          "skill": "4+",
+          "s": "4",
+          "ap": "0",
+          "d": "1",
+          "hot": false
+        },
+        {
+          "name": "等离子匕首",
+          "kw": [],
+          "range": "近战",
+          "a": "2",
+          "skill": "4+",
+          "s": "4",
+          "ap": "-2",
+          "d": "1",
+          "hot": false
+        },
+        {
+          "name": "炉心头领近战武器",
+          "kw": [],
+          "range": "近战",
+          "a": "2",
+          "skill": "4+",
+          "s": "5",
+          "ap": "-2",
+          "d": "2",
+          "hot": false
+        }
+      ],
+      "abilities": [
+        {
+          "tag": null,
+          "name": "阵营:效率为先",
+          "text": null,
+          "rich": []
+        },
+        {
+          "tag": null,
+          "name": "幸者得，需者持，劳者享。",
+          "text": "己方指挥阶段结束时。如果该单位位于一个您控制的目标标记范围内，那么那个目标标记将保持被您控制的状态，直到在一个阶段结束时，对手对那个目标标记的控制等级大于您的控制等级。",
+          "rich": [
+            {
+              "t": "text",
+              "s": "己方指挥阶段结束时。如果该单位位于一个您控制的目标标记范围内，那么那个目标标记将保持被您控制的状态，直到在一个阶段结束时，对手对那个目标标记的控制等级大于您的控制等级。"
+            }
+          ]
+        },
+        {
+          "tag": null,
+          "name": "全光谱扫描仪",
+          "text": "每当该单位中的模型进行远程攻击时，重掷结果为1的命中掷骰。",
+          "rich": [
+            {
+              "t": "text",
+              "s": "每当该单位中的模型进行远程攻击时，重掷结果为1的命中掷骰。"
+            }
+          ]
+        },
+        {
+          "tag": "装备技能",
+          "name": "织盾符冠",
+          "text": "持有者所属单位中的模型拥有5+无敌豁免。",
+          "rich": [
+            {
+              "t": "text",
+              "s": "持有者所属单位中的模型拥有5+无敌豁免。"
+            }
+          ]
+        }
+      ],
+      "loadout": "The Theyn is equipped with: 基岩型爆矢手枪；基岩型爆矢枪；格斗武器；weavefield crest.Every Hearthkyn Warrior is equipped with: 基岩型爆矢手枪；基岩型爆矢枪；格斗武器。",
+      "damaged": null,
+      "leads": null,
+      "composition": [
+        [
+          {
+            "t": "num",
+            "s": "1"
+          },
+          {
+            "t": "text",
+            "s": "炉心头领"
+          }
+        ],
+        [
+          {
+            "t": "num",
+            "s": "9"
+          },
+          {
+            "t": "text",
+            "s": "炉心战士"
+          }
+        ]
+      ],
+      "keywords": "Grenades，Battleline，Infantry，Hearthkyn Warriors",
+      "factionKeywords": "Leagues of Votann",
+      "legend": null,
+      "faction": "阵营: Leagues of Votann",
+      "src": "L3 结构库 · Leagues of Votann",
+      "wiki": "factions/leagues-of-votann/units/hearthkyn-warriors"
+    },
+    "cites": [
+      {
+        "n": 1,
+        "book": "L3 结构库 · Leagues of Votann",
+        "page": null,
+        "section": "属性块",
+        "term": "Hearthkyn Warriors",
+        "wiki": "",
+        "url": null
+      },
+      {
+        "n": 2,
+        "book": "L3 结构库 · 灰暗联盟",
+        "page": null,
+        "section": "合并兵牌",
+        "term": "Hearthkyn Warriors",
+        "wiki": "",
+        "url": null
+      },
+      {
+        "n": 3,
+        "book": "Munitorum Field Manual",
+        "page": null,
+        "section": "官方当前点数",
+        "term": null,
+        "wiki": "",
+        "url": "https://mfm.warhammer-community.com"
+      },
+      {
+        "n": 4,
+        "book": "官方结构库 db/wh40k.sqlite（Wahapedia 11版镜像 + MFM 官方点数）",
+        "page": null,
+        "section": null,
+        "term": null,
+        "wiki": "",
+        "url": null
+      }
+    ],
+    "sensitivity": null,
+    "cta": null,
+    "followups": [
+      "炉心战士的武器选项和对应点数是多少？",
+      "灰暗联盟军队规则「效率为先」具体怎么生效？",
+      "织盾符冠这件装备谁能携带？"
+    ],
+    "degraded": false
+  }
+}

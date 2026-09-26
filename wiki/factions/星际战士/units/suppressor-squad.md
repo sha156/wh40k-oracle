@@ -35,8 +35,7 @@ updated: '2026-09-14'
 | 格斗武器   | 近战 | 3 | 3+ | 4 | 0 | 1 | — |
 
 ## 技能
-- **【阵营技能】：破敌重誓**
-- **压制火力**：在你的射击阶段中，当本单位射击完成后， 你可以选择被本单位使用加速自动炮命中过的一个敌方单位。直到下个你的回合开始时，只要本单位在场，那个敌方单位就视为被压制状态：那个单位中的模型攻击命中结果-1
+- **Suppression Fire**：In your Shooting phase, after this unit has shot, select one enemy unit hit by one or more of those attacks made with an accelerator autocannon. Until the start of your next turn, while this unit is on the battlefield, that enemy unit is suppressed. While a unit is suppressed, each time a model in that unit makes an attack, subtract 1 from the Hit roll.
 
 ## 单位构成
 - **3个模型** — 85 分
