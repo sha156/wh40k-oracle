@@ -40,13 +40,15 @@ updated: '2026-09-14'
 | 格斗武器 | 近战 | 1 | 4+ | 3 | 0 | 1 | — |
 
 ## 技能
-- **【阵营技能】：圣堂誓言**
-- **虔诚祷言**：当格瑞马都斯牧师领导一个单位时，该单位中的模型可以重投近战攻击命中骰。
-- **圣殿遗物**：你的指挥阶段开始时，如果该单位中包含至少一个圣物奴工模型，则从以下技能中选择一项，直到你的下个指挥阶段开始时 ，格瑞马都斯牧师模型获得该技能：◼ 失落十字军之旗：本单位的冲锋骰与加速骰结果+1。◼ 失落圣殿之骸：本单位中的模型T+1。◼ 受膏圣祝：本单位中的模型近战武器AP+1。
+- **Litanies of the Devout**：While this unit is leading a unit and contains a [[factions/星际战士/units/chaplain.md|Chaplain]] Grimaldus model, each time a model in that unit makes a melee attack, you can re-roll the Hit roll.
+- **Temple Relics**：In your Command phase, if this unit contains one or more Cenobyte Servitor models, select one Temple Relics ability (see left). Until the start of your next Command phase, this unit’s Chaplain Grimaldus model has that ability.
+- **Banner of the Emperor Victorious**：Add 1 to Advance and Charge rolls made for this unit.
+- **Column from the Major Altar**：Add 1 to the Toughness characteristic of models in this unit.
+- **Water from the Stoup of Elucidation**：Improve the Armour Penetration characteristic of melee weapons equipped by models in this unit by 1.
 
 ## 单位构成
 - **4个模型** — 100 分
 
 ## 关键词
 - **阵营关键词**：Black Templars，Adeptus Astartes
-- **普通关键词**：[[core-rules/infantry.md|Infantry]]，[[factions/星际战士/units/chaplain.md|Chaplain]] Grimaldus，[[core-rules/grenades.md|Grenades]]，[[core-rules/epic-hero.md|Epic Hero]]，[[core-rules/character.md|Character]]，Tacticus，Imperium
+- **普通关键词**：[[core-rules/infantry.md|Infantry]]，Chaplain Grimaldus，[[core-rules/grenades.md|Grenades]]，[[core-rules/epic-hero.md|Epic Hero]]，[[core-rules/character.md|Character]]，Tacticus，Imperium

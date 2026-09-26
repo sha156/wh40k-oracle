@@ -38,11 +38,13 @@ updated: '2026-09-14'
 | 统御之手 | 近战 | 7 | 2+ | 14 | -4 | 4 | [[core-rules/lethal-hits.md\|致命一击]] |
 
 ## 技能
-- **【阵营技能】：破敌重誓**
-- **圣典权威**：在你的指挥阶段开始时，选择以下效果之二对本模型生效，持续到下个你的指挥阶段开始时◼ 十三军团原体【光环】：本模型 6 寸内的友军阿斯塔特修会单位，可以重投震慑和领导力测试结果，并且这些单位中的模型 OC 值+1◼ 战争之主：在你的指挥阶段开始时，为你的【破敌重誓】技能选择目标后，再选择一个敌方单位，直到下个你的指挥阶段开始时，如果破敌重誓技能的目标被消灭了，则这个敌方单位将被视作破敌重誓技能的目标，直到你选择新的目标◼ 超级战略：每个回合一次，你可以对本模型 12 寸内的一个友军阿斯塔特修会单位使用战略技能时少消耗1CP
-- **极限战士卫队**：如果本模型位于至少一个友军阿斯塔特修 会步兵单位 3 寸内，则本模型获得【独行特工】技能
-- **命运战甲**：当本模型第一次被消灭时，在这个阶段结束时 投 D6，3+则他以 6 点 W 的状态复活，将其放置在尽可 能接近他的阵亡地点，但不能位于敌方单位接战范围内。
-- **体形适中**：本模型可以如同步兵模型一样正常穿过地形， 登上更高楼层等等
+- **Author of the Codex**：At the Start of your Command phase, select two Author of the Codex abilities (see left). Until the start of your next Command phase, this model has those abilities.
+- **Ultramarines Bodyguard**：While this model is within 3" of one or more friendly Adeptus Astartes Infantry units, this model has the Lone Operative ability.
+- **Armour of Fate**：The first time this model is destroyed, roll one D6 at the end of the phase: on a 3+, set this model back up on the battlefield as close as possible to where it was destroyed and not within Engagement Range of any enemy models, with 6 wounds remaining.
+- **SUPREME COMMANDER**：If this model is in your army, it must be your Warlord.
+- **Primarch of the XIII (Aura)**：While a friendly <span class="kwb">ADEPTUS</span> <span class="kwb">ASTARTES</span> unit is within 6" of this model, add 1 to the Objective Control characteristic of models in that unit and you can re-roll Battle-shock and Leadership tests taken for that unit.
+- **Master of Battle**：At the start of your Command phase, after you have selected your Oath of Moment target, select a second enemy unit. Until the start of your next Command phase, if your Oath of Moment target is destroyed, that second enemy unit becomes your Oath of Moment target until you select a new one.
+- **Supreme Strategist**：Once per battle round, one unit from your army with this ability can use it when a friendly <span class="kwb">ADEPTUS</span> <span class="kwb">ASTARTES</span> unit within 12" of that model is targeted with a Stratagem. If it does, reduce the CP cost of that usage of that Stratagem by 1CP.
 
 ## 单位构成
 - **1个模型** — 355 分

@@ -27,13 +27,14 @@ updated: '2026-09-14'
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
 | 大突突枪 | 36" | 3 | 5+ | 5 | 0 | 1 | [[core-rules/rapid-fire.md\|速射2]] |
-| 毛哥之眼(看渣渣的眼神) | 24" | D6 | 5+ | 5 | 0 | 1 | [[core-rules/blast.md\|爆炸]]，[[core-rules/sustained-hits.md\|连击D3]] |
-| 毛哥之眼(看强者的眼神) | 18" | 1 | 5+ | 12 | -4 | 3 | [[core-rules/sustained-hits.md\|连击D3]] |
+| 毛哥之眼（看渣渣的眼神） | 24" | D6 | 5+ | 5 | 0 | 1 | [[core-rules/blast.md\|爆炸]]，[[core-rules/sustained-hits.md\|连击D3]] |
+| 毛哥之眼（看强者的眼神） | 18" | 1 | 5+ | 12 | -4 | 3 | [[core-rules/sustained-hits.md\|连击D3]] |
 
 ## 技能
-- **Ramshackle Cover**：Each time a ranged attack is allocated to a model, if that model is not fully visible to every model in the attacking unit because of this <span class="kwb">FORTIFICATION</span>, that model has the Benefit of Cover against that attack.
-- **Shoutin’ Pole (Aura)**：While a friendly <span class="kwb">ORKS</span> unit is within 6" of this <span class="kwb">FORTIFICATION</span>, improve the Leadership characteristic of models in that unit by 1.
-- **Fortification**：While an enemy unit is only within Engagement Range of one or more Fortifications from your army: <br><ul><li>That unit can still be selected as the target of ranged attacks, but each time such an attack is made, unless it is made with a Pistol, subtract 1 from the Hit roll.</li><li>Models in that unit do not need to take Desperate Escape tests due to Falling Back while Battle-shocked, except for those that will move over enemy models when doing so.</li></ul>
+- **阵营技能：Waaagh!**
+- **喧闹的乘客**：当该模型位于您的领地目标的范围内时，將搭乘该模型的模型的OC增加至该模型的OC
+- **防御工事**：当一个敌方单位仅与防御工事单位处于交战状态时•那个敌方单位可以被远程攻击选为目标。•当对那个敌方单位进行射击时，那些远程攻击的命中挪骰-1 （［近距离］攻击除外）。• 当那个敌方单位被选择进行后撤移动时，如果那个敌方单位仅与该防御工事处于交战状态，并且那个敌方单位不处于战斗震慑状态，那个敌方单位进行的危险掷骰自动通过。
+- **破旧掩体**：当被攻击的目标单位因为该单位而对进行攻击的摸型不完全可见时，被攻击的目标拥有针对那次攻击的掩体增益。
 
 ## 单位构成
 - **1个模型** — 135 分

@@ -22,7 +22,7 @@ updated: '2026-09-14'
 ## 属性表
 | 模型 | M | T | SV | W | LD | OC |
 |---|---|---|---|---|---|---|
-| Wartrakks | 12" | 6 | 4+ | 6 | 7+ | 2 |
+| 战斗卡车 | 12" | 6 | 4+ | 6 | 7+ | 2 |
 
 ### 特殊保护
 - 6+
@@ -39,8 +39,9 @@ updated: '2026-09-14'
 | 尖刺车轮 | 近战 | 2 | 4+ | 6 | 0 | 1 | — |
 
 ## 技能
-- **Drive-by Dakka**：Each time a model in this unit makes a ranged attack that targets a unit within 9", improve the Armour Penetration characteristic of that attack by 1.
-- **SPEED FREEKS**：If a model from your army with the Leader ability can be attached to a [[factions/兽人/units/warbikers.md|Warbikers]] unit, it can be attached to this unit instead.
+- **【阵营技能】:WAAAGH!**
+- **疾速强蛮人支援**：当该单位中的每个模型都位于一个己飚速怪咖单位（战斗卡车单位除外）3‘内时。该单位拥有有独行特工.
+- **干掉他们**：在您的射击阶段中，当该单位进行射击后，选择一个被该单位进行的攻击命中的敌方单位，在该回合结束前，那个敌方单位处于暴露状态• 己方飚速怪咖单位对处于暴露状志的单位进行的攻击拥有［致命一击］。
 
 ## 单位构成
 - **1个模型** — 70 分

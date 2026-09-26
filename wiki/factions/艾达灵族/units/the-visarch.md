@@ -36,8 +36,10 @@ updated: '2026-09-14'
 | 阿苏瓦 · 无声尖啸者（诛神） | 近战 | 4 | 2+ | 3 | -4 | 3 | [[core-rules/anti.md\|针对史诗英雄2+]]，[[core-rules/precision.md\|精准]] |
 
 ## 技能
-- **【阵营技能】：战斗专注**
-- **利刃之道**：本模型领导的单位拥有【先攻】能力伊芙蕾尼的冠军勇士：当本模型领导一个单位时，本单位中的其他人物模型获得 4+无视伤痛
+- **Way of the Blade**：While this model is leadings unit, models in that unit have the Fights First ability.
+- **[[factions/艾达灵族/units/yvraine.md|Yvraine]]’s Champion**：While this model is leading a unit, other Character models attached to that unit have the Feel No Pain 4+ ability.
+- **SERVANT OF THE WHISPERING GOD**：If your army includes <span class="kwb">THE</span> <span class="kwb">VISARCH</span>, it cannot include any Epic Hero units (excluding Ynnari units). If your army includes any <span class="kwb">EPIC</span> <span class="kwb">HERO</span> units (excluding <span class="kwb">YNNARI</span> units), it cannot include <span class="kwb">THE</span> <span class="kwb">VISARCH</span>.
+- **Support**
 
 ## 单位构成
 - **1个模型** — 80 分

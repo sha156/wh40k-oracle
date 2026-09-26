@@ -37,8 +37,9 @@ updated: '2026-09-14'
 | 生化骨刃 | 近战 | 5 | 3+ | 5 | -2 | 1 | — |
 
 ## 技能
-- **【阵营技能】：教团伏兵**
-- **工业化破坏**：每当该模型中的单位进行攻击时，你可以重骰结果为 1 的造伤骰。如果该模型攻击的敌方单位位于任务目标点范围内，改为重投全部的造伤骰。
+- **Industrialised Destruction**：Each time a model in this unit makes an attack, re-roll a Wound roll of 1. If the target of that attack is an enemy unit within range of an objective marker, you can re-roll the Wound roll.
+- **Cult Icon**：In your Command phase, you can return up to D3 destroyed models to the bearer’s unit. If the bearer’s unit is within range of an objective marker you control, you can return up to 3 destroyed models to that unit instead. This ability cannot be used to return destroyed Character models in Attached units and any <span class="kwb2 bluefont">[ONE SHOT]</span> weapons equipped by returned models that were shot before they were destroyed are still considered to have been shot.
+- **One Shot**：The bearer can only shoot with this weapon once per battle.
 
 ## 单位构成
 - **5个模型** — 75 分

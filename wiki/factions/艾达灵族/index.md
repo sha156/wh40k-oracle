@@ -27,18 +27,15 @@
 - [[factions/艾达灵族/units/amallyn-shadowguide|Amallyn Shadowguide]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
 - [[factions/艾达灵族/units/autarch-skyrunner|Autarch Skyrunner]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
 - [[factions/艾达灵族/units/bonesinger|Bonesinger]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
-- [[factions/艾达灵族/units/clanblade|Clanblade]]
 - [[factions/艾达灵族/units/cobra|Cobra]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
 - [[factions/艾达灵族/units/corsair-cloud-dancer-band|Corsair Cloud Dancer Band]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
 - [[factions/艾达灵族/units/corsair-reaver-band|Corsair Reaver Band]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
 - [[factions/艾达灵族/units/corsair-skyreaver-band|Corsair Skyreaver Band]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
-- [[factions/艾达灵族/units/dragon-knights|Dragon Knights]]
 - [[factions/艾达灵族/units/firestorm|Firestorm]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
 - [[factions/艾达灵族/units/hornet|Hornet]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
 - [[factions/艾达灵族/units/illic-nightspear|Illic Nightspear]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
 - [[factions/艾达灵族/units/irillyth|Irillyth]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
 - [[factions/艾达灵族/units/karandras|Karandras]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
-- [[factions/艾达灵族/units/leystalker|Leystalker]]
 - [[factions/艾达灵族/units/lynx|Lynx]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
 - [[factions/艾达灵族/units/nightwing|Nightwing]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
 - [[factions/艾达灵族/units/phoenix|Phoenix]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
@@ -46,7 +43,6 @@
 - [[factions/艾达灵族/units/scorpion|Scorpion]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
 - [[factions/艾达灵族/units/shadow-spectres|Shadow Spectres]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
 - [[factions/艾达灵族/units/skathach-wraithknight|Skathach Wraithknight]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
-- [[factions/艾达灵族/units/stonesinger|Stonesinger]]
 - [[factions/艾达灵族/units/vampire-hunter|Vampire Hunter]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
 - [[factions/艾达灵族/units/vampire-raider|Vampire Raider]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
 - [[factions/艾达灵族/units/warp-hunter|Warp Hunter]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
@@ -64,6 +60,7 @@
 - [[factions/艾达灵族/units/autarch|司战]]
 - [[factions/艾达灵族/units/death-jester|告死小丑]]
 - [[factions/艾达灵族/units/the-yncarne|因卡恩-伊纳德化身]]
+- [[factions/艾达灵族/units/leystalker|地脉潜行者]]
 - [[factions/艾达灵族/units/eldrad-ulthran|埃尔德拉德阿瑟兰]]
 - [[factions/艾达灵族/units/corsair-skyreavers|天空掠夺者海盗]]
 - [[factions/艾达灵族/units/farseer-skyrunner|天行者先知]]
@@ -93,6 +90,7 @@
 - [[factions/艾达灵族/units/ynnari-venom|死神军毒灾飞艇]]
 - [[factions/艾达灵族/units/ynnari-kabalite-warriors|死神军阴谋团武士]]
 - [[factions/艾达灵族/units/ynnari-succubus|死神军魅魔]]
+- [[factions/艾达灵族/units/clanblade|氏族之刃]]
 - [[factions/艾达灵族/units/wave-serpent|波蛇飞艇]]
 - [[factions/艾达灵族/units/rangers|游侠]]
 - [[factions/艾达灵族/units/spiritseer|灵魂先知]]
@@ -103,6 +101,7 @@
 - [[factions/艾达灵族/units/solitaire|独角]]
 - [[factions/艾达灵族/units/falcon|猎鹰坦克]]
 - [[factions/艾达灵族/units/maugan-ra|玛甘 拉]]
+- [[factions/艾达灵族/units/stonesinger|石歌者]]
 - [[factions/艾达灵族/units/striking-scorpions|突击战蝎]]
 - [[factions/艾达灵族/units/night-spinner|织夜者坦克]]
 - [[factions/艾达灵族/units/shadow-weaver-platform|织影炮平台]]
@@ -125,6 +124,7 @@
 - [[factions/艾达灵族/units/vibro-cannon-platform|音波炮平台（震击炮平台）]]
 - [[factions/艾达灵族/units/storm-guardians|风暴守护者]]
 - [[factions/艾达灵族/units/dark-reapers|黑暗死神]]
+- [[factions/艾达灵族/units/dragon-knights|龙骑士]]
 
 ## 策略技能
 

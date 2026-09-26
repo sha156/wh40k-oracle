@@ -38,9 +38,13 @@ updated: '2026-09-14'
 | 狱铸武器（横扫） | 近战 | 14 | 2+ | 6 | 0 | 1 | — |
 
 ## 技能
-- **【阵营技能】：黑暗契约**
-- **毁天灭地**：每当本模型结束冲锋移动时，选择接战 范围内一个敌方单位，本模型每有一点剩余 W 值， 就投一颗 D6，每个为 4+的结果都会让那个敌方单 位遭受 1 点致命伤害，每次使用本技能最多造成 6 点致命伤害
-- **天降恐怖**：每当本模型结束标准或加速移动时，选 择本次移动经过的一个敌方单位，那个单位必须进 行一次震慑测试
+- **Daemonic Destruction**：Each time this model ends a Charge move, select one enemy unit within Engagement Range of it and roll one D6 for each of this model’s remaining wounds: for each 4+, that enemy unit suffers 1 mortal wound (to a maximum of 6 mortal wounds).
+- **Flying Horror**：Each time this model ends a Normal or Advance move, select one enemy unit it moved over during that move. That unit must take a Battle-shock test.
+- **Daemonic Allegiance**：When you select this model to include in your army, you must select one of the keywords below. Until the end of the battle, this model has that keyword and the characteristic modifier stated for that keyword below.
+- **Khorne**：Add 2 to the Strength characteristic of this model's hellforged weapons.
+- **Tzeentch**：Add 3 to the Attacks characteristic of its infernal cannon.
+- **Nurgle**：Add 1 to its Toughness characteristic.
+- **Slaanesh**：Add 2" to its Move characteristic.
 
 ## 单位构成
 - **1个模型** — 180 分

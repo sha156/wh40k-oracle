@@ -11,3 +11,5 @@
 | 2026-07-11 10:10 UTC | manual-edit | 11版迁移S6收官：core-rules 其余 53 个术语页升级至11版口径（武器技能16+核心技能计谋5+阶段结构13+判定概念14+阵营机制5；大改项：indirect-fire/heavy/lethal-hits/blast/hazardous/fly/hover/fire-overwatch/fight-phase/fall-back/strategic-reserves/benefit-of-cover/invulnerable-save/mortal-wounds/engagement-range/oath-of-moment/for-the-greater-good） | core-rules/*.md ×53 | build+lint |
 | 2026-09-21 11:39 UTC | manual-edit | Correct Oath of Moment current conditions and explicit historical baselines; remove unsupported Black Templars benefit and newly-added detachment claims. | core-rules/oath-of-moment.md | build, lint: 0 errors |
 | 2026-09-21 12:06 UTC | manual-edit | Clarify Oath comparison for readers: define the official points table, group independent changes, and retain version and ability-possession limits without repeated audit wording. | core-rules/oath-of-moment.md | build, lint: 0 errors |
+
+- 2026-09-26: Refreshed 228 generated unit pages from the verified Black Library snapshot merge; official numerical fields retained. See 2026-09-26-blacklibrary-import-acceptance report.

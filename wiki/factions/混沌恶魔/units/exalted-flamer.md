@@ -38,8 +38,9 @@ updated: '2026-09-14'
 | 火妖巨口 | 近战 | 4 | 4+ | 5 | 0 | 1 | — |
 
 ## 技能
-- **耀眼妖火(灵能)**：该模型领导的单位中模型装备的远程武器拥有 [突击] 技能。
-- **诡变之火(灵能)**：在己方射击阶段中，在该模型完成射击后，选择一个被其攻击命中的敌方单位(凶兽和载具除外)，并掷一枚 D6。若结果为 4+，那么直到对手的下个回合结束前，那个敌方单位被点燃，其移动属性减少 2"，并且进行的突进和冲锋掷骰结果减少 2 点。
+- **Blazing Warpfire (Psychic)**：While this model is leading a unit, ranged weapons equipped by models in that unit have the [ASSAULT] ability.
+- **Flames of Change (Psychic)**：In your Shooting phase, after this model has shot, select one enemy unit (excluding <span class="kwb">MONSTERS</span> and <span class="kwb">VEHICLES</span>) hit by one or more of those attacks, and roll one D6. On a 4+, until the end of your opponent’s next turn, that enemy unit is aflame. While a unit is aflame, subtract 2" from its Move characteristic and subtract 2 from Advance and Charge rolls made for it.
+- **MANIFESTATION OF DESTRUCTION**：This model cannot be your Warlord and cannot be given Enhancements.
 
 ## 单位构成
 - **1个模型** — 65 分

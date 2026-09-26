@@ -42,8 +42,11 @@ updated: '2026-09-14'
 | 死神链锯剑（横扫） | 近战 | 12 | 3+ | 9 | -3 | 2 | — |
 
 ## 技能
-- **Huntmaster (Aura)**：While a friendly War Dog model is within 6" of this model, ranged weapons equipped by that <span class="kwb">WAR</span> <span class="kwb">DOG</span> model have the [ASSAULT] ability.
-- **Repair Auto-simulacra**：At the end of your Command phase, this model regains up to D3 lost wounds.
+- **阵营技能：恐惧使者**
+- **阵营技能：超重型机甲**
+- **受损**：当该模型剩余 1-9 点耐伤，模型攻击的命中骰结果-1，OC 属性-5。
+- **狩猎大师(光环)**：当一个友方战犬级模型位于此模型 6 寸内时， 该战犬级模型装备的远程武器获得【突击】技能。
+- **自动修复模式**：在你的指挥阶段结束时，本模型恢复最多 D3 点 已损失的 W。
 
 ## 单位构成
 - **1个模型** — 375 分

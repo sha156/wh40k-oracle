@@ -45,11 +45,12 @@ updated: '2026-09-14'
 | 净化者近战武器 | 近战 | 3 | 3+ | 3 | 0 | 1 | — |
 
 ## 技能
-- **【阵营技能】：派遣特工**
-- **教廷布道**：当该单位包含一个[[factions/帝国特勤/units/ministorum-priest.md|教廷牧师]]时，每当 该单位中的模型进行近战攻击时，致伤掷骰结果 加 1 。
-- **智天使**：每场战斗中您有一次机会，您可以花费  0CP 对该单位使用指挥重掷计谋，即使您已经在该 阶段中对另一个单位使用过该计谋。
-- **救赎士医疗包（武器技能）**：在您的指挥阶段中，如果持有者位于战场上，您可以将最多 D3 个被摧 毁的模型 (角色模型除外) 重新加入该单位。
-- **帝国圣像（武器技能）**：持有者所在单位中的模型的领导力属性提升 1
+- **One Shot**：The bearer can only shoot with this weapon once per battle.
+- **Ministorum Sermon**：While this unit contains a <span class="kwb">MINISTORUM</span> <span class="kwb">PRIEST</span>, each time a model in this unit makes a melee attack, add 1 to the Wound roll.
+- **Cherub**：Once per battle, you can target this unit with the Command Re-roll Stratagem for 0CP, and can do so even if you have already targeted a different unit with that Stratagem this phase.<br><br><b>Designer’s Note:</b> <i>Place a Cherub token next to the unit, removing it once this ability has been used.</i>
+- **ATTACHED UNIT**：If a [[factions/帝国特勤/units/ministorum-priest.md|Ministorum Priest]] or [[factions/帝国特勤/units/inquisitor.md|Inquisitor]] model from your army with the Leader ability can be attached to a [[factions/帝国特勤/units/sisters-of-battle-squad.md|Sisters of Battle Squad]], it can be attached to this unit instead. If a <span class="kwb">MINISTORUM</span> <span class="kwb">PRIEST</span> or <span class="kwb">INQUISITOR</span> model from your army is attached to this unit during the Declare Battle Formations step, that model gains the Scouts 6" ability.
+- **Salvationist Medikit**：In your Command phase, if the bearer is on the battlefield, you can return up to D3 destroyed models (excluding <span class="kwb">CHARACTER</span> models) to this unit.
+- **Simulacrum Imperialis**：Improve the Leadership characteristic of models in the bearer’s unit by 1.
 
 ## 单位构成
 - **9个模型** — 100 分

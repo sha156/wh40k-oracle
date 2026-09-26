@@ -35,8 +35,9 @@ updated: '2026-09-14'
 | 注射针棒  | 近战 | 1 | 3+ | 2 | 0 | D3 | [[core-rules/anti.md\|针对步兵2+]] |
 
 ## 技能
-- **扭曲学识**：当该模型领导单位时，那个单位中所有模型装备的近战武器获得【致命一击】。
-- **生物战**：一场游戏一次，当该模型所在的单位进行近战时，你可以使用本技能。如果你这么做，直到本阶段结束前，该模型装备的注射针棒 A 值+3，伤害+3。
+- **Twisted Science**：While this model is leading a unit, melee weapons equipped by models in that unit have the [LETHAL HITS] ability.
+- **Biological Warfare**：Once per battle, when this model's unit is selected to fight, this model can use this ability. If it does, until the end of the phase, improve the Attacks and Damage characteristics of its injector goad by 3.
+- **Alchemicus Familiar**：Once per battle, when the bearer’s unit is selected to fight, the bearer can use its alchemicus familiar. If it does, until the end of the phase, each time a model in the bearer’s unit makes an attack that targets an <span class="kwb">INFANTRY</span> unit, add 1 to the Wound roll.<br><br><b>Designer’s Note:</b> <i>Place an Alchemicus Familiar token next to the bearer, removing it once this ability has been used.</i>
 
 ## 单位构成
 - **1个模型** — 50 分

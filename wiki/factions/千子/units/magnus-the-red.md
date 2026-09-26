@@ -39,10 +39,12 @@ updated: '2026-09-14'
 | 马格努斯之刃 — 横扫 | 近战 | 14 | 2+ | 8 | -1 | 2 | [[core-rules/psychic-attacks.md\|灵能]] |
 
 ## 技能
-- **阵营：巫师秘会**
-- **超自然力量**：在战斗轮次开始时，选择猩红之王中的一个技能（见左侧）。在[[factions/兽人/stratagems/on-to-da-next.md|下一个]]战斗轮次开始前，该模型拥有该技能。
-- **巫师之星之主 **：此模型每回合可以尝试显化最多两个仪式而非一个。每次此模型尝试显化仪式时，其灵能测试结果增加2点。
-- **受损：剩余 1-6 点耐伤**：当该模型剩余 1-6 点耐伤，模型攻击的命中掷骰结果 减少 1 点。
+- **Unearthly Power**：At the start of the battle round, select one of the abilities in the Crimson King section (see left). Until the start of the next battle round, this model has that ability.
+- **Lord of the Planet of the Sorcerers (Psychic)**：This model can attempt up to two Rituals per turn instead of one, and each time this model attempts a Ritual, add 2 to the Psychic test result.
+- **Impossible Form (Psychic)**：Each time an attack is made against this <span class="kwb">PSYKER</span> (excluding Psychic Attacks), subtract 1 from the Damage characteristic of that attack.
+- **Treason of Tzeentch (Psychic)**：At the start of your opponent’s Shooting phase, select one enemy unit within 24" of this <span class="kwb">PSYKER</span>. Until the end of the phase, ranged weapons equipped by models in that unit have the [HAZARDOUS] ability.
+- **Time Flux (Aura, Psychic)**：While a friendly Thousand Sons unit is within 6" of this <span class="kwb">PSYKER</span>, add 2" to the Move characteristic of models in that unit.
+- **SUPREME COMMANDER**：If this model is in your army, it must be your <span class="kwb">WARLORD</span>.
 
 ## 单位构成
 - **1个模型** — 455 分

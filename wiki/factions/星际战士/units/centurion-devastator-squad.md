@@ -40,8 +40,7 @@ updated: '2026-09-14'
 | 百夫长铁拳  | 近战 | 3 | 4+ | 5 | -1 | 2 | — |
 
 ## 技能
-- **    抽杀指令**：本单位模型的射击攻击可以重投命中结果中的 1，如果射击目标位于目标点范围内，则对其的攻击改为重投命中结果
-- **【阵营技能】：破敌重誓**
+- **Decimator Protocols**：Each time a model in this unit makes a ranged attack, re-roll a Hit roll of 1. If the target of that attack is an enemy unit within range of an objective marker, you can re-roll the Hit roll instead.
 
 ## 单位构成
 - **3个模型** — 175 分

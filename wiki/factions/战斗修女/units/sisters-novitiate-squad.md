@@ -46,8 +46,9 @@ updated: '2026-09-14'
 | 动力武器 | 近战 | 2 | 4+ | 4 | -2 | 1 | — |
 
 ## 技能
-- **【阵营技能】：信仰之举**
-- **鲁莽狂热**：该模型在攻击时，可以重投结果为 1的命中骰。如果该模型攻击的敌方单位位于任务目标点范围内，你可以重投全部的命中骰。
+- **Impetuous Fervour**：Each time a model in this unit makes an attack, re-roll a Hit roll of 1. If the target of that attack is an enemy unit within range of an objective marker, you can re-roll the Hit roll instead.
+- **Sacred Banner**：You can re-roll Advance and Charge rolls made for the bearer’s unit.
+- **Simulacrum Imperialis**：At the end of your Command phase, for each objective marker you control that has one or more units from your army with this ability within range of it, roll one D6: on a 4+, you gain 1 Miracle dice showing a value equal to that result.
 
 ## 单位构成
 - **10个模型** — 90 分

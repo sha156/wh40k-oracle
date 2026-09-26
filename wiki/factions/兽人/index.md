@@ -46,7 +46,6 @@
 - [[factions/兽人/units/mega-dread|Mega Dread]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
 - [[factions/兽人/units/meka-dread|Meka-dread]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
 - [[factions/兽人/units/mekboy-workshop|Mekboy Workshop]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
-- [[factions/兽人/units/nazdreg|Nazdreg]] — Official preview datasheet: rules version 11e-official-previ...
 - [[factions/兽人/units/nob-with-waaagh-banner|Nob With Waaagh! Banner]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
 - [[factions/兽人/units/nobz-on-warbikes|Nobz On Warbikes]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
 - [[factions/兽人/units/painboy-on-warbike|Painboy On Warbike]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
@@ -54,7 +53,6 @@
 - [[factions/兽人/units/squiggoth|Squiggoth]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
 - [[factions/兽人/units/ufthak-blackhawk|Ufthak Blackhawk]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
 - [[factions/兽人/units/warboss-on-warbike|Warboss On Warbike]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
-- [[factions/兽人/units/warbuggies|Warbuggies]]
 - [[factions/兽人/units/beastboss|兽霸头目]]
 - [[factions/兽人/units/beast-snagga-boyz|兽霸小子]]
 - [[factions/兽人/units/painboss|剧痛头目]]
@@ -99,8 +97,10 @@
 - [[factions/兽人/units/breaka-boyz|破拆小子]]
 - [[factions/兽人/units/ghazghkull-thraka|碎骨者萨拉卡]]
 - [[factions/兽人/units/big-mek-dakkarig|突突大机甲]]
+- [[factions/兽人/units/nazdreg|纳兹德雷格]] — Official preview datasheet: rules version 11e-official-previ...
 - [[factions/兽人/units/nobz|老大队]]
 - [[factions/兽人/units/flash-gitz|脏枪混混]]
+- [[factions/兽人/units/warbuggies|蛮人战车]]
 - [[factions/兽人/units/zodgrod-wortsnagga|超级屁精老大监工佐德格罗德·沃茨纳加]]
 - [[factions/兽人/units/big-mek-in-mega-armour|超重装大技霸]]
 - [[factions/兽人/units/warboss-in-mega-armour|超重装战争头目]]

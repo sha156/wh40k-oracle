@@ -39,8 +39,9 @@ updated: '2026-09-14'
 | 近战武器 | 近战 | 2 | 3+ | 3 | 0 | 1 | — |
 
 ## 技能
-- **引爆就绪**：在己方射击阶段，您可以选择军队中一个拥有该技能且还未使用过手雷计谋的模型，消耗0cp并选择它使用此计谋。
-- **放置炸药**：一场战斗仅一次，当一个敌方单位通过标准移动，加速或撤退进入该模型 8英寸范围后，该模型可以使用爆破地雷。如果你这么做，骰一枚 D6，若结果为 2+，那个敌方单位受到D3+3 点致命伤。你的军队中具有该技能的模型仅可以在每个战斗轮次中使用一次该技能。
+- **Primed and Ready**：In your Shooting phase, you can select one model from your army with this ability as the target of the Grenade Stratagem for 0CP, provided that model has not already been the target of that Stratagem this phase.
+- **Planted Explosives**：Once per battle, when an enemy unit ends a Normal, Advance or Fall Back move within 8” of this model, this model can use its Reductus mine. If it does, roll one D6: on a 2+, that enemy unit suffers D3+3 mortal wounds. Only one model from your army with this ability can use it in the same battle round.<br><br><b>Designer’s Note:</b> <i>Place a Reductus Mine token next to the model, removing it once this ability has been used.</i>
+- **One Shot**：The bearer can only shoot with this weapon once per battle.
 
 ## 单位构成
 - **1个模型** — 70 分

@@ -365,7 +365,19 @@ def stage_aliases_blackforum(cfg: UpdateConfig) -> StageResult:
     if not units:
         return StageResult("aliases_blackforum", True, f"无单位数据（{source}），跳过",
                            warning="黑图书馆无缓存且离线，本次不补 blackforum 别名")
-    rep = populate_blackforum_aliases(cfg.db, units_to_pairs(units))
+    # Preserve previously verified spellings when the community source renames
+    # or removes a card. History comes first so a refresh cannot silently retarget
+    # an existing unqualified alias to a different faction's similarly named unit.
+    history_path = cfg.blacklibrary_cache.with_name("aliases_history.json")
+    history = []
+    if history_path.exists():
+        payload = json.loads(history_path.read_text(encoding="utf-8"))
+        history = payload["pairs"]
+        if not isinstance(history, list) or any(
+                not isinstance(pair, list) or len(pair) != 2
+                or any(not isinstance(value, str) for value in pair) for pair in history):
+            raise ValueError("Malformed Black Library alias history")
+    rep = populate_blackforum_aliases(cfg.db, history + units_to_pairs(units))
     return StageResult(
         "aliases_blackforum", True,
         f"{source}：{len(units)} 单位 → 写入 {rep['matched']} 别名"
@@ -430,7 +442,8 @@ def stage_zh_weapons(cfg: UpdateConfig) -> StageResult:
     from db_compile.zh_weapons import (build_keyword_glossary,
                                        build_zh_weapon_names, coverage_report,
                                        leftover_radicals)
-    rep = build_zh_weapon_names(cfg.db)
+    rep = build_zh_weapon_names(
+        cfg.db, history_path=cfg.blacklibrary_details.with_name("weapon_names_history.json"))
     kw = build_keyword_glossary(cfg.db)
     cov = coverage_report(cfg.db)
     left = leftover_radicals(cfg.db)

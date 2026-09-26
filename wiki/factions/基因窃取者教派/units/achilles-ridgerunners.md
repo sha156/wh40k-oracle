@@ -38,7 +38,10 @@ updated: '2026-09-14'
 | 装甲车体 | 近战 | 3 | 4+ | 5 | 0 | 1 | — |
 
 ## 技能
-- **交叉射击**：在你的射击阶段，在该单位射击后，你可以选择一个被该单位一次或多次攻击命中的敌方单位，直到本回合结束前，每次友方的基因窃取者教团单位攻击那个敌方单位时，那些攻击的 AP 值增加 1。同一个敌方单位仅会被本技能影响一次。
+- **Crossfire**：In your Shooting phase, after this unit has shot, select one enemy unit hit by one or more of those attacks. Until the end of the turn, each time a friendly <span class="kwb">GENESTEALER</span> <span class="kwb">CULTS</span> unit makes an attack that targets that enemy unit, improve the Armour Penetration characteristic of that attack by 1. The same enemy unit can only be affected by this ability once per turn.
+- **Flare Launcher**：The bearer’s unit has the <span class="kwb">SMOKE</span> keyword and you can target it with the Smokescreen Stratagem for 0CP.
+- **Spotter**：The bearer’s ranged weapons have a Ballistic Skill characteristic of 3+.
+- **Survey Augur**：Each time the bearer’s unit has shot, select one enemy unit that was hit by one or more attacks made by the bearer this phase. Until the end of the phase, each time a friendly <span class="kwb">GENESTEALER</span> <span class="kwb">CULTS</span> model makes an attack against that unit, that attack has the [IGNORES COVER] ability.
 
 ## 单位构成
 - **1个模型** — 95 分
