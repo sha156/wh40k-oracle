@@ -1,0 +1,25 @@
+{
+  "source": "data/沃坦联盟CODEX-双子星版 V1.30.pdf",
+  "source_sha256": "bca401f19514354e91d2dd3cc44fdbf2b4effdc705c52776e67ef941f850283d",
+  "archive": "archive\\source-retirement-20260926",
+  "chunks_before": 5754,
+  "chunks_removed": 73,
+  "chunks_after": 5681,
+  "retained_documents_and_metadata_unchanged": true,
+  "processed_log_keys_removed": 1,
+  "database_unchanged": true,
+  "alias_copy_trial": {
+    "harvested": 1149,
+    "matched": 705,
+    "unmatched": 438,
+    "collided": 6
+  },
+  "alias_rows_changed": 0,
+  "canonical_votann_units": 22,
+  "new_index_sha256": {
+    "index.faiss": "1da9d94afd263733c33ea083351a0cd18406873e0848daae21bbc740f3317e29",
+    "index.pkl": "f867e5bd07659cdb333cbecfc2ef08b3960d8361ead9950ac605298b197d45a0"
+  },
+  "units_with_matching_blacklibrary_name": 20,
+  "retained_vectors_exactly_unchanged": 5681
+}
