@@ -135,6 +135,7 @@ class EntityResolver:
     def __init__(self, terms_path: Optional[Path] = None,
                  app_path: Optional[Path] = None,
                  db_path: Optional[Path] = None):
+        self.db_path = Path(db_path) if db_path is not None else None
         self._zh_to_id: Dict[str, str] = {}
         self._id_to_en: Dict[str, str] = {}
         self._en_to_id: Dict[str, str] = {}

@@ -44,6 +44,50 @@ def test_to_loadout_caps_dos_levers():
     assert _to_loadout([["Gun", 60], ["Blade", 2]]) == (("Gun", 60), ("Blade", 2))
 
 
+@pytest.mark.parametrize("count", [float("inf"), float("-inf"), float("nan")])
+def test_to_loadout_rejects_nonfinite_counts_as_a_whole(count):
+    assert _to_loadout([["Valid gun", 2], ["Invalid gun", count]]) == ()
+
+
+@pytest.mark.parametrize("route", ["validate", "critique"])
+@pytest.mark.parametrize("count_json", ["1e999", "-1e999"])
+def test_roster_endpoints_reject_overflowing_loadout_without_crashing(
+        route, count_json, tmp_path, monkeypatch):
+    from engines import roster as engine
+    from engines.roster.contracts import ValidationReport
+    from engines.roster.critique import CritiqueReport, UnitAssessment
+    from web_api import main
+
+    db = tmp_path / "roster.sqlite"
+    db.touch()
+    monkeypatch.setattr(main, "DB_PATH", db)
+
+    def validate(_db, roster):
+        assert roster.units[0].loadout == ()
+        return ValidationReport(100, 2000, True)
+
+    def critique(_db, roster, n):
+        unit = roster.units[0]
+        assert unit.loadout == ()
+        return CritiqueReport(100, (UnitAssessment(
+            unit.canonical_id, unit.name_en, 100, False,
+            note="需装配，未指定 loadout"),))
+
+    monkeypatch.setattr(engine, "validate", validate)
+    monkeypatch.setattr(engine, "critique", critique)
+    # These are valid JSON numbers; the decoder represents them as infinities.
+    body = ('{"factionId":"SM","units":[{"canonicalId":"test",'
+            '"nameEn":"Test unit","loadout":[["Gun",' + count_json + ']]}]}')
+    response = _client().post("/roster/" + route, content=body,
+                              headers={"Content-Type": "application/json"})
+    assert response.status_code == 200
+    if route == "critique":
+        assessment = response.json()["assessments"][0]
+        assert assessment["assessed"] is False
+        assert "丢弃" in assessment["note"]
+        assert "未指定" not in assessment["note"]
+
+
 def test_roster_contract_caps():
     # 契约层边界：models 超上限 / units 超上限 → 422 拒收（不静默钳）
     import pydantic

@@ -6,7 +6,7 @@ LLM 全部走 mock（FakeLLM 实现 LLMClient Protocol），不产生真实 API 
 from pathlib import Path
 
 from agent.context import SessionContext
-from agent.loop import AgentLoop, AgentResult
+from agent.loop import AgentLoop, AgentResult, _has_usable_evidence
 
 
 class ScriptedLLM:
@@ -482,6 +482,178 @@ class TestAmbiguousIsNotEmpty:
         result = loop.run("乱码是谁？")
 
         assert result.degraded is True
+
+    def test_later_empty_mapping_does_not_discard_verified_points(self):
+        """A failed follow-up alias probe must not erase earlier numeric evidence."""
+        llm = ScriptedLLM("查", steps=[
+            {"type": "tool_call", "tool": "calc_points", "args": {"unit_list": ["卡尔加", "基里曼"]}},
+            {"type": "tool_call", "tool": "get_datasheet", "args": {"name_or_id": "卡尔加"}},
+            {"type": "tool_call", "tool": "entity_resolver", "args": {"name": "卡尔加 维克特里克斯卫队"}},
+            {"type": "final", "content": "历史卡尔加 200；基里曼现行 355；组合别名未解析。"},
+        ])
+        tools = _fake_tools(
+            calc_points=lambda unit_list: {
+                "found": True,
+                "units": [
+                    {"name_en": "Marneus Calgar", "points": None,
+                     "historical_points": 200, "historical_record": {"is_current": False}},
+                    {"name_en": "Roboute Guilliman", "points": 355},
+                ],
+            },
+            get_datasheet=lambda name_or_id: {
+                "found": True, "datasheet": None,
+                "historical_record": {"historical_points": 200, "is_current": False},
+            },
+            entity_resolver=lambda name: {
+                "canonical_id": None, "historical_record": None,
+                "candidates": [], "suggestions": [], "confidence": "none",
+            },
+        )
+        result = AgentLoop(llm=llm, tools=tools).run("比较普通卡尔加和基里曼的点数")
+
+        assert result.degraded is False
+        assert result.tool_calls == ["calc_points", "get_datasheet", "entity_resolver"]
+        assert "200" in result.answer and "355" in result.answer
+        assert "rag_search" not in result.tool_calls
+        assert any("不得丢弃" in str(m) and "已查到" in str(m)
+                   for m in llm.next_step_calls[-1])
+
+    def test_mapping_success_alone_does_not_suppress_honest_fallback(self):
+        """An ID mapping is not enough evidence to answer a rules or points question."""
+        llm = ScriptedLLM("查", steps=[
+            {"type": "tool_call", "tool": "entity_resolver", "args": {"name": "A"}},
+            {"type": "tool_call", "tool": "entity_resolver", "args": {"name": "A 的未知版本"}},
+        ])
+        tools = _fake_tools(entity_resolver=lambda name: ({
+            "canonical_id": "a", "name_en": "A", "confidence": "exact",
+            "candidates": [], "suggestions": [],
+        } if name == "A" else {
+            "canonical_id": None, "name_en": None, "confidence": "none",
+            "candidates": [], "suggestions": [],
+        }))
+        result = AgentLoop(llm=llm, tools=tools).run("A 的未知版本当前多少分？")
+
+        assert result.degraded is True
+        assert result.tool_calls == ["entity_resolver", "entity_resolver", "rag_search"]
+
+    def test_title_only_wiki_candidate_is_not_usable_rules_evidence(self):
+        assert not _has_usable_evidence("search_wiki", {
+            "found": True, "page": None,
+            "results": [{"title": "Guilliman", "path": "units/guilliman.md"}],
+        })
+        assert _has_usable_evidence("search_wiki", {
+            "found": True, "page": None,
+            "results": [{"title": "Guilliman", "summary": "T9, W10"}],
+        })
+
+    def test_last_step_empty_mapping_gets_one_evidence_only_final_turn(self):
+        llm = ScriptedLLM("查", steps=[
+            {"type": "tool_call", "tool": "calc_points", "args": {"unit_list": ["基里曼"]}},
+            {"type": "tool_call", "tool": "entity_resolver", "args": {"name": "未知别名"}},
+            {"type": "final", "content": "基里曼现行 355；未知别名未确认。"},
+        ])
+        tools = _fake_tools(
+            calc_points=lambda unit_list: {
+                "found": True, "units": [
+                    {"name_en": "Roboute Guilliman", "points": 355},
+                ]},
+            entity_resolver=lambda name: {
+                "canonical_id": None, "confidence": "none",
+                "candidates": [], "suggestions": [],
+            },
+        )
+        result = AgentLoop(llm=llm, tools=tools, max_steps=2).run("基里曼和未知别名多少分？")
+
+        assert result.degraded is False
+        assert result.tool_calls == ["calc_points", "entity_resolver"]
+        assert "355" in result.answer and "rag_search" not in result.tool_calls
+        assert any("工具步数已经用尽" in str(m) for m in llm.next_step_calls[-1])
+
+    def test_failed_forced_final_keeps_trace_and_does_not_replace_it_with_rag(self):
+        llm = ScriptedLLM("查", steps=[
+            {"type": "tool_call", "tool": "calc_points", "args": {"unit_list": ["基里曼"]}},
+            {"type": "tool_call", "tool": "entity_resolver", "args": {"name": "未知别名"}},
+            {"type": "tool_call", "tool": "entity_resolver", "args": {"name": "又一个别名"}},
+        ])
+        tools = _fake_tools(
+            calc_points=lambda unit_list: {
+                "found": True, "units": [
+                    {"name_en": "Roboute Guilliman", "points": 355},
+                    {"name_en": "Marneus Calgar", "points": None,
+                     "historical_points": 200},
+                ]},
+            entity_resolver=lambda name: {
+                "canonical_id": None, "confidence": "none",
+                "candidates": [], "suggestions": [],
+            },
+        )
+        result = AgentLoop(llm=llm, tools=tools, max_steps=2).run("基里曼和未知别名多少分？")
+
+        assert result.degraded is True
+        assert result.tool_calls == ["calc_points", "entity_resolver"]
+        assert "rag_search" not in result.tool_calls
+        assert "355" in result.answer and "200" in result.answer
+        assert "历史缓存" in result.answer and "非现行" in result.answer
+        assert "不能据此否定" in result.answer
+
+    def test_failed_forced_final_keeps_cross_faction_point_qualifiers(self):
+        llm = ScriptedLLM("查", steps=[
+            {"type": "tool_call", "tool": "calc_points", "args": {"unit_list": ["Helbrute"]}},
+            {"type": "tool_call", "tool": "entity_resolver", "args": {"name": "again"}},
+        ])
+        tools = _fake_tools(calc_points=lambda unit_list: {
+            "found": True,
+            "units": [{
+                "query": "Helbrute", "name_en": "Helbrute", "points": 140,
+                "same_name_other_factions": [
+                    {"candidate": "Helbrute (CSM)", "points": 140},
+                    {"candidate": "Helbrute (DG)", "points": 185},
+                ],
+            }],
+        })
+
+        result = AgentLoop(llm=llm, tools=tools, max_steps=1).run("Helbrute 多少分？")
+
+        assert result.degraded is True
+        assert "Helbrute (CSM)：点数 140" in result.answer
+        assert "Helbrute (DG)：点数 185" in result.answer
+        assert "同名跨阵营候选，必须消歧" in result.answer
+        assert "Helbrute：点数 140" not in result.answer
+
+    def test_failed_forced_final_discloses_fuzzy_identity(self):
+        llm = ScriptedLLM("查", steps=[
+            {"type": "tool_call", "tool": "calc_points", "args": {"unit_list": ["Hellbrute"]}},
+            {"type": "tool_call", "tool": "entity_resolver", "args": {"name": "again"}},
+        ])
+        tools = _fake_tools(calc_points=lambda unit_list: {
+            "found": True,
+            "units": [{
+                "query": "Hellbrute", "name_en": "Helbrute", "points": 140,
+                "resolved_via": {"canonical_id": "csm-helbrute", "confidence": "fuzzy"},
+            }],
+        })
+
+        result = AgentLoop(llm=llm, tools=tools, max_steps=1).run("Hellbrute 多少分？")
+
+        assert result.degraded is True
+        assert "Helbrute" in result.answer and "Hellbrute" in result.answer
+        assert "模糊匹配，需核对身份" in result.answer
+
+    def test_failed_forced_final_renders_rules_only_evidence(self):
+        llm = ScriptedLLM("查", steps=[
+            {"type": "tool_call", "tool": "search_wiki", "args": {"query": "规则"}},
+            {"type": "tool_call", "tool": "search_wiki", "args": {"query": "again"}},
+        ])
+        tools = _fake_tools(search_wiki=lambda query: {
+            "found": True, "page": None,
+            "results": [{"title": "破敌重誓", "summary": "攻击指定目标时可以重投命中骰。"}],
+        })
+
+        result = AgentLoop(llm=llm, tools=tools, max_steps=1).run("破敌重誓是什么？")
+
+        assert result.degraded is True
+        assert "破敌重誓：攻击指定目标时可以重投命中骰" in result.answer
+        assert "已经确定的证据如下" in result.answer
 
 
 class TestUnknownToolName:

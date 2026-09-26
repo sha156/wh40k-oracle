@@ -2910,7 +2910,7 @@
 | core-rule | [爆炸](core-rules/blast.md) | 爆炸武器打人堆越打越多，目标每 5 个模型就多一份攻击骰。 | 2026-07-11 |
 | core-rule | [特殊保护](core-rules/invulnerable-save.md) | 特殊保护是无视 AP 的第二道保存线，11 版并入同一次保存骰判定。 | 2026-07-11 |
 | core-rule | [独行特工](core-rules/lone-operative.md) | 独行特工让刺客类单位在远距离上无法被敌人锁定。 | 2026-07-11 |
-| core-rule | [破敌重誓](core-rules/oath-of-moment.md) | 破敌重誓是星际战士军队规则：点名一个敌方单位，全军攻击它重投命中。 | 2026-09-21 |
+| core-rule | [破敌重誓](core-rules/oath-of-moment.md) | 破敌重誓是星际战士军队规则：点名一个敌方单位，拥有本能力的模型攻击它时可以重投命中。 | 2026-09-21 |
 | core-rule | [移动阶段](core-rules/movement-phase.md) | 移动阶段逐个为每个单位选择一种移动类型，援军也在此入场。 | 2026-07-11 |
 | core-rule | [突击](core-rules/assault.md) | 突击武器让单位加速后仍能开火，机动与火力兼得。 | 2026-07-11 |
 | core-rule | [精准](core-rules/precision.md) | 精准武器能从人堆里点名人物模型，猎杀高价值目标。 | 2026-07-11 |

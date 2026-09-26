@@ -24,6 +24,7 @@ from typing import Dict, List, Optional, Tuple
 from wiki_compile.canonical import audit_wahapedia_csv, parse_wahapedia_csv
 
 from db_compile.schema import ALL_DDL, ensure_columns
+from db_compile.source_archive import preserve_archived_units
 
 # Wahapedia 官方导出全集（spec 第四节「~20张关系表」的核心子集）。
 # Wargear.csv 永 404——但 Datasheets_wargear.csv 已内联 name+stats，不影响武器导入。
@@ -77,8 +78,10 @@ def _load_name_zh_by_id(terms_path: Optional[Path]) -> Dict[str, str]:
         return {}
     if not isinstance(data, dict):
         return {}
+    from corpus_policy import is_excluded_source
     return {p["canonical_id"]: p["zh"] for p in data.get("pairs", [])
-            if isinstance(p, dict) and p.get("zh") and p.get("canonical_id")}
+            if isinstance(p, dict) and p.get("zh") and p.get("canonical_id")
+            and not is_excluded_source(p.get("book", ""))}
 
 
 def _insert_factions(cur, rows: List[dict]) -> Tuple[int, int]:
@@ -425,6 +428,11 @@ def build_database(csv_dir: Path, db_path: Path,
                 report.row_counts["keywords_updated"] = _insert_keywords(
                     cur, _read_csv(path, report))
 
+            # Deleted source cards may disappear from newer caches. Preserve their
+            # verified archive without carrying old canonical tables into the rebuild.
+            archived = preserve_archived_units(db_path, conn)
+            if archived:
+                report.row_counts["source_archived_units"] = archived
             conn.commit()
         finally:
             conn.close()

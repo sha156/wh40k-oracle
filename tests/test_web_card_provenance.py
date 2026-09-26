@@ -77,6 +77,45 @@ def test_named_table_rows_can_be_reformatted_as_steps():
     }) == []
 
 
+def test_unique_dotted_chinese_names_can_use_natural_short_forms():
+    from web_api.formatter import _missing_table_labels
+    prose = (
+        "| 单位 | 点数 |\n|---|---|\n"
+        "| 马涅乌斯·卡尔加（含 2 名护卫） | 200 |\n"
+        "| 罗伯特·基里曼 | 355 |"
+    )
+    assert _missing_table_labels(prose, {
+        "verdict": {"lede": "普通卡尔加（含 2 名护卫）是 200 分。"},
+        "calc": ["基里曼是 355 分。"],
+    }) == []
+
+
+def test_shared_dotted_chinese_short_name_does_not_hide_a_dropped_row():
+    from web_api.formatter import _missing_table_labels
+    prose = (
+        "| 单位 | 点数 |\n|---|---|\n"
+        "| 阿尔法·基里曼 | 100 |\n"
+        "| 贝塔·基里曼 | 200 |"
+    )
+    assert _missing_table_labels(prose, {
+        "verdict": {"lede": "基里曼是 100 分。"},
+        "calc": [],
+    }) == ["阿尔法基里曼", "贝塔基里曼"]
+
+
+def test_dotted_short_name_collision_with_another_full_row_stays_lossy():
+    from web_api.formatter import _missing_table_labels
+    prose = (
+        "| 单位 | 点数 |\n|---|---|\n"
+        "| 马涅乌斯·卡尔加（普通版） | 200 |\n"
+        "| 卡尔加（安提洛库斯之铠版） | 155 |"
+    )
+    assert _missing_table_labels(prose, {
+        "verdict": {"lede": "卡尔加（安提洛库斯之铠版）是 155 分。"},
+        "calc": [],
+    }) == ["马涅乌斯卡尔加普通版"]
+
+
 @pytest.mark.parametrize("last_missing", [False, True])
 def test_comparison_keeps_each_successful_card_source(last_missing):
     def get_entity(name):
@@ -127,6 +166,139 @@ def test_malformed_layout_keeps_prose_and_discloses_degradation(malformed):
         getattr(span, "s", "") for span in answer.verdict.lede)
 
 
+def test_layout_cannot_invent_an_unseen_named_variant():
+    class InventedVariant:
+        def structure(self, *args):
+            return {
+                "verdict": {"lede": "普通卡尔加只有历史记录。"},
+                "calc": ["相对于卡尔加·无畏机甲等版本，当前条目不明确。"],
+                "followups": ["卡尔加·无畏机甲现在多少分？"],
+            }
+
+    prose = "普通卡尔加只检索到历史记录 200 分，不能当作当前点数。"
+    answer = format_answer("普通卡尔加多少分？", AgentResult(
+        answer=prose, intent="算"), TraceRecorder({}), InventedVariant())
+    visible = "".join(getattr(span, "s", "") for span in answer.verdict.lede)
+
+    assert answer.degraded and answer.trace_warn
+    assert prose in visible
+    assert "无畏机甲" not in visible
+    assert answer.followups == []
+
+
+def test_layout_cannot_turn_missing_history_field_into_nonexistence():
+    class InventedAbsence:
+        def structure(self, *args):
+            return {
+                "verdict": {"lede": "基里曼当前官方点数 355 分。"},
+                "calc": ["基里曼无历史缓存点数。"],
+                "followups": [],
+            }
+
+    prose = "基里曼当前官方点数是 355 分；本次只检索了当前点数。"
+    answer = format_answer("基里曼多少分？", AgentResult(
+        answer=prose, intent="算"), TraceRecorder({}), InventedAbsence())
+    visible = "".join(getattr(span, "s", "") for span in answer.verdict.lede)
+
+    assert answer.degraded and answer.trace_warn
+    assert prose in visible
+    assert "无历史缓存点数" not in visible
+
+
+def test_unsupported_variant_is_dropped_from_followups_without_losing_layout():
+    class FollowupOnly:
+        def structure(self, *args):
+            return {
+                "verdict": {"lede": "普通卡尔加只有历史记录 200 分。"},
+                "calc": [],
+                "followups": ["卡尔加·无畏机甲现在多少分？"],
+            }
+
+    answer = format_answer("普通卡尔加多少分？", AgentResult(
+        answer="普通卡尔加只有历史记录 200 分。", intent="算"),
+        TraceRecorder({}), FollowupOnly())
+
+    assert not answer.degraded
+    assert answer.followups == []
+
+
+def test_grounded_middle_dot_name_can_be_followed_by_chinese_grammar():
+    class Paraphrase:
+        def structure(self, *args):
+            return {
+                "verdict": {"lede": "罗伯特·基里曼当前是 355 分。"},
+                "calc": [], "followups": [],
+            }
+
+    answer = format_answer("基里曼多少分？", AgentResult(
+        answer="罗伯特·基里曼：355 分。", intent="算"),
+        TraceRecorder({}), Paraphrase())
+
+    assert not answer.degraded
+    assert "罗伯特·基里曼" in "".join(
+        getattr(span, "s", "") for span in answer.verdict.lede)
+
+
+def test_shared_dotted_name_prefix_does_not_authorize_another_variant():
+    class OtherVariant:
+        def structure(self, *args):
+            return {
+                "verdict": {"lede": "卡尔加·无畏机甲当前点数不明。"},
+                "calc": [], "followups": [],
+            }
+
+    answer = format_answer("卡尔加多少分？", AgentResult(
+        answer="卡尔加·安提洛库斯版本为 155 分。", intent="算"),
+        TraceRecorder({}), OtherVariant())
+
+    assert answer.degraded and answer.trace_warn
+
+
+def test_historical_absence_caution_is_not_treated_as_an_absence_fact():
+    class Caution:
+        def structure(self, *args):
+            return {
+                "verdict": {"lede": "本次只检索了当前点数。"},
+                "calc": ["不能据此断言没有历史记录。"], "followups": [],
+            }
+
+    answer = format_answer("基里曼多少分？", AgentResult(
+        answer="基里曼当前 355 分；本次只检索了当前点数。", intent="算"),
+        TraceRecorder({}), Caution())
+
+    assert not answer.degraded
+
+
+def test_other_units_absence_does_not_ground_a_new_subject():
+    class WrongSubject:
+        def structure(self, *args):
+            return {
+                "verdict": {"lede": "基里曼当前 355 分。"},
+                "calc": ["基里曼无历史缓存点数。"], "followups": [],
+            }
+
+    answer = format_answer("比较两者", AgentResult(
+        answer="卡尔加没有历史缓存点数；基里曼当前 355 分。", intent="算"),
+        TraceRecorder({}), WrongSubject())
+
+    assert answer.degraded and answer.trace_warn
+
+
+def test_colon_labeled_absence_remains_scoped_to_its_subject():
+    class WrongColonSubject:
+        def structure(self, *args):
+            return {
+                "verdict": {"lede": "基里曼当前 355 分。"},
+                "calc": ["基里曼：无历史缓存点数。"], "followups": [],
+            }
+
+    answer = format_answer("比较两者", AgentResult(
+        answer="卡尔加：没有历史缓存点数；基里曼当前 355 分。", intent="算"),
+        TraceRecorder({}), WrongColonSubject())
+
+    assert answer.degraded and answer.trace_warn
+
+
 def test_repeated_datasheet_and_points_calls_keep_all_sources_and_latest_result():
     def datasheet(name):
         return {"found": True, "datasheet": {"name_en": name, "faction": "Alpha"}}
@@ -148,3 +320,16 @@ def test_repeated_datasheet_and_points_calls_keep_all_sources_and_latest_result(
     assert len(answer.cites) == 4
     assert recorder.get_result("get_datasheet")["datasheet"]["name_en"] == "B"
     assert TraceRecorder({}).get_results("get_datasheet") == []
+
+
+@pytest.mark.parametrize("sources", [{"book": "Book", "page": 1}, 12, "Book",
+                                    [None, 5, {"book": "Book", "page": []}],
+                                    [{"book": "Book", "page": "²"}]])
+def test_malformed_model_source_shape_keeps_verified_answer(sources):
+    recorder = TraceRecorder({})
+    recorder.last_result["get_datasheet"] = {
+        "found": True, "datasheet": {"name_en": "Verified unit", "faction": "SM"}}
+    answer = format_answer("Question", AgentResult(
+        answer="Complete verified reply", intent="查", sources=sources), recorder)
+    assert any(c.term == "Verified unit" for c in answer.cites)
+    assert "Complete verified reply" in "".join(getattr(span, "s", "") for span in answer.verdict.lede)

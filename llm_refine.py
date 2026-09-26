@@ -235,6 +235,8 @@ def _filter_chinese_pending(pdfs: List[Path], out_root: Path,
 def process_book(client, pdf_path: Path, out_root: Path, workers: int = 4, lang: str = "zh",
                  reuse_source_cache: bool = False) -> dict:
     """整本处理：提取→过滤→并发 LLM→缓存落盘。返回统计 summary。"""
+    from corpus_policy import require_active_source
+    require_active_source(pdf_path)
     pages = extract_pages(pdf_path)
     book_dir = out_root / pdf_path.stem
     book_dir.mkdir(parents=True, exist_ok=True)
@@ -346,7 +348,8 @@ def main():
     http_client = httpx.Client(proxy="http://127.0.0.1:7897")
     client = OpenAI(api_key=api_key, base_url=BASE_URL, http_client=http_client)
 
-    pdfs = sorted(Path(args.data_dir).glob("*.pdf"))
+    from corpus_policy import is_excluded_source
+    pdfs = sorted(p for p in Path(args.data_dir).glob("*.pdf") if not is_excluded_source(p))
     if args.book:
         pdfs = [p for p in pdfs if args.book in p.stem]
         if not pdfs:

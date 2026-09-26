@@ -12,7 +12,7 @@ import styles from "./Chat.module.css";
 const EXAMPLES = [
   "基里曼当前多少分？",
   "掩体在第11版如何生效？",
-  "破敌重誓相比于以前更新了什么？请完整比较并说明实战影响。",
+  "破敌重誓相比于以前更新了什么？",
 ];
 
 interface ChatAppProps {

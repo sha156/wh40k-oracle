@@ -48,8 +48,8 @@ export interface ParsedRoster {
   issues: { line: number; text: string; reason: string }[];
 }
 
-export function parseRoster(text: string, factionId: string, detachmentId: string | null, size: RosterSize): Promise<ParsedRoster> {
-  return postJson<ParsedRoster>("/roster/parse", { text, factionId, detachmentId, size });
+export function parseRoster(text: string, factionId: string, detachmentId: string | null, size: RosterSize, signal?: AbortSignal): Promise<ParsedRoster> {
+  return postJson<ParsedRoster>("/roster/parse", { text, factionId, detachmentId, size }, signal);
 }
 
 export interface ValidationIssue {
@@ -65,6 +65,12 @@ export interface ValidationReport {
   limit: number;
   legal: boolean;
   issues: ValidationIssue[];
+}
+
+/** No detected error is not full validation when an unmodeled rule remains. */
+export function rosterValidationStatus(report: ValidationReport): "invalid" | "incomplete" | "valid" {
+  if (!report.legal || report.issues.some((issue) => issue.severity === "error")) return "invalid";
+  return report.issues.some((issue) => issue.surfacedOnly) ? "incomplete" : "valid";
 }
 
 export interface TargetScore {

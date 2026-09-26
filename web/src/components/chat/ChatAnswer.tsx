@@ -21,7 +21,7 @@ export function ChatAnswer({ message, onRetry, retryDisabled }: { message: ChatM
   const hasAnswer = answer.verdict.lede.length > 0;
 
   async function copyAnswer() {
-    const markdown = answerMarkdown(question, answer);
+    const markdown = answerMarkdown(question, answer, new Date(), { includeSnapshot: false });
     try {
       await navigator.clipboard.writeText(markdown);
       setCopyState("已复制");
@@ -34,8 +34,7 @@ export function ChatAnswer({ message, onRetry, retryDisabled }: { message: ChatM
   return (
     <div>
       <div className={styles.assistantLabel}>
-        <svg aria-hidden="true" width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.4"><path d="m12 3 8 5v8l-8 5-8-5V8zM4 8l8 5 8-5m-8 5v8" strokeLinejoin="round" /></svg>
-        40K 规则助手
+        规则专家
       </div>
       {answer.degraded ? <p className={styles.warning}>{answer.traceWarn || "本次回答使用了兜底处理，请留意来源与补充说明。"}</p> : null}
       <div className={styles.answer}>

@@ -75,6 +75,9 @@ def _cont_page_continues(lines: List[str]) -> bool:
 
 def extract_book(book_dir: Path) -> List[EntityCandidate]:
     """单本书：扫 page_*.md 的 ## 标题；CONT 续页与'详解'页并入实体页码。"""
+    from corpus_policy import is_excluded_source
+    if is_excluded_source(book_dir):
+        return []
     out: List[EntityCandidate] = []
     by_key = {}
     current: Optional[EntityCandidate] = None

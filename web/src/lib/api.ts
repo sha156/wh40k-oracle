@@ -13,6 +13,7 @@ import type {
   TraceStep,
   Verdict,
 } from "./answer";
+import { validAnswer } from "./answer-validation.mjs";
 
 const API_BASE =
   process.env.NEXT_PUBLIC_API_BASE?.replace(/\/$/, "") ?? "http://localhost:8000";
@@ -52,6 +53,17 @@ const DISPATCH: Record<string, keyof ChatHandlers> = {
 function dispatch(event: string, data: unknown, handlers: ChatHandlers): void {
   const key = DISPATCH[event];
   if (!key) return;
+  if (event !== "done") {
+    if (event === "meta" && typeof (data as ChatMeta | null)?.degraded !== "boolean") {
+      throw new Error("回答数据格式不完整，请重试。");
+    }
+    const sample = emptyAnswer();
+    const field = event === "cite" ? "cites" : event;
+    const candidate = event === "meta"
+      ? { ...sample, ...(data !== null && typeof data === "object" ? data : {}), summary: (data as ChatMeta | null)?.summary }
+      : { ...sample, [field]: ["trace", "calc", "cite"].includes(event) ? [data] : data };
+    if (!validAnswer(candidate)) throw new Error("回答数据格式不完整，请重试。");
+  }
   const fn = handlers[key] as ((arg: unknown) => void) | undefined;
   fn?.(data);
 }
@@ -66,7 +78,9 @@ function parseBlock(block: string): { event: string; data: unknown } | null {
   }
   if (dataLines.length === 0) return null;
   try {
-    return { event, data: JSON.parse(dataLines.join("\n")) };
+    return { event, data: JSON.parse(dataLines.join("\n"), function (_key, value) {
+      return value === null && !Array.isArray(this) ? undefined : value;
+    }) };
   } catch {
     return null;
   }
@@ -92,7 +106,7 @@ export async function streamChat(
   const reader = resp.body.getReader();
   const decoder = new TextDecoder();
   let buffer = "";
-  let completed = false;
+  let hasAnswer = false;
   try {
   for (;;) {
     const { value, done } = await reader.read();
@@ -105,15 +119,20 @@ export async function streamChat(
       const parsed = parseBlock(block);
       if (!parsed && /^(event|data):/m.test(block)) throw new Error("回答数据无法解析，请重试。");
       if (parsed) {
-        if (parsed.event === "done") completed = true;
+        if (parsed.event === "done") {
+          if (!hasAnswer) throw new Error("未收到完整回答，请重新提问。");
+          dispatch(parsed.event, parsed.data, handlers);
+          return;
+        }
         dispatch(parsed.event, parsed.data, handlers);
+        if (parsed.event === "verdict") hasAnswer = (parsed.data as Verdict).lede.length > 0;
       }
     }
     if (done) break;
   }
-  if (!completed) throw new Error("回答传输中断，请重新提问。");
+  throw new Error("回答传输中断，请重新提问。");
   } finally {
-    reader.releaseLock();
+    try { await reader.cancel(); } finally { reader.releaseLock(); }
   }
 }
 

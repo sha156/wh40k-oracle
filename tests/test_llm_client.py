@@ -65,6 +65,9 @@ def test_web_layout_also_uses_flash_without_thinking():
     assert layout.structure("Points?", "Verified points", "", [])["verdict"]["lede"]
     assert fake.calls[0]["model"] == "deepseek-flash"
     assert fake.calls[0]["extra_body"] == {"thinking": {"type": "disabled"}}
+    system = fake.calls[0]["messages"][0]["content"]
+    assert "缺少字段不是否定性证据" in system
+    assert "不得引入" in system
 
 
 # ── _extract_json_object 纯函数 ────────────────────────────────────
@@ -150,6 +153,10 @@ def test_next_step_system_prompt_bans_negative_assertions_on_lookup_miss():
     assert "绝不允许" in system
     # 一次问多个单位时要一次性全查、逐个作答（#109 的另一半：漏项）
     assert "unit_list" in system
+    assert "未返回 historical_points" in system
+    assert "未出现的" in system
+    assert "historical_record.identity_scope" in system
+    assert "不得反称缓存没有区分" in system
 
 
 # ── classify_intent ───────────────────────────────────────────────

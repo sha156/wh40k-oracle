@@ -397,6 +397,7 @@ def stage_zh_details(cfg: UpdateConfig) -> StageResult:
     from db_compile.blacklibrary import (apply_unit_name_overrides, fill_name_zh,
                                          load_details, load_or_fetch_units,
                                          populate_zh_details)
+    from db_compile.source_archive import project_deleted_details
     units, _ = load_or_fetch_units(cfg.blacklibrary_cache, offline=cfg.offline)
     name_rep = fill_name_zh(cfg.db, units) if units else {"filled": 0}
     # 黑图没收录的现役单位（新品/改名）走人工译名真源，优先级最高
@@ -408,12 +409,15 @@ def stage_zh_details(cfg: UpdateConfig) -> StageResult:
                            f"（人工译名 {ov_rep['filled']} 行）；无 details 缓存，跳过中文表",
                            warning="details.json 缺失，中文 datasheet 层未灌")
     det_rep = populate_zh_details(cfg.db, details)
+    archive_rep = project_deleted_details(cfg.db, details=details,
+                                          cache_path=cfg.blacklibrary_details)
     return StageResult(
         "zh_details", True,
         f"填 name_zh {name_rep['filled']}（人工译名 {ov_rep['filled']} 行）；"
-        f"unit_zh_detail 入库 {det_rep['matched']}（无匹配 {det_rep['unmatched']}）",
+        f"unit_zh_detail 入库 {det_rep['matched']}（无匹配 {det_rep['unmatched']}）；"
+        f"历史源归档 {archive_rep['archived']}（非现行兵牌/点数）",
         detail={**det_rep, "name_zh_filled": name_rep["filled"],
-                "overrides": ov_rep})
+                "overrides": ov_rep, "source_archive": archive_rep})
 
 
 @_writes_db

@@ -117,6 +117,30 @@ _RESOLVER_MISS_NOTE = (
 )
 
 
+def _archived_record(name: str, resolver: Optional[EntityResolver] = None,
+                     db_path: Optional[Path] = None) -> Optional[Dict[str, Any]]:
+    """Historical source identity precedes fuzzy guesses, never an exact current identity."""
+    from db_compile.source_archive import find_archived_unit
+
+    path = db_path if db_path is not None else (
+        getattr(resolver, "db_path", None) if resolver is not None else DB_PATH)
+    if path is None:
+        return None  # An injected resolver must not read an unrelated runtime DB.
+    record = find_archived_unit(path, name)
+    if record is None:
+        return None
+    r = resolver or EntityResolver(db_path=Path(path))
+    current = r.resolve(name)
+    if current.canonical_id and current.confidence == "exact":
+        return None
+    return record
+
+
+def _historical_result(record: Dict[str, Any]) -> Dict[str, Any]:
+    return {"found": True, "historical_record": record,
+            "source_scope": record["source_scope"], "note": record["source_scope"]}
+
+
 def entity_resolver(name: str, resolver: Optional[EntityResolver] = None) -> Dict[str, Any]:
     """中文名/英文名/社区俗名 → canonical id（db_compile.entity_resolver）。
 
@@ -124,6 +148,11 @@ def entity_resolver(name: str, resolver: Optional[EntityResolver] = None) -> Dic
     """
     r = resolver or _get_default_resolver()
     result = r.resolve(name)
+    archived = _archived_record(name, resolver=r)
+    if archived:
+        return {**_historical_result(archived), "canonical_id": None,
+                "name_en": archived["name_en"], "confidence": "historical",
+                "candidates": [], "suggestions": []}
     out: Dict[str, Any] = {
         "canonical_id": result.canonical_id,
         "name_en": result.name_en,
@@ -170,6 +199,9 @@ def get_entity(
     """
     wiki_root = wiki_root or WIKI_ROOT
     app_path = app_path or APP_PATH
+    archived = _archived_record(name_or_id, resolver=resolver)
+    if archived:
+        return {**_historical_result(archived), "page": None, "resolved_via": None}
     index = load_index(wiki_root)
     page = find_entity(name_or_id, index, wiki_root)
     if page is not None:
@@ -390,6 +422,7 @@ def calc_points(
     也让中文名这条最常见的入参形态真的能查到。
     """
     from db_compile.calc_points import UNKNOWN_UNIT_NOTE
+    from web_api.official_points import exact_unit
 
     # 参数防护（评审 M#4）：LLM 可能把 unit_list 传成单个字符串——字符串是可迭代的，
     # 会被逐字符拆成"单位名"胡乱查询。字符串包成单元素列表；其余非列表类型明确报错。
@@ -416,6 +449,32 @@ def calc_points(
         if r.note != UNKNOWN_UNIT_NOTE:
             units.append({"unit_id": r.unit_id, "name_en": r.name_en,
                           "points": r.points, "note": r.note})
+            continue
+
+        archived = _archived_record(str(query), resolver=resolver, db_path=db_path)
+        if archived:
+            # Never put a retired source price in the current points field or
+            # hand a source ID to roster/current-unit calculations.
+            summary = {key: value for key, value in archived.items() if key != "raw"}
+            # The official ledger can acquire a current price before a canonical
+            # card exists. Use the archive's verified English identity for aliases;
+            # never substitute a fuzzy variant or resolve ambiguous prices to old ones.
+            try:
+                official = exact_unit(db_path, archived["name_en"]) if archived["name_en"] else None
+            except ValueError:  # Older databases may not have the complete ledger.
+                official = None
+            current = official or {"unit_id": None, "name_en": archived["name_en"],
+                                   "points": None, "note": archived["source_scope"]}
+            identity_note = (
+                " 历史记录的已验证单位编成与版本边界见 "
+                "historical_record.identity_scope；不得反称缓存未区分这些版本。"
+                if archived.get("identity_scope") else ""
+            )
+            units.append({**current, "historical_points": archived["historical_points"],
+                          "query": str(query), "historical_record": summary,
+                          "note": current["note"] + (
+                              " 历史缓存另列于 historical_record；historical_points 不是现行点数。"
+                              if official else "") + identity_note})
             continue
 
         resolved = _resolve_for_points(str(query), resolver)
@@ -458,7 +517,6 @@ def calc_points(
             ambiguous_queries.append(str(query))
             continue
 
-        from web_api.official_points import exact_unit
         try:
             official = exact_unit(db_path, str(query))
         except ValueError:  # Databases built before the full ledger remain supported.
@@ -564,6 +622,9 @@ def get_datasheet(
                         "逐一列出各候选数值作答，绝不要只挑一个当作唯一答案："
                         + "、".join(exc.candidates)}
     if ds is None:
+        archived = _archived_record(name_or_id, resolver=resolver, db_path=db_path)
+        if archived:
+            return {**_historical_result(archived), "datasheet": None}
         # 名字没解析到、但库里有几个「长得像」的 ⇒ 大概率用户报了个不存在的名字。
         # 这条分支**不能**只回「库中未找到该单位」就交给 _EMPTY_CHECKS 降级：经典链拿到的
         # 是一堆按相似词检索出来的片段，模型很容易顺着写成「这个单位是……」。

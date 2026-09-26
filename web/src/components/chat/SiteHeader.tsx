@@ -19,28 +19,9 @@ interface SiteHeaderProps {
 
 /** E1 顶栏：品牌 + 语境铭牌 + 页签导航 */
 export function SiteHeader({ context, active = "聊天", variant = "default", onNewChat }: SiteHeaderProps) {
-  if (variant === "chat") return (
-    <header className={styles.header}>
-      <div className={styles.headerInner}>
-        <Link href="/" className={styles.brand} aria-label="40K 规则助手首页">
-          <span className={styles.brandMark}>
-            <svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6"><path d="m12 3 8 5v8l-8 5-8-5V8zM4 8l8 5 8-5m-8 5v8M8 5.5l8 5" strokeLinejoin="round" /></svg>
-          </span>
-          40K 规则助手
-        </Link>
-        <nav className={styles.nav} aria-label="主导航">
-          {NAV_ITEMS.map((item) => <Link key={item.href} href={item.href} aria-current={item.label === active ? "page" : undefined}>{item.label}</Link>)}
-        </nav>
-        <button className={styles.newChat} type="button" onClick={onNewChat}>
-          <svg aria-hidden="true" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.7"><path d="M12 5v14m-7-7h14" strokeLinecap="round" /></svg>
-          新对话
-        </button>
-      </div>
-    </header>
-  );
   return (
     <header className="relative border-b-2 border-gw-red bg-[linear-gradient(#141b1e,var(--color-ink))] shadow-[0_0_0_1px_#000,0_6px_24px_rgba(0,0,0,.6)]">
-      <SlotBadge id="E1" />
+      {variant !== "chat" ? <SlotBadge id="E1" /> : null}
       <div className="mx-auto flex max-w-[1100px] items-center gap-4 px-5 pt-3.5 pb-2.5 max-tablet:flex-wrap max-tablet:gap-[10px] max-tablet:px-3 max-tablet:pt-2.5 max-tablet:pb-2">
         <Aquila className="flex-none drop-shadow-[0_1px_2px_#000] max-tablet:h-[26px] max-tablet:w-[56px]" />
         <div className="flex flex-col">
@@ -51,12 +32,16 @@ export function SiteHeader({ context, active = "聊天", variant = "default", on
             Warhammer 40K Rules Copilot
           </span>
         </div>
+        {variant === "chat" ? <button className={styles.newChat} type="button" onClick={onNewChat}>
+          <svg aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.7"><path d="M12 5v14m-7-7h14" strokeLinecap="round" /></svg>
+          新对话
+        </button> : null}
         <div className="clip-plate-10 ml-auto flex items-center gap-2 bg-[linear-gradient(100deg,var(--color-tau-ban),#0e3b44)] px-4 py-[7px] font-cond text-[13px] tracking-[1px] text-[#d9e6e4] max-tablet:ml-0 max-tablet:w-full max-tablet:justify-center max-tablet:px-2.5 max-tablet:py-[5px] max-tablet:text-[12px]">
           <span className="h-2 w-2 rounded-full bg-[#4fb7c9] shadow-[0_0_6px_#4fb7c9]" />
           {context}
         </div>
       </div>
-      <nav className="mx-auto flex max-w-[1100px] gap-1 px-5 max-tablet:scrollbar-none max-tablet:overflow-x-auto max-tablet:px-2">
+      <nav aria-label="主导航" className="mx-auto flex max-w-[1100px] gap-1 px-5 max-tablet:scrollbar-none max-tablet:overflow-x-auto max-tablet:px-2">
         {NAV_ITEMS.map((item) => {
           const isActive = item.label === active;
           const cls = `clip-slant-8 px-[22px] pt-2 pb-[9px] font-cond text-[14px] tracking-[2px] uppercase no-underline max-tablet:px-3.5 max-tablet:text-[13px] max-tablet:tracking-[1px] max-tablet:whitespace-nowrap ${
@@ -67,7 +52,7 @@ export function SiteHeader({ context, active = "聊天", variant = "default", on
                 : "cursor-not-allowed bg-[#12191a] text-[#4d5854]"
           }`;
           return item.ready ? (
-            <Link key={item.label} href={item.href} className={cls}>
+            <Link key={item.label} href={item.href} className={cls} aria-current={isActive ? "page" : undefined}>
               {item.label}
             </Link>
           ) : (

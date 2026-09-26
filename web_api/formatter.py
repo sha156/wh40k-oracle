@@ -32,6 +32,19 @@ class StructuringLLM(Protocol):
 
 # ── A 类槽位推导 ──────────────────────────────────────────────────
 
+def _historical_records(recorder: TraceRecorder) -> List[Dict[str, Any]]:
+    records: Dict[str, Dict[str, Any]] = {}
+    for tool in ("get_datasheet", "get_entity", "entity_resolver", "calc_points"):
+        for result in recorder.get_results(tool):
+            if not isinstance(result, dict):
+                continue
+            for item in [result] + (result.get("units") or []):
+                record = item.get("historical_record") if isinstance(item, dict) else None
+                if isinstance(record, dict) and record.get("archive_id"):
+                    records[record["archive_id"]] = record
+    return list(records.values())
+
+
 def _derive_cites(result: AgentResult, recorder: TraceRecorder) -> List[Cite]:
     """从工具证据与检索来源确定性抽引用；去重编号。诚实：无页码不编页码。"""
     cites: List[Cite] = []
@@ -56,8 +69,8 @@ def _derive_cites(result: AgentResult, recorder: TraceRecorder) -> List[Cite]:
 
     # 结构库属性块
     for ds_res in recorder.get_results("get_datasheet"):
-        if isinstance(ds_res, dict) and ds_res.get("found"):
-            ds = ds_res.get("datasheet") or {}
+        if isinstance(ds_res, dict) and ds_res.get("found") and ds_res.get("datasheet"):
+            ds = ds_res["datasheet"]
             _add("L3 结构库 · " + str(ds.get("faction") or "未知"),
                  term=str(ds.get("name_en") or ""), section="属性块")
 
@@ -77,10 +90,16 @@ def _derive_cites(result: AgentResult, recorder: TraceRecorder) -> List[Cite]:
             for source in evidence.get("official_sources", []):
                 _add("Munitorum Field Manual", section="官方当前点数",
                      url=source.get("url"))
-    for p in (result.sources or [])[:6]:
-        if isinstance(p, dict) and p.get("book"):
+    for record in _historical_records(recorder):
+        # The cached POST endpoint is provenance, not a navigable card URL.
+        _add("黑图书馆 · 历史缓存（第三方，已删除）", section="历史资料，非当前点数",
+             term="{} · 源记录 {}".format(record.get("name_en", ""), record.get("source_id", "")))
+    sources = result.sources if isinstance(result.sources, list) else []
+    for p in sources[:6]:
+        if isinstance(p, dict) and isinstance(p.get("book"), str) and p["book"].strip():
             page = p.get("page")
-            _add(str(p["book"]), page=int(page) if str(page).isdigit() else None,
+            valid_page = re.fullmatch(r"[0-9]{1,7}", str(page))
+            _add(str(p["book"]), page=int(page) if valid_page else None,
                  wiki=str(p.get("wiki", "")))
 
     return cites
@@ -195,7 +214,7 @@ def _missing_table_labels(prose: str, structured: Dict[str, Any]) -> List[str]:
     def normalized(text: str) -> str:
         return re.sub(r"\W+", "", text, flags=re.UNICODE).casefold()
 
-    labels: List[str] = []
+    labels: List[tuple[str, str]] = []
     in_table = False
     for line in prose.splitlines():
         stripped = line.strip()
@@ -206,9 +225,10 @@ def _missing_table_labels(prose: str, structured: Dict[str, Any]) -> List[str]:
             in_table = False
             continue
         if in_table:
-            label = normalized(stripped.strip("|").split("|", 1)[0])
+            raw_label = stripped.strip("|").split("|", 1)[0].strip()
+            label = normalized(raw_label)
             if label and any(ch.isalpha() for ch in label):
-                labels.append(label)
+                labels.append((raw_label, label))
     if len(labels) < 2:
         return []
     verdict = structured.get("verdict") or {}
@@ -218,7 +238,111 @@ def _missing_table_labels(prose: str, structured: Dict[str, Any]) -> List[str]:
         *[str(item) for item in (structured.get("calc") or [])],
         str(sensitivity.get("text", "")),
     ]))
-    return [label for label in labels if label not in visible]
+    # The layout pass may use a natural short form of a dotted Chinese personal
+    # name ("罗伯特·基里曼" -> "基里曼").  Treat that as the same row only when
+    # the short form uniquely identifies one row in this table.  This keeps the
+    # original loss guard fail-closed for tables containing two people with the
+    # same final name, and does not authorize arbitrary fuzzy abbreviations.
+    aliases: List[List[str]] = []
+    for raw_label, label in labels:
+        raw_name = re.split(r"[（(]", raw_label, maxsplit=1)[0]
+        candidates: List[str] = []
+        dotted = re.split(r"[·•・]", raw_name)
+        if len(dotted) > 1:
+            short = normalized(dotted[-1])
+            if len(short) >= 3 and all("\u3400" <= ch <= "\u9fff" for ch in short):
+                candidates.append(short)
+        aliases.append(candidates)
+
+    # A short form must not occur anywhere in another row's full label.  Counting
+    # only equal dotted suffixes misses collisions such as ordinary "卡尔加"
+    # versus a non-dotted "卡尔加（安提洛库斯之铠版）" row.
+    short_counts = {
+        alias: sum(alias in other_label for _raw, other_label in labels)
+        for candidates in aliases for alias in candidates
+    }
+
+    missing: List[str] = []
+    for (_raw_label, label), candidates in zip(labels, aliases):
+        if label in visible or any(
+            alias in visible
+            for alias in candidates
+            if short_counts.get(alias, 0) == 1
+        ):
+            continue
+        missing.append(label)
+    return missing
+
+
+_HISTORICAL_ABSENCE = re.compile(
+    r"(?:无|没有|不存在|未有|并无)(?:任何|可用|对应|相关|已知)?的?"
+    r"历史(?:缓存)?(?:点数|记录|资料|数据)"
+)
+_ABSENCE_NEGATION = re.compile(
+    r"(?:不得|不能|不可|禁止|不要|不应|并非|不代表|不等于|未证实|未确认|"
+    r"无法确认|不能据此断言)"
+)
+_DOTTED_ZH_NAME = re.compile(
+    r"[\u3400-\u9fff]{1,20}(?:[·•・][\u3400-\u9fff]{1,20})+"
+)
+
+
+def _structured_body(structured: Dict[str, Any], *, followups: bool = False) -> str:
+    verdict = structured.get("verdict") or {}
+    sensitivity = structured.get("sensitivity") or {}
+    parts = [str(verdict.get("lede", "")),
+             *[str(item) for item in (structured.get("calc") or [])],
+             str(sensitivity.get("text", ""))]
+    if followups:
+        parts.extend(str(item) for item in (structured.get("followups") or []))
+    return "\n".join(parts)
+
+
+def _unsupported_grounding_claims(
+    question: str, prose: str, evidence: str, text: str,
+) -> List[str]:
+    """Find two high-confidence ways a layout pass can invent new facts.
+
+    The structurer may paraphrase, so broad token-diff validation is unsafe. These
+    checks target concrete regressions: asserting that historical data does not
+    exist merely because no field was returned, and introducing a newly named
+    Chinese variant. The original prose/evidence remains the authority.
+    """
+    problems: List[str] = []
+    factual_grounding = prose + "\n" + evidence
+
+    def affirmative_absence_subjects(value: str) -> set[str]:
+        subjects: set[str] = set()
+        for clause in re.split(r"[，。；！？\n]", value):
+            for match in _HISTORICAL_ABSENCE.finditer(clause):
+                prefix = clause[:match.start()]
+                # "Do not claim there is no history" is a caution, not evidence
+                # that the historical record is absent.
+                if _ABSENCE_NEGATION.search(prefix):
+                    continue
+                labels = [part for part in re.split(r"[:：]", prefix) if part.strip()]
+                subject = labels[-1] if labels else prefix
+                subject = re.sub(r"[^\u3400-\u9fffA-Za-z0-9·•・.]+", "", subject)
+                subjects.add(subject or "*")
+        return subjects
+
+    claimed_absences = affirmative_absence_subjects(text)
+    grounded_absences = affirmative_absence_subjects(factual_grounding)
+    if any(subject not in grounded_absences for subject in claimed_absences):
+        problems.append("unsupported historical-absence claim")
+
+    entity_grounding = question + "\n" + factual_grounding
+    for candidate in _DOTTED_ZH_NAME.findall(text):
+        # The regex intentionally captures contiguous Chinese, including nearby
+        # grammar. Strip a small set of relation/predicate words, then compare the
+        # complete dotted identity; accepting arbitrary substrings would let
+        # `卡尔加·安提洛库斯` incorrectly authorize `卡尔加·无畏机甲`.
+        name = re.sub(r"^(?:关于|至于|其中|而|相对于)+", "", candidate)
+        name = re.sub(
+            r"(?:当前|现在|此时|等版本|版本|等|的|是|为|可以|能够|点数)+$", "", name)
+        if name not in entity_grounding:
+            problems.append("unsupported named variant: " + name)
+    return problems
 
 def format_answer(
     question: str,
@@ -247,6 +371,17 @@ def format_answer(
             _validate_layout(structured)
             if _missing_table_labels(agent_result.answer, structured):
                 raise ValueError("Answer formatting omitted named table rows")
+            if _unsupported_grounding_claims(
+                    question, agent_result.answer, evidence, _structured_body(structured)):
+                raise ValueError("Answer formatting added unsupported factual claims")
+            # Follow-up suggestions are optional. Drop only unsupported ones rather
+            # than degrading an otherwise grounded answer layout.
+            if structured.get("followups"):
+                structured["followups"] = [
+                    item for item in structured["followups"]
+                    if not _unsupported_grounding_claims(
+                        question, agent_result.answer, evidence, str(item))
+                ]
         except Exception:
             structured = {}
             degraded = True
@@ -292,6 +427,11 @@ def _derive_entity_card(recorder: TraceRecorder, hot_weapon: Optional[str]):
 def _evidence_digest(recorder: TraceRecorder, limit: int = 2000) -> str:
     """把录到的工具返回压成给结构化 LLM 的证据摘要（截断防超长）。"""
     lines: List[str] = []
+    for record in _historical_records(recorder):
+        summary = {key: record.get(key) for key in (
+            "archive_id", "name_en", "historical_points", "is_current", "source_scope",
+            "identity_scope")}
+        lines.append("[历史来源] " + json.dumps(summary, ensure_ascii=False))
     scopes = set()
     for entity in recorder.get_results("get_entity"):
         if isinstance(entity, dict) and entity.get("found") and entity.get("source_scope"):

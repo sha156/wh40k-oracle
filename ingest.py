@@ -74,6 +74,7 @@ from langchain_community.vectorstores import FAISS
 from langchain_experimental.text_splitter import SemanticChunker
 from langchain_core.documents import Document
 from corpus_manifest import classify_book, classify_book_with_origin, load_manifest
+from corpus_policy import is_excluded_source, require_active_source
 from hf_embeddings_compat import build_huggingface_embeddings
 from md_chunker import load_refined_book
 
@@ -179,6 +180,7 @@ def load_pdf(pdf_path: Path) -> list[Document]:
     加载单个 PDF，返回 Document 列表。
     每页一个 Document，元数据包含 source、book、page。
     """
+    require_active_source(pdf_path)
     loader = PyMuPDFLoader(str(pdf_path))
     pages = loader.load()
 
@@ -337,7 +339,7 @@ def main():
     VECTOR_STORE_PATH.mkdir(parents=True, exist_ok=True)
 
     # ── 扫描 PDF ──
-    pdf_files = sorted(data_dir.glob("*.pdf"))
+    pdf_files = sorted(p for p in data_dir.glob("*.pdf") if not is_excluded_source(p))
     if not pdf_files:
         print(f"❌ 在 {data_dir} 目录下未找到任何 PDF 文件")
         sys.exit(1)
