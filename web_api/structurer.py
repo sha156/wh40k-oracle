@@ -12,6 +12,8 @@ import json
 import re
 from typing import Any, Dict, List, Optional
 
+from agent.openai_policy import create_openai_client, rejects_response_format
+
 _SYSTEM = """你是战锤40K规则参谋回答的「排版器」。上游参谋已用工具查证并写好散文答案，
 你的唯一任务是把它**重排**成前端槽位，不新增任何未在散文/证据中出现的数字或引用。
 
@@ -70,18 +72,8 @@ def _extract_json(text: str) -> Dict[str, Any]:
         start = stripped.find("{")
         if start == -1:
             raise ValueError("未找到 JSON 对象")
-        depth, end = 0, -1
-        for i in range(start, len(stripped)):
-            if stripped[i] == "{":
-                depth += 1
-            elif stripped[i] == "}":
-                depth -= 1
-                if depth == 0:
-                    end = i + 1
-                    break
-        if end == -1:
-            raise ValueError("JSON 不完整")
-        obj = json.loads(stripped[start:end])
+        # raw_decode observes string escaping and returns before trailing noise.
+        obj, _ = json.JSONDecoder().raw_decode(stripped, start)
     if not isinstance(obj, dict):
         raise ValueError("结构化输出非对象")
     return obj
@@ -103,8 +95,7 @@ class OpenAIStructuringLLM:
         if client is not None:
             self.client = client
         else:
-            from openai import OpenAI
-            self.client = OpenAI(api_key=api_key, base_url=base_url)
+            self.client = create_openai_client(api_key, base_url)
 
     def structure(
         self, question: str, prose: str, evidence: str, cites: List[Dict[str, Any]],
@@ -138,6 +129,8 @@ class OpenAIStructuringLLM:
         try:
             resp = self.client.chat.completions.create(
                 response_format={"type": "json_object"}, **kwargs)
-        except Exception:
+        except Exception as error:
+            if not rejects_response_format(error):
+                raise
             resp = self.client.chat.completions.create(**kwargs)
         return _extract_json(resp.choices[0].message.content)

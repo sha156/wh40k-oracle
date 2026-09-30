@@ -1,7 +1,8 @@
 """agent/loop.py — L5 Agent 循环（spec 第七节「Agent 循环」）。
 
 意图分类 → function-calling 循环（max_steps=6）→ 答案合成；
-工具异常或返回空结果时静默降级到 rag_search，走老链路兜底回答。
+工具异常或返回空结果时，仅在没有可用证据时降级到 rag_search；
+已有证据的失败路径保留已验证事实、引用与身份边界，明确标示未确认部分。
 
 LLMClient 是本模块与具体 LLM 供应商之间的边界：真实实现（deepseek/glm 兼容接口）
 留待接线到 app.py 之前的下一迭代；本迭代的测试与骨架验证一律用实现了该 Protocol
@@ -9,6 +10,7 @@ LLMClient 是本模块与具体 LLM 供应商之间的边界：真实实现（de
 """
 from __future__ import annotations
 
+from collections.abc import Mapping
 from dataclasses import dataclass, field
 from typing import Any, Callable, Dict, List, Optional, Protocol
 
@@ -113,6 +115,32 @@ class AgentResult:
     sources: List[Dict[str, Any]] = field(default_factory=list)
 
 
+def _validate_action(step: Any) -> None:
+    """Check parsed/injected actions before dispatch, without coercion or retries."""
+    if not isinstance(step, dict):
+        raise ValueError("next_step 未返回动作对象")
+    action_type = step.get("type")
+    if not isinstance(action_type, str) or action_type not in ("tool_call", "final"):
+        raise ValueError("动作 type 必须是 tool_call 或 final")
+    if action_type == "tool_call":
+        tool_name = step.get("tool")
+        if not isinstance(tool_name, str) or not tool_name.strip():
+            raise ValueError("tool_call 的 tool 必须是非空字符串")
+        # Omitted args retain the existing no-argument contract. Explicit falsey
+        # non-mappings (null, [], false, etc.) must never become executable {}.
+        args = step.get("args", {})
+        if not isinstance(args, Mapping) or any(not isinstance(key, str) for key in args):
+            raise ValueError("tool_call 的 args 必须是字符串键的参数映射")
+    else:
+        # Missing/empty text keeps the existing bounded empty-final nudge, but
+        # containers/numbers must not be laundered into a successful answer.
+        if not isinstance(step.get("content", ""), str):
+            raise ValueError("final 的 content 必须是字符串")
+        sources = step.get("sources", [])
+        if not isinstance(sources, list) or any(not isinstance(source, dict) for source in sources):
+            raise ValueError("final 的 sources 必须是引用对象列表")
+
+
 def _is_empty_result(tool_name: str, result: Any) -> bool:
     if not isinstance(result, dict):
         return False
@@ -172,6 +200,18 @@ def _evidence_facts(tool_name: str, result: Any) -> List[str]:
         return []
     facts: List[str] = []
 
+    def qualify(start: int, record: Any) -> None:
+        if not isinstance(record, dict):
+            return
+        # Never truncate scope notes: dropping the end can turn a preview or
+        # historical fact into an apparently current, verified rule.
+        notes = [str(record[key]) for key in (
+            "faction", "faction_zh", "source_note", "source_scope", "identity_scope", "note",
+        ) if record.get(key)]
+        if notes:
+            for i in range(start, len(facts)):
+                facts[i] += "（" + "；".join(notes) + "）"
+
     def page_fact(page: Any, fallback: str) -> None:
         if page is None:
             return
@@ -183,9 +223,13 @@ def _evidence_facts(tool_name: str, result: Any) -> List[str]:
             body = getattr(page, "body", None)
         if isinstance(fm, dict):
             title = fm.get("name_zh") or fm.get("name_en") or fallback
+            faction = fm.get("faction")
         else:
             title = (getattr(fm, "name_zh", None) or getattr(fm, "name_en", None)
                      or fallback)
+            faction = getattr(fm, "faction", None)
+        if faction:
+            title += f"（{faction}）"
         excerpt = " ".join(str(body or "").split())[:500]
         if excerpt:
             facts.append(f"{title}：{excerpt}")
@@ -206,6 +250,7 @@ def _evidence_facts(tool_name: str, result: Any) -> List[str]:
         for unit in result.get("units") or []:
             if not isinstance(unit, dict) or unit.get("unresolved"):
                 continue
+            start = len(facts)
             # A single unqualified price is actively misleading when the same
             # English name has independent faction rows. Render every candidate.
             ambiguous = cross_faction_facts(unit)
@@ -230,6 +275,11 @@ def _evidence_facts(tool_name: str, result: Any) -> List[str]:
                         price.get("faction_slug"), price.get("unit_name"), price.get("models"))
                         if value)
                     facts.append(f"{price_label or label}：官方点数 {price['cost']}（未消歧）")
+            if ambiguous and confidence == "fuzzy":
+                for i in range(start, len(facts)):
+                    facts[i] += f"（由查询“{query}”模糊匹配，需核对身份）"
+            qualify(start, unit)
+            qualify(start, unit.get("historical_record"))
     elif tool_name == "get_datasheet":
         historical = result.get("historical_record") or {}
         if isinstance(historical, dict) and historical.get("historical_points") is not None:
@@ -237,12 +287,31 @@ def _evidence_facts(tool_name: str, result: Any) -> List[str]:
             facts.append(f"{label}：历史缓存点数 {historical['historical_points']}（非现行）")
         datasheet = result.get("datasheet") or {}
         ambiguous = cross_faction_facts(result)
-        if (isinstance(datasheet, dict) and datasheet.get("points") is not None
-                and not ambiguous):
+        if isinstance(datasheet, dict):
             label = datasheet.get("name_zh") or datasheet.get("name_en") or "兵牌"
-            facts.append(f"{label}：点数 {datasheet['points']}")
+            if datasheet.get("faction"):
+                label += f"（{datasheet['faction']}）"
+            start = len(facts)
+            points = datasheet.get("points_min", datasheet.get("points"))
+            if points is not None and not ambiguous:
+                facts.append(f"{label}：点数 {points}")
+            for model in (datasheet.get("models") or [])[:6]:
+                if not isinstance(model, dict):
+                    continue
+                stats = " / ".join(f"{key.upper()} {model[key]}"
+                                   for key in ("m", "t", "sv", "w", "ld", "oc")
+                                   if model.get(key) is not None)
+                if stats:
+                    facts.append(f"{label} / {model.get('name') or '模型'}：{stats}")
+            qualify(start, datasheet)
+        qualify(0, historical)
     elif tool_name in ("get_entity", "get_keyword_definition"):
         page_fact(result.get("page"), "规则条目")
+        historical = result.get("historical_record") or {}
+        if isinstance(historical, dict) and historical.get("historical_points") is not None:
+            label = historical.get("name_en") or historical.get("name_zh") or "历史兵牌"
+            facts.append(f"{label}：历史缓存点数 {historical['historical_points']}（非现行）")
+            qualify(0, historical)
     elif tool_name == "search_wiki":
         page_fact(result.get("page"), "Wiki 条目")
         for entry in result.get("results") or []:
@@ -259,9 +328,41 @@ def _evidence_facts(tool_name: str, result: Any) -> List[str]:
             excerpt = " ".join(str(summary or "").split())[:500]
             if excerpt:
                 facts.append(f"{title or 'Wiki 检索结果'}：{excerpt}")
+    qualify(0, result)
+    resolved = result.get("resolved_via")
+    if isinstance(resolved, dict) and resolved.get("confidence") == "fuzzy":
+        facts = [fact + "（模糊匹配，需核对身份）" for fact in facts]
     # Keep the emergency answer readable and bounded; normal successful synthesis
     # still receives the complete structured tool results in messages.
     return facts[:12]
+
+
+def _evidence_sources(result: Dict[str, Any]) -> List[Dict[str, Any]]:
+    """Retain provided references, without inventing per-field provenance."""
+    sources: List[Dict[str, Any]] = []
+
+    def add(items: Any) -> None:
+        if isinstance(items, list):
+            for item in items:
+                if isinstance(item, dict) and item and item not in sources:
+                    sources.append(dict(item))
+
+    add(result.get("official_sources"))
+    add(result.get("sources"))
+    page = result.get("page")
+    fm = page.get("fm") if isinstance(page, dict) else getattr(page, "fm", None)
+    add(fm.get("sources") if isinstance(fm, dict) else getattr(fm, "sources", None))
+    records = [result.get("historical_record")]
+    records.extend(unit.get("historical_record") for unit in result.get("units") or []
+                   if isinstance(unit, dict))
+    for record in records:
+        if isinstance(record, dict) and record.get("source_url"):
+            source = {"url": record["source_url"]}
+            for key in ("source_id", "cached_at"):
+                if record.get(key) is not None:
+                    source[key] = record[key]
+            add([source])
+    return sources
 
 
 _PRESERVE_EVIDENCE_NUDGE = (
@@ -322,9 +423,22 @@ class AgentLoop:
         last_exception_tool: Optional[str] = None  # 连续异常检测（评审 M#6）
         has_usable_evidence = False
         evidence_facts: List[str] = []
+        evidence_sources: List[Dict[str, Any]] = []
+
+        def recover(reason: str, calls: Optional[List[str]] = None) -> AgentResult:
+            trace = tool_calls if calls is None else calls
+            if has_usable_evidence:
+                return self._emergency_answer(intent, trace, evidence_facts, evidence_sources, reason)
+            return self._fallback(user_input, intent, trace, reason)
 
         for _ in range(self.max_steps):
-            step = self.llm.next_step(messages, TOOL_SPECS)
+            # Recovery must run where the successful trace and facts still exist.
+            # The outer safety net cannot recover a loop's local evidence.
+            try:
+                step = self.llm.next_step(messages, TOOL_SPECS)
+                _validate_action(step)
+            except Exception as exc:
+                return recover(f"答案整理异常: {exc}")
 
             if step.get("type") == "final":
                 # 零工具直答门控：查/判/算 类问题若一次工具都没调就想给最终答案，
@@ -340,7 +454,7 @@ class AgentLoop:
                     )
                 # 空内容 final 不算成功（评审 M#5）：先写回提示再给模型一次机会，
                 # 仍为空才降级——不把空字符串当作有效回答返回给用户。
-                answer = str(step.get("content") or "")
+                answer = step.get("content", "")
                 if not answer.strip():
                     if not nudged_for_empty:
                         nudged_for_empty = True
@@ -350,10 +464,7 @@ class AgentLoop:
                                        "（final 的 content 不能为空）。",
                         })
                         continue
-                    return self._fallback(
-                        user_input, intent, tool_calls,
-                        reason="final 步骤 content 连续为空",
-                    )
+                    return recover("final 步骤 content 连续为空")
                 return AgentResult(
                     answer=answer,
                     intent=intent,
@@ -364,7 +475,7 @@ class AgentLoop:
                 )
 
             tool_name = step.get("tool")
-            args = step.get("args") or {}
+            args = step.get("args", {})
             tool_fn = self.tools.get(tool_name)
 
             if tool_fn is None:
@@ -381,10 +492,7 @@ class AgentLoop:
                 # 修正参数重试或换工具；同一工具**连续第二次**异常才降级 classic
                 # （达到 max_steps 时由循环末尾的兜底降级）。
                 if last_exception_tool == tool_name:
-                    return self._fallback(
-                        user_input, intent, tool_calls + [tool_name],
-                        reason=f"{tool_name} 连续两次异常: {exc}",
-                    )
+                    return recover(f"{tool_name} 连续两次异常: {exc}", tool_calls + [tool_name])
                 last_exception_tool = tool_name
                 messages.append({
                     "role": "tool", "name": tool_name,
@@ -408,6 +516,9 @@ class AgentLoop:
                 for fact in _evidence_facts(tool_name, result):
                     if fact not in evidence_facts:
                         evidence_facts.append(fact)
+                for source in _evidence_sources(result):
+                    if source not in evidence_sources:
+                        evidence_sources.append(source)
             messages.append({"role": "tool", "name": tool_name, "content": result})
 
         if has_usable_evidence:
@@ -417,11 +528,10 @@ class AgentLoop:
             messages.append({"role": "user", "content": _FINALIZE_EVIDENCE_NUDGE})
             try:
                 step = self.llm.next_step(messages, TOOL_SPECS)
-            except Exception:
-                step = {}
-            if not isinstance(step, dict):
-                step = {}
-            answer = str(step.get("content") or "")
+                _validate_action(step)
+            except Exception as exc:
+                return recover(f"工具步数用尽后答案整理异常: {exc}")
+            answer = step.get("content", "")
             if step.get("type") == "final" and answer.strip():
                 return AgentResult(
                     answer=answer,
@@ -432,21 +542,22 @@ class AgentLoop:
                               if isinstance(source, dict)]
                              if isinstance(step.get("sources"), list) else []),
                 )
-            if evidence_facts:
-                detail = ("已经确定的证据如下；不能据此否定这些事实，"
-                          "其余内容暂列为未确认。\n"
-                          + "\n".join(f"- {fact}" for fact in evidence_facts))
-            else:
-                detail = ("工具曾返回可用证据，但安全降级路径无法展开其内容；"
-                          "请重试整理，当前不能据此下结论。")
-            return AgentResult(
-                answer="⚠️ 模型在工具步数用尽后仍未完成整理。" + detail,
-                intent=intent,
-                tool_calls=tool_calls,
-                degraded=True,
-                sources=[],
-            )
+            return recover("模型在工具步数用尽后仍未完成整理")
         return self._fallback(user_input, intent, tool_calls, reason="超过 max_steps 仍未得出结论")
+
+    @staticmethod
+    def _emergency_answer(
+        intent: str, tool_calls: List[str], facts: List[str], sources: List[Dict[str, Any]], reason: str,
+    ) -> AgentResult:
+        if facts:
+            detail = ("已经确定的证据如下；不能据此否定这些事实，"
+                      "其余内容暂列为未确认。\n"
+                      + "\n".join(f"- {fact}" for fact in facts))
+        else:
+            detail = ("工具曾返回可用证据，但安全降级路径无法展开其内容；"
+                      "其余内容暂列为未确认，请重试整理，当前不能据此下结论。")
+        return AgentResult(answer=f"⚠️ {reason}。" + detail, intent=intent,
+                           tool_calls=list(tool_calls), degraded=True, sources=list(sources))
 
     def _fallback(
         self, user_input: str, intent: str, tool_calls: List[str], reason: str,
