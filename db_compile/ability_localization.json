@@ -1,0 +1,157 @@
+{
+  "schema_version": 1,
+  "records": [
+    {
+      "unit_id": "000000138",
+      "reviewed_on": "2026-09-30",
+      "review_scope": "Exact saved local Chinese capture and official database ability snapshot; not a claim of globally latest rules.",
+      "chinese_abilities_sha256": "9f092b1c50003aa65a2177d261fa59af9d82147f5ceea590dceb2c1f31a805d1",
+      "english_abilities_sha256": "577c94389bee249bdab77e606a9f6a952888e20402867797b7110b8933df279e",
+      "fingerprint_encoding": "UTF-8 JSON, ensure_ascii=false, sort_keys=true, separators=comma/colon; ordered lists retained. Chinese hashes every original field; English hashes ordered name_en/text pairs.",
+      "provenance": {
+        "chinese_source_id": 24,
+        "chinese_source_name": "Black Library",
+        "chinese_fetched_at": "2026-09-22T09:36:28.206365+00:00",
+        "chinese_capture": "db_sources/blacklibrary/snapshots/20260926-resume/raw/unit-details/c2356069e9d1e79c.json",
+        "english_source": "db/wh40k.sqlite abilities owner_id=000000138 ORDER BY rowid, name_en and text_zh",
+        "evidence_report": "docs/superpowers/reports/2026-09-26-guilliman-source-comparison/README.md",
+        "official_frequency_change": "https://www.warhammer-community.com/en-gb/articles/bk58priy/the-warhammer-40000-balance-dataslate-june-2025/"
+      },
+      "chinese_selections": [
+        {
+          "canonical_name_en": "Author of the Codex",
+          "content_block_paths": [
+            [
+              1,
+              "content",
+              0
+            ]
+          ],
+          "html_path": [
+            1,
+            "contentHtml"
+          ],
+          "html_paragraph_indices": [
+            0
+          ],
+          "name_path": [
+            1,
+            "name"
+          ]
+        },
+        {
+          "canonical_name_en": "Ultramarines Bodyguard",
+          "content_block_paths": [
+            [
+              2,
+              "content",
+              0
+            ]
+          ],
+          "html_path": [
+            2,
+            "contentHtml"
+          ],
+          "html_paragraph_indices": [
+            0
+          ],
+          "name_path": [
+            2,
+            "name"
+          ]
+        },
+        {
+          "canonical_name_en": "Armour of Fate",
+          "content_block_paths": [
+            [
+              3,
+              "content",
+              0
+            ]
+          ],
+          "html_path": [
+            3,
+            "contentHtml"
+          ],
+          "html_paragraph_indices": [
+            0
+          ],
+          "name_path": [
+            3,
+            "name"
+          ]
+        },
+        {
+          "canonical_name_en": "Primarch of the XIII (Aura)",
+          "content_block_paths": [
+            [
+              1,
+              "content",
+              1
+            ]
+          ],
+          "html_path": [
+            1,
+            "contentHtml"
+          ],
+          "html_paragraph_indices": [
+            1
+          ],
+          "display_name": "十三军团原体【光环】",
+          "strip_heading_prefix": "◼ 十三军团原体【光环】："
+        },
+        {
+          "canonical_name_en": "Master of Battle",
+          "content_block_paths": [
+            [
+              1,
+              "content",
+              2
+            ]
+          ],
+          "html_path": [
+            1,
+            "contentHtml"
+          ],
+          "html_paragraph_indices": [
+            2
+          ],
+          "display_name": "战争之主",
+          "strip_heading_prefix": "◼ 战争之主："
+        }
+      ],
+      "english_fallbacks": [
+        {
+          "canonical_name_en": "SUPREME COMMANDER",
+          "reason": "No Chinese counterpart in the reviewed source."
+        },
+        {
+          "canonical_name_en": "Supreme Strategist",
+          "reason": "Retain official once-per-battle-round wording; the cached Chinese per-turn phrase does not unambiguously express the same frequency."
+        }
+      ],
+      "excluded_chinese_entries": [
+        {
+          "path": [
+            0
+          ],
+          "reason": "Faction ability name only; not an official unit ability row."
+        },
+        {
+          "path": [
+            1,
+            "content",
+            3
+          ],
+          "reason": "Supreme Strategist frequency is ambiguous against the official English rule."
+        },
+        {
+          "path": [
+            4
+          ],
+          "reason": "Additional movement claim without a counterpart in this official ability snapshot."
+        }
+      ]
+    }
+  ]
+}

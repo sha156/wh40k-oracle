@@ -21,7 +21,7 @@ updated: '2026-09-14'
 ## 属性表
 | 模型 | M | T | SV | W | LD | OC |
 |---|---|---|---|---|---|---|
-| 守望堡主 | 6" | 4 | 2+ | 5 | 6+ | 1 |
+| Watch Master | 6" | 4 | 2+ | 5 | 6+ | 1 |
 
 ### 特殊保护
 - 4+
@@ -37,9 +37,8 @@ updated: '2026-09-14'
 | 警戒之矛 | 近战 | 6 | 2+ | 6 | -2 | D3 | [[core-rules/lance.md\|骑枪]] |
 
 ## 技能
-- **战略知识**：当该模型领导一个联合单位时，该单位可以在进行突进或后撤的回合中进行射击和冲锋。
-- **战斗仪式**：每个战斗轮次一次，一个拥有该技能的己方单位如果被选为计谋的目标，就可以使用该技能。这样做的话，那个计谋的 CP 花费减少 1CP。
-- **【阵营技能】：破敌重誓，任务战术**
+- **Strategic Knowledge**：While this model is leading a unit, that unit is eligible to shoot and declare a charge in a turn in which it Advanced or Fell Back.
+- **Rites of Battle**：Once per battle round, one unit from your army with this ability can use it when its unit is targeted with a Stratagem. If it does, reduce the CP cost of that use of that Stratagem by 1CP.
 
 ## 单位构成
 - **1个模型** — 95 分

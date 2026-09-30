@@ -13,3 +13,4 @@
 | 2026-09-21 12:06 UTC | manual-edit | Clarify Oath comparison for readers: define the official points table, group independent changes, and retain version and ability-possession limits without repeated audit wording. | core-rules/oath-of-moment.md | build, lint: 0 errors |
 
 - 2026-09-26: Refreshed 228 generated unit pages from the verified Black Library snapshot merge; official numerical fields retained. See 2026-09-26-blacklibrary-import-acceptance report.
+| 2026-09-30 11:19 UTC | rebuild | Reviewed Guilliman ability fragments and scoped four Black Library identity families; rebuilt six changed cards with official English fallback for unsafe translations | factions/千子/units/lord-of-change.md, factions/帝国特勤/units/ministorum-priest.md, factions/帝国特勤/units/watch-captain-artemis.md, factions/帝国特勤/units/watch-master.md, factions/星界军/units/ministorum-priest.md, factions/星际战士/units/roboute-guilliman.md | crosslinks --units-only, build, keywords, lint: zero errors |

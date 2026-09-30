@@ -202,7 +202,7 @@ def _fetch_unit(conn, uid):
     models = conn.execute("SELECT * FROM models WHERE unit_id=?", (uid,)).fetchall()
     weapons = conn.execute("SELECT * FROM weapons WHERE unit_id=?", (uid,)).fetchall()
     abils = conn.execute(
-        "SELECT scope,name_zh,name_en,text_zh FROM abilities WHERE owner_id=?",
+        "SELECT scope,name_zh,name_en,text_zh FROM abilities WHERE owner_id=? ORDER BY rowid",
         (uid,)).fetchall()
     zd = conn.execute(
         "SELECT stats_json,abilities_json,weapons_json,intro_json "
@@ -236,6 +236,11 @@ def render_unit(conn, uid: str, faction_zh: str,
     if requires_current_english(conn, uid):
         zabils = []
         zintro = []
+    else:
+        from db_compile.blacklibrary import reviewed_abilities
+        projected = reviewed_abilities(conn, uid, zabils)
+        if projected is not None:
+            zabils = projected
     # Match the web card's completeness rule: a partial community translation
     # must not remove an official ability (e.g. Stonesinger's Support).
     if len(zabils or []) < len(abils):
@@ -319,6 +324,8 @@ def render_unit(conn, uid: str, faction_zh: str,
         L += ["", "## 技能"]
         for ab in zabils:
             prefix, text = _flatten_zh_ability(ab)
+            if ab.get("source") == "official-db":
+                prefix = "【官方英文】：" + prefix
             # 技能正文是黑图译文，里面的词条用旧译名——归一成官方译名，
             # 否则同一页上武器表写「针对载具4+」、技能正文写「反载具4+」，读者会当成 bug
             text = official_terms(text)

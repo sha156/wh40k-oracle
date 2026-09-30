@@ -51,8 +51,13 @@ needs_assets = pytest.mark.skipif(
 # +14 net items on existing rows = 3349. Source wording changes move recognised
 # keyword spans 188 -> 184; the unchanged parser still reconstructs every text.
 # Per-unit reconciliation: reports/2026-09-26-blacklibrary-ability-reconciliation.json.
-EXPECTED_ZH_ITEMS = 3349        # unit_zh_detail 里的技能条目总数
-EXPECTED_ZH_KW_SPANS = 184      # 其中切出的词条段（中文【】写法）
+# 2026-09-30 reviewed identity quarantine removes five wrong-faction projections:
+# AM Priest 4, AoI Priest 4, AoI Artemis 3, AoI Watch Master 3, TS Lord 3 = 17.
+# Their keyword spans are 0/0/1/0/3 = 4; parser and English rows are unchanged.
+# Evidence: docs/superpowers/reports/
+# 2026-09-30-blacklibrary-projection-evidence/ability-reconciliation.json.
+EXPECTED_ZH_ITEMS = 3332        # unit_zh_detail 里的技能条目总数
+EXPECTED_ZH_KW_SPANS = 180      # 其中切出的词条段（中文【】写法）
 EXPECTED_EN_ROWS = 4041         # abilities 表行数
 EXPECTED_EN_KW_SPANS = 445      # 其中切出的词条段（英文 [] 写法；kwb 里全是阵营关键词，
                                 # 一条都不该在这里）
