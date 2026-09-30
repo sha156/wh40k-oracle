@@ -12,11 +12,150 @@ crash correction absent from the registry's claimed 2.13.0 fix. PT2's unsafe
 pickle behavior remains evidenced and outside the inspected application paths.
 python-dotenv is now synchronized at **1.2.3**, with its symlink-write fix and
 Windows BOM/backslash behavior verified against actual older installations.
+urllib3 is synchronized at **2.8.0**, including three September maintainer
+advisories absent from the supplied baseline matches; 2.7.0 is insufficient.
 The complete CPU application stack, full native suite, Docker/Linux installation
 and final audit remain outstanding.
 No integration, deployment, source retirement or main-environment changes occurred.
 
-## Latest increment: python-dotenv patch and Windows text verification — October 1, 2026
+## Latest increment: urllib3 transport pin and September advisory verification — October 1, 2026
+
+Native, Docker and lightweight-server requirements now explicitly pin **urllib3
+2.8.0**. CI inherits the server pin. Requests remains **2.33.0** and its real
+transport/session behavior passes the probes below. The actual native baseline
+contains **2.6.0**; Docker already resolved **2.8.0**, with no original match.
+The project candidate also previously resolved 2.8.0. This increment prevents
+unconstrained resolution or retention of an older native transport: it does not
+claim a Docker version change. Only three requirements files and this report
+change. No production Python, test expectation, source policy, asset, generated
+page, API reliability-owned file or Docker installation step changed.
+
+**The supplied snapshot is incomplete for current urllib3 advisories.** Its
+native entry has **six records / three underlying groups**. A fresh exact query
+of that same **2.6.0** returns **eight records / five groups**, adding the HTTPS
+proxy and chunk-size-line issues below. A fresh query of intermediate **2.7.0**
+returns **three records / three groups**, all requiring **2.8.0**. The additional
+Deflate issue starts at 2.6.2, so it is not an extra finding on native 2.6.0.
+These are query results, not altered baseline records. The
+[tagged 2.8.0 release notes](https://github.com/urllib3/urllib3/blob/2.8.0/CHANGES.rst)
+and all six fetched maintainer advisories support the selected branch. Registry
+metadata publishes **2.8.0 on September 15, 2026**, requires **Python>=3.10** and
+provides a **py3-none-any** wheel. Verification uses **Python 3.11.9**; Linux
+installation or a Docker build is not claimed.
+
+| Underlying issue | Actual evidence and candidate outcome |
+|---|---|
+| PYSEC-2026-1996 / CVE-2026-21441 / [GHSA-38jv-5279-wg99](https://github.com/urllib3/urllib3/security/advisories/GHSA-38jv-5279-wg99), compressed redirect | Patched from 2.6.3. Toy 2.6.0 redirect decodes all **262,144 bytes** before the final read; 2.8.0 decodes **zero** redirect bytes. |
+| PYSEC-2026-141 / CVE-2026-44431 / [GHSA-qccp-gfcp-xxvc](https://github.com/urllib3/urllib3/security/advisories/GHSA-qccp-gfcp-xxvc), low-level proxy redirect headers | Patched from 2.7.0. Real `ProxyManager.connection_from_url().urlopen()` forwards toy Authorization, Cookie and Proxy-Authorization across origins on 2.6.0; 2.8.0 strips all three and retains an ordinary header. |
+| PYSEC-2026-142 / CVE-2026-44432 / [GHSA-mf9v-mfxr-j63j](https://github.com/urllib3/urllib3/security/advisories/GHSA-mf9v-mfxr-j63j), partial decoding then drain / Brotli reads | Patched from 2.7.0. After a 16-byte gzip read, 2.6.0 decodes **262,128 additional bytes** during drain; 2.8.0 decodes **zero**. The optional Brotli-specific security reproduction is **not claimed**; see its qualification below. |
+| CVE-2026-97687 / [GHSA-8988-9cw3-xx77](https://github.com/urllib3/urllib3/security/advisories/GHSA-8988-9cw3-xx77), HTTPS proxy TLS policy | Patched from 2.8.0. A real TLS policy-helper call on 2.7.0 changes the proxy context from **CERT_REQUIRED to CERT_NONE** because the destination disables verification; 2.8.0 preserves **CERT_REQUIRED** and the proxy hostname/context. The probe stops immediately before the actual handshake. |
+| CVE-2026-97689 / [GHSA-vxq7-64xx-v4gw](https://github.com/urllib3/urllib3/security/advisories/GHSA-vxq7-64xx-v4gw), chunk-size line buffering | Patched from 2.8.0. A real stdlib HTTPResponse/urllib3 streaming call on a finite toy malformed line requests unlimited input and reads **100,000 bytes** on 2.7.0; 2.8.0 caps that read at **65,537 bytes** and rejects it. |
+| CVE-2026-97688 / [GHSA-gh4c-6fx4-qh6g](https://github.com/urllib3/urllib3/security/advisories/GHSA-gh4c-6fx4-qh6g), chunked Deflate trailing-byte loop | A **4,096-byte** toy decoded stream with trailing compressed input hangs on 2.7.0 in an owned subprocess; the verifier kills and reaps it after **three seconds**. 2.8.0 completes, exits **0** and preserves every decoded byte. This issue affects >=2.6.2,<2.8.0. |
+
+**These checks exercise real installed libraries.** Decoder instrumentation
+records the output of the original decoder, without replacing its behavior.
+The header/redirect probes use a local toy HTTP proxy; `.invalid` target names
+are served by that proxy without external DNS or destination requests. The
+TLS probe instruments only the socket-wrapping boundary after the actual policy
+helper runs; it establishes context mutation, not a live TLS interception
+exploit. Chunked probes use real stdlib HTTPResponse objects over disposable
+in-memory wire bytes. No large decompression bomb, external credential target,
+source refresh, model download or application service was used.
+
+The Requests probe preserves same-origin Authorization, strips cross-origin
+Authorization, retains an ordinary header, delivers the exact streamed gzip
+body and raises HTTPError for 503. Low-level urllib3 pools also strip credentials
+on same-origin proxy redirects after patching; do not mistake that observation
+for the application Requests contract. A separate actual
+`scripts.fetch_blacklibrary_details.fetch_detail()` call against a local toy
+POST endpoint preserves the expected identity/detail and `trust_env=False`
+proxy bypass. No real capture or cache write runs. Partial read followed by an
+unlimited gzip read preserves the exact complete byte stream.
+
+An AST scan covers **all 280 tracked Python files**. Production Requests imports
+are in ingestion, Black Library compilation and the two capture scripts. The
+only direct urllib3 import is ingestion's existing warning-control call. No
+tracked direct ProxyManager/PoolManager, drain, chunked-reader or iter_content
+call was found; four recorded `urllib.request.urlopen()` consumers use the
+stdlib, not urllib3. The inspected ingestion mirror TLS exception and HTTP Clash
+proxy remain unchanged. Plain HTTP proxies do not have the HTTPS-proxy TLS
+vulnerability described above. This bounds inspected direct reachability, not
+the full future third-party HTTP call graph, and does not justify retaining
+matched vulnerable versions.
+
+**Optional decoder qualification:** neither clean runtime/test inventory nor
+the project subset installs Brotli or brotlicffi. A separate **eight-package**
+environment verifies small incremental Brotli reads using actual **Brotli 1.2.0**
+and urllib3 2.8.0, passes pip check and audits clean. urllib3's declared Brotli
+extra requires **Brotli>=1.2.0** on CPython; tagged code warns and falls back to
+unbounded decoding on older optional decoder libraries. No optional decoder is
+added to production merely for this probe. The original larger Brotli sample
+did not establish the expected advisory reproduction and is excluded from that
+claim; its verifier error is retained. Host/final-stack resolution must retain
+the declared decoder floor if an optional Brotli extra is enabled.
+
+Validation actually completed:
+
+- A **new clean-final-venv** installs tracked bootstrap and the **tracked server
+  requirements**, using the shared build constraint. Its **26-distribution**
+  runtime inventory passes `pip check`, has no pytest/model/retrieval libraries
+  and retains the server no-model contract. The project `.venv` also passes
+  `pip check`. Both install/use urllib3 **2.8.0** with Requests **2.33.0**.
+- Fresh compatibility probes pass in **0.585 seconds**, September advisory
+  probes in **0.406 seconds**; project **0.577 / 0.420 seconds** respectively.
+  The real application HTTP probe passes in both. Every toy server is shut down,
+  closed and joined; each owned subprocess completes or is killed and reaped.
+- Separate **pytest 9.0.3 / PyMuPDF 1.26.7 / HTTPX 0.28.1** test additions produce
+  a **34-distribution** fresh test subset with a passing `pip check`. The five
+  simulator/API suites named in the preceding increment plus
+  `test_db_compile_downloads.py`, `test_fetch_blacklibrary_details.py` and
+  `test_blacklibrary_snapshot.py` pass **118 / skip 30 / two warnings in 3.87
+  seconds** fresh; project **118 / skip 30 / two warnings in 2.74 seconds**.
+  JUnit verifies all 30 skips are missing `wh40k.sqlite`; no asset, fixture,
+  expectation or skip was changed. Retrieval/warmup are disabled.
+- Isolated **pip-audit 2.10.1** audits complete **26-runtime**, **34-test** and
+  **eight-optional-decoder** inventories: **zero findings / zero skips**, exit 0.
+  The complete project **75-distribution** exact inventory has zero findings
+  with one explicit CPU torch PyPI skip. Mapping only **2.14.0+cpu to 2.14.0**
+  yields **75 / zero findings / zero skips**; an OSV query of the exact installed
+  CPU version yields **one / zero findings / zero skips**. Both exit 0. Tool-only
+  packages are excluded; no runtime package or advisory is suppressed. Earlier
+  PT2, Streamlit sampling and setuptools limitations remain despite registry
+  results. These are still application **subsets**, not the full release tree.
+
+Ignored raw evidence and executable verifiers are at
+`C:/Users/Administrator/.codex/worktrees/release-python-security/RAG/db_sources/python-security/iteration-10/`:
+unaltered baseline selections, current baseline/intermediate audits and alias
+groups, six maintainer bodies, tagged changelogs/source, registry metadata,
+clean/install reports and logs, exact runtime/test/project/optional inventories,
+raw audits and CPU supplement, source scan, probes and before/after JSON,
+test logs/JUnit, `evidence.py`, `summarize-evidence.py` and
+`verification-summary.json`. Initial verifier errors are retained: an unsupported
+Brotli assertion, a wrong same-origin expectation, a missing method on a toy
+stdlib response, missing explicit chunk decoding and a mistyped CPU audit input
+path. Corrected calls use real library APIs; no production exception handling or
+test relaxation hides these mistakes.
+
+Reproduce in a **new Python 3.11 environment** with full interpreter paths,
+proxy/localhost bypass and UTF-8 output: install `requirements-bootstrap.txt`,
+then `requirements-server.txt` with `--build-constraint
+requirements-bootstrap.txt`; run `urllib3-probe.py`, `september-probe.py` and
+`http-compatibility-probe.py` with new JSON output paths, then `-m pip check`.
+Add the three test-only pins and run the eight named suites. Capture exact
+inventories with `evidence.py inventory <scope>` and audit with the separate
+tool using `--no-deps --disable-pip --format json`; query the CPU pin with OSV.
+Before probes require separately installed **2.6.0** and **2.7.0**, never a
+downgrade of the final candidate. Supplemental Brotli uses a separate environment.
+
+Actual scoped diff inspection and whitespace validation pass. Host integration
+must recreate the supported native environment, retain the transport pin and
+finish the model/LangChain family, remaining transitive constraints and
+production-test separation. Full native/asset/Linux/Docker/live acceptance still
+remains; this increment does **not** meet the overall stop condition. No commit,
+push, merge, Docker service/image change, external knowledge-repository edit,
+main-environment mutation or deployment occurred.
+
+## Earlier increment: python-dotenv patch and Windows text verification — October 1, 2026
 
 Native, Docker and lightweight-server requirements now pin **python-dotenv
 1.2.3**. CI inherits the same pin through its existing server include. This

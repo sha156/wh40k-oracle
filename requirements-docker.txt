@@ -61,6 +61,8 @@ sse-starlette==3.3.0
 
 # 工具
 requests==2.33.0
+# Patched streaming/decompression, redirect headers and HTTPS proxy TLS boundary.
+urllib3==2.8.0
 # CVE-2026-28684 symlink-write fix plus verified Windows text fixes.
 python-dotenv==1.2.3
 pytest==8.4.2

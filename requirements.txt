@@ -46,6 +46,8 @@ sse-starlette>=2.0
 # 工具
 # Shared with Docker/server; fixes CVE-2026-25645 on supported Python 3.11.
 requests==2.33.0
+# Patched streaming/decompression, redirect headers and HTTPS proxy TLS boundary.
+urllib3==2.8.0
 # Symlink-write fix plus Windows BOM/backslash fixes; shared with server/Docker.
 python-dotenv==1.2.3
 pytest
