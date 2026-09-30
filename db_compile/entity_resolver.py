@@ -15,6 +15,8 @@ from dataclasses import dataclass, field
 from pathlib import Path
 from typing import Dict, List, Optional, Tuple
 
+from corpus_policy import is_excluded_book
+
 FUZZY_CUTOFF = 0.6
 
 # ⚠️ 模糊匹配的第二道判据：**绝对字符编辑距离**，与 FUZZY_CUTOFF 的相似度比例正交。
@@ -118,7 +120,11 @@ def _load_term_pairs(terms_path: Path) -> List[dict]:
         data = json.loads(terms_path.read_text(encoding="utf-8"))
     except (OSError, ValueError):
         return []
-    return data.get("pairs", []) if isinstance(data, dict) else []
+    pairs = data.get("pairs", []) if isinstance(data, dict) else []
+    if not isinstance(pairs, list):
+        return []
+    return [p for p in pairs if isinstance(p, dict)
+            and not is_excluded_book(p.get("book", ""))]
 
 
 def _load_datasheet_rows(db_path: Path) -> List[Tuple[str, str, Optional[str]]]:

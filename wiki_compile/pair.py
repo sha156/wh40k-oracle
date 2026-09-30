@@ -7,6 +7,7 @@ from collections import Counter
 from dataclasses import dataclass, field
 from typing import Dict, List, Optional, Tuple
 
+from corpus_policy import is_excluded_book
 from wiki_compile.canonical import CanonicalEntry
 from wiki_compile.extract import EntityCandidate
 
@@ -60,6 +61,9 @@ def pair_entities(entities: List[EntityCandidate],
 
     # 第一轮：精确匹配（唯一候选才直接落定），同时为每本书累计阵营票
     for e in entities:
+        # Cached entities.json may predate retirement; exclude before votes/LLM.
+        if is_excluded_book(e.book):
+            continue
         cands = by_norm.get(normalize_name(e.name_en)) if e.name_en else None
         if not cands:
             leftovers.append(e)

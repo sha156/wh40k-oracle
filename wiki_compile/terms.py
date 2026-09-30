@@ -6,14 +6,19 @@ from dataclasses import asdict
 from pathlib import Path
 from typing import Dict
 
+from corpus_policy import is_excluded_book
 from wiki_compile.pair import PairingResult
 from wiki_engine._io import atomic_write_text, text_sha256
 
 
 def write_terms(result: PairingResult, wiki_dir: Path) -> None:
+    # A restored pairing cache must not bypass raw/refined source retirement.
+    # Filter local views so callers retain their original audit input.
+    pairs = [p for p in result.pairs if not is_excluded_book(p.book)]
+    unmatched = [e for e in result.unmatched if not is_excluded_book(e.book)]
     wiki_dir.mkdir(parents=True, exist_ok=True)
     data = {"source": "wahapedia wh40k10ed",
-            "pairs": [asdict(p) for p in result.pairs]}
+            "pairs": [asdict(p) for p in pairs]}
     # 关键产物一律原子写（写 .tmp + os.replace），中途崩溃不留半截文件
     atomic_write_text(wiki_dir / "terms.json",
                       json.dumps(data, ensure_ascii=False, indent=1))
@@ -21,14 +26,14 @@ def write_terms(result: PairingResult, wiki_dir: Path) -> None:
     lines = ["# 双语术语总表", "",
              "| 中文名 | 英文名 | 置信 | 来源书 | 页 |",
              "|--------|--------|------|--------|----|"]
-    for p in sorted(result.pairs, key=lambda p: (p.book, p.en)):
+    for p in sorted(pairs, key=lambda p: (p.book, p.en)):
         lines.append("| {} | {} | {} | {} | {} |".format(
             p.zh or "—", p.en, p.confidence, p.book,
             ",".join(str(n) for n in p.pages)))
     atomic_write_text(wiki_dir / "terms.md", "\n".join(lines) + "\n")
 
     rl = ["# 待人工校对（未配对实体）", ""]
-    for e in result.unmatched:
+    for e in unmatched:
         rl.append("- 《{}》 p{}：{}".format(
             e.book, ",".join(str(n) for n in e.pages), e.raw_heading))
     review_text = "\n".join(rl) + "\n"
@@ -69,6 +74,8 @@ def load_term_aliases(path: Path) -> Dict[str, str]:
     try:
         for p in data.get("pairs", []):
             if not (isinstance(p, dict) and p.get("zh") and p.get("en")):
+                continue
+            if is_excluded_book(p.get("book", "")):
                 continue
             zh, en = p["zh"], p["en"]
             if zh in aliases:

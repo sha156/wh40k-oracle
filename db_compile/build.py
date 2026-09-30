@@ -78,10 +78,10 @@ def _load_name_zh_by_id(terms_path: Optional[Path]) -> Dict[str, str]:
         return {}
     if not isinstance(data, dict):
         return {}
-    from corpus_policy import is_excluded_source
+    from corpus_policy import is_excluded_book
     return {p["canonical_id"]: p["zh"] for p in data.get("pairs", [])
             if isinstance(p, dict) and p.get("zh") and p.get("canonical_id")
-            and not is_excluded_source(p.get("book", ""))}
+            and not is_excluded_book(p.get("book", ""))}
 
 
 def _insert_factions(cur, rows: List[dict]) -> Tuple[int, int]:
