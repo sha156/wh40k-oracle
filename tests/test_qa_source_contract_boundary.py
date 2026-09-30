@@ -103,7 +103,7 @@ def test_extra_contract_tail_rejects_before_resources_workers_or_provider(
 
 
 @pytest.mark.parametrize("qid", COVERED_IDS)
-def test_captured_judge_request_has_exact_validated_contract_and_no_outer_annotations(tmp_path, qid):
+def test_captured_judge_request_has_validated_claims_without_refs_or_outer_annotations(tmp_path, qid):
     doc = profile()
     row = next(r for r in doc["details"] if r["id"] == qid)
     # The same text is legitimate non-operative metadata outside the contract.
@@ -120,8 +120,10 @@ def test_captured_judge_request_has_exact_validated_contract_and_no_outer_annota
     check = qa_bench.check_source_coverage("offline", client, selected, answer)
     assert check["status"] == "qualified" and len(calls) == 1
     request = json.loads(calls[0]["messages"][-1]["content"])
-    assert request == {"question": row["question"], "contract": row["coverage_contract"], "answer": answer}
-    assert set(request["contract"]) == FIELDS
+    assert request == {"question": row["question"], "contract": {
+        key: value for key, value in row["coverage_contract"].items() if key != "source_ids"
+    }, "answer": answer}
+    assert set(request["contract"]) == FIELDS - {"source_ids"}
     assert UNREVIEWED not in json.dumps(calls)
 
 

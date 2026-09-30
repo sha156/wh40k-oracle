@@ -43,6 +43,7 @@ REPO_ROOT = Path(__file__).resolve().parent.parent
 sys.path.insert(0, str(REPO_ROOT))
 
 from scripts.benchmark_json import loads_benchmark_json
+from agent.public_errors import public_failure
 from scripts.qa_source_coverage import (
     apply_source_coverage, check_source_coverage, coverage_ceiling, validate_source_contracts,
 )
@@ -276,6 +277,7 @@ def _gold_provenance(data, source, raw):
             "Selected gold does not declare source-coverage limitations; numerical agreement "
             "alone does not certify current source coverage."
         ]),
+        **({"sources": meta["sources"]} if "sources" in meta else {}),
     }
 
 
@@ -360,6 +362,7 @@ def run_one_layered(ctx, item):
     client = make_client(provider)
     qid, question = item["id"], item["question"]
     t0 = time.time()
+    answer_failed = False
     try:
         answer, passages = retrieve_and_answer_classic(
             app, vs, bm25, reranker, model, client, question
@@ -369,9 +372,11 @@ def run_one_layered(ctx, item):
             model, client, question, passages, answer, gold=item.get("gold")
         )
     except Exception as e:
-        answer, passages = f"[harness 异常] {type(e).__name__}: {e}", []
-        rv, r_reason = "❌", f"harness 异常: {e}"
-        gv, g_reason = "❌", f"harness 异常: {e}"
+        failure = public_failure(e).describe()
+        answer, passages = f"[harness 异常] {failure}", []
+        rv, r_reason = "❌", f"harness 异常: {failure}"
+        gv, g_reason = "❌", f"harness 异常: {failure}"
+        answer_failed = True
     result = {
         "id": qid,
         "faction": item["faction"],
@@ -385,7 +390,8 @@ def run_one_layered(ctx, item):
         "sources": _dedup_sources(passages),
         "answer": answer,
     }
-    apply_source_coverage(result, model, client, item, "generation_verdict", "generation_reason")
+    apply_source_coverage(result, model, client, item, "generation_verdict", "generation_reason",
+                          answer_failed=answer_failed)
     result["stage"] = classify_stage(rv, result["generation_verdict"])
     return result
 
@@ -767,8 +773,9 @@ def run_one(ctx, item):
             verdict, reason = judge(model, client, question, answer)
             judge_method = "intrinsic"
     except Exception as e:
-        answer, sources = f"[harness 异常] {type(e).__name__}: {e}", []
-        verdict, reason = "❌", f"harness 异常: {e}"
+        failure = public_failure(e).describe()
+        answer, sources = f"[harness 异常] {failure}", []
+        verdict, reason = "❌", f"harness 异常: {failure}"
         judge_method = "error"
     result = {
         "id": qid,
@@ -785,7 +792,8 @@ def run_one(ctx, item):
         "sources": sources,
         "answer": answer,
     }
-    return apply_source_coverage(result, model, client, item, "verdict", "judge_reason")
+    return apply_source_coverage(result, model, client, item, "verdict", "judge_reason",
+                                 answer_failed=judge_method == "error")
 
 
 def main():

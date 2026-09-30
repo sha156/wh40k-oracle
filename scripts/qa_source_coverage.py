@@ -12,6 +12,8 @@ from datetime import date
 from pathlib import Path
 from urllib.parse import urlparse
 
+from scripts.benchmark_json import loads_benchmark_json
+
 SCHEMA = "dated-source-v1"
 _CONTRACT_FIELDS = {
     "kind", "as_of", "full_current_body_verified", "historical_expectations_date",
@@ -121,7 +123,7 @@ def validate_source_contracts(data):
         covered.add(row["id"])
         c = row["coverage_contract"]
         # The frozen schema permits annotations on rows/meta, never additional
-        # contract text: this entire validated object is sent to the judge.
+        # contract text. Source references are saved provenance, not instructions.
         if not isinstance(c, dict) or set(c) != _CONTRACT_FIELDS:
             raise ValueError("coverage contract fields must match dated-source-v1")
         if not isinstance(c.get("kind"), str) or c["kind"] not in _KINDS:
@@ -198,11 +200,13 @@ def check_source_coverage(model, client, item, answer):
         response = client.chat.completions.create(
             model=model, messages=[{"role": "system", "content": _COVERAGE_SYSTEM},
                 {"role": "user", "content": json.dumps({
-                    "question": item["question"], "contract": contract, "answer": answer,
+                    "question": item["question"], "contract": {
+                        key: value for key, value in contract.items() if key != "source_ids"
+                    }, "answer": answer,
                 }, ensure_ascii=False)}], temperature=0.0, max_tokens=1800, stream=False,
             response_format={"type": "json_object"},
         )
-        result = json.loads(response.choices[0].message.content)
+        result = loads_benchmark_json(response.choices[0].message.content)
         if not isinstance(result, dict) or set(result) != {"requirements", "prohibitions"}:
             raise ValueError("coverage response needs exactly both claim groups")
         for group, flag in (("requirements", "satisfied"), ("prohibitions", "present")):
@@ -230,12 +234,15 @@ def coverage_ceiling(verdict, check):
     return min((verdict, ceiling), key=order.__getitem__)
 
 
-def apply_source_coverage(result, model, client, item, verdict_key, reason_key):
+def apply_source_coverage(result, model, client, item, verdict_key, reason_key, *, answer_failed=False):
     if "coverage_contract" not in item:
         return result
     result["factual_verdict"] = result[verdict_key]
     result["factual_reason"] = result[reason_key]
-    check = check_source_coverage(model, client, item, result["answer"])
+    # A categorical failure is not an answer to qualify. Preserve provenance and
+    # the failed factual grade without sending it to another model or retrying.
+    check = ({"contract": item["coverage_contract"], "status": "unverified"}
+             if answer_failed else check_source_coverage(model, client, item, result["answer"]))
     result["source_coverage_check"] = check
     result[verdict_key] = coverage_ceiling(result[verdict_key], check)
     result[reason_key] += f"; dated/source coverage: {check['status']}"

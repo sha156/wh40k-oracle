@@ -1,5 +1,114 @@
 # Versioned benchmark preparation acceptance — October 1, 2026
 
+## Three reproduced benchmark boundary corrections — October 1, 2026
+
+This section supersedes earlier boundary-completion claims for the new narrow
+scope. Work starts from clean `codex/release-benchmark-versioning` at
+`6b2761106e1e433bd6e8249a7e6f5e5eef7e2460`. The exact independent de4 review,
+`verification.json` and its three synthetic reproduction artifacts were read at
+`D:/Project/py/RAG/db_sources/release-check-20260930/host/benchmark-code-review-de4b5e1d5/`.
+This correction reuses the already approved, merged `agent.public_errors`
+helper unchanged; it does not repeat primary-source research or modify assets.
+
+Both ordinary and layered worker catches now call
+`public_failure(exc).describe()`. Answer and reason fields contain only the
+fixed category, bounded status and retryability description, which also
+propagates into saved `factual_reason`. No exception string, representation,
+body, request, headers or diagnostic traceback is serialized or logged by these
+catches. Failed generation remains wrong with no sources. A failure is not
+sent to a factual or qualification judge afterward: covered failures retain
+the complete contract with `status: unverified`, and the original factual
+failure. This adds no retry. Successful answer/source prose remains unchanged;
+this boundary does not redact arbitrary successful model output.
+
+Qualification requests omit `source_ids`, which are non-operative provenance.
+All six other validated contract fields, including the exact reviewed named
+claim text, question and answer, remain intact. A valid additional catalogue
+key carrying synthetic instruction text is accepted as provenance but never
+reaches the judge. The saved check and row metadata retain the complete
+contract, and `summary.gold_source.sources` now preserves the full validated
+catalogue when present. Existing path/SHA/version/edition/total/limitations and
+legacy summaries remain supported. Row/meta annotations remain valid and are
+excluded from judging. This demonstrates payload construction, not obedience
+of a semantic model.
+
+Only source-qualification response parsing switches to the approved
+`loads_benchmark_json`. Duplicate groups, claim IDs, decoded escaped names,
+boolean flags and quotes fail closed as `unverified`/`ValueError`. The original
+factual/mechanical JSON parsers, judge prompts, scoring and comparator are
+unchanged. Qualification still takes the minimum of factual grade and coverage
+ceiling; it cannot improve factual wrongness or turn partial into correct.
+
+Before edits, **240 tracked input files** were frozen byte-for-byte in the
+worktree's ignored evidence directory:
+`db_sources/release-check-20260930/benchmark-boundary-correction/iteration-1/`.
+The identical final 13-case new regression against that frozen base produces
+**11 failed / 2 passed**, zero errors/skips. Four failures expose actual SDK
+echo persistence in ordinary/layered workers, with and without coverage; one
+exposes reference forwarding; six expose duplicate qualification acceptance.
+The two successful-answer/source preservation controls pass in both revisions.
+Before failures are preserved separately in `red-final.txt/xml` and
+`red-final-recorded-tmp/`; no before artifact is relabeled as corrected output.
+
+The final eight-file benchmark offline suite passes **562 tests**, zero
+failures/errors/skips, retaining all **549** preceding controls. This includes
+all 21 valid qualification payloads, all 12 factual/coverage combinations,
+strict invalid-input/pre-initialization checks, the 115-row offline denominator,
+factual identity/date/price cases and historical comparator controls. Four new
+actual CLI-main SDK cases use OpenAI **2.54.0** with HTTPX **0.28.1** MockTransport,
+synthetic keys/echoes and disabled SDK retries. Each corrected failure makes
+exactly one intercepted generation request and no subsequent judge call.
+Actual saved JSON, stdout, stderr and captured INFO logs contain no echo
+canaries or diagnostic-body field. Their files remain in `green-tmp/`.
+
+```powershell
+$env:PYTHONIOENCODING='utf-8'
+$env:PYTEST_DISABLE_PLUGIN_AUTOLOAD='1'
+& 'D:/Project/py/RAG/db_sources/release-check-20260930/python-security-worktree-environments/full-stack-windows-transformers5104/Scripts/python.exe' -m pytest tests/test_qa_bench.py tests/test_qa_bench_gold_selection.py tests/test_qa_bench_provenance.py tests/test_compare_bench_runs.py tests/test_qa_bench_source_coverage.py tests/test_benchmark_strict_json.py tests/test_qa_source_contract_boundary.py tests/test_qa_benchmark_boundaries.py -o addopts='' -p no:cacheprovider --basetemp=db_sources/release-check-20260930/benchmark-boundary-correction/iteration-1/green-tmp --junitxml=db_sources/release-check-20260930/benchmark-boundary-correction/iteration-1/green.xml -q --tb=short
+```
+
+Validation uses the authorized completed full-stack Windows interpreter
+**Python 3.11.9**, read-only. `green.txt/xml` retain actual counts/logs.
+`verify.py`/`verification.json` verify **237 unchanged frozen tracked inputs**,
+all frozen copies unchanged, identical paired test bytes and the protected
+twelve factual/mechanical/summary function ASTs. Validator, score ceiling,
+module constants and `agent/public_errors.py` remain unchanged. Existing
+function changes are only `_gold_provenance`, `run_one_layered`, `run_one`,
+`check_source_coverage` and `apply_source_coverage`. All gold/history/catalogue
+bytes and ordered identities remain unchanged: root/frozen v3.6 SHA is
+`a402aed889eff64f3419d7a6768ff9b168a5912d0bc9c3e92cf225913a7fe3cc`, and v3.7 is
+`aeed2af4f6e225a5761f8e62f541cd3472f67ac43ebffe7865747a96b31126b0`.
+Syntax compilation and configured whitespace checks pass. Standalone script
+`--help` passes. Three actual invalid duplicate-JSON CLI invocations (classic,
+agent, layered) exit 1 before credentials/resources, with empty stdout and no
+result. Ruff is unavailable; no dependency was installed or changed.
+
+Initial attempted controls are retained separately: the first green run had
+four ID-versus-array-position test assumptions and one missing-catalogue-output
+assertion. Tests now select exact ID 113; catalogue preservation is explicitly
+implemented and checked. A verifier glob initially missed pytest's truncated
+directory names and was corrected; `verification-attempts.json` records that
+observed evidence-helper failure. These are not new production defects or
+passing evidence. No source audit, real provider/network/model/paid QA,
+production data/dependency/service change or persistent process occurred.
+
+The tracked candidate is scoped to two implementation files, the new adjacent
+regression, the existing 21-payload assertion update and this report. Its actual
+diff was inspected locally. It is **uncommitted**, awaiting GNHF's automatic
+scoped commit and clean-state verification, then root's independent exact-host
+review/publication. No manual stage/commit/push/merge occurred. The authorized
+local knowledge handoff extends existing provider-error, coverage-instruction
+and strict-JSON records rather than creating duplicate underlying error notes;
+`handoff-integrity.json` verifies eight previous/concurrent note/index bodies
+and all three knowledge repositories' staged indexes are preserved.
+
+Remaining gates are real source integration and database alignment, independent
+semantic/source-qualified fresh live **115-question** QA, platform/CI/full-asset
+checks, Docker/deployment and release acceptance. Offline boundary tests do not
+establish those gates, complete current Codex coverage, universal safety or a
+live score. No further benchmark-boundary implementation is identified by the
+three reproduced cases, but commit/clean and independent review remain pending.
+
 ## Dated-source contract boundary correction — October 1, 2026
 
 This bounded correction starts from clean `codex/release-benchmark-versioning`
