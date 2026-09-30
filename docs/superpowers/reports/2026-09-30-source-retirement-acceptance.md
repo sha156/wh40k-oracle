@@ -1,6 +1,6 @@
 # Approved source retirement acceptance
 
-Status: **recoverable archive, exact raw/refined retirement, index/processed registry and approved alias-only database publication verified on October 1; term/wiki publication and final active-asset acceptance remain pending**. The active on-disk index has **3,404 unchanged retained documents/vectors**, after removing 2,501 approved-source documents. All 27 approved raw PDFs and 29 refined-cache directories are absent from active storage and recoverable from verified originals. The **156 Tau pilot files (78 Markdown + 78 metadata)** were removed from Git in `85892fa2a`. The active database now has **982 alias rows**, after removing exactly 703 traced refined-source rows; all 17 other tables and all 1,202 canonical Chinese names are unchanged. Terms and generated wiki artifacts remain unpublished. This is an incremental disk-asset checkpoint, not release or deployed-runtime acceptance.
+Status: **recoverable archive, exact raw/refined retirement, index/processed registry, approved alias-only database and filtered term/pairing/entity publication verified on October 1; keyword/unit-page generation and final active-asset acceptance remain pending**. The active on-disk index has **3,404 unchanged retained documents/vectors**, after removing 2,501 approved-source documents. All 27 approved raw PDFs and 29 refined-cache directories are absent from active storage and recoverable from verified originals. The **156 Tau pilot files (78 Markdown + 78 metadata)** were removed from Git in `85892fa2a`. The active database has **982 alias rows**, after removing exactly 703 traced refined-source rows; all 17 other tables and all 1,202 canonical Chinese names are unchanged. Active terms now retain all **125 ordered official pairs**, after retiring 62 Tau pairs, 45 unmatched entries and 107 cached entities. Paired focused suites pass **184/184 without skips** and read-only wiki lint has **zero errors**. This remains an incremental disk-asset checkpoint, not release or deployed-runtime acceptance.
 
 ## Approved baseline and scope
 
@@ -204,3 +204,65 @@ The hook's Unicode-heavy helper additionally reproduced a direct-file Python 3.9
 
 
 The completed handoff audit confirms preservation of prior content in **six existing edited files**, **23 unrelated dirty files byte-for-byte** and all **six pre-existing staged statuses** across the three knowledge repositories. Repository heads remained unchanged; database, retained index/processed registry and immutable archive-manifest hashes are unchanged. All whitespace checks passed. One actual-commit explanation and three distinct resolved diagnostic records were added; no manual staging/commit/push, harness promotion or background process occurred.
+
+## October 1 filtered term, pairing and entity publication
+
+This bounded iteration starts from clean `codex/review-answer-provenance` HEAD `ee8df0bc0`, following the verified alias-only database publication. It publishes the already reviewed retained cache records and their normal term outputs. It does not regenerate keyword or unit pages, modify application/test source, apply official refresh/MFM, or claim the whole retirement stage is complete. Evidence root: **`D:/Project/py/RAG/db_sources/release-check-20260930/retirement-apply/iteration-05/`**. Every command uses **`D:/Project/py/RAG/.venv/Scripts/python.exe`**, the configured Python 3.9.1.
+
+Before publication, `publish_terms.py` verified every active file against the preceding **16,896-file** production manifest (`856e69ae91cfe6b7f1174b95e33fccb33bcfedb2a774371c21e58e1bf9ff8806`), all **8,305** immutable archive copies against their paths/size/SHA-256 records, and the archive/policy manifests. Active original terms, pairing and entities matched both their original reviewed snapshots and the independent `pre-apply/` recovery copies. The original, filtered and generated preparation evidence matched its archived hashes; relevant source/fixture Git blobs equal the approved launch and their working files have no diff. Changed inputs would fail the gates before any replacement.
+
+The exact source/book policy filters original rows while preserving every retained field and its order. The resulting records equal the reviewed filtered artifacts and their frozen canonical row hashes:
+
+| Cache records | Before | Retired | Retained | Retained rows SHA-256 |
+| --- | ---: | ---: | ---: | --- |
+| Term/pairing pairs | 187 | 62 | **125** | `a51dcd7c86fbb0feef5848b1bd7a50dc80caf7f7024d09102990316a9aee2319` |
+| Pairing unmatched entries | 1,516 | 45 | **1,471** | `b630e12b2df55887c991af5f4d07efba84ce261d256feb37a12193b528f74479` |
+| Extracted entities | 1,703 | 107 | **1,596** | `ea970b9bafd41e0720a16d5dd9261ee950cd2ad66502cecdf0d5d67d68cfc71c` |
+
+Every removed row equals its individually recorded preparation removal. Top-level metadata is preserved. The paired cache contains the same 125 ordered pairs as active terms and the frozen preparation fixture. These are the reviewed historical retained caches, not a claim that a new full extraction/pairing of every current official source was performed.
+
+`Pair`, `PairingResult` and `EntityCandidate` round trips validate and serialize the filtered cache records; resulting pairing/entity bytes equal the reviewed candidates. The normal CLI **`-m wiki_compile terms --pairing <temporary-filtered-pairing> --wiki <temporary-output>`** generates all three term/wiki outputs. Their bytes equal the reviewed `terms/generated-wiki/` artifacts. The generated `terms.json` uses the normal writer's formatting, so its file hash differs from the separately formatted filtered JSON, while every pair and the source label are identical. All retained pairs have `zh: null`, as already documented in preparation; the public term-alias loader correctly returns an empty mapping. Independently sourced SQLite/Black Library Chinese names remain available.
+
+The existing normal `build_all_outputs` function builds a copied complete wiki with the generated term files and one `build_log_entry`. The **global index and all 25 faction indexes remain byte-identical**. The staged wiki changes only `terms.json`, `terms.md`, `review_needed.md` and one appended `log.md` entry. No entity page is rewritten. The original log bytes remain an exact prefix. The original review queue, including any original annotations, remains independently preserved in the immutable archive; no obsolete `review_needed.backup-*` file is introduced into the active wiki. This avoids republishing retired queue content through an additional active backup.
+
+Six exact artifacts are atomically replaced using structured `Path`/`shutil.copy2`/`os.replace` operations. Resolved target paths are confined to the workspace and symlinks are rejected. Each target's current hash, each candidate and each archived original are rechecked before replacement. A publication journal records each replacement; a failure restores replaced targets through hash-verified rollback files. The successful journal records all six replacements and completed verification. No raw PDF/cache move, broad deletion or history rewrite occurs in this slice.
+
+| Published artifact | SHA-256 |
+| --- | --- |
+| `wiki_build/pairing.json` | `e5201e345a64fb6d25e7ccc7500bd8bc13eb8035a06346e41c332a02118c0815` |
+| `wiki_build/entities.json` | `041bcae0c6403850c5e9d31c724462891372e34b94a0a25bb37edcaf5caf241e` |
+| `wiki/terms.json` | `e5582dcc98ceeae08b02acd3c46d72b4754b30f289f20ddb26cc20bc5ed300ed` |
+| `wiki/terms.md` | `b9d473a306e3c1d07b3f9c030ec900d57ee7de3e0b603092cdb6c5a410ae60ad` |
+| `wiki/review_needed.md` | `3a61b737290ecf3027d5a3e629ecefdab390ed8f7a52045f763caef99aeb0253` |
+| `wiki/log.md` | `b002e0e5e04e710bb6e518064c12811635e397882bb7d7be90cad0bcc63d4af7` |
+
+The active production manifest remains **16,896 files**, with exactly six changed files and **16,890 unchanged files**; no production file was added or removed. Its new SHA-256 is **`400ab31792c4b688984884dafb9ae65c7b654c929813ebf666f593198ab4506f`**. Recovery remains at **`D:/Project/py/RAG/archive/source-retirement-20260930/pre-apply/`** with original relative paths; archive manifest SHA-256 remains **`e4e41c2e51bc614f95b6e9502474dce59c1132153ed4451b3d015ff8d8db1c37`**. Pairing/entities are ignored local assets; the tracked generated files are the three term outputs and append-only log.
+
+Validation for this slice:
+
+| Check | Result | Evidence |
+| --- | --- | --- |
+| Before-publication policy/retirement/identity/terms/pairing/resolver suite | **184 passed, zero skips, 15 warnings, 6.70 seconds** | `before-focused.log` / `.xml` |
+| Same suite on published assets | **184 passed, zero skips, 15 warnings, 6.77 seconds** | `after-focused.log` / `.xml` |
+| Frozen rows and normal generation | All retained rows/ordering/top-level metadata preserved; exact reviewed output hashes | `pre-publication-gates.json`, `terms-publication.json` |
+| Fresh resolver equivalence before/after terms | **All 1,206 historical results unchanged**; 989 exact retained results, 217 unsupported spellings unresolved; 11 wrong-target cases blocked; all 11 app mappings and independent Shadowsun/Farsight captures preserved | Publication gates; `post-publication-lookup.json` |
+| Active database | Byte hash and complete 18-table snapshot equal the published alias-only candidate; all **17 non-alias tables** and **1,202 canonical Chinese names** unchanged from original recovery | `post-tests-verification.json`; approved alias snapshot |
+| Active FAISS documents and vectors | **3,404/3,404** complete identities/order/metadata/text/vector-byte snapshots equal frozen retained evidence, including **1,128 Black Library documents**; no embeddings computed | Publication and post-test verification |
+| Official/Black Library/other active files | **16,890/16,890** unrelated files unchanged, including all retained official PDFs, Black Library history/caches and processed registry | `production-after.json`; post-test verification |
+| Read-only active wiki lint | **0 errors, 1 warning, 691 info, 0 auto-fixed** | `wiki-lint.log`; `-m wiki_engine lint --no-fix --no-report` |
+| Actual diff and syntax/whitespace | Inspected generated file diff; finite evidence helpers compile; `git -c core.whitespace=cr-at-eol diff --check` passes | Scoped diff and evidence manifest |
+
+The focused tests exercise restored raw/refined and cached-source blocking, frozen original/cleaned/current term inputs, retained identity confidence and wrong-target prevention, and meaningful synthetic term/pairing fixtures. They write only disposable outputs/copies. Existing dependency deprecations account for the warnings. The full native active-asset suite has **not** been run in this iteration and remains required after the remaining generation work.
+
+Normal Windows generation emits the reviewed CRLF bytes whereas the preceding tracked term files used LF. Raw diff line counts therefore exaggerate the content change; `git diff --ignore-space-at-eol` shows exactly **62 term-table rows, 45 queue entries and 685 JSON lines removed**, plus one log entry. JSON row snapshots separately prove no retained record changed. No manual normalization or wholesale hand editing of generated content was performed.
+
+The relevant active term/pairing/entity outputs contain no retired book attribution. Consumer references were inspected through `git grep` across Python: term readers, the compiler and synthesis defaults retain their normal paths and the approved source gates. This does not claim that every historical wiki/build/cache attribution has been resolved: keyword publication, affected database-generated unit pages, other active-reference classification and final lint-report generation remain for the next slice. Independent host review, final full native checks with truthful asset skips, host knowledge handoff and later Docker/browser acceptance are still outstanding. Official-refresh/MFM staging remains unapplied. No API/frontend/isolated-worktree/dependency/repository change, crawl or deployment occurs. No manual staging/commit/push/merge or long-lived background service was started; finite commands complete before delivery and Docker remains untouched. Orchestrator `notes.md` is unchanged.
+
+
+## October 1 term-publication knowledge handoff
+
+The explicit lifecycle hook updated `D:/Project/devlog/wh40k-oracle/CHECKPOINT.md` and `ROADMAP.md` with exact retained/retired term-cache counts, normal generation, unchanged indexes, paired 184-pass suites without skips, read-only zero-error lint, complete asset preservation and remaining generation/full-native/host acceptance work. The existing learning decision `C:/Users/Administrator/learn-notes/decisions/20260915-guarded-rules-and-derived-consumers.md` and its index were extended after duplicate search. The new extension records ordered filtered-row publication, normal-writer formatting and archived queue recovery. No new underlying error was resolved; no empty/duplicate error note or unwarranted harness promotion was created.
+
+Real preceding alias-report commit `ee8df0bc0ba360594452a3cdc70ddcae6ff93909` is explained at `D:/Project/devlog/wh40k-oracle/commits/20261001-ee8df0bc0-alias-only-publication.md`. Its actual tracked diff is one report with 53 insertions/two deletions; the ignored local database publication is evidence recorded by that commit. Current terms remain uncommitted and have no invented commit explanation. Unrelated dirty/staged knowledge work is preserved; no manual staging/commit/push or runtime/deployment action occurs. Handoff verification is saved in `iteration-05/handoff-preservation.json`.
+
+The completed handoff audit verifies prior content in **five existing edited records**, **29 unrelated dirty files byte-for-byte** and all **six pre-existing staged statuses plus their actual binary diffs** across the three knowledge repositories. Repository heads are unchanged. All eleven selected active/recovery hashes—database, index/processed registry, every published term/cache/log artifact and immutable archive manifest—remain unchanged. Helper compilation and repository whitespace checks pass. One explanation for a real preceding commit is added; no error record, harness promotion, manual staging/commit/push or background process occurs.
