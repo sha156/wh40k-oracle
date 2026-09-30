@@ -5,11 +5,150 @@ FastAPI/Starlette boundary, Requests, PyMuPDF and installation tooling are patch
 and verified in isolation, with the setuptools legacy-path limitation below.
 The unused ZhipuAI SDK requirement is retired while both GLM provider paths are
 preserved and verified with synthetic responses through real provider clients.
+Streamlit is pinned and verified at 1.59.0, including its actual palette-hashing
+fix; deterministic large-array sampling remains explicitly qualified below.
 The complete CPU application stack, full native suite, Docker/Linux installation
 and final audit remain outstanding.
 No integration, deployment, source retirement or main-environment changes occurred.
 
-## Latest increment: unused provider SDK and PyJWT boundary — October 1, 2026
+## Latest increment: Streamlit patch and advisory discrepancy — October 1, 2026
+
+Native and Docker requirements now pin **Streamlit 1.59.0**, replacing the
+native `>=1.35.0` declaration and Docker `==1.35.0`. Both actual auditor baseline
+inventories contain **1.35.0**. CI/server requirements still omit Streamlit and
+retain their no-model contract. No application/helper import, test expectation,
+API reliability-owned file, Dockerfile or asset changed in this increment.
+Python **3.11.9** was used throughout; 1.59.0 requires Python **>=3.10** and
+publishes a platform-neutral wheel. Linux/Docker installation remains unverified.
+
+Each baseline has **six records / three underlying Streamlit advisory groups**:
+
+- [GHSA-rxff-vr5r-8cj5 / CVE-2024-42474](https://github.com/streamlit/streamlit/security/advisories/GHSA-rxff-vr5r-8cj5):
+  Windows static-file path traversal; maintainer fix **1.37.0**.
+- [GHSA-7p48-42j8-8846 / CVE-2026-33682](https://github.com/streamlit/streamlit/security/advisories/GHSA-7p48-42j8-8846):
+  Windows component-path resolution can initiate SMB/NTLM traffic before
+  validation; maintainer fix **1.54.0**. The installed 1.59.0 component path
+  helper rejects UNC, slash-based network paths, parent traversal and drive
+  paths **before any `os.path.realpath()` call**. A spy that raises on every
+  resolution call establishes the ordering without attempting SMB access.
+  A trusted temporary local component path still resolves correctly. This
+  verifies the helper, not every HTTP route or external Windows credential behavior.
+- [GHSA-vqwp-45wm-r9r5 / CVE-2026-10804](https://github.com/advisories/GHSA-vqwp-45wm-r9r5):
+  cache collisions involving image palettes and deterministic large-object
+  sampling. The registry reports **1.53.1** as fixed, but that is insufficient
+  evidence for a complete fix; see the reproduction and remaining limitation.
+
+**Verified registry discrepancy:** the clean **1.54.0** installation still
+hashes two P-mode PIL images with identical pixel indices and different RGB
+palettes identically. The same in-memory probe on installed **1.59.0** gives
+different hashes. The primary [palette-fix PR #15397](https://github.com/streamlit/streamlit/pull/15397),
+merged **June 4, 2026**, explicitly describes the palette correction and says
+sampling was removed from that PR for follow-up. Saved tagged **1.58.0** source
+lacks the palette correction; **1.59.0**, published July 6, contains it and its
+history includes the fix commit. This is the first stable release containing
+that demonstrated fix, rather than an arbitrary upgrade to latest **1.64.0**.
+No older full application or production environment was installed or modified
+for the probe; the before case is the isolated 1.54.0 candidate.
+
+**Remaining sampling limitation:** 1.59.0 still produces identical cache hashes
+for a 600,000-element NumPy array and a copy modified at a position omitted by
+the deterministic seed-zero sample. The arrays are synthetic; all inputs are
+in memory. Even tagged **1.64.0** retains seed zero as its default; its new
+`runner.cacheHashSeed` option is not a full-content hash. Thus the completed
+registry audits below do **not** establish that every behavior in this advisory
+is fixed. Tracked production Python has only two Streamlit cache decorators:
+`app.py::load_resources()` takes no arguments, and `build_bm25(_vectorstore)`
+explicitly excludes its trusted local-index argument from hashing. Neither
+receives user-controlled images, arrays or dataframes as hashed inputs; there
+is no production `cache_data` use. This bounds application reachability, not
+the library's sampling behavior. Keep this qualification if caching inputs
+change; no advisory suppression or artificial hash override was introduced.
+
+Validation actually completed:
+
+- A new **clean-final-venv**, created with the prescribed Python 3.11.9
+  executable, installs bootstrap, then `requirements-server.txt` plus
+  **streamlit==1.59.0**, with the shared build constraint. Its complete **55**
+  distributions include pip/setuptools and no pytest, model stack, JWT or
+  Tornado. `pip check` passes. The earlier fresh 1.54.0 subset upgraded to
+  1.59.0 and the project `.venv` also pass `pip check`.
+- The clean subset resolves **Pillow 12.3.0, protobuf 7.36.2, pandas 3.0.6,
+  Altair 6.3.0, PyArrow 25.0.1, NumPy 1.26.4, cachetools 7.2.0**, with
+  **Starlette 1.3.1 / Uvicorn 0.39.0**. These are installed-version evidence,
+  not new transitive constraints. An upgrade from 1.54.0 retained pandas
+  2.3.3/protobuf 6.33.6/cachetools 6.2.6 and unused Tornado 6.5.10; clean
+  installation is materially different and is the authoritative subset here.
+  Full-family constraint/lock reconciliation is still outstanding.
+- Real Streamlit **AppTest** runs preserve the unchanged sidebar function,
+  compiled from its actual AST: both provider selections, password widget,
+  defaults, missing-index warning and reload/rerun behavior. Synthetic chat
+  exercises session history, `chat_input`, `chat_message`, `status`, streaming
+  output and citation expander. The actual `ui.simulator_panel::_render_report`
+  renders synthetic metrics, the Altair chart, exact funnel table values and
+  unmodeled/bias disclosures. All existing app Streamlit attributes exist.
+  The resource-cache probe verifies shared identity, excluded underscore input
+  and `.clear()` invalidation. Both the upgraded and clean subsets pass.
+  No fake production dependency or inference result was introduced; this does
+  not import the full app, load models, or establish visual/browser acceptance.
+- A real temporary **headless Streamlit** server, using the installed default
+  Starlette/Uvicorn backend and existing shared API pins, returned health
+  **200 / `ok`** and HTML index **200** on **127.0.0.1**. Its app was synthetic,
+  telemetry disabled, proxy bypassed, and the owned process terminated and
+  waited in `finally`. No owned probe process remains; user Docker services
+  were untouched.
+- Unchanged `test_simulator_panel.py` and the four earlier API suites pass
+  **74 tests / 30 skips / two warnings**, in **1.54 seconds** in the fresh
+  subset and **1.84 seconds** in the project environment. All 30 skips are
+  missing `wh40k.sqlite`; no assets, skips or expectations changed. Test-only
+  installs add seven distributions, including **pytest 9.0.3, PyMuPDF 1.26.7,
+  HTTPX 0.28.1**; the **62**-distribution test subset passes `pip check`.
+- Separate **pip-audit 2.10.1** runs completed for the exact installed runtime
+  subset (**55**), test subset (**62**) and project subset (**69**): each exits
+  **0**, with **zero findings and zero skipped packages**. Full inventories,
+  raw JSON, exit codes and connected alias-group outputs are retained. Audit
+  tool dependencies are not counted. These are subset registry results, with
+  the independently reproduced sampling limitation preserved above; they are
+  not a clean complete native/Docker application audit.
+
+Evidence and executable reproduction scripts are ignored and local under
+`C:/Users/Administrator/.codex/worktrees/release-python-security/RAG/db_sources/python-security/iteration-7/`:
+maintainer advisories, original baseline records/groups, registry metadata,
+official release notes, tagged sources and fix history; clean/bootstrap/project/
+test installation reports and logs; `inventory.py`, all three inventory/pin/audit
+sets; `cache-security-probe.py` and before/after JSON;
+`streamlit-compatibility-probe.py`, `server-smoke.py` and their outputs;
+both test logs/JUnit XML; `summarize-evidence.py` and `verification-summary.json`.
+AppTest failure logs are retained. Harness-only problems encountered include
+an initial wrong upstream handler path returning 404, AppTest initially lacking
+the repository import path, and the first chart assertion using the old internal
+`arrow_vega_lite_chart` name (the real
+1.59.0 type is `vega_lite_chart`). A final clean inventory exposed the probe's
+incorrect assumption that Tornado remained installed. These harness-only
+errors were corrected transparently; no production shim or test weakening
+was needed. An initial PowerShell-quoted one-line inventory command failed
+with `SyntaxError`; the saved standalone `inventory.py` replaced it.
+
+Reproduce using the prescribed base interpreter's `-m venv`, the new
+environment's **full executable path**, `-m pip install -r
+requirements-bootstrap.txt`, then `-m pip install --build-constraint
+requirements-bootstrap.txt -r requirements-server.txt streamlit==1.59.0`.
+Run both compatibility/cache scripts with new JSON output paths, the server
+smoke, and `-m pip check`. Separately install the three test pins above before
+running the five named suites with `-m pytest -q`. Generate the complete exact
+inventory with `inventory.py`; audit it with the separate tool interpreter,
+`--no-deps --disable-pip --format json`. Use UTF-8, retrieval/warmup disabled
+for API tests, and the authorized proxy with localhost bypass for downloads.
+
+The actual two-requirement/report diff and
+`git -c core.whitespace=cr-at-eol diff --check` pass. No commit, push, asset
+generation, host knowledge-repository edit or deployment occurred. The project
+knowledge handoff is contained here. Full CPU/LangChain/model dependency
+resolution, runtime/dev separation, full native tests, Linux/Docker and final
+asset/live/browser integration gates remain outstanding. Host should recreate
+environments, verify the new Streamlit server backend and retained retrieval,
+and preserve the sampling qualification rather than rely on a green registry.
+
+## Earlier increment: unused provider SDK and PyJWT boundary — October 1, 2026
 
 `requirements.txt` and `requirements-docker.txt` no longer install the unused
 **zhipuai 2.1.5.20250825** SDK. The native declaration was previously unbounded;

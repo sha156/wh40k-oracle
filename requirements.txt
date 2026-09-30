@@ -31,7 +31,8 @@ pymupdf==1.26.7
 # GLM remains supported; the unused zhipuai SDK forced vulnerable PyJWT <2.9.
 
 # 界面
-streamlit>=1.35.0
+# Windows path fixes plus the verified P-mode palette hashing patch.
+streamlit==1.59.0
 
 # Web API 后端（BUILD-PLAN Stage 3：结构化回答契约 + SSE）
 fastapi==0.133.0

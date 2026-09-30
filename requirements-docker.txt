@@ -47,7 +47,8 @@ pymupdf==1.26.7
 # GLM remains supported; the unused zhipuai SDK forced vulnerable PyJWT <2.9.
 
 # 界面（agent 的兜底检索只读调用 app.py，而 app.py 顶层 import streamlit）
-streamlit==1.35.0
+# Windows path fixes plus the verified P-mode palette hashing patch.
+streamlit==1.59.0
 
 # Web API 后端
 fastapi==0.133.0
