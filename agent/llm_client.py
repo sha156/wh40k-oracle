@@ -18,14 +18,7 @@ import re
 from typing import Any, Dict, List, Optional
 
 from agent.loop import DEFAULT_INTENT, INTENTS
-
-# openai SDK 的 400 参数错误——供应商不支持 response_format 时的典型表现。
-# SDK 未安装（纯单测环境）时退化为占位类，isinstance 恒 False。
-try:
-    from openai import BadRequestError as _BadRequestError
-except Exception:  # pragma: no cover
-    class _BadRequestError(Exception):
-        pass
+from agent.openai_policy import create_openai_client, rejects_response_format
 
 # provider 展示名 → (base_url, model)。与 app.get_llm 保持一致。
 _PROVIDERS: Dict[str, Any] = {
@@ -297,9 +290,7 @@ class OpenAICompatLLMClient:
         if client is not None:
             self.client = client
         else:
-            from openai import OpenAI
-
-            self.client = OpenAI(api_key=api_key, base_url=self.base_url)
+            self.client = create_openai_client(api_key, self.base_url)
 
     # ── LLMClient Protocol ────────────────────────────────────────
     def classify_intent(self, user_input: str) -> str:
@@ -377,11 +368,11 @@ class OpenAICompatLLMClient:
                 resp = self.client.chat.completions.create(
                     response_format={"type": "json_object"}, **kwargs
                 )
-            except (TypeError, _BadRequestError):
-                # 仅当 response_format **参数本身被拒**（SDK 签名不认 → TypeError，
-                # 服务端 400 参数错误 → BadRequestError）时退回普通模式重试一次；
-                # 网络/限流等其他异常直接抛给上层，不再无差别重打（评审 L 项：
-                # 盲重试会在批量并发场景把瞬时故障的调用量放大一倍）。
+            except Exception as error:
+                if not rejects_response_format(error):
+                    raise
+                # Only a verified JSON-mode capability rejection permits the
+                # second request. Model/auth/rate/timeout failures propagate.
                 resp = self.client.chat.completions.create(**kwargs)
         else:
             resp = self.client.chat.completions.create(**kwargs)
