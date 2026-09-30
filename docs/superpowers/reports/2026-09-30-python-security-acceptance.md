@@ -1,5 +1,191 @@
 # Python dependency security acceptance — September 30, 2026
 
+## Non-yanked complete Windows family — October 1, iteration 3
+
+**Transformers 5.10.4 replaces the yanked 5.10.0 candidate and passes a new
+clean installation and the complete Windows compatibility checks. Actual full
+Linux installation and the existing source-owned test fixes remain gates.**
+This section supersedes the replacement gate in the preceding iteration;
+the earlier installation, raw audits and failure evidence are preserved below.
+The loop stop condition is **not met**.
+
+### Final declarations and fresh installation
+
+`requirements-runtime.txt` and `constraints-python311.txt` now pin
+**Transformers 5.10.4**. Fresh primary release bodies confirm that its wheel
+and source archive are both non-yanked, require Python >=3.10, and have exactly
+the same dependency declarations as 5.10.0. The selected wheel's PyPI SHA-256
+is `8c5b99b141b53619435a76629b0284f04d27ff46d788b463fc0ecb23b8ff130e`;
+the install report records that hash. Linux-compatible wheel metadata separately
+matches its simple-index metadata hash. This is a supported replacement based
+on release status and actual feature validation, not a newly invented advisory
+fix claim. No application import shim, provider change or feature removal was
+needed. All other family, CPU, bootstrap and transitive pins are retained.
+
+The new interpreter is
+`D:/Project/py/RAG/db_sources/release-check-20260930/python-security-worktree-environments/full-stack-windows-transformers5104/Scripts/python.exe`.
+It was created from the prescribed Windows **CPython 3.11.9** executable into
+a previously nonexistent directory. It contains the entire runtime, followed
+by the separately declared dev tools; it does not upgrade the earlier complete
+environment or any retained subset environment. The actual sequence is:
+
+1. Base Python's `-m venv` creates the fresh target.
+2. Target Python's `-m pip install -r requirements-bootstrap.txt` installs
+   **pip 26.2.1 / setuptools 83.0.0**.
+3. Target Python's `-m pip install --build-constraint requirements-bootstrap.txt
+   --report <cpu-install.json> -r requirements-torch-cpu.txt` installs CPU torch
+   through the dedicated official index only.
+4. The equivalent build-constrained commands install
+   `requirements-runtime.txt`, capture the exact runtime inventory, then install
+   `requirements-dev.txt` and capture the exact dev inventory.
+
+Both installed scopes pass `-m pip check`. The final build-constrained
+`-m pip install --dry-run -r requirements.txt --report <final-dry-run.json>`
+requires **zero changes**. Bootstrap/CPU/runtime installation exits are all 0,
+with elapsed times **12.141 / 63.968 / 172.641 seconds**. The runtime has
+**129 distributions**, dev **132**. Membership and every version are compared
+against the earlier complete inventories: **only Transformers changes from
+5.10.0 to 5.10.4**. Bootstrap and CPU/model/transitive packages remain counted;
+no CUDA/Triton, auditor or retired ZhipuAI SDK package enters the application.
+
+The CPU report uses the official index's
+`download-r2.pytorch.org/whl/cpu/` wheel endpoint. The Windows torch wheel hash
+is `8e2c47c6556c7d5a85848634372bb2252907d411e9cad669c99406856d536eb5`,
+identical to the previously verified official **2.14.0+cpu** artifact.
+The installer, download cache and scratch remain confined to the authorized D:
+resource root, with process-local proxy, UTF-8, `PIP_CACHE_DIR` and `TEMP/TMP`.
+No global cache configuration or production environment is changed.
+
+The existing separately created **26-package server / 79-package CI**
+environments are inventoried again. Their membership and every version are
+unchanged; final requirement dry-runs require zero changes and `pip check`
+passes. Their no-model boundary remains the one proven in the earlier clean
+installs. No second full CI test run is claimed in this iteration; its dependency
+closure and tracked test/application sources have no changes.
+
+### Complete feature and full-suite verification
+
+The same seven framework, ingestion, retrieval, provider and refinement suites
+pass **85 tests / zero skips / two warnings in 32.84 seconds**. These exercise
+the installed LangChain 1.x family, semantic chunking, actual FAISS operations,
+BM25 and streaming chains; no expectation or skip marker is changed.
+
+The real readonly bge-m3 probe loads the same complete absolute snapshot with
+CPU, `local_files_only=True`, `trust_remote_code=False` and the actual
+**`torch.load(weights_only=True, map_location=cpu)`** boundary. PT2 loading is
+guarded and **zero PT2 loads** occur. Real English/Chinese vectors are finite,
+**2 x 1024**, with norms **1.0000000368799877 / 0.9999999686587795**.
+The trusted immutable pre-retirement index opens with **5,905 documents/vectors**,
+dimension **1024**; document objects and id mapping remain identical. Actual
+BM25/hybrid/RRF retrieval has zero errors, includes the rules floor and assembles
+the real prompt context. The existing local FlashRank/ONNX model returns three
+finite passage scores. Model weights, tokenizer/modules and both index-file
+hashes are unchanged before/after and equal to the earlier probe's hashes.
+The probe's measured feature portion takes **20.203 seconds**; its encompassing
+process, including imports/hashing, takes 50.234 seconds. No download, production
+re-embedding or model replacement occurs.
+
+Both real SDK provider protocol probes pass again: DeepSeek and GLM streaming,
+structured agent response/citations, benchmark response, 400 format fallback
+and 429 propagation. The actual Streamlit `app.main()` AppTest passes both
+provider selections, streamed text, citation display/records and history reruns.
+Synthetic resources and in-memory HTTP responses remain explicit; these are
+framework compatibility checks, not paid-provider, production browser or live
+service acceptance.
+
+The **entire available native suite** runs again with explicit `tests/`
+collection: **2,518 passed / 336 skipped / 29 failed / 15 errors**, nine warnings,
+**197.06 seconds** (202.875 seconds for the encompassing command). JUnit contains
+**2,898 cases**. A separate reconciler proves that **every individual test
+identity/status and every skipped test identity/reason exactly matches the
+earlier complete run**, not merely its totals. All 336 existing skips remain
+the absent DB/CSV/PDF/refined/cache assets recorded earlier. No dependency
+import failure is disguised as a new skip. The same 44 failures/errors remain:
+40 Windows SQLite replacement errors, three archive cleanup assertions and
+one missing-Chinese-fixture quick-reference negative case. Their source owners
+still need to apply the documented fixes; this iteration neither edits those
+files nor calls the application suite green.
+
+Fresh selected-wheel source inspection and the benign LightGlue configuration
+probe preserve the previous residual qualification: the X-CLIP conversion
+script is absent, nested registered configuration stays local, unknown nested
+architecture is rejected, and zero nested remote config calls occur. The raw
+OSV no-fix records are fetched again without exclusions. This does not establish
+image-model inference or universal safety of conversion/remote-code/pickle
+paths. The earlier Streamlit array-sampling, vendored distutils Unicode and
+torch PT2 unsafe-pickle residuals remain unchanged.
+
+### Exact complete audits and Linux preparation
+
+The separate **30-distribution** auditor environment runs pip-audit **2.10.1**
+with exact installed pin files, `--no-deps --disable-pip --format json`, a new
+confined D: HTTP cache, and **no advisory exclusions**. Set equality, each version
+and every raw skip are reconciled against the new actual inventories.
+
+| Actual Windows scope | Raw exact PyPI audit | CPU-mapped complete audit |
+|---|---|---|
+| Runtime, 129 distributions | zero findings; one explicit torch +cpu skip | 129 / zero findings / zero skips |
+| Dev, 132 distributions | zero findings; one explicit torch +cpu skip | 132 / zero findings / zero skips |
+| Server, 26 distributions | 26 / zero findings / zero skips | not needed |
+| CI, 79 distributions | 79 / zero findings / zero skips | not needed |
+
+Only the installed, hash-verified **torch 2.14.0+cpu** maps to registry upstream
+**2.14.0**. A fresh separate exact-CPU OSV audit also reports **one package /
+zero findings / zero skips**. All seven audit commands exit 0. The raw PyPI
+CPU skips are preserved and not called clean exact-PyPI results. Bootstrap,
+models and final transitives remain in the denominator. Registry-zero is
+qualified by the inspected library residuals above.
+
+The complete Linux metadata preflight is rerun against the final pins. It
+reconciles **all 134 constraint versions** and every activated dependency edge;
+**none of the selected wheels/source releases is yanked**. Runtime/dev/server/CI
+projections remain **129 / 132 / 26 / 79**, with the same documented platform
+membership differences (hf-xet/uvloop versus Windows colorama/tzdata).
+These remain **metadata projections, not Linux installed inventories or audits**.
+The previous actual Linux four-package additions probe and downloaded official
+CPU wheel are retained; neither substitutes for the full Linux installation.
+
+The required host archival/free-space handoff has not arrived. An October 1
+observation records **5,777,776,640 bytes free on C:** and
+**191,499,456,512 bytes on D:**, but that observation is not a verified archival
+map or Docker-VHD capacity approval. No Linux build or container is started,
+and no Docker image/compose service is changed. The final-Dockerfile full Linux
+install, jieba build, finite compatibility tests, exact actual platform closures
+and full audits are the next dependency unit after that handoff.
+
+### Evidence, retained limitations and host handoff
+
+All new source-side evidence is isolated under
+`C:/Users/Administrator/.codex/worktrees/release-python-security/RAG/db_sources/python-security/full-stack/iteration3/`:
+primary release bodies/comparison, installation commands/logs/reports, exact
+runtime/dev/server/CI/auditor inventories and pins, all seven raw audits and
+exits, complete JUnit and per-case reconciliations, model/UI/provider/residual
+scripts and outputs, hashed Linux metadata/projections, and
+`verification-summary.json`. `clean-install.py`, `audit.py` and `reconcile.py`
+record the precise finite calls; the installer rejects an existing target.
+For a repeat installation choose a new confined resource-root child and update
+the installer's target constants, rather than reusing this completed environment.
+
+One ad-hoc inventory print initially omitted UTF-8 when reading the installer
+JSON under the base interpreter, producing a GBK `UnicodeDecodeError`. The exact
+reproduction/error/exit are retained; the verified scripts use explicit UTF-8
+and process-local UTF-8 settings. An initial broad evidence filename search also
+traversed old rehearsal directory entries unnecessarily; it read no package
+bodies and executed or modified no old environment. Subsequent file enumeration
+is confined to `full-stack`. No claim is made that this initial traversal
+respected the requested directory-access boundary.
+
+Only the two dependency declarations and this report change in Git. Actual
+diff inspection and `git -c core.whitespace=cr-at-eol diff --check` pass. All finite
+installer/test/probe/audit subprocesses have exited; no server, watcher or browser
+is started or left running. No manual commit, staging, publication, deployment,
+external knowledge-repository update or orchestrator-notes edit occurs.
+Root can record this verified dependency result without duplicating the existing
+knowledge notes. Root retains independent review, the SQLite/PDF fixture fixes,
+full native rerun after those fixes, integration and final live/CI/deployment
+acceptance. The new non-yanked complete Windows family is reviewable; the
+complete bounded Windows-and-Linux objective remains unfinished.
+
 ## Complete-family platform preflight — October 1, iteration 2
 
 **The candidate still requires a supported Transformers replacement, complete
@@ -1571,3 +1757,17 @@ acceptance, and maintains project/hook repositories. This worktree makes no comm
 pushes, merges or service changes. No permanent regression test was added in this
 iteration; the before/after behavior evidence and existing tests support this
 increment, and durable dependency regressions remain part of final-stage work.
+
+
+The iteration 3 explicit stop hook subsequently authorizes the deduplicated
+local knowledge handoff. `D:/Project/devlog/wh40k-oracle/CHECKPOINT.md` and
+`ROADMAP.md` now record the supported replacement, exact checks and remaining
+Linux/source/host gates. The existing platform-membership decision in
+`C:/Users/Administrator/learn-notes/decisions/` is extended; the existing
+`C:/Users/Administrator/error-notes/common/20260921-error-41-python-stdout-gbk.md`
+is extended with this UTF-8 installer-input recurrence, exact failure and
+verified explicit-encoding resolution. Both existing index lines are updated.
+No duplicate note, empty entry, invented commit explanation or harness promotion
+is created. Unrelated note bodies and Git indexes are preserved; no manual
+staging, commit or publication occurs. `iteration3/hook-knowledge-handoff.json`
+records exact paths, hashes and checks. Root retains knowledge publication.

@@ -9,7 +9,8 @@
 langchain-huggingface==1.2.2
 torch==2.14.0+cpu
 sentence-transformers==5.7.0
-transformers==5.10.0
+# 5.10.0 was yanked upstream; this non-yanked patch is verified with bge-m3.
+transformers==5.10.4
 FlashRank==0.2.10
 onnxruntime==1.30.0
 
