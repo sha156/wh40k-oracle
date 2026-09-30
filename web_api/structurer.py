@@ -70,18 +70,8 @@ def _extract_json(text: str) -> Dict[str, Any]:
         start = stripped.find("{")
         if start == -1:
             raise ValueError("未找到 JSON 对象")
-        depth, end = 0, -1
-        for i in range(start, len(stripped)):
-            if stripped[i] == "{":
-                depth += 1
-            elif stripped[i] == "}":
-                depth -= 1
-                if depth == 0:
-                    end = i + 1
-                    break
-        if end == -1:
-            raise ValueError("JSON 不完整")
-        obj = json.loads(stripped[start:end])
+        # raw_decode observes string escaping and returns before trailing noise.
+        obj, _ = json.JSONDecoder().raw_decode(stripped, start)
     if not isinstance(obj, dict):
         raise ValueError("结构化输出非对象")
     return obj

@@ -259,24 +259,12 @@ def _extract_json_object(text: str) -> Dict[str, Any]:
     try:
         obj = json.loads(stripped)
     except json.JSONDecodeError:
-        # 退一步：抓第一个平衡的 {...}
+        # Decode from the first object delimiter. The JSON decoder respects
+        # quoted braces and escaped quotes; manual brace counting does not.
         start = stripped.find("{")
         if start == -1:
             raise ValueError(f"未找到 JSON 对象：{stripped[:120]}")
-        depth = 0
-        end = -1
-        for i in range(start, len(stripped)):
-            c = stripped[i]
-            if c == "{":
-                depth += 1
-            elif c == "}":
-                depth -= 1
-                if depth == 0:
-                    end = i + 1
-                    break
-        if end == -1:
-            raise ValueError(f"JSON 对象不完整：{stripped[:120]}")
-        obj = json.loads(stripped[start:end])
+        obj, _ = json.JSONDecoder().raw_decode(stripped, start)
     if not isinstance(obj, dict) or "type" not in obj:
         raise ValueError(f"JSON 缺少 type 字段：{str(obj)[:120]}")
     return obj
