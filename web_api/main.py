@@ -20,7 +20,7 @@ import threading
 from pathlib import Path
 from typing import Any, Dict, List, Optional
 
-from fastapi import FastAPI, HTTPException
+from fastapi import FastAPI, HTTPException, Request
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import StreamingResponse
 from pydantic import BaseModel, ConfigDict, Field
@@ -519,9 +519,15 @@ def codex_changelog_faction(slug: str) -> ChangelogFactionPage:
 
 
 @app.get("/wiki/{path:path}")
-def wiki(path: str) -> Dict[str, Any]:
+def wiki(path: str, request: Request = None) -> Dict[str, Any]:
     """只读返回 wiki 页 markdown（图鉴页 Stage 4 用）。"""
     from pathlib import Path
+    # Use the complete decoded scope path: the router's regex can omit a trailing
+    # newline from its captured slug. Direct Python callers retain the same gate.
+    # Reject before filesystem resolution (NUL raises ValueError).
+    decoded_path = request.scope["path"] if request is not None else path
+    if any(ord(char) < 32 or ord(char) == 127 for char in decoded_path):
+        raise HTTPException(status_code=404, detail="wiki 页不存在")
     wiki_root = (Path(__file__).resolve().parent.parent / "wiki").resolve()
     # 防目录穿越：解析后必须仍在 wiki_root **内**。
     # 旧实现用 str.startswith 比前缀——`../wiki_engine/from_db` 解析成
