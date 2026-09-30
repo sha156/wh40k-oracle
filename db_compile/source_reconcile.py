@@ -6,10 +6,14 @@ not interpret PDF prose or infer an entity's rules from its points value.
 from __future__ import annotations
 
 import argparse
+import copy
 import json
+import math
 import re
 import sqlite3
 from contextlib import closing
+from dataclasses import dataclass
+from datetime import date
 from pathlib import Path
 
 
@@ -29,61 +33,174 @@ IDENTITY["models"] = {"unit_id", "name"}
 
 
 def _validate(patch):
+    if not isinstance(patch, dict):
+        raise ValueError("An official patch must be an object")
     table = patch.get("table")
-    if table not in FIELDS:
+    if not isinstance(table, str) or table not in FIELDS:
         raise ValueError("Unsupported reconciliation table")
     key = patch.get("key", {})
-    if set(key) != IDENTITY[table] or any(not v for v in key.values()):
+    if not isinstance(key, dict) or set(key) != IDENTITY[table] or any(
+            not isinstance(v, str) or not v for v in key.values()):
         raise ValueError("A complete canonical identity is required")
     values = patch.get("to", {})
-    if not values or not set(values) <= FIELDS[table] - IDENTITY[table]:
+    if (not isinstance(values, dict) or not values or
+            not set(values) <= FIELDS[table] - IDENTITY[table]):
         raise ValueError("Invalid reconciliation fields")
-    if patch.get("from") is not None and set(patch["from"]) != set(values):
+    if "from" not in patch:
+        raise ValueError("An explicit prior value or absent state is required")
+    prior = patch["from"]
+    if prior is not None and (not isinstance(prior, dict) or set(prior) != set(values)):
         raise ValueError("Every changed field requires a prior value")
+    for value in list(values.values()) + (list(prior.values()) if prior is not None else []):
+        if value is not None and (type(value) not in (str, int, float) or
+                                  isinstance(value, float) and not math.isfinite(value)):
+            raise ValueError("Reconciliation values must be finite SQLite scalars")
     src = patch.get("source", {})
-    if not src.get("url", "").startswith("https://") or not re.fullmatch(r"[0-9a-f]{64}", src.get("sha256", "")):
+    if (not isinstance(src, dict) or not isinstance(src.get("url"), str) or
+            not src["url"].startswith("https://") or
+            not isinstance(src.get("sha256"), str) or
+            not re.fullmatch(r"[0-9a-f]{64}", src["sha256"])):
         raise ValueError("A source URL and SHA-256 are required")
-    if not isinstance(src.get("page"), int) or src["page"] < 1:
+    if type(src.get("page")) is not int or src["page"] < 1:
         raise ValueError("A one-based source page is required")
 
 
-def apply_patches(db_path, manifest=None):
-    """Fail the entire transaction on drift, missing rows or ambiguous identities."""
-    manifest = manifest if manifest is not None else json.loads(MANIFEST.read_text(encoding="utf-8"))
-    patches = manifest["patches"]
-    for patch in patches:
-        _validate(patch)
-    report = {"applied": 0, "already": 0, "inserted": 0, "total": len(patches)}
+@dataclass(frozen=True)
+class RowChain:
+    """Complete reviewed states for one table and complete canonical identity."""
+
+    table: str
+    key: tuple
+    fields: tuple
+    states: tuple
+    transitions: tuple
+
+
+def _ordered_manifests(manifest, manifests):
+    if manifest is not None and manifests is not None:
+        raise ValueError("Supply a legacy manifest or ordered manifests, not both")
+    ordered = True
+    if manifests is None:
+        manifest = manifest if manifest is not None else json.loads(MANIFEST.read_text(encoding="utf-8"))
+        if not isinstance(manifest, dict):
+            raise ValueError("An official manifest must be an object")
+        if "revisions" in manifest:
+            if set(manifest) != {"revisions"}:
+                raise ValueError("A revision envelope cannot contain a separate manifest")
+            manifests = manifest["revisions"]
+        else:
+            manifests = [manifest]
+            ordered = False
+    if not isinstance(manifests, (list, tuple)) or not manifests:
+        raise ValueError("At least one reviewed revision manifest is required")
+    previous = None
+    for item in manifests:
+        if not isinstance(item, dict) or not isinstance(item.get("patches"), list):
+            raise ValueError("Each revision requires a patches list")
+        declared = item.get("source_date")
+        if declared is not None or ordered:
+            if not isinstance(declared, str) or not re.fullmatch(r"\d{4}-\d{2}-\d{2}", declared):
+                raise ValueError("Each ordered revision requires an ISO source date")
+            try:
+                date.fromisoformat(declared)
+            except ValueError as exc:
+                raise ValueError("Invalid revision source date") from exc
+            if previous is not None and declared <= previous:
+                raise ValueError("Revision dates must be strictly increasing and unique")
+            previous = declared
+    return copy.deepcopy(manifests)
+
+
+def compile_revision_chain(manifests):
+    """Validate and compile dated reviewed manifests without opening SQLite.
+
+    Dates are strictly increasing, never sorted or guessed. Later first-touch
+    guards fill earlier states because those fields were previously unchanged.
+    """
+    return _compile_rows(_ordered_manifests(None, manifests))
+
+
+def _compile_rows(manifests):
+    """Also support legacy flat transitions in their explicit patch order."""
+    grouped = {}
+    for manifest in manifests:
+        for patch in manifest["patches"]:
+            _validate(patch)
+            identity = (patch["table"], tuple(sorted(patch["key"].items())))
+            grouped.setdefault(identity, []).append(patch)
+    chains = []
+    for (table, key), patches in grouped.items():
+        initial = {}
+        for patch in patches:
+            for field in patch["to"]:
+                if field not in initial:
+                    initial[field] = (patch["from"] if patch["from"] is not None else patch["to"])[field]
+        current = None if patches[0]["from"] is None else initial
+        states = [current]
+        for index, patch in enumerate(patches):
+            prior = patch["from"]
+            if prior is None:
+                if index != 0:
+                    raise ValueError(f"Conflicting absent-state declaration: {table}/{dict(key)}")
+                updated = {**initial, **patch["to"]}
+            else:
+                if {field: current[field] for field in prior} != prior:
+                    raise ValueError(f"Contradictory revision continuity: {table}/{dict(key)}")
+                updated = {**current, **patch["to"]}
+            # A single legacy no-op retains its already-current behavior. Chains
+            # must never revisit a state: suffix selection would be ambiguous.
+            if updated in states and not (len(patches) == 1 and updated == current):
+                raise ValueError(f"Ambiguous or duplicate reviewed state: {table}/{dict(key)}")
+            states.append(updated)
+            current = updated
+        chains.append(RowChain(table, key, tuple(sorted(initial)), tuple(states), tuple(patches)))
+    return tuple(chains)
+
+
+def apply_patches(db_path, manifest=None, *, manifests=None):
+    """Advance only an exact reviewed suffix; roll back every row on failure.
+
+    Legacy callers pass one manifest. Ordered callers use ``manifests=[...]``
+    or a JSON ``{"revisions": [...]}`` envelope. Metadata chronology validation
+    is a separate pending contract; callers must not publish new source data yet.
+    """
+    declared = _ordered_manifests(manifest, manifests)
+    chains = _compile_rows(declared)
+    report = {"applied": 0, "already": 0, "inserted": 0,
+              "total": sum(len(item["patches"]) for item in declared)}
     with closing(sqlite3.connect(str(db_path))) as conn, conn:
         conn.execute("BEGIN IMMEDIATE")
-        for p in patches:
-            table, key, values = p["table"], p["key"], p["to"]
-            fields = list(values)
+        for chain in chains:
+            table, key, fields = chain.table, dict(chain.key), chain.fields
             where = " AND ".join(f"{name}=?" for name in key)
             rows = conn.execute(f"SELECT {','.join(fields)} FROM {table} WHERE {where}", tuple(key.values())).fetchall()
             if len(rows) > 1:
                 raise ValueError(f"Ambiguous official patch: {table}/{key}")
-            if not rows:
-                if p.get("from") is not None:
+            actual = dict(zip(fields, rows[0])) if rows else None
+            matches = [index for index, state in enumerate(chain.states) if actual == state]
+            if not matches:
+                if actual is None:
                     raise ValueError(f"Missing official patch target: {table}/{key}")
-                combined = {**key, **values}
-                conn.execute(f"INSERT INTO {table} ({','.join(combined)}) VALUES ({','.join('?' for _ in combined)})", tuple(combined.values()))
-                report["inserted"] += 1
-                continue
-            actual = dict(zip(fields, rows[0]))
-            if actual == values:
-                report["already"] += 1
-                continue
-            if actual != p.get("from"):
                 raise ValueError(f"Official patch prior-value mismatch: {table}/{key}")
-            conn.execute(f"UPDATE {table} SET {','.join(f'{field}=?' for field in fields)} WHERE {where}", tuple(values.values()) + tuple(key.values()))
-            report["applied"] += 1
+            # Multiple matches only occur for the single permitted legacy no-op.
+            position = matches[-1]
+            report["already"] += position
+            for index in range(position, len(chain.transitions)):
+                if chain.states[index] is None:
+                    combined = {**key, **chain.states[index + 1]}
+                    conn.execute(f"INSERT INTO {table} ({','.join(combined)}) VALUES ({','.join('?' for _ in combined)})", tuple(combined.values()))
+                    report["inserted"] += 1
+                else:
+                    values = chain.transitions[index]["to"]
+                    conn.execute(f"UPDATE {table} SET {','.join(f'{field}=?' for field in values)} WHERE {where}", tuple(values.values()) + tuple(key.values()))
+                    report["applied"] += 1
         conn.execute("CREATE TABLE IF NOT EXISTS official_rule_revisions (unit_id TEXT PRIMARY KEY, source_date TEXT NOT NULL)")
-        for uid in manifest.get("invalidate_translation_for", []):
-            conn.execute("INSERT OR REPLACE INTO official_rule_revisions VALUES (?,?)", (uid, manifest["source_date"]))
         conn.execute("CREATE TABLE IF NOT EXISTS official_unit_sources (unit_id TEXT PRIMARY KEY, sources_json TEXT NOT NULL)")
-        for uid, sources in manifest.get("unit_sources", {}).items():
-            conn.execute("INSERT OR REPLACE INTO official_unit_sources VALUES (?,?)", (uid, json.dumps(sources, ensure_ascii=False)))
+        for item in declared:
+            for uid in item.get("invalidate_translation_for", []):
+                conn.execute("INSERT OR REPLACE INTO official_rule_revisions VALUES (?,?)", (uid, item["source_date"]))
+            for uid, sources in item.get("unit_sources", {}).items():
+                conn.execute("INSERT OR REPLACE INTO official_unit_sources VALUES (?,?)", (uid, json.dumps(sources, ensure_ascii=False)))
     return report
 
 

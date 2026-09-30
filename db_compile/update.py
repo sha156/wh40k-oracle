@@ -50,6 +50,9 @@ class UpdateConfig:
     offline: bool = False        # 跳过全部联网（git pull + mfm fetch + 下载页），复用缓存
     fetch_mfm: bool = True        # 是否联网重抓 MFM（offline 时强制 False）
     check_downloads: bool = True  # 是否监控官方下载页版本（offline 时强制 False）
+    # A staged legacy manifest or ordered revision envelope; None preserves the
+    # reviewed built-in manifest. This selects inputs, never publishes assets.
+    source_reconcile_manifest: Optional[Path] = None
 
 
 @dataclass
@@ -276,9 +279,11 @@ def stage_fp_rules(cfg: UpdateConfig) -> StageResult:
 
 @_writes_db
 def stage_source_reconcile(cfg: UpdateConfig) -> StageResult:
-    """Restore reviewed September corrections before prices and DSL projections."""
+    """Restore reviewed official corrections before prices and DSL projections."""
     from db_compile.source_reconcile import apply_patches
-    rep = apply_patches(cfg.db)
+    manifest = (json.loads(cfg.source_reconcile_manifest.read_text(encoding="utf-8"))
+                if cfg.source_reconcile_manifest is not None else None)
+    rep = apply_patches(cfg.db, manifest)
     return StageResult("source_reconcile", True,
                        f"Official corrections: {rep['applied']} updated, {rep['inserted']} inserted, {rep['already']} current",
                        detail=rep)

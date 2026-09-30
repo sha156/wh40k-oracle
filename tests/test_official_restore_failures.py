@@ -53,10 +53,9 @@ def _spy_pipeline(monkeypatch, calls, source_result=None, optional_failure=False
 @pytest.mark.parametrize("entry", [update.restore_authority_layers, update.run_update])
 def test_actual_reconcile_drift_stops_every_downstream_stage(tmp_path, monkeypatch, entry):
     db, manifest = _fixture(tmp_path, bad=True)
-    monkeypatch.setattr(source_reconcile, "MANIFEST", manifest)
     calls = []
     _spy_pipeline(monkeypatch, calls)
-    report = entry(update.UpdateConfig(db=db))
+    report = entry(update.UpdateConfig(db=db, source_reconcile_manifest=manifest))
     assert not report.ok
     assert report.aborted_at == "stage_source_reconcile"
     assert "prior-value mismatch" in report.stages[-1].summary
@@ -71,6 +70,35 @@ def test_actual_reconcile_drift_stops_every_downstream_stage(tmp_path, monkeypat
         assert conn.execute("SELECT * FROM abilities ORDER BY id").fetchall() == [
             ("one", "old"), ("two", "drift")]
         assert not conn.execute("SELECT name FROM sqlite_master WHERE name LIKE 'official_%'").fetchall()
+
+
+@pytest.mark.parametrize("entry", [update.restore_authority_layers, update.run_update])
+def test_revision_union_drift_stops_real_pipeline(tmp_path, monkeypatch, entry):
+    db, manifest = _fixture(tmp_path)
+    with sqlite3.connect(db) as conn:
+        conn.execute("CREATE TABLE models(unit_id TEXT,name TEXT,t INTEGER,m INTEGER)")
+        conn.execute("INSERT INTO models VALUES ('model','Synthetic',6,6)")
+    source = {"url": "https://example.com/synthetic.pdf", "sha256": "a" * 64, "page": 1}
+    # This mixed row has an already-current later t value but stale m. It must
+    # never be accepted as C, nor trigger any downstream authority projections.
+    manifest.write_text(json.dumps({"revisions": [
+        {"source_date": "2026-01-01", "patches": [{"table": "models",
+         "key": {"unit_id": "model", "name": "Synthetic"}, "from": {"t": 4},
+         "to": {"t": 5}, "source": source}]},
+        {"source_date": "2026-02-01", "patches": [{"table": "models",
+         "key": {"unit_id": "model", "name": "Synthetic"}, "from": {"t": 5, "m": 6},
+         "to": {"t": 6, "m": 8}, "source": source}]}]}), encoding="utf-8")
+    calls = []
+    _spy_pipeline(monkeypatch, calls)
+    report = entry(update.UpdateConfig(db=db, source_reconcile_manifest=manifest))
+    assert not report.ok and report.aborted_at == "stage_source_reconcile"
+    assert "prior-value mismatch" in report.stages[-1].summary
+    expected = ["stage_fp_errata", "stage_fp_rules"]
+    if entry is update.run_update:
+        expected = ["stage_bsdata_pull", "stage_mfm_fetch", "stage_build"] + expected
+    assert [name for name, _ in calls] == expected
+    with sqlite3.connect(db) as conn:
+        assert conn.execute("SELECT t,m FROM models").fetchone() == (6, 6)
 
 
 @pytest.mark.parametrize("entry", [update.restore_authority_layers, update.run_update])
