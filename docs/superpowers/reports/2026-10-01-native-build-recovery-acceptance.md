@@ -1,8 +1,84 @@
 # Native build recovery acceptance checkpoint
 
-Iteration 2 explicitly closes the parent SQLite fixture before the real CLI child replaces its target. **All three newer CLI cases now pass, the broader suite passes 150 cases with one unchanged legitimate skip, and all 43 original diagnosed build/archive IDs pass again without skips** under genuine Windows Python 3.11.9. This is incremental isolated recovery; the current fixture correction awaits GNHF commit and independent host review. The complete 44-ID/full-available-CI stop condition is **not met**: the paired keyword negative fixture remains unchanged and full available CI remains unrun.
+The remaining original negative keyword fixture now supplies a genuine temporary Chinese PDF and reaches its intended incomplete-English-heading error. **All 44 original diagnosed IDs pass with zero skips**, and the relevant broader suite passes **174 tests with 41 existing asset skips**. Full available Python CI has now run: **3,232 passed, 418 skipped, one failed, zero errors**. Its sole failure is a separately owned official-revision metadata CLI fixture that leaves its parent target connection open. The full-CI stop condition is **not met**; that failure is retained for root review, without an authority change, new skip or assertion relaxation.
 
 Assigned checkout: `C:/Users/Administrator/.codex/worktrees/release-native-build-recovery/RAG`. Starting HEAD: `1cdb85f7605a5f36b833e1423f7136b4e2c449bf`. GNHF owns commits; root owns independent review, integration and publication. No manual staging, commit, push, merge, service startup or production asset write occurred.
+
+## Iteration 3 remaining original PDF fixture and full CI
+
+This continuation starts from clean actual HEAD `d2330d0dfa324f8ec6be29ab6633576b2b10bceb`, after the preceding loop ended without completion. The earlier builder correction is committed at `a1d21e6d839b7f1fedf16d43b4f0952fde80331b`; the parent CLI fixture correction is in d233. Independent private Windows review of exact a1 already passed 92 tests without skips and three native replacement/error controls, as recorded in `D:/Project/py/RAG/db_sources/native-build-recovery/host-lifecycle-review-a1d21e6d8/REPORT.md`. This continuation does not repeat or extend that independent verdict to the newer fixtures. Generic root review of d233 and independent review of the current PDF correction remain pending.
+
+The only current test-source change is within `tests/test_wiki_keyword_index.py::test_parse_quickref_too_few_entries_raises`. The original malformed English PDF and failure assertion remain; the test additionally writes a one-page temporary Chinese PDF with PyMuPDF's `china-s` font, passes that companion explicitly, and requires the error to identify **English**. The Chinese page contains `[爆炸] 24.05` and `这是配对测试正文。`. It is a deliberately tiny synthetic input, not a complete official chapter or evidence of production source coverage. No production PDF, parser mock, classifier relaxation, skip or xfail is used. The Chinese companion need not contain all 38 sections because the parser reads both actual files and then rejects the incomplete English chapter first.
+
+Evidence is confined to ignored `C:/Users/Administrator/.codex/worktrees/release-native-build-recovery/RAG/db_sources/native-build-recovery/iteration-03/`. The same read-only genuine Windows Python 3.11.9 CI interpreter recorded below ran all checks. No environment installation, upgrade, recreation, model/provider call or service occurred. Temporary test assets and bytecode/cache output are confined to that evidence directory. All subprocesses exited; no persistent background process was started.
+
+| XML-confirmed invocation | Collected | Passed | Failed | Errors | Skipped |
+|---|---:|---:|---:|---:|---:|
+| Frozen unchanged original negative fixture | 1 | 0 | 1 | 0 | 0 |
+| Corrected genuine paired negative fixture | 1 | 1 | 0 | 0 | 0 |
+| Exact original classification IDs | 44 | 44 | 0 | 0 | 0 |
+| Broader build/archive/authority/keyword suite | 215 | 174 | 0 | 0 | 41 |
+| Full available Python CI | 3,651 | 3,232 | 1 | 0 | 418 |
+| Unchanged outside-owner CLI failure reproduction | 1 | 0 | 1 | 0 | 0 |
+
+The full CI run took 175.03 seconds and retained nine warnings. `verification.json` independently reconstructs every XML node ID and confirms all original 44 identities pass in both their exact run and the full CI run. It also confirms the three existing parent CLI cases, all eleven unchanged lifecycle tests, and six non-asset paired-classification controls pass. Those controls retain section-number pairing, duplicate/empty-body rejection, unfamiliar heading identities and the actual PISTOL equivalence/replacement classification rules. Positive tests requiring complete actual official PDFs remain skipped honestly in this asset-free checkout.
+
+`test_wiki_keyword_index.before.py` preserves the exact starting test source, checked against the d233 Git blob after checkout newline normalization. `before-negative.{log,xml}` records its original `FileNotFoundError` for the absent default Chinese PDF. `after-negative.{log,xml}` records the corrected same-ID pass. `probe_pair.py` observes the real shared parser without replacing its return values; `paired-pdf-observation.json` records both input hashes, an empty English section map, actual Chinese section 24.05 with its exact heading/body, and the complete `ValueError` naming all 38 missing English sections. The real PDF files remain in `paired-pdf-inputs/` for independent inspection. `fixture.diff` retains the nine-line addition/two-line replacement.
+
+### Full CI scope and exact skip accounting
+
+The complete workflow-equivalent Python command is:
+
+```text
+<stable-python> -m pytest -q tests --ignore=tests/test_app_retrieval.py --tb=short -rs
+-o cache_dir=db_sources/native-build-recovery/iteration-03/pytest-cache
+--basetemp=db_sources/native-build-recovery/iteration-03/full-ci-temp
+--junitxml=db_sources/native-build-recovery/iteration-03/full-ci.xml
+```
+
+The one ignored file is the repository workflow's existing explicit local Streamlit test exclusion, containing six pure-function cases; it is not counted as a missing-asset skip. No further test exclusions, `-k` deselections, skips or xfails were added. Every tracked Python test file is under `tests/`. Selecting that actual test root prevents ignored historical diagnostic snapshots from being collected as application tests. `ci-metadata.json` retains the exact executable, arguments, return code and original classification path/hash; `run_validation.py ci` reproduces the invocation without package or model downloads. Frontend checks cannot run here because this isolated checkout has no `web/node_modules`; no install was authorized or attempted. Hosted Linux CI/frontend acceptance remains a separate root gate.
+
+An initial unrestricted `pytest -q` attempt is retained as `full-available.{log,xml}` and `full-metadata.json`. It stopped with three collection errors: two ignored frozen diagnostic files were treated as test modules, and `tests/test_app_retrieval.py` required absent `jieba`. These are not reported as passing tests or hidden by test-source edits. The subsequent invocation uses the actual CI contract described above. The broader run's original Windows console log is retained in its native encoding; its UTF-8 XML is the authoritative identity/count record. The evidence runner's log-reader encoding failure after that successful broader subprocess is retained in tool output; later commands explicitly set UTF-8 output and no broader test rerun was needed.
+
+`full-ci-skips.json` and `full-ci-skips.md` enumerate **every one of the 418 skipped node IDs and exact pytest reasons**. Of these, 412 require missing database/PDF/CSV/preparation assets; six are existing local application-stack skips (two explicit local-only guards and four `app` imports requiring absent `jieba`). Against the original stable-CI XML, 339 shared skipped identities retain exactly the same reasons; 79 additional asset-dependent identities exist in the later source at starting d233, and three older identities were renamed/parameterized by preceding source changes. Their exact lists are retained. This iteration changes no skip guard, and none of the original 44 diagnosed defects is classified as missing assets.
+
+### Outside-owner failure routed to root
+
+The sole full-CI failure is:
+
+```text
+tests/test_official_revision_metadata.py::test_new_metadata_conflict_returns_nonzero_from_actual_csv_build_cli
+```
+
+Its assertion at line 335 expects `'abilities': 1` in the actual child stdout, but stdout is empty. `probe_outside_owner.py` reruns that exact unmodified test and captures complete real child stderr. It checks the test source against the frozen d233 Git blob before running. `outside-owner-failure.json` records child exit 1 and:
+
+```text
+File "db_compile/__main__.py", line 138, in main
+    report = build_database(Path(args.csv_dir), Path(args.db), Path(args.terms))
+File "db_compile/build.py", line 456, in build_database
+    os.replace(str(tmp_path), str(db_path))
+PermissionError: [WinError 5] 拒绝访问。: '.../synthetic.tmp.sqlite' -> '.../synthetic.sqlite'
+```
+
+The separately owned `database()` helper at line 24 uses `with sqlite3.connect(db) as conn:` without explicitly closing the parent connection before the child attempts replacement. The corrected builder has already released its own cursor/connection. The real rebuild therefore fails before the test reaches its intended metadata-authority rejection. This is another parent fixture ownership boundary, not proof of a dependency regression or authority rejection defect. Root must review the close-owning fixture correction with all existing CSV/metadata/CLI assertions retained, then rerun this node and full CI. No patch, workaround, skip, xfail or authority edit was made outside the assigned PDF-fixture ownership. The full-CI run remains failing.
+
+### Final unchanged contracts and review boundary
+
+Python 3.11 compilation, Python 3.9 grammar parsing and `git diff --check` pass. Grammar parsing is not a Python 3.9 runtime result. Ruff/Black remain absent in the read-only environment and were not installed. Exact current/frozen test diff was inspected; the final tracked scope is only the existing negative fixture and this acceptance report.
+
+| Unchanged source | SHA-256 of current bytes |
+|---|---|
+| Builder | `d6367b9c70c678efac6d2c43d19cb9985f26a4346b0337c03463b3172045640f` |
+| Eleven lifecycle tests | `1fc2251b9270eff1eb6bf0ef63b757adacd3c74cbea34188e062e1f5b2044d2d` |
+| Corrected parent CLI fixture | `581c70c8ebf2dfd46aec33072527447b3ebdce54fb9315449fcfc60ea6ea57ae` |
+| `source_reconcile.py`, exact reviewed c7 | `b587509b40ec826eea2c3971549ed6cc0bbcd6ac103069b597f3484fd9f44c3e` |
+| `update.py`, exact reviewed c7 | `05d812fd474b39144b82a471c8e42708b727e1031e46df8f0f25f5b16a8304a5` |
+| `__main__.py`, exact reviewed c7 | `4ddb8c7c2b01b0fd14c869b183157b7c2d64dcacdd79d7302c60e1fcef103685` |
+| `source_archive.py`, exact reviewed c7 | `3683130807afb6e18a41dfa44a198cbe76f3bb1f78e69eb0cd739a6bff690b3f` |
+
+Reviewed c7 is `c7dba21dd325434c56f8708fb0a56dba0d4382f3`; all four current authority files are byte-identical to its Git blobs. The negative fixture SHA-256 changes from `dc8410358ecbec37553261cbd84df8cbe75f51e0a46f6aa37199df87b4ad640d` to `016525043fc5a5f9a2377ce051c98174f693e2d7b65463b67c71f76293d3c748`. Requirements, classifier, dependency/security/gold logic, production assets and concurrent branches are unchanged.
+
+The bounded original recovery is reviewable and all 44 original IDs are resolved, but **the configured loop cannot fully stop while the newer official-revision fixture and full CI remain failing**. Remaining root gates are that outside-owner fixture/retest, generic/independent review of newer fixtures, integration, supported dependency/Linux platform acceptance, actual-asset source/authority restoration and retirement coverage, Docker/browser/live/benchmark, frontend/hosted CI and publication. No full production-asset, model, restoration, source-retirement, release or deployment acceptance is claimed. Local checkpoint/roadmap and the existing SQLite learning/error records are updated in place; the only new underlying-error note is the distinct paired-PDF fixture issue. GNHF owns the automatic scoped commit; no current uncommitted correction is assigned an invented commit explanation.
 
 ## Iteration 2 parent fixture correction and evidence
 
