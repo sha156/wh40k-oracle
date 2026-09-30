@@ -5,6 +5,7 @@
 """
 from __future__ import annotations
 
+import sqlite3
 from collections import Counter
 from typing import List, Optional, Set
 
@@ -23,7 +24,62 @@ def _valid_enhancement_names(db_path, detachment_id: Optional[str]) -> Optional[
         return None
     from db_compile.enhancements import list_for_detachment
     names = {e["name"] for e in list_for_detachment(db_path, detachment_id)}
-    return names or None
+    if names:
+        return names
+    # An archived-only catalogue is known to have no current choices. Treating
+    # it as missing data would downgrade a confirmed removed selection to WARN.
+    return set() if list_for_detachment(
+        db_path, detachment_id, include_removed=True) else None
+
+
+def _faction_issues(db_path, roster: Roster) -> List[ValidationIssue]:
+    """Check known ownership; cross-faction ally permissions remain unverified."""
+    conn = sqlite3.connect(str(db_path))
+    try:
+        factions = dict(conn.execute("SELECT id, name FROM factions"))
+        if roster.faction_id not in factions:
+            return [ValidationIssue(
+                "unknown_faction", ERROR,
+                f"阵营「{roster.faction_id}」不在阵营目录中，请重新选择阵营")]
+        issues = _detachment_faction_issues(conn, roster)
+        ids = sorted({u.canonical_id for u in roster.units})
+        if not ids:
+            return issues
+        placeholders = ",".join("?" for _ in ids)
+        rows = conn.execute(
+            f"SELECT id, name_en, faction_id FROM units WHERE id IN ({placeholders})", ids)
+        mismatched = [f"{name}（{factions.get(owner, owner) or '阵营资料缺失'}）"
+                      for _uid, name, owner in rows if owner != roster.faction_id]
+        if mismatched:
+            issues.append(ValidationIssue(
+                "faction_compatibility_unverified", WARN,
+                "以下单位未归在所选阵营目录中：" + "、".join(mismatched)
+                + "。跨阵营/盟军的加入条件尚未校验，不能据此判定整张军表合法；"
+                  "请核对相应军队与盟军规则。",
+                surfaced_only=True))
+        return issues
+    finally:
+        conn.close()
+
+
+def _detachment_faction_issues(conn, roster: Roster) -> List[ValidationIssue]:
+    if not roster.detachment_id:
+        return []
+    # Match the detachment catalogue exposed by the roster UI and text importer.
+    owners = {row[0] for row in conn.execute(
+        "SELECT DISTINCT faction_id FROM enhancements WHERE detachment_id = ?",
+        (roster.detachment_id,)) if row[0]}
+    if not owners:
+        return [ValidationIssue(
+            "detachment_unverified", WARN,
+            f"分队「{roster.detachment_id}」的阵营归属资料缺失，分队兼容性未校验",
+            surfaced_only=True)]
+    if roster.faction_id not in owners:
+        return [ValidationIssue(
+            "detachment_wrong_faction", ERROR,
+            f"分队「{roster.detachment_id}」属于 {', '.join(sorted(owners))}，"
+            f"不属于所选阵营 {roster.faction_id}")]
+    return []
 
 
 def validate(db_path, roster: Roster) -> ValidationReport:
@@ -33,7 +89,7 @@ def validate(db_path, roster: Roster) -> ValidationReport:
     漏计会把压线超分表判合法（gnhf 审查模块 3 F1 HIGH）。
     """
     priced = recompute(db_path, roster)
-    issues: List[ValidationIssue] = []
+    issues = _faction_issues(db_path, priced)
     limit = size_limit(priced.size)
     enh_points, enh_point_issues = _enhancement_points(db_path, priced)
     total = total_points(priced) + enh_points
@@ -200,5 +256,5 @@ def _validate_enhancements(db_path, roster: Roster, kw_map, unknown_ids,
             if u.enhancement not in valid:
                 issues.append(ValidationIssue(
                     "enh_wrong_detachment", ERROR,
-                    f"强化「{u.enhancement}」不属于当前分队",
+                    f"强化「{u.enhancement}」不在当前分队的现行强化清单中",
                     anchor="11版 军表构筑·Enhancements"))

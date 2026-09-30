@@ -43,8 +43,10 @@ updated: '2026-09-14'
 | 双联动力拳 | 近战 | 3 | 4+ | 8 | -2 | 2 | [[core-rules/twin-linked.md\|双联]] |
 
 ## 技能
-- **不屈战术**：当该单位中的模型对最近的可选目标进行远程攻击时，或在进行了冲锋移动的回合中进行近战攻击时，那次攻击的力量属性提升 2。
-- **【阵营技能】：破敌重誓，任务战术**
+- **Jump Pack**：The bearer has a Move characteristic of 10" and can move over models and terrain features as if they were not there.
+- **Indomitor Doctrines**：Each time a model in this unit makes an attack, add 1 to the Hit roll if this unit is below its Starting Strength, and add 1 to the Wound roll as well if this unit is Below Half-strength.
+- **ATTACHED UNIT**：If a <span class="kwb">CHARACTER</span> unit from your army can be attached to a [[factions/帝国特勤/units/deathwatch-kill-team.md|Deathwatch Kill Team]], it can be attached to this unit instead.
+- **TRANSPORT**：This unit cannot embark within an [[factions/帝国特勤/units/imperial-rhino.md|Imperial Rhino]].
 
 ## 单位构成
 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。

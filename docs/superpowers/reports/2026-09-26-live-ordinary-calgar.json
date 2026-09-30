@@ -1,0 +1,117 @@
+{
+  "question": "普通卡尔加多少分？",
+  "status": 200,
+  "elapsed_seconds": 7.967,
+  "answer": {
+    "summary": "检索 1 步 · 引用 2 条",
+    "trace": [
+      {
+        "fn": "calc_points",
+        "args": "(['卡尔加'])",
+        "result": "已命中",
+        "status": "ok",
+        "note": null
+      }
+    ],
+    "traceWarn": null,
+    "verdict": {
+      "label": "暂无法判定",
+      "labelEn": "Unverified",
+      "lede": [
+        {
+          "t": "text",
+          "s": "查不到「普通卡尔加」的当前官方点数。工具只命中一条历史记录：马涅乌斯·卡尔加（Marneus Calgar）在第三方缓存资料中标注为「已删除」，旧点数记为 "
+        },
+        {
+          "t": "num",
+          "s": "200"
+        },
+        {
+          "t": "text",
+          "s": " 分 "
+        },
+        {
+          "t": "cite",
+          "n": 1
+        },
+        {
+          "t": "cite",
+          "n": 2
+        },
+        {
+          "t": "text",
+          "s": "。"
+        }
+      ]
+    },
+    "calc": [
+      {
+        "n": 1,
+        "text": [
+          {
+            "t": "text",
+            "s": "这条 "
+          },
+          {
+            "t": "num",
+            "s": "200"
+          },
+          {
+            "t": "text",
+            "s": " 分是历史资料，不是现行兵牌，不能当作当前点数或军表合法性依据 "
+          },
+          {
+            "t": "cite",
+            "n": 1
+          },
+          {
+            "t": "cite",
+            "n": 2
+          },
+          {
+            "t": "text",
+            "s": "。"
+          }
+        ]
+      },
+      {
+        "n": 2,
+        "text": [
+          {
+            "t": "text",
+            "s": "另外，你问的「普通卡尔加」这个限定名在库里没有对应条目——卡尔加通常有普通版与「卡尔加 in Terminator Armour（终结者装甲版）」等不同版本，点数各自独立，不能混用。建议确认你要的是哪个版本，或查阅原始规则书/官方 MFM 获取当前点数。"
+          }
+        ]
+      }
+    ],
+    "entityCard": null,
+    "cites": [
+      {
+        "n": 1,
+        "book": "黑图书馆 · 历史缓存（第三方，已删除）",
+        "page": null,
+        "section": "历史资料，非当前点数",
+        "term": "Marneus Calgar · 源记录 6",
+        "wiki": "",
+        "url": null
+      },
+      {
+        "n": 2,
+        "book": "黑图书馆本地缓存（第三方历史记录，非官方现行资料）",
+        "page": null,
+        "section": null,
+        "term": null,
+        "wiki": "",
+        "url": null
+      }
+    ],
+    "sensitivity": null,
+    "cta": null,
+    "followups": [
+      "卡尔加终结者装甲版多少分？",
+      "马涅乌斯·卡尔加现行兵牌有哪些能力？",
+      "极限战士还有哪些单位点数可查？"
+    ],
+    "degraded": false
+  }
+}

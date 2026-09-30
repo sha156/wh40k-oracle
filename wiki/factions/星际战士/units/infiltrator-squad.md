@@ -36,8 +36,9 @@ updated: '2026-09-14'
 | 格斗武器  | 近战 | 3 | 3+ | 4 | 0 | 1 | — |
 
 ## 技能
-- **【阵营技能】：破敌重誓**
-- **信号干扰**：敌方单位作为援军入场时不能部署在本单位 12 寸内
+- **Omni-scramblers**：Enemy units that are set up on the battlefield from Reserves cannot be set up within 12" of this unit.
+- **Helix Gauntlet**：Models in the bearer’s unit have the Feel No Pain 6+ ability.
+- **Infiltrator Comms Array**：Each time you target the bearer’s unit with a Stratagem, roll one D6: on a 5+, you gain 1CP.
 
 ## 单位构成
 - **5个模型** — 110 分

@@ -33,11 +33,12 @@ updated: '2026-09-14'
 | 丧尼阿锐斯和碾脊者（横扫） | 近战 | 16 | 2+ | 7 | -2 | 2 | [[core-rules/devastating-wounds.md\|毁灭伤害]] |
 
 ## 技能
-- **阵营：恐虐祝福**
-- **最高指挥官**：如果该模型在您的军队中，该模型必须是统帅。
-- **鲜血重生**：在战斗轮次开始时，在您进行恐虐祝福掷骰时，如果该模型被摧毁，那么您可以使用 3 枚 6 来使用本技能，而不是在战斗轮次中激活恐虐祝福技能。若这么做，那么该模型不再被摧毁，在[[factions/兽人/stratagems/on-to-da-next.md|下一个]]己方移动阶段的增援步骤中，使用 [深入打击] 技能将该模型部署在战场上的任意位置，剩余 8 点耐伤。
-- **愤怒存在**：在战斗轮次开始时，选择一个愤怒存在技能（见下侧*）。直到下一个战斗轮次开始前，该模型拥有被选择的技能。*血神之选：每当您进行恐虐祝福掷骰时，如果该模型位于战场，那么您可以重掷最多 6 枚D6。*压倒性怒火（光环）：每当一个位于该模型 6" 内的敌方单位被选择进行后撤时，那个单位必须进行一次领导力测试。如果测试失败，那么那个单位必须在阶段中保持静止。*究极狂怒（光环）：每当一个己方吞世者单位位于该模型的 6" 内时，您可忽略任意或所有对那个单位中模型 M 、突进掷骰结果和冲锋掷骰结果的修正，并且每当那个单位中的模型进行近战攻击时，您可以忽略任意或所有对攻击 WS 和/或任意或所有对命中掷骰的修正。
-- **受损**：当该模型剩余 1-6 点耐伤，模型攻击的命中掷骰结果减少 1 点。
+- **Reborn in Blood**：At the start of the battle round, when you make a Blessings of Khorne roll, if this model is destroyed, you can use a triple 6 from that roll to use this ability instead of activating any Blessings of Khorne at the start of that battle round. If you do, this model is no longer destroyed and in the Reinforcements step of your next Movement phase, it is set up anywhere on the battlefield using its Deep Strike ability, with 8 wounds remaining.
+- **Wrathful Presence**：At the start of the battle round, select one Wrathful Presence ability. Until the start of the next battle round, this model has that ability.
+- **SUPREME COMMANDER**：If this model is in your army, it must be your <span class="kwb">WARLORD</span>.
+- **The Blood God’s Favour**：Each time you make a Blessings of Khorne roll, if this model is on the battlefield, you can re-roll up to six of the D6 rolled.
+- **Overwhelming Wrath (Aura)**：Each time an enemy unit within 6" of this model is selected to Fall Back, that unit must take a Leadership test. If that test is failed, that unit must Remain Stationary this phase instead.
+- **Driven by Ultimate Rage (Aura)**：While a friendly World Eaters unit is within 6" of this model, you can ignore any or all modifiers to that unit’s Move characteristic and to Advance and Charge rolls made for it, and each time a model in that unit makes a melee attack, you can ignore any or all modifiers to that attack’s Weapon Skill characteristic and/or any or all modifiers to the Hit roll.
 
 ## 单位构成
 - **1个模型** — 330 分

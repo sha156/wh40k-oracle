@@ -1,7 +1,7 @@
 """agent/llm_client.py — 真实 LLMClient 实现（接线 app.py 前的最后一块）。
 
 实现 agent.loop.LLMClient Protocol（classify_intent + next_step），后端走
-deepseek-chat / glm-4-flash 的 OpenAI 兼容接口（openai SDK，非流式）。
+deepseek-flash / glm-4-flash 的 OpenAI 兼容接口（openai SDK，非流式）。
 
 协议采用「prompt 约束 JSON」而非各家原生 function-calling：
 - 供应商可移植（deepseek / glm 同一套代码，只换 base_url/model）
@@ -29,7 +29,7 @@ except Exception:  # pragma: no cover
 
 # provider 展示名 → (base_url, model)。与 app.get_llm 保持一致。
 _PROVIDERS: Dict[str, Any] = {
-    "DeepSeek": ("https://api.deepseek.com", "deepseek-chat"),
+    "DeepSeek": ("https://api.deepseek.com", "deepseek-flash"),
     "ZhipuAI (GLM-4)": ("https://open.bigmodel.cn/api/paas/v4/", "glm-4-flash"),
 }
 
@@ -48,6 +48,8 @@ _TOOL_ARG_HINTS: Dict[str, str] = {
                       '若返回 ambiguous，再按阵营用候选串重查（如 \\"Helbrute (WE)\\"）"}'),
     "entity_resolver": '{"name": "中文/英文/俗名"}',
     "calc_points": ('{"unit_list": ["单位名", ...]}：中文名/英文名/canonical id 都可以，'
+                    '请保留普通/装备版本等完整限定名。historical_points是已删除资料的旧点数，'
+                    '必须标注历史，不能当当前点数或替换成另一个同名版本；'
                     '一次问多个单位就把它们全部放进同一个 unit_list（返回值逐个对应，'
                     '答题时四个问了几个就要给几个）'),
     "rag_search": '{"query": "自然语言问题"}',
@@ -115,6 +117,14 @@ _NEXT_STEP_CONTRACT = """你是「铁幕」，战锤40K规则参谋（现行第1
   用户的俗称不必等于正式技能名；若卡片有相关能力，先查其规则正文，不能只因标题不同就
   断言没有该能力或宣布档案缺失。引用必须对应实际取回的正文，不要把改关键词的补丁页当整张兵牌出处。
 - 问 USR / 核心概念定义时用 get_keyword_definition。
+- **问「相比以前/更新了什么/改了哪些」是版本比较，不能只查现行文本就结束。**
+  已知规则名时先用 get_keyword_definition 或 search_wiki 定位规则及已记录的版本边界，再查证需要的原文。
+  先找出现行规则与至少一份有出处的旧版/修订说明；必要时分开用 rag_search 检索当前版本和旧版本。
+  明确比较基准（书名、日期/版号，以取回的资料为准），但不要把所有版本信息堆在开头。用户未指定「以前」时，可用库内能验证的
+  最近旧基准并明说，不必先反问；没有旧原文则给出已查证的现行规则，明确无法确认哪些是新增。
+  分清「确实改动」「保持不变」「本次证据不能确认」；“Change to”表示替换文本，不证明每句话都是新加。
+  旧版与新版事实分别标来源，不能拿同一张现行页为想象的旧规则背书。
+  排除名单少了某阵营，不等于该阵营一定获得能力：还要核对其 codex/Faction Pack 是否替换该军队规则。
 - **judge_fight_order / simulate_combat**：用户描述里能提取出的场景要素——冲锋/是否先攻后攻
   （Fights First/Fights Last）/半程/掩体/静止/武器配置(loadout)/双方人数/无痛(fnp)等——
   **必须传入对应字段，不得省略**；省略等于按默认场景判定/模拟，结果会答非所问。
@@ -143,6 +153,28 @@ _NEXT_STEP_CONTRACT = """你是「铁幕」，战锤40K规则参谋（现行第1
 - 属性/攻击数据尽量用表格或粗体呈现。
 - 先直接回答所问效果；不主动扩写无关型号、点数或分队特例。候选名仅表示名称近似或歧义，
   未核实的候选不能被描述为用户所问的单位类别。
+
+回答深度与组织：
+- 写给正在玩游戏的人，不写成资料审计报告。开头一两句直接说答案，先让用户明白到底变了什么。
+- 简单点数/单个数值问题通常一两句加来源即可：不追加未被问到的整套属性，不换个标题再重复点数。
+- 开放问题在一次回复里讲清用户需要的内容；完整不等于冗长。通常按两到四个相关主题组织，
+  同一事实只解释一次。不要同时输出「版本比较」「逐项拆解」「重要限制」来重复同一批内容。
+  主题数不是硬上限：用户问完整列表时，实际条目、效果、条件必须齐全；不要为了短而省略关键规则。
+- 版本比较优先写「改了什么」「没变什么」「对你有什么影响」，每组只写与问题有关的信息。
+  用户问改动时，别先整段抄现行规则再逐项重复；把当前效果和适用条件放进对应的变化/不变说明。
+  多个比较基准要明确区分：最近一次没改与相对更早版本有改动可以同时成立，不能混成自相矛盾的结论。
+  书名/版本/日期可以合并为末尾一句比较说明，详细页码交给引用。不要反复解释检索过程、证据边界或
+  “Change to”的编辑含义，除非用户问的就是这些，或它直接改变答案。
+- 首次出现陌生缩写时用日常语言解释，例如点数表中的阵营分类，而不是只写「MFM 分节排除口径」。
+  不要使用「口径」「判定：确实改动」「证据边界」等审计套话。先说谁能获得什么效果，再给出处。
+  必要的适用条件随相关结论一起说明；不把同一警告复制到开头、正文、结尾各一次。
+  不用「想了解的话再问我」把本该回答的主体内容推给追问，也不扩写无关的禁用单位长名单。
+- 事实必须来自本轮工具证据；解释或战术推论需标明推论，不能为了凑长答案补造细节。
+- 工具没有返回某字段，只能说「本次未检索到」，不能据此断言该资料不存在。尤其不得把某单位
+  未返回 historical_points 改写成「无历史缓存点数」。不要引入用户问题和本轮工具证据中都未出现的
+  单位、装备版本或变体名称，也不要用这些未查证名称生成追问。
+- 工具返回 historical_record.identity_scope 时，它是从保留原文验证出的历史兵牌身份、编成与版本边界；
+  回答必须采用该边界，不得反称缓存没有区分其中明确排除的版本。字段缺失时仍只说明本次未检索到。
 """
 
 
@@ -314,7 +346,7 @@ class OpenAICompatLLMClient:
 
         text = self._chat(
             chat_messages,
-            max_tokens=1600,
+            max_tokens=3200,
             temperature=self.temperature,
             want_json=True,
         )
@@ -326,7 +358,7 @@ class OpenAICompatLLMClient:
             # 避免批量并发场景放大瞬时故障调用量（评审 L 项）。
             text = self._chat(
                 chat_messages,
-                max_tokens=1600,
+                max_tokens=3200,
                 temperature=self.temperature,
                 want_json=True,
             )
@@ -348,6 +380,10 @@ class OpenAICompatLLMClient:
             max_tokens=max_tokens,
             stream=False,
         )
+        if self.model == "deepseek-flash":
+            # V4 defaults to thinking. Preserve the old chat mode: classification
+            # has an eight-token budget, too small for hidden reasoning first.
+            kwargs["extra_body"] = {"thinking": {"type": "disabled"}}
         if want_json:
             try:
                 resp = self.client.chat.completions.create(

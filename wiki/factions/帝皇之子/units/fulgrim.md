@@ -39,12 +39,13 @@ updated: '2026-09-14'
 | 弯曲蛇尾 | 近战 | 6 | 2+ | 6 | -1 | 1 | [[core-rules/extra-attacks.md\|额外攻击]] |
 
 ## 技能
-- **【阵营技能】：嗜欲恶徒**
-- **恶魔邪毒**：在你的射击阶段或任意近战阶段，在本模型进行攻击后，选择一个被本模型本轮攻击命中过至少一次的敌方单位，直到本场游戏结束前那个单位视作中毒状态：在任意玩家的指挥阶段，你为每个处于中毒状态且位于桌面上的敌方单位投一颗D6，若结果为 4+，对应的那个敌方单位受到 D3点致命伤。
-- **色孽恶魔原体**：在你对手的指挥阶段开始时，你选择下列色孽恶魔原体能力中的一个，直到对方的下个指挥阶段开始时，本模型获得对应的能力。◼ 迷人体态：每当敌方模型攻击本模型时命中骰结果-1。◼ 邪魔极速：本模型拥有先攻能力。◼ 攫魂催眠（光环）：当位于本模型 6 寸内的敌方单位进行撤退移动时，必须先进行一次领导力测试，若失败则那个单位改为必须保持静止。
-- **严重损伤**：当本模型拥有 1-6 点 W 值时，本模型 在攻击时的命中骰结果-1。
-- **至高指挥官：本模型必须作为你的主将。**
-- **灵活似蛇**：每当该模型进行一次常规移动，突进或撤退时，它可以穿过4寸或更低的地形障碍
+- **Daemonic Poisons**：In your Shooting phase and the Fight phase, after this model has finished making its attacks, select one enemy unit hit by one or more of those attacks. Until the end of the battle, that enemy unit is poisoned. At the start of each player’s Command phase, roll one D6 for each poisoned enemy unit on the battlefield: on a 4+,that enemy unit suffers D3 mortal wounds.
+- **Daemon Primarch of Slaanesh**：At the start of your opponent’s Command phase, select one of the abilities in the Daemon Primarch of Slaanesh section. Until the start of your opponent’s next Command phase, this model has that ability.
+- **Serpentine**：Each time this model makes a Normal, Advance or Fall Back move, it can move over sections of terrain features that are 4" or less in height.
+- **Beguiling Form**：Each time a model makes an attack that targets this model, subtract 1 from the Hit roll.
+- **Daemonic Speed**：This model has the Fights First ability.
+- **Enthralling Hypnosis (Aura)**：While an enemy unit is within 6" of this model, each time that unit is selected to Fall Back, it must take a Leadership test. If that test is failed, that unit must Remain Stationary this phase instead.
+- **SUPREME COMMANDER**：If this model is in your army, it must be your <span class="kwb">WARLORD</span>.
 
 ## 单位构成
 - **1个模型** — 340 分

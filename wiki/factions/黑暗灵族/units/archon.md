@@ -40,10 +40,11 @@ updated: '2026-09-14'
 | 大师级动力武器 | 近战 | 5 | 2+ | 4 | -2 | 2 | — |
 
 ## 技能
-- **【阵营技能】：痛苦之力**：永恒憎恨 (苦痛)：在您的射击阶段或近战阶段，当您选择该模型所在的单位进行射击或近战时，您可以花费 1 枚苦痛标识来强化该单位。在该单位处于强化状态时，每次该单位中的模型进行攻击时，您可以重掷命中掷骰。
-- **霸主**：每场战斗一次，在任意阶段开始时，您可以选择该模型 12" 范围内的一个正处于战斗震慑状态的友方黑暗灵族单位。目标单位不再处于战斗震慑状态。
-- **狡诈策士**：每个战斗轮次一次，您军队中一个拥有该技能的模型所在的单位被计谋选中时，该模型可以使用此技能。若如此做，该次计谋的 CP 花费减少 1CP。
-- **装备技能**：暗影力场：您不能重掷为该模型进行的无敌豁免掷骰。在该模型进行的无敌豁免首次失败后，该模型不再拥有无敌豁免。灵魂陷阱：持有者的近战武器的攻击次数和力量属性增加1 点。持有者第一次通过次近战攻击摧毁了一个敌方模型后，在其所有攻击结算完毕后，直到战斗结束，持有者的近战武器的攻击次数和力量属性再额外增加1 点。
+- **Hatred Eternal (Pain)**：In your Shooting phase or the Fight phase, when you select this model’s unit to shoot or fight, you can spend 1 Pain token to Empower that unit. While that unit is Empowered, each time a model in that unit makes an attack, you can re-roll the Hit roll.
+- **Overlord**：Once per battle, at the start of any phase, you can select one friendly Drukhari unit that is Battle-shocked and within 12" of this model. That unit is no longer Battle-shocked.
+- **Devious Mastermind**：Once per battle round, one model from your army with this ability can use it when its unit is targeted with a Stratagem. If it does, reduce the CP cost of that use of that Stratagem by 1CP.
+- **Shadowfield**：You cannot re-roll invulnerable saving throws made for the bearer. The first time an invulnerable saving throw made for the bearer is failed, until the end of the battle, the bearer has no invulnerable save.
+- **Soul Trap**：Add 1 to the Attacks and Strength characteristics of the bearer’s melee weapons. The first time the bearer makes a melee attack that destroys an enemy model, after all the bearer’s attacks have been resolved, until the end of the battle, add an additional 1 to the Attacks and Strength characteristics of the bearer’s melee weapons.
 
 ## 单位构成
 - **1个模型** — 80 分

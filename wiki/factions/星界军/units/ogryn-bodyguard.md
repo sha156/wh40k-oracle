@@ -38,8 +38,10 @@ updated: '2026-09-14'
 | 撕裂枪（近战） | 近战 | 5 | 3+ | 6 | -1 | 1 | — |
 
 ## 技能
-- **欧格林保镖**：当一个或多个军官模型和该模型在同一个单位时，那些军官模型获得不觉疼痛4+能力
-- **忠诚保镖**：宣布战斗阵型步骤开始时，该模型必须加入您军队中的一个指挥组单位（每个指挥组不能有多个[[factions/帝国骑士/detachments/throne-bonded-outriders.md|忠诚护卫]]模型）。该模型在接下来的战斗中被视为指挥组的一部分，并且增加相应的初始兵力。如果不能将该模型加入指挥组，该模型不能加入战斗，并且被视为被摧毁。当该模型加入一个单位时，该模型可以搭乘任何那个单位可以搭乘的运输工具，并且视为占据 3 个模型的空间。该模型不能被选择成为己方统帅，并且不能获得强化
+- **Ogryn Bodyguard**：While one or more Officer models are in the same unit as this model, those <span class="kwb">OFFICER</span> models have the Feel No Pain 4+ ability.
+- **Brute Shield**：The bearer has a 4+ invulnerable save.
+- **Slabshield**：The bearer has a Wounds characteristic of 7.
+- **LOYAL PROTECTOR**：At the start of the Declare Battle Formations step, this model must join one Command Squad unit from your army (a <span class="kwb">COMMAND</span> <span class="kwb">SQUAD</span> cannot have more than one Loyal Protector model joined to it). This model then counts as part of that <span class="kwb">COMMAND</span> <span class="kwb">SQUAD</span> for the rest of the battle, and its Starting Strength is increased accordingly. If it is not possible to join this model to a <span class="kwb">COMMAND</span> <span class="kwb">SQUAD</span>, it does not take part in the battle and counts as having been destroyed.<br><br>While this model is joined to a unit, it can embark within any Transport that unit can embark within, and takes up the space of 3 models.<br><br>This model cannot be selected as your <span class="kwb">WARLORD</span> and cannot be given Enhancements.
 
 ## 单位构成
 - **1个模型** — 40 分

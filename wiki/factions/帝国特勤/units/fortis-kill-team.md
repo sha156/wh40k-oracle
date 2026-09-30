@@ -44,8 +44,9 @@ updated: '2026-09-14'
 | 长守近战武器 | 近战 | 3 | 3+ | 5 | -2 | 1 | — |
 
 ## 技能
-- **至强战术**：当该单位中的模型对低于初始兵力的单位进行攻击时，命中掷骰结果加 1。当该单位中的模型对低于半数兵力的单位进行攻击时，命中掷骰和致伤掷骰结果都加 1。
-- **【阵营技能】：破敌重誓，任务战术**
+- **Fortis Doctrines**：Each time a model in this unit makes an attack that targets a unit that is Below Half-strength, add 1 to the Hit roll.
+- **ATTACHED UNIT**：If a Character from your army with the Leader ability can be attached to a [[factions/帝国特勤/units/deathwatch-kill-team.md|Deathwatch Kill Team]], it can be attached to this unit instead.
+- **TRANSPORT**：This unit cannot embark within an [[factions/帝国特勤/units/imperial-rhino.md|Imperial Rhino]].
 
 ## 单位构成
 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。

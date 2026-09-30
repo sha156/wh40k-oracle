@@ -19,7 +19,7 @@ updated: '2026-09-14'
 ## 属性表
 | 模型 | M | T | SV | W | LD | OC |
 |---|---|---|---|---|---|---|
-| 虚空[[factions/黑暗灵族/units/reavers.md\|劫掠者]]海盗 | 7" | 3 | 4+ | 1 | 7+ | 1 |
+| 虚空创痕海盗 | 7" | 3 | 4+ | 1 | 7+ | 1 |
 
 ## 射击武器
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
@@ -44,7 +44,10 @@ updated: '2026-09-14'
 | 灵族动力剑 | 近战 | 3 | 3+ | 4 | -2 | 1 | — |
 
 ## 技能
-- **劫掠海盗**：在战斗开始时，选择一个敌方单位，本单位中的模型装备的武器攻击对该敌方单位时拥有【致命一击】和 【精准】技能
+- **Piratical Raiders**：At the start of the battle, select one unit from your opponent’s army. Weapons equipped by models in this unit have the [LETHAL HITS] and [PRECISION] abilities while targeting that unit.
+- **Channeller Stones**：Once per turn, the first time a saving throw is failed for the bearer’s unit, change the Damage characteristic of that attack to 0.
+- **Faolchú**：Ranged weapons equipped by models in the bearer’s unit have the [IGNORES COVER] ability.
+- **Mistshield**：The bearer has a 4+ invulnerable save.
 
 ## 单位构成
 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。

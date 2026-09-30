@@ -151,13 +151,21 @@ def check_enhancements(db_path, rows: List[Dict[str, str]]) -> Dict[str, Any]:
     }
 
 
-def list_for_detachment(db_path, detachment_id: str) -> List[Dict[str, Any]]:
-    """某分队的合法强化清单（PR1b 验表调用）：[{id,name,cost}]，按点数排序。"""
+def list_for_detachment(db_path, detachment_id: str, *,
+                        include_removed: bool = False) -> List[Dict[str, Any]]:
+    """Current enhancement choices, sorted by cost; legacy schemas remain readable.
+
+    ``include_removed`` is only for distinguishing an archived catalogue from
+    missing data during validation. Retired prices are never current prices.
+    """
     conn = sqlite3.connect(str(db_path))
     try:
+        columns = {r[1] for r in conn.execute("PRAGMA table_info(enhancements)")}
+        current = ("AND COALESCE(fp_status, '') != 'removed_11e' "
+                   if "fp_status" in columns and not include_removed else "")
         rows = conn.execute(
             "SELECT id, name, cost FROM enhancements WHERE detachment_id = ? "
-            "ORDER BY cost, name", (detachment_id,)).fetchall()
+            + current + "ORDER BY cost, name", (detachment_id,)).fetchall()
     finally:
         conn.close()
     return [{"id": r[0], "name": r[1], "cost": r[2]} for r in rows]

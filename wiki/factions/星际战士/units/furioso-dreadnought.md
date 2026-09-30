@@ -37,10 +37,8 @@ updated: '2026-09-14'
 | 暴烈双拳 | 近战 | 5 | 3+ | 12 | -3 | 3 | [[core-rules/twin-linked.md\|双联]] |
 
 ## 技能
-- **【阵营技能】：破敌重誓**
-- **暴烈怒火**：每当该模型进行近战的时，可以选择近战范围内的一个敌方单位并投掷1枚D6，若结果为4-5则被选择的敌方单位受到D3点致命伤，若结果为6则被选择的敌方单位受到3点致命伤；若该模型在本回合进行过冲锋，则该投掷的D6的结果+2，
-- **【装备技能】磁力勾爪**：持有者失去烟幕关键词，当持有者冲锋时，若目标是巨兽或载具单位，那么冲锋的结果+2
-- **【装备技能】烟幕发射器**：持有者失去磁力勾爪能力，并获得烟幕关键词
+- **Wrathful Rampage**：Each time this model is selected to fight, you can select one enemy unit within Engagement Range of it and roll one D6, adding 2 to the result if this model made a Charge move this turn: on a 4-5, that enemy unit suffers D3 mortal wounds; on a 6+, that enemy unit suffers 3 mortal wounds.
+- **Magna-grapple**：The bearer loses the <span class="kwb">SMOKE</span> keyword, but add 2 to Charge rolls made for the bearer if one or more of the targets of that charge is a <span class="kwb">MONSTER</span> or <span class="kwb">VEHICLE</span> unit.
 
 ## 单位构成
 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。

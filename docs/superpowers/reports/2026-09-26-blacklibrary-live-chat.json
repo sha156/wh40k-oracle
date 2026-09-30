@@ -1,0 +1,814 @@
+{
+  "status": 200,
+  "seconds": 12.187,
+  "response": {
+    "summary": "检索 1 步 · 引用 4 条",
+    "trace": [
+      {
+        "fn": "get_datasheet",
+        "args": "('石歌者')",
+        "result": "已命中",
+        "status": "ok",
+        "note": null
+      }
+    ],
+    "traceWarn": null,
+    "verdict": {
+      "label": "60分",
+      "labelEn": "60 pts",
+      "lede": [
+        {
+          "t": "text",
+          "s": "石歌者（Stonesinger）当前 "
+        },
+        {
+          "t": "strong",
+          "s": "60 分"
+        },
+        {
+          "t": "text",
+          "s": "（"
+        },
+        {
+          "t": "num",
+          "s": "1"
+        },
+        {
+          "t": "text",
+          "s": " 模型）"
+        },
+        {
+          "t": "cite",
+          "n": 2
+        },
+        {
+          "t": "cite",
+          "n": 3
+        },
+        {
+          "t": "text",
+          "s": "，兵牌属性与技能见下。"
+        }
+      ]
+    },
+    "calc": [
+      {
+        "n": 1,
+        "text": [
+          {
+            "t": "strong",
+            "s": "兵牌概要"
+          },
+          {
+            "t": "text",
+            "s": "（艾达灵族 / Aeldari，关键词：MOUNTED、CHARACTER、EXODITE、PSYKER 等）"
+          },
+          {
+            "t": "cite",
+            "n": 1
+          },
+          {
+            "t": "cite",
+            "n": 4
+          }
+        ]
+      },
+      {
+        "n": 2,
+        "text": [
+          {
+            "t": "text",
+            "s": "| 属性 | M | T | Sv | W | Ld | OC |\n|---|---|---|---|---|---|---|\n| 石歌者 | "
+          },
+          {
+            "t": "num",
+            "s": "10"
+          },
+          {
+            "t": "text",
+            "s": "\" | "
+          },
+          {
+            "t": "num",
+            "s": "5"
+          },
+          {
+            "t": "text",
+            "s": " | "
+          },
+          {
+            "t": "num",
+            "s": "4+"
+          },
+          {
+            "t": "text",
+            "s": " | "
+          },
+          {
+            "t": "num",
+            "s": "4"
+          },
+          {
+            "t": "text",
+            "s": " | "
+          },
+          {
+            "t": "num",
+            "s": "7"
+          },
+          {
+            "t": "text",
+            "s": " | "
+          },
+          {
+            "t": "num",
+            "s": "2"
+          },
+          {
+            "t": "text",
+            "s": " |"
+          }
+        ]
+      },
+      {
+        "n": 3,
+        "text": [
+          {
+            "t": "strong",
+            "s": "射击武器"
+          },
+          {
+            "t": "text",
+            "s": "\n| 武器 | 射程 | A | 命中 | S | AP | D | 关键词 |\n|---|---|---|---|---|---|---|---|\n| 衰败之歌 | "
+          },
+          {
+            "t": "num",
+            "s": "24"
+          },
+          {
+            "t": "text",
+            "s": "\" | "
+          },
+          {
+            "t": "num",
+            "s": "3"
+          },
+          {
+            "t": "text",
+            "s": " | "
+          },
+          {
+            "t": "num",
+            "s": "3+"
+          },
+          {
+            "t": "text",
+            "s": " | "
+          },
+          {
+            "t": "num",
+            "s": "4"
+          },
+          {
+            "t": "text",
+            "s": " | "
+          },
+          {
+            "t": "num",
+            "s": "-2"
+          },
+          {
+            "t": "text",
+            "s": " | "
+          },
+          {
+            "t": "num",
+            "s": "3"
+          },
+          {
+            "t": "text",
+            "s": " | 灵能、针对凶兽/载具 "
+          },
+          {
+            "t": "num",
+            "s": "3+"
+          },
+          {
+            "t": "text",
+            "s": " |\n| 曜光卡宾枪 | "
+          },
+          {
+            "t": "num",
+            "s": "18"
+          },
+          {
+            "t": "text",
+            "s": "\" | "
+          },
+          {
+            "t": "num",
+            "s": "2"
+          },
+          {
+            "t": "text",
+            "s": " | "
+          },
+          {
+            "t": "num",
+            "s": "3+"
+          },
+          {
+            "t": "text",
+            "s": " | "
+          },
+          {
+            "t": "num",
+            "s": "4"
+          },
+          {
+            "t": "text",
+            "s": " | "
+          },
+          {
+            "t": "num",
+            "s": "0"
+          },
+          {
+            "t": "text",
+            "s": " | "
+          },
+          {
+            "t": "num",
+            "s": "1"
+          },
+          {
+            "t": "text",
+            "s": " | 速射 "
+          },
+          {
+            "t": "num",
+            "s": "2"
+          },
+          {
+            "t": "text",
+            "s": " |\n| 毒冠喷涎 | "
+          },
+          {
+            "t": "num",
+            "s": "12"
+          },
+          {
+            "t": "text",
+            "s": "\" | "
+          },
+          {
+            "t": "num",
+            "s": "3"
+          },
+          {
+            "t": "text",
+            "s": " | — | "
+          },
+          {
+            "t": "num",
+            "s": "3"
+          },
+          {
+            "t": "text",
+            "s": " | "
+          },
+          {
+            "t": "num",
+            "s": "-2"
+          },
+          {
+            "t": "text",
+            "s": " | "
+          },
+          {
+            "t": "num",
+            "s": "2"
+          },
+          {
+            "t": "text",
+            "s": " | 洪流、爆炸 "
+          },
+          {
+            "t": "num",
+            "s": "1"
+          },
+          {
+            "t": "text",
+            "s": "、针对非凶兽/载具 "
+          },
+          {
+            "t": "num",
+            "s": "3+"
+          },
+          {
+            "t": "text",
+            "s": " |"
+          }
+        ]
+      },
+      {
+        "n": 4,
+        "text": [
+          {
+            "t": "strong",
+            "s": "近战武器"
+          },
+          {
+            "t": "text",
+            "s": "\n| 武器 | A | 命中 | S | AP | D | 关键词 |\n|---|---|---|---|---|---|---|\n| 龙骥的獠牙与利爪 | "
+          },
+          {
+            "t": "num",
+            "s": "3"
+          },
+          {
+            "t": "text",
+            "s": " | "
+          },
+          {
+            "t": "num",
+            "s": "3+"
+          },
+          {
+            "t": "text",
+            "s": " | "
+          },
+          {
+            "t": "num",
+            "s": "5"
+          },
+          {
+            "t": "text",
+            "s": " | "
+          },
+          {
+            "t": "num",
+            "s": "-1"
+          },
+          {
+            "t": "text",
+            "s": " | "
+          },
+          {
+            "t": "num",
+            "s": "1"
+          },
+          {
+            "t": "text",
+            "s": " | 额外攻击 |\n| 石杖 | "
+          },
+          {
+            "t": "num",
+            "s": "3"
+          },
+          {
+            "t": "text",
+            "s": " | "
+          },
+          {
+            "t": "num",
+            "s": "3+"
+          },
+          {
+            "t": "text",
+            "s": " | "
+          },
+          {
+            "t": "num",
+            "s": "3"
+          },
+          {
+            "t": "text",
+            "s": " | "
+          },
+          {
+            "t": "num",
+            "s": "-1"
+          },
+          {
+            "t": "text",
+            "s": " | "
+          },
+          {
+            "t": "num",
+            "s": "2"
+          },
+          {
+            "t": "text",
+            "s": " | 灵能、针对非凶兽/载具 "
+          },
+          {
+            "t": "num",
+            "s": "2+"
+          },
+          {
+            "t": "text",
+            "s": " |"
+          }
+        ]
+      },
+      {
+        "n": 5,
+        "text": [
+          {
+            "t": "strong",
+            "s": "能力"
+          },
+          {
+            "t": "text",
+            "s": "\n- "
+          },
+          {
+            "t": "strong",
+            "s": "元素束缚"
+          },
+          {
+            "t": "text",
+            "s": "：己方近战阶段结束时，若本单位不处于战斗震慑，可使用。掷 "
+          },
+          {
+            "t": "num",
+            "s": "D6"
+          },
+          {
+            "t": "text",
+            "s": "，出 "
+          },
+          {
+            "t": "num",
+            "s": "1"
+          },
+          {
+            "t": "text",
+            "s": " 则本单位陷入战斗震慑；否则选择 "
+          },
+          {
+            "t": "num",
+            "s": "18"
+          },
+          {
+            "t": "text",
+            "s": "\" 内可见的 "
+          },
+          {
+            "t": "num",
+            "s": "1"
+          },
+          {
+            "t": "text",
+            "s": " 个敌方凶兽/载具单位（泰坦除外），使其进入"
+          },
+          {
+            "t": "strong",
+            "s": "被束缚状态"
+          },
+          {
+            "t": "text",
+            "s": "直到下个己方回合开始——该单位移动属性 "
+          },
+          {
+            "t": "num",
+            "s": "-2"
+          },
+          {
+            "t": "text",
+            "s": "\"，且无法被压制。\n- "
+          },
+          {
+            "t": "strong",
+            "s": "【阵营技能】战斗专注"
+          },
+          {
+            "t": "text",
+            "s": "（艾达灵族阵营技能）。"
+          }
+        ]
+      },
+      {
+        "n": 6,
+        "text": [
+          {
+            "t": "text",
+            "s": "点数来源为官方 MFM 同步 "
+          },
+          {
+            "t": "cite",
+            "n": 2
+          },
+          {
+            "t": "cite",
+            "n": 3
+          },
+          {
+            "t": "text",
+            "s": "；兵牌属性与技能取自既有结构库 "
+          },
+          {
+            "t": "cite",
+            "n": 1
+          },
+          {
+            "t": "cite",
+            "n": 4
+          },
+          {
+            "t": "text",
+            "s": "，尚未逐字段复核全部最新补丁，若需确认规则效果请以最新 Faction Pack 为准。"
+          }
+        ]
+      }
+    ],
+    "entityCard": {
+      "nameZh": "石歌者",
+      "nameEn": "Stonesinger",
+      "pts": "60",
+      "role": null,
+      "stats": [
+        {
+          "lab": "M",
+          "val": "10"
+        },
+        {
+          "lab": "T",
+          "val": "5"
+        },
+        {
+          "lab": "SV",
+          "val": "4"
+        },
+        {
+          "lab": "W",
+          "val": "4"
+        },
+        {
+          "lab": "LD",
+          "val": "7"
+        },
+        {
+          "lab": "OC",
+          "val": "2"
+        }
+      ],
+      "invuln": null,
+      "ranged": [
+        {
+          "name": "衰败之歌",
+          "kw": [
+            {
+              "text": "针对怪兽或载具3+",
+              "slug": "anti-monster-vehicle",
+              "base": "ANTI-MONSTER/VEHICLE",
+              "nameZh": "针对怪兽或载具",
+              "brief": "一些武器对特定的敌人十分致命。\n这类技能总是会以[针对-X Y+]的形式出现。每次使用[针对]武器进行攻击时，如果目标拥有“X”处的关键词，那么未修正结果为 Y+ 的致伤掷骰将造成暴击致伤。\n示例：一次对 载具单位进行的攻击使用了 [针对载具 4+]武器，未修正结果为4+ 的致伤掷骰会造成一次暴击致伤。在使用 [针对灵能者 2+]武器对 灵能者单位进行攻击时，未修正结果为 2+ 的致伤掷骰会造成暴击致伤。",
+              "section": "24.03",
+              "ruleSlug": "24-core-abilities",
+              "group": "universal"
+            },
+            {
+              "text": "灵能",
+              "slug": "psychic",
+              "base": "PSYCHIC",
+              "nameZh": "灵能",
+              "brief": "一些武器能够利用灵能者的力量来强化攻击。\n每次使用[灵能]武器进行攻击时，您可以忽略任意或所有对那次攻击的 BS 或 WS属性的修正，以及任意或所有对命中掷骰的修正。使用[灵能]武器进行的攻击被称为灵能攻击（这对触发一些规则十分重要)。",
+              "section": "24.29",
+              "ruleSlug": "24-core-abilities",
+              "group": "universal"
+            }
+          ],
+          "range": "24\"",
+          "a": "3",
+          "skill": "3+",
+          "s": "4",
+          "ap": "-2",
+          "d": "3",
+          "hot": false
+        },
+        {
+          "name": "曜光卡宾枪",
+          "kw": [
+            {
+              "text": "速射2",
+              "slug": "rapid-fire",
+              "base": "RAPID FIRE",
+              "nameZh": "速射",
+              "brief": "速射武器能够进行精准的远程射击，也可以对附近的目标进行连射。\n这技能总是会以[速射 X]的形式出现。每当您为一件[速射]武器收集攻击骰时，在选择目标步骤中，如果目标单位位于武器攻击范围的一半以内，那么收集 X 数量的额外攻击骰。\n示例：如果使用一件 A 属性为 1 的[速射 1]武器对一个位于武器攻击范围一半以内的单位进行攻击，那么您将为那件武器收集额外一枚攻击骰（总共收集两枚)。",
+              "section": "24.30",
+              "ruleSlug": "24-core-abilities",
+              "group": "universal"
+            }
+          ],
+          "range": "18\"",
+          "a": "2",
+          "skill": "3+",
+          "s": "4",
+          "ap": "0",
+          "d": "1",
+          "hot": false
+        },
+        {
+          "name": "毒冠喷涎",
+          "kw": [
+            {
+              "text": "针对非怪兽且非载具3+",
+              "slug": "anti-non-monster-vehicle",
+              "base": "ANTI-NON-MONSTER/VEHICLE",
+              "nameZh": "针对非怪兽且非载具",
+              "brief": "一些武器对特定的敌人十分致命。\n这类技能总是会以[针对-X Y+]的形式出现。每次使用[针对]武器进行攻击时，如果目标拥有“X”处的关键词，那么未修正结果为 Y+ 的致伤掷骰将造成暴击致伤。\n示例：一次对 载具单位进行的攻击使用了 [针对载具 4+]武器，未修正结果为4+ 的致伤掷骰会造成一次暴击致伤。在使用 [针对灵能者 2+]武器对 灵能者单位进行攻击时，未修正结果为 2+ 的致伤掷骰会造成暴击致伤。",
+              "section": "24.03",
+              "ruleSlug": "24-core-abilities",
+              "group": "universal"
+            },
+            {
+              "text": "爆炸1",
+              "slug": "blast",
+              "base": "BLAST",
+              "nameZh": "爆炸",
+              "brief": "一发高爆弹药能够瞬间解决多名敌人，但是在周边存在友军时使用这类武器并不明智。\n每当您为一件[爆炸]武器收集攻击骰时，在选择目标步骤中，目标单位每存在五个模型，便添加额外一枚攻击骰（向下取整)。\n如果本技能以[爆炸 X]的形式表示，则每当您为这样的武器收集攻击骰时，在选择目标步骤中，目标单位每存在五个模型（向下取整)，就额外添加 X 数量的额外攻击骰。\n示例：如果一件 A 属性为 3 的 [爆炸2]武器对包含了 12 个模型的单位进行攻击，那么您将为那件武器收集额外四枚攻击骰（总共七枚)。",
+              "section": "24.05",
+              "ruleSlug": "24-core-abilities",
+              "group": "universal"
+            },
+            {
+              "text": "洪流",
+              "slug": "torrent",
+              "base": "TORRENT",
+              "nameZh": "洪流",
+              "brief": "洪流武器可以释放火焰、毒气或其他致命物质构成的云雾，没有敌人能够躲开这样的攻击。\n每次使用[洪流]武器进行攻击时，攻击自动命中目标。",
+              "section": "24.37",
+              "ruleSlug": "24-core-abilities",
+              "group": "universal"
+            }
+          ],
+          "range": "12\"",
+          "a": "3",
+          "skill": "-",
+          "s": "3",
+          "ap": "-2",
+          "d": "2",
+          "hot": false
+        }
+      ],
+      "melee": [
+        {
+          "name": "龙骥的獠牙与利爪",
+          "kw": [
+            {
+              "text": "额外攻击",
+              "slug": "extra-attacks",
+              "base": "EXTRA ATTACKS",
+              "nameZh": "额外攻击",
+              "brief": "一些战士会骑着坐骑进入战场，撞击和践踏周边的敌人。另一些战士则装备有进行额外追击的格斗武器。\n每当一个单位进行近战时，如果那个单位中包含了一个或多个拥有[额外攻击]武器的模型，那么除了任何其他武器以外，这些模型可以使用这类武器进行攻击。在选择武器步骤中（04.01），您必须为这些模型选择：\n模型装备的所有[额外攻击]武器。\n如果可能，那个模型装备的一件其他近战武器。",
+              "section": "24.11",
+              "ruleSlug": "24-core-abilities",
+              "group": "universal"
+            }
+          ],
+          "range": "近战",
+          "a": "3",
+          "skill": "3+",
+          "s": "5",
+          "ap": "-1",
+          "d": "1",
+          "hot": false
+        },
+        {
+          "name": "石杖",
+          "kw": [
+            {
+              "text": "针对非怪兽且非载具2+",
+              "slug": "anti-non-monster-vehicle",
+              "base": "ANTI-NON-MONSTER/VEHICLE",
+              "nameZh": "针对非怪兽且非载具",
+              "brief": "一些武器对特定的敌人十分致命。\n这类技能总是会以[针对-X Y+]的形式出现。每次使用[针对]武器进行攻击时，如果目标拥有“X”处的关键词，那么未修正结果为 Y+ 的致伤掷骰将造成暴击致伤。\n示例：一次对 载具单位进行的攻击使用了 [针对载具 4+]武器，未修正结果为4+ 的致伤掷骰会造成一次暴击致伤。在使用 [针对灵能者 2+]武器对 灵能者单位进行攻击时，未修正结果为 2+ 的致伤掷骰会造成暴击致伤。",
+              "section": "24.03",
+              "ruleSlug": "24-core-abilities",
+              "group": "universal"
+            },
+            {
+              "text": "灵能",
+              "slug": "psychic",
+              "base": "PSYCHIC",
+              "nameZh": "灵能",
+              "brief": "一些武器能够利用灵能者的力量来强化攻击。\n每次使用[灵能]武器进行攻击时，您可以忽略任意或所有对那次攻击的 BS 或 WS属性的修正，以及任意或所有对命中掷骰的修正。使用[灵能]武器进行的攻击被称为灵能攻击（这对触发一些规则十分重要)。",
+              "section": "24.29",
+              "ruleSlug": "24-core-abilities",
+              "group": "universal"
+            }
+          ],
+          "range": "近战",
+          "a": "3",
+          "skill": "3+",
+          "s": "3",
+          "ap": "-1",
+          "d": "2",
+          "hot": false
+        }
+      ],
+      "abilities": [
+        {
+          "tag": null,
+          "name": "Elemental Ensnarement",
+          "text": "At the end of your Fight phase, if this unit is not battle-shocked, you can use this ability. If you do, roll one D6: ▪On a 1, this unit is battle-shocked. ▪Select one visible enemy MONSTER/VEHICLE unit (excluding TITANIC units) within 18\" of this unit. That enemy unit is ensnared until the start of your next turn: ▫While a unit is ensnared, that unit has -2\" M and cannot be pinned.",
+          "rich": [
+            {
+              "t": "text",
+              "s": "At the end of your Fight phase, if this unit is not battle-shocked, you can use this ability. If you do, roll one D6: ▪On a 1, this unit is battle-shocked. ▪Select one visible enemy MONSTER/VEHICLE unit (excluding TITANIC units) within 18\" of this unit. That enemy unit is ensnared until the start of your next turn: ▫While a unit is ensnared, that unit has -2\" M and cannot be pinned."
+            }
+          ]
+        },
+        {
+          "tag": null,
+          "name": "Support",
+          "text": null,
+          "rich": []
+        },
+        {
+          "tag": null,
+          "name": "Battle Focus",
+          "text": null,
+          "rich": []
+        }
+      ],
+      "loadout": "▪1 Stonesinger model 本模型装备：1 龙骥的獠牙与利爪；1 衰败之歌；1 曜光卡宾枪；1 石杖；1 毒冠喷涎。",
+      "damaged": null,
+      "leads": null,
+      "composition": [
+        [
+          {
+            "t": "num",
+            "s": "1"
+          },
+          {
+            "t": "text",
+            "s": "模型"
+          },
+          {
+            "t": "num",
+            "s": "60"
+          },
+          {
+            "t": "text",
+            "s": "分"
+          }
+        ]
+      ],
+      "keywords": "MOUNTED，AELDARI，CHARACTER，EXODITE，MOBILE，PSYKER",
+      "factionKeywords": "ASURYANI",
+      "legend": null,
+      "faction": "阵营: Aeldari",
+      "src": "L3 结构库 · Aeldari",
+      "wiki": "factions/aeldari/units/stonesinger"
+    },
+    "cites": [
+      {
+        "n": 1,
+        "book": "L3 结构库 · Aeldari",
+        "page": null,
+        "section": "属性块",
+        "term": "Stonesinger",
+        "wiki": "",
+        "url": null
+      },
+      {
+        "n": 2,
+        "book": "Munitorum Field Manual",
+        "page": null,
+        "section": "官方当前点数",
+        "term": null,
+        "wiki": "",
+        "url": "https://mfm.warhammer-community.com"
+      },
+      {
+        "n": 3,
+        "book": "Munitorum Field Manual (MFM)",
+        "page": null,
+        "section": null,
+        "term": null,
+        "wiki": "",
+        "url": null
+      },
+      {
+        "n": 4,
+        "book": "Aeldari 结构库兵牌（Stonesinger）",
+        "page": null,
+        "section": null,
+        "term": null,
+        "wiki": "",
+        "url": null
+      }
+    ],
+    "sensitivity": null,
+    "cta": null,
+    "followups": [
+      "石歌者的元素束缚具体怎么结算？",
+      "艾达灵族还有哪些 EXODITE 单位？",
+      "石歌者适合搭配什么单位？"
+    ],
+    "degraded": false
+  }
+}

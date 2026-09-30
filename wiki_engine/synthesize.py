@@ -481,8 +481,10 @@ def synthesize_all(
         return {"pairs": 0, "synthesized": 0, "cached": 0, "skipped": 0, "failed": 0}
 
     raw = json.loads(pairing_path.read_text(encoding="utf-8"))
-    pairs = [Pair(**p) for p in raw.get("pairs", [])]
-    unmatched = [EntityCandidate(**e) for e in raw.get("unmatched", [])]
+    from corpus_policy import is_excluded_source
+    pairs = [Pair(**p) for p in raw.get("pairs", []) if not is_excluded_source(p.get("book", ""))]
+    unmatched = [EntityCandidate(**e) for e in raw.get("unmatched", [])
+                 if not is_excluded_source(e.get("book", ""))]
 
     if faction_filter:
         pairs = [p for p in pairs

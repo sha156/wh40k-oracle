@@ -35,8 +35,9 @@ updated: '2026-09-14'
 | 战斗服铁拳 | 近战 | 3 | 5+ | 5 | 0 | 1 | — |
 
 ## 技能
-- **Starscythe**：Each time a model in this unit makes a ranged attack (excluding attacks that target <span class="kwb">MONSTERS</span> and <span class="kwb">VEHICLES</span>), improve the Armour Penetration characteristic of that attack by 1.
-- **Battlesuit Support System**：This unit is eligible to shoot in a turn in which it Fell Back.
+- **阵营：为了上上善道**
+- **星镰**：当该单位中的模型进行远程攻击时（以凶兽和载具为目标的攻击除外），攻击的AP增强1。
+- **战斗服支援系统**：该单位可以在进行后撤的回合进行射击。
 
 ## 单位构成
 - **3个模型** — 100 分

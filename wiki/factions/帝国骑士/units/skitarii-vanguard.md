@@ -41,8 +41,9 @@ updated: '2026-09-14'
 | 格斗武器 | 近战 | 1 | 4+ | 3 | 0 | 1 | — |
 
 ## 技能
-- **【阵营技能】：机神律令**
-- **辐射污染**：本单位 3 寸内的敌方非载具单位 OC 值-1
+- **Enhanced data-tether**：Each time you select the bearer’s unit as the target of a Stratagem, roll one D6: on a 5+, you gain 1CP.
+- **Omnispex**：Ranged weapons equipped by models in the bearer’s unit have the [IGNORES COVER] ability.
+- **Rad-saturation (Aura)**：While an enemy unit (excluding <span class="kwb">VEHICLE</span> units) is within 3" of this unit, subtract 1 from the Objective Control characteristic of models in that unit.
 
 ## 单位构成
 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。

@@ -39,8 +39,9 @@ updated: '2026-09-14'
 | 奴工工具 | 近战 | 1 | 5+ | 3 | 0 | 1 | — |
 
 ## 技能
-- **心智闭锁**：如果该单位正由一个兄弟会科技战士模型领导，则该单位中的奴工模型所装备的远程武器和近战武器在射击技巧属性和械斗技巧属性上各增加 1 点。
-- **随从**：如果该单位正由一个兄弟会科技战士模型领导，则该单位中的模型拥有“深入打击”和“传送突袭”技能。
+- **Mindlock**：While a [[factions/灰骑士/units/brotherhood-techmarine.md|Brotherhood Techmarine]] model is leading this unit, improve the Ballistic Skill and Weapon Skill characteristics of ranged and melee weapons equipped by <span class="kwb">SERVITOR</span> models in this unit by 1.
+- **Retinue**：While a Brotherhood Techmarine model is leading this unit, models in this unit have the Deep Strike and Teleport Assault abilities.
+- **SERVITOR RETINUE**：At the start of the Declare Battle Formations step, this unit can join one other unit from your army that is being led by a Brotherhood Techmarine (a unit cannot have more than one <span class="kwb">SERVITORS</span> unit joined to it). If it does, until the end of the battle, every model in this unit counts as being part of that Bodyguard unit, and that Bodyguard unit’s Starting Strength is increased accordingly.
 
 ## 单位构成
 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。

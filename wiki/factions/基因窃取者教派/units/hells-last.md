@@ -41,10 +41,11 @@ updated: '2026-09-14'
 | 动力武器 | 近战 | 4 | 3+ | 4 | -2 | 1 | — |
 
 ## 技能
-- **指挥之声**：该军官可向兵团单位发布2个命令。
-- **英勇典范**：只要本单位中存在旻卡·莱斯克模型，本单位攻击时可重投命中骰。
-- **莱斯克的英雄们**：本单位中模型的LD面板值增强1点，你可以重投本单位的震慑测试与士气测试。
-- **装备：兵团旗帜**：装备者所在单位的模型OC值+1。
+- **Heroic Example**：While this unit’s Minka Lesk model is on the battlefield, each time a model in this unit makes an attack, you can re-roll the Hit roll.
+- **Lesk’s Heroes**：Add 1 to the Leadership characteristic of models in this unit and you can re-roll Battle-shock and Leadership tests taken for this unit.
+- **ORDERS**：This unit’s <span class="kwb">OFFICER</span> can issue 2 Orders to Regiment units.
+- **[[factions/星界军/enhancements/regimental-banner.md|Regimental Banner]]**：Add 1 to the Objective Control characteristic of models in the bearer’s unit.
+- **One Shot**：The bearer can only shoot with this weapon once per battle.
 
 ## 单位构成
 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。

@@ -1,0 +1,281 @@
+{
+  "question": "普通卡尔加多少分？",
+  "elapsed_seconds": 45.609,
+  "status_code": 200,
+  "answer": {
+    "summary": "检索 1 步 · 引用 5 条 · 已降级兜底",
+    "trace": [
+      {
+        "fn": "rag_search",
+        "args": "('普通卡尔加多少分？')",
+        "result": "已命中",
+        "status": "ok",
+        "note": null
+      }
+    ],
+    "traceWarn": "回答排版失败，以下保留原始回复与已查证来源。",
+    "verdict": {
+      "label": "参谋回复",
+      "labelEn": "Advisory",
+      "lede": [
+        {
+          "t": "text",
+          "s": "⚠️ 已降级到兜底检索（异常: Connection error.），供参考的原文片段：\n- 《星际战士"
+        },
+        {
+          "t": "num",
+          "s": "10"
+        },
+        {
+          "t": "text",
+          "s": "版中文》第"
+        },
+        {
+          "t": "num",
+          "s": "49"
+        },
+        {
+          "t": "text",
+          "s": "页：## 装备安提洛科斯装甲的卡尔加 MARNEUS CALGAR IN ARMOUR OF ANTILOCHUS\n| M | T | SV | W | LD | OC |\n|---|---|---|---|---|---|\n| "
+        },
+        {
+          "t": "num",
+          "s": "6"
+        },
+        {
+          "t": "text",
+          "s": " | "
+        },
+        {
+          "t": "num",
+          "s": "6"
+        },
+        {
+          "t": "text",
+          "s": " |\n- 《星际战士"
+        },
+        {
+          "t": "num",
+          "s": "10"
+        },
+        {
+          "t": "text",
+          "s": "版中文》第"
+        },
+        {
+          "t": "num",
+          "s": "48"
+        },
+        {
+          "t": "text",
+          "s": "页：## 马涅乌斯.卡尔加和常胜护卫 Marneus Calgar\n\n| | M | T | SV | W | LD | OC |\n|---|---|---|---|---|---|---|\n| 卡尔加 | "
+        },
+        {
+          "t": "num",
+          "s": "6"
+        },
+        {
+          "t": "text",
+          "s": " | "
+        },
+        {
+          "t": "num",
+          "s": "6"
+        },
+        {
+          "t": "text",
+          "s": " | "
+        },
+        {
+          "t": "num",
+          "s": "2+"
+        },
+        {
+          "t": "text",
+          "s": " | "
+        },
+        {
+          "t": "num",
+          "s": "6"
+        },
+        {
+          "t": "text",
+          "s": " | "
+        },
+        {
+          "t": "num",
+          "s": "6"
+        },
+        {
+          "t": "text",
+          "s": "\n- 《黑图书馆》第"
+        },
+        {
+          "t": "num",
+          "s": "0"
+        },
+        {
+          "t": "text",
+          "s": "页：## 身穿安提洛克斯战甲的马涅乌斯·卡尔加\n所属：极限战士\n"
+        },
+        {
+          "t": "strong",
+          "s": "身穿安提洛克斯战甲的马涅乌斯·卡尔加"
+        },
+        {
+          "t": "text",
+          "s": "："
+        },
+        {
+          "t": "num",
+          "s": "M6"
+        },
+        {
+          "t": "text",
+          "s": "\" "
+        },
+        {
+          "t": "num",
+          "s": "T6"
+        },
+        {
+          "t": "text",
+          "s": " SV"
+        },
+        {
+          "t": "num",
+          "s": "2+"
+        },
+        {
+          "t": "text",
+          "s": " "
+        },
+        {
+          "t": "num",
+          "s": "W6"
+        },
+        {
+          "t": "text",
+          "s": " "
+        },
+        {
+          "t": "num",
+          "s": "LD6"
+        },
+        {
+          "t": "text",
+          "s": " "
+        },
+        {
+          "t": "num",
+          "s": "OC1"
+        },
+        {
+          "t": "text",
+          "s": " 底盘"
+        },
+        {
+          "t": "num",
+          "s": "50"
+        },
+        {
+          "t": "text",
+          "s": "mm\n"
+        },
+        {
+          "t": "strong",
+          "s": "武器"
+        },
+        {
+          "t": "text",
+          "s": "\n- "
+        },
+        {
+          "t": "kw",
+          "s": "[射击]"
+        },
+        {
+          "t": "text",
+          "s": " 奥特拉玛之拳：射程"
+        },
+        {
+          "t": "num",
+          "s": "18"
+        },
+        {
+          "t": "text",
+          "s": "\" 攻击"
+        },
+        {
+          "t": "num",
+          "s": "4"
+        },
+        {
+          "t": "text",
+          "s": " 命中 "
+        },
+        {
+          "t": "num",
+          "s": "2+"
+        },
+        {
+          "t": "text",
+          "s": " "
+        }
+      ]
+    },
+    "calc": [],
+    "entityCard": null,
+    "cites": [
+      {
+        "n": 1,
+        "book": "星际战士10版中文",
+        "page": 49,
+        "section": null,
+        "term": null,
+        "wiki": "",
+        "url": null
+      },
+      {
+        "n": 2,
+        "book": "星际战士10版中文",
+        "page": 48,
+        "section": null,
+        "term": null,
+        "wiki": "",
+        "url": null
+      },
+      {
+        "n": 3,
+        "book": "黑图书馆",
+        "page": null,
+        "section": null,
+        "term": null,
+        "wiki": "",
+        "url": null
+      },
+      {
+        "n": 4,
+        "book": "星际战士10版中文",
+        "page": 52,
+        "section": null,
+        "term": null,
+        "wiki": "",
+        "url": null
+      },
+      {
+        "n": 5,
+        "book": "灰骑士中文",
+        "page": 7,
+        "section": null,
+        "term": null,
+        "wiki": "",
+        "url": null
+      }
+    ],
+    "sensitivity": null,
+    "cta": null,
+    "followups": [],
+    "degraded": true
+  }
+}

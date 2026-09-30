@@ -35,8 +35,9 @@ updated: '2026-09-14'
 | 机械爪 | 近战 | 5 | 4+ | 8 | -2 | 2 | — |
 
 ## 技能
-- **[阵营]：重生协议**
-- **冥工虫群**：在您的指挥阶段中，选择一个位于该单位 6 英寸内的己方[[factions/太空死灵/units/canoptek-scarab-swarms.md|冥工圣甲虫群]]。该单位中 每有一个冥工蜘蛛模型，就将一个被摧毁的模型重新加入该冥工圣甲虫群单位。
+- **Fabricator Claw Array (Aura)**：While a friendly Necrons Vehicle unit is within 6" of the bearer, that unit has the Feel No Pain 6+ ability.
+- **Gloom Prism (Aura)**：While a friendly <span class="kwb">NECRONS</span> unit is within 6" of the bearer, models in that unit have the Feel No Pain 5+ ability against mortal wounds and Psychic Attacks.
+- **Canoptek Swarm**：In your Command phase, select one friendly Canoptek Scarab Swarm unit within 6" of this unit. One destroyed model is returned to that <span class="kwb">CANOPTEK</span> <span class="kwb">SCARAB</span> <span class="kwb">SWARM</span> unit for each <span class="kwb">SPYDER</span> model in this unit.
 
 ## 单位构成
 - **1个模型** — 65 分

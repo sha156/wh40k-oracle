@@ -1,0 +1,1166 @@
+[
+  {
+    "id": "fp11e-ae-stonesinger",
+    "status": 200,
+    "card": {
+      "card": {
+        "nameZh": "石歌者",
+        "nameEn": "Stonesinger",
+        "pts": "60",
+        "role": null,
+        "stats": [
+          {
+            "lab": "M",
+            "val": "10"
+          },
+          {
+            "lab": "T",
+            "val": "5"
+          },
+          {
+            "lab": "SV",
+            "val": "4"
+          },
+          {
+            "lab": "W",
+            "val": "4"
+          },
+          {
+            "lab": "LD",
+            "val": "7"
+          },
+          {
+            "lab": "OC",
+            "val": "2"
+          }
+        ],
+        "invuln": null,
+        "ranged": [
+          {
+            "name": "衰败之歌",
+            "kw": [
+              {
+                "text": "针对怪兽或载具3+",
+                "slug": "anti-monster-vehicle",
+                "base": "ANTI-MONSTER/VEHICLE",
+                "nameZh": "针对怪兽或载具",
+                "brief": "一些武器对特定的敌人十分致命。\n这类技能总是会以[针对-X Y+]的形式出现。每次使用[针对]武器进行攻击时，如果目标拥有“X”处的关键词，那么未修正结果为 Y+ 的致伤掷骰将造成暴击致伤。\n示例：一次对 载具单位进行的攻击使用了 [针对载具 4+]武器，未修正结果为4+ 的致伤掷骰会造成一次暴击致伤。在使用 [针对灵能者 2+]武器对 灵能者单位进行攻击时，未修正结果为 2+ 的致伤掷骰会造成暴击致伤。",
+                "section": "24.03",
+                "ruleSlug": "24-core-abilities",
+                "group": "universal"
+              },
+              {
+                "text": "灵能",
+                "slug": "psychic",
+                "base": "PSYCHIC",
+                "nameZh": "灵能",
+                "brief": "一些武器能够利用灵能者的力量来强化攻击。\n每次使用[灵能]武器进行攻击时，您可以忽略任意或所有对那次攻击的 BS 或 WS属性的修正，以及任意或所有对命中掷骰的修正。使用[灵能]武器进行的攻击被称为灵能攻击（这对触发一些规则十分重要)。",
+                "section": "24.29",
+                "ruleSlug": "24-core-abilities",
+                "group": "universal"
+              }
+            ],
+            "range": "24\"",
+            "a": "3",
+            "skill": "3+",
+            "s": "4",
+            "ap": "-2",
+            "d": "3",
+            "hot": false
+          },
+          {
+            "name": "曜光卡宾枪",
+            "kw": [
+              {
+                "text": "速射2",
+                "slug": "rapid-fire",
+                "base": "RAPID FIRE",
+                "nameZh": "速射",
+                "brief": "速射武器能够进行精准的远程射击，也可以对附近的目标进行连射。\n这技能总是会以[速射 X]的形式出现。每当您为一件[速射]武器收集攻击骰时，在选择目标步骤中，如果目标单位位于武器攻击范围的一半以内，那么收集 X 数量的额外攻击骰。\n示例：如果使用一件 A 属性为 1 的[速射 1]武器对一个位于武器攻击范围一半以内的单位进行攻击，那么您将为那件武器收集额外一枚攻击骰（总共收集两枚)。",
+                "section": "24.30",
+                "ruleSlug": "24-core-abilities",
+                "group": "universal"
+              }
+            ],
+            "range": "18\"",
+            "a": "2",
+            "skill": "3+",
+            "s": "4",
+            "ap": "0",
+            "d": "1",
+            "hot": false
+          },
+          {
+            "name": "毒冠喷涎",
+            "kw": [
+              {
+                "text": "针对非怪兽且非载具3+",
+                "slug": "anti-non-monster-vehicle",
+                "base": "ANTI-NON-MONSTER/VEHICLE",
+                "nameZh": "针对非怪兽且非载具",
+                "brief": "一些武器对特定的敌人十分致命。\n这类技能总是会以[针对-X Y+]的形式出现。每次使用[针对]武器进行攻击时，如果目标拥有“X”处的关键词，那么未修正结果为 Y+ 的致伤掷骰将造成暴击致伤。\n示例：一次对 载具单位进行的攻击使用了 [针对载具 4+]武器，未修正结果为4+ 的致伤掷骰会造成一次暴击致伤。在使用 [针对灵能者 2+]武器对 灵能者单位进行攻击时，未修正结果为 2+ 的致伤掷骰会造成暴击致伤。",
+                "section": "24.03",
+                "ruleSlug": "24-core-abilities",
+                "group": "universal"
+              },
+              {
+                "text": "爆炸1",
+                "slug": "blast",
+                "base": "BLAST",
+                "nameZh": "爆炸",
+                "brief": "一发高爆弹药能够瞬间解决多名敌人，但是在周边存在友军时使用这类武器并不明智。\n每当您为一件[爆炸]武器收集攻击骰时，在选择目标步骤中，目标单位每存在五个模型，便添加额外一枚攻击骰（向下取整)。\n如果本技能以[爆炸 X]的形式表示，则每当您为这样的武器收集攻击骰时，在选择目标步骤中，目标单位每存在五个模型（向下取整)，就额外添加 X 数量的额外攻击骰。\n示例：如果一件 A 属性为 3 的 [爆炸2]武器对包含了 12 个模型的单位进行攻击，那么您将为那件武器收集额外四枚攻击骰（总共七枚)。",
+                "section": "24.05",
+                "ruleSlug": "24-core-abilities",
+                "group": "universal"
+              },
+              {
+                "text": "洪流",
+                "slug": "torrent",
+                "base": "TORRENT",
+                "nameZh": "洪流",
+                "brief": "洪流武器可以释放火焰、毒气或其他致命物质构成的云雾，没有敌人能够躲开这样的攻击。\n每次使用[洪流]武器进行攻击时，攻击自动命中目标。",
+                "section": "24.37",
+                "ruleSlug": "24-core-abilities",
+                "group": "universal"
+              }
+            ],
+            "range": "12\"",
+            "a": "3",
+            "skill": "-",
+            "s": "3",
+            "ap": "-2",
+            "d": "2",
+            "hot": false
+          }
+        ],
+        "melee": [
+          {
+            "name": "龙骥的獠牙与利爪",
+            "kw": [
+              {
+                "text": "额外攻击",
+                "slug": "extra-attacks",
+                "base": "EXTRA ATTACKS",
+                "nameZh": "额外攻击",
+                "brief": "一些战士会骑着坐骑进入战场，撞击和践踏周边的敌人。另一些战士则装备有进行额外追击的格斗武器。\n每当一个单位进行近战时，如果那个单位中包含了一个或多个拥有[额外攻击]武器的模型，那么除了任何其他武器以外，这些模型可以使用这类武器进行攻击。在选择武器步骤中（04.01），您必须为这些模型选择：\n模型装备的所有[额外攻击]武器。\n如果可能，那个模型装备的一件其他近战武器。",
+                "section": "24.11",
+                "ruleSlug": "24-core-abilities",
+                "group": "universal"
+              }
+            ],
+            "range": "近战",
+            "a": "3",
+            "skill": "3+",
+            "s": "5",
+            "ap": "-1",
+            "d": "1",
+            "hot": false
+          },
+          {
+            "name": "石杖",
+            "kw": [
+              {
+                "text": "针对非怪兽且非载具2+",
+                "slug": "anti-non-monster-vehicle",
+                "base": "ANTI-NON-MONSTER/VEHICLE",
+                "nameZh": "针对非怪兽且非载具",
+                "brief": "一些武器对特定的敌人十分致命。\n这类技能总是会以[针对-X Y+]的形式出现。每次使用[针对]武器进行攻击时，如果目标拥有“X”处的关键词，那么未修正结果为 Y+ 的致伤掷骰将造成暴击致伤。\n示例：一次对 载具单位进行的攻击使用了 [针对载具 4+]武器，未修正结果为4+ 的致伤掷骰会造成一次暴击致伤。在使用 [针对灵能者 2+]武器对 灵能者单位进行攻击时，未修正结果为 2+ 的致伤掷骰会造成暴击致伤。",
+                "section": "24.03",
+                "ruleSlug": "24-core-abilities",
+                "group": "universal"
+              },
+              {
+                "text": "灵能",
+                "slug": "psychic",
+                "base": "PSYCHIC",
+                "nameZh": "灵能",
+                "brief": "一些武器能够利用灵能者的力量来强化攻击。\n每次使用[灵能]武器进行攻击时，您可以忽略任意或所有对那次攻击的 BS 或 WS属性的修正，以及任意或所有对命中掷骰的修正。使用[灵能]武器进行的攻击被称为灵能攻击（这对触发一些规则十分重要)。",
+                "section": "24.29",
+                "ruleSlug": "24-core-abilities",
+                "group": "universal"
+              }
+            ],
+            "range": "近战",
+            "a": "3",
+            "skill": "3+",
+            "s": "3",
+            "ap": "-1",
+            "d": "2",
+            "hot": false
+          }
+        ],
+        "abilities": [
+          {
+            "tag": null,
+            "name": "Elemental Ensnarement",
+            "text": "At the end of your Fight phase, if this unit is not battle-shocked, you can use this ability. If you do, roll one D6: ▪On a 1, this unit is battle-shocked. ▪Select one visible enemy MONSTER/VEHICLE unit (excluding TITANIC units) within 18\" of this unit. That enemy unit is ensnared until the start of your next turn: ▫While a unit is ensnared, that unit has -2\" M and cannot be pinned.",
+            "rich": [
+              {
+                "t": "text",
+                "s": "At the end of your Fight phase, if this unit is not battle-shocked, you can use this ability. If you do, roll one D6: ▪On a 1, this unit is battle-shocked. ▪Select one visible enemy MONSTER/VEHICLE unit (excluding TITANIC units) within 18\" of this unit. That enemy unit is ensnared until the start of your next turn: ▫While a unit is ensnared, that unit has -2\" M and cannot be pinned."
+              }
+            ]
+          },
+          {
+            "tag": null,
+            "name": "Support",
+            "text": null,
+            "rich": []
+          },
+          {
+            "tag": null,
+            "name": "Battle Focus",
+            "text": null,
+            "rich": []
+          }
+        ],
+        "loadout": "▪1 Stonesinger model 本模型装备：1 龙骥的獠牙与利爪；1 衰败之歌；1 曜光卡宾枪；1 石杖；1 毒冠喷涎。",
+        "damaged": null,
+        "leads": null,
+        "composition": [
+          [
+            {
+              "t": "num",
+              "s": "1"
+            },
+            {
+              "t": "text",
+              "s": "模型"
+            },
+            {
+              "t": "num",
+              "s": "60"
+            },
+            {
+              "t": "text",
+              "s": "分"
+            }
+          ]
+        ],
+        "keywords": "MOUNTED，AELDARI，CHARACTER，EXODITE，MOBILE，PSYKER",
+        "factionKeywords": "ASURYANI",
+        "legend": null,
+        "faction": "阵营: Aeldari",
+        "src": "L3 结构库 · Aeldari",
+        "wiki": "factions/aeldari/units/stonesinger"
+      }
+    }
+  },
+  {
+    "id": "fp11e-ae-clanblade",
+    "status": 200,
+    "card": {
+      "card": {
+        "nameZh": "氏族之刃",
+        "nameEn": "Clanblade",
+        "pts": "70",
+        "role": null,
+        "stats": [
+          {
+            "lab": "M",
+            "val": "10"
+          },
+          {
+            "lab": "T",
+            "val": "5"
+          },
+          {
+            "lab": "SV",
+            "val": "4"
+          },
+          {
+            "lab": "W",
+            "val": "4"
+          },
+          {
+            "lab": "LD",
+            "val": "6"
+          },
+          {
+            "lab": "OC",
+            "val": "2"
+          }
+        ],
+        "invuln": null,
+        "ranged": [
+          {
+            "name": "曜光卡宾枪",
+            "kw": [
+              {
+                "text": "速射2",
+                "slug": "rapid-fire",
+                "base": "RAPID FIRE",
+                "nameZh": "速射",
+                "brief": "速射武器能够进行精准的远程射击，也可以对附近的目标进行连射。\n这技能总是会以[速射 X]的形式出现。每当您为一件[速射]武器收集攻击骰时，在选择目标步骤中，如果目标单位位于武器攻击范围的一半以内，那么收集 X 数量的额外攻击骰。\n示例：如果使用一件 A 属性为 1 的[速射 1]武器对一个位于武器攻击范围一半以内的单位进行攻击，那么您将为那件武器收集额外一枚攻击骰（总共收集两枚)。",
+                "section": "24.30",
+                "ruleSlug": "24-core-abilities",
+                "group": "universal"
+              }
+            ],
+            "range": "18\"",
+            "a": "2",
+            "skill": "3+",
+            "s": "4",
+            "ap": "0",
+            "d": "1",
+            "hot": false
+          }
+        ],
+        "melee": [
+          {
+            "name": "龙骥的獠牙与利爪",
+            "kw": [
+              {
+                "text": "额外攻击",
+                "slug": "extra-attacks",
+                "base": "EXTRA ATTACKS",
+                "nameZh": "额外攻击",
+                "brief": "一些战士会骑着坐骑进入战场，撞击和践踏周边的敌人。另一些战士则装备有进行额外追击的格斗武器。\n每当一个单位进行近战时，如果那个单位中包含了一个或多个拥有[额外攻击]武器的模型，那么除了任何其他武器以外，这些模型可以使用这类武器进行攻击。在选择武器步骤中（04.01），您必须为这些模型选择：\n模型装备的所有[额外攻击]武器。\n如果可能，那个模型装备的一件其他近战武器。",
+                "section": "24.11",
+                "ruleSlug": "24-core-abilities",
+                "group": "universal"
+              }
+            ],
+            "range": "近战",
+            "a": "3",
+            "skill": "3+",
+            "s": "5",
+            "ap": "-1",
+            "d": "1",
+            "hot": false
+          },
+          {
+            "name": "月刃",
+            "kw": [
+              {
+                "text": "致命一击",
+                "slug": "lethal-hits",
+                "base": "LETHAL HITS",
+                "nameZh": "致命一击",
+                "brief": "致命的武器能够对任何敌人造成严重的伤害，无论坚韧程度。\n每次使用[致命一击]武器进行攻击时，如果攻击造成暴击命中，那么您可以选择让那次攻击自动致伤目标。\n设计师注解：选择自动致伤目标意味着那次攻击不需要对目标进行致伤掷骰。您可能会选择不这么做，因为自动致伤意味着攻击无法造成暴击致伤，因此不会触发像[毁灭伤害]这样的技能。",
+                "section": "24.23",
+                "ruleSlug": "24-core-abilities",
+                "group": "universal"
+              },
+              {
+                "text": "双联",
+                "slug": "twin-linked",
+                "base": "TWIN-LINKED",
+                "nameZh": "双联",
+                "brief": "两把相同的武器通常会被连接在同一个瞄准系统上来增加它们的致命性。\n每次使用[双联]武器进行攻击时，您可以重掷致伤掷骰。\n电子支持《战锤 40000》应用程序中包含了对规则定义的进一步解释、罕见规则之间的互动方式以及常见问题解答。\n这些电子资源能够帮助澄清任何不确定性并保持游戏的顺畅性。因此，它们会根据玩家的反馈进行定期的检查与更新。以下几页中包含了这些支持资源中的一部分内容。一些单位不能处于半数兵力如果一个模型的 W属性或者一个单位的起始兵力不是一个能被减半成整数的偶数，那么这个模型或单位不能处于半数兵力（但可以低于半数兵力）。\n起始兵力与半数兵力在第一战斗轮次开始时，一个单位中包含的模型数量…",
+                "section": "24.38",
+                "ruleSlug": "24-core-abilities",
+                "group": "universal"
+              }
+            ],
+            "range": "近战",
+            "a": "5",
+            "skill": "2+",
+            "s": "4",
+            "ap": "-2",
+            "d": "2",
+            "hot": false
+          }
+        ],
+        "abilities": [
+          {
+            "tag": null,
+            "name": "Blade of the Clans",
+            "text": "This unit’s melee attacks have [SUSTAINED HITS 1].",
+            "rich": [
+              {
+                "t": "text",
+                "s": "This unit’s melee attacks have "
+              },
+              {
+                "t": "kw",
+                "kw": {
+                  "text": "[SUSTAINED HITS 1]",
+                  "slug": "sustained-hits",
+                  "base": "SUSTAINED HITS",
+                  "nameZh": "连击",
+                  "brief": "一些武器能够进行持续不断的攻击，用毫无止息的攻势将敌人撕成碎片。\n这类技能总是会以[连击 X]的形式进行表示。每次使用[连击]武器进行的攻击造成暴击命中时，那次攻击将造成 X 数量的额外命中。\n示例：一次使用 [连击 2]武器进行的攻击造成了一次暴击命中。因此那次攻击将对目标造成总共三次命中（一次来自暴击命中，另外两次来自 [连击 2]技能)。",
+                  "section": "24.36",
+                  "ruleSlug": "24-core-abilities",
+                  "group": "universal"
+                }
+              },
+              {
+                "t": "text",
+                "s": "."
+              }
+            ]
+          },
+          {
+            "tag": null,
+            "name": "Cornered Prey",
+            "text": "When an enemy unit engaged with this unit is selected to make a fall-back move, that enemy unit must use the desperate escape mode. If that enemy unit is battle-shocked, -1 from those hazard rolls.",
+            "rich": [
+              {
+                "t": "text",
+                "s": "When an enemy unit engaged with this unit is selected to make a fall-back move, that enemy unit must use the desperate escape mode. If that enemy unit is battle-shocked, -1 from those hazard rolls."
+              }
+            ]
+          },
+          {
+            "tag": null,
+            "name": "Leader",
+            "text": null,
+            "rich": []
+          },
+          {
+            "tag": null,
+            "name": "Battle Focus",
+            "text": null,
+            "rich": []
+          }
+        ],
+        "loadout": "▪1 Clanblade model 本模型装备：1 龙骥的獠牙与利爪；1 月刃；1 曜光卡宾枪。",
+        "damaged": null,
+        "leads": null,
+        "composition": [
+          [
+            {
+              "t": "num",
+              "s": "1"
+            },
+            {
+              "t": "text",
+              "s": "模型"
+            },
+            {
+              "t": "num",
+              "s": "60"
+            },
+            {
+              "t": "text",
+              "s": "分"
+            }
+          ]
+        ],
+        "keywords": "MOUNTED，AELDARI，CHARACTER，EXODITE，MOBILE",
+        "factionKeywords": "ASURYANI",
+        "legend": null,
+        "faction": "阵营: Aeldari",
+        "src": "L3 结构库 · Aeldari",
+        "wiki": "factions/aeldari/units/clanblade"
+      }
+    }
+  },
+  {
+    "id": "official-preview-ork-nazdreg",
+    "status": 200,
+    "card": {
+      "card": {
+        "nameZh": "纳兹德雷格",
+        "nameEn": "Nazdreg",
+        "pts": "175",
+        "role": null,
+        "stats": [
+          {
+            "lab": "M",
+            "val": "5"
+          },
+          {
+            "lab": "T",
+            "val": "7"
+          },
+          {
+            "lab": "SV",
+            "val": "2"
+          },
+          {
+            "lab": "W",
+            "val": "8"
+          },
+          {
+            "lab": "LD",
+            "val": "6"
+          },
+          {
+            "lab": "OC",
+            "val": "1"
+          }
+        ],
+        "invuln": "5+",
+        "ranged": [
+          {
+            "name": "自制X爆枪-加特林",
+            "kw": [
+              {
+                "text": "危险",
+                "slug": "hazardous",
+                "base": "HAZARDOUS",
+                "nameZh": "危险",
+                "brief": "拥有不稳定动力源的武器对使用者和身边的事物来说都十分危险。\n每当一个单位被选择进行射击或者被选择进行近战时，在这个单位结算完所有的攻击后，您在选择武器步骤中每选择了一件[危险]武器，就进行一次危险掷骰（06.03）。\n核心技能24\n82",
+                "section": "24.15",
+                "ruleSlug": "24-core-abilities",
+                "group": "universal"
+              }
+            ],
+            "range": "24\"",
+            "a": "6",
+            "skill": "4+",
+            "s": "9",
+            "ap": "-2",
+            "d": "3",
+            "hot": false
+          },
+          {
+            "name": "自制X爆枪-射枪",
+            "kw": [
+              {
+                "text": "致命一击：非怪兽且非载具",
+                "slug": "lethal-hits-non-monster-vehicle",
+                "base": "LETHAL HITS: NON-MONSTER/VEHICLE",
+                "nameZh": "致命一击：非怪兽且非载具",
+                "brief": "致命的武器能够对任何敌人造成严重的伤害，无论坚韧程度。\n每次使用[致命一击]武器进行攻击时，如果攻击造成暴击命中，那么您可以选择让那次攻击自动致伤目标。\n设计师注解：选择自动致伤目标意味着那次攻击不需要对目标进行致伤掷骰。您可能会选择不这么做，因为自动致伤意味着攻击无法造成暴击致伤，因此不会触发像[毁灭伤害]这样的技能。",
+                "section": "24.23",
+                "ruleSlug": "24-core-abilities",
+                "group": "universal"
+              },
+              {
+                "text": "速射2",
+                "slug": "rapid-fire",
+                "base": "RAPID FIRE",
+                "nameZh": "速射",
+                "brief": "速射武器能够进行精准的远程射击，也可以对附近的目标进行连射。\n这技能总是会以[速射 X]的形式出现。每当您为一件[速射]武器收集攻击骰时，在选择目标步骤中，如果目标单位位于武器攻击范围的一半以内，那么收集 X 数量的额外攻击骰。\n示例：如果使用一件 A 属性为 1 的[速射 1]武器对一个位于武器攻击范围一半以内的单位进行攻击，那么您将为那件武器收集额外一枚攻击骰（总共收集两枚)。",
+                "section": "24.30",
+                "ruleSlug": "24-core-abilities",
+                "group": "universal"
+              }
+            ],
+            "range": "18\"",
+            "a": "4",
+            "skill": "4+",
+            "s": "5",
+            "ap": "-1",
+            "d": "1",
+            "hot": false
+          },
+          {
+            "name": "自制X爆枪-烧枪",
+            "kw": [
+              {
+                "text": "爆炸1",
+                "slug": "blast",
+                "base": "BLAST",
+                "nameZh": "爆炸",
+                "brief": "一发高爆弹药能够瞬间解决多名敌人，但是在周边存在友军时使用这类武器并不明智。\n每当您为一件[爆炸]武器收集攻击骰时，在选择目标步骤中，目标单位每存在五个模型，便添加额外一枚攻击骰（向下取整)。\n如果本技能以[爆炸 X]的形式表示，则每当您为这样的武器收集攻击骰时，在选择目标步骤中，目标单位每存在五个模型（向下取整)，就额外添加 X 数量的额外攻击骰。\n示例：如果一件 A 属性为 3 的 [爆炸2]武器对包含了 12 个模型的单位进行攻击，那么您将为那件武器收集额外四枚攻击骰（总共七枚)。",
+                "section": "24.05",
+                "ruleSlug": "24-core-abilities",
+                "group": "universal"
+              },
+              {
+                "text": "洪流",
+                "slug": "torrent",
+                "base": "TORRENT",
+                "nameZh": "洪流",
+                "brief": "洪流武器可以释放火焰、毒气或其他致命物质构成的云雾，没有敌人能够躲开这样的攻击。\n每次使用[洪流]武器进行攻击时，攻击自动命中目标。",
+                "section": "24.37",
+                "ruleSlug": "24-core-abilities",
+                "group": "universal"
+              }
+            ],
+            "range": "12\"",
+            "a": "3",
+            "skill": "-",
+            "s": "5",
+            "ap": "-1",
+            "d": "1",
+            "hot": false
+          }
+        ],
+        "melee": [
+          {
+            "name": "自制X爆枪",
+            "kw": [
+              {
+                "text": "劈砍1",
+                "slug": "cleave",
+                "base": "CLEAVE",
+                "nameZh": "劈砍",
+                "brief": "只要拥有足够的力量和技巧，一名战士便能够使用利刃或尖爪横扫千军。\n这类技能总是会以[劈砍 X]的形式出现。每当您为一件[劈砍]武器收集攻击骰时，如果您为那件武器的所有攻击都只选择了一个目标，那么在选择目标步骤中，目标单位每存在五个模型（向下取整)，就添加 X 数量的额外攻击骰。\n示例：如果一件 A 属性为 3 的 [劈砍1]武器对包含了 16 个模型的单位进行攻击，那么您将为那件武器收集额外三枚攻击骰（总共六枚)。\n核心技能24\n80",
+                "section": "24.06",
+                "ruleSlug": "24-core-abilities",
+                "group": "universal"
+              },
+              {
+                "text": "额外攻击",
+                "slug": "extra-attacks",
+                "base": "EXTRA ATTACKS",
+                "nameZh": "额外攻击",
+                "brief": "一些战士会骑着坐骑进入战场，撞击和践踏周边的敌人。另一些战士则装备有进行额外追击的格斗武器。\n每当一个单位进行近战时，如果那个单位中包含了一个或多个拥有[额外攻击]武器的模型，那么除了任何其他武器以外，这些模型可以使用这类武器进行攻击。在选择武器步骤中（04.01），您必须为这些模型选择：\n模型装备的所有[额外攻击]武器。\n如果可能，那个模型装备的一件其他近战武器。",
+                "section": "24.11",
+                "ruleSlug": "24-core-abilities",
+                "group": "universal"
+              }
+            ],
+            "range": "近战",
+            "a": "6",
+            "skill": "2+",
+            "s": "5",
+            "ap": "-1",
+            "d": "1",
+            "hot": false
+          },
+          {
+            "name": "恶月利刃",
+            "kw": [
+              {
+                "text": "劈砍1",
+                "slug": "cleave",
+                "base": "CLEAVE",
+                "nameZh": "劈砍",
+                "brief": "只要拥有足够的力量和技巧，一名战士便能够使用利刃或尖爪横扫千军。\n这类技能总是会以[劈砍 X]的形式出现。每当您为一件[劈砍]武器收集攻击骰时，如果您为那件武器的所有攻击都只选择了一个目标，那么在选择目标步骤中，目标单位每存在五个模型（向下取整)，就添加 X 数量的额外攻击骰。\n示例：如果一件 A 属性为 3 的 [劈砍1]武器对包含了 16 个模型的单位进行攻击，那么您将为那件武器收集额外三枚攻击骰（总共六枚)。\n核心技能24\n80",
+                "section": "24.06",
+                "ruleSlug": "24-core-abilities",
+                "group": "universal"
+              },
+              {
+                "text": "双联",
+                "slug": "twin-linked",
+                "base": "TWIN-LINKED",
+                "nameZh": "双联",
+                "brief": "两把相同的武器通常会被连接在同一个瞄准系统上来增加它们的致命性。\n每次使用[双联]武器进行攻击时，您可以重掷致伤掷骰。\n电子支持《战锤 40000》应用程序中包含了对规则定义的进一步解释、罕见规则之间的互动方式以及常见问题解答。\n这些电子资源能够帮助澄清任何不确定性并保持游戏的顺畅性。因此，它们会根据玩家的反馈进行定期的检查与更新。以下几页中包含了这些支持资源中的一部分内容。一些单位不能处于半数兵力如果一个模型的 W属性或者一个单位的起始兵力不是一个能被减半成整数的偶数，那么这个模型或单位不能处于半数兵力（但可以低于半数兵力）。\n起始兵力与半数兵力在第一战斗轮次开始时，一个单位中包含的模型数量…",
+                "section": "24.38",
+                "ruleSlug": "24-core-abilities",
+                "group": "universal"
+              }
+            ],
+            "range": "近战",
+            "a": "5",
+            "skill": "2+",
+            "s": "12",
+            "ap": "-2",
+            "d": "3",
+            "hot": false
+          }
+        ],
+        "abilities": [
+          {
+            "tag": null,
+            "name": "Intimidating Motivation",
+            "text": "Once per battle round for the army, during your Movement phase, use this at the beginning or completion of this unit’s move. Choose a friendly ORKS unit no farther than 6 inches away: remove its battle-shocked state and make it riled up until your next turn begins.",
+            "rich": [
+              {
+                "t": "text",
+                "s": "Once per battle round for the army, during your Movement phase, use this at the beginning or completion of this unit’s move. Choose a friendly ORKS unit no farther than 6 inches away: remove its battle-shocked state and make it riled up until your next turn begins."
+              }
+            ]
+          },
+          {
+            "tag": null,
+            "name": "Nazdreg’s Know-wotz",
+            "text": "The unit gains Deep Strike; its ranged attacks ignore cover.",
+            "rich": [
+              {
+                "t": "text",
+                "s": "The unit gains Deep Strike; its ranged attacks ignore cover."
+              }
+            ]
+          },
+          {
+            "tag": null,
+            "name": "Supreme Kunnin’",
+            "text": "Once per phase for the army, during the opponent’s Movement phase: if an enemy finishes a move within 8 inches and this unit is unengaged, this unit may make a normal move, limited to D6 inches, or 5 inches when riled up.",
+            "rich": [
+              {
+                "t": "text",
+                "s": "Once per phase for the army, during the opponent’s Movement phase: if an enemy finishes a move within 8 inches and this unit is unengaged, this unit may make a normal move, limited to D6 inches, or 5 inches when riled up."
+              }
+            ]
+          },
+          {
+            "tag": null,
+            "name": "Deep Strike",
+            "text": null,
+            "rich": []
+          },
+          {
+            "tag": null,
+            "name": "Leader",
+            "text": null,
+            "rich": []
+          },
+          {
+            "tag": null,
+            "name": "Da Boss",
+            "text": null,
+            "rich": []
+          },
+          {
+            "tag": null,
+            "name": "Waaagh!",
+            "text": null,
+            "rich": []
+          }
+        ],
+        "loadout": "One Nazdreg, carrying 自制X爆枪 and 恶月利刃. Each of the three ranged 自制X爆枪 profiles can be fired。",
+        "damaged": null,
+        "leads": null,
+        "composition": [
+          [
+            {
+              "t": "num",
+              "s": "1"
+            },
+            {
+              "t": "text",
+              "s": "个纳兹德雷格模型"
+            }
+          ]
+        ],
+        "keywords": "INFANTRY，CHARACTER，EPIC HERO，MEGA ARMOUR，WARBOSS",
+        "factionKeywords": "ORKS",
+        "legend": null,
+        "faction": "阵营: Orks",
+        "src": "Official preview 2026-07-20: current MFM points; released codex rules not verified.",
+        "wiki": "factions/orks/units/nazdreg"
+      }
+    }
+  },
+  {
+    "id": "000000001",
+    "status": 200,
+    "card": {
+      "card": {
+        "nameZh": "战争头目",
+        "nameEn": "Warboss",
+        "pts": "100",
+        "role": "Characters",
+        "stats": [
+          {
+            "lab": "M",
+            "val": "6\""
+          },
+          {
+            "lab": "T",
+            "val": "5"
+          },
+          {
+            "lab": "SV",
+            "val": "4+"
+          },
+          {
+            "lab": "W",
+            "val": "6"
+          },
+          {
+            "lab": "LD",
+            "val": "6+"
+          },
+          {
+            "lab": "OC",
+            "val": "1"
+          }
+        ],
+        "invuln": "5+",
+        "ranged": [
+          {
+            "name": "强悍武器",
+            "kw": [
+              {
+                "text": "针对步兵4+",
+                "slug": "anti-infantry",
+                "base": "ANTI-INFANTRY",
+                "nameZh": "针对步兵",
+                "brief": "一些武器对特定的敌人十分致命。\n这类技能总是会以[针对-X Y+]的形式出现。每次使用[针对]武器进行攻击时，如果目标拥有“X”处的关键词，那么未修正结果为 Y+ 的致伤掷骰将造成暴击致伤。\n示例：一次对 载具单位进行的攻击使用了 [针对载具 4+]武器，未修正结果为4+ 的致伤掷骰会造成一次暴击致伤。在使用 [针对灵能者 2+]武器对 灵能者单位进行攻击时，未修正结果为 2+ 的致伤掷骰会造成暴击致伤。",
+                "section": "24.03",
+                "ruleSlug": "24-core-abilities",
+                "group": "universal"
+              },
+              {
+                "text": "毁灭伤害",
+                "slug": "devastating-wounds",
+                "base": "DEVASTATING WOUNDS",
+                "nameZh": "毁灭伤害",
+                "brief": "最为强大的武器能够轻松击穿装甲并击杀多个敌人。\n每次使用一件[毁灭伤害]武器进行攻击时，如果攻击造成了暴击致伤，那么那次攻击流程结束，目标单位受到相当于那件武器 D 属性数量的致命伤。这些伤害将在武器攻击造成的普通伤害之后进行结算。\n[毁灭伤害]武器每一次通过暴击致伤所造成的致命伤最多只能对一个模型造成伤害；那一次攻击造成的任何剩余的致命伤将被舍弃。\n示例：一次使用[毁灭伤害]武器进行的攻击造成了一次暴击致伤，武器的 D 属性为 3，因此对仲裁者小队造成 3 处致命伤。前 2 处致命伤足够将 1 个仲裁者模型摧毁，因此剩余的一点致命伤被舍弃。",
+                "section": "24.10",
+                "ruleSlug": "24-core-abilities",
+                "group": "universal"
+              },
+              {
+                "text": "速射1",
+                "slug": "rapid-fire",
+                "base": "RAPID FIRE",
+                "nameZh": "速射",
+                "brief": "速射武器能够进行精准的远程射击，也可以对附近的目标进行连射。\n这技能总是会以[速射 X]的形式出现。每当您为一件[速射]武器收集攻击骰时，在选择目标步骤中，如果目标单位位于武器攻击范围的一半以内，那么收集 X 数量的额外攻击骰。\n示例：如果使用一件 A 属性为 1 的[速射 1]武器对一个位于武器攻击范围一半以内的单位进行攻击，那么您将为那件武器收集额外一枚攻击骰（总共收集两枚)。",
+                "section": "24.30",
+                "ruleSlug": "24-core-abilities",
+                "group": "universal"
+              }
+            ],
+            "range": "24\"",
+            "a": "1",
+            "skill": "5+",
+            "s": "4",
+            "ap": "0",
+            "d": "1",
+            "hot": false
+          },
+          {
+            "name": "双联手铳",
+            "kw": [
+              {
+                "text": "手枪",
+                "slug": "pistol",
+                "base": "PISTOL",
+                "nameZh": "手枪",
+                "brief": "手枪可以被用于进行零距离射击。\n[手枪]和[近距离]在所有规则中都被视为同一个规则。具体请参见[近距离]。\n设计师注：[手枪]是一个预先存在的技能，它将随着这次《战锤 40000》版本的发展被 [近距离]技能替代。这两个技能的功能相同，但是后者更适合用于对这种类型的武器进行统称。",
+                "section": "24.27",
+                "ruleSlug": "24-core-abilities",
+                "group": "transitional"
+              },
+              {
+                "text": "双联",
+                "slug": "twin-linked",
+                "base": "TWIN-LINKED",
+                "nameZh": "双联",
+                "brief": "两把相同的武器通常会被连接在同一个瞄准系统上来增加它们的致命性。\n每次使用[双联]武器进行攻击时，您可以重掷致伤掷骰。\n电子支持《战锤 40000》应用程序中包含了对规则定义的进一步解释、罕见规则之间的互动方式以及常见问题解答。\n这些电子资源能够帮助澄清任何不确定性并保持游戏的顺畅性。因此，它们会根据玩家的反馈进行定期的检查与更新。以下几页中包含了这些支持资源中的一部分内容。一些单位不能处于半数兵力如果一个模型的 W属性或者一个单位的起始兵力不是一个能被减半成整数的偶数，那么这个模型或单位不能处于半数兵力（但可以低于半数兵力）。\n起始兵力与半数兵力在第一战斗轮次开始时，一个单位中包含的模型数量…",
+                "section": "24.38",
+                "ruleSlug": "24-core-abilities",
+                "group": "universal"
+              }
+            ],
+            "range": "12\"",
+            "a": "2",
+            "skill": "5+",
+            "s": "4",
+            "ap": "0",
+            "d": "1",
+            "hot": false
+          }
+        ],
+        "melee": [
+          {
+            "name": "咬人跳跳",
+            "kw": [
+              {
+                "text": "额外攻击",
+                "slug": "extra-attacks",
+                "base": "EXTRA ATTACKS",
+                "nameZh": "额外攻击",
+                "brief": "一些战士会骑着坐骑进入战场，撞击和践踏周边的敌人。另一些战士则装备有进行额外追击的格斗武器。\n每当一个单位进行近战时，如果那个单位中包含了一个或多个拥有[额外攻击]武器的模型，那么除了任何其他武器以外，这些模型可以使用这类武器进行攻击。在选择武器步骤中（04.01），您必须为这些模型选择：\n模型装备的所有[额外攻击]武器。\n如果可能，那个模型装备的一件其他近战武器。",
+                "section": "24.11",
+                "ruleSlug": "24-core-abilities",
+                "group": "universal"
+              }
+            ],
+            "range": "近战",
+            "a": "2",
+            "skill": "4+",
+            "s": "4",
+            "ap": "0",
+            "d": "1",
+            "hot": false
+          },
+          {
+            "name": "大砍刀",
+            "kw": [],
+            "range": "近战",
+            "a": "5",
+            "skill": "2+",
+            "s": "8",
+            "ap": "-1",
+            "d": "2",
+            "hot": false
+          },
+          {
+            "name": "动力爪",
+            "kw": [],
+            "range": "近战",
+            "a": "4",
+            "skill": "3+",
+            "s": "10",
+            "ap": "-2",
+            "d": "2",
+            "hot": false
+          }
+        ],
+        "abilities": [
+          {
+            "tag": "核心技能",
+            "name": "领袖",
+            "text": "单位可以作为领袖加入以下单位：●小子●老大队●破拆小子",
+            "rich": [
+              {
+                "t": "text",
+                "s": "单位可以作为领袖加入以下单位：●小子●老大队●破拆小子"
+              }
+            ]
+          },
+          {
+            "tag": "阵营技能",
+            "name": "WAAAGH!，头目",
+            "text": null,
+            "rich": []
+          },
+          {
+            "tag": null,
+            "name": "头目的弹药矮精",
+            "text": "在己方射击阶段中，在该单位被选择进行射击时，您可以使用本技能。若使用，那么该模型远程攻击的命中掷骰+1。 将一个头目的弹药矮精指示物放在单位的一旁，在适用本技能后将其移除。",
+            "rich": [
+              {
+                "t": "text",
+                "s": "在己方射击阶段中，在该单位被选择进行射击时，您可以使用本技能。若使用，那么该模型远程攻击的命中掷骰+1。 将一个头目的弹药矮精指示物放在单位的一旁，在适用本技能后将其移除。"
+              }
+            ]
+          },
+          {
+            "tag": null,
+            "name": "力量即正义",
+            "text": "如果该单位在该回合中进行过冲锋移动，该模型的近战攻击拥有： ●+3A。 ●+2S。",
+            "rich": [
+              {
+                "t": "text",
+                "s": "如果该单位在该回合中进行过冲锋移动，该模型的近战攻击拥有： ●+3A。 ●+2S。"
+              }
+            ]
+          },
+          {
+            "tag": null,
+            "name": "令人畏惧的领袖",
+            "text": "在您的移动阶段中，在该单位开始或结束移动时，您可以选择一个位于该单位6°内的己方欧克蛮人单位。被选中的那个单位： ●不再处于战斗震慑状态。 ●在您的下一个回合开始前都处于激怒状态。",
+            "rich": [
+              {
+                "t": "text",
+                "s": "在您的移动阶段中，在该单位开始或结束移动时，您可以选择一个位于该单位6°内的己方欧克蛮人单位。被选中的那个单位： ●不再处于战斗震慑状态。 ●在您的下一个回合开始前都处于激怒状态。"
+              }
+            ]
+          }
+        ],
+        "loadout": "本模型装备：强悍武器；双联手铳；大砍刀。",
+        "damaged": null,
+        "leads": null,
+        "composition": [
+          [
+            {
+              "t": "text",
+              "s": "一个战争头目"
+            }
+          ]
+        ],
+        "keywords": "Character，Grenades，Infantry，Warboss",
+        "factionKeywords": "Orks",
+        "legend": null,
+        "faction": "阵营: Orks",
+        "src": "L3 结构库 · Orks",
+        "wiki": "factions/orks/units/warboss"
+      }
+    }
+  },
+  {
+    "id": "000000138",
+    "status": 200,
+    "card": {
+      "card": {
+        "nameZh": "罗伯特.基里曼",
+        "nameEn": "Roboute Guilliman",
+        "pts": "355",
+        "role": "Characters",
+        "stats": [
+          {
+            "lab": "M",
+            "val": "8\""
+          },
+          {
+            "lab": "T",
+            "val": "9"
+          },
+          {
+            "lab": "SV",
+            "val": "2+"
+          },
+          {
+            "lab": "W",
+            "val": "10"
+          },
+          {
+            "lab": "LD",
+            "val": "5+"
+          },
+          {
+            "lab": "OC",
+            "val": "4"
+          }
+        ],
+        "invuln": "4+",
+        "ranged": [
+          {
+            "name": "统御之手",
+            "kw": [
+              {
+                "text": "速射2",
+                "slug": "rapid-fire",
+                "base": "RAPID FIRE",
+                "nameZh": "速射",
+                "brief": "速射武器能够进行精准的远程射击，也可以对附近的目标进行连射。\n这技能总是会以[速射 X]的形式出现。每当您为一件[速射]武器收集攻击骰时，在选择目标步骤中，如果目标单位位于武器攻击范围的一半以内，那么收集 X 数量的额外攻击骰。\n示例：如果使用一件 A 属性为 1 的[速射 1]武器对一个位于武器攻击范围一半以内的单位进行攻击，那么您将为那件武器收集额外一枚攻击骰（总共收集两枚)。",
+                "section": "24.30",
+                "ruleSlug": "24-core-abilities",
+                "group": "universal"
+              }
+            ],
+            "range": "30\"",
+            "a": "2",
+            "skill": "2+",
+            "s": "6",
+            "ap": "-2",
+            "d": "2",
+            "hot": false
+          }
+        ],
+        "melee": [
+          {
+            "name": "帝皇之剑",
+            "kw": [
+              {
+                "text": "毁灭伤害",
+                "slug": "devastating-wounds",
+                "base": "DEVASTATING WOUNDS",
+                "nameZh": "毁灭伤害",
+                "brief": "最为强大的武器能够轻松击穿装甲并击杀多个敌人。\n每次使用一件[毁灭伤害]武器进行攻击时，如果攻击造成了暴击致伤，那么那次攻击流程结束，目标单位受到相当于那件武器 D 属性数量的致命伤。这些伤害将在武器攻击造成的普通伤害之后进行结算。\n[毁灭伤害]武器每一次通过暴击致伤所造成的致命伤最多只能对一个模型造成伤害；那一次攻击造成的任何剩余的致命伤将被舍弃。\n示例：一次使用[毁灭伤害]武器进行的攻击造成了一次暴击致伤，武器的 D 属性为 3，因此对仲裁者小队造成 3 处致命伤。前 2 处致命伤足够将 1 个仲裁者模型摧毁，因此剩余的一点致命伤被舍弃。",
+                "section": "24.10",
+                "ruleSlug": "24-core-abilities",
+                "group": "universal"
+              }
+            ],
+            "range": "近战",
+            "a": "14",
+            "skill": "2+",
+            "s": "8",
+            "ap": "-3",
+            "d": "2",
+            "hot": false
+          },
+          {
+            "name": "统御之手",
+            "kw": [
+              {
+                "text": "致命一击",
+                "slug": "lethal-hits",
+                "base": "LETHAL HITS",
+                "nameZh": "致命一击",
+                "brief": "致命的武器能够对任何敌人造成严重的伤害，无论坚韧程度。\n每次使用[致命一击]武器进行攻击时，如果攻击造成暴击命中，那么您可以选择让那次攻击自动致伤目标。\n设计师注解：选择自动致伤目标意味着那次攻击不需要对目标进行致伤掷骰。您可能会选择不这么做，因为自动致伤意味着攻击无法造成暴击致伤，因此不会触发像[毁灭伤害]这样的技能。",
+                "section": "24.23",
+                "ruleSlug": "24-core-abilities",
+                "group": "universal"
+              }
+            ],
+            "range": "近战",
+            "a": "7",
+            "skill": "2+",
+            "s": "14",
+            "ap": "-4",
+            "d": "4",
+            "hot": false
+          }
+        ],
+        "abilities": [
+          {
+            "tag": null,
+            "name": "Author of the Codex",
+            "text": "At the Start of your Command phase, select two Author of the Codex abilities (see left). Until the start of your next Command phase, this model has those abilities.",
+            "rich": [
+              {
+                "t": "text",
+                "s": "At the Start of your Command phase, select two Author of the Codex abilities (see left). Until the start of your next Command phase, this model has those abilities."
+              }
+            ]
+          },
+          {
+            "tag": null,
+            "name": "Ultramarines Bodyguard",
+            "text": "While this model is within 3\" of one or more friendly Adeptus Astartes Infantry units, this model has the Lone Operative ability.",
+            "rich": [
+              {
+                "t": "text",
+                "s": "While this model is within 3\" of one or more friendly Adeptus Astartes Infantry units, this model has the Lone Operative ability."
+              }
+            ]
+          },
+          {
+            "tag": null,
+            "name": "Armour of Fate",
+            "text": "The first time this model is destroyed, roll one D6 at the end of the phase: on a 3+, set this model back up on the battlefield as close as possible to where it was destroyed and not within Engagement Range of any enemy models, with 6 wounds remaining.",
+            "rich": [
+              {
+                "t": "text",
+                "s": "The first time this model is destroyed, roll one D6 at the end of the phase: on a 3+, set this model back up on the battlefield as close as possible to where it was destroyed and not within Engagement Range of any enemy models, with 6 wounds remaining."
+              }
+            ]
+          },
+          {
+            "tag": null,
+            "name": "SUPREME COMMANDER",
+            "text": "If this model is in your army, it must be your Warlord.",
+            "rich": [
+              {
+                "t": "text",
+                "s": "If this model is in your army, it must be your Warlord."
+              }
+            ]
+          },
+          {
+            "tag": null,
+            "name": "Primarch of the XIII (Aura)",
+            "text": "While a friendly ADEPTUS ASTARTES unit is within 6\" of this model, add 1 to the Objective Control characteristic of models in that unit and you can re-roll Battle-shock and Leadership tests taken for that unit.",
+            "rich": [
+              {
+                "t": "text",
+                "s": "While a friendly ADEPTUS ASTARTES unit is within 6\" of this model, add 1 to the Objective Control characteristic of models in that unit and you can re-roll Battle-shock and Leadership tests taken for that unit."
+              }
+            ]
+          },
+          {
+            "tag": null,
+            "name": "Master of Battle",
+            "text": "At the start of your Command phase, after you have selected your Oath of Moment target, select a second enemy unit. Until the start of your next Command phase, if your Oath of Moment target is destroyed, that second enemy unit becomes your Oath of Moment target until you select a new one.",
+            "rich": [
+              {
+                "t": "text",
+                "s": "At the start of your Command phase, after you have selected your Oath of Moment target, select a second enemy unit. Until the start of your next Command phase, if your Oath of Moment target is destroyed, that second enemy unit becomes your Oath of Moment target until you select a new one."
+              }
+            ]
+          },
+          {
+            "tag": null,
+            "name": "Supreme Strategist",
+            "text": "Once per battle round, one unit from your army with this ability can use it when a friendly ADEPTUS ASTARTES unit within 12\" of that model is targeted with a Stratagem. If it does, reduce the CP cost of that usage of that Stratagem by 1CP.",
+            "rich": [
+              {
+                "t": "text",
+                "s": "Once per battle round, one unit from your army with this ability can use it when a friendly ADEPTUS ASTARTES unit within 12\" of that model is targeted with a Stratagem. If it does, reduce the CP cost of that usage of that Stratagem by 1CP."
+              }
+            ]
+          }
+        ],
+        "loadout": "本模型装备：统御之手；帝皇之剑。",
+        "damaged": null,
+        "leads": null,
+        "composition": [
+          [
+            {
+              "t": "text",
+              "s": "罗伯特.基里曼是全军唯一的独特模型，"
+            },
+            {
+              "t": "num",
+              "s": "340"
+            },
+            {
+              "t": "text",
+              "s": " 分，并且必须作为军队主将"
+            }
+          ]
+        ],
+        "keywords": "Character，Epic Hero，Imperium，Roboute Guilliman，Primarch，Monster",
+        "factionKeywords": "Adeptus Astartes，Ultramarines",
+        "legend": null,
+        "faction": "阵营: Space Marines",
+        "src": "L3 结构库 · Space Marines",
+        "wiki": "factions/space-marines/units/roboute-guilliman"
+      }
+    }
+  }
+]

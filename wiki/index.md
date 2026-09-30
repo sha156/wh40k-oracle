@@ -181,7 +181,6 @@
 | unit | [Mega Dread](factions/兽人/units/mega-dread.md) | 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。 | 2026-09-14 |
 | unit | [Meka-dread](factions/兽人/units/meka-dread.md) | 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。 | 2026-09-14 |
 | unit | [Mekboy Workshop](factions/兽人/units/mekboy-workshop.md) | 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。 | 2026-09-14 |
-| unit | [Nazdreg](factions/兽人/units/nazdreg.md) | Official preview datasheet: rules version 11e-official-preview-2026-07-20. Point... | 2026-09-14 |
 | unit | [Nob With Waaagh! Banner](factions/兽人/units/nob-with-waaagh-banner.md) | 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。 | 2026-09-14 |
 | unit | [Nobz On Warbikes](factions/兽人/units/nobz-on-warbikes.md) | 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。 | 2026-09-14 |
 | unit | [Painboy On Warbike](factions/兽人/units/painboy-on-warbike.md) | 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。 | 2026-09-14 |
@@ -189,7 +188,6 @@
 | unit | [Squiggoth](factions/兽人/units/squiggoth.md) | 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。 | 2026-09-14 |
 | unit | [Ufthak Blackhawk](factions/兽人/units/ufthak-blackhawk.md) | 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。 | 2026-09-14 |
 | unit | [Warboss On Warbike](factions/兽人/units/warboss-on-warbike.md) | 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。 | 2026-09-14 |
-| unit | [Warbuggies](factions/兽人/units/warbuggies.md) |  | 2026-09-14 |
 | unit | [兽霸头目](factions/兽人/units/beastboss.md) |  | 2026-09-14 |
 | unit | [兽霸小子](factions/兽人/units/beast-snagga-boyz.md) |  | 2026-09-14 |
 | unit | [剧痛头目](factions/兽人/units/painboss.md) |  | 2026-09-14 |
@@ -234,8 +232,10 @@
 | unit | [破拆小子](factions/兽人/units/breaka-boyz.md) |  | 2026-09-14 |
 | unit | [碎骨者萨拉卡](factions/兽人/units/ghazghkull-thraka.md) |  | 2026-09-14 |
 | unit | [突突大机甲](factions/兽人/units/big-mek-dakkarig.md) |  | 2026-09-14 |
+| unit | [纳兹德雷格](factions/兽人/units/nazdreg.md) | Official preview datasheet: rules version 11e-official-preview-2026-07-20. Point... | 2026-09-14 |
 | unit | [老大队](factions/兽人/units/nobz.md) |  | 2026-09-14 |
 | unit | [脏枪混混](factions/兽人/units/flash-gitz.md) |  | 2026-09-14 |
+| unit | [蛮人战车](factions/兽人/units/warbuggies.md) |  | 2026-09-14 |
 | unit | [超级屁精老大监工佐德格罗德·沃茨纳加](factions/兽人/units/zodgrod-wortsnagga.md) |  | 2026-09-14 |
 | unit | [超重装大技霸](factions/兽人/units/big-mek-in-mega-armour.md) |  | 2026-09-14 |
 | unit | [超重装战争头目](factions/兽人/units/warboss-in-mega-armour.md) |  | 2026-09-14 |
@@ -2515,7 +2515,6 @@
 | unit | [Canis Wolfborn](factions/星际战士/units/canis-wolfborn.md) | 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。 | 2026-09-14 |
 | unit | [Captain Tycho](factions/星际战士/units/captain-tycho.md) | 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。 | 2026-09-14 |
 | unit | [Captain on Bike](factions/星际战士/units/captain-on-bike.md) | 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。 | 2026-09-14 |
-| unit | [Carab Culln The Risen](factions/星际战士/units/carab-culln-the-risen.md) | 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。 | 2026-09-14 |
 | unit | [Cerberus](factions/星际战士/units/cerberus.md) | 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。 | 2026-09-14 |
 | unit | [Chaplain Cassius](factions/星际战士/units/chaplain-cassius.md) | 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。 | 2026-09-14 |
 | unit | [Chaplain Kastiel](factions/星际战士/units/chaplain-kastiel.md) | 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。 | 2026-09-14 |
@@ -2531,11 +2530,9 @@
 | unit | [Deimos Predator](factions/星际战士/units/deimos-predator.md) | 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。 | 2026-09-14 |
 | unit | [Deredeo Dreadnought](factions/星际战士/units/deredeo-dreadnought.md) | 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。 | 2026-09-14 |
 | unit | [Dreadnought Drop Pod](factions/星际战士/units/dreadnought-drop-pod.md) | 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。 | 2026-09-14 |
-| unit | [Eradicator Squad With Heavy Bolters](factions/星际战士/units/eradicator-squad-with-heavy-bolters.md) |  | 2026-09-14 |
 | unit | [Example Wargear](factions/星际战士/units/example-wargear.md) |  | 2026-09-14 |
 | unit | [Falchion](factions/星际战士/units/falchion.md) | 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。 | 2026-09-14 |
 | unit | [Fellblade](factions/星际战士/units/fellblade.md) | 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。 | 2026-09-14 |
-| unit | [Ferren Areios](factions/星际战士/units/ferren-areios.md) | 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。 | 2026-09-14 |
 | unit | [Fire Raptor Gunship](factions/星际战士/units/fire-raptor-gunship.md) | 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。 | 2026-09-14 |
 | unit | [Gabriel Seth](factions/星际战士/units/gabriel-seth.md) | 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。 | 2026-09-14 |
 | unit | [Harald Deathwolf](factions/星际战士/units/harald-deathwolf.md) | 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。 | 2026-09-14 |
@@ -2567,7 +2564,6 @@
 | unit | [Lukas The Trickster](factions/星际战士/units/lukas-the-trickster.md) | 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。 | 2026-09-14 |
 | unit | [Mastodon](factions/星际战士/units/mastodon.md) | 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。 | 2026-09-14 |
 | unit | [Mortis Dreadnought](factions/星际战士/units/mortis-dreadnought.md) | 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。 | 2026-09-14 |
-| unit | [Primaris Company Champion](factions/星际战士/units/primaris-company-champion.md) | 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。 | 2026-09-14 |
 | unit | [Rapier Carrier](factions/星际战士/units/rapier-carrier.md) | 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。 | 2026-09-14 |
 | unit | [Ravenwing Talonmaster](factions/星际战士/units/ravenwing-talonmaster.md) | 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。 | 2026-09-14 |
 | unit | [Relic Contemptor Dreadnought](factions/星际战士/units/relic-contemptor-dreadnought.md) | 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。 | 2026-09-14 |
@@ -2619,6 +2615,7 @@
 | unit | [【传奇】暴烈无畏](factions/星际战士/units/furioso-dreadnought.md) | 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。 | 2026-09-14 |
 | unit | [【传奇】装备爆弹枪的死亡连战士](factions/星际战士/units/death-company-marines-with-boltguns.md) | 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。 | 2026-09-14 |
 | unit | [【传奇】装备磁力勾爪的死亡连无畏](factions/星际战士/units/death-company-dreadnought-with-magna-grapple.md) | 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。 | 2026-09-14 |
+| unit | [【传奇】费伦.阿雷奥斯](factions/星际战士/units/ferren-areios.md) | 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。 | 2026-09-14 |
 | unit | [不屈型战术机甲](factions/星际战士/units/invictor-tactical-warsuit.md) |  | 2026-09-14 |
 | unit | [不屈杀戮小队](factions/星际战士/units/indomitor-kill-team.md) |  | 2026-09-14 |
 | unit | [以西结](factions/星际战士/units/ezekiel.md) |  | 2026-09-14 |
@@ -2654,6 +2651,7 @@
 | unit | [卡托·西卡留斯](factions/星际战士/units/cato-sicarius.md) |  | 2026-09-14 |
 | unit | [卡诺克·瓦尔](factions/星际战士/units/caanok-var.md) |  | 2026-09-14 |
 | unit | [压制者小队](factions/星际战士/units/suppressor-squad.md) |  | 2026-09-14 |
+| unit | [原铸连队冠军【传奇】](factions/星际战士/units/primaris-company-champion.md) | 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。 | 2026-09-14 |
 | unit | [反击者突击艇](factions/星际战士/units/repulsor-2.md) |  | 2026-09-14 |
 | unit | [反击者突击艇](factions/星际战士/units/repulsor.md) |  | 2026-09-14 |
 | unit | [圣吉列诺](factions/星际战士/units/the-sanguinor.md) |  | 2026-09-14 |
@@ -2762,6 +2760,7 @@
 | unit | [装备爆弹步枪的死亡连小队](factions/星际战士/units/death-company-marines-with-bolt-rifles.md) |  | 2026-09-14 |
 | unit | [装备跳跃背包的死亡连小队](factions/星际战士/units/death-company-marines-with-jump-packs.md) |  | 2026-09-14 |
 | unit | [装备跳跃背包的死亡连连长](factions/星际战士/units/death-company-captain-with-jump-pack.md) |  | 2026-09-14 |
+| unit | [装备重型爆矢枪的根除者小队](factions/星际战士/units/eradicator-squad-with-heavy-bolters.md) |  | 2026-09-14 |
 | unit | [装备风暴盾的狼人](factions/星际战士/units/wulfen-with-storm-shields.md) |  | 2026-09-14 |
 | unit | [豪侠型角斗者坦克](factions/星际战士/units/gladiator-valiant-2.md) |  | 2026-09-14 |
 | unit | [豪侠型角斗者坦克](factions/星际战士/units/gladiator-valiant.md) |  | 2026-09-14 |
@@ -2775,6 +2774,7 @@
 | unit | [远征旗手](factions/星际战士/units/crusade-ancient.md) |  | 2026-09-14 |
 | unit | [连长](factions/星际战士/units/captain.md) |  | 2026-09-14 |
 | unit | [连队英雄](factions/星际战士/units/company-heroes.md) |  | 2026-09-14 |
+| unit | [重生者卡拉布·库伦【传奇】](factions/星际战士/units/carab-culln-the-risen.md) | 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。 | 2026-09-14 |
 | unit | [重装仲裁者小队](factions/星际战士/units/heavy-intercessor-squad.md) |  | 2026-09-14 |
 | unit | [重装连长](factions/星际战士/units/captain-in-gravis-armour.md) |  | 2026-09-14 |
 | unit | [野狼守卫终结者](factions/星际战士/units/wolf-guard-terminators.md) |  | 2026-09-14 |
@@ -2910,7 +2910,7 @@
 | core-rule | [爆炸](core-rules/blast.md) | 爆炸武器打人堆越打越多，目标每 5 个模型就多一份攻击骰。 | 2026-07-11 |
 | core-rule | [特殊保护](core-rules/invulnerable-save.md) | 特殊保护是无视 AP 的第二道保存线，11 版并入同一次保存骰判定。 | 2026-07-11 |
 | core-rule | [独行特工](core-rules/lone-operative.md) | 独行特工让刺客类单位在远距离上无法被敌人锁定。 | 2026-07-11 |
-| core-rule | [破敌重誓](core-rules/oath-of-moment.md) | 破敌重誓是星际战士军队规则：点名一个敌方单位，全军攻击它重投命中。 | 2026-07-11 |
+| core-rule | [破敌重誓](core-rules/oath-of-moment.md) | 破敌重誓是星际战士军队规则：点名一个敌方单位，拥有本能力的模型攻击它时可以重投命中。 | 2026-09-21 |
 | core-rule | [移动阶段](core-rules/movement-phase.md) | 移动阶段逐个为每个单位选择一种移动类型，援军也在此入场。 | 2026-07-11 |
 | core-rule | [突击](core-rules/assault.md) | 突击武器让单位加速后仍能开火，机动与火力兼得。 | 2026-07-11 |
 | core-rule | [精准](core-rules/precision.md) | 精准武器能从人堆里点名人物模型，猎杀高价值目标。 | 2026-07-11 |
@@ -4655,18 +4655,15 @@
 | unit | [Amallyn Shadowguide](factions/艾达灵族/units/amallyn-shadowguide.md) | 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。 | 2026-09-14 |
 | unit | [Autarch Skyrunner](factions/艾达灵族/units/autarch-skyrunner.md) | 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。 | 2026-09-14 |
 | unit | [Bonesinger](factions/艾达灵族/units/bonesinger.md) | 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。 | 2026-09-14 |
-| unit | [Clanblade](factions/艾达灵族/units/clanblade.md) |  | 2026-09-14 |
 | unit | [Cobra](factions/艾达灵族/units/cobra.md) | 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。 | 2026-09-14 |
 | unit | [Corsair Cloud Dancer Band](factions/艾达灵族/units/corsair-cloud-dancer-band.md) | 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。 | 2026-09-14 |
 | unit | [Corsair Reaver Band](factions/艾达灵族/units/corsair-reaver-band.md) | 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。 | 2026-09-14 |
 | unit | [Corsair Skyreaver Band](factions/艾达灵族/units/corsair-skyreaver-band.md) | 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。 | 2026-09-14 |
-| unit | [Dragon Knights](factions/艾达灵族/units/dragon-knights.md) |  | 2026-09-14 |
 | unit | [Firestorm](factions/艾达灵族/units/firestorm.md) | 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。 | 2026-09-14 |
 | unit | [Hornet](factions/艾达灵族/units/hornet.md) | 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。 | 2026-09-14 |
 | unit | [Illic Nightspear](factions/艾达灵族/units/illic-nightspear.md) | 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。 | 2026-09-14 |
 | unit | [Irillyth](factions/艾达灵族/units/irillyth.md) | 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。 | 2026-09-14 |
 | unit | [Karandras](factions/艾达灵族/units/karandras.md) | 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。 | 2026-09-14 |
-| unit | [Leystalker](factions/艾达灵族/units/leystalker.md) |  | 2026-09-14 |
 | unit | [Lynx](factions/艾达灵族/units/lynx.md) | 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。 | 2026-09-14 |
 | unit | [Nightwing](factions/艾达灵族/units/nightwing.md) | 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。 | 2026-09-14 |
 | unit | [Phoenix](factions/艾达灵族/units/phoenix.md) | 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。 | 2026-09-14 |
@@ -4674,7 +4671,6 @@
 | unit | [Scorpion](factions/艾达灵族/units/scorpion.md) | 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。 | 2026-09-14 |
 | unit | [Shadow Spectres](factions/艾达灵族/units/shadow-spectres.md) | 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。 | 2026-09-14 |
 | unit | [Skathach Wraithknight](factions/艾达灵族/units/skathach-wraithknight.md) | 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。 | 2026-09-14 |
-| unit | [Stonesinger](factions/艾达灵族/units/stonesinger.md) |  | 2026-09-14 |
 | unit | [Vampire Hunter](factions/艾达灵族/units/vampire-hunter.md) | 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。 | 2026-09-14 |
 | unit | [Vampire Raider](factions/艾达灵族/units/vampire-raider.md) | 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。 | 2026-09-14 |
 | unit | [Warp Hunter](factions/艾达灵族/units/warp-hunter.md) | 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。 | 2026-09-14 |
@@ -4692,6 +4688,7 @@
 | unit | [司战](factions/艾达灵族/units/autarch.md) |  | 2026-09-14 |
 | unit | [告死小丑](factions/艾达灵族/units/death-jester.md) |  | 2026-09-14 |
 | unit | [因卡恩-伊纳德化身](factions/艾达灵族/units/the-yncarne.md) |  | 2026-09-14 |
+| unit | [地脉潜行者](factions/艾达灵族/units/leystalker.md) |  | 2026-09-14 |
 | unit | [埃尔德拉德阿瑟兰](factions/艾达灵族/units/eldrad-ulthran.md) |  | 2026-09-14 |
 | unit | [天空掠夺者海盗](factions/艾达灵族/units/corsair-skyreavers.md) |  | 2026-09-14 |
 | unit | [天行者先知](factions/艾达灵族/units/farseer-skyrunner.md) |  | 2026-09-14 |
@@ -4721,6 +4718,7 @@
 | unit | [死神军毒灾飞艇](factions/艾达灵族/units/ynnari-venom.md) |  | 2026-09-14 |
 | unit | [死神军阴谋团武士](factions/艾达灵族/units/ynnari-kabalite-warriors.md) |  | 2026-09-14 |
 | unit | [死神军魅魔](factions/艾达灵族/units/ynnari-succubus.md) |  | 2026-09-14 |
+| unit | [氏族之刃](factions/艾达灵族/units/clanblade.md) |  | 2026-09-14 |
 | unit | [波蛇飞艇](factions/艾达灵族/units/wave-serpent.md) |  | 2026-09-14 |
 | unit | [游侠](factions/艾达灵族/units/rangers.md) |  | 2026-09-14 |
 | unit | [灵魂先知](factions/艾达灵族/units/spiritseer.md) |  | 2026-09-14 |
@@ -4731,6 +4729,7 @@
 | unit | [独角](factions/艾达灵族/units/solitaire.md) |  | 2026-09-14 |
 | unit | [猎鹰坦克](factions/艾达灵族/units/falcon.md) |  | 2026-09-14 |
 | unit | [玛甘 拉](factions/艾达灵族/units/maugan-ra.md) |  | 2026-09-14 |
+| unit | [石歌者](factions/艾达灵族/units/stonesinger.md) |  | 2026-09-14 |
 | unit | [突击战蝎](factions/艾达灵族/units/striking-scorpions.md) |  | 2026-09-14 |
 | unit | [织夜者坦克](factions/艾达灵族/units/night-spinner.md) |  | 2026-09-14 |
 | unit | [织影炮平台](factions/艾达灵族/units/shadow-weaver-platform.md) |  | 2026-09-14 |
@@ -4753,6 +4752,7 @@
 | unit | [音波炮平台（震击炮平台）](factions/艾达灵族/units/vibro-cannon-platform.md) |  | 2026-09-14 |
 | unit | [风暴守护者](factions/艾达灵族/units/storm-guardians.md) |  | 2026-09-14 |
 | unit | [黑暗死神](factions/艾达灵族/units/dark-reapers.md) |  | 2026-09-14 |
+| unit | [龙骑士](factions/艾达灵族/units/dragon-knights.md) |  | 2026-09-14 |
 
 ### 钛帝国
 

@@ -631,6 +631,46 @@ def _resolver_for(db):
     return EntityResolver(db_path=db)
 
 
+def test_guilliman_short_name_alias_restores_exact_points_lookup(tmp_path):
+    import sqlite3
+    from db_compile.community_aliases import populate_community_aliases
+
+    db = _mk_same_name_db(tmp_path)
+    with sqlite3.connect(str(db)) as conn:
+        conn.execute("ALTER TABLE aliases ADD COLUMN source TEXT DEFAULT 'test'")
+        conn.execute("INSERT INTO factions VALUES('SM','Space Marines')")
+        conn.execute("INSERT INTO datasheets VALUES('000000138','Roboute Guilliman','SM')")
+        conn.execute("INSERT INTO datasheets VALUES('ahriman','Ahriman','TS')")
+        conn.execute("INSERT INTO units VALUES('000000138','SM','Roboute Guilliman',"
+                     "'罗伯特.基里曼','{\"points\":355}',NULL,NULL)")
+        conn.execute("INSERT INTO aliases VALUES('罗伯特.基里曼','000000138','zh','test')")
+        conn.execute("INSERT INTO aliases VALUES('阿里曼','ahriman','zh','test')")
+    conn.close()
+    assert _resolver_for(db).resolve("基里曼").confidence == "ambiguous"
+    # The normal restore stage must reproduce this curated alias, without
+    # relaxing the numeric lookup's prohibition on fuzzy unit guesses.
+    for _ in range(2):
+        populate_community_aliases(db)
+        resolver = _resolver_for(db)
+        assert resolver.resolve("基里曼").confidence == "exact"
+        result = agent_tools.get_datasheet("基里曼", db_path=db, resolver=resolver)
+        assert result["datasheet"]["name_en"] == "Roboute Guilliman"
+        assert result["datasheet"]["points_min"] == 355
+        assert resolver.resolve("阿里曼").canonical_id == "ahriman"
+
+
+def test_datasheet_resolver_ambiguity_keeps_candidates_for_agent_recovery(tmp_path):
+    from agent.loop import _is_empty_result
+
+    db = _mk_same_name_db(tmp_path)
+    result = agent_tools.get_datasheet("Helbrutee", db_path=db, resolver=_resolver_for(db))
+    assert result["found"] is False
+    assert result["reason"] == "ambiguous"
+    assert len(result["candidates"]) == 4
+    assert _is_empty_result("get_datasheet", result) is False
+    assert "重查" in result["note"]
+
+
 class TestSameNameCrossFactionDisambiguation:
     """基准 #118：地狱兽 / Helbrute 在库里是 4 张各自独立的兵牌，点数并不相同。
 

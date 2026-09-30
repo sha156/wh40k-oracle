@@ -37,6 +37,7 @@ def main() -> None:
 
     # ── crosslinks ──
     sp = sub.add_parser("crosslinks", help="注入 [[wikilinks]]（流水线④）")
+    sp.add_argument("--units-only", action="store_true", help="Only refresh unit pages")
     sp.add_argument("--wiki", default="wiki", help="wiki 目录")
     sp.add_argument("--terms", default="wiki/terms.json",
                     help="术语表路径（用于扩充别名匹配）")
@@ -124,7 +125,7 @@ def main() -> None:
 
     elif args.cmd == "crosslinks":
         terms_path = Path(args.terms) if Path(args.terms).exists() else None
-        modified = inject_all(Path(args.wiki), terms_path)
+        modified = inject_all(Path(args.wiki), terms_path, units_only=args.units_only)
         print("交叉链接完成: {} 页已更新".format(len(modified)))
 
     elif args.cmd == "build":

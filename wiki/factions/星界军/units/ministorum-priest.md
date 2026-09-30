@@ -21,7 +21,7 @@ updated: '2026-09-14'
 ## 属性表
 | 模型 | M | T | SV | W | LD | OC |
 |---|---|---|---|---|---|---|
-| 教廷牧师 | 6" | 3 | 6+ | 3 | 7+ | 1 |
+| Ministorum Priest | 6" | 3 | 6+ | 3 | 7+ | 1 |
 
 ### 特殊保护
 - 4+
@@ -39,10 +39,8 @@ updated: '2026-09-14'
 | 狂信徒的惩戒焰炬 | 近战 | 3 | 4+ | 5 | -1 | 2 | — |
 
 ## 技能
-- **【阵营技能】：信仰之举**
-- **正义惩戒**：当该模型领导单位时，那个单位中所有的模型在进行近战攻击时造伤骰结果+1。
-- **狂信徒**：一场战斗仅一次，近战阶段中，该模型可以使用本能力。如果你这么做，直到当前阶段结束前，该模型装备的近战武器 A +3，S +3。
-- **神圣任务**：如果该模型加入御天使小队，则该模型获得【斥候 6】。如果该模型加入见习修女小队，则该模型获得【渗透】。
+- **War Hymns**：While this model is leading a unit, melee weapons equipped by models in that unit have the [SUSTAINED HITS 1] ability.
+- **Holy Piety**：Each time this model makes a melee attack, unless this model’s unit is Battle-shocked, you can re-roll the Hit roll.
 
 ## 单位构成
 - **1个模型** — 35 分

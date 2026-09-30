@@ -365,7 +365,19 @@ def stage_aliases_blackforum(cfg: UpdateConfig) -> StageResult:
     if not units:
         return StageResult("aliases_blackforum", True, f"无单位数据（{source}），跳过",
                            warning="黑图书馆无缓存且离线，本次不补 blackforum 别名")
-    rep = populate_blackforum_aliases(cfg.db, units_to_pairs(units))
+    # Preserve previously verified spellings when the community source renames
+    # or removes a card. History comes first so a refresh cannot silently retarget
+    # an existing unqualified alias to a different faction's similarly named unit.
+    history_path = cfg.blacklibrary_cache.with_name("aliases_history.json")
+    history = []
+    if history_path.exists():
+        payload = json.loads(history_path.read_text(encoding="utf-8"))
+        history = payload["pairs"]
+        if not isinstance(history, list) or any(
+                not isinstance(pair, list) or len(pair) != 2
+                or any(not isinstance(value, str) for value in pair) for pair in history):
+            raise ValueError("Malformed Black Library alias history")
+    rep = populate_blackforum_aliases(cfg.db, history + units_to_pairs(units))
     return StageResult(
         "aliases_blackforum", True,
         f"{source}：{len(units)} 单位 → 写入 {rep['matched']} 别名"
@@ -397,6 +409,7 @@ def stage_zh_details(cfg: UpdateConfig) -> StageResult:
     from db_compile.blacklibrary import (apply_unit_name_overrides, fill_name_zh,
                                          load_details, load_or_fetch_units,
                                          populate_zh_details)
+    from db_compile.source_archive import project_deleted_details
     units, _ = load_or_fetch_units(cfg.blacklibrary_cache, offline=cfg.offline)
     name_rep = fill_name_zh(cfg.db, units) if units else {"filled": 0}
     # 黑图没收录的现役单位（新品/改名）走人工译名真源，优先级最高
@@ -408,12 +421,15 @@ def stage_zh_details(cfg: UpdateConfig) -> StageResult:
                            f"（人工译名 {ov_rep['filled']} 行）；无 details 缓存，跳过中文表",
                            warning="details.json 缺失，中文 datasheet 层未灌")
     det_rep = populate_zh_details(cfg.db, details)
+    archive_rep = project_deleted_details(cfg.db, details=details,
+                                          cache_path=cfg.blacklibrary_details)
     return StageResult(
         "zh_details", True,
         f"填 name_zh {name_rep['filled']}（人工译名 {ov_rep['filled']} 行）；"
-        f"unit_zh_detail 入库 {det_rep['matched']}（无匹配 {det_rep['unmatched']}）",
+        f"unit_zh_detail 入库 {det_rep['matched']}（无匹配 {det_rep['unmatched']}）；"
+        f"历史源归档 {archive_rep['archived']}（非现行兵牌/点数）",
         detail={**det_rep, "name_zh_filled": name_rep["filled"],
-                "overrides": ov_rep})
+                "overrides": ov_rep, "source_archive": archive_rep})
 
 
 @_writes_db
@@ -426,7 +442,8 @@ def stage_zh_weapons(cfg: UpdateConfig) -> StageResult:
     from db_compile.zh_weapons import (build_keyword_glossary,
                                        build_zh_weapon_names, coverage_report,
                                        leftover_radicals)
-    rep = build_zh_weapon_names(cfg.db)
+    rep = build_zh_weapon_names(
+        cfg.db, history_path=cfg.blacklibrary_details.with_name("weapon_names_history.json"))
     kw = build_keyword_glossary(cfg.db)
     cov = coverage_report(cfg.db)
     left = leftover_radicals(cfg.db)

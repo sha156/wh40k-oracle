@@ -39,10 +39,12 @@ updated: '2026-09-14'
 | 寂灭（横扫）  | 近战 | 15 | 2+ | 8 | -2 | 2 | [[core-rules/lethal-hits.md\|致命一击]]，[[core-rules/sustained-hits.md\|连击1]] |
 
 ## 技能
-- **【阵营技能】：纳垢赐福【光环】**
-- **死亡守卫之主**：每个回合一次，该模型可以选择使用以下一项能力。■【疫病侵蚀】当一个敌方单位在位于该模型	6"	内的死亡守卫单位的	8"	内结束一次常规、突进或后撤移动时，如果那个死亡守卫单位不位于敌方单位的交战范围内，那么那个单位可以进行一次最多	5"	的常规移动■ 【死亡恩赐】在近战阶段，当莫塔里安 6 寸内的一个友方死亡守卫单位被选为攻击目标时，该单位可以使用此技能。在该阶段结束前，若该死亡守卫单位中的模型在未进行过攻击的情况下被近战消灭，可为每个被消灭的模型骰 D6 测试，结果为 2+则这些被消灭的模型在进行攻击的敌方单位完成攻击后，可以进行反击后再移除■ 【恶名反击】在对手的射击阶段中，当一个位于该模型	6"	内的己方死亡守卫单位被选择成为攻击目标时，该模型可以使用本技能。若使用，那么在攻击单位完成所有的攻击后，那个死亡守卫单位可以像是在己方射击阶段中一样进行射击，但是在结算这些攻击时，攻击的	BS 属性降低	1，并且进行的攻击只能将那个敌方单位作为目标（并且那个敌方单位能够成为有效目标)
-- **瘟疫之巢**：在你的移动阶段结束后，为每个该 模型 6 寸内的敌方单位骰 D6，被感染的敌方单 位该测试结果+1。结果为 3+则对应的敌方单位 承受 D3 致命伤。
-- **严重损伤**：当本模型 W 值为 1-6 时，攻击命中结果-1
+- **Lord of the Death Guard**：Once per turn, this model can use one of the Lord of the Death Guard abilities (see left).
+- **Host of Plagues**：At the end of your Movement phase, roll one D6 for each enemy unit within 6" of this model, adding 1 to the result if that enemy unit is Afflicted: on a 3+, that enemy unit suffers D3 mortal wounds.
+- **Diseased Influence**：Just after an enemy unit ends a Normal, Advance or Fall Back move within 9" of a friendly Death Guard unit that is within 6" of this model, if that <span class="kwb">DEATH</span> <span class="kwb">GUARD</span> unit is not within Engagement Range of one or more enemy units, it can make a Normal move of up to 5".
+- **Boon of Death**：In the Fight phase, when a friendly <span class="kwb">DEATH</span> <span class="kwb">GUARD</span> unit within 6" of this model is selected as the target of an attack, this model can use this ability. If it does, until the end of the phase, each time a model in that <span class="kwb">DEATH</span> <span class="kwb">GUARD</span> unit is destroyed by a melee attack, if that model has not fought this phase, roll one D6. On a 2+, do not remove it from play; that destroyed model can fight after the attacking unit has finished making its attacks, and it is then removed from play.
+- **Inflamed Reprisal**：In your opponent’s Shooting phase, when a friendly <span class="kwb">DEATH</span> <span class="kwb">GUARD</span> unit within 6" of this model is selected as the target of an attack, this model can use this ability. If it does, after the attacking unit has finished making its attacks, that Death Guard unit can shoot as if it were your Shooting phase, but when resolving those attacks it can only target that enemy unit (and only if it is an eligible target).
+- **SUPREME COMMANDER**：If this model is in your army, it must be your <span class="kwb">WARLORD</span>.
 
 ## 单位构成
 - **1个模型** — 375 分

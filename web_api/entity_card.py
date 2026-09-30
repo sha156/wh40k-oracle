@@ -133,6 +133,8 @@ def _zh_abilities(zh: Optional[Dict[str, Any]]) -> List[Ability]:
             if not nm:
                 continue
             tag, nm2 = _split_tag(nm)
+            if item.get("source") == "official-db":
+                tag = tag or "官方英文"
             out.append(_ability(tag, nm2, item.get("contentHtml"),
                                 _flatten_content(item.get("content"))))
     return out

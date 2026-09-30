@@ -75,7 +75,6 @@
 - [[factions/星际战士/units/canis-wolfborn|Canis Wolfborn]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
 - [[factions/星际战士/units/captain-tycho|Captain Tycho]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
 - [[factions/星际战士/units/captain-on-bike|Captain on Bike]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
-- [[factions/星际战士/units/carab-culln-the-risen|Carab Culln The Risen]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
 - [[factions/星际战士/units/cerberus|Cerberus]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
 - [[factions/星际战士/units/chaplain-cassius|Chaplain Cassius]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
 - [[factions/星际战士/units/chaplain-kastiel|Chaplain Kastiel]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
@@ -91,11 +90,9 @@
 - [[factions/星际战士/units/deimos-predator|Deimos Predator]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
 - [[factions/星际战士/units/deredeo-dreadnought|Deredeo Dreadnought]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
 - [[factions/星际战士/units/dreadnought-drop-pod|Dreadnought Drop Pod]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
-- [[factions/星际战士/units/eradicator-squad-with-heavy-bolters|Eradicator Squad With Heavy Bolters]]
 - [[factions/星际战士/units/example-wargear|Example Wargear]]
 - [[factions/星际战士/units/falchion|Falchion]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
 - [[factions/星际战士/units/fellblade|Fellblade]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
-- [[factions/星际战士/units/ferren-areios|Ferren Areios]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
 - [[factions/星际战士/units/fire-raptor-gunship|Fire Raptor Gunship]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
 - [[factions/星际战士/units/gabriel-seth|Gabriel Seth]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
 - [[factions/星际战士/units/harald-deathwolf|Harald Deathwolf]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
@@ -127,7 +124,6 @@
 - [[factions/星际战士/units/lukas-the-trickster|Lukas The Trickster]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
 - [[factions/星际战士/units/mastodon|Mastodon]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
 - [[factions/星际战士/units/mortis-dreadnought|Mortis Dreadnought]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
-- [[factions/星际战士/units/primaris-company-champion|Primaris Company Champion]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
 - [[factions/星际战士/units/rapier-carrier|Rapier Carrier]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
 - [[factions/星际战士/units/ravenwing-talonmaster|Ravenwing Talonmaster]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
 - [[factions/星际战士/units/relic-contemptor-dreadnought|Relic Contemptor Dreadnought]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
@@ -179,6 +175,7 @@
 - [[factions/星际战士/units/furioso-dreadnought|【传奇】暴烈无畏]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
 - [[factions/星际战士/units/death-company-marines-with-boltguns|【传奇】装备爆弹枪的死亡连战士]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
 - [[factions/星际战士/units/death-company-dreadnought-with-magna-grapple|【传奇】装备磁力勾爪的死亡连无畏]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
+- [[factions/星际战士/units/ferren-areios|【传奇】费伦.阿雷奥斯]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
 - [[factions/星际战士/units/invictor-tactical-warsuit|不屈型战术机甲]]
 - [[factions/星际战士/units/indomitor-kill-team|不屈杀戮小队]]
 - [[factions/星际战士/units/ezekiel|以西结]]
@@ -214,6 +211,7 @@
 - [[factions/星际战士/units/cato-sicarius|卡托·西卡留斯]]
 - [[factions/星际战士/units/caanok-var|卡诺克·瓦尔]]
 - [[factions/星际战士/units/suppressor-squad|压制者小队]]
+- [[factions/星际战士/units/primaris-company-champion|原铸连队冠军【传奇】]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
 - [[factions/星际战士/units/repulsor-2|反击者突击艇]]
 - [[factions/星际战士/units/repulsor|反击者突击艇]]
 - [[factions/星际战士/units/the-sanguinor|圣吉列诺]]
@@ -322,6 +320,7 @@
 - [[factions/星际战士/units/death-company-marines-with-bolt-rifles|装备爆弹步枪的死亡连小队]]
 - [[factions/星际战士/units/death-company-marines-with-jump-packs|装备跳跃背包的死亡连小队]]
 - [[factions/星际战士/units/death-company-captain-with-jump-pack|装备跳跃背包的死亡连连长]]
+- [[factions/星际战士/units/eradicator-squad-with-heavy-bolters|装备重型爆矢枪的根除者小队]]
 - [[factions/星际战士/units/wulfen-with-storm-shields|装备风暴盾的狼人]]
 - [[factions/星际战士/units/gladiator-valiant-2|豪侠型角斗者坦克]]
 - [[factions/星际战士/units/gladiator-valiant|豪侠型角斗者坦克]]
@@ -335,6 +334,7 @@
 - [[factions/星际战士/units/crusade-ancient|远征旗手]]
 - [[factions/星际战士/units/captain|连长]]
 - [[factions/星际战士/units/company-heroes|连队英雄]]
+- [[factions/星际战士/units/carab-culln-the-risen|重生者卡拉布·库伦【传奇】]] — 历史点数：未匹配到本次官方 MFM 快照，以下数值不能作为当前点数。
 - [[factions/星际战士/units/heavy-intercessor-squad|重装仲裁者小队]]
 - [[factions/星际战士/units/captain-in-gravis-armour|重装连长]]
 - [[factions/星际战士/units/wolf-guard-terminators|野狼守卫终结者]]

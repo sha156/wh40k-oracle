@@ -1,0 +1,137 @@
+{
+  "question": "普通卡尔加多少分？",
+  "status": 200,
+  "elapsed_seconds": 4.859,
+  "answer": {
+    "summary": "检索 1 步 · 引用 2 条",
+    "trace": [
+      {
+        "fn": "calc_points",
+        "args": "(['卡尔加'])",
+        "result": "已命中",
+        "status": "ok",
+        "note": null
+      }
+    ],
+    "traceWarn": null,
+    "verdict": {
+      "label": "暂无法判定",
+      "labelEn": "Unverified",
+      "lede": [
+        {
+          "t": "text",
+          "s": "档案里只查到一条"
+        },
+        {
+          "t": "strong",
+          "s": "历史缓存记录"
+        },
+        {
+          "t": "text",
+          "s": "：旧点数 "
+        },
+        {
+          "t": "num",
+          "s": "200"
+        },
+        {
+          "t": "text",
+          "s": " 分，且原始名称明确标注「已删除」，属于第三方历史资料，"
+        },
+        {
+          "t": "strong",
+          "s": "不能当作现行点数或军表合法性依据"
+        },
+        {
+          "t": "text",
+          "s": " "
+        },
+        {
+          "t": "cite",
+          "n": 1
+        },
+        {
+          "t": "cite",
+          "n": 2
+        },
+        {
+          "t": "text",
+          "s": "。本次检索没有取到他的当前官方点数，所以「现在多少分」答不上来。"
+        }
+      ]
+    },
+    "calc": [
+      {
+        "n": 1,
+        "text": [
+          {
+            "t": "text",
+            "s": "这条历史记录对应的编成是「卡尔加 + "
+          },
+          {
+            "t": "num",
+            "s": "2"
+          },
+          {
+            "t": "text",
+            "s": " 名常胜护卫」的单一单位，别和其他版本混用 "
+          },
+          {
+            "t": "cite",
+            "n": 1
+          },
+          {
+            "t": "text",
+            "s": "。"
+          }
+        ]
+      },
+      {
+        "n": 2,
+        "text": [
+          {
+            "t": "text",
+            "s": "想确认现行点数，建议查最新官方 MFM 或极限战士 Faction Pack。"
+          }
+        ]
+      }
+    ],
+    "entityCard": null,
+    "cites": [
+      {
+        "n": 1,
+        "book": "黑图书馆 · 历史缓存（第三方，已删除）",
+        "page": null,
+        "section": "历史资料，非当前点数",
+        "term": "Marneus Calgar · 源记录 6",
+        "wiki": "",
+        "url": null
+      },
+      {
+        "n": 2,
+        "book": "黑图书馆本地缓存历史记录（第三方，已删除）",
+        "page": null,
+        "section": null,
+        "term": null,
+        "wiki": "",
+        "url": null
+      }
+    ],
+    "sensitivity": {
+      "title": "◭ 敏感性 · 缓存时间不等于规则日期",
+      "text": [
+        {
+          "t": "text",
+          "s": "缓存时间只是本地文件修改时间，不是规则发布日期，也不代表当前有效性；该记录是第三方历史资料，不是官方现行兵牌。"
+        }
+      ]
+    },
+    "cta": null,
+    "followups": [
+      "最新官方 MFM 里卡尔加是多少分？",
+      "卡尔加 + 2 名常胜护卫这个单位现在还能用吗？",
+      "极限战士 Faction Pack 有没有更新卡尔加的点数？"
+    ],
+    "degraded": false
+  }
+}

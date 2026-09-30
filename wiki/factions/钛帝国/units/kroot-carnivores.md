@@ -38,7 +38,8 @@ updated: '2026-09-14'
 | 格斗武器 | 近战 | 2 | 3+ | 4 | 0 | 1 | — |
 
 ## 技能
-- **战地技巧**：在你的指挥阶段结束时，如果该单位位于你控制的目标标记范围内，在你的对手于任意回合开始或结束时控制该目标标记前，该目标标记被你控制，即使你没有任何模型位于该目标标记范围内。
+- **Fieldcraft**：At the end of your Command phase, if this unit is within range of an objective marker you control, that objective marker remains under your control, even if you have no models within range of it, until your opponent controls it at the start or end of any turn.
+- **BODYGUARD**：If this unit has a Starting Strength of 20, you can attach up to two Leader units to it instead of one, provided those Leaders are not duplicates (e.g. you cannot attach two WAR SHAPERS to this unit). If you do, and this unit is destroyed, the Leader units attached to it become separate units with  their original Starting Strengths.
 
 ## 单位构成
 - **10个模型** — 65 分

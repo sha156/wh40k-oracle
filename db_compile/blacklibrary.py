@@ -195,6 +195,13 @@ def populate_zh_details(db_path, details: List[dict]) -> Dict[str, int]:
         conn.execute("DELETE FROM unit_zh_detail WHERE source = 'blackforum'")
         en2ids = _en_to_ids(conn)
         zh2ids = _zh_to_ids(conn)
+        from db_compile.blacklibrary_identity import scoped_detail_ids
+        columns = {r[1] for r in conn.execute("PRAGMA table_info(units)")}
+        factions = (dict(conn.execute("SELECT id, faction_id FROM units"))
+                    if "faction_id" in columns else {})
+
+        def eligible(record, candidates):
+            return scoped_detail_ids(record, candidates or [], factions)
         # 黑图侧同一中文名出现多次 → 这个中文名不具备唯一指向，退出中文名桥
         zh_dupes = set()
         seen_zh = set()
@@ -208,18 +215,21 @@ def populate_zh_details(db_path, details: List[dict]) -> Dict[str, int]:
         # 已被英文名认领的行不许中文名桥再碰：否则谁后写谁赢，同一 canonical_id
         # 会被另一张兵牌的中文层覆盖，且从表里完全看不出来
         claimed = {cid for r in details
-                   for cid in en2ids.get(_norm_en(r.get("name_en")), [])}
-        matched = matched_by_zh = no_detail = 0
+                   for cid in eligible(r, en2ids.get(_norm_en(r.get("name_en")), []))}
+        matched = matched_by_zh = no_detail = identity_rejected = 0
         for r in details:
-            cids = en2ids.get(_norm_en(r.get("name_en")))
+            candidates = en2ids.get(_norm_en(r.get("name_en")))
+            cids = eligible(r, candidates)
             via_zh = False
             if not cids:
                 zk = _norm_zh(r.get("name_zh"))
                 # 库侧同名多行是合法的（同一兵牌挂多阵营），黑图侧重名才是歧义
                 if zk and zk not in zh_dupes:
-                    cids = [c for c in zh2ids.get(zk, []) if c not in claimed]
+                    cids = eligible(r, [c for c in zh2ids.get(zk, []) if c not in claimed])
                     via_zh = bool(cids)
             if not cids:
+                if candidates:
+                    identity_rejected += 1
                 continue
             det = r.get("detail")
             if not det:
@@ -244,7 +254,8 @@ def populate_zh_details(db_path, details: List[dict]) -> Dict[str, int]:
         conn.commit()
         return {"records": len(details), "matched": matched,
                 "matched_by_zh": matched_by_zh,
-                "unmatched": len(details) - matched - no_detail, "no_detail": no_detail}
+                "unmatched": len(details) - matched - no_detail, "no_detail": no_detail,
+                "identity_rejected": identity_rejected}
     finally:
         conn.close()
 
@@ -307,6 +318,23 @@ def _flatten_weapon(w: dict, melee: bool) -> str:
     return f"- [{tag}] {w.get('name','?')}：{rng}{core}{tail}"
 
 
+def reviewed_abilities(conn: sqlite3.Connection, canonical_id: str,
+                       raw: Optional[List[dict]]) -> Optional[List[dict]]:
+    """Project reviewed source fragments without changing either stored source.
+
+    Unreviewed units retain their existing display policy. Reviewed units always
+    cover the current official rows, falling back to English on source drift.
+    """
+    from db_compile.ability_localization import is_reviewed_unit, project_reviewed_abilities
+    if not is_reviewed_unit(canonical_id):
+        return None
+    rows = conn.execute(
+        "SELECT name_en, text_zh FROM abilities WHERE owner_id=? ORDER BY rowid",
+        (canonical_id,)).fetchall()
+    english = [{"name_en": r[0], "text": r[1] or ""} for r in rows]
+    return project_reviewed_abilities(canonical_id, raw or [], english)
+
+
 def build_blacklibrary_docs(db_path):
     """把 unit_zh_detail 全表渲染成检索文档（每单位一个 chunk：属性+武器+能力全文）。
 
@@ -322,10 +350,17 @@ def build_blacklibrary_docs(db_path):
                 "SELECT canonical_id, name_zh, faction_zh, stats_json, "
                 "abilities_json, weapons_json FROM unit_zh_detail "
                 "WHERE source='blackforum'").fetchall()
-            from db_compile.source_reconcile import requires_current_english
-            rows = [row for row in rows if not requires_current_english(conn, row[0])]
         except sqlite3.OperationalError:
             return []
+        from db_compile.source_reconcile import requires_current_english
+        rows = [row for row in rows if not requires_current_english(conn, row[0])]
+        projected = {}
+        for row in rows:
+            value = reviewed_abilities(conn, row[0], json.loads(row[4]) if row[4] else [])
+            if value is not None:
+                # This chunk cites Black Library. Official English fallbacks
+                # belong in the structured tool/wiki, never under that citation.
+                projected[row[0]] = [a for a in value if a["source"] == "blacklibrary"]
     finally:
         conn.close()
 
@@ -352,7 +387,7 @@ def build_blacklibrary_docs(db_path):
             lines.append("**武器**")
             lines.extend(wl)
         # 能力全文
-        abilities = json.loads(ab_j) if ab_j else []
+        abilities = projected.get(cid, json.loads(ab_j) if ab_j else [])
         ab_txt = [_flatten_ability(a) for a in abilities if _flatten_ability(a)]
         if ab_txt:
             lines.append("**能力**")
@@ -379,10 +414,15 @@ def load_zh_detail(db_path, canonical_id: str) -> Optional[dict]:
             return None
         from db_compile.source_reconcile import requires_current_english
         current_english = requires_current_english(conn, canonical_id)
+        abilities = json.loads(row[3]) if row[3] and not current_english else None
+        if not current_english:
+            projected = reviewed_abilities(conn, canonical_id, abilities or [])
+            if projected is not None:
+                abilities = projected
         return {
             "name_zh": row[0], "faction_zh": row[1],
             "属性": json.loads(row[2]) if row[2] else [],
-            "能力": json.loads(row[3]) if row[3] and not current_english else None,
+            "能力": abilities,
             "武器": json.loads(row[4]) if row[4] else None,
         }
     finally:

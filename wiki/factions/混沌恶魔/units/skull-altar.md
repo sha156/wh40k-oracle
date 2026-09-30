@@ -26,12 +26,12 @@ updated: '2026-09-14'
 ## 属性表
 | 模型 | M | T | SV | W | LD | OC |
 |---|---|---|---|---|---|---|
-| Skull Altar | - | 12 | 3+ | 10 | 7+ | 0 |
+| 颅骨祭坛 | - | 12 | 3+ | 10 | 7+ | 0 |
 
 ## 技能
-- **Shadow of Khorne (Aura)**：The area of the battlefield within 6" of this <span class="kwb">FORTIFICATION</span> is considered to be within your army’s Shadow of Chaos. In addition, while a friendly Khorne Legiones Daemonica unit is within 6" of this <span class="kwb">FORTIFICATION</span>, each time you take a Battle-shock test for that unit, you can re-roll that test.
-- **Cover**：Each time a ranged attack is allocated to a model, if that model is not fully visible to every model in the attacking unit because of this <span class="kwb">FORTIFICATION</span>, that model has the Benefit of Cover against that attack.
-- **Fortification**：While an enemy unit is only within Engagement Range of one or more Fortifications from your army: <br><ul><li>That unit can still be selected as the target of ranged attacks, but each time such an attack is made, unless it is made with a Pistol, subtract 1 from the Hit roll. </li><li>Models in that unit do not need to take Desperate Escape tests due to Falling Back while Battle-shocked, except for those that will move over enemy models when doing so.</li></ul>
+- **恐虐之影(光环）**
+- **掩体**
+- **防御工事**
 
 ## 单位构成
 - **1个模型** — 105 分

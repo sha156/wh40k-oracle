@@ -67,7 +67,7 @@ export default function RosterPage() {
   const [query, setQuery] = useState("");
   const [units, setUnits] = useState<RosterUnitState[]>([]);
 
-  const [validation, setValidation] = useState<ValidationReport | null>(null);
+  const [validation, setValidation] = useState<{ sig: string; report: ValidationReport } | null>(null);
   // 点评带它算出时的军表签名，编制一变即视为过期（不用 effect 清）
   const [critique, setCritique] = useState<{ sig: string; report: CritiqueReport } | null>(
     null,
@@ -80,12 +80,14 @@ export default function RosterPage() {
   const mountedRef = useRef(true);
   // 卸载时中止在途点评 + 阻止 post-unmount setState
   useEffect(() => {
+    mountedRef.current = true;
     return () => {
       mountedRef.current = false;
       critiqueCtrl.current?.abort();
     };
   }, []);
   const onErr = useCallback((e: unknown) => {
+    if (!mountedRef.current) return;
     if ((e as Error).name === "AbortError") return;
     setError(e instanceof Error ? e.message : "请求失败，请稍后重试。");
   }, []);
@@ -128,6 +130,7 @@ export default function RosterPage() {
     setDetachmentId(null);
     setEnhancements([]);
     setFactionUnits([]); // 清旧阵营单位目录，防搜索框加进跨阵营单位
+    setDetachments([]);
     setQuery("");
     setValidation(null); // 清旧阵营校验结果，防加首个新单位时闪现旧阵营点数/合法性
     setFactionId(id);
@@ -135,19 +138,20 @@ export default function RosterPage() {
   // 换分队：强化目录换新 + 各单位已选强化作废（强化是分队私有的）
   const selectDetachment = (id: string) => {
     setDetachmentId(id || null);
-    if (!id) setEnhancements([]);
+    setEnhancements([]);
     setUnits((prev) => prev.map((u) => ({ ...u, enhancement: null })));
   };
 
-  // 实时校验（debounce）：军表编制相关状态变化即重算（不含 loadout——验表不用装配）
+  // Revalidate the current composition and loadout; never show an older price as current.
   const validationSig = useMemo(
     () =>
       JSON.stringify({
+        f: factionId,
         d: detachmentId,
         s: size,
         u: units.map((u) => [u.canonicalId, u.models, u.isWarlord, u.enhancement, u.loadout]),
       }),
-    [detachmentId, size, units],
+    [factionId, detachmentId, size, units],
   );
   // 点评额外依赖 loadout——单独签名，改装备后旧点评视为过期
   const critiqueSig = useMemo(
@@ -164,7 +168,8 @@ export default function RosterPage() {
     const t = setTimeout(() => {
       postValidate(toPayload(factionId, detachmentId, size, units), ctrl.signal)
         .then((r) => {
-          setValidation(r);
+          if (ctrl.signal.aborted) return;
+          setValidation({ sig: validationSig, report: r });
           setError(null); // 成功即清错误横幅，防一次瞬时失败后永久卡显
         })
         .catch(onErr);
@@ -224,7 +229,7 @@ export default function RosterPage() {
         if (!ctrl.signal.aborted) setCritique({ sig, report });
       })
       .catch((e) => {
-        if ((e as Error).name === "AbortError") return;
+        if (ctrl.signal.aborted || (e as Error).name === "AbortError") return;
         setError(
           e instanceof Error && e.message.includes("后端返回")
             ? `点评失败（${e.message}）`
@@ -253,7 +258,7 @@ export default function RosterPage() {
       <SiteHeader context="军表实验室 · ROSTER" active="军表实验室" />
       <main className="mx-auto max-w-[1180px] px-5 pt-[22px] pb-20 max-tablet:px-2.5 max-tablet:pt-4">
         {error ? (
-          <p className="mb-4 border border-redfont/40 bg-[#1a0d0d] px-4 py-3 font-mono text-[12.5px] break-all text-[#d99]">
+          <p role="alert" className="mb-4 border border-redfont/40 bg-[#1a0d0d] px-4 py-3 font-mono text-[12.5px] break-all text-[#d99]">
             {error}
           </p>
         ) : null}
@@ -376,7 +381,7 @@ export default function RosterPage() {
 
           {/* 右：校验 + 点评 */}
           <div className="flex flex-col gap-3">
-            <ValidationPanel report={units.length ? validation : null} />
+            <ValidationPanel report={units.length && validation?.sig === validationSig ? validation.report : null} pending={units.length > 0 && validation?.sig !== validationSig} failed={units.length > 0 && validation?.sig !== validationSig && Boolean(error)} />
             <button
               type="button"
               onClick={runCritique}

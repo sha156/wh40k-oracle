@@ -1,5 +1,6 @@
 ---
 id: fp11e-ae-leystalker
+name_zh: 地脉潜行者
 name_en: Leystalker
 faction: 艾达灵族
 type: unit
@@ -23,18 +24,18 @@ updated: '2026-09-14'
 ## 属性表
 | 模型 | M | T | SV | W | LD | OC |
 |---|---|---|---|---|---|---|
-| Leystalker | 10 | 5 | 4 | 4 | 7 | 2 |
+| 地脉潜行者 | 10 | 5 | 4 | 4 | 7 | 2 |
 
 ## 射击武器
 | 武器 | 射程 | A | BS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| Long Rifle | 36"" | 2 | 2+ | 6 | -2 | 3 | 毁灭伤害：非怪兽且非载具，[[core-rules/precision.md\|精准]] |
+| 长步枪 | 36"" | 2 | 2+ | 6 | -2 | 3 | 毁灭伤害：非怪兽且非载具，[[core-rules/precision.md\|精准]] |
 
 ## 近战武器
 | 武器 | 射程 | A | WS | S | AP | D | 技能 |
 |---|---|---|---|---|---|---|---|
-| Drakesteed Fangs and Talons | 近战 | 3 | 3+ | 5 | -1 | 1 | [[core-rules/extra-attacks.md\|额外攻击]] |
-| Hunting Blades | 近战 | 2 | 3+ | 3 | -1 | 1 | — |
+| 龙骥的獠牙与利爪 | 近战 | 3 | 3+ | 5 | -1 | 1 | [[core-rules/extra-attacks.md\|额外攻击]] |
+| 猎刀 | 近战 | 2 | 3+ | 3 | -1 | 1 | — |
 
 ## 技能
 - **Panicked Quarry**：In your Shooting phase, when this unit has shot, select one enemy unit (excluding MONSTER/VEHICLE units) hit by those attacks. That enemy unit makes a battle-shock roll, with -1 to that battle-shock roll.

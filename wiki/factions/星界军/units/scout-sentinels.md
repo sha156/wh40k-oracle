@@ -44,7 +44,8 @@ updated: '2026-09-14'
 | 哨兵链锯 | 近战 | 3 | 4+ | 6 | -1 | 1 | — |
 
 ## 技能
-- **大胆侦查**：在你的射击阶段中，你可以选择一个该单位18寸内的敌方可见单位，若如此做直到本阶段结束前，每当友军星界军模型对该敌方单位进行攻击时，重投结果为1的命中
+- **Daring Recon**：At the start of your Shooting phase, select one enemy unit within 18" of and visible to this unit. Until the end of the phase, each time a friendly <span class="kwb">ASTRA</span> <span class="kwb">MILITARUM</span> model makes an attack that targets that unit, re-roll a Hit roll of 1.
+- **One Shot**：The bearer can only shoot with this weapon once per battle.
 
 ## 单位构成
 - **1个模型** — 55 分

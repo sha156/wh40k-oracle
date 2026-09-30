@@ -13,7 +13,7 @@
 FROM python:3.11-slim-bookworm
 
 # 构建期代理：pip 需要出网；宿主机 Clash 用 host.docker.internal 访问。
-# 只在构建期生效，不写进运行期环境（运行期不该出网到代理）。
+# These args apply only during builds. Compose can separately configure the API runtime proxy.
 ARG HTTP_PROXY=""
 ARG HTTPS_PROXY=""
 ARG NO_PROXY="localhost,127.0.0.1"

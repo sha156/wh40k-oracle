@@ -40,7 +40,8 @@ updated: '2026-09-14'
 | 武器组格斗武器 | 近战 | 2 | 4+ | 3 | 0 | 1 | — |
 
 ## 技能
-- **击倒巨物！**：每当本模型中的单位对巨兽或载具单位进行射击攻击时，你可以重骰结果为 1 的命中骰和造伤骰
+- **Bring it Down!**：Each time a model in this unit makes a ranged attack that targets a <span class="kwb">MONSTER</span> of <span class="kwb">VEHICLE</span> unit, re-roll a Hit roll of 1 and re-roll a Wound roll of 1.
+- **EMBARKING**：While embarked within a Transport, each model takes up the space of 2 models, and each weapon equipped by these models is considered to be 2 models’ weapons for the purposes of the Firing Deck ability.
 
 ## 单位构成
 - **3个模型** — 70 分

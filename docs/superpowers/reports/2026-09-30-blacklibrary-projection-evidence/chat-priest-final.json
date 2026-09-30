@@ -1,0 +1,168 @@
+{
+  "question": "帝国密探（Agents of Imperium）阵营的国教牧师 Ministorum Priest，Holy Hatred 的具体效果是什么？请明确阵营，引用这个版本的兵牌，不要混用修女或星界军版本。",
+  "elapsed_seconds": 63.169,
+  "response": {
+    "summary": "检索 2 步 · 引用 3 条",
+    "trace": [
+      {
+        "fn": "get_entity",
+        "args": "('国教牧师')",
+        "result": "已命中",
+        "status": "ok",
+        "note": "本页阵营：战斗修女。同名单位还存在于其他阵营：Ministorum Priest (AM)、Ministorum Priest (AoI)、Ministorum Priest (AS)。按问题语境用含阵营的候选串重查，不要把本页当作所有阵营的规则。"
+      },
+      {
+        "fn": "get_entity",
+        "args": "('Ministorum Priest (AoI)')",
+        "result": "已命中",
+        "status": "ok",
+        "note": "本页阵营：帝国特勤。同名单位还存在于其他阵营：Ministorum Priest (AM)、Ministorum Priest (AoI)、Ministorum Priest (AS)。按问题语境用含阵营的候选串重查，不要把本页当作所有阵营的规则。"
+      }
+    ],
+    "traceWarn": null,
+    "verdict": {
+      "label": "规则如下",
+      "labelEn": "Ruling",
+      "lede": [
+        {
+          "t": "text",
+          "s": "帝国密探（Agents of the Imperium）版本的国教牧师 Ministorum Priest，其 "
+        },
+        {
+          "t": "strong",
+          "s": "Holy Hatred"
+        },
+        {
+          "t": "text",
+          "s": " 效果是："
+        },
+        {
+          "t": "strong",
+          "s": "当该模型领导一个单位时，该单位中所有模型装备的近战武器获得【持续命中 1】"
+        },
+        {
+          "t": "text",
+          "s": "——近战攻击造出未修正的 "
+        },
+        {
+          "t": "num",
+          "s": "6"
+        },
+        {
+          "t": "text",
+          "s": " 时，额外多造成 "
+        },
+        {
+          "t": "num",
+          "s": "1"
+        },
+        {
+          "t": "text",
+          "s": " 次命中。"
+        }
+      ]
+    },
+    "calc": [
+      {
+        "n": 1,
+        "text": [
+          {
+            "t": "text",
+            "s": "这是帝国密探版本的兵牌，与修女会（Adepta Sororitas）版本不同：修女版对应能力叫「正义惩戒」，效果是领导单位近战造伤骰 +"
+          },
+          {
+            "t": "num",
+            "s": "1"
+          },
+          {
+            "t": "text",
+            "s": "，而不是持续命中。两者不可混用。"
+          }
+        ]
+      },
+      {
+        "n": 2,
+        "text": [
+          {
+            "t": "text",
+            "s": "该版本国教牧师为 "
+          },
+          {
+            "t": "num",
+            "s": "1"
+          },
+          {
+            "t": "text",
+            "s": " 模型 "
+          },
+          {
+            "t": "num",
+            "s": "40"
+          },
+          {
+            "t": "text",
+            "s": " 分，阵营关键词 Agents of the Imperium，普通关键词含 Ordo Hereticus、Ministorum Priest "
+          },
+          {
+            "t": "cite",
+            "n": 2
+          },
+          {
+            "t": "cite",
+            "n": 3
+          },
+          {
+            "t": "text",
+            "s": "。"
+          }
+        ]
+      }
+    ],
+    "entityCard": null,
+    "cites": [
+      {
+        "n": 1,
+        "book": "L3 结构库 · 战斗修女",
+        "page": null,
+        "section": "合并兵牌",
+        "term": "Ministorum Priest",
+        "wiki": "",
+        "url": null
+      },
+      {
+        "n": 2,
+        "book": "L3 结构库 · 帝国特勤",
+        "page": null,
+        "section": "合并兵牌",
+        "term": "Ministorum Priest",
+        "wiki": "",
+        "url": null
+      },
+      {
+        "n": 3,
+        "book": "官方结构库 db/wh40k.sqlite（Wahapedia 11版镜像 + MFM 官方点数）",
+        "page": null,
+        "section": null,
+        "term": null,
+        "wiki": "",
+        "url": null
+      }
+    ],
+    "sensitivity": {
+      "title": "◭ 敏感性 · 来源边界",
+      "text": [
+        {
+          "t": "text",
+          "s": "该兵牌由多个数据层合并，sources 是关联参考而非逐字段出处；补丁页可能只改一个关键词，不能给整张兵牌的技能/属性背书。技能效果以实际取回的规则正文为准，未定位原文的字段标注「结构库兵牌」。"
+        }
+      ]
+    },
+    "cta": null,
+    "followups": [
+      "修女会版本的「正义惩戒」具体怎么触发？",
+      "Holy Hatred 的【持续命中 1】对远程武器也生效吗？",
+      "帝国密探国教牧师能领导哪些单位？"
+    ],
+    "degraded": false
+  }
+}
