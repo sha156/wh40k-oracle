@@ -2,7 +2,8 @@
 -r requirements-server.txt
 pytest
 httpx
-pymupdf
+# Match the patched native/Docker PDF parser.
+pymupdf==1.26.7
 tqdm
 openai
 

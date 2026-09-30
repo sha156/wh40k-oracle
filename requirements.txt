@@ -22,7 +22,8 @@ rank-bm25
 jieba
 
 # PDF 处理
-pymupdf
+# CVE-2026-3029: safe embedded-file extraction defaults; Python >=3.10.
+pymupdf==1.26.7
 
 # LLM 提供商
 zhipuai

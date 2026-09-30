@@ -38,7 +38,8 @@ rank-bm25==0.2.2
 jieba==0.42.1
 
 # PDF 处理
-pymupdf==1.26.5
+# CVE-2026-3029: retain the PDF text/span APIs on the patched branch.
+pymupdf==1.26.7
 
 # LLM 提供商
 zhipuai==2.1.5.20250825

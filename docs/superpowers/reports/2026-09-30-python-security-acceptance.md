@@ -1,12 +1,116 @@
 # Python dependency security acceptance — September 30, 2026
 
 Status: **incremental candidate, not release acceptance**. The shared
-FastAPI/Starlette boundary and Requests are patched and independently verified.
+FastAPI/Starlette boundary, Requests and PyMuPDF are patched and verified in isolation.
 The complete CPU application stack, full native suite, Docker/Linux installation
 and final audit remain outstanding.
 No integration, deployment, source retirement or main-environment changes occurred.
 
-## Latest increment: Requests patch — October 1, 2026
+## Latest increment: PyMuPDF patch — October 1, 2026
+
+The deployed PyMuPDF **1.26.5** pin is replaced by **1.26.7**, identically in
+`requirements.txt`, `requirements-docker.txt` and `requirements-ci.txt`.
+The lightweight server requirements remain model/PDF-free. No application source,
+test expectation, Dockerfile, asset or reliability-owned behavior changed.
+The project interpreter already had 1.26.7 as a test dependency; this increment
+verifies it and makes the release/CI declarations reproducible for this package.
+
+The baseline contains two identical **PYSEC-2026-3001** records whose aliases
+are **CVE-2026-3029** and **GHSA-cxqh-p2w9-fmr7**: one underlying issue, not two.
+The [GitHub advisory](https://github.com/advisories/GHSA-cxqh-p2w9-fmr7) bounds the
+affected versions to `>=1.26.5,<1.26.7`. The primary
+[maintainer fix commit](https://github.com/pymupdf/PyMuPDF/commit/603cafe38a183b8bab34f16d05043b4185d8d40a)
+and [tagged changelog](https://github.com/pymupdf/PyMuPDF/blob/1.26.7/changes.txt)
+confirm that `pymupdf embed-extract` now refuses stored filenames outside the
+current directory and existing destinations by default. Explicit `-output` or
+`-unsafe` opts out of those defaults; no blanket safety claim is made for those
+options or every embedded-file API. A source search found no application use of
+`embedded_get`, `embed-extract`, `embfile_get` or `pymupdf.__main__`.
+
+PyPI metadata confirms Python **>=3.10**, no additional declared runtime
+dependencies, and `cp310-abi3` wheels for Windows amd64 and Linux x86_64
+(`manylinux_2_28`, compatible with the Debian bookworm Docker baseline).
+The tagged changelog identifies the Python support change in **1.26.6** and
+MuPDF **1.26.12** in 1.26.7. Only Windows Python **3.11.9** installation and
+behavior were executed here; Linux wheel availability is metadata evidence,
+not a completed Linux installation. No compatibility shim was necessary.
+
+An offline before/after probe constructed a PDF with traversal, overwrite and
+safe embedded filenames inside one temporary directory. With **1.26.5**, the
+CLI wrote `../outside.txt` and replaced the existing sentinel. With **1.26.7**,
+both calls exited **1**, no outside file appeared and the sentinel was unchanged;
+the safe filename still extracted successfully in both versions. The nested
+working directory and all possible destinations remained under that temporary
+root, which was removed on exit. No real source or shared file was overwritten.
+This verifies the upstream patch, not application reachability of the CLI.
+
+Validation completed for this increment:
+
+- A new isolated environment at
+  `C:/Users/Administrator/.codex/worktrees/release-python-security/RAG/db_sources/python-security/iteration-4/clean-pdf-venv/`
+  was created with the prescribed Python **3.11.9** executable. A clean install
+  of `requirements-server.txt` plus PyMuPDF **1.26.7**, pytest **9.0.3**, HTTPX
+  **0.28.1** and tqdm **4.67.3** succeeded. Install reports and exact inventories
+  are saved. Both this environment and project `.venv` pass `pip check`.
+  This is the server/PDF/test subset, not a complete native, Docker or CI install.
+- Project `.venv`: **106 passed, 28 skipped in 5.95 seconds**, running unchanged
+  `test_llm_refine.py`, `test_wiki_core_rules.py`, `test_wiki_core_rules_zh.py`,
+  `test_wiki_changelog.py`, `test_db_official_zh.py` and
+  `test_db_official_zh_apply.py`.
+- Fresh environment: the five wiki/official-Chinese suites above passed
+  **83 passed, 28 skipped in 1.99 seconds**. The LLM-refinement test file ran in
+  project `.venv`, which includes its OpenAI SDK dependency; the clean subset
+  intentionally contains no provider SDK. Direct PDF extraction itself also
+  passed in the clean subset. JUnit evidence attributes all 28 skips in both
+  runs to absent official PDFs/manifest, refined core-rule output or canonical
+  SQLite. No skips were changed or bypassed with copied assets.
+- Identical temporary-PDF compatibility probes passed in both environments:
+  `llm_refine.extract_pages()` preserves one-based physical page numbering,
+  empty pages and SHA-256 of exact extracted text; `pdf_sections.page_texts()`
+  preserves column ordering; `raw_page_text()` preserves original block order;
+  changelog and official-Chinese extraction retain span text/font size, with
+  the changelog retaining the exact red **0xA31418**, bold flag and page number.
+  No model or LangChain imports occurred. An initial synthetic fixture put both
+  columns on identical baselines and PyMuPDF grouped them in one block on both
+  **1.26.5 and 1.26.7**. The corrected fixture creates distinct blocks with offset
+  baselines. That fixture correction is not an application regression fix.
+- Fresh **pip-audit 2.10.1** audited every exact installed distribution in the
+  clean subset (**35**) and project test environment (**39**). Both queries
+  completed with **zero skips**, exit **1**, and **eight records / four underlying
+  advisories**, all in bootstrap setuptools **65.5.0**. PyMuPDF **1.26.7** has
+  zero findings. Full alias-connected groups and raw JSON are retained. No
+  runtime or bootstrap package was excluded; the separate audit tool environment
+  is not counted. These inventories include bootstrap pip/setuptools and test
+  dependencies, so they are not production-only counts. The setuptools findings
+  remain exactly those recorded in earlier increments and are not resolved here.
+
+Evidence is ignored and local under
+`C:/Users/Administrator/.codex/worktrees/release-python-security/RAG/db_sources/python-security/iteration-4/`:
+advisory JSON, primary fix commit JSON, tagged changelog, registry metadata,
+clean/baseline installation reports and logs, `pdf-security-probe.py` and three
+before/after outputs, `pdf-compatibility-probe.py` and both outputs, initial
+fixture block evidence, both test logs/JUnit XML, inventories, audit pins,
+raw audits/logs/exit codes/alias groups, and `verification-summary.json`.
+`inventory.py` and `summarize-evidence.py` reproduce the inventory and grouping.
+
+Reproduce the clean subset with the prescribed base interpreter's `-m venv`,
+then that environment's full `Scripts/python.exe` path with `-m pip install -r
+requirements-server.txt pymupdf==1.26.7 pytest==9.0.3 httpx==0.28.1 tqdm==4.67.3`.
+Run `-m pip check`, the five named suites with `-m pytest -q`, and either probe
+with a new JSON output path. The baseline CLI probe uses a separate environment
+with only `pymupdf==1.26.5`. Audits use the separate audit interpreter, exact
+inventory pin files and `--no-deps --disable-pip --format json`. Set the authorized
+proxy for external access, bypass localhost and use `PYTHONUTF8=1` on Windows.
+There were no background services; all CLI subprocesses exited and temporary
+files were removed. No commit or orchestrator-notes edit was made.
+
+The actual scoped requirement/report diff and
+`git -c core.whitespace=cr-at-eol diff --check` passed. Full dependency resolution,
+CPU torch, LangChain/model/provider/Streamlit compatibility, full native suite,
+runtime/dev separation and Linux/Docker validation remain outstanding. Host
+integration and final acceptance gates below still apply.
+
+## Earlier increment: Requests patch — October 1, 2026
 
 Requests **2.32.5 → 2.33.0** is installed in the isolated project `.venv` and
 a second newly created Python **3.11.9** server environment. The exact pin is
