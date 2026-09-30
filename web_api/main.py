@@ -151,7 +151,9 @@ def _run_answer(req: ChatRequest) -> Answer:
     if llm is None:
         return _degraded_answer(req.question)
     from agent.tools import TOOLS
-    recorder = TraceRecorder(TOOLS)
+    from agent.public_errors import public_tool_wrapper
+    recorder = TraceRecorder({name: public_tool_wrapper(name, fn) if name == "rag_search" else fn
+                              for name, fn in TOOLS.items()})
     from agent.loop import AgentLoop
     loop = AgentLoop(llm=llm, tools=recorder.wrapped_tools())
     with _SESSIONS.session(req.session_id) as session:

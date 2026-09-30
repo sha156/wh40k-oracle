@@ -16,6 +16,8 @@ from types import MappingProxyType
 from typing import Any, Callable, Dict, List, Optional, Protocol
 
 from agent.context import SessionContext
+from agent.public_errors import (PublicActionError, PublicToolContractError,
+                                 public_failure, public_tool_result)
 from agent.tools import PUBLIC_TOOL_ARGUMENTS, TOOL_SPECS, TOOLS
 
 MAX_STEPS = 6
@@ -119,27 +121,27 @@ class AgentResult:
 def _validate_action(step: Any) -> None:
     """Check parsed/injected actions before dispatch, without coercion or retries."""
     if not isinstance(step, dict):
-        raise ValueError("next_step 未返回动作对象")
+        raise PublicActionError("next_step 未返回动作对象")
     action_type = step.get("type")
     if not isinstance(action_type, str) or action_type not in ("tool_call", "final"):
-        raise ValueError("动作 type 必须是 tool_call 或 final")
+        raise PublicActionError("动作 type 必须是 tool_call 或 final")
     if action_type == "tool_call":
         tool_name = step.get("tool")
         if not isinstance(tool_name, str) or not tool_name.strip():
-            raise ValueError("tool_call 的 tool 必须是非空字符串")
+            raise PublicActionError("tool_call 的 tool 必须是非空字符串")
         # Omitted args retain the existing no-argument contract. Explicit falsey
         # non-mappings (null, [], false, etc.) must never become executable {}.
         args = step.get("args", {})
         if not isinstance(args, Mapping) or any(not isinstance(key, str) for key in args):
-            raise ValueError("tool_call 的 args 必须是字符串键的参数映射")
+            raise PublicActionError("tool_call 的 args 必须是字符串键的参数映射")
     else:
         # Missing/empty text keeps the existing bounded empty-final nudge, but
         # containers/numbers must not be laundered into a successful answer.
         if not isinstance(step.get("content", ""), str):
-            raise ValueError("final 的 content 必须是字符串")
+            raise PublicActionError("final 的 content 必须是字符串")
         sources = step.get("sources", [])
         if not isinstance(sources, list) or any(not isinstance(source, dict) for source in sources):
-            raise ValueError("final 的 sources 必须是引用对象列表")
+            raise PublicActionError("final 的 sources 必须是引用对象列表")
 
 
 def _is_empty_result(tool_name: str, result: Any) -> bool:
@@ -415,7 +417,7 @@ class AgentLoop:
         if allowed is None or any(arg not in allowed for arg in step.get("args", {})):
             # No argument names/values or helper paths enter the public reason.
             # Reject the entire action; never silently strip or coerce kwargs.
-            raise ValueError("工具调用不符合公开参数契约，未执行")
+            raise PublicToolContractError("工具调用不符合公开参数契约，未执行")
 
     def run(self, user_input: str, session: Optional[SessionContext] = None) -> AgentResult:
         session = session if session is not None else SessionContext()
@@ -424,7 +426,8 @@ class AgentLoop:
         try:
             result = self._run_tool_loop(user_input, intent, session.history)
         except Exception as exc:
-            result = self._fallback(user_input, intent, tool_calls=[], reason=f"异常: {exc}")
+            result = self._fallback(user_input, intent, tool_calls=[],
+                                    reason=f"处理异常: {public_failure(exc).describe()}")
 
         session.append_turn("user", user_input)
         session.append_turn("assistant", result.answer)
@@ -464,7 +467,7 @@ class AgentLoop:
                 _validate_action(step)
                 self._validate_tool_arguments(step)
             except Exception as exc:
-                return recover(f"答案整理异常: {exc}")
+                return recover(f"答案整理异常: {public_failure(exc).describe()}")
 
             if step.get("type") == "final":
                 # 零工具直答门控：查/判/算 类问题若一次工具都没调就想给最终答案，
@@ -512,17 +515,18 @@ class AgentLoop:
                 continue
 
             try:
-                result = tool_fn(**args)
+                result = public_tool_result(tool_name, tool_fn(**args))
             except Exception as exc:
                 # 与未知工具的恢复策略一致（评审 M#6）：错误写回 messages 让模型
                 # 修正参数重试或换工具；同一工具**连续第二次**异常才降级 classic
                 # （达到 max_steps 时由循环末尾的兜底降级）。
                 if last_exception_tool == tool_name:
-                    return recover(f"{tool_name} 连续两次异常: {exc}", tool_calls + [tool_name])
+                    return recover(f"{tool_name} 连续两次异常: {public_failure(exc).describe()}",
+                                   tool_calls + [tool_name])
                 last_exception_tool = tool_name
                 messages.append({
                     "role": "tool", "name": tool_name,
-                    "content": {"error": f"{tool_name} 执行异常: {exc}。"
+                    "content": {"error": f"{tool_name} 执行异常: {public_failure(exc).describe()}。"
                                          "请修正参数后重试，或改用其他工具。"},
                 })
                 continue
@@ -557,7 +561,7 @@ class AgentLoop:
                 _validate_action(step)
                 self._validate_tool_arguments(step)
             except Exception as exc:
-                return recover(f"工具步数用尽后答案整理异常: {exc}")
+                return recover(f"工具步数用尽后答案整理异常: {public_failure(exc).describe()}")
             answer = step.get("content", "")
             if step.get("type") == "final" and answer.strip():
                 return AgentResult(
@@ -596,7 +600,7 @@ class AgentLoop:
 
         if rag_fn is not None:
             try:
-                rag_result = rag_fn(user_input)
+                rag_result = public_tool_result("rag_search", rag_fn(user_input))
                 passages = rag_result.get("passages", [])
                 if not passages:
                     # 审查 H1：rag_search 的 error=True 表示**检索管线/环境不可用**，
@@ -610,7 +614,7 @@ class AgentLoop:
                         note = f"{reason}；rag_search 兜底也未检索到相关内容"
             except Exception as exc:
                 unavailable = True
-                note = f"{reason}；rag_search 兜底异常: {exc}"
+                note = f"{reason}；rag_search 兜底异常: {public_failure(exc).describe()}"
             tool_calls = tool_calls + ["rag_search"]
 
         return AgentResult(
