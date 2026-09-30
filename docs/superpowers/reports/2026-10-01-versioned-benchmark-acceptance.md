@@ -1,5 +1,83 @@
 # Versioned benchmark preparation acceptance — October 1, 2026
 
+## Strict-input correction iteration 1 — optional canonical identity
+
+This bounded iteration starts from clean `codex/release-benchmark-versioning`
+at `e4afad9719a25c720cdb0a81ee691a0c03b99102`, after the source-cited v3.7/profile
+stage committed and exited. No benchmark/profile Python process was running.
+The host's independent review of `0268450dc3a279bae64da315456793387702ea36`
+identified two P2 input gaps. This iteration corrects only the first; recursive
+duplicate JSON object-key rejection remains the next unit. Earlier report
+sections describe their original scope. No full strict-input stop is claimed.
+
+The selected-gold loader accepted non-null `canonical_id` values `42`, `true`,
+`[]` and `""`, which were preserved in emitted `gold_metadata` and rejected by
+the existing result comparator. Against the exact committed starting runner,
+all four actual CLI-main probes reached one resource initialization and one
+stub worker, emitted the malformed identity, and then failed self-comparison
+with exit 2. These disposable fixtures and offline stubs made no provider calls.
+
+`_validate_gold_document` now requires every non-null canonical identity to be
+a nonempty string, using the comparator's existing shape requirement. It
+rejects before limits, credentials, resources and worker submission. Values
+are neither coerced nor trimmed; null and absent identities remain legitimate.
+The original #63 null-gold contract is retained. No comparator, shared helper,
+source-coverage validator, worker, judge or scoring change was needed.
+
+The identical new paired subset against committed `e4afad971` returned
+**21 failed / 10 passed**: six invalid loader shapes and fifteen invalid-tail
+CLI cases were accepted; baseline population and nine valid-output controls
+already passed. After correction, all five existing focused files pass
+**330 tests**, with five existing SWIG warnings and no skips/deselections:
+
+```powershell
+& 'D:/Project/py/RAG/.venv/Scripts/python.exe' -m pytest tests/test_qa_bench.py tests/test_qa_bench_gold_selection.py tests/test_qa_bench_provenance.py tests/test_compare_bench_runs.py tests/test_qa_bench_source_coverage.py -q --tb=short
+```
+
+This includes all 299 preceding gates plus 31 new cases. Invalid metadata
+beyond `--limit 1` rejects in classic, agent and layered modes before even the
+credential check. Actual corrected CLI-main probes perform zero resource,
+worker or client calls and emit no file. Four direct CLI subprocesses also
+exit 1 with the explicit canonical-identity error and no benchmark progress
+output. Null, absent and exact nonempty strings round-trip through actual
+output and self-comparison in all three modes, preserving exact CRLF-byte SHA
+and all other metadata. Frozen baseline population remains 96 string identities,
+11 nulls and eight absent fields. Existing historical comparison, version
+override, partial/wrong scoring and source-qualification controls remain green.
+
+Before/final verification covers **65 protected tracked inputs**, including
+gold/history JSON, the unchanged comparator and source-coverage helper.
+All hashes are unchanged. Root/frozen v3.6 retain
+`a402aed889eff64f3419d7a6768ff9b168a5912d0bc9c3e92cf225913a7fe3cc`;
+v3.7 retains
+`aeed2af4f6e225a5761f8e62f541cd3472f67ac43ebffe7865747a96b31126b0`.
+All 115 ordered profile IDs/questions/factions/types/canonical identities and
+denominators are retained. AST comparison shows only
+`_validate_gold_document` changed among existing runner functions; all module
+assignments, factual judges, mechanical scoring and coverage ceilings remain
+exact. No primary-source audit was repeated.
+
+Compilation passes on the existing full Python 3.9.1 interpreter and stable
+Python 3.11.9; configured whitespace checks pass. Ruff remains unavailable,
+and no dependencies were installed. The actual scoped implementation/test diff
+was inspected locally. Ignored evidence is in this worktree's
+`db_sources/release-check-20260930/benchmark-strict-input/iteration-1/`:
+`before.json`, `base-qa_bench.py`, `red.txt`, `base-actual-cli-probes.json`,
+`candidate-actual-cli-probes.json`, `tests.txt` and `verification.json`, plus
+reproducible probe/verification scripts. Independent host review remains pending.
+GNHF owns commits; no manual staging, commit, push or merge occurred. No service
+or persistent process was started, and no paid benchmark, network, provider,
+runtime or source/asset mutation occurred. This is offline input validation,
+not a fresh all-115 benchmark or release acceptance.
+
+The authorized local handoff extends existing benchmark checkpoint/roadmap,
+learning decision and loader error-10 record plus their indexes. No duplicate
+error file or invented commit explanation was created. Ignored
+`handoff-integrity.json` verifies preserved unrelated prior content and unchanged
+staged diffs in devlog, learn-notes and error-notes. This records only the newly
+verified identity correction; prior profile/freeze handoffs were retained.
+No harness promotion or knowledge publication occurred.
+
 ## Iteration 2 — coverage instruction integrity
 
 The initial v3.7 profile and narrow coverage ceiling are now committed by GNHF

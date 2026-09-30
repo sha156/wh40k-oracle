@@ -9,6 +9,7 @@ import pytest
 
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent / "scripts"))
 import qa_bench  # noqa: E402
+import compare_bench_runs  # noqa: E402
 
 
 def _document():
@@ -200,3 +201,59 @@ def test_malformed_declared_source_limitations_are_rejected(tmp_path, invalid):
     _write(selected, document)
     with pytest.raises(ValueError, match="source_limitations"):
         qa_bench.load_questions(limit=1, gold_path=selected)
+
+
+@pytest.mark.parametrize("mode", ["classic", "agent", "layered"])
+@pytest.mark.parametrize("identity", [42, True, [], "", " \t"])
+def test_cli_invalid_identity_rejected_before_credentials_resources_or_worker(
+        tmp_path, monkeypatch, capsys, mode, identity):
+    document = _document()
+    # Invalid metadata outside --limit still invalidates the whole selection.
+    document["details"][1]["canonical_id"] = identity
+    selected = tmp_path / "invalid.json"
+    _write(selected, document)
+    output = tmp_path / "must-not-exist.json"
+    monkeypatch.delenv("DEEPSEEK_API_KEY", raising=False)
+
+    def forbidden(*args):
+        pytest.fail("invalid canonical identity reached benchmark work")
+
+    for name in ("init_resources", "make_client", "run_one", "run_one_layered"):
+        monkeypatch.setattr(qa_bench, name, forbidden)
+    argv = ["qa_bench", "--gold", str(selected), "--out", str(output), "--limit", "1"]
+    argv += ["--layered"] if mode == "layered" else ["--path", mode]
+    monkeypatch.setattr(sys, "argv", argv)
+    with pytest.raises(ValueError, match=r"details\[1\]\.canonical_id.*nonempty text"):
+        qa_bench.main()
+    assert not output.exists()
+    assert "[qa_bench] mode=" not in capsys.readouterr().out
+
+
+@pytest.mark.parametrize("mode", ["classic", "agent", "layered"])
+@pytest.mark.parametrize("identity_kind", ["text", "null", "absent"])
+def test_valid_optional_identity_round_trips_through_actual_output_and_comparator(
+        tmp_path, monkeypatch, mode, identity_kind):
+    document = _document()
+    for row in document["details"]:
+        if identity_kind == "null":
+            row["canonical_id"] = None
+        elif identity_kind == "absent":
+            del row["canonical_id"]
+        else:
+            # IDs are exact strings, including leading zeros and surrounding space.
+            row["canonical_id"] = " 000000001 "
+    selected = tmp_path / "valid.json"
+    raw = _write(selected, document)
+    output = tmp_path / "result.json"
+    _offline(monkeypatch, [])
+    argv = ["qa_bench", "--gold", str(selected), "--out", str(output), "--workers", "1"]
+    argv += ["--layered"] if mode == "layered" else ["--path", mode]
+    monkeypatch.setattr(sys, "argv", argv)
+    qa_bench.main()
+    result = json.loads(output.read_bytes())
+    assert result["summary"]["gold_source"]["sha256"] == hashlib.sha256(raw).hexdigest()
+    for original, emitted in zip(document["details"], result["details"]):
+        assert emitted["gold_metadata"] == {
+            key: value for key, value in original.items()
+            if key not in ("id", "faction", "question", "gold", "gold_type")}
+    assert compare_bench_runs.main(["compare", str(output), str(output)]) == 0

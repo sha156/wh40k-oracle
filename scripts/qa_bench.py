@@ -217,6 +217,12 @@ def _validate_gold_document(data):
         if identity in seen:
             raise ValueError(f"{label}.id is duplicated: {identity}")
         seen.add(identity)
+        canonical_id = item.get("canonical_id")
+        # Optional/null identities are historical data; non-null values must
+        # satisfy the same contract as emitted result metadata in the comparator.
+        if canonical_id is not None and (
+                not isinstance(canonical_id, str) or not canonical_id.strip()):
+            raise ValueError(f"{label}.canonical_id must be nonempty text when present")
         for field in ("faction", "question"):
             if not isinstance(item.get(field), str) or not item[field].strip():
                 raise ValueError(f"{label}.{field} must be nonempty text")

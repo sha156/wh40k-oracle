@@ -166,3 +166,19 @@ def test_all_supported_scoring_types_retained(tmp_path, gold_type):
     document = _document()
     document["details"][1]["gold_type"] = gold_type
     assert qa_bench.load_questions(gold_path=_write(tmp_path, document))[1]["gold_type"] == gold_type
+
+
+@pytest.mark.parametrize("identity", [42, True, [], {}, "", " \t"])
+def test_invalid_optional_canonical_identity_rejected_before_limit(tmp_path, identity):
+    document = _document()
+    document["details"][1]["canonical_id"] = identity
+    with pytest.raises(ValueError, match=r"details\[1\]\.canonical_id.*nonempty text"):
+        qa_bench.load_questions(limit=1, gold_path=_write(tmp_path, document))
+
+
+def test_baseline_optional_identity_population_retained():
+    document, _, _ = qa_bench._read_gold_document()
+    rows = document["details"]
+    assert sum(isinstance(row.get("canonical_id"), str) for row in rows) == 96
+    assert sum("canonical_id" in row and row["canonical_id"] is None for row in rows) == 11
+    assert sum("canonical_id" not in row for row in rows) == 8
