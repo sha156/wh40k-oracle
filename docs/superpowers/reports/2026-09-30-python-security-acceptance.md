@@ -1,5 +1,288 @@
 # Python dependency security acceptance — September 30, 2026
 
+## Complete actual Linux family — October 1, iteration 4
+
+**The entire selected CPU family now installs and passes its framework,
+provider, Streamlit and native-extension compatibility checks on Linux.
+All four actual Linux inventories and complete audits reconcile. The full
+native suite retains one missing-PDF fixture failure; the 43 existing Windows
+SQLite/cleanup failures remain in this isolated dependency worktree. Native
+recovery is now separately merged into main; its passing available Windows CI
+does not replace this candidate's integrated final-family rerun. The loop stop
+condition is not met.** No application source, package version or production
+asset changes in this iteration. The shared constraint header now describes
+the verified Linux installation rather than a metadata-only projection.
+
+### Actual installation and reproducible platform policy
+
+The rehearsal uses the existing `python:3.11-slim-bookworm` image, with its
+exact image ID/digest saved in every command record. The actual environment is
+**CPython 3.11.16 / Linux x86_64 / glibc 2.36**. No image is built, retagged or
+published. The required archival/capacity handoff for a disk-backed build has
+not arrived. Instead, the existing image runs finite containers with a
+read-only root, dropped capabilities, no public ports and no production
+mounts. Validation containers have network disabled. Only the CPU installation
+uses the configured build proxy, `http://host.docker.internal:7897`.
+
+All persistent Linux environments, installer scratch, wheel downloads and
+cache writes are confined to the newly created resource child:
+
+`D:/Project/py/RAG/db_sources/release-check-20260930/python-security-worktree-environments/full-stack-linux-rehearsal-iteration4/`.
+
+The native runtime/dev interpreter is the Linux executable `venv/bin/python`
+inside that directory, mounted as **`/rehearsal/venv/bin/python`**. The separate
+server and CI interpreters are **`/rehearsal/server-venv/bin/python`** and
+**`/rehearsal/ci-venv/bin/python`**. They require the recorded Linux base image
+and mount mapping; they are not runnable Windows virtualenvs. Every environment
+starts in a nonexistent directory with `/usr/local/bin/python -m venv --copies`.
+No retained subset environment, main `.venv`, credential file, other checkout,
+model or index is modified or executed.
+
+The credential-free source snapshot contains **5,861 tracked files /
+34,786,190 bytes**, copied from this checkout. Every copied snapshot hash still matches
+after all checks. The wheelhouse contains **132 artifacts / 507,176,729 bytes**,
+each checked against saved primary metadata SHA-256 values. It includes the
+non-yanked Transformers 5.10.4 wheel, the source-only jieba archive and the
+previously downloaded official CPU wheel. The preparer rejects an existing
+environment and saves complete source/artifact manifests.
+
+The actual sequence follows the final Dockerfile dependency declarations:
+
+1. Install **pip 26.2.1 / setuptools 83.0.0** from `requirements-bootstrap.txt`.
+2. Install `requirements-torch-cpu.txt` with
+   `--build-constraint requirements-bootstrap.txt`. This step retains the
+   **official CPU index only**, shared constraints and exact `torch==2.14.0+cpu`.
+   Although the local verified wheel is offered through `--find-links /cpu`,
+   pip selects the official remote CPU wheel; the successful download/report
+   is retained. Its SHA-256 is exactly
+   `673dbf5c9bbadfffab7a386b6dd7a0c219f1408a328b7b4e86d0ae551cdafa42`.
+3. Install `requirements-docker.txt` from the hash-verified local wheelhouse,
+   using `--no-index --find-links /rehearsal/wheelhouse` and the same build
+   constraints. This installs the complete runtime declaration, including UI
+   and optional reranking packages. Linux successfully builds **jieba 0.42.1**
+   from its verified source archive under the patched isolated build tooling.
+4. Capture the runtime inventory, install `requirements-dev.txt`, then capture
+   the dev inventory. Separately create/bootstrap/install the server and CI
+   sets from their actual requirement files and the same wheelhouse.
+
+All **20 installer/check/inventory commands exit 0**. The CPU and complete
+runtime installs take **734.686 / 1,586.485 seconds** on the Windows-backed
+bind mount. These include slow file writes and are not production Linux
+startup/inference benchmarks. Local `pip.conf` files omit optional bytecode
+compilation in these new rehearsal environments; global pip/cache settings
+are untouched. Every final environment passes `pip check`. The build-constrained
+native `requirements.txt` dry-run requires **zero changes**. All install reports,
+build logs, commands, exact pins and package metadata are retained.
+
+| Actual Linux scope | Installed distributions | Difference from actual Windows scope |
+|---|---:|---|
+| Runtime | 129 | Add hf-xet/uvloop; remove colorama/tzdata |
+| Native dev | 132 | Add hf-xet/uvloop; remove colorama/tzdata |
+| Lightweight server | 26 | Add uvloop; remove colorama |
+| Model-free CI | 79 | Add uvloop; remove colorama |
+
+All four actual inventories exactly match the complete Linux projections.
+Every shared Windows/Linux package has the same selected version; equal
+distribution totals do not imply identical platform membership. Bootstrap
+tooling and every final transitive remain counted. No CUDA/Triton, audit-tool,
+retired ZhipuAI SDK or PyJWT distribution enters these application sets.
+The previously documented Windows `platform_machine=""` qualification remains.
+
+| Selected supported family | Actual Linux version |
+|---|---|
+| LangChain / core / community / classic | 1.3.9 / 1.4.6 / 0.4.2 / 1.0.8 |
+| Experimental / text-splitters | 0.4.2 / 1.1.2 |
+| HuggingFace integration / OpenAI integration | 1.2.2 / 1.1.14 |
+| OpenAI SDK | 2.54.0 |
+| Transformers / SentenceTransformers | 5.10.4 / 5.7.0 |
+| CPU torch / NumPy / FAISS | 2.14.0+cpu / 1.26.4 / 1.15.1 |
+| FlashRank / ONNX Runtime | 0.2.10 / 1.30.0 |
+| Streamlit | 1.59.0 |
+| Linux hf-xet / uvloop | 1.6.0 / 0.22.1 |
+
+The exact complete inventories and shared **134-pin** constraints supply the
+remaining transitive versions. This iteration selects no additional direct
+package patch and needs no production framework import/API edit.
+
+### Actual compatibility checks and exact test reconciliation
+
+- The complete import probe loads every selected LangChain family module,
+  Transformers, SentenceTransformers, FlashRank, ONNX Runtime, FAISS, Streamlit,
+  PyMuPDF, jieba, hf-xet, uvloop and the actual application/ingestion/refinement
+  modules. CPU torch reports **2.14.0+cpu / `torch.version.cuda is None`**.
+  Actual torch/NumPy/FAISS operations produce finite normalized **2 x 1024
+  synthetic tensors**, return the two correct FAISS nearest-neighbor identities,
+  and complete a real **`torch.load(weights_only=True, map_location='cpu')`**
+  tensor round trip. A tiny ONNX Add graph executes through the actual
+  **CPUExecutionProvider** and returns **[4.0, 6.0]**. These are genuine native
+  extension operations, explicitly synthetic inputs, not text-model inference.
+- The same seven meaningful framework/ingestion/retrieval/provider/refinement
+  suites pass **85 tests / zero skips / three warnings in 121.32 seconds**.
+  JUnit case identities exactly match the preceding 85-case Windows run.
+  Actual semantic chunking, FAISS serialization/retrieval, BM25, RRF/rules-floor
+  behavior, citations and streaming chain APIs remain supported.
+- Both actual SDK protocol probes pass DeepSeek and GLM streaming, structured
+  response/citations, benchmark response, 400 format fallback and 429 propagation.
+  The real `app.main()` Streamlit AppTest passes both provider selections,
+  streamed output, citation records/display and history reruns, with zero
+  AppTest exceptions. HTTP resources remain synthetic and network is disabled;
+  these results do not claim paid-provider or browser/service acceptance.
+- The **entire available native suite** runs with explicit `tests/` collection:
+  **2,561 passed / 336 skipped / one failed / zero errors**, ten warnings,
+  **430.60 seconds**; JUnit has **2,898 cases**. Every case identity and every
+  skipped identity/reason exactly matches the preceding complete Windows run.
+  All 336 existing asset skips remain visible. Exactly **43 Windows failures/
+  errors become passed**: 40 SQLite lock failures/errors and three archive
+  cleanup assertion failures. The source is unchanged; this is Linux platform
+  evidence, not a repair of Windows connection lifetime/cleanup behavior.
+- The model-free CI command follows the existing workflow's explicit
+  **`--ignore=tests/test_app_retrieval.py`** boundary. Those local application
+  tests are exercised in the complete native run. CI reports **2,549 passed /
+  342 skipped / one failed / zero errors**, nine warnings, **372.66 seconds**;
+  JUnit has **2,892 cases**. Every case and skipped identity matches the prior
+  Windows CI run. Four skipped messages differ only in the actual interpreter
+  path; their missing-jieba reason is unchanged. All other skip messages match
+  exactly. The same 43 Windows failures/errors become passed, with no new
+  failure, error or skip identity in either Linux suite.
+- The pure **26-package server** enters the actual API lifespan and processes
+  direct ASGI requests on its installed **uvloop**. Health/OpenAPI/invalid-chat
+  statuses are **200 / 200 / 422**; no torch, Transformers, SentenceTransformers,
+  FAISS, Streamlit or LangChain module is imported. The absent structured DB is
+  reported by preflight. No TestClient dependency is added to the runtime set.
+
+The only Linux suite failure is the unchanged
+`tests/test_wiki_keyword_index.py::test_parse_quickref_too_few_entries_raises`:
+
+```text
+FileNotFoundError: Official Core Rules PDF missing:
+data/官方中文/chi_01-06_warhammer40k_new40k_core_rules-gihrxgzhgo-iickazpeog.pdf
+```
+
+It remains a **failure**, not an added skip or suppressed test. The negative
+fixture still reaches the untracked official PDF dependency before its intended
+too-few-entries assertion. Source owners retain the fixture fix, Windows SQLite
+fixes and full Windows rerun. No production PDF is copied to make this test green.
+
+The final-family real **bge-m3 / 5,905-document archived FAISS / BM25/hybrid/RRF /
+local FlashRank** evidence remains the exact successful **iteration 3 Windows**
+probe: actual finite normalized English/Chinese 1024-d embeddings, unchanged
+model/index hashes and document identities, weights-only model loading and
+zero PT2 loads. No declaration/application source affecting that result changes.
+Linux mounts no production model/index/reranker assets, so no Linux text-model,
+archived-index or pretrained-reranker inference result is invented. Integrated
+asset-backed Docker/live/browser acceptance remains host-owned.
+
+### Complete installed-tree audits and retained residuals
+
+The separately inventoried **30-distribution auditor environment** uses
+pip-audit **2.10.1**, exact actual Linux installed pin files,
+`--no-deps --disable-pip --format json`, a new confined audit cache and **no
+advisory exclusions**. All seven audit commands exit 0. The reconciler checks
+set equality, every version, all findings/fixes and every raw skipped row.
+
+| Actual Linux scope | Raw exact PyPI audit | CPU-mapped complete audit |
+|---|---|---|
+| Runtime, 129 distributions | zero findings; one explicit torch +cpu skip | 129 / zero findings / zero skips |
+| Dev, 132 distributions | zero findings; one explicit torch +cpu skip | 132 / zero findings / zero skips |
+| Server, 26 distributions | 26 / zero findings / zero skips | not needed |
+| CI, 79 distributions | 79 / zero findings / zero skips | not needed |
+
+Only the installed, official-hash-verified **torch 2.14.0+cpu** maps to upstream
+**2.14.0** for the registry query. The separate fresh exact **+cpu OSV audit**
+reports **one package / zero findings / zero skips**. Raw exact-PyPI CPU skips
+are retained and are not described as clean exact-PyPI audits. No CPU/model,
+bootstrap or final transitive package disappears from the denominator.
+
+Registry-zero remains qualified by all earlier inspected residuals: Streamlit
+array sampling, vendored distutils Unicode exclusions, torch PT2 unsafe-pickle
+behavior, and the selected Transformers conversion/nested-configuration scope.
+No advisory suppression, unsupported package substitution, remote-code/pickle
+safety guarantee or new fix claim is introduced. Existing source import logs
+also retain their hf-mirror TLS-warning text; network-disabled probes make no
+mirror request, and no certificate/global credential setting is changed here.
+
+### Preserved probe failures, resource limits and independent handoff
+
+Every unsuccessful preparation/probe attempt remains separately reviewable:
+
+- The initial preparer expected CPU metadata in the ordinary PyPI metadata
+  directory. Its FileNotFoundError is saved; the corrected preparer consumes
+  the dedicated verified official-CPU record before downloading any wheel.
+- The first import helper lacked `/app` on `sys.path`. All third-party imports
+  completed before `ModuleNotFoundError: No module named 'app'`; adding the
+  project path fixes this helper, with no production import/API edit.
+- Linux pytest capture could not truncate its unlinked temporary file on the
+  Windows D: bind mount. A separate benign standard-library reproduction proves
+  **FileNotFoundError / errno 2** on that share and successful identical
+  write/read/truncate on Linux tmpfs. Tests therefore use a private **1 GiB
+  tmpfs `/tmp/rehearsal-tests`**; installer environments/cache/scratch and durable
+  evidence remain on D:. Standard pytest capture and test assertions are retained.
+- Concurrent output collection briefly copied an older control script over
+  its edited source, producing `ValueError: validate-native-rest`. Collection
+  now excludes `.py` control files; the failed wrapper and original installer
+  body/hash are saved. No environment or package installation is repeated.
+- A server probe incorrectly requested TestClient's absent **httpx2** test
+  extra in the deliberately lightweight runtime. The corrected direct-ASGI
+  probe tests the same application/lifespan on uvloop without adding packages.
+- An initial CI command omitted the workflow's existing local-app exclusion
+  and failed collection on missing jieba. The corrected command matches the
+  actual workflow; complete native testing covers the excluded local app tests.
+- Streamlit's initial **60-second** AppTest budget expired during cold imports
+  from the slow bind-mounted environment. With the explicit **300-second**
+  probe budget, all original functional assertions pass; the full UI process
+  takes **144.616 seconds**. No production timeout or UI behavior changes.
+
+The original installer observer had a 40-minute limit, shorter than this
+Windows-backed file installation. After a second finite observer attached to
+the exact named/id-verified container, only the original owned Python observer
+was terminated. Its observed exit **1**, command/PID, original installer
+body/hash and the replacement wait are preserved. **The same installer/container
+continues unchanged and exits 0**; no environment or install step is restarted.
+The longer observer and all validation/audit subprocesses have finished.
+
+Observed C: free space changes from **4,227,817,472** before rehearsal to
+**2,915,205,120 bytes** after validation; D: remains **185,149,440,000 bytes**
+free. These observations do not substitute for the missing archival/capacity
+handoff. No Docker build, storage relocation, prune, production service command
+or model replacement is attempted. All uniquely named finite containers are
+removed; no browser, server, watcher or other run-owned background process remains.
+
+New evidence is local/ignored under the absolute directory:
+
+`C:/Users/Administrator/.codex/worktrees/release-python-security/RAG/db_sources/python-security/full-stack/iteration4/`.
+
+It includes complete source/wheel manifests, every installed inventory/pin file,
+all installation reports/logs, seven raw audit bodies/exits, the separately
+inventoried auditor, probe scripts/results, failed-attempt prefixes, JUnit,
+per-case platform/skip reconciliation and `verification-summary.json`.
+`prepare-linux.py`, the hash-preserved original installer body,
+`linux-rehearsal.py`, `run-linux.py`, `audit-linux.py` and
+`reconcile-linux.py` record the exact finite calls and ownership guards.
+For a fresh install choose a new resource-root child; completed environment
+directories must not be reused. This is dependency-layer execution using the
+final Dockerfile declarations, not a built-image/non-root deployment claim.
+
+Host handoff remains: review the entire scoped candidate independently, combine
+it with the separately merged Windows SQLite/cleanup and PDF-fixture fixes,
+rerun the complete final-family native suite, integrate concurrent API/frontend/
+source changes, and perform actual
+asset-backed/live/browser/remote-CI/deployment acceptance. The existing workflow
+still selects **Python 3.10** and an unpinned bootstrap upgrade; its obsolete
+3.9 comment and supported-interpreter/bootstrap alignment are reported for the
+host, outside this dependency worker's file ownership. No workflow, external
+knowledge repository, orchestrator notes, manual staging/commit or publication
+is changed here. Root can record the verified NTFS/tmpfs, probe-budget and
+control-file preservation lessons without duplicating earlier knowledge notes.
+
+Final validation inspects the actual two-file diff and passes
+`git -c core.whitespace=cr-at-eol diff --check`. All **11** retained finite
+Python probe/reconciliation scripts parse successfully; the auditor's complete
+30-package membership/versions exactly match iteration 3. Final Docker and
+Windows process checks find no run-owned container, Python helper or Docker
+observer remaining. Package pins and all tracked application/test sources
+are unchanged; only this report and the verified constraint-header comments
+change in Git. No manual commit is made.
+
 ## Non-yanked complete Windows family — October 1, iteration 3
 
 **Transformers 5.10.4 replaces the yanked 5.10.0 candidate and passes a new
@@ -1771,3 +2054,11 @@ No duplicate note, empty entry, invented commit explanation or harness promotion
 is created. Unrelated note bodies and Git indexes are preserved; no manual
 staging, commit or publication occurs. `iteration3/hook-knowledge-handoff.json`
 records exact paths, hashes and checks. Root retains knowledge publication.
+
+## Iteration 4 knowledge handoff and concurrent native-owner status
+
+The explicit post-implementation knowledge handoff updates only project checkpoint/roadmap, the existing platform-membership decision and its index, three distinct resolved rehearsal-error records and their index. Earlier tmpfs noexec, hf-xet read-only logging and GBK/UTF-8 records remain unchanged; no duplicate record or harness promotion is made. Full prior bodies and Git indexes are guarded/preserved. Paths and hashes are saved in `C:/Users/Administrator/.codex/worktrees/release-python-security/RAG/db_sources/python-security/full-stack/iteration4/hook-knowledge-handoff.json`. No package installation, application/test edit, manual staging/commit/push or publication is part of this handoff.
+
+The latest concurrent native recovery supersedes historical pending-fix prose: the report now exists at `D:/Project/py/RAG/docs/superpowers/reports/2026-10-01-native-build-recovery-acceptance.md` and records **3,235 Windows CI passes / 418 unchanged skips / zero failures/errors**, all original44 passing and 238 broader passes/41 asset skips. Read-only actual main Git confirms merge **4092507822d699acafb513d05c07e5214357e58a**, titled "Merge reviewed native SQLite recovery and standalone source fixtures". The old assigned-worktree report path is no longer present; its current Git history belongs to subsequent coordinated work. Do not mutate/recreate that owner checkout or call its old snapshot the current branch.
+
+This concurrent report/merge does not change the dependency candidate's preserved native/CI results, imply a combined final-family rerun, or extend independent review to this complete dependency candidate. The original fixture/lifecycle failures need integration here, rather than another overlapping implementation. Root retains integration/review/hosted CI and actual asset/build/live/browser/deployment gates. GNHF owns the current two-file scoped commit; no iteration-4 commit ID or explanation is invented. All run-owned processes remain stopped.

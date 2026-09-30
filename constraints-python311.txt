@@ -1,7 +1,7 @@
-# Exact Windows CPython 3.11 runtime/dev closure plus Linux marker additions.
+# Exact verified Windows/Linux CPython 3.11 runtime/dev closures.
 # Constraints do not install model/test packages into lightweight sets.
-# uvloop/hf-xet are verified Linux wheel/metadata additions; complete Linux
-# closure still requires the separate actual installation and full audit.
+# Linux uvloop/hf-xet membership is verified by complete clean installations,
+# installed-tree audits and feature probes; platform inventories remain distinct.
 aiohappyeyeballs==2.7.1
 aiohttp==3.14.3
 aiosignal==1.4.0
