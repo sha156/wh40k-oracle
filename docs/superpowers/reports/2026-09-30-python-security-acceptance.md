@@ -1,5 +1,141 @@
 # Python dependency security acceptance — September 30, 2026
 
+## Complete-family platform preflight — October 1, iteration 2
+
+**The candidate still requires a supported Transformers replacement, complete
+Linux installation/audit, and the existing host-owned application fixes.** The
+previous Windows installation and real model evidence remain valid observations
+for their exact versions; they do not establish support for a yanked release.
+This iteration validates the complete declared dependency graph across platform
+markers, rather than upgrading another direct package in isolation.
+
+### Newly verified gates and platform constraints
+
+- **Transformers 5.10.0 is yanked.** Both its wheel and source archive are yanked
+  in the original saved `metadata-transformers.json` as well as the fresh PyPI
+  body. The maintainer's reason is: “We pushed from a week old main branch. It
+  does include the latest model but uncertain its gonna be working properly
+  and mostly it is missing a bunch of fixes!” The previous report omitted this
+  status. Exact pins allow pip to install yanked versions, so installation,
+  `pip check`, successful bge-m3 probes and registry-zero audits do not clear
+  this support gate. No version has been silently substituted. Fresh metadata
+  lists non-yanked 5.10.1/5.10.2/5.10.4 and later releases; selecting and verifying
+  a replacement requires another clean complete installation, real probes and
+  reconciled audits. These are available candidates, not verified replacements.
+- **The current Windows interpreter reports `platform_machine=""`**, despite
+  being 64-bit Windows Python 3.11.9. Hugging Face Hub 1.33.0 therefore does not
+  activate its architecture-marked `hf-xet>=1.6.0,<2` dependency in this environment.
+  Linux x86_64 does. A normal Windows AMD64 marker also activates it. This explains
+  its absence from the exact earlier 129/132 inventories; it is a marker
+  difference, not an audit exclusion. The actual local marker body is retained.
+- Shared constraints now additionally pin **hf-xet 1.6.0** and **uvloop 0.22.1**.
+  Uvicorn's `standard` extra requires uvloop on Linux CPython. Constraints do
+  not force either package into sets whose markers do not request it. The
+  complete Linux closure remains uninstalled; the constraint header says so.
+- The **official Linux torch 2.14.0+cpu wheel** has no CUDA/Triton dependencies.
+  Its metadata differs from the installed Windows CPU wheel, whose Linux-only
+  metadata branches list CUDA packages. The official CPU index's metadata hash
+  matches the Linux sidecar and the actual downloaded wheel's METADATA.
+  `pip download --no-deps --only-binary=:all: --platform manylinux_2_28_x86_64
+  --implementation cp --python-version 3.11 --abi cp311 --index-url
+  https://download.pytorch.org/whl/cpu torch==2.14.0+cpu` succeeds. The
+  **196,227,330-byte** wheel has SHA-256
+  `673dbf5c9bbadfffab7a386b6dd7a0c219f1408a328b7b4e86d0ae551cdafa42`.
+  This is wheel preparation, not a Linux torch installation or inference claim.
+  Raw urllib requests to the index's `download-r2` URL returned 403, while the
+  official `download.pytorch.org` alias worked; the actual pip download succeeded
+  without a declaration, credential, certificate or index change. The endpoint
+  errors and successful pip log are both retained.
+
+### Complete graph and bounded Linux execution
+
+The existing `python:3.11-slim-bookworm` image reports **CPython 3.11.16,
+Linux x86_64, glibc 2.36**. A finite, network-disabled, read-only container captures
+its actual PEP 508 marker environment and compatible wheel tags. The preflight
+then checks **all 134 exact constraint versions**, including bootstrap and the
+two new marker additions, against primary release bodies and compatible wheel
+metadata. Wheel metadata hashes reconcile to the PyPI simple index; torch uses
+the official CPU index. Every activated dependency edge satisfies an exact pin
+and Python version constraint, including requested extras. No CUDA/Triton edge
+is activated. **Jieba 0.42.1 is source-only**: its source metadata is retained,
+and a successful Linux build is still required. Transformers' yanked status is
+explicitly retained in both full model scopes.
+
+| Projected Linux scope | Distributions | Changes from the actual saved Windows scope |
+|---|---:|---|
+| Runtime | 129 | Add hf-xet/uvloop; remove colorama/tzdata |
+| Native dev | 132 | Add hf-xet/uvloop; remove colorama/tzdata |
+| Lightweight server | 26 | Add uvloop; remove colorama |
+| Model-free CI | 79 | Add uvloop; remove colorama |
+
+**These are complete metadata projections, not installed Linux inventories or
+Linux application audits.** Equal counts conceal different members. Each
+scope has its exact projected pins, dependency edges, extras, source-only/yanked
+records and set differences saved separately for later installed-tree comparison.
+
+The two new native wheels are actually installed in a fresh **RAM-backed Linux
+venv** with patched pip 26.2.1/setuptools 83.0.0. It has exactly **four**
+distributions. `pip check` passes; uvloop runs eight concurrent async tasks on
+its native loop; hf-xet imports its Rust extension and exposes the genuine
+download/upload functions. No Xet network request or model download occurs.
+The entire container filesystem is read-only except a **128 MiB tmpfs**; only
+the four hash-verified wheels are mounted read-only from the run-owned resource
+directory. The separate auditor reconciles all **four installed distributions**
+with **zero findings/zero skips**, exit 0, without exclusions. This is explicitly
+an additions/bootstrap probe, **not the complete application audit**.
+
+Initial probe harness failures are preserved: a default non-executable tmpfs
+prevented native `.so` mapping, and a read-only default Xet log directory produced
+an extra console JSON record. The final probe uses executable tmpfs, a fresh
+venv, and a tmpfs-local HF cache; its output and stderr are clean. Early graph
+checks also retained the yanked-release and previously unconstrained hf-xet
+failures before producing the final reconciled projection.
+
+### Validation, artifacts and next work
+
+With the final additional constraints, the existing complete Windows environment
+requires **zero package changes** in the build-constrained requirements dry-run;
+`pip check` passes. The same seven compatibility suites pass again:
+**85 passed / zero skips, 37.87 seconds**. JUnit and exact exits are retained.
+The earlier full-suite **44 failures/errors** and **336 missing-asset skips**
+are not reclassified or claimed fixed; no corresponding application code changed.
+
+Evidence remains under
+`C:/Users/Administrator/.codex/worktrees/release-python-security/RAG/db_sources/python-security/full-stack/`:
+`linux-preflight.py`, `linux-preflight/` (raw compressed simple-index bodies,
+release bodies, hashed metadata and complete projections),
+`linux-marker-wheel-probe.py`, its command/log/inventory/audit bodies,
+`linux-cpu-wheel-verified.json`, CPU download/endpoint logs,
+`iteration2-windows-*` checks and `iteration2-platform-handoff.json`.
+New wheels are confined to the authorized D: resource root's
+`full-stack-linux-marker-wheels/` and `full-stack-linux-cpu-wheels/`; cache/temp
+remain in that root's existing owned children. The retained `.venv`, earlier
+rehearsal environments, production assets and other checkouts are untouched.
+
+The host archival/free-space handoff is still pending. **No image build, image
+retag, service restart, production mount, manual commit or publication occurs.**
+All finite probe containers are removed. Observed free space is not substituted
+for the required archival confirmation. Next work should first replace the
+yanked Transformers candidate and verify the entire resolved family, then
+perform the actual Linux rehearsal with the final Dockerfile, complete installed
+inventories/audits and available compatibility tests after that handoff. Preserve
+the existing Windows SQLite/PDF fixture reproductions for their source owners.
+Independent review, full native rerun after owned fixes and final integration,
+live/CI/deployment acceptance remain host-owned. **The loop stop condition is
+not met.**
+
+The explicit user stop hook subsequently authorizes the local knowledge handoff.
+After duplicate checks, `D:/Project/devlog/wh40k-oracle/CHECKPOINT.md` and
+`ROADMAP.md` record this iteration, its evidence and remaining gates. One raw
+learning decision in `C:/Users/Administrator/learn-notes/decisions/` records
+platform membership/release-support checks; two resolved probe-harness records
+in `C:/Users/Administrator/error-notes/common/` record tmpfs native mapping and
+Xet read-only logging/JSON output. Both indexes are updated. All pre-existing
+note bodies and Git indexes are byte/hash-preserved; no nonexistent commit
+explanation, harness promotion, staging, commit or publication is made.
+`hook-knowledge-handoff.json` records the exact local paths and verification;
+root retains independent review, integration and knowledge publication ownership.
+
 ## Complete-family Windows candidate — October 1, 2026
 
 **The complete CPU family is installed and exercised on clean Windows Python
