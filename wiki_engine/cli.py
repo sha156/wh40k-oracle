@@ -68,11 +68,15 @@ def main() -> None:
                     help="GW 官方简体中文 PDF 目录")
 
     # ── keywords ──
+    from wiki_engine.keyword_index import DEFAULT_PDF, DEFAULT_ZH_PDF
+
     sp = sub.add_parser("keywords", help="生成武器词条（USR）索引 indexes/keywords.md")
     sp.add_argument("--wiki", default="wiki", help="wiki 目录")
     sp.add_argument("--db", default="db/wh40k.sqlite", help="官方结构库")
-    sp.add_argument("--pdf", default="data/11版40K通用技能速查表.pdf",
-                    help="11 版通用技能速查表（判定通用 USR 的真源）")
+    sp.add_argument("--pdf", default=str(DEFAULT_PDF),
+                    help="Official English Core Rules PDF")
+    sp.add_argument("--zh-pdf", default=str(DEFAULT_ZH_PDF),
+                    help="Official Chinese Core Rules companion PDF")
 
     # ── lint ──
     sp = sub.add_parser("lint", help="一致性检查（流水线⑥）")
@@ -191,7 +195,8 @@ def main() -> None:
 
     elif args.cmd == "keywords":
         from wiki_engine.keyword_index import generate as generate_keyword_index
-        rep = generate_keyword_index(Path(args.db), Path(args.wiki), Path(args.pdf))
+        rep = generate_keyword_index(Path(args.db), Path(args.wiki), Path(args.pdf),
+                                     zh_pdf_path=Path(args.zh_pdf))
         print("词条索引: {} 条（通用 {} / 过渡期 {} / 单位特有 {}），"
               "反查 {} 条现役 (词条, 武器) 对 → {}".format(
                   rep["keywords"], rep["groups"].get("universal", 0),
