@@ -207,3 +207,68 @@ Tracked changes are confined to `web_api/official_points.py`, the price-only add
 Project CHECKPOINT/ROADMAP and learning/error notes were searched for duplicates before this distinct price-identity handoff. The verified result is appended to `D:/Project/devlog/wh40k-oracle/CHECKPOINT.md` and `ROADMAP.md`. The decision note is `C:/Users/Administrator/learn-notes/decisions/20261001-exact-price-source-identities.md`; the combined underlying identity-resolution defect is recorded at `C:/Users/Administrator/error-notes/rag/20261001-error-22-price-ledger-identity-collapse.md` with its README index. Earlier handoffs and concurrent entries are preserved. No knowledge-repository staging/commit/push is performed, and no new commit is claimed.
 
 Outcomes 1 and 2 remain implemented; outcome 3's exact price lookup/precedence boundary now has meaningful paired regressions. The optional safe price-only body lookup adapters and their root/security-owned loop branch, reviewed coverage-date propagation, outcome 4's normal/reverse simulation and roster scope gates, and outcome 5's pre-ranking historical eligibility remain. Independent host review, supported Python 3.11/Linux/full-asset, browser, benchmark and CI acceptance, real registry/rebuild publication and actual September 30 promotion remain root gates. This is an isolated incremental candidate; the overall stop condition is not met.
+
+## Iteration 4 — dated historical scope before candidate selection
+
+This iteration implements outcome 5's retrieval preparation boundary in `corpus_manifest.py` and `app.py`, with genuine synthetic flat FAISS/BM25 regressions. The initial tree was clean at `1ca6b129f` on `codex/release-source-coverage`; paired boundary modules are frozen from the original objective base `1cdb85f7605a5f36b833e1423f7136b4e2c449bf`. Prior slices are preserved. No real book declaration, active index, PDF, wiki, database, service, dependency, benchmark or security-owned file was changed.
+
+### Classification and later publication interface
+
+`classify_book_with_origin(book_name, manifest)` now preserves validated optional `status`, `scope` and `effective_date`, alongside edition/layer and the existing origin. Status, when supplied, is exactly `current`, `carry_forward` or `historical`; unknown/null statuses are rejected. Scope is a nonempty reviewed text label of at most 500 characters. Effective dates are canonical calendar-valid YYYY-MM-DD strings or null. Historical status requires a date and can only be declared under an exact book key, never a prefix or default. Scope is a retrieval label, not per-unit full-body certification, and source capture dates must not be substituted for effective dates.
+
+The later promotion worker can publish an exact entry using the existing manifest interface:
+
+```json
+{
+  "books": {
+    "Exact archived chunk book key": {
+      "edition": "11",
+      "layer": "overlay",
+      "status": "historical",
+      "scope": "withdrawn full chapter pack",
+      "effective_date": "2026-06-20"
+    }
+  }
+}
+```
+
+This is a synthetic declaration, not an assertion about any actual source. Use the captured source/legal-date evidence and the actual `ingest.get_book_name()`/indexed book key when preparing real entries. Keep retained carry-forward codex sources eligible and distinguish current Legends-only publications from their withdrawn full predecessors. The official recommendation and saved hashes remain the later promotion authority; this iteration does not infer withdrawal from age, edition, prefix, points membership or catalogue absence.
+
+`resolve_book_metadata(metadata, manifest)` is the new small read-only resolver. Valid exact declarations override old indexed tags even when edition/layer already exist; indexed source tags survive when there is no exact override. Prefix/default tags only fill absent fields. Absent optional declarations retain legacy fields and eligibility. No indexed Document is mutated. The real existing Universal Rules Updates effective date is preserved by classification without editing its declaration.
+
+The later worker still owns real manifest/index publication, exact archived sources and restart/rebuild verification. The runtime resolver lets exact declarations govern already-tagged copied indexes without re-embedding; it does not atomically publish a manifest and SQLite coverage registry or acquire a missing rules body. Outcome 1's separately validated transaction contract remains the body authority.
+
+### Retrieval and historical access
+
+Default BM25 construction excludes confirmed historical documents before corpus statistics, scoring and top-K. Its resource cache includes serialized manifest content, so a new exact declaration cannot reuse the pre-exclusion retriever. If a caller supplies an older complete BM25 retriever, hybrid retrieval rebuilds its eligible candidate set before ranking. Explicit book selections rebuild from the full stored docstore, allowing historical access even when the default BM25 index omitted those sources. An uninspectable adapter can use the full docstore; if neither corpus is inspectable under declared historical scope, it reports a retrieval-side error instead of silently filtering a starved top-K list. Absent-declaration legacy adapters remain supported.
+
+FAISS uses the same metadata eligibility predicate for ordinary recall and the independent rules-floor search. LangChain applies metadata filtering after vector search, so scoped requests fetch at least the complete stored `index.ntotal`/docstore candidate pool before selecting eligible top-K. The existing flat-index guarantee is demonstrated with real synthetic FAISS. This is **not** a pre-ANN filter or a completeness claim for arbitrary approximate indexes. Rules-floor fetch size also grows beyond the historical fixed 8,000 limit. Exact layer overrides govern rules-floor selection before injection; only eligible documents reach RRF/FlashRank. No vectors are copied/re-embedded by retrieval.
+
+The existing `hybrid_retrieve(..., filter_books=[exact_book_keys])` interface is the explicit historical-access boundary. It disables unrelated rules-floor injection and retains historical status/date/scope in returned passages. A dated `source_note` is also prepended to historical passage text so bounded tool excerpts retain the limitation. `format_context` displays supplied status, effective date and scope. Public model-tool schemas/arguments are unchanged; the default web/agent `rag_search(query)` remains current-scoped. Automatic historical question routing or new model-controlled archive access is not added. Root/security owns any later explicit binding.
+
+### Final validation and evidence
+
+All execution used the unchanged `D:/Project/py/RAG/.venv/Scripts/python.exe` (Python 3.9.1). Tests use deterministic query vectors with `embed_documents` forbidden, real FAISS/BM25 and temporary synthetic document stores; no provider, network, real model or production asset call occurred.
+
+| Check | Result |
+| --- | --- |
+| Identical final 31-test matrix against frozen boundary modules | 27 failed / four passed / zero skipped |
+| Final candidate matrix | 31 passed / zero skipped / nine warnings, 17.53 s |
+| Retrieval/classification/audit/coverage/price-identity/historical-card focused suite | 205 passed / nine skipped / eight warnings, 26.01 s |
+| Exact base/candidate saved synthetic index probes | Base returns only archived hits by default; candidate returns current rules and carry-forward codex; both index/docstore hashes unchanged |
+| AST syntax checks of runtime modules/tests, actual diff review and `git diff --check` | Passed |
+| Ruff / Black / Flake8 | Not installed in permitted interpreter; no install attempted |
+
+The base failures include actual dominated-top-K and missing temporal-field defects, plus new validation/interface assertions; they are not 27 independently observed production failures. Four controls pass for legacy absence, unlisted codex/prefix eligibility, current availability and unknown explicit book selection. The FAISS starvation fixture has 8,010 historical vectors before the current rules vector, exceeding the old rules-floor cap; the BM25 fixture independently proves old top-K hits all belong to the archived source before candidate preparation.
+
+The nine skips are existing real-database tests in `test_audit_leftovers_r1.py` (four) and `test_audit_r1_core_chain.py` (five); this worktree lacks `db/wh40k.sqlite`. Exact node IDs/reasons are retained in JUnit XML and `test-summary.json`. Warnings are dependency SWIG/import deprecations plus the existing module-docstring invalid escape warning; no warning suppression was added. These are focused synthetic/local-stack checks, not full-native or real-source promotion acceptance.
+
+Ignored evidence root: `C:/Users/Administrator/.codex/worktrees/release-web-security/RAG/db_sources/source-coverage-preparation/iteration-04/`. It contains exact base/candidate module bytes and hashes, `verify_pair.py`, final base/candidate/focused XML and text, direct probe JSON, saved synthetic `index.faiss`/`index.pkl` pairs and their before/after hashes, plus verification summaries. Frozen modules use their original worktree `__file__` for equivalent local metadata reads. An initial harness import used its evidence-directory path and hit an existing GBK/emoji warning encoding error; preserving the real file-relative location and UTF-8 execution fixed the harness without altering base bytes. An initial focused command used the nonexistent `test_historical_card_prices.py`; its no-collection XML/log is preserved, and the corrected run uses `test_historical_card_points.py`. Neither initial failure is counted as validation.
+
+### Scope, handoff and remaining gates
+
+Tracked changes are only the two owned runtime modules, `tests/test_source_retrieval_scope.py` and this appended report. Actual production PDFs/manifests/database/index/wiki, retained history, Chinese/DSL guards, benchmark gold/results, dependencies, public security/schema/dispatch and live services are untouched. GNHF orchestrator notes/settings are untouched; no manual staging/commit/push/merge/deploy occurred. All started test/probe processes finished; no server/browser/watcher was started.
+
+CHECKPOINT/ROADMAP and learning/error notes were searched for duplicates before the distinct retrieval handoff. Verified results are appended to `D:/Project/devlog/wh40k-oracle/CHECKPOINT.md` and `ROADMAP.md`; the decision is `C:/Users/Administrator/learn-notes/decisions/20261001-scope-retrieval-before-topk.md`, and the resolved underlying retrieval defect is `C:/Users/Administrator/error-notes/rag/20261001-error-23-historical-retrieval-starves-current.md` with its README index. Earlier/concurrent entries remain intact; no new commit is claimed.
+
+Outcomes 1–3 remain implemented, and outcome 5 now has meaningful paired candidate-selection regressions. Outcome 4 remains unfinished: central per-unit coverage/date propagation through datasheet/card/tool evidence, normal/reverse simulation body qualification or denial, and roster validation/critique scope. Optional price-only body adapters and the narrow usable-evidence loop integration remain root/security-owned. Independent host review and supported Python 3.11/Linux/full-asset/browser/benchmark/CI gates, real coverage/manifest/rebuild publication and actual September 30 promotion remain pending. The overall stop condition is not met.
