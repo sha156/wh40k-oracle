@@ -1,6 +1,6 @@
 # Frontend security candidate evidence — September 30, 2026
 
-Status: **incremental implementation; five transitive findings remain**. Iteration 2 upgrades Next and eslint-config-next together to stable 16.3.7, passes a clean install and frontend checks, and repeats native loopback verification. Full audit drops from eight vulnerable packages to five with no critical findings. The iteration-1 evidence below is historical; current results and remaining work are in the iteration-2 section at the end. This report does not establish complete frontend security acceptance, deployment, integration, merge or publication.
+Status: **scoped candidate acceptance ready for independent host review**, updated October 1, 2026 (local UTC+09:00). Next and eslint-config-next are pinned together at stable 16.3.7; compatible transitive updates bring the full npm audit from eight vulnerable packages to **zero**. The final tree passes clean npm ci, unit/type/lint/static-export checks and direct native loopback/HTTP verification. Iterations 1 and 2 below are historical evidence; iteration 3 records the final installed tree and validation. This report establishes the bounded implementation stage only; host integration, final-image browser acceptance, CI, deployment, merge and publication remain outstanding.
 
 Workspace: `C:/Users/Administrator/.codex/worktrees/release-web-security/RAG`, branch `codex/release-web-security`, starting revision `b90e8610d64450def12ca078388b877efea7793d`. The initial tracked worktree was clean. Work stayed in this isolated checkout; no other checkout, Docker service, backend, source/data policy, benchmark, generated wiki or knowledge repository was changed. No Git commit was made by this iteration.
 
@@ -135,3 +135,64 @@ The saved before/after audit responses are `baseline-audit.json` and **`iteratio
 Other iteration-2 raw evidence is `iteration2-{lock-update,npm-ci,unit,typecheck,lint,export-build}.log` with matching `-result.json`, `iteration2-audit-result.json` and audit stderr, plus `iteration2-dev-result.json`, `iteration2-dev-cleanup.log` and `iteration2-dev.{stdout,stderr}.log`.
 
 The actual tracked diff was inspected and is confined to the two framework pins in `web/package.json`, their regenerated `web/package-lock.json`, and this report. The lockfile's original CRLF line endings were retained to avoid a whole-file whitespace diff; the normalized lockfile has identical JSON content to that used by clean npm ci. No UI, backend, source/data, benchmarks, generated wiki or external knowledge-repository changes were made. No temporary process remains. No new browser, Docker or CI result is claimed. Independent host review/integration, complete browser tests on integrated final Docker images, CI, deployment and publication remain host-owned.
+
+## Iteration 3: compatible transitive remediation and final candidate checks
+
+This iteration started from clean revision `23354da32` on `codex/release-web-security`. Its implementation unit was the remaining transitive dependency remediation. Registry metadata confirmed published releases within each existing parent's semver range. The npm maintainer's installed `npm-update.md` documentation states that named updates respect both project and dependency semver constraints; primary published reference: <https://docs.npmjs.com/cli/v11/commands/npm-update>. The bundled Next static-export and CLI guides were read again. No application compatibility edits were needed.
+
+`npm update baseline-browser-mapping brace-expansion browserslist js-yaml nanoid --package-lock-only` succeeded in **5.776 s**. It used the configured local proxy with localhost bypass and changed only the lockfile. No overrides, force flags, audit suppression, development-dependency omissions or direct dependency range changes were used. The six vulnerable dependency entries and four Browserslist support packages changed; no package was added or removed. CRLF was preserved before clean installation.
+
+| Dependency | Iteration-2 version | Final installed version | Existing parent constraint |
+| --- | --- | --- | --- |
+| baseline-browser-mapping | 2.10.43 | **2.11.26** | Next `^2.9.19`; prior Browserslist `^2.10.42`, updated Browserslist `^2.11.26` |
+| brace-expansion, ESLint chain | 1.1.16 | **1.1.21** | minimatch `^1.1.7` |
+| brace-expansion, typescript-estree chain | 5.0.7 | **5.0.12** | minimatch `^5.0.5` |
+| browserslist | 4.28.6 | **4.29.3** | @babel/helper-compilation-targets `^4.24.0` |
+| js-yaml | 4.3.0 | **4.3.2** | @eslint/eslintrc `^4.3.0` |
+| nanoid | 3.3.16 | **3.3.19** | PostCSS `^3.3.16` |
+
+Browserslist's required support packages also update: caniuse-lite **1.0.30001805 → 1.0.30001814**, electron-to-chromium **1.5.389 → 1.5.443**, node-releases **2.0.51 → 2.0.57**, and update-browserslist-db **1.2.3 → 1.3.3**. Brace Expansion 5.0.12 declares Node `20 || >=22`, compatible with this checkout's **Node 24.14.0**. Next/eslint-config-next **16.3.7**, Sharp **0.35.5**, PostCSS **8.5.23**, React/react-dom **19.2.4**, TypeScript **5.9.3**, ESLint **9.39.5** and npm **11.9.0** remain unchanged from iteration 2. Installed dependency chains were inspected with `npm ls --all --json`; it exited 0 with no invalid relationships.
+
+### Full before/after audit
+
+All audits include the development dependency tree. Package counts differ from advisory counts; the exact baseline advisories and affected ranges are retained in the table above. The final response has an empty `vulnerabilities` object and no remaining advisory exceptions or blockers.
+
+| Saved audit | Critical | High | Moderate | Low | Total vulnerable packages | Exit |
+| --- | --- | --- | --- | --- | --- | --- |
+| `baseline-audit.json` — Next 16.2.10 | 1 | 6 | 1 | 0 | **8** | 1 |
+| `iteration2-audit.json` — framework upgrade only | 0 | 4 | 1 | 0 | **5** | 1 |
+| **`iteration3-audit.json` — final installed tree** | **0** | **0** | **0** | **0** | **0** | **0** |
+
+The final audit covers the previously reported baseline-browser-mapping, brace-expansion, browserslist, js-yaml and nanoid advisories, in addition to the Next/Sharp/PostCSS findings resolved in iteration 2. This is npm's registry audit result at the recorded time, not a claim that all possible vulnerabilities have been excluded. No reachable exploitation was demonstrated or claimed.
+
+### Final validation
+
+`npm ci` removed the existing dependency tree through npm's standard clean-install behavior, then installed **361 packages** and audited **362** in this worktree from the updated lockfile. No shared node_modules or junction was used. Checks below ran against that installed tree; raw results preserve UTC timestamps, exit codes and wall times. Unit/type/lint/audit ran concurrently, and export build ran afterward. Times therefore represent concurrent check durations, not isolated performance benchmarks.
+
+| Command | Result | Wall time |
+| --- | --- | --- |
+| Targeted lockfile update, command above | exit 0 | 5.776 s |
+| `npm ci` | exit 0; clean independent install | **38.525 s** |
+| `npm audit --json` | exit 0; **zero vulnerabilities**, including development tree | **3.191 s** |
+| `npm run test:unit` | exit 0; **22 passed**, zero failures/skips | **1.074 s** |
+| `node node_modules/typescript/bin/tsc --noEmit` | exit 0 | **4.319 s** |
+| `npm run lint` | exit 0; no diagnostics | **10.504 s** |
+| `NEXT_OUTPUT=export NEXT_PUBLIC_API_BASE=/api npm run build` | exit 0; Next 16.3.7 Turbopack static export | **10.215 s** |
+| `npm ls` for framework and advisory packages, `--all --json` | exit 0; dependency relationships valid | not timed |
+| Actual diff inspection and `git -c core.whitespace=cr-at-eol diff --check` | passed | not timed |
+
+The final build regenerated nonempty HTML for `/`, `/_not-found`, `/codex`, `/design`, `/roster` and `/simulator`, with filesystem modification times inside the recorded build interval. `iteration3-artifact-inspection.json` records their sizes/timestamps and final lockfile versions. Existing auxiliary output files were excluded from acceptance. The unit runner retains its existing module-type warnings; no tests or application code were changed or weakened.
+
+### Final native loopback verification and cleanup
+
+The actual npm script was launched as `npm run dev -- --port 34206` in this checkout through a hidden Node/npm helper. The port was checked to be free before launch. At `2026-09-30T15:05:54.8045578Z` (October 1 locally), temporary npm PID **29528** started Next **16.3.7**; exactly one listener was observed, **127.0.0.1:34206**, owned by descendant PID **5148**. `/` returned **HTTP 200**, **17,740 bytes**, and a Next payload. The log records `next dev --hostname 127.0.0.1 --port 34206`.
+
+The specific temporary process tree was terminated successfully (cleanup exit 0), and the port then had **zero listeners**. Check plus cleanup took **8.583 s**. The framework-generated change to `web/AGENTS.md` was restored from its prelaunch bytes. No temporary server remains; no Docker service or other owner's process was stopped. This verifies the default native dev binding and an app response. It does not verify browser workflows, HMR or final deployed images; explicit caller CLI overrides can change the binding.
+
+### Review scope, evidence and host-owned acceptance
+
+This iteration's tracked changes are limited to **`web/package-lock.json` and this report**. The cumulative scoped work since `b90e8610d` remains confined to **`web/package.json`, `web/package-lock.json` and this report**: native loopback binding, paired framework pins and compatible lockfile updates. Actual diffs were inspected. Theme and interactions have no source changes; backend, Docker configuration, source/data policy, gold benchmarks, generated wiki and external knowledge repositories are untouched. No Git commit, push, merge or deployment was made by the implementation agent.
+
+Raw evidence remains ignored under the absolute directory **`C:/Users/Administrator/.codex/worktrees/release-web-security/RAG/db_sources/release-check-20260930/web-security/`**. New files are `iteration3-{baseline-browser-mapping,brace-expansion1,brace-expansion5,browserslist,js-yaml,nanoid}-versions.json`; `iteration3-{lock-update,npm-ci,unit,typecheck,lint,export-build}.log` and matching `-result.json`; `iteration3-audit.json`, audit stderr and result; `iteration3-installed-tree.json` and stderr; `iteration3-artifact-inspection.json`; and `iteration3-dev-result.json`, `iteration3-dev.{stdout,stderr}.log`, `iteration3-dev-cleanup.log`. The original baseline and intermediate audit JSON are retained alongside them.
+
+The bounded loop's stop condition is met: a compatible patched dependency tree passes clean installation, full audit and frontend checks; native dev loopback listening is directly verified; the scoped diff and this truthful evidence report are ready for host review. **Independent host review/integration, complete browser tests on the integrated final Docker images, CI, deployment and publication remain host-owned and unverified here.** No main-checkout E2E result is attributed to this candidate. Installed-tree remediation does not establish the security of Next's precompiled internals or unreported advisories beyond npm audit's coverage.
