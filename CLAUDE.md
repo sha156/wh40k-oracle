@@ -1,5 +1,11 @@
 # 战锤40K 规则书 RAG 问答系统
 
+## September 30 saved and stopped before broad source retirement
+
+The user requested save and stop. Resume from `docs/superpowers/reports/2026-09-30-paused-source-cleanup-checkpoint.md`. The user approved retiring the other fan-translated rules PDFs; this is no longer awaiting scope confirmation, but the broad cleanup has not been applied. Inventory: 27 remaining translated/unverified Chinese PDFs, 2,501 of 5,905 active chunks, 26 matching refined caches and three orphan caches. Keep the 35 root English and 34 manifest-backed official Chinese PDFs plus Black Library. Before retirement, replace the quick-reference keyword-classification dependency, gate cached term consumers and reconcile 705 refined-source aliases on a copied database. No application/test source or active assets changed in this continuation.
+
+The unchanged Docker browser suite passed 12/12 in 35.817 seconds, including actual exports; fixture/interception limits are in the checkpoint. Fresh official downloads/MFM are staged only. The temporary price trial converged, but effective-date/context review was interrupted and `applied: false`; active official prices remain the September 14 snapshot. Docker is left running, API healthy. Application baseline remains `ad4cb2940`, draft PR #75 unmerged. Earlier entries below are historical where superseded here.
+
 ## September 30 guarded Chinese projection and faction cleanup
 
 Implementation and tracked evidence are committed as `a9057ec97` on `codex/review-answer-provenance`; PR #75 remains a draft. Guilliman now projects five reviewed Chinese ability fragments plus two unchanged official English abilities, preserving all seven official identities. Exact Chinese and ordered English fingerprints invalidate the mapping on any source change. Supreme Strategist remains English with the battle-round frequency; GW explicitly changed it from per turn on June 4, 2025. The community translator's intended meaning of 每个回合一次 remains unconfirmed. The newer September 14, 2026 Codex preview is incomplete and unimported; no latest full-Codex parity is claimed.
