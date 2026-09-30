@@ -13,6 +13,10 @@ from pathlib import Path
 from urllib.parse import urlparse
 
 SCHEMA = "dated-source-v1"
+_CONTRACT_FIELDS = {
+    "kind", "as_of", "full_current_body_verified", "historical_expectations_date",
+    "requirements", "prohibitions", "source_ids",
+}
 PARENT_SHA = "a402aed889eff64f3419d7a6768ff9b168a5912d0bc9c3e92cf225913a7fe3cc"
 REVISION_IDS = {14, 34, 93, 113, 114, 115, 118}
 COVERAGE_IDS = set(range(11, 21)) | {34} | set(range(75, 81)) | {113, 114, 115, 118}
@@ -116,7 +120,11 @@ def validate_source_contracts(data):
             continue
         covered.add(row["id"])
         c = row["coverage_contract"]
-        if not isinstance(c, dict) or not isinstance(c.get("kind"), str) or c["kind"] not in _KINDS:
+        # The frozen schema permits annotations on rows/meta, never additional
+        # contract text: this entire validated object is sent to the judge.
+        if not isinstance(c, dict) or set(c) != _CONTRACT_FIELDS:
+            raise ValueError("coverage contract fields must match dated-source-v1")
+        if not isinstance(c.get("kind"), str) or c["kind"] not in _KINDS:
             raise ValueError("unknown source coverage contract kind")
         if c.get("as_of") != meta["as_of"] or c.get("full_current_body_verified") is not False:
             raise ValueError("coverage contract must retain the audited date and body limitation")
