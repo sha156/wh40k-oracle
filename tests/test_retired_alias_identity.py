@@ -80,17 +80,17 @@ def test_unrelated_typo_correction_is_preserved(tmp_path):
 
 
 @pytest.fixture(scope="module")
-def filtered_resolver(tmp_path_factory):
+def filtered_resolver(tmp_path_factory, retirement_assets):
     from db_compile.aliases import populate_aliases
 
-    source = ROOT / "db/wh40k.sqlite"
+    source = retirement_assets["db"]
     caches = ROOT / "data_refined"
     if not source.exists() or not caches.exists():
         pytest.skip("Actual database and refined assets are unavailable")
     copy = tmp_path_factory.mktemp("retired-alias-identity") / "copy.sqlite"
     shutil.copy2(source, copy)
     populate_aliases(copy, caches)
-    return EntityResolver(db_path=copy, terms_path=ROOT / "wiki/terms.json",
+    return EntityResolver(db_path=copy, terms_path=retirement_assets["terms"],
                           app_path=ROOT / "app.py")
 
 
@@ -134,16 +134,26 @@ def test_malformed_negative_catalogue_fails_closed(tmp_path, monkeypatch, invali
         corpus_policy._policy.cache_clear()
 
 
-def test_actual_original_alias_identities_are_unchanged():
+def test_frozen_alias_reconciliation_preserves_historical_counts_and_targets(retirement_snapshot):
+    original = retirement_snapshot["original_aliases"]
+    retained = retirement_snapshot["retained_aliases"]
+    assert len(original) == 1206
+    assert len(retained) == 981
+    assert retained == {name: original[name] for name in retained}
+
+
+def test_actual_alias_identities_are_unchanged(retirement_assets, retirement_snapshot):
     from db_compile.aliases import load_zh_aliases
 
-    source = ROOT / "db/wh40k.sqlite"
-    if not source.exists():
-        pytest.skip("Actual database is unavailable")
+    source = retirement_assets["db"]
     aliases = load_zh_aliases(source)
-    resolver = EntityResolver(db_path=source, terms_path=ROOT / "wiki/terms.json",
+    resolver = EntityResolver(db_path=source, terms_path=retirement_assets["terms"],
                               app_path=ROOT / "app.py")
-    assert len(aliases) == 1206
+    assert aliases, "An empty active alias table must not pass vacuously"
+    state = retirement_assets["state"]
+    if state != "active":
+        key = "original_aliases" if state == "original" else "retained_aliases"
+        assert aliases == retirement_snapshot[key]
     for name, cid in aliases.items():
         result = resolver.resolve(name)
         assert result.canonical_id == cid, (name, cid, result)

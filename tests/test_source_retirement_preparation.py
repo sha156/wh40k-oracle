@@ -135,15 +135,38 @@ def test_actual_approved_inventory_and_retained_sources():
         assert all(not is_excluded_book(book) for book in row.get("index_books", []))
 
 
-def test_actual_terms_retain_exact_official_pairs(tmp_path):
-    root = Path(__file__).resolve().parent.parent
-    path = root / "wiki/terms.json"
-    raw = json.loads(path.read_text(encoding="utf-8"))["pairs"]
-    retired = [p for p in raw if p["book"] == TAU_STEM]
-    kept = [p for p in raw if p["book"] != TAU_STEM]
+def test_frozen_term_reconciliation_preserves_all_historical_pairs(retirement_snapshot):
+    from corpus_policy import is_excluded_book
+
+    raw = retirement_snapshot["original_pairs"]
+    retired = [p for p in raw if is_excluded_book(p["book"])]
+    kept = retirement_snapshot["retained_pairs"]
+    assert len(raw) == 187
     assert len(retired) == 62
     assert len(kept) == 125
+    assert all(p["book"] == TAU_STEM for p in retired)
+    assert kept == [p for p in raw if not is_excluded_book(p["book"])]
+
+
+def test_actual_terms_retain_exact_official_pairs(tmp_path, retirement_assets, retirement_snapshot):
+    from corpus_policy import is_excluded_book
+
+    path = retirement_assets["terms"]
+    raw = json.loads(path.read_text(encoding="utf-8"))["pairs"]
+    kept = [p for p in raw if not is_excluded_book(p["book"])]
+    assert kept, "An empty retained term cache must not pass vacuously"
+    assert all(p in kept for p in retirement_snapshot["retained_pairs"])
+    state = retirement_assets["state"]
+    if state != "active":
+        key = "original_pairs" if state == "original" else "retained_pairs"
+        assert raw == retirement_snapshot[key]
     assert _load_term_pairs(path) == kept
+    # Retained official English-only entries are valid pairs, not Chinese aliases.
+    expected_aliases = {}
+    for pair in kept:
+        if pair["zh"] and pair["en"]:
+            expected_aliases.setdefault(pair["zh"], pair["en"])
+    assert load_term_aliases(path) == expected_aliases
     write_terms(PairingResult(pairs=[Pair(**p) for p in raw]), tmp_path)
     assert json.loads((tmp_path / "terms.json").read_text(encoding="utf-8"))["pairs"] == kept
 
@@ -217,16 +240,15 @@ def test_resolver_ignores_malformed_cached_pair_containers(pairs, tmp_path):
     ("影阳指挥官", "000000407", "Commander Shadowsun"),
     ("远见指挥官", "000000406", "Commander Farsight"),
 ])
-def test_actual_tau_independent_blacklibrary_alias_survives_retired_pilot(name, cid, en):
+def test_actual_tau_independent_blacklibrary_alias_survives_retired_pilot(name, cid, en,
+                                                                       retirement_assets):
     root = Path(__file__).resolve().parent.parent
-    db = root / "db/wh40k.sqlite"
-    if not db.exists():
-        pytest.skip("Local canonical database is absent")
+    db = retirement_assets["db"]
     with sqlite3.connect(db.as_uri() + "?mode=ro", uri=True) as conn:
         assert conn.execute(
             "SELECT canonical_id FROM aliases WHERE alias=? AND source='blackforum'",
             (name,),
         ).fetchall() == [(cid,)]
-    resolver = EntityResolver(terms_path=root / "wiki/terms.json", db_path=db)
+    resolver = EntityResolver(terms_path=retirement_assets["terms"], db_path=db)
     result = resolver.resolve(name)
     assert (result.canonical_id, result.name_en, result.confidence) == (cid, en, "exact")
