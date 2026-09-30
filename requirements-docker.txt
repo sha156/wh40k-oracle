@@ -12,6 +12,8 @@
 # torch 单独装：Dockerfile 里先从 download.pytorch.org/whl/cpu 装 CPU 轮子，
 # 否则 PyPI 默认拉 CUDA 版，凭空多 2GB+ 的 nvidia-* 依赖（本项目纯 CPU 推理）。
 
+-r requirements-bootstrap.txt
+
 # 核心框架
 langchain==0.3.28
 langchain-community==0.3.31

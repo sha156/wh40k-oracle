@@ -1,12 +1,136 @@
 # Python dependency security acceptance — September 30, 2026
 
 Status: **incremental candidate, not release acceptance**. The shared
-FastAPI/Starlette boundary, Requests and PyMuPDF are patched and verified in isolation.
+FastAPI/Starlette boundary, Requests, PyMuPDF and installation tooling are patched
+and verified in isolation, with the setuptools legacy-path limitation below.
 The complete CPU application stack, full native suite, Docker/Linux installation
 and final audit remain outstanding.
 No integration, deployment, source retirement or main-environment changes occurred.
 
-## Latest increment: PyMuPDF patch — October 1, 2026
+## Latest increment: installation tooling — October 1, 2026
+
+`requirements-bootstrap.txt` now pins **pip 26.2.1** and **setuptools 83.0.0**.
+Native, Docker and lightweight server requirements include it; CI inherits it
+through the server requirements. Docker installs bootstrap first, replacing its
+unbounded pip upgrade, then passes the same file as `--build-constraint` for the
+application install's separate PEP 517 build environments. No Python application
+source, permanent test, asset or reliability-owned behavior was edited.
+The old torch 2.8.0 Docker pin remains **unresolved**.
+
+| Distribution | Actual legacy native | Actual deployed Docker | Fresh Python 3.11.9 bootstrap | Verified candidate |
+| --- | --- | --- | --- | --- |
+| pip | 25.3 | 26.2.1 | 24.0 | 26.2.1 |
+| setuptools | 49.2.1 | 79.0.1 | 65.5.0 | 83.0.0 |
+
+The first two columns come from the auditor's read-only installed inventories;
+neither environment changed. Project `.venv` already had pip 26.2.1 and its
+setuptools was 65.5.0. Both candidates declare Python **>=3.10** and platform-neutral
+wheels. Windows **3.11.9** was exercised; Linux/Docker installation remains unrun.
+
+The previous eight setuptools records represent four underlying groups:
+**GHSA-r9hx-vwmv-q579 / CVE-2022-40897** (fix 65.5.1),
+**GHSA-cx63-2mw6-8hw5 / CVE-2024-6345** (70.0.0),
+**GHSA-5rjg-fvgr-3xxf / CVE-2025-47273** (78.1.1), and
+**GHSA-h35f-9h28-mq5c / CVE-2026-59890** (83.0.0 in registry/tagged notes).
+The newest maintainer advisory's `patched_versions` field is blank and its
+affected range ends at 82.0.1; the
+[tagged maintainer changelog](https://github.com/pypa/setuptools/blob/v83.0.0/NEWS.rst)
+and executed behavior independently establish the normal-build fix. The old
+vulnerable `setuptools.package_index` module is absent from 83.0.0.
+
+A fresh environment initially retained pip 24.0 and produced **12 records / six
+underlying groups** despite patched setuptools: **GHSA-4xh5-x5gv-qwph**,
+**GHSA-6vgw-5pg2-w6jp**, **GHSA-58qw-9mgm-455v**,
+**GHSA-jp4c-xjxw-mgf9**, **GHSA-wf93-45jw-7689** and
+**GHSA-qwm4-qh6w-59xr**, with reported fix releases 25.3, 26.0, 26.1, 26.1,
+26.1.2 and 26.2 respectively. Full bodies and alias groups are retained. The
+[pip maintainer's tagged changelog](https://github.com/pypa/pip/blob/26.2.1/NEWS.rst)
+documents the fixes, including **CVE-2026-13346**'s double URL decoding and tar
+symlink traversal protections. 26.2.1 also restores virtualenv keyring behavior
+while installing build dependencies. No installer finding was excluded as tooling.
+
+**Setuptools fix boundary:** identical offline probes show all four Unicode
+exclusion directives (`exclude`, `global-exclude`, `recursive-exclude`, `prune`)
+failing with 65.5.0 and passing with 83.0.0 in normal
+`setuptools.command.egg_info.FileList`. Real temporary `setup.py sdist` builds
+confirm that 65.5.0 packs an NFD filename excluded by an NFC rule, while 83.0.0
+omits it. The public file remains and the ASCII exclusion passes in both.
+All files contain synthetic text and temporary build outputs are removed.
+**The vendored `setuptools._distutils.filelist.FileList` still fails all four
+direct Unicode probes in 83.0.0.** The normal setuptools build passes; direct
+legacy-class callers remain outside the verified fix. A tracked Python-source
+search found no application use of setuptools, distutils, pkg_resources or sdist
+building. This residual behavior is evidenced, not silently called fixed.
+
+Setuptools 82 removed `pkg_resources`. Tagged
+[jieba 0.42.1 source](https://github.com/fxsjy/jieba/blob/v0.42.1/jieba/_compat.py)
+already catches its absence and loads resources by the installed module's path.
+Before/after probes retain the **same dictionary SHA-256, Chinese tokens,
+stopword removal and BM25 scores**, including dictionary loading from an unrelated
+working directory. The probe extracts the two unchanged tokenizer definitions
+from `app.py` with AST; it is **not a full app import or retrieval-quality test**.
+No shim is needed. An uncached jieba source build with pip 26.2.1 and
+`--build-constraint requirements-bootstrap.txt` selects setuptools **83.0.0** in
+its isolated build environment. Installing that real wheel repeats the checks.
+
+Validation completed for this increment:
+
+- Fresh `clean-runtime-venv`, created with the prescribed Python **3.11.9**
+  executable: bootstrap, then `requirements-server.txt` with the build constraint,
+  installs successfully and passes `pip check`. Its **26 distributions** comprise
+  **24 server runtime packages + pip/setuptools**, with no pytest, PDF, provider
+  or model dependencies. Exact install reports and inventory are saved.
+- Fresh `clean-server-venv` with separate test/PDF/BM25 additions: the four unchanged
+  API suites named below pass **69 tests, 28 skips, two warnings in 1.58 seconds**.
+  The first attempt failed in conftest's unconditional `fitz` import; its log and
+  exit code are retained. Installing PyMuPDF 1.26.7 **only in the test subset**
+  resolves it. No PDF dependency was added to server requirements. All 28 skips
+  are absent canonical SQLite; existing Starlette/AnyIO warnings remain.
+- Project `.venv`: the four API suites plus the previous increment's six PDF
+  suites pass **175 tests, 56 skips, two warnings in 5.98 seconds**. JUnit identifies
+  absent canonical SQLite, official PDFs/manifests and refined core-rule output.
+  No skip/expectation changed and no asset was copied or linked. This is a focused
+  run, **not the full native suite**.
+- The clean test subset's API lifespan smoke returns health **200**, OpenAPI
+  **200** and invalid chat input **422**, loading no torch, sentence-transformers,
+  FAISS, LangChain or Streamlit. Retrieval/warmup are disabled; preflight reports
+  the missing canonical database honestly. TestClient closes normally.
+- Completed **pip-audit 2.10.1** queries against every exact installed pin in
+  final runtime (**26**), clean test (**36**) and project test (**41**) inventories
+  each exit **0**, with **zero findings and zero skips**. Bootstrap and dev additions
+  are included; audit-tool packages are separate. The clean test subset adds ten
+  distributions to the runtime/tooling set. These are **clean subset audits, not a
+  clean full-application audit**. The initial pip-24.0 findings remain saved.
+
+Evidence is ignored and local under
+`C:/Users/Administrator/.codex/worktrees/release-python-security/RAG/db_sources/python-security/iteration-5/`:
+advisories/tagged metadata, install reports/logs, inventories/pins, raw audits/exit
+codes/alias groups, initial failed test log, final test logs/JUnit XML,
+`compatibility-probe.py` with four outputs, `sdist-probe.py` with before/after
+outputs, jieba source-build log/wheel, API smoke and `verification-summary.json`.
+`inventory.py` and `summarize-evidence.py` reproduce inventories, grouping and
+evidence assertions. Two old setuptools advisories and the latest pip advisory
+have no repository-local advisory endpoint (404); GitHub's global reviewed
+advisory endpoint supplied their bodies. No failed query became a clean claim.
+
+Reproduce with the prescribed base interpreter's `-m venv`, then the new
+interpreter's **full executable path** with `-m pip install -r
+requirements-bootstrap.txt`, followed by `-m pip install --build-constraint
+requirements-bootstrap.txt -r requirements-server.txt` and `-m pip check`.
+Native/CI installs should also bootstrap first and pass the build constraint;
+including the bootstrap requirements alone does **not** constrain a separate
+PEP 517 build environment. Docker now applies this sequence, but was not built
+or run here. Use the authorized proxy, localhost bypass and `PYTHONUTF8=1` for
+external requests and Windows CLI evidence.
+
+Actual scoped diff inspection and `git -c core.whitespace=cr-at-eol diff --check`
+pass. No background service, commit, push, deployment, hook-repository edit or
+orchestrator-notes edit occurred. Full CPU torch/model/LangChain/provider/Streamlit
+resolution, complete CI/native/Docker sets, full native tests, final audit/no-fix
+review and Linux/asset acceptance remain outstanding. The vendored distutils
+limitation must remain visible in final-stage and host integration review.
+
+## Earlier increment: PyMuPDF patch — October 1, 2026
 
 The deployed PyMuPDF **1.26.5** pin is replaced by **1.26.7**, identically in
 `requirements.txt`, `requirements-docker.txt` and `requirements-ci.txt`.

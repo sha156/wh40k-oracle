@@ -29,11 +29,12 @@ ENV PYTHONUNBUFFERED=1 \
 WORKDIR /app
 
 # ── 依赖层（与源码分层，改代码不重装依赖）────────────────────────
-COPY requirements-docker.txt ./
-RUN python -m pip install --no-cache-dir --upgrade pip \
+COPY requirements-bootstrap.txt requirements-docker.txt ./
+RUN python -m pip install --no-cache-dir -r requirements-bootstrap.txt \
  && python -m pip install --no-cache-dir \
       torch==2.8.0 --index-url https://download.pytorch.org/whl/cpu \
- && python -m pip install --no-cache-dir -r requirements-docker.txt
+ && python -m pip install --no-cache-dir \
+      --build-constraint requirements-bootstrap.txt -r requirements-docker.txt
 
 # ── 源码层（大件资产由 .dockerignore 挡在外面）──────────────────
 COPY . .
