@@ -14,8 +14,31 @@ before limiting, and default callers still receive exactly the original five
 fields. Empty/missing gold cannot silently enter intrinsic scoring; only the
 original explicit #63 null-gold identity contract is accepted.
 
-This first step does not provide `--gold`, result provenance, v3.7 or comparator
-changes yet. Historical gold is not a claim of complete current source coverage.
+CLI selection now supports `--gold PATH`, with the same absolute/caller-relative
+resolution and no fallback. For example, from the repository root:
+
+```powershell
+& 'D:/Project/py/RAG/.venv/Scripts/python.exe' scripts/qa_bench.py --path agent --gold benchmarks/v3_edition11/qa_gold_v3.6.json --out <new-result-path.json>
+```
+
+This example is a real benchmark command for the host's later execution; the
+preparation tests use only temporary fixtures and stubbed clients/resources.
+Ordinary and layered summaries retain their existing keys and add `gold_source`:
+resolved absolute `path`, exact-byte `sha256`, `version`, `edition`, complete
+document `total`, and `source_limitations`. Both modes read/validate once before
+credentials/resources, and retain that snapshot even if the file changes later.
+The summary's gold total describes the selected full document; the existing
+result total describes executed rows after `--limit`.
+
+Declared `meta.source_limitations` must be a nonempty list of nonempty strings.
+For historical gold without that field, output explicitly says that numerical
+agreement alone does not certify current source coverage. Detailed results now
+retain `gold`, `gold_type` and `gold_metadata` (the original row's remaining
+fields, including canonical identity, note and any source/coverage metadata).
+These extra fields do not change judge input or scoring.
+
+v3.7 and comparator changes remain unfinished. Historical gold is not a claim
+of complete current source coverage.
 See [the scoped acceptance report](../../docs/superpowers/reports/2026-10-01-versioned-benchmark-acceptance.md)
 for tests, immutable-byte evidence and remaining work. The older entries below
 record their original benchmark versions and runs.

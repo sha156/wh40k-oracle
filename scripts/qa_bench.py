@@ -25,6 +25,7 @@ datasheet 与 data_refined 核心规则），judge 由「凭感觉 intrinsic」�
 from __future__ import annotations
 
 import argparse
+import hashlib
 import json
 import logging
 import os
@@ -190,6 +191,11 @@ def _validate_gold_document(data):
         raise ValueError("gold meta.version must be an edition-11 v3 version")
     if type(meta.get("edition")) is not int or meta["edition"] != 11:
         raise ValueError("gold meta.edition must be integer 11")
+    if "source_limitations" in meta:
+        limitations = meta["source_limitations"]
+        if (not isinstance(limitations, list) or not limitations
+                or any(not isinstance(note, str) or not note.strip() for note in limitations)):
+            raise ValueError("gold meta.source_limitations must be a nonempty list of nonempty text")
     details = data.get("details")
     if not isinstance(details, list) or not details:
         raise ValueError("gold details must be a nonempty list")
@@ -232,15 +238,32 @@ def _read_gold_document(gold_path=None):
     return data, source, raw
 
 
-def load_questions(limit=None, gold_path=None):
-    """Select and validate gold while preserving the default five-field contract."""
-    data, _, _ = _read_gold_document(gold_path)
+def _project_questions(data, limit=None):
     items = [
         {"id": d["id"], "faction": d["faction"], "question": d["question"],
          "gold": d["gold"], "gold_type": d["gold_type"]}
         for d in data["details"]
     ]
     return items[:limit] if limit else items
+
+
+def load_questions(limit=None, gold_path=None):
+    """Select and validate gold while preserving the default five-field contract."""
+    data, _, _ = _read_gold_document(gold_path)
+    return _project_questions(data, limit)
+
+
+def _gold_provenance(data, source, raw):
+    """Describe the same snapshot used for judging, without claiming fresh coverage."""
+    meta = data["meta"]
+    return {
+        "path": str(source), "sha256": hashlib.sha256(raw).hexdigest(),
+        "version": meta["version"], "edition": meta["edition"], "total": meta["total"],
+        "source_limitations": meta.get("source_limitations", [
+            "Selected gold does not declare source-coverage limitations; numerical agreement "
+            "alone does not certify current source coverage."
+        ]),
+    }
 
 
 def make_client(provider):
@@ -752,12 +775,20 @@ def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--path", choices=["classic", "agent"], default="classic")
     ap.add_argument("--out", required=True)
+    ap.add_argument("--gold", type=Path, default=None,
+                    help="Gold JSON path (absolute or caller-relative); defaults to QA_SOURCE")
     ap.add_argument("--limit", type=int, default=None)
     ap.add_argument("--workers", type=int, default=6)
     ap.add_argument("--provider", default="DeepSeek")
     ap.add_argument("--layered", action="store_true",
                     help="分层评测：检索层/生成层两列（仅经典链）")
     args = ap.parse_args()
+
+    # Validate all selected expectations before credentials/resources, then keep
+    # this snapshot for both judging and hashing even if the file later changes.
+    gold_data, gold_source, gold_raw = _read_gold_document(args.gold)
+    questions = _project_questions(gold_data, args.limit)
+    gold_by_id = {row["id"]: row for row in gold_data["details"]}
 
     if not os.environ.get("DEEPSEEK_API_KEY"):
         raise SystemExit("缺少 DEEPSEEK_API_KEY 环境变量")
@@ -766,7 +797,6 @@ def main():
         raise SystemExit("--layered 目前仅支持 --path classic（agent 路径检索散在工具调用里，待扩展）")
 
     _, model = _PROVIDERS[args.provider]
-    questions = load_questions(args.limit)
     mode = "layered" if args.layered else args.path
     print(f"[qa_bench] mode={mode} n={len(questions)} workers={args.workers} model={model}")
 
@@ -781,6 +811,14 @@ def main():
         futs = {ex.submit(worker, ctx, q): q for q in questions}
         for fut in as_completed(futs):
             r = fut.result()
+            expectation = gold_by_id[futs[fut]["id"]]
+            # Layered results also need their actual expectations for honest
+            # historical comparisons. Extra source notes never enter judging.
+            r.update({
+                "gold": expectation["gold"], "gold_type": expectation["gold_type"],
+                "gold_metadata": {key: value for key, value in expectation.items()
+                                  if key not in ("id", "faction", "question", "gold", "gold_type")},
+            })
             with lock:
                 results.append(r)
                 done += 1
@@ -810,6 +848,7 @@ def main():
             "degraded_count": degraded_n,
             "wall_time": f"{time.time() - t_start:.1f}s",
         }
+    summary["gold_source"] = _gold_provenance(gold_data, gold_source, gold_raw)
     out = {"summary": summary, "details": results}
     Path(args.out).write_text(json.dumps(out, ensure_ascii=False, indent=2), encoding="utf-8")
 

@@ -1,9 +1,78 @@
 # Versioned benchmark preparation acceptance — October 1, 2026
 
-Iteration 1 completes only the immutable baseline and validated Python-loader
-selection. The complete objective remains unfinished. No real benchmark,
+Iterations 1–2 complete the immutable baseline, validated Python-loader/CLI
+selection and exact-byte output provenance. The complete objective remains unfinished. No real benchmark,
 source promotion, production mutation, API work, service startup or publication
 was performed. GNHF owns commits; none were made manually.
+
+## Iteration 2 — CLI selection and snapshot provenance
+
+`--gold PATH` selects an absolute or caller-relative file without fallback.
+Omitting it resolves the current `QA_SOURCE`. CLI execution reads and validates
+the complete selected document before credentials or application resources and
+projects the unchanged five-field worker input from that same snapshot. No gold
+row or clause changed; v3.7 preparation remains outstanding.
+
+Both ordinary (classic/agent) and layered summaries add `gold_source`, containing
+the resolved absolute path, SHA-256 of the exact bytes parsed, version, edition,
+full-document total and source-qualified limitations. All old summary keys and
+counts remain. `--limit` limits execution only; provenance still describes the
+fully validated document. File replacement after loading cannot change the
+judged expectations or their recorded hash.
+
+Declared `meta.source_limitations` must be a nonempty list of nonempty strings.
+Absent historical declarations produce the explicit limitation: “Selected gold
+does not declare source-coverage limitations; numerical agreement alone does
+not certify current source coverage.” This does not assert current body parity.
+Detailed output in both modes includes the actual `gold`/`gold_type`, plus
+`gold_metadata` preserving all other original row fields, including canonical
+identity, source notes and any coverage/provenance fields. Extra metadata stays
+outside worker/judge input. Layered output previously omitted gold and type;
+retaining these fields enables the later comparator to inspect real expectations.
+
+Offline command:
+
+```powershell
+& 'D:/Project/py/RAG/.venv/Scripts/python.exe' -m pytest tests/test_qa_bench.py tests/test_qa_bench_gold_selection.py tests/test_qa_bench_provenance.py -q --tb=short
+```
+
+Result: **131 passed**, five existing SWIG deprecation warnings, using the
+existing Python 3.9.1 environment read-only. All 104 earlier tests remain green;
+27 additional cases cover absolute, relative and dynamic default selection,
+ordinary classic/agent and layered output, exact CRLF-byte hashes, file replacement
+after load, row metadata, selected-gold delivery to actual judge functions,
+limited execution/full-document provenance, existing summary keys and fallback
+counts, and preserved partial/wrong verdicts and zero accuracy despite normal
+completion. Temporary fixture bodies and clients are test data, not source evidence.
+
+The first 18 new cases failed against the actual pre-change CLI: explicit paths
+were rejected as unsupported arguments and default output lacked provenance.
+Those failures establish the missing interface/output, rather than a new scoring
+defect. Paired invalid-file tests now reject missing files, broken JSON, duplicate
+tail IDs and empty tail gold in both modes before credentials/resources/output,
+even with `--limit 1`. Five additional cases reject malformed declared limitations.
+
+Ignored evidence in this worktree's
+`db_sources/release-check-20260930/benchmark-versioning/` includes
+`iteration-2-before.json`, `iteration-2-red.txt`, `iteration-2-tests.txt` and
+`iteration-2-verification.json`. Before/after hashes cover 68 tracked baseline,
+result and owned-input files. Root/frozen v3.6 retain SHA-256
+`a402aed889eff64f3419d7a6768ff9b168a5912d0bc9c3e92cf225913a7fe3cc`;
+all 115 ordered identities/questions/types and historical results remain unchanged.
+Only the runner and deliberately updated documentation differ among those inputs;
+the new provenance tests are a separate added file. AST inspection verifies
+judge prompts, parsing/mechanical scoring and both worker functions remain unchanged.
+Compilation and `git -c core.whitespace=cr-at-eol diff --check` pass. Ruff remains
+unavailable; no dependency was installed or changed. The actual implementation
+and test diff was reviewed locally. Independent acceptance remains host-owned
+and has not run in this iteration. No background process was started.
+
+The next bounded units remain the source-cited v3.7 document and strict,
+version-aware comparator. Real 115-question runs, honest-answer/source-coverage
+inspection, database alignment, Python 3.11 full-suite acceptance, Docker/live
+checks, integration and publication remain host gates. External knowledge/hook
+records remain root-owned; this section supplies the verified handoff evidence.
+Earlier iteration-1 statements below describe their original scope.
 
 ## Preserved historical baseline
 
@@ -109,6 +178,25 @@ acceptance and GitHub publication remain host-owned gates. No benchmark score,
 latest-body parity or final release acceptance is claimed.
 
 ## Local knowledge handoff
+
+The iteration-2 stop hook explicitly authorized the local knowledge handoff.
+Existing records were searched before writing. New current sections in
+`D:/Project/devlog/wh40k-oracle/CHECKPOINT.md` and `ROADMAP.md` describe the CLI,
+same-snapshot hashes/metadata, 131 passing offline tests, uncommitted/unreviewed
+status and remaining v3.7/comparator/host gates, preserving earlier sections and
+other owners' entries.
+
+The existing learning decision
+`C:/Users/Administrator/learn-notes/decisions/20261001-freeze-gold-before-validating-selection.md`
+and validation error
+`C:/Users/Administrator/error-notes/rag/20261001-error-10-gold-loader-accepts-invalid-tail.md`
+were extended and their existing README entries updated. The missing pre-change
+CLI/provenance interface is not recorded as a new scoring defect. No duplicate
+record, invented commit explanation, manual staging/commit/push or harness
+promotion was added. The hook introduced no application/test changes or new
+test runs. Preservation checks and unchanged staged-diff hashes are saved under
+the ignored `benchmark-versioning/knowledge-handoff-iteration-2/` directory.
+The earlier iteration-1 handoff below retains its original scope.
 
 The explicit stop-hook request authorized a local knowledge handoff after the
 implementation. Existing notes were searched for duplicates before writing.
