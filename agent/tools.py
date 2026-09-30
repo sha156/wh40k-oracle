@@ -440,11 +440,6 @@ def calc_points(
     db_path = db_path or DB_PATH
     if not Path(db_path).exists():
         return {"found": False, "units": [], "note": "wh40k.sqlite 不存在，需先跑 db_compile"}
-    if resolver is None and Path(db_path) != Path(DB_PATH):
-        # Internal copied-DB calls must not resolve names against production.
-        # Public dispatch still supplies only unit_list; its signature is stable.
-        resolver = EntityResolver(db_path=Path(db_path))
-
     results = _calc_points_impl(db_path, list(unit_list))
     units: List[Dict[str, Any]] = []
     unresolved: List[str] = []
@@ -454,6 +449,11 @@ def calc_points(
             units.append({"unit_id": r.unit_id, "name_en": r.name_en,
                           "points": r.points, "note": r.note})
             continue
+
+        if resolver is None and Path(db_path) != Path(DB_PATH):
+            # Existing IDs need only units; construct the copied-DB resolver
+            # lazily for name resolution, never falling back to production.
+            resolver = EntityResolver(db_path=Path(db_path))
 
         archived = _archived_record(str(query), resolver=resolver, db_path=db_path)
         if archived:
