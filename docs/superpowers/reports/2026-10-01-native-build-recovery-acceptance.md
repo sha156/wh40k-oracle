@@ -1,8 +1,33 @@
 # Native build recovery acceptance checkpoint
 
-Iteration 1 repairs the shared SQLite builder lifecycle and verifies **all 43 original diagnosed build/archive IDs pass without skips** under genuine Windows Python 3.11.9. This is incremental isolated recovery, uncommitted and independently unreviewed. The complete 44-ID/full-available-CI stop condition is **not met**: the paired keyword negative fixture remains unchanged, full CI remains unrun, and broader validation exposed three newer CLI fixture failures.
+Iteration 2 explicitly closes the parent SQLite fixture before the real CLI child replaces its target. **All three newer CLI cases now pass, the broader suite passes 150 cases with one unchanged legitimate skip, and all 43 original diagnosed build/archive IDs pass again without skips** under genuine Windows Python 3.11.9. This is incremental isolated recovery; the current fixture correction awaits GNHF commit and independent host review. The complete 44-ID/full-available-CI stop condition is **not met**: the paired keyword negative fixture remains unchanged and full available CI remains unrun.
 
 Assigned checkout: `C:/Users/Administrator/.codex/worktrees/release-native-build-recovery/RAG`. Starting HEAD: `1cdb85f7605a5f36b833e1423f7136b4e2c449bf`. GNHF owns commits; root owns independent review, integration and publication. No manual staging, commit, push, merge, service startup or production asset write occurred.
+
+## Iteration 2 parent fixture correction and evidence
+
+Iteration 2 started from actual HEAD `a1d21e6d839b7f1fedf16d43b4f0952fde80331b` with a clean working tree. The previous builder correction and lifecycle tests were already tracked there; their SHA-256 hashes remain exactly those recorded below. Older iteration-1 uncommitted/pending statements describe that earlier checkpoint, not the current fixture result.
+
+`tests/test_official_restore_failures.py::_fixture` now wraps its SQLite connection with `contextlib.closing` and retains the existing connection transaction context. Exit order commits/rolls back first, then explicitly closes on success or failure before handing the target to the subprocess. The only test-source delta is that resource boundary and its explanatory comment/import. Every existing row, critical-restore, downstream-stop, no-restore, return-code and real-CSV replacement assertion remains unchanged. No authority implementation or production builder change was needed in this iteration.
+
+Evidence is confined to ignored `C:/Users/Administrator/.codex/worktrees/release-native-build-recovery/RAG/db_sources/native-build-recovery/iteration-02/`. The same completed read-only Windows CI interpreter named below ran every check; Python 3.11.9 / MSC v.1938 AMD64 / Windows build 26200 are retained in `verification.json`. No environment changes, model/provider calls or services were made.
+
+| XML-confirmed invocation | Passed | Failed | Errors | Skipped |
+|---|---:|---:|---:|---:|
+| Current builder, unchanged parent fixture, exact three CLI IDs | 0 | 3 | 0 | 0 |
+| Same source and IDs, explicit fixture closure | 3 | 0 | 0 | 0 |
+| Same broader 151-case suite as iteration 1 | 150 | 0 | 0 | 1 |
+| Separate exact original diagnosed 43-ID rerun | 43 | 0 | 0 | 0 |
+
+`before-cli`/`after-cli` XML and stdout preserve the real paired result. The frozen pre-edit fixture is retained as `test_official_restore_failures.before.py`. `cli_contrast.py` additionally reruns the unchanged assertions with frozen/current fixtures while retaining strong references to every parent connection and saving complete child stdout/stderr. Before closure all three children exit 1 with Windows replacement errors; after closure the expected exits are 1/0/0, including the actual required-restoration error in the first case. Original target reconstruction and restored/unrestored row assertions pass. The probe closes its retained handles before disposable directory cleanup; no application retry/GC workaround is used.
+
+`broader.xml` verifies the eleven existing real-handle lifecycle cases still pass: committed atomic replacement, original target preservation and tempfile removal on failure, ordered resource closure and primary exception behavior. This broader command includes 33 of the original 43 IDs; the separate `after-43.xml` matches **all 43** exact identities from the retained original metadata. The one broader skip remains `tests/test_db_compile_dsl_apply.py::TestMaterialize::test_real_payload_projection_counts`, reason `需要 db/wh40k.sqlite（真源 payload 指纹对账）`. The pre-existing simulator invalid-escape warning remains visible. These synthetic source/CLI checks do not establish copied actual-cache authority acceptance.
+
+Fixture SHA-256 before: `8c326a33d4f7aa30d0b994e3e6ee35ed5504299b12ed33748887bc97e834b354`; after: `581c70c8ebf2dfd46aec33072527447b3ebdce54fb9315449fcfc60ea6ea57ae`. `verify_iteration.py` reconciles counts and IDs, validates unchanged builder/lifecycle hashes, saves the exact fixture diff, and passes Python 3.11 compilation plus Python 3.9 grammar parsing. Ruff/Black remain unavailable and were not installed; no Python 3.9 runtime suite is claimed. Exact diff inspection and `git diff --check` pass. No persistent background process was started; all test/probe subprocesses exited.
+
+The current tracked delta consists only of the parent fixture correction and this report. Existing local checkpoint/roadmap/learning/error entries are updated in place for this resolved boundary; no duplicate diagnostic record, commit or publication was created. The next incremental unit is the original negative keyword-PDF test's genuine temporary Chinese companion, then the exact all-44 run and full available native CI with honest missing-asset node IDs/reasons. Independent host review and the separate dependency/platform, actual-source, Docker/browser/benchmark/hosted CI/integration gates remain open.
+
+## Retained iteration 1 evidence
 
 ## Correction and ownership
 
