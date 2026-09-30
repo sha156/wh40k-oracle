@@ -13,10 +13,12 @@ langchain-huggingface>=0.1.0
 faiss-cpu
 
 # 嵌入 & Rerank
+# Install requirements-torch-cpu.txt first; Python 3.11 CPU release baseline.
+torch==2.14.0+cpu
 sentence-transformers
 flashrank
 
-# PyTorch 1.11 不兼容 NumPy 2.x
+# Preserve the existing NumPy 1.x embedding/FAISS baseline during reconciliation.
 numpy<2
 
 # BM25 关键词检索（jieba：中文分词，BM25 必需）

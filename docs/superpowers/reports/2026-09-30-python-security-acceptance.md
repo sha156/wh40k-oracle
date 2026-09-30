@@ -7,11 +7,182 @@ The unused ZhipuAI SDK requirement is retired while both GLM provider paths are
 preserved and verified with synthetic responses through real provider clients.
 Streamlit is pinned and verified at 1.59.0, including its actual palette-hashing
 fix; deterministic large-array sampling remains explicitly qualified below.
+CPU PyTorch is pinned and verified at **2.14.0+cpu**, including the actual JIT
+crash correction absent from the registry's claimed 2.13.0 fix. PT2's unsafe
+pickle behavior remains evidenced and outside the inspected application paths.
 The complete CPU application stack, full native suite, Docker/Linux installation
 and final audit remain outstanding.
 No integration, deployment, source retirement or main-environment changes occurred.
 
-## Latest increment: Streamlit patch and advisory discrepancy — October 1, 2026
+## Latest increment: CPU PyTorch patch and reproduced advisory discrepancy — October 1, 2026
+
+Native and Docker requirements now require **torch 2.14.0+cpu**, replacing
+Docker's **2.8.0** declaration and making native's previously implicit torch
+dependency explicit. Both actual auditor inventories contain upstream **2.8.0**;
+Docker's installed version is **2.8.0+cpu**. The new
+`requirements-torch-cpu.txt` confines the official CPU index to a separate
+installation step. Docker copies that file and installs it after bootstrap,
+before the remaining application requirements, with the same build constraint.
+Exact `+cpu` pins prevent a subsequent full install silently substituting a
+PyPI CUDA wheel. Server/CI sets retain their no-model contract. No production
+Python, permanent test, API reliability-owned file, source policy or asset changed.
+Full-stack dependency synchronization is still outstanding; the remaining
+LangChain/model-family pins are not claimed patched by this increment.
+
+**Version selection is based on actual behavior, not the largest fix-list value.**
+PyTorch 2.10 fixes the maintainer's checkpoint advisory. Registry metadata for
+2.11/2.12 requires **setuptools<82**, incompatible with the patched **83.0.0**
+bootstrap. 2.13 removes that cap, but its installed CPU wheel still crashes on
+the JIT reproducer below. **2.14.0**, released **September 2, 2026**, contains and
+passes the demonstrated correction. All selected wheels require **Python>=3.10**;
+the actual verification baseline remains the prescribed **Python 3.11.9**.
+
+The native audit and separate Docker CPU OSV audit each contain **eight records /
+eight underlying torch alias groups**, representing the same issues across
+environments. Docker's original PyPI skip is preserved, not counted as clean.
+
+| Underlying issue | Evidence and candidate outcome |
+|---|---|
+| PYSEC-2025-195 / CVE-2025-3001, `lstm_cell` | Baseline service reports 2.10.0 fixed; candidate upstream and CPU service queries have no match. No invalid-input exploit reproduction is claimed. |
+| PYSEC-2025-194 / CVE-2025-3000 / GHSA-rrmf-rvhw-rf47, JIT | Installed 2.13.0+cpu still crashes; 2.14.0+cpu rejects the exact reproducer. Registry discrepancy is retained below. |
+| PYSEC-2025-193 / CVE-2025-2999, `unpack_sequence` | Baseline service reports 2.9.1 fixed; candidate queries have no match. No dedicated exploit reproduction is claimed. |
+| PYSEC-2025-203 / CVE-2025-55551, `linalg.lu` | Baseline service reports 2.9.0 fixed; candidate queries have no match. |
+| PYSEC-2025-204 / CVE-2025-55552, `rot90`/`randn_like` | Baseline service reports 2.9.0 fixed; candidate queries have no match. |
+| PYSEC-2025-206 / CVE-2025-55554, integer overflow | Baseline service reports 2.9.0 fixed; candidate queries have no match. |
+| PYSEC-2026-139 / CVE-2026-4538, PT2 | No fixed-version event in OSV; its range ends at 2.10.0. Unsafe pickle loading remains demonstrated in 2.14.0; application reachability is qualified below. |
+| PYSEC-2026-2286 / PYSEC-2026-1856 / CVE-2026-24747 / GHSA-63cw-57p8-fm3p, weights-only checkpoint | [Maintainer advisory](https://github.com/pytorch/pytorch/security/advisories/GHSA-63cw-57p8-fm3p) explicitly fixes >=2.10.0. Candidate passes tensor roundtrip and harmless custom-global rejection; these do not exhaustively exercise the malformed-opcode/storage exploits. |
+
+**JIT discrepancy, independently reproduced:** the raw PYSEC record unusually
+ends at `2.6.0-NA`, while pip-audit's service reports **2.13.0** fixed. The
+[upstream issue #149623](https://github.com/pytorch/pytorch/issues/149623) provides
+the bare-list scripted-class reproducer. Run in an owned subprocess, the clean
+2.13.0+cpu candidate exits **3221225477 / 0xC0000005**, with no output. The same
+unchanged child script on both upgraded and fresh 2.14.0+cpu exits **0** after
+asserting the expected **"Attempted to use list without a contained type"**
+RuntimeError. A JIT deprecation warning is retained. The actual correction is
+[upstream PR #188779](https://github.com/pytorch/pytorch/pull/188779), landed by
+commit `b90c94991cdf8b87c8f7439f79518e0ef2c4ca4f` on **July 2**. GitHub's tag
+comparison shows the commit is an ancestor of 2.14.0, while 2.13.0 diverges;
+tagged `ir_emitter.cpp` confirms the rejection helper absent in 2.13 and present
+in 2.14. No main environment or production process was used for this reproduction.
+Thus **2.14.0 is the first verified stable correction here**, rather than a
+claim that the service's 2.13 pin was sufficient.
+
+**PT2 limitation is actual, not just an empty fix list:** the OSV-linked
+[PR #176791](https://github.com/pytorch/pytorch/pull/176791) is **closed without
+merging**. Installed 2.14's `torch.export.load` has **no weights_only argument**;
+its `_load_state_dict` still calls `torch.load(..., weights_only=False)` when an
+archive marks a payload `use_pickle`. An in-memory toy model with an explicitly
+pickled tensor-returning canary invokes our own harmless Python callable once
+and still produces the expected output. It performs no shell, filesystem or
+network action. This establishes the unsafe deserialization behavior persists,
+even though current upstream/CPU service queries no longer match the record.
+No universal PT2 fix or arbitrary untrusted-checkpoint safety is claimed.
+
+An AST/text scan of **all 280 tracked Python files** found **zero direct torch
+imports or torch load/JIT/export calls**. The application's torch dependency is
+through SentenceTransformers/HuggingFace embeddings; actual app/ingestion source
+selects the bge-m3 model and CPU device. There is no inspected PT2-loading or
+checkpoint-upload path. The existing trusted local model/index boundary remains
+required, in line with the [tagged PyTorch security policy](https://github.com/pytorch/pytorch/blob/v2.14.0/SECURITY.md),
+which treats models as executable programs and warns against untrusted loads.
+The cached main assets were neither read nor copied in this increment. This
+qualifies inspected application reachability, not future consumers or the full
+third-party call graph; the model integration step must recheck its actual path.
+
+Validation actually completed:
+
+- New **clean-final-cpu-venv**, created with the prescribed interpreter, installs
+  bootstrap, the **tracked CPU requirement file**, then server requirements plus
+  **streamlit 1.59.0**. Its complete runtime subset contains **61 distributions**,
+  including installer tooling and torch, with **no pytest, LangChain,
+  SentenceTransformers, Transformers, JWT, CUDA or Triton distributions**.
+  `pip check` passes. The upgraded candidate and isolated project `.venv` also
+  install the exact CPU pin successfully; project `pip check` passes. All are
+  isolated under this worktree; the main venv is untouched.
+- The fresh Windows **cp311 win_amd64** wheel's downloaded SHA-256 matches the
+  official CPU index. That index also provides **cp311 manylinux_2_28 x86_64**;
+  both platforms' PEP 658 metadata hashes match the index. Linux's actual CPU
+  wheel metadata has **no CUDA/Triton dependencies**. Windows metadata includes
+  Linux-only CUDA markers, which do not apply on Windows; the Linux CPU wheel
+  metadata is the relevant Docker evidence. Both accept setuptools>=77.0.3,
+  including the patched 83.0.0. This verifies publication/metadata, **not Linux
+  installation, execution or a Docker build**.
+- Both candidate and fresh environments pass real CPU tensor inference, fixed
+  token embeddings, padding-aware mean pooling, L2 normalization against an
+  independent NumPy reference, attention against an explicit softmax reference,
+  CPU tensor serialization and weights-only custom-global rejection. Fresh
+  probe time is **4.999 seconds**; upgraded probe **3.844 seconds**. Runtime
+  reports `torch.version.cuda=None` and `cuda.is_available()=False`. This is
+  synthetic torch-substrate acceptance; **no SentenceTransformer, bge-m3 model,
+  FAISS, retrieval, reranker, ingestion or model-quality acceptance is claimed**.
+- After separate test additions **pytest 9.0.3 / PyMuPDF 1.26.7 / HTTPX 0.28.1**,
+  the fresh test subset has **68 distributions** and passes `pip check`.
+  Unchanged `test_simulator_panel.py`, `test_web_api_stage3.py`,
+  `test_web_api_stage4_sim.py`, `test_web_api_stage5_deploy.py` and
+  `test_web_api_round3_audit_fixes.py` pass **74 / skip 30 / two warnings in
+  1.56 seconds**. JUnit identifies all 30 skips as absent `wh40k.sqlite`.
+  No fixture, expectation, asset or skip was altered. Full native tests await
+  the complete model/LangChain installation.
+- Isolated **pip-audit 2.10.1** completes the exact **61-distribution** runtime
+  audit with **zero findings and one explicit torch +cpu PyPI skip**. A second
+  full inventory query maps **only torch 2.14.0+cpu to upstream 2.14.0**: **61
+  distributions, zero findings, zero skips**. The complete test subset mapped
+  the same way passes **68 / zero findings / zero skips**. A separate OSV audit
+  of the **exact installed 2.14.0+cpu** passes **one / zero findings / zero skips**.
+  All exit 0; raw JSON, complete exact inventories, alias grouping and skips
+  are saved. No package/advisory was suppressed, and auditor packages are
+  excluded from these app subset counts. The PT2 and earlier Streamlit sampling
+  qualifications remain despite these registry results.
+
+Ignored evidence and executable reproduction scripts are under
+`C:/Users/Administrator/.codex/worktrees/release-python-security/RAG/db_sources/python-security/iteration-8/`:
+baseline bodies/groups, fresh OSV records, maintainer advisory/security policy,
+release metadata, JIT issue/timeline/fix/tag comparisons and tagged sources;
+official CPU index, hash-verified platform metadata and install reports/logs;
+`jit-regression.py`/child and before/after JSON; `cpu-compatibility-probe.py`,
+installed PT2 source and scan; runtime/test inventories, exact/mapped/OSV raw
+audits and grouping; test log/JUnit, `reconcile-evidence.py`,
+`summarize-evidence.py` and `verification-summary.json`.
+
+Harness issues are visible: unauthenticated GitHub requests hit rate limits;
+authenticated `gh api` retrieves the primary records. The CPU index's `download-r2`
+metadata host returned 403; the official `download.pytorch.org` path succeeds
+and its content hash matches. The first PT2 canary returned a Tensor where a
+Parameter was required, causing a verifier error and Windows temporary-file
+cleanup error; the corrected probe returns a Parameter and uses in-memory
+archives. The owned leftover temporary directory was removed after process exit.
+The first test invocation named nonexistent suite files, ran zero tests and is
+retained; the corrected invocation uses the five existing suites above. Evidence
+reconciliation initially assumed skipped records had versions, and Windows text
+newline conversion invalidated downloaded metadata hashes; exact byte writes
+restore verified hashes. An initial default-GBK install-report read failed and
+was corrected to explicit UTF-8. None required production compatibility edits.
+The initial CPU download interrupted once, resumed and completed with a
+hash-verified wheel; it is not hidden as an uninterrupted transfer.
+
+Reproduce in a **new Python 3.11 environment** using full interpreter paths:
+`-m pip install -r requirements-bootstrap.txt`, then `-m pip install
+--build-constraint requirements-bootstrap.txt -r requirements-torch-cpu.txt`,
+then the server/Streamlit subset above. Run both saved probe scripts with new
+JSON output filenames, `-m pip check`, and the five named suites after separate
+test additions. Use the authorized proxy with localhost bypass, UTF-8 output,
+retrieval/warmup disabled for API tests, and the separate auditor with exact
+inventory pins, `--no-deps --disable-pip --format json`. Map the CPU version only
+for the supplemental PyPI query and separately query the exact suffix via OSV.
+
+Host integration must retain the separate CPU install step, recreate the complete
+environment, and verify Linux installation and the final resolved embedding/
+LangChain stack, trusted model/index loading, optional reranking, full native
+suite, actual API image inventory/audit and live acceptance. The current
+remaining family pins and production pytest separation still need work.
+Actual scoped requirements/Dockerfile/report diff inspection and whitespace
+validation pass. No commit, push, merge, Docker build/service change, external
+knowledge-repository edit or deployment occurred. All owned subprocesses have
+exited; no background server was started. Project knowledge handoff is here;
+this iteration does **not** meet the overall release-stage stop condition.
+
+## Earlier increment: Streamlit patch and advisory discrepancy — October 1, 2026
 
 Native and Docker requirements now pin **Streamlit 1.59.0**, replacing the
 native `>=1.35.0` declaration and Docker `==1.35.0`. Both actual auditor baseline
