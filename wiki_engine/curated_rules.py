@@ -149,8 +149,6 @@ def render_bodies(paths: Dict[str, Path]) -> Dict[str, str]:
 
 保留的官方中文第 56 页与英文第 60 页都包含目标选择时机、持续时间、重投命中，以及 Codex 分队、四个战团关键词和 MFM 分类条件。这个对照限于本地保留的两份文件，不表明它们是相邻发布的版本，也不证明新完整 Codex 的覆盖范围。
 
-> 部分汉化版本将这一阵营能力译作“誓言时刻”“忠诚誓言”“破敌誓言”等，均指同一枚 Oath of Moment 能力。
-
 ## 官方中文原文 · Faction Pack p56
 
 {oath_zh}

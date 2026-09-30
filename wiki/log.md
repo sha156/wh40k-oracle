@@ -17,3 +17,4 @@
 | 2026-09-30 19:25 UTC | Rebuild | Approved source retirement: retain 125 ordered official term pairs; retire 62 Tau pairs, 45 unmatched entries and 107 cached entities. Recoverable originals: archive/source-retirement-20260930/pre-apply. | terms.json, terms.md, review_needed.md | - |
 | 2026-09-30 20:04 UTC | rebuild | Source retirement: official Core Rules keyword classification; numerical/unit/weapon fields unchanged; full native and page reconciliation pending. | indexes/keywords.md, indexes/keywords.json | - |
 | 2026-09-30 21:24 UTC | rebuild | Curated retained-source rules: cleave, dark-pact, oath-of-moment | core-rules/cleave.md, core-rules/dark-pact.md, core-rules/oath-of-moment.md | - |
+| 2026-09-30 22:09 UTC | rebuild | Curated retained-source rules: cleave, dark-pact, oath-of-moment | core-rules/oath-of-moment.md | - |

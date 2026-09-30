@@ -3,6 +3,7 @@ from __future__ import annotations
 
 import csv
 from pathlib import Path
+import shutil
 
 import pytest
 import yaml
@@ -158,3 +159,71 @@ def test_real_rules_keep_all_effects_and_honest_authority(copied_wiki):
     assert "BLACK TEMPLARS" not in oath
     assert "未改动本军队规则" not in dark
     assert "官方中文原文" not in dark
+    assert "部分汉化版本" not in oath
+    assert "译作" not in oath
+
+
+@needs_sources
+@pytest.mark.parametrize("relative", ["core-rules/cleave.md", ".gen_hashes.json", "log.md"])
+def test_real_generation_ignores_planted_temp_links(copied_wiki, tmp_path, relative):
+    outside = tmp_path / "outside-sentinel"
+    outside.write_bytes(b"outside original")
+    target = copied_wiki / relative
+    planted = target.with_name(target.name + ".tmp")
+    planted.symlink_to(outside)
+    rules.generate_all(copied_wiki)
+    assert outside.read_bytes() == b"outside original"
+    assert planted.is_symlink() and planted.resolve() == outside
+    assert target.is_file() and not target.is_symlink()
+    after = snapshot(copied_wiki)
+    assert rules.generate_all(copied_wiki)["written"] == 0
+    assert snapshot(copied_wiki) == after
+
+
+@needs_sources
+@pytest.mark.parametrize("relative", ["core-rules/cleave.md", "core-rules/oath-of-moment.md",
+                                      ".gen_hashes.json", "log.md"])
+def test_final_output_links_still_fail_before_publication(copied_wiki, tmp_path, relative):
+    target = copied_wiki / relative
+    outside = tmp_path / "outside"
+    outside.write_bytes(target.read_bytes() if target.exists() else b"{}")
+    if target.exists():
+        target.unlink()
+    target.symlink_to(outside)
+    before = snapshot(copied_wiki)
+    original = outside.read_bytes()
+    with pytest.raises(ValueError):
+        rules.generate_all(copied_wiki)
+    assert snapshot(copied_wiki) == before and outside.read_bytes() == original
+
+
+@needs_sources
+@pytest.mark.parametrize("key", list(rules.SOURCES))
+@pytest.mark.parametrize("problem", ["missing", "changed"])
+def test_each_actual_pinned_input_blocks_all_outputs(copied_wiki, tmp_path, key, problem):
+    sources = tmp_path / "source-copy"
+    target = sources / rules.SOURCES[key][0]
+    for relative, _ in rules.SOURCES.values():
+        destination = sources / relative
+        destination.parent.mkdir(parents=True, exist_ok=True)
+        if destination == target:
+            shutil.copy2(REPO / relative, destination)
+        else:
+            # Other pinned inputs are read-only links; never duplicate the
+            # whole large source pack for each independent negative control.
+            destination.symlink_to(REPO / relative)
+    try:
+        if problem == "missing":
+            target.unlink()
+            expected = FileNotFoundError
+        else:
+            with target.open("ab") as stream:
+                stream.write(b"unreviewed change")
+            expected = ValueError
+        before = snapshot(copied_wiki)
+        with pytest.raises(expected):
+            rules.generate_all(copied_wiki, sources)
+        assert snapshot(copied_wiki) == before
+    finally:
+        if target.exists():
+            target.unlink()
