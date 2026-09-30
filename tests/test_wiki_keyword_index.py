@@ -2,7 +2,7 @@
 
 守三件事：
   ① 归一化正确（不归一化实测会得到 518 个假 distinct，真值 46）
-  ② 分档判定不骗人（通用 / 十版遗留 / 单位特有 三档，依据是 11 版速查表这个真源）
+  ② 分档判定不骗人（通用 / 过渡期 / 单位特有，依据是官方核心规则）
   ③ 索引里的每一条链接都指向**真实存在**的页（生成物不进 lint 的断链扫描，
      所以它的链接正确性只能由本文件保证）
 """
@@ -17,6 +17,7 @@ from wiki_engine.keyword_index import (DEFAULT_PDF, classify, collect,
                                        engine_status, generate, load_glossary,
                                        normalize_keyword, parse_quickref,
                                        _rule_page, _zh_base)
+from wiki_engine.core_rules_zh import ZH_PDF
 
 REPO = Path(__file__).resolve().parent.parent
 DB = REPO / "db" / "wh40k.sqlite"
@@ -24,7 +25,8 @@ WIKI = REPO / "wiki"
 PDF = REPO / DEFAULT_PDF
 
 needs_db = pytest.mark.skipif(not DB.exists(), reason="需要 db/wh40k.sqlite")
-needs_pdf = pytest.mark.skipif(not PDF.exists(), reason="需要 11 版通用技能速查表 PDF")
+needs_pdf = pytest.mark.skipif(not PDF.exists() or not (REPO / ZH_PDF).exists(),
+                               reason="需要官方中英核心规则 PDF")
 
 
 # ── 归一化 ────────────────────────────────────────────────────────
@@ -47,29 +49,27 @@ def test_normalize_does_not_eat_name_digits():
     assert normalize_keyword("PLASMA WARHEAD")[0] == "PLASMA WARHEAD"
 
 
-# ── 速查表解析（通用 USR 判定的真源）────────────────────────────────
+# ── Official numbered abilities ───────────────────────────────────
 
 @needs_pdf
 def test_parse_quickref_covers_11e_keywords():
     qr = parse_quickref(PDF)
-    assert len(qr) >= 30
+    assert len(qr) == 35
     for name in ("CLEAVE", "CLOSE-QUARTERS", "PSYCHIC", "SUSTAINED HITS",
                  "ONE SHOT", "BLAST", "RAPID FIRE"):
-        assert name in qr, "速查表漏了 {}".format(name)
-    # 速查表（汉化组）写「横扫」；这里断言的是**解析器读对了 PDF**，
-    # 不是断言译名政策——全库译名以 GW 官方中文为准（官方 24.06 是「劈砍」），
-    # 差异在 wiki/indexes/keywords.md 的「译名差异」节里如实披露
-    assert qr["CLEAVE"].name_zh == "横扫"
+        assert name in qr, "官方核心规则漏了 {}".format(name)
+    assert qr["CLEAVE"].name_zh == "劈砍"
     assert qr["CLEAVE"].section == "24.06"
     assert qr["CLOSE-QUARTERS"].section == "24.07"
     assert qr["PSYCHIC"].section == "24.29"
 
 
 @needs_pdf
-def test_parse_quickref_does_not_invent_missing_section():
-    """PDF 里「连击 SUSTAINED HITS」那行确实没印节号——留空，不按顺序推断补全。"""
+def test_official_source_supplies_previously_omitted_sections():
+    """Numbering comes from official headings, not the retiring table's omissions."""
     qr = parse_quickref(PDF)
-    assert qr["SUSTAINED HITS"].section is None
+    assert qr["SUSTAINED HITS"].section == "24.36"
+    assert qr["PISTOL"].section == "24.27"
 
 
 def test_parse_quickref_missing_file_raises(tmp_path):
@@ -89,7 +89,7 @@ def test_parse_quickref_too_few_entries_raises(tmp_path):
     target = tmp_path / "broken.pdf"
     doc.save(str(target))
     doc.close()
-    with pytest.raises(ValueError, match="速查表只解析出"):
+    with pytest.raises(ValueError, match="Official Core Rules chapter 24 incomplete"):
         parse_quickref(target)
 
 

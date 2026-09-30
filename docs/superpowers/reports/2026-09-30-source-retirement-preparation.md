@@ -1,6 +1,6 @@
 # Approved Chinese source retirement preparation
 
-Status: **partial preparation, iteration 1**. The approved exact-source policy and cached term gates are implemented and locally tested. Official keyword classification, copied index/database reconciliation and the final native suite remain outstanding. This report is evidence for review, not release acceptance. No production assets were published or retired.
+Status: **partial preparation, iteration 2**. The approved exact-source policy, cached term gates and official keyword classifier are implemented and locally tested. Copied index/database reconciliation and the final native suite remain outstanding. This report is evidence for review, not release acceptance. No production assets were published or retired.
 
 ## Scope and baseline
 
@@ -20,7 +20,7 @@ No database aliases were deleted based on their aggregated `data_refined` attrib
 
 ## Tests and evidence
 
-All local evidence is under `D:/Project/py/RAG/db_sources/release-check-20260930/retirement-preparation/iteration-01/`.
+Iteration 1 evidence is under `D:/Project/py/RAG/db_sources/release-check-20260930/retirement-preparation/iteration-01/`.
 
 | Check | Result | Evidence |
 | --- | --- | --- |
@@ -32,7 +32,7 @@ All local evidence is under `D:/Project/py/RAG/db_sources/release-check-20260930
 | `git -c core.whitespace=cr-at-eol diff --check` | Passed | Checked after implementation and documentation |
 | Production file preservation | **20,099 before = 20,099 after**, zero changed/added/removed files | `production-before.json`, `production-after.json`, `production-preservation.json` |
 
-The two passing groups comprise 266 distinct focused tests. A new full native suite has **not** been run in this iteration; the earlier 2,814-pass checkpoint is historical evidence only. Ruff is unavailable in the project environment (`No module named ruff`), and no replacement tool/interpreter was installed. The actual diff was inspected, including removal of incidental line-ending churn. Independent host review remains pending.
+The two iteration-1 passing groups comprise 266 distinct focused tests. A new full native suite has **not** been run in either preparation iteration; the earlier 2,814-pass checkpoint is historical evidence only. Ruff is unavailable in the project environment (`No module named ruff`), and no replacement tool/interpreter was installed. The actual diff was inspected, including removal of incidental line-ending churn. Independent host review remains pending.
 
 The preservation manifests hash every file under `data`, `data_refined`, `db`, `local_vector_store`, `wiki`, `wiki_build` and `db_sources/blacklibrary`. Tests and staging wrote to temporary/ignored preparation paths. Active PDFs, refined caches, database, vector index, generated wiki/terms and Black Library caches are byte-identical to the pre-test snapshot. No official assets were refreshed and no server/browser/watcher was started. The short-lived hash/test commands all completed.
 
@@ -53,10 +53,36 @@ There are **156 tracked files**, including **78 Markdown pages**, under `data_re
 
 ## Remaining bounded preparation
 
-1. Replace `wiki_engine/keyword_index.py`'s direct quick-reference PDF dependency with deterministic extraction from the retained official Core Rules. Reuse the direct-PDF numbered-section parser, preserve official glossary names and exercise actual parameterized families/transitional PISTOL text. Reject retired explicit keyword inputs and replace omission-based legacy expectations with official-source coverage tests. The current quick-reference code remains unchanged and still reads the active retiring PDF; the passing existing keyword tests do not validate a replacement.
-2. Stage copied vector index/database artifacts under `D:/Project/py/RAG/db_sources/release-check-20260930/retirement-preparation/`. Dry-run exact inventory attribution: expected 5,905 documents minus 2,501 retiring documents = 3,404 retained, including all 1,128 Black Library documents. Verify exact retained document/vector hashes and incremental processed-key cleanup. These counts remain projected from the inventory, not reconciled by this iteration.
-3. On a database copy, compare the filtered alias/name rebuild before deciding any removal. Reconcile the 705 `data_refined`, 961 `blackforum` and 19 `community` aliases with independently sourced rows; preserve canonical/official rows with full row snapshots. Aggregated attribution alone is insufficient. No copied database trial was run here.
-4. Run the final full native suite after the complete preparation changes, inspect the final diff and rerun production-preservation checks. Incorporate independent host release/source review and complete this report with exact copied-index/database results. Do not mark the loop stop condition met before these steps pass.
+1. Stage copied vector index/database artifacts under `D:/Project/py/RAG/db_sources/release-check-20260930/retirement-preparation/`. Dry-run exact inventory attribution: expected 5,905 documents minus 2,501 retiring documents = 3,404 retained, including all 1,128 Black Library documents. Verify exact retained document/vector hashes and incremental processed-key cleanup. These counts remain projected from the inventory, not reconciled by either iteration.
+2. On a database copy, compare the filtered alias/name rebuild before deciding any removal. Reconcile the 705 `data_refined`, 961 `blackforum` and 19 `community` aliases with independently sourced rows; preserve canonical/official rows with full row snapshots. Aggregated attribution alone is insufficient. No copied database trial was run here.
+3. Run the final full native suite after the complete preparation changes, inspect the final diff and rerun production-preservation checks. Incorporate independent host release/source review and complete this report with exact copied-index/database results. Do not mark the loop stop condition met before these steps pass.
+
+## Iteration 2 official keyword classifier
+
+`wiki_engine/keyword_index.py` now reads the retained English Core Rules (`data/Core Rules - New 40K Core Rules.pdf`) and official Chinese Core Rules (`data/官方中文/chi_01-06_warhammer40k_new40k_core_rules-gihrxgzhgo-iickazpeog.pdf`). It uses the existing `pdf_sections.split_sections` parser directly, pairs exact official section numbers and normalizes typographic hyphens in headings. No LLM cache or retiring quick-reference text is used. Both inputs pass the shared source-policy guard before file access.
+
+Both official PDFs contain 38 chapter-24 sections. Sections 24.01 (ABILITIES), 24.02 (DUPLICATED ABILITIES) and 24.32 (SCOUT MOVE) are structural explanations/procedures rather than separate named datasheet abilities. The remaining **35 named abilities** come from their actual headings. The bounded completeness check requires the retained snapshot's 24.01–24.38 section set in both languages; future section additions/deletions require source review and fail visibly. A synthetic unfamiliar heading proves that identities are not a guessed keyword whitelist. Numbered cross-reference prefixes are stripped from the combined LEADER 24.22 / SUPPORT heading, including the Chinese parser's preceding app-footer fragment, without guessing the target name.
+
+Actual headings supply LEADER 24.22, PISTOL 24.27 and SUSTAINED HITS 24.36, which were omitted or unnumbered in the retiring table. PISTOL is transitional only when its official English body/asides state both equivalence with CLOSE-QUARTERS and replacement by it. The classifier does not assign that status when the source entry or either statement is absent. Core Rules 24.01 explicitly permits conditional keyword suffixes on weapon abilities; family lookup now handles these generically, including the source's SUSTAINED HITS 1: INFANTRY/BEASTS example. Existing target identities and weapon statistics remain separate. Parameterized ANTI, CLEAVE and RAPID FIRE regressions retain their official section identities.
+
+The public `parse_quickref`, `QuickRefEntry` and report `quickref_entries` names remain compatibility shims; `core_rules_entries` reports the new source count explicitly. The JSON field set stays compatible. `nameZh` still comes from the existing official glossary; the old `quickrefZh` field is now null because its frontend label describes a retiring secondary translation. Generated Markdown no longer publishes the fan-table translation-difference section. The legacy API null-section fallback is tested with an explicit temporary legacy payload, while a newly generated temporary payload verifies PISTOL's actual 24.27 section and API rule link.
+
+Evidence is under `D:/Project/py/RAG/db_sources/release-check-20260930/retirement-preparation/iteration-02/`:
+
+| Check | Result | Evidence |
+| --- | --- | --- |
+| Initial new regressions on preceding implementation | **16 failed** as expected | `baseline-red.log` |
+| Initial keyword/parser/API focused suite | **91 passed**, no skips | `focused-first.log` |
+| Expanded final policy/terms/resolver/keyword/parser/API suite | **204 passed**, no skips, 9 deprecation warnings, 23.21 seconds | `focused-final.log` |
+| Mistyped focused-test invocation | No tests ran; corrected paths were used for the passing suite | `focused-invocation-error.log` |
+| Actual official section text, titles, physical pages and source hashes | 38 sections in each language; 35 named pairs | `official-keyword-evidence.json` |
+| Staged generation and comparison to active keyword payload | 50 identities and all statistics/display names/groupings/links preserved; two official section numbers supplied; 36 secondary alias values cleared | `keyword-reconciliation.json`, `keywords/indexes/keywords.{md,json}` |
+| Production preservation against the original preparation baseline | **20,099 before = 20,099 after**, zero changed/added/removed files | `production-after.json`, `production-preservation.json`; baseline `../iteration-01/production-before.json` |
+| Changed Python syntax compilation and whitespace validation | Passed; compilation did not write artifacts | Direct `compile` checks and `git -c core.whitespace=cr-at-eol diff --check` |
+
+The staged payload changes only `section` (PISTOL null → 24.27, SUSTAINED HITS null → 24.36) and the retired `quickrefZh` aliases. The 50-item distribution remains 36 universal, one transitional and 13 unit-specific. Every other payload field, including reverse lookup records, is equal to the active baseline. Normal generation wrote only to the ignored preparation directory. Active keyword artifacts still contain the historical table-derived payload until the reviewed apply stage regenerates them.
+
+No final full native suite is claimed by this slice. No formatter was installed; Ruff's absence was established in iteration 1. Independent host code/source review is still pending. No external retrieval, commits, deployment or container changes occurred, and no long-running process was started. All test/hash commands completed. The original production manifest and the final snapshot cover `data`, `data_refined`, `db`, `local_vector_store`, `wiki`, `wiki_build` and `db_sources/blacklibrary`.
 
 ## Later asset apply, owned by the host
 
