@@ -1,9 +1,124 @@
 # Versioned benchmark preparation acceptance — October 1, 2026
 
-Iterations 1–2 complete the immutable baseline, validated Python-loader/CLI
-selection and exact-byte output provenance. The complete objective remains unfinished. No real benchmark,
+Iterations 1–3 complete the immutable baseline, validated Python-loader/CLI
+selection, exact-byte output provenance and version-aware comparison. The complete objective remains unfinished. No real benchmark,
 source promotion, production mutation, API work, service startup or publication
 was performed. GNHF owns commits; none were made manually.
+
+## Iteration 3 — validated, version-aware result comparison
+
+The bounded unit is `scripts/compare_bench_runs.py` and its offline contract
+tests. No gold clauses changed. Source-cited v3.7 preparation remains the next
+unit; the complete stop condition is not met. Only the comparator, new
+`tests/test_compare_bench_runs.py`, this report and benchmark README changed.
+The runner and all earlier judge/scoring fixtures remain byte-identical.
+
+Both full result documents validate before counts or verdict transitions print.
+Validation rejects duplicate, nonpositive, boolean, string or fractional IDs;
+malformed roots/details/summary/rows; missing or blank question/faction/gold;
+unsupported gold types; invalid or conflicting verdict axes; malformed declared
+provenance; conflicting canonical identities; and declared executed totals
+inconsistent with the actual rows. Gold-source total may exceed executed rows
+for a limited run. Only the original #63 question/faction/type contract allows
+null gold; a supplied conflicting canonical identity still fails. Historical
+results may omit that identity field because the old runner did not emit it.
+No missing expectation is inferred from an ID, hash or current application.
+
+Default comparison refuses differing ID sets, questions, factions, gold, types,
+known canonical identities, available row metadata or declared gold source
+version/edition/hash/total/coverage. Every difference prints before exit **2**,
+without verdict transitions. `--allow-different-gold` enumerates these same
+differences and compares common rows with an explicit statement that the
+transitions are **not an application regression claim**. Missing versus null
+metadata is visible. Gold paths print but locations alone do not determine
+expectation equivalence. Equal claimed hashes cannot override different actual
+gold. Invalid inputs and mismatched verdict axes fail even with the override.
+Ordinary verdicts and the two layered axes are inspected separately; this adds
+no rejudging, scoring changes or benchmark execution.
+
+Historical results without summary provenance remain usable by comparing
+actual detailed fields. Absent provenance/metadata/canonical identity is
+disclosed as unverified rather than inferred. A modern-to-historical comparison
+can establish equal detailed expectations while leaving source equivalence
+unverified. Even complete reported provenance is not independent primary-source
+verification. Exit **0** means a comparison completed, not all answers passed.
+
+Validation command (existing Python 3.9.1 environment, read-only):
+
+```powershell
+& 'D:/Project/py/RAG/.venv/Scripts/python.exe' -m pytest tests/test_compare_bench_runs.py tests/test_qa_bench.py tests/test_qa_bench_gold_selection.py tests/test_qa_bench_provenance.py -q --tb=short
+```
+
+Result: **197 passed**, five existing SWIG deprecation warnings. All 131 earlier
+loader/CLI/judge/scoring cases remain green; **66 new comparator cases** cover
+same expectations, all core-field and source differences, explicit override,
+missing IDs, malformed tail rows, both input sides, null #63, known identity
+changes/conflicts, metadata absence, malformed provenance, full executed counts,
+layered axes and actual historical compatibility. All **58 tracked historical
+result documents** pass the strict reader. This is compatibility verification,
+not a new benchmark run or fresh-answer assessment.
+
+The initial 50 comparator tests failed against the original implementation.
+Some failures concern missing interface/output. Separate direct paired calls
+to the actual `HEAD` comparator establish two existing defects without relying
+on a new interface: duplicate IDs silently collapse with exit **0**, and changed
+gold is accepted with exit **0**. Both inputs now return **2**. The actual
+historical same-gold pair `qa_agent_results_same_name_disambig.json` and its
+`_run2` result passes with zero verdict differences and explicit unknown
+provenance. No historical result was modified.
+
+Ignored finite evidence is under this worktree's
+`db_sources/release-check-20260930/benchmark-versioning/`:
+`iteration-3-before.json`, `iteration-3-red.txt`, `iteration-3-paired.json`,
+`iteration-3-tests.txt`, `iteration-3-historical-validation.json` and
+`iteration-3-verification.json`. Before/after hashes cover 67 tracked benchmark
+gold/results and owned inputs. Root/frozen v3.6 retain SHA-256
+`a402aed889eff64f3419d7a6768ff9b168a5912d0bc9c3e92cf225913a7fe3cc`,
+with all 115 ordered IDs/questions/factions/types/canonical identities unchanged.
+Only the comparator and deliberately updated documentation differ among the
+inventoried inputs. Python compilation and
+`git -c core.whitespace=cr-at-eol diff --check` pass. Ruff is unavailable in the
+selected environment; no dependencies were installed or changed.
+The implementation/test diff was inspected locally. Independent acceptance is
+host-owned and remains outstanding. No service/background process, model call,
+network access, production mutation, manual commit/push or publication occurred.
+
+This section supplies verified implementation, error reproduction and learning
+evidence for the host's later deduplicated knowledge/hook handoff. External
+records remain root-owned and outside this iteration's file ownership.
+The source-cited v3.7 document, current-source/answer coverage inspection, real
+latest 115-question execution, active database alignment, clean Python 3.11 full
+suite, Docker/live checks, independent review, integration and publication remain
+outstanding. Full current Space Marine bodies remain unavailable as described
+below; comparator acceptance does not resolve that source-coverage limitation.
+
+### Iteration 3 local knowledge handoff
+
+The explicit stop-hook request authorized this additional local handoff. Existing
+records were searched first. New iteration-3 sections in
+`D:/Project/devlog/wh40k-oracle/CHECKPOINT.md` and `ROADMAP.md` record the actual
+comparison behavior, paired failures, 197 passing tests, 58 historical input
+checks, preserved gold/scoring and remaining v3.7/host gates. Prior sections and
+concurrent source-retirement/official/API owners' content remain intact. The
+comparator remains uncommitted/unreviewed; preceding real `2e2e3a9fd` is identified
+only as CLI/provenance work. No commit explanation was invented.
+
+The existing learning decision
+`C:/Users/Administrator/learn-notes/decisions/20261001-freeze-gold-before-validating-selection.md`
+was extended with contract-first comparison and historical-provenance limits;
+its README index was updated. The separate underlying comparator error is
+recorded once at
+`C:/Users/Administrator/error-notes/rag/20261001-error-14-comparator-ignores-gold-contract.md`,
+with full paired outputs, actual predecessor revision, reproduction, environment,
+repair and validation evidence. Its README index was updated. The earlier loader
+error record remains unchanged. No harness promotion is warranted by this
+bounded project evidence; no manual staging, commit, push or publication occurred.
+
+Before/after preservation checks in ignored
+`benchmark-versioning/knowledge-handoff-iteration-3/` verify retained prior
+content, unique entries, unchanged staged diffs in all three knowledge
+repositories and unchanged implementation/test/baseline hashes. This handoff
+added no application/test changes or new test run.
 
 ## Iteration 2 — CLI selection and snapshot provenance
 

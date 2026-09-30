@@ -37,8 +37,35 @@ retain `gold`, `gold_type` and `gold_metadata` (the original row's remaining
 fields, including canonical identity, note and any source/coverage metadata).
 These extra fields do not change judge input or scoring.
 
-v3.7 and comparator changes remain unfinished. Historical gold is not a claim
-of complete current source coverage.
+The comparator validates both complete result documents before printing verdict
+transitions. Duplicate/non-integer IDs, missing question/faction/gold/type fields,
+invalid verdicts, conflicting identities/axes and inconsistent declared executed
+totals fail with exit 2. Only the original #63 identity may retain null gold.
+Historical ordinary results remain supported through their actual detailed
+question, faction, gold and type fields; missing hashes/source metadata are
+reported as unverified, never inferred from matching IDs. Layered results with
+expectation fields compare retrieval and generation separately; mixed verdict
+axes are rejected.
+
+```powershell
+& 'D:/Project/py/RAG/.venv/Scripts/python.exe' scripts/compare_bench_runs.py <base-result.json> <new-result.json>
+& 'D:/Project/py/RAG/.venv/Scripts/python.exe' scripts/compare_bench_runs.py --allow-different-gold <base-result.json> <new-result.json>
+```
+
+By default, changed ID sets, questions, factions, expectations, types, known
+canonical identities, row source notes or declared source versions/hashes/coverage
+refuse verdict comparison. The explicit override enumerates every such change
+and labels transitions as a cross-gold comparison without an application
+regression claim. Gold paths are displayed but differing locations alone do not
+change expectations. Matching reported hashes never override mismatched actual
+rows; recorded provenance is not independent verification of primary sources.
+Malformed input remains an error even with the override. Exit 0 means comparison
+completed, not that the answers passed.
+
+v3.7 remains unfinished. Historical gold is not a claim of complete current
+source coverage. Iteration 3 passed 197 offline tests, including all earlier judge
+fixtures, 66 comparator cases and a real historical same-gold pair; all 58 tracked
+historical result documents pass strict input validation.
 See [the scoped acceptance report](../../docs/superpowers/reports/2026-10-01-versioned-benchmark-acceptance.md)
 for tests, immutable-byte evidence and remaining work. The older entries below
 record their original benchmark versions and runs.
