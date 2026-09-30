@@ -15,7 +15,7 @@ from dataclasses import dataclass, field
 from pathlib import Path
 from typing import Dict, List, Optional, Tuple
 
-from corpus_policy import is_excluded_book
+from corpus_policy import is_excluded_book, retired_alias_spellings
 
 FUZZY_CUTOFF = 0.6
 
@@ -192,6 +192,11 @@ class EntityResolver:
                 self._zh_norm_to_id[norm] = None
 
         self._unit_aliases = load_unit_aliases(app_path) if app_path else {}
+        # A removed exact alias is not a typo of a nearby surviving unit.
+        # This audited negative identity list contains no rule prose or target
+        # mappings; surviving exact/normalized/community mappings take priority.
+        self._retired_alias_norms = frozenset(
+            _sep_normalized(alias) for alias in retired_alias_spellings())
 
     def _qualified_candidates(self, key: str) -> List[str]:
         """碰撞桶 → `Name (FACTION)` 候选串（可原样回填 resolve 精确重查）。"""
@@ -240,6 +245,9 @@ class EntityResolver:
             resolved = self.resolve(alias_target)
             if resolved.canonical_id:
                 return ResolveResult(resolved.canonical_id, resolved.name_en, "exact")
+
+        if _sep_normalized(name) in self._retired_alias_norms:
+            return ResolveResult(None, None, "none")
 
         # 中英文分开模糊匹配：en_to_id 的 key 恒为大写，name 需同样大写化才能比对
         zh_hits = difflib.get_close_matches(

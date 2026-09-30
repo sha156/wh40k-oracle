@@ -14,7 +14,7 @@ from pathlib import Path
 def _policy() -> dict:
     # Missing/malformed policy must fail closed rather than resurrect sources.
     policy = json.loads(Path(__file__).with_name("corpus_policy.json").read_text(encoding="utf-8"))
-    for key in ("excluded_stems", "excluded_book_names"):
+    for key in ("excluded_stems", "excluded_book_names", "retired_alias_spellings"):
         values = policy[key]
         if not isinstance(values, list) or any(
                 not isinstance(s, str) or not s.strip() for s in values):
@@ -44,3 +44,12 @@ def is_excluded_book(book: str | Path) -> bool:
 def require_active_source(source: str | Path) -> None:
     if is_excluded_source(source):
         raise ValueError(f"Source retired by corpus_policy.json: {source}")
+
+
+def retired_alias_spellings() -> frozenset[str]:
+    """Audited lost alias spellings, solely to prevent fuzzy identity swaps.
+
+    These are not source exclusions or assertions that a unit does not exist.
+    Resolvers must check surviving exact identities before consulting this set.
+    """
+    return _policy()["retired_alias_spellings"]
