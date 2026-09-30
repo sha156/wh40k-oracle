@@ -32,6 +32,7 @@ from web_api.contract import (Answer, ChangelogFactionPage, ChangelogIndex,
                               KeywordIndexResponse, RosterIn, SimResponse,
                               ValidationReportOut)
 from web_api.formatter import format_answer
+from web_api.origin_boundary import OriginBoundaryMiddleware
 from web_api.preflight import (retrieval_enabled, run_preflight,
                                summary as preflight_summary)
 from web_api.ratelimit import install as install_rate_limit
@@ -87,6 +88,10 @@ app.add_middleware(
     allow_methods=["GET", "POST"],
     allow_headers=["*"],
 )
+# Reject supplied foreign/duplicate Origins before CORS, rate limits and handlers.
+# Both middleware layers share the exact configured UI origins; no-Origin CLI
+# requests keep their existing behavior. The ASGI gate never reads the body.
+app.add_middleware(OriginBoundaryMiddleware, allowed_origins=_ALLOWED_ORIGINS)
 
 # 会话内存 session：sid → 历史轮（蓝图既定，不引数据库）
 from web_api.sessions import SessionStore
