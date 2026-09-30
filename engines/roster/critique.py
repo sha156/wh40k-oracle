@@ -10,6 +10,8 @@ MEQ 战锤 / TEQ 终结者 / VEH 载具）→ 每 100 点期望伤害（性价�
 """
 from __future__ import annotations
 
+import sqlite3
+from contextlib import closing
 from dataclasses import dataclass, field
 from typing import List, Optional, Tuple
 
@@ -104,15 +106,24 @@ def _score_phase(attacker, phase, points, n, seed):
 
 
 def _assess_unit(db_path, unit, n: int, seed: int) -> UnitAssessment:
+    from db_compile.coverage_notes import body_support
+    with closing(sqlite3.connect(str(db_path))) as conn:
+        coverage = body_support(
+            conn, unit_id=unit.canonical_id,
+            required_fields={"models", "weapons", "keywords", "composition", "equipment"})
+    if not coverage.supported:
+        return UnitAssessment(unit.canonical_id, unit.name_en, unit.points,
+                              assessed=False, note=coverage.note)
+    qualifier = (" " + coverage.note) if coverage.note else ""
     if not unit.loadout:
         return UnitAssessment(
             unit.canonical_id, unit.name_en, unit.points, assessed=False,
-            note="需装配（多武器选项池，未指定 loadout → 不评估，不瞎估）")
+            note="需装配（多武器选项池，未指定 loadout → 不评估，不瞎估）" + qualifier)
     candidates = _assemble_phases(db_path, unit)
     if not candidates:
         return UnitAssessment(
             unit.canonical_id, unit.name_en, unit.points, assessed=False,
-            note="装配失败（loadout 与武器池不匹配 / 无可开火武器）")
+            note="装配失败（loadout 与武器池不匹配 / 无可开火武器）" + qualifier)
 
     # 攻守双武器单位：评估各阶段，取总输出更高的那个（否则近战主战单位会被手枪拖低）
     best = None
@@ -122,14 +133,16 @@ def _assess_unit(db_path, unit, n: int, seed: int) -> UnitAssessment:
             best = (total, phase, scores)
     return UnitAssessment(
         unit.canonical_id, unit.name_en, unit.points, assessed=True,
-        phase=best[1], scores=tuple(best[2]))
+        phase=best[1], scores=tuple(best[2]), note=coverage.note or "")
 
 
 def _build_summary(assessments: Tuple[UnitAssessment, ...]) -> Tuple[str, ...]:
     out: List[str] = []
     unassessed = [a for a in assessments if not a.assessed]
     if unassessed:
-        out.append(f"{len(unassessed)}/{len(assessments)} 单位未评估（需先装配武器）")
+        reason = "详见单位说明（装配或来源覆盖限制）" if any(
+            "Source coverage:" in a.note for a in unassessed) else "需先装配武器"
+        out.append(f"{len(unassessed)}/{len(assessments)} 单位未评估（{reason}）")
     done = [a for a in assessments if a.assessed]
     if not done:
         return tuple(out)
@@ -161,8 +174,11 @@ def critique(db_path, roster: Roster, n: int = 1000, seed: int = 1234) -> Critiq
     这里**复用** `validate._enhancement_points` 而不是另抄一份求和，正是为了不再长出
     第二套口径——判死刑的权威在 validate，点评页跟着它走。
     """
-    from engines.roster.validate import _enhancement_points
+    from engines.roster.validate import _coverage_issues, _enhancement_points
 
+    # Validate declarations before price/body consumers, including malformed
+    # identity rows that might otherwise disappear during a missing-unit return.
+    _coverage_issues(db_path, roster)
     priced = recompute(db_path, roster)
     assessments = tuple(_assess_unit(db_path, u, n, seed) for u in priced.units)
     enh_points, enh_issues = _enhancement_points(db_path, priced)
@@ -172,4 +188,5 @@ def critique(db_path, roster: Roster, n: int = 1000, seed: int = 1234) -> Critiq
     summary = _build_summary(assessments) + tuple(i.message for i in enh_issues)
     return CritiqueReport(
         total_points=total, assessments=assessments,
-        summary=summary, not_modeled=_NOT_MODELED)
+        summary=summary, not_modeled=_NOT_MODELED + tuple(
+            a.note for a in assessments if "Source coverage:" in a.note))

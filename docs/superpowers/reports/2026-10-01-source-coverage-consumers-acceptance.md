@@ -1,9 +1,12 @@
 # Source coverage consumer acceptance
 
-Iteration 1 completes the central note, card and formatter digest slice. The
-whole consumer objective remains open: simulation and roster coverage boundaries
-are the next bounded iteration. This report does not authorize source promotion
-or claim deployment, actual-asset acceptance or latest full-Codex parity.
+The scoped central consumer candidate is complete: cards/digests retain whole
+body/price qualifiers, both simulation directions check body support, and roster
+validation/critique disclose or deny unsupported bodies. Generic and Python
+reviewers independently approve the candidate. Root tool-loop integration,
+production-asset acceptance and source promotion remain separate gates; no
+deployment or latest full-Codex parity is claimed. The central-slice evidence
+below is retained, followed by the calculation-consumer acceptance for iteration 2.
 
 The isolated checkout is
 `C:/Users/Administrator/.codex/worktrees/release-native-build-recovery/RAG`, on
@@ -137,15 +140,13 @@ Two verified lessons are retained here to avoid duplicate cross-checkout notes:
 
 ## Remaining authorized work and root integration seams
 
-Iteration 2 must add strict body support decisions and notes to both simulation
-sides and reverse direction, and roster validation/critique. Current prices
-cannot certify a combat body, composition or equipment. Missing verified bodies
-must deny simulation and remain unassessed in critique; retained historical
-bodies require clear dates/status on both sides and surfaced roster limitations.
-Fields-only supports only its exact verified fields. Existing algorithms,
-chapter-price constraints, unknown/model-absent errors, default validity
-semantics and absent-registry controls must remain intact. These boundaries have
-not been changed or claimed passing in iteration 1.
+Iteration 2 now verifies the simulation and roster boundaries described below.
+Current prices cannot certify a combat body, composition or equipment. Missing
+verified bodies deny simulation and remain unassessed in critique; retained
+historical bodies disclose complete dates/status on both sides and in roster
+limitations. Fields-only supports only its exact verified fields. The calculation
+algorithms, chapter-price constraints, unknown/model-absent failures, warning-only
+validity semantics and absent-registry payloads are preserved.
 
 Root still owns get_entity/get_datasheet source-only adapters and AgentLoop
 usable-evidence integration after the security merge. The required source-only
@@ -159,13 +160,195 @@ note through `Datasheet.source_note`; central card reloads use the same source.
 Root must ensure a `CoverageError` is visible and never converted to current
 coverage or a usable stale body by tool/loop exception handling.
 
-The full stop condition is not met. No declarations, database, manifests, PDFs,
-MFM, index or wiki were published. No manual staging/commit/push/merge/deploy or
-other checkout change occurred. No background process was started. GNHF should
-retain this bounded central candidate for its commit, then continue simulation
-and roster acceptance before independent whole-consumer integration review.
+The scoped consumer stop condition is met after iteration 2. No declarations,
+database, manifests, PDFs, MFM, index or wiki were published. No manual staging,
+commit, push, merge, deploy or other checkout change occurred in iteration 2.
+All started test processes finished; no service, watcher or browser was started.
+GNHF owns the scoped commit; root owns subsequent integrated acceptance.
 
 
 ## Explicit stop-hook knowledge handoff
 
 The hook-authorized handoff checked existing notes before writing. Project checkpoint and roadmap now record the verified central slice and simulation/roster/root gates under `D:/Project/devlog/wh40k-oracle/`. The existing `learn-notes/decisions/20261001-separate-transactional-source-coverage.md` is extended rather than duplicated; one resolved validation-order record is saved at `C:/Users/Administrator/error-notes/rag/20261001-error-31-coverage-validation-order-bypasses-card-guard.md`, with both repository indexes updated. Original content and staged indexes are preserved. No commit explanation is invented for this uncommitted slice, and no additional harness promotion is warranted. No manual staging, commit or publication occurred; root retains intended knowledge publication.
+
+## Iteration 2 calculation-consumer acceptance
+
+The iteration started on `codex/release-source-coverage-consumers` at
+`d09650a68`, the orchestrator commit containing the previous central slice and
+knowledge handoff. Initial Git status was clean. Frozen calculation comparison
+still uses exact `2acd1e4be7549e3f7553742cf8833f896b56b096` modules; the central
+helper did not exist at that original base. No worktree swap, manual Git index
+mutation, dependency installation or production-asset access was used.
+
+### Calculation support and consumer surfaces
+
+- The distinct shared helper resolves and validates the registry before deciding
+  support. Full current, historical and explicitly retained full bodies may use
+  the existing computation. A fields-only body authorizes only its exact scope.
+  Missing metadata preserves the original path. Invalid JSON, canonical identity
+  or declared full/retained model loadability remains a `CoverageError`.
+- Simulation checks both canonical identities before any assembly or numerical
+  output. Forward combat requires models, keywords, composition and abilities
+  on both sides, plus weapons/equipment for the attacker. Reverse combat also
+  requires defender weapons/equipment. Incomplete fields-only declarations and
+  newer-unavailable bodies with no retained full body return `ok=False`,
+  `modeled=False`, `reason=body_unverified` without a combat report. Invalid
+  declarations return `coverage_invalid`. Explicit model/loadout inputs and
+  current published prices cannot upgrade body support.
+- Successful simulation carries each subject's whole central qualifier once in
+  the existing warning field. Reverse output keeps both dated limitations. No
+  effects, phase algorithms, defaults or modeled DSL were removed or changed.
+  Existing phase-combat and unmodeled-ability boundaries remain in the report.
+- The web wrapper needed one minimal early validation check: its missing-row
+  return otherwise hid a declared canonical identity that had been deleted.
+  Ordinary unknown IDs still return `None`; an invalid declared ID returns the
+  existing structured failure contract. The wrapper does not append duplicate
+  success warnings or change frontend contracts.
+- Roster validation retains exact canonical-ID pricing and chapter-price
+  constraints. Whole notes use `ValidationIssue.message`, `WARN` and
+  `surfaced_only=True`. The note explicitly says `legal=True` means no checked
+  constraint failed, and does not certify unverified equipment/composition or
+  current list eligibility. Historical/unavailable keyword bodies and
+  fields-only bodies without verified keywords cannot produce current
+  CHARACTER/EPIC HERO/copy-limit hard errors. Warlord count, total price and
+  other independently checked constraints remain active. A retained historical
+  unit is surfaced, not falsely declared illegal or fully current.
+- Critique validates all declarations before repricing, then checks its actual
+  models/weapons/keywords/composition/equipment inputs before assessment. It
+  does not load abilities or faction DSL. Missing supported body entries remain
+  `assessed=False` with empty scores, rather than fabricated successful zero
+  damage. Retained and fields-only qualifiers survive successful scoring,
+  missing loadouts and failed assembly in `UnitAssessment.note` and
+  `CritiqueReport.not_modeled`. The summary does not falsely blame every
+  unsupported entry on missing weapon assembly.
+
+Only the shared helper, the authorized simulation body/warning region, the two
+roster modules, the minimal web prevalidation, new temporary-SQL tests and this
+report change. No public tool signature/schema or numerical price algorithm
+changes. Source-only price identities remain absent as full roster/combat units,
+with no inherited models, weapons or fabricated canonical IDs.
+
+### Paired evidence and regression limits
+
+| Evidence | Passed | Failed | Errors | Skipped |
+|---|---:|---:|---:|---:|
+| Corrected initial 34-case calculation matrix, unchanged consumers | 2 | 32 | 0 | 0 |
+| Final 38-case matrix, exact frozen calculation modules | 2 | 36 | 0 | 0 |
+| Final candidate calculation + central matrices | 55 | 0 | 0 | 0 |
+| Final scoped regression, 18 modules | 268 | 0 | 0 | 73 |
+| Broader run including unchanged agent-tool build fixtures | 320 | 6 | 0 | 75 |
+| Exact frozen-base `TestCalcPoints` control | 2 | 6 | 0 | 0 |
+
+The 55 final matrix cases are 38 calculation cases and the original 17 central
+cases, all included in final regression XML. The two final-base passing controls
+are source-only missing bodies and absent/empty-registry legacy behavior. The
+calculation matrix checks current-full, historical, retained newer-unavailable,
+unavailable with no retained body, exact fields-only scopes, both sides/reverse,
+current published price versus body support, whole provenance/dates, unsupported
+stale keyword eligibility, missing/invalid loadouts, invalid/deleted identities,
+malformed declarations, missing models and unknown/no-body units. It makes real
+consumer calls against temporary SQLite; no mocked numerical computation.
+
+Eight representative absent-registry consumer payloads (forward/reverse combat,
+web response, roster validation/critique, missing loadout, unknown ID and missing
+model) are byte-identical against the frozen base. Both serialized artifacts have
+SHA-256 `1ebca7cf5ccc51e020039eacf5527083b817015902d3ce58d7b69cb5f2bc6e39`.
+The retained-body combat control also compares complete numerical reports
+before and after declarations, including reverse output.
+
+The broader run's six failures are unchanged `TestCalcPoints` fixtures calling
+`db_compile.build` and hitting `PermissionError: [WinError 32]` during
+`wh40k.tmp.sqlite` to `wh40k.sqlite` replacement. All six exact failing node IDs
+reproduce against frozen-base modules, with the original build module unchanged.
+They are outside this consumer ownership and are not disguised as skipped or
+passing checks. The final scoped command covers the requested consumer modules
+without that unrelated build-fixture module; its skips are existing missing
+`wh40k.sqlite` asset guards. Full skipped IDs/reasons and failed IDs are recorded
+in `preservation-and-tests.json`. Production-asset/native-build acceptance stays
+with the separate host/root gate.
+
+The final command uses the unchanged fixed Python 3.11.9 interpreter identified
+above:
+
+```powershell
+& '<full-stack interpreter above>' -m pytest `
+  tests/test_source_coverage_calculations.py tests/test_source_coverage_consumers.py `
+  tests/test_source_coverage.py tests/test_db_compile_datasheet.py `
+  tests/test_historical_card_points.py tests/test_web_card_provenance.py `
+  tests/test_web_api_stage3.py tests/test_simulator_assembly.py `
+  tests/test_simulator_wiring.py tests/test_simulator_model_tiers.py `
+  tests/test_simulator_report.py tests/test_simulator_review_fixes.py `
+  tests/test_web_api_stage4_sim.py tests/test_roster_validate.py `
+  tests/test_roster_critique.py tests/test_roster_faction_validation.py `
+  tests/test_roster_surcharges.py tests/test_web_api_roster.py `
+  -q -rs --junitxml=db_sources/source-coverage-consumers/iteration-02/final-regression.xml
+```
+
+Initial setup/candidate failures are preserved honestly: `base.*` includes the
+fixture's mistaken reverse-phase default; `focused.*` catches the new local
+SQLite import omission; `focused-corrected.*` catches the web deleted-ID early
+return. All were corrected before final passing claims. They are distinct from
+the meaningful paired failure counts. Static format/type tools remain absent
+from the fixed environment; no installation or environment mutation was made.
+`git diff --check` passes.
+
+### Independent review, preservation and remaining gates
+
+The read-only generic reviewer approves with zero findings, independently
+running 73 tests with 35 missing-asset skips. The Python reviewer approves after
+the new helper parameter annotations, independently running 55 central/
+calculation cases and 79 existing cases with 48 missing-asset skips. Both
+explicitly exclude production assets and final tool-loop integration. Neither
+reviewer edited source, committed or started a background service.
+
+Preservation checks verify eight whole protected files against iteration-start
+SHA-256 digests, every existing function signature in the edited modules, every
+existing function/class outside the allowed regions, all agent tool schemas/
+global declarations and all 16 simulator modules against the exact original
+Git blobs. The simulation's original complete numerical/default/DSL try-body
+is AST-identical after removal of the single warning-list extension. Central
+datasheet and formatter files are unchanged from the accepted preceding slice.
+
+Ignored evidence is under the absolute workspace path
+`C:/Users/Administrator/.codex/worktrees/release-native-build-recovery/RAG/db_sources/source-coverage-consumers/iteration-02/`.
+It includes all logs/XML, reproducible frozen-base loader/blobs, legacy payload
+probes, iteration-start protected hashes, preservation verifier/accounting and
+the independent review record. Existing orchestrator notes were not modified.
+
+Verified lessons remain in this project report for root's deduplicated knowledge
+handoff: source validity must be checked before a web missing-ID return as well
+as before assembly; reverse combat needs offensive verification for the former
+defender; roster current eligibility must not be inferred from retained keyword
+rows; and an unassessed critique entry must preserve its actual body limitation
+instead of attributing every failure to weapon assembly. The six unchanged
+Windows build-fixture failures are unresolved here, so no resolved-error note
+or commit explanation is invented. No other checkout or knowledge repository
+was changed in this iteration.
+
+The scoped candidate is ready for GNHF's commit and root's integration review.
+Root still owns the get_entity/get_datasheet source-only adapters and AgentLoop
+usable-evidence seams described above, security-merge integration, full actual
+asset acceptance, official-source promotion and deployed acceptance. Nothing in
+this consumer report publishes new source declarations or certifies the full
+release.
+
+### Iteration 2 explicit stop-hook knowledge handoff
+
+The explicit hook authorized the previously deferred knowledge-repository
+handoff. Existing notes/templates/indexes were read first. The project checkpoint
+and roadmap at D:/Project/devlog/wh40k-oracle now supersede their iteration-1
+simulation/roster pending status with the actual implementation, paired counts,
+independent approvals and remaining root/GNHF/host gates. The existing
+learn-notes decisions/20261001-separate-transactional-source-coverage.md gains the
+calculation-direction and current-eligibility findings. Existing error-notes
+rag/20261001-error-31-coverage-validation-order-bypasses-card-guard.md gains the
+resolved web deleted-ID early-return reproduction and evidence rather than a
+duplicate issue. Their original frontmatter/template sections remain intact;
+the two existing README index entries point to the new continuations.
+
+Original note contents and existing staged changes are preserved and checked in
+iteration-02/handoff/. Application implementation hashes remain unchanged from
+final-candidate-hashes.json. No empty notes, new issue/decision record, correcting
+commit explanation or harness promotion was created. The consumer correction
+remains uncommitted; GNHF owns commits and root retains knowledge publication.
+No manual staging, commit, push, merge or deployment occurred during this hook.

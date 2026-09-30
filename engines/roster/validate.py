@@ -7,6 +7,7 @@ from __future__ import annotations
 
 import sqlite3
 from collections import Counter
+from contextlib import closing
 from typing import List, Optional, Set
 
 from engines.roster.compose_rules import (MAX_ENHANCEMENTS, RULE_OF_THREE,
@@ -88,8 +89,10 @@ def validate(db_path, roster: Roster) -> ValidationReport:
     总分 = 单位点数 + 强化点数——MFM 给强化列点数的唯一目的就是计入军队总分，
     漏计会把压线超分表判合法（gnhf 审查模块 3 F1 HIGH）。
     """
+    coverage_issues, unchecked_keywords = _coverage_issues(db_path, roster)
     priced = recompute(db_path, roster)
     issues = _faction_issues(db_path, priced)
+    issues.extend(coverage_issues)
     limit = size_limit(priced.size)
     enh_points, enh_point_issues = _enhancement_points(db_path, priced)
     total = total_points(priced) + enh_points
@@ -108,6 +111,10 @@ def validate(db_path, roster: Roster) -> ValidationReport:
             f"{name}（id {cid}）不在单位库中（可能已随库重建下线），"
             "点数与编制约束均未校验",
             surfaced_only=True))
+
+    # A stale/missing keyword body cannot prove current character eligibility
+    # or copy limits. Preserve price checks and surface the coverage limitation.
+    unchecked_ids = unknown_ids | unchecked_keywords
 
     # ⓪ 未知规模档：显式 surface（size_limit 会回退 2000，但不静默——否则报错消息会撒谎）
     size_label = priced.size
@@ -142,8 +149,8 @@ def validate(db_path, roster: Roster) -> ValidationReport:
             f"须恰好 1 个 WARLORD，当前 {len(warlords)} 个",
             anchor="11版 军表构筑·Warlord"))
     for w in warlords:
-        if w.canonical_id in unknown_ids:
-            continue    # 单位不在库，是否 CHARACTER 无从判定（已由 unit_not_found 披露）
+        if w.canonical_id in unchecked_ids:
+            continue    # Missing/current-unverified keywords are surfaced above.
         if not is_character(kw_map.get(w.canonical_id, set())):
             issues.append(ValidationIssue(
                 "warlord_not_character", ERROR,
@@ -153,8 +160,8 @@ def validate(db_path, roster: Roster) -> ValidationReport:
     # ④ Rule of Three：同 datasheet 份数上限（battleline/DT 豁免、epic hero≤1）
     counts = Counter(u.canonical_id for u in priced.units)
     for cid, n in counts.items():
-        if cid in unknown_ids:
-            continue    # 关键词未知 → 豁免与否无从判定（已由 unit_not_found 披露）
+        if cid in unchecked_ids:
+            continue    # Current copy eligibility cannot be inferred from stale keywords.
         kw = kw_map.get(cid, set())
         cap = datasheet_copy_limit(kw)
         name = next(u.name_en for u in priced.units if u.canonical_id == cid)
@@ -174,11 +181,32 @@ def validate(db_path, roster: Roster) -> ValidationReport:
                 surfaced_only=True))
 
     # ⑤ 强化：≤3 个、仅 CHARACTER 非 EPIC HERO、全军唯一、属于本 detachment
-    _validate_enhancements(db_path, priced, kw_map, unknown_ids, issues)
+    _validate_enhancements(db_path, priced, kw_map, unchecked_ids, issues)
 
     legal = not any(i.severity == ERROR for i in issues)
     return ValidationReport(total_points=total, limit=limit, legal=legal,
                             issues=tuple(issues))
+
+
+def _coverage_issues(db_path, roster):
+    from db_compile.coverage_notes import body_support
+    issues, unchecked = [], set()
+    with closing(sqlite3.connect(str(db_path))) as conn:
+        for cid in sorted({u.canonical_id for u in roster.units}):
+            decision = body_support(conn, unit_id=cid,
+                                    required_fields={"keywords", "composition", "equipment"})
+            if decision.note is None:
+                continue
+            if decision.status != "current_full_verified" and not (
+                    decision.status == "fields_only" and "keywords" in decision.scope):
+                unchecked.add(cid)
+            issues.append(ValidationIssue(
+                "source_coverage", WARN, decision.note +
+                " Roster legal=True means no checked constraint failed; it does not certify "
+                "unverified composition, equipment or current list eligibility."
+                + (" Keyword-based eligibility/copy limits remain unverified." if cid in unchecked else ""),
+                surfaced_only=True))
+    return issues, unchecked
 
 
 def _enhancement_points(db_path, roster: Roster):

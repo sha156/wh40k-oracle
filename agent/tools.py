@@ -939,6 +939,33 @@ def simulate_combat_resolved(
         return {"ok": False, "modeled": True, "tool": "simulate_combat",
                 "note": "wh40k.sqlite 不存在，需先跑 db_compile build"}
 
+    # Both forward and reverse bodies must be qualified before stale SQL rows
+    # enter assembly. The price ledger never certifies these body fields.
+    import sqlite3
+    from contextlib import closing
+    from db_compile.coverage_notes import CoverageError, body_support
+    coverage_warnings = []
+    reverse_body = bool(options.get("reverse") or options.get("defender_loadout"))
+    try:
+        with closing(sqlite3.connect(str(db_path))) as conn:
+            decisions = []
+            for side, subject in (("attacker", a), ("defender", d)):
+                fields = {"models", "keywords", "composition", "abilities"}
+                if side == "attacker" or reverse_body:
+                    fields.update(("weapons", "equipment"))
+                decisions.append((side, body_support(
+                    conn, unit_id=subject["canonical_id"], required_fields=fields)))
+            for side, decision in decisions:
+                if decision.note:
+                    coverage_warnings.append(f"{side}: {decision.note}")
+            if any(not decision.supported for _, decision in decisions):
+                note = " ".join(coverage_warnings)
+                return {"ok": False, "modeled": False, "tool": "simulate_combat",
+                        "reason": "body_unverified", "note": note, "warning": note}
+    except CoverageError as exc:
+        return {"ok": False, "modeled": False, "tool": "simulate_combat",
+                "reason": "coverage_invalid", "note": str(exc)}
+
     try:
         from dataclasses import replace as _replace
 
@@ -1101,6 +1128,7 @@ def simulate_combat_resolved(
         auto_warn = f"攻方自动装配：{asm.note}" if asm.auto_assembled else None
         warn_parts: List[Optional[str]] = [a.get("warning"), d.get("warning"),
                                            gtg_warn, auto_warn]
+        warn_parts.extend(coverage_warnings)
         if cover_on and not stance.target_in_cover:
             stance = _replace(stance, target_in_cover=True)
         if def_effects:

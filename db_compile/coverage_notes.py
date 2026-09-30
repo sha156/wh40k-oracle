@@ -7,6 +7,8 @@ Missing declarations return None so legacy consumers keep their exact payload.
 from __future__ import annotations
 
 import sqlite3
+from collections.abc import Collection
+from dataclasses import dataclass
 
 from db_compile.source_coverage import resolve_coverage
 
@@ -74,8 +76,8 @@ def describe_coverage(record: dict) -> str:
     return note
 
 
-def coverage_note(conn: sqlite3.Connection, **identity) -> str | None:
-    """Resolve one strict canonical/source-only identity, or preserve legacy None."""
+def _resolve(conn: sqlite3.Connection, **identity: str | None) -> dict | None:
+    """Keep invalid explicit declarations distinct from missing legacy metadata."""
     try:
         if not conn.execute(
             "SELECT 1 FROM sqlite_master WHERE type='table' AND name='source_coverage_registry'"
@@ -84,4 +86,42 @@ def coverage_note(conn: sqlite3.Connection, **identity) -> str | None:
         record = resolve_coverage(conn, **identity)
     except (ValueError, sqlite3.DatabaseError) as exc:
         raise CoverageError("Source coverage invalid: " + str(exc)) from exc
+    return record
+
+
+def coverage_note(conn: sqlite3.Connection, **identity) -> str | None:
+    """Resolve one strict canonical/source-only identity, or preserve legacy None."""
+    record = _resolve(conn, **identity)
     return describe_coverage(record) if record is not None else None
+
+
+@dataclass(frozen=True)
+class BodySupport:
+    supported: bool
+    note: str | None = None
+    status: str | None = None
+    scope: frozenset[str] = frozenset()
+
+
+def body_support(conn: sqlite3.Connection, *, required_fields: Collection[str],
+                 **identity: str | None) -> BodySupport:
+    """Allow only declared fields or a verified loadable full/retained body.
+
+    Callers state the body fields their existing algorithms consume. Prices and
+    explicit user model/loadout choices cannot upgrade missing body verification.
+    Missing metadata preserves the legacy path; full body loadability and exact
+    identity are checked by the strict registry before any consumer assembly.
+    """
+    record = _resolve(conn, **identity)
+    if record is None:
+        return BodySupport(True)
+    body = record["body"]
+    status, scope = body["status"], frozenset(body["scope"])
+    full = status in ("current_full_verified", "historical_snapshot") or (
+        status == "newer_full_unavailable" and body["retained_snapshot"] is not None)
+    supported = full or (status == "fields_only" and set(required_fields) <= scope)
+    note = describe_coverage(record)
+    if not supported:
+        missing = sorted(set(required_fields) - scope)
+        note += " Calculation body-unverified; required fields not verified: " + ", ".join(missing) + "."
+    return BodySupport(supported, note, status, scope)
