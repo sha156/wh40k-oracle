@@ -1,6 +1,6 @@
 # Approved Chinese source retirement preparation
 
-Status: **partial preparation, iteration 2**. The approved exact-source policy, cached term gates and official keyword classifier are implemented and locally tested. Copied index/database reconciliation and the final native suite remain outstanding. This report is evidence for review, not release acceptance. No production assets were published or retired.
+Status: **partial preparation, iteration 3**. The approved exact-source policy, cached term gates and official keyword classifier are implemented and locally tested. Copied vector-index and cached-term reconciliation are complete; copied database alias/name reconciliation and the final native suite remain outstanding. This report is evidence for review, not release acceptance. No production assets were published or retired.
 
 ## Scope and baseline
 
@@ -53,7 +53,7 @@ There are **156 tracked files**, including **78 Markdown pages**, under `data_re
 
 ## Remaining bounded preparation
 
-1. Stage copied vector index/database artifacts under `D:/Project/py/RAG/db_sources/release-check-20260930/retirement-preparation/`. Dry-run exact inventory attribution: expected 5,905 documents minus 2,501 retiring documents = 3,404 retained, including all 1,128 Black Library documents. Verify exact retained document/vector hashes and incremental processed-key cleanup. These counts remain projected from the inventory, not reconciled by either iteration.
+1. Copied vector-index reconciliation is completed in iteration 3 below. Keep the verified staged artifacts unpublished until the database trial, final suite and host review pass. Do not substitute the active index or infer database-alias provenance from document removals.
 2. On a database copy, compare the filtered alias/name rebuild before deciding any removal. Reconcile the 705 `data_refined`, 961 `blackforum` and 19 `community` aliases with independently sourced rows; preserve canonical/official rows with full row snapshots. Aggregated attribution alone is insufficient. No copied database trial was run here.
 3. Run the final full native suite after the complete preparation changes, inspect the final diff and rerun production-preservation checks. Incorporate independent host release/source review and complete this report with exact copied-index/database results. Do not mark the loop stop condition met before these steps pass.
 
@@ -83,6 +83,30 @@ Evidence is under `D:/Project/py/RAG/db_sources/release-check-20260930/retiremen
 The staged payload changes only `section` (PISTOL null → 24.27, SUSTAINED HITS null → 24.36) and the retired `quickrefZh` aliases. The 50-item distribution remains 36 universal, one transitional and 13 unit-specific. Every other payload field, including reverse lookup records, is equal to the active baseline. Normal generation wrote only to the ignored preparation directory. Active keyword artifacts still contain the historical table-derived payload until the reviewed apply stage regenerates them.
 
 No final full native suite is claimed by this slice. No formatter was installed; Ruff's absence was established in iteration 1. Independent host code/source review is still pending. No external retrieval, commits, deployment or container changes occurred, and no long-running process was started. All test/hash commands completed. The original production manifest and the final snapshot cover `data`, `data_refined`, `db`, `local_vector_store`, `wiki`, `wiki_build` and `db_sources/blacklibrary`.
+
+## Iteration 3 copied vector-index reconciliation
+
+This slice changes no application or test source. It produces a complete exact-source dry run and a reload-verified prune on copied assets under `D:/Project/py/RAG/db_sources/release-check-20260930/retirement-preparation/iteration-03/`. The saved `audit_index.py` is an ignored, bounded evidence helper with no production-write mode. It requires fresh output directories, checks the frozen inventory and all 27 raw-PDF hashes, and writes the dry-run evidence before copying or pruning. It uses the existing FAISS delete/save/load APIs with an embedding implementation that raises on any embedding call; no model, network retrieval or substitute vectors are involved.
+
+`index-dry-run.json` records all 5,905 original document IDs and positions, complete metadata, document/content hashes and exact float32-vector byte hashes, partitioned into removed and retained lists. Each approved PDF's observed removal count equals its independently saved inventory count. Inventory attribution and the shared source/book policy agree for every indexed document; no extra policy-only removal was accepted. The earlier Votann and three orphan caches have no active indexed documents to remove. This verifies index attribution only, not whether every retained document is factually correct.
+
+The original index and all sidecars are copied unchanged to `index-original/`. `index-pruned/` contains the trial result. Saving and reopening that result verifies every retained ID, serialized document, content hash, metadata record, relative order and vector-byte hash; all removed IDs are absent. The post-prune FAISS count, contiguous index mapping and docstore size agree. Exact processed-key filtering preserves every retained key/value and removes only approved PDF entries.
+
+| Check | Result | Evidence |
+| --- | --- | --- |
+| Exact inventory/policy dry run | **5,905 before − 2,501 removed = 3,404 retained**, all 27 per-PDF counts match | `index-dry-run.json` |
+| Copied save/reload preservation | **3,404/3,404 retained documents, IDs, order and vectors unchanged** | `index-reconciliation.json`, `index-trial.log` |
+| Black Library preservation | **1,128/1,128 retained**; remaining 2,276 documents are retained English inputs | Retained snapshots in `index-dry-run.json` |
+| Copied processed registry | **61 before − 27 removed = 34 retained**; every retained key/value unchanged | Removed and retained mappings in `index-dry-run.json` |
+| Policy/restored-cache, ingestion/pruning, vector reuse and Black Library index guards | **96 passed**, zero skips, eight dependency deprecation warnings, 13.12 seconds | `focused.log` |
+| Production preservation against the original iteration-1 baseline | **20,099 before = 20,099 after**, zero changed/added/removed files | `production-after.json`, `production-preservation.json` |
+| Actual tracked diff and whitespace check | Report update only; passed | `git -c core.whitespace=cr-at-eol diff --check` |
+
+The retained ordered document/vector snapshot SHA-256 is `12461cd08ab6f8d827013018c3b785539f6c2ba56ef64e35e30f21270534d094`. Staged `index.faiss` SHA-256 is `1a62affa4fc1be566702ee964c965b3c88f3eac98f6c692555a5148e0c04fd38`; staged `index.pkl` is `bda0a66bc301cf5f2118f30f5f66fe4f60adc662132a085d2ef700392b5156ab`. The complete input/output and registry hashes are in `index-reconciliation.json`. The script's Pydantic `dict()` use emits one deprecation warning; it does not affect the exact before/after comparison.
+
+Two limits matter for later apply. First, the frozen inventory has 35 retained root English PDFs, but the baseline processed registry and index include only 34: `data/Misc - Terrain Area Footprints.pdf` has neither a processed entry nor indexed documents. This slice preserves that baseline absence and does not claim full retained-PDF ingestion. Second, the copied `blacklibrary-refresh.json` is unchanged historical evidence describing the earlier 5,905-document refresh; it is not a report of the 3,404-document prune. Use `index-reconciliation.json` as the authoritative trial report and keep that distinction visible during publication.
+
+The complete production-file comparison covers the same seven roots as iterations 1–2. Active raw/refined inputs, index, SQLite, wiki/terms and Black Library caches remain byte-identical. The copied database alias/name trial and final native suite remain outstanding; no retrieval/browser acceptance or independent host review is claimed. No server, browser, watcher or container process was started or stopped. All short-lived audit, test and hash commands completed.
 
 ## Later asset apply, owned by the host
 
