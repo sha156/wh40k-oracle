@@ -11,6 +11,7 @@ import inspect
 import logging
 import threading
 from pathlib import Path
+from types import MappingProxyType
 from typing import Any, Callable, Dict, List, Optional
 
 from db_compile.calc_points import calc_points as _calc_points_impl
@@ -1212,6 +1213,27 @@ def archive_answer(title: str, content: str) -> Dict[str, Any]:
 
 # ── 工具注册表（供 agent/loop.py 的 function-calling 循环调用）──────
 
+# Model dispatch capabilities, reviewed against llm_client._TOOL_ARG_HINTS.
+# Direct Python callers retain injection helpers (db_path, resolver, etc.).
+# Never derive this contract from signatures: accepting **kwargs or adding a
+# test helper must not grant the model a new capability. ctx/options are public
+# domain payloads consumed by their existing engines, not injection parameters.
+PUBLIC_TOOL_ARGUMENTS = MappingProxyType({
+    "list_faction_units": frozenset({"faction", "offset", "limit"}),
+    "search_wiki": frozenset({"query"}),
+    "get_entity": frozenset({"name_or_id"}),
+    "get_keyword_definition": frozenset({"keyword"}),
+    "judge_fight_order": frozenset({"ctx"}),
+    "simulate_combat": frozenset({"attacker", "defender", "options"}),
+    "validate_roster": frozenset({"roster_text"}),
+    "critique_roster": frozenset({"roster_text"}),
+    "calc_points": frozenset({"unit_list"}),
+    "get_datasheet": frozenset({"name_or_id"}),
+    "archive_answer": frozenset({"title", "content"}),
+    "rag_search": frozenset({"query"}),
+    "entity_resolver": frozenset({"name"}),
+})
+
 TOOL_SPECS: List[Dict[str, str]] = [
     {"name": "list_faction_units", "description": "阵营完整单位清单/兵牌数量：当前结构库总数、分页单位列表及官方 MFM 每页单位数；点数条目不等于已收录兵牌"},
     {"name": "search_wiki", "description": "LLM Wiki Query：先查 index.md 定位，再全文检索"},
@@ -1245,3 +1267,4 @@ TOOLS: Dict[str, Callable[..., Dict[str, Any]]] = {
 }
 
 assert set(TOOLS) == {spec["name"] for spec in TOOL_SPECS}
+assert set(TOOLS) == set(PUBLIC_TOOL_ARGUMENTS)
