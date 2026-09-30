@@ -1,12 +1,16 @@
 """Paired evidence/no-evidence recovery tests; no assets or provider calls."""
 from __future__ import annotations
 
+from collections import UserDict
 from copy import deepcopy
+import json
+from types import SimpleNamespace
 
 import pytest
 
 from agent.context import SessionContext
 from agent.loop import AgentLoop
+from agent.llm_client import OpenAICompatLLMClient, _extract_json_object
 from wiki_engine.models import WikiPage, WikiPageFrontmatter
 
 
@@ -238,3 +242,184 @@ def test_invalid_action_recovers_inside_loop_context(with_evidence):
                                   "rag_search": lambda query: {"passages": []}}).run("Verify")
     assert result.tool_calls == [tool] + ([] if with_evidence else ["rag_search"])
     assert ("355" in result.answer) is with_evidence
+
+
+MALFORMED_ACTIONS = [
+    pytest.param({"type": "tool_call", "tool": value, "args": {}}, id="tool-" + name)
+    for name, value in [("list", ["invalid"]), ("dict", {"name": "invalid"}),
+                        ("number", 12), ("bool", True), ("null", None),
+                        ("empty", ""), ("whitespace", " \t"), ("tuple", ("invalid",))]
+] + [
+    pytest.param({"type": "tool_call", "args": {}}, id="tool-missing"),
+] + [
+    pytest.param({"type": "tool_call", "tool": "must_not_execute", "args": value},
+                 id="args-" + name)
+    for name, value in [("list", [1]), ("empty-list", []), ("string", "{}"),
+                        ("empty-string", ""), ("null", None), ("bool", False),
+                        ("zero", 0), ("number", 12), ("non-string-key", {1: "value"})]
+] + [
+    pytest.param({"type": value, "tool": "must_not_execute", "args": {}},
+                 id="type-" + name)
+    for name, value in [("unknown", "unknown"), ("list", ["tool_call"]),
+                        ("dict", {"name": "tool_call"}), ("null", None),
+                        ("number", 12), ("case", "TOOL_CALL")]
+] + [
+    pytest.param({"tool": "must_not_execute", "args": {}}, id="type-missing"),
+] + [
+    pytest.param({"type": "final", "content": value}, id="content-" + name)
+    for name, value in [("list", ["Unsupported conclusion"]),
+                        ("dict", {"text": "Unsupported conclusion"}),
+                        ("number", 12), ("bool", False), ("null", None)]
+] + [
+    pytest.param({"type": "final", "content": "Unsupported conclusion", "sources": value},
+                 id="sources-" + name)
+    for name, value in [("dict", MFM), ("string", "MFM"), ("null", None),
+                        ("mixed", [MFM, "invalid"])]
+]
+
+
+def malformed_run(tool, evidence, action, *, session=None, max_steps=6):
+    llm = RecoveryLLM(tool, "provider")
+    llm.steps[-1] = deepcopy(action)
+    rag_calls, forbidden_calls = [], []
+
+    def rag(query):
+        rag_calls.append(query)
+        return {"passages": []}
+
+    def forbidden(**args):
+        forbidden_calls.append(args)
+        return {"unverified": "must never execute"}
+
+    session = session if session is not None else SessionContext()
+    result = AgentLoop(llm, tools={tool: lambda: evidence, "rag_search": rag,
+                                  "must_not_execute": forbidden}, max_steps=max_steps).run(
+                                      "Verify points and rules", session)
+    return result, llm, rag_calls, forbidden_calls, session
+
+
+@pytest.mark.parametrize("action", MALFORMED_ACTIONS)
+@pytest.mark.parametrize("kind", ("points", "historical", "cross_faction", "fuzzy", "preview", "rules"))
+def test_malformed_later_action_preserves_facts_sources_and_scope(kind, action):
+    tool, evidence, expected, sources = evidence_case(kind)
+    note = "September 14 baseline fixture. " + "Context. " * 80 + "Later promotion not verified."
+    evidence["note"] = note
+    original = deepcopy(evidence)
+    result, llm, rag, forbidden, session = malformed_run(tool, evidence, action)
+    assert not rag and not forbidden
+    assert result.degraded is True and result.tool_calls == [tool]
+    for fragment in expected + [note, "未确认", "不能据此否定"]:
+        assert fragment in result.answer
+    for source in sources:
+        assert source in result.sources
+    assert "Unsupported conclusion" not in result.answer
+    if kind == "cross_faction":
+        assert "Helbrute：点数 140" not in result.answer
+    assert len(llm.calls) == 2  # Reject once; no repair/synthesis request amplification.
+    assert llm.calls[1][-1]["content"] == original and evidence == original
+    assert session.history[-1] == {"role": "assistant", "content": result.answer}
+
+
+@pytest.mark.parametrize("action", MALFORMED_ACTIONS)
+@pytest.mark.parametrize("control", ("mapping", "missing", "titles", "history"))
+def test_malformed_action_without_fresh_facts_still_uses_one_rag(control, action):
+    tool, evidence = {
+        "mapping": ("entity_resolver", {"canonical_id": "guilliman", "confidence": "exact"}),
+        "missing": ("get_keyword_definition", {"found": False, "page": None}),
+        "titles": ("search_wiki", {"found": True, "results": [{"title": "Guilliman"}]}),
+        "history": ("entity_resolver", {"canonical_id": "guilliman"}),
+    }[control]
+    session = SessionContext()
+    if control == "history":
+        session.append_turn("assistant", "Earlier verified Guilliman 355; not fresh evidence.")
+    result, llm, rag, forbidden, session = malformed_run(tool, evidence, action, session=session)
+    assert len(rag) == 1 and not forbidden
+    assert result.degraded is True and result.tool_calls == [tool, "rag_search"]
+    assert result.sources == [] and "355" not in result.answer
+    assert "Unsupported conclusion" not in result.answer
+    assert len(llm.calls) == 2
+    assert session.history[-1]["content"] == result.answer
+
+
+@pytest.mark.parametrize("action", MALFORMED_ACTIONS)
+def test_synthesis_only_malformed_action_uses_same_boundary(action):
+    tool, evidence, expected, sources = evidence_case("historical")
+    result, llm, rag, forbidden, _ = malformed_run(tool, evidence, action, max_steps=1)
+    assert not rag and not forbidden
+    assert result.degraded is True and result.tool_calls == [tool]
+    assert len(llm.calls) == 2
+    for fragment in expected:
+        assert fragment in result.answer
+    for source in sources:
+        assert source in result.sources
+
+
+def test_real_json_parser_accepts_list_tool_then_loop_recovers_locally():
+    action = _extract_json_object(json.dumps({"type": "tool_call", "tool": ["invalid"], "args": {}}))
+    tool, evidence, expected, sources = evidence_case("points")
+    result, llm, rag, forbidden, _ = malformed_run(tool, evidence, action)
+    assert not rag and not forbidden and len(llm.calls) == 2
+    assert result.degraded and result.tool_calls == [tool]
+    assert all(fragment in result.answer for fragment in expected)
+    assert result.sources == sources
+
+
+@pytest.mark.parametrize("with_evidence", (True, False))
+def test_provider_parsed_malformed_action_does_not_trigger_json_retry(with_evidence):
+    tool, evidence, expected, sources = evidence_case("points") if with_evidence else (
+        "entity_resolver", {"canonical_id": "guilliman"}, [], [])
+    responses = iter(["查", json.dumps({"type": "tool_call", "tool": tool, "args": {}}),
+                      '{"type":"tool_call","tool":["invalid"],"args":{}}'])
+    requests, rag_calls = [], []
+
+    def create(**kwargs):
+        requests.append(kwargs)
+        return SimpleNamespace(choices=[SimpleNamespace(message=SimpleNamespace(content=next(responses)))])
+
+    client = SimpleNamespace(chat=SimpleNamespace(completions=SimpleNamespace(create=create)))
+    llm = OpenAICompatLLMClient(client=client)
+
+    def rag(query):
+        rag_calls.append(query)
+        return {"passages": []}
+
+    result = AgentLoop(llm, tools={tool: lambda: evidence, "rag_search": rag}).run("Verify")
+    assert result.degraded and result.tool_calls == [tool] + ([] if with_evidence else ["rag_search"])
+    assert len(requests) == 3  # One classification plus two JSON-mode steps; no parse retry.
+    assert all(request["response_format"] == {"type": "json_object"} for request in requests[1:])
+    assert len(rag_calls) == (0 if with_evidence else 1)
+    assert ("355" in result.answer) is with_evidence
+    assert all(fragment in result.answer for fragment in expected)
+    assert result.sources == sources
+
+
+@pytest.mark.parametrize("args", ({"unit_list": ["guilliman"]}, UserDict({"unit_list": ["guilliman"]})))
+def test_valid_mapping_arguments_and_final_fields_are_unchanged(args):
+    tool, evidence, _, sources = evidence_case("points")
+    original = deepcopy(args)
+    llm = RecoveryLLM(tool, "provider")
+    llm.steps = [{"type": "tool_call", "tool": tool, "args": args},
+                 {"type": "final", "content": "Reviewed baseline 355.", "sources": sources}]
+    calls = []
+
+    def lookup(**values):
+        calls.append(values)
+        return evidence
+
+    result = AgentLoop(llm, tools={tool: lookup}).run("Verify")
+    assert result.answer == "Reviewed baseline 355." and not result.degraded
+    assert result.tool_calls == [tool] and result.sources == sources
+    assert calls == [original] and args == original and len(llm.calls) == 2
+
+
+def test_omitted_args_and_unknown_string_tool_keep_existing_recovery():
+    tool, evidence, _, _ = evidence_case("points")
+    llm = RecoveryLLM(tool, "provider")
+    llm.steps = [{"type": "tool_call", "tool": "unknown_tool", "args": {}},
+                 {"type": "tool_call", "tool": tool},
+                 {"type": "final", "content": "Reviewed baseline 355."}]
+    result = AgentLoop(llm, tools={tool: lambda: evidence}).run("Verify")
+    assert not result.degraded and result.tool_calls == [tool]
+    assert result.answer == "Reviewed baseline 355." and result.sources == []
+    assert len(llm.calls) == 3
+    assert "unknown_tool" in llm.calls[1][-1]["content"]["error"]

@@ -10,6 +10,7 @@ LLMClient 是本模块与具体 LLM 供应商之间的边界：真实实现（de
 """
 from __future__ import annotations
 
+from collections.abc import Mapping
 from dataclasses import dataclass, field
 from typing import Any, Callable, Dict, List, Optional, Protocol
 
@@ -112,6 +113,32 @@ class AgentResult:
     tool_calls: List[str] = field(default_factory=list)
     degraded: bool = False
     sources: List[Dict[str, Any]] = field(default_factory=list)
+
+
+def _validate_action(step: Any) -> None:
+    """Check parsed/injected actions before dispatch, without coercion or retries."""
+    if not isinstance(step, dict):
+        raise ValueError("next_step 未返回动作对象")
+    action_type = step.get("type")
+    if not isinstance(action_type, str) or action_type not in ("tool_call", "final"):
+        raise ValueError("动作 type 必须是 tool_call 或 final")
+    if action_type == "tool_call":
+        tool_name = step.get("tool")
+        if not isinstance(tool_name, str) or not tool_name.strip():
+            raise ValueError("tool_call 的 tool 必须是非空字符串")
+        # Omitted args retain the existing no-argument contract. Explicit falsey
+        # non-mappings (null, [], false, etc.) must never become executable {}.
+        args = step.get("args", {})
+        if not isinstance(args, Mapping) or any(not isinstance(key, str) for key in args):
+            raise ValueError("tool_call 的 args 必须是字符串键的参数映射")
+    else:
+        # Missing/empty text keeps the existing bounded empty-final nudge, but
+        # containers/numbers must not be laundered into a successful answer.
+        if not isinstance(step.get("content", ""), str):
+            raise ValueError("final 的 content 必须是字符串")
+        sources = step.get("sources", [])
+        if not isinstance(sources, list) or any(not isinstance(source, dict) for source in sources):
+            raise ValueError("final 的 sources 必须是引用对象列表")
 
 
 def _is_empty_result(tool_name: str, result: Any) -> bool:
@@ -409,8 +436,7 @@ class AgentLoop:
             # The outer safety net cannot recover a loop's local evidence.
             try:
                 step = self.llm.next_step(messages, TOOL_SPECS)
-                if not isinstance(step, dict):
-                    raise ValueError("next_step 未返回动作对象")
+                _validate_action(step)
             except Exception as exc:
                 return recover(f"答案整理异常: {exc}")
 
@@ -428,7 +454,7 @@ class AgentLoop:
                     )
                 # 空内容 final 不算成功（评审 M#5）：先写回提示再给模型一次机会，
                 # 仍为空才降级——不把空字符串当作有效回答返回给用户。
-                answer = str(step.get("content") or "")
+                answer = step.get("content", "")
                 if not answer.strip():
                     if not nudged_for_empty:
                         nudged_for_empty = True
@@ -449,7 +475,7 @@ class AgentLoop:
                 )
 
             tool_name = step.get("tool")
-            args = step.get("args") or {}
+            args = step.get("args", {})
             tool_fn = self.tools.get(tool_name)
 
             if tool_fn is None:
@@ -502,11 +528,10 @@ class AgentLoop:
             messages.append({"role": "user", "content": _FINALIZE_EVIDENCE_NUDGE})
             try:
                 step = self.llm.next_step(messages, TOOL_SPECS)
-            except Exception:
-                step = {}
-            if not isinstance(step, dict):
-                step = {}
-            answer = str(step.get("content") or "")
+                _validate_action(step)
+            except Exception as exc:
+                return recover(f"工具步数用尽后答案整理异常: {exc}")
+            answer = step.get("content", "")
             if step.get("type") == "final" and answer.strip():
                 return AgentResult(
                     answer=answer,
