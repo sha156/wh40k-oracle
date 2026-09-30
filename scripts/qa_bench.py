@@ -168,11 +168,76 @@ def summarize_layered(results):
     }
 
 
-def load_questions(limit=None):
-    data = json.loads(QA_SOURCE.read_text(encoding="utf-8"))
+_GOLD_TYPES = {"stat", "weapon", "ability", "rule", "points"}
+_INTRINSIC_63 = {
+    "id": 63,
+    "faction": "帝国卫队",
+    "question": "坦克指挥官的坦克命令有什么效果？",
+    "gold_type": "ability",
+    "canonical_id": "000000680",
+}
+
+
+def _validate_gold_document(data):
+    """Reject malformed expectations before applying a question limit."""
+    if not isinstance(data, dict):
+        raise ValueError("gold root must be an object")
+    meta = data.get("meta")
+    if not isinstance(meta, dict):
+        raise ValueError("gold meta must be an object")
+    version = meta.get("version")
+    if not isinstance(version, str) or not re.fullmatch(r"v3(?:\.\d+)?", version):
+        raise ValueError("gold meta.version must be an edition-11 v3 version")
+    if type(meta.get("edition")) is not int or meta["edition"] != 11:
+        raise ValueError("gold meta.edition must be integer 11")
+    details = data.get("details")
+    if not isinstance(details, list) or not details:
+        raise ValueError("gold details must be a nonempty list")
+    total = meta.get("total")
+    if type(total) is not int or total <= 0 or total != len(details):
+        raise ValueError("gold meta.total must equal the full details count")
+    seen = set()
+    for index, item in enumerate(details):
+        label = f"gold details[{index}]"
+        if not isinstance(item, dict):
+            raise ValueError(f"{label} must be an object")
+        identity = item.get("id")
+        if type(identity) is not int or identity <= 0:
+            raise ValueError(f"{label}.id must be a positive non-boolean integer")
+        if identity in seen:
+            raise ValueError(f"{label}.id is duplicated: {identity}")
+        seen.add(identity)
+        for field in ("faction", "question"):
+            if not isinstance(item.get(field), str) or not item[field].strip():
+                raise ValueError(f"{label}.{field} must be nonempty text")
+        gold_type = item.get("gold_type")
+        if not isinstance(gold_type, str) or gold_type not in _GOLD_TYPES:
+            raise ValueError(f"{label}.gold_type must be one of {sorted(_GOLD_TYPES)}")
+        if "gold" not in item:
+            raise ValueError(f"{label}.gold is required")
+        gold = item["gold"]
+        if gold is None and all(item.get(k) == v for k, v in _INTRINSIC_63.items()):
+            continue
+        if not isinstance(gold, str) or not gold.strip():
+            raise ValueError(f"{label}.gold must be nonempty text; only original #63 may be null")
+
+
+def _read_gold_document(gold_path=None):
+    # Resolve QA_SOURCE at call time; explicit relative paths belong to the caller.
+    # Retain the bytes actually parsed for later exact-byte output provenance.
+    source = Path(QA_SOURCE if gold_path is None else gold_path).resolve()
+    raw = source.read_bytes()
+    data = json.loads(raw)
+    _validate_gold_document(data)
+    return data, source, raw
+
+
+def load_questions(limit=None, gold_path=None):
+    """Select and validate gold while preserving the default five-field contract."""
+    data, _, _ = _read_gold_document(gold_path)
     items = [
         {"id": d["id"], "faction": d["faction"], "question": d["question"],
-         "gold": d.get("gold"), "gold_type": d.get("gold_type")}
+         "gold": d["gold"], "gold_type": d["gold_type"]}
         for d in data["details"]
     ]
     return items[:limit] if limit else items

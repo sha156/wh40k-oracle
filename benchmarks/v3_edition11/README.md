@@ -1,5 +1,25 @@
 # 11 版基线 v3（2026-07-11 起用）
 
+## October 1 versioning preparation — partial acceptance
+
+`qa_gold_v3.6.json` freezes the exact original bytes of root `qa_gold.json`:
+SHA-256 `a402aed889eff64f3419d7a6768ff9b168a5912d0bc9c3e92cf225913a7fe3cc`.
+All 115 ordered rows, identities, questions, types and expectations are retained.
+The root file remains unchanged; historical results retain their original meaning.
+
+The Python loader now accepts `load_questions(limit=None, gold_path=None)`.
+An explicit absolute or caller-relative path is selected without fallback;
+omitting it resolves `QA_SOURCE` at call time. The complete document is validated
+before limiting, and default callers still receive exactly the original five
+fields. Empty/missing gold cannot silently enter intrinsic scoring; only the
+original explicit #63 null-gold identity contract is accepted.
+
+This first step does not provide `--gold`, result provenance, v3.7 or comparator
+changes yet. Historical gold is not a claim of complete current source coverage.
+See [the scoped acceptance report](../../docs/superpowers/reports/2026-10-01-versioned-benchmark-acceptance.md)
+for tests, immutable-byte evidence and remaining work. The older entries below
+record their original benchmark versions and runs.
+
 - **gold**：根目录 `qa_gold.json`（meta.version=v3, edition=11）。迁移审计见
   `docs/superpowers/specs/2026-07-11-qa-gold-v3-edition11-audit.md`：规则类 7 题 +
   #41 按 11 版更新，stat/weapon 78 题零漂移。
