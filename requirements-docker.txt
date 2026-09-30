@@ -61,7 +61,8 @@ sse-starlette==3.3.0
 
 # 工具
 requests==2.33.0
-python-dotenv==1.2.1
+# CVE-2026-28684 symlink-write fix plus verified Windows text fixes.
+python-dotenv==1.2.3
 pytest==8.4.2
 # TestClient 依赖（镜像内跑 web_api 契约测试用）
 httpx==0.28.1

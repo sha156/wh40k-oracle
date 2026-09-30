@@ -10,11 +10,129 @@ fix; deterministic large-array sampling remains explicitly qualified below.
 CPU PyTorch is pinned and verified at **2.14.0+cpu**, including the actual JIT
 crash correction absent from the registry's claimed 2.13.0 fix. PT2's unsafe
 pickle behavior remains evidenced and outside the inspected application paths.
+python-dotenv is now synchronized at **1.2.3**, with its symlink-write fix and
+Windows BOM/backslash behavior verified against actual older installations.
 The complete CPU application stack, full native suite, Docker/Linux installation
 and final audit remain outstanding.
 No integration, deployment, source retirement or main-environment changes occurred.
 
-## Latest increment: CPU PyTorch patch and reproduced advisory discrepancy — October 1, 2026
+## Latest increment: python-dotenv patch and Windows text verification — October 1, 2026
+
+Native, Docker and lightweight-server requirements now pin **python-dotenv
+1.2.3**. CI inherits the same pin through its existing server include. This
+replaces Docker's **1.2.1** and native's unconstrained requirement; server's
+previously implicit Uvicorn-standard dependency is now explicit. Both actual
+auditor inventories contain **1.2.1**. This increment changes three requirements
+files and this report only; no production Python, test expectation, API
+reliability-owned file, asset, source policy or Docker installation step changed.
+
+Each baseline has **two records / one underlying issue**:
+**PYSEC-2026-2270 / GHSA-mf9w-mj56-hr94 / CVE-2026-28684**. The
+[maintainer advisory](https://github.com/theskumar/python-dotenv/security/advisories/GHSA-mf9w-mj56-hr94)
+and [actual correction](https://github.com/theskumar/python-dotenv/commit/790c5c02991100aa1bf41ee5330aca75edc51311)
+identify **1.2.2** as patched. The fetched advisory metadata unusually says
+`<1.2.1`, omitting 1.2.1; the baseline audit and reproduction demonstrate that
+1.2.1 is affected. Preserve that discrepancy rather than interpreting the range
+literally as proof of safety.
+
+**The security correction is reproduced through real installed library calls.**
+On isolated **1.2.1**, both `set_key()` and `unset_key()` overwrite a synthetic
+symlink target when `os.rename()` is made to raise **EXDEV**. The real library's
+`shutil.move()` fallback performs the write; no replacement dotenv module is
+used. On both **1.2.2** and final **1.2.3**, those same operations preserve the
+target, replace the symlink entry and make **zero `os.rename()` calls**. The
+final probe also verifies dangling-symlink writes do not create the target,
+explicit `follow_symlinks=True` preserves intentional opt-in behavior, temporary
+files share the target directory, `os.replace()` is used, and replacement errors
+leave the original file unchanged, remove temporary files and propagate.
+All inputs/targets are disposable toy files under this worktree. Windows
+symlink creation succeeds on this host. EXDEV is simulated, so this establishes
+the actual fallback behavior, not a physical Linux cross-filesystem trial.
+POSIX file-mode preservation remains unverified on this Windows host.
+
+**1.2.3 has a concrete Windows compatibility reason.** The
+[1.2.3 release notes](https://github.com/theskumar/python-dotenv/releases/tag/v1.2.3),
+published **August 16, 2026**, document UTF-8 BOM handling and backslash escaping.
+Actual 1.2.1/1.2.2 probes lose the expected first BOM-prefixed key and change a
+value containing repeated backslashes during `set_key()`/`dotenv_values()`
+roundtrip; **1.2.3 preserves both**. This selects the small maintenance release
+for demonstrated supported-platform behavior, rather than inventing an extra
+security advisory. Registry metadata requires **Python>=3.10** and provides a
+platform-neutral **py3-none-any** wheel. Every executed probe/install uses the
+prescribed **Python 3.11.9**; Linux installation/execution is not claimed.
+
+The AST scan of **all 280 tracked Python files** finds one dotenv consumer:
+`scripts/refresh_official_rules.py::refresh()` imports and calls `load_dotenv()`.
+There are **no tracked `set_key()` or `unset_key()` calls**. The existing Uvicorn
+standard extra also uses dotenv for `--env-file`. Direct probes preserve
+UTF-8 loading, variable interpolation, existing-environment precedence,
+explicit override, local discovery and missing-file behavior without changing
+the input file. A real `uvicorn.Config(env_file=...)` loads a toy file correctly;
+no server or refresh/generation command is invoked. No application compatibility
+shim or weakening of the safer write defaults is necessary.
+
+Validation actually completed:
+
+- A **new clean-final-venv** installs the tracked bootstrap followed by the
+  **tracked server requirements**, with the shared build constraint. Its complete
+  **26-distribution runtime subset** passes `pip check` and contains no pytest,
+  LangChain, torch, Transformers, SentenceTransformers, FAISS or Streamlit.
+  The server's no-model contract is preserved. Installer tooling is included in
+  the recorded scope. The project `.venv` already resolved **1.2.3** and passes
+  the same probe plus `pip check`; no main environment is touched.
+- The final fresh dotenv probe passes in **0.151 seconds**, project **0.181
+  seconds**; older installed-version probes retain the before/intermediate
+  differences above. These are dependency behavior checks, not full retrieval,
+  model, source-update or release acceptance.
+- Separate test additions **pytest 9.0.3 / PyMuPDF 1.26.7 / HTTPX 0.28.1** produce
+  **34 distributions** and pass `pip check`. Unchanged suites
+  `test_simulator_panel.py`, `test_web_api_stage3.py`, `test_web_api_stage4_sim.py`,
+  `test_web_api_stage5_deploy.py`, `test_web_api_round3_audit_fixes.py` and
+  `test_db_compile_downloads.py` pass **82 / skip 30 / two warnings in 1.68
+  seconds** on the fresh subset; project **82 / skip 30 / two warnings in 1.88
+  seconds**. JUnit identifies every skip as absent `wh40k.sqlite`. Retrieval and
+  warmup are disabled; no asset/fixture/expectation/skip was altered. The full
+  native suite still awaits the remaining model/LangChain installation.
+- Isolated **pip-audit 2.10.1** completes the full **26-runtime** and **34-test**
+  subset inventories with **zero findings / zero skips**. The current project
+  **75-distribution** exact inventory returns zero findings with one explicit
+  **torch 2.14.0+cpu PyPI skip**. A second full query maps only that local CPU
+  version to upstream **2.14.0**: **75 / zero findings / zero skips**. A separate
+  OSV query of the **exact installed CPU version** passes **one / zero findings /
+  zero skips**. All exit 0. Raw JSON, exact inventories, alias grouping, skips
+  and failures are saved; auditor packages are excluded from app counts.
+  Earlier PT2, Streamlit sampling and setuptools qualifications remain.
+
+Ignored evidence and executable reproduction scripts are under
+`C:/Users/Administrator/.codex/worktrees/release-python-security/RAG/db_sources/python-security/iteration-9/`:
+baseline bodies/groups, maintainer advisory/fix/releases, PyPI version metadata,
+AST source scan, before/intermediate/final/project probes, clean install reports
+and logs, runtime/test/project inventories and raw audits, CPU supplemental query,
+test logs/JUnit, `dotenv-probe.py`, `inventory.py`, `collect-evidence.py`,
+`summarize-evidence.py` and `verification-summary.json`.
+The first backslash sample failed to distinguish the older release because it
+used lone backslashes; that verifier assertion/error is retained. The corrected
+sample uses repeated backslashes and proves the release difference. No production
+exception handling or test relaxation was introduced to hide it.
+
+Reproduce with a **new Python 3.11 environment**, full interpreter paths, the
+authorized proxy/localhost bypass and UTF-8 output: install
+`requirements-bootstrap.txt`, then `requirements-server.txt` with
+`--build-constraint requirements-bootstrap.txt`; run the saved dotenv probe with
+a new JSON output path and `-m pip check`. Add the three test-only pins above,
+run the six named suites, capture an inventory and audit it using the separate
+auditor with `--no-deps --disable-pip --format json`. The probe's 1.2.1/1.2.2
+before cases require separate environments, not downgrading the candidate.
+
+Host integration must preserve the shared pin, recreate the complete supported
+environment, finish remaining family/transitive constraints and production-test
+separation, and run full native/asset/actual Docker/live acceptance. Actual scoped
+diff inspection and whitespace validation pass. No commit, push, merge, Docker
+service/image change, external knowledge-repository edit or deployment occurred.
+All owned subprocesses have exited; no background server was started. This
+increment does **not** meet the overall release-stage stop condition.
+
+## Earlier increment: CPU PyTorch patch and reproduced advisory discrepancy — October 1, 2026
 
 Native and Docker requirements now require **torch 2.14.0+cpu**, replacing
 Docker's **2.8.0** declaration and making native's previously implicit torch

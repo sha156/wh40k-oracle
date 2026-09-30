@@ -16,6 +16,8 @@
 fastapi==0.133.0
 starlette==1.3.1
 uvicorn[standard]==0.39.0
+# Uvicorn's env-file dependency: patched writes and Windows BOM/backslash fixes.
+python-dotenv==1.2.3
 pydantic==2.12.5
 
 # engines/ 的骰面分布与统计计算
