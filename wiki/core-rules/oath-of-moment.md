@@ -16,34 +16,41 @@ sources:
 - book: 官方中文/chi_22-07_warhammer_40,000_faction_pack_space_marines-xd5tub2eai-bf3f24cqu6
   pages:
   - 56
-- book: 6月4日平衡版中午
-  pages:
-  - 9
-updated: '2026-09-21'
+updated: '2026-10-01'
 ---
 
 破敌重誓是星际战士军队规则：点名一个敌方单位，拥有本能力的模型攻击它时可以重投命中。
 
 ## 破敌重誓 OATH OF MOMENT
 
-依据本地官方 Faction Pack Space Marines v1.2（2026-08-26 生效）第 60 页，现行规则概要：
+依据本地保留的官方 Faction Pack Space Marines 英文第 60 页、中文第 56 页：
 
-如果你的军队阵营是**阿斯塔特修会**（ADEPTUS ASTARTES），在你的指挥阶段开始时，从对手军队中选择一个单位——直到你的下个指挥阶段开始时，该敌方单位是你的**破敌重誓目标**。你军队中拥有本能力的模型每次攻击破敌重誓目标时：
+如果你的军队阵营是阿斯塔特修会（ADEPTUS ASTARTES），在你的指挥阶段开始时，从对手军队中选择一个单位。直到你的下个指挥阶段开始时，该单位是破敌重誓目标。你军队中拥有本能力的模型每次攻击该目标时：
 
-- 可以**重投命中骰**；
-- 如果你使用的是 Codex: Space Marines 分队，且军队既不含圣血天使、黑暗天使、死亡守望、太空野狼关键词单位，也不含官方点数表（Munitorum Field Manual，简称 MFM）中归在这四个阵营分类下的单位，则**造伤骰还 +1**。因此组军时要同时核对单位关键词和官方点数表中的阵营分类。
+- 可以重投命中骰；
+- 如果使用 Codex: Space Marines 分队，且军队既不含圣血天使、暗黑天使、死亡守望、太空野狼关键词单位，也不含 MFM 中归在这四个阵营分类下的单位，则造伤骰还 +1。组军时须同时核对关键词和 MFM 阵营分类。
 
-## 相比以前改了什么
+## 保留的官方中英文本对照
 
-**最近两份官方版本之间没有发现实质变化。** 官方中文 v1.1（2026-07-22 生效）第 56 页与英文 v1.2（2026-08-26 生效）第 60 页都已包含上述完整条件。
+保留的官方中文第 56 页与英文第 60 页都包含目标选择时机、持续时间、重投命中，以及 Codex 分队、四个战团关键词和 MFM 分类条件。这个对照限于本地保留的两份文件，不表明它们是相邻发布的版本，也不证明新完整 Codex 的覆盖范围。
 
-**与更早的《6月4日平衡版中午》第 9 页相比，变的是 +1 造伤的适用范围：**
+> 部分汉化版本将这一阵营能力译作“誓言时刻”“忠诚誓言”“破敌誓言”等，均指同一枚 Oath of Moment 能力。
 
-1. 黑色圣堂从那份旧文本的排除名单中移除。不过，名单不再排除某阵营，不等于其模型自动获得破敌重誓。仍须查该阵营是否用自己的军队规则替换了破敌重誓，并满足本页的分队与军队构成条件。
-2. 以前那份文本只列单位关键词；现在还排除官方点数表中归在上述四个战团分类下的单位。实际组军时，不能只看模型有没有对应关键词，还要核对它在点数表里属于哪个阵营。
+## 官方中文原文 · Faction Pack p56
 
-**没有变化的是**选定目标的时机、持续到下个己方指挥阶段、攻击目标时重投命中，以及额外 +1 造伤要求使用 Codex: Space Marines 分队。这些都已出现在那份旧平衡文本里。
+“若您的军队阵营是阿斯塔特修会，您便可以在己方指挥阶段开始时选择一个敌方单位。在下个己方指挥阶段开始前，该敌方单位将成为己方“破敌重誓”的目标。拥有此技能的己方模型在攻击“破敌重誓”的目标时可以：
 
-比较说明：六月文件是更早的汉化快照，不是紧邻上一版的官方文件；其精确官方发布日期未核实。黑色圣堂是否实际拥有本能力，需要另查该阵营自己的规则，不能只凭这个名单作结论。
+- 重掷命中掷骰。
 
-> 部分汉化版本将这一"阵营能力"译作"誓言时刻""忠诚誓言""破敌誓言"等，均指同一枚 Oath of Moment 能力。
+- 如果您正在使用《圣典：星际战士》中的分遣队每并且您的军队不包括一个或更多拥有圣血天使、暗黑天使、死亡守望或太空野狼关键词的单位，也不包括一个或更多这些阵营的《军务部野战手册》部分中的单位，则致伤掷骰的结果也加 1。”
+
+<details>
+<summary>官方英文原文 · Faction Pack p60</summary>
+
+‘If your Army Faction is ADEPTUS ASTARTES, at the start of your Command phase, select one unit from your opponent’s army. Until the start of your next Command phase, that enemy unit is your Oath of Moment target. Each time a model with this ability makes an attack that targets your Oath of Moment target:
+
+- You can re-roll the Hit roll.
+
+- If you are using a Codex: Space Marines Detachment and your army does not include one or more units with the BLOOD ANGELS, DARK ANGELS, DEATHWATCH or SPACE WOLVES keywords, or one or more units from those factions’ Munitorum Field Manual sections, add 1 to the Wound roll as well.’
+
+</details>

@@ -60,6 +60,11 @@ def main() -> None:
                     default="data_refined/Core Rules - New 40K Core Rules",
                     help="官方英文核心规则的 refine 产物目录")
 
+    # Narrow retained-snapshot reconciliation, outside chapter generation.
+    sp = sub.add_parser("curated-rules",
+                        help="Reconcile Cleave, Dark Pacts and Oath against reviewed retained sources")
+    sp.add_argument("--wiki", default="wiki", help="wiki 输出目录")
+
     # ── changelog ──
     sp = sub.add_parser("changelog",
                         help="从官方阵营包的「规则更新」章节生成规则变更清单")
@@ -173,6 +178,11 @@ def main() -> None:
             print("⚠️ 行尾带节号却没切出来的：{}".format(miss))
         if rep["conflicts"]:
             print("⚠️ {} 页检测到人工编辑，已跳过覆盖".format(len(rep["conflicts"])))
+
+    elif args.cmd == "curated-rules":
+        from wiki_engine.curated_rules import generate_all as generate_curated_rules
+        rep = generate_curated_rules(Path(args.wiki))
+        print("Curated rules: {} reviewed / {} written".format(rep["reviewed"], rep["written"]))
 
     elif args.cmd == "changelog":
         from wiki_engine.changelog import generate_all as generate_changelog
