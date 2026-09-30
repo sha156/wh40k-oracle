@@ -1,6 +1,161 @@
 # Versioned benchmark preparation acceptance — October 1, 2026
 
-Iterations 1–3 complete the immutable baseline, validated Python-loader/CLI
+## Source-cited v3.7 and narrow dated coverage candidate
+
+This continuation starts from clean `codex/release-benchmark-versioning`, full
+HEAD `0268450dc3a279bae64da315456793387702ea36`. The previous run reached its
+iteration limit; it did not finish the objective. This bounded unit completes
+the separate profile and its narrow offline answer-coverage ceiling. GNHF owns
+the commit. **No fresh paid/real LLM benchmark has been run.** Root review,
+integration, deployment, fresh-answer execution and release approval remain
+outstanding. No clean committed candidate is claimed before GNHF commits.
+
+Candidate: `benchmarks/v3_edition11/qa_gold_v3.7_source_cited.json`, version
+**v3.7**, edition **11**, exactly **115** unique ordered rows. Byte SHA-256:
+`aeed2af4f6e225a5761f8e62f541cd3472f67ac43ebffe7865747a96b31126b0`.
+All questions, IDs/order, factions, types, canonical identities and unit targets
+match frozen v3.6. Seven gold rows change; the other 108 gold values are exact.
+All 16 rows #11–20/#75–80 retain their original mechanics apart from #14's
+explicitly scoped core-rule correction. No denominator exclusions exist.
+
+Root `qa_gold.json` and frozen `qa_gold_v3.6.json` retain byte SHA-256
+`a402aed889eff64f3419d7a6768ff9b168a5912d0bc9c3e92cf225913a7fe3cc`.
+Before/after checks cover **all 62 tracked gold/historical-result JSON files**;
+every digest is unchanged. The frozen parent is also checked by the profile
+loader before limits. Existing loader/CLI/provenance/comparator interfaces are
+reused; the evaluator framework and historical results were not rebuilt.
+
+### Changed clauses and primary evidence
+
+The confirmed host `benchmark-freshness/REPORT.md` and `audit.json` were reused;
+no web/catalogue research was repeated. All cited primary bytes are already
+saved locally. Each revision embeds exact prior/new text, its rationale and
+page/section or exact-card locators, linked to the profile catalogue's official
+URL, SHA-256, source version and snapshot date.
+
+| ID | Clause and scope | Source locator |
+| --- | --- | --- |
+| 14 | Failed hit rolls replaced by separate Hazardous rolls after all attacks, per selected Hazardous weapon; D6 1–2 fails for 1 mortal wound. Original S7/AP-2/D1 and S8/AP-3/D2 profiles retained as historical. Unasked roll detail is explanatory rather than a required expansion; false missed-hit causation remains wrong. | Unchanged Core Rules saved 2026-09-14, PDF p81 §24.15 and p24 §06.03. The source's all-Monster/Vehicle 3MW exception was verified, but is not imposed on this Hellblaster firing-mode question. |
+| 34 | Khorne Berzerkers T4→T5 only; M8 retained without new full-profile certification. | World Eaters v1.3, saved/legal-from 2026-09-30, PDF p7 named unit-characteristic table. |
+| 93 | Cover benefit worsens incoming ranged BS by 1, rather than improving armour saves; Ignores Cover denial, including Stealth, retained. | Same unchanged Core PDF p82 §24.18 and p50 §13.08. |
+| 113 | Published Guilliman 355→415, one model; cite September 30 MFM. Published price does not verify full Codex rules or a captured universal legal-start date. | Official space-marines MFM 2026-09-30 HTML, ULTRAMARINES / exact ROBOUTE GUILLIMAN / YOUR UNIT COSTS / 1 model / (+60) 415 pts. |
+| 114 | Exact Armour of Antilochus identity, historical 155, one model, September 14; exact current heading absent on all 30 September 30 pages. Both facts required. Current published price/full-body identity resolution unavailable in these sources. | Previous space-marines MFM ULTRAMARINES exact heading; all 30 current heading inventories. Ordinary MARNEUS CALGAR 180 and archived ordinary Calgar 200 are not replacements. |
+| 115 | Exact Pedro Kantor identity, historical 80, one model, September 14; exact current heading absent on all 30 current pages. Both facts required; no deletion/Legends inference. | Previous space-marines MFM IMPERIAL FISTS exact heading; all 30 current heading inventories. |
+| 118 | CSM130→125, DG110→105; TS110/WE120 retained. All four faction-specific one-model expectations and disambiguation retained for this question. | Four official September 30 MFM UNITS / exact HELBRUTE cards, canonical faction IDs 000000954/000001046/000001021/000002632. |
+
+Relevant exact source hashes (all 37 entries and URLs are in the profile):
+
+- Core Rules: `f6a2443a44627ac5f0ef08407d29aa5ec7e97339998f05bc35f3ae37bf276833`.
+- World Eaters v1.3: `93e29f1b166d2a06fafa37a543890e56ae59c712b73b5a1e26f0a1c1ecf6a8e9`.
+- September 30 space-marines MFM: `ea31748246aa16270052c994e47edfbbd5dbd5b5f14521414f6c99a708e6f816`.
+- September 14 space-marines MFM: `99f45a5032c4862df89529f02a66122897429ccea7280b0fb318335cf23ad884`.
+- CSM/DG/TS/WE MFM respectively: `52ca2e41a872469e5efea39aae211db5fbee38839e95693badd4fd3568a04e29`, `90b4a7d2f68b6305905920acf0dca799d0e74d9f1e36c607809155e52c24a0c7`, `23fc92f48bd5e49494fb06cfc36b93e94d6f997b9dc5ae6a4f2dc1b553d08e3b`, `846bad84cc224df9cae3f5c3be40befe989e3d87b88bc9a3e26255bd82ad1666`.
+
+### Dated coverage semantics and validation
+
+The profile has **21** per-item `coverage_contract` entries: #11–20, #34,
+#75–80, #113–115 and #118. Sixteen historical-body entries cite the unchanged
+Space Marine supplement scope or the three new Legends-only packs. They
+require dated historical/cached/base mechanics and explicit lack of complete
+current target-body verification as of September 30. `2026-09-16` identifies
+the frozen v3.6 expectation date, not a newly certified primary-body date.
+An answer may instead cite its actual dated base-source snapshot. #76 explicitly
+rejects replacing the original M8/T10 target with the Magna-grapple M8/T9 variant.
+
+The original factual judge and mechanical extraction remain unchanged. After
+that judgment, a separate narrow API check returns strict booleans for every
+named requirement/prohibition and literal answer quotations supporting positive
+claims. Supplied metadata is not answer evidence. Missing claims and API/JSON/
+quote errors cannot certify coverage. A qualified check leaves the factual
+verdict unchanged; missing/unverified coverage caps it at partial; an affirmative
+prohibited identity/current-price/parity claim caps it at wrong. The minimum of
+the factual verdict and this ceiling is final, so no wrong/partial answer can
+upgrade. This is a semantic model check with fail-closed response validation,
+not an independently proven semantic classifier.
+
+Results echo the contract, named checks, status, `factual_verdict` and
+`factual_reason`. Ordinary and layered generation apply the ceiling; retrieval
+remains unchanged. The summary reports checked/status counts, as-of date and
+`full_current_body_verified: false`. The source-aware loader validates full
+ordered targets, before/after clauses, official URLs, byte hashes, source
+versions/dates, meaningful locators, all required claim IDs, exact coverage
+scope and all-30-page historical-price references before any limit. Legacy gold
+keeps the original five fields, judge behavior and API call count.
+
+Focused command:
+
+```powershell
+& 'D:/Project/py/RAG/.venv/Scripts/python.exe' -m pytest tests/test_qa_bench_source_coverage.py tests/test_qa_bench.py tests/test_qa_bench_gold_selection.py tests/test_qa_bench_provenance.py tests/test_compare_bench_runs.py -q --tb=short
+```
+
+Result: **256 passed**, five existing SWIG warnings, including **all 197 prior
+gates** and **59 new controls**. The initial profile-specific pre-wiring run
+produced 37 failures/3 passes, establishing missing validation/coverage behavior
+rather than a production regression. Direct paired worker calls against actual
+base `0268450dc3a279bae64da315456793387702ea36` confirm: right stats/missing
+qualifier ✅→partial; wrong stats/correct qualifier wrong→wrong; correct both
+✅→✅. This changes acceptance, not facts or historical scores.
+
+Tests include actual fake API extraction/judge workers and CLI ordinary/agent/
+layered outputs, malformed/unknown/unsupported-evidence responses, right/wrong
+stats and missing/correct qualifiers, exact historical Calgar/Pedro facts plus
+absence, ordinary 180/archived 200 identity substitution, unqualified historical
+current prices, invented Legends status, generic ignorance, #76 variant mixing,
+old Guilliman/Helbrute prices with correct qualifiers, duplicates, version/
+identity/claim-scope mismatches and same/cross-gold comparator behavior. A
+six-worker fake-client CLI run retains all **115** rows and checks all **21**
+contracts; a deliberately wrong #11 remains wrong despite all coverage flags
+being satisfied. Synthetic responses/extraction fixtures establish plumbing
+and monotonic acceptance only; they are neither primary evidence nor a real
+benchmark score, and do not establish the real judge's semantic accuracy.
+
+Finite primary checks independently matched **37/37** actual saved byte hashes
+and lengths, then **73** PDF clause/exact MFM card/absence probes. These verify
+source citations against original saved files, including all 30 pages for each
+missing identity. A table-order assumption in the first local probe was
+corrected against the actual T5 row listing Khorne Berzerkers; no source or
+profile fact was fabricated. No source promotion/application database mutation
+occurred. All 62 protected tracked JSON files retain their original hashes.
+
+`py_compile` and `git -c core.whitespace=cr-at-eol diff --check` pass. Tests use
+the existing project environment, Python **3.9.1**. The verified Python **3.11.9**
+interpreter has no pytest installed; Ruff is absent from the project environment.
+Neither packages nor environments were changed. Python 3.11 full-suite and
+hosted CI remain root gates, rather than inferred from these focused checks.
+The actual implementation/profile/test diff was inspected locally. Independent
+code/source acceptance remains root-owned; no delegated review is claimed.
+
+Ignored finite evidence is under this worktree's
+`db_sources/release-check-20260930/benchmark-versioning/`: `v37-before.json`,
+`v37-red.txt`, `v37-paired.json`, `verify_v37_sources.py` and
+`v37-source-verification.json`; final test/diff verification is recorded alongside
+them. This report and README provide the project checkpoint and verified
+learning/error handoff for root's later deduplicated knowledge publication.
+No external repository or unrelated index was edited. No service/background
+process, real model/API call, manual stage/commit/push/merge or deployment started.
+
+### Remaining root/GNHF gates
+
+1. GNHF commits the exact candidate; verify the committed bytes/clean status.
+2. Root independently reviews the source-backed clause scope and semantic
+   coverage prompts, and integrates independently reviewed official-source
+   changes. Prices remain staged and do not prove full current Codex bodies.
+3. Root executes fresh all-115 `--gold benchmarks/v3_edition11/qa_gold_v3.7_source_cited.json --path agent --workers 6`
+   against that integrated runtime, with a judge distinct from production Flash.
+   Retain the new result and failures separately; default comparator must refuse
+   v3.6→v3.7 expectation equivalence. An explicit cross-gold comparison does not
+   establish application improvement/regression.
+4. Root completes Python 3.11 full-suite/CI, Docker/live acceptance, deployment,
+   release/merge review and applicable knowledge publication. The historical
+   source-body limits remain visible until supported by real current evidence.
+
+The owned profile and offline ceiling are reviewable. The whole loop stop
+condition is not claimed in this iteration because GNHF has not yet committed
+this candidate and root acceptance has not yet reviewed the changed clauses.
+
+## Historical previous-run preparation
+
+Iterations 1–3 completed the immutable baseline, validated Python-loader/CLI
 selection, exact-byte output provenance and version-aware comparison. The complete objective remains unfinished. No real benchmark,
 source promotion, production mutation, API work, service startup or publication
 was performed. GNHF owns commits; none were made manually.
@@ -332,3 +487,11 @@ promotion is warranted by this bounded project evidence.
 the original note bytes were preserved and all three knowledge repositories'
 staged diffs remained unchanged. No manual staging, commit or push occurred;
 later publication and the real-commit explanation remain host/GNHF work.
+
+## Source-cited v3.7 local knowledge handoff
+
+The explicit stop hook authorized this additional local handoff. Existing project, learning and error records were checked for duplicates. New scoped current sections in `D:/Project/devlog/wh40k-oracle/CHECKPOINT.md` and `ROADMAP.md` record the actual115-row profile,21 coverage contracts,256 passing offline checks,37 byte hashes/73 citation probes, baseline preservation and remaining GNHF/root gates. Earlier/concurrent content is preserved. The real predecessor comparator commit `0268450dc3a279bae64da315456793387702ea36` is explained in `commits/20261001-0268450dc-version-aware-benchmark-comparison.md`; no current implementation commit is invented.
+
+The existing learning decision `C:/Users/Administrator/learn-notes/decisions/20261001-freeze-gold-before-validating-selection.md` is extended with the non-upgrading ceiling, literal answer evidence and semantic-judge limits, and its existing index entry is updated. The distinct reproduced dated-coverage acceptance gap is recorded once at `C:/Users/Administrator/error-notes/rag/20261001-error-18-benchmark-source-coverage-not-scored.md`, with full paired outcomes, exact predecessor, reproduction and verified offline resolution. The repeated GBK primary-audit diagnostic extends the existing `common/20260921-error-41-python-stdout-gbk.md` rather than creating a duplicate. Error indexes are updated. No cross-project harness promotion is warranted before root review.
+
+Ignored `benchmark-versioning/v37-knowledge-handoff-integrity.json` checks preserved prior note content, staged diff hashes in all four repositories, unchanged implementation/tests/profile/baselines and unique entries. Only this handoff documentation changed after the recorded256-pass run; no new application/test changes or test execution occurred. No manual staging/commit/push/publication or service occurred. Root owns final knowledge publication and GNHF owns the implementation commit.

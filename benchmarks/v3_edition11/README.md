@@ -1,6 +1,64 @@
 # 11 版基线 v3（2026-07-11 起用）
 
-## October 1 versioning preparation — partial acceptance
+## October 1 separate source-cited v3.7 candidate
+
+[`qa_gold_v3.7_source_cited.json`](qa_gold_v3.7_source_cited.json) contains all
+115 original ordered questions, factions, scoring types and canonical targets.
+Exact byte SHA-256:
+`aeed2af4f6e225a5761f8e62f541cd3472f67ac43ebffe7865747a96b31126b0`.
+Root gold, frozen v3.6 and all historical results remain byte-identical.
+This is a candidate for root review; no fresh paid benchmark has been run.
+
+Source-backed clause changes are #34 T5 (M8 retained), #113 published 415,
+#118 CSM125/DG105 with TS110/WE120 retained, #14 separate Hazardous rolls
+instead of missed-hit self-damage, and #93 incoming-BS cover benefit instead
+of armour saves. #114/#115 retain exact identities and September 14 historical
+155/80, and require both dated values and their exact-heading absence across
+all 30 captured September 30 MFM pages. Absence does not establish deletion,
+Legends status or a replacement price. Every changed clause has explicit
+before/after text and locators referencing the profile's primary URL, byte
+hash, version, snapshot date and saved source path catalogue.
+
+#11–20 and #75–80 retain their historical mechanical expectations and add
+per-item dated/current-body limits. #14's correction does not require extra
+unasked hazard-roll detail for the original firing-modes question. #76 retains
+the original Dreadnought identity, rather than the Legends Magna-grapple variant.
+The v3.6 expectation date is a benchmark date, not newly verified primary-body
+coverage. #34/#113/#118 also qualify their directly verified amendment/points
+scope. There are 21 answer coverage contracts, including the overlapping #14.
+
+The original factual/mechanical judge runs first. A separate narrow coverage
+check examines answer statements, returns named strict booleans with literal
+answer evidence, and caps that original verdict. Missing or unverified coverage
+caps full acceptance at partial; affirmative unsupported-current/identity claims
+cap it at wrong. Wrong and partial factual answers never upgrade. Extra coverage
+metadata cannot itself pass, and an API/JSON/evidence error remains unverified.
+Detailed results retain `factual_verdict`, `factual_reason` and
+`source_coverage_check`; summaries report checked/status counts, the snapshot
+date and `full_current_body_verified: false`. Ordinary and layered generation
+both apply the ceiling; retrieval scoring is unchanged. Legacy profiles retain
+their five-field projection, original scoring and call count.
+
+Offline validation passes **256 tests**, including all 197 retained gates and
+59 source-profile/coverage controls. A six-worker fake-client run executes all
+115 rows without exclusions; its synthetic judge output is not a benchmark
+score or proof of semantic judge accuracy. All 37 cited primary files and 73
+clause/card/absence probes pass against saved local bytes. No network, service,
+database update, manual commit or publication was performed.
+
+Root must review the exact candidate, integrate the independently reviewed
+official sources, and run a fresh 115-question benchmark with a judge distinct
+from production Flash, preserving historical results. After integration, the
+existing command is:
+
+```powershell
+& 'D:/Project/py/RAG/.venv/Scripts/python.exe' scripts/qa_bench.py --gold benchmarks/v3_edition11/qa_gold_v3.7_source_cited.json --path agent --workers 6 --out <new-result-path.json>
+```
+
+See [the acceptance and handoff report](../../docs/superpowers/reports/2026-10-01-versioned-benchmark-acceptance.md)
+for the exact validation limits and remaining review/CI/live gates.
+
+## Historical October 1 versioning preparation — prior partial acceptance
 
 `qa_gold_v3.6.json` freezes the exact original bytes of root `qa_gold.json`:
 SHA-256 `a402aed889eff64f3419d7a6768ff9b168a5912d0bc9c3e92cf225913a7fe3cc`.
@@ -62,7 +120,7 @@ rows; recorded provenance is not independent verification of primary sources.
 Malformed input remains an error even with the override. Exit 0 means comparison
 completed, not that the answers passed.
 
-v3.7 remains unfinished. Historical gold is not a claim of complete current
+At the end of the earlier three-iteration run, v3.7 remained unfinished. Historical gold is not a claim of complete current
 source coverage. Iteration 3 passed 197 offline tests, including all earlier judge
 fixtures, 66 comparator cases and a real historical same-gold pair; all 58 tracked
 historical result documents pass strict input validation.

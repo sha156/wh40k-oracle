@@ -42,6 +42,10 @@ _log = logging.getLogger(__name__)
 REPO_ROOT = Path(__file__).resolve().parent.parent
 sys.path.insert(0, str(REPO_ROOT))
 
+from scripts.qa_source_coverage import (
+    apply_source_coverage, check_source_coverage, coverage_ceiling, validate_source_contracts,
+)
+
 import warnings
 
 warnings.filterwarnings("ignore")
@@ -226,6 +230,7 @@ def _validate_gold_document(data):
             continue
         if not isinstance(gold, str) or not gold.strip():
             raise ValueError(f"{label}.gold must be nonempty text; only original #63 may be null")
+    validate_source_contracts(data)
 
 
 def _read_gold_document(gold_path=None):
@@ -241,7 +246,8 @@ def _read_gold_document(gold_path=None):
 def _project_questions(data, limit=None):
     items = [
         {"id": d["id"], "faction": d["faction"], "question": d["question"],
-         "gold": d["gold"], "gold_type": d["gold_type"]}
+         "gold": d["gold"], "gold_type": d["gold_type"],
+         **({"coverage_contract": d["coverage_contract"]} if "coverage_contract" in d else {})}
         for d in data["details"]
     ]
     return items[:limit] if limit else items
@@ -359,7 +365,7 @@ def run_one_layered(ctx, item):
         answer, passages = f"[harness 异常] {type(e).__name__}: {e}", []
         rv, r_reason = "❌", f"harness 异常: {e}"
         gv, g_reason = "❌", f"harness 异常: {e}"
-    return {
+    result = {
         "id": qid,
         "faction": item["faction"],
         "question": question,
@@ -372,6 +378,9 @@ def run_one_layered(ctx, item):
         "sources": _dedup_sources(passages),
         "answer": answer,
     }
+    apply_source_coverage(result, model, client, item, "generation_verdict", "generation_reason")
+    result["stage"] = classify_stage(rv, result["generation_verdict"])
+    return result
 
 
 def answer_agent(app, vs, bm25, reranker, tools, provider, model, client, question):
@@ -754,7 +763,7 @@ def run_one(ctx, item):
         answer, sources = f"[harness 异常] {type(e).__name__}: {e}", []
         verdict, reason = "❌", f"harness 异常: {e}"
         judge_method = "error"
-    return {
+    result = {
         "id": qid,
         "faction": item["faction"],
         "question": question,
@@ -769,6 +778,7 @@ def run_one(ctx, item):
         "sources": sources,
         "answer": answer,
     }
+    return apply_source_coverage(result, model, client, item, "verdict", "judge_reason")
 
 
 def main():
@@ -813,7 +823,8 @@ def main():
             r = fut.result()
             expectation = gold_by_id[futs[fut]["id"]]
             # Layered results also need their actual expectations for honest
-            # historical comparisons. Extra source notes never enter judging.
+            # historical comparisons. Contracts enter only the separate ceiling;
+            # the original factual judge/mechanical extraction receives no metadata.
             r.update({
                 "gold": expectation["gold"], "gold_type": expectation["gold_type"],
                 "gold_metadata": {key: value for key, value in expectation.items()
@@ -849,6 +860,16 @@ def main():
             "wall_time": f"{time.time() - t_start:.1f}s",
         }
     summary["gold_source"] = _gold_provenance(gold_data, gold_source, gold_raw)
+    checks = [r["source_coverage_check"] for r in results if "source_coverage_check" in r]
+    if checks:
+        summary["source_coverage"] = {
+            "schema": gold_data["meta"]["source_contract_schema"],
+            "as_of": gold_data["meta"]["as_of"], "checked": len(checks),
+            "statuses": {status: sum(c["status"] == status for c in checks)
+                         for status in ("qualified", "missing", "rejected", "unverified")},
+            "full_current_body_verified": False,
+            "semantics": "Acceptance is capped by dated/source coverage; factual wrong/partial answers never upgrade.",
+        }
     out = {"summary": summary, "details": results}
     Path(args.out).write_text(json.dumps(out, ensure_ascii=False, indent=2), encoding="utf-8")
 
