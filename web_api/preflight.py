@@ -92,13 +92,22 @@ def check_assets(root: Optional[Path] = None,
     ))
 
     faiss_index = root / "local_vector_store" / "index.faiss"
+    # FAISS.load_local reads both the vector index and the pickled docstore/map.
+    # Existence alone accepts directories and empty files as ready.
+    vector_issues = []
+    for component in (faiss_index, faiss_index.with_suffix(".pkl")):
+        if not component.is_file():
+            vector_issues.append("{} 缺失或不是常规文件".format(component.name))
+        elif component.stat().st_size == 0:
+            vector_issues.append("{} 为空文件".format(component.name))
     out.append(AssetStatus(
         name="vector_store",
         path=str(faiss_index),
-        ok=faiss_index.exists(),
+        ok=not vector_issues,
         required=want_retrieval,
-        detail=("" if faiss_index.exists() else
-                ("FAISS 索引缺失，混合检索会全量落空" if want_retrieval else off_note)),
+        detail=("" if not vector_issues else
+                ("FAISS 索引不完整（{}），混合检索不可用".format("；".join(vector_issues))
+                 if want_retrieval else off_note)),
         hint=("宿主机跑 .\\.venv\\Scripts\\python.exe ingest.py 后挂载 ./local_vector_store"
               if want_retrieval else off_hint),
     ))
