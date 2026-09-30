@@ -13,6 +13,11 @@ import re
 import sys
 from pathlib import Path
 
+if __package__:
+    from .benchmark_json import loads_benchmark_json
+else:
+    from benchmark_json import loads_benchmark_json
+
 
 _CONTRACT = ("faction", "question", "gold", "gold_type")
 _TYPES = {"stat", "weapon", "ability", "rule", "points"}
@@ -52,7 +57,7 @@ def _validate_source(source, row_count):
 
 
 def _read_run(path):
-    data = json.loads(path.read_bytes())
+    data = loads_benchmark_json(path.read_bytes())
     if not isinstance(data, dict):
         raise ValueError("result root must be an object")
     details = data.get("details")

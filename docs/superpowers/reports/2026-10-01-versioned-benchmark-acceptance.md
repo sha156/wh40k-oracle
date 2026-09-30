@@ -1,5 +1,88 @@
 # Versioned benchmark preparation acceptance — October 1, 2026
 
+## Strict-input correction iteration 2 — recursive duplicate JSON keys
+
+This bounded iteration starts from clean `codex/release-benchmark-versioning`
+at `70292b91b6ecd86182309336016a4edcb0b0b8f3`. The source-cited v3.7/profile
+stage and the preceding canonical identity correction are committed; no
+benchmark Python process was running. The first P2 correction remains intact.
+This iteration closes the second finding from the independent review of
+`0268450dc3a279bae64da315456793387702ea36`; earlier sections retain their
+original scope. The scoped candidate is ready for independent host review,
+with no claim of a live 115-question benchmark or release acceptance.
+
+Both parsers used plain `json.loads`, which discarded earlier duplicate object
+properties before validation. A frozen actual CLI-main reproduction containing
+conflicting IDs, expectations and nested source metadata reached one resource
+initialization and one offline stub worker, emitted only the last declarations,
+and passed self-comparison with exit 0. A raw duplicate result also passed the
+comparator with exit 0 under `--allow-different-gold`. Hashing original bytes
+alone did not expose contradictions discarded by JSON parsing.
+
+The small shared `scripts/benchmark_json.py` parser uses `object_pairs_hook`
+to reject repeated decoded object names at every nesting level. Both selected
+gold and result readers now use it. Equal duplicate values and escaped names
+such as `"i\u0064"`/`"id"` also reject; repeated names in separate objects
+remain valid. The error explicitly names the duplicate key. Selected gold
+rejects before limits, credentials, resources, workers or output. Either
+comparison input rejects before any comparison output, including with the
+different-gold override. The helper neither rewrites nor normalizes source
+bytes; raw UTF-8/CRLF SHA provenance and legitimate metadata remain exact.
+LLM answer parsing, judges, scoring and source qualification are unchanged.
+
+The identical new test file against the actual copied committed runner and
+comparator produced **66 failed / one passed**. All 66 failing cases prove
+accepted duplicate keys at the existing input boundaries; the nested unique
+JSON compatibility control already passed. The corrected six-file offline
+suite passes **397 tests**, with five existing SWIG warnings and no skips or
+deselections, retaining all 330 previous controls:
+
+```powershell
+& 'D:/Project/py/RAG/.venv/Scripts/python.exe' -m pytest tests/test_qa_bench.py tests/test_qa_bench_gold_selection.py tests/test_qa_bench_provenance.py tests/test_compare_bench_runs.py tests/test_qa_bench_source_coverage.py tests/test_benchmark_strict_json.py -q --tb=short
+```
+
+Controls cover conflicting root/meta/row/gold/identity fields, nested objects
+inside arrays, equal duplicate values, escaped keys, malformed tails beyond
+`--limit 1`, all three runner modes, both comparison sides and the override.
+Direct gold/result CLI subprocesses exit nonzero with a visible duplicate-key
+error and no progress/comparison output. Corrected actual CLI-main probes make
+zero resource/worker/client calls and emit no file; raw duplicate comparison
+returns 2 with no stdout. Positive nested unique JSON preserves null/nonempty
+identities, exact metadata and CRLF-byte SHA; existing valid result round-trips,
+historical comparisons, version overrides and wrong/partial scoring still pass.
+All 58 tracked historical result documents also validate through the corrected
+parser without changing their bytes or inventing provenance.
+
+All **69 protected tracked input hashes** remain unchanged, including the
+baseline/profile/history JSON, source-coverage helper and preceding tests.
+Root/frozen v3.6 retain
+`a402aed889eff64f3419d7a6768ff9b168a5912d0bc9c3e92cf225913a7fe3cc`;
+v3.7 retains
+`aeed2af4f6e225a5761f8e62f541cd3472f67ac43ebffe7865747a96b31126b0`.
+All 115 ordered IDs/questions/factions/types/canonical identities and both
+denominators remain exact. AST verification limits existing function changes
+to `_read_gold_document` and `_read_run`; replacing the new parser call with
+the original call makes every existing function AST identical to the base.
+Top-level assignments remain unchanged. Compilation passes on full Python
+3.9.1 and stable 3.11.9; configured whitespace checks pass. Ruff is unavailable,
+and no installation occurred. The actual implementation/test diff was inspected.
+
+Ignored evidence is under this worktree's
+`db_sources/release-check-20260930/benchmark-strict-input/iteration-2/`:
+`before.json`, `base/`, `red.txt`, `tests.txt`, both actual CLI probe JSON files,
+raw duplicate fixtures, `verification.json` and reproducible freeze/probe/verify
+scripts. GNHF owns commits; no manual staging, commit, push or merge occurred.
+No paid/model benchmark, network, source audit, provider/runtime/asset mutation
+or persistent process occurred. Independent review/publication and broader
+integration/live acceptance remain host-owned gates.
+
+The local handoff extends the existing benchmark checkpoint/roadmap, learning
+decision and resolved loader-error-10 record plus their indexes. Earlier note
+bodies and concurrent content are retained, with unchanged staged-diff hashes
+in all three knowledge repositories verified by `handoff-integrity.json`.
+No prior profile/freeze handoff was recreated, no empty or duplicate error
+record was added, and no current implementation commit explanation was invented.
+
 ## Strict-input correction iteration 1 — optional canonical identity
 
 This bounded iteration starts from clean `codex/release-benchmark-versioning`

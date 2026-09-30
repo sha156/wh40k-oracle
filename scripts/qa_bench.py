@@ -42,6 +42,7 @@ _log = logging.getLogger(__name__)
 REPO_ROOT = Path(__file__).resolve().parent.parent
 sys.path.insert(0, str(REPO_ROOT))
 
+from scripts.benchmark_json import loads_benchmark_json
 from scripts.qa_source_coverage import (
     apply_source_coverage, check_source_coverage, coverage_ceiling, validate_source_contracts,
 )
@@ -244,7 +245,7 @@ def _read_gold_document(gold_path=None):
     # Retain the bytes actually parsed for later exact-byte output provenance.
     source = Path(QA_SOURCE if gold_path is None else gold_path).resolve()
     raw = source.read_bytes()
-    data = json.loads(raw)
+    data = loads_benchmark_json(raw)
     _validate_gold_document(data)
     return data, source, raw
 
