@@ -422,7 +422,7 @@ def calc_points(
     也让中文名这条最常见的入参形态真的能查到。
     """
     from db_compile.calc_points import UNKNOWN_UNIT_NOTE
-    from web_api.official_points import exact_unit
+    from web_api.official_points import _canonical_identity_matches, exact_unit
 
     # 参数防护（评审 M#4）：LLM 可能把 unit_list 传成单个字符串——字符串是可迭代的，
     # 会被逐字符拆成"单位名"胡乱查询。字符串包成单元素列表；其余非列表类型明确报错。
@@ -440,6 +440,10 @@ def calc_points(
     db_path = db_path or DB_PATH
     if not Path(db_path).exists():
         return {"found": False, "units": [], "note": "wh40k.sqlite 不存在，需先跑 db_compile"}
+    if resolver is None and Path(db_path) != Path(DB_PATH):
+        # Internal copied-DB calls must not resolve names against production.
+        # Public dispatch still supplies only unit_list; its signature is stable.
+        resolver = EntityResolver(db_path=Path(db_path))
 
     results = _calc_points_impl(db_path, list(unit_list))
     units: List[Dict[str, Any]] = []
@@ -477,8 +481,19 @@ def calc_points(
                               if official else "") + identity_note})
             continue
 
+        try:
+            official = exact_unit(db_path, str(query))
+        except ValueError:  # Databases built before the full ledger remain supported.
+            official = None
         resolved = _resolve_for_points(str(query), resolver)
         canonical_id = (resolved or {}).get("canonical_id")
+        # Exact price identity beats a fuzzy sibling or a partial canonical name
+        # index. Equal prices across factions remain ambiguous. An unambiguous
+        # exact canonical match keeps its existing valid ID/current-tier path.
+        if official and (not canonical_id or resolved.get("confidence") != "exact"
+                         or not _canonical_identity_matches(db_path, canonical_id, official)):
+            units.append(official)
+            continue
         if canonical_id:
             retry = _calc_points_impl(db_path, [canonical_id])[0]
             if retry.note != UNKNOWN_UNIT_NOTE:
@@ -517,10 +532,6 @@ def calc_points(
             ambiguous_queries.append(str(query))
             continue
 
-        try:
-            official = exact_unit(db_path, str(query))
-        except ValueError:  # Databases built before the full ledger remain supported.
-            official = None
         if official:
             units.append(official)
             continue
