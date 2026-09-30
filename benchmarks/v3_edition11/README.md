@@ -8,6 +8,9 @@ Exact byte SHA-256:
 `aeed2af4f6e225a5761f8e62f541cd3472f67ac43ebffe7865747a96b31126b0`.
 Root gold, frozen v3.6 and all historical results remain byte-identical.
 This is a candidate for root review; no fresh paid benchmark has been run.
+The profile and initial ceiling are committed at
+`c4e1e68cf9bf3407df105df6f3fa1334f970d029`; the claim-text integrity follow-up
+awaits its GNHF commit and root review.
 
 Source-backed clause changes are #34 T5 (M8 retained), #113 published 415,
 #118 CSM125/DG105 with TS110/WE120 retained, #14 separate Hazardous rolls
@@ -39,8 +42,17 @@ date and `full_current_body_verified: false`. Ordinary and layered generation
 both apply the ceiling; retrieval scoring is unchanged. Legacy profiles retain
 their five-field projection, original scoring and call count.
 
-Offline validation passes **256 tests**, including all 197 retained gates and
-59 source-profile/coverage controls. A six-worker fake-client run executes all
+The loader also binds all 21 contracts' requirement/prohibition text to the
+v3.7 candidate using canonical JSON and a fixed fingerprint. Keeping the claim
+names while replacing their meanings with auto-award instructions is rejected
+before limiting or model calls. JSON whitespace/key order and additive review
+annotations remain allowed. This guard preserves instructions; it does not
+prove the semantic judge's accuracy or certify new source facts.
+
+Offline validation passes **299 tests**, including all 197 retained gates and
+102 source-profile/coverage controls. The 42 new weakening controls failed
+against the committed predecessor and pass with the integrity guard; one new
+annotation/serialization control passes in both. A six-worker fake-client run executes all
 115 rows without exclusions; its synthetic judge output is not a benchmark
 score or proof of semantic judge accuracy. All 37 cited primary files and 73
 clause/card/absence probes pass against saved local bytes. No network, service,

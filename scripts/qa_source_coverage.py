@@ -17,6 +17,11 @@ PARENT_SHA = "a402aed889eff64f3419d7a6768ff9b168a5912d0bc9c3e92cf225913a7fe3cc"
 REVISION_IDS = {14, 34, 93, 113, 114, 115, 118}
 COVERAGE_IDS = set(range(11, 21)) | {34} | set(range(75, 81)) | {113, 114, 115, 118}
 _KINDS = {"historical_body", "historical_points", "published_points", "amended_characteristic"}
+# dated-source-v1 binds the candidate's actual judge instructions, not just
+# their names. Hash only the ordered IDs and named claim text, in canonical
+# JSON, so annotations, saved paths and file formatting remain independent.
+# This is an integrity guard, not evidence that the semantic judge is correct.
+_V37_CLAIM_TEXT_SHA256 = "a45783e47897ab4df62b1babc6f939c3c39f4cf20e94581fa56289f377b0e8ff"
 
 
 def _text(value):
@@ -153,6 +158,15 @@ def validate_source_contracts(data):
                 raise ValueError("historical price contract must retain all 30 current pages and prior date")
     if revisions != REVISION_IDS or covered != COVERAGE_IDS:
         raise ValueError("source profile must retain precisely the reviewed clause and coverage scopes")
+    claims = [
+        {"id": row["id"], **{key: row["coverage_contract"][key]
+                            for key in ("requirements", "prohibitions")}}
+        for row in rows if "coverage_contract" in row
+    ]
+    claim_bytes = json.dumps(claims, sort_keys=True, ensure_ascii=False,
+                            separators=(",", ":")).encode("utf-8")
+    if hashlib.sha256(claim_bytes).hexdigest() != _V37_CLAIM_TEXT_SHA256:
+        raise ValueError("source profile changes reviewed coverage claim text")
 
 
 _COVERAGE_SYSTEM = """Check only dated/source-coverage statements in the answer, independently

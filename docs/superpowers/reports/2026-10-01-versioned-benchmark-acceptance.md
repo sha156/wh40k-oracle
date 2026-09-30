@@ -1,6 +1,73 @@
 # Versioned benchmark preparation acceptance — October 1, 2026
 
-## Source-cited v3.7 and narrow dated coverage candidate
+## Iteration 2 — coverage instruction integrity
+
+The initial v3.7 profile and narrow coverage ceiling are now committed by GNHF
+at **`c4e1e68cf9bf3407df105df6f3fa1334f970d029`** on
+`codex/release-benchmark-versioning`. Its parent is the confirmed full SHA
+`0268450dc3a279bae64da315456793387702ea36`. This iteration began with a clean
+worktree. The earlier section below describes its pre-commit state and is
+historical where superseded here. Independent root review remains outstanding.
+
+This individually verifiable follow-up closes a concrete acceptance-contract
+gap. The committed loader checked nonempty claim text and exact claim names,
+but accepted replacing a requirement with “Any answer satisfies this
+requirement, without a date or source limitation” or a prohibition with “No
+answer can violate this prohibition.” These strings become actual coverage
+judge instructions. Preserving their names alone therefore did not preserve
+the qualification requirement. The factual wrong-answer ceiling still held;
+the gap could weaken the coverage requirement on factually correct answers.
+
+`dated-source-v1` now binds the ordered IDs plus all requirement/prohibition
+strings to the existing v3.7 candidate. Canonical JSON uses sorted keys,
+UTF-8 without ASCII escaping, and compact separators; its expected SHA-256 is
+`a45783e47897ab4df62b1babc6f939c3c39f4cf20e94581fa56289f377b0e8ff`.
+All 21 contracts are checked before limits, resource initialization or model
+calls. Additive annotations and different JSON serialization remain accepted.
+No profile gold, claim text, citations, question, identity, row or scoring
+function changed. The integrity fingerprint is not semantic-judge validation
+or primary-source verification. Any later deliberate claim change requires an
+explicit code/profile review of the new instructions.
+
+The added tests initially returned **42 failed / 1 passed** against the actual
+committed implementation: both claim groups for every covered row were
+weakenable, while annotations/serialization were already valid. After the fix,
+the same focused five-file suite documented below passes **299 tests**, with
+five existing SWIG warnings, no skips: all **256** previous controls (including
+the **197** original gates) plus **43** new cases. Direct old/new validator calls
+also reproduce all 42 predecessor acceptances and current rejections. Existing
+wrong-stat/correct-qualifier, right-stat/missing-qualifier, correct-both,
+historical identity, full-115 fake-client and comparator controls remain green.
+No fake API test is reported as a real benchmark score.
+
+The finite original-byte verifier was rerun: **37/37 sources, 73 citation/card/
+absence probes, 62/62 protected files unchanged**, and **115 ordered rows**.
+The separate v3.7 profile remains byte-identical to its committed candidate:
+`aeed2af4f6e225a5761f8e62f541cd3472f67ac43ebffe7865747a96b31126b0`.
+Root/frozen v3.6 both retain
+`a402aed889eff64f3419d7a6768ff9b168a5912d0bc9c3e92cf225913a7fe3cc`.
+The changed-clause IDs remain **14, 34, 93, 113, 114, 115, 118**; the source
+evidence and body limitations in the previous section remain applicable.
+
+Focused pytest ran with the existing project environment (Python 3.9.1).
+Compilation passes with that interpreter and the verified Python 3.11.9;
+`git -c core.whitespace=cr-at-eol diff --check` passes. The actual code/test
+diff was inspected: only the version-specific claim-text integrity guard and
+its regression/compatibility tests change. No new dependencies, services,
+background processes, application data, external repositories or orchestrator
+notes were touched. Ignored paired/integrity evidence is saved alongside the
+existing verifier in `benchmark-versioning/v37-claim-integrity-paired.json` and
+`v37-claim-integrity-verification.json`. This report/README record the verified
+learning and reproduced gap for root's deduplicated knowledge handoff.
+
+This follow-up awaits a GNHF commit; no manual stage/commit/push/merge occurred.
+Root still owns independent code/source review, official-source integration,
+Python 3.11 full-suite/CI, deployed fresh all-115 exact-profile execution with
+a judge distinct from production Flash, and release/knowledge publication.
+**Fresh paid/real LLM benchmark not run.** The full stop condition is not claimed
+while this follow-up is uncommitted and root's clause review remains pending.
+
+## Historical initial source-cited v3.7 and narrow dated coverage candidate
 
 This continuation starts from clean `codex/release-benchmark-versioning`, full
 HEAD `0268450dc3a279bae64da315456793387702ea36`. The previous run reached its
@@ -495,3 +562,11 @@ The explicit stop hook authorized this additional local handoff. Existing projec
 The existing learning decision `C:/Users/Administrator/learn-notes/decisions/20261001-freeze-gold-before-validating-selection.md` is extended with the non-upgrading ceiling, literal answer evidence and semantic-judge limits, and its existing index entry is updated. The distinct reproduced dated-coverage acceptance gap is recorded once at `C:/Users/Administrator/error-notes/rag/20261001-error-18-benchmark-source-coverage-not-scored.md`, with full paired outcomes, exact predecessor, reproduction and verified offline resolution. The repeated GBK primary-audit diagnostic extends the existing `common/20260921-error-41-python-stdout-gbk.md` rather than creating a duplicate. Error indexes are updated. No cross-project harness promotion is warranted before root review.
 
 Ignored `benchmark-versioning/v37-knowledge-handoff-integrity.json` checks preserved prior note content, staged diff hashes in all four repositories, unchanged implementation/tests/profile/baselines and unique entries. Only this handoff documentation changed after the recorded256-pass run; no new application/test changes or test execution occurred. No manual staging/commit/push/publication or service occurred. Root owns final knowledge publication and GNHF owns the implementation commit.
+
+## Iteration 2 local knowledge handoff
+
+The explicit stop hook authorized this additional local handoff. Duplicate search found the existing benchmark learning decision but no claim-text integrity error record. New scoped sections in `D:/Project/devlog/wh40k-oracle/CHECKPOINT.md` and `ROADMAP.md` record the 42 predecessor acceptances/current rejections, 299 offline passes, unchanged 115-row profile, 37 hashes/73 citation probes, 62 protected files and remaining GNHF/root gates. Earlier/concurrent content is preserved. `commits/20261001-c4e1e68cf-source-cited-benchmark.md` explains only the real initial-profile commit and excludes the uncommitted integrity follow-up/43 added controls.
+
+The existing `learn-notes/decisions/20261001-freeze-gold-before-validating-selection.md` and index are extended. The distinct validator gap is recorded once in `error-notes/rag/20261001-error-20-coverage-claim-text-not-bound.md`, including actual error, environment, reproduction, attempted approaches, verified resolution and lessons; its index is updated. Error 19 belongs to the concurrent model-boundary task. A pre-write preservation check caught concurrent devlog additions before any write; refreshed snapshots retain those additions. No duplicate of the earlier post-factual coverage gap or harness promotion is created.
+
+Ignored `benchmark-versioning/v37-claim-knowledge-handoff-integrity.json` verifies preserved original note bodies, unchanged staged diffs in all four repositories, unchanged implementation/profile/test bytes, 62 protected files and unique handoff entries. This handoff changes only notes/this report; the 299-pass implementation is unchanged. No new test execution, manual stage/commit/push/publication, production edit, service or real benchmark occurred. Root retains knowledge publication and GNHF retains implementation commits.

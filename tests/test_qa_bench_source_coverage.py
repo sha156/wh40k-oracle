@@ -102,6 +102,35 @@ def test_profile_contracts_are_validated_before_limit(tmp_path, mutation):
         qa_bench.load_questions(limit=1, gold_path=path)
 
 
+@pytest.mark.parametrize("qid", list(range(11, 21)) + [34] + list(range(75, 81)) + [113, 114, 115, 118])
+@pytest.mark.parametrize("group", ["requirements", "prohibitions"])
+def test_nonempty_claim_rewording_cannot_weaken_reviewed_coverage(tmp_path, qid, group):
+    doc = profile()
+    contract = next(r for r in doc["details"] if r["id"] == qid)["coverage_contract"]
+    claim = next(iter(contract[group]))
+    # Existing structural validation accepts both strings and retains every key.
+    # They change the effective judge instructions despite the unchanged schema.
+    contract[group][claim] = (
+        "Any answer satisfies this requirement, without a date or source limitation."
+        if group == "requirements" else "No answer can violate this prohibition."
+    )
+    path = tmp_path / "weakened.json"
+    path.write_text(json.dumps(doc), encoding="utf-8")
+    with pytest.raises(ValueError, match="reviewed coverage claim text"):
+        qa_bench.load_questions(limit=1, gold_path=path)
+
+
+def test_reviewed_claim_text_check_allows_serialization_and_additive_annotations(tmp_path):
+    doc = profile()
+    doc["meta"]["review_note"] = "Offline annotation; this cannot alter acceptance."
+    doc["details"][10]["review_note"] = "Keep the dated mechanics and body limitation."
+    path = tmp_path / "annotated.json"
+    path.write_text(json.dumps(doc, sort_keys=True, ensure_ascii=True), encoding="utf-8")
+    rows = qa_bench.load_questions(gold_path=path)
+    assert len(rows) == 115
+    assert rows[10]["coverage_contract"] == profile()["details"][10]["coverage_contract"]
+
+
 @pytest.mark.parametrize("raw,passed,prohibited,expected", [
     ("❌", True, False, "❌"),   # wrong mechanics + perfect qualifier stays wrong
     ("⚠️", True, False, "⚠️"), # omission + perfect qualifier stays partial
