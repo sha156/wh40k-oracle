@@ -70,18 +70,41 @@ def test_eversor_assassin_four_keywords_resolve() -> None:
 
 
 @needs_assets
-def test_pistol_section_recovered_by_english_name() -> None:
-    """PISTOL 在 keywords.json 里 section 是 null（速查表漏印），靠官方英文名配回 24.27。
-
-    这条是「链接逻辑必须容忍 section 缺失」的正面用例：不是不给链接，
-    而是有第二条**可验证**的配对路径；配不上才留空，绝不按顺序推断编号。
-    """
+@pytest.mark.parametrize("base,token,section,brief", [
+    ("PISTOL", "手枪", "24.27", "[手枪]和[近距离]在所有规则中都被视为同一个规则"),
+    ("SUSTAINED HITS", "连击", "24.36", "那次攻击将造成 X 数量的额外命中"),
+])
+def test_official_keyword_sections_are_published(base, token, section, brief) -> None:
+    """Normal official generation supplies both formerly omitted section numbers."""
     raw = {i["base"]: i for i in json.loads(
         PAYLOAD.read_text(encoding="utf-8"))["items"]}
-    assert raw["PISTOL"]["section"] is None      # 前提：载荷里真的没有节号
-    ref = resolve("手枪")
-    assert (ref.section, ref.rule_slug) == ("24.27", "24-core-abilities")
-    assert "[手枪]和[近距离]在所有规则中都被视为同一个规则" in (ref.brief or "")
+    assert raw[base]["section"] == section
+    ref = resolve(token)
+    assert (ref.section, ref.rule_slug) == (section, "24-core-abilities")
+    assert brief in (ref.brief or "")
+
+
+@needs_assets
+@pytest.mark.parametrize("base,token,section,brief", [
+    ("PISTOL", "手枪", "24.27", "[手枪]和[近距离]在所有规则中都被视为同一个规则"),
+    ("SUSTAINED HITS", "连击", "24.36", "那次攻击将造成 X 数量的额外命中"),
+])
+def test_pistol_section_recovered_by_english_name(
+    tmp_path, monkeypatch, base, token, section, brief,
+) -> None:
+    """Missing-section fallback uses a copied real payload and real official text."""
+    from web_api import keywords
+
+    data = json.loads(PAYLOAD.read_text(encoding="utf-8"))
+    item = next(i for i in data["items"] if i["base"] == base)
+    item["section"] = None
+    payload_copy = tmp_path / "keywords.json"
+    payload_copy.write_text(json.dumps(data, ensure_ascii=False), encoding="utf-8")
+    monkeypatch.setattr(keywords, "PAYLOAD_PATH", payload_copy)
+    assert next(i for i in keywords.load_items() if i["base"] == base)["section"] is None
+    ref = resolve(token)
+    assert (ref.section, ref.rule_slug) == (section, "24-core-abilities")
+    assert brief in (ref.brief or "")
 
 
 @needs_assets
