@@ -216,35 +216,42 @@ class EntityResolver:
         return ResolveResult(cid, self._id_to_en.get(cid), confidence)
 
     def resolve(self, name: str) -> ResolveResult:
-        name = name.strip()
+        # Community indirection supplies another query, not stronger identity
+        # evidence. Resolve only its terminal target; preserve fuzzy/ambiguous/
+        # none results instead of promoting a guess or retrying the nickname.
+        # Iterative traversal handles cycles and long chains without recursion.
+        seen = set()
+        while True:
+            name = name.strip()
 
-        cid = self._zh_to_id.get(name)
-        if cid:
-            return ResolveResult(cid, self._id_to_en.get(cid), "exact")
+            cid = self._zh_to_id.get(name)
+            if cid:
+                return ResolveResult(cid, self._id_to_en.get(cid), "exact")
 
-        # 分隔号写法差异（罗伯特·基里曼 ↔ 罗伯特.基里曼）算**同名**，判 exact：
-        # 只有这样 `datasheet.find_datasheet`（只信 exact）才够得着数值权威路径。
-        norm_cid = self._zh_norm_to_id.get(_sep_normalized(name))
-        if norm_cid:
-            return ResolveResult(norm_cid, self._id_to_en.get(norm_cid), "exact")
+            # 分隔号写法差异（罗伯特·基里曼 ↔ 罗伯特.基里曼）算**同名**，判 exact：
+            # 只有这样 `datasheet.find_datasheet`（只信 exact）才够得着数值权威路径。
+            norm_cid = self._zh_norm_to_id.get(_sep_normalized(name))
+            if norm_cid:
+                return ResolveResult(norm_cid, self._id_to_en.get(norm_cid), "exact")
 
-        # 消歧语法 `Name (FACTION)`：ambiguous 候选串原样回填即可命中唯一阵营
-        m = _FACTION_QUALIFIED.match(name)
-        if m:
-            key = m.group("base").strip().upper()
-            fac = m.group("faction").strip().upper()
-            for c in self._en_buckets.get(key, []):
-                if (self._id_to_faction.get(c) or "").upper() == fac:
-                    return ResolveResult(c, self._id_to_en.get(c), "exact")
+            # 消歧语法 `Name (FACTION)`：ambiguous 候选串原样回填即可命中唯一阵营
+            m = _FACTION_QUALIFIED.match(name)
+            if m:
+                key = m.group("base").strip().upper()
+                fac = m.group("faction").strip().upper()
+                for c in self._en_buckets.get(key, []):
+                    if (self._id_to_faction.get(c) or "").upper() == fac:
+                        return ResolveResult(c, self._id_to_en.get(c), "exact")
 
-        if name.upper() in self._en_to_id:
-            return self._resolve_en_key(name.upper(), "exact")
+            if name.upper() in self._en_to_id:
+                return self._resolve_en_key(name.upper(), "exact")
 
-        alias_target = self._unit_aliases.get(name)
-        if alias_target:
-            resolved = self.resolve(alias_target)
-            if resolved.canonical_id:
-                return ResolveResult(resolved.canonical_id, resolved.name_en, "exact")
+            if name not in self._unit_aliases:
+                break
+            if name in seen:
+                return ResolveResult(None, None, "none")
+            seen.add(name)
+            name = self._unit_aliases[name]
 
         if _sep_normalized(name) in self._retired_alias_norms:
             return ResolveResult(None, None, "none")
