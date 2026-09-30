@@ -13,7 +13,7 @@
 
 顺序不可乱：build 会 `unlink` 重建整库，所以 apply/aliases 必须排在 build 之后；
 crosscheck/check 是只读验证收尾。任一网络环节失败降级为「复用缓存 + 显眼告警」，
-只有 build 失败才中止（下游全部依赖重建后的库）。
+build 或关键官方规则恢复失败即中止（下游依赖已恢复的权威规则）。
 """
 from __future__ import annotations
 
@@ -572,6 +572,8 @@ _PIPELINE = [
 #   · fp_errata 先于 mfm_apply（先插 fpe_* 新单位，再定价；反过来点数永久 NULL 且三道校验全静默）
 #   · official_zh 后于 fp_rules（宪法 §6 官方中文名要盖在 P7 人工译名之上）
 # 新增写库层时只要打上 @_writes_db 就同时进两条管线，漏挂 restore 这条路已经堵死。
+# Keep the legacy (title, function) pairs; restore looks up criticality from
+# _PIPELINE so both entry points share the same failure policy.
 _RESTORE_STAGES = [(title, fn) for (title, fn, _critical) in _PIPELINE
                    if getattr(fn, "writes_db", False)]
 
@@ -581,10 +583,14 @@ def restore_authority_layers(cfg: UpdateConfig) -> UpdateReport:
 
     强制离线：只用本地缓存，不联网。供 `db_compile build` CLI 在重建后自动补跑，
     杜绝「单独跑 build 静默把官方分回退成 Wahapedia 旧值并清空别名」这一脚枪。
+
+    Critical failures stop downstream stages. Earlier build/restoration stages
+    may already have committed: this is not a transaction across the pipeline.
     """
     cfg = replace(cfg, offline=True)
     report = UpdateReport()
     total = len(_RESTORE_STAGES)
+    critical_stages = {fn for _, fn, critical in _PIPELINE if critical}
     for idx, (title, fn) in enumerate(_RESTORE_STAGES, 1):
         _banner(idx, total, title)
         try:
@@ -596,7 +602,13 @@ def restore_authority_layers(cfg: UpdateConfig) -> UpdateReport:
         print(f"    {mark} {res.summary}", flush=True)
         if res.warning:
             print(f"    ⚠️  {res.warning}", flush=True)
-    print("\n" + _L1_SYNC_HINT, flush=True)
+        if fn in critical_stages and not res.ok:
+            report.aborted_at = res.name
+            print(f"\nCritical restoration stage [{res.name}] failed; downstream stages stopped.",
+                  flush=True)
+            break
+    if report.ok:
+        print("\n" + _L1_SYNC_HINT, flush=True)
     return report
 
 
