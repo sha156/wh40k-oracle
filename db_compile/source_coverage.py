@@ -380,6 +380,7 @@ def apply_coverage(conn: sqlite3.Connection, manifest, *, expected_records):
         raise ValueError("Coverage application requires the caller's active transaction")
     conn.execute("SAVEPOINT source_coverage_apply")
     try:
+        replacements = []
         for record, expected in zip(records, expected_records):
             _check_identity(conn, record)
             previous = _stored(conn, _key(record["identity"]))
@@ -391,13 +392,28 @@ def apply_coverage(conn: sqlite3.Connection, manifest, *, expected_records):
                 if record["reviewed_on"] < previous["reviewed_on"]:
                     raise ValueError("Coverage review date would downgrade")
                 _check_body_transition(conn, record, previous)
+            if record != previous:
+                key = _key(record["identity"])
+                # _stored validated this exact registry declaration. Keep its
+                # original JSON bytes/digest, including legacy serialization,
+                # rather than just its parsed in-memory transition boundary.
+                previous_payload = None if previous is None else conn.execute(
+                    "SELECT record_json FROM source_coverage_registry WHERE identity_key=?", (key,)).fetchone()[0]
+                replacements.append((record, previous_payload))
+        if not replacements:
+            conn.execute("RELEASE SAVEPOINT source_coverage_apply")
+            return {"records": len(records), "schema_version": 1}
         conn.execute("CREATE TABLE IF NOT EXISTS source_coverage_registry "
                      "(identity_key TEXT PRIMARY KEY,record_json TEXT NOT NULL)")
         conn.execute("CREATE TABLE IF NOT EXISTS source_coverage_history "
                      "(identity_key TEXT NOT NULL,record_sha256 TEXT NOT NULL,record_json TEXT NOT NULL,"
                      "PRIMARY KEY(identity_key,record_sha256))")
-        for record in records:
+        for record, previous_payload in replacements:
             key = _key(record["identity"])
+            if previous_payload is not None:
+                previous_digest = hashlib.sha256(previous_payload.encode("utf-8")).hexdigest()
+                conn.execute("INSERT OR IGNORE INTO source_coverage_history VALUES (?,?,?)",
+                             (key, previous_digest, previous_payload))
             payload = json.dumps(record, sort_keys=True, ensure_ascii=False, separators=(",", ":"))
             digest = hashlib.sha256(payload.encode("utf-8")).hexdigest()
             conn.execute("INSERT OR IGNORE INTO source_coverage_history VALUES (?,?,?)", (key, digest, payload))
