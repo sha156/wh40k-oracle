@@ -27,8 +27,8 @@ jieba
 # CVE-2026-3029: safe embedded-file extraction defaults; Python >=3.10.
 pymupdf==1.26.7
 
-# LLM 提供商
-zhipuai
+# LLM providers use OpenAI-compatible clients from langchain-openai/openai.
+# GLM remains supported; the unused zhipuai SDK forced vulnerable PyJWT <2.9.
 
 # 界面
 streamlit>=1.35.0

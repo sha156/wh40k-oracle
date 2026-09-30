@@ -43,8 +43,8 @@ jieba==0.42.1
 # CVE-2026-3029: retain the PDF text/span APIs on the patched branch.
 pymupdf==1.26.7
 
-# LLM 提供商
-zhipuai==2.1.5.20250825
+# LLM providers use OpenAI-compatible clients from langchain-openai/openai.
+# GLM remains supported; the unused zhipuai SDK forced vulnerable PyJWT <2.9.
 
 # 界面（agent 的兜底检索只读调用 app.py，而 app.py 顶层 import streamlit）
 streamlit==1.35.0

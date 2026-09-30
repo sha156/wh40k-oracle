@@ -3,11 +3,126 @@
 Status: **incremental candidate, not release acceptance**. The shared
 FastAPI/Starlette boundary, Requests, PyMuPDF and installation tooling are patched
 and verified in isolation, with the setuptools legacy-path limitation below.
+The unused ZhipuAI SDK requirement is retired while both GLM provider paths are
+preserved and verified with synthetic responses through real provider clients.
 The complete CPU application stack, full native suite, Docker/Linux installation
 and final audit remain outstanding.
 No integration, deployment, source retirement or main-environment changes occurred.
 
-## Latest increment: installation tooling — October 1, 2026
+## Latest increment: unused provider SDK and PyJWT boundary — October 1, 2026
+
+`requirements.txt` and `requirements-docker.txt` no longer install the unused
+**zhipuai 2.1.5.20250825** SDK. The native declaration was previously unbounded;
+the auditor found that exact version in both actual native and Docker inventories.
+CI/server sets already omit it and are unchanged. GLM remains available through
+the existing OpenAI-compatible clients: `app.py::get_llm` uses `ChatOpenAI`,
+`agent/llm_client.py` uses `openai.OpenAI`, and `scripts/qa_bench.py` uses the
+same provider endpoint. No provider choice, model, endpoint, application source,
+test expectation or reliability-owned file changed.
+
+An AST scan of **all 280 tracked Python files**, including scripts and tests,
+found **zero zhipuai, jwt or pyjwt imports**. The accompanying textual scan
+records provider references and dynamic import calls; the latter import `app`
+or `re`, not these SDKs. The provider's
+[official OpenAI compatibility guide](https://docs.bigmodel.cn/cn/guide/develop/openai/introduction)
+and saved registry metadata support the existing client boundary. This change
+removes an unused implementation dependency, not GLM functionality.
+
+The SDK's exact metadata requires **PyJWT>=2.8,<2.9**. A real pip dry-run against
+the clean provider subset still selects **PyJWT 2.8.0**, along with the SDK and
+cachetools. It therefore cannot accept the reported 2.12/2.13/2.14 fixes. No
+incompatible PyJWT constraint or forced `--no-deps` installation was introduced.
+Both auditor baselines contain **15 PyJWT records / 11 underlying alias groups**
+at 2.8.0. All full bodies and connected alias groups are saved; duplicate records
+are not counted as distinct issues. Removing this dependency path is the scoped
+resolution, not a claim that PyJWT itself is fixed.
+
+**No-fix qualification:** **PYSEC-2025-183 / CVE-2025-45768** still has no fixed
+version in the saved OSV record, which says the supplier disputes the weak-key
+classification. The primary
+[maintainer discussion](https://github.com/jpadilla/pyjwt/issues/1080) confirms
+that position and links the later
+[2.11.0 release](https://github.com/jpadilla/pyjwt/releases/tag/2.11.0), which adds
+weak-key warnings and opt-in strict enforcement. The
+[tagged implementation](https://github.com/jpadilla/pyjwt/blob/2.11.0/jwt/api_jws.py)
+confirms `enforce_minimum_key_length` defaults to **False**. This is not evidence that the
+registry's no-fix classification has been cleared. The application has no JWT
+signing/verifying path; both clean installed subsets below contain **neither
+PyJWT nor zhipuai**. No advisory was suppressed. The final full dependency tree
+must still confirm absence or explain any new transitive JWT consumer.
+
+Validation completed for this increment:
+
+- New `clean-provider-venv`, created with the prescribed **Python 3.11.9**
+  interpreter: bootstrap, then `requirements-server.txt` plus **openai 2.54.0,
+  langchain-openai 1.1.14 and langchain-core 1.4.6**, installs successfully with
+  the shared build constraint and passes `pip check`. Resolved **langsmith is
+  0.14.2**. This has **51 distributions**, including pip/setuptools and no pytest,
+  PDF or model dependencies. The explicit provider versions are **experimental
+  subset pins**, not edits to the remaining full-stack LangChain requirements;
+  this does not complete the LangChain migration or full install.
+- Real `OpenAI` and `ChatOpenAI` calls through an in-memory HTTPX transport pass
+  for **both DeepSeek and GLM**: exact endpoint/model, synthetic Bearer-key
+  serialization, classification, JSON final content and citations, benchmark
+  judging and streaming chunks. The unchanged `get_llm` function is compiled
+  directly from its AST; no fake production SDK is installed. The agent and
+  benchmark modules are imported normally. Real SDK **400 BadRequestError**
+  triggers the existing retry without `response_format`; **429 RateLimitError**
+  propagates after one transport call with SDK retries disabled for that probe.
+  GLM receives no DeepSeek thinking field. All responses and keys are synthetic;
+  no external inference, full app import, retrieval or model-quality claim is made.
+  JWT, zhipuai, torch, sentence-transformers, FAISS and Streamlit stay unloaded.
+- Project `.venv`: unchanged `test_llm_client.py`, `test_llm_refine.py` and the
+  four API suites named in the earlier FastAPI increment pass **122 tests,
+  28 skips, two warnings in 4.63 seconds**. The fresh provider environment,
+  after separate **pytest 9.0.3 / PyMuPDF 1.26.7** test additions, passes the
+  same **122 tests, 28 skips, one warning in 5.43 seconds** and `pip check`.
+  JUnit attributes every skip to absent canonical SQLite. Existing deprecation
+  warnings remain. No asset, source, expectation or skip changed.
+- Isolated **pip-audit 2.10.1** queries every exact installed pin before test
+  additions (**51**) and afterward (**56**): both exit **0**, with **zero findings
+  and zero skipped packages**. Full raw JSON and alias-group outputs are saved.
+  Tool-environment packages are separate. These are **clean provider-subset
+  audits**, not a clean full native/Docker application audit. The test subset adds
+  five distributions; production requirements gain no test dependencies.
+
+Evidence is ignored and local under
+`C:/Users/Administrator/.codex/worktrees/release-python-security/RAG/db_sources/python-security/iteration-6/`:
+source scan/probe scripts, official guide HTML and SDK README, exact registry
+metadata, original auditor provider bodies and alias groups, OSV/maintainer
+discussion/release/tagged-source evidence, bootstrap/provider/test installation reports and
+logs, SDK dry-run report, before/after test-addition inventories and audit pins,
+raw audits/logs/exit codes, both test logs/JUnit XML, provider-probe JSON and
+`verification-summary.json`. `inspect-provider.py` and `summarize-evidence.py`
+reproduce the scan, metadata, grouping and assertions. An initial incorrect SDK
+repository URL returned **404**; retrieval from the verified official repository
+`MetaGLM/zhipuai-sdk-python-v4` succeeded. An unrelated issue 1050 lookup was not
+used as evidence; the cited no-fix discussion is issue 1080.
+
+Reproduce by creating a new environment with the prescribed base interpreter,
+installing `requirements-bootstrap.txt`, then using its **full executable path**
+with `-m pip install --build-constraint requirements-bootstrap.txt -r
+requirements-server.txt openai==2.54.0 langchain-openai==1.1.14
+langchain-core==1.4.6`. Run `provider-probe.py` with a new JSON output path.
+For the six named suites, separately install pytest 9.0.3 and PyMuPDF 1.26.7.
+Use `-m pip check`, UTF-8 output, retrieval/warmup disabled for API tests, and the
+authorized proxy with localhost bypass. Disable LangSmith tracing for synthetic
+provider probes (`LANGSMITH_TRACING=false`, `LANGCHAIN_TRACING_V2=false`).
+Audit with the separate tool interpreter
+and the complete exact installed inventory using `--no-deps --disable-pip`.
+
+**Host integration:** recreate environments and images from the final complete
+requirements; installing an updated requirements file into an existing environment
+does not automatically remove old zhipuai/PyJWT distributions. The actual old main
+and Docker inventories remain untouched. Full CPU/LangChain/Streamlit dependency
+resolution, complete native tests, Docker/Linux and live GLM checks remain gates.
+This subset supplies useful provider/core compatibility evidence for that next
+work but does not establish retrieval compatibility. Diff inspection and
+`git -c core.whitespace=cr-at-eol diff --check` pass. No background process,
+commit, push, deployment, main asset/environment change or external handoff edit
+occurred; project knowledge handoff is contained in this report.
+
+## Earlier increment: installation tooling — October 1, 2026
 
 `requirements-bootstrap.txt` now pins **pip 26.2.1** and **setuptools 83.0.0**.
 Native, Docker and lightweight server requirements include it; CI inherits it
