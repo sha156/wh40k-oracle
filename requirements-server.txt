@@ -20,5 +20,6 @@ pydantic==2.12.5
 numpy==1.26.4
 
 # wiki_engine / db_compile 的只读路径会 import 到
-requests==2.32.5
+# CVE-2026-25645: patched zip extraction; requires Python >=3.10.
+requests==2.33.0
 PyYAML==6.0.3

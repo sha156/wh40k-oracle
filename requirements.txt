@@ -38,5 +38,7 @@ uvicorn[standard]>=0.30
 sse-starlette>=2.0
 
 # 工具
+# Shared with Docker/server; fixes CVE-2026-25645 on supported Python 3.11.
+requests==2.33.0
 python-dotenv
 pytest

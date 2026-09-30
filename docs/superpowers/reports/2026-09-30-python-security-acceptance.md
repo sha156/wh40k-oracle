@@ -1,11 +1,114 @@
 # Python dependency security acceptance — September 30, 2026
 
-Status: **incremental candidate, not release acceptance**. Iteration 1 patches the
-shared FastAPI/Starlette dependency boundary. The complete CPU application stack,
-full native suite, Docker/Linux installation and final audit remain outstanding.
+Status: **incremental candidate, not release acceptance**. The shared
+FastAPI/Starlette boundary and Requests are patched and independently verified.
+The complete CPU application stack, full native suite, Docker/Linux installation
+and final audit remain outstanding.
 No integration, deployment, source retirement or main-environment changes occurred.
 
-## Scope and installed versions
+## Latest increment: Requests patch — October 1, 2026
+
+Requests **2.32.5 → 2.33.0** is installed in the isolated project `.venv` and
+a second newly created Python **3.11.9** server environment. The exact pin is
+shared by `requirements.txt`, `requirements-docker.txt` and
+`requirements-server.txt`; CI inherits it through `requirements-server.txt`.
+There are no production source, test, Dockerfile or other dependency changes in
+this increment. Existing HTTP behavior required no compatibility shim.
+
+The upstream [maintainer advisory GHSA-gc5v-m9x4-r6x2](https://github.com/psf/requests/security/advisories/GHSA-gc5v-m9x4-r6x2)
+and [tagged 2.33.0 release history](https://github.com/psf/requests/blob/v2.33.0/HISTORY.md)
+confirm the fix for **CVE-2026-25645**, insecure temporary-file reuse in
+`requests.utils.extract_zipped_paths()`. Those two audit records describe one
+underlying issue. The advisory explicitly limits affected usage to direct calls
+to that utility; an application Python-source search found none. The finding is
+fixed by upgrading rather than suppressed based on that observation. Registry
+metadata confirms Python **>=3.10**, a platform-neutral wheel, and unchanged
+dependency ranges for charset-normalizer, idna, urllib3 and certifi. This remains
+a supported Python 3.11 candidate; legacy Python 3.9 is not supported.
+
+An offline probe used a temporary ZIP and temporary directory containing a
+pre-created attacker file with the same basename as the archive member. With
+2.32.5 the utility returned that file and its attacker contents; with 2.33.0 it
+returned the trusted archive contents from a separate location. The pre-created
+file remained unchanged in both cases. All inputs and outputs were temporary;
+no actual shared temporary file or source asset was overwritten. This proves the
+upstream fix, not that the application exposes the affected utility.
+
+Validation completed for this increment:
+
+- A clean install of `requirements-server.txt` succeeded in
+  `C:/Users/Administrator/.codex/worktrees/release-python-security/RAG/db_sources/python-security/iteration-2/clean-server-venv/`,
+  created with the prescribed Python 3.11 executable. Its installation report and
+  exact resolved inventory are saved. Both this environment and the updated
+  project `.venv` pass `pip check`.
+- Seven unchanged focused suites passed: **111 passed, 28 skipped, 2 warnings in
+  2.84 seconds**. These comprise the four API suites listed in the earlier
+  increment below plus `test_db_compile_blacklibrary.py`,
+  `test_fetch_blacklibrary_details.py` and `test_blacklibrary_snapshot.py`.
+  JUnit evidence confirms every skip reports missing `wh40k.sqlite`. Existing
+  Starlette/AnyIO test-client deprecation warnings remain; no expectation was
+  weakened and no new asset was installed.
+- A real Requests/urllib3 loopback HTTP probe called the existing downloader's
+  `new_session()` and `fetch_detail()` with a synthetic, identity-valid response.
+  JSON request/response handling, `trust_env=False` bypass of an unusable
+  environment proxy, and `raise_for_status()`/`requests.HTTPError` behavior pass.
+  The temporary server was shut down, closed and its thread joined in `finally`.
+- The actual API lifespan smoke again returned health **200**, OpenAPI **200**
+  and invalid chat input **422**, loading no torch, sentence-transformers, FAISS,
+  LangChain or Streamlit. Retrieval and warmup were disabled; missing canonical
+  database readiness was reported honestly. TestClient closed normally.
+- Fresh **pip-audit 2.10.1** runs completed against every exact installed pin
+  in the clean server tree (**26 distributions**) and project test tree
+  (**34 distributions**), with **zero skipped packages** and exit code **1**
+  for each. Requests 2.33.0 has no findings. Each result contains **eight records
+  representing four underlying advisories, all in bootstrap setuptools 65.5.0**:
+  GHSA-r9hx-vwmv-q579, GHSA-5rjg-fvgr-3xxf, GHSA-cx63-2mw6-8hw5 and
+  GHSA-h35f-9h28-mq5c. These are the unchanged tooling findings described below;
+  this increment does not resolve or suppress them.
+
+The clean inventory consists of **24 server runtime distributions plus pip and
+bootstrap setuptools**. Neither tooling package is excluded from the raw audit.
+The larger inventory additionally covers separately installed test dependencies;
+the isolated audit tool's own environment is not counted in either inventory.
+Thus the enumerated server runtime and test additions have no current findings,
+while the installation environment still has the four setuptools issues.
+This is **not a clean complete-application audit**: model, Streamlit and provider
+dependencies are not yet installed, and their existing requirements still need
+reconciliation. The full native suite and Linux/Docker installation were not run
+in this increment. The full-stack Requests constraints are declared consistently,
+but only the lightweight server install has been resolved and tested so far.
+
+Evidence is ignored and local under
+`C:/Users/Administrator/.codex/worktrees/release-python-security/RAG/db_sources/python-security/iteration-2/`:
+
+- Maintainer advisory JSON, tagged `requests-history.md`, PyPI metadata,
+  `requests-install.json` and install log.
+- `zip-extraction-probe.py`, before/after JSON, `http-compatibility-probe.py` and
+  `http-compatibility.json`.
+- `clean-server-install.json`, installation/bootstrap logs,
+  `clean-server-installed.json`, `clean-pip-check.log`,
+  `test-environment-installed.json`.
+- Both scopes' exact audit pin files, raw audit JSON/log/exit-code files, grouped
+  alias reports and `verification-summary.json`; `summarize-evidence.py` records
+  the grouping and skip-reason derivation.
+- Focused test log/JUnit XML and fresh lightweight smoke script/log/JSON.
+
+Reproduce with the full project interpreter and `-m pip check`, then `-m pytest
+-q` with the seven named suites. Run either probe with that interpreter; the ZIP
+probe prints its result and the HTTP probe writes only its ignored evidence.
+For the lifespan smoke, set `WEB_API_RETRIEVAL=off`, `WEB_API_WARMUP=0` and
+`PYTHONIOENCODING=utf-8`. Audits use the separate
+`db_sources/python-security/audit-venv/Scripts/python.exe -m pip_audit`, exact
+inventory pin files, `--no-deps --disable-pip --format json` and a new output path;
+the flags preserve the enumerated installed tree rather than re-resolving it.
+Use the authorized proxy for external requests and bypass localhost.
+
+Actual scoped diff inspection and
+`git -c core.whitespace=cr-at-eol diff --check` passed. No background process is
+left running, no git commit was made, and the orchestrator-owned notes were not
+modified. Host integration and final acceptance gates below remain unchanged.
+
+## Earlier increment: FastAPI/Starlette scope and installed versions
 
 Workspace: `C:/Users/Administrator/.codex/worktrees/release-python-security/RAG`,
 branch `codex/release-python-security`. New interpreter:
