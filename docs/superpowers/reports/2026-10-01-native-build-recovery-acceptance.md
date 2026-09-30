@@ -1,8 +1,48 @@
 # Native build recovery acceptance checkpoint
 
-The remaining original negative keyword fixture now supplies a genuine temporary Chinese PDF and reaches its intended incomplete-English-heading error. **All 44 original diagnosed IDs pass with zero skips**, and the relevant broader suite passes **174 tests with 41 existing asset skips**. Full available Python CI has now run: **3,232 passed, 418 skipped, one failed, zero errors**. Its sole failure is a separately owned official-revision metadata CLI fixture that leaves its parent target connection open. The full-CI stop condition is **not met**; that failure is retained for root review, without an authority change, new skip or assertion relaxation.
+The authorized remaining parent SQLite fixture correction now passes the real official-metadata build CLI case and **full available Python CI: 3,235 passed, 418 unchanged skips, zero failures/errors**. **All 44 original diagnosed IDs still pass with zero skips**; the expanded relevant revision/restoration/build/keyword suite passes **238 tests with the same 41 asset skips**. Every original date/conflict/CLI/rollback/downstream-stop assertion is unchanged. The exact scoped correction remains uncommitted pending GNHF's automatic commit and independent host review; no full production-asset or release acceptance is claimed. Historical failing results below remain retained evidence.
 
 Assigned checkout: `C:/Users/Administrator/.codex/worktrees/release-native-build-recovery/RAG`. Starting HEAD: `1cdb85f7605a5f36b833e1423f7136b4e2c449bf`. GNHF owns commits; root owns independent review, integration and publication. No manual staging, commit, push, merge, service startup or production asset write occurred.
+
+## Authorized remaining parent fixture correction and passing full CI
+
+This bounded continuation starts from clean actual HEAD `7a3fa797f1ff9595d46497cc3d0ac61245f89adc` on `codex/release-native-build-recovery`, after the previous original44/PDF loop committed. Root explicitly authorized the previously outside-owner helper correction. The only tracked test-source changes are the `closing` import, explicit connection ownership in `tests/test_official_revision_metadata.py::database`, and two real-handle fixture controls in that same file. This existing report is the only tracked documentation change.
+
+The helper now uses `with closing(sqlite3.connect(db)) as conn, conn:`. Its inner connection context commits or rolls back before the outer context closes the parent target on either exit. The schema, inserts, return path and transaction semantics remain intact. Every other existing function and assertion in this test file is byte-preserved after removing the new control; `verify_evidence.py` checks that exact text equality. No application, authority, builder, dependency, PDF, cache, production asset or service correction is part of this continuation.
+
+Evidence root: `C:/Users/Administrator/.codex/worktrees/release-native-build-recovery/RAG/db_sources/native-build-recovery/iteration-04/`. The exact committed parent source is frozen as `test_official_revision_metadata.before.py`, checked against the actual starting Git blob with checkout-newline normalization. `before-cli.{log,xml,json}` retains the fresh exact failing test and complete real child stdout/stderr: parent handle open, child exit 1, empty stdout, WinError 5 at `os.replace`. Earlier iteration-03 failing XML/logs and `outside-owner-failure.json` are untouched.
+
+`probe_cli.py after` runs the identical real child build and original test assertions, retaining the parent connection object throughout. It observes the connection already closed, child exit 1 with empty stderr, CSV row count `'abilities': 1`, `ValueError: Invalid source date`, critical downstream-stage stop and `Required restoration failed`. The unchanged assertions also verify restored rule text remains `old` and no `official_%` table is left behind. The actual CSV build, restoration coordinator and date guard run; unrelated local asset stages remain the existing test's spies. This synthetic CLI case does not certify actual-cache restoration.
+
+The two new controls retain real SQLite connections rather than relying on object disposal. They verify closure before Windows replacement, committed units/ability rows on normal exit, rollback of pending rows/schema on an injected insert failure, and propagation of the exact original exception object. `controls-before.{log,xml}` confirms both controls fail against the exact frozen committed helper because its connections remain usable; both pass in the corrected broader/full runs. All probe-owned retained handles are explicitly closed before process exit. No garbage collection, retry, sleep, skip, xfail, deselection or weakened assertion is used.
+
+| XML-confirmed invocation | Collected | Passed | Failed | Errors | Skipped | Pytest seconds |
+|---|---:|---:|---:|---:|---:|---:|
+| Exact committed parent, original real CLI case | 1 | 0 | 1 | 0 | 0 | 2.09 |
+| Corrected parent, same real CLI case/assertions | 1 | 1 | 0 | 0 | 0 | 0.99 |
+| Two real-handle controls, frozen parent helper | 2 | 0 | 2 | 0 | 0 | 0.54 |
+| Exact original classification IDs | 44 | 44 | 0 | 0 | 0 | 10.94 |
+| Relevant revision/restoration/build/archive/keyword suite | 279 | 238 | 0 | 0 | 41 | 21.67 |
+| Full available workflow-equivalent Python CI | 3,653 | 3,235 | 0 | 0 | 418 | 145.13 |
+
+The relevant suite retains every iteration-03 broader target and adds the complete official-revision metadata test module, including its two new controls. The full command is unchanged in scope:
+
+```text
+<stable-python> -m pytest -q tests --ignore=tests/test_app_retrieval.py --tb=short -rs
+-o cache_dir=db_sources/native-build-recovery/iteration-04/full-ci-cache
+--basetemp=db_sources/native-build-recovery/iteration-04/full-ci-temp
+--junitxml=db_sources/native-build-recovery/iteration-04/full-ci.xml
+```
+
+The stable read-only interpreter remains `D:/Project/py/RAG/db_sources/release-check-20260930/python-security-worktree-environments/full-stack-windows-ci/Scripts/python.exe`, Python 3.11.9 / MSC v.1938 AMD64 / Windows build 26200. `focused-metadata.json` and `ci-metadata.json` retain the exact executable, commands, return codes, package versions, source hashes and outer elapsed times; the full command took 148.265 seconds including process startup. The nine pre-existing full-run warnings remain visible. Offline flags are retained; no package installation, environment recreation, model/provider call or service startup occurred.
+
+`verification.json` independently reconstructs all XML identities: all prior passing IDs still pass; all original44 pass in both the exact and full runs; the sole previous failure now passes; the only two added IDs are the new controls. `full-ci-skips.json` and `.md` enumerate all **418 exact skipped node IDs/reasons**, identical to iteration 03 with zero additions, removals or reason changes (412 missing-asset checks and six existing local-app checks). The sole explicit exclusion remains the workflow's existing `tests/test_app_retrieval.py`. No known defect is recast as an absent asset.
+
+Original fixture SHA-256: `583381e62d62b2ef6cda373c0fa13a76a89d7b42af33936d7d0e29a9fde95b6b`; corrected fixture: `b8746c02fa4e9b7a5b1f5f24d1a53d94cdb96d07b08f43833d813596d2cdbc52`. The builder, eleven lifecycle tests, preceding restore fixture and paired-PDF fixture retain their recorded hashes. The four authority files remain byte-identical to exact reviewed `c7dba21dd325434c56f8708fb0a56dba0d4382f3`; the protected-hash inventory and retained evidence SHA-256 inventory are in `verification.json`. Python 3.11 compilation, Python 3.9 grammar parsing and whitespace checks pass; grammar parsing is not Python 3.9 runtime acceptance. Ruff/Black remain unavailable in the unchanged environment and were not installed. Exact final diff inspection confirms only the authorized test file and this report are tracked changes.
+
+The existing SQLite error/learning records and project checkpoint/roadmap are extended in place with this verified result, preserving concurrent content and staged indexes; no duplicate underlying issue is created. No manual staging/commit/push/merge/publication occurred. All started pytest/probe child processes exited; no persistent background process was started.
+
+The real CLI and full available native-CI gates now pass. **The configured full-stop condition still awaits GNHF's actual scoped commit and clean candidate verification**; no correcting commit ID is invented. Root must independently review that exact commit before integration. Supported dependency/Linux/hosted CI/frontend acceptance, actual production-asset/source/authority restoration and retirement, official refresh/MFM promotion, Docker/browser/live/benchmark/deployment and publication remain separate root gates. This is passing available Windows Python CI, not final local-asset or release acceptance.
 
 ## Iteration 3 remaining original PDF fixture and full CI
 
