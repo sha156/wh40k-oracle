@@ -7,10 +7,12 @@
 # 这份清单不是拍脑袋列的：跑 TestClient 把三个页签的全部端点打一遍，
 # 再列 sys.modules 里的第三方模块反推出来的。加新端点时用同样的办法复核。
 #
-# 版本钉到本地 .venv（Python 3.9.1）实测通过的版本；服务器是 Python 3.10.12，
-# 代码按 3.9 语法写，向上兼容。
+# API security pins validated with an isolated Python 3.11.9 environment.
+# FastAPI/Starlette now require Python >=3.10; Python 3.9 is unsupported.
+# Other dependency pins retain their prior baseline pending the full release audit.
 
-fastapi==0.128.8
+fastapi==0.133.0
+starlette==1.3.1
 uvicorn[standard]==0.39.0
 pydantic==2.12.5
 

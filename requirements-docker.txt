@@ -47,7 +47,9 @@ zhipuai==2.1.5.20250825
 streamlit==1.35.0
 
 # Web API 后端
-fastapi==0.128.8
+fastapi==0.133.0
+# Explicit security pin; FastAPI 0.133.0 permits Starlette 1.x.
+starlette==1.3.1
 uvicorn[standard]==0.39.0
 sse-starlette==3.3.0
 
