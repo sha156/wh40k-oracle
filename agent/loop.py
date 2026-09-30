@@ -10,12 +10,13 @@ LLMClient 是本模块与具体 LLM 供应商之间的边界：真实实现（de
 """
 from __future__ import annotations
 
-from collections.abc import Mapping
+from collections.abc import Collection, Mapping
 from dataclasses import dataclass, field
+from types import MappingProxyType
 from typing import Any, Callable, Dict, List, Optional, Protocol
 
 from agent.context import SessionContext
-from agent.tools import TOOL_SPECS, TOOLS
+from agent.tools import PUBLIC_TOOL_ARGUMENTS, TOOL_SPECS, TOOLS
 
 MAX_STEPS = 6
 INTENTS = ("查", "判", "算", "谋", "闲聊")
@@ -387,10 +388,34 @@ class AgentLoop:
         llm: LLMClient,
         tools: Optional[Dict[str, Callable[..., Dict[str, Any]]]] = None,
         max_steps: int = MAX_STEPS,
+        *,
+        public_tool_arguments: Optional[Mapping[str, Collection[str]]] = None,
     ):
         self.llm = llm
         self.tools = tools if tools is not None else TOOLS
         self.max_steps = max_steps
+        contracts = dict(PUBLIC_TOOL_ARGUMENTS)
+        # Custom Python fixtures/extensions must explicitly declare their model
+        # interface. Registered contracts also govern replacement test callables;
+        # they cannot be expanded by an injected raw function or custom contract.
+        for name, arguments in (public_tool_arguments or {}).items():
+            if name in PUBLIC_TOOL_ARGUMENTS:
+                raise ValueError("Cannot override a registered public tool contract")
+            if (not isinstance(name, str) or not name.strip() or name not in self.tools
+                    or not isinstance(arguments, Collection) or isinstance(arguments, (str, bytes))
+                    or any(not isinstance(arg, str) or not arg.strip() for arg in arguments)):
+                raise ValueError("Custom tools require explicit public argument names")
+            contracts[name] = frozenset(arguments)
+        self._public_tool_arguments = MappingProxyType(contracts)
+
+    def _validate_tool_arguments(self, step: Dict[str, Any]) -> None:
+        if step["type"] != "tool_call" or step["tool"] not in self.tools:
+            return  # Unknown-tool recovery remains unchanged; nothing executes.
+        allowed = self._public_tool_arguments.get(step["tool"])
+        if allowed is None or any(arg not in allowed for arg in step.get("args", {})):
+            # No argument names/values or helper paths enter the public reason.
+            # Reject the entire action; never silently strip or coerce kwargs.
+            raise ValueError("工具调用不符合公开参数契约，未执行")
 
     def run(self, user_input: str, session: Optional[SessionContext] = None) -> AgentResult:
         session = session if session is not None else SessionContext()
@@ -437,6 +462,7 @@ class AgentLoop:
             try:
                 step = self.llm.next_step(messages, TOOL_SPECS)
                 _validate_action(step)
+                self._validate_tool_arguments(step)
             except Exception as exc:
                 return recover(f"答案整理异常: {exc}")
 
@@ -529,6 +555,7 @@ class AgentLoop:
             try:
                 step = self.llm.next_step(messages, TOOL_SPECS)
                 _validate_action(step)
+                self._validate_tool_arguments(step)
             except Exception as exc:
                 return recover(f"工具步数用尽后答案整理异常: {exc}")
             answer = step.get("content", "")
