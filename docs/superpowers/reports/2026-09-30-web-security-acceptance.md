@@ -1,10 +1,10 @@
 # Frontend security candidate evidence — September 30, 2026
 
-Status: **incremental implementation; dependency remediation pending**. Iteration 1 completes the native development binding change and reproduces the vulnerable dependency baseline. This report does not establish complete frontend security acceptance, deployment, integration, merge or publication.
+Status: **incremental implementation; five transitive findings remain**. Iteration 2 upgrades Next and eslint-config-next together to stable 16.3.7, passes a clean install and frontend checks, and repeats native loopback verification. Full audit drops from eight vulnerable packages to five with no critical findings. The iteration-1 evidence below is historical; current results and remaining work are in the iteration-2 section at the end. This report does not establish complete frontend security acceptance, deployment, integration, merge or publication.
 
 Workspace: `C:/Users/Administrator/.codex/worktrees/release-web-security/RAG`, branch `codex/release-web-security`, starting revision `b90e8610d64450def12ca078388b877efea7793d`. The initial tracked worktree was clean. Work stayed in this isolated checkout; no other checkout, Docker service, backend, source/data policy, benchmark, generated wiki or knowledge repository was changed. No Git commit was made by this iteration.
 
-## Native development binding
+## Iteration 1: native development binding
 
 `web/package.json` now runs `next dev --hostname 127.0.0.1`. Production `scripts/start.mjs` and Docker configuration are unchanged. No frontend compatibility or UI changes were needed for this script change.
 
@@ -33,7 +33,7 @@ Registry commands used `HTTP_PROXY` and `HTTPS_PROXY=http://127.0.0.1:7897` with
 
 The registry audit suggests Next 16.3.7 and reports both GHSA-p293-qw3h-jr36 and GHSA-2xp9-vwfh-vxw4 as affecting Next `>=16.0.0 <16.3.3`. The suggested version has **not yet been independently checked for stability or compatibility**. Installed-package findings alone do not demonstrate reachable exploitation in this application; no exploit path was tested. The exact audit-provided advisory URLs and affected ranges appear below and in the full local JSON.
 
-## Validation of this iteration
+## Iteration 1 validation
 
 | Command | Result | Wall time |
 | --- | --- | --- |
@@ -94,3 +94,44 @@ The following table is derived from the saved full baseline npm audit response. 
 | postcss | [GHSA-r28c-9q8g-f849](https://github.com/advisories/GHSA-r28c-9q8g-f849) | `<=8.5.17` |
 | sharp | [GHSA-f88m-g3jw-g9cj](https://github.com/advisories/GHSA-f88m-g3jw-g9cj) | `<0.35.0` |
 | sharp | [GHSA-rgj7-g3m4-5g8c](https://github.com/advisories/GHSA-rgj7-g3m4-5g8c) | `<0.35.4` |
+
+## Iteration 2: compatible framework upgrade
+
+This iteration began with a clean tracked worktree and stayed within the same isolated checkout. The smallest implementation unit was the paired Next/eslint-config-next upgrade and its compatibility validation. No Git commit was made by the implementation agent; iteration commits belong to GNHF.
+
+Registry metadata identifies **16.3.7 as Next's stable latest**, separately from preview and canary. Next 16.3.7 supports Node `>=20.9.0` and React/react-dom `^19.0.0`; eslint-config-next 16.3.7 supports ESLint `>=9.0.0`. Both direct dependencies are now pinned to **16.3.7**. Installed Node 24.14.0, npm 11.9.0, React/react-dom 19.2.4, TypeScript 5.9.3 and ESLint 9.39.5 remain unchanged. The metadata is saved in `iteration2-{next-tags,next-metadata,eslint-config-metadata}.json` in the same ignored evidence directory described above.
+
+Before upgrading, the bundled Next version-16 upgrade guide, static export guide and CLI reference were read under `web/node_modules/next/dist/docs/01-app/`. The lockfile was regenerated with `npm install --package-lock-only --save-exact next@16.3.7 eslint-config-next@16.3.7` (exit 0, 25.921 s). No force flag, audit suppression, development-dependency omission or overrides were used. Next now pins PostCSS **8.5.23** and declares Sharp `^0.35.4`; the installed tree contains PostCSS **8.5.23** and Sharp **0.35.5**. Next SWC/env/plugin packages move with the framework. No application compatibility changes or test changes were needed; theme and interactions are preserved.
+
+`npm ci` rebuilt this checkout's independent dependency tree from the lockfile, installing 361 packages and auditing 362. The installed npm maintainer documentation at `C:/Program Files/nodejs/node_modules/npm/docs/content/commands/npm-ci.md` explicitly states that an existing node_modules is automatically removed before installation. Published primary reference: <https://docs.npmjs.com/cli/v11/commands/npm-ci>. Automatic approval review rejected an explicit recursive removal command with the sole reason “blocked by policy”; standard `npm ci` clean installation succeeded. No junction or another checkout's dependency tree was used.
+
+| Command against upgraded tree | Result | Wall time |
+| --- | --- | --- |
+| `npm ci` | exit 0; clean lockfile install | 37.017 s |
+| `npm audit --json` including development dependencies | exit 1; **5 packages: 0 critical, 4 high, 1 moderate, 0 low** | 3.376 s |
+| `npm run test:unit` | exit 0; **22 passed**, no failures/skips | 1.247 s |
+| `node node_modules/typescript/bin/tsc --noEmit` | exit 0 | 4.210 s |
+| `npm run lint` | exit 0; no diagnostics | 11.153 s |
+| `NEXT_OUTPUT=export NEXT_PUBLIC_API_BASE=/api npm run build` | exit 0; Next 16.3.7 Turbopack static export | 12.260 s |
+| `npm ls` for framework and audit packages, `--all --json` | exit 0; no invalid dependency relationships reported | not timed |
+| `git -c core.whitespace=cr-at-eol diff --check` | exit 0 | not timed |
+
+The export build listed the same six routes as baseline (`/`, `/_not-found`, `/codex`, `/design`, `/roster`, `/simulator`); their HTML outputs were inspected. An auxiliary `_responsive-test.html` already in the ignored output directory is not a newly built application route or acceptance result. Build products remain ignored. Existing unit-runner module-type warnings remain, with all tests passing.
+
+The upgraded dev script was tested on spare port **34205** using hidden npm PID 33844 and listener PID 25392. Exactly one listener was present: **127.0.0.1:34205**. `/` returned **HTTP 200**, 17,740 bytes and a Next payload. The log identifies Next 16.3.7 and `next dev --hostname 127.0.0.1 --port 34205`. The check and cleanup took 8.696 s, beginning at `2026-09-30T14:53:06.5668925Z`. Only this temporary process tree was terminated; cleanup returned exit 0 and the port had **zero listeners afterward**. Docker was untouched. Next dev regenerated its instruction block in `web/AGENTS.md`; that generated edit was restored to the iteration's starting content to retain the authorized diff scope. It will recur on future native dev starts with this framework version.
+
+Full audit no longer reports Next, Sharp or PostCSS, including the two named Next advisories GHSA-p293-qw3h-jr36 and GHSA-2xp9-vwfh-vxw4. Five findings remain; all have `fixAvailable: true`, so they are pending remediation rather than proven no-safe-fix exceptions. Their exact advisory URLs and affected ranges match the corresponding package rows in the baseline advisory table above.
+
+| Remaining package | Installed version(s) | Severity | Observed dependency chain(s) |
+| --- | --- | --- | --- |
+| baseline-browser-mapping | 2.10.43 | moderate | Next; also Browserslist below |
+| brace-expansion | 1.1.16, 5.0.7 | high | ESLint → minimatch 3.1.5; eslint-config-next → typescript-eslint → typescript-estree → minimatch 10.2.5 |
+| browserslist | 4.28.6 | high | eslint-config-next → eslint-plugin-react-hooks → @babel/core → @babel/helper-compilation-targets |
+| js-yaml | 4.3.0 | high | ESLint → @eslint/eslintrc |
+| nanoid | 3.3.16 | high | @tailwindcss/postcss → PostCSS 8.5.23; PostCSS is also used by Next |
+
+The saved before/after audit responses are `baseline-audit.json` and **`iteration2-audit.json`**, under the absolute evidence directory already stated above. The latter is an intermediate audit, not an all-clear result. `iteration2-installed-tree.json` preserves observed versions and chains. No reachable exploitation was demonstrated. The next smallest work item is compatible transitive remediation with a regenerated lockfile, followed by clean install, full audit and frontend checks again. The loop stop condition is not yet met.
+
+Other iteration-2 raw evidence is `iteration2-{lock-update,npm-ci,unit,typecheck,lint,export-build}.log` with matching `-result.json`, `iteration2-audit-result.json` and audit stderr, plus `iteration2-dev-result.json`, `iteration2-dev-cleanup.log` and `iteration2-dev.{stdout,stderr}.log`.
+
+The actual tracked diff was inspected and is confined to the two framework pins in `web/package.json`, their regenerated `web/package-lock.json`, and this report. The lockfile's original CRLF line endings were retained to avoid a whole-file whitespace diff; the normalized lockfile has identical JSON content to that used by clean npm ci. No UI, backend, source/data, benchmarks, generated wiki or external knowledge-repository changes were made. No temporary process remains. No new browser, Docker or CI result is claimed. Independent host review/integration, complete browser tests on integrated final Docker images, CI, deployment and publication remain host-owned.
