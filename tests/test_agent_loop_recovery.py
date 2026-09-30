@@ -116,7 +116,8 @@ def recovery_run(tool, evidence, failure, session=None):
 
     session = session if session is not None else SessionContext()
     result = AgentLoop(llm, tools={tool: lambda: evidence, "rag_search": empty_rag,
-                                  "broken_lookup": broken_lookup}).run(
+                                  "broken_lookup": broken_lookup},
+                       public_tool_arguments={"broken_lookup": set()}).run(
                                       "Compare these verified rules and points", session)
     return result, llm, rag_calls, session
 
@@ -195,7 +196,8 @@ def test_multiple_successes_keep_entire_successful_trace_and_unique_sources(fail
         raise RuntimeError("injected tool failure")
 
     result = AgentLoop(llm, tools={tool: lambda: points, "get_entity": lambda: rules,
-                                  "broken_lookup": broken_lookup}).run("Verify both")
+                                  "broken_lookup": broken_lookup},
+                       public_tool_arguments={"broken_lookup": set()}).run("Verify both")
     assert result.tool_calls == [tool, "get_entity"] + (["broken_lookup"] if failure == "tool_twice" else [])
     assert "355" in result.answer and "Re-roll one eligible dice roll." in result.answer
     assert result.sources == [MFM, RULE]
@@ -293,7 +295,8 @@ def malformed_run(tool, evidence, action, *, session=None, max_steps=6):
 
     session = session if session is not None else SessionContext()
     result = AgentLoop(llm, tools={tool: lambda: evidence, "rag_search": rag,
-                                  "must_not_execute": forbidden}, max_steps=max_steps).run(
+                                  "must_not_execute": forbidden}, max_steps=max_steps,
+                       public_tool_arguments={"must_not_execute": set()}).run(
                                       "Verify points and rules", session)
     return result, llm, rag_calls, forbidden_calls, session
 
