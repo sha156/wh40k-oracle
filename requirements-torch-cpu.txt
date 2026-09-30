@@ -2,4 +2,5 @@
 # Separate index scope prevents resolving unrelated application packages here.
 # Exact local version also prevents silently substituting a PyPI CUDA wheel.
 --index-url https://download.pytorch.org/whl/cpu
+-c constraints-python311.txt
 torch==2.14.0+cpu

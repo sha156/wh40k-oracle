@@ -1,5 +1,262 @@
 # Python dependency security acceptance — September 30, 2026
 
+## Complete-family Windows candidate — October 1, 2026
+
+**The complete CPU family is installed and exercised on clean Windows Python
+3.11.9; this is not yet a Linux-verified or fully passing application candidate.**
+This continuation starts from `c021868c976ebfae8e7db879dcdc59935d2ad438`.
+It preserves the earlier paired security evidence and all library limitations
+below. Linux installation, independent review and the application issues listed
+here remain gates; the overall stop condition is **not met**.
+
+The previous native lower bounds and Docker/CI LangChain 0.3 pins are replaced
+by one family declaration. `requirements-framework.txt` supplies the model-free
+document, splitter, provider and vector APIs. `requirements-runtime.txt` adds
+the complete CPU model, ONNX reranker, PDF, retrieval and Streamlit application.
+Native `requirements.txt` includes that runtime plus `requirements-dev.txt`;
+Docker includes only the runtime. Test/auditor packages are separate. Server
+retains its no-LangChain/no-model boundary; CI retains its no-model boundary.
+`constraints-python311.txt` records **every distribution in the 132-package
+Windows runtime/dev closure**, including pip/setuptools and all transitives.
+Constraints restrict resolution without installing unused packages in a
+lightweight set. Docker copies the shared declarations and constraints before
+its existing, separate official-CPU-index install step. No CUDA/Triton package
+is installed. The constraint file's header explicitly leaves Linux closure and
+platform-marker verification outstanding; no identical-platform claim is made.
+
+| Family | Actually installed versions |
+|---|---|
+| LangChain | langchain 1.3.9; core 1.4.6; community 0.4.2; classic 1.0.8; experimental 0.4.2; text-splitters 1.1.2 |
+| Model/provider integrations | langchain-huggingface 1.2.2; langchain-openai 1.1.14; OpenAI 2.54.0 |
+| CPU model/retrieval | torch 2.14.0+cpu; SentenceTransformers 5.7.0; Transformers 5.10.0; FAISS CPU 1.15.1; NumPy 1.26.4 |
+| Optional reranking | FlashRank 0.2.10; ONNX Runtime 1.30.0; tokenizers 0.22.2 |
+| Numerical/model transitives | SciPy 1.17.1; scikit-learn 1.9.1; safetensors 0.8.0; huggingface-hub 1.33.0 |
+| UI/data transitives | Streamlit 1.59.0; Pillow 12.3.0; pandas 3.0.6; pyarrow 25.0.1 |
+| Framework transitives | LangSmith 0.14.2; LangGraph 1.2.4; HTTPX 0.28.1 and httpx2 2.13.1; aiohttp 3.14.3 |
+| Preserved security pins | FastAPI 0.133.0; Starlette 1.3.1; Requests 2.33.0; urllib3 2.8.0; PyMuPDF 1.26.7; dotenv 1.2.3; pip 26.2.1; setuptools 83.0.0 |
+| Development tools | pytest 9.1.1; pluggy 1.6.0; iniconfig 2.3.0 |
+
+Saved primary PyPI metadata verifies the selected family requirements rather
+than assuming candidate compatibility. OpenAI's latest overall release is
+3.22.1, but the selected LangChain integration requires OpenAI **<3**, and pip
+actually resolves **2.54.0**. LangSmith separately introduces httpx2/httpcore2;
+the existing HTTPX client boundary remains installed and tested. The eight
+family imports already use supported package boundaries, so **no production
+Python compatibility shim, import fallback, provider-routing change or feature
+removal was needed**. An AST inventory inspects all **280 tracked Python files**
+and finds **24 files** with relevant framework/model/provider imports. Upstream
+community and experimental packages emit sunset/deprecation warnings; their
+required features remain installed and exercised, not silently disabled.
+
+### Clean installation and resource confinement
+
+The new application interpreter is
+`D:/Project/py/RAG/db_sources/release-check-20260930/python-security-worktree-environments/full-stack-windows/Scripts/python.exe`.
+It was created with
+`C:/Users/Administrator/AppData/Local/Programs/Python/Python311/python.exe -m venv`
+and did not reuse the readonly checkout `.venv` or any iteration-1..10 environment.
+The resource root above contains this run's new cache, scratch, auditor, server
+and CI environments only. `PIP_CACHE_DIR`, `TEMP` and `TMP` point to its
+`full-stack-cache` and `full-stack-temp` children in each installation shell;
+proxy is `http://127.0.0.1:7897` with localhost bypass. Global settings are unchanged.
+
+The actual clean sequence installs `requirements-bootstrap.txt`, then
+`requirements-torch-cpu.txt` with `--build-constraint requirements-bootstrap.txt`,
+then `requirements-runtime.txt` with the same build constraint. Development
+tools are added separately from `requirements-dev.txt`. The CPU requirement
+uses **only** the official CPU index and an exact `+cpu` pin. All four steps,
+including `pip check`, exit **0**. Bootstrap/CPU/runtime take **21.078 / 122.344 /
+268.812 seconds**. One interrupted CPU download resumes from 37.7 MB; its full
+log is retained. Installer JSON reports record actual wheel URLs/hashes.
+
+The complete exact constraints were derived from that installation, and a final
+`-m pip install --dry-run --build-constraint requirements-bootstrap.txt -r
+requirements.txt` requires **zero package changes**. Final `pip check` passes.
+This is one newly created complete environment, followed by three test-tool
+additions; it is not an incrementally repaired legacy/subset environment.
+New **26-package server** and **79-package CI** environments install the final
+tracked requirements with the shared constraints and build constraint; both
+pass `pip check`. Exact inventories and import-spec probes confirm they contain
+no torch, Transformers, SentenceTransformers, Streamlit or HF integration.
+Server additionally contains no LangChain/FAISS packages.
+
+### Actual feature and test evidence
+
+- **85 focused compatibility tests pass, zero skips**, in **35.43 seconds**:
+  `test_dependency_framework.py`, `test_app_retrieval.py`, `test_ingest_pages.py`,
+  `test_ingest_vector_reuse.py`, `test_llm_client.py`, `test_llm_refine.py` and
+  `test_md_chunker.py`. Four new cases exercise real FAISS serialization/vector
+  identity and metadata filtering, BM25, semantic/recursive splitting, and both
+  OpenAI-compatible streaming prompt chains. Synthetic vectors are explicitly
+  synthetic; the real model evidence is separate below.
+- Actual provider clients also pass the prior genuine-client protocol probe:
+  DeepSeek and GLM, structured agent response/citations, streaming, benchmark
+  response, 400 response-format fallback and 429 propagation. It now records
+  the full installation's transitive model imports instead of asserting the
+  earlier subset-only no-model-import condition. No real credential, paid
+  request, endpoint routing change or remote-provider acceptance is involved.
+- Streamlit **AppTest runs the actual `app.main()` chat shell**, with finite
+  synthetic FAISS resources and in-memory HTTP responses. Both provider choices,
+  streamed text, citation records/display and history across reruns pass.
+  Resource/provider fixtures are explicit; this is native framework/UI
+  compatibility, not a production browser or live service acceptance.
+- The readonly **complete local bge-m3 snapshot**
+  `D:/Project/py/RAG/opt/models--BAAI--bge-m3/snapshots/5617a9f61b028005a4858fdac845db406aefb181`
+  loads with `local_files_only=True`, CPU and `trust_remote_code=False`.
+  Real English/Chinese embeddings have shape **2 × 1024**, all finite, with
+  norms **1.0000000369 / 0.9999999687**. The complete snapshot has trusted
+  `pytorch_model.bin`; the other snapshot contains only a safetensors file and
+  is not substituted. Instrumentation observes the genuine loader call with
+  **`weights_only=True`, `map_location=cpu`**, and guards PT2 export loading;
+  **zero PT2 loads** occur during construction/embedding. No model is downloaded,
+  replaced or written. This is stronger evidence than an application AST scan.
+- The trusted immutable pre-retirement archive at
+  `D:/Project/py/RAG/archive/source-retirement-20260930/pre-apply/local_vector_store`
+  opens with the new FAISS/LangChain classes: **5,905 vectors/documents**, dimension
+  **1024**, identical document objects and id mapping. Actual BM25/hybrid/RRF
+  retrieval has **zero recorded errors**, preserves source/page metadata and
+  includes the rules floor. Real prompt/context assembly succeeds. SHA-256 of
+  model weights, tokenizer/modules and both index files is unchanged before/after.
+  No production vectors are re-embedded or assets projected into this checkout.
+- Actual FlashRank inference uses the existing local MiniLM ONNX cache through
+  the application's cache resolver. All three passages receive finite scores.
+  Embedding/index/hybrid/reranker probe completes in **21.594 seconds**. Default
+  reranking policy remains unchanged.
+
+The **full available native suite was executed**, with retrieval/warmup off and
+explicit `tests/` collection: **2,518 passed / 336 skipped / 29 failed / 15 errors**,
+**189.12 seconds**. JUnit reconciles **2,898 cases** and records every skip name
+and reason without changing tests, expectations or skip markers. All 336 skips
+are absent local DB/CSV/PDF/refined/cache assets. They are not model import skips.
+The unchanged model-free CI collection excludes its established six
+`test_app_retrieval.py` cases and executes **2,892 cases**: **2,506 passed / 342
+skipped / 29 failed / 15 errors**, **163.37 seconds**. The extra six skips are
+unchanged local-only app checks (two declared local-only, four missing app
+imports); their exact identities/reasons are retained. Neither full run is green.
+
+**Two root-owned issues explain the 44 failures/errors; no failures are hidden:**
+
+1. **40** directly report Windows SQLite replacement failures in the unchanged
+   `db_compile/build.py:440`: `PermissionError: [WinError 32] ... units.tmp.sqlite
+   -> units.sqlite` (analogous fixture filenames are retained). A tiny two-CSV
+   reproduction fails both on the prescribed base Python 3.11.9 interpreter and
+   on the complete dependency environment, including a short 115-character
+   destination. Base-revision hashes prove the builder is unchanged from
+   `c021868c9`. An **in-memory copy** of that exact base function succeeds on both
+   interpreters when it explicitly calls `cur.close()` before `conn.close()`.
+   This diagnoses an outstanding cursor/file handle, not a package-resolution
+   failure or long-path issue. **Three more** archive-negative cases leave the
+   temporary SQLite file behind after the expected validation exception; the
+   cleanup catches an OSError, and the lingering-file assertion fails. These
+   are included in the 43 builder/archive cases, not described as direct
+   WinError exceptions. No builder/source-archive/API source is edited.
+   Root should review the cursor lifetime, apply its owned fix, then rerun these
+   suites and the full native suite without excluding them.
+2. `test_parse_quickref_too_few_entries_raises` expects an incomplete-English-PDF
+   ValueError, but its unchanged implementation first requires the absent
+   official Chinese PDF and raises FileNotFoundError. Parser and test hashes
+   match the actual base revision. Source-retirement/test ownership should
+   provide an explicit temporary Chinese fixture for that negative test; no
+   production PDF or test expectation is substituted here.
+
+Initial harness errors are also retained. A new FAISS test initially compared
+documents without explicit ids against FAISS's assigned ids; the fixture now
+uses explicit stable ids and three documents (avoiding the two-document BM25
+zero-IDF tie). One broad pytest invocation unintentionally discovered old
+rehearsal site-packages and failed collection. It was stopped by pytest's normal
+collection failure, recorded, and corrected to explicit `tests/`. No installer
+ran in those environments; bytecode writes were disabled. That invocation did
+read old rehearsal library files and should **not** be described as respecting
+the intended read boundary. The previous provider verifier's final no-model
+assertion failed after all protocol assertions; its full-runtime replacement
+retains the protocol assertions and records the loaded-module list.
+
+### Complete Windows audits and bounded residuals
+
+The separate auditor interpreter is the resource root's
+`full-stack-auditor/Scripts/python.exe`, with **30 tool distributions**; none
+are included in application counts. It uses pip-audit **2.10.1**, exact inventory
+files, `--no-deps --disable-pip --format json`, no advisory exclusions. A
+reconciler checks set equality and every installed version against raw bodies,
+not just totals or direct declarations.
+
+| Complete installed scope | Raw PyPI audit | CPU-mapped full audit |
+|---|---|---|
+| Native runtime, **129** distributions | zero findings; **one explicit torch +cpu skip** | **129 / zero findings / zero skips** |
+| Native dev, **132** distributions | zero findings; **one explicit torch +cpu skip** | **132 / zero findings / zero skips** |
+| Server, **26** distributions | **26 / zero findings / zero skips** | not needed |
+| CI, **79** distributions | **79 / zero findings / zero skips** | not needed |
+
+Only the verified installed **torch 2.14.0+cpu** is mapped to upstream **2.14.0**.
+The exact CPU wheel also has a separate OSV query: **one package / zero findings /
+zero skips**, exit 0. All seven audits exit **0**. The raw CPU skips are retained,
+and CPU/model/bootstrap/transitive packages remain in the denominators. Native
+129/132 are now the **complete declared application/runtime and dev closures**;
+the earlier 61/68/69/75-package results remain historical subsets.
+
+Baseline family advisories and primary metadata are preserved. Native LangChain
+0.3.28 has three raw records, core 0.3.84 five, and Transformers 4.57.3 eight;
+raw records may share aliases. Latest complete installed audits find no matches.
+Two Transformers baseline records have **no declared fix version**:
+`PYSEC-2025-217 / CVE-2025-14929` (X-CLIP conversion) and
+`PYSEC-2026-2290 / CVE-2026-5241 / GHSA-fgcw-684q-jj6r` (nested LightGlue config).
+Fresh unmodified OSV bodies bound them respectively through **5.0.0-rc0** and
+**5.2.0** with `last_affected`, not a named fix release; this explains their
+absence for selected 5.10 without inventing a patch claim or exclusion.
+The installed 5.10 wheel has no X-CLIP conversion script. Its inspected
+LightGlue config uses local `CONFIG_MAPPING`, not nested remote AutoConfig
+loading: a benign config probe preserves the local SuperPoint config, rejects
+an unknown nested architecture and observes **zero remote config calls**.
+That is a configuration-boundary check, **not image-model inference**. The real
+application uses the trusted bge-m3 weights-only path above; no tracked consumer
+imports either affected architecture/converter. Unsafe user-opted remote code,
+arbitrary pickle weights or conversion utilities are not declared universally
+safe. Earlier **Streamlit deterministic array sampling**, **setuptools vendored
+distutils Unicode exclusion**, and **torch PT2 unsafe-pickle behavior** remain
+qualified exactly as below despite registry-zero results.
+
+### Evidence, next iteration and host gates
+
+All new raw evidence is under the ignored absolute directory
+`C:/Users/Administrator/.codex/worktrees/release-python-security/RAG/db_sources/python-security/full-stack/`:
+primary metadata, unchanged baseline family bodies, source scan/hashes, clean
+installation reports/logs/commands, exact runtime/dev/server/CI/auditor inventories,
+raw/mapped audits and CPU OSV body, JUnit and reconciled full skip/failure lists,
+model/provider/UI/LightGlue verifiers and outputs, SQLite base/candidate
+reproductions, failed attempts, and `verification-summary.json`.
+Reproduce finite probes with the new complete interpreter, **never** a moved
+iteration-1..10 environment. `install.py`, `lightweight-install.py`,
+`inventory.py`, `model-probe.py`, `provider-probe.py`, `ui-probe.py`,
+`inspect-model-residuals.py`, `lightglue-boundary-probe.py`,
+`sqlite-lock-diagnosis.py` and `reconcile.py` preserve the actual calls. The
+lightweight installer requires fresh target names; do not rerun it onto existing
+environments. Use `-m pytest -q tests` for full collection, not bare discovery.
+
+Next bounded dependency work is **actual Linux installation with this final
+Dockerfile**, complete platform inventories/constraints and audits, and finite
+import/no-asset tests. No Linux build is started before the host's required
+verified archival/free-space map arrives. C: had **2.1 GiB** free at entry and
+temporarily fell below **1 GiB** during concurrent work before recovering above
+**6 GiB**; observation alone is not the required archival confirmation or a
+Docker-VHD capacity guarantee. No Docker image is built/retagged, compose service
+restarted, environment deleted/moved, source crawled, model replaced, credential
+copied or external checkout modified by this iteration. The Linux closure may
+have real platform variants such as Uvicorn's conditional uvloop; reconcile the
+actual installation rather than treating the Windows lock as proof.
+
+Independent review, the two owned application fixes and a passing complete
+native rerun remain host gates. The older workflow's Python 3.9/local-baseline
+comment and Python 3.10 CI target are outside this dependency-file ownership;
+root should synchronize its Python 3.11/bootstrap/build-constraint commands in
+the integration review. Final integrated Docker/assets/browser/live/provider/CI
+acceptance, production deployment and publication remain **host-owned**.
+No commit, push, merge, global knowledge-note edit or manual service was made.
+The scoped tracked diff and whitespace checks are required again at handoff.
+
+---
+
+The sections below are retained historical security-increment evidence.
+
 Status: **incremental candidate, not release acceptance**. The shared
 FastAPI/Starlette boundary, Requests, PyMuPDF and installation tooling are patched
 and verified in isolation, with the setuptools legacy-path limitation below.

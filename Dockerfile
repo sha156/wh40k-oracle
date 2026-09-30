@@ -29,7 +29,9 @@ ENV PYTHONUNBUFFERED=1 \
 WORKDIR /app
 
 # ── 依赖层（与源码分层，改代码不重装依赖）────────────────────────
-COPY requirements-bootstrap.txt requirements-torch-cpu.txt requirements-docker.txt ./
+COPY requirements-bootstrap.txt requirements-torch-cpu.txt requirements-docker.txt \
+     requirements-runtime.txt requirements-framework.txt requirements-server.txt \
+     constraints-python311.txt ./
 RUN python -m pip install --no-cache-dir -r requirements-bootstrap.txt \
  && python -m pip install --no-cache-dir \
       --build-constraint requirements-bootstrap.txt -r requirements-torch-cpu.txt \

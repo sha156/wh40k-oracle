@@ -9,9 +9,10 @@
 #
 # API security pins validated with an isolated Python 3.11.9 environment.
 # FastAPI/Starlette now require Python >=3.10; Python 3.9 is unsupported.
-# Other dependency pins retain their prior baseline pending the full release audit.
+# Shared closure constraints include all transitives; Linux verification is pending.
 
 -r requirements-bootstrap.txt
+-c constraints-python311.txt
 
 fastapi==0.133.0
 starlette==1.3.1

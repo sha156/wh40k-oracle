@@ -1,0 +1,20 @@
+# Complete supported CPU application, Python 3.11 on Windows and Linux.
+# Install bootstrap, then requirements-torch-cpu.txt from its dedicated index,
+# then this file with --build-constraint requirements-bootstrap.txt.
+# The resolved closure includes bootstrap tooling and all runtime transitives.
+-c constraints-python311.txt
+-r requirements-server.txt
+-r requirements-framework.txt
+
+langchain-huggingface==1.2.2
+torch==2.14.0+cpu
+sentence-transformers==5.7.0
+transformers==5.10.0
+FlashRank==0.2.10
+onnxruntime==1.30.0
+
+jieba==0.42.1
+pymupdf==1.26.7
+streamlit==1.59.0
+sse-starlette==3.3.0
+httpx==0.28.1
