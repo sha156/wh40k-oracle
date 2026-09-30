@@ -1,10 +1,12 @@
 # Official revision restoration safety
 
-Latest checkpoint: iteration 2 implements exact row-state revision chains and
-staged-manifest selection. Final focused validation is **170 passed / 1 existing
-skip**. Metadata chronology, shape validation and write-free provenance replay
-remain unfinished; the full objective is not complete. The iteration 1 account
-below is retained as historical paired evidence.
+Latest checkpoint: iteration 3 completes guarded provenance chronology and
+write-free replay alongside the retained exact row-state and critical-abort
+contracts. Final scoped validation is **232 passed / 1 existing asset skip**.
+The implementation is ready for independent host review and copied-input source
+promotion rehearsal. Actual source publication, integrated production-asset
+acceptance, Python 3.11/Linux checks and deployment belong to the host and are
+not claimed. The earlier iteration accounts remain historical paired evidence.
 
 ## Iteration 1 — critical restoration and build status
 
@@ -348,3 +350,205 @@ publication and deployment remain outside this worktree's ownership.
 Commit explanations must use the eventual real GNHF commit for these changes.
 Current HEAD `e5795f021` is the earlier handoff commit, not this row-chain
 implementation. No commit explanation or manual staging/commit/push was created.
+
+## Iteration 3 — atomic exact provenance chronology
+
+### Reproduction and result
+
+This iteration's individually verifiable scope was the unfinished provenance
+contract. The initial 44-test disposable suite produced **42 failures / 2
+passes** before application edits. It reproduced older replay replacing newer
+rule dates and sources, `INSERT OR REPLACE` rewriting unchanged provenance,
+malformed sources being accepted, same-date identity conflicts being overwritten
+and the real restore/update pipelines continuing after those accepted conflicts.
+One fixture originally repeated a row transition within an ordered chain; it
+was corrected to a metadata-only revision, without weakening the assertion.
+
+The final 62-test metadata suite was also paired against the exact
+saved `HEAD:db_compile/source_reconcile.py` baseline. It produced **60 failures /
+2 passes**; current code passes all 62. This expanded comparison includes new
+chronology-table assertions, so not all failures represent previously callable
+behavior. The original downgrade, rewrite, malformed-source and continuation
+failures do. The baseline CLI subprocess also loads the saved reconciler while
+using the real current CSV builder/restore dispatch and unrelated asset spies.
+Its malformed-provenance build returns **0**; current code returns **1**.
+
+### Contract and transaction semantics
+
+The public `apply_patches` signatures, envelope, `compile_revision_chain`,
+`UpdateConfig.source_reconcile_manifest` and transition counters remain as
+documented above. Undated legacy patches without provenance remain supported.
+Provenance declarations require an ISO calendar `source_date`; metadata-only
+dated revisions with an empty patch list are supported. Ordered dates remain
+strictly increasing and unique, rather than being silently sorted.
+
+All incoming metadata is checked before SQLite is opened. Invalidation IDs must
+be unique nonempty canonical strings; `unit_sources` must map canonical IDs to
+nonempty source lists. Primary and additional patch citations use the same
+validation. Sources require an HTTPS URL with a host and no embedded credentials,
+lowercase 64-character SHA256 and a positive integer one-based page. Optional
+`title`, `kind`, `version` are nonempty strings; `published`, `source_date`, `date`
+are real ISO calendar dates; `article` is an HTTPS URL. These are the supported
+source fields; unknown fields are rejected. Duplicate `(url,page)` citations and
+inconsistent hashes/dates/versions across pages of one URL fail closed. Conflicts
+between different unit citations and patch citations within the same reviewed
+revision also fail before SQLite access. Coverage
+metadata is explicitly unsupported, rather than silently accepted or published.
+
+The existing `official_rule_revisions(unit_id,source_date)` and
+`official_unit_sources(unit_id,sources_json)` reader schemas remain unchanged.
+The reconciler adds `official_unit_source_revisions(unit_id,source_date,
+sources_json)`, keyed by `(unit_id,source_date)`, to store each complete reviewed
+source-list snapshot. This is created only on the supplied target; no production
+database or global metadata was changed. Consumers were inspected in
+`db_compile/datasheet.py`, `wiki_engine/from_db.py`, translation guards and tests;
+they continue to read the same current-source contract.
+
+Current sources must equal the exact latest stored snapshot before any new
+declaration can authorize a change. Every same-date incoming snapshot must
+equal its stored snapshot, including URL, hash, page, dates, version and other
+supported fields. Thus an older replay cannot hide an identity conflict behind
+a newer date. A legacy current list with no chronology is adopted only when it
+exactly matches a supplied reviewed snapshot; otherwise the call rejects it.
+Including the reviewed earlier manifest in an ordered envelope gives the later
+promotion run that exact adoption anchor. A unit's rule date, PDF URL spelling
+or largest publication date is never used to guess a source list's identity.
+
+After validating exact stored and incoming snapshots, the last chronological
+reviewed snapshot becomes current. Older known replay retains the newer rule
+date and source list without writing. A repeated complete apply changes neither
+rows nor provenance; disposable SQLite files remain byte-identical. Equal
+legacy JSON content retains its original bytes/key ordering. Earlier snapshots
+remain in history. A declaration cannot reintroduce a superseded complete list
+or a superseded hash at an unchanged URL by adding another citation. Identical
+source bytes cannot acquire conflicting or lose known publication/date/version
+metadata; a changed hash at the same URL cannot regress a known source date.
+Contradictions among incoming declarations fail before a connection; conflicts
+against existing history fail within the guarded transaction. Version labels
+are compared exactly, without guessing a numerical rank.
+
+Metadata targets must resolve to exactly one canonical `units.id` after the row
+suffix has run. Missing/ambiguous targets, malformed touched current provenance
+or history, history/current-list drift and conflicts roll back all row updates,
+insertions, provenance-table creation, rule dates and source snapshots from the
+call. Unrelated provenance rows are preserved. Unknown extra citations in a
+touched current list cause rejection rather than being erased. Row changes and
+all three provenance tables share the single existing `BEGIN IMMEDIATE`.
+Counters continue to describe rule transitions, not metadata writes.
+
+The retained real restore/update ordering tests now also cover metadata
+conflicts: `UpdateReport.ok` is false, `aborted_at` is
+`stage_source_reconcile`, and no MFM/Chinese/DSL/alias downstream stage runs.
+The actual CSV-build subprocess rejects malformed metadata with exit **1** even
+after producing CSV rows. Its legacy success path still exits **0**. Optional
+stages and network-warning policy remain unchanged.
+
+### Validation and evidence
+
+Final command, using the designated read-only **Python 3.9.1** interpreter:
+
+```powershell
+& 'D:/Project/py/RAG/.venv/Scripts/python.exe' -X utf8 -m pytest `
+  tests/test_official_revision_metadata.py tests/test_official_revision_chains.py `
+  tests/test_official_restore_failures.py tests/test_source_reconcile.py `
+  tests/test_db_compile_update_stages.py tests/test_db_compile_build.py `
+  tests/test_db_compile_dsl_apply.py tests/test_mfm_sync.py `
+  tests/test_source_archive.py -q -ra --tb=short
+```
+
+Result: **232 passed / 1 skipped / 5 existing dependency deprecation warnings**
+in **14.02 seconds**. All 170 retained passes and 62 new metadata passes are
+included. The sole skip is unchanged:
+`tests/test_db_compile_dsl_apply.py:242` needs the unavailable real database for
+its DSL payload fingerprint audit. No assertion was weakened or new skip added.
+Source compilation, test compilation and
+`git -c core.whitespace=cr-at-eol diff --check` passed. Ruff, Black and Flake8
+remain unavailable; nothing was installed. The actual September 14 manifest
+passed declaration-only compilation at **390 rows / 390 transitions** and
+remains byte-identical with SHA256
+`29b0838504b1e5e1486646f6dcb4466c46d2c68513bcd06e963e4ed174ae34f7`.
+
+Ignored paired evidence remains confined to the absolute evidence directory
+given above:
+
+- `iteration-3-red.log`: initial pre-edit 44-test trial, 42 failures / 2 passes.
+- `iteration-3-base-source_reconcile.py`: exact Git HEAD baseline source.
+- `iteration-3-paired-baseline.py`: repeatable baseline module loader, including
+  the actual CLI subprocess; it does not replace tracked files.
+- `iteration-3-complete-paired-red.log`: final 62-test suite against that saved
+  baseline, 60 failures / 2 passes.
+- `iteration-3-green.log`: final focused suite, 232 passes / 1 existing skip.
+
+All source declarations in these tests are explicitly synthetic
+`example.com` sources and all database writes are disposable. The extra history
+tests distinguish schema absence in the baseline from the original defects.
+Tests inspect full SQL dumps after failures and database bytes after replay,
+including legacy provenance adoption and later metadata failure after earlier
+row/rule/source changes have run.
+
+### Host handoff and remaining publication work
+
+The scoped implementation contracts now meet this loop's stop condition and
+are ready for independent host review. Source files were inspected locally;
+no independent review pass is claimed. The CSV build and the whole authority
+pipeline are still not globally atomic: a failed restoration can leave a
+previously replaced CSV target or earlier committed stages. Publication must
+use copied inputs and a disposable target, then require a successful structured
+report/process status before separately reviewed promotion.
+
+For legacy-source adoption, supply the unchanged reviewed September 14 manifest
+plus the host's separately reviewed later manifests in order through the
+existing callable/envelope configuration. Rehearse A/B/C row states, replay and
+intentional drift on copies before production use. A legacy manifest alone
+still cannot recognize row values outside its exact known states; on that drift
+it fails and leaves all provenance unchanged. Successful older-only metadata
+replay requires its rows to remain an exact known state and the source history
+to authenticate the newer current list.
+
+The review date orders reviewed snapshots; it does not establish content
+currency, effective-date correctness or PDF authenticity. The host must verify
+actual promoted PDF hashes and source context, perform integrated asset and
+Python 3.11/Linux acceptance, and publish/deploy separately. No September 30
+rule patches, coverage rows, PDF/DB/index publication, real-current-data claim
+or release completion was made here.
+
+Reusable learning for the host's existing note templates: a latest date cannot
+authenticate a source list. Store exact reviewed snapshots, validate current
+identity against them, reject same-date conflicts, and update only when the
+guarded chronological successor is established. The resolved error is metadata
+replay replacing newer provenance and rewriting unchanged records; paired
+baseline/green logs above record its reproduction and resolution. External
+devlog, learning/error notes and harness repositories remain owned by the host;
+this report is the scoped handoff, without duplicate external records.
+
+Only the reconciler, synthetic metadata tests and this report changed in this
+iteration. No other checkout, production assets, dependency requirements,
+benchmark gold, hook repositories or separately owned application source was
+modified. No network access, services, watchers or browsers were started; all
+test subprocesses completed. No manual commit, push or merge was performed.
+GNHF owns the eventual commit; commit explanations must use its actual hash.
+
+### Follow-up knowledge hook handoff
+
+The explicit follow-up hook requested local knowledge-repository updates after
+the implementation turn. A fresh duplicate check found the host's existing
+critical-abort decision, error 08 and real `e5795f021` commit explanation. Those
+records were preserved; no matching source-chronology/replay record existed.
+
+The hook's requested local handoff is now recorded in:
+
+- `D:/Project/devlog/wh40k-oracle/CHECKPOINT.md` and `ROADMAP.md`: isolated
+  candidate behavior, verification, publication limits and pending host work.
+- `C:/Users/Administrator/learn-notes/decisions/20261001-authenticate-source-chronology-with-exact-snapshots.md`:
+  raw reusable decision using the repository's frontmatter/template.
+- `C:/Users/Administrator/error-notes/rag/20261001-error-09-official-provenance-replay-downgrade.md`:
+  underlying provenance error, saved red diagnostic, synthetic reproduction,
+  actual fix and verified resolution.
+- The learning/error README indexes link those new records.
+
+These are local Markdown handoff updates explicitly requested by the later
+hook, distinct from the preceding implementation scope. Existing dirty/staged
+note edits were preserved. No application code, production assets or harness
+rules changed during this handoff; no manual staging, commit or push occurred.
+The new implementation commit explanation remains pending its actual GNHF
+hash. Independent review and note/source publication remain host work.

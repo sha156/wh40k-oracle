@@ -15,6 +15,7 @@ from contextlib import closing
 from dataclasses import dataclass
 from datetime import date
 from pathlib import Path
+from urllib.parse import urlsplit
 
 
 MANIFEST = Path(__file__).with_name("source_reconcile_patches.json")
@@ -30,6 +31,114 @@ FIELDS = {
 }
 IDENTITY = {table: {"id"} for table in FIELDS}
 IDENTITY["models"] = {"unit_id", "name"}
+
+
+def _iso_date(value):
+    if not isinstance(value, str) or not re.fullmatch(r"\d{4}-\d{2}-\d{2}", value):
+        raise ValueError("An ISO source date is required")
+    try:
+        date.fromisoformat(value)
+    except ValueError as exc:
+        raise ValueError("Invalid source date") from exc
+    return value
+
+
+def _https_url(value):
+    if not isinstance(value, str) or any(ch.isspace() for ch in value):
+        raise ValueError("A valid HTTPS source URL is required")
+    try:
+        parsed = urlsplit(value)
+        port = parsed.port
+    except ValueError as exc:
+        raise ValueError("Invalid source URL") from exc
+    if (parsed.scheme != "https" or not parsed.hostname or parsed.username is not None
+            or parsed.password is not None or port == 0):
+        raise ValueError("A valid HTTPS source URL is required")
+
+
+def _validate_source(src):
+    if not isinstance(src, dict):
+        raise ValueError("An official source must be an object")
+    allowed = {"url", "sha256", "page", "title", "kind", "published", "article",
+               "source_date", "date", "version"}
+    if not set(src) <= allowed:
+        raise ValueError("Unsupported official source metadata")
+    _https_url(src.get("url"))
+    if not isinstance(src.get("sha256"), str) or not re.fullmatch(r"[0-9a-f]{64}", src["sha256"]):
+        raise ValueError("A source SHA-256 is required")
+    if type(src.get("page")) is not int or src["page"] < 1:
+        raise ValueError("A one-based source page is required")
+    for name in ("title", "kind", "version"):
+        if name in src and (not isinstance(src[name], str) or not src[name].strip()):
+            raise ValueError(f"Invalid source {name}")
+    for name in ("published", "source_date", "date"):
+        if name in src:
+            _iso_date(src[name])
+    if "article" in src:
+        _https_url(src["article"])
+
+
+def _validate_sources(sources):
+    if not isinstance(sources, list) or not sources:
+        raise ValueError("A nonempty official sources list is required")
+    identities, documents = set(), {}
+    for src in sources:
+        _validate_source(src)
+        identity = (src["url"], src["page"])
+        if identity in identities:
+            raise ValueError("Duplicate or conflicting official source identity")
+        identities.add(identity)
+        # Distinct cited pages of one document must agree on its bytes and
+        # optional publication/version declarations, not only its URL.
+        document = tuple((name, src.get(name)) for name in
+                         ("sha256", "published", "source_date", "date", "version"))
+        if src["url"] in documents and documents[src["url"]] != document:
+            raise ValueError("Conflicting official source document")
+        documents[src["url"]] = document
+
+
+def _validate_metadata(manifest):
+    ids = manifest.get("invalidate_translation_for", [])
+    sources = manifest.get("unit_sources", {})
+    if (not isinstance(ids, list) or any(not isinstance(uid, str) or not uid.strip() for uid in ids)
+            or len(set(ids)) != len(ids)):
+        raise ValueError("Unique canonical translation-invalidation IDs are required")
+    if not isinstance(sources, dict) or any(not isinstance(uid, str) or not uid.strip() for uid in sources):
+        raise ValueError("Official unit_sources requires canonical IDs and source lists")
+    if ids or sources or "source_date" in manifest:
+        _iso_date(manifest.get("source_date"))
+    for value in sources.values():
+        _validate_sources(value)
+    if any(isinstance(name, str) and "coverage" in name for name in manifest):
+        raise ValueError("Coverage metadata is not supported by this restoration contract")
+
+
+def _validate_source_chronology(snapshots):
+    """Exact snapshot and document continuity, without guessing version ranks."""
+    seen, previous, documents, artifacts = [], None, {}, {}
+    for _day, sources in snapshots:
+        if sources != previous and sources in seen:
+            raise ValueError("Revisited official source provenance")
+        seen.append(sources)
+        previous = sources
+        for src in sources:
+            url, digest = src["url"], src["sha256"]
+            artifact = (url, digest)
+            known = artifact in artifacts
+            if known:
+                for name in ("published", "source_date", "date", "version"):
+                    prior = artifacts[artifact].get(name)
+                    if prior is not None and src.get(name) != prior:
+                        raise ValueError("Conflicting immutable official source metadata")
+            artifacts[artifact] = src
+            if url in documents and documents[url]["sha256"] != digest:
+                if known:
+                    raise ValueError("Revisited official source document")
+                for name in ("published", "source_date", "date"):
+                    prior = documents[url].get(name)
+                    if prior is not None and (name not in src or src[name] < prior):
+                        raise ValueError("Official source date would downgrade")
+            documents[url] = src
 
 
 def _validate(patch):
@@ -55,14 +164,12 @@ def _validate(patch):
         if value is not None and (type(value) not in (str, int, float) or
                                   isinstance(value, float) and not math.isfinite(value)):
             raise ValueError("Reconciliation values must be finite SQLite scalars")
-    src = patch.get("source", {})
-    if (not isinstance(src, dict) or not isinstance(src.get("url"), str) or
-            not src["url"].startswith("https://") or
-            not isinstance(src.get("sha256"), str) or
-            not re.fullmatch(r"[0-9a-f]{64}", src["sha256"])):
-        raise ValueError("A source URL and SHA-256 are required")
-    if type(src.get("page")) is not int or src["page"] < 1:
-        raise ValueError("A one-based source page is required")
+    _validate_source(patch.get("source"))
+    additional = patch.get("additional_sources", [])
+    if not isinstance(additional, list):
+        raise ValueError("Additional sources must be a list")
+    if additional:
+        _validate_sources([patch["source"], *additional])
 
 
 @dataclass(frozen=True)
@@ -97,17 +204,19 @@ def _ordered_manifests(manifest, manifests):
     for item in manifests:
         if not isinstance(item, dict) or not isinstance(item.get("patches"), list):
             raise ValueError("Each revision requires a patches list")
+        _validate_metadata(item)
         declared = item.get("source_date")
         if declared is not None or ordered:
-            if not isinstance(declared, str) or not re.fullmatch(r"\d{4}-\d{2}-\d{2}", declared):
-                raise ValueError("Each ordered revision requires an ISO source date")
-            try:
-                date.fromisoformat(declared)
-            except ValueError as exc:
-                raise ValueError("Invalid revision source date") from exc
+            _iso_date(declared)
             if previous is not None and declared <= previous:
                 raise ValueError("Revision dates must be strictly increasing and unique")
             previous = declared
+    source_states = {}
+    for item in manifests:
+        for uid, sources in item.get("unit_sources", {}).items():
+            source_states.setdefault(uid, []).append((item["source_date"], sources))
+    for snapshots in source_states.values():
+        _validate_source_chronology(snapshots)
     return copy.deepcopy(manifests)
 
 
@@ -124,10 +233,20 @@ def _compile_rows(manifests):
     """Also support legacy flat transitions in their explicit patch order."""
     grouped = {}
     for manifest in manifests:
+        citations = [src for sources in manifest.get("unit_sources", {}).values() for src in sources]
         for patch in manifest["patches"]:
             _validate(patch)
+            citations.extend([patch["source"], *patch.get("additional_sources", [])])
             identity = (patch["table"], tuple(sorted(patch["key"].items())))
             grouped.setdefault(identity, []).append(patch)
+        documents = {}
+        for src in citations:
+            known = documents.setdefault(src["url"], {})
+            for field in ("sha256", "published", "source_date", "date", "version"):
+                if field in src:
+                    if field in known and known[field] != src[field]:
+                        raise ValueError("Conflicting source declarations within a reviewed revision")
+                    known[field] = src[field]
     chains = []
     for (table, key), patches in grouped.items():
         initial = {}
@@ -157,12 +276,100 @@ def _compile_rows(manifests):
     return tuple(chains)
 
 
+def _single_metadata_row(conn, table, columns, uid):
+    rows = conn.execute(f"SELECT {columns} FROM {table} WHERE unit_id=?", (uid,)).fetchall()
+    if len(rows) > 1:
+        raise ValueError(f"Ambiguous official provenance: {table}/{uid}")
+    return rows[0] if rows else None
+
+
+def _decode_sources(raw):
+    try:
+        sources = json.loads(raw)
+    except (ValueError, TypeError) as exc:
+        raise ValueError("Malformed official sources JSON") from exc
+    _validate_sources(sources)
+    return sources
+
+
+def _restore_sources(conn, uid, incoming):
+    """Merge exact dated snapshots; an unrecognized current list is drift.
+
+    Legacy lists can be anchored only to an exactly matching declaration.
+    Never infer their date from a unit's rule date or from PDF URL spelling.
+    """
+    row = _single_metadata_row(conn, "official_unit_sources", "sources_json", uid)
+    current = _decode_sources(row[0]) if row else None
+    history = {}
+    for day, raw in conn.execute(
+            "SELECT source_date,sources_json FROM official_unit_source_revisions WHERE unit_id=?", (uid,)):
+        _iso_date(day)
+        if day in history:
+            raise ValueError(f"Ambiguous official source chronology: {uid}/{day}")
+        history[day] = _decode_sources(raw)
+    if history:
+        if current != history[sorted(history)[-1]]:
+            raise ValueError(f"Official source provenance drift: {uid}")
+    elif current is not None and not any(current == value for _, value in incoming):
+        raise ValueError(f"Unrecognized legacy official source provenance: {uid}")
+    combined = dict(history)
+    for day, sources in incoming:
+        if day in combined and combined[day] != sources:
+            raise ValueError(f"Conflicting official source identity: {uid}/{day}")
+        combined[day] = sources
+    ordered = sorted(combined)
+    _validate_source_chronology([(day, combined[day]) for day in ordered])
+    final = combined[ordered[-1]]
+    for day, sources in incoming:
+        if day not in history:
+            conn.execute("INSERT INTO official_unit_source_revisions VALUES (?,?,?)",
+                         (uid, day, json.dumps(sources, ensure_ascii=False)))
+    if current is None:
+        conn.execute("INSERT INTO official_unit_sources VALUES (?,?)",
+                     (uid, json.dumps(final, ensure_ascii=False)))
+    elif current != final:
+        conn.execute("UPDATE official_unit_sources SET sources_json=? WHERE unit_id=?",
+                     (json.dumps(final, ensure_ascii=False), uid))
+
+
+def _restore_metadata(conn, manifests):
+    conn.execute("CREATE TABLE IF NOT EXISTS official_rule_revisions (unit_id TEXT PRIMARY KEY, source_date TEXT NOT NULL)")
+    conn.execute("CREATE TABLE IF NOT EXISTS official_unit_sources (unit_id TEXT PRIMARY KEY, sources_json TEXT NOT NULL)")
+    conn.execute("CREATE TABLE IF NOT EXISTS official_unit_source_revisions "
+                 "(unit_id TEXT NOT NULL, source_date TEXT NOT NULL, sources_json TEXT NOT NULL, "
+                 "PRIMARY KEY(unit_id,source_date))")
+    revisions, sources = {}, {}
+    for item in manifests:
+        for uid in item.get("invalidate_translation_for", []):
+            revisions[uid] = item["source_date"]
+        for uid, value in item.get("unit_sources", {}).items():
+            sources.setdefault(uid, []).append((item["source_date"], value))
+    for uid in dict.fromkeys([*revisions, *sources]):
+        targets = conn.execute("SELECT id FROM units WHERE id=?", (uid,)).fetchall()
+        if len(targets) != 1:
+            raise ValueError(f"{'Missing' if not targets else 'Ambiguous'} official metadata target: {uid}")
+        # Validate existing rule metadata even when only sources are declared.
+        row = _single_metadata_row(conn, "official_rule_revisions", "source_date", uid)
+        if row:
+            _iso_date(row[0])
+        if uid in revisions:
+            day = revisions[uid]
+            if row is None:
+                conn.execute("INSERT INTO official_rule_revisions VALUES (?,?)", (uid, day))
+            elif day > row[0]:
+                conn.execute("UPDATE official_rule_revisions SET source_date=? WHERE unit_id=?", (day, uid))
+        if uid in sources:
+            _restore_sources(conn, uid, sources[uid])
+
+
 def apply_patches(db_path, manifest=None, *, manifests=None):
     """Advance only an exact reviewed suffix; roll back every row on failure.
 
     Legacy callers pass one manifest. Ordered callers use ``manifests=[...]``
-    or a JSON ``{"revisions": [...]}`` envelope. Metadata chronology validation
-    is a separate pending contract; callers must not publish new source data yet.
+    or a JSON ``{"revisions": [...]}`` envelope. Rows and exact dated provenance
+    snapshots share one transaction. Legacy provenance must match a declared
+    source list before adoption; unknown lists and same-date conflicts fail.
+    Source syntax validation does not verify the actual promoted PDF bytes.
     """
     declared = _ordered_manifests(manifest, manifests)
     chains = _compile_rows(declared)
@@ -194,13 +401,7 @@ def apply_patches(db_path, manifest=None, *, manifests=None):
                     values = chain.transitions[index]["to"]
                     conn.execute(f"UPDATE {table} SET {','.join(f'{field}=?' for field in values)} WHERE {where}", tuple(values.values()) + tuple(key.values()))
                     report["applied"] += 1
-        conn.execute("CREATE TABLE IF NOT EXISTS official_rule_revisions (unit_id TEXT PRIMARY KEY, source_date TEXT NOT NULL)")
-        conn.execute("CREATE TABLE IF NOT EXISTS official_unit_sources (unit_id TEXT PRIMARY KEY, sources_json TEXT NOT NULL)")
-        for item in declared:
-            for uid in item.get("invalidate_translation_for", []):
-                conn.execute("INSERT OR REPLACE INTO official_rule_revisions VALUES (?,?)", (uid, item["source_date"]))
-            for uid, sources in item.get("unit_sources", {}).items():
-                conn.execute("INSERT OR REPLACE INTO official_unit_sources VALUES (?,?)", (uid, json.dumps(sources, ensure_ascii=False)))
+        _restore_metadata(conn, declared)
     return report
 
 
