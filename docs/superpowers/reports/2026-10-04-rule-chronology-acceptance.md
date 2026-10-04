@@ -305,3 +305,137 @@ import failure has one new resolved error record and README entry.
 `knowledge-handoff-verification.json` confirms prior note bodies and the three
 knowledge repositories' Git indexes are preserved. No commit explanation was
 invented, and no knowledge publication or harness promotion occurred.
+
+## Complete exact empty-model and 220-row acceptance
+
+This increment completes copied application acceptance of the entire reviewed
+**220-row/308-cell** proposal, including the three exact empty-name model keys.
+The clean launch was `42e6c528c`, with the preceding dated reversal implementation
+already present. The orchestrator's iteration notes were read first and remain
+untouched. Changes are restricted to the owned reconciler, its relevant tests,
+and this appended report; GNHF retains commit ownership.
+
+Evidence is under:
+
+`D:/Project/py/RAG/db_sources/rule-chronology-owned/20261004/iteration-03/`
+
+### Exact identity and independently checked field evidence
+
+The exception permits the actual string `name=""` only for `models`, with a
+nonempty string `unit_id`. Missing/null names, extra identity fields and nonstring
+or blank owner IDs remain invalid. The actual retained `models` schema has TEXT
+identity columns and **no unique index**. Application therefore checks the
+schema, exactly one stored composite row and exactly one stored owner in the
+transaction. Binary comparisons prevent schema collation from broadening the
+lookup or update. Empty-name models cannot be invented through absent-state
+insertion; named sibling models and other owners remain untouched. Other tables'
+identity rules, public application API and `RowChain` fields are unchanged.
+
+`exact-empty-model-source-binding.json` binds the three exact actual owner rows,
+blank model rows, unchanged proposal declarations and the existing field owner's
+amendment ledger. Independent literal inspection of pinned CSM English PDF
+`237a44973f019f0bf72def98f747a0fcf2d5644a559b815a64987bdb468a7cf9`,
+one-based page 38, verifies Kravek Morne (`000004205`) at **T6**, and Red Corsairs
+Raiders (`000004191`) and Red Corsairs Reave-Captain (`000004192`) at **T5**. Their
+actual prior values are T5/T4/T4 respectively. The cover explicitly supplies the
+September 30 legal date. This evidence certifies those field recipients only.
+Runtime source syntax checks do not independently interpret PDFs or establish
+new identity mappings from their prose.
+
+### Complete retained proposal and copied application
+
+`complete-separately-anchored-envelope.json` retains the exact original 390-patch
+manifest and all 220 proposed patches/308 field values from the field owner's
+`batch-03-ac-csm/verified-01/cumulative-provisional-revision.json`. All preceding
+121 proposed patches are retained exactly. Only the independently explicit
+Sentinel source anchor from iteration-02 is added to the copied September 30
+revision. The other owner's original missing-anchor proposal is unchanged and
+still rejects. No reviewed values, identities or metadata are silently dropped
+or coerced.
+
+The frozen launch code, retained as `frozen-launch-source_reconcile.py`, rejects
+the complete anchored proposal with `A complete canonical identity is required`.
+The candidate compiles all **610 transitions**. `prove_complete.py` and
+`complete-first.log` preserve the executable copied acceptance.
+
+Actual AFB remains byte-exact at
+`afb9b99da103b61d25b0db82b824c5caf8aaeed1e7237b739ef0bbf15102b855`.
+On its private copy, application returns **220 applied / 390 already / zero
+inserted / 610 total**. Every compiled guarded union field reaches its exact
+final state. Whole nonmetadata-table snapshots show that only the reviewed field
+values changed, preserving every other row and field. Sentinel has exactly the
+reviewed B-to-A transition; its current list equals the explicit September 30
+snapshot, both exact September 14/30 snapshots remain, and its invalidation date
+is September 30.
+
+Replay returns **zero applied / 610 already** and preserves every database byte:
+
+`e13c668b4c0e94a4e0c631c83788319ffdf73bec9bf9a330bf99bc6506c6cd8b`
+
+The older standalone September 14 Sentinel change rejects rather than restoring
+FRAME under newer provenance. An older supplied-final-field model replay remains
+write-free. The original preserved 3fd database still has only an undated current
+list, rejects this reversal, and remains byte-exact. No fresh CSV rebuild repair
+or invented history is claimed.
+
+Seventeen actual copied failure controls preserve every byte and release Windows
+file handles: older Sentinel replay, missing incoming anchor, undated 3fd, absent
+history/state A, undated A, September 14 A, September 30 B, unknown checkpoint,
+malformed history, drifted current provenance, null/missing/duplicate blank model
+rows, missing owner, the last compiled-row prior guard, and both ordinary and
+`KeyboardInterrupt` failures after all row/schema/history metadata writes.
+Results and exact failure messages are in `complete-copied-acceptance.json`.
+
+### Tests, preservation and review
+
+The test-first run preserves **11 failures / 12 passes** from the parent rejecting
+the required blank keys; `red.log` and `red.xml` are retained. The first candidate
+run passed 218 tests. Additional controls cover duplicate owners, binary identity
+under a NOCASE schema, whole model union-field drift, real restore/update critical
+abort, and real CSV/build CLI acceptance of an exact blank model or rejection of
+its duplicate. Caller controls substitute unrelated asset stages explicitly;
+they do not claim whole rebuild/source acceptance.
+
+Final validation uses the unchanged authorized stable full-stack Python 3.11:
+
+```text
+-X utf8 -m pytest tests/test_official_empty_model_keys.py tests/test_official_dated_reversals.py tests/test_official_revision_chains.py tests/test_official_revision_metadata.py tests/test_official_restore_failures.py tests/test_source_reconcile.py tests/test_corpus_policy.py -q -p no:cacheprovider --basetemp=D:/Project/py/RAG/db_sources/rule-chronology-owned/20261004/iteration-03/final-tmp --junitxml=D:/Project/py/RAG/db_sources/rule-chronology-owned/20261004/iteration-03/final.xml
+```
+
+Result: **225 passed / zero failures / zero errors / zero skips**, with 225 unique
+XML testcase identities and no filters or exclusions. AST parsing and
+`git diff --check` pass. Ruff/Black/mypy/pylint/Bandit are unavailable in this
+interpreter; no separate formatter/linter execution is claimed.
+
+`verify_final.py` compares the prior retained 9,259-file binding set. The first
+check found all 9,259 exact; the final check finds **9,258 exact / zero missing**.
+The sole change is the concurrent field owner's report in the separate
+`release-official-revisions` worktree, from hash `3cdcaa5a...` to `af662c6d...`;
+full hashes and sizes are recorded in `final-verification.json`. This iteration
+did not write that report. All production assets, original manifest/PDF/proposal
+inputs, frozen 3fd baseline and actual AFB remain exact. Verification also confirms
+the exact original 390 manifest, untouched full proposal and XML/diff accounting.
+Only four intended paths in this worktree are changed. No background processes
+were started; all foreground tests/proofs exited.
+
+Independent Python and generic reviewers approve the implementation without
+findings. The generic reviewer independently checked both Sentinel PDF hashes,
+cover/name/keyword literals and explicit legal date, plus the pinned CSM page-38
+recipients and actual blank rows. The reviewed engine SHA-256 is
+`c509e1bd57bb1e00135299f40a0ba310dd1a8f3b2f84a7be44f5578577ad8250`.
+`independent-reviews.json` retains both final review outcomes. The generic reviewer
+independently reran the complete copied proof in `review-generic-03/`, obtained
+the identical acceptance JSON, and independently passed all 225 tests with exact
+XML accounting. Both reviewers confirm all started processes have exited.
+
+Implementation and copied acceptance are complete within this scope. GNHF's
+intended commit and root publication remain separate; no manual staging, commit,
+push or merge occurred. There is no full-source parity, full 13-overlay,
+production promotion, fresh rebuild repair, deployment or project-completion
+claim. The existing English checkpoint/roadmap/learning note are updated by
+appending this verified result, without inventing a commit or duplicating errors.
+The final handoff initially rejected an authorized concurrent note append because
+of a stale whole-document hash. Requiring the exact owned appendix once allowed
+the correction while preserving all current text and Git indexes. The resolved
+issue is indexed once as `20261004-error-17-concurrent-note-hash-guard.md`;
+`knowledge-handoff-verification.json` retains the note/index reconciliation.

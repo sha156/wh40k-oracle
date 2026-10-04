@@ -232,3 +232,47 @@ def test_dated_reversal_fresh_csv_cli_fails_without_manufacturing_history(tmp_pa
         assert not conn.execute("SELECT name FROM sqlite_master WHERE name LIKE 'official_%'").fetchall()
         assert conn.execute("SELECT keywords_json,version FROM units WHERE id='one'").fetchone() == (
             declared[0]["patches"][0]["from"]["keywords_json"], None)
+
+
+@pytest.mark.parametrize("entry", [update.restore_authority_layers, update.run_update])
+def test_empty_model_duplicate_aborts_real_pipeline(tmp_path, monkeypatch, entry):
+    from tests.test_official_empty_model_keys import database, patch
+
+    db = database(tmp_path)
+    with closing(sqlite3.connect(db)) as conn, conn:
+        conn.execute("INSERT INTO models VALUES ('one','','4','2')")
+    manifest = tmp_path / "empty-model.json"
+    manifest.write_text(json.dumps({"patches": [patch()]}), encoding="utf-8")
+    before = db.read_bytes()
+    calls = []
+    _spy_pipeline(monkeypatch, calls)
+    report = entry(update.UpdateConfig(db=db, source_reconcile_manifest=manifest))
+    assert not report.ok and report.aborted_at == "stage_source_reconcile"
+    assert "Ambiguous exact empty model target" in report.stages[-1].summary
+    assert not any(name in ("stage_mfm_apply", "stage_zh_weapons") for name, _ in calls)
+    assert db.read_bytes() == before
+
+
+@pytest.mark.parametrize("duplicate,expected", [(False, 0), (True, 1)])
+def test_actual_csv_empty_model_cli_restoration_status(tmp_path, duplicate, expected):
+    from tests.test_official_empty_model_keys import database, patch
+
+    db = database(tmp_path)
+    manifest = tmp_path / "empty-model.json"
+    manifest.write_text(json.dumps({"patches": [patch()]}), encoding="utf-8")
+    (tmp_path / "Datasheets.csv").write_text(
+        "id|name|faction_id|\none|Synthetic owner|synthetic|\n", encoding="utf-8")
+    (tmp_path / "Datasheets_models.csv").write_text(
+        "datasheet_id|name|T|\n" + "one||4|\n" * (2 if duplicate else 1), encoding="utf-8")
+    result = subprocess.run(
+        [sys.executable, "-X", "utf8", "-c", _CLI_BOOTSTRAP, str(db), str(manifest)],
+        cwd=str(Path(__file__).resolve().parents[1]), capture_output=True,
+        encoding="utf-8", timeout=30)
+    assert result.returncode == expected, result.stdout + result.stderr
+    if duplicate:
+        assert "Required restoration failed" in result.stdout
+        assert "Ambiguous exact empty model target" in result.stdout
+        assert "CLI asset stage spy" not in result.stdout.split("Ambiguous exact empty model target", 1)[1]
+    with closing(sqlite3.connect(db)) as conn:
+        assert conn.execute("SELECT unit_id,name,t FROM models").fetchall() == (
+            [("one", "", "4"), ("one", "", "4")] if duplicate else [("one", "", "5")])

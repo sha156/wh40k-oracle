@@ -149,8 +149,12 @@ def _validate(patch):
         raise ValueError("Unsupported reconciliation table")
     key = patch.get("key", {})
     if not isinstance(key, dict) or set(key) != IDENTITY[table] or any(
-            not isinstance(v, str) or not v for v in key.values()):
+            not isinstance(value, str) or
+            (not value and not (table == "models" and name == "name"))
+            for name, value in key.items()):
         raise ValueError("A complete canonical identity is required")
+    if table == "models" and not key["unit_id"].strip():
+        raise ValueError("A complete canonical model owner identity is required")
     values = patch.get("to", {})
     if (not isinstance(values, dict) or not values or
             not set(values) <= FIELDS[table] - IDENTITY[table]):
@@ -443,6 +447,25 @@ def _restore_metadata(conn, manifests):
             _restore_sources(conn, uid, sources[uid])
 
 
+def _validate_empty_model_target(conn, key):
+    """The retained schema has no unique index: require one actual exact row.
+
+    An empty string is a stored model key, never permission to insert a model
+    or match every model of an owner. Do not rely on column affinity/collation
+    to coerce a reviewed identity into a different stored value.
+    """
+    columns = {row[1]: row[2].upper() for row in conn.execute("PRAGMA table_info(models)")}
+    if any(columns.get(name) != "TEXT" for name in ("unit_id", "name")):
+        raise ValueError("Unsupported empty model identity schema")
+    owners = conn.execute("SELECT id FROM units WHERE id COLLATE BINARY=?", (key["unit_id"],)).fetchall()
+    if owners != [(key["unit_id"],)]:
+        raise ValueError(f"Missing or Ambiguous exact model owner: {key['unit_id']}")
+    rows = conn.execute("SELECT unit_id,name FROM models WHERE unit_id COLLATE BINARY=? "
+                        "AND name COLLATE BINARY=?", (key["unit_id"], key["name"])).fetchall()
+    if rows != [(key["unit_id"], "")]:
+        raise ValueError(f"Missing or Ambiguous exact empty model target: {key}")
+
+
 def apply_patches(db_path, manifest=None, *, manifests=None):
     """Advance only an exact reviewed suffix; roll back every row on failure.
 
@@ -460,7 +483,10 @@ def apply_patches(db_path, manifest=None, *, manifests=None):
         conn.execute("BEGIN IMMEDIATE")
         for chain in chains:
             table, key, fields = chain.table, dict(chain.key), chain.fields
-            where = " AND ".join(f"{name}=?" for name in key)
+            empty_model = table == "models" and key["name"] == ""
+            if empty_model:
+                _validate_empty_model_target(conn, key)
+            where = " AND ".join(f"{name}{' COLLATE BINARY' if empty_model else ''}=?" for name in key)
             rows = conn.execute(f"SELECT {','.join(fields)} FROM {table} WHERE {where}", tuple(key.values())).fetchall()
             if len(rows) > 1:
                 raise ValueError(f"Ambiguous official patch: {table}/{key}")
