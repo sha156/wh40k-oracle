@@ -294,13 +294,83 @@ def resolve_coverage(conn, *, unit_id=None, name_en=None, faction_slug=None):
     return record
 
 
+def _reviewed_history(conn, previous):
+    """Read exact content-addressed declarations, not an inferred event order.
+
+    Historical price projections need not match today's ledger; validate their
+    declaration/key/digest/identity rather than rechecking current price data.
+    Include the registry record for older callers without a history table.
+    """
+    key = _key(previous["identity"])
+    history = [previous]
+    if _exists(conn, "source_coverage_history"):
+        rows = conn.execute(
+            "SELECT record_sha256,record_json FROM source_coverage_history WHERE identity_key=?",
+            (key,)).fetchall()
+        for digest, payload in rows:
+            if not isinstance(payload, str) or hashlib.sha256(payload.encode("utf-8")).hexdigest() != digest:
+                raise ValueError("Stored coverage history digest mismatch")
+            try:
+                declaration = json.loads(payload)
+            except ValueError as exc:
+                raise ValueError("Invalid stored coverage history JSON") from exc
+            validate_manifest({"schema_version": 1, "records": [declaration]})
+            if (_key(declaration["identity"]) != key
+                    or declaration["identity"] != previous["identity"]):
+                raise ValueError("Stored coverage history identity mismatch")
+            history.append(declaration)
+    return history
+
+
+def _full_snapshot(body):
+    if body["status"] in ("current_full_verified", "historical_snapshot"):
+        return body
+    return body["retained_snapshot"]
+
+
+def _source_hashes(evidence):
+    return {source["sha256"] for source in evidence["sources"]}
+
+
+def _check_body_transition(conn, record, previous):
+    history = _reviewed_history(conn, previous)
+    snapshots = [snapshot for old in history if (snapshot := _full_snapshot(old["body"])) is not None]
+    body = record["body"]
+    snapshot = _full_snapshot(body)
+    if snapshots:
+        if snapshot is None and body["status"] == "newer_full_unavailable":
+            raise ValueError("Unavailable body must retain the latest known full snapshot")
+        if snapshot is not None:
+            latest_date = max(old["effective_date"] for old in snapshots)
+            if snapshot["effective_date"] < latest_date:
+                raise ValueError("Verified/retained body date would downgrade")
+            hashes = _source_hashes(snapshot)
+            known_hashes = set().union(*(_source_hashes(old) for old in snapshots))
+            # Old bytes with edited dates/URLs are not new reviewed evidence.
+            # A genuinely new source-reviewed declaration may advance; these
+            # structural checks do not acquire or authenticate its source body.
+            if hashes <= known_hashes and not any(
+                    old["effective_date"] == latest_date and _source_hashes(old) <= hashes
+                    for old in snapshots):
+                raise ValueError("Verified/retained body sources would downgrade")
+    if body["status"] == "current_full_verified":
+        unavailable_hashes = set().union(*(
+            _source_hashes(old["body"]) | (
+                _source_hashes(old["body"]["retained_snapshot"])
+                if old["body"]["retained_snapshot"] is not None else set())
+            for old in history if old["body"]["status"] == "newer_full_unavailable"))
+        if _source_hashes(body) <= unavailable_hashes:
+            raise ValueError("Retained sources cannot recertify an unavailable newer body")
+
+
 def apply_coverage(conn: sqlite3.Connection, manifest, *, expected_records):
     """Stage a guarded delta inside the caller's active promotion transaction.
 
     expected_records is aligned with manifest.records: each exact previous
     declaration, or None for an absent identity. Unmentioned records/history are
     preserved. This function never commits, opens a DB, or changes body/price data.
-    A savepoint also undoes its writes if the caller catches an application error.
+    A savepoint also undoes its writes if the caller catches an application
+    failure, including an interrupt/cancellation. The original failure is raised.
     """
     candidate = validate_manifest(manifest)
     records = candidate["records"]
@@ -310,6 +380,7 @@ def apply_coverage(conn: sqlite3.Connection, manifest, *, expected_records):
         raise ValueError("Coverage application requires the caller's active transaction")
     conn.execute("SAVEPOINT source_coverage_apply")
     try:
+        replacements = []
         for record, expected in zip(records, expected_records):
             _check_identity(conn, record)
             previous = _stored(conn, _key(record["identity"]))
@@ -320,30 +391,41 @@ def apply_coverage(conn: sqlite3.Connection, manifest, *, expected_records):
                     raise ValueError("Coverage identity cannot be reassigned")
                 if record["reviewed_on"] < previous["reviewed_on"]:
                     raise ValueError("Coverage review date would downgrade")
-                old_body = previous["body"]
-                old_snapshot = old_body["retained_snapshot"] or old_body
-                if record["body"]["status"] == "current_full_verified":
-                    old_date = old_snapshot["effective_date"]
-                    if old_date and record["body"]["effective_date"] < old_date:
-                        raise ValueError("Verified body date would downgrade")
-                    if old_body["status"] == "newer_full_unavailable" and (
-                            {s["sha256"] for s in record["body"]["sources"]}
-                            <= {s["sha256"] for s in old_snapshot["sources"]}):
-                        raise ValueError("Retained sources cannot recertify an unavailable newer body")
+                _check_body_transition(conn, record, previous)
+            if record != previous:
+                key = _key(record["identity"])
+                # _stored validated this exact registry declaration. Keep its
+                # original JSON bytes/digest, including legacy serialization,
+                # rather than just its parsed in-memory transition boundary.
+                previous_payload = None if previous is None else conn.execute(
+                    "SELECT record_json FROM source_coverage_registry WHERE identity_key=?", (key,)).fetchone()[0]
+                replacements.append((record, previous_payload))
+        if not replacements:
+            conn.execute("RELEASE SAVEPOINT source_coverage_apply")
+            return {"records": len(records), "schema_version": 1}
         conn.execute("CREATE TABLE IF NOT EXISTS source_coverage_registry "
                      "(identity_key TEXT PRIMARY KEY,record_json TEXT NOT NULL)")
         conn.execute("CREATE TABLE IF NOT EXISTS source_coverage_history "
                      "(identity_key TEXT NOT NULL,record_sha256 TEXT NOT NULL,record_json TEXT NOT NULL,"
                      "PRIMARY KEY(identity_key,record_sha256))")
-        for record in records:
+        for record, previous_payload in replacements:
             key = _key(record["identity"])
+            if previous_payload is not None:
+                previous_digest = hashlib.sha256(previous_payload.encode("utf-8")).hexdigest()
+                conn.execute("INSERT OR IGNORE INTO source_coverage_history VALUES (?,?,?)",
+                             (key, previous_digest, previous_payload))
             payload = json.dumps(record, sort_keys=True, ensure_ascii=False, separators=(",", ":"))
             digest = hashlib.sha256(payload.encode("utf-8")).hexdigest()
             conn.execute("INSERT OR IGNORE INTO source_coverage_history VALUES (?,?,?)", (key, digest, payload))
             conn.execute("INSERT OR REPLACE INTO source_coverage_registry VALUES (?,?)", (key, payload))
         conn.execute("RELEASE SAVEPOINT source_coverage_apply")
-    except Exception:
-        conn.execute("ROLLBACK TO SAVEPOINT source_coverage_apply")
-        conn.execute("RELEASE SAVEPOINT source_coverage_apply")
+    except BaseException:
+        try:
+            conn.execute("ROLLBACK TO SAVEPOINT source_coverage_apply")
+            conn.execute("RELEASE SAVEPOINT source_coverage_apply")
+        except BaseException:
+            # Cleanup cannot replace the caller's original interrupt/failure.
+            # Never retry, commit, or roll back the caller's unrelated work.
+            pass
         raise
     return {"records": len(records), "schema_version": 1}
