@@ -238,7 +238,7 @@ def _compile_rows(manifests):
             _validate(patch)
             citations.extend([patch["source"], *patch.get("additional_sources", [])])
             identity = (patch["table"], tuple(sorted(patch["key"].items())))
-            grouped.setdefault(identity, []).append(patch)
+            grouped.setdefault(identity, []).append((manifest, patch))
         documents = {}
         for src in citations:
             known = documents.setdefault(src["url"], {})
@@ -248,7 +248,8 @@ def _compile_rows(manifests):
                         raise ValueError("Conflicting source declarations within a reviewed revision")
                     known[field] = src[field]
     chains = []
-    for (table, key), patches in grouped.items():
+    for (table, key), declarations in grouped.items():
+        patches = [patch for _, patch in declarations]
         initial = {}
         for patch in patches:
             for field in patch["to"]:
@@ -266,14 +267,77 @@ def _compile_rows(manifests):
                 if {field: current[field] for field in prior} != prior:
                     raise ValueError(f"Contradictory revision continuity: {table}/{dict(key)}")
                 updated = {**current, **patch["to"]}
-            # A single legacy no-op retains its already-current behavior. Chains
-            # must never revisit a state: suffix selection would be ambiguous.
+            # A dated unit reversal needs independently declared source anchors;
+            # repeated field values alone cannot identify its current position.
             if updated in states and not (len(patches) == 1 and updated == current):
-                raise ValueError(f"Ambiguous or duplicate reviewed state: {table}/{dict(key)}")
+                if updated == current or table != "units":
+                    raise ValueError(f"Ambiguous or duplicate reviewed state: {table}/{dict(key)}")
+                _unit_checkpoints(dict(key)["id"], declarations)
             states.append(updated)
             current = updated
         chains.append(RowChain(table, key, tuple(sorted(initial)), tuple(states), tuple(patches)))
     return tuple(chains)
+
+
+def _unit_checkpoints(uid, declarations):
+    """Bind every transition to an explicit dated unit source declaration."""
+    checkpoints, previous = [], None
+    for manifest, patch in declarations:
+        day = _iso_date(manifest.get("source_date"))
+        sources = manifest.get("unit_sources", {}).get(uid)
+        if not sources or previous is not None and day <= previous:
+            raise ValueError(f"Dated unit reversal requires explicit source checkpoints: {uid}")
+        if any(src.get("source_date", day) != day for src in sources):
+            raise ValueError(f"Unit source checkpoint date does not bind revision: {uid}")
+        for citation in [patch["source"], *patch.get("additional_sources", [])]:
+            if not any(all(src.get(name) == value for name, value in citation.items())
+                       for src in sources):
+                raise ValueError(f"Unit source checkpoint does not bind patch evidence: {uid}")
+        checkpoints.append((day, sources))
+        previous = day
+    _validate_source_chronology(checkpoints)
+    return checkpoints
+
+
+def _select_position(conn, chain, manifests, matches):
+    """Use preexisting authority and the entire guarded row, before any writes."""
+    declarations = [(item, patch) for item in manifests for patch in item["patches"]
+                    if patch["table"] == chain.table
+                    and tuple(sorted(patch["key"].items())) == chain.key]
+    key = dict(chain.key)
+    uid = key.get("id") if chain.table == "units" else key.get("unit_id")
+    repeated = any(state in chain.states[:index] for index, state in enumerate(chain.states)
+                   if index > 0)
+    legacy_noop = len(chain.transitions) == 1 and chain.states[0] == chain.states[1]
+    if uid is None:
+        return matches[-1]
+    current, history = _read_source_history(conn, uid)
+    # Validate incoming conflicts before allowing a checkpoint to select rows.
+    combined = dict(history)
+    for item in manifests:
+        sources = item.get("unit_sources", {}).get(uid)
+        if sources is not None:
+            day = item["source_date"]
+            if day in combined and combined[day] != sources:
+                raise ValueError(f"Conflicting official source identity: {uid}/{day}")
+            combined[day] = sources
+    _validate_source_chronology([(day, combined[day]) for day in sorted(combined)])
+    if repeated and not legacy_noop:
+        checkpoints = _unit_checkpoints(uid, declarations)
+        if not history:
+            raise ValueError(f"Dated unit reversal requires preexisting source history: {uid}")
+        latest = max(history)
+        positions = [index + 1 for index, (day, sources) in enumerate(checkpoints)
+                     if day == latest and sources == current and index + 1 in matches]
+        if len(positions) != 1:
+            raise ValueError(f"Official source checkpoint and guarded row disagree: {uid}")
+        return positions[0]
+    position = matches[-1]
+    if position < len(chain.transitions) and history:
+        last_day = declarations[-1][0].get("source_date")
+        if last_day is None or max(history) > last_day:
+            raise ValueError(f"Older official revision cannot change newer checkpoint: {uid}")
+    return position
 
 
 def _single_metadata_row(conn, table, columns, uid):
@@ -406,8 +470,7 @@ def apply_patches(db_path, manifest=None, *, manifests=None):
                 if actual is None:
                     raise ValueError(f"Missing official patch target: {table}/{key}")
                 raise ValueError(f"Official patch prior-value mismatch: {table}/{key}")
-            # Multiple matches only occur for the single permitted legacy no-op.
-            position = matches[-1]
+            position = _select_position(conn, chain, declared, matches)
             report["already"] += position
             for index in range(position, len(chain.transitions)):
                 if chain.states[index] is None:

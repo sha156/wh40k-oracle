@@ -181,3 +181,54 @@ def test_build_cli_process_status(tmp_path, bad, no_restore, expected):
                         else [("one", "new"), ("two", "new")])
         # Proves the real CSV builder replaced the minimal pre-existing DB.
         assert conn.execute("SELECT name_en FROM abilities WHERE id='one'").fetchone() == ("Synthetic one",)
+
+
+@pytest.mark.parametrize("entry", [update.restore_authority_layers, update.run_update])
+def test_dated_reversal_checkpoint_conflict_aborts_real_pipeline(tmp_path, monkeypatch, entry):
+    from tests.test_official_dated_reversals import database, revisions
+
+    db = database(tmp_path, state="A", checkpoint=0)
+    manifest = tmp_path / "synthetic-reversal.json"
+    manifest.write_text(json.dumps({"revisions": revisions()}), encoding="utf-8")
+    before = db.read_bytes()
+    calls = []
+    _spy_pipeline(monkeypatch, calls)
+    report = entry(update.UpdateConfig(db=db, source_reconcile_manifest=manifest))
+    assert not report.ok and report.aborted_at == "stage_source_reconcile"
+    assert "checkpoint and guarded row disagree" in report.stages[-1].summary
+    assert not any(name in ("stage_mfm_apply", "stage_zh_weapons") for name, _ in calls)
+    assert db.read_bytes() == before
+
+
+def test_dated_reversal_fresh_csv_cli_fails_without_manufacturing_history(tmp_path):
+    from tests.test_official_dated_reversals import database, revisions
+
+    db = database(tmp_path)
+    manifest = tmp_path / "synthetic-reversal.json"
+    declared = revisions()
+    for item in declared:
+        patch = item["patches"][0]
+        for values in (patch["from"], patch["to"]):
+            values["keywords_json"] = json.dumps({"keywords": [values["keywords_json"]],
+                                                 "faction_keywords": []})
+            if "version" in values:
+                values["version"] = None
+    manifest.write_text(json.dumps({"revisions": declared}), encoding="utf-8")
+    # The real builder replaces the previous B/checkpoint DB with unanchored CSV
+    # A. Restoration must report failure rather than inventing a date for A.
+    (tmp_path / "Datasheets.csv").write_text(
+        "id|name|faction_id|\none|Synthetic unit|synthetic|\n",
+        encoding="utf-8")
+    (tmp_path / "Datasheets_keywords.csv").write_text(
+        "datasheet_id|keyword|is_faction_keyword|\none|A|false|\n", encoding="utf-8")
+    result = subprocess.run(
+        [sys.executable, "-X", "utf8", "-c", _CLI_BOOTSTRAP, str(db), str(manifest)],
+        cwd=str(Path(__file__).resolve().parents[1]), capture_output=True,
+        encoding="utf-8", timeout=30)
+    assert result.returncode == 1, result.stdout + result.stderr
+    assert "Required restoration failed" in result.stdout
+    assert "requires preexisting source history" in result.stdout
+    with closing(sqlite3.connect(db)) as conn:
+        assert not conn.execute("SELECT name FROM sqlite_master WHERE name LIKE 'official_%'").fetchall()
+        assert conn.execute("SELECT keywords_json,version FROM units WHERE id='one'").fetchone() == (
+            declared[0]["patches"][0]["from"]["keywords_json"], None)
