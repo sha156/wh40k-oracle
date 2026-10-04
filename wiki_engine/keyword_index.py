@@ -20,7 +20,7 @@
 中文显示名继续来自 zh_keyword_glossary；编号配对从官方 PDF 标题确定，不从 LLM 缓存推断。
 旧 parse_quickref / QuickRefEntry / quickref_entries 名称保留兼容，已不读取民间速查表。
 
-CLI：python -m wiki_engine.keyword_index [--db …] [--wiki wiki] [--pdf …]
+CLI：python -m wiki_engine.keyword_index [--db …] [--wiki wiki] [--pdf …] [--zh-pdf …]
 """
 from __future__ import annotations
 
@@ -39,7 +39,11 @@ from wiki_engine.core_rules_zh import EN_PDF, ZH_PDF
 from wiki_engine.pdf_sections import PdfSection
 from corpus_policy import require_active_source
 
-DEFAULT_PDF = EN_PDF
+# Defaults belong to this checkout, regardless of the caller's working directory.
+# Explicit paths (including relative custom pairs) retain normal caller semantics.
+_REPO_ROOT = Path(__file__).resolve().parents[1]
+DEFAULT_PDF = _REPO_ROOT / EN_PDF
+DEFAULT_ZH_PDF = _REPO_ROOT / ZH_PDF
 INDEX_REL = "indexes/keywords.md"
 PAYLOAD_REL = "indexes/keywords.json"   # 机器可读镜像，web 层读它（容器不挂 data/）
 
@@ -128,12 +132,13 @@ def _entries_from_sections(en: Dict[str, PdfSection],
 
 
 def parse_quickref(pdf_path: Path = DEFAULT_PDF,
-                   zh_pdf_path: Path = ZH_PDF) -> Dict[str, QuickRefEntry]:
+                   zh_pdf_path: Path = DEFAULT_ZH_PDF) -> Dict[str, QuickRefEntry]:
     """Read retained official English/Chinese Core Rules using the shared parser.
 
     The old function name is an API shim, not a quick-reference fallback.
     Missing, retired, incomplete or mismatched inputs fail before generation.
     Direct parsing avoids the path-only section cache when PDF bytes change.
+    Defaults are repository-relative; explicit paths are relative to the caller.
     """
     from wiki_engine.pdf_sections import SECTION_EN, SECTION_ZH, split_sections
 
@@ -436,16 +441,19 @@ def build_payload(stats: Dict[str, KeywordStat], quickref: Dict[str, QuickRefEnt
 
 def generate(db_path: Path, wiki_root: Path,
              pdf_path: Path = DEFAULT_PDF,
-             out_root: Optional[Path] = None) -> Dict[str, object]:
+             out_root: Optional[Path] = None, *,
+             zh_pdf_path: Path = DEFAULT_ZH_PDF) -> Dict[str, object]:
     """生成武器词条索引。
 
     `wiki_root` 只用于**读**（`_rule_page` 判页是否真实存在），`out_root` 决定**写**去哪。
     默认两者相同＝正常生成。测试要跑真库真页的端到端，但不能顺手改仓库产物
     （产物一脏，下一轮 gnhf 就以 "Working tree is not clean" 秒退），所以给它一个
     只改写出目标、不改读取真源的出口。
+    Custom bilingual inputs can supply `zh_pdf_path` without changing the existing
+    positional `out_root` contract. Both sources are validated before any writes.
     """
     out_root = wiki_root if out_root is None else out_root
-    quickref = parse_quickref(pdf_path)
+    quickref = parse_quickref(pdf_path, zh_pdf_path)
     stats, tally = collect(db_path)
     gloss = load_glossary(db_path)
     text = render_index(stats, quickref, gloss, wiki_root)
@@ -481,9 +489,12 @@ def main() -> None:
     ap = argparse.ArgumentParser(prog="wiki_engine.keyword_index")
     ap.add_argument("--db", default="db/wh40k.sqlite")
     ap.add_argument("--wiki", default="wiki")
-    ap.add_argument("--pdf", default=str(DEFAULT_PDF))
+    ap.add_argument("--pdf", default=str(DEFAULT_PDF), help="Official English Core Rules PDF")
+    ap.add_argument("--zh-pdf", default=str(DEFAULT_ZH_PDF),
+                    help="Official Chinese Core Rules companion PDF")
     args = ap.parse_args()
-    rep = generate(Path(args.db), Path(args.wiki), Path(args.pdf))
+    rep = generate(Path(args.db), Path(args.wiki), Path(args.pdf),
+                   zh_pdf_path=Path(args.zh_pdf))
     print("官方核心技能条目 {}；基础词条 {}（通用 {} / 过渡期 {} / 单位特有 {}）".format(
         rep["core_rules_entries"], rep["keywords"],
         rep["groups"].get("universal", 0), rep["groups"].get("transitional", 0),

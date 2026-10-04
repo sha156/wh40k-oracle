@@ -349,6 +349,8 @@ def build_database(csv_dir: Path, db_path: Path,
 
     try:
         conn = sqlite3.connect(str(tmp_path))
+        cur = None
+        failed = True
         try:
             cur = conn.cursor()
             for ddl in ALL_DDL:
@@ -434,8 +436,22 @@ def build_database(csv_dir: Path, db_path: Path,
             if archived:
                 report.row_counts["source_archived_units"] = archived
             conn.commit()
+            failed = False
         finally:
-            conn.close()
+            # A live cursor can retain SQLite's file handle on Windows even after
+            # connection.close(). Release both before replace/unlink, including
+            # cursor creation failures, without masking the build's exception.
+            close_error = None
+            for resource in (cur, conn):
+                if resource is None:
+                    continue
+                try:
+                    resource.close()
+                except BaseException as exc:
+                    if close_error is None:
+                        close_error = exc
+            if close_error is not None and not failed:
+                raise close_error
         # 全部成功才替换正式库（Windows 上 os.replace 同卷原子）
         os.replace(str(tmp_path), str(db_path))
     except BaseException:

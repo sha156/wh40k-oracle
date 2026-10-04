@@ -2842,7 +2842,7 @@
 | core-rule | [先攻](core-rules/fights-first.md) | 拥有先攻的单位在近战阶段先于普通单位出手。 | 2026-07-26 |
 | core-rule | [冲锋](core-rules/charge.md) | 冲锋移动让单位扑进近战并获得先攻。 | 2026-07-11 |
 | core-rule | [冲锋阶段](core-rules/charge-phase.md) | 冲锋阶段逐个宣布冲锋、掷 2D6 冲锋骰并进行冲锋移动。 | 2026-07-11 |
-| core-rule | [劈砍](core-rules/cleave.md) | 劈砍是近战版的爆炸：打人堆越打越多，但要求这把武器的攻击只指定一个目标。 | 2026-07-26 |
+| core-rule | [劈砍](core-rules/cleave.md) | 劈砍按目标单位规模增加攻击骰，要求这把武器的全部攻击只选择一个目标。 | 2026-10-01 |
 | core-rule | [加速移动](core-rules/advance.md) | 加速移动用 D6 加速骰换取额外移动距离，代价是本回合行动受限。 | 2026-07-11 |
 | core-rule | [危险](core-rules/hazardous.md) | 危险武器威力不稳定，开火后要掷危险骰，可能反噬自身单位。 | 2026-07-11 |
 | core-rule | [双联](core-rules/twin-linked.md) | 双联武器共享火控系统，造伤骰可以重掷。 | 2026-07-11 |
@@ -2910,7 +2910,7 @@
 | core-rule | [爆炸](core-rules/blast.md) | 爆炸武器打人堆越打越多，目标每 5 个模型就多一份攻击骰。 | 2026-07-11 |
 | core-rule | [特殊保护](core-rules/invulnerable-save.md) | 特殊保护是无视 AP 的第二道保存线，11 版并入同一次保存骰判定。 | 2026-07-11 |
 | core-rule | [独行特工](core-rules/lone-operative.md) | 独行特工让刺客类单位在远距离上无法被敌人锁定。 | 2026-07-11 |
-| core-rule | [破敌重誓](core-rules/oath-of-moment.md) | 破敌重誓是星际战士军队规则：点名一个敌方单位，拥有本能力的模型攻击它时可以重投命中。 | 2026-09-21 |
+| core-rule | [破敌重誓](core-rules/oath-of-moment.md) | 破敌重誓是星际战士军队规则：点名一个敌方单位，拥有本能力的模型攻击它时可以重投命中。 | 2026-10-01 |
 | core-rule | [移动阶段](core-rules/movement-phase.md) | 移动阶段逐个为每个单位选择一种移动类型，援军也在此入场。 | 2026-07-11 |
 | core-rule | [突击](core-rules/assault.md) | 突击武器让单位加速后仍能开火，机动与火力兼得。 | 2026-07-11 |
 | core-rule | [精准](core-rules/precision.md) | 精准武器能从人堆里点名人物模型，猎杀高价值目标。 | 2026-07-11 |
@@ -2943,7 +2943,7 @@
 | core-rule | [飞行器](core-rules/aircraft.md) | 飞行器高速掠过战场：必须从战略预备切入、只做切入移动、回合末退回预备，且只能与飞行单位近战交手。 | 2026-07-23 |
 | core-rule | [骑乘](core-rules/mounted.md) | 骑乘是一个单位类型标记，用于标示骑乘坐骑或载具平台的近战步兵型单位，无独立通用规则。 | 2026-07-23 |
 | core-rule | [高耸](core-rules/towering.md) | 高耸标示极其高大的模型；即便站在地面层，也能对 12″ 内的地面目标享受俯冲射击的 BS 加成。 | 2026-07-23 |
-| core-rule | [黑暗契约](core-rules/dark-pact.md) | 混沌星际战士军队规则：向黑暗神明立约，冒领导力风险换武器增益。 | 2026-07-11 |
+| core-rule | [黑暗契约](core-rules/dark-pact.md) | 混沌星际战士军队规则：向黑暗神明立约，冒领导力风险换武器增益。 | 2026-10-01 |
 | stratagem | [ALL IN](core-rules/stratagems/all-in.md) | 0 CP、Fight phase、Strategic Ploy Stratagem。 | 2026-07-26 |
 | stratagem | [BATTLEFIELD COMMAND](core-rules/stratagems/battlefield-command.md) | 1 CP、Any phase、Strategic Ploy Stratagem。 | 2026-07-26 |
 | stratagem | [COMMAND RE-ROLL](core-rules/stratagems/command-re-roll-boarding-actions.md) | 1 CP、Any phase、Epic Deed Stratagem。 | 2026-07-26 |
