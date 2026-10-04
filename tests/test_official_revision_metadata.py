@@ -4,6 +4,7 @@ import json
 import sqlite3
 import subprocess
 import sys
+from contextlib import closing
 from pathlib import Path
 
 import pytest
@@ -24,12 +25,53 @@ def manifest(day="2026-01-01", letter="a", old="old", new="new"):
 
 def database(tmp_path):
     db = tmp_path / "synthetic.sqlite"
-    with sqlite3.connect(db) as conn:
+    # Commit/rollback before closing the parent target handed to the CLI child.
+    with closing(sqlite3.connect(db)) as conn, conn:
         conn.execute("CREATE TABLE units(id TEXT PRIMARY KEY)")
         conn.execute("INSERT INTO units VALUES ('one')")
         conn.execute("CREATE TABLE abilities(id TEXT PRIMARY KEY,text_zh TEXT)")
         conn.execute("INSERT INTO abilities VALUES ('rule','old')")
     return db
+
+
+@pytest.mark.parametrize("fail_insert", [False, True])
+def test_database_fixture_closes_real_handle_and_preserves_transaction(tmp_path, monkeypatch, fail_insert):
+    real_connect = sqlite3.connect
+    handles = []
+    failure = RuntimeError("fixture insert failed")
+
+    class Connection(sqlite3.Connection):
+        def execute(self, sql, *args, **kwargs):
+            if fail_insert and sql == "INSERT INTO abilities VALUES ('rule','old')":
+                raise failure
+            return super().execute(sql, *args, **kwargs)
+
+    def retained_connect(*args, **kwargs):
+        conn = real_connect(*args, **kwargs, factory=Connection)
+        handles.append(conn)
+        return conn
+
+    monkeypatch.setattr(sqlite3, "connect", retained_connect)
+    if fail_insert:
+        with pytest.raises(RuntimeError) as caught:
+            database(tmp_path)
+        assert caught.value is failure
+    else:
+        assert database(tmp_path) == tmp_path / "synthetic.sqlite"
+    assert len(handles) == 1
+    with pytest.raises(sqlite3.ProgrammingError, match="closed"):
+        handles[0].execute("SELECT 1")
+    db = tmp_path / "synthetic.sqlite"
+    with closing(real_connect(db)) as conn:
+        assert conn.execute("SELECT * FROM units").fetchall() == ([] if fail_insert else [("one",)])
+        if fail_insert:
+            assert not conn.execute("SELECT name FROM sqlite_master WHERE name='abilities'").fetchall()
+        else:
+            assert conn.execute("SELECT * FROM abilities").fetchall() == [("rule", "old")]
+    replacement = tmp_path / "replacement.sqlite"
+    replacement.write_bytes(db.read_bytes())
+    replacement.replace(db)
+    assert not replacement.exists()
 
 
 def snapshot(db):

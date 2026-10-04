@@ -89,8 +89,15 @@ def test_parse_quickref_too_few_entries_raises(tmp_path):
     target = tmp_path / "broken.pdf"
     doc.save(str(target))
     doc.close()
-    with pytest.raises(ValueError, match="Official Core Rules chapter 24 incomplete"):
-        parse_quickref(target)
+    # Supply both real PDF inputs so the malformed English headings, rather than
+    # a missing default Chinese companion, are the reason this call fails.
+    companion = tmp_path / "chinese.pdf"
+    with fitz.open() as doc:
+        page = doc.new_page()
+        page.insert_text((72, 72), "[爆炸] 24.05\n这是配对测试正文。", fontname="china-s")
+        doc.save(str(companion))
+    with pytest.raises(ValueError, match=r"Official Core Rules chapter 24 incomplete/changed \(English\)"):
+        parse_quickref(target, companion)
 
 
 # ── 分档 ──────────────────────────────────────────────────────────

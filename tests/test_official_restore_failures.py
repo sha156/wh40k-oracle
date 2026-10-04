@@ -1,4 +1,5 @@
 """Disposable pipeline/CLI regressions; every source declaration is synthetic."""
+from contextlib import closing
 import json
 import sqlite3
 import subprocess
@@ -12,7 +13,9 @@ from db_compile import source_reconcile, update
 
 def _fixture(tmp_path, bad=False):
     db = tmp_path / "trial.sqlite"
-    with sqlite3.connect(db) as conn:
+    # The transaction context does not close SQLite's target handle; release it
+    # before the CLI child atomically replaces this file on Windows.
+    with closing(sqlite3.connect(db)) as conn, conn:
         conn.execute("CREATE TABLE abilities(id TEXT PRIMARY KEY, text_zh TEXT)")
         conn.executemany("INSERT INTO abilities VALUES (?, ?)",
                          [("one", "old"), ("two", "drift" if bad else "old")])
