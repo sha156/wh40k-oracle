@@ -141,6 +141,43 @@ def test_previous_canonical_identity_drift_aborts_atomic_build(trial, field):
     _rename(cfg.db)
 
 
+@pytest.mark.parametrize("binding_index", [0, 1])
+@pytest.mark.parametrize("raw", [
+    "null", "[]", "false", "0", '"unknown"', "{}", None,
+    '{"mfm":[]}', '{"items":null}', '{"mfm":null}', "{",
+])
+def test_existing_malformed_prior_price_aborts_atomic_build(trial, binding_index, raw):
+    cfg, data, _ = trial
+    _seed(trial, "official")
+    uid = data["records"][binding_index]["canonical"]["id"]
+    with closing(sqlite3.connect(cfg.db)) as c, c:
+        c.execute("UPDATE units SET points_json=? WHERE id=?", (raw, uid))
+    before = cfg.db.read_bytes()
+    # JSON null must not masquerade as the missing-row sentinel. Neighboring
+    # malformed evidence must also reject before the builder replaces the DB.
+    expected = ValueError if raw == "null" else (ValueError, TypeError, AttributeError)
+    with pytest.raises(expected):
+        build.build_database(cfg.csv_dir, cfg.db, historical_mfm_snapshot=cfg.historical_mfm_snapshot)
+    assert cfg.db.read_bytes() == before and not cfg.db.with_suffix(".tmp.sqlite").exists()
+    _rename(cfg.db)
+
+
+@pytest.mark.parametrize("binding_index", [0, 1])
+def test_genuinely_absent_prior_identity_restores_verified_history(trial, binding_index):
+    cfg, data, _ = trial
+    _seed(trial, "official")
+    uid = data["records"][binding_index]["canonical"]["id"]
+    with closing(sqlite3.connect(cfg.db)) as c, c:
+        c.execute("DELETE FROM units WHERE id=?", (uid,))
+        c.execute("DELETE FROM datasheets WHERE id=?", (uid,))
+    result = build.build_database(cfg.csv_dir, cfg.db, historical_mfm_snapshot=cfg.historical_mfm_snapshot)
+    assert result.historical_prices["restored"] == [b["canonical"]["id"] for b in data["records"]]
+    assert _prices(cfg.db) == {
+        b["canonical"]["id"]: mfm_history._historical_payload(b) for b in data["records"]
+    }
+    _rename(cfg.db)
+
+
 @pytest.mark.parametrize("field", ["points", "cost", "fetched_at", "future_capture", "source_url", "tier", "history_sha", "current", "checked_at"])
 def test_prior_official_price_and_provenance_mismatch_aborts_before_replacement(trial, field):
     cfg, data, _ = trial

@@ -314,3 +314,81 @@ Tests cover repeated clean rebuilds, exact five restorations, source/canonical/n
 Preserve eligible reviewed historical official prices/provenance before skeleton replacement, validate them against the actual dated retained September 14 source, and let new current prices take precedence. Then attach exact source/canonical/faction identities to newly generated Black Library documents and prove copied rendering emits the legitimate GK source once. Existing Servitor UUID attribution remains unresolved: neither active UUID was assigned to AdM, deleted or retagged. Scheduled stage-only implementation remains a separate run. Full copied objective acceptance, scoped GNHF commits/clean-tree verification, independent host review and publication remain pending.
 
 Duplicate-checked local learning/error handoff records accompany this slice; shared repository indexes and commit explanations remain for root publication after the actual GNHF commit exists. No commit ID for this uncommitted candidate is invented.
+
+
+## Iteration 4: host-confirmed JSON-null prior-price guard
+
+The blocking available-prior JSON-null defect is corrected against the initially
+clean exact parent `61b2231b575cb81b451c566e1df1a4c89ecdb373`. An existing canonical
+row whose `points_json` is the JSON text `null` previously decoded to Python
+`None`; `_prior_price` interpreted that as an absent identity and granted historical
+restoration. `_identity` now requires existing-row decoded JSON to be an object,
+raising `ValueError` before the sentinel can escape. Only a genuinely missing
+canonical row returns `None`. No source authority is inferred from malformed
+available evidence.
+
+The runtime diff changes only `_identity` (five added lines, one replaced return).
+The retained bindings, raw parser, canonical/datasheet/keyword guards, from-price
+checks, prior/current ledger guards, transaction, builder, update, document
+attribution and source boundary remain unchanged. New repository tests cover both
+binding positions with JSON null, list, boolean, number, string, empty object,
+SQL NULL, malformed MFM/items and invalid JSON. They invoke the actual builder,
+require the original database to remain byte-exact, require temporary-file cleanup
+and prove SQLite handles are released through actual Windows rename. Positive
+controls remove either prior identity and restore the complete verified history.
+
+All new frozen source, proof copies, caches and temporary trials are under
+`D:/Project/py/RAG/db_sources/rebuild-preservation-owned/20261004/iteration-04-null-guard/`.
+The original host proof remains byte-exact in its owned directory and in
+`original-host-proof/`: 25 passed / one JSON-null failure / zero skips.
+`parent-freeze.json` and `candidate-freeze.json` hold 62 source/test files from
+exact 61b; their runtime difference is only `mfm_history.py`, and paired tests use
+identical new test bytes. The real raw controls retain the exact September
+manifest and HTML hashes documented above, parsing all 267 source rows. Tiny
+trial CSVs/databases are explicit test inputs, not a new full-CSV/full-asset audit.
+
+| Final XML evidence | Passed | Failed | Errors | Skipped |
+|---|---:|---:|---:|---:|
+| `parent-new.xml`, same 54 history regressions | 52 | 2 (JSON null only) | 0 | 0 |
+| `candidate-new.xml` | 54 | 0 | 0 | 0 |
+| `parent-realraw.xml`, same 29 retained-raw controls | 28 | 1 (JSON null only) | 0 | 0 |
+| `candidate-realraw.xml` | 29 | 0 | 0 | 0 |
+| `focused-controls.xml`, existing lifecycle/critical restoration/MFM/update controls | 45 | 0 | 0 | 0 |
+
+The actual-old-database JSON-null build rejects before atomic replacement and
+leaves old bytes exact with handles released. Actual retained-raw positive controls
+restore Pedro 80 / Armour 155 when either prior row is genuinely absent, and
+preserve prior valid official history on two repeated builds. Newer current
+ledger, payload/source fingerprint, caller transaction/rollback, cancellation,
+missing-raw warning and critical-abort controls remain passing. The retained
+initial 26-case raw run also passes; it is included in the final 29-case run,
+not added to the final 128-check total. `verification.json` reconciles every XML
+node, verifies null-only parent/candidate differences, unchanged frozen modules,
+raw/proof immutability and the intended file scope.
+
+Python 3.11 compilation and Python 3.9 grammar checks pass with the specified
+existing full-stack interpreter. Ruff, Black, mypy and pylint are unavailable;
+none was installed. Generic and Python reviews approve the exact changed guard
+with no findings in `generic-review.md` and `python-review.md` under this proof
+root. Reviewed helper SHA-256:
+`f1592bf82334aef512103dd60e8d80bb55a7aad8c14a776aa52dcfcc3bc1577b`;
+reviewed test SHA-256:
+`6b1ef75541846f1894e9b559dde5f3233edadf818364be2b7840d5cac967d4b5`.
+
+**Whitespace qualification of the earlier report:** plain complete-family
+`git diff --check 1c726e65a1c0e276c39b7584417a1e74f96e9c3e` exits 2 with
+2,272 CRLF trailing-whitespace diagnostics in the existing binding JSON files.
+The complete family passes with explicit `git -c core.whitespace=cr-at-eol diff
+--check` against that same parent. The immediate db494-to-61b family has 136
+of those inherited diagnostics. The minimal new slice against 61b passes both
+plain and explicit-policy checks. No binding byte normalization was performed;
+the earlier unqualified whitespace-pass statement must be read with this policy.
+
+The final intended GNHF commit contains only `db_compile/mfm_history.py`,
+`tests/test_mfm_rebuild_history.py` and this appended report; the index is empty
+and there are no untracked checkout files. GNHF owns the commit. No commit ID,
+merge, push, deployment, full-project acceptance or fresh large asset audit is
+claimed. All finite child processes exited; no background service was started.
+Deduplicated learning/error additions append to the existing historical MFM
+records; shared indexes and unrelated/concurrent notes remain untouched, with
+publication reserved for root.

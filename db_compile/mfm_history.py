@@ -47,7 +47,11 @@ def _identity(conn, binding):
     ).fetchone()
     if sheet is None or dict(zip(("name", "faction_id", "source_id", "link"), sheet)) != binding["datasheet"]:
         raise ValueError("Historical MFM datasheet identity changed: " + uid)
-    return json.loads(unit[4] or "{}")
+    payload = json.loads(unit[4] or "{}")
+    # Only a missing canonical row may use None as the absent-identity sentinel.
+    if not isinstance(payload, dict):
+        raise ValueError("Historical MFM price payload is not an object: " + uid)
+    return payload
 
 
 def _verified_source(snapshot_dir, bindings):
