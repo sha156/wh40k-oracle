@@ -278,3 +278,135 @@ def test_legacy_absent_and_empty_registry_payloads_and_unknown_errors_unchanged(
         conn.execute("DELETE FROM models WHERE unit_id=?", (OTHER,))
     res = resolved(db)
     assert not res["ok"] and res["reason"] == "not_found"
+
+
+def failure_records(swapped=False):
+    """Two dated bodies with independent prices and deliberately long provenance."""
+    statuses = ["historical_snapshot", "newer_full_unavailable"]
+    if swapped:
+        statuses.reverse()
+    records = [for_side(status, True, side) for status, side in zip(statuses, (UID, OTHER))]
+    for record in records:
+        sources = record["body"]["sources"] + record["points"]["sources"]
+        if record["body"]["retained_snapshot"]:
+            sources += record["body"]["retained_snapshot"]["sources"]
+        for index, src in enumerate(sources):
+            subject = ("current-price" if src in record["points"]["sources"]
+                       else record["identity"]["unit_id"])
+            src["url"] += "/" + (subject + f"-source-{index}-") * 160
+    return records
+
+
+def failure_options(case):
+    options = dict(OPTIONS)
+    if case == "attacker-invalid-loadout":
+        options["loadout"] = [("Wrong weapon", 1)]
+    elif case == "attacker-wrong-phase":
+        options["phase"] = "melee"
+    elif case == "defender-invalid-loadout":
+        options["defender_loadout"] = [("Wrong weapon", 1)]
+    elif case == "defender-wrong-phase":
+        options["reverse_phase"] = "melee"
+    else:
+        raise AssertionError(case)
+    return options
+
+
+def failure_result(db, options, caller):
+    if caller == "tool":
+        return resolved(db, options)
+    return run_simulation(db, UID, OTHER, options).model_dump()
+
+
+def assert_failure_qualifiers(result, records):
+    from db_compile.coverage_notes import describe_coverage
+    assert not result["ok"] and not result.get("report")
+    for side, record in zip(("attacker", "defender"), records):
+        qualifier = f"{side}: {describe_coverage(record)}"
+        assert result["note"].count(qualifier) == 1
+        whole_note(result["note"], record)
+
+
+@pytest.mark.parametrize("caller", ["tool", "web"])
+@pytest.mark.parametrize("swapped", [False, True])
+@pytest.mark.parametrize("case", [
+    "attacker-invalid-loadout", "attacker-wrong-phase",
+    "defender-invalid-loadout", "defender-wrong-phase",
+])
+def test_ordinary_failure_retains_both_whole_qualifiers(tmp_path, caller, swapped, case):
+    db = database(tmp_path)
+    records = failure_records(swapped)
+    install(db, records)
+    before = db.read_bytes()
+    result = failure_result(db, failure_options(case), caller)
+    assert result["weapon_pool"] and result["model_tiers"] == [{"models": 1, "cost": 85}]
+    expected = ("defender_" if case.startswith("defender") else "") + (
+        "loadout_required" if case.endswith("invalid-loadout") else "no_weapon_for_phase")
+    assert result["reason"] == expected
+    assert_failure_qualifiers(result, records)
+    assert db.read_bytes() == before
+
+
+@pytest.mark.parametrize("caller", ["tool", "web"])
+@pytest.mark.parametrize("boundary", [
+    "attacker-missing", "target-missing", "reverse-missing", "execution",
+    "attacker-no-phase-pool", "defender-no-phase-pool",
+])
+def test_other_post_coverage_failures_keep_notes(tmp_path, monkeypatch, caller, boundary):
+    db = database(tmp_path)
+    records = failure_records()
+    install(db, records)
+    import engines.simulator.assembly as assembly
+    import engines.simulator.profile as profile
+    import engines.simulator.engine as engine
+    options = dict(OPTIONS)
+    if boundary in ("attacker-missing", "reverse-missing"):
+        original = assembly.assemble_attacker
+        missing = UID if boundary == "attacker-missing" else OTHER
+
+        def controlled_assembly(db_path, unit_id, **kwargs):
+            return None if unit_id == missing else original(db_path, unit_id, **kwargs)
+
+        monkeypatch.setattr(assembly, "assemble_attacker", controlled_assembly)
+    elif boundary == "target-missing":
+        monkeypatch.setattr(profile, "load_target", lambda *args, **kwargs: None)
+    elif boundary == "execution":
+        def fail_execution(*args, **kwargs):
+            raise RuntimeError("controlled execution failure after supported bodies")
+
+        monkeypatch.setattr(engine, "simulate_matchup", fail_execution)
+    else:
+        uid = UID if boundary.startswith("attacker") else OTHER
+        with closing(sqlite3.connect(db)) as conn, conn:
+            conn.execute("DELETE FROM weapons WHERE unit_id=? AND range != 'Melee'", (uid,))
+        options.pop("loadout" if uid == UID else "defender_loadout")
+        options["reverse"] = True
+    before = db.read_bytes()
+    result = failure_result(db, options, caller)
+    assert_failure_qualifiers(result, records)
+    if boundary == "execution":
+        assert "controlled execution failure" in result["note"]
+    elif boundary.endswith("no-phase-pool"):
+        assert result["weapon_pool"] and result["model_tiers"]
+    else:
+        assert result["reason"] == "not_found"
+    assert db.read_bytes() == before
+
+
+@pytest.mark.parametrize("empty_registry", [False, True])
+@pytest.mark.parametrize("case", [
+    "attacker-invalid-loadout", "attacker-wrong-phase",
+    "defender-invalid-loadout", "defender-wrong-phase",
+])
+def test_absent_declarations_do_not_invent_failure_qualifiers(tmp_path, empty_registry, case):
+    db = database(tmp_path)
+    if empty_registry:
+        with closing(sqlite3.connect(db)) as conn, conn:
+            conn.execute("CREATE TABLE source_coverage_registry(identity_key TEXT PRIMARY KEY,record_json TEXT NOT NULL)")
+    before = db.read_bytes()
+    for caller in ("tool", "web"):
+        result = failure_result(db, failure_options(case), caller)
+        assert not result["ok"] and not result.get("report")
+        assert "Source coverage:" not in result["note"]
+        assert not result.get("warning")
+    assert db.read_bytes() == before

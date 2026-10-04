@@ -352,3 +352,163 @@ final-candidate-hashes.json. No empty notes, new issue/decision record, correcti
 commit explanation or harness promotion was created. The consumer correction
 remains uncommitted; GNHF owns commits and root retains knowledge publication.
 No manual staging, commit, push, merge or deployment occurred during this hook.
+
+## Ordinary simulation failure qualifier correction — October 4
+
+This bounded correction starts from clean exact
+`631dea03204f092f582555d4786846357dfb4773` on
+`codex/release-source-coverage-consumers`. The independent Python review at
+`D:/Project/py/RAG/db_sources/release-check-20260930/source-coverage-consumers/host-python-review-631dea032/VERDICT.md`
+identified ordinary assembly failures that exposed dated weapon pools and model
+tiers without the collected source qualifiers. These were failures with no
+numerical report; they were not incorrect numerical simulations.
+
+### Behavior and ownership
+
+The existing `simulate_combat_resolved` coverage guard still resolves both
+subjects through `db_compile.coverage_notes.body_support` before assembly. A
+local failure-note adapter now appends those already-collected whole qualifiers
+to all ten ordinary post-guard failure returns: attacker/target/reverse loading,
+both sides' absent phase weapons, invalid or required loadouts, explicitly
+wrong-phase loadouts, and the existing execution exception. The original failure
+explanation remains first. Each declared subject retains its exact identity,
+body status/scope, body or retained effective date, full provenance and separate
+current-price qualification. Nothing truncates these notes.
+
+The actual web wrapper already projects the complete `note`; its source remains
+byte-identical. The existing simulator failure panels consume `resp.note`
+(`web/src/app/simulator/page.tsx`, loadout panels and generic failure paragraph).
+Therefore the correction uses the established failure surface, rather than
+depending on a warning rendered only for successful results. No new response
+field, public argument, schema, capability or frontend change is needed.
+
+No declaration means no appended note, new warning or invented qualifier. The
+unsupported-body denial, invalid-declaration fail-closed returns and success
+warning path are unchanged. Removing only the nested adapter and its ten calls
+from the candidate AST reproduces the entire exact-base `agent/tools.py` AST,
+including all numerical computation, model/default/DSL logic, public tool
+schemas, signatures and other owners' functions. Central helpers, registry,
+history, source-only adapters, AgentLoop, price resolver, roster and all simulator
+modules are unchanged.
+
+### Paired evidence and verification
+
+All evidence and disposable SQLite/basetemp directories belong to
+`D:/Project/py/RAG/db_sources/source-coverage-consumers/failure-qualifier-correction/`.
+Runs use the prescribed read-only Python 3.11.9 interpreter:
+
+```text
+D:/Project/py/RAG/db_sources/release-check-20260930/python-security-worktree-environments/full-stack-windows-transformers5104/Scripts/python.exe
+```
+
+Bytecode, pytest cache, plugin autoload and online model retrieval are disabled.
+The tests call real temporary SQLite and local simulator consumers. No provider,
+network, production database, asset generation or service is used.
+
+| Evidence | Passed | Failed | Errors | Skipped |
+|---|---:|---:|---:|---:|
+| Corrected exact-base paired qualifier matrix plus absent controls | 8 | 16 | 0 | 0 |
+| Candidate, same paired matrix and controls | 24 | 0 | 0 | 0 |
+| Candidate central/calculation matrix, including 36 new cases | 91 | 0 | 0 | 0 |
+| Final scoped regression and existing public tool registry controls | 306 | 0 | 0 | 73 |
+| Original independent host controls, rerun on this correction | 12 | 0 | 0 | 0 |
+
+The original 38 calculation and 17 central cases are explicitly reconciled by
+node name in final regression XML: all 55 pass. Sixteen new positive qualifier
+assertions cover invalid loadout and wrong phase for attacker and reverse
+defender, both historical/retained subject arrangements, and actual resolved
+tool/web callers. Both notes contain complete long URLs, body dates and separate
+current-price provenance exactly once. Twelve further cases cover both clients
+at attacker/target/reverse loading failures, controlled execution failure and
+actual no-phase weapon pools. Eight absent/empty-registry cases call both clients
+and reject invented qualifiers. No new skips or exclusions are introduced.
+
+`base-payloads.json` and `candidate-payloads.json` preserve actual complete
+payloads. Twenty-four paired failed tool/web payloads include both dated
+arrangements and current-full controls. Their only changed field is `note`;
+reasons, weapon pools, model tiers, errors, warning fields and absence of numerical
+reports remain identical. Sixteen absent/empty-registry payload entries, including
+ordinary failures, missing loadouts and unknown IDs, are byte-identical. Fifteen
+successful forward/reverse and roster validation/critique entries, including
+dated and current bodies, are byte-identical. Public tool specifications, every
+registered function signature, the resolved signature and representative
+sanitized/dropped-argument payloads are byte-identical. These are bounded paired
+controls, not a claim of every possible runtime or platform outcome.
+
+The host-control copy changes only its snapshot-path assertion to this exact
+candidate checkout; all 12 original behavioral cases and assertions remain.
+Original reviewer files are untouched. Static Ruff/mypy/pylint/Black/Bandit remain
+absent in the fixed environment; none was installed. `git diff --check` passes
+for this correction. Existing historical committed whitespace and old
+`iteration-02/final-focused.xml` accounting are not rewritten: that older XML
+has 51 cases, while its `final-regression.xml` and this correction's independently
+reconciled final XML contain the actual original 55.
+
+All attempts are retained. Initial `paired-base.xml` and
+`candidate-focused.xml` failed during new fixture installation because the two
+subjects' long price URLs did not share the fixture's single exact price ledger
+source. They do not count as behavioral paired evidence. The fixture now uses a
+shared long current-price URL and distinct long body sources. The meaningful
+pair is `paired-base-corrected.xml`, with 16 missing-qualifier failures and eight
+passing absent controls; `paired-candidate.xml` passes the same 24 cases.
+`candidate-focused-corrected.xml` passes 91. The first
+combined regression encountered Windows `WinError 1337` while pytest sought a
+common collection root across C: and the external D: host-control file; its log
+and XML remain. The corrected regression runs checkout tests separately, and
+host controls with explicit evidence root/confcutdir. Final artifacts are
+`final-regression-corrected.xml` and `host-controls.xml`. Existing 73 skips are
+the isolated checkout's absent `wh40k.sqlite` guards; full node IDs and reasons
+are preserved in `preservation-and-accounting.json`.
+
+### Preservation, knowledge handoff and remaining gate
+
+`protected-before.json` and `protected-after.json` retain exact SHA-256 digests
+for all 5,722 initially tracked files. Only the simulation failure-note region,
+focused calculation tests and this appended report section change; all 5,719
+other tracked files are identical. The reproducible frozen-base loader, exact
+Git blobs, payload probe, AST verifier and scoped diff remain with the evidence.
+Other owners' files, existing staged content and orchestrator notes are untouched.
+
+The verified lesson is recorded here without duplicating prior knowledge notes:
+when an ordinary failure exposes dated body choices, disclosure must use its
+rendered failure note; a complete qualifier on successful warnings alone does
+not cover that failure. Exact source and independent price qualifiers remain
+atomic even when much longer than ordinary note budgets. Root retains any
+cross-repository knowledge publication and independent review.
+
+This candidate is uncommitted and ready for GNHF's scoped commit and root's
+independent review. No manual staging, commit, push, merge, release or deployment
+is claimed. No server, watcher or browser was started; all test processes finish.
+The loop's full stop condition still requires the orchestrator-owned commit.
+Production-asset/native acceptance, whole-body parity and the other root-owned
+integration gates remain outside this correction.
+
+### Explicit stop-hook handoff for the ordinary failure correction
+
+The hook-authorized handoff first searched existing project, learning and error
+notes. The checkpoint and roadmap at `D:/Project/devlog/wh40k-oracle/` now record
+this exact failure-disclosure correction, its paired/regression counts and the
+remaining GNHF commit/root independent-review gates. The existing learning
+decision `C:/Users/Administrator/learn-notes/decisions/20261001-separate-transactional-source-coverage.md`
+is extended with the rendered failure-note finding; its existing index entry is
+updated rather than duplicated, and original frontmatter/content are retained.
+
+Three distinct resolved issues have template-based English records and index
+entries: `rag/20261004-error-01-simulation-failure-drops-source-qualifiers.md`,
+`rag/20261004-error-02-shared-price-provenance-fixture.md` and
+`common/20261004-error-01-pytest-cross-drive-collection-root.md` under
+`C:/Users/Administrator/error-notes/`. They preserve the recorded errors, actual
+reproduction, attempted fixes, verified resolution, evidence and scope limits.
+The qualifier omission is separate from the previously documented early
+validation-order issue, so the latter record is not relabeled or overwritten.
+
+Original note backups, before hashes, intended-file inventory, observed shared
+index diffs and final verification are under the correction evidence `handoff/`.
+All three knowledge-repository Git indexes are byte-identical. Concurrent
+price-selector continuations in the separate price decision/error notes and
+their README indexes were detected, recorded and left intact; no concurrent
+content was reverted. This handoff changes only its eight intended knowledge
+files and this report continuation. Application implementation/test bytes remain
+as finally validated. No new harness rule is warranted, and no real correcting
+commit yet exists for a `commits/` explanation. No staging, commit, push,
+publication or background service occurs; root retains intended publication.
