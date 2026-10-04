@@ -216,6 +216,18 @@ def run_simulation(
     执行异常）都以 ok=False 的结构化响应返回，前端据 reason 分流。
     """
     from agent.tools import simulate_combat_resolved
+    from contextlib import closing
+    from db_compile.coverage_notes import CoverageError, coverage_note
+
+    # A missing row can be an invalid declared identity, not an ordinary 404.
+    # Qualifiers/warnings remain owned by the central simulation consumer.
+    try:
+        with closing(sqlite3.connect(str(db_path))) as conn:
+            for uid in (attacker_id, defender_id):
+                coverage_note(conn, unit_id=uid)
+    except CoverageError as exc:
+        return SimResponse(ok=False, reason="coverage_invalid", note=str(exc),
+                           attacker=attacker_id, defender=defender_id)
 
     name_a = lookup_unit_name(db_path, attacker_id)
     name_d = lookup_unit_name(db_path, defender_id)

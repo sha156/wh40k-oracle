@@ -961,6 +961,38 @@ def simulate_combat_resolved(
         return {"ok": False, "modeled": True, "tool": "simulate_combat",
                 "note": "wh40k.sqlite 不存在，需先跑 db_compile build"}
 
+    # Both forward and reverse bodies must be qualified before stale SQL rows
+    # enter assembly. The price ledger never certifies these body fields.
+    import sqlite3
+    from contextlib import closing
+    from db_compile.coverage_notes import CoverageError, body_support
+    coverage_warnings = []
+    reverse_body = bool(options.get("reverse") or options.get("defender_loadout"))
+    try:
+        with closing(sqlite3.connect(str(db_path))) as conn:
+            decisions = []
+            for side, subject in (("attacker", a), ("defender", d)):
+                fields = {"models", "keywords", "composition", "abilities"}
+                if side == "attacker" or reverse_body:
+                    fields.update(("weapons", "equipment"))
+                decisions.append((side, body_support(
+                    conn, unit_id=subject["canonical_id"], required_fields=fields)))
+            for side, decision in decisions:
+                if decision.note:
+                    coverage_warnings.append(f"{side}: {decision.note}")
+            if any(not decision.supported for _, decision in decisions):
+                note = " ".join(coverage_warnings)
+                return {"ok": False, "modeled": False, "tool": "simulate_combat",
+                        "reason": "body_unverified", "note": note, "warning": note}
+    except CoverageError as exc:
+        return {"ok": False, "modeled": False, "tool": "simulate_combat",
+                "reason": "coverage_invalid", "note": str(exc)}
+
+    def _failure_note(note: str) -> str:
+        # Failure clients render note, while warning is a success-only surface.
+        # Keep the collected whole qualifiers with any exposed body choices.
+        return note + " " + " ".join(coverage_warnings) if coverage_warnings else note
+
     try:
         from dataclasses import replace as _replace
 
@@ -1001,17 +1033,17 @@ def simulate_combat_resolved(
                                 loadout=loadout, phase=phase)
         if asm is None:
             return {"ok": False, "modeled": True, "tool": "simulate_combat",
-                    "reason": "not_found", "note": f"单位 {a['name_en']} 无法装载"}
+                    "reason": "not_found", "note": _failure_note(f"单位 {a['name_en']} 无法装载")}
         # 该阶段压根没有可开火武器 → 不是"该装配"而是"该换阶段"：要求 loadout 无解
         # （只有近战武器的单位在射击阶段填任何件数都是 0 攻击）
         if asm.no_phase_weapon:
             return {"ok": False, "modeled": True, "tool": "simulate_combat",
-                    "reason": "no_weapon_for_phase", "note": asm.note,
+                    "reason": "no_weapon_for_phase", "note": _failure_note(asm.note),
                     "weapon_pool": [w.name_en for w in asm.full_pool],
                     "model_tiers": asm.tiers, "errors": asm.errors}
         if asm.ambiguous or asm.attacker is None:
             return {"ok": False, "modeled": True, "tool": "simulate_combat",
-                    "reason": "loadout_required", "note": asm.note,
+                    "reason": "loadout_required", "note": _failure_note(asm.note),
                     "weapon_pool": [w.name_en for w in asm.weapon_pool],
                     "model_tiers": asm.tiers, "errors": asm.errors}
         # 显式 loadout 与阶段不匹配（如手填纯近战武器打射击阶段）→ 序列层会滤成 0 攻击，
@@ -1022,7 +1054,7 @@ def simulate_combat_resolved(
             return {
                 "ok": False, "modeled": True, "tool": "simulate_combat",
                 "reason": "no_weapon_for_phase",
-                "note": (f"loadout 里没有{_here}阶段能开火的武器"
+                "note": _failure_note(f"loadout 里没有{_here}阶段能开火的武器"
                          f"（{'、'.join(w.name_en for w in asm.attacker.loadout[:6])}"
                          f" 全是{_other}武器），期望伤害必为 0。请改装配或切到{_other}阶段。"),
                 "weapon_pool": [w.name_en for w in asm.weapon_pool],
@@ -1032,7 +1064,7 @@ def simulate_combat_resolved(
                              models=options.get("defender_models"))
         if target is None:
             return {"ok": False, "modeled": True, "tool": "simulate_combat",
-                    "reason": "not_found", "note": f"守方 {d['name_en']} 无法装载"}
+                    "reason": "not_found", "note": _failure_note(f"守方 {d['name_en']} 无法装载")}
 
         # P7：攻方阵营 DSL 条目——先过选择层（分队匹配 + 战略/增强点名，PR3/PR4），
         # 再按开关注入（stance 同源 options 点亮，条件 tag 放行），注记随后挂进 report
@@ -1123,6 +1155,7 @@ def simulate_combat_resolved(
         auto_warn = f"攻方自动装配：{asm.note}" if asm.auto_assembled else None
         warn_parts: List[Optional[str]] = [a.get("warning"), d.get("warning"),
                                            gtg_warn, auto_warn]
+        warn_parts.extend(coverage_warnings)
         if cover_on and not stance.target_in_cover:
             stance = _replace(stance, target_in_cover=True)
         if def_effects:
@@ -1153,18 +1186,18 @@ def simulate_combat_resolved(
             if d_asm is None or a_as_target is None:
                 return {"ok": False, "modeled": True, "tool": "simulate_combat",
                         "reason": "not_found",
-                        "note": f"守方 {d['name_en']} 反打装载失败"}
+                        "note": _failure_note(f"守方 {d['name_en']} 反打装载失败")}
             # 守方在反打阶段无可开火武器 → 装配也救不了，显式失败并指路（不静默退回单向）
             if d_asm.no_phase_weapon:
                 return {"ok": False, "modeled": True, "tool": "simulate_combat",
                         "reason": "defender_no_weapon_for_phase",
-                        "note": f"守方反打：{d_asm.note}（或关掉「守方反打」只看单向）",
+                        "note": _failure_note(f"守方反打：{d_asm.note}（或关掉「守方反打」只看单向）"),
                         "weapon_pool": [w.name_en for w in d_asm.full_pool],
                         "model_tiers": d_asm.tiers, "errors": d_asm.errors}
             # 守方多武器且未指明 → 显式要求装配（禁止静默退回单向：违反诚实降级纪律）
             if d_asm.ambiguous or d_asm.attacker is None:
                 return {"ok": False, "modeled": True, "tool": "simulate_combat",
-                        "reason": "defender_loadout_required", "note": d_asm.note,
+                        "reason": "defender_loadout_required", "note": _failure_note(d_asm.note),
                         "weapon_pool": [w.name_en for w in d_asm.weapon_pool],
                         "model_tiers": d_asm.tiers, "errors": d_asm.errors}
             # 显式守方 loadout 与反打阶段不匹配 → 同攻方，显式失败不发全 0 反打
@@ -1172,7 +1205,7 @@ def simulate_combat_resolved(
                 return {
                     "ok": False, "modeled": True, "tool": "simulate_combat",
                     "reason": "defender_no_weapon_for_phase",
-                    "note": (f"守方反打：defender_loadout 里没有"
+                    "note": _failure_note(f"守方反打：defender_loadout 里没有"
                              f"{'近战' if rev_phase == 'melee' else '射击'}阶段能开火的武器"
                              f"（{'、'.join(w.name_en for w in d_asm.attacker.loadout[:6])}），"
                              f"反打期望伤害必为 0"),
@@ -1209,7 +1242,7 @@ def simulate_combat_resolved(
     except Exception as exc:   # noqa: BLE001 — 显式暴露，不静默吞
         import traceback
         return {"ok": False, "modeled": True, "tool": "simulate_combat",
-                "note": f"模拟执行异常: {exc}", "trace": traceback.format_exc()[-800:]}
+                "note": _failure_note(f"模拟执行异常: {exc}"), "trace": traceback.format_exc()[-800:]}
 
 
 def validate_roster(roster_text: str) -> Dict[str, Any]:

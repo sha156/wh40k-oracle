@@ -406,6 +406,8 @@ def format_answer(
 def _derive_entity_card(recorder: TraceRecorder, hot_weapon: Optional[str]):
     """E6 兵牌：优先走 codex.unit_card 完整装配（能力表/装备/受损档与图鉴一致）；
     codex 拿不到（DB 缺/测试注入的假 datasheet）再退回工具结果直映射。"""
+    from db_compile.coverage_notes import CoverageError
+
     ds_res = recorder.get_result("get_datasheet") or {}
     ds = ds_res.get("datasheet") if isinstance(ds_res, dict) else None
     unit_id = str((ds or {}).get("unit_id") or "")
@@ -419,13 +421,36 @@ def _derive_entity_card(recorder: TraceRecorder, hot_weapon: Optional[str]):
                 card = codex.unit_card(db_path, unit_id, hot_weapon=hot_weapon)
                 if card is not None:
                     return card
+        except CoverageError:
+            # An explicit invalid declaration cannot become a plausible stale
+            # tool card through the ordinary optional-card fallback.
+            raise
         except Exception:
             pass  # 完整装配失败不挡答案，退回直映射
     return build_entity_card(ds_res, hot_weapon)
 
 
 def _evidence_digest(recorder: TraceRecorder, limit: int = 2000) -> str:
-    """把录到的工具返回压成给结构化 LLM 的证据摘要（截断防超长）。"""
+    """Budget bulk evidence; whole per-subject coverage notes are never cut.
+
+    limit is a soft bulk budget when mandatory qualifiers exceed it. The agent
+    run already bounds calls; a hard cut here could certify the wrong subject
+    by dropping its retained date, exact scope or independent price boundary.
+    """
+    qualifiers: List[str] = []
+    seen = set()
+    for name in recorder.last_result:
+        for result in recorder.get_results(name):
+            if not isinstance(result, dict):
+                continue
+            ds = result.get("datasheet")
+            containers = [result] + ([ds] if isinstance(ds, dict) else [])
+            for container in containers:
+                note = container.get("source_note")
+                if (isinstance(note, str) and "Source coverage:" in note
+                        and note not in seen):
+                    qualifiers.append("[source coverage] " + note)
+                    seen.add(note)
     lines: List[str] = []
     for record in _historical_records(recorder):
         summary = {key: record.get(key) for key in (
@@ -451,7 +476,11 @@ def _evidence_digest(recorder: TraceRecorder, limit: int = 2000) -> str:
             blob = str(res)
         lines.append("[{}] {}".format(name, blob[:600]))
     digest = "\n".join(lines)
-    return digest[:limit]
+    if not qualifiers:
+        return digest[:limit]
+    required = "\n".join(qualifiers)
+    remaining = max(0, limit - len(required) - 1)
+    return required + (("\n" + digest[:remaining]) if remaining else "")
 
 
 def run_and_format(

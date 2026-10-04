@@ -136,6 +136,10 @@ def lookup_datasheet(db_path, unit_id: str) -> Optional[Datasheet]:
     """按 canonical unit_id 组装完整属性块；查不到返回 None（诚实报缺，不编造）。"""
     conn = sqlite3.connect(str(db_path))
     try:
+        from db_compile.coverage_notes import coverage_note
+        # Validate an explicit declaration before parsing any legacy rows or
+        # returning an absent body. Neither path may hide a broken identity.
+        reviewed_note = coverage_note(conn, unit_id=unit_id)
         row = conn.execute(
             "SELECT u.name_en, u.name_zh, u.points_json, u.keywords_json, f.name "
             "FROM units u LEFT JOIN factions f ON f.id = u.faction_id "
@@ -172,6 +176,8 @@ def lookup_datasheet(db_path, unit_id: str) -> Optional[Datasheet]:
             if previews:
                 source_note += (" Official preview " + previews[0].get("published", "") +
                                 ": released codex rules not verified.")
+        if reviewed_note is not None:
+            source_note = ((source_note + " ") if source_note else "") + reviewed_note
         return Datasheet(
             unit_id=unit_id, name_en=name_en, name_zh=name_zh, faction=faction,
             points_min=points_min, points_options=points_options,
