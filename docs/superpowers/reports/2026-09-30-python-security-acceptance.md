@@ -1,5 +1,102 @@
 # Python dependency security acceptance — September 30, 2026
 
+## Torch tagged-source writer checkpoint — October 4, correction iteration 1
+
+**The overwritten before-tag source finding is confirmed, and the writer now
+passes an offline paired regression. Full reconciliation of the older source
+citations in this report remains pending; report acceptance remains blocked by
+that evidence HIGH until those references are corrected.** Earlier statements
+that the two original saved files demonstrate helper absence in 2.13 are
+unsupported and superseded by this checkpoint. This capture error does not
+invalidate the retained 2.13 Windows crash, installed 2.14 JIT rejection or
+separate official Git comparison, and is not a runtime package regression.
+The PT2 unsafe-pickle residual and all existing complete-family, Linux,
+platform and final host acceptance boundaries remain unchanged.
+
+The prior complete-family orchestrator records graceful stop completion,
+sleep cleanup and terminal `status: stopped`; its final agent turn exited 1.
+That agent turn is not represented as a successful acceptance run. This
+correction begins after that orchestrator terminated and makes no dependency,
+environment, application, runtime-asset or concurrent-owner changes.
+
+The actual writer path is `db_sources/python-security/iteration-8/`, rather
+than `iteration8/`. Its original `wheel-2.14-evidence.py` fetched v2.14.0 but
+wrote `jit-ir-emitter-2.13.cpp`. Both original source files, including
+`jit-ir-emitter-2.14.0.cpp`, remain **222,533 bytes**, SHA-256
+`b5da6c533d26f543ebe8b5ea5cee4d3d0c0daa6c210356d24df8d688adea657e`.
+They contain 2.14 source with CRLF, and are contaminated historical evidence,
+not a distinct before/after pair. CRLF-to-LF normalization matches the exact
+independent 2.14 bytes; normalization changes raw bytes and their hash. No
+broader fabrication or different source-content error is established.
+
+Additional recovery copies are retained under
+`db_sources/python-security/tag-capture-correction/contaminated-originals/`:
+both contaminated sources, the byte-exact frozen writer (SHA-256
+`b8b25c45f97e0417a08ac8e4652a0f0cd42f04938b7c8bfba2aacfcbcfdf9c45`),
+its original log/exit record and this report before the increment. The
+original source files, log and exit record are not replaced or relabeled.
+
+The corrected writer's tagged-source block uses the already verified,
+read-only independent Contents responses and raw tag captures in
+`D:/Project/py/RAG/db_sources/release-check-20260930/python-security/host-incremental-review-c021/independent-primary-tag-verification/`.
+It saves the following exact raw bytes in the separate
+`db_sources/python-security/iteration-8/tagged-source-corrected/` directory:
+
+| Tag / destination | Bytes | SHA-256 | Git blob | Rejection helper |
+| --- | ---: | --- | --- | --- |
+| v2.13.0 / `jit-ir-emitter-2.13.0.cpp` | 215,741 | `e8b9c34986e2ae49233f4fa7b309843264fc78f035da4b954188f28ae1fd639f` | `dc4f96f182b3a7429f3843a0084eed634055224b` | Absent |
+| v2.14.0 / `jit-ir-emitter-2.14.0.cpp` | 216,670 | `4fc4e5b6b405cc4f101dad8bfb83cabc1c5b10711be8d92519db47d6f103d8bb` | `13226266e808bb2a5665fe2fb08a56c1858dffb8` | Present |
+
+`provenance.json` binds each destination to its version/tag, exact raw URL,
+Contents API URL/ref, source path, Git blob, SHA-256, byte count and retained
+input paths. The source URLs are
+`https://raw.githubusercontent.com/pytorch/pytorch/v2.13.0/torch/csrc/jit/frontend/ir_emitter.cpp`
+and
+`https://raw.githubusercontent.com/pytorch/pytorch/v2.14.0/torch/csrc/jit/frontend/ir_emitter.cpp`.
+The helper checks Contents/raw byte equality and both independently pinned
+digests before writing either tag; wrong URL/ref/path/blob, truncation and
+equal-size corruption are rejected. Exclusive file creation rejects either
+existing tag destination or manifest, including a repeated capture. No source
+newline normalization, network request, model call or package installation is
+part of the correction.
+
+The same cached writer regression executes the complete frozen or corrected
+writer in temporary scratch, with an empty wheel-link fixture and a cached
+2.14 response. The frozen writer fails the before-file preservation assertion
+with exactly the contaminated hash above: **7 passed / 1 failed, exit 1**.
+The corrected writer passes **8/8, exit 0**, including the seven binding and
+overwrite guard tests. These are evidence-tool checks, not a new package
+security guarantee or an application native-suite rerun. Commands, stdout,
+the full failed assertion and paired exit codes are retained in
+`db_sources/python-security/tag-capture-correction/paired-regression.json`
+and its named logs. Use
+`C:/Users/Administrator/AppData/Local/Programs/Python/Python311/python.exe`
+with `verify_cached_writer.py --writer frozen` or `--writer corrected` there.
+No background process was started. The regression is ignored evidence tooling;
+it adds no tracked Python source or application test. Historical scan counts
+are not refreshed or reasserted by this checkpoint.
+
+Final preservation verification matches **5,860 unchanged tracked files**
+besides this report and **1,919 unchanged pre-existing evidence files** besides
+the owned writer. The snapshot excludes retained virtual environments, which
+were neither executed nor modified. All six read-only independent capture
+files and all six recovery copies match their before hashes. The corrected
+files reconcile with every independent tag/blob/hash/size record. Four
+evidence Python files compile without writing bytecode; ignored-tool
+whitespace and `git diff --check` pass. The final controls and records are in
+`db_sources/python-security/tag-capture-correction/verification-summary.json`.
+
+The explicit October 4 stop-hook handoff extends the existing claim-level
+provenance learning and records the resolved destination-overwrite error,
+project checkpoint/roadmap and both indexes. Prior/concurrent note bodies and
+all three staged Git indexes are preserved; no commit explanation, harness
+promotion or publication is invented. Paths, hashes and checks are retained in
+`db_sources/python-security/tag-capture-correction/knowledge-handoff/verification.json`.
+The next bounded increment must reconcile every obsolete before-tag citation
+and the historical/current source-count claims, then finish final evidence
+review. The complete project remains
+subject to root's integrated native/Linux/live acceptance.
+
 ## Complete actual Linux family — October 1, iteration 4
 
 **The entire selected CPU family now installs and passes its framework,
