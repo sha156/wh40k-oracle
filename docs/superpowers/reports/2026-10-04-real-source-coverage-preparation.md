@@ -165,3 +165,115 @@ Verified handoff lessons are recorded here: raw streaming HTML requires both ori
 The hook appended this finite result and remaining gates to `D:/Project/devlog/wh40k-oracle/CHECKPOINT.md` and `ROADMAP.md`, extended the existing learning decision at `C:/Users/Administrator/learn-notes/decisions/20261001-separate-transactional-source-coverage.md` and its README index, added the resolved locator record `C:/Users/Administrator/error-notes/rag/20261004-error-16-raw-mfm-locator-dom-assumption.md` and index, and extended the existing `common/20260921-error-41-python-stdout-gbk.md` recurrence. The unresolved SQLite mismatch is not recorded as a resolved error. All seven original/new note outcomes, prior-body recovery bytes and unchanged three Git indexes are bound in `knowledge-handoff/verification.json` under the owned evidence root. A later shared error-README append changed its whole-file hash; `knowledge-handoff/final-verification.json` confirms the six original bodies and our appended sections remain exact prefixes, preserving that concurrent addition and all three indexes. No commit explanation was invented, no manual staging/commit/push occurred, and no new harness rule/skill promotion was warranted; root publishes intended notes after writers finish.
 
 The overall stop condition is **not met**. Only the two source-only declarations are concretely bound and privately trial-verified; the canonical/retained-body/history gates and host-reviewed clean report commit remain outstanding. No background process was started.
+
+## Canonical availability continuation: complete finite inventory and bounded declarations
+
+This continuation starts from clean `codex/release-coverage-declarations` at `d030b4b15b9b3af268067e045276c681e5222066`. It completes the finite actual SM inventory and prepares **140 canonical unavailable-newer declarations**, with **159 explicitly deferred canonical rows**. All **299** `units.faction_id='SM'` rows are included exactly once, with their canonical ID, exact English name, faction, complete ordered faction-keyword array, original keyword/points JSON, all exact six-slug source-head occurrences and decision reasons. No canonical identity, unit membership, rules category or price was changed.
+
+The prior two source-only records, inventories, bindings, scripts and trial databases stay frozen. Their trials were not rerun. The positive/cancellation seeds for this continuation are copies of the prior validated `source-only-positive.sqlite`, SHA-256 `0bf61136525aed4ee219775a31c79b319979c0288e943a58c5c514cb5273ddbe`: its original 19 AFB tables plus the two existing declarations/history. Both old registry JSON rows and both content-addressed history rows remain byte-exact in the new trials. No real active registry was promoted.
+
+Only this report is appended as a tracked change. New ignored evidence is confined to:
+
+`D:/Project/py/RAG/db_sources/real-coverage-declarations-owned/20261004/canonical-availability/`
+
+The earlier report text is preserved byte-for-byte as `report-prefix-original.md` and verified as the exact prefix after this append. GNHF owns the eventual scoped report commit; no manual stage/commit/push/merge occurs here. Orchestrator notes, other owners' files/indexes and active assets/services are untouched.
+
+### Canonical and source-occurrence accounting
+
+Book routing here uses the complete exact canonical faction-keyword array, not `source_id`, source-row adjacency, flavour prose or price membership. A generic-only Astartes array is a `space-marines` candidate; one exact requested chapter keyword selects that chapter route only when no additional faction/chapter keyword conflicts. This is routing of the requested availability limitation, not a literal inventory of every unit in a newer Codex or a current inclusion/eligibility assertion. Other-chapter and mixed-faction routes remain unproven.
+
+| Requested source/book route | Canonical candidates | Prepared declarations | Deferred candidates | Exact source unit heads |
+| --- | ---: | ---: | ---: | ---: |
+| space-marines | 157 | 67 | 90 | 87 |
+| black-templars | 19 | 12 | 7 | 75 |
+| blood-angels | 26 | 14 | 12 | 83 |
+| dark-angels | 19 | 16 | 3 | 85 |
+| deathwatch | 10 | 10 | 0 | 76 |
+| space-wolves | 41 | 21 | 20 | 88 |
+| Other-chapter/mixed route unproven | 27 | 0 | 27 | Not assigned a book |
+| **Total** | **299** | **140** | **159** | **494** |
+
+The prior chapter ledger's **116** five-chapter keyword candidates reconcile exactly: 115 now have a non-conflicting chapter route, while one Deathwatch/Adeptus Astartes/Agents of the Imperium row is explicitly mixed. The other 26 unproven rows contain other chapter keywords. All keyword orders and casing are retained, including reversed chapter/Astartes arrays and the uppercase generic Astartes array. No strict identity or fuzzy normalization was widened. Generic/chapter duplicate names remain separate canonical IDs distinguished by their full keyword identity and exact source route; no identical-name row is merged or attached by adjacency.
+
+The 494 source heads preserve every tier/option/occurrence row and zero-based source-page ordinal, including chapter reprints. `six-slug-head-occurrences.json` is checked against fresh offline parsing of just those six unchanged saved pages. The five previously recorded Unicode/SQLite conflicts are outside this finite SM inventory and remain separate, frozen and unresolved.
+
+All **31** exact primary Legends identities from the prior chapter ledger are represented and deferred rather than relabeled as unsupported newer non-Legends Codex bodies. Their actual front/reverse PDF citations remain attached to their canonical inventory rows. This continuation does not recertify their models, weapons, abilities, equipment, composition, keywords or historical full bodies; `datasheets.legend` is never used as a Legends flag.
+
+### Six authenticated availability decisions and their limits
+
+`book-availability.json` records one decision for each requested route: **newer full body unavailable in the inspected saved primary inputs**, empty scope, null retained snapshot and no newer-full effective date. The declarations cite two separately bound saved primary representations:
+
+- The October 4 English download catalogue receipt, `db_sources/release-check-20260930/host/source-freshness-20261004/download-catalogue.json`, exact source URL `https://www.warhammer-community.com/en-gb/downloads/warhammer-40000/`, captured **2026-10-04T04:47:32.996149+00:00**. The complete `/documents` list contains **37** entries and no complete Codex entry. Every route's matching title/document JSON pointer and literal byte locator is preserved. This is the saved renderer catalogue representation; it is not represented as raw HTML bytes. Catalogue absence establishes this bounded input limitation, not universal public/app unavailability, unit deletion or lack of legal rules elsewhere.
+- The actual saved primary announcement at `https://www.warhammer-community.com/en-gb/articles/rylbvfnv/warhammer-40000-balance-update-emboldened-astartes/`, raw HTML SHA-256 `9599fba6a752dd7785d25f9a4cfb0503e390b7f5212af15b223ba0ff0b361946`, captured **2026-09-30T13:51:05.500712+00:00**. The literal paragraph starts `With the impending release of <em>Codex: Space Marines</em>, Astartes of every ilk` and describes limited characteristic/weapon-option changes. Its original UTF-8 byte ranges and the printed `30 Sep 26` locator are retained. That publication date does not become a legal/effective date. This announcement supports the general Astartes limitation; it does not prove six separate chapter release dates or complete chapter contents.
+
+The five retained chapter supplement covers are hash-checked directly against the old ledger and their actual PDF page-1 text. They explicitly supplement a Codex; their real printed matched-play dates are recorded only for those older supplements. Their exact capture timestamp is absent from the inspected old receipt, so they are contextual bindings rather than fabricated timestamped manifest sources. They certify no complete retained Codex body.
+
+The three actual current Blood Angels/Dark Angels/Space Wolves Legends PDFs are independently reopened and bound to the unchanged **29-PDF actual-GET receipt**. Their page-1 literals say `Non-Legends content removed (see the Warhammer 40,000 app for this faction’s rules support)`. The real printed legal date is September 30, 2026 **for those Legends packs only**. Their contents are Legends-only, not newer complete chapter Codex bodies. Black Templars and Deathwatch have no matching replacement full book in the inspected current catalogue. No MFM price URL is used as rules-body evidence.
+
+No additional complete primary preview body was supplied in the inspected inputs. No individual preview, profile amendment, old model/Wahapedia/Black Library/DSL row, count, price or source-code fact is promoted to a complete body or whole `BODY_FIELDS` category. All 140 manifest records use `body.status=newer_full_unavailable`, `scope=[]`, `effective_date=null` and `retained_snapshot=null`. Their stored body rows remain unverified; the declaration is an availability limitation, not a newer-content or whole-category certification.
+
+### Exact current price bindings and complete deferred accounting
+
+Each of the 140 prepared rows has the exact canonical current marker `true`, the current snapshot capture, ordered MFM projection tiers equal to its exact full-name/source-slug ledger head, exact `kind=unit` ledger URL/raw hash/capture and literal header/price bindings in the unchanged saved HTML. The separate verifier checks **185 base unit-price tier literals** against canonical `items` descriptions/costs and top-level points, as well as every retained MFM tier/option. Cheap `per ...` options are not treated as a unit base price, and named mixed-model price tiers are not asserted as body composition.
+
+The projection stores the MFM site root URL rather than a page hash. Exact page URL/hash/name/faction/capture are therefore joined through the actual unchanged ledger and raw receipt, and this storage limit is explicit in each binding. Points use `current_published` with `effective_date=null`; no capture/version/filename implies legal timing. Registry schema validation and current-marker checks alone do not establish the price projection's semantic agreement.
+
+The 159 deferred rows reconcile without double counting:
+
+| Exclusive disposition | Rows | Reason |
+| --- | ---: | --- |
+| Non-current canonical projections | 136 | No matching authenticated current-price evidence; mirror values are not official historical-price proof. This includes all 31 exact Legends identities and 11 unproven-route rows. |
+| Current-priced, unproven book route | 16 | Other chapter keywords lack the exact requested book binding; no guessed default Codex attachment. |
+| Current-marked Black Templars projection mismatch | 6 | Exact chapter ledger tiers/options differ from stored generic-page projections. |
+| Current-marked name mismatch | 1 | Canonical `Invader ATV` differs from saved source `INVADER ATVS`; no identity normalization introduced. |
+| **Total** | **159** | Every row retains its exact reasons and inspected source occurrences. |
+
+The six Black Templars rows are **Impulsor `000002786`, Gladiator Lancer `000002787`, Gladiator Valiant `000002788`, Gladiator Reaper `000002789`, Repulsor Executioner `000002790`, and Repulsor `000002791`**. Their stored `mfm.current=true` and correct capture do not make their chapter projection exact: missing Multi-melta options and, for Lancer/Valiant/Executioner, differing base/occurrence costs are preserved in the inventory. These are concrete semantic preparation blockers, not authorization to modify the price owner or consumer code.
+
+Armour of Antilochus `000004183` and Pedro Kantor `000002713` remain explicitly deferred. The AFB mirror values 140/90 are not certified as official historical prices. Historical 155/80 still require the independently reviewed rebuild-owner 61b restored copy and its exact source provenance/non-current markers. No false historical status or alternate original AFB restoration is introduced to satisfy schema validation.
+
+### Actual copied trial and local review
+
+The authorized UTF-8 Python 3.11 interpreter is `D:/Project/py/RAG/db_sources/release-check-20260930/python-security-worktree-environments/full-stack-windows-transformers5104/Scripts/python.exe`. Bytecode writes are disabled. No model/network/install/service operation or redundant synthetic/full-native suite is run.
+
+The trial uses the real prior validated AFB-derived database seed and explicit caller transactions with aligned expected priors. Positive application adds exactly 140 registry/history records; the new positive database contains **142** of each, including the untouched two source-only declarations. All 19 original table schemas/counts/content digests remain exact, and both private databases pass `PRAGMA integrity_check`.
+
+| Actual private check | Result |
+| --- | --- |
+| Positive apply with 140 aligned absent priors | Pass; exact canonical declarations resolve |
+| Exact replay/no-op with all 140 aligned records | Pass; entire SQLite file byte-identical |
+| Body-support checks for each of six categories on every declaration | **840 denials**, as required by empty verified scopes |
+| Late wrong canonical identity | Rejected: `Exact canonical coverage identity mismatch`; registry/history and file exact |
+| Late wrong price raw hash | Rejected: `Exact published price provenance mismatch`; registry/history and file exact |
+| Historical full-body mutation without proven legal date | Rejected: `Invalid body effective date`; no historical certification |
+| Current full-body recertification using unchanged unavailable evidence | Rejected: `Retained sources cannot recertify an unavailable newer body` |
+| Cancellation on second registry write, after earlier history/registry work | Original interrupt propagates; savepoint restores original seed tables/records/history |
+| Caller rollback after otherwise successful application | Entire seed SQLite file byte-identical |
+
+Negative mutations are explicit rejection controls, never proposed source-authenticated declarations. No retained-full-body positive trial is claimed because no complete retained body has independent literal/category authentication in this slice. Original proofs remain untouched.
+
+`verify_canonical.py` performs separate read-only accounting/source verification: every actual SM row and original JSON, all six raw source pages/494 heads/ordinals, header and price byte locators, owning-card hashes, projection/base tiers, catalogue pointers/literals, announcement bytes/dates, exact identity resolutions, history digests, table preservation, database integrity and scratch-script AST syntax. Its first attempt used the wrong parser signature and is preserved in `verification-attempt-01.txt`; inspection confirmed `parse_source_page(html)` returns a row-bearing object, and the corrected verifier explicitly supplies page ordinals. The final verifier passes. This harness correction changes no application API or source evidence.
+
+Local generic review checked ownership, identity ambiguity, date semantics, whole-category claims, exact prices, transaction/cancellation behavior and complete/deferred accounting. The duplicate names are distinguished by exact chapter keywords/routes; the six chapter-price discrepancies and mixed Deathwatch row are deferred rather than forced through schema validation. This is local preparation review and a separate verifier, **not independent host semantic approval**. That external review remains a finite gate.
+
+| New owned evidence | SHA-256 |
+| --- | --- |
+| canonical-inventory.json | `12104be8a9e65e789107cf11a20d0c0c43bd00830150839e6a923070ca367c51` |
+| book-availability.json | `a8ba0a327a16c2e54ff7d6f2584284a2f3fea5ee66d15a65af3545a933a914e7` |
+| canonical-manifest.json | `21b64589a1256ae5646a08fa44f168af7ec6bf97e99f16ea07d2e47f3dd1acd8` |
+| canonical-bindings.json | `b66a0a4d442ee5263fe4a0809e6a9d037a354d90c7d8aa8e83caf0c6d0671eea` |
+| canonical-trial-results.json | `5853d48144b4467a85ff358da9ac14e21693781b9bc00442b37ed98a08a3a5ff` |
+| six-slug-head-occurrences.json | `e222b67baca8113af464f371ce0ea545e48bc337e3f92ab2c17f32f0c0bd943d` |
+| input-freeze.json | `1298b97535172fd9eb29d8982010b9dd50d6e0e16dc31df9191644dcdc75a127` |
+
+The freeze covers **111** bounded original inputs, including the exact active AFB database, prior source-only artifacts/trials, original primary receipts/PDFs, raw MFM pages, protected Black Library/vector inputs and reviewed boundary modules. All remain exact, with only this authorized report append excluded from whole-file equality and instead checked by its exact original prefix. This is not a new 19k-asset or immutable-archive audit. `final-verification.json` records artifact hashes and the completed independent checks within this local preparation.
+
+### Finite handoff and remaining gates
+
+The finite six-route/299-row availability preparation is now complete with a 140-record manifest, literal bindings, explicit blockers for every remaining row and actual copied-trial acceptance. The existing read-only fresh-build registry/history persistence finding and restoration plan above remain pending implementation by their owner; this continuation does not take over that work. The 47 unsupported historical canonical names, five Unicode SQL conflicts, 13 overlay-ledger integration, chronology/setup/stage/runtime/wiki/retrieval acceptance and active promotion/publication remain separately owned and unclaimed.
+
+New verified learning for the existing checkpoint/roadmap/decision note is that a current marker plus exact ledger source metadata does **not** prove a chapter's projected tier semantics: six Black Templars copies retain generic-page values/options while their exact chapter ledger differs. Complete ordered keywords also expose a mixed Deathwatch/Agents row that a simple chapter-membership count would route unsafely. The tier verifier compares named multi-model price literals as well as plain model counts and excludes per-option charges from base cost. These verified facts are recorded here for root's deduplicated knowledge handoff, within the restricted report/evidence ownership.
+
+Independent host semantic/generic review of this finite candidate, any resulting scoped correction, and GNHF's clean report commit remain outstanding. The full loop stop condition is therefore **not met** in this iteration. No project completion, full current Codex parity, release/deployment, legal-list eligibility or external publication is claimed. All started foreground checks exit; no background server/browser/watcher/service was started.
+
+The subsequent explicit stop-hook authorized the duplicate-checked knowledge handoff. It appended this actual canonical result and remaining gates to `D:/Project/devlog/wh40k-oracle/CHECKPOINT.md` and `ROADMAP.md`, extended the existing learning decision `C:/Users/Administrator/learn-notes/decisions/20261001-separate-transactional-source-coverage.md` and its README index, and added the resolved verifier-call record `C:/Users/Administrator/error-notes/rag/20261004-error-20-canonical-verifier-parser-call.md` with its README index. The six note outcomes and five exact prior-body recovery copies are bound in `canonical-availability/knowledge-handoff/verification.json`; all three Git indexes remain unchanged. The six chapter-price mismatches and body/book-review blockers are not recorded as resolved errors. No new harness rule, duplicate decision, invented commit explanation, manual staging/commit/push or publication was performed; root publishes intended notes after other writers finish.
