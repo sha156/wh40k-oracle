@@ -359,6 +359,26 @@ def _evidence_facts(tool_name: str, result: Any) -> List[str]:
     return facts[:12]
 
 
+def _evidence_qualifiers(result: Any) -> List[str]:
+    """Atomic source qualifications shared by synthesis and response formatting."""
+    if not isinstance(result, dict) or result.get("found") is False:
+        return []
+    ds = result.get("datasheet")
+    containers = [result] + ([ds] if isinstance(ds, dict) else [])
+    historical = result.get("historical_record")
+    if isinstance(historical, dict):
+        containers.append(historical)
+    notes = []
+    for container in containers:
+        for key in ("source_note", "source_scope", "note", "identity_scope"):
+            value = container.get(key)
+            if value:
+                note = str(value)
+                if note not in notes:
+                    notes.append(note)
+    return notes
+
+
 def _evidence_sources(result: Dict[str, Any]) -> List[Dict[str, Any]]:
     """Retain provided references, without inventing per-field provenance."""
     sources: List[Dict[str, Any]] = []
@@ -474,6 +494,18 @@ class AgentLoop:
         has_usable_evidence = False
         evidence_facts: List[str] = []
         evidence_sources: List[Dict[str, Any]] = []
+        evidence_qualifiers: List[str] = []
+
+        def complete(answer: str, step: Dict[str, Any]) -> AgentResult:
+            missing = [note for note in evidence_qualifiers if note not in answer]
+            if missing:
+                answer += "\n\n" + "\n\n".join(missing)
+            sources = list(evidence_sources)
+            for source in step.get("sources", []):
+                if source not in sources:
+                    sources.append(source)
+            return AgentResult(answer=answer, intent=intent, tool_calls=tool_calls,
+                               degraded=False, sources=sources)
 
         def recover(reason: str, calls: Optional[List[str]] = None) -> AgentResult:
             trace = tool_calls if calls is None else calls
@@ -516,14 +548,7 @@ class AgentLoop:
                         })
                         continue
                     return recover("final 步骤 content 连续为空")
-                return AgentResult(
-                    answer=answer,
-                    intent=intent,
-                    tool_calls=tool_calls,
-                    degraded=False,
-                    sources=([source for source in step["sources"] if isinstance(source, dict)]
-                             if isinstance(step.get("sources"), list) else []),
-                )
+                return complete(answer, step)
 
             tool_name = step.get("tool")
             args = step.get("args", {})
@@ -565,6 +590,9 @@ class AgentLoop:
 
             if _has_usable_evidence(tool_name, result):
                 has_usable_evidence = True
+                for note in _evidence_qualifiers(result):
+                    if note not in evidence_qualifiers:
+                        evidence_qualifiers.append(note)
                 for fact in _evidence_facts(tool_name, result):
                     if fact not in evidence_facts:
                         evidence_facts.append(fact)
@@ -586,15 +614,7 @@ class AgentLoop:
                 return recover(f"工具步数用尽后答案整理异常: {public_failure(exc).describe()}")
             answer = step.get("content", "")
             if step.get("type") == "final" and answer.strip():
-                return AgentResult(
-                    answer=answer,
-                    intent=intent,
-                    tool_calls=tool_calls,
-                    degraded=False,
-                    sources=([source for source in step["sources"]
-                              if isinstance(source, dict)]
-                             if isinstance(step.get("sources"), list) else []),
-                )
+                return complete(answer, step)
             return recover("模型在工具步数用尽后仍未完成整理")
         return self._fallback(user_input, intent, tool_calls, reason="超过 max_steps 仍未得出结论")
 

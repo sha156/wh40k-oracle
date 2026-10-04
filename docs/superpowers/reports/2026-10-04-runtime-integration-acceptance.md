@@ -1,5 +1,146 @@
 # Runtime integration acceptance — October 4, 2026
 
+## Iteration 2 complete owner implementation
+
+The remaining runtime and copy slice is implemented and independently approved
+for root review. This supersedes iteration 1's pending runtime/copy entries below.
+It is acceptance of the bounded private candidate, not main, production, source
+promotion, deployment, live-model or whole-project acceptance. GNHF still owns
+the intended commit; no manual commit/staging/push was performed in this iteration.
+
+The worktree started clean at `a62404a98` on `codex/release-final-integration`.
+That commit contains the prior runtime slice even though the orchestrator notes
+summarize its knowledge handoff. Notes were read first and never edited. The
+source-only price/consumer/benchmark/security reports and host final plan were
+consulted; previously approved grammar, central coverage notes, error categories
+and consumer guards are reused.
+
+### Final behavior and actual failures
+
+- Every canonical `get_entity` page path, including direct name, canonical ID,
+  alias and resolver lookup, resolves the existing central coverage note against
+  the internal caller database. A malformed explicit registry remains visible
+  as `CoverageError`; a plausible wiki body cannot replace that error. Existing
+  merged-card scope, fuzzy disclosure and cross-faction notes are retained.
+- Successful normal and max-step finals now carry all whole source and identity
+  qualifications collected with usable evidence. Missing prose qualifications
+  are appended intact; earlier collected citations are merged with final citations
+  without inventing new ones. The complete qualified answer enters existing
+  bounded session history. The existing emergency path remains in use.
+- This includes registry-backed body scope, independent price dates, retained
+  September 14 and August 1 fixture bodies, unverified effective dates, provenance,
+  legacy historical-price notes, and explicitly archived ordinary Calgar identity.
+  Whole notes after long bodies survive. Price-only Calgar 180/Kaius 100 remain
+  bodyless and distinct from archived 200 and retained Armour 155.
+- The formatter uses the same whole-qualification extraction. Source-only,
+  registry and actual historical-price/archive qualifiers precede its soft bulk
+  budget, with subject-aware deduplication. A structured layout that omits a
+  mandatory qualification is rejected and preserves the original qualified
+  answer and verified citations. A complete source-only layout remains successful.
+  Existing absent-registry synthetic legacy digest equivalence is retained.
+- Only the edition number in the Chinese `app.main` greeting changes, from tenth
+  to eleventh. Its language, theme, history and provider behavior are unchanged.
+- The actual component is `web/src/components/sim/SimResults.tsx`, rather than
+  the prompt's stale path. Its reverse notice describes the absence of a reverse
+  report in this run. Its defender detachment list directs users to the actual
+  modeled/unmodeled entries, source qualifications and selected options/conditions.
+  The inspected page sends reverse/loadout options and renders reverse results;
+  the backend applies eligible defender DSL through `inject_target`. The current
+  page has no defender DSL selector, and the copy does not claim that it does.
+  No new flags, request fields, models, controls or visual design are introduced.
+
+The first corrected 16-node matrix reproduced real parent failures in canonical
+qualification, successful answers/history and source-only citations. Independent
+generic/Python probes then exposed actual legacy historical warning omissions;
+six archived/retained success and max-step cases were added and the shared
+extraction corrected. The final unchanged 59-node matrix gives parent **22 failed /
+37 passed**, candidate **59 passed**, with zero errors/skips. The 37 already-working
+prior-slice controls are not relabeled as new fixes. Parent imports are bound to
+exact starting Git blobs for tools/loop/formatter and asserted in the runner.
+
+Three existing assertions are strengthened for the intended behavior: the real
+wiki answer keeps its original prose prefix plus the actual source scope in
+answer/history; omitted final citations retain the verified tool citations; and
+all public-argument fixture cases retain the exact complete preview warning for
+usable evidence while keeping argument immutability and exact citation checks.
+No public contracts, source literals, fuzziness thresholds, benchmark ceilings,
+fixtures or skip conditions are weakened.
+
+### Final verification and review
+
+Interpreter and output controls remain the same as iteration 1. All SQLite,
+basetemp/cache, parent snapshots, logs, XML and frontend copies are under:
+
+```text
+D:/Project/py/RAG/db_sources/release-check-20260930/runtime-integration-owned/20261004/iteration-02/
+```
+
+| Final evidence | Passed | Failed | Errors | Skipped |
+|---|---:|---:|---:|---:|
+| Exact clean-parent final paired matrix | 37 | 22 | 0 | 0 |
+| Candidate same matrix | 59 | 0 | 0 | 0 |
+| Sixteen-module core runtime/coverage/security/history/benchmark regression | 1,323 | 0 | 0 | 0 |
+| Additional tools/selectors/datasheets/calculation/provider preservation | 214 | 0 | 0 | 2 |
+| Independent generic runtime/source-contract review | 732 | 0 | 0 | 0 |
+| Independent Python focused review | 517 | 0 | 0 | 0 |
+| Independent generic additional tools/API controls | 167 | 0 | 0 | 11 |
+| Independent Python additional formatter/identity controls | 94 | 0 | 0 | 9 |
+
+The additional two skip nodes/reasons are exactly the unchanged iteration-1
+missing real-database Titan/Helbrute cases documented below. Generic additional
+skips comprise those two plus the existing nine `test_web_api_stage3.py` missing
+database cases; Python additional skips are those same nine. No new skip or
+exclusion is added. XML node accounting is recorded in `verification.json`.
+The final core command uses the exact fifteen iteration-1 modules listed below
+plus `tests/test_runtime_whole_qualification.py`, and no `-k` exclusions.
+
+Frontend unit tests pass **22/22, zero skips**. Independent TypeScript checking
+and ESLint pass against a disposable copy using existing dependencies, with no
+installation or asset mutation. Paired actual-component React rendering gives
+parent **two failures/two controls**, candidate **four passes** for single-direction,
+reverse, modeled defender and absent-detachment cases. Text/comment changes need
+no Next build; root retains final complete frontend/build/browser acceptance.
+The installed Next guide was read before editing. Independent TS and generic
+reviews approve the copy; independent generic and Python reviewers approve the
+runtime correction after reproducing and rechecking the historical blocker.
+After inspecting the final strengthened public-argument assertion and report,
+generic review additionally passes 168 boundary checks with zero skips and Python
+review passes all 26 advertised-argument cases with zero skips; approvals stand.
+
+`verification.json` checks intended changed paths, Python syntax, all thirteen
+immutable public contracts/signatures, protected source guard/coverage helper,
+official selector/provider/gold Git blobs and paired XML identities. Gold SHA-256
+remains `a402aed889eff64f3419d7a6768ff9b168a5912d0bc9c3e92cf225913a7fe3cc`.
+`git diff --check` passes. Fixed-environment Ruff/Black/Flake8 are unavailable;
+none was installed. Existing deprecation warnings remain in logs.
+
+Failed diagnostic attempts remain visible: `parent*.log` initial fixture errors
+omitted the ledger ordinal, not application failures; `candidate.log` included
+an unsupported fixture candidate string and raw JSON assertions instead of
+rendered RichText; final paired tests correct these fixture/assertion issues.
+`regression*.log` preserves obsolete exact-short-answer/empty-citation expectations
+before their strengthened assertions. The first SSR harness omitted its temporary
+module filename; correcting the harness produced the paired rendering evidence.
+No unsuccessful attempt is counted as acceptance or a production incident.
+
+The consumer report remains untouched because its actual current diff still
+contains none of the specified four trailing-whitespace lines. Source-coverage A,
+README/CI/launcher/Origin fixtures, rebuild/history/data metadata, staged updates,
+overlay ledgers and fresh Black Library policy remain other owners' areas.
+No production asset, cache/index/wiki/DB/PDF generation, network, provider/model,
+installation, Docker or GitHub action occurred. All started test processes exited;
+no server, browser or watcher was started. Final scoped source/tests/report are
+ready for the orchestrator commit and independent root integration review; this
+report does not claim a future commit or post-commit clean status.
+
+The existing project checkpoint/roadmap and evidence-retention learning/error
+records plus their indexes are extended with verified outcomes and remaining root
+gates. `knowledge-handoff-verification.json` confirms prior file prefixes and
+all three repositories' staged diffs remain intact. No duplicate underlying issue,
+fictional commit explanation, orchestrator-note edit or harness promotion occurs.
+Post-commit clean acceptance remains for GNHF/root after the authorized automatic
+commit; this iteration does not claim that pending check is already complete.
+
 ## Iteration 1 source-only price adapters
 
 The bounded runtime slice is implemented and independently approved. Exact

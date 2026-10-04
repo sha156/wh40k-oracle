@@ -416,13 +416,13 @@ def test_valid_mapping_arguments_and_final_fields_are_unchanged(args):
 
 
 def test_omitted_args_and_unknown_string_tool_keep_existing_recovery():
-    tool, evidence, _, _ = evidence_case("points")
+    tool, evidence, _, sources = evidence_case("points")
     llm = RecoveryLLM(tool, "provider")
     llm.steps = [{"type": "tool_call", "tool": "unknown_tool", "args": {}},
                  {"type": "tool_call", "tool": tool},
                  {"type": "final", "content": "Reviewed baseline 355."}]
     result = AgentLoop(llm, tools={tool: lambda: evidence}).run("Verify")
     assert not result.degraded and result.tool_calls == [tool]
-    assert result.answer == "Reviewed baseline 355." and result.sources == []
+    assert result.answer == "Reviewed baseline 355." and result.sources == sources
     assert len(llm.calls) == 3
     assert "unknown_tool" in llm.calls[1][-1]["content"]["error"]

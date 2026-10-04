@@ -11,7 +11,7 @@ import json
 import re
 from typing import Any, Callable, Dict, List, Optional, Protocol
 
-from agent.loop import AgentLoop, AgentResult
+from agent.loop import AgentLoop, AgentResult, _evidence_qualifiers
 from web_api.contract import (
     Answer, CalcStep, Cite, Cta, Sensitivity, TraceStep, Verdict,
 )
@@ -370,6 +370,10 @@ def format_answer(
                 [c.model_dump() for c in cites],
             ) or {}
             _validate_layout(structured)
+            body = _structured_body(structured)
+            if any(note not in body for name in recorder.last_result
+                   for result in recorder.get_results(name) for note in _evidence_qualifiers(result)):
+                raise ValueError("Answer formatting omitted source qualification")
             if _missing_table_labels(agent_result.answer, structured):
                 raise ValueError("Answer formatting omitted named table rows")
             if _unsupported_grounding_claims(
@@ -446,12 +450,16 @@ def _evidence_digest(recorder: TraceRecorder, limit: int = 2000) -> str:
                 continue
             ds = result.get("datasheet")
             containers = [result] + ([ds] if isinstance(ds, dict) else [])
-            for container in containers:
-                note = container.get("source_note")
-                if (isinstance(note, str) and ("Source coverage:" in note
-                                              or container.get("points_only"))):
-                    subject = " / ".join(str(container[key]) for key in ("name_en", "faction_slug")
-                                         if container.get(key))
+            mandatory = result.get("historical_record") or any(
+                container.get("points_only") or container.get("historical_points")
+                or "Source coverage:" in str(container.get("source_note") or "")
+                for container in containers)
+            if mandatory:
+                identity = ds if isinstance(ds, dict) else result
+                fm = getattr(result.get("page"), "fm", None)
+                subject = " / ".join(str(identity[key]) for key in ("name_en", "faction_slug")
+                                     if identity.get(key)) or str(getattr(fm, "name_en", ""))
+                for note in _evidence_qualifiers(result):
                     qualified = "[source coverage] " + (subject + ": " if subject else "") + note
                     if qualified not in seen:
                         qualifiers.append(qualified)

@@ -97,7 +97,11 @@ def test_advertised_required_and_optional_arguments_are_preserved(tool, mapping)
                                           "sources": [SOURCE]}])
     result = AgentLoop(llm, tools={tool: spy}).run("Verify")
     assert calls == [original] and args == original
-    assert not result.degraded and result.answer == "Verified"
+    # Useful evidence retains its whole source warning even when final prose
+    # omits it; mapping/non-evidence tools keep their original short response.
+    qualified = tool in {"search_wiki", "get_entity", "get_keyword_definition", "calc_points", "get_datasheet"}
+    expected = "Verified\n\n" + NOTE if qualified else "Verified"
+    assert not result.degraded and result.answer == expected
     assert result.tool_calls == [tool] and result.sources == [SOURCE]
 
 
