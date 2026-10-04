@@ -1,14 +1,16 @@
 # Python dependency security acceptance — September 30, 2026
 
-## Torch tagged-source writer checkpoint — October 4, correction iteration 1
+## Torch tagged-source correction — October 4, correction iterations 1–2
 
-**The overwritten before-tag source finding is confirmed, and the writer now
-passes an offline paired regression. Full reconciliation of the older source
-citations in this report remains pending; report acceptance remains blocked by
-that evidence HIGH until those references are corrected.** Earlier statements
-that the two original saved files demonstrate helper absence in 2.13 are
-unsupported and superseded by this checkpoint. This capture error does not
-invalidate the retained 2.13 Windows crash, installed 2.14 JIT rejection or
+**The confirmed before-tag overwrite is corrected in the writer and this
+report's source citations. The frozen writer fails the cached preservation
+regression, and the corrected writer passes with distinct, hash-bound tag
+captures. This resolves the scoped capture HIGH for independent host review;
+it does not grant complete-project acceptance.** The original saved pair cannot
+demonstrate helper absence in 2.13 and remains explicitly contaminated history.
+The valid source comparison uses the corrected exact raw captures below.
+This capture error does not invalidate the retained 2.13 Windows crash,
+installed 2.14 JIT rejection or
 separate official Git comparison, and is not a runtime package regression.
 The PT2 unsafe-pickle residual and all existing complete-family, Linux,
 platform and final host acceptance boundaries remain unchanged.
@@ -73,11 +75,21 @@ and its named logs. Use
 `C:/Users/Administrator/AppData/Local/Programs/Python/Python311/python.exe`
 with `verify_cached_writer.py --writer frozen` or `--writer corrected` there.
 No background process was started. The regression is ignored evidence tooling;
-it adds no tracked Python source or application test. Historical scan counts
-are not refreshed or reasserted by this checkpoint.
+it adds no tracked Python source or application test.
 
-Final preservation verification matches **5,860 unchanged tracked files**
-besides this report and **1,919 unchanged pre-existing evidence files** besides
+The earlier **280 tracked Python files / 24 framework-import files** are the
+denominators in the retained historical scans, not current whole-tree counts.
+The current checkout contains **281 tracked Python files / 25 framework-import
+files**: the only Python delta since c021 is the previously added
+`tests/test_dependency_framework.py`. All 24 historical framework-record hashes
+still match; an AST check of that added file confirms its framework imports.
+The nine distinct framework module paths imported by that file are recorded
+separately from the file counts. No new reachability, third-party library or
+security audit is inferred from this count reconciliation. The dated scan
+claims below now explicitly retain their historical coverage.
+
+Correction iteration 1 preservation verification matches **5,860 unchanged
+tracked files** besides this report and **1,919 unchanged pre-existing evidence files** besides
 the owned writer. The snapshot excludes retained virtual environments, which
 were neither executed nor modified. All six read-only independent capture
 files and all six recovery copies match their before hashes. The corrected
@@ -92,10 +104,43 @@ project checkpoint/roadmap and both indexes. Prior/concurrent note bodies and
 all three staged Git indexes are preserved; no commit explanation, harness
 promotion or publication is invented. Paths, hashes and checks are retained in
 `db_sources/python-security/tag-capture-correction/knowledge-handoff/verification.json`.
-The next bounded increment must reconcile every obsolete before-tag citation
-and the historical/current source-count claims, then finish final evidence
-review. The complete project remains
-subject to root's integrated native/Linux/live acceptance.
+Correction iteration 2 reconciles the obsolete source citation in the JIT
+section and distinguishes contaminated historical artifacts from the corrected
+pair in its evidence inventory. Both original captures, their recovery copies,
+the frozen writer, original successful command/log, failed regression and all
+prior probe/inventory records remain unchanged. The original command's exit 0
+did not test before-file preservation; the cached regression's exit 1 exposes
+that missing check without rewriting its historical result.
+
+Fresh offline reruns retain **7 passed / 1 failed** for the frozen writer and
+**8 passed / zero failed** for the corrected writer. Final verification preserves
+**7,806 of 7,807 snapshotted tracked/evidence files**, with only this report
+changed, plus all six independent capture files. Corrected raw hashes, byte
+counts and Git blobs still reconcile with the independent record; the two
+contaminated originals still match their original hash and normalize only to
+2.14. Verification compiles the four unchanged evidence tools without writing
+bytecode and passes `git diff --check`. Exact commands, logs, report-before copy,
+source-count reconciliation and final preservation results are saved under
+`db_sources/python-security/tag-capture-correction/report-reconciliation-iteration2/`.
+Before the final stop-hook handoff, this correction changed no
+dependency/environment, application/test source, model/index/PDF/database,
+concurrent-owner file or shared knowledge note, and started no background
+process. Shared notes changed concurrently during the
+check; their observed hash deltas are recorded without overwrite or rollback.
+All four captured Git indexes and the retained knowledge-handoff evidence remain
+unchanged. This remains a bounded, independently reviewable
+candidate; root owns integrated native/Linux/live and merged project acceptance.
+
+The final explicit stop hook updates the existing project checkpoint/roadmap,
+claim-level provenance decision, resolved overwrite error and their two index
+entries to record completed report reconciliation. It creates no duplicate
+learning/error note or commit explanation and leaves root's final acceptance
+open. Scoped note diffs, prior-body copies, unrelated Markdown and four Git-index
+preservation checks are retained under
+`db_sources/python-security/tag-capture-correction/report-reconciliation-iteration2/knowledge-handoff-final/`.
+The earlier source-verification record keeps its pre-handoff report hash; the
+handoff verification records the final report hash separately. No manual staging,
+commit, publication or harness promotion is performed.
 
 ## Complete actual Linux family — October 1, iteration 4
 
@@ -745,8 +790,10 @@ actually resolves **2.54.0**. LangSmith separately introduces httpx2/httpcore2;
 the existing HTTPX client boundary remains installed and tested. The eight
 family imports already use supported package boundaries, so **no production
 Python compatibility shim, import fallback, provider-routing change or feature
-removal was needed**. An AST inventory inspects all **280 tracked Python files**
-and finds **24 files** with relevant framework/model/provider imports. Upstream
+removal was needed**. The retained historical AST inventory inspected **280
+tracked Python files** and found **24 files** with relevant framework/model/provider
+imports, before `tests/test_dependency_framework.py` was added. Current counts
+are reconciled in the October 4 correction above. Upstream
 community and experimental packages emit sunset/deprecation warnings; their
 required features remain installed and exercised, not silently disabled.
 
@@ -1031,7 +1078,8 @@ POST endpoint preserves the expected identity/detail and `trust_env=False`
 proxy bypass. No real capture or cache write runs. Partial read followed by an
 unlimited gzip read preserves the exact complete byte stream.
 
-An AST scan covers **all 280 tracked Python files**. Production Requests imports
+The retained historical AST scan covered **280 tracked Python files** before
+the later framework-test addition. Production Requests imports
 are in ingestion, Black Library compilation and the two capture scripts. The
 only direct urllib3 import is ingestion's existing warning-control call. No
 tracked direct ProxyManager/PoolManager, drain, chunked-reader or iter_content
@@ -1159,7 +1207,8 @@ security advisory. Registry metadata requires **Python>=3.10** and provides a
 platform-neutral **py3-none-any** wheel. Every executed probe/install uses the
 prescribed **Python 3.11.9**; Linux installation/execution is not claimed.
 
-The AST scan of **all 280 tracked Python files** finds one dotenv consumer:
+The retained historical AST scan of **280 tracked Python files**, before the
+later framework-test addition, finds one dotenv consumer:
 `scripts/refresh_official_rules.py::refresh()` imports and calls `load_dotenv()`.
 There are **no tracked `set_key()` or `unset_key()` calls**. The existing Uvicorn
 standard extra also uses dotenv for `--env-file`. Direct probes preserve
@@ -1278,9 +1327,18 @@ asserting the expected **"Attempted to use list without a contained type"**
 RuntimeError. A JIT deprecation warning is retained. The actual correction is
 [upstream PR #188779](https://github.com/pytorch/pytorch/pull/188779), landed by
 commit `b90c94991cdf8b87c8f7439f79518e0ef2c4ca4f` on **July 2**. GitHub's tag
-comparison shows the commit is an ancestor of 2.14.0, while 2.13.0 diverges;
-tagged `ir_emitter.cpp` confirms the rejection helper absent in 2.13 and present
-in 2.14. No main environment or production process was used for this reproduction.
+comparison shows the commit is an ancestor of 2.14.0, while 2.13.0 diverges.
+The corrected exact raw `ir_emitter.cpp` captures in
+`db_sources/python-security/iteration-8/tagged-source-corrected/` confirm
+`parseTypeHintFromExpr` absent in v2.13.0 and present in v2.14.0; the October 4
+table and `provenance.json` bind each distinct destination to its official tag,
+URL, Git blob, SHA-256 and byte count. The original
+`iteration-8/jit-ir-emitter-2.13.cpp` and `jit-ir-emitter-2.14.0.cpp` are both
+2.14 CRLF content after the writer overwrote the before destination; they do
+not support that comparison. They and the historical command records remain
+recoverable as described above. No main environment or production process was
+used for the runtime reproduction, and the source correction reruns no package
+environment.
 Thus **2.14.0 is the first verified stable correction here**, rather than a
 claim that the service's 2.13 pin was sufficient.
 
@@ -1295,7 +1353,8 @@ network action. This establishes the unsafe deserialization behavior persists,
 even though current upstream/CPU service queries no longer match the record.
 No universal PT2 fix or arbitrary untrusted-checkpoint safety is claimed.
 
-An AST/text scan of **all 280 tracked Python files** found **zero direct torch
+The retained historical AST/text scan of **280 tracked Python files**, before
+the later framework-test addition, found **zero direct torch
 imports or torch load/JIT/export calls**. The application's torch dependency is
 through SentenceTransformers/HuggingFace embeddings; actual app/ingestion source
 selects the bge-m3 model and CPU device. There is no inspected PT2-loading or
@@ -1354,7 +1413,11 @@ Validation actually completed:
 Ignored evidence and executable reproduction scripts are under
 `C:/Users/Administrator/.codex/worktrees/release-python-security/RAG/db_sources/python-security/iteration-8/`:
 baseline bodies/groups, fresh OSV records, maintainer advisory/security policy,
-release metadata, JIT issue/timeline/fix/tag comparisons and tagged sources;
+release metadata, JIT issue/timeline/fix/tag comparisons and original tagged
+sources (the byte-identical original pair is contaminated historical evidence,
+not before/after proof). Use `tagged-source-corrected/` and its `provenance.json`
+for the distinct tag comparison, with recovery and paired writer proof under
+`../tag-capture-correction/` as detailed in the October 4 correction;
 official CPU index, hash-verified platform metadata and install reports/logs;
 `jit-regression.py`/child and before/after JSON; `cpu-compatibility-probe.py`,
 installed PT2 source and scan; runtime/test inventories, exact/mapped/OSV raw
@@ -1546,7 +1609,8 @@ the existing OpenAI-compatible clients: `app.py::get_llm` uses `ChatOpenAI`,
 same provider endpoint. No provider choice, model, endpoint, application source,
 test expectation or reliability-owned file changed.
 
-An AST scan of **all 280 tracked Python files**, including scripts and tests,
+The retained historical AST scan of **280 tracked Python files**, including
+scripts and tests before the later framework-test addition,
 found **zero zhipuai, jwt or pyjwt imports**. The accompanying textual scan
 records provider references and dynamic import calls; the latter import `app`
 or `re`, not these SDKs. The provider's
