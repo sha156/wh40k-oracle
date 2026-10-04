@@ -169,6 +169,10 @@ def _en_to_ids(conn: sqlite3.Connection) -> Dict[str, List[str]]:
 def populate_zh_details(db_path, details: List[dict]) -> Dict[str, int]:
     """把黑图书馆中文 datasheet 灌进 `unit_zh_detail` 表（canonical_id 经 name_en 匹配）。
 
+    Five reviewed raw-source bindings resolve before name matching, independently
+    of old Chinese names or inventory spellings, with exact canonical guards.
+    Other records retain the existing name-matching behavior below.
+
     英文名对不上时退到**中文名桥**：黑图与库里的英文名在单复数/头衔前缀上会差
     （`Hellflayer` vs `Hellflayers`、`Warsmith Kravek Morne` vs `Kravek Morne`），
     这类只差写法的单位靠中文名能一对一接上。中文名桥**只认一对一**——归一化后
@@ -195,12 +199,15 @@ def populate_zh_details(db_path, details: List[dict]) -> Dict[str, int]:
         conn.execute("DELETE FROM unit_zh_detail WHERE source = 'blackforum'")
         en2ids = _en_to_ids(conn)
         zh2ids = _zh_to_ids(conn)
-        from db_compile.blacklibrary_identity import scoped_detail_ids
+        from db_compile.blacklibrary_identity import scoped_detail_ids, source_bound_detail_ids
         columns = {r[1] for r in conn.execute("PRAGMA table_info(units)")}
         factions = (dict(conn.execute("SELECT id, faction_id FROM units"))
                     if "faction_id" in columns else {})
 
         def eligible(record, candidates):
+            bound = source_bound_detail_ids(conn, record)
+            if bound is not None:
+                return bound
             return scoped_detail_ids(record, candidates or [], factions)
         # 黑图侧同一中文名出现多次 → 这个中文名不具备唯一指向，退出中文名桥
         zh_dupes = set()
@@ -239,6 +246,12 @@ def populate_zh_details(db_path, details: List[dict]) -> Dict[str, int]:
             # 同名多行＝同一张兵牌的多阵营副本，每行都灌；武器名后续由
             # zh_weapons 按数值指纹逐行配对，配不上就留英文，不会因此错配
             for cid in cids:
+                # Only a fully guarded binding can restore a discarded name.
+                # Leave any separately supplied higher-authority name intact.
+                if source_bound_detail_ids(conn, r):
+                    conn.execute(
+                        "UPDATE units SET name_zh = ? WHERE id = ? "
+                        "AND (name_zh IS NULL OR name_zh = '')", (r.get("name_zh"), cid))
                 conn.execute(
                     "INSERT OR REPLACE INTO unit_zh_detail "
                     "(canonical_id, name_zh, faction_zh, score, stats_json, "
