@@ -142,6 +142,137 @@ The earlier source-verification record keeps its pre-handoff report hash; the
 handoff verification records the final report hash separately. No manual staging,
 commit, publication or harness promotion is performed.
 
+## Preserved full-stack iteration5 probes — October 1, reconciled October 4
+
+**The completed final-family Linux and Windows probes establish real local
+BGE embedding, archived FAISS/hybrid retrieval and pretrained ONNX reranking
+compatibility on both platforms. The trusted archived index contains 5,905
+documents/vectors; the current 3,404-document active post-retirement index was
+not exercised.** This section restores the preserved full-stack iteration5
+results to the tracked report after quota interruption. Its report reference
+was absent at clean `b84f6e548740c862f3e7b76718c4ce94127ee5d0`; the actual
+reconciliation starts on clean `codex/release-python-security` at
+`e0a7b388f3b54441e79fc83847beca6d5e3af6df`, after the Torch correction loop
+exited. This is historical/archive compatibility evidence, with no new model
+execution, installation, audit or suite run in this reconciliation.
+
+The actual preserved evidence directory is
+`C:/Users/Administrator/.codex/worktrees/release-python-security/RAG/db_sources/python-security/full-stack/iteration5/`.
+It is distinct from the earlier `db_sources/python-security/iteration-5/`
+security increment. `evidence-manifest.json` binds **21 files** to their byte
+counts and SHA-256 values. The October 4 report reconciliation independently
+rehashes all 21 small evidence files and derives the following statistics from
+`linux-real-model-probe.json` and `windows-real-model-probe.json`. They agree
+with the preserved `verification-summary.json` and the independent host record
+`D:/Project/py/RAG/db_sources/release-check-20260930/python-security/host-capture-supervision-20261004/iteration5-evidence-review.json`.
+Neither reconciliation reruns inference.
+
+### Actual commands and numerical compatibility
+
+The saved Linux command uses the already installed complete-family interpreter
+`/rehearsal/venv/bin/python` in the existing digest-pinned Python image, with
+network disabled, a read-only root and read-only staged assets/dependencies.
+It mounts no production assets. Windows uses the existing
+`full-stack-windows-transformers5104/Scripts/python.exe` and the same staged
+inputs and hash-bound `real-model-probe.py`. The exact calls and successful
+outcomes remain in `linux-model-docker-command.json`,
+`linux-model-docker-result.json`, `windows-model-command.json` and
+`windows-model-result.json`; **both commands exit 0**. Linux's saved result
+records the owned container removed.
+
+| Observed value | Linux | Windows |
+| --- | --- | --- |
+| Interpreter | CPython 3.11.16, x86_64, glibc 2.36 | CPython 3.11.9, Windows |
+| CPU Torch | 2.14.0+cpu, CUDA absent | 2.14.0+cpu, CUDA absent |
+| Transformers / SentenceTransformers | non-yanked 5.10.4 / 5.7.0 | non-yanked 5.10.4 / 5.7.0 |
+| LangChain-HuggingFace / Community | 1.2.2 / 0.4.2 | 1.2.2 / 0.4.2 |
+| FAISS / FlashRank / ONNX Runtime | 1.15.1 / 0.2.10 / 1.30.0 | 1.15.1 / 0.2.10 / 1.30.0 |
+| Real normalized embedding shape | [2, 1024] | [2, 1024] |
+| Archived documents / vectors | 5,905 / 5,905 | 5,905 / 5,905 |
+| Saved probe time | 24.179 seconds | 16.594 seconds |
+| Saved full command/result time | 148.734 seconds | 42.672 seconds |
+
+The two real English/Chinese BGE embeddings have maximum absolute platform
+difference **2.0978040993213654e-07** and pairwise cosine similarities
+**0.9999999999984757 / 0.999999999998096**. The saved probe times start inside
+the probe after imports and the initial staged-input hash check; they are not
+full command durations or deployment latency measurements.
+
+Both platforms preserve all archived document identities and stored vectors.
+The reconstructed-vector SHA-256 is
+`9c154fbc0b3a9d2704581cd0cdd7f223fe62d5ecc7b4129b16db7b6e4dcdd08f`.
+Actual BM25/hybrid/RRF retrieval returns the **same eight ordered passages**,
+including the rules-layer floor, with **zero retrieval errors**. The three
+local pretrained reranker results have identical order and scores on both
+platforms, through **CPUExecutionProvider**, with maximum score difference
+**0.0**. These are real embedding/retrieval/reranking observations on the
+specified archived inputs.
+
+The classic LCEL chain streams **SYNTHETIC protocol compatibility output**:
+`Synthetic compatibility answer [local p1].`, supplied by `FakeListChatModel`.
+It is not an inferred provider answer or answer-quality result. Both raw
+probes record **zero paid/provider requests and zero external model downloads**.
+The trusted existing `pytorch_model.bin` is loaded with observed
+**`weights_only=True`, CPU map location and zero PT2 load calls**;
+`local_files_only=True` and `trust_remote_code=False` remain explicit.
+Probe-only offline flags do not change production policy or establish general
+pickle safety; the retained Torch PT2 unsafe-pickle residual still applies.
+
+### Immutable evidence, historical limits and remaining root gates
+
+The saved asset manifest and probe/reconciliation records retain **18 immutable
+source/staged inputs totaling 2,358,848,608 bytes**, with matching saved
+before/after hashes. Eleven source entries are HF snapshot symlinks whose
+resolved paths were confined to the approved model/blob tree before their
+bytes were copied. The report reconciliation reads those saved hash records;
+**it does not rehash the large model/index assets today**. Matching all 21
+small evidence files does not constitute a fresh hash check of those assets.
+`prepare-assets.py`, `real-model-probe.py`, both runner scripts and
+`reconcile-models.py` retain the exact execution and preservation contracts.
+The symlink preflight failure and initial reconciliation missing-path error
+remain in their original JSON/logs, alongside the successful command records.
+The saved handoff log also retains its later whitespace-check failure; no
+historical attempt or successful model outcome is relabeled.
+
+The **3,404-document active post-retirement index was not exercised**. The active
+count is separately recorded in
+`D:/Project/py/RAG/docs/superpowers/reports/2026-09-30-source-retirement-acceptance.md`;
+this reconciliation does not reopen that index. Archived passages include
+retired source material, so this probe does not validate
+current-source freshness, retirement boundaries, final live model quality,
+deployment or a combined final-family full suite. Prior package counts,
+complete inventories/audits, Windows/Linux suite results, failures and skips
+remain exactly as dated below. Separately approved native recovery is merged
+in root main at `4092507822d699acafb513d05c07e5214357e58a`; its acceptance does
+not imply a combined dependency-family rerun by these probes.
+
+The real Linux pretrained-model/archive compatibility gate is closed by this
+preserved evidence. Root retains independent generic/Python review of the
+entire dependency candidate, concurrent integration, final integrated
+native/Linux/live/browser/deployment acceptance and hosted CI. Corrected Torch
+tag provenance and contaminated originals remain untouched. No dependency,
+application/test, constraint, environment, production asset, Docker or service
+change is part of this report-only increment; GNHF owns its normal commit.
+
+Existing project checkpoint/roadmap and
+`C:/Users/Administrator/learn-notes/decisions/20261001-reconcile-platform-membership-before-dependency-acceptance.md`
+already record the iteration5 handoff. The existing claim-level provenance
+learning and resolved Torch overwrite error retain the later correction
+handoff. The initial reconciliation cited these notes without editing them;
+the subsequent explicit stop hook extends the existing checkpoint/roadmap and
+platform-membership decision with this report reconciliation and timing/scope
+clarifications. It preserves prior note bodies, 453 unrelated note files and
+all three note-repository Git indexes. No duplicate learning/error record,
+commit explanation or harness promotion is created; root owns publication.
+The handoff checks are retained in
+`db_sources/python-security/report-reconciliation-20261004-iteration1/knowledge-handoff/verification.json`.
+The small ignored final report verification record is
+`db_sources/python-security/report-reconciliation-20261004-iteration1/verification.json`:
+actual branch/parent, exact final report hash, referenced evidence hashes,
+raw-probe statistics, command outcomes, whitespace/Markdown checks and
+unchanged source/requirement/constraint and prior-evidence controls. No
+background process is started.
+
 ## Complete actual Linux family — October 1, iteration 4
 
 **The entire selected CPU family now installs and passes its framework,
@@ -305,14 +436,17 @@ fixture still reaches the untracked official PDF dependency before its intended
 too-few-entries assertion. Source owners retain the fixture fix, Windows SQLite
 fixes and full Windows rerun. No production PDF is copied to make this test green.
 
-The final-family real **bge-m3 / 5,905-document archived FAISS / BM25/hybrid/RRF /
-local FlashRank** evidence remains the exact successful **iteration 3 Windows**
+At iteration 4, final-family real **bge-m3 / 5,905-document archived FAISS /
+BM25/hybrid/RRF / local FlashRank** evidence was the successful **iteration 3 Windows**
 probe: actual finite normalized English/Chinese 1024-d embeddings, unchanged
 model/index hashes and document identities, weights-only model loading and
 zero PT2 loads. No declaration/application source affecting that result changes.
-Linux mounts no production model/index/reranker assets, so no Linux text-model,
-archived-index or pretrained-reranker inference result is invented. Integrated
-asset-backed Docker/live/browser acceptance remains host-owned.
+That iteration mounted no production model/index/reranker assets and claimed
+no Linux text-model, archived-index or pretrained-reranker inference. The
+preserved full-stack iteration5 section above closes that specific compatibility
+gate on staged archived inputs; the active 3,404-document index remains untested
+by these probes. Integrated asset-backed Docker/live/browser acceptance remains
+host-owned.
 
 ### Complete installed-tree audits and retained residuals
 
