@@ -459,3 +459,154 @@ limits. Fresh hosted CI and integrated full native/actual-asset, Docker/browser
 and 115-question benchmark acceptance remain root gates. This bounded fixture
 pass does not establish whole-project acceptance, new source completeness,
 deployment or publication. The supported-setup stop condition remains unmet.
+
+
+## Iteration 4: README supported setup and acquisition reconciliation
+
+The documentation-only follow-up begins at clean
+`837db79fcfabe63b9c312686915af31258049b49` on
+`codex/release-supported-setup`. It completes the previously pending README
+work: only [README.md](../../../README.md) and this appended section are
+intended repository changes. The earlier CI, launcher, fixture, application,
+security, test and dependency work is retained unchanged. No manual staging,
+commit, push, merge or publication is performed; GNHF owns the intended
+README/report commit and clean-checkout closure, and root owns independent
+host review and release integration.
+
+### Supported commands and actual acquisition boundary
+
+The obsolete Python 3.9 requirement, bare interpreter/installer commands,
+unconstrained install and implication that PDF ingestion supplies the entire
+website are replaced. Windows creates a new virtualenv with the known full
+CPython 3.11 installation and then uses the absolute project executable with
+`-m pip`; Linux explicitly uses `python3.11` and its absolute project executable.
+Bootstrap is the existing pip 26.2.1/setuptools 83.0.0 declaration, followed by
+the dedicated torch 2.14.0+cpu index step and the complete native set with build
+constraints and shared CPython 3.11 constraints. The pip 25.3 minimum for the
+build-constraint option explains why bootstrap comes first. These commands
+were declaration-verified, **not newly installed or install-tested** here.
+
+The README describes local native/Compose startup, locked `npm ci` and actual
+package scripts. Next.js 16.3.7's lock metadata declares Node >=20.9.0;
+Node 22 matches the existing frontend Dockerfile. The separate unit-test
+strip-types flag requires an appropriate Node release beyond Next's minimum.
+Native Uvicorn explicitly loads `.env`; the copy guard preserves an existing
+local file. Only empty-key/template configuration is documented.
+
+The canonical downloader's actual tuple contains exactly `Factions.csv` and
+`Datasheets.csv`. The README adds a separate staging example for the other
+nine exports using that same implemented Wahapedia base URL, including explicit
+PowerShell proxy forwarding/basic parsing. The eleven actual `csv_dir` consumers
+are enumerated with their purpose; no nonexistent composition or relationship
+CSV is invented. Composition/count/loadout/leader/source-link prerequisites
+are tied to the retained fields, costs and reviewed community details.
+`Enhancements.csv` is a real build consumer but is absent from `EXPECTED_CSV`;
+therefore the normal missing-file warning is insufficient to certify a full
+build. `Wargear.csv` remains the implemented known-missing exception because
+weapon data is inline in `Datasheets_wargear.csv`.
+
+Full rebuild documentation also identifies retained official PDF/correction
+proofs, terms, DSL, permitted refined inputs, community units/details/raw
+provenance/identity and listing policies, mapping histories, complete MFM
+source snapshot/raw HTML/manifests, BSData and download-catalogue baseline.
+These ignored assets are not supplied by a code clone or the two-table fetch.
+The native base build replaces SQLite only after a successful temporary-file
+import, then restores authority layers offline. That broader restoration is
+not one transaction; warnings/critical failures and partial table imports
+remain visible. `update --offline` still rebuilds/writes. The documented
+isolated-copy build/generation/retrieval sequence is not a claim that the
+pending scheduled stage-only workflow is implemented or accepted.
+
+The app's complete bge-m3 snapshot is passed by absolute path for CPU loading;
+missing snapshots can fall back to online model-name resolution. Ingestion
+still uses a model name with the local cache, so no universal offline guarantee
+is made. Optional FlashRank remains disabled by default. Both FAISS components
+and trusted-own pickle provenance are required. Docker mounts the existing
+model/index/SQLite/wiki assets read-only and both services use loopback ports
+and non-root users. Four mounts cover **five** preflight entries: model, vector
+store, structured DB, wiki and keyword index. The last two are optional for
+`ready`, so the README separately requires them for full UI acceptance, plus
+actual warmup/vectorstore loading and a retrieval/card check. HTTP liveness
+alone is not readiness. Compose currently does not forward the reduced
+`WEB_API_RETRIEVAL` mode automatically.
+
+### Dated source and release limits
+
+The README preserves project branding, both existing artwork references,
+feature descriptions and the answer-export behavior. Historical checkpoint
+figures are explicitly dated instead of being presented as current acceptance.
+Official GW core/dated field patches/MFM authority is distinguished from the
+retained verified community Chinese layer. Retired fan-translation PDF inputs
+must not be revived. The unavailable latest complete Space Marines/chapter
+Codex bodies, price-only entries, public Ork previews and 47 unproven historical
+canonical names remain explicit limits; no assets, rules, rights or new license
+are invented.
+
+The separate host candidate `dd1d23d2f514feaa23284768102a58b96f76c06e` was read
+without merging or modifying it. Its actual policy gives 43 duplicate listings,
+36 empty Legends listings and 15 other empty listings; all 94 exclusions bind
+the complete individual sanitized own row and reopen on source change.
+The actual October 4 capture/listing review still records four wrong-identity
+responses; quarantine is not released. This fresh reviewed policy is not the
+policy in this private setup checkout. The separate staged-update report's
+copied raw/cache reconciliation gives 30 pages/3,635 complete MFM ledger rows,
+captured `2026-10-03T19:00:56.192123+00:00` (October 4 local), with September 30
+source context. Capture/printed/legal dates remain distinct, and no active
+promotion or effective-date proof is inferred.
+
+Independent generic/Python/security supported-setup/source review, final
+scheduled stage-only wiring, full integrated actual-asset native acceptance,
+local Docker/browser checks, the 115-question benchmark, fresh hosted CI and
+publication remain **root release gates**. Cloud is deferred. This finite
+README task makes no ongoing maintenance or universal zero-mistake promise.
+Earlier report sections saying README reconciliation remains pending are
+superseded by this appendix; earlier executed-suite evidence remains dated.
+
+### Static verification and preservation
+
+All new proof files are confined to:
+
+```text
+D:/Project/py/RAG/db_sources/supported-setup-owned/20261004/iteration-04-readme/
+```
+
+The existing complete CPython 3.11.9 environment runs only local documentation
+verification scripts. `static-verification.json` records **233 passed checks**:
+actual requirement inclusion/pin consistency, bootstrap/CPU/build ordering,
+JSON package/lock scripts and Node metadata, parsed Compose YAML, ports/mounts/
+users/proxies, AST/static CLI declarations and consumed CSVs, restoration and
+model/preflight/warmup behavior, all README local Markdown links, preserved
+artwork/branding, required tracked prerequisites and empty-key configuration.
+It binds the actual source/requirement files by SHA-256. Assertions are
+consistency checks, not additional application test coverage or runtime proof.
+
+All **nine** PowerShell fenced examples parse with zero errors under the actual
+Windows PowerShell **5.1.26100.9549** and PowerShell **7.6.5** parsers.
+`D:/download/Git/bin/bash.exe -n` parses the Linux example with exit 0.
+No documented command is executed by those parsers. An initial verification
+script used the wrong duplicate reason enum, and an initial Bash invocation
+assumed an absent executable path. Those verification-only failures and the
+invalid inherited initial Bash exit record are retained explicitly; the
+corrected verifier uses actual `duplicate_listing` and the verified executable.
+No passing result is inferred from either initial attempt.
+
+`production-before.json` freezes all **5,745 tracked files**, the managed Git
+index, head and orchestrator notes before editing. `production-after.json` and
+`preservation-verification.json` confirm exactly README and this report change;
+all **5,743 other tracked files** are byte-exact, including all code, tests,
+CI, launcher, dependencies, tracked wiki and other reports. The original
+**26,504-byte report prefix** remains exact, as do the managed Git index and
+orchestrator notes. The actual diff was inspected and `git diff --check`
+passes. No requirement install, full/model/provider/native suite, network
+request, asset mutation, server/browser/watcher or background process was
+started. No such process needs cleanup.
+
+The existing project CHECKPOINT/ROADMAP receive one deduplicated English
+append with the actual README change, prerequisite findings, static checks
+and remaining gates. Their original bodies, **470 unrelated Markdown files**
+and three shared Git indexes are preserved; `knowledge-handoff/verification.json`
+records the bindings. No new learning/error placeholder or duplicate runtime/
+fixture note is created. Root retains knowledge publication after concurrent
+writers finish. The README/report are ready for the authorized GNHF commit;
+this pre-commit iteration does not claim the committed-clean stop condition
+or whole-project release acceptance.
