@@ -1,5 +1,103 @@
 # Rebuild preservation companion acceptance
 
+## Iteration 2: attributed Black Library retrieval documents
+
+Newly rendered Black Library documents now expose the exact accepted source ID,
+English source name/source faction and canonical ID/name/faction. The private
+full-copy proof emits source 2863 exactly once for GK `000000397`, with no AdM
+`000000847` document. Historical Armour155/Pedro80 preservation remains
+unfinished; this is a bounded companion slice, not final project acceptance.
+
+The actual clean parent is `588fde50afaf6f042f4a654f6c6c29c96484fab6`.
+Inspection of its Git diff confirms that GNHF committed the prior five-binding
+implementation and report in that commit, despite its knowledge-handoff summary.
+This iteration changes only `db_compile/blacklibrary.py`, the new narrow
+`tests/test_blacklibrary_document_identity.py` and this report. No manual Git
+staging/commit/push occurred; GNHF owns the new candidate commit.
+
+Consumer inspection covered the real ingestion and private refresh renderer
+callers, detail/card/wiki readers, current-membership and weapon-name readers,
+and the source-reconcile translation guard. Accepted source attribution is
+stored in the companion `blacklibrary_detail_identity` table within the same
+explicit transaction as Chinese detail/name replacement. The existing detail
+schema and all its readers retain their contracts. Rendering checks that the
+stored canonical name/faction still match the current canonical row and that
+the detail's source faction matches its attribution. Legacy nonempty projections
+without attribution, missing source identities and canonical drift raise an
+actionable error requiring repopulation; the renderer does not guess source IDs
+from Chinese names. Its existing official-revision guard and ability projection
+remain unchanged. No numerical source cell is promoted by these metadata.
+
+Evidence is under
+`D:/Project/py/RAG/db_sources/rebuild-preservation-owned/20261004/iteration-02/`.
+`source-freeze.json` pins exact committed parent bytes and separately frozen
+final candidate bytes. `paired_render.py` runs them in independent processes;
+each starts from its own AFB copy, performs the real full CSV build without
+terms, restores normal offline authority layers with an empty private inventory
+and the real retained details, then repeats the complete build/restoration.
+Both produce identical outputs across their repeated builds. Parent and
+candidate render **1,125 documents** with exact matching text and every prior
+metadata value; the candidate adds exactly six identity metadata fields. Its
+new companion table records **1,142 accepted projections**. All five reviewed
+sources emit once with their exact canonical targets. The four existing
+wrong-response targets remain absent.
+
+All **19 original tables** are identical by key/content. Eighteen are also
+identical in row order. The unchanged 87-row keyword glossary uses process-local
+insertion order: one initial comparison of its rowid sequence failed, while
+the subsequent exact `ORDER BY term_en` comparison confirms all 87 rows and
+values are unchanged. The original diagnostic failure is retained in
+`verification.log`; the final keyed comparison is in `verification-final.log`
+and `verification.json`. No glossary generator or unrelated consumer was edited.
+All **3,635 official ledger rows** and price/numerical/body/alias/archive values
+remain exact between parent and candidate. Historical Armour/Pedro still expose
+mirror140/90 after rebuild, with `current:false`; that outstanding failure is
+retained in the final verification price anchors rather than claimed repaired.
+
+The **115 frozen forensic inputs** remain hash-identical, including active
+`index.pkl` and `index.faiss`, source/raw inputs, policies and retained source
+manifests. Thus this slice makes no change to any active UUID/text/metadata/vector.
+It does not assign either legacy Servitor UUID to AdM or publish a replacement
+index. This is the recorded input-set preservation proof, not a new full recovery
+inventory audit. The real strict inventory-policy replay remains **32 accepted /
+62 reopened** of 94. No active database, cache, wiki, PDF, manifest or service was
+written and no model was loaded, dependency installed or network request made.
+
+| Final XML-confirmed selection | Collected | Passed | Failed | Errors | Skipped |
+|---|---:|---:|---:|---:|---:|
+| Frozen parent, new document cases | 10 | 0 | 10 | 0 | 0 |
+| Final candidate, new document cases | 10 | 10 | 0 | 0 | 0 |
+| Frozen parent, relevant existing controls | 602 | 552 | 0 | 0 | 50 |
+| Final candidate, same existing controls | 602 | 552 | 0 | 0 | 50 |
+
+Every existing node status and skip reason matches exactly in `verification.json`.
+The 50 skips are the previous 46 missing retirement-preparation asset/inventory
+checks plus four pre-existing real-cache Chinese-coverage checks unavailable in
+this checkout. There are **zero new skips**. The selection includes all 89
+five-binding regressions, native builder lifecycle/Windows handle and real CLI
+restoration controls, identity/quarantine/listing policies, source reconciliation,
+official dates/revision chains, MFM/price/history/archive, aliases and retirement
+controls. The ten new cases cover exact source rendering, name/faction drift,
+legacy repopulation, invalid/missing source IDs, transactional identity/schema
+rollback, repeated/empty behavior and actual Windows renames. An earlier focused
+selection passed 101 cases before the final four new cases were added; its XML
+is retained and is not the final count.
+
+Python 3.11 compilation, Python 3.9 grammar parsing and `git diff --check` pass.
+Ruff/Black remain unavailable and were not installed. Initial full-copy trials
+stopped at the existing Windows GBK console encoding of a success glyph; their
+logs remain intact. UTF-8 output reruns used fresh independent source copies
+and completed successfully. This was a harness-output correction, not an
+application/source-policy change. All finite test/rebuild children exited; no
+persistent background process was started.
+
+Remaining gates are eligible dated historical-price preservation, final combined
+copied acceptance, GNHF's scoped candidate commit/clean-tree check and independent
+host review. Scheduled stage-only implementation remains a separate run. The
+old duplicate vector attribution remains unresolved. Root owns shared knowledge
+indexes and publication; existing local checkpoint/roadmap/learning/error records
+are extended in place with these verified results.
+
 ## Iteration 1: five source-bound Chinese identities
 
 The five reviewed Black Library Chinese identities now survive a clean copied CSV rebuild and normal offline authority restoration without term pairs, inventory Chinese names or previous `units.name_zh`. Source 2863 remains available for Grey Knights `000000397` and cannot project into Adeptus Mechanicus `000000847`. This is one verified implementation slice, not final project acceptance. Historical-price preservation and new retrieval-document metadata remain unfinished.
