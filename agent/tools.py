@@ -142,6 +142,66 @@ def _historical_result(record: Dict[str, Any]) -> Dict[str, Any]:
             "source_scope": record["source_scope"], "note": record["source_scope"]}
 
 
+def _source_price_result(name: str, db_path: Optional[Path],
+                         resolver: Optional[EntityResolver]) -> Optional[Dict[str, Any]]:
+    """Exact ledger evidence without borrowing a canonical or archived body."""
+    from contextlib import closing
+    import sqlite3
+    from db_compile.coverage_notes import coverage_note
+    from web_api.official_points import (
+        PriceSelectorError, _canonical_identity_matches, exact_unit,
+    )
+
+    if db_path is None or not Path(db_path).exists():
+        return None
+    reserved = name.strip().startswith(("@mfm:", "@literal:"))
+    archived = None
+    try:
+        price = exact_unit(db_path, name)
+        if price is None and not reserved:
+            archived = _archived_record(name, resolver=resolver, db_path=db_path)
+            if archived and archived.get("name_en"):
+                # Only the verified archived alias may supply a different name.
+                price = exact_unit(db_path, archived["name_en"])
+    except PriceSelectorError as exc:
+        return {"found": False, "page": None, "datasheet": None,
+                "reason": "price_selector", "note": str(exc)}
+    except ValueError:  # Older databases can lack the complete ledger.
+        if reserved:
+            return {"found": False, "page": None, "datasheet": None,
+                    "reason": "price_selector",
+                    "note": "Exact price selector requires matching local source evidence"}
+        return None
+    if price is None:
+        return None
+    if price["ambiguous"]:
+        return {**price, "found": False, "page": None, "datasheet": None,
+                "reason": "ambiguous", "resolved_via": {"confidence": "ambiguous"}}
+    # Explicit source selectors intentionally select price evidence only. Plain
+    # canonical names/IDs keep the existing body path when full identity agrees.
+    if not reserved:
+        local = resolver or EntityResolver(db_path=Path(db_path))
+        resolved = local.resolve(name)
+        if (resolved.canonical_id and resolved.confidence == "exact"
+                and _canonical_identity_matches(db_path, resolved.canonical_id, price)):
+            return None
+        archived = archived or _archived_record(name, resolver=local, db_path=db_path)
+    with closing(sqlite3.connect(
+            f"file:{Path(db_path).resolve().as_posix()}?mode=ro", uri=True)) as conn:
+        qualifier = coverage_note(conn, name_en=price["name_en"],
+                                  faction_slug=price["faction_slug"])
+    # The strict declaration is validated outside the legacy-ledger catch.
+    # Invalid explicit coverage must stay visible as CoverageError.
+    note = price["note"] + (" " + qualifier if qualifier else "")
+    result = {**price, "found": True, "page": None, "datasheet": None,
+              "source_note": note, "note": note,
+              "source_scope": price["source_scope"] + (" " + qualifier if qualifier else ""),
+              "official_sources": price["price_sources"]}
+    if archived:
+        result["historical_record"] = archived
+    return result
+
+
 def entity_resolver(name: str, resolver: Optional[EntityResolver] = None) -> Dict[str, Any]:
     """中文名/英文名/社区俗名 → canonical id（db_compile.entity_resolver）。
 
@@ -200,6 +260,10 @@ def get_entity(
     """
     wiki_root = wiki_root or WIKI_ROOT
     app_path = app_path or APP_PATH
+    path = getattr(resolver, "db_path", None) if resolver is not None else DB_PATH
+    price = _source_price_result(name_or_id, path, resolver)
+    if price is not None:
+        return price
     archived = _archived_record(name_or_id, resolver=resolver)
     if archived:
         return {**_historical_result(archived), "page": None, "resolved_via": None}
@@ -632,6 +696,11 @@ def get_datasheet(
         return {"found": False, "datasheet": None,
                 "note": "wh40k.sqlite 不存在，需先跑 db_compile build"}
 
+    price = _source_price_result(name_or_id, db_path, resolver)
+    if price is not None:
+        return price
+    if resolver is None and Path(db_path) != Path(DB_PATH):
+        resolver = EntityResolver(db_path=Path(db_path))
     try:
         ds = find_datasheet(db_path, name_or_id,
                             resolver=resolver or _get_default_resolver())

@@ -53,6 +53,7 @@ _EMPTY_CHECKS: Dict[str, Callable[[Dict[str, Any]], bool]] = {
     # 注意这个键**只**出现在「一个候选都没解析到」的那条路径上：真拼错/简称仍照旧走
     # fuzzy/ambiguous，`_EMPTY_CHECKS` 对它们的判定逐字节不变。
     "get_entity": lambda r: (not r.get("found")
+                             and r.get("reason") != "price_selector"
                              and not r.get("suggestions")
                              and (r.get("resolved_via") or {}).get("confidence")
                              != "ambiguous"),
@@ -77,7 +78,7 @@ _EMPTY_CHECKS: Dict[str, Callable[[Dict[str, Any]], bool]] = {
     # 而 entity_resolver 是纯「名字 → id」映射工具，「这个名字解析不到 + 只有几个像的」
     # 本身就是它被问到的那个问题的实质答案，两者不可混为一谈。
     "get_datasheet": lambda r: (not r.get("found")
-                                and r.get("reason") != "ambiguous"),
+                                and r.get("reason") not in ("ambiguous", "price_selector")),
     # 一个名字都没解析到时降级兜底，别把「工具空手」留给模型自由发挥（基准 #109 硬错：
     # 四个中文名全查空后模型编出「泰坦军团不是 40K 阵营、无官方点数」的否定性断言）。
     # 只要有一个单位查到就不算空——「查到了但库里没点数」是诚实答案，不该被兜底吞掉。
@@ -160,6 +161,9 @@ def _has_usable_evidence(tool_name: str, result: Any) -> bool:
     """
     if not isinstance(result, dict):
         return False
+    if (tool_name in ("get_entity", "get_datasheet") and result.get("points_only")
+            and result.get("found") and not result.get("ambiguous")):
+        return bool(result.get("official_prices"))
     if tool_name == "calc_points":
         if not result.get("found"):
             return False
@@ -283,6 +287,21 @@ def _evidence_facts(tool_name: str, result: Any) -> List[str]:
                     facts[i] += f"（由查询“{query}”模糊匹配，需核对身份）"
             qualify(start, unit)
             qualify(start, unit.get("historical_record"))
+    elif tool_name in ("get_entity", "get_datasheet") and result.get("points_only"):
+        label = " / ".join(str(result[key]) for key in ("name_en", "faction_slug")
+                           if result.get(key))
+        for price in result.get("official_prices") or []:
+            if isinstance(price, dict) and price.get("cost") is not None:
+                tier = " / ".join(str(price[key]) for key in ("tier", "models")
+                                  if price.get(key))
+                facts.append(f"{label} / {tier}："
+                             f"官方点数 {price['cost']}（仅点数证据）")
+        historical = result.get("historical_record") or {}
+        if isinstance(historical, dict) and historical.get("historical_points") is not None:
+            start = len(facts)
+            facts.append(f"{historical.get('name_en') or label}：历史缓存点数 "
+                         f"{historical['historical_points']}（非现行）")
+            qualify(start, historical)
     elif tool_name == "get_datasheet":
         historical = result.get("historical_record") or {}
         if isinstance(historical, dict) and historical.get("historical_points") is not None:
@@ -430,7 +449,10 @@ class AgentLoop:
                                     reason=f"处理异常: {public_failure(exc).describe()}")
 
         session.append_turn("user", user_input)
-        session.append_turn("assistant", result.answer)
+        # A character cut can remove the last subject's date/coverage warning.
+        # Keep complete answers while preserving the existing turn-count bound.
+        session.history.append({"role": "assistant", "content": result.answer})
+        del session.history[:-12]
         return result
 
     def _classify(self, user_input: str) -> str:

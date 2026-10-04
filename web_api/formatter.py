@@ -85,7 +85,8 @@ def _derive_cites(result: AgentResult, recorder: TraceRecorder) -> List[Cite]:
                      term=str(fm.name_en or fm.name_zh or fm.id), section="合并兵牌")
 
     # 检索来源（真有 book/page 出处）
-    for evidence in recorder.get_results("calc_points") + recorder.get_results("get_datasheet"):
+    for evidence in (recorder.get_results("calc_points") + recorder.get_results("get_datasheet")
+                     + recorder.get_results("get_entity")):
         if isinstance(evidence, dict):
             for source in evidence.get("official_sources", []):
                 _add("Munitorum Field Manual", section="官方当前点数",
@@ -447,10 +448,14 @@ def _evidence_digest(recorder: TraceRecorder, limit: int = 2000) -> str:
             containers = [result] + ([ds] if isinstance(ds, dict) else [])
             for container in containers:
                 note = container.get("source_note")
-                if (isinstance(note, str) and "Source coverage:" in note
-                        and note not in seen):
-                    qualifiers.append("[source coverage] " + note)
-                    seen.add(note)
+                if (isinstance(note, str) and ("Source coverage:" in note
+                                              or container.get("points_only"))):
+                    subject = " / ".join(str(container[key]) for key in ("name_en", "faction_slug")
+                                         if container.get(key))
+                    qualified = "[source coverage] " + (subject + ": " if subject else "") + note
+                    if qualified not in seen:
+                        qualifiers.append(qualified)
+                        seen.add(qualified)
     lines: List[str] = []
     for record in _historical_records(recorder):
         summary = {key: record.get(key) for key in (
