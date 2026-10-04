@@ -334,6 +334,11 @@ def _source_hashes(evidence):
 
 def _check_body_transition(conn, record, previous):
     history = _reviewed_history(conn, previous)
+    # An independent price/review update does not recertify the accepted body.
+    # Compare the entire declaration, including provenance and qualifiers, only
+    # after validating all retained history; changed bodies keep every guard.
+    if record["body"] == previous["body"]:
+        return
     snapshots = [snapshot for old in history if (snapshot := _full_snapshot(old["body"])) is not None]
     body = record["body"]
     snapshot = _full_snapshot(body)

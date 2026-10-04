@@ -184,3 +184,161 @@ def test_known_full_relabelled_after_legacy_smaller_barrier_is_not_new_evidence(
         assert api().resolve_coverage(conn, unit_id="armour") == previous
         assert previous["body"]["status"] == "historical_snapshot"
         conn.commit()
+
+
+def stage_price(conn, evidence, price):
+    from db_compile.mfm_source import write_ledger
+
+    write_ledger(conn, {"fetched_at": evidence["captured_at"], "pages": {
+        "space-marines": {"url": evidence["url"], "sha256": evidence["sha256"], "rows": [
+            {"kind": "unit", "section": "UNITS", "unit": "MARNEUS CALGAR IN ARMOUR OF ANTILOCHUS",
+             "tier": "YOUR UNIT COSTS", "models": "1 model", "cost": price}]}}})
+    conn.execute("UPDATE units SET points_json=? WHERE id='armour'",
+                 (json.dumps({"points": price, "mfm": {"current": True}}),))
+
+
+def metadata_start(conn, current_price=False):
+    conn.execute("CREATE TABLE caller_work(value TEXT)")
+    initial = record(status="newer_full_unavailable")
+    if current_price:
+        evidence = source("c", "web", "2026-09-30")
+        stage_price(conn, evidence, 155)
+        initial["points"] = {"status": "current_published", "effective_date": "2026-09-30",
+                             "sources": [evidence]}
+    conn.commit()
+    conn.execute("BEGIN IMMEDIATE")
+    conn.execute("INSERT INTO caller_work VALUES ('preserve caller')")
+    previous = publish(conn, initial, None)
+    current = full("de")
+    current["points"] = copy.deepcopy(initial["points"])
+    return publish(conn, current, previous)
+
+
+@pytest.mark.parametrize("change", ["review", "historical-price", "current-price"])
+def test_unchanged_body_metadata_and_independent_prices_are_not_recertification(database, change):
+    with closing(sqlite3.connect(database)) as conn:
+        current = metadata_start(conn, current_price=change == "current-price")
+        proposed = copy.deepcopy(current)
+        if change == "review":
+            proposed["reviewed_on"] = "2026-10-02"
+        elif change == "historical-price":
+            proposed["points"].update(effective_date="2026-09-30",
+                                      sources=[source("f", "web", "2026-09-30")])
+        else:
+            evidence = source("f", "web", "2026-10-01")
+            stage_price(conn, evidence, 160)  # Synthetic caller-owned price update.
+            proposed["points"] = {"status": "current_published", "effective_date": "2026-10-01",
+                                  "sources": [evidence]}
+        assert proposed["body"] == current["body"]
+        api().validate_manifest(manifest(proposed))
+        api()._check_identity(conn, proposed)
+        before, sentinels, changes = coverage_rows(conn), preserved(conn), conn.total_changes
+        conn.execute("SAVEPOINT source_coverage_apply")  # Earlier caller-owned same name.
+        publish(conn, proposed, current)
+        conn.execute("RELEASE SAVEPOINT source_coverage_apply")
+        assert conn.in_transaction and preserved(conn) == sentinels
+        assert conn.execute("SELECT * FROM caller_work").fetchall() == [("preserve caller",)]
+        after = coverage_rows(conn)
+        payload = json.dumps(proposed, sort_keys=True, ensure_ascii=False, separators=(",", ":"))
+        key = json.dumps(["canonical", "armour"], separators=(",", ":"))
+        assert after["source_coverage_registry"] == [(key, payload)]
+        assert set(after["source_coverage_history"]) == set(before["source_coverage_history"]) | {
+            (key, hashlib.sha256(payload.encode()).hexdigest(), payload)}
+        assert conn.total_changes == changes + 2  # One declaration and one registry replacement.
+        assert any(json.loads(row[2])["body"]["status"] == "newer_full_unavailable"
+                   for row in after["source_coverage_history"])
+        if change == "current-price":
+            assert conn.execute("SELECT DISTINCT cost FROM official_mfm_points").fetchall() == [(160,)]
+            assert json.loads(conn.execute("SELECT points_json FROM units").fetchone()[0])["points"] == 160
+        changes = conn.total_changes
+        publish(conn, copy.deepcopy(proposed), proposed)
+        assert coverage_rows(conn) == after and conn.total_changes == changes
+        conn.commit()
+    committed_bytes = database.read_bytes()
+    with closing(sqlite3.connect(database)) as conn:
+        assert api().resolve_coverage(conn, unit_id="armour") == proposed
+        assert coverage_rows(conn) == after and preserved(conn) == sentinels
+        conn.execute("BEGIN IMMEDIATE")
+        publish(conn, copy.deepcopy(proposed), proposed)
+        assert conn.total_changes == 0
+        conn.commit()
+    assert database.read_bytes() == committed_bytes
+
+
+@pytest.mark.parametrize("tamper", ["digest", "identity", "schema"])
+@pytest.mark.parametrize("change", ["review", "price"])
+def test_unchanged_body_updates_still_validate_entire_history(database, tamper, change):
+    with closing(sqlite3.connect(database)) as conn:
+        current = metadata_start(conn)
+        proposed = copy.deepcopy(current)
+        if change == "review":
+            proposed["reviewed_on"] = "2026-10-02"
+        else:
+            proposed["points"]["sources"] = [source("f", "web", "2026-09-30")]
+        old = record(status="newer_full_unavailable")
+        if tamper == "identity":
+            old["identity"]["name_en"] = "Another full variant"
+        if tamper == "schema":
+            old["body"]["sources"] = []
+        payload = json.dumps(old, sort_keys=True, ensure_ascii=False, separators=(",", ":"))
+        digest = "0" * 64 if tamper == "digest" else hashlib.sha256(payload.encode()).hexdigest()
+        conn.execute("UPDATE source_coverage_history SET record_json=?,record_sha256=? "
+                     "WHERE record_json LIKE '%newer_full_unavailable%'", (payload, digest))
+        require_rejection(conn, proposed, current)
+
+
+@pytest.mark.parametrize("field,value", [
+    ("url", "https://example.invalid/relabel.pdf"), ("page", 99), ("kind", "web"),
+    ("source_date", "2026-10-01"), ("captured_at", "2026-10-01T01:00:00Z"),
+    ("effective_date", "2026-10-01"), ("source_order", None), ("known_hash", None),
+])
+def test_body_field_or_provenance_changes_do_not_get_metadata_exemption(database, field, value):
+    with closing(sqlite3.connect(database)) as conn:
+        current = metadata_start(conn)
+        proposed = copy.deepcopy(current)
+        proposed["reviewed_on"] = "2026-10-02"
+        if field == "effective_date":
+            proposed["body"][field] = value
+        elif field == "source_order":
+            proposed["body"]["sources"].reverse()
+        elif field == "known_hash":
+            proposed["body"]["sources"][0] = source("a", day="2026-09-30")
+        else:
+            proposed["body"]["sources"][0][field] = value
+            if field == "kind":
+                proposed["body"]["sources"][0]["page"] = None
+        assert proposed["body"] != current["body"]
+        api().validate_manifest(manifest(proposed))
+        require_rejection(conn, proposed, current)
+
+
+@pytest.mark.parametrize("invalid", ["review-downgrade", "future-price", "price-schema",
+                                      "ledger", "projection", "identity", "prior"])
+def test_unchanged_body_does_not_bypass_metadata_price_identity_or_prior_guards(database, invalid):
+    with closing(sqlite3.connect(database)) as conn:
+        current = metadata_start(conn, current_price=True)
+        proposed = copy.deepcopy(current)
+        proposed["reviewed_on"] = "2026-10-02"
+        expected = current
+        if invalid == "review-downgrade":
+            proposed["reviewed_on"] = "2026-09-30"
+        elif invalid == "future-price":
+            proposed["points"]["effective_date"] = "2026-10-03"
+        elif invalid == "price-schema":
+            proposed["points"]["extra"] = "invalid"
+        elif invalid == "ledger":
+            proposed["points"]["sources"] = [source("f", "web", "2026-10-01")]
+        elif invalid == "projection":
+            proposed["points"]["status"] = "historical"
+        elif invalid == "identity":
+            proposed["identity"]["faction_keywords"] = ["ADEPTUS ASTARTES"]
+        else:
+            expected = copy.deepcopy(current)
+            expected["reviewed_on"] = "2026-09-30"
+        before, sentinels = coverage_rows(conn), preserved(conn)
+        with pytest.raises(ValueError):
+            api().apply_coverage(conn, manifest(proposed), expected_records=[expected])
+        assert coverage_rows(conn) == before and preserved(conn) == sentinels
+        assert api().resolve_coverage(conn, unit_id="armour") == current
+        assert conn.in_transaction
+        assert conn.execute("SELECT * FROM caller_work").fetchall() == [("preserve caller",)]
