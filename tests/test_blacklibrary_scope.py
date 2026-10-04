@@ -83,6 +83,13 @@ def test_policy_accounts_for_all_reviewed_records():
     assert len(rows) == len({r["id"] for r in rows}) == 94
     assert {reason: sum(r["reason"] == reason for r in rows) for reason in
             ("duplicate_listing", "empty_legends", "empty_listing")} == {
-        "duplicate_listing": 49, "empty_legends": 36, "empty_listing": 9}
+        "duplicate_listing": 43, "empty_legends": 36, "empty_listing": 15}
+    # October 4: these own rows remain empty, but their old counterpart is
+    # absent or renamed. Exclude only the empty listing; do not assert a pair.
+    unproven = {"2744", "2753", "2758", "2760", "2764", "2766"}
+    for row in rows:
+        if row["id"] in unproven:
+            assert row["reason"] == "empty_listing"
+            assert row["full_detail_source_ids"] == []
     inceptor = next(r for r in rows if r["id"] == "2743")
     assert inceptor["full_detail_source_ids"] == [69]

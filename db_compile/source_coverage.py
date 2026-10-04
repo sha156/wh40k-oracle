@@ -334,6 +334,11 @@ def _source_hashes(evidence):
 
 def _check_body_transition(conn, record, previous):
     history = _reviewed_history(conn, previous)
+    # An independent price/review update does not recertify the accepted body.
+    # Compare the entire declaration, including provenance and qualifiers, only
+    # after validating all retained history; changed bodies keep every guard.
+    if record["body"] == previous["body"]:
+        return
     snapshots = [snapshot for old in history if (snapshot := _full_snapshot(old["body"])) is not None]
     body = record["body"]
     snapshot = _full_snapshot(body)
@@ -349,16 +354,31 @@ def _check_body_transition(conn, record, previous):
             # Old bytes with edited dates/URLs are not new reviewed evidence.
             # A genuinely new source-reviewed declaration may advance; these
             # structural checks do not acquire or authenticate its source body.
+            # Equal-date declarations have no trusted event order. A strict
+            # subset cannot stand in for a known larger footprint. Incomparable
+            # reviewed replacements remain valid without forcing their union.
+            latest_sets = [
+                _source_hashes(old) for old in snapshots
+                if old["effective_date"] == latest_date]
+            maximal_sets = [sources for sources in latest_sets
+                            if not any(sources < other for other in latest_sets)]
             if hashes <= known_hashes and not any(
-                    old["effective_date"] == latest_date and _source_hashes(old) <= hashes
-                    for old in snapshots):
+                    sources <= hashes for sources in maximal_sets):
                 raise ValueError("Verified/retained body sources would downgrade")
     if body["status"] == "current_full_verified":
+        unavailable = [old for old in history
+                       if old["body"]["status"] == "newer_full_unavailable"]
         unavailable_hashes = set().union(*(
             _source_hashes(old["body"]) | (
                 _source_hashes(old["body"]["retained_snapshot"])
                 if old["body"]["retained_snapshot"] is not None else set())
-            for old in history if old["body"]["status"] == "newer_full_unavailable"))
+            for old in unavailable))
+        if unavailable:
+            # A legacy smaller retained set must not make already-known full
+            # bytes look new. History digests establish membership, not whether
+            # a full declaration preceded or followed an unavailable one.
+            unavailable_hashes.update(set().union(*(
+                _source_hashes(old) for old in snapshots)))
         if _source_hashes(body) <= unavailable_hashes:
             raise ValueError("Retained sources cannot recertify an unavailable newer body")
 
