@@ -76,3 +76,47 @@ The implementation iteration initially kept external notes untouched under its o
 The local English handoff appends this bounded outcome, evidence, checks and remaining diagnostic work to `D:/Project/devlog/wh40k-oracle/CHECKPOINT.md` and `ROADMAP.md`. It adds `C:/Users/Administrator/learn-notes/decisions/20261004-validate-complete-partial-snapshot-manifests.md` and `C:/Users/Administrator/error-notes/rag/20261004-error-15-incomplete-snapshot-merge-keyerror.md`, with their README index entries. The error record includes the complete retained merge failure and records only the corrected merge boundary as resolved; the original and later spontaneous `PermissionError` causes remain unresolved.
 
 Existing note bodies and repository Git indexes are preserved. No current implementation commit exists, so no new `commits/` explanation is created. GNHF retains implementation commit ownership; root publishes intended notes after writers finish. No manual staging/commit/push, harness promotion, new source/test change or repeated test run occurs during this handoff. Verification is retained under the evidence root's `knowledge-handoff/` directory. Orchestrator notes remain untouched.
+
+## October 4 redacted filesystem diagnostic completion
+
+This continuation starts from clean `db5cc0ea5fc8d1ee21897a0297e21dcaeb2d0355` and implements the previously pending diagnostic seam only. It changes `scripts/fetch_blacklibrary_snapshot.py`, adds `tests/test_blacklibrary_snapshot_diagnostics.py`, and appends this report. The existing merge, scope, identity, policy and source assets remain unchanged. The prior 125-test boundary proof above remains valid; no boundary reimplementation, full-project tests, network, models, dependencies, services or production writes were performed.
+
+Evidence: `D:/Project/py/RAG/db_sources/blacklibrary-snapshot-boundary-owned/20261004/iteration-02/`. The same designated full-stack Windows Python interpreter, UTF-8, disabled bytecode and cacheprovider, and literal owned temporary directories are used. TEMP/TMP also point inside this iteration's evidence directory.
+
+### Diagnostic contract and unchanged failure semantics
+
+Actual `write_json` directory creation, temporary-file write and atomic replacement now observe `OSError` without changing the write sequence or retrying. The original exception object is re-raised even if the observer fails. Snapshot writes record the controlled pipeline phase and known operation; directory creation reports the actual relative parent directory (`.` means the snapshot root), temporary writes report the controlled `.json.tmp` path, and replacement reports the controlled destination. Known filenames, catalogue labels and generated hash/page paths are allowlisted. Other filesystem failures caught by the existing run boundary retain the known phase and codes without inventing an operation or path.
+
+The optional manifest/CLI `filesystem_error` contains only an allowlisted phase, operation and relative path, a builtin class label, and exact integer errno/winerror when available. Custom exception class names, exception text, exception filenames, external cache paths, requests, responses, headers and account/credential fields are not diagnostics. The pre-existing CLI summary's user-selected output path is unchanged; it is separate from the new diagnostic object. A control whose filesystem exception `__str__` raises verifies that the diagnostic path never reads exception text. Noninteger codes and uncontrolled names are omitted.
+
+The existing `run()` exception boundary, partial result, checkpoint recovery, nonzero CLI result and HTTP retry catch remain in place. Initial and final checkpoint failures retain their pre-existing propagation semantics. Diagnostic observer/builder failures cannot replace the primary error: phase-only fallback is used if available; if diagnostic construction entirely fails, the original safe class/partial manifest and CLI exit 1 still survive. Resume clears stale error/diagnostic state. No new retry, fallback for source content, or OS workaround is introduced.
+
+### Actual filesystem and CLI acceptance
+
+Twenty new controls cover nine actual catalog/raw-inventory/details output failures at `Path.mkdir`, `Path.write_bytes` and `Path.replace`, with `PermissionError` errno 13/winerror 5; phase-only resumed raw reads and external historical-cache reads; observer/builder failures; an actual OS replacement failure on a directory; custom-class/text/path/code redaction; and three fresh-interpreter snapshot CLI controls. The CLI controls also invoke the actual merge CLI: incomplete snapshots fail with the existing fixed ValueError, exit 1, and create no staging directory. Each of the nine output-failure controls uses the real `Snapshot.run()` and merge path; recovery preserves completed output/raw bytes and previous cache fields. Synthetic active-cache files and caller inputs remain exact. The shared-root details-directory injection is one-shot so the partial manifest can use the same directory; other operation counts and request-attempt assertions independently verify absence of retries.
+
+Final combined command:
+
+```powershell
+& 'D:/Project/py/RAG/db_sources/release-check-20260930/python-security-worktree-environments/full-stack-windows-transformers5104/Scripts/python.exe' -m pytest tests/test_blacklibrary_snapshot_diagnostics.py tests/test_blacklibrary_snapshot.py tests/test_blacklibrary_snapshot_merge.py tests/test_blacklibrary_scope.py tests/test_blacklibrary_identity.py -q -p no:cacheprovider --basetemp='D:/Project/py/RAG/db_sources/blacklibrary-snapshot-boundary-owned/20261004/iteration-02/reviewed-pytest-tmp' --junitxml='D:/Project/py/RAG/db_sources/blacklibrary-snapshot-boundary-owned/20261004/iteration-02/reviewed.xml'
+```
+
+| Retained evidence | Tests | Passed | Failed | Errors | Skips |
+| --- | ---: | ---: | ---: | ---: | ---: |
+| Initial `focused.log` / XML | 17 | 16 | 1 | 0 | 0 |
+| Intermediate `accepted.log` / XML | 144 | 142 | 2 | 0 | 0 |
+| Intermediate `final.log` / XML | 144 | 143 | 1 | 0 | 0 |
+| Reviewed combined `reviewed.log` / XML | 145 | 145 | 0 | 0 | 0 |
+| Final strengthened diagnostic controls `final-diagnostics.log` / XML | 20 | 20 | 0 | 0 | 0 |
+
+The final diagnostic-only run follows a test-only strengthening: one-shot injection is restricted to the shared-root details-directory case, with independent request-attempt assertions. No source changed after the combined 145-pass run. XML accounting is verified in `verification.json`; no skips or exclusions were added. AST parsing and `git diff --check` pass. Generic and Python reviewers approve. Ruff, mypy, pylint and Black remain unavailable; no formatter/linter dependency was installed.
+
+### Preserved failures and limits
+
+The initial diagnostic test mis-targeted the shared root mkdir at the first manifest checkpoint; the intermediate version also injected it again during final recovery. The corrected fixture uses inline detail content to reach the actual details output and permits the final partial checkpoint. These are retained fixture failures, not diagnosed production defects.
+
+Two existing complete-fixture setups also spontaneously returned partial during these runs. Their unchanged retained manifests now honestly identify `PermissionError`, errno 13/winerror 5, `replace`, and `manifest.json`: catalogs phase at `accepted-pytest-tmp/test_malformed_or_incomplete_o17/snapshot/`, and details phase at `final-pytest-tmp/test_incomplete_rows_and_captu3/snapshot/`. This newly identifies the failed operation/phase in those two captures; it does not identify the underlying OS cause. No scanner, handle, race or other explanation is asserted. Original and all intermediate spontaneous PermissionError causes remain unknown. The injected controls and later passing runs do not establish that those causes are resolved or that the filesystem is flake-free.
+
+`before.json` and `verification.json` bind the clean parent, intended source/test/report changes, unchanged merge/policy/identity files, active SQLite and canonical Black Library JSON bytes, original failure log/manifest, and earlier XML. No large asset/model/archive copy was made. Earlier logs/XML/partial snapshots remain preserved. Local knowledge handoff appends this verified continuation to the existing boundary checkpoint/roadmap, learning decision and error record, preserving their old bodies and other owners' staged indexes. No duplicate error/learning record, invented implementation commit or manual Git staging/commit/publication is created.
+
+The finite diagnostic implementation and narrow control acceptance are complete locally. GNHF still owns the intended commit and clean checkout; root owns independent host review/publication. The clean-commit stop condition cannot be claimed before that orchestrator step. No overall project, deployment or source-coverage completion is claimed, and no background process started by this continuation remains running.
