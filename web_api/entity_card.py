@@ -251,7 +251,7 @@ def build_entity_card(
         leads=leads,
         composition=(
             [to_richtext(line) for line in tool_result["zh_composition"]]
-            if tool_result.get("zh_composition")
+            if tool_result.get("zh_composition") and not ds.get("historical_points")
             else _composition(ds, lang)
         ),
         keywords=keywords,
