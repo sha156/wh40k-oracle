@@ -316,3 +316,146 @@ Root still owns Origin fixture/API reconciliation, independent generic/Python
 review, fresh hosted CI and integrated actual-asset/native/Docker/browser/
 115-question benchmark acceptance. GNHF owns the automatic scoped commit.
 The supported-setup stop condition and whole-project acceptance are not met.
+
+## Follow-up iteration 1: authorized Origin fixtures on CPython 3.11
+
+This follow-up began clean at `347f50ce9734c5fb4bd3d46b54e0295c26b63305`
+on `codex/release-supported-setup`. Its individually verifiable scope is the
+fifteen confirmed authorized-request fixture failures, new strict body-contract
+controls and this report. README correction remains a separate next increment.
+No application, Origin middleware, provider, dependency, launcher, CI or
+collection configuration is changed. GNHF owns the automatic scoped commit;
+root owns independent review and release publication.
+
+### Request contract and unchanged execution boundary
+
+The actual frontend sends `Content-Type: application/json` and serialized JSON
+in `web/src/lib/api.ts`, `web/src/lib/sim.ts` and `web/src/lib/roster.ts`.
+The original positive fixtures instead sent the same JSON through `content=`
+without Content-Type. On the unchanged supported stack, FastAPI correctly
+rejects those bodies with 422 before invoking the substituted handler.
+
+`tests/test_web_api_origin_boundary.py` now explicitly types only the original
+six authorized chat requests and nine authorized compute requests. Their
+payload, invocation, stream, CORS-header and legitimate handler-error assertions
+are preserved. In particular, compute handlers still return their intentional
+409 error with exactly one invocation and the original error detail. No status
+assertion is relaxed and no application parsing setting is changed.
+
+The two foreign chat requests and three foreign compute requests remain raw
+JSON bytes with **no Content-Type**. Each verifies 403 and zero handler calls;
+the compute cases now also explicitly verify the absent request header.
+Malformed/duplicate Origin rejection, forged Host quota classification,
+preflight quota and the direct ASGI no-body-read/no-inner-app assertion remain
+unchanged. The existing selected deployment/body-limit controls also pass.
+
+Two new parametrized tests compare identical serialized payloads across all
+five real routes (`/chat`, `/chat/sync`, `/simulate`, `/roster/critique`,
+`/roster/validate`), both allowed UI origins and no Origin:
+
+| Request body contract | Cases | Required result |
+| --- | ---: | --- |
+| Explicit `application/json` | 15 | HTTP 200; exactly one harmless handler invocation |
+| Content-Type absent | 15 | HTTP 422 body-validation error; zero handler invocations |
+| `text/plain` with the same JSON bytes | 15 | HTTP 422 body-validation error; zero handler invocations |
+
+All 45 cases assert the actual request Content-Type and expected CORS response
+header. Typed chat controls check the SSE completion event or degraded answer;
+typed compute controls check their synthetic contract-valid result fields.
+The compute fixtures use only a temporary empty file to satisfy the existing
+database-presence gate, with engines substituted; no production DB or numerical
+simulation is exercised. This proves body parsing and Origin authorization
+remain separate controls, rather than claiming a real provider or asset pass.
+
+### Paired baseline and complete selected regression accounting
+
+The unchanged parent test file was copied before any edit. Its fresh exact
+module run gives **26 passed / 15 failed / zero errors / zero skips**, exit 1,
+in 1.44 seconds, matching all 41 module case identities and outcomes in the
+retained iteration-1 full-selection XML. The failures are the six chat and nine
+compute authorized controls; the original failed XML and earlier probe are
+preserved. The supported interpreter and dependencies are unchanged:
+CPython **3.11.9**, FastAPI **0.133.0**, Starlette **1.3.1**, HTTPX **0.28.1**,
+pytest **9.1.1**.
+
+The candidate reruns the exact previous selection, with only the additional
+45 strict Content-Type cases:
+
+```powershell
+$owned = 'D:/Project/py/RAG/db_sources/supported-setup-owned/20261004/iteration-03'
+$env:PYTHONDONTWRITEBYTECODE = '1'
+$env:PYTHONUTF8 = '1'
+$env:TEMP = $owned
+$env:TMP = $owned
+$checkedPython = 'D:/Project/py/RAG/db_sources/release-check-20260930/python-security-worktree-environments/full-stack-windows-transformers5104/Scripts/python.exe'
+& $checkedPython -m pytest -q -rs `
+  tests/test_db_compile_build_lifecycle.py `
+  tests/test_ingest_pages.py tests/test_ingest_vector_reuse.py `
+  tests/test_dependency_framework.py tests/test_web_api_origin_boundary.py `
+  tests/test_web_api_stage5_deploy.py tests/test_benchmark_strict_json.py `
+  tests/test_qa_benchmark_boundaries.py `
+  tests/test_wiki_keyword_index.py::test_parse_quickref_too_few_entries_raises `
+  -o "cache_dir=$owned/candidate-focused-cache" `
+  --basetemp "$owned/candidate-focused-temp" `
+  --junitxml "$owned/candidate-focused.xml"
+```
+
+The baseline command uses the same interpreter/environment and
+`-m pytest -q -rs tests/test_web_api_origin_boundary.py`, with separate
+`parent-origin-cache`, `parent-origin-temp` and `parent-origin.xml` paths.
+
+| Selected module | Passed | Failed / errors / skipped |
+| --- | ---: | ---: |
+| SQLite build lifecycle | 11 | 0 / 0 / 0 |
+| PDF ingestion / vector reuse | 11 | 0 / 0 / 0 |
+| Framework / provider protocol | 4 | 0 / 0 / 0 |
+| API Origin and strict body contract | 86 | 0 / 0 / 0 |
+| API deployment / preflight / body limits | 44 | 0 / 0 / 0 |
+| Strict benchmark JSON | 67 | 0 / 0 / 0 |
+| Offline benchmark qualification | 13 | 0 / 0 / 0 |
+| Negative keyword-parser fixture | 1 | 0 / 0 / 0 |
+| **Total** | **237** | **0 / 0 / 0** |
+
+The candidate exits 0 in **32.52 seconds**, with the same three upstream
+deprecation warnings. XML comparison confirms all **192 original selected
+cases** remain present and pass; all **41 original Origin cases** pass. Exact
+pytest node IDs, all 15 parent failures, per-case XML outcomes and the empty
+skip-reason list are enumerated in `origin-fixture-verification.json`.
+AST comparison confirms every original assertion remains and every original
+function other than the two authorized-positive fixtures is unchanged,
+including the foreign chat and direct no-body-read guards. No new skip, ignore,
+deselection or changed regression module is introduced. The first evidence
+summary script omitted the closing bracket when counting trailing JSON
+parameter IDs; the corrected summary normalizes it and proves the 15/30 split.
+The initial script is preserved; this did not affect any pytest result.
+
+### Preservation and remaining gates
+
+All temporary scripts, parent copies, caches, logs, exit records, XML and
+verification JSON are confined to the iteration-03 evidence directory. All
+**35** bound dependency/report/proof inputs remain byte-exact. The tracked-file
+manifest confirms only this test file and this report change; all **5,743 other
+tracked files** remain exact, including README, launcher, CI, requirements,
+application/security source and tracked wiki. Orchestrator notes are unchanged.
+Diff/whitespace and source syntax checks pass. Ruff and Black are unavailable in
+the selected environment; no standalone formatter/linter result is claimed.
+No installation, audit, full QA, provider/model execution, network
+request, server start or production mutation is performed; pytest processes
+have completed, and no background service was started.
+
+The deduplicated project checkpoint/roadmap and existing Origin learning/error
+records receive the actual fixture resolution and exact selected-suite result;
+their original bodies, **464 unrelated Markdown files** and three shared Git
+indexes are preserved, as recorded in `knowledge-handoff/verification.json`.
+No duplicate placeholder,
+manual stage/commit/push or cross-project harness promotion is introduced.
+Root retains knowledge publication and independent generic/Python/security
+review. Earlier sections describing these fifteen fixture failures as unresolved
+are historical and superseded by this follow-up's paired evidence.
+
+Next work remains the README's supported CPython 3.11 CPU bootstrap and full
+asset acquisition/build prerequisites, source-authority and finite release
+limits. Fresh hosted CI and integrated full native/actual-asset, Docker/browser
+and 115-question benchmark acceptance remain root gates. This bounded fixture
+pass does not establish whole-project acceptance, new source completeness,
+deployment or publication. The supported-setup stop condition remains unmet.
