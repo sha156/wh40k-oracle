@@ -422,7 +422,9 @@ def calc_points(
     也让中文名这条最常见的入参形态真的能查到。
     """
     from db_compile.calc_points import UNKNOWN_UNIT_NOTE
-    from web_api.official_points import _canonical_identity_matches, exact_unit
+    from web_api.official_points import (
+        PriceSelectorError, _canonical_identity_matches, _selector_preflight, exact_unit,
+    )
 
     # 参数防护（评审 M#4）：LLM 可能把 unit_list 传成单个字符串——字符串是可迭代的，
     # 会被逐字符拆成"单位名"胡乱查询。字符串包成单元素列表；其余非列表类型明确报错。
@@ -445,6 +447,25 @@ def calc_points(
     unresolved: List[str] = []
     ambiguous_queries: List[str] = []
     for query, r in zip(unit_list, results):
+        if _selector_preflight(query):
+            try:
+                selected = exact_unit(db_path, query)
+            except PriceSelectorError as exc:
+                units.append({"unit_id": None, "name_en": None, "points": None,
+                              "query": str(query), "unresolved": True, "note": str(exc)})
+                unresolved.append(str(query))
+                continue
+            except ValueError:  # A reserved selector on an older DB stays unresolved.
+                selected = None
+            if str(query).strip().startswith(("@mfm:", "@literal:")):
+                if selected:
+                    units.append(selected)
+                else:
+                    units.append({"unit_id": None, "name_en": None, "points": None,
+                                  "query": str(query), "unresolved": True,
+                                  "note": "Exact price selector requires matching local source evidence"})
+                    unresolved.append(str(query))
+                continue
         if r.note != UNKNOWN_UNIT_NOTE:
             units.append({"unit_id": r.unit_id, "name_en": r.name_en,
                           "points": r.points, "note": r.note})

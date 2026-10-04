@@ -4,6 +4,38 @@ import json
 from pathlib import Path
 import re
 import sqlite3
+from urllib.parse import quote, unquote
+
+
+class PriceSelectorError(ValueError):
+    """Explicit/ambiguous price intent must never fall back to another identity."""
+
+
+def _source_selector(name, slug):
+    return "@mfm:{}:{}".format(slug, quote(name, safe=""))
+
+
+def _selector_preflight(name):
+    """Reserved prefixes and legacy suffixes need checking before canonical IDs."""
+    return isinstance(name, str) and (
+        name.strip().startswith(("@mfm:", "@literal:"))
+        or _legacy_selector(name.strip()) is not None)
+
+
+def _legacy_selector(name):
+    return re.fullmatch(r"(.+)\s*[（(]\s*([a-z0-9]+(?:-[a-z0-9]+)*)\s*[)）]", name, re.I)
+
+
+def _decode_selector_name(encoded):
+    try:
+        name = unquote(encoded, encoding="utf-8", errors="strict")
+    except UnicodeError as exc:
+        raise PriceSelectorError("Invalid UTF-8 price selector") from exc
+    # Canonical percent encoding makes %, delimiters and reserved literal names
+    # data. Reject alternative spellings, malformed escapes and empty identities.
+    if not name.strip() or name != name.strip() or quote(name, safe="") != encoded:
+        raise PriceSelectorError("Invalid escaped price selector name")
+    return name
 
 
 def browse(db_path, query="", offset=0, limit=50):
@@ -23,8 +55,13 @@ def exact_unit(db_path, name, *, faction_slug=None):
     """Return exact price evidence, never a fuzzy body or a merged faction identity.
 
     Internal callers may supply an exact source slug. Existing name-only callers
-    can round-trip candidates as ``Full Variant (source-slug)``. A full ledger
-    name (including parentheses) takes precedence over interpreting a suffix.
+    round-trip candidates as ``@mfm:source-slug:percent-encoded-full-name``.
+    The case-sensitive ``@mfm:`` and ``@literal:`` prefixes reserve intent before
+    canonical IDs, archives or fuzzy lookup. ``@literal:percent-encoded-name``
+    escapes a full ledger name (including reserved prefixes/parentheses), without
+    suffix interpretation. Names use canonical UTF-8 quote(..., safe="") encoding.
+    Legacy ``Full Variant (source-slug)`` remains accepted only when its literal
+    and qualified interpretations do not collide; collisions fail closed.
     Canonical faction codes do not stand in for source slugs/chapter identities.
     Capture timestamps do not establish source publication or effective dates.
     """
@@ -34,6 +71,19 @@ def exact_unit(db_path, name, *, faction_slug=None):
     if not isinstance(name, str) or not name.strip():
         return None
     name = name.strip()
+    explicit = False
+    literal = False
+    if faction_slug is None and name.startswith(("@mfm:", "@literal:")):
+        explicit = True
+        if name.startswith("@literal:"):
+            literal = True
+            name = _decode_selector_name(name[len("@literal:"):])
+        else:
+            parts = name.split(":", 2)
+            if len(parts) != 3 or not re.fullmatch(r"[a-z0-9]+(?:-[a-z0-9]+)*", parts[1]):
+                raise PriceSelectorError("Invalid exact source price selector")
+            faction_slug = parts[1]
+            name = _decode_selector_name(parts[2])
     if faction_slug is not None:
         if not isinstance(faction_slug, str):
             return None
@@ -47,15 +97,32 @@ def exact_unit(db_path, name, *, faction_slug=None):
         ledger = [dict(r) for r in conn.execute(
             "SELECT * FROM official_mfm_points WHERE kind='unit' ORDER BY faction_slug,ordinal")]
     rows = [r for r in ledger if r["unit_name"].casefold() == name.casefold()]
-    if not rows and faction_slug is None:
-        qualified = re.fullmatch(r"(.+)\s*[（(]\s*([a-z0-9]+(?:-[a-z0-9]+)*)\s*[)）]", name, re.I)
+    if faction_slug is None and not literal:
+        qualified = _legacy_selector(name)
         if qualified:
-            name = qualified[1].strip()
-            faction_slug = qualified[2].casefold()
-            rows = [r for r in ledger if r["unit_name"].casefold() == name.casefold()]
+            base, slug = qualified[1].strip(), qualified[2].casefold()
+            qualified_rows = [r for r in ledger if r["unit_name"].casefold() == base.casefold()
+                              and r["faction_slug"] == slug]
+            # Full-width parentheses must not bypass the same collision guard.
+            literal_rows = [r for r in ledger if r["unit_name"].casefold() in {
+                name.casefold(), "{} ({})".format(base, slug).casefold()}]
+            if literal_rows and qualified_rows:
+                raise PriceSelectorError(
+                    "Ambiguous legacy price selector; use @mfm:slug:escaped-name "
+                    "for exact source intent or @literal:escaped-name for the full literal name")
+            if not rows:
+                # Recognizable legacy source intent must not become a fuzzy
+                # canonical query when that particular source has no such unit.
+                from db_compile.mfm import MFM_SLUG_TO_FACTION
+                if not qualified_rows and (slug in MFM_SLUG_TO_FACTION or any(
+                        r["unit_name"].casefold() == base.casefold() for r in ledger)):
+                    raise PriceSelectorError("Legacy price selector has no matching local source identity")
+                name, faction_slug, rows = base, slug, qualified_rows
     if faction_slug is not None:
         rows = [r for r in rows if r["faction_slug"] == faction_slug]
     if not rows:
+        if explicit:
+            raise PriceSelectorError("Exact price selector has no matching local source identity")
         return None
 
     candidates = []
@@ -63,7 +130,7 @@ def exact_unit(db_path, name, *, faction_slug=None):
         prices = [r for r in rows if r["faction_slug"] == slug]
         candidates.append({
             "name_en": prices[0]["unit_name"], "faction_slug": slug,
-            "query": "{} ({})".format(prices[0]["unit_name"], slug),
+            "query": _source_selector(prices[0]["unit_name"], slug),
             "points": minimum_unit_cost([
                 {"desc": r["models"], "cost": r["cost"]}
                 for r in prices if is_base_tier(r["tier"])]),
